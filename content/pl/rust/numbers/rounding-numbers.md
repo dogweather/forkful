@@ -11,9 +11,6 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i dlaczego?
-Zaokrąglanie liczb oznacza dostosowanie ich do najbliższej liczby całkowitej lub ułamka o określonej precyzji. Programiści zaokrąglają liczby, aby upraszczać wartości dla czytelności dla ludzi, spełniać wymagania specyfikacji lub zmniejszać obciążenie obliczeniowe w operacjach zmiennoprzecinkowych.
-
 ## Jak to zrobić:
 Rust sprawia, że zaokrąglanie jest bardzo proste. Sprawdź te metody dla typów `f32` lub `f64`:
 

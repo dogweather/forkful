@@ -10,9 +10,6 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## What & Why? (Cosa e Perché?)
-Stampare l'output di debug aiuta a tenere traccia di cosa sta succedendo nel tuo script. Lo fanno i programmatori per capire meglio i flussi di esecuzione ed individuare errori.
-
 ## How to: (Come fare)
 Per stampare qualcosa a schermo in Fish, usi `echo` o `printf`. Ecco un esempio:
 

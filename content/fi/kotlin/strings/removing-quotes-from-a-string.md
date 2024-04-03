@@ -12,12 +12,7 @@ title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---
 
-## Mitä & Miksi?
-
-Lainausmerkkien poistaminen merkkijonosta tarkoittaa kaikkien lainausmerkkien, joko yksittäisten (' ') tai kaksois (" "), poistamista käsiteltävästä tekstidatasta. Ohjelmoijien on usein tarpeen tehdä tämä datan siivoamiseksi, valmistautuakseen edelleen käsittelyyn tai kun lainausmerkit eivät ole oleellisia datan merkitykselle.
-
 ## Miten:
-
 Tässä on yksinkertainen tapa poistaa molemmat lainausmerkityypit merkkijonosta Kotlinissa:
 
 ```kotlin
@@ -51,7 +46,6 @@ fun main() {
 ```
 
 ## Syväluotaus
-
 Historiallisesti merkkijonojen käsittely ja merkkien poistaminen ovat olleet ohjelmoinnin ydinosa, koska teksti on perustava tapa, jolla olemme vuorovaikutuksessa datan kanssa. Joskus merkkijonoissa olevat lainausmerkit on pakko poistaa. Tämä osoitetaan edeltävällä kenoviivalla (esim., `"Hän sanoi, \"Hei!\""`). Tällaisten merkkijonojen käsittelemisessä saatat tarvita poistamaan paitsi paon merkit, myös lainausmerkit itsessään saadaksesi puhtaamman tai käyttökelpoisemman tekstin.
 
 Vaihtoehtoja `replace`-metodille sisältävät regex-pohjaisen poiston tai manuaalisen merkkijonon jäsentämisen merkki kerrallaan. Kuitenkin, regex voi olla ylilyönti yksinkertaisissa operaatioissa, ja manuaalinen jäsentäminen vähemmän tehokasta kuin valmiiden merkkijonofunktioiden käyttö. Kotlinin `replace`-funktio hyödyntää alla olevaa Javan `String` `replace`-metodia, joka on hyvin optimoitu suorituskyvylle.
@@ -59,7 +53,6 @@ Vaihtoehtoja `replace`-metodille sisältävät regex-pohjaisen poiston tai manua
 Toteutuksen kannalta on mainitsemisen arvoista, että Kotlin on yhteensopiva Javan kanssa, joten käytännössä kaikki merkkijonoihin kohdistuvat operaatiot ovat yhtä suorituskykyisiä kuin Javassa. Lainausmerkkien poistettaessa on tärkeää olla tietoinen reunatapauksista, kuten sisäkkäisistä lainausmerkeistä, jotka saattavat vaatia monimutkaisempaa lähestymistapaa, mahdollisesti käyttäen säännöllisiä lausekkeita tai jäsentämiskirjastoa.
 
 ## Katso Myös
-
 Lisätietoa merkkijonojen käsittelystä Kotlinissa, voit tarkistaa viralliset dokumentaatiot:
 
 - [Kotlinin String dokumentaatio](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)

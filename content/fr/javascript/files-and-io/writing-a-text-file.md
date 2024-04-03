@@ -13,9 +13,6 @@ title: "R\xE9diger un fichier texte"
 weight: 24
 ---
 
-## Quoi & Pourquoi ?
-Écrire un fichier texte en JavaScript concerne souvent la création et la sauvegarde de données dans un format simple et lisible pour la journalisation, l'exportation des saisies utilisateur, ou des fins de configuration. Cette fonctionnalité est cruciale pour les applications qui ont besoin de persister les données au-delà de la durée de vie du processus de l'application, offrant un moyen de stocker et de récupérer ou partager l'information plus tard.
-
 ## Comment faire :
 Dans un environnement Node.js, vous pouvez utiliser le module intégré `fs` (File System) pour écrire des fichiers textes. Cet exemple montre comment écrire du texte dans un fichier de manière asynchrone :
 

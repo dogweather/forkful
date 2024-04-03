@@ -14,16 +14,10 @@ title: Recherche et remplacement de texte
 weight: 10
 ---
 
-## Quoi & Pourquoi ?
-
-Chercher et remplacer du texte en Dart consiste à examiner des chaînes de caractères pour trouver certains motifs ou séquences de caractères et les substituer par un nouveau contenu. Cette opération est fondamentale pour des tâches telles que la validation de données, la mise en forme de la sortie, l'analyse de l'entrée utilisateur, ou même la manipulation d'URLs et de chemins de fichier, rendant les applications plus dynamiques et réactives aux besoins des utilisateurs.
-
 ## Comment faire :
-
 Dart fournit des méthodes robustes pour chercher et remplacer du texte directement à travers sa classe `String`, sans nécessiter de bibliothèques externes. Voici comment vous pouvez le faire :
 
 ### Recherche et remplacement basiques
-
 Pour rechercher une sous-chaîne et la remplacer par une autre chaîne, vous pouvez utiliser `replaceAll` :
 
 ```dart
@@ -33,7 +27,6 @@ print(modifiedText); // Sortie : Hello, Flutter! Flutter is great.
 ```
 
 ### Utilisation des expressions régulières
-
 Pour des besoins de recherche et de remplacement plus complexes, Dart utilise des expressions régulières via la classe `RegExp`. Cela permet de faire correspondre des motifs et de remplacer des chaînes :
 
 ```dart
@@ -45,7 +38,6 @@ print(modifiedText); // Sortie : Dart 2024, Flutter 2024
 Cet exemple trouve toutes les instances d'un ou plusieurs chiffres (`\d+`) dans la chaîne et les remplace par "2024".
 
 ### Recherche insensible à la casse
-
 Pour effectuer une recherche insensible à la casse, vous pouvez modifier le constructeur `RegExp` pour ignorer la casse :
 
 ```dart
@@ -55,7 +47,6 @@ print(modifiedText); // Sortie : Welcome to Flutter, the programming language.
 ```
 
 ### Remplacement avec une fonction
-
 Pour des remplacements dynamiques basés sur la correspondance elle-même, Dart permet de passer une fonction à `replaceAllMapped`. Cette fonction peut effectuer des opérations ou des calculs sur les séquences correspondantes :
 
 ```dart

@@ -10,9 +10,6 @@ title: Iniciando un nuevo proyecto
 weight: 1
 ---
 
-## ¿Qué & Por Qué?
-Iniciar un nuevo proyecto es como preparar el terreno antes de construir una casa; es el proceso de configurar las bases para tu código. Los programadores lo hacen para organizar sus ideas y asegurarse de que tienen todas las herramientas necesarias a mano.
-
 ## Cómo hacerlo:
 ```Fish Shell
 # Crear un nuevo directorio y moverse a él

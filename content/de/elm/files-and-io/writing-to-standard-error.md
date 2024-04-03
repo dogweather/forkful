@@ -13,12 +13,7 @@ title: Schreiben auf Standardfehler
 weight: 25
 ---
 
-## Was & Warum?
-
-Das Schreiben auf den Standardfehler (stderr) bezieht sich auf das Umleiten von Fehlermeldungen und Diagnostiken, getrennt von der Hauptprogrammausgabe, die an den Standardausgang (stdout) geht. Programmierer machen dies, um die Fehlerbehandlung und das Logging handhabbarer zu machen, insbesondere in Umgebungen, in denen eine Unterscheidung der Ausgabe für das Debugging und die Überwachung entscheidend ist.
-
 ## Wie geht das:
-
 Elm zielt in erster Linie auf die Webentwicklung ab, wo das Konzept des direkten Schreibens auf stderr nicht auf die gleiche Weise wie in traditionellen Befehlszeilenumgebungen anwendbar ist. Allerdings, für Elm-Programme, die in Node.js oder ähnlichen Umgebungen laufen, ist der Interop mit JavaScript unter Verwendung von Ports der Schlüsselansatz, um eine ähnliche Funktionalität zu erreichen. Hier ist, wie Sie es einrichten könnten:
 
 Elm-Code (`Main.elm`):

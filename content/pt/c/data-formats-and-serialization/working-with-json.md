@@ -12,12 +12,7 @@ title: Trabalhando com JSON
 weight: 38
 ---
 
-## O que & Por quê?
-
-Trabalhar com JSON (JavaScript Object Notation) em C envolve analisar, gerar e manipular estruturas de dados JSON. Programadores fazem isso para possibilitar a comunicação com serviços web, armazenamento de dados ou arquivos de configuração de forma leve e legível por humanos.
-
 ## Como fazer:
-
 Para trabalhar com JSON em C, você normalmente usará uma biblioteca como `jansson` ou `json-c`, devido à falta de suporte nativo do C para JSON. Aqui, focaremos na `jansson` por sua facilidade de uso e manutenção ativa. Primeiro, instale a biblioteca (por exemplo, usando um gerenciador de pacotes como `apt` no Ubuntu: `sudo apt-get install libjansson-dev`).
 
 Vamos começar analisando uma string JSON e acessando seu conteúdo:
@@ -81,7 +76,6 @@ Saída de exemplo:
 Estes exemplos demonstram o básico de carregar uma string JSON, descompactar seus valores, criar um novo objeto JSON e, então, exibi-lo como uma string.
 
 ## Aprofundando
-
 A necessidade de trabalhar com JSON em C surge da adoção do JSON pela web como formato primário para intercâmbio de dados. A simplicidade e eficiência do JSON o fizeram superar rapidamente o XML, apesar da ausência inicial de suporte direto do C para manipulação de JSON. Soluções iniciais envolviam manipulação manual de strings - propensas a erros e ineficientes. Bibliotecas como `jansson` e `json-c` surgiram para preencher essa lacuna, fornecendo APIs robustas para análise, construção e serialização de JSON.
 
 Enquanto `jansson` oferece simplicidade e facilidade de uso, `json-c` pode atrair aqueles que procuram um conjunto de recursos mais amplo. No entanto, alternativas como bibliotecas de análise em C++ oferecem abstrações mais sofisticadas, graças às estruturas de dados mais complexas desse idioma e ao suporte da biblioteca padrão. No entanto, quando se trabalha em ambientes onde C é o idioma preferido ou necessário - como em sistemas embutidos ou ao interagir com bibliotecas C existentes - usar `jansson` ou `json-c` torna-se indispensável.

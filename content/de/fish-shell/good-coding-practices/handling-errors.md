@@ -11,9 +11,6 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-Fehlerbehandlung ermöglicht es Ihrem Skript, sich anmutig mit dem Unerwarteten auseinanderzusetzen. Wir tun dies, um Fehler zu verwalten, ohne das Haar unserer Benutzer ergrauen zu lassen.
-
 ## Wie geht das:
 Um Fehler in Fish zu fangen, nutzen Sie den `status` Befehl und Bedingungen. Angenommen `ping` schlägt fehl; so können Sie das erkennen:
 

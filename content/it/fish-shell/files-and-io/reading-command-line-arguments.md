@@ -10,9 +10,6 @@ title: Lettura degli argomenti della riga di comando
 weight: 23
 ---
 
-## Che cosa & Perché?
-Leggere gli argomenti da riga di comando permette ai tuoi script di essere dinamici e personalizzabili. I programmatori lo fanno per rendere gli script più versatili e interattivi.
-
 ## Come fare:
 Per accedere agli argomenti da riga di comando in Fish, usiamo `$argv`. Ecco un esempio semplice:
 

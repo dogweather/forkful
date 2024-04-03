@@ -11,9 +11,6 @@ title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---
 
-## What & Why?
-Converter strings para minúsculas significa transformar todas as letras de uma string para a sua forma minúscula. Programadores fazem isso para padronizar texto, facilitar comparações e atender a aspectos de usabilidade e acessibilidade.
-
 ## How to:
 Em Kotlin, é bem simples converter uma string para minúsculas:
 

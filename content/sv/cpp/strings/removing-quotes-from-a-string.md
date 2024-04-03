@@ -12,9 +12,6 @@ title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---
 
-## Vad & Varför?
-Att ta bort citattecken från en sträng innebär att skala bort de där irriterande dubbla eller enkla tecknen som omsluter vår text (' eller "). Programmerare gör ofta detta för att sanera input, lagra text i en databas eller förbereda strängar för vidare bearbetning utan störningen från citattecken.
-
 ## Hur man gör:
 Här är ett rakt på sak sätt att kasta ut de där citattecknen till trottoarkanten i C++:
 

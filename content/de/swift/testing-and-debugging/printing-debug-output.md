@@ -10,9 +10,6 @@ title: Debug-Ausgaben drucken
 weight: 33
 ---
 
-## Was & Warum?
-Printing debug output ist das Ausgeben von Nachrichten in der Konsole, um zu verfolgen, was im Code passiert. Programmierer verwenden es, um Fehler zu finden und zu verstehen, wie ihr Code während der Ausführung funktioniert.
-
 ## So geht's:
 Um etwas in der Konsole auszugeben, nutzen wir `print()` oder `debugPrint()`. Hier ein Beispiel:
 ```Swift

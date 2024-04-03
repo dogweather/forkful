@@ -15,12 +15,7 @@ title: Verwendung von assoziativen Arrays
 weight: 15
 ---
 
-## Was & Warum?
-
-Assoziative Arrays sind wie geheime Handschläge für Daten in Lua—anstatt dass sich nur Zahlen brav nach Index aufreihen, können deine Schlüssel alles sein, was du möchtest, wodurch das Abrufen von Daten ein Kinderspiel wird. Warum benutzen Programmierer sie? Weil man manchmal ein Stück Daten mit seinem Namen und nicht mit einer Positionsnummer aufrufen muss.
-
 ## Wie es geht:
-
 In Lua ist das Erstellen eines assoziativen Arrays (oder einer Tabelle, in Lua-Jargon) unkompliziert. Du lässt die üblichen numerischen Indizes weg zugunsten von Schlüsseln deiner Wahl. Schau dir das an:
 
 ```Lua
@@ -59,7 +54,6 @@ lieblSprache: Lua
 Der coole Teil? Du interagierst mit den Daten mithilfe von Schlüsseln, die für dich bedeutungsvoll sind, was den Code lesbarer und wartbarer macht.
 
 ## Tiefere Einblicke
-
 Als Lua auf der Bildfläche erschien, führte es Tabellen als universelle Datenstruktur ein und revolutionierte damit, wie Entwickler Daten verwalten. Anders als in manchen Sprachen, wo assoziative Arrays und Arrays getrennte Entitäten sind, dienen Luas Tabellen als beides, was die Datenstrukturlandschaft vereinfacht.
 
 Was Lua-Tabellen besonders leistungsfähig macht, ist ihre Flexibilität. Allerdings kommt diese Flexibilität mit potenziellen Leistungseinbußen, besonders bei großen Datensätzen, wo eine spezialisiertere Datenstruktur aus Gründen der Effizienz bevorzugt sein könnte.

@@ -12,12 +12,7 @@ title: Twee datums vergelijken
 weight: 27
 ---
 
-## Wat & Waarom?
-
-Het vergelijken van twee data betekent beoordelen welke eerder is, later, of als ze op hetzelfde moment plaatsvinden. Programmeurs doen dit om evenementen te sorteren, duuraties uit te rekenen, en tijdafhankelijke logica te beheren.
-
 ## Hoe te:
-
 Haskell, stilletjes bekend om zijn puurheid, vereist dat je de juiste bibliotheken gebruikt om over datums te praten. Laten we `Data.Time` gebruiken.
 
 ```haskell
@@ -44,7 +39,6 @@ main = doe
 Rechttoe rechtaan, toch? `LT` voor minder dan, `GT` voor groter dan, en `EQ` voor gelijk.
 
 ## Diepgang
-
 Vroeger was de tijdafhandeling in Haskell niet zo soepel. We hebben onze huidige gemakken te danken aan de ontwikkeling van de `Data.Time` bibliotheek door de jaren heen. Het geeft ons `UTCTime`, een blije ondubbelzinnige aanduiding van tijd.
 
 Alternatieven? Zeker. Je vindt misschien `Data.Time.Calendar` en `Data.Time.Clock` nuttig voor specifieke scenario’s. Er is ook de oude `time` bibliotheek voor degenen die nostalgisch zijn of vastzitten met verouderde code.
@@ -52,7 +46,6 @@ Alternatieven? Zeker. Je vindt misschien `Data.Time.Calendar` en `Data.Time.Cloc
 Nu, de details: Het vergelijken van datums in Haskell hangt af van `UTCTime` die een dag (`Day`) en een tijd (`DiffTime` of `NominalDiffTime`) combineert. Het is de `compare` functie die het zware werk doet, een net lid van de `Ord` klasse, waardoor we `>, <, ==` en meer kunnen gebruiken. Onthoud gewoon dat Haskell houdt van typeveiligheid. Zorg ervoor dat je altijd appels met appels vergelijkt, of in ons geval, `UTCTime` met `UTCTime`.
 
 ## Zie Ook
-
 Duik dieper of zoek hulp met deze:
 - [`Data.Time` pakket op Hackage](https://hackage.haskell.org/package/time-1.11/docs/Data-Time.html)
 - [Leer Je een Haskell voor Groot Plezier! - Voor een zachte introductie](http://learnyouahaskell.com/)

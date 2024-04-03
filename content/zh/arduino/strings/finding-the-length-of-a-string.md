@@ -15,9 +15,6 @@ title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
 weight: 7
 ---
 
-## What & Why? (是什么以及为什么？)
-在Arduino编程中，确定字符串长度就是找出字符串中有多少字符。这对于内存管理和性能优化来说非常重要。
-
 ## How to? (如何做？)
 ```Arduino
 void setup() {

@@ -10,11 +10,7 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Cosa & Perché?
-Arrotondare i numeri significa aggiustarli al numero intero più vicino o a un grado di precisione specificato. I programmatori arrotondano i numeri per semplificare, per soddisfare le aspettative umane o per adattare i dati a formati specifici—pensate ai calcoli finanziari, alle visualizzazioni grafiche o alla riduzione delle dimensioni di archiviazione.
-
 ## Come fare:
-
 ```Ruby
 # Arrotondamento di base
 puts 3.14159.round      # => 3

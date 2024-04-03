@@ -11,12 +11,7 @@ title: Werken met YAML
 weight: 41
 ---
 
-## Wat & Waarom?
-
-YAML is een gebruikersvriendelijke data-serialisatiestandaard. Programmeurs gebruiken het voor configuratiebestanden, gegevensuitwisseling tussen talen en meer omdat het eenvoudig en leesbaar is.
-
 ## Hoe:
-
 Om met YAML in TypeScript te werken, heb je een bibliotheek zoals `js-yaml` nodig. Installeer het eerst:
 
 ```bash
@@ -66,11 +61,9 @@ age: 25
 ```
 
 ## Diepgaande Duik
-
 YAML is gestart in 2001, met als doel menselijke leesbaarheid en gegevensuitwisseling tussen talen. Het is een superset van JSON. Alternatieven omvatten JSON en XML, maar de minimale syntaxis van YAML wordt vaak de voorkeur gegeven voor configuratiebestanden. Als je met YAML in TypeScript werkt, vergeet dan niet dat het niet-getypeerd is; wees voorzichtig met de ontvangen gegevens, vooral van onbetrouwbare bronnen, om beveiligingsproblemen te vermijden.
 
 ## Zie Ook
-
 - Officiële YAML-website: http://yaml.org
 - `js-yaml` GitHub repo: https://github.com/nodeca/js-yaml
 - YAML vs. JSON vergelijking: https://en.wikipedia.org/wiki/YAML#Comparison_with_JSON

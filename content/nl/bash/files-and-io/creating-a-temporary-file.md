@@ -12,9 +12,6 @@ title: Een tijdelijk bestand aanmaken
 weight: 21
 ---
 
-## Wat & Waarom?
-Een tijdelijk bestand aanmaken in Bash betekent het maken van een bestand dat jouw scripts kunnen gebruiken om gegevens kortstondig op te slaan. Programmeurs doen dit om stukjes informatie op te slaan tijdens het uitvoeren van complexe taken, om de harde schijf niet vol te laten lopen, en om conflicten tussen verschillende processen die hetzelfde bestand willen gebruiken, te minimaliseren.
-
 ## Hoe:
 Bash heeft een ingebouwd commando genaamd `mktemp` om gemakkelijk tijdelijke bestanden te maken:
 

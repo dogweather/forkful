@@ -16,12 +16,7 @@ title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---
 
-## Quoi & Pourquoi ?
-
-L'analyse (parsing) d'une date à partir d'une chaîne de caractères dans Arduino consiste à extraire et à convertir les composants de la date (année, mois, jour) d'une représentation textuelle en un format qui peut être utilisé pour la tenue du temps, les comparaisons ou les manipulations dans les sketches. Les programmeurs effectuent fréquemment cette tâche pour interagir avec des composants comme les horloges en temps réel, les enregistreurs ou pour traiter l'entrée provenant des API web et des interfaces utilisateur où les dates peuvent être présentées dans un format lisible.
-
 ## Comment faire :
-
 Approche directe sans bibliothèque tierce :
 
 ```cpp

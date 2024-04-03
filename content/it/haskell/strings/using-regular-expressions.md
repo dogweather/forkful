@@ -14,9 +14,6 @@ title: Utilizzo delle espressioni regolari
 weight: 11
 ---
 
-## Cos'è e perché?
-Le espressioni regolari nella programmazione sono sequenze di caratteri che definiscono un modello di ricerca, tipicamente impiegate per la ricerca e la manipolazione di stringhe. I programmatori Haskell utilizzano le espressioni regolari per compiti che vanno dalla semplice corrispondenza di stringhe all'elaborazione complessa di testi, sfruttando la loro efficienza e versatilità nel trattare i dati testuali.
-
 ## Come fare:
 In Haskell, le funzionalità regex non fanno parte della libreria standard, rendendo necessario l'uso di pacchetti di terze parti come `regex-base` insieme a un backend compatibile come `regex-posix` (per il supporto regex POSIX), `regex-pcre` (per regex compatibili con Perl), ecc. Ecco come puoi utilizzare questi pacchetti per lavorare con le espressioni regolari.
 
@@ -31,7 +28,6 @@ cabal install regex-pcre
 ```
 
 ### Utilizzando `regex-posix`:
-
 ```haskell
 import Text.Regex.Posix ((=~))
 
@@ -52,7 +48,6 @@ main = do
 ```
 
 ### Utilizzando `regex-pcre`:
-
 ```haskell
 import Text.Regex.PCRE ((=~))
 

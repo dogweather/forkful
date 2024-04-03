@@ -14,11 +14,8 @@ title: Usando expresiones regulares
 weight: 11
 ---
 
-## Qué y Por Qué?
-
-Las expresiones regulares (regex) en Bash te permiten buscar, manipular y manejar cadenas de caracteres y archivos basándote en patrones específicos. Los programadores utilizan regex para tareas como validación de entradas, análisis de archivos de registro y extracción de datos porque ofrece una manera flexible y poderosa de especificar patrones para necesidades complejas de procesamiento de texto.
-
 ## Cómo hacerlo:
+
 
 ### Coincidencia de Patrones Básica
 Para encontrar si una cadena coincide con un patrón, puedes usar `grep`, una utilidad de línea de comandos para buscar conjuntos de datos de texto plano por líneas que coincidan con una expresión regular:

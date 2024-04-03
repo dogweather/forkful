@@ -10,9 +10,6 @@ title: Conversione di una stringa in minuscolo
 weight: 4
 ---
 
-## Cosa & Perché?
-Convertire una stringa in minuscolo significa trasformare tutti i caratteri da maiuscolo a minuscolo. I programmatori lo fanno per uniformare i dati, per confronti di testi insensibili al maiuscolo/minuscolo o per soddisfare standard di input.
-
 ## Come fare:
 Ecco alcuni modi per convertire una stringa in minuscolo in Bash:
 

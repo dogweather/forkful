@@ -15,9 +15,6 @@ title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---
 
-## Gì & Tại Sao?
-Tìm kiếm và thay thế văn bản cho phép bạn tìm các chuỗi cụ thể và đổi chúng thành một cái gì khác. Lập trình viên sử dụng nó cho mọi thứ từ sửa lỗi chính tả đến tái cấu trúc code một cách hiệu quả.
-
 ## Làm thế nào:
 Trong Elm, bạn có thể sử dụng module `String` để thay thế các phần của một chuỗi. Hãy xem nó hoạt động như thế nào:
 

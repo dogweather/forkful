@@ -13,12 +13,7 @@ title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---
 
-## Wat & Waarom?
-
-Een HTTP-verzoek verzenden met basisauthenticatie houdt in dat je een gebruikersnaam en wachtwoord toevoegt om toegang te krijgen tot een resource op een server. Programmeurs gebruiken het omdat sommige API's en webdiensten authenticatie vereisen om ervoor te zorgen dat alleen geautoriseerde gebruikers toegang hebben tot hun gegevens.
-
 ## Hoe te:
-
 Hier is de eenvoudige manier om een HTTP-verzoek te verzenden met basisauthenticatie met cURL in PHP:
 
 ```PHP
@@ -49,7 +44,6 @@ Voorbeelduitvoer:
 ```
 
 ## Uitdieping
-
 HTTP Basisauthenticatie wordt al gebruikt sinds de vroege dagen van het web. Het is niet de meest veilige optie rond (aangezien referenties worden verzonden in base64-codering, wat gemakkelijk te decoderen is), maar het is eenvoudig te implementeren voor snelle en vuile toegangscontrole.
 
 Stel dat veiligheid een zorg is (en dat zou het moeten zijn), dan wend je je tot robuustere methoden zoals OAuth, JWT of API-sleutels. Maar, basisauthenticatie blijft deels bestaan vanwege legacy-systemen en deels voor interne systemen waar je de toegang strikt controleert.
@@ -73,7 +67,6 @@ echo $response;
 Het kiezen van het juiste hulpmiddel hangt af van de behoeften van je project en het niveau van controle en functionaliteit dat je wenst.
 
 ## Zie ook
-
 Om dieper te duiken en je kennis uit te breiden, bekijk deze:
 
 - [cURL documentatie](https://www.php.net/manual/en/book.curl.php)

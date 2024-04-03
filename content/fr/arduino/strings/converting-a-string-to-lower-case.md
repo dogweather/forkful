@@ -11,9 +11,6 @@ title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---
 
-## What & Why?
-Convertir une chaîne en minuscules, c'est transformer tous les caractères majuscules en leur équivalent minuscule. Les programmeurs le font souvent pour normaliser les entrées et faciliter les comparaisons de texte sans se soucier de la casse.
-
 ## How to:
 En Arduino, la classe `String` offre la méthode `toLowerCase()`. Voici comment l'utiliser :
 

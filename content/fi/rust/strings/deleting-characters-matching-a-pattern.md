@@ -11,9 +11,6 @@ title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---
 
-## What & Why? (Mitä & Miksi?)
-Poistamme merkkejä, jotka sopivat tiettyyn malliin, tehden merkkijonoista puhtaampia tai datasta relevantimpaa. Ohjelmoijat tekevät tämän siistimiseen ja tarpeettoman datan karsimiseen.
-
 ## How to: (Kuinka tehdä:)
 ```Rust
 fn main() {

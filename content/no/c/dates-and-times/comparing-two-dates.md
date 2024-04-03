@@ -13,12 +13,7 @@ title: Sammenligne to datoer
 weight: 27
 ---
 
-## Hva & Hvorfor?
-
-Å sammenligne to datoer i C innebærer å bestemme det kronologiske forholdet mellom dem - om én dato kommer før den andre eller om de er like. Denne evnen er avgjørende i applikasjoner som håndterer planlegging, frister eller føring av poster, da den muliggjør organisering og manipulering av tidsfølsomme data.
-
 ## Hvordan gjøres det:
-
 C har ikke en innebygd type for datoer, noe som nødvendiggjør bruken av `time.h`-biblioteket for å jobbe med datums- og tidsstrukturer. `tm`-strukturen og `difftime()`-funksjonen brukes ofte for å sammenligne datoer. Nedenfor er et eksempel som viser hvordan man sammenligner to datoer:
 
 ```c
@@ -68,7 +63,6 @@ Første dato kommer før den andre datoen.
 Dette programmet initialiserer to `tm`-strukturer med spesifikke datoer, konverterer dem til `time_t`-format ved hjelp av `mktime()`, og sammenligner dem til slutt ved hjelp av `difftime()`, som returnerer forskjellen i sekunder (som en `double`) mellom de to tidspunktene.
 
 ## Dypdykk
-
 I de tidlige dagene av C krevde dato- og tidsoperasjoner manuelle beregninger, ofte under hensyn til skuddår, det varierende antall dager i månedene, og til og med skuddsekunder. Innføringen av `time.h` i ANSI C-standarden brakte standardisering til håndtering av tid i C, noe som forenklet operasjoner med dato og tid.
 
 Bruk av `time.h` for datoomparasjon er greit, men har begrensninger. `tm`-strukturen tar ikke hensyn til tidssoner eller sommertid, og `difftime()` gir kun forskjellen i sekunder, og mangler finere granularitet for visse applikasjoner.

@@ -17,12 +17,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---
 
-## Cái gì & Tại sao?
-
-Làm việc với JSON (JavaScript Object Notation) bao gồm việc thao tác dữ liệu được cấu trúc trong một định dạng dựa trên văn bản, nhẹ, dễ đọc và viết cho con người, và dễ dàng cho máy móc phân tích và tạo. Các lập trình viên sử dụng JSON trong dự án Arduino để giao tiếp với các dịch vụ web, trao đổi dữ liệu, và cấu hình thiết bị một cách liền mạch.
-
 ## Làm thế nào:
-
 Để làm việc với JSON trong Arduino, bạn sẽ cần thư viện ArduinoJson. Cài đặt nó thông qua Quản lý Thư viện: Sketch > Include Library > Manage Libraries... sau đó tìm kiếm "ArduinoJson" và cài đặt.
 
 Dưới đây là một ví dụ đơn giản để phân tích JSON:
@@ -97,11 +92,9 @@ Kết quả mẫu:
 ```
 
 ## Sâu hơn
-
 Thư viện ArduinoJson, bởi Benoit Blanchon, trở thành tiêu chuẩn de facto cho việc thao tác JSON trong Arduino. JSON trở nên phổ biến vì sự đơn giản so với XML, được sử dụng rộng rãi trước đó. Các lựa chọn thay thế như MsgPack tồn tại nhưng JSON vẫn được yêu thích vì độ dễ đọc văn bản và sử dụng rộng rãi. Về cách thực hiện, hãy đảm bảo bạn cấp phát đủ bộ nhớ cho `DynamicJsonDocument` để tránh tràn và sử dụng `StaticJsonDocument` cho các đối tượng JSON tĩnh hoặc có kích thước cố định.
 
 ## Xem thêm
-
 - Tài liệu Thư viện ArduinoJson: https://arduinojson.org/
 - Website Chính thức của JSON: https://www.json.org/json-en.html
 - Diễn đàn Arduino để Thảo luận: https://forum.arduino.cc/

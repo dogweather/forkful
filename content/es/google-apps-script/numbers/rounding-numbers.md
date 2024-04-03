@@ -14,12 +14,7 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## Qué y Por Qué?
-
-Redondear números, un concepto fundamental en la programación de computadoras, involucra ajustar un número a su entero más cercano o a un número especificado de decimales. Los programadores a menudo realizan redondeos para simplificar números para la legibilidad humana o para cumplir con necesidades de cálculo específicas, asegurando precisión y reduciendo la carga computacional.
-
 ## Cómo:
-
 Google Apps Script, al ser un lenguaje basado en JavaScript, ofrece métodos estándar para redondear números. Aquí hay una desglose de tres técnicas comúnmente usadas:
 
 ### Math.round()
@@ -61,7 +56,6 @@ Logger.log(preciseRound); // Salidas: 2.57
 ```
 
 ## Inmersión Profunda
-
 Redondear números en Google Apps Script no se desvía mucho de cómo se hace en otros entornos de JavaScript. Sin embargo, entender las diferencias en los métodos de redondeo y el potencial para problemas de aritmética de punto flotante es crucial. Por ejemplo, debido a la forma en que las computadoras representan los flotantes, no todas las fracciones decimales pueden representarse con precisión perfecta, llevando a veces a resultados de redondeo inesperados.
 
 Históricamente, JavaScript (y por extensión, Google Apps Script) maneja esto al conformarse con el estándar IEEE 754, utilizado por muchos otros lenguajes de programación para la aritmética de punto flotante. Este estándar define cómo se redondean los números, asegurando consistencia a través de varias plataformas y lenguajes.

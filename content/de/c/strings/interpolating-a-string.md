@@ -12,12 +12,7 @@ title: Interpolation eines Strings
 weight: 8
 ---
 
-## Was & Warum?
-
-String-Interpolation, in der Programmierung, beinhaltet den Aufbau von Zeichenketten, indem Ausdrücke innerhalb von wörtlichen Zeichenketten eingebettet werden. Programmierer tun dies, um informative Nachrichten, dynamische Abfragen zu erstellen oder um effizient und sauber jede Zeichenkette mit variablem Inhalt zu konstruieren, oft für Benutzerausgaben oder Logging-Zwecke.
-
 ## Wie man es macht:
-
 C unterstützt im Gegensatz zu einigen Hochsprachen die String-Interpolation nicht direkt in seiner Syntax. Stattdessen wird der Aufbau von Zeichenketten mit variablem Inhalt typischerweise mit der Funktion `printf` oder ihren Varianten für die Ausgabe und `sprintf` für die Zeichenkettenerstellung erreicht. Hier ein Blick darauf, wie man in C dynamisch Zeichenketten konstruiert:
 
 ```c
@@ -46,7 +41,6 @@ Name: Jane Doe, Alter: 28
 Diese Snippets zeigen die traditionelle Methode, um variable Daten in Zeichenketten in C einzubauen, was Flexibilität beim Konstruieren detaillierter Zeichenketten bietet.
 
 ## Vertiefung
-
 Vor dem Aufkommen modernerer Programmiersprachen mit eingebauten String-Interpolationsfunktionen mussten C-Entwickler sich auf Funktionen wie `sprintf()`, `snprintf()` und ihre Varianten verlassen, um Zeichenketten mit variablem Inhalt zu komponieren. Dieser Ansatz ist zwar effektiv, birgt jedoch potenzielle Risiken wie Pufferüberläufe, wenn er nicht sorgfältig verwaltet wird, insbesondere bei `sprintf()`.
 
 Mit Blick auf Alternativen haben Sprachen wie Python und JavaScript intuitivere String-Interpolationsfunktionen eingeführt, wie f-Strings (formatierte Zeichenkettenliterale) und Template-Literale bzw. Diese Funktionen ermöglichen es Entwicklern, Ausdrücke direkt in den Zeichenkettenliteralen einzubetten, was den Code lesbbarer und prägnanter macht.

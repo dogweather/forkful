@@ -9,9 +9,6 @@ title: Extracting substrings
 weight: 6
 ---
 
-## What & Why?
-Extracting substrings means pulling out specific parts from a string. Programmers do it to manipulate and analyze text data, or simply to display only relevant pieces of information to users.
-
 ## How to:
 In Elixir, you can extract substrings using the `String` module. Here's how:
 

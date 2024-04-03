@@ -10,9 +10,6 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## What & Why?
-Lire des arguments de ligne de commande, c'est récupérer les données fournies à un script lors de son exécution. Les programmeurs le font pour personnaliser le comportement d'un script sans le modifier directement.
-
 ## How to:
 PowerShell permet de jouer avec les arguments de commande de manière assez directe. Voici comment on s'y prend. 
 

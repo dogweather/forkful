@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---
 
-## Mikä & Miksi?
-HTTP-pyynnön lähettäminen perusautentikaatiolla tarkoittaa verkkoresurssin pyytämistä käyttäen käyttäjänimeä ja salasanaa. Ohjelmoijat tekevät tämän päästäkseen käsiksi suojattuihin dataresursseihin.
-
 ## Miten:
 Clojurella HTTP-pyyntöihin lähetetään usein käyttäen `clj-http` kirjastoa. Alla on esimerkki perusautentikaation lisäämisestä.
 

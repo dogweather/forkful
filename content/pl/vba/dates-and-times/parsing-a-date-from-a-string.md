@@ -13,12 +13,7 @@ title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
 weight: 30
 ---
 
-## Co i dlaczego?
-
-Parsowanie daty z ciągu znaków w Visual Basic for Applications (VBA) polega na konwersji tekstu, który reprezentuje datę, na typ danych daty. Programiści robią to, aby skuteczniej manipulować datami w swoich aplikacjach, na przykład w celu porównań, obliczeń lub formatowania.
-
 ## Jak to zrobić:
-
 VBA oferuje prosty sposób na przekształcenie ciągu znaków na datę za pomocą funkcji `CDate` lub funkcji `DateValue`. Jednak kluczowe jest, aby ciąg znaków był w rozpoznawalnym formacie daty.
 
 Oto podstawowy przykład użycia `CDate`:
@@ -64,7 +59,6 @@ Przetworzona Data za pomocą DateValue: 4/1/2023
 Pamiętaj, że sukces parsowania zależy od tego, czy format daty w ciągu znaków odpowiada ustawieniom systemowym lub aplikacji.
 
 ## Szczegółowa analiza
-
 Wewnętrznie, gdy VBA parsuje ciąg znaków na datę, korzysta z regionalnych ustawień systemu operacyjnego Windows, aby zinterpretować format daty. Jest to kluczowe do zrozumienia, ponieważ ciąg znaków reprezentujący datę, który bez problemu zostanie przetworzony na jednym systemie, może spowodować błąd na innym, jeśli używają one różnych ustawień daty/czasu.
 
 Historycznie, obsługa dat była częstym źródłem błędów w aplikacjach, szczególnie tych, które są używane międzynarodowo. Ta zależność od regionalnych ustawień w VBA jest powodem, dla którego niektórzy mogą rozważać alternatywy, takie jak format ISO 8601 (np. "RRRR-MM-DD") dla jednoznacznej reprezentacji i parsowania daty na różnych systemach. Niestety, VBA nie obsługuje rodzimie formatu ISO 8601, a manualne parsowanie byłoby wymagane dla ścisłego przestrzegania.

@@ -10,12 +10,7 @@ title: Starting a new project
 weight: 1
 ---
 
-## What & Why?
-
-Starting a new project in Go involves setting up a workspace and initializing it with the necessary Go modules. Programmers do this to organize code, manage dependencies effectively, and facilitate build processes. It's foundational to creating scalable and maintainable software in Go.
-
 ## How to:
-
 First, ensure you have Go installed by running `go version` in your terminal. You should see the version of Go you've installed as output. Next, let's start a new project. Navigate to your workspace and run:
 
 ```shell
@@ -70,7 +65,6 @@ Hello, World!
 Congratulations! You've just started a new Go project and ran your first Go program.
 
 ## Deep Dive
-
 The initiative to introduce modules as the standard for dependency management in Go was a significant shift in the Go ecosystem, officially adopted in Go 1.11. Before modules, Go developers relied on the GOPATH environment variable to manage dependencies, which was less intuitive and often led to the infamous "dependency hell."
 
 Modules provide an encapsulated way to manage project dependencies, versioning, and are a move towards making Go projects more self-contained and portable. Each module specifies its dependencies which Go tracks in the `go.mod` file, simplifying dependency management across different environments and development stages.

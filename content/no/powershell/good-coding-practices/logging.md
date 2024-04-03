@@ -11,9 +11,6 @@ title: "Loggf\xF8ring"
 weight: 17
 ---
 
-## Hva & Hvorfor?
-Logging er i bunn og grunn å etterlate et spor av brødsmuler gjennom koden din - det er hvordan du holder oversikten over hva som skjer når skriptet kjører i det fri. Programmerere logger for å feilsøke, spore appatferd, overvåke ytelse, og holde et øye med eventuelle misligheter.
-
 ## Hvordan gjøre det:
 Her er det grunnleggende for å krydre skriptene dine med enkel logging:
 

@@ -12,12 +12,7 @@ title: Editing files in-place with CLI one-liners
 weight: 32
 ---
 
-## What & Why?
-
-Editing files in-place with CLI (Command Line Interface) one-liners in Ruby allows you to modify files directly from your terminal, without needing to open them in an editor, make changes, and save them back. This technique is incredibly useful for quick modifications, batch updates, or automating repetitive tasks, saving both time and effort.
-
 ## How to:
-
 Ruby provides a straightforward way to edit files in-place right from the command line. Using Ruby's `-i` switch, you can tell Ruby to operate directly on the provided file(s). Let's play with a few examples to see how this works in real life. Imagine you have a file `greetings.txt` with the following content:
 
 ```
@@ -49,7 +44,6 @@ ruby -i.bak -pe "gsub(/Hello/, 'Bye')" greetings.txt
 Now, along with your edited `greetings.txt`, you'll find a `greetings.txt.bak` in the same directory, holding the original content.
 
 ## Deep Dive
-
 The magic of in-place file editing in Ruby stems from its combination of Perl-like text processing capabilities and Ruby's own syntactic elegance. Historically, Perl was the go-to language for quick one-liner scripting, especially for text manipulation. Ruby adopted this paradigm, allowing for powerful command line scripting capabilities.
 
 Alternatives for in-place editing exist in other languages, such as Perl itself and sed, a stream editor in Unix systems. Each has its strengths—Perl is known for its text processing prowess while sed is unmatched in its simplicity for stream editing tasks. However, Ruby offers a balance, providing robust text manipulation with a more readable and user-friendly syntax, especially for those already familiar with Ruby.

@@ -9,9 +9,6 @@ title: Trovare la lunghezza di una stringa
 weight: 7
 ---
 
-## What & Why?
-Sapere la lunghezza di una stringa significa contarne i caratteri. I programmatori lo fanno per validazione, manipolazione o semplicemente per avere informazioni sulla stringa.
-
 ## How to:
 In Rust, ottenere la lunghezza di una stringa è semplice grazie al metodo `.len()`:
 

@@ -13,9 +13,6 @@ title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---
 
-## Wat & Waarom?
-Een HTTP-verzoek met basisauthenticatie verzenden betekent dat je programma aanklopt bij de deur van een webdienst, waarbij een gebruikersnaam en wachtwoord worden doorgegeven voor toegang. Programmeurs doen dit om toegang te krijgen tot API's die niet toegankelijk zijn voor het grote publiek of om acties namens een gebruiker uit te voeren.
-
 ## Hoe te:
 Je hebt het pakket `http-conduit` nodig voor HTTP-acties en `base64-bytestring` voor het coderen van referenties. Importeer ze en gebruik `applyBasicAuth` om referenties aan je verzoek toe te voegen.
 

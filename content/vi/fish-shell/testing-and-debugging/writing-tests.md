@@ -16,9 +16,6 @@ title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---
 
-## Cái gì & Tại sao?
-Viết kiểm thử là tạo ra những bài kiểm tra nhỏ để đảm bảo rằng mã của bạn hoạt động như mong đợi. Lập trình viên viết kiểm thử để bắt lỗi sớm, tiết kiệm thời gian và giữ cho mã nguồn đáng tin cậy khi có thay đổi.
-
 ## Làm thế nào:
 Fish không có một khung kiểm thử tích hợp sẵn, nhưng bạn có thể dùng `fisher` để cài đặt một khung kiểm thử như `Fishtape`. Dưới đây là một bài kiểm thử đơn giản với `Fishtape`:
 

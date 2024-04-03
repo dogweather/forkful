@@ -10,9 +10,6 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-Writing a text file in Rust involves creating, writing to, and potentially appending data to a file on the file system. Programmers perform this operation to persist data, like application logs, configuration, or user-generated content, ensuring data durability beyond the scope of the program execution.
-
 ## How to:
 Rust's standard library provides robust tools for file manipulation, encapsulated primarily within the `std::fs` and `std::io` modules. Here's a basic example to create and write to a text file:
 

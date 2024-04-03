@@ -10,9 +10,6 @@ title: Sending an HTTP request with basic authentication
 weight: 45
 ---
 
-## What & Why?
-Sending an HTTP request with basic authentication means your program knocks on a web service's door, passing a username and password for entry. Programmers do it to access APIs that are off-limits to the general public or to perform actions on behalf of a user.
-
 ## How to:
 You’ll need the `http-conduit` package for HTTP actions and `base64-bytestring` for encoding credentials. Import them and use `applyBasicAuth` to add credentials to your request.
 

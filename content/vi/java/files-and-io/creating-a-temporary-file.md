@@ -15,12 +15,7 @@ title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Cái gì & Tại sao?
-
-Tạo một tệp tạm thời có nghĩa là tạo ra một tệp chỉ cần thiết trong một khoảng thời gian ngắn, sau đó được xóa đi. Các lập trình viên làm điều này cho việc lưu trữ trung gian, như khi bạn cần dự trữ dữ liệu giữa các bước trong một quy trình hoặc giữ thông tin nhạy cảm ra khỏi bộ nhớ lâu dài.
-
 ## Cách thực hiện:
-
 Trong Java, gói `java.nio.file` là người bạn của bạn đối với các tệp tạm thời. Hãy xem đoạn mã này:
 
 ```java
@@ -62,7 +57,6 @@ Tệp tạm thời đã được xóa.
 Tuyệt, đúng không?
 
 ## Sâu hơn
-
 Tệp tạm thời là một phần của bộ công cụ của chúng ta từ lâu, từ thời kì bình minh của công nghệ máy tính. Chúng là lựa chọn tốt nhất của bạn khi bạn cần xử lý dữ liệu không cần tồn tại lâu dài.
 
 Java hỗ trợ bạn với lớp `Files` từ Java 7, làm cho việc xử lý tệp tạm thời trở nên cực kì đơn giản. Trước đó, bạn phải xoay sở với các đối tượng `File` và hy vọng mọi thứ diễn ra tốt đẹp (nhưng đừng quay trở lại những ngày tối tăm đó, hãy ôm lấy API mới).
@@ -72,7 +66,6 @@ Phần hay về phương thức `createTempFile` là bạn có thể chỉ đị
 Có cách thay thế không? Chắc chắn, bạn có thể lựa chọn cách làm cũ và xử lý mọi thao tác tệp một cách thủ công, hoặc sử dụng một phương thức đặc trưng cho hệ điều hành. Tuy nhiên, cách làm của Java an toàn và dễ dàng di chuyển hơn giữa các nền tảng.
 
 ## Xem thêm
-
 - [Tài liệu về Lớp Đường dẫn Java](https://docs.oracle.com/javase/10/docs/api/java/nio/file/Path.html)
 - [Tài liệu về Lớp Tệp Java](https://docs.oracle.com/javase/10/docs/api/java/nio/file/Files.html)
 - [Hướng dẫn của Oracle về I/O Tệp](https://docs.oracle.com/javase/tutorial/essential/io/file.html)

@@ -11,9 +11,6 @@ title: Registro de Actividades
 weight: 17
 ---
 
-## ¿Qué y Por Qué?
-El registro (logging) es esencialmente el proceso de grabar eventos que ocurren dentro de una aplicación de software. Los programadores registran estos eventos para capturar información en tiempo de ejecución, depurar problemas, monitorear el comportamiento del sistema y crear un registro de auditoría para fines de seguridad y cumplimiento.
-
 ## Cómo hacerlo:
 Aquí hay una manera simple de comenzar con el registro en Java utilizando el paquete integrado `java.util.logging`.
 

@@ -11,9 +11,6 @@ title: Organisering av kode i funksjoner
 weight: 18
 ---
 
-## Hva & Hvorfor?
-Å organisere kode i funksjoner handler om å dele opp koden din i gjenbrukbare blokker med definerte formål. Vi gjør dette for å holde ting ryddig, forhindre redundans, og gjøre feilsøking til en lek.
-
 ## Hvordan:
 Tenk deg at vi har repetitiv kode for å hilse på brukere. I stedet vil vi pakke det inn i en funksjon som `greet_user`:
 

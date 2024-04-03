@@ -14,9 +14,6 @@ title: Sette stor bokstav i en streng
 weight: 2
 ---
 
-## Hva & Hvorfor?
-Å kapitalisere en streng innebærer å endre det første tegnet i hvert ord i en setning til stor bokstav, samtidig som resten sikres å være små bokstaver. Denne teknikken brukes ofte for å formatere tekst til et mer profesjonelt eller leselig resultat, slik som forberedelse av titler eller brukerinndata for visning.
-
 ## Hvordan:
 Lua har ikke en innebygd funksjon for å kapitalisere strenger, men du kan enkelt utføre denne oppgaven ved hjelp av grunnleggende strengmanipuleringsfunksjoner. Her er en enkel funksjon for å kapitalisere det første bokstaven i et enkelt ord:
 

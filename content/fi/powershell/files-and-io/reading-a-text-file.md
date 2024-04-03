@@ -10,9 +10,6 @@ title: Tekstitiedoston lukeminen
 weight: 22
 ---
 
-## What & Why? (Mitä ja Miksi?)
-Tekstitiedoston lukeminen tarkoittaa tiedon hakemista tavallisen tekstimuotoisen tiedoston sisältä. Ohjelmoijat lukevat tekstitiedostoja, koska monet sovellukset tallentavat dataa näihin tiedostoihin, ja niitä on helppo muokata sekä lukea ilman erikoisohjelmia.
-
 ## How to: (Kuinka tehdään:)
 PowerShellissa tekstitiedoston lukeminen on suoraviivaista. Tässä pari esimerkkiä:
 

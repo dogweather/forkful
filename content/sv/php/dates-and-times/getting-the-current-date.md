@@ -14,10 +14,9 @@ title: "F\xE5 det aktuella datumet"
 weight: 29
 ---
 
-## Vad & Varför?
-Att få det aktuella datumet i PHP är en grundläggande uppgift som gör det möjligt för dig att hämta och manipulera systemets datum och tid. Detta är avgörande för funktioner som loggning, tidstämpling av inlägg, schemaläggning av händelser eller utförande av tidskänsliga operationer i dina applikationer.
-
 ## Hur gör man:
+
+
 ### Inbyggd PHP
 PHP:s inbyggda `date()`-funktion är det mest direkta sättet att få det aktuella datumet. Du kan formatera datumet på olika sätt genom att specificera formatparametern.
 

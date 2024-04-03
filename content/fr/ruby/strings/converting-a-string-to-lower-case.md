@@ -11,9 +11,6 @@ title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---
 
-## What & Why?
-Convertir une chaîne de caractères en minuscules, c'est transformer tous ses caractères alphabétiques en leur équivalent minuscule. Les programmeurs le font pour uniformiser les données textuelles avant comparaison ou traitement, évitant ainsi les erreurs dues à la casse.
-
 ## How to:
 ```Ruby
 # Exemple de base

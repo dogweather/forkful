@@ -14,12 +14,7 @@ title: Verifica se una directory esiste
 weight: 20
 ---
 
-## Cosa & Perché?
-
-Verificare se una cartella esiste è un compito fondamentale nella programmazione PHP, poiché permette di verificare la presenza di una directory prima di effettuare operazioni quali leggere o scrivere file al suo interno. Questa operazione aiuta a prevenire errori che potrebbero sorgere tentando di accedere a directory inesistenti ed è essenziale per la gestione dinamica dei file all'interno delle vostre applicazioni.
-
 ## Come fare:
-
 Il modo nativo per verificare se una directory esiste in PHP è utilizzando la funzione `is_dir()`. Questa funzione prende un percorso di file come argomento e ritorna `true` se la directory esiste ed è una directory, o `false` in caso contrario.
 
 ```php

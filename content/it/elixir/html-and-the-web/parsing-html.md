@@ -10,9 +10,6 @@ title: Analisi dell'HTML
 weight: 43
 ---
 
-## What & Why? (Cosa & Perché?)
-Il parsing HTML consiste nel trasformare il codice HTML in una struttura dati manipolabile, come mappe o liste. I programmatori lo fanno per estrarre informazioni, manipolare e interagire con i contenuti web.
-
 ## How to: (Come fare:)
 ```elixir
 # Installa Floki con: mix deps.get {:floki, "~> 0.30.0"}

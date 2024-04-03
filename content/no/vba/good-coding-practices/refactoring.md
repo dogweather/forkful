@@ -14,12 +14,7 @@ title: Refaktorering
 weight: 19
 ---
 
-## Hva & Hvorfor?
-
-Refaktorering i programmering innebærer å endre strukturen på koden uten å endre dens oppførsel, for å forbedre aspekter som lesbarhet, vedlikeholdbarhet eller ytelse. Programmerere refaktorerer for å gjøre koden mer effektiv, lettere å forstå, enklere å modifisere i fremtiden, og for å redusere sannsynligheten for feil.
-
 ## Hvordan:
-
 Ta i betraktning et grunnleggende eksempel i Visual Basic for Applications (VBA) hvor vi har en subrutine som skriver ut detaljer om en ansatt. Opprinnelig er koden rotete, utfordrende å vedlikeholde eller utvide.
 
 ```vb
@@ -80,7 +75,6 @@ End Sub
 Disse trinnene omdanner rotet kode til modulær, strukturert kode, noe som betydelig forbedrer lesbarheten og vedlikeholdbarheten.
 
 ## Dybde
-
 Konseptet med refaktorering er like gammelt som programmering selv, men det var Martin Fowlers bok "Refaktorering: Å forbedre designet av eksisterende kode" som brakte det inn i hovedstrømmen, og understreket dets viktighet i programvareutviklingsprosessen. I Visual Basic for Applications kan refaktorering være noe mer utfordrende på grunn av mangelen på innebygde verktøy som finnes i mer moderne integrerte utviklingsmiljøer (IDEer) som støtter automatisert refaktorering.
 
 Dette reduserer imidlertid ikke dens viktighet. Selv i VBA kan anvendelsen av grunnleggende refaktoreringsteknikker manuelt, betydelig forbedre kodebasen, gjøre den renere og mer effektiv. Selv om VBA kanskje ikke har de samme moderne bekvemmelighetene, forblir prinsippene for god kodeutforming universelle. Utviklere som kommer fra andre språk kan finne den manuelle prosessen kjedelig, men vil utvilsomt sette pris på fordelene med å investere tid i å forbedre kodekvaliteten fra starten av.

@@ -9,9 +9,6 @@ title: Concatenating strings
 weight: 3
 ---
 
-## What & Why?
-String concatenation is sticking strings end-to-end to make a new one. We do it to construct messages, generate output, or work with text dynamically.
-
 ## How to:
 Rust gives you a few ways to piece texts together. Let’s dig in.
 

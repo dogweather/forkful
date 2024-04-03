@@ -15,9 +15,6 @@ title: Schreiben auf Standardfehler
 weight: 25
 ---
 
-## Was & Warum?
-Das Schreiben auf die Standardfehlerausgabe (stderr) in C# beinhaltet die Weiterleitung von Fehlermeldungen und Diagnosen, getrennt von der regulären Ausgabe (stdout), um Benutzern und Entwicklern zu helfen, zwischen normaler Programmausgabe und Fehlerbenachrichtigungen zu unterscheiden. Programmierer tun dies, um das Debugging und Logging effizienter zu machen, was einen reibungsloseren Betrieb und Wartung von Anwendungen ermöglicht.
-
 ## Wie:
 In C# kann das Schreiben auf die Standardfehlerausgabe mittels des `Console.Error`-Streams erreicht werden. Dieser Stream wird speziell für Fehlermeldungen und Diagnosen verwendet. Hier ist ein einfaches Beispiel:
 

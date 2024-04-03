@@ -10,12 +10,7 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-
-Parsing a date from a string in Go involves converting the date represented as text into a more usable format (e.g., `time.Time`). Programmers perform this task to handle date and time data more accurately in applications, especially when dealing with user input, APIs, or storage systems where dates are often represented as strings.
-
 ## How to:
-
 Go provides robust support for parsing dates and times through the `time` package. The key is understanding Go's reference date format: `Mon Jan 2 15:04:05 MST 2006`, which you use to tell Go how to interpret the incoming string. Here’s a quick example to get you started:
 
 ```go
@@ -56,7 +51,6 @@ Parsed Date: 2023-04-12 14:45:00 +0000 UTC
 Note how the `layout` string uses the reference date's values to specify the format of the input string. Adjust the `layout` to match the format of your input dates.
 
 ## Deep Dive
-
 The design of Go's date and time parsing is unique, utilizing a specific reference date (`Mon Jan 2 15:04:05 MST 2006`). This approach, instead of using more conventional format specifiers (like `YYYY` for year), was chosen for readability and ease of use, leveraging a more example-based format. 
 
 While this can initially seem unusual to programmers accustomed to other languages, many find it more intuitive after a brief adjustment period. For applications requiring more complex date manipulation or formats not directly supported by Go's `time` package, third-party libraries such as `github.com/jinzhu/now` can offer additional functionality. However, for the majority of standard applications, Go's built-in capabilities are robust, performant, and idiomatic, embodying the Go philosophy of simplicity and clarity.

@@ -11,9 +11,6 @@ title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---
 
-## Co i dlaczego?
-REPL (Read-Eval-Print-Loop, pętla czytaj-wykonuj-wypisz) to proste środowisko programistyczne interaktywne. Programiści używają go do eksperymentowania z językiem w czasie rzeczywistym, szybkich zadań, lub do zrozumienia nowych koncepcji bez konieczności tworzenia pełnoprawnych aplikacji.
-
 ## Jak to zrobić:
 C++ nie posiada wbudowanego REPL, ale narzędzia takie jak Cling oferują tę możliwość. Oto jak używać Clinga do obliczenia sumy dwóch liczb:
 

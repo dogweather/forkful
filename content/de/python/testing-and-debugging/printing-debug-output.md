@@ -10,9 +10,6 @@ title: Debug-Ausgaben drucken
 weight: 33
 ---
 
-## Was & Warum?
-Druckausgabe zur Fehlersuche (engl. "debug output") wirft einen Blick unter die Motorhaube deines Codes. Programmierer nutzen sie, um zu verstehen, was im Code passiert, besonders wenn etwas unerwartet schief läuft.
-
 ## How to:
 Du willst wissen, wie dein Code tickt? `print()` ist dein Freund. Platziere es neben Variablen und sieh dir die Magie an:
 

@@ -13,9 +13,6 @@ title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---
 
-## Vad & Varför?
-Att tolka ett datum från en sträng innebär att konvertera textuell datum- och tidsinformation till ett datetime-objekt eller motsvarande strukturerat format. Detta utförs vanligtvis för att möjliggöra datumaritmetik, jämförelser och formateringsoperationer på ett sätt som är språk- och regionsagnostiskt. Programmerare gör det för att effektivt hantera och manipulera tidsrelaterade data som extraherats från loggar, användarinmatningar eller externa källor.
-
 ## Hur:
 Pythons standardbibliotek tillhandahåller `datetime`-modulen, som inkluderar metoden `strptime` för detta ändamål. Metoden kräver två argument: datumsträngen och en formatdirektiv som specificerar mönstret för inmatningssträngen.
 

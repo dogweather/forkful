@@ -11,9 +11,6 @@ title: "Att h\xE4mta aktuellt datum"
 weight: 29
 ---
 
-## Vad & Varför?
-Att få tag på det aktuella datumet innebär att vi hittar dagens datum i realtid. Programmerare gör detta för funktioner som loggar, tidsstämplar och datumvalidering.
-
 ## Hur man gör:
 ```Elm
 import Time

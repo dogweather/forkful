@@ -11,9 +11,6 @@ title: Journalisation
 weight: 17
 ---
 
-## Quoi & Pourquoi ?
-La journalisation est le processus d'enregistrement des comportements, des erreurs et d'autres informations importantes d'une application dans un support persistant, comme un fichier ou une base de données. Les programmeurs le font pour suivre la santé et les performances de leurs applications, pour déboguer des problèmes et pour garder un œil sur ce qui se passe sous le capot dans les environnements de production.
-
 ## Comment faire :
 En Swift, vous pouvez écrire des logs dans la console avec des instructions `print` ou bien utiliser l'API `os.log` plus flexible, qui se connecte au système de journalisation unifié sur les plateformes Apple.
 

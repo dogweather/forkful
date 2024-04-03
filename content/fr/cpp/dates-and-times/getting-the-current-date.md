@@ -13,9 +13,6 @@ title: Obtenir la date actuelle
 weight: 29
 ---
 
-## Quoi & Pourquoi ?
-La récupération de la date actuelle en C++ est une tâche fondamentale pour les programmes qui doivent traiter ou afficher des dates basées sur l'horloge du système. C'est essentiel pour la journalisation, la datation, la planification de tâches et toute fonctionnalité qui repose sur des dates et des heures.
-
 ## Comment faire :
 C++ propose plusieurs moyens d'obtenir la date actuelle, y compris la bibliothèque standard C++ et des bibliothèques tierces comme Boost. Les exemples suivants démontrent comment accomplir cette tâche.
 

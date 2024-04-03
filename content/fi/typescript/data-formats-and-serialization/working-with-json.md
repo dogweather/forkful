@@ -14,11 +14,8 @@ title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---
 
-## Mikä & Miksi?
-
-Työskentely JSONin (JavaScript Object Notation) kanssa sisältää JSON-datan jäsentämistä edestakaisin TypeScriptissä käytettävään muotoon. Ohjelmoijat tekevät tämän, jotta he voivat helposti käsitellä, tallentaa tai lähettää rakenteellista dataa, sillä JSON on kevyt, tekstipohjainen ja helposti luettavissa sekä ihmisten että koneiden toimesta.
-
 ## Kuinka:
+
 
 ### JSONin jäsentäminen TypeScript-objektiksi
 JSON-merkkijonon muuntamiseksi TypeScript-objektiksi käytät `JSON.parse()`-metodia. Tämä on hyödyllistä, kun vastaanotat JSON-dataa verkkopalvelimelta tai luet JSON-tiedostoa.

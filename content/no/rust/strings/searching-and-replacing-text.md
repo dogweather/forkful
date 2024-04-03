@@ -11,9 +11,6 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## Hva & Hvorfor?
-Å søke og erstatte tekst lar oss finne strenger i data og bytte dem ut med nye strenger. Programmererne trenger dette for å oppdatere data, korrigere feil, eller endre formatet på informasjon.
-
 ## Hvordan:
 ```Rust
 fn main() {

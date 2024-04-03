@@ -10,9 +10,6 @@ title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---
 
-## Hva og hvorfor?
-Komplekse tall har en reell del og en imaginær del, vanligvis skrevet som `a + bi`. De er avgjørende for noen matte-tunge Arduino-prosjekter som involverer signalbehandling, elektroteknikk, eller ethvert annet domene der fenomener er best modellert i et plan.
-
 ## Hvordan:
 ```Arduino
 #include <Complex.h>

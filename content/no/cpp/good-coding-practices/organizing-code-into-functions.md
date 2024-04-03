@@ -11,9 +11,6 @@ title: Organisering av kode i funksjoner
 weight: 18
 ---
 
-## Hva & Hvorfor?
-Å dele opp koden i funksjoner betyr at du hugger koden din opp i mindre, gjenbrukbare deler. Vi gjør det for å unngå gjentagelser, gjøre koden vår lesbar, og forenkle feilsøking og testing. Godt organiserte funksjoner kan være som å ha en boks med pent merkede verktøy, klar til bruk og deling.
-
 ## Hvordan:
 La oss ta en vanlig oppgave: å beregne arealet av en sirkel. I stedet for å skrive samme formel hver gang, kapsler vi den inn i en funksjon.
 

@@ -11,12 +11,7 @@ title: Checking if a directory exists
 weight: 20
 ---
 
-## What & Why?
-
-In Bash programming, checking if a directory exists is an essential control mechanism used to verify the presence of a directory before performing file operations. This check is crucial to avoid errors such as trying to access or modify directories that do not exist, ensuring smoother and more predictable script execution.
-
 ## How to:
-
 At its core, Bash allows you to check for the existence of a directory using conditional statements and the `-d` operator. Below is a straightforward example that demonstrates how to perform this check.
 
 ```bash

@@ -11,9 +11,6 @@ title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---
 
-## What & Why?
-Att konvertera en sträng till gemener innebär att omvandla alla bokstäver i strängen till små bokstäver. Programmerare använder det för enhetlighet i textbehandling, sökningar eller för att standardisera användarinput.
-
 ## How to:
 I Elm använder vi `String.toLower` för att konvertera strängar till gemener.
 

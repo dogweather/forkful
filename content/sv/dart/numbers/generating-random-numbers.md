@@ -13,11 +13,7 @@ title: "Generera slumpm\xE4ssiga nummer"
 weight: 12
 ---
 
-## Vad & Varför?
-Att generera slumpmässiga tal i Dart involverar att skapa numeriska värden som är oförutsägbara och skiljer sig åt vid varje körning. Programmerare utnyttjar denna funktionalitet av olika anledningar, från att simulera verkliga scenarier i testmiljöer till att möjliggöra spelmekanik och säkerställa säkerhet genom slumpmässighet i kryptografiska operationer.
-
 ## Hur man gör:
-
 Darts kärnbibliotek inkluderar stöd för att generera slumpmässiga tal med klassen `Random` som finns i `dart:math`. Här är ett grundläggande exempel:
 
 ```dart

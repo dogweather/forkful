@@ -10,12 +10,7 @@ title: Comparando duas datas
 weight: 27
 ---
 
-## O que é & Por quê?
-
-Comparar duas datas é verificar as suas diferenças, seja em dias, meses, anos ou segundos. Programadores fazem isso para realizar tarefas como validar prazos, organizar eventos, ou simplesmente para medir períodos de tempo.
-
 ## Como Fazer:
-
 ```Python
 from datetime import datetime
 
@@ -41,7 +36,6 @@ print(f"A diferença é de {diferenca.days} dias.")
 ```
 
 ## Mergulho Profundo:
-
 Comparar datas é uma necessidade que data desde que o conceito de tempo foi formalizado. Na programação, precisamos disto frequentemente para manipular cronogramas e verificar condições temporais.
 
 Historicamente, no Python, antes do módulo `datetime`, os programadores tinham que confiar nas funções do módulo `time` que são menos intuitivas para manipular objetos de data e hora.
@@ -51,7 +45,6 @@ Alternativamente, podemos usar bibliotecas de terceiros como o `arrow` ou `dateu
 Quanto aos detalhes de implementação, o módulo `datetime` fornece classes para manipular datas e horários de forma orientada a objetos. Ao comparar objetos `datetime`, estamos essencialmente comparando os instantes de tempo que representam, o que é feito diretamente pelo Python através de operadores de comparação.
 
 ## Veja Também:
-
 - Documentação oficial do Python para o módulo `datetime`: https://docs.python.org/3/library/datetime.html
 - PyPI page for `arrow`: https://pypi.org/project/arrow/
 - PyPI page for `python-dateutil`: https://pypi.org/project/python-dateutil/

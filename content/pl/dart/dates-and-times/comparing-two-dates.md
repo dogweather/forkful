@@ -15,9 +15,6 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## Co i dlaczego?
-Porównywanie dwóch dat w Dart polega na ocenie różnicy czasowej lub kolejności między nimi, co jest kluczową funkcjonalnością w aplikacjach zarządzających wydarzeniami, terminami czy jakimikolwiek danymi czasowymi. Programiści często wymagają tego do kontrolowania logiki przepływu, weryfikacji lub sortowania danych na podstawie warunków czasowych.
-
 ## Jak to zrobić:
 W Dart możesz porównać daty, używając klasy `DateTime`, która oferuje metody takie jak `isBefore`, `isAfter` i `isAtSameMomentAs` do bezpośredniego porównania. Dodatkowo, różnicę między datami można określić za pomocą metody `difference()`, dostarczając obiekt `Duration`, który szczegółowo opisuje przedział między dwoma punktami w czasie.
 

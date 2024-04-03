@@ -16,9 +16,6 @@ title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---
 
-## Cái gì và Tại sao?
-Shell tương tác, hay REPLs (Vòng lặp Đọc-Đánh giá-In), cho phép bạn chạy mã trên máy bay, kiểm thử các hàm, thuật toán, hoặc nghịch ngợm với ý tưởng. Chúng là bảng nháp của việc lập trình, nhanh và bẩn, không cần thiết lập một môi trường phát triển đầy đủ.
-
 ## Làm thế nào:
 Node.js đi kèm với một REPL có thể truy cập qua terminal. Mở lên, và bạn sẵn sàng lăn bánh. Dưới đây là một ví dụ:
 

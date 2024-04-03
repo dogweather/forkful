@@ -10,9 +10,6 @@ title: Creando un archivo temporal
 weight: 21
 ---
 
-## Qué y Por Qué?
-Crear un archivo temporal implica generar un archivo destinado a un uso a corto plazo. Los programadores lo hacen para manejar datos de manera transitoria sin afectar el sistema de archivos permanente o para probar código sin riesgo de alterar información importante.
-
 ## Cómo Hacerlo:
 Vamos directo al grano. Aquí tienes un ejemplo para crear un archivo temporal en PowerShell:
 

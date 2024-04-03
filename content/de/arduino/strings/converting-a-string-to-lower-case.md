@@ -10,9 +10,6 @@ title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---
 
-## Was & Warum?
-Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, alle Buchstaben des Strings in ihre entsprechenden Kleinbuchstabenversionen zu konvertieren. Programmierer nutzen dies, um die Groß-/Kleinschreibung zu vereinheitlichen, meist für Vergleiche oder Datenverarbeitung.
-
 ## So geht's:
 Hier ist ein einfaches Beispiel, wie du einen String in Kleinbuchstaben umwandelst:
 

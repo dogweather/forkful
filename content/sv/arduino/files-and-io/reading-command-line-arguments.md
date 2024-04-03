@@ -11,9 +11,6 @@ title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---
 
-## Vad & Varför?
-Kommandoradsargument låter användare skicka information till ett program när de startar det. Programmerare använder detta för att göra program flexibla och anpassningsbara utan att behöva ändra koden.
-
 ## Hur Man Gör:
 Arduino-plattformen har traditionellt ingen kommandorad, eftersom den körs på mikrokontroller snarare än en fullskalig dator. Istället använder vi ofta seriell kommunikation för att simulera kommandoradsinteraktion. Här är hur du kan göra det:
 

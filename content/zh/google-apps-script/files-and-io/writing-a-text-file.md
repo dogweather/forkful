@@ -19,12 +19,7 @@ title: "\u7F16\u5199\u6587\u672C\u6587\u4EF6"
 weight: 24
 ---
 
-## 什么和为什么？
-
-在 Google Apps 脚本中写入文本文件允许开发者持久地储存数据，使其可供将来使用或分析。这种操作是记录、保存配置或以简单、易读格式导出信息的常见做法。
-
 ## 如何操作：
-
 通过 Google DriveApp 服务，在 Google Apps 脚本中创建和写入文本文件可以实现。下面是一份附带代码示例的逐步指南，帮助你开始：
 
 **步骤 1: 创建一个新的文本文件**
@@ -54,7 +49,6 @@ file.setContent(file.getBlob().getDataAsString() + '\nNew content added.');
 运行上述代码片段不会显示明确的输出，但如果你导航到存储文件的 Google Drive，你将看到第一个代码片段创建的 "Example.txt" 文件。对于第二个片段，如果你通过 ID 打开指定的文件，你应该会看到原始内容后面跟着新行 "New content added."。
 
 ## 深入探讨
-
 在 Google Apps 脚本中写入文本文件利用了 DriveApp 服务，本质上利用了 Google Drive 的文件存储和管理能力。这种方法可以追溯到 Google Apps 脚本的诞生，它被设计为轻松自动化 Google 生产力工具套件（包括 Drive）的任务。
 
 尽管通过 Google Apps 脚本直接操作文件直接并与 Google Workspace 紧密集成，但来自其他背景的开发者（例如，Python、Node.js）可能会发现这与在本地文件系统或其他云存储服务（如 AWS S3）上工作有所不同。这些平台通常提供一套更复杂的文件操作能力，但需要额外设置认证和权限。

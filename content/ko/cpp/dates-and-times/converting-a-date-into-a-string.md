@@ -18,9 +18,6 @@ title: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uAE30"
 weight: 28
 ---
 
-## What & Why? (무엇과 왜?)
-날짜를 문자열로 변환하는 것은 'YYYY-MM-DD'와 같은 형식으로 날짜 데이터를 문자형 데이터로 바꾸는 과정입니다. 이는 날짜를 파일 이름, 로그 메시지, 사용자 인터페이스 등에 표시할 때 유용합니다.
-
 ## How to: (방법:)
 ```cpp
 #include <iostream>

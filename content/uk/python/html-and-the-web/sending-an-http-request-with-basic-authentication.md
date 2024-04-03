@@ -13,9 +13,6 @@ title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437
 weight: 45
 ---
 
-## What & Why? (Що та Чому?)
-Sending an HTTP request with basic authentication means adding login credentials to your web request for access. We do this to securely communicate with web services that require user verification.
-
 ## How to: (Як це зробити:)
 ```python
 import requests

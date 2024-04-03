@@ -14,12 +14,7 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i dlaczego?
-
-Liczby zespolone składają się z części rzeczywistej i urojonej, reprezentowane jako `a + bi`, gdzie `i` jest pierwiastkiem kwadratowym z `-1`. Programiści pracują z liczbami zespolonymi w różnych dziedzinach, takich jak inżynieria elektryczna, informatyka kwantowa i dynamika płynów, wykorzystując ich unikalne właściwości do symulacji, przetwarzania sygnałów i rozwiązywania określonych rodzajów równań matematycznych.
-
 ## Jak to zrobić:
-
 W języku C liczby zespolone są obsługiwane przez bibliotekę standardową, a konkretnie przez `<complex.h>`. Aby z nich korzystać, należy deklarować zmienne typu `double complex` (lub `float complex` dla pojedynczej precyzji). Oto jak wykonać podstawowe operacje:
 
 ```c
@@ -56,5 +51,4 @@ int main() {
 Zwróć uwagę, że `I` jest stałą reprezentującą jednostkę urojoną w `<complex.h>`. Funkcje takie jak `creal()` i `cimag()` pozwalają na ekstrakcję części rzeczywistej i urojonej odpowiednio, podczas gdy `conj()` oblicza sprzężenie zespolone. Do obliczania modułu i argumentu (fazy) liczb zespolonych używane są `cabs()` i `carg()`.
 
 ## Wnikliwe spojrzenie
-
 Obsługa liczb zespolonych w C jest stosunkowo nowa, została znormalizowana w C99. Przed tym, arytmetyka liczb zespolonych w C była uciążliwa, często wymagająca niestandardowych struktur danych i funkcji. Włączenie `<complex.h>` i typów danych zespolonych znacząco zwiększyło możliwości języka dla zastosowań naukowych i inżynierskich. Warto jednak zauważyć, że niektóre języki, takie jak Python, oferują bardziej intuicyjne wsparcie dla liczb zespolonych poprzez wbudowane typy danych i bogatszy zestaw funkcji bibliotecznych. Pomimo to, wydajność i kontrola oferowana przez C czynią go preferowanym wyborem dla zadań obliczeń wysokiej wydajności, nawet jeśli oznacza to radzenie sobie z nieco bardziej rozbudowaną składnią dla arytmetyki zespolonej.

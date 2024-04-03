@@ -13,12 +13,7 @@ title: Een datum uit een string parsen
 weight: 30
 ---
 
-## Wat & Waarom?
-
-Het parsen van een datum uit een string houdt in het lezen van datumgegevens die zijn opgemaakt als tekst en het omzetten ervan naar een datumdatastructuur die het programma kan begrijpen. Programmeurs doen dit om met datums te kunnen manipuleren en werken—denk aan analytics, planning, of ze simpelweg weergeven in een ander formaat.
-
 ## Hoe:
-
 ```Fish Shell
 # Basisdatum parsing met behulp van de `strptime` functie
 set date_string "2023-04-15"
@@ -47,7 +42,6 @@ echo (parse_date $date_string2) # Geeft uit: 2023-04-15
 ```
 
 ## Diepere Duik
-
 Fish Shell heeft geen ingebouwde datum parsing functies zoals sommige andere talen. In plaats daarvan leunt het op externe hulpmiddelen zoals `date`. Het `date` commando is veelzijdig en met hulp van `strptime` (string parse time), dat een standaard C-bibliotheek functie is, kan het veel datumformaten aan.
 
 Voor `date` en `strptime` schreven programmeurs aangepaste parsers—vaak buggy en complex. Nu handelen hulpprogramma's de eigenaardigheden van tijdzones en schrikkeljaren af, wat ons hoofdpijn bespaart.
@@ -59,7 +53,6 @@ In onze voorbeelden gebruikten we `switch` om het datumformaat voor `date` te ki
 Waarom `string tolower` in het eerste voorbeeld? Het gaat om consistentie, om te zorgen dat de formaatreeks en uitvoer uniform in kleine letters zijn. Een klein gebaar, maar het illustreert de voorkeur van Fish voor eenvoudige stringbewerkingen.
 
 ## Zie Ook
-
 - De `date` manpagina: `man date`
 - Documentatie voor stringmanipulatie in Fish Shell: [https://fishshell.com/docs/current/cmds/string.html](https://fishshell.com/docs/current/cmds/string.html)
 - Algemene gebruiksvormen van het datumcommando: [https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)

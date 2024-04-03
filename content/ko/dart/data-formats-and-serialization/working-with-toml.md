@@ -18,12 +18,7 @@ title: "TOML\uB85C \uC791\uC5C5\uD558\uAE30"
 weight: 39
 ---
 
-## 무엇인가 & 왜인가?
-
-TOML, 즉 Tom's Obvious, Minimal Language,는 명확한 문법으로 인해 읽기 쉬운 설정 파일 형식입니다. 프로그래머들이 소프트웨어 응용 프로그램을 설정하기 위해 사용하는데, 파싱하기 쉽고 오류나 혼란을 최소화합니다.
-
 ## 방법:
-
 Dart는 TOML에 대한 내장 지원을 포함하고 있지 않지만, `toml`과 같은 타사 패키지를 사용하여 TOML 파일을 작업할 수 있습니다. 먼저, `pubspec.yaml`에 `toml`을 추가하세요:
 
 ```yaml
@@ -32,7 +27,6 @@ dependencies:
 ```
 
 ### TOML 읽기
-
 TOML 파일을 읽기 위해, 간단한 설정 파일 `config.toml`이 있다고 가정해 봅시다:
 
 ```toml
@@ -65,7 +59,6 @@ void main() async {
 ```
 
 ### TOML 작성하기
-
 TOML 내용을 생성하기 위해, `toml` 패키지에서 제공하는 `TomlBuilder`를 사용하세요:
 
 ```dart

@@ -9,9 +9,6 @@ title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---
 
-## What & Why?
-String-Konkatenation verbindet Textstücke zu einem Ganzen. Entwickler nutzen das, um dynamische Nachrichten zu bilden oder Text aus verschiedenen Quellen zusammenzuführen.
-
 ## How to:
 Swift bietet mehrere Wege, Strings zu verketten:
 

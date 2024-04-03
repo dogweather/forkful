@@ -31,15 +31,10 @@ title: "\u30C7\u30A3\u30EC\u30AF\u30C8\u30EA\u304C\u5B58\u5728\u3059\u308B\u304B
 weight: 20
 ---
 
-## 何となぜ？
-TypeScriptでディレクトリが存在するかを確認することは、ファイルからの読み取りやファイルへのデータ書き込みなど、ファイル管理タスクに不可欠です。これにより、操作が有効なディレクトリにのみ行われることを保証し、存在しないディレクトリにアクセスしたり操作しようとした際に生じるエラーを避けることが重要です。
-
 ## 方法：
-
 TypeScriptをNode.js環境で実行する場合、`fs`モジュールを使用してディレクトリが存在するかを確認することができます。このモジュールは、`existsSync()`関数や非同期の`access()`関数と`constants.F_OK`を組み合わせたものを提供します。
 
 ### `fs.existsSync()`の使用：
-
 ```typescript
 import { existsSync } from 'fs';
 
@@ -53,7 +48,6 @@ if (existsSync(directoryPath)) {
 ```
 
 ### `fs.access()`と`fs.constants.F_OK`の使用：
-
 ```typescript
 import { access, constants } from 'fs';
 
@@ -79,7 +73,6 @@ access(directoryPath, constants.F_OK, (err) => {
 ```
 
 ### サードパーティのライブラリを使用する - `fs-extra`:
-
 `fs-extra`は、組み込みの`fs`モジュールを強化し、より便利な機能を提供する人気のサードパーティライブラリです。
 
 ```typescript

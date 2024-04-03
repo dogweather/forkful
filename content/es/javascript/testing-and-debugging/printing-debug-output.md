@@ -11,12 +11,7 @@ title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---
 
-## ¿Qué y Por Qué?
-
-Imprimir mensajes de depuración (debug output) es como dejar migas de pan en tu código para entender qué está pasando. Los programadores lo hacen para rastrear el flujo de ejecución y detectar errores.
-
 ## Cómo hacerlo:
-
 Para imprimir algo simple, usamos `console.log()`:
 
 ```javascript
@@ -48,7 +43,6 @@ primeraFuncion();
 ```
 
 ## Análisis Profundo
-
 Desde los inicios de JavaScript, los desarrolladores necesitaban una manera de entender qué ocurría en su código. Originalmente, algunos usaban `alert()` para depuración, pero esto pausa la ejecución y es invasivo. `console.log()` y sus amigos (`console.warn()`, `console.error()`, `console.info()`) son ahora las herramientas estándar por ser menos intrusivas y más informativas.
 
 El objeto `console` tiene varios métodos, cada uno con su propósito: `console.warn()` es para advertencias, `console.error()` para errores, y así sucesivamente. Estos pueden ayudar a diferenciar los tipos de mensajes en la consola.
@@ -56,6 +50,5 @@ El objeto `console` tiene varios métodos, cada uno con su propósito: `console.
 Una alternativa moderna para depuración es usar breakpoints y herramientas de desarrollo del navegador, que permiten inspeccionar variables y el flujo de ejecución sin imprimir nada directamente en la consola.
 
 ## Véase También
-
 - Documentación de MDN sobre `console`: [MDN web docs](https://developer.mozilla.org/es/docs/Web/API/Console)
 - Guía sobre herramientas de desarrollo de Chrome: [Google Developers](https://developers.google.com/web/tools/chrome-devtools/javascript)

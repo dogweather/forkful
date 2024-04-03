@@ -11,9 +11,6 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-Den interaktiva skalet, eller Read-Eval-Print Loopen (REPL), låter dig skriva PowerShell-kommandon och få omedelbar återkoppling. Programmerare använder den för att snabbt testa kodsnuttar, felsöka eller lära sig nya kommandon utan att skriva ett helt skript.
-
 ## Hur man gör:
 Starta PowerShell och du är i REPL. Prova Cmdleten `Get-Date`:
 

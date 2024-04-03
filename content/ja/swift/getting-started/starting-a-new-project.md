@@ -19,12 +19,7 @@ title: "\u65B0\u3057\u3044\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u59CB\u3081
 weight: 1
 ---
 
-## What & Why? (何となぜ？)
-
-新しいプロジェクトを始めるのは、アイデアを形にする過程です。プログラマーは、問題を解決するため、または新しい何かを生み出すために、これを行います。
-
 ## How to: (やり方)
-
 Swiftで新しいプロジェクトを始めるときは、まずXcodeを開きます。以下に新しいプロジェクトを作成する際の概要を示します。
 
 ```Swift
@@ -44,13 +39,11 @@ Swiftで新しいプロジェクトを始めるときは、まずXcodeを開き�
 プロジェクトが作成されたら、自動的に新しいワークスペースが開き、最も基本的なファイル構成が設定されています。
 
 ## Deep Dive (深掘り)
-
 新しいプロジェクトを始める歴史的背景は、コーディングのパターンとツールの進化に依存しています。初期の環境では、コマンドラインツールやテキストエディターから始まることが一般的でしたが、現代では統合開発環境(IDE)がこのプロセスを簡略化しています。SwiftにおけるXcodeは、Appleの開発者エコシステムにおいて中心的なツールです。
 
 他の選択肢としては、Visual Studio CodeやAppCodeなどのIDE、またはSwift Package Managerを用いたコマンドラインでのプロジェクト管理などが挙げられます。プロジェクトを始める際には、ソフトウェアアーキテクチャの計画、依存関係管理、そして後々の保守や拡張のための基盤を築くことが重要です。
 
 ## See Also (関連情報)
-
 - [AppleのSwiftリソース](https://developer.apple.com/swift/resources/)
 - [Xcodeドキュメント](https://developer.apple.com/documentation/xcode/)
 - [Swift Package ManagerのGitHub](https://github.com/apple/swift-package-manager)

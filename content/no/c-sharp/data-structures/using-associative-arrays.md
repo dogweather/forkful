@@ -13,12 +13,7 @@ title: Bruke associative tabeller
 weight: 15
 ---
 
-## Hva & Hvorfor?
-
-Assosiative tabeller, eller ordbøker i C#, lar deg lagre og håndtere par av nøkler og verdier. De er din go-to når du trenger å hente verdier raskt basert på en unik identifikator, noe som gjør datahåndtering en bris i komplekse applikasjoner.
-
 ## Hvordan:
-
 I C# jobber du med assosiative tabeller ved å bruke `Dictionary<TKey, TValue>`-klassen. Her er et raskt eksempel for å få deg i gang:
 
 ```C#
@@ -64,7 +59,6 @@ Epler: 7
 Dette eksempelet viser oppretting av en ordbok, tillegging, tilgang, oppdatering og fjerning av elementer, og iterering over den.
 
 ## Dypdykk
-
 Konseptet med assosiative tabeller går tilbake til deres bruk i skriptspråk som Perl og PHP, hvor de tilbyr fleksibilitet i håndtering av datakolleksjoner. I C#, er `Dictionary<TKey, TValue>` den de facto implementasjonen, introdusert i .NET Framework 2.0. Det lagrer data i en hashtabell, som sikrer effektive oppslag, tillegg og slettinger.
 
 Det er imidlertid verdt å merke seg at mens ordbøker er utrolig allsidige, kan de ikke alltid være ditt beste valg. For å opprettholde ordnede samlinger, kan du se på `SortedDictionary<TKey, TValue>` eller `SortedList<TKey, TValue>`, som tilbyr sortert rekkefølge på bekostning av langsommere innsettings- og fjerningsoperasjoner. For scenarioer som krever trådsikkerhet, legger `ConcurrentDictionary<TKey, TValue>` til overhead, men sikrer trygg tilgang fra flere tråder uten manuell låsing.

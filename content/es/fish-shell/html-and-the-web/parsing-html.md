@@ -12,12 +12,7 @@ title: Analizando HTML
 weight: 43
 ---
 
-## Qué y Por Qué?
-
-El análisis (parseo) de HTML se trata de extraer datos o información del contenido HTML, una tarea común al trabajar con datos web. Los programadores hacen esto para automatizar la extracción de información de sitios web, para tareas como el web scraping, la minería de datos o las pruebas automatizadas.
-
 ## Cómo hacerlo:
-
 Predominantemente, Fish shell no está diseñado para analizar HTML directamente. Sin embargo, sobresale en unir herramientas Unix como `curl`, `grep`, `sed`, `awk`, o utilizando herramientas especializadas como `pup` o `beautifulsoup` en un script de Python. A continuación, se presentan ejemplos que muestran cómo aprovechar estas herramientas desde Fish shell para analizar HTML.
 
 ### Usando `curl` y `grep`:
@@ -35,7 +30,6 @@ Salida:
 ```
 
 ### Usando `pup` (una herramienta de línea de comandos para analizar HTML):
-
 Primero, asegúrate de que `pup` esté instalado. Luego puedes usarlo para extraer elementos por sus etiquetas, ids, clases, etc.
 
 ```fish
@@ -45,7 +39,6 @@ curl -s https://example.com | pup 'a attr{href}'
 La salida, similar al ejemplo de `grep`, listaría los atributos href de las etiquetas `<a>`.
 
 ### Con un script de Python y `beautifulsoup`:
-
 Aunque Fish por sí mismo no puede analizar HTML de forma nativa, se integra perfectamente con scripts de Python. A continuación, un ejemplo conciso que usa Python con `BeautifulSoup` para analizar y extraer títulos de HTML. Asegúrate de tener instalados `beautifulsoup4` y `requests` en tu entorno Python.
 
 **parse_html.fish**

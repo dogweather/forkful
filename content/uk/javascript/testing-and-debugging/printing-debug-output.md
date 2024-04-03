@@ -12,10 +12,6 @@ title: "\u0412\u0438\u0432\u0435\u0434\u0435\u043D\u043D\u044F \u043D\u0430\u043
 weight: 33
 ---
 
-## What & Why?
-"Що та Навіщо?"
-Debug printing means showing variable values, error messages, or trace steps in your console. Programmers do it to understand what's happening in their code during runtime.
-
 ## How to:
 "Як це зробити:"
 Print a simple message to the console:

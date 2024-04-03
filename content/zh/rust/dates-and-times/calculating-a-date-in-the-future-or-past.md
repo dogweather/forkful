@@ -17,12 +17,7 @@ title: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F"
 weight: 26
 ---
 
-## What & Why? (是什么以及为什么？)
-
-计算未来或过去的日期就是确定一个相对于现在之前或之后的具体日期。程序员这么做通常是为了事件追踪、提醒功能或报告生成等任务。
-
 ## How to: (如何操作：)
-
 在Rust中，我们使用`chrono`这个crate来处理日期和时间。以下示例展示了如何计算未来和过去的日期。
 
 ```Rust
@@ -44,7 +39,6 @@ fn main() {
 这段代码首先打印出当前的UTC时间，然后通过加上或减去30天的`Duration`来计算未来和过去的日期，最终打印出这两个日期。
 
 ## Deep Dive (深入探究)
-
 计算未来或过去的日期并不是Rust最初就有的功能。`chrono` crate在Rust社区中被广泛接受，用于提供日期时间的操作。此外，Rust标准库中有一个基础的时间处理模块，但功能有限。`chrono`提供了一套更全面、灵活的解决方案，兼容各种日历计算。
 
 - **历史背景**：Rust 的设计重点在于安全与效率，时间处理是一个需要高度准确性的领域。Rust 社区贡献了多个时间处理库，其中`chrono`最为人所知。
@@ -52,7 +46,6 @@ fn main() {
 - **实现细节**：余下时间的计算采用现有的UTC时间并通过`Duration`来调整。`chrono`提供了对闰秒的支持和时区变换，使时间计算更加精确和通用。
 
 ## See Also (另请参见)
-
 - [Chrono Crate Documentation](https://docs.rs/chrono/)
 - [The Time Crate Documentation](https://docs.rs/time/)
 

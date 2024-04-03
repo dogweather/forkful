@@ -15,9 +15,6 @@ title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
 weight: 3
 ---
 
-## What & Why? (무엇과 왜?)
-문자열 연결(concatenating strings)은 두 개 이상의 문자열을 하나로 묶는 것을 말해요. 프로그래머는 메시지를 구성하거나, 데이터를 형식화할 때 문자열을 연결합니다.
-
 ## How to: (어떻게:)
 ```java
 public class StringConcatExample {

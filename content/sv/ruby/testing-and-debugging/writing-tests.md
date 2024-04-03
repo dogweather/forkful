@@ -13,9 +13,6 @@ title: Skriva tester
 weight: 36
 ---
 
-## Vad & Varför?
-Testning i Ruby handlar om att verifiera att din kod beter sig som förväntat under olika förhållanden. Programerare skriver tester för att säkerställa korrekthet, förhindra regressioner och underlätta refaktorisering, med målet att skapa robusta och underhållbara applikationer.
-
 ## Hur man gör:
 Ruby kommer med ett inbyggt bibliotek som heter `Test::Unit` för att skriva enhetstester, vilket inkapslar testpraxis inom enkel struktur. Dock lutar sig Ruby-gemenskapen ofta mot tredjepartsbibliotek som RSpec och Minitest på grund av deras ökade uttrycksfullhet och flexibilitet.
 

@@ -10,12 +10,7 @@ title: Using associative arrays
 weight: 15
 ---
 
-## What & Why?
-
-Associative arrays are like super-charged arrays that let you use strings as indexes instead of just integers. Programmers use them for more complex data structures, making it easier to handle data that doesn't neatly fit into a sequential list.
-
 ## How to:
-
 First off, declare an associative array in Bash:
 
 ```Bash
@@ -63,7 +58,6 @@ unset my_array["topic"]
 ```
 
 ## Deep Dive
-
 Associative arrays were introduced in Bash version 4.0, making them a relatively recent addition to the language. Before their introduction, handling non-integer index arrays was cumbersome, often requiring workarounds or external tools like `awk` or `sed`.
 
 Under the hood, Bash implements associative arrays using hash tables. This implementation allows for efficient key lookup, which remains fairly constant regardless of the array size, a critical feature for performance in script execution.

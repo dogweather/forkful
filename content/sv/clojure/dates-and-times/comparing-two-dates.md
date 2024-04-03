@@ -11,9 +11,6 @@ title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---
 
-## Vad & Varför?
-Jämföra två datum innebär att bedöma vilket datum som kommer före eller efter ett annat, eller om de är samma. Programmerare behöver det för att hantera tidslinjer, händelser och logik i tidssensitiva applikationer.
-
 ## Hur man gör:
 ```Clojure
 ;; importera java.util.Date
@@ -41,7 +38,7 @@ För länge sedan, i Java-världen, skapades `java.util.Date` för att hantera d
 
 Förutom `java.util.Date`, kan Clojure-användare använda Joda-Time eller `java-time` biblioteket för ett bättre API. Dessa bibliotek hanterar tidszoner, olikhet i kalendrar och är mer intuitiva med operationer som att lägga till tidsperioder.
 
-Detaljerna i att jämföra två datum kan bli komplexa. Tänk på skottår, olika tidszoner och kalendrar. Viktigt att testa din logik noga för att kringgå subtila fallgropar. 
+Detaljerna i att jämföra två datum kan bli komplexa. Tänk på skottår, olika tidszoner och kalendrar. Viktigt att testa din logik noga för att kringgå subtila fallgropar.
 
 ## Se även
 - [Clojure java-time](https://github.com/dm3/clojure.java-time) - ett bibliotek för modern tid och datumhantering.

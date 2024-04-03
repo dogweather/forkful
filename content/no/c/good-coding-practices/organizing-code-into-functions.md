@@ -12,12 +12,7 @@ title: Organisering av kode i funksjoner
 weight: 18
 ---
 
-## Hva & Hvorfor?
-
-Å organisere kode i funksjoner i C innebærer å bryte ned komplekse oppgaver i mindre, gjenbrukbare blokker med kode. Denne praksisen forbedrer lesbarheten, forenkler feilsøkingen og fremmer gjenbruk av kode, noe som gjør applikasjoner mer modulære og vedlikeholdbare.
-
 ## Hvordan:
-
 I C er en funksjon erklært med en returtype, et navn og parametere (hvis noen), fulgt av en blokk med kode. La oss starte med et enkelt eksempel: en funksjon som legger sammen to heltall.
 
 ```c
@@ -73,7 +68,6 @@ Arealet av rektangelet er: 50
 ```
 
 ## Dypdykk
-
 Konseptet med funksjoner i C, arvet fra tidligere programmeringsteknikker, er fundamentalt for strukturert programmering. Funksjoner lar utviklere abstrahere bort detaljer, håndtere kompleksitet og organisere koden sin logisk. Siden begynnelsen har funksjonen vært en kjernekonstruksjon i C, som har påvirket tallrike andre språk.
 
 Imidlertid, ettersom programmeringsparadigmer har utviklet seg, har alternative tilnærminger som objektorientert programmering (OOP) i språk som C++ og Java, utvidet konseptet med funksjoner med metoder tilknyttet objekter. Selv om C ikke støtter OOP ut av boksen, er det mulig å etterligne objektorienterte design ved nøye strukturering av funksjoner og data.

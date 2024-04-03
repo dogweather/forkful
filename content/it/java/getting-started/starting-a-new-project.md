@@ -11,9 +11,6 @@ title: Avvio di un nuovo progetto
 weight: 1
 ---
 
-## What & Why? (Che cosa & Perché?)
-Avviare un nuovo progetto significa creare un ambiente per sviluppare il tuo software. Lo fai per partire con un'organizzazione chiara e permettere una crescita strutturata del codice.
-
 ## How to: (Come fare)
 Creiamo una semplice applicazione Java che saluta l'utente. 
 

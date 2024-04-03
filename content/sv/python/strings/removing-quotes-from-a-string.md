@@ -11,9 +11,6 @@ title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---
 
-## Vad & Varför?
-Att ta bort citattecken från en sträng innebär vanligtvis att man avlägsnar överflödiga dubbla (") eller enkla (') citationstecken. Programmerare gör detta för att sanera inmatning eller när citattecken inte behövs för vidare bearbetning—som när text ska sparas i en databas eller förberedas för visning.
-
 ## Hur man gör:
 Python erbjuder flera sätt att bli av med oönskade citattecken från strängar. Låt oss gå igenom några exempel:
 

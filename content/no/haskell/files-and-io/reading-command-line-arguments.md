@@ -11,9 +11,6 @@ title: Lese kommandolinjeargumenter
 weight: 23
 ---
 
-## Hva & Hvorfor?
-Lese kommandolinjeargumenter betyr å hente inn data som brukeren gir når de kjører programmet ditt. Det gjør vi for å gi fleksibilitet og tilpasse oppførselen til programmet uten å hardkode verdier.
-
 ## Hvordan:
 For å lese argumenter fra kommandolinjen i Haskell, kan du bruke `getArgs` fra `System.Environment`. Her er et enkelt eksempel:
 

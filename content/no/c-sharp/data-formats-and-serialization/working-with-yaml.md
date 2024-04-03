@@ -12,9 +12,6 @@ title: Arbeider med YAML
 weight: 41
 ---
 
-## Hva & Hvorfor?
-YAML, som står for YAML Ain't Markup Language, er et menneskelesbart data serialiseringsformat. Programmerere bruker det ofte for konfigurasjonsfiler, mellomprosessmeldinger, og datalagring på grunn av dets enkelhet og lesbarhet sammenlignet med andre dataformater som XML eller JSON.
-
 ## Hvordan:
 C# har ikke innebygd støtte for YAML, men du kan enkelt arbeide med YAML ved å bruke tredjepartsbiblioteker som *YamlDotNet*. Først må du installere YamlDotNet-pakken:
 

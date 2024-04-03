@@ -15,9 +15,6 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mikä ja miksi?
-Nykyisen päivämäärän saaminen Arduino-projekteissa tarkoittaa reaaliaikaisen tiedon hankkimista, joka voi olla ratkaisevan tärkeää lokitiedostojen kirjaamisessa, aikaleimojen lisäämisessä tai tehtävien ajoittamisessa. Ohjelmoijat tarvitsevat usein tätä kykyä toiminnallisuuden parantamiseen, datan ajantasaisuuden varmistamiseen ja aikaherkkien operaatioiden helpottamiseen IoT- ja sulautetuissa projekteissa.
-
 ## Kuinka:
 Arduino itsessään ei sisällä sisäänrakennettua menetelmää nykyisen päivämäärän suoraan noutamiseen, sillä siitä puuttuu reaaliaikakello (RTC). Tämän voi kuitenkin saavuttaa käyttämällä ulkoisia RTC-moduuleja, kuten DS3231, ja kirjastoja, kuten `RTClib`, jonka on kehittänyt Adafruit, ja joka tekee näiden moduulien kanssa rajapinnan muodostamisesta suoraviivaista.
 

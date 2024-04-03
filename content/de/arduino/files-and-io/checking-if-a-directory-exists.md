@@ -14,9 +14,6 @@ title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---
 
-## Was & Warum?
-Im Kontext der Arduino-Programmierung ist das Überprüfen, ob ein Verzeichnis auf einer SD-Karte oder einem ähnlichen Speichermodul existiert, wichtig, um Dateien ohne Fehler lesen oder schreiben zu können. Diese Operation ist essenziell für die Datenaufzeichnung, das Konfigurationsmanagement oder jede Aufgabe, die eine strukturierte Dateispeicherung erfordert, und garantiert Zuverlässigkeit sowie flüssige Performance in Ihren Anwendungen.
-
 ## Wie:
 Arduino unterstützt direkt aus der Box heraus keine komplexen Dateisystemoperationen. Jedoch kann man mit der Nutzung der SD-Bibliothek, die Teil der standardmäßigen Arduino-IDE ist, leicht mit Dateien und Verzeichnissen arbeiten. Um zu überprüfen, ob ein Verzeichnis existiert, müssen Sie zunächst die SD-Karte initialisieren und dann die `exists()`-Methode aus der SD-Bibliothek verwenden.
 

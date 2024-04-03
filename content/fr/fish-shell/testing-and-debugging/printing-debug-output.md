@@ -11,9 +11,6 @@ title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---
 
-## What & Why?
-L'affichage de sorties de débogage, c'est exposer les entrailles de votre code – voir ce qu'il se passe en temps réel. Les développeurs le font pour traquer les bugs plus efficacement.
-
 ## How to:
 Pour afficher un message de débogage dans Fish, utilisez simplement `echo` ou `printf` avec votre message.
 

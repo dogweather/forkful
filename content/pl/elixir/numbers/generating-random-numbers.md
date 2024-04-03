@@ -13,12 +13,7 @@ title: Generowanie liczb losowych
 weight: 12
 ---
 
-## Co i dlaczego?
-
-Generowanie liczb losowych w Elixirze jest podstawowym zadaniem programistycznym, niezbędnym dla aplikacji potrzebujących nieprzewidywalnych wyników, takich jak generowanie bezpiecznych tokenów, próbkowanie danych czy algorytmy gier. Programiści używają tego, aby wprowadzić poziom losowości i zmienności w swoich aplikacjach, czyniąc je bardziej dynamicznymi i mniej deterministycznymi.
-
 ## Jak to zrobić:
-
 Aby generować liczby losowe w Elixirze, głównie używa się modułu `:rand`, który dostarcza kilka funkcji do tego celu. Oto krótki przewodnik, jak zacząć:
 
 Najpierw upewnij się, że zainicjowałeś generator liczb losowych poprzez jego zasianie unikalnym punktem startowym:
@@ -53,7 +48,6 @@ IO.puts(random_float_range)
 Pamiętaj, że te liczby są pseudolosowe; są określone przez ziarno i algorytm, ale wystarczają dla większości zastosowań.
 
 ## Pogłębiona analiza
-
 Możliwości generowania liczb losowych w Elixirze opierają się na module `:rand` z Erlanga, odzwierciedlając jego dziedzictwo i bliskie związki z Erlangiem. Moduł `:rand` zastąpił starszy moduł `:random`, oferując ulepszone algorytmy generowania liczb losowych. Zapewnia on różnorodne algorytmy, domyślnie jest to `exsplus`, ale wspiera również inne, takie jak `exs64`, `exsl` i więcej, z których każdy ma swoje kompromisy w zakresie szybkości i jakości losowości.
 
 Interesującym aspektem generowania liczb losowych w Elixirze (i tym samym w Erlangu) jest obsługa ziaren. System utrzymuje oddzielne stany ziaren dla każdego procesu, zapewniając, że równoległe procesy nie zakłócają swoich sekwencji liczb losowych. Jest to szczególnie użyteczne w aplikacjach równoległych, zapewniając przewidywalność i niezawodność w systemach rozproszonych.

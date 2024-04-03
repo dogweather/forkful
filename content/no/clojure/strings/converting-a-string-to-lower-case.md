@@ -11,9 +11,6 @@ title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---
 
-## What & Why?
-Omforme en streng til små bokstaver handler om å konvertere alle bokstavene i en gitt streng til deres småbokstavversjoner. Programmerere gjør dette for å standardisere tekstdata, som i søk eller sammenligninger, hvor store og små bokstaver bør behandles likt.
-
 ## How to:
 Clojure gir deg verktøyene du trenger for å enkelt gjøre om strenger til små bokstaver. `clojure.string/lower-case` er din venn her. Her er et eksempel:
 

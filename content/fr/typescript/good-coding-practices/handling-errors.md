@@ -11,9 +11,6 @@ title: Gestion des erreurs
 weight: 16
 ---
 
-## Quoi & Pourquoi ?
-Gérer les erreurs consiste à anticiper l'inattendu ; c'est la façon dont nous réagissons lorsque les choses tournent mal dans notre code. Nous le faisons pour éviter les plantages et pour offrir aux utilisateurs une expérience fluide, même lorsque l'inattendu se produit.
-
 ## Comment faire :
 En TypeScript, la gestion des erreurs implique souvent l'utilisation des blocs `try`, `catch` et `finally`.
 

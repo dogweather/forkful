@@ -11,9 +11,6 @@ title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---
 
-## Qué y Por Qué?
-Eliminar caracteres que siguen un patrón en Python es como limpiar tu texto, dejando solo lo que necesitas. Los programadores lo hacen para validar datos, simplificar cadenas o preparar texto antes de procesarlo.
-
 ## Cómo se hace:
 Digamos que tienes un texto con varios signos de puntuación y quieres dejar solo las letras y números. Podemos usar el módulo `re` de Python para eliminar estos caracteres. 
 

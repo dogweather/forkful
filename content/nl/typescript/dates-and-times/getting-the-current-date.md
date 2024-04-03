@@ -12,9 +12,6 @@ title: Het huidige datum ophalen
 weight: 29
 ---
 
-## Wat & Waarom?
-De huidige datum in je code krijgen betekent het vastleggen van het huidige moment tot op de dag. Programmeurs doen dit om gebeurtenissen te tijdstempelen, planningen te beheren, en de duur of intervallen bij te houden.
-
 ## Hoe:
 Hier is hoe je de huidige datum in TypeScript vastlegt:
 

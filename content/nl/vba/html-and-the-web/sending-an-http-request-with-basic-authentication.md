@@ -14,12 +14,7 @@ title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---
 
-## Wat & Waarom?
-
-Het versturen van een HTTP-verzoek met basisauthenticatie in Visual Basic for Applications (VBA) gaat over het toegang krijgen tot webbronnen die zijn beveiligd met gebruikersnaam- en wachtwoordgegevens. Programmeurs doen dit om te interageren met beveiligde API's of webservice binnen hun VBA-gedreven applicaties, zoals het automatiseren van taken in Excel of Access met gegevens van beveiligde eindpunten.
-
 ## Hoe:
-
 In VBA kunt u de `Microsoft XML, v6.0` (MSXML2) bibliotheek gebruiken om HTTP-verzoeken met basisauthenticatie te verzenden. Dit houdt in dat u de `"Authorization"` header van het verzoek instelt om de referenties in een base64-gecodeerd formaat op te nemen. Hier is een stap-voor-stap handleiding:
 
 1. **Verwijs naar MSXML2**: Zorg eerst dat uw VBA-project verwijst naar de `Microsoft XML, v6.0` bibliotheek. Ga in de VBA-editor naar Extra > Verwijzingen en vink `Microsoft XML, v6.0` aan.
@@ -63,7 +58,6 @@ In VBA kunt u de `Microsoft XML, v6.0` (MSXML2) bibliotheek gebruiken om HTTP-ve
 Dit zal een GET-verzoek naar `http://example.com/api/resource` verzenden met de opgegeven basisauthenticatie referenties, en de respons uitprinten.
 
 ## Diepere Duik
-
 De hier gebruikte benadering, hoewel effectief voor eenvoudige gebruikssituaties, is gebaseerd op het Basic Authentication schema, dat referenties verzendt in een gemakkelijk decodeerbaar formaat (base64-codering is geen encryptie). Vanwege de kwetsbaarheid, vooral in niet-HTTPS-contexten, wordt basisauthenticatie niet aanbevolen voor het overbrengen van gevoelige gegevens over het internet zonder aanvullende beveiligingslagen zoals SSL/TLS.
 
 Historisch gezien was Basic Authentication een van de eerste methoden ontwikkeld voor het beheersen van toegang tot webbronnen. Vandaag de dag worden veiligere en flexibelere authenticatienormen, zoals OAuth 2.0, over het algemeen de voorkeur gegeven voor nieuwe toepassingen. Gezien de beperkingen van VBA en de externe afhankelijkheden die vereist zijn voor geavanceerdere authenticatiemethoden, gebruiken ontwikkelaars VBA vaak in interne of minder beveiligingskritieke omgevingen of gebruiken het als een springplank om snel ideeën te prototypen.

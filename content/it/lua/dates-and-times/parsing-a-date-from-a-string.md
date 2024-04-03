@@ -13,9 +13,6 @@ title: Analisi di una data da una stringa
 weight: 30
 ---
 
-## Cosa e perché?
-L'analisi di una data da una stringa comporta la conversione delle rappresentazioni testuali di date e orari in un formato che può essere facilmente manipolato, memorizzato o confrontato all'interno di un programma Lua. I programmatori svolgono questo compito per facilitare operazioni come la pianificazione, la registrazione o qualsiasi calcolo temporale e per colmare il divario tra i formati di data leggibili dall'uomo e i tipi di dati strutturati che un computer può elaborare efficientemente.
-
 ## Come fare:
 Lua non ha supporto integrato per la manipolazione di date e orari oltre alla funzionalità limitata fornita dalle funzioni `os.date` e `os.time`. Tuttavia, queste possono essere sfruttate per un parsing di base, e per requisiti più complessi, può essere utilizzata la libreria esterna `luadate`.
 

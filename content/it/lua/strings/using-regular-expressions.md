@@ -10,9 +10,6 @@ title: Utilizzo delle espressioni regolari
 weight: 11
 ---
 
-## What & Why?
-Le espressioni regolari sono modelli per cercare corrispondenze in stringhe di testo. I programmatori le usano per validare, estrarre e manipolare dati con precisione e velocità.
-
 ## How to:
 ```Lua
 local testo = "Oggi è il 3 aprile 2023"

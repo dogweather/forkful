@@ -11,9 +11,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---
 
-## What & Why? (O Quê & Por Quê?)
-Enviar uma requisição HTTP com autenticação básica é enviar um pedido a um servidor web que exige usuário e senha no cabeçalho. Programadores fazem isso para acessar recursos protegidos ou APIs que precisam de autenticação simples para fornecer dados.
-
 ## How to: (Como Fazer:)
 Vamos ver como fazer isso em C++. Primeiro, você precisa de uma biblioteca de rede, como a cURL. Instale-a se necessário e aqui está um exemplo de código:
 

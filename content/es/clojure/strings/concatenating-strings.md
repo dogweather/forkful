@@ -10,9 +10,6 @@ title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---
 
-## Qué y Por Qué?
-Concatenar cadenas es simplemente unir dos o más textos en uno. Los programadores lo hacen para construir mensajes, combinar información y construir URLs entre otros usos prácticos.
-
 ## Cómo hacerlo:
 ```Clojure
 ; Usar 'str' para concatenar cadenas:

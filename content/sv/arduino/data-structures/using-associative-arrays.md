@@ -13,9 +13,6 @@ title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---
 
-## Vad & Varför?
-I Arduino-världen låter associativa arrayer dig koppla nycklar till värden, lite som att du skulle matcha sockor med deras par. De är ett givet val när du behöver lagra och hämta data med beskrivande namn, vilket gör din kod renare och mycket mer förståelig.
-
 ## Hur gör man:
 Arduino har, strikt talat, inte inbyggt stöd för associativa arrayer som du skulle hitta i högre programmeringsspråk. Men, frukta inte. Vi kan bli uppfinningsrika genom att använda strukturer och arrayer för att efterlikna denna funktionalitet. Här är ett enkelt exempel på att skapa en grundläggande "associativ array" för att lagra och komma åt temperaturer för olika städer.
 

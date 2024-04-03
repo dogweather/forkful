@@ -10,9 +10,6 @@ title: Eliminando comillas de una cadena
 weight: 9
 ---
 
-## ¿Qué y Por Qué?
-Eliminar comillas de una cadena significa quitar esos molestos caracteres dobles o simples que encierran nuestro texto (' o "). Los programadores a menudo hacen esto para sanear la entrada, almacenar texto en una base de datos o preparar cadenas para un procesamiento posterior sin el desorden de las comillas.
-
 ## Cómo hacerlo:
 Aquí hay una forma sencilla de deshacerse de esas comillas en C++:
 

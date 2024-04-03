@@ -12,12 +12,7 @@ title: Registro de Actividades
 weight: 17
 ---
 
-## ¿Qué y Por Qué?
-
-El registro (logging) es el proceso de grabar eventos, errores y otra información significativa durante la ejecución de un programa en un medio externo, a menudo archivos o bases de datos. Los programadores utilizan registros para monitorear el comportamiento del software, depurar problemas y rastrear actividades del sistema para análisis de seguridad y rendimiento.
-
 ## Cómo hacerlo:
-
 En TypeScript, puedes implementar fácilmente un registro básico utilizando métodos de la consola o integrar un registro más avanzado con librerías como `winston` o `pino`. Aquí hay un ejemplo básico usando `console.log` y otro más avanzado con `winston`.
 
 ```TypeScript
@@ -58,7 +53,6 @@ logger.error('Fallo al conectar con la base de datos.');
 ```
 
 ## Análisis En Profundidad:
-
 El concepto de registro dentro del contexto de la informática se remonta a los inicios de la programación, donde el término en sí proviene del "logbook" o bitácora, un sistema de registro utilizada en navegación. Históricamente, los eventos del programa a menudo se registraban en impresiones físicas o salidas de terminal, especialmente durante la era de los mainframes.
 
 Avanzando hasta hoy, hay una plétora de herramientas y bibliotecas a tu disposición que atienden a diversas necesidades de registro, desde archivos de texto simples hasta sistemas complejos de gestión de registros. Alternativas a `winston` incluyen `pino`, que presume de un alto rendimiento, y `Bunyan`, que se basa en JSON. Al trabajar con Node.js, las bibliotecas de registro a menudo proporcionan mecanismos de flujo para canalizar los registros a diferentes destinos, soporte para la rotación de registros y formateadores personalizables.
@@ -66,7 +60,6 @@ Avanzando hasta hoy, hay una plétora de herramientas y bibliotecas a tu disposi
 En cuanto a la implementación, los mensajes de registro normalmente contienen una marca de tiempo, un nivel de gravedad (como info, warn, error) y el mensaje real. Una buena práctica de registro recomienda categorizar adecuadamente los niveles de registro, evitar datos sensibles en los registros y considerar implicaciones de rendimiento en aplicaciones de alto tráfico.
 
 ## Vea También:
-
 - [Winston - Un registrador para casi todo](https://www.npmjs.com/package/winston)
 - [Pino - Registrador de Node.js con muy bajo overhead](https://www.npmjs.com/package/pino)
 - [Mejores Prácticas de Registro en Node.js](https://thisdavej.com/using-winston-a-versatile-logging-library-for-node-js/)

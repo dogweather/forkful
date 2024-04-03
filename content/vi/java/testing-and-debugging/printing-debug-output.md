@@ -16,9 +16,6 @@ title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---
 
-## Gì & Tại sao?
-In ra đầu ra để gỡ lỗi là việc ném những mẩu thông tin nhỏ vào bảng điều khiển để tìm và xử lý lỗi. Nó nhanh, không cần sạch sẽ, và hiệu quả để hiểu những gì đang xảy ra bên trong mã của bạn khi nó đang hoạt động một cách hoang dã.
-
 ## Làm thế nào:
 Hãy để một ít mã xuất hiện trên màn hình:
 

@@ -15,12 +15,7 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mikä ja miksi?
-
-Virheviestien kirjoittaminen standardivirheeseen (stderr) PHP:ssä tarkoittaa virheilmoitusten tai diagnostiikkatietojen ohjaamista erillään standarditulosteesta (stdout), mikä antaa kehittäjille paremmat mahdollisuudet hallita tulostevirtojaan debuggauksen ja lokitiedostojen kannalta. Ohjelmoijat käyttävät tätä tekniikkaa varmistaakseen, että virhesanomat eivät sekaannu ohjelman tulosteisiin, mikä helpottaa sovellusten seurantaa ja vianetsintää.
-
 ## Kuinka:
-
 PHP:ssä stderr:iin kirjoittaminen onnistuu käyttämällä `fwrite()`-funktiota yhdessä ennalta määrätyn vakion `STDERR` kanssa, joka edustaa virheen tulostevirtaa.
 
 ```php

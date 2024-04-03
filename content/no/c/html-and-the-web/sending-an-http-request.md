@@ -13,12 +13,7 @@ title: "Sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## Hva & Hvorfor?
-
-Å sende en HTTP-forespørsel innebærer å opprette og sende en forespørsel til en webserver for å hente eller sende inn data. Programmerere gjør dette i C for å samhandle med web-APIer, laste ned nettsider eller kommunisere med andre nettverkstjenester direkte fra sine applikasjoner.
-
 ## Hvordan:
-
 For å sende en HTTP-forespørsel i C, vil du vanligvis stole på biblioteker som libcurl, siden C ikke har innebygd støtte for webprotokoller. Her er et enkelt eksempel ved bruk av libcurl for å utføre en GET-forespørsel:
 
 Først, sørg for at du har libcurl installert på systemet ditt. Deretter, inkluder de nødvendige headerne og lenk mot libcurl-biblioteket i kildefilen din:
@@ -55,11 +50,9 @@ int main(void) {
 Kompiler dette med noe i retning av `gcc -o http_request http_request.c -lcurl`, å kjøre det bør utføre en enkel GET-forespørsel til "http://example.com".
 
 ### Eksempel på utdata
-
 Siden eksemplet ikke behandler serverens respons, vil kjøring av det ikke produsere en synlig utdata utover potensielle feilmeldinger. Å integrere tilbakeringingsfunksjonen for behandling av mottatte data er essensielt for meningsfull interaksjon.
 
 ## Dypdykk
-
 Konseptet med å sende HTTP-forespørsler fra et C-program er basert på språkets kraftige nettverksegenskaper, sammen med eksterne biblioteker siden C i seg selv er et lavnivåspråk uten innebygd støtte for høynivå internettprotokoller. Historisk sett ville programmerere manuelt bruke socket-programmering i C, en kompleks og kjedelig prosess, for å samhandle med webservre før dedikerte biblioteker som libcurl dukket opp.
 
 Libcurl, bygget på toppen av C, forenkler prosessen ved å abstrahere bort de vanskelige detaljene ved socket-programmering og spesifikasjonene til HTTP-protokollen. Det støtter en mengde protokoller utover HTTP/HTTPS, inkludert FTP, SMTP og mer, noe som gjør det til et allsidig verktøy for nettverksprogrammering i C.

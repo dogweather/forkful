@@ -10,9 +10,6 @@ title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---
 
-## What & Why?
-"Was & Warum?" - Die Länge eines Strings festzustellen bedeutet, die Anzahl der Zeichen zu ermitteln. Programmierer machen das oft, um die Eingabe zu validieren, Daten zu verarbeiten oder das Layout zu steuern.
-
 ## How to:
 "So geht's" - Hier ein paar Elm-Beispiele, wie du die Länge eines Strings herausfindest:
 

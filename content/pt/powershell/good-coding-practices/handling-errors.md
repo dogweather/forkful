@@ -11,9 +11,6 @@ title: Tratamento de erros
 weight: 16
 ---
 
-## O que e Por quê?
-Tratar erros no PowerShell significa prever os percalços e gerenciá-los de maneira suave. Programadores fazem isso para prevenir falhas e fornecer aos usuários um feedback útil.
-
 ## Como fazer:
 ```PowerShell
 # Tentativa básica com Try-Catch para tratar exceções
@@ -34,6 +31,7 @@ try {
 
 # Usando a variável $Error para inspecionar o último erro
 ```
+
 ## Aprofundando
 O PowerShell evoluiu muito desde sua criação como Monad. O tratamento de erros tornou-se mais robusto ao longo do tempo, oferecendo funcionalidades semelhantes a outras linguagens de programação. A sintaxe `try-catch-finally` é um desses exemplos de compartilhamento entre linguagens como C#. Antes disso, os scripters dependiam muito da verificação de condições e do uso da variável automática `$Error`.
 

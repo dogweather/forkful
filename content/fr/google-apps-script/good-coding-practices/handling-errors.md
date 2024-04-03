@@ -14,12 +14,7 @@ title: Gestion des erreurs
 weight: 16
 ---
 
-## Quoi & Pourquoi ?
-
-La gestion des erreurs dans Google Apps Script consiste à prévoir, attraper et répondre aux exceptions ou erreurs qui surviennent pendant l'exécution du script. Les programmeurs la mettent en œuvre pour protéger les scripts contre les défaillances inattendues, garantissant des applications plus fluides et conviviales qui peuvent gérer ou enregistrer les erreurs avec grâce sans plantages brusques.
-
 ## Comment faire :
-
 Google Apps Script, étant basé sur JavaScript, nous permet d'utiliser l'instruction traditionnelle `try-catch` pour la gestion des erreurs, accompagnée de `finally` si un nettoyage est nécessaire quel que soit le succès ou l'erreur.
 
 ```javascript
@@ -57,7 +52,6 @@ Fonction terminée.
 Google Apps Script prend également en charge le lancement d'erreurs personnalisées à l'aide de l'objet `Error` et la capture de types d'erreurs spécifiques si nécessaire. Cependant, l'absence de catégorisation avancée des erreurs rend essentiel de se fier aux messages d'erreur pour la spécificité.
 
 ## Plongée profonde
-
 Historiquement, la gestion des erreurs dans les langages de script comme JavaScript (et par extension, Google Apps Script) a été moins sophistiquée que dans certains langages compilés, qui offrent des fonctionnalités telles que des hiérarchies d'exceptions détaillées et des outils de débogage complets. Le modèle de Google Apps Script est relativement simple, exploitant le paradigme `try-catch-finally` de JavaScript. Cette simplicité s'aligne sur la conception du langage pour développer et déployer rapidement des applications à petite et moyenne échelle au sein de l'écosystème de Google, mais cela peut parfois limiter les développeurs confrontés à des scénarios d'erreur complexes.
 
 Dans des applications plus complexes, les programmeurs complètent souvent la gestion des erreurs native de Google Apps Script avec des mécanismes de journalisation et de rapport d'erreurs personnalisés. Cela peut inclure l'écriture d'erreurs dans une feuille Google pour l'audit ou l'utilisation de services de journalisation tiers par le biais des Services de récupération d'URL de Google Apps Script pour envoyer les détails des erreurs hors de l'environnement du script.

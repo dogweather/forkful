@@ -8,9 +8,6 @@ title: "Registro de Actividades en Programaci\xF3n"
 weight: 17
 ---
 
-# Qué y Por Qué?
-El registro en el desarrollo de software es la técnica de grabar eventos que ocurren mientras un programa está en ejecución, típicamente a un archivo o sistema externo. Los programadores lo hacen para obtener insights sobre el comportamiento del software, solucionar problemas y mantener un registro de historia operacional, que es crucial para depurar y monitorizar la salud de las aplicaciones.
-
 # Cómo hacerlo:
 En Elixir, la manera principal de registrar información es a través del módulo incorporado `Logger`. Aquí te mostramos cómo puedes usarlo:
 

@@ -14,9 +14,6 @@ title: Kontrollera om en katalog existerar
 weight: 20
 ---
 
-## Vad & Varför?
-Att kontrollera om en katalog finns handlar om att avgöra närvaron av en katalog på en specificerad sökväg innan man utför operationer som att läsa från eller skriva till filer inuti den. Programmerare gör detta för att undvika fel relaterade till filoperationer, vilket säkerställer en smidigare och mer tillförlitlig utförande av uppgifter för filhantering i sina applikationer.
-
 ## Hur:
 I modern C++ (C++17 och senare) kan du använda filsystembiblioteket för att kontrollera om en katalog finns. Det erbjuder ett enkelt och standardiserat sätt att utföra filsystemoperationer, inklusive att kontrollera existensen av en katalog.
 

@@ -13,12 +13,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mikä & Miksi?
-
-Assosiatiiviset taulukot, jotka tunnetaan yleisemmin hasheina Rubyn kielessä, mahdollistavat ainutlaatuisten avainten parittamisen arvoihin. Ne ovat korvaamattomia, kun tarvitset pitää kirjaa elementeistä tietyn viitteen kautta, kuten säilyttämään olion ominaisuuksia tai nopeasti pääsemään käsiksi tietoihin uniikin tunnisteen avulla.
-
 ## Miten:
-
 Hashien luominen ja käyttö Rubyn kielessä on suoraviivaista. Voit alustaa tyhjän hashin, täyttää sen avain-arvo -pareilla, päästä käsiksi arvoihin niiden avainten kautta ja paljon muuta. Tässä miten teet sen:
 
 ```Ruby
@@ -55,7 +50,6 @@ puts symbol_hash[:name] # Tuloste: Jane Doe
 ```
 
 ## Syventävä osio:
-
 Assosiatiivisten taulukoiden konsepti ei ole ainutlaatuinen Rubylle; monet kielet toteuttavat ne eri nimillä, kuten sanakirjat Pythonissa tai objektit JavaScriptissä (kun niitä käytetään avain-arvo -pareina). Rubyn alkuaikoina hashit olivat hieman hitaampia eivätkä niin monipuolisia. Kuitenkin ajan myötä, Rubyn hashien toteutus on optimoitu erittäin tehokkaaksi, erityisesti symboliavaimille, tehden niistä erittäin tehokkaita usein tapahtuviin haku- ja päivitystoimintoihin.
 
 Rubyn hashit erottuvat niiden syntaktisen helppokäyttöisyyden ja joustavuuden ansiosta - voit käyttää lähes mitä tahansa objektityyppiä avaimena, vaikkakin symbolit ja merkkijonot ovat yleisimpiä. Sisäisesti, Rubyn hashit toteutetaan käyttäen hajautusalgoritmia, joka tasapainottaa nopeutta ja muistitehokkuutta, jopa kun elementtien määrä kasvaa.

@@ -9,9 +9,6 @@ title: Interpolating a string
 weight: 8
 ---
 
-## What & Why?
-String interpolation lets you insert variables directly into strings. It's done to dynamically build strings and keep code clean.
-
 ## How to:
 In Lua, use `..` for concatenation or `string.format` for interpolation. Example:
 ```Lua

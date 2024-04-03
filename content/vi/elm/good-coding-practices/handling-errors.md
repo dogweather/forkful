@@ -16,9 +16,6 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Lý do & Tại sao?
-Xử lý lỗi có nghĩa là viết mã có thể dự đoán và xử lý những điều không diễn ra như mong đợi. Lập trình viên thực hiện điều này để ngăn chặn sự cố, bảo vệ tính toàn vẹn của dữ liệu và cung cấp cho người dùng những phương án thay thế một cách duyên dáng.
-
 ## Cách thức:
 Triết lý cốt lõi của Elm là Không Có Ngoại Lệ Thời Gian Chạy. Vì thế, Elm tận dụng hệ thống kiểu của mình với những kiểu như `Maybe` và `Result` để xử lý lỗi.
 

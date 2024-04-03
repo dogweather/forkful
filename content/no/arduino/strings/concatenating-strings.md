@@ -11,9 +11,6 @@ title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---
 
-## Hva & Hvorfor?
-Konkatenering av strenger er prosessen med å sette sammen to eller flere tekststrenger. Programmerere gjør dette for å bygge meldinger, lage dynamiske variabler, og kombinere input fra brukere.
-
 ## Slik gjør du:
 ```Arduino
 void setup() {

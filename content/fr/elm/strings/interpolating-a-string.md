@@ -11,9 +11,6 @@ title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---
 
-## Quoi & Pourquoi ?
-L'interpolation de chaîne permet d'insérer des valeurs variables dans un texte fixe. Les programmeurs l'utilisent pour composer des messages personnalisés ou afficher des données dynamiques.
-
 ## Comment faire :
 ```elm
 nom = "Amélie"

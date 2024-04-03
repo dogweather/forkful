@@ -11,12 +11,7 @@ title: Converting a string to lower case
 weight: 4
 ---
 
-## What & Why?
-
-Converting a string to lower case in Google Apps Script, a cloud-based scripting language for automating tasks across Google products, is a fundamental task aimed at standardizing text data. Programmers often perform this action to ensure consistency in user input, data processing, or when comparing strings, as it eliminates case sensitivity issues.
-
 ## How to:
-
 Converting a string to lower case in Google Apps Script is straightforward, thanks to the built-in JavaScript methods available within the scripting environment. The `toLowerCase()` method is what you'll mostly use. Here’s how you can implement it:
 
 ```javascript
@@ -46,7 +41,6 @@ function convertArrayItemsToLower() {
 This example emphasizes the versatility of `toLowerCase()` when handling multiples of string data, ensuring uniformity across your dataset.
 
 ## Deep Dive
-
 The `toLowerCase()` method, inherited from JavaScript and utilized within Google Apps Script, has been an integral part of string manipulation since the early versions of JavaScript. Its main purpose is to aid in the case-insensitive handling of textual data, a need that arose with the advent of dynamic, user-interactive web applications. Despite its simplicity, the mechanism plays a crucial role in data validation, sorting, and searching algorithms by reducing the complexity introduced by case sensitivity.
 
 In terms of performance, the conversion process is highly optimized in modern JavaScript engines; however, its application should still be judicious within large-scale data operations to avoid unnecessary processing overhead.

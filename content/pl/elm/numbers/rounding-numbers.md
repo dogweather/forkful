@@ -12,12 +12,7 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i Dlaczego?
-
-Zaokrąglanie liczb polega na modyfikacji liczby dziesiętnej do jej najbliższej wartości całkowitej lub do określonej liczby miejsc po przecinku. Programiści używają zaokrąglenia, aby zmniejszyć złożoność, poprawić czytelność lub dopasować się do wymogów precyzji.
-
 ## Jak to zrobić:
-
 Moduł `Basics` w Elm dostarcza sprytne funkcje do zaokrąglania: `round`, `floor` i `ceiling`. Oto jak ich używać.
 
 ```elm
@@ -47,7 +42,6 @@ toLocaleString 2 3.14159 --> "3.14"
 ```
 
 ## Wnikliwe spojrzenie
-
 Elm to silnie typowany język funkcyjny, który releguje efekty uboczne do "krawędzi" architektury. Oznacza to, że funkcje takie jak zaokrąglanie muszą być czyste i przewidywalne. Historycznie, zaokrąglanie jest powszechną operacją w wielu językach programowania, które radzą sobie z nieprecyzyjnością arytmetyki liczby zmiennoprzecinkowej.
 
 Podejście Elm do zaokrąglania jest proste - funkcje są czyste i zgodne z matematycznymi definicjami zaokrąglania, podłogi i sufitu. Elm przewiduje wspólne potrzeby, dostarczając wbudowane funkcje, ponieważ zarządzanie precyzją jest częstym wymaganiem, zwłaszcza w finansach i grafice.
@@ -57,7 +51,6 @@ Alternatywy dla wbudowanych funkcji Elm mogą obejmować niestandardowe implemen
 W obecnej wersji Elm używa podstawowej arytmetyki zmiennoprzecinkowej JavaScript, utrzymując zgodność ze standardem IEEE 754, co jest ważne do zapamiętania podczas rozważania precyzji i potencjalnych błędów zmiennoprzecinkowych.
 
 ## Zobacz również
-
 - Oficjalna dokumentacja modułu `Basics` Elm: https://package.elm-lang.org/packages/elm/core/latest/Basics
 - Szczegółowe spojrzenie na działanie liczb zmiennoprzecinkowych w informatyce: https://floating-point-gui.de/
 - Moduł `Float` Elm do dalszych operacji na liczbach zmiennoprzecinkowych: https://package.elm-lang.org/packages/elm/core/latest/Float

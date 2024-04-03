@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---
 
-## Mitä & Miksi?
-Lähettää HTTP-pyyntö perusautentikoinnilla tarkoittaa käyttäjätunnuksen ja salasanan lähettämistä palvelimelle. Tämä tehdään yleensä turvallisen resurssin saamiseksi tai API:n käyttämiseksi.
-
 ## Näin teet:
 ```Lua
 http = require("socket.http")

@@ -13,12 +13,7 @@ title: Generierung von Zufallszahlen
 weight: 12
 ---
 
-## Was & Warum?
-
-Die Generierung von Zufallszahlen in Rust erfolgt durch die Verwendung von Bibliotheken, um unvorhergesehene numerische Werte zu produzieren, was für Aufgaben von der Kryptografie und Simulationen bis hin zu Spielen und randomisierten Algorithmen unerlässlich ist.
-
 ## Wie geht das:
-
 Rust stützt sich auf externe Crates für die Generierung von Zufallszahlen, wobei `rand` am häufigsten verwendet wird. Um mit der Generierung von Zufallszahlen zu beginnen, müssen Sie zuerst `rand` zu Ihrer `Cargo.toml`-Datei hinzufügen:
 
 ```toml
@@ -54,7 +49,6 @@ Zufällige Gleitkommazahl: 0.9401077112175732
 Beachten Sie, dass das erneute Ausführen des Programms unterschiedliche Werte produzieren wird.
 
 ## Vertiefung
-
 Die Generierung von Zufallszahlen in Rust wird durch `rand` und dessen Abhängigkeiten wie `getrandom` erleichtert und stellt eine breite Abstraktion über Betriebssystemfunktionen und algorithmische Generatoren dar. Historisch gesehen hat sich die Zufälligkeit in der Informatik von einfachen, vorhersehbaren Algorithmen zu komplexen, kryptografisch sicheren Methoden entwickelt. Rusts Ansatz umfasst diese Entwicklung durch sein austauschbares `Rng`-Trait, das von verschiedenen Generatoren unterstützt werden kann, je nach der erforderlichen Zufälligkeitsqualität und Leistung.
 
 Für die meisten Anwendungen bietet die Abhängigkeit von `rand` und dem RNG des Systems eine gute Balance zwischen Einfachheit und Entropie. Jedoch, für kryptografische Anwendungen, verweisen Crates wie `rand` auf `getrandom` für das Seeding, das sich wiederum auf betriebssystemspezifische Mechanismen stützt (z.B. `/dev/urandom` auf Unix-ähnlichen Systemen), um kryptografisch sichere Zufälligkeit zu gewährleisten.

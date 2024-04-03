@@ -14,12 +14,7 @@ title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire sur l'erreur standard (stderr) dans la programmation Arduino consiste à diriger les messages d'erreur et les diagnostics vers un canal séparé, garantissant qu'ils ne se mélangent pas avec la sortie standard (stdout). Les programmeurs font cela pour différencier les sorties normales du programme des messages d'erreur, rendant le débogage et l'analyse des journaux plus directs.
-
 ## Comment faire :
-
 Arduino ne différencie pas nativement entre la sortie standard et l'erreur standard comme le font les systèmes informatiques conventionnels. Les méthodes `Serial.print()` et `Serial.println()` écrivent toutes deux sur la même sortie série, généralement visualisée dans le moniteur série de l'IDE Arduino. Cependant, nous pouvons émuler l'écriture sur stderr en formatant spécifiquement les messages d'erreur ou en les dirigeant vers une sortie alternative, telle qu'un fichier sur une carte SD ou via une connexion réseau.
 
 Pour émuler stderr, vous pouvez préfixer les messages d'erreur avec une balise comme "ERREUR :" pour les différencier dans le moniteur série :

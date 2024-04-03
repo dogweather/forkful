@@ -11,9 +11,6 @@ title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---
 
-## Was & Warum?
-Das Berechnen eines zukünftigen oder vergangenen Datums heißt einfach, ein Datum basierend auf einem anderen Datum zu ermitteln. Programmierer nutzen das für Features wie Erinnerungen, Verfallsdaten oder Zeitreisen in Apps.
-
 ## So geht's:
 ```Kotlin
 import java.time.LocalDate

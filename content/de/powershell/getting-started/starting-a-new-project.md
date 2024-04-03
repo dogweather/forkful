@@ -11,9 +11,6 @@ title: Einen neuen Projekt starten
 weight: 1
 ---
 
-## Was & Warum?
-Ein neues Projekt zu beginnen bedeutet, eine frische Arbeitsumgebung für eine bestimmte Aufgabe zu schaffen. Programmierer tun dies, um ihre Ideen zu strukturieren, Abhängigkeiten zu verwalten und einen klaren Ausgangspunkt für die Entwicklung zu haben.
-
 ## How to:
 Um ein neues PowerShell-Projekt anzufangen, beginnen wir oft mit der Erstellung eines Verzeichnisses. Dann initialisieren wir ein Git-Repository und erstellen eine .ps1-Datei für unser Skript.
 

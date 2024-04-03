@@ -10,12 +10,7 @@ title: Deleting characters matching a pattern
 weight: 5
 ---
 
-## What & Why?
-
-Deleting characters matching a pattern is basically filtering out unwanted characters or sequences from strings or file contents based on rules, known as patterns. Programmers do it to cleanse data, prep it for processing, or to extract meaningful info without the noise.
-
 ## How to:
-
 ```Fish Shell
 # Remove digits from a string
 set string "Fish123Shell"
@@ -29,7 +24,6 @@ echo $noisy_string | string match -r '[a-z]+'
 ```
 
 ## Deep Dive
-
 In Fish Shell, the magic happens with the `string` utility, a handy built-in tool for string operations - introduced in version 2.3.0. Prior to this, users would fall back on UNIX staples like `sed` or `awk`. Why the change? Simplicity and integration. Having an in-house solution streamlines string manipulation, making scripts more readable and maintainable.
 
 Alternatives? Sure, the old guard `sed` can still do the job:
@@ -43,7 +37,6 @@ echo $old_school_string | sed 's/[0-9]//g'
 But why not leverage Fish’s own tools? For implementation, `string replace` has a `-r` option enabling regex patterns. `-a` applies the command to all matches, and adding a '' at the end tells it to replace with nothing, i.e., delete. Use `string match` when searching for a pattern to keep, instead of what to ditch.
 
 ## See Also
-
 - Official Fish Shell Documentation on `string`: https://fishshell.com/docs/current/cmds/string.html
 - Regex tutorial for deep diving into patterns: https://www.regular-expressions.info/
 - Sed & Awk, age-old text powers: an intro: https://www.gnu.org/software/sed/manual/sed.html, http://www.grymoire.com/Unix/Awk.html

@@ -11,9 +11,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---
 
-## What & Why? (Mikä & Miksi?)
-Muunnetaan päivämäärä merkkijonoksi, jotta voimme näyttää päivämäärän haluamassamme muodossa. Sitä tarvitaan lokitiedostoissa, käyttöliittymissä ja datan tallennuksessa.
-
 ## How to: (Kuinka tehdä:)
 ```Python
 from datetime import datetime

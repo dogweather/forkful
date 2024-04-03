@@ -16,9 +16,6 @@ title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---
 
-## Cái gì và Tại sao?
-Một bảng điều khiển tương tác, hay REPL (Read-Eval-Print Loop - Vòng Lặp Đọc-Đánh Giá-In), cho phép bạn thử nghiệm đoạn mã một cách thực tế. Các lập trình viên Elixir sử dụng REPL, gọi là IEx (Interactive Elixir), để thí nghiệm, gỡ lỗi và học ngôn ngữ.
-
 ## Cách thực hiện:
 Để khởi chạy IEx, mở terminal và gõ `iex`. Dưới đây là một ví dụ:
 

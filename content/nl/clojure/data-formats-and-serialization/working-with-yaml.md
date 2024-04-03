@@ -12,12 +12,7 @@ title: Werken met YAML
 weight: 41
 ---
 
-## Wat & Waarom?
-
-YAML, "YAML Ain't Markup Language," is een mensvriendelijke gegevensserialisatiestandaard voor alle programmeertalen. Programmeurs gebruiken YAML voor configuratiebestanden en gegevensuitwisseling waar leesbaarheid belangrijk is.
-
 ## Hoe te:
-
 Clojure bevat geen ingebouwde ondersteuning voor YAML. Je zult een bibliotheek zoals `clj-yaml` moeten gebruiken. Voeg het eerst toe aan je afhankelijkheden:
 
 ```clojure
@@ -44,11 +39,9 @@ Nu, laten we een YAML string naar een Clojure map parseren en vice versa:
 ```
 
 ## Diepere Duik
-
 YAML werd voor het eerst uitgebracht in 2001, met als doel menselijker leesbaar te zijn dan XML en tegelijkertijd rijkere gegevensstructuren te bieden dan JSON. `clj-yaml` is gebouwd op SnakeYAML, een Java-bibliotheek, waardoor het interoperabel is met JVM-talen. Alternatieven zijn het direct gebruik van `org.yaml.snakeyaml` of `cheshire` voor JSON-conversie, aangezien JSON een subset is van YAML.
 
 ## Zie Ook
-
 Duik dieper met deze bronnen:
 
 - Officiële site van YAML: [https://yaml.org](https://yaml.org)

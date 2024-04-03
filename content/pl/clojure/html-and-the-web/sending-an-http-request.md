@@ -11,9 +11,6 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## What & Why?
-"Wysyłanie żądania HTTP to proces komunikowania się z serwerem w celu pobrania lub wysłania danych. Programiści robią to, aby wymieniać dane z aplikacjami i usługami internetowymi."
-
 ## How to:
 W Clojure wysyłanie żądania HTTP jest łatwe. Użyjemy popularnej biblioteki `clj-http`. Zainstaluj ją, dodając do twojego `project.clj`:
 ```Clojure
@@ -77,7 +74,6 @@ Odpowiedź:
 Wysyłanie żądań HTTP nie jest nowością. Powstało wraz z HTTP w 1991 roku. Alternatywą dla `clj-http` może być `http-kit` lub niskopoziomowe `java.net.HttpURLConnection`. Wybór narzędzia zależy od potrzeb projektu: `clj-http` jest łatwy w obsłudze, `http-kit` jest szybki, a `HttpURLConnection` daje pełną kontrolę nad żądaniem.
 
 ### Implementacja w `clj-http` opiera się na bibliotece `Apache HttpComponents`. Dzięki temu obsługuje funkcje takie jak:
-
 - Automatyczne przekierowania.
 - Obsługa ciasteczek.
 - Zarządzanie sesjami.

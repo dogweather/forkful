@@ -11,11 +11,7 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel innebærer å kommunisere med en webserver for å hente eller sende data. Programmerere gjør dette for å integrere tjenester, konsumere APIer og drive dynamiske webapplikasjoner.
-
 ## Hvordan:
-
 Her er et eksempel med `clj-http` biblioteket:
 
 ```Clojure
@@ -34,12 +30,10 @@ Body: {"data": {...}}
 ```
 
 ## Dypdykk:
-
 Historisk har Clojure-utviklere brukt en rekke biblioteker for HTTP-forespørsler, med `clj-http` som en langvarig favoritt. Alternativer inkluderer `http-kit` og `aleph`, som også støtter asynkrone operasjoner. `clj-http` benytter seg av Apache HttpComponents, noe som gir rik detaljkontroll og er kjent for sin robusthet og fleksibilitet.
 
 Når du implementerer HTTP-forespørsler, tenk på: feilhåndtering, header-håndtering, timeouts, og kjøring av asynkrone kall. Husk at hver HTTP-bibliotek kan ha unike måter å håndtere disse på.
 
 ## Se Også:
-
 - clj-http GitHub repo: [https://github.com/dakrone/clj-http](https://github.com/dakrone/clj-http)
 - ClojureDocs for mer om nettverksprogrammering: [https://clojuredocs.org/quickref/Clojure%20Core](https://clojuredocs.org/quickref/Clojure%20Core)

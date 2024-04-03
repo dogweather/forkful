@@ -11,9 +11,6 @@ title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u043
 weight: 27
 ---
 
-## What & Why? (Що і Чому?)
-Comparing two dates lets you see which is earlier or later, or if they're the same. Programmers do this to track events, handle bookings, or set up reminders.
-
 ## How to: (Як це зробити:)
 Here's a simple way to compare dates using Python:
 

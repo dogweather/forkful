@@ -12,9 +12,6 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-Fehlerbehandlung in PHP bezieht sich auf das Verwalten und Reagieren auf Bedingungen, die den normalen Ablauf eines Programms stören, wie fehlende Dateien oder fehlerhafte Dateneingaben. Programmierer behandeln Fehler, um Abstürze zu verhindern und den Benutzern eine reibungslosere Erfahrung zu bieten.
-
 ## Wie geht das:
 In PHP kannst du Fehler mithilfe von `try-catch`-Blöcken verwalten und den Prozess mit benutzerdefinierten Fehlerbehandlungen und Ausnahmen individuell anpassen.
 

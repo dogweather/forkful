@@ -14,14 +14,10 @@ title: Sette stor bokstav i en streng
 weight: 2
 ---
 
-## Hva & Hvorfor?
-Det å kapitalisere en tekststreng innebærer å konvertere det første tegnet i hvert ord i strengen til store bokstaver hvis det er i små bokstaver, samtidig som de gjenværende tegnene forblir uendret. Programmerere utfører ofte denne oppgaven for formatering av utdata, brukerinndata eller databehandling for å sikre konsistens i hvordan tekst presenteres eller behandles, spesielt i brukergrensesnitt eller oppgaver for datanormalisering.
-
 ## Hvordan:
 I C++ kan du kapitalisere en tekststreng ved å bruke standardbiblioteket uten behov for tredjepartsbiblioteker. Men, for mer komplekse eller spesifikke kapitaliseringsatferder, kan biblioteker som Boost være ganske nyttige. Nedenfor er eksempler som illustrerer begge tilnærminger.
 
 ### Ved bruk av standard C++-biblioteket:
-
 ```cpp
 #include <iostream>
 #include <cctype> // for std::tolower and std::toupper
@@ -52,7 +48,6 @@ int main() {
 ```
 
 ### Ved bruk av Boost-biblioteket:
-
 For mer avansert strengmanipulasjon, inkludert lokaltilpasset kapitalisering, kan du ønske å bruke Boost String Algo-biblioteket.
 
 Først, sørg for at du har installert og konfigurert Boost-biblioteket i prosjektet ditt. Deretter kan du inkludere de nødvendige headerne og bruke funksjonene som vist nedenfor.

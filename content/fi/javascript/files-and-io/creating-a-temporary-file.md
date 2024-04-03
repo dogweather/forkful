@@ -11,9 +11,6 @@ title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---
 
-## What & Why? (Mitä & Miksi?)
-Väliaikaistiedoston luominen on prosessi, jossa tehdään tilapäinen tiedosto datan väliaikaista säilytystä tai käsittelyä varten. Ohjelmoijat tekevät sen, jotta voidaan käsitellä tietoja ilman pysyviä muutoksia tai kun luodaan väliaikaisia välimuistitiedostoja, jotka eivät saastuta tiedostojärjestelmää.
-
 ## How to (Kuinka tehdä):
 Käytetään 'fs' ja 'os' moduuleita Node.js:ssä väliaikaistiedoston luomiseen.
 

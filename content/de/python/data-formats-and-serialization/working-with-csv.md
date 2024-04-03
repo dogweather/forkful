@@ -13,13 +13,11 @@ title: Arbeiten mit CSV
 weight: 37
 ---
 
-## Was & Warum?
-Die Arbeit mit CSV (Comma-Separated Values, durch Kommas getrennte Werte) umfasst das Lesen von und das Schreiben in CSV-Dateien, einem gängigen Format zur Speicherung von tabellarischen Daten. Programmierer tun dies, um Daten einfach auszutauschen und in einem einfachen, textbasierten Format zu speichern, das auf verschiedenen Plattformen und in verschiedenen Sprachen weit verbreitet unterstützt wird.
-
 ## Wie:
 Python bietet das eingebaute `csv`-Modul an, um mit CSV-Dateien zu arbeiten, was das Lesen von und das Schreiben in sie unkompliziert macht. Für robustere und komplexere Datenmanipulationen ist die Drittanbieterbibliothek `pandas` sehr beliebt.
 
 ### Verwendung des `csv`-Moduls
+
 
 #### Ein CSV-Datei lesen
 ```python

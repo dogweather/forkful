@@ -11,9 +11,6 @@ title: Hantering av fel
 weight: 16
 ---
 
-## Vad & Varför?
-Felhantering låter ditt skript hantera det oväntade på ett smidigt sätt. Vi gör det för att hantera fel utan att våra användares hår grånar.
-
 ## Hur gör man:
 För att fånga fel i Fish, luta dig mot `status`-kommandot och villkorssatser. Anta att `ping` misslyckas; här är hur du upptäcker det:
 

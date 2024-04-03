@@ -11,9 +11,6 @@ title: Tworzenie pliku tymczasowego
 weight: 21
 ---
 
-## What & Why? (Co i dlaczego?)
-Tworzenie pliku tymczasowego daje ci miejsce do przechowywania danych, które są potrzebne tylko przez krótki czas. Programiści używają ich do różnych zadań, jak testowanie, przechowywanie dużej ilości danych przechodzących przez aplikację, czy izolowanie sesji użytkownika.
-
 ## How to: (Jak to zrobić:)
 Tworzenie pliku tymczasowego w Kotlinie jest proste. Kod wykorzystuje klasę `File` i jej metodę `createTempFile`. 
 

@@ -15,9 +15,6 @@ title: Lainausmerkkien poistaminen merkkijonosta
 weight: 9
 ---
 
-## Mikä & Miksi?
-Lainausmerkkien poistaminen merkkijonosta Dart-kielessä tarkoittaa kaksois- (") tai yksittäisten (') lainausmerkkien karsimista merkkijonon alusta ja lopusta, joka on hyödyllistä tietojen puhdistuksessa tai merkkijonojen valmistelussa jatkokäsittelyä varten. Ohjelmoijat tekevät tämän normalisoidakseen datan syötteitä, varmistaakseen yhtenäisyyden datan tallennuksessa, tai kun ollaan vuorovaikutuksessa API:en kanssa, jotka saattavat palauttaa datan lainatussa muodossa.
-
 ## Miten:
 Dart tarjoaa suoraviivaisia tapoja poistaa lainausmerkit merkkijonosta käyttäen sisäänrakennettuja merkkijonometodeja ilman kolmannen osapuolen kirjastoja.
 

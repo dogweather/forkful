@@ -12,10 +12,8 @@ title: Schreiben auf Standardfehler
 weight: 25
 ---
 
-## Was & Warum?
-Das Schreiben auf den Standardfehler (stderr) umfasst das Ausgeben von Fehlermeldungen und Diagnosen auf die Konsole oder das Terminal. Programmierer machen dies, um Fehlerinformationen von der Standardausgabe (stdout) zu trennen, was das Debuggen und die Log-Analyse erleichtert.
-
 ## Wie:
+
 
 ### Grundlegende stderr-Ausgabe in Java
 Java bietet eine unkomplizierte Möglichkeit, mit `System.err.print()` oder `System.err.println()` auf stderr zu schreiben. So geht's:
@@ -44,7 +42,6 @@ Dies wird die Fehlermeldung direkt an den Standardfehlerstrom ausgeben.
 Für Anwendungen, die eine ausgefeiltere Fehlerbehandlung und Protokollierung benötigen, ist die Verwendung einer Protokollierungsbibliothek wie SLF4J mit Logback oder Log4J2 üblich. Dies ermöglicht mehr Flexibilität bei der Verwaltung der Fehlerausgabe, einschließlich Dateiumleitung, Filterung und Formatierung.
 
 #### Beispiel mit Logback
-
 Fügen Sie zunächst die Abhängigkeit für Logback zu Ihrer `pom.xml` (Maven) oder `build.gradle` (Gradle) Datei hinzu. Für Maven:
 
 ```xml

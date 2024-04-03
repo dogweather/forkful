@@ -11,9 +11,6 @@ title: "Descargando una p\xE1gina web"
 weight: 42
 ---
 
-## ¿Qué y Por Qué?
-Descargar una página web significa traer el contenido de esa página a tu dispositivo local o servidor. Los programadores lo hacen para análisis de datos, monitoreo de disponibilidad de sitios web o copias de seguridad.
-
 ## Cómo Hacerlo:
 Aquí te dejo un ejemplo cortito y al grano usando `node-fetch`, una librería muy usada para hacer peticiones HTTP que imita la API `fetch` del navegador.
 

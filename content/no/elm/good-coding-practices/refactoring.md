@@ -12,9 +12,6 @@ title: Refaktorering
 weight: 19
 ---
 
-## Hva & Hvorfor?
-Refaktorering er i bunn og grunn å gjøre en vårrengjøring i koden din – det handler om å restrukturere eksisterende kode uten å endre dens eksterne oppførsel. Programmerere gjør det for å gjøre koden mer lesbar, redusere kompleksitet, forbedre vedlikeholdbarheten og gjøre det lettere å utvide.
-
 ## Hvordan:
 Anta at du har en Elm-funksjon som gjør for mye, som å blande UI-logikk med oppdateringer av tilstand. Det er en perfekt kandidat for refaktorering. Opprinnelig:
 

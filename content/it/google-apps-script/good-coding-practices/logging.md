@@ -12,12 +12,7 @@ title: Registrazione
 weight: 17
 ---
 
-## Cosa e Perché?
-
-Il logging nella programmazione comporta la registrazione di eventi, errori o occorrenze notevoli durante l'esecuzione. I programmatori lo fanno per debuggare problemi, monitorare le prestazioni e conservare un registro dei dati operativi, rendendolo fondamentale per mantenere e comprendere il comportamento del software in produzione.
-
 ## Come fare:
-
 In Google Apps Script, il logging può essere eseguito utilizzando vari metodi, come la classe `Logger` e `console.log()`. La classe Logger è il metodo tradizionale, adatto per un semplice debugging e scopi di sviluppo. Con gli aggiornamenti recenti, `console.log()` offre maggiore flessibilità e integrazione con Stackdriver Logging, fornendo una soluzione più robusta per monitorare i tuoi Apps Scripts nella Google Cloud Platform.
 
 **Usando Logger:**
@@ -64,7 +59,6 @@ Registrazione di un oggetto: {name: "Jane", role: "Developer"}
 Passando a `console.log()` per applicazioni complesse, gli sviluppatori possono analizzare efficientemente i log utilizzando i potenti filtri e strumenti forniti da GCP, il che non è altrettanto diretto con la classe Logger tradizionale.
 
 ## Approfondimento:
-
 Il logging in Google Apps Script è evoluto significativamente. Inizialmente, la classe `Logger` era il metodo primario per gli sviluppatori per debuggare i loro script. È semplice e sufficiente per script di base, ma manca delle capacità necessarie per le moderne applicazioni cloud, come la ricerca di log o l'analisi delle tendenze dei log nel tempo.
 
 L'introduzione di `console.log()` ha colmato questa lacuna integrando il logging di Google Apps Script con Stackdriver Logging di Google Cloud (ora chiamato Operations Suite), fornendo una piattaforma centralizzata per il logging, il monitoraggio e il debug delle applicazioni. Ciò ha permesso non solo il logging su larga scala, ma ha anche aperto a funzionalità avanzate di gestione dei log come metriche basate sui log, analisi dei log in tempo reale e integrazione con altri servizi di Google Cloud.

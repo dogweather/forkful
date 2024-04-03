@@ -15,12 +15,7 @@ title: Verwendung von assoziativen Arrays
 weight: 15
 ---
 
-## Was & Warum?
-
-Assoziative Arrays oder Wörterbücher in Haskell handeln davon, Schlüssel mit Werten für schnelle Nachschlageoperationen und effizientes Datenmanagement zu verknüpfen. Programmierer nutzen sie, um Sammlungen von gepaarten Elementen zu verwalten, bei denen die Suche nach einem Element im Vergleich zu Listen ein Kinderspiel ist.
-
 ## Wie geht das:
-
 Haskell hat nicht direkt aus der Box heraus assoziative Arrays, so wie manche anderen Sprachen, bietet aber eine leistungsstarke Standardbibliothek namens `Data.Map` an, um mit Schlüssel-Wert-Paaren zu arbeiten. Lassen Sie uns die Ärmel hochkrempeln und sehen, wie man sie verwendet!
 
 Zuerst, stellen Sie sicher, dass Sie es importieren:
@@ -59,7 +54,6 @@ Map.elems languagesUpdated
 Diese grundlegenden Operationen sollten die meisten Anwendungsfälle abdecken, aber es gibt noch viel mehr in `Data.Map` zu entdecken!
 
 ## Tiefere Einblicke
-
 Das `Data.Map` Modul in Haskells Standardbibliothek ist auf ausgeglichenen binären Bäumen aufgebaut, insbesondere AVL-Bäumen. Diese Wahl stellt sicher, dass die meisten Operationen auf der Map, wie Einfügen, Löschen und Nachschlagen, in O(log n) Zeit durchgeführt werden können, wobei n die Anzahl der Elemente in der Map ist. Es ist eine effiziente Wahl für viele Anwendungsfälle, wenn auch nicht die absolut schnellste für alle Szenarien.
 
 Es gibt auch eine historische Nuance: Bevor `Data.Map` zur bevorzugten Methode wurde, nutzten Haskell-Programmierer oft Listen von Paaren, um assoziative Arrays zu simulieren. Jedoch sind Operationen an solchen Strukturen O(n) für das Nachschlagen, was `Data.Map` in Bezug auf die Leistung eine bedeutende Verbesserung darstellt.

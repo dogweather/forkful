@@ -17,11 +17,8 @@ title: "Thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin b\u1EB1ng c\xE1c l\u1EC7nh CLI 
 weight: 31
 ---
 
-## Điều gì & Tại sao?
-
-Việc thao tác với các tệp tin bằng các lệnh một dòng trong PowerShell liên quan đến việc nhanh chóng thay đổi, di chuyển hoặc lấy dữ liệu tệp tin trực tiếp từ dòng lệnh. Lập trình viên làm điều này vì hiệu quả; nó nhanh hơn là dùng giao diện người dùng đồ họa (GUI) hoặc viết các kịch bản dài cho các tác vụ đơn giản.
-
 ## Làm thế nào:
+
 
 ### Đọc một Tệp
 Để nhanh chóng hiển thị nội dung của một tệp, sử dụng lệnh `Get-Content`:
@@ -66,7 +63,6 @@ Get-ChildItem -Path .\*.log | Copy-Item -Destination C:\Logs
 ```
 
 ## Sâu hơn
-
 Lịch sử, PowerShell được giới thiệu như một phương thức mạnh mẽ hơn so với dấu nhắc lệnh truyền thống trong Windows, cung cấp quyền truy cập chưa từng có vào nội bộ hệ thống và cửa hàng dữ liệu. Nó kết hợp tốc độ của dòng lệnh với sự linh hoạt của việc kịch bản hóa, khiến nó trở thành công cụ không thể thiếu cho các quản trị hệ thống và nhà phát triển dựa trên Windows.
 
 Các phương pháp thay thế cho PowerShell trong việc thao tác tệp bao gồm các công cụ dựa trên Unix như `sed`, `awk`, `grep` và kịch bản `bash` cho người dùng Linux và MacOS. Mặc dù những công cụ này cực kỳ mạnh mẽ và có những ưu điểm riêng, PowerShell cung cấp sự tích hợp sâu rộng với môi trường Windows.

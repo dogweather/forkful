@@ -11,9 +11,6 @@ title: Lendo um arquivo de texto
 weight: 22
 ---
 
-## What & Why?
-Ler um arquivo de texto em C++ é o processo de acessar e extrair informações de um arquivo armazenado no seu computador. Programadores fazem isso para manipular dados, configurar programas ou simplesmente para armazenar e recuperar informações.
-
 ## How to:
 Para ler um arquivo, você vai precisar usar a biblioteca `<fstream>`. Aqui está um exemplo básico:
 

@@ -11,9 +11,6 @@ title: Przetwarzanie HTML
 weight: 43
 ---
 
-## What & Why? (Co i Dlaczego?)
-Parsing HTML to proces analizy kodu HTML, by zrozumieć jego strukturę i wyodrębnić z niego dane. Programiści robią to, żeby manipulować tym kodem lub pobierać informacje z dokumentów HTML, które można wykorzystać w różnych aplikacjach.
-
 ## How to: (Jak to zrobić:)
 ```TypeScript
 import { JSDOM } from 'jsdom';

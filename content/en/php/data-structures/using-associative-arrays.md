@@ -10,12 +10,7 @@ title: Using associative arrays
 weight: 15
 ---
 
-## What & Why?
-
-Associative arrays in PHP are like super-charged lists where each element can be accessed using a human-readable key instead of just numbers. Programmers use them to store and manipulate data more intuitively, allowing for easier-to-read and more maintainable code.
-
 ## How to:
-
 In PHP, creating and using associative arrays is straightforward. Here’s a quick rundown:
 
 ```PHP
@@ -61,7 +56,6 @@ foreach ($person as $key => $value) {
 Notice how keys can be any string, allowing you to access elements using these keys rather than numeric indices, which can be less meaningful and harder to remember.
 
 ## Deep Dive
-
 Associative arrays in PHP are implemented internally using hash tables which provide very fast access to elements by key, making them highly efficient for many tasks. This efficiency, combined with their ease of use, makes associative arrays a cornerstone of PHP programming.
 
 Historically, PHP's arrays (both indexed and associative) have been incredibly flexible, allowing them to serve as lists, stacks, queues, and more. However, this flexibility can sometimes lead to less efficient code if not used carefully.

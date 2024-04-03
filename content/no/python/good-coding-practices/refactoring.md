@@ -11,9 +11,6 @@ title: Refaktorering
 weight: 19
 ---
 
-## Hva og hvorfor?
-Refaktorering er prosessen med å restrukturere eksisterende dataprogramkode—endre faktoriseringen—uten å endre dens eksterne oppførsel. Programmerere gjør det for å rydde opp i koden, forbedre lesbarheten, og gjøre det lettere å vedlikeholde og utvide, alt uten å legge til nye funksjoner.
-
 ## Hvordan:
 Anta at du har en bit kode som beregner og skriver ut arealet og omkretsen av et rektangel gitt lengden og bredden. Det gjør jobben, men det er repeterende og litt rotete.
 

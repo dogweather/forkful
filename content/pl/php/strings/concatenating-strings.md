@@ -11,11 +11,7 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## Co i Dlaczego?
-Łączenie stringów to po prostu sklejanie dwóch lub więcej tekstów w jeden. Programiści robią to, aby budować wiadomości, tworzyć zapytania SQL, a nawet zarządzać wyświetlanymi adresami URL – w zasadzie wszędzie tam, gdzie dynamika i elastyczność tekstu są potrzebne.
-
 ## Jak to zrobić:
-
 Łączenie stringów w PHP jest banalnie proste, użyj po prostu kropki:
 
 ```PHP
@@ -46,6 +42,7 @@ Programowanie w PHP jest fajne!
 ```
 
 ## W głębi tematu:
+
 
 ### Historia
 W PHP, jak w wielu innych językach, od zawsze istniała potrzeba pracy z tekstami. W prastarych czasach PHP, przed erą HTML i powszechnej komunikacji sieciowej, łączenie stringów miało już swoje miejsce.

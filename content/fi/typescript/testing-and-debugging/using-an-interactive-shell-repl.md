@@ -12,9 +12,6 @@ title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mikä & Miksi?
-Read-Eval-Print-Loop (REPL) on ohjelmointiympäristö, joka ottaa vastaan yksittäisiä käyttäjän syötteitä, suorittaa ne ja palauttaa tuloksen käyttäjälle. Ohjelmoijat käyttävät REPL:iä nopeasti kokeillakseen koodinpätkiä, debugatakseen ja oppiakseen uusia kielen ominaisuuksia ilman täyden sovelluksen luomisen vaivaa.
-
 ## Miten:
 TypeScript ei tule oman REPL:nsä kanssa. Käytetään `ts-node`a, TypeScriptin suoritusympäristöä Node.js:lle, joka sisältää REPL:n.
 

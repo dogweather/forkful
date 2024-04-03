@@ -14,9 +14,6 @@ title: Generowanie liczb losowych
 weight: 12
 ---
 
-## Co i dlaczego?
-Generowanie liczb losowych w Elm odbywa się przez użycie modułu `Random`, który pozwala na produkcję pseudo-losowych liczb. Liczby te przydają się w różnych zadaniach takich jak gry, symulacje, a nawet jako część algorytmów wymagających procesów stochastycznych. Ta możliwość pozwala programistom dodać nieprzewidywalność i różnorodność do ich aplikacji, zwiększając doświadczenie użytkownika i funkcjonalność.
-
 ## Jak to zrobić:
 Czysto funkcyjna natura Elm oznacza, że nie możesz bezpośrednio generować liczb losowych, jak mogłoby to być w językach imperatywnych. Zamiast tego używasz modułu `Random` w połączeniu z komendami. Oto podstawowy przykład, który generuje losową liczbę całkowitą między 1 a 100.
 

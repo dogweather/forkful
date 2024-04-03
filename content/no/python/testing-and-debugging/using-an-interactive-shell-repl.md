@@ -12,9 +12,6 @@ title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---
 
-## Hva & Hvorfor?
-En REPL, eller Lese-Evaluer-Skriv-Løkke, er et programmeringsmiljø som tar enkeltbrukerinnskrivelser, utfører dem og returnerer resultatet til brukeren. Programmerere bruker det til raske tester, læring, feilsøking eller for å gjøre beregninger på sparket.
-
 ## Hvordan:
 Gå rett inn i Pythons REPL ved å skrive `python` i kommandolinjen din. Når du er der, test ut enkle operasjoner eller flerlinjekode:
 

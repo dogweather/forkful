@@ -12,12 +12,7 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä & Miksi?
-
-YAML, lyhenne sanoista YAML Ain't Markup Language, on ihmisluettava tietojen serialisointiformaatti. Ohjelmoijat käyttävät sitä asetustiedostoihin, tietojen vaihtoon ja sovelluksissa, joissa tietoja on tallennettava tai lähetettävä muodossa, joka on helppo ymmärtää.
-
 ## Kuinka:
-
 Dartissa YAML:n käyttö tyypillisesti edellyttää kolmannen osapuolen kirjaston käyttöä, koska kieli ei sisällä sisäänrakennettuja YAML-jäsennysominaisuuksia. Suosittu valinta on `yaml`-paketti. Aloittaaksesi sinun tulee lisätä tämä paketti `pubspec.yaml`-tiedostoosi:
 
 ```yaml
@@ -28,7 +23,6 @@ dependencies:
 Muista suorittaa `pub get` noutaaksesi paketin.
 
 ### YAML:n lukeminen
-
 YAML-tiedoston lukemiseksi, tuo ensin `yaml`-paketti ja käytä sitten `loadYaml`-funktiota:
 
 ```dart
@@ -52,7 +46,6 @@ age: 30
 ```
 
 ### YAML:n kirjoittaminen
-
 Vaikka `yaml`-paketti onkin hieno jäsennykseen, se ei tue YAML:n kirjoittamista. Tätä varten saatat joutua muuntamaan tietosi manuaalisesti YAML:ksi tai käyttämään toista pakettia, jos sellainen on saatavilla. Tai, yksinkertaisemmin, hallitsemaan datamuunnoksiasi ja tulostamaan ne merkkijonoina, jotka vastaavat YAML-syntaksia:
 
 ```dart

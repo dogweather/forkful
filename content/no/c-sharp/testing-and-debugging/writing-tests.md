@@ -14,12 +14,7 @@ title: Skrive tester
 weight: 36
 ---
 
-## Hva & Hvorfor?
-
-Å skrive tester i C# innebærer å lage automatiserte skript for å validere funksjonaliteten til koden din, for å sikre at den oppfører seg som forventet. Programmerere gjør dette for å fange opp feil tidlig, legge til rette for koderestrukturering, og sikre at nye endringer ikke ødelegger eksisterende funksjoner, noe som øker programvarens kvalitet og pålitelighet.
-
 ## Hvordan:
-
 C#-utviklere bruker primært NUnit- eller xUnit-rammeverkene for å skrive tester på grunn av deres fleksibilitet og omfattende funksjonssett. Her er et grunnleggende eksempel som bruker NUnit for å teste en enkel addisjonsfunksjon:
 
 1. **Installer NUnit og NUnit3TestAdapter** via NuGet Package Manager eller .NET CLI:
@@ -73,7 +68,6 @@ dotnet test
 ```
 
 ### Eksempel på utdata:
-
 Forutsatt at testen din passerer, bør du se en utdata som ligner på dette:
 ```
 Test Run Successful.
@@ -83,7 +77,6 @@ Total tests: 1
 ```
 
 ### Bruk av xUnit:
-
 Hvis du foretrekker xUnit, er oppsettet lignende som for NUnit. Her er hvordan du skriver om testeksemplet for `Calculator`-klassen ved bruk av xUnit:
 
 1. **Installer xUnit og xUnit.runner.visualstudio**:

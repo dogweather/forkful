@@ -11,9 +11,6 @@ title: Gestion des erreurs
 weight: 16
 ---
 
-## Quoi et pourquoi ?
-Gérer les erreurs signifie écrire du code qui peut anticiper et traiter les problèmes qui surviennent. Les programmeurs le font pour éviter les plantages, protéger l'intégrité des données et fournir aux utilisateurs des solutions de repli élégantes.
-
 ## Comment faire :
 La philosophie centrale d'Elm est Pas d'Exceptions à l'Exécution. Donc, Elm tire parti de son système de types avec des types tels que `Maybe` et `Result` pour gérer les erreurs.
 

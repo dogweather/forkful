@@ -11,9 +11,6 @@ title: Concatenando strings
 weight: 3
 ---
 
-## O Que É & Por Que?
-Concatenar strings significa juntar duas ou mais sequências de caracteres em uma só. Programadores fazem isso para construir mensagens, gerar saídas dinâmicas ou simplesmente reunir dados de diversas fontes.
-
 ## Como Fazer:
 ```C++
 #include <iostream>

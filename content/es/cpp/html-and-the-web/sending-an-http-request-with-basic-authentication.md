@@ -12,9 +12,6 @@ title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---
 
-## What & Why?
-Enviar una solicitud HTTP con autenticación básica significa incluir credenciales de usuario y contraseña codificadas en base64 en el encabezado de la solicitud. Los programadores lo hacen para acceder a recursos protegidos en un servidor web de manera simple y directa.
-
 ## How to:
 Para enviar una solicitud HTTP con autenticación básica en C++, necesitarás alguna biblioteca como `Curl` o `Boost.Beast`. Aquí hay un ejemplo usando `Curl`:
 

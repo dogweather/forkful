@@ -12,9 +12,6 @@ title: Registrazione Eventi (Logging)
 weight: 17
 ---
 
-## Cosa & Perché?
-Il logging è essenzialmente il processo di registrazione di eventi e output di dati da un software durante il suo funzionamento, pensalo come il diario del software. I programmatori utilizzano il logging per tenere traccia di ciò che sta succedendo sotto il cofano - è inestimabile per il debugging dei problemi, il monitoraggio del comportamento del sistema in tempo reale e l'analisi delle attività passate per ottimizzazioni delle prestazioni o audit.
-
 ## Come fare:
 L'architettura di Elm non supporta effetti collaterali come il logging di base—li gestisci attraverso comandi, che sono una parte dell'architettura della tua applicazione. A scopo didattico, vediamo come potresti simulare il logging inviando messaggi a JavaScript tramite porte (ports).
 

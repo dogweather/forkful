@@ -13,9 +13,6 @@ title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---
 
-## Was & Warum?
-Es ist wesentlich in JavaScript zu überprüfen, ob ein Verzeichnis existiert, um Aufgaben der Dateimanipulation durchzuführen. Dadurch können Skripte die Anwesenheit eines Verzeichnisses bestätigen, bevor sie daraus lesen oder darauf schreiben. Diese Operation verhindert Fehler und gewährleistet einen reibungsloseren Programmablauf, insbesondere bei Anwendungen, die Dateien oder Verzeichnisse dynamisch basierend auf Benutzereingaben oder externen Datenquellen handhaben.
-
 ## Wie geht das:
 In Node.js, da JavaScript selbst keinen direkten Zugriff auf das Dateisystem hat, wird für solche Operationen typischerweise das `fs` Modul verwendet. Hier ist eine einfache Methode, um zu überprüfen, ob ein Verzeichnis mithilfe von `fs.existsSync()` existiert:
 

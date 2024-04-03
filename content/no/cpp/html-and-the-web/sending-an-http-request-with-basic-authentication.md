@@ -12,9 +12,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel med grunnleggende autentisering betyr at du inkluderer brukernavn og passord for å få tilgang til en beskyttet ressurs på et nettsted. Programmerere gjør dette for å automatisere tilgang til tjenerressurser som krever godkjenning.
-
 ## Slik gjør du:
 For å sende en HTTP-forespørsel med grunnleggende autentisering i C++, trenger du ofte et nettverksbibliotek som libcurl. Her er et enkelt eksempel:
 

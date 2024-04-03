@@ -15,14 +15,10 @@ title: Travailler avec CSV
 weight: 37
 ---
 
-## Quoi & Pourquoi ?
-
-Travailler avec des fichiers CSV (Comma Separated Values, ou valeurs séparées par des virgules) consiste à traiter et manipuler des données stockées dans un format de texte simple, où chaque ligne du texte représente une ligne dans un tableau, et les virgules séparent les colonnes individuelles. Les programmeurs utilisent cela pour importer, exporter, et gérer des données à travers différents systèmes en raison de l'acceptation large du CSV comme format d'échange de données léger et lisible par l'homme.
-
 ## Comment faire :
 
-### Lire un fichier CSV en utilisant la bibliothèque standard C++ :
 
+### Lire un fichier CSV en utilisant la bibliothèque standard C++ :
 ```cpp
 #include <fstream>
 #include <iostream>
@@ -54,7 +50,6 @@ int main() {
 ```
 
 ### Écrire dans un fichier CSV :
-
 ```cpp
 #include <fstream>
 #include <vector>
@@ -80,7 +75,6 @@ int main() {
 ```
 
 ### Utiliser une bibliothèque tierce : `csv2` :
-
 Bien que la bibliothèque standard C++ fournisse les outils de base pour travailler avec des fichiers et des chaînes, l'utilisation de bibliothèques tierces peut simplifier le traitement des CSV. Une telle bibliothèque est `csv2`, connue pour sa facilité d'utilisation et son efficacité.
 
 - Installation : Typiquement installée via des gestionnaires de paquets comme Conan ou directement depuis son dépôt GitHub.

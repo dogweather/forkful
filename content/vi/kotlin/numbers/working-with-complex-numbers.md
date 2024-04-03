@@ -16,11 +16,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Gì và Tại sao?
-Số phức mở rộng hệ thống số của chúng ta để bao gồm căn bậc hai của các số âm, nơi đơn vị 'ảo' i bằng căn bậc hai của -1. Các lập trình viên sử dụng chúng trong các lĩnh vực như kỹ thuật, vật lý và xử lý tín hiệu, bởi vì chúng rất tốt trong việc mô hình hóa sóng, dao động và bất cứ thứ gì quay.
-
 ## Làm thế nào:
-
 Hãy định nghĩa một class số phức cơ bản trong Kotlin:
 
 ```kotlin
@@ -46,13 +42,11 @@ fun main() {
 ```
 
 ## Tìm hiểu thêm
-
 Số phức được đề cập đầu tiên vào thế kỷ 16, giải quyết các phương trình bậc ba không có nghiệm thực. Kỹ thuật và vật lý được lợi ích rất nhiều từ số phức để phân tích mạch AC và hình sóng. Bạn có thể sử dụng thư viện như `koma` hoặc `ejml` của Kotlin cho công việc nặng nhọc.
 
 Các phép toán trên số phức mô phỏng theo số thực, nhưng với sự chú ý đến đơn vị ảo. Phép nhân, ví dụ, tuân theo tính chất phân phối, nhớ rằng `i^2 = -1`. Đơn vị ảo này cho phép chúng ta biểu diễn các số đa chiều, quan trọng trong các phép tính khoa học khác nhau.
 
 ## Xem thêm
-
 Thư viện Toán của Kotlin:
 
 - [koma](https://koma.kyonifer.com/): Một thư viện tính toán khoa học cho Kotlin.

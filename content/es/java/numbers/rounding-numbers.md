@@ -11,9 +11,6 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## Qué y Por Qué?
-Redondear números significa ajustarlos a un grado específico de precisión. Los programadores lo hacen para simplificar los números para su legibilidad, cumplir con ciertas especificaciones, o asegurarse de que los cálculos se ajusten dentro de ciertos límites, como evitar errores de precisión en la aritmética de punto flotante.
-
 ## Cómo:
 Java ofrece múltiples formas de redondear números. Aquí hay una demostración rápida con `Math.round()`, `BigDecimal` y `DecimalFormat`.
 

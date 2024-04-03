@@ -16,9 +16,6 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---
 
-## Gì và Tại sao?
-Gửi một yêu cầu HTTP là cách chương trình của bạn yêu cầu dữ liệu từ web, giống như cách bạn yêu cầu một thủ thư về một quyển sách. Lập trình viên thực hiện việc này để tải, gửi hoặc thao túng dữ liệu từ xa, từ việc lấy thông tin thời tiết đến đăng tweet.
-
 ## Cách thực hiện:
 Sử dụng thư viện `HTTPoison` của Elixir. Nó gọn gàng, đơn giản và hoàn thành công việc.
 

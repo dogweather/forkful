@@ -13,9 +13,6 @@ title: Tolka HTML
 weight: 43
 ---
 
-## Vad & Varför?
-Att tolka HTML innebär att bryta ned en bit HTML-kod för att förstå dess struktur och innehåll. Programmerare gör detta för att extrahera data, manipulera innehåll eller migrera information mellan format och system.
-
 ## Hur man gör:
 För att tolka HTML i Ruby, installera 'Nokogiri'-gem med `gem install nokogiri`. Nokogiri är som en schweizisk armékniv för att arbeta med HTML och XML i Ruby. Här är ett snabbt exempel:
 

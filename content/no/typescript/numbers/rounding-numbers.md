@@ -9,9 +9,6 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva & Hvorfor?
-Avrunding av tall er å beskjære et tall til en spesifikk presisjon. Programmerere gjør dette for å kontrollere numerisk utdata for lesbarhet, visningsformål, eller når spesifikk presisjon er nødvendig etter operasjoner som gir resultat i flyttall.
-
 ## Hvordan:
 Avrunding i TypeScript kan gjøres ved hjelp av flere metoder. Her er en kjapp gjennomgang:
 

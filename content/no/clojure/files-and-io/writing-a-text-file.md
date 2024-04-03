@@ -12,14 +12,10 @@ title: Skrive en tekstfil
 weight: 24
 ---
 
-## Hva & Hvorfor?
-
-Å skrive en tekstfil i Clojure innebærer å skape eller modifisere filer for å lagre data utenfor applikasjonen din. Dette muliggjør lagring, konfigurasjon, logging eller mellomprosesskommunikasjon. Programmerere utfører denne oppgaven for å eksternalisere applikasjonstilstand, konfigurasjoner eller for å dele informasjon mellom ulike deler av et program eller mellom ulike programmer totalt sett.
-
 ## Hvordan:
 
-### Skrive tekst til en fil ved bruk av Clojures innebygde funksjoner
 
+### Skrive tekst til en fil ved bruk av Clojures innebygde funksjoner
 `spit`-funksjonen er den enkleste måten å skrive tekst til en fil i Clojure. Den tar to argumenter: filstien og strengen som skal skrives. Hvis filen ikke eksisterer, vil `spit` opprette den. Hvis den eksisterer, vil `spit` overskrive den.
 
 ```clojure
@@ -40,7 +36,6 @@ La oss legge til denne nye linjen.
 ```
 
 ### Bruke tredjepartsbiblioteker
-
 Selv om Clojures innebygde kapabiliteter ofte er tilstrekkelige, har fellesskapet utviklet robuste biblioteker for mer komplekse eller spesifikke oppgaver. For fil-I/O er ett populært bibliotek `clojure.java.io`, som tilbyr en mer Java-lignende tilnærming til filhåndtering.
 
 For å bruke `clojure.java.io` for å skrive til en fil, må du først importere det:

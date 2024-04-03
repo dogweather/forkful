@@ -10,9 +10,6 @@ title: "Descargando una p\xE1gina web"
 weight: 42
 ---
 
-## ¿Qué & Por Qué?
-Descargar una página web significa traer el contenido de una página de internet a tu PC local. Los programadores hacen esto para análisis, pruebas, backup, o para automatizar tareas que dependen de información web.
-
 ## Cómo hacerlo:
 ```PowerShell
 # Usando Invoke-WebRequest para guardar el contenido en una variable

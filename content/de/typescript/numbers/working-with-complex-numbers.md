@@ -12,9 +12,6 @@ title: Umgang mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-Komplexe Zahlen, bestehend aus einem Realteil und einem Imaginärteil (üblicherweise geschrieben als a + bi), ermöglichen Berechnungen, die mit nur reellen Zahlen praktisch unmöglich oder nicht durchführbar wären. Programmierer nutzen sie in Bereichen wie der Signalverarbeitung, Quantencomputing und angewandten Mathematik, wo zweidimensionale Zahlenrepräsentationen essentiell sind.
-
 ## Wie:
 Die Handhabung komplexer Zahlen in TypeScript erfordert eine dedizierte Klasse. Lassen Sie uns eine erstellen und uns mit Addition und Multiplikation auseinandersetzen.
 

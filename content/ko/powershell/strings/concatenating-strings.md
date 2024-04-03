@@ -16,9 +16,6 @@ title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
 weight: 3
 ---
 
-## What & Why? (무엇과 왜?)
-문자열 연결(concatenating strings)은 서로 다른 문자열을 붙여 하나로 만드는 것입니다. 데이터와 텍스트를 동적으로 조작하거나 출력을 포맷하기 위해 개발자들이 자주 사용합니다.
-
 ## How to: (방법)
 ```PowerShell
 # '+' 연산자를 이용한 연결
@@ -49,6 +46,5 @@ echo $full
 부가적으로, `-f` 연산자는 포맷을 지정하며 여러 값들을 묶는데 적합하며, `$()` 서브 익스프레션은 복잡한 변수 결합이나 커맨드 렛의 결과를 문자열과 결합할 때 유용합니다.
 
 ## See Also (참고자료)
-
 - [About Join](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_join)
 - [StringBuilder 클래스에 대한 MSDN 문서](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder)

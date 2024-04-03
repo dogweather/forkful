@@ -13,9 +13,6 @@ title: Arbeiten mit JSON
 weight: 38
 ---
 
-## Was & Warum?
-JSON oder JavaScript Object Notation ist ein leichtgewichtiges Daten-Austauschformat, das sowohl für Menschen einfach zu lesen und zu schreiben als auch für Maschinen einfach zu parsen und zu generieren ist. Entwickler arbeiten oft mit JSON, um Daten zwischen Servern und Webanwendungen auszutauschen, aufgrund seiner Einfachheit und Sprachunabhängigkeit, was es zu einem Eckpfeiler in der modernen Webentwicklung und APIs macht.
-
 ## Wie funktioniert es:
 Mit JSON in PHP zu arbeiten, ist dank der integrierten Funktionen `json_encode()` und `json_decode()` unkompliziert. Unten sind Beispiele dargestellt, die zeigen, wie man ein PHP-Array in einen JSON-String umwandelt und umgekehrt:
 

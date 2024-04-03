@@ -11,9 +11,6 @@ title: Lectura de un archivo de texto
 weight: 22
 ---
 
-## ¿Qué & Por Qué?
-Leer un archivo de texto en programación implica acceder y obtener el contenido almacenado en un archivo. Los programadores lo hacen para procesar o analizar datos, configuraciones, o simplemente recuperar información para usar en sus aplicaciones.
-
 ## Cómo hacerlo:
 Leer un archivo en Haskell es sencillo. Vamos a usar la función `readFile`, que forma parte del módulo `Prelude`. Aquí está el ejemplo:
 

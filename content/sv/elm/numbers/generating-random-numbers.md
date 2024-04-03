@@ -16,9 +16,6 @@ title: "Generera slumpm\xE4ssiga tal"
 weight: 12
 ---
 
-## Vad & Varför?
-Att generera slumpmässiga nummer i Elm innebär att använda `Random`-modulen för att producera pseudo-slumpmässiga nummer, vilket är användbart för en mängd uppgifter såsom spel, simuleringar och även som en del av algoritmer som kräver stokastiska processer. Denna förmåga tillåter utvecklare att lägga till oförutsägbarhet och variation i sina applikationer, vilket förbättrar användarupplevelse och funktionalitet.
-
 ## Hur man gör:
 Elms rena funktionella natur innebär att du inte kan generera slumpmässiga nummer direkt som du kanske kan i imperativa språk. Istället använder du `Random`-modulen tillsammans med kommandon. Här är ett grundläggande exempel som genererar ett slumpmässigt heltal mellan 1 och 100.
 

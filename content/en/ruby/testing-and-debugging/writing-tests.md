@@ -10,9 +10,6 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-Testing in Ruby is about verifying that your code behaves as expected under various conditions. Programmers write tests to ensure correctness, prevent regressions, and facilitate refactoring, aiming for robust and maintainable applications. 
-
 ## How to:
 Ruby comes with a built-in library called `Test::Unit` for writing unit tests, encapsulating testing practices within straightforward structures. However, the Ruby community often leans towards third-party libraries like RSpec and Minitest due to their enhanced expressiveness and flexibility.
 

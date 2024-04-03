@@ -10,9 +10,6 @@ title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---
 
-## Was & Warum?
-Das Löschen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte Zeichen aus einem String zu entfernen, die einem vorgegebenen Kriterium entsprechen. Programmierer machen das, um Eingabedaten zu bereinigen, zu validieren oder einfach um unnötige Informationen zu entfernen.
-
 ## Anleitung:
 Um Zeichen zu löschen, die einem Muster in Haskell entsprechen, können wir die `filter`-Funktion zusammen mit einer passenden Bedingung verwenden. Hier ein einfaches Beispiel, das alle Ziffern aus einem String entfernt:
 

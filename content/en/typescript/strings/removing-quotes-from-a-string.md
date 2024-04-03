@@ -10,9 +10,6 @@ title: Removing quotes from a string
 weight: 9
 ---
 
-## What & Why?
-Removing quotes from a string means stripping out the surrounding single (`'`) or double (`"`) quote characters that define string literals in code. Programmers do this for several reasons, such as formatting output, sanitizing user input, or preparing strings for parsing or storage where the quotes are unnecessary or could cause errors.
-
 ## How to:
 Here's your no-nonsense guide to cutting those pesky quote marks loose from your strings in TypeScript.
 

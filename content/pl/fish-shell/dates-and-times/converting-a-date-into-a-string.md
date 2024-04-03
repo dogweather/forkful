@@ -11,9 +11,6 @@ title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---
 
-## What & Why? (Co i Dlaczego?)
-Przekształcanie daty w ciąg znaków to proces zamiany reprezentacji daty na tekst. Programiści to robią, by łatwo zapisać lub wyświetlić datę w czytelnej formie dla ludzi.
-
 ## How to: (Jak to zrobić:)
 ```Fish Shell
 # Ustaw zmienną na bieżącą datę i czas

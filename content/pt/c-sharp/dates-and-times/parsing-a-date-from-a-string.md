@@ -12,11 +12,7 @@ title: Analisando uma data a partir de uma string
 weight: 30
 ---
 
-## O Que & Por Quê?
-Analisar (parse) uma data de uma string em C# envolve converter representações textuais de datas e horas em um objeto `DateTime`. Isso é essencial para aplicações que precisam manipular, armazenar ou exibir datas e horas em diferentes formatos, como aplicativos de agenda, processadores de log ou qualquer sistema que lida com entrada de data de usuários ou fontes externas.
-
 ## Como Fazer:
-
 **Análise Básica:**
 
 Os métodos `DateTime.Parse` e `DateTime.TryParse` são as opções padrão para converter uma string em um `DateTime`. Aqui está um exemplo rápido:

@@ -10,9 +10,6 @@ title: Textdatei einlesen
 weight: 22
 ---
 
-## Was & Warum?
-Das Lesen einer Textdatei bedeutet, Daten von einer im Speichermedium gespeicherten Datei in dein Programm zu laden. Das machen Programmierer, um Konfigurationen zu laden, Daten zu analysieren oder einfach Informationen zu speichern und wiederzuverwenden.
-
 ## How to:
 Der Arduino liest Textdateien mithilfe eines SD-Kartenmoduls. Hier ein einfacher Sketch, der den Inhalt einer Textdatei ausliest:
 

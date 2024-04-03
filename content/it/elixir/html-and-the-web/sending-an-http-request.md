@@ -11,9 +11,6 @@ title: Inviare una richiesta http
 weight: 44
 ---
 
-## What & Why?
-Inviare una richiesta HTTP significa chiedere dati o inviare informazioni a un server web. I programmatori lo fanno per interagire con API, servizi web e per scambiare dati tra sistemi.
-
 ## How to:
 Usiamo `HTTPoison`, una libreria popolare di Elixir per fare richieste HTTP. Installala aggiungendo `{:httpoison, "~> 1.8"}` al tuo `mix.exs` e eseguendo `mix deps.get`.
 

@@ -10,9 +10,6 @@ title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---
 
-## What & Why?
-Converter uma string para minúsculas é o processo de transformar todos os caracteres alfabéticos em um texto para sua variante em caixa baixa. Programadores fazem isso para padronizar dados, facilitar comparações de strings, ou atender requisitos específicos de sistemas que diferenciam maiúsculas e minúsculas.
-
 ## How to:
 No Fish Shell, usar a função `string` com a opção `lower` faz o truque. Aqui está como:
 

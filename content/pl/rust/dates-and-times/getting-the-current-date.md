@@ -13,11 +13,8 @@ title: Pobieranie aktualnej daty
 weight: 29
 ---
 
-## Co i dlaczego?
-
-Pobieranie bieżącej daty w Rust jest powszechnym zadaniem w przypadkach takich jak logowanie, operacje czasowe, czy po prostu wyświetlanie daty. W przeciwieństwie do niektórych języków, które w swojej bibliotece standardowej zawierają funkcjonalności daty i czasu, Rust zachęca do używania solidnej biblioteki stron trzecich, chrono, do kompleksowej manipulacji datą i czasem ze względu na jej lepszą funkcjonalność i łatwość użycia.
-
 ## Jak to zrobić:
+
 
 ### Korzystając z biblioteki standardowej Rust
 Biblioteka standardowa Rusta oferuje ograniczoną, ale szybką metodę uzyskania bieżącego czasu, choć nie bezpośrednio bieżącej daty w formacie kalendarzowym. Oto jak to zrobić:

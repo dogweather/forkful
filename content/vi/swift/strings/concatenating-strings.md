@@ -15,9 +15,6 @@ title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---
 
-## Cái gì và Tại sao?
-Ghép chuỗi là việc kết hợp các chuỗi riêng biệt lại với nhau để tạo ra một chuỗi mới. Lập trình viên thực hiện điều này để kết hợp văn bản một cách linh hoạt, như tổng hợp lời chào, thông điệp, hay chỉ đơn giản là để cấu trúc dữ liệu một cách dễ đọc.
-
 ## Làm thế nào:
 ```Swift
 let firstName = "Taylor"

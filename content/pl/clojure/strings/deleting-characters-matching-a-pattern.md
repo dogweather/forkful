@@ -10,11 +10,6 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## What & Why?
-**Co i Dlaczego?**
-
-Usuwanie znaków pasujących do wzorca to proces eliminowania określonych znaków z ciągów tekstowych. Robimy to, by oczyścić dane, sformatować tekst lub usunąć niepożądane informacje.
-
 ## How to:
 **Jak to zrobić:**
 

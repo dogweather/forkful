@@ -11,12 +11,7 @@ title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---
 
-## Qué y Por Qué?
-
-Convertir fechas en cadenas de texto te permite formatear y mostrar fechas de manera legible y personalizada. Los programadores lo hacen para manipular y registrar fechas en logs, interfaces de usuario o para almacenarlas eficientemente.
-
 ## Cómo Hacerlo:
-
 En Fish, la conversión de fechas es directa. Usa `date` para mostrar fechas en diferentes formatos:
 
 ```Fish Shell
@@ -42,7 +37,6 @@ Ejemplo de salida:
 ```
 
 ## Deep Dive:
-
 En Unix, el comando `date` viene de los primeros días del sistema operativo, proveiendo una manera simple de obtener la fecha y hora del sistema. 
 
 Alternativas incluyen usar `strftime` para formatear fechas, una función disponible en varios lenguajes de programación. En Fish, la función `date` es frecuentemente suficiente y hereda mucha de su funcionalidad de las operaciones de bajo nivel del sistema operativo, lo que la hace bastante eficiente.
@@ -50,7 +44,6 @@ Alternativas incluyen usar `strftime` para formatear fechas, una función dispon
 Un detalle interesante es que la representación interna de las fechas en las computadoras es simplemente un número, usualmente la cantidad de segundos desde un momento específico en el tiempo (como el primer instante de 1970, UTC, conocido como "Epoch"). Al convertir este número a una cadena de texto, estás haciendo la fecha interpretable por los humanos.
 
 ## Ver También:
-
 - Documentación oficial de Fish Shell para `date`: https://fishshell.com/docs/current/commands.html#date
 - Tutorial de Fish Shell: https://fishshell.com/docs/current/tutorial.html
 - GNU Coreutils `date`: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html

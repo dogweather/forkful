@@ -14,12 +14,7 @@ title: "Einen String gro\xDFschreiben"
 weight: 2
 ---
 
-## Was & Warum?
-
-Das Kapitalisieren eines Strings bedeutet, den ersten Buchstaben des Strings in Großbuchstaben umzuwandeln, während sichergestellt wird, dass alle anderen Buchstaben in Kleinbuchstaben sind. Diese Aktion ist häufig notwendig, um Benutzereingaben zu formatieren oder Text in Benutzeroberflächen anzuzeigen, wo Konsistenz und Lesbarkeit wichtig sind.
-
 ## Wie geht das:
-
 Elixir bietet eine unkomplizierte Möglichkeit, Strings zu kapitalisieren, indem es seine eingebauten Funktionen nutzt, ohne dass Drittanbieter-Bibliotheken erforderlich sind. Hier ist ein einfaches Beispiel:
 
 ```elixir

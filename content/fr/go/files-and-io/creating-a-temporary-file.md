@@ -15,12 +15,7 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## Quoi & Pourquoi ?
-
-La création d'un fichier temporaire en Go permet la génération d'un fichier non persistant destiné à une utilisation à court terme, principalement pour des tâches telles que le stockage de données provisoires ou l'assistance dans des travaux de traitement par lots. Les programmeurs utilisent cette fonctionnalité pour manipuler des données en toute sécurité sans affecter le système de fichiers permanent ou sans nécessiter de nettoyage manuel.
-
 ## Comment faire :
-
 Dans Go, le paquet `ioutil` fournissait initialement des utilitaires pour la création de fichiers temporaires. Cependant, Go 1.16 a promu l'utilisation des fonctions des paquets `os` et `io/ioutil` dans des emplacements plus organisés. Désormais, les paquets `os` et `io` sont préférés pour la gestion des fichiers temporaires.
 
 Voici un guide étape par étape pour créer, écrire dans, et supprimer un fichier temporaire :
@@ -83,7 +78,6 @@ Exemple de sortie :
 ```
 
 ## Approfondissement
-
 Le mécanisme derrière la gestion des fichiers temporaires par Go a évolué. Initialement, la création de fichiers temporaires était majoritairement gérée par la fonction désormais obsolète `ioutil.TempFile`, reflétant les tendances plus larges dans le développement logiciel vers des pratiques de gestion de fichiers plus sécurisées et efficaces. Le passage à l'intégration de ces fonctionnalités dans les paquets `os` et `io` avec Go 1.16 signifie une poussée plus large vers la rationalisation de la bibliothèque standard du langage et l'encouragement de l'utilisation d'API plus unifiées et cohérentes.
 
 Bien que l'utilisation de fichiers temporaires soit une pratique courante et souvent essentielle en programmation, il est important de noter que s'y reposer trop lourdement pour stocker de grandes quantités de données ou pour des tâches à long terme peut conduire à des problèmes de performance. De plus, lorsque la création de fichiers temporaires n'est pas étroitement contrôlée ou lorsqu'ils ne sont pas nettoyés de manière adéquate, cela peut entraîner des fuites de ressources qui pourraient impacter négativement le système de fichiers. Dans des scénarios exigeant un stockage persistant ou nécessitant la gestion de flux de données substantiels, des alternatives telles que les bases de données ou les magasins de données en mémoire offrent souvent de meilleures performances et fiabilité par rapport aux fichiers temporaires.

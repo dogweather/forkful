@@ -11,9 +11,6 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-## What & Why? | Co i dlaczego?
-Obliczanie daty w przeszłości lub przyszłości to zdefiniowanie momentu przed lub po danej dacie. Programiści robią to, aby zarządzać wydarzeniami, terminami, planować zadania czy przewidywać daty ważnych wydarzeń.
-
 ## How to: | Jak to zrobić:
 W Haskellu używamy biblioteki `time` do pracy z datami. Oto przykład dodawania dni do aktualnej daty:
 

@@ -14,16 +14,10 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## Was & Warum?
-
-Das Extrahieren von Teilzeichenketten in C umfasst das Erstellen einer kleineren Zeichenkette (Teilzeichenkette) aus einer größeren Zeichenkette basierend auf spezifizierten Kriterien, wie Position und Länge. Programmierer führen diese Aufgabe oft für das Parsen von Text, Datenverarbeitung oder die Eingabevalidierung durch, was es zu einer entscheidenden Fähigkeit beim effizienten Manipulieren und Analysieren von Textdaten macht.
-
 ## Wie geht das:
-
 Im Gegensatz zu einigen höheren Sprachen, die eingebaute Methoden zur Extraktion von Teilzeichenketten bieten, erfordert C einen manuelleren Ansatz unter Verwendung seiner String-Manipulationsfunktionen. So extrahiert man effektiv eine Teilzeichenkette in C:
 
 ### Beispiel 1: Verwendung von `strncpy`
-
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -43,7 +37,6 @@ int main() {
 ```
 
 ### Beispiel 2: Erstellen einer Funktion
-
 Für die wiederholte Verwendung kann eine dedizierte Funktion zur Extraktion von Teilzeichenketten effizienter sein:
 
 ```c
@@ -68,7 +61,6 @@ int main() {
 ```
 
 ## Tiefer Eintauchen
-
 Das Extrahieren von Teilzeichenketten in C wird hauptsächlich durch Zeiger-Manipulation und sorgfältiges Speichermanagement gehandhabt, was den niedrigeren Ansatz der Sprache zur Datenverarbeitung widerspiegelt. Diese Methode geht zurück auf die Anfangstage der C-Programmierung, als eine effiziente Ressourcenverwaltung aufgrund der begrenzten Rechenleistung von größter Bedeutung war. Während das Fehlen einer integrierten Teilzeichenkettenfunktion als ein Versehen erscheinen mag, veranschaulicht es die Philosophie von C, den Programmierern vollständige Kontrolle über das Speichermanagement zu geben, was oft zu optimiertem, aber komplexerem Code führt.
 
 Im Bereich der modernen Programmierung bieten Sprachen wie Python und JavaScript eingebaute Methoden zur Teilzeichenkettenextraktion, wie `slice()` oder Zeichenkettenslicing anhand von Indizes. Diese höheren Sprachen verwalten das Speichermanagement hinter den Kulissen und tauschen damit einen gewissen Grad an Kontrolle gegen Benutzerfreundlichkeit und Lesbarkeit aus.

@@ -10,12 +10,7 @@ title: Comparando duas datas
 weight: 27
 ---
 
-## O Que é & Porquê?
-
-Comparar duas datas significa verificar se são iguais, qual vem antes ou depois da outra. Programadores fazem isso para organizar eventos, filtrar prazos, programar lembretes e mais.
-
 ## Como Fazer:
-
 Para comparar datas em Elm, você pode utilizar a biblioteca `elm/time`. Aqui estão alguns exemplos práticos:
 
 ```Elm
@@ -46,11 +41,9 @@ exampleComparison = compareDates date1 date2
 ```
 
 ## Mergulho Profundo:
-
 Comparar datas não é algo novo. Era vital para organizar registros históricos, mesmo antes dos computadores. No Elm, a comparação é feita sobre o tipo `Posix`, que representa um ponto no tempo em milissegundos desde a época Unix (1 de janeiro de 1970). Alternativas incluem uso de bibliotecas de terceiros que fornecem funções adicionais, como fusos horários e formatação. Na implementação, Elm usa funções nativas do JavaScript através de ports ou encodings internos para trabalhar com datas e horas eficientemente.
 
 ## Veja Também:
-
 - Documentação oficial do `elm/time`: https://package.elm-lang.org/packages/elm/time/latest/
 - Documentação do `Time.Extra` na biblioteca `justinmimbs/time-extra`: https://package.elm-lang.org/packages/justinmimbs/time-extra/latest/
 - Um excelente artigo sobre manipulação de data e hora em Elm: https://elmprogramming.com/dates.html

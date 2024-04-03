@@ -11,9 +11,6 @@ title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---
 
-## O Que & Porquê?
-Converter uma string para minúsculas significa transformar todos os caracteres alfabéticos para a forma minúscula. Fazemos isso para padronizar entradas de dados, facilitar comparações de strings e atender requisitos de formatação.
-
 ## Como Fazer:
 ```Ruby
 # Exemplo básico para converter uma string para minúsculas

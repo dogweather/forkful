@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---
 
-## What & Why? - Mitä ja Miksi?
-HTTP-pyyntöjä perusautentikaatiolla käytetään, kun halutaan päästä käsiksi suojattuun resurssiin verkossa. Koodaajat käyttävät tätä menetelmää, jotta voivat varmistaa, että käyttäjällä on oikeus nähdä tai muuttaa tietoa.
-
 ## How to: - Kuinka tehdä:
 ```ruby
 require 'net/http'

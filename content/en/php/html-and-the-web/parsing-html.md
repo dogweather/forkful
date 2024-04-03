@@ -9,9 +9,6 @@ title: Parsing HTML
 weight: 43
 ---
 
-## What & Why?
-Parsing HTML in PHP involves extracting specific information from HTML documents. Programmers perform this task to automate data extraction, web scraping, or to integrate content from various web pages within their applications, enhancing functionality without manual intervention.
-
 ## How to:
 For parsing HTML, PHP programmers can utilize built-in functions or lean on robust libraries like Simple HTML DOM Parser. Here, we'll explore examples using both PHP's `DOMDocument` and the Simple HTML DOM Parser.
 

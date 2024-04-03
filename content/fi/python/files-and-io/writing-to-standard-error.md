@@ -13,10 +13,9 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mikä & Miksi?
-Kirjoittaminen standardivirheeseen Pythonilla tarkoittaa ohjelmasi virheilmoitusten tai diagnostiikkatietojen suuntaamista virrasta (`stderr`), erilleen tavallisesta tulosteesta (`stdout`). Ohjelmoijat tekevät näin erotellakseen normaalit ohjelman tulosteet virheviesteistä, mikä helpottaa vianetsintää ja lokianalyysia.
-
 ## Kuinka:
+
+
 ### Käyttäen `sys.stderr`
 Pythonin sisäänrakennettu `sys`-moduuli mahdollistaa eksplisiittisen kirjoittamisen `stderr`-virtaan. Tämä lähestymistapa on suoraviivainen yksinkertaisia virheviestejä tai diagnostiikkaa varten.
 

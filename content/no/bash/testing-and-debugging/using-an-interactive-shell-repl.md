@@ -10,9 +10,6 @@ title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---
 
-## Hva & Hvorfor?
-REPL står for Read-Eval-Print Loop, et enkelt, interaktivt dataprogrammeringsmiljø. Kodeutviklere bruker det til raskt å skrive og teste kode, eksperimentere med syntaks og lære programmeringskonsepter uten overheaden av å opprette og kjøre hele applikasjoner.
-
 ## Hvordan:
 I Bash er terminalen din i bunn og grunn en REPL. Du skriver en kommando; den leser den, evaluerer den, skriver ut resultatet og looper tilbake i påvente av din neste kommando. Her er et eksempel på bruk av Bash som en REPL:
 

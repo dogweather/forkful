@@ -14,9 +14,6 @@ title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---
 
-## Quoi & Pourquoi ?
-L'analyse d'une date à partir d'une chaîne de caractères consiste à convertir un texte représentant une date en un objet `Date` ou `DateTime` que Ruby comprend. Les programmeurs font cela pour effectuer des opérations telles que des comparaisons, des calculs ou des formats sur les dates, qui sont des tâches courantes dans les applications traitant de la planification, de l'analytique ou du traitement des données.
-
 ## Comment faire :
 En Ruby, la bibliothèque standard fournit des moyens directs pour analyser les dates à partir de chaînes de caractères en utilisant les classes `Date` et `DateTime`. Voici comment vous le faites en utilisant les méthodes intégrées de Ruby :
 
@@ -47,7 +44,6 @@ puts parsed_date_custom
 ```
 
 ### Utilisation de bibliothèques tierces :
-
 Bien que les capacités intégrées de Ruby soient puissantes, parfois vous pourriez préférer les bibliothèques tierces pour des fonctionnalités supplémentaires ou une syntaxe plus simple. Un choix populaire est le gem `Chronic` pour l'analyse en langage naturel :
 
 1. Tout d'abord, ajoutez Chronic à votre Gemfile et lancez `bundle install` :

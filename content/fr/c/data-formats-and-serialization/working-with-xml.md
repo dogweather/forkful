@@ -12,12 +12,7 @@ title: Travailler avec XML
 weight: 40
 ---
 
-## Quoi et pourquoi ?
-
-Travailler avec XML en C implique l'analyse, la requête et la manipulation de documents XML à l'aide de diverses bibliothèques. Les programmeurs se tournent vers XML en raison de son utilisation répandue dans les services web, les fichiers de configuration et l'échange de données entre différents systèmes, nécessitant des compétences pour manipuler efficacement XML pour le développement d'applications robustes.
-
 ## Comment faire :
-
 C ne dispose pas de support intégré pour XML, vous devrez donc utiliser des bibliothèques externes. Un choix populaire est `libxml2`, une bibliothèque stable et riche en fonctionnalités. Voici comment lire et analyser un fichier XML en utilisant `libxml2`.
 
 D'abord, assurez-vous d'avoir `libxml2` installé sur votre système. Vous pourriez avoir besoin de l'installer via votre gestionnaire de paquets (par exemple, `apt-get install libxml2-dev` sur les systèmes Debian).
@@ -80,7 +75,6 @@ gcc -o xml_exemple xml_exemple.c $(xml2-config --cflags --libs)
 En supposant que vous avez un fichier XML nommé `votre_fichier.xml`, l'exécution du programme compilé devrait imprimer les noms de ses éléments de premier niveau.
 
 ## Approfondissement
-
 L'interaction entre C et XML est une histoire de rapprochement entre deux mondes vaste différence : le paradigme structuré, au niveau des octets, procédural de C et le modèle hiérarchique, verbeux et centré sur le document d'XML. En intégrant les capacités de traitement d'XML dans les programmes C, les développeurs tirent parti des points forts de C - tels que la vitesse et l'accès mémoire de bas niveau - pour analyser et manipuler efficacement les documents XML.
 
 `libxml2`, développé dans le cadre du projet GNOME, est devenu la norme de facto pour le traitement XML en C en raison de son soutien complet aux normes XML et de sa performance. Il incarne des années d'effort de développement et de contributions communautaires, le rendant robuste et efficace pour la plupart des tâches XML.

@@ -11,9 +11,6 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-begäran med Basic-autentisering innebär att man legitimerar sig mot en server med användarnamn och lösenord kodat i base64. Programmerare gör detta för att säkerställa att endast auktoriserade användare kan få tillgång till vissa resurser på servern.
-
 ## Hur man gör:
 ```Elm
 import Http

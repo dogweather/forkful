@@ -13,9 +13,6 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-Reguliere expressies (regex) zijn patronen die zoekcriteria voor tekst definiëren. Programmeurs gebruiken ze voor het matchen, vervangen of extraheren van delen van strings op basis van deze patronen - denk aan complex zoeken-en-vervangen op steroïden.
-
 ## Hoe te:
 ```Bash
 # Een patroon matchen

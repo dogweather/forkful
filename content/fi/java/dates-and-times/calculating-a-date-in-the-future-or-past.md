@@ -11,9 +11,6 @@ title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---
 
-## Mikä & Miksi?
-Laskemme tulevaisuuden tai menneisyyden päivämääriä ymmärtääksemme aikavälejä ja ajastaa tapahtumia. Ohjelmoijat tekevät tätä aikatauluttamisen, määräaikojen hallinnan ja historiallisen datan analysoinnin vuoksi.
-
 ## Näin se tehdään:
 Java tarjoaa `LocalDate`-luokan päivämäärien käsittelyyn. Tässä on esimerkki, jossa lasketaan tulevaisuuden päivämäärä:
 

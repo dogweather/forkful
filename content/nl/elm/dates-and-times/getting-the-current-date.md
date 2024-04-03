@@ -13,9 +13,6 @@ title: Het huidige datum ophalen
 weight: 29
 ---
 
-## Wat & Waarom?
-De huidige datum in Elm krijgen betekent het ophalen van de huidige kalenderdatum van het systeem. We doen dit om gebeurtenissen te timestampen, taken te plannen of duurtijden bij te houden.
-
 ## Hoe:
 Elm behandelt datums met de `Time` module. Je krijgt de huidige tijd als een POSIX-tijdstempel, die je dan omzet naar een datum.
 

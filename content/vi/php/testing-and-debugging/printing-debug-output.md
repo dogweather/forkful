@@ -15,9 +15,6 @@ title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---
 
-## Gì và Tại sao?
-In ra thông tin gỡ lỗi là việc đưa dữ liệu nội bộ của mã lệnh lên màn hình để hiểu xem đang xảy ra điều gì. Các lập trình viên làm việc này để kiểm tra tính hợp lý, tìm nơi côn trùng ẩn náu hoặc chỉ đơn giản là để xem mã lệnh có đang hoạt động như dự định hay không.
-
 ## Làm thế nào:
 ```PHP
 <?php

@@ -12,12 +12,7 @@ title: Generazione di numeri casuali
 weight: 12
 ---
 
-## Cos'è e Perché?
-
-Generare numeri casuali nella programmazione riguarda la produzione di valori numerici imprevedibili che possono essere utilizzati per una varietà di scopi come simulazioni, giochi o applicazioni di sicurezza. I programmatori usano questa caratteristica per introdurre un elemento di incertezza o per imitare la variabilità della vita reale nei loro progetti.
-
 ## Come fare:
-
 Lua offre un supporto integrato per la generazione di numeri casuali tramite la funzione `math.random`. Questa funzione può essere utilizzata in più modi, a seconda dell'output desiderato:
 
 1. **Generare un numero in virgola mobile casuale tra 0 e 1:**
@@ -42,7 +37,6 @@ Un esempio di output potrebbe essere `7`. Anche in questo caso, l'output varier�
 È fondamentale impostare il seme con `math.randomseed` perché senza di esso, `math.random` potrebbe generare la stessa sequenza di numeri ogni volta che un programma viene eseguito. Tipicamente, l'uso del tempo corrente, `os.time()`, assicura sequenze diverse per ogni esecuzione.
 
 ## Approfondimento
-
 Il meccanismo alla base della generazione di numeri casuali in Lua (e nella maggior parte dei linguaggi di programmazione) non è veramente casuale ma pseudocasuale, generato da un algoritmo. Questi generatori di numeri pseudocasuali (PRNG) sono deterministici e richiedono un valore seme per iniziare la sequenza di generazione dei numeri. La scelta del seme è cruciale per la qualità della casualità, motivo per cui l'uso del tempo corrente è una pratica comune.
 
 Storicamente, le capacità di generazione di numeri casuali di Lua sono evolute. Le versioni precedenti si affidavano alla funzione `rand()` della libreria standard C, che variava in qualità e prestazioni tra le implementazioni. La versione attuale di Lua migliora questo aspetto, utilizzando possibilmente meccanismi più robusti a seconda della piattaforma sottostante, offrendo una maggiore coerenza e utilità nella generazione di numeri casuali.

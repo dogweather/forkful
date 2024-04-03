@@ -11,9 +11,6 @@ title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---
 
-## Vad & Varför?
-Starta ett nytt projekt innebär, rent tekniskt, att du skapar en struktur för att bygga din applikation från grunden. Programutvecklare gör detta för att omsätta idéer i kod, experimentera med nya tekniker, eller lösa specifika problem.
-
 ## Hur gör man:
 För att sätta igång med Elm, installera först Elm via `npm`:
 

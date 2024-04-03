@@ -14,9 +14,6 @@ title: Twee datums vergelijken
 weight: 27
 ---
 
-## Wat & Waarom?
-Het vergelijken van twee datums in Dart omvat het evalueren van het tijdelijk verschil of de volgorde tussen hen, een essentiële functionaliteit in applicaties die gebeurtenissen, deadlines of andere tijdgevoelige gegevens beheren. Programma's vereisen dit vaak om de logica te beheersen, te valideren of gegevens te sorteren op basis van tijdcondities.
-
 ## Hoe:
 In Dart kun je datums vergelijken met behulp van de `DateTime` klasse, die methodes biedt zoals `isBefore`, `isAfter` en `isAtSameMomentAs` voor directe vergelijking. Daarnaast kan het verschil tussen datums worden bepaald met de `difference()` methode, die een `Duration` object verschaft dat de spanne tussen de twee tijdstippen in detail weergeeft.
 

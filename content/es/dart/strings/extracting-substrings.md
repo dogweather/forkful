@@ -13,9 +13,6 @@ title: Extrayendo subcadenas
 weight: 6
 ---
 
-## ¿Qué y por qué?
-Extraer subcadenas se trata de recuperar partes específicas de una cadena basándose en sus posiciones o patrones. Los programadores hacen esto para tareas como analizar la entrada del usuario, manipulación de datos o extracción de información relevante de fuentes de texto más grandes.
-
 ## Cómo hacerlo:
 En Dart, puedes usar varios métodos para extraer subcadenas, como `substring()`, `split()` y expresiones regulares. Cada método sirve para diferentes propósitos y ofrece flexibilidad en el manejo de cadenas.
 

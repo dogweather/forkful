@@ -14,9 +14,6 @@ title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---
 
-## Co i dlaczego?
-Pisanie do standardowego błędu (stderr) w Haskellu pozwala programom rozróżniać ich wyjście pomiędzy normalnymi wynikami a komunikatami o błędach. Jest to kluczowe dla sygnalizowania problemów i debugowania, bez zaśmiecania standardowego wyjścia (stdout), które często przenosi główne dane lub wynik programu.
-
 ## Jak to zrobić:
 W Haskellu, pisanie do stderr jest proste dzięki modułowi `System.IO` z biblioteki podstawowej. Poniżej znajduje się podstawowy przykład demonstrujący:
 

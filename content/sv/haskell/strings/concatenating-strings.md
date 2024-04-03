@@ -11,9 +11,6 @@ title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---
 
-## Vad & Varför?
-Konkatenering av strängar innebär att sätta ihop två eller flera textsträngar till en. Programmerare gör detta för att bygga dynamiska textmeddelanden, hantera användarinmatning eller kombinera statisk text med variabler.
-
 ## Så gör du:
 I Haskell kan du konkatenera strängar med flera tekniker. Här är några exempel:
 

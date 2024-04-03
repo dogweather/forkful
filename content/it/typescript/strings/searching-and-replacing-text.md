@@ -10,9 +10,6 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## What & Why?
-La ricerca e la sostituzione di testo consente di trovare stringhe specifiche e cambiarle con altre. I programmatori lo fanno per correggere errori, aggiornare codici o dati e manipolare stringhe in modo efficiente.
-
 ## How to:
 Ecco un esempio su come cercare e sostituire il testo in TypeScript:
 

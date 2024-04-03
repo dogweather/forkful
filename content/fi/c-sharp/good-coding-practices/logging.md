@@ -9,9 +9,6 @@ title: Lokitus
 weight: 17
 ---
 
-## Mikä & Miksi?
-Lokitus on sovelluksen tapahtumien ja tiedon tulostuksen tallentamista suoritusaikana. Ohjelmoijat luovat lokeja vikojen diagnostiikkaa, ohjelmiston suorituskyvyn valvontaa, käyttäjän toimien seurantaa ja turvallisuus- sekä liiketoimintastandardien noudattamisen ylläpitoa varten.
-
 ## Miten:
 C#:ssa voi käyttää sisäänrakennettua `System.Diagnostics` nimiavaruutta tai kolmannen osapuolen kirjastoja kuten NLog tai log4net. Tässä on nopea esimerkki `.NET Core`:n saatavilla olevaa `ILogger`-rajapintaa käyttäen:
 

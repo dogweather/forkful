@@ -10,9 +10,6 @@ title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---
 
-## Was & Warum?
-Kalenderdaten in der Zukunft oder Vergangenheit zu berechnen bedeutet, ausgehend vom aktuellen Datum ein bestimmtes Datum vor- oder zurückzurechnen. Programmiere nutzen das, um Fristen, Jubiläen oder zeitbasierte Aufgaben zu handhaben.
-
 ## How to:
 Berechne ein Datum in der Zukunft:
 

@@ -12,9 +12,6 @@ title: Refaktorisering
 weight: 19
 ---
 
-## Vad & Varför?
-Refaktorisering är i grund och botten vårstädning av din kodbas – det handlar om att omstrukturera befintlig kod utan att ändra dess externa beteende. Programmerare gör det för att göra koden mer läsbart, reducera komplexitet, förbättra underhållbarheten och göra det lättare att utöka.
-
 ## Hur man gör:
 Anta att du har en Elm-funktion som gör för mycket, som att blanda användargränssnittslogik med statusuppdateringar. Den är en perfekt kandidat för refaktorisering. Ursprungligen:
 

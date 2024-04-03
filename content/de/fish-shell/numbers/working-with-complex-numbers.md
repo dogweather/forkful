@@ -10,9 +10,6 @@ title: Umgang mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-Komplexe Zahlen erweitern die Idee von eindimensionalen Zahlengeraden zu einer zweidimensionalen komplexen Ebene. Programmierer nutzen sie in Bereichen wie Ingenieurwesen, Physik und Grafik für Berechnungen, die zwei Komponenten benötigen, wie Signale oder Rotationen.
-
 ## Wie zu:
 In Fish behandeln wir komplexe Zahlen mit `math` und unterteilen diese in Real- und Imaginärteile. Hier ein Start:
 

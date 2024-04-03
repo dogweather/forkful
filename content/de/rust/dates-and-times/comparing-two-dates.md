@@ -10,9 +10,6 @@ title: Vergleich von zwei Daten
 weight: 27
 ---
 
-## Was & Warum?
-Vergleichen zwei Daten heißt, ihre chronologische Reihenfolge zu bestimmen. Programmierer machen das, um Zeitabläufe zu handhaben, Ereignisse zu sortieren oder Fristen zu überprüfen.
-
 ## How to:
 Rust bietet das `chrono`-Crate für Zeitangaben. Hier ist die einfache Verwendung:
 

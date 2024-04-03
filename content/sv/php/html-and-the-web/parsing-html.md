@@ -12,9 +12,6 @@ title: Tolka HTML
 weight: 43
 ---
 
-## Vad & Varför?
-Att tolka HTML med PHP innebär att extrahera specifik information från HTML-dokument. Programmerare utför denna uppgift för att automatisera dataextrahering, webskrapning eller för att integrera innehåll från olika webbsidor inom sina applikationer, vilket förbättrar funktionaliteten utan manuella ingripanden.
-
 ## Hur man gör:
 För att tolka HTML kan PHP-programmerare använda inbyggda funktioner eller luta sig mot robusta bibliotek som Simple HTML DOM Parser. Här kommer vi att utforska exempel med användning av både PHP:s `DOMDocument` och Simple HTML DOM Parser.
 

@@ -13,11 +13,7 @@ title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---
 
-## Mikä & Miksi?
-Merkkijonon alkukirjaimen suurentaminen tarkoittaa annetun merkkijonon ensimmäisen merkin muuttamista suuraakkoseksi, jos se on pienaakkosessa, usein jättäen loput merkkijonosta muuttumattomaksi. Tätä toimenpidettä käytetään yleensä varmistamaan, että erisnimet tai lauseiden alut noudattavat kielioppisääntöjä tekstinkäsittelyssä, mikä tekee tulosteista ammattimaisia ja luettavissa.
-
 ## Kuinka:
-
 TypeScript, ollessaan JavaScriptin yläjoukko, tarjoaa erilaisia menetelmiä merkkijonojen alkukirjaimen suurennukseen, alkaen puhtaista JavaScript-lähestymistavoista kolmansien osapuolien kirjastojen hyödyntämiseen monimutkaisemmissa tai tiettyjä käyttötapauksia varten.
 
 **Puhtaan JavaScriptin lähestymistapa:**

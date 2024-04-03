@@ -13,9 +13,6 @@ title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
 weight: 23
 ---
 
-## What & Why? (是什么？为什么？)
-在命令行读取参数允许程序根据用户输入运行。为了让程序更灵活，程序员需要这样做。
-
 ## How to: (如何操作：)
 ```kotlin
 fun main(args: Array<String>) {

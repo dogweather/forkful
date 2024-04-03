@@ -11,9 +11,6 @@ title: Calculando la longitud de una cadena
 weight: 7
 ---
 
-## Qué y Por Qué?
-Calcular la longitud de una cadena significa saber cuántos caracteres contiene. Los programadores lo hacen para validar entradas, manipular texto y por optimización.
-
 ## Cómo hacerlo:
 En PHP, usamos `strlen()` para obtener la longitud de una cadena. Aquí unos ejemplos:
 

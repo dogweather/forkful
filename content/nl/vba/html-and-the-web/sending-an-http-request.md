@@ -13,12 +13,7 @@ title: Een HTTP-verzoek verzenden
 weight: 44
 ---
 
-## Wat & Waarom?
-
-Een HTTP-verzoek verzenden in Visual Basic for Applications (VBA) houdt in dat je programmatisch toegang krijgt tot webbronnen of webservices door verzoeken over HTTP te doen. Programmeurs doen dit om gegevens op te halen, interactie aan te gaan met online API's of formulieren programmatisch in te dienen vanuit hun VBA-geschikte applicaties zoals Excel, Access of op maat gemaakte VBA-oplossingen.
-
 ## Hoe te:
-
 De sleutel tot het verzenden van een HTTP-verzoek in VBA is het gebruik van de `Microsoft XML, v6.0` bibliotheek (of oudere versies, afhankelijk van je systeem). Zorg eerst dat deze referentie is ingeschakeld in je project door naar Extra > Referenties te gaan in de VBA-editor en `Microsoft XML, v6.0` aan te vinken.
 
 Hier is hoe je een eenvoudig HTTP GET-verzoek verstuurt:
@@ -64,7 +59,6 @@ Voorbeelduitvoer voor een succesvol verzoek kan een JSON-string of een HTML-pagi
 ```
 
 ## Verdieping
-
 De getoonde methode gebruikt het `MSXML2.XMLHTTP` object, onderdeel van de Microsoft XML Core Services (MSXML). Het is geïntroduceerd om VBA-ontwikkelaars een manier te bieden om XML-gebaseerde bewerkingen uit te voeren en werd in de loop van de tijd een algemeen hulpmiddel voor HTTP-verzoeken, zelfs wanneer niet direct met XML-gegevens wordt gewerkt. Ondanks de leeftijd blijft het een betrouwbare optie voor eenvoudige webinteracties in VBA.
 
 Echter, VBA en zijn HTTP-verzoekmechanismen missen de robuustheid en flexibiliteit die te vinden zijn in hedendaagse programmeeromgevingen. Bijvoorbeeld, het afhandelen van asynchrone verzoeken of het werken binnen applicaties die geavanceerde HTTP-functies vereisen (zoals websockets of server-sent events) valt buiten het bereik van VBA. Bij het werken aan complexere webintegratieprojecten doen ontwikkelaars vaak een beroep op externe bibliotheken of hulpmiddelen, of zelfs op het automatiseren van browsergedrag via webschraaptechnieken, hoewel deze meer werkaround dan oplossingen zijn.

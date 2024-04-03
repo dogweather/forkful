@@ -13,9 +13,6 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä ja miksi?
-Tekstitiedoston kirjoittaminen Dartissa sisältää tiedostojen luomisen tai muokkaamisen levylle, jotta data saadaan tallennettua luettavaan muotoon. Ohjelmoijat tekevät sen tallentaakseen sovelluksen tiedot, asetukset, lokit tai minkä tahansa tiedon, joka tulisi säilyä sovelluksen käyttökertojen välillä tai jakanakseen tietoa muiden sovellusten tai käyttäjien kanssa.
-
 ## Miten:
 Dartin ydin kirjasto tarjoaa `dart:io` -paketin tiedostojen käsittelyä varten, mikä mahdollistaa tekstifilien kirjoittamisen ilman kolmannen osapuolen kirjastoja tarvetta. Tässä on yksinkertainen esimerkki tekstifilin kirjoittamisesta:
 

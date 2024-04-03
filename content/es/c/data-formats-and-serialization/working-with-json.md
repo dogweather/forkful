@@ -13,12 +13,7 @@ title: Trabajando con JSON
 weight: 38
 ---
 
-## ¿Qué y por qué?
-
-Trabajar con JSON (Notación de Objetos de JavaScript) en C involucra analizar, generar y manipular estructuras de datos JSON. Los programadores hacen esto para habilitar la comunicación con servicios web, almacenamiento de datos o archivos de configuración en un formato ligero y legible por humanos.
-
 ## Cómo hacerlo:
-
 Para trabajar con JSON en C, generalmente usarás una biblioteca como `jansson` o `json-c` debido a la falta de soporte incorporado de C para JSON. Aquí, nos enfocaremos en `jansson` por su facilidad de uso y mantenimiento activo. Primero, instala la biblioteca (por ejemplo, usando un gestor de paquetes como `apt` en Ubuntu: `sudo apt-get install libjansson-dev`).
 
 Comencemos por analizar una cadena JSON y acceder a su contenido:
@@ -82,7 +77,6 @@ Salida de muestra:
 Estos ejemplos demuestran los conceptos básicos de cargar una cadena JSON, desempaquetar sus valores, crear un nuevo objeto JSON y luego mostrarlo como una cadena.
 
 ## Análisis Profundo
-
 La necesidad de trabajar con JSON en C surge de la adopción del web de JSON como formato primario para el intercambio de datos. La simplicidad y eficiencia de JSON lo hizo superar rápidamente a XML, a pesar de la ausencia inicial de C en el soporte directo para la manipulación de JSON. Las soluciones tempranas involucraban la manipulación manual de cadenas, propensa a errores e ineficiente. Bibliotecas como `jansson` y `json-c` surgieron para llenar este vacío, proporcionando API robustas para el análisis, construcción y serialización de JSON.
 
 Mientras que `jansson` ofrece simplicidad y facilidad de uso, `json-c` podría atraer a aquellos que buscan un conjunto de características más amplio. Sin embargo, alternativas como bibliotecas de análisis en C++ ofrecen abstracciones más sofisticadas, gracias a las estructuras de datos más complejas de ese lenguaje y el soporte de la biblioteca estándar. No obstante, cuando se trabaja en entornos donde C es el lenguaje preferido o requerido, como en sistemas embebidos o al interactuar con bibliotecas C existentes, usar `jansson` o `json-c` se vuelve indispensable.

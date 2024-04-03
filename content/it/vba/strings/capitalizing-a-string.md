@@ -13,12 +13,7 @@ title: Mettere in Maiuscolo una Stringa
 weight: 2
 ---
 
-## Cosa & Perché?
-
-Capitalizzare una stringa in Visual Basic for Applications (VBA) significa convertire il primo carattere di ogni parola in una stringa in maiuscolo, assicurandosi che il resto sia in minuscolo. I programmatori fanno ciò per normalizzazione dei dati, miglioramento della leggibilità e garantendo consistenza attraverso gli input o le visualizzazioni dei dati testuali.
-
 ## Come fare:
-
 VBA non dispone di una funzione integrata specifica per capitalizzare ogni parola in una stringa, come fanno alcuni altri linguaggi di programmazione. Tuttavia, puoi ottenere questo combinando alcuni metodi e funzioni come `UCase`, `LCase` e `Mid`.
 
 Ecco un esempio semplice su come capitalizzare una stringa:
@@ -45,7 +40,6 @@ End Sub
 La funzione `CapitalizeString` divide la stringa di input in parole, capitalizza la prima lettera di ogni parola e infine li unisce di nuovo per formare la stringa correttamente capitalizzata.
 
 ## Approfondimento
-
 Visual Basic for Applications, emerso nei primi anni '90 come linguaggio macro per le applicazioni di Microsoft Office, è stato progettato per offrire un modello di programmazione accessibile. Le sue capacità di manipolazione delle stringhe, sebbene estese, mancano di alcune astrazioni di livello superiore presenti in linguaggi più recenti. Molti ambienti di programmazione moderni forniscono un metodo dedicato alla capitalizzazione delle stringhe, spesso denominato come titolo o simili. Python, per esempio, include il metodo `.title()` per le stringhe.
 
 Confrontandolo, l'assenza di una funzione integrata unica in VBA per capitalizzare le parole di una stringa potrebbe sembrare uno svantaggio. Tuttavia, ciò offre ai programmatori una comprensione più profonda e un controllo su come manipolano il testo e su come accomodare sfumature non strettamente aderenti a un metodo generico. Ad esempio, la gestione di acronimi o casi speciali in cui alcune parole più piccole nei titoli non dovrebbero essere capitalizzate può essere personalizzata meglio in VBA attraverso funzioni esplicite.

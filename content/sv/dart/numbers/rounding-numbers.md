@@ -13,35 +13,26 @@ title: Avrundning av nummer
 weight: 13
 ---
 
-## Vad & Varför?
-
-Att avrunda tal är processen att justera ett tal till dess närmaste hela tal eller till ett angivet antal decimaler. Programmerare avrundar ofta tal för att förenkla beräkningar, förbättra läsbarheten, eller förbereda data för visning, detta för att säkerställa konsekvens och tydlighet i numeriska utdata.
-
 ## Hur:
-
 Dart tillhandahåller infödda metoder i sin kärn `num`-typ för avrundningsoperationer. Här ska vi utforska metoder som `round()`, `floor()`, `ceil()`, och hur man avrundar till ett specifikt antal decimaler.
 
 ### Avrunda till närmaste hela tal:
-
 ```dart
 var number = 3.56;
 print(number.round()); // Utskrift: 4
 ```
 
 ### Avrunda nedåt:
-
 ```dart
 print(number.floor()); // Utskrift: 3
 ```
 
 ### Avrunda uppåt:
-
 ```dart
 print(number.ceil()); // Utskrift: 4
 ```
 
 ### Avrunda till ett specifikt antal decimaler:
-
 För att avrunda till ett specifikt antal decimaler kan vi använda metoden `toStringAsFixed()`, som returnerar en sträng, eller använda en kombination av `pow` från `dart:math` för ett numeriskt resultat.
 
 ```dart

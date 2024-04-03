@@ -14,16 +14,10 @@ title: Capitalizzare una stringa
 weight: 2
 ---
 
-## Cosa e Perché?
-
-Capitalizzare una stringa in Rust comporta la modifica della stringa in modo che il suo primo carattere sia una lettera maiuscola, lasciando inalterata il resto della stringa. I programmatori spesso eseguono questa operazione per scopi di formattazione, come la preparazione di parole per titoli o per garantire la coerenza nell'input dell'utente.
-
 ## Come fare:
-
 Per capitalizzare una stringa in Rust, hai due percorsi principali: utilizzare le funzionalità della libreria standard o impiegare crate di terze parti per esigenze più complesse o specifiche. Ecco come puoi fare entrambi.
 
 ### Utilizzando la Libreria Standard di Rust
-
 La libreria standard di Rust non fornisce un metodo diretto per capitalizzare le stringhe, ma puoi raggiungere questo scopo manipolando i caratteri della stringa.
 
 ```rust
@@ -42,7 +36,6 @@ fn main() {
 ```
 
 ### Utilizzando il Crate `heck`
-
 Per un approccio più diretto, specialmente quando si lavora in un contesto di elaborazione di testi più ampio, potresti preferire l'uso di librerie di terze parti come `heck`. Il crate `heck` offre varie funzionalità di conversione di case, inclusa una semplice modalità per capitalizzare le stringhe.
 
 Prima di tutto, aggiungi `heck` al tuo `Cargo.toml`:

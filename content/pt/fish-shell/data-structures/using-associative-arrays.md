@@ -14,12 +14,7 @@ title: Usando arrays associativos
 weight: 15
 ---
 
-## O quê & Por quê?
-
-Arrays associativos, ou tabelas hash, permitem armazenar dados como pares de chave-valor, facilitando a organização e recuperação de informações por chave. Eles são úteis quando você precisa de uma maneira mais estruturada para lidar com dados do que apenas listas, especialmente em configurações e ao lidar com uma gama de atributos.
-
 ## Como fazer:
-
 Fish não suporta nativamente arrays associativos como o Bash 4+, mas você pode alcançar uma funcionalidade similar usando uma combinação de listas e manipulação de strings. Veja como imitá-los:
 
 Primeiro, configurando elementos de "array associativo" separadamente:
@@ -61,5 +56,4 @@ end
 ```
 
 ## Aprofundamento
-
 Verdadeiros arrays associativos, como em outras linguagens de script, ainda não fazem parte da abordagem do Fish. A solução alternativa mostrada aproveita as capacidades de manipulação de strings e listas do Fish para criar uma estrutura pseudo-associativa. Embora funcione, não é tão limpo ou à prova de erros quanto seria o suporte integrado de arrays associativos. Outros shells como Bash e Zsh fornecem funcionalidade de array associativo integrada, o que resulta em um código mais direto e legível. No entanto, a filosofia de design do Fish visa simplicidade e facilidade de uso, possivelmente às custas de tais recursos. A solução alternativa satisfaz a maioria das necessidades, mas fique de olho na evolução do Fish Shell - seus desenvolvedores melhoram ativamente e adicionam recursos baseados no feedback da comunidade.

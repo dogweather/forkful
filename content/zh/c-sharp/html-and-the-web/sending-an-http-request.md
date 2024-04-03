@@ -15,9 +15,6 @@ title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---
 
-## What & Why?（是什么？为什么？）
-HTTP请求用来与网络上的服务通信。这是因为编程时经常需要从网络上获取数据或触发远程服务。
-
 ## How to:（如何做：）
 C#里发HTTP请求简单直接。先看看`HttpClient`的用法：
 

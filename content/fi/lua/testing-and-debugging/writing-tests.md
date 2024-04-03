@@ -14,16 +14,10 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mikä & Miksi?
-
-Ohjelmoinnissa testien kirjoittaminen tarkoittaa pienten, erillisten koodinpätkien luomista automaattisesti varmistamaan, että sovelluksesi eri osat toimivat odotetusti. Lua-ohjelmoijille testaus takaa luotettavuuden ja auttaa ylläpitämään koodin laatua, nopeuttaa vianetsintäprosessia ja tekee koodikannan muokkauksista turvallisempia.
-
 ## Kuinka:
-
 Lua on kevyt, mutta tehokas skriptauskieli, eikä sisällä sisäänrakennettua testauskehystä. Kolmannen osapuolen kirjastot, kuten Busted ja LuaUnit, tekevät testauksesta suhteellisen suoraviivaista. Tutustumme esimerkkeihin käyttäen molempia.
 
 ### Käyttäen Bustedia
-
 Busted on suosittu Lua-testauskehys, joka tarjoaa joustavan tavan kirjoittaa testejä. Asenna Busted ensin LuaRocksin (Luas paketinhallinta) kautta komennolla `luarocks install busted`. Asennuksen jälkeen voit kirjoittaa testejäsi. Tässä on yksinkertainen testi funktiolle `add`, joka summaa kaksi lukua:
 
 ```lua
@@ -54,7 +48,6 @@ Suorittaaksesi testit, suorita komento `busted` terminaalissasi. Esimerkki läp�
 ```
 
 ### Käyttäen LuaUnitia
-
 LuaUnit on toinen testauskehys, joka noudattaa xUnit-konventioita ja on helppo ottaa käyttöön. Asenna LuaUnit LuaRocksilla käyttäen komentoa `luarocks install luaunit`. Tässä on miten voisit kirjoittaa samanlaisen testin kuin yllä LuaUnitin kanssa:
 
 ```lua

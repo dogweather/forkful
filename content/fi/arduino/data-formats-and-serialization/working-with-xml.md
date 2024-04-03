@@ -10,9 +10,6 @@ title: "XML:n k\xE4sittely"
 weight: 40
 ---
 
-## Mikä & Miksi?
-Työskentely XML:n kanssa Arduinolla käsittää XML-datan jäsentämistä ja manipulointia, joka usein tulee web-API:sta tai konfiguraatiotiedostoista. Ohjelmoijat tekevät tämän integroitumiseen palveluihin, jotka käyttävät XML:ää datanvaihtoon tai tallentaakseen dataa rakenteelliseen, ihmisen luettavissa olevaan muotoon.
-
 ## Kuinka:
 Käytämme `XMLWriter`-kirjastoa XML:n luontiin ja `tinyxml2`-kirjastoa sen jäsentämiseen. Asenna kirjastot ensin Kirjastohallinnan kautta Arduino IDE:ssäsi.
 

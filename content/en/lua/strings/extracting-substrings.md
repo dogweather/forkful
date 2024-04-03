@@ -9,9 +9,6 @@ title: Extracting substrings
 weight: 6
 ---
 
-## What & Why?
-Extracting substrings means pulling out a specific chunk of a string. Programmers do it to isolate, analyze, or manipulate specific data within a larger text.
-
 ## How to:
 In Lua, use the `string.sub` function:
 

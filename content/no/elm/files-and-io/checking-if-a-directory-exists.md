@@ -13,9 +13,6 @@ title: Sjekker om en mappe eksisterer
 weight: 20
 ---
 
-## Hva og hvorfor?
-Å sjekke om en katalog eksisterer betyr å bekrefte om en spesifikk mappebane er til stede i filsystemet. Programmerere gjør dette for å unngå feil når de aksesserer, leser eller skriver filer.
-
 ## Hvordan:
 Elm er et front-end webprogrammeringsspråk, så det har ikke direkte tilgang til filsystemet. Imidlertid ville du typisk sende en kommando til en bakendtjeneste i JavaScript. Her er hvordan du kan strukturere en slik interaksjon med Elm:
 

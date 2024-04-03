@@ -11,12 +11,7 @@ title: Refactoring
 weight: 19
 ---
 
-## What & Why?
-
-Refactoring in the programming lexicon refers to the process of restructuring existing computer code—changing the factoring without changing its external behavior—to improve non-functional attributes. It's a vital step for programmers to enhance code readability, reduce complexity, and potentially unearth latent bugs, fostering easier maintenance and future code scalability.
-
 ## How to:
-
 In Google Apps Script, a common scenario that benefits from refactoring is the simplification of cumbersome scripts that interact with Google Sheets or Docs. Initially, scripts might be written in a quick-and-dirty way to get results fast. Over time, as the script grows, it becomes unwieldy. Let's walk through an example of refactoring for better readability and efficiency.
 
 **Original Script:**
@@ -55,7 +50,6 @@ The output in Logger will look something like this, assuming your Google Sheets 
 The refactored script achieves the same result but is cleaner and easier to understand at a glance.
 
 ## Deep Dive
-
 Refactoring in Google Apps Script partially inherits its principles from the broader software engineering practice. It became more recognized and structured as a concept in the late 1990s, notably due to Martin Fowler's seminal book "Refactoring: Improving the Design of Existing Code" (1999), which provided a comprehensive guide to various refactoring techniques. While the specifics of refactoring can vary across programming languages due to their syntactic and functional differences, the core goal remains the same: improving code without altering its external behavior.
 
 In the context of Google Apps Script, a key aspect to consider during refactoring is the service quotas and limitations imposed by Google. Efficiently refactored code not only reads better but also runs faster and more reliably within these constraints. For example, batch operations (`Range.setValues()` instead of setting values one cell at a time) can significantly reduce execution time and quota consumption.

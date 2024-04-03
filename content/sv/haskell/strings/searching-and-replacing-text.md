@@ -11,12 +11,7 @@ title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---
 
-## Vad & Varför?
-
-Sök och ersätt i text låter dig automatiskt byta ut specifika teckensträngar mot andra. Programmerare använder detta för att effektivisera kodmodifiering, korrigera fel eller uppdatera data.
-
 ## Hur gör man:
-
 ```Haskell
 import Data.Text as T
 
@@ -40,7 +35,6 @@ Hej, jag använder Haskell för att modifiera text!
 ```
 
 ## Djupdykning:
-
 Sök och ersätt-funktionalitet har en lång historia i textredigeringsprogram och utvecklingsmiljöer. Från tidiga verktyg som `sed` i Unix till moderna IDE:er, möjliggör denna funktion snabba förändringar över många filer.
 
 I Haskell görs sök och ersätt främst med hjälp av biblioteket `Data.Text`, som hanterar textsträngar mer effektivt än standard String-typer. Detta bibliotek erbjuder funktionen `replace`, som vi använt ovan.
@@ -50,7 +44,6 @@ Ett alternativ är att använda regex-biblioteket `Text.Regex`, vilket tillåter
 Implementationsmässigt använder Haskell 'lazy evaluation', vilket innebär att textersättningar inte sker förrän det är absolut nödvändigt. Detta kan effektivisera program som arbetar med stora textmängder.
 
 ## Se också:
-
 - [Data.Text Documentation](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html)
 - [Haskell Wiki on Regular Expressions](https://wiki.haskell.org/Regular_expressions)
 - [Learn You a Haskell for Great Good! (Användbart för att lära dig Haskell.)](http://learnyouahaskell.com/chapters)

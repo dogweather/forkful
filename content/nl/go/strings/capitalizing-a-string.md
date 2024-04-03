@@ -14,12 +14,7 @@ title: Een string kapitaliseren
 weight: 2
 ---
 
-## Wat & Waarom?
-
-Het kapitaliseren van een tekenreeks houdt in dat het eerste karakter van een gegeven string naar een hoofdletter wordt getransformeerd als het in kleine letters staat, om ervoor te zorgen dat de string opvalt of voldoet aan specifieke grammaticale normen. Programmeurs voeren deze bewerking vaak uit voor het formatteren van gebruikersinvoer, het weergeven van eigennamen of het waarborgen van gegevensconsistentie in softwaretoepassingen.
-
 ## Hoe te:
-
 In Go biedt het `strings`-pakket geen directe functie om alleen de eerste letter van een string te kapitaliseren. Daarom combineren we de `strings.ToUpper()`-functie, die een string naar hoofdletters omzet, met slicen om ons doel te bereiken. Hier is hoe je dat doet:
 
 ```go
@@ -54,7 +49,6 @@ func main() {
 Deze functie controleert of de string leeg is of dat het eerste karakter al een hoofdletter is. Het gebruikt het `unicode/utf8`-pakket om Unicode-tekens correct af te handelen, wat ervoor zorgt dat onze functie werkt met een breed scala aan invoer, naast basale ASCII.
 
 ## Diepgaand
-
 De noodzaak om tekenreeksen in Go te kapitaliseren zonder een ingebouwde functie kan overkomen als een beperking, vooral voor programmeurs die komen uit talen waar functies voor tekenreeksmanipulatie uitgebreider zijn. Deze beperking stimuleert het begrip van tekenreeksbehandeling en het belang van Unicode in moderne softwareontwikkeling.
 
 Historisch gezien hebben programmeertalen zich ontwikkeld in hun behandeling van tekenreeksen, waarbij vroege talen vaak internationalisering over het hoofd zagen. Go's benadering, hoewel het mogelijk iets meer code vereist voor schijnbaar eenvoudige taken, zorgt ervoor dat ontwikkelaars vanaf het begin rekening houden met wereldwijde gebruikers.

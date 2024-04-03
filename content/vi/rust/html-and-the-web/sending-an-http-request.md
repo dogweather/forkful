@@ -14,9 +14,6 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---
 
-## Cái gì & Tại sao?
-Gửi một yêu cầu HTTP lấy dữ liệu từ hoặc gửi dữ liệu tới một máy chủ web. Lập trình viên thực hiện điều này để tương tác với các dịch vụ web hoặc API – lấy thông tin, đăng tải cập nhật, bạn tên nó.
-
 ## Làm thế nào:
 Để gửi một yêu cầu GET trong Rust, chúng ta sử dụng crate `reqwest`. Đầu tiên, thêm nó vào `Cargo.toml` của bạn:
 

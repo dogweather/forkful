@@ -21,9 +21,6 @@ title: "\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u306E\u8AAD\u307F\u8FBC
 weight: 22
 ---
 
-## What & Why?
-テキストファイルの読み込みとは、データをプログラム内で使える形に変換するプロセスです。プログラマーは設定、データのインポート、アプリケーションの入力などのためにこれを行います。
-
 ## How to:
 ```kotlin
 import java.io.File

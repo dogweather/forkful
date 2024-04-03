@@ -13,9 +13,6 @@ title: Lavorare con i CSV
 weight: 37
 ---
 
-## Cos'è & Perché?
-Lavorare con CSV (Valori Separati da Virgola) in JavaScript comporta l'analisi o la generazione di file CSV per ingerire dati tabellari da fonti esterne oppure esportare dati per l'utilizzo in altri programmi. I programmatori lo fanno perché consente uno scambio di dati facile e leggero tra applicazioni, database e sistemi dove formati più complessi come JSON potrebbero essere eccessivi.
-
 ## Come fare:
 JavaScript non ha funzionalità incorporate per l'analisi o la creazione di stringhe CSV come ha con JSON. Tuttavia, è possibile gestire facilmente i dati CSV utilizzando JavaScript puro per compiti più semplici o sfruttando potenti librerie come `PapaParse` per scenari più complessi.
 

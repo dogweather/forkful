@@ -24,12 +24,7 @@ title: "\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F
 weight: 4
 ---
 
-## Що це таке & Навіщо?
-
-Перетворення рядка в нижній регістр означає заміну всіх великих літер на маленькі. Програмісти це роблять для уніфікації даних, спрощення порівняння рядків і забезпечення консистентності вводу/виводу.
-
 ## Як це зробити:
-
 ```javascript
 let phrase = "Привіт, Світе!";
 let lowerCasePhrase = phrase.toLowerCase();
@@ -42,13 +37,11 @@ console.log(greeting.toLowerCase()); // Output: "здоровенькі були
 ```
 
 ## Підводне каміння:
-
 Історично, метод `toLowerCase` був частиною Javascript з його перших версій. Він відноситься до прототипу String і тому доступний для всіх рядків. Є альтернативи, наприклад `toLocaleLowerCase()`, яка враховує локалізацію, тобто певні мовні особливості при переведенні у нижній регістр.
 
 Реалізація `toLowerCase` у браузерах та серверних середовищах, як Node.js, гарантує, що вона працюватиме однаково універсально. Однак, слід звернути увагу на специфічні символи та літери, які можуть мати особливі правила перетворення в окремих мовах. Для більшості випадків `toLowerCase` повинен працювати без зайвих проблем.
 
 ## Дивіться також:
-
 - Документація MDN за методом `toLowerCase()`: [Mozilla MDN toLowerCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
 - Порівняння `toLowerCase()` та `toLocaleLowerCase()`: [toLocaleLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase)
 - Рекомендації по стилі коду з Airbnb, де згадується використання методів рядків: [Airbnb JavaScript Style Guide](https://github.com/airbnb/javascript)

@@ -12,12 +12,7 @@ title: Iniciando um novo projeto
 weight: 1
 ---
 
-## O Que & Por Que?
-
-Iniciar um novo projeto em Java é como plantar uma semente digital – você começa com uma tela em branco e transforma-a em algo que pode resolver problemas, automatizar tarefas ou até divertir. Programadores fazem isso por inúmeras razões, como aprender novas habilidades, solucionar problemas específicos ou simplesmente porque amam criar coisas novas e ver suas ideias ganharem vida.
-
 ## Como Fazer:
-
 Vamos criar um projeto Java simples. Usarei o JDK 18, o mais recente no momento do conhecimento.
 
 ```Java
@@ -35,7 +30,6 @@ Olá, mundo Java!
 ```
 
 ## Mergulho Profundo
-
 Iniciar um projeto Java no passado significava configurar manualmente sua estrutura de diretórios e arquivos. Hoje, temos ferramentas como Maven e Gradle que fazem isso por nós. Maven, por exemplo, é um gerenciador de projetos que segue a convenção sobre configuração, padrão que ajuda a manter a consistência entre projetos Java.
 
 ```xml
@@ -55,7 +49,6 @@ Em termos de IDEs, você tem escolhas como Eclipse, IntelliJ IDEA e NetBeans, qu
 A implementação de um projeto depende do seu objetivo. Projetos Java podem ser aplicações de desktop, web, servidores, jogos, entre outros. E com o advento de frameworks como Spring Boot, criar e configurar novos projetos se tornou mais simples e rápido. Spring Boot, por exemplo, usa uma abordagem opinativa para configuração que reduz significativamente o boilerplate e o tempo de configuração.
 
 ## Veja Também
-
 - [Introdução ao Maven](https://maven.apache.org/guides/getting-started/)
 - [Documentação do Gradle](https://docs.gradle.org/current/userguide/userguide.html)
 - [Spring Boot](https://spring.io/projects/spring-boot)

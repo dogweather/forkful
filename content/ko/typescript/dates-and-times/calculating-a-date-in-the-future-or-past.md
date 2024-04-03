@@ -13,9 +13,6 @@ title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uA
 weight: 26
 ---
 
-## What & Why? (무엇과 왜?)
-날짜 계산은 미래나 과거의 특정 날짜를 찾는 것입니다. 예약 시스템, 기한 설정, 사건 추적 등에 쓰입니다.
-
 ## How to: (방법)
 ```TypeScript
 // 오늘부터 10일 후의 날짜

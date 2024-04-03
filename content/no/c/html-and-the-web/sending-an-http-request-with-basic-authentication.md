@@ -14,9 +14,6 @@ title: "Sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel med grunnleggende autentisering i C involverer å lage en HTTP-forespørsel som inkluderer en autorisasjonsheader med brukerlegitimasjon kodet i Base64. Dette er en vanlig metode for å legge til et enkelt autentiseringslag til HTTP-forespørsler, som gjør det mulig å programmelt få tilgang til begrensede ressurser.
-
 ## Hvordan:
 For å sende en HTTP-forespørsel med grunnleggende autentisering i C, trenger vi å bruke libcurl-biblioteket, et populært, allsidig og lett å bruke klient-side URL-overføringsbibliotek. Det håndterer diverse protokoller, inkludert HTTP og HTTPS, noe som gjør oppgaven vår enklere. Forsikre deg om at libcurl er installert på systemet ditt før du fortsetter. Her er et grunnleggende eksempel som demonstrerer hvordan du sender en GET-forespørsel med grunnleggende autentisering:
 

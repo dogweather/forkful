@@ -14,9 +14,6 @@ title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---
 
-## Là gì và Tại sao?
-Biểu thức chính quy (regex) là những mẫu được dùng để khớp chuỗi ký tự. Lập trình viên sử dụng chúng để tìm kiếm, chỉnh sửa hoặc xác thực văn bản. Chúng mạnh mẽ và hiệu quả, cắt qua chuỗi ký tự như dao cắt qua bơ.
-
 ## Làm thế nào:
 Hãy xem xét việc khớp, thay thế, và tách chuỗi sử dụng regex trong C#.
 

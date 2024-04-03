@@ -10,10 +10,8 @@ title: Writing to standard error
 weight: 25
 ---
 
-## What & Why?
-Writing to standard error (stderr) involves outputting error messages and diagnostics to the console or terminal. Programmers do it to separate error information from standard output (stdout), facilitating debugging and log analysis.
-
 ## How to:
+
 
 ### Basic stderr Output in Java
 Java provides a straightforward way to write to stderr using `System.err.print()` or `System.err.println()`. Here's how you do it:
@@ -42,7 +40,6 @@ This will directly print the error message to the standard error stream.
 For applications that need more sophisticated error handling and logging, using a logging library like SLF4J with Logback or Log4J2 is common. This allows for more flexibility in managing error output, including file redirection, filtering, and formatting.
 
 #### Example with Logback
-
 First, add the dependency for Logback to your `pom.xml` (Maven) or `build.gradle` (Gradle) file. For Maven:
 
 ```xml

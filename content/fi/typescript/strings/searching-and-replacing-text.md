@@ -11,9 +11,6 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## What & Why?
-Tekstin hakeminen ja korvaaminen tarkoittaa merkkijonojen etsimistä ja niiden muuttamista toisiksi merkkijonoiksi. Ohjelmoijat käyttävät sitä datan puhdistukseen, muodon muuttamiseen ja automatisoituun tiedon korjaukseen.
-
 ## How to:
 ```TypeScript
 function replaceString(original: string, searchValue: string, replaceValue: string): string {

@@ -12,9 +12,6 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co i dlaczego?
-Obsługa błędów to sposób, w jaki Twój kod radzi sobie z problemami, które pojawiają się podczas wykonywania - jak złapanie krzywej piłki bez upuszczenia jej. Programiści robią to, aby zapobiec awariom i zapewnić użytkownikom płynne doświadczenie.
-
 ## Jak to zrobić:
 Kotlin zapewnia `try`, `catch`, `finally` oraz `throw` do zarządzania błędami. Oto jak ich użyć:
 

@@ -10,9 +10,6 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## Cos'è & Perché?
-Cercare e sostituire testo nel mondo della programmazione è fondamentale per modificare dati o correggere errori in modo efficiente. I programmatori lo fanno per risparmiare tempo, evitare errori umani e automatizzare la manutenzione del codice.
-
 ## Come fare:
 Ecco un esempio semplice in Java che mostra come cercare e sostituire una stringa.
 

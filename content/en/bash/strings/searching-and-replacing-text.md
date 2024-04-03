@@ -10,9 +10,6 @@ title: Searching and replacing text
 weight: 10
 ---
 
-## What & Why?
-Searching and replacing text in bash means swapping out words or patterns in a string or file with something else. It's a day-to-day task for cleaning data, fixing code, or automating edits.
-
 ## How to:
 Here's how you wield the power of search and replace in bash:
 
@@ -38,7 +35,6 @@ sed "s/$old/$new/g" <<< "I like apple pies"
 Remember, `g` at the end means "global", so you change every match in the line, not just the first one.
 
 ## Deep Dive
-
 We've had tools for text processing on Unix-like systems for ages. `sed`, short for Stream Editor, is one such tool, and it's been around since the 1970s. It's not just for simple replacements; `sed` can slice and dice text in complex patterns too.
 
 Alternatives? Sure. `awk` is a bit more advanced and can work wonders with columns and rows. For quick fixes, `grep` can help you find things, but it won't replace – it's more like the lookout.

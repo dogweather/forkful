@@ -10,9 +10,6 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## What & Why? (Mitä & Miksi?)
-Uuden projektin aloittaminen on kuin puhtaan paperin ottaminen – mahdollisuus luoda jotakin uutta. Koodarit tekevät sen ratkaistakseen ongelmia, kokeillakseen ideoita tai oppiakseen uusia asioita.
-
 ## How to: (Kuinka tehdään:)
 Aloita uusi Kotlin-projekti. Asenna ensin IntelliJ IDEA. Käynnistä se, ja luo uusi projekti:
 

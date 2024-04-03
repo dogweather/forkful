@@ -10,9 +10,6 @@ title: Usando una shell interactiva (REPL)
 weight: 34
 ---
 
-## ¿Qué y Por Qué?
-Una shell interactiva o REPL (Bucle Leer-Evaluar-Imprimir), te permite probar código en tiempo real. Los programadores la utilizan para experimentar, depurar y aprender las sutilezas de Ruby sin necesidad de crear scripts completos.
-
 ## Cómo hacerlo:
 El REPL de Ruby se llama IRB (Ruby Interactivo). Salta y prueba Ruby directamente desde tu terminal:
 

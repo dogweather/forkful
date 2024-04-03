@@ -14,9 +14,6 @@ title: "Usando express\xF5es regulares"
 weight: 11
 ---
 
-## O Que & Por Que?
-Expressões regulares na programação são sequências de caracteres que definem um padrão de busca, tipicamente empregadas para pesquisa e manipulação de strings. Programadores utilizando Haskell recorrem a expressões regulares para tarefas que vão desde simples correspondências de strings até processamento de texto complexo, capitalizando em sua eficiência e versatilidade no tratamento de dados textuais.
-
 ## Como:
 Em Haskell, as funcionalidades de regex não fazem parte da biblioteca padrão, necessitando do uso de pacotes de terceiros como `regex-base` junto com um backend compatível como `regex-posix` (para suporte a regex POSIX), `regex-pcre` (para regex compatível com Perl), etc. Veja como você pode usar esses pacotes para trabalhar com expressões regulares.
 
@@ -31,7 +28,6 @@ cabal install regex-pcre
 ```
 
 ### Usando `regex-posix`:
-
 ```haskell
 import Text.Regex.Posix ((=~))
 
@@ -52,7 +48,6 @@ main = do
 ```
 
 ### Usando `regex-pcre`:
-
 ```haskell
 import Text.Regex.PCRE ((=~))
 

@@ -12,9 +12,6 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-## Co i dlaczego?
-Obliczanie daty w przyszłości lub przeszłości to sposób na znalezienie dat, które są określoną liczbę dni przed lub po danej dacie. Programiści używają tego do ustalania terminów, planowania zadań, czy też obliczania okresów ważności.
-
 ## Jak to zrobić:
 Na początek potrzebujemy prostego kodu. Użyjemy `LocalDate` z biblioteki `java.time`, która jest dostępna w Kotlinie. Tak to zrobisz:
 

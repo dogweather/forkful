@@ -10,9 +10,6 @@ title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---
 
-## Quoi & Pourquoi ?
-Calculer une date dans le futur ou le passé, c'est trouver une date avant ou après une date donnée. Les programmeurs le font souvent pour des fonctionnalités liées à des échéances, des rappels ou de la planification.
-
 ## Comment faire :
 ```java
 import java.time.LocalDate;

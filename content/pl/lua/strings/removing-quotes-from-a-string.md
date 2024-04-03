@@ -12,9 +12,6 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co i dlaczego?
-Usunięcie cudzysłowów z ciągu znaków oznacza pozbycie się tych podwójnych lub pojedynczych znaków cudzysłowu, które otaczają twój tekst. Programiści robią to, aby oczyścić dane wejściowe, ułatwić parsowanie, lub ujednolicić dane, które mogą być niespójnie cytowane.
-
 ## Jak to zrobić:
 Oto jak pozbyć się cudzysłowów w Lua:
 

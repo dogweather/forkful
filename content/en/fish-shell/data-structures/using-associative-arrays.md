@@ -10,12 +10,7 @@ title: Using associative arrays
 weight: 15
 ---
 
-## What & Why?
-
-Associative arrays, or hash maps, let you store data as key-value pairs, making it easier to organize and retrieve information by key. They're handy for when you need a more structured way to handle data than just lists, especially in configurations and when dealing with a range of attributes.
-
 ## How to:
-
 Fish doesn't natively support associative arrays like Bash 4+, but you can achieve similar functionality using a combo of lists and string manipulation. Here’s how to mimic them:
 
 First, setting up "associative array" elements separately:
@@ -57,5 +52,4 @@ end
 ```
 
 ## Deep Dive
-
 Truly associative arrays as in other scripting languages aren't yet a part of Fish's approach. The workaround shown leverages Fish's string manipulation and list capabilities to create a pseudo-associative array structure. While it works, it's not as clean or error-proof as built-in associative array support would be. Other shells like Bash and Zsh provide built-in associative array functionality, which results in more straightforward, readable code. However, Fish's design philosophy aims for simplicity and user-friendliness, possibly at the expense of such features. The workaround satisfies most needs but keep an eye on the Fish Shell's evolution—its developers actively improve and add features based on community feedback.

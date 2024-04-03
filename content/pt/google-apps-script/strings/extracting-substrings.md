@@ -12,12 +12,7 @@ title: Extraindo substrings
 weight: 6
 ---
 
-## O que & Por quê?
-
-A extração de substrings envolve pegar uma porção de uma string - essencialmente, criar uma nova string a partir de uma parte de uma existente. Programadores fazem isso por uma miríade de motivos, incluindo análise de dados, manipulação de texto para interfaces de usuário, ou processamento de entrada para várias aplicações, tornando a extração de substring uma ferramenta versátil em qualquer arsenal de scripting.
-
 ## Como fazer:
-
 No Google Apps Script, que é baseado no moderno JavaScript, a extração de substring pode ser alcançada através de vários métodos, incluindo `substring()`, `substr()` e `slice()`. Cada um tem suas nuances, mas todos servem ao propósito de extrair caracteres especificados de uma string.
 
 ```javascript
@@ -38,7 +33,6 @@ console.log(resultSlice); // Saída: world!
 Cada método leva dois argumentos: a posição inicial e, exceto para `slice()` que pode aceitar índices negativos para começar do fim, a posição final ou o número de caracteres para extrair. Vale ressaltar que a string original permanece inalterada após essas operações, pois eles retornam novos valores de string.
 
 ## Mergulho Profundo
-
 Historicamente, os métodos em JavaScript para extração de substrings têm sido fonte de confusão devido aos seus nomes e funcionalidades similares. Contudo, no Google Apps Script e no JavaScript moderno, `substring()` e `slice()` são mais frequentemente usados, com `substr()` sendo considerado obsoleto. Isso é importante de se notar para aqueles que escrevem código com visão de futuro.
 
 A principal diferença entre `substring()` e `slice()` é como eles lidam com índices negativos; `substring()` trata índices negativos como 0, enquanto `slice()` pode aceitar um índice negativo para começar a extração do fim da string. Isso torna `slice()` particularmente útil para casos onde o comprimento exato da string pode não ser conhecido ou quando se precisa extrair do fim.

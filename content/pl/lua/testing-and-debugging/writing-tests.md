@@ -14,16 +14,10 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i dlaczego?
-
-Pisanie testów w programowaniu polega na tworzeniu małych, oddzielnych kawałków kodu, które automatycznie weryfikują, czy różne części aplikacji działają zgodnie z oczekiwaniami. Dla programistów Lua, testowanie zapewnia niezawodność i pomaga w utrzymaniu jakości kodu, przyspiesza proces debugowania i czyni modyfikacje w bazie kodu bezpieczniejszymi.
-
 ## Jak to zrobić:
-
 Lua, będąc lekkim, lecz potężnym językiem skryptowym, nie zawiera wbudowanego frameworka do testowania. Jednakże biblioteki stron trzecich, takie jak Busted i LuaUnit, sprawiają, że testowanie jest stosunkowo proste. Tutaj przyjrzymy się przykładom z użyciem obu.
 
 ### Korzystanie z Busted
-
 Busted to popularny framework do testowania Lua, który oferuje elastyczny sposób na pisanie testów. Po pierwsze, zainstaluj Busted przez LuaRocks (menedżer pakietów Lua) z `luarocks install busted`. Po instalacji możesz pisać swoje testy. Oto prosty test dla funkcji `add`, która sumuje dwie liczby:
 
 ```lua
@@ -54,7 +48,6 @@ Aby uruchomić testy, wykonaj `busted` w terminalu. Przykładowe wyjście dla ud
 ```
 
 ### Korzystanie z LuaUnit
-
 LuaUnit to kolejny framework do testowania, który podąża za konwencjami xUnit i jest łatwy w konfiguracji. Zainstaluj LuaUnit przez LuaRocks używając `luarocks install luaunit`. Oto jak można napisać podobny test jak wyżej z LuaUnit:
 
 ```lua

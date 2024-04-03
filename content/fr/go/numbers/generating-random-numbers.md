@@ -14,16 +14,10 @@ title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---
 
-## Quoi et pourquoi ?
-
-La génération de nombres aléatoires en programmation consiste à créer une séquence de nombres qui ne peut pas être prédite de manière raisonnable mieux que par hasard. Les programmeurs le font pour une myriade de raisons, y compris les simulations, les jeux et les applications de sécurité, où l'imprévisibilité est clé pour la fonctionnalité ou la confidentialité.
-
 ## Comment faire :
-
 En Go, les nombres aléatoires sont générés en utilisant le paquet `math/rand` pour les nombres pseudo-aléatoires ou `crypto/rand` pour les nombres pseudo-aléatoires cryptographiquement sécurisés. Explorons les deux.
 
 ### Utiliser `math/rand` pour les nombres pseudo-aléatoires
-
 D'abord, importez le paquet `math/rand` et le paquet `time` pour initialiser le générateur. L'initialisation garantit que vous obtenez une séquence différente de nombres à chaque exécution.
 
 ```go
@@ -44,7 +38,6 @@ func main() {
 Exemple de sortie : `Un nombre aléatoire: 42`
 
 ### Utiliser `crypto/rand` pour des nombres pseudo-aléatoires cryptographiquement sécurisés
-
 Pour les applications plus sensibles à la sécurité, le paquet `crypto/rand` convient car il génère des nombres aléatoires difficiles à prédire, les rendant adaptés aux opérations cryptographiques.
 
 ```go
@@ -65,7 +58,6 @@ func main() {
 Exemple de sortie : `Un nombre aléatoire sécurisé: 81`
 
 ## Approfondissement
-
 La différence fondamentale entre les paquets `math/rand` et `crypto/rand` en Go découle de leur source d'entropie et de leurs cas d'utilisation prévus. `math/rand` génère des nombres pseudo-aléatoires basés sur une graine initiale ; ainsi, la séquence est déterministe et peut être prédite si la graine est connue. Cela convient aux scénarios où la performance élevée et non l'imprévisibilité absolue est la préoccupation clé, comme les simulations ou les jeux.
 
 D'autre part, `crypto/rand` tire l'aléatoire du système d'exploitation sous-jacent, le rendant adapté aux usages cryptographiques où l'imprévisibilité est cruciale. Cependant, cela se fait au détriment de la performance et de la complexité dans la manipulation des nombres qu'il génère (comme traiter avec le type `*big.Int` pour les entiers).

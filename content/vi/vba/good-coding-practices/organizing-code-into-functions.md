@@ -17,12 +17,7 @@ title: "S\u1EAFp x\u1EBFp m\xE3 l\u1EADp tr\xECnh v\xE0o h\xE0m s\u1ED1"
 weight: 18
 ---
 
-## Cái gì và Tại sao?
-
-Việc tổ chức mã lệnh thành các hàm trong Visual Basic cho Ứng dụng (VBA) bao gồm việc chia nhỏ chương trình thành các phần nhỏ hơn, dễ quản lý hơn được biết đến là các hàm. Các lập trình viên làm điều này để tăng cường khả năng đọc mã, tái sử dụng mã hiệu quả, và đơn giản hóa quá trình gỡ lỗi và bảo trì.
-
 ## Làm thế nào:
-
 Trong VBA, các hàm được định nghĩa sử dụng các câu lệnh `Function` và `End Function`. Dưới đây là một ví dụ đơn giản về cách tạo một hàm tính diện tích hình chữ nhật:
 
 ```basic
@@ -44,7 +39,6 @@ End Sub
 Khi thực thi, đoạn mã này hiển thị hộp thông báo nói rằng: `Diện tích là 50`.
 
 ### Truyền Biến ByRef và ByVal
-
 VBA cho phép bạn truyền biến vào hàm hoặc theo tham chiếu (`ByRef`) hoặc theo giá trị (`ByVal`). Cách đầu tiên có nghĩa là biến gốc có thể được sửa đổi bởi hàm, trong khi cách sau truyền một bản sao, bảo vệ biến gốc khỏi những thay đổi.
 
 ```basic
@@ -59,7 +53,6 @@ End Function
 ```
 
 ## Sâu hơn nữa
-
 VBA, là một ngôn ngữ lập trình điều khiển sự kiện, đặt trọng tâm đáng kể vào các hàm và subroutines để xử lý các nhiệm vụ khác nhau. Khác với nhiều ngôn ngữ hiện đại, VBA có một đặc điểm độc đáo khi từ khóa `Function` không chỉ khai báo một khối mã có thể tái sử dụng mà còn cho phép một giá trị trả về ngầm được trực tiếp gán cho tên của hàm.
 
 Lịch sử, thiết kế của các hàm VBA đã được ảnh hưởng bởi các mô hình lập trình trước đó, nơi mà sự đóng gói và tính mô-đun dần được nhận ra là quan trọng trong phát triển phần mềm. Bối cảnh lịch sử này đã dẫn VBA đến việc áp dụng một cách tiếp cận cẩn trọng mà vẫn có chức năng để tổ chức mã.

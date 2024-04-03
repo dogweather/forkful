@@ -12,9 +12,6 @@ title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---
 
-## Co i dlaczego?
-Długość łańcucha to liczba znaków w tekście. Programiści liczą ją, by zarządzać danymi tekstowymi – np. sprawdzić, czy hasło ma odpowiednią długość lub wyświetlić fragment większego tekstu.
-
 ## Jak zrobić:
 ```clojure
 ;; Użyj funkcji count do znalezienia długości stringa

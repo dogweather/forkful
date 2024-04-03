@@ -11,9 +11,6 @@ title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---
 
-## Qué y Por Qué?
-Calcular una fecha en el futuro o pasado es simplemente ajustar una fecha dada por cierta cantidad de tiempo. Programadores lo hacen para funciones como recordatorios, suscripciones, y seguimiento de eventos.
-
 ## Cómo hacerlo:
 Ruby hace que jugar con fechas sea pan comido. Usa la clase `Date` para manejos básicos o `DateTime` si necesitas más precisión con horas, minutos y segundos. Aquí te muestro cómo hacerlo:
 

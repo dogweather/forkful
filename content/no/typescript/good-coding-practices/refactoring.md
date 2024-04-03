@@ -11,9 +11,6 @@ title: Refaktorering
 weight: 19
 ---
 
-## Hva & Hvorfor?
-Refaktorering er prosessen med å restrukturere eksisterende datamaskinkode uten å endre dens eksterne oppførsel. Programmerere gjør dette for å gjøre koden renere, lettere å vedlikeholde, og for å redusere kompleksiteten, noe som gjør den lettere å forstå for noen som dykker inn i den frisk.
-
 ## Hvordan:
 Tenk på en TypeScript-funksjon som har sett bedre dager - den er litt rotete, og kunne trenge litt kjærlig omsorg:
 

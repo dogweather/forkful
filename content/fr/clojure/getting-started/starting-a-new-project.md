@@ -11,9 +11,6 @@ title: Lancement d'un nouveau projet
 weight: 1
 ---
 
-## Quoi & Pourquoi ?
-Commencer un nouveau projet, c'est créer une structure de base pour développer une application. Les programmeurs font ça pour organiser le code, gérer les dépendances et faciliter le démarrage rapide.
-
 ## Comment faire :
 Pour initialiser un nouveau projet Clojure, on utilise Leiningen ou Clojure CLI-tools. Voici la marche à suivre avec Leiningen :
 

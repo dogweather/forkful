@@ -13,10 +13,8 @@ title: Sette stor bokstav i en streng
 weight: 2
 ---
 
-## Hva & Hvorfor?
-Å kapitalisere en streng betyr å konvertere det første tegnet i en streng til stor bokstav og resten til små bokstaver. Denne operasjonen brukes ofte i databehandling for å normalisere inndata eller forbedre lesbarheten for titler, navn og lignende.
-
 ## Hvordan:
+
 
 ### Ved å bruke Pythons innebygde metode:
 Python har en innebygd metode `.capitalize()` for strenger for å enkelt utføre denne oppgaven.

@@ -10,9 +10,6 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## What & Why?
-Mikä ja miksi? Tekstin etsiminen ja korvaaminen tarkoittaa merkkijonojen hakuja ja niiden muuttamista ohjelmassa. Ohjelmoijat käyttävät tätä päivittäen tekstidataa ja automatisoiden tylsiä tehtäviä.
-
 ## How to:
 ```Swift
 let originalString = "Omena on vihreä. Omena on maukas."

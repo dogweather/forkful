@@ -14,16 +14,10 @@ title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---
 
-## Quoi et pourquoi ?
-
-Les expressions régulières en programmation permettent de rechercher et de manipuler des chaînes de caractères basées sur des motifs spécifiques. Les programmeurs les utilisent pour des tâches telles que la validation, la recherche et la manipulation de texte en raison de leur polyvalence et de leur efficacité pour gérer des opérations de chaîne complexes.
-
 ## Comment faire :
-
 Lua ne prend pas en charge les expressions régulières nativement de la même manière que des langages comme Perl ou Python. Au lieu de cela, il offre des capacités de correspondance de motifs qui couvrent de nombreux cas d'usage communs des expressions régulières. Cependant, pour un support complet des expressions régulières, on peut utiliser une bibliothèque tierce telle que `lrexlib`.
 
 ### Correspondance de motifs basique en Lua :
-
 Lua fournit un système de correspondance de motifs puissant que vous pouvez utiliser pour des substitutions et des recherches simples :
 
 ```lua
@@ -41,7 +35,6 @@ print(s)
 ```
 
 ### Capture de sous-chaînes :
-
 Vous pouvez capturer des parties de la chaîne qui correspondent aux motifs :
 
 ```lua
@@ -52,7 +45,6 @@ print("Jour :", d, "Mois :", m, "An :", a)
 ```
 
 ### Utilisation de `lrexlib` pour les expressions régulières :
-
 Pour utiliser de véritables expressions régulières, vous pouvez installer et utiliser `lrexlib`. En supposant que vous l'avez installé (`luarocks install lrexlib-pcre`), vous pouvez réaliser une correspondance de motifs plus complexe :
 
 ```lua

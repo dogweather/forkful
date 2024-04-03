@@ -11,9 +11,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## Mikä & Miksi?
-Stringin pituuden selvittäminen tarkoittaa merkkijonon merkkien lukumäärän laskemista. Koodarit tekevät tätä validoinnin, muotoilun ja silmukoiden hallinnan helpottamiseksi.
-
 ## Kuinka tehdään:
 Tässä pari esimerkkiä stringin pituuden määrittämiseen Python-koodilla:
 

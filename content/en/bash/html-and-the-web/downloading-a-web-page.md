@@ -10,9 +10,6 @@ title: Downloading a web page
 weight: 42
 ---
 
-## What & Why?
-Downloading a web page means grabbing the data from the internet and saving it locally. Programmers do it for web scraping, offline analysis, or backup purposes.
-
 ## How to:
 The go-to tool for this job? `curl`. It's a powerful command-line utility that fetches data from the web. Here’s the simplest use case:
 

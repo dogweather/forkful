@@ -13,9 +13,6 @@ title: Analyse Syntaxique du HTML
 weight: 43
 ---
 
-## Quoi & Pourquoi ?
-Parser du HTML signifie disséquer le balisage d'une page web en quelque chose qu'un programme peut comprendre et manipuler. Les programmeurs analysent le HTML pour extraire des données, automatiser les interactions web ou migrer du contenu entre des systèmes.
-
 ## Comment faire :
 Kotlin rend le parsing HTML simple avec des bibliothèques comme Jsoup. Voici comment procéder :
 

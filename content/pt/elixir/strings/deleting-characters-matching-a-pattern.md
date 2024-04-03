@@ -10,9 +10,6 @@ title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---
 
-## What & Why?
-Eliminar caracteres de uma string que correspondem a um padrão é fundamental para limpar dados ou modificar texto. Programadores o fazem para simplificar strings, validar entradas ou preparar dados para processamento.
-
 ## How to:
 Em Elixir, usamos principalmente a função `String.replace/4` para deletar caracteres que correspondem a um padrão.
 

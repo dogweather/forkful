@@ -18,12 +18,7 @@ title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---
 
-## Cái gì & Tại sao?
-
-Việc in thông báo gỡ rối trong Dart liên quan đến việc hiển thị thông tin lên bảng điều khiển trong quá trình thực thi, cho phép các nhà phát triển theo dõi luồng thực thi, điều tra trạng thái của các biến, hoặc xác định nguồn gốc của lỗi. Các lập trình viên thường sử dụng nó cho việc khắc phục sự cố và chứng minh rằng mã của họ hoạt động như mong đợi, giúp quá trình phát triển suôn sẻ và hiệu quả hơn.
-
 ## Cách thực hiện:
-
 Trong Dart, bạn có thể in thông báo gỡ rối bằng cách sử dụng hàm `print()`. Dưới đây là cách xuất thông điệp đơn giản và giá trị của biến:
 
 ```dart

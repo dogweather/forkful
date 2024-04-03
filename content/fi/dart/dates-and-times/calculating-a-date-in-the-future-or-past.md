@@ -15,9 +15,6 @@ title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---
 
-## Mikä & Miksi?
-Tulevaisuuden tai menneisyyden päivämäärän laskeminen on yleinen tehtävä ohjelmoijille, jotka työskentelevät aikataulutusten, muistutusten tai minkä tahansa päivämäärälaskuihin perustuvan ominaisuuden parissa. Päivämäärien käsittelyn ymmärtäminen on ratkaisevan tärkeää taustajärjestelmille, käyttöliittymille ja tiedon analysoinnille, erityisesti niille, jotka siirtyvät käyttämään Dartia ja haluavat toteuttaa ajallista logiikkaa tehokkaasti.
-
 ## Miten:
 Dart tarjoaa vankkaa tukea päivämäärämanipulaatiolle `DateTime`-luokkansa kautta. Tässä on, miten voit laskea tulevaisuuden tai menneisyyden päivämääriä käyttäen natiivia Dartia, ilman kolmansien osapuolien kirjastoja.
 

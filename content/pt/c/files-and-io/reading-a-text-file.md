@@ -13,12 +13,7 @@ title: Lendo um arquivo de texto
 weight: 22
 ---
 
-## O Quê & Por Quê?
-
-Ler um arquivo de texto em C envolve abrir um arquivo no seu sistema para extrair informações e manipulá-las ou exibi-las conforme necessário. Programadores frequentemente fazem isso para processar arquivos de configuração, ler entradas para processamento ou analisar dados armazenados em formato de arquivo, permitindo flexibilidade e aumentando a funcionalidade nas aplicações.
-
 ## Como:
-
 Para começar a ler um arquivo de texto em C, você trabalha principalmente com as funções `fopen()`, `fgets()`, e `fclose()` da biblioteca padrão de E/S. Aqui está um exemplo simples que lê um arquivo chamado `example.txt` e imprime seu conteúdo na saída padrão:
 
 ```c
@@ -61,7 +56,6 @@ Welcome to C programming.
 ```
 
 ## Aprofundando
-
 Ler arquivos em C tem uma rica história, remontando aos primeiros dias do Unix, quando a simplicidade e elegância dos fluxos de texto eram fundamentais. Isso levou à adoção de arquivos de texto para uma miríade de propósitos, incluindo configuração, registro de eventos e comunicação entre processos. A simplicidade da biblioteca de E/S de arquivos da linguagem C, exemplificada por funções como `fopen()`, `fgets()`, e `fclose()`, sublinha sua filosofia de design de fornecer ferramentas básicas que os programadores podem usar para construir sistemas complexos.
 
 Historicamente, enquanto estas funções serviram inúmeras aplicações bem, as práticas de programação modernas destacaram algumas limitações, especialmente no que diz respeito ao tratamento de erros, codificação de arquivos (por exemplo, suporte a Unicode) e acesso concorrente em aplicações multi-threaded. Abordagens alternativas em outras linguagens, ou mesmo dentro do C usando bibliotecas como `libuv` ou `Boost.Asio` para C++, oferecem soluções mais robustas ao abordar essas preocupações diretamente com capacidades de gerenciamento de E/S mais sofisticadas, incluindo operações de E/S assíncronas que podem melhorar muito o desempenho de aplicações lidando com extensas operações de leitura de arquivos ou tarefas dependentes de E/S.

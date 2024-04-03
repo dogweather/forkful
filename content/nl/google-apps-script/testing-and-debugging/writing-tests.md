@@ -14,12 +14,7 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-
-Tests schrijven in Google Apps Script (GAS) betekent het creëren van geautomatiseerde scripts om het gedrag van je codes te verifiëren, zodat ze presteren zoals verwacht onder verschillende omstandigheden. Programmeurs doen dit om bugs vroegtijdig te ontdekken, de codekwaliteit te verbeteren en updates en onderhoud gemakkelijker te maken.
-
 ## Hoe:
-
 Hoewel Google Apps Script geen ingebouwd testraamwerk heeft zoals sommige andere programmeeromgevingen, kun je nog steeds tests schrijven en uitvoeren door eenvoudige GAS-functies te gebruiken of externe testbibliotheken zoals `QUnit` te integreren. Hier is een basisvoorbeeld dat een eenvoudige GAS-functie gebruikt om een andere functie in je script te testen:
 
 ```javascript
@@ -57,7 +52,6 @@ QUnit.test("Testen van de add-functie", function (assert) {
 Om de resultaten te zien, open je het HTML-bestand binnen de GAS Script Editor of implementeer je het als een webapp.
 
 ## Diepere Duik
-
 Historisch gezien is testen in Google Apps Script enigszins over het hoofd gezien, waarschijnlijk vanwege de oorsprong van het platform en de primaire gebruiksscenario's die zich richten op snelle, kleinschalige automatiseringstaken in plaats van grote applicaties. Als zodanig biedt GAS niet dezelfde robuuste testraamwerken en -tools aan die in meer traditionele programmeeromgevingen te vinden zijn. De gemeenschap heeft zich echter aangepast door open-source bibliotheken te incorporeren en Google's bestaande tools op creatieve wijze te gebruiken.
 
 Het gebruik van bibliotheken zoals QUnit vertegenwoordigt een grote stap voorwaarts, maar komt met zijn eigen set uitdagingen, zoals het opzetten van een geschikte testomgeving en het leren van een extra syntax. Echter, voor degenen die geïnvesteerd zijn in het bouwen van complexere en betrouwbaardere applicaties met GAS, is de inspanning de moeite waard.

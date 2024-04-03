@@ -11,9 +11,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## Hva & Hvorfor?
-Beregning av en dato i fremtiden eller fortiden er prosessen med å legge til eller trekke fra dager, måneder eller år fra en bestemt dato. Programmerere gjør dette for å håndtere funksjoner som utløpsdatoer, planlegging og tidslinjer.
-
 ## Slik gjør du:
 ```elixir
 # Legger til 10 dager

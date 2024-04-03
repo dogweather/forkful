@@ -13,9 +13,6 @@ title: Tekst zoeken en vervangen
 weight: 10
 ---
 
-## Wat & Waarom?
-Tekst zoeken en vervangen betekent het vinden van specifieke substrings en deze omwisselen voor iets nieuws. Waarom zou je je hiermee bezighouden? Het is overal: typfouten in een document corrigeren, code verfijnen of gegevens in batch bewerken.
-
 ## Hoe:
 In JavaScript is `String.prototype.replace()` de methode bij uitstek. Geef een string of regex en de vervanging op. Hier is de snelle en vuile manier:
 

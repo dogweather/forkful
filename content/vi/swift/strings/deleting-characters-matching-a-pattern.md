@@ -18,12 +18,7 @@ title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---
 
-## Lý do & Tại sao?
-
-Xóa các ký tự khớp với một mẫu nghĩa là loại bỏ các chuỗi ký tự cụ thể khỏi một chuỗi dựa trên một mẫu đã được định nghĩa, như số hoặc dấu chấm câu. Lập trình viên thực hiện điều này để làm sạch đầu vào, dọn dẹp dữ liệu, hoặc chuẩn bị cho việc xử lý nơi mà những mẫu cụ thể không cần thiết.
-
 ## Cách thực hiện:
-
 ```swift
 import Foundation
 
@@ -45,7 +40,6 @@ print(cleanString)  // Đầu ra: "H3lloWrld"
 ```
 
 ## Sâu hơn
-
 Trước Swift và lập trình hiện đại, việc khớp mẫu là lĩnh vực của những công cụ và ngôn ngữ cụ thể như `sed`, `awk`, hay Perl nổi tiếng với khả năng xử lý văn bản. Swift, với bộ khung Robust Foundation của mình, đơn giản hóa những nhiệm vụ này trong ngôn ngữ, làm cho nó dễ tiếp cận hơn với các nhà phát triển.
 
 Một phương án thay thế cho biểu thức chính quy là lặp qua chuỗi bằng phương pháp `filter` của Swift kết hợp với điều kiện tùy chỉnh, có thể cũng tốn nhiều thời gian và ít dễ đọc hơn. Biểu thức chính quy cung cấp một cách mô tả compact, mặc dù đôi khi là khó hiểu, về mẫu chúng tôi muốn loại bỏ hoặc thao tác.
@@ -53,7 +47,6 @@ Một phương án thay thế cho biểu thức chính quy là lặp qua chuỗi
 Phía sau hậu trường, khi bạn chạy `replacingOccurrences(of:with:options:)` với tùy chọn `.regularExpression`, Swift sử dụng động cơ biểu thức chính quy của ICU (International Components for Unicode) để xử lý mẫu. ICU là một thư viện sử dụng rộng rãi, đã đạt đến tuổi mature, cho việc hỗ trợ Unicode, bao gồm khớp mẫu, được xây dựng vào nhiều ngôn ngữ lập trình cấp cao.
 
 ## Xem thêm
-
 - Tài liệu về Chuỗi Swift: https://developer.apple.com/documentation/swift/string
 - Biểu thức chính quy trong Swift: https://developer.apple.com/documentation/foundation/nsregularexpression
 - Hướng dẫn sử dụng ICU cho Biểu thức chính quy: https://unicode-org.github.io/icu/userguide/strings/regexp.html

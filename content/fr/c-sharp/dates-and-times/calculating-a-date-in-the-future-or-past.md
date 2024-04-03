@@ -11,12 +11,7 @@ title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---
 
-## Quoi & Pourquoi ?
-
-Calculer une date dans le futur ou le passé, c'est juste ajuster une date actuelle pour trouver une autre date. Les développeurs le font pour gérer des abonnements, des échéances ou des événements futurs, et pour enregistrer ou analyser des événements passés.
-
 ## Comment faire :
-
 Voici comment on joue avec les dates en C# :
 
 ```C#
@@ -47,7 +42,6 @@ Si aujourd'hui c'est le 12 avril 2023, le programme affichera :
 ```
 
 ## Exploration :
-
 **Contexte historique :** Avant .NET, on manipulait les dates en C# avec plus de peine. `DateTime` a simplifié la vie. 
 
 **Alternatives :** On peut aussi utiliser `TimeSpan` pour des durées, ou `DateTimeOffset` pour les fuseaux horaires. Il y a la bibliothèque NodaTime aussi, pour les casse-têtes de date et heure.
@@ -55,6 +49,5 @@ Si aujourd'hui c'est le 12 avril 2023, le programme affichera :
 **Détails d'implémentation :** `AddDays` est pratique mais attention aux années bissextiles et changements d'heure. C# s'occupe de ces détails, mais il faut quand même tester pour des cas spéciaux.
 
 ## Voir Aussi :
-
 - Documentation Microsoft sur DateTime : [docs.microsoft.com/dotnet/api/system.datetime](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)
 - NodaTime, pour aller plus loin : [nodatime.org](https://nodatime.org/)

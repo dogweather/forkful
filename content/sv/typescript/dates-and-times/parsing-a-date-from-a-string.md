@@ -13,9 +13,6 @@ title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---
 
-## Vad och varför?
-Att tolka ett datum från en sträng innebär att konvertera textuella representationer av datum och tider till ett format som kan manipuleras och analyseras av programmet. Detta är en vanlig uppgift i programmering eftersom det möjliggör hantering av användarinmatning, lagring av tidsstämplad data och interaktioner med API:er, vilket ger mer funktionella och användarvänliga applikationer.
-
 ## Hur man gör:
 TypeScript, som är en övermängd av JavaScript, förlitar sig på Date-objektet för att tolka datum från strängar. Att arbeta med datum i JS/TS kan dock bli omständligt eller oexakt på grund av Date-objektets egenheter. Här är ett grundläggande exempel följt av en metod med hjälp av det populära biblioteket `date-fns` för mer robusta lösningar.
 

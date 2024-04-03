@@ -10,9 +10,6 @@ title: Recherche et remplacement de texte
 weight: 10
 ---
 
-## Quoi & Pourquoi?
-La recherche et remplacement de texte, c'est simplement trouver des bouts de texte et les troquer contre autre chose. Les programmeurs le font pour corriger des erreurs, mettre à jour des codes ou changer des données en vrac.
-
 ## Comment faire :
 ```Fish Shell
 # Recherche 'fish' et remplace par 'shark' dans une chaîne

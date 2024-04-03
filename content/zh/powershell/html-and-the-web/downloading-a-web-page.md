@@ -15,9 +15,6 @@ title: "\u4E0B\u8F7D\u7F51\u9875"
 weight: 42
 ---
 
-## What & Why? (是什么以及为什么？)
-下载网页就是将网页内容从服务器保存到本地计算机。程序员这样做可能是为了数据分析、备份或离线阅读。
-
 ## How to: (如何操作：)
 PowerShell 里，用 `Invoke-WebRequest` 可以下载网页。简单例子：
 

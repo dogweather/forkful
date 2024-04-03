@@ -11,9 +11,6 @@ title: Comparando duas datas
 weight: 27
 ---
 
-## What & Why?
-Comparar duas datas é o processo de avaliar a diferença entre elas ou determinar qual precede a outra. Programadores fazem isso para manipular eventos baseados em tempo, como verificar a validade de cupons ou controlar prazos.
-
 ## How to:
 Vamos ver como comparar duas datas em PHP:
 

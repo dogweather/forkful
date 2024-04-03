@@ -11,9 +11,6 @@ title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---
 
-## Was & Warum?
-Die interaktive Shell oder die Lese-Auswertungs-Druck-Schleife (REPL) ermöglicht es Ihnen, PowerShell-Befehle einzugeben und sofortiges Feedback zu erhalten. Programmierer nutzen sie, um Code-Schnipsel schnell zu testen, zu debuggen oder neue Befehle zu lernen, ohne ein vollständiges Skript zu schreiben.
-
 ## Wie:
 Starten Sie PowerShell und Sie befinden sich in der REPL. Probieren Sie das Cmdlet `Get-Date` aus:
 

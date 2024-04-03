@@ -11,9 +11,6 @@ title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---
 
-## O Quê e Por Quê?
-Apagar caracteres que seguem um padrão específico ajuda a limpar e formatar strings para os requisitos do seu aplicativo. Programadores fazem isso para validar entradas, remover dados desnecessários ou preparar textos para processamento.
-
 ## Como Fazer:
 Exemplo simples usando regex para remover todos os números de uma string:
 

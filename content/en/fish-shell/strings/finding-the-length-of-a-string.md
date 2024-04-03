@@ -10,9 +10,6 @@ title: Finding the length of a string
 weight: 7
 ---
 
-## What & Why?
-Finding the length of a string means counting the number of characters in it. Programmers do it to validate input, size buffers, or loop through characters.
-
 ## How to:
 Here's how to get a string's length in Fish:
 

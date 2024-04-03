@@ -13,10 +13,9 @@ title: "F\xE5 dagens dato"
 weight: 29
 ---
 
-## Hva & Hvorfor?
-Å hente den gjeldende datoen i PHP er en grunnleggende oppgave som lar deg hente og manipulere systemets dato og klokkeslett. Dette er avgjørende for funksjoner som logging, tidsstemplinger av innlegg, planlegging av hendelser, eller utføring av tidsfølsomme operasjoner i applikasjonene dine.
-
 ## Hvordan:
+
+
 ### Innfødt PHP
 PHPs innebygde `date()`-funksjon er den mest direkte måten å få tak i den gjeldende datoen. Du kan formatere datoen på forskjellige måter ved å spesifisere formatparameteren.
 

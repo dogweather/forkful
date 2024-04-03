@@ -22,12 +22,7 @@ title: "\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F"
 weight: 11
 ---
 
-## 什么 & 为什么？
-
-Visual Basic for Applications (VBA) 中的正则表达式（regex）提供了一种强大的方式来搜索、匹配和操作字符串。程序员使用它们来执行数据验证、解析和转换等任务，因为它们在处理复杂的字符串模式时具有灵活性和效率。
-
 ## 如何操作：
-
 要在 VBA 中使用正则表达式，您首先需要启用 Microsoft VBScript Regular Expressions 库。在 VBA 编辑器中，转到 `工具` -> `引用`，然后勾选 `Microsoft VBScript Regular Expressions 5.5`。
 
 这里有一个基本示例，用来查找字符串中是否存在某个模式：
@@ -73,7 +68,6 @@ End Sub
 ```
 
 ## 深入探讨
-
 正则表达式在编程语言中的引入往往可以追溯到1970年代的 Unix 工具。VBA 通过 VBScript Regular Expressions 库集成了 regex，这突显了其在文本处理任务中的重要性，即使是在通常不与大量文本操作相关联的应用程序（如 Excel 或 Access）中。
 
 尽管正则表达式功能强大，但与 Python 或 JavaScript 等更现代的语言实现相比，VBA 中的 regex 有时可能不那么直观或高效。例如，Python 的 `re` 模块为命名组和更复杂的模式匹配特性提供了广泛支持，提供了一种更干净、可能更易读的方法。然而，在 VBA 生态系统中工作时，正则表达式仍是处理模式匹配或文本操作任务时不可或缺的工具。在处理 Office 应用程序中的字符串时，regex 带来的便利和功能通常可以忽略效率的折衷。

@@ -11,9 +11,6 @@ title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## What & Why?
-Transformer une date en chaîne de caractères, c'est convertir un objet Date en une représentation textuelle. Les développeurs le font pour l'affichage à l'utilisateur, la sauvegarde dans une base de données, ou l'interopérabilité avec d'autres systèmes.
-
 ## How to:
 Ruby rend la conversion des dates super simple. Voici des exemples :
 

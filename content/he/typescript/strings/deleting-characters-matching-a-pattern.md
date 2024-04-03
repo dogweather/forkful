@@ -21,12 +21,7 @@ title: "\u05DE\u05D7\u05D9\u05E7\u05EA \u05EA\u05D5\u05D5\u05D9\u05DD \u05D4\u05
 weight: 5
 ---
 
-## מה ולמה?
-
-ב TypeScript, למחוק תווים התואמים תבנית זה לעבוד עם קטעי טקסט ולהסיר את מה שאיננו רצוי. מתכנתים עושים זאת לנקות קלט, לשפר מבנה נתונים, או להתאים טקסט לשימוש מסוים.
-
 ## איך לעשות:
-
 כדי למחוק תווים שתואמים תבנית ב-TypeScript, אתה יכול להשתמש בביטויים רגולריים עם המתודה `replace`. דוגמה:
 
 ```typescript
@@ -47,13 +42,11 @@ Hey How are you doing today
 ```
 
 ## נפילה לעומק:
-
 ביטויים רגולריים (Regex) הם כלי חזק בכל שפת תכנות, וכבר קיימים מאז שנות ה-60. ב-TypeScript, שהיא הרחבה קטנועית של JavaScript, השימוש ב-Regex דומה מאוד. מלבד `replace`, יש גם שיטות אחרות כמו `match` ו-`search` שמאפשרות עבודה עם תבניות. ב-Symbols חדשניים ב-RegExp יכולים לשפר את הביצועים בהתאם לפעולות שביצעת – למשל, שימוש בסימן `g` לחיפוש גלובלי.
 
 האם יש חלופות ל-RegExp? כן, דרך אחרת היא להשתמש במתודות מחרוזת כמו `split` ו-`join`. זה יכול להיות אפקטיבי אם אתה צריך להסיר תווים פשוטים, אבל במקרים מורכבים, Regex הוא כלי עוף.
 
 ## ראה גם:
-
 - [MDN Web Docs - Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
 - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 - [RegExp שימושים וטיפים](https://regexr.com/)

@@ -13,16 +13,10 @@ title: Skrive tester
 weight: 36
 ---
 
-## Hva & Hvorfor?
-
-Å skrive tester i Arduino-miljøet refererer til prosessen med å lage automatiserte tester som validerer funksjonaliteten til koden din på Arduino-enheter. Programmerere gjør dette for å forsikre seg om at koden deres fungerer som forventet, reduserer feil og forbedrer kvaliteten på prosjektene deres, spesielt viktig i innebygde systemer hvor feilsøking kan være mer utfordrende.
-
 ## Hvordan:
-
 Arduino har ikke et innebygd testrammeverk som noen andre programmeringsmiljøer. Imidlertid kan du bruke tredjepartsbiblioteker som `AUnit` for enhetstesting av Arduino-kode. AUnit er inspirert av Arduinos innebygde bibliotek, `ArduinoUnit`, og Googles testframework, `Google Test`.
 
 ### Eksempel med AUnit:
-
 Først, installer AUnit via Bibliotekbehandleren i Arduino IDE: gå til Skisse > Inkluder bibliotek > Behandle biblioteker... > søk etter AUnit og installer det.
 
 Deretter kan du skrive tester slik:

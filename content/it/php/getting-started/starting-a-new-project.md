@@ -10,9 +10,6 @@ title: Avvio di un nuovo progetto
 weight: 1
 ---
 
-## What & Why? (Cosa e Perché?)
-Iniziare un nuovo progetto PHP significa mettere su tela bianca le basi del tuo codice. I programmatori lo fanno per dare vita a nuove idee e risolvere problemi con soluzioni su misura.
-
 ## How to: (Come fare:)
 Per iniziare, installa il PHP, usa Composer per gestire le dipendenze e crea il tuo primo script. Ecco i passi chiave:
 

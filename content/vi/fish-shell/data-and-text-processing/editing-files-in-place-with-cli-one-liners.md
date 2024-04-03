@@ -18,12 +18,7 @@ title: "Ch\u1EC9nh s\u1EEDa file t\u1EA1i ch\u1ED7 v\u1EDBi c\xE2u l\u1EC7nh CLI
 weight: 32
 ---
 
-## Cái gì & Tại sao?
-
-Chỉnh sửa tệp tại chỗ bằng các dòng lệnh CLI là việc thực hiện thay đổi trực tiếp đối với các tệp từ dòng lệnh, không cần mở chúng trong trình soạn thảo văn bản. Các lập trình viên làm điều này để tiết kiệm thời gian và tự động hóa các nhiệm vụ chỉnh sửa lặp đi lặp lại, làm cho quy trình làm việc của họ trở nên mềm mại và hiệu quả hơn.
-
 ## Cách thực hiện:
-
 Fish Shell, nổi tiếng với các tính năng thân thiện với người dùng và khả năng lập trình mạnh mẽ, cung cấp nhiều cách để chỉnh sửa tệp tại chỗ. Tuy nhiên, không giống như một số shell khác, Fish không có cơ chế tích hợp sẵn cho việc chỉnh sửa tại chỗ (`sed -i` trong Bash, chẳng hạn). Nhưng đừng lo, bạn vẫn có thể thực hiện điều này với một chút sáng tạo và sự giúp đỡ từ các công cụ bên ngoài như `sed` và `awk`.
 
 ### Sử dụng `sed` cho những thay thế đơn giản
@@ -48,7 +43,6 @@ awk '{print $1 * 2}' file.txt > temp && mv temp file.txt
 Hãy nhớ, khi sử dụng những công cụ này từ Fish, việc bắt lỗi và hiểu thông điệp của chúng là rất quan trọng. Sử dụng khả năng xử lý lỗi mạnh mẽ của Fish để làm cho các script của bạn trở nên đáng tin cậy hơn.
 
 ## Sâu xa hơn
-
 Trong lịch sử, việc chỉnh sửa tệp tại chỗ đã là một nền tảng của lập trình Unix và Linux, cung cấp một cách hiệu quả để thực hiện các chỉnh sửa nhanh chóng mà không cần phải mở tệp một cách thủ công. Các công cụ như `sed` và `awk` là những tiện ích quý báu đã tồn tại từ những ngày đầu của Unix, trở nên không thể thiếu cho các nhiệm vụ xử lý văn bản.
 
 Fish Shell, dù hiện đại và có những cải tiến về khả năng sử dụng và lập trình, lại thiếu tính năng chỉnh sửa tại chỗ tích hợp sẵn chủ yếu do triết lý thiết kế của nó tập trung vào sự tương tác và thân thiện với người dùng. Sự vắng mặt của một lệnh chỉnh sửa tại chỗ được tích hợp trong Fish nhấn mạnh tầm quan trọng của các công cụ bên ngoài trong hệ sinh thái giống Unix.

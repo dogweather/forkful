@@ -10,9 +10,6 @@ title: Refactoring
 weight: 19
 ---
 
-## Was & Warum?
-Refactoring ist der Prozess des Umstrukturierens vorhandenen Computer-Codes, ohne dessen externes Verhalten zu ändern. Programmierer machen dies, um den Code zu säubern, die Lesbarkeit und Wartbarkeit zu verbessern und den Weg für zukünftige Funktionen mit minimaler technischer Schuld zu ebnen.
-
 ## Wie geht das:
 Beginnen wir mit einem einfachen Swift-Beispiel, in dem wir etwas wiederholenden Code haben:
 

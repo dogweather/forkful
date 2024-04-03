@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## What & Why? (Mitä & Miksi?)
-HTTP-pyynnön lähettäminen on tapa siirtää tietoa verkon yli palvelimelle. Koodarit tekevät tätä hakiakseen tai lähettääkseen dataa, päivittääkseen tilaa tai pyytääkseen toimintoja etäpalvelimelta.
-
 ## How to: (Kuinka:)
 Kotlinissa HTTP-pyyntöjä voidaan tehdä kirjastojen, kuten Ktor tai OkHttp, avulla. Tässä on yksinkertainen esimerkki käyttäen Ktor-client-kirjastoa:
 

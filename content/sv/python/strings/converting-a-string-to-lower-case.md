@@ -11,9 +11,6 @@ title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---
 
-## Vad & Varför?
-Att konvertera en sträng till små bokstäver innebär att alla versala (stora) tecken i strängen omvandlas till gemena (små) tecken. Programmerare gör detta för att standardisera data, underlätta jämförelser och sökningar i text, och för att behandla användarinmatning på ett robust sätt.
-
 ## Hur man gör:
 ```python
 # Exempel på hur man konverterar en sträng till små bokstäver i Python

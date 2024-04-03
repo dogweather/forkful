@@ -12,9 +12,6 @@ title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---
 
-## Vad & Varför?
-Beräkning av ett datum i framtiden eller förflutet är precis vad det låter som – att hitta ett specifikt datum före eller efter en given tidpunkt. Programmerare gör detta för att hantera frister, planera händelser eller kontrollera tidsberoende funktioner i sina program.
-
 ## Hur man gör:
 ```Fish Shell
 # För att räkna ut ett datum 10 dagar framåt:

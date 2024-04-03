@@ -12,9 +12,6 @@ title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---
 
-## Was & Warum?
-Das Umwandeln einer Zeichenkette in Kleinbuchstaben bedeutet, alle Großbuchstaben in ihrem Inhalt in die entsprechenden Kleinbuchstaben zu überführen. Wir tun dies, um bei Vergleichen oder der Datenverarbeitung Konsistenz zu gewährleisten und Schreibweise-bedingte Probleme zu vermeiden.
-
 ## Wie geht das:
 ```Fish Shell
 # Umwandlung in Kleinbuchstaben mit `string tolower`

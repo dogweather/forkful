@@ -13,10 +13,8 @@ title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---
 
-## Vad och varför?
-Att göra en sträng med stor begynnelsebokstav innebär att konvertera det första tecknet i en sträng till versal och resten till gemener. Denna operation används ofta i databehandling för att normalisera inmatningar eller förbättra läsbarheten för titlar, namn och dyligt.
-
 ## Hur man gör:
+
 
 ### Använda Pythons inbyggda metod:
 Python har en inbyggd metod `.capitalize()` för strängar för att enkelt utföra denna uppgift.

@@ -11,9 +11,6 @@ title: Calcolo di una data futura o passata
 weight: 26
 ---
 
-## What & Why?
-Calcolare una data nel futuro o nel passato significa trovare una data che è un certo numero di giorni, mesi o anni distante da una data di partenza. I programmatori lo fanno per gestire scadenze, eventi futuri, o per calcolare periodi passati.
-
 ## How to:
 Rust usa il crate `chrono` per la gestione delle date. Ecco un esempio di come calcolare date nel futuro e nel passato.
 

@@ -11,11 +11,7 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva & Hvorfor?
-Å runde av tall betyr å justere dem til det nærmeste hele tallet eller til en spesifisert grad av presisjon. Programmerere runder av tall for å forenkle, for å møte menneskelige forventninger, eller for å passe data inn i spesifikke formater—tenk finansielle beregninger, grafiske fremstillinger, eller for å redusere lagringsstørrelse.
-
 ## Hvordan:
-
 ```Ruby
 # Grunnleggende avrunding
 puts 3.14159.round      # => 3

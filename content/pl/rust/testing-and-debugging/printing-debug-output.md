@@ -11,9 +11,6 @@ title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---
 
-## Co i dlaczego?
-Wypisywanie debugowania to wyświetlanie informacji o działaniu programu – pomaga to programistom łapać błędy. Wykorzystujemy to, aby zobaczyć, co się dzieje w naszym kodzie, zanim coś pójdzie nie tak.
-
 ## Jak to zrobić:
 ```Rust
 fn main() {

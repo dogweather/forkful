@@ -14,9 +14,6 @@ title: Comprobando si un directorio existe
 weight: 20
 ---
 
-## Qué & Por qué?
-En el contexto de la programación en Arduino, comprobar si un directorio existe en una tarjeta SD o módulo de almacenamiento similar te permite leer o escribir archivos sin errores. Esta operación es esencial para el registro de datos, la gestión de configuración o cualquier tarea que requiera almacenamiento de archivos estructurado, asegurando la fiabilidad y el rendimiento fluido en tus aplicaciones.
-
 ## Cómo hacerlo:
 Arduino no soporta nativamente operaciones complejas del sistema de archivos directamente. Sin embargo, con el uso de la biblioteca SD, que es parte del IDE estándar de Arduino, puedes trabajar fácilmente con archivos y directorios. Para comprobar si un directorio existe, primero necesitas inicializar la tarjeta SD y luego utilizar el método `exists()` de la biblioteca SD.
 

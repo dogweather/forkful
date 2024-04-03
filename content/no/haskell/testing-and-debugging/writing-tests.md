@@ -13,16 +13,10 @@ title: Skrive tester
 weight: 36
 ---
 
-## Hva & Hvorfor?
-
-Å skrive tester i Haskell handler om å sikre at funksjonene dine fungerer som forventet gjennom automatiserte sjekker. Programmerere gjør det for å fange opp feil tidlig, lette refaktorering og dokumentere oppførsel, noe som gjør kodebasen mer vedlikeholdbar og skalerbar.
-
 ## Hvordan:
-
 Haskell støtter forskjellige testrammeverk, men to populære er `Hspec` og `QuickCheck`. Hspec lar deg definere menneskelesbare spesifikasjoner for koden din, mens QuickCheck lar deg generere tester automatisk ved å beskrive egenskaper som koden din bør tilfredsstille.
 
 ### Bruke Hspec
-
 Først, legg til `hspec` i konfigurasjonen til byggeverktøyet ditt (f.eks. `stack.yaml` eller `cabal`-filen). Deretter importerer du `Test.Hspec` og skriver tester som spesifikasjoner:
 
 ```haskell
@@ -51,7 +45,6 @@ Fullført på 0.0001 sekunder
 ```
 
 ### Bruke QuickCheck
-
 Med QuickCheck uttrykker du egenskaper som funksjonene dine bør tilfredsstille. Legg til `QuickCheck` i prosjektkonfigurasjonen din, deretter importerer du den:
 
 ```haskell

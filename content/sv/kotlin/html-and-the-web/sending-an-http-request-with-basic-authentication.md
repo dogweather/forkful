@@ -12,9 +12,6 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---
 
-## Vad & Varför?
-Skicka en HTTP-förfrågan med basic-autentisering innebär att koda ihop användarnamn och lösenord och skicka med det i en förfrågans `Authorization` header. Vi gör det för att säkerställa att endast behöriga användare får tillgång till skyddade resurser.
-
 ## Så här gör man:
 Här är ett exempel på hur man skickar en HTTP-förfrågan med basic-autentisering i Kotlin med hjälp av `java.net.HttpURLConnection`:
 

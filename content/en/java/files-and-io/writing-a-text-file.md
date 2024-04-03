@@ -11,14 +11,10 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-
-Writing a text file in Java is about using the language's capabilities to create and write content into files on the filesystem. Programmers do this for various reasons, such as logging, exporting data, or saving application state for later retrieval.
-
 ## How to:
 
-### Using `java.nio.file` (Standard Library)
 
+### Using `java.nio.file` (Standard Library)
 Java's New I/O (NIO) package (`java.nio.file`) provides a more versatile approach for dealing with files. Here's a simplistic way to write to a file using `Files.write()`:
 
 ```java
@@ -47,7 +43,6 @@ File written successfully!
 ```
 
 ### Using `java.io` (Standard Library)
-
 For a more traditional approach, `java.io.FileWriter` is a good choice for writing text files simply:
 
 ```java
@@ -74,7 +69,6 @@ File written successfully!
 ```
 
 ### Using Apache Commons IO
-
 The Apache Commons IO library simplifies many operations, including file writing. Here's how to write to a file using `FileUtils.writeStringToFile()`:
 
 First, add the dependency to your project. If using Maven, include:

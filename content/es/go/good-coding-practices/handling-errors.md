@@ -12,12 +12,7 @@ title: Manejando errores
 weight: 16
 ---
 
-## ¿Qué y por qué?
-
-El manejo de errores en Go implica reconocer y responder a las condiciones de error en tu programa. Los programadores se dedican al manejo de errores para asegurar que sus aplicaciones puedan recuperarse grácilmente de situaciones inesperadas, lo que lleva a un software más robusto y confiable.
-
 ## Cómo hacerlo:
-
 En Go, el manejo de errores se gestiona explícitamente mediante el tipo `error`. Las funciones que pueden fallar devuelven un error como su último valor de retorno. Verificar si este valor de error es `nil` te indicará si ocurrió un error.
 
 ```go
@@ -62,7 +57,6 @@ Resultado: 100
 En este ejemplo, la función `Compute` devuelve un valor calculado o un error. El llamador maneja el error verificando si `err` no es `nil`.
 
 ## Estudio profundo
-
 El enfoque de Go para el manejo de errores es deliberadamente sencillo y seguro en términos de tipos, requiriendo verificaciones explícitas de errores. Este concepto contrasta con el manejo de errores basado en excepciones visto en lenguajes como Java y Python, donde los errores se propagan hacia arriba en la pila de llamadas a menos que sean capturados por un manejador de excepciones. El equipo de Go argumenta que el manejo explícito de errores resulta en un código más claro y fiable, ya que obliga a los programadores a abordar los errores inmediatamente donde ocurren.
 
 Sin embargo, algunas críticas mencionan que este patrón puede llevar a un código verboso, especialmente en funciones complejas con muchas operaciones propensas a errores. En respuesta, versiones más recientes de Go han introducido características de manejo de errores más sofisticadas, como el envoltorio de errores, lo que facilita proporcionar contexto a un error sin perder la información del error original. La comunidad también ha visto propuestas para nuevos mecanismos de manejo de errores, tales como check/handle, aunque estos permanecen en discusión a partir de mi última actualización.

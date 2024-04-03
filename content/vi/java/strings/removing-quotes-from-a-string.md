@@ -16,9 +16,6 @@ title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---
 
-## Gì và Tại sao?
-Việc loại bỏ dấu ngoặc khỏi một chuỗi có nghĩa là gỡ bỏ bất kỳ dấu ngoặc đơn (' ') hay dấu ngoặc kép (" ") nào ra khỏi dữ liệu văn bản. Lập trình viên thực hiện điều này để làm sạch đầu vào, chuẩn bị dữ liệu cho việc lưu trữ, hoặc đơn giản hóa các nhiệm vụ phân tích khi mà dấu ngoặc không cần thiết và có thể gây rắc rối.
-
 ## Làm thế nào:
 Hãy kéo những dấu ngoặc khó chịu này ra khỏi văn bản của chúng ta. Chúng ta sẽ sử dụng phương thức `replace()` cho những sửa chữa nhanh chóng và regex cho những vấn đề khó khăn hơn.
 

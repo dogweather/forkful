@@ -11,9 +11,6 @@ title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---
 
-## What & Why? ("Mitä & Miksi?")
-Väliaikaistiedostot ovat tilapäisiä tiedostoja, jotka poistuvat usein itsestään. Niitä käytetään esimerkiksi väliaikaiseen datan käsittelyyn, testaukseen tai kun halutaan vähentää levyn käyttöä.
-
 ## How to: ("Kuinka tehdä:")
 Elixirissä väliaikaistiedoston luominen veet beekoon suoraviivaista. Käytetään `File` moduulia. Tässä yksinkertainen esimerkki:
 

@@ -11,12 +11,7 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## Hva & Hvorfor?
-
-Interpolering av strenger er rett og slett å putte variabler eller uttrykk inni en tekststreng. Programmerere bruker det for å bygge dynamiske meldinger eller kommandoer uten å måtte slite med å legge sammen mange små tekstbiter.
-
 ## Hvordan:
-
 ```PowerShell
 $name = 'Viking'
 $age = 32
@@ -35,7 +30,6 @@ Write-Output $greeting
 ```
 
 ## Dypdykk
-
 Stringinterpolering, også kjent som variabelsubstitusjon, har vært en del av programmeringsspråk lenge. I PowerShell bruker vi `"` (dobbel anførselstegn) for å oppnå dette. Historisk sett var vi nødt til å bruke plussoperatoren (+) for å legge sammen strenger og variabler, som kunne bli ganske rotete og vanskelig å lese.
 
 Alternativer til interpolering i PowerShell inkluderer bruk av `-f` operatøren (format operator) eller funksjonen `String.Format()`, som begge tillater mer detaljert formatering av strenger.
@@ -45,6 +39,5 @@ Interpolering forenkler skriving av koden og gjør den mer lesbar. Det gjør at 
 Det er viktig å huske at i PowerShell fungerer kun stringinterpolering med dobbelt anførselstegn. Enkelt anførselstegn blir tolket som en literal streng, og eventuelle variabler blir ikke evaluert.
 
 ## Se Også
-
 - [PowerShell Dokumentasjon](https://docs.microsoft.com/powershell/)
 - [Digital kurs i PowerShell på Microsoft Learn](https://docs.microsoft.com/learn/paths/powershell/)

@@ -14,12 +14,7 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-
-Wyrażenia regularne (regex) w programowaniu są używane do wyszukiwania, dopasowywania i manipulowania ciągami znaków na podstawie określonych wzorców. Programiści używają ich do zadań sięgających od prostych sprawdzeń walidacji po skomplikowane przetwarzanie tekstu, co czyni je niezastąpionymi w elastycznym i efektywnym obsługiwaniu tekstu.
-
 ## Jak to zrobić:
-
 W Go pakiet `regexp` zapewnia funkcjonalność wyrażeń regularnych. Oto krok po kroku, jak go używać:
 
 1. **Kompilowanie wyrażenia regularnego**
@@ -83,7 +78,6 @@ fmt.Println("Zastąpione:", result) // Wynik: Zastąpione: Java Java Java
 ```
 
 ## Dogłębna analiza
-
 Wprowadzony do standardowej biblioteki Go, pakiet `regexp` implementuje wyszukiwanie wyrażeń regularnych i dopasowywanie wzorców inspirowane składnią Perla. Pod spodem, silnik regex Go kompiluje wzorce do formy bajtkodów, które są następnie wykonane przez silnik dopasowujący napisany w Go. Ta implementacja wymienia część szybkości znalezioną w bezpośrednim wykonaniu sprzętowym na bezpieczeństwo i łatwość użycia, unikając pułapek przepełnień bufora, które są powszechne w bibliotekach opartych na C.
 
 Pomimo swojej mocy, regex w Go nie zawsze jest optymalnym rozwiązaniem dla dopasowywania wzorców, szczególnie przy pracy z silnie ustrukturyzowanymi danymi, takimi jak JSON lub XML. W tych przypadkach, specjalizowane parsery lub biblioteki zaprojektowane dla tych formatów danych oferują lepszą wydajność i niezawodność. Jednakże, do zadań wymagających skomplikowanego przetwarzania tekstu bez z góry określonej struktury, regex pozostaje niezbędnym narzędziem w zestawie programisty, oferując równowagę mocy i elastyczności, której mało które alternatywne rozwiązanie może dorównać.

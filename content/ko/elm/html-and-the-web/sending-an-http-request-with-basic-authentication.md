@@ -15,9 +15,6 @@ title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uB
 weight: 45
 ---
 
-## What & Why? (무엇과 왜?)
-HTTP 요청은 데이터를 주고받을 때 씁니다. 기본 인증(basic authentication)은 사용자 이름과 비밀번호를 인코딩해 서버로 보내 안전하게 로그인합니다.
-
 ## How to: (어떻게:)
 Elm에서 기본 인증을 사용해 HTTP 요청을 보내려면 `Http` 모듈을 사용합니다. 아래는 기본 인증으로 `GET` 요청을 보내는 예제 코드입니다.
 

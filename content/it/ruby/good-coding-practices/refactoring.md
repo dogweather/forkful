@@ -10,12 +10,7 @@ title: Rifattorizzazione
 weight: 19
 ---
 
-## Cosa & Perché?
-
-Il Refactoring è il processo di ristrutturazione del codice informatico esistente senza cambiarne il comportamento esterno. I programmatori eseguono il refactoring per migliorare attributi non funzionali del software, come la leggibilità, la riduzione della complessità, il miglioramento della manutenibilità o l'incremento delle prestazioni.
-
 ## Come:
-
 Andiamo attraverso un esempio di refactoring di un metodo Ruby che calcola la somma dei quadrati.
 
 **Prima del Refactoring:**
@@ -44,7 +39,6 @@ puts sum_of_squares([1, 2, 3])  # Output: 14
 La versione rifatta utilizza gli Enumerable di Ruby per esprimere la stessa logica in modo più succinto e chiaro. Il metodo `map` trasforma ciascun elemento, e `sum` aggrega i loro valori, eliminando la necessità di gestire manualmente i cicli e l'assegnazione delle variabili.
 
 ## Approfondimento
-
 Il Refactoring ha un ricco contesto storico, che risale alle prime pratiche nello sviluppo software. Le prime menzioni possono essere ricondotte agli anni '90, con contributi significativi fatti da Martin Fowler nel suo libro "Refactoring: Improving the Design of Existing Code", dove fornisce un catalogo di pattern per il refactoring. Da allora, il refactoring è diventato una pietra miliare delle pratiche di sviluppo agile.
 
 Quando parliamo di alternative al refactoring, dobbiamo considerare un approccio diverso come il 'Riscrivere', dove si sostituisce il vecchio sistema in parti o completamente, o adottare pratiche come le 'Code Reviews' e il 'Pair Programming' per migliorare gradualmente la qualità del codice. Comunque, queste non sono sostituzioni per il refactoring; esse completano il processo.
@@ -52,7 +46,6 @@ Quando parliamo di alternative al refactoring, dobbiamo considerare un approccio
 In termini di implementazione, Ruby offre una sintassi eccellente ed espressiva che spesso risulta in codice più breve e leggibile dopo il refactoring. I principi chiave includono DRY (Don't Repeat Yourself), l'utilizzo di nomi significativi, mantenere i metodi brevi e focalizzati su un singolo compito, e l'uso efficace del modulo Enumerable di Ruby, come visto nell'esempio sopra. Strumenti automatizzati come RuboCop possono anche aiutare i programmatori a identificare punti nel codice che potrebbero beneficiare del refactoring.
 
 ## Vedere Anche
-
 Per approfondire il refactoring in Ruby, controllate queste risorse:
 
 - Il libro fondamentale di Martin Fowler: [Refactoring: Improving the Design of Existing Code](https://martinfowler.com/books/refactoring.html)

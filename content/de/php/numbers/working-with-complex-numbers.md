@@ -10,9 +10,6 @@ title: Umgang mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-Komplexe Zahlen haben einen Realteil und einen Imaginärteil, üblicherweise geschrieben als `a + bi`. Sie sind entscheidend in fortgeschrittener Mathematik, Physik, Ingenieurwissenschaften und bestimmten Computer-Algorithmen. Programmierer arbeiten mit ihnen, um Berechnungen zu bewältigen, die Wurzeln aus negativen Zahlen und oszillierende Funktionen beinhalten.
-
 ## Wie geht das:
 PHP bietet eingebaute Unterstützung für komplexe Zahlen mit der Erweiterung `ext-intl` und der Klasse `NumberFormatter`. Hier ist ein Beispiel:
 

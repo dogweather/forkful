@@ -14,9 +14,6 @@ title: Kontrollera om en katalog existerar
 weight: 20
 ---
 
-## Vad & Varför?
-Att kontrollera om en katalog finns i Ruby låter programmerare verifiera närvaron av en katalog innan de utför operationer som att läsa filer eller skapa nya kataloger. Detta är avgörande för att undvika fel i filhantering och för att säkerställa tillförlitligheten hos filsystemmanipulationer.
-
 ## Hur gör man:
 Rubys standardbibliotek erbjuder enkla metoder för att kontrollera om en katalog finns. Så här gör du det med ren Ruby, utan att behöva några tredjepartsbibliotek:
 

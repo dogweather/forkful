@@ -15,12 +15,7 @@ title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 2
 ---
 
-## Điều gì và Tại sao?
-
-Việc viết hoa một chuỗi nghĩa là việc làm chữ cái đầu tiên của mỗi từ trở nên in hoa. Các lập trình viên thực hiện điều này để đảm bảo tính nhất quán trong định dạng, tính dễ đọc cho người dùng, hoặc chuẩn hóa dữ liệu.
-
 ## Làm sao:
-
 Lua không có hàm viết hoa sẵn, vì vậy chúng ta hãy tạo một hàm:
 
 ```lua
@@ -32,7 +27,6 @@ print(capitalize("hello world"))  -- Đầu ra: Hello World
 ```
 
 ## Thảo luận sâu hơn
-
 Các hàm viết hoa là chuẩn trong nhiều ngôn ngữ lập trình. Trong Lua, chúng ta tạo một hàm sử dụng `string.gsub()`, một hàm phù hợp mẫu mạnh mẽ. Hàm `capitalize` tùy chỉnh của chúng ta sử dụng một mẫu để tìm các chữ cái thường (`%l`) theo sau là không hoặc nhiều ký tự từ (`%w*`), và thay thế chúng bằng chữ cái viết hoa và phần còn lại của từ.
 
 ```lua
@@ -48,7 +42,6 @@ Khả năng phù hợp mẫu của Lua không mạnh mẽ như biểu thức ch�
 Trong quá khứ, nhu cầu về các hàm viết hoa phát sinh từ mong muốn trình bày dữ liệu văn bản một cách đồng nhất, đặc biệt là trong giao diện người dùng. Tuy nhiên, cần phải hiểu rõ bối cảnh: các ngôn ngữ và văn hóa khác nhau có những quy tắc riêng về viết hoa không chỉ đơn giản là chữ cái đầu của một câu hoặc tên.
 
 ## Xem thêm
-
 - Thư viện `string` của Lua: https://www.lua.org/manual/5.4/manual.html#6.4
 - Mẫu Lua: https://www.lua.org/pil/20.2.html
 - Xử lý Văn bản trong Lua: https://www.lua.org/pil/20.html

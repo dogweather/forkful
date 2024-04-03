@@ -12,9 +12,6 @@ title: Writing to standard error
 weight: 25
 ---
 
-## What & Why?
-Writing to standard error (stderr) in JavaScript is about directing error messages or any critical information to a specific, separate stream, which is especially useful in Unix-like environments for logging and debugging purposes. Programmers do this to differentiate normal program output from error messages, allowing for cleaner output management and easier error monitoring.
-
 ## How to:
 In Node.js, writing to stderr can be accomplished using the `console.error()` method or by writing directly to `process.stderr`. Here are examples demonstrating both approaches:
 

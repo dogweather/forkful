@@ -22,12 +22,7 @@ title: "\u57FA\u672C\u8A8D\u8A3C\u3092\u4F7F\u7528\u3057\u305FHTTP\u30EA\u30AF\u
 weight: 45
 ---
 
-## What & Why? (それは何？どうして？)
-
-HTTPリクエストにベーシック認証を付けて送るとは、ユーザー名とパスワードを使って認証を行うプロセスです。これを行う理由は、APIやウェブサービスに安全にアクセスするためです。
-
 ## How to: (やり方)
-
 まずは必要なライブラリをインクルードします。
 
 ```java
@@ -64,11 +59,9 @@ client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
 送信されるHTTPリクエストはこれで完了です。
 
 ## Deep Dive (詳細解説)
-
 HTTPベーシック認証は古典的な認証の一つで、RFC 7617によって標準化されました。セキュリティが弱いため、HTTPSでの使用が推奨されています。OAuthやJWTなど、よりセキュアな認証方法もありますが、ベーシック認証はシンプルで実装が容易です。
 
 ## See Also (関連情報)
-
 - HTTPベーシック認証に関する更なる情報はRFC 7617をご覧ください。 (https://tools.ietf.org/html/rfc7617)
 - JavaのHttpClientの詳細なドキュメントはオラクルの公式文書をチェックしてください。 (https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
 

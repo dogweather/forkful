@@ -13,12 +13,7 @@ title: Logboekregistratie
 weight: 17
 ---
 
-## Wat & Waarom?
-
-Loggen is de praktijk van het vastleggen van gebeurtenissen, fouten en andere significante datapunten die zich voordoen binnen de levenscyclus van een softwaretoepassing. Programmeurs gebruiken logs om te helpen bij het debuggen, het monitoren van de gezondheid van systemen, het analyseren van gebruikersgedrag en het onderhouden van een audit trail voor veiligheids- en nalevingsdoeleinden.
-
 ## Hoe:
-
 Lua heeft geen ingebouwd logframework, maar het implementeren van een eenvoudige logfunctie is eenvoudig. Hieronder staat een basaal voorbeeld van zo'n functie:
 
 ```lua
@@ -43,7 +38,6 @@ Wanneer de bovenstaande code wordt uitgevoerd, zie je een uitvoer zoals deze:
 Voor meer geavanceerde logvereisten kunnen externe bibliotheken zoals LuaLogging worden opgenomen om aanvullende functionaliteit te bieden, zoals logniveaus, meerdere handlers en specificaties voor de opmaak.
 
 ## Diepgaand
-
 Historisch gezien is loggen een essentieel aspect van software-diagnose geweest, een gevestigde praktijk sinds de vroege dagen van programmeren. Het belang van loggen kan niet genoeg benadrukt worden omdat het fungeert als de 'zwarte doos' in het geval van een systeemstoring en inzichten biedt in de hoofdoorzaken van problemen.
 
 Hoewel het bovenstaande voorbeeld alleen aan de meest elementaire behoeften voldoet, zijn er tal van alternatieven met rijkere kenmerkensets. Sommige hiervan omvatten:
@@ -57,7 +51,6 @@ Bij het verdiepen in de implementatie van een logsysteem kunnen beslispunten zij
 Voor loggen in gedistribueerde systemen is het gebruikelijk om gecentraliseerde logbeheeroplossingen zoals ELK (Elasticsearch, Logstash en Kibana) of Splunk te gebruiken, die logs van meerdere bronnen kunnen aggregeren, robuuste zoekmogelijkheden bieden en gegevens visualiseren voor eenvoudiger debugging en analyse.
 
 ## Zie Ook
-
 - LuaLogging-bibliotheek op GitHub: https://github.com/lunarmodules/lualogging
 - Introductie tot ELK Stack: https://www.elastic.co/what-is/elk-stack
 - De Lua-gebruikers wiki over Loggen: http://lua-users.org/wiki/LoggingCategory

@@ -10,9 +10,6 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## Vad & Varför?
-Läsa en textfil? Det handlar om att få fram informationen skriven i filen och använda den i ditt program. Utvecklare gör det för att ladda data, konfigurera program eller bearbeta filer skapade av andra program.
-
 ## How to:
 Använd `File`-klassen för att läsa filer. Här är enkla exempel:
 

@@ -10,9 +10,6 @@ title: Travailler avec XML
 weight: 40
 ---
 
-## Quoi et Pourquoi ?
-Travailler avec le XML sur Arduino implique l'analyse et la manipulation des données XML, généralement issues d'API web ou de fichiers de configuration. Les programmeurs le font pour s'intégrer aux services qui utilisent le XML pour l'échange de données ou pour stocker des données dans un format structuré et lisible par l'humain.
-
 ## Comment faire :
 Nous utiliserons la bibliothèque `XMLWriter` pour créer du XML et la bibliothèque `tinyxml2` pour l'analyser. Installez d'abord les bibliothèques via le gestionnaire de bibliothèques dans votre IDE Arduino.
 

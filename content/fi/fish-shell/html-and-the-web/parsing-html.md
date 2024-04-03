@@ -13,12 +13,7 @@ title: "HTML:n j\xE4sennys"
 weight: 43
 ---
 
-## Mikä & Miksi?
-
-HTML:n jäsentäminen on tietojen tai datan poimimista HTML-sisällöstä, yleinen tehtävä työskenneltäessä web-datan kanssa. Ohjelmoijat tekevät tämän automatisoidakseen tiedon poiminnan verkkosivustoilta, tehtäviin kuten web-kaavinta, datakaivos tai automatisoidut testaukset.
-
 ## Kuinka:
-
 Fish shell ei pääasiassa ole suunniteltu suoraan HTML:n jäsentämiseen. Kuitenkin, se loistaa yhdistämällä yhteen Unix-työkaluja kuten `curl`, `grep`, `sed`, `awk`, tai käyttämällä erikoistuneita työkaluja kuten `pup` tai `beautifulsoup` Python-skriptissä. Alla on esimerkkejä, jotka esittelevät, kuinka näitä työkaluja voi hyödyntää Fish shellin sisällä HTML:n jäsentämiseen.
 
 ### Käyttäen `curl` ja `grep`:
@@ -36,7 +31,6 @@ Tuloste:
 ```
 
 ### Käyttäen `pup` (komentorivityökalu HTML:n jäsentämiseen):
-
 Varmista ensin, että `pup` on asennettu. Sen jälkeen voit käyttää sitä elementtien poimintaan niiden tagien, id:den, luokkien jne. perusteella.
 
 ```fish
@@ -46,7 +40,6 @@ curl -s https://example.com | pup 'a attr{href}'
 Tuloste, samankaltainen kuin `grep` esimerkkissä, listaisi `<a>` tagien href attribuutit.
 
 ### Python-skriptillä ja `beautifulsoup`:
-
 Vaikka Fish itsessään ei voi jäsentää HTML:ää natiivisti, se integroituu saumattomasti Python-skripteihin. Alla on tiivis esimerkki, joka käyttää Pythonia ja `BeautifulSoup`ia HTML:n jäsentämiseen ja otsikoiden poimintaan. Varmista, että sinulla on `beautifulsoup4` ja `requests` asennettuna Python-ympäristöösi.
 
 **parse_html.fish**

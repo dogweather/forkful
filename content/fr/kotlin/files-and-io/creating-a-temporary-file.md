@@ -11,9 +11,6 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## What & Why?
-Créer un fichier temporaire permet de stocker des données qui ne sont nécessaires que brièvement. Les programmeurs le font pour gérer l'espace de stockage efficacement et garder des données volatiles sans encombrer la mémoire permanente.
-
 ## How to:
 Kotlin rend la création de fichiers temporaires super facile. Voici comment :
 

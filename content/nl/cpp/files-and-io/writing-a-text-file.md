@@ -12,9 +12,6 @@ title: Een tekstbestand schrijven
 weight: 24
 ---
 
-## Wat & Waarom?
-Een tekstbestand schrijven in C++ betekent het creëren of wijzigen van een bestand om tekstuele gegevens op te slaan. Programmeurs doen dit om gegevens zoals configuraties, logs of door gebruikers gegenereerde inhoud te bewaren.
-
 ## Hoe:
 Hieronder staat een eenvoudig C++ programma dat een tekstbestand creëert en er "Hallo, Wereld!" naar schrijft.
 

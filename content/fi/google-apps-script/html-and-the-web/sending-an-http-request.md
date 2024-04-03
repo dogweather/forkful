@@ -13,12 +13,7 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## Mikä ja miksi?
-
-HTTP-pyynnön lähettäminen Google Apps Scriptillä tarkoittaa ohjelmallisesti kutsun tekemistä ulkoiselle verkkopalvelimelle tai API:lle. Ohjelmoijat tekevät tämän hakeakseen tai lähettääkseen tietoja verkkopalveluihin, yhdistäen valtavan määrän verkkoresursseja ja toiminnallisuuksia suoraan heidän Google Apps Script -projekteihinsa.
-
 ## Kuinka:
-
 Google Apps Scriptissä HTTP-pyynnön lähettämisen ensisijainen keino on käyttämällä `UrlFetchApp`-palvelua. Tämä palvelu tarjoaa metodeja HTTP GET- ja POST-pyyntöjen tekemiseen. Tässä on yksinkertainen esimerkki GET-pyynnön tekemisestä JSON-tiedon noutamiseen:
 
 ```javascript
@@ -57,7 +52,6 @@ function postExample() {
 Nämä katkelmat näyttävät perus GET- ja POST-pyynnön toteutukset. Tuloste riippuu API:n vastauksesta ja sitä voidaan tarkastella Google Apps Scriptin Logissa.
 
 ## Syväsukellus
-
 Google Apps Scriptin `UrlFetchApp`-palvelu on kehittynyt merkittävästi sen alkuvaiheista, tarjoten tarkempaa hallintaa HTTP-pyyntöihin ominaisuuksilla, kuten otsikoiden asettaminen, payload ja multipart/form-data-käsittely tiedostojen latauksille. Vaikka se tarjoaa suoraviivaisen keinon integroida ulkoiset verkkopalvelut, kehittäjät, jotka tulevat robottimaisemmista taustajärjestelmäkielistä, saattavat pitää sen toiminnallisuutta jossain määrin rajoittuneena verrattuna kirjastoihin, kuten Pythonin `requests` tai JavaScriptin `fetch` API Node.js:ssä.
 
 Yksi merkittävä rajoitus on Google Apps Scriptin suoritusaikaraja, joka vaikuttaa pitkäkestoisia pyyntöjä. Lisäksi, vaikka `UrlFetchApp` kattaa laajan valikoiman käyttötapauksia, monimutkaisemmat skenaariot, jotka liittyvät OAuth-autentikointiin tai erittäin suurten kuormien käsittelyyn, saattavat vaatia luovia ratkaisuja tai lisäyksiä Google Cloud -resursseista.

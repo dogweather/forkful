@@ -10,9 +10,6 @@ title: Enviando una solicitud http
 weight: 44
 ---
 
-## Qué & Por qué?
-Enviar una petición HTTP es comunicarte con un servidor para intercambiar datos. Los programadores lo hacen para interactuar con servicios web, como APIs, para obtener información, realizar operaciones o iniciar sesiones.
-
 ## Cómo hacerlo:
 Para enviar una petición HTTP en Rust, es común usar la librería `reqwest`, la cual permite manejar peticiones de forma sencilla. Aquí un ejemplo:
 
@@ -52,7 +49,6 @@ Detalles de implementación clave para `reqwest` incluyen:
 3. Soporte para diferentes métodos HTTP (GET, POST, etc.) y tipos de cuerpo (texto, JSON, formularios).
 
 ## Ver También:
-
 - [Reqwest - Documentación oficial](https://docs.rs/reqwest/)
 - [Rust Asynchronous Programming - Libro Oficial](https://rust-lang.github.io/async-book/)
 - [HTTP - Descripción del protocolo](https://developer.mozilla.org/es/docs/Web/HTTP)

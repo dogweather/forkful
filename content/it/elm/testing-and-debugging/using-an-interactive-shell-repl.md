@@ -11,9 +11,6 @@ title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---
 
-## Cos'è e Perché?
-Il Read-Eval-Print Loop (REPL) è un ambiente di programmazione semplice e interattivo che prende singoli input dall'utente, li valuta e ritorna il risultato all'utente. I programmatori Elm usano il REPL per esperimenti rapidi, per il debugging o per imparare il linguaggio.
-
 ## Come fare:
 Elm non viene fornito con un REPL integrato. Tuttavia, puoi utilizzare `elm repl` dalla tua riga di comando per avviare una sessione Elm dopo aver installato Elm.
 

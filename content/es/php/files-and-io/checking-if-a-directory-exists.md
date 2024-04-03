@@ -13,12 +13,7 @@ title: Comprobando si un directorio existe
 weight: 20
 ---
 
-## Qué y Por Qué?
-
-Comprobar si un directorio existe es una tarea fundamental en la programación PHP, ya que te permite verificar la presencia de un directorio antes de realizar operaciones como leer o escribir archivos dentro de él. Esta operación ayuda a prevenir errores que podrían surgir al intentar acceder a directorios inexistentes y es esencial para la gestión dinámica de archivos dentro de tus aplicaciones.
-
 ## Cómo hacerlo:
-
 La forma nativa de comprobar si un directorio existe en PHP es utilizando la función `is_dir()`. Esta función toma una ruta de archivo como argumento y devuelve `true` si el directorio existe y es un directorio, o `false` en caso contrario.
 
 ```php

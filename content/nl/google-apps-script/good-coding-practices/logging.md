@@ -12,12 +12,7 @@ title: Logboekregistratie
 weight: 17
 ---
 
-## Wat & Waarom?
-
-Loggen in programmeren houdt in dat gebeurtenissen, fouten of opmerkelijke gebeurtenissen tijdens de uitvoering worden geregistreerd. Programmeurs doen dit om problemen te debuggen, prestaties te monitoren en een registratie van operationele gegevens bij te houden, waardoor het cruciaal is voor het onderhouden en begrijpen van het gedrag van software in productie.
-
 ## Hoe te:
-
 In Google Apps Script kan loggen worden uitgevoerd met behulp van verschillende methoden, zoals de `Logger`-klasse en `console.log()`. De Logger-klasse is de traditionele manier, geschikt voor eenvoudige debugging en ontwikkelingsdoeleinden. Sinds recente updates biedt `console.log()` meer flexibiliteit en integratie met Stackdriver Logging, wat een robuustere oplossing biedt voor het monitoren van uw Apps Scripts op Google Cloud Platform.
 
 **Gebruikmakend van Logger:**
@@ -64,7 +59,6 @@ Een object loggen: {name: "Jane", role: "Developer"}
 Door over te schakelen naar `console.log()` voor complexe applicaties, kunnen ontwikkelaars efficiënt logs parsen en analyseren met behulp van de krachtige filters en tools die GCP biedt, wat niet zo eenvoudig is met de traditionele Logger-klasse.
 
 ## Diepgaande duik:
-
 Loggen in Google Apps Script is aanzienlijk geëvolueerd. Aanvankelijk was de `Logger`-klasse de primaire methode voor ontwikkelaars om hun scripts te debuggen. Het is eenvoudig en voldoende voor basis scripts, maar het mist de mogelijkheden die nodig zijn voor moderne cloudapplicaties, zoals het doorzoeken van logs of het analyseren van logtrends in de loop van de tijd.
 
 De introductie van `console.log()` overbrugde deze kloof door Google Apps Script-logboekregistratie te integreren met Google Cloud's Stackdriver Logging (nu Operations Suite genoemd), en bood een gecentraliseerd platform voor logboekregistratie, monitoring en debugging van applicaties. Dit maakte niet alleen logboekregistratie op schaal mogelijk, maar opende ook geavanceerde functies voor logbeheer, zoals loggebaseerde metingen, realtime loganalyse en integratie met andere Google Cloud-diensten.

@@ -13,9 +13,6 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-Complexe getallen breiden de reële getallen uit door een imaginair eenheid toe te voegen, voorgesteld als 'i', waarbij i^2 = -1. Programmeurs gebruiken ze voor simulaties, signaalverwerking en het oplossen van wiskundige problemen die werken in twee dimensies vereisen.
-
 ## Hoe:
 C++ heeft een ingebouwde bibliotheek `<complex>` die het werken met complexe getallen vergemakkelijkt. Hier is een snelle blik:
 

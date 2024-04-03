@@ -14,9 +14,6 @@ title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---
 
-## Vad & Varför?
-Att skriva med stor bokstav innebär att ändra det första tecknet i varje ord i en mening till versal, samtidigt som man ser till att resten är gemener. Denna teknik används ofta för att formatera text för ett mer professionellt eller läsbart utdata, såsom att förbereda titlar eller användarinmatning för visning.
-
 ## Hur man gör:
 Lua har ingen inbyggd funktion för att göra bokstäver till versaler, men du kan enkelt genomföra denna uppgift med hjälp av grundläggande strängmanipuleringsfunktioner. Här är en enkel funktion för att göra första bokstaven i ett enskilt ord till versal:
 

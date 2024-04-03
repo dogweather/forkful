@@ -14,9 +14,6 @@ title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---
 
-## Gì và Tại sao?
-Phân tích cú pháp HTML trong lập trình bao gồm việc trích xuất dữ liệu từ tài liệu HTML. Lập trình viên làm điều này để tương tác với hoặc cạo dữ liệu web để trích xuất thông tin, kiểm tra, hoặc tự động hóa, ngay cả khi không có các API chính thức.
-
 ## Làm thế nào:
 Dart không cung cấp hỗ trợ tích hợp sẵn cho việc phân tích cú pháp HTML trong các thư viện cốt lõi của mình. Tuy nhiên, bạn có thể sử dụng gói bên thứ ba như `html` để phân tích cú pháp và thao tác với tài liệu HTML.
 

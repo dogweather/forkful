@@ -13,9 +13,6 @@ title: "\xC5 finne lengden p\xE5 en streng"
 weight: 7
 ---
 
-## Hva & Hvorfor?
-Å finne lengden på en streng i Go handler om å bestemme antall tegn den inneholder. Programmerere utfører rutinemessig denne operasjonen for å manipulere strenger effektivt, enten det er for validering, utdrag av understrenger, eller rett og slett for å håndheve begrensninger i brukerinndata.
-
 ## Hvordan gjøre det:
 I Go behandles strenger som uforanderlige sekvenser av bytes. Du kan finne lengden på en streng ved hjelp av den innebygde `len()`-funksjonen som returnerer antall bytes, ikke nødvendigvis antall tegn. Slik bruker du den:
 

@@ -20,9 +20,6 @@ title: "\u83B7\u53D6\u5F53\u524D\u65E5\u671F"
 weight: 29
 ---
 
-## 什么和为什么？
-在Java中获取当前日期是一个基础操作，它允许程序员操作日期对象以进行日志记录、日期计算和基于时间的条件等操作。在需要追踪、调度和时间数据分析的应用程序中这一点至关重要。
-
 ## 如何操作：
 Java提供了多种方式来获取当前日期，既包括老旧的`java.util.Date`类，也包括在Java 8中引入、更加多功能和直观的新`java.time`包。
 
@@ -37,6 +34,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### 使用`java.time.LocalDateTime`
 ```java
 import java.time.LocalDateTime;
@@ -48,6 +46,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### 使用`java.util.Date`（遗留）
 ```java
 import java.util.Date;
@@ -59,6 +58,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### 使用第三方库：Joda-Time
 在Java 8之前，Joda-Time是Java中日期和时间的事实标准。如果您在处理遗留系统，或者偏好使用Joda-Time，以下是如何使用它来获取当前日期的方法：
 ```java

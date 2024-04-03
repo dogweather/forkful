@@ -11,12 +11,7 @@ title: Enviando una solicitud http
 weight: 44
 ---
 
-## Qué & Por Qué?
-
-Enviar una solicitud HTTP significa pedirle datos a un servidor web desde tu script PHP. Programadores lo hacen para interactuar con otros sistemas, como APIs de servicios web o sitios externos y obtener datos o realizar acciones externas.
-
 ## Cómo hacerlo:
-
 ```PHP
 <?php
 // Inicializar cURL
@@ -57,7 +52,6 @@ curl_close($ch);
 ```
 
 ## Profundización:
-
 Enviar solicitudes HTTP es una característica universal de la web. Originalmente, PHP usaba funciones como `fopen()` y `file_get_contents()` para obtener datos de URLs externas, pero estas opciones son limitadas y no pueden manejar todas las situaciones, en especial cuando se necesitan métodos HTTP como POST o PUT, o manejo de cabeceras y cookies.
 
 cURL, o Client URL Library, es más sofisticado. Apareció en 1997 y desde entonces se ha convertido en una opción estándar para manejar solicitudes HTTP en PHP porque es poderoso y flexible. cURL admite autenticación, métodos HTTP personalizables, manejo de cookies, y mucho más.
@@ -67,7 +61,6 @@ Además de cURL, existen múltiples bibliotecas de terceros que simplifican aún
 La implementación de una solicitud HTTP puede variar en complejidad dependiendo de la necesidad del programador, pero en su forma más básica, como se muestra en el ejemplo anterior, se puede realizar en pocos pasos utilizando cURL.
 
 ## Ver También:
-
 - Documentación oficial de cURL para PHP: [https://www.php.net/manual/es/book.curl.php](https://www.php.net/manual/es/book.curl.php)
 - Guía de HTTP de Mozilla Developer Network (MDN) para entender mejor las solicitudes HTTP y sus características: [https://developer.mozilla.org/es/docs/Web/HTTP](https://developer.mozilla.org/es/docs/Web/HTTP)
 - Guzzle, un cliente HTTP PHP que simplifica el envío de solicitudes: [http://docs.guzzlephp.org/en/stable/](http://docs.guzzlephp.org/en/stable/)

@@ -12,9 +12,6 @@ title: Schreiben auf Standardfehler
 weight: 25
 ---
 
-## Was & Warum?
-Das Schreiben auf den Standardfehler (stderr) bezieht sich darauf, Fehlermeldungen und Diagnosen an den stderr-Stream zu leiten, getrennt von der Standardausgabe (stdout). Programmierer tun dies, um die reguläre Programmausgabe von Fehlermeldungen zu unterscheiden, was ein effektiveres Debugging und Protokollieren ermöglicht.
-
 ## Wie geht das:
 In Clojure können Sie mit dem `*err*` Stream auf stderr schreiben. Hier ist ein einfaches Beispiel:
 

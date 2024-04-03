@@ -10,9 +10,6 @@ title: Code in Funktionen organisieren
 weight: 18
 ---
 
-## Was & Warum?
-Code in Funktionen zu unterteilen bedeutet, Skripte in kleinere, wiederverwendbare Blöcke zu zerlegen, die spezifische Aufgaben erledigen. Das macht den Code sauberer, verständlicher und einfacher zu debuggen.
-
 ## Wie geht das:
 Erstelle eine einfache Funktion in Bash:
 

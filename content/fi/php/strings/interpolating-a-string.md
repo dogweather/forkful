@@ -9,9 +9,6 @@ title: Merkkijonon interpolointi
 weight: 8
 ---
 
-## What & Why? - Mitä & Miksi?
-Interpolointi tarkoittaa muuttujien arvojen yhdistämistä merkkijonoon. Koodarit käyttävät sitä dynaamisten viestien luomiseen ja koodin selkeyden parantamiseen.
-
 ## How to: - Miten:
 ```php
 <?php

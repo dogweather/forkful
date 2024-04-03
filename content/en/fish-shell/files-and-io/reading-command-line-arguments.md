@@ -10,11 +10,7 @@ title: Reading command line arguments
 weight: 23
 ---
 
-## What & Why?
-Reading command line arguments is grabbing the extra bits you type after your script's name, like secret handshakes to customize a script's behavior. Programmers do it to make scripts flexible and interactive without a fuss.
-
 ## How to:
-
 Let's say `greet.fish` is your script. You want it to take a name and spit out a greeting.
 
 ```fish
@@ -81,7 +77,6 @@ VENUS
 ```
 
 ## Deep Dive
-
 Fish Shell has had command line arguments nailed down for a long time, much like other shells. What sets Fish apart is its simplicity by design. There's no `$1, $2... $n` to remember; it's an array `$argv`, familiar territory if you dabble in other programming languages.
 
 There are alternatives, like bash, zsh, etc., but Fish's scripting syntax aims to be more readable and straightforward. Instead of traditional `shift` commands or dealing with `$@` for all arguments, Fish has that friendly `$argv` and lovely scripting constructs like `for` loops and `if` conditions that are less about cryptic symbols and more about clear words.
@@ -89,7 +84,6 @@ There are alternatives, like bash, zsh, etc., but Fish's scripting syntax aims t
 When implementing, it's vital to consider how your script will be used. Will it need default values? Will users know what to input? Make sure you handle cases where users forget to pass arguments or pass them in the wrong order.
 
 ## See Also
-
 - The official Fish documentation on command line arguments: [fishshell.com/docs/current/#syntax-command-line](https://fishshell.com/docs/current/#syntax-command-line)
 - For advanced scripting and creating your own functions in Fish: [fishshell.com/docs/current/#defining-functions](https://fishshell.com/docs/current/#defining-functions)
 - An introduction to Fish for users with a background in other shells: [fishshell.com/docs/current/tutorial.html](https://fishshell.com/docs/current/tutorial.html)

@@ -11,9 +11,6 @@ title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---
 
-## What & Why?
-Att skapa en tillfällig fil är att skapa en fil som existenserar under en kort period, ofta under en programs körning. Programmerare gör detta för att hantera data som inte behöver bli bevarade eller för att undvika datakollisioner mellan parallella processer.
-
 ## How to:
 PHPs `tmpfile()` funktion är smidig för att skapa en temporär fil som automatiskt tas bort när den inte längre används.
 

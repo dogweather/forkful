@@ -14,12 +14,7 @@ title: "Escribir en el error est\xE1ndar"
 weight: 25
 ---
 
-## Qué y Por Qué?
-
-Escribir en el error estándar en Visual Basic para Aplicaciones (VBA) implica dirigir mensajes de error o diagnósticos aparte de la salida estándar, generalmente a la consola o un archivo de log. Los programadores hacen esto para separar la salida regular del programa de los mensajes de error, facilitando la depuración de programas o alertando a los usuarios sobre problemas sin saturar la salida principal.
-
 ## Cómo hacerlo:
-
 En VBA, dado que no hay una función integrada directa para escribir específicamente en el error estándar como en algunos otros lenguajes de programación, una solución común implica usar `Debug.Print` para la salida de error de desarrollo o crear una función de registro personalizada que imite este comportamiento para aplicaciones en producción. A continuación se presenta un ejemplo de cómo podría implementar y usar dicha función:
 
 ```vb
@@ -49,7 +44,6 @@ ERROR: Ocurrió un error al procesar su solicitud.
 ```
 
 ## Análisis Profundo
-
 Visual Basic para Aplicaciones no incluye inherentemente un mecanismo dedicado para escribir en el error estándar debido a su naturaleza profundamente integrada con aplicaciones anfitrionas como Excel, Word o Access, que tradicionalmente dependen de interfaces gráficas de usuario en lugar de salida de consola. Esta es una divergencia notable de las aplicaciones basadas en consola típicamente desarrolladas en lenguajes como C o Python, donde los flujos de salida estándar y error estándar son conceptos fundamentales.
 
 Históricamente, el enfoque de VBA siempre ha sido más en interactuar con los modelos de documentos de sus aplicaciones anfitrionas y menos en mecanismos de registro de aplicaciones tradicionales. Por lo tanto, los desarrolladores a menudo recurren a implementar soluciones de registro personalizadas, como se ve en el ejemplo, o utilizar llamadas a la API de Windows para necesidades de manejo de errores y registro más avanzadas.

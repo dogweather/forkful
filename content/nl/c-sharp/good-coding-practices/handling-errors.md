@@ -12,12 +12,7 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-
-Het afhandelen van fouten in C# gaat over het beheren van het onverwachte—zoals struikelen over je veters. Programma's kunnen struikelen over slechte gegevens of wankelende verbindingen. We behandelen fouten om te voorkomen dat onze software op zijn gezicht valt, waardoor het sierlijk kan herstellen.
-
 ## Hoe te:
-
 Laten we beginnen met een try-catch blok. Het is alsof je een veiligheidsnet onder een koorddanser plaatst. Als ze uitglijden, vallen ze niet te pletter—ze worden opgevangen.
 
 ```C#
@@ -54,7 +49,6 @@ try {
 ```
 
 ## Diepere Duik
-
 Foutafhandeling is sinds de geboorte van C# aanwezig. In de loop der tijd is het geëvolueerd. Vroeger vertrouwden programmeurs op retourcodes of globale vlaggen om problemen aan te geven—lomp en foutgevoelig.
 
 C# gebruikt uitzonderingen, een modernere benadering. Een uitzondering wordt geworpen wanneer het onverwachte gebeurt, net zoals een vlag gooien tijdens een voetbalwedstrijd. Gestroomlijnde uitzonderingsafhandeling met try, catch en finally blokken maakt het beheer van deze momenten duidelijker en schoner dan de oude manier van fouten controleren.
@@ -64,6 +58,5 @@ Alternatieven? Zeker. Er is de `UnhandledExceptionEventHandler` voor uitzonderin
 Implementatiedetails—vergelijkbaar met de kleine lettertjes—doen ertoe. Uitzonderingen kunnen kostbaar zijn, de prestaties omlaag halen als ze willekeurig worden gegooid. Dus, we gebruiken ze voor uitzonderlijke gevallen, niet voor alledaagse logicacontrole.
 
 ## Zie Ook
-
 - [Officiële documentatie over uitzonderingen in C#](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/exception-handling)
 - [Beste praktijken in de afhandeling van C# uitzonderingen](https://docs.microsoft.com/en-us/dotnet/standard/exceptions/best-practices-for-exceptions)

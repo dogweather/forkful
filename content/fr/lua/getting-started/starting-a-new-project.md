@@ -11,9 +11,6 @@ title: Lancement d'un nouveau projet
 weight: 1
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Commencer un nouveau projet, c'est partir de zéro pour créer un programme original. Les programmeurs se lancent dans de nouveaux projets pour résoudre un problème, apprendre ou s'amuser.
-
 ## How to: (Comment faire :)
 ```Lua
 -- Initialisation d'un nouveau projet Lua

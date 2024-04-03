@@ -16,9 +16,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Gì & Tại sao?
-Làm việc với XML có nghĩa là thao tác dữ liệu trong một định dạng có cấu trúc, phổ biến được sử dụng trong cấu hình, giao tiếp và nhiều hơn nữa. Lập trình viên thao tác XML để đọc, viết, cập nhật và truy vấn dữ liệu - quan trọng cho khả năng tương thích trong hàng tấn ứng dụng và dịch vụ.
-
 ## Làm thế nào:
 Fish không có tính năng phân tích cú pháp XML tích hợp, vì vậy bạn sẽ phải dựa vào các công cụ bên ngoài như `xmllint` hoặc `xmlstarlet`. Đây là một đoạn mã để đọc giá trị:
 

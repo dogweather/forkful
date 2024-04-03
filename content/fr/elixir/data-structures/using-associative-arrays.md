@@ -12,12 +12,7 @@ title: Utilisation des tableaux associatifs
 weight: 15
 ---
 
-## Quoi & Pourquoi ?
-
-Dans Elixir, les tableaux associatifs, appelés Maps, sont des collections de paires clé-valeur où une clé unique pointe vers une valeur. Ils sont extrêmement pratiques pour stocker et récupérer des données à la volée, rendant votre code plus propre et votre vie plus facile.
-
 ## Comment faire :
-
 Créer une Map est simple. Vous utilisez la syntaxe `%{}`, comme ceci :
 
 ```elixir
@@ -49,7 +44,6 @@ IO.inspect(trimmed_map)
 Sortie : `%{"location" => "NY", "name" => "Alex"}`
 
 ## Plongée Profonde
-
 Les Maps dans Elixir sont une évolution des anciens types de stockage clé-valeur, comme les Hashes en Ruby ou les Dictionaries en Python. Ils permettent des recherches et des insertions plus efficaces, les rendant un choix privilégié pour la programmation Elixir moderne. Il est important de noter qu'avant les Maps, Elixir utilisait les modules HashDict et Dict, qui sont maintenant dépréciés.
 
 Cependant, pour des scénarios nécessitant des données ordonnées, vous pourriez regarder les listes de mots-clés dans Elixir. Ce sont des listes de tuples, efficaces pour de petites collections mais pas aussi performantes pour de grands ensembles de données comme les Maps.

@@ -9,9 +9,6 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## What & Why? (Mikä & Miksi?)
-Ladataan verkkosivu tarkoittaa sen sisällön kopioimista paikallisesti. Ohjelmoijat tekevät sen datan jalostukseen, automatisointiin tai backupointiin.
-
 ## How to: (Kuinka tehdään:)
 ```Lua
 -- Tarvitaan luotettava HTTP-kirjasto

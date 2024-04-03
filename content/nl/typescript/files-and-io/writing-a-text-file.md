@@ -11,12 +11,7 @@ title: Een tekstbestand schrijven
 weight: 24
 ---
 
-## Wat & Waarom?
-
-Een tekstbestand schrijven betekent data opslaan in een bestand met een `.txt` extensie. Programmeurs doen dit voor loggen, configuratie, of het opslaan van eenvoudige gegevens zonder een database nodig te hebben.
-
 ## Hoe:
-
 TypeScript, als een uitbreiding van JavaScript, heeft geen eigen bestandssysteemmodule, maar het kan Node.js gebruiken voor deze taak. Zorg ervoor dat je Node.js hebt geïnstalleerd en dan, laten we beginnen:
 
 ```typescript
@@ -47,7 +42,6 @@ Bestand succesvol geschreven
 ```
 
 ## Diepe duik
-
 Historisch gezien is het schrijven naar tekstbestanden zo oud als de computer zelf voor opslag of communicatie tussen programma's. Voordat databases algemeen werden gebruikt, waren platte bestanden gebruikelijk. Nu hebben databases grotendeels deze rol overgenomen, maar tekstbestanden zijn nog steeds van vitaal belang vanwege hun eenvoud.
 
 Alternatieven voor de Node.js 'fs'-module zijn:
@@ -59,7 +53,6 @@ Alternatieven voor de Node.js 'fs'-module zijn:
 De 'writeFile'-methode die hierboven is getoond, werkt goed voor kleine tot middelgrote bestanden. Voor grotere bestanden of gegevensstromen wil je misschien streams gebruiken om te voorkomen dat alles in het geheugen wordt geladen.
 
 ## Zie ook
-
 - Node.js Bestandssysteem API: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
 - Officiële pagina van TypeScript: [https://www.typescriptlang.org/](https://www.typescriptlang.org/)
 - 'fs-extra' bibliotheek: [https://github.com/jprichardson/node-fs-extra](https://github.com/jprichardson/node-fs-extra)

@@ -13,9 +13,6 @@ title: Een datum uit een string parsen
 weight: 30
 ---
 
-## Wat & Waarom?
-Het parsen van een datum uit een string betekent het converteren van tekst naar een datumformaat dat je code kan begrijpen. We doen dit omdat datums vaak als strings van gebruikersinvoer of externe gegevensbronnen komen en we ze in een gestructureerde vorm nodig hebben voor berekening en opslag.
-
 ## Hoe:
 Om datums in Rust te parsen, gebruiken we de `chrono` crate, een go-to bibliotheek voor datum en tijd.
 

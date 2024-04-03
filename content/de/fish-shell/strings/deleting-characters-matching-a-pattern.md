@@ -10,9 +10,6 @@ title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---
 
-## Was & Warum?
-Das Löschen von Zeichen, die einem Muster entsprechen, ist ein Prozess, bei dem bestimmte Zeichensequenzen aus einer Zeichenkette entfernt werden. Diese Technik wird von Programmierern verwendet, um Daten zu säubern, Eingaben zu validieren oder einfach Strings zu bearbeiten.
-
 ## Wie geht das:
 Der `string` Befehl in Fish bietet mehrere Optionen, um Zeichen, die einem Muster entsprechen, zu löschen. Hier ein paar Beispiele:
 

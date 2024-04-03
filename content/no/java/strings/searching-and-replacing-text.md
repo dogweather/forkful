@@ -11,9 +11,6 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Søke og erstatte tekst betyr å finne en spesifikk tekststreng og bytte den ut med en annen. Programmerere bruker dette for å automatisere koding, databehandling og for å fikse feil.
-
 ## How to: (Slik gjør du det:)
 Her er en enkel Java-metode som bruker `String`-klassens `replace`-funksjon. Koden nedenfor erstatter alle forekomster av "kaffe" med "te" i en gitt tekst.
 

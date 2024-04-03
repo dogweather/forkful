@@ -11,9 +11,6 @@ title: Komennoriviparametrien lukeminen
 weight: 23
 ---
 
-## What & Why?
-Komennon riviargumentit ovat komentoriviltä ohjelmiin syötettäviä tiedonpaloja. Niitä käytetään, koska ne mahdollistavat käyttäjän tarpeisiin mukautuvat ohjelmat, antavat vaihtoehtoja ja ohjaavat ohjelman suoritusta.
-
 ## How to:
 Kotlinissa komennon riviargumentit luetaan `Array<String>`-tyyppisenä `args`-parametrina pääfunktiolle. Tässä esimerkki:
 

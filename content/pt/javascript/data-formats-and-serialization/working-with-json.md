@@ -10,9 +10,6 @@ title: Trabalhando com JSON
 weight: 38
 ---
 
-## O que é & Por quê?
-JSON, ou JavaScript Object Notation, é um formato leve de troca de dados. Programadores utilizam JSON para transferir e armazenar dados de maneira simples e rápida entre o servidor e o cliente e porque é fácil de ler e escrever para humanos.
-
 ## Como fazer:
 Para lidar com JSON no JavaScript, você geralmente vai ler um string JSON de alguma fonte e convertê-lo num objeto JavaScript para usar no seu código, ou então pegar um objeto JavaScript e convertê-lo numa string JSON para enviar para um servidor.
 

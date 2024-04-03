@@ -14,11 +14,7 @@ title: "Einen String gro\xDFschreiben"
 weight: 2
 ---
 
-## Was & Warum?
-Das Kapitalisieren eines Strings in Bash beinhaltet die Umwandlung des ersten Buchstabens des Strings in einen Großbuchstaben, während der Rest des Strings unverändert bleibt. Diese Technik wird häufig verwendet, um die Ausgabe zu formatieren oder um Kodierungskonventionen zu entsprechen, die verlangen, dass bestimmte Strings mit einem Großbuchstaben beginnen, zur Lesbarkeit oder aus stilistischen Vorlieben.
-
 ## Wie geht das:
-
 Bash verfügt nicht über eine eingebaute Funktion speziell zum Kapitalisieren von Strings, aber Sie können diese Aufgabe mit Parametererweiterung oder externen Tools wie `awk` bewerkstelligen. Hier sind einige Wege, um einen String in Bash zu kapitalisieren:
 
 **Verwendung der Parametererweiterung:**

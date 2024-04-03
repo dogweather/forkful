@@ -10,9 +10,6 @@ title: Interpolando uma string
 weight: 8
 ---
 
-## O Que & Por Que?
-Interpolar uma string significa inserir valores de variáveis ou expressões dentro dela para formar uma nova string. Programadores fazem isso para construir mensagens dinâmicas e customizadas sem a necessidade de concatenar pedaços de strings manualmente.
-
 ## Como Fazer:
 Haskell não tem interpolação de strings nativa como outras linguagens, mas podemos chegar lá com a biblioteca `text` e sua função `printf` ou a biblioteca `interpolate`. Aqui está como você pode usá-las:
 

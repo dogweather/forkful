@@ -13,12 +13,7 @@ title: Werken met YAML
 weight: 41
 ---
 
-## Wat & Waarom?
-
-YAML, dat staat voor "YAML Ain't Markup Language", is een voor mensen leesbare gegevensserialisatiestandaard die vaak wordt gebruikt voor configuratiebestanden en gegevensuitwisseling tussen talen met verschillende gegevensstructuren. Programmeurs werken vaak met YAML vanwege de eenvoud en leesbaarheid, vooral in projecten die uitgebreide configuratie vereisen of bij het overbrengen van gestructureerde gegevens tussen verschillende systemen.
-
 ## Hoe te:
-
 Hoewel Google Apps Script (GAS) geen YAML-analyse of -serialisatie native ondersteunt, kunt u YAML-gegevens manipuleren door JavaScript-bibliotheken te gebruiken of aangepaste analysefuncties te schrijven. Laten we voor de demonstratie eens kijken hoe je een YAML-string kunt ontleden met een aangepaste functie, aangezien externe bibliotheken niet rechtstreeks kunnen worden geïmporteerd in GAS.
 
 Stel dat u een eenvoudige YAML-configuratie heeft:
@@ -76,7 +71,6 @@ Wanneer `testYamlOntleden()` wordt uitgevoerd, wordt het volgende uitgevoerd:
 Deze aangepaste ontledingsaanpak is vrij basis en moet mogelijk worden aangepast om complexe YAML-bestanden te kunnen hanteren.
 
 ## Diepgaande duik
-
 YAML, voor het eerst uitgebracht in 2001, was bedoeld om leesbaarder te zijn dan zijn voorgangers zoals XML of JSON. Hoewel de eenvoud en gebruiksgemak breed worden gewaardeerd, presenteert het omgaan met YAML in Google Apps Script uitdagingen vanwege het ontbreken van directe ondersteuning. Daarom vertrouwen programmeurs vaak op de veelzijdigheid van JavaScript om YAML-gegevens te ontleden en te genereren. Echter, voor complexe gebruiksscenario's, met name die met diepe nesten en geavanceerde gegevensstructuren, kan deze methode omslachtig en foutgevoelig zijn.
 
 JSON daarentegen wordt native ondersteund in Google Apps Script en de meeste andere programmeeromgevingen, en biedt een eenvoudiger aanpak voor gegevensserialisatie en -deserialisatie zonder extra analyse-overhead. De syntax van JSON is minder breedsprakig dan die van YAML, waardoor het geschikter is voor gegevensuitwisseling in webtoepassingen. Desalniettemin blijft YAML populair voor configuratiebestanden en situaties waarin menselijke leesbaarheid van het grootste belang is.

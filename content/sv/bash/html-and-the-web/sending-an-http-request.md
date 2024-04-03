@@ -11,9 +11,6 @@ title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## What & Why?
-Att skicka en HTTP-förfrågan handlar om att be om data från en webbserver. Programmerare gör detta för att interagera med webbaserade tjänster eller hämta information automatiserat.
-
 ## How to:
 För att skicka en HTTP-förfrågan från Bash kan du använda `curl` eller `wget`. Här är exempel:
 

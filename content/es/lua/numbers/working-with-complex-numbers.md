@@ -11,9 +11,6 @@ title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---
 
-## ¿Qué y por qué?
-Los números complejos extienden la idea de la línea numérica unidimensional al plano bidimensional incluyendo un eje imaginario perpendicular. Los programadores trabajan con ellos en campos como el procesamiento de señales, la dinámica de fluidos y la ingeniería eléctrica, donde son esenciales para representar oscilaciones y otros fenómenos.
-
 ## Cómo:
 En Lua, puedes representar números complejos con tablas. Las operaciones básicas involucran sumar, restar, multiplicar y dividir estas tablas. Aquí te mostramos cómo:
 

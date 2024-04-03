@@ -13,12 +13,7 @@ title: Werken met JSON
 weight: 38
 ---
 
-## Wat & Waarom?
-
-JSON (JavaScript Object Notation) is een lichtgewicht gegevensuitwisselingsformaat dat gemakkelijk te lezen en te schrijven is voor mensen, en eenvoudig te parseren en te genereren voor machines. Programmeurs gebruiken JSON om gegevens tussen een server en een webapplicatie te verzenden, of om informatie op een gestructureerde, toegankelijke manier op te slaan binnen een verscheidenheid aan programmeeromgevingen, waaronder Visual Basic for Applications (VBA).
-
 ## Hoe te:
-
 VBA ondersteunt van nature geen JSON parsing of generatie, dus we zullen een scripttaal zoals JScript (via het ScriptControl object) gebruiken voor het parsen van JSON strings en het bouwen van JSON objecten. Hier is hoe je een JSON string kunt parsen in VBA:
 
 ```basic
@@ -58,7 +53,6 @@ End Sub
 ```
 
 ## Diepgaand
-
 De getoonde benaderingen maken gebruik van de ScriptControl om met JSON om te gaan, waarbij het werk in wezen wordt uitbesteed aan een JavaScript engine. Dit is een creatieve oplossing, maar niet noodzakelijkerwijs de meest efficiënte of moderne manier om met JSON in een VBA-context te werken. In meer complexe toepassingen kan deze methode omslachtig worden en prestatieoverhead of veiligheidszorgen introduceren, aangezien ScriptControl wordt uitgevoerd in een omgeving die volledige toegang heeft tot de hostcomputer.
 
 Andere programmeeromgevingen, zoals Python of JavaScript, bieden ingebouwde ondersteuning voor JSON, waardoor ze beter geschikt zijn voor toepassingen die uitgebreide JSON-manipulatie vereisen. Deze talen bieden uitgebreide bibliotheken die niet alleen parsing en generatie faciliteren, maar ook het bevragen en formatteren van JSON-gegevens.

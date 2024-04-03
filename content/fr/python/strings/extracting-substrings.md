@@ -11,9 +11,6 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## Quoi & Pourquoi ?
-Extraire des sous-chaînes, c'est récupérer des morceaux spécifiques d'une chaîne de caractères. On le fait pour analyser, manipuler ou transformer des données basées sur le texte, comme récupérer un nom d'utilisateur d'une adresse e-mail.
-
 ## Comment faire :
 ```Python
 texte = "utilisateur@example.com"

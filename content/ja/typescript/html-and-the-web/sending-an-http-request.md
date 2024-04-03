@@ -19,12 +19,7 @@ title: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306E\u9001\u4FE1"
 weight: 44
 ---
 
-## What & Why? (何となぜ？)
-
-HTTPリクエストを送るっていうのは、サーバーに情報を要求するための手段です。プログラマーはデータを取得したり、ウェブサービスに対して動作を起こすためにこれを行うんです。
-
 ## How to: (方法)
-
 TypeScriptでHTTPリクエストを送るには、`fetch` APIを使います。下記のコードを見てください:
 
 ```typescript
@@ -53,7 +48,6 @@ fetchData('https://api.example.com/data');
 ```
 
 ## Deep Dive (深掘り)
-
 HTTPリクエストの送信はWebの始まりから重要な部分でした。`XMLHttpRequest` が古典的な方法でしたが、`fetch` APIはよりモダンな代替手段です。
 
 `fetch` APIはプロミスを使うので、非同期コードを書きやすくしています。古くからある `XMLHttpRequest` と比べ、シンプルで読みやすいコードが書けます。もし`fetch`にまだ慣れていなければ、`Axios`などのライブラリを使うという選択肢もありますが、ネイティブな`fetch` APIは外部ライブラリに頼らない力強い選択肢です。
@@ -61,7 +55,6 @@ HTTPリクエストの送信はWebの始まりから重要な部分でした。`
 実装の詳細に入ると、HTTPリクエストの種類(GET, POST, PUT, DELETEなど)、ステータスコード(200は成功、404は見つからない、等)、ヘッダーやボディの管理など、把握すべきことが多いです。
 
 ## See Also (関連するリソース)
-
 - MDN Web Docs on Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 - TypeScript Handbook: https://www.typescriptlang.org/docs/handbook/intro.html
 - Using Axios with TypeScript: https://github.com/axios/axios

@@ -13,12 +13,7 @@ title: Een tekstbestand schrijven
 weight: 24
 ---
 
-## Wat & Waarom?
-
-Een tekstbestand schrijven in programmeren betekent het creëren en opslaan van gegevens in een leesbaar bestandsformaat, zoals .txt. Programmeurs doen dit om gegevens te bewaren, systemen te configureren, informatie te loggen of menselijk leesbare inhoud te exporteren.
-
 ## Hoe te:
-
 Laten we "Hallo, bestand!" naar een "greeting.txt" bestand schrijven.
 
 ```Kotlin
@@ -54,7 +49,6 @@ Nog een regel!
 ```
 
 ## Dieper Duiken
-
 Historisch gezien zijn tekstbestanden een hoeksteen geweest in het configureren en loggen binnen softwaresystemen. Hoewel tools en formaten (zoals XML, JSON) zijn geëvolueerd, blijven tekstbestanden een eenvoudige, universeel toegankelijke methode om met gegevens te interageren.
 
 Alternatieven voor `java.io.File` zijn onder andere `java.nio.file.Files` en `java.io.FileWriter`, die meer controle en efficiëntie bieden voor grotere bestanden of meer complexe operaties.
@@ -65,7 +59,6 @@ Belangrijke implementatiedetails:
 - **Uitzonderingsbehandeling**: Wees je bewust van mogelijke `IOExceptions` en behandel ze dienovereenkomstig.
 
 ## Zie Ook
-
 - Officiële Kotlin Documentatie over Bestands-I/O: [kotlinlang.org](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/)
 - `java.nio.file` pakket voor moderne bestands-I/O: [Java Docs](https://docs.oracle.com/javase/8/docs/api/java/nio/file/package-summary.html)
 - Leer over `BufferedWriter` voor efficiënt schrijven: [Java BufferedWriter](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedWriter.html)

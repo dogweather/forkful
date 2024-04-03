@@ -11,9 +11,6 @@ title: "Wykorzystanie wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## What & Why? - Co i dlaczego?
-Wyrażenia regularne to wzorce używane do wyszukiwania i manipulowania tekstami. Programiści używają ich, bo pozwalają na zaawansowane przetwarzanie tekstu niewielkim kosztem.
-
 ## How to: - Jak to zrobić:
 Znajdowanie słów zaczynających się na "pl" w pliku `tekst.txt`:
 

@@ -13,9 +13,6 @@ title: Pobieranie aktualnej daty
 weight: 29
 ---
 
-## Co i dlaczego?
-Pobieranie aktualnej daty w Bashu polega na używaniu wbudowanych poleceń do wyświetlania daty i czasu w różnych formatach. Programiści używają tej funkcjonalności do zadań takich jak dodawanie znaczników czasowych do logów, planowanie zadań lub po prostu jako część swoich skryptów informacji systemowych, aby śledzić, kiedy wykonano akcje.
-
 ## Jak to zrobić:
 W Bashu polecenie `date` jest twoim głównym narzędziem do pobierania aktualnej daty i czasu. Oto kilka przykładów, jak można go używać:
 

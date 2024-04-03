@@ -10,12 +10,7 @@ title: Downloading a web page
 weight: 42
 ---
 
-## What & Why?
-
-Downloading a web page means grabbing the raw HTML content from the internet using code. Programmers do this to process data, interact with web services, or simply save information for offline use.
-
 ## How to:
-
 C# makes it simple to download a web page with the `HttpClient` class. Here's a quick example:
 
 ```C#
@@ -51,7 +46,6 @@ class Program
 This will output HTML content of the specified web page into the console.
 
 ## Deep Dive
-
 Before `HttpClient`, C# used classes like `WebClient` and `HttpWebRequest` to download web content. `HttpClient` is the latest and is designed to be reusable, efficient, and support asynchronous operations making it the preferred choice for new applications.
 
 Alternatives exist. For instance, third-party libraries such as `HtmlAgilityPack` can parse HTML, making it easier to navigate the DOM or extract specific pieces of info without dealing with raw HTML strings.
@@ -59,7 +53,6 @@ Alternatives exist. For instance, third-party libraries such as `HtmlAgilityPack
 When downloading web pages, remember: respect robots.txt files, handle exceptions, and be mindful of the terms of use for websites.
 
 ## See Also
-
 - [HttpClient Class Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
 - [Async and Await](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/)
 - [HTML Agility Pack on GitHub](https://github.com/zzzprojects/html-agility-pack)

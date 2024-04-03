@@ -12,11 +12,7 @@ title: Satunnaisten numeroiden luominen
 weight: 12
 ---
 
-## Mitä & Miksi?
-Satunnaislukujen generointi Dart-kielessä sisältää arvaamattomien numeeristen arvojen luomisen, jotka eroavat jokaisella suorituskerralla. Ohjelmoijat hyödyntävät tätä toiminnallisuutta monista syistä, simuloidakseen todellisia tilanteita testiympäristöissä, mahdollistaakseen pelimekaniikkoja ja varmistaakseen turvallisuuden satunnaisuuden kautta kryptografisissa toiminnoissa.
-
 ## Kuinka:
-
 Dartin ydin kirjasto tukee satunnaislukujen generointia `Random` luokan avulla, joka löytyy `dart:math`-kirjastosta. Tässä yksinkertainen esimerkki:
 
 ```dart

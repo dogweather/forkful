@@ -15,16 +15,10 @@ title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---
 
-## Quoi et pourquoi ?
-
-En programmation, mettre en majuscule une chaîne de caractères consiste à convertir son premier caractère en majuscule s'il ne l'est pas déjà, ce qui est utile pour formater les entrées des utilisateurs ou afficher du texte dans une interface utilisateur de manière plus standardisée ou conviviale. Les programmeurs effectuent cette opération pour garantir la cohérence des données ou pour répondre à des exigences de formatage spécifiques au sein de leurs applications logicielles.
-
 ## Comment faire :
-
 En Kotlin, les chaînes de caractères peuvent être mises en majuscules en utilisant les fonctions de la bibliothèque standard sans nécessiter de bibliothèques tierces. L'approche de Kotlin pour manipuler les chaînes rend ces opérations simples et concises.
 
 ### Mettre toute la chaîne en majuscules :
-
 ```kotlin
 val message = "hello, world!"
 val capitalizedMessage = message.uppercase()
@@ -33,7 +27,6 @@ println(capitalizedMessage) // Sortie : HELLO, WORLD!
 ```
 
 ### Mettre en majuscule uniquement le premier caractère :
-
 Depuis Kotlin 1.5, la fonction `capitalize()` est obsolète et remplacée par une combinaison de `replaceFirstChar` et d'une lambda qui vérifie s'il s'agit d'une lettre minuscule pour la transformer en majuscule.
 
 ```kotlin

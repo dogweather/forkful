@@ -11,9 +11,6 @@ title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---
 
-## Vad & Varför?
-Beräkning av ett datum i framtiden eller förflutna är precis det det låter som - att hitta ett datum före eller efter ett känt datum. Programmerare gör detta för att hantera tidsbaserade uppgifter som att skapa påminnelser, generera rapporter, eller för att hålla koll på tidsperioder för avtal.
-
 ## Hur man gör:
 ```Clojure
 (require '[clj-time.core :as t])

@@ -14,9 +14,6 @@ title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---
 
-## Co i dlaczego?
-Zapisywanie do standardowego błędu (stderr) polega na kierowaniu komunikatów o błędach i diagnostyki do strumienia stderr, oddzielnie od standardowego wyjścia (stdout). Programiści robią to, aby odróżnić regularne wyjście programu od komunikatów o błędach, co pozwala na efektywniejsze debugowanie i logowanie.
-
 ## Jak to zrobić:
 W Clojure można pisać do stderr używając strumienia `*err*`. Oto podstawowy przykład:
 

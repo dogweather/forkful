@@ -12,12 +12,7 @@ title: Strings samenvoegen
 weight: 3
 ---
 
-## Wat & Waarom?
-
-Concatenatie in Visual Basic for Applications (VBA) houdt in dat twee of meer strings worden samengevoegd tot een enkele entiteit. Dit is een fundamentele taak in programmeren, essentieel voor het genereren van gebruikersberichten, het creëren van SQL-queries en meer, omdat het dynamische creatie en manipulatie van stringgegevens mogelijk maakt.
-
 ## Hoe:
-
 VBA biedt een eenvoudige methode voor het samenvoegen van strings met behulp van de `&` operator of de `Concatenate` functie. Laten we beide methoden met voorbeelden verkennen:
 
 1. **Gebruikmakend van de `&` Operator:**
@@ -53,7 +48,6 @@ Debug.Print message 'Uitvoer: Hallo John!
 De keuze tussen de `&` operator en de `Concatenate` functie hangt af van persoonlijke voorkeur en de specifieke vereisten van je project.
 
 ## Diepgaand
-
 Stringconcatenatie is een basis- maar krachtige functie in VBA, met zijn wortels in vroege programmeertalen. De prevalentie van de `&` operator in VBA voor concatenatie, boven de `+` operator die in veel andere talen wordt gebruikt, benadrukt de focus van VBA op expliciete stringverwerking, dus het vermijden van onbedoelde datatypemismatches en fouten.
 
 Hoewel de `&` operator efficiënt en breed aangenomen is, blinkt de `Concatenate` functie uit in scenario's die meer duidelijkheid vereisen of speciale concatenatiegevallen behandelen, zoals omgaan met arrays. Het is echter belangrijk op te merken dat moderne versies van Excel de `TEXTJOIN` functie hebben geïntroduceerd, die efficiënter kan zijn voor het samenvoegen van reeksen strings met een scheidingsteken, hoewel het niet direct deel uitmaakt van VBA.

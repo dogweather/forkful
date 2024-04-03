@@ -12,12 +12,7 @@ title: Arbeider med JSON
 weight: 38
 ---
 
-## Hva & Hvorfor?
-
-JSON, eller JavaScript Object Notation, er et lettvektig datautvekslingsformat, noe som gjør det perfekt for datalagring eller konfigurasjonsfiler i Arduino-prosjekter. Programmerere bruker det for dets enkelhet og lesbarhet på tvers av ulike programmeringsmiljøer, inkludert Arduino, noe som muliggjør sømløs datautveksling med web-APIer eller andre systemer.
-
 ## Hvordan:
-
 For å jobbe med JSON i Arduino, er `ArduinoJson`-biblioteket et populært valg på grunn av dets brukervennlighet og effektivitet. Det tillater parsing av JSON-strenger, modifisering av dem, og serialisering av objekter tilbake til JSON-strenger. Her er hvordan du bruker det:
 
 1. **Installer ArduinoJson-biblioteket**: Bruk bibliotekbehandleren i Arduino IDE og installer "ArduinoJson".

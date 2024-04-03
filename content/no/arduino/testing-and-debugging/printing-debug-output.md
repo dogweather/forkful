@@ -12,9 +12,6 @@ title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---
 
-## Hva & Hvorfor?
-Å skrive ut feilsøkingsdata ("debug output") handler om å vise programdata og -tilstander til skjermen for å forstå hva koden faktisk gjør. Programmerere gjør dette for å finne og rette feil effektivt.
-
 ## Slik gjør du:
 ```Arduino
 void setup() {

@@ -10,9 +10,6 @@ title: Umgang mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-Komplexe Zahlen erweitern die reellen Zahlen um einen zusätzlichen Teil, die imaginäre Einheit 'i'. Programmierer verwenden sie in verschiedenen Bereichen, einschließlich Signalverarbeitung, Elektromagnetentheorie und Fraktalen, wo Berechnungen, die die Quadratwurzel einer negativen Zahl beinhalten, Routine sind.
-
 ## Wie:
 Clojure bietet eingebaute Unterstützung für komplexe Zahlen durch die Utility-Klasse `clojure.lang.Numbers`. Verwenden Sie `complex`, um komplexe Zahlen zu erstellen und arithmetische Operationen durchzuführen.
 

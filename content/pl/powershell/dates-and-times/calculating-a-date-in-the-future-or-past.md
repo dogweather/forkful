@@ -12,9 +12,6 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-## Co i Dlaczego?
-Obliczanie daty w przyszłości lub przeszłości to sposób na ustalenie daty, która jest określoną liczbę dni, miesięcy, czy lat od daty wyjściowej. Programiści robią to, aby zarządzać terminami, wydarzeniami, czy też okresami ważności w aplikacjach.
-
 ## Jak to zrobić:
 ```PowerShell
 # Obliczanie daty 10 dni w przyszłości

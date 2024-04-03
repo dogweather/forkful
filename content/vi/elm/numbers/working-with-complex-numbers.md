@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Gì và Tại sao?
-Số phức là sự kết hợp của số thực và số ảo, ví dụ như `a + bi` nơi `i` là căn bậc hai của -1. Chúng là chìa khóa trong các lĩnh vực như kỹ thuật và vật lý để giải quyết những bài toán mà số thường không thể chạm tới.
-
 ## Làm thế nào:
 Elm không hỗ trợ số phức một cách sẵn có, vì vậy bạn sẽ tự tạo kiểu dữ liệu và các hàm của riêng mình. Dưới đây là một cách thiết lập nhanh:
 

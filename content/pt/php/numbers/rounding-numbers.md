@@ -11,9 +11,6 @@ title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---
 
-## O Que & Por Que?
-Arredondar números significa cortar os decimais até uma precisão definida, frequentemente para números inteiros. Programadores arredondam para simplificar cálculos, melhorar o desempenho ou tornar as saídas amigáveis ao usuário.
-
 ## Como fazer:
 O PHP oferece algumas maneiras de arredondar números: `round()`, `ceil()` e `floor()`. Veja como eles funcionam:
 

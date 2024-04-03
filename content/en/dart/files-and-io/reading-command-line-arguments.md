@@ -12,12 +12,7 @@ title: Reading command line arguments
 weight: 23
 ---
 
-## What & Why?
-
-Reading command line arguments in Dart enables programmers to input data directly into the console when executing a Dart program, enhancing its interactivity and flexibility for various use cases, including automation scripts, CLI tools, or batch processing. This feature is pivotal for creating adaptable and user-friendly command-line applications.
-
 ## How to:
-
 Dart provides a straightforward approach to access command line arguments via the `List<String> args` in the main method. Below is a simple example demonstrating how to read and utilize command line arguments.
 
 ```dart
@@ -45,7 +40,6 @@ Command Line Arguments:
 ```
 
 ### Using a Popular Third-Party Library: `args`
-
 While Dart's built-in capabilities for handling command line arguments are robust for many applications, the `args` package provides a refined way to define and parse command line arguments for more complex needs.
 
 First, add the `args` package to your `pubspec.yaml`:

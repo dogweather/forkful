@@ -16,9 +16,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---
 
-## Cái gì & Tại sao?
-YAML là một tiêu chuẩn serial hóa dữ liệu thân thiện với người dùng được sử dụng trong lập trình cho các tệp cấu hình, lưu trữ dữ liệu và hơn thế nữa. Lập trình viên sử dụng nó vì tính dễ đọc và đơn giản trong các ứng dụng và hệ thống phức tạp.
-
 ## Làm thế nào:
 Để làm việc với YAML trong C#, bạn cần thư viện YamlDotNet. Bạn có thể cài đặt nó qua NuGet: `Install-Package YamlDotNet`.
 

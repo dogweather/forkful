@@ -14,12 +14,7 @@ title: Uudelleenkoodaus
 weight: 19
 ---
 
-## Mikä & Miksi?
-
-Ohjelmoinnissa refaktorointi tarkoittaa koodin rakenteen muuttamista muuttamatta sen toimintaa, jotta esimerkiksi sen luettavuus, ylläpidettävyys tai suorituskyky paranisivat. Ohjelmoijat refaktoroivat tehdäkseen koodista tehokkaampaa, helpommin ymmärrettävää, helpommin muutettavaa tulevaisuudessa ja vähentääkseen virheiden todennäköisyyttä.
-
 ## Kuinka:
-
 Harkitaan yksinkertaista esimerkkiä Visual Basic for Applications (VBA) -koodissa, jossa meillä on alirutiini, joka tulostaa työntekijän tiedot. Aluksi koodi on sekavaa, vaikeaa ylläpitää tai laajentaa.
 
 ```vb
@@ -80,7 +75,6 @@ End Sub
 Nämä vaiheet muuntavat sekavan koodin modulaariseksi, rakenteelliseksi koodiksi, mikä parantaa merkittävästi sen luettavuutta ja ylläpidettävyyttä.
 
 ## Syväluotaus
-
 Refaktoroinnin konsepti on yhtä vanha kuin ohjelmointi itse, mutta Martin Fowlerin kirja "Refactoring: Improving the Design of Existing Code" toi sen valtavirtaan, korostaen sen merkitystä ohjelmistokehitysprosessissa. Visual Basic for Applicationsissa refaktorointi voi olla haastavampaa johtuen nykyaikaisemmissa integroiduissa kehitysympäristöissä (IDEs) löytyvien automaattisen refaktoroinnin tukityökalujen puutteesta.
 
 Tämä ei kuitenkaan vähennä sen tärkeyttä. Myös VBA:ssa perusrefaktorointitekniikoiden manuaalinen soveltaminen voi parantaa merkittävästi koodikantaa, tehden siitä siistimpää ja tehokkaampaa. Vaikka VBA:lla ei olekaan samoja moderneja mukavuuksia, hyvän koodisuunnittelun periaatteet ovat yleismaailmallisia. Muista kielistä tulevat kehittäjät saattavat pitää manuaalista prosessia työläänä, mutta arvostavat epäilemättä ajan investointia koodin laadun parantamiseen alusta alkaen.

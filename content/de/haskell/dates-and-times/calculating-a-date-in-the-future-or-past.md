@@ -10,9 +10,6 @@ title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---
 
-## Was & Warum?
-Das Berechnen eines Datums in der Zukunft oder der Vergangenheit ist einfach, bestimmt wann Dinge passiert sind oder passieren werden. Programmierer nutzen das für Features wie Erinnerungen, Zeitplanung oder Gültigkeitsprüfungen.
-
 ## How to:
 ```Haskell
 import Data.Time

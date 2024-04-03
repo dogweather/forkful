@@ -11,9 +11,6 @@ title: Sammenlikning av to datoer
 weight: 27
 ---
 
-## Hva & Hvorfor?
-Sammenligning av to datoer ser på forskjellen mellom dem — enten i tid, rekkefølge, eller begge deler. Programmerere bruker dette til å håndtere frister, beregne tid som har gått, og organisere hendelser.
-
 ## Hvordan:
 ```Rust
 use chrono::{DateTime, Utc};

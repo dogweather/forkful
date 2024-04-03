@@ -12,9 +12,6 @@ title: Trovare la lunghezza di una stringa
 weight: 7
 ---
 
-## Cosa & Perché?
-Trovare la lunghezza di una stringa in C comporta determinare il numero di caratteri prima del terminatore nullo `\0`. I programmatori fanno ciò per manipolare correttamente le stringhe senza incorrere in errori come gli overflow del buffer, che possono portare a vulnerabilità della sicurezza o crash del programma.
-
 ## Come fare:
 In C, la funzione di libreria standard `strlen()` è comunemente usata per trovare la lunghezza di una stringa. Ecco un esempio veloce:
 

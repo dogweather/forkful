@@ -16,9 +16,6 @@ title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---
 
-## Gì và Tại sao?
-Loại bỏ dấu ngoặc khỏi một chuỗi có nghĩa là lột bỏ các ký tự dấu ngoặc kép hoặc đơn ôm lấy văn bản của bạn. Các lập trình viên làm điều này để làm sạch đầu vào, để dễ dàng phân tích, hoặc để hòa hợp dữ liệu có thể được trích dẫn không nhất quán.
-
 ## Cách làm:
 Dưới đây là cách để loại bỏ các dấu ngoặc trong Lua:
 

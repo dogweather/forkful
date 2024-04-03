@@ -12,12 +12,7 @@ title: Werken met JSON
 weight: 38
 ---
 
-## Wat & Waarom?
-
-Werken met JSON (JavaScript Object Notation) in C++ houdt in dat je tekstuele gegevens die als JSON zijn geformatteerd, gaat parsen en genereren. Programmeurs gebruiken JSON voor eenvoudige gegevensuitwisseling tussen servers en webclients, en omdat het menselijk leesbaar en taalonafhankelijk is.
-
 ## Hoe te:
-
 Om met JSON in C++ te werken, moet je een bibliotheek zoals `nlohmann/json` gebruiken. Hier is hoe je JSON-gegevens kunt parsen en genereren:
 
 ```C++
@@ -57,11 +52,9 @@ Gegenereerde JSON: {
 ```
 
 ## Diepgaande Duik:
-
 JSON werd geïntroduceerd als een eenvoudig tekstformaat voor gegevensuitwisseling en werd door zijn eenvoud en brede adoptatie een standaard. Alternatieven zoals XML bestaan, maar JSON leidt in web-API's vanwege zijn lagere wijdlopigheid en betere leesbaarheid. C++ heeft geen native ondersteuning voor JSON, vandaar dat bibliotheken zoals `nlohmann/json` populair zijn voor het afhandelen van serialisatie en deserialisatie, met een schone API die het werken met native datatypes nabootst.
 
 ## Zie Ook:
-
 - GitHub-repository voor `nlohmann/json`: https://github.com/nlohmann/json
 - Officiële JSON-website voor meer over het formaat: https://www.json.org/json-en.html
 - Voor XML-afhandeling in C++: https://pugixml.org/

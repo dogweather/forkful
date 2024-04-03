@@ -10,9 +10,6 @@ title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---
 
-## What & Why?
-Invio di una richiesta HTTP con autenticazione di base permette di accedere a risorse protette online. I programmatori lo utilizzano per interagire con API che richiedono credenziali per garantire sicurezza e restrizione degli accessi.
-
 ## How to:
 In PHP, la libreria cURL è un amico fidato per mandare richieste HTTP con autenticazione di base. Ecco come si fa:
 

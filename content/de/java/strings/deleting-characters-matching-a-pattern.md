@@ -11,9 +11,6 @@ title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---
 
-## Was & Warum?
-Das Löschen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte Segmente aus einem String zu entfernen, die das vorgegebene Muster erfüllen. Programmierer tun dies, um Daten zu bereinigen, Texte zu formatieren oder um nicht benötigte Informationen aus Strings zu eliminieren.
-
 ## So geht's:
 In Java nutzen wir die `replaceAll()`-Methode von `String`, um alle Vorkommen, die einem regulären Ausdruck (RegEx) entsprechen, zu löschen.
 

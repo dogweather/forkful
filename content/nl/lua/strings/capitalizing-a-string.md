@@ -12,12 +12,7 @@ title: Een string met hoofdletters maken
 weight: 2
 ---
 
-## Wat & Waarom?
-
-Het kapitaliseren van een tekenreeks betekent het met een hoofdletter schrijven van de eerste letter van elk woord. Programmeurs doen dit voor consistentie in de opmaak, leesbaarheid voor de gebruiker, of data normalisatie.
-
 ## Hoe te:
-
 Lua heeft geen ingebouwde hoofdletterfunctie, dus laten we er een maken:
 
 ```lua
@@ -29,7 +24,6 @@ print(capitalize("hello world"))  -- Output: Hallo Wereld
 ```
 
 ## Diepgaand
-
 Hoofdletterfuncties zijn standaard in veel programmeertalen. In Lua maken we er een met `string.gsub()`, een krachtige functie voor patroonovereenkomst. Onze aangepaste `capitalize` functie gebruikt een patroon om kleine letters (`%l`) te vinden gevolgd door nul of meer woordkarakters (`%w*`), en vervangt deze door de hoofdletter en de rest van het woord.
 
 ```lua
@@ -45,7 +39,6 @@ Lua's patroonvergelijkingsmogelijkheden zijn minder krachtig dan volledige regul
 Historisch gezien is de behoefte aan hoofdletterfuncties ontstaan ​​uit het verlangen om tekstgegevens uniform te presenteren, vooral in gebruikersinterfaces. Er moet echter voorzichtig worden omgegaan met het begrijpen van de context: verschillende talen en culturen hebben hun eigen regels voor kapitalisatie, verder dan simpelweg de eerste letter van een zin of naam.
 
 ## Zie Ook
-
 - Lua `string` bibliotheek: https://www.lua.org/manual/5.4/manual.html#6.4
 - Lua Patronen: https://www.lua.org/pil/20.2.html
 - Tekstverwerking in Lua: https://www.lua.org/pil/20.html

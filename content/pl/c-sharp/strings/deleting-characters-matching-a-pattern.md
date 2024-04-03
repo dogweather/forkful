@@ -11,9 +11,6 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## What & Why? (Co i dlaczego?)
-Usuwanie znaków pasujących do wzorca polega na wybraniu i wyeliminowaniu określonych sekwencji znaków z tekstu. Programiści robią to, żeby oczyścić dane, usunąć niechciane fragmenty, czy przygotować tekst do dalszego przetwarzania.
-
 ## How to: (Jak to zrobić:)
 ```C#
 using System;

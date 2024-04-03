@@ -14,9 +14,6 @@ title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---
 
-## O Que & Por Quê?
-Escrever para o erro padrão (stderr) consiste em direcionar mensagens de erro e diagnósticos para o stream stderr, separando-os da saída padrão (stdout). Programadores fazem isso para diferenciar a saída regular do programa das mensagens de erro, permitindo um depuração e registro de logs mais eficazes.
-
 ## Como fazer:
 Em Clojure, você pode escrever no stderr usando o stream `*err*`. Aqui está um exemplo básico:
 

@@ -12,12 +12,7 @@ title: Bestanden manipuleren met CLI one-liners
 weight: 31
 ---
 
-## Wat & Waarom?
-
-Bestanden manipuleren met CLI-one-liners in Ruby gaat over het uitvoeren van algemene bestandsoperaties rechtstreeks vanuit je terminal met behulp van Ruby-scripts. Het is een krachtige methode om bestandsgerelateerde taken te automatiseren en snel uit te voeren, waardoor programmeurs waardevolle tijd besparen en de kans op handmatige fouten verminderen.
-
 ## Hoe:
-
 Ruby, met zijn expressieve syntaxis, maakt beknopte en leesbare one-liners mogelijk die een verscheidenheid aan bestandsoperaties kunnen afhandelen. Hier zijn een paar voorbeelden die je misschien handig vindt:
 
 **Een bestand lezen**
@@ -55,7 +50,6 @@ Wanneer je moet opruimen en bestanden moet verwijderen, is dit je one-liner om n
 Hoewel deze voorbeelden de eenvoud demonstreren waarmee Ruby bestanden kan manipuleren vanuit de CLI, is het belangrijk om bestandsoperaties zorgvuldig te hanteren om onbedoeld gegevensverlies te voorkomen. Maak altijd een back-up van belangrijke gegevens voordat u destructieve operaties zoals verwijderen of overschrijven uitvoert.
 
 ## Diepere Duik
-
 Bestandsmanipulatie met Ruby one-liners is niet uniek voor Ruby; talen zoals Perl en Awk worden al decennia gebruikt voor vergelijkbare taken. Ruby combineert echter de expressieve kracht van Perl met leesbaarheid, waardoor het schrijven van scripts intuïtiever wordt. Dat gezegd hebbende, een van de zwakke punten van Ruby in CLI-bestandsmanipulatie zou de prestatie kunnen zijn, vooral bij het omgaan met grote bestanden of complexe operaties - scripttalen zijn over het algemeen langzamer dan gecompileerde talen of gespecialiseerde Unix-hulpmiddelen zoals `sed` of `awk` voor tekstverwerkingstaken.
 
 Ondanks dat zijn Ruby-scripts ongelooflijk veelzijdig en kunnen ze gemakkelijk worden geïntegreerd in grotere Ruby-applicaties of Rails-projecten. Hun leesbaarheid en de uitgebreide functionaliteiten die worden aangeboden via de standaardbibliotheek en gems maken Ruby een solide keuze voor ontwikkelaars die zoeken naar een evenwicht tussen prestaties en productiviteit.

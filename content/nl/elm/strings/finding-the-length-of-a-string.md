@@ -12,9 +12,6 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-De lengte van een string bepalen betekent het tellen van de karakters. Programmeurs doen dit om invoer te valideren, tekst te manipuleren of simpelweg om data te bemeten.
-
 ## Hoe doe je dat:
 In Elm gebruik je `String.length` om te achterhalen hoeveel karakters een string bevat. Kijk maar:
 

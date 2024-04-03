@@ -13,12 +13,7 @@ title: Bruke associative tabeller
 weight: 15
 ---
 
-## Hva & Hvorfor?
-
-I Elixir kalles associative arrays for Maps, og er samlinger av nøkkel-verdi-par der en unik nøkkel peker på en verdi. De er veldig praktiske for å lagre og hente data på flue, noe som gjør koden din renere og livet ditt enklere.
-
 ## Hvordan:
-
 Å opprette et Map er enkelt. Du bruker `%{}` syntaksen, slik:
 
 ```elixir
@@ -50,7 +45,6 @@ IO.inspect(trimmed_map)
 Output: `%{"location" => "NY", "name" => "Alex"}`
 
 ## Dypdykk
-
 Maps i Elixir er en evolusjon av de eldre nøkkel-verdi lagringstypene, som Hashes i Ruby eller Dictionaries i Python. De tillater mer effektive oppslag og innsettinger, og gjør dem til et førstevalg for moderne Elixir programmering. Det er verdt å merke seg at før Maps, brukte Elixir HashDict og Dict modulene, som nå er avskrevet.
 
 Men, for scenarioer som krever ordnede data, kan du se på nøkkel-lister i Elixir. Disse er lister med tupler, effektive for mindre samlinger, men ikke så ytelsesvennlige for store datasett som Maps.

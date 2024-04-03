@@ -12,12 +12,7 @@ title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---
 
-## Wat & Waarom?
-
-Een HTTP-verzoek verzenden met basisverificatie is wanneer je een oproep doet naar een webserver, inclusief een gebruikersnaam en wachtwoord voor toegang. Programmeurs doen dit om te interageren met webservices die gebruikersverificatie vereisen voordat ze gegevens of diensten verstrekken.
-
 ## Hoe te:
-
 Lua heeft geen ingebouwde HTTP-ondersteuning, dus je hebt een externe bibliotheek nodig zoals `socket.http` van LuaSocket of `http.request` van de `http`-bibliotheek als je Lua 5.3+ gebruikt. Voor basisauthenticatie encodeer je de inloggegevens en voeg je deze toe in de aanvraagkop.
 
 ```Lua
@@ -50,7 +45,6 @@ end
 ```
 
 ## Diepgaande duik
-
 HTTP-basisverificatie is een methode voor een HTTP-gebruikersagent om een gebruikersnaam en wachtwoord te verstrekken bij het doen van een aanvraag. Het is vroeg in de geschiedenis van het web uitgevonden, wordt breed ondersteund, maar is niet erg veilig; inloggegevens worden alleen in base64 gecodeerd, niet versleuteld.
 
 Alternatieven omvatten Digest-verificatie, OAuth en API-sleutels – die allemaal sterkere beveiliging bieden. Basisauthenticatie wordt vaak gebruikt voor het scripten van snelle tests, interne hulpmiddelen of waar het transport is beveiligd via HTTPS.
@@ -60,7 +54,6 @@ Om basisverificatie in Lua te implementeren, bouw je meestal een string die de g
 De flexibele aard van Lua betekent dat je keuzes hebt met betrekking tot bibliotheken om HTTP en base64-codering te verwerken. LuaSocket is al lang de go-to voor netwerkoperaties, hoewel nieuwere versies van Lua alternatieven introduceren zoals de `http`-bibliotheek of `CURL`-bindingen voor complexere taken.
 
 ## Zie ook
-
 - LuaSocket-documentatie: http://w3.impa.br/~diego/software/luasocket/http.html
 - LuaSec voor HTTPS-ondersteuning: https://github.com/brunoos/luasec/wiki
 - Een introductie tot HTTP-verificatie: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication

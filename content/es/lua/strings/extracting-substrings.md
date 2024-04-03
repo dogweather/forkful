@@ -9,9 +9,6 @@ title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---
 
-## ¿Qué & Por Qué?
-Extraer subcadenas significa sacar partes específicas de un texto. Los programadores lo hacen para procesar y manejar datos de forma precisa.
-
 ## Cómo:
 ```Lua
 -- Ejemplo 1: Extraer una parte de una cadena

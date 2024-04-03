@@ -11,9 +11,6 @@ title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---
 
-## Vad & Varför?
-Att starta ett nytt projekt innebär att skapa en ny kodbas från grunden, speciellt anpassad för en unik uppgift. Programmerare gör detta för att testa idéer, lösa problem eller utforska ny teknologi.
-
 ## Hur man gör:
 ```Arduino
 void setup() {

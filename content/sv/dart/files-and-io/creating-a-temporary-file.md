@@ -15,9 +15,6 @@ title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---
 
-## Vad & Varför?
-Att skapa en temporär fil i Dart innebär att man genererar en fil som är avsedd för kortsiktig användning, främst för scenarier som cachning av data, tillfällig lagring för filbearbetning eller förvaring av information som är för känslig för att behålla länge. Programmerare gör detta för att hantera data som inte behöver permanent lagring, vilket på så sätt förbättrar prestanda och bibehåller datahygien.
-
 ## Hur man gör:
 Darts `dart:io`-bibliotek underlättar skapandet av temporära filer genom `Directory`-klassen. Här är ett enkelt sätt att skapa en temporär fil och skriva något innehåll till den:
 
@@ -41,7 +38,6 @@ Future<void> main() async {
 ```
 
 ### Använda ett tredjepartbibliotek: `path_provider`
-
 För applikationer (speciellt mobilappar med Flutter) kanske du vill skapa temporära filer på ett mer enhetligt och hanterbart sätt. `path_provider`-paketet kan hjälpa dig att hitta den korrekta tillfälliga katalogen på olika plattformar (iOS, Android osv.).
 
 Först, lägg till `path_provider` i din `pubspec.yaml` under beroenden:

@@ -9,11 +9,7 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-## Was & Warum?
-Temporäre Dateien sind kurzlebige Datenbehälter. Entwickler nutzen sie, um Daten zwischenzuspeichern, ohne auf die dauerhafte Speicherstruktur zuzugreifen.
-
 ## Wie geht das?:
-
 ```Swift
 import Foundation
 

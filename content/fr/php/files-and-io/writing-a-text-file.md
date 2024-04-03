@@ -13,9 +13,6 @@ title: "R\xE9diger un fichier texte"
 weight: 24
 ---
 
-## Quoi et pourquoi ?
-Écrire un fichier texte en PHP implique de créer ou d'ouvrir un fichier et d'y insérer du contenu. Les programmeurs font cela pour persister des données, comme du contenu généré par l'utilisateur ou des logs, au-delà du cycle de vie du programme.
-
 ## Comment faire :
 PHP prend en charge nativement l'écriture de fichiers à travers des fonctions telles que `file_put_contents`, `fopen` en combinaison avec `fwrite`, et `fclose`. Voici comment les utiliser :
 

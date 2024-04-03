@@ -13,9 +13,6 @@ title: Substrings extraheren
 weight: 6
 ---
 
-## Wat & Waarom?
-Substrings extraheren betekent specifieke delen van een string eruit trekken, zoals een stukje van een lint knippen. Programmeurs doen dit om gegevens te isoleren, informatie te parseren of simpelweg tekst te manipuleren.
-
 ## Hoe te:
 ```Python
 # Met slice-notatie

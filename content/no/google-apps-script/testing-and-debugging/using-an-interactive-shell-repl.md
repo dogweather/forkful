@@ -13,12 +13,7 @@ title: "\xC5 bruke et interaktivt skall (REPL)"
 weight: 34
 ---
 
-## Hva & Hvorfor?
-
-Et interaktivt skall, eller Lese-Evaluere-Skrive Løkke (REPL), er et enkelt, interaktivt programmeringsmiljø som tar enkelte brukerinndata (uttrykk), evaluerer dem, og returnerer resultatet til brukeren. Programmerere bruker REPL-er for rask prototyping, feilsøking, og for å lære syntaksen og oppførselen til et programmeringsspråk på en interaktiv måte.
-
 ## Hvordan:
-
 Google Apps Script, et skybasert skriptspråk for automatisering av oppgaver på tvers av Google-produkter, har ikke et innebygd REPL-verktøy som ligner på de i språk som Python eller JavaScripts Node.js. Imidlertid kan du simulere en lignende opplevelse ved å bruke logg- og feilsøkingsfunksjonene i Apps Script-redigereren eller ved å sette opp et eksternt miljø. Her fokuserer vi på å lage en improvisert REPL inne i Apps Script-redigereren.
 
 1. **Lage en improvisert REPL-funksjon**:
@@ -60,7 +55,6 @@ Etter å ha kjørt `myREPL()`, sjekk loggene (Vis > Logger) for utdata, som bør
 For mer kompleks feilsøking, interspers `Logger.log(variabel);` innenfor koden din for å skrive ut variabeltilstander, noe som hjelper deg å forstå flyten og mellomliggende tilstander i skriptene dine.
 
 ## Dypdykk
-
 Konseptet med en REPL er dypt forankret i databehandlingens historie, som stammer fra tidsdelingssystemene på 1960-tallet som tillot interaktive økter. Språk som Lisp trivdes i dette miljøet, ettersom REPL var kritisk for deres iterative utviklingsprosess. I kontrast er Google Apps Script, som dukket opp mye senere, designet primært for nettet, med fokus på automatisering av oppgaver i Googles suite fremfor iterativ, konsollbasert programmering.
 
 Google Apps Script støtter tradisjonelt ikke sanntids, interaktive kodingssesjoner ut av boksen på grunn av sin skybaserte natur og webapplikasjonsfokus. Dets utførelsesmodell kretser rundt funksjoner utløst av webhendelser, tidsdrevne utløsere, eller manuell påkalling innen miljøet, snarere enn øyeblikkelige tilbakemeldingssløyfer levert av en REPL.

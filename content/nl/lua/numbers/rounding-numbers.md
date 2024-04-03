@@ -12,9 +12,6 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-Getallen afronden betekent ze aanpassen naar het dichtstbijzijnde geheel getal of gespecificeerde decimale plaats. Het is een basisprincipe in programmeren om complexiteit te verminderen, prestaties te verhogen en voor momenten waarop precisie voorbij een bepaald punt geen waarde toevoegt.
-
 ## Hoe:
 ```lua
 -- Basis afronding in Lua is niet ingebouwd, maar je kunt een functie definiëren:

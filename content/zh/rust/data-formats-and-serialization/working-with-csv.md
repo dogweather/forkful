@@ -20,9 +20,6 @@ title: "\u5904\u7406CSV\u6587\u4EF6"
 weight: 37
 ---
 
-## 什么 & 为什么？
-处理 CSV（逗号分隔值）文件涉及读取和写入存储表格数据的纯文本文件。程序员这样做是为了实现不同程序、系统之间的数据共享，或者高效、可读地处理大型数据集。
-
 ## 如何操作：
 Rust 以其对安全性和性能的重视，提供了出色的 crates（库）来处理 CSV 文件，其中 `csv` 是最受欢迎的。你还需要 `serde` 来序列化和反序列化数据。
 
@@ -35,7 +32,6 @@ serde = { version = "1.0", features = ["derive"] }
 ```
 
 ### 读取 CSV
-
 要读取 CSV 文件，定义一个表示你数据的结构体并从 `serde` 导出 `Deserialize`：
 
 ```rust
@@ -78,7 +74,6 @@ Record { city: "纽约", state: "NY", population: 8336817 }
 ```
 
 ### 写入 CSV
-
 要写入 CSV 文件，定义一个结构体并从 `Serialize` 导出：
 
 ```rust

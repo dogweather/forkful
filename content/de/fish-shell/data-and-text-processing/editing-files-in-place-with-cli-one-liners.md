@@ -11,12 +11,7 @@ title: Bearbeiten von Dateien im Place mit CLI-Einzeilern
 weight: 32
 ---
 
-## Was & Warum?
-
-Dateien direkt über die Kommandozeile mit CLI-Einzeilern zu bearbeiten, bedeutet, direkt Änderungen an Dateien vorzunehmen, ohne sie in einem Texteditor zu öffnen. Programmierer tun dies, um Zeit zu sparen und wiederholende Bearbeitungsaufgaben zu automatisieren, was ihren Arbeitsablauf reibungsloser und effizienter gestaltet.
-
 ## Wie zu:
-
 Fish Shell, bekannt für seine benutzerfreundlichen Funktionen und leistungsfähigen Skriptfähigkeiten, bietet mehrere Möglichkeiten, Dateien direkt zu bearbeiten. Im Gegensatz zu einigen anderen Shells verfügt Fish jedoch nicht über einen eingebauten Mechanismus für die direkte Bearbeitung (`sed -i` in Bash, zum Beispiel). Aber keine Sorge, dies ist dennoch mit ein wenig Kreativität und etwas Hilfe von externen Werkzeugen wie `sed` und `awk` zu erreichen.
 
 ### `sed` für einfache Ersetzungen nutzen
@@ -41,7 +36,6 @@ awk '{print $1 * 2}' file.txt > temp && mv temp file.txt
 Denken Sie daran, dass es bei der Verwendung dieser Tools aus Fish heraus entscheidend ist, Fehler zu erfassen und ihre Meldungen zu verstehen. Nutzen Sie Fishs robuste Fehlerbehandlung, um Ihre Skripte zuverlässiger zu machen.
 
 ## Vertiefung
-
 Historisch gesehen war die direkte Dateibearbeitung ein Grundpfeiler der Unix- und Linux-Programmierung und bot eine effiziente Möglichkeit, schnelle Änderungen vorzunehmen, ohne Dateien manuell zu öffnen. Werkzeuge wie `sed` und `awk` sind ehrwürdige Dienstprogramme, die seit den frühen Tagen von Unix existieren und unverzichtbar für Textverarbeitungsaufgaben wurden.
 
 Fish Shell, obwohl moderner und mit Verbesserungen in Benutzerfreundlichkeit und Skripting, fehlt die eingebaute direkte Bearbeitung hauptsächlich aufgrund seiner Designphilosophie, die sich auf Interaktivität und Benutzerfreundlichkeit konzentriert. Das Fehlen eines nativen Befehls zur direkten Bearbeitung in Fish unterstreicht die Bedeutung externer Werkzeuge in Unix-ähnlichen Ökosystemen.

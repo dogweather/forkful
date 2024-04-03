@@ -11,12 +11,7 @@ title: Removing quotes from a string
 weight: 9
 ---
 
-## What & Why?
-
-Removing quotes from a string in VBA involves stripping out instances of single (`'`) or double (`"`) quotation marks that may encapsulate or be embedded within the string. This operation is essential for data sanitation, ensuring strings are correctly formatted for database queries, JSON parsing, or simply for aesthetic or consistency reasons within an application's interface.
-
 ## How to:
-
 In VBA, there are multiple approaches to removing quotes from a string. Here's a straightforward example using the `Replace` function, which searches for a specific substring (in this case, a quote) within a string and replaces it with another substring (an empty string if removing).
 
 ```basic
@@ -39,7 +34,6 @@ Note that for double quotes, we use `Chr(34)` because a double quote is ASCII ch
 For more nuanced scenarios where quotes might be part of necessary formatting (e.g., inside a quoted word), more sophisticated logic, perhaps involving Regex or parsing character by character, might be required.
 
 ## Deep Dive
-
 VBA, being a staple in automating tasks within the Microsoft Office suite, offers a rich set of string manipulation functions, with `Replace` being one of the most frequently used. This function, however, only scratches the surface of what can be achieved with VBA in terms of string manipulation. 
 
 Historically, VBA adopted from its predecessors an emphasis on simplicity for office automation tasks, hence the straightforward implementation of functions like `Replace`. However, for modern programming tasks, especially those involving complex string manipulations or sanitations, VBA might show its limitations.

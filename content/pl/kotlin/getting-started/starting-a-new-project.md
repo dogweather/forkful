@@ -11,9 +11,6 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## Co i dlaczego?
-Rozpoczęcie nowego projektu to stawianie pierwszych kroków w tworzeniu twojej aplikacji czy systemu. Programiści robią to, by przekształcić pomysły w działające oprogramowanie i rozpocząć organizację swojej pracy.
-
 ## Jak to zrobić:
 ```Kotlin
 // 1. Instalacja środowiska - zainstaluj IntelliJ IDEA lub Android Studio

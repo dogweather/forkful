@@ -13,12 +13,7 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mikä & Miksi?
-
-Standardivirheen (stderr) kirjoittaminen Arduinon ohjelmoinnissa tarkoittaa virheilmoitusten ja diagnostiikkatietojen ohjaamista erilliselle kanavalle, varmistaen, että ne eivät sekoitu standarditulosteeseen (stdout). Ohjelmoijat tekevät näin erottellakseen normaalit ohjelman tulosteet virheilmoituksista, mikä tekee vianmäärityksestä ja lokianalyysistä suoraviivaisempaa.
-
 ## Kuinka:
-
 Arduino ei natiivisti erota standarditulostetta ja standardivirhettä kuten tavalliset tietokonejärjestelmät tekevät. Sekä `Serial.print()` että `Serial.println()` -metodit kirjoittavat samaan sarjatulosteeseen, jota tyypillisesti katsellaan Arduino IDE:n sarjamonitorista. Voimme kuitenkin emuloida kirjoittamista stderr:iin erityisesti muotoilemalla virheilmoituksia tai ohjaamalla ne vaihtoehtoiseen tulosteeseen, kuten tiedostoon SD-kortilla tai verkkoyhteyden kautta.
 
 Stderr:n emuloimiseksi voit etuliittää virheilmoitukset tunnisteella kuten "VIRHE:" erottaaksesi ne sarjamonitorissa:

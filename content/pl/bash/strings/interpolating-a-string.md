@@ -11,9 +11,6 @@ title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---
 
-## Co i Dlaczego?
-Interpolacja stringów to wstawianie wartości zmiennych do łańcucha tekstowego. Programiści robią to, żeby dynamicznie tworzyć tekst, na przykład wiadomości czy komendy.
-
 ## Jak to zrobić:
 ```Bash
 # Define a variable

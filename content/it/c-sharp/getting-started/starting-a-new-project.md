@@ -10,9 +10,6 @@ title: Avvio di un nuovo progetto
 weight: 1
 ---
 
-## Che cosa & Perché?
-Iniziamo nuovi progetti per trasformare idee in software. È il primo passo per sviluppare applicazioni che risolvono problemi o realizzano qualcosa di nuovo.
-
 ## Come fare:
 ```C#
 // Come creare un nuovo progetto console in C# (.NET 6+)

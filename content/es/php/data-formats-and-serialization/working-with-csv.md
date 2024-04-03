@@ -13,16 +13,10 @@ title: Trabajando con CSV
 weight: 37
 ---
 
-## ¿Qué y por qué?
-
-Trabajar con CSV (Valores Separados por Comas) implica leer y escribir datos en archivos CSV, un formato popular para representar datos tabulares en texto plano. Los programadores lo hacen para intercambiar datos fácilmente entre diferentes programas, sistemas o bases de datos, gracias a su simplicidad y amplio soporte en plataformas y lenguajes de programación.
-
 ## Cómo hacerlo:
-
 PHP ofrece funciones incorporadas para manejar archivos CSV, lo que facilita leer y escribir en estos archivos sin necesidad de bibliotecas de terceros. Aquí hay ejemplos para comenzar:
 
 ### Leyendo un Archivo CSV
-
 Puedes abrir un archivo CSV y leer su contenido usando `fopen()` en combinación con `fgetcsv()`:
 
 ```php
@@ -45,7 +39,6 @@ if ($handle !== FALSE) {
 Este script imprime el número de campos de cada línea seguido del contenido de cada campo.
 
 ### Escribiendo en un Archivo CSV
-
 Para escribir en un archivo CSV, usa `fopen()` en modo de escritura (`w`) y `fputcsv()`:
 
 ```php
@@ -69,11 +62,9 @@ fclose($handle);
 Este script crea un archivo llamado `users.csv` y escribe el encabezado y dos filas de datos en él.
 
 ### Usando una Biblioteca: League\Csv
-
 Para un manejo más avanzado de CSV, la biblioteca `League\Csv` ofrece un robusto conjunto de características. Después de instalarla a través de Composer (`composer require league/csv`), puedes usarla para leer y escribir datos CSV de manera más flexible.
 
 #### Leyendo con League\Csv
-
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -93,7 +84,6 @@ foreach ($results as $row) {
 Este script lee `data.csv`, tratando la primera fila como encabezados de columnas e imprime cada fila como un arreglo asociativo.
 
 #### Escribiendo con League\Csv
-
 ```php
 <?php
 require 'vendor/autoload.php';

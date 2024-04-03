@@ -9,9 +9,6 @@ title: "Descargando una p\xE1gina web"
 weight: 42
 ---
 
-## Qué es y por qué?
-Descargar una página web significa guardar el contenido HTML en tu PC. Los programadores lo hacen para procesar la info offline, testear o automatizar tareas.
-
 ## Cómo hacerlo:
 Aquí tienes ejemplos para descargar una página usando `curl` y `wget`.
 

@@ -12,12 +12,7 @@ title: Scrivere sull'errore standard
 weight: 25
 ---
 
-## Cosa e Perché?
-
-Scrivere su standard error (stderr) in Fish Shell riguarda il reindirizzare messaggi di errore o diagnostica separatamente dall'output standard (stdout). I programmatori fanno ciò per garantire che le informazioni di errore possano essere facilmente identificate, gestite o reindirizzate, facilitando processi di debug e registrazione più fluidi.
-
 ## Come fare:
-
 In Fish Shell, puoi scrivere su stderr reindirizzando il tuo output utilizzando `>&2`. Ecco un esempio base:
 
 ```fish

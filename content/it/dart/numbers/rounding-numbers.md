@@ -12,35 +12,26 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Cosa e perché?
-
-Arrotondare i numeri è il processo di aggiustamento di un numero al suo numero intero più vicino o a un numero specifico di decimali. Gli sviluppatori spesso arrotondano i numeri per semplificare i calcoli, migliorare la leggibilità, o preparare i dati per la visualizzazione, assicurando consistenza e chiarezza nei risultati numerici.
-
 ## Come fare:
-
 Dart fornisce metodi nativi nel suo tipo di base `num` per le operazioni di arrotondamento. Qui, esploreremo metodi come `round()`, `floor()`, `ceil()`, e come arrotondare a un numero specifico di decimali.
 
 ### Arrotondare al numero intero più vicino:
-
 ```dart
 var number = 3.56;
 print(number.round()); // Output: 4
 ```
 
 ### Arrotondare verso il basso:
-
 ```dart
 print(number.floor()); // Output: 3
 ```
 
 ### Arrotondare verso l'alto:
-
 ```dart
 print(number.ceil()); // Output: 4
 ```
 
 ### Arrotondare a un numero specifico di decimali:
-
 Per arrotondare a un numero specifico di decimali, possiamo usare il metodo `toStringAsFixed()`, che restituisce una stringa, o usare una combinazione di `pow` da `dart:math` per un risultato numerico.
 
 ```dart

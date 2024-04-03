@@ -11,9 +11,6 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-En interaktiv skal, eller REPL (Read-Eval-Print Loop), låter dig prova kodsnuttar i realtid. Elixir-programmerare använder REPL, kallad IEx (Interactive Elixir), för att experimentera, felsöka och lära sig språket.
-
 ## Hur man gör:
 För att starta IEx, öppna din terminal och skriv `iex`. Här är ett smakprov:
 

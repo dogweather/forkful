@@ -15,12 +15,7 @@ title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---
 
-## Gì và Tại sao?
-
-Mảng kết hợp, hay còn gọi là bản đồ, trong Kotlin là các bộ sưu tập lưu trữ các cặp khóa-giá trị. Lập trình viên sử dụng chúng để tổ chức và truy xuất dữ liệu một cách hiệu quả dựa trên các khóa duy nhất, làm cho việc quản lý thông tin trở nên dễ dàng hơn.
-
 ## Cách thực hiện:
-
 Tạo và sử dụng một bản đồ trong Kotlin rất đơn giản. Dưới đây là hướng dẫn nhanh về cách làm:
 
 ```Kotlin
@@ -51,7 +46,6 @@ fun main() {
 ```
 
 ## Sâu hơn nữa
-
 Bản đồ của Kotlin đến trực tiếp từ khả năng tương tác với Java, nơi mà bản đồ là một phần quan trọng của các bộ sưu tập. Tuy nhiên, Kotlin nâng cao tính hữu ích của chúng bằng cách cung cấp cả giao diện có thể thay đổi (`MutableMap`) và chỉ đọc (`Map`), không giống như giao diện `Map` thống nhất của Java. Sự khác biệt này làm rõ liệu mộc bộ sưu tập có dự định được chỉnh sửa hay không.
 
 Một chi tiết quan trọng về cách thực thi bản đồ của Kotlin là sự phân biệt rõ ràng giữa bản đồ có thể thay đổi và không thể thay đổi, nhấn mạnh tới trọng tâm của ngôn ngữ này vào tính bất biến và an toàn luồng.

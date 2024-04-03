@@ -13,9 +13,6 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mikä & Miksi?
-Tarkistaminen, löytyykö hakemisto, tarkoittaa vahvistamista, onko tietty kansioväylä olemassa tiedostojärjestelmässä. Ohjelmoijat tekevät niin välttääkseen virheitä, kun päästään käsiksi tiedostoihin, luetaan niitä tai kirjoitetaan niihin.
-
 ## Miten:
 Elm on front-end web-ohjelmointikieli, joten sillä ei ole suoraa pääsyä tiedostojärjestelmään. Kuitenkin tyypillisesti lähettäisit komennon backend-palvelulle JavaScriptissa. Tässä on kuinka voit rakentaa tällaisen vuorovaikutuksen Elmissä:
 

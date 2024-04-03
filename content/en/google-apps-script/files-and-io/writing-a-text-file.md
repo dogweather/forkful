@@ -11,12 +11,7 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-
-Writing a text file in Google Apps Script allows developers to store data persistently, making it accessible for future use or analysis. This operation is a common practice for logging, saving configurations, or exporting information in a simple, readable format.
-
 ## How to:
-
 Creating and writing to a text file in Google Apps Script can be accomplished through the Google DriveApp service. Below is a step-by-step guide with code examples to get you started:
 
 **Step 1: Create a New Text File**
@@ -46,7 +41,6 @@ This code retrieves an existing file using its unique ID, then appends "New cont
 No explicit output is displayed by running the above code snippets, but if you navigate to the Google Drive where the file is located, you will see "Example.txt" for the first code snippet. For the second snippet, if you open the specified file by ID, you should see the original contents followed by the new line "New content added."
 
 ## Deep Dive
-
 Writing a text file in Google Apps Script leverages the DriveApp service, essentially harnessing the capabilities of Google Drive for file storage and management. This approach dates back to the inception of Google Apps Script, which was designed to easily automate tasks across Google's suite of productivity tools, including Drive.
 
 While directly manipulating files through Google Apps Script is straightforward and tightly integrated with Google Workspace, developers coming from other backgrounds (e.g., Python, Node.js) might find it different from working with a local filesystem or other cloud storage services like AWS S3. These platforms often offer a more complex set of file manipulation capabilities but require additional setup for authentication and permissions.

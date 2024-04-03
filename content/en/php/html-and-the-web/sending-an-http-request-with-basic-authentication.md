@@ -10,12 +10,7 @@ title: Sending an HTTP request with basic authentication
 weight: 45
 ---
 
-## What & Why?
-
-Sending an HTTP request with basic authentication involves adding a username and password to access a resource on a server. Programmers use it because some APIs and web services require authentication to ensure only authorized users access their data.
-
 ## How to:
-
 Here's the simple way to send an HTTP request with basic authentication using cURL in PHP:
 
 ```PHP
@@ -46,7 +41,6 @@ Sample output:
 ```
 
 ## Deep Dive
-
 HTTP Basic Authentication has been in use since the early days of the web. It's not the most secure option around (as credentials are sent in base64 encoding, which is easily decoded), but it's straightforward to implement for quick-and-dirty access control.
 
 Suppose security is a concern (and it should be), you’d turn to more robust methods like OAuth, JWT or API keys. Yet, basic auth persists partly due to legacy systems and partly for internal systems where you control access tightly.
@@ -70,7 +64,6 @@ echo $response;
 Picking the right tool comes down to your project’s needs and the level of control and functionality you desire.
 
 ## See Also
-
 To dive deeper and expand your knowledge, check these out:
 
 - [cURL documentation](https://www.php.net/manual/en/book.curl.php)

@@ -13,9 +13,6 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## ¿Qué & Por qué?
-Escribir pruebas en Python implica crear scripts automatizados para validar la corrección de tu código. Los programadores hacen esto para asegurarse de que sus funciones o clases funcionen como se espera bajo varias condiciones, lo que ayuda a detectar errores temprano y facilita un mantenimiento y refactorización más sencillos.
-
 ## Cómo hacerlo:
 Python viene con un módulo incorporado para escribir pruebas llamado `unittest`. Así es como puedes usarlo para probar una función simple:
 

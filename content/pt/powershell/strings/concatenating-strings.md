@@ -10,9 +10,6 @@ title: Concatenando strings
 weight: 3
 ---
 
-## O Que & Porquê?
-Concatenar strings é o processo de juntar duas ou mais strings, formando uma única. Programadores fazem isso para construir mensagens, caminhos de arquivos, e manipular texto de forma dinâmica e eficiente.
-
 ## Como Fazer:
 Vejamos alguns exemplos:
 

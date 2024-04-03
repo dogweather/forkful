@@ -13,12 +13,7 @@ title: Gerenciando erros
 weight: 16
 ---
 
-## O Que & Por Que?
-
-Tratar erros em Go envolve reconhecer e responder às condições de erro no seu programa. Os programadores se envolvem no tratamento de erros para garantir que suas aplicações possam se recuperar de forma elegante de situações inesperadas, levando a softwares mais robustos e confiáveis.
-
 ## Como fazer:
-
 No Go, o tratamento de erros é gerenciado explicitamente usando o tipo `error`. Funções que podem falhar retornam um erro como seu último valor de retorno. Verificar se esse valor de erro é `nil` informará se ocorreu um erro.
 
 ```go
@@ -63,7 +58,6 @@ Resultado: 100
 Neste exemplo, a função `Compute` retorna um valor calculado ou um erro. O chamador trata o erro verificando se `err` não é `nil`.
 
 ## Aprofundamento
-
 A abordagem de tratamento de erros do Go é deliberadamente direta e segura em termos de tipo, exigindo verificações explícitas de erros. Esse conceito contrasta com o tratamento de erros baseado em exceções visto em linguagens como Java e Python, onde os erros são propagados pela pilha de chamadas a menos que sejam capturados por um manipulador de exceções. A equipe do Go argumenta que o tratamento explícito de erros resulta em código mais claro e confiável, pois força os programadores a abordarem os erros imediatamente onde ocorrem.
 
 No entanto, algumas críticas mencionam que esse padrão pode levar a um código verboso, especialmente em funções complexas com muitas operações propensas a erros. Em resposta, versões mais recentes do Go introduziram recursos de tratamento de erros mais sofisticados, como o encapsulamento de erros, tornando mais fácil fornecer contexto a um erro sem perder a informação do erro original. A comunidade também viu propostas para novos mecanismos de tratamento de erros, como check/handle, embora estes permaneçam em discussão até a minha última atualização.

@@ -13,12 +13,7 @@ title: Afdrukken van debug output
 weight: 33
 ---
 
-## Wat & Waarom?
-
-Debuguitvoer printen omvat het strategisch plaatsen van logverklaringen in je code om variabele waarden, uitvoeringsstroom of foutmeldingen tijdens runtime weer te geven. Programmeurs gebruiken dit uitgebreid voor het traceren en diagnosticeren van het gedrag van hun scripts, om de juistheid en efficiëntie in hun Google Apps Script-toepassingen te waarborgen.
-
 ## Hoe:
-
 Google Apps Script biedt de `Logger` klasse voor basisdebugging, en voor meer geavanceerde behoeften, de `console` klasse geïntroduceerd in de V8-runtime.
 
 **Gebruikmakend van Logger:**
@@ -55,7 +50,6 @@ Huidige status: actief, Aantal: 150
 ```
 
 ## Diepgaande duik
-
 Aanvankelijk was `Logger.log` het primaire hulpmiddel voor debugging in Google Apps Script, biedt een eenvoudige, rechtlijnige manier om uitvoer voor inspectie te printen. Echter, naarmate scripts complexer worden en meer geïntegreerd met Google Cloud Platform-diensten, werd de behoefte aan een robuustere logoplossing evident.
 
 Enter de V8-runtime, die `console.log` in de vouw brengt. Dit lijnt Google Apps Script niet alleen uit met de standaard JavaScript-syntax, waardoor de taal toegankelijker wordt voor ontwikkelaars die bekend zijn met JavaScript, maar maakt ook gebruik van de krachtige infrastructuur van Google Cloud's logmogelijkheden. De introductie van `console.log` en de integratie ervan met het Google Cloud Platform markeert een significante evolutie in de debuggingmogelijkheden binnen Google Apps Script, en biedt ontwikkelaars een dynamischere en schaalbaardere benadering voor het monitoren en troubleshooten van hun scripts.

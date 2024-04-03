@@ -15,14 +15,10 @@ title: Willekeurige getallen genereren
 weight: 12
 ---
 
-## Wat & Waarom?
-
-Het genereren van willekeurige getallen in JavaScript is een techniek die wordt gebruikt om onvoorspelbaarheid te creëren in applicaties, van spellen die willekeurig vijandig gedrag nodig hebben tot beveiligingsalgoritmen die cryptografische willekeur vereisen. Deze mogelijkheid is cruciaal voor het ontwikkelen van dynamische gebruikerservaringen en veilige applicaties.
-
 ## Hoe te:
 
-### Basisgeneratie van Willekeurige Getallen
 
+### Basisgeneratie van Willekeurige Getallen
 De meest eenvoudige manier om een willekeurig getal in JavaScript te genereren is het gebruik van `Math.random()`. Deze functie geeft een drijvendekommagetall, pseudo-willekeurig getal terug in het bereik 0 (inclusief) tot 1 (exclusief).
 
 ```javascript
@@ -31,7 +27,6 @@ console.log(randomNumber);
 ```
 
 ### Genereren van een Willekeurig Getal binnen een Bereik
-
 Vaak wil je een willekeurig geheel getal binnen een specifiek bereik. Dit kan worden bereikt door het output van `Math.random()` te schalen en af te ronden.
 
 ```javascript
@@ -45,7 +40,6 @@ console.log(getRandomInt(1, 100));
 ```
 
 ### Cryptografisch Veilige Willekeurige Getallen
-
 Voor applicaties die een hogere mate van willekeur vereisen (bijv. cryptografische operaties), kan de methode `crypto.getRandomValues()` worden gebruikt. Dit biedt cryptografische willekeur, in tegenstelling tot de pseudo-willekeurige getallen gegenereerd door `Math.random()`.
 
 ```javascript
@@ -57,7 +51,6 @@ Voor applicaties die een hogere mate van willekeur vereisen (bijv. cryptografisc
 ```
 
 ## Diepgaande Verkenning
-
 Historisch gezien was de generatie van willekeurige getallen in JavaScript volledig afhankelijk van de functie `Math.random()`. Hoewel handig voor de meeste casual gebruikssituaties, zorgt zijn algoritme, typisch een variant van een pseudorandom number generator (PRNG) zoals Mersenne Twister, niet voor cryptografische veiligheid.
 
 De introductie van de Web Cryptography API bracht de methode `crypto.getRandomValues()`, die een manier biedt om getallen te genereren die veel minder voorspelbaar zijn en geschikt voor beveiligingsgevoelige toepassingen. Deze methode maakt gebruik van de onderliggende willekeurbronnen van het besturingssysteem, zoals `/dev/random` op Unix/Linux, die robuuster zijn en geschikt voor cryptografische operaties.

@@ -11,12 +11,7 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-
-Comparing two dates means checking which one comes first or how far apart they are in time. Programmers do it to schedule events, measure time spans, and organize info chronologically.
-
 ## How to:
-
 In Python, you can use the `datetime` module to compare dates. Here's how:
 
 ```Python
@@ -37,13 +32,11 @@ print(difference.days)    # Output: 7
 ```
 
 ## Deep Dive
-
 Comparing dates isn't new. It's been key in systems as old as calendars themselves. Python's `datetime` is just continuing that tradition digitally. Other ways to compare dates exist like using Unix timestamps, or libraries like `dateutil` for complex feats. But `datetime` is your bread-and-butter. It represents dates as objects, allowing direct comparisons using comparison operators (`<`, `>`, `==`, etc.). When you subtract dates, you get a `timedelta` object, which tells you the difference in days, seconds, and microseconds.
 
 Also, time zones can trip you up. If you're juggling dates across time zones, you'll have to make them aware. Python offers the `pytz` library, which can be used with `datetime` to handle time zones effectively.
 
 ## See Also:
-
 - Python `datetime` module documentation: [docs.python.org/3/library/datetime.html](https://docs.python.org/3/library/datetime.html)
 - For time zone management: [pytz](https://pypi.org/project/pytz/)
 - The `dateutil` library for complex date manipulations: [dateutil](https://pypi.org/project/python-dateutil/)

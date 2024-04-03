@@ -10,9 +10,6 @@ title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---
 
-## Qué y Por Qué?
-La interpolación de cadenas en programación implica insertar dinámicamente valores dentro de una cadena de texto. Los programadores la utilizan para construir mensajes personalizados, combinar datos con texto, o para la manipulación de cadenas en general, haciéndolo de forma legible y eficiente.
-
 ## Cómo hacerlo:
 ```elixir
 nombre = "Mundo"

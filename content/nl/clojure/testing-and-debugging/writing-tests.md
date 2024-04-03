@@ -13,9 +13,6 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-Tests schrijven betekent code creëren die controleert of andere code werkt zoals verwacht. Programmeurs doen dit om bugs te vangen, betrouwbaarheid te verzekeren en hoofdpijn later te besparen.
-
 ## Hoe:
 Clojure gebruikt een bibliotheek genaamd `clojure.test` om tests te schrijven en uit te voeren. Hier is hoe je het gebruikt:
 

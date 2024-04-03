@@ -14,12 +14,7 @@ title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---
 
-## Quoi & Pourquoi ?
-
-L'analyse d'une date à partir d'une chaîne de caractères en Haskell implique la conversion de représentations textuelles de dates en un format structuré que le programme peut manipuler. Ce processus est fondamental pour les applications traitant des données calendaires, permettant des fonctions telles que le calcul de durées, la planification et la validation des données.
-
 ## Comment faire :
-
 De base, Haskell offre des outils basiques pour l'analyse des dates, mais l'utilisation de bibliothèques comme `time` pour la fonctionnalité de base et `date-parse` ou `time-parse` pour une analyse plus flexible peut considérablement simplifier la tâche.
 
 Tout d'abord, assurez-vous d'avoir la bibliothèque `time` disponible ; elle est souvent incluse avec GHC, mais si vous devez la spécifier comme dépendance, ajoutez `time` au fichier cabal de votre projet ou utilisez `cabal install time` pour l'installer manuellement.

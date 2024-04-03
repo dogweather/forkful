@@ -13,12 +13,7 @@ title: Escribiendo un archivo de texto
 weight: 24
 ---
 
-## Qué y Por Qué?
-
-Escribir un archivo de texto en Visual Basic para Aplicaciones (VBA) implica crear, modificar o añadir datos de texto a archivos, una tarea fundamental para almacenar resultados, registrar eventos o interactuar con otras aplicaciones. Los programadores utilizan esta funcionalidad para automatizar reportes, exportación de datos o la generación de archivos de configuración dentro del ecosistema de Microsoft Office.
-
 ## Cómo hacerlo:
-
 VBA ofrece varios métodos para escribir en un archivo, pero uno de los modos más directos es usando el `FileSystemObject`. Aquí está una guía paso a paso para crear un archivo de texto simple y escribir datos en él:
 
 1. **Referenciar Microsoft Scripting Runtime**: Primero, asegúrate de que tu editor de VBA tenga acceso al `FileSystemObject`. Ve a Herramientas > Referencias en el editor de VBA y marca "Microsoft Scripting Runtime".
@@ -53,7 +48,6 @@ Después de ejecutar el script VBA anterior, encontrarás un archivo nombrado `e
 ```
 
 ## Profundización:
-
 El `FileSystemObject` (FSO), parte de la biblioteca de Microsoft Scripting Runtime, proporciona un rico conjunto de propiedades y métodos para operaciones de archivo, ampliando más allá de lo que la manipulación tradicional de archivos de VBA ofrece (por ejemplo, `Open`, `Print` #, `Write` #). Además de manejar archivos, FSO también puede manipular carpetas y unidades, convirtiéndolo en una herramienta poderosa para operaciones del sistema de archivos dentro de VBA.
 
 Sin embargo, es importante notar que, si bien FSO presenta un enfoque más moderno para las operaciones de archivos en VBA, puede introducir una sobrecarga para tareas simples en comparación con las declaraciones de manejo de archivos nativas de VBA. Además, dado que FSO es parte de una biblioteca externa, la portabilidad y compatibilidad con otros sistemas (por ejemplo, versiones anteriores de Office, Office para Mac) podrían ser preocupaciones.

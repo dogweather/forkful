@@ -21,9 +21,6 @@ title: "YAML\uB85C \uC791\uC5C5\uD558\uAE30"
 weight: 41
 ---
 
-## 무엇 & 왜?
-YAML은 "YAML Ain't Markup Language"의 약자로, 구성 파일, 데이터 저장, 프로세스 간 메시징에 자주 사용되는 매우 읽기 쉬운 데이터 직렬화 형식입니다. 프로그래머들은 구성 및 설정을 구조적이면서도 간단한 방식으로 관리하기 위해 종종 YAML을 사용하며, 읽기 쉬움이 중요할 때 JSON이나 XML보다 그 명확성과 간단함으로부터 이점을 얻습니다.
-
 ## 방법:
 Kotlin은 YAML 파싱 및 직렬화를 위한 내장 지원을 제공하지 않지만, 일반 YAML 파싱을 위한 `snakeyaml`과 YAML 형식 확장을 사용하는 `kotlinx.serialization`과 같은 인기 있는 타사 라이브러리를 사용하여 YAML 파일을 작업할 수 있습니다.
 
@@ -61,6 +58,7 @@ database:
 ```
 {database={host=localhost, port=5432}}
 ```
+
 ### `kotlinx.serialization`과 함께 YAML 사용하기
 먼저, 적합한 YAML 지원 라이브러리가 포함된 `kotlinx-serialization` 라이브러리를 갖추었는지 확인하세요(사용 가능하다면, `kotlinx.serialization`은 주로 JSON 및 기타 형식을 직접 대상으로 합니다).
 

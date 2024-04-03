@@ -13,12 +13,7 @@ title: Controleren of een map bestaat
 weight: 20
 ---
 
-## Wat & Waarom?
-
-Controleren of een map bestaat in Dart gaat over het verifiëren van de aanwezigheid van een map op een gespecificeerd pad op het bestandssysteem voordat operaties zoals het lezen of schrijven van bestanden worden uitgevoerd. Programmeurs doen dit om fouten te voorkomen die optreden wanneer geprobeerd wordt om mappen die niet bestaan te benaderen of te wijzigen.
-
 ## Hoe doe je dat:
-
 Dart gebruikt de `dart:io` bibliotheek om met bestanden en mappen te werken. Hier is een simpele manier om te controleren of een map bestaat:
 
 ```dart

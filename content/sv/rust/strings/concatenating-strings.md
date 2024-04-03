@@ -11,9 +11,6 @@ title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---
 
-## Vad & Varför?
-Sammanfogning av strängar är processen att limma ihop textstycken för att skapa en ny, sammanhängande text. Programmerare gör detta för att bygga textmeddelanden, sammansätta data eller generera kod dynamiskt.
-
 ## Så här gör du:
 Du kan sammanfoga strängar i Rust på några olika sätt. Använd `+` operatorn eller `format!` makrot för att smidigt kombinera dem.
 

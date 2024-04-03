@@ -16,12 +16,7 @@ title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---
 
-## Cái gì & Tại sao?
-
-Việc so sánh hai ngày trong lập trình là một nhiệm vụ cơ bản cho phép các nhà phát triển đánh giá mối quan hệ thời gian giữa các ngày. Những so sánh như vậy là cơ sở cho các chức năng như xác định khoảng thời gian, lập lịch công việc và xác nhận khoảng ngày, làm cho nó trở nên rất quan trọng đối với các ứng dụng dựa trên logic thời gian.
-
 ## Cách thực hiện:
-
 Trong Go, ngày tháng chủ yếu được xử lý với kiểu `time.Time` từ gói `time`. Để so sánh hai ngày, chúng ta có thể sử dụng các phương thức như `Before()`, `After()`, và `Equal()` được cung cấp bởi kiểu `time.Time`. Hãy đi sâu vào các ví dụ minh hoạ cách so sánh hai ngày:
 
 ```go
@@ -58,7 +53,6 @@ April 1, 2023 là trước April 15, 2023
 Chương trình này minh họa cách phân tích cú pháp các ngày từ chuỗi, một yêu cầu phổ biến, và sau đó so sánh các ngày sử dụng các phương thức `Before()`, `After()`, và `Equal()`. Phương thức `time.Parse()` ở đây được sử dụng với chuỗi định dạng `"2006-01-02"`, đây là định dạng ngày tham chiếu của Go.
 
 ## Sâu hơn
-
 Trong ngôn ngữ lập trình Go, thiết kế của gói `time`, bao gồm kiểu `time.Time`, thể hiện triết lý cung cấp một thư viện chuẩn đơn giản nhưng mạnh mẽ. Các phương thức so sánh `Before()`, `After()`, và `Equal()` làm cho việc so sánh ngày không chỉ đơn giản mà còn dễ đọc, phản ánh nhấn mạnh của Go vào code rõ ràng và ngắn gọn.
 
 Trong lịch sử, việc xử lý ngày và giờ trong các ngôn ngữ lập trình đã gặp phải nhiều phức tạp do sự biến động trong múi giờ, giây nhuận, và hệ thống lịch. Gói `time` của Go là một nỗ lực để cung cấp một giải pháp toàn diện, rút kinh nghiệm từ những hạn chế và thành công của các cài đặt ngày-giờ trong các ngôn ngữ khác.

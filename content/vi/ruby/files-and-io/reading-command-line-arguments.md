@@ -16,9 +16,6 @@ title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---
 
-## Cái gì và Tại sao?
-Đọc các đối số dòng lệnh trong Ruby cho phép các kịch bản nhận đầu vào ngay khi chúng được chạy, như cấu hình tùy chọn hoặc truyền dữ liệu. Các lập trình viên sử dụng chúng để làm cho các kịch bản trở nên động và có thể thích ứng mà không cần cố định giá trị.
-
 ## Làm thế nào:
 Để lấy các đối số dòng lệnh, Ruby cung cấp một mảng đơn giản: `ARGV`. Nó chứa tất cả các đối số được truyền vào, theo thứ tự chúng được đưa ra.
 

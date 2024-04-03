@@ -14,12 +14,7 @@ title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---
 
-## Quoi et Pourquoi ?
-
-Générer des nombres aléatoires en C implique de créer des valeurs imprévisibles et suivant une distribution spécifique, telle que uniforme ou normale. Cette capacité est cruciale pour des applications allant des simulations et jeux aux opérations cryptographiques, où l’imprévisibilité ou la simulation du hasard du monde réel est essentielle.
-
 ## Comment faire :
-
 En C, des nombres aléatoires peuvent être générés en utilisant la fonction `rand()`, qui fait partie de la bibliothèque standard du C `<stdlib.h>`. Par défaut, `rand()` produit des nombres pseudo-aléatoires dans l’intervalle de 0 à `RAND_MAX` (une constante définie dans `<stdlib.h>`). Pour plus de contrôle sur l’intervalle, les programmeurs peuvent manipuler la sortie de `rand()`.
 
 Voici un exemple simple de génération d'un nombre aléatoire entre 0 et 99 :
@@ -52,7 +47,6 @@ Pour générer des nombres aléatoires dans un intervalle différent, vous pouve
 Il est important de noter que d’initialiser le générateur de nombres pseudo-aléatoires (`appel à srand()`) avec l'heure actuelle (`time(NULL)`) garantit des séquences différentes de nombres aléatoires à travers les exécutions du programme. Sans initialisation (`srand()`), `rand()` produirait la même séquence de nombres à chaque fois que le programme est exécuté.
 
 ## Plongée profonde
-
 La fonction `rand()` et son homologue d'initialisation `srand()` font partie de la bibliothèque standard du C depuis des décennies. Elles sont basées sur des algorithmes qui génèrent des séquences de nombres qui semblent seulement être aléatoires—d’où le terme "pseudo-aléatoire". L'algorithme sous-jacent dans `rand()` est typiquement un générateur linéaire congruentiel (GLC).
 
 Bien que `rand()` et `srand()` soient suffisants pour de nombreuses applications, ils présentent des limitations connues, en particulier concernant la qualité de l’aléatoire et la potentielle prévisibilité. Pour des applications nécessitant un haut niveau de randomicité, telles que les opérations cryptographiques, des alternatives comme `/dev/random` ou `/dev/urandom` (sur des systèmes de type Unix), ou des API fournies par des bibliothèques cryptographiques, devraient être envisagées.

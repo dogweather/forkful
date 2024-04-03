@@ -10,12 +10,7 @@ title: Working with CSV
 weight: 37
 ---
 
-## What & Why?
-
-Working with CSVs (Comma-Separated Values) involves parsing and generating files that store tabular data in a simple, text-based format. Programmers frequently engage in this task to efficiently import or export data from spreadsheets, databases, or to facilitate data interchange between different programs.
-
 ## How to:
-
 In Haskell, handling CSV files can be achieved using the `cassava` library, one of the popular third-party libraries for this purpose. Below are examples showcasing how to read from and write to CSV files using `cassava`.
 
 **1. Reading a CSV file:**

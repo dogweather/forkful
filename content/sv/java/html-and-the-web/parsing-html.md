@@ -13,12 +13,7 @@ title: Tolka HTML
 weight: 43
 ---
 
-## Vad & Varför?
-
-Att tolka HTML innebär att gräva igenom märkspråket för att extrahera data som text, länkar eller andra element. Vi gör det för att interagera med eller skrapa webbinnehåll, automatisera surfuppgifter eller testa webbapplikationer.
-
 ## Hur man gör:
-
 Låt oss använda Jsoup, ett praktiskt bibliotek för att arbeta med verklig HTML. Först, lägg till beroendet:
 
 ```xml
@@ -65,7 +60,6 @@ for (Element link : links) {
 ```
 
 ## Djupdykning
-
 En gång i tiden blev HTML tämjt av regex-mönster, en metod både felbenägen och mardrömslik för komplexa dokument. Sen kom Jsoup i slutet av 00-talet, som erbjuder ett jQuery-liknande gränssnitt för Java för att tolka, traversera och manipulera HTML.
 
 Jsoup är inte det enda valet. Det finns HtmlUnit för fullfjädrad webbapplikationstestning med JavaScript-stöd, men det är tyngre och mer komplicerat. För lättviktsuppgifter är Apache Commons Validator bra bara för att extrahera URL:er.
@@ -75,7 +69,6 @@ Under huven använder Jsoup en DOM-parser, som modellerar hela dokumentet i minn
 Kom ihåg, när du skrapar, alltid kontrollera en webbplats `robots.txt` och användarvillkor för att undvika juridiska problem eller att bli IP-bannad.
 
 ## Se även
-
 - Jsoup officiell dokumentation: https://jsoup.org/
 - HtmlUnit: http://htmlunit.sourceforge.net/
 - Apache Commons Validator: https://commons.apache.org/proper/commons-validator/

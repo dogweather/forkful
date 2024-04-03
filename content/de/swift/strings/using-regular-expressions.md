@@ -13,9 +13,6 @@ title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---
 
-## Was & Warum?
-Reguläre Ausdrücke oder Regex sind Zeichenfolgen, die ein Suchmuster bilden und häufig für die Übereinstimmung oder Manipulation von Zeichenketten verwendet werden. Programmierer nutzen sie für alles von der Datenvalidierung und -analyse bis zu Transformationen, was sie zu einem unverzichtbaren Werkzeug bei der Textverarbeitung und -manipulation in verschiedenen Programmiersprachen, einschließlich Swift, macht.
-
 ## Wie:
 Die native Unterstützung von Swift für Regex verwendet die Klasse `NSRegularExpression` zusammen mit den Bereichs- und Ersetzungsmethoden der String-Klasse. Unten ist ein Beispiel für die Verwendung von Regex, um E-Mail-Adressen innerhalb eines Textblocks zu finden und hervorzuheben:
 

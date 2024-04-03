@@ -13,12 +13,7 @@ title: "R\xE9diger un fichier texte"
 weight: 24
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire un fichier texte en Bash vous permet d'automatiser le stockage de données, les logs, les paramètres de configuration, et plus encore. C'est une compétence fondamentale pour le scripting shell, permettant aux programmeurs de sauvegarder la sortie des commandes, l'exécution de scripts ou les saisies utilisateur pour les rapports, le traitement, ou une exécution future.
-
 ## Comment faire :
-
 Bash fournit des méthodes simples pour écrire dans un fichier. Les plus courantes sont l’utilisation des opérateurs de redirection (`>`, `>>`) et la commande `tee`. Voici un rapide coup d’œil sur ces deux techniques.
 
 En utilisant la redirection, vous pouvez écrire la sortie directement dans un fichier. L'opérateur `>` écrit le contenu dans un fichier, le remplaçant s'il existe déjà, tandis que `>>` ajoute au contenu d'un fichier existant sans supprimer son contenu. 

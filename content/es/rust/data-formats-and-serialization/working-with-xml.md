@@ -10,9 +10,6 @@ title: Trabajando con XML
 weight: 40
 ---
 
-## ¿Qué y por qué?
-XML, siglas de eXtensible Markup Language (Lenguaje de Marcado Extensible), es como el primo verborrágico de JSON. Lucharás con XML al tratar con sistemas legados, software empresarial o APIs que pasaron por alto la moda de JSON. Es esencial para el intercambio de datos donde XML mantiene su posición.
-
 ## Cómo hacerlo:
 En Rust, puedes manejar XML con crates como `xml-rs`. Instala agregando `xml-rs = "0.8"` a tu `Cargo.toml`. Aquí te mostramos cómo analizar un XML simple:
 

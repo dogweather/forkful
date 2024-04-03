@@ -15,9 +15,6 @@ title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---
 
-## Cái gì và Tại sao?
-In thông điệp gỡ lỗi là việc ném thông tin lên màn hình để xem chuyện gì đang xảy ra với đoạn mã của bạn. Lập trình viên làm điều này để tìm kiếm lỗi trong máy - bugs.
-
 ## Làm thế nào:
 Đây là cách thức in thông tin trong Lua:
 

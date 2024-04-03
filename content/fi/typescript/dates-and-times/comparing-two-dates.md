@@ -11,9 +11,6 @@ title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---
 
-## What & Why? (Mitä & Miksi?)
-Vertaamme kahta päivämäärää selvittääksemme, kumpi on aikaisempi tai onko ne samat. Tämä on hyödyllistä ajanhallinnassa, varauksissa ja aikarajapohjaisissa loogisissa päätöksissä ohjelmoitaessa.
-
 ## How to: (Kuinka tehdä:)
 ```TypeScript
 const date1: Date = new Date('2023-04-01T00:00:00');

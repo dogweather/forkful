@@ -12,9 +12,6 @@ title: Tekst zoeken en vervangen
 weight: 10
 ---
 
-## Wat & Waarom?
-Tekst zoeken en vervangen in bash betekent het omwisselen van woorden of patronen in een string of bestand met iets anders. Het is een dagelijkse taak voor het opschonen van gegevens, het repareren van code, of het automatiseren van bewerkingen.
-
 ## Hoe te:
 Hier is hoe je de kracht van zoeken en vervangen in bash gebruikt:
 
@@ -40,7 +37,6 @@ sed "s/$old/$new/g" <<< "I like apple pies"
 Onthoud, `g` aan het einde betekent "globaal", dus je verandert elke overeenkomst in de regel, niet slechts de eerste.
 
 ## Diepgaand
-
 We hebben al eeuwen hulpprogramma's voor tekstverwerking op Unix-achtige systemen. `sed`, kort voor Stream Editor, is zo'n hulpprogramma en het bestaat al sinds de jaren 1970. Het is niet alleen voor eenvoudige vervangingen; `sed` kan ook tekst in complexe patronen snijden en hakken.
 
 Alternatieven? Zeker. `awk` is een beetje geavanceerder en kan wonderen verrichten met kolommen en rijen. Voor snelle oplossingen kan `grep` je helpen dingen te vinden, maar het zal niet vervangen - het is meer als de uitkijk.

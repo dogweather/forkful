@@ -23,9 +23,6 @@ title: "CSV\u30D5\u30A1\u30A4\u30EB\u306E\u64CD\u4F5C"
 weight: 37
 ---
 
-## What & Why?
-CSV（Comma-Separated Values）はデータを保存するのによく使われるシンプルなフォーマットです。開発者はCSVを用いて、データのインポート、エクスポート、解析が簡単で、さまざまなプログラム間で互換性を持たせるために使います。
-
 ## How to:
 RustでCSVファイルを扱う基本的な方法を示します。
 

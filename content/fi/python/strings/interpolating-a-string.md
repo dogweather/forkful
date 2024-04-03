@@ -14,9 +14,6 @@ title: Merkkijonon interpolointi
 weight: 8
 ---
 
-## Mikä & Miksi?
-Merkkijonon interpolaatio on menetelmä, jossa lausekkeita sisällytetään osaksi merkkijonoliteraaleja. Ohjelmoijat käyttävät sitä dynaamisesti arvojen lisäämiseen merkkijonoihin, mikä tekee koodista luettavampaa ja siistimpää kuin perinteinen merkkijonojen yhdistäminen.
-
 ## Miten:
 Python 3.6:ssa ja sitä uudemmissa versioissa voit interpoloida merkkijonoja käyttämällä f-merkkijonoja. Näin se tehdään:
 

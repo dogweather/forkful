@@ -10,9 +10,6 @@ title: Inviare una richiesta http
 weight: 44
 ---
 
-## What & Why? (Cosa e Perché?)
-Inviare una richiesta HTTP significa richiedere dati o effettuare azioni su un server remoto. I programmatori lo fanno per interagire con dati dinamici, servizi esterni o API, direttamente dalle loro applicazioni.
-
 ## How to: (Come Fare:)
 ```typescript
 import axios from 'axios';

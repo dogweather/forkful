@@ -16,9 +16,6 @@ title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1
 weight: 26
 ---
 
-## Cái gì & Tại sao?
-Tính toán một ngày trong tương lai hoặc quá khứ có nghĩa là tìm một ngày cách một số ngày, tuần, tháng, hoặc năm từ một điểm nhất định. Các lập trình viên thường cần điều này cho các nhiệm vụ như thiết lập ngày hết hạn, nhắc nhở, hoặc lập lịch cho các sự kiện.
-
 ## Cách thực hiện:
 Đối tượng `Date` trong JavaScript là công cụ bạn cần để làm "gymnastics" với ngày tháng. Hãy thử với một số ví dụ:
 

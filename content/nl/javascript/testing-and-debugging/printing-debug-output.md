@@ -12,12 +12,7 @@ title: Debug-output afdrukken
 weight: 33
 ---
 
-## Wat & Waarom?
-
-Debugoutput afdrukken in JavaScript gaat over het tonen van variabelen, fouten of andere informatie die helpt om snel te begrijpen wat je code doet. Programmeurs doen dit om bugs te vangen, de uitvoeringsstroom te begrijpen en te zorgen dat de code doet wat het moet doen.
-
 ## Hoe:
-
 JavaScript maakt het ontzettend eenvoudig om debugoutput af te drukken met `console.log()`. Zo doe je dat:
 
 ```javascript
@@ -45,7 +40,6 @@ Resultaat: 7
 ```
 
 ## Diepere Duik
-
 De `console.log()` methode komt uit de Console API, die al eeuwen een debuggingvriend is in browsers en Node.js-omgevingen. Maar er is meer dan alleen `log`; je hebt `console.warn()`, `console.error()`, en `console.info()`, allemaal sturen ze berichten uit met verschillende ernstniveaus.
 
 Lang geleden gebruikten ontwikkelaars `alert()` voor debugging, maar dat werd snel vervelend - het blokkeert de interactie met de gebruiker door een dialoogvenster te tonen.
@@ -57,7 +51,6 @@ Voor wie van een goede, schone output houdt, toont `console.table()` gegevens in
 De manier waarop `console`-methoden worden geïmplementeerd kan verschillen tussen JavaScript-omgevingen, maar de essentie blijft hetzelfde: ze helpen ontwikkelaars om snel en met minimale moeite te begrijpen wat er onder de motorkap gebeurt.
 
 ## Zie Ook
-
 - MDN Web Docs over Console API: https://developer.mozilla.org/en-US/docs/Web/API/Console
 - Node.js `console` documentatie: https://nodejs.org/api/console.html
 - Een gids voor console-opdrachten: https://getfirebug.com/wiki/index.php/Console_API

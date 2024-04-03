@@ -10,9 +10,6 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-## Cosa & Perché?
-I numeri complessi sono un insieme di numeri della forma `a + bi`, dove `a` e `b` sono numeri reali, e `i` è l'unità immaginaria (`i^2 = -1`). In programmazione, li usiamo per risolvere problemi in vari domini, come l'ingegneria elettrica, l'elaborazione dei segnali e il calcolo quantistico.
-
 ## Come fare:
 Python ha supporto integrato per i numeri complessi. Ecco come puoi utilizzarli:
 

@@ -17,9 +17,6 @@ title: "\uBBF8\uB798 \uD639\uC740 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\u
 weight: 26
 ---
 
-## What & Why? (무엇 그리고 왜?)
-날짜를 계산한다는 것은 미래나 과거의 날짜를 찾는 작업입니다. 예정된 이벤트 날짜를 설정하거나 지나간 일자를 확인하기 위해 프로그래머는 이 방법을 자주 사용합니다.
-
 ## How to: (방법)
 ```C#
 using System;

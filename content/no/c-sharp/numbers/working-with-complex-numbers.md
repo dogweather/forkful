@@ -12,9 +12,6 @@ title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---
 
-## Hva & Hvorfor?
-Komplekse tall utvider vårt tallsystem til å inkludere imaginære tall, noe som gjør det mulig å løse ligninger som ikke har reelle løsninger. Programmerere jobber med dem innen felt som ingeniørvitenskap, fysikk og signalbehandling hvor disse tallene er essensielle for modellering og problemløsing.
-
 ## Hvordan:
 C# har en innebygd `System.Numerics.Complex` struktur for behandling av komplekse tall. Her er en rask gjennomgang:
 

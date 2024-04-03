@@ -11,9 +11,6 @@ title: Organizacja kodu w funkcje
 weight: 18
 ---
 
-## Co i dlaczego?
-Organizowanie kodu w funkcje dzieli skrypt na wielokrotnie użyteczne fragmenty. Chodzi o to, by kod był czytelny, łatwy w zarządzaniu i mniej podatny na błędy. Modularny kod jest świetny, ponieważ oszczędza czas, chroni zdrowie psychiczne i upraszcza debugowanie oraz testowanie jednostkowe.
-
 ## Jak to zrobić:
 Wyobraź sobie, że piszesz prosty skrypt, który wita użytkowników:
 

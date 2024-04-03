@@ -10,9 +10,6 @@ title: Suchen und Ersetzen von Text
 weight: 10
 ---
 
-## Was & Warum?
-Textsuche und -ersatz ist das Auffinden und Modifizieren von Zeichenfolgen in einem Text. Programmierer nutzen dies, um Daten zu korrigieren, zu aktualisieren oder zu formatieren, oft in großen Dateien oder Codebasen.
-
 ## How to:
 ```Ruby
 text = "Hallo Welt! Hallo Programmierung!"
@@ -33,7 +30,7 @@ puts nummeriert_text  # "Nummerierte Begrüßung hallo Welt! Nummerierte Begrü�
 ## Deep Dive
 Ursprünglich stammt die Idee des Suchens und Ersetzens aus der Textverarbeitung und hat ihren Weg in die Programmierung gefunden. Frühe Editoren wie `ed` und `vi` in Unix ermöglichten es bereits, aber in Ruby macht uns die `gsub`-Methode (global substitute) das Leben leichter. Alternativen außerhalb von Ruby sind beispielsweise `sed` in Unix oder Suchen-Ersetzen-Funktionen in modernen Editoren wie `VSCode`. 
 
-Intern implementiert Ruby `gsub` mit leistungsfähigen Regulären Ausdrücken, welche es ermöglichen, komplexe Suchmuster zu definieren und die Leistung beim Durchsuchen des Textes zu optimieren. 
+Intern implementiert Ruby `gsub` mit leistungsfähigen Regulären Ausdrücken, welche es ermöglichen, komplexe Suchmuster zu definieren und die Leistung beim Durchsuchen des Textes zu optimieren.
 
 ## See Also
 - Ruby-Dokumentation zu `String#gsub` und `String#sub`: [https://ruby-doc.org/core-3.1.1/String.html#method-i-gsub](https://ruby-doc.org/core-3.1.1/String.html#method-i-gsub)

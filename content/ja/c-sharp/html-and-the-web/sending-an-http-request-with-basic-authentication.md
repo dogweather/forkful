@@ -22,9 +22,6 @@ title: "\u57FA\u672C\u8A8D\u8A3C\u3092\u4F7F\u7528\u3057\u305FHTTP\u30EA\u30AF\u
 weight: 45
 ---
 
-## What & Why? (何となぜ？)
-HTTPリクエストをBasic認証で送るのは、サーバーへセキュアな方法でユーザー認証情報を伝えるプロセスです。プログラマーはこの方法を使い、認証が必要なAPIやリソースへ安全にアクセスします。
-
 ## How to: (方法)
 ```c#
 using System;

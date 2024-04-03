@@ -10,9 +10,6 @@ title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---
 
-## Hva & Hvorfor?
-Å starte et nytt prosjekt betyr å opprette grunnmuren for softwareutvikling. Programmerere gjør dette for å organisere kode, dele arbeid med andre, og for å sette opp et gjennomtenkt rammeverk for applikasjonen de utvikler.
-
 ## Hvordan:
 ```Bash
 # Opprett et nytt katalog for prosjektet ditt

@@ -14,12 +14,7 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---
 
-## Mikä ja miksi?
-
-Päivämäärän jäsentäminen merkkijonosta Go:ssa tarkoittaa päivämäärän muuntamista tekstistä käyttökelpoisempaan muotoon (esim. `time.Time`). Ohjelmoijat suorittavat tämän tehtävän käsitelläkseen päivämäärä- ja aikatietoja tarkemmin sovelluksissa, erityisesti kun käsitellään käyttäjän syötettä, API:eja tai tallennusjärjestelmiä, joissa päivämäärät esitetään usein merkkijonoina.
-
 ## Kuinka:
-
 Go tarjoaa vankan tuen päivämäärien ja aikojen jäsentämiseen `time`-pakettinsa kautta. Avain on ymmärtää Gon viitepäivämäärän muoto: `Mon Jan 2 15:04:05 MST 2006`, jota käytät kertomaan Go:lle, miten tulkita saapuva merkkijono. Tässä on nopea esimerkki, jolla pääset alkuun:
 
 ```go
@@ -60,7 +55,6 @@ Jäsennetty Päivämäärä: 2023-04-12 14:45:00 +0000 UTC
 Huomaa, kuinka `layout`-merkkijono käyttää viitepäivämäärän arvoja määrittämään syötteen muodon. Säädä `layout` vastaamaan syötteesi päivämäärien muotoa.
 
 ## Syväsukellus
-
 Go:n päivämäärän ja ajan jäsentämisen suunnittelu on ainutlaatuista, käyttäen tiettyä viitepäivämäärää (`Mon Jan 2 15:04:05 MST 2006`). Tämä lähestymistapa, sen sijaan että käytettäisiin enemmän perinteisiä muodon määritteitä (kuten `YYYY` vuodelle), valittiin luettavuuden ja helppokäyttöisyyden vuoksi, hyödyntäen enemmän esimerkkiin perustuvaa formaattia.
 
 Vaikka tämä voi aluksi tuntua epätavalliselta ohjelmoijille, jotka ovat tottuneet muihin kieliin, monet löytävät sen intuitiivisemmaksi lyhyen sopeutumiskauden jälkeen. Sovelluksille, jotka vaativat monimutkaisempaa päivämäärän käsittelyä tai formaatteja, joita Go:n `time`-paketti ei suoraan tue, kolmannen osapuolen kirjastot, kuten `github.com/jinzhu/now`, voivat tarjota lisätoiminnallisuutta. Kuitenkin suurimmalle osalle standardisovelluksia, Go:n sisäänrakennetut kyvyt ovat vankkoja, suorituskykyisiä ja idiomaattisia, ilmentäen Gon filosofiaa yksinkertaisuudesta ja selkeydestä.

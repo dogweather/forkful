@@ -14,12 +14,7 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i dlaczego?
-
-Zaokrąglanie liczb, podstawowe pojęcie w programowaniu komputerowym, polega na dopasowaniu liczby do najbliższej liczby całkowitej lub do określonej liczby miejsc dziesiętnych. Programiści często wykonują zaokrąglanie, aby uprościć liczby dla czytelności człowieka lub spełnić konkretne potrzeby obliczeniowe, zapewniając precyzję i redukując obciążenie obliczeniowe.
-
 ## Jak:
-
 Google Apps Script, będąc językiem opartym na JavaScript, oferuje standardowe metody zaokrąglania liczb. Oto przegląd trzech powszechnie używanych technik:
 
 ### Math.round()
@@ -61,7 +56,6 @@ Logger.log(preciseRound); // Wyświetla: 2.57
 ```
 
 ## Szczegółowa analiza
-
 Zaokrąglanie liczb w Google Apps Script nie różni się wiele od tego, jak jest wykonywane w innych środowiskach JavaScript. Jednak zrozumienie różnic w metodach zaokrąglania i potencjalnych problemów z arytmetyką liczb zmiennoprzecinkowych jest kluczowe. Na przykład, ze względu na sposób, w jaki komputery reprezentują liczby zmiennoprzecinkowe, nie wszystkie ułamki dziesiętne mogą być reprezentowane z doskonałą dokładnością, co prowadzi do czasami nieoczekiwanych wyników zaokrąglenia.
 
 Historycznie rzecz biorąc, JavaScript (a przez rozszerzenie Google Apps Script) radzi sobie z tym, stosując się do standardu IEEE 754, używanego przez wiele innych języków programowania do arytmetyki liczb zmiennoprzecinkowych. Ten standard określa, jak liczby są zaokrąglane, zapewniając spójność na różnych platformach i językach.

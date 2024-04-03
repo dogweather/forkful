@@ -11,9 +11,6 @@ title: Gestion des erreurs
 weight: 16
 ---
 
-## Quoi et Pourquoi ?
-La gestion des erreurs consiste à gérer l'inattendu dans les programmes—comme un videur faisant face à des perturbateurs. Les programmeurs préfèrent que tout se passe en douceur ; la gestion des erreurs permet de maintenir les problèmes en ligne, s'assurant que leur code ne trébuche et ne tombe pas lorsqu'il est confronté à l'inattendu.
-
 ## Comment faire :
 Clojure, comme ses ancêtres Lisp, s'appuie sur les exceptions pour gérer les erreurs. Voici comment montrer de quoi vous êtes capable lorsque les choses tournent mal.
 

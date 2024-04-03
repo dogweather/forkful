@@ -13,12 +13,7 @@ title: Analizando HTML
 weight: 43
 ---
 
-## ¿Qué y por qué?
-
-Analizar HTML en proyectos Arduino trata sobre extraer información de páginas web. Los programadores hacen esto para permitir que sus dispositivos Arduino interactúen con Internet, recopilando datos de sitios web para propósitos que van desde la automatización del hogar hasta el monitoreo ambiental.
-
 ## Cómo hacerlo:
-
 Analizar HTML en Arduino generalmente demanda bibliotecas de huella mínima debido a los limitados recursos del dispositivo. Una opción popular para el scraping y análisis web es usar las bibliotecas `ESP8266HTTPClient` y `ESP8266WiFi` para ESP8266, o sus equivalentes de ESP32, dado su soporte nativo para capacidades Wi-Fi y protocolos HTTP. Aquí hay un ejemplo básico para buscar y analizar HTML, asumiendo que estás trabajando con un ESP8266 o ESP32:
 
 Primero, incluye las bibliotecas necesarias:

@@ -11,9 +11,6 @@ title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet"
 weight: 26
 ---
 
-## Vad & Varför?
-Beräkning av ett framtida eller förflutet datum innebär att man räknar ut ett datum utifrån ett givet startdatum och en tidsspann. Programmerare gör detta för att hantera tidsbaserade händelser, som utgångsdatum eller påminnelser.
-
 ## Hur man gör:
 Med Arduino kan du inte direkt hantera datum utan hjälp från externa bibliotek. RTC (real-time clock) moduler och bibliotek som `RTClib` är användbara. Här är ett exempel med en RTC-modul:
 

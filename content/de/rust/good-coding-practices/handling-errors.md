@@ -9,12 +9,7 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-
-Fehlerbehandlung dreht sich darum, sich zu kümmern, wenn die Dinge schiefgehen. Entwickler machen das, um das Unerwartete zu handhaben, und um sicherzustellen, dass ihre Rust-Programme robust sind und nicht einfach abstürzen, wenn sie auf ein Problem stoßen.
-
 ## Wie geht das:
-
 Rust behandelt Fehler auf zwei wesentliche Arten: behebbare und unbehebbare Fehler. Lassen Sie uns beide betrachten.
 
 Behebbare Fehler verwenden `Result<T, E>`:
@@ -53,7 +48,6 @@ fn main() {
 Führen Sie es aus, und Sie werden eine Panikmeldung sehen. Ihr Programm hält sofort an.
 
 ## Tiefergehend
-
 Historisch gesehen war die Fehlerbehandlung in der Programmierung ein Durcheinander. Rust macht es richtig mit einer klaren Unterscheidung zwischen behebbaren und unbehebbaren Fehlern.
 
 Das Enum `Result` ist für behebbare Fehler. Es ist explizit – man behandelt die Variante `Ok` oder `Err`. Es gibt Methoden wie `unwrap()` und `expect()` auch, aber das sind schnelle und schmutzige Abkürzungen, die zu einem `panic!` führen können.
@@ -65,7 +59,6 @@ Fehlerbehandlung durch Rückgabe von `Result` wird bevorzugt, wenn Sie erwarten,
 Alternativen? Sicher, man könnte andere Fehlerbehandlungs-Crates für mehr Funktionen oder ergonomische Nutzung verwenden. Wie `anyhow` für einfache Fehlerbehandlung oder `thiserror` für Fehler in Bibliothekscode.
 
 ## Siehe Auch
-
 Interessiert, tiefer einzutauchen? Hier ist, wo es weitergeht:
 
 - [Rust Buch über Fehlerbehandlung](https://doc.rust-lang.org/book/ch09-00-error-handling.html) - Ein großartiger Ort, um die Philosophie der Fehlerbehandlung in Rust zu verstehen.

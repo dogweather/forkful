@@ -10,9 +10,6 @@ title: Conversione di una data in una stringa
 weight: 28
 ---
 
-## What & Why?
-Convertire una data in una stringa trasforma il binario comprensibile solo da computer in un formato facilmente leggibile da esseri umani. I programmatori fanno questo per visualizzare date in log, interfacce utente, e documenti.
-
 ## How to:
 Usa `java.text.SimpleDateFormat` e `java.util.Date` per convertire date. Ecco un esempio:
 

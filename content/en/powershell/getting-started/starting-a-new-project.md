@@ -9,9 +9,6 @@ title: Starting a new project
 weight: 1
 ---
 
-## What & Why?
-Starting a new project is about laying the groundwork for your coding masterpiece. As programmers, we do it to break ground on a fresh idea or implement solutions in an organized, scalable way.
-
 ## How to:
 PowerShell makes spinning up a new project straightforward. You might want to create a directory for your project and set up a git repository. Here's how:
 

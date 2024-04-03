@@ -12,12 +12,7 @@ title: Interpolazione di una stringa
 weight: 8
 ---
 
-## Cosa & Perché?
-
-L'interpolazione di stringhe è un metodo per costruire stringhe che incorporano variabili, consentendo la creazione di stringhe dinamiche. I programmatori fanno ciò per personalizzare messaggi, costruire URL, creare query SQL e altro, permettendo così di ottenere codice più leggibile e manutenibile.
-
 ## Come fare:
-
 In Go, l'interpolazione di stringhe si ottiene comunemente utilizzando il pacchetto `fmt`, in particolare con la funzione `Sprintf`, che ti permette di iniettare variabili in una stringa specificando verbi di formattazione. I verbi sono segnaposto nella stringa di formato e vengono sostituiti dai valori delle variabili fornite. Ecco come si utilizza:
 
 ```go
@@ -40,7 +35,6 @@ func main() {
 Si noti che `%s` viene usato per le stringhe, e `%d` per gli interi. La documentazione del pacchetto `fmt` fornisce un elenco completo dei verbi di formattazione per diversi tipi di dati.
 
 ## Approfondimento
-
 Il concetto di interpolazione delle stringhe esiste in molti linguaggi di programmazione, sebbene con sintassi e capacità diverse. In Go, mentre la funzione `Sprintf` del pacchetto `fmt` è l'approccio più comunemente utilizzato, potrebbe non essere sempre il più efficiente, specialmente per concatenazioni semplici o quando si lavora con codice altamente sensibile alle prestazioni.
 
 Il pacchetto `fmt` utilizza la riflessione per interpretare dinamicamente i tipi delle variabili a runtime, il che, sebbene flessibile, comporta un sovraccarico. Per scenari in cui la prestazione è critica, la concatenazione diretta di stringhe o il tipo `strings.Builder` possono offrire alternative migliori. La concatenazione diretta è semplice ma può diventare ingombrante con molteplici variabili. `strings.Builder`, d'altra parte, fornisce un modo più performante e leggibile per costruire stringhe complesse in un ciclo o quando si ha a che fare con molte variabili:

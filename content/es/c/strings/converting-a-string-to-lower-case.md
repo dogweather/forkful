@@ -13,12 +13,7 @@ title: "Convirtiendo una cadena de texto a min\xFAsculas"
 weight: 4
 ---
 
-## ¿Qué y por qué?
-
-Convertir una cadena a minúsculas en C implica transformar todas las letras mayúsculas de una cadena dada en sus equivalentes en minúsculas. Los programadores a menudo realizan esta operación para estandarizar la entrada de texto para comparaciones, operaciones de búsqueda o simplemente por consistencia estética en la salida.
-
 ## Cómo hacerlo:
-
 C no tiene una función integrada para la conversión de cadenas a minúsculas directamente, a diferencia de algunos lenguajes de alto nivel. Sin embargo, el proceso se puede implementar fácilmente utilizando las funciones de la biblioteca estándar de C. A continuación, se presenta una guía paso a paso y un ejemplo que ilustra cómo convertir una cadena a minúsculas.
 
 ```c
@@ -53,7 +48,6 @@ Minúsculas: hello, world!
 En este ejemplo, la función `toLowerCase` itera a través de cada carácter de la cadena de entrada, convirtiéndolo en su equivalente en minúsculas usando la función `tolower` de `ctype.h`. La modificación se realiza en el lugar, alterando la cadena original.
 
 ## Análisis profundo
-
 La función `tolower` utilizada en el ejemplo anterior es parte de la biblioteca estándar de C, específicamente dentro del archivo de encabezado `ctype.h`. Opera basado en la configuración regional actual, pero para la configuración regional estándar "C", maneja el conjunto de caracteres ASCII donde se convierten de 'A' a 'Z' a 'a' a 'z'.
 
 Históricamente, el manejo de la codificación de caracteres y la conversión de mayúsculas y minúsculas en C estaba estrechamente vinculado con el conjunto de caracteres ASCII, limitando su utilidad en aplicaciones internacionales o localizadas donde los caracteres fuera del conjunto ASCII son comunes. Los lenguajes de programación modernos podrían ofrecer métodos de cadena integrados para realizar la conversión de mayúsculas y minúsculas considerando la configuración regional y los caracteres Unicode, lo que carece C nativamente.

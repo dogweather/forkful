@@ -11,9 +11,6 @@ title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---
 
-## Hva & Hvorfor?
-Interaktive skall, eller REPLer (Read-Eval-Print Looper), lar deg kjøre kode på sparket, teste funksjoner, algoritmer, eller tukle med ideer. De er kodens kladdeark, raske og skitne, uten å sette opp et fullt utviklermiljø.
-
 ## Hvordan:
 Node.js leveres med en REPL som er tilgjengelig via terminalen. Åpne den, og du er klar til å rulle. Her er en smakebit:
 

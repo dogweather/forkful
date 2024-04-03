@@ -14,10 +14,8 @@ title: Pobieranie aktualnej daty
 weight: 29
 ---
 
-## Co i Dlaczego?
-W programowaniu, uzyskanie aktualnej daty to podstawowe zadanie, które umożliwia programistom dostęp, wyświetlanie lub manipulowanie bieżącą datą w ich aplikacjach. Ta możliwość jest kluczowa dla wszystkiego, od logowania i znakowania czasu zdarzeń po obliczenia na podstawie dat.
-
 ## Jak to zrobić:
+
 
 ### Korzystając ze standardowego Kotlina
 Kotlin nie posiada własnego API do dat i czasu, ale polega na bibliotece standardowej Javy dla tej funkcjonalności. Oto jak można uzyskać bieżącą datę:

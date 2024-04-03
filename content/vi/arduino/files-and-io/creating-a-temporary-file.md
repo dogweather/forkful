@@ -15,12 +15,7 @@ title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Gì & Tại Sao?
-
-Tạo một tệp tạm thời có nghĩa là tạo một tệp chỉ cần trong một khoảng thời gian ngắn hoặc cho phiên làm việc hiện tại. Lập trình viên làm điều này để lưu trữ dữ liệu trung gian mà không làm đầy bộ nhớ dài hạn hoặc cho dữ liệu chỉ cần tồn tại trong khi chương trình đang chạy.
-
 ## Làm thế nào:
-
 Arduino thường tương tác với vi điều khiển không có hệ thống tập tin truyền thống—vì vậy "tệp" không được quản lý theo cùng một cách chúng ta làm trên PC. Thay vào đó, chúng ta sử dụng EEPROM (một lượng nhỏ bộ nhớ giữ được qua các lần khởi động lại) hoặc thẻ SD với một bảo vệ. Dưới đây là một ví dụ cơ bản về viết và đọc dữ liệu tạm thời vào EEPROM:
 
 ```Arduino
@@ -113,7 +108,6 @@ Chuỗi dữ liệu tạm thời
 ```
 
 ## Sâu hơn
-
 Trong lịch sử, các tệp tạm thời trong lập trình đáp ứng nhu cầu như bộ nhớ đệm, nhật ký, hoặc giao tiếp giữa các quá trình. Trên các hệ thống như PC, với hệ điều hành đầy đủ, tệp tạm rất phổ biến. Trong Arduino, nó khác. Vi điều khiển có bộ nhớ không bay hơi hạn chế (EEPROM), hoặc chúng ta thêm bộ nhớ ngoại vi như thẻ SD.
 
 Các phương án thay thế EEPROM cho dữ liệu ngắn hạn bao gồm sử dụng RAM (mất nhanh chóng giữa các chu kỳ nguồn và khởi động lại) hoặc bộ nhớ ngoại vi như Flash hoặc IC nối dây.
@@ -123,7 +117,6 @@ Về mặt thực hiện, khi ghi vào EEPROM trên Arduino, hãy nhớ rằng n
 Sử dụng thẻ SD cho bộ nhớ tạm thời giống như xử lý tệp thông thường trên PC. Nó cung cấp nhiều không gian hơn, nhưng yêu cầu quản lý đúng cách như đảm bảo chất lượng thẻ tốt, xử lý mở/đóng tệp một cách chính xác, và hiểu rằng nó tương đối chậm so với EEPROM hoặc RAM.
 
 ## Xem Thêm
-
 - [Tham khảo Thư viện EEPROM](https://www.arduino.cc/en/Reference/EEPROM)
 - [Tham khảo Thư viện SD](https://www.arduino.cc/en/Reference/SD)
 - [Arduino File I/O](https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadWrite)

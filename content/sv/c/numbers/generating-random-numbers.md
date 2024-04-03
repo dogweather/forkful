@@ -14,12 +14,7 @@ title: "Generera slumpm\xE4ssiga nummer"
 weight: 12
 ---
 
-## Vad & Varför?
-
-Att generera slumpmässiga nummer i C innebär att skapa värden som är oförutsägbara och följer en specifik distribution, såsom uniform eller normal. Denna förmåga är avgörande för applikationer som sträcker sig från simuleringar och spel till kryptografiska operationer, där oförutsägbarhet eller simulering av verklig slumpmässighet är essentiell.
-
 ## Hur man gör:
-
 I C kan slumpmässiga nummer genereras med funktionen `rand()`, som är en del av C:s standardbibliotek `<stdlib.h>`. Som standard producerar `rand()` pseudoslumpmässiga nummer i intervallet från 0 till `RAND_MAX` (en konstant definierad i `<stdlib.h>`). För mer kontroll över intervallet kan programmerare manipulera utmatningen från `rand()`.
 
 Här är ett enkelt exempel på att generera ett slumpmässigt nummer mellan 0 och 99:
@@ -52,7 +47,6 @@ För att generera slumpmässiga nummer inom ett annat intervall kan du justera m
 Det är viktigt att notera att såddning av den pseudoslumpmässiga nummergeneratorn (`srand()`-anropet) med aktuell tid (`time(NULL)`) säkerställer olika sekvenser av slumpmässiga nummer över programkörningar. Utan såddning (`srand()`), skulle `rand()` producera samma sekvens av nummer varje gång programmet körs.
 
 ## Djupdykning
-
 Funktionen `rand()` och dess såddningsmotsvarighet `srand()` har varit en del av C:s standardbibliotek i årtionden. De är baserade på algoritmer som genererar sekvenser av nummer som enbart verkar vara slumpmässiga - därav termen "pseudoslumpmässig." Den underliggande algoritmen i `rand()` är vanligtvis en linjär kongruentiell generator (LCG).
 
 Även om `rand()` och `srand()` är tillräckliga för många applikationer, har de kända begränsningar, särskilt gällande kvaliteten på slumpmässigheten och potentiell förutsägbarhet. För applikationer som kräver högkvalitativ slumpmässighet, såsom kryptografiska operationer, bör alternativ som `/dev/random` eller `/dev/urandom` (på Unix-liknande system), eller API:er som tillhandahålls av kryptografiska bibliotek, övervägas.

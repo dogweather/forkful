@@ -12,11 +12,8 @@ title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---
 
-## Mikä & Miksi?
-
-Säännölliset lausekkeet (regex) Bashissa mahdollistavat merkkijonojen ja tiedostojen etsimisen, manipuloinnin ja käsittelyn tiettyjen mallien perusteella. Ohjelmoijat käyttävät regexiä tehtäviin kuten syötteen validointi, lokitiedostojen jäsentäminen ja datan poiminta, koska se tarjoaa joustavan ja voimakkaan tavan määritellä malleja monimutkaisiin tekstinkäsittelytarpeisiin.
-
 ## Kuinka:
+
 
 ### Perusmallin Vastaavuus
 Löytääksesi, vastaako merkkijonoa malli, voit käyttää `grep`-komentoa, komentorivin työkalua, joka etsii tavallisen tekstin datajoukoista rivejä, jotka vastaavat säännöllistä lauseketta:

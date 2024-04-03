@@ -11,9 +11,6 @@ title: "Interpolera en str\xE4ng"
 weight: 8
 ---
 
-## Vad & Varför?
-Stringinterpolering låter dig spränga in variabler direkt i en sträng. Programmerare använder det för att skapa dynamisk text snabbt och smidigt.
-
 ## Hur man gör:
 I Haskell hanterar vi inte stringinterpolation ur lådan. Men med biblioteket `Data.Text`, och Template Haskell-funktionen `printf` från `Text.Printf`, är det enkelt. Här är ett exempel:
 

@@ -13,12 +13,7 @@ title: Een string interpoleren
 weight: 8
 ---
 
-## Wat & Waarom?
-
-String interpolatie in Google Apps Script maakt het mogelijk om dynamisch expressies in te voegen binnen strings, wat helpt om meer leesbare en onderhoudbare code te creëren. Programmeurs gebruiken deze techniek om naadloos variabelen en expressies in strings te incorporeren zonder de omslachtige syntax voor concatenatie.
-
 ## Hoe:
-
 In Google Apps Script wordt stringinterpolatie bereikt door middel van template literals. Dit zijn string literals die ingesloten expressies toelaten, aangeduid met backticks (\`) in plaats van de gebruikelijke aanhalingstekens. Hier is hoe je ze kunt gebruiken:
 
 ```javascript
@@ -55,7 +50,6 @@ multiLineStringExample();
 Deze voorbeelden illustreren het basisgebruik, het inbedden van expressies en het creëren van strings over meerdere regels met geïnterpoleerde waarden.
 
 ## Diepere Duik
-
 Template literals, inclusief string interpolatie, zijn geïntroduceerd in ECMAScript 2015 (ES6) en vervolgens overgenomen in Google Apps Script. Vóór dit, moesten programmeurs puur vertrouwen op string concatenatie, wat onhandig kon worden voor complexe strings of bij het integreren van veel variabele waarden.
 
 ```javascript

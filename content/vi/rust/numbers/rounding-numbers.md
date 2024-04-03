@@ -17,9 +17,6 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Cái gì & Tại sao?
-Làm tròn số có nghĩa là điều chỉnh chúng đến số nguyên gần nhất hoặc một phần số với độ chính xác nhất định. Lập trình viên làm tròn số để đơn giản hóa giá trị cho khả năng đọc của con người, để đáp ứng yêu cầu đặc tả, hoặc để giảm bớt gánh nặng tính toán trong các phép toán số dấu phẩy động.
-
 ## Làm thế nào:
 Rust khiến việc làm tròn trở nên dễ dàng. Hãy thử những phương pháp này cho các kiểu `f32` hoặc `f64`:
 

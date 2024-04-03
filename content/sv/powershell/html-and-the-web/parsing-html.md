@@ -12,15 +12,10 @@ title: Tolka HTML
 weight: 43
 ---
 
-## Vad & Varför?
-Att analysera HTML med PowerShell handlar om att dissekera HTML-innehåll för att extrahera specifika data eller automatisera webbrelaterade uppgifter. Programmerare gör det för att interagera med webbsidor, skrapa webbinnehåll, eller automatisera formulärinlämningar och andra webbinteraktioner utan att behöva en webbläsare.
-
 ## Hur:
-
 PowerShell har inte från början en dedikerad HTML-parser, men du kan använda `Invoke-WebRequest`-cmdleten för att komma åt och analysera HTML-innehåll. För mer komplex analys och manipulation kan HtmlAgilityPack, ett populärt .NET-bibliotek, användas.
 
 ### Använda `Invoke-WebRequest`:
-
 ```powershell
 # Enkelt exempel för att hämta titlar från en webbsida
 $response = Invoke-WebRequest -Uri 'http://example.com'
@@ -36,7 +31,6 @@ Example Domain
 ```
 
 ### Använda HtmlAgilityPack:
-
 Först måste du installera HtmlAgilityPack. Detta kan du göra via NuGet Package Manager:
 
 ```powershell

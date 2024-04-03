@@ -12,9 +12,6 @@ title: Usando um shell interativo (REPL)
 weight: 34
 ---
 
-## O Que & Por Quê?
-Um REPL (Read-Eval-Print Loop, ou Laço de Leitura-Avaliação-Impressão) é um shell interativo que processa entradas individuais do usuário, executa código e retorna o resultado. Os programadores utilizam-no para experimentos rápidos, depuração ou aprendizado, pois permite um feedback imediato e iteração.
-
 ## Como fazer:
 Iniciar um REPL em Java é simples com a ferramenta `jshell` introduzida no Java 9. Veja como colocar as mãos nele e iniciar uma sessão básica:
 

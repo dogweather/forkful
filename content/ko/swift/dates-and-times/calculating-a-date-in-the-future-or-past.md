@@ -17,9 +17,6 @@ title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uA
 weight: 26
 ---
 
-## What & Why? (무엇과 왜?)
-날짜 계산이란 현재로부터 미래나 과거의 특정 날짜를 정하는 걸 말합니다. 앱에서 회원가입 후 30일의 체험 기간을 설정하는 등, 기간을 제한하거나 예약 시스템을 구축할 때 프로그래머들이 주로 사용합니다.
-
 ## How to: (어떻게:)
 ```Swift
 import Foundation

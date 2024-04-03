@@ -12,9 +12,6 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-Het afhandelen van fouten is hoe je code omgaat met problemen die opduiken tijdens de uitvoering - zoals een onverwachte wending zonder deze te laten vallen. Programmeurs doen dit om crashes te voorkomen en gebruikers een soepele ervaring te geven.
-
 ## Hoe:
 Kotlin biedt `try`, `catch`, `finally`, en `throw` om fouten te beheren. Hier is hoe je ze gebruikt:
 

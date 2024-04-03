@@ -12,9 +12,6 @@ title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---
 
-## O Que & Por Quê?
-Verificar se um diretório existe em Kotlin envolve verificar a presença de um diretório em um caminho especificado. Programadores realizam essa tarefa para prevenir erros, como tentar ler ou escrever em um diretório que não existe, garantindo um manejo de arquivos e gestão de dados mais suave dentro das aplicações.
-
 ## Como Fazer:
 Kotlin, rodando na JVM, utiliza a API de Arquivo do Java para operações de arquivo, tornando a verificação da existência de diretórios simples. Aqui está um exemplo básico:
 

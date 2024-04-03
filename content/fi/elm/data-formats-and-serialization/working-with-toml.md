@@ -10,9 +10,6 @@ title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---
 
-## Mikä & Miksi?
-TOML, lyhennettynä Tom's Obvious, Minimal Language, on data-serialisointikieli. Elm-ohjelmoijat käyttävät sitä konfiguraatiotiedon hallintaan, koska se on ihmisen luettavissa ja kartoittuu siististi sovellusten tarvitsemiin avain-arvo-pareihin.
-
 ## Kuinka:
 Elmissä ei ole sisäänrakennettua TOML-jäsentäjää, mutta voit tehdä yhteistyötä JavaScriptin kanssa tai käyttää yhteisön pakettia. Näin saatat jäsentää TOML-tietoja käyttäen hypoteettista `elm-toml` pakettia:
 

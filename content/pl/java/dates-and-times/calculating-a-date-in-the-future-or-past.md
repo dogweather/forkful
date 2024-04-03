@@ -11,9 +11,6 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-## Co i dlaczego?
-Manipulacja datami to ogólnie zmiana wartości daty na wcześniejszą lub późniejszą. Programiści robią to, by obsługiwać rezerwacje, terminy, przypomnienia czy okresy ważności.
-
 ## Jak to zrobić:
 W Java korzystamy z `java.time`, zestawu klas wprowadzonych w Java 8.
 

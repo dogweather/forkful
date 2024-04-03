@@ -11,11 +11,7 @@ title: Calculando uma data no futuro ou passado
 weight: 26
 ---
 
-## O Que é & Porquê?
-Calcular datas no futuro ou no passado é simplesmente modificar uma data existente para descobrir qual data será ou foi. Programadores fazem isso para agendar tarefas, gerar lembretes ou validar prazos.
-
 ## Como Fazer:
-
 ```Bash
 # Para adicionar dias a uma data
 data_futura=$(date -d "2023-04-15 + 10 days" +%F)
@@ -34,7 +30,6 @@ echo $data_modificada
 ```
 
 ## Aprofundamento
-
 A capacidade de manipular datas é essencial na automação e no gerenciamento de tarefas baseadas em tempo. Tradicionalmente, Unix e sistemas derivados oferecem a ferramenta `date` que permite a manipulação de datas de formas variadas.
 
 Alternativas incluem comandos como `at` e `cron` para agendar tarefas baseadas em datas futuras calculadas, mas `date` é o utilitário mais flexível para cálculos rápidos. Quanto à implementação, o Bash utiliza internamente funções de C do sistema operacional para calcular as datas, sendo relativamente precisas e confiáveis.
@@ -42,7 +37,6 @@ Alternativas incluem comandos como `at` e `cron` para agendar tarefas baseadas e
 Por fim, é importante entender as diferenças de fuso horário e como o verão (DST) pode afetar o cálculo de datas. Para programas mais complexos, ferramentas como `date` podem não ser suficientes, recomendando-se linguagens de programação com bibliotecas de gerenciamento de data e hora mais robustas.
 
 ## Veja Também
-
 - Manual do Bash (`man bash`) para mais informações de scripting: https://www.gnu.org/software/bash/manual/
 - Documentação da ferramenta `date`: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
 - Guia de agendamento de tarefas com `cron` e `at`: https://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/

@@ -17,9 +17,6 @@ title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---
 
-## Cái gì & Tại sao?
-Phân tích cú pháp HTML trong Google Apps Script bao gồm việc trích xuất dữ liệu từ nội dung HTML, điều này đặc biệt hữu ích khi tương tác với các trang web hoặc nguồn dữ liệu dựa trên web. Các lập trình viên làm điều này để tự động hóa việc thu thập dữ liệu, thao tác nội dung web hoặc tích hợp chức năng web với các ứng dụng Google như Sheets và Docs.
-
 ## Làm sao:
 Google Apps Script không có phương thức sẵn có để phân tích cú pháp HTML. Tuy nhiên, bạn có thể tận dụng dịch vụ `UrlFetchApp` để lấy nội dung HTML và sau đó sử dụng các phương thức JavaScript hoặc regex (biểu thức chính quy) để phân tích cú pháp. Dưới đây là một ví dụ cơ bản về cách lấy và phân tích cú pháp thẻ title từ một trang web.
 

@@ -10,9 +10,6 @@ title: Creating a temporary file
 weight: 21
 ---
 
-## What & Why?
-Creating a temporary file is the process of making a short-lived file for intermediate data storage. Programmers use them for things like caching, data processing, or when it's better not to clutter permanent storage.
-
 ## How to:
 Clojure makes it simple. The `clojure.java.io` library has your back.
 

@@ -10,9 +10,6 @@ title: "C\xE1lculo de una fecha en el futuro o el pasado"
 weight: 26
 ---
 
-## ¿Qué & Por Qué?
-Calcular una fecha en el futuro o pasado en Bash es el proceso de añadir o sustraer días a una fecha actual. Los programadores hacen esto para automatizar recordatorios, vencimientos o verificar intervalos de tiempo en scripts.
-
 ## Cómo Hacerlo:
 Aquí hay ejemplos de cómo calcular fechas en el futuro o pasado:
 

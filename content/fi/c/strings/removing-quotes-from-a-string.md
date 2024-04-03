@@ -14,12 +14,7 @@ title: Lainausmerkkien poistaminen merkkijonosta
 weight: 9
 ---
 
-## Mikä & Miksi?
-
-Merkkijonosta lainausmerkit poistaminen C-kielessä tarkoittaa tekstisisällön erottamista ilman ympäröiviä yksittäisiä (' ') tai kaksois (" ") lainausmerkkejä. Tämä prosessi on olennainen syötetietojen puhdistamiseksi, tiedostojen sisältöjen jäsentämiseksi tai merkkijonojen valmistamiseksi edelleen käsiteltäväksi tilanteissa, joissa lainausmerkit eivät ole tarpeellisia tai voisivat johtaa virheisiin tietojen käsittelyssä.
-
 ## Miten:
-
 Lainausmerkkien poistaminen merkkijonosta C-kielessä tapahtuu käymällä merkkijono läpi ja kopioimalla hahmot, jotka eivät ole lainausmerkkejä, uuteen merkkijonoon. Tätä prosessia voidaan räätälöidä poistamaan joko vain johtavat ja päättyvät lainausmerkit tai kaikki merkkijonossa olevat lainausmerkit. Alla on havainnollistava esimerkki, joka osoittaa molemmat lähestymistavat:
 
 ```c
@@ -70,7 +65,6 @@ Reuna lainausmerkit poistettu: Ohjelmointi C-kielessä
 Nämä esimerkit näyttävät, miten käsitellä sekä kaikkien merkkijonossa olevien lainausmerkkien poistoa että vain johtavien ja päättyvien lainausmerkkien kohdennettua poistoa.
 
 ## Syvä sukellus
-
 Käsitys lainausmerkkien poistamisesta merkkijonoista ei omaa merkittävää historiallista syvyyttä C:ssä, paitsi sen yhteydet varhaiseen tekstinkäsittelyn tarpeeseen. Täällä esitelty suoraviivainen lähestymistapa on monikäyttöinen, mutta se ei ole tehokas erittäin suurille merkkijonoille tai korkean suorituskyvyn vaatimuksille, joissa paikan päällä tapahtuva muokkaus tai kehittyneemmät algoritmit saattaisivat olla suositeltavia.
 
 Vaihtoehdot, kuten `strpbrk`-funktion käyttäminen lainausmerkkien löytämiseksi ja lainausmerkeittömän osan merkkijonon siirtämiseki, voivat olla tehokkaampia, mutta edellyttävät syvällisempää ymmärrystä osoittimista ja muistinhallinnasta C:ssä. Lisäksi säännöllisiä lausekkeita käsittelevien kirjastojen ilmestyminen on tarjonnut voimakkaan työkalupakin merkkijonojen käsittelyyn, mukaan lukien lainausmerkkien poisto. Kuitenkin nämä kirjastot, vaikka ovatkin tehokkaita, lisäävät monimutkaisuutta ja lisäkustannuksia, jotka eivät ehkä ole tarpeellisia yksinkertaisemmissa tehtävissä. Niinpä suoraan lähestymistapaan, kuten näytetty, pysyy arvokkaana taitona C-ohjelmoijille, yhdistellen yksinkertaisuutta tehokkuuden kanssa monissa yleisissä käyttötarkoituksissa.

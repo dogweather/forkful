@@ -13,9 +13,6 @@ title: Analisando uma data a partir de uma string
 weight: 30
 ---
 
-## O Que & Por Quê?
-Analisar uma data a partir de uma string em Dart envolve a conversão da representação textual de datas e horas em um objeto `DateTime`. Essa operação é essencial para aplicações que lidam com agendamento, análise de dados ou qualquer recurso que exija manipulação de datas, garantindo que os dados relacionados a datas sejam corretamente entendidos e processados pelo programa.
-
 ## Como Fazer:
 A biblioteca principal do Dart simplifica a análise de datas através da classe `DateTime`. Para casos diretos em que você conhece o formato da string de data, você pode usar o método `DateTime.parse()`. No entanto, para cenários mais complexos ou ao lidar com múltiplos formatos, o pacote `intl`, especificamente a classe `DateFormat`, torna-se inestimável.
 

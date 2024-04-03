@@ -12,9 +12,6 @@ title: Trabajando con CSV
 weight: 37
 ---
 
-## ¿Qué y por qué?
-Trabajar con archivos CSV (Valores Separados por Comas) se trata de leer y escribir en archivos de texto plano que almacenan datos tabulares. Los programadores hacen esto para habilitar el intercambio de datos entre diferentes programas, sistemas, o para procesar grandes conjuntos de datos de manera eficiente y en un formato legible por humanos.
-
 ## Cómo hacerlo:
 Rust, con su enfoque en seguridad y rendimiento, ofrece excelentes crates (bibliotecas) para tratar con archivos CSV, siendo `csv` el más popular. También necesitarás `serde` para serializar y deserializar datos.
 
@@ -27,7 +24,6 @@ serde = { version = "1.0", features = ["derive"] }
 ```
 
 ### Leyendo CSV
-
 Para leer un archivo CSV, define una estructura que represente tus datos y deriva `Deserialize` de `serde`:
 
 ```rust
@@ -70,7 +66,6 @@ Record { city: "New York", state: "NY", population: 8336817 }
 ```
 
 ### Escribiendo en CSV
-
 Para escribir en un archivo CSV, define una estructura y deriva `Serialize`:
 
 ```rust

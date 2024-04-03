@@ -13,16 +13,10 @@ title: Arbeta med CSV
 weight: 37
 ---
 
-## Vad & Varför?
-
-Att jobba med CSV (Comma Separated Values)-filer innebär att tolka och generera textfiler där varje rad innehåller värden separerade av kommatecken. Programmerare gör detta för att möjliggöra datautbyte mellan olika applikationer eller för att underlätta datalagring i ett lättöverskådligt, människo-läsbart format.
-
 ## Hur man gör:
-
 För att hantera CSV-filer i Dart, brukar man antingen manuellt bearbeta texten eller använda tredjepartsbibliotek för att förenkla uppgiften. Här kommer vi att titta på båda metoder.
 
 ### Manuell tolkning av CSV
-
 Om dina behov är enkla, kan du välja att manuellt tolka en CSV-sträng. Detta kan uppnås med hjälp av Darts kärnsträngmanipuleringsfunktioner:
 
 ```dart
@@ -55,7 +49,6 @@ void main() {
 ```
 
 ### Använda ett tredjepartsbibliotek: `csv`
-
 För mer komplexa scenarier eller för att förenkla din kod, kan du använda ett populärt tredjepartsbibliotek som `csv`. Lägg först till det i ditt projekt genom att inkludera `csv: ^5.0.0` (eller senaste versionen) i din `pubspec.yaml`-fil under `dependencies`. Använd det sedan enligt följande:
 
 ```dart

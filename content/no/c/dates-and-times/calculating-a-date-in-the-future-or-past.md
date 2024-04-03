@@ -14,9 +14,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## Hva & Hvorfor?
-Å beregne en dato i fremtiden eller fortiden innebærer å bestemme en spesifikk dato ved å legge til eller trekke fra et visst antall dager, måneder eller år fra en gitt dato. Programmerere gjør dette for oppgaver som å planlegge arrangementer, generere påminnelser eller håndtere utløpsdatoer, noe som gjør det til en essensiell funksjonalitet i ulike applikasjoner, fra kalendersystemer til finansiell programvare.
-
 ## Hvordan:
 Selv om C-standardbiblioteket ikke tilbyr direkte funksjoner for datumsaritmetikk, kan du manipulere datoer ved hjelp av `time.h`-biblioteket, spesifikt ved å arbeide med datatypen `time_t` og `struct tm`. Her er et forenklet eksempel på hvordan du legger til dager på dagens dato:
 

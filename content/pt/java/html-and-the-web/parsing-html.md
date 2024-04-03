@@ -13,12 +13,7 @@ title: Analisando HTML
 weight: 43
 ---
 
-## O Que & Porquê?
-
-Analisar HTML significa vasculhar a marcação para extrair dados como texto, links ou outros elementos. Fazemos isso para interagir com ou raspar conteúdo da web, automatizar tarefas de navegação ou testar aplicativos web.
-
 ## Como Fazer:
-
 Vamos usar o Jsoup, uma biblioteca prática para trabalhar com HTML do mundo real. Primeiro, adicione a dependência:
 
 ```xml
@@ -65,7 +60,6 @@ for (Element link : links) {
 ```
 
 ## Aprofundamento
-
 Houve um tempo em que o HTML era domado por padrões de regex, um método tanto propenso a erros quanto pesadeloso para documentos complexos. Então chegou o Jsoup no final dos anos 2000, fornecendo uma interface semelhante à jQuery para Java para analisar, percorrer e manipular HTML.
 
 O Jsoup não é a única escolha. Há o HtmlUnit para testes completos de aplicativos web com suporte a JavaScript, mas é mais pesado e complexo. Para tarefas leves, o Apache Commons Validator é ótimo apenas para extrair URLs.
@@ -75,7 +69,6 @@ Por baixo do capô, o Jsoup usa um parser DOM, que modela todo o documento na me
 Lembre-se, ao raspar, sempre verifique o `robots.txt` do site e os termos de serviço para evitar problemas legais ou ser banido pelo IP.
 
 ## Veja Também
-
 - Documentação Oficial do Jsoup: https://jsoup.org/
 - HtmlUnit: http://htmlunit.sourceforge.net/
 - Apache Commons Validator: https://commons.apache.org/proper/commons-validator/

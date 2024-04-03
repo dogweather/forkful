@@ -14,12 +14,7 @@ title: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## Co i dlaczego?
-
-Konwersja ciągów znaków na małe litery w Google Apps Script, chmurowym języku skryptowym do automatyzacji zadań w produktach Google, jest podstawowym zadaniem mającym na celu standaryzację danych tekstowych. Programiści często wykonują tę akcję, aby zapewnić spójność w danych wejściowych użytkownika, przetwarzaniu danych lub przy porównywaniu ciągów znaków, ponieważ eliminuje to problemy związane z uwzględnieniem wielkości liter.
-
 ## Jak to zrobić:
-
 Konwersja ciągów znaków na małe litery w Google Apps Script jest prosta, dzięki wbudowanym metodom JavaScript dostępnym w środowisku skryptowym. Metoda `toLowerCase()` to coś, czego będziesz głównie używać. Oto jak możesz ją zaimplementować:
 
 ```javascript
@@ -49,7 +44,6 @@ function convertArrayItemsToLower() {
 Ten przykład podkreśla wszechstronność `toLowerCase()` podczas pracy z wieloma danymi tekstowymi, zapewniając jednolitość w całym zestawie danych.
 
 ## Szczegółowa analiza
-
 Metoda `toLowerCase()`, odziedziczona z JavaScript i wykorzystywana w Google Apps Script, była integralną częścią manipulacji ciągami znaków od wczesnych wersji JavaScript. Jej głównym celem jest pomoc w niewrażliwym na wielkość liter obsługiwaniu danych tekstowych, potrzeba, która pojawiła się wraz z pojawieniem się dynamicznych, interaktywnych aplikacji internetowych. Pomimo swojej prostoty, mechanizm ten odgrywa kluczową rolę w walidacji danych, sortowaniu i algorytmach wyszukiwania, redukując złożoność wprowadzoną przez uwzględnienie wielkości liter.
 
 Pod względem wydajności proces konwersji jest wysoko optymalizowany w nowoczesnych silnikach JavaScript; jednak jego zastosowanie powinno być nadal roztropne w dużych operacjach na danych, aby uniknąć niepotrzebnego narzutu przetwarzania.

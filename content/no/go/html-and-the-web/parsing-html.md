@@ -14,12 +14,7 @@ title: Analysering av HTML
 weight: 43
 ---
 
-## Hva & Hvorfor?
-
-Parsing av HTML i Go innebærer å analysere innholdet i HTML-filer for å ekstrahere data, manipulere strukturen, eller for å konvertere HTML til andre formater. Programmerere gjør dette for web scraping, templating, og datautvinning, ved å utnytte de sterke samtidighetsfunksjonene til Go for effektiv behandling av store mengder nettsider.
-
 ## Hvordan:
-
 For å parse HTML i Go, bruker du vanligvis `goquery`-pakken eller standard bibliotekets `net/html`-pakke. Her er et grunnleggende eksempel som bruker `net/html` for å trekke ut alle lenker fra en nettside:
 
 ```go
@@ -76,7 +71,6 @@ http://www.iana.org/domains/reserved
 Denne koden forespør en HTML-side, parser den, og traverserer rekursivt DOM for å finne og skrive ut `href`-attributter av alle `<a>`-tagger.
 
 ## Dypdykk
-
 `net/html`-pakken gir grunnleggende verktøy for parsing av HTML i Go, ved direkte implementering av tokeniserings- og trebygningsalgoritmer spesifisert av HTML5-standarden. Denne lavnivåtilnærmingen er kraftig, men kan være ordrik for komplekse oppgaver.
 
 I kontrast tilbyr den eksterne `goquery`-pakken, inspirert av jQuery, et høyere nivå grensesnitt som forenkler DOM-manipulasjon og -traversering. Den lar utviklere skrive kortfattet og uttrykksfull kode for oppgaver som elementvalg, attributtekstraksjon og innholdsmanipulasjon.

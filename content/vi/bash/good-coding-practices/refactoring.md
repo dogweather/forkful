@@ -15,9 +15,6 @@ title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---
 
-## Cái gì & Tại sao?
-Refactoring là quá trình cơ cấu lại mã máy tính hiện có mà không thay đổi hành vi bên ngoài của nó. Đây là thực hành quan trọng nhằm giảm bớt độ phức tạp, cải thiện khả năng bảo trì, và giữ cho mã nguồn của bạn luôn khỏe mạnh và dễ hiểu hơn cho cả nhà phát triển hiện tại và tương lai.
-
 ## Làm cách nào:
 Hãy xem xét một đoạn script Bash đơn giản cần được refactoring. Nó cồng kềnh, với mã lặp lại và khó theo dõi:
 ```Bash

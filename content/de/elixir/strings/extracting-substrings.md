@@ -10,9 +10,6 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## Was & Warum?
-Das Extrahieren von Teilstrings bedeutet, spezifische Abschnitte eines Strings zu isolieren. Programmierer machen das, um Daten zu manipulieren, zu analysieren oder zu validieren.
-
 ## So geht's:
 ```elixir
 string = "Hallo, Welt!"

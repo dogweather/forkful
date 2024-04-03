@@ -11,12 +11,7 @@ title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---
 
-## What & Why? (Co i Dlaczego?)
-
-Wyodrębnianie podciągów to działanie polegające na przywłaszczeniu sobie części stringu. Programiści robią to, aby pracować tylko z tymi złotymi kawałkami danych, które są dla nich w danej chwili potrzebne.
-
 ## How to (Jak to zrobić):
-
 ```Rust
 fn main() {
     let text = "Jak to zrobić w Rust?";
@@ -42,11 +37,9 @@ fn main() {
 Wskazówka: Uważaj na Unicode! `chars()` iteruje po wartościach znaków, a nie po bajtach.
 
 ## Deep Dive (Głębsze nurkowanie):
-
 Historia czasami wpływa na to, jak kodujemy. Rust został stworzony, by zarządzać pamięcią bezpiecznie i efektywnie. Znane są metody `.slice()`, które omijały te cechy Rusta, ale z czasem metody te zostały zamienione na bardziej bezpieczne `get()` i iteratory.
 
 Jeśli chodzi o alternatywy, istnieje także crate `regex` dla przypadków wymagających bardziej skomplikowanego wyszukiwania. Implementacja jest ważna z powodu sposobu, w jaki Rust obsługuje stringi jak ciągi bajtów, a nie ciągi znaków, co ma znaczenie dla Unicode. Slices pozwalają na łatwe wyodrębnianie, ale należy pamiętać o granicach kodowania znaków.
 
 ## See Also (Zobacz także):
-
 - Oficjalna dokumentacja String i str w Rust: [std::string](https://doc.rust-lang.org/std/string/index.html), [std::str](https://doc.rust-lang.org/std/str/)

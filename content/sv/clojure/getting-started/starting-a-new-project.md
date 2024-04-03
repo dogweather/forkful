@@ -11,9 +11,6 @@ title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---
 
-## Vad & Varför?
-Starta ett nytt projekt innebär att skapa en ny bas där din kod kan växa och utvecklas. Programmerare gör det för att omvandla idéer till körbar kod som löser problem eller skapar värde.
-
 ## Hur man gör:
 För att kickstarta ett Clojure-projekt använder vi Leiningen, en populär byggautomatisering och projektledningsverktyg för Clojure.
 

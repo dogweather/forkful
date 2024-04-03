@@ -11,9 +11,6 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## What & Why? (Co i dlaczego?)
-Łączenie łańcuchów to po prostu sklejanie słów lub zdań, aby tworzyć nowe ciągi znaków. Programiści robią to, by tworzyć komunikaty, dynamiczne treści albo przetwarzać teksty.
-
 ## How to: (Jak to zrobić?)
 C++ oferuje kilka sposobów na łączenie łańcuchów znaków. Spójrzmy na przykłady:
 

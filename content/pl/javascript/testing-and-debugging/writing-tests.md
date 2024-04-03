@@ -15,14 +15,10 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i dlaczego?
-
-Pisanie testów w JavaScript odnosi się do praktyki tworzenia automatycznych skryptów, które uruchamiają twój kod, aby upewnić się, że działa on zgodnie z oczekiwaniami, co może znacznie poprawić niezawodność i możliwość utrzymania aplikacji. Programiści robią to, aby wychwycić błędy na wczesnym etapie, ułatwić refaktoryzację kodu i zapewnić, że nowe funkcje nie zakłócą istniejącej funkcjonalności.
-
 ## Jak to zrobić:
 
-### Natywne podejście (używając Jest)
 
+### Natywne podejście (używając Jest)
 Jest to popularne narzędzie do testowania, które dostarcza przyjazne API do pisania testów jednostkowych w JavaScript. Wymaga minimalnej konfiguracji i oferuje funkcje takie jak atrapy funkcji, timery i testowanie migawek.
 
 1. **Instalacja**:
@@ -57,7 +53,6 @@ PASS  ./sum.test.js
 ```
 
 ### Testowanie kodu asynchronicznego
-
 Jest ułatwia testowanie obietnic i składni async/await:
 
 ```javascript
@@ -74,7 +69,6 @@ test('asynchroniczne dodawanie działa', async () => {
 ```
 
 ### Użycie bibliotek stron trzecich (Mocha & Chai)
-
 Mocha to kolejne popularne narzędzie do testowania, często używane z biblioteką asercji Chai dla bardziej ekspresyjnych testów.
 
 1. **Instalacja**:

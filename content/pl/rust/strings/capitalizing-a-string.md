@@ -15,16 +15,10 @@ title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---
 
-## Co i dlaczego?
-
-Zmiana pierwszej litery ciągu znaków na wielką w języku Rust polega na modyfikacji ciągu tak, aby jego pierwszy znak był dużą literą, jeśli jest literą, pozostawiając resztę ciągu bez zmian. Programiści często wykonują tę operację w celach formatowania, takich jak przygotowanie słów do tytułów czy zapewnienie spójności w danych wprowadzanych przez użytkownika.
-
 ## Jak to zrobić:
-
 Aby zamienić pierwszą literę ciągu na wielką w Rust, masz dwie główne drogi: używanie funkcji biblioteki standardowej lub korzystanie z zewnętrznych crate'ów dla bardziej złożonych lub specyficznych potrzeb. Oto jak możesz to zrobić oboma sposobami.
 
 ### Korzystanie z biblioteki standardowej Rust
-
 Biblioteka standardowa Rust nie oferuje bezpośredniej metody na zamianę ciągów na ciągi z pierwszą wielką literą, ale możesz tego dokonać, manipulując znakami ciągu.
 
 ```rust
@@ -43,7 +37,6 @@ fn main() {
 ```
 
 ### Korzystając z crate'a `heck`
-
 Dla bardziej bezpośredniego podejścia, szczególnie gdy pracujesz w szerszym kontekście przetwarzania tekstu, możesz preferować korzystanie z zewnętrznych bibliotek, takich jak `heck`. Crate `heck` oferuje różne funkcjonalności konwersji przypadków, w tym prosty sposób na zmianę ciągów na ciągi z pierwszą wielką literą.
 
 Najpierw dodaj `heck` do swojego `Cargo.toml`:

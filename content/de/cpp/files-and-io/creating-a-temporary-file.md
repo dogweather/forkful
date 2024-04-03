@@ -11,9 +11,6 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-## Was & Warum?
-Ein temporäres File ist eine kurzlebige Datei, die während der Ausführung eines Programms erstellt und oft danach gelöscht wird. Programmierer nutzen sie für Datenhaltung, die nur während einer Session gebraucht wird – etwa für Zwischenergebnisse oder als Backup.
-
 ## How to:
 ```C++
 #include <cstdio>     // Für tmpfile() und fclose()

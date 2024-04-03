@@ -10,12 +10,7 @@ title: Scaricare una pagina web
 weight: 42
 ---
 
-## What & Why? (Cos'è e Perché?)
-
-Scaricare una pagina web significa recuperarne i contenuti via HTTP per usarli in una app. I programmatori lo fanno per accedere a dati dinamici, integrare servizi esterni, e alimentare le applicazioni con contenuti aggiornati.
-
 ## How to: (Come fare:)
-
 In Elm, usare `Http` per scaricare una pagina web è diretto. Creiamo una richiesta e gestiamo la risposta.
 
 ```Elm
@@ -64,10 +59,8 @@ view model =
 Il codice sopra inizializza una richiesta al caricamento dell'app e visualizza il contenuto scaricato o un errore.
 
 ## Deep Dive (Approfondimento)
-
 Elm rende il download di pagine web sicuro e gestibile. La versione attuale, 0.19.1, continua a utilizzare `Http` dalla 0.18, ma con miglioramenti. In alternativa, si potrebbe usare JavaScript, ma perdendo i benefici della tipizzazione forte di Elm. I dettagli sull'implementazione riguardano principalmente la gestione degli errori e degli effetti, affrontando la natura asincrona delle richieste HTTP.
 
 ## See Also (Vedi anche)
-
 - Elm `Http` package: [package.elm-lang.org/packages/elm/http/latest](https://package.elm-lang.org/packages/elm/http/latest)
 - Elm JSON Decode: [guide.elm-lang.org/interop/json.html](https://guide.elm-lang.org/interop/json.html)

@@ -15,11 +15,7 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---
 
-## Gì & Tại Sao?
-Gửi một yêu cầu HTTP giống như gõ cửa một máy chủ web, yêu cầu dữ liệu hoặc phục vụ một số dữ liệu. Lập trình viên làm điều này để tương tác với các API, tải nội dung, hoặc liên lạc với các dịch vụ khác.
-
 ## Cách thực hiện:
-
 Swift giúp việc gửi yêu cầu HTTP trở nên dễ dàng thông qua lớp `URLSession`. Dưới đây là một ví dụ đơn giản về yêu cầu GET:
 
 ```Swift
@@ -94,7 +90,6 @@ Các lựa chọn thay thế cho `URLSession` bao gồm các thư viện bên th
 Một chi tiết cài đặt cần lưu ý là các yêu cầu mạng một cách tự nhiên là bất đồng bộ trong Swift. Chúng chạy ở chế độ nền, cho phép ứng dụng tiếp tục phản hồi. Khi có phản hồi trả về, một bộ xử lý hoàn thành được gọi. Rất quan trọng để xử lý quản lý luồng đúng cách, đặc biệt là khi cập nhật giao diện người dùng, điều này phải xảy ra trên luồng chính.
 
 ## Xem thêm:
-
 - [URLSession | Tài liệu cho Nhà phát triển Apple](https://developer.apple.com/documentation/foundation/urlsession)
 - [Làm việc với JSON trong Swift](https://developer.apple.com/swift/blog/?id=37)
 - [Kho lưu trữ GitHub của Alamofire](https://github.com/Alamofire/Alamofire)

@@ -13,9 +13,6 @@ title: Analysering av HTML
 weight: 43
 ---
 
-## Hva & Hvorfor?
-Å parse HTML betyr å bryte ned HTML-innhold til noe et program kan forstå og manipulere. Utviklere gjør dette for å trekke ut data, manipulere innhold eller integrere web scraping i applikasjonene sine.
-
 ## Hvordan:
 C++ kommer ikke med innebygd funksjonalitet for parsing av HTML. Du vil ofte bruke et bibliotek som Gumbo-parser fra Google, eller noe lignende. Her er et raskt eksempel ved bruk av Gumbo-parser:
 

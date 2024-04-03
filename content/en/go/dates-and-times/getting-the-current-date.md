@@ -10,12 +10,7 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-
-Getting the current date in Go is a fundamental task for programmers, akin to "Hello, World!" in its ubiquity. It's essential for tasks ranging from logging and time-stamping events to calculating durations and scheduling future events.
-
 ## How to:
-
 In Go, the `time` package is your gateway to working with dates and times. The `time.Now()` function gives you the current date and time, while other functions and methods allow you to format or manipulate this data. Here's how to get the current date and its various representations:
 
 ```go
@@ -54,7 +49,6 @@ Weekday: Tuesday
 Notice how `Format` uses a specific date (2006-01-02) as the layout string. This is Go's chosen reference date, serving as a mnemonic pattern for formatting dates.
 
 ## Deep Dive
-
 The decision to use the `time` package for date and time manipulation in Go reflects the language's dedication to robust and intuitive standard libraries. Unlike some languages that may have multiple competing libraries or methodologies for date manipulation, Go prioritizes having a single, well-documented standard.
 
 The peculiar choice of the reference date (`Mon Jan 2 15:04:05 MST 2006`) in Go's time formatting, while initially confusing, is actually a masterstroke in usability. It allows programmers to represent date and time formats using an example-based approach, as opposed to memorizing tokens or symbols that other languages might use.

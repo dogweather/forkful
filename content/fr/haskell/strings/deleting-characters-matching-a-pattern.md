@@ -11,12 +11,7 @@ title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-
-Supprimer des caractères correspondant à un motif consiste à enlever de notre texte des séquences spécifiques de caractères. On le fait souvent pour nettoyer des données ou simplifier une chaîne de traitement.
-
 ## How to: (Comment faire :)
-
 ```haskell
 import Data.List (delete)
 
@@ -52,7 +47,6 @@ main = do
 ```
 
 ## Deep Dive (Plongée en Profondeur)
-
 Historiquement, le traitement de chaînes de caractères a toujours été une part importante de la programmation. Dans Haskell, les chaînes sont des listes de caractères, donc la manipulation de chaîne s'appuie sur des fonctions puissantes pour les listes. En dehors de l'approche manuelle avec des fonctions comme `filter`, Haskell peut utiliser des bibliothèques comme `Text.Regex.Posix` pour les expressions régulières, ce qui offre un outil plus robuste pour des motifs complexes.
 
 Alternativement, pour des buts plus spécifiques, on pourrait se tourner vers les parsers combinator library comme `Parsec` ou `Attoparsec`, qui fournissent une analyse approfondie et un contrôle des chaînes de caractères.
@@ -60,7 +54,6 @@ Alternativement, pour des buts plus spécifiques, on pourrait se tourner vers le
 En termes de performance, Haskell est paresseux (lazy evaluation), ce qui signifie que les transformations de chaînes ne sont calculées que lorsque c'est absolument nécessaire. C'est utile pour les grandes données ou les streams.
 
 ## See Also (Voir Aussi)
-
 - [Hackage: regex-posix](https://hackage.haskell.org/package/regex-posix)
 - [Hackage: Parsec](https://hackage.haskell.org/package/parsec)
 - [Hackage: Attoparsec](https://hackage.haskell.org/package/attoparsec)

@@ -15,9 +15,6 @@ title: "Znajdowanie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w"
 weight: 7
 ---
 
-## Co i dlaczego?
-Znalezienie długości łańcucha znaków w Google Apps Script, języku skryptowym JavaScript dla chmury, który pozwala na automatyzację zadań w produktach Google, dotyczy określenia liczby znaków zawartych w ciągu znaków. Programiści często wykonują tę operację, aby zweryfikować dane wejściowe, iterować przez znaki lub manipulować ciągami znaków w różnych zadaniach automatyzacji w aplikacjach Google.
-
 ## Jak to zrobić:
 W Google Apps Script możesz znaleźć długość ciągu znaków, używając właściwości `.length`, podobnie jak w JavaScript. Ta właściwość zwraca liczbę znaków w ciągu, łącznie z odstępami i znakami specjalnymi. Oto kilka przykładów:
 

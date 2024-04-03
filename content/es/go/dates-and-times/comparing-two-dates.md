@@ -13,12 +13,7 @@ title: Comparando dos fechas
 weight: 27
 ---
 
-## ¿Qué y por qué?
-
-Comparar dos fechas en programación es una tarea fundamental que permite a los desarrolladores evaluar la relación cronológica entre las fechas. Tales comparaciones son la base de funcionalidades como determinar duraciones, programar tareas y validar rangos de fechas, lo que es crucial para aplicaciones que dependen de la lógica temporal.
-
 ## Cómo hacerlo:
-
 En Go, las fechas se manejan principalmente con el tipo `time.Time` del paquete `time`. Para comparar dos fechas, podemos usar métodos como `Before()`, `After()` y `Equal()` proporcionados por el tipo `time.Time`. Profundicemos en ejemplos que ilustran cómo comparar dos fechas:
 
 ```go
@@ -55,7 +50,6 @@ April 1, 2023 es antes de April 15, 2023
 Este programa demuestra cómo analizar fechas desde cadenas, un requisito común, y luego comparar las fechas usando los métodos `Before()`, `After()` y `Equal()`. El método `time.Parse()` se usa aquí con la cadena de formato `"2006-01-02"`, que es el formato de fecha de referencia de Go.
 
 ## Profundización
-
 En el lenguaje de programación Go, el diseño del paquete `time`, incluyendo el tipo `time.Time`, encarna la filosofía de proporcionar una biblioteca estándar simple, pero potente. Los métodos de comparación `Before()`, `After()` y `Equal()` hacen que las comparaciones de fechas no solo sean sencillas sino también legibles, reflejando el énfasis de Go en el código claro y conciso.
 
 Históricamente, el manejo de fechas y horas en lenguajes de programación ha estado lleno de complejidades debido a variaciones en zonas horarias, segundos intercalares y sistemas de calendario. El paquete `time` de Go es un intento de ofrecer una solución integral, aprendiendo de las trampas y éxitos de las implementaciones de fecha y hora en otros lenguajes.

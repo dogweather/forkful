@@ -14,12 +14,7 @@ title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---
 
-## Vad & Varför?
-
-Att versalisera en sträng innebär att omvandla det inledande tecknet i en given sträng till versal medan resten behålls i gemener, ofta för standardiserad formatering eller läsbarhet. Programmerare utför ofta denna uppgift för att säkerställa att data presenteras konsekvent, särskilt i användargränssnitt eller när man bearbetar och visar användarinmatning.
-
 ## Hur gör man:
-
 I Elm finns ingen inbyggd funktion specifikt för att versalisera strängar. Dock kan du enkelt uppnå detta genom att använda de inbyggda funktionerna i `String`-modulen som `toUpper`, `toLower`, `left` och `dropLeft`.
 
 ```elm

@@ -11,9 +11,6 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## What & Why? (Mitä & Miksi?)
-Stringien yhdistely eli konkatenointi tarkoittaa tekstijonojen liittämistä yhteen. Sitä käytetään, koska usein haluat muodostaa dynaamisia tekstejä, kuten käyttäjänimen tervehdyksiä, tai yhdistellä muuttujien arvoja loogisiksi lauseiksi.
-
 ## How to: (Miten:)
 ```PHP
 <?php

@@ -12,9 +12,6 @@ title: Een string met hoofdletters maken
 weight: 2
 ---
 
-## Wat & Waarom?
-Een string kapitaliseren betekent dat je de eerste letter hoofdletter maakt en de rest kleine letters. We doen dit om gegevens te normaliseren en de leesbaarheid te verbeteren, zoals het veranderen van 'alice' in 'Alice' voor namen.
-
 ## Hoe te:
 In Clojure is er geen ingebouwde functie om strings direct te kapitaliseren. Je maakt er zelf een met de `clojure.string` bibliotheek. Hier is een snelle manier:
 

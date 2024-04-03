@@ -14,12 +14,7 @@ title: Obteniendo la fecha actual
 weight: 29
 ---
 
-## ¿Qué y Por Qué?
-
-Obtener la fecha actual en la programación es una tarea crucial para una multitud de aplicaciones, incluyendo el registro de actividades, la estampación de tiempo en eventos o la programación de tareas. En Lua, esta funcionalidad permite a los programadores manejar operaciones de fecha y hora sin problemas dentro de sus aplicaciones, asegurando que su software pueda interactuar con datos en tiempo real de manera efectiva.
-
 ## Cómo hacerlo:
-
 Lua proporciona la función `os.date` para obtener la fecha y hora actuales. La función se puede usar sin argumentos para obtener una cadena formateada o con especificadores de formato para personalizar la salida. Así es cómo usarla:
 
 ```lua

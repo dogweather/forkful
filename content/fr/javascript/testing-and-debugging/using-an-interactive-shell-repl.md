@@ -13,9 +13,6 @@ title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---
 
-## Quoi & Pourquoi ?
-Les coquilles interactives, ou REPLs (Read-Eval-Print Loops, Boucles de Lecture-Évaluation-Affichage), vous permettent d'exécuter du code à la volée, de tester des fonctions, des algorithmes, ou de jouer avec des idées. Elles sont les blocs-notes du codage, rapides et peu soignés, sans installer un environnement de développement complet.
-
 ## Comment faire :
 Node.js est livré avec un REPL accessible via le terminal. Ouvrez-le, et vous êtes prêt à démarrer. Voici un avant-goût :
 

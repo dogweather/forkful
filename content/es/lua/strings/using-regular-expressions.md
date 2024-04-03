@@ -13,16 +13,10 @@ title: Usando expresiones regulares
 weight: 11
 ---
 
-## ¿Qué y Por Qué?
-
-Las expresiones regulares en la programación permiten la búsqueda y manipulación de cadenas basadas en patrones específicos. Los programadores las utilizan en tareas como validación, búsqueda y manipulación de texto debido a su versatilidad y eficiencia para manejar operaciones complejas con cadenas.
-
 ## Cómo hacerlo:
-
 Lua no admite expresiones regulares de manera nativa de la misma forma que lenguajes como Perl o Python. En su lugar, ofrece capacidades de coincidencia de patrones que cubren muchos casos de uso comunes de las expresiones regulares. Sin embargo, para obtener soporte completo de expresiones regulares, se puede usar una biblioteca de terceros como `lrexlib`.
 
 ### Coincidencia de Patrones Básica en Lua:
-
 Lua proporciona un sistema de coincidencia de patrones poderoso que puedes utilizar para sustituciones y búsquedas simples:
 
 ```lua
@@ -40,7 +34,6 @@ print(s)
 ```
 
 ### Capturando Subcadenas:
-
 Puedes capturar partes de la cadena que coincidan con patrones:
 
 ```lua
@@ -51,7 +44,6 @@ print("Día:", d, "Mes:", m, "Año:", a)
 ```
 
 ### Usando `lrexlib` para Expresiones Regulares:
-
 Para usar expresiones regulares reales, puedes instalar y usar `lrexlib`. Suponiendo que lo tengas instalado (`luarocks install lrexlib-pcre`), puedes realizar coincidencias de patrones más complejas:
 
 ```lua

@@ -10,9 +10,6 @@ title: Confronto tra due date
 weight: 27
 ---
 
-## What & Why? (Cosa & Perché?)
-Comparare due date significa verificare se sono uguali, quale precede l'altra o calcolare la differenza tra di loro. I programmatori lo fanno per organizzare eventi, filtrare dati o per funzionalità legate al tempo come reminder o scadenze.
-
 ## How to: (Come fare:)
 ```Elm
 import Time

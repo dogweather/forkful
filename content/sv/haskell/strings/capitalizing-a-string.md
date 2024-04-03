@@ -13,9 +13,6 @@ title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---
 
-## Vad & Varför?
-Att förstora en sträng innebär att omvandla den första bokstaven i en given sträng till versal medan resten av bokstäverna förblir gemener. Programmerare gör detta för att formatera utdata, följa grammatisk korrekthet i texter, eller förbättra läsbarheten av genererade data.
-
 ## Hur man gör:
 I Haskell kan du förstora en sträng med hjälp av standardbiblioteket utan att behöva några tredjepartsbibliotek.
 

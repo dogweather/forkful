@@ -13,12 +13,7 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mikä & Miksi?
-
-Kirjoittaminen standardivirheeseen (stderr) tarkoittaa ohjelmasi virheviestien tai diagnostiikkatulosteiden ohjaamista erilliseen virtaan, joka eroaa standarditulosteesta (stdout). Tämä on olennaista virheiden jäljittämisessä ja lokitiedoissa ilman, että standardituloste sotkeutuu, mikä helpottaa sekä kehittäjien että käyttäjien ymmärtämistä ohjelman tilasta ja ongelmista.
-
 ## Kuinka:
-
 Swiftissä standardivirheeseen kirjoittaminen voidaan suorittaa käyttämällä `FileHandle`-luokkaa suoraa stderr-pääsyä varten. Tässä on yksinkertainen esimerkki:
 
 ```swift

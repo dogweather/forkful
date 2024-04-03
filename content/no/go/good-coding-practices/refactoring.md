@@ -13,12 +13,7 @@ title: Refaktorisering
 weight: 19
 ---
 
-## Hva & Hvorfor?
-
-Refaktorisering i programmering innebærer omstrukturering av eksisterende dataprogramkode - endring av faktoriseringen - uten å endre dens eksterne oppførsel. Programmerere tar på seg denne prosessen for å forbedre kodelesbarheten, redusere kompleksiteten og øke vedlikeholdbarheten, og til slutt gjøre programvaren lettere å forstå og endre.
-
 ## Hvordan:
-
 I Go kan refaktorisering spenne fra enkle kodejusteringer til mer komplekse endringer. La oss starte med et grunnleggende eksempel: forenkling av en opprinnelig Go-funksjon for bedre lesbarhet og effektivitet.
 
 **Før refaktorisering:**
@@ -121,7 +116,6 @@ func main() {
 Refaktorisering for å bruke et grensesnitt (`Logger`) i stedet for en konkret type (`ConsoleLogger`) forbedrer funksjonens fleksibilitet og løsriver databehandlingen fra den spesifikke logg-implementeringen.
 
 ## Dypdykk
-
 Refaktorisering i Go må balansere enkelhet (en av Gos kjernefilosofier) med fleksibiliteten som trengs i store programvareprosjekter. Gitt Gos minimalistiske tilnærming til funksjoner - uten generics (inntil nylig) og med sterk vekt på lesbarhet - leder språket naturlig utviklere mot enklere, mer vedlikeholdbare kode strukturer. Men dette betyr ikke at Go-kode ikke drar nytte av refaktorisering; det betyr at refaktorisering alltid må prioritere klarhet og enkelhet.
 
 Historisk sett førte Gos mangel på visse funksjoner (f.eks. generics før Go 1.18) til kreative, men noen ganger kompliserte løsninger for kodegjenbruk og fleksibilitet, noe som gjorde refaktorisering for abstraksjon til en vanlig praksis. Med introduksjonen av generics i Go 1.18, refaktoriserer nå Go-utviklere gammel kode for å dra nytte av denne funksjonen for bedre typetrygghet og kodegjenbruk, noe som viser den utviklende naturen til refaktoriseringspraksis i Go.

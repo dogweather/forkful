@@ -14,14 +14,10 @@ title: Bestanden ter plekke bewerken met CLI one-liners
 weight: 32
 ---
 
-## Wat & Waarom?
-
-Bestanden ter plaatse bewerken met CLI one-liners in PowerShell gaat over het direct wijzigen van bestanden vanaf de opdrachtregel, zonder de noodzaak om ze in een editor te openen. Deze aanpak bespaart tijd en kan bijzonder handig zijn voor batchverwerking of het automatiseren van repetitieve bewerkingstaken over meerdere bestanden.
-
 ## Hoe te:
 
-### Tekst vervangen in een enkel bestand
 
+### Tekst vervangen in een enkel bestand
 Laten we beginnen met een eenvoudige taak: je wilt alle instanties van "oldtext" vervangen door "newtext" in een bestand genaamd example.txt. Zo zou je dat doen:
 
 ```PowerShell
@@ -31,7 +27,6 @@ Laten we beginnen met een eenvoudige taak: je wilt alle instanties van "oldtext"
 Deze one-liner leest de inhoud, voert de vervanging uit en schrijft de inhoud terug naar het originele bestand.
 
 ### Meerdere bestanden bewerken
-
 Wat als je dezelfde wijziging op meerdere bestanden moet toepassen? Hier is een aanpak met behulp van een lus:
 
 ```PowerShell
@@ -43,7 +38,6 @@ Get-ChildItem *.txt | ForEach-Object {
 Dit fragment vindt alle `.txt` bestanden in de huidige directory en vervangt "oldtext" met "newtext" in elk ervan.
 
 ### Inhoud toevoegen aan het begin of einde van bestanden
-
 Het toevoegen van inhoud kan ook worden gestroomlijnd:
 
 ```PowerShell
@@ -57,7 +51,6 @@ Het toevoegen van inhoud kan ook worden gestroomlijnd:
 Hier, voegen we simpelweg de nieuwe inhoud toe vóór of na de bestaande inhoud en slaan het weer op.
 
 ## Diepere duik
-
 Historisch gezien wordt het ter plaatse bewerken vaker geassocieerd met Unix-tools zoals `sed` en `awk`. PowerShell, als een meer recente nieuwkomer, bevat geen specifieke functie voor ter-plaatse-bewerking standaard. Dit komt deels door de ontwerpfilosofie, die de nadruk legt op het belang van objecten boven tekststromen, in tegenstelling tot Unix-tools die de meeste invoer als tekst behandelen.
 
 Alternatieven voor PowerShell voor deze taak zijn het gebruik van traditionele Unix-tools beschikbaar op Windows via Cygwin of het Windows Subsysteem voor Linux (WSL). Deze tools bieden vaak een beknoptere syntaxis voor het ter plaatse bewerken vanwege hun tekstgerichte ontwerp.

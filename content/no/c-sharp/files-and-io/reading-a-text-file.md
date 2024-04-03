@@ -11,12 +11,7 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## What & Why? (Hva & Hvorfor?)
-
-Å lese en tekstfil i C# betyr at du henter og behandler tekstdata fra en fil. Det er en grunnleggende kompetanse fordi filer ofte inneholder viktige data som konfigurasjon, logger eller brukerdata som apper trenger å lese og tolke.
-
 ## How to: (Slik gjør du:)
-
 Å lese en tekstfil kan gjøres på forskjellige måter. Her er noen korte og enkle metoder:
 
 ```C#
@@ -44,7 +39,6 @@ using (var reader = new StreamReader("path/to/yourfile.txt"))
 Output vil variere avhengig av innholdet i din tekstfil.
 
 ## Deep Dive (Dypdykk)
-
 Historisk sett har tekstfiler vært et sentralt format for lagring av data på grunn av deres enkelhet og menneskelesbarhet. Før XML og JSON var tekstfiler det gå-til valget for konfigurasjonsfiler.
 
 Når det kommer til andre metoder, kan du også bruke `File` klassens asynkrone metoder som `ReadAllTextAsync` for å ikke blokkere hovedtråden. For veldig store filer kan det være effektivt å lese bit for bit med en buffer, slik:
@@ -65,7 +59,6 @@ using (var reader = new StreamReader(stream))
 Denne buffrede metoden unngår stort minneforbruk for veldig store filer.
 
 ## See Also (Se også)
-
 * [Microsoft's official documentation on File and Stream I/O](https://docs.microsoft.com/en-us/dotnet/standard/io/)
 * [Stack Overflow discussion on reading text files in C#](https://stackoverflow.com/questions/tagged/c%23+readfile)
 * [Using StreamReader for efficient text reading](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=net-6.0)

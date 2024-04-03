@@ -12,9 +12,6 @@ title: Een string interpoleren
 weight: 8
 ---
 
-## Wat & Waarom?
-Stringinterpolatie stelt je in staat waarden in een string in te voegen. Het is handig voor het creëren van aangepaste berichten, het automatiseren van commando's en het scripten als een baas.
-
 ## Hoe te:
 Bash strings werken goed samen met variabelen. Laat een variabele in een string vallen met enkele krullende haakjes, en je bent klaar.
 

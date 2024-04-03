@@ -11,11 +11,7 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## Quoi & Pourquoi ?
-Créer un fichier temporaire sur Arduino implique de stocker des données de manière transitoire pendant l'exécution d'un sketch. On le fait souvent pour gérer des données volatiles sans user de la mémoire interne du micro-contrôleur plus que nécessaire.
-
 ## Comment :
-
 ```arduino
 #include <SD.h>
 
@@ -52,7 +48,6 @@ Ecriture dans le fichier temporaire...
 ```
 
 ## Exploration :
-
 Historiquement, la création de fichiers temporaires sur des ordinateurs a servi à conserver des données pendant des processus qui ne pouvaient pas être accomplis en une seule passe. Sur Arduino, avec son espace limité, on contourne cette limitation en écrivant sur une carte SD externe.
 
 Alternatives : utiliser la mémoire EEPROM interne s'il ne s'agit que de petites quantités de données, ou bien la RAM si les données sont éphémères et de petite taille. N'oubliez pas, cependant, que l’EEPROM a un nombre limité d'écritures avant de s'user.
@@ -60,7 +55,6 @@ Alternatives : utiliser la mémoire EEPROM interne s'il ne s'agit que de petites
 Détails d'implémentation : Prévoyez de gérer les échecs d'ouverture de fichier et assurez-vous de fermer le fichier pour économiser la mémoire et éviter la corruption des données.
 
 ## Voir Aussi :
-
 - Documentation Arduino sur la gestion des fichiers : https://www.arduino.cc/en/Reference/SD
 - Instructions pour utiliser la mémoire EEPROM sur Arduino : https://www.arduino.cc/en/Reference/EEPROM
 - Détails sur la gestion de la mémoire sur Arduino : https://www.arduino.cc/en/Tutorial/Foundations/Memory

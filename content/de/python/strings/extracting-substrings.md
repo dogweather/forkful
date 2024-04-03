@@ -10,9 +10,6 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## What & Why?
-Das Herausziehen von Teilstrings (Substrings) hilft dabei, spezifische Daten aus größeren Textmengen zu gewinnen. Programmierer nutzen diese Technik häufig für die Datenaufbereitung, Validierung oder um bestimmte Muster und Informationen zu isolieren.
-
 ## How to:
 Hier ist der schnelle Weg, Substrings in Python zu extrahieren:
 

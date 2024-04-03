@@ -10,12 +10,7 @@ title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---
 
-## Hva & Hvorfor?
-
-Å finne lengden av en streng betyr å telle antall tegn i den. Programmere gjør dette for å validere input, manipulere tekst eller for å avgrense data før prosessering.
-
 ## Hvordan gjøre det:
-
 For å finne lengden av en streng i Clojure, bruk `count` eller `length` funksjonen. `count` er mer idiomatic for Clojure.
 
 ```Clojure
@@ -34,7 +29,6 @@ For å finne lengden av en streng i Clojure, bruk `count` eller `length` funksjo
 ```
 
 ## Dypdykk
-
 I de tidlige dagene av programmering, var det å håndtere strenger ofte krevende grunnet minnebegrensninger. I moderne programmeringsspråk, inkludert Clojure, er funksjonen for å finne lengden av en streng innebygget og optimalisert.
 
 Mens `count` er mer idiomatic for Clojure og fungerer på alle sekvensielle typer, har noen andre språk spesifikke funksjoner eller egenskaper, slik som `.length` i Java, noe som er årsaken til at du kan definere en lignende funksjon i Clojure ved å tilkalle Java-metoden direkte, som vist over.
@@ -42,6 +36,5 @@ Mens `count` er mer idiomatic for Clojure og fungerer på alle sekvensielle type
 Hvis ytelse blir kritisk, husk at `count` i Clojure har en konstant tidskompleksitet for strenger, men vil variere for andre samlinger som for eksempel lister, hvor operasjonen kan bli lineær.
 
 ## Se Også
-
 - Clojure's offisielle dokumentasjon for `count`: [https://clojuredocs.org/clojure.core/count](https://clojuredocs.org/clojure.core/count)
 - En guide til Clojure strenger og deres funksjoner: [https://clojure.org/guides/weird_characters#_working_with_strings](https://clojure.org/guides/weird_characters#_working_with_strings)

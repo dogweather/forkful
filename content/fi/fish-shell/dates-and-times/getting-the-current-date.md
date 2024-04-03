@@ -14,9 +14,6 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mikä & Miksi?
-Nykyisen päivämäärän saaminen ohjelmoinnissa on perustavaa laatua oleva tehtävä, joka mahdollistaa järjestelmän päivämäärä- ja aikatietojen noutamisen ja manipuloinnin. Käsikirjoituksessa ja automatisoinnissa päivämäärän saaminen on välttämätöntä aikaleimojen luomiseen, tehtävien ajoittamiseen ja lokiin kirjoittamiseen.
-
 ## Miten:
 Fish Shell käyttää ulkoisia komentoja, kuten `date`, nykyisen päivämäärän saamiseksi, tarjoten joustavuutta tulosteen muotoiluun tarpeen mukaan. Näin se tehdään:
 

@@ -13,12 +13,7 @@ title: Arbeider med YAML
 weight: 41
 ---
 
-## Hva & Hvorfor?
-
-YAML, som står for "YAML Ain't Markup Language," er en menneskelesbar standard for serialisering av data som ofte brukes for konfigurasjonsfiler og dataveksling mellom språk med ulike datastrukturer. Programmerere arbeider ofte med YAML på grunn av dets enkelhet og lesbarhet, spesielt i prosjekter som krever omfattende konfigurasjon eller når strukturerte data overføres mellom ulike systemer.
-
 ## Hvordan:
-
 Selv om Google Apps Script (GAS) ikke støtter parsing eller serialisering av YAML nativt, kan du manipulere YAML-data ved å bruke JavaScript-biblioteker eller skrive egendefinerte parsingfunksjoner. For demonstrasjon, la oss vurdere hvordan vi parser en YAML-streng ved hjelp av en egendefinert funksjon, siden eksterne biblioteker ikke kan importeres direkte inn i GAS.
 
 Anta at du har en enkel YAML-konfigurasjon:
@@ -76,7 +71,6 @@ Når `testYamlParsing()` utføres, blir det utdatert:
 Denne egendefinerte parsingtilnærmingen er ganske enkel og kan trenge justeringer for å kunne håndtere komplekse YAML-filer.
 
 ## Dypdykk
-
 YAML, som først ble utgitt i 2001, hadde som mål å være mer menneskelesbar enn sine forgjengere som XML eller JSON. Selv om dens enkelhet og brukervennlighet er bredt anerkjent, presenterer håndteringen av YAML i Google Apps Script utfordringer på grunn av mangelen på direkte støtte. Følgelig stoler programmerere ofte på JavaScripts allsidighet for å parse og generere YAML-data. Imidlertid kan denne metoden bli omstendelig og feilutsatt for komplekse brukstilfeller, spesielt de som involverer dyp nesting og avanserte datastrukturer.
 
 JSON, derimot, støttes nativt i Google Apps Script og de fleste andre programmeringsmiljøer, og tilbyr en mer direkte tilnærming for serialisering og deserialisering av data uten ekstra parsing. JSONs syntaks er mindre langdryg enn YAMLs, noe som gjør den mer egnet for datautveksling i webapplikasjoner. Likevel, YAML forblir populært for konfigurasjonsfiler og situasjoner hvor menneskelig lesbarhet er av største viktighet.

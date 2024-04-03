@@ -12,9 +12,6 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-# Cosa & Perché?
-I numeri complessi hanno una parte reale e una parte immaginaria (come 3 + 4i). I programmatori li utilizzano in Swift per compiti come l'elaborazione di segnali, la risoluzione di certi problemi matematici e la simulazione fisica.
-
 ## Come fare:
 Swift non ha un supporto integrato per i numeri complessi, ma possiamo crearne uno nostro:
 

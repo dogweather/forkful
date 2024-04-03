@@ -14,12 +14,7 @@ title: "U\u017Cywanie tablic asocjacyjnych"
 weight: 15
 ---
 
-## Co i dlaczego?
-
-Tablice asocjacyjne, znane w Go jako mapy, pozwalają przechowywać pary klucz-wartość, gdzie każdy unikalny klucz odpowiada wartości. Programiści używają map do efektywnego odnajdywania danych, modyfikacji oraz do utrzymania kolekcji elementów, które można szybko uzyskać używając unikalnych kluczy.
-
 ## Jak to zrobić:
-
 Tworzenie i inicjalizowanie mapy w Go można zrealizować na różne sposoby. Oto podstawowy przykład, aby zacząć:
 
 ```go
@@ -74,7 +69,6 @@ for kolor, heks := range kolory {
 Pamiętaj, że mapy w Go są nieuporządkowane. Kolejność iteracji nie jest gwarantowana.
 
 ## W głębi
-
 W Go, mapy są implementowane jako tablice haszujące. Każdy wpis w mapie składa się z dwóch elementów: klucza i wartości. Klucz jest haszowany, aby przechować wpis, co pozwala na operacje w stałym czasie dla małego zestawu danych i średnią złożoność czasową O(1) przy odpowiednim haszowaniu, która może się pogorszyć do O(n) w najgorszym przypadku przy wielu kolizjach hasz.
 
 Istotna uwaga dla nowych programistów Go to, że typy map są typami referencyjnymi. Oznacza to, że kiedy przekazesz mapę do funkcji, wszelkie zmiany dokonane na mapie w tej funkcji są widoczne dla wywołującego. Jest to inne niż np. przekazanie struktury do funkcji, gdzie struktura jest kopiowana, chyba że jest przekazywana przez wskaźnik.

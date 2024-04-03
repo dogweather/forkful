@@ -10,9 +10,6 @@ title: Code in Funktionen organisieren
 weight: 18
 ---
 
-## Was & Warum?
-Code in Funktionen zu organisieren bedeutet, Ihren Code in wiederverwendbare Blöcke mit definierten Zwecken zu unterteilen. Wir tun dies, um Ordnung zu bewahren, Redundanzen zu vermeiden und das Debugging zum Kinderspiel zu machen.
-
 ## Wie geht das:
 Stellen Sie sich vor, wir haben wiederholenden Code zum Begrüßen von Nutzern. Stattdessen werden wir ihn in einer Funktion wie `greet_user` einpacken:
 

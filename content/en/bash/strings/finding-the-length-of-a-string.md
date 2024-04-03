@@ -9,9 +9,6 @@ title: Finding the length of a string
 weight: 7
 ---
 
-## What & Why?
-Finding a string's length means counting its characters. Programmers do this to validate input, loop through characters, or simply align output.
-
 ## How to:
 The `#` symbol gets the job done in bash. Use it with parameter expansion. Here's how:
 

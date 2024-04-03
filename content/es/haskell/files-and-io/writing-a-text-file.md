@@ -12,12 +12,7 @@ title: Escribiendo un archivo de texto
 weight: 24
 ---
 
-## Qué y Por Qué?
-
-Escribir en un archivo de texto en Haskell se trata de crear o actualizar archivos con contenido textual de manera programática. Los programadores hacen esto para persistir datos como mensajes de registro, salida de aplicaciones o para almacenar contenido generado por usuarios, lo que lo convierte en una tarea fundamental para aplicaciones que requieren persistencia de datos o registro.
-
 ## Cómo hacerlo:
-
 El Prelude estándar de Haskell proporciona soporte elemental para escribir en archivos usando las funciones `writeFile` y `appendFile` del módulo `System.IO`. Aquí hay un ejemplo básico de cómo crear un archivo nuevo (o sobrescribir uno existente) y luego agregar texto a un archivo.
 
 ```haskell

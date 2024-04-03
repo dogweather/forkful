@@ -11,9 +11,6 @@ title: Textdatei einlesen
 weight: 22
 ---
 
-## Was & Warum?
-Das Lesen einer Textdatei in PHP bedeutet, den Inhalt der Datei Zeile für Zeile oder als Ganzes in deinem Skript verfügbar zu machen. Programmierer müssen das tun, um Daten zu verarbeiten, Einstellungen zu laden oder einfach Informationen auszutauschen.
-
 ## Anleitung:
 Ein einfaches Skript, um eine Datei namens "beispiel.txt" zu lesen:
 

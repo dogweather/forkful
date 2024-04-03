@@ -11,12 +11,7 @@ title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä & Miksi?
-
-Numeroiden pyöristäminen tarkoittaa niiden säätämistä lähimpään kokonaislukuun tai tiettyyn tarkkuuteen. Ohjelmoijat tekevät niin parantaakseen luettavuutta, vähentääkseen tallennustilaa tai koska tarkka arvo ei ole kriittinen myöhemmissä laskelmissa.
-
 ## Miten:
-
 Kotlinissa pyöristämisen voi tehdä käyttämällä useita funktioita, kuten `roundToInt()`, `roundToDouble()`, ja `BigDecimal` antaa enemmän hallintaa:
 
 ```kotlin
@@ -36,7 +31,6 @@ fun main() {
 ```
 
 ## Syväsukellus
-
 Historiallisesti numeroiden pyöristäminen on ollut peruskäsite sekä matematiikassa että laskennassa, suunniteltu käsittelemään numeerisen tarkkuuden rajoituksia. Varhaisessa tietojenkäsittelyssä pyöristäminen oli kriittistä korkeiden muistin kustannusten vuoksi.
 
 Kotlinissa pyöristäminen perustuu standardiin Java-kirjastoihin. Pyöristämisen vaihtoehtoja ovat `Math.round()`, joka pyöristää lähimpään kokonaislukuun, ja `BigDecimal` mukautettavaan pyöristämiseen, jossa voit määrittää mittakaavan ja `RoundingMode`.
@@ -44,7 +38,6 @@ Kotlinissa pyöristäminen perustuu standardiin Java-kirjastoihin. Pyöristämis
 Jokaisella `RoundingMode`-tilalla on erilaiset politiikat tasatilanteiden (kun numero on täsmälleen vaihtoehtojen keskellä pyöristettäessä) käsittelyyn. Esimerkiksi `RoundingMode.HALF_UP` pyöristää lähimpään naapuriin, paitsi jos molemmat naapurit ovat yhtä kaukana, jolloin se pyöristää ylöspäin.
 
 ## Katso Myös
-
 - Kotlinin dokumentaatio [`BigDecimal`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/java.math.-big-decimal/index.html)
 - Oraclen Javan dokumentaatio [`RoundingMode`](https://docs.oracle.com/javase/8/docs/api/java/math/RoundingMode.html)
 - IEEE-standardi liukuluvuille (IEEE 754) [IEEE-standardi 754](https://ieeexplore.ieee.org/document/4610935)

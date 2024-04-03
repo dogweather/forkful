@@ -16,9 +16,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---
 
-## Cái gì và Tại sao?
-Chuyển đổi ngày thành một chuỗi nghĩa là lấy một đối tượng ngày và biến nó thành văn bản dễ đọc. Các lập trình viên làm điều này để hiển thị ngày cho người dùng hoặc để định dạng chúng cho việc lưu trữ hoặc truyền tải.
-
 ## Làm thế nào:
 Trong Haskell, bạn sử dụng hàm `formatTime` từ module `Data.Time.Format` cho công việc này. Hãy cùng xem qua một số mã:
 

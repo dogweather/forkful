@@ -11,9 +11,6 @@ title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---
 
-## Vad & Varför?
-Att hitta längden på en sträng innebär att räkna antalet tecken den innehåller. Programmerare gör detta för att hantera och validera textdata effektivt.
-
 ## Så här gör du:
 Haskell är enkelt. Använd `length` funktionen på en sträng för att få dess längd. Här är ett exempel:
 

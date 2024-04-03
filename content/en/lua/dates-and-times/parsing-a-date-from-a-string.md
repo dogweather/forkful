@@ -11,9 +11,6 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-Parsing a date from a string involves converting textual representations of dates and times into a format that can be easily manipulated, stored, or compared within a Lua program. Programmers perform this task to facilitate operations such as scheduling, logging, or any temporal calculations and to bridge the gap between human-readable date formats and structured data types that a computer can efficiently process.
-
 ## How to:
 Lua does not have built-in support for date and time manipulation beyond the limited functionality provided by the `os.date` and `os.time` functions. However, these can be leveraged for basic parsing, and for more complex requirements, the `luadate` library, an external library, can be utilized.
 

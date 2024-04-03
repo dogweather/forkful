@@ -11,9 +11,6 @@ title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---
 
-## Qué y Por Qué?
-Extraer subcadenas significa sacar partes específicas de una cadena de texto. Los programadores lo hacen para manipular y procesar información, como obtener nombres de usuario de correos electrónicos o generar resúmenes.
-
 ## Cómo Hacerlo:
 ```clojure
 ; Usamos "subs" para extraer una subcadena por índices

@@ -11,9 +11,6 @@ title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---
 
-## What & Why? (O Quê & Por Quê?)
-Vamos falar sobre impressão de saídas de depuração: é colocar na tela informações do que está rolando no seu código. Fazemos isso para saber o que está acontecendo lá dentro durante a execução, achando erros ou otimizando processos.
-
 ## How To (Como Fazer)
 Simples e direto: use `print()` para jogar na tela o que você precisa. Se liga nos exemplos:
 

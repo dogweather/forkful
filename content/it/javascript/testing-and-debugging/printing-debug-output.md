@@ -11,9 +11,6 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## What & Why? (Cosa e Perché?)
-Stampare output di debug significa far apparire nel console messaggi che aiutano il programmatore a capire cosa sta succedendo nel codice. Lo si fa perché permette di scovare errori (bug) e capire il flusso del programma in modo più immediato.
-
 ## How to: (Come fare:)
 ```javascript
 // Esempio semplice di console.log

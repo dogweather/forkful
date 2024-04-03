@@ -12,9 +12,6 @@ title: Analisi di una data da una stringa
 weight: 30
 ---
 
-## Cos'è & Perché?
-Analizzare una data da una stringa comporta la conversione del testo in un oggetto Date. Questa operazione è fondamentale per le applicazioni che interagiscono con date inserite dagli utenti o ottenute da set di dati esterni, consentendo una facile manipolazione e formattazione secondo le necessità.
-
 ## Come fare:
 Kotlin supporta l'analisi delle date tramite il pacchetto `java.time`, introdotto in Java 8. Ecco un approccio semplice utilizzando `LocalDateTime` e uno schema specifico:
 

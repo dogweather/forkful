@@ -12,14 +12,10 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mitä & Miksi?
-Testien kirjoittaminen Javassa koskee koodisi toiminnan varmistamista odotetulla tavalla eri olosuhteissa. Ohjelmoijat kirjoittavat testejä vikojen estämiseksi, varmistaakseen toiminnallisuuden pysyvän oikeana muutosten jälkeen ja edistääkseen hyviä ohjelmistosuunnittelun periaatteita.
-
 ## Kuinka:
 Java-kehittäjät käyttävät pääasiassa kahta testauskehystä: JUnitia ja TestNG:tä. Tässä keskitymme JUnitiin, joka on suositumpi valinta testien kirjoittamiseen sen yksinkertaisuuden ja laajan käyttöönoton vuoksi.
 
 ### JUnit Perusteet
-
 JUnitin käyttöönotto Maven-projektissasi vaatii seuraavan riippuvuuden lisäämistä `pom.xml`-tiedostoosi:
 
 ```xml
@@ -50,7 +46,6 @@ public class CalculatorTest {
 Tämän testin suorittaminen joko läpäisee, mikä osoittaa, että `add`-metodi toimii odotetusti, tai epäonnistuu, näyttäen virheviestin.
 
 ### Mockaus Mockitoa käyttäen
-
 Todellisissa tilanteissa, oliot usein riippuvat muista olioista. Mockito on suosittu mockauskehys, joka auttaa luomaan mock-olioita testaustarkoituksessa.
 
 Lisää Mockito Maven-projektiisi:

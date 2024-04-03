@@ -11,9 +11,6 @@ title: Logboekregistratie
 weight: 17
 ---
 
-## Wat & Waarom?
-Loggen in programmeren is als het bijhouden van een dagboek voor je applicatie. Het is het systematisch vastleggen van gebeurtenissen, berichten en gegevenspunten die je inzicht geven in wat je applicatie doet en hoe deze zich gedraagt. Programmeurs loggen omdat het cruciaal is voor het debuggen, het bewaken van de gezondheid van de applicatie, en het krijgen van aanwijzingen over mogelijke problemen voordat ze uitgroeien tot echte problemen.
-
 ## Hoe te:
 Ruby komt met een ingebouwde module voor loggen, `Logger`, die super eenvoudig te gebruiken is. Hier is een snel voorbeeld om je op weg te helpen:
 

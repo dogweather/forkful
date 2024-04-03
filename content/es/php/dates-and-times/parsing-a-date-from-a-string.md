@@ -13,12 +13,7 @@ title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---
 
-## ¿Qué y por qué?
-
-Analizar una fecha de una cadena en PHP implica convertir texto que representa una fecha y/o hora en un objeto `DateTime` de PHP u otros formatos de fecha/hora. Esto es crucial para la validación, manipulación, almacenamiento y presentación de datos, especialmente cuando se trabaja con entradas de usuario o datos de fuentes externas.
-
 ## Cómo hacerlo:
-
 La clase incorporada `DateTime` de PHP proporciona un potente conjunto de funciones para analizar y trabajar con fechas. Puedes crear una instancia de `DateTime` a partir de una cadena de fecha usando el constructor, y luego formatearla según sea necesario. Así es cómo:
 
 ```php

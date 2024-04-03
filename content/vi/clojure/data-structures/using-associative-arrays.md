@@ -15,12 +15,7 @@ title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---
 
-## Gì và Tại sao?
-
-Mảng kết hợp, hay bản đồ băm, trong Clojure cho phép bạn lưu trữ và truy xuất dữ liệu bằng cặp khóa-giá trị. Chúng là giải pháp lý tưởng để quản lý dữ liệu có cấu trúc, giúp truy cập các phần tử cụ thể nhanh chóng mà không cần phải duyệt qua danh sách.
-
 ## Cách thực hiện:
-
 Trong Clojure, việc tạo và thao tác với mảng kết hợp (bản đồ băm) rất đơn giản. Hãy cùng tìm hiểu với các ví dụ.
 
 Để tạo một bản đồ băm:
@@ -75,7 +70,6 @@ Và cho việc truy cập có điều kiện, `find` trả về một cặp khó
 ```
 
 ## Tìm hiểu sâu hơn
-
 Mảng kết hợp trong Clojure, còn được gọi là bản đồ băm, là cực kỳ linh hoạt và hiệu quả cho việc quản lý dữ liệu dựa trên cặp khóa-giá trị. Chúng là một phần của thư viện bộ sưu tập phong phú của Clojure, gắn liền với triết lý của ngôn ngữ về tính bất biến và lập trình hàm. Không giống như mảng hay danh sách yêu cầu độ phức tạp thời gian O(n) để truy cập phần tử, bản đồ băm cung cấp độ phức tạp thời gian gần như hằng số để truy cập, làm cho chúng rất hiệu quả cho các thao tác tìm kiếm.
 
 Có thể tranh luận rằng vector trong Clojure có thể phục vụ một mục đích tương tự thông qua truy cập chỉ mục, nhưng bản đồ băm tỏa sáng khi nói đến việc xử lý dữ liệu không tuần tự và có nhãn, nơi khóa cung cấp một mô tả có ý nghĩa hơn là chỉ mục tùy ý.

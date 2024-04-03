@@ -11,9 +11,6 @@ title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---
 
-## Co i dlaczego?
-Czytanie argumentów z linii poleceń to proces pobierania danych od użytkownika, kiedy uruchamia program. Programiści robią to, aby ich aplikacje mogły być bardziej elastyczne i dostosowywać się do potrzeb użytkownika bez konieczności modyfikowania kodu.
-
 ## Jak to zrobić:
 W Haskellu, argumenty linii poleceń odczytujemy przy pomocy funkcji `getArgs` z modułu `System.Environment`. Oto jak to wygląda w praktyce:
 

@@ -14,9 +14,6 @@ title: "Skapa en tillf\xE4llig fil"
 weight: 21
 ---
 
-## Vad & Varför?
-Att skapa en temporär fil i C innebär att generera en fil som är avsedd att användas under en kort tid, vanligtvis som skräputrymme för databehandling eller lagring. Programmerare gör det för att hantera tillfälliga data utan att påverka programmets permanenta lagring eller för att säkerställa att känsliga data raderas efter användning.
-
 ## Hur:
 Att skapa en temporär fil i programmeringsspråket C kan utnyttja funktioner såsom `tmpfile()` och `mkstemp()`.
 

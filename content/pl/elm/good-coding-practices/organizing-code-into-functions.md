@@ -10,9 +10,6 @@ title: Organizacja kodu w funkcje
 weight: 18
 ---
 
-## Co i dlaczego?
-Wrzucenie całego twojego kodu do jednej wielkiej sterty? Zły pomysł. Podzielenie go na funkcje? Dobry pomysł. Dzięki temu kod Elm jest czysty, wielokrotnego użytku i łatwiejszy w testowaniu. Organizując swój kod w funkcje, grupujesz razem kod, który wykonuje określone zadania, co sprawia, że twoja aplikacja jest bardziej utrzymywalna i zrozumiała.
-
 ## Jak to zrobić:
 Oto fragment kodu Elm z prostą funkcją do przywitania użytkownika:
 

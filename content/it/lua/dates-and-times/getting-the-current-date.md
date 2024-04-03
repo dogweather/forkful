@@ -14,12 +14,7 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Cosa & Perché?
-
-Il recupero della data corrente nella programmazione è un compito cruciale per una moltitudine di applicazioni, inclusi i registri degli eventi, la marcatura temporale (timestamping) degli eventi o la pianificazione delle attività. In Lua, questa funzionalità consente ai programmatori di gestire operazioni relative a data e ora senza problemi all'interno delle loro applicazioni, garantendo che il loro software possa interagire efficacemente con dati in tempo reale.
-
 ## Come fare:
-
 Lua offre la funzione `os.date` per ottenere la data e l’ora correnti. La funzione può essere utilizzata senza argomenti per ottenere una stringa formattata o con specificatori di formato per personalizzare l'output. Ecco come usarla:
 
 ```lua

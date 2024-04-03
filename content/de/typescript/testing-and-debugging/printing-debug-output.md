@@ -10,9 +10,6 @@ title: Debug-Ausgaben drucken
 weight: 33
 ---
 
-## What & Why? (Was & Warum?)
-Debug-Output ist wie das Flüstern deines Codes. Es verrät dir, was im Code passiert, während er läuft. Warum? Weil wir Menschen nicht in Matrix-Code sehen können. Debug hilft, Fehler zu finden und zu verstehen, wie der Code sich verhält.
-
 ## How to: (Wie?)
 ```typescript
 console.log('Hello Debug!');

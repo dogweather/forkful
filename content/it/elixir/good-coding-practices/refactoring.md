@@ -11,9 +11,6 @@ title: Rifattorizzazione
 weight: 19
 ---
 
-## Cosa & Perché?
-Il refactoring è il processo di ristrutturazione del codice esistente senza modificarne il comportamento esterno, mirato a migliorare attributi non funzionali come leggibilità e manutenibilità. I programmatori lo fanno per rendere il codice più pulito, più facile da comprendere e più efficiente, facilitando gli aggiornamenti futuri e riducendo il rischio di bug.
-
 ## Come fare:
 Mettiamo in ordine un pattern comune di Elixir. Rifattorizzeremo una funzione `calculate_stats` che fa più di quanto dovrebbe spezzandola in pezzi più piccoli e riutilizzabili.
 

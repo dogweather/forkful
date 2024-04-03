@@ -10,12 +10,7 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-
-Regular expressions (regex) in Visual Basic for Applications (VBA) provide a powerful way to search, match, and manipulate strings. Programmers use them for tasks like data validation, parsing, and transformation because of their flexibility and efficiency in handling complex string patterns.
-
 ## How to:
-
 To use regular expressions in VBA, you first need to enable the Microsoft VBScript Regular Expressions library. In the VBA editor, go to `Tools` -> `References`, then check `Microsoft VBScript Regular Expressions 5.5`.
 
 Here's a basic example to find if a pattern exists within a string:
@@ -61,7 +56,6 @@ End Sub
 ```
 
 ## Deep Dive
-
 The inclusion of regular expressions in programming languages often traces back to Unix tools from the 1970s. VBA integrated regex through the VBScript Regular Expressions library, highlighting its significance in text processing tasks even in applications not typically associated with heavy text manipulation like Excel or Access.
 
 Despite their power, regex in VBA can sometimes be less intuitive or performant compared to more modern implementations in languages such as Python or JavaScript. For example, Python's `re` module offers extensive support for named groups and more sophisticated pattern-matching features, providing a cleaner and potentially more readable approach. However, when working within the VBA ecosystem, regular expressions remain an invaluable tool for tasks that require pattern matching or text manipulation. The efficiency trade-off is often negligible in light of the convenience and capabilities regex brings to the table when dealing with strings in Office applications.

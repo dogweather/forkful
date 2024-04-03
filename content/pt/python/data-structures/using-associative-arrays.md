@@ -14,12 +14,7 @@ title: Usando arrays associativos
 weight: 15
 ---
 
-## O quê & Por quê?
-
-Arrays associativos, conhecidos em Python como dicionários, mapeiam chaves para valores, facilitando a recuperação, modificação ou rastreamento de dados por um identificador único. Programadores os utilizam pela eficiência no acesso a elementos e sua flexibilidade na representação de estruturas de dados complexas.
-
 ## Como fazer:
-
 Criar um dicionário em Python é simples. Você envolve pares de chave-valor em chaves `{}`, com chaves e valores separados por dois pontos:
 
 ```Python
@@ -77,7 +72,6 @@ email: john@example.com
 ```
 
 ## Aprofundando
-
 Arrays associativos em Python, ou dicionários, foram introduzidos para fornecer uma estrutura de dados para acesso e manipulação de dados de forma eficiente. Ao contrário de sequências, que são indexadas por um intervalo de números, dicionários são indexados por chaves, que podem ser de qualquer tipo imutável. Essa escolha de design torna os dicionários idealmente adequados para tabelas de busca rápida onde chaves mapeiam para valores únicos.
 
 Historicamente, dicionários em Python têm sido implementados usando uma tabela hash, garantindo que o tempo médio de complexidade para operações de busca, inserção e exclusão seja O(1). Em Python 3.6 e posteriores, dicionários também mantêm a ordem de inserção dos itens, combinando os benefícios das tabelas hash com a previsibilidade da ordem de inserção vista em estruturas de dados ordenadas.

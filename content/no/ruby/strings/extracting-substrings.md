@@ -11,9 +11,6 @@ title: Uthenting av delstrenger
 weight: 6
 ---
 
-## Hva & Hvorfor?
-Å trekke ut substrings ("delstrenger" på norsk) betyr å hente spesifikke deler av en tekststreng. Programutviklere gjør dette for å manipulere og analysere tekst, for eksempel for å hente brukernavn fra e-postadresser eller domenenavn fra URL-er.
-
 ## Hvordan:
 ```Ruby
 streng = "Hei, Norge!"

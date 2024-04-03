@@ -10,9 +10,6 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## Qué y por qué?
-Redondear números significa ajustarlos a un valor cercano por simplicidad o para coincidir con cierta precisión. Es útil para mejorar la legibilidad, reducir el espacio de almacenamiento o satisfacer necesidades específicas del dominio, como cálculos monetarios donde quieres redondear al centavo más cercano.
-
 ## Cómo hacerlo:
 En Elixir, puedes usar `Float.round/2` para redondear un número de punto flotante. Puedes especificar el número de dígitos decimales que deseas mantener. Así es como funciona:
 

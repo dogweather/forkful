@@ -13,9 +13,6 @@ title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---
 
-## Mikä ja miksi?
-Työskentely JSONin (JavaScript Object Notation) kanssa Kotlinitssa liittyy JSON-datamuodon jäsennys- ja luontitoimiin. Ohjelmoijat tekevät tämän helpottaakseen tietojen vaihtoa sovelluksen eri kerrosten välillä tai kommunikoidakseen web-palveluiden kanssa, JSONin kevyen ja ihmisen luettavan muodon ansiosta.
-
 ## Kuinka:
 Kotlin ei sisällä valmiiksi tukea JSONille, mutta se hyödyntää kolmansien osapuolien kirjastojen, kuten Googlen `Gson` ja JetBrainsin `Kotlinx.serialization`, tehokkaita ominaisuuksia. Tässä on ohjeet, kuinka voit käyttää molempia työskennelläksesi JSONin kanssa.
 

@@ -11,9 +11,6 @@ title: Lendo argumentos da linha de comando
 weight: 23
 ---
 
-## O Que é & Por Que Fazer?
-Ler argumentos da linha de comando permite que seu programa TypeScript receba inputs externos ao ser executado. Programadores fazem isso para tornar seus aplicativos mais flexíveis e interativos, permitindo diferentes comportamentos baseados nos dados fornecidos pelos usuários na execução.
-
 ## Como Fazer:
 ```TypeScript
 // Instalar a deno se ainda não estiver instalado:
@@ -36,6 +33,7 @@ for (const arg of argumentos) {
 // arg2
 // arg3
 ```
+
 ## Mergulho Profundo:
 A história de ler argumentos da linha de comando remonta aos primórdios da informática, quando os GUIs (Graphical User Interfaces) eram inexistentes e tudo era feito no terminal. No Node.js, teríamos usado `process.argv` para obter argumentos. O Deno, uma alternativa moderna ao Node.js, incorpora muitas de suas funcionalidades mas com um foco maior em segurança e simplicidade, incluindo uma API para argumentos da linha de comando incorporada e pronta para uso, a `Deno.args`.
 

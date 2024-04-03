@@ -9,9 +9,6 @@ title: Finding the length of a string
 weight: 7
 ---
 
-## What & Why?
-Finding a string's length means counting its characters. Programmers do it to validate input, loop through strings, and manipulate text data efficiently.
-
 ## How to:
 JavaScript keeps it simple with the `.length` property.
 

@@ -15,10 +15,9 @@ title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---
 
-## Gì & Tại sao?
-Đọc một tệp văn bản trong PHP có nghĩa là kéo nội dung từ một tệp vào script của bạn. Lập trình viên làm điều này để xử lý việc lưu trữ dữ liệu, cấu hình, hoặc để xử lý các bộ dữ liệu lớn mà không làm rối code của họ.
-
 ## Làm thế nào:
+
+
 ### Sử dụng `file_get_contents`:
 ```PHP
 $content = file_get_contents("example.txt");

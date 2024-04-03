@@ -15,9 +15,6 @@ title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---
 
-## Cái Gì & Tại Sao?
-Xoá các ký tự phù hợp với một mẫu trong chuỗi là việc xoá bỏ những phần bạn không cần, như là loại bỏ hashtag từ các tweet. Lập trình viên làm việc này để làm sạch dữ liệu, định dạng nó một cách nhất quán, hoặc chuẩn bị nó cho quá trình xử lý tiếp theo.
-
 ## Cách thực hiện:
 ```Ruby
 # Xoá đơn giản sử dụng String#gsub

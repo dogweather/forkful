@@ -11,9 +11,6 @@ title: Arbeiten mit XML
 weight: 40
 ---
 
-## Was & Warum?
-Die Arbeit mit XML umfasst die Manipulation und den Zugriff auf Daten, die in der eXtensible Markup Language strukturiert sind. Programmierer arbeiten mit XML, um die Interoperabilität mit anderen Systemen zu ermöglichen oder Konfigurationsdateien, Datenfeeds und andere strukturierte Dokumente, die in Webdiensten üblich sind, zu lesen und zu schreiben.
-
 ## Wie geht das:
 ```PowerShell
 # Laden einer XML-Datei in eine Variable

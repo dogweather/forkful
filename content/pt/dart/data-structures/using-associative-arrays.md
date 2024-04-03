@@ -12,12 +12,7 @@ title: Usando arrays associativos
 weight: 15
 ---
 
-## O Quê & Por Quê?
-
-Arrays associativos em Dart, conhecidos como Maps, são estruturas de dados que armazenam dados em pares de chave-valor. Eles permitem que os programadores acessem elementos não através de índices, mas sim de chaves, tornando a recuperação de dados intuitiva e eficiente, especialmente ao trabalhar com dados estruturados onde cada elemento tem um identificador único.
-
 ## Como:
-
 Dart oferece uma sintaxe simples para criar e manipular Maps. Abaixo estão exemplos demonstrando operações básicas como criação, adição de elementos e busca de valores.
 
 ```dart

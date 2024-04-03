@@ -11,12 +11,7 @@ title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---
 
-## Vad & Varför?
-
-Läsning av kommandoradsargument handlar om att snappa upp de extra inputs som skickas till ditt program när det körs i terminalen. Programmerare gör detta för att tillåta användare att skicka in specifika värden eller inställningar som påverkar programköpningen.
-
 ## Hur man gör:
-
 Låt oss dyka rakt in i koden. Så här kan du läsa argument från kommandoraden i Node.js:
 
 ```javascript
@@ -48,7 +43,6 @@ Förväntad utskrift:
 Endast index 2 och framåt är dina egna argument.
 
 ## Djupdykning:
-
 Kommandoradsargument har använts sedan urminnes tider. I Node.js förlitar vi oss på `process.argv`, en array där index 0 är sökvägen till Node.js-binären och index 1 är den körande filens sökväg. 
 
 Alternativ för att göra detta snyggare är bland annat `yargs` eller `commander`, moduler som hanterar komplexa argument på ett strukturerat sätt. Vid implementering kan det vara klokt att välja dessa moduler för bättre felsäkerhet och enklare kod.
@@ -56,7 +50,6 @@ Alternativ för att göra detta snyggare är bland annat `yargs` eller `commande
 Vidare kan funktioner som `process.argv.slice(2)` användas för att direkt hoppa till de relevanta argumenten. Och för mer komplexa program kan du använda environment-variabler för att styra beteendet snarare än kommandoradsargument.
 
 ## Se även:
-
 Här är några länkar för vidare läsning och utforskning:
 
 - Node.js dokumentation om process.argv: https://nodejs.org/docs/latest/api/process.html#process_process_argv

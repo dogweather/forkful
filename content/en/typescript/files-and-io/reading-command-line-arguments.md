@@ -10,11 +10,7 @@ title: Reading command line arguments
 weight: 23
 ---
 
-## What & Why?
-Command line arguments let users pass data to a program when they run it. Programmers use them to customize a program's behavior without changing the code.
-
 ## How to:
-
 In TypeScript, you use Node.js to read command line arguments. Here's how:
 
 ```typescript
@@ -34,7 +30,6 @@ Command line arguments: ['arg1', 'arg2']
 ```
 
 ## Deep Dive
-
 Back in the early command-line days, user interaction was all about text. Linux, UNIX, and Windows used command line args to tell programs what to do.
 
 Now for the alternatives: besides `process.argv`, in Node.js, you could use libraries like `yargs` or `commander` for more features like parsing and validation.
@@ -42,7 +37,6 @@ Now for the alternatives: besides `process.argv`, in Node.js, you could use libr
 The guts of this in TypeScript are simple: `process.argv` is an array with all the arguments. Index 0 is the path to Node, index 1 is the script path, so real args start from index 2.
 
 ## See Also
-
 To explore further, start with these:
 
 - [Node.js process.argv documentation](https://nodejs.org/docs/latest/api/process.html#process_process_argv)

@@ -11,9 +11,6 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-De lengte van een string vinden betekent het tellen van de tekens. Programmeurs doen dit om invoer te valideren, door strings te lopen en tekstgegevens efficiënt te manipuleren.
-
 ## Hoe:
 JavaScript maakt het eenvoudig met de `.length` eigenschap.
 

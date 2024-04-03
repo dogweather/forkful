@@ -16,9 +16,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Làm gì & Tại sao?
-Làm việc với XML bao gồm việc phân tích cú pháp, trích xuất, và thao tác dữ liệu trong định dạng Ngôn ngữ Đánh dấu Mở rộng (Extensible Markup Language). Các lập trình viên thường phải đối đầu với XML vì đây là định dạng trao đổi dữ liệu phổ biến cho cấu hình, API và hơn thế nữa.
-
 ## Cách thực hiện:
 Dưới đây là cách để phân tích cú pháp XML trong Bash. Công cụ? xmllint và xmlstarlet. Lặp qua các phần tử XML? Chắc chắn rồi. Ví dụ với kết quả mẫu:
 

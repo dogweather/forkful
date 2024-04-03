@@ -26,16 +26,10 @@ title: "\u5B57\u7B26\u4E32\u5927\u5199\u5316"
 weight: 2
 ---
 
-## 什么和为什么？
-
-在编程中，将字符串首字母大写涉及到将字符串的第一个字符转换为大写（如果它尚未大写），这对于格式化用户输入或以更标准化或更友好的方式在用户界面中显示文本非常有用。程序员执行这个操作是为了确保数据一致性或满足软件应用程序内的特定格式要求。
-
 ## 如何实现：
-
 在Kotlin中，可以使用标准库函数对字符串进行首字母大写处理，无需第三方库。Kotlin处理字符串的方法使得这些操作直接且简洁。
 
 ### 将整个字符串大写：
-
 ```kotlin
 val message = "hello, world!"
 val capitalizedMessage = message.uppercase()
@@ -44,7 +38,6 @@ println(capitalizedMessage) // 输出：HELLO, WORLD!
 ```
 
 ### 仅将第一个字符大写：
-
 截至Kotlin 1.5，`capitalize()`函数已被弃用，并被`replaceFirstChar`和一个lambda函数组合替代，该lambda函数检查它是否为小写字母并将其转换为大写。
 
 ```kotlin

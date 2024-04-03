@@ -12,9 +12,6 @@ title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---
 
-## Qué y Por Qué?
-Analizar una fecha de una cadena implica convertir información textual de fecha y hora en un objeto datetime o un formato estructurado equivalente. Esto se realiza comúnmente para habilitar operaciones aritméticas, comparaciones y formateos de fechas de manera independiente del idioma y la región. Los programadores lo hacen para manejar y manipular eficientemente datos temporales extraídos de registros, entradas de usuarios o fuentes externas.
-
 ## Cómo hacerlo:
 La biblioteca estándar de Python proporciona el módulo `datetime`, que incluye el método `strptime` para este propósito. El método requiere dos argumentos: la cadena de fecha y una directiva de formato que especifica el patrón de la cadena de entrada.
 

@@ -13,9 +13,6 @@ title: Arbeta med JSON
 weight: 38
 ---
 
-## Vad & Varför?
-Att arbeta med JSON i Bash-programmering innebär att tolka, extrahera och manipulera JSON-data direkt från kommandoraden. Programmerare gör ofta detta för att sömlöst integrera skalprogram med webb-API:er och moderna datautbytesformat, vilket gör Bash-scriptning mer kraftfull och relevant i ett JSON-tungt ekosystem.
-
 ## Hur man gör:
 Bash har i sig inga inbyggda JSON-tolkningsfunktioner, men `jq` är en kraftfull kommandoradsprocessor för JSON som fyller detta gap. Så här använder du den:
 

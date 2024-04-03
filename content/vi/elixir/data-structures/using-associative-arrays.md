@@ -15,12 +15,7 @@ title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---
 
-## Cái gì & Tại sao?
-
-Trong Elixir, các mảng liên kết, gọi là Maps, là collection của các cặp key-value ở đó một key duy nhất chỉ đến một giá trị. Chúng rất tiện lợi để lưu trữ và truy xuất dữ liệu tức thì, làm cho code của bạn sạch sẽ hơn và cuộc sống của bạn dễ dàng hơn.
-
 ## Làm thế nào:
-
 Việc tạo một Map rất đơn giản. Bạn sử dụng cú pháp `%{}` như sau:
 
 ```elixir
@@ -52,7 +47,6 @@ IO.inspect(trimmed_map)
 Kết quả: `%{"location" => "NY", "name" => "Alex"}`
 
 ## Sâu hơn
-
 Maps trong Elixir là sự phát triển từ các kiểu lưu trữ key-value cũ hơn, như Hashes trong Ruby hay Dictionaries trong Python. Chúng cho phép tìm kiếm và chèn nhanh chóng hơn, làm chúng trở thành lựa chọn hàng đầu cho lập trình Elixir hiện đại. Đáng chú ý là trước khi có Maps, Elixir đã sử dụng các module HashDict và Dict, hiện nay đã bị loại bỏ.
 
 Tuy nhiên, đối với các tình huống yêu cầu dữ liệu có thứ tự, bạn có thể xem xét danh sách từ khóa trong Elixir. Đây là các danh sách các tuple, hiệu quả cho các bộ sưu tập nhỏ nhưng không thân thiện với hiệu suất cho các bộ dữ liệu lớn như Maps.

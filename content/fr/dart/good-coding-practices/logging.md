@@ -14,12 +14,7 @@ title: Journalisation
 weight: 17
 ---
 
-## Quoi & Pourquoi ?
-
-Le journalisation dans Dart fait référence au processus d’enregistrement de différents niveaux d’information pendant l’exécution d’un programme. Les programmeurs le font pour surveiller le comportement du logiciel, déboguer les problèmes et analyser les performances, rendant plus facile la maintenance et l'amélioration de l'application au fil du temps.
-
 ## Comment faire :
-
 Dart comprend un mécanisme de journalisation simple via la bibliothèque `dart:developer`. Pour des besoins de journalisation plus sophistiqués, les programmeurs se tournent souvent vers des bibliothèques tierces comme `logger` et `log4dart`.
 
 ### Utiliser `dart:developer`

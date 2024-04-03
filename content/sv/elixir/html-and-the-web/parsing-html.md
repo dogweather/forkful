@@ -12,12 +12,7 @@ title: Tolka HTML
 weight: 43
 ---
 
-## Vad & Varför?
-
-Att tolka HTML i Elixir innebär att extrahera information från HTML-dokument. Programmerare gör detta för att programmatiskt interagera med webbsidor, skrapa data eller automatisera webbinteraktioner, vilket möjliggör att applikationer dynamiskt kan förstå och utnyttja webbinnehåll.
-
 ## Hur man gör:
-
 Elixir, med dess robusta modell för samtidighet och paradigmet för funktionell programmering, inkluderar inte inbyggd kapacitet för att tolka HTML. Du kan dock använda populära tredjepartsbibliotek som `Floki` för detta ändamål. Floki gör HTML-tolkning intuitiv och effektiv, genom att utnyttja Elixirs mönstermatchning och pipningsfunktioner.
 
 Först, lägg till Floki i dina beroenden i mix.exs:

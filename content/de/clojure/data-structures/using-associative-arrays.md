@@ -13,12 +13,7 @@ title: Verwendung von assoziativen Arrays
 weight: 15
 ---
 
-## Was & Warum?
-
-Assoziative Arrays, oder Hash-Maps, in Clojure ermöglichen es Ihnen, Daten mit Schlüssel-Wert-Paaren zu speichern und abzurufen. Sie sind eine erste Wahl für die Verwaltung strukturierter Daten, da sie einen schnelleren Zugriff auf bestimmte Elemente ermöglichen, ohne durch eine Liste iterieren zu müssen.
-
 ## Wie:
-
 In Clojure ist das Erstellen und Manipulieren von assoziativen Arrays (Hash-Maps) unkompliziert. Lassen Sie uns mit Beispielen eintauchen.
 
 Um eine Hash-Map zu erstellen:
@@ -73,7 +68,6 @@ Und für bedingten Zugriff gibt `find` ein Schlüssel-Wert-Paar zurück, wenn de
 ```
 
 ## Tiefer Eintauchen
-
 Assoziative Arrays in Clojure, auch häufig als Hash-Maps bezeichnet, sind unglaublich vielseitig und effizient für die Verwaltung von datenbasierten Schlüssel-Wert-Daten. Sie sind Teil der umfangreichen Sammlungsbibliothek von Clojure, tief verwurzelt in der Philosophie der Unveränderlichkeit und der funktionalen Programmierung des Sprache. Im Gegensatz zu Arrays oder Listen, die eine O(n) Zeitkomplexität für den Zugriff auf Elemente benötigen, bieten Hash-Maps eine nahezu konstante Zeitkomplexität für den Zugriff, was sie für Suchvorgänge hochgradig effizient macht.
 
 Man könnte argumentieren, dass Vektoren in Clojure einen ähnlichen Zweck durch indizierten Zugriff erfüllen könnten, aber Hash-Maps glänzen, wenn es um den Umgang mit nicht-sequentiellen und beschrifteten Daten geht, bei denen der Schlüssel einen sinnvollen Deskriptor anstelle eines willkürlichen Index bietet.

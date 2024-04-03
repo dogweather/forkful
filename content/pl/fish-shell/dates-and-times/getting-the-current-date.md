@@ -14,9 +14,6 @@ title: Pobieranie aktualnej daty
 weight: 29
 ---
 
-## Co i dlaczego?
-Pobieranie bieżącej daty w programowaniu to podstawowe zadanie, które pozwala na pobieranie i manipulowanie danymi dotyczącymi daty i czasu systemu. W skryptach i zadaniach automatyzacji jest to niezbędne do generowania znaczników czasu, planowania zadań i tworzenia logów.
-
 ## Jak to zrobić:
 Fish Shell wykorzystuje zewnętrzne polecenia takie jak `date` do pobierania bieżącej daty, oferując elastyczność w formatowaniu wyjścia według potrzeb. Oto jak tego użyć:
 

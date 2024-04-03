@@ -9,9 +9,6 @@ title: Textdatei einlesen
 weight: 22
 ---
 
-## Was & Warum?
-Textdateien auslesen heißt, ihren Inhalt programmatisch zu erfassen. Programmierer tun dies, um Daten zu verarbeiten oder Konfigurationen zu laden.
-
 ## How to:
 Zum Einlesen einer Datei in Rust nutzen wir die Standardbibliothek. Hier ein einfaches Beispiel:
 

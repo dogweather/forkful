@@ -10,12 +10,7 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## Was & Warum?
-
-Das Extrahieren von Teilzeichenketten greift bestimmte Abschnitte aus einer längeren Zeichenkette heraus. Programmierer tun das, um Daten zu analysieren, zu verarbeiten oder spezifische Informationen darzustellen.
-
 ## So geht's:
-
 ```C#
 using System;
 
@@ -50,7 +45,6 @@ class MoreSubstringExamples {
 ```
 
 ## Tiefgang:
-
 Teilzeichenketten zu extrahieren ist keine neue Idee. Schon frühe Programmiersprachen boten ähnliche Funktionen. Der `.Substring()`-Methode in C# könnte man vorhalten, dass sie nicht die modernste oder effizienteste Art ist, Teilstrings zu managen. 
 
 Es gibt Alternativen: `Span<T>` und `Memory<T>` aus C# 7.2 bieten performantere Zugriffe auf Teile einer Zeichenkette ohne zusätzliche Speicherzuweisung. Das kann besonders bei großen Textmengen oder in performancekritischen Anwendungen hilfreich sein.
@@ -58,7 +52,6 @@ Es gibt Alternativen: `Span<T>` und `Memory<T>` aus C# 7.2 bieten performantere 
 Bei der Implementierung ist zu beachten, dass `Substring()` bei ungültigen Indizes eine `ArgumentOutOfRangeException` wirft. Vorsicht also bei dynamischen Daten!
 
 ## Siehe Auch:
-
 - Microsoft Dokumentation zu `String.Substring` Method: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
 - Performance-Überlegungen zu `Span<T>` und `Memory<T>`: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.memory-1)
 - StackOverflow Diskussionen über Substrings in C#: [stackoverflow.com](https://stackoverflow.com/questions/tagged/substring+c%23)

@@ -13,14 +13,10 @@ title: Generera slumptal
 weight: 12
 ---
 
-## Vad & Varför?
-
-Att generera slumpmässiga tal i JavaScript är en teknik som används för att skapa oförutsägbarhet i applikationer, från spel som behöver slumpmässigt fiendebeteende till säkerhetsalgoritmer som kräver kryptografisk slumpmässighet. Denna förmåga är avgörande för att utveckla dynamiska användarupplevelser och säkra applikationer.
-
 ## Hur man gör:
 
-### Enkel generering av slumpmässiga tal
 
+### Enkel generering av slumpmässiga tal
 Det enklaste sättet att generera ett slumpmässigt tal i JavaScript är att använda `Math.random()`. Denna funktion returnerar ett flyttal, pseudo-slumpmässigt tal i intervallet 0 (inklusive) till 1 (exklusive).
 
 ```javascript
@@ -29,7 +25,6 @@ console.log(randomNumber);
 ```
 
 ### Generera ett slumpmässigt tal inom ett intervall
-
 Ofta vill du ha ett slumpmässigt heltal inom ett specifikt intervall. Detta kan uppnås genom att skala och avrunda utmatningen från `Math.random()`.
 
 ```javascript
@@ -43,7 +38,6 @@ console.log(getRandomInt(1, 100));
 ```
 
 ### Kryptografiskt säkra slumpmässiga tal
-
 För applikationer som kräver en högre grad av slumpmässighet (t.ex. kryptografiska operationer), kan metoden `crypto.getRandomValues()` användas. Detta ger kryptografisk slumpmässighet, till skillnad från de pseudo-slumpmässiga tal som genereras av `Math.random()`.
 
 ```javascript
@@ -55,7 +49,6 @@ För applikationer som kräver en högre grad av slumpmässighet (t.ex. kryptogr
 ```
 
 ## Fördjupning
-
 Historiskt sett har generering av slumpmässiga tal i JavaScript enbart varit beroende av funktionen `Math.random()`. Medan den är praktisk för de flesta vardagliga användningsområden, tillhandahåller dess algoritm, som typiskt är en variant av en pseudo-slumpmässig nummergenerator (PRNG) som Mersenne Twister, inte kryptografisk säkerhet.
 
 Introduktionen av Web Cryptography API medförde metoden `crypto.getRandomValues()`, som erbjuder ett sätt att generera tal som är mycket mindre förutsägbara och lämpliga för säkerhetskänsliga applikationer. Denna metod drar nytta av de underliggande operativsystemets slumpmässighetskällor, som `/dev/random` på Unix/Linux, vilka är robustare och mer lämpliga för kryptografiska operationer.

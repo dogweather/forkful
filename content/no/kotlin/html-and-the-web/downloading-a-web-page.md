@@ -10,9 +10,6 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## What & Why?
-Nedlasting av nettsider er henting av data fra en URL for å se eller behandle informasjonen. Programmerere gjør dette for å trekke ut data, automatisere oppgaver eller integrere tjenester.
-
 ## How to:
 Kotlin gjør det enkelt. Her er en kjapp kode som viser hvordan du laster ned innholdet på en nettside:
 

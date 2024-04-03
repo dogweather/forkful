@@ -12,9 +12,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---
 
-## Mitä & Miksi?
-HTTP-pyynnön lähettäminen perusautentikoinnilla tarkoittaa käyttäjätilin tunnistetietojen (yleensä käyttäjänimi ja salasana) lähettämistä verkkopalvelimelle pääsyn saamiseksi. Ohjelmoijat käyttävät tätä menetelmää turvatakseen resurssit ja päästäkseen käsiksi suojausta vaativiin web-resursseihin.
-
 ## Kuinka toimitaan:
 ```Python
 import requests

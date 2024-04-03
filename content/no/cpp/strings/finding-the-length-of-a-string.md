@@ -10,9 +10,6 @@ title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---
 
-## What & Why?
-Å finne lengden av en streng handler om å telle antall tegn den inneholder. Programmerere gjør dette for å validere input, formatere tekst, eller behandle data dynamisk.
-
 ## How to:
 I C++ kan du finne strenglengden ved å bruke `std::string::size()` eller `std::string::length()` funksjonene. 
 

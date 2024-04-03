@@ -16,9 +16,6 @@ title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---
 
-## Cái gì & Tại sao?
-Đọc các đối số dòng lệnh trong PHP có nghĩa là lấy các đầu vào được truyền vào script của bạn khi nó được chạy trong console. Lập trình viên làm điều này để làm cho các script của họ có tính tương tác và có thể cấu hình mà không cần phải mã hóa cứng các giá trị.
-
 ## Cách thực hiện:
 PHP sử dụng một mảng toàn cục `$argv` để lưu trữ các đối số dòng lệnh, với `$argv[0]` là tên script. Đây là cách bạn sử dụng nó:
 

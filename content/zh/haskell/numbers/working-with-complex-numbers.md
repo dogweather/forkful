@@ -17,12 +17,7 @@ title: "\u5904\u7406\u590D\u6570"
 weight: 14
 ---
 
-## 什么及为什么？
-
-复数由一个实部和一个虚部组成，在工程学、物理学和信号处理等各种计算领域至关重要。程序员使用它们来解决实数无法解决的方程，如找出负数的根。
-
 ## 如何操作：
-
 Haskell通过`Data.Complex`模块来处理复数。这里是一个快速指南：
 
 ```haskell
@@ -62,7 +57,6 @@ let fromPolar = mkPolar 5.0 0.9272952180016122  -- 与z1相同
 ```
 
 ## 深入探索
-
 复数可以追溯到16世纪，但直到 much later 广泛接受。Haskell和许多其他语言一样，为复数算术提供了原生支持，使得无需实现底层数学就可以轻松地使用这些数字。
 
 替代方案包括构建自定义的复数类型或使用特定域的库，如用于3D图形的四元数。但对于大多数用例而言，Haskell的`Data.Complex`已经足够。
@@ -70,7 +64,6 @@ let fromPolar = mkPolar 5.0 0.9272952180016122  -- 与z1相同
 在底层，`Data.Complex`只是一种将两个`Float`或`Double`值配对的数据类型，分别代表实部和虚部。这是在Haskell平台上使用复数的一种简单且有效的方式。
 
 ## 参见
-
 请查看这些资源以了解更多关于Haskell中复数的信息：
 
 - 官方Haskell `Data.Complex`文档：[Hackage Data.Complex](https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-Complex.html)

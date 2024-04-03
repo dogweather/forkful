@@ -15,9 +15,6 @@ title: "\u4E0B\u8F7D\u7F51\u9875"
 weight: 42
 ---
 
-## What & Why? (是什么 & 为什么?)
-下载网页就是从互联网上获取网页的内容。程序员这么做通常是为了数据抓取、信息检索或内容监控。
-
 ## How to: (如何操作:)
 ```elixir
 # 首先添加HTTPoison到mix.exs

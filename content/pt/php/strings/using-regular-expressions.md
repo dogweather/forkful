@@ -14,16 +14,10 @@ title: "Usando express\xF5es regulares"
 weight: 11
 ---
 
-## O Que & Por Quê?
-
-Expressões regulares (regex) em PHP são padrões usados para combinar combinações de caracteres em strings, permitindo operações sofisticadas de busca e substituição e validação de dados. Programadores utilizam regex pela sua potência e flexibilidade na análise de texto, validação de formulários ou raspagem de dados da web, tornando-o uma ferramenta indispensável no arsenal de um desenvolvedor.
-
 ## Como Fazer:
-
 O PHP suporta expressões regulares através da biblioteca PCRE (Perl Compatible Regular Expressions), oferecendo um rico conjunto de funções. Veja como usá-las:
 
 ### Correspondência de um padrão:
-
 Para verificar se um padrão existe dentro de uma string, use `preg_match()`. Esta função retorna 1 se o padrão foi encontrado na string e 0 se não.
 
 ```php
@@ -36,7 +30,6 @@ if (preg_match("/\bweb\b/i", "PHP é uma linguagem de script para web")) {
 ```
 
 ### Encontrando todas as correspondências:
-
 `preg_match_all()` é usado quando você precisa encontrar todas as ocorrências de um padrão dentro de uma string.
 
 ```php
@@ -48,7 +41,6 @@ print_r($matches[0]);
 ```
 
 ### Substituindo texto:
-
 Para substituir o texto que corresponde a uma expressão regular, `preg_replace()` é usado. É incrivelmente poderoso para formatar e limpar dados.
 
 ```php
@@ -60,7 +52,6 @@ echo preg_replace($padrão, substituição, $textoOriginal);
 ```
 
 ### Dividindo strings:
-
 Você pode dividir uma string em um array usando `preg_split()`, especificando um padrão para o delimitador.
 
 ```php

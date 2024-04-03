@@ -11,9 +11,6 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## Vad & Varför?
-Debug-utskrifter hjälper programmerare att förstå vad deras kod gör genom att visa mellanliggande värden och processflöden. De används för att snabbt lokalisera och rätta till fel i koden.
-
 ## How to:
 Att skriva ut debug-meddelanden i Haskell kan göras med `print` eller `putStrLn`. Här kommer några exempel:
 

@@ -11,9 +11,6 @@ title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---
 
-## Mikä & Miksi?
-Kompleksiluvuilla on reaaliosa ja imaginääriosa, ja ne ilmaistaan yleensä muodossa `a + bi`. Ne ovat elintärkeitä joissakin matematiikkaa vaativissa Arduino-projekteissa, jotka liittyvät signaalinkäsittelyyn, sähkötekniikkaan tai mihin tahansa muuhun alaan, jossa ilmiöitä mallinnetaan parhaiten tasossa.
-
 ## Kuinka:
 ```Arduino
 #include <Complex.h>

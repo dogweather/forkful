@@ -10,9 +10,6 @@ title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---
 
-## Mikä & Miksi?
-TOML, lyhenteenä Tom's Obvious, Minimal Language, on datamuoto, joka muistuttaa JSONia tai YAMLia, mutta on ihmisten luettavissa helpompi. Ohjelmoijat käyttävät sitä kokoonpanotiedostoihin, koska se on suoraviivainen ja kääntyy hyvin datarakenteiksi.
-
 ## Kuinka:
 Ensin varmista, että sinulla on asennettuna TOML-jäsentäjäkirjasto, kuten `yosymfony/toml`. Aloitetaan TOML-tiedoston jäsentäminen:
 
@@ -58,6 +55,7 @@ Array
 
 )
 ```
+
 ## Syväluotaus
 TOML syntyi vuonna 2013, jonka loi GitHubin perustajajäsen Tom Preston-Werner tarjoamaan käyttäjäystävällisemmän vaihtoehdon XML:lle ja JSONille kokoonpanotiedostoissa. Vaikka JSON on yksinkertainen koneille, TOML:n rakenne tekee siitä helpon ihmisen silmille, ilman YAML:n monimutkaisuutta.
 

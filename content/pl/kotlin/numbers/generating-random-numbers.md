@@ -11,16 +11,10 @@ title: Generowanie liczb losowych
 weight: 12
 ---
 
-## Co i dlaczego?
-
-Generowanie losowych liczb w programowaniu polega na tworzeniu liczb, które nie wykazują żadnego przewidywalnego wzorca. Programiści robią to z różnych powodów, w tym symulacji, testowania algorytmów, gier i aplikacji bezpieczeństwa, gdzie nieprzewidywalność jest kluczem do osiągnięcia realistycznych lub bezpiecznych wyników.
-
 ## Jak to zrobić:
-
 Kotlin zapewnia prostą metodę generowania losowych liczb za pomocą swojej biblioteki standardowej. Oto jak możesz generować różne typy losowych wartości:
 
 ### Generowanie losowej liczby całkowitej
-
 Aby wygenerować losową liczbę całkowitą w określonym zakresie:
 
 ```kotlin
@@ -33,7 +27,6 @@ fun main() {
 ```
 
 ### Generowanie losowego Double
-
 Podobnie, generowanie losowego double:
 
 ```kotlin
@@ -46,7 +39,6 @@ fun main() {
 ```
 
 ### Generowanie losowego Boolean
-
 Aby wygenerować losową wartość logiczną (boolean):
 
 ```kotlin
@@ -59,7 +51,6 @@ fun main() {
 ```
 
 ### Seeding dla reprodukowalnych wyników
-
 W przypadkach, gdy potrzebujesz reprodukowalnych sekwencji losowych liczb (na przykład w testowaniu), możesz zasiać generator liczb losowych:
 
 ```kotlin
@@ -74,7 +65,6 @@ fun main() {
 ```
 
 ## Dogłębna analiza
-
 Podejście biblioteki standardowej Kotlin do generowania losowych liczb wykorzystuje pod spodem `java.util.Random`, zapewniając mieszankę łatwości użytkowania i wydajności. Jednakże, ważne jest, aby zauważyć, że te metody generują liczby pseudolosowe, co oznacza, że liczby wydają się losowe, ale są generowane za pomocą deterministycznego procesu.
 
 Dla większości zastosowań, losowość zapewniana przez klasę `Random` w Kotlinie jest wystarczająca. Jednakże, dla aplikacji wymagających większego bezpieczeństwa, takich jak kryptografia, gdzie jakość losowości jest najważniejsza, należy rozważyć użycie `java.security.SecureRandom` zamiast tego. SecureRandom jest specjalnie zaprojektowany dla operacji kryptograficznych, zapewniając wyższą jakość losowości, choć potencjalnie kosztem wydajności.

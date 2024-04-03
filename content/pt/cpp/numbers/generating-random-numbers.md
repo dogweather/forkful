@@ -12,12 +12,7 @@ title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---
 
-## O Quê & Por Quê?
-
-A geração de números aleatórios na programação envolve criar sequências de números que não possuem uma ordem ou padrão previsíveis. Os programadores frequentemente utilizam esses números para diversos fins, como simular eventos imprevisíveis, em testes e depuração, e em algoritmos de jogos para garantir a imprevisibilidade.
-
 ## Como Fazer:
-
 Para gerar números aleatórios em C++, você normalmente faria uso do cabeçalho `<random>`, que foi introduzido no C++11, oferecendo uma ampla gama de facilidades para gerar números aleatórios de várias distribuições.
 
 ```C++
@@ -48,7 +43,6 @@ A saída de exemplo pode parecer assim, mas tenha em mente que cada execução p
 ```
 
 ## Aprofundando:
-
 Historicamente, a geração de números aleatórios em C++ dependia fortemente da função `rand()` e da função de semeadura `srand()`, encontradas no cabeçalho `<cstdlib>`. No entanto, essa abordagem frequentemente enfrentava críticas pela falta de uniformidade e previsibilidade na distribuição dos números gerados.
 
 A introdução do cabeçalho `<random>` no C++11 marcou uma melhoria significativa, oferecendo um sistema sofisticado para produzir números aleatórios. As facilidades fornecidas incluem uma variedade de motores (como `std::mt19937` para Mersenne Twister) e distribuições (como `std::uniform_int_distribution` para distribuição uniforme de inteiros) que podem ser combinadas para atender às necessidades específicas do programador, levando a um comportamento mais previsível, melhor desempenho e maior flexibilidade.

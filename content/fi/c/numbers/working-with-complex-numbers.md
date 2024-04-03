@@ -12,12 +12,7 @@ title: "Ty\xF6skenteleminen kompleksilukujen kanssa"
 weight: 14
 ---
 
-## Mikä ja Miksi?
-
-Kompleksiluvut koostuvat reaaliosasta ja imaginääriosasta, jotka esitetään muodossa `a + bi`, missä `i` on luvun `-1` neliöjuuri. Ohjelmoijat työskentelevät kompleksilukujen parissa eri aloilla, kuten sähkötekniikassa, kvanttilaskennassa ja virtausdynamiikassa, hyödyntäen niiden ainutlaatuisia ominaisuuksia simulaatioissa, signaalinkäsittelyssä ja tiettyjen matemaattisten yhtälötyyppien ratkaisemisessa.
-
 ## Kuinka:
-
 C:ssä kompleksilukuja tuetaan Vakio Kirjaston kautta, erityisesti `<complex.h>`:n kautta. Niiden käyttämiseen julista muuttujat `double complex` tyypillä (tai `float complex` yksittäisen tarkkuuden tapauksessa). Tässä on, miten suorittaa perustoiminnot:
 
 ```c
@@ -54,5 +49,4 @@ int main() {
 Huomaa, että `I` on vakio, joka edustaa imaginääriyksikköä `<complex.h>`:ssa. Funktiot kuten `creal()` ja `cimag()` poimivat vastaavasti reaali- ja imaginääriosat, kun taas `conj()` laskee kompleksikonjugaatin. Kompleksilukujen suuruuden ja vaiheen (argumentin) osalta käytetään `cabs()`- ja `carg()`-funktioita.
 
 ## Syväluotaus
-
 Tuki kompleksiluvuille C:ssä on suhteellisen uusi, ja se standardisoitiin C99:ssä. Ennen tätä kompleksilukuaritmetiikka C:ssä oli hankalaa, usein vaatien mukautettuja tietorakenteita ja funktioita. `<complex.h>`:n ja kompleksidatatyyppien sisällyttäminen tarjosi merkittävän parannuksen kielen kykyihin tieteellisiin ja insinöörisovelluksiin. On kuitenkin huomionarvoista, että jotkut kielet, kuten Python, tarjoavat intuitiivisempaa tukea kompleksiluvuille sisäänrakennettujen datatyyppien ja rikkaamman kirjastofunktioiden joukon kautta. Siitä huolimatta C:n tarjoama suorituskyky ja hallinta tekevät siitä etusijalla olevan valinnan suorituskykyä vaativissa laskentatehtävissä, vaikka se tarkoittaakin hieman monisanaisempaa syntaksia kompleksiaritmetiikalle.

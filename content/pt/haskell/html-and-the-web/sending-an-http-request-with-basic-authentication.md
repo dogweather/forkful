@@ -12,9 +12,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---
 
-## O Que é & Por Que?
-Realizar uma requisição HTTP com autenticação básica consiste em enviar um cabeçalho com credenciais codificadas em base64 para acessar recursos protegidos numa aplicação web. Programadores fazem isso para interagir com APIs que requerem autenticação para fornecer dados ou executar operações.
-
 ## Como Fazer:
 Vamos usar o pacote `http-conduit` para montar uma requisição HTTP com autenticação básica em Haskell. Primeiro, instale o pacote usando cabal:
 

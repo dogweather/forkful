@@ -9,12 +9,7 @@ title: Sending an HTTP request
 weight: 44
 ---
 
-## What & Why?
-
-Sending an HTTP request means asking a remote server for data or action. Programmers do this to interact with web services, fetch resources, or communicate with APIs.
-
 ## How to:
-
 Lua doesn't have built-in HTTP support, so we use libraries. One common choice is `lua-requests`. Here's a quick example:
 
 ```lua
@@ -42,7 +37,6 @@ Sample output can look like this:
 ```
 
 ## Deep Dive
-
 Lua's simplicity doesn't natively cover HTTP, which is where libraries step in. `lua-requests` mirrors the Python Requests library's functionality, making it a breeze for those familiar with Python.
 
 Other alternatives include `LuaSocket` for lower-level HTTP work and `luasocket.http` for more control. Lua also has bindings for `libcurl` (via `Lua-cURL`) for complex HTTP operations.
@@ -52,6 +46,5 @@ Historically, lacking built-in HTTP support reflects Lua's embedded-system roots
 Implementation wise, when you send an HTTP request, it travels over the network to the specified server. The server processes it and replies. Lua libraries abstract the socket programming needed, handling all the nitty-gritty of network communication so you focus on the actual request and response.
 
 ## See Also
-
 - [lua-requests GitHub repository](https://github.com/JakobGreen/lua-requests)
 - [LuaSocket Reference Manual](http://w3.impa.br/~diego/software/luasocket/http.html)

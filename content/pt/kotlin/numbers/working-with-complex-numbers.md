@@ -12,11 +12,7 @@ title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---
 
-## O Que & Por Que?
-Números complexos expandem nosso sistema numérico para incluir as raízes quadradas de números negativos, onde a unidade 'imaginária' i é igual à raiz quadrada de -1. Programadores os utilizam em campos como engenharia, física e processamento de sinais, porque são excelentes para modelar ondas, oscilações e tudo que gira.
-
 ## Como fazer:
-
 Vamos definir uma classe básica de número complexo em Kotlin:
 
 ```kotlin
@@ -42,13 +38,11 @@ fun main() {
 ```
 
 ## Aprofundamento
-
 Números complexos foram mencionados pela primeira vez no século 16, resolvendo equações cúbicas que não possuíam soluções reais. Engenharia e física se beneficiam enormemente de números complexos para analisar circuitos de corrente alternada e formas de onda. Alternativamente, você poderia usar uma biblioteca como `koma` ou `ejml` da Kotlin para trabalhos mais pesados.
 
 Operações em números complexos espelham os números reais, mas com atenção à unidade imaginária. A multiplicação, por exemplo, segue a propriedade distributiva, lembrando que `i^2 = -1`. Esta unidade imaginária nos permite representar números multidimensionais, cruciais em vários cálculos científicos.
 
 ## Veja Também
-
 Bibliotecas de Matemática Kotlin:
 
 - [koma](https://koma.kyonifer.com/): Uma biblioteca de computação científica para Kotlin.

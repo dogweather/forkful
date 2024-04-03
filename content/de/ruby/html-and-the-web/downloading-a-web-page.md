@@ -11,9 +11,6 @@ title: Webseite herunterladen
 weight: 42
 ---
 
-## Was & Warum?
-Das Herunterladen einer Webseite bedeutet, ihren Inhalt über das Internet abzurufen. Programmierer tun dies, um Daten zu sammeln, automatisiert Inhalte zu prüfen oder Webservices zu nutzen.
-
 ## How-to:
 Zum Herunterladen einer Webseite in Ruby nutzen wir die Bibliothek ‘net/http’. Hier ist ein einfaches Beispiel:
 

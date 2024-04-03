@@ -12,12 +12,7 @@ title: Een string met hoofdletters maken
 weight: 2
 ---
 
-## Wat & Waarom?
-
-Het kapitaliseren van een string betekent het maken van de eerste letter van een gegeven string in hoofdletters - als het een letter is. Programmeurs doen dit voor consistentie in de opmaak, het verfijnen van de gebruikersinterface of om aan datastandaarden te voldoen.
-
 ## Hoe te:
-
 ```elixir
 # Een string kapitaliseren in Elixir
 string = "elixir programmeren"
@@ -42,7 +37,6 @@ IO.puts gekapitaliseerde_woorden
 ```
 
 ## Diepgaande Duik
-
 Terug in de vroege dagen van het programmeren maakten programmeertalen zich vaak niet druk om stringmanipulatie als onderdeel van de kern van de taal. Elixir daarentegen komt met een robuuste module van stringfuncties direct uit de doos, dankzij de wortels in de volwassen Erlang VM (BEAM). Strings kapitaliseren in Elixir is een fluitje van een cent met de `String` module.
 
 Naast de eenvoudige `String.capitalize/1`, kun je scenario's tegenkomen die complexer gedrag vereisen. Stel je moet titels of namen kapitaliseren op een cultureel gevoelige manier. De `String` module van Elixir alleen zal niet voldoende zijn; je zult kijken naar bibliotheken zoals `Cldr` voor internationaliseringsondersteuning.
@@ -52,6 +46,5 @@ Intern houdt `String.capitalize/1` rekening met Unicode en multibyte karakters, 
 Als alternatief kun je je eigen kapitalisatiefunctie maken, maar in de meeste gevallen moeten de ingebouwde methodes voldoende zijn. Met aangepaste implementaties open je de deur naar subtiele bugs, vooral met internationale tekst. Waarom het wiel opnieuw uitvinden als je hoogwaardige tools klaar hebt om te gebruiken?
 
 ## Zie Ook
-
 - De officiële `String` documentatie van Elixir: [https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)
 - ExCldr-bibliotheek voor internationaliseringsondersteuning: [https://hex.pm/packages/ex_cldr](https://hex.pm/packages/ex_cldr)

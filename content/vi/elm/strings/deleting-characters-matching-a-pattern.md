@@ -16,9 +16,6 @@ title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---
 
-## Gì và Tại sao?
-Xóa các ký tự khớp với một mẫu có nghĩa là gỡ bỏ các tập hợp ký tự cụ thể khỏi văn bản, dựa trên các quy tắc (mẫu). Các lập trình viên làm điều này để làm sạch văn bản, xử lý dữ liệu, hoặc để đơn giản hóa dữ liệu nhập trước khi phân tích cú pháp.
-
 ## Làm thế nào:
 Elm không hỗ trợ regex một cách tự nhiên, nhưng bạn có thể mô phỏng việc xóa ký tự. Dưới đây là ví dụ sử dụng `String.filter` để loại bỏ các chữ số khỏi một chuỗi.
 

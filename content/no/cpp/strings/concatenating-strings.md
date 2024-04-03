@@ -11,9 +11,6 @@ title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---
 
-## Hva & Hvorfor?
-Strengsammenslåing handler om å sette sammen to eller flere tekststykker for å danne én enhet. Programmerere gjør det for å bygge opp meldinger, lage dynamisk innhold eller strukturert data.
-
 ## Slik gjør du:
 ```C++
 #include <iostream>

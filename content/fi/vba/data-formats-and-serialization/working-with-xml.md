@@ -14,12 +14,7 @@ title: "Ty\xF6skentely XML:n kanssa"
 weight: 40
 ---
 
-## Mikä & Miksi?
-
-XML:n käsittely Visual Basic for Applicationsissa (VBA) sisältää XML-dokumenttien jäsentämisen, luomisen ja muokkaamisen Microsoft Office -sovellusten kontekstissa. Ohjelmoijat kääntyvät tämän ominaisuuden puoleen integroimaan Office-sovellukset web-palveluiden tai muiden XML:ää tuottavien tietolähteiden kanssa, mikä helpottaa tietojen vaihtoa ja raportointitoimintoja.
-
 ## Kuinka:
-
 Aloittaaksesi vuorovaikutuksen XML:n kanssa, yleensä käytetään `MSXML2.DOMDocument`-objektia. Tämä rajapinta mahdollistaa sinun ladata, jäsentää ja navigoida XML-dokumentteja. Alla on yksinkertainen esimerkki, joka näyttää miten XML-tiedosto ladataan, navigoidaan sen rakenteessa ja luetaan attribuutteja sekä tekstisisältöä.
 
 ```basic
@@ -43,7 +38,6 @@ End If
 Yllä olevassa esimerkissä luomme `MSXML2.DOMDocument60`:n instanssin, lataamme XML-tiedoston ja tarkistamme virheet. Jos virheitä ei löydy, navigoimme tiettyyn solmuun käyttämällä XPathia ja näytämme sen tekstisisällön.
 
 ## Syväsukellus:
-
 XML-ominaisuuksien integrointi VBA:han ulottuu 2000-luvun alkuun, jolloin Office-sovellusten tarve olla yhteydessä webin tietoihin ja palveluihin kasvoi. `MSXML`-kirjasto, eli Microsoft XML Core Services, on kehittynyt vuosien aikana, ja `MSXML2.DOMDocument60` on yksi uusimmista suositelluista versioista käytettäväksi sen parantuneen suorituskyvyn ja turvallisuusominaisuuksien vuoksi.
 
 Vaikka tehokas, VBA:n XML-käsittelyominaisuuksia pidetään vähemmän tehokkaina ja hankalampina verrattuna nykyaikaisiin ohjelmointiympäristöihin, kuten Pythonin XML.etree tai C# LINQ to XML. VBA:n luonnollinen sanarikkaus ja manuaalinen viitteiden lisääminen ja hallinta voivat estää nopean kehityksen. Lisäksi, JSONin yleistyessä kevyempänä tiedonvaihtoformaattina, monet ohjelmoijat ja sovellukset ovat siirtyneet pois XML:stä, ellei sen käyttöä edellytetä yhteentoimivuuden tai tiettyjen yrityspalveluiden kanssa.

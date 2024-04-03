@@ -13,9 +13,6 @@ title: Een datum converteren naar een string
 weight: 28
 ---
 
-## Wat & Waarom?
-Een datum naar een string converteren betekent het omzetten van een datumobject naar leesbare tekst. Programmeurs doen dit om datums aan gebruikers te tonen of om ze te formatteren voor opslag of overdracht.
-
 ## Hoe:
 In Haskell gebruik je de `formatTime` functie uit de module `Data.Time.Format` voor deze taak. Laten we direct duiken in wat code:
 

@@ -16,12 +16,7 @@ title: "In \u1EA5n th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---
 
-## Điều gì & Tại sao?
-
-In đầu ra để gỡ lỗi chủ yếu liên quan đến việc hiển thị dữ liệu lên console để kiểm tra xem điều gì đang diễn ra trong script của bạn. Lập trình viên thực hiện điều này để theo dõi các biến, theo dõi luồng logic, và tìm ra những lỗi khó chịu.
-
 ## Cách thực hiện:
-
 ```Bash
 #!/bin/bash
 
@@ -54,7 +49,6 @@ Debug: Lần lặp vòng lặp 3
 ```
 
 ## Sâu hơn
-
 Ban đầu, việc gỡ lỗi có nghĩa là loại bỏ các lỗi cơ học thật sự làm gián đoạn các máy tính đầu tiên. Ngày nay, nó liên quan đến việc khắc phục lỗi trong code. Đầu ra gỡ lỗi là kính lúp của lập trình viên.
 
 Các lựa chọn thay thế cho `echo` trong các script bash bao gồm `printf` cho nhiều tùy chọn định dạng hơn, hoặc viết vào một tệp với việc chuyển hướng `>` để có nhật ký bền vững.
@@ -62,7 +56,6 @@ Các lựa chọn thay thế cho `echo` trong các script bash bao gồm `printf
 Bash cũng hỗ trợ đầu ra gỡ lỗi có điều kiện với lệnh nội bộ `set -x` để theo dõi các lệnh và các đối số của chúng khi được thực thi. `set -x` rất hữu ích cho việc gỡ lỗi toàn bộ script.
 
 ## Xem thêm
-
 - Trang `man` của Bash: `man bash`
 - Hướng dẫn script nâng cao: [Bash Guide for Beginners by Machtelt Garrels](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
 - Stack Overflow để khắc phục sự cố: [stackoverflow.com](https://stackoverflow.com/questions/tagged/bash)

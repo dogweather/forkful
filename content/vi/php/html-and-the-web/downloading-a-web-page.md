@@ -15,12 +15,7 @@ title: "T\u1EA3i trang web"
 weight: 42
 ---
 
-## Cái gì & Tại sao?
-
-Tải xuống một trang web có nghĩa là nắm bắt nội dung trực tuyến để bạn có thể sử dụng hoặc phân tích nó ngoại tuyến. Lập trình viên thực hiện việc này để lấy dữ liệu trên web, phân tích dữ liệu hoặc tương tác với nội dung web theo cách lập trình.
-
 ## Cách thực hiện:
-
 PHP làm cho việc tải trang web trở nên khá đơn giản. Dưới đây là một ví dụ đơn giản sử dụng `file_get_contents()`:
 
 ```php
@@ -64,7 +59,6 @@ Tải trang thành công.
 ```
 
 ## Tìm hiểu kỹ
-
 Việc tải trang web là một phương pháp đã tồn tại từ khi web ra đời. Ban đầu, để tương tác với các trang web, bạn sẽ sử dụng các công cụ dòng lệnh như `wget` hoặc `curl`. Tuy nhiên, khi PHP phát triển, các hàm đã làm cho những nhiệm vụ này có thể thực hiện được trong các script.
 
 Hãy so sánh:
@@ -79,7 +73,6 @@ Hãy so sánh:
 Nhớ rằng, một số trang web không thích bị khai thác dữ liệu. Luôn tôn trọng `robots.txt` và các điều kiện dịch vụ.
 
 ## Xem thêm
-
 - [Hướng dẫn PHP về file_get_contents()](http://php.net/manual/en/function.file-get-contents.php)
 - [Hướng dẫn PHP về cURL](http://php.net/manual/en/book.curl.php)
 - [Thông số kỹ thuật robots.txt](https://developers.google.com/search/docs/advanced/robots/robots_txt)

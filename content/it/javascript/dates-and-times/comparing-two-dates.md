@@ -10,9 +10,6 @@ title: Confronto tra due date
 weight: 27
 ---
 
-## Cos'è & Perché?
-Comparare due date in JavaScript significa verificare se sono uguali, quale precede o segue l'altra. I programmatori lo fanno per gestire eventi, scadenze, o per la logica di funzionamento delle applicazioni, come prenotazioni o promemoria.
-
 ## Come fare:
 ```Javascript
 const data1 = new Date('2023-04-01T00:00:00');

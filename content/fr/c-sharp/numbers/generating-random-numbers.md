@@ -11,12 +11,7 @@ title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---
 
-## Quoi & Pourquoi ?
-
-Générer des nombres aléatoires en C# implique la création de valeurs numériques imprévisibles dans une plage spécifiée. Les programmeurs utilisent ces méthodes pour implémenter des fonctionnalités telles que la cryptographie, les simulations et les jeux où l'imprévisibilité ou la simulation de l'aléatoire du monde réel est nécessaire.
-
 ## Comment faire :
-
 La manière la plus courante de générer des nombres aléatoires en C# est d'utiliser la classe `System.Random`. Voici un exemple simple démontrant son utilisation :
 
 ```C#
@@ -68,7 +63,6 @@ public class SecureRandomExample
 ```
 
 ## Plongée profonde
-
 La génération de nombres aléatoires en C# a évolué au fil des ans. Initialement, la classe `System.Random` était la référence pour générer des nombres pseudo-aléatoires. Elle est pseudo-aléatoire parce que, étant donné une valeur de graine spécifique, elle produira la même séquence de nombres, ce qui peut être utile pour le débogage ou la répétabilité des tests.
 
 Bien que suffisante pour les besoins basiques, `System.Random` n'est pas sûre pour les threads et peut produire des résultats prévisibles, ce qui n'est pas approprié pour les applications dépendantes de la sécurité. Cette limitation a conduit à l'introduction du `RNGCryptoServiceProvider` pour l'aléatoire cryptographique, qui est plus sécurisé mais aussi plus gourmand en ressources.

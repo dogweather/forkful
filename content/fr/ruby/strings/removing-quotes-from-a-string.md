@@ -10,9 +10,6 @@ title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---
 
-## Quoi & Pourquoi ?
-Supprimer les guillemets d'une chaîne signifie retirer ces marques de citation doubles ou simples qui entourent les valeurs de texte. Les programmeurs font souvent cela pour nettoyer les entrées des utilisateurs, assurer la cohérence dans le traitement des données, ou préparer des données pour des systèmes qui pourraient être confus par ces caractères supplémentaires.
-
 ## Comment faire :
 Ruby possède quelques astuces sympas pour couper ces guillemets ennuyeux. Vous pouvez utiliser les méthodes `gsub` ou `delete` pour accomplir cette tâche. Voici du code à méditer :
 

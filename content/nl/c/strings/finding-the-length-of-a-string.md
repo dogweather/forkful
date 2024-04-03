@@ -12,9 +12,6 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-Het vinden van de lengte van een reeks in C houdt in dat wordt bepaald hoeveel tekens er zijn voor de null-terminator `\0`. Programmeurs doen dit om reeksen correct te manipuleren zonder tegen fouten aan te lopen zoals bufferoverlopen, die kunnen leiden tot beveiligingskwetsbaarheden of programma-crashes.
-
 ## Hoe te:
 In C wordt de standaard bibliotheekfunctie `strlen()` vaak gebruikt om de lengte van een reeks te vinden. Hier is een snel voorbeeld:
 

@@ -12,12 +12,7 @@ title: Eine HTTP-Anforderung senden
 weight: 44
 ---
 
-## Was & Warum?
-
-Das Senden einer HTTP-Anfrage umfasst das Erstellen und Versenden einer Anfrage an einen Webserver, um Daten abzurufen oder zu übermitteln. Programmierer tun dies in C, um mit Web-APIs zu interagieren, Webseiten herunterzuladen oder direkt aus ihren Anwendungen heraus mit anderen vernetzten Diensten zu kommunizieren.
-
 ## Wie:
-
 Um eine HTTP-Anfrage in C zu senden, stützt man sich in der Regel auf Bibliotheken wie libcurl, da C keine integrierte Unterstützung für Webprotokolle bietet. Hier ist ein einfaches Beispiel, das libcurl verwendet, um eine GET-Anfrage durchzuführen:
 
 Zuerst stellen Sie sicher, dass libcurl auf Ihrem System installiert ist. Danach binden Sie die notwendigen Header ein und verlinken in Ihrer Quelldatei gegen die libcurl-Bibliothek:
@@ -54,11 +49,9 @@ int main(void) {
 Kompilieren Sie dies mit etwas Ähnlichem wie `gcc -o http_request http_request.c -lcurl`, die Ausführung sollte eine einfache GET-Anfrage an "http://example.com" durchführen.
 
 ### Ausgabebeispiel
-
 Da das Beispiel die Antwort des Servers nicht verarbeitet, wird die Ausführung keine sichtbare Ausgabe über potenzielle Fehlermeldungen hinaus produzieren. Die Integration der Callback-Funktion zur Verarbeitung empfangener Daten ist für eine sinnvolle Interaktion unerlässlich.
 
 ## Vertiefung
-
 Das Konzept, HTTP-Anfragen aus einem C-Programm zu senden, basiert auf den leistungsfähigen Netzwerkfähigkeiten der Sprache, gekoppelt mit externen Bibliotheken, da C selbst eine Low-Level-Sprache ohne integrierten High-Level-Internetprotokollsupport ist. Historisch gesehen würden Programmierer manuell die Socket-Programmierung in C nutzen, ein komplexer und mühsamer Prozess, um mit Webservern zu interagieren, bevor dedizierte Bibliotheken wie libcurl aufkamen.
 
 Libcurl, aufbauend auf C, vereinfacht den Prozess, indem es die mühsamen Details der Socket-Programmierung und die Spezifika des HTTP-Protokolls abstrahiert. Es unterstützt eine Vielzahl von Protokollen über HTTP/HTTPS hinaus, einschließlich FTP, SMTP und mehr, was es zu einem vielseitigen Werkzeug für die Netzwerkprogrammierung in C macht.

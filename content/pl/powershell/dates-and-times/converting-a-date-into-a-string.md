@@ -10,11 +10,7 @@ title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---
 
-## What & Why?
-Co to jest konwersja daty na łańcuch znaków? To proces zmiany formatu daty z jej wbudowanego typu w PowerShell do postaci tekstowej, czyli stringa. Po co programiści to robią? Aby ułatwić wyświetlanie, zapisywanie lub manipulowanie datami w interfejsach użytkownika, plikach, lub systemach nieobsługujących typów dat.
-
 ## How to:
-
 Załóżmy, że masz datę i chcesz ją przekształcić na tekst. W PowerShell robisz to tak:
 
 ```PowerShell
@@ -47,7 +43,6 @@ Wynikowy string będzie wyglądał tak:
 To tylko dwa proste przykłady. Możliwości formatowania są o wiele szersze.
 
 ## Deep Dive:
-
 Konwersja daty na string jest niezbędna, gdyż format daty różni się w zależności od kontekstu użycia. Na przykład, logi systemowe mogą wymagać jednego formatu, a raporty dla użytkownika końcowego innego.
 
 Historia formatowania dat sięga jeszcze języków programowania, które były używane przed PowerShell, takich jak C czy Perl, gdzie również istniała potrzeba prezentacji dat w czytelnej formie.
@@ -65,7 +60,6 @@ $cmdletFormattedDate = Get-Date -Format 'yyyy-MM-dd'
 Podczas implementacji warto zwrócić uwagę na kulturotwórcze ustawienia formatowania daty (`CultureInfo`), ponieważ to one decydują o domyślnym formacie daty i czasu.
 
 ## See Also:
-
 Oto kilka przydatnych linków, jeśli chcesz zgłębić temat:
 
 - Dokumentacja Microsoft o cmdlecie `Get-Date`: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date

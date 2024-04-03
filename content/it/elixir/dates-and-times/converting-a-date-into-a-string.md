@@ -11,9 +11,6 @@ title: Conversione di una data in una stringa
 weight: 28
 ---
 
-## What & Why?
-Convertire una data in una stringa significa trasformare un oggetto che rappresenta una data e/ora in una sequenza di caratteri leggibile da un umano. I programmatori lo fanno per mostrare date in formati specifici o per inserirle in file e database che accettano solo testo.
-
 ## How to:
 In Elixir, utilizziamo il modulo `DateTime` insieme a `strftime` per convertire le date in stringhe formattate.
 

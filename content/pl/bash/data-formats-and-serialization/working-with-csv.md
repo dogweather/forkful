@@ -13,11 +13,7 @@ title: Praca z plikami CSV
 weight: 37
 ---
 
-## Co i dlaczego?
-Praca z plikami CSV (Comma-Separated Values - wartości rozdzielone przecinkami) w Bashu polega na przetwarzaniu i manipulowaniu danymi tabelarycznymi przechowywanymi w formacie tekstu zwykłego. Jest to kluczowe dla programistów, ponieważ pozwala na automatyzację zadań transformacji, analizy i integracji danych bezpośrednio z linii poleceń, bez potrzeby korzystania z bardziej zaawansowanych narzędzi czy środowisk programistycznych.
-
 ## Jak to zrobić:
-
 **Czytanie pliku CSV linia po linii**
 
 ```bash

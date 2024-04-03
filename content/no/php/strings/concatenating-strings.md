@@ -10,9 +10,6 @@ title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Konkatenasjon er prosessen å koble sammen tekststrenger. Det lar programmerere sette sammen ord og setninger dynamisk, noe som er viktig i alt fra å lage brukervennlige meldinger til å generere kompleks kode. 
-
 ## How to (Slik gjør du det)
 Bruk punktum `.` for å koble sammen strenger i PHP. Her er et enkelt eksempel:
 

@@ -12,9 +12,6 @@ title: Een nieuw project starten
 weight: 1
 ---
 
-## Wat & Waarom?
-Een nieuw C# project starten betekent het opzetten van een nieuwe oplossing en projectbestanden die je code structureren. Programmeurs beginnen nieuwe projecten om ideeën om te zetten in software, problemen op te lossen of technologie te verkennen.
-
 ## Hoe:
 Laten we onze mouwen opstropen en wat code onder handen nemen. Ga ervan uit dat je .NET 6 of later hebt - dat is de laatste versie op het moment van schrijven. Je gebruikt de .NET CLI hiervoor.
 

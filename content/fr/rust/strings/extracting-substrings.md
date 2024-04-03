@@ -11,9 +11,6 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## What & Why?
-Extraire des sous-chaînes, c'est prélever des parties précises d'une chaîne de caractères. Les développeurs le font pour analyser, manipuler ou valider les données textuelles.
-
 ## How to:
 ```Rust
 fn main() {

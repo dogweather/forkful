@@ -11,9 +11,6 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-## Cosa & Perché?
-I numeri complessi sono una combinazione di numeri reali e immaginari, come `a + bi` dove `i` è la radice quadrata di -1. Sono fondamentali in campi come l'ingegneria e la fisica per risolvere problemi che i numeri regolari non possono affrontare.
-
 ## Come fare:
 Elm non ha un supporto integrato per i numeri complessi, quindi dovrai creare il tuo tipo e le tue funzioni. Ecco una configurazione rapida:
 

@@ -13,12 +13,7 @@ title: Hantera filer med CLI-engreppskommandon
 weight: 31
 ---
 
-## Vad & Varför?
-
-Att manipulera filer med CLI (kommandoradsgränssnitt) one-liners innebär att använda Bash-skript eller kommandon för att utföra åtgärder på filer, som att skapa, läsa, uppdatera eller radera dem, allt från terminalen. Programmerare gör det för effektivitet, automation och eftersom det är exceptionellt kraftfullt för hantering av filoperationer på Linux-servrar eller system, där grafiska gränssnitt kanske inte finns tillgängliga.
-
 ## Hur:
-
 Här är några kraftfulla one-liners och vad de kan åstadkomma:
 
 1. **Skapa en fil och skriva text i den:**
@@ -64,7 +59,6 @@ Denna loop går igenom varje `.txt`-fil i den aktuella katalogen och döper om d
 Dessa CLI one-liners utnyttjar kraften i Bash för snabb och effektiv filmanipulation, en färdighet som varje programmerare kommer att anse vara ovärderlig.
 
 ## Fördjupning
-
 Bash-shellet, som är en stående inslag på de flesta UNIX-liknande system, har utvecklats från Bourne Shell (sh), introducerat i Version 7 Unix 1979. Bash utökar sin föregångares möjligheter med förbättrade skriptfunktioner som har gjort det populärt bland systemadministratörer och programmerare.
 
 Även om Bash är otroligt kraftfullt för filmanipulation, kommer det med sina nackdelar. Att vara textbaserad, komplexa operationer (som de som involverar binärdata) kan vara besvärliga eller ineffektiva jämfört med att använda ett programmeringsspråk utformat med dessa förmågor i åtanke, till exempel Python.

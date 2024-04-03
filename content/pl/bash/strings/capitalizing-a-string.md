@@ -14,11 +14,7 @@ title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---
 
-## Co i Dlaczego?
-Zmiana pierwszej litery ciągu na wielką w Bashu polega na przekształceniu pierwszego znaku ciągu na wielką literę, pozostawiając resztę ciągu bez zmian. Ta technika jest powszechnie stosowana do formatowania wyjścia lub dostosowania się do konwencji kodowania wymagających, aby pewne ciągi rozpoczynały się wielką literą ze względów czytelności lub preferencji stylistycznych.
-
 ## Jak to zrobić:
-
 Bash nie posiada wbudowanej funkcji specjalnie do zamiany liter na wielkie, ale można osiągnąć ten efekt, używając rozwinięcia parametrów lub zewnętrznych narzędzi takich jak `awk`. Oto kilka sposobów na zmianę pierwszej litery ciągu na wielką w Bashu:
 
 **Korzystając z rozwinięcia parametru:**

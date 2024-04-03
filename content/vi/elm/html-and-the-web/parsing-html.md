@@ -16,9 +16,6 @@ title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---
 
-## Cái Gì & Tại Sao?
-Việc phân tích cú pháp HTML có nghĩa là chuyển đổi văn bản HTML thành một cấu trúc dữ liệu mà chương trình của bạn có thể tương tác được. Các lập trình viên làm việc này để thao tác, trích xuất và tương tác với nội dung của các trang web một cách lập trình.
-
 ## Làm Thế Nào:
 Elm không tự phân tích cú pháp HTML ngay lập tức mà thay vào đó, nó tập trung vào việc render các view với module `Html` của riêng mình. Để phân tích cú pháp HTML, bạn thường sử dụng một dịch vụ phía server hoặc một thư viện JavaScript bên ngoài, sau đó truyền dữ liệu vào Elm. Dưới đây là một cấu hình Elm cơ bản để xử lý dữ liệu HTML đã được phân tích cú pháp:
 

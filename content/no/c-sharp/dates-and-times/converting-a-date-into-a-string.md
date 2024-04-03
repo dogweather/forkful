@@ -9,9 +9,6 @@ title: Konvertere en dato til en streng
 weight: 28
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Konvertering av dato til streng gjør datoen lesbar for mennesker. Dette er nyttig for visning, logging eller formatert utveksling mellom systemer.
-
 ## How to: (Slik gjør du:)
 ```C#
 using System;

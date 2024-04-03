@@ -12,9 +12,6 @@ title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---
 
-## What & Why? (Co i Dlaczego?)
-Wysłanie żądania HTTP z podstawową autentykacją to proces zdalnego zapytania serwera z logowaniem (nazwa użytkownika i hasło). Programiści robią to, by uzyskać dostęp do chronionych zasobów lub usług webowych.
-
 ## How to: (Jak to zrobić:)
 ```PowerShell
 # Przykład żądania GET z użyciem podstawowej autentykacji

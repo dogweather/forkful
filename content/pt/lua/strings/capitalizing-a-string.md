@@ -13,9 +13,6 @@ title: Capitalizando uma string
 weight: 2
 ---
 
-## O Que & Porquê?
-Capitalizar uma string envolve modificar o primeiro caractere de cada palavra em uma frase para maiúscula, garantindo que o restante esteja em minúscula. Essa técnica é comumente usada para formatar texto para uma saída mais profissional ou legível, como preparar títulos ou entrada de usuário para exibição.
-
 ## Como Fazer:
 Lua não possui uma função embutida para capitalizar strings, mas você pode facilmente realizar essa tarefa usando funções básicas de manipulação de strings. Aqui está uma função simples para capitalizar a primeira letra de uma única palavra:
 

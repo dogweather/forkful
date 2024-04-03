@@ -9,9 +9,6 @@ title: Tekstitiedoston lukeminen
 weight: 22
 ---
 
-## What & Why? (Mitä & Miksi?)
-Lukemalla tekstitiedostoa koodissasi käsittelet tiedon virtoja. Ohjelmoijat lukevat tiedostoja automatisoidakseen datan käsittelyä – hae, muokkaa, tallenna.
-
 ## How to: (Miten tehdä:)
 ```Lua
 -- Tiedoston avaaminen lukutilassa

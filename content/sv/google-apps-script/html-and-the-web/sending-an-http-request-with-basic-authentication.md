@@ -14,12 +14,7 @@ title: "Skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering"
 weight: 45
 ---
 
-## Vad och Varför?
-
-Att skicka en HTTP-förfrågan med grundläggande autentisering innebär att koda ett användarnamn och lösenord i en förfrågningsheader för att få tillgång till skyddade resurser. Programmerare använder denna metod för autentisering på serversidan, för att integrera med API:er som kräver grundläggande autentisering för operationer som datahämtning eller publicering av innehåll.
-
 ## Hur gör man:
-
 I Google Apps Script använder du tjänsten `UrlFetchApp` tillsammans med en base64-kodad autentiseringsheader för att skicka en HTTP-förfrågan med grundläggande autentisering. Här är en steg-för-steg-guide:
 
 1. **Koda inloggningsuppgifter**: Först, koda ditt användarnamn och lösenord i base64. Google Apps Script har ingen inbyggd base64-kodningsfunktion för strängar, så du kommer att använda Utilities.base64Encode för detta ändamål.
@@ -59,7 +54,6 @@ Exempel på utdata vid en lyckad förfrågan kommer att variera beroende på API
 Se till att du hanterar möjliga HTTP-fel genom att kontrollera svarskoden eller använda alternativet `muteHttpExceptions` för en mer kontrollerad felhantering.
 
 ## Fördjupning
-
 Att skicka en HTTP-förfrågan med grundläggande autentisering har varit en standardmetod i många programmeringsspråk för att komma åt webbaserade resurser som kräver autentisering. I kontexten av Google Apps Script erbjuder `UrlFetchApp` ett enkelt sätt att utföra dessa HTTP-förfrågningar, inklusive de som kräver autentisering. Inkluderingen av grundläggande referenser i förfrågningsheadrarna är en enkel men effektiv metod, men den kommer med säkerhetsvarningar, främst eftersom referenserna skickas i klartext, bara base64-kodade, vilket enkelt kan avkodas om de avlyssnas.
 
 För förbättrad säkerhet rekommenderas alternativ som OAuth 2.0, särskilt när det hanteras känsliga data eller operationer. Google Apps Script har inbyggt stöd för OAuth 2.0 med `OAuth2`-biblioteket, vilket förenklar processen att autentisera mot tjänster som stöder detta protokoll.

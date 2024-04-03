@@ -11,9 +11,6 @@ title: Avrundning av tal
 weight: 13
 ---
 
-## Vad & Varför?
-Att avrunda tal innebär att justera dem till närmaste heltal eller specificerad decimalsiffra. Det är en grundläggande del i programmering för att minska komplexitet, förbättra prestanda och för situationer när noggrannhet utöver en viss punkt inte tillför värde.
-
 ## Hur man gör:
 ```lua
 -- Grundläggande avrundning i Lua kommer inte inbyggd, men du kan definiera en funktion:

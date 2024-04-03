@@ -11,9 +11,6 @@ title: Lavorare con XML
 weight: 40
 ---
 
-## Cos'è & Perché?
-Lavorare con XML implica l'analisi e la manipolazione di documenti XML tramite codice. I programmatori lo fanno per leggere, scrivere e modificare dati in un formato strutturato e portatile, ampiamente utilizzato per lo scambio e l'archiviazione dei dati.
-
 ## Come fare:
 Lua non include un'analisi XML nativa, ma ci sono librerie come LuaXML e xml2lua che svolgono il lavoro. Ecco una rapida occhiata all'analisi di XML con xml2lua:
 

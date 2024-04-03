@@ -14,9 +14,6 @@ title: Analisi del HTML
 weight: 43
 ---
 
-## Cosa & Perché?
-L'analisi (parsing) di HTML comporta l'analisi del codice HTML di una pagina web per estrarre informazioni o elementi specifici, un compito comune per lo scraping del web, il data mining o l'automatizzazione delle interazioni con i siti web. I programmatori lo fanno per interagire programmaticamente con i siti web o estrarre dati da essi, automatizzare compiti o testare applicazioni web.
-
 ## Come fare:
 Python offre potenti librerie come BeautifulSoup e requests per lo scraping del web e l'analisi di HTML. Per iniziare, è necessario installare queste librerie se non lo avete già fatto:
 

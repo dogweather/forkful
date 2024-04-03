@@ -11,9 +11,6 @@ title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---
 
-## Vad & Varför?
-Att skapa en temporär fil är processen att göra en tillfällig dataförvaring som typiskt används och raderas under programmets exekvering. Programmerare skapar temporära filer för att hantera data som inte behöver sparas permanent eller för att undvika att ta upp värdefullt minne under långa operationer.
-
 ## Hur gör man:
 Arduino-plattformen är inte direkt jämförbar med system som använder filsystem för att hantera temporära filer, men du kan hantera temporär datahantering genom att använda RAM. Här är ett exempel där vi använder en byte-array för att simulera en temporär fil:
 

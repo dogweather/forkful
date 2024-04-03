@@ -12,9 +12,6 @@ title: Een datum uit een string parsen
 weight: 30
 ---
 
-## Wat & Waarom?
-Het parsen van een datum uit een tekenreeks betekent het omzetten van tekst naar een datumgegevenstype. Programmeurs doen dit om datumgerelateerde logica op een gestandaardiseerde, locatie-onafhankelijke manier te behandelen, vaak voor taken zoals invoervalidatie, sortering en opslag.
-
 ## Hoe:
 Gebruik `<chrono>` en `<sstream>` om een datum in C++ te parsen. Hier is een snel voorbeeld:
 

@@ -10,9 +10,6 @@ title: Uthenting av delstrenger
 weight: 6
 ---
 
-## Hva & Hvorfor?
-Utdrag av strenger er å hente deler fra en tekststreng. Programmerere gjør det for å jobbe med spesifikke datasegmenter, validere input, eller manipulere tekst basert på behov.
-
 ## Hvordan:
 ```Bash
 # Ekstrahere med substr

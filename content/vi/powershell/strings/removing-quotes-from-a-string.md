@@ -16,9 +16,6 @@ title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---
 
-## Cái gì & Tại sao?
-Việc loại bỏ dấu nháy khỏi một chuỗi trong PowerShell giúp loại bỏ dấu nháy đơn (`'`) hoặc dấu nháy kép (`"`) bao quanh văn bản của bạn. Lập trình viên thường cần phải làm sạch chuỗi cho việc xử lý, so sánh, hoặc mục đích xuất ra, đặc biệt khi xử lí đầu vào từ người dùng hoặc phân tích tệp.
-
 ## Làm thế nào:
 Bạn có thể sử dụng toán tử `-replace` để loại bỏ dấu nháy khỏi chuỗi. Dưới đây là cách làm:
 

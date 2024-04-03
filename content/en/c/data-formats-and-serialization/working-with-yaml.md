@@ -11,12 +11,7 @@ title: Working with YAML
 weight: 41
 ---
 
-## What & Why?
-
-YAML, which stands for "YAML Ain't Markup Language," is a human-readable data serialization standard that can be used for all sorts of applications, from configuration files to data storage. Programmers often work with YAML when they need an easy-to-read and easy-to-write format for configuration files or data exchange between languages and systems.
-
 ## How to:
-
 Working with YAML in C requires a library, as the standard C library does not provide direct support for YAML parsing or serialization. One of the most popular YAML libraries for C is `libyaml`, which offers both low-level and high-level interfaces for parsing and emitting YAML. Below is an example of how to parse a simple YAML file using `libyaml`:
 
 **First**, you need to install the `libyaml` library. If you're on a Unix-like system, you can usually install it via your package manager. For example, on Ubuntu:
@@ -88,7 +83,6 @@ Value: false
 ```
 
 ## Deep Dive
-
 YAML was first released in 2001 and designed to be more readable and user-friendly than other data serialization formats like XML or JSON, borrowing from several languages like C, Perl, and Python for its design philosophy. Despite its advantages in readability and ease of human modification, YAML can be complex to parse programmatically due to its reliance on indentation and its extensive feature set, including references and custom types.
 
 While `libyaml` provides robust, low-level access to parsing and emitting YAML in C, it can be cumbersome for simple tasks due to its verbose API. For these reasons, some programmers prefer to use higher-level libraries or even other data serialization formats like JSON when working in C, especially when performant parsing with minimal code overhead is a priority. However, YAML remains a popular choice for configuration files and situations where human readability is paramount. Alternatives like TinyYAML or embedding a high-level interpreter (e.g., embedding Python or Lua) could provide more convenience for specific applications, balancing between ease of use and performance needs.

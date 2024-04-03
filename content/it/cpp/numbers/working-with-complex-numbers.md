@@ -10,9 +10,6 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-## Cosa & Perché?
-I numeri complessi estendono i numeri reali aggiungendo un'unità immaginaria, rappresentata come 'i', dove i^2 = -1. I programmatori li usano per simulazioni, elaborazione di segnali e risoluzione di problemi matematici che richiedono di lavorare in due dimensioni.
-
 ## Come fare:
 C++ dispone di una libreria integrata `<complex>` che facilita il lavoro con i numeri complessi. Ecco una rapida occhiata:
 

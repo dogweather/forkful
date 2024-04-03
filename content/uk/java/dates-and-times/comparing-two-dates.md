@@ -12,9 +12,6 @@ title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u043
 weight: 27
 ---
 
-## What & Why? (Що і Чому?)
-Comparing two dates lets you figure out their chronological sequence – which one comes before or after, or if they're the same moment in time. Programmers need this to track events, schedules, deadlines, and for data sorting.
-
 ## How to (Як саме):
 Comparing dates in Java is straightforward thanks to the `java.time` package. Check out how it's done:
 

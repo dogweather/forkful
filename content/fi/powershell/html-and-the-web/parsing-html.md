@@ -14,15 +14,10 @@ title: "HTML:n j\xE4sennys"
 weight: 43
 ---
 
-## Mikä & Miksi?
-HTML:n jäsentäminen PowerShellissä tarkoittaa HTML-sisällön purkamista erityisten tietojen poimimiseksi tai webiin liittyvien tehtävien automatisoimiseksi. Ohjelmoijat tekevät näin vuorovaikuttaakseen verkkosivujen kanssa, kaapiakseen web-sisältöä tai automatisoidakseen lomakkeiden lähetyksiä ja muita web-vuorovaikutuksia tarvitsematta web-selainta.
-
 ## Kuinka:
-
 PowerShell ei natiivisti sisällä erityistä HTML-jäsentäjää, mutta voit käyttää `Invoke-WebRequest` cmdletia HTML-sisällön saavuttamiseksi ja jäsentämiseksi. Monimutkaisempaan jäsentämiseen ja manipulointiin voidaan käyttää HtmlAgilityPackia, suosittua .NET-kirjastoa.
 
 ### Käyttäen `Invoke-WebRequest`-komentoa:
-
 ```powershell
 # Yksinkertainen esimerkki otsikoiden noutamiseksi verkkosivulta
 $response = Invoke-WebRequest -Uri 'http://example.com'
@@ -38,7 +33,6 @@ Esimerkkialue
 ```
 
 ### Käyttäen HtmlAgilityPackia:
-
 Ensiksi, sinun täytyy asentaa HtmlAgilityPack. Voit tehdä tämän via NuGet Package Manager:
 
 ```powershell

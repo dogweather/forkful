@@ -10,9 +10,6 @@ title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---
 
-## Quoi & Pourquoi ?
-L'interpolation de chaînes permet d'insérer des valeurs de variables ou des expressions dans une chaîne de texte. On l'utilise pour simplifier l'assemblage de chaînes et rendre le code plus clair et plus dynamique.
-
 ## Comment faire :
 ```Ruby
 prenom = "Marie"

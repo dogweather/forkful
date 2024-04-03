@@ -11,9 +11,6 @@ title: Loggning
 weight: 17
 ---
 
-## Vad & Varför?
-Loggning är processen att registrera applikationshändelser och datautskrift under körning. Programmerare loggar för att diagnostisera buggar, övervaka programvarans prestanda, spåra användaraktiviteter och upprätthålla efterlevnad av säkerhets- och affärsstandarder.
-
 ## Hur man gör:
 I C# kan du använda det inbyggda namnrymdet `System.Diagnostics` eller tredjepartskomponenter som NLog eller log4net. Här är ett snabbt exempel som använder `ILogger`-gränssnittet tillgängligt i .NET Core:
 

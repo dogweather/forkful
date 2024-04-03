@@ -13,12 +13,7 @@ title: Eine Textdatei lesen
 weight: 22
 ---
 
-## Was & Warum?
-
-Das Lesen einer Textdatei in Dart beinhaltet den Zugriff auf und das Abrufen von Daten aus auf dem Dateisystem gespeicherten Dateien. Programmierer tun dies, um Eingabedaten, Konfigurationseinstellungen oder Datensätze zu verarbeiten, was es zu einer grundlegenden Operation für viele Anwendungen macht – von einfachen Skripten bis hin zu komplexen Apps.
-
 ## Wie geht das:
-
 Darts Kernbibliothek, `dart:io`, bietet die notwendigen Funktionen, um Textdateien synchron oder asynchron zu lesen. Hier ist, wie man beides angeht.
 
 **Synchron:**

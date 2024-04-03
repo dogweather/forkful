@@ -10,9 +10,6 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## What & Why? - Mikä ja Miksi?
-Tekstin etsiminen ja korvaaminen auttaa muuttamaan koodia nopeasti. Se on tärkeää, kun halutaan päivittää muuttujien nimiä tai korjata virheitä useissa tiedostoissa kerralla.
-
 ## How to: - Kuinka Tehdä:
 Fish Shellissä voit etsiä ja korvata tekstiä `string` komennon avulla. Tässä on esimerkit:
 

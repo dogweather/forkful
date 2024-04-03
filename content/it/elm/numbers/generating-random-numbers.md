@@ -15,9 +15,6 @@ title: Generare numeri casuali
 weight: 12
 ---
 
-## Cosa & Perché?
-Generare numeri casuali in Elm comporta l'utilizzo del modulo `Random` per produrre numeri pseudo-casuali, i quali sono utili per una varietà di compiti come giochi, simulazioni e perfino come parte di algoritmi che richiedono processi stocastici. Questa capacità consente agli sviluppatori di aggiungere imprevedibilità e varietà alle loro applicazioni, migliorando l'esperienza utente e la funzionalità.
-
 ## Come fare:
 La natura puramente funzionale di Elm significa che non è possibile generare numeri casuali direttamente come si potrebbe fare nei linguaggi imperativi. Invece, si utilizza il modulo `Random` in congiunzione con i comandi. Ecco un esempio base che genera un numero intero casuale tra 1 e 100.
 

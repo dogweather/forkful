@@ -12,9 +12,6 @@ title: Loggning
 weight: 17
 ---
 
-## Vad & Varför?
-Loggning är processen att spela in händelser i en applikation medan ett program körs, vilket ger ett spår av "smulor" för analys efter händelsen och för realtidsövervakning. Programmerare gör detta eftersom det hjälper till med att felsöka problem, övervaka prestanda och spåra användaråtgärder för säkerhet och analys.
-
 ## Hur man gör:
 Python kommer med en inbyggd modul för loggning. Här är en grundläggande uppsättning:
 ```Python

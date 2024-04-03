@@ -16,9 +16,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---
 
-## Cái gì & Tại sao?
-Chuyển đổi một chuỗi sang chữ thường thay đổi tất cả các chữ cái in hoa trong văn bản thành các chữ cái in thường tương ứng của chúng. Các lập trình viên thực hiện điều này để đảm bảo tính nhất quán, đặc biệt là khi so sánh các chuỗi hoặc chuẩn hóa dữ liệu đầu vào.
-
 ## Làm thế nào:
 Đối tượng `String` của Arduino có phương thức `toLowerCase()` tiện lợi. Gọi nó trên chuỗi của bạn và ngay lập tức, nó sẽ ở dạng chữ thường.
 

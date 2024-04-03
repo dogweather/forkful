@@ -11,9 +11,6 @@ title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-begäran är hur din kod pratar med andra servrar över internet. Programmerare gör detta för att hämta data, skicka information eller interagera med webbtjänster.
-
 ## Så här gör du:
 Lua har inte inbyggt stöd för HTTP, så vi använder `socket.http` från LuaSocket biblioteket. Först, installera LuaSocket:
 

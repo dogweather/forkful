@@ -13,12 +13,7 @@ title: Satunnaislukujen generointi
 weight: 12
 ---
 
-## Mikä ja miksi?
-
-Satunnaislukujen tuottaminen Rustissa vaatii kirjastojen käyttöä ennakoimattomien numeeristen arvojen tuottamiseen, mikä on välttämätöntä tehtävissä, jotka vaihtelevat kryptografiasta ja simuloinneista pelaamiseen ja satunnaistettuihin algoritmeihin.
-
 ## Kuinka:
-
 Rust perustuu ulkoisiin paketteihin satunnaislukujen tuottamisessa, joista `rand` on yleisimmin käytetty. Jotta voit aloittaa satunnaisten lukujen tuottamisen, sinun on ensin lisättävä `rand` `Cargo.toml`-tiedostoosi:
 
 ```toml
@@ -54,7 +49,6 @@ Satunnainen liukuluku: 0.9401077112175732
 Huomaa, että ohjelman uudelleen suorittaminen tuottaa eri arvot.
 
 ## Syväsukellus
-
 Satunnaislukujen tuottaminen Rustissa, joka mahdollistetaan `rand`in ja sen riippuvuuksien, kuten `getrandom`, kautta, edustaa laajaa abstraktiota käyttöjärjestelmien mahdollisuuksien ja algoritmisten generaattorien yli. Historiallisesti tietojenkäsittelyn satunnaisuus on kehittynyt yksinkertaisista, ennustettavista algoritmeista monimutkaisiin, kryptografisesti turvallisiin menetelmiin. Rustin lähestymistapa kapseloi tämän kehityksen sen vaihdettavan `Rng`-piirteen kautta, jota voi tukea erilaiset generaattorit tarvittavan satunnaisuuden laadun ja suorituskyvyn mukaan.
 
 Useimmissa sovelluksissa `rand`in ja järjestelmän RNG:n käyttö tarjoaa hyvän tasapainon yksinkertaisuuden ja entropian välillä. Kuitenkin kryptografisissa sovelluksissa, pakkaukset kuten `rand` viittaavat `getrandom`iin alustamiseen, joka puolestaan nojaa käyttöjärjestelmäkohtaisiin mekanismeihin (esim. `/dev/urandom` Unixin kaltaisissa järjestelmissä), varmistaen kryptografisesti turvallisen satunnaisuuden.

@@ -13,16 +13,10 @@ title: Praca z JSON
 weight: 38
 ---
 
-## Co i dlaczego?
-
-Praca z JSON (JavaScript Object Notation) obejmuje parsowanie ciągów sformatowanych w JSON na obiekty Pythona i odwrotnie. Jest to kluczowe dla rozwoju stron internetowych i API, ponieważ JSON jest lingua franca do wymiany danych pomiędzy serwerami i klientami.
-
 ## Jak to zrobić:
-
 Wbudowana biblioteka `json` w Pythonie upraszcza proces kodowania (konwertowania obiektów Pythona na JSON) i dekodowania (konwertowania JSON na obiekty Pythona). Oto jak możesz jej użyć:
 
 ### Kodowanie obiektów Pythona na JSON:
-
 ```python
 import json
 
@@ -61,7 +55,6 @@ print(json_string)
 ```
 
 ### Dekodowanie JSON na obiekty Pythona:
-
 ```python
 json_string = '''
 {
@@ -100,11 +93,9 @@ print(data)
 ```
 
 ### Praca z bibliotekami stron trzecich:
-
 Dla złożonej obsługi JSON, takiej jak walidacja schematu czy parsowanie plików JSON bezpośrednio z URL-i, pomocne mogą być biblioteki takie jak `requests` do zapytań HTTP i `jsonschema` do walidacji.
 
 #### Przykład z użyciem `requests` do parsowania JSON z URL:
-
 ```python
 import requests
 
@@ -117,7 +108,6 @@ print(data)
 Ten fragment kodu pobiera dane JSON z danego URL i bezpośrednio konwertuje je na obiekt Pythona.
 
 #### Używanie `jsonschema` do walidacji JSON:
-
 Najpierw zainstaluj bibliotekę za pomocą pip:
 
 ```bash

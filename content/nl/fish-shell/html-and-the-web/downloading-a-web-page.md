@@ -12,9 +12,6 @@ title: Een webpagina downloaden
 weight: 42
 ---
 
-## Wat & Waarom?
-Een webpagina downloaden haalt de inhoud ervan van het web naar je lokale machine. Programmeurs doen dit voor automatisering, data scraping, offline toegang of testen.
-
 ## Hoe te:
 Hier is de snelle en vuile manier om een webpagina te downloaden met Fish Shell met het `curl` commando:
 
@@ -56,7 +53,6 @@ Fish Shell zelf downloadt geen webpagina's; het is slechts de interface. Maar co
 Sommigen zouden kunnen opwerpen dat het gebruik van meer moderne hulpmiddelen zoals `httpie` of browsergebaseerde automatisering met tools zoals Selenium voor complexere taken zoals omgaan met Javascript-zware pagina's. Echter, voor de snelle en eenvoudige download, houdt `curl` nog steeds stand.
 
 ## Zie Ook
-
 - curl projectwebsite voor meer details: [https://curl.se/](https://curl.se/)
 - Voor een diepere duik in HTTP-operaties met `curl`, zie de man-pagina: `man curl`
 - httpie als een gebruiksvriendelijk HTTP-client alternatief: [https://httpie.org/](https://httpie.org/)

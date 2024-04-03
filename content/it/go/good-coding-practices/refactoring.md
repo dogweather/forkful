@@ -14,12 +14,7 @@ title: Rifattorizzazione
 weight: 19
 ---
 
-## Cosa e Perché?
-
-Il refactoring nella programmazione comporta la ristrutturazione di codice informatico esistente—cambiando la sua strutturazione—senza alterarne il comportamento esterno. I programmatori intraprendono questo processo per migliorare la leggibilità del codice, ridurre la complessità e aumentare la manutenibilità, rendendo in definitiva il software più facile da comprendere e modificare.
-
 ## Come fare:
-
 In Go, il refactoring può spaziare da semplici regolazioni del codice a modifiche più complesse. Iniziamo con un esempio base: semplificare una funzione Go iniziale per una migliore leggibilità ed efficienza.
 
 **Prima del Refactoring:**
@@ -122,7 +117,6 @@ func main() {
 Il refactoring per utilizzare un'interfaccia (`Logger`) invece di un tipo concreto (`ConsoleLogger`) migliora la flessibilità della funzione e disaccoppia l'elaborazione dei dati dall'implementazione specifica della registrazione.
 
 ## Approfondimento
-
 Il refactoring in Go deve bilanciare la semplicità (una delle filosofie fondamentali di Go) con la flessibilità necessaria nei grandi progetti software. Dato l'approccio minimalista di Go alle funzionalità—senza generici (fino a poco tempo fa) e con un forte enfasi sulla leggibilità—il linguaggio guida naturalmente gli sviluppatori verso strutture di codice più semplici e manutenibili. Tuttavia, questo non significa che il codice Go non benefica del refactoring; significa che il refactoring deve sempre dare priorità alla chiarezza e alla semplicità.
 
 Storicamente, la mancanza di certe caratteristiche in Go (ad es., i generici prima di Go 1.18) ha portato a soluzioni creative ma a volte complesse per il riutilizzo del codice e la flessibilità, rendendo il refactoring per l'astrazione una pratica comune. Con l'introduzione dei generici in Go 1.18, gli sviluppatori Go stanno ora rifattorizzando il codice legacy per sfruttare questa caratteristica per una migliore sicurezza del tipo e riutilizzo del codice, dimostrando la natura evolutiva delle pratiche di refactoring in Go.

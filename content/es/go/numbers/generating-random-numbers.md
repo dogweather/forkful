@@ -13,16 +13,10 @@ title: "Generando n\xFAmeros aleatorios"
 weight: 12
 ---
 
-## ¿Qué y por qué?
-
-Generar números aleatorios en programación se trata de crear una secuencia de números que no se pueden predecir razonablemente mejor que por casualidad. Los programadores lo hacen por una miríada de razones, incluidas simulaciones, juegos y aplicaciones de seguridad, donde la imprevisibilidad es clave para la funcionalidad o el secreto.
-
 ## Cómo hacerlo:
-
 En Go, los números aleatorios se generan utilizando el paquete `math/rand` para números pseudoaleatorios o `crypto/rand` para números pseudoaleatorios criptográficamente seguros. Vamos a explorar ambos.
 
 ### Usando `math/rand` para Números Pseudoaleatorios
-
 Primero, importe el paquete `math/rand` y el paquete `time` para sembrar el generador. Sembrar asegura que obtenga una secuencia diferente de números en cada ejecución.
 
 ```go
@@ -43,7 +37,6 @@ func main() {
 Salida de muestra: `Un número aleatorio: 42`
 
 ### Usando `crypto/rand` para Números Pseudoaleatorios Criptográficamente Seguros
-
 Para aplicaciones más sensibles a la seguridad, el paquete `crypto/rand` es adecuado ya que genera números aleatorios difíciles de predecir, lo que los hace adecuados para operaciones criptográficas.
 
 ```go
@@ -64,7 +57,6 @@ func main() {
 Salida de muestra: `Un número aleatorio seguro: 81`
 
 ## Análisis Profundo
-
 La diferencia central entre los paquetes `math/rand` y `crypto/rand` en Go proviene de su fuente de entropía y sus casos de uso intencionados. `math/rand` genera números pseudoaleatorios basados en una semilla inicial; por lo tanto, la secuencia es determinista y se puede predecir si se conoce la semilla. Esto es adecuado para escenarios donde el rendimiento alto y no la imprevisibilidad absoluta es la preocupación clave, como simulaciones o juegos.
 
 Por otro lado, `crypto/rand` deriva la aleatoriedad del sistema operativo subyacente, lo que lo hace adecuado para usos criptográficos donde la imprevisibilidad es crucial. Sin embargo, esto tiene el costo de rendimiento y complejidad en el manejo de los números que genera (como tratar con el tipo `*big.Int` para enteros).

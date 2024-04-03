@@ -15,9 +15,6 @@ title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
 weight: 22
 ---
 
-## What & Why? (무엇과 왜?)
-텍스트 파일 읽기는 파일 내용을 문자 데이터로 읽어오는 것입니다. 이를 통해 프로그래머는 설정, 데이터 또는 자원을 읽고 처리할 수 있습니다.
-
 ## How to: (방법)
 PHP는 텍스트 파일을 쉽게 읽을 수 있는 여러 함수를 제공합니다. `file_get_contents`와 `fopen`/`fgets`/`fclose` 조합을 소개합니다.
 

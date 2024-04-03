@@ -11,11 +11,7 @@ title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---
 
-## Quoi & Pourquoi ?
-L'impression de sorties de débogage, c'est afficher les valeurs et les états de votre script pendant son exécution. On fait ça pour comprendre ce qui se passe sous le capot et pour traquer les bugs.
-
 ## Comment faire :
-
 Imprimer des messages de débogage avec `Write-Host` :
 
 ```PowerShell
@@ -55,11 +51,9 @@ VERBOSE: Information détaillée.
 ```
 
 ## Deep Dive
-
 Historiquement, le débogage se faisait avec des impressions de texte pour suivre le flux d’exécution. Dans le PowerShell, `Write-Host` a souvent été utilisé, mais c'est limité. Les cmdlets `Write-Debug` et `Write-Verbose` offrent plus de flexibilité. Avec des préférences `DebugPreference` et `VerbosePreference` on contrôle quand ces messages sont affichés. Les alternatives, comme des outils de profilage ou des environnements de développement intégrés (IDE) avec débogueurs intégrés, fournissent des capacités de débogage avancées sans imprimer de sortie dans la console.
 
 ## Voir Aussi
-
 - [About Write-Debug](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-debug)
 - [About Write-Verbose](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-verbose)
 - [About automatic variables (like $VerbosePreference)](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables)

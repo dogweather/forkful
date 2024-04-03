@@ -10,12 +10,7 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-
-Getting the current date in C involves tapping into the standard C library to fetch and format the system's current date and time. Programmers often need this functionality for logging, time-stamping, or scheduling features within their applications.
-
 ## How to:
-
 In C, the `<time.h>` header provides the necessary functions and types to work with dates and times. The `time()` function retrieves the current time, while `localtime()` converts this time to the local time zone. To display the date, we use `strftime()` to format it as a string.
 
 Here's a basic example:
@@ -49,7 +44,6 @@ Today's date is 2023-04-12
 ```
 
 ## Deep Dive
-
 The time handling in C, as facilitated by `<time.h>`, harkens back to the earliest days of the language and UNIX systems. It's built around the `time_t` data type, which represents the current time as the number of seconds since the Unix Epoch (January 1, 1970). While this is efficient and universally compatible, it also means that the standard C library's time functions are inherently limited by the range and resolution of `time_t`.
 
 Modern applications, especially those requiring high-resolution timestamps or dealing with dates far into the future or past, may find these limitations challenging. For instance, the Year 2038 problem is a famous illustration where systems using a 32-bit `time_t` will overflow.

@@ -14,12 +14,7 @@ title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---
 
-## Co i dlaczego?
-
-Tablice asocjacyjne, czy jak mówi na nie Elm, Słowniki, mapują klucze do wartości w sposób, który czyni wyszukiwanie, dodawanie i usuwanie wartości bardzo szybkimi. Są twoim pierwszym wyborem, gdy potrzebujesz śledzić rzeczy bez surowego porządku, takie jak preferencje użytkownika czy listy inwentarza.
-
 ## Jak to zrobić:
-
 W Elm pracujesz ze Słownikami w module `Dict`, więc zanurkujmy w szybki przykład:
 
 ```Elm
@@ -52,7 +47,6 @@ Przykładowy output przy wyświetlaniu `dictToList`:
 To demonstruje podstawowe operacje: tworzenie, aktualizowanie, dostęp i iteracja nad Słownikiem.
 
 ## W głąb
-
 Słowniki w Elm wewnętrznie używają struktury znanej jako drzewo AVL - typ samobalansującego się drzewa binarnego. Ten wybór stanowi równowagę między zapewnieniem, że operacje takie jak insert, get i remove mają dobrą wydajność (czas logarytmiczny) oraz zachowaniem prostoty w obsłudze danych.
 
 Pomimo zalet `Dict` w Elm, nie jest to rozwiązanie pasujące do wszystkiego. Dla kolekcji, które są uporządkowane lub muszą być przeglądane sekwencyjnie, Lista lub Tablica może być bardziej odpowiednia. Ponadto, przy pracy z ustalonym zestawem znanych kluczy, użycie typów niestandardowych (wersja Elm enumów) mogłoby zaoferować większe bezpieczeństwo typów i wyraźniejsze intencje w kodzie.

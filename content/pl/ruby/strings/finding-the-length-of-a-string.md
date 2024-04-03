@@ -11,9 +11,6 @@ title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---
 
-## What & Why? (Co i dlaczego?)
-Znalezienie długości łańcucha znaków to po prostu określenie, ile znaków zawiera. Programiści robią to, aby weryfikować dane wejściowe, ograniczać tekst, czy też po prostu manipulować danymi tekstowymi.
-
 ## How to: (Jak to zrobić:)
 ```ruby
 # Kod w Ruby do znalezienia długości stringa

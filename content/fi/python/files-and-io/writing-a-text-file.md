@@ -14,10 +14,9 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä & Miksi?
-Tekstitiedostoon kirjoittaminen Pythonissa on perustehtävä, joka sisältää tiedoston luomisen tai avaamisen ja sitten tekstin lisäämisen tai ylikirjoittamisen. Tämä toiminnallisuus on ratkaisevan tärkeää datan kirjaamisessa, konfiguraation hallinnassa ja ohjelmien tuottaman tulosteen tallentamisessa, mikä tekee siitä perustavanlaatuisen, mutta olennaisen työkalun ohjelmoijan työkalupakissa.
-
 ## Kuinka:
+
+
 ### Käyttäen sisäänrakennettua `open()` -funktiota
 Pythonin sisäänrakennettu `open()` -funktio on yleisin tapa kirjoittaa tiedostoihin. Funktio mahdollistaa tiedoston avaamistilan määrittämisen - 'w' kirjoittamiseen (ylikirjoittaen), 'a' lisäämiseen ja 'w+' kirjoittamiseen+lukemiseen.
 
@@ -39,6 +38,7 @@ with open('example.txt', 'r') as file:
 Hello, World!
 Appending more text.
 ```
+
 ### Käyttäen `pathlib.Path` -luokkaa
 Kohdeorientoidumpaa lähestymistapaa varten `Path` -luokka `pathlib` -moduulista tarjoaa metodin tiedostoon kirjoittamiseen. Tämä on suosittu menetelmä uudemmissa Python-koodikannoissa.
 

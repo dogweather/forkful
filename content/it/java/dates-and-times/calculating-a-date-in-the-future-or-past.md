@@ -10,9 +10,6 @@ title: Calcolo di una data futura o passata
 weight: 26
 ---
 
-## Cosa & Perché?
-Calcolare una data nel futuro o nel passato significa determinare un giorno specifico prima o dopo una data conosciuta. I programmatori lo fanno per gestire scadenze, appuntamenti o eventi pianificati.
-
 ## Come fare:
 Per eseguire il calcolo di date in Java, si usa la classe `LocalDate` del package `java.time`. Ecco un esempio:
 

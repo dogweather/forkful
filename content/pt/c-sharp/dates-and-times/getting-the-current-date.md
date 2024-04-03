@@ -13,9 +13,6 @@ title: Obtendo a data atual
 weight: 29
 ---
 
-## O Que & Por Quê?
-Obter a data atual em C# envolve buscar os detalhes da data e hora atuais do sistema. Programadores frequentemente precisam acessar essa informação para registrar logs, marcar operações com timestamp (data e hora) ou agendar tarefas dentro de aplicações, garantindo que as ações sejam cronometradas com precisão e os dados sejam marcados com timestamps exatos.
-
 ## Como fazer:
 C# oferece uma maneira direta de obter a data atual usando a classe `DateTime`, que faz parte do namespace System da .NET Framework. O exemplo abaixo demonstra como obter a data atual e, opcionalmente, a hora.
 

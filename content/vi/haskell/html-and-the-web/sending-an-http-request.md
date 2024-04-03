@@ -15,9 +15,6 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---
 
-## Gì và Tại Sao?
-Gửi một yêu cầu HTTP là hành động yêu cầu một máy chủ web về dữ liệu hoặc hành động. Lập trình viên thực hiện điều này để tương tác với API, lấy nội dung web, hoặc giao tiếp giữa các dịch vụ.
-
 ## Làm thế nào:
 Chúng ta hãy bắt đầu với những việc thú vị. Bạn cần các gói `http-client` và `http-client-tls`. Thiết lập stack của bạn và thêm chúng vào file `package.yaml` hoặc `.cabal`. Sau đó, chạy `stack build` hoặc các lệnh phù hợp khác để tải chúng.
 

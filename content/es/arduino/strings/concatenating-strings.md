@@ -9,9 +9,6 @@ title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---
 
-## ¿Qué & Por Qué?
-Concatenar cadenas significa juntar dos o más textos en uno solo. Los programadores lo hacen para construir mensajes, combinar datos y presentar información de forma dinámica.
-
 ## Cómo:
 ```Arduino
 void setup() {

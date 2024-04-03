@@ -11,12 +11,7 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-
-Parsing a date from a string in Bash involves extracting and converting date information from textual data into a format that Bash can manipulate or use for further processes. This is a common requirement in scripting for tasks such as log file analysis, file organization based on date stamps, or automated reporting, making it an essential skill for programmers to manage and utilize temporal data effectively.
-
 ## How to:
-
 Bash itself is quite limited in direct date parsing capabilities, often relying on external tools like `date` and `awk` for more sophisticated manipulation. Here’s how you can parse a specific format and then use it with the `date` command to convert it or perform operations.
 
 **Example 1:** Extract a date string and convert it to another format.
@@ -63,7 +58,6 @@ Saturday, April 01, 2023
 This example uses `awk` to split the log line and extract the date part (`$1` represents the first space-delimited field), and then `date` is used to reformat it.
 
 ### Using third-party tools
-
 For more complex parsing or when dealing with a wide variety of date formats, third-party tools like `dateutils` can be very handy.
 
 **Example with `dateutils`:**

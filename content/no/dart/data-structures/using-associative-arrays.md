@@ -13,12 +13,7 @@ title: Bruke assosiativ tabeller
 weight: 15
 ---
 
-## Hva & Hvorfor?
-
-Assosiative tabeller i Dart, ofte kjent som Maps, er datastrukturer som lagrer data i nøkkel-verdi-par. De gjør det mulig for programmerere å få tilgang til elementer ikke gjennom indekser, men nøkler, noe som gjør datagjenfinning intuitiv og effektiv, spesielt når man jobber med strukturerte data hvor hvert element har en unik identifikator.
-
 ## Hvordan:
-
 Dart tilbyr en grei syntaks for å opprette og manipulere Maps. Nedenfor er eksempler som demonstrerer grunnleggende operasjoner som oppretting, å legge til elementer og hente verdier.
 
 ```dart

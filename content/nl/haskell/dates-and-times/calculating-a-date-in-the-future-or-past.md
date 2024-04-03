@@ -14,12 +14,7 @@ title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---
 
-## Wat & Waarom?
-
-Een toekomstige of verleden datum berekenen betekent het vinden van een datum vóór of na een gegeven aantal dagen, maanden of jaren vanaf een specifiek startpunt. Programmeurs doen dit voor zaken zoals vervaldatums, plannen of het bepalen van de verstreken tijd tussen gebeurtenissen.
-
 ## Hoe te:
-
 Haskell gebruikt bibliotheken zoals `time` om met datums om te gaan. Hier is hoe je dagen of maanden aan een datum toevoegt, of ze aftrekt om een verleden datum te vinden.
 
 ```Haskell
@@ -58,7 +53,6 @@ printFormattedDate date = putStrLn $ formatTime defaultTimeLocale "%F" date
 ```
 
 ## Diepgaande duik
-
 In Haskell grijpen we vaak naar de `time` bibliotheek voor datum berekeningen. Deze bibliotheek biedt typen en functies voor DateTime rekenkunde, ontleding en opmaak. Historisch gezien zouden mensen handmatig datums aanpassen, maar bibliotheken zoals `time` behandelen de eigenaardigheden van kalenders (zoals schrikkeljaren).
 
 Alternatieven voor `time` zijn `Data.Time.Calendar.OrdinalDate` en `Data.Time.Clock.POSIX` voor verschillende behoeften, zoals werken met weeknummers of tijdstempels.
@@ -66,7 +60,6 @@ Alternatieven voor `time` zijn `Data.Time.Calendar.OrdinalDate` en `Data.Time.Cl
 Wat betreft de implementatie is het berekenen van datums verrassend complex. Zelfs met `time` zorgen functies zoals `addGregorianMonthsClip` ervoor dat de resulterende datum geldig is. Bijvoorbeeld, het toevoegen van één maand aan 31 januari zal "clippen" naar de laatste dag van februari (ofwel de 28ste of 29ste), en niet naar 3 maart.
 
 ## Zie ook
-
 - Haskell `time` bibliotheek: http://hackage.haskell.org/package/time
 - Datum- en Tijdgids van The Haskell School: https://school.haskellforall.com/#date-and-time
 - Uitleg over ZonedTime en UTC: https://www.47deg.com/blog/dealing-with-time-in-haskell/

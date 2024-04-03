@@ -11,9 +11,6 @@ title: Creating a temporary file
 weight: 21
 ---
 
-## What & Why?
-Creating a temporary file is making a short-lived file for storing data that’s not needed long-term. Programmers do this to handle data that’s only relevant during the program’s execution or to avoid clogging up the user's storage with unnecessary files.
-
 ## How to:
 Swift makes creating temporary files pretty easy, using the `FileManager` class. Here’s how you whip up a temp file and write some text into it:
 

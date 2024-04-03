@@ -12,9 +12,6 @@ title: Trabalhando com JSON
 weight: 38
 ---
 
-## O quê e Por quê?
-Trabalhar com JSON (JavaScript Object Notation) em Clojure envolve analisar strings JSON para estruturas de dados em Clojure (mapas, vetores) e vice-versa. Essa tarefa é fundamental para serviços web, APIs e aplicações que precisam comunicar dados de forma estruturada em formato de texto porque o JSON é universalmente reconhecido e suportado em diferentes ambientes de programação.
-
 ## Como fazer:
 Clojure não inclui funções embutidas para trabalhar com JSON, então você normalmente usará bibliotecas de terceiros. `cheshire` e `jsonista` são escolhas populares devido à sua facilidade de uso e desempenho.
 

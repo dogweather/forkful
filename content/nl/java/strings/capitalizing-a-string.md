@@ -12,12 +12,7 @@ title: Een string met hoofdletters maken
 weight: 2
 ---
 
-## Wat & Waarom?
-
-Een string met hoofdletters maken betekent de eerste letter in hoofdletters zetten en de rest van de letters in kleine letters. Programmeurs gebruiken dit om tekstinvoer te normaliseren, zoals gebruikersinvoer of namen, om consistentie in een dataset te waarborgen.
-
 ## Hoe:
-
 In Java is er geen ingebouwde methode om een string volledig met hoofdletters te maken (eerste letter in hoofdletter, rest in kleine letters), maar hier is een snelle functie om precies dat te doen:
 
 ```java
@@ -38,7 +33,6 @@ public class StringCapitalizer {
 ```
 
 ## Diepere Duik
-
 Voor Java 8 was de bovenstaande methode een gebruikelijke manier om een string met hoofdletters te maken. Sinds de introductie van streams in Java 8, kunnen we ook strings met meer flexibiliteit manipuleren.
 
 Een alternatieve manier om met streams hoofdletters te gebruiken:
@@ -64,7 +58,6 @@ Strings zijn onveranderbaar in Java, wat betekent dat ze, eenmaal aangemaakt, ni
 Wat betreft prestaties wordt StringBuilder vaak gebruikt voor stringmanipulatie, omdat deze veranderlijk is. Het vermijdt de kosten van het aanmaken van meerdere string-objecten. Echter, voor eenvoudige hoofdlettergebruik is de prestatiewinst geen grote zaak, daarom is een `StringBuilder`-voorbeeld weggelaten.
 
 ## Zie Ook
-
 - [Java String API Documentatie](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
 - [Collector Documentatie](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Collectors.html)
 - [StringJoiner Documentatie](https://docs.oracle.com/javase/8/docs/api/java/util/StringJoiner.html)

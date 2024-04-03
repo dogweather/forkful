@@ -15,14 +15,10 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä & Miksi?
-Tekstitiedostoon kirjoittaminen C++:lla sisältää tiedoston luomisen tai avaamisen ja sitten datan kirjoittamisen siihen, mikä on perustavaa laatua oleva tehtävä sovelluksille, jotka tarvitsevat tietojen säilyttämistä, kuten lokit, käyttäjän luoma sisältö tai konfiguraatioasetukset. Ohjelmoijat tekevät tämän tallentaakseen datan, joka on luotu ohjelman suorituksen aikana tai viedäkseen datan käytettäväksi muissa ohjelmissa tai käyttäjien toimesta.
-
 ## Kuinka:
 C++ tarjoaa useita tapoja kirjoittaa tekstitiedostoon, mutta yksi suoraviivaisimmista menetelmistä on `<fstream>`-kirjaston käyttö, joka tarjoaa `ofstream` (output file stream) -luokan, joka on suunniteltu tiedoston kirjoitusoperaatioille.
 
 ### Esimerkki käyttäen `<fstream>`:
-
 ```cpp
 #include <fstream>
 #include <iostream>
@@ -49,7 +45,6 @@ Kirjoittaminen tiedostoon C++:lla on yksinkertaista.
 Kun käsitellään monimutkaisempaa dataa tai tarvitaan enemmän kontrollia kirjoitusprosessiin, ohjelmoijat saattavat kääntyä kolmannen osapuolen kirjastojen, kuten Boost Filesystem, puoleen.
 
 ### Esimerkki käyttäen Boost Filesystem:
-
 Boostia tiedosto-operaatioihin käyttäessäsi sinun täytyy ensin asentaa Boost-kirjastot. Seuraava esimerkki demonstroi tiedoston luomista ja kirjoittamista käyttäen `boost::filesystem` ja `boost::iostreams`.
 
 ```cpp

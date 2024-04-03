@@ -11,9 +11,6 @@ title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---
 
-## O Que é & Por Que?
-A impressão de saídas de depuração ajuda a entender o que um script está fazendo e onde pode estar o problema. Programadores recorrem a isso quando o código não funciona como esperado, para visualizar o que está acontecendo "sob o capó".
-
 ## Como Fazer:
 Vou te mostrar como imprimir mensagens para depurar teu código em Fish. Simples e rápido.
 

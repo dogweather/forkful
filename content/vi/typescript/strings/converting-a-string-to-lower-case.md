@@ -15,9 +15,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---
 
-## Làm thế nào & Tại sao?
-Chuyển đổi một chuỗi sang chữ thường có nghĩa là làm cho mỗi ký tự trong chuỗi trở thành chữ cái nhỏ. Các lập trình viên thực hiện điều này để đảm bảo tính nhất quán, đặc biệt là đối với các so sánh không phân biệt chữ hoa chữ thường, chẳng hạn như khi kiểm tra đầu vào của người dùng so với một danh sách các lệnh hoặc dữ liệu đã lưu trữ.
-
 ## Cách thực hiện:
 Trong TypeScript, việc chuyển đổi một chuỗi sang chữ thường là việc rất đơn giản. Chỉ cần gọi `.toLowerCase()` cho chuỗi của bạn. Dưới đây là cách thực hiện:
 

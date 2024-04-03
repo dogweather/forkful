@@ -9,9 +9,6 @@ title: Starting a new project
 weight: 1
 ---
 
-## What & Why?
-Starting a new Elixir project means setting up a fresh Mix project structure. Programmers do this to kick things off with organized code and automated tooling, helping to build and test their Elixir applications efficiently.
-
 ## How to:
 To create a new project, use the `mix new` command:
 

@@ -13,12 +13,7 @@ title: Tests Schreiben
 weight: 36
 ---
 
-## Was & Warum?
-
-Das Schreiben von Tests in Kotlin beinhaltet das Erstellen von Code-Snippets, die automatisch die funktionale Korrektheit Ihrer Softwaremodule validieren und sicherstellen, dass sie wie erwartet funktionieren. Programmierer tun dies, um frühzeitig Fehler zu erkennen, die Code-Umstrukturierung zu erleichtern und eine Dokumentation darüber zu bieten, wie die Softwarekomponenten arbeiten sollen.
-
 ## Wie geht das:
-
 Kotlin unterstützt die testgetriebene Entwicklung mit verschiedenen Frameworks, wobei JUnit, Kotest und MockK für das Mocking am beliebtesten sind. Hier ist ein einfaches Beispiel mit JUnit:
 
 ```kotlin

@@ -10,12 +10,7 @@ title: Conversione di una data in una stringa
 weight: 28
 ---
 
-## Cos'è e Perché?
-
-Convertire una data in una stringa significa trasformare un dato temporale (giorno, mese, anno) in una sequenza di caratteri leggibili. I programmatori lo fanno per rendere il dato mostrabile agli utenti o per memorizzarlo in un formato standard e confrontabile.
-
 ## Come fare:
-
 Ecco come convertire una data in stringa in Python usando il modulo `datetime`:
 
 ```Python
@@ -42,7 +37,6 @@ print(data_stringa_md)
 ```
 
 ## Approfondimento
-
 Prima dell'avvento dei computer, le date venivano scritte a mano in vari formati. La standardizzazione è diventata necessaria con la diffusione delle tecnologie informatiche, che hanno introdotto la necessità di formati data unificati per archiviazione e confronto.
 
 Python usa il modulo `datetime` per gestire date e ore. `strftime()` è un metodo che permette di specificare il formato della stringa risultante. Ad esempio, `%Y` rappresenta l'anno a quattro cifre, `%m` il mese e `%d` il giorno.
@@ -59,7 +53,6 @@ print(data_iso)
 Ognuno ha i suoi vantaggi: `isoformat()` è veloce e facile per ottenere stringhe in un formato internazionale, mentre `strftime()` ti dà flessibilità con la personalizzazione del formato.
 
 ## Vedi Anche
-
 - Documentazione ufficiale di Python su `datetime`: https://docs.python.org/3/library/datetime.html
 - Una rapida riferimento al formato di `strftime()`: https://strftime.org/
 - Wikipedia su ISO 8601, lo standard di notazione di data e ora: https://it.wikipedia.org/wiki/ISO_8601

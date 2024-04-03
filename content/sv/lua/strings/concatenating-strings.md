@@ -11,9 +11,6 @@ title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---
 
-## Vad & Varför?
-I programmering är att sammanfoga strängar processen att kombinera flera strängar till en enda. Programmerare gör detta för att dynamiskt bygga text, som användargränssnitt eller databasfrågor.
-
 ## Hur man gör:
 För att sammanfoga strängar i Lua använder du `..` operatorn. Så här:
 

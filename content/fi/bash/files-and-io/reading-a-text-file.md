@@ -10,9 +10,6 @@ title: Tekstitiedoston lukeminen
 weight: 22
 ---
 
-## Mitä & Miksi?
-Luetaan tekstifailia, koska tarvitaan dataa siitä. Se on olennaista, kun käsitellään asetuksia, käyttäjän sisältöä tai skriptejä.
-
 ## Näin teet:
 ```Bash
 # Failin lukeminen rivi riviltä

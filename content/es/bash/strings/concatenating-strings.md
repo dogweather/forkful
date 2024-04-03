@@ -10,9 +10,6 @@ title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---
 
-## What & Why?
-Concatenar cadenas es simplemente combinar dos o más textos en uno solo. Los programadores lo hacen para manejar dinámicamente la información, como construir mensajes o comandos de manera eficiente.
-
 ## How to:
 Concatenar en Bash es pan comido. Usamos `+` para sumar números, pero para unir palabras, pegamos variables o cadenas lado a lado. Aquí va:
 

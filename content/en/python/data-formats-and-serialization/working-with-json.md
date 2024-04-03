@@ -11,16 +11,10 @@ title: Working with JSON
 weight: 38
 ---
 
-## What & Why?
-
-Working with JSON (JavaScript Object Notation) involves parsing JSON formatted strings into Python objects and vice versa. This is crucial for web and API development as JSON is the lingua franca for exchanging data between servers and clients.
-
 ## How to:
-
 Python's built-in `json` library simplifies the process of encoding (converting Python objects to JSON) and decoding (converting JSON to Python objects). Here's how you can use it:
 
 ### Encoding Python objects to JSON:
-
 ```python
 import json
 
@@ -59,7 +53,6 @@ print(json_string)
 ```
 
 ### Decoding JSON to Python objects:
-
 ```python
 json_string = '''
 {
@@ -98,11 +91,9 @@ print(data)
 ```
 
 ### Working with third-party libraries:
-
 For complex JSON handling, such as schema validation or parsing JSON files directly from URLs, libraries like `requests` for HTTP requests and `jsonschema` for validation can be helpful.
 
 #### Example with `requests` to parse JSON from a URL:
-
 ```python
 import requests
 
@@ -115,7 +106,6 @@ print(data)
 This snippet fetches JSON data from a given URL and directly converts it into a Python object.
 
 #### Using `jsonschema` to validate JSON:
-
 First, install the library via pip:
 
 ```bash

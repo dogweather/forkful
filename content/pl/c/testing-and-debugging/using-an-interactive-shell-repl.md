@@ -14,12 +14,7 @@ title: "Korzystanie z interaktywnej pow\u0142oki (REPL)"
 weight: 34
 ---
 
-## Co i dlaczego?
-
-Interaktywna powłoka, znana również jako pętla czytaj-wykonaj-wypisz (REPL), pozwala programistom wpisywać wyrażenia lub kod i natychmiast widzieć wyniki, co ułatwia naukę i procesy debugowania. Pomimo że C tradycyjnie nie obsługuje natywnie środowisk REPL, nowoczesne narzędzia pozwalają przełamać tę barierę, oferując dynamiczne eksplorowanie programów w C.
-
 ## Jak to zrobić:
-
 Zaangażowanie w REPL dla C może nie być tak bezpośrednie jak w językach takich jak Python czy JavaScript. Jednak narzędzia takie jak `Cling`, interpreter C/C++ oparty na technologii Clang i LLVM, czynią to możliwym. Oto jak zacząć:
 
 1. **Zainstaluj Cling**: W zależności od systemu operacyjnego, Cling może być dostępny w menadżerze pakietów lub może wymagać kompilacji ze źródeł. Na przykład w Ubuntu, może to być tak proste jak `sudo apt-get install cling`.
@@ -56,7 +51,6 @@ Pierwiastek kwadratowy z 4.000000 to 2.000000
 ```
 
 ## Pogłębiona analiza:
-
 Początki środowisk REPL sięgają lat 60. XX wieku i języka Lisp, zaprojektowane do wspierania interaktywnej oceny kodu. Jednakże statyczna i kompilowana natura języka C stwarzała wyzwania dla realizacji podobnej natychmiastowości w dostosowaniach wykonania kodu. Rozwój Cling i innych interpreterów C/C++ stanowi znaczący postęp w kierunku integracji dynamicznej oceny z językami statycznie typowanymi.
 
 Warto zauważyć, że korzystanie z interpretera jak Cling może nie odzwierciedlać doskonale zachowania skompilowanego kodu C z powodu różnic w optymalizacji i wykonaniu. Ponadto, chociaż jest to bardzo wartościowe dla celów edukacyjnych, szybkiego prototypowania i debugowania, REPL dla C czasami może być wolniejszy i mniej praktyczny do rozwoju kodu na poziomie produkcyjnym w porównaniu do tradycyjnych cykli kompilacji-uruchamiania-debugowania.

@@ -12,9 +12,6 @@ title: Tekst zoeken en vervangen
 weight: 10
 ---
 
-## Wat & Waarom?
-Zoeken en vervangen van tekst is het vinden van specifieke strings binnen een grotere string en deze omwisselen voor iets anders. Programmeurs gebruiken dit voor taken zoals het bijwerken van variabelenamen, het wijzigen van gegevens of het automatiseren van bewerkingen in meerdere bestanden.
-
 ## Hoe:
 C++ biedt verschillende manieren om tekst te zoeken en te vervangen. Hieronder is een voorbeeld met `std::string::find` en `std::string::replace`.
 

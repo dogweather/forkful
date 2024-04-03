@@ -13,9 +13,6 @@ title: Loggning
 weight: 17
 ---
 
-## Vad & Varför?
-Loggning i programmering innebär i grund och botten att lämna ett spår av brödsmulor i form av registrerade händelser eller meddelanden, vilka kan användas för att spåra vad din applikation gör vid varje given tidpunkt. Programmerare gör det för att felsöka problem, övervaka systemets prestanda och granska beteende av säkerhets- och efterlevnadsskäl.
-
 ## Hur man gör:
 I Haskell kan loggning implementeras med hjälp av bibliotek som `monad-logger` eller `hslogger`. Här är ett snabbt exempel med `monad-logger`:
 

@@ -10,12 +10,7 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-
-Comparing two dates means figuring out if one date is earlier, later, or the same as another. Programmers do it to track events, schedule tasks, sort records, and more.
-
 ## How to:
-
 Lua doesn't have built-in date comparison functions, but we can use the `os.time()` function to convert dates to a numerical format (epoch time) and then compare them. Easy peasy.
 
 ```Lua
@@ -40,7 +35,6 @@ Date1 is earlier than Date2.
 ```
 
 ## Deep Dive
-
 Back in the day, Lua didn't come with a date type. Programmers relied on the `os.time()` function for date-time operations, which is still used today. `os.time()` returns the time in seconds since the epoch (a.k.a. Unix time, which started on January 1, 1970). This is useful because it converts dates into numbers, simplifying comparisons.
 
 As for alternatives, you could write a custom comparator for date tables, compare each field (year, month, day) manually, or use a third-party date library like `LuaDate`.
@@ -48,7 +42,6 @@ As for alternatives, you could write a custom comparator for date tables, compar
 When using `os.time()`, be mindful of time zones and daylight saving changes. The function assumes you're providing local time unless you specify otherwise.
 
 ## See Also
-
 - Lua 5.4 Reference Manual: https://www.lua.org/manual/5.4/
 - LuaDate, a date and time module: https://github.com/Tieske/date
 - Understanding Unix timestamp: https://en.wikipedia.org/wiki/Unix_time

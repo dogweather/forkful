@@ -12,9 +12,6 @@ title: Werken met TOML
 weight: 39
 ---
 
-## Wat & Waarom?
-TOML (Tom's Obvious, Minimal Language) is een gegevensserialisatieformaat dat makkelijk te lezen is vanwege de duidelijke semantiek. Programmeurs gebruiken TOML voor configuratiebestanden omdat het een balans biedt tussen leesbaarheid voor mensen en analyseerbaarheid door machines.
-
 ## Hoe te gebruiken:
 Om met TOML in C++ te werken, heb je een bibliotheek zoals `toml++` nodig. Hier is een snelle start:
 

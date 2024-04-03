@@ -13,12 +13,7 @@ title: Komentoriviparametrien lukeminen
 weight: 23
 ---
 
-## Mikä & Miksi?
-
-Komennoriviparametrien lukeminen Visual Basic for Applications (VBA):ssa liittyy parametrien käyttöön ohjelmasi suorituksen yhteydessä. Tätä tekniikkaa käytetään usein ohjelman toiminnan tai tulosteen muokkaamiseen ilman käyttäjän vuorovaikutusta, mikä tekee automaatio- ja skriptitehtävistä huomattavasti suoraviivaisempia ja monipuolisempia.
-
 ## Kuinka:
-
 Toisin kuin monet suoraviivaisemmat ohjelmointiympäristöt, VBA:lla ei ole sisäänrakennettua ominaisuutta komentoriviparametrien suoraan lukemiseen perinteisessä mielessä, koska se on ensisijaisesti suunniteltu upotettavaksi Microsoft Office -sovelluksiin. Kuitenkin, hieman luovuutta käyttämällä, voimme hyödyntää Windows Script Hostia (WSH) tai kutsua ulkoisia API:eja saavuttaaksemme samankaltaista toiminnallisuutta. Tässä on käytännöllinen kiertotapa käyttäen WSH:tä:
 
 1. **Luo VBScript, joka välittää argumentit VBA:han:**
@@ -53,7 +48,6 @@ cscript yourScript.vbs "Hei" "Maailma"
    Tämän pitäisi johtaa VBA-makrosi suorittamiseen argumenttien "Hei" ja "Maailma" kanssa, näyttäen ne viestiruudussa.
 
 ## Syväsukellus:
-
 Historiallisessa kontekstissa, VBA kehitettiin laajentamaan Microsoft Office -sovellusten kykyjä, ei standalone-ohjelmointiympäristönä. Täten suora vuorovaikutus komentorivin kanssa on sen ensisijaisen toiminta-alueen ulkopuolella, mikä selittää sisäänrakennetun tuen puuttumisen komentoriviparametrien lukemisessa.
 
 Yllä esitelty menetelmä, vaikka tehokas, on enemmän kiertotapa kuin natiivi ratkaisu, hyödyntäen ulkoista skriptiä kuilun ylittämiseksi. Tämä lähestymistapa voi tuoda mukanaan monimutkaisuutta ja mahdollisia turvallisuushuolia, koska se vaatii makrojen sallimista ja mahdollisesti turva-asetusten laskemista suorittaakseen.

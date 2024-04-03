@@ -11,9 +11,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## What & Why? (Mikä ja Miksi?)
-Selvitetään merkkijonon pituuden Rust-kielessä: se tarkoittaa siis merkkijonossa olevien merkkien määrän laskemista. Ohjelmoija tarvitsee tätä tietoa esimerkiksi syötteiden validointiin, tekstin käsittelyyn tai muistinvarauksiin.
-
 ## How to: (Kuinka tehdä:)
 ```Rust
 // Ensin luodaan merkkijono

@@ -10,10 +10,6 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## What & Why?
-"Mitä & Miksi?"
-Muuttaa merkkijonon pieniksi kirjaimiksi. Käytetään yhdenmukaistamaan dataa, esimerkiksi vertailuun tai syötteen käsittelyyn.
-
 ## How to:
 "Kuinka:"
 ```Elm

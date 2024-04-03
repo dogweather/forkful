@@ -11,9 +11,6 @@ title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u043
 weight: 27
 ---
 
-## What & Why? (Що і Чому?)
-Comparing dates lets you determine the relationship between two points in time. It's essential for checking expirations, scheduling tasks, or measuring time intervals.
-
 ## How to (Як це зробити):
 Here's the straight-up way to compare dates in C#:
 

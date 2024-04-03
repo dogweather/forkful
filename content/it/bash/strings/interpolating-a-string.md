@@ -10,9 +10,6 @@ title: Interpolazione di una stringa
 weight: 8
 ---
 
-## What & Why?
-L'interpolazione di stringhe permette di inserire valori variabili all'interno di una stringa. I programmatori la usano per costruire messaggi dinamici, configurare comandi o generare output in modo flessibile.
-
 ## How to:
 ```Bash
 # Basic string interpolation

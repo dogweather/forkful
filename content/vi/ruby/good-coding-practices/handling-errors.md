@@ -17,12 +17,7 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Gì & Tại Sao?
-
-Xử lý lỗi chính là việc dự phòng những điều không mong đợi trong code — quản lý lỗi một cách nhẹ nhàng mà không làm sập chương trình. Lập trình viên làm điều này để kiểm soát dòng chảy khi mọi thứ đi sai và để giữ trải nghiệm người dùng mượt mà.
-
 ## Làm Thế Nào:
-
 Ruby sử dụng `begin`, `rescue`, `ensure`, và `end` để xử lý lỗi. Bạn bọc đoạn code rủi ro trong `begin` và `end`. Nếu xảy ra lỗi, `rescue` sẽ hoạt động.
 
 ```Ruby
@@ -43,7 +38,6 @@ Cái này luôn luôn chạy, lỗi hay không.
 ```
 
 ## Sâu Hơn
-
 Lịch sử, xử lý lỗi trong ngôn ngữ lập trình đã phát triển đáng kể, với ngôn ngữ cổ điển thường có cơ chế thô sơ hoặc không tồn tại. Xử lý ngoại lệ của Ruby được lấy cảm hứng từ các ngôn ngữ như Python và Smalltalk.
 
 Các phương thức khác để `begin-rescue` trong Ruby bao gồm sử dụng `rescue` trong định nghĩa phương thức hoặc sử dụng `throw` và `catch` cho kiểm soát dòng chảy không tiêu chuẩn, mặc dù chúng không được sử dụng cho xử lý lỗi điển hình.
@@ -51,6 +45,5 @@ Các phương thức khác để `begin-rescue` trong Ruby bao gồm sử dụng
 Một chi tiết thú vị: ngoại lệ của Ruby là đối tượng (thể hiện của lớp `Exception` và các lớp con của nó), vì vậy bạn có thể định nghĩa các lớp lỗi tùy chỉnh và làm nhiều hơn là chỉ ghi lỗi — bạn có thể mang theo trạng thái phong phú trong chương trình cho việc xử lý lỗi mạnh mẽ hơn.
 
 ## Xem Thêm
-
 - Tài liệu của Ruby về ngoại lệ và xử lý lỗi: [ruby-doc.org](https://ruby-doc.org/core-3.1.0/doc/syntax/exceptions_rdoc.html)
 - Hướng dẫn chi tiết về các phương pháp hay nhất khi xử lý lỗi trong Ruby: [thoughtbot.com](https://thoughtbot.com/blog/rescue-standarderror-not-exception)

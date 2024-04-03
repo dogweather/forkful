@@ -11,9 +11,6 @@ title: "\u0406\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F
 weight: 8
 ---
 
-## What & Why? (Що та Чому?)
-Interpolating a string means splicing variables into text. We do it to build dynamic strings – think personalized messages or live data displays in your app.
-
 ## How to: (Як це зробити:)
 ```Java
 public class StringInterpolationExample {

@@ -12,12 +12,7 @@ title: Gebruik van associatieve arrays
 weight: 15
 ---
 
-## Wat & Waarom?
-
-Associatieve arrays zijn als super-opgeladen arrays die je toestaan om strings te gebruiken als indexen in plaats van enkel integers. Programmeurs gebruiken ze voor complexere datastructuren, waardoor het makkelijker wordt om met data om te gaan die niet netjes in een opeenvolgende lijst past.
-
 ## Hoe te gebruiken:
-
 Allereerst, verklaar een associatieve array in Bash:
 
 ```Bash
@@ -65,7 +60,6 @@ unset my_array["topic"]
 ```
 
 ## Diep Duiken
-
 Associatieve arrays werden geïntroduceerd in Bash versie 4.0, waardoor ze een relatief recente toevoeging aan de taal zijn. Voor hun introductie was het omgaan met niet-integer index arrays lastig, vaak vereisend omweggetjes of externe tools zoals `awk` of `sed`.
 
 Onder de motorkap implementeert Bash associatieve arrays met behulp van hash tabellen. Deze implementatie maakt een efficiënte sleutelopzoeking mogelijk, die vrij constant blijft ongeacht de grootte van de array, een cruciaal kenmerk voor prestaties in scriptuitvoering.

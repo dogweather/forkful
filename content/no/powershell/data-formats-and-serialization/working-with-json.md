@@ -13,14 +13,10 @@ title: Arbeider med JSON
 weight: 38
 ---
 
-## Hva & Hvorfor?
-
-PowerShells integrasjon med JSON (JavaScript Object Notation) handler om parsing (lesing) og generering (skriving) av JSON-data, et vanlig format for datautveksling på nettet. Programmerere jobber med JSON for å samhandle med web-APIer, konfigurasjonsfiler, eller for å legge til rette for datautveksling mellom forskjellige språk og plattformer på grunn av dets lette og språkuavhengige natur.
-
 ## Hvordan:
 
-### Parse JSON
 
+### Parse JSON
 For å lese eller parse JSON i PowerShell, kan du bruke `ConvertFrom-Json` cmdlet. Gitt en JSON-streng, konverterer denne cmdleten den til et PowerShell-objekt.
 
 ```powershell
@@ -38,7 +34,6 @@ John Doe
 Dette eksemplet demonstrerer hvordan man parser en enkel JSON-streng for å få tilgang til egenskapene til det resulterende objektet.
 
 ### Generere JSON
-
 For å generere JSON fra et PowerShell-objekt, kan du bruke `ConvertTo-Json` cmdlet. Dette er praktisk for å forberede data som skal sendes til en webtjeneste eller lagres i en konfigurasjonsfil.
 
 ```powershell

@@ -12,12 +12,7 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co i dlaczego?
-
-Usuwanie cudzysłowów ze stringa oznacza wycięcie wszelkich instancji znaków cudzysłowu, zarówno pojedynczych (' ') jak i podwójnych (" "), z danych tekstowych, z którymi pracujesz. Programiści często muszą to robić w celu oczyszczenia danych, przygotowania do dalszego przetwarzania lub gdy same cudzysłowy nie są istotne dla znaczenia danych.
-
 ## Jak to zrobić:
-
 Oto prosty sposób, aby usunąć oba typy cudzysłowów ze stringa w Kotlinie:
 
 ```kotlin
@@ -51,7 +46,6 @@ fun main() {
 ```
 
 ## Wnikliwa analiza
-
 Historycznie, obsługa stringów i znaków ucieczki była podstawową częścią programowania, ponieważ tekst jest podstawowym sposobem, w jaki wchodzimy w interakcję z danymi. Cudzysłowy wewnątrz stringów czasami muszą być poprzedzone znakiem ucieczki (np. `"She said, \"Hi!\""`). Przetwarzając takie stringi, możesz potrzebować usunąć znaki ucieczki lub same cudzysłowy, aby uzyskać czystszy lub bardziej użyteczny tekst.
 
 Alternatywy dla metody `replace` obejmują usuwanie oparte na wyrażeniach regularnych lub ręczne parsowanie stringa, znak po znaku. Jednak regex może być nadmiernym rozwiązaniem dla prostych operacji, a ręczne parsowanie jest mniej wydajne niż korzystanie z wbudowanych funkcji stringów. Funkcja `replace` w Kotlinie korzysta z leżącej u jej podstaw metody `String` `replace` Javy, która jest dobrze zoptymalizowana pod kątem wydajności.
@@ -59,7 +53,6 @@ Alternatywy dla metody `replace` obejmują usuwanie oparte na wyrażeniach regul
 Pod względem implementacji warto wspomnieć, że Kotlin jest interoperacyjny z Javą, więc w efekcie wszelkie operacje, które wykonujesz na stringach, są równie wydajne, jak byłyby w Javie. Podczas usuwania cudzysłowów ważne jest, aby być świadomym przypadków brzegowych, takich jak zagnieżdżone cudzysłowy, które mogą wymagać bardziej zaawansowanego podejścia, możliwie z wykorzystaniem wyrażeń regularnych lub biblioteki parsującej.
 
 ## Zobacz także
-
 Aby uzyskać więcej kontekstu na temat obsługi stringów w Kotlinie, możesz sprawdzić oficjalną dokumentację:
 
 - [Dokumentacja Stringów w Kotlinie](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)

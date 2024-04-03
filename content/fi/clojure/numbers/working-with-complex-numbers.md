@@ -11,9 +11,6 @@ title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---
 
-## Mikä & Miksi?
-Kompleksiluvut laajentavat reaalilukuja lisäosalla, kuvitteellisella yksiköllä 'i'. Ohjelmoijat käyttävät niitä useilla alueilla, mukaan lukien signaalinkäsittely, sähkömagneettinen teoria ja fraktaalit, missä negatiivisen luvun neliöjuuren laskeminen on rutiinia.
-
 ## Kuinka:
 Clojure tarjoaa sisäänrakennetun tuen kompleksiluvuille `clojure.lang.Numbers` apuluokan kautta. Käytä `complex`-toimintoa kompleksilukujen luomiseen ja aritmeettisten laskutoimitusten suorittamiseen.
 

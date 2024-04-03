@@ -11,9 +11,6 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i dlaczego?
-Liczby zespolone to połączenie liczb rzeczywistych i urojonych, jak `a + bi`, gdzie `i` jest pierwiastkiem kwadratowym z -1. Są kluczowe w dziedzinach takich jak inżynieria czy fizyka, aby rozwiązywać problemy, z którymi zwykłe liczby sobie nie radzą.
-
 ## Jak to zrobić:
 Elm nie ma wbudowanego wsparcia dla liczb zespolonych, więc stworzysz własny typ i funkcje. Oto szybka konfiguracja:
 

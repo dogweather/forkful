@@ -11,8 +11,6 @@ title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---
 
-# Elm Programming: Rensa Bort Mönstermatchande Tecken
-
 ## Vad & Varför?
 Att ta bort tecken som matchar ett mönster är en process där vissa teckensträngar rensas bort från data baserat på specifika kriterier. Programmerare gör detta för att rensa data, hantera inmatningar, och strukturera information effektivare.
 

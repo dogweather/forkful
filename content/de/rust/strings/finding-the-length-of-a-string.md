@@ -11,12 +11,7 @@ title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---
 
-## Was & Warum?
-
-In Rust, die Länge eines Strings zu ermitteln bedeutet, herauszufinden, wie viele Zeichen der String enthält. Programmierer müssen das oft wissen, um Operationen wie Slicing, Iteration oder Validation durchzuführen.
-
 ## How to:
-
 ```Rust
 fn main() {
     let gruss = String::from("Hallo Welt");
@@ -33,7 +28,6 @@ Die Länge des Strings ist: 10
 Achtung: `.len()` gibt die Anzahl der Bytes zurück, nicht immer die Anzahl der Zeichen.
 
 ## Deep Dive
-
 Die Länge eines Strings in Rust zu bestimmen, war nicht immer so direkt wie heute. Früher war es komplizierter, zuverlässig die Zeichenzahl zu bekommen, besonders mit Unicode-Zeichen. Rust schützt vor vielen Stolpersteinen, die in anderen Sprachen üblich sind.
 
 Alternativen:
@@ -45,7 +39,6 @@ Implementierungsdetails:
 - Beim Umgang mit Grapheme Clustern, wie Emojis, wird's komplexer. Hier wird die `unicode-segmentation` Crate gebraucht, um genaue Ergebnisse zu erzielen.
 
 ## See Also
-
 - Rust-Dokumentation zu Strings: https://doc.rust-lang.org/std/string/struct.String.html
 - Unicode-Segmentierung in Rust: https://github.com/unicode-rs/unicode-segmentation
 - Rust-String-Methoden: https://doc.rust-lang.org/std/primitive.str.html

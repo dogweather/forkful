@@ -11,9 +11,6 @@ title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---
 
-## Vad & Varför?
-Temporära filer är temporära lagerplatser för data som används under programkörningen och som ofta raderas efteråt. Programmerare skapar dem för att hantera data volatilt, undvika att kladda ned hårddisken med testdata och för att skydda privat information.
-
 ## Hur gör man:
 Att skapa en temporär fil i Fish Shell är enkelt. Använd `mktemp`-kommandot:
 

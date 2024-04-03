@@ -10,12 +10,7 @@ title: Converting a string to lower case
 weight: 4
 ---
 
-## What & Why?
-
-Converting a string to lowercase is a fundamental operation that involves transforming all the characters in a given string to their lowercase equivalents. Programmers typically perform this operation to achieve case-insensitive comparisons or to standardize text input for further processing, making applications more user-friendly and data more consistent.
-
 ## How to:
-
 In Dart, you can convert a string to lowercase using the `toLowerCase()` method provided by the `String` class. This method returns a new string with all uppercase characters converted to lowercase. Let's see how this works with a simple example:
 
 ```dart

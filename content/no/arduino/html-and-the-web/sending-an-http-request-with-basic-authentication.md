@@ -12,9 +12,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel med basisgodkjenning betyr å kreve tilgang til en beskyttet ressurs på nettet ved å inkludere brukernavn og passord. Programmerere gjør det for å sikre kommunikasjonen og bekrefte identiteten i nettbaserte applikasjoner.
-
 ## Hvordan gjøre det:
 Bruk ESP8266 eller ESP32 med WiFi-bibliotek for å koble til et nettverk og utføre HTTP-forespørsler med basisgodkjenning.
 

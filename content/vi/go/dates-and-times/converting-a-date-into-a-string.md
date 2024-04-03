@@ -15,16 +15,10 @@ title: "Chuy\u1EC3n \u0111\u1ED5i ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---
 
-## Cái gì & Tại sao?
-
-Chuyển đổi một ngày thành một chuỗi trong Go bao gồm việc biến một đối tượng `time.Time` thành định dạng chuỗi dễ đọc. Lập trình viên thường thực hiện thao tác này để hiển thị ngày tháng một cách thân thiện với người dùng hoặc để tuần tự hóa ngày tháng cho việc lưu trữ và truyền tải trong một định dạng nhất quán.
-
 ## Làm thế nào:
-
 Trong Go, gói `time` cung cấp các chức năng để làm việc với ngày và giờ, bao gồm định dạng một đối tượng `time.Time` thành một chuỗi. Phương thức `Format` của kiểu `time.Time` được sử dụng cho mục đích này, nơi bạn chỉ định chuỗi layout theo thời gian tham chiếu "Mon Jan 2 15:04:05 MST 2006".
 
 ### Ví dụ:
-
 ```go
 package main
 
@@ -48,7 +42,6 @@ func main() {
 ```
 
 #### Đầu Ra Mẫu:
-
 ```
 Thời Gian Hiện Tại: 2023-04-12 11:45:20.312457 +0000 UTC
 Ngày Đã Định Dạng: 12-04-2023
@@ -58,7 +51,6 @@ Ngày Đã Định Dạng Chi Tiết: Wed, 12 Apr 2023 11:45:20 UTC
 Đầu ra sẽ thay đổi tùy theo ngày và giờ hiện tại khi chạy chương trình.
 
 ## Sâu Hơn:
-
 Trong bối cảnh của Go, việc thao tác ngày và giờ, bao gồm định dạng, chủ yếu được xử lý bởi gói `time`. Cách tiếp cận định dạng ngày trong Go, được chỉ định bởi phương thức `Format` sử dụng một chuỗi layout cụ thể, là độc đáo so với nhiều ngôn ngữ lập trình khác có thể sử dụng các chỉ định định dạng đơn giản như `%Y` cho một năm 4 chữ số. Cách của Go yêu cầu lập trình viên nhớ thời gian tham chiếu cụ thể: Mon Jan 2 15:04:05 MST 2006, vì nó hoạt động như một mẫu cho việc định dạng hoặc phân tích cú pháp ngày tháng.
 
 Phương pháp này, mặc dù ban đầu không trực quan với những lập trình viên quen với các hàm định dạng giống như strftime, được thiết kế cho sự rõ ràng và tránh sự nhầm lẫn của các định dạng phụ thuộc vào địa phương. Một khi quen với nó, nhiều người thấy rằng cách tiếp cận này giảm thiểu lỗi và cải thiện khả năng đọc code.

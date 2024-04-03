@@ -10,9 +10,6 @@ title: Lecture d'un fichier texte
 weight: 22
 ---
 
-## What & Why?
-Lire un fichier texte, c'est quoi ? C’est parcourir un fichier et en extraire des données pour les utiliser dans votre programme. Pourquoi ? Parce qu'on a souvent besoin de lire des configurations, des données externes ou du contenu à traiter.
-
 ## How to:
 ```Java
 import java.nio.file.*;

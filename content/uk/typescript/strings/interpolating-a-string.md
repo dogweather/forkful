@@ -11,13 +11,6 @@ title: "\u0406\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F
 weight: 8
 ---
 
-## What & Why?
-(Що і Чому?)
-
-String interpolation allows embedding expressions within string literals. Programmers use it to concatenate strings and expressions neatly and readably.
-
-(Інтерполяція рядків дозволяє вбудовувати вирази всередину строкових літералів. Програмісти використовують її для зручного і читабельного об'єднання рядків та виразів.)
-
 ## How to:
 (Як це зробити:)
 

@@ -11,9 +11,6 @@ title: Lendo um arquivo de texto
 weight: 22
 ---
 
-## What & Why?
-Ler um arquivo de texto em JavaScript significa acessar o conteúdo guardado em um arquivo `.txt` - uma tarefa básica e crucial. Programadores fazem isso para manipular dados, realizar análises ou apenas exibir informações em aplicações web.
-
 ## How to:
 Aqui está um jeito rápido de ler um arquivo de texto usando JavaScript com a API `fetch` e `async/await`:
 

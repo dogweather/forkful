@@ -12,12 +12,7 @@ title: Een tekstbestand lezen
 weight: 22
 ---
 
-## Wat & Waarom?
-
-Het lezen van een tekstbestand in Go omvat het openen en ophalen van inhoud uit een bestand opgeslagen op schijf voor verwerking of analyse. Programmeurs voeren deze handeling vaak uit om gegevens te manipuleren, applicaties te configureren of invoer voor programmabewerking te lezen, wat het een fundamentele vaardigheid maakt in softwareontwikkeling.
-
 ## Hoe:
-
 Het lezen van een tekstbestand in Go kan op verschillende manieren worden bereikt, maar een van de eenvoudigste methoden is het gebruik van het `ioutil` pakket. Hier is een basisvoorbeeld:
 
 ```go
@@ -78,7 +73,6 @@ func main() {
 Deze benadering is niet alleen moderner, maar ondersteunt ook grotere bestanden, aangezien het het bestand regel voor regel leest in plaats van de volledige inhoud in één keer in het geheugen te laden.
 
 ## Diepgaande Duik:
-
 Go's behandeling van bestandsoperaties, inclusief het lezen van bestanden, weerspiegelt de filosofie van de taal van eenvoud en efficiëntie. Aanvankelijk bood het `ioutil` pakket eenvoudige bestandsoperaties. Echter, met verbeteringen in Go's standaardbibliotheek en een verschuiving naar explicietere foutafhandeling en resourcebeheer, zijn de `os` en `io` pakketten de voorkeursalternatieven geworden voor het werken met bestanden.
 
 Deze veranderingen benadrukken Go's toewijding aan prestatie en veiligheid, in het bijzonder om geheugenproblemen te vermijden die kunnen ontstaan bij het in zijn geheel laden van grote bestanden. De `bufio.Scanner` methode geïntroduceerd voor het regel voor regel lezen van bestanden onderstreept de aanpasbaarheid van de taal en de focus op moderne computeringuitdagingen, zoals de verwerking van grote datasets of streamingdata.

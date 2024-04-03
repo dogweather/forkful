@@ -9,9 +9,6 @@ title: Parsing HTML
 weight: 43
 ---
 
-## What & Why?
-Parsing HTML in Elm involves extracting information from HTML documents. Programmers do it to interface with web content or APIs that return HTML, allowing for the creation of more interactive and dynamic web applications.
-
 ## How to:
 Elm doesn't have a built-in library for parsing HTML directly akin to libraries in JavaScript or Python due to its emphasis on type safety and avoiding runtime errors. However, you can use `Http` requests to fetch content and then use regular expressions or server-side processing to extract needed information. For more complex HTML parsing, a common approach involves using a dedicated backend service to parse the HTML and return the data in a format Elm can work with directly, like JSON.
 

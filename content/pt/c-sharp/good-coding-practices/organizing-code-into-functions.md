@@ -11,9 +11,6 @@ title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---
 
-## O Quê e Por Quê?
-Organizar código em funções é como separar peças de LEGO em caixas—torna encontrar e usar essas peças mais fácil. Fazemos isso para evitar repetição, para simplificar a compreensão e para tornar a manutenção menos dolorosa.
-
 ## Como fazer:
 Imagine que você tem um código que imprime uma saudação várias vezes. Sem funções, é uma bagunça. Com funções, fica arrumado.
 

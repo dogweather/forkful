@@ -13,12 +13,7 @@ title: Logboekregistratie
 weight: 17
 ---
 
-## Wat & Waarom?
-
-Loggen, in de kern, is de praktijk van het vastleggen van gebeurtenissen en gegevens van een softwareapplicatie naar een externe uitvoer, zoals een bestand of console. Programmeurs loggen dingen om door code heen te traceren, problemen op te lossen en een oogje in het zeil te houden op het gedrag van een app in het wild, wat cruciale inzichten biedt die op geen andere manier zo effectief verkregen kunnen worden.
-
 ## Hoe te:
-
 In Kotlin kan loggen worden gedaan met behulp van de ingebouwde `println()` functie voor eenvoudige gevallen, of met meer geavanceerde bibliotheken zoals SLF4J met Logback of Log4j voor geavanceerde behoeften.
 
 Hieronder staat een basisvoorbeeld met `println()`:
@@ -70,7 +65,6 @@ java.lang.Exception: Gesimuleerde fout
 ```
 
 ## Diepgaand
-
 Historisch heeft het loggen in software zich ontwikkeld met de toenemende complexiteit van applicaties en systemen. Eenvoudige printverklaringen waren voldoende in de beginjaren, waar programma's vaak werden uitgevoerd en gedebugd door de ontwikkelaar zelf. Maar naarmate systemen verbonden werden en in verschillende omgevingen over verschillende gebruikers liepen, werd een robuust en blijvend logsysteem cruciaal.
 
 Voordat Kotlin populair werd, adopteerden Java-ontwikkelaars op grote schaal bibliotheken zoals Log4j en later SLF4J. Deze hebben vergelijkbare praktijken in Kotlin geïnspireerd, waarbij gebruik wordt gemaakt van de interoperabiliteit van Kotlin met Java-bibliotheken. SLF4J werkt als een abstractielaag, waardoor de werkelijke logimplementatie vervangen kan worden—meestal zijn Logback of Log4j2 de voorkeurskeuzes.
@@ -90,7 +84,6 @@ Andere gemeenschappelijke functies van geavanceerde logframeworks zijn:
 Deze tools en functies zijn cruciaal voor het onderhouden van een betrouwbaar, waarneembaar systeem, met name in complexe, gedistribueerde of sterk geschaalde omgevingen.
 
 ## Zie ook
-
 Voor verdere studie en inzicht in Kotlin loggen, bekijk:
 
 - SLF4J (Simple Logging Facade for Java) [http://www.slf4j.org/](http://www.slf4j.org/)

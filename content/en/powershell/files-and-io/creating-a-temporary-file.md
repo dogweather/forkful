@@ -10,9 +10,6 @@ title: Creating a temporary file
 weight: 21
 ---
 
-## What & Why?
-Creating a temporary file means making a file for short-term use, often to store data during a session. Programmers do this to avoid cluttering the system and to handle data that don’t need to be persistent.
-
 ## How to:
 To whip up a temporary file in PowerShell, you use `New-TemporaryFile`. This cmdlet creates a temporary file in your temp folder. Here's the magic spell:
 

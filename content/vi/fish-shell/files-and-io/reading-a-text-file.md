@@ -14,9 +14,6 @@ title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---
 
-## Cái gì & Tại sao?
-Đọc một tệp văn bản là việc lấy dữ liệu bên trong tệp để xử lý. Lập trình viên làm điều này để rút trích thông tin, cấu hình ứng dụng, phân tích log, hoặc chỉ đơn giản là đưa dữ liệu vào một kịch bản.
-
 ## Làm thế nào:
 Dưới đây là cách mở các tệp văn bản với Fish Shell:
 

@@ -10,16 +10,10 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-
-Writing tests in the Arduino environment refers to the process of creating automated tests that validate the functionality of your code on Arduino devices. Programmers do it to ensure their code works as expected, reduces bugs, and improves the quality of their projects, especially crucial in embedded systems where debugging can be more challenging.
-
 ## How to:
-
 Arduino does not have a built-in testing framework like some other programming environments. However, you can use third-party libraries such as `AUnit` for unit testing Arduino code. AUnit is inspired by Arduino's built-in library, `ArduinoUnit`, and Google's testing framework, `Google Test`.
 
 ### Example with AUnit:
-
 First, install AUnit via the Library Manager in the Arduino IDE: go to Sketch > Include Library > Manage Libraries... > search for AUnit and install it.
 
 Then, you can write tests like so:

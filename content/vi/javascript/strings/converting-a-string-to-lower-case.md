@@ -17,9 +17,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---
 
-## Gì và Tại sao?
-Chuyển đổi một chuỗi thành chữ thường nghĩa là biến đổi tất cả các ký tự trong đó thành dạng chữ thường của chúng. Lập trình viên thực hiện việc này để đảm bảo tính nhất quán, đặc biệt là cho các so sánh không phân biệt chữ hoa chữ thường, như khi chuẩn hóa đầu vào của người dùng hoặc tìm kiếm trong nội dung văn bản.
-
 ## Cách thực hiện:
 Trong JavaScript, chúng ta chuyển đổi một chuỗi sang chữ thường bằng phương thức `.toLowerCase()`. Nó đơn giản như sau:
 

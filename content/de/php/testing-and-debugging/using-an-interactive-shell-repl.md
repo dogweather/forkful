@@ -11,9 +11,6 @@ title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---
 
-## Was & Warum?
-Eine interaktive Shell oder REPL (Read-Eval-Print Loop) ermöglicht es Ihnen, PHP-Code spontan zu schreiben und auszuführen. Sie ist ideal für Experimente, Debugging oder Lernen, da Sie Code-Snippets testen können, ohne den Aufwand eines vollständigen Skripts zu betreiben.
-
 ## Wie geht das:
 Starten Sie die PHP REPL, indem Sie `php -a` in Ihrem Terminal ausführen. Hier ist ein Vorgeschmack darauf, wie es funktioniert:
 

@@ -10,9 +10,6 @@ title: "Interpolera en str\xE4ng"
 weight: 8
 ---
 
-## Vad & Varför?
-Stränginterpolering innebär att man blandar variabler med vanlig text. Programmerare gör detta för att skapa dynamiska meddelanden, där innehållet kan ändras vid körning.
-
 ## Hur man gör:
 ```Rust
 fn main() {

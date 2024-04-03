@@ -13,9 +13,6 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mitä & Miksi?
-Tarkistamalla, onko hakemisto olemassa Rubylla, ohjelmoijat voivat varmistaa hakemiston olemassaolon ennen toimintojen, kuten tiedostojen lukemisen tai uusien hakemistojen luomisen, suorittamista. Tämä on ratkaisevan tärkeää välttääkseen virheitä tiedostojen käsittelyssä ja varmistaakseen tiedostojärjestelmän manipulointien luotettavuuden.
-
 ## Miten:
 Rubyn vakio kirjasto tarjoaa suoraviivaiset menetelmät tarkistaa hakemiston olemassaolo. Näin teet sen puhtaalla Rubylla, ilman kolmannen osapuolen kirjastoja:
 

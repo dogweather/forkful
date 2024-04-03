@@ -14,9 +14,6 @@ title: Tests Schreiben
 weight: 36
 ---
 
-## Was & Warum?
-Das Schreiben von Tests in Swift umfasst das Erstellen und Ausführen von Code, der die Korrektheit anderer Codeeinheiten in Ihrer Anwendung überprüft. Programmierer tun dies, um Zuverlässigkeit zu gewährleisten, Fehler früh im Entwicklungszyklus zu erkennen und zukünftiges Code-Refactoring ohne unbeabsichtigte Konsequenzen zu erleichtern.
-
 ## Wie geht das:
 Swift unterstützt das Testen durch sein XCTest-Framework, das in Xcode integriert ist. Sie können Unit-Tests schreiben, um einzelne Teile Ihres Codes zu überprüfen, zum Beispiel eine Funktion, die die Summe von zwei Zahlen berechnet.
 

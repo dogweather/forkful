@@ -13,9 +13,6 @@ title: Een string omzetten naar kleine letters
 weight: 4
 ---
 
-## Wat & Waarom?
-Een string omzetten naar kleine letters betekent dat elk teken in de string een kleine letter wordt. Programmeurs doen dit voor consistentie, vooral voor hoofdletterongevoelige vergelijkingen, zoals bij het controleren van gebruikersinvoer tegen een lijst van commando's of opgeslagen gegevens.
-
 ## Hoe:
 In TypeScript is het omzetten van een string naar kleine letters appeltje-eitje. Roep gewoon `.toLowerCase()` aan op je string. Zo doe je dat:
 

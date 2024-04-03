@@ -9,9 +9,6 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad & Varför?
-Komplexa tal är tal med en reell och en imaginär del (som 3 + 4i). De dyker upp i olika programmeringsproblem, särskilt inom signalbehandling, kvantdatorer och lösning av polynomekvationer. Programmerare jonglerar dem för att effektivt hantera dessa typer av uppgifter.
-
 ## Hur man gör:
 JavaScript har inte inbyggt stöd för komplexa tal, men du kan kavla upp ärmarna och hantera det med objekt och matematik. Här är en snabbgenomgång.
 

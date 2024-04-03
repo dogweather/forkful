@@ -14,9 +14,6 @@ title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---
 
-## Gì & Tại sao?
-Viết vào lỗi chuẩn (`stderr`) là một cách để xuất thông báo lỗi và chẩn đoán. Lập trình viên làm vậy để phân biệt chúng với đầu ra thông thường (`stdout`), điều này làm cho việc gỡ lỗi và ghi log trở nên dễ dàng hơn.
-
 ## Làm thế nào:
 Để viết vào lỗi chuẩn trong Clojure, bạn sẽ sử dụng `binding` với `*err*`. Dưới đây là một ví dụ nhanh:
 

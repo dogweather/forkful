@@ -10,16 +10,10 @@ title: Generating random numbers
 weight: 12
 ---
 
-## What & Why?
-
-Generating random numbers in programming is about creating numbers that lack any predictable pattern. Programmers do this for various reasons, including simulations, algorithm testing, gaming, and security applications, where unpredictability is key to achieving realistic or secure outcomes.
-
 ## How to:
-
 Kotlin provides a straightforward way to generate random numbers through its standard library. Here's how you can generate different types of random values:
 
 ### Generating a Random Integer
-
 To generate a random integer within a specific range:
 
 ```kotlin
@@ -32,7 +26,6 @@ fun main() {
 ```
 
 ### Generating a Random Double
-
 Similarly, generating a random double:
 
 ```kotlin
@@ -45,7 +38,6 @@ fun main() {
 ```
 
 ### Generating a Random Boolean
-
 For generating a random boolean value:
 
 ```kotlin
@@ -58,7 +50,6 @@ fun main() {
 ```
 
 ### Seeding for Reproducible Results
-
 In cases where you need reproducible sequences of random numbers (for example, in testing), you can seed the random number generator:
 
 ```kotlin
@@ -73,7 +64,6 @@ fun main() {
 ```
 
 ## Deep Dive
-
 The Kotlin standard library's approach to generating random numbers leverages Java's `java.util.Random` under the hood, ensuring a blend of ease of use and performance. However, it's crucial to note that these methods generate pseudo-random numbers, which means the numbers appear random but are generated using a deterministic process.
 
 For most applications, the randomness provided by Kotlin's `Random` class is sufficient. However, for more security-sensitive applications, such as cryptography, where the quality of randomness is paramount, one should consider using `java.security.SecureRandom` instead. SecureRandom is specifically designed for cryptographic operations, providing a higher quality of randomness, though with a potential performance trade-off.

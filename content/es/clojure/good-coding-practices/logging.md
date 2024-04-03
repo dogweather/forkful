@@ -12,9 +12,6 @@ title: "Registro de Actividades en Programaci\xF3n"
 weight: 17
 ---
 
-## ¿Qué y por qué?
-El registro de eventos (logging) es esencialmente el equivalente en software de un diario de navegación; es una forma de registrar eventos que ocurren mientras una aplicación se está ejecutando. Los programadores lo hacen para mantener un seguimiento de estos eventos para la depuración, auditoría o para obtener información sobre el comportamiento de un sistema en producción.
-
 ## Cómo hacerlo:
 Clojure se apoya en las facilidades de registro de Java, pero puedes acceder a ellas de una manera más idiomática de Clojure. Veamos cómo podrías usar `clojure.tools.logging`, que proporciona una abstracción simple sobre varios frameworks de registro:
 

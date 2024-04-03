@@ -14,12 +14,7 @@ title: Tworzenie tymczasowego pliku
 weight: 21
 ---
 
-## Co i Dlaczego?
-
-Tworzenie tymczasowego pliku w Google Apps Script polega na generowaniu pliku przeznaczonego do krótkotrwałego użytku, zazwyczaj do przetwarzania danych pośrednich, debugowania lub w celach cache’owania. Programiści robią to, aby zarządzać danymi tymczasowo, bez zaśmiecania stałej przestrzeni do przechowywania, lub gdy trwałość danych nie jest potrzebna poza zakresem bieżącego procesu.
-
 ## Jak to zrobić:
-
 W Google Apps Script, stworzenie tymczasowego pliku można osiągnąć za pomocą serwisu DriveApp, który zapewnia prostą metodę na tworzenie, czytanie i usuwanie plików w Google Drive. Oto jak możesz stworzyć tymczasowy plik tekstowy, zapisać do niego jakieś dane, a następnie usunąć go po użyciu:
 
 ```javascript
@@ -54,7 +49,6 @@ Tymczasowy plik usunięty
 Ten przykładowy skrypt prezentuje stworzenie tymczasowego pliku, wykonanie operacji odczytu jego zawartości oraz w końcu usunięcie pliku w celu oczyszczenia.
 
 ## Dogłębna analiza
-
 Koncepcja tworzenia tymczasowych plików w rozwoju oprogramowania jest równie stara, jak koncepcja zarządzania plikami. W tradycyjnych systemach plików, tymczasowe pliki często są tworzone w wyznaczonych katalogach temp i są kluczowe dla różnych procesów pośrednich, takich jak sortowanie dużych zbiorów danych, przechowywanie danych sesji dla aplikacji internetowych lub przechowywanie fragmentów danych podczas procesów konwersji plików.
 
 W Google Apps Script, proces tworzenia tymczasowych plików wykorzystuje infrastrukturę Google Drive, co oferuje interesującą mieszankę zarządzania plikami w chmurze z tradycyjnymi koncepcjami programowania. Jednakże, ta metoda tworzenia tymczasowych plików w Google Drive nie jest pozbawiona swoich ograniczeń i kosztów, biorąc pod uwagę ograniczenia kwot Google Drive. Również opóźnienia w dostępie do Google Drive przez sieć w porównaniu z lokalnym systemem plików mogą być kluczowym czynnikiem dla aplikacji wysokiej wydajności.

@@ -25,9 +25,6 @@ title: "\u0412\u0438\u0432\u0435\u0434\u0435\u043D\u043D\u044F \u043D\u0430\u043
 weight: 33
 ---
 
-## Що це таке & Навіщо?
-Виведення налагоджувальної інформації – це спосіб бачити, що відбувається у вашому коді під час виконання. Програмісти роблять це, щоб розуміти процеси в системі і швидко знаходити помилки.
-
 ## Як це робити:
 ```Bash
 # Echo command for simple debugging
@@ -53,7 +50,7 @@ Historically, Bash didn't have advanced debugging tools. Simple `echo` statement
 
 There are alternatives to Bash for debugging, such as using a formal debugger like `bashdb` or writing scripts in languages with better debugging support.
 
-For implementation, note that using `echo` can interfere with actual output, so consider directing debug output to files or using `stderr`. The `tee` command is handy to watch the output in real-time while preserving it in a file. 
+For implementation, note that using `echo` can interfere with actual output, so consider directing debug output to files or using `stderr`. The `tee` command is handy to watch the output in real-time while preserving it in a file.
 
 ## Дивись також
 - Bash Hackers Wiki on Debugging (https://wiki.bash-hackers.org/scripting/debuggingtips)

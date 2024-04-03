@@ -18,9 +18,6 @@ title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
 weight: 27
 ---
 
-## What & Why? (무엇과 왜?)
-두 날짜를 비교한다는 건, 그들이 서로 얼마나 차이나는지, 어떤 것이 더 이전이거나 최신인지 파악하는 과정입니다. 이를 통해 프로그래머는 유효성 검사, 이벤트 기간 분석, 시간 기반의 로직 실행 등을 할 수 있습니다.
-
 ## How to: (어떻게 하나요?)
 ```Python
 from datetime import datetime

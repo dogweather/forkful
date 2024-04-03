@@ -13,12 +13,7 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-## Cosa e perché?
-
-Lavorare con numeri complessi nella programmazione implica la manipolazione di numeri che hanno sia una parte reale che una immaginaria, tipicamente espressi come `a + bi`. I programmatori affrontano i numeri complessi in vari domini, come l'ingegneria, la fisica e l'analisi dei dati, per risolvere problemi che coinvolgono radici quadrate di numeri negativi, analisi delle forme d'onda e altro.
-
 ## Come fare:
-
 In Go, i numeri complessi sono gestiti utilizzando le funzioni incorporate `complex`, `real` e `imag`, insieme ai tipi `complex64` e `complex128` (rappresentanti rispettivamente numeri complessi a 64 bit e 128 bit). Ecco una guida rapida:
 
 ```go
@@ -55,7 +50,6 @@ func main() {
 Questo esempio copre le basi, ma c'è molto altro che si può fare con i numeri complessi, inclusa la sfruttamento del pacchetto `math/cmplx` per operazioni più avanzate come trovare la magnitudine, la fase, e molto altro.
 
 ## Approfondimento
-
 Il concetto di numeri complessi risale al XVI secolo, ma ha ottenuto ampio riconoscimento e formalizzazione rigorosa solo nel XIX secolo. Nella programmazione informatica, i numeri complessi sono stati fondamentali per l'aritmetica complessa nei calcoli scientifici e ingegneristici fin dai primi giorni. L'approccio di Go ai numeri complessi, rendendoli cittadini di prima classe con supporto integrato e un supporto completo della libreria standard attraverso il pacchetto `math/cmplx`, spicca tra i linguaggi di programmazione. Questa decisione di progettazione riflette l'enfasi di Go sulla semplicità e le prestazioni.
 
 Tuttavia, è importante notare che, sebbene lavorare con i numeri complessi in Go sia potente, potrebbe non essere sempre l'approccio migliore per tutte le applicazioni, soprattutto quelle che richiedono matematica simbolica o aritmetica ad alta precisione. Linguaggi e ambienti specializzati nel calcolo scientifico, come Python con librerie come NumPy e SciPy, o software come MATLAB, potrebbero offrire maggiore flessibilità e una gamma più ampia di funzionalità per applicazioni specifiche.

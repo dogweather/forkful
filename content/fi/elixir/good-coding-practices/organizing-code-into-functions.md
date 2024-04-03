@@ -11,9 +11,6 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mikä & Miksi?
-Koodin järjestäminen funktioiksi tarkoittaa, että liittyvät operaatiot ryhmitellään uudelleenkäytettäviksi lohkoiksi. Tämä tehdään luettavuuden ja ylläpidettävyyden parantamiseksi, toiston vähentämiseksi ja testauksen yksinkertaistamiseksi.
-
 ## Miten:
 Luodaan yksinkertainen Elixir-funktio sanojen alkukirjainten suurentamiseen:
 

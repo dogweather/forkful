@@ -10,9 +10,6 @@ title: Parsing HTML
 weight: 43
 ---
 
-## What & Why?
-Parsing HTML involves extracting data and information from HTML documents, which is crucial for web scraping, data analysis, and automation tasks. Programmers perform this to gather, analyze, or manipulate web content programmatically, enabling the automation of what would otherwise be manual extraction of data from websites.
-
 ## How to:
 Lua does not have a built-in library for parsing HTML, but you can utilize third-party libraries like `LuaHTML` or leverage bindings for `libxml2` through `LuaXML`. A popular approach is to use the `lua-gumbo` library for parsing HTML, which provides a straightforward, HTML5-compliant parsing capability.
 

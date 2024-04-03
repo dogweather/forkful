@@ -10,9 +10,6 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## What & Why? (Co i dlaczego?)
-Concatenation to łączenie kilku stringów w jeden. Programiści robią to, by składać tekst z różnych części, np. tworząc wiadomości czy dynamiczne treści.
-
 ## How to: (Jak to zrobić:)
 ```PowerShell
 # Using the + operator

@@ -12,9 +12,6 @@ title: Journalisation
 weight: 17
 ---
 
-## Quoi et Pourquoi ?
-Le logging, c'est fondamentalement laisser une traînée de miettes à travers votre code - c'est la manière de garder un œil sur ce qui se passe lorsque votre script est exécuté en production. Les programmeurs font des logs pour débugger, suivre le comportement des applications, surveiller la performance, et être à l'affût de toute malice.
-
 ## Comment faire :
 Voici le b.a.-ba pour intégrer du logging basique dans vos scripts :
 

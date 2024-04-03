@@ -10,9 +10,6 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## What & Why?
-"Søk og erstatt" er en grunnstein i programmering. Det brukes for å finne og bytte ut spesifikke tekststrenger, noe som gir oss muligheten til å oppdatere data raskt og effektivt.
-
 ## How to:
 Kotlin gir oss verktøy for å søke og erstatte tekst med `replace`-funksjonen:
 

@@ -15,12 +15,7 @@ title: "T\u1EA3i trang web v\u1EC1 m\xE1y"
 weight: 42
 ---
 
-## Gì & Tại sao?
-
-Tải một trang web xuống bao gồm việc lấy nội dung của trang web thông qua URL của nó để xử lý hoặc lưu trữ. Các lập trình viên làm điều này để trích xuất thông tin, theo dõi các thay đổi, hoặc lưu trữ nội dung, làm cho nó trở thành một phần cơ bản trong việc lấy dữ liệu trang web, khai thác dữ liệu, và nhiệm vụ kiểm tra tự động.
-
 ## Làm thế nào:
-
 Dart cung cấp gói `http`, một thư viện bên thứ ba phổ biến để thực hiện các yêu cầu HTTP. Dưới đây là một ví dụ cơ bản về cách sử dụng nó để tải một trang web:
 
 Trước tiên, thêm gói `http` vào `pubspec.yaml` của bạn:

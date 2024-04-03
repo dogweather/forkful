@@ -12,9 +12,6 @@ title: Working with YAML
 weight: 41
 ---
 
-## What & Why?
-Working with YAML involves parsing and manipulating YAML (YAML Ain't Markup Language) files, a data serialization format used for configuration files, in Fish Shell. Programmers do this to automate and configure applications or services efficiently within the context of shell environments, facilitating tasks like configurations management and resources provisioning.
-
 ## How to:
 Fish Shell doesn’t have built-in support for parsing YAML, but you can utilize third-party tools like `yq` (a lightweight and portable command-line YAML processor) to handle YAML data.
 

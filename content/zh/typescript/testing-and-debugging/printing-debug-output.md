@@ -16,9 +16,6 @@ title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
 weight: 33
 ---
 
-## What & Why? (是什么？为什么？)
-打印调试输出就是在代码中插入语句，让程序运行时显示信息。程序员这样做是为了理解代码如何运行，找出并修正错误。
-
 ## How to: (如何操作：)
 在TypeScript里, 使用`console.log`来打印调试信息。更高级的调试，用`console.debug`, `console.info`, `console.warn`, `console.error`.
 

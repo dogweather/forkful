@@ -9,12 +9,7 @@ title: Finding the length of a string
 weight: 7
 ---
 
-## What & Why?
-
-Finding a string's length means counting its characters. Programmers do it to validate input, loop through strings, allocate resources, among other tasks.
-
 ## How to:
-
 ```python
 # Simple usage of len() function
 my_string = "Hello, World!"
@@ -32,7 +27,6 @@ if len(my_string) > 10:
 ```
 
 ## Deep Dive
-
 Historically, the `len()` function has been Python's go-to way to find a string's length. It's elegant and quick. Underneath, Python strings are arrays of bytes representing Unicode characters, and `len()` counts those. The function works not just with strings but with any iterable.
 
 Alternatives? Well, not commonly used for strings, but you could loop through a string and count characters manually—unwieldy and inefficient. Before Unicode support, the length of a string was sometimes different from its memory size, but since Python 3's strings are Unicode-native, the `len()` accurately represents the number of characters.
@@ -40,7 +34,6 @@ Alternatives? Well, not commonly used for strings, but you could loop through a 
 Implementation-wise, Python strings are objects with metadata, including length, so `len()` is actually an O(1) operation—constant time, regardless of string size. That's like snapping your fingers and getting an answer.
 
 ## See Also
-
 - Python documentation for `len()`: https://docs.python.org/3/library/functions.html#len
 - Unicode and String Encoding in Python: https://docs.python.org/3/howto/unicode.html
 - Python's time complexity for built-in types: https://wiki.python.org/moin/TimeComplexity

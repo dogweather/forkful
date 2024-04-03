@@ -15,9 +15,6 @@ title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---
 
-## Gì và Tại sao?
-Viết vào lỗi chuẩn (stderr) gửi thông điệp lỗi và chẩn đoán riêng biệt từ đầu ra chuẩn (stdout). Lập trình viên làm điều này để tách biệt rõ ràng đầu ra chương trình thông thường khỏi thông tin lỗi, làm cho việc gỡ lỗi và ghi nhật ký trở nên dễ dàng hơn.
-
 ## Cách thực hiện:
 ```PowerShell
 # Viết một lỗi đơn giản vào stderr

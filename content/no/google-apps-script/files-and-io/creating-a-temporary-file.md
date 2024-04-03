@@ -13,12 +13,7 @@ title: Opprette en midlertidig fil
 weight: 21
 ---
 
-## Hva & Hvorfor?
-
-Å lage en midlertidig fil i Google Apps Script innebærer å generere en fil som er ment for kortvarig bruk, typisk for mellomliggende databehandling, feilsøking eller cache formål. Programmerere gjør dette for å håndtere data midlertidig uten å rotte til det permanente lagringsområdet eller når varigheten av dataene er unødvendig utover rekkevidden av den nåværende prosessen.
-
 ## Hvordan:
-
 I Google Apps Script kan du lage en midlertidig fil ved å bruke DriveApp-tjenesten, som gir en enkel metode for å opprette, lese og slette filer i Google Drive. Her er hvordan du kan lage en midlertidig tekstfil, skrive litt data til den, og deretter fjerne den etter bruk:
 
 ```javascript
@@ -53,7 +48,6 @@ Midlertidig fil slettet
 Dette eksempelskriptet viser opprettingen av en midlertidig fil, utfører en operasjon for å lese innholdet, og fjerner til slutt filen for å rydde opp.
 
 ## Dypdykk
-
 Konseptet med å lage midlertidige filer i programvareutvikling er like gammelt som konseptet med filbehandling selv. I tradisjonelle filsystemer blir midlertidige filer ofte opprettet i utpekte temp-kataloger og er avgjørende for forskjellige mellomliggende prosesser, som sortering av store datasett, holding av sesjonsdata for webapplikasjoner, eller lagring av datasegmenter under filkonverteringsprosesser.
 
 I Google Apps Script utnytter prosessen med å lage midlertidige filer Google Drives infrastruktur, som tilbyr en interessant blanding av skybasert filbehandling med tradisjonelle programmeringskonsepter. Men denne metoden for å lage midlertidige filer i Google Drive er ikke uten begrensninger og kostnader, med tanke på kvotegrensene Google Drive pålegger. Også latenstiden ved å få tilgang til Google Drive over nettverket sammenlignet med et lokalt filsystem kan være en kritisk faktor for applikasjoner med høy ytelse.

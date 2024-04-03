@@ -11,9 +11,6 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## What & Why?
-Créer un fichier temporaire, c'est comme prendre des notes sur un bout de papier jetable — ça sert à stocker des infos pour un court moment. Les développeurs le font souvent pour garder des données pendant l'exécution d'un programme sans toucher au stockage permanent.
-
 ## How to:
 En C#, créer un fichier temporaire est simple. On peut utiliser `Path.GetTempFileName()` pour en générer un nouveau. Voici un petit exemple en action :
 

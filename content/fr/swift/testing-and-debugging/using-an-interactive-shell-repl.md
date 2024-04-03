@@ -10,9 +10,6 @@ title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---
 
-## Quoi & Pourquoi ?
-L'utilisation d'une coquille interactive, ou d'une boucle de lecture-évaluation-impression (REPL), vous permet de coder de manière interactive. Les programmeurs l'utilisent pour tester rapidement des extraits de Swift, déboguer ou apprendre le langage.
-
 ## Comment faire :
 Invoquez REPL en ouvrant un terminal et en exécutant `swift`. Tapez directement le code et appuyez sur Entrée pour l'exécuter. Voici un avant-goût :
 

@@ -10,11 +10,7 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## Was & Warum?
-Das Extrahieren von Teilstrings ist der Vorgang, bei dem spezifische Teile eines Strings abgetrennt und verwendet werden. Programmierer nutzen dies häufig, um mit Benutzereingaben zu arbeiten, Daten zu validieren oder Formatierungen anzupassen.
-
 ## So geht's:
-
 ```Swift
 let vollerText = "Hallo, ich bin ein Swift-Programmierer!"
 let bereich = vollerText.index(vollerText.startIndex, offsetBy: 7)..<vollerText.index(vollerText.endIndex, offsetBy: -23)

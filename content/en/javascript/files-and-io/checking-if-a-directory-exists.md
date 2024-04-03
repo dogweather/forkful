@@ -11,9 +11,6 @@ title: Checking if a directory exists
 weight: 20
 ---
 
-## What & Why?
-Checking if a directory exists in JavaScript is essential for file manipulation tasks, enabling scripts to verify directory presence before reading from or writing to it. This operation prevents errors and ensures smoother program execution, particularly in applications that dynamically handle files or directories based on user input or external data sources.
-
 ## How to:
 In Node.js, since JavaScript itself doesn't have direct access to the file system, the `fs` module is typically used for such operations. Here's a simple way to check if a directory exists using `fs.existsSync()`:
 

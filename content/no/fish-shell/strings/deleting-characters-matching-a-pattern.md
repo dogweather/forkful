@@ -11,9 +11,6 @@ title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---
 
-## Hva & Hvorfor?
-Å slette tegn som matcher et mønster betyr å fjerne bestemte sekvenser fra tekststrenger. Programmerere gjør dette for å rense data, ekstrahere informasjon eller formatere output.
-
 ## How to:
 For å slette tegn i Fish Shell, bruk `string replace`. Eksempel fjerner alle 'a'-er fra en streng:
 

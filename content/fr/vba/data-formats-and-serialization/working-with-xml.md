@@ -14,12 +14,7 @@ title: Travailler avec XML
 weight: 40
 ---
 
-## Quoi & Pourquoi ?
-
-Travailler avec XML dans Visual Basic pour Applications (VBA) implique l'analyse, la création et la modification de documents XML dans le contexte des applications Microsoft Office. Les programmeurs se tournent vers cette capacité pour intégrer les applications Office avec des services web ou d'autres sources de données qui produisent du XML, facilitant ainsi l'échange de données et les fonctions de rapport.
-
 ## Comment faire :
-
 Pour commencer à interagir avec XML, on utilise généralement l'objet `MSXML2.DOMDocument`. Cette interface vous permet de charger, d'analyser et de naviguer dans les documents XML. Voici un exemple simple montrant comment charger un fichier XML, naviguer dans sa structure et lire les attributs et le contenu textuel.
 
 ```basic
@@ -43,7 +38,6 @@ End If
 Dans le code d'exemple ci-dessus, nous créons une instance de `MSXML2.DOMDocument60`, chargeons un fichier XML, puis vérifions les erreurs. Si aucune erreur n'est trouvée, nous naviguons vers un nœud spécifique en utilisant XPath et affichons son contenu textuel.
 
 ## Plongée profonde :
-
 L'intégration des capacités XML dans VBA remonte au début des années 2000, lorsque le besoin pour les applications Office d'interagir avec les données et services web a commencé à croître. La bibliothèque `MSXML`, ou Microsoft XML Core Services, a évolué au fil des ans, `MSXML2.DOMDocument60` étant l'une des dernières versions recommandées pour son utilisation en raison de ses performances et fonctionnalités de sécurité améliorées.
 
 Bien que puissantes, les capacités de manipulation XML de VBA sont considérées comme moins efficaces et plus encombrantes par rapport aux environnements de programmation modernes tels que XML.etree de Python ou LINQ to XML de C#. La verbosité inhérente à VBA et la nécessité d'ajouter et de gérer manuellement les références peuvent décourager le développement rapide. En outre, avec l'avènement de JSON comme format d'échange de données plus léger, de nombreux programmeurs et applications se détournent du XML à moins que la nécessité d'interopérabilité avec des systèmes hérités ou des services d'entreprise spécifiques ne nécessite son utilisation.

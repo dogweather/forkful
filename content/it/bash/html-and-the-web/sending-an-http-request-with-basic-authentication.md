@@ -11,9 +11,6 @@ title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---
 
-## What & Why?
-Inviare una richiesta HTTP con autenticazione di base significa mandare le credenziali (username e password) in base64 per accedere a risorse protette. I programmatori lo fanno per interagire con API che richiedono autenticazione, accedendo a dati e servizi in modo sicuro.
-
 ## How to:
 Ecco come usare `curl` per inviare una richiesta HTTP con autenticazione di base.
 

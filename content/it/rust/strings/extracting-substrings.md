@@ -10,9 +10,6 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## What & Why?
-Estrarre sottocordi in Rust significa prendere pezzi di testo da una stringa. Facciamo questo per manipolare, analizzare o semplicemente visualizzare solo le parti che ci servono.
-
 ## How to:
 ```Rust
 fn main() {

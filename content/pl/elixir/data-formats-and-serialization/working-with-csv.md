@@ -15,16 +15,10 @@ title: Praca z plikami CSV
 weight: 37
 ---
 
-## Co i dlaczego?
-
-Praca z plikami CSV (Comma-Separated Values - wartości oddzielone przecinkami) polega na odczycie z tych plików i zapisywaniu danych do nich, co jest często wymagane przy zadaniach związanych z importem/eksportem danych lub prostymi rozwiązaniami przechowywania. Programiści wykorzystują tę funkcjonalność do wymiany danych między systemami, szybkiej edycji danych lub w sytuacjach, gdy lekki i łatwy do manipulacji format danych jest zaletą.
-
 ## Jak to zrobić:
-
 Elixir, z jego potężnym dopasowywaniem wzorców i wsparciem dla łączenia potokowego (pipelining), może skutecznie obsłużyć pliki CSV, nawet bez zewnętrznych bibliotek. Jednakże, dla bardziej zaawansowanych potrzeb, biblioteka `nimble_csv` jest szybkim i prostym wyborem.
 
 ### Odczyt pliku CSV bez zewnętrznych bibliotek
-
 Możesz odczytać i zanalizować plik CSV za pomocą wbudowanych funkcji Elixira:
 
 ```elixir
@@ -43,7 +37,6 @@ CSVReader.read_file("data.csv")
 ```
 
 ### Zapis do pliku CSV
-
 Podobnie, aby zapisać dane do pliku CSV:
 
 ```elixir
@@ -64,7 +57,6 @@ CSVWriter.write_to_file("output.csv", dane)
 ```
 
 ### Używanie `nimble_csv`
-
 Dla bardziej skomplikowanego obsługiwania plików CSV, `nimble_csv` oferuje potężny i elastyczny sposób pracy z danymi CSV. Najpierw dodaj `nimble_csv` do twoich zależności w `mix.exs` i uruchom `mix deps.get`:
 
 ```elixir

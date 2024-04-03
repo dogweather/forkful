@@ -25,9 +25,6 @@ title: "\u05D0\u05E8\u05D2\u05D5\u05DF \u05D4\u05E7\u05D5\u05D3 \u05DC\u05EA\u05
 weight: 18
 ---
 
-## מה ולמה?
-ארגון קוד לתוך פונקציות נוגע לאגדת שבבי סקריפט כדי לבצע משימות מסוימות. אנו עושים זאת מכיוון שזה הופך את הקוד לקריא יותר, קל יותר לבדוק ולשוב ולהשתמש בו - אף אחד לא רוצה להיחלק דרך ביצת קוד ספגטי.
-
 ## איך לעשות:
 ב-Fish, כותבים פונקציה עם המילה השמורה `function`, נותנים לה שם, ומסיימים עם `end`. הנה פונקציה פשוטה:
 
@@ -70,11 +67,9 @@ Hey there, your_username!
 אין צורך בערך `return` מכיוון ש-Fish לא מתמקדת בזה; פלט הפונקציה שלכם הוא החזר שלה. ואם אתם רוצים פונקציות קבועות שתהיינה זמינות להפעלות עתידיות, זכרו את `funcsave`.
 
 ## ראו גם
-
 - המדריך ל-fish על פונקציות: [https://fishshell.com/docs/current/tutorial.html#tut_functions](https://fishshell.com/docs/current/tutorial.html#functions)
 
 ### פקודות לפונקציה
-
 - [function](https://fishshell.com/docs/current/cmds/function.html) — ליצור פונקציה
 - [functions](https://fishshell.com/docs/current/cmds/functions.html) — להדפיס או למחוק פונקציות
 - [funcsave](https://fishshell.com/docs/current/cmds/funcsave.html) — לשמור את הגדרת הפונקציה בתיקיית הטעינה האוטומטית של המשתמש

@@ -10,12 +10,7 @@ title: Concatenating strings
 weight: 3
 ---
 
-## What & Why?
-
-Concatenating strings is basically just stringing words together. Think of it like making a train out of words instead of carriages. Programmers do it to combine text, like names with greetings, or to build up messages and data that need to be flexible.
-
 ## How to:
-
 In PHP, concatenating is all about the dot (`.'). Take two strings, put a dot between them, and voila! They're now one.
 
 ```PHP
@@ -49,7 +44,6 @@ echo $message;
 ```
 
 ## Deep Dive
-
 Back in the olden days, PHP folks had to use the dot to smush strings together. It's like duct tape for words. Concatenation is essential because data isn't always delivered in the format we need it.
 
 Regarding alternatives, there are a few. The `sprintf()` and `printf()` functions allow for formatted strings. Imagine you're creating a movie script with placeholders, and these functions fill in the actor's names.
@@ -71,7 +65,6 @@ echo implode(' ', $array);
 Another thing to consider is efficiency. For long strings or heavy operations, using `.` can be slower compared to other methods like `implode()` or even buffering the output. But for most everyday tasks, concatenation using the dot works like a charm.
 
 ## See Also
-
 For the thirsty for more:
 
 - The official PHP documentation on string operators is a great spot to know your tools: [PHP String Operators](https://www.php.net/manual/en/language.operators.string.php)

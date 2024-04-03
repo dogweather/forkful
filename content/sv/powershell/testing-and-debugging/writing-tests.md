@@ -14,12 +14,7 @@ title: Skriva tester
 weight: 36
 ---
 
-## Vad & Varför?
-
-Att skriva tester i PowerShell innebär att skapa skript som automatiskt validerar funktionaliteten i din PowerShell-kod, för att säkerställa att den beter sig som förväntat. Programmerare gör detta för att upptäcka buggar tidigt, förenkla kodunderhåll och säkerställa att kodändringar inte oavsiktligt bryter befintlig funktionalitet.
-
 ## Hur man gör:
-
 PowerShell har inte ett inbyggt testramverk, men Pester, en populär tredjepartsmodul, används ofta för att skriva och köra tester. Så här kommer du igång med Pester för att testa dina PowerShell-funktioner.
 
 Först, installera Pester om du inte redan har gjort det:

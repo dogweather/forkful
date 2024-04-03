@@ -11,9 +11,6 @@ title: Konvertere en dato til en streng
 weight: 28
 ---
 
-## Hva & Hvorfor?
-Konvertering av en dato til en streng betyr å omforme datoen fra et format som datamaskinen forstår til tekst som mennesker kan lese. Vi gjør dette fordi det er enklere å vise og lagre datoen på en forståelig måte for brukerne.
-
 ## Hvordan:
 ```Arduino
 #include <RTClib.h>

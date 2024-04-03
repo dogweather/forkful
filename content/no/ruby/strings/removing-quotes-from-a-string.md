@@ -11,9 +11,6 @@ title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---
 
-## Hva & Hvorfor?
-Å fjerne anførselstegn fra en streng betyr å skrelle bort de doble eller enkle anførselstegnene som omslutter tekstverdier. Programmerere gjør dette ofte for å rydde opp i brukerinndata, for å sikre konsistens i databehandling, eller for å forberede data for systemer som kan bli forvirret av de ekstra tegnene.
-
 ## Hvordan:
 Ruby har noen smarte triks i ermet for å klippe ut de irriterende anførselstegnene. Du kan bruke `gsub` eller `delete` metodene for å få jobben gjort. Her er noe kode å tygge på:
 

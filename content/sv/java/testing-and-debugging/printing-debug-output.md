@@ -11,9 +11,6 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## What & Why?
-Att printa debug-output innebär att skriva ut information till konsolen för att förstå vad som händer i koden. Programmerare gör det för att spåra buggar och monitorera programflödet.
-
 ## How to:
 För att skriva ut info i Java, använd `System.out.println()`. Här är några exempel:
 

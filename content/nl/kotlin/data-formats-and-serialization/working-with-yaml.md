@@ -12,12 +12,7 @@ title: Werken met YAML
 weight: 41
 ---
 
-## Wat & Waarom?
-
-YAML, wat staat voor "YAML Ain't Markup Language", is een standaard voor het serialiseren van gegevens die leesbaar is voor mensen. Programmeurs gebruiken het om software te configureren, gegevens te definiëren of parameters in te stellen vanwege de veelzijdigheid en leesbaarheid.
-
 ## Hoe:
-
 Om met YAML in Kotlin te werken, gebruik je typisch een bibliotheek zoals `snakeyaml`. Laten we duiken in hoe je een YAML-bestand kunt parseren:
 
 Voeg eerst de afhankelijkheid toe in je `build.gradle` bestand:
@@ -53,10 +48,8 @@ fun main() {
 Dit codefragment laadt een YAML-bestand en drukt de waarden af die geassocieerd zijn met sleutels `name` en `age`.
 
 ## Diepgaande Duik
-
 YAML kwam in de vroege jaren 2000 naar voren om de complexiteit van XML te bestrijden. Het biedt een eenvoudigere syntaxis, waardoor het de voorkeur heeft voor configuratiebestanden. Alternatieven zijn onder andere JSON, dat meer op data is gericht en minder mensvriendelijk is, en TOML, dat enigszins een middenweg is. Bij het omgaan met YAML in Kotlin, bieden bibliotheken zoals `snakeyaml` de parseringsengine, die zich aan je Kotlin-code haakt om YAML-strings om te zetten in native datastructuren.
 
 ## Zie Ook
-
 - YAML 1.2 Specificatie: [https://yaml.org/spec/1.2/spec.html](https://yaml.org/spec/1.2/spec.html)
 - Kotlin Documentatie: [https://kotlinlang.org/docs/home.html](https://kotlinlang.org/docs/home.html)

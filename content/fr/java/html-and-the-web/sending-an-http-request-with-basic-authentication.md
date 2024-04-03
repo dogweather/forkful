@@ -11,10 +11,7 @@ title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Envoyer une requête HTTP avec une authentification de base, c'est comme donner un mot de passe pour accéder à un site sécurisé. On fait ça pour protéger les infos sensibles et pour s'assurer que seul les utilisateurs autorisés y accèdent.
-
-## How to: (Comment faire :) 
+## How to: (Comment faire :)
 ```java
 import java.io.IOException;
 import java.net.Authenticator;

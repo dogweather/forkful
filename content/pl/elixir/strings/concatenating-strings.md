@@ -11,9 +11,6 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## Co i dlaczego?
-Konkatenacja ciągów polega na łączeniu dwóch lub więcej ciągów znaków, aby utworzyć jednolity tekst. Możesz potrzebować łączyć teksty, generując komunikaty dla użytkowników, tworząc ścieżki do plików lub w procesach serializacji danych. To podstawowa operacja w każdym języku programowania, w tym w Elixirze, umożliwiająca programistom z łatwością tworzenie dynamicznych ciągów znaków.
-
 ## Jak to zrobić:
 W Elixirze można łączyć ciągi znaków na kilka prostych sposobów. Oto najczęstsze metody:
 

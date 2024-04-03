@@ -12,10 +12,8 @@ title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---
 
-## Co i Dlaczego?
-Parsowanie daty z ciągu polega na przekształceniu tekstowej reprezentacji daty i czasu na obiekt `Date` lub nowocześniejszy obiekt `LocalDateTime`. Programiści robią to, aby manipulować, formatować, porównywać lub przechowywać daty w ustandaryzowanym formacie, co jest kluczowe dla aplikacji wymagających obliczeń datowych, walidacji lub spójnej internacjonalizacji.
-
 ## Jak:
+
 
 ### Używając pakietu `java.time` (Polecane w Java 8 i późniejszych):
 ```java

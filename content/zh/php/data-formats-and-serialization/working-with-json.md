@@ -24,9 +24,6 @@ title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 weight: 38
 ---
 
-## 什么 & 为什么？
-JSON，即JavaScript对象表示法，是一种轻量级的数据交换格式，它对人类来说易于读写，对机器来说易于解析和生成。程序员常常使用JSON在服务器和Web应用程序之间交换数据，因为它的简单性和语言无关性，使得它成为现代Web开发和APIs中的基石。
-
 ## 如何操作：
 在PHP中处理JSON非常直接，多亏了内置函数`json_encode()`和`json_decode()`。以下是将PHP数组转换成JSON字符串，以及反之亦然的示例：
 

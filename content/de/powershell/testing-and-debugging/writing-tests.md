@@ -13,12 +13,7 @@ title: Tests Schreiben
 weight: 36
 ---
 
-## Was & Warum?
-
-Tests in PowerShell zu schreiben, umfasst das Erstellen von Skripten, die automatisch die Funktionalität Ihres PowerShell-Codes validieren und sicherstellen, dass er sich wie erwartet verhält. Programmierer tun dies, um Fehler frühzeitig zu erkennen, die Wartung des Codes zu vereinfachen und sicherzustellen, dass Codeänderungen nicht versehentlich vorhandene Funktionalitäten zerstören.
-
 ## Wie:
-
 PowerShell verfügt nicht über ein eingebautes Testframework, aber Pester, ein beliebtes Drittanbieter-Modul, wird weitgehend verwendet, um Tests zu schreiben und auszuführen. Hier erfahren Sie, wie Sie mit Pester beginnen können, um Ihre PowerShell-Funktionen zu testen.
 
 Zuerst installieren Sie Pester, falls Sie das noch nicht getan haben:

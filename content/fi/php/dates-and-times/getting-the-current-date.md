@@ -14,10 +14,9 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mikä & Miksi?
-Nykyisen päivämäärän hakeminen PHP:ssa on perustehtävä, joka mahdollistaa järjestelmän päivämäärän ja ajan hakemisen sekä manipuloinnin. Tämä on elintärkeää toiminnoille, kuten lokitiedostojen kirjaaminen, viestien aikaleimaus, tapahtumien ajoittaminen tai aikaan sidottujen operaatioiden suorittaminen sovelluksissasi.
-
 ## Miten:
+
+
 ### Natiivi PHP
 PHP:n sisäänrakennettu `date()`-funktio on suoraviivaisin tapa saada nykyinen päivämäärä. Voit muotoilla päivämäärää eri tavoin määrittelemällä muotoiluparametrin.
 

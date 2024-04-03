@@ -14,12 +14,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---
 
-## Cái gì & Tại sao?
-
-JSON (JavaScript Object Notation) được sử dụng để lưu trữ và vận chuyển dữ liệu. Lập trình viên sử dụng JSON vì nó nhẹ, dễ đọc và viết đối với con người, và dễ phân tích và tạo ra đối với máy.
-
 ## Làm thế nào:
-
 Hãy phân tích một số JSON.
 
 ```lua
@@ -59,11 +54,9 @@ end
 ```
 
 ## Đào sâu
-
 JSON trở thành tiêu chuẩn de facto cho các API, vượt qua XML vì nó ít dài dòng hơn. Có các lựa chọn khác như YAML, thậm chí đọc dễ hơn nhưng không được sử dụng rộng rãi trong các API. Trong Lua, không có hỗ trợ JSON bản địa, vì vậy bạn cần một thư viện như 'dkjson' hoặc 'cjson'. Các chi tiết cài đặt Lua bao gồm xử lý sự khác biệt về kiểu, như mảng và đối tượng, và chuyển đổi giữa `nil` của Lua và `null` của JSON.
 
 ## Xem Thêm
-
 - [Thư viện dkjson trên GitHub](https://github.com/LuaDist/dkjson)
 - [Trang web chính thức của JSON](https://www.json.org/json-en.html)
 - [Lập Trình trong Lua (phiên bản đầu tiên)](https://www.lua.org/pil/contents.html) để học các kiến thức cơ bản của Lua.

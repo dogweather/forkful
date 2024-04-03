@@ -10,12 +10,7 @@ title: Generierung von Zufallszahlen
 weight: 12
 ---
 
-## Was & Warum?
-
-Das Generieren von Zufallszahlen in C# umfasst die Erstellung von unvorhersehbaren numerischen Werten innerhalb eines spezifizierten Bereichs. Programmierer verwenden diese Methoden, um Funktionen wie Kryptographie, Simulationen und Spiele zu implementieren, bei denen Unvorhersehbarkeit oder die Simulation von realweltlicher Zufälligkeit erforderlich ist.
-
 ## Wie geht das:
-
 Die gebräuchlichste Methode, um Zufallszahlen in C# zu generieren, ist die Verwendung der `System.Random` Klasse. Hier ist ein einfaches Beispiel, das deren Nutzung demonstriert:
 
 ```C#
@@ -67,7 +62,6 @@ public class SecureRandomExample
 ```
 
 ## Vertiefung
-
 Die Generierung von Zufallszahlen in C# hat sich im Laufe der Jahre weiterentwickelt. Ursprünglich war die `System.Random` Klasse der Standard für die Erzeugung von Pseudozufallszahlen. Es ist pseudozufällig, weil es, gegeben einen spezifischen Seed-Wert, die gleiche Zahlenfolge produzieren wird, was für das Debuggen oder die Wiederholbarkeit von Tests nützlich sein kann.
 
 Obwohl sie für grundlegende Bedürfnisse ausreichend ist, ist `System.Random` nicht threadsicher und kann vorhersehbare Ergebnisse liefern, was für sicherheitsabhängige Anwendungen nicht geeignet ist. Diese Einschränkung führte zur Einführung des `RNGCryptoServiceProvider` für kryptographische Zufälligkeit, der sicherer, aber auch ressourcenintensiver ist.

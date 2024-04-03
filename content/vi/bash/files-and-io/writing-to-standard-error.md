@@ -14,9 +14,6 @@ title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---
 
-## Gì và Tại sao?
-Việc ghi vào lỗi chuẩn, `stderr`, xuất thông báo lỗi riêng biệt khỏi đầu ra chuẩn, `stdout`. Các lập trình viên sử dụng `stderr` để báo cáo lỗi mà không ảnh hưởng đến các đầu ra lệnh thông thường, làm cho việc xử lý và ghi nhận lỗi trở nên dễ dàng hơn.
-
 ## Làm thế nào:
 ```
 # Điều hướng lệnh echo tới lỗi chuẩn

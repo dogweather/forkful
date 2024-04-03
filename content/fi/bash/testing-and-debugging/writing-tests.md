@@ -13,9 +13,6 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mikä ja miksi?
-Testien kirjoittaminen Bashissa käsittää testitapausten skriptaamisen Bash-skriptien toiminnallisuuden varmistamiseksi. Ohjelmoijat suorittavat testejä varmistaakseen, että heidän skriptinsä toimivat odotetusti erilaisissa olosuhteissa, ja nappaamaan virheet ja bugit ennen käyttöönottoa.
-
 ## Kuinka:
 Bashissa ei ole sisäänrakennettua testauskehystä, mutta voit kirjoittaa yksinkertaisia testifunktioita. Monimutkaisempia testejä varten suosittuja ovat kolmansien osapuolien työkalut kuten `bats-core`.
 

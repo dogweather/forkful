@@ -12,9 +12,6 @@ title: Substrings extraheren
 weight: 6
 ---
 
-## Wat & Waarom?
-Substrings extraheren betekent specifieke delen uit een string halen. Programmeurs doen dit om gegevens te isoleren, input te reinigen of informatie te ontleden voor verdere verwerking.
-
 ## Hoe te:
 In Fish gebruik je het `string` commando om met strings te werken. Zo doe je dat:
 

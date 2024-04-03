@@ -11,9 +11,6 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Det å laste ned en nettside betyr å hente HTML og andre data fra en webserver. Vi programmerere gjør dette for å bruke eller bearbeide innholdet, som data scraping, offline visning, eller automatisering av oppgaver.
-
 ## How to: (Slik gjør du:)
 Swift gir deg URLSession for nettverkskall. Her er en kjapp måte å laste ned innhold fra en nettside:
 

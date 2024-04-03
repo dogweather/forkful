@@ -16,9 +16,6 @@ title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---
 
-## Gì và Tại Sao?
-Nội suy chuỗi cho phép chèn giá trị vào một mẫu chuỗi giống như từng mảnh ghép của một câu đố, khiến chuỗi trở nên động và mã sạch hơn. Lập trình viên sử dụng nó để chèn biến, biểu thức, và định dạng trực tiếp trong chuỗi, giảm bớt lượng công việc nối chuỗi.
-
 ## Làm Thế Nào:
 Trong PowerShell, bạn nội suy bằng cách sử dụng chuỗi trong dấu ngoặc kép và ký tự `$` trước tên biến. Đóng gói biểu thức trong `$()` để đánh giá chúng ngay bên trong chuỗi.
 

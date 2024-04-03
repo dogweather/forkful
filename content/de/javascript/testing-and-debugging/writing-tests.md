@@ -14,14 +14,10 @@ title: Tests Schreiben
 weight: 36
 ---
 
-## Was & Warum?
-
-Das Schreiben von Tests in JavaScript bezieht sich auf die Praxis, automatisierte Skripte zu erstellen, die Ihren Code ausführen, um sicherzustellen, dass er sich wie erwartet verhält, was die Zuverlässigkeit und Wartbarkeit Ihrer Anwendungen erheblich verbessern kann. Programmierer tun dies, um frühzeitig Fehler zu finden, das Refactoring von Code zu erleichtern und sicherzustellen, dass neue Funktionen die bestehende Funktionalität nicht beeinträchtigen.
-
 ## Wie geht das:
 
-### Native Ansatz (mit Jest)
 
+### Native Ansatz (mit Jest)
 Jest ist ein beliebtes Test-Framework, das eine benutzerfreundliche API für das Schreiben von Unit-Tests in JavaScript bietet. Es erfordert minimale Konfiguration und kommt mit Funktionen wie Mock-Funktionen, Timern und Snapshot-Tests.
 
 1. **Installation**:
@@ -56,7 +52,6 @@ PASS  ./sum.test.js
 ```
 
 ### Asynchronen Code testen
-
 Jest erleichtert das Testen von Promises und asynchroner/await-Syntax:
 
 ```javascript
@@ -73,7 +68,6 @@ test('asynchrone Addition funktioniert', async () => {
 ```
 
 ### Verwendung von Drittanbieter-Bibliotheken (Mocha & Chai)
-
 Mocha ist ein weiteres beliebtes Test-Framework, das oft mit der Assertion-Bibliothek Chai für aussagekräftigere Tests verwendet wird.
 
 1. **Installation**:

@@ -11,12 +11,7 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad & Varför?
-
-Komplexa tal utvidgar den reella talaxeln genom tillägget av en imaginär enhet, `i`, där `i^2 = -1`. De är avgörande inom områden som ingenjörsvetenskap, fysik och avancerad matematik, där de modellerar fenomen som reella tal inte kan hantera, såsom elektriska strömmar och signalbehandling.
-
 ## Hur man gör:
-
 Java har inte inbyggt stöd för komplexa tal, men vi kan skapa vår egen klass eller använda ett bibliotek. Här är ett snabbt exempel på hur man skapar en enkel `ComplexNumber`-klass och använder den:
 
 ```java
@@ -56,7 +51,6 @@ Summa: 3.0 + 7.0i
 ```
 
 ## Fördjupning
-
 Före högnivåspråk som Java arbetade programmerare direkt med matematikbibliotek i språk som Fortran eller C för att hantera komplexa operationer. Konceptet går tillbaka till 1500-talet, tillskrivet matematiker som Gerolamo Cardano och Rafael Bombelli.
 
 I Java är `java.lang.Math` gå-till för väsentligheter men hoppar över komplexa tal, troligtvis eftersom inte varje programmerare använder dem. Alternativ? Använd bibliotek. Apache Commons Math tillhandahåller en `Complex`-klass packad med metoder för manipulation. Här är varför det är snyggt att rulla sitt eget dock: Lättvikt, skräddarsytt för dina exakta behov, och inget biblioteksöverhäng.
@@ -64,7 +58,6 @@ I Java är `java.lang.Math` gå-till för väsentligheter men hoppar över kompl
 En viktig detalj: se upp för flyttalsprecisionen. Datorer kan inte representera vissa tal exakt, vilket leder till avrundningsfel. När man utför repetitiva komplexa operationer, kan dessa fel ackumuleras!
 
 ## Se även
-
 För djupare dykningar och mer komplexa operationer, kolla:
 
 - [Apache Commons Math](https://commons.apache.org/proper/commons-math/)

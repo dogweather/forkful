@@ -10,9 +10,6 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-Comparing two dates means checking how they relate—is one earlier, later, or the exact same as the other? Programmers do this to handle deadlines, schedule events, and track time-related data.
-
 ## How to:
 Clojure uses the Java interop capabilities to handle dates. Let's roll up our sleeves and dive in:
 

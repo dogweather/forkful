@@ -14,9 +14,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---
 
-## Mikä ja miksi?
-Päivämäärän jäsennys merkkijonosta tarkoittaa merkkijonon muodon tulkintaa päivämäärän osien, kuten päivän, kuukauden ja vuoden, erottamiseksi. Ohjelmoijat tekevät tämän käsitelläkseen käyttäjän syötettä, lukeakseen data-tiedostoja tai ollakseen vuorovaikutuksessa API:en kanssa, jotka välittävät päivämääriä merkkijonomuodossa. Se on olennaista datan käsittelyä, validointia ja päivämäärien aritmetiikan suorittamista varten sovelluksissa.
-
 ## Miten:
 Nykyisessä C++:ssa voit käyttää `<chrono>`-kirjastoa käsitelläksesi päivämääriä ja aikoja natiivisti, mutta se ei suoraan tue jäsennyksiä merkkijonoista ilman manuaalista jäsennystä monimutkaisemmissa muodoissa. Kuitenkin ISO 8601 -päivämäärämuotoille ja yksinkertaisille mukautetuille muodoille, tässä on miten voit saavuttaa jäsennyksen.
 

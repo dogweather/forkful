@@ -14,12 +14,7 @@ title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---
 
-## Mikä ja miksi?
-
-Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa merkkijonon ensimmäisen kirjaimen muuttamista isoksi kirjaimeksi samalla varmistaen, että kaikki muut kirjaimet ovat pieniä. Tämä toimenpide on yleisesti tarpeen käyttäjän syötteen muotoilussa tai tekstiä näytettäessä käyttöliittymissä, joissa johdonmukaisuus ja luettavuus ovat tärkeitä.
-
 ## Kuinka:
-
 Elixir tarjoaa suoraviivaisen tavan muuttaa merkkijonot alkukirjaimeltaan isoksi käyttämällä sen sisäänrakennettuja funktioita ilman kolmansien osapuolien kirjastoja. Tässä on yksinkertainen esimerkki:
 
 ```elixir

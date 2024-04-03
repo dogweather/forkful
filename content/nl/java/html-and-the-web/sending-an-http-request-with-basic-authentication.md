@@ -13,9 +13,6 @@ title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---
 
-## Wat & Waarom?
-Een HTTP-verzoek versturen met basisauthenticatie houdt in dat er een header met een gebruikersnaam en wachtwoord wordt toegevoegd om toegang te krijgen tot een beschermd bron. Programmeurs gebruiken dit voor eenvoudige autorisatie in webdiensten wanneer meer geavanceerde methoden niet nodig zijn.
-
 ## Hoe te:
 Java maakt het vrij eenvoudig om HTTP-verzoeken met basisauthenticatie te sturen met behulp van de `HttpURLConnection` klasse. Hier is een snel voorbeeld:
 

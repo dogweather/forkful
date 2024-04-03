@@ -11,12 +11,7 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä & Miksi?
-
-Virheiden käsittely ohjelmissasi nappaa kiinni ne odottamattomat asiat, jotka yrittävät kaataa suunnitelmasi. Sen tarkoitus on estää Arduinoasi sekoamasta, kun odottamaton tapahtuu.
-
 ## Kuinka:
-
 Kuvitellaan, että Arduinosi lukee sensorilta, joka voi ajoittain tuottaa mittausalueen ulkopuolisia arvoja. Tässä on tapa, jolla voisit käsitellä tätä:
 
 ```Arduino
@@ -38,7 +33,6 @@ Error: Sensor value out of range.
 ```
 
 ## Syväsukellus
-
 Virheiden käsittely ei aina ole ollut näin suoraviivaista. Varhaisina aikoina kehittäjät usein jättivät virheet huomioimatta, mikä johti pelättyyn "määrittelemättömään käytökseen". Ohjelmoinnin kehittyessä myös työkalut kehittyivät — nykyään sinulla on poikkeuksia monissa kielissä, mutta Arduinossa noudatetaan vielä vanhan koulukunnan 'tarkista ensin' -periaatetta laitteistorajoitusten ja C++:n juurien vuoksi.
 
 Arduino-ohjelmoinnissa näkee usein `if-else`-lauseita virheiden käsittelyyn. On kuitenkin vaihtoehtoja: `assert`-funktion käyttäminen suorituksen pysäyttämiseen, jos ehto ei täyty, tai vikasietoisten mekanismien suunnittelu itse laitteistoon.
@@ -46,7 +40,6 @@ Arduino-ohjelmoinnissa näkee usein `if-else`-lauseita virheiden käsittelyyn. O
 Virheiden käsittelyn toteuttamisessa harkitse ohjelman pysäyttämisen ja sen jatkamisen vaikutusta oletusarvoiseen tai turvalliseen tilaan. On kompromissi, ja oikea valinta riippuu keskeytysten potentiaalisesta vahingosta verrattuna virheelliseen toimintaan.
 
 ## Katso Myös
-
 Syvennä tietämystäsi virheenilmaisusta ja -käsittelystä näiden avulla:
 
 - Arduino Kieli Viite: https://www.arduino.cc/reference/en/

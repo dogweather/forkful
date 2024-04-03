@@ -11,9 +11,6 @@ title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---
 
-## ¿Qué y Por Qué?
-Imprimir datos de depuración significa mostrar información útil para entender qué hace tu código. Los programadores lo hacen para rastrear errores y verificar el flujo de la ejecución.
-
 ## Cómo Hacerlo:
 Ejemplo sencillo para imprimir en Fish Shell:
 

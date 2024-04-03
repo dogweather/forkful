@@ -10,9 +10,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Å sende en HTTP-forespørsel med grunnleggende autentisering betyr at du legger til et brukernavn og passord i forespørselen for tilgangskontroll. Programmerere gjør dette for å sikre trygg kommunikasjon med APIer som krever autentisering.
-
 ## How to (Slik gjør du det)
 ```C#
 using System;

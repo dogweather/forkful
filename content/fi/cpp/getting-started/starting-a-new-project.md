@@ -11,9 +11,6 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## What & Why? ("Mitä & Miksi?")
-Uuden projektin aloittaminen tarkoittaa tyhjältä pöydältä alkamista, koodipohjan rakentamista. Ohjelmoijat tekevät tämän uusien ideoiden testailuun, ongelmanratkaisuun tai oppiakseen jotain uutta.
-
 ## How to: ("Kuinka se tehdään:")
 Aloitetaan yksinkertaisella "Hello, World!" esimerkillä C++:ssa. Tämä asettaa perustan uudelle projektille.
 

@@ -11,9 +11,6 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## What & Why? - Mitä & Miksi?
-Uuden projektin aloittaminen on tyhjältä pöydältä alkavan koodiprojektin luomista. Koodarit tekevät sen aloittaakseen uuden idean kehittämisen tai vastatakseen johonkin tarpeeseen.
-
 ## How to: - Kuinka tehdään:
 Powershellillä uuden projektin pystytys alkaa usein hakemiston luomisella ja sinne siirtymisellä. Esimerkiksi - alla koodi uuden hakemiston tekemiseen ja siellä projektin aloitukseen:
 

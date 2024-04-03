@@ -10,9 +10,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## What & Why? (Mikä & Miksi?)
-HTTP-pyyntö on tapa hakea tai lähettää tietoja verkon yli palvelimelle. Ohjelmoijat käyttävät sitä tietojen synkronointiin, API-kutsuihin ja verkkopalveluiden integrointiin.
-
 ## How to: (Kuinka tehdä:)
 ```Arduino
 #include <ESP8266WiFi.h>

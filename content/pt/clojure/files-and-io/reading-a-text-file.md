@@ -10,12 +10,7 @@ title: Lendo um arquivo de texto
 weight: 22
 ---
 
-## O Que & Por Quê?
-
-Ler um arquivo de texto é simplesmente acessar e interpretar o conteúdo armazenado em um arquivo em seu disco. Programadores fazem isso para manipular dados, configurar programas ou ler informações necessárias durante a execução de um software.
-
 ## Como Fazer:
-
 ```Clojure
 ;; Abrindo e lendo um arquivo linha por linha
 (with-open [reader (clojure.java.io/reader "caminho/do/arquivo.txt")]
@@ -34,10 +29,8 @@ Ler um arquivo de texto é simplesmente acessar e interpretar o conteúdo armaze
 ```
 
 ## Mergulho Profundo:
-
 Ler arquivos de texto é uma operação que data do início dos computadores: era uma forma básica de armazenar e recuperar informações. Em Clojure, você tem várias maneiras de ler arquivos. A função `slurp` é legal para arquivos pequenos, por ser rápida e direta. Mas, para arquivos maiores, ler linha por linha com `line-seq` é mais eficiente, pois consome menos memória. A Clojure, sendo uma linguagem funcional da JVM, usa as bibliotecas Java para input/output (I/O), então você tem acesso a todas as ferramentas do Java para ler arquivos, o que é uma enorme vantagem.
 
 ## Veja Também:
-
 - Documentação oficial do Clojure sobre I/O: [clojure.github.io/clojure/clojure.java.io-api.html](https://clojure.github.io/clojure/clojure.java.io-api.html)
 - Tutorial Clojure sobre manipulação de strings (útil após ler arquivos): [clojuredocs.org/clojure.string](https://clojuredocs.org/clojure.string)

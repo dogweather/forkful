@@ -11,9 +11,6 @@ title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---
 
-## Vad & Varför?
-Att jämföra två datum innebär att kontrollera vilket datum som kommer före eller efter det andra, eller om de är samma datum. Programmerare gör detta för att hantera tidsintervall, schemaläggning, och tidsbaserade händelser i deras applikationer.
-
 ## Så här gör du:
 För att jämföra datum i Haskell, kan du använda `Data.Time` biblioteket. Se exempel nedan:
 

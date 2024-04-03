@@ -12,9 +12,6 @@ title: Een datum uit een string parsen
 weight: 30
 ---
 
-## Wat & Waarom?
-Het parsen van een datum uit een string gaat over het begrijpelijk maken van datuminformatie die binnen een tekst is opgenomen. Programmeurs doen dit om berekeningen, vergelijkingen mogelijk te maken, en datums in een gestandaardiseerd formaat op te slaan.
-
 ## Hoe te:
 PowerShell maakt het parsen van datums vrij eenvoudig. Laten we eens kijken hoe we een string kunnen omzetten in een DateTime-object.
 

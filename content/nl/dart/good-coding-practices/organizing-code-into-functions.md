@@ -13,10 +13,9 @@ title: Code organiseren in functies
 weight: 18
 ---
 
-## Wat & Waarom?
-Het organiseren van code in functies in Dart gaat over het definiëren van herbruikbare blokken code die specifieke taken uitvoeren, typisch input ontvangen, gegevens verwerken en mogelijk outputs teruggeven. Programmeurs doen dit om de leesbaarheid van de code te verbeteren, duplicatie te verminderen en onderhoud te vergemakkelijken, wat uiteindelijk leidt tot meer modulaire en beheersbare codebases.
-
 ## Hoe te:
+
+
 ### Basisfunctie
 In Dart definieer je een functie met het trefwoord `void` als deze geen waarde teruggeeft, of je geeft anders het type waarde op dat het teruggeeft. Hier is een eenvoudige functie die een begroetingsbericht afdrukt:
 

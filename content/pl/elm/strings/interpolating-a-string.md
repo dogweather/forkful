@@ -11,9 +11,6 @@ title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---
 
-## What & Why?
-Interpolacja stringów pozwala nam wplatać wartości zmiennych w ciągi tekstowe, ułatwiając dynamiczne tworzenie treści. Programiści używają interpolacji, by kod był bardziej elastyczny i czytelny.
-
 ## How to:
 W Elm nie ma bezpośredniego mechanizmu interpolacji stringów, jak w innych językach. Używamy funkcji `String.concat` lub operatora `++`, by osiągnąć podobny efekt.
 

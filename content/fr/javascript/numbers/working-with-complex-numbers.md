@@ -11,9 +11,6 @@ title: Manipulation des nombres complexes
 weight: 14
 ---
 
-## Quoi & Pourquoi ?
-Les nombres complexes sont des nombres ayant une partie réelle et une partie imaginaire (comme 3 + 4i). Ils apparaissent dans divers problèmes de programmation, notamment dans le traitement des signaux, l'informatique quantique, et la résolution d'équations polynomiales. Les programmeurs les manipulent pour résoudre efficacement ce type de tâches.
-
 ## Comment faire :
 JavaScript ne possède pas de support intégré pour les nombres complexes, mais vous pouvez retrousser vos manches et vous en charger avec des objets et des mathématiques. Voici une rapide introduction.
 

@@ -13,9 +13,6 @@ title: Een tijdelijk bestand aanmaken
 weight: 21
 ---
 
-## Wat & Waarom?
-Een tijdelijk bestand maken is het creëren van een kortstondig bestand om gegevens op te slaan die niet op lange termijn nodig zijn. Programmeurs doen dit om data te verwerken die alleen relevant is tijdens de uitvoering van het programma of om te voorkomen dat de opslag van de gebruiker verstopt raakt met onnodige bestanden.
-
 ## Hoe doe je dat:
 Swift maakt het vrij eenvoudig om tijdelijke bestanden te creëren, met behulp van de `FileManager` klasse. Hier is hoe je snel een tijdelijk bestand maakt en er wat tekst in schrijft:
 

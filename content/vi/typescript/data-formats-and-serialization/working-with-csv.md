@@ -18,12 +18,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---
 
-## Gì và Tại sao?
-
-Làm việc với CSV (Giá trị Được Phân Cách bởi Dấu phẩy) có nghĩa là đọc và viết dữ liệu dưới dạng văn bản, trong đó mỗi dòng là một bản ghi dữ liệu và dấu phẩy phân chia mỗi trường. Các lập trình viên sử dụng CSV vì sự đơn giản và được hỗ trợ rộng rãi trên các công cụ đổi dữ liệu.
-
 ## Làm thế nào:
-
 Đọc CSV trong TypeScript rất đơn giản với các thư viện như `papaparse`. Để xử lý tệp CSV, trước tiên hãy cài đặt nó:
 
 ```bash
@@ -83,11 +78,9 @@ Jane,32
 ```
 
 ## Sâu hơn
-
 CSV đã trở thành một tiêu chuẩn trong đổi dữ liệu từ kỷ nguyên máy tính đầu tiên do khả năng đọc và đơn giản của nó. Tuy nhiên, nó không phải không có vấn đề; chẳng hạn, sự thiếu tiêu chuẩn hóa có thể dẫn đến lỗi phân tích. Các lựa chọn thay thế như JSON và XML cung cấp cấu trúc phức tạp và kiểu dữ liệu hơn. Khi thực hiện công cụ phân tích/ghi CSV, cần xem xét mã hóa ký tự và xử lý chính xác các ký tự đặc biệt để tránh lỗi.
 
 ## Xem thêm
-
 - Tài liệu `papaparse`: [Papa Parse - Trình phân tích CSV mạnh mẽ](https://www.papaparse.com/)
 - Tài liệu `csv-writer`: [CSV Writer - Trình viết tệp CSV cho Node](https://csv.js.org/)
 - Để hiểu sâu hơn về mặt kỹ thuật, tài liệu RFC 4180 cung cấp tiêu chuẩn de facto cho các định dạng CSV: [RFC 4180](https://tools.ietf.org/html/rfc4180)

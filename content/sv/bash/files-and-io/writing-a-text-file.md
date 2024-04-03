@@ -13,12 +13,7 @@ title: Att skriva en textfil
 weight: 24
 ---
 
-## Vad & Varför?
-
-Att skriva en textfil i Bash gör det möjligt att automatisera lagring av data, loggning, konfigurationsinställningar och mer. Det är en grundläggande färdighet för skriptning i skal, som möjliggör för programmerare att spara utdata från kommandon, skriptkörningar eller användarinmatning för rapportering, bearbetning eller framtida exekvering.
-
 ## Hur man gör:
-
 Bash erbjuder enkla metoder för att skriva till en fil. De vanligaste är att använda omdirigeringsoperatorer (`>`, `>>`) och kommandot `tee`. Här är en snabb titt på båda teknikerna.
 
 Med omdirigering kan du skriva utdata direkt till en fil. Operatorn `>` skriver innehåll till en fil och ersätter den om den redan finns, medan `>>` lägger till i en befintlig fil utan att radera dess innehåll.

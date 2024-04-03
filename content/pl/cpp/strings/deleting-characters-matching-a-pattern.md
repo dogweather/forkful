@@ -11,9 +11,6 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## What & Why? (Co i Dlaczego?)
-Usuwanie znaków pasujących do wzorca to po prostu czyszczenie tekstów z niepotrzebnych fragmentów. Programiści robią to, by ułatwić przetwarzanie danych, pozbyć się szumu, czy poprawić bezpieczeństwo (np. usuwając potencjalnie szkodliwe skrypty).
-
 ## How to: (Jak to zrobić:)
 ```C++
 #include <iostream>

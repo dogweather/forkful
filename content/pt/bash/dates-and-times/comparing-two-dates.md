@@ -10,12 +10,7 @@ title: Comparando duas datas
 weight: 27
 ---
 
-## O Que & Porquê?
-
-Comparar duas datas significa verificar se são iguais, qual vem antes ou o intervalo entre elas. Programadores fazem isso para agendar eventos, verificar validade de cupons e controlar prazos.
-
 ## Como Fazer:
-
 ```Bash
 # Comparando datas formatadas como 'YYYY-MM-DD'.
 data1="2023-04-01"
@@ -46,7 +41,6 @@ A diferença é de 14 dias.
 ```
 
 ## Aprofundamento
-
 Comparar datas é um problema clássico em programação, existindo desde que os primeiros calendários foram incorporados aos sistemas. Inicialmente, isso era feito manualmente, mas com o tempo, ferramentas como o `date` no Unix facilitaram a tarefa.
 
 Alternativamente, em Bash, podemos usar outras ferramentas como `awk` ou manipular strings diretamente, mas `date` é direto e amplamente disponível. Ao converter datas para segundos (Epoch time), é simples fazer operações matemáticas com elas.
@@ -54,7 +48,6 @@ Alternativamente, em Bash, podemos usar outras ferramentas como `awk` ou manipul
 Detalhes de implementação incluem preocupação com fuso horário e formato de data local. Uso do comando `date` varia entre sistemas e é importante conferir a documentação específica da sua distribuição.
 
 ## Veja Também
-
 - Tutorial Bash Avançado: https://www.gnu.org/software/bash/manual/
 - Documentação do comando `date`: https://man7.org/linux/man-pages/man1/date.1.html
 - Stack Overflow, para dúvidas específicas de comparação de datas em Bash: https://stackoverflow.com/questions/tagged/bash+date

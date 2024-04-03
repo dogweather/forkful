@@ -9,9 +9,6 @@ title: "Descargando una p\xE1gina web"
 weight: 42
 ---
 
-## What & Why?
-Descargar una página web significa obtener su HTML, datos y multimedia. Los programadores lo hacen para análisis de datos, pruebas o copias de seguridad.
-
 ## How to:
 Usaremos `fetch` para descargar una página:
 

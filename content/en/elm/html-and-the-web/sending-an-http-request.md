@@ -10,12 +10,7 @@ title: Sending an HTTP request
 weight: 44
 ---
 
-## What & Why?
-
-In Elm, sending an HTTP request is how your app talks to other web services to exchange data. Programmers do this to fetch or send info to servers, fueling app dynamics like user accounts, scores, or news updates.
-
 ## How to:
-
 Alright, code time. Elm makes HTTP requests using the `Http` module. Here's a quick example to fetch some JSON:
 
 ```Elm
@@ -61,11 +56,9 @@ Sample output when `UserFetched` is an `Ok user`:
 ```
 
 ## Deep Dive
-
 Sending HTTP requests isn't new; it's been the backbone of web communication since the 90s. Elm wraps up the complexity in the user-friendly `Http` module, focusing on safety and simplicity. Unlike the early days, Elm abstracts away the messy bits like XMLHttprequest and JSON parsing. Alternatives like using JavaScript's Fetch API or XMLHttpRequest directly are possible with ports, but Elm's built-in way keeps your code type-safe and pure. It handles side-effects through its powerful architecture without compromising your app's reliability.
 
 ## See Also
-
 For more detailed explanations and troubleshooting, check out these resources:
 
 - Elm package documentation for HTTP: [https://package.elm-lang.org/packages/elm/http/latest/](https://package.elm-lang.org/packages/elm/http/latest/)

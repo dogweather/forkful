@@ -11,12 +11,7 @@ title: Samenvoegen van strings
 weight: 3
 ---
 
-## Wat & Waarom?
-
-Het samenvoegen van strings is eigenlijk gewoon woorden aan elkaar rijgen. Denk erover als het maken van een trein uit woorden in plaats van rijtuigen. Programmeurs doen dit om tekst samen te voegen, zoals namen met begroetingen, of om berichten en gegevens op te bouwen die flexibel moeten zijn.
-
 ## Hoe doe je dat:
-
 In PHP gaat het samenvoegen van strings helemaal over de punt (`.`). Neem twee strings, plaats een punt tussen hen in, en voilà! Ze zijn nu één.
 
 ```PHP
@@ -50,7 +45,6 @@ echo $message;
 ```
 
 ## Diepere Duik
-
 Terug in de oude dagen moesten PHP-gebruikers de punt gebruiken om strings aan elkaar te plakken. Het is als ducttape voor woorden. Concatenatie is essentieel omdat gegevens niet altijd in het formaat worden geleverd dat we nodig hebben.
 
 Wat betreft alternatieven, er zijn er een paar. De `sprintf()` en `printf()` functies staan toe voor geformatteerde strings. Stel je voor dat je een filmscript creëert met placeholders, en deze functies vullen de namen van de acteurs in.
@@ -72,7 +66,6 @@ echo implode(' ', $array);
 Een ander ding om te overwegen is efficiëntie. Voor lange strings of zware operaties kan het gebruik van `.` langzamer zijn in vergelijking met andere methoden zoals `implode()` of zelfs het bufferen van de output. Maar voor de meeste dagelijkse taken werkt de samenvoeging met de punt als een charme.
 
 ## Zie Ook
-
 Voor de dorstigen naar meer:
 
 - De officiële PHP-documentatie over stringoperatoren is een geweldige plek om je gereedschap te kennen: [PHP String Operators](https://www.php.net/manual/en/language.operators.string.php)

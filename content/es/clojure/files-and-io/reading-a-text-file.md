@@ -9,9 +9,6 @@ title: Lectura de un archivo de texto
 weight: 22
 ---
 
-## Qué y Por Qué?
-Leer un archivo de texto es obtener su contenido para procesarlo. Los programadores hacen esto para manipular datos, configuraciones o simplemente importar información.
-
 ## Cómo hacerlo:
 ```Clojure
 ;; Abre y lee un archivo de texto

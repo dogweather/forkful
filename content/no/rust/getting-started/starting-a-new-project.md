@@ -11,9 +11,6 @@ title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---
 
-## Hva & Hvorfor?
-Å starte et nytt prosjekt betyr å initialisere strukturen du trenger for å bygge noe fra scratch i Rust. Programmerere gjør dette for å skape et rent arbeidsområde med alle nødvendige verktøy og biblioteker.
-
 ## Slik gjør du:
 For å starte, trenger du Rusts pakkehåndtering og byggeverktøy, Cargo:
 

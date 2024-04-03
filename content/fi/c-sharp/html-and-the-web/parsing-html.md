@@ -14,16 +14,10 @@ title: "HTML:n j\xE4sennys"
 weight: 43
 ---
 
-## Mikä ja miksi?
-
-HTML:n jäsennys ohjelmoinnissa tarkoittaa HTML-dokumentin rakenteen analysoimista, mikä mahdollistaa sen sisällön ohjelmallisen käsittelyn, muokkaamisen ja vuorovaikutuksen. Ohjelmoijat tekevät tätä automatisoidakseen verkkosivujen kaapimisen, datan poiminnan tai jopa muokatakseen verkkosivuja tai HTML-dokumentteja dynaamisesti eri sovelluksia varten, mikä tekee siitä olennaisen taidon verkkokehityksessä, datan analysoinnissa ja automatisoiduissa testauskuvioissa.
-
 ## Kuinka:
-
 Vaikka .NET tarjoaa perustason tuen HTML:n käsittelyyn, kuten `HttpClient`-luokan verkkosivujen noutamiseen, siitä puuttuu sisäänrakennettu, kattava HTML-jäsennin. Siksi useimmat C#-kehittäjät kääntyvät suosittujen kolmansien osapuolien kirjastojen, kuten HtmlAgilityPackin tai AngleSharpin, puoleen vankkojen HTML-jäsennysominaisuuksien saamiseksi. Molemmat kirjastot mahdollistavat HTML DOM:n helpon kyselyn, manipuloinnin ja läpikäynnin.
 
 ### HtmlAgilityPackin käyttäminen
-
 1. **Asenna HtmlAgilityPack**: Lisää ensin HtmlAgilityPack-paketti projektiisi NuGetin kautta.
    ```
    Install-Package HtmlAgilityPack
@@ -65,7 +59,6 @@ Vaikka .NET tarjoaa perustason tuen HTML:n käsittelyyn, kuten `HttpClient`-luok
    ```
 
 ### AngleSharpin käyttäminen
-
 1. **Asenna AngleSharp**: Lisää AngleSharp-kirjasto projektiisi NuGetin kautta.
    ```
    Install-Package AngleSharp

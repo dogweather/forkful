@@ -12,12 +12,7 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## Mikä ja miksi?
-
-Web-sivun lataaminen Visual Basic for Applications (VBA) -ohjelmoinnilla tarkoittaa web-sivun HTML-sisällön noutamista Internetistä. Ohjelmoijat suorittavat usein tämän tehtävän käsitelläkseen tai analysoidakseen ohjelmallisesti verkkosivustojen sisältöä Excelistä, Accessista tai muista Office-sovelluksista käsin.
-
 ## Kuinka:
-
 Voit ladata web-sivun VBA:lla käyttämällä Microsoft XML, v6.0 (MSXML6) -kirjastoa, joka mahdollistaa palvelimen HTTP-pyynnöt. Ennen koodiin sukeltamista, varmista, että olet ottanut tämän viitteen käyttöön VBA-editorissasi menemällä kohtaan `Työkalut` -> `Viitteet` ja merkitsemällä `Microsoft XML, v6.0`.
 
 Tässä on yksinkertainen esimerkki siitä, kuinka ladata web-sivun HTML-sisältö:
@@ -53,7 +48,6 @@ End Sub
 Tämä alirutiinin suoritus tulostaa HTML:n `http://www.example.com`-osoitteesta VBA-editorin Välitön-ikkunaan. Huomaa, että `False`-parametri `Open`-metodissa tekee pyynnöstä synkronisen, mikä tarkoittaa, että koodi odottaa, kunnes verkkosivu on ladattu, ennen kuin siirtyy seuraavalle riville.
 
 ## Syväsukellus
-
 Esitelty tekniikka perustuu MSXML:ään, Microsoftin toteutukseen XML HTTP -pyyntöstandardista, jota käytetään usein AJAX-pyyntöihin web-kehityksessä. Tämä komponentti on ollut osa Microsoftin teknologiapinoa jo pitkän aikaa, tehden siitä vankan valinnan verkkopyyntöihin VBA:ssa.
 
 Kuitenkin nojautuminen MSXML:ään ja VBA:han web-sisällön lataamiseen ja jäsentämiseen voi olla rajoittavaa, erityisesti nykyaikaisten web-sovellusten kanssa, jotka käyttävät raskaasti JavaScriptiä dynaamisen sisällön renderöinnissä. Nämä rajoitteet saattavat tehdä muista kielistä tai työkaluista, kuten Pythonista kirjastoineen, kuten BeautifulSoup tai Selenium, sopivampia web-skaalaustehtäviin niiden kyvyn vuoksi suorittaa JavaScriptiä ja käsitellä monimutkaisia verkkosivustojen vuorovaikutuksia.

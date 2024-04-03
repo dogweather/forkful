@@ -11,9 +11,6 @@ title: Komennoriviparametrien lukeminen
 weight: 23
 ---
 
-## What & Why? / Mikä & Miksi?
-PowerShell-skripteissä komentoriviparametrien lukeminen mahdollistaa argumenttien vastaanottamisen suoraan käyttäjältä. Tätä tehdään sovelluksen mukauttamiseksi eri tilanteisiin ilman skriptin muokkaamista.
-
 ## How to / Kuinka:
 ```PowerShell
 # Skriptin tallentaminen nimellä 'ExampleScript.ps1'

@@ -11,9 +11,6 @@ title: Calculando la longitud de una cadena
 weight: 7
 ---
 
-## ¿Qué y Por Qué?
-Encontrar la longitud de una cadena significa saber cuántos caracteres contiene. Los programadores lo hacen para validar entradas, controlar bucles, o simplemente para manejar datos de texto con precisión.
-
 ## Cómo hacerlo:
 En Haskell, usamos la función `length` para obtener la longitud de una cadena. Aquí tienes un ejemplo sencillo:
 

@@ -16,12 +16,7 @@ title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---
 
-## Gì & Tại Sao?
-
-Viết kiểm thử nghĩa là tạo ra đoạn mã tự động kiểm tra mã khác của bạn để tìm lỗi. Lập trình viên làm điều này để phát hiện lỗi sớm, đảm bảo mã hoạt động như mong đợi, và làm cho việc thay đổi trong tương lai an toàn hơn.
-
 ## Làm thế nào:
-
 ```Lua
 -- Ví dụ kiểm thử Lua đơn giản sử dụng assert
 
@@ -45,11 +40,9 @@ Kết quả:
 ```
 
 ## Tìm hiểu sâu
-
 Trước đây, Lua không có một bộ khung kiểm thử được xây dựng sẵn, khiến các lập trình viên phải tự tạo của riêng họ hoặc sử dụng các bên thứ ba như LuaUnit hay busted. Với một cốt lõi tối giản, những bộ khung này xử lý việc thiết lập/dỡ bỏ, đánh giá và định dạng báo cáo. Các lựa chọn khác bao gồm sử dụng hàm `assert` tự nhiên cho các bài kiểm thử đơn giản hoặc tích hợp Lua với các hệ thống tích hợp liên tục (CI) để kiểm thử tự động trên các môi trường khác nhau. Chi tiết triển khai bao gồm viết mã có thể kiểm thử được, hiểu tầm quan trọng của việc phủ kiểm thử, và thiết kế các bài kiểm thử vừa toàn diện vừa dễ đọc.
 
 ## Xem thêm
-
 - LuaUnit GitHub: https://github.com/bluebird75/luaunit
 - busted GitHub: https://github.com/Olivine-Labs/busted
 - "Lập trình Lua" (chương về kiểm thử): https://www.lua.org/pil/11.html

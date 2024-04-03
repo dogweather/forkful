@@ -14,12 +14,7 @@ title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---
 
-## Quoi & Pourquoi ?
-
-En programmation Bash, vérifier si un répertoire existe est un mécanisme de contrôle essentiel utilisé pour vérifier la présence d'un répertoire avant d'effectuer des opérations sur des fichiers. Cette vérification est cruciale pour éviter des erreurs telles que tenter d'accéder ou de modifier des répertoires qui n'existent pas, assurant ainsi une exécution de script plus fluide et plus prévisible.
-
 ## Comment faire :
-
 Au cœur de Bash, vous pouvez vérifier l'existence d'un répertoire en utilisant des instructions conditionnelles et l'opérateur `-d`. Voici un exemple simple qui montre comment effectuer cette vérification.
 
 ```bash

@@ -11,9 +11,6 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## What & Why? (Co i Dlaczego?)
-Porównywanie dat umożliwia ustalenie, która z nich jest wcześniejsza lub późniejsza. Programiści robią to, aby śledzić czas, zarządzać wydarzeniami, lub określić terminy.
-
 ## How to: (Jak to zrobić:)
 W Arduino używamy struktury `tmElements_t` z biblioteki TimeLib do przechowywania dat. Porównując dwa obiekty, sprawdzamy ich kolejność.
 

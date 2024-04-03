@@ -14,11 +14,7 @@ title: Sette stor bokstav i en streng
 weight: 2
 ---
 
-## Hva & Hvorfor?
-Å sette stor forbokstav i en streng innebærer å endre det første tegnet av en gitt streng til stor bokstav hvis den er i små bokstaver, ofte uten å endre resten av strengen. Denne operasjonen brukes typisk for å sikre at egennavn eller begynnelsen av setninger følger grammatikalske regler i tekstbehandling, noe som gjør output ser profesjonell og lesbar ut.
-
 ## Hvordan:
-
 TypeScript, som er et superset av JavaScript, tillater forskjellige metoder for å sette stor forbokstav i strenger, som spenner fra rene JavaScript-tilnærminger til å benytte tredjepartsbiblioteker for mer komplekse eller spesifikke brukstilfeller.
 
 **Ren JavaScript-tilnærming:**

@@ -12,12 +12,7 @@ title: Skriva till standardfel
 weight: 25
 ---
 
-## Vad & Varför?
-
-Att skriva till standardfel i C innebär att styra felmeddelanden och diagnostisk information till en separat ström från programmets huvudutdata. Programmerare gör detta för att skilja felmeddelanden från standardutdata, vilket gör båda lättare att läsa och behandla separat, särskilt vid felsökning eller loggning av programkörningar.
-
 ## Hur man gör:
-
 I C används strömmen `stderr` för att skriva ut felmeddelanden. Till skillnad från att skriva till standardutdata med `printf`, kan skrivning till `stderr` göras med hjälp av `fprintf` eller `fputs`. Så här kan du göra det:
 
 ```c
@@ -47,7 +42,6 @@ $ ./ditt_program > utdata.txt
 Detta kommando omdirigerar endast standardutdata till `utdata.txt`, medan felmeddelanden fortfarande kommer att visas på skärmen.
 
 ## Fördjupning
-
 Skillnaden mellan `stdout` och `stderr` i Unix-baserade system går tillbaka till de tidiga dagarna av C och Unix. Denna separation möjliggör en mer robust felsökning och loggning, eftersom det möjliggör för programmerare att omdirigera felmeddelanden oberoende av standardprogramutdata. Medan `stderr` är obuffrad som standard för att säkerställa omedelbar utdata av felmeddelanden, vilket hjälper vid felsökning av krascher och andra kritiska problem, är `stdout` vanligtvis buffrad, vilket betyder att dess utdata kan försenas tills bufferten töms (t.ex. vid programslut eller manuell tömning).
 
 I moderna applikationer är det fortfarande relevant att skriva till `stderr`, särskilt för kommandoradsverktyg och serverapplikationer där det är avgörande att skilja mellan vanliga loggmeddelanden och fel. Dock, för mer komplex felhantering, särskilt i GUI-applikationer eller där mer sofistikerade loggningsmekanismer behövs, kan programmerare använda dedikerade loggningsbibliotek som erbjuder mer kontroll över meddelandeformatering, destinationer (t.ex. filer, nätverk) och allvarlighetsnivåer (info, varning, fel osv.).

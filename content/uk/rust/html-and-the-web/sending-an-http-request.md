@@ -12,10 +12,6 @@ title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437
 weight: 44
 ---
 
-## What & Why?
-Що таке та навіщо?
-Sending an HTTP request is how we ask the internet for data or actions. Programmers do it to interact with web services, fetch information, or send data to servers.
-
 ## How to:
 Як це зробити:
 ```Rust

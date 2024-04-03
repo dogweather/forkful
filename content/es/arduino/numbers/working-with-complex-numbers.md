@@ -11,9 +11,6 @@ title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---
 
-## Qué y Por Qué?
-Los números complejos tienen una parte real y una parte imaginaria, escritos típicamente como `a + bi`. Son vitales para algunos proyectos de Arduino que requieren de matemáticas avanzadas, incluyendo el procesamiento de señales, ingeniería eléctrica, o cualquier otro dominio donde los fenómenos se modelan mejor en un plano.
-
 ## Cómo hacerlo:
 ```Arduino
 #include <Complex.h>

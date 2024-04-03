@@ -14,9 +14,6 @@ title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---
 
-## Cái gì & Tại sao?
-Trích xuất chuỗi con có nghĩa là lấy ra các phần cụ thể của một chuỗi. Điều này rất tiện lợi cho các công việc như phân tích dữ liệu, xác thực đầu vào, hoặc chỉ đơn giản là phân chia văn bản thành các phần dễ quản lý hơn.
-
 ## Làm thế nào:
 Trong TypeScript, bạn có thể cắt và chọn các chuỗi với các phương thức như `substring()`, `slice()`, và `includes()` của ES6 để tìm kiếm văn bản trong chuỗi.
 

@@ -10,9 +10,6 @@ title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---
 
-## Was & Warum?
-Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, alle Buchstaben in einem Text in ihre entsprechende kleine Form zu übertragen. Programmierer nutzen dies, um Einheitlichkeit zu gewährleisten, beispielsweise bei der Validierung von E-Mail-Adressen oder beim Vergleich von Nutzereingaben.
-
 ## Wie geht das:
 In Clojure kannst du Strings mit der `clojure.string/lower-case` Funktion in Kleinbuchstaben umwandeln. Hier ist, wie du es machst:
 

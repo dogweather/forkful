@@ -14,9 +14,6 @@ title: "Utiliser des expressions r\xE9guli\xE8res"
 weight: 11
 ---
 
-## Quoi & Pourquoi ?
-Les expressions régulières (regex) en Dart offrent un moyen puissant de rechercher et de manipuler des chaînes de caractères, permettant aux programmeurs d'effectuer des tâches complexes de traitement de texte efficacement. En comprenant les regex, les développeurs peuvent exécuter des validations de texte, rechercher des motifs et effectuer des transformations de texte rapidement, ce qui est essentiel pour le traitement des formulaires, l'analyse de données et les manipulations générales de chaînes dans les applications modernes.
-
 ## Comment faire :
 Dart utilise la classe `RegExp` pour les expressions régulières. Voici un exemple de base pour correspondre à un motif simple au sein d'une chaîne :
 

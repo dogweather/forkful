@@ -12,9 +12,6 @@ title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437
 weight: 45
 ---
 
-## What & Why? (Що та Чому?)
-Sending an HTTP request with basic authentication involves attaching a username and password to the request header. Programmers use it to access resources that require user verification.
-
 ## How to: (Як це зробити:)
 ```Lua
 -- Requires the 'socket.http' and 'ltn12' libraries for HTTP and LTN12 for sinks.

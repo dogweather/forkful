@@ -9,9 +9,6 @@ title: Interpolating a string
 weight: 8
 ---
 
-## What & Why?
-String interpolation lets you embed variables directly in strings. It's handy for creating dynamic, readable text without clunky concatenation.
-
 ## How to:
 ```kotlin
 fun main() {

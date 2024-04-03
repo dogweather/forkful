@@ -11,9 +11,6 @@ title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## What & Why? (Co i dlaczego?)
-Zmiana stringa na małe litery to prosty proces, gdzie wszystkie litery w napisie są konwertowane na ich małe odpowiedniki. Programiści robią to, by ujednolicić dane - przydatne, gdy porównujesz napisy czy sortujesz dane.
-
 ## How to: (Jak to zrobić:)
 Rozważmy przykładowy string i jego konwersję do małych liter w Swift:
 

@@ -17,12 +17,7 @@ title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Gì và Tại Sao?
-
-Tạo một tệp tạm thời có nghĩa là tạo ra một tệp được thiết kế để lưu trữ dữ liệu một cách tạm thời và sẽ bị xóa sau khi sử dụng. Lập trình viên làm điều này để xử lý dữ liệu trung gian mà không làm rối loạn hệ thống tệp hay rủi ro xung đột với các tệp khác.
-
 ## Cách thực hiện:
-
 Dưới đây là cách để tạo và sử dụng một tệp tạm thời trong C++ hiện tại:
 
 ```C++
@@ -64,7 +59,6 @@ Tệp tạm thời đã được tạo tại: /tmp/abc123
 ```
 
 ## Sâu hơn nữa
-
 Tệp tạm thời rất hữu ích trong các trường hợp như lưu trạng thái, sắp xếp các tập dữ liệu lớn, hoặc xử lý đầu ra không cần duy trì lâu dài. Trong lịch sử, tệp tạm thời được tạo trong một thư mục chung (như `/tmp` trên hệ thống Unix) với một cách đặt tên đơn giản, gây nguy cơ va chạm. C++ hiện đại sử dụng thư viện `<filesystem>` để tránh các vấn đề này.
 
 Các phương án thay thế bao gồm sử dụng bộ nhớ tạm thời dựa trên RAM (như tmpfs trong hầu hết các hệ thống giống Unix) hoặc blob cơ sở dữ liệu. Những phương pháp này giữ dữ liệu nhất thời trong bộ nhớ hoặc hệ thống quản lý, giảm tải I/O và cải thiện hiệu suất.
@@ -75,7 +69,6 @@ Về mặt triển khai, hãy nhớ rằng:
 - Dọn dẹp: Xóa tệp tạm thời của bạn (mặc dù hệ thống thường làm điều này, nhưng là một thói quen tốt).
 
 ## Xem Thêm
-
 - [Thư Viện Filesystem C++](https://en.cppreference.com/w/cpp/filesystem)
 - [Thư Viện IOstreams C++](https://en.cppreference.com/w/cpp/io)
 - [Xử Lý Tệp Tạm Thời trong C](http://www.cplusplus.com/reference/cstdio/tmpfile/)

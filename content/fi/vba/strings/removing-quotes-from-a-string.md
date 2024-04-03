@@ -14,12 +14,7 @@ title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---
 
-## Mitä & Miksi?
-
-Lainausmerkkien poistaminen merkkijonosta VBA:ssa tarkoittaa yksittäisten (`'`) tai kaksinkertaisten (`"`) lainausmerkkien poistamista, jotka voivat olla merkkijonon ympärillä tai sisällä. Tämä toimenpide on olennainen datan puhdistamiseksi, varmistaen että merkkijonot on oikein muotoiltu tietokantakyselyitä, JSON-jäsennystä varten tai yksinkertaisesti esteettisistä tai yhdenmukaisuussyistä sovelluksen käyttöliittymässä.
-
 ## Kuinka:
-
 VBA:ssa on useita lähestymistapoja lainausmerkkien poistamiseen merkkijonosta. Tässä on suoraviivainen esimerkki käyttäen `Replace`-funktiota, joka etsii tiettyä alijonoa (tässä tapauksessa lainausmerkkiä) merkkijonosta ja korvaa sen toisella alijonolla (tyhjällä merkkijonolla, jos poistetaan).
 
 ```basic
@@ -42,7 +37,6 @@ Huomaa, että kaksoislainausmerkkien kohdalla käytämme `Chr(34)`-funktiota, ko
 Monimutkaisemmissa skenaarioissa, joissa lainausmerkit voivat olla osa tarpeellista muotoilua (esim. lainatussa sanassa), saattaa tarvita monimutkaisempaa logiikkaa, esimerkiksi Regexin käyttöä tai merkkien käsittelyä yksitellen.
 
 ## Syväsukellus
-
 VBA on oleellinen osa tehtävien automatisointia Microsoft Office -ohjelmistopaketissa ja tarjoaa rikkaan valikoiman merkkijonojen käsittelyfunktioita, joista `Replace` on yksi käytetyimmistä. Tämä funktio kuitenkin vain raapaisee pintaa siitä, mitä VBA:ssa on mahdollista saavuttaa merkkijonojen käsittelyn osalta.
 
 Historiallisesti VBA on perinyt edeltäjiltään painotuksen yksinkertaisuuteen toimistotöiden automatisointitehtävissä, mistä johtuen funktioita kuten `Replace` on toteutettu suoraviivaisesti. Nykyaikaisissa ohjelmointitehtävissä, erityisesti monimutkaisissa merkkijonojen käsittelyissä tai puhdistamisessa, VBA saattaa kuitenkin osoittaa rajoituksensa.

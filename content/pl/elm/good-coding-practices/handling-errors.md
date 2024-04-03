@@ -11,9 +11,6 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co i dlaczego?
-Obsługa błędów polega na pisaniu kodu, który może przewidzieć i poradzić sobie z sytuacjami awaryjnymi. Programiści robią to, aby zapobiegać awariom, chronić integralność danych i zapewniać użytkownikom łagodne rozwiązania awaryjne.
-
 ## Jak robić:
 Podstawową filozofią Elm jest Brak Wyjątków w Czasie Wykonania. Dlatego Elm wykorzystuje swój system typów z takimi typami jak `Maybe` i `Result` do obsługi błędów.
 

@@ -12,9 +12,6 @@ title: "Die L\xE4nge einer Zeichenkette ermitteln"
 weight: 7
 ---
 
-## Was & Warum?
-Die Ermittlung der Länge eines Strings in C beinhaltet die Bestimmung der Anzahl der Zeichen vor dem Nullterminator `\0`. Programmierer tun dies, um Strings korrekt manipulieren zu können, ohne auf Fehler wie Pufferüberläufe zu stoßen, die zu Sicherheitsanfälligkeiten oder Programmabstürzen führen können.
-
 ## Wie geht das:
 In C wird die Standardbibliotheksfunktion `strlen()` häufig verwendet, um die Länge eines Strings zu ermitteln. Hier ist ein schnelles Beispiel:
 

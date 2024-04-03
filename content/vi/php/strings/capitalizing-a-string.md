@@ -14,9 +14,6 @@ title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---
 
-## Cái gì & Tại sao?
-Việc viết hoa một chuỗi có nghĩa là viết hoa chữ cái đầu tiên của mỗi từ. Các lập trình viên viết hoa chuỗi để đảm bảo tính nhất quán về mặt hình thức, thương hiệu, hoặc thiết kế trải nghiệm người dùng.
-
 ## Làm thế nào:
 Trong PHP, chúng ta viết hoa chuỗi bằng hàm `ucwords()` cho các tiêu đề đầy đủ hoặc `ucfirst()` cho một dòng đơn hoặc câu.
 

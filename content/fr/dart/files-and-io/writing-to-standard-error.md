@@ -14,12 +14,7 @@ title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire sur la sortie standard d'erreur (stderr) en Dart consiste à envoyer des messages d'erreur et des diagnostics vers un flux séparé, distinct de la sortie standard (stdout). Les programmeurs font cela pour différencier la sortie normale du programme des erreurs ou des messages d'avertissement, permettant ainsi un débogage et un journalisation plus facile.
-
 ## Comment faire :
-
 En Dart, écrire sur stderr est simple en utilisant l'objet `stderr` disponible dans `dart:io`. Voici un exemple de base :
 
 ```dart

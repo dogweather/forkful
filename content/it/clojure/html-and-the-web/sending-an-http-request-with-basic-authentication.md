@@ -10,9 +10,6 @@ title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---
 
-## Che cosa & perché?
-Inviare una richiesta HTTP con autenticazione di base significa passare username e password in modo sicuro per accedere a una risorsa protetta. I programmatori lo fanno per interagire con servizi web che richiedono un livello di autorizzazione.
-
 ## Come fare:
 ```Clojure
 (require '[clj-http.client :as client])

@@ -12,9 +12,6 @@ title: Een webpagina downloaden
 weight: 42
 ---
 
-## Wat & Waarom?
-Een webpagina downloaden betekent het ophalen van de inhoud ervan via het internet—essentieel, wat je browser doet. Programmeurs doen dit om gegevensextractie, tests of interactie met webservices zonder GUI te automatiseren.
-
 ## Hoe:
 Elixir, met zijn krachtige HTTP-clientbibliotheken, maakt deze taak eenvoudig. Hier is hoe met `HTTPoison`:
 

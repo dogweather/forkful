@@ -13,12 +13,7 @@ title: Usando arrays associativos
 weight: 15
 ---
 
-## O Que & Por Quê?
-
-Arrays associativos, ou como são mais precisamente conhecidos em JavaScript, objetos, permitem mapear chaves a valores. Isso é extremamente útil quando você precisa de uma coleção de elementos que deseja acessar através de nomes específicos (chaves) em vez de índices numéricos, tornando seu código mais legível e flexível.
-
 ## Como fazer:
-
 Criar e usar arrays associativos (objetos) em JavaScript é direto. Você define um objeto com chaves `{}`, e dentro delas, você pode definir um conjunto de pares chave-valor. As chaves são sempre strings, e os valores podem ser qualquer coisa: strings, números, arrays, até outros objetos.
 
 ```javascript
@@ -64,7 +59,6 @@ console.log(userInfo);
 Como você pode ver, acessar, adicionar ou deletar elementos em um array associativo é bastante direto e intuitivo.
 
 ## Aprofundando
-
 No mundo JavaScript, embora muitas vezes ouçamos o termo "array associativo", tecnicamente é um equívoco porque JavaScript não possui verdadeiros arrays associativos como outras linguagens (por exemplo, PHP). O que JavaScript tem são objetos que servem a um propósito similar, mas são uma construção mais poderosa e flexível.
 
 Historicamente, arrays em linguagens de programação foram projetados para conter uma coleção de itens, acessados por seu índice numérico. No entanto, à medida que o desenvolvimento de software evoluiu, surgiu a necessidade de estruturas de dados mais flexíveis. Arrays associativos, ou dicionários em outras línguas, foram uma resposta, permitindo acesso a elementos através de chaves arbitrárias.

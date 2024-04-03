@@ -14,12 +14,7 @@ title: Skriving til standardfeil
 weight: 25
 ---
 
-## Hva & Hvorfor?
-
-Å skrive til standard feil (stderr) handler om å sende ut feilmeldinger og diagnostikk til en separat strøm, forskjellig fra standard utdata (stdout), som gjør det mulig for bedre feilhåndtering og loggtolkning. Programmerere gjør dette for å lette feilsøking og for å sikre at feilmeldinger kan lett identifiseres og omdirigeres ved behov, og opprettholder rene utdata logger eller brukermeldinger.
-
 ## Hvordan:
-
 I Kotlin kan skriving til stderr oppnås ved å bruke `System.err.println()`. Denne metoden er lik `System.out.println()` men dirigerer utdata til standard feilstrøm i stedet for standard utdatastrøm.
 
 ```kotlin

@@ -14,12 +14,7 @@ title: Sette stor bokstav i en streng
 weight: 2
 ---
 
-## Hva & Hvorfor?
-
-Å kapitalisere en streng innebærer å omdanne det første tegnet i en gitt streng til stor bokstav hvis det er i små bokstaver, for å sørge for at strengen skiller seg ut eller overholder spesifikke grammatiske normer. Programmerere utfører ofte denne operasjonen for å formatere brukerinndata, vise egennavn på korrekt måte, eller sikre datakonsistens på tvers av programvareapplikasjoner.
-
 ## Hvordan:
-
 I Go gir ikke `strings`-pakken en direkte funksjon for å kapitalisere kun det første bokstaven i en streng. Derfor kombinerer vi funksjonen `strings.ToUpper()`, som konverterer en streng til store bokstaver, med skjæring for å oppnå målet vårt. Her er hvordan man gjør det:
 
 ```go
@@ -54,7 +49,6 @@ func main() {
 Denne funksjonen sjekker om strengen er tom eller om det første tegnet allerede er en stor bokstav. Den bruker pakken `unicode/utf8` for å håndtere Unicode-tegn korrekt, noe som sikrer at funksjonen vår fungerer med et bredt spekter av inndata utover grunnleggende ASCII.
 
 ## Dypdykk
-
 Behovet for å kapitalisere strenger i Go uten en innebygd funksjon kan virke som en begrensning, spesielt for programmerere som kommer fra språk hvor strengmanipuleringsfunksjoner er mer omfattende. Denne begrensningen oppfordrer til forståelse av strengbehandling og viktigheten av Unicode i moderne programvareutvikling.
 
 Historisk sett har programmeringsspråk utviklet seg i deres behandling av strenger, med tidlige språk som ofte overså internasjonalisering. Gos tilnærming, selv om den krever litt mer kode for tilsynelatende enkle oppgaver, sikrer at utviklere er oppmerksomme på globale brukere fra starten.

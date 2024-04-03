@@ -11,9 +11,6 @@ title: Organizowanie kodu w funkcje
 weight: 18
 ---
 
-## Co i dlaczego?
-Grupowanie kodu w funkcje polega na dzieleniu zadań na wielokrotnie używalne fragmenty. Sprawia to, że kod jest czytelny, mniej podatny na błędy i łatwiejszy w debugowaniu lub refaktoryzacji.
-
 ## Jak to zrobić:
 Wyobraź sobie zadanie: oblicz średnią z tablicy. Bez funkcji, wrzuciłbyś to wszystko do funkcji main. Z funkcjami zrobiłbyś to tak:
 

@@ -13,12 +13,7 @@ title: Gestion des erreurs
 weight: 16
 ---
 
-## Quoi & Pourquoi ?
-
-La gestion des erreurs en C consiste à détecter et répondre aux conditions anomales qui surviennent pendant l'exécution d'un programme. Les programmeurs font cela pour prévenir les bugs, les plantages et les comportements imprévisibles, assurant ainsi que le logiciel fonctionne de manière fiable et efficace dans divers scénarios.
-
 ## Comment faire :
-
 C ne dispose pas de support intégré pour les exceptions comme certains autres langages. Il repose plutôt sur quelques stratégies conventionnelles de gestion des erreurs, telles que le retour de valeurs spéciales des fonctions et la définition de variables globales comme `errno`.
 
 **Retourner des Valeurs Spéciales**
@@ -79,7 +74,6 @@ Erreur lors de l'ouverture du fichier : Aucun fichier ou dossier de ce type
 ```
 
 ## Approfondissement
-
 Historiquement, la conception minimaliste du langage de programmation C a exclu un mécanisme de gestion des exceptions intégré, reflétant ses origines en programmation système de bas niveau où les performances maximales et le contrôle proche du matériel sont critiques. À la place, C adopte une approche de gestion des erreurs plus manuelle qui correspond à sa philosophie d'offrir aux programmeurs autant de contrôle que possible, même au prix de la commodité.
 
 Bien que cette approche s'aligne bien avec les objectifs de conception de C, elle peut également conduire à un code de vérification d'erreur verbeux et à la possibilité d'oublis de vérifications d'erreurs, que les langages modernes abordent avec des mécanismes de gestion des exceptions structurées. Par exemple, les exceptions dans des langages comme Java ou C# permettent un traitement centralisé des erreurs, rendant le code plus propre et la gestion des erreurs plus directe. Cependant, les exceptions introduisent leur propre surcharge et complexité, ce qui pourrait ne pas être idéal pour la programmation de niveau système où C brille.

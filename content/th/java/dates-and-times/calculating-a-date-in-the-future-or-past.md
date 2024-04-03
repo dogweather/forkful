@@ -35,12 +35,7 @@ title: "\u0E01\u0E32\u0E23\u0E04\u0E33\u0E19\u0E27\u0E13\u0E27\u0E31\u0E19\u0E17
 weight: 26
 ---
 
-## อะไร & ทำไม?
-
-การคำนวณวันที่ในอนาคตหรืออดีตมีการปรับแก้วันที่ที่รู้จักไว้โดยจำนวนวัน, เดือน, หรือปีที่เฉพาะเจาะจง โปรแกรมเมอร์ทำสิ่งนี้สำหรับฟีเจอร์เช่นการเตือนความจำ, วันหมดอายุ, และการจัดตารางกิจกรรม
-
 ## วิธีการ:
-
 ```java
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -67,7 +62,6 @@ public class DateCalculation {
 ```
 
 ## ตรวจสอบอย่างละเอียด
-
 ก่อน Java 8, การจัดการกับวันที่เป็นเรื่องยาก คลาสเก่าๆ เช่น `java.util.Date` และ `java.util.Calendar` เต็มไปด้วยบั๊กและไม่เป็นมิตรต่อผู้ใช้ แพ็กเกจ `java.time` ที่นำเสนอใน Java 8 ได้แก้ไขปัญหานี้ด้วยคลาสที่ได้รับการคิดค้นอย่างดี เช่น `LocalDate`, `LocalTime`, และ `ZonedDateTime`
 
 มีทางเลือกอื่นหรือไม่? ในยุคก่อน Java 8, ไลบรารีภายนอกเช่น Joda-Time เป็นที่นิยม ในปัจจุบัน, คุณยังสามารถใช้งานได้, แต่แนะนำให้ใช้ `java.time` มาตรฐานเนื่องจากเป็นส่วนหนึ่งของ Java อย่างเป็นทางการและจัดการเวลาออมแสง, เขตเวลา, และปีใหญ่ได้อย่างสง่างาม
@@ -75,7 +69,6 @@ public class DateCalculation {
 เมื่อเขียนคำนวณวันที่, พิจารณาเขตเวลาหากบริบทของคุณต้องการ เพื่อ UTC, ใช้ `Instant` แทน `LocalDate` สำหรับเขตเวลาเฉพาะ, คุณมักจะใช้ `ZonedDateTime` จำไว้ว่า, การดำเนินการวัน-เวลาสามารถเชื่อมโยงกันได้, เช่น `date.minusWeeks(1).plusHours(3)`, ทำให้โค้ดของคุณสะอาดขึ้น
 
 ## ดูเพิ่มเติม
-
 1. ภาพรวมแพ็กเกจ `java.time`: [เอกสาร Oracle](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
 2. การจัดการเขตเวลาด้วย `ZonedDateTime`: [Oracle ZonedDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html)
 3. รูปแบบวันที่และเวลาอย่างเป็นทางการสำหรับ `java.time.format.DateTimeFormatter`: [Oracle DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)

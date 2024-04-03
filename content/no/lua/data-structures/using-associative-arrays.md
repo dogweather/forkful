@@ -14,12 +14,7 @@ title: Bruke associative tabeller
 weight: 15
 ---
 
-## Hva & Hvorfor?
-
-Assosiative tabeller er som hemmelige håndtrykk for data i Lua—istedenfor bare tall som følger trofast etter indeks, kan nøklene dine være hva som helst, noe som gjør datahenting til en lek. Hvorfor bruker programmerere dem? Fordi noen ganger trenger du å kalle et stykke data ved navnet sitt, ikke et oppstillingsnummer.
-
 ## Hvordan:
-
 I Lua er det enkelt å opprette en assosiativ tabell (eller et bord, i Lua-språket). Du dropper de vanlige numeriske indeksene til fordel for nøkler du selv velger. Sjekk dette ut:
 
 ```Lua
@@ -58,7 +53,6 @@ favSpråk: Lua
 Den kule delen? Du samhandler med data ved hjelp av nøkler som betyr noe for deg, noe som gjør koden mer lesbar og vedlikeholdbar.
 
 ## Dypdykk
-
 Da Lua kom på scenen, introduserte det bord som en altomfattende datastruktur, noe som revolusjonerte måten utviklere håndterer data på. I motsetning til i noen språk der assosiative tabeller og lister er separate enheter, tjener Luas bord som begge deler, noe som forenkler landskapet for datastrukturer.
 
 Det som gjør Lua bord spesielt kraftfulle er deres fleksibilitet. Imidlertid kommer denne fleksibiliteten på bekostning av potensielle ytelsesimplikasjoner, spesielt med store datasett hvor en mer spesialisert datastruktur kan være å foretrekke for effektivitet.

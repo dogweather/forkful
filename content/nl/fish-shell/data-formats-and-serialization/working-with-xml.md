@@ -12,9 +12,6 @@ title: Werken met XML
 weight: 40
 ---
 
-## Wat & Waarom?
-Werken met XML betekent het omgaan met gegevens in een alomtegenwoordig, gestructureerd formaat dat wordt gebruikt in configuraties, berichtgeving en meer. Programmeurs manipuleren XML om gegevens te lezen, schrijven, bijwerken en op te vragen - essentieel voor interoperabiliteit in tal van apps en diensten.
-
 ## Hoe:
 Fish heeft geen ingebouwde XML-parser, dus je zult externe hulpmiddelen zoals `xmllint` of `xmlstarlet` gebruiken. Hier is een fragment om waarden te lezen:
 

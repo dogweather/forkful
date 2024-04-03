@@ -15,16 +15,10 @@ title: Travailler avec CSV
 weight: 37
 ---
 
-## Quoi & Pourquoi ?
-
-Travailler avec des fichiers CSV (Comma-Separated Values ou Valeurs Séparées par des Virgules) implique de lire et d’écrire des données dans des fichiers CSV, un format populaire pour représenter des données tabulaires en texte brut. Les programmeurs le font pour échanger facilement des données entre différents programmes, systèmes, ou bases de données, grâce à sa simplicité et à son large support à travers les plateformes et langages de programmation.
-
 ## Comment faire :
-
 PHP fournit des fonctions intégrées pour la manipulation de fichiers CSV, rendant la lecture et l'écriture dans ces fichiers directes sans avoir besoin de bibliothèques tierces. Voici des exemples pour vous aider à démarrer :
 
 ### Lire un fichier CSV
-
 Vous pouvez ouvrir un fichier CSV et lire son contenu en utilisant `fopen()` en combinaison avec `fgetcsv()` :
 
 ```php
@@ -47,7 +41,6 @@ if ($handle !== FALSE) {
 Ce script imprime le nombre de champs de chaque ligne suivi par le contenu de chaque champ.
 
 ### Écrire dans un fichier CSV
-
 Pour écrire dans un fichier CSV, utilisez `fopen()` en mode écriture (`w`) et `fputcsv()` :
 
 ```php
@@ -71,11 +64,9 @@ fclose($handle);
 Ce script crée un fichier nommé `users.csv` et y écrit l'en-tête et deux lignes de données.
 
 ### Utiliser une bibliothèque : League\Csv
-
 Pour une manipulation CSV plus avancée, la bibliothèque `League\Csv` offre un ensemble robuste de fonctionnalités. Après l'avoir installée via Composer (`composer require league/csv`), vous pouvez l'utiliser pour lire et écrire des données CSV de manière plus flexible.
 
 #### Lire avec League\Csv
-
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -95,7 +86,6 @@ foreach ($results as $row) {
 Ce script lit `data.csv`, traitant la première ligne comme des en-têtes de colonne et imprime chaque ligne en tant que tableau associatif.
 
 #### Écrire avec League\Csv
-
 ```php
 <?php
 require 'vendor/autoload.php';

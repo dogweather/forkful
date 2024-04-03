@@ -11,9 +11,6 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## What & Why? (Co i Dlaczego?)
-Wyszukiwanie i zamiana tekstu to standardowe akcje przetwarzające łańcuchy znaków - znajdujemy fragment tekstu i podmieniamy go na inny. Programiści robią to, by modyfikować dane, configi czy kod - to takie cyfrowe "znajdź i zastąp" z edytora tekstu.
-
 ## How to: (Jak to zrobić:)
 ```Rust
 fn main() {

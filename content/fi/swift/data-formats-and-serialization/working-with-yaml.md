@@ -13,9 +13,6 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä & Miksi?
-YAML, joka tulee sanoista YAML Ain't Markup Language, on ihmisläheinen tiedon sarjallistamisstandardi kaikille ohjelmointikielille. Ohjelmoijat käyttävät sitä konfiguraatiotiedostoihin, prosessien väliseen viestintään ja datan tallennukseen, koska sen luettavuus on huomattavasti lähempänä tavallista englantia verrattuna muihin datamuotoihin kuten XML tai JSON, mikä tekee siitä yksinkertaisemman ymmärtää ja kirjoittaa.
-
 ## Kuinka:
 Swift ei sisällä sisäänrakennettua tukea YAML:n jäsennykseen ja sarjallistamiseen, joten on tarpeen käyttää kolmannen osapuolen kirjastoja. Suosittu valinta on `Yams`, kirjasto YAML:n käsittelyyn Swiftissä.
 

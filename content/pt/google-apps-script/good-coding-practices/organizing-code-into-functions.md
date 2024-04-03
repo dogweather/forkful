@@ -14,12 +14,7 @@ title: "Organizando c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---
 
-## O Que & Por Quê?
-
-Organizar o código em funções é sobre estruturar o seu código do Google Apps Script separando segmentos lógicos em blocos distintos, cada um realizando uma tarefa específica. Os programadores fazem isso para melhorar a legibilidade, a manutenção e a reutilização do código, garantindo que scripts complexos sejam mais fáceis de entender e depurar.
-
 ## Como fazer:
-
 No Google Apps Script, que é baseado em JavaScript, você define funções usando a palavra-chave `function`, seguida por um nome de função único, parênteses `()` que podem conter parâmetros, e chaves `{}` que encapsulam o bloco de código da função. Aqui está um exemplo básico:
 
 ```javascript
@@ -68,7 +63,6 @@ populateSheet(salesData);
 Neste exemplo, `setupSheet` prepara a planilha, e `populateSheet` pega um array de dados de vendas para preencher a planilha. Separar essas preocupações torna o código mais limpo e mais adaptável a mudanças.
 
 ## Aprofundamento
-
 O conceito de dividir código em funções não é novo ou único do Google Apps Script; é uma prática de programação fundamental defendida em quase todas as linguagens de programação. Historicamente, funções evoluíram do conceito matemático de mapear entradas para saídas, o que se tornou um pilar na programação estruturada. Esta abordagem promove modularidade e reutilização de código, oferecendo caminhos claros para testar partes individuais do script.
 
 O Google Apps Script, sendo baseado em JavaScript, beneficia-se significativamente das funções de primeira classe do JavaScript, permitindo que funções sejam passadas como argumentos, retornadas de outras funções, e atribuídas a variáveis. Essa característica abre possibilidades para padrões avançados como callbacks e programação funcional, embora esses padrões possam introduzir complexidade que pode ser desnecessária para tarefas simples de automação no Google Apps Script.

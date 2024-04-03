@@ -14,12 +14,7 @@ title: Generere tilfeldige tall
 weight: 12
 ---
 
-## Hva & Hvorfor?
-
-Å generere tilfeldige tall i Visual Basic for Applications (VBA) gir muligheten til å simulere prosesser med elementer av sjanse eller variabilitet, som terningkast eller prøveutvalg. Programmerere bruker disse teknikkene for å utvikle modeller, spill eller simuleringer der forutsigbare utfall ville være urealistiske eller mindre nyttige.
-
 ## Hvordan:
-
 I VBA brukes `Rnd`-funksjonen til å generere tilfeldige tall. Som standard genererer `Rnd` et enkeltpresisjon flyttall som er større enn eller lik 0 og mindre enn 1. Her er noen få trinn og eksempler for effektivt å utnytte tilfeldige tall:
 
 1. **Enkelt Tilfeldig Tall:**
@@ -61,7 +56,6 @@ I VBA brukes `Rnd`-funksjonen til å generere tilfeldige tall. Som standard gene
 Etter å ha kjørt `RandomNumberInRange`, kan du se en meldingsboks som viser et tall slik som `45`.
 
 ## Dypdykk:
-
 `Rnd`-funksjonen i VBA, som er enkel å bruke, genererer faktisk pseudo-tilfeldige tall basert på en deterministisk algoritme. Dette betyr at sekvensene av tall den produserer ikke er helt tilfeldige, men kan ofte være tilstrekkelige for vanlige oppgaver som trenger stokastiske prosesser.
 
 Historisk sett dateres kapasiteten for generering av tilfeldige tall i VBA tilbake til tidlige versjoner av Basic, og har med tiden tilpasset seg for å inkludere funksjoner som `Randomize` for å forbedre tilfeldigheten ved å seede algoritmen med et utgangspunkt. Imidlertid, for applikasjoner som krever høye nivåer av tilfeldighet, som sikre kryptografiske operasjoner, er kanskje ikke VBA’s `Rnd` det beste verktøyet. Alternativer i mer robuste programmeringsmiljøer eller språk designet med tanke på kryptografi, som Pythons `secrets`-modul eller Javas `SecureRandom`, bør vurderes.

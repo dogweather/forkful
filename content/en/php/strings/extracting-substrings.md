@@ -10,9 +10,6 @@ title: Extracting substrings
 weight: 6
 ---
 
-## What & Why?
-Extracting substrings means pulling specific portions from a string. Programmers do it to process or manipulate data, like fetching a username from an email address or a file extension from a filename.
-
 ## How to:
 PHP offers several functions to extract substrings. Let's check out `substr`, `mb_substr`, and `strstr`.
 

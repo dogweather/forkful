@@ -12,12 +12,7 @@ title: Logging
 weight: 17
 ---
 
-## What & Why?
-
-Logging in software development is the process of recording information about a program’s execution, designed to track its behavior and diagnose issues. Programmers implement logging to monitor software performance, debug errors, and ensure system security and compliance, making it an indispensable tool for application maintenance and analysis.
-
 ## How to:
-
 In Go, logging can be implemented using the standard library package `log`. This package provides simple logging capabilities, such as writing to standard output or to files. Let's begin with a basic example of logging to standard output:
 
 ```go
@@ -83,7 +78,6 @@ CUSTOM LOG: 2009/11/10 23:00:00 main.go:11: This is a custom log message.
 This example prefixes each log message with "CUSTOM LOG: " and includes the date, time, and source file location.
 
 ## Deep Dive
-
 The Go standard library's `log` package is straightforward and sufficient for many applications, but it lacks some of the more sophisticated features found in third-party logging libraries, such as structured logging, log rotation, and level-based logging. Packages like `zap` and `logrus` offer these advanced features and are well-regarded in the Go community for their performance and flexibility.
 
 Structured logging, for example, allows you to log data in a structured format (like JSON), which is especially useful for modern cloud-based applications where logs might be analyzed by various tools or services. `zap`, in particular, is known for its high performance and low allocation overhead, making it suitable for applications where speed and efficiency are critical.

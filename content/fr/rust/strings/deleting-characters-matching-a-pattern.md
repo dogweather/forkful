@@ -12,9 +12,6 @@ title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---
 
-## What & Why?
-La suppression de caractères correspondant à un motif, c’est l’acte d’enlever des caractères d’une chaîne de caractères (string) qui matchent un certain pattern. On fait ça pour nettoyer des données, valider des entrées ou simplifier le traitement de textes.
-
 ## How to:
 Utilisons `regex` pour matcher et supprimer des patterns spécifiques. 
 
@@ -41,6 +38,5 @@ Historiquement, les expressions régulières viennent de la théorie des automat
 Dans nos alternatives, on a `str::replace`, pratique pour des cas simples, ou en utilisant `Vec<char>` pour de l'itération plus contrôlée. Les détails d'implémentation chez `regex` incluent des compilations de patterns en automates finis pour une recherche efficace.
 
 ## See Also
-
 - [Rust documentation on Strings](https://doc.rust-lang.org/book/ch08-02-strings.html): Pour une meilleure compréhension des strings en Rust.
 - [Automata Theory](https://en.wikipedia.org/wiki/Automata_theory): Pour comprendre les bases théoriques derrière les regex.

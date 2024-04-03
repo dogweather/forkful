@@ -14,12 +14,7 @@ title: Ausgabe von Debug-Informationen drucken
 weight: 33
 ---
 
-## Was & Warum?
-
-Das Ausgeben von Debug-Informationen bedeutet, temporäre, informative Protokollnachrichten zu generieren, die Programmierern helfen können, den Ablauf und Zustand eines Programms während seiner Ausführung zu verstehen. Programmierer tun dies, um Softwarefehler oder unerwartetes Verhalten in der Logik eines Programms zu identifizieren und zu diagnostizieren.
-
 ## Wie geht das:
-
 In C ist die gebräuchlichste Methode zum Drucken von Debug-Ausgaben die Verwendung der `printf`-Funktion aus der Standard-Ein-/Ausgabe-Bibliothek. Die `printf`-Funktion ermöglicht formatierte Ausgaben auf dem Standardausgabegerät, typischerweise dem Bildschirm. Hier ist ein einfaches Beispiel:
 
 ```c
@@ -65,7 +60,6 @@ DEBUG: beispiel.c:6: Der Testwert ist 10
 Beachten Sie, dass wir in diesem Beispiel `fprintf` verwenden, um auf den Standardfehlerstrom (`stderr`) auszugeben, was für Debug-Nachrichten oft angemessener ist.
 
 ## Tiefergehend
-
 Historisch gesehen waren Debugging-Techniken in C manuell und rudimentär, aufgrund der Philosophie der Sprache, die hardwarenah ist, und ihres Alters. Während moderne Sprachen möglicherweise ausgefeilte, eingebaute Debugging-Bibliotheken enthalten oder stark auf Funktionen der Integrierten Entwicklungsumgebung (IDE) setzen, greifen C-Programmierer oft auf manuelles Einfügen von Druckanweisungen wie die oben gezeigten zurück, um die Ausführung ihres Programms nachzuvollziehen.
 
 Eines, wovor man bei Debug-Ausdrucken aufpassen sollte, ist ihr Potenzial, die Ausgabe zu überladen und zu Leistungsproblemen zu führen, besonders wenn sie versehentlich im Produktionscode belassen werden. Aus diesen Gründen könnte die Verwendung bedingter Kompilierung (z.B. `#ifdef DEBUG ... #endif`) ein besserer Ansatz sein, der es ermöglicht, Debug-Anweisungen basierend auf Kompilierzeit-Flags ein- oder auszuschließen.

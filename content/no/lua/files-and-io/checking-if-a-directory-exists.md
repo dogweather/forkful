@@ -15,12 +15,7 @@ title: Sjekker om en mappe eksisterer
 weight: 20
 ---
 
-## Hva & Hvorfor?
-
-Å sjekke om en mappe eksisterer er en grunnleggende operasjon når man skriver skript som samhandler med filsystemet, og sørger for at programmet ditt opererer på gyldige baner og forhindrer feil relatert til ikke-eksisterende mapper. Denne oppgaven er avgjørende for å opprette nye filer i mapper, lese fra dem, eller utføre katalogspesifikke operasjoner på en trygg måte.
-
 ## Hvordan:
-
 I Lua har du ikke en innebygd funksjon for direkte å sjekke om en mappe eksisterer, så du er ofte avhengig av Lua File System (lfs)-biblioteket, et populært tredjepartsbibliotek for filoperasjoner.
 
 Først, sørg for at du har Lua File System installert. Hvis ikke, kan du vanligvis installere det med LuaRocks:

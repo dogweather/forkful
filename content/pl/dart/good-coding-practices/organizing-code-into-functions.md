@@ -15,10 +15,9 @@ title: Organizowanie kodu w funkcje
 weight: 18
 ---
 
-## Co i dlaczego?
-Organizacja kodu w funkcje w języku Dart polega na definiowaniu ponownie wykorzystywalnych bloków kodu, które wykonują określone zadania, zwykle odbierając dane wejściowe, przetwarzając dane i możliwie zwracając dane wyjściowe. Programiści robią to, aby poprawić czytelność kodu, zmniejszyć duplikację i ułatwić konserwację, co ostatecznie prowadzi do bardziej modułowych i łatwiejszych do zarządzania baz kodów.
-
 ## Jak to zrobić:
+
+
 ### Podstawowa funkcja
 W języku Dart definiujesz funkcję używając słowa kluczowego `void`, jeśli nie zwraca wartości, lub określasz typ zwracanej wartości w przeciwnym wypadku. Oto prosta funkcja, która drukuje wiadomość powitalną:
 

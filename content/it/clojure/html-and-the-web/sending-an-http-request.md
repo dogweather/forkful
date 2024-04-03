@@ -10,9 +10,6 @@ title: Inviare una richiesta http
 weight: 44
 ---
 
-## What & Why?
-Inviare una richiesta HTTP è il modo con cui il tuo programma chiede dati o invia informazioni a un server web. I programmatori lo fanno per interagire con servizi web, consumare API o servire contenuti agli utenti.
-
 ## How to:
 In Clojure, puoi usare la libreria `clj-http` per fare richieste HTTP facilmente.
 

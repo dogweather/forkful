@@ -13,9 +13,6 @@ title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---
 
-## Wat & Waarom?
-Een HTTP-verzoek met basisauthenticatie verzenden in C omvat het opstellen van een HTTP-verzoek dat een Authorization-header bevat met gebruikersgegevens gecodeerd in Base64. Dit is een gangbare methode om een eenvoudige authenticatielaag toe te voegen aan HTTP-verzoeken, waardoor beperkte bronnen programmatisch toegankelijk worden.
-
 ## Hoe te:
 Om een HTTP-verzoek met basisauthenticatie in C te verzenden, moeten we de libcurl-bibliotheek gebruiken, een populaire, veelzijdige en gebruiksvriendelijke client-zijde URL-overdrachtsbibliotheek. Het hanteert verschillende protocollen, inclusief HTTP en HTTPS, wat onze taak vereenvoudigt. Zorg ervoor dat libcurl is geïnstalleerd in je systeem voordat je verdergaat. Hier is een basisvoorbeeld dat laat zien hoe je een GET-verzoek met basisauthenticatie verstuurt:
 

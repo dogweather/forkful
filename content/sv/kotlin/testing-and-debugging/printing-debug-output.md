@@ -11,9 +11,6 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## Vad & Varför?
-Debug-utskrifter används för att spåra vad som händer i din kod på ett enkelt sätt. Programmerare använder det för att snabbt felsöka och följa programmets flöde utan att behöva en full debugger.
-
 ## Så här gör du:
 Kotlin erbjuder flera sätt att skriva ut debug-information. Här är det vanligaste:
 

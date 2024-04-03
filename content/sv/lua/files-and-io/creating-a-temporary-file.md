@@ -11,9 +11,6 @@ title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---
 
-## Vad & Varför?
-Att skapa en tillfällig fil är att skapa en fil som är ämnad att endast finnas under programmets körning. Programmerare använder detta för att hantera data som inte behöver bli permanent eller för att minska skrivningar till långsammare lagringsmedier.
-
 ## Hur man gör:
 ```Lua
 local os = require("os")

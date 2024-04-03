@@ -10,9 +10,6 @@ title: "Feilh\xE5ndtering"
 weight: 16
 ---
 
-## Hva & Hvorfor?
-Feilhåndtering betyr å planlegge for når ting går galt. Det er avgjørende fordi det hjelper med å unngå krasjer og gjør programvaren din robust og brukervennlig.
-
 ## Hvordan:
 Her er en grunnleggende try-catch blokk for å håndtere et unntak:
 

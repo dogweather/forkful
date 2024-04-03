@@ -9,9 +9,6 @@ title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---
 
-## Hva & Hvorfor?
-Komplekse tall har en reell del og en imaginær del (som `3 + 4i`). De brukes i ingeniørfag, fysikk og visse databehandlingsproblemer. Programmerere arbeider med dem for simuleringer, signalbehandling og løsning av visse typer matteproblemer effektivt.
-
 ## Hvordan:
 Elixir har ikke innebygde komplekse tall, så vi lager våre egne eller bruker et bibliotek, som `ComplexNum`. Her er et kjapt eksempel med et bibliotek:
 

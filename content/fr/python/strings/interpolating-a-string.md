@@ -14,9 +14,6 @@ title: "Interpolation d'une cha\xEEne de caract\xE8res"
 weight: 8
 ---
 
-## Quoi et Pourquoi ?
-L'interpolation de chaînes est la méthode permettant d'insérer des expressions au sein de littéraux de chaîne de caractères. Les programmeurs l'utilisent pour insérer dynamiquement des valeurs dans des chaînes, ce qui rend le code plus lisible et plus propre que la concaténation traditionnelle de chaînes.
-
 ## Comment faire :
 Dans Python 3.6 et versions ultérieures, vous pouvez interpoler des chaînes en utilisant les f-strings. Voici comment :
 

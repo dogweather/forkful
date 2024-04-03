@@ -12,12 +12,7 @@ title: Registro de Actividades
 weight: 17
 ---
 
-## ¿Qué y por qué?
-
-Hacer logging es como mantener un diario para tu aplicación; es la práctica de registrar eventos, errores y otros datos pertinentes durante la ejecución. Los desarrolladores usan los logs para diagnosticar problemas, monitorear el comportamiento del sistema y recopilar información que impulsa mejoras—es el pan de cada día de la inteligencia operacional.
-
 ## Cómo hacerlo:
-
 Configuramos un escenario básico de logging en Rust usando el crate `log`, que proporciona una fachada de logging, y `env_logger`, una implementación de logging para el crate `log`. Primero, agrégalos a tu Cargo.toml:
 
 ```toml
@@ -49,7 +44,6 @@ WARN: Este es un mensaje de advertencia.
 Experimenta con la variable de entorno `RUST_LOG` estableciéndola en `error`, `warn`, `info`, `debug` o `trace` para controlar la verbosidad de tus logs.
 
 ## Análisis Profundo
-
 El concepto de hacer logging no es nada nuevo; ha existido desde los primeros días de la computación. Antes de que el logging fuera común en el software, los desarrolladores dependían de métodos primitivos como declaraciones de impresión o herramientas de depuración para rastrear la ejecución del programa. A medida que los programas aumentaban en complejidad, también lo hacía la necesidad de enfoques estructurados para el logging.
 
 En Rust, el crate `log` abstrae los detalles de la implementación del logging, permitiendo a los desarrolladores enchufar diferentes backends de logging. Mientras que `env_logger` es una opción común, hay alternativas como `fern`, `slog` o `tracing`, cada una con su propio conjunto de características y opciones de configuración.
@@ -67,7 +61,6 @@ Algunas consideraciones al implementar logging incluyen:
 5. **Configuración**: Muchos frameworks de logging admiten configuración a través de variables de entorno, archivos de configuración y/o código. Esta flexibilidad es clave para afinar la salida en diferentes entornos (desarrollo, staging, producción).
 
 ## Ver También
-
 - Documentación del crate `log`: https://docs.rs/log/
 - Documentación del crate `env_logger`: https://docs.rs/env_logger/
 - Página de logging de Rust by Example: https://doc.rust-lang.org/rust-by-example/std_misc/log.html

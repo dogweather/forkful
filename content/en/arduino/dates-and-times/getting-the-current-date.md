@@ -10,9 +10,6 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-Getting the current date in Arduino projects involves obtaining real-time information that can be crucial for logging, timestamping, or scheduling tasks. Programmers often need this capability to enhance functionality, ensure data relevance, and facilitate time-sensitive operations in their IoT and embedded projects.
-
 ## How to:
 Arduino itself doesn't have a built-in method to directly fetch the current date, as it lacks a real-time clock (RTC). However, this can be achieved using external RTC modules like the DS3231, and libraries such as `RTClib`, developed by Adafruit, which makes interfacing with these modules straightforward.
 

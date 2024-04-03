@@ -12,9 +12,6 @@ title: Werken met TOML
 weight: 39
 ---
 
-## Wat & Waarom?
-TOML, een afkorting voor Tom's Obvious, Minimal Language, is een gegevensformaat vergelijkbaar met JSON of YAML, maar makkelijker leesbaar voor mensen. Programmeurs gebruiken het voor configuratiebestanden omdat het eenvoudig is en goed vertaalt naar datastructuren.
-
 ## Hoe te:
 Zorg eerst dat je een TOML-parserbibliotheek hebt geïnstalleerd, zoals `yosymfony/toml`. Laten we een TOML-bestand parsen:
 
@@ -60,6 +57,7 @@ Array
 
 )
 ```
+
 ## Diepgaande Duik
 TOML is in 2013 tot stand gekomen, ontworpen door GitHub mede-oprichter Tom Preston-Werner als een gebruiksvriendelijker alternatief voor XML en JSON voor configuratiebestanden. Terwijl JSON eenvoudig is voor machines, maakt de structuur van TOML het makkelijk op menselijke ogen, zonder de complexiteit van YAML.
 

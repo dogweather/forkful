@@ -12,12 +12,7 @@ title: Uso de matrices asociativas
 weight: 15
 ---
 
-## ¿Qué y Por Qué?
-
-Los arreglos asociativos, o como se conocen más precisamente en JavaScript, objetos, te permiten mapear claves a valores. Esto es extremadamente útil cuando necesitas una colección de elementos a los que quieres acceder mediante nombres específicos (claves) en lugar de índices numéricos, haciendo tu código más legible y flexible.
-
 ## Cómo hacerlo:
-
 Crear y usar arreglos asociativos (objetos) en JavaScript es sencillo. Defines un objeto con llaves `{}`, y dentro de estas, puedes definir un conjunto de pares clave-valor. Las claves son siempre cadenas de texto, y los valores pueden ser cualquier cosa: cadenas de texto, números, arreglos, incluso otros objetos.
 
 ```javascript
@@ -63,7 +58,6 @@ console.log(userInfo);
 Como puedes ver, acceder, agregar o eliminar elementos en un arreglo asociativo es bastante directo e intuitivo.
 
 ## Análisis Profundo
-
 En el mundo de JavaScript, aunque a menudo escuchamos el término "arreglo asociativo", técnicamente es un error, porque JavaScript no tiene verdaderos arreglos asociativos como otros idiomas (por ejemplo, PHP). Lo que JavaScript tiene son objetos que sirven a un propósito similar pero son una construcción más poderosa y flexible.
 
 Históricamente, los arreglos en lenguajes de programación fueron diseñados para contener una colección de ítems, accedidos por su índice numérico. Sin embargo, a medida que evolucionó el desarrollo de software, surgieron necesidades de estructuras de datos más flexibles. Los arreglos asociativos, o diccionarios en otros idiomas, fueron una respuesta, permitiendo el acceso a elementos a través de claves arbitrarias.

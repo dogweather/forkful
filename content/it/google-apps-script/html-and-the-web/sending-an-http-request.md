@@ -13,12 +13,7 @@ title: Inviare una richiesta HTTP
 weight: 44
 ---
 
-## Cosa e Perché?
-
-L'invio di una richiesta HTTP in Google Apps Script consiste nel fare una chiamata programmatica a un server web esterno o a un'API. I programmatori fanno ciò per recuperare o inviare dati a servizi web, integrando un vasto regno di risorse e funzionalità web direttamente nei loro progetti Google Apps Script.
-
 ## Come fare:
-
 In Google Apps Script, il modo primario per inviare una richiesta HTTP è utilizzare il servizio `UrlFetchApp`. Questo servizio fornisce metodi per effettuare richieste HTTP GET e POST. Ecco un semplice esempio di come effettuare una richiesta GET per recuperare dati JSON:
 
 ```javascript
@@ -57,7 +52,6 @@ function postExample() {
 Questi frammenti mostrano implementazioni di base delle richieste GET e POST. L'output dipenderà dalla risposta dell'API e può essere visualizzato nel Logger di Google Apps Script.
 
 ## Approfondimento
-
 Il servizio `UrlFetchApp` di Google Apps Script si è evoluto significativamente dalla sua nascita, offrendo un controllo più sfumato sulle richieste HTTP con funzionalità come l'impostazione degli header, del payload e la gestione di multipart/form-data per il caricamento di file. Sebbene fornisca un mezzo semplice per integrare servizi web esterni, gli sviluppatori che provengono da linguaggi backend più robusti possono trovare le sue funzionalità un po' limitanti rispetto a librerie come il `requests` di Python o l'API `fetch` di JavaScript in Node.js.
 
 Una limitazione degna di nota è il limite di tempo di esecuzione per Google Apps Script, che influisce sulle richieste di lunga durata. Inoltre, mentre `UrlFetchApp` copre un'ampia gamma di casi d'uso, scenari più complessi che coinvolgono l'autenticazione OAuth o la gestione di payload molto grandi possono richiedere soluzioni creative o l'utilizzo di risorse aggiuntive di Google Cloud.

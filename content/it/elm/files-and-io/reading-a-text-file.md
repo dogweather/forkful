@@ -10,9 +10,6 @@ title: Lettura di un file di testo
 weight: 22
 ---
 
-## What & Why?
-Leggere un file di testo significa caricare e interpretare il suo contenuto tramite il nostro codice. Lo facciamo perché spesso abbiamo bisogno di accedere a dati, configurazioni, o informazioni salvate in file semplici e accessibili.
-
 ## How to:
 Elm, essendo focalizzato sulla sicurezza, non permette l'accesso diretto ai file del sistema dall'interno del browser. Per leggere un file, devi utilizzare una `input` HTML con `type="file"` e intercettare l'evento in Elm.
 

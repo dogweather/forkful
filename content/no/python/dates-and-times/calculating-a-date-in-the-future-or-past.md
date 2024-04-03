@@ -11,9 +11,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## Hva & Hvorfor?
-Å kalkulere en dato i fremtiden eller fortiden betyr å finne en spesifikk dato før eller etter en kjent dato. Programmerere gjør dette for å håndtere frister, planlegge hendelser, eller spore tidslinjer.
-
 ## Hvordan gjør man det:
 Bruk `datetime` biblioteket i Python. For å legge til dager, bruk `timedelta` funksjonen.
 

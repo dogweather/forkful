@@ -10,9 +10,6 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## Mikä ja miksi?
-Merkkijonojen yhdistäminen tarkoittaa kahden tai useamman merkkijonon liittämistä yhteen muodostamaan yksi tekstikappale. Saatat tarvita tekstien yhdistämistä esimerkiksi käyttäjäviestien tuottamiseen, tiedostopolkujeen luomiseen tai datan sarjallistamisprosessiin. Se on perustoiminto missä tahansa ohjelmointikielessä, myös Elixirissä, mahdollistaen kehittäjien rakentaa dynaamisia merkkijonoja helposti.
-
 ## Kuinka:
 Elixirissä voit yhdistää merkkijonoja muutamalla suoraviivaisella tavalla. Tutkitaan yleisimpiä menetelmiä:
 

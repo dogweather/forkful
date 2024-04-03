@@ -11,9 +11,6 @@ title: Lendo um arquivo de texto
 weight: 22
 ---
 
-## O Quê & Porquê?
-Ler um arquivo de texto significa acessar e interpretar o conteúdo de um arquivo salvado como texto no seu computador. Programadores fazem isso para processar dados, configurar programas ou simplesmente para importar informações.
-
 ## Como Fazer:
 Leitura básica de um arquivo de texto:
 

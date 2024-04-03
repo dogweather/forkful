@@ -11,9 +11,6 @@ title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---
 
-## What & Why? (Co i Dlaczego?)
-Zamiana daty na łańcuch znaków (string) to proces przekształcania obiektu daty w czytelny tekst. Programiści robią to, żeby ułatwić wyświetlanie dat użytkownikom i przechowywanie dat w bazach danych w ustandaryzowanym formacie.
-
 ## How to: (Jak to zrobić:)
 ```Ruby
 require 'date'

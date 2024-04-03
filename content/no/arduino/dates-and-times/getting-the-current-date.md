@@ -14,9 +14,6 @@ title: "F\xE5 den gjeldende datoen"
 weight: 29
 ---
 
-## Hva & Hvorfor?
-Å få tak i dagens dato i Arduino-prosjekter innebærer å skaffe sanntidsinformasjon som kan være avgjørende for logging, tidsstempling eller planlegging av oppgaver. Programmerere trenger ofte denne funksjonaliteten for å forbedre funksjonalitet, sikre datarelevans og lette tidsfølsomme operasjoner i sine IoT- og innebygde prosjekter.
-
 ## Hvordan:
 Arduino i seg selv har ikke en innebygd metode for å direkte hente dagens dato, ettersom den mangler et ekte tidsur (RTC). Dette kan imidlertid oppnås ved bruk av eksterne RTC-moduler som DS3231, og biblioteker som `RTClib`, utviklet av Adafruit, som gjør grensesnittet med disse modulene enkelt.
 

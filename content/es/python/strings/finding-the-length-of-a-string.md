@@ -9,9 +9,6 @@ title: Calculando la longitud de una cadena
 weight: 7
 ---
 
-## Qué y Por Qué?
-Contar los caracteres en una cadena permite saber su longitud. Es fundamental, por ejemplo, para validar entradas de usuario, limitar textos de un tweet o simplemente para procesar datos de texto.
-
 ## Cómo hacerlo:
 Para obtener la longitud de una cadena en Python, usamos la función `len()`. Aquí tienes un ejemplo:
 

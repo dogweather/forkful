@@ -13,16 +13,10 @@ title: Trabajando con CSV
 weight: 37
 ---
 
-## ¿Qué y Por Qué?
-
-Trabajar con archivos CSV (Valores Separados por Comas) implica leer o escribir en archivos de texto plano donde los campos de datos están separados por comas. Los programadores a menudo realizan esta tarea para facilitar el intercambio de datos entre diferentes aplicaciones de software, dada la simplicidad y amplia adopción del formato CSV en varios entornos de programación.
-
 ## Cómo:
-
 Visual Basic para Aplicaciones (VBA) simplifica el trabajo con archivos CSV a través de funciones y métodos integrados que permiten leer y escribir en estos archivos de manera fluida. A continuación, se presentan ejemplos que ilustran operaciones básicas con archivos CSV.
 
 ### Leer un archivo CSV:
-
 ```basic
 Sub ReadCSV()
     Dim filePath As String
@@ -45,7 +39,6 @@ End Sub
 ```
 
 ### Escribir en un archivo CSV:
-
 ```basic
 Sub WriteCSV()
     Dim filePath As String
@@ -67,7 +60,6 @@ ID,Nombre,Edad
 ```
 
 ## Análisis Profundo
-
 Históricamente, los archivos CSV han sido un método sencillo para almacenar datos tabulares en un formato de texto. La simplicidad de su estructura, donde cada línea corresponde a un registro de datos y cada campo dentro de un registro está separado por una coma, es tanto la fortaleza como la limitación del CSV. El formato no soporta nativamente tipos de datos, lo que significa que todos los datos se almacenan como cadenas, y la carga de convertir los datos al tipo correcto recae en el programador.
 
 En Visual Basic para Aplicaciones, el manejo de archivos CSV se realiza principalmente a través de operaciones básicas de archivos, como se muestra en los ejemplos anteriores. No hay soporte directo para el análisis de CSV como en lenguajes más modernos (por ejemplo, el módulo csv de Python), lo cual proporciona más control y comodidad al manejar datos CSV.

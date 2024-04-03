@@ -11,9 +11,6 @@ title: Organisation du code en fonctions
 weight: 18
 ---
 
-## Quoi & Pourquoi ?
-Organiser le code en fonctions signifie découper votre code en blocs réutilisables et modulaires. Nous faisons cela pour respecter le principe DRY (Don't Repeat Yourself, ou Ne vous répétez pas), cela rend le code plus clair, plus facile à lire et simple à déboguer.
-
 ## Comment faire :
 Imaginez que vous créez une calculatrice de base. Au lieu d'écrire la logique d'addition partout où vous en avez besoin, créez une fonction `add` :
 

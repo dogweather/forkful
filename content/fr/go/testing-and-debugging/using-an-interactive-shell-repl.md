@@ -14,12 +14,7 @@ title: "Utilisation d'un interpr\xE9teur de commandes interactif (REPL)"
 weight: 34
 ---
 
-## Quoi & Pourquoi ?
-
-Un shell interactif, ou boucle lire-évaluer-afficher (REPL, de l'anglais Read-Eval-Print Loop), vous permet d'expérimenter avec du code Go en temps réel, exécutant des commandes et obtenant des retours immédiats. Cette approche est largement utilisée pour l'apprentissage, le débogage et le prototypage, car elle contourne le cycle traditionnel éditer-compiler-exécuter, rendant le processus de développement plus rapide et plus intuitif.
-
 ## Comment faire :
-
 Bien que Go n'inclue pas de REPL intégré, la communauté a créé des outils comme `gore` pour combler cette lacune. D'abord, installez `gore` en exécutant :
 
 ```
@@ -62,7 +57,6 @@ Aire d'un cercle de rayon 4 : 50.26548245743669
 ```
 
 ## Plongée profonde :
-
 Le concept d'un REPL est ancien, remontant aux machines Lisp des années 1960, fournissant une expérience de programmation interactive. Contrairement à des langages comme Python ou JavaScript, Go a été conçu sans REPL, se concentrant à la place sur les binaires compilés pour la performance et la simplicité. Cela reflète la philosophie de Go en matière de simplicité et sa conception pour un logiciel évolutif et maintenable.
 
 Cependant, des outils comme `gore` ou `goplay` montrent la ressource de la communauté Go dans le comblement de cette lacune. Ces outils analysent dynamiquement le code Go et utilisent le paquet `go/eval` ou des mécanismes similaires pour l'exécuter en temps réel, bien qu'avec certaines limitations par rapport à un environnement REPL natif. Ces limitations découlent du système de types de Go et de son modèle de compilation, qui peuvent rendre l'évaluation à la volée difficile.

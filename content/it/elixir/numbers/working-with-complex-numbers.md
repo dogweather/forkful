@@ -10,9 +10,6 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-## Cosa e Perché?
-I numeri complessi hanno una parte reale e una parte immaginaria (come `3 + 4i`). Sono utilizzati in ingegneria, fisica e in certi problemi di informatica. I programmatori li usano per simulazioni, elaborazione di segnali e per risolvere certi tipi di problemi matematici in modo efficiente.
-
 ## Come fare:
 Elixir non ha numeri complessi integrati, quindi dobbiamo crearli noi o usare una libreria, come `ComplexNum`. Ecco un esempio rapido con una libreria:
 

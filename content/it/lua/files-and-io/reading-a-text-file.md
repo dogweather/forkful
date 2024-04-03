@@ -10,9 +10,6 @@ title: Lettura di un file di testo
 weight: 22
 ---
 
-## What & Why? (Cosa e Perché?)
-Leggere un file di testo in Lua significa estrarre dati da un documento salvato sul disco. I programmatori lo fanno per manipolare, analizzare o visualizzare il contenuto del file, cruciale in molti script e applicazioni.
-
 ## How to: (Come Fare)
 ```Lua
 -- Aprire un file in modalità lettura

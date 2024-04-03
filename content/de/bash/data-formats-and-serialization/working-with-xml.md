@@ -11,9 +11,6 @@ title: Arbeiten mit XML
 weight: 40
 ---
 
-## Was & Warum?
-Die Arbeit mit XML umfasst das Parsen, Extrahieren und Manipulieren von Daten im Extensible Markup Language-Format. Programmierer ringen mit XML, da es ein weit verbreitetes Datenaustauschformat für Konfigurationen, APIs und mehr ist.
-
 ## Wie:
 So parst du XML in Bash. Werkzeuge? xmllint und xmlstarlet. Durch XML-Elemente loopen? Auf jeden Fall. Beispiel mit beispielhafter Ausgabe:
 

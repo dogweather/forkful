@@ -16,12 +16,7 @@ title: Ghi log
 weight: 17
 ---
 
-## Gì và Tại Sao?
-
-Ghi log giống như việc giữ một nhật ký cho ứng dụng của bạn; đó là thực hành ghi lại các sự kiện, lỗi và các dữ liệu liên quan khác trong quá trình chạy. Các nhà phát triển sử dụng log để chẩn đoán sự cố, theo dõi hành vi hệ thống và thu thập thông tin giúp cải thiện—chúng là nền tảng của trí tuệ vận hành.
-
 ## Làm thế nào:
-
 Hãy thiết lập một kịch bản ghi log cơ bản trong Rust sử dụng crate `log`, nơi cung cấp một facade log, và `env_logger`, một triển khai log cho crate `log`. Đầu tiên, thêm chúng vào Cargo.toml của bạn:
 
 ```toml
@@ -53,7 +48,6 @@ WARN: Đây là một thông báo cảnh báo.
 Hãy thử nghiệm với biến môi trường `RUST_LOG` bằng cách thiết lập nó thành `error`, `warn`, `info`, `debug`, hoặc `trace` để kiểm soát độ chi tiết của log của bạn.
 
 ## Đào sâu
-
 Khái niệm về ghi log không phải là mới; nó đã tồn tại kể từ những ngày đầu của việc tính toán. Trước khi việc ghi log trở nên phổ biến trong phần mềm, các nhà phát triển phụ thuộc vào các phương pháp sơ khai như lệnh in hoặc công cụ gỡ lỗi để theo dõi việc thực thi chương trình. Khi chương trình trở nên phức tạp hơn, nhu cầu về một cách tiếp cận có cấu trúc đến việc ghi log cũng tăng theo.
 
 Trong Rust, crate `log` tóm tắt các chi tiết triển khai log, cho phép các nhà phát triển tích hợp các backend log khác nhau. Mặc dù `env_logger` là một lựa chọn phổ biến, có các lựa chọn thay thế như `fern`, `slog`, hoặc `tracing` mỗi cái đều có bộ tính năng và tùy chọn cấu hình của riêng mình.
@@ -71,7 +65,6 @@ Một số điều cần xem xét khi triển khai ghi log bao gồm:
 5. **Cấu hình**: Nhiều khung ghi log hỗ trợ cấu hình thông qua biến môi trường, các tệp cấu hình và/hoặc mã. Sự linh hoạt này là chìa khóa để chỉnh sửa đầu ra trong các môi trường khác nhau (phát triển, giai đoạn chuẩn bị, sản xuất).
 
 ## Xem Thêm
-
 - Tài liệu crate `log`: https://docs.rs/log/
 - Tài liệu crate `env_logger`: https://docs.rs/env_logger/
 - Trang ghi log của Rust by Example: https://doc.rust-lang.org/rust-by-example/std_misc/log.html

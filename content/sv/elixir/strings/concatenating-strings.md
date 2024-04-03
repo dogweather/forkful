@@ -11,9 +11,6 @@ title: "Konkatenering av str\xE4ngar"
 weight: 3
 ---
 
-## Vad & Varför?
-Att sammanfoga strängar handlar om att förena två eller flera strängar för att bilda en enda textbit. Du kan behöva sammanfoga text för att generera användarmeddelanden, skapa filvägar eller för data-serialiseringsprocesser. Det är en grundläggande operation i alla programmeringsspråk, inklusive Elixir, vilket möjliggör för utvecklare att konstruera dynamiska strängar med lätthet.
-
 ## Hur man gör:
 I Elixir kan du sammanfoga strängar på några raka vägar. Låt oss utforska de vanligaste metoderna:
 

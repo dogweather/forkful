@@ -10,9 +10,6 @@ title: Concatenazione di stringhe
 weight: 3
 ---
 
-## What & Why?
-La concatenazione di stringhe è la pratica di unire due o più stringhe di testo in una sola. I programmatori la utilizzano per costruire messaggi, indirizzi web, codice, ecc., in modo dinamico.
-
 ## How to:
 In JavaScript, si concatena con l'operatore `+` o con i template literals.
 

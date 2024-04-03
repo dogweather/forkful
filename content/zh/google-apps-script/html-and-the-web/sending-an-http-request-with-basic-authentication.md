@@ -22,12 +22,7 @@ title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001HTTP\u8BF7\u6C42"
 weight: 45
 ---
 
-## 什么以及为什么？
-
-发送带有基本认证的HTTP请求涉及将用户名和密码编码到请求头中，以访问受保护的资源。程序员使用这种方法进行服务器端认证，以集成需要基本认证的API，用于操作如数据检索或发布内容等。
-
 ## 如何操作：
-
 在Google Apps Script中，要发送带有基本认证的HTTP请求，你需要使用`UrlFetchApp`服务并配合一个base64编码的授权头。以下是逐步指南：
 
 1. **编码凭证**：首先，将你的用户名和密码用base64编码。Google Apps Script没有用于字符串的native base64编码函数，因此你将使用Utilities.base64Encode来完成这个目的。
@@ -67,7 +62,6 @@ Logger.log(response.getContentText());
 确保通过检查响应代码或使用`muteHttpExceptions`选项来处理可能的HTTP错误，以便更加控制错误管理。
 
 ## 深入了解
-
 发送带有基本认证的HTTP请求在许多编程语言中一直是用于访问需要认证的基于网络的资源的标准方法。在Google Apps Script的上下文中，`UrlFetchApp`提供了执行这些HTTP请求的直接方法，包括那些需要认证的请求。请求头中包含基本凭据是一种简单却有效的方法，但由于凭据以纯文本形式（仅base64编码）发送，如果被拦截可以轻易解码，因此带来安全隐患。
 
 为了增强安全性，尤其是在处理敏感数据或操作时，推荐使用如OAuth 2.0等替代方案。Google Apps Script对于支持此协议的服务，通过`OAuth2`库内置了对OAuth 2.0的支持，简化了认证过程。

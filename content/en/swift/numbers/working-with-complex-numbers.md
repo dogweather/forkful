@@ -10,9 +10,6 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-Complex numbers have a real part and an imaginary part (like 3 + 4i). Programmers use them in Swift for tasks like signal processing, solving certain math problems, and simulating physics.
-
 ## How to:
 Swift doesn't have built-in complex number support, but we can roll our own:
 

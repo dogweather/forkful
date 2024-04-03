@@ -14,14 +14,10 @@ title: Trabajando con CSV
 weight: 37
 ---
 
-## Qué y por qué?
-
-Trabajar con archivos CSV (Valores Separados por Comas) en Google Apps Script implica leer, modificar y escribir archivos de texto plano donde cada línea representa un registro de datos con valores separados por comas. Los programadores hacen esto para intercambiar datos fácilmente entre diferentes aplicaciones, bases de datos o lenguajes de programación debido a la amplia adopción de CSV como un formato simple de intercambio de datos basado en texto.
-
 ## Cómo hacerlo:
 
-### Leer datos CSV
 
+### Leer datos CSV
 Para leer datos CSV de un archivo almacenado en Google Drive, primero necesitas obtener el contenido del archivo como una cadena, y luego analizarlo. Google Apps Script facilita la obtención del contenido del archivo con el servicio DriveApp.
 
 ```javascript
@@ -39,7 +35,6 @@ function readCSV() {
 ```
 
 ### Escribir datos CSV
-
 Crear y escribir en un CSV implica construir una cadena con valores separados por comas y nuevas líneas, luego guardar o exportarla. Este ejemplo demuestra cómo crear un nuevo archivo CSV en Google Drive.
 
 ```javascript
@@ -54,7 +49,6 @@ function writeCSV() {
 ```
 
 ### Muestra de salida
-
 Al registrar las celdas de filas al leer un CSV:
 
 ```plaintext
@@ -71,7 +65,6 @@ Jane Smith,34,Designer
 ```
 
 ## Análisis Profundo
-
 Históricamente, los archivos CSV han sido favorecidos por su simplicidad y legibilidad humana, haciéndolos accesibles para no programadores y útiles para tareas rápidas de inspección de datos. Sin embargo, Google Apps Script opera dentro del ámbito del ecosistema de Google, donde Google Sheets actúa como una alternativa potente y amigable para la manipulación de CSV. Sheets no solo proporciona una GUI para editar datos, sino que también soporta fórmulas complejas, estilos y muchas más características que los CSV en crudo carecen.
 
 A pesar de las ventajas ofrecidas por Google Sheets, la manipulación directa de CSV en Google Apps Script sigue siendo importante para tareas automatizadas, especialmente cuando se trata de sistemas externos que generan o requieren datos en formato CSV. Por ejemplo, integrarse con sistemas heredados, exportar datos para usar en otras aplicaciones o preprocesamiento antes de alimentar datos en Google Sheets.

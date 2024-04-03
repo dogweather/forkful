@@ -14,12 +14,7 @@ title: Pobieranie aktualnej daty
 weight: 29
 ---
 
-## Co i dlaczego?
-
-W Visual Basic for Applications (VBA), pobieranie bieżącej daty to powszechne zadanie, które umożliwia programistom dynamiczną pracę z datami w ich makrach lub aplikacjach. Funkcjonalność ta jest kluczowa dla operacji takich jak logowanie, znakowanie czasowe transakcji czy wykonywanie obliczeń opartych na datach.
-
 ## Jak to zrobić:
-
 Pobieranie bieżącej daty w VBA jest proste, za pomocą funkcji `Date`, podczas gdy funkcja `Now` dostarcza zarówno bieżącą datę, jak i czas. Oto jak możesz pracować z obiema:
 
 ```vb
@@ -46,7 +41,6 @@ Bieżąca data i czas: 4/12/2023 15:45:22
 Pamiętaj, że format daty może się różnić w zależności od ustawień systemowych komputera użytkownika.
 
 ## Dogłębna analiza
-
 Funkcje `Date` i `Now` kapsułkują złożoność pracy z datą i czasem w Visual Basic for Applications, zapewniając abstrakcję na poziomie aplikacji, która sprawia, że praca z datami jest prosta i intuicyjna. Historycznie, radzenie sobie z datą i czasem w programowaniu było pełne wyzwań, w tym obsługi różnych stref czasowych, zmian czasu letniego oraz różnych formatów daty.
 
 W VBA, te funkcje opierają się na systemowej dacie i czasie, co oznacza, że są one zależne od lokalizacji użytkownika i ustawień systemowych. To miecz obosieczny, który zapewnia zgodność z otoczeniem użytkownika, ale wymaga także starannego traktowania lokalizacji oraz dostosowań strefy czasowej w globalnych aplikacjach.

@@ -11,12 +11,7 @@ title: Sending an HTTP request with basic authentication
 weight: 45
 ---
 
-## What & Why?
-
-Sending an HTTP request with basic authentication involves attaching a username and password to a request to verify the user's identity. Programmers use it to access resources that require authentication, ensuring secure communication between the client and server.
-
 ## How to:
-
 In Dart, you can use the `http` package to send HTTP requests with basic authentication. First, add the `http` package to your `pubspec.yaml` file:
 
 ```yaml

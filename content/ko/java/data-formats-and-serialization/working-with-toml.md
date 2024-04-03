@@ -14,9 +14,6 @@ title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE3
 weight: 39
 ---
 
-## 무엇 & 왜?
-TOML은 Tom's Obvious, Minimal Language를 의미합니다. 이것은 구성 파일을 위해 사용되는 데이터 직렬화 형식입니다. 프로그래머들은 이를 쉽게 읽고 쓸 수 있으며, 해시 테이블에 잘 맵핑되기 때문에 사용합니다.
-
 ## 방법:
 TOML 파싱 라이브러리가 필요합니다. `toml4j`를 추천합니다. 다음과 같이 프로젝트에 추가하세요:
 

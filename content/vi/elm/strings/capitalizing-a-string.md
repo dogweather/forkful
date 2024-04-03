@@ -15,9 +15,6 @@ title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---
 
-## Gì và Tại sao?
-Việc viết hoa một chuỗi nghĩa là chuyển ký tự đầu tiên sang chữ hoa và giữ nguyên phần còn lại ở dạng chữ thường. Lập trình viên thực hiện điều này đối với các danh từ riêng, tiêu đề, hoặc để áp dụng một phong cách nhất quán cho các tiêu đề và nội dung văn bản.
-
 ## Làm thế nào:
 Trong Elm, bạn không có sẵn hàm viết hoa ngay từ đầu, nhưng bạn có thể dễ dàng tạo một hàm như sau:
 

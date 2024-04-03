@@ -24,12 +24,7 @@ title: "\u6570\u5024\u306E\u4E38\u3081\u51E6\u7406"
 weight: 13
 ---
 
-## 何となぜ？
-
-数値を丸めるというのは、それらを最も近い整数か、指定された精度の度合いに調整することを意味します。プログラマーが数値を丸めるのは、可読性を向上させたり、ストレージ要件を削減したり、正確な値が後続の計算で重要ではない場合があります。
-
 ## 方法:
-
 Kotlinでは、`roundToInt()`, `roundToDouble()`, そしてより制御された`BigDecimal`を使用して丸めることができます:
 
 ```kotlin
@@ -49,7 +44,6 @@ fun main() {
 ```
 
 ## 詳細解説
-
 歴史的に、数値を丸めるという概念は、数値精度の限界を扱うために、数学および計算の両方で基本的な概念でした。初期の計算において、メモリの高価さのため、丸めが重要でした。
 
 Kotlinでの丸めは、標準的なJavaライブラリに基づいています。丸めのオプションには、最も近い整数に丸める`Math.round()`や、スケールと`RoundingMode`を指定できるカスタマイズ可能な丸めのための`BigDecimal`があります。
@@ -57,7 +51,6 @@ Kotlinでの丸めは、標準的なJavaライブラリに基づいています�
 各`RoundingMode`には、丸めるオプションの真ん中にちょうどある数字（タイ）を処理するための異なる方針があります。たとえば、`RoundingMode.HALF_UP`は最も近い隣の数字に丸めますが、隣が等距離にある場合は上に丸めます。
 
 ## 参考
-
 - Kotlinの[`BigDecimal`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/java.math.-big-decimal/index.html)に関するドキュメント
 - OracleのJavaドキュメントにおける[`RoundingMode`](https://docs.oracle.com/javase/8/docs/api/java/math/RoundingMode.html)
 - 浮動小数点算術のIEEE標準 (IEEE 754) [IEEE標準754](https://ieeexplore.ieee.org/document/4610935)

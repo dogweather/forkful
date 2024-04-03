@@ -15,12 +15,7 @@ title: Leggere gli argomenti della riga di comando
 weight: 23
 ---
 
-## Cosa & Perché?
-
-Leggere gli argomenti della riga di comando in Dart consente ai programmatori di inserire dati direttamente nella console quando eseguono un programma Dart, aumentando l'interattività e la flessibilità per vari casi d'uso, inclusi script di automazione, strumenti CLI (interfaccia a riga di comando) o elaborazione batch. Questa caratteristica è fondamentale per creare applicazioni a riga di comando adattabili e facili da usare.
-
 ## Come fare:
-
 Dart offre un approccio semplice per accedere agli argomenti della riga di comando tramite il `List<String> args` nel metodo principale. Di seguito è riportato un semplice esempio che mostra come leggere e utilizzare gli argomenti della riga di comando.
 
 ```dart
@@ -48,7 +43,6 @@ Argomenti della Riga di Comando:
 ```
 
 ### Utilizzo di una Popolare Libreria di Terze Parti: `args`
-
 Sebbene le capacità integrate di Dart per la gestione degli argomenti della riga di comando siano robuste per molte applicazioni, il pacchetto `args` offre un modo più raffinato per definire e analizzare gli argomenti della riga di comando per esigenze più complesse.
 
 Prima, aggiungi il pacchetto `args` al tuo `pubspec.yaml`:

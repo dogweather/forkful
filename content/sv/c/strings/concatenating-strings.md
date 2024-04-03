@@ -13,12 +13,7 @@ title: "Sammanfoga str\xE4ngar"
 weight: 3
 ---
 
-## Vad & Varför?
-
-Strängkonkatenering i C innebär att sätta ihop två eller flera strängar slut-i-slut för att bilda en ny sträng. Programmerare utför denna operation för att dynamiskt konstruera strängar vid körning, vilket är väsentligt för att skapa meningsfulla meddelanden, filsökvägar eller några data som samlats från olika strängkällor.
-
 ## Hur man gör:
-
 I C är strängar arrayer av tecken som avslutas med ett null-tecken (`\0`). Till skillnad från i högre programmeringsspråk, tillhandahåller C inte en inbyggd funktion för strängkonkatenering. Istället använder du funktionerna `strcat()` eller `strncat()` från biblioteket `<string.h>`.
 
 Här är ett enkelt exempel som använder `strcat()`:
@@ -61,7 +56,6 @@ int main() {
 Detta begränsar konkateneringen till de första `num` tecknen i källsträngen, vilket hjälper till att förhindra buffertöverskridningar.
 
 ## Fördjupning
-
 Funktionerna `strcat()` och `strncat()` har varit en del av C:s standardbibliotek sedan dess början, vilket återspeglar språkets lågnivåkaraktär som kräver manuell hantering av strängar och minne. Till skillnad från många moderna programmeringsspråk som behandlar strängar som förstaklassens objekt med inbyggda konkateneringsoperatorer (som `+` eller `.concat()`), kräver C:s tillvägagångssätt en djupare förståelse för pekare, minnesallokering och potentiella fallgropar som buffertöverskridningar.
 
 Även om `strcat()` och `strncat()` är brett använda, kritiseras de ofta för deras potential att skapa säkerhetsproblem om de inte används försiktigt. Buffertöverskridningar, där data överskrider det tilldelade minnet, kan leda till krascher eller utnyttjas för godtycklig kodexekvering. Som ett resultat vänder sig programmerare alltmer till säkrare alternativ, såsom `snprintf()`, som ger mer förutsägbart beteende genom att begränsa antalet tecken som skrivs till destinationssträngen baserat på dess storlek:

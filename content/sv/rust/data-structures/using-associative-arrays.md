@@ -13,12 +13,7 @@ title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---
 
-## Vad & Varför?
-
-Associativa arrayer, eller vad Rustanvändare kallar "hash maps", är samlingar som lagrar data i nyckel-värde-par. Programmerare använder dem för snabb uppslagning av data, vilket möjliggör effektiv datahantering baserad på unika nycklar.
-
 ## Hur man gör:
-
 I Rust tillhandahåller typen `HashMap` från modulen `std::collections` funktionerna för associativa arrayer. Så här kan du arbeta med dem:
 
 ```Rust
@@ -49,5 +44,4 @@ fn main() {
 ```
 
 ## Djupdykning
-
 `HashMap` i Rust använder en hashfunktion för att mappa nycklar till värden, vilket möjliggör snabb upphämtning av data. Dock kommer denna effektivitet med en kostnad: hash maps bibehåller inte ordningen på sina element. Detta är i kontrast till andra implementationer av associativa arrayer, som de i Python (`dict`) eller Ruby, som i senare versioner bibehåller insättningsordning som en funktion. För användningsfall där ordningen på nyckel-värde-par är betydande, kan Rustutvecklare överväga att använda `BTreeMap` från modulen `std::collections`, som bibehåller ordning men kan erbjuda långsammare insättning och upphämtning jämfört med `HashMap`. I slutändan beror valet mellan `HashMap` och `BTreeMap` på specifika krav gällande ordning och prestanda.

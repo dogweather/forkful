@@ -13,9 +13,6 @@ title: Analysering av en dato fra en streng
 weight: 30
 ---
 
-## Hva & Hvorfor?
-Å analysere en dato fra en streng innebærer å trekke ut datoinformasjon kodet innenfor strenger og konvertere den til et strukturert format som programmeringsmiljøer kan gjenkjenne og manipulere. Programmerere gjør dette for å muliggjøre operasjoner som datokomparasjon, aritmetikk, formatering og lokalisering, som er essensielt for effektiv håndtering av planlegging, tidsstempler og historiske data i programvare.
-
 ## Hvordan:
 I Fish Shell har du ikke innebygde kommandoer spesielt designet for å analysere datoer fra strenger. I stedet er du avhengig av eksterne verktøy som `date` (tilgjengelig på Linux og macOS) eller benytter populære tredjepartsverktøy som `GNU date` for mer kompleks analyse. Her er hvordan du kan nærme deg det:
 

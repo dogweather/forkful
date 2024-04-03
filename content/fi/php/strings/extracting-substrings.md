@@ -11,9 +11,6 @@ title: Merkkijonojen osien poimiminen
 weight: 6
 ---
 
-## What & Why? - Mitä ja Miksi?
-Substringien poiminta tarkoittaa isommasta merkkijonosta tietyn osan eli alamerkkijonon erottamista. Ohjelmoijat käyttävät sitä datan räätälöintiin, järjestelyyn ja analysointiin.
-
 ## How to: - Kuinka tehdä:
 PHP:ssä alamerkkijonoja voi poimia `substr`- ja `mb_substr`-funktioiden avulla. Tässä pari esimerkkiä:
 

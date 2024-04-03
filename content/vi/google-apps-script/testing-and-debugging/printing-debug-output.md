@@ -17,12 +17,7 @@ title: "In ra th\xF4ng tin debug"
 weight: 33
 ---
 
-## Gì & Tại Sao?
-
-In thông tin lỗi để gỡ rối bao gồm việc đặt chiến lược các câu lệnh ghi nhật ký trong mã của bạn để hiển thị giá trị biến, dòng thực thi, hoặc thông báo lỗi trong thời gian chạy. Lập trình viên sử dụng nó rộng rãi để truy vết và chẩn đoán hành vi của các kịch bản của họ, đảm bảo tính chính xác và hiệu quả trong các ứng dụng Google Apps Script của họ.
-
 ## Cách thực hiện:
-
 Google Apps Script cung cấp lớp `Logger` cho việc gỡ rối cơ bản, và cho nhu cầu nâng cao hơn, lớp `console` được giới thiệu trong thời gian chạy V8.
 
 **Sử dụng Logger:**
@@ -59,7 +54,6 @@ Trạng thái hiện tại: hoạt động, Số đếm: 150
 ```
 
 ## Sâu xa hơn
-
 Ban đầu, `Logger.log` là công cụ chính cho việc gỡ lỗi trong Google Apps Script, cung cấp một cách đơn giản, trực tiếp để in đầu ra để kiểm tra. Tuy nhiên, khi các kịch bản trở nên phức tạp hơn và được tích hợp với các dịch vụ của Google Cloud Platform, nhu cầu về một giải pháp ghi nhật ký mạnh mẽ hơn trở nên rõ ràng.
 
 Nhập thời gian chạy V8, mang `console.log` vào sử dụng. Điều này không chỉ đồng nhất Google Apps Script với cú pháp JavaScript chuẩn, làm cho ngôn ngữ này dễ tiếp cận hơn với các nhà phát triển quen với JavaScript mà còn tận dụng cơ sở hạ tầng mạnh mẽ của khả năng ghi nhật ký của Google Cloud. Sự ra đời của `console.log` và sự tích hợp của nó với Google Cloud Platform đánh dấu một bước tiến đáng kể trong khả năng gỡ lỗi trong Google Apps Script, cung cấp cho các nhà phát triển một cách tiếp cận động và có thể mở rộng hơn để giám sát và khắc phục sự cố các kịch bản của họ.

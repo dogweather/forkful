@@ -12,12 +12,7 @@ title: Schrijven naar standaardfout
 weight: 25
 ---
 
-## Wat & Waarom?
-
-Schrijven naar de standaardfout in C houdt in dat foutmeldingen en diagnostische informatie naar een aparte stroom worden geleid dan de hoofdprogramma-uitvoer. Programmeurs doen dit om foutmeldingen te scheiden van de standaarduitvoer, waardoor beide makkelijker apart te lezen en te verwerken zijn, vooral bij het debuggen of loggen van de uitvoering van programma's.
-
 ## Hoe te:
-
 In C wordt de `stderr`-stroom gebruikt om foutberichten te schrijven. In tegenstelling tot schrijven naar de standaarduitvoer met `printf`, kan het schrijven naar `stderr` gedaan worden met behulp van `fprintf` of `fputs`. Hier is hoe je dat kunt doen:
 
 ```c
@@ -47,7 +42,6 @@ $ ./uw_programma > output.txt
 Dit commando leidt alleen de standaarduitvoer om naar `output.txt`, terwijl de foutmeldingen nog steeds op het scherm verschijnen.
 
 ## Diepere Duik
-
 Het onderscheid tussen `stdout` en `stderr` in op Unix-gebaseerde systemen gaat terug tot de vroege dagen van C en Unix. Deze scheiding maakt robuustere foutafhandeling en loggen mogelijk, aangezien het programmeurs in staat stelt foutmeldingen onafhankelijk van de standaardprogrammauitvoer om te leiden. Terwijl `stderr` standaard ongebufferd is om onmiddellijke uitvoer van foutmeldingen te garanderen, wat helpt bij het debuggen van crashes en andere kritieke problemen, is `stdout` doorgaans gebufferd, wat betekent dat de uitvoer kan worden vertraagd totdat de buffer wordt geleegd (bijvoorbeeld bij voltooiing van het programma of handmatig legen).
 
 Bij moderne toepassingen is het schrijven naar `stderr` nog steeds relevant, vooral voor opdrachtregelhulpmiddelen en servertoepassingen waarbij het onderscheid tussen reguliere logberichten en fouten cruciaal is. Echter, voor complexere foutafhandeling, vooral in GUI-toepassingen of waar geavanceerdere logmechanismen nodig zijn, kunnen programmeurs gebruik maken van gespecialiseerde logbibliotheken die meer controle bieden over berichtopmaak, bestemmingen (bijvoorbeeld bestanden, netwerk) en ernstniveaus (info, waarschuwing, fout, enz.).

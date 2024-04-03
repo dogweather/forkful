@@ -10,9 +10,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## What & Why?
-Mittaaminen tarkoittaa merkkijonon pituuden selvittämistä. Ohjelmoijat tekevät sen, koska pituuden tietäminen on kriittistä kun käsitellään tekstidataa – esimerkiksi validointiin, rajaukseen ja iterointiin.
-
 ## How to:
 Haskellissa merkkijonon pituuden löytäminen on suoraviivaista. Käytä `length`-funktiota. 
 

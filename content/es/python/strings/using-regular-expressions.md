@@ -12,9 +12,6 @@ title: Usando expresiones regulares
 weight: 11
 ---
 
-## ¿Qué y por qué?
-Las expresiones regulares (regex) son patrones utilizados para coincidir combinaciones de caracteres en cadenas de texto. Los programadores las utilizan para buscar, editar o manipular texto basado en patrones definidos, haciéndolas indispensables para tareas como la validación de datos, análisis sintáctico o transformación.
-
 ## Cómo hacerlo:
 Usar regex en Python implica el módulo `re`, que proporciona un conjunto de funciones para procesar texto utilizando expresiones regulares.
 

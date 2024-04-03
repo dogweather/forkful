@@ -11,9 +11,6 @@ title: "XML:n k\xE4sittely"
 weight: 40
 ---
 
-## Mikä & Miksi?
-XML:n (eXtensible Markup Language) kanssa työskentely sisältää tietojen manipuloinnin ja käyttämisen, jotka on järjestetty Laajennettavassa Merkintäkielessä. Ohjelmoijat työskentelevät XML:n parissa mahdollistaakseen yhteistoiminnallisuuden muiden järjestelmien kanssa tai lukeakseen ja kirjoittaakseen asetustiedostoja, datalähteitä ja muita web-palveluissa yleisiä jäsenneltyjä asiakirjoja.
-
 ## Miten:
 ```PowerShell
 # XML-tiedoston lataaminen muuttujaan

@@ -10,11 +10,7 @@ title: Code in Funktionen organisieren
 weight: 18
 ---
 
-## Was & Warum?
-Code in Funktionen zu organisieren unterteilt Aufgaben in wiederverwendbare Teile, macht den Code sauberer und leichter wartbar. Wir tun dies, um Redundanz zu reduzieren, das Testen zu erleichtern und die Lesbarkeit zu verbessern.
-
 ## Wie man es macht:
-
 ```javascript
 // Definiere eine Funktion zur Berechnung der Fläche eines Rechtecks
 function calculateArea(width, height) {

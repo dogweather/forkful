@@ -11,9 +11,6 @@ title: Een tekstbestand lezen
 weight: 22
 ---
 
-## Wat & Waarom?
-Een tekstbestand lezen is het verkrijgen van tekstinhoud uit een .txt-bestand op je schijf. Programmeurs doen dit om gegevens te verwerken zoals configuratie, gebruikersinvoer of om bulktekst te verwerken.
-
 ## Hoe:
 De standaardbibliotheek van Rust maakt het eenvoudig om bestanden te lezen.
 

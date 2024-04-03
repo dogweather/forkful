@@ -10,9 +10,6 @@ title: Finding the length of a string
 weight: 7
 ---
 
-## What & Why?
-Finding the length of a string in C involves determining the number of characters before the null terminator `\0`. Programmers do this to manipulate strings correctly without running into errors like buffer overflows, which can lead to security vulnerabilities or program crashes.
-
 ## How to:
 In C, the standard library function `strlen()` is commonly used to find the length of a string. Here's a quick example:
 

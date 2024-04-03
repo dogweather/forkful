@@ -15,12 +15,7 @@ title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---
 
-## Quoi et pourquoi ?
-
-Vérifier si un répertoire existe est une opération fondamentale lors de l'écriture de scripts qui interagissent avec le système de fichiers, en s'assurant que votre programme opère sur des chemins valides et évite les erreurs liées aux répertoires inexistants. Cette tâche est cruciale pour créer de nouveaux fichiers dans les répertoires, les lire, ou effectuer des opérations spécifiques aux répertoires en toute sécurité.
-
 ## Comment faire :
-
 En Lua, vous n'avez pas de fonction intégrée pour vérifier directement si un répertoire existe, donc vous comptez souvent sur la bibliothèque Lua File System (lfs), une bibliothèque tierce populaire pour les opérations sur les fichiers.
 
 Assurez-vous d'abord d'avoir Lua File System installé. Si ce n'est pas le cas, vous pouvez généralement l'installer en utilisant LuaRocks :

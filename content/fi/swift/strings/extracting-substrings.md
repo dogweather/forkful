@@ -10,9 +10,6 @@ title: Merkkijonojen osien poimiminen
 weight: 6
 ---
 
-## What & Why? (Mitä & Miksi?)
-Substringin poimiminen on perusoperaatio, joka irrottaa osan merkkijonosta. Käytämme sitä, kun haluamme käsitellä tai näyttää vain tietyn osan merkkijonosta.
-
 ## How to: (Kuinka tehdään:)
 ```Swift
 let fullString = "Hello, World!"

@@ -14,12 +14,7 @@ title: Bruke associative tabeller
 weight: 15
 ---
 
-## Hva & Hvorfor?
-
-Assosiative tabeller, eller som Elm kaller dem, Ordbøker, kobler nøkler til verdier på en måte som gjør oppslag, innsetting og sletting av verdier super kjappe. De er din go-to når du trenger å holde styr på ting uten en streng orden, som brukerpreferanser eller inventarlister.
-
 ## Hvordan:
-
 I Elm jobber du med Ordbøker i `Dict`-modulen, så la oss dykke inn i et raskt eksempel:
 
 ```Elm
@@ -52,7 +47,6 @@ Eksempelutdata når du viser `dictToList`:
 Dette demonstrerer de grunnleggende operasjonene: å opprette, oppdatere, få tilgang til og iterere over en Ordbok.
 
 ## Dypdykk
-
 Ordbøker i Elm bruker internt en struktur kjent som et AVL-tre - en type selvbalanserende binært søketre. Dette valget skaper en balanse mellom å sikre at operasjoner som insert, get og remove har god ytelse (logaritmisk tidskompleksitet) og vedlikeholder enkelhet i håndteringen av dataene.
 
 Til tross for styrkene til Elms `Dict`, er det ikke en løsning som passer for alle. For samlinger som er ordnet eller trenger å itereres over sekvensielt, kan Liste eller Array være mer passende. Videre, når man jobber med et fast sett av kjente nøkler, kan bruk av egendefinerte typer (Elms versjon av enums) tilby mer typesikkerhet og klarere intensjon i koden din.

@@ -12,9 +12,6 @@ title: Een tekstbestand schrijven
 weight: 24
 ---
 
-## Wat & Waarom?
-Het schrijven van een tekstbestand in Dart houdt in dat bestanden op de schijf worden gemaakt of gewijzigd om gegevens op te slaan in een leesbaar formaat. Programmeurs doen dit om applicatiegegevens, configuraties, logs of informatie die tussen applicatieruns moet blijven bestaan of gegevens moet delen met andere applicaties of gebruikers, op te slaan.
-
 ## Hoe:
 De kernbibliotheek van Dart biedt het `dart:io` pakket voor bestandsbehandeling, waarmee je tekstbestanden kunt schrijven zonder de noodzaak voor bibliotheken van derden. Hier is een eenvoudig voorbeeld van het schrijven van een tekstbestand:
 

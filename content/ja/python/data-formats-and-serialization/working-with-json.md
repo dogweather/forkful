@@ -24,16 +24,10 @@ title: "JSON\u3092\u6D3B\u7528\u3059\u308B"
 weight: 38
 ---
 
-## 何となぜ？
-
-JSON（JavaScript Object Notation）を扱うということは、JSON形式の文字列をPythonオブジェクトに解析したり、その逆を行ったりすることを意味します。これは、JSONがサーバーとクライアント間のデータ交換の共通言語であるため、WebやAPIの開発に不可欠です。
-
 ## 方法:
-
 Pythonの組み込み`json`ライブラリは、エンコーディング（PythonオブジェクトをJSONに変換）とデコーディング（JSONをPythonオブジェクトに変換）の過程を簡素化します。以下の方法で使用できます：
 
 ### PythonオブジェクトをJSONにエンコーディング：
-
 ```python
 import json
 
@@ -72,7 +66,6 @@ print(json_string)
 ```
 
 ### JSONをPythonオブジェクトにデコーディング：
-
 ```python
 json_string = '''
 {
@@ -111,11 +104,9 @@ print(data)
 ```
 
 ### サードパーティのライブラリの使用:
-
 スキーマ検証やURLから直接JSONファイルを解析するなど、より複雑なJSON処理には、HTTPリクエスト用の`requests`や検証用の`jsonschema`などのライブラリが役立ちます。
 
 #### `requests`を使ってURLからJSONを解析する例：
-
 ```python
 import requests
 
@@ -128,7 +119,6 @@ print(data)
 このスニペットは、指定されたURLからJSONデータを取得し、直接Pythonオブジェクトに変換します。
 
 #### `jsonschema`を使用してJSONを検証する：
-
 まず、pipを介してライブラリをインストールします：
 
 ```bash

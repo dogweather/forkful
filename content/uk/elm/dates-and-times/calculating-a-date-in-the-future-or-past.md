@@ -10,14 +10,13 @@ title: "\u041E\u0431\u0447\u0438\u0441\u043B\u0435\u043D\u043D\u044F \u0434\u043
 weight: 26
 ---
 
-## What & Why?
 ## Що і чому?
-
 Calculating a future or past date involves figuring out a date some days ahead or behind a specific date. Coders need this for features like reminders, subscription renewals, or historical data analysis.
 
 ## How to:
-## Як це робити:
 
+
+## Як це робити:
 Elm makes date computations quite clear. Let's calculate today's date plus 10 days and minus 30 days.
 
 ```Elm
@@ -69,8 +68,9 @@ Model
 ```
 
 ## Deep Dive
-## Поглиблений розгляд
 
+
+## Поглиблений розгляд
 Elm's handling of dates hinges on the `Time` and `Date` modules. Historically, date manipulation in programming is tricky due to time zones and leap years. Elm simplifies this by using `Posix` time, counting milliseconds since the Unix epoch.
 
 Alternatives? You could use JavaScript's `Date`, but it has issues around daylight saving time and mutability. Elm's `Date` is immutable and handles complexities silently.
@@ -78,7 +78,8 @@ Alternatives? You could use JavaScript's `Date`, but it has issues around daylig
 For in-depth date logic, like recurring events, you might need a custom solution. Elm's simplicity also means some use cases require extra effort, like installing third-party date libraries.
 
 ## See Also
-## Дивись також
 
+
+## Дивись також
 - Elm's [official Time documentation](https://package.elm-lang.org/packages/elm/time/latest/)
 - [rtfeldman/elm-iso8601-date-strings](https://package.elm-lang.org/packages/rtfeldman/elm-iso8601-date-strings/latest/) for ISO 8601 string parsing

@@ -15,16 +15,10 @@ title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---
 
-## Quoi & Pourquoi ?
-
-Mettre en majuscule la première lettre d'une chaîne de caractères en Rust implique de modifier cette chaîne afin que son premier caractère soit une majuscule s'il s'agit d'une lettre, tout en laissant le reste de la chaîne inchangé. Les programmeurs effectuent souvent cette opération à des fins de formatage, comme préparer des mots pour des titres ou assurer la cohérence dans les entrées utilisateur.
-
 ## Comment faire :
-
 Pour mettre en majuscule la première lettre d'une chaîne de caractères en Rust, vous avez deux options principales : utiliser les fonctionnalités de la bibliothèque standard ou employer des crates tierces pour des besoins plus complexes ou spécifiques. Voici comment procéder dans les deux cas.
 
 ### Utiliser la bibliothèque standard de Rust
-
 La bibliothèque standard de Rust ne propose pas de méthode directe pour mettre en majuscule les chaînes de caractères, mais vous pouvez y parvenir en manipulant les caractères de la chaîne.
 
 ```rust
@@ -43,7 +37,6 @@ fn main() {
 ```
 
 ### Utiliser la crate `heck`
-
 Pour une approche plus directe, surtout lorsque vous travaillez dans un contexte de traitement de texte plus vaste, vous pourriez préférer utiliser des bibliothèques tierces telles que `heck`. La crate `heck` offre diverses fonctionnalités de conversion de cas, y compris un moyen simple de mettre en majuscule les chaînes de caractères.
 
 Tout d'abord, ajoutez `heck` à votre `Cargo.toml` :

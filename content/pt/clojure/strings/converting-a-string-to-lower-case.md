@@ -11,9 +11,6 @@ title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---
 
-## O Que & Porquê?
-Converter uma string para minúsculas significa transformar todos os caracteres maiúsculos em suas correspondentes minúsculas. Programadores fazem isso para padronizar dados, facilitar comparações de texto e evitar erros sensíveis a maiúsculas.
-
 ## Como fazer:
 ```Clojure
 ;; Utilizando a função `clojure.string/lower-case` para converter uma string para minúsculas

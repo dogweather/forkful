@@ -10,9 +10,6 @@ title: Logging
 weight: 17
 ---
 
-## What & Why?
-Logging is essentially jotting down what your application is up to—a diary, if you will, but for code. Programmers do it to keep track of the nitty-gritty, like state changes, system events, and pesky bugs, making sure no hiccups slip past unnoticed.
-
 ## How to:
 In Fish, logging can be as simple as redirecting standard output and error streams to a file. Let's make a log entry for our script's start and end times. 
 

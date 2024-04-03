@@ -10,9 +10,6 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## Hva & Hvorfor?
-Interpolering av strenger lar deg sette verdier direkte inn i en tekststreng, noe som er hendig for å lage dynamisk tekst, som f.eks. sensorverdier eller brukerinput i meldinger. Programmerere bruker dette for å forenkle og gjøre kode mer lesbar og vedlikeholdbar.
-
 ## Slik gjør du:
 ```Arduino
 void setup() {

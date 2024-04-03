@@ -9,12 +9,7 @@ title: Reading a text file
 weight: 22
 ---
 
-## What & Why?
-
-Reading a text file means loading its content into your program. We do it to process, analyze, or display stored data, like settings, logs, or user input.
-
 ## How to:
-
 Let's check out how to read a text file line by line and then all at once.
 
 ```Lua
@@ -51,7 +46,6 @@ Hello, Lua!
 ```
 
 ## Deep Dive
-
 Historically, reading files is a fundamental operation, dating back to early computers. In Lua, this is handled via simple I/O model with the `io` library.
 
 While `io.lines` and `io.read` are common ways to access a file's content, there are alternatives like `lfs` (LuaFileSystem) for advanced file operations.
@@ -61,6 +55,5 @@ When reading, Lua handles buffering behind the scenes, yet for large files, you 
 Using the `io` library is straightforward, but always remember to close files to prevent resource leaks. On error, Lua file operations return `nil` and an error message, which you should handle for robustness.
 
 ## See Also:
-
 - [Lua 5.4 Reference Manual: I/O](https://www.lua.org/manual/5.4/manual.html#6.8)
 - [Learn Lua](https://learnxinyminutes.com/docs/lua/)

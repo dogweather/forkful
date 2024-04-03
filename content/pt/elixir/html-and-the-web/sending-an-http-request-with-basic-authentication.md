@@ -11,9 +11,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---
 
-## O Quê & Porquê?
-Enviar uma requisição HTTP com autenticação básica é passar credenciais de acesso (usuário e senha) para um servidor via HTTP. Programadores fazem isso para acessar recursos protegidos na web, onde é necessário provar a identidade.
-
 ## Como Fazer:
 Para enviar uma requisição HTTP com autenticação básica em Elixir, utilizamos a biblioteca `HTTPoison` para facilitar o processo. Aqui está um exemplo:
 

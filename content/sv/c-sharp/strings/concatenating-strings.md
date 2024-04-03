@@ -11,9 +11,6 @@ title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---
 
-## Vad & Varför?
-Strängsammanslagning i C# innebär att slå ihop två eller flera textsträngar till en. Programmerare gör detta för att bygga dynamiska meddelanden, skapa SQL-queries, eller bara för att organisera informationen på ett snyggt sätt.
-
 ## Hur gör man?:
 ```C#
 string hello = "Hej ";

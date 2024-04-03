@@ -11,9 +11,6 @@ title: "XML:n k\xE4sittely"
 weight: 40
 ---
 
-## Mikä & Miksi?
-XML on merkkauskieli, jota käytetään datan tallentamiseen ja siirtämiseen. Ohjelmoijat työskentelevät XML:n parissa mahdollistaakseen sovellusten ja järjestelmien välisen yhteentoimivuuden – ajattele datan vaihtoa ja konfiguraatioasetuksia.
-
 ## Kuinka:
 XML:n lukeminen SimpleXML:n avulla:
 

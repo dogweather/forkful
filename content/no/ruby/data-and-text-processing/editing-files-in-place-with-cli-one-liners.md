@@ -12,12 +12,7 @@ title: "Redigering av filer p\xE5 stedet med CLI-enlinjerskommandoer"
 weight: 32
 ---
 
-## Hva og hvorfor?
-
-Å redigere filer på stedet med CLI (kommandolinjegrensesnitt) en-linjers kommandoer i Ruby lar deg endre filer direkte fra terminalen din, uten å måtte åpne dem i en redigerer, gjøre endringer og lagre dem tilbake. Denne teknikken er utrolig nyttig for raske modifikasjoner, masseoppdateringer eller automatisering av gjentakende oppgaver, og sparer både tid og innsats.
-
 ## Hvordan:
-
 Ruby tilbyr en enkel måte å redigere filer på stedet direkte fra kommandolinjen. Med Rubys `-i`-bryter kan du be Ruby operere direkte på de angitte fil(ene). La oss leke med noen eksempler for å se hvordan dette fungerer i virkeligheten. Tenk deg at du har en fil `greetings.txt` med følgende innhold:
 
 ```
@@ -49,7 +44,6 @@ ruby -i.bak -pe "gsub(/Hello/, 'Bye')" greetings.txt
 Nå, sammen med din redigerte `greetings.txt`, vil du finne en `greetings.txt.bak` i samme katalog, som inneholder det opprinnelige innholdet.
 
 ## Dypdykk
-
 Magien med redigering av filer på stedet i Ruby stammer fra dens kombinasjon av Perl-lignende tekstbehandlingskapasiteter og Rubys egen syntaktiske eleganse. Historisk sett var Perl det foretrukne språket for raske en-linjers skript, spesielt for tekstmanipulering. Ruby adopterte dette paradigmet, som tillater kraftige kommandolinjeskriptingsmuligheter.
 
 Det finnes alternativer for redigering på stedet i andre språk, som Perl selv og sed, en strømredigerer i Unix-systemer. Hver har sine styrker - Perl er kjent for sin tekstbehandlingsdyktighet mens sed er uovertruffen i sin enkelhet for strømredigeringsoppgaver. Imidlertid tilbyr Ruby en balanse, som gir robust tekstmanipulering med en mer lesbar og brukervennlig syntaks, spesielt for de som allerede er kjent med Ruby.

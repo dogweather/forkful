@@ -14,14 +14,10 @@ title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---
 
-## Quoi et Pourquoi ?
-
-Vérifier l'existence d'un répertoire en C# consiste à confirmer la présence d'un dossier à un chemin spécifique dans le système de fichiers. Les programmeurs font cela pour éviter des erreurs telles que tenter de lire ou d'écrire dans un répertoire inexistant, assurant ainsi des manipulations de fichiers et de répertoires plus fluides.
-
 ## Comment :
 
-### Utilisation de System.IO
 
+### Utilisation de System.IO
 C# fournit l'espace de noms `System.IO` qui contient la classe `Directory`, offrant une manière directe de vérifier l'existence d'un répertoire grâce à la méthode `Exists`.
 
 ```csharp
@@ -52,7 +48,6 @@ Le répertoire existe : False
 Dans le cas où le répertoire existe bien au chemin `C:\ExampleDirectory`, la sortie sera `True`.
 
 ### Utilisation de System.IO.Abstractions pour les tests unitaires
-
 Quand il s'agit de rendre votre code testable unitairement, surtout lorsqu'il interagit avec le système de fichiers, le package `System.IO.Abstractions` est un choix populaire. Il vous permet d'abstraire et de simuler les opérations sur le système de fichiers dans vos tests. Voici comment vous pourriez vérifier l'existence d'un répertoire en utilisant cette approche :
 
 D'abord, assurez-vous d'avoir installé le package :

@@ -13,12 +13,7 @@ title: Att skriva en textfil
 weight: 24
 ---
 
-## Vad & Varför?
-
-Att skriva en textfil i Elm innebär att skapa och spara textdata till en fil från en Elm-applikation. Programmerare behöver ofta generera rapporter, loggar eller exportera data i ett strukturerat textformat (t.ex. JSON, CSV) för användning i andra applikationer eller för förvaring. Dock på grund av Elms arkitektur som fokuserar på renhet och säkerhet, hanteras direkt filskrivning—likt många andra sidoeffekter—genom kommandon till den omgivande JavaScript-miljön.
-
 ## Hur man gör:
-
 Eftersom Elm körs i webbläsaren och är designat för att vara ett rent programmeringsspråk utan sidoeffekter, har det inte direkt åtkomst till filsystemet. Således innebär skrivning till en fil vanligtvis att skicka datan ut till JavaScript genom portar. Här är hur du kan sätta upp detta:
 
 1. **Definiera en portmodul för att skicka text till JavaScript:**

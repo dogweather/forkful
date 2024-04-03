@@ -12,9 +12,6 @@ title: Werken met CSV
 weight: 37
 ---
 
-## Wat & Waarom?
-Werken met CSV (Comma-Separated Values), betekent het lezen en schrijven van gegevens in tabelvorm. Programmeurs gebruiken CSV vanwege de eenvoud en brede ondersteuning over systemen heen voor gegevensuitwisseling.
-
 ## Hoe:
 Om CSV in Haskell te hanteren, kun je de `cassava` bibliotheek gebruiken. Installeer het door `cassava` toe te voegen aan je `.cabal` bestand of door Stack te gebruiken. Hier is hoe je CSV-gegevens kunt decoderen en coderen:
 

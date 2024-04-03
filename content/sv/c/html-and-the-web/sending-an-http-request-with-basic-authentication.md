@@ -14,9 +14,6 @@ title: "S\xE4nda en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering"
 weight: 45
 ---
 
-## Vad och varför?
-Att skicka en HTTP-begäran med grundläggande autentisering i C innebär att man skapar en HTTP-begäran som inkluderar en autentiseringsheader med användaruppgifter kodade i Base64. Detta är en vanlig metod för att lägga till ett enkelt autentiseringsskikt till HTTP-begäranden, vilket möjliggör programmatisk åtkomst till begränsade resurser.
-
 ## Hur:
 För att skicka en HTTP-begäran med grundläggande autentisering i C behöver vi använda libcurl-biblioteket, ett populärt, mångsidigt och lättanvänt klient-sida URL-överföringsbibliotek. Det hanterar olika protokoll, inklusive HTTP och HTTPS, vilket gör vår uppgift enklare. Se till att libcurl är installerat på ditt system innan du fortsätter. Här är ett grundläggande exempel som visar hur man skickar en GET-begäran med grundläggande autentisering:
 

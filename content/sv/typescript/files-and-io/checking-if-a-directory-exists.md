@@ -14,15 +14,10 @@ title: Kontrollera om en katalog existerar
 weight: 20
 ---
 
-## Vad & Varför?
-Att kontrollera om en mapp finns i TypeScript är nödvändigt för filhanteringsuppgifter, såsom att läsa från eller skriva data till filer, för att säkerställa att operationer endast utförs på giltiga mappar. Denna operation är avgörande för att undvika fel som uppstår vid försök att komma åt eller manipulera icke-existerande mappar.
-
 ## Hur:
-
 TypeScript, när det körs i en Node.js-miljö, tillåter dig att kontrollera om en mapp finns genom att använda `fs`-modulen, som erbjuder funktionen `existsSync()` eller den asynkrona funktionen `access()` kombinerat med `constants.F_OK`.
 
 ### Använda `fs.existsSync()`:
-
 ```typescript
 import { existsSync } from 'fs';
 
@@ -36,7 +31,6 @@ if (existsSync(directoryPath)) {
 ```
 
 ### Använda `fs.access()` med `fs.constants.F_OK`:
-
 ```typescript
 import { access, constants } from 'fs';
 
@@ -62,7 +56,6 @@ Mappen finns inte.
 ```
 
 ### Använda ett tredjepartsbibliotek - `fs-extra`:
-
 `fs-extra` är ett populärt tredjepartsbibliotek som förbättrar den inbyggda `fs`-modulen och tillhandahåller mer bekväma funktioner.
 
 ```typescript

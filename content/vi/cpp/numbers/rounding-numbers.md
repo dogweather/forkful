@@ -16,9 +16,6 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Cái gì & Tại sao?
-Làm tròn số nghĩa là điều chỉnh giá trị tới số nguyên gần nhất hoặc độ chính xác đã chỉ định. Lập trình viên thực hiện điều này để đơn giản hóa, phù hợp với các ràng buộc thực tế, hoặc cải thiện hiệu suất bằng cách loại bỏ độ chính xác dư thừa.
-
 ## Làm thế nào:
 C++ cung cấp một vài cách để làm tròn số, như `floor()`, `ceil()`, và `round()`:
 

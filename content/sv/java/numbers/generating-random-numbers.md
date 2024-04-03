@@ -11,12 +11,7 @@ title: Generera slumptal
 weight: 12
 ---
 
-## Vad & Varför?
-
-Att generera slumpmässiga nummer handlar om att producera oförutsägbara sekvenser eller enskilda värden inom ett definierat intervall. Programmerare använder denna teknik av flera skäl, inklusive simuleringar, spel, säkerhetstillämpningar och urvalsmetoder för att testa algoritmer under olika förhållanden.
-
 ## Hur man gör:
-
 I Java kan slumpmässiga nummer genereras med hjälp av klassen `Random` från paketet `java.util`, eller klasserna `ThreadLocalRandom` och `SecureRandom` för specifika användningsområden. Följande exempel illustrerar hur man använder dessa klasser.
 
 ### Använda klassen `Random`
@@ -79,7 +74,6 @@ public class SecureRandomExample {
 ```
 
 ## Djupdykning
-
 Generering av slumpmässiga nummer har utvecklats avsevärt sedan datorernas tidiga dagar. Javas klass `Random` använder en linjär kongruentiell formel för att generera pseudoslumpmässiga nummer, vilka är deterministiska och inte lämpliga för applikationer med höga säkerhetskrav. Detta ledde till införandet av `SecureRandom`, som använder mer sofistikerade algoritmer (t.ex. SHA1PRNG) för att producera kryptografiskt starka slumpmässiga nummer.
 
 Dock har `Random` och `SecureRandom` sina nackdelar, såsom prestandaförsämring i multitrådade miljöer. Klassen `ThreadLocalRandom` introducerades i Java 7 för att adressera denna fråga genom att tillhandahålla trådlokala slumpgeneratorer, vilket signifikant förbättrar prestanda i konkurrenta applikationer.

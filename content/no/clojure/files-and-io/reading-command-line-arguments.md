@@ -11,9 +11,6 @@ title: Lese kommandolinjeargumenter
 weight: 23
 ---
 
-## Hva & Hvorfor?
-Å lese kommandolinjeargumenter betyr å hente input direkte fra terminalen når du starter et program. Programmerere gjør dette for å tillate brukerinnstillinger og dynamisk oppførsel uten å endre koden.
-
 ## Hvordan:
 Bruk `*command-line-args*` i Clojure for å snappe opp argumenter. Her er et enkelt eksempel:
 

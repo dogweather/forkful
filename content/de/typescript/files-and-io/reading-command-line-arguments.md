@@ -11,9 +11,6 @@ title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---
 
-## Was & Warum?
-Kommandozeilenargumente sind die Parameter, die einem Programm übergeben werden, wenn es gestartet wird. Programmierer nutzen sie, um das Verhalten ihrer Anwendung dynamisch zu steuern, ohne den Code ändern zu müssen.
-
 ## So geht's:
 In TypeScript könnt ihr Kommandozeilenargumente mit `process.argv` auslesen, das ein Array der übergebenen Argumente ist.
 

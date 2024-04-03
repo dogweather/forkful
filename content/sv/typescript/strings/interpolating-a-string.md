@@ -11,9 +11,6 @@ title: "Interpolera en str\xE4ng"
 weight: 8
 ---
 
-## Vad & Varför?
-Stringinterpolering är att smidigt bädda in variabler eller uttryck i strängar. Vi gör det för att bygga dynamiska texter enklare och för att koden ska bli renare och lättare att läsa.
-
 ## Hur gör man:
 ```TypeScript
 let användare = 'Anna';

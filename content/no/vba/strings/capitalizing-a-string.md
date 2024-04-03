@@ -14,12 +14,7 @@ title: "\xC5 gj\xF8re om en streng til store bokstaver"
 weight: 2
 ---
 
-## Hva & Hvorfor?
-
-Å sette stor bokstav i en streng i Visual Basic for Applications (VBA) innebærer å konvertere den første bokstaven i hvert ord i en streng til stor bokstav, mens man sørger for at resten er i små bokstaver. Programmerere gjør dette for normalisering av data, økt lesbarhet, og for å sikre konsistens på tvers av tekstlige datainnganger eller -visninger.
-
 ## Hvordan gjøre det:
-
 VBA har ikke en innebygd funksjon spesielt for å sette stor bokstav i hvert ord i en streng, slik noen andre programmeringsspråk har. Du kan imidlertid oppnå dette ved å kombinere noen metoder og funksjoner som `UCase`, `LCase`, og `Mid`.
 
 Her er et enkelt eksempel på hvordan du setter stor bokstav i en streng:
@@ -46,7 +41,6 @@ End Sub
 `CapitalizeString`-funksjonen splitter inngangsstrengen inn i ord, setter stor bokstav i første bokstav i hvert ord, og setter dem deretter sammen igjen for å danne den riktig kapitaliserte strengen.
 
 ## Dypdykk
-
 Visual Basic for Applications, som dukket opp på begynnelsen av 90-tallet som et makrospråk for Microsoft Office-applikasjoner, ble designet for å tilby en tilgjengelig programmeringsmodell. Dens strengmanipulasjonsmuligheter, selv om de er omfattende, mangler noen høyere nivå abstraksjoner funnet i nyere språk. Mange moderne programmeringsmiljøer tilbyr en dedikert metode for å sette stor bokstav i strenger, ofte omtalt som tittelsaker eller lignende. Python, for eksempel, inkluderer `.title()`-metoden for strenger.
 
 Når man sammenligner, kan fraværet av en enkelt, innebygd funksjon i VBA for å sette stor bokstav i strengord virke som en ulempe. Dette tilbyr imidlertid programmerere en dypere forståelse og kontroll over hvordan de manipulerer tekst og tilrettelegger for nyanser som ikke nødvendigvis følges strengt av en generisk metode. For eksempel, håndtering av akronymer eller spesielle tilfeller der visse mindre ord i titler ikke bør være kapitaliserte, kan bedre tilpasses i VBA gjennom eksplisitte funksjoner.

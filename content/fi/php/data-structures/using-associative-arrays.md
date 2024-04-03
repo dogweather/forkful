@@ -13,12 +13,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mikä & Miksi?
-
-PHP:n assosiatiiviset taulukot ovat kuin tehostettuja listoja, joissa jokaista alkiota voidaan käyttää ihmisen luettavalla avaimella numeroiden sijaan. Ohjelmoijat käyttävät niitä tietojen tallentamiseen ja manipulointiin intuitiivisemmin, mikä mahdollistaa helpommin luettavan ja ylläpidettävämmän koodin.
-
 ## Kuinka:
-
 PHP:ssä assosiatiivisten taulukoiden luominen ja käyttäminen on suoraviivaista. Tässä nopea yhteenveto:
 
 ```PHP
@@ -64,7 +59,6 @@ foreach ($henkilo as $avain => $arvo) {
 Huomaa, miten avaimet voivat olla mitä tahansa merkkijonoja, mikä mahdollistaa elementtien käytön näiden avainten avulla numeeristen indeksien sijaan, jotka voivat olla vähemmän merkityksellisiä ja vaikeampia muistaa.
 
 ## Syväsukellus
-
 PHP:n assosiatiiviset taulukot on toteutettu sisäisesti hajautustaulukoiden avulla, jotka tarjoavat erittäin nopean pääsyn elementteihin avaimen perusteella, mikä tekee niistä erittäin tehokkaita moniin tehtäviin. Tämä tehokkuus, yhdistettynä niiden käytön helppouteen, tekee assosiatiivisista taulukoista PHP-ohjelmoinnin kulmakiven.
 
 Historiallisesti PHP:n taulukot (sekä indeksoitu että assosiatiivinen) ovat olleet uskomattoman joustavia, mikä on mahdollistanut niiden käytön listoina, pinoina, jonoissa ja muussa. Tämä joustavuus voi kuitenkin joskus johtaa tehottomampaan koodiin, jos sitä ei käytetä harkitusti.

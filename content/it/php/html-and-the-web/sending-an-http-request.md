@@ -11,9 +11,6 @@ title: Inviare una richiesta http
 weight: 44
 ---
 
-## What & Why?
-Mandare una richiesta HTTP è come inviare una lettera al web per prendere o mandare informazioni. I programmatori lo fanno per interagire con API, servizi esterni e per scaricare dati.
-
 ## How to:
 PHP con `curl` è un modo popolare per inviare richieste HTTP. Ecco un esempio per fare una richiesta GET a un API che restituisce dati JSON:
 

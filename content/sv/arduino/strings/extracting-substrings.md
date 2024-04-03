@@ -11,9 +11,6 @@ title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---
 
-## What & Why? (Vad & Varför?)
-Att extrahera substrängar innebär att ta specifika delar från en sträng av text. Programmerare gör detta för att bearbeta eller analysera data mer effektivt.
-
 ## How to: (Hur man gör:)
 ```Arduino
 String text = "Hej, Arduino världen!";
@@ -28,10 +25,9 @@ Sample Output:
 Arduino
 ```
 
-Koden använder `substring()`-funktionen för att ta en deltext från den större strängen. 
+Koden använder `substring()`-funktionen för att ta en deltext från den större strängen.
 
 ## Deep Dive (Djupdykning)
-
 Att extrahera substrängar har funnits med sedan tidiga programmeringsspråk. Det är en grundläggande operation som många program använder för att bearbeta text, som att hämta filnamn från sökvägar eller användarinfo från inloggning.
 
 I Arduino C++, som är väldigt nära besläktat med C++, implementeras substrängsfunktionen genom `String`-klassen. Alternativ finns, såsom att använda C-funktioner som `strncpy()` eller pekararitmetik för att uppnå samma resultat utan att använda `String`-klassen, vilket kan vara bra för minneshantering.

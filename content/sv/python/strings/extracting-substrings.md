@@ -11,9 +11,6 @@ title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---
 
-## Vad & Varför?
-Extrahering av substrängar innebär att välja specifika delar av en sträng. Programmerare gör detta för att bearbeta eller analysera specifika data, som att plocka ut användarnamn från e-postadresser.
-
 ## How to:
 ```python
 text = "Hej, världen! Det här är Python."

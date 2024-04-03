@@ -10,9 +10,6 @@ title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---
 
-## Qué y Por Qué?
-Convertir una fecha en una cadena de texto permite mostrarla o procesarla de manera legible para humanos. Los programadores lo hacen para interactuar con interfaces de usuario, registrar eventos o comparar fechas de forma sencilla.
-
 ## Cómo hacerlo:
 Aquí te muestro cómo puedes convertir una fecha en cadena:
 
@@ -44,6 +41,7 @@ Salida de muestra:
 ```
 24/03/2023 16:50:03
 ```
+
 ## Conocimiento en Detalle:
 Convertir fechas a cadenas se ha hecho desde que las computadoras empezaron a usar fechas para alguna función útil. En Arduino, usamos bibliotecas como `RTClib` para trabajar con módulos de reloj en tiempo real (RTC) que pueden mantener la hora actual incluso con el Arduino apagado. Otras alternativas para convertir fechas incluyen usar `sprintf` o manipular la fecha manualmente.
 

@@ -14,12 +14,7 @@ title: De huidige datum krijgen
 weight: 29
 ---
 
-## Wat & Waarom?
-
-Het verkrijgen van de huidige datum in C houdt in dat je toegang krijgt tot de standaard C-bibliotheek om de huidige datum en tijd van het systeem op te halen en te formatteren. Programmeurs hebben deze functionaliteit vaak nodig voor logboekregistratie, tijdstempels of planningseigenschappen binnen hun applicaties.
-
 ## Hoe te:
-
 In C biedt de `<time.h>` header de nodige functies en typen om met datums en tijden te werken. De functie `time()` haalt de huidige tijd op, terwijl `localtime()` deze tijd converteert naar de lokale tijdzone. Om de datum te tonen, gebruiken we `strftime()` om deze als een string te formatteren.
 
 Hier is een basisvoorbeeld:
@@ -53,7 +48,6 @@ De datum van vandaag is 2023-04-12
 ```
 
 ## Diepere duik
-
 De tijdafhandeling in C, zoals gefaciliteerd door `<time.h>`, gaat terug naar de vroegste dagen van de taal en UNIX-systemen. Het is gebouwd rond het `time_t` gegevenstype, dat de huidige tijd vertegenwoordigt als het aantal seconden sinds het Unix Epoch (1 januari 1970). Hoewel dit efficiënt en universeel compatibel is, betekent het ook dat de tijdfuncies van de standaard C-bibliotheek van nature beperkt zijn door het bereik en de resolutie van `time_t`.
 
 Moderne applicaties, met name die welke timestamps met hoge resolutie vereisen of die te maken hebben met datums ver in de toekomst of het verleden, vinden deze beperkingen mogelijk lastig. Het probleem van het jaar 2038 is bijvoorbeeld een beroemde illustratie waarbij systemen die een 32-bit `time_t` gebruiken, zullen overlopen.

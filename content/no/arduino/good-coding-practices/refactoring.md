@@ -10,11 +10,7 @@ title: Refaktorering
 weight: 19
 ---
 
-## Hva og hvorfor?
-*Refactoring* er prosessen med å omarbeide koden din for å forbedre strukturen og lesbarheten uten å endre den eksterne oppførselen eller funksjonaliteten. Programmerere refaktorerer for å gjøre koden sin renere, lettere å forstå og mer vedlikeholdbar, noe som på lang sikt gjør feilsøking og legging til nye funksjoner langt mindre hodepine.
-
 ## Hvordan:
-
 La oss si du har en funksjon på din Arduino som gjør altfor mye, slik som dette:
 
 ```Arduino

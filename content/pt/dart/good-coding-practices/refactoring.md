@@ -14,14 +14,10 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O Que & Por Que?
-
-Refatoração em Dart é o processo de reestruturar o código existente sem alterar seu comportamento externo, visando melhorar sua estrutura interna, legibilidade e manutenibilidade. Programadores frequentemente refatoram para tornar o código mais limpo, fácil de entender ou mais eficiente, facilitando modificações futuras e diminuindo a probabilidade de bugs.
-
 ## Como Fazer:
 
-### Exemplo 1: Renomeando e Extraindo Métodos
 
+### Exemplo 1: Renomeando e Extraindo Métodos
 Antes da refatoração, você pode ter um trecho de código que mistura diferentes níveis de abstração ou responsabilidades, como calcular um desconto e depois aplicá-lo:
 
 ```dart
@@ -61,7 +57,6 @@ Preço final: 80.0
 Ao extrair o cálculo para um método, você agora tem uma operação claramente definida que pode ser reutilizada, testada independentemente e facilmente modificada.
 
 ### Exemplo 2: Simplificando Expressões Condicionais
-
 Antes da refatoração, as declarações condicionais podem ser excessivamente complexas ou difíceis de ler:
 
 ```dart
@@ -110,5 +105,4 @@ Desconto: 0.05
 Esta refatoração não apenas torna o código mais conciso, mas também encapsula a lógica para determinar descontos de uma maneira mais fácil de entender e manter.
 
 ### Bibliotecas de Terceiros para Refatoração
-
 Quando se trata de refatoração em Dart, especialmente dentro de aplicativos Flutter, o conjunto de ferramentas [Dart DevTools](https://dart.dev/tools/dart-devtools) é inestimável. Inclui ferramentas de desempenho, um inspetor de widget e um depurador em nível de código-fonte. Embora não seja uma biblioteca de terceiros, Dart DevTools é frequentemente usado junto com bibliotecas como `flutter_bloc` para gerenciar o estado de maneira limpa de forma que favoreça a refatoração para melhor modularidade e legibilidade. Infelizmente, devido ao escopo desta entrada, exemplos de código específicos usando bibliotecas de terceiros não serão fornecidos aqui, mas os desenvolvedores são encorajados a explorar essas ferramentas para aprimorar o processo de refatoração em suas aplicações Dart/Flutter.

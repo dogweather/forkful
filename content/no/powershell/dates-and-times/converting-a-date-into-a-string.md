@@ -11,9 +11,6 @@ title: Konvertere en dato til en streng
 weight: 28
 ---
 
-## Hva & Hvorfor?
-Å konvertere en dato til en streng betyr å endre datotypen fra en dato til tekstformat. Programmerere gjør det for å formatere datoer til lesbare formater for brukere eller for å integrere datoinformasjon i tekstfiler og loggføringer.
-
 ## Hvordan:
 ```PowerShell
 # Få dagens dato

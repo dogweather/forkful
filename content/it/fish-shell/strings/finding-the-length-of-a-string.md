@@ -11,12 +11,7 @@ title: Trovare la lunghezza di una stringa
 weight: 7
 ---
 
-## What & Why?
-
-In Fish Shell, troviamo la lunghezza di una stringa per sapere quanti caratteri contiene. Quest'operazione è utile nella manipolazione dei testi e nella validazione dei dati.
-
 ## How to:
-
 Per calcolare la lunghezza di una stringa in Fish, utilizziamo il comando `string length`. Ecco un esempio semplice:
 
 ```Fish Shell
@@ -31,7 +26,6 @@ Output:
 ```
 
 ## Deep Dive
-
 La funzionalità di calcolo della lunghezza di una stringa esiste in molti linguaggi di programmazione e shell. In Fish Shell, il comando `string` è stato introdotto nelle versioni più recenti, sostituendo l'uso di comandi esterni come `expr` o `wc -m`.
 
 Alternativamente, potresti usare `wc -m`, ma `string length` è preferibile perché è una funzione integrata di Fish, quindi più veloce e facile da usare in script.
@@ -41,6 +35,5 @@ Dettagli dell'implementazione:
 - Funziona direttamente su variabili e non richiede piping o subshell, rendendo lo script più leggibile e efficiente.
 
 ## See Also
-
 - Documentazione ufficiale di Fish sul comando `string`: https://fishshell.com/docs/current/cmds/string.html
 - Panoramica sui metodi di manipolazione delle stringhe in vari linguaggi: https://en.wikibooks.org/wiki/Algorithm_Implementation/Strings/String_length

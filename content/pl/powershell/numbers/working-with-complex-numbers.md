@@ -12,9 +12,6 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i Dlaczego?
-Liczby zespolone, czyli te posiadające część rzeczywistą i urojoną (jak 3 + 4i), są niezbędne w takich dziedzinach jak inżynieria, fizyka i data science. Programiści używają ich do symulacji, przetwarzania sygnałów oraz rozwiązywania specyficznych typów problemów matematycznych.
-
 ## Jak to zrobić:
 PowerShell nie posiada wbudowanego wsparcia dla liczb zespolonych, więc albo tworzysz własne rozwiązanie, albo korzystasz z `System.Numerics.Complex` z .NET.
 

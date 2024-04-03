@@ -13,11 +13,8 @@ title: Een nieuw project starten
 weight: 1
 ---
 
-## Wat & Waarom?
-
-Een nieuw project starten in Python gaat over het opzetten van een gestructureerd, onderhoudbaar kader vanaf het begin. Programmeurs doen dit om ervoor te zorgen dat hun code gemakkelijk te lezen, te debuggen en samen aan te werken is, vooral naarmate het project en het team dat eraan werkt in de loop van de tijd groeien.
-
 ## Hoe te:
+
 
 ### Maak een Virtuele Omgeving
 Een virtuele omgeving is een zelfstandige map die alle benodigde uitvoerbare bestanden bevat om de pakketten te gebruiken die een Python-project nodig zou hebben. Het is raadzaam om voor elk project een virtuele omgeving te creëren om conflicten tussen projectafhankelijkheden te vermijden. Gebruik de `venv`-module, die deel uitmaakt van de standaard Python-bibliotheek.

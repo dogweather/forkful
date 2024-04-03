@@ -10,9 +10,6 @@ title: 'Refactoring : Mode d''emploi'
 weight: 19
 ---
 
-## Quoi & Pourquoi ?
-La refactorisation est le processus de restructuration du code informatique existant sans en modifier le comportement externe. Les programmeurs refactorisent pour améliorer les attributs non fonctionnels du logiciel, rendant le code plus propre, plus efficace et plus facile à maintenir.
-
 ## Comment faire :
 Prenons un extrait classique de PHP et appliquons-lui de la magie de refactorisation.
 

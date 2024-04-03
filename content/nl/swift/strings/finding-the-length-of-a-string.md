@@ -11,9 +11,6 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-De lengte van een string vinden betekent uitzoeken hoeveel tekens deze bevat. Programmeurs doen dit om invoer te valideren, tekst te manipuleren, of simpelweg om de grootte van hun gegevens te begrijpen.
-
 ## Hoe te:
 In Swift krijg je de lengte van een string door toegang te krijgen tot de `count` eigenschap. Eenvoudig, laten we het doen:
 

@@ -16,9 +16,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Lý do và Mục đích?
-Số phức mở rộng hệ thống số của chúng ta để bao gồm số ảo, cho phép chúng ta giải các phương trình không có nghiệm thực. Các lập trình viên làm việc với chúng trong các lĩnh vực như kỹ thuật, vật lý và xử lý tín hiệu nơi những số này là cần thiết cho việc mô hình hóa và giải quyết vấn đề.
-
 ## Cách thực hiện:
 C# có cấu trúc `System.Numerics.Complex` được tích hợp sẵn để xử lý số phức. Dưới đây là một hướng dẫn nhanh:
 

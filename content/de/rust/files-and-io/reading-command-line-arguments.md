@@ -11,9 +11,6 @@ title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---
 
-## Was & Warum?
-Kommandozeilenargumente erlauben Nutzern, Programme durch zusätzliche Eingaben zu steuern. Programmierer nutzen sie, um flexiblere und anpassungsfähigere Tools zu erstellen, die unter verschiedenen Bedingungen und mit unterschiedlichen Daten arbeiten können.
-
 ## So geht’s:
 Rust stellt die Struktur `std::env::args` zur Verfügung, die eine Sammlung der Kommandozeilenargumente bietet. Hier ist ein einfaches Beispiel:
 

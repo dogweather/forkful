@@ -14,12 +14,7 @@ title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---
 
-## ¿Qué y por qué?
-
-Eliminar caracteres que coinciden con un patrón específico en cadenas de texto es crucial para la validación de datos, la sanitización o cuando se prepara el texto para un procesamiento posterior. Los programadores realizan esta tarea para asegurar la integridad de los datos, mejorar la legibilidad y forzar un formato consistente en las entradas de texto.
-
 ## Cómo hacerlo:
-
 Dart hace que sea sencillo eliminar caracteres que coinciden con un patrón predefinido utilizando expresiones regulares y el método `replaceAll`. No se requieren librerías de terceros para el uso básico, haciendo que este enfoque sea muy accesible.
 
 He aquí un ejemplo simple que demuestra cómo remover dígitos de una cadena de texto:

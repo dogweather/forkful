@@ -14,14 +14,10 @@ title: "Wielka litera w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---
 
-## Co i Dlaczego?
-
-Zamiana liter na wielkie (kapitalizacja) w ciągu znaków polega na zmodyfikowaniu pierwszej litery słowa lub całego zdania na wielką literę, pozostawiając resztę znaków bez zmian. Programiści często używają tej techniki do formatowania danych wejściowych użytkownika lub wyświetlania tekstu, aby zapewnić spójność lub przestrzegać reguł gramatycznych w interfejsach użytkownika.
-
 ## Jak to zrobić:
 
-### Korzystając z wbudowanych metod Dart
 
+### Korzystając z wbudowanych metod Dart
 Dart oferuje proste i bezpośrednie metody manipulacji ciągami znaków. Aby zamienić literę na wielką w słowie lub zdaniu, zazwyczaj pobierasz pierwszy znak, konwertujesz go na wielką literę, a następnie łączysz go z resztą ciągu. Oto jak możesz to zaimplementować:
 
 ```dart
@@ -37,7 +33,6 @@ void main() {
 ```
 
 ### Kapitalizacja każdego słowa
-
 Aby zamienić pierwszą literę każdego słowa w ciągu na wielką, możesz podzielić ciąg na słowa, zamienić każde z nich na wielką literę, a następnie połączyć je z powrotem:
 
 ```dart
@@ -52,7 +47,6 @@ void main() {
 ```
 
 ### Korzystanie z bibliotek stron trzecich
-
 Chociaż biblioteka standardowa Dart pokrywa podstawowe potrzeby, pewne zadania mogą być łatwiej wykonane przy użyciu pakietów stron trzecich. Popularnym wyborem dla rozszerzonych możliwości manipulacji ciągami znaków, w tym kapitalizacji, jest pakiet [`recase`](https://pub.dev/packages/recase). Po dodaniu go do pliku `pubspec.yaml` twojego projektu, możesz łatwo zamieniać litery na wielkie wśród innych funkcjonalności:
 
 ```dart

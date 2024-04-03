@@ -11,9 +11,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## What & Why? (Mikä & Miksi?)
-Stringin pituuden selvittäminen tarkoittaa merkkijonon merkkien lukumäärän laskemista. Ohjelmoijat käyttävät tätä tietoa esimerkiksi syötteiden validoinnissa, tekstin pilkkomisessa tai tietoturvan varmistamisessa.
-
 ## How to: (Kuinka tehdään:)
 ```C#
 string tervehdys = "Moi!";

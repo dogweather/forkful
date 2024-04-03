@@ -11,9 +11,6 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co i dlaczego?
-Usuwanie cudzysłowów z ciągu znaków oznacza pozbycie się tych dodatkowych wrapperów, aby uzyskać czysty tekst wewnątrz. Programiści robią to, aby oczyścić dane wejściowe, uniknąć błędów i przygotować dane do przetworzenia, gdzie cudzysłowy są utrudnieniami, a nie funkcjami.
-
 ## Jak to zrobić:
 Elixir nie ma wbudowanej funkcji 'usuń cudzysłowy', ale stworzenie własnej funkcji za pomocą dopasowania wzorca lub funkcji `String` to pestka. Oto kilka fragmentów:
 

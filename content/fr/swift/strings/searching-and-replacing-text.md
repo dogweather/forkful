@@ -11,9 +11,6 @@ title: Recherche et remplacement de texte
 weight: 10
 ---
 
-## What & Why?
-Chercher et remplacer du texte, c'est un peu comme chasser les fautes de frappe et les corriger. Programmers le font pour nettoyer des données, mettre à jour des infos ou modifier du code plus vite que Flash sous caféine.
-
 ## How to:
 ```swift
 var phrase = "Le renard brun rapide saute par-dessus le chien paresseux."

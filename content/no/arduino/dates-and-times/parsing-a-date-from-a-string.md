@@ -15,12 +15,7 @@ title: Analysering av en dato fra en streng
 weight: 30
 ---
 
-## Hva & Hvorfor?
-
-Å analysere en dato fra en streng i Arduino involverer å trekke ut og konvertere datokomponentene (år, måned, dag) fra en tekstlig representasjon til et format som kan brukes for tidsføring, sammenligninger eller manipulasjoner innen skisser. Programmerere utfører ofte denne oppgaven for å knytte sammen med komponenter som ekte-tidsklokker, loggere, eller for å behandle inndata fra web-APIer og brukergrensesnitt hvor datoer kan presenteres i et lesbart format.
-
 ## Hvordan:
-
 Direkte tilnærming uten et tredjepartsbibliotek:
 
 ```cpp

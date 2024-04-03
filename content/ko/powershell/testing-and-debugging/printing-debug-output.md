@@ -15,9 +15,6 @@ title: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC744 \uCC0D\uC5B4\uBCF4\uAE30"
 weight: 33
 ---
 
-## What & Why? (무엇과 왜?)
-디버그 출력은 코드가 어떻게 실행되는지 볼 수 있도록 도와줍니다. 문제를 찾고, 해결하며, 코드 이해를 돕기 위해 프로그래머들이 사용합니다.
-
 ## How to: (어떻게:)
 PowerShell에서 디버그 메시지를 출력하는 기본 방법은 `Write-Host`, `Write-Output` 그리고 `Write-Debug` 명령어를 사용하는 것입니다.
 

@@ -13,12 +13,7 @@ title: Concatenando strings
 weight: 3
 ---
 
-## O Que & Por Quê?
-
-A concatenação no Visual Basic for Applications (VBA) envolve a união de duas ou mais strings em uma única entidade. Esta é uma tarefa fundamental na programação, essencial para gerar mensagens para o usuário, criar consultas SQL e mais, pois permite a criação e manipulação dinâmica de dados de string.
-
 ## Como fazer:
-
 O VBA oferece um método direto para concatenar strings usando o operador `&` ou a função `Concatenate`. Vamos explorar ambos os métodos com exemplos:
 
 1. **Usando o Operador `&`:**
@@ -54,7 +49,6 @@ Debug.Print message 'Saída: Olá John!
 A escolha entre o operador `&` e a função `Concatenate` depende da preferência pessoal e dos requisitos específicos do seu projeto.
 
 ## Aprofundamento
-
 A concatenação de strings é um recurso básico, mas poderoso no VBA, com suas raízes remontando às linguagens de programação antigas. A prevalência do operador `&` no VBA para concatenação, em detrimento do operador `+`, comumente usado em muitas outras linguagens, sublinha o foco do VBA no tratamento explícito de strings, evitando assim incompatibilidades e erros involuntários de tipo de dados.
 
 Embora o operador `&` seja eficiente e amplamente adotado, a função `Concatenate` se destaca em cenários que requerem mais clareza ou lidam com casos especiais de concatenação, como ao tratar arrays. No entanto, é importante notar que versões modernas do Excel introduziram a função `TEXTJOIN`, que pode ser mais eficiente para concatenar arrays de strings com um delimitador, embora não seja diretamente parte do VBA.

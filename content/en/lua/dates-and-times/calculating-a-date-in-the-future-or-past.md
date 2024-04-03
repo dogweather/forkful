@@ -11,11 +11,7 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-Calculating future or past dates means figuring out what the date will be after or before a certain amount of time. Programmers do this for features like reminders, subscriptions, or to track past events.
-
 ## How to:
-
 In Lua, you have the `os.date` and `os.time` functions at your disposal to help with date and time calculations.
 
 ```Lua
@@ -37,7 +33,6 @@ Past Date: 2023-04-18
 ```
 
 ## Deep Dive
-
 Lua's `os.date` and `os.time` functions have their roots in the standard C library. This means they're close to the metal — efficient and reliable. They don't fancy stuff like time zones or daylight savings time; they deal in UTC and seconds since the Unix epoch (January 1, 1970).
 
 Alternatives to `os.date` and `os.time` exist if you're looking for more. Libraries like `Luadate` offer more sophisticated operations, handling time zones and daylight savings with more finesse.
@@ -45,7 +40,6 @@ Alternatives to `os.date` and `os.time` exist if you're looking for more. Librar
 When it comes to implementation, keep an eye on leap seconds, and remember that adding a month isn't as simple as adding 30 days. Different months have different day counts, and February can either shortchange or surprise you with an extra day.
 
 ## See Also
-
 For a more luxurious date and time experience in Lua, check out these resources:
 
 - LuaRocks `Luadate`: https://luarocks.org/modules/luarocks/luadate

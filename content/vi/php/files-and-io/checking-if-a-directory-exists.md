@@ -16,12 +16,7 @@ title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---
 
-## Cái Gì & Tại Sao?
-
-Kiểm tra xem một thư mục có tồn tại giúp bạn xác nhận sự hiện diện của một thư mục trong hệ thống tập tin trước khi bạn cố gắng sử dụng nó. Lập trình viên làm điều này để tránh lỗi khi đọc, viết hoặc điều hướng tới các thư mục.
-
 ## Cách thực hiện:
-
 Trong PHP, `is_dir()` kiểm tra nếu một thư mục có tồn tại:
 
 ```PHP
@@ -56,7 +51,6 @@ if (file_exists($directory) && is_dir($directory)) {
 ```
 
 ## Sâu hơn
-
 `is_dir()` đã có trong PHP từ phiên bản 4.0.0, cho phép kiểm tra sự tồn tại của thư mục trước các thao tác có thể thất bại hoặc gây ra lỗi. Không được nhầm lẫn với `file_exists()`, kiểm tra cả tập tin và thư mục cùng một lúc, `is_dir()` dành riêng cho thư mục.
 
 Trước khi có các hàm tích hợp này, lập trình viên có thể đã sử dụng `opendir()` và kiểm tra giá trị trả về là false để suy luận về sự không tồn tại. Điều này ít hiệu quả và dễ gặp lỗi hơn.
@@ -66,7 +60,6 @@ Phía sau hậu trường, `is_dir()` thực hiện một syscall đến hệ th
 Một phương án khác, đặc biệt phù hợp trong các hệ thống giống Unix, là sử dụng `exec()` với một lệnh hệ thống như `ls` hoặc `test -d`, nhưng điều này đưa vào gánh nặng của việc kích hoạt một shell và ít di động hơn.
 
 ## Xem Thêm
-
 - [PHP Manual: `is_dir()`](https://www.php.net/manual/en/function.is-dir.php)
 - [PHP Manual: `file_exists()`](https://www.php.net/manual/en/function.file-exists.php)
 - [Các phương pháp tốt nhất với hệ thống tập tin trong PHP](https://www.php-fig.org/psr/psr-4/)

@@ -14,12 +14,7 @@ title: Werken met JSON
 weight: 38
 ---
 
-## Wat & Waarom?
-
-Werken met JSON (JavaScript Object Notation) houdt in dat je gegevens manipuleert die zijn gestructureerd in een lichtgewicht, op tekst gebaseerd formaat dat gemakkelijk te lezen en te schrijven is voor mensen, en eenvoudig te ontleden en te genereren voor machines. Programmeurs gebruiken JSON in Arduino-projecten om te communiceren met webservices, gegevens uit te wisselen en apparaten naadloos te configureren.
-
 ## Hoe:
-
 Om met JSON in Arduino te werken, heb je de ArduinoJson-bibliotheek nodig. Installeer het via Bibliotheekbeheer: Schets > Bibliotheek Includeren > Beheer Bibliotheken... zoek dan naar "ArduinoJson" en installeer.
 
 Hier is een eenvoudig voorbeeld om JSON te ontleden:
@@ -94,11 +89,9 @@ Voorbeelduitvoer:
 ```
 
 ## Diepere Duik
-
 De ArduinoJson-bibliotheek, van Benoit Blanchon, werd de de facto standaard voor JSON-manipulatie in Arduino. JSON won aan populariteit vanwege de eenvoud ten opzichte van XML, dat voorheen veel gebruikt werd. Alternatieven zoals MsgPack bestaan, maar JSON blijft favoriet vanwege de leesbaarheid van de tekst en het wijdverbreide gebruik. Zorg bij de implementatie dat je voldoende geheugen toewijst aan de `DynamicJsonDocument` om overlopen te voorkomen en gebruik `StaticJsonDocument` voor statische of bekende JSON-objectgroottes.
 
 ## Zie Ook
-
 - ArduinoJson-bibliotheekdocumentatie: https://arduinojson.org/
 - Officiële website JSON: https://www.json.org/json-en.html
 - Arduino-forum voor discussies: https://forum.arduino.cc/

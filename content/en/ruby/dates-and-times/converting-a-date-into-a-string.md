@@ -10,9 +10,6 @@ title: Converting a date into a string
 weight: 28
 ---
 
-## What & Why?
-Converting a date to a string takes the date object and turns it into text we can read and use. Programmers do this to display dates in a human-friendly format or to prepare data for storage and interchange, like in JSON or CSV files.
-
 ## How to:
 Ruby makes it super easy to play around with dates and strings. Here's how you do it:
 

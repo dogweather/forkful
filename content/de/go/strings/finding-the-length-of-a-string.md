@@ -13,9 +13,6 @@ title: "Die L\xE4nge einer Zeichenkette ermitteln"
 weight: 7
 ---
 
-## Was & Warum?
-Die Länge eines Strings in Go zu finden, bedeutet, die Anzahl der Zeichen zu bestimmen, die er enthält. Programmierer führen diese Operation routinemäßig durch, um Strings effektiv zu manipulieren, sei es zur Validierung, zum Extrahieren von Teilstrings oder einfach, um Einschränkungen bei Benutzereingaben durchzusetzen.
-
 ## Wie zu:
 In Go werden Strings als unveränderliche Byte-Sequenzen behandelt. Sie können die Länge eines Strings mit der eingebauten Funktion `len()` finden, die die Anzahl der Bytes zurückgibt, nicht unbedingt die Anzahl der Zeichen. So verwenden Sie es:
 

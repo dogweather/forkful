@@ -11,9 +11,6 @@ title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---
 
-## Hva & Hvorfor?
-Sletting av tegn som matcher et mønster fjerner spesifikke deler av en streng basert på gitte kriterier. Programmerere gjør dette for å rense data, manipulere tekst eller forberede strenger for videre bearbeiding.
-
 ## Hvordan:
 ```Python
 import re

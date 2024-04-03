@@ -11,9 +11,6 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## Hva & Hvorfor?
-Interpolering av en streng involverer å sette inn verdier inn i en fast tekststreng. Programmerere gjør dette for å dynamisk generere tekst, for eksempel å bygge brukermeldinger eller generere kode.
-
 ## Hvordan gjøre det:
 ```Lua
 -- Eksempel på enkelt strenginterpolering i Lua

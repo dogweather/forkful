@@ -10,9 +10,6 @@ title: Lecture d'un fichier texte
 weight: 22
 ---
 
-## Quoi & Pourquoi ?
-Lire un fichier texte, c'est récupérer les données écrites dedans. On le fait pour accéder et manipuler ces données, comme charger des configurations, importer des données utilisateurs ou analyser des contenus.
-
 ## Comment faire :
 Elm fonctionne sur le web, alors pour lire un fichier texte, on interagit avec des APIs de navigateur. Voici un exemple avec `File.Selector` et `File.Reader`.
 

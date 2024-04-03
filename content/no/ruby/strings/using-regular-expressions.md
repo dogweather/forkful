@@ -14,10 +14,9 @@ title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---
 
-## Hva & Hvorfor?
-Regulære uttrykk (regex) i Ruby er mønstre som brukes til å matche tegnkombinasjoner i strenger, noe som gjør det mulig for utviklere å søke etter, matche og manipulere tekst effektivt. Programmerere bruker regex for oppgaver som validering, parsing og strengmanipulasjon, noe som gjør det til et uunnværlig verktøy for tekstbehandling.
-
 ## Hvordan:
+
+
 ### Grunnleggende matching
 For å matche en streng mot et enkelt mønster, kan du bruke `match`-metoden. Nedenfor sjekker vi om ordet "Ruby" finnes i en gitt streng.
 

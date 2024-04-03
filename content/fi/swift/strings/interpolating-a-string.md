@@ -11,9 +11,6 @@ title: Merkkijonon interpolointi
 weight: 8
 ---
 
-## What & Why?
-Merkkijonon interpolointi tarkoittaa muuttujien, konstanttien ja lausekkeiden yhdistämistä merkkijonoon. Sitä käytetään dynaamisten viestien luomiseen ja koodin toistojen vähentämiseen.
-
 ## How to:
 ```Swift
 let name = "Matti"

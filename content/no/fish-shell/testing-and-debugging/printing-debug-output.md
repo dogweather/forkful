@@ -11,9 +11,6 @@ title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---
 
-## Hva & Hvorfor?
-Debugging-utskrifter er info vi skriver ut for å forstå hva koden vår egentlig gjør. Programmerere bruker dette for å finne bugs eller forstå flyten bedre, spesielt når ting ikke fungerer som de skal.
-
 ## Hvordan:
 I Fish Shell, bruk `echo` eller `printf` for å skrive ut debug-informasjon. Legg til `-d` for detaljert output.
 

@@ -9,9 +9,6 @@ title: Avvio di un nuovo progetto
 weight: 1
 ---
 
-## What & Why? (Che Cosa & Perché?)
-Un nuovo progetto è una tela bianca per codificare idee. I programmatori iniziano nuovi progetti per risolvere problemi, esplorare tecnologie o per puro apprendimento.
-
 ## How to: (Come Fare:)
 Inizia creando un nuovo file `main.lua`. Ecco un esempio di codice Lua basilare:
 

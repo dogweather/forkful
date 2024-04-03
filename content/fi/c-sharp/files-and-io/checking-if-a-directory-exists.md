@@ -14,14 +14,10 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mikä ja miksi?
-
-Hakemiston olemassaolon tarkistaminen C#:ssa tarkoittaa kansion läsnäolon varmistamista määritetyssä polussa tiedostojärjestelmässä. Ohjelmoijat tekevät tämän välttääkseen virheitä, kuten yrittämistä lukea tai kirjoittaa olemattomaan hakemistoon, varmistaen sujuvamman tiedosto- ja hakemistokäsittelyn.
-
 ## Kuinka:
 
-### Käyttäen System.IO
 
+### Käyttäen System.IO
 C# tarjoaa `System.IO` nimiavaruuden, joka sisältää `Directory` luokan, tarjoten suoran tavan tarkistaa hakemiston olemassaolo `Exists` metodin avulla.
 
 ```csharp
@@ -52,7 +48,6 @@ Hakemisto on olemassa: False
 Jos hakemisto todellakin on olemassa polussa `C:\ExampleDirectory`, tuloste on `True`.
 
 ### Käyttäen System.IO.Abstractions yksikkötestaukseen
-
 Kun kyse on koodisi yksikkötestattavuuden mahdollistamisesta, erityisesti kun se vuorovaikuttaa tiedostojärjestelmän kanssa, `System.IO.Abstractions` paketti on suosittu valinta. Se mahdollistaa tiedostojärjestelmän toimintojen abstrahoinnin ja mockaamisen testeissäsi. Tässä on miten voit tarkistaa hakemiston olemassaolon käyttäen tätä lähestymistapaa:
 
 Ensin, varmista että olet asentanut paketin:

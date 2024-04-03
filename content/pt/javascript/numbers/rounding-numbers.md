@@ -11,9 +11,6 @@ title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---
 
-## O que é & Por quê?
-Arredondar é eliminar o ruído após um determinado ponto em um número. Programadores arredondam para controlar a precisão, gerenciar memória ou tornar a saída amigável ao usuário—como transformar 2,998 em um limpo 3.
-
 ## Como fazer:
 Aqui está como você arredonda números em JavaScript usando `Math.round()`, `Math.ceil()`, e `Math.floor()`: 
 

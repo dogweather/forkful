@@ -13,12 +13,7 @@ title: Verificando si un directorio existe
 weight: 20
 ---
 
-## ¿Qué y por qué?
-
-Verificar si un directorio existe en Dart es sobre comprobar la presencia de un directorio en una ruta especificada en el sistema de archivos antes de realizar operaciones como leer o escribir archivos. Los programadores hacen esto para evitar errores que ocurren cuando intentan acceder o modificar directorios que no existen.
-
 ## Cómo:
-
 Dart utiliza la biblioteca `dart:io` para trabajar con archivos y directorios. Aquí hay una manera simple de verificar si un directorio existe:
 
 ```dart

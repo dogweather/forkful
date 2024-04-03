@@ -11,9 +11,6 @@ title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---
 
-## Vad & Varför?
-Läsa kommandoradsargument innebär att fånga de värden som användaren matar in när de kör ditt program. Programmerare gör detta för att tillåta dynamisk input och anpassa programmets beteende vid körning.
-
 ## Så här gör du:
 Elixir gör det enkelt att hantera kommandoradsargument med `System.argv/0`. Här är ett exempel:
 

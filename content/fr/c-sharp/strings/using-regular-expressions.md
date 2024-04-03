@@ -15,10 +15,8 @@ title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---
 
-## Quoi et pourquoi ?
-Les expressions régulières (regex) en C# sont un outil puissant pour la correspondance de motifs au sein des chaînes de caractères, permettant aux programmeurs de rechercher, remplacer, diviser ou extraire des données de manière efficace. Les programmeurs utilisent les regex pour des tâches allant de simples validations, comme la vérification du format d'un e-mail, à des tâches complexes de traitement de texte en raison de leur flexibilité et performance.
-
 ## Comment faire :
+
 
 ### Correspondance de motifs simple
 Pour vérifier si une chaîne contient un motif spécifique, vous pouvez utiliser la méthode `Regex.IsMatch` de l'espace de noms `System.Text.RegularExpressions`.

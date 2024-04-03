@@ -11,9 +11,6 @@ title: Manipulation des nombres complexes
 weight: 14
 ---
 
-## Quoi & Pourquoi ?
-Les nombres complexes ont une partie réelle et une partie imaginaire (comme 3 + 4i). Les programmeurs les utilisent en Swift pour des tâches telles que le traitement du signal, la résolution de certains problèmes mathématiques et la simulation physique.
-
 ## Comment faire :
 Swift n'a pas de support intégré pour les nombres complexes, mais nous pouvons développer le nôtre :
 

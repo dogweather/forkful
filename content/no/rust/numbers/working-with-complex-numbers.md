@@ -10,9 +10,6 @@ title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---
 
-## Hva & Hvorfor?
-Komplekse tall har en reell del og en imaginær del og er essensielle i forskjellige felt som ingeniørvitenskap, fysikk, og datagrafikk. Programmerere bruker dem til å løse ligninger som vanlige reelle tall ikke kan håndtere.
-
 ## Hvordan:
 Rust har ikke innebygd støtte for komplekse tall, men pakker som `num-complex` har ryggen din. Her er hvordan du bruker den:
 

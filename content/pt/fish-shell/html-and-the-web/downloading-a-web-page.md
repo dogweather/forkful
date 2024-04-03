@@ -10,9 +10,6 @@ title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---
 
-## O Que é & Por Que?
-Baixar uma página da web é, basicamente, capturar todo o conteúdo de uma URL para que você possa vê-lo offline ou manipulá-lo programaticamente. Programadores fazem isso para automatizar a coleta de dados, testar aplicações web ou simplesmente arquivar informações.
-
 ## Como Fazer:
 Vamos usar o `curl`, um comando poderoso para transferência de dados. No Fish, isso fica simples assim:
 
@@ -31,7 +28,6 @@ Além do `curl`, existem outras ferramentas, como o `wget`, que é particularmen
 A implementação exata das ferramentas pode variar dependendo da versão, mas o conceito central é o mesmo: requisitar os dados de uma URL e salvá-los localmente. É possível também que uma linguagem de programação como Python ou Ruby tenha suas próprias bibliotecas para baixar páginas web, mas para muitos scripts rápidos e sujos, `curl` no shell é a maneira mais rápida e fácil de fazer o trabalho.
 
 ## Veja Também
-
 - Documentação do `curl`: https://curl.se/docs/
 - Uma comparação entre `curl` e `wget`: https://www.baeldung.com/linux/wget-vs-curl
 - Tutorial sobre automatização de downloads com o Fish shell: https://fishshell.com/docs/current/tutorial.html#tut_automatic_web_downloads

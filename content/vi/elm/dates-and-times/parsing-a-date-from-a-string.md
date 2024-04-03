@@ -16,9 +16,6 @@ title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---
 
-## Cái gì & Tại sao?
-Việc phân tích cú pháp một ngày từ một chuỗi có nghĩa là chuyển đổi văn bản mô tả một ngày thành định dạng mà một chương trình có thể làm việc với. Lập trình viên thực hiện điều này để thao tác với ngày tháng—nghĩ về việc sắp xếp sự kiện hoặc tính toán khoảng thời gian—trong các ứng dụng xử lý lịch trình, hạn chót và nhiều hơn nữa.
-
 ## Làm thế nào:
 Elm sử dụng module `Date` để xử lý ngày tháng, nhưng tính đến kiến thức cắt đứt của tôi vào đầu năm 2023, không có thư viện Elm tích hợp sẵn nào để phân tích cú pháp ngày từ chuỗi. Bạn có thể sẽ sử dụng một gói như `justinmimbs/date` để thực hiện công việc này. Đây là cách bạn thực hiện với nó:
 

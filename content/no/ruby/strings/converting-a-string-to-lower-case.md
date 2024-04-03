@@ -11,9 +11,6 @@ title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---
 
-## Hva & Hvorfor?
-Å endre en streng til små bokstaver i Ruby betyr å konvertere alle bokstavene i strengen til deres minuskul versjoner. Programmerere gjør dette for å standardisere tekstinput og lette sammenligninger uten å bekymre seg for store/små bokstaver.
-
 ## Hvordan:
 ```Ruby
 # Eksempel: Konvertere en streng til småbokstaver

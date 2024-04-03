@@ -10,10 +10,8 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-Parsing a date from a string involves converting the text representation of a date and time into a `Date` object or a more modern `LocalDateTime` object. Programmers do this to manipulate, format, compare, or store dates in a standardized format, which is crucial for applications requiring date calculations, validation, or consistent internationalization.
-
 ## How to:
+
 
 ### Using `java.time` package (Recommended in Java 8 and later):
 ```java

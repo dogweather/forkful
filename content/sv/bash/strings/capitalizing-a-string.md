@@ -14,11 +14,7 @@ title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---
 
-## Vad & Varför?
-Att göra det första tecknet i en sträng till versal i Bash involverar att omvandla det första tecknet av strängen till stort bokstav medan resten av strängen lämnas oförändrad. Denna teknik används ofta för att formatera utdata eller för att följa kodkonventioner som kräver att vissa strängar börjar med en stor bokstav för läsbarhet eller stilistiska preferenser.
-
 ## Hur man gör:
-
 Bash har inte en inbyggd funktion specifikt för att göra bokstäver till versaler i strängar, men du kan åstadkomma detta med hjälp av parameterexpansion eller externa verktyg som `awk`. Här är några sätt att skriva det första tecknet i en sträng med stor bokstav i Bash:
 
 **Använda Parameter Expansion:**

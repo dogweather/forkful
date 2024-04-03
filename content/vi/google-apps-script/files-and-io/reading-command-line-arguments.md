@@ -16,12 +16,7 @@ title: "\u0110\u1ECDc \u0111\u1ED1i s\u1ED1 t\u1EEB d\xF2ng l\u1EC7nh"
 weight: 23
 ---
 
-## Gì và Tại sao?
-
-Việc đọc các dòng lệnh trong Google Apps Script phần nào không chính xác vì, không giống như các giao diện dòng lệnh truyền thống trong các ngôn ngữ lập trình như Python hay Node.js, Google Apps Script không có hỗ trợ nguyên thủy cho việc thực thi dòng lệnh hay phân tách tham số. Thay vào đó, các lập trình viên thường mô phỏng quá trình này thông qua các hàm tự tạo và các tham số URL khi chạy các ứng dụng web hoặc các nhiệm vụ tự động hóa, cho phép tương tác động với các chức năng của kịch bản dựa trên nhập liệu từ người dùng hoặc các tham số đã định trước.
-
 ## Làm thế nào:
-
 Để mô phỏng quá trình đọc các dòng lệnh trong Google Apps Script, đặc biệt là cho các ứng dụng web, bạn có thể sử dụng các tham số chuỗi truy vấn. Khi người dùng truy cập URL của ứng dụng web, bạn có thể thêm vào các tham số như `?name=John&age=30` và phân tích các tham số này trong mã Apps Script của bạn. Dưới đây là cách bạn có thể thiết lập:
 
 ```javascript
@@ -47,7 +42,6 @@ Tên: John, Tuổi: 30
 Phương pháp này rất hữu ích để tạo ra các tương tác cá nhân hóa trong các ứng dụng web hoặc điều khiển một cách lập trình các thực thi kịch bản.
 
 ## Tìm hiểu sâu hơn
-
 Các dòng lệnh, như được hiểu trong bối cảnh của các ngôn ngữ lập trình truyền thống, mang lại khả năng cho các kịch bản và ứng dụng để xử lý các tham số thời gian chạy, từ đó cho phép thực thi mã linh hoạt và động dựa trên nhập liệu từ người dùng hoặc quy trình tự động. Google Apps Script, là một ngôn ngữ lập trình dựa trên đám mây cho phát triển ứng dụng nhẹ trong hệ sinh thái Google Workspace, không tự nhiên hoạt động qua giao diện dòng lệnh. Thay vào đó, việc thực thi của nó chủ yếu dựa vào sự kiện hoặc được kích hoạt thủ công thông qua UI của Apps Script và Google Workspace, hoặc qua các ứng dụng web có thể phân tích các tham số URL như các dòng lệnh giả định.
 
 Với sự khác biệt kiến trúc này, các lập trình viên đến từ nền tảng của các ngôn ngữ chú trọng giao diện dòng lệnh có thể cần điều chỉnh cách tiếp cận khi tự động hóa các nhiệm vụ hoặc phát triển ứng dụng trong Google Apps Script. Thay vì phân tích tham số dòng lệnh truyền thống, việc tận dụng chức năng ứng dụng web của Google Apps Script hoặc thậm chí là các hàm tự tạo của Google Sheets cho xử lý dữ liệu tương tác có thể phục vụ mục đích tương tự. Mặc dù lúc đầu có vẻ như một hạn chế, điều này khuyến khích sự phát triển của các giao diện người dùng thân thiện và ứng dụng web dễ tiếp cận hơn, phù hợp với mục tiêu tập trung vào việc tích hợp và mở rộng ứng dụng Google Workspace một cách mượt mà của Google Apps Script.

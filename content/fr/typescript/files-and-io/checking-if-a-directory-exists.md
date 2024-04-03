@@ -15,15 +15,10 @@ title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---
 
-## Quoi & Pourquoi ?
-Vérifier si un répertoire existe en TypeScript est essentiel pour les tâches de gestion de fichiers, telles que lire ou écrire des données dans des fichiers, en s'assurant que les opérations sont effectuées uniquement sur des répertoires valides. Cette opération est cruciale pour éviter les erreurs découlant de la tentative d'accès ou de manipulation de répertoires inexistants.
-
 ## Comment faire :
-
 TypeScript, lorsqu'exécuté dans un environnement Node.js, vous permet de vérifier si un répertoire existe en utilisant le module `fs`, qui fournit la fonction `existsSync()` ou la fonction asynchrone `access()` combinée à `constants.F_OK`.
 
 ### Utiliser `fs.existsSync()` :
-
 ```typescript
 import { existsSync } from 'fs';
 
@@ -37,7 +32,6 @@ if (existsSync(directoryPath)) {
 ```
 
 ### Utiliser `fs.access()` avec `fs.constants.F_OK` :
-
 ```typescript
 import { access, constants } from 'fs';
 
@@ -63,7 +57,6 @@ Le répertoire n'existe pas.
 ```
 
 ### Utiliser une librairie tierce - `fs-extra` :
-
 `fs-extra` est une librairie tierce populaire qui améliore le module `fs` intégré et offre des fonctions plus pratiques.
 
 ```typescript

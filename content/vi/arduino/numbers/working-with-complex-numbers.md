@@ -14,9 +14,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Cái gì & Tại sao?
-Số phức có một phần thực và một phần ảo, thường được viết là `a + bi`. Chúng rất quan trọng cho một số dự án Arduino nặng về toán học liên quan đến xử lý tín hiệu, kỹ thuật điện, hoặc bất kỳ lĩnh vực nào khác mà hiện tượng được mô hình hóa tốt nhất trong một mặt phẳng.
-
 ## Làm thế nào:
 ```Arduino
 #include <Complex.h>

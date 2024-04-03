@@ -11,9 +11,6 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Créer un fichier temporaire permet de stocker des données de manière éphémère pendant l'exécution d'un programme. Les développeurs utilisent cette technique pour éviter de surcharger la mémoire et pour manipuler des fichiers sans affecter le système de fichiers permanent.
-
 ## How to: (Comment faire : )
 ```Python
 import tempfile

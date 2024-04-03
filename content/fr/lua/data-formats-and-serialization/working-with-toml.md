@@ -11,9 +11,6 @@ title: Travailler avec TOML
 weight: 39
 ---
 
-## Quoi et Pourquoi ?
-Travailler avec TOML implique d'analyser et de générer des données TOML (Tom's Obvious, Minimal Language) avec Lua. Les programmeurs utilisent TOML pour les fichiers de configuration en raison de sa lisibilité et de sa syntaxe simple qui se traduit facilement en une structure de données.
-
 ## Comment faire :
 Tout d'abord, assurez-vous que votre environnement Lua dispose d'un analyseur TOML. Nous utiliserons `lua-toml` pour cet exemple.
 

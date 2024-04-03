@@ -10,9 +10,6 @@ title: Refactoring
 weight: 19
 ---
 
-## What & Why?
-Refactoring is the process of restructuring existing code without changing its external behavior to improve nonfunctional attributes. Programmers do it to make code more readable, reduce complexity, improve maintainability, and make it easier to scale or modify down the road.
-
 ## How to:
 Imagine you've got a script that's grown quite a bit over time. It started simple, but now it's a beast sprawling with tentacles of logic. Here's a bite-sized example of refactoring a function to be more legible and efficient:
 

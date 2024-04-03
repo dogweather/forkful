@@ -10,9 +10,6 @@ title: Lavorare con XML
 weight: 40
 ---
 
-## Cosa e Perché?
-XML (eXtensible Markup Language) riguarda la strutturazione dei dati in un formato leggibile. I programmatori maneggiano XML per configurazione, scambio di dati tra app e dove le specifiche lo richiedono—pensa a SOAP o alle API web.
-
 ## Come fare:
 ```C#
 using System;

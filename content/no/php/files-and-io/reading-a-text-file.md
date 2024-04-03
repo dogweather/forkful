@@ -10,9 +10,6 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## Hva & Hvorfor?
-Å lese en tekstfil i PHP betyr å hente data fra en fil på serveren. Programmerere gjør dette for å behandle informasjon, lagre innstillinger, eller å vise innhold til brukere.
-
 ## Hvordan:
 Lese en fil linje for linje med `fgets()`:
 

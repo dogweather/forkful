@@ -15,12 +15,7 @@ title: "T\u1EA3i trang web"
 weight: 42
 ---
 
-## Cái gì & Tại sao?
-
-Tải một trang web nghĩa là lấy nội dung HTML thô từ internet bằng cách sử dụng mã lập trình. Các lập trình viên thực hiện điều này để xử lý dữ liệu, tương tác với các dịch vụ web, hoặc đơn giản là lưu thông tin để sử dụng ngoại tuyến.
-
 ## Làm thế nào:
-
 C# làm cho việc tải một trang web trở nên đơn giản với lớp `HttpClient`. Dưới đây là một ví dụ nhanh:
 
 ```C#
@@ -56,7 +51,6 @@ class Program
 Điều này sẽ xuất ra nội dung HTML của trang web được chỉ định vào bảng điều khiển.
 
 ## Sâu hơn
-
 Trước khi có `HttpClient`, C# sử dụng các lớp như `WebClient` và `HttpWebRequest` để tải nội dung web. `HttpClient` là lớp mới nhất và được thiết kế để có thể tái sử dụng, hiệu quả và hỗ trợ các thao tác bất đồng bộ, làm cho nó trở thành lựa chọn ưu tiên cho các ứng dụng mới.
 
 Có các lựa chọn thay thế. Ví dụ, thư viện bên thứ ba như `HtmlAgilityPack` có thể phân tích cú pháp HTML, làm cho việc điều hướng DOM hoặc trích xuất các phần cụ thể của thông tin trở nên dễ dàng hơn mà không cần phải xử lý với chuỗi HTML thô.
@@ -64,7 +58,6 @@ Có các lựa chọn thay thế. Ví dụ, thư viện bên thứ ba như `Html
 Khi tải các trang web, hãy nhớ: tôn trọng các tập tin robots.txt, xử lý ngoại lệ, và lưu ý đến các điều khoản sử dụng của các trang web.
 
 ## Xem thêm
-
 - [Tài liệu Lớp HttpClient](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
 - [Async và Await](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/)
 - [HTML Agility Pack trên GitHub](https://github.com/zzzprojects/html-agility-pack)

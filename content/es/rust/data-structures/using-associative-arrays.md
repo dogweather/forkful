@@ -12,12 +12,7 @@ title: Uso de matrices asociativas
 weight: 15
 ---
 
-## Qué y Por Qué?
-
-Los arreglos asociativos, o lo que los Rustáceos llaman "mapas hash", son colecciones que almacenan datos en pares clave-valor. Los programadores los utilizan para la búsqueda rápida de datos, permitiendo la manipulación eficiente de datos basada en claves únicas.
-
 ## Cómo hacerlo:
-
 En Rust, el tipo `HashMap` del módulo `std::collections` proporciona la funcionalidad de los arreglos asociativos. Así es cómo puedes trabajar con ellos:
 
 ```Rust
@@ -48,5 +43,4 @@ fn main() {
 ```
 
 ## Estudio Profundo
-
 El `HashMap` en Rust utiliza una función hash para mapear claves a valores, lo que permite una rápida recuperación de datos. Sin embargo, esta eficiencia tiene un costo: los mapas hash no mantienen el orden de sus elementos. Esto contrasta con otras implementaciones de arreglos asociativos, como los de Python (`dict`) o Ruby, que en versiones recientes mantienen el orden de inserción como una característica. Para casos de uso donde el orden de los pares clave-valor es significativo, los desarrolladores de Rust podrían considerar usar el `BTreeMap` del módulo `std::collections`, el cual mantiene el orden pero podría ofrecer una inserción y recuperación más lentas en comparación con `HashMap`. En última instancia, la elección entre `HashMap` y `BTreeMap` depende de requisitos específicos en torno al ordenamiento y rendimiento.

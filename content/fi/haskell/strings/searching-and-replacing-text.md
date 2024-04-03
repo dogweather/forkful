@@ -11,9 +11,6 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## What & Why?
-Tekstin etsintä ja korvaaminen auttaa löytämään ja muokkaamaan koodissa tai tekstitiedostoissa olevia merkkijonoja. Ohjelmoijat käyttävät tätä toimintoa nopeuttaakseen koodin refaktorointia ja virheiden korjausta.
-
 ## How to:
 ```Haskell
 import Data.List (isInfixOf)

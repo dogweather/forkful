@@ -11,9 +11,6 @@ title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---
 
-## Hva & Hvorfor?
-Det interaktive skallet, eller Read-Eval-Print Loop (REPL), lar deg skrive PowerShell-kommandoer og få umiddelbar tilbakemelding. Programmerere bruker det for å raskt teste kodebiter, feilsøke eller lære nye kommandoer uten å skrive et komplett skript.
-
 ## Hvordan:
 Start PowerShell, og du er i REPL. Prøv `Get-Date` Cmdlet:
 

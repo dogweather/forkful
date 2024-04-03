@@ -14,10 +14,9 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i dlaczego?
-Pisanie testów w programowaniu polega na tworzeniu i uruchamianiu skryptów, które weryfikują, czy kod zachowuje się zgodnie z oczekiwaniami w różnych warunkach. Programiści robią to, aby zapewnić jakość, zapobiec regresji i ułatwić bezpieczny refaktoring, co jest kluczowe dla utrzymania zdrowej, skalowalnej i wolnej od błędów bazy kodu.
-
 ## Jak to zrobić:
+
+
 ### Natywny PHP – PHPUnit
 Szeroko używanym narzędziem do testowania w PHP jest PHPUnit. Zainstaluj go za pomocą Composera:
 ```bash

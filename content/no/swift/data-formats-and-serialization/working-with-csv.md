@@ -14,12 +14,7 @@ title: Arbeide med CSV
 weight: 37
 ---
 
-## Hva & Hvorfor?
-
-Å jobbe med CSV-filer (kommaseparerte verdier) innebærer parsing og generering av strukturerte data fra tekstfiler der hver linje representerer en post og hver post består av felt adskilt med komma. Programmerere engasjerer seg ofte i denne aktiviteten for å enkelt importere, eksportere og manipulere tabelldata ved bruk av et format som er bredt støttet på tvers av forskjellige plattformer og programmeringsspråk, på grunn av dets enkelhet og menneskelesbare format.
-
 ## Hvordan:
-
 I Swift er det ingen innebygd støtte for direkte parsing av CSV-filer, men du kan håndtere CSV-data ved å bruke `String`-metoder for å splitte innholdet, eller ved å dra fordel av tredjepartsbiblioteker som SwiftCSV for en mer strømlinjeformet tilnærming. Her er begge metodene:
 
 ### Manuel parsing uten eksterne biblioteker

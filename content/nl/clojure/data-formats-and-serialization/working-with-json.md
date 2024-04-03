@@ -12,9 +12,6 @@ title: Werken met JSON
 weight: 38
 ---
 
-## Wat en Waarom?
-JSON (JavaScript Object Notation) is een gegevensformaat dat wordt gebruikt om gegevens op te slaan en te transporteren. Programmeurs gebruiken JSON vanwege de gebruiksvriendelijkheid met web-API's en het taalonafhankelijke tekstformaat, wat het erg handig maakt voor gegevensuitwisseling.
-
 ## Hoe te:
 Laten we spelen met JSON in Clojure. Je hebt `Cheshire` nodig, een populaire bibliotheek voor JSON-codering/decodering.
 

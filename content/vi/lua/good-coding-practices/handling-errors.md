@@ -15,9 +15,6 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Điều Gì và Tại Sao?
-Xử lý lỗi trong lập trình là mong đợi những điều không mong đợi. Đó là nghệ thuật lập kế hoạch cho những lúc mọi thứ đi chệch hướng để bạn có thể giữ cho chương trình của mình chạy mượt mà.
-
 ## Làm Thế Nào:
 Lua sử dụng hai hàm chính để xử lý lỗi: `pcall` và `xpcall`. Dưới đây là cách bạn sử dụng chúng:
 

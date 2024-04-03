@@ -12,9 +12,6 @@ title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---
 
-## Vad & Varför?
-Att ta bort tecken som matchar ett mönster innebär att du selektivt raderar delar av en sträng baserat på specifika kriterier, såsom alla siffror eller vissa symboler. Programmerare gör detta för att rensa data, validera input eller förenkla strängar för vidare bearbetning.
-
 ## Hur man gör:
 ```Swift
 let originalString = "Det var en solig dag i maj17, 2023!"

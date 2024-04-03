@@ -11,9 +11,6 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## What & Why? (Mikä ja Miksi?)
-Aloitetaan uusi projekti tarkoittaa puhtaalta pöydältä lähtöä, uuden sovelluksen tai kirjaston kehittämistä. Ohjelmoijat tekevät tämän, kun heillä on uusi idea tai tarve, jota ei voi tyydyttää olemassa olevilla ratkaisuilla.
-
 ## How to: (Kuinka tehdä:)
 ```TypeScript
 // Asenna tarvittavat työkalut (esim. Node.js ja npm)

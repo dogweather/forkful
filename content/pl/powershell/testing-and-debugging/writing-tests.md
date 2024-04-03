@@ -14,12 +14,7 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i dlaczego?
-
-Pisanie testów w PowerShellu polega na tworzeniu skryptów, które automatycznie weryfikują funkcjonalność Twojego kodu PowerShell, zapewniając, że zachowuje się on zgodnie z oczekiwaniami. Programiści robią to, aby wyłapywać błędy na wczesnym etapie, upraszczać konserwację kodu i zapewniać, że modyfikacje kodu nie zakłócają niezamierzenie istniejącej funkcjonalności.
-
 ## Jak to zrobić:
-
 PowerShell nie ma wbudowanego frameworka do testowania, ale szeroko stosowanym, popularnym modułem zewnętrznym do pisania i uruchamiania testów jest Pester. Oto, jak zacząć używać Pestera do testowania twoich funkcji PowerShell.
 
 Najpierw zainstaluj Pester, jeśli jeszcze tego nie zrobiłeś:

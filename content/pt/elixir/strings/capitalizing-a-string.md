@@ -13,12 +13,7 @@ title: Capitalizando uma string
 weight: 2
 ---
 
-## O Que & Por Que?
-
-Capitalizar uma string envolve converter a primeira letra da string para maiúscula enquanto garante que as restantes letras estejam em minúscula. Essa ação é comumente necessária para formatar a entrada do usuário ou exibir texto em interfaces de usuário, onde a consistência e a legibilidade são importantes.
-
 ## Como fazer:
-
 Elixir oferece uma maneira direta de capitalizar strings usando suas funções integradas, sem a necessidade de bibliotecas de terceiros. Aqui está um exemplo simples:
 
 ```elixir

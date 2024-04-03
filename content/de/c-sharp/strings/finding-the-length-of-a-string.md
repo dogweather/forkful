@@ -11,9 +11,6 @@ title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---
 
-## Was & Warum?
-Die Länge eines Strings zu bestimmen bedeutet, die Anzahl der Zeichen zu zählen, die er enthält. Das ist nützlich, um Text zu verarbeiten, Grenzen zu überprüfen oder Daten validieren zu können.
-
 ## Anleitung:
 Um die Länge eines Strings in C# zu bekommen, verwenden wir die `Length`-Eigenschaft. Sieh dir das Beispiel an:
 

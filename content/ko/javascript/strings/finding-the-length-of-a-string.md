@@ -16,9 +16,6 @@ title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 weight: 7
 ---
 
-## What & Why? (무엇과 왜?)
-문자열의 길이를 찾는 것은 문자열에 있는 문자의 수를 세는 과정입니다. 프로그래머들은 데이터를 검증하거나 특정 연산을 하기 위해 이 정보를 필요로 합니다.
-
 ## How to: (어떻게:)
 ```Javascript
 let greeting = "안녕하세요!";

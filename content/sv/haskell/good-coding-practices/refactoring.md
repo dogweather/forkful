@@ -11,9 +11,6 @@ title: Refaktorisering
 weight: 19
 ---
 
-## Vad & Varför?
-Refaktorisering är processen att justera din kod utan att ändra dess externa beteende. Det handlar om att städa upp och organisera din akt för att göra koden lättare att läsa, underhålla och utvidga. Det kan också hjälpa till att krossa buggar och förbättra prestanda.
-
 ## Hur man gör:
 Låt oss säga att du har ett stycke Haskell-kod som upprepar sig mer än din favoritlåt. Här är en snabb titt på hur du kan refaktorisera det med hjälp av funktioner.
 

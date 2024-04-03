@@ -11,9 +11,6 @@ title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---
 
-## What & Why?
-Att konkatenera strängar innebär att sätta ihop två eller flera textbitar till en enda sträng. Programmerare gör det för att skapa meningar, meddelanden eller för att bygga upp dynamiska datastrukturer.
-
 ## How to:
 Konkatenering med `+` operatören:
 ```C++
@@ -43,6 +40,7 @@ int main() {
     return 0;
 }
 ```
+
 ## Deep Dive:
 Förr i tiden var C++ strängkonkatenering begränsad till C-stilsträngar och krävde manuellt arbete med teckentabeller. Nu används `std::string` klassen, en del av standardbiblioteket, för enklare och säkrare hantering.
 

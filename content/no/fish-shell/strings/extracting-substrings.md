@@ -9,9 +9,6 @@ title: Uthenting av delstrenger
 weight: 6
 ---
 
-## Hva & Hvorfor?
-Å trekke ut delstrenger betyr å hente en spesifikk del av en tekststreng. Programmerere gjør dette for å manipulere eller analysere data mer effektivt.
-
 ## Hvordan:
 Her er et par Fish Shell-eksempler:
 

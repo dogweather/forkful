@@ -12,12 +12,7 @@ title: Scaricare una pagina web
 weight: 42
 ---
 
-## Cos'è & Perché?
-
-Scaricare una pagina web consiste nel recuperare il contenuto di una pagina web tramite il suo URL per elaborarlo o memorizzarlo. I programmatori fanno ciò per estrarre informazioni, monitorare cambiamenti o archiviare contenuti, rendendolo un elemento fondamentale nel web scraping, nel data mining e nelle attività di test automatizzati.
-
 ## Come fare:
-
 Dart fornisce il pacchetto `http`, una popolare libreria di terze parti per effettuare richieste HTTP. Ecco un esempio base su come usarlo per scaricare una pagina web:
 
 Prima, aggiungi il pacchetto `http` al tuo `pubspec.yaml`:

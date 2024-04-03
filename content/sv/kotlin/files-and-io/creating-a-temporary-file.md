@@ -11,9 +11,6 @@ title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---
 
-## Vad & Varför?
-Tillfälliga filer är temporära storage-enheter som program använder för att hantera data under körning. Programmerare skapar dem för att förhindra dataförlust vid oförutsedda avbrott och för att minska minnesanvändningen på huvudlagringsmediet.
-
 ## Hur gör man:
 Att skapa en tillfällig fil i Kotlin är enkelt. Använd `createTempFile`-metoden från `java.io.File`:
 

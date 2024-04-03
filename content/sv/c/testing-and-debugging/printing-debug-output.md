@@ -14,12 +14,7 @@ title: "Skriva ut fels\xF6kningsutdata"
 weight: 33
 ---
 
-## Vad & Varför?
-
-Att skriva ut felsökningsmeddelanden handlar om att generera tillfälliga, informativa loggmeddelanden som kan hjälpa programmerare att förstå flödet och tillståndet i ett program under dess körning. Programmerare gör detta för att identifiera och diagnostisera mjukvarubuggar eller oväntat beteende i programmets logik.
-
 ## Hur gör man:
-
 I C är det vanligaste sättet att skriva ut felsökningsmeddelanden att använda funktionen `printf` från standard I/O-biblioteket. Funktionen `printf` tillåter formaterad utskrift till standardutenhetsutmatningen, vanligtvis skärmen. Här är ett enkelt exempel:
 
 ```c
@@ -65,7 +60,6 @@ DEBUG: example.c:6: Testvärdet är 10
 Observera att vi i detta exempel använder `fprintf` för att skriva ut till standardfelströmmen (`stderr`), vilket ofta är mer lämpligt för felsökningsmeddelanden.
 
 ## Djupdykning
-
 Historiskt sett har felsökningstekniker i C varit manuella och rudimentära, på grund av språkets närhet-till-maskinen-filosofi och ålder. Medan moderna språk kan innefatta sofistikerade, inbyggda felsökningsbibliotek eller förlita sig starkt på funktioner i Integrerade Utvecklingsmiljöer (IDE:er), tenderar C-programmerare ofta att manuellt infoga utskriftsuttryck som de ovan visas för att spåra programmets utförande.
 
 En sak att varna för med felsökningsutskrifter är deras potential att skapa röra i utmatningen och leda till prestandaproblem, speciellt om de oavsiktligt lämnas kvar i produktionskod. Av dessa skäl kan användning av villkorlig kompilering (t.ex., `#ifdef DEBUG ... #endif`) vara en bättre metod, vilket gör det möjligt för felsökningsuttryck att inkluderas eller exkluderas baserat på kompileringstidsflaggor.

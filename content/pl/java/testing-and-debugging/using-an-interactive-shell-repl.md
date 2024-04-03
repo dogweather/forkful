@@ -12,9 +12,6 @@ title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---
 
-## Co i dlaczego?
-REPL (Read-Eval-Print Loop), czyli pętla czytaj-wykonaj-drukuj, to interaktywna powłoka, która przetwarza pojedyncze wejścia użytkownika, wykonuje kod i zwraca wynik. Programiści używają jej do szybkich eksperymentów, debugowania lub nauki, ponieważ umożliwia natychmiastową informację zwrotną i iterację.
-
 ## Jak to zrobić:
 Uruchomienie REPL w Javie jest proste dzięki narzędziu `jshell` wprowadzonemu w Java 9. Oto jak się za to zabrać i rozpocząć podstawową sesję:
 

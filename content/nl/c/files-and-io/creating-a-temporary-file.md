@@ -14,9 +14,6 @@ title: Een tijdelijk bestand aanmaken
 weight: 21
 ---
 
-## Wat & Waarom?
-Een tijdelijk bestand in C creëren betekent het genereren van een bestand dat bedoeld is om voor een korte duur gebruikt te worden, meestal als kladruimte voor gegevensverwerking of opslag. Programmeurs doen dit om tijdelijke gegevens te beheren zonder de permanente opslag van het programma te beïnvloeden of om ervoor te zorgen dat gevoelige gegevens worden gewist na gebruik.
-
 ## Hoe te:
 Het creëren van een tijdelijk bestand in de C-programmeertaal kan functies zoals `tmpfile()` en `mkstemp()` gebruiken.
 

@@ -16,9 +16,6 @@ title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---
 
-## Cái gì & Tại sao?
-Kiểm tra xem một thư mục có tồn tại không có nghĩa là xác minh thư mục đó có mặt trước khi bạn cố gắng đọc hoặc ghi các tệp vào trong đó. Lập trình viên làm điều này để tránh lỗi, như là cố gắng lưu một tệp vào nơi không có chỗ để đặt nó.
-
 ## Cách thực hiện:
 Dưới đây là cách bạn kiểm tra xem một thư mục có tồn tại với `java.nio.file` không:
 

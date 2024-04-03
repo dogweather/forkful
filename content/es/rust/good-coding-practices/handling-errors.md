@@ -10,12 +10,7 @@ title: Manejo de errores
 weight: 16
 ---
 
-## ¿Qué y por qué?
-
-El manejo de errores es lidiar con las cosas cuando se tuercen. Los programadores lo hacen para manejar lo inesperado, asegurando que sus programas en Rust sean robustos y no simplemente se bloqueen cuando se encuentran con un contratiempo.
-
 ## Cómo hacerlo:
-
 Rust maneja los errores de dos maneras principales: errores recuperables e irrecuperables. Vamos a ver ambos.
 
 Los errores recuperables utilizan `Result<T, E>`:
@@ -54,7 +49,6 @@ fn main() {
 Ejecútalo y verás un mensaje de pánico. Tu programa se detiene en seco.
 
 ## Inmersión Profunda
-
 Históricamente, el manejo de errores en programación ha sido un lío. Rust lo hace bien con una clara distinción entre errores recuperables e irrecuperables.
 
 El enum `Result` es para errores recuperables. Es explícito: manejas la variante `Ok` o `Err`. También tienes métodos como `unwrap()` y `expect()`, pero son atajos rápidos y sucios que pueden llevar a un `panic!`.
@@ -66,7 +60,6 @@ El manejo de errores devolviendo un `Result` se prefiere cuando esperas lidiar c
 ¿Alternativas? Claro, podrías usar otros crates de manejo de errores para más funciones o uso ergonómico. Como `anyhow` para manejo de errores simple, o `thiserror` para errores en código de biblioteca.
 
 ## Ver También
-
 ¿Interesado en profundizar más? Aquí es donde ir:
 
 - [Libro de Rust sobre Manejo de Errores](https://doc.rust-lang.org/book/ch09-00-error-handling.html) - Un gran lugar para entender la filosofía de manejo de errores de Rust.

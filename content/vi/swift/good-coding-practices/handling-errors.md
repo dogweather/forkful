@@ -15,9 +15,6 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Gì & Tại sao?
-Xử lý lỗi trong Swift có nghĩa là dự đoán và phản ứng với những vấn đề phát sinh khi mã của bạn được chạy. Chúng ta làm điều này để kiểm soát sự hỗn loạn—giữ cho ứng dụng không bị sập và mang lại cho người dùng trải nghiệm mượt mà.
-
 ## Làm thế nào:
 Swift sử dụng xử lý lỗi với các khối `do`, `try`, và `catch`. Hãy xem xét:
 

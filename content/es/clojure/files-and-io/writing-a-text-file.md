@@ -13,14 +13,10 @@ title: Escribiendo un archivo de texto
 weight: 24
 ---
 
-## Qué y Por Qué?
-
-Escribir un archivo de texto en Clojure implica crear o modificar archivos para guardar datos fuera de tu aplicación, lo que permite la persistencia, configuración, registro o comunicación entre procesos. Los programadores realizan esta tarea para externalizar el estado de la aplicación, configuraciones o compartir información entre diferentes partes de un programa o entre diferentes programas en conjunto.
-
 ## Cómo hacerlo:
 
-### Escribir texto en un archivo usando las funciones integradas de Clojure
 
+### Escribir texto en un archivo usando las funciones integradas de Clojure
 La función `spit` es la manera más sencilla de escribir texto en un archivo en Clojure. Toma dos argumentos: la ruta del archivo y la cadena de texto a escribir. Si el archivo no existe, `spit` lo creará. Si existe, `spit` lo sobrescribirá.
 
 ```clojure
@@ -41,7 +37,6 @@ Vamos a agregar esta nueva línea.
 ```
 
 ### Usando bibliotecas de terceros
-
 Aunque las capacidades integradas de Clojure son a menudo suficientes, la comunidad ha desarrollado bibliotecas robustas para tareas más complejas o específicas. Para I/O de archivos, una biblioteca popular es `clojure.java.io`, que proporciona un enfoque más similar a Java para el manejo de archivos.
 
 Para usar `clojure.java.io` para escribir en un archivo, primero necesitas importarlo:

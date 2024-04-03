@@ -13,16 +13,10 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä & Miksi?
-
-Työskentely CSV:n (pilkuilla erotetut arvot) parissa käsittää datan lukemista ja kirjoittamista CSV-tiedostoihin, jotka ovat suosittu formaatti välittämään taulukkomuotoista dataa pelkässä tekstissä. Ohjelmoijat tekevät niin helpottaakseen datan vaihtoa eri ohjelmien, järjestelmien tai tietokantojen välillä, kiitos formaatin yksinkertaisuuden ja laajan tuen alustoilla ja ohjelmointikielillä.
-
 ## Kuinka:
-
 PHP tarjoaa sisäänrakennettuja funktioita CSV-tiedostojen käsittelyyn, tekee lukemisen ja kirjoittamisen näihin tiedostoihin suoraviivaiseksi ilman kolmannen osapuolen kirjastoja tarvita. Tässä on esimerkkejä, joiden avulla pääset alkuun:
 
 ### CSV-tiedoston lukeminen
-
 Voit avata CSV-tiedoston ja lukea sen sisällön käyttäen `fopen()` yhdessä `fgetcsv()` kanssa:
 
 ```php
@@ -45,7 +39,6 @@ if ($handle !== FALSE) {
 Tämä skripti tulostaa jokaisen rivin kenttien määrän seurattuna jokaisen kentän sisällöllä.
 
 ### Kirjoittaminen CSV-tiedostoon
-
 CSV-tiedostoon kirjoittamiseen, käytä `fopen()` kirjoitusmoodissa (`w`) ja `fputcsv()`:
 
 ```php
@@ -69,11 +62,9 @@ fclose($handle);
 Tämä skripti luo tiedoston nimeltä `users.csv` ja kirjoittaa otsikon ja kaksi datariviä siihen.
 
 ### Kirjaston käyttö: League\Csv
-
 Monimutkaisempaan CSV-käsittelyyn, `League\Csv` kirjasto tarjoaa vankan ominaisuusjoukon. Asentamalla sen Composerin kautta (`composer require league/csv`), voit käyttää sitä lukemaan ja kirjoittamaan CSV-dataa joustavammin.
 
 #### Lukeminen League\Csv:llä
-
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -93,7 +84,6 @@ foreach ($results as $row) {
 Tämä skripti lukee `data.csv`:n, käsittelee ensimmäisen rivin sarakkeiden otsikkoina ja tulostaa jokaisen rivin assosiatiivisena taulukkona.
 
 #### Kirjoittaminen League\Csv:llä
-
 ```php
 <?php
 require 'vendor/autoload.php';

@@ -9,12 +9,7 @@ title: Extracting substrings
 weight: 6
 ---
 
-## What & Why?
-
-Extracting substrings is about pulling out specific bits of text from a string. Programmers do it to manipulate and use parts of data—like grabbing usernames from email addresses or parsing dates out of timestamps.
-
 ## How to:
-
 Ruby makes extracting substrings simple. Let's cut to the chase:
 
 ```Ruby
@@ -41,7 +36,6 @@ puts picked_word
 Sample output for each snippet will be "Ruby", "Ruby", "Ruby", "World!" respectively.
 
 ## Deep Dive
-
 Back in the day, extracting substrings was a more verbose process. Ruby's evolved, though. Today, you've got methods and regex at your disposal.
 
 Here's what's happening under the hood: `[7, 4]` means start at the 7th character and grab the next 4. `slice` is just a methodic way to say the same thing. With regex, `/[Rr]uby/` is like saying, "Catch me a 'Ruby' or 'ruby’, whichever you find first." `split` chops the string into an array at each space, and `[2]` picks the third word—arrays start at zero, remember.
@@ -51,7 +45,6 @@ Alternatives? Sure, Ruby's got 'em. `partition`, `rpartition`, and `match` could
 Bottom line: substring extraction is about precise text manipulation. The right tool means clean, effective code.
 
 ## See Also
-
 - Ruby Docs on String: [ruby-doc.org/core-2.7.0/String.html](https://ruby-doc.org/core-2.7.0/String.html)
 - Regular Expressions in Ruby: [ruby-doc.org/core-2.7.0/Regexp.html](https://ruby-doc.org/core-2.7.0/Regexp.html)
 - Ruby Style Guide on Strings: [rubystyle.guide/#strings](https://rubystyle.guide/#strings)

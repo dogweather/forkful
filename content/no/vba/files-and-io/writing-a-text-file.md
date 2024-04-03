@@ -14,12 +14,7 @@ title: Skrive en tekstfil
 weight: 24
 ---
 
-## Hva & Hvorfor?
-
-Å skrive en tekstfil i Visual Basic for Applications (VBA) involverer å opprette, modifisere eller legge til tekstdata i filer, en grunnleggende oppgave for lagring av utdata, logging eller interaksjon med andre applikasjoner. Programmerere benytter denne funksjonaliteten for å automatisere rapportering, dataeksport eller generering av konfigurasjonsfiler innen Microsoft Office-økosystemet.
-
 ## Hvordan:
-
 VBA tilbyr flere metoder for å skrive til en fil, men en av de mest rett frem metodene er å bruke `FileSystemObject`. Her er en steg-for-steg-guide for å opprette en enkel tekstfil og skrive data til den:
 
 1. **Referer til Microsoft Scripting Runtime**: Først, sørg for at VBA-editoren din har tilgang til `FileSystemObject`. Gå til Verktøy > Referanser i VBA-editoren og merk av for "Microsoft Scripting Runtime."
@@ -54,7 +49,6 @@ Hello, VBA!
 ```
 
 ## Dypdykk:
-
 `FileSystemObject` (FSO), en del av Microsoft Scripting Runtime-biblioteket, tilbyr et rikt sett med egenskaper og metoder for filoperasjoner, som går utover det tradisjonell VBA-filhåndtering tilbyr (f.eks., `Open`, `Print` #, `Write` #). I tillegg til håndtering av filer, kan FSO også manipulere mapper og disker, noe som gjør det til et kraftig verktøy for filsystemoperasjoner innen VBA.
 
 Det er verdt å merke seg, imidlertid, at mens FSO presenterer en mer moderne tilnærming til filoperasjoner i VBA, kan det introdusere overhead for enkle oppgaver sammenlignet med VBA sin innebygde filhåndteringsinstrukser. Videre, siden FSO er en del av et eksternt bibliotek, kan det være bekymringer knyttet til bærbarhet og kompatibilitet med andre systemer (f.eks., eldre versjoner av Office, Mac Office).

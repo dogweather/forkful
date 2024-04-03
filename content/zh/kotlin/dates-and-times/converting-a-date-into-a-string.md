@@ -15,9 +15,6 @@ title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
 weight: 28
 ---
 
-## What & Why? (是什么？为什么？)
-把日期转换成字符串就是将日期格式改成文本形式。程序员这么做的原因是为了更容易地显示和储存日期数据。
-
 ## How to: (如何操作：)
 ```Kotlin
 import java.text.SimpleDateFormat

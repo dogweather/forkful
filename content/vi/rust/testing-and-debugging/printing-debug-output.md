@@ -16,11 +16,7 @@ title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---
 
-## Điều gì & Tại sao?
-In thông tin để gỡ lỗi (debug output) cho phép bạn xem qua trạng thái của chương trình mà không cần phải sử dụng một trình gỡ lỗi đầy đủ. Nó nhanh chóng, không cầu kỳ, và hoàn hảo để truy tìm những lỗi phức tạp khi bạn không cần sức mạnh của một công cụ gỡ lỗi chuyên dụng.
-
 ## Cách thực hiện:
-
 Để in ra một cái gì đó đơn giản, sử dụng `println!`. Nếu bạn cần in một giá trị để gỡ lỗi, `dbg!` sẽ rất tiện lợi.
 
 ```Rust
@@ -61,7 +57,6 @@ Xin chào, các Rustaceans!
 ```
 
 ## Đi sâu vào vấn đề
-
 Việc in thông tin gỡ lỗi là một phần đơn giản của lập trình từ những ngày đầu. Sự đơn giản của nó thường làm cho nó trở thành lựa chọn hàng đầu để chẩn đoán nhanh các vấn đề.
 
 Trong Rust, `println!` tuyệt vời để hiển thị thông điệp thân thiện với người dùng. Điều thú vị nằm ở `dbg!`, được giới thiệu trong Rust 1.32, in cả giá trị và vị trí của nó trong mã. Đầu ra là lỗi chuẩn (stderr), vì vậy nó sẽ không trộn lẫn với đầu ra chuẩn (stdout) và có thể được chuyển hướng riêng biệt nếu cần.
@@ -71,7 +66,6 @@ Trong Rust, `println!` tuyệt vời để hiển thị thông điệp thân thi
 Về các lựa chọn khác, có tồn tại các logger chính thống như `log` và `env_logger`, và nếu bạn cần kiểm soát một cách chi tiết hơn, xem xét sử dụng một trình gỡ lỗi như `gdb` hay `lldb`, hoạt động với Rust thông qua các tích hợp như `rust-gdb` hoặc `rust-lldb`.
 
 ## Tham khảo thêm
-
 Để biết thêm về các tùy chọn in và định dạng gỡ lỗi của Rust:
 
 - Sách Rust về `println!` và Định dạng: https://doc.rust-lang.org/std/fmt/index.html

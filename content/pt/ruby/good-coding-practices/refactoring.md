@@ -11,12 +11,7 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O Que & Por Que?
-
-Refatoração é o processo de reestruturar o código de computador existente sem alterar seu comportamento externo. Programadores refatoram para melhorar atributos não funcionais do software, tais como legibilidade, redução de complexidade, melhoria da manutenção ou aumento de desempenho.
-
 ## Como:
-
 Vamos ver um exemplo de refatoração de um método Ruby que calcula a soma dos quadrados.
 
 **Antes da Refatoração:**
@@ -45,7 +40,6 @@ puts sum_of_squares([1, 2, 3])  # Saída: 14
 A versão refatorada utiliza os Enumeráveis do Ruby para expressar a mesma lógica de forma mais sucinta e clara. O método `map` transforma cada elemento e `sum` agrega seus valores, removendo a necessidade de gerenciamento manual de loop e atribuição de variáveis.
 
 ## Aprofundamento
-
 Refatoração tem um rico contexto histórico, remontando às práticas iniciais no desenvolvimento de software. Menções iniciais podem ser rastreadas até a década de 1990, com contribuições significativas de Martin Fowler em seu livro "Refactoring: Improving the Design of Existing Code", onde ele fornece um catálogo de padrões para refatoração. Desde então, a refatoração se tornou um pilar das práticas de desenvolvimento ágil.
 
 Quando falamos sobre alternativas à refatoração, precisamos considerar uma abordagem diferente como 'Reescrever', onde você substitui o sistema antigo em partes ou inteiramente ou adotar práticas como 'Revisões de Código' e 'Programação em Pares' para melhorar gradualmente a qualidade do código. No entanto, estas não são substituições para a refatoração; elas complementam o processo.
@@ -53,7 +47,6 @@ Quando falamos sobre alternativas à refatoração, precisamos considerar uma ab
 Em termos de implementação, Ruby oferece uma sintaxe excelente e expressiva que muitas vezes resulta em código mais curto e legível após a refatoração. Princípios chave incluem DRY (Don't Repeat Yourself - Não se Repita), usar nomes significativos, manter métodos curtos e focados em uma única tarefa, e usar efetivamente o módulo Enumerable do Ruby, como visto no exemplo acima. Ferramentas automatizadas como o RuboCop também podem ajudar programadores a identificar pontos no código que poderiam beneficiar de refatoração.
 
 ## Veja Também
-
 Para se aprofundar mais em refatoração em Ruby, confira estes recursos:
 
 - O livro seminal de Martin Fowler: [Refactoring: Improving the Design of Existing Code](https://martinfowler.com/books/refactoring.html)

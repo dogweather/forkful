@@ -12,9 +12,6 @@ title: Obteniendo la fecha actual
 weight: 29
 ---
 
-## Qué y Por Qué
-Obtener la fecha actual en C++ es una tarea fundamental para programas que necesitan procesar o mostrar fechas basadas en el reloj del sistema. Es esencial para el registro (logging), estampado de tiempo (time-stamping), la programación de tareas y cualquier funcionalidad que dependa de fechas y hora.
-
 ## Cómo hacerlo:
 C++ ofrece varias maneras de obtener la fecha actual, incluyendo la biblioteca estándar de C++ y bibliotecas de terceros como Boost. Los siguientes ejemplos demuestran cómo lograr esta tarea.
 

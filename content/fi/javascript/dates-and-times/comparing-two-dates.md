@@ -11,9 +11,6 @@ title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---
 
-## What & Why? (Mitä & Miksi?)
-Vertaamme kahta päivämäärää selvittääksemme niiden välisen suhteen. Ohjelmoijat tarvitsevat tätä toimintoa esimerkiksi aikarajojen tarkistamiseen ja aikajanalla tapahtuvien tapahtumien järjestämiseen.
-
 ## How to: (Kuinka:)
 ```javascript
 // Luo kaksi päivämäärä-objektia

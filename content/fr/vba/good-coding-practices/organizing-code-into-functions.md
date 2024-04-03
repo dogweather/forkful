@@ -14,12 +14,7 @@ title: Organiser le code en fonctions
 weight: 18
 ---
 
-## Quoi et pourquoi ?
-
-L'organisation du code en fonctions dans Visual Basic pour Applications (VBA) implique de décomposer un programme en pièces plus petites et gérables, connues sous le nom de fonctions. Les programmeurs font cela pour améliorer la lisibilité du code, réutiliser le code efficacement, et simplifier les processus de débogage et de maintenance.
-
 ## Comment faire :
-
 Dans VBA, les fonctions sont définies en utilisant les instructions `Function` et `End Function`. Voici un exemple simple de création d'une fonction qui calcule la surface d'un rectangle :
 
 ```basic
@@ -41,7 +36,6 @@ End Sub
 Lors de l'exécution, ce code affiche une boîte de message indiquant : `La surface est 50`.
 
 ### Passer des variables ByRef et ByVal
-
 VBA vous permet de passer des variables aux fonctions soit par référence (`ByRef`) soit par valeur (`ByVal`). Le premier cas signifie que la variable originale peut être modifiée par la fonction, tandis que le dernier passe une copie, protégeant la variable originale des changements.
 
 ```basic
@@ -56,7 +50,6 @@ End Function
 ```
 
 ## Plongée profonde
-
 VBA, en tant que langage de programmation piloté par les événements, met un accent significatif sur les fonctions et les sous-routines pour gérer diverses tâches. Contrairement à de nombreux langages modernes, VBA possède une caractéristique unique où le mot-clé `Function` ne déclare pas seulement un bloc de code réutilisable, mais permet également une valeur de retour implicite directement attribuée au nom de la fonction.
 
 Historiquement, la conception des fonctions VBA a été influencée par des paradigmes de programmation antérieurs où l'encapsulation et la modularité étaient progressivement reconnues pour leur importance dans le développement de logiciels. Ce contexte historique a conduit VBA à adopter une approche quelque peu conservatrice mais fonctionnelle pour organiser le code.

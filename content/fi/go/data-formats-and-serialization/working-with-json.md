@@ -14,16 +14,10 @@ title: "Ty\xF6skentely JSONin kanssa"
 weight: 38
 ---
 
-## Mikä ja miksi?
-
-JSON:n (JavaScript Object Notation) käsittely Go:ssa sisältää datan koodaamisen ja purkamisen Go:n tietorakenteiden ja JSON-muodon välillä. Tämä tehtävä on kaikkialla web-palveluissa ja API:issa, sillä JSON toimii kevyenä, tekstepohjaisena ja kielestä riippumattomana datanvaihtoformaatina, mahdollistaen yksinkertaisen datan jakamisen eri ohjelmointiympäristöjen välillä.
-
 ## Kuinka:
-
 Go:ssa `encoding/json`-paketti on porttisi JSON-käsittelyyn, tarjoten mekanismeja muuntaa Go:n tietorakenteita JSON:ksi (marsalkointi) ja takaisin (unmarsalkointi). Alla on perusesimerkkejä, jotka auttavat sinut alkuun:
 
 ### Koodaus (Marsalkointi)
-
 Go:n tietueen muuntamiseksi JSON:ksi voit käyttää `json.Marshal`. Harkitse seuraavaa Go:n tietuetta:
 
 ```go
@@ -58,7 +52,6 @@ Tuloste:
 ```
 
 ### Purku (Unmarsalkointi)
-
 JSON:n jäsentämiseksi Go:n tietorakenteeksi, käytä `json.Unmarshal`:
 
 ```go
@@ -90,7 +83,6 @@ Tuloste:
 ```
 
 ## Syväsukellus
-
 Go:n `encoding/json`-paketti tarjoaa suoraviivaisen API:n, joka abstraktoi suurimman osan JSON-käsittelyn monimutkaisuudesta. Esitelty aikaisin Go:n kehityksessä, tämä paketti heijastaa Go:n filosofiaa yksinkertaisuudesta ja tehokkuudesta. Kuitenkin `encoding/json`-paketin käyttö heijastusta (reflection) tietueiden tutkimiseen ja muokkaamiseen ajonaikaisesti voi johtaa vähemmän optimaaliseen suorituskykyyn CPU-intensiivisissä skenaarioissa.
 
 Vaihtoehtoja kuten `json-iterator/go` ja `ffjson` on ilmestynyt, tarjoten nopeampaa JSON-käsittelyä generoimalla staattista marsalkointi- ja unmarsalkointikoodia. Kuitenkin `encoding/json` pysyy yleisimmin käytettynä pakkauksena sen yksinkertaisuuden, vankkuuden ja sen tosiasian vuoksi, että se on osa standardikirjastoa, varmistaen yhteensopivuuden ja vakauden Go-versioiden läpi.

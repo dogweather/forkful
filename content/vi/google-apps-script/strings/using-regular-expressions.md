@@ -15,16 +15,10 @@ title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---
 
-## Cái gì & Tại sao?
-
-Biểu thức chính quy (regex) là những mẫu được sử dụng để khớp các kết hợp ký tự trong chuỗi. Các lập trình viên sử dụng chúng để tìm kiếm, chỉnh sửa hoặc thao tác với văn bản và dữ liệu, khiến chúng trở nên không thể thiếu cho các nhiệm vụ khớp mẫu và phân tích dữ liệu.
-
 ## Làm thế nào:
-
 Sử dụng biểu thức chính quy trong Google Apps Script khá đơn giản nhờ vào cú pháp dựa trên JavaScript. Dưới đây là cách bạn có thể tích hợp regex vào các kịch bản của mình cho các nhiệm vụ phổ biến như tìm kiếm và xác thực dữ liệu.
 
 ### Tìm kiếm Chuỗi
-
 Giả sử bạn muốn tìm xem một chuỗi có chứa một mẫu cụ thể, như một địa chỉ email. Dưới đây là một ví dụ đơn giản:
 
 ```javascript
@@ -43,7 +37,6 @@ findEmailInText("Liên hệ với chúng tôi qua info@example.com.");
 ```
 
 ### Xác Thực Dữ Liệu
-
 Biểu thức chính quy tỏa sáng trong việc xác thực dữ liệu. Dưới đây là một hàm kiểm tra một chuỗi đầu vào để kiểm tra xem nó có tuân thủ một chính sách mật khẩu đơn giản không (ít nhất một chữ cái viết hoa, một chữ cái viết thường và tối thiểu 8 ký tự).
 
 ```javascript
@@ -58,7 +51,6 @@ Logger.log(validatePassword("weak"));       // Đầu ra: false
 ```
 
 ## Thảo Luận Sâu Hơn
-
 Biểu thức chính quy trong Google Apps Script được kế thừa từ JavaScript, được chuẩn hóa lần đầu trong thông số kỹ thuật ngôn ngữ ECMAScript vào tháng 6 năm 1997. Mặc dù mạnh mẽ, chúng đôi khi có thể dẫn đến mã lệnh gây nhầm lẫn và khó duy trì, đặc biệt là khi sử dụng quá mức hoặc sử dụng cho các nhiệm vụ khớp mô hình phức tạp có thể được giải quyết hiệu quả hơn thông qua các phương pháp phân tích khác.
 
 Ví dụ, trong khi bạn có thể sử dụng regex để phân tích HTML hoặc XML trong một tình huống khẩn cấp, việc làm này thường không được khuyến khích do cấu trúc lồng nhau và phức tạp của những tài liệu này. Thay vào đó, các công cụ được thiết kế riêng để phân tích những cấu trúc như vậy, như các bộ phân tích DOM cho HTML, là đáng tin cậy và dễ đọc hơn.

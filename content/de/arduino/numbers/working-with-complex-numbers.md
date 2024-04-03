@@ -10,9 +10,6 @@ title: Umgang mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-Komplexe Zahlen bestehen aus einem Realteil und einem Imaginärteil, üblicherweise dargestellt als `a + bi`. Sie sind entscheidend für einige rechenintensive Arduino-Projekte, die Signalverarbeitung, Elektrotechnik oder andere Bereiche betreffen, in denen Phänomene am besten in einer Ebene modelliert werden.
-
 ## Wie:
 ```Arduino
 #include <Complex.h>

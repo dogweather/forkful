@@ -13,12 +13,7 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mikä ja Miksi?
-
-Nykyisen päivämäärän hakeminen PowerShellissä tarkoittaa järjestelmän nykyisen päivämäärän ja ajan noutamista. Tämä toiminto on perustavaa laatua oleva tehtävissä, kuten lokitusten, ajoitustoimintojen tai päivämääriin perustuvien päätösten tekemisessä. Ohjelmoijat käyttävät tätä kykyä tapahtumien seurantaan, tehtävien aikatauluttamiseen ja päivämääräsääntöihin perustuvan logiikan käsittelyyn skripteissä ja sovelluksissa.
-
 ## Kuinka:
-
 PowerShell tarjoaa suoraviivaisia cmdlet-komentoja päivämäärän ja ajan saamiseksi. `Get-Date` cmdlet-komento on ensisijainen työkalu tähän tarkoitukseen. Se voi palauttaa täydellisen päivämäärän ja ajan, jonka voit muotoilla tai manipuloida tarpeidesi mukaan.
 
 ```powershell
@@ -57,7 +52,6 @@ Get-Date -Format "HH:mm:ss"
 ```
 
 ### Käyttäen .NET-luokkaa
-
 PowerShell sallii suoran pääsyn .NET-luokkiin, tarjoten vaihtoehtoisen tavan työskennellä päivämäärien ja aikojen kanssa.
 
 ```powershell

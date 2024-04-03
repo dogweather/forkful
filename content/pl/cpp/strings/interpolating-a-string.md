@@ -11,9 +11,6 @@ title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---
 
-## What & Why? (Co i Dlaczego?)
-Interpolacja stringów pozwala na wstawienie wartości zmiennych bezpośrednio w ciąg tekstowy. Programiści używają jej, aby łatwiej formatować wiadomości i skuteczniej budować dynamiczne ciągi znaków.
-
 ## How to (Jak to zrobić):
 Od C++20 mamy dostępne formatowanie stylu `{fmt}`. Sprawdź:
 

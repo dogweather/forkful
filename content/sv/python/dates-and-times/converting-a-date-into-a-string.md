@@ -11,9 +11,6 @@ title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---
 
-## What & Why?
-Datum till sträng-omvandling är processen där du förvandlar ett datumobjekt till en textsträng. Det är användbart för att formatera datum på läsbara sätt och för att lagra eller överföra datumdata som text.
-
 ## How to:
 Python har inbyggda verktyg för att hantera datum och strängar. `datetime`-modulen är vad du behöver. Här är ett snabbt exempel:
 

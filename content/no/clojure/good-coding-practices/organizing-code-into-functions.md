@@ -11,12 +11,7 @@ title: Organisering av kode i funksjoner
 weight: 18
 ---
 
-## Hva & Hvorfor?
-
-Å organisere kode i funksjoner handler om å pakke inn kodeblokker som utfører spesifikke oppgaver. Dette gjør at koden din blir ryddigere, lettere å vedlikeholde, og en lek for andre utviklere å lese.
-
 ## Hvordan:
-
 Funksjoner i Clojure defineres med `defn`, etterfulgt av et navn, parametere og kropp. Her er et kjapt eksempel.
 
 ```Clojure
@@ -39,7 +34,6 @@ La oss si at vi ønsker å beregne arealet av et rektangel. I stedet for å rott
 ```
 
 ## Dypdykk
-
 I gamle dager ville kodere bare hamre all sin logikk inn i en enkelt blokk. Det var ikke pent. Så kom strukturert programmering, og funksjoner ble en ting. I Clojure er hver funksjon førsteklasses—du kan slynge dem rundt som hvilken som helst annen verdi.
 
 Alternativer? Noen folk kan eksperimentere med multimetoder eller høyereordens funksjoner, men de er bare krydder i funksjonsgryta.
@@ -47,7 +41,6 @@ Alternativer? Noen folk kan eksperimentere med multimetoder eller høyereordens 
 Detaljer i en funksjon: de er uforanderlige i Clojure, noe som gjør at bivirkningsrot blir mindre sannsynlig. De støtter seg tungt på rekursjon i stedet for typiske løkker, noe som passer godt sammen med språkets funksjonelle paradigmer.
 
 ## Se også
-
 - Clojures egen guide: https://clojure.org/guides/learn/functions
 - Grunnleggende om funksjonell programmering: https://www.braveclojure.com/core-functions-in-depth/
 - Rich Hickeys taler: https://changelog.com/posts/rich-hickeys-greatest-hits - for innsikt i Clojures filosofi.

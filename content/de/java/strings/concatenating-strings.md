@@ -10,12 +10,7 @@ title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---
 
-## Was & Warum?
-
-String-Konkatenation ist das Zusammenfügen von zwei oder mehreren Zeichenketten (Strings) zu einer neuen Zeichenkette. Wir brauchen das, um dynamische Texte zu erzeugen, Daten zu formatieren oder einfach Nachrichten zusammenzubauen.
-
 ## So geht's:
-
 Hier sind einige schnelle Beispiele, wie man Strings in Java konkatenieren kann:
 
 ```java
@@ -42,7 +37,6 @@ public class StringConcatenationDemo {
 ```
 
 ## Tiefere Einblicke:
-
 Historisch gesehen wurde die String-Konkatenation häufig mit dem `+` Operator durchgeführt. Doch bei einer großen Anzahl von String-Operationen kann das ineffizient sein, da Strings in Java unveränderlich (immutable) sind und so bei jeder Konkatenation neue Objekte erzeugt werden.
 
 Als Alternative und für leistungsstärkere Konkatenationen bieten sich Klassen wie `StringBuilder` oder `StringBuffer` an. Diese ermöglichen es, größere Mengen von Strings ohne ständige Neuerstellung von String-Objekten zusammenzusetzen. `StringBuilder` ist dabei die schnellere, jedoch nicht threadsichere Variante.
@@ -52,7 +46,6 @@ Eine andere Option wäre die Nutzung der `concat()` Methode von String-Objekten,
 Java 8 hat den `StringJoiner` und in Java 12 die `indent` und `transform` Methoden eingeführt, die weitere Möglichkeiten der Textmanipulation bieten. Die Wahl der Methode hängt von der spezifischen Anforderung und der beabsichtigten Lesbarkeit bzw. Leistung ab.
 
 ## Siehe auch:
-
 - Die offizielle Java-Dokumentation zu `StringBuilder`: https://docs.oracle.com/javase/10/docs/api/java/lang/StringBuilder.html
 - Eine Diskussion zu String-Konkatenation in Stack Overflow: https://stackoverflow.com/questions/1532461/stringbuilder-vs-string-concatenation-in-tostring-in-java
 - Ein Guide zu Strings in Java: https://www.baeldung.com/java-strings

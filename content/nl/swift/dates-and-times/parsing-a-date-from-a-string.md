@@ -12,12 +12,7 @@ title: Een datum uit een string parsen
 weight: 30
 ---
 
-## Wat & Waarom?
-
-Een datum parseren uit een tekstreeks betekent het omzetten van de tekstuele representatie van een datum (zoals "2023-04-01") naar een Date-object. Programmeurs doen dit om met data te manipuleren, berekeningen uit te voeren of in verschillende formaten weer te geven.
-
 ## Hoe:
-
 Swift maakt het parseren van data vrij eenvoudig met `DateFormatter`. Hier is een snel voorbeeld:
 
 ```Swift
@@ -43,7 +38,6 @@ Geparste datum: 2023-03-31 22:00:00 +0000
 Onthoud, de uitvoer is standaard in UTC!
 
 ## Diepere Duik
-
 Al in Objective-C hadden iOS-ontwikkelaars `NSDateFormatter`, en het werd overgenomen in Swift als `DateFormatter`. Historisch gezien was het omgaan met data een groot probleem vanwege variaties in formaat en tijdzones. Gelukkig standaardiseert `DateFormatter` in Swift dit proces.
 
 Hoewel `DateFormatter` goed is voor gangbare scenario's, bestaan er alternatieven zoals de `ISO8601DateFormatter` voor ISO 8601 formaten, en je kunt zelfs dieper duiken in de lagere-niveau `Cocoa` API met `CFDateFormatter` voor meer controle.
@@ -51,5 +45,4 @@ Hoewel `DateFormatter` goed is voor gangbare scenario's, bestaan er alternatieve
 Bij het implementeren van een datum-parser, stel altijd de `locale` in op `posix` (`en_US_POSIX`) om onverwacht gedrag vanwege gebruikersinstellingen te vermijden. Wees ook bewust van prestaties. Datumparsing is kostbaar, dus hergebruik je formatter of overweeg `DateComponents` te gebruiken voor herhaalde taken.
 
 ## Zie Ook
-
 - [NSDateFormatter - Apple Developer](https://developer.apple.com/documentation/foundation/nsdateformatter)

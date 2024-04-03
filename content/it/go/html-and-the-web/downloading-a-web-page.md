@@ -13,12 +13,7 @@ title: Scaricare una pagina web
 weight: 42
 ---
 
-## Cosa & Perché?
-
-Scaricare una pagina web consiste nel recuperare il contenuto HTML di una pagina web tramite il protocollo HTTP/HTTPS. I programmatori spesso fanno ciò per fare web scraping, analisi di dati, o semplicemente per interagire programmaticamente con i siti web al fine di automatizzare compiti.
-
 ## Come fare:
-
 In Go, la libreria standard offre potenti strumenti per le richieste web, in particolare il pacchetto `net/http`. Per scaricare una pagina web, utilizziamo principalmente il metodo `http.Get`. Ecco un esempio di base:
 
 ```go
@@ -65,7 +60,6 @@ Questo semplice programma effettua una richiesta HTTP GET all'URL specificato, q
 Nota: Nella programmazione Go contemporanea, `ioutil.ReadAll` è considerato deprecato dal Go 1.16 in favore di `io.ReadAll`.
 
 ## Approfondimento
-
 Il linguaggio Go ha una filosofia di progettazione che enfatizza la semplicità, l'efficienza e un gestione affidabile degli errori. Quando si tratta di programmazione di rete, e specificamente di scaricare pagine web, la libreria standard di Go, in particolare `net/http`, è progettata in modo efficiente per gestire le operazioni di richiesta e risposta HTTP.
 
 L'approccio alle richieste di rete in Go risale alle origini del linguaggio, prendendo in prestito concetti dai predecessori ma migliorando notevolmente in termini di efficienza e semplicità. Per il download di contenuti, il modello di concorrenza di Go che utilizza goroutine lo rende uno strumento eccezionalmente potente per effettuare richieste HTTP asincrone, gestendo migliaia di richieste in parallelo con facilità.

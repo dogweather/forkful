@@ -12,9 +12,6 @@ title: Samenvoegen van strings
 weight: 3
 ---
 
-## Wat & Waarom?
-Het concatenen van strings betekent het aan elkaar plakken van twee of meer stukken tekst. Het is net zo basisch en essentieel als het gebruik van ducttape, waardoor je ter plekke nieuwe strings kunt maken voor het weergeven van berichten, het creëren van sjablonen en meer.
-
 ## Hoe te:
 Elm heeft een nette operator `(++)` om de dag te redden:
 

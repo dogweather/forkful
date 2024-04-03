@@ -14,12 +14,7 @@ title: "R\xE9daction de tests"
 weight: 36
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire des tests en Elm consiste à créer des cas de test pour vérifier la justesse de votre code Elm, en s'assurant qu'il se comporte comme prévu. Les programmeurs le font pour attraper les bugs tôt, faciliter la maintenance, et améliorer la qualité et la fiabilité de leurs applications.
-
 ## Comment faire :
-
 Elm utilise le paquet `elm-explorations/test` pour écrire des tests unitaires et de fuzz. Commencez par ajouter le paquet à votre projet :
 
 ```elm

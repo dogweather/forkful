@@ -13,9 +13,6 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i dlaczego?
-W kontekście programowania Arduino, sprawdzenie, czy katalog istnieje na karcie SD lub podobnym module pamięci, pozwala na odczytywanie lub zapisywanie plików bez błędów. Ta operacja jest kluczowa dla logowania danych, zarządzania konfiguracją, lub każdego zadania, które wymaga strukturalnego przechowywania plików, zapewniając niezawodność i płynną wydajność w aplikacjach.
-
 ## Jak to zrobić:
 Arduino natywnie nie wspiera skomplikowanych operacji na systemie plików od razu po wyjęciu z pudełka. Jednakże, przy użyciu biblioteki SD, która jest częścią standardowego IDE Arduino, możesz łatwo pracować z plikami i katalogami. Aby sprawdzić, czy katalog istnieje, najpierw musisz zainicjować kartę SD, a następnie użyć metody `exists()` z biblioteki SD.
 

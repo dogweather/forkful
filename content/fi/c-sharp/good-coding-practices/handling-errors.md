@@ -11,12 +11,7 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä ja miksi?
-
-Virheiden käsittely C#:ssa on yllättävän hallintaa—kuten kompastuminen omiin kengännauhoihisi. Ohjelmat voivat kompastua huonoihin tietoihin tai epävakaaseen yhteyteen. Käsittelemme virheitä estääksemme ohjelmistoamme kaatumasta naamalleen, mahdollistaen sen selviytymään arvokkaasti.
-
 ## Kuinka:
-
 Aloitetaan try-catch-lohkolla. Se on kuin turvaverkon asettaminen nuorallatanssijan alle. Jos he lipeävät, he eivät putoa—heidät pyydystetään.
 
 ```C#
@@ -53,7 +48,6 @@ try {
 ```
 
 ## Syväsukellus
-
 Virheiden käsittely on ollut osa C#:ia sen syntymästä lähtien. Ajan myötä se on kehittynyt. Aikoinaan ohjelmoijat turvautuivat palautuskoodeihin tai yleisiin merkkilippuihin viestimään ongelmista—kömpelöä ja altista virheille.
 
 C# käyttää poikkeuksia, mikä on modernimpi lähestymistapa. Poikkeus heitetään ilmoille, kun odottamaton tapahtuu, aivan kuin heittäisit lipun peliin jalkapallossa. Rakenenteinen poikkeuksien käsittely try-, catch- ja finally-lohkojen avulla tekee näiden hetkien hallinnasta selkeämpää ja siistimpää kuin vanhan koulun virhetarkistukset.
@@ -63,6 +57,5 @@ Vaihtoehtoja? Tietysti. On olemassa `UnhandledExceptionEventHandler`, jolle osoi
 Toteutuksen yksityiskohdat—verrattavissa pienellä printatulle tekstille—ovat tärkeitä. Poikkeukset voivat olla kalliita, hidastaen suorituskykyä, jos niitä heitetään holtittomasti. Joten käytämme niitä poikkeuksellisissa tilanteissa, ei jokapäiväisessä logiikan hallinnassa.
 
 ## Katso myös
-
 - [Virallinen dokumentaatio C#-poikkeuksista](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/exception-handling)
 - [Parhaat käytännöt C#-poikkeusten käsittelyssä](https://docs.microsoft.com/en-us/dotnet/standard/exceptions/best-practices-for-exceptions)

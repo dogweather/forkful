@@ -14,12 +14,7 @@ title: Utilizzare un shell interattivo (REPL)
 weight: 34
 ---
 
-## Cos'è e Perché?
-
-Una shell interattiva, o Loop di Lettura-Valutazione-Stampa (REPL dall'inglese Read-Eval-Print Loop), è un ambiente di programmazione semplice e interattivo che accoglie singoli input dell'utente (espressioni), li valuta e restituisce il risultato all'utente. I programmatori utilizzano i REPL per prototipazione rapida, debug e per imparare la sintassi e il comportamento di un linguaggio di programmazione interattivamente.
-
 ## Come fare:
-
 Google Apps Script, un linguaggio di scripting basato sul cloud per automatizzare compiti attraverso i prodotti Google, non dispone di uno strumento REPL integrato simile a quelli presenti in linguaggi come Python o il Node.js di JavaScript. Tuttavia, è possibile simulare un'esperienza simile utilizzando le funzionalità di registrazione e debug dell'editor di Apps Script o configurando un ambiente esterno. Qui, ci concentriamo sulla creazione di un REPL di fortuna all'interno dell'editor di Apps Script.
 
 1. **Creare una funzione REPL di fortuna**:
@@ -61,7 +56,6 @@ Dopo aver eseguito `myREPL()`, controlla i Log (Visualizza > Log) per l'output, 
 Per un debug più complesso, interspergi `Logger.log(variabile);` nel tuo codice per stampare gli stati delle variabili, aiutandoti a comprendere il flusso e gli stati intermedi dei tuoi script.
 
 ## Approfondimento
-
 Il concetto di REPL è profondamente radicato nella storia dell'informatica, derivando dai sistemi a tempo condiviso degli anni '60 che permettevano sessioni interattive. Linguaggi come Lisp prosperavano in questo ambiente, poiché il REPL era fondamentale per il loro processo di sviluppo iterativo. Al contrario, Google Apps Script, emerso molto più tardi, è progettato principalmente per il web, concentrato sull'automazione di compiti all'interno della suite di Google più che sulla programmazione iterativa basata sulla console.
 
 Google Apps Script non supporta tradizionalmente sessioni di codifica interattive e in tempo reale "out of the box" a causa della sua natura basata sul cloud e dell'enfasi sulla distribuzione di app web. Il suo modello di esecuzione ruota attorno a funzioni attivate da eventi web, trigger temporizzati o invocazione manuale all'interno dell'ambiente, piuttosto che cicli di feedback istantanei forniti da un REPL.

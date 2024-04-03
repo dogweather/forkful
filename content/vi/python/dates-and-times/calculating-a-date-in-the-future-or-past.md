@@ -15,9 +15,6 @@ title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1
 weight: 26
 ---
 
-## Cái gì & Tại sao?
-Tính toán một ngày trong tương lai hoặc quá khứ nghĩa là tìm một ngày trước hoặc sau một khoảng thời gian được xác định. Lập trình viên thực hiện việc này cho các công việc như nhắc nhở, hết hạn, lập lịch hoặc các tính toán dựa trên thời gian.
-
 ## Làm thế nào:
 Mô-đun `datetime` của Python giúp việc làm việc với ngày và giờ trở nên dễ dàng. Hãy xem qua:
 

@@ -10,8 +10,6 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-# Création de fichiers temporaires avec Elm
-
 ## Quoi et pourquoi ?
 Créer un fichier temporaire, c'est comme prendre une feuille de papier pour gribouiller une idée avant de la jeter. Les programmeurs font cela pour stocker des données de manière éphémère, souvent pour des tests ou pour transférer des infos sans toucher à la structure de données principale.
 

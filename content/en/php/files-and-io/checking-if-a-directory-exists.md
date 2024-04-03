@@ -11,12 +11,7 @@ title: Checking if a directory exists
 weight: 20
 ---
 
-## What & Why?
-
-Checking if a directory exists is a fundamental task in PHP programming, as it allows you to verify the presence of a directory before performing operations like reading from or writing to files within it. This operation helps prevent errors that could arise from attempting to access nonexistent directories and is essential for dynamic file management within your applications.
-
 ## How to:
-
 The native way to check if a directory exists in PHP is by using the `is_dir()` function. This function takes a filepath as its argument and returns `true` if the directory exists and is a directory, or `false` otherwise.
 
 ```php

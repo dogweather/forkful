@@ -13,9 +13,6 @@ title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---
 
-## Mikä ja Miksi?
-Merkkijonon alkukirjaimen muuttaminen isoksi kirjaimeksi samalla kun varmistetaan, että loput kirjaimet pysyvät pieninä, on merkkijonon pääomanlisointia. Ohjelmoijat tekevät tämän muotoilun tulosteiden, kieliopillisen oikeellisuuden tekstissä tai tuotetun datan luettavuuden parantamiseksi.
-
 ## Miten:
 Haskellissa voit pääomanlisoida merkkijonon käyttämällä standardikirjastoa ilman, että tarvitset kolmannen osapuolen kirjastoja.
 

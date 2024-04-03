@@ -11,9 +11,6 @@ title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---
 
-## Vad & Varför?
-Att hitta längden på en sträng innebär att ta reda på antalet tecken den innehåller. Programmerare behöver ofta veta detta för att validera indata, manipulera text, eller bara för att hantera olika textbaserade uppgifter effektivt.
-
 ## Hur gör man:
 För att få längden på en sträng i Swift är det bara att använda `count`-egenskapen:
 

@@ -11,9 +11,6 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-Error handling is about managing the unexpected in programs—like a bouncer dealing with troublemakers. Programmers like it smooth; error handling helps keep the trouble in line, ensuring their code doesn't trip and fall when faced with the unexpected.
-
 ## How to:
 Clojure, like its Lisp ancestors, leans on exceptions for dealing with errors. Here’s how you show what you’re made of when things go south.
 

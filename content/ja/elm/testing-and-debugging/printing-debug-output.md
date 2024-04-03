@@ -19,12 +19,7 @@ title: "\u30C7\u30D0\u30C3\u30B0\u51FA\u529B\u3092\u8868\u793A\u3059\u308B"
 weight: 33
 ---
 
-## What & Why? (何となぜ？)
-
-プログラムでデバッグ出力を印刷することは、コードの実行中に何が起こっているかを理解するためです。これにより、プログラマーはバグを見つけて修正しやすくなります。
-
 ## How to: (やり方)
-
 Elmでは、`Debug` モジュールを使ってデバッグ情報をコンソールに出力します。以下はその一例です。
 
 ```Elm
@@ -47,7 +42,6 @@ main =
 `Debug.log` の第一引数は、出力されるメッセージのラベル、第二引数は印刷したいデータです。
 
 ## Deep Dive (詳しい解説)
-
 Elmの`Debug`モジュールはデバッグ専用で、最終的なアプリケーションには含めるべきではありません。歴史的には、デバッグ出力は多くの言語で行われており、コンソール出力はその一般的な方法です。
 
 Elm 0.19では、`Debug`モジュールの一部の関数は本番環境のビルドで使うことができません。これは、デバッグコードが本番環境に侵入するのを防ぐためです。
@@ -55,7 +49,6 @@ Elm 0.19では、`Debug`モジュールの一部の関数は本番環境のビ�
 `Debug.log`以外の方法としては、`Debug.todo`や`Debug.toString`などもありますが、基本的にデバッグ情報の出力は前述した方法に集約されます。
 
 ## See Also (関連情報)
-
 - ElmのDebugモジュールに関する公式ドキュメント: https://package.elm-lang.org/packages/elm/core/latest/Debug
 - コンソールデバッグについてのMozillaのドキュメント: https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_are_browser_developer_tools
 

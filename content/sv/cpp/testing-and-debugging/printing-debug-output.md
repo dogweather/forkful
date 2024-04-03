@@ -11,9 +11,6 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## Vad & Varför?
-Utskrift för felsökning är när man skriver ut meddelanden för att förstå vad programmet gör. Programmerare gör detta för att snabbt hitta och fixa buggar.
-
 ## Hur man gör:
 ```C++
 #include <iostream>

@@ -10,9 +10,6 @@ title: Converting a date into a string
 weight: 28
 ---
 
-## What & Why?
-Date to string conversion transforms a Date object into a readable text format, because humans like "April 1, 2023" more than cryptic timestamps. Programmers do it for clarity in UIs and to format dates for storage or network transfer.
-
 ## How to:
 JavaScript has built-in methods to convert dates to strings. Here's how to use them:
 

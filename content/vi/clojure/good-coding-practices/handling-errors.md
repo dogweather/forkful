@@ -16,9 +16,6 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Thế nào và Tại sao?
-Xử lý lỗi là về việc quản lý những tình huống không mong đợi trong chương trình - giống như một vệ sĩ giải quyết rắc rối. Lập trình viên thích sự trơn tru; xử lý lỗi giúp giữ cho rắc rối trong tầm kiểm soát, đảm bảo mã của họ không vấp ngã khi đối mặt với những tình huống không mong đợi.
-
 ## Cách thực hiện:
 Clojure, giống như tổ tiên Lisp của mình, dựa vào ngoại lệ để xử lý lỗi. Dưới đây là cách bạn thể hiện bản thân khi mọi thứ trở nên tồi tệ.
 

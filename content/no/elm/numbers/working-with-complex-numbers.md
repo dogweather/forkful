@@ -10,9 +10,6 @@ title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---
 
-## Hva & Hvorfor?
-Komplekse tall er en kombinasjon av reelle tall og imaginære tall, som `a + bi`, der `i` er kvadratroten av -1. De er nøkkelen i felt som ingeniørvitenskap og fysikk for å løse problemer vanlige tall ikke kan røre.
-
 ## Hvordan:
 Elm har ikke innebygd støtte for komplekse tall, så du må opprette din egen type og funksjoner. Her er en rask oppsett:
 

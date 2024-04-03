@@ -19,12 +19,7 @@ title: "Thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin b\u1EB1ng c\xE1c l\u1EC7nh CLI 
 weight: 31
 ---
 
-## Cái gì và Tại sao?
-
-Việc thao tác với các tệp tin sử dụng CLI (Command Line Interface) bằng cách nhập lệnh đơn với Bash bao gồm việc dùng các script Bash hay lệnh để thực hiện các thao tác trên tệp tin, như tạo, đọc, cập nhật, hoặc xóa chúng, tất cả từ terminal. Lập trình viên thực hiện điều này vì tính hiệu quả, tự động hóa, và bởi vì nó đặc biệt mạnh mẽ trong việc xử lý các thao tác tệp tin trên máy chủ Linux hoặc hệ thống, nơi mà giao diện đồ họa có thể không khả dụng.
-
 ## Làm thế nào:
-
 Dưới đây là một số lệnh đơn đầy mạnh mẽ và những gì chúng có thể thực hiện:
 
 1. **Tạo một tệp tin và viết văn bản vào đó:**
@@ -70,7 +65,6 @@ Vòng lặp này đi qua từng tệp `.txt` trong thư mục hiện tại và �
 Những lệnh đơn CLI này tận dụng sức mạnh của Bash cho việc thao tác tệp tin nhanh chóng và hiệu quả, một kỹ năng mà bất kỳ lập trình viên nào cũng sẽ thấy không thể thiếu.
 
 ## Sâu hơn:
-
 Vỏ Bash, một phần không thể thiếu trên hầu hết các hệ thống tương tự UNIX, đã phát triển từ Bourne Shell (sh), được giới thiệu trong Phiên bản 7 Unix vào năm 1979. Bash mở rộng khả năng của người tiền nhiệm với các tính năng viết kịch bản cải thiện đã khiến nó trở nên phổ biến đối với cả quản trị viên hệ thống và lập trình viên.
 
 Mặc dù Bash rất mạnh mẽ trong việc thao tác tệp tin, nó cũng có những hạn chế của mình. Bởi vì dựa trên văn bản, các thao tác phức tạp (như những thao tác liên quan đến dữ liệu nhị phân) có thể trở nên cồng kềnh hoặc không hiệu quả so với việc sử dụng một ngôn ngữ lập trình được thiết kế với các khả năng đó trong tâm trí, như Python.

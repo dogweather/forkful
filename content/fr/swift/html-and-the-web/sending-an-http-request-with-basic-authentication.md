@@ -12,12 +12,7 @@ title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---
 
-## Qu'est-ce que c'est & Pourquoi ?
-
-Envoyer une requête HTTP avec une authentification de base consiste à fournir un nom d'utilisateur et un mot de passe pour accéder à une ressource web. Les programmeurs l'utilisent pour sécuriser l'accès aux API et aux services web.
-
 ## Comment faire :
-
 ```Swift
 import Foundation
 
@@ -53,11 +48,9 @@ ResponseData: {"data": "Données sécurisées"}
 ```
 
 ## Plongée en profondeur
-
 Historiquement, l'authentification de base HTTP - inventée au début des années 90 - fait partie intégrante des standards d’Internet. Des alternatives modernes comprennent OAuth et les JWT (Jetons Web JSON) qui offrent une sécurité améliorée et une plus grande flexibilité. Une mise en œuvre correcte doit passer par la sécurisation de la connexion avec TLS/SSL, sinon les identifiants seraient exposés en clair sur internet. D'ailleurs, n'oubliez pas de stocker vos identifiants de manière sécurisée (pas en dur dans le code !).
 
 ## Voir également
-
 - [Documentation URLSession Apple](https://developer.apple.com/documentation/foundation/urlsession)
 - [RFC 7617 - 'The 'Basic' HTTP Authentication Scheme'](https://tools.ietf.org/html/rfc7617)
 - [Comment mieux sécuriser ses données de connexion](https://www.owasp.org/index.php/Password_Storage_Cheat_Sheet)

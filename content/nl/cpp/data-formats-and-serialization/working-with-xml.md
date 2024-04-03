@@ -12,9 +12,6 @@ title: Werken met XML
 weight: 40
 ---
 
-## Wat & Waarom?
-Werken met XML betekent het parseren, creëren en manipuleren van XML (eXtensible Markup Language) gegevens. Programmeurs beheren XML om gestructureerde gegevensuitwisseling, configuratie en meer te hanteren, vanwege de platformneutrale aard ervan.
-
 ## Hoe te:
 Hier is een eenvoudige manier om XML te parseren met de TinyXML-2 bibliotheek:
 

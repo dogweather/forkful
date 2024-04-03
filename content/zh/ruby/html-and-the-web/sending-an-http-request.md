@@ -15,9 +15,6 @@ title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---
 
-## What & Why? (是什么 & 为什么?)
-发送HTTP请求就是让你的代码和网上的服务器"聊天"。程序员这么做是因为他们需要从互联网获取或发送数据。
-
 ## How to: (怎么做)
 在Ruby中，发送HTTP请求可以用几个不同的库。这里我们用`net/http`，这是Ruby标准库的一部分。
 
@@ -39,6 +36,8 @@ puts "Body: #{response.body}"
 ```
 
 ## Deep Dive (深入了解)
+
+
 ### 历史背景
 Ruby最早的HTTP库可能不够强大，但随着时间的推移，像`net/http`这样的库变得越来越稳定、灵活。
 

@@ -14,11 +14,7 @@ title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---
 
-## Quoi et pourquoi ?
-Capitaliser une chaîne dans Bash consiste à transformer le premier caractère de la chaîne en majuscule tout en laissant le reste de la chaîne inchangé. Cette technique est couramment utilisée pour formater la sortie ou se conformer aux conventions de codage qui exigent que certaines chaînes commencent par une lettre capitale pour une meilleure lisibilité ou des préférences stylistiques.
-
 ## Comment faire :
-
 Bash n'a pas de fonction intégrée spécifiquement pour la capitalisation des chaînes, mais vous pouvez accomplir cette tâche en utilisant l'expansion de paramètres ou des outils externes comme `awk`. Voici quelques façons de capitaliser une chaîne dans Bash :
 
 **Utilisation de l'expansion de paramètres :**

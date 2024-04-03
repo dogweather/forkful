@@ -10,10 +10,6 @@ title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
 
-## What & Why?
-Mikä & Miksi?
-Ohjelmoinnissa debug-tulostus tarkoittaa tilapäisten viestien tulostamista koodin suorituksen seuraamiseksi. Käytämme tätä selvittääksemme ohjelman käyttäytymistä ja löytääksemme bugeja nopeammin.
-
 ## How to:
 Miten:
 ```Haskell

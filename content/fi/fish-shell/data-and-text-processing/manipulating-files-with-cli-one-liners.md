@@ -12,12 +12,7 @@ title: "Tiedostojen k\xE4sittely yhden rivin komentorivikomennoilla"
 weight: 31
 ---
 
-## Mitä & Miksi?
-
-Ohjelmoinnin maailmassa, erityisesti Linux- tai Unix-ympäristöissä, tiedostojen suora manipulointi komentoriviltä (CLI) ei ole pelkästään mukavuuskysymys – se on voimakas työkalu. Fish Shellin ansiosta, sen modernin syntaksin ja työkalujen avulla, voit muuntaa, siirtää tai analysoida tiedostoja ketterästi ja tarkasti. Kyse on enemmän tekemisestä vähemmällä, prosessien virtaviivaistamisesta ja komentorivin mahdin hyödyntämisestä tehokkaassa tiedostonhallinnassa.
-
 ## Miten:
-
 Tiedostojen manipulointi Fish Shellissä on sekä intuitiivista että tehokasta. Tässä on joitakin esimerkkejä sen kyvyistä:
 
 1. **Tiedoston luominen** on niin suoraviivaista kuin olla ja voi. Käytä `touch`-komentoa:
@@ -79,7 +74,6 @@ end
 ```
 
 ## Syväluotaus
-
 Tiedostojen manipulointi CLI:ssä Fish Shell yksirivisillä on sekä taito että taide. Historiallisesti Unix- ja Linux-järjestelmät ovat aina tarjonneet voimakkaan työkalupakin tiedoston manipuloinnille, käsitellen kaiken tiedoston filosofiansa mukaisesti. Tämä on raivannut tietä moderneille kuorille, kuten Fish, joka ei ainoastaan hyväksy vaan laajentaa näitä filosofioita parannetulla syntaksilla ja lisätyökaluilla.
 
 Vaikka Fish tarjoaa erinomaisen käyttäjäkokemuksen ja skriptausmahdollisuudet, on mainitsemisen arvoista, että tietyt POSIX-yhteensopivuusongelmat voivat tulla esiin, erityisesti kun skriptit siirretään perinteisemmistä kuorista, kuten Bash tai SH. Tämä johtuu siitä, että Fish ei pyri olemaan POSIX-yhteensopiva suunnittelultaan, vaan valitsee sen sijaan käyttäjäystävällisemmän lähestymistavan sekä skriptauksessa että komentorivin käytössä. Näin ollen ohjelmoijien tulisi olla tietoisia siitä, että vaikka Fish excelsoi monilla alueilla, skriptit, jotka vaativat tiukkaa POSIX-yhteensopivuutta, saattavat vaatia säätöjä tai vaihtoehtoja, kuten `bash` tai `zsh`, yhteensopivuuden vuoksi.

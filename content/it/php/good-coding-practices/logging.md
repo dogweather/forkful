@@ -12,12 +12,7 @@ title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---
 
-## Cosa & Perché?
-
-Il logging è sostanzialmente paragonabile al mantenere un diario per il proprio codice; è l'atto di registrare eventi, errori e altri punti dati significativi che si verificano quando l'applicazione viene eseguita. I programmatori lo fanno per tenere traccia di ciò che accade sotto il cofano, per individuare e risolvere problemi, e per mantenere una traccia di controllo per analisi successive o per scopi di conformità.
-
 ## Come fare:
-
 PHP offre una funzione integrata di registrazione degli errori che è facile da usare. Basta inserire `error_log()` nel tuo codice per inviare un messaggio ai log del server. Puoi anche personalizzarlo per scrivere su un file specifico.
 
 ```php
@@ -50,7 +45,6 @@ $logger->error('Questa è una voce di log di errore!');
 Questo produrrà i tuoi log o al log del server o al tuo file specificato in formato testo semplice.
 
 ## Approfondimento:
-
 Storicamente, gli sviluppatori PHP si sono affidati alla funzione `error_log()` o ai log di Apache/Nginx per rilevare problemi, ma ciò può essere caotico con la necessità di analizzare file di testo semplice e senza un modo facile per filtrarli o ordinarli. Inserire librerie di logging come Monolog, che hanno inaugurato l'era del logging strutturato in PHP. Queste soluzioni offrono un migliore controllo fornendo molteplici canali di registrazione, livelli di gravità e output formattato (come JSON, che è un sogno per l'analisi programmata).
 
 Alternative a Monolog includono Log4php, KLogger e Log4php di Apache. Dal punto di vista dell'implementazione, una registrazione solida richiede non solo di scaricare dati a caso, ma di prendere in considerazione aspetti come la rotazione dei log, le strategie di archiviazione e l'integrazione con strumenti di monitoraggio per essere veramente utili.
@@ -58,7 +52,6 @@ Alternative a Monolog includono Log4php, KLogger e Log4php di Apache. Dal punto 
 Dovresti tenere a mente l'[Interfaccia Logger PSR-3](https://www.php-fig.org/psr/psr-3/), che delinea un'interfaccia comune per le librerie di logging, garantendo l'interoperabilità e un modo coerente per accedere ai meccanismi di logging.
 
 ## Vedi anche:
-
 - [Repository GitHub di Monolog](https://github.com/Seldaek/monolog)
 - [Specifica dell'Interfaccia Logger PSR-3](https://www.php-fig.org/psr/psr-3/)
 - [Documentazione di PHP Error Log](https://www.php.net/manual/en/function.error-log.php)

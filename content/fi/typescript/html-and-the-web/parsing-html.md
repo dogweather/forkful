@@ -13,12 +13,7 @@ title: "HTML:n j\xE4sennys"
 weight: 43
 ---
 
-## Mikä & Miksi?
-
-HTML:n jäsentäminen tarkoittaa HTML-koodin läpikäymistä löytääkseen, poimiakseen tai manipuloidakseen tietoa. Ohjelmoijat tekevät sitä vuorovaikuttaakseen verkkosisällön kanssa—ehkä kaapiakseen dataa tai automatisoidakseen selaimia.
-
 ## Kuinka:
-
 Aloittaaksesi, asenna kirjasto kuten `node-html-parser`. Tässä on terminaalikomento:
 
 ```bash
@@ -47,7 +42,6 @@ console.log(bananas);  // "Banaani"
 ```
 
 ## Syväsukellus
-
 HTML:n jäsentäminen ei ole uutta—se on ollut olemassa verkon alkupäivistä lähtien. Aluksi kehittäjät ovat ehkä käyttäneet säännöllisiä lausekkeita, mutta se muuttui nopeasti sekavaksi. Sitten tuli DOM Parser: vakaa, mutta selainrajattu.
 
 Kirjastot kuten `node-html-parser` poistavat tuskan. Ne antavat sinun kyselyä HTML:ää kuten tekisit jQueryllä, mutta palvelinpuolella Node.js:n kanssa. Se on nopea, sietää likaista HTML:ää, ja on DOM-ystävällinen.
@@ -57,7 +51,6 @@ On myös `jsdom`, joka simuloii koko selainympäristöä. Se on raskaampi mutta 
 Älkäämme unohtako Cheeriotakaan. Se yhdistää nopeuden jQueryn kaltaiseen syntaksiin ja pienempään jalanjälkeen, sijoittuen iloisesti näiden kahden väliin.
 
 ## Katso Myös
-
 Jos janotat lisää, kasta varpaasi näihin:
 - [DOM-jäsentämisen ja serialisoinnin W3C-spesifikaatio](https://www.w3.org/TR/DOM-Parsing/)
 - [node-html-parser GitHubissa](https://github.com/taoqf/node-html-parser)

@@ -11,9 +11,6 @@ title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---
 
-## Vad & Varför?
-Att starta ett nytt projekt i Java är som att öppna en ny, blank dagbok; potentialen är oändlig. Programmerare startar nya projekt för att omvandla idéer till kod, lösa problem eller testa ny funktionalitet.
-
 ## Så här gör du:
 Att kickstarta ett projekt är enkelt. Använd antingen ditt favoritutvecklingsverktyg eller kommandotolken. Här är ett exempel med Maven:
 

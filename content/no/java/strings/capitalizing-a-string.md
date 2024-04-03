@@ -14,9 +14,6 @@ title: Sette stor bokstav i en streng
 weight: 2
 ---
 
-## Hva & Hvorfor?
-Det å sette stor bokstav i en streng innebærer å endre den første bokstaven i hvert ord i strengen til stor bokstav, mens man sørger for at resten forblir små bokstaver. Denne vanlige manipulasjonen av strenger er nyttig for formatering av tekst i applikasjoner, slik som forberedelse av brukernavn eller titler for visning i henhold til konvensjon eller grammatikal korrekthet.
-
 ## Hvordan:
 Java sitt standardbibliotek tilbyr ikke en direkte metode for å sette stor bokstav i hele strenger i ett steg, men du kan oppnå dette med en kombinasjon av innebygde metoder. For mer sofistikerte behov tilbyr tredjepartsbiblioteker som Apache Commons Lang enkle løsninger.
 
@@ -50,7 +47,6 @@ public class CapitalizeString {
 Dette kodeutdraget konverterer hele strengen til små bokstaver, og så itererer gjennom hver karakter, og setter stor bokstav i den første bokstaven i hvert ord. Det tar hensyn til mellomrom, punktum, og apostrofer som ordseparatorer.
 
 ### Bruke Apache Commons Lang
-
 Apache Commons Lang-biblioteket tilbyr en mer elegant løsning med metoden `WordUtils.capitalizeFully()`, som håndterer ulike kanttilfeller og skilletegn for deg:
 
 ```java

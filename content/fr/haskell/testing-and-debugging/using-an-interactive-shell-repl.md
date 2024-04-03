@@ -10,9 +10,6 @@ title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---
 
-## Quoi & Pourquoi ?
-Un shell interactif, ou REPL (Read-Eval-Print Loop), en Haskell vous permet d'exécuter des extraits de code en direct. C'est un terrain de jeu pour obtenir des retours rapides, tester des fonctions et apprendre le langage.
-
 ## Comment faire :
 Pour démarrer le GHCi (l'environnement interactif du compilateur Haskell de Glasgow), tapez simplement `ghci` dans votre terminal. Voici comment l'utiliser :
 

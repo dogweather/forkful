@@ -11,9 +11,6 @@ title: Lese kommandolinjeargumenter
 weight: 23
 ---
 
-## Hva & Hvorfor?
-Kommandolinjeargumenter lar oss sende informasjon til et program når vi starter det. Vi gjør dette for å gi fleksibel kontroll over programmets oppførsel uten å hardkode verdier.
-
 ## Hvordan:
 ```C#
 using System;

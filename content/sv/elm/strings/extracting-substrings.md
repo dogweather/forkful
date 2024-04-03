@@ -11,9 +11,6 @@ title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---
 
-## What & Why? (Vad & Varför?)
-Att extrahera delsträngar innebär att plocka ut specifika delar av en sträng. Programmerare gör det för att manipulera och använda textdata på mer detaljerade sätt.
-
 ## How to: (Hur gör man?)
 Elm håller det enkelt. Här är ett exempel på hur du extraherar delsträngar med funktionen `String.slice`:
 

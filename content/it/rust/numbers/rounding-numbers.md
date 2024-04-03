@@ -11,9 +11,6 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Cosa e Perché?
-Arrotondare i numeri significa regolarli al numero intero più vicino o a una frazione con una certa precisione. I programmatori arrotondano i numeri per semplificare i valori per la leggibilità umana, per soddisfare i requisiti delle specifiche o per ridurre il sovraccarico computazionale nelle operazioni in virgola mobile.
-
 ## Come fare:
 Rust rende l'arrotondamento un gioco da ragazzi. Dai un'occhiata a questi metodi per i tipi `f32` o `f64`:
 

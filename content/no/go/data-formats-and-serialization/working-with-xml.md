@@ -12,11 +12,8 @@ title: Arbeider med XML
 weight: 40
 ---
 
-## Hva & Hvorfor?
-
-Å jobbe med XML i Go innebærer parsing (lesing) og generering (skriving) av XML-dokumenter – et standardformat for strukturert datautveksling. Programmerere gjør dette for datalagring, konfigurasjonsinnstillinger eller datautveksling mellom systemer, spesielt i miljøer der XML er det foretrukne eller et arvet dataformat.
-
 ## Hvordan:
+
 
 ### Parse XML i Go
 For å parse XML i Go, bruker du `encoding/xml`-pakken. Denne pakken gir de nødvendige verktøyene for å unmarshal (parse) XML til Go-strukturer. For eksempel, vurder følgende XML-data som representerer en bok:
@@ -114,7 +111,6 @@ Output:
 ```
 
 ## Dypdykk
-
 XMLs verbosehet og kompleksitet har ført til at JSON og andre formater har blitt mer populære for mange applikasjoner. Imidlertid sikrer XMLs evne til å representere komplekse hierarkiske data og dens utbredte bruk i arvesystemer og spesifikke domener (f.eks., SOAP-tjenester) dets relevans.
 
 `encoding/xml`-pakken i Go gir kraftfulle mekanismer for arbeid med XML, men det er verdt å merke seg dens begrensninger. For eksempel, kan håndtering av XML-navnerom være tungvint og kan kreve en mer detaljert forståelse av XML-spesifikasjonen enn for enklere brukstilfeller. I tillegg, selv om Gos statiske typografi og `encoding/xml`-pakkens marshaling- og unmarshaling-kapasiteter generelt er effektive, kan utviklere støte på utfordringer med dypt nøstede strukturer eller når de håndterer XML-dokumenter som ikke kartlegger pent på Gos typesystem.

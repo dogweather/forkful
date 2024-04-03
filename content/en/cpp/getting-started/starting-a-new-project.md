@@ -9,9 +9,6 @@ title: Starting a new project
 weight: 1
 ---
 
-## What & Why?
-Starting a new project means setting up the foundation for your codebase. Programmers do this to kickstart the development process, guide the project's structure, and lay down the groundwork for future code.
-
 ## How to:
 When starting, choose your build system or IDE. For simplicity, we’ll use a basic text editor and g++. Create two files: `main.cpp` and a `Makefile`.
 

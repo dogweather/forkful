@@ -15,9 +15,6 @@ title: "Trouver la longueur d'une cha\xEEne"
 weight: 7
 ---
 
-## Quoi & Pourquoi ?
-Trouver la longueur d'une chaîne de caractères dans Google Apps Script, un langage de script cloud JavaScript qui vous permet d'automatiser des tâches à travers les produits Google, consiste à déterminer le nombre de caractères qu'une chaîne contient. Les programmeurs effectuent fréquemment cette opération pour vérifier des entrées, parcourir des caractères, ou manipuler des chaînes pour diverses tâches d'automatisation au sein de Google Apps.
-
 ## Comment faire :
 Dans Google Apps Script, vous pouvez trouver la longueur d'une chaîne en utilisant la propriété `.length`, similaire à JavaScript. Cette propriété retourne le nombre de caractères dans la chaîne, incluant les espaces et les caractères spéciaux. Voici quelques exemples :
 

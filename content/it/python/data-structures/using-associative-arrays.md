@@ -13,12 +13,7 @@ title: Utilizzo di array associativi
 weight: 15
 ---
 
-## Cosa & Perché?
-
-Gli array associativi, noti in Python come dizionari, mappano chiavi a valori, rendendo facile recuperare, modificare o tenere traccia dei dati mediante un identificatore unico. I programmatori li utilizzano per la loro efficienza nell'accesso agli elementi e per la loro flessibilità nel rappresentare strutture dati complesse.
-
 ## Come fare:
-
 Creare un dizionario in Python è semplice. Si racchiudono le coppie chiave-valore tra parentesi graffe `{}`, con chiavi e valori separati da due punti:
 
 ```Python
@@ -76,7 +71,6 @@ email: john@example.com
 ```
 
 ## Approfondimento
-
 Gli array associativi in Python, o dizionari, sono stati introdotti per fornire una struttura dati per un accesso e una manipolazione dei dati efficienti. A differenza delle sequenze, che sono indicizzate da una gamma di numeri, i dizionari sono indicizzati da chiavi, che possono essere di qualsiasi tipo immutabile. Questa scelta progettuale rende i dizionari particolarmente adatti per tabelle di ricerca rapide dove le chiavi mappano a valori unici.
 
 Storicamente, i dizionari Python sono stati implementati utilizzando una tabella hash, garantendo che la complessità temporale media per le operazioni di ricerca, inserimento e cancellazione sia O(1). In Python 3.6 e successivi, i dizionari mantengono anche l'ordine di inserimento degli elementi, combinando i vantaggi delle tabelle hash con la prevedibilità dell'ordine di inserimento vista nelle strutture dati ordinate.

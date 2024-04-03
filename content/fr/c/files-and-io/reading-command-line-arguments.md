@@ -13,12 +13,7 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## Quoi et Pourquoi ?
-
-En programmation C, lire les arguments de la ligne de commande permet aux programmes d'accepter des entrées directement depuis le terminal, ce qui améliore leur flexibilité et leur utilisabilité. Les programmeurs exploitent cela pour configurer les comportements des scripts sans modifier le code, rendant les applications adaptables et efficaces.
-
 ## Comment faire :
-
 En C, la fonction `main` peut être conçue pour accepter des arguments de ligne de commande en utilisant les paramètres `int argc` et `char *argv[]`. Ici, `argc` représente le nombre d'arguments passés, et `argv` est un tableau de pointeurs de caractères listant tous les arguments. Voici un rapide exemple pour illustrer :
 
 ```c
@@ -46,7 +41,6 @@ Argument 2 : exemple
 Cela démontre comment les arguments de la ligne de commande peuvent être analysés et utilisés dans un programme C.
 
 ## Approfondissement
-
 La convention de passer des arguments aux programmes remonte aux premiers jours d'Unix. Dans cette approche traditionnelle, `argc` et `argv` fournissent une interface simple mais puissante pour l'interaction en ligne de commande, incarnant la philosophie Unix de petites utilités modulaires qui travaillent ensemble. Alors que les langages modernes introduisent souvent des bibliothèques ou des cadres plus sophistiqués pour l'analyse des arguments de ligne de commande, la directivité de la méthode C offre une transparence et un contrôle inégalés.
 
 Dans les développements récents, des bibliothèques telles que `getopt` dans les systèmes POSIX ont évolué pour soutenir des besoins d'analyse plus complexes, comme la gestion des noms d'options longs ou des valeurs par défaut pour les arguments manquants. Pourtant, le mécanisme de base de `argc` et `argv` reste essentiel pour comprendre comment les programmes interagissent avec leur environnement d'exécution en C.

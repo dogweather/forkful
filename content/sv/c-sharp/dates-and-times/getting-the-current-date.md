@@ -13,9 +13,6 @@ title: "F\xE5 det aktuella datumet"
 weight: 29
 ---
 
-## Vad & Varför?
-Att få det aktuella datumet i C# innebär att hämta aktuella datum- och tidsuppgifter från systemet. Programmerare behöver ofta tillgång till denna information för loggning, tidsstämpling av operationer eller schemaläggning av uppgifter inom applikationer, för att säkerställa att handlingar är tidsmässigt korrekta och data är markerat med exakta tidsstämplar.
-
 ## Hur man gör:
 C# erbjuder ett enkelt sätt att få det aktuella datumet genom att använda `DateTime`-klassen som är en del av .NET Frameworks System-namnrymd. Exemplet nedan demonstrerar hur man får det aktuella datumet, och eventuellt, tiden.
 

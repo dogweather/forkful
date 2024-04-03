@@ -16,12 +16,7 @@ title: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---
 
-## Gì và Tại sao?
-
-Bắt đầu một dự án mới bằng Go bao gồm việc thiết lập một không gian làm việc và khởi tạo nó với các mô-đun Go cần thiết. Các lập trình viên làm điều này để tổ chức mã, quản lý các phụ thuộc một cách hiệu quả và tạo điều kiện cho quá trình xây dựng. Đây là nền tảng để tạo ra phần mềm có khả năng mở rộng và bảo trì trong Go.
-
 ## Làm thế nào:
-
 Trước tiên, đảm bảo bạn đã cài đặt Go bằng cách chạy `go version` trên terminal của bạn. Bạn sẽ thấy phiên bản Go bạn đã cài đặt được xuất ra. Tiếp theo, hãy bắt đầu một dự án mới. Di chuyển đến không gian làm việc của bạn và chạy:
 
 ```shell
@@ -76,7 +71,6 @@ Hello, World!
 Chúc mừng! Bạn vừa bắt đầu một dự án Go mới và chạy chương trình Go đầu tiên của mình.
 
 ## Sâu hơn nữa
-
 Sáng kiến ​​giới thiệu modules như là tiêu chuẩn quản lý phụ thuộc trong Go là một bước chuyển mình đáng kể trong hệ sinh thái Go, chính thức được chấp nhận trong Go 1.11. Trước modules, các nhà phát triển Go dựa vào biến môi trường GOPATH để quản lý phụ thuộc, điều này kém trực quan và thường dẫn đến "địa ngục phụ thuộc" nổi tiếng.
 
 Modules cung cấp một cách đóng gói để quản lý phụ thuộc dự án, phiên bản, và là một bước tiến hướng tới việc làm cho các dự án Go trở nên tự chứa và di động hơn. Mỗi module chỉ rõ các phụ thuộc của nó mà Go theo dõi trong tệp `go.mod`, đơn giản hóa quản lý phụ thuộc qua các môi trường và giai đoạn phát triển khác nhau.

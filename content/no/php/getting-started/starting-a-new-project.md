@@ -11,9 +11,6 @@ title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Å starte et nytt prosjekt er som å slippe løs kreativiteten din med kode som lerret. Programmerere gjør det for å løse problemer, utforske nye ideer, eller bygge noe kult.
-
 ## How to: (Hvordan)
 La oss lage en enkel PHP-fil som sier "Hei, verden!". Opprett en fil kalt `hello_world.php`.
 

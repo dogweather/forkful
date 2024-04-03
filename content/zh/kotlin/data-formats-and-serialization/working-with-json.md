@@ -20,9 +20,6 @@ title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 weight: 38
 ---
 
-## 什么及为什么？
-在 Kotlin 中处理 JSON（JavaScript 对象表示法）涉及解析和生成 JSON 数据。程序员这样做是为了方便地在应用程序的不同层之间或与 Web 服务通信交换数据，得益于 JSON 的轻量级和易于阅读的格式。
-
 ## 如何操作：
 Kotlin 没有内置对 JSON 的支持，但利用了第三方库的强大功能，如 Google 的 `Gson` 和 JetBrains 的 `Kotlinx.serialization`。以下是如何使用这两者来处理 JSON。
 

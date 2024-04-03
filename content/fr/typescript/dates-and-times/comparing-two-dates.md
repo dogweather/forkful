@@ -11,9 +11,6 @@ title: Comparer deux dates
 weight: 27
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Comparer deux dates, c'est voir laquelle vient avant ou après, ou si elles sont identiques. Les devs le font pour gérer des échéances, trier des événements, etc.
-
 ## How to: (Comment faire : )
 ```TypeScript
 const date1: Date = new Date('2023-04-01T00:00:00');

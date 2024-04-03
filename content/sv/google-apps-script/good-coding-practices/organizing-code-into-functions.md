@@ -14,12 +14,7 @@ title: Att organisera kod i funktioner
 weight: 18
 ---
 
-## Vad & Varför?
-
-Att organisera kod i funktioner handlar om att strukturera din Google Apps Script-kod genom att separera logiska segment till distinkta block, där varje block utför en specifik uppgift. Programmerare gör detta för att förbättra läsbarheten, underhållbarheten och återanvändbarheten av koden, vilket säkerställer att komplexa skript är lättare att förstå och felsöka.
-
 ## Hur:
-
 I Google Apps Script, som bygger på JavaScript, definierar du funktioner med nyckelordet `function`, följt av ett unikt funktionsnamn, parenteser `()` som kan innehålla parametrar, och måsvingar `{}` som inkapslar funktionens kodblock. Här är ett grundläggande exempel:
 
 ```javascript
@@ -68,7 +63,6 @@ populateSheet(salesData);
 I detta exempel förbereder `setupSheet` kalkylbladet, och `populateSheet` använder en array med försäljningsdata för att fylla i kalkylbladet. Att separera dessa bekymmer gör koden renare och mer anpassningsbar för förändringar.
 
 ## Fördjupning
-
 Konceptet med att dela upp kod i funktioner är varken nytt eller unikt för Google Apps Script; det är en grundläggande programmeringspraxis som förespråkas i nästan alla programmeringsspråk. Historiskt har funktioner utvecklats från det matematiska konceptet med att mappa inmatningar till utmatningar, vilket har blivit en hörnsten i strukturerad programmering. Denna tillvägagångssätt främjar modularitet och kodåteranvändning, och erbjuder tydliga vägar för att testa enskilda delar av skriptet.
 
 Google Apps Script, som är baserat på JavaScript, drar stor nytta av JavaScripts förstaklassiga funktioner, vilket möjliggör att funktioner kan skickas som argument, returneras från andra funktioner och tilldelas till variabler. Denna funktion öppnar upp för avancerade mönster som callbacks och funktionell programmering, även om dessa mönster kan introducera komplexitet som kanske är onödig för enkla automatiseringsuppgifter i Google Apps Script.

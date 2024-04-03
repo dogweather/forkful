@@ -13,12 +13,7 @@ title: Uso de matrices asociativas
 weight: 15
 ---
 
-## ¿Qué y Por Qué?
-
-Los arreglos asociativos, más conocidos como hashes en Ruby, permiten emparejar claves únicas con valores. Son indispensables cuando necesitas llevar un registro de elementos a través de una referencia específica, como almacenar las propiedades de un objeto o acceder rápidamente a datos mediante un identificador único.
-
 ## Cómo hacerlo:
-
 Crear y usar hashes en Ruby es sencillo. Puedes inicializar un hash vacío, llenarlo con pares clave-valor, acceder a los valores por sus claves y más. Así es cómo se hace:
 
 ```Ruby
@@ -55,7 +50,6 @@ puts symbol_hash[:name] # Salida: Jane Doe
 ```
 
 ## Estudio Profundo:
-
 El concepto de arreglos asociativos no es único de Ruby; muchos lenguajes los implementan bajo varios nombres, como diccionarios en Python u objetos en JavaScript (cuando se usan como pares clave-valor). En las etapas iniciales de Ruby, los hashes eran algo más lentos y no tan versátiles. Sin embargo, con el tiempo, la implementación de hashes en Ruby se ha optimizado mucho, especialmente para claves de símbolos, haciéndolos extremadamente eficientes para accesos y actualizaciones frecuentes.
 
 Los hashes de Ruby se destacan por su facilidad de uso sintáctico y flexibilidad: puedes usar casi cualquier tipo de objeto como clave, aunque los símbolos y las cadenas son los más comunes. Internamente, los hashes de Ruby están implementados usando un algoritmo de hashing que equilibra la velocidad y la eficiencia de memoria, incluso a medida que el número de elementos escala.

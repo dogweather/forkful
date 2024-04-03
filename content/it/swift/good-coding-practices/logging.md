@@ -11,9 +11,6 @@ title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---
 
-## Che cosa & Perché?
-Il logging è il processo di registrazione dei comportamenti delle applicazioni, degli errori e di altre informazioni importanti su un supporto persistente, come un file o un database. I programmatori lo fanno per tracciare la salute e le prestazioni delle loro app, per risolvere problemi e per tenere d'occhio quello che succede sotto il cofano negli ambienti di produzione.
-
 ## Come fare:
 In Swift, puoi scrivere log sulla console con istruzioni di stampa o con l'API `os.log`, più flessibile, che si interconnette con il Sistema di Logging Unificato sulle piattaforme Apple.
 

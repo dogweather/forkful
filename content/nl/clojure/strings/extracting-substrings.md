@@ -12,9 +12,6 @@ title: Substrings extraheren
 weight: 6
 ---
 
-## Wat & Waarom?
-Het extraheren van substrings betekent het grijpen van een specifiek deel van een string—zoals het eruit halen van de goede stukjes van een sandwich. Programmeurs doen dit om gegevens te isoleren, invoer te valideren, of simpelweg omdat we slechts dat stukje nodig hebben en niet de hele tekstblob.
-
 ## Hoe te:
 Clojure maakt het makkelijk om met strings te werken. Voor het extraheren van substrings is `subs` je go-to functie:
 

@@ -11,9 +11,6 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## ¿Qué & Por Qué?
-Buscar y reemplazar texto es una operación común que modifica una cadena para sustituir partes específicas por otras. Los programadores lo usan para actualizar datos, corregir errores o cambiar formatos de manera eficiente, sin tener que revisar todo manualmente.
-
 ## Cómo:
 ```TypeScript
 function reemplazarTexto(texto: string, buscar: string, reemplazo: string): string {

@@ -14,12 +14,7 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä & Miksi?
-
-CSV-tiedostoilla (Comma-Separated Values, pilkulla erotetut arvot) työskentely sisältää rakenteellisen datan jäsennyksen ja tuottamisen teksti-tiedostoista, joissa jokainen rivi edustaa merkintää ja jokainen merkintä koostuu pilkuilla erotetuista kentistä. Ohjelmoijat osallistuvat usein tähän toimintaan, jotta he voivat helposti tuoda, viedä ja manipuloida taulukkomuotoista dataa käyttämällä formaattia, joka on laajasti tuettu eri alustoilla sekä ohjelmointikielillä, johtuen sen yksinkertaisuudesta ja ihmislukuisesta muodosta.
-
 ## Kuinka:
-
 Swiftissä ei ole natiivia tukea CSV-tiedostojen suoraan jäsentämiseen, mutta voit käsitellä CSV-dataa käyttämällä `String`-metodeja sisällön jakamiseen, tai hyödyntämällä kolmansien osapuolien kirjastoja, kuten SwiftCSV, saadaksesi sujuvamman lähestymistavan. Tässä ovat molemmat menetelmät:
 
 ### Manuaalinen jäsentäminen ilman ulkoisia kirjastoja

@@ -13,9 +13,6 @@ title: Refactoring
 weight: 19
 ---
 
-## Wat & Waarom?
-Refactoring is het proces van het herstructureren van bestaande computercode zonder het externe gedrag ervan te veranderen, met als doel de niet-functionele attributen van de software te verbeteren. Programmeurs herschrijven code om deze schoner, efficiënter en eenvoudiger te maken, wat gemakkelijker onderhoud en toekomstige verbeteringen bevordert.
-
 ## Hoe:
 PowerShell heeft geen ingebouwd specifiek refactoringgereedschap, maar je kunt nog steeds je code opruimen voor leesbaarheid en prestaties. Overweeg een functie die te veel doet en hoe we deze kunnen refactoren voor duidelijkheid:
 

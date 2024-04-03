@@ -11,9 +11,6 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## Vad & Varför?
-Läsa en textfil betyder att ditt program hämtar information lagrad i en fil på disken. Programmerare gör detta för att använda data, konfigurera applikationer eller för att ladda innehåll dynamiskt.
-
 ## Så här gör du:
 Swift gör det rätt enkelt att öppna och läsa en textfil. Använd `String` klassen, så här:
 

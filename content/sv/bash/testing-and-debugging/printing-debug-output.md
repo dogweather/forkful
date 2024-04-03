@@ -11,9 +11,6 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## Vad & Varför?
-Att skriva ut felsökningsdata ("debug output") är som att lägga små post-it-lappar i din kod för att se vad som faktiskt händer. Programmerare gör det för att spåra buggar och kontrollera programmets flöde snabbt och enkelt.
-
 ## How to:
 För att visa felsökningsinformation i Bash använder du `echo` eller `printf`. Här är exempel:
 
@@ -52,7 +49,7 @@ Exempel:
 echo "Detta kommer att synas i terminalen" 1>&2
 ```
 
-Du kan även omdirigera dessa meddelanden till en fil eller en annan kommand för vidare analys. 
+Du kan även omdirigera dessa meddelanden till en fil eller en annan kommand för vidare analys.
 
 ## Se Även
 - [Bash man-page](https://linux.die.net/man/1/bash) för en djupdykning i Bash.

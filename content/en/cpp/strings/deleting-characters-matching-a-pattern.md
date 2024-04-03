@@ -11,9 +11,6 @@ title: Deleting characters matching a pattern
 weight: 5
 ---
 
-## What & Why?
-Deleting characters matching a pattern means stripping out specific sequences from a string. Programmers do this for cleanup, data formatting, or to meet application rules.
-
 ## How to:
 Let's rip out characters using `erase` and `remove_if` alongside lambda expressions. Here's a quick example:
 

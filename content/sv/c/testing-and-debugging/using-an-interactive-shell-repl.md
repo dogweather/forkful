@@ -14,12 +14,7 @@ title: "Att anv\xE4nda ett interaktivt skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-
-En interaktiv skal, även känd som en Read-Eval-Print Loop (REPL), möjliggör för programmerare att skriva in uttryck eller kod och omedelbart se resultat, vilket förbättrar inlärning och felsökningsprocesser. Trots att C traditionellt inte stödjer REPL-miljöer inbyggt, överbryggar moderna verktyg detta gap och erbjuder dynamisk utforskning av C-program.
-
 ## Hur man gör:
-
 Att engagera sig med en C REPL kanske inte är lika rakt fram som i språk som Python eller JavaScript. Verktyg som `Cling`, en C/C++-tolk baserad på Clang och LLVM-teknologi, gör det dock möjligt. Så här kommer du igång:
 
 1. **Installera Cling**: Beroende på ditt operativsystem, kan du hitta Cling i din pakethanterare eller behöva bygga från källa. Till exempel, på Ubuntu, kan det vara så enkelt som `sudo apt-get install cling`.
@@ -56,7 +51,6 @@ Kvadratroten av 4.000000 är 2.000000
 ```
 
 ## Djupdykning:
-
 Uppkomsten av REPL-miljöer går tillbaka till Lisp på 1960-talet, designat för att stödja interaktiv kodutvärdering. Dock ställde C:s statiska och kompilerade natur utmaningar för att förverkliga liknande omedelbarhet i kodexekveringsjusteringar. Utvecklingen av Cling och andra C/C++-tolkar markerar betydande framsteg mot integrering av dynamisk utvärdering i statiskt typade språk.
 
 Noterbart är att användning av en tolk som Cling kanske inte perfekt speglar beteendet hos kompilerad C-kod på grund av skillnader i optimering och exekvering. Dessutom, även om det är mycket värdefullt för utbildningsändamål, snabb prototypning och felsökning, kan REPLs för C ibland vara långsammare och mindre praktiska för utveckling av produktionsnivåkod jämfört med traditionella kompilera-köra-felsöka-cykler.

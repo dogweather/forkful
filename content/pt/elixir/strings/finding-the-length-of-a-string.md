@@ -11,9 +11,6 @@ title: Descobrindo o comprimento de uma string
 weight: 7
 ---
 
-## O quê & Por quê?
-Encontrar o comprimento de uma string é básicamente medir quantos caracteres ela possui. Programadores fazem isso para validar entradas, definir limites de dados e manipular textos de forma precisa.
-
 ## Como Fazer:
 ```elixir
 # 1. Usando a função String.length/1

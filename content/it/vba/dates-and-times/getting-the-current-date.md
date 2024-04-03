@@ -14,12 +14,7 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Cosa & Perché?
-
-In Visual Basic for Applications (VBA), recuperare la data corrente è un compito comune che permette ai programmatori di lavorare dinamicamente con le date nei loro macro o applicazioni. Questa funzionalità è fondamentale per operazioni come il logging, la marcatura temporale delle transazioni o il calcolo basato sulle date.
-
 ## Come fare:
-
 Recuperare la data corrente in VBA è semplice, utilizzando la funzione `Date`, mentre la funzione `Now` fornisce sia la data corrente che l'ora. Ecco come puoi lavorare con entrambe:
 
 ```vb
@@ -46,7 +41,6 @@ Data e Ora Correnti: 12/4/2023 15:45:22
 Tieni presente che il formato della data potrebbe variare in base alle impostazioni di sistema del computer dell'utente.
 
 ## Approfondimento
-
 Le funzioni `Date` e `Now` incapsulano la complessità di gestire date e orari in Visual Basic for Applications, fornendo un'astrazione a livello di applicazione che rende il lavoro con le date semplice e intuitivo. Storicamente, gestire date e orari nella programmazione è stato pieno di sfide, inclusa la gestione di diversi fusi orari, cambiamenti dell'ora legale e vari formati di data.
 
 In VBA, queste funzioni si basano sulla data e sull'ora del sistema sottostante, il che significa che sono influenzate dalle impostazioni locali e di sistema dell'utente. È una spada a doppio taglio che garantisce coerenza con l'ambiente dell'utente, ma richiede anche un'attenta gestione della localizzazione e degli aggiustamenti del fuso orario in applicazioni globali.

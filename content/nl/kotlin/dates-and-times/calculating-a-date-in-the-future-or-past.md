@@ -13,12 +13,7 @@ title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---
 
-## Wat & Waarom?
-
-Het berekenen van een datum in de toekomst of het verleden betekent het vinden van een specifieke datum vóór of na een bekende datum. Programmeurs doen dit voor functies zoals herinneringen, verloopmeldingen of planningshulpmiddelen - alles wat tijdgevoelig is.
-
 ## Hoe te:
-
 Kotlin behandelt datums en tijden met de `java.time` bibliotheek. Om dagen toe te voegen of af te trekken, gebruik je `plusDays()` of `minusDays()`. Hier is de korte uitleg:
 
 ```kotlin
@@ -46,7 +41,6 @@ Tien dagen geleden: 2023-03-05
 Naast dagen, kun je ook spelen met maanden en jaren (`plusMonths()`, `minusMonths()`, `plusYears()`, `minusYears()`).
 
 ## Diepgaande Duik
-
 Datums berekenen is niet nieuw. Sinds Java 8 is het `java.time` pakket de go-to voor datum-tijd rekenwerk - veel beter dan de oude `Calendar` of `Date`, die onhandig en niet thread-safe waren.
 
 `java.time` gebruikt onveranderlijke objecten, zodat je nare bugs vermijdt door per ongeluk je datums te wijzigen. Objecten zoals `LocalDate`, `LocalTime`, `LocalDateTime` en `ZonedDateTime` helpen je verschillende aspecten van tijd precies weer te geven.
@@ -56,7 +50,6 @@ Alternatieven? Natuurlijk. Voor `java.time` was Joda-Time de wapenkeuze. Sommige
 De `java.time` API is ook ontworpen om rekening te houden met tijdzones, dankzij klassen zoals `ZonedDateTime`. Dus wanneer je met datums schuift, kun je de chronologie van de draaiing van de aarde respecteren.
 
 ## Zie Ook
-
 - De officiële `java.time` documentatie: [Java SE Datum Tijd](https://docs.oracle.com/javase/tutorial/datetime/)
 - Voor de Android-ontwikkelaars, details over de `ThreeTenABP` bibliotheek: [ThreeTenABP op GitHub](https://github.com/JakeWharton/ThreeTenABP)
 - Een diepgaande handleiding, als je meer ins en outs over datum en tijd wilt: [Datum en Tijd in Java](https://www.baeldung.com/java-8-date-time-intro)

@@ -10,9 +10,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---
 
-## O Que & Porquê?
-Enviar um pedido HTTP com autenticação básica significa incluir credenciais de usuário e senha codificados em base-64 no cabeçalho do pedido. Programadores fazem isso para acessar recursos protegidos em um servidor remotamente.
-
 ## Como Fazer:
 ```Javascript
 // Utilizando o módulo 'axios' para fazer o pedido HTTP com autenticação básica.

@@ -14,9 +14,6 @@ title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---
 
-## Cái Gì & Tại Sao?
-Biểu thức chính quy, hay còn gọi là regex, là các mẫu mô tả các tập hợp chuỗi. Lập trình viên sử dụng chúng để tìm kiếm, khớp, và thao tác với văn bản — cực kỳ tiện lợi cho việc tìm kiếm "kim trong đống rơm" dữ liệu.
-
 ## Làm Thế Nào:
 Fish Shell có hỗ trợ regex tích hợp trong các lệnh như `string`. Hãy cùng tìm hiểu qua một số ví dụ:
 

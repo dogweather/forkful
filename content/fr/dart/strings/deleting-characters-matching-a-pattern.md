@@ -15,12 +15,7 @@ title: "Supprimer les caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---
 
-## Quoi et pourquoi ?
-
-La suppression de caractères correspondant à un motif spécifique dans les chaînes de caractères est crucial pour la validation des données, leur assainissement ou lors de la préparation du texte pour un traitement ultérieur. Les programmeurs effectuent cette tâche pour garantir l'intégrité des données, améliorer la lisibilité et appliquer un format cohérent à travers les entrées de texte.
-
 ## Comment faire :
-
 Dart simplifie la suppression des caractères qui correspondent à un motif prédéfini en utilisant des expressions régulières et la méthode `replaceAll`. Aucune bibliothèque tierce n'est nécessaire pour l'utilisation de base, ce qui rend cette approche très accessible.
 
 Voici un exemple simple qui démontre comment supprimer les chiffres d'une chaîne de caractères :

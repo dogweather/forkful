@@ -11,9 +11,6 @@ title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---
 
-## O Que & Por Que?
-Baixar uma página da web é o processo de pegar o conteúdo de uma página através da Internet e salvá-lo localmente. Programadores fazem isso para análise de dados, testes automáticos ou para arquivar informações.
-
 ## Como Fazer:
 Usaremos a biblioteca C++ `CPR` para baixar o conteúdo de uma página web de forma fácil. Primeiro, instale a biblioteca via gerenciador de pacotes ou build manual:
 

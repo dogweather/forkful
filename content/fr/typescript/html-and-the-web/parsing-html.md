@@ -12,12 +12,7 @@ title: Analyse Syntaxique du HTML
 weight: 43
 ---
 
-## Quoi et pourquoi ?
-
-Parser du HTML signifie fouiller dans le code HTML pour trouver, extraire ou manipuler des informations. Les programmeurs le font pour interagir avec le contenu web—peut-être en grattant des données, ou en automatisant des navigateurs.
-
 ## Comment faire :
-
 Pour commencer, installez une bibliothèque comme `node-html-parser`. Voici la commande de terminal :
 
 ```bash
@@ -46,7 +41,6 @@ console.log(bananas);  // "Banane"
 ```
 
 ## Plongée profonde
-
 Parser du HTML n'est pas nouveau—cela existe depuis les premiers jours du web. Initialement, les développeurs auraient pu utiliser des expressions régulières, mais cela est devenu compliqué rapidement. Entrez le DOM Parser : stable, mais lié au navigateur.
 
 Des bibliothèques comme `node-html-parser` éliminent la douleur. Elles vous permettent d'interroger le HTML comme vous le feriez avec jQuery, mais côté serveur avec Node.js. C'est rapide, tolérant au HTML sale, et sympathique au DOM.
@@ -56,7 +50,6 @@ Il y a aussi `jsdom`, simulant un environnement de navigateur entier. C'est plus
 N'oublions pas Cheerio, non plus. Il mélange la vitesse avec une syntaxe similaire à jQuery et une empreinte plus petite, se positionnant heureusement entre les deux.
 
 ## Voir aussi
-
 Si vous avez soif de plus, plongez dans ceux-ci :
 - [Spécification W3C de l'analyse et de la sérialisation du DOM](https://www.w3.org/TR/DOM-Parsing/)
 - [node-html-parser sur GitHub](https://github.com/taoqf/node-html-parser)

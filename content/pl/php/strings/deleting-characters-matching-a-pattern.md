@@ -11,9 +11,6 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## Co i dlaczego?
-Usuwanie znaków odpowiadających określonemu wzorcowi to po prostu filtrowanie tekstu. Programiści robią to, by oczyścić dane, usunąć niepotrzebne elementy, lub przygotować tekst do dalszej obróbki.
-
 ## Jak to zrobić:
 Do usunięcia znaków używa się często wyrażeń regularnych z funkcją `preg_replace`. Oto przykład:
 

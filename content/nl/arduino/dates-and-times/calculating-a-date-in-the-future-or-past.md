@@ -13,11 +13,7 @@ title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---
 
-## Wat & Waarom?
-Het berekenen van een datum in de toekomst of het verleden betekent het bepalen van een specifieke dag voor of na een gegeven datum. Programmeurs doen dit voor functies zoals het plannen van evenementen, herinneringen of het berekenen van deadlines.
-
 ## Hoe:
-
 Arduino heeft geen ingebouwde datum- en tijdfuncties, maar je kunt de "TimeLib.h" bibliotheek gebruiken om datumberekeningen te verwerken. Zorg ervoor dat je de bibliotheek hebt geïnstalleerd voordat je de onderstaande voorbeelden gebruikt.
 
 ```Arduino
@@ -60,7 +56,6 @@ Voorbeelduitvoer:
 ```
 
 ## Diepgaand
-
 Voor RTC (real-time clock) modules en bibliotheek zoals TimeLib, was tijdbeheer op Arduino rudimentair en meestal handmatig geïmplementeerd. Er zijn verschillende manieren om toekomstige of verleden datums te berekenen, maar het gebruiken van een gespecialiseerde bibliotheek zoals TimeLib vereenvoudigt het proces aanzienlijk.
 
 Alternatieven voor TimeLib zijn de meer uitgebreide "RTClib.h" voor gebruik met hardware RTC's, of de ingebouwde `millis()` functie voor kortere tijdsintervallen (met handmatig datumsbeheer). TimeLib behandelt schrikkeljaren en tijdzones en biedt hulpprogramma's voor eenvoudige datumsmanipulatie.
@@ -68,7 +63,6 @@ Alternatieven voor TimeLib zijn de meer uitgebreide "RTClib.h" voor gebruik met 
 Let bij het berekenen van toekomstige of verleden datums op tijdzones en veranderingen van zomertijd als je werkt met real-time klokken of externe tijdsbronnen. Op Arduino, zonder een RTC of internetverbinding, stel je de tijd meestal handmatig in of via een extern signaal (zoals GPS of radiotijdsignalen).
 
 ## Zie ook
-
 - Documentatie van de Time Library:
   https://www.arduino.cc/reference/en/libraries/time/
 - RTClib, een populaire bibliotheek voor het werken met real-time klokken:

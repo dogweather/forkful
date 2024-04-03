@@ -10,9 +10,6 @@ title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---
 
-## What & Why?
-Debugging er prosessen med å finne og fikse feil i koden. Vi printer debug output for å se hva som faktisk skjer når koden kjører, noe som hjelper oss å forstå og rette feil raskt.
-
 ## How to:
 For å printe debug output i TypeScript, bruk `console.log()`, `console.error()`, eller `console.warn()`. Her er et par eksempler:
 

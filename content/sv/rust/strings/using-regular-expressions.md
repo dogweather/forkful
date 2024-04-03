@@ -13,12 +13,7 @@ title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---
 
-## Vad och varför?
-
-Reguljära uttryck, eller regex, låter utvecklare söka, matcha och manipulera strängar med avancerade mönsterpassningstekniker. I Rust hjälper användning av regex till att effektivt tolka och hantera textdata, vilket gör uppgifter som datavalidering, sökning och texttransformationer mer strömlinjeformade och underhållbara.
-
 ## Hur man gör:
-
 Rusts `regex`-bibliotek är det givna valet för att arbeta med reguljära uttryck. För att använda det måste du först lägga till det i din `Cargo.toml`:
 
 ```toml
@@ -29,7 +24,6 @@ regex = "1"
 Sedan kan du börja implementera regex-funktionaliteter i din Rust-kod. Så här utför du några vanliga operationer:
 
 ### Matcha ett mönster i en sträng
-
 ```rust
 use regex::Regex;
 
@@ -43,7 +37,6 @@ fn main() {
 ```
 
 ### Hitta och komma åt matchningar
-
 ```rust
 use regex::Regex;
 
@@ -62,7 +55,6 @@ fn main() {
 ```
 
 ### Ersätta text
-
 ```rust
 use regex::Regex;
 
@@ -77,7 +69,6 @@ fn main() {
 ```
 
 ### Dela upp text med hjälp av ett regex
-
 ```rust
 use regex::Regex;
 

@@ -13,9 +13,6 @@ title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---
 
-## Hva & Hvorfor?
-Regulære uttrykk i programmering er sekvenser av tegn som definerer et søkemønster, typisk brukt for søk i strenger og manipulering av disse. Haskell-programmerere bruker regulære uttrykk til oppgaver som spenner fra enkel strengmatching til kompleks tekstbehandling, ved å utnytte deres effektivitet og allsidighet når det gjelder behandling av tekstdata.
-
 ## Hvordan:
 I Haskell er ikke regex-funksjonaliteter en del av det standard biblioteket, noe som nødvendiggjør bruk av tredjepartspakker som `regex-base` sammen med en kompatibel bakpart som `regex-posix` (for POSIX regex-støtte), `regex-pcre` (for Perl-kompatible regex), osv. Slik kan du bruke disse pakkene for å arbeide med regulære uttrykk.
 
@@ -30,7 +27,6 @@ cabal install regex-pcre
 ```
 
 ### Bruke `regex-posix`:
-
 ```haskell
 import Text.Regex.Posix ((=~))
 
@@ -51,7 +47,6 @@ main = do
 ```
 
 ### Bruke `regex-pcre`:
-
 ```haskell
 import Text.Regex.PCRE ((=~))
 

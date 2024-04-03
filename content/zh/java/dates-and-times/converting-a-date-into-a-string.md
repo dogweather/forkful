@@ -17,9 +17,6 @@ title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
 weight: 28
 ---
 
-## 什么&为什么？
-在Java中，把日期转换为字符串意味着将日期格式化为可读文本。程序员这么做来显示友好的日期格式，或者在数据处理和日志记录中使用字符串格式。
-
 ## 如何操作：
 ```java
 import java.text.SimpleDateFormat;

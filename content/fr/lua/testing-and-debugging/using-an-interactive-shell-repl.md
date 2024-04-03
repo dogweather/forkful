@@ -10,9 +10,6 @@ title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---
 
-## Quoi & Pourquoi ?
-REPL signifie Read-Eval-Print Loop (Boucle de Lecture-Évaluation-Affichage), un environnement interactif où vous pouvez rapidement tester du code. Les programmeurs l'utilisent pour expérimenter, déboguer et apprendre les particularités d'un langage.
-
 ## Comment faire :
 Pour entrer dans le REPL de Lua, saisissez simplement `lua` dans votre terminal. Voici un exemple de session :
 

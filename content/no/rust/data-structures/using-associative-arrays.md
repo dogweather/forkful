@@ -13,12 +13,7 @@ title: Bruke associative tabeller
 weight: 15
 ---
 
-## Hva & Hvorfor?
-
-Assosiative tabeller, eller det Rust-utviklere kaller "hash maps", er samlinger som lagrer data i nøkkel-verdi par. Programmerere bruker dem til rask dataoppslag, noe som muliggjør effektiv datahåndtering basert på unike nøkler.
-
 ## Hvordan:
-
 I Rust gir `HashMap`-typen fra `std::collections`-modulen funksjonaliteten til assosiative tabeller. Her er hvordan du kan jobbe med dem:
 
 ```Rust
@@ -49,5 +44,4 @@ fn main() {
 ```
 
 ## Dypdykk
-
 `HashMap` i Rust bruker en hash-funksjon for å kartlegge nøkler til verdier, noe som muliggjør rask datahenting. Imidlertid kommer denne effektiviteten med en kostnad: hash maps opprettholder ikke rekkefølgen av elementene sine. Dette står i kontrast til andre implementeringer av assosiative tabeller, som de i Python (`dict`) eller Ruby, som i de nyere versjonene opprettholder rekkefølgen av innskudd som en funksjon. For brukstilfeller der rekkefølgen av nøkkel-verdi par er betydelig, kan Rust-utviklere vurdere å bruke `BTreeMap` fra `std::collections`-modulen, som opprettholder rekkefølgen, men kan tilby langsommere innsetting og henting sammenlignet med `HashMap`. Til syvende og sist avhenger valget mellom `HashMap` og `BTreeMap` av spesifikke krav rundt ordning og ytelse.

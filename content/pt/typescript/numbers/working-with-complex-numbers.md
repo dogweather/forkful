@@ -12,9 +12,6 @@ title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---
 
-## O Quê & Por Quê?
-Números complexos, consistindo de uma parte real e uma parte imaginária (normalmente escritos como a + bi), possibilitam cálculos que são impraticáveis ou impossíveis apenas com os reais. Programadores os utilizam em campos como processamento de sinal, computação quântica e matemática aplicada, onde representações de números em duas dimensões são essenciais.
-
 ## Como fazer:
 Manusear números complexos em TypeScript requer uma classe dedicada. Vamos criar uma e trabalhar com adição e multiplicação.
 

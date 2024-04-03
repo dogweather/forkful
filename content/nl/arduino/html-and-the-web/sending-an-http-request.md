@@ -12,12 +12,7 @@ title: Een HTTP-verzoek verzenden
 weight: 44
 ---
 
-## Wat & Waarom?
-
-Een HTTP-verzoek verzenden is de manier waarop je Arduino met het web praat, zoals een server vragen om wat gegevens terug te sturen. Programmeurs doen dit om hun Arduino te laten communiceren met API's, webinhoud op te halen of te communiceren met andere internetgebaseerde diensten.
-
 ## Hoe:
-
 Werken met de Arduino vereist de `WiFiNINA`-bibliotheek voor netwerkfuncties. Hier is hoe je een eenvoudig GET-verzoek verzendt:
 
 ```Arduino
@@ -75,7 +70,6 @@ Server: Apache/2.4.1 (Unix)
 ```
 
 ## Diepe Duik
-
 Het concept van het verzenden van een HTTP-verzoek vanaf een microcontroller was niet altijd een ding. In het verleden waren microcontrollers meer over sensoren en interactie met de fysieke wereld. Maar met de opkomst van het IoT (Internet of Things) begonnen deze apparaten webconnectiviteit nodig te hebben. De Arduino kan nu bibliotheken zoals `WiFiNINA` gebruiken om deze verbindingen robuust te beheren.
 
 Alternatieven voor `WiFiNINA` bestaan afhankelijk van je hardware. Bijvoorbeeld, de `Ethernet`-bibliotheek maakt gebruik van bedrade verbindingen, terwijl `WiFi101` werkt met oudere WiFi-shields.
@@ -83,7 +77,6 @@ Alternatieven voor `WiFiNINA` bestaan afhankelijk van je hardware. Bijvoorbeeld,
 Aan de implementatiekant lijkt het maken van een HTTP-verzoek eenvoudig, maar de handshake, headers en HTTP-methoden (GET, POST, etc.) zijn onderdeel van een strikt protocol dat apparaten in staat stelt om via het web te communiceren. De Arduino abstraheert veel van deze complexiteit, maar het begrijpen van de basis helpt bij het oplossen van problemen wanneer dingen niet soepel verlopen.
 
 ## Zie Ook
-
 - Arduino `WiFiNINA` bibliotheekdocumentatie: https://www.arduino.cc/en/Reference/WiFiNINA
 - HTTP-protocol introductie: https://developer.mozilla.org/en-US/docs/Web/HTTP
 - Arduino projecthub voor webverbonden projecten: https://create.arduino.cc/projecthub

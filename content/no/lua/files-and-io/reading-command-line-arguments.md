@@ -10,9 +10,6 @@ title: Lese kommandolinjeargumenter
 weight: 23
 ---
 
-## Hva & Hvorfor?
-Lesing av kommandolinjeargumenter lar oss ta imot data fra brukere utenfor et Lua-script. Slik kan programmer bli mer fleksible og brukertilpassede.
-
 ## Slik gjør du:
 ```lua
 -- Lagret som example.lua

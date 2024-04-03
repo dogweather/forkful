@@ -15,12 +15,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Cái gì & Tại sao?
-
-Làm việc với XML trong C bao gồm việc phân tích cú pháp, truy vấn và thao tác với các tài liệu XML sử dụng các thư viện khác nhau. Các lập trình viên tương tác với XML do sự sử dụng rộng rãi của nó trong các dịch vụ web, các tệp cấu hình, và trao đổi dữ liệu giữa các hệ thống khác nhau, yêu cầu kỹ năng xử lý XML một cách hiệu quả cho phát triển ứng dụng mạnh mẽ.
-
 ## Làm thế nào:
-
 C không có hỗ trợ sẵn cho XML, vì vậy bạn sẽ cần sử dụng các thư viện bên ngoài. Một lựa chọn phổ biến là `libxml2`, một thư viện ổn định và giàu tính năng. Dưới đây là cách đọc và phân tích cú pháp một tệp XML sử dụng `libxml2`.
 
 Đầu tiên, đảm bảo bạn đã cài đặt `libxml2` trên hệ thống của mình. Bạn có thể cần phải cài đặt nó thông qua trình quản lý gói của mình (ví dụ: `apt-get install libxml2-dev` trên hệ thống Debian).
@@ -83,7 +78,6 @@ gcc -o xml_example xml_example.c $(xml2-config --cflags --libs)
 Giả sử bạn có một tệp XML có tên là `your_file.xml`, chạy chương trình đã biên dịch nên in ra tên của các phần tử cấp đầu tiên của nó.
 
 ## Hiểu sâu hơn
-
 Sự tương tác giữa C và XML là câu chuyện về việc đưa hai thế giới cực kỳ khác biệt lại với nhau: mô hình cấu trúc, byte-level, quy trình của C và mô hình phân cấp, dài dòng, và tập trung vào tài liệu của XML. Khi tích hợp khả năng xử lý XML vào các chương trình C, các nhà phát triển tận dụng những điểm mạnh của C - như tốc độ và truy cập bộ nhớ cấp thấp - để phân tích cú pháp và thao tác hiệu quả các tài liệu XML.
 
 `libxml2`, phát triển như một phần của dự án GNOME, đã trở nên chuẩn mực de facto cho việc xử lý XML trong C do sự hỗ trợ toàn diện cho các tiêu chuẩn XML và hiệu suất của nó. Nó thể hiện nhiều năm nỗ lực phát triển và đóng góp từ cộng đồng, làm cho nó vững chắc và hiệu quả cho hầu hết các tác vụ XML.

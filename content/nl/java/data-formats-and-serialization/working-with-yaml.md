@@ -11,12 +11,7 @@ title: Werken met YAML
 weight: 41
 ---
 
-## Wat & Waarom?
-
-YAML, "YAML Ain't Markup Language," is een gegevensserialisatietaal. Programmeurs gebruiken het vanwege de leesbaarheid en eenvoud, met name voor configuratiebestanden, initiële gegevensdumps of als een communicatieformaat tussen verschillende systemen.
-
 ## Hoe te:
-
 Om YAML in Java te gebruiken, laten we `snakeyaml` gebruiken, een populaire bibliotheek.
 
 Voeg eerst de afhankelijkheid toe aan je `pom.xml`:
@@ -104,11 +99,9 @@ version: '2.0'
 ```
 
 ## Dieper duiken
-
 YAML kwam begin jaren 2000 op de markt als een alternatief voor XML voor eenvoudigere gegevensstructurering. Terwijl de opkomst van JSON het voor API-communicatie overschaduwde, blijft YAML’s gebruiksvriendelijkheid populair voor configuraties. Dezelfde gegevens, maar JSON en TOML zijn alternatieven voor YAML, afhankelijk van gebruikssituaties. Een YAML waarschuwing: tabbladen zijn niet toegestaan voor inspringing; alleen spaties.
 
 ## Zie ook
-
 Verken verder met deze bronnen:
 
 - Officiële YAML Specificatie: https://yaml.org/spec/1.2.2/

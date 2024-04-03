@@ -11,9 +11,6 @@ title: Pesquisando e substituindo texto
 weight: 10
 ---
 
-## O Que é & Porquê?
-Procurar e substituir texto é reescrever partes específicas de um documento sem alterar o resto. Programadores fazem isso para corrigir erros, atualizar informações ou alterar a configuração de forma eficiente em múltiplos arquivos.
-
 ## Como Fazer:
 Vamos usar o `sed`, um editor de fluxo para processamento de texto:
 

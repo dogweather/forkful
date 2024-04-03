@@ -11,9 +11,6 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-Writing tests in Bash involves scripting test cases to validate the functionality of your Bash scripts. Programmers conduct tests to ensure their scripts work as expected under various conditions, catching errors and bugs before deployment.
-
 ## How to:
 Bash doesn’t have a built-in testing framework, but you can write simple test functions. For more sophisticated testing, third-party tools like `bats-core` are popular.
 

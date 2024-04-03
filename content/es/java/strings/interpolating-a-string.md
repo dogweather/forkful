@@ -11,12 +11,7 @@ title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---
 
-## Qué y Por Qué?
-
-Interpolar una cadena significa insertar valores dentro de una string de forma dinámica para construir un mensaje. Los programadores lo hacen para hacer que el código sea más legible y para facilitar la localización y el formateo de mensajes que cambian según la ejecución del programa.
-
 ## Cómo hacerlo:
-
 En Java, la interpolación de strings se puede lograr usando `String.format` o `System.out.printf`. Veamos cómo funcionan:
 
 ```java
@@ -42,7 +37,6 @@ Hola, Ana. En serio, ¿25 años?
 ```
 
 ## Profundización:
-
 Históricamente, Java no incluía una función de interpolación directa en strings como otros lenguajes (por ejemplo, Python o JavaScript). Sin embargo, desde su versión 1.5, Java ofrece `String.format` y `printf` para conseguir un efecto similar. 
 
 Alternativas a esto incluyen la concatenación de strings usando el operador `+` o la clase `StringBuilder`, pero estas opciones pueden ser menos eficientes y más difíciles de leer, especialmente con cadenas complejas.
@@ -50,6 +44,5 @@ Alternativas a esto incluyen la concatenación de strings usando el operador `+`
 En cuanto a detalles de implementación, `String.format` y `System.out.printf` usan una sintaxis similar a la de C. `%s` es un marcador de posición para strings, y `%d` es para números enteros. Hay muchos otros especificadores de formato que permiten controlar la precisión, el ancho, la conversión, entre otros detalles del valor interpolado.
 
 ## Ver También:
-
 - [Documentación oficial de String.format](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...))
 - [Especificadores de formato en la documentación de Oracle](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Formatter.html#syntax)

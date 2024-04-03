@@ -10,9 +10,6 @@ title: Converting a date into a string
 weight: 28
 ---
 
-## What & Why?
-Converting a date into a string means changing the date's format from its raw or timestamp form into a human-readable sequence of characters. Programmers do this to display dates in a user-friendly manner or to prepare dates for storage and comparison in databases and logs.
-
 ## How to:
 Fish shell keeps things straightforward. Let's format the current date:
 

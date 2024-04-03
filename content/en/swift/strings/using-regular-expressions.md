@@ -10,9 +10,6 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-Regular expressions, or regex, are sequences of characters that form a search pattern, often used for string matching or manipulation tasks. Programmers utilize them for everything from data validation and parsing to transformations, making them an indispensable tool in text processing and manipulation tasks across various programming languages, including Swift.
-
 ## How to:
 Swift native support for regex utilizes the `NSRegularExpression` class, alongside the String class's range and replacement methods. Below is an example of using regex to find and highlight email addresses within a text block:
 

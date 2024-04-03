@@ -11,9 +11,6 @@ title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---
 
-## Vad & Varför?
-Starta ett nytt projekt innebär att skapa en grund för all kod som kommer. Programmerare gör detta för att organisera och definiera ramar för deras applikationer eller skript.
-
 ## Så här gör du:
 För att sparka igång ett nytt PowerShell-projekt, kan du börja med att skapa en ny katalog och initialisera en git-repository för versionshantering. Använd `New-Item` för att skapa nya filer, som ett grundläggande skript eller en manifestfil för moduler.
 
@@ -35,7 +32,7 @@ Get-ChildItem -Path 'C:\MyNewProject'
 ```
 
 ## Fördjupning:
-Projektstrukturering i PowerShell blev mer relevant med introduktionen av PowerShell-moduler. Moduler består av skript, binära filer och manifest som gör det enklare att dela och återanvända kod. Historiskt har PowerShell bytt fokus från en ren kommando-orienterad miljö till ett mer skript- och utvecklingsorienterat språk. Alternativ till PowerShell för projektstart inkluderar bash-skript för Linux eller batch-filer för Windows. Vikten av versionhantering med verktyg som Git är central i dagens utvecklingssammanhang. 
+Projektstrukturering i PowerShell blev mer relevant med introduktionen av PowerShell-moduler. Moduler består av skript, binära filer och manifest som gör det enklare att dela och återanvända kod. Historiskt har PowerShell bytt fokus från en ren kommando-orienterad miljö till ett mer skript- och utvecklingsorienterat språk. Alternativ till PowerShell för projektstart inkluderar bash-skript för Linux eller batch-filer för Windows. Vikten av versionhantering med verktyg som Git är central i dagens utvecklingssammanhang.
 
 ## Se även:
 - [Pro Git book](https://git-scm.com/book/en/v2)

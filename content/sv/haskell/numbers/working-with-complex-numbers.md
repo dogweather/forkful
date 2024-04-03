@@ -11,12 +11,7 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad & Varför?
-
-Komplexa tal, som består av en reell och en imaginär del, är grundläggande inom olika beräkningsfält som teknik, fysik och signalbehandling. Programmerare använder dem för att lösa ekvationer som reella tal inte kan, som att hitta rötter till negativa tal.
-
 ## Hur man gör:
-
 Haskell hanterar komplexa tal med modulen `Data.Complex`. Här är en snabb översikt:
 
 ```haskell
@@ -56,7 +51,6 @@ Exempelutdata efter att ha laddat ovanstående kod i GHCi kan vara:
 ```
 
 ## Djupdykning
-
 Komplexa tal går tillbaka till 1500-talet men accepterades i större utsträckning mycket senare. Haskell, liksom många andra språk, ger inföddt stöd för komplex aritmetik, vilket gör det enkelt att arbeta med dessa tal utan att implementera den underliggande matematiken.
 
 Alternativ inkluderar att bygga din egen komplexa taltyp eller använda bibliotek för specifika domäner såsom kvaternioner för 3D-grafik. Men för de flesta användningsfall är Haskell:s `Data.Complex` mer än tillräckligt.
@@ -64,7 +58,6 @@ Alternativ inkluderar att bygga din egen komplexa taltyp eller använda bibliote
 I bakgrunden är `Data.Complex` bara en datatyp som parar ihop två `Float` eller `Double` värden, som representerar den reella och imaginära delen, respektive. Det är ett enkelt och effektivt sätt att arbeta med komplexa tal på Haskell-plattformen.
 
 ## Se också
-
 Kolla in dessa resurser för mer om komplexa tal i Haskell:
 
 - Den officiella Haskell `Data.Complex` dokumentationen: [Hackage Data.Complex](https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-Complex.html)

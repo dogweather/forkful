@@ -11,9 +11,6 @@ title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---
 
-## Vad & Varför?
-Att hitta längden på en sträng innebär att räkna antalet tecken den innehåller. Programmerare gör det för att validera inmatning, hantera textdata eller optimera prestanda.
-
 ## Hur gör man:
 Du kan använda `${#sträng}` för att få en strängs längd.
 

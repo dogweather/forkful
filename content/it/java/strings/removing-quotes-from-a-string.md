@@ -11,9 +11,6 @@ title: Rimuovere le virgolette da una stringa
 weight: 9
 ---
 
-## Cosa e Perché?
-Rimuovere le virgolette da una stringa significa eliminare i segni di citazione—singoli (' '), doppi (" ") o entrambi—dai dati di testo. I programmatori lo fanno per sanificare gli input, preparare i dati per l'archiviazione o semplificare i compiti di parsing dove le virgolette sono inutili e potenzialmente problematiche.
-
 ## Come fare:
 Estraiamo quelle fastidiose virgolette dal nostro testo. Useremo il metodo `replace()` per le correzioni rapide e regex per i casi più difficili da risolvere.
 

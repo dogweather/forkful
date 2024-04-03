@@ -13,12 +13,7 @@ title: "R\xE9daction de tests"
 weight: 36
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire des tests en Go consiste à créer de petits morceaux de code gérables qui valident la fonctionnalité et le comportement de votre application. Les programmeurs écrivent des tests pour s'assurer que leur code fonctionne comme prévu dans diverses conditions, pour faciliter le refactoring et pour aider à prévenir les régressions.
-
 ## Comment faire :
-
 En Go, les tests sont généralement écrits dans le même paquet que le code qu'ils testent. Les fichiers contenant des tests sont nommés avec le suffixe `_test.go`. Les tests sont des fonctions qui prennent un pointeur vers l'objet testing.T (du paquet `testing`) comme argument, et ils signalent un échec en appelant des méthodes telles que `t.Fail()`, `t.Errorf()`, etc.
 
 Exemple d'un test simple pour une fonction `Add` définie dans `math.go` :
@@ -80,7 +75,6 @@ func TestAddTableDriven(t *testing.T) {
 ```
 
 ## Plongée profonde
-
 Le cadre de tests de Go, introduit dans Go 1 en même temps que le langage lui-même, a été conçu pour s'intégrer parfaitement avec la chaîne d'outils Go, reflétant l'accent mis par Go sur la simplicité et l'efficacité dans le développement logiciel. Contrairement à certains cadres de tests dans d'autres langages qui s'appuient sur des bibliothèques externes ou des configurations complexes, le paquet `testing` intégré de Go fournit une manière simple d'écrire et d'exécuter des tests.
 
 Un aspect intéressant de l'approche de Go en matière de tests est le principe de convention sur configuration qu'il adopte, comme le modèle de nommage de fichiers (`_test.go`) et l'utilisation des fonctionnalités de la bibliothèque standard plutôt que des dépendances externes. Cette approche minimaliste encourage les développeurs à écrire des tests, car la barrière à l'entrée est faible.

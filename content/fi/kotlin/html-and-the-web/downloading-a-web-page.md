@@ -10,9 +10,6 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## What & Why?
-Verkkosivun lataaminen tarkoittaa sivun sisällön hakemista internetistä omalle laitteelle. Koodarit lataavat sivuja data-analyysiin, sisällön varmuuskopiointiin, tai sovellusten rakentamiseen joka hyödyntää sivujen tietoja.
-
 ## How to:
 Kotlinissa verkkosivun voi ladata käyttäen `URL`-luokkaa ja `readText`-metodia. Tässä helppo esimerkki:
 

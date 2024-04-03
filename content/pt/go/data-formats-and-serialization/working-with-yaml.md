@@ -14,12 +14,7 @@ title: Trabalhando com YAML
 weight: 41
 ---
 
-## O Que & Por Que?
-
-Trabalhar com YAML em Go envolve analisar arquivos YAML (YAML Ain't Markup Language), um padrão de serialização de dados amigável para humanos, em estruturas de dados Go e vice-versa. Programadores fazem isso para aproveitar a simplicidade e legibilidade do YAML para arquivos de configuração, configurações de aplicativos ou troca de dados entre serviços e componentes escritos em diferentes linguagens.
-
 ## Como:
-
 Para trabalhar com YAML em Go, você precisará primeiro importar uma biblioteca que suporte análise e serialização de YAML, já que a biblioteca padrão do Go não inclui suporte direto para YAML. A biblioteca mais popular para esse propósito é "gopkg.in/yaml.v3". Veja como começar:
 
 1. **Instalando o pacote YAML:**
@@ -112,7 +107,6 @@ database:
 ```
 
 ## Aprofundamento:
-
 O uso de YAML no desenvolvimento de software cresceu devido ao seu formato legível por humanos, tornando-o uma escolha ideal para arquivos de configuração, documentação ou formatos de troca de dados. Comparado ao JSON, seu contraparte, o YAML oferece comentários, tipos escalares e recursos de relacionamento, fornecendo um framework de serialização de dados mais rico. No entanto, sua flexibilidade e recursos vêm ao custo de complexidade na análise, levando a potenciais riscos de segurança quando não manuseado com cuidado (por exemplo, execução de código arbitrário).
 
 A biblioteca "gopkg.in/yaml.v3" para Go é uma solução robusta para o processamento de YAML, encontrando um equilíbrio entre facilidade de uso e suporte abrangente de recursos. Até o presente momento, embora existam alternativas como "go-yaml/yaml" (a biblioteca por trás do "gopkg.in/yaml.v3"), a versão escolhida geralmente depende de requisitos específicos do projeto ou preferência pessoal. Ao lidar com conjuntos de dados massivos ou aplicações críticas para o desempenho, programadores podem considerar formatos mais simples como JSON para seu tempo de análise reduzido e sobrecarga de memória. No entanto, para arquivos de configuração ou configurações onde a legibilidade e facilidade de uso por humanos são primordiais, YAML continua sendo um forte concorrente no ecossistema Go.

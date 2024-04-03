@@ -12,9 +12,6 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-Reguliere expressies (regex) zijn patronen die worden gebruikt om combinaties van karakters in strings te vinden. Programmeurs gebruiken ze voor het zoeken, bewerken of valideren van tekst omdat ze nauwkeurig en efficiënt zijn.
-
 ## Hoe te:
 Laten we enkele basisprincipes van Ruby regex doornemen.
 

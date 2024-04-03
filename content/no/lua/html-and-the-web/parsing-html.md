@@ -12,9 +12,6 @@ title: Analysering av HTML
 weight: 43
 ---
 
-## Hva & hvorfor?
-Parsing av HTML innebærer å trekke ut data og informasjon fra HTML-dokumenter, noe som er avgjørende for webskraping, dataanalyse og automatiseringsoppgaver. Programutviklere utfører dette for å samle, analysere eller manipulere webinnhold programmatisk, noe som muliggjør automatisering av det som ellers ville vært manuell uttrekking av data fra nettsider.
-
 ## Hvordan:
 Lua har ikke et innebygd bibliotek for parsing av HTML, men du kan utnytte tredjepartsbiblioteker som `LuaHTML` eller bruke bindinger for `libxml2` gjennom `LuaXML`. En populær tilnærming er å bruke biblioteket `lua-gumbo` for parsing av HTML, som gir en enkel, HTML5-kompatibel parsingsevne.
 

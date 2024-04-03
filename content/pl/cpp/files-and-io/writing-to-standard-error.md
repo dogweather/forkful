@@ -14,12 +14,7 @@ title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---
 
-## Co i dlaczego?
-
-Pisanie do standardowego błędu (`stderr`) w C++ polega na wyprowadzaniu komunikatów o błędach lub diagnostyki, które są oddzielone od głównego wyniku działania programu. Programiści robią to, aby skierować błędy do innego strumienia, co umożliwia łatwiejsze debugowanie i obsługę błędów poprzez rozróżnienie normalnego wyniku od komunikatów o błędach.
-
 ## Jak to zrobić:
-
 W C++, pisanie do standardowego błędu można osiągnąć za pomocą strumienia `cerr`, który jest częścią standardowej biblioteki. Oto podstawowy przykład:
 
 ```cpp

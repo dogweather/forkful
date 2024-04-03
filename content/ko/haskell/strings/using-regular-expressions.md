@@ -21,9 +21,6 @@ title: "\uC815\uADDC \uD45C\uD604\uC2DD \uC0AC\uC6A9\uD558\uAE30"
 weight: 11
 ---
 
-## 무엇이며 왜 사용하는가?
-프로그래밍에서 정규 표현식은 검색 패턴을 정의하는 문자의 연속으로, 일반적으로 문자열 검색 및 조작에 사용됩니다. Haskell 프로그래머들은 단순한 문자열 일치부터 복잡한 텍스트 처리에 이르기까지 다양한 작업에 정규 표현식을 활용하여, 텍스트 데이터를 다루는 데 있어 그 효율성과 다양성을 최대한 활용합니다.
-
 ## 사용 방법:
 Haskell에서는 정규 표현식 기능이 표준 라이브러리의 일부가 아니기 때문에, `regex-base`와 같은 제3자 패키지와 POSIX 정규 표현식 지원을 위한 `regex-posix`, Perl 호환 정규 표현식을 위한 `regex-pcre` 등과 같은 호환 백엔드의 사용이 필요합니다. 다음은 이러한 패키지를 사용하여 정규 표현식으로 작업하는 방법입니다.
 
@@ -38,7 +35,6 @@ cabal install regex-pcre
 ```
 
 ### `regex-posix` 사용하기:
-
 ```haskell
 import Text.Regex.Posix ((=~))
 
@@ -59,7 +55,6 @@ main = do
 ```
 
 ### `regex-pcre` 사용하기:
-
 ```haskell
 import Text.Regex.PCRE ((=~))
 

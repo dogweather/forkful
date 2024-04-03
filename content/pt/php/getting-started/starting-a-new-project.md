@@ -10,9 +10,6 @@ title: Iniciando um novo projeto
 weight: 1
 ---
 
-## O Que & Por Quê?
-Iniciar um novo projeto de programação é como colocar uma semente na terra esperando que cresça e se transforme em uma árvore robusta. Programadores embarcam nessa jornada para transformar ideias em realidade, resolver problemas, aprender e também, por que não, para se divertirem um pouco.
-
 ## Como Fazer:
 Começar um projeto PHP é simples. Você precisa de um ambiente de desenvolvimento básico. Instale um servidor local como XAMP, WAMP ou MAMP e um editor de texto, como VSCode ou PHPStorm. Depois, crie um arquivo `index.php`:
 

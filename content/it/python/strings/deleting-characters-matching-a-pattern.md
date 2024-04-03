@@ -10,9 +10,6 @@ title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---
 
-## What & Why? (Che cosa e perché?)
-Nella programmazione, eliminare caratteri che corrispondono a un pattern significa rimuovere specifiche sequenze di caratteri da una stringa. Lo facciamo per pulire i dati, validare l'input, o per preparare le stringhe per ulteriori elaborazioni.
-
 ## How to (Come fare)
 ```Python
 import re

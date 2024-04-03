@@ -15,12 +15,7 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## Quoi & Pourquoi ?
-
-Créer un fichier temporaire en Visual Basic pour Applications (VBA) consiste à générer programmatiquement un fichier pour un usage à court terme, typiquement pour le traitement de données ou comme tampon dans des tâches d'automatisation. Les programmeurs font cela pour gérer des données qui n'ont pas besoin d'être stockées à long terme, réduisant ainsi l'encombrement et assurant une efficacité dans l'utilisation de la mémoire.
-
 ## Comment faire :
-
 En VBA, la création d'un fichier temporaire peut être réalisée en utilisant le `FileSystemObject` disponible dans la bibliothèque Microsoft Scripting Runtime. Cet objet fournit des méthodes pour créer, lire, écrire et supprimer des fichiers et des dossiers. Voici un guide étape par étape pour créer un fichier temporaire :
 
 1. **Activer Microsoft Scripting Runtime** : Tout d'abord, assurez-vous que la référence Microsoft Scripting Runtime est activée dans votre environnement VBA. Allez dans Outils > Références dans l'éditeur VBA, et cochez "Microsoft Scripting Runtime".
@@ -60,7 +55,6 @@ Fichier temporaire créé à : C:\Users\[VotreNomUtilisateur]\AppData\Local\Temp
 ```
 
 ## Exploration détaillée
-
 La méthode présentée utilise le `FileSystemObject` (FSO), partie de Microsoft Scripting Runtime. FSO est un outil puissant pour la manipulation du système de fichiers, introduit avec la Visual Basic Scripting Edition. Malgré son âge, il reste largement utilisé en VBA pour sa simplicité et l'étendue de ses fonctionnalités.
 
 La création de fichiers temporaires joue un rôle crucial dans de nombreuses tâches de programmation et de scriptage, fournissant un bac à sable pour les tests ou un espace de travail pour les processus qui ne nécessitent pas de stockage permanent. Cependant, les développeurs doivent traiter ces fichiers avec soin, en s'assurant qu'ils sont supprimés ou vidés lorsque cela n'est plus nécessaire, pour éviter toute fuite de données accidentelle ou une consommation inutile d'espace disque.

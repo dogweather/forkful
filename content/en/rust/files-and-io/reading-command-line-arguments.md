@@ -9,12 +9,7 @@ title: Reading command line arguments
 weight: 23
 ---
 
-## What & Why?
-
-Reading command line arguments in Rust lets programs take user input on launch. It's key for custom behavior without a GUI.
-
 ## How to:
-
 Here's the simplest way to grab arguments:
 
 ```Rust
@@ -52,7 +47,6 @@ stuff
 ```
 
 ## Deep Dive
-
 Historically, command line arguments are a throwback to the days when GUIs weren't widespread. Now, they're great for scripts, servers, or tools.
 
 Rust's `std::env::args` uses an iterator, which is memory efficient and lazy. It handles Unicode too. There's also `args_os` for raw OS strings.
@@ -60,7 +54,6 @@ Rust's `std::env::args` uses an iterator, which is memory efficient and lazy. It
 For complex parsing, crates like `clap` or `structopt` come in handy. They parse flags, options, and subcommands.
 
 ## See Also
-
 - [The Rust `std::env` module](https://doc.rust-lang.org/std/env/)
 - [`clap` crate documentation](https://docs.rs/clap/)
 - [The Rust Book on Command Line Arguments](https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html)

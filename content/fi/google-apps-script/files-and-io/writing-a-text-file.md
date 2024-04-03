@@ -14,12 +14,7 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä & Miksi?
-
-Tekstitiedoston kirjoittaminen Google Apps Scriptillä mahdollistaa kehittäjille datan tallentamisen pysyvästi, tehden siitä saatavilla tulevaa käyttöä tai analysointia varten. Tämä toiminto on yleinen käytäntö loggauksessa, asetusten tallentamisessa, tai tiedon viemisessä yksinkertaiseen, luettavaan muotoon.
-
 ## Kuinka:
-
 Tekstitiedoston luominen ja kirjoittaminen Google Apps Scriptillä voidaan saavuttaa Google DriveApp -palvelun kautta. Alla on askel askeleelta -opas koodiesimerkkeineen, jotta pääset alkuun:
 
 **Vaihe 1: Luo uusi tekstitiedosto**
@@ -49,7 +44,6 @@ Tämä koodi hakee olemassa olevan tiedoston käyttäen sen yksilöllistä ID:t�
 Edellä mainittujen koodiesimerkkien suorittaminen ei näytä eksplisiittistä tulostetta, mutta jos siirryt Google Driveen, jossa tiedosto sijaitsee, näet "Esimerkki.txt" ensimmäisen koodinpätkän osalta. Toista pätkää varten, jos avaat määritellyn tiedoston ID:n perusteella, sinun pitäisi nähdä alkuperäinen sisältö seurattuna uudella rivillä "Uutta sisältöä lisätty."
 
 ## Syväsukellus
-
 Tekstitiedoston kirjoittaminen Google Apps Scriptillä hyödyntää DriveApp-palvelua, joka käytännössä valjastaa Google Driven tiedostojen tallennukseen ja hallintaan. Tämä lähestymistapa juontaa juurensa Google Apps Scriptin alkuhetkistä, joka on suunniteltu helpottamaan automatisointitehtäviä Googlen tuottavuustyökalujen, mukaan lukien Drive, yli.
 
 Vaikka tiedostojen suora manipulointi Google Apps Scriptillä on suoraviivaista ja tiiviisti integroitu Google Workspacen kanssa, kehittäjät muista taustoista (esim. Python, Node.js) saattavat kokea sen erilaisena verrattuna työskentelyyn paikallisen tiedostojärjestelmän tai muiden pilvitallennuspalveluiden, kuten AWS S3:n, kanssa. Nämä alustat tarjoavat usein monimutkaisemman joukon tiedostonkäsittelyominaisuuksia, mutta vaativat lisäasetuksia autentikointia ja oikeuksia varten.

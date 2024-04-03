@@ -13,9 +13,6 @@ title: Een datum converteren naar een string
 weight: 28
 ---
 
-## Wat & Waarom?
-Het omzetten van een datum naar een tekstreeks in C++ verandert een datumobject in een leesbaar tekstformaat. Het is essentieel voor het weergeven van data aan gebruikers en voor het loggen van gebeurtenissen op een mensvriendelijke manier.
-
 ## Hoe:
 In modern C++ zijn de bibliotheken `<chrono>` en `<iomanip>` je vrienden voor datum-tijd operaties. Hier is een snelle methode met `std::put_time`:
 

@@ -10,9 +10,6 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## Was & Warum?
-Das Extrahieren von Teilzeichenketten bedeutet, bestimmte Teile einer Zeichenkette (String) herauszuziehen. Programmierer tun das, um mit spezifischen Datenfragmenten zu arbeiten, zum Beispiel beim Analysieren von Texten oder beim Manipulieren von Nutzereingaben.
-
 ## So geht’s:
 ```Javascript
 let text = "Hallo, Welt! Willkommen zur Programmierung.";

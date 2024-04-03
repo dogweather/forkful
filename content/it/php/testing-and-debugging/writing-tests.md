@@ -12,10 +12,9 @@ title: Scrivere test
 weight: 36
 ---
 
-## Cosa e Perché?
-Scrivere test nella programmazione implica la creazione e l'esecuzione di script che verificano il comportamento del codice come previsto in varie condizioni. I programmatori lo fanno per garantire la qualità, prevenire regressioni e facilitare il rifattorizzamento sicuro, che è cruciale per mantenere una base di codice sana, scalabile e priva di bug.
-
 ## Come fare:
+
+
 ### PHP Nativo - PHPUnit
 Uno strumento ampiamente utilizzato per i test in PHP è PHPUnit. Installalo tramite Composer:
 ```bash

@@ -11,9 +11,6 @@ title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
 
-## Mitä & Miksi?
-Kun tulostetaan debuggausinformaatiota, ohjelmisto kehittäjät tulostavat väliaikaisia muuttujien arvoja tai viestejä. Tämä auttaa ymmärtämään ohjelman toimintaa ja selvittämään ongelmia.
-
 ## Miten:
 Tässä pari käskyä `echo` avulla Fish-kielessä:
 

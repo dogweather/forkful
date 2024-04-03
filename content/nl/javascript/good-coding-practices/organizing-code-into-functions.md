@@ -13,11 +13,7 @@ title: Code organiseren in functies
 weight: 18
 ---
 
-## Wat & Waarom?
-Code organiseren in functies verdeelt taken in herbruikbare stukken, waardoor de code schoner en beter onderhoudbaar wordt. Dit doen we om redundantie te verminderen, het testen te vereenvoudigen en de leesbaarheid te verbeteren.
-
 ## Hoe te:
-
 ```javascript
 // Definieer een functie om de oppervlakte van een rechthoek te berekenen
 function calculateArea(width, height) {

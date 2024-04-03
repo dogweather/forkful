@@ -10,9 +10,6 @@ title: Usando una shell interactiva (REPL)
 weight: 34
 ---
 
-## ¿Qué y por qué?
-Usar una shell interactiva, o un Bucle de Leer-Evaluar-Imprimir (REPL, por sus siglas en inglés), te permite programar de manera interactiva. Los programadores lo utilizan para probar fragmentos de Swift rápidamente, depurar o aprender el lenguaje.
-
 ## Cómo hacerlo:
 Invoca el REPL abriendo un terminal y ejecutando `swift`. Escribe código directamente y presiona Enter para ejecutarlo. Aquí tienes un adelanto:
 

@@ -12,12 +12,7 @@ title: Arbeiten mit TOML
 weight: 39
 ---
 
-## Was & Warum?
-
-TOML, das für Toms Obvious, Minimal Language steht, ist ein Konfigurationsdateiformat, das aufgrund seiner klaren Semantik leicht zu lesen ist. Programmierer verwenden es oft für Konfigurationsdateien in Anwendungen, weil es unkompliziert und menschenlesbar ist, was das Verwalten von Anwendungseinstellungen und -konfigurationen in verschiedenen Umgebungen nahtlos ermöglicht.
-
 ## Wie:
-
 Da Google Apps Script im Wesentlichen JavaScript mit Zugriff auf Googles App-Suite ist, erfordert die direkte Arbeit mit TOML innerhalb von Google Apps Script ein wenig Einfallsreichtum. Google Apps Script unterstützt das Parsen von TOML nicht nativ, aber Sie können JavaScript-Bibliotheken nutzen oder einen einfachen Parser für grundlegende Bedürfnisse schreiben.
 
 Lassen Sie uns als Beispiel einen einfachen TOML-Konfigurationsstring parsen:
@@ -72,7 +67,6 @@ Die Beispiel-Ausgabe von `console.log` würde einem JSON-Objekt ähneln, wodurch
 ```
 
 ## Vertiefung
-
 TOML wurde von Tom Preston-Werner, einem der Gründer von GitHub, geschaffen, um menschenfreundlicher als JSON für Konfigurationsdateien zu sein, und behält gleichzeitig die Fähigkeit, eindeutig geparst zu werden. Es strebt danach, so einfach wie möglich zu sein, ein Ziel, das sich gut mit dem Ethos vieler Entwicklungsprojekte deckt, die nach Einfachheit und Lesbarkeit in ihren Codebasen streben.
 
 Im Kontext von Google Apps Script kann die Verwendung von TOML etwas Overhead verursachen, angesichts der fehlenden direkten Unterstützung und der Notwendigkeit, es manuell oder durch Drittanbieter-Bibliotheken zu parsen. Für kleinere Projekte oder solche, die nicht tief in Googles Ökosystem integriert sind, könnten Alternativen wie JSON oder sogar einfache Schlüssel-Wert-Paar-Strukturen in Skripteigenschaften ausreichen und einfacher zu implementieren sein. Für Anwendungen jedoch, die menschenfreundliche Konfigurationsdateien priorisieren und sich bereits auf TOML festgelegt haben, fügt die Integration des TOML-Parsings durch benutzerdefinierte Skripte eine nützliche Flexibilität und Wartbarkeit hinzu, ohne von den bevorzugten Konfigurationsparadigmen abzuweichen.

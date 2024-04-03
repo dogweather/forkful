@@ -16,9 +16,6 @@ title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---
 
-## Gì & Tại sao?
-Nối chuỗi nghĩa là ghép chúng lại với nhau từ đầu đến cuối để tạo thành một chuỗi mới. Lập trình viên làm điều này để xây dựng văn bản một cách động, như tạo tin nhắn hoặc sinh mã.
-
 ## Cách thực hiện:
 Trong Lua, bạn nối chuỗi bằng toán tử `..`. Hãy xem nó hoạt động như thế nào:
 

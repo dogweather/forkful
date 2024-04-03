@@ -14,9 +14,6 @@ title: Een tijdelijk bestand aanmaken
 weight: 21
 ---
 
-## Wat & Waarom?
-Een tijdelijk bestand aanmaken is het creëren van een bestand dat bedoeld is om op korte termijn op je bestandssysteem te leven, vaak voor dingen zoals tussenliggende gegevens. Programmeurs doen dit voornamelijk omdat het kan helpen bij het beheren van ruimte, het verminderen van conflicten en het verhogen van de beveiliging tijdens runtime.
-
 ## Hoe te:
 Hier is een snelle manier om een tijdelijk bestand te maken in Kotlin:
 

@@ -16,12 +16,7 @@ title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---
 
-## Cái gì và Tại sao?
-
-Bắt đầu một dự án mới đồng nghĩa với việc thiết lập một môi trường lập trình mới cho đoạn mã của bạn. Lập trình viên làm điều này để khởi đầu công việc phát triển với một bảng trắng và tổ chức ý tưởng thành mã có thể thực thi.
-
 ## Cách thức:
-
 Để khởi tạo một dự án Clojure, chúng ta sẽ sử dụng Leiningen, một công cụ xây dựng phổ biến cho Clojure:
 
 ``` Clojure
@@ -63,7 +58,6 @@ lein repl
 ```
 
 ## Sâu hơn
-
 Các dự án Clojure thường bắt đầu với Leiningen hoặc Boot để quản lý phụ thuộc, xây dựng và tự động hóa các nhiệm vụ. Leiningen đã xuất hiện từ năm 2010 và đã trở thành lựa chọn mặc định cho hầu hết những người sử dụng Clojure.
 
 Những công cụ thay thế thì tồn tại, như `deps.edn` và công cụ CLI Clojure, được giới thiệu bởi Clojure/core nhằm cung cấp quản lý phụ thuộc và cấu hình dự án một cách đơn giản hơn.
@@ -79,7 +73,6 @@ Các dự án thường tuân theo cấu trúc thư mục tiêu chuẩn:
 Một thói quen tốt là giữ mọi thứ ở mức tối giản từ đầu. Thêm phụ thuộc khi bạn tiến triển, giữ cho dự án của bạn nhẹ nhàng và dễ quản lý.
 
 ## Xem thêm
-
 - [Hướng dẫn Bắt đầu với Leiningen](https://leiningen.org/#getting-started)
 - [Tài liệu Clojure](https://clojuredocs.org/)
 - [Hướng dẫn Cách viết mã Clojure](https://guide.clojure.style/)

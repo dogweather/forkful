@@ -12,12 +12,7 @@ title: Willekeurige getallen genereren
 weight: 12
 ---
 
-## Wat & Waarom?
-
-Het genereren van willekeurige getallen in C# omvat de creatie van onvoorspelbare numerieke waarden binnen een gespecificeerd bereik. Programmeurs gebruiken deze methoden voor de implementatie van functies zoals cryptografie, simulaties en spellen waar onvoorspelbaarheid of de simulatie van realistische willekeur vereist is.
-
 ## Hoe:
-
 De meest voorkomende manier om willekeurige getallen te genereren in C# is het gebruik van de `System.Random` klasse. Hier is een eenvoudig voorbeeld dat het gebruik demonstreert:
 
 ```C#
@@ -69,7 +64,6 @@ public class SecureRandomExample
 ```
 
 ## Diepgaande duik
-
 Het genereren van willekeurige getallen in C# is in de loop der jaren geëvolueerd. Aanvankelijk was de `System.Random` klasse de gangbare methode voor het genereren van pseudo-willekeurige getallen. Het is pseudo-willekeurig omdat, gegeven een specifieke seedwaarde, het dezelfde reeks getallen zal produceren, wat nuttig kan zijn voor debugging of herhaalbaarheid van tests.
 
 Hoewel voldoende voor basisbehoeften, is `System.Random` niet thread-safe en kan voorspelbare uitkomsten produceren, wat niet geschikt is voor op veiligheid-afhankelijke applicaties. Deze beperking leidde tot de introductie van de `RNGCryptoServiceProvider` voor cryptografische willekeur, die veiliger maar ook meer bronintensief is.

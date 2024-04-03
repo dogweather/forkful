@@ -12,12 +12,7 @@ title: Een string met hoofdletters maken
 weight: 2
 ---
 
-## Wat & Waarom?
-
-Een string kapitaliseren betekent het transformeren van de eerste letter van elk woord naar een hoofdletter en de rest naar kleine letters. Programmeurs doen dit voor consistentie in opmaak over gebruikersinterfaces heen en om ervoor te zorgen dat eigennamen en titels correct worden weergegeven.
-
 ## Hoe:
-
 Hier is wat snelle TypeScript om je strings te kapitaliseren:
 
 ```typescript
@@ -36,7 +31,6 @@ console.log(gekapitaliseerdeTitel); // Uitvoer: "Hello World From Typescript"
 Makkelijk, toch? Nu ga je die kleine strings omtoveren tot iets chiques!
 
 ## Diepe Duik
-
 Kapitalisatie bestaat al sinds de tijd van oude schriften, ter verfijning van de leesbaarheid. In programmering, buiten esthetische en grammaticale correctheid, kan het kapitaliseren van strings cruciaal zijn voor vergelijkingsoperaties waar "Apple" en "apple" anders behandeld kunnen worden.
 
 Alternatieven voor de `capitalizeString` functie kunnen bibliotheken zoals Lodash omvatten, die de `_.startCase` methode bieden, of steunen op CSS voor visuele kapitalisatie (`text-transform: capitalize;`). Echter, CSS verandert de daadwerkelijke waarde van de string niet, alleen de weergave.
@@ -44,7 +38,6 @@ Alternatieven voor de `capitalizeString` functie kunnen bibliotheken zoals Lodas
 JavaScript had oorspronkelijk geen ingebouwde methode voor stringkapitalisatie, wat het aan de creativiteit van ontwikkelaars overliet. De functie hierboven gebruikt een reguliere expressie om woordgrenzen `\w\S*` te identificeren, kapitaliseert de eerste letter met `toUpperCase()`, en de rest met `toLowerCase()`.
 
 ## Zie Ook
-
 - MDN String Documentatie: [https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/String](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/String)
 - Lodash's `_.startCase` functie: [https://lodash.com/docs/#startCase](https://lodash.com/docs/#startCase)
 - String.prototype.toLocaleUpperCase (voor locatiegevoelige transformaties): [https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase)

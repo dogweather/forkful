@@ -13,9 +13,6 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i dlaczego?
-Sprawdzanie, czy katalog istnieje w JavaScript, jest kluczowe dla zadań manipulacji plikami. Pozwala skryptom zweryfikować obecność katalogu przed odczytem z niego lub zapisem do niego. Operacja ta zapobiega błędom i zapewnia płynniejsze wykonanie programu, szczególnie w aplikacjach, które dynamicznie obsługują pliki lub katalogi na podstawie wprowadzonych danych użytkownika lub zewnętrznych źródeł danych.
-
 ## Jak to zrobić:
 W Node.js, ponieważ JavaScript sam w sobie nie ma bezpośredniego dostępu do systemu plików, zazwyczaj używany jest moduł `fs` do tego typu operacji. Oto prosty sposób, aby sprawdzić, czy katalog istnieje, używając `fs.existsSync()`:
 

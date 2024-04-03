@@ -14,9 +14,6 @@ title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---
 
-## Gì và Tại sao?
-Trong lập trình, nối chuỗi là quá trình kết hợp hai hoặc nhiều chuỗi thành một. Lập trình viên làm điều này để dễ dàng thao tác với dữ liệu văn bản, xây dựng thông điệp, hoặc lắp ráp các phần của giao diện người dùng một cách linh hoạt.
-
 ## Làm thế nào:
 Dart cung cấp nhiều cách đơn giản để nối chuỗi. Dưới đây là những phương pháp phổ biến nhất:
 

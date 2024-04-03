@@ -10,12 +10,7 @@ title: Searching and replacing text
 weight: 10
 ---
 
-## What & Why?
-
-Searching and replacing text lets you find specific strings in a body of text and swap them out with something else. Programmers do it for quick edits, massive refactoring, or automated text processing. It's a basic, yet powerful, text manipulation technique.
-
 ## How to:
-
 In Clojure, we wield the `clojure.string/replace` function to search and replace text. Let's cut to the chase with some code:
 
 ```clojure
@@ -39,7 +34,6 @@ In Clojure, we wield the `clojure.string/replace` function to search and replace
 Simple as that. Run it, and you'll see the transformations right there in your REPL.
 
 ## Deep Dive
-
 Searching and replacing in text isn't new. It's age-old in computing. We got it from early editors like `sed` in Unix. We've come a long way since then.
 
 Clojure, being on the JVM, means you've got Java's regular expression prowess under the hood. Performance-wise, it's nifty for quick scripts but remember, overuse in large-scale text processing can hurt performance.
@@ -49,7 +43,6 @@ As for alternatives, besides `clojure.string/replace`, there's regex-based libra
 Functionally, Clojure's approach to immutability means each replacement results in a new string. No mutable strings mean fewer bugs and surprises.
 
 ## See Also
-
 To dive deeper, check out these resources:
 
 - Clojure's `clojure.string` [API documentation](https://clojuredocs.org/clojure.string/replace)

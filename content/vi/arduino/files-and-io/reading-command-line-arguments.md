@@ -17,9 +17,6 @@ title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---
 
-## Cái gì và Tại sao?
-Đọc các đối số dòng lệnh có nghĩa là lấy dữ liệu được truyền đến một chương trình khi bạn khởi động nó từ terminal hoặc dấu nhắc lệnh. Các lập trình viên sử dụng đối số để tùy chỉnh hành vi của chương trình mà không cần thay đổi mã.
-
 ## Làm thế nào:
 Arduino không xử lý đối số dòng lệnh như các môi trường lập trình truyền thống, bởi vì bản vẽ (sketches) được tải lên microcontrollers mà không có dấu nhắc lệnh OS có thể truy cập được. Nhưng bạn có thể mô phỏng tính năng này bằng cách sử dụng giao tiếp nối tiếp. Đây là cách thức:
 

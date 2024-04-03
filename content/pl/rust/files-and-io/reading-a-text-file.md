@@ -11,9 +11,6 @@ title: Odczytywanie pliku tekstowego
 weight: 22
 ---
 
-## What & Why? (Co i dlaczego?)
-Czytanie pliku tekstowego to odczytywanie danych z pliku zapisanego w formacie tekstowym. Programiści robią to, by np. wczytać konfigurację, dane użytkownika lub materiały do dalszej obróbki.
-
 ## How to: (Jak to zrobić?)
 Oto jak w Rust wczytać plik tekstowy, linia po linii, oraz prosty przypadek użycia.
 

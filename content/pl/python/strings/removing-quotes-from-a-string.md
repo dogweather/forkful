@@ -12,9 +12,6 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co i dlaczego?
-Usuwanie cudzysłowów z łańcucha znaków zazwyczaj oznacza usuwanie zbędnych podwójnych (") lub pojedynczych (') znaków cudzysłowu. Programiści robią to w celu oczyszczenia danych wejściowych lub gdy cudzysłowy nie są potrzebne do dalszego przetwarzania—na przykład przy zapisywaniu tekstu do bazy danych lub przygotowywaniu go do wyświetlenia.
-
 ## Jak to zrobić:
 Python oferuje kilka sposobów na pozbycie się niechcianych cudzysłowów z łańcuchów znaków. Przejdźmy przez kilka przykładów:
 

@@ -13,12 +13,7 @@ title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---
 
-## Co i dlaczego?
-
-Przetwarzanie HTML w projektach Arduino polega na ekstrakcji informacji ze stron internetowych. Programiści robią to, aby umożliwić ich urządzeniom Arduino interakcję z Internetem, zbierając dane ze stron internetowych na różne cele, począwszy od automatyzacji domowej aż po monitoring środowiskowy.
-
 ## Jak to zrobić:
-
 Przetwarzanie HTML na Arduino zwykle wymaga bibliotek o minimalnym rozmiarze ze względu na ograniczone zasoby urządzenia. Popularnym wyborem do scrapingu i przetwarzania stron internetowych jest użycie bibliotek `ESP8266HTTPClient` i `ESP8266WiFi` dla ESP8266, lub ich odpowiedników dla ESP32, biorąc pod uwagę ich wbudowane wsparcie dla możliwości Wi-Fi i protokołów HTTP. Oto podstawowy przykład pobierania i przetwarzania HTML, zakładając, że pracujesz na ESP8266 lub ESP32:
 
 Najpierw dołącz konieczne biblioteki:

@@ -11,9 +11,6 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## What & Why? (Co i dlaczego?)
-Łączenie stringów to po prostu sposób, by z dwóch czy więcej osobnych tekstów zrobić jeden ciągły. Programiści robią to, gdy potrzebują stworzyć wiadomości, złożone dane czy po prostu wyświetlić coś spójnie.
-
 ## How to: (Jak to zrobić:)
 Rust używa różnych metod do łączenia stringów. Oto kilka przykładów:
 

@@ -14,12 +14,7 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co & Dlaczego?
-
-Usuwanie cudzysłowów z ciągu znaków w Go polega na eliminacji początkowych i końcowych znaków cudzysłowu (`"` lub `'`) z danego ciągu znaków. Programiści często muszą wykonywać to zadanie, aby oczyścić dane wejściowe użytkownika, efektywniej analizować dane tekstowe lub przygotować ciągi znaków do dalszego przetwarzania, które wymaga treści bez cudzysłowów.
-
 ## Jak to zrobić:
-
 Go oferuje kilka podejść do usunięcia cudzysłowów z ciągu znaków, ale jedną z najprostszych metod jest użycie funkcji `Trim` i `TrimFunc` dostarczanych przez pakiet `strings`. Oto jak to zrobić:
 
 ```go
@@ -56,7 +51,6 @@ Używając strings.TrimFunc: To jest 'cytowany' ciąg znaków
 Obie metody skutecznie usuwają początkowe i końcowe cudzysłowy z ciągu znaków.
 
 ## Głębsze spojrzenie
-
 Funkcje `Trim` i `TrimFunc` z pakietu `strings` są częścią obszernej standardowej biblioteki Go, zaprojektowanej tak, aby oferować potężne, a jednocześnie proste w manipulacji możliwości ciągów znaków bez potrzeby używania pakietów firm trzecich. Konieczność skutecznego obsługiwania i manipulowania ciągami znaków wynika z głównego skupienia Go na serwerach sieciowych i parserach danych, gdzie przetwarzanie ciągów znaków jest powszechnym zadaniem.
 
 Jedną z charakterystycznych cech tych funkcji jest ich implementacja oparta na runach (reprezentacji Go punktu kodowego Unicode). Ta konstrukcja pozwala im łatwo radzić sobie z ciągami znaków zawierającymi znaki wielobajtowe, czyniąc podejście Go do manipulacji ciągami znaków zarówno solidne, jak i przyjazne dla Unicode.

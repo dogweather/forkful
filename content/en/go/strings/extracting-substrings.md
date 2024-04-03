@@ -10,16 +10,10 @@ title: Extracting substrings
 weight: 6
 ---
 
-## What & Why?
-
-Extracting substrings involves retrieving specific portions of a string based on their positions. Programmers frequently perform this operation to process or manipulate text data efficiently, such as parsing input, validating formats, or preparing output.
-
 ## How to:
-
 In Go, the `string` type is a read-only slice of bytes. To extract substrings, one primarily makes use of the `slice` syntax, alongside the built-in `len()` function for length checking and the `strings` package for more complex operations. Here’s how you can achieve this:
 
 ### Basic Slicing
-
 ```go
 package main
 
@@ -37,7 +31,6 @@ func main() {
 ```
 
 ### Using `strings` Package
-
 For more advanced substring extraction, such as extracting strings after or before a specific substring, you can use the `strings` package.
 
 ```go
@@ -60,7 +53,6 @@ func main() {
 It is essential to note that Go strings are UTF-8 encoded and a direct byte slice may not always result in valid strings if they include multi-byte characters. For Unicode support, consider using `range` or the `utf8` package.
 
 ### Handling Unicode Characters
-
 ```go
 package main
 
@@ -80,7 +72,6 @@ func main() {
 ```
 
 ## Deep Dive
-
 Extracting substrings in Go is straightforward, thanks to its slice syntax and comprehensive standard library. Historically, earlier programming languages provided more direct functions or methods to handle such text manipulation. However, Go's approach emphasizes safety and efficiency, particularly with its immutable strings and explicit handling of Unicode characters through runes.
 
 While straightforward slicing benefits from performance efficiency, it inherits the complexities of handling UTF-8 characters directly. The introduction of the `rune` type allows Go programs to safely handle Unicode text, making it a powerful alternative for international applications.

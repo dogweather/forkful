@@ -13,9 +13,6 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-Het schrijven van tests in programmeren betekent het maken van scripts die controleren of je code correct werkt. Programmeurs doen dit om bugs vroeg op te sporen, betrouwbaarheid te garanderen en te voorkomen dat toekomstige veranderingen bestaande functies breken.
-
 ## Hoe te:
 Hier is een snelle test voor een functie die getallen optelt met Pester, het testraamwerk van PowerShell. Je zou dit script normaal gesproken opslaan als `Add.Tests.ps1`.
 

@@ -10,12 +10,7 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-
-Working with complex numbers in programming involves manipulating numbers that have both a real and an imaginary part, typically expressed as `a + bi`. Programmers tackle complex numbers in various domains, like engineering, physics, and data analysis, to solve problems involving square roots of negative numbers, waveform analyses, and more.
-
 ## How to:
-
 In Go, complex numbers are handled using the built-in `complex`, `real`, and `imag` functions, along with `complex64` and `complex128` types (representing 64-bit and 128-bit complex numbers respectively). Here's a quick start guide:
 
 ```go
@@ -52,7 +47,6 @@ func main() {
 This example covers the basics, but there's much more you can do with complex numbers, including leveraging the `math/cmplx` package for more advanced operations like finding the magnitude, phase, and much more.
 
 ## Deep Dive
-
 The concept of complex numbers dates back to the 16th century, but only got wide recognition and rigorous formalization in the 19th century. In computer programming, complex numbers have been a staple for complex arithmetic in scientific and engineering calculations since the early days. Go's approach to complex numbers, by making them a first-class citizen with built-in support and comprehensive standard library support through the `math/cmplx` package, stands out among programming languages. This design decision reflects Go's emphasis on simplicity and performance.
 
 Nevertheless, it's worth noting that working with complex numbers in Go, while powerful, may not always be the best approach for all applications, particularly those requiring symbolic mathematics or high-precision arithmetic. Languages and environments specialized in scientific computing, such as Python with libraries like NumPy and SciPy, or software like MATLAB, might offer more flexibility and a broader range of functionalities for specific applications.

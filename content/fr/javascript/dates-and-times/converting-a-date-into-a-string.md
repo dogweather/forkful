@@ -11,9 +11,6 @@ title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## What & Why?
-Convertir une date en chaîne de caractères permet d'en afficher la représentation lisible par un humain. Les programmeurs le font pour afficher des dates dans des formats personnalisés ou pour les sauvegarder dans des bases de données.
-
 ## How to:
 JavaScript simplifie la conversion des dates en chaînes. Voyez vous-même :
 

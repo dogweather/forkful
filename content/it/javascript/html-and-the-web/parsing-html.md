@@ -12,9 +12,6 @@ title: Analisi sintattica HTML
 weight: 43
 ---
 
-## Cosa e perché?
-L'analisi dell'HTML consiste nell'estrazione di dati dai documenti HTML. I programmatori lo fanno per interagire o manipolare il contenuto web, automatizzare l'estrazione di dati o per scopi di web scraping.
-
 ## Come fare:
 Analizziamo l'HTML utilizzando l'API `DOMParser` in JavaScript.
 

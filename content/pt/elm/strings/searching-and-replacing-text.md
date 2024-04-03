@@ -11,9 +11,6 @@ title: Pesquisando e substituindo texto
 weight: 10
 ---
 
-## O Que & Porquê?
-Procurar e substituir texto é trocar uma sequência específica por outra em uma string. Programadores fazem isso para corrigir dados, atualizar informações ou manipular texto de maneira eficiente.
-
 ## Como Fazer:
 ```Elm
 import String

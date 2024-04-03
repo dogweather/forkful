@@ -16,9 +16,6 @@ title: "Vi\u1EBFt ki\u1EC3m th\u1EED"
 weight: 36
 ---
 
-## Cái gì và Tại sao?
-Viết test trong C bao gồm việc tạo ra các chương trình phụ hoặc chức năng nhỏ hơn giúp tự động kiểm tra tính năng của mã lệnh. Lập trình viên làm điều này để đảm bảo phần mềm của họ hoạt động như mong đợi, bắt lỗi sớm và để thuận tiện cho việc chỉnh sửa mã sau này mà không gây ra hiệu ứng phụ không mong muốn.
-
 ## Làm thế nào:
 Mặc dù C không có bộ khung test tích hợp sẵn như một số ngôn ngữ khác, bạn vẫn có thể viết các bài test hiệu quả sử dụng assert.h cho các phát biểu đơn giản hoặc tích hợp các bộ khung bên thứ ba như CUnit hoặc Unity cho việc test có cấu trúc hơn. Dưới đây là một ví dụ cơ bản sử dụng assert.h để test một hàm cộng hai số nguyên:
 

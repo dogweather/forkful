@@ -11,9 +11,6 @@ title: Extraindo substrings
 weight: 6
 ---
 
-## O Que é & Porquê?
-Extrair substrings significa pegar pedaços de uma string - aquelas sequências de caracteres que todo mundo adora manipular em programação. Programadores fazem isso para isolar informação específica, limpar dados, ou ajustar output para os usuários finais.
-
 ## Como Fazer:
 ```TypeScript
 let texto: string = "TypeScript é demais!";

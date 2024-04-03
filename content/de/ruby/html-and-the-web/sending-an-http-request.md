@@ -11,9 +11,6 @@ title: Einen HTTP-Request senden
 weight: 44
 ---
 
-## Was & Warum?
-Das Senden einer HTTP-Anfrage ist ein zentraler Bestandteil des Web, bei dem Daten von oder zu einem Server übertragen werden. Programmierer nutzen das, um mit Webdiensten zu interagieren, Ressourcen abzurufen oder Daten zu übermitteln.
-
 ## How to:
 Verwende die 'net/http' Standardbibliothek von Ruby, um eine einfache GET-Anfrage zu senden:
 

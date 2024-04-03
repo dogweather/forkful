@@ -15,9 +15,6 @@ title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---
 
-## Qué y Por qué?
-Imprimir la salida de depuración en Visual Basic para Aplicaciones (VBA) implica colocar estratégicamente instrucciones de impresión dentro de su código para mostrar valores de variables, el flujo de ejecución o mensajes de depuración personalizados. Esta técnica es esencial para la depuración, ya que permite a los programadores entender el comportamiento de su código en tiempo de ejecución e identificar cualquier comportamiento inesperado o errores.
-
 ## Cómo:
 En VBA, la instrucción `Debug.Print` es la principal herramienta para imprimir información de depuración en la Ventana Inmediata del Editor de Visual Basic (VBE). Para utilizar esta función de manera efectiva, necesitas tener visible la Ventana Inmediata (Ver > Ventana Inmediata o presionar `Ctrl+G` en el VBE).
 

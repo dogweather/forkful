@@ -9,9 +9,6 @@ title: Sending an HTTP request
 weight: 44
 ---
 
-## What & Why?
-Sending an HTTP request is the act of asking a web server for data or action. Programmers do it to interact with APIs, grab web content, or communicate between services.
-
 ## How to:
 Let's get to the fun stuff. You'll need `http-client` and `http-client-tls` packages. Set up your stack and add them to your `package.yaml` or `.cabal` file. Then, run `stack build` or appropriate commands to fetch them.
 

@@ -14,12 +14,7 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## Cosa & Perché?
-
-La stampa di output per il debug riguarda la generazione di messaggi di log temporanei e informativi che possono aiutare i programmatori a comprendere il flusso e lo stato di un programma durante la sua esecuzione. I programmatori fanno ciò per identificare e diagnosticare bug del software o comportamenti inaspettati nella logica del programma.
-
 ## Come fare:
-
 In C, il modo più comune per stampare output di debug è utilizzare la funzione `printf` della libreria standard di I/O. La funzione `printf` permette un output formattato al dispositivo di output standard, tipicamente lo schermo. Ecco un esempio semplice:
 
 ```c
@@ -65,7 +60,6 @@ DEBUG: example.c:6: Il valore di test è 10
 Nota che in questo esempio, stiamo usando `fprintf` per output sul flusso di errore standard (`stderr`), che è spesso più appropriato per i messaggi di debug.
 
 ## Approfondimento
-
 Storicamente, le tecniche di debugging in C sono state manuali e rudimentali, a causa della filosofia vicina al sistema e dell'età del linguaggio. Mentre i linguaggi moderni potrebbero includere librerie di debugging sofisticate o fare affidamento in modo significativo sulle funzionalità dell'Ambiente di Sviluppo Integrato (IDE), i programmatori C spesso ricorrono all'inserimento manuale di istruzioni di stampa come quelle mostrate sopra per tracciare l'esecuzione del loro programma.
 
 Una cosa da mettere in guardia con le stampe di debug è il loro potenziale di ingombro dell'output e di conduzione a problemi di prestazione, specialmente se lasciate inavvertitamente nel codice di produzione. Per questi motivi, l'uso della compilazione condizionale (ad es., `#ifdef DEBUG ... #endif`) potrebbe essere un approccio migliore, consentendo di includere o escludere le istruzioni di debug in base a flag di compilazione.

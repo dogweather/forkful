@@ -11,9 +11,6 @@ title: Enviando una solicitud http
 weight: 44
 ---
 
-## Qué y Por Qué?
-Enviar una solicitud HTTP significa pedirle a un servidor web que te brinde algo, como una página web o datos de una API. Los programadores lo hacen para interactuar con la web, probar APIs o automatizar tareas en internet.
-
 ## Cómo hacerlo:
 En Fish, puedes usar `curl` o `wget` para enviar solicitudes HTTP. Aquí hay ejemplos rápidos para obtener el contenido de example.com.
 

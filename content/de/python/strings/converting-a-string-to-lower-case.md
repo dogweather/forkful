@@ -11,9 +11,6 @@ title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---
 
-## Was & Warum?
-Um einen String in Kleinbuchstaben umzuwandeln, verändert man jeden Großbuchstaben in seinem Äquivalent in Kleinbuchstaben. Dies ist nützlich für die Normalisierung von Textdaten, z.B. bei Suchoperationen oder beim Vergleich zweier Zeichenketten, um Groß- und Kleinschreibung zu ignorieren.
-
 ## So geht's:
 ```python
 # String in Kleinbuchstaben umwandeln

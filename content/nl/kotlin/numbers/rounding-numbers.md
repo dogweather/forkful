@@ -12,12 +12,7 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-
-Het afronden van getallen betekent dat je ze aanpast naar het dichtstbijzijnde hele getal of naar een gespecificeerd niveau van precisie. Programmeurs doen dit om de leesbaarheid te verbeteren, de opslagvereisten te verlagen, of omdat de exacte waarde niet cruciaal is voor latere berekeningen.
-
 ## Hoe:
-
 In Kotlin kan afronden worden gedaan met verschillende functies zoals `roundToInt()`, `roundToDouble()`, en het gebruik van `BigDecimal` voor meer controle:
 
 ```kotlin
@@ -37,7 +32,6 @@ fun main() {
 ```
 
 ## Diep Duiken
-
 Historisch gezien is het afronden van getallen een fundamenteel concept geweest in zowel wiskunde als informatica, ontworpen om te gaan met beperkingen in numerieke precisie. In de vroege computertechnologie was afronden cruciaal vanwege de hoge kosten van geheugen.
 
 In Kotlin is afronden gebaseerd op de standaard Java-bibliotheken. Opties voor afronden omvatten `Math.round()`, dat afrondt naar het dichtstbijzijnde hele getal, en `BigDecimal` voor aanpasbaar afronden, waar je een schaal en een `RoundingMode` kunt specificeren.
@@ -45,7 +39,6 @@ In Kotlin is afronden gebaseerd op de standaard Java-bibliotheken. Opties voor a
 Elke `RoundingMode` heeft verschillende beleidsregels voor het omgaan met gelijke standen (wanneer het cijfer precies in het midden van de opties voor afronden staat). Bijvoorbeeld, `RoundingMode.HALF_UP` rondt af naar de dichtstbijzijnde buur, tenzij beide buren op gelijke afstand zijn, in welk geval het naar boven afrondt.
 
 ## Zie Ook
-
 - Kotlin Documentatie over [`BigDecimal`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/java.math.-big-decimal/index.html)
 - Oracle's Java Documentatie voor [`RoundingMode`](https://docs.oracle.com/javase/8/docs/api/java/math/RoundingMode.html)
 - IEEE Standaard voor Drijvende-komma Rekenkunde (IEEE 754) [IEEE Standaard 754](https://ieeexplore.ieee.org/document/4610935)

@@ -11,11 +11,7 @@ title: Organisering av kode i funksjoner
 weight: 18
 ---
 
-## Hva & Hvorfor?
-Å organisere kode i funksjoner bryter opp oppgaver i gjenbrukbare deler, noe som gjør koden ryddigere og lettere å vedlikeholde. Vi gjør dette for å redusere redundans, gjøre testing enklere, og forbedre lesbarheten.
-
 ## Hvordan gjøre det:
-
 ```javascript
 // Definer en funksjon for å beregne arealet av et rektangel
 function calculateArea(width, height) {

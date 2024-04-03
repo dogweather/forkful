@@ -11,9 +11,6 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-Parsing a date from a string is about recognizing and converting written dates in text form into a date data type that PowerShell can understand and work with. Programmers do this to manipulate, format, compare, or calculate dates, which are common tasks in scripts dealing with log files, user input, or data processing.
-
 ## How to:
 PowerShell makes parsing dates from strings straightforward with its `Get-Date` cmdlet and `[datetime]` type accelerator, which work well for standard date formats. For more complex or non-standard date strings, the `[datetime]::ParseExact` method can be utilized to specify the exact format.
 

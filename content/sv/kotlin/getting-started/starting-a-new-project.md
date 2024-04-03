@@ -11,9 +11,6 @@ title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---
 
-## Vad & Varför?
-Att starta ett nytt projekt innebär att sätta upp en fräsch kodbas för att utveckla en applikation eller ett tjänst. Programmerare gör detta för att bringa nya idéer till liv, lösa specifika problem eller utforska ny teknik.
-
 ## Hur man gör:
 För att kickstarta ett Kotlin-projekt, kan vi använda IntelliJ IDEA eller något annat integrerat utvecklingsmiljö (IDE) som stödjer Kotlin. Installera först Kotlin-plugin om det behövs. Sedan är det bara att skapa ett nytt projekt:
 

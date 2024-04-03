@@ -15,12 +15,7 @@ title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---
 
-## Cái gì & Tại sao?
-
-So sánh hai ngày trong PowerShell có nghĩa là xác định xem một ngày có sớm hơn, giống nhau, hoặc muộn hơn ngày kia hay không. Các lập trình viên thường làm điều này để quản lý sự kiện, sắp xếp hồ sơ, lên lịch công việc, hoặc kiểm tra tuổi dữ liệu.
-
 ## Làm thế nào:
-
 ```PowerShell
 # Lấy ngày hôm nay
 $today = Get-Date
@@ -45,7 +40,6 @@ False
 ```
 
 ## Thảo Luận Sâu
-
 Ngay từ thời kỳ đá của máy tính - không hẳn vậy, nhưng bạn biết đấy, những ngày đầu - dữ liệu ngày tháng rất lộn xộn. Chúng ta đã tiến xa với các tiêu chuẩn và PowerShell làm cho nó đơn giản hơn nữa.
 
 Dưới đây là những điều đáng lưu ý:
@@ -58,6 +52,5 @@ Dưới đây là những điều đáng lưu ý:
 Ở cấp độ assembly, so sánh ngày được chuyển đổi thành ticks (khoảng cách 100-nanosecond kể từ 1/1/0001). Vì thế bạn thực chất đang so sánh các số nguyên lớn, đây là cách hiệu quả.
 
 ## Tham Khảo Thêm
-
 - [Cấu trúc DateTime (Tài liệu Microsoft)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
 - [Làm việc với Ngày và Giờ trong PowerShell (SS64.com)](https://ss64.com/ps/syntax-dateformats.html)

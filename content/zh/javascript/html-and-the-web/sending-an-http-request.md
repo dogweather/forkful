@@ -19,9 +19,6 @@ title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---
 
-## What & Why? (是什么？为什么？)
-在JavaScript中发送HTTP请求是与服务器交换数据的方式。程序员这么做主要是为了从服务器获取数据或向服务器发送数据，动态更新网页内容而不需要重新加载页面。
-
 ## How to: (如何操作：)
 ```Javascript
 // 使用fetch API发送GET请求

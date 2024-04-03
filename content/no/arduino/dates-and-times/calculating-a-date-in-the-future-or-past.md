@@ -11,12 +11,7 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## Hva & Hvorfor?
-
-Å kalkulere en dato i fremtiden eller fortiden handler om å ta en startdato og legge til eller trekke fra dager, måneder eller år. Programmerere bruker denne funksjonen for å håndtere alt fra utløpsdatoer på kuponger til å planlegge fremtidige hendelser.
-
 ## Hvordan gjøre det:
-
 Arduino har ikke innebygd støtte for avansert dato-manipulasjon rett ut av boksen, men ved hjelp av `Time.h`-biblioteket kan vi komme et stykke på vei. Følgende eksempel viser hvordan vi kan legge til en dag til det nåværende tidspunktet:
 
 ```Arduino
@@ -44,7 +39,6 @@ void loop() {
 Utskriften vil være Unix-tid konvertert til lesbar dato og tid for både det nåværende tidspunktet og en dag frem i tiden.
 
 ## Dypdykk:
-
 Å behandle datoer i programmering har lange tradisjoner, og måter å håndtere det på har utviklet seg betydelig. Historisk sett kunne dette være et komplekst problem på grunn av ulike kalendersystemer og håndtering av tidssoner og skuddår. I Arduino-sammenheng begrenser funksjonaliteten seg til det enkle, hovedsakelig på grunn av begrensede ressurser.
 
 Alternativer for mer avansert dato-manipulasjon inkluderer biblioteker som 'TimeLib.h' og 'DateTime.h'. Disse lar deg gjøre operasjoner som å håndtere ulike tidssoner og mer komplekse beregninger, som å finne ut hvilken ukedag en gitt dato faller på.
@@ -52,7 +46,6 @@ Alternativer for mer avansert dato-manipulasjon inkluderer biblioteker som 'Time
 Når du beregner en dato i fremtiden eller fortiden i et Arduino-prosjekt, må du være oppmerksom på systemklokka. Hvis du bruker `millis()` eller annen timing relatert til mikrokontrolleren, kan klokken drifte over tid. For mer nøyaktige prosjekter, bruk en ekstern Real Time Clock (RTC) modul.
 
 ## Se også:
-
 - Arduino Time Library: https://www.arduino.cc/en/Reference/Time
 - TimeLib Library: https://github.com/PaulStoffregen/Time
 - DateTime Library: http://playground.arduino.cc/Code/DateTime

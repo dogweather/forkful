@@ -12,9 +12,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---
 
-## What & Why?
-Enviar uma requisição HTTP com autenticação básica é o processo de acessar recursos protegidos em um servidor, fornecendo um nome de usuário e senha. Programadores fazem isso para garantir que apenas usuários autorizados acessem certos dados.
-
 ## How to:
 ```Elm
 import Http

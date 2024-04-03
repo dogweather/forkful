@@ -13,12 +13,7 @@ title: Concatenazione di stringhe
 weight: 3
 ---
 
-## Cosa e perché?
-
-La concatenazione di stringhe implica l'unione di due o più stringhe da capo a fine per formare una nuova stringa. I programmatori fanno ciò per generare dinamicamente testo, come la costruzione di messaggi, percorsi o query complesse, rendendo i programmi più interattivi e reattivi.
-
 ## Come fare:
-
 In Go, esistono diversi modi per concatenare le stringhe. Ecco uno sguardo ad alcuni metodi comuni con esempi:
 
 ### Usando l'operatore `+`:
@@ -62,7 +57,6 @@ fmt.Println(percorso) // percorso/a/file
 ```
 
 ## Approfondimento
-
 La concatenazione di stringhe, sebbene sia un'operazione apparentemente semplice, tocca aspetti più profondi di come Go gestisce le stringhe. In Go, le stringhe sono immutabili; ciò significa che ogni operazione di concatenazione crea una nuova stringa. Questo può portare a problemi di prestazione quando si concatenano un gran numero di stringhe o quando si fa ciò in cicli stretti, a causa della frequente allocazione e copia della memoria.
 
 Storicamente, i linguaggi hanno affrontato l'immutabilità delle stringhe e l'efficienza della concatenazione in vari modi, e l'approccio di Go con `strings.Builder` e `strings.Join` fornisce ai programmatori strumenti che bilanciano facilità d'uso e performance. Il tipo `strings.Builder`, introdotto in Go 1.10, è particolarmente degno di nota poiché offre un modo efficiente per costruire stringhe senza incorrere nel sovraccarico di molteplici allocazioni di stringhe. Lo fa allocando un buffer che cresce secondo le necessità, in cui le stringhe sono aggiunte.

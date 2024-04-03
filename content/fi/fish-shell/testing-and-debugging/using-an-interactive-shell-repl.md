@@ -12,9 +12,6 @@ title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mikä ja Miksi?
-REPL eli Read-Eval-Print Loop on interaktiivinen ohjelmointiympäristö, joka ottaa vastaan yksittäisiä käyttäjän syötteitä, suorittaa ne ja palauttaa tuloksen. Ohjelmoijat käyttävät sitä saadakseen välitöntä palautetta, debuggaamiseen ja nopeatahtiseen kokeiluun koodauskonseptien kanssa ilman, että tarvitsee kääntää ja ajaa koko ohjelmaa.
-
 ## Kuinka:
 Fishissä interaktiivinen kuori on oletustila, kun käynnistät sen. Tältä se näyttää toiminnassa:
 

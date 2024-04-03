@@ -14,12 +14,7 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mikä & Miksi?
-
-Tarkistaminen, onko kansio olemassa Dartissa, liittyy kansion olemassaolon varmistamiseen määritetyssä polussa tiedostojärjestelmässä ennen tiedostojen lukemista tai kirjoittamista. Ohjelmoijat tekevät tämän välttääkseen virheitä, jotka tapahtuvat yrittäessä päästä käsiksi tai muokata olemattomia kansioita.
-
 ## Kuinka tehdä:
-
 Dart käyttää `dart:io` kirjastoa tiedostojen ja hakemistojen käsittelyyn. Tässä on yksinkertainen tapa tarkistaa, onko kansio olemassa:
 
 ```dart

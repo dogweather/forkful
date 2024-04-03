@@ -13,9 +13,6 @@ title: Analisi di una data da una stringa
 weight: 30
 ---
 
-## Cosa e Perché?
-Analizzare una data da una stringa consiste nel riconoscere e convertire date scritte in forma di testo in un tipo di dato data che PowerShell può capire e con cui può lavorare. I programmatori fanno ciò per manipolare, formattare, confrontare o calcolare date, che sono compiti comuni negli script che gestiscono file di log, input dell'utente o elaborazione dei dati.
-
 ## Come fare:
 PowerShell semplifica l'analisi delle date da stringhe con il suo cmdlet `Get-Date` e acceleratore di tipo `[datetime]`, che funzionano bene per i formati di data standard. Per stringhe di date più complesse o non standard, si può utilizzare il metodo `[datetime]::ParseExact` per specificare il formato esatto.
 

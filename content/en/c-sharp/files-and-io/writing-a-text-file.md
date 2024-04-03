@@ -11,9 +11,6 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-Writing a text file in C# involves programmatically creating or modifying text files on the file system - a fundamental task for many applications, such as logging, data exporting, or configuration management. Programmers perform this operation to persist data between sessions, share information across systems, or store human-readable outputs.
-
 ## How to:
 C# simplifies file operations with its `System.IO` namespace, providing straightforward methods to write text files. Here's how to write a basic text file and append text to an existing file.
 

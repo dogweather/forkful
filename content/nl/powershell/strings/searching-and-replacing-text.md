@@ -12,9 +12,6 @@ title: Tekst zoeken en vervangen
 weight: 10
 ---
 
-## Wat & Waarom?
-Zoeken en vervangen van tekst in bestanden: het is het verwisselen van woorden of zinsdelen door anderen. Programmeurs gebruiken het om code bij te werken, fouten te herstellen of gegevens snel over meerdere bestanden aan te passen zonder handmatig elk bestand door te hoeven nemen.
-
 ## Hoe:
 PowerShell maakt zoeken en vervangen vrij eenvoudig. Bekijk `-replace` voor strings en `Get-Content` met `Set-Content` voor bestanden.
 

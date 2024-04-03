@@ -10,9 +10,6 @@ title: Jobbe med TOML
 weight: 39
 ---
 
-## Hva & Hvorfor?
-TOML er et menneskelesbart data serialiseringsspråk, ofte brukt for konfigurasjoner. Programmerere bruker TOML på grunn av dets enkelhet og klarhet, som enkelt oversettes til en hash map i Rust.
-
 ## Hvordan:
 ```Rust
 // 1. Inkluder 'toml'-pakken i din Cargo.toml

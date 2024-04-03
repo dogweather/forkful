@@ -12,9 +12,6 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## What & Why? (Quoi et Pourquoi?)
-Créer un fichier temporaire, c'est comme griffonner une note sur un bout de papier pour ne pas oublier quelque chose d'important - sauf qu'on le fait sur l'ordinateur. Les programmeurs en créent pour tester des bouts de code, gérer des données éphémères ou déboguer sans risquer d'affecter des fichiers permanents.
-
 ## How to (Comment faire) :
 En JavaScript, créons un fichier temporaire sur un serveur Node.js :
 

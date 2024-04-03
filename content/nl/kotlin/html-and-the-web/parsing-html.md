@@ -13,9 +13,6 @@ title: HTML Parsen
 weight: 43
 ---
 
-## Wat & Waarom?
-HTML parseren betekent het ontleden van de opmaak van een webpagina in iets dat een programma kan begrijpen en manipuleren. Programmeurs parseren HTML om gegevens te extraheren, webinteracties te automatiseren of inhoud tussen systemen te migreren.
-
 ## Hoe:
 Kotlin maakt het parseren van HTML eenvoudig met bibliotheken zoals Jsoup. Zo doe je het:
 

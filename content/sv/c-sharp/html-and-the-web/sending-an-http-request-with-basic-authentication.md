@@ -11,9 +11,6 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---
 
-## Vad & Varför?
-I C# skickar vi HTTP-begäran med grundläggande autentisering för att säkert överföra användarnamn och lösenord till servern. Detta används för att bevisa användarens identitet och få tillgång till skyddade resurser.
-
 ## Steg för Steg:
 Vi använder klassen `HttpClient` och lägger till en header för autentisering. Lägg märke till hur enkelt det är:
 

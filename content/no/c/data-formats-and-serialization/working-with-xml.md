@@ -13,12 +13,7 @@ title: Arbeider med XML
 weight: 40
 ---
 
-## Hva & Hvorfor?
-
-Å jobbe med XML i C involverer parsing, spørring og manipulering av XML-dokumenter ved bruk av ulike biblioteker. Programmerere arbeider med XML på grunn av dets utbredte bruk i webtjenester, konfigurasjonsfiler og datautveksling mellom forskjellige systemer, noe som krever ferdigheter i effektiv håndtering av XML for robust applikasjonsutvikling.
-
 ## Hvordan:
-
 C har ikke innebygd støtte for XML, så du må bruke eksterne biblioteker. Et populært valg er `libxml2`, et stabilt og funksjonsrikt bibliotek. Her er hvordan du kan lese og parse en XML-fil ved bruk av `libxml2`.
 
 Først, sørg for at du har `libxml2` installert på systemet ditt. Du kan trenge å installere det gjennom pakkebehandleren din (for eksempel `apt-get install libxml2-dev` på Debian-systemer).
@@ -81,7 +76,6 @@ gcc -o xml_example xml_example.c $(xml2-config --cflags --libs)
 Forutsatt at du har en XML-fil med navnet `your_file.xml`, vil kjøring av det kompilerte programmet skrive ut navnene på dets første-nivå elementer.
 
 ## Dypdykk
-
 Interaksjonen mellom C og XML er en historie om å bringe sammen to radikalt forskjellige verdener: den strukturerte, byte-nivå, prosedyriske paradigmet av C og det hierarkiske, ordrike og dokument-sentriske modellen av XML. Når du integrerer XML-håndteringsevner i C-programmer, utnytter utviklere styrkene til C - som hastighet og lavnivå minnetilgang - for å effektivt parse og manipulere XML-dokumenter.
 
 `libxml2`, utviklet som en del av GNOME-prosjektet, fremstod som den de facto standarden for XML-prosessering i C på grunn av sin omfattende støtte for XML-standarder og dens ytelse. Det legemliggjør år med utviklingsinnsats og fellesskapsbidrag, og gjør det robust og effektivt for de fleste XML-oppgaver.

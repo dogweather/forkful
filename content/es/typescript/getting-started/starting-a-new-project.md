@@ -10,9 +10,6 @@ title: Iniciando un nuevo proyecto
 weight: 1
 ---
 
-## Qué es y Por Qué?
-Empezar un nuevo proyecto en TypeScript es como plantar una semilla digital; le das los nutrientes básicos y la ves crecer. Los programadores arrancan proyectos para solucionar problemas, explorar tecnologías o poner en práctica alguna genialidad.
-
 ## Cómo hacerlo:
 Instala Node.js y npm. Luego, inicia tu proyecto:
 

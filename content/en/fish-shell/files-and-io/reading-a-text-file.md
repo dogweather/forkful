@@ -10,9 +10,6 @@ title: Reading a text file
 weight: 22
 ---
 
-## What & Why?
-Reading a text file is grabbing the data within a file for processing. Programmers do it to extract information, configure apps, parse logs, or just feed data into a script.
-
 ## How to:
 Here's the Fish Shell scoop on opening those text files:
 

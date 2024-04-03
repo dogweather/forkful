@@ -11,9 +11,6 @@ title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---
 
-## What & Why? - Mitä & Miksi?
-Lasketaan päivämäärä tulevaisuudessa tai menneisyydessä. Koodarit tekevät tätä ajoituksen, määräaikojen ja tapahtumaseurannan vuoksi.
-
 ## How to: - Kuinka tehdä:
 Lua ei sisällä sisäänrakennettuja päivämääräkäsittelyn työkaluja, mutta `os.date` ja `os.time` funktioilla selviää paljon. Esimerkki tulevaisuuden päivämäärän laskemisesta:
 

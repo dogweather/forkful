@@ -13,12 +13,7 @@ title: Concatenando strings
 weight: 3
 ---
 
-## O que & Por quê?
-
-A concatenação de strings em C envolve a junção de duas ou mais strings de ponta a ponta para formar uma nova string. Os programadores realizam essa operação para construir dinamicamente strings em tempo de execução, essencial para criar mensagens significativas, caminhos de arquivo ou quaisquer dados montados a partir de diversas fontes de strings.
-
 ## Como fazer:
-
 Em C, strings são arrays de caracteres terminando com um caractere nulo (`\0`). Ao contrário das linguagens de alto nível, C não oferece uma função integrada de concatenação de strings. Em vez disso, você usa as funções `strcat()` ou `strncat()` da biblioteca `<string.h>`.
 
 Aqui está um exemplo simples usando `strcat()`:
@@ -61,7 +56,6 @@ int main() {
 Isso limita a concatenação aos primeiros `num` caracteres da string de origem, ajudando a prevenir estouros de buffer.
 
 ## Mergulho Profundo
-
 As funções `strcat()` e `strncat()` fazem parte da biblioteca padrão do C desde o seu início, refletindo a natureza de baixo nível da linguagem que exige o gerenciamento manual de strings e memória. Ao contrário de muitas linguagens de programação modernas que tratam as strings como objetos de primeira classe com operadores de concatenação integrados (como `+` ou `.concat()`), a abordagem do C exige um entendimento mais profundo sobre ponteiros, alocação de memória e potenciais armadilhas como estouros de buffer.
 
 Embora `strcat()` e `strncat()` sejam amplamente usados, eles são frequentemente criticados por seu potencial em criar vulnerabilidades de segurança se não forem usados cuidadosamente. Estouros de buffer, onde os dados excedem a memória alocada, podem levar a falhas ou serem explorados para execução de código arbitrário. Como resultado, os programadores estão cada vez mais se voltando para alternativas mais seguras, como `snprintf()`, que fornece um comportamento mais previsível ao limitar o número de caracteres escritos na string de destino com base em seu tamanho:

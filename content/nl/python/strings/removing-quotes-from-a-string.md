@@ -12,9 +12,6 @@ title: Quotes verwijderen uit een string
 weight: 9
 ---
 
-## Wat & Waarom?
-Het verwijderen van aanhalingstekens uit een tekenreeks betekent meestal het wegnemen van overbodige dubbele (") of enkele (') aanhalingstekens. Programmeurs doen dit om invoer te zuiveren of wanneer aanhalingstekens niet nodig zijn voor verdere verwerking—zoals bij het opslaan van tekst in een database of het voorbereiden ervan voor weergave.
-
 ## Hoe:
 Python biedt verschillende manieren om ongewenste aanhalingstekens uit tekenreeksen te verwijderen. Laten we enkele voorbeelden doorlopen:
 

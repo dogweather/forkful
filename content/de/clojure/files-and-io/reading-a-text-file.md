@@ -9,9 +9,6 @@ title: Textdatei einlesen
 weight: 22
 ---
 
-## Was & Warum?
-Ein Textfile auszulesen bedeutet, dessen Inhalt in ein Programm zu laden. Programmierer tun das, um Daten zu verarbeiten oder Konfigurationen zu laden.
-
 ## How to:
 ```Clojure
 ;; Datei lesen

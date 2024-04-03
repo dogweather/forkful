@@ -12,9 +12,6 @@ title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---
 
-## Quoi & Pourquoi ?
-Supprimer les guillemets d'une chaîne de caractères signifie retirer ces nuisibles guillemets doubles ou simples qui encadrent notre texte (' ou "). Les programmeurs font souvent cela pour assainir les entrées, stocker du texte dans une base de données ou préparer des chaînes pour un traitement ultérieur sans l'encombrement des marques de citation.
-
 ## Comment faire :
 Voici une manière directe d'éliminer ces guillemets en C++ :
 

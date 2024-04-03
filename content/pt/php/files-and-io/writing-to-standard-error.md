@@ -15,12 +15,7 @@ title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---
 
-## O Que & Porquê?
-
-Escrever no erro padrão (stderr) em PHP diz respeito a direcionar mensagens de erro ou diagnósticos separadamente da saída padrão (stdout), permitindo que desenvolvedores gerenciem melhor seus fluxos de saída para fins de depuração e registro. Programadores utilizam essa técnica para garantir que mensagens de erro não interfiram na saída do programa, facilitando o monitoramento e a solução de problemas em aplicações.
-
 ## Como fazer:
-
 Em PHP, escrever no stderr pode ser alcançado usando a função `fwrite()` juntamente com a constante predefinida `STDERR`, que representa o fluxo de saída de erros.
 
 ```php

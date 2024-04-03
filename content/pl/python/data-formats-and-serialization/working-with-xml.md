@@ -11,9 +11,6 @@ title: Praca z XML
 weight: 40
 ---
 
-## Co i dlaczego?
-"Praca z XML" odnosi się do procesu odczytu, tworzenia i modyfikacji plików XML (eXtensible Markup Language) za pomocą programowania. Programiści robią to, ponieważ XML jest szeroko stosowany do wymiany danych ze względu na jego niezależność od platformy oraz samoopisowy format.
-
 ## Jak to zrobić:
 Moduł `xml.etree.ElementTree` w Pythonie oferuje narzędzia do pracy z XML.
 

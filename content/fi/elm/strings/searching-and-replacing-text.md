@@ -10,9 +10,6 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## What & Why?
-Tekstin hakeminen ja korvaaminen tarkoittaa jonkin tekstin osan etsimistä ja sen vaihtamista toiseen tekstiin. Ohjelmoijat tekevät sitä tiedon päivittämiseksi, formaatin muuttamiseksi tai virheiden korjaamiseksi.
-
 ## How to:
 Elmissä voit käyttää `String` -moduulia tekstin käsittelyyn. Tässä pikainen esimerkki kuinka tekstiä haetaan ja korvataan:
 

@@ -14,12 +14,7 @@ title: Inviare una richiesta HTTP con autenticazione di base
 weight: 45
 ---
 
-## Cosa & Perché?
-
-Inviare una richiesta HTTP con autenticazione di base comporta l'aggiunta di un nome utente e di una password a una richiesta per verificare l'identità dell'utente. Gli sviluppatori lo utilizzano per accedere a risorse che richiedono autenticazione, assicurando una comunicazione sicura tra il client e il server.
-
 ## Come fare:
-
 In Dart, puoi utilizzare il pacchetto `http` per inviare richieste HTTP con autenticazione di base. Prima di tutto, aggiungi il pacchetto `http` al tuo file `pubspec.yaml`:
 
 ```yaml

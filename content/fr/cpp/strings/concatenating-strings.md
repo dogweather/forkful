@@ -11,9 +11,6 @@ title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---
 
-## What & Why?
-La concaténation des chaînes, c'est quand on fusionne deux textes en un seul. Les développeurs la font pour construire des messages dynamiques, gérer des chemins de fichiers, ou tout simplement, pour agencer des données textuelles.
-
 ## How to:
 ```C++
 #include <iostream>

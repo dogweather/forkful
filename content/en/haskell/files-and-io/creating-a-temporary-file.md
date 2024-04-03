@@ -10,9 +10,6 @@ title: Creating a temporary file
 weight: 21
 ---
 
-## What & Why?
-Creating a temporary file means making a file for short-term use, usually for managing data during a program's execution. Programmers do this to avoid cluttering up the hard drive with transient data and to work with files securely without risking conflicts or data leakage.
-
 ## How to:
 Haskell provides the `temporary` package, which includes handy functions for temp file operations. Here’s a quick demo:
 

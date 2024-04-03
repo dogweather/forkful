@@ -11,9 +11,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## Hva & Hvorfor?
-Beregning av en dato i fremtiden eller fortiden innebærer å legge til eller trekke fra tid fra en nåværende dato. Programmerere bruker dette for å håndtere funksjoner som utløpsdatoer, påminnelser, eller tidsbaserte begivenheter i applikasjonene deres.
-
 ## Hvordan gjøre det:
 ```TypeScript
 const today: Date = new Date();

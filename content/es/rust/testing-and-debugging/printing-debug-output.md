@@ -11,9 +11,6 @@ title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---
 
-## What & Why? (Qué y Por Qué?)
-Imprimir mensajes de depuración nos permite echar un vistazo a lo que está pasando en nuestro código en tiempo real. Es esencial para entender bugs y verificar que todo fluye como esperamos.
-
 ## How to: (Cómo hacerlo:)
 ```Rust
 fn main() {
@@ -66,6 +63,7 @@ Salida:
 ```
 [src/main.rs:1] 42 * 2 = 84
 ```
+
 ## See Also (Consulta También)
 - [La documentación oficial de Rust sobre `std::fmt`](https://doc.rust-lang.org/std/fmt/)
 - [El libro de Rust sobre depuración](https://doc.rust-lang.org/book/ch09-02-recoverable-errors-with-result.html)

@@ -9,14 +9,13 @@ title: "\u0417\u0430\u0432\u0430\u043D\u0442\u0430\u0436\u0435\u043D\u043D\u044F
 weight: 42
 ---
 
-## What & Why?
 ## Що і Чому?
-
 Downloading a web page means fetching the HTML content of a web page from the Internet. Programmers do it to extract data, interact with web services, or test their sites.
 
 ## How to:
-## Як це зробити:
 
+
+## Як це зробити:
 Using `URLSession`, we can get content easily.
 
 ```Swift
@@ -48,8 +47,9 @@ Expect something like this as output (truncated for brevity):
 ```
 
 ## Deep Dive:
-## Детально:
 
+
+## Детально:
 Back in the day, web pages were simpler, and we used libraries like `NSURLConnection`. Now, `URLSession` is the go-to in Swift, more powerful and flexible.
 
 There are other ways to download content, like using `WebKit` for JavaScript-heavy pages, or third-party libraries such as Alamofire for complex networking tasks.
@@ -57,8 +57,9 @@ There are other ways to download content, like using `WebKit` for JavaScript-hea
 Implementation-wise, always remember to run network calls on background threads to keep your UI snappy. Handle `Data`, `URLResponse`, and `Error` correctly to manage edge cases. Consider also HTTP status codes and MIME types to process data right.
 
 ## See Also:
-## Додаткові матеріали:
 
+
+## Додаткові матеріали:
 - Official `URLSession` documentation: https://developer.apple.com/documentation/foundation/urlsession
 - Swift API design guidelines: https://swift.org/documentation/api-design-guidelines/
 - Alamofire GitHub repository: https://github.com/Alamofire/Alamofire

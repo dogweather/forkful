@@ -11,9 +11,6 @@ title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---
 
-## Hva & Hvorfor?
-Å skrive ut feilsøkingsdata i terminalen hjelper programmerere å forstå hva som foregår under hetta. Det er som å ha et kart når du navigerer i en ny by - essensielt for å finne ut hvor og hvordan ting går galt.
-
 ## Slik gjør du:
 For enkel tekst:
 ```Bash

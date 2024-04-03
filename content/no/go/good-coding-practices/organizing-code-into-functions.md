@@ -13,12 +13,7 @@ title: Organisering av kode i funksjoner
 weight: 18
 ---
 
-## Hva & Hvorfor?
-
-Å organisere kode i funksjoner i Go innebærer å bryte ned kode i gjenbrukbare, modulære blokker som utfører spesifikke oppgaver. Denne tilnærmingen forbedrer kodens lesbarhet, vedlikeholdbarhet og legger til rette for samarbeid i team ved å muliggjøre for programmerere å jobbe på forskjellige funksjoner samtidig.
-
 ## Hvordan:
-
 I Go definerer du en funksjon ved å bruke nøkkelordet `func`, etterfulgt av funksjonens navn, parametere (hvis noen), og returtypen. La oss illustrere med et enkelt eksempel:
 
 ```go
@@ -73,7 +68,6 @@ func main() {
 ```
 
 ## Dypdykk
-
 Konseptet med å organisere kode i funksjoner er ikke spesielt for Go – det er et grunnleggende programmeringsprinsipp. Imidlertid introduserer Go visse konvensjoner og egenskaper som skiller dens funksjonshåndtering. For eksempel er evnen til å returnere flere verdier fra funksjoner relativt unikt og kan føre til renere, mer forståelig kode, spesielt når man håndterer operasjoner som tradisjonelt kan kreve bruk av pekere eller unntakshåndtering.
 
 Dessuten forsterker Go's støtte for førsteklasses funksjoner—funksjoner som kan sendes som argumenter til andre funksjoner, returneres som verdier fra funksjoner, og tilordnes til variabler—språkets støtte for funksjonell programmeringsmønstre. Dette er spesielt nyttig i å skape høyere ordens funksjoner som manipulerer eller kombinerer andre funksjoner.

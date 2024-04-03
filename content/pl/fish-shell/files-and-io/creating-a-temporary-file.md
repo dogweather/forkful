@@ -11,9 +11,6 @@ title: Tworzenie pliku tymczasowego
 weight: 21
 ---
 
-## What & Why?
-Tworzenie pliku tymczasowego to sposób na chwilowe przechowanie danych bez zaśmiecania systemu. Programiści robią to, kiedy potrzebują szybkiego, bezpiecznego miejsca na małe ilości danych, które można łatwo usunąć.
-
 ## How to:
 W Fish można łatwo stworzyć plik tymczasowy. Użyj `mktemp`, by zadziałać magię:
 

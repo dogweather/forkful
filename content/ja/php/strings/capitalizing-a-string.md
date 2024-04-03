@@ -30,14 +30,10 @@ title: "\u6587\u5B57\u5217\u3092\u5927\u6587\u5B57\u306B\u3059\u308B"
 weight: 2
 ---
 
-## 何となぜ？
-文字列の先頭を大文字にすることで、データセット内で文、タイトル、または固有名詞が正しく始まるようにする操作を指します。プログラマーは、データの正規化、可読性の向上、またはユーザー入力やテキストデータ処理の一貫性を確保するために、文字列の先頭文字を大文字にする操作を頻繁に実行します。
-
 ## 方法：
 PHPは標準で、文字列を大文字にするための様々な関数をサポートしており、それぞれ異なる目的に役立ちます。ここではその使用方法を紹介します：
 
 ### 文字列の最初の文字を大文字にする:
-
 ```php
 $string = "hello, world!";
 $capitalizedString = ucfirst($string);
@@ -45,7 +41,6 @@ echo $capitalizedString; // 出力: Hello, world!
 ```
 
 ### 各単語の最初の文字を大文字にする:
-
 ```php
 $string = "hello, world!";
 $capitalizedWords = ucwords($string);
@@ -53,7 +48,6 @@ echo $capitalizedWords; // 出力: Hello, World!
 ```
 
 ### 文字列全体を大文字に変換する:
-
 ```php
 $string = "hello, world!";
 $upperCaseString = strtoupper($string);
@@ -63,7 +57,6 @@ echo $upperCaseString; // 出力: HELLO, WORLD!
 よりカスタマイズが必要な場合やサードパーティの解決策を利用する場合には、特に基本のASCIIセットを越える文字を扱う国際化の際に、`mbstring`（マルチバイト文字列用）のようなライブラリを利用できます。
 
 ### mbstringを使用してUTF-8文字列を大文字にする:
-
 PHP設定で`mbstring`拡張機能が有効になっていることを確認してから：
 
 ```php

@@ -12,9 +12,6 @@ title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---
 
-## Quoi et pourquoi ?
-Un REPL (Read-Eval-Print Loop, boucle de lecture, évaluation et impression) est un shell interactif qui traite des entrées utilisateur uniques, exécute du code et renvoie le résultat. Les programmeurs l'utilisent pour des expériences rapides, du débogage ou pour l'apprentissage, car il permet un retour immédiat et une itération.
-
 ## Comment faire :
 Démarrer un REPL en Java est simple avec l'outil `jshell` introduit dans Java 9. Voici comment mettre la main dessus et lancer une session de base :
 

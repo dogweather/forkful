@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## What & Why? - Mitä & Miksi?
-Lähettämään HTTP-pyynnön tarkoittaa, että pyydetään tietoja verkossa olevasta palvelimesta tai lähetetään dataa sille. Ohjelmoijat tekevät tämän, koska se on tapa hakea, lähettää ja vaihtaa tietoa eri järjestelmien välillä.
-
 ## How to: - Kuinka:
 Haskellissa HTTP-pyyntöjen lähettämiseen käytetään kirjastoja, kuten `http-conduit`. Esimerkiksi näin:
 

@@ -11,9 +11,6 @@ title: Datum in einen String umwandeln
 weight: 28
 ---
 
-## What & Why? (Was & Warum?)
-Das Umwandeln eines Datums in einen String bedeutet, ein Datum in eine Textform zu bringen, die Menschen lesen können. Programmierer machen das, um Daten benutzerfreundlich anzuzeigen oder zu speichern.
-
 ## How to: (Wie geht das:)
 Fish hat eingebaute Funktionen, um mit Datum und Zeit zu arbeiten. Hier ein paar Beispiele, wie man ein Datum in Fish in einen String umwandelt.
 

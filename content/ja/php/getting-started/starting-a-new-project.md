@@ -15,12 +15,7 @@ title: "\u65B0\u3057\u3044\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u59CB\u3081
 weight: 1
 ---
 
-## What & Why? (何となぜ？)
-
-新しいプロジェクトの始め方は、PHPファイル作成から。新しいアイデア実現やスキル向上を目的として始めるものだ。
-
 ## How to: (方法)
-
 ```php
 <?php
 // 新しいプロジェクトのスタートポイント
@@ -43,11 +38,9 @@ echo greet("世界");
 ```
 
 ## Deep Dive (深掘り)
-
 PHPの歴史は1995年にさかのぼる。多くのバージョンがリリースされ、現在のバージョンでは型宣言やアロー関数などモダンな機能が使える。他言語ではNode.jsのJavaScriptやPythonも人気。PHPプロジェクトはcomposerを使って依存管理しつつ、フレームワーク（Laravelなど）を利用するのが一般的。
 
 ## See Also (関連情報)
-
 - PHP公式サイト: [php.net](https://www.php.net/)
 - PHPのフレームワーク Laravel: [laravel.com](https://laravel.com/)
 - PHPの依存関係管理 Composer: [getcomposer.org](https://getcomposer.org/)

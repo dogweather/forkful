@@ -11,9 +11,6 @@ title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---
 
-## Hva & Hvorfor?
-Slettes matchende tegn er å fjerne bestemte sekvenser av tegn fra en streng, basert på et mønster. Programmerere gjør dette for å rense data, forenkle behandling eller fjerne unødvendig informasjon.
-
 ## Hvordan:
 ```java
 import java.util.regex.Pattern;

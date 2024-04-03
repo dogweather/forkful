@@ -10,9 +10,6 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## Hva & Hvorfor?
-Å lese en tekstfil betyr å hente og se innholdet som er lagret i filen. Programmerere gjør dette for å behandle data, konfigurere systemer eller skript, eller laste informasjon som kreves av programmer.
-
 ## Slik gjør du:
 Her er noen enkle kommandoer for å lese tekstfiler i Bash:
 

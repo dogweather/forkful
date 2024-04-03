@@ -13,12 +13,7 @@ title: Een datum omzetten naar een string
 weight: 28
 ---
 
-## Wat & Waarom?
-
-Het omzetten van een datum naar een string in Visual Basic for Applications (VBA) is een proces dat wordt gebruikt om het datatypen van een datum naar een stringformaat te veranderen. Programmeurs voeren deze conversie vaak uit om datums op een gebruiksvriendelijke manier te manipuleren of weer te geven, om aan te sluiten bij gelokaliseerde datumformaten, of om gegevens voor te bereiden voor opslag in databases of bestanden die een tekstuele representatie vereisen.
-
 ## Hoe:
-
 In VBA is de `Format` functie je belangrijkste oplossing voor het converteren van datums naar strings. Het stelt je in staat om het datumformaat precies zoals nodig te specificeren. Hieronder volgen voorbeelden die de veelzijdigheid ervan demonstreren:
 
 **Voorbeeld 1: Basisomzetting van Datum naar String**
@@ -64,7 +59,6 @@ Debug.Print dateString
 ```
 
 ## Dieper Ingaan
-
 De praktijk van het omzetten van datums naar strings in VBA wordt ondersteund door de bredere behoefte aan gegevensformatting en typecasting in vele programmeertalen. Historisch gezien kwam VBA naar voren als een hulpmiddel voor het automatiseren van taken in Microsoft Office-toepassingen, vaak met de noodzaak voor dynamische gegevensmanipulatie en -presentatie - vandaar de robuustheid van zijn `Format` functie.
 
 Hoewel VBA een directe en eenvoudige manier biedt om datums te converteren via de `Format` functie, kunnen andere programmeeromgevingen meervoudige methoden bieden met variërende niveaus van controle en complexiteit. Talen zoals Python en JavaScript maken bijvoorbeeld gebruik van standaardbibliotheken en methoden zoals `strftime` en `toLocaleDateString()`, respectievelijk, die vergelijkbare functionaliteit bieden, maar met hun eigen nuances en leercurves.

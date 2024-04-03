@@ -10,9 +10,6 @@ title: Convertendo uma data em uma string
 weight: 28
 ---
 
-## O Que & Porquê?
-Converter datas em strings permite que você exiba ou armazene datas de forma legível. Programadores fazem isso para facilitar a leitura e o processamento de datas no formato que preferirem.
-
 ## Como Fazer:
 ```arduino
 #include <Wire.h>

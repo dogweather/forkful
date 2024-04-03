@@ -14,16 +14,10 @@ title: Trabajando con CSV
 weight: 37
 ---
 
-## ¿Qué y Por Qué?
-
-Trabajar con archivos CSV (Valores Separados por Comas) implica leer y escribir datos en estos archivos, una necesidad común para tareas que requieren la importación/exportación de datos o soluciones de almacenamiento simples. Los programadores aprovechan esta funcionalidad para el intercambio de datos entre sistemas, la edición rápida de datos o para situaciones en las que un formato de datos ligero y fácil de manipular es ventajoso.
-
 ## Cómo hacerlo:
-
 Elixir, con su poderoso emparejamiento de patrones y soporte para la canalización, puede manejar archivos CSV de manera eficiente, incluso sin bibliotecas de terceros. Sin embargo, para necesidades más avanzadas, la biblioteca `nimble_csv` es una opción rápida y sencilla.
 
 ### Leyendo un Archivo CSV Sin Bibliotecas Externas
-
 Puedes leer y analizar un archivo CSV utilizando las funciones incorporadas de Elixir:
 
 ```elixir
@@ -42,7 +36,6 @@ LectorCSV.leer_archivo("datos.csv")
 ```
 
 ### Escribiendo en un Archivo CSV
-
 De manera similar, para escribir datos en un archivo CSV:
 
 ```elixir
@@ -63,7 +56,6 @@ EscritorCSV.escribir_en_archivo("salida.csv", datos)
 ```
 
 ### Usando `nimble_csv`
-
 Para un manejo más complejo de CSV, `nimble_csv` proporciona una manera poderosa y flexible de trabajar con datos CSV. Primero, añade `nimble_csv` a tus dependencias en `mix.exs` y ejecuta `mix deps.get`:
 
 ```elixir

@@ -11,9 +11,6 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-## Co i Dlaczego?
-Calculating a date in the future or past to znalezienie konkretnej daty przed lub po wyznaczonej liczbie dni. Programiści robią to, aby obsługiwać rezerwacje, terminy płatności, przypomnienia i inne funkcje związane z czasem.
-
 ## Jak to zrobić:
 ```Lua
 os = require('os')

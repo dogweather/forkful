@@ -13,9 +13,6 @@ title: "HTML:n j\xE4sennys"
 weight: 43
 ---
 
-## Mitä & Miksi?
-HTML:n jäsentäminen tarkoittaa HTML-sisällön hajottamista joksikin, jonka ohjelma voi ymmärtää ja käsitellä. Ohjelmoijat tekevät tämän, jotta voivat poimia tietoja, muokata sisältöä tai integroida verkkoskrapausta sovelluksiinsa.
-
 ## Kuinka:
 C++ ei tule sisäänrakennettujen HTML-jäsentämismahdollisuuksien kanssa. Usein käytät kirjastoa, kuten Google:n Gumbo-parser tai vastaavaa. Tässä on nopea esimerkki käyttäen Gumbo-parseria:
 

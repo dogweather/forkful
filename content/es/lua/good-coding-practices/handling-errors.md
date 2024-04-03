@@ -10,9 +10,6 @@ title: Manejo de errores
 weight: 16
 ---
 
-## ¿Qué y Por Qué?
-Manejar errores en la programación se trata de esperar lo inesperado. Es el arte de planificar para cuando las cosas no salen como se espera y así poder mantener tu programa funcionando sin problemas.
-
 ## Cómo hacerlo:
 Lua usa dos funciones principales para el manejo de errores: `pcall` y `xpcall`. Así es como las utilizas:
 

@@ -22,9 +22,6 @@ title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 weight: 41
 ---
 
-## 什么和为什么？
-YAML，即“YAML Ain't Markup Language（YAML不是标记语言）”，是一种供程序员用于配置文件、数据转储和语言间数据传输的可读性数据序列化标准。由于它的可读性和易用性，YAML成为配置应用程序和服务的常用选择。
-
 ## 如何操作：
 在Java中，由于Java标准版不包括对YAML的内置支持，您可以使用第三方库来操作YAML文件。一个流行的库是SnakeYAML，它允许轻松解析和生成YAML数据。
 

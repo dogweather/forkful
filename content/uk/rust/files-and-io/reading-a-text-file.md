@@ -11,9 +11,6 @@ title: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0442\u0435\u043A\u0441\u044
 weight: 22
 ---
 
-## What & Why? (Що і Чому?)
-Reading a text file means pulling text data from a file on your system - it's basic I/O. Programmers need this to access and manipulate data, like configs or logs.
-
 ## How to: (Як це зробити:)
 ```Rust
 use std::fs::File;

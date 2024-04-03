@@ -14,9 +14,6 @@ title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---
 
-## Quoi & Pourquoi ?
-Analyser une date à partir d'une chaîne de caractères consiste à reconnaître et à convertir des dates écrites sous forme de texte en un type de données date que PowerShell peut comprendre et traiter. Les programmeurs font cela pour manipuler, formater, comparer ou calculer des dates, des tâches courantes dans les scripts traitant des fichiers journaux, des entrées utilisateur ou du traitement de données.
-
 ## Comment faire :
 PowerShell rend l'analyse des dates à partir de chaînes de caractères simple avec son applet de commande `Get-Date` et l'accélérateur de type `[datetime]`, qui fonctionnent bien pour les formats de date standard. Pour les chaînes de dates plus complexes ou non standard, la méthode `[datetime]::ParseExact` peut être utilisée pour spécifier le format exact.
 

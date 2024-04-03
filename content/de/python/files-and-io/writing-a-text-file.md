@@ -13,10 +13,9 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-Das Schreiben in eine Textdatei in Python ist eine grundlegende Aufgabe, die das Erstellen oder Öffnen einer Datei und dann das Anhängen oder Überschreiben von Text umfasst. Diese Funktionalität ist entscheidend für die Datenaufzeichnung, Konfigurationsverwaltung und die Speicherung von Ausgaben, die durch Programme generiert werden, und macht sie zu einem grundlegenden, aber wesentlichen Werkzeug im Arsenal eines Programmierers.
-
 ## Wie geht das:
+
+
 ### Verwendung der integrierten `open()` Funktion
 Die integrierte `open()` Funktion von Python ist die gebräuchlichste Methode, um in Dateien zu schreiben. Die Funktion ermöglicht die Angabe des Modus, in dem die Datei geöffnet wird - 'w' für Schreiben (Überschreiben), 'a' für Anhängen und 'w+' für Schreiben+Lesen.
 
@@ -38,6 +37,7 @@ with open('example.txt', 'r') as file:
 Hallo, Welt!
 Mehr Text anhängen.
 ```
+
 ### Verwendung von `pathlib.Path`
 Für einen objektorientierteren Ansatz bietet die `Path`-Klasse aus dem `pathlib`-Modul eine Methode zum Schreiben in Dateien. Dies ist eine beliebte Methode für neuere Python-Codebasen.
 

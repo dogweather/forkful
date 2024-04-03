@@ -13,9 +13,6 @@ title: Een tekstbestand schrijven
 weight: 24
 ---
 
-## Wat & Waarom?
-Een tekstbestand schrijven houdt in dat gegevens worden opgeslagen als leesbare tekst, met behulp van een karaktercodering zoals UTF-8. Programmeurs doen dit voor logboekregistratie, gegevensbehoud of configuratie.
-
 ## Hoe:
 Tekst naar een bestand schrijven in Swift is eenvoudig met de `String` klasse en `FileManager`. Hier is een snel voorbeeld:
 

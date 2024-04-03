@@ -15,12 +15,7 @@ title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---
 
-## Gì và Tại sao?
-
-Việc chuyển một chuỗi thành chữ thường có nghĩa là biến mọi chữ cái trong chuỗi thành chữ cái nhỏ. Các lập trình viên làm điều này để chuẩn hóa văn bản, để so sánh, và đôi khi tuân theo các quy tắc phân biệt chữ hoa chữ thường trong lập trình hoặc lưu trữ dữ liệu.
-
 ## Cách thực hiện:
-
 PowerShell khá tiện lợi với chuỗi. Sử dụng phương thức `.ToLower()`, như sau:
 
 ```PowerShell
@@ -50,7 +45,6 @@ hello, world!
 ```
 
 ## Sâu hơn nữa
-
 Ngày xưa, không phân biệt chữ hoa chữ thường khá phổ biến trong ngôn ngữ lập trình. Trong PowerShell, giống như các tiền bối .NET của nó, chuỗi là các đối tượng với các phương thức tích hợp sẵn để thao tác. Khi chúng ta sử dụng `.ToLower()`, chúng ta đang gọi một phương thức xử lý quá trình chuyển đổi cho chúng ta.
 
 Có cách thay thế để hoàn thành công việc? Chắc chắn rồi. Bạn có thể sử dụng:
@@ -62,7 +56,6 @@ Có cách thay thế để hoàn thành công việc? Chắc chắn rồi. Bạn
 Tại sao sử dụng văn hóa không biến đổi với `ToLowerInvariant()`? Điều đó cần thiết để đạt được kết quả nhất quán trên các địa phương khác nhau, nơi mà sự hiểu biết về cái gì là "chữ thường" có thể khác biệt.
 
 ## Xem thêm
-
 Để khám phá chi tiết hơn trong việc thao tác chuỗi, truy cập những liên kết sau:
 
 - [Lớp Chuỗi .NET](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-6.0)

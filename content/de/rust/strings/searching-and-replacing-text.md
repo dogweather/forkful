@@ -10,9 +10,6 @@ title: Suchen und Ersetzen von Text
 weight: 10
 ---
 
-## Was & Warum?
-Suchen und Ersetzen von Text ermöglicht es, spezifische Zeichenkombinationen in einem Datenstrom zu finden und durch neue Inhalte zu ersetzen. Es ist ein grundlegendes Werkzeug für Programmierer, um Daten zu manipulieren, Fehler zu korrigieren oder Batch-Operationen durchzuführen.
-
 ## How to:
 Die Standardbibliothek von Rust bietet mächtige Methoden zum Textersatz. Hier ein einfaches Beispiel:
 

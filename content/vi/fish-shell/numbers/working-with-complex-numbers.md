@@ -16,9 +16,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Cái gì & Tại sao?
-Số phức mở rộng ý tưởng về đường số một chiều thành một mặt phẳng phức tạp hai chiều. Lập trình viên sử dụng chúng trong các lĩnh vực như kỹ thuật, vật lý và đồ họa cho các tính toán yêu cầu hai thành phần, như tín hiệu hoặc xoay vòng.
-
 ## Làm thế nào:
 Trong Fish, chúng ta xử lý số phức bằng cách sử dụng `math` với phần thực và phần ảo. Dưới đây là một khởi đầu:
 

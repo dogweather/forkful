@@ -11,12 +11,7 @@ title: Refaktoryzacja
 weight: 19
 ---
 
-## Co i dlaczego?
-
-Refaktoryzacja to proces restrukturyzacji istniejącego kodu komputerowego bez zmiany jego zewnętrznego zachowania. Programiści robią to, aby uporządkować kod, zwiększyć czytelność, zmniejszyć złożoność i poprawić możliwość utrzymania kodu.
-
 ## Jak to zrobić:
-
 Prześledźmy refaktoryzację prostej metody C#, która oblicza i wyświetla sumę tablicy liczb:
 
 Przed refaktoryzacją:
@@ -66,7 +61,6 @@ calculator.DisplaySum();
 Dzięki refaktoryzacji oddzieliliśmy obowiązki, uczyniliśmy klasę `Calculator` bardziej elastyczną, umożliwiając jej przyjmowanie dowolnej tablicy liczb oraz wykorzystaliśmy LINQ do bardziej zwięzłego wykonania obliczeń sumy.
 
 ## Wnikliwe spojrzenie
-
 Refaktoryzacja ma swoje korzenie w społeczności programistów Smalltalk i została spopularyzowana w latach 90. przez książkę Martina Fowlera "Refaktoryzacja: ulepszanie struktury istniejącego kodu". Na przestrzeni lat stała się fundamentalną częścią metodyk zwinnych i dobrych praktyk kodowania.
 
 Istnieje wiele podejść do refaktoryzacji, takich jak Red-Green-Refactor w rozwoju sterowanym testami (TDD). Zapewnia to, że refaktoryzacja nie wprowadza błędów, rozpoczynając od nieudanego testu, sprawiając, że przejdzie, a następnie porządkując kod.
@@ -74,7 +68,6 @@ Istnieje wiele podejść do refaktoryzacji, takich jak Red-Green-Refactor w rozw
 Podczas wdrażania refaktoryzacji niezwykle ważne jest posiadanie wszechstronnego zestawu testów, aby upewnić się, że żadna funkcjonalność nie zostanie zaburzona w trakcie procesu. Narzędzia do automatycznej refaktoryzacji, takie jak ReSharper dla C#, mogą również pomóc w tym procesie, oferując bezpieczne sposoby na zmianę struktur kodu. Niemniej jednak, narzędzia powinny być uzupełnieniem głębokiego zrozumienia bazy kodu i zasad kodowania.
 
 ## Zobacz również
-
 - Klasyczna praca Martina Fowlera o Refaktoryzacji: [Refaktoryzacja: ulepszanie struktury istniejącego kodu](https://martinfowler.com/books/refactoring.html)
 - Przewodnik Microsoftu dotyczący refaktoryzacji w Visual Studio: [Refaktoryzacja (C#)](https://docs.microsoft.com/pl-pl/visualstudio/ide/refactoring-in-visual-studio?view=vs-2022)
 - Szczegółowe spojrzenie na wzorce refaktoryzacji z przykładami: [SourceMaking Refaktoryzacja](https://sourcemaking.com/refactoring)

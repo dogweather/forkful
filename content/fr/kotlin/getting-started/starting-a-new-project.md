@@ -11,9 +11,6 @@ title: Lancement d'un nouveau projet
 weight: 1
 ---
 
-## Quoi et pourquoi ?
-Démarrer un nouveau projet, c'est mettre la première pierre à votre édifice numérique. Les programmeurs le font pour concrétiser une idée, apprendre une technologie ou simplement pour le plaisir de créer quelque chose de neuf.
-
 ## Comment faire :
 Pour lancer un nouveau projet Kotlin, suivez ces étapes :
 

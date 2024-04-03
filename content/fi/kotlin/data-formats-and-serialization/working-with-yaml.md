@@ -14,9 +14,6 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä ja miksi?
-YAML, joka tarkoittaa "YAML Ain't Markup Language", on erittäin luettavissa oleva datan serialisointimuoto, jota käytetään usein asetustiedostoissa, datan tallennuksessa ja prosessien välisessä viestinnässä. Ohjelmoijat työskentelevät usein YAML:n kanssa hallitakseen asetuksia ja määrityksiä rakenteellisella mutta yksinkertaisella tavalla, hyötyen sen selkeydestä ja yksinkertaisuudesta verrattuna JSON:iin tai XML:ään, kun luettavuus on tärkeää.
-
 ## Kuinka:
 Kotlin ei tue sisäänrakennettuna YAML:n jäsennystä ja serialisointia, mutta voit hyödyntää suosittuja kolmannen osapuolen kirjastoja, kuten `snakeyaml` (yleiseen YAML-jäsennykseen) ja `kotlinx.serialization` (YAML-muoto laajennuksena) työskennelläksesi YAML-tiedostojen kanssa.
 
@@ -54,6 +51,7 @@ database:
 ```
 {database={host=localhost, port=5432}}
 ```
+
 ### Käyttämällä `kotlinx.serialization` YAML:n kanssa
 Varmista ensin, että sinulla on `kotlinx-serialization`-kirjasto sopivalla YAML-tukikirjastolla (jos saatavilla, koska `kotlinx.serialization` suuntautuu ensisijaisesti JSON:iin ja muihin suoraan tuettuihin formaatteihin).
 

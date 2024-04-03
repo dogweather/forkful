@@ -11,9 +11,6 @@ title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---
 
-## Vad & Varför?
-Att hitta längden på en sträng innebär att räkna antalet tecken den innehåller. Programmerare gör detta för att validera input, skapa loopar, eller hantera textdata effektivt.
-
 ## Hur gör man:
 Kotlin gör det enkelt med `length`-egenskapen. Här är ett exempel:
 

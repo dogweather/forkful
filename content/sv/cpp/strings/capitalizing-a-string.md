@@ -15,14 +15,10 @@ title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---
 
-## Vad och varför?
-Att göra en strängs första bokstav i varje ord versal handlar om att konvertera den initiala karaktären av varje ord i strängen till versal om den är i gemen, samtidigt som de återstående karaktärerna förblir oförändrade. Programmerare utför ofta denna uppgift för att formatera utdata, användarinmatningar eller databehandling för att säkerställa konsekvens i hur text presenteras eller bearbetas, särskilt i användargränssnitt eller uppgifter för datanormalisering.
-
 ## Hur man gör:
 I C++ kan du göra en strängs första bokstav i varje ord versal med hjälp av standardbiblioteket utan att behöva använda dig av tredjepartsbibliotek. För mer komplexa eller specifika beteenden för versalisering kan dock bibliotek som Boost vara mycket användbara. Nedan visas exempel som illustrerar båda tillvägagångssätten.
 
 ### Använda C++ Standardbiblioteket:
-
 ```cpp
 #include <iostream>
 #include <cctype> // för std::tolower och std::toupper
@@ -53,7 +49,6 @@ int main() {
 ```
 
 ### Använda Boost-biblioteket:
-
 För mer avancerad strängmanipulering, inklusive lokal medveten versalisering, kanske du vill använda Boost String Algo-biblioteket.
 
 Se till att du först har Boost-biblioteket installerat och konfigurerat i ditt projekt. Sedan kan du inkludera de nödvändiga rubrikfilerna och använda dess funktioner som visas nedan.

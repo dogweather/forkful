@@ -11,12 +11,7 @@ title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---
 
-## ¿Qué y por qué?
-
-Los números complejos expanden la línea de números reales a través de la adición de una unidad imaginaria, `i`, donde `i^2 = -1`. Son cruciales en campos como la ingeniería, física y matemáticas avanzadas, donde modelan fenómenos que los números reales no pueden manejar, como las corrientes eléctricas y el procesamiento de señales.
-
 ## Cómo hacerlo:
-
 Java no tiene soporte incorporado para números complejos, pero podemos crear nuestra propia clase o usar una biblioteca. Aquí hay un ejemplo rápido de cómo crear una sencilla clase `ComplexNumber` y usarla:
 
 ```java
@@ -56,7 +51,6 @@ Suma: 3.0 + 7.0i
 ```
 
 ## Inmersión profunda
-
 Antes de los lenguajes de alto nivel como Java, los programadores trabajaban directamente con bibliotecas matemáticas en lenguajes como Fortran o C para gestionar operaciones complejas. El concepto se remonta al siglo XVI, acreditado a matemáticos como Gerolamo Cardano y Rafael Bombelli.
 
 En Java, `java.lang.Math` es un lugar predilecto para lo esencial pero omite los números complejos, probablemente porque no todos los programadores los usan. ¿Alternativas? Usar bibliotecas. Apache Commons Math proporciona una clase `Complex` cargada con métodos para su manipulación. Aquí está por qué crear tu propia clase es interesante: Ligera, adaptada a tus necesidades exactas, y sin la sobrecarga de una biblioteca.
@@ -64,7 +58,6 @@ En Java, `java.lang.Math` es un lugar predilecto para lo esencial pero omite los
 Un detalle importante: ¡cuidado con la precisión de punto flotante! Las computadoras no pueden representar algunos números exactamente, lo que lleva a errores de redondeo. ¡Al realizar operaciones complejas repetitivas, estos errores pueden acumularse!
 
 ## Ver también
-
 Para inmersiones más profundas y operaciones más complejas, consulta:
 
 - [Apache Commons Math](https://commons.apache.org/proper/commons-math/)

@@ -9,12 +9,7 @@ title: Concatenating strings
 weight: 3
 ---
 
-## What & Why?
-
-Concatenation is the process of sticking strings together end-to-end. We do it because often we need to combine words or symbols to create phrases, messages, or compute dynamic values into readable text.
-
 ## How to:
-
 Concatenating strings in C# can be done in several ways:
 
 Using `+` operator:
@@ -49,7 +44,6 @@ Console.WriteLine(concatenated); // Output: Hello, World!
 ```
 
 ## Deep Dive
-
 String concatenation isn't new; it's been around since the early days of programming. However, the way we do it in C# has evolved. Originally, `+` was widely used, but it's not always efficient, especially within loops, because strings in .NET are immutable. Each `+` operation creates a new string, which can lead to performance issues.
 
 `String.Concat()` is a direct method call that's also not loop-friendly but fine for a known, small number of strings.
@@ -61,6 +55,5 @@ String interpolation, introduced in C# 6.0, allows for more readable and maintai
 Each method has its place: quick concatenations (`+`), combining a few strings (`String.Concat()`), heavy-duty string building (`StringBuilder`), and clean, formatted strings (string interpolation).
 
 ## See Also
-
 - Microsoft Docs on String concatenation: [String Concatenation](https://docs.microsoft.com/en-us/dotnet/csharp/how-to/concatenate-multiple-strings)
 - Microsoft Docs on `StringBuilder`: [StringBuilder Class](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder)

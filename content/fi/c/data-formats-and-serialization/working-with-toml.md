@@ -13,12 +13,7 @@ title: "TOML:n kanssa ty\xF6skentely"
 weight: 39
 ---
 
-## Mikä & Miksi?
-
-TOML (Tom's Obvious, Minimal Language) on konfiguraatiotiedostomuoto, joka on helppolukuinen selkeiden semantiikkojensa ansiosta. Ohjelmoijat käyttävät sitä sovellusten konfiguraatiotiedostoissa, koska sen yksinkertaisuus ja ihmislukuisuus tekevät siitä erinomaisen valinnan muotoihin kuten XML tai JSON verrattuna tietyissä yhteyksissä.
-
 ## Miten:
-
 TOML-tiedostojen käsittely C-kielessä vaatii kirjaston, joka pystyy jäsentämään TOML-tiedostoja, koska C:n standardikirjasto ei sisällä tätä toiminnallisuutta. Suosittu valinta on `tomlc99`, kevyt TOML-jäsentäjä C99:lle. Tässä on nopea opas yksinkertaisen TOML-konfiguraatiotiedoston lukemiseen:
 
 Ensiksi, varmista, että sinulla on `tomlc99` asennettuna ja oikein linkitettynä projektissasi.
@@ -82,7 +77,6 @@ Portti 2: 8002
 ```
 
 ## Syväsukellus
-
 TOML:n loi Tom Preston-Werner, GitHubin toinen perustaja, vastauksena hänen havaitsemiinsa rajoituksiin muissa konfiguraatiotiedostomuodoissa. Sen tavoite on olla suoraviivainen ja yksiselitteinen, sekä ihmisten että tietokoneiden luettavissa ja kirjoitettavissa ilman monimutkaisia jäsentämissääntöjä. C-ekosysteemissä TOML ei ole ensisijainen kansalainen kuten se saattaisi olla korkeamman tason kielissä, kuten Rust `serde_toml` tai Python `toml` kanssa, joilla on kirjastoja natiivituen kanssa. Sen sijaan, C-kehittäjien täytyy turvautua ulkoisiin kirjastoihin kuten `tomlc99`, mutta tämä on tyypillistä ottaen huomioon C:n painotuksen minimalismiin ja suorituskykyyn.
 
 Vaikka TOML:ia ylistetään sen selkeydestä, konfiguraatiotiedostomuodon valitsemisessa on tärkeää harkita projektin tarpeita. Skenaarioissa, jotka vaativat monimutkaisempia rakenteita tai vuorovaikutusta web-API:en kanssa, JSON tai jopa YAML saattavat tarjota paremman sovituksen huolimatta niiden lisääntyvästä monimutkaisuudesta. TOML loistaa konfiguraatioissa, joissa luettavuus ja yksinkertaisuus ovat ensisijaisia, ei välttämättä siellä, missä tarvitaan kehittyneimpiä tietorakenteita.

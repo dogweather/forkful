@@ -14,12 +14,7 @@ title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---
 
-## Co i dlaczego?
-
-Analiza daty ze stringa w Bashu polega na ekstrakcji i konwersji informacji daty z danych tekstowych na format, który Bash może manipulować lub używać do dalszych procesów. Jest to często wymagane w skryptach do takich zadań, jak analiza plików logów, organizacja plików na podstawie znaczników daty czy automatyczne raportowanie, co czyni to istotną umiejętnością dla programistów do skutecznego zarządzania i wykorzystywania danych czasowych.
-
 ## Jak to zrobić:
-
 Sam Bash jest dość ograniczony w bezpośrednich możliwościach analizy dat, często polegając na zewnętrznych narzędziach takich jak `date` i `awk` do bardziej zaawansowanej manipulacji. Oto jak można przeanalizować określony format, a następnie użyć go z poleceniem `date` do konwersji lub wykonania operacji.
 
 **Przykład 1:** Wyodrębnij string daty i przekształć go na inny format.
@@ -66,7 +61,6 @@ Sobota, Kwiecień 01, 2023
 Ten przykład używa `awk` do podzielenia linii logu i wyodrębnienia części daty (`$1` reprezentuje pierwsze pole rozdzielone spacją), a następnie `date` jest używany do jej ponownego sformatowania.
 
 ### Użycie narzędzi stron trzecich
-
 Do bardziej złożonej analizy lub przy radzeniu sobie z szeroką gamą formatów dat, bardzo przydatne mogą być narzędzia stron trzecich, takie jak `dateutils`.
 
 **Przykład z `dateutils`:**

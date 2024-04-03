@@ -11,9 +11,6 @@ title: Refactoring
 weight: 19
 ---
 
-## Was & Warum?
-Refactoring ist der Prozess der Umstrukturierung bestehenden Computer-Codes, ohne sein externes Verhalten zu ändern, mit dem Ziel, nichtfunktionale Attribute der Software zu verbessern. Programmierer führen ein Refactoring des Codes durch, um ihn sauberer, effizienter und leichter verständlich zu machen, was die Wartung erleichtert und zukünftige Erweiterungen vereinfacht.
-
 ## Wie:
 PowerShell bietet kein eigenes, dediziertes Refactoring-Tool, aber Sie können trotzdem Ihren Code bereinigen, um Lesbarkeit und Leistung zu verbessern. Betrachten Sie eine Funktion, die zu viel macht, und wie wir sie für mehr Klarheit refactorn könnten:
 

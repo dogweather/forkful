@@ -11,12 +11,7 @@ title: "Redigera filer p\xE5 plats med kommandoradsenradare"
 weight: 32
 ---
 
-## Vad & Varför?
-
-Att redigera filer direkt med CLI-engreppsrader handlar om att göra ändringar direkt i filer från kommandoraden, utan att öppna dem i en textredigerare. Programmerare gör detta för att spara tid och automatisera repetitiva redigeringsuppgifter, vilket gör deras arbetsflöde smidigare och mer effektivt.
-
 ## Hur man gör:
-
 Fish Shell, känt för sina användarvänliga funktioner och kraftfulla skriptmöjligheter, erbjuder flera sätt att redigera filer direkt. Dock, till skillnad från vissa andra skal, har Fish inte en inbyggd mekanism för direkta redigeringar (`sed -i` i Bash, till exempel). Men frukta inte, du kan fortfarande uppnå detta med lite kreativitet och hjälp från externa verktyg som `sed` och `awk`.
 
 ### Använda `sed` för enkla ersättningar
@@ -41,7 +36,6 @@ awk '{print $1 * 2}' file.txt > temp && mv temp file.txt
 Kom ihåg, när du använder dessa verktyg från Fish, är det avgörande att fånga upp fel och förstå deras meddelanden. Använd Fishs robusta felhantering för att göra dina skript mer tillförlitliga.
 
 ## Fördjupning
-
 Historiskt sett har direkt redigering av filer varit en grundpelare i Unix- och Linux-programmering, som erbjuder ett effektivt sätt att utföra snabba redigeringar utan att manuellt öppna filer. Verktyg som `sed` och `awk` är ärevördiga verktyg som har funnits sedan Unixs tidiga dagar, och har blivit oumbärliga för textbearbetningsuppgifter.
 
 Fish Shell, som är mer modernt och skryter med förbättringar i användbarhet och skriptning, saknar inbyggd direkt redigering främst på grund av dess designfilosofi som är inriktad på interaktivitet och användarvänlighet. Avsaknaden av ett inbyggt direktredigeringskommando i Fish understryker vikten av externa verktyg i Unix-liknande ekosystem.

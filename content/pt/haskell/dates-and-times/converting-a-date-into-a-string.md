@@ -12,9 +12,6 @@ title: Convertendo uma data em uma string
 weight: 28
 ---
 
-## O Que & Porquê?
-Converter uma data em uma string significa transformar a representação de uma data, normalmente numa estrutura de dados específica, para um formato de texto legível. Fazemos isso para facilitar a exibição de datas para usuários, armazenar em formatos compatíveis com texto, ou para manipulações em sistemas que não reconhecem tipos de data específicos.
-
 ## Como fazer:
 ```haskell
 import Data.Time

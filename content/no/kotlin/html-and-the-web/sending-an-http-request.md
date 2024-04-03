@@ -11,9 +11,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel betyr å be om data eller handling fra en webserver. Programmerere gjør det for å integrere nettjenester og hente data dynamisk.
-
 ## Slik gjør du:
 Kotlin gjør det enkelt med biblioteket `khttp`. Her er et eksempel for GET:
 
@@ -69,7 +66,6 @@ Resultat:
 ```
 
 ## Dypdykk
-
 HTTP-forespørslene begynte i tidlige nett-dager, grunnlagt for webkommunikasjon. Alternativer inkluderer WebSocket for toveiskommunikasjon, men for standard REST-kall er HTTP kongen.
 
 Det er viktig å forstå HTTP-metoder: GET henter data; POST sender ny data; PUT oppdaterer eksisterende data; DELETE fjerner data. Kotlin-biblioteker som `khttp` og `Fuel` forenkler prosessen, men du kan også bruke Java-biblioteker som OkHttp eller Apache HttpClient.
@@ -77,7 +73,6 @@ Det er viktig å forstå HTTP-metoder: GET henter data; POST sender ny data; PUT
 Når du sender forespørsler i en mobil eller desktop-applikasjon, husk på nettverkstillatelser og asynkron behandling.
 
 ## Se også
-
 - `khttp` dokumentasjon: https://khttp.readthedocs.io/en/latest/
 - `Fuel` biblioteket for Kotlin: https://github.com/kittinunf/fuel
 - OkHttp: https://square.github.io/okhttp/

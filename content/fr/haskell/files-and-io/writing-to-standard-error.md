@@ -14,9 +14,6 @@ title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---
 
-## Quoi & Pourquoi ?
-Écrire dans l'erreur standard (stderr) en Haskell permet aux programmes de différencier leur sortie entre les résultats normaux et les messages d'erreur. Cela est crucial pour signaler des problèmes et pour le débogage, sans encombrer la sortie standard (stdout) qui porte souvent les données principales ou le résultat du programme.
-
 ## Comment faire :
 En Haskell, écrire dans stderr est simple avec le module `System.IO` de la bibliothèque de base. Voici un exemple basique pour démontrer :
 

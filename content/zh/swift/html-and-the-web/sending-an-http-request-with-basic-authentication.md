@@ -19,9 +19,6 @@ title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
 weight: 45
 ---
 
-## What & Why? (什么以及为什么?)
-我们经常需要让应用程序通过网络与服务器交互，发送HTTP请求是其中的基本方式。使用基本认证（basic authentication）可以快速简单地验证用户身份，确保数据的安全交换。
-
 ## How to (如何执行)
 以下是使用Swift（最新版本）发送带有基本认证的HTTP请求的简单代码示例。
 

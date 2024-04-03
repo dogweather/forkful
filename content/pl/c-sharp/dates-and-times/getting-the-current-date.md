@@ -13,9 +13,6 @@ title: Pobieranie aktualnej daty
 weight: 29
 ---
 
-## Co i dlaczego?
-Pobieranie bieżącej daty w C# polega na uzyskaniu obecnych informacji o dacie i czasie z systemu. Programiści często muszą uzyskać dostęp do tych informacji w celu logowania, znakowania czasowego operacji lub planowania zadań w aplikacjach, zapewniając, że działania są wykonywane z odpowiednią dokładnością czasu i dane są oznaczone precyzyjnymi znacznikami czasu.
-
 ## Jak to zrobić:
 C# oferuje prosty sposób na pobranie bieżącej daty za pomocą klasy `DateTime`, która jest częścią przestrzeni nazw System w .NET Framework. Poniższy przykład demonstruje, jak pobrać bieżącą datę, i opcjonalnie, czas.
 

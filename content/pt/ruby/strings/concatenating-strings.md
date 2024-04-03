@@ -11,9 +11,6 @@ title: Concatenando strings
 weight: 3
 ---
 
-## What & Why? (O Que & Por Quê?)
-Concatenar strings é o processo de juntar duas ou mais strings para formar uma única. Programadores fazem isso para construir mensagens, gerar saídas formatadas, ou simplesmente para organizar dados de forma legível.
-
 ## How to (Como Fazer):
 ```Ruby
 # Usando o operador de soma (+)

@@ -13,12 +13,7 @@ title: Skrive tester
 weight: 36
 ---
 
-## Hva & Hvorfor?
-
-Å skrive tester i Go innebærer å lage små, håndterbare deler av kode som validerer funksjonaliteten og oppførselen til din applikasjon. Programmerere skriver tester for å sikre at koden deres fungerer som forventet under ulike forhold, for å legge til rette for refaktorering, og for å hjelpe med å forhindre regresjoner.
-
 ## Hvordan:
-
 I Go skrives tester typisk i samme pakke som koden de tester. Filer som inneholder tester er navngitt med suffikset `_test.go`. Tester er funksjoner som tar en peker til testing.T-objektet (fra `testing`-pakken) som et argument, og de signaliserer feil ved å kalle metoder som `t.Fail()`, `t.Errorf()`, osv.
 
 Eksempel på en enkel test for en funksjon `Add` definert i `math.go`:
@@ -80,7 +75,6 @@ func TestAddTableDriven(t *testing.T) {
 ```
 
 ## Dypdykk
-
 Go-testrammeverket, introdusert i Go 1 samtidig som språket selv, ble designet for å integreres sømløst med Go-verktøysettet, noe som reflekterer Go sin vektlegging av enkelhet og effektivitet i programvareutvikling. I motsetning til noen testrammeverk i andre språk som er avhengige av eksterne biblioteker eller komplekse oppsett, gir Go sitt innebygde `testing`-pakke en enkel måte å skrive og kjøre tester på.
 
 Et interessant aspekt ved Go sin tilnærming til testing er prinsippet om konvensjon over konfigurasjon det vedtar, som filnavnmønsteret (`_test.go`) og bruk av standardbibliotekfunksjoner over eksterne avhengigheter. Denne minimalistiske tilnærmingen oppmuntrer utviklere til å skrive tester, da barrieren for å starte er lav.

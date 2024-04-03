@@ -10,9 +10,6 @@ title: Comparer deux dates
 weight: 27
 ---
 
-## What & Why?
-Comparer deux dates, c'est évaluer leur ordre chronologique. On le fait pour trier des évènements, programmer des rappels, ou calculer des durées.
-
 ## How to:
 ```Javascript
 // Créer deux objets Date

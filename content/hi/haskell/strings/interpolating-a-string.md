@@ -16,9 +16,6 @@ title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0907\u0902\u091F\u093
 weight: 8
 ---
 
-## What & Why? (क्या और क्यों?)
-String interpolation मतलब है एक string के अंदर variable की values को insert करना. Programmers इसे use करते हैं क्योंकि इससे dynamic strings बनाना आसान हो जाता है और अपने code को अधिक readable और maintainable बना सकते हैं.
-
 ## How to: (कैसे करें:)
 Haskell में string interpolation करने के लिए हम `printf` या `interpolate` library का use कर सकते हैं. नीचे दो examples हैं:
 

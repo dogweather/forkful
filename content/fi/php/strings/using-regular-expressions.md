@@ -14,16 +14,10 @@ title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---
 
-## Mikä & Miksi?
-
-Säännölliset lausekkeet (regex) PHP:ssä ovat malleja, joita käytetään merkkijonossa hahmojen yhdistelmien etsimiseen, mahdollistaen kehittyneet haku- ja korvaustoiminnot sekä datan validoinnin. Ohjelmoijat hyödyntävät regexiä sen tehon ja joustavuuden vuoksi tekstin jäsentämisessä, lomakkeiden validoinnissa tai verkkodatan kaapimisessa, tehden siitä korvaamattoman työkalun kehittäjän työkalupakissa.
-
 ## Miten:
-
 PHP tukee säännöllisiä lausekkeita PCRE:n (Perl Compatible Regular Expressions) kirjaston kautta, tarjoten rikkaan joukon funktioita. Näin niitä käytetään:
 
 ### Mallin vastaavuuden tarkistaminen:
-
 Jos haluat tarkistaa, esiintyykö malli merkkijonossa, käytä `preg_match()`-funktiota. Tämä funktio palauttaa 1, jos kuvio löytyi merkkijonosta, ja 0, jos ei.
 
 ```php
@@ -36,7 +30,6 @@ if (preg_match("/\bweb\b/i", "PHP on web-skriptauskieli")) {
 ```
 
 ### Kaikkien vastaavuuksien löytäminen:
-
 `preg_match_all()`-funktiota käytetään, kun tarvitset löytää kaikki kuvion esiintymät merkkijonossa.
 
 ```php
@@ -48,7 +41,6 @@ print_r($matches[0]);
 ```
 
 ### Tekstin korvaaminen:
-
 Tekstin korvaamiseen, joka vastaa säännöllistä lauseketta, käytetään `preg_replace()`-funktiota. Se on uskomattoman tehokas datan muotoilussa ja siivoamisessa.
 
 ```php
@@ -60,7 +52,6 @@ echo preg_replace($pattern, $replacement, $originalText);
 ```
 
 ### Merkkijonojen jakaminen:
-
 Voit jakaa merkkijonon taulukoksi käyttäen `preg_split()`-funktiota, määrittelemällä mallin erottimeksi.
 
 ```php

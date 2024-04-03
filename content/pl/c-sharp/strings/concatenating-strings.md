@@ -11,12 +11,7 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## Co i dlaczego?
-
-Konkatenacja łańcuchów to klejenie razem dwóch lub więcej tekstów. Robimy to, by budować komunikaty, tworzyć dynamiczne treści czy po prostu łączyć info.
-
 ## Jak to zrobić:
-
 ```C#
 string firstName = "Jan";
 string lastName = "Kowalski";
@@ -38,11 +33,9 @@ Console.WriteLine(builder.ToString());
 ```
 
 ## Wgłębiamy się
-
 Konkatenację wykorzystujemy od samego początku C#. Alternatywy? `String.Concat()`, `String.Format()` czy interpolacja, wprowadzona w C# 6.0 z użyciem `$""`. Interpolacja jest czytelna i szybka. `StringBuilder` jest idealny przy dużych czy częstych operacjach na łańcuchach, bo nie tworzy nowego stringa za każdym razem.
 
 ## Zobacz również
-
 - Dokumentacja Microsoft o konkatenacji łańcuchów: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/csharp/how-to/concatenate-multiple-strings)
 - Interpolacja łańcuchów z C#: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
 - Klasa StringBuilder: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0)

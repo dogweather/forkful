@@ -10,9 +10,6 @@ title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---
 
-## What & Why? / Mitä & Miksi?
-Kun puhutaan merkkien poistamisesta tietyllä kuvioinnilla, tarkoitetaan prosessia, jossa valikoidut merkit siivotaan pois merkkijonosta. Ohjelmoijat tekevät tätä dataa siistiessään, tarpeettoman tiedon karsimiseksi tai datan muotoa muuttaakseen.
-
 ## How to: / Kuinka:
 Swiftissä merkkien poistaminen kuviota käyttäen onnistuu `String` laajennoksilla ja säännöllisillä lausekkeilla (regexp). Tässä helppo esimerkki:
 

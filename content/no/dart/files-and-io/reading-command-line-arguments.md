@@ -15,12 +15,7 @@ title: Lese kommandolinje-argumenter
 weight: 23
 ---
 
-## Hva & Hvorfor?
-
-Å lese kommandolinjeargumenter i Dart gjør det mulig for programmerere å legge inn data direkte i konsollen når de kjører et Dart-program, noe som forbedrer interaktiviteten og fleksibiliteten for ulike brukstilfeller, inkludert automatiseringsskript, CLI-verktøy eller batch-behandling. Denne funksjonen er avgjørende for å skape tilpasningsdyktige og brukervennlige kommandolinjeapplikasjoner.
-
 ## Hvordan:
-
 Dart tilbyr en enkel tilgang til kommandolinjeargumenter via `List<String> args` i hovedmetoden. Nedenfor er et enkelt eksempel som demonstrerer hvordan man leser og utnytter kommandolinjeargumenter.
 
 ```dart
@@ -48,7 +43,6 @@ Kommandolinjeargumenter:
 ```
 
 ### Bruk av et Populært Tredjepartsbibliotek: `args`
-
 Selv om Darts innebygde kapasiteter for håndtering av kommandolinjeargumenter er robuste for mange applikasjoner, tilbyr `args`-pakken en forfinet måte å definere og analysere kommandolinjeargumenter på for mer komplekse behov.
 
 Først, legg til `args`-pakken i din `pubspec.yaml`:

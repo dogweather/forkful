@@ -10,9 +10,6 @@ title: Working with TOML
 weight: 39
 ---
 
-## What & Why?
-TOML, short for Tom's Obvious, Minimal Language, is a data format similar to JSON or YAML, but easier to read for humans. Programmers use it for config files because it's straightforward and translates well to data structures.
-
 ## How to:
 First, make sure you've got a TOML parser library installed, like `yosymfony/toml`. Let's parse a TOML file:
 
@@ -58,6 +55,7 @@ Array
 
 )
 ```
+
 ## Deep Dive
 TOML came about in 2013, crafted by GitHub co-founder Tom Preston-Werner as a more user-friendly alternative to XML and JSON for config files. While JSON is simple for machines, TOML's structure makes it easy on human eyes, without the complexity of YAML.
 

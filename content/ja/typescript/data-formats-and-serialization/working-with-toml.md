@@ -23,9 +23,6 @@ title: "TOML\u3092\u6271\u3046\u65B9\u6CD5"
 weight: 39
 ---
 
-## 何となぜ？
-TOMLは、Tom's Obvious, Minimal Languageの略で、JSONやYAMLに似たデータシリアライゼーション形式です。プログラマーは、その人間が読みやすく、データ型に直接的にマッピングすることができるため、設定ファイルやデータ交換のための第一選択肢として使用します。
-
 ## 方法：
 まず、TOMLパーサーが必要になります。`@iarna/toml`は人気の選択肢です。npmでインストールします：`npm install @iarna/toml --save`。次に、TOMLファイルを読み込み、JavaScriptオブジェクトに解析する方法です：
 

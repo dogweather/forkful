@@ -13,12 +13,7 @@ title: Werken met JSON
 weight: 38
 ---
 
-## Wat & Waarom?
-
-Werken met JSON in Bash houdt in dat er JSON-geformatteerde gegevens direct vanaf de opdrachtregel worden geparseerd en gegenereerd. Programmeurs doen dit voor configuratiebeheer, API-interactie en gegevensuitwisseling tussen diensten vanwege de alomtegenwoordigheid van JSON over platforms en talen heen.
-
 ## Hoe te:
-
 ```Bash
 # JSON parsen met 'jq':
 echo '{"name": "John", "age": 31, "city": "New York"}' | jq '.name'
@@ -34,11 +29,9 @@ jq '.users[] | select(.id == "123")' users.json
 ```
 
 ## Dieper Duiken
-
 JSON (JavaScript Object Notation) werd in de vroege jaren 2000 geformaliseerd en werd snel een standaard voor gegevensuitwisseling. In een Bash-context kwam `jq` als een robuust hulpmiddel voor JSON-verwerking naar voren, dat een DSL (domeinspecifieke taal) biedt voor het bevragen en manipuleren van JSON-gegevens. Alternatieven zijn onder andere `jshon` en `jo`. Werken met JSON in Bash omvat typisch het gebruik van externe hulpmiddelen zoals deze, omdat Bash geen ingebouwde JSON-parseermogelijkheden heeft.
 
 ## Zie Ook
-
 - `jq` Handleiding: https://stedolan.github.io/jq/manual/
 - Wikipedia-artikel over JSON: https://nl.wikipedia.org/wiki/JSON
 - Bash Scripting Gids: https://www.gnu.org/software/bash/manual/

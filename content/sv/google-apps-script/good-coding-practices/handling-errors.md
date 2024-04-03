@@ -13,12 +13,7 @@ title: Hantera fel
 weight: 16
 ---
 
-## Vad & Varför?
-
-Felhantering i Google Apps Script handlar om att förutse, fånga och svara på undantag eller fel som uppstår under skriptets körning. Programmerare implementerar detta för att skydda skript mot oväntade fel, vilket säkerställer smidigare, användarvänliga applikationer som kan hantera eller logga fel på ett elegant sätt utan plötsliga krascher.
-
 ## Hur man gör:
-
 Google Apps Script, som är baserat på JavaScript, tillåter oss att använda det traditionella `try-catch`-uttrycket för felhantering, tillsammans med `finally` om städning krävs oavsett framgång eller fel.
 
 ```javascript
@@ -56,7 +51,6 @@ Funktionen slutförd.
 Google Apps Script stöder också att kasta anpassade fel med `Error`-objektet och att fånga specifika feltyper vid behov. Dock gör avsaknaden av avancerad felfördelning det nödvändigt att förlita sig på felmeddelanden för specifika detaljer.
 
 ## Fördjupning
-
 Historiskt sett har felhantering i skriptspråk som JavaScript (och därmed Google Apps Script) varit mindre sofistikerad än i vissa kompilerade språk, vilka erbjuder funktioner som detaljerade undantagshierarkier och omfattande felsökningsverktyg. Google Apps Scripts modell är relativt enkel, vilket använder JavaScripts `try-catch-finally`-paradigm. Denna enkelhet är i linje med språkets design för att snabbt utveckla och distribuera applikationer i små till medelstora skala inom Googles ekosystem, men det kan ibland begränsa utvecklare som hanterar komplexa felscenarier.
 
 I mer komplexa applikationer kompletterar programmerare ofta Google Apps Scripts inbyggda felhantering med anpassad loggning och rapportering av fel. Detta kan inkludera att skriva fel till ett Google-kalkylblad för revision eller att använda tredjepartstjänster för loggning genom Google Apps Scripts URL Fetch-tjänster för att skicka felinformation ut ur skriptmiljön.

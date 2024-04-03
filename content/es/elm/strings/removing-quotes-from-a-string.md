@@ -10,9 +10,6 @@ title: Eliminando comillas de una cadena
 weight: 9
 ---
 
-## Qué y Por Qué?
-Eliminar comillas de una cadena significa quitar esos signos de comillas dobles o simples adicionales que en realidad no necesitas en el texto procesado. Los programadores hacen esto para sanear la entrada, preparar datos para almacenar o hacer la salida más legible para los humanos cuando las comillas no son necesarias en el contexto dado.
-
 ## Cómo hacerlo:
 En Elm, puedes usar las funciones de `String` para manipular cadenas, tales como eliminar comillas. Aquí tienes una manera sencilla de hacerlo:
 

@@ -14,12 +14,7 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---
 
-## Mikä & Miksi?
-
-Merkkijonosta päivämäärän jäsennys Haskellissa tarkoittaa tekstiesitysten muuntamista ohjelman käsiteltävissä olevaan rakenteelliseen muotoon. Tämä prosessi on perustavanlaatuinen sovelluksille, jotka käsittelevät kalenteritietoja, mahdollistaen toiminnot kuten kestojen laskennan, aikataulutuksen ja datan validoinnin.
-
 ## Kuinka:
-
 Oletuksena Haskell tarjoaa perustyökalut päivämäärien jäsentämiseen, mutta kirjastojen kuten `time` käyttäminen ydintoiminnallisuuteen ja `date-parse` tai `time-parse` joustavampaan jäsentämiseen voi merkittävästi yksinkertaistaa tehtävää.
 
 Ensimmäiseksi, varmista että sinulla on saatavilla `time`-kirjasto; se sisältyy usein GHC:hon, mutta jos sinun tarvitsee määritellä se riippuvuudeksi, lisää `time` projektiisi cabal-tiedostoon tai käytä `cabal install time` komentoa sen manuaaliseen asentamiseen.

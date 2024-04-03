@@ -10,12 +10,7 @@ title: Koodin refaktorointi
 weight: 19
 ---
 
-## Mikä & Miksi?
-
-Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia rakenneuudistetaan muuttamatta sen ulkoista toimintaa. Ohjelmoijat refaktoroivat parantaakseen ohjelmiston ei-toiminnallisia ominaisuuksia, kuten luettavuutta, vähennettyä monimutkaisuutta, parantunutta ylläpidettävyyttä tai suorituskyvyn parantamista.
-
 ## Kuinka:
-
 Käydään läpi esimerkki Ruby-metodin refaktoroinnista, joka laskee neliöiden summan.
 
 **Ennen refaktorointia:**
@@ -44,7 +39,6 @@ puts sum_of_squares([1, 2, 3])  # Tuloste: 14
 Refaktoroitu versio käyttää Ruby Enumerablesia ilmaistakseen saman logiikan tiiviimmin ja selkeämmin. `map`-metodi muuntaa jokaisen elementin ja `sum` aggregoi niiden arvot, poistaen tarpeen manuaaliselle silmukoiden hallinnalle ja muuttujan sijoituksille.
 
 ## Syvä sukellus
-
 Refaktoroinnilla on rikas historiallinen konteksti, joka juontaa juurensa ohjelmistokehityksen alkuaikoihin. Ensimmäiset maininnat voidaan jäljittää 1990-luvulle, merkittäviä panoksia teki Martin Fowler kirjassaan "Refactoring: Improving the Design of Existing Code", missä hän tarjoaa katalogin kuviot refaktorointiin. Siitä lähtien refaktorointi on muodostunut ketterän kehityksen kulmakiveksi.
 
 Puhuessamme refaktoroinnin vaihtoehdoista, meidän on harkittava erilaista lähestymistapaa kuten "Uudelleenkirjoittaminen", missä korvaat vanhan järjestelmän osittain tai kokonaan tai adaptoit käytänteitä kuten "Koodiarvostelut" ja "Pariohjelmointi" parantaaksesi koodin laatua asteittain. Kuitenkaan nämä eivät ole korvikkeita refaktoroinnille; ne täydentävät prosessia.
@@ -52,7 +46,6 @@ Puhuessamme refaktoroinnin vaihtoehdoista, meidän on harkittava erilaista lähe
 Toteutuksen kannalta Ruby tarjoaa erinomaisen ja ilmaisuvoimaisen syntaksin, joka usein johtaa lyhyempään, luettavampaan koodiin refaktoroinnin jälkeen. Keskeisiä periaatteita ovat DRY (Don't Repeat Yourself), merkityksellisten nimien käyttäminen, metodien pitäminen lyhyinä ja keskittyneinä yhteen tehtävään, ja Rubyn Enumerable-moduulin tehokas käyttö, kuten yllä olevassa esimerkissä nähdään. Automaattiset työkalut, kuten RuboCop, voivat myös auttaa ohjelmoijia tunnistamaan koodin kohdat, jotka hyötyisivät refaktoroinnista.
 
 ## Katso myös
-
 Syventyäksesi Ruby-koodin refaktorointiin, tutustu näihin resursseihin:
 
 - Martin Fowlerin perusteos: [Refactoring: Improving the Design of Existing Code](https://martinfowler.com/books/refactoring.html)

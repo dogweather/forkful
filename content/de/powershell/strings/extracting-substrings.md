@@ -10,9 +10,6 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## Was & Warum?
-Das Extrahieren von Teilzeichenketten ermöglicht es, bestimmte Abschnitte eines Strings zu isolieren und zu verwenden. Programmierer machen das, um Daten zu parsen, Informationen zu filtern oder einfach nur spezifische Datenpunkte aus einem größeren Textblock zu extrahieren.
-
 ## So geht's:
 Hier sind einige Beispiele für das Extrahieren von Teilstrings in PowerShell. Angenommen, wir haben einen String mit dem Wert "PowerShell ist großartig".
 

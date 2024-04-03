@@ -11,9 +11,6 @@ title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---
 
-## What & Why? (Co i Dlaczego?)
-String interpolation w Ruby pozwala wrzucać zmienne lub wyrażenia do środka tekstu. Używamy tego, by łatwo tworzyć dynamiczne stringi.
-
 ## How to: (Jak to zrobić:)
 ```Ruby
 name = "Łukasz"

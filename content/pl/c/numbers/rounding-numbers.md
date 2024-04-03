@@ -14,12 +14,7 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i dlaczego?
-
-Zaokrąglanie liczb to proces dostosowywania cyfr liczby w celu zmniejszenia jej precyzji zgodnie z pewnymi zasadami, albo w kierunku najbliższej liczby całkowitej, albo określonej liczby miejsc dziesiętnych. Programiści robią to z różnych powodów, począwszy od ograniczenia potrzebnej ilości pamięci, poprzez upraszczanie wyników dla użytkownika, aż po zapewnienie dokładności operacji matematycznych, które są wrażliwe na bardzo małe zmiany.
-
 ## Jak to zrobić:
-
 Zaokrąglanie liczb w C można osiągnąć za pomocą różnych funkcji, ale najczęściej stosowane są funkcje `floor()`, `ceil()`, i `round()`. Te funkcje są częścią standardowej biblioteki matematycznej, więc musisz dołączyć `math.h` do swojego programu.
 
 ```c
@@ -58,7 +53,6 @@ Zaokrąglanie do dwóch miejsc po przecinku: 9.53
 ```
 
 ## Pogłębiona analiza
-
 Zaokrąglanie liczb ma głębokie korzenie historyczne w matematyce i obliczeniach, będąc integralną częścią zarówno teoretycznych, jak i stosowanych aspektów. W C, chociaż `floor()`, `ceil()`, i `round()` oferują podstawową funkcjonalność, istota zaokrąglania liczb zmiennoprzecinkowych do liczb całkowitych lub określonych miejsc dziesiętnych jest bardziej złożona z powodu binarnej reprezentacji liczb zmiennoprzecinkowych. Ta reprezentacja może prowadzić do nieoczekiwanych wyników, ze względu na sposób, w jaki obsługiwane są liczby, które nie mogą być dokładnie przedstawione w systemie binarnym (takie jak 0.1).
 
 Te funkcje są częścią biblioteki standardowej C, zdefiniowanej w `<math.h>`. Przy zaokrąglaniu liczb, szczególnie dla obliczeń finansowych lub precyzyjnych obliczeń inżynierskich, należy wziąć pod uwagę implikacje stosowania binarnych liczb zmiennoprzecinkowych. Alternatywy dla wbudowanych funkcji C dla dokładnego lub specyficznego zaokrąglania dziesiętnego mogą obejmować implementację własnych funkcji zaokrąglających lub użycie bibliotek zaprojektowanych do arytmetyki o dowolnej precyzji, takich jak GMP lub MPFR, chociaż wprowadzają one dodatkową złożoność i zależności.

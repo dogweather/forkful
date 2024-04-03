@@ -10,9 +10,6 @@ title: Working with XML
 weight: 40
 ---
 
-## What & Why?
-Working with XML means parsing, transforming, and generating XML documents in Elm. It's done to interact with many web services and legacy systems that use XML as their data format.
-
 ## How to:
 In Elm, you deal with XML using the `elm/xml` package. Here's a quick look at parsing an XML snippet:
 

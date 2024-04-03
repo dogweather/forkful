@@ -12,9 +12,6 @@ title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-Das Senden einer HTTP-Anfrage mit Basisauthentifizierung bedeutet, dass wir unseren Nutzernamen und unser Passwort im Klartext (base64-kodiert) über das Netzwerk senden, um uns gegenüber dem Server zu authentifizieren. Programmierer nutzen dies für eine einfache Sicherheitsüberprüfung, besonders, wenn sie APIs oder andere Webdienste ansprechen, die eine Authentifizierung erfordern.
-
 ## So geht's:
 ```php
 <?php
@@ -49,7 +46,6 @@ Die Basisauthentifizierung ist ein altbewährtes Verfahren aus den Anfangstagen 
 Alternativen wie API-Schlüssel, Token-basierte Authentifizierung oder OAuth bieten je nach Anforderung und Risikostufe mehr Sicherheit und Flexibilität. Die Implementierung der Basisauthentifizierung in PHP kann über cURL oder Stream-Kontexte (wie im Beispiel oben) erfolgen. Beachte, dass `file_get_contents` und Kontext-Streams in manchen Hosting-Umgebungen eingeschränkt sein können.
 
 ## Siehe auch
-
 - PHP Manual über HTTP Authentifizierung: https://www.php.net/manual/de/features.http-auth.php
 - cURL-Dokumentation für fortgeschrittene Authentifizierungsmethoden: https://www.php.net/manual/de/book.curl.php
 - Sicherheitsüberlegungen bei Basisauthentifizierung: https://owasp.org/www-community/controls/Basic_Authentication

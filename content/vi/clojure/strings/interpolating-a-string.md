@@ -14,9 +14,6 @@ title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---
 
-## Điều gì và Tại sao?
-Nội suy chuỗi cho phép chúng ta ném biến vào trong chuỗi mà không mất công sức. Tại sao? Để xây dựng văn bản một cách linh hoạt—tiện lợi hơn nhiều so với cách ghép chuỗi kiểu cũ.
-
 ## Làm thế nào:
 ```Clojure
 ;; Cơ bản với `str` và `format`

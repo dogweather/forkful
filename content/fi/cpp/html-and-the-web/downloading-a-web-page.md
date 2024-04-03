@@ -11,9 +11,6 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## What & Why? (Mitä ja Miksi?)
-Webbisivun lataaminen tarkoittaa sen sisällön hakemista internetistä. Ohjelmoijat lataavat sivuja tietojen keräämiseen, palveluiden integrointiin ja automaatioon.
-
 ## How to: (Kuinka Tehdä: )
 C++:ssa webbisivun lataaminen vaatii HTTP-pyynnön tekemistä. Käytetään `cpr`-kirjastoa, joka on C++:n wrapperi tyypillisille HTTP-pyynnöille.
 

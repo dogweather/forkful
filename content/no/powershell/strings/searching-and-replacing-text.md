@@ -10,9 +10,6 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## What & Why?
-Søk og erstatt lar deg finne tekster og bytte dem ut med noe annet. Programmeringsgjengen bruker det for å raskt oppdatere kode, fikse feil, eller endre data.
-
 ## How to:
 ```PowerShell
 # Enkel søk og erstatt i en tekststreng

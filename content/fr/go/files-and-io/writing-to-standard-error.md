@@ -12,12 +12,7 @@ title: "\xC9criture sur l'erreur standard"
 weight: 25
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire sur l'erreur standard (stderr) en Go implique de diriger les messages d'erreur ou les diagnostics qui ne sont pas destinés au flux de sortie principal. Les programmeurs utilisent cela pour séparer la sortie régulière des informations d'erreur, rendant le débogage et l'analyse des logs plus simples.
-
 ## Comment faire :
-
 En Go, le package `os` fournit la valeur `Stderr`, représentant le fichier d'erreur standard. Vous pouvez l'utiliser avec les fonctions `fmt.Fprint`, `fmt.Fprintf`, ou `fmt.Fprintln` pour écrire sur stderr. Voici un exemple simple :
 
 ```go
@@ -53,7 +48,6 @@ Processus terminé avec 4 erreurs.
 Rappelez-vous, ces messages n'apparaîtront pas dans la sortie régulière (stdout) mais dans le flux d'erreur, qui peut être redirigé séparément dans la plupart des systèmes d'exploitation.
 
 ## Approfondissement
-
 Le concept d'erreur standard est profondément ancré dans la philosophie Unix, qui distingue clairement entre sortie normale et messages d'erreurs pour un traitement et une gestion des données plus efficaces. En Go, cette convention est embrassée à travers le package `os`, qui fournit un accès direct aux descripteurs de fichier stdin, stdout, et stderr.
 
 Alors qu'écrire directement sur `os.Stderr` convient à de nombreuses applications, Go fournit également des packages de journalisation plus sophistiqués comme `log`, qui offrent des fonctionnalités supplémentaires telles que l'horodatage et des configurations de sortie plus flexibles (par exemple, l'écriture dans des fichiers). Utiliser le package `log`, en particulier pour des applications plus importantes ou là où des fonctionnalités de journalisation plus complètes sont nécessaires, peut être une meilleure alternative. Il est également à noter que l'approche de Go en matière de gestion des erreurs, qui encourage le retour des erreurs à partir des fonctions, complète la pratique d'écrire des messages d'erreur sur stderr, permettant un contrôle plus granulaire de la gestion et du rapport des erreurs.

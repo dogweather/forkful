@@ -12,9 +12,6 @@ title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---
 
-## Hva & Hvorfor?
-Å fjerne anførselstegn fra en streng betyr å strippe bort de omliggende enkle (`'`) eller doble (`"`) anførselstegnene som definerer strengliteraler i kode. Programmerere gjør dette av flere grunner, som for eksempel formatering av utdata, sanering av brukerinput, eller forberedelse av strenger for parsing eller lagring der anførselstegnene er unødvendige eller kan forårsake feil.
-
 ## Hvordan:
 Her er din rett-på-sak guide for å kutte bort de irriterende anførselstegnene fra strengene dine i TypeScript.
 

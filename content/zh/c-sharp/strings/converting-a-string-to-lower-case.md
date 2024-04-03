@@ -17,9 +17,6 @@ title: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199"
 weight: 4
 ---
 
-## What & Why? (什么以及为什么?)
-把字符串转换成小写意味着将所有大写字符改为小写格式。程序员这么做以实现数据一致性、比较操作，以及满足大小写不敏感的搜索需求。
-
 ## How to: (如何操作)
 ```C#
 string originalText = "Hello, World!";

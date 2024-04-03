@@ -14,9 +14,6 @@ title: Schreiben auf Standardfehler
 weight: 25
 ---
 
-## Was & Warum?
-Das Schreiben auf Standardfehler (stderr) in Ruby bezieht sich darauf, Fehlermeldungen oder Diagnosen auf einen separaten Ausgabestrom zu lenken, der sich vom Standardausgang (stdout) unterscheidet. Programmierer tun dies, um reguläre Programmausgaben von Fehlern und Debugging-Informationen zu unterscheiden, was die Diagnose von Problemen und das Parsen von Protokollen erleichtert.
-
 ## Wie geht das:
 Die Standardbibliothek von Ruby bietet eine unkomplizierte Möglichkeit, auf stderr zu schreiben, und zwar mit `$stderr` oder `STDERR`. Für diesen grundlegenden Vorgang sind keine Drittanbieterbibliotheken erforderlich.
 

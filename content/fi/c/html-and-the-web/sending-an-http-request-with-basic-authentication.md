@@ -14,9 +14,6 @@ title: "L\xE4hett\xE4minen HTTP-pyynt\xF6 perustodennuksella"
 weight: 45
 ---
 
-## Mikä & Miksi?
-HTTP-pyyntö perusautentikaatiolla C-kielellä lähettäminen tarkoittaa HTTP-pyynnön muodostamista, joka sisältää Authorization-otsakkeen käyttäjätiedot koodattuna Base64-muotoon. Tämä on yleinen metodi yksinkertaisen autentikaatiokerroksen lisäämiseen HTTP-pyyntöihin, mikä mahdollistaa ohjelmallisesti rajoitettujen resurssien käyttämisen.
-
 ## Miten:
 Perusautentikaatiolla HTTP-pyynnön lähettämiseksi C-kielellä meidän tulee käyttää libcurl-kirjastoa, joka on suosittu, monikäyttöinen ja helppokäyttöinen asiakaspuolen URL-siirtokirjasto. Se käsittelee erilaisia protokollia, mukaan lukien HTTP ja HTTPS, tekee tehtävämme yksinkertaisemmaksi. Varmista, että libcurl on asennettu järjestelmääsi ennen jatkamista. Tässä on perusesimerkki, joka näyttää, miten lähetetään GET-pyyntö perusautentikaation avulla:
 

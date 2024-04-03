@@ -11,9 +11,6 @@ title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---
 
-## Was & Warum?
-Das Lesen von Befehlszeilenargumenten ermöglicht es Programmen, beim Start Parameter von außen zu empfangen. Diese Flexibilität ist essentiell, um Programme anpassbar und für verschiedene Szenarien nützlich zu gestalten.
-
 ## Anleitung:
 Um Befehlszeilenargumente in Python zu lesen, nutzt du das `sys` Modul. Hier ein simples Beispiel:
 

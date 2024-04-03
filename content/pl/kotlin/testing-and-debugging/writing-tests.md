@@ -15,12 +15,7 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i Dlaczego?
-
-Pisanie testów w Kotlinie polega na tworzeniu fragmentów kodu, które automatycznie weryfikują poprawność funkcjonalną modułów oprogramowania, upewniając się, że działają one zgodnie z oczekiwaniami. Programiści robią to, by wcześnie wykrywać błędy, ułatwić refaktoryzację kodu oraz dostarczyć dokumentację na temat zamierzonego działania komponentów oprogramowania.
-
 ## Jak to zrobić:
-
 Kotlin wspiera rozwój sterowany testami z wykorzystaniem różnych frameworków, z których najpopularniejsze to JUnit, Kotest i MockK do tworzenia mocków. Oto prosty przykład użycia JUnit:
 
 ```kotlin

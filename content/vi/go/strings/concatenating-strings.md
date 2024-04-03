@@ -15,12 +15,7 @@ title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---
 
-## Gì và Tại sao?
-
-Nối chuỗi bao gồm việc kết nối hai hoặc nhiều chuỗi lại với nhau đầu-cuối để tạo thành một chuỗi mới. Các lập trình viên làm điều này để tạo ra văn bản một cách linh hoạt, như là xây dựng thông điệp, đường dẫn, hoặc các truy vấn phức tạp, làm cho chương trình trở nên tương tác và nhạy bén hơn.
-
 ## Cách thực hiện:
-
 Trong Go, có một số cách để nối chuỗi. Dưới đây là một cái nhìn vào một số phương pháp phổ biến với các ví dụ:
 
 ### Sử dụng toán tử `+`:
@@ -64,7 +59,6 @@ fmt.Println(path) // path/to/file
 ```
 
 ## Sâu sắc hơn
-
 Nối chuỗi, mặc dù là một thao tác dường như đơn giản, nhưng lại chạm vào những khía cạnh sâu sắc về cách Go xử lý chuỗi. Trong Go, chuỗi là không thể thay đổi; nghĩa là, mỗi hoạt động nối tạo ra một chuỗi mới. Điều này có thể dẫn đến vấn đề về hiệu suất khi nối một số lượng lớn chuỗi hoặc khi thực hiện trong các vòng lặp chặt chẽ, do việc phân bổ và sao chép bộ nhớ thường xuyên.
 
 Truyền thống, các ngôn ngữ đã giải quyết vấn đề không thể thay đổi của chuỗi và hiệu suất nối chuỗi theo các cách khác nhau, và cách tiếp cận của Go với `strings.Builder` và `strings.Join` cung cấp cho lập trình viên các công cụ cân nhắc giữa sự dễ sử dụng và hiệu suất. Loại `strings.Builder`, được giới thiệu trong Go 1.10, đặc biệt đáng chú ý vì nó cung cấp một cách hiệu quả để xây dựng chuỗi mà không gây ra sự thừa của nhiều phân bổ chuỗi. Nó thực hiện điều này bằng cách phân bổ một bộ đệm tăng dần khi cần thiết, vào đó các chuỗi được thêm vào.

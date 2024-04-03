@@ -14,12 +14,7 @@ title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---
 
-## Co i dlaczego?
-
-Parsowanie daty z ciągu znaków w PHP polega na konwersji tekstu, który przedstawia datę i/lub czas, na obiekt `DateTime` PHP lub inne formaty daty/czasu. Jest to kluczowe dla celów walidacji danych, manipulacji, przechowywania i prezentacji, szczególnie podczas pracy z danymi użytkownika lub danymi z zewnętrznych źródeł.
-
 ## Jak to zrobić:
-
 Wbudowana klasa `DateTime` w PHP oferuje potężny zestaw funkcji do parsowania i pracy z datami. Można utworzyć instancję `DateTime` z ciągu daty za pomocą konstruktora, a następnie formatować ją według potrzeb. Oto jak:
 
 ```php

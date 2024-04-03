@@ -14,12 +14,7 @@ title: "Usando express\xF5es regulares"
 weight: 11
 ---
 
-## O que e por quê?
-
-Expressões regulares (regex) são sequências de caracteres que formam um padrão de pesquisa, usadas principalmente para busca e manipulação de strings. Programadores utilizam regex no PowerShell para tarefas como validação de dados, análise e transformação, devido à sua eficiência e flexibilidade no manuseio de padrões complexos.
-
 ## Como fazer:
-
 No PowerShell, você pode usar os operadores `-match`, `-replace` e `-split`, entre outros, para realizar ações com expressões regulares. Vamos explorar alguns exemplos:
 
 ### Usando `-match` para verificar se uma string corresponde a um padrão

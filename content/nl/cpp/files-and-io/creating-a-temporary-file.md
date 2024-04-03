@@ -13,12 +13,7 @@ title: Een tijdelijk bestand aanmaken
 weight: 21
 ---
 
-## Wat & Waarom?
-
-Het creëren van een tijdelijk bestand betekent het maken van een bestand dat is ontworpen om tijdelijk gegevens op te slaan en wordt verwijderd na gebruik. Programmeurs doen dit om tussenliggende gegevens te verwerken zonder het bestandssysteem te vervuilen of het risico te lopen op conflicten met andere bestanden.
-
 ## Hoe:
-
 Hier is hoe je een tijdelijk bestand in huidige C++ creëert en gebruikt:
 
 ```C++
@@ -60,7 +55,6 @@ Tijdelijk bestand gecreëerd op: /tmp/abc123
 ```
 
 ## Diepere Verkenning
-
 Tijdelijke bestanden komen goed van pas in gevallen zoals het opslaan van de staat, het sorteren van grote datasets, of het afhandelen van output die niet hoeft te blijven bestaan. Historisch gezien werden temp bestanden gecreëerd in een algemene directory (zoals `/tmp` op Unix systemen) met een eenvoudige naamgevingsschema, met kans op botsingen. Modern C++ gebruikt de `<filesystem>` bibliotheek om dergelijke problemen te vermijden.
 
 Alternatieven zijn het gebruik van RAM-gebaseerde tijdelijke opslag (zoals tmpfs in de meeste Unix-achtige systemen) of database blobs. Deze methoden houden de efemere gegevens in geheugen of beheerde systemen, wat de I/O overhead vermindert en de prestaties verbetert.
@@ -71,7 +65,6 @@ Wat betreft implementatie, onthoud dat:
 - Ruim op: Verwijder je tijdelijke bestanden (hoewel het systeem dit vaak doet, het is een goede gewoonte).
 
 ## Zie Ook
-
 - [C++ Bestandssysteem Bibliotheek](https://en.cppreference.com/w/cpp/filesystem)
 - [C++ IOstromen Bibliotheek](https://en.cppreference.com/w/cpp/io)
 - [Tijdelijk Bestand Beheer in C](http://www.cplusplus.com/reference/cstdio/tmpfile/)

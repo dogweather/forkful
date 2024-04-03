@@ -12,9 +12,6 @@ title: Protokollierung
 weight: 17
 ---
 
-## Was & Warum?
-Logging ist der Prozess der Aufzeichnung von Anwendungsereignissen, während ein Programm läuft, und bietet eine Art Spur für die Analyse nach dem Versagen und für die Echtzeitüberwachung. Programmierer nutzen es, weil es hilft, Probleme zu debuggen, die Leistung zu überwachen und Nutzeraktionen aus Gründen der Sicherheit und Analyse nachzuverfolgen.
-
 ## Wie:
 Python kommt mit einem integrierten Modul für das Logging. Hier ist eine Basis-Konfiguration:
 ```Python

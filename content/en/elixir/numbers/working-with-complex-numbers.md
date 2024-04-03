@@ -9,9 +9,6 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-Complex numbers have a real part and an imaginary part (like `3 + 4i`). They're used in engineering, physics, and certain computing problems. Programmers work with them for simulations, signal processing, and solving certain types of math problems efficiently.
-
 ## How to:
 Elixir doesn't have built-in complex numbers, so we roll our own or use a library, like `ComplexNum`. Here's a quick example with a lib:
 

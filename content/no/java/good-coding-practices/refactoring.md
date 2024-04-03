@@ -10,9 +10,6 @@ title: Refaktorering
 weight: 19
 ---
 
-## Hva & Hvorfor?
-Omstrukturering er prosessen med å restrukturere eksisterende dataprogramkode—endre faktoriseringen—uten å endre dens eksterne oppførsel. Programmerere gjør dette for å forbedre de ikke-funksjonelle attributtene til programvaren, forbedre lesbarheten, redusere kompleksiteten og gjøre koden mer vedlikeholdbar for fremtidige prosjekter.
-
 ## Hvordan:
 La oss ta en enkel Java-klasse som skriker etter omstrukturering på grunn av dårlig organisering og mangel på klarhet.
 

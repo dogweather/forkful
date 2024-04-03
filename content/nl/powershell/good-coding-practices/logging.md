@@ -12,9 +12,6 @@ title: Logboekregistratie
 weight: 17
 ---
 
-## Wat & Waarom?
-Loggen is in feite een broodkruimelspoor achterlaten door je code - het is hoe je bijhoudt wat er gebeurt wanneer je script in het wild draait. Programmeurs loggen om te debuggen, om app-gedrag te volgen, om de prestaties te monitoren en om uit te kijken voor eventuele ongein.
-
 ## Hoe te:
 Hier is de basisinformatie over het toevoegen van enkele basislogboekregistraties in je scripts:
 

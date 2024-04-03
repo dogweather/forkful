@@ -14,9 +14,6 @@ title: "Einen String gro\xDFschreiben"
 weight: 2
 ---
 
-## Was & Warum?
-Das Kapitalisieren eines Strings bedeutet, den ersten Buchstaben jedes Wortes in einem String in Großbuchstaben umzuwandeln, während sichergestellt wird, dass der Rest klein bleibt. Diese Operation ist bei der Datenformatierung und der Normalisierung der Benutzereingabe üblich, um Konsistenz zu wahren und die Lesbarkeit zu verbessern.
-
 ## Wie:
 Arduino, hauptsächlich bekannt für die Interaktion mit Hardware, bietet auch grundlegende Möglichkeiten zur String-Manipulation durch sein `String`-Objekt. Es fehlt jedoch eine direkte `capitalize`-Funktion, wie sie in höheren Programmiersprachen zu sehen ist. Daher implementieren wir die Kapitalisierung durch Iterieren über einen String und Anwendung von Fallumwandlungen.
 

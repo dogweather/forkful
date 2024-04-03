@@ -14,9 +14,6 @@ title: Comprobando si un directorio existe
 weight: 20
 ---
 
-## ¿Qué y Por Qué?
-Verificar si un directorio existe en Fish Shell permite que los scripts tomen decisiones basadas en la presencia o ausencia de estructuras de directorio, habilitando tareas como operaciones condicionales de archivos, registros o configuración del entorno. Esta técnica es crucial para escribir scripts robustos que interactúen con el sistema de archivos de manera predecible.
-
 ## Cómo hacerlo:
 Fish Shell utiliza el comando `test` para verificar tipos de archivos y características, incluyendo si un objetivo es un directorio. Aquí hay un patrón básico para verificar si un directorio existe:
 

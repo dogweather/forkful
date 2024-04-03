@@ -11,12 +11,7 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-
-Writing tests in Go involves creating small, manageable pieces of code that validate the functionality and behavior of your application. Programmers write tests to ensure their code works as expected under various conditions, to facilitate refactoring, and to help prevent regressions.
-
 ## How to:
-
 In Go, tests are typically written in the same package as the code they test. Files containing tests are named with the `_test.go` suffix. Tests are functions that take a pointer to the testing.T object (from the `testing` package) as an argument, and they signal failure by calling methods such as `t.Fail()`, `t.Errorf()`, etc.
 
 Example of a simple test for a function `Add` defined in `math.go`:
@@ -78,7 +73,6 @@ func TestAddTableDriven(t *testing.T) {
 ```
 
 ## Deep Dive
-
 The Go testing framework, introduced in Go 1 alongside the language itself, was designed to integrate seamlessly with the Go toolchain, reflecting Go's emphasis on simplicity and efficiency in software development. Unlike some testing frameworks in other languages that rely on external libraries or complex setups, Go's built-in `testing` package provides a straightforward way to write and run tests.
 
 An interesting aspect of Go's approach to testing is the convention over configuration principle it adopts, like the file naming pattern (`_test.go`) and the use of standard library functionalities over external dependencies. This minimalistic approach encourages developers to write tests, as the barrier to entry is low.

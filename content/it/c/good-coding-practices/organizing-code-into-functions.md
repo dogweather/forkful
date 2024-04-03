@@ -12,12 +12,7 @@ title: Organizzare il codice in funzioni
 weight: 18
 ---
 
-## Cosa & Perché?
-
-Organizzare il codice in funzioni in C comporta la suddivisione di compiti complessi in blocchi di codice più piccoli e riutilizzabili. Questa pratica migliora la leggibilità, facilita il debugging più semplice e promuove il riutilizzo del codice, rendendo le applicazioni più modulari e mantenibili.
-
 ## Come fare:
-
 In C, una funzione è dichiarata con un tipo di ritorno, un nome e parametri (se presenti), seguiti da un blocco di codice. Cominciamo con un esempio semplice: una funzione che somma due interi.
 
 ```c
@@ -73,7 +68,6 @@ L'area del rettangolo è: 50
 ```
 
 ## Approfondimento
-
 Il concetto di funzioni in C, ereditato da pratiche di programmazione precedenti, è fondamentale per la programmazione strutturata. Le funzioni permettono agli sviluppatori di astrarsi dai dettagli, gestire la complessità e organizzare il loro codice in modo logico. Fin dalla sua nascita, la funzione è stata una costruzione chiave in C, influenzando numerosi altri linguaggi.
 
 Tuttavia, man mano che i paradigmi di programmazione si sono evoluti, approcci alternativi come la programmazione orientata agli oggetti (OOP) in linguaggi come C++ e Java, hanno esteso il concetto di funzioni con metodi associati agli oggetti. Anche se C non supporta l'OOP di base, è possibile imitare i design orientati agli oggetti strutturando con attenzione funzioni e dati.

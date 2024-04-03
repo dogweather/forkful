@@ -12,11 +12,7 @@ title: Manipulation des nombres complexes
 weight: 14
 ---
 
-## Quoi et pourquoi ?
-Les nombres complexes élargissent notre système numérique pour inclure les racines carrées des nombres négatifs, où l'unité "imaginaire" i équivaut à la racine carrée de -1. Les programmeurs les utilisent dans des domaines tels que l'ingénierie, la physique et le traitement du signal, parce qu'ils sont excellents pour modéliser les ondes, les oscillations et tout ce qui tourne.
-
 ## Comment faire :
-
 Définissons une classe de nombre complexe de base en Kotlin :
 
 ```kotlin
@@ -42,13 +38,11 @@ fun main() {
 ```
 
 ## Plongée profonde
-
 Les nombres complexes ont été mentionnés pour la première fois au 16e siècle, résolvant des équations cubiques qui manquaient de solutions réelles. L'ingénierie et la physique bénéficient grandement des nombres complexes pour analyser les circuits en courant alternatif et les formes d'onde. Vous pourriez alternativement utiliser une bibliothèque comme `koma` ou `ejml` de Kotlin pour un travail intensif.
 
 Les opérations sur les nombres complexes reflètent les nombres réels, mais avec une attention à l'unité imaginaire. La multiplication, par exemple, suit la propriété distributive, en se rappelant que `i^2 = -1`. Cette unité imaginaire nous permet de représenter des nombres multidimensionnels, cruciaux dans divers calculs scientifiques.
 
 ## Voir aussi
-
 Bibliothèques Math de Kotlin :
 
 - [koma](https://koma.kyonifer.com/) : Une bibliothèque de calcul scientifique pour Kotlin.

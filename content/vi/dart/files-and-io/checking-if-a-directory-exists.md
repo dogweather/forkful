@@ -19,12 +19,7 @@ title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---
 
-## Cái gì & Tại sao?
-
-Kiểm tra xem một thư mục có tồn tại trong Dart không là việc xác minh sự hiện diện của một thư mục tại một đường dẫn đã chỉ định trên hệ thống tệp trước khi thực hiện các hoạt động như đọc hoặc ghi tệp. Các lập trình viên làm điều này để tránh các lỗi xảy ra khi cố gắng truy cập hoặc chỉnh sửa các thư mục không tồn tại.
-
 ## Làm thế nào:
-
 Dart sử dụng thư viện `dart:io` để làm việc với tệp và thư mục. Dưới đây là một cách đơn giản để kiểm tra xem một thư mục có tồn tại không:
 
 ```dart

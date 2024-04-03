@@ -11,9 +11,6 @@ title: "Koodin uudelleenj\xE4rjestely"
 weight: 19
 ---
 
-## Mikä & Miksi?
-Refaktorointi on prosessi, jossa olemassa olevaa koodia muokataan parantamaan sen rakennetta, luettavuutta ja suorituskykyä muuttamatta sen ulkoista käyttäytymistä. Ohjelmoijat refaktoroivat tehdäkseen koodista ylläpidettävämpää, yksinkertaistaakseen uusien ominaisuuksien lisäämistä ja havaitakseen sekä korjatakseen virheitä helpommin.
-
 ## Kuinka:
 Tässä on Kotlin-koodinpätkä, jossa näytetään yleinen koodin haju ja sen refaktoroitu versio. Aloitamme koodinpalalla, joka tekee liikaa:
 

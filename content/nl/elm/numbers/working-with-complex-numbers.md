@@ -12,9 +12,6 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-Complexe getallen zijn een combinatie van reële en imaginaire getallen, zoals `a + bi` waarbij `i` de vierkantswortel van -1 is. Ze zijn cruciaal in vakgebieden zoals engineering en natuurkunde om problemen op te lossen die met gewone getallen niet aangepakt kunnen worden.
-
 ## Hoe te:
 Elm heeft geen ingebouwde ondersteuning voor complexe getallen, dus je zult je eigen type en functies moeten creëren. Hier is een snelle opzet:
 

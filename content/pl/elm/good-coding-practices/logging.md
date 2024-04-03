@@ -12,9 +12,6 @@ title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---
 
-## Co i dlaczego?
-Logowanie to w zasadzie proces rejestrowania zdarzeń i danych wyjściowych z działającego oprogramowania, można to potraktować jako dziennik oprogramowania. Programiści używają logowania do śledzenia tego, co dzieje się za kulisami - jest to nieocenione przy debugowaniu problemów, monitorowaniu zachowania systemu w czasie rzeczywistym oraz analizie poprzedniej aktywności pod kątem optymalizacji wydajności czy audytów.
-
 ## Jak to zrobić:
 Architektura Elma nie wspiera efektów ubocznych takich jak logowanie "od ręki" — obsługuje się je za pomocą komend, które są częścią architektury aplikacji. W celach edukacyjnych, sprawdźmy, jak można by symulować logowanie, wysyłając wiadomości do JavaScriptu przez porty.
 

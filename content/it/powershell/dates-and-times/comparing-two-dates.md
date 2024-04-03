@@ -11,9 +11,6 @@ title: Confronto tra due date
 weight: 27
 ---
 
-## What & Why? (Cosa e Perché?)
-Confrontare due date significa verificarne le differenze o verificarne l'ordine cronologico. I programmatori lo fanno per gestire scadenze, eventi, log e tutto ciò che richiede tracciatura temporale. 
-
 ## How to: (Come fare:)
 ```PowerShell
 # Creazione di due date
@@ -36,6 +33,7 @@ False
 False
 31
 ```
+
 ## Deep Dive (Approfondimento)
 Il confronto di date in PowerShell è diretto, grazie agli operatori di confronto (-lt, -gt, -eq) e all’overload degli operatori per gli oggetti di tipo `DateTime`. In passato, prima dell'avvento di linguaggi come PowerShell, tale confronto avrebbe richiesto più passaggi e calcoli manuali.
 

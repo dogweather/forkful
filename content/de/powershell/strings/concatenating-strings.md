@@ -11,9 +11,6 @@ title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---
 
-## Was & Warum?
-String-Konkatenation ist das Zusammenfügen von zwei oder mehreren Textstücken (Strings) zu einem einzigen String. Programmierer nutzen dies, um dynamische Textausgaben zu erstellen, Werte in Textform zu integrieren oder um Strings für Dateipfade und URLs zu erzeugen.
-
 ## How to:
 ```PowerShell
 # Variante 1: Plus-Operator (+)

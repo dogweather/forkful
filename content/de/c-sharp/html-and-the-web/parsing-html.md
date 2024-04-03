@@ -14,16 +14,10 @@ title: HTML parsen
 weight: 43
 ---
 
-## Was & Warum?
-
-Das Parsen von HTML in der Programmierung beinhaltet die Analyse der Struktur eines HTML-Dokuments, was Ihnen erlaubt, dessen Inhalt programmatisch zu extrahieren, zu manipulieren und zu interagieren. Programmierer machen dies, um das automatisierte Web-Scraping, die Datenextraktion oder sogar die dynamische Modifikation von Webseiten oder HTML-Dokumenten für verschiedene Anwendungen zu automatisieren, was es zu einer essenziellen Fähigkeit in der Webentwicklung, Datenanalyse und in automatisierten Testszenarien macht.
-
 ## Wie:
-
 Während .NET grundlegende Unterstützung für die Arbeit mit HTML bietet, wie den `HttpClient` zum Abrufen von Webseiten, fehlt es an einem integrierten, umfassenden HTML-Parser. Daher wenden sich die meisten C#-Entwickler an beliebte Drittanbieter-Bibliotheken wie HtmlAgilityPack oder AngleSharp für robuste HTML-Parsing-Fähigkeiten. Beide Bibliotheken ermöglichen einfaches Abfragen, Manipulieren und Durchlaufen des HTML-DOM.
 
 ### Verwendung von HtmlAgilityPack
-
 1. **HtmlAgilityPack installieren**: Fügen Sie zunächst das HtmlAgilityPack-Paket Ihrem Projekt über NuGet hinzu.
    ```
    Install-Package HtmlAgilityPack
@@ -65,7 +59,6 @@ Während .NET grundlegende Unterstützung für die Arbeit mit HTML bietet, wie d
    ```
 
 ### Verwendung von AngleSharp
-
 1. **AngleSharp installieren**: Fügen Sie die AngleSharp-Bibliothek Ihrem Projekt über NuGet hinzu.
    ```
    Install-Package AngleSharp

@@ -11,9 +11,6 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## What & Why? - Mikä & Miksi?
-Uuden projektin aloittaminen on tyhjältä pöydältä alkaminen: uusi hakemisto, uusi Git-repo, uudet tiedostot. Koodarit aloittavat projekteja testatakseen ideoita, ratkaistakseen ongelmia tai vain opetellakseen jotain uutta.
-
 ## How to: - Näin teet:
 ```Fish Shell
 # Luo uusi hakemisto projektillesi ja siirry sinne

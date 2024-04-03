@@ -13,9 +13,6 @@ title: Sammenligner to datoer
 weight: 27
 ---
 
-## Hva & Hvorfor?
-Å sammenligne to datoer i Dart innebærer å evaluere den temporære forskjellen eller rekkefølgen mellom dem, en essensiell funksjonalitet i applikasjoner som håndterer hendelser, frister eller annen tidsfølsom data. Utviklere trenger ofte dette for å kontrollere logikkflyt, validere eller sortere data basert på tidsbetingelser.
-
 ## Hvordan:
 I Dart kan du sammenligne datoer ved å bruke `DateTime`-klassen, som tilbyr metoder som `isBefore`, `isAfter`, og `isAtSameMomentAs` for direkte sammenligning. I tillegg kan forskjellen mellom datoer bestemmes ved å bruke `difference()`-metoden, som gir et `Duration`-objekt som detaljerer tidsrommet mellom de to tidspunktene.
 

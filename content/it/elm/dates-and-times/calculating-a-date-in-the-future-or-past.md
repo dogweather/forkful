@@ -11,9 +11,6 @@ title: Calcolo di una data futura o passata
 weight: 26
 ---
 
-## Cos'è e Perché?
-Calcolare una data nel futuro o nel passato significa trovare una data specifica aggiungendo o sottraendo giorni, mesi o anni da una data di partenza. I programmatori lo fanno per gestire scadenze, prenotazioni, eventi futuri o passati, e per qualsiasi funzionalità che necessita di manipolare date.
-
 ## Come Fare:
 ```Elm
 import Time

@@ -13,9 +13,6 @@ title: "Wydobywanie podci\u0105g\xF3w"
 weight: 6
 ---
 
-## Co i dlaczego?
-Wyodrębnianie podciągów dotyczy pozyskiwania określonych części ciągu na podstawie ich pozycji lub wzorców. Programiści robią to w celu zadań takich jak analizowanie danych wejściowych użytkownika, manipulacja danymi, lub ekstrahowanie istotnych informacji z większych źródeł tekstu.
-
 ## Jak to zrobić:
 W Dart można używać różnych metod do wyodrębniania podciągów, takich jak `substring()`, `split()`, i wyrażenia regularne. Każda metoda służy innym celom i oferuje elastyczność w obsłudze ciągów.
 

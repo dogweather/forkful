@@ -10,9 +10,6 @@ title: Avvio di un nuovo progetto
 weight: 1
 ---
 
-## What & Why?
-Iniziare un nuovo progetto in Haskell significa digitare alcuni comandi per creare una struttura di base. I programmatori lo fanno per avere un ambiente organizzato e pronto per lo sviluppo fin dal primo momento.
-
 ## How to:
 ```Haskell
 -- Installa l'ultima versione dello stack

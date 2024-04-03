@@ -11,9 +11,6 @@ title: Usando um shell interativo (REPL)
 weight: 34
 ---
 
-## O Que & Por Que?
-O shell interativo, ou Loop de Ler-Avaliar-Imprimir (REPL), permite que você digite comandos PowerShell e obtenha feedback imediato. Programadores o usam para testar rapidamente trechos de código, depurar ou aprender novos comandos sem escrever um script completo.
-
 ## Como:
 Inicie o PowerShell e você estará no REPL. Experimente o Cmdlet `Get-Date`:
 

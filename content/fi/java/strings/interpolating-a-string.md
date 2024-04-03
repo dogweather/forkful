@@ -10,9 +10,6 @@ title: Merkkijonon interpolointi
 weight: 8
 ---
 
-## Mitä & Miksi?
-Merkkijonon interpolointi tarkoittaa muuttujien, lausekkeiden tai arvojen upottamista merkkijonoon. Se tekee koodista siistimpää ja helpottaa dynaamisten viestien luomista.
-
 ## Kuinka:
 ```java
 public class StringInterpolationExample {

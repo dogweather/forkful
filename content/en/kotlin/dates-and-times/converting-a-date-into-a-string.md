@@ -10,9 +10,6 @@ title: Converting a date into a string
 weight: 28
 ---
 
-## What & Why?
-Converting a date into a string means representing a specific moment in a human-readable format. Programmers do it to display dates to users or to serialize them for storage and data transfer.
-
 ## How to:
 In Kotlin, you can convert a `Date` to a `String` using the `SimpleDateFormat` class. Let's roll some code:
 

@@ -13,12 +13,7 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä & Miksi?
-
-Tekstitiedoston kirjoittaminen Haskellissa tarkoittaa tekstimuotoisten tiedostojen ohjelmallista luomista tai päivittämistä. Ohjelmoijat tekevät tätä tallentaakseen tietoja, kuten lokiviestejä, sovelluksen tulostetta tai tallentaakseen käyttäjän luomaa sisältöä, mikä tekee siitä perustavanlaatuisen tehtävän sovelluksille, jotka vaativat tietojen pysyvyyttä tai lokitusta.
-
 ## Kuinka:
-
 Haskellin standard Prelude tarjoaa perustason tuen tiedostoihin kirjoittamiselle `writeFile` ja `appendFile` funktioiden avulla `System.IO` moduulista. Tässä on perusesimerkki uuden tiedoston luomisesta (tai olemassa olevan ylikirjoittamisesta) ja sitten tekstin lisäämisestä tiedostoon.
 
 ```haskell

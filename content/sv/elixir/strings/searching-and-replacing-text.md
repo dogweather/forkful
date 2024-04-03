@@ -11,9 +11,6 @@ title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---
 
-## What & Why?
-Att söka och ersätta text är processen där specifika strängmönster identifieras och byts ut mot andra strängar. Programmerare använder detta för att uppdatera kod, rätta till fel, eller bearbeta data effektivt.
-
 ## How to:
 Söka och ersätta i Elixir kan göras enkelt med `String` modulen. Här är några exempel:
 

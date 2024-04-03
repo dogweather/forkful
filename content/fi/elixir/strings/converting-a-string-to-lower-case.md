@@ -11,9 +11,6 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## Mikä & Miksi?
-Muuttaminen merkkijono pienaakkosiksi tarkoittaa kirjainten muuttamista kirjainkoosta riippumattomiksi. Koodarit tekevät tämän yleensä tekstin vertailua tai järjestämistä varten, poistaen ongelmat erilaisista kirjainkoista.
-
 ## Kuinka:
 Elixirissä muunnat merkkijonon pienaakkosiksi `String.downcase/1` funktiolla. Tässä esimerkit ja tulosteet.
 

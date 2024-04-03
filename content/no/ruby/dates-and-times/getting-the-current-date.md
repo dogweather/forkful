@@ -13,9 +13,6 @@ title: "F\xE5 dagens dato"
 weight: 29
 ---
 
-## Hva og hvorfor?
-Å hente gjeldende dato er en avgjørende oppgave i nesten enhver programmeringsinnsats, fra å logge aktiviteter i en applikasjon til å generere rapporter med datostempler. I Ruby kan dette enkelt oppnås ved å bruke standardbiblioteket, noe som forenkler operasjoner som involverer datoer.
-
 ## Hvordan:
 Rubys standardbibliotek inkluderer klassene `Date` og `Time` for håndtering av datoer og tid. Slik får du tak i gjeldende dato:
 

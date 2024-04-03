@@ -11,9 +11,6 @@ title: Einen HTTP-Request senden
 weight: 44
 ---
 
-## Was & Warum?
-Ein HTTP-Request ermöglicht es deinem Code, mit einem Webserver zu sprechen; man holt oder sendet Daten. Programmierer brauchen das für APIs, um z.B. Wetterinfos abzurufen, oder Nutzerdaten zu speichern.
-
 ## So geht's:
 ```Javascript
 // Einfacher GET Request mit fetch

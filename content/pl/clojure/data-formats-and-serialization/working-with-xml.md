@@ -11,9 +11,6 @@ title: Praca z XML
 weight: 40
 ---
 
-## Co i Dlaczego?
-XML to język znaczników używany do kodowania dokumentów w sposób czytelny zarówno dla człowieka, jak i maszyny. Ma kluczowe znaczenie w usługach internetowych, plikach konfiguracyjnych i wymianie danych, ponieważ przekazuje dane w strukturalnym, hierarchicznym formacie.
-
 ## Jak to zrobić:
 Clojure oferuje bibliotekę `clojure.data.xml` do parsowania i emitowania XML. Najpierw sparsujmy trochę XML:
 

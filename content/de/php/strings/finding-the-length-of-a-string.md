@@ -11,9 +11,6 @@ title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---
 
-## Was & Warum?
-Die Länge eines Strings zu finden bedeutet, herauszufinden, wie viele Zeichen er beinhaltet. Programmierer brauchen diese Information, um Textdaten zu validieren, zu schneiden oder zu bearbeiten – kurz, es ist grundlegend für die Textverarbeitung.
-
 ## So geht’s:
 ```PHP
 <?php

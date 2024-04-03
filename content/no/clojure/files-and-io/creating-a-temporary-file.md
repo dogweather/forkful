@@ -10,9 +10,6 @@ title: Opprette en midlertidig fil
 weight: 21
 ---
 
-## What & Why?
-Å lage en midlertidig fil er som å opprette et digitalt kritt-tavle; du bruker det for å skrible ned info som ikke trenger å bli husket lenge. Programmerere gjør dette for å håndtere midlertidige data uten å belaste systemressurser eller brukerens permanente lagringsplass.
-
 ## How to:
 Clojure har ikke innebygd støtte for å opprette midlertidige filer rett ut av boksen, men Java-biblioteket kan lett brukes takket være Clojure sin interoperabilitet med Java. 
 

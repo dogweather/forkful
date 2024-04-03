@@ -12,11 +12,7 @@ title: Werken met YAML
 weight: 41
 ---
 
-## Wat & Waarom?
-YAML is een gegevensserialisatieformaat dat gemakkelijk door mensen te lezen en te schrijven is. Programmeurs gebruiken het voor configuratiebestanden, gegevensuitwisseling tussen talen en gestructureerde gegevensopslag.
-
 ## Hoe te:
-
 Lua heeft geen ingebouwde ondersteuning voor YAML, maar je kunt een bibliotheek zoals `lyaml` gebruiken. Installeer het met `luarocks install lyaml`. Hier is hoe je YAML kunt parsen:
 
 ```Lua
@@ -71,11 +67,9 @@ Voorbeeld YAML-uitvoer:
 ```
 
 ## Diepgaand
-
 YAML, wat staat voor "YAML Ain't Markup Language", kwam begin jaren 2000 op als een gebruiksvriendelijke standaard voor gegevensserialisatie. Het is minder uitgebreid dan XML en JSON, wat het populair maakt voor configuratiebestanden. Alternatieven zijn JSON, XML en TOML. Lua-implementatie is voornamelijk afhankelijk van externe bibliotheken zoals `lyaml`, die libYAML gebruikt voor het parsen en uitvoeren van YAML. Wanneer je YAML met Lua gebruikt, onthoud dan dat tabellen geen inherente volgorde hebben, dus lijsten in YAML worden arrays, maar woordenboeken (sleutel-waardeparen) behouden mogelijk niet hun volgorde.
 
 ## Zie Ook
-
 - Officiële website van YAML: https://yaml.org
 - `lyaml` bibliotheek op GitHub: https://github.com/gvvaughan/lyaml
 - LuaRocks-pakket voor `lyaml`: https://luarocks.org/modules/gvvaughan/lyaml

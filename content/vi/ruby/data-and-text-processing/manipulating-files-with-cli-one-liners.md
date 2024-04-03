@@ -17,12 +17,7 @@ title: "Thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin b\u1EB1ng c\xE1c l\u1EC7nh CLI 
 weight: 31
 ---
 
-## Cái gì & Tại sao?
-
-Thao tác với tệp bằng dòng lệnh CLI trong Ruby là việc thực hiện các thao tác tệp thông thường trực tiếp từ terminal của bạn sử dụng các script Ruby. Đây là phương pháp mạnh mẽ để tự động hóa và nhanh chóng thực hiện các nhiệm vụ liên quan đến tệp, giúp tiết kiệm thời gian quý báu của lập trình viên và giảm thiểu khả năng xảy ra lỗi do thao tác thủ công.
-
 ## Làm thế nào:
-
 Ruby, với cú pháp biểu cảm của mình, cho phép viết các dòng lệnh ngắn gọn và dễ đọc có thể xử lý đa dạng các thao tác tệp. Dưới đây là một số ví dụ bạn có thể thấy hữu ích:
 
 **Đọc một tệp**
@@ -60,7 +55,6 @@ Khi bạn cần dọn dẹp và xóa bỏ các tệp, đây là dòng lệnh đ�
 Mặc dù các ví dụ đã trình bày sự dễ dàng mà Ruby có thể thao tác với tệp từ CLI, nhưng đó là điều quan trọng khi xử lý các thao tác tệp cần thận trọng để tránh mất dữ liệu do tai nạn. Luôn sao lưu dữ liệu quan trọng trước khi thực hiện các thao tác huỷ diệt như xóa hoặc ghi đè.
 
 ## Sâu hơn nữa
-
 Thao tác tệp với dòng lệnh Ruby không phải là đặc quyền riêng của Ruby; các ngôn ngữ như Perl và Awk đã được sử dụng cho các nhiệm vụ tương tự trong hàng thập kỷ. Ruby, tuy nhiên, kết hợp sức mạnh biểu đạt của Perl với tính dễ đọc, làm cho việc tạo script trở nên trực quan hơn. Tuy nhiên, một điểm yếu của Ruby trong thao tác tệp CLI có thể là hiệu suất, đặc biệt khi xử lý với các tệp lớn hoặc các thao tác phức tạp - ngôn ngữ script nói chung chậm hơn so với ngôn ngữ biên dịch hoặc các công cụ Unix chuyên dụng như `sed` hoặc `awk` cho các nhiệm vụ xử lý văn bản.
 
 Mặc dù vậy, các script Ruby cực kỳ linh hoạt và có thể dễ dàng tích hợp vào các ứng dụng Ruby lớn hơn hoặc các dự án Rails. Sự dễ đọc của chúng và các chức năng rộng lớn được cung cấp qua thư viện tiêu chuẩn và các gem khiến Ruby trở thành lựa chọn vững chắc cho các nhà phát triển tìm kiếm sự cân bằng giữa hiệu suất và năng suất.

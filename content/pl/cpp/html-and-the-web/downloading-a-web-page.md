@@ -11,9 +11,6 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## What & Why? (Co i Dlaczego?)
-Pobieranie strony internetowej to proces ściągania danych z sieci - jakbyś kopiował tekst ze stronki internetowej prosto do swojego programu. Programiści robią to, aby przetwarzać informacje online, aktualizować dane lub po prostu zgrać zawartość.
-
 ## How to: (Jak to zrobić:)
 ```C++
 #include <iostream>

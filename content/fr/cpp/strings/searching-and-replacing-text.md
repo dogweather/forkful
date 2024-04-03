@@ -10,9 +10,6 @@ title: Recherche et remplacement de texte
 weight: 10
 ---
 
-## What & Why?
-La recherche et le remplacement de texte permettent de trouver des chaînes spécifiques dans un texte et de les remplacer par d'autres. Les programmeurs utilisent cette technique pour corriger des erreurs, mettre à jour des données, ou modifier du code de manière efficace et automatique.
-
 ## How to:
 Le code C++ suivant montre comment rechercher et remplacer du texte avec la bibliothèque standard:
 

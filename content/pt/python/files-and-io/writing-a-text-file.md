@@ -13,10 +13,9 @@ title: Escrevendo um arquivo de texto
 weight: 24
 ---
 
-## O Que & Porquê?
-Escrever em um arquivo de texto em Python é uma tarefa fundamental que envolve criar ou abrir um arquivo e, em seguida, anexar ou sobrescrever texto. Essa funcionalidade é crucial para o registro de dados, gerenciamento de configurações e armazenamento de saídas geradas por programas, tornando-a uma ferramenta básica, mas essencial, no arsenal de um programador.
-
 ## Como Fazer:
+
+
 ### Usando a Função Nativa `open()`
 A função nativa `open()` do Python é a maneira mais comum de escrever em arquivos. A função permite especificar o modo no qual o arquivo é aberto - 'w' para escrever (sobrescrevendo), 'a' para anexar e 'w+' para escrever+ler.
 
@@ -38,6 +37,7 @@ with open('example.txt', 'r') as file:
 Olá, Mundo!
 Anexando mais texto.
 ```
+
 ### Usando `pathlib.Path`
 Para uma abordagem mais orientada a objetos, a classe `Path` do módulo `pathlib` oferece um método para escrever em arquivos. Este é um método popular para bases de código Python mais recentes.
 

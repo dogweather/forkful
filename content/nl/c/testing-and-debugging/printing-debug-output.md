@@ -13,12 +13,7 @@ title: Debug output afdrukken
 weight: 33
 ---
 
-## Wat & Waarom?
-
-Het afdrukken van debuginformatie gaat over het genereren van tijdelijke, informatieve logberichten die programmeurs kunnen helpen om de stroom en staat van een programma tijdens de uitvoering ervan te begrijpen. Programmeurs doen dit om softwarefouten of onverwacht gedrag in de logica van een programma te identificeren en te diagnosticeren.
-
 ## Hoe:
-
 In C is de meest voorkomende manier om debuginformatie af te drukken het gebruik van de `printf` functie uit de standaard I/O-bibliotheek. De `printf` functie maakt geformatteerde uitvoer naar het standaard uitvoerapparaat, meestal het scherm, mogelijk. Hier is een eenvoudig voorbeeld:
 
 ```c
@@ -64,7 +59,6 @@ DEBUG: voorbeeld.c:6: De testwaarde is 10
 Merk op dat we in dit voorbeeld `fprintf` gebruiken om naar de standaard foutenstroom (`stderr`) uit te voeren, wat vaak geschikter is voor debugberichten.
 
 ## Diepgaand
-
 Historisch gezien zijn debugtechnieken in C handmatig en basaal geweest, vanwege de filosofie en ouderdom van de taal die dicht bij de hardware staat. Terwijl moderne talen mogelijk geavanceerde, ingebouwde debugbibliotheken bevatten of sterk leunen op functies van de Integrated Development Environment (IDE), moeten C-programmeurs vaak handmatig printf-instructies invoegen zoals hierboven getoond om de uitvoering van hun programma te traceren.
 
 Eén ding waartegen gewaarschuwd moet worden met debugprints is hun potentieel om de uitvoer te verstoppen en prestatieproblemen te veroorzaken, vooral als ze per ongeluk in productiecode worden achtergelaten. Om deze redenen kan het gebruik van voorwaardelijke compilatie (bijv. `#ifdef DEBUG ... #endif`) een betere aanpak zijn, waardoor debugverklaringen op basis van compilatietijdvlaggen kunnen worden in- of uitgesloten.

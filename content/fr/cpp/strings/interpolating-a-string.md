@@ -11,9 +11,6 @@ title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---
 
-## Quoi et Pourquoi ?
-L'interpolation de chaîne permet d'insérer des variables ou des expressions dans une chaîne de caractères. Les programmeurs l'utilisent pour construire des chaînes dynamiquement, faciliter la lecture et éviter la concaténation fastidieuse.
-
 ## Comment faire :
 ```C++
 #include <iostream>

@@ -20,14 +20,10 @@ title: "\u7F16\u5199\u6587\u672C\u6587\u4EF6"
 weight: 24
 ---
 
-## 什么与为什么？
-
-在Java中写入文本文件是关于使用语言的能力来创建和写入文件系统中的文件。程序员出于各种原因这样做，如日志记录、导出数据或为了以后检索保存应用程序状态。
-
 ## 如何操作：
 
-### 使用 `java.nio.file`（标准库）
 
+### 使用 `java.nio.file`（标准库）
 Java的新I/O（NIO）包（`java.nio.file`）为处理文件提供了更多样化的方法。以下是使用`Files.write()`写入文件的简化方式：
 
 ```java
@@ -56,7 +52,6 @@ public class TextFileWriterNIO {
 ```
 
 ### 使用 `java.io`（标准库）
-
 对于更传统的方法，`java.io.FileWriter`是写入文本文件的一个好选择：
 
 ```java
@@ -83,7 +78,6 @@ public class TextFileWriterIO {
 ```
 
 ### 使用 Apache Commons IO
-
 Apache Commons IO库简化了许多操作，包括文件写入。以下是使用`FileUtils.writeStringToFile()`写入文件的方式：
 
 首先，向您的项目添加依赖。如果使用Maven，请包括：

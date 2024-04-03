@@ -11,9 +11,6 @@ title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---
 
-## Hva & Hvorfor?
-En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg teste kode i sanntid. Programmerere bruker den til å eksperimentere, feilsøke, og lære Ruby's nyanser uten å lage fullstendige skript.
-
 ## Hvordan:
 Ruby's REPL kalles IRB (Interactive Ruby). Hopp inn og prøv Ruby direkte fra terminalen din:
 

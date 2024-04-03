@@ -10,11 +10,6 @@ title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
 
-## What & Why?
-(Mitä & Miksi?)
-
-Debug-tulostus auttaa ymmärtämään, mitä ohjelmassasi tapahtuu. Ohjelmoijat käyttävät sitä virheiden paikallistamiseen ja oman koodin käytöksen selvittämiseen.
-
 ## How to:
 (Kuinka tehdä:)
 

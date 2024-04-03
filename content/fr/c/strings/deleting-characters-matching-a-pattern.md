@@ -14,12 +14,7 @@ title: "Supprimer des caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---
 
-## Quoi & Pourquoi ?
-
-La suppression de caractères correspondant à un motif spécifique dans les chaînes en C consiste à retirer toutes les instances de certains caractères répondant à des critères prédéfinis. Les programmeurs réalisent cette tâche pour assainir les entrées, préparer les données pour le traitement, ou simplement nettoyer les chaînes pour la sortie ou une manipulation ultérieure, s'assurant ainsi que les données manipulées sont exactement comme nécessaires pour un contexte ou algorithme donné.
-
 ## Comment :
-
 C ne dispose pas d'une fonction intégrée permettant de supprimer directement des caractères d'une chaîne basée sur un motif, contrairement à certains langages de plus haut niveau. Cependant, vous pouvez facilement accomplir cette tâche en itérant manuellement sur la chaîne et en construisant une nouvelle qui exclut les caractères indésirables. Par exemple, supposons que vous voulez supprimer tous les chiffres d'une chaîne. Vous pouvez le faire de la manière suivante :
 
 ```c
@@ -53,7 +48,6 @@ Résultat : C Programming : Les Bases !
 Cet exemple utilise `isdigit` de `ctype.h` pour identifier les chiffres, en déplaçant les caractères non-chiffres au début de la chaîne et en terminant la chaîne une fois tous les caractères évalués.
 
 ## Approfondissement
-
 La solution présentée utilise une approche à deux pointeurs au sein du même tableau pour filtrer efficacement les caractères indésirables, une technique emblématique de la philosophie de gestion de la mémoire manuelle de C. Cette méthode est efficace car elle opère sur place, évitant le besoin d'allocation de mémoire supplémentaire et minimisant ainsi la surcharge.
 
 Historiquement, l'absence de fonctions de manipulation de chaînes de haut niveau en C a obligé les programmeurs à développer une compréhension approfondie de la gestion des chaînes au niveau de la mémoire, conduisant à des approches innovantes comme celle ci-dessus. Bien que cela ait l'avantage d'offrir un contrôle plus grand et une meilleure efficacité, cela s'accompagne d'un risque plus élevé d'erreurs, telles que les débordements de tampon et les erreurs hors-limites.

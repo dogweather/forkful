@@ -16,9 +16,6 @@ title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---
 
-## Cái gì & Tại sao?
-Tổ chức code vào trong các hàm nghĩa là chia chương trình của bạn thành các phần có thể tái sử dụng, mỗi phần xử lý một nhiệm vụ cụ thể. Chúng ta làm điều này để làm cho code dễ đọc, dễ debug và cập nhật hơn. Hãy nghĩ về code của bạn như một căn bếp lưu trữ thực phẩm: bạn muốn mọi thứ từ nguyên liệu làm bánh đến hàng hộp được nhóm lại, để bạn có thể tìm thấy những gì bạn cần một cách dễ dàng.
-
 ## Cách thực hiện:
 Dưới đây là một ví dụ đơn giản. Thay vì viết một đoạn script dài để chào mừng người dùng, chúng tôi chia nhiệm vụ đó thành các hàm.
 

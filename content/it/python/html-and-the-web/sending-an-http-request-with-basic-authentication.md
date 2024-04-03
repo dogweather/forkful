@@ -10,9 +10,6 @@ title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---
 
-## Cosa & Perché?
-Inviare una richiesta HTTP con autenticazione di base significa fornire username e password per accedere a risorse protette su un server web. I programmatori lo fanno per interagire con API o servizi web che richiedono un livello minimo di sicurezza.
-
 ## Come si fa:
 Ecco come inviare una richiesta HTTP con autenticazione di base in Python utilizzando la libreria `requests`:
 

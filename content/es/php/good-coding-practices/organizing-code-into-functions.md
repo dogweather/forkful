@@ -11,9 +11,6 @@ title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---
 
-## ¿Qué y Por qué?
-Organizar el código en funciones consiste en descomponer tu código en bloques reutilizables con propósitos definidos. Lo hacemos para mantener todo ordenado, prevenir la redundancia y hacer que la depuración sea pan comido.
-
 ## Cómo hacerlo:
 Imagina que tenemos código repetitivo para saludar a los usuarios. En cambio, lo vamos a envolver en una función como `greet_user`:
 

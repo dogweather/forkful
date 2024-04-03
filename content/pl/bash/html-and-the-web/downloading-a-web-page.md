@@ -11,9 +11,6 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## Co & Dlaczego?
-Pobieranie stron internetowych to proces zapisywania zawartości strony na swoim komputerze. Programiści robią to, by analizować strukturę strony, scraować dane lub testować aplikacje.
-
 ## Jak to zrobić:
 ```
 # Pobranie strony i zapisanie do pliku przy użyciu cURL

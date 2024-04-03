@@ -10,9 +10,6 @@ title: Comparer deux dates
 weight: 27
 ---
 
-## Quoi et Pourquoi ?
-Comparer deux dates permet de déterminer laquelle est antérieure, postérieure ou si elles sont identiques. Les programmeurs utilisent cette comparaison pour trier des événements, gérer des délais ou valider des périodes.
-
 ## Comment faire :
 ```Java
 import java.time.LocalDate;

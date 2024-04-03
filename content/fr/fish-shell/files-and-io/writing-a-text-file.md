@@ -15,12 +15,7 @@ title: "R\xE9diger un fichier texte"
 weight: 24
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire dans un fichier texte avec Fish Shell vous permet de stocker des données de manière persistante, facilitant ainsi la récupération ou la manipulation des données soit par le même script Fish soit par d'autres programmes. Les programmeurs font cela pour enregistrer des logs, sauvegarder des configurations ou exporter des données pour un traitement ultérieur.
-
 ## Comment faire :
-
 Pour écrire dans un fichier texte en Fish, vous pouvez utiliser la commande `echo` combinée avec des opérateurs de redirection. Il n'y a pas de bibliothèques tierces populaires spécifiquement pour l'écriture de fichiers en Fish, car les commandes intégrées du shell sont simples et efficaces à cet effet.
 
 ### Écrire du texte dans un nouveau fichier ou écraser un fichier existant :

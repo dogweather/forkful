@@ -13,12 +13,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mikä & Miksi?
-
-Assosiatiiviset taulukot, tunnetaan Swiftissä sanakirjoina, antavat sinun tallentaa ja hallita tietoja avain-arvo -pareina. Ohjelmoijat käyttävät niitä järjestämään tietoja tehokkaasti, mikä tekee arvojen käyttämisen ja manipuloinnin helpommaksi niiden uniikkien avainten perusteella.
-
 ## Kuinka:
-
 Swift tekee assosiatiivisten taulukoiden käytöstä suoraviivaista. Tässä on miten voit julistaa, lisätä, poistaa ja käyttää kohteita Swiftin sanakirjassa:
 
 ```Swift
@@ -50,7 +45,6 @@ for (fruit, color) in fruitColors {
 Sanakirjat ovat uskomattoman monipuolisia, sallien sinun manipuloida ja käyttää tietoja dynaamisesti. Niiden järjestämättömällä luonteella ei ole vaikutusta tietojen noutamisen nopeuteen, mikä on merkittävä etu käsiteltäessä suuria tietomääriä.
 
 ## Syväsukellus
-
 Swiftin toteutus sanakirjoina assosiatiivisille taulukoille juontaa juurensa niiden voimakkaasta kyvystä kartoittaa uniikkeja avaimia arvoihin. Historiallisesti ohjelmointikielet ovat toteuttaneet tämän konseptin eri nimillä kuten hajautustaulut tai mapit, viitaten niiden toiminnallisuuteen luoda "kartta" avainten ja arvojen välille.
 
 Swiftissä, sanakirjat on optimoitu suorituskykyä varten, hyödyntäen hajautettavia avaimia tehokkaaseen tietojen noutoon. Tämä tarkoittaa, että `[Key: Value]` sanakirjan `Key` tyypin on noudatettava `Hashable` protokollaa, mikä pätee useimpiin Swiftin vakiotyyppeihin kuten `Int`, `String` ja `Double`.

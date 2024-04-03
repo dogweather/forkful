@@ -15,12 +15,7 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä & Miksi?
-
-YAML, rekursiivinen lyhenne sanoista "YAML Ain't Markup Language", on ihmisen luettavissa oleva datan sarjallistamisformaatti, jota käytetään määritystiedostoissa ja datan vaihdossa eri tietorakenteita käyttävien kielten välillä. Ohjelmoijat käyttävät YAMLia sen yksinkertaisuuden ja luettavuuden vuoksi, mikä tekee siitä ihanteellisen valinnan sovellusten konfigurointiin ja datan vaihtoon polyglot-ohjelmointiympäristöissä.
-
 ## Kuinka:
-
 Clojure ei sisällä sisäänrakennettua tukea YAMLille, mutta voit käyttää kolmannen osapuolen kirjastoja, kuten `clj-yaml`, YAML-datan jäsentämiseen ja luomiseen. Ensiksi, lisää kirjasto projektisi riippuvuuksiin:
 
 ```clojure
@@ -31,7 +26,6 @@ Clojure ei sisällä sisäänrakennettua tukea YAMLille, mutta voit käyttää k
 Tässä on miten voit käyttää `clj-yaml`ia YAMLin jäsentämiseen ja Clojure map:ien muuntamiseen YAMLiksi.
 
 ### YAMLin jäsentäminen:
-
 ```clojure
 (require '[clj-yaml.core :as yaml])
 
@@ -43,7 +37,6 @@ Tässä on miten voit käyttää `clj-yaml`ia YAMLin jäsentämiseen ja Clojure 
 ```
 
 ### YAMLin luominen Clojuresta:
-
 ```clojure
 (require '[clj-yaml.core :as yaml])
 

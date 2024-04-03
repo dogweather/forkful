@@ -10,9 +10,6 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## What & Why?
-La ricerca e sostituzione di testo permette di localizzare stringhe specifiche in un documento e cambiarle con altre. Programmare queste operazioni automatizza la modifica di molti file, risparmiando tempo e riducendo errori.
-
 ## How to:
 Esempio semplice per cercare e sostituire una parola in una stringa:
 

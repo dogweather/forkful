@@ -12,12 +12,7 @@ title: Escribiendo un archivo de texto
 weight: 24
 ---
 
-## ¿Qué y Por Qué?
-
-Escribir en un archivo de texto en Lua implica crear o abrir un archivo en modo de escritura, utilizando operaciones de archivo para insertar texto. Esta es una operación fundamental para tareas como el registro (logging), almacenamiento de datos o la gestión de configuración, permitiendo que los programas guarden datos de manera persistente entre sesiones.
-
 ## Cómo hacerlo:
-
 En Lua, trabajar con archivos para escribir es sencillo. Normalmente utilizarás la función `io.open()` para abrir (o crear) un archivo, especificando el modo de operación -- en este caso, `"w"` para escritura. Si el archivo no existe, se crea; si existe, su contenido se sobrescribe. Es crucial cerrar el archivo después de escribir para asegurar que los datos se guarden correctamente y los recursos se liberen.
 
 Aquí hay un ejemplo simple que escribe una cadena en un archivo llamado "example.txt":

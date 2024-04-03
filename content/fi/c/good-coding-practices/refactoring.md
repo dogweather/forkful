@@ -12,12 +12,7 @@ title: Koodin uudelleenkirjoitus
 weight: 19
 ---
 
-## Mitä & Miksi?
-
-Ohjelmoinnissa refaktorointi tarkoittaa olemassa olevan koodin uudelleenrakentamista muuttamatta sen ulkoista käyttäytymistä. Tavoitteena on parantaa ei-toiminnallisia attribuutteja, kuten luettavuutta, vähentää monimutkaisuutta ja parantaa ylläpidettävyyttä. Ohjelmoijat refaktoroivat pitääkseen koodikannan puhtaana, minimoimaan teknisen velan ja tehdäkseen tulevat muutokset helpommiksi ja turvallisemmiksi toteuttaa.
-
 ## Kuinka:
-
 Refaktorointi voi sisältää toimenpiteitä muuttujien nimeämisen selkeyttämisestä koodin rakenteen muuttamiseen paremman modulaarisuuden saavuttamiseksi. Tässä on yksinkertainen esimerkki siitä, kuinka C-koodia voidaan refaktoroida paremman selkeyden ja tehokkuuden saavuttamiseksi.
 
 Ennen refaktorointia:
@@ -60,7 +55,6 @@ int main() {
 Tuloste pysyy muuttumattomana, mutta arvojen vaihtamisen toiminnallisuus on siirretty erilliseen funktioon (`swap`), mikä parantaa luettavuutta ja uudelleenkäytettävyyttä.
 
 ## Syväsukellus
-
 Koodin refaktoroinnin käytäntö on ollut olemassa yhtä kauan kuin ohjelmistokehitys itse, kehittyen rinnalla ohjelmointiparadigmojen ja -kielten kanssa. C:ssä, kielenä, joka on sekä voimakas että täynnä tehotonta ja virheellistä toimintaa alhaisen tason luonteensa vuoksi, refaktorointi on erityisen tärkeää. Se voi olla ero ylläpidettävän ja tehotonta sekasortoa täynnä olevan koodikannan välillä.
 
 Erityinen harkinta C:ssä on tasapaino mikro-optimointien ja luettavuuden/ylläpidettävyyden välillä. Vaikka on houkuttelevaa hienosäätää C-koodia viimeiseen suorituskykytippaan asti, tällaiset optimoinnit voivat tehdä koodista hauraamman ja vaikeammin luettavan. Siksi on yleensä parempi priorisoida puhdas, luettava koodi ja luottaa kääntäjän optimoijaan suorituskyvyn parantamisessa, missä mahdollista.

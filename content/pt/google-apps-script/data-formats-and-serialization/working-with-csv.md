@@ -13,14 +13,10 @@ title: Trabalhando com CSV
 weight: 37
 ---
 
-## O que & Por quê?
-
-Trabalhar com arquivos CSV (Valores Separados por Vírgulas) no Google Apps Script envolve ler, modificar e escrever arquivos de texto simples onde cada linha representa um registro de dados com valores separados por vírgulas. Os programadores fazem isso para facilitar a troca de dados entre diferentes aplicações, bancos de dados ou linguagens de programação devido à ampla adoção do CSV como um formato de intercâmbio de dados baseado em texto simples.
-
 ## Como fazer:
 
-### Lendo Dados CSV
 
+### Lendo Dados CSV
 Para ler dados CSV de um arquivo armazenado no Google Drive, você precisa primeiro obter o conteúdo do arquivo como uma string, depois analisá-lo. O Google Apps Script torna a obtenção do conteúdo do arquivo direta com o serviço DriveApp.
 
 ```javascript
@@ -38,7 +34,6 @@ function readCSV() {
 ```
 
 ### Escrevendo Dados CSV
-
 Criar e escrever em um CSV envolve a construção de uma string com valores separados por vírgulas e quebras de linha, depois salvando ou exportando-a. Este exemplo demonstra a criação de um novo arquivo CSV no Google Drive.
 
 ```javascript
@@ -53,7 +48,6 @@ function writeCSV() {
 ```
 
 ### Saída de Exemplo
-
 Ao registrar células de linhas ao ler um CSV:
 
 ```plaintext
@@ -70,7 +64,6 @@ Jane Smith,34,Designer
 ```
 
 ## Aprofundamento
-
 Historicamente, os arquivos CSV têm sido favorecidos por sua simplicidade e legibilidade humana, tornando-os acessíveis a não-programadores e úteis para tarefas rápidas de inspeção de dados. No entanto, o Google Apps Script opera dentro do reino do ecossistema do Google, onde o Google Sheets atua como uma alternativa poderosa e amigável para a manipulação de CSV. As planilhas não apenas fornecem uma GUI para edição de dados, mas também suportam fórmulas complexas, estilização e muitos mais recursos que os CSVs brutos não possuem.
 
 Apesar das vantagens oferecidas pelo Google Sheets, a manipulação direta de CSV no Google Apps Script permanece importante para tarefas automatizadas, especialmente ao lidar com sistemas externos que geram ou requerem dados no formato CSV. Por exemplo, integrando com sistemas legados, exportando dados para uso em outras aplicações ou pré-processando antes de alimentar dados no Google Sheets.

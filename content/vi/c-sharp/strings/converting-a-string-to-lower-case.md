@@ -17,9 +17,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---
 
-## Cái gì & Tại sao?
-Chuyển đổi một chuỗi thành chữ thường có nghĩa là biến đổi tất cả các ký tự in hoa trong văn bản thành các ký tự tương đương ở dạng chữ thường. Lập trình viên làm điều này để đảm bảo sự nhất quán, đặc biệt là cho các phép so sánh không phân biệt chữ hoa chữ thường, tìm kiếm, hoặc để chuẩn hóa dữ liệu đầu vào trước khi xử lý.
-
 ## Làm thế nào:
 Trong C#, bạn có thể chuyển đổi một chuỗi thành chữ thường sử dụng các phương thức `ToLower()` hoặc `ToLowerInvariant()`. Dưới đây là cách thực hiện:
 

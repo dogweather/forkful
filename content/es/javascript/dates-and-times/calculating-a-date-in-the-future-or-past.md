@@ -10,9 +10,6 @@ title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---
 
-## Qué y Por Qué?
-Calcular una fecha en el futuro o en el pasado es simplemente ajustar la fecha actual para obtener otra. Los programadores lo hacen para manejar reservas, recordatorios, suscripciones y cualquier cosa que dependa del tiempo.
-
 ## Cómo Hacerlo:
 Aquí hay un ejemplo simple: queremos saber la fecha 10 días a partir de ahora.
 

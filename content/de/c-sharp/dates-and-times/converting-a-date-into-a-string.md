@@ -10,9 +10,6 @@ title: Datum in einen String umwandeln
 weight: 28
 ---
 
-## What & Why? (Was & Warum?)
-Das Umwandeln eines Datums in einen String bedeutet, ein Datum von einem Format, das für die Datumsverarbeitung optimiert ist, in einen Text umzuwandeln. Programmierer machen das, um Daten benutzerfreundlich zu präsentieren oder sie in einem nicht-datumsbasierten System zu speichern.
-
 ## How to (Wie man's macht):
 C# bietet die `ToString`-Methode für das `DateTime`-Objekt, um Datumsangaben in Strings umzuwandeln. Sehen wir uns das an:
 

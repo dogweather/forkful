@@ -13,12 +13,7 @@ title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mikä & Miksi?
-
-Interaktiivinen komentorivi (REPL - Read-Evaluate-Print Loop) Dartille mahdollistaa ohjelmoijien dynaamisen koodin kirjoittamisen ja suorittamisen rivi riviltä ilman, että koko skriptejä tarvitsee kääntää. Tämä työkalu on korvaamaton Dart-syntaksin oppimisessa, koodinpätkien kokeilemisessa tai debuggaamisessa tarjoten välitöntä palautetta ja helpottaen iteratiivista testausta.
-
 ## Miten:
-
 Dart ei tule sisäänrakennetun REPL:n kanssa. Voit kuitenkin saavuttaa REPL:n kaltaisen toiminnallisuuden käyttämällä DartPadia (verkossa) tai hyödyntämällä kolmannen osapuolen työkaluja kuten `dart_repl`.
 
 **Käyttäen DartPadia:**

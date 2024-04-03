@@ -10,9 +10,6 @@ title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---
 
-## What & Why? (O Que & Por Que?)
-Baixar uma página da web é pegar o seu conteúdo usando código. Programadores fazem isso para análise de dados, testes automatizados ou para turbinar aplicativos com informações em tempo real.
-
 ## How to: (Como fazer:)
 ```C#
 using System;

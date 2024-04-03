@@ -10,9 +10,6 @@ title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---
 
-## Quoi et pourquoi ?
-Retirer les guillemets d'une chaîne de caractères signifie enlever ces caractères de guillemets doubles ou simples qui enlacent votre texte. Les programmeurs font cela pour assainir les entrées, simplifier l'analyse syntaxique, ou harmoniser des données qui pourraient être citées de manière inconsistante.
-
 ## Comment faire :
 Voici comment éliminer ces guillemets dans Lua :
 

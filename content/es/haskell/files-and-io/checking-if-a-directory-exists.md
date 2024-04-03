@@ -14,9 +14,6 @@ title: Comprobando si un directorio existe
 weight: 20
 ---
 
-## ¿Qué y por qué?
-Comprobar si un directorio existe es una operación fundamental en muchas tareas de programación, lo que permite realizar acciones condicionales basadas en la presencia o ausencia de estructuras de directorios. Es crucial para la manipulación de archivos, scripts automatizados, y durante la configuración inicial de software para asegurar que los directorios necesarios estén en su lugar, o para evitar duplicar directorios.
-
 ## Cómo hacerlo:
 Haskell, a través de su biblioteca base, ofrece formas sencillas de verificar la existencia de un directorio, principalmente utilizando el módulo `System.Directory`. Veamos un ejemplo básico:
 

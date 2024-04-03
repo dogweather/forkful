@@ -14,9 +14,6 @@ title: Sjekker om en mappe eksisterer
 weight: 20
 ---
 
-## Hva & Hvorfor?
-I konteksten av Arduino-programmering, er det å sjekke om en mappe eksisterer på et SD-kort eller lignende lagringsmodul essensielt for å kunne lese eller skrive filer uten feil. Denne operasjonen er viktig for datalogging, konfigurasjonsstyring, eller enhver oppgave som krever strukturert fillagring, og sikrer pålitelighet og smidig ytelse i applikasjonene dine.
-
 ## Hvordan gjøre det:
 Arduino støtter ikke nativt komplekse filsystemoperasjoner rett ut av boksen. Imidlertid, med bruk av SD-biblioteket, som er en del av det standard Arduino IDE, kan du enkelt arbeide med filer og mapper. For å sjekke om en mappe eksisterer, må du først initialisere SD-kortet og deretter bruke `exists()`-metoden fra SD-biblioteket.
 

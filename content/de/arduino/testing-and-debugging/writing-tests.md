@@ -13,16 +13,10 @@ title: Tests Schreiben
 weight: 36
 ---
 
-## Was & Warum?
-
-Tests im Arduino-Umfeld zu schreiben, bezieht sich auf den Prozess des Erstellens von automatisierten Tests, die die Funktionalität Ihres Codes auf Arduino-Geräten validieren. Programmierer tun dies, um sicherzustellen, dass ihr Code wie erwartet funktioniert, Fehler reduziert und die Qualität ihrer Projekte verbessert, was besonders in eingebetteten Systemen, in denen das Debugging herausfordernder sein kann, von entscheidender Bedeutung ist.
-
 ## Wie:
-
 Arduino verfügt nicht über ein eingebautes Test-Framework wie einige andere Programmierumgebungen. Sie können jedoch Drittanbieter-Bibliotheken wie `AUnit` für das Unit-Testing von Arduino-Code verwenden. AUnit ist inspiriert von der in Arduino integrierten Bibliothek `ArduinoUnit` und dem Test-Framework von Google, `Google Test`.
 
 ### Beispiel mit AUnit:
-
 Installieren Sie zuerst AUnit über den Bibliotheks-Manager in der Arduino-IDE: gehen Sie zu Sketch > Bibliothek einbinden > Bibliotheken verwalten... > suchen Sie nach AUnit und installieren Sie es.
 
 Danach können Sie Tests wie folgt schreiben:

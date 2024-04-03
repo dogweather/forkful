@@ -13,9 +13,6 @@ title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---
 
-## ¿Qué y Por Qué?
-Analizar una fecha desde una cadena permite a los programadores convertir representaciones textuales de fechas en objetos `Date` de JavaScript, facilitando manipulaciones, comparaciones y operaciones de formato de fechas. Este proceso es esencial para manejar la entrada del usuario, procesar datos de bases de datos o trabajar con APIs que comunican fechas en formatos de cadena.
-
 ## Cómo hacerlo:
 JavaScript ofrece de forma nativa el método `Date.parse()` y el constructor `Date` para analizar cadenas de fechas. Sin embargo, estos enfoques tienen limitaciones e inconsistencias entre diferentes navegadores, especialmente con formatos de fechas no estándar. Para abordar estos problemas, librerías de terceros como `Moment.js` y `date-fns` son populares por su robustez y facilidad de uso.
 

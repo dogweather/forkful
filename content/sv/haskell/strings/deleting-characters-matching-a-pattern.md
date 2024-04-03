@@ -11,9 +11,6 @@ title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---
 
-## Vad & Varför?
-Att ta bort tecken som matchar ett mönster innebär att filtrera bort specifika tecken från en textsträng. Programmerare gör detta för att rensa data, validera inmatningar eller bearbeta text.
-
 ## How to:
 ```Haskell
 import Data.List (delete)

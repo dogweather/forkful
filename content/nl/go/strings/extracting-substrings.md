@@ -12,16 +12,10 @@ title: Substrings extraheren
 weight: 6
 ---
 
-## Wat & Waarom?
-
-Het extraheren van substrings houdt in dat specifieke delen van een string worden opgehaald op basis van hun positie. Programmeurs voeren deze bewerking vaak uit om tekstgegevens efficiënt te verwerken of te manipuleren, zoals het parsen van invoer, het valideren van formaten of het voorbereiden van uitvoer.
-
 ## Hoe:
-
 In Go is het `string` type een alleen-lezen slice van bytes. Om substrings te extraheren, maakt men voornamelijk gebruik van de `slice`-syntax, naast de ingebouwde `len()` functie voor lengtecontrole en het `strings` package voor complexere bewerkingen. Hier is hoe je dit kunt bereiken:
 
 ### Basis Slicing
-
 ```go
 package main
 
@@ -39,7 +33,6 @@ func main() {
 ```
 
 ### Gebruikmakend van het `strings` Package
-
 Voor geavanceerdere substring-extractie, zoals het extraheren van strings na of voor een specifieke substring, kun je het `strings` package gebruiken.
 
 ```go
@@ -62,7 +55,6 @@ func main() {
 Het is essentieel om op te merken dat Go strings UTF-8 gecodeerd zijn en een directe byte slice niet altijd geldige strings oplevert als ze multibyte karakters bevatten. Voor Unicode-ondersteuning, overweeg het gebruik van `range` of het `utf8` package.
 
 ### Omgaan met Unicode Karakters
-
 ```go
 package main
 
@@ -82,7 +74,6 @@ func main() {
 ```
 
 ## Diepere Duik
-
 Het extraheren van substrings in Go is eenvoudig, dankzij de slice-syntax en de uitgebreide standaardbibliotheek. Historisch gezien boden eerdere programmeertalen meer directe functies of methoden om dergelijke tekstmanipulatie te hanteren. Echter, de benadering van Go benadrukt veiligheid en efficiëntie, met name met zijn onveranderlijke strings en expliciete afhandeling van Unicode karakters door middel van runes.
 
 Hoewel eenvoudige slicing profiteert van prestatie-efficiëntie, erft het de complexiteit van het direct omgaan met UTF-8 karakters. De introductie van het `rune` type stelt Go-programma's in staat om veilig met Unicode tekst om te gaan, waardoor het een krachtig alternatief wordt voor internationale toepassingen.

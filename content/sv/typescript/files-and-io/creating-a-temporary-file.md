@@ -11,9 +11,6 @@ title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---
 
-## Vad & Varför?
-Att skapa en temporär fil innebär att man tillfälligt lagrar data på disken. Programmerare gör detta för att hantera information som inte behövs efter programmets körning eller för att minska minnesanvändning under körning.
-
 ## Hur gör man:
 I TypeScript använder vi ofta tredjepartsmoduler för att skapa temporära filer. Här är ett exempel med `tempfile`-modulen.
 

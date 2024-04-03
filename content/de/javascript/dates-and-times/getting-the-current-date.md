@@ -14,9 +14,6 @@ title: Den aktuellen Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-Das aktuelle Datum in JavaScript zu erhalten, ist eine grundlegende Aufgabe, die das Abrufen und möglicherweise Manipulieren des heutigen Datums und der Uhrzeit umfasst. Programmierer führen dies durch, um Datumsangaben auf Websites, in Applikationen anzuzeigen, Benutzerinteraktionen zu verfolgen oder zeitkritische Daten zu verarbeiten.
-
 ## Wie:
 In reinem JavaScript wird das `Date`-Objekt verwendet, um mit Datums- und Zeitangaben zu arbeiten. Hier ist, wie Sie das aktuelle Datum und die Uhrzeit erhalten können:
 

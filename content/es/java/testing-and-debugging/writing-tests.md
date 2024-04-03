@@ -12,14 +12,10 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## Qué y Por Qué?
-Escribir pruebas en Java se trata de verificar que tu código se comporta como se espera bajo varias condiciones. Los programadores escriben pruebas para prevenir errores, asegurar que la funcionalidad permanezca correcta después de cambios, y fomentar buenos principios de diseño de software.
-
 ## Cómo hacerlo:
 Los desarrolladores de Java usan principalmente dos marcos de pruebas: JUnit y TestNG. Aquí, nos centraremos en JUnit, la elección más popular para escribir pruebas debido a su simplicidad y adopción generalizada.
 
 ### Fundamentos de JUnit
-
 Para usar JUnit en tu proyecto Maven, añade la siguiente dependencia a tu `pom.xml`:
 
 ```xml
@@ -50,7 +46,6 @@ public class CalculatorTest {
 Ejecutar esta prueba resultará en un éxito, indicando que el método `add` funciona como se espera, o en un fallo, mostrando un mensaje de error.
 
 ### Simulación con Mockito
-
 En escenarios del mundo real, los objetos a menudo dependen de otros objetos. Mockito es un marco de simulación popular que ayuda en la creación de objetos simulados con el propósito de probar.
 
 Agrega Mockito a tu proyecto Maven:

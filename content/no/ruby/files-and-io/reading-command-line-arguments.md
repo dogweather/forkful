@@ -11,9 +11,6 @@ title: Lese kommandolinjeargumenter
 weight: 23
 ---
 
-## Hva & Hvorfor?
-Kommandolinjeargumenter lar deg sende data direkte til et Ruby-program når du kjører det. Programmere bruker dette for å gjøre programmene fleksible og tilpasse kjøringen uten å endre koden.
-
 ## Hvordan:
 Her er et enkelt Ruby-script som leser argumenter fra kommandolinjen:
 

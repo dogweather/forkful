@@ -10,9 +10,6 @@ title: Searching and replacing text
 weight: 10
 ---
 
-## What & Why?
-Searching and replacing text means finding specific substrings and swapping them out for something new. Why bother? It's everywhere: fixing typos in a document, refining code, or batch editing data.
-
 ## How to:
 In JavaScript, `String.prototype.replace()` is the go-to. Pass a string or regex and the replacement. Here's the quick and dirty:
 

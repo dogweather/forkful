@@ -12,9 +12,6 @@ title: Quotes verwijderen uit een string
 weight: 9
 ---
 
-## Wat & Waarom?
-Het verwijderen van aanhalingstekens uit een string betekent het wegpeuteren van die vervelende dubbele of enkele karakters die onze tekst omsluiten (' of "). Programmeurs doen dit vaak om invoer te zuiveren, tekst op te slaan in een database, of strings voor te bereiden voor verdere verwerking zonder de rommel van aanhalingstekens.
-
 ## Hoe:
 Hier is een eenvoudige manier om die aanhalingstekens in C++ opzij te zetten:
 

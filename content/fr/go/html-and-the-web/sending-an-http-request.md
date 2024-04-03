@@ -13,12 +13,7 @@ title: "Envoyer une requ\xEAte HTTP"
 weight: 44
 ---
 
-## Quoi & Pourquoi ?
-
-Envoyer une requête HTTP implique d'initier un appel depuis votre application Go vers un serveur web, une API ou tout autre service basé sur HTTP. Les programmeurs font cela pour interagir avec des ressources web, récupérer des données, soumettre des formulaires ou communiquer avec d'autres services à travers l'internet.
-
 ## Comment :
-
 Dans Go, envoyer une requête HTTP et gérer la réponse implique l'utilisation du paquet `net/http`. Voici un exemple étape par étape montrant comment envoyer une simple requête GET et lire la réponse :
 
 ```go
@@ -100,7 +95,6 @@ func main() {
 ```
 
 ## Approfondissement
-
 Le paquet `net/http` dans Go offre une manière puissante et flexible d'interagir avec des serveurs HTTP. Son design reflète l'accent mis par Go sur la simplicité, l'efficacité et la robustesse. Initialement, des fonctionnalités comme la gestion des charges utiles JSON ou XML nécessitaient de fabriquer manuellement le corps de la requête et de définir les en-têtes appropriés. Au fur et à mesure de l'évolution de Go, la communauté a développé des paquets de niveau supérieur qui simplifient davantage ces tâches, comme `gorilla/mux` pour le routage et `gjson` pour la manipulation de JSON.
 
 Un aspect notable du client HTTP de Go est son utilisation d'interfaces et de structures, comme `http.Client` et `http.Request`, qui permettent une personnalisation et des tests étendus. Par exemple, vous pouvez modifier le `http.Client` pour définir un délai d'expiration des requêtes ou maintenir les connexions actives pour améliorer la performance.

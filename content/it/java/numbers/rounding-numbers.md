@@ -9,9 +9,6 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Cosa e perché?
-Arrotondare i numeri significa adeguarli a un determinato grado di precisione. I programmatori lo fanno per semplificare i numeri per leggibilità, per soddisfare certe specifiche, o per assicurare che i calcoli rientrino entro certi limiti, come evitare errori di precisione nell'aritmetica in virgola mobile.
-
 ## Come fare:
 Java offre molteplici modi per arrotondare i numeri. Ecco una dimostrazione rapida con `Math.round()`, `BigDecimal` e `DecimalFormat`.
 

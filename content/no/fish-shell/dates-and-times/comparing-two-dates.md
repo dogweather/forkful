@@ -10,9 +10,6 @@ title: Sammenlikning av to datoer
 weight: 27
 ---
 
-## What & Why?
-Sammenligning av to datoer handler om å sjekke hvilken som er tidligst, om de er like, eller om den ene ligger etter den andre. Programmerere trenger dette for funksjoner som tidsstyring, gyldighetskontroller og sortering etter dato.
-
 ## How to:
 Sammenligning av to datoer i Fish kan gjøres med `date` kommandoen og litt kreativ scripting. Her er et eksempel:
 

@@ -14,12 +14,7 @@ title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---
 
-## Cái gì & Tại sao?
-
-Việc tìm độ dài của một chuỗi nghĩa là đo xem nó chứa bao nhiêu ký tự. Lập trình viên thực hiện việc này để xác thực đầu vào, lặp qua các ký tự, hoặc giới hạn hiển thị văn bản, trong số các lý do khác.
-
 ## Làm thế nào:
-
 Trong TypeScript, bạn có thể lấy độ dài của một chuỗi sử dụng thuộc tính `.length`. Dưới đây là một ví dụ nhanh:
 
 ```typescript
@@ -30,7 +25,6 @@ console.log(greeting.length); // Kết quả: 18
 Đoạn mã này khai báo một biến chuỗi tên là `greeting` và sau đó ghi độ dài của nó ra console.
 
 ## Sâu hơn
-
 Thuộc tính `.length` là một di sản từ JavaScript, tổ tiên của TypeScript. Đây là một cách đơn giản và được hỗ trợ phổ biến để lấy kích thước của một chuỗi.
 
 Có những phương pháp khác, nhưng chúng thường làm phức tạp hóa vấn đề. Ví dụ, bạn có thể chuyển đổi chuỗi sang một mảng và đếm số phần tử:
@@ -58,7 +52,6 @@ console.log(countCodePoints(fancyGreeting)); // Kết quả: 9
 Hàm này xử lý các điểm mảnh của mã hóa chuỗi để đảm bảo mỗi ký tự, dù là một hoặc hai đơn vị mã, được đếm một cách chính xác.
 
 ## Xem thêm
-
 - Sổ tay TypeScript về Chuỗi: [Sổ tay TypeScript](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#strings)
 - MDN Web Docs về thuộc tính độ dài Chuỗi: [String.prototype.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
 - Unicode và JavaScript: [JavaScript có một vấn đề về Unicode - Mathias Bynens](https://mathiasbynens.be/notes/javascript-unicode)

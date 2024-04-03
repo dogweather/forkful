@@ -11,9 +11,6 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä & Miksi?
-Virheiden käsittely PowerShellissa tarkoittaa mahdollisten ongelmien ennakointia ja niiden sujuvaa hallintaa. Ohjelmoijat tekevät tämän estääkseen ohjelmien kaatumiset ja tarjoavat käyttäjille hyödyllisiä palautteita.
-
 ## Kuinka:
 ```PowerShell
 # Perus Try-Catch poikkeusten käsittelyyn
@@ -34,6 +31,7 @@ try {
 
 # $Error-muuttujan käyttö viimeisimmän virheen tarkasteluun
 ```
+
 ## Syväsukellus
 PowerShell on tullut pitkän matkan siitä, kun se tunnettiin Monadina. Virheenkäsittely on kehittynyt ajan myötä, ja se tarjoaa ominaisuuksia, jotka ovat verrattavissa muihin ohjelmointikieliin. Esimerkiksi `try-catch-finally` syntaksi on peräisin kielistä kuten C#. Ennen sitä skriptinkirjoittajat nojautuivat vahvasti ehtojen tarkistamiseen ja `$Error`-automaattiseen muuttujaan.
 

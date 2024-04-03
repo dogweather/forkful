@@ -10,9 +10,6 @@ title: Rimuovere le virgolette da una stringa
 weight: 9
 ---
 
-## Che cosa e perché?
-Rimuovere le virgolette da una stringa significa spogliare il testo di quei caratteri di virgoletta doppia o singola che lo abbracciano. I programmatori fanno ciò per sanificare gli input, per facilitare l'analisi, o per armonizzare dati che potrebbero essere quotati in modo inconsistente.
-
 ## Come fare:
 Ecco come mandare al tappeto quelle virgolette in Lua:
 

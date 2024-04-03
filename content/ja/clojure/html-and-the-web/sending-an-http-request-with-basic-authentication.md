@@ -10,14 +10,13 @@ title: "\u57FA\u672C\u8A8D\u8A3C\u3092\u4F7F\u7528\u3057\u305FHTTP\u30EA\u30AF\u
 weight: 45
 ---
 
-## What & Why?
 ## 何となぜ？
-
 HTTPリクエストに基本認証を利用することは、ユーザー名とパスワードで保護されたリソースにアクセスする方法です。この技術はAPIやサービスに安全にアクセスするためによく使われます。
 
 ## How to:
-## 方法：
 
+
+## 方法：
 ```clojure
 (require '[clj-http.client :as client])
 
@@ -37,15 +36,17 @@ HTTPリクエストに基本認証を利用することは、ユーザー名と�
 ```
 
 ## Deep Dive
-## 詳細な情報：
 
+
+## 詳細な情報：
 基本認証は、HTTPプロトコルの古い形式の認証方法で、RFC 7617で定義されています。セキュリティが強固でないため、HTTPSと組み合わせて使用されることが一般的です。代替手段としては、OAuthやAPIキーなど、より安全な認証方式があります。
 
 Clojureでは`clj-http`ライブラリが人気で、HTTPリクエストを手軽に行えます。上記のコードでは、ユーザー名とパスワードから"Authorization"ヘッダーを生成しています。`base64-encode`を利用し、エンコードされた認証情報をHTTPリクエストに持たせています。
 
 ## See Also
-## 関連情報：
 
+
+## 関連情報：
 - HTTP基本認証 (RFC 7617): https://tools.ietf.org/html/rfc7617
 - clj-httpドキュメント: https://github.com/dakrone/clj-http
 - Clojure公式サイト: https://clojure.org

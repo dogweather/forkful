@@ -14,12 +14,7 @@ title: Lendo argumentos da linha de comando
 weight: 23
 ---
 
-## O Quê & Porquê?
-
-Na programação em C, a leitura de argumentos da linha de comando permite que os programas aceitem entradas diretamente do terminal, aumentando a flexibilidade e a usabilidade. Os programadores aproveitam isso para configurar comportamentos de scripts sem modificar o código, tornando as aplicações adaptáveis e eficientes.
-
 ## Como fazer:
-
 Em C, a função `main` pode ser projetada para aceitar argumentos da linha de comando usando os parâmetros `int argc` e `char *argv[]`. Aqui, `argc` representa o número de argumentos passados, e `argv` é um array de ponteiros de caracteres que lista todos os argumentos. Aqui está um exemplo rápido para ilustrar:
 
 ```c
@@ -47,7 +42,6 @@ Argumento 2: exemplo
 Isso demonstra como os argumentos da linha de comando podem ser analisados e utilizados em um programa C.
 
 ## Mergulho Profundo
-
 A convenção de passar argumentos para programas remonta aos primeiros dias do Unix. Nessa abordagem tradicional, `argc` e `argv` fornecem uma interface simples, porém poderosa, para interação com a linha de comando, incorporando a filosofia do Unix de utilitários pequenos e modulares que trabalham juntos. Embora linguagens modernas muitas vezes introduzam bibliotecas ou frameworks mais sofisticados para a análise de argumentos da linha de comando, a direção do método de C oferece uma transparência e controle inigualáveis.
 
 Em desenvolvimentos recentes, bibliotecas como `getopt` em sistemas POSIX evoluíram para suportar necessidades de análise mais complexas, como o manuseio de nomes de opções longas ou valores padrão para argumentos ausentes. No entanto, o mecanismo básico de `argc` e `argv` permanece essencial para entender como os programas interagem com seu ambiente de execução em C.

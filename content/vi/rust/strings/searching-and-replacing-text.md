@@ -15,11 +15,7 @@ title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---
 
-## Cái gì & Tại sao?
-Tìm kiếm và thay thế văn bản là quá trình tìm kiếm chuỗi trong các chuỗi và thay thế chúng bằng một cái gì đó khác. Lập trình viên thực hiện điều này để chỉnh sửa dữ liệu, tái cấu trúc mã, hoặc tự động hóa việc xử lý văn bản.
-
 ## Cách thực hiện:
-
 ```Rust
 fn main() {
     let text = "Xin chào!";

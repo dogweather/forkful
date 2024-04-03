@@ -11,9 +11,6 @@ title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---
 
-## What & Why?
-Trouver la longueur d'une chaîne de caractères consiste à compter le nombre de caractères qu'elle contient. Les programmeurs le font pour valider des saisies, gérer des affichages, ou optimiser des traitements de texte.
-
 ## How to:
 ```Elm
 import String

@@ -11,12 +11,7 @@ title: Generera slumptal
 weight: 12
 ---
 
-## Vad & Varför?
-
-Att generera slumptal i C# innebär skapandet av oförutsägbara numeriska värden inom ett angivet intervall. Programmerare använder dessa metoder för att implementera funktioner som kryptografi, simuleringar och spel där oförutsägbarhet eller simulering av verklig slumpmässighet krävs.
-
 ## Hur man gör:
-
 Det vanligaste sättet att generera slumptal i C# är att använda klassen `System.Random`. Här är ett enkelt exempel som demonstrerar dess användning:
 
 ```C#
@@ -68,7 +63,6 @@ public class SecureRandomExample
 ```
 
 ## Djupdykning
-
 Generering av slumptal i C# har utvecklats över åren. Inledningsvis var klassen `System.Random` det gå-tillvalet för att generera pseudoslumptal. Det är pseudoslumpmässigt eftersom det, med ett specifikt startvärde, kommer att producera samma sekvens av nummer, vilket kan vara användbart för felsökning eller upprepbarhet av tester.
 
 Medan det är tillräckligt för grundläggande behov är `System.Random` inte trådsäkert och kan producera förutsägbara resultat, vilket inte är lämpligt för säkerhetsberoende applikationer. Denna begränsning ledde till införandet av `RNGCryptoServiceProvider` för kryptografisk slumpmässighet, vilket är säkrare men också mer resurskrävande.

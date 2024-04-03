@@ -15,12 +15,7 @@ title: Praca z plikami CSV
 weight: 37
 ---
 
-## Co i dlaczego?
-
-Praca z plikami CSV (Comma Separated Values), czyli wartościami rozdzielanymi przecinkami, wiąże się z parsowaniem, manipulowaniem i generowaniem danych w formacie tabelarycznym, który jest szeroko stosowany do wymiany danych między aplikacjami. Programiści wykonują te operacje, aby efektywnie przetwarzać i analizować dane, automatyzować zadania lub integrować się z innymi systemami.
-
 ## Jak to zrobić:
-
 Sam Fish Shell nie ma wbudowanych funkcji specjalnie przeznaczonych do manipulacji plikami CSV. Jednakże można wykorzystać narzędzia Unixowe takie jak `awk`, `sed` i `cut` do podstawowych operacji lub użyć specjalistycznych narzędzi takich jak `csvkit` do zadań bardziej zaawansowanych.
 
 ### Odczytywanie pliku CSV i wyświetlanie pierwszej kolumny:

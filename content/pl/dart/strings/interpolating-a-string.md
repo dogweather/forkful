@@ -14,12 +14,7 @@ title: "Interpolacja ci\u0105gu znak\xF3w"
 weight: 8
 ---
 
-## Co i dlaczego?
-
-Interpolacja łańcuchów znaków to proces wstrzykiwania wartości zmiennych bezpośrednio w łańcuchy znaków, często w celu tworzenia znaczących komunikatów bez uciążliwych konkatenacji. Programiści stosują to, aby kod był czystszy, bardziej czytelny oraz aby zapobiec błędom, które mogą wystąpić przy skomplikowanych konkatenacjach łańcuchów znaków.
-
 ## Jak to zrobić:
-
 W Dart, interpolacja łańcuchów znaków jest prosta, wykorzystuje symbol `$` do bezpośredniej interpolacji wyrażeń w literałach łańcuchowych:
 
 ```dart

@@ -10,9 +10,6 @@ title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---
 
-## What & Why?
-Tagliare via i caratteri seguendo una certa regola è come fare pulizia nel testo, togliendo ciò che non serve. I programmatori lo fanno per semplificare stringhe, per l'analisi dati, o per normalizzare e validare input.
-
 ## How to:
 In Clojure, usiamo `clojure.string/replace` per sostituire i caratteri indesiderati. Ecco come:
 

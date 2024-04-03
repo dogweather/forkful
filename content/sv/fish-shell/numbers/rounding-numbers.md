@@ -11,9 +11,6 @@ title: Avrundning av tal
 weight: 13
 ---
 
-## Vad & Varför?
-Att avrunda tal handlar om att kapa decimalplatser för att förenkla dina data eller passa specifika format. Programmerare gör detta för användarvänlig visning, effektiv lagring, eller när decimalprecision inte är ett problem.
-
 ## Hur man gör:
 I Fish hänger avrundning av tal på `math`-kommandot. Använd `math -s0` för att avrunda till närmaste heltal.
 

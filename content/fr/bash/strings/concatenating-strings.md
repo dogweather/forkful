@@ -10,9 +10,6 @@ title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Concaténer des chaînes, c'est les coller bout à bout. Les programmeurs le font pour assembler des textes dynamiques, comme créer des messages ou gérer des chemins de fichiers.
-
 ## How to: (Comment faire :)
 Concaténer en Bash est simple. Utilisez des guillemets, des accolades ou mettez juste les chaînes côte à côte. Voici des exemples :
 

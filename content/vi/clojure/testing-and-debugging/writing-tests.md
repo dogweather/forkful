@@ -15,9 +15,6 @@ title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---
 
-## Cái gì & Tại sao?
-Viết test có nghĩa là tạo ra mã lệnh kiểm tra xem mã lệnh khác có hoạt động như mong đợi hay không. Lập trình viên làm vậy để bắt lỗi, đảm bảo độ tin cậy và tránh nhức đầu sau này.
-
 ## Cách thức:
 Clojure sử dụng một thư viện gọi là `clojure.test` để viết và chạy thử nghiệm. Dưới đây là cách sử dụng nó:
 

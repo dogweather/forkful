@@ -27,12 +27,7 @@ title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437
 weight: 45
 ---
 
-## Що це & Чому?
-
-Надсилання HTTP-запиту з базовою автентифікацією — це процес, де клієнт додає до своєї вимоги логін і пароль для доступу до захищених ресурсів. Програмісти роблять це, щоб забезпечити безпечний обмін даними.
-
 ## Як це зробити:
-
 ```elixir
 defmodule HTTPClient do
   require Logger
@@ -65,13 +60,11 @@ end
 ```
 
 ## Поглиблений огляд
-
 Базова автентифікація — це стара, але проста схема автентифікації. Вона передбачає відправлення імені користувача та паролю з кожним запитом. Еліксир використовує модуль `:httpc`, який входить до Erlang/OTP, і підтримує базову автентифікацію. При базовій автентифікації потрібно кодувати логін і пароль у форматі Base64.
 
 Є альтернативи безпечніші, як OAuth 2.0, але для простих чи внутрішніх додатків базова автентифікація іноді все ще використовується. Важливо не забувати, що базова автентифікація без HTTPS небезпечна, оскільки логін і пароль можуть бути легко перехоплені.
 
 ## Дивись також:
-
 - Elixir's `HTTPoison` library documentation: [https://hexdocs.pm/httpoison](https://hexdocs.pm/httpoison)
 - Official `:httpc` module documentation: [http://erlang.org/doc/man/httpc.html](http://erlang.org/doc/man/httpc.html)
 - HTTP Basic Authentication on Mozilla Developer Network: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)

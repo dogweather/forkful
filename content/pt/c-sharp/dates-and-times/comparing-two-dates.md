@@ -10,12 +10,7 @@ title: Comparando duas datas
 weight: 27
 ---
 
-## O Que & Porquê?
-
-Comparar duas datas é verificar a relação temporal entre elas. Programadores fazem isso para gerenciar eventos, validar prazos, organizar cronogramas e até controlar sessões de usuários. É uma ação básica, mas essencial.
-
 ## Como Fazer:
-
 ```C#
 using System;
 
@@ -49,10 +44,8 @@ A data1 é anterior à data2.
 ```
 
 ## Aprofundando
-
 No início da computação, comparar datas não era tão trivial como é hoje. Falhas como o Problema do Ano 2000 (Y2K) mostram que a gestão de datas pode ser complexa. Além do método `DateTime.Compare()`, há outras formas de comparação, por exemplo: usando operadores de comparação (`<`, `>`, `==`) ou métodos como `DateTime.Equals()` e propriedades como `DateTime.Ticks`. A forma de implementação pode variar dependendo do contexto, mas o importante é entender que o tipo `DateTime` no C# é imutável e que ao comparar datas estamos na verdade comparando seus valores de ticks, que representam os nanossegundos desde 1 de janeiro de 0001.
 
 ## Veja Também
-
 - [Documentação oficial do DateTime](https://docs.microsoft.com/pt-br/dotnet/api/system.datetime?view=net-6.0)
 - [Tutorial sobre trabalhar com datas e horas em C#](https://docs.microsoft.com/pt-br/dotnet/standard/datetime)

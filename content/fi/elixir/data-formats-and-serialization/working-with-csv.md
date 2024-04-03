@@ -14,16 +14,10 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä & Miksi?
-
-CSV-tiedostojen (pilkuilla erotettujen arvojen) käsittelyyn kuuluu tietojen lukemista ja kirjoittamista näihin tiedostoihin, mikä on yleinen tarve tehtävissä, jotka vaativat datan tuontia/vientiä tai yksinkertaisia tallennusratkaisuja. Ohjelmoijat hyödyntävät tätä toiminnallisuutta datan vaihtoon järjestelmien välillä, nopeaan datan muokkaukseen, tai tilanteissa, joissa kevyt ja helposti muokattava datamuoto on edullinen.
-
 ## Kuinka:
-
 Elixir, tehokkaan kuviohakunsa ja putkituensa ansiosta, pystyy käsittelemään CSV-tiedostoja tehokkaasti, jopa ilman kolmannen osapuolen kirjastoja. Kuitenkin, edistyneempiin tarpeisiin `nimble_csv`-kirjasto on nopea ja suoraviivainen valinta.
 
 ### CSV-tiedoston lukeminen ilman ulkoisia kirjastoja
-
 Voit lukea ja jäsentää CSV-tiedoston käyttämällä Elixiring sisäänrakennettuja funktioita:
 
 ```elixir
@@ -42,7 +36,6 @@ CSVReader.read_file("data.csv")
 ```
 
 ### Kirjoittaminen CSV-tiedostoon
-
 Samankaltaisesti, jos haluat kirjoittaa tietoja CSV-tiedostoon:
 
 ```elixir
@@ -63,7 +56,6 @@ CSVWriter.write_to_file("output.csv", data)
 ```
 
 ### Käyttäen `nimble_csv`:tä
-
 Monimutkaisempiin CSV-käsittelyihin, `nimble_csv` tarjoaa tehokkaan ja joustavan tavan työskennellä CSV-datan kanssa. Lisää ensin `nimble_csv` riippuvuuksiisi `mix.exs`-tiedostossa ja suorita `mix deps.get`:
 
 ```elixir

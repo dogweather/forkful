@@ -11,9 +11,6 @@ title: "\xC5 jobbe med XML"
 weight: 40
 ---
 
-## Hva & Hvorfor?
-XML (eXtensible Markup Language) handler om å strukturere data i et lesbart format. Programmerere jobber med XML for konfigurasjon, datautveksling mellom apper, og der spesifikasjoner ber om det—tenk SOAP eller web-APIer.
-
 ## Hvordan:
 ```C#
 using System;

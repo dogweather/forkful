@@ -13,14 +13,10 @@ title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---
 
-## O Que & Por Quê?
-
-Gerar números aleatórios em JavaScript é uma técnica usada para criar imprevisibilidade em aplicações, desde jogos que precisam de comportamento aleatório do inimigo até algoritmos de segurança que requerem aleatoriedade criptográfica. Essa capacidade é crucial para desenvolver experiências dinâmicas para o usuário e aplicativos seguros.
-
 ## Como Fazer:
 
-### Geração Básica de Número Aleatório
 
+### Geração Básica de Número Aleatório
 A maneira mais direta de gerar um número aleatório em JavaScript é usar `Math.random()`. Esta função retorna um número pseudo-aleatório de ponto flutuante no intervalo de 0 (inclusivo) a 1 (exclusivo).
 
 ```javascript
@@ -29,7 +25,6 @@ console.log(randomNumber);
 ```
 
 ### Gerando um Número Aleatório Dentro de um Intervalo
-
 Frequentemente, você vai querer um número inteiro aleatório dentro de um intervalo específico. Isso pode ser alcançado escalonando e arredondando a saída de `Math.random()`.
 
 ```javascript
@@ -43,7 +38,6 @@ console.log(getRandomInt(1, 100));
 ```
 
 ### Números Aleatórios Criptograficamente Seguros
-
 Para aplicações que requerem um grau mais alto de aleatoriedade (por exemplo, operações criptográficas), o método `crypto.getRandomValues()` pode ser utilizado. Isso fornece aleatoriedade criptográfica, ao contrário dos números pseudo-aleatórios gerados por `Math.random()`.
 
 ```javascript
@@ -55,7 +49,6 @@ Para aplicações que requerem um grau mais alto de aleatoriedade (por exemplo, 
 ```
 
 ## Aprofundamento
-
 Historicamente, a geração de números aleatórios em JavaScript era inteiramente dependente da função `Math.random()`. Embora conveniente para a maioria dos casos de uso casuais, seu algoritmo, tipicamente uma variante de um gerador de números pseudo-aleatórios (PRNG) como o Mersenne Twister, não oferece segurança criptográfica.
 
 A introdução da Web Cryptography API trouxe o método `crypto.getRandomValues()`, oferecendo uma maneira de gerar números que são muito menos previsíveis e adequados para aplicações sensíveis à segurança. Este método acessa fontes de aleatoriedade do sistema operacional subjacente, como `/dev/random` em Unix/Linux, que são mais robustas e adequadas para operações criptográficas.

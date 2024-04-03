@@ -14,10 +14,8 @@ title: Obteniendo la fecha actual
 weight: 29
 ---
 
-## ¿Qué y Por Qué?
-En la programación, obtener la fecha actual es una tarea fundamental que permite a los desarrolladores acceder, mostrar o manipular la fecha actual dentro de sus aplicaciones. Esta capacidad es crucial para todo, desde registrar y marcar eventos con la hora hasta cálculos basados en fechas.
-
 ## Cómo hacerlo:
+
 
 ### Usando Kotlin Estándar
 Kotlin no tiene su propia API de fecha y hora, sino que depende de la Java Standard Library para esta funcionalidad. Así es como puedes obtener la fecha actual:

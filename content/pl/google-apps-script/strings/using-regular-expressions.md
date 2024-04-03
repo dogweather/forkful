@@ -13,16 +13,10 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-
-Wyrażenia regularne (regex) są wzorcami używanymi do dopasowywania kombinacji znaków w ciągach tekstowych. Programiści wykorzystują je do wyszukiwania, edytowania lub manipulowania tekstem i danymi, co czyni je niezastąpionymi w dziedzinie dopasowywania wzorców i analizy danych.
-
 ## Jak to zrobić:
-
 Użycie wyrażeń regularnych w Google Apps Script jest proste dzięki składni opartej na JavaScript. Oto jak możesz włączyć regex do swoich skryptów do wspólnych zadań takich jak wyszukiwanie i walidacja danych.
 
 ### Wyszukiwanie ciągów znaków
-
 Załóżmy, że chcesz znaleźć w ciągu znaków określony wzorzec, taki jak adres e-mail. Oto prosty przykład:
 
 ```javascript
@@ -41,7 +35,6 @@ findEmailInText("Skontaktuj się z nami pod adresem info@example.com.");
 ```
 
 ### Walidacja danych
-
 Wyrażenia regularne doskonale sprawdzają się w walidacji danych. Poniżej znajduje się funkcja, która weryfikuje, czy wprowadzony ciąg znaków spełnia proste zasady hasła (przynajmniej jedna duża litera, jedna mała litera i minimum 8 znaków).
 
 ```javascript
@@ -56,7 +49,6 @@ Logger.log(validatePassword("słabe"));       // Wyniki: false
 ```
 
 ## W głąb tematu
-
 Wyrażenia regularne w Google Apps Script są dziedziczone z JavaScriptu, który został po raz pierwszy ustandaryzowany w specyfikacji języka ECMAScript w czerwcu 1997 roku. Mimo że są potężne, czasami mogą prowadzić do mylącego i trudnego do utrzymania kodu, szczególnie gdy są nadużywane lub używane do skomplikowanych zadań dopasowywania wzorców, które mogłyby być rozwiązane efektywniej przez inne metody parsowania.
 
 Na przykład, chociaż można użyć regex do parsowania HTML lub XML w nagłych przypadkach, robić tak jest zazwyczaj odradzane ze względu na zagnieżdżone i skomplikowane struktury tych dokumentów. Zamiast tego, narzędzia specjalnie zaprojektowane do parsowania takich struktur, jak parsery DOM dla HTML, są bardziej niezawodne i czytelne.

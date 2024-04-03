@@ -11,9 +11,6 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä & Miksi?
-Virheiden käsittely tarkoittaa suunnitelmien tekemistä silloin, kun asiat menevät pieleen. Se on tärkeää, koska se auttaa välttämään kaatumisia ja tekee ohjelmistostasi vakaan ja käyttäjäystävällisen.
-
 ## Miten:
 Tässä on perustason try-catch-lohko poikkeuksen käsittelyyn:
 

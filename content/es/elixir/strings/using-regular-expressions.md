@@ -12,12 +12,7 @@ title: Usando expresiones regulares
 weight: 11
 ---
 
-## Qué y Por Qué?
-
-Las expresiones regulares (regex) en Elixir se utilizan para buscar, coincidir y manipular cadenas basadas en patrones específicos. Los programadores aprovechan regex para tareas como validar formatos (correo electrónico, URLs), analizar registros o extracción de datos, gracias a su eficiencia y versatilidad en el manejo de cadenas.
-
 ## Cómo hacerlo:
-
 Elixir utiliza el módulo `Regex`, aprovechando la biblioteca regex de Erlang, para operaciones de regex. Aquí están los usos básicos:
 
 ```elixir

@@ -11,12 +11,7 @@ title: Hantering av fel
 weight: 16
 ---
 
-## Vad & Varför?
-
-Att hantera fel innebär att skriva kod som kan hantera när saker går snett. Programmerare gör det för att undvika krascher och för att försäkra sig om att deras program kan återhämta sig smidigt när Murphys lag infaller.
-
 ## Hur man gör:
-
 I Elixir använder vi ofta mönstermatchning och `case`-satsen för att hantera olika utfall, inklusive fel.
 
 ```elixir
@@ -47,7 +42,6 @@ Fel: Kan inte dela med noll.
 När du kör denna Elixir-kod kommer du antingen få en lyckad division eller ett felmeddelande, beroende på din inmatning. Inga krascher här!
 
 ## Fördjupning
-
 Förr, handlade felhantering ofta om att kontrollera returvärden. Med Elixirs funktionella rötter har vi dock mönstermatchning och taggade tupler, som `{:ok, värde}` eller `{:error, anledning}`, som är mer eleganta.
 
 Det finns andra sätt att hantera fel i Elixir:
@@ -58,7 +52,6 @@ Det finns andra sätt att hantera fel i Elixir:
 När det gäller implementering bygger Elixir på Erlangs robusthet. Det behandlar fel som bara ännu en typ av meddelande som ska hanteras med all mönstermatchning och funktionell finess.
 
 ## Se även
-
 För vidare läsning om felhantering i Elixir, kolla in:
 
 - Elixirs officiella guide om [felhantering](https://elixir-lang.org/getting-started/try-catch-and-rescue.html).

@@ -14,12 +14,7 @@ title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---
 
-## Wat & Waarom?
-
-Het berekenen van toekomstige of verleden datums betreft het manipuleren van datums om erachter te komen wat ze zullen zijn na een bepaalde periode of wat ze waren. Programmeurs doen dit voor zaken zoals het plannen van evenementen, herinneringen, of het uitvogelen van vervaldatums.
-
 ## Hoe:
-
 In Clojure gebruik je voornamelijk de `clj-time` bibliotheek voor datumoperaties. Hier is een snelle demonstratie:
 
 ```clojure
@@ -45,7 +40,6 @@ Voorbeelduitvoer:
 ```
 
 ## Diepgaande Duik
-
 In de beginjaren gebruikten programmeurs Java's `Date` en `Calendar` klassen. Maar laten we eerlijk zijn, ze zijn een hoofdpijn— breedsprakig en foutgevoelig. De `clj-time` bibliotheek bracht wat gezond verstand, door Joda-Time's meer ontwikkelaar-vriendelijke API in te pakken.
 
 Alternatieven? Java 8 introduceerde `java.time` (JSR-310), wat vrij goed is, maar in Clojure's wereldje voelen we ons nog steeds comfortabel met `clj-time`.
@@ -53,6 +47,5 @@ Alternatieven? Java 8 introduceerde `java.time` (JSR-310), wat vrij goed is, maa
 Bij het berekenen van datums gebruik je periodes voor concepten als "dagen" en "maanden" en duuraties voor nauwkeurige milliseconde-tellingen. Houd rekening met tijdzones—datums en tijden kunnen drastisch verschuiven afhankelijk van de tijdzone-regels, en zomertijd (DST) kan roet in het eten gooien.
 
 ## Zie Ook
-
 - `clj-time` GitHub repo: [https://github.com/clj-time/clj-time](https://github.com/clj-time/clj-time)
 - Clojure’s `java-time`: [https://github.com/dm3/clojure.java-time](https://github.com/dm3/clojure.java-time)

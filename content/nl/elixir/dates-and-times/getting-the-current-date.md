@@ -12,9 +12,6 @@ title: Het huidige datum ophalen
 weight: 29
 ---
 
-## Wat & Waarom?
-De huidige datum opvragen in een programma is alsof je vraagt: "Hé, wat is de datum van vandaag?" We doen dit om gebeurtenissen te tijdstempelen, planningen te beheren, of gewoon om gebruikers te laten zien welke dag het is.
-
 ## Hoe:
 Elixir maakt het verkrijgen van de huidige datum eenvoudig met behulp van de `Date` module:
 

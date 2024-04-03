@@ -11,9 +11,6 @@ title: Lettura degli argomenti della riga di comando
 weight: 23
 ---
 
-## What & Why?
-La lettura degli argomenti da riga di comando consente al tuo programma di accettare input dall'utente esterno al tuo codice. I programmatori lo usano per rendere i loro applicativi più flessibili e interattivi.
-
 ## How to:
 Elm è principalmente focalizzato sullo sviluppo web e non fornisce accesso diretto agli argomenti da riga di comando come farebbe un linguaggio come Python o Node.js. Tuttavia, possiamo interagire con JavaScript per ottenere valori dalla riga di comando usando ports.
 

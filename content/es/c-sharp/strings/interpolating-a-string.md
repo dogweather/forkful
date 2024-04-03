@@ -14,9 +14,6 @@ title: Interpolando una cadena de texto
 weight: 8
 ---
 
-## Qué y por qué
-La interpolación de cadenas en C# te permite crear una nueva cadena al incluir expresiones dentro de un literal de cadena, lo que facilita el formateo y la concatenación de cadenas. Los programadores utilizan esta característica para mejorar la legibilidad y mantenibilidad del código, especialmente cuando se trata de contenido dinámico de cadenas.
-
 ## Cómo hacerlo:
 En C#, la interpolación de cadenas se indica con un signo de dólar (`$`) seguido de un literal de cadena. Los nombres de las variables o las expresiones se encierran entre llaves (`{}`).
 

@@ -11,9 +11,6 @@ title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---
 
-## Vad & Varför?
-Jämföra två datum handlar om att se vilket som är tidigast eller om de är lika. Programmerare gör detta för att hantera tidsstyrda händelser, tidsfrister eller bara för att sortera information efter datum.
-
 ## Hur man gör:
 ```Bash
 # Jämför två datum

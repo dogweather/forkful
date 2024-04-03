@@ -15,9 +15,6 @@ title: Debug-tulosteen tulostaminen
 weight: 33
 ---
 
-## Mikä & Miksi?
-Tulosteen tulostaminen debuggausta varten Visual Basic for Applications (VBA) -ohjelmassa sisältää tulostuslauseiden strategisen sijoittamisen koodiisi näyttämään muuttujien arvot, suorituksen kulun tai mukautetut debug-viestit. Tämä tekniikka on olennainen osa vianetsintää, sillä se mahdollistaa ohjelmoijien ymmärtää koodinsa käyttäytymistä suoritusaikana ja tunnistaa mahdolliset odottamattomat käyttäytymiset tai virheet.
-
 ## Miten:
 VBA:ssa `Debug.Print`-lause on työjuhta debug-tietojen tulostamiseksi Välitön-ikkunaan Visual Basic Editorissa (VBE). Jotta voisit käyttää tätä ominaisuutta tehokkaasti, sinun täytyy pitää Välitön-ikkuna näkyvissä (Näkymä > Välitön ikkuna tai paina `Ctrl+G` VBE:ssä).
 

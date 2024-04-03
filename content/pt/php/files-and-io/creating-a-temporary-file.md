@@ -11,12 +11,7 @@ title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---
 
-## O Que & Porquê?
-
-Criar um arquivo temporário em PHP é como rabiscar em um papel de rascunho. Programadores fazem isso quando querem guardar dados rapidamente sem precisar dar um nome ou um local permanente ao arquivo - é algo feito no calor do momento, que pode desaparecer sem deixar rastros quando não for mais necessário.
-
 ## Como Fazer:
-
 ```PHP
 <?php
 // Criando um arquivo temporário
@@ -39,7 +34,6 @@ Olá, estou guardado temporariamente!
 ```
 
 ## Mergulho Profundo:
-
 Arquivos temporários no PHP são como notas adesivas na programação. Desde os primórdios, quando discos tinham espaço limitado, era essencial poder trabalhar com dados sem ter que criar um arquivo real no sistema. Com `tmpfile()`, o PHP lida com isso para você, criando um arquivo temporário no sistema de arquivos do servidor que é excluído automaticamente quando o script termina ou quando o arquivo é fechado com `fclose()`.
 
 Uma alternativa é `tempnam()`, que cria um nome de arquivo temporário, em vez de um arquivo. Isso dá maior controle, permitindo definir onde o arquivo será criado e garantir sua exclusão manual.
@@ -47,7 +41,6 @@ Uma alternativa é `tempnam()`, que cria um nome de arquivo temporário, em vez 
 Detalhes de implementação incluem o manuseio correto de permissões e possíveis problemas de segurança. Arquivos temporários devem ser bem geridos para evitar que ocupem espaço desnecessário ou causem conflitos de acesso.
 
 ## Veja Também:
-
 - [Documentação oficial do PHP para tmpfile()](https://www.php.net/manual/pt_BR/function.tmpfile.php)
 - [Documentação oficial do PHP para tempnam()](https://www.php.net/manual/pt_BR/function.tempnam.php)
 - [Guia sobre manuseio de arquivos em PHP](https://www.php.net/manual/pt_BR/ref.filesystem.php)

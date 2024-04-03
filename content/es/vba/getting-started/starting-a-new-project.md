@@ -13,12 +13,7 @@ title: Iniciando un nuevo proyecto
 weight: 1
 ---
 
-## ¿Qué y Por Qué?
-
-Iniciar un nuevo proyecto en Visual Basic para Aplicaciones (VBA) implica configurar un entorno dentro de una aplicación anfitriona, como Excel, para automatizar tareas o ampliar la funcionalidad. Los programadores se aventuran en este territorio para aprovechar el poder de VBA en la personalización y automatización de aplicaciones de Microsoft Office, mejorando así los flujos de trabajo y la productividad.
-
 ## Cómo:
-
 Cuando estés listo para comenzar un nuevo proyecto de VBA, el punto de inicio generalmente involucra acceder al editor de VBA e inicializar el marco de tu proyecto. Vamos a seguir los pasos usando Excel como la aplicación anfitriona:
 
 1. **Abrir el Editor de VBA**: En Excel, presiona `Alt + F11` para acceder al Editor de VBA.
@@ -42,7 +37,6 @@ Un cuadro de mensaje con "Hello, World!" mostrado.
 5. **Guardar Tu Proyecto**: Antes de salir, asegúrate de guardar tu trabajo. Si tu libro de Excel estaba previamente sin guardar, se te pedirá que guardes como un libro habilitado para macros (formato de archivo `.xlsm`).
 
 ## Profundización
-
 Visual Basic para Aplicaciones ha sido una piedra angular en las estrategias de automatización de Microsoft desde su introducción en 1993. Originando como una evolución de su predecesor, MacroBasic, VBA proporcionó una solución más robusta con una mejor integración a lo largo de la suite de Office de Microsoft. La transición a VBA fue crucial, marcando un cambio hacia capacidades de scripting más complejas que aprovecharon el poder de los lenguajes de programación completos.
 
 A pesar de su edad, VBA sigue siendo prevalente en los entornos de oficina modernos, en gran parte debido a su profunda integración dentro de los productos de Office y la extensa base de código heredado en muchas organizaciones. Sin embargo, es importante señalar que para aplicaciones nuevas basadas en la web o para tareas que requieren más escalabilidad e integración con aplicaciones no pertenecientes a Office, lenguajes y marcos como Python, con su rico ecosistema de bibliotecas, o JavaScript para Scripts de Office, ofrecen un enfoque más moderno y versátil. Estas alternativas, aunque requieren una curva de aprendizaje más pronunciada y configuración, proporcionan una aplicabilidad más amplia y apoyo para prácticas de desarrollo contemporáneas como el control de versiones y los pipelines de despliegue.

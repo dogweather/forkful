@@ -15,14 +15,10 @@ title: "R\xE9daction de tests"
 weight: 36
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire des tests en JavaScript fait référence à la pratique de créer des scripts automatisés qui exécutent votre code pour garantir qu'il se comporte comme prévu, ce qui peut considérablement améliorer la fiabilité et la maintenabilité de vos applications. Les programmeurs font cela pour attraper les bugs tôt, faciliter le remaniement du code, et s'assurer que les nouvelles fonctionnalités ne brisent pas la fonctionnalité existante.
-
 ## Comment faire :
 
-### Approche native (en utilisant Jest)
 
+### Approche native (en utilisant Jest)
 Jest est un cadre de test populaire qui fournit une API conviviale pour écrire des tests unitaires en JavaScript. Il nécessite une configuration minimale et vient avec des fonctionnalités comme les fonctions de simulation, les minuteries et les tests instantanés.
 
 1. **Installation** :
@@ -57,7 +53,6 @@ PASS  ./sum.test.js
 ```
 
 ### Tester le code asynchrone
-
 Jest facilite le test des promesses et de la syntaxe async/await :
 
 ```javascript
@@ -74,7 +69,6 @@ test('l’addition asynchrone fonctionne', async () => {
 ```
 
 ### Utilisation de bibliothèques tierces (Mocha & Chai)
-
 Mocha est un autre cadre de test populaire, souvent utilisé avec la bibliothèque d'assertion Chai pour des tests plus expressifs.
 
 1. **Installation** :

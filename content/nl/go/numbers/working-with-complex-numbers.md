@@ -13,12 +13,7 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-
-Werken met complexe getallen in programmeren betreft het manipuleren van getallen die zowel een reëel als een imaginair deel hebben, doorgaans uitgedrukt als `a + bi`. Programmeurs pakken complexe getallen aan in verschillende domeinen, zoals techniek, natuurkunde en data-analyse, om problemen op te lossen die betrekking hebben op vierkantswortels van negatieve getallen, golfvormanalyses en meer.
-
 ## Hoe:
-
 In Go worden complexe getallen behandeld met behulp van de ingebouwde functies `complex`, `real`, en `imag`, samen met de types `complex64` en `complex128` (die respectievelijk 64-bits en 128-bits complexe getallen vertegenwoordigen). Hier is een korte startgids:
 
 ```go
@@ -55,7 +50,6 @@ func main() {
 Dit voorbeeld dekt de basis, maar er is nog veel meer dat je kunt doen met complexe getallen, inclusief het gebruik van het `math/cmplx` pakket voor meer geavanceerde operaties zoals het vinden van de magnitude, fase, en veel meer.
 
 ## Diepgaande duik
-
 Het concept van complexe getallen gaat terug tot de 16e eeuw, maar kreeg pas in de 19e eeuw brede erkenning en rigoureuze formalisering. In computertechniek zijn complexe getallen sinds de vroege dagen een hoofdbestanddeel geweest voor complexe rekenkunde in wetenschappelijke en technische berekeningen. De benadering van Go tot complexe getallen, door ze een eersterangsburger te maken met ingebouwde ondersteuning en uitgebreide standaardbibliotheekondersteuning via het `math/cmplx` pakket, onderscheidt zich onder programmeertalen. Deze ontwerpbeslissing weerspiegelt de nadruk van Go op eenvoud en prestaties.
 
 Desondanks is het de moeite waard om op te merken dat hoewel werken met complexe getallen in Go krachtig is, het niet altijd de beste benadering is voor alle toepassingen, in het bijzonder die welke symbolische wiskunde of hoogprecisie rekenkunde vereisen. Talen en omgevingen gespecialiseerd in wetenschappelijke computing, zoals Python met bibliotheken zoals NumPy en SciPy, of software zoals MATLAB, kunnen meer flexibiliteit en een breder scala aan functionaliteiten bieden voor specifieke toepassingen.

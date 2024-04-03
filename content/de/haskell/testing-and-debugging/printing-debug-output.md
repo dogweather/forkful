@@ -10,9 +10,6 @@ title: Debug-Ausgaben drucken
 weight: 33
 ---
 
-## Was & Warum?
-Das Drucken von Debug-Ausgaben ist das Anzeigen von Variablen, Zwischenständen oder Hinweisnachrichten während des Programmablaufs. Programmierer nutzen dies, um das Verhalten ihres Codes zu verstehen und Fehler zu finden.
-
 ## So Geht's:
 ```haskell
 main :: IO ()

@@ -17,9 +17,6 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Cái gì & Tại sao?
-Xử lý lỗi trong PHP là về quản lý và phản ứng với các điều kiện làm gián đoạn dòng chảy bình thường của chương trình, như tệp tin bị thiếu hoặc dữ liệu nhập không đúng. Các lập trình viên xử lý lỗi để ngăn chặn sự cố và mang lại trải nghiệm mượt mà hơn cho người dùng.
-
 ## Cách thực hiện:
 Trong PHP, bạn có thể quản lý lỗi bằng cách sử dụng các khối `try-catch`, và bạn có thể tùy chỉnh quy trình với các trình xử lý lỗi tùy chỉnh và ngoại lệ.
 

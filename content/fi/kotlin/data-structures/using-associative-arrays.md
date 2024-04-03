@@ -13,12 +13,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mikä & Miksi?
-
-Assosiatiiviset taulukot eli mapit Kotlinissa ovat kokoelmia, jotka tallentavat avain-arvo -pareja. Ohjelmoijat käyttävät niitä dataan tehokkaasti järjestämiseen ja hakemiseen ainutlaatuisten avainten perusteella, mikä tekee tiedon hallinnasta helpompaa.
-
 ## Kuinka tehdään:
-
 Mapin luominen ja käyttäminen Kotlinissa on suoraviivaista. Tässä nopea opas kuinka se tehdään:
 
 ```Kotlin
@@ -49,7 +44,6 @@ fun main() {
 ```
 
 ## Syväsukellus
-
 Kotlinin mapit tulevat suoraan sen yhteentoimivuudesta Javan kanssa, jossa mapit ovat olennainen osa kokoelmia. Kuitenkin, Kotlin parantaa niiden käytettävyyttä tarjoamalla sekä muutettavat (`MutableMap`) että vain-luku (`Map`) rajapinnat, toisin kuin Javan yhtenäinen `Map` rajapinta. Tämä ero tekee selväksi, onko kokoelma tarkoitettu muokattavaksi vai ei.
 
 Merkitsevä yksityiskohta Kotlinin map-toteutuksessa on muutettavien ja muuttumattomien mapojen selvä ero, mikä korostaa kielen keskittymistä muuttumattomuuteen ja säieturvallisuuteen.

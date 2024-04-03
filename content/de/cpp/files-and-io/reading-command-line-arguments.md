@@ -11,9 +11,6 @@ title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---
 
-## Was & Warum?
-Kommandozeilenargumente ermöglichen es einem Programm, beim Start Eingaben zu empfangen. Das ist praktisch, um dem Programm zu sagen, was es tun soll, ohne dass der Benutzer das Programm selbst ändern muss.
-
 ## So geht's:
 In C++ kannst du mit `int argc` und `char *argv[]` arbeiten, die im Hauptfunktionsheader stehen. `argc` zählt die Argumente, `argv` ist ein Array der Argumentwerte.
 

@@ -13,12 +13,7 @@ title: Verwendung von assoziativen Arrays
 weight: 15
 ---
 
-## Was & Warum?
-
-Assoziative Arrays, in Python als Dictionaries bekannt, ordnen Schlüssel Werten zu, was das Abrufen, Modifizieren oder Nachverfolgen von Daten anhand einer eindeutigen Kennung erleichtert. Programmierer nutzen sie aufgrund ihrer Effizienz beim Zugriff auf Elemente und ihrer Flexibilität bei der Darstellung komplexer Datenstrukturen.
-
 ## Wie geht das:
-
 Ein Dictionary in Python zu erstellen, ist unkompliziert. Man schließt Schlüssel-Wert-Paare in geschweifte Klammern `{}`, wobei Schlüssel und Werte durch einen Doppelpunkt getrennt sind:
 
 ```Python
@@ -76,7 +71,6 @@ email: john@example.com
 ```
 
 ## Tiefergehend
-
 Assoziative Arrays in Python, oder Dictionaries, wurden eingeführt, um eine Datenstruktur für effizienten Datenzugriff und -manipulation zu bieten. Anders als Sequenzen, die durch eine Reihe von Zahlen indiziert sind, werden Dictionaries durch Schlüssel indiziert, die jeden unveränderlichen Typ annehmen können. Diese Designentscheidung macht Dictionaries ideal geeignet für schnelle Nachschlagetabellen, in denen Schlüssel eindeutige Werte zugeordnet sind.
 
 Historisch gesehen wurden Python-Dictionaries mithilfe einer Hash-Tabelle implementiert, was sicherstellt, dass die durchschnittliche Zeitkomplexität für Such-, Einfüge- und Löschoperationen O(1) ist. Ab Python 3.6 behalten Dictionaries auch die Einfügereihenfolge der Elemente bei, was die Vorteile von Hash-Tabellen mit der Vorhersehbarkeit der Einfügereihenfolge, wie bei geordneten Datenstrukturen zu sehen, verbindet.

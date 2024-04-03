@@ -17,9 +17,6 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Gì và Tại sao?
-Làm tròn số là việc loại bỏ các chữ số thập phân để đơn giản hóa dữ liệu hoặc phù hợp với các định dạng cụ thể. Lập trình viên thực hiện việc này để hiển thị thân thiện với người dùng, lưu trữ hiệu quả, hoặc khi độ chính xác của số thập phân không phải là vấn đề.
-
 ## Làm thế nào:
 Trong Fish, việc làm tròn số dựa vào câu lệnh `math`. Sử dụng `math -s0` để làm tròn đến số nguyên gần nhất.
 

@@ -10,9 +10,6 @@ title: Eliminando comillas de una cadena
 weight: 9
 ---
 
-## Qué y Por Qué?
-Eliminar las comillas de una cadena significa deshacerse de esos envoltorios extra para obtener el texto limpio dentro. Los programadores hacen esto para sanear la entrada, evitar errores y preparar los datos para su procesamiento donde las comillas son molestias, no características.
-
 ## Cómo hacerlo:
 Elixir no tiene una función integrada para 'eliminar comillas', pero es muy fácil crear la propia con el emparejamiento de patrones o funciones de `String`. Mira estos fragmentos:
 

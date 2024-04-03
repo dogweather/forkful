@@ -13,14 +13,10 @@ title: Generowanie liczb losowych
 weight: 12
 ---
 
-## Co i dlaczego?
-
-Generowanie losowych liczb w JavaScript to technika używana do tworzenia nieprzewidywalności w aplikacjach, począwszy od gier, które wymagają losowego zachowania wrogów, po algorytmy bezpieczeństwa wymagające kryptograficznej losowości. Ta zdolność jest kluczowa dla rozwijania dynamicznych doświadczeń użytkownika i bezpiecznych aplikacji.
-
 ## Jak to zrobić:
 
-### Podstawowe generowanie liczby losowej
 
+### Podstawowe generowanie liczby losowej
 Najprostszym sposobem na wygenerowanie losowej liczby w JavaScript jest użycie `Math.random()`. Funkcja ta zwraca zmiennoprzecinkową, pseudolosową liczbę w zakresie od 0 (włącznie) do 1 (wyłącznie).
 
 ```javascript
@@ -29,7 +25,6 @@ console.log(randomNumber);
 ```
 
 ### Generowanie losowej liczby w zadanym zakresie
-
 Często chcesz uzyskać losową liczbę całkowitą w określonym zakresie. Można to osiągnąć, skalując i zaokrąglając wynik z `Math.random()`.
 
 ```javascript
@@ -43,7 +38,6 @@ console.log(getRandomInt(1, 100));
 ```
 
 ### Kryptograficznie bezpieczne losowe liczby
-
 Dla aplikacji wymagających wyższego stopnia losowości (np. operacje kryptograficzne), można użyć metody `crypto.getRandomValues()`. Zapewnia ona kryptograficzną losowość, w przeciwieństwie do pseudolosowych liczb generowanych przez `Math.random()`.
 
 ```javascript
@@ -55,7 +49,6 @@ Dla aplikacji wymagających wyższego stopnia losowości (np. operacje kryptogra
 ```
 
 ## Wnikliwe spojrzenie
-
 Historycznie, generowanie losowych liczb w JavaScript opierało się wyłącznie na funkcji `Math.random()`. Choć wygodna dla większości przypadków użycia, jej algorytm, zazwyczaj wariant generatora pseudolosowego (PRNG) takiego jak Mersenne Twister, nie zapewnia bezpieczeństwa kryptograficznego.
 
 Wprowadzenie Web Cryptography API przyniosło metodę `crypto.getRandomValues()`, oferującą sposób na generowanie liczb znacznie mniej przewidywalnych i odpowiednich dla aplikacji wrażliwych na bezpieczeństwo. Ta metoda korzysta z źródeł losowości wbudowanych w system operacyjny, takich jak `/dev/random` w Unix/Linux, które są bardziej solidne i odpowiednie dla operacji kryptograficznych.

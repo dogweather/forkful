@@ -15,12 +15,7 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## Quoi & Pourquoi ?
-
-La création d'un fichier temporaire dans Google Apps Script consiste à générer un fichier destiné à un usage à court terme, typiquement pour le traitement intermédiaire des données, le débogage ou des fins de cache. Les programmeurs font cela pour gérer temporairement des données sans encombrer l'espace de stockage permanent ou lorsque la pérennité des données n'est pas nécessaire au-delà de la portée du processus en cours.
-
 ## Comment faire :
-
 Dans Google Apps Script, créer un fichier temporaire peut être réalisé en utilisant le service DriveApp, qui fournit une méthode simple pour créer, lire et supprimer des fichiers dans Google Drive. Voici comment vous pouvez créer un fichier texte temporaire, y écrire des données, puis le supprimer après utilisation :
 
 ```javascript
@@ -55,7 +50,6 @@ Fichier temporaire supprimé
 Ce script exemple montre la création d'un fichier temporaire, l'exécution d'une opération pour lire son contenu et enfin, la suppression du fichier pour nettoyer.
 
 ## Exploration Approfondie
-
 Le concept de création de fichiers temporaires dans le développement logiciel est aussi ancien que le concept de gestion des fichiers lui-même. Dans les systèmes de fichiers traditionnels, les fichiers temporaires sont souvent créés dans des répertoires temp désignés et sont cruciaux pour divers processus intermédiaires, comme le tri de grands ensembles de données, la conservation des données de session pour les applications web ou le stockage de segments de données pendant les processus de conversion de fichiers.
 
 Dans Google Apps Script, le processus de création de fichiers temporaires tire profit de l'infrastructure de Google Drive, qui offre un mélange intéressant de gestion de fichiers basée sur le cloud avec des concepts de programmation traditionnels. Cependant, cette méthode de création de fichiers temporaires dans Google Drive n’est pas sans limitations et coûts, compte tenu des limites de quota imposées par Google Drive. De plus, la latence d'accès à Google Drive sur le réseau par rapport à un système de fichiers local peut être un facteur critique pour les applications à haute performance.

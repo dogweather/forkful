@@ -10,9 +10,6 @@ title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---
 
-## Cosa e perché?
-Un REPL (Read-Eval-Print Loop - Ciclo di Lettura-Valutazione-Stampa) è un ambiente di programmazione informatica semplice e interattivo. I programmatori lo utilizzano per prove di codifica rapide, test di snippet o per imparare la sintassi di un linguaggio senza creare un'applicazione completa.
-
 ## Come fare:
 Avviare il REPL di Kotlin è semplicissimo. Apri il tuo terminale e digita `kotlinc`. Atterrerai nella shell di Kotlin. Proviamo a definire una variabile e a stamparne il valore:
 

@@ -11,9 +11,6 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## Co i dlaczego?
-Szukanie i zamiana tekstu to fundament operacji na stringach, pozwalający zamienić pewne wyrażenia czy ciągi znaków na inne. Programiści używają tego, żeby modyfikować dane, poprawiać błędy, a także przetwarzać i analizować kod czy tekst.
-
 ## Jak to zrobić:
 W Ruby użyjemy metody `gsub` do wyszukiwania i zastępowania tekstu. Oto jak to działa:
 

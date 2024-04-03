@@ -13,9 +13,6 @@ title: "F\xE5 dagens dato"
 weight: 29
 ---
 
-## Hva & Hvorfor?
-Å få tak i dagens dato i C# innebærer å hente dagens dato- og tidsdetaljer fra systemet. Programmerere trenger ofte å få tilgang til denne informasjonen for logging, tidsstemplingsoperasjoner, eller planlegging av oppgaver innen applikasjoner, for å sikre at handlinger er tidsbestemte nøyaktig og data er merket med presise tidsstempler.
-
 ## Hvordan:
 C# tilbyr en enkel måte å få dagens dato på ved bruk av `DateTime`-klassen som er en del av .NET Frameworks System-navnerom. Eksemplet nedenfor demonstrerer hvordan du kan få dagens dato, og eventuelt, tiden.
 

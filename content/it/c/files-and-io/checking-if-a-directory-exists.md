@@ -12,12 +12,7 @@ title: Verificare se una directory esiste
 weight: 20
 ---
 
-## Cosa & Perché?
-
-Verificare se una directory esiste in C implica interrogare il file system per verificare se un determinato percorso conduce a una directory. I programmatori spesso eseguono questa operazione per assicurarsi che le operazioni sui file (come leggere o scrivere file) siano indirizzate verso percorsi validi, prevenendo errori e migliorando l'affidabilità del software.
-
 ## Come fare:
-
 In C, l'esistenza di una directory può essere controllata utilizzando la funzione `stat`, che recupera informazioni sul file o sulla directory in un percorso specificato. La macro `S_ISDIR` da `sys/stat.h` viene poi utilizzata per valutare se le informazioni recuperate corrispondono a una directory.
 
 Ecco come puoi utilizzare `stat` e `S_ISDIR` per verificare se una directory esiste:
@@ -57,7 +52,6 @@ La directory non esiste.
 ```
 
 ## Approfondimento:
-
 La struttura e la funzione `stat` fanno parte del linguaggio di programmazione C da decenni, derivando da Unix. Forniscono un modo standardizzato per recuperare informazioni sul file system, che, nonostante sia relativamente a basso livello, è ampiamente utilizzato grazie alla sua semplicità e al diretto accesso ai metadati del file system.
 
 Storicamente, controllare l'esistenza e le proprietà dei file e delle directory con `stat` e sue derivate (come `fstat` e `lstat`) è stato un approccio comune. Tuttavia, queste funzioni interagiscono direttamente con il kernel del SO, il che potrebbe introdurre sovraccarico e potenziali errori se non gestite correttamente.

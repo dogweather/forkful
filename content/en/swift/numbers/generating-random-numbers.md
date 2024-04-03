@@ -10,12 +10,7 @@ title: Generating random numbers
 weight: 12
 ---
 
-## What & Why?
-
-Generating random numbers in programming is about creating non-deterministic or unpredictable numeric values. Programmers use random numbers for a variety of reasons, such as simulating unpredictability in games, selecting random samples from data sets, or for cryptographic purposes.
-
 ## How to:
-
 Swift provides a straightforward way to generate random numbers through its standard library. Here’s how you do it for different numeric types:
 
 ```Swift
@@ -35,7 +30,6 @@ print(randomBool)
 Sample output might vary because, well, we’re dealing with randomness after all. Running the code multiple times will yield different numbers and boolean values.
 
 ## Deep Dive
-
 Swift’s approach to random number generation is built on top of a robust and efficient pseudorandom number generator (PRNG). Before Swift 4.2, developers relied on external libraries or the underlying platform capabilities, which could lead to inconsistencies across different platforms and environments. With the introduction of native APIs in Swift 4.2, generating random numbers became both simpler and more consistent, regardless of the underlying platform.
 
 However, it's critical to understand that the standard random number generator in Swift is not suitable for cryptographic purposes. For cryptography, developers should use the `Security` framework on Apple platforms, which provides access to cryptographically secure random bytes. As of my last update, Swift does not include a cross-platform cryptographic random number generator in its standard library, pushing developers to seek third-party libraries for such needs on non-Apple platforms.

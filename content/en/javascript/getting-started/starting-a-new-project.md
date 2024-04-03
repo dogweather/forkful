@@ -10,12 +10,7 @@ title: Starting a new project
 weight: 1
 ---
 
-## What & Why?
-
-Starting a new project means setting up a fresh codebase for your brilliant ideas. Programmers do it to turn concepts into real, functioning apps or services.
-
 ## How to:
-
 Before you write code, decide on tools and structure. Let's use Node.js and npm (Node Package Manager) for this example.
 
 1. Install Node.js from the [official website](https://nodejs.org/).
@@ -61,7 +56,6 @@ Server is up on port 3000
 Navigate to `http://localhost:3000` in your web browser. You should see "Hello World!".
 
 ## Deep Dive
-
 Historically, project setup was a pain, with lots of manual configuration. Nowadays, tools like npm do the heavy lifting. For front-end projects, consider `create-react-app` or `vue-cli`. For Node.js, Express is a solid choice, balancing power with simplicity. It's lightweight but has robust features for most web server needs.
 
 Remember, how you organize your project is critical. Traditional Node.js apps have an entry point (like `index.js`), a `package.json` file to manage dependencies, and a folder structure that separates concerns (modules, utilities, routes, etc.).
@@ -69,7 +63,6 @@ Remember, how you organize your project is critical. Traditional Node.js apps ha
 Alternatives to npm for package management include Yarn, which offers speed and consistency improvements. For project scaffolding, Yeoman helps by providing generators for many types of projects and technologies.
 
 ## See Also
-
 - Node.js [docs](https://nodejs.org/en/docs/)
 - Express [official site](https://expressjs.com/)
 - `create-react-app` [GitHub repo](https://github.com/facebook/create-react-app)

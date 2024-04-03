@@ -14,9 +14,6 @@ title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---
 
-## Co i dlaczego?
-Parsowanie daty z ciągu tekstowego polega na rozpoznawaniu i konwersji zapisanych dat w formie tekstowej na typ danych daty, który PowerShell może zrozumieć i z którym może pracować. Programiści robią to, aby manipulować, formatować, porównywać lub obliczać daty, co są powszechnymi zadaniami w skryptach zajmujących się plikami dziennika, danymi wejściowymi użytkownika lub przetwarzaniem danych.
-
 ## Jak to zrobić:
 PowerShell ułatwia parsowanie dat z ciągów tekstowych za pomocą polecenia cmdlet `Get-Date` oraz akceleratora typu `[datetime]`, które dobrze radzą sobie ze standardowymi formatami daty. Dla bardziej skomplikowanych lub niestandardowych ciągów dat, można wykorzystać metodę `[datetime]::ParseExact`, aby określić dokładny format.
 

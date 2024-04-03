@@ -14,9 +14,6 @@ title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---
 
-## Gì & Tại sao?
-Ghi vào lỗi chuẩn (stderr) báo cáo lỗi và chẩn đoán riêng biệt từ đầu ra chuẩn (stdout). Điều này quan trọng cho việc gỡ lỗi và lưu log, giúp các nhà phát triển tách biệt vấn đề mà không làm lẫn lộn thông điệp lỗi với đầu ra chương trình bình thường.
-
 ## Cách thực hiện:
 Arduino không hỗ trợ natively stderr, nhưng chúng ta có thể mô phỏng nó bằng cách ghi vào Serial. Hãy tưởng tượng một chương trình nhấp nháy LED có kiểm tra lỗi:
 

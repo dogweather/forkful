@@ -12,9 +12,6 @@ title: Komennoriviparametrien lukeminen
 weight: 23
 ---
 
-## What & Why?
-Komennoriviparametrien lukeminen on prosessi, jossa ohjelma ottaa syötteenä argumentteja, jotka on annettu ohjelman käynnistyksen yhteydessä. Syy miksi devaajat tekevät tämän? Joustavuuden ja konfiguroinnin mahdollistaminen ilman, että koodia tarvitsee muokata.
-
 ## How to:
 Käynnistä ohjelma komennolla ja argumenteilla, esim. `myapp.exe -mode console -verbose`. C#:ssa argumentit käsitellään `Main`-metodissa:
 

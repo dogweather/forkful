@@ -11,9 +11,6 @@ title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---
 
-## Vad & Varför?
-Extrahering av substrängar involverar att plocka specifika delar ur en sträng, något som ofta nyttjas för att bearbeta textdata efter behov. Det sparas tid och ökar programmets effektivitet när endast relevant textdata hanteras.
-
 ## Hur gör man?:
 Extrahera en substräng med hjälp av Swift kan göras enkelt med `String` metoder och `Range` objekt. Här är ett snabbt exempel:
 

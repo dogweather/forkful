@@ -11,12 +11,7 @@ title: Satunnaislukujen generointi
 weight: 12
 ---
 
-## Mikä & Miksi?
-
-Satunnaislukujen generointi liittyy ennustamattomien sekvenssien tai yksittäisten arvojen tuottamiseen määritellyllä välillä. Ohjelmoijat käyttävät tätä tekniikkaa useista syistä, mukaan lukien simulaatiot, pelit, turvasovellukset ja näytteistysmenetelmät algoritmien testaamiseksi eri olosuhteissa.
-
 ## Kuinka:
-
 Javassa satunnaislukujen generointi on mahdollista käyttämällä `java.util`-paketin `Random`-luokkaa tai tiettyihin käyttötarkoituksiin `ThreadLocalRandom`- ja `SecureRandom`-luokkia. Seuraavat esimerkit havainnollistavat näiden luokkien käyttöä.
 
 ### Käyttäen `Random`-luokkaa
@@ -79,7 +74,6 @@ public class SecureRandomExample {
 ```
 
 ## Syväsukellus
-
 Satunnaislukujen generointi on kehittynyt merkittävästi tietokoneiden alkuaikojen jälkeen. Javan `Random`-luokka käyttää lineaarista kongruenssikaavaa pseudo-satunnaislukujen generointiin, jotka ovat deterministisiä eivätkä sovellu korkean turvallisuustason sovelluksiin. Tämä johti `SecureRandom`-luokan käyttöönottoon, joka käyttää monimutkaisempia algoritmeja (esim. SHA1PRNG) tuottaakseen kryptografisesti vahvoja satunnaislukuja.
 
 Siitä huolimatta `Random` ja `SecureRandom` kärsivät puutteista, kuten suorituskyvyn heikkenemisestä monisäikeisissä ympäristöissä. Java 7:ssä esiteltiin `ThreadLocalRandom`-luokka käsittelemään tätä ongelmaa tarjoamalla säietietyt satunnaislukugeneraattorit, jotka merkittävästi parantavat suorituskykyä rinnakkaissovelluksissa.

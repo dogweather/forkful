@@ -13,9 +13,6 @@ title: Scrivere un file di testo
 weight: 24
 ---
 
-## Cosa & Perché?
-Scrivere un file di testo in JavaScript riguarda spesso la creazione e il salvataggio di dati in un formato semplice e leggibile per registrare, esportare input dell'utente o per scopi di configurazione. Questa funzionalità è cruciale per applicazioni che necessitano di persistere dati oltre la durata del processo dell'applicazione, fornendo un modo per memorizzare e successivamente recuperare o condividere informazioni.
-
 ## Come fare:
 In un ambiente Node.js, puoi usare il modulo integrato `fs` (File System) per scrivere file di testo. Questo esempio dimostra come scrivere testo in un file in modo asincrono:
 

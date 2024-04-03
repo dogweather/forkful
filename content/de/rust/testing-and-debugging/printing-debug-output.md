@@ -11,9 +11,6 @@ title: Debug-Ausgaben drucken
 weight: 33
 ---
 
-## Was & Warum?
-Debug-Ausgabe zu drucken bedeutet, Zwischenergebnisse und Variablenwerte während der Laufzeit in die Konsole zu schreiben. Programmierer nutzen das, um Fehler zu finden und den Programmfluss nachzuvollziehen.
-
 ## So geht’s:
 ```Rust
 fn main() {

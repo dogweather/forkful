@@ -12,9 +12,6 @@ title: Tworzenie pliku tymczasowego
 weight: 21
 ---
 
-## Co i Dlaczego?
-Tworzenie tymczasowych plików to proces generowania plików, które istnieją tylko przez krótki czas, zazwyczaj do przechowania danych międzyoperacyjnych. Programiści robią to, żeby bezpiecznie i efemerycznie manipulować danymi bez ryzyka konfliktu lub niepożądanego wpływu na stały system plików.
-
 ## Jak to zrobić:
 Tworzenie tymczasowego pliku w Haskellu jest proste z użyciem biblioteki `temporary`. Oto przykład:
 
@@ -39,7 +36,6 @@ Biblioteka `temporary` w Haskellu daje wyrafinowane API, które zasłania szczeg
 Implementując operacje na plikach tymczasowych, warto pamiętać, że system operacyjny może też stwarzać własne wymagania, jak np. specjalne katalogi na tymczasowe pliki (`/tmp` w systemach Unixowych).
 
 ## Zobacz także:
-
 - Haskell documentation on temporary files: [https://hackage.haskell.org/package/temporary-1.3/docs/System-IO-Temp.html](https://hackage.haskell.org/package/temporary-1.3/docs/System-IO-Temp.html)
 - Eksploracja `System.IO` dla szczegółów dotyczących obsługi plików: [https://hackage.haskell.org/package/base-4.16.1.0/docs/System-IO.html](https://hackage.haskell.org/package/base-4.16.1.0/docs/System-IO.html)
 - Tutorial dla `System.Directory`, gdzie można znaleźć więcej o manipulacji plikami i katalogami: [https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)

@@ -11,12 +11,7 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-
-Writing tests in Dart involves creating test cases to automatically verify that different parts of your program work as expected. Programmers do this to ensure that their code is reliable and free from defects, facilitating easier updates and refactoring while preventing regressions.
-
 ## How to:
-
 In Dart, the `test` package is commonly used for writing tests. First, add the `test` package to your `pubspec.yaml`:
 
 ```yaml
@@ -59,7 +54,6 @@ Sample output might resemble:
 ```
 
 ### Using a third-party library: Mockito for mocking
-
 For testing code that has complex dependencies, you might use Mockito to create mock objects. First, add Mockito to your `pubspec.yaml`:
 
 ```yaml

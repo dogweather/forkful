@@ -10,9 +10,6 @@ title: Uthenting av delstrenger
 weight: 6
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Å trekke ut understrenger betyr å plukke bestemte deler ut av en tekststreng. Programmerere gjør dette for å analysere data, rense inndata eller jobbe med specifikke tekstsegmenter.
-
 ## How to: (Hvordan:)
 ```PowerShell
 # Eksempel 1: Bruk av 'Substring' metoden

@@ -14,12 +14,7 @@ title: Avrundning av nummer
 weight: 13
 ---
 
-## Vad & Varför?
-
-Att avrunda tal, ett grundläggande koncept inom dataprogrammering, innebär att justera ett tal till dess närmaste heltal eller till ett angivet antal decimaler. Programmerare utför ofta avrundning för att förenkla tal för mänsklig läsbarhet eller för att uppfylla specifika beräkningsbehov, vilket säkerställer precision och minskar beräkningsbelastningen.
-
 ## Hur:
-
 Google Apps Script, som är ett JavaScript-baserat språk, erbjuder standardmetoder för att avrunda tal. Här är en uppdelning av tre vanligt använda tekniker:
 
 ### Math.round()
@@ -61,7 +56,6 @@ Logger.log(preciseRound); // Skriver ut: 2.57
 ```
 
 ## Fördjupning
-
 Att avrunda tal i Google Apps Script avviker inte mycket från hur det görs i andra JavaScript-miljöer. Dock är förståelsen för skillnaderna i avrundningsmetoder och potentialen för problem med flyttalsaritmetik avgörande. Till exempel, på grund av hur datorer representerar flyttal, kan inte alla decimalfraktioner representeras med perfekt noggrannhet, vilket leder till ibland oväntade avrundningsresultat.
 
 Historiskt sett hanterar JavaScript (och därmed Google Apps Script) detta genom att följa IEEE 754-standarden, som används av många andra programmeringsspråk för flyttalsaritmetik. Denna standard definierar hur tal avrundas, vilket säkerställer konsekvens över olika plattformar och språk.

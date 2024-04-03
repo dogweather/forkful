@@ -11,9 +11,6 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-Handling errors is about expecting the unexpected; it's how we manage when things go wrong in our code. We do it to avoid crashes and to give users a smooth experience, even when the unexpected happens.
-
 ## How to:
 In TypeScript, handling errors often involves `try`, `catch`, and `finally` blocks.
 

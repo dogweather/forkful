@@ -12,10 +12,8 @@ title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---
 
-## ¿Qué y Por Qué?
-Analizar una fecha a partir de una cadena implica convertir representaciones textuales de fecha y hora en un objeto `Date`. Este proceso es esencial en aplicaciones donde las fechas se comunican como cadenas, como en respuestas de API o entradas de usuario, permitiendo una manipulación y formateo de fechas más sencillo.
-
 ## Cómo:
+
 
 ### Usando `DateFormatter` de Foundation
 La biblioteca estándar de Swift, Foundation, proporciona `DateFormatter` para convertir cadenas en objetos `Date` y viceversa. Para analizar una fecha a partir de una cadena, especifiques el formato de fecha que coincida con la cadena, luego usas el formateador para analizarlo.

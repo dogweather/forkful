@@ -12,9 +12,6 @@ title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---
 
-## Co i Dlaczego?
-Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem to sposób na autoryzację użytkownika poprzez przesyłanie loginu i hasła w nagłówku HTTP. Programiści używają tego mechanizmu, by dostęp do zasobów sieciowych był ograniczony i bezpieczny.
-
 ## Jak to zrobić:
 ```C#
 using System;
@@ -49,6 +46,7 @@ class Program
     }
 }
 ```
+
 ### Przykładowy wynik:
 ```
 <treść chronionego zasobu>

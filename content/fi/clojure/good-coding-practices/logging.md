@@ -11,9 +11,6 @@ title: Lokitus
 weight: 17
 ---
 
-## Mikä ja miksi?
-Lokitus on ohjelmistojen vastine laivan lokikirjalle; se on tapa kirjata tapahtumia, jotka sattuvat sovelluksen suorituksen aikana. Ohjelmoijat tekevät sitä, jotta voivat seurata näitä tapahtumia vianetsinnässä, auditointilokeissa tai saadakseen oivalluksia järjestelmän toiminnasta tuotannossa.
-
 ## Kuinka tehdä:
 Clojure nojautuu Javan lokitustoimintoihin, mutta voit ottaa ne käyttöön idiomaattisemmin Clojuren tapaan. Katsotaanpa, miten voit käyttää `clojure.tools.logging`-kirjastoa, joka tarjoaa yksinkertaisen abstraktion usean lokituskehyksen päälle:
 

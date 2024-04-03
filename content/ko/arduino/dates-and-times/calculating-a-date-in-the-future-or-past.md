@@ -18,9 +18,6 @@ title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uA
 weight: 26
 ---
 
-## 무엇 & 왜?
-날짜를 미래나 과거로 계산하는 것은 특정 날짜로부터 일정 기간이 지난 날짜를 찾는 과정입니다. 프로그래머들은 예약 시스템, 리마인더, 역사적 이벤트 트래킹과 같은 기능에 이를 사용합니다.
-
 ## 방법:
 ```Arduino
 #include <TimeLib.h>

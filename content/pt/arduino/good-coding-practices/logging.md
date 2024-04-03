@@ -11,9 +11,6 @@ title: Registro de Logs
 weight: 17
 ---
 
-## O Quê & Porquê?
-"Logging" é a prática de manter um registro de eventos, transações ou atividades que acontecem ao longo do tempo em um sistema. Programadores o utilizam para depurar, monitorar a saúde do sistema, coletar estatísticas ou mesmo auditar o uso, tornando-o uma prática indispensável para manter e compreender o comportamento de seu código sob várias condições.
-
 ## Como fazer:
 O Arduino não vem com uma biblioteca de registro integrada como alguns outros ambientes, mas você pode implementar um registro básico no console Serial com pouco esforço. Aqui está um exemplo rápido para começar:
 

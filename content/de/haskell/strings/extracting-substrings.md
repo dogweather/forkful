@@ -10,9 +10,6 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## Was & Warum?
-Das Extrahieren von Teilstrings bezieht sich darauf, spezifische Segmente eines Strings in Haskell herauszuschneiden. Programmierer nutzen es, um relevante Daten zu manipulieren, Text zu analysieren oder Benutzereingaben zu verarbeiten.
-
 ## So geht's:
 Haskell bietet verschiedene Wege, um Teile eines Strings zu extrahieren. Hier sind ein paar schnelle Beispiele:
 

@@ -12,11 +12,7 @@ title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---
 
-## Qué y Por Qué?
-Cuando se programa, imprimir mensajes de depuración es como tener una linterna en un túnel oscuro; nos ayuda a ver qué está pasando dentro del código. Los programadores lo hacen para entender el flujo y el estado del programa, para localizar fallos más rápidamente.
-
 ## Cómo hacerlo:
-
 Aquí un ejemplo rápido:
 
 ```cpp
@@ -45,7 +41,6 @@ Suma total: 45
 ```
 
 ## Profundizando
-
 Históricamente, imprimir mensajes en consola ha sido una manera directa de entender qué está sucediendo en el código sin herramientas sofisticadas de depuración. Aún hoy, sigue siendo un método rápido y válido para esa tarea. 
 
 Alternativas modernas al `std::cout` incluyen el uso de depuradores de código (debuggers) que permiten inspeccionar variables y flujo de ejecución sin modificar el código. También están las librerías especializadas en logging que permiten mayor control sobre los mensajes de depuración.
@@ -63,7 +58,6 @@ En la implementación de la depuración por impresión, hay que considerar utili
 Usar `DEBUG_COUT` en lugar de `std::cout` te permitirá mostrar mensajes solo cuando la macro `DEBUG` esté definida.
 
 ## Véase También
-
 - Documentación de C++ `iostream`: http://www.cplusplus.com/reference/iostream/
 - Artículo sobre técnicas de depuración: https://www.toptal.com/c-plus-plus/c-plus-plus-debugging-tips
 - Librería Boost.Log para logging avanzado: https://www.boost.org/doc/libs/release/libs/log/ 

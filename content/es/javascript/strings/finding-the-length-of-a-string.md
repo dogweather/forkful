@@ -11,12 +11,7 @@ title: Calculando la longitud de una cadena
 weight: 7
 ---
 
-## What & Why?
-
-La longitud de una cadena en JavaScript se refiere a la cantidad de caracteres que contiene. Los programadores frecuentemente necesitan esta información para validar entradas, manipular texto o simplemente para iterar sobre cada carácter de una cadena.
-
 ## How to:
-
 En JavaScript, obtener la longitud de una cadena es pan comido. Usas la propiedad `.length` directamente en la cadena o en una variable que contenga la cadena. Aquí tienes unos ejemplos:
 
 ```javascript
@@ -30,7 +25,6 @@ console.log(vacio.length); // Salida: 0
 ```
 
 ## Deep Dive
-
 En los viejos tiempos de JavaScript, digamos en los años 90, `.length` ya estaba allí. Es uno de los aspectos más básicos y fundamentales del lenguaje. No necesitas ninguna biblioteca ni método especial, porque `.length` es parte del prototipo de `String`. Es rápido, eficiente y está disponible en cualquier cadena sin importar su procedencia.
 
 Si quieres algo más que solo contar caracteres, como obtener la longitud de un arreglo, también usarías la propiedad `.length`. Fácil y consistente.
@@ -50,7 +44,6 @@ console.log(complejo.length); // Salida: 2
 Estos casos son poco comunes, pero buenos de saber si trabajas con emojis o idiomas con caracteres complejos.
 
 ## See Also
-
 - MDN Web Docs sobre la propiedad `length`: [MDN String.length](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/length)
 - Unicode y JavaScript: [JavaScript has a Unicode problem](https://mathiasbynens.be/notes/javascript-unicode)
 - Información sobre `surrogate pairs`: [Understanding JavaScript’s UTF-16](https://flaviocopes.com/javascript-utf16/)

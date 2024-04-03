@@ -18,9 +18,6 @@ title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 weight: 38
 ---
 
-## 무엇 & 왜?
-Haskell에서 JSON(JavaScript Object Notation)을 다루는 일은 JSON 데이터를 Haskell 타입으로 파싱하는 것과 Haskell 타입을 다시 JSON으로 변환하는 것을 포함합니다. 프로그래머들은 Haskell 애플리케이션을 웹 서비스나 API와 원활하게 데이터를 교환할 수 있게 하기 위해 이러한 작업을 합니다. 이는 현대 소프트웨어 개발에서 플랫폼 간 데이터 교환을 위한 일반적인 관행입니다.
-
 ## 어떻게:
 Haskell은 JavaScript와 같은 내장 JSON 지원이 없지만, **Aeson**과 같은 서드파티 라이브러리의 도움을 받아 JSON을 다루는 일이 간단해집니다. Aeson은 인코딩(Haskell 값들을 JSON으로 변환하는 것)과 디코딩(JSON을 Haskell 값으로 파싱하는 것)을 위한 고수준 및 저수준 함수를 제공합니다.
 

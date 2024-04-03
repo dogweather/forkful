@@ -14,14 +14,10 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i dlaczego?
-Zapis do pliku tekstowego w C++ polega na tworzeniu lub otwieraniu pliku, a następnie zapisywaniu w nim danych, co stanowi podstawowe zadanie dla aplikacji potrzebujących zachować dane, takie jak logi, treści generowane przez użytkowników lub ustawienia konfiguracyjne. Programiści robią to, aby zapisać dane wygenerowane podczas wykonania programu lub aby eksportować dane do użytku przez inne programy lub użytkowników.
-
 ## Jak to zrobić:
 C++ oferuje kilka sposobów na zapis do pliku tekstowego, ale jedną z najprostszych metod jest użycie biblioteki `<fstream>`, która zapewnia klasę `ofstream` (strumień wyjściowy do pliku) przeznaczoną do operacji zapisu do pliku.
 
 ### Przykład użycia `<fstream>`:
-
 ```cpp
 #include <fstream>
 #include <iostream>
@@ -48,7 +44,6 @@ Zapisywanie do pliku w C++ jest proste.
 W przypadku bardziej złożonych danych lub gdy potrzebna jest większa kontrola nad procesem zapisu, programiści mogą zwrócić się ku bibliotekom stron trzecich, takim jak Boost Filesystem.
 
 ### Przykład użycia Boost Filesystem:
-
 Aby używać Boost do operacji na plikach, najpierw musisz zainstalować biblioteki Boost. Poniższy przykład demonstruje tworzenie i zapisywanie do pliku przy użyciu `boost::filesystem` i `boost::iostreams`.
 
 ```cpp

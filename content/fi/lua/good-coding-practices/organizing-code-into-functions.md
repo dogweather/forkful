@@ -11,9 +11,6 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mitä & Miksi?
-Koodin järjestäminen funktioihin tarkoittaa käsikirjoituksesi jakamista pieniin palasiin—ajattele funktionaalisia LEGO-palikoita. Teemme näin selkeyden, uudelleenkäytettävyyden ja järkevyyden vuoksi. Se tekee koodistamme siistiä, luettavaa ja ylläpidettävää.
-
 ## Kuinka:
 ```Lua
 -- Määritellään yksinkertainen tervehdysfunktio

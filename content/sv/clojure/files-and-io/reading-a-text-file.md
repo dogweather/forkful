@@ -11,9 +11,6 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## Vad & Varför?
-Att läsa en textfil innebär att få innehållet från filen in i vårt program. Programmerare gör detta för att hantera data, konfigurera system eller för att importera information från externa källor.
-
 ## Hur man gör:
 Låt oss dyka rakt in i koden för att läsa en textfil i Clojure:
 

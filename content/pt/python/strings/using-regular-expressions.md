@@ -13,9 +13,6 @@ title: "Usando express\xF5es regulares"
 weight: 11
 ---
 
-## O Que & Por Quê?
-Expressões regulares (regex) são padrões usados para combinar sequências de caracteres em strings. Programadores as utilizam para buscar, editar ou manipular texto baseado em padrões definidos, tornando-as indispensáveis para tarefas como validação de dados, análise sintática ou transformação.
-
 ## Como usar:
 Usar regex em Python envolve o módulo `re`, que fornece um conjunto de funções para processar texto usando expressões regulares.
 

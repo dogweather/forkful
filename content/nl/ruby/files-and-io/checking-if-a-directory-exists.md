@@ -13,11 +13,7 @@ title: Controleren of een directory bestaat
 weight: 20
 ---
 
-## Wat & Waarom?
-Controleren of een map bestaat betekent bevestigen of een map aanwezig is in het bestandssysteem. Programmeurs doen dit om fouten te voorkomen voordat ze bestandsoperaties proberen uit te voeren, zoals het lezen van of schrijven naar een map.
-
 ## Hoe te:
-
 In Ruby kun je de methode `Dir.exist?` gebruiken om te controleren of een map bestaat. Zo ziet het eruit:
 
 ```ruby
@@ -41,7 +37,6 @@ Zo'n map bestaat niet.
 ```
 
 ## Diepere Duik
-
 Historisch gezien heeft Ruby meerdere manieren geboden om met het bestandssysteem te interageren. `Dir.exist?` is nu een voorkeursmethode vanwege de duidelijkheid en eenvoud, maar oudere code kan `File.directory?` gebruiken. Beide methoden betekenen vrijwel hetzelfde en zijn min of meer inwisselbaar.
 
 ```ruby
@@ -60,7 +55,6 @@ Wat betreft de implementatie onder de motorkap, wanneer je `Dir.exist?` aanroept
 Wat alternatieven betreft, naast handmatige padcontrole, zou je ook de uitzonderingen kunnen vangen die het gevolg zijn van het proberen toegang te krijgen tot een niet-bestaande map. Dit wordt echter niet aanbevolen omdat het duurder is in termen van systeembronnen en minder duidelijk voor iemand die de code leest.
 
 ## Zie Ook
-
 Om verder in te gaan op Ruby's bestands- en mapafhandeling, bekijk de volgende bronnen:
 
 - Ruby Docs over de `Dir` klasse: [https://ruby-doc.org/core/Dir.html](https://ruby-doc.org/core/Dir.html)

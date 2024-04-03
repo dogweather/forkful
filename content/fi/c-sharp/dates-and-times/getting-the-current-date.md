@@ -13,9 +13,6 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mikä ja miksi?
-C#:ssa tämänhetkisen päivämäärän saaminen tarkoittaa järjestelmästä nykyisen päivämäärän ja ajan tietojen noutamista. Ohjelmoijat tarvitsevat usein pääsyä näihin tietoihin lokitukseen, aikaleimojen lisäämiseen toimintoihin tai tehtävien aikatauluttamiseen sovelluksissa, varmistaen, että toiminnot ajoitetaan tarkasti ja tiedot merkitään tarkoin aikaleimoin.
-
 ## Miten:
 C# tarjoaa suoraviivaisen tavan saada nykyinen päivämäärä käyttäen `DateTime` luokkaa, joka on osa .NET Frameworkin System-nimiavaruutta. Alla oleva esimerkki osoittaa, miten saada nykyinen päivämäärä ja valinnaisesti aika.
 

@@ -12,9 +12,6 @@ title: Schreiben auf Standardfehler
 weight: 25
 ---
 
-## Was & Warum?
-Das Schreiben auf Standardfehler (stderr) bedeutet, Fehlermeldungen und diagnostische Ausgaben auf einen separaten Kanal zu leiten, getrennt von der Standardausgabe (stdout). Programmierer tun dies, um reguläre Programmergebnisse von Fehlerinformationen zu unterscheiden, was das Debuggen und Protokollieren vereinfacht.
-
 ## Wie:
 In Lua kann das Schreiben auf stderr mit der Funktion `io.stderr:write()` erreicht werden. Hier ist, wie Sie eine einfache Fehlermeldung an Standardfehler schreiben können:
 

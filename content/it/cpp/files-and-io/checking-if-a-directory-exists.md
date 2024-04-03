@@ -13,9 +13,6 @@ title: Verifica se una directory esiste
 weight: 20
 ---
 
-## Cosa e Perché?
-Verificare l'esistenza di una directory significa determinare la presenza di una directory in un percorso specificato prima di eseguire operazioni come leggere o scrivere file al suo interno. I programmatori lo fanno per evitare errori legati alle operazioni sui file, garantendo un'esecuzione più fluida e affidabile dei compiti di gestione dei file nelle loro applicazioni.
-
 ## Come fare:
 Nel C++ moderno (C++17 e versioni successive), puoi utilizzare la libreria filesystem per verificare se una directory esiste. Fornisce un modo diretto e standardizzato per eseguire operazioni sul filesystem, inclusa la verifica dell'esistenza di una directory.
 

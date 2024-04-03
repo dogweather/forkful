@@ -14,9 +14,6 @@ title: Analysering av HTML
 weight: 43
 ---
 
-## Hva & Hvorfor?
-Parsing av HTML i Google Apps Script innebærer å ekstrahere data fra HTML-innhold, som er spesielt nyttig når man interagerer med nettsider eller webbaserte datakilder. Programmerere gjør dette for å automatisere datainnsamling, manipulere webinnhold eller integrere webfunksjonalitet med Google-apper som Sheets og Docs.
-
 ## Hvordan:
 Google Apps Script har ikke en innebygd metode for parsing av HTML. Derimot kan du utnytte `UrlFetchApp`-tjenesten for å hente HTML-innhold og deretter bruke JavaScript-metoder eller regex (regulære uttrykk) for parsing. Nedenfor er et grunnleggende eksempel på hvordan du kan hente og parse title-taggen fra en nettside.
 

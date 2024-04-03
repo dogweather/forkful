@@ -14,9 +14,6 @@ title: "H\xE5ndtering av feil"
 weight: 16
 ---
 
-## Hva & Hvorfor?
-Håndtering av feil i Dart handler om å forutse og håndtere unntak som oppstår under programkjøring for å forbedre påliteligheten og brukervennligheten. Programmerere implementerer feilhåndtering for å forhindre krasj og gi meningsfull tilbakemelding til brukerne, noe som sikrer en jevnere, tryggere applikasjonsopplevelse.
-
 ## Hvordan:
 Dart støtter to typer feil: *kompileringstid*-feil og *kjøretid*-feil. Kompileringstid-feil oppdages av Dart-analysatoren før koden kjører, mens kjøretid-feil, eller unntak, oppstår under utførelse. Slik håndterer du unntak i Dart:
 

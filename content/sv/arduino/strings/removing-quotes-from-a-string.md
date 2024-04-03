@@ -10,9 +10,6 @@ title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---
 
-## Vad & Varför?
-Att ta bort citattecken från en sträng betyder att ta bort alla förekomster av enkla (`'`) eller dubbla (`"`) citattecken som omsluter texten. Programmerare gör ofta detta för att sanera indata, förbereda strängar för jämförelse eller bearbeta textdata som av misstag kan inkludera citattecken som en del av stränginnehållet.
-
 ## Hur man gör:
 För att ta bort citattecken från en sträng i Arduino kan du loopa över tecknen och bygga om strängen utan citattecknen. Till exempel:
 

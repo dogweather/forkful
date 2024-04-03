@@ -10,9 +10,6 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-Complex numbers extend the idea of one-dimensional number lines to a two-dimensional complex plane. Programmers use them in fields like engineering, physics, and graphics for calculations that require two components, like signals or rotations.
-
 ## How to:
 In Fish, we handle complex numbers using `math` with real and imaginary parts. Here’s a kick-off:
 

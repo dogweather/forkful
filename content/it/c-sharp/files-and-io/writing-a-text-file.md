@@ -13,9 +13,6 @@ title: Scrivere un file di testo
 weight: 24
 ---
 
-## Cosa e Perché?
-Scrivere un file di testo in C# comporta la creazione o modifica programmatica di file di testo sul file system - un compito fondamentale per molte applicazioni, ad esempio logging, esportazione di dati o gestione della configurazione. I programmatori eseguono questa operazione per persistere i dati tra le sessioni, condividere informazioni tra i sistemi o memorizzare output leggibili dall'uomo.
-
 ## Come fare:
 C# semplifica le operazioni sui file con il suo namespace `System.IO`, fornendo metodi semplici per scrivere file di testo. Ecco come scrivere un file di testo di base e come aggiungere testo a un file esistente.
 

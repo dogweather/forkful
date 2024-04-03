@@ -15,12 +15,7 @@ title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---
 
-## Cái Gì và Tại Sao?
-
-Phân tích cú pháp HTML có nghĩa là trích xuất dữ liệu từ tài liệu HTML—sau tất cả, HTML là kết cấu của web. Lập trình viên phân tích cú pháp HTML để tự động hóa việc trích xuất dữ liệu, chuyển giao nội dung, hoặc biến đổi nó thành các định dạng khác nhau.
-
 ## Làm Thế Nào:
-
 Hãy bắt tay vào một số mã lệnh, sử dụng thư viện `tagsoup` để phân tích một đoạn HTML đơn giản. Đầu tiên, hãy chắc chắn cài đặt gói từ Hackage qua `cabal install tagsoup`.
 
 ```Haskell
@@ -49,7 +44,6 @@ Kết quả mẫu:
 Đoạn mã này phân tích một chuỗi HTML, tìm kiếm các thẻ đoạn văn và in ra văn bản chứa trong đoạn đầu tiên. Gọn gàng và ngọt ngào.
 
 ## Sâu Hơn
-
 Việc phân tích cú pháp HTML trong Haskell chưa bao giờ trở nên dễ dàng như ngày nay. Có một thời, mọi người tự làm trình phân tích cú pháp của riêng họ hoặc đấu tranh với các thư viện cấp thấp hơn, phân tích HTML như thể đó là miền Tây hoang dã.
 
 Ngày nay, bạn có nhiều lựa chọn. `tagsoup`, như chúng tôi đã sử dụng, tuyệt vời cho khi cấu trúc HTML được xem xét nhiều hơn là một quy tắc—nó khoan dung với HTML hỗn loạn của thực tế. Nếu bạn đang tìm kiếm sự ngặt nghèo hơn, `html-conduit` kết hợp với `xml-conduit` từ gói `conduit` có thể là sự lựa chọn dành cho bạn. Chúng sử dụng phương pháp truyền dữ liệu và khắt khe hơn về cấu trúc.
@@ -57,7 +51,6 @@ Ngày nay, bạn có nhiều lựa chọn. `tagsoup`, như chúng tôi đã sử
 Bên trong, các thư viện này chuyển đổi HTML thành một cây hoặc một bữa súp thẻ. Chúng cung cấp các hàm tiện ích để truy vấn và thao tác dữ liệu này, làm cho việc phân tích cú pháp HTML ít đau đầu hơn. Hãy nghĩ về chúng như một bản đồ tìm kho báu, nơi X đánh dấu thẻ đoạn văn.
 
 ## Xem Thêm
-
 - [`tagsoup` trên Hackage](https://hackage.haskell.org/package/tagsoup)
 - [`html-conduit` trên Hackage](https://hackage.haskell.org/package/html-conduit)
 - [Tài liệu về Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/) - Mặc dù không phải Haskell, nhưng cách tiếp cận 'bữa súp thẻ' của Beautiful Soup đã ảnh hưởng lên các thư viện tương tự trong thế giới Haskell.

@@ -11,9 +11,6 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## Qué y Por Qué?
-Redondear es eliminar el ruido después de un cierto punto en un número. Los programadores redondean para controlar la precisión, gestionar la memoria o hacer que la salida sea amigable para el usuario—como convertir 2.998 en un limpio 3.
-
 ## Cómo hacerlo:
 Aquí te mostramos cómo redondear números en JavaScript usando `Math.round()`, `Math.ceil()`, y `Math.floor()`: 
 

@@ -13,11 +13,7 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i dlaczego?
-Sprawdzanie, czy katalog istnieje w systemie plików, jest niezbędne do zarządzania strukturami plików w aplikacjach Swift. To zadanie umożliwia programistom weryfikację obecności katalogów przed próbą odczytu z nich lub zapisu do nich, co pozwala uniknąć możliwych błędów w czasie wykonania.
-
 ## Jak to zrobić:
-
 Framework Foundation w Swifcie dostarcza klasę `FileManager`, która posiada metody do zarządzania systemem plików. Możesz użyć `FileManager`, aby sprawdzić, czy katalog istnieje. Oto fragment kodu, jak to zrobić:
 
 ```swift
@@ -50,7 +46,6 @@ if fileManager.fileExists(atPath: path, isDirectory: &isDirectory), isDirectory.
 ```
 
 ### Używanie biblioteki zewnętrznej
-
 Na obecną chwilę, sprawdzenie istnienia katalogu w Swifcie zazwyczaj nie wymaga stosowania bibliotek zewnętrznych z powodu solidności klasy `FileManager`. Jednak dla bardziej złożonych manipulacji i kontroli plików, biblioteki takie jak **Files** autorstwa Johna Sundella dostarczają bardziej przyjazne dla Swifta API.
 
 Oto jak możesz jej użyć:

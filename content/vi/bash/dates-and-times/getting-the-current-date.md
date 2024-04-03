@@ -14,9 +14,6 @@ title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---
 
-## Gì và Tại sao?
-Lấy ngày hiện tại trong bash là việc lấy ngày và giờ của hệ thống. Lập trình viên cần nó cho việc ghi nhật ký, đánh dấu thời gian, hoặc lên lịch các tác vụ.
-
 ## Cách thức:
 Để lấy ngày và giờ hiện tại, bạn sử dụng `date`. Đây là cách đơn giản:
 

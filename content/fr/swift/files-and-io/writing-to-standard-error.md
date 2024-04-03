@@ -14,12 +14,7 @@ title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire dans l'erreur standard (stderr) consiste à diriger les messages d'erreur de votre programme ou les sorties de diagnostic vers un flux séparé, distinct de la sortie standard (stdout). Cela est essentiel pour le débogage et l'enregistrement des erreurs sans encombrer la sortie standard, facilitant ainsi la compréhension de l'état et des problèmes du programme tant pour les développeurs que pour les utilisateurs.
-
 ## Comment faire :
-
 En Swift, l'écriture dans l'erreur standard peut se faire à l'aide de la classe `FileHandle` pour un accès direct à stderr. Voici un exemple simple :
 
 ```swift

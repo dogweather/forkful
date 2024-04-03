@@ -14,12 +14,7 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---
 
-## Mikä ja miksi?
-
-Päivämäärän jäsentäminen merkkijonosta Bashissa tarkoittaa päivämäärätiedon poimimista ja muuntamista tekstiaineistosta muotoon, jota Bash voi käsitellä tai käyttää jatkoprosesseissa. Tämä on yleinen vaatimus skriptaustehtävissä, kuten lokitiedostojen analysoinnissa, tiedostojen järjestämisessä päivämääräleimojen perusteella tai automatisoidussa raportoinnissa, mikä tekee siitä olennaisen taidon ohjelmoijille aikatiedon tehokkaaseen hallintaan ja hyödyntämiseen.
-
 ## Miten:
-
 Bash itse on melko rajallinen suorissa päivämäärän jäsentämiskyvyissä ja se nojaa usein ulkoisiin työkaluihin, kuten `date` ja `awk`, monimutkaisempiin manipulaatioihin. Tässä on, miten voit jäsentää tietyn formaatin ja sitten käyttää sitä `date`-komennon kanssa, jotta voit muuntaa sen tai suorittaa operaatioita.
 
 **Esimerkki 1:** Poimi päivämäärämerkkijono ja muunna se toiseen formaattiin.
@@ -66,7 +61,6 @@ Lauantai, huhtikuu 01, 2023
 Tässä esimerkissä käytetään `awk`:ia jakamaan lokirivi ja poimimaan päivämääräosa (`$1` edustaa ensimmäistä välilyönnein eroteltua kenttää), ja sitten `date`:a käytetään sen uudelleenmuotoiluun.
 
 ### Kolmannen osapuolen työkalujen käyttö
-
 Monimutkaisempia jäsentämisiä tai monenlaisten päivämäärämuotojen käsittelyä varten kolmannen osapuolen työkalut, kuten `dateutils`, voivat olla erittäin käteviä.
 
 **Esimerkki `dateutils`-ohjelmalla:**

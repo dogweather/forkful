@@ -12,14 +12,10 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mikä ja miksi?
-
-Testien kirjoittaminen C++:ssa tarkoittaa pienten, itsenäisten ohjelmien luomista, jotka automaattisesti varmistavat koodikannan osien toiminnan. Ohjelmoijat tekevät näin varmistaakseen, että heidän koodinsa toimii odotetulla tavalla, estääkseen regressiot (eli uusien muutosten rikkovan olemassa olevaa toiminnallisuutta) ja helpottaakseen ylläpidettävien koodikantojen hallintaa ajan myötä.
-
 ## Kuinka:
 
-### Käyttäen Google Test -kehystä
 
+### Käyttäen Google Test -kehystä
 Yksi suosituimmista kolmannen osapuolen kirjastoista C++:n testien kirjoittamiseen on Google Test. Ensin sinun tulee asentaa Google Test ja linkittää se projektiisi. Kun olet valmis, voit alkaa kirjoittaa testitapauksia.
 
 ```cpp
@@ -54,7 +50,6 @@ Tallenna koodi tiedostoon ja käännä se g++-kääntäjällä, linkittaen Googl
 ```
 
 ### Käyttäen Catch2:ta
-
 Toinen suosittu testauskehys C++:lle on Catch2. Siinä on yksinkertaisempi syntaksi eikä se yleensä vaadi linkittämistä kirjastoa vasten (vain otsikkotiedosto). Tässä on esimerkki yksinkertaisen testin kirjoittamisesta Catch2:lla:
 
 ```cpp

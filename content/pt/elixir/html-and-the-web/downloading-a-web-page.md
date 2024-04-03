@@ -11,9 +11,6 @@ title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---
 
-## What & Why?
-Baixar uma página da web significa fazer o download do seu conteúdo em HTML. Programadores fazem isso para processar informações, extrair dados ou monitorar mudanças em um site.
-
 ## How to:
 Para baixar uma página web em Elixir, você pode usar a biblioteca HTTPoison. Primeiro, adicione `httpoison` ao seu `mix.exs`:
 

@@ -11,12 +11,7 @@ title: "XML:n k\xE4sittely"
 weight: 40
 ---
 
-## Mikä & Miksi?
-
-XML:n käsittely Haskellissa käsittää XML-rakenteiden jäsentämisen, muokkaamisen ja luomisen. Ohjelmoijat käsittelevät XML:ää vuorovaikuttamaan lukuisien sovellusten ja protokollien kanssa, jotka käyttävät XML:ää datamuotonaan, kuten web-palvelut ja konfiguraatiotiedostot.
-
 ## Kuinka:
-
 Haskell tarjoaa kirjastoja kuten `xml-conduit` XML:n käsittelyyn. Seuraava esimerkki demonstroi XML-merkkijonon jäsentämisen ja elementtien kyselyn:
 
 ```haskell
@@ -43,7 +38,6 @@ Esimerkkituloste:
 ```
 
 ## Syväsukellus
-
 XML, lyhenne sanoista eXtensible Markup Language, on ollut tietojen sarjallistamisen kulmakivi kauan ennen JSONin nousua. Se on verbosinen, mutta jäykkä ja standardoitu, mikä tekee siitä sopivan tiukkoihin yritysympäristöihin, legacy-järjestelmiin ja teollisuudenaloihin kuten rahoitus ja terveydenhuolto.
 
 Haskellissa on useita XML-kirjastoja; kuitenkin `xml-conduit` on yksi tehokkaimmista ja laajalti käytetyistä sen tehokkaan suoratoiston ja jäsentämiskyvyn vuoksi, osana `conduit` perhettä datavirtojen käsittelyyn.
@@ -53,7 +47,6 @@ Vaihtoehtoihin kuuluu `HXT` (Haskell XML Toolbox), joka käyttää nuolia jäsen
 Toteuttaessasi XML-käsittelyä Haskellissa, sinun tulee huolehtia merkistökoodauksesta, koska Haskellin merkkijonot ovat Unicodea ja XML-data ei välttämättä ole. Lisäksi, XML-nimiavaruudet voivat lisätä ylimääräistä monimutkaisuutta jäsentämiseen.
 
 ## Katso myös:
-
 - `xml-conduit` paketin dokumentaatio: https://hackage.haskell.org/package/xml-conduit
 - Haskell XML Toolkit (HXT): http://hackage.haskell.org/package/hxt
 - "Real World Haskell" kirja, Luku 16, XML-käsittelystä: http://book.realworldhaskell.org/read/xml.html

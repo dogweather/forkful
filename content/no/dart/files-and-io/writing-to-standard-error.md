@@ -13,12 +13,7 @@ title: Skriving til standard feil
 weight: 25
 ---
 
-## Hva & Hvorfor?
-
-Å skrive til standardfeil (stderr) i Dart handler om å sende feilmeldinger og diagnostikk til en separat strøm, som er forskjellig fra standardutdata (stdout). Programmører gjør dette for å skille mellom normalt programutdata og feil- eller advarselsmeldinger, noe som tillater enklere feilsøking og logging.
-
 ## Hvordan:
-
 I Dart er det enkelt å skrive til stderr ved bruk av `stderr`-objektet som er tilgjengelig i `dart:io`. Her er et grunnleggende eksempel:
 
 ```dart

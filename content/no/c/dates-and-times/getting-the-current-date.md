@@ -14,12 +14,7 @@ title: "F\xE5 dagens dato"
 weight: 29
 ---
 
-## Hva & Hvorfor?
-
-Å hente den nåværende datoen i C innebærer å benytte seg av det standard C-biblioteket for å hente og formatere systemets nåværende dato og tid. Programmerere trenger ofte denne funksjonaliteten for logging, tidsstempling eller planleggingsfunksjoner i applikasjonene sine.
-
 ## Hvordan:
-
 I C gir `<time.h>`-headeren de nødvendige funksjonene og typene for å arbeide med datoer og tider. `time()`-funksjonen henter den nåværende tiden, mens `localtime()` konverterer denne tiden til den lokale tidssonen. For å vise datoen bruker vi `strftime()` for å formatere den som en streng.
 
 Her er et grunnleggende eksempel:
@@ -53,7 +48,6 @@ Dagens dato er 2023-04-12
 ```
 
 ## Dypdykk
-
 Håndteringen av tid i C, som tilrettelegges av `<time.h>`, går tilbake til de aller første dagene av språket og UNIX-systemene. Det er bygget rundt `time_t`-datatype, som representerer den nåværende tiden som antall sekunder siden Unix Epoch (1. januar 1970). Selv om dette er effektivt og universelt kompatibelt, betyr det også at det standard C-bibliotekets tidsfunksjoner er iboende begrenset av rekkevidden og oppløsningen til `time_t`.
 
 Moderne applikasjoner, spesielt de som krever høyoppløselige tidsstempler eller håndterer datoer langt inn i fremtiden eller fortiden, kan finne disse begrensningene utfordrende. For eksempel er Year 2038-problemet en berømt illustrasjon der systemer som bruker en 32-bits `time_t` vil overflyt.

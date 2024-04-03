@@ -10,12 +10,7 @@ title: Enviando una solicitud http
 weight: 44
 ---
 
-## ¿Qué & Por Qué?
-
-Enviar una solicitud HTTP significa pedir datos de un servidor web desde tu programa. Los programadores lo hacemos para interactuar con APIs web, recoger datos para nuestras aplicaciones o enviar información a otros servicios.
-
 ## Cómo hacerlo:
-
 ```C#
 using System;
 using System.Net.Http;
@@ -59,7 +54,6 @@ Output:
 ```
 
 ## Profundización:
-
 En los años 90, el HTTP se convirtió en el protocolo estándar para la web. Desde entonces, el envío de solicitudes HTTP ha sido fundamental para la interacción en la web, y ha evolucionado con la tecnología. 
 
 Alternativas: Hay diferentes métodos HTTP (GET, POST, PUT, DELETE, etc.), y varios clientes HTTP en C# como WebClient y RestSharp, pero HttpClient es el más moderno y recomendado.
@@ -67,7 +61,6 @@ Alternativas: Hay diferentes métodos HTTP (GET, POST, PUT, DELETE, etc.), y var
 Detalles de implementación: Con `HttpClient`, puedes personalizar headers, manejar timeouts y manejar errores. Usa `async` y `await` para operaciones sin bloqueo en aplicaciones de consola, escritorio o móviles.
 
 ## Ver También:
-
 - [Documentación oficial de HttpClient](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
 - [Guía de Microsoft sobre solicitudes asíncronas](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/)
 - [Uso de RestSharp para solicitudes HTTP](https://restsharp.dev/)

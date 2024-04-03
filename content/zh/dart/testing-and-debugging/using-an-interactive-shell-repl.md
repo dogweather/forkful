@@ -24,12 +24,7 @@ title: "\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uFF09"
 weight: 34
 ---
 
-## 什么 & 为什么？
-
-为 Dart 设计的交互式 shell（REPL - 读取-求值-打印 循环）允许程序员逐行动态输入并执行 Dart 代码，而无需编译整个脚本。这个工具对于学习 Dart 的语法、试验代码片段或通过提供即时反馈和促进迭代测试来调试来说，都是极其宝贵的。
-
 ## 如何操作：
-
 Dart 并没有内建的 REPL。然而，你可以通过使用 DartPad（在线）或利用第三方工具如 `dart_repl` 来实现类似 REPL 的功能。
 
 **使用 DartPad：**

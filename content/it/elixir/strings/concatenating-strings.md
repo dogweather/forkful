@@ -11,9 +11,6 @@ title: Concatenazione di stringhe
 weight: 3
 ---
 
-## Cosa & Perché?
-Concatenare le stringhe significa unire due o più stringhe insieme per formare un unico pezzo di testo. Potresti aver bisogno di unire testo per generare messaggi utente, creare percorsi di file o per processi di serializzazione dati. È un'operazione fondamentale in qualsiasi linguaggio di programmazione, inclusa Elixir, che consente agli sviluppatori di costruire stringhe dinamiche con facilità.
-
 ## Come fare:
 In Elixir, puoi concatenare le stringhe in alcuni modi semplici e diretti. Esploriamo i metodi più comuni:
 

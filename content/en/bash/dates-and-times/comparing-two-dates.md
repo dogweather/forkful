@@ -10,9 +10,6 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-Comparing two dates lets you figure out which one's earlier, later, or if they're the same moment in time. Programmers do this to sort events, trigger timed actions, or just track time passed.
-
 ## How to:
 Here’s a quick way to compare two dates in Bash:
 

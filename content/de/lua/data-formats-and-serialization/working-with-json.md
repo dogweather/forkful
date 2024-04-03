@@ -13,9 +13,6 @@ title: Arbeiten mit JSON
 weight: 38
 ---
 
-## Was & Warum?
-Das Arbeiten mit JSON in Lua umfasst das Parsen von JSON-formatierten Strings in Lua-Tabellen und umgekehrt, was einen einfachen Datenaustausch zwischen Lua-Anwendungen und Webdiensten oder externen APIs ermöglicht. Programmierer tun dies, um das leichte und einfach zu parsende Format von JSON für effiziente Datenspeicherung, Konfiguration oder API-Kommunikation zu nutzen.
-
 ## Wie:
 Lua beinhaltet keine integrierte Bibliothek zur JSON-Verarbeitung. Deshalb ist eine der beliebten Drittanbieter-Bibliotheken `dkjson`, die Sie leicht für die JSON-Kodierung und -Dekodierung verwenden können. Stellen Sie zunächst sicher, dass Sie `dkjson` installieren, z.B. durch LuaRocks (`luarocks install dkjson`), und folgen Sie dann den untenstehenden Beispielen.
 

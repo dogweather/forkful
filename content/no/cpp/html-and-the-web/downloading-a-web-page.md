@@ -11,9 +11,6 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## What & Why?
-Å laste ned en nettside innebærer å hente ned all HTML-koden som danner selve siden du ser i nettleseren. Programmere gjør dette for å hente data, sjekke for innholdsendringer, eller skrape nettstedet for spesifikk informasjon.
-
 ## How to:
 For å laste ned en nettside i C++, kan du bruke biblioteket `libcurl`. Her er et enkelt eksempel:
 

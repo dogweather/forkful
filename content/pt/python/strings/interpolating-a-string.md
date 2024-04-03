@@ -14,9 +14,6 @@ title: Interpolando uma string
 weight: 8
 ---
 
-## O Que & Por Que?
-A interpolação de strings é o método de embutir expressões dentro de literais de string. Programadores a utilizam para inserir valores dinamicamente em strings, o que torna o código mais legível e limpo do que a tradicional concatenação de strings.
-
 ## Como fazer:
 No Python 3.6 e versões posteriores, você pode interpolar strings usando f-strings. Veja como:
 

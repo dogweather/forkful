@@ -10,9 +10,6 @@ title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---
 
-## Mitä ja miksi?
-Kompleksiluvut koostuvat reaalisesta osasta ja imaginaarisesta osasta. Ohjelmoijat käyttävät niitä aloilla kuten signaalinkäsittely, kvanttimekaniikka ja aina kun laskelmat vaativat, koska tavalliset reaaliluvut eivät yksinkertaisesti riitä.
-
 ## Kuinka:
 Bash ei tue kompleksilukuja natiivisti. Usein käytät ulkoista työkalua kuten `bc` sen `-l`-vaihtoehdon kanssa. Näin käsittelet kompleksilukuja bashissa:
 

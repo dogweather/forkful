@@ -14,16 +14,10 @@ title: Sette stor bokstav i en streng
 weight: 2
 ---
 
-## Hva og hvorfor?
-
-Å sette stor forbokstav i en streng i Swift endrer den gitte strengen slik at dens første tegn er med stor bokstav, og de gjenværende tegnene er med små bokstaver. Programmerere gjør dette av grunner som å formatere navn eller setninger i henhold til grammatiske regler eller standarder for brukergrensesnitt.
-
 ## Hvordan:
-
 Swifts `String`-strukturer kommer med et par innebygde metoder for å manipulere små og store bokstaver i strenger. Her er noen tilnærminger for å sette stor bokstav i strenger i Swift, inkludert bruk av standardmetoder og tredjepartsbiblioteker om nødvendig.
 
 ### Bruk av innebygde metoder
-
 For å sette stor forbokstav i første bokstav av en streng og gjøre resten små:
 
 ```swift
@@ -41,7 +35,6 @@ print(capitalizedSentence) // Resultat: "Hello, World"
 ```
 
 ### Bruk av et tredjepartsbibliotek
-
 Selv om Swifts standardbibliotek er ganske omfattende, kan noen spesifikke formater for stor bokstav kreve mer komplekse operasjoner eller kan forenkles ved bruk av tredjepartsbiblioteker. Ett av de populære for strengmanipulering er SwiftRichString. (Merk: Sørg alltid for å inkludere tredjepartsbiblioteker gjennom Swift Package Manager, CocoaPods, eller Carthage, og importer dem i filen din.)
 
 Først må du legge til `SwiftRichString` i prosjektet ditt. Når installert, kan du bruke det til å utføre ulike strengoperasjoner, inkludert spesifikke behov for stor bokstav. Men, per nå, dekker Swifts innebygde metoder tilstrekkelig de fleste behov for stor bokstav uten å trenge eksterne biblioteker bare for å sette stor bokstav i strenger.

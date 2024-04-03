@@ -12,12 +12,7 @@ title: Gebruik makend van associatieve arrays
 weight: 15
 ---
 
-## Wat & Waarom?
-
-Associatieve arrays in Dart, doorgaans bekend als Maps, zijn datastructuren die gegevens opslaan in sleutel-waardeparen. Ze stellen programmeurs in staat om elementen te benaderen niet via indices, maar sleutels, waardoor het ophalen van gegevens intuïtief en efficiënt is, vooral bij het werken met gestructureerde gegevens waar elk element een unieke identifier heeft.
-
 ## Hoe te:
-
 Dart biedt een eenvoudige syntaxis voor het creëren en manipuleren van Maps. Hieronder zijn voorbeelden die basisbewerkingen demonstreren zoals het creëren, toevoegen van elementen en het ophalen van waarden.
 
 ```dart

@@ -11,9 +11,6 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## What & Why? (Co i dlaczego?)
-Porównywanie dat to sprawdzanie, która z nich jest wcześniejsza, późniejsza lub czy są identyczne. Programiści robią to, by obsługiwać rezerwacje, terminy, ważność czytel, i wiele innych.
-
 ## How to: (Jak to zrobić:)
 ```TypeScript
 const date1: Date = new Date('2023-09-01');

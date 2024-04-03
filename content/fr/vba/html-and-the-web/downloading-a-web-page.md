@@ -13,12 +13,7 @@ title: "T\xE9l\xE9charger une page web"
 weight: 42
 ---
 
-## Quoi & Pourquoi ?
-
-Télécharger une page web en Visual Basic pour Applications (VBA) consiste à récupérer le contenu HTML d'une page web depuis Internet. Les programmeurs effectuent souvent cette tâche pour traiter ou analyser le contenu des sites web de manière programmatique, depuis Excel, Access ou d'autres applications Office.
-
 ## Comment faire :
-
 Pour télécharger une page web en VBA, vous pouvez utiliser la bibliothèque Microsoft XML, v6.0 (MSXML6), qui permet les requêtes HTTP serveur. Avant de plonger dans le code, assurez-vous d'avoir activé cette référence dans votre éditeur VBA en allant dans `Outils` -> `Références` et en cochant `Microsoft XML, v6.0`.
 
 Voici un exemple simple de la manière de télécharger le contenu HTML d'une page web :
@@ -54,7 +49,6 @@ End Sub
 L'exécution de cette sous-routine affichera le HTML de `http://www.example.com` dans la Fenêtre immédiate de l'éditeur VBA. Notez que le paramètre `False` dans la méthode `Open` rend la requête synchrone, ce qui signifie que le code attendra que la page web soit téléchargée avant de passer à la ligne suivante.
 
 ## Exploration approfondie
-
 La technique présentée repose sur MSXML, l'implémentation par Microsoft de la norme XML HTTP Request, souvent utilisée pour les requêtes AJAX en développement web. Ce composant fait partie de la pile technologique de Microsoft depuis longtemps, ce qui en fait un choix robuste pour les requêtes réseau en VBA.
 
 Cependant, la dépendance à MSXML et VBA pour télécharger et analyser le contenu web peut être limitante, en particulier avec les applications web modernes qui utilisent fortement JavaScript pour le rendu de contenu dynamique. Ces limitations peuvent rendre d'autres langages ou outils comme Python avec des bibliothèques telles que BeautifulSoup ou Selenium plus adaptés aux tâches de scraping web en raison de leur capacité à exécuter JavaScript et à gérer des interactions de sites web complexes.

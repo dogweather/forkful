@@ -11,9 +11,6 @@ title: Odczytywanie pliku tekstowego
 weight: 22
 ---
 
-## What & Why? (Co i dlaczego?)
-Odczytywanie pliku tekstowego to proces wydobycia informacji zapisanych w pliku na dysku. Programiści robią to, by umożliwić aplikacjom korzystanie z danych, takich jak ustawienia, dane wejściowe użytkownika czy zawartość do przetworzenia.
-
 ## How to: (Jak to zrobić?)
 ```C++
 #include <iostream>

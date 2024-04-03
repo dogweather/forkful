@@ -12,12 +12,7 @@ title: Controleren of een directory bestaat
 weight: 20
 ---
 
-## Wat & Waarom?
-
-Controleren of een directory bestaat laat je de aanwezigheid van een map in het bestandssysteem bevestigen voordat je probeert deze te gebruiken. Programmeurs doen dit om fouten te vermijden bij het lezen, schrijven of navigeren door mappen.
-
 ## Hoe te:
-
 In PHP controleert `is_dir()` of een directory bestaat:
 
 ```PHP
@@ -52,7 +47,6 @@ if (file_exists($directory) && is_dir($directory)) {
 ```
 
 ## Diepere duik
-
 `is_dir()` bestaat in PHP sinds versie 4.0.0, wat het mogelijk maakt om voorafgaand aan operaties die kunnen falen of fouten kunnen opleveren, te controleren op het bestaan ​​van mappen. Niet te verwarren met `file_exists()`, wat zowel voor bestanden als mappen controleert, `is_dir()` is specifiek voor mappen.
 
 Voordat deze ingebouwde functies bestonden, konden programmeurs `opendir()` hebben gebruikt en gecontroleerd of er een false retourwaarde was om niet-bestaan ​​af te leiden. Dit was minder efficiënt en foutgevoeliger.
@@ -62,7 +56,6 @@ Onder de motorkap voert `is_dir()` een syscall uit naar het onderliggende bestan
 Een alternatief, vooral relevant in Unix-achtige systemen, is het gebruik van `exec()` met een systeemcommando zoals `ls` of `test -d`, maar dit introduceert de overhead van het aanroepen van een shell en is minder draagbaar.
 
 ## Zie ook
-
 - [PHP Handleiding: `is_dir()`](https://www.php.net/manual/en/function.is-dir.php)
 - [PHP Handleiding: `file_exists()`](https://www.php.net/manual/en/function.file-exists.php)
 - [Bestandssysteem best practices in PHP](https://www.php-fig.org/psr/psr-4/)

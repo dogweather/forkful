@@ -11,9 +11,6 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## What & Why? (Co i dlaczego?)
-Zaczynamy nowy projekt Rust, by stworzyć świeże oprogramowanie od podstaw. Programiści robią to dla realizacji unikalnych pomysłów lub eksperymentowania z nowymi technologiami.
-
 ## How to: (Jak to zrobić:)
 Zacznij od Cargo, narzędzia Rust do zarządzania projektami.
 

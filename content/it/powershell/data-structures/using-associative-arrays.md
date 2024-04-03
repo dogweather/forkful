@@ -13,12 +13,7 @@ title: Utilizzo di array associativi
 weight: 15
 ---
 
-## Cosa & Perché?
-
-Gli array associativi, noti anche come tabelle hash o dizionari in PowerShell, consentono di memorizzare i dati in coppie chiave-valore, rendendo il recupero dei dati semplice ed efficiente. I programmatori li utilizzano per immagazzinare dati correlati insieme in un modo che è facile da accedere tramite chiave.
-
 ## Come fare:
-
 Creare e utilizzare array associativi in PowerShell è abbastanza semplice. Ecco come si fa la magia:
 
 **Creare un array associativo:**
@@ -76,7 +71,6 @@ location : New York
 ```
 
 ## Approfondimento
-
 Il concetto di array associativi è comune in molti linguaggi di programmazione, solitamente denominato dizionario, mappa o tabella hash a seconda del linguaggio. In PowerShell, gli array associativi sono implementati come tabelle hash, che sono molto efficienti per la ricerca di chiavi, lo stoccaggio di dati e il mantenimento di una collezione di chiavi uniche.
 
 Storicamente, gli array associativi forniscono un mezzo per gestire collezioni di oggetti in cui ogni elemento può essere rapidamente recuperato senza dover iterare attraverso l'intera collezione, utilizzando la sua chiave. L'efficienza nel recupero e nella modifica dei dati negli array associativi li rende una scelta preferita per vari compiti. Tuttavia, hanno limitazioni, come il mantenimento dell'ordine, per cui i dizionari ordinati o gli oggetti personalizzati potrebbero essere un'alternativa migliore.

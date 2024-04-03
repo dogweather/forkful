@@ -11,9 +11,6 @@ title: Lendo argumentos da linha de comando
 weight: 23
 ---
 
-## O Que & Porquê?
-Comandos na linha de comando são instruções que você insere diretamente no terminal para executar um programa com opções específicas. Os programadores fazem isso para interagir com scripts de forma rápida, passando informações e parâmetros de forma programática.
-
 ## Como Fazer:
 Para pegar argumentos da linha de comando em PHP, você usa a variável global `$argv`. `$argc` conta os argumentos. Vamos ver isso em ação:
 

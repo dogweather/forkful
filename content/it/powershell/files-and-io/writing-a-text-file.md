@@ -13,9 +13,6 @@ title: Scrivere un file di testo
 weight: 24
 ---
 
-## Cos'è & Perché?
-Scrivere un file di testo in PowerShell comporta la creazione e la manipolazione di file basati su testo, che è un'operazione fondamentale per la registrazione, lo stoccaggio dei dati e la scrittura di script di configurazione. I programmatori sfruttano queste funzioni per automatizzare compiti di sistema, analisi dei dati e l'integrazione con altre applicazioni o script.
-
 ## Come fare:
 PowerShell fornisce cmdlet semplici per la gestione dei file. Il cmdlet `Out-File` e gli operatori di reindirizzamento vengono utilizzati principalmente per questo scopo. Ecco alcuni esempi che illustrano come scrivere testo su file in diversi scenari:
 

@@ -10,11 +10,7 @@ title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---
 
-## Vad & Varför?
-Att radera tecken som matchar ett mönster innebär att man letar igenom en textsträng och tar bort specifika tecken eller sekvenser av tecken. Programmerare gör det för att rensa upp i data, validera input, eller bearbeta information på ett korrekt sätt.
-
 ## Hur man gör:
-
 ```Lua
 local text = "Hej! Hur mår du idag, kära programmerare?"
 local pattern = "[%p%c%s]"
@@ -43,6 +39,5 @@ Alternativ till mönsterborttagning kan vara manual loopar där man går igenom 
 Implementationsdetaljer är viktiga: `gsub` använder Lua-mönster, som liknar men är inte identiska med reguljära uttryck. En bra förståelse för dessa mönster är nyckeln till effektiv och exakt textmanipulation.
 
 ## Se Även:
-
 - Lua Manual on Patterns: [https://www.lua.org/manual/5.4/manual.html#6.4.1](https://www.lua.org/manual/5.4/manual.html#6.4.1)
 - 'Programming in Lua' Book on Text Processing: [https://www.lua.org/pil/20.2.html](https://www.lua.org/pil/20.2.html)

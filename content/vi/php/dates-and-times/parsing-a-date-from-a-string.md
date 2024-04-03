@@ -16,11 +16,7 @@ title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---
 
-## Cái gì & Tại sao?
-Phân tích cú pháp một ngày từ một chuỗi nghĩa là chuyển đổi văn bản đại diện cho ngày và giờ thành một định dạng có thể lập trình được. Lập trình viên làm điều này để thao tác với ngày tháng, so sánh chúng, hoặc lưu trữ chúng vào cơ sở dữ liệu một cách hiệu quả.
-
 ## Làm thế nào:
-
 PHP làm cho việc phân tích cú pháp ngày từ chuỗi khá đơn giản với lớp `DateTime`. Dưới đây là một ví dụ nhanh:
 
 ```php
@@ -47,7 +43,6 @@ echo $dateTime->format('Y-m-d H:i'); // Đầu ra: 2023-04-12 14:00
 Thử nghiệm với các định dạng và các múi giờ để thấy sự mạnh mẽ của nó.
 
 ## Tìm hiểu sâu
-
 Trong quá khứ, các nhà phát triển PHP phải tự mình phân tích cú pháp chuỗi ngày hoặc sử dụng `strtotime()`, cái mà hiệu quả nhưng kém mạnh mẽ hơn `DateTime`. Được giới thiệu trong PHP 5.2.0, `DateTime` cung cấp việc thao tác ngày/giờ theo hướng đối tượng.
 
 Tại sao thay đổi? Bởi vì `DateTime`:
@@ -66,7 +61,6 @@ Khi phân tích, cẩn thận với các cạm bẫy:
 - Giây nhuận và giờ tiết kiệm ban ngày có thể ảnh hưởng đến việc tính toán.
 
 ## Xem thêm
-
 - [Hướng dẫn PHP về DateTime](https://www.php.net/manual/en/class.datetime.php)
 - [Các hàm ngày và giờ PHP](https://www.php.net/manual/en/ref.datetime.php)
 - [Carbon: Một phần mở rộng API PHP đơn giản cho DateTime](https://carbon.nesbot.com/)

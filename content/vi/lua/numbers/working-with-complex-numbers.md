@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Cái gì & Tại sao?
-Số phức mở rộng ý tưởng của dải số một chiều thành mặt phẳng hai chiều bằng cách bao gồm một trục ảo vuông góc. Lập trình viên làm việc với chúng trong các lĩnh vực như xử lý tín hiệu, động lực học chất lỏng và kỹ thuật điện, nơi chúng là thiết yếu để biểu diễn dao động và các hiện tượng khác.
-
 ## Làm thế nào:
 Trong Lua, bạn có thể biểu diễn số phức bằng cách sử dụng bảng. Các thao tác cơ bản bao gồm cộng, trừ, nhân và chia những bảng này. Dưới đây là cách thực hiện:
 

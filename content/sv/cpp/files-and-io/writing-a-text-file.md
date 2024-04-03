@@ -15,14 +15,10 @@ title: Att skriva en textfil
 weight: 24
 ---
 
-## Vad & Varför?
-Att skriva till en textfil i C++ innebär att skapa eller öppna en fil och sedan skriva data till den, vilket är en grundläggande uppgift för applikationer som behöver bevara data, såsom loggar, användargenererat innehåll eller konfigurationsinställningar. Programmerare gör detta för att spara data som genereras under programmets körning eller för att exportera data för användning av andra program eller användare.
-
 ## Hur man gör:
 C++ erbjuder flera sätt att skriva till en textfil, men en av de mest raka metoderna är att använda biblioteket `<fstream>` som tillhandahåller klassen `ofstream` (output file stream) som är designad för filskrivningsoperationer.
 
 ### Exempel med `<fstream>`:
-
 ```cpp
 #include <fstream>
 #include <iostream>
@@ -49,7 +45,6 @@ Att skriva till en fil i C++ är enkelt.
 När man hanterar mer komplex data eller behöver mer kontroll över skrivprocessen, kan programmerare vända sig till tredjepartsbibliotek såsom Boost Filesystem.
 
 ### Exempel med Boost Filesystem:
-
 För att använda Boost för filoperationer behöver du först installera Boost-biblioteken. Följande exempel demonstrerar skapandet och skrivandet till en fil med användning av `boost::filesystem` och `boost::iostreams`.
 
 ```cpp

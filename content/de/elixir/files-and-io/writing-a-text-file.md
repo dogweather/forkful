@@ -14,12 +14,7 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-
-Das Schreiben in eine Textdatei in Elixir ist eine wesentliche Fähigkeit für Entwickler, die es ermöglicht, Daten zu persistieren, zu protokollieren oder menschenlesbare Inhalte zu exportieren. Programmierer erreichen dies, um den Zustand der Anwendung, Debug-Informationen, Konfigurationen oder jeglichen Datenaustausch zwischen Systemen, die ein allgegenwärtiges Format wie Text bevorzugen, zu speichern.
-
 ## Wie geht das:
-
 Elixir macht die Dateiverarbeitung mit eingebauten Modulen unkompliziert. Die primäre Methode, um in eine Datei zu schreiben, verwendet die Funktionen `File.write/2` oder `File.write!/2`, wobei die erstere ein `:ok` oder `:error` Tupel zurückgibt und die letztere bei einem Fehler eine Fehlermeldung auslöst.
 
 Hier ist ein einfaches Beispiel:

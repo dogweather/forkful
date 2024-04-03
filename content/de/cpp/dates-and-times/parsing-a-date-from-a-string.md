@@ -12,9 +12,6 @@ title: Einen Datum aus einem String analysieren
 weight: 30
 ---
 
-## Was & Warum?
-Das Parsen eines Datums aus einem String beinhaltet die Interpretation des Stringformats, um Komponenten wie Tag, Monat und Jahr zu extrahieren. Programmierer tun dies, um Benutzereingaben zu verarbeiten, Datendateien zu lesen oder mit APIs zu interagieren, die Daten in Stringformaten kommunizieren. Es ist wesentlich für die Datenverarbeitung, Validierung und das Durchführen von Datumsarithmetik in Anwendungen.
-
 ## Wie:
 In modernem C++ kann man die `<chrono>`-Bibliothek verwenden, um mit Daten und Zeiten nativ umzugehen, aber sie unterstützt nicht direkt das Parsen aus Strings ohne manuelles Parsen für komplexere Formate. Für ISO 8601-Datenformate und einfache benutzerdefinierte Formate ist hier, wie Sie das Parsen bewerkstelligen können.
 

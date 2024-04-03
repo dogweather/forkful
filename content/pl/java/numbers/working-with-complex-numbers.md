@@ -11,12 +11,7 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i dlaczego?
-
-Liczby zespolone rozszerzają linię liczb rzeczywistych przez dodanie jednostki urojonej, `i`, gdzie `i^2 = -1`. Są one kluczowe w takich dziedzinach jak inżynieria, fizyka i zaawansowana matematyka, gdzie modelują zjawiska, z którymi liczby rzeczywiste nie mogą sobie poradzić, takie jak prądy elektryczne i przetwarzanie sygnałów.
-
 ## Jak to zrobić:
-
 Java nie posiada wbudowanego wsparcia dla liczb zespolonych, ale możemy stworzyć własną klasę lub użyć biblioteki. Oto krótki przykład, jak utworzyć prostą klasę `ComplexNumber` i użyć jej:
 
 ```java
@@ -56,7 +51,6 @@ Suma: 3.0 + 7.0i
 ```
 
 ## Szczegółowa analiza
-
 Zanim pojawiły się języki wysokiego poziomu takie jak Java, programiści pracowali bezpośrednio z bibliotekami matematycznymi w językach takich jak Fortran czy C, aby zarządzać złożonymi operacjami. Koncepcja ta sięga XVI wieku, za co są uznawani matematycy tacy jak Gerolamo Cardano i Rafael Bombelli.
 
 W Javie, `java.lang.Math` jest miejscem, do którego się udaje po niezbędne elementy, ale pomija liczby zespolone, prawdopodobnie dlatego, że nie każdy programista ich używa. Alternatywy? Użyj bibliotek. Apache Commons Math zapewnia klasę `Complex` wypełnioną metodami do manipulacji. Oto dlaczego tworzenie własnej klasy jest jednak fajne: lekkość, dostosowanie do dokładnych potrzeb i brak nadmiaru biblioteki.
@@ -64,7 +58,6 @@ W Javie, `java.lang.Math` jest miejscem, do którego się udaje po niezbędne el
 Jedna ważna rzecz: uważaj na precyzję liczby zmiennoprzecinkowej. Komputery nie mogą przedstawić niektórych liczb dokładnie, co prowadzi do błędów zaokrąglenia. Podczas wykonywania powtarzalnych złożonych operacji te błędy mogą się kumulować!
 
 ## Zobacz również
-
 Aby zgłębić temat i bardziej złożone operacje, sprawdź:
 
 - [Apache Commons Math](https://commons.apache.org/proper/commons-math/)

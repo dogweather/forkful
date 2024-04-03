@@ -15,11 +15,7 @@ title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---
 
-## Gì & Tại Sao?
-Xóa các ký tự phù hợp với một mẫu nghĩa là loại bỏ các chuỗi cụ thể khỏi một chuỗi ký tự. Lập trình viên làm điều này để làm sạch dữ liệu, thực thi các định dạng, hoặc loại bỏ thông tin không mong muốn.
-
 ## Làm thế nào:
-
 Để xóa các ký tự sử dụng một mẫu trong Clojure, bạn sử dụng biểu thức chính quy với các hàm `re-seq`, `re-find`, hoặc `re-matches` kết hợp với `clojure.string/replace`.
 
 ```Clojure

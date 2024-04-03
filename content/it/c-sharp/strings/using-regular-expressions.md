@@ -13,10 +13,8 @@ title: Utilizzo delle espressioni regolari
 weight: 11
 ---
 
-## Cosa e Perché?
-Le espressioni regolari (regex) in C# sono uno strumento potente per il riconoscimento di pattern all'interno delle stringhe, che permette ai programmatori di cercare, sostituire, dividere o estrarre dati in modo efficiente. I programmatori utilizzano le regex per compiti che vanno da semplici validazioni, come il controllo del formato dell'email, fino a complesse attività di elaborazione del testo, grazie alla loro flessibilità e prestazioni.
-
 ## Come fare:
+
 
 ### Abbinamento di Pattern Semplice
 Per verificare se una stringa contiene un determinato pattern, puoi utilizzare il metodo `Regex.IsMatch` dallo spazio dei nomi `System.Text.RegularExpressions`.

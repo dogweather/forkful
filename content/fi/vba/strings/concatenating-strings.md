@@ -12,12 +12,7 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## Mikä & Miksi?
-
-Merkkijonojen yhdistäminen Visual Basic for Applications (VBA) -ohjelmointikielessä tarkoittaa kahden tai useamman merkkijonon liittämistä yhdeksi kokonaisuudeksi. Tämä on ohjelmoinnissa perustavaa laatua oleva tehtävä, joka on välttämätön käyttäjäviestien luomisessa, SQL-kyselyiden rakentamisessa ja muussa, koska se mahdollistaa merkkijonotietojen dynaamisen luonnin ja käsittelyn.
-
 ## Miten:
-
 VBA tarjoaa suoraviivaisen menetelmän merkkijonojen yhdistämiseen käyttäen `&`-operaattoria tai `Concatenate`-funktiota. Tutustutaan molempiin menetelmiin esimerkkien avulla:
 
 1. **Käyttäen `&`-operaattoria:**
@@ -53,7 +48,6 @@ Debug.Print message 'Tuloste: Hello John!
 Valinta `&`-operaattorin ja `Concatenate`-funktion välillä riippuu henkilökohtaisesta mieltymyksestä sekä projektisi erityisvaatimuksista.
 
 ## Syväsukellus
-
 Merkkijonojen yhdistäminen on perustavaa, mutta voimakas ominaisuus VBA:ssa, jonka juuret ulottuvat aikaisiin ohjelmointikieliin. `&`-operaattorin suosio VBA:ssa yhdistämiseen `+`-operaattorin sijaan, jota käytetään yleisesti monissa muissa kielissä, korostaa VBA:n keskittymistä eksplisiittiseen merkkijonojen käsittelyyn, välttäen näin tahattomia datatyypin epäjohdonmukaisuuksia ja virheitä.
 
 Vaikka `&`-operaattori on tehokas ja laajalti käytössä, `Concatenate`-funktio loistaa skenaarioissa, joissa vaaditaan enemmän selkeyttä tai käsitellään erityisiä yhdistämisen tapauksia, kuten taulukoiden kanssa. On kuitenkin tärkeää huomata, että modernit Excel-versiot ovat tuoneet käyttöön `TEXTJOIN`-funktion, joka voi olla tehokkaampi merkkijonojen taulukoiden yhdistämisessä erotinmerkin kanssa, vaikka se ei ole suoraan osa VBA:ta.

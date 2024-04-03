@@ -11,12 +11,7 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-
-Rounding numbers means approximating a numerical value to a specific precision, typically to remove unwanted decimals. Programmers round to manage memory, improve readability, and meet domain-specific requirements like currency constraints.
-
 ## How to:
-
 Swift provides several ways to round numbers. Here's a taste:
 
 ```Swift
@@ -40,7 +35,6 @@ print("Standard: \(standardRounded), Decimal: \(decimalRounded), Down: \(rounded
 Output: `Standard: 3.0, Decimal: 3.142, Down: 3.0, Up: 4.0`
 
 ## Deep Dive
-
 Historically, rounding is a mathematical concept predating computers, essential in commerce and science. Swift's `Foundation` framework offers comprehensive rounding functionality:
 
 - `round(_: )` is good old half-up rounding.
@@ -50,5 +44,4 @@ Historically, rounding is a mathematical concept predating computers, essential 
 Be aware of the `Decimal` type for precise financial calculations, which avoids floating-point errors. Also, explore `NSDecimalNumber` for Objective-C compatibility.
 
 ## See Also
-
 - IEEE Standard for Floating-Point Arithmetic (IEEE 754): [IEEE 754](https://ieeexplore.ieee.org/document/4610935)

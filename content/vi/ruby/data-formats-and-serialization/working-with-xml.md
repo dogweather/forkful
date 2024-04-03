@@ -10,8 +10,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Làm việc với XML trong Ruby
-
 ### Làm gì & Tại sao?
 Làm việc với XML nghĩa là phân tích cú pháp, tạo và thao tác với các tài liệu XML (eXtensible Markup Language) thông qua mã lệnh. Các lập trình viên làm điều này để tương tác với nhiều dịch vụ web, các tệp cấu hình, và các định dạng trao đổi dữ liệu nơi XML là ngôn ngữ chung.
 

@@ -11,9 +11,6 @@ title: Recherche et remplacement de texte
 weight: 10
 ---
 
-## Quoi et Pourquoi ?
-Chercher et remplacer du texte est essentiel pour modifier des chaînes de caractères. Les programmeurs l'utilisent pour corriger des erreurs, mettre à jour des données ou refactoriser du code.
-
 ## Comment faire :
 ```rust
 fn main() {

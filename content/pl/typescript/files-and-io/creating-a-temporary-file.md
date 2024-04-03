@@ -11,9 +11,6 @@ title: Tworzenie pliku tymczasowego
 weight: 21
 ---
 
-## What & Why?
-Tworzenie pliku tymczasowego to proces generowania pliku, który ma służyć chwilowym celom i zwykle jest usuwany po użyciu. Programiści używają plików tymczasowych do przechowywania danych tymczasowych, testowania i oddzielania procesów, aby nie zakłócać pracy głównego systemu plików.
-
 ## How to:
 W TypeScript korzystamy z paczki `fs` z Node.js, żeby łatwo zarządzać plikami — tworzyć, odczytywać, pisać i usuwać, także te tymczasowe.
 

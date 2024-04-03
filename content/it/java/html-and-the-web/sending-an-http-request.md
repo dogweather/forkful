@@ -10,9 +10,6 @@ title: Inviare una richiesta http
 weight: 44
 ---
 
-## What & Why? (Cosa & Perché?)
-Inviare una richiesta HTTP significa comunicare con un server web per scambiare dati. I programmatori lo fanno per interagire con servizi web, API e scaricare contenuti.
-
 ## How to: (Come fare:)
 ```java
 import java.net.URI;

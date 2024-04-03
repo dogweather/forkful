@@ -13,9 +13,6 @@ title: Refactoring
 weight: 19
 ---
 
-## Wat & Waarom?
-Refactoring is het proces van het aanpassen van bestaande code om de structuur, leesbaarheid, en prestatie te verbeteren zonder het externe gedrag te veranderen. Programmeurs refactoren om code beter onderhoudbaar te maken, het toevoegen van nieuwe functies te vereenvoudigen, en bugs makkelijker te vinden en op te lossen.
-
 ## Hoe:
 Hier is een Kotlin snippet die een veelvoorkomende codegeur laat zien en de gerefactorde versie ervan. We beginnen met een stuk code dat te veel doet:
 

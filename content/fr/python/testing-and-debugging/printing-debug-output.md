@@ -11,8 +11,6 @@ title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---
 
-# Debuggage avec print(): Comment ça marche?
-
 ## Quoi et pourquoi ?
 Le "print debugging" consiste à afficher des infos dans la console pour comprendre ce qui se passe dans le code. On l'utilise parce que c'est simple et direct, pas besoin de configurer un environnement de débogage, et ça marche presque tout le temps.
 
@@ -47,7 +45,7 @@ Résultat est 6
 ```
 
 ## Deep Dive
-Historiquement, `print()` a toujours été la méthode de débogage rapide. Avant même que les IDE modernes offrent des débogueurs complexes, imprimer des valeurs était la manière standard de comprendre les erreurs. Les alternatives incluent l'utilisation de débogueurs, qui permettent de mettre des points d'arrêt et d'examiner l'état du programme ligne par ligne, ou encore l'écriture de logs détaillés. En parlant d'implémentation, `print()` en Python 3 est une fonction alors qu'en Python 2, c'était une instruction - une petite mais importante différence! 
+Historiquement, `print()` a toujours été la méthode de débogage rapide. Avant même que les IDE modernes offrent des débogueurs complexes, imprimer des valeurs était la manière standard de comprendre les erreurs. Les alternatives incluent l'utilisation de débogueurs, qui permettent de mettre des points d'arrêt et d'examiner l'état du programme ligne par ligne, ou encore l'écriture de logs détaillés. En parlant d'implémentation, `print()` en Python 3 est une fonction alors qu'en Python 2, c'était une instruction - une petite mais importante différence!
 
 ## Voir également
 Pour aller plus loin avec le débogage:

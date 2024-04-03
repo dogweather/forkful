@@ -10,11 +10,7 @@ title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---
 
-## O Quê & Porquê?
-Baixar uma página da web significa trazer seu conteúdo para processamento local. Programadores fazem isso para análises, testes ou para armazenar informação.
-
 ## Como fazer:
-
 ```java
 import java.io.*;
 import java.net.*;
@@ -56,7 +52,6 @@ Saída de exemplo (fragmento da página web):
 ```
 
 ## Aprofundando
-
 Historicamente, o download de páginas da web começou com o surgimento da internet e o protocolo HTTP. Ferramentas de linha de comando como `curl` e `wget` foram amplamente usadas antes das bibliotecas dedicadas em várias linguagens de programação.
 
 Alternativas incluem bibliotecas de terceiros como Apache HttpClient ou a biblioteca Jsoup que facilita a raspagem (scrapping) de HTML com métodos robustos para seleção e manipulação de dados.
@@ -64,7 +59,6 @@ Alternativas incluem bibliotecas de terceiros como Apache HttpClient ou a biblio
 Sobre execução: é essencial gerenciar corretamente conexões e recursos para evitar vazamentos (leaks) de memória. Java 7 introduziu o try-with-resources para facilitar esse processo. Certifique-se de sempre definir o User-Agent na sua solicitação, porque algumas páginas podem bloquear solicitações que parecem vir de robôs.
 
 ## Veja também
-
 - [Jsoup for Java](https://jsoup.org/)
 - Documentação oficial do [URLConnection](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URLConnection.html)
 - [Documentação da classe URL](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html)

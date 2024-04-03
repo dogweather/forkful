@@ -11,9 +11,6 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## What & Why? (Co i Dlaczego?)
-Usuwanie znaków pasujących do wzorca to proces filtrowania tekstu poprzez wykluczenie określonych znaków lub grup znaków. Programiści używają tej techniki, by oczyścić dane wejściowe, usunąć zbędne fragmenty czy przygotować tekst do dalszego przetwarzania.
-
 ## How to: (Jak to zrobić:)
 W JavaScript używamy metody `.replace()` wraz z wyrażeniami regularnymi, by usunąć znaki odpowiadające wzorcowi.
 

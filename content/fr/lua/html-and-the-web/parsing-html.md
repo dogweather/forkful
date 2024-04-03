@@ -14,9 +14,6 @@ title: Analyse Syntaxique du HTML
 weight: 43
 ---
 
-## Quoi & Pourquoi ?
-L'analyse du HTML implique l'extraction de données et d'informations à partir de documents HTML, ce qui est crucial pour le web scraping, l'analyse de données et les tâches d'automatisation. Les programmeurs réalisent cela pour collecter, analyser ou manipuler le contenu web de manière programmatique, rendant possible l'automatisation de ce qui serait autrement une extraction manuelle de données depuis des sites web.
-
 ## Comment faire :
 Lua n'a pas de bibliothèque intégrée pour l'analyse du HTML, mais vous pouvez utiliser des bibliothèques tierces comme `LuaHTML` ou exploiter les bindings pour `libxml2` à travers `LuaXML`. Une approche populaire consiste à utiliser la bibliothèque `lua-gumbo` pour l'analyse du HTML, qui fournit une capacité d'analyse conforme à HTML5, simple et directe.
 

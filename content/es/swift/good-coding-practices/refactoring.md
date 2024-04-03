@@ -11,9 +11,6 @@ title: "Refactorizaci\xF3n"
 weight: 19
 ---
 
-## ¿Qué y Por Qué?
-La refactorización es el proceso de reestructurar código informático existente sin cambiar su comportamiento externo. Los programadores lo hacen para limpiar la base de código, mejorando la legibilidad, mantenibilidad y allanando el camino para futuras características con una deuda técnica mínima.
-
 ## Cómo hacerlo:
 Comencemos con un ejemplo básico de Swift donde tenemos algún código repetitivo:
 

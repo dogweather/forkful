@@ -11,12 +11,7 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-
-Writing to a text file in Fish Shell allows you to store data persistently, enabling easy data retrieval or manipulation by either the same Fish script or other programs. Programmers do this for logging, saving configuration settings, or exporting data for further processing.
-
 ## How to:
-
 To write to a text file in Fish, you can use the `echo` command combined with redirection operators. There aren't popular third-party libraries specifically for file writing in Fish, as the shell's built-in commands are straightforward and efficient for this purpose.
 
 ### Writing text to a new file or overwriting an existing file:

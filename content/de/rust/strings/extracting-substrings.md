@@ -11,9 +11,6 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## Was & Warum?
-Das Extrahieren von Teilzeichenketten ist der Prozess, spezifische Teile aus einem String herauszuschneiden. Programmierer nutzen dies für Aufgaben wie Datenanalyse, Formatierung oder wenn nur ein Teil des Strings weiterverarbeitet werden soll.
-
 ## How to:
 ```Rust
 fn main() {

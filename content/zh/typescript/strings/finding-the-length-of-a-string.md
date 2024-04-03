@@ -15,9 +15,6 @@ title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
 weight: 7
 ---
 
-## What & Why? (是什么 & 为什么？)
-获取字符串长度就是确定它包含多少个字符。程序员需要这个信息来处理文本，比如验证输入或截取字符串。
-
 ## How to: (如何操作：)
 ```TypeScript
 let greeting: string = "你好，世界！";

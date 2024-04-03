@@ -14,12 +14,7 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O Que & Por Que?
-
-Refatoração em programação envolve reestruturar o código existente sem alterar seu comportamento externo, visando melhorar atributos não funcionais, como legibilidade, redução de complexidade e aumento da manutenibilidade. Programadores refatoram para manter a base de código limpa, minimizar a dívida técnica e tornar mudanças futuras mais fáceis e seguras de implementar.
-
 ## Como:
-
 A refatoração pode envolver uma série de táticas, desde renomear variáveis para mais clareza até alterar a estrutura do código para melhor modularização. Aqui está um exemplo simples demonstrando como refatorar um pedaço de código C para melhor clareza e eficiência.
 
 Antes da Refatoração:
@@ -62,7 +57,6 @@ int main() {
 A saída permanece inalterada, mas a funcionalidade para trocar valores foi movida para uma função separada (`trocar`), melhorando a legibilidade e reutilização.
 
 ## Aprofundamento
-
 A prática de refatorar código existe há tanto tempo quanto o desenvolvimento de software em si, evoluindo ao lado de paradigmas e linguagens de programação. Em C, uma linguagem poderosa, mas repleta de oportunidades para ineficiência e erros devido à sua natureza de baixo nível, a refatoração é especialmente crucial. Pode fazer a diferença entre uma base de código que é mantida e uma que é uma teia emaranhada de ineficiências.
 
 Uma consideração específica para C é o equilíbrio entre micro-otimizações e legibilidade/manutenibilidade. Enquanto é tentador ajustar manualmente o código C para obter cada último grama de performance, tais otimizações podem tornar o código mais frágil e difícil de ler. Portanto, geralmente é melhor priorizar um código limpo e legível e confiar no otimizador do compilador para lidar com melhorias de desempenho quando possível.

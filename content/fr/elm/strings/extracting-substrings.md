@@ -11,9 +11,6 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## What & Why?
-Extraire des sous-chaînes, c'est récupérer des parties spécifiques d'une chaîne de caractères. On le fait pour analyser, formater ou manipuler des données textuelles.
-
 ## How to:
 En Elm, on utilise les fonctions `String.slice` pour découper une sous-chaîne. Voici comment:
 

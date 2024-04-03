@@ -18,12 +18,7 @@ title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---
 
-## Gì & Tại sao?
-
-Việc viết một tệp văn bản bằng Visual Basic for Applications (VBA) bao gồm việc tạo, chỉnh sửa, hoặc thêm dữ liệu văn bản vào các tệp, một nhiệm vụ cơ bản để lưu trữ kết quả đầu ra, ghi nhật ký, hoặc tương tác với các ứng dụng khác. Lập trình viên sử dụng chức năng này để tự động hóa báo cáo, xuất dữ liệu, hoặc tạo tệp cấu hình trong hệ sinh thái Microsoft Office.
-
 ## Làm thế nào:
-
 VBA cung cấp một số phương pháp để viết vào một tệp, nhưng một trong những cách đơn giản nhất là sử dụng `FileSystemObject`. Dưới đây là hướng dẫn từng bước để tạo một tệp văn bản đơn giản và viết dữ liệu vào đó:
 
 1. **Tham chiếu Microsoft Scripting Runtime**: Đầu tiên, đảm bảo rằng trình soạn thảo VBA của bạn có quyền truy cập vào `FileSystemObject`. Vào Tools > References trong trình soạn thảo VBA và kiểm tra "Microsoft Scripting Runtime."
@@ -58,7 +53,6 @@ Chào bạn, VBA!
 ```
 
 ## Sâu hơn:
-
 `FileSystemObject` (FSO), một phần của thư viện Microsoft Scripting Runtime, cung cấp một bộ thuộc tính và phương thức phong phú cho các hoạt động với tệp, mở rộng hơn những gì VBA cung cấp truyền thống (ví dụ: `Open`, `Print` #, `Write` #). Ngoài xử lý tệp, FSO còn có thể thao tác với thư mục và ổ đĩa, làm cho nó trở thành một công cụ mạnh mẽ cho các hoạt động hệ thống tệp trong VBA.
 
 Tuy nhiên, đáng lưu ý là trong khi FSO đưa ra một cách tiếp cận hiện đại hơn đối với các thao tác tệp trong VBA, nó có thể tạo ra gánh nặng cho các nhiệm vụ đơn giản so với các câu lệnh xử lý tệp bản địa của VBA. Hơn nữa, vì FSO là một phần của một thư viện bên ngoài, khả năng di động và tương thích với các hệ thống khác (ví dụ, các phiên bản Office cũ hơn, Office Mac) có thể là những mối quan tâm.

@@ -10,8 +10,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---
 
-## Làm việc với TOML trong Haskell
-
 ### Cái gì & Tại sao?
 Làm việc với TOML bao gồm việc phân tích cú pháp và tạo ra dữ liệu TOML (Tom's Obvious, Minimal Language - Ngôn ngữ Tối giản, Rõ ràng của Tom) bằng Haskell. Các lập trình viên thực hiện điều này để dễ dàng quản lý các tệp cấu hình hoặc trao đổi dữ liệu với đảm bảo kiểu mạnh mẽ và cú pháp tối thiểu.
 

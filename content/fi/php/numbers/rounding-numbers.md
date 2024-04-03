@@ -10,9 +10,6 @@ title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä ja miksi?
-Numeroiden pyöristäminen tarkoittaa desimaalien poistamista tiettyyn tarkkuuteen, usein kokonaislukuihin. Ohjelmoijat pyöristävät yksinkertaistaakseen laskelmia, parantaakseen suorituskykyä tai tehdäkseen tulosteista käyttäjäystävällisiä.
-
 ## Kuinka:
 PHP tarjoaa muutaman tavan numeroiden pyöristämiseen: `round()`, `ceil()` ja `floor()`. Näin ne toimivat:
 

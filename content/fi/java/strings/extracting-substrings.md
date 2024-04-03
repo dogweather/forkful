@@ -10,9 +10,6 @@ title: Merkkijonojen osien poimiminen
 weight: 6
 ---
 
-## What & Why? (Mikä & Miksi?)
-Substringit ovat jonoista irrotettuja osia. Ohjelmoijat käyttävät niitä tiedon käsittelyyn ja analysointiin - leikaten tarpeelliset palat isommasta tekstistä.
-
 ## How to: (Kuinka tehdään:)
 ```java
 public class SubstringExample {
@@ -26,6 +23,7 @@ public class SubstringExample {
     }
 }
 ```
+
 ## Deep Dive (Sukellus syvyyksiin):
 Substringien konsepti on vanha, juontuen ajoista kun ohjelmistoja kirjoitettiin nauhoille. Java tarjoaa `substring()` metodin `String`-luokassa, jolla voi hakea osajonot tehokkaasti. Alternatiiveina ovat `subSequence()` käyttäminen tai regex (säännölliset lausekkeet), joilla voi hakea monimutkaisempia kuvioita. Suorituskyvyn kannalta Java käyttää `String`-luokassa muistiystävällistä tapaa, jossa osajonot viittaavat alkuperäisen merkkijonon muistialueeseen eivätkä kopioi dataa suotta.
 

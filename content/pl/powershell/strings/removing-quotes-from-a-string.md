@@ -12,9 +12,6 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co i dlaczego?
-Usuwanie cudzysłowów ze stringa w PowerShellu polega na wyeliminowaniu pojedynczych (`'`) lub podwójnych (`"`) znaków cudzysłowu otaczających tekst. Programiści często muszą oczyścić stringi do przetwarzania, porównywania lub w celach wyjściowych, szczególnie kiedy mają do czynienia z danymi wprowadzanymi przez użytkownika lub parsowaniem plików.
-
 ## Jak to zrobić:
 Możesz użyć operatora `-replace` do usunięcia cudzysłowów ze stringa. Oto jak:
 

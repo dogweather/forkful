@@ -13,14 +13,10 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-
-Das Schreiben einer Textdatei in Java bedeutet, die Fähigkeiten der Sprache zu nutzen, um Inhalte in Dateien auf dem Dateisystem zu erstellen und zu schreiben. Programmierer tun dies aus verschiedenen Gründen, wie zum Beispiel Logging, Exportieren von Daten oder Speichern des Anwendungszustands zur späteren Abrufung.
-
 ## Wie geht das:
 
-### Verwendung von `java.nio.file` (Standardbibliothek)
 
+### Verwendung von `java.nio.file` (Standardbibliothek)
 Das New I/O (NIO)-Paket von Java (`java.nio.file`) bietet einen vielseitigeren Ansatz im Umgang mit Dateien. Hier ist eine einfache Möglichkeit, in eine Datei zu schreiben, mit `Files.write()`:
 
 ```java
@@ -49,7 +45,6 @@ Datei erfolgreich geschrieben!
 ```
 
 ### Verwendung von `java.io` (Standardbibliothek)
-
 Für einen traditionelleren Ansatz ist `java.io.FileWriter` eine gute Wahl, um Textdateien einfach zu schreiben:
 
 ```java
@@ -76,7 +71,6 @@ Datei erfolgreich geschrieben!
 ```
 
 ### Verwendung von Apache Commons IO
-
 Die Bibliothek Apache Commons IO vereinfacht viele Operationen, einschließlich des Schreibens von Dateien. So schreiben Sie in eine Datei mit `FileUtils.writeStringToFile()`:
 
 Fügen Sie zuerst die Abhängigkeit zu Ihrem Projekt hinzu. Wenn Sie Maven verwenden, fügen Sie hinzu:

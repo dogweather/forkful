@@ -12,9 +12,6 @@ title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---
 
-## ¿Qué y por qué?
-Los números complejos son un conjunto de números de la forma `a + bi`, donde `a` y `b` son números reales, e `i` es la unidad imaginaria (`i^2 = -1`). En programación, los utilizamos para resolver problemas en varios dominios, como ingeniería eléctrica, procesamiento de señales y computación cuántica.
-
 ## Cómo hacerlo:
 Python tiene soporte integrado para números complejos. Así es como puedes jugar con ellos:
 

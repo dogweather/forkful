@@ -14,9 +14,6 @@ title: "Koodin j\xE4rjest\xE4minen funktioiksi"
 weight: 18
 ---
 
-## Mikä & Miksi?
-Koodin järjestäminen funktioihin on osioiden kasaamista skriptistä tiettyjä tehtäviä varten. Teemme sen, koska se tekee koodista helpommin luettavaa, testattavaa ja uudelleenkäytettävää – kukaan ei halua kahlata läpi koodispagetin suota.
-
 ## Kuinka:
 Fishissä kirjoitat funktion `function` avainsanalla, annat sille nimen ja lopetat `end`-sanan kanssa. Tässä on yksinkertainen esimerkki:
 
@@ -59,11 +56,9 @@ Joissakin kuorissa, kuten Bashissa, käytetään `function` avainsanaa tai suora
 Et tarvitse `return` arvoa, koska Fish ei ole siitä kiinnostunut; funktion tuloste on sen palautus. Ja jos haluat pysyviä funktioita käytettäväksi tulevissa istunnoissa, muista `funcsave`.
 
 ## Katso Myös
-
 - Fish-tutoriaali funktioista: [https://fishshell.com/docs/current/tutorial.html#tut_functions](https://fishshell.com/docs/current/tutorial.html#functions)
 
 ### Funktion komentosarjat
-
 - [function](https://fishshell.com/docs/current/cmds/function.html) — Luo funktio
 - [functions](https://fishshell.com/docs/current/cmds/functions.html) — Tulosta tai poista funktioita
 - [funcsave](https://fishshell.com/docs/current/cmds/funcsave.html) — Tallenna funktion määritelmä käyttäjän automaattiseen latauskansioon

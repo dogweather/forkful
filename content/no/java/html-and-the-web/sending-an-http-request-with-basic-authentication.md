@@ -11,9 +11,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel med grunnleggende autentisering betyr å inkludere brukernavn og passord for tilgangskontroll. Programmerere gjør dette for å sikre at API-forespørsler er autoriserte.
-
 ## Slik gjør du:
 ```java
 import java.net.URI;

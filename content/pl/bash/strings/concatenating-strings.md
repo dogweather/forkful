@@ -10,9 +10,6 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## What & Why? (Co i Dlaczego?)
-Konkatenacja to fancy słowo na łączenie stringów. Robimy to, żeby zbudować większe ciągi znaków, zarządzać tekstami, ścieżkami plików czy tworzyć komunikaty.
-
 ## How to: (Jak to zrobić:)
 ```Bash
 # Połącz dwie zmienne
@@ -47,7 +44,6 @@ Output:
 ```
 Witaj, Świecie!
 ```
-
 
 ## Deep Dive (Wnikliwa Analiza)
 W latach 70., kiedy Unix zyskiwał na popularności, składnia stringów była podstawą. Bash, jako potomek shella z Unix, przejął te konwencje.

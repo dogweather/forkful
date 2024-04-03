@@ -11,12 +11,7 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## What & Why?
-
-Créer un fichier temporaire permet de stocker des données de façon éphémère pendant l'exécution d'un programme. On le fait pour manipuler des données sans affecter le système de fichiers permanent ou pour garantir qu'elles disparaissent automatiquement après usage.
-
 ## How to:
-
 En C++, la bibliothèque standard `<filesystem>` fournit de quoi gérer les fichiers temporaires. Utilisons `std::filesystem::temp_directory_path` pour trouver le répertoire des temporaires et créons un fichier unique avec `std::filesystem::unique_path`.
 
 ```C++
@@ -47,7 +42,6 @@ int main() {
 ```
 
 ## Deep Dive:
-
 Les fichiers temporaires ne sont pas nouveaux. Ils étaient déjà utiles dans les premiers jours de la programmation pour gérer des données temporaires. Avec le temps, leur utilisation est devenue plus sophistiquée, passant de simples fichiers à des objets plus sécurisés et isolés.
 
 À part l'approche standard C++, il existe des méthodes spécifiques à l'OS comme `tmpfile()` en C, ou des bibliothèques tierces qui peuvent offrir plus de fonctionnalités ou une meilleure performance dans certains cas.
@@ -55,6 +49,5 @@ Les fichiers temporaires ne sont pas nouveaux. Ils étaient déjà utiles dans l
 Il est crucial de s'assurer que les fichiers temporaires soient bien supprimés après utilisation pour éviter les fuites de données ou l'utilisation excessive de l'espace disque.
 
 ## See Also:
-
 - Documentation C++ sur les opérations de fichiers et chemin : [cppreference.com - Filesystem](https://en.cppreference.com/w/cpp/filesystem)
 - Guide sur la gestion de ressource et exceptions en C++ (RAII) : [cppreference.com - RAII](https://en.cppreference.com/w/cpp/language/raii)

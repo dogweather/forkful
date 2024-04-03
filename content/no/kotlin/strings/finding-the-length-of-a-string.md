@@ -10,9 +10,6 @@ title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---
 
-## Hva & Hvorfor?
-Å finne lengden på en streng betyr å telle antall tegn i den. Vi gjør det for å validere inndata, skjære opp tekst, eller bare for å holde oversikt over størrelsen på informasjonen vi arbeider med.
-
 ## Hvordan:
 ```kotlin
 fun main() {

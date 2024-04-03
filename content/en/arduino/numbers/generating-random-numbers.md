@@ -11,9 +11,6 @@ title: Generating random numbers
 weight: 12
 ---
 
-## What & Why?
-Generating random numbers in Arduino projects involves producing values that are unpredictable by design, crucial for applications like games, simulations, and security systems. Programmers utilize this technique to introduce variability or make decisions that should not be deterministic.
-
 ## How to:
 Arduino provides straightforward functions for generating random numbers: `randomSeed()` and `random()`. To start, seed the random number generator to ensure different sequences of numbers each time your program runs. An often-used approach is to seed with an analog read from an unconnected pin.
 

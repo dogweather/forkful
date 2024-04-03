@@ -10,9 +10,6 @@ title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
 
-## What & Why? (Mitä & Miksi?)
-Debug-tulosteiden printtaaminen auttaa bongaamaan ohjelman ongelmakohtia. Koodarit tekevät tätä koska se on simppeli tapa nähdä, mitä sovelluksessa tapahtuu eri vaiheissa.
-
 ## How to: (Kuinka tehdä:)
 ```java
 public class DebugDemo {

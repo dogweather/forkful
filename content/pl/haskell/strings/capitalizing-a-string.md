@@ -14,9 +14,6 @@ title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---
 
-## Co i dlaczego?
-Capitalizacja ciągu polega na przekształceniu pierwszej litery danego ciągu na wielką literę, przy jednoczesnym zapewnieniu, że reszta liter pozostanie mała. Programiści robią to w celu formatowania wyjść, przestrzegania poprawności gramatycznej w tekstach lub poprawy czytelności generowanych danych.
-
 ## Jak to zrobić:
 W Haskellu możesz zrobić capitalizację ciągu używając standardowej biblioteki, bez potrzeby korzystania z bibliotek stron trzecich.
 

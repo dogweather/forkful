@@ -13,12 +13,7 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva & Hvorfor?
-
-Avrunding av tall i programmering handler om å tilnærme et tall til nærmeste hele tall eller til et bestemt antall desimalplasser. Programmerere runder av tall for å forenkle figurer, forbedre lesbarheten eller oppfylle spesifikke numeriske kriterier i beregninger, spesielt i finansielle beregninger hvor presisjon er viktig.
-
 ## Hvordan:
-
 I Visual Basic for Applications (VBA), kan avrunding oppnås ved bruk av flere funksjoner, hver egnet for spesifikke scenarioer. Her er de mest brukte funksjonene med eksempler:
 
 1. **Round-funksjonen**:
@@ -54,7 +49,6 @@ I Visual Basic for Applications (VBA), kan avrunding oppnås ved bruk av flere f
    ```
 
 ## Dybdestudie
-
 `Round`-funksjonen i VBA er vesentlig forskjellig fra avrundingsmetoder i andre språk på grunn av dens bruk av **Bankers avrunding**. Bankers avrunding runder til det nærmeste jevne tallet når man er nøyaktig midt mellom to tall, noe som reduserer skjevhet i beregninger over et stort datasett og gir et mer statistisk signifikant resultat. Dette kan imidlertid føre til uventet oppførsel for de som er ukjente med det, spesielt når presis nøyaktighet er forventet i alle tilfeller.
 
 I motsetning bruker mange programmeringsspråk og systemer "aritmetisk avrunding" eller "halvopp-avrunding," der et tall nøyaktig midt mellom to mulige avrundede verdier alltid avrundes opp. Når man oversetter eller overfører kode fra andre språk til VBA, må programmerere ha disse forskjellene i tankene for å unngå subtile feil eller unøyaktigheter i finansielle og statistiske applikasjoner.

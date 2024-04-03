@@ -11,9 +11,6 @@ title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## What & Why?
-Convertir une date en chaîne de caractères permet de la formatter pour l'affichage. Les développeurs font cela pour aligner la présentation des dates avec les besoins linguistiques ou de formatage spécifiques.
-
 ## How to:
 ```C#
 using System;

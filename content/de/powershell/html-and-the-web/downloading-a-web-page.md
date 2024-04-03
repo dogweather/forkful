@@ -11,9 +11,6 @@ title: Webseite herunterladen
 weight: 42
 ---
 
-## What & Why?
-Herunterladen einer Webseite bedeutet, ihren Inhalt zu sichern, um ihn offline zu analysieren oder zu verarbeiten. Programmierer machen das, um Daten zu sammeln, automatisierte Tests durchzuführen oder Inhalte zu überwachen.
-
 ## How to:
 PowerShell macht's einfach. Hier ein Basic-Beispiel, das eine Webseite lädt:
 

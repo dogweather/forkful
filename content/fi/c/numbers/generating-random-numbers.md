@@ -13,12 +13,7 @@ title: Satunnaisten numeroiden generointi
 weight: 12
 ---
 
-## Mitä & Miksi?
-
-Satunnaislukujen generointi C-kielessä tarkoittaa arvojen luomista, jotka ovat ennalta arvaamattomia ja noudattavat tiettyä jakaumaa, kuten tasajakaumaa tai normaalijakaumaa. Tämä ominaisuus on ratkaisevan tärkeä sovelluksissa, jotka vaihtelevat simulaatioista ja peleistä kryptografisiin toimiin, joissa ennalta arvaamattomuus tai todellisen maailman satunnaisuuden simulointi on olennaista.
-
 ## Kuinka:
-
 C-kielessä satunnaislukuja voidaan generoida käyttämällä `rand()`-funktiota, joka on osa C-standardikirjastoa `<stdlib.h>`. Oletuksena `rand()` tuottaa pseudo-satunnaislukuja väliltä 0 `RAND_MAX` (vakio, joka on määritelty `<stdlib.h>`-kirjastossa). Tarkemmalle kontrollille alueesta ohjelmoijat voivat manipuloida `rand()`-funktion tulostetta.
 
 Tässä on yksinkertainen esimerkki satunnaisluvun generoinnista väliltä 0–99:
@@ -51,7 +46,6 @@ Satunnaislukujen generoimiseksi eri alueelta, voi modulo-operaattoria (`%`) sä�
 On tärkeää huomata, että pseudo-satunnaislukugeneraattorin kylvö (`srand()`-kutsu) nykyisellä ajalla (`time(NULL)`) varmistaa erilaiset satunnaislukusarjat ohjelman suoritusten välillä. Ilman kylvöä (`srand()`) `rand()` tuottaisi saman sarjan numeroita joka kerta, kun ohjelma suoritetaan.
 
 ## Syväsukellus
-
 `rand()`-funktio ja sen kylvöpari `srand()` ovat olleet osa C-standardikirjastoa vuosikymmeniä. Ne perustuvat algoritmeihin, jotka generoivat numerojonoja, jotka vain vaikuttavat satunnaisilta—siitä termi "pseudo-satunnainen." `rand()`-funktion taustalla oleva algoritmi on tyypillisesti lineaarinen kongruentiaaligeneraattori (LCG).
 
 Vaikka `rand()` ja `srand()` ovat riittäviä monille sovelluksille, niiden tiedetään olevan rajoittuneita, erityisesti satunnaisuuden laadun ja mahdollisen ennustettavuuden suhteen. Sovelluksille, jotka vaativat korkealaatuista satunnaisuutta, kuten kryptografiset toimet, tulee harkita vaihtoehtoja, kuten `/dev/random` tai `/dev/urandom` (Unix-tyyppisissä järjestelmissä), tai kryptografisten kirjastojen tarjoamia API:ja.

@@ -10,9 +10,6 @@ title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---
 
-## O Quê & Porquê?
-Deletar caracteres que seguem um padrão específico é basicamente filtrar texto. Programadores fazem isso para limpar dados, validar input ou simplificar strings antes de processá-las.
-
 ## Como fazer:
 ```Elm
 import String exposing (filter)

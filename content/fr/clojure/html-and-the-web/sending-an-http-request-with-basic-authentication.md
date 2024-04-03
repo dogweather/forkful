@@ -11,9 +11,6 @@ title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---
 
-## Quoi & Pourquoi ?
-Envoyer une requête HTTP avec une authentification basique transmet des identifiants d’accès à un serveur web sécurisé. Les développeurs utilisent cela pour accéder aux ressources protégées via des API ou des services web.
-
 ## Comment faire :
 ```Clojure
 (require '[clj-http.client :as client])

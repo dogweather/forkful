@@ -11,9 +11,6 @@ title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---
 
-## Vad & Varför?
-Stringkonkatenering innebär att sätta ihop textsträngar till en ny, längre sträng. Vi gör det för att bygga meddelanden, skapa dynamiska texter, eller helt enkelt kombinera data för visning.
-
 ## Hur gör man:
 ```kotlin
 fun main() {
@@ -31,6 +28,7 @@ fun main() {
     println(mening) // Skriver ut "Kotlin är roligt!"
 }
 ```
+
 ## Fördjupning
 Stringkonkatenering har funnits så länge vi har programmerat. I tidigare språk som C användes funktioner som `strcat()` men kunde skapa säkerhetsproblem om inte hanterat varsamt. I moderna språk som Kotlin görs det säkrare och enklare med operatorer och string templates.
 

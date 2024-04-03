@@ -12,12 +12,7 @@ title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---
 
-## O Que & Por Quê?
-
-Gerar números aleatórios na programação trata de produzir valores numéricos imprevisíveis que podem ser usados para uma variedade de propósitos, como simulações, jogos ou aplicações de segurança. Programadores usam esse recurso para introduzir um elemento de incerteza ou mimetizar a variabilidade da vida real em seus projetos.
-
 ## Como fazer:
-
 Lua oferece suporte embutido para gerar números aleatórios através da função `math.random`. Esta função pode ser usada de múltiplas maneiras, dependendo do resultado desejado:
 
 1. **Gerando um número flutuante aleatório entre 0 e 1:**
@@ -42,7 +37,6 @@ A saída de exemplo poderia ser `7`. Novamente, a saída varia com cada execuç�
 É crucial definir a semente com `math.randomseed`, pois, sem isso, `math.random` poderia gerar a mesma sequência de números cada vez que um programa é executado. Tipicamente, o uso do tempo atual, `os.time()`, garante sequências diferentes por execução.
 
 ## Aprofundamento
-
 O mecanismo subjacente à geração de números aleatórios em Lua (e na maioria das linguagens de programação) não é verdadeiramente aleatório, mas pseudorrandômico, gerado por um algoritmo. Esses geradores de números pseudorrandômicos (PRNGs) são determinísticos e requerem um valor semente para iniciar a sequência de geração de números. A escolha da semente é crucial para a qualidade da aleatoriedade, o que é o motivo pelo qual usar o tempo atual é uma prática comum.
 
 Historicamente, as capacidades de geração de números aleatórios do Lua evoluíram. Versões anteriores dependiam da função `rand()` da biblioteca padrão C, que variava em qualidade e desempenho entre implementações. A versão atual do Lua aprimora isso possivelmente usando mecanismos mais robustos dependendo da plataforma subjacente, oferecendo maior consistência e utilidade na geração de números aleatórios.

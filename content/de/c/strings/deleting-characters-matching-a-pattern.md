@@ -13,12 +13,7 @@ title: "Zeichen l\xF6schen, die einem Muster entsprechen"
 weight: 5
 ---
 
-## Was & Warum?
-
-Das Löschen von Zeichen, die einem spezifischen Muster in Strings in C entsprechen, bedeutet, alle Instanzen bestimmter Zeichen zu entfernen, die vordefinierte Kriterien erfüllen. Programmierer führen diese Aufgabe durch, um Eingaben zu säubern, Daten zur Verarbeitung vorzubereiten oder einfach Strings für die Ausgabe oder weitere Manipulationen zu bereinigen, um sicherzustellen, dass die behandelten Daten genau wie für einen bestimmten Kontext oder Algorithmus benötigt sind.
-
 ## Wie:
-
 C verfügt im Gegensatz zu einigen höheren Sprachen nicht über eine integrierte Funktion zum direkten Löschen von Zeichen aus einem String basierend auf einem Muster. Jedoch können Sie diese Aufgabe leicht bewältigen, indem Sie manuell über den String iterieren und einen neuen erstellen, der die unerwünschten Zeichen ausschließt. Nehmen wir an, Sie möchten alle Ziffern aus einem String entfernen. Sie können dies wie folgt tun:
 
 ```c
@@ -52,7 +47,6 @@ Ergebnis: C Programmierung : Die Grundlagen!
 Dieses Beispiel nutzt `isdigit` aus `ctype.h`, um Ziffern zu identifizieren, nicht-digitale Zeichen an den Anfang des Strings zu verschieben und den String zu beenden, sobald alle Zeichen bewertet wurden.
 
 ## Tiefergehend
-
 Die vorgestellte Lösung verwendet einen Zwei-Zeiger-Ansatz innerhalb desselben Arrays, um unerwünschte Zeichen effektiv herauszufiltern, eine Technik, die emblematisch für C's pragmatische Speicherverwaltungsphilosophie ist. Diese Methode ist effizient, da sie in-place arbeitet, was die Notwendigkeit einer zusätzlichen Speicherzuweisung vermeidet und somit den Overhead minimiert.
 
 Historisch gesehen hat das Fehlen von hochwertigen String-Manipulationsfunktionen in C Programmierer gezwungen, ein tiefes Verständnis für die String-Behandlung auf Speicherebene zu entwickeln, was zu innovativen Ansätzen wie dem oben genannten führte. Obwohl dies den Vorteil größerer Kontrolle und Effizienz hat, birgt es ein höheres Risiko für Fehler, wie Pufferüberläufe und Fehler durch eine um eins verschobene Zählung.

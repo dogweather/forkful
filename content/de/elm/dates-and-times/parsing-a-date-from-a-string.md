@@ -14,9 +14,6 @@ title: Einen Datum aus einem String analysieren
 weight: 30
 ---
 
-## Was & Warum?
-Das Parsen eines Datums aus einem String in Elm beinhaltet das Umwandeln von Textinformationen, die Daten und Zeiten repräsentieren, in ein Format, das Elm verstehen und manipulieren kann, speziell in den `Date` Typ. Dieser Prozess ist entscheidend für die Verarbeitung von Benutzereingaben, das korrekt lokalisierte Anzeigen von Daten und das Durchführen von datumsbezogenen Berechnungen. Er stellt sicher, dass Ihre Elm-Anwendungen zeitbezogene Daten intelligent verarbeiten können.
-
 ## Wie geht das:
 Elm verfügt nicht über so robuste integrierte Fähigkeiten wie einige andere Sprachen zum Parsen von Daten, und verlässt sich hauptsächlich auf Javascript-Interop oder Bibliotheken für komplexere Operationen. Sie können jedoch das `elm/time` Paket für das grundlegende Parsen verwenden, und für komplexere Bedürfnisse wird die Drittanbieter-Bibliothek `justinmimbs/date` weit empfohlen.
 

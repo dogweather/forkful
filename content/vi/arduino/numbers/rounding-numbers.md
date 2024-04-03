@@ -17,9 +17,6 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Gì và Tại Sao?
-Làm tròn số là việc cắt giảm một số thập phân về giá trị nguyên gần nhất hoặc về một số lượng chữ số thập phân cố định. Các lập trình viên làm tròn số để chúng dễ đọc và xử lý hơn, đặc biệt khi độ chính xác vượt qua một mức độ nhất định không cần thiết hoặc có thể dẫn đến lỗi.
-
 ## Làm thế nào:
 Trong Arduino, bạn có thể làm tròn số sử dụng các hàm có sẵn. Các hàm quan trọng là `round`, `ceil`, và `floor`. Dưới đây là một ví dụ nhanh:
 

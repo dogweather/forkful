@@ -15,9 +15,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---
 
-## Cái gì và Tại sao?
-Chuyển đổi một ngày thành chuỗi nghĩa là chuyển nó thành văn bản biểu diễn ngày đó. Chúng ta thực hiện việc này để định dạng các ngày cho con người dễ đọc hoặc để chuẩn bị cho việc lưu trữ trong các định dạng văn bản như CSV hoặc JSON.
-
 ## Cách thực hiện:
 Dưới đây là các ví dụ về cách chuyển đổi một ngày thành chuỗi trong Bash:
 

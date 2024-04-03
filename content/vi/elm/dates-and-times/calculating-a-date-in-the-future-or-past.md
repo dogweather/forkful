@@ -16,9 +16,6 @@ title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1
 weight: 26
 ---
 
-## Cái gì & Tại sao?
-Tính toán một ngày trong tương lai hoặc quá khứ chỉ đơn giản là điều chỉnh một ngày đã cho bằng một khoản thời gian nhất định. Các lập trình viên thực hiện điều này để xử lý các hạn chót, sự kiện, nhắc nhở—bất kỳ điều gì liên quan đến ngày.
-
 ## Làm thế nào:
 Mô-đun `Time` của Elm và gói `justinmimbs/time-extra` cho phép chúng ta dễ dàng thao tác với ngày.
 

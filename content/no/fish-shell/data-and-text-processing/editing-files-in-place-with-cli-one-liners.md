@@ -12,12 +12,7 @@ title: "Redigering av filer p\xE5 stedet med CLI-enlinjerskommandoer"
 weight: 32
 ---
 
-## Hva & Hvorfor?
-
-Å redigere filer på stedet med kommandolinje-enlinjere handler om å gjøre endringer direkte i filer fra kommandolinjen, uten å åpne dem i en tekstredigerer. Programmerere gjør dette for å spare tid og automatisere repeterende redigeringsoppgaver, noe som gjør arbeidsflyten deres jevnere og mer effektiv.
-
 ## Hvordan:
-
 Fish Shell, kjent for sine brukervennlige funksjoner og kraftfulle skriptingsmuligheter, tilbyr flere måter å redigere filer på stedet på. Men, i motsetning til noen andre shells, har Fish ikke en innebygd mekanisme for redigering på stedet (`sed -i` i Bash, for eksempel). Men frykt ikke, du kan fortsatt oppnå dette med litt kreativitet og litt hjelp fra eksterne verktøy som `sed` og `awk`.
 
 ### Bruke `sed` for enkle erstatninger
@@ -42,7 +37,6 @@ awk '{print $1 * 2}' file.txt > temp && mv temp file.txt
 Husk at når du bruker disse verktøyene fra Fish, er det avgjørende å fange opp feil og forstå deres meldinger. Bruk Fish sin robuste feilhåndtering for å gjøre skriptene dine mer pålitelige.
 
 ## Dypdykk
-
 Historisk sett har redigering av filer på stedet vært en grunnpilar i Unix og Linux-programmering, som tilbyr en effektiv måte å utføre raske redigeringer uten å manuelt åpne filer. Verktøy som `sed` og `awk` er ærverdige verktøy som har vært rundt siden de tidlige dagene av Unix og har blitt uunnværlige for tekstbehandlingsoppgaver.
 
 Fish Shell, som er mer moderne og skryter av forbedringer i brukervennlighet og skripting, mangler innebygd redigering på stedet hovedsakelig på grunn av sin designtankegang fokusert på interaktivitet og brukervennlighet. Mangelen på en innfødt kommando for redigering på stedet i Fish understreker viktigheten av eksterne verktøyer i Unix-lignende økosystemer.

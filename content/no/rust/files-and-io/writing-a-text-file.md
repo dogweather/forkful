@@ -13,9 +13,6 @@ title: Skrive en tekstfil
 weight: 24
 ---
 
-## Hva & Hvorfor?
-Å skrive en tekstfil i Rust innebærer å opprette, skrive til og potensielt legge til data i en fil på filsystemet. Programmerere utfører denne operasjonen for å bevare data, som applikasjonslogger, konfigurasjon eller brukergenerert innhold, og sikre dataenes varighet utover programmets kjøretid.
-
 ## Hvordan:
 Rusts standardbibliotek tilbyr robuste verktøy for filmanipulering, hovedsakelig innkapslet innenfor `std::fs` og `std::io`-modulene. Her er et enkelt eksempel for å opprette og skrive til en tekstfil:
 

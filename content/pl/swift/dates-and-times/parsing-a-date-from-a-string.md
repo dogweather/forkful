@@ -12,10 +12,8 @@ title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---
 
-## Co i dlaczego?
-Parsowanie daty ze stringa polega na konwertowaniu tekstowych reprezentacji daty i czasu na obiekt `Date`. Proces ten jest niezbędny w aplikacjach, w których daty przekazywane są jako ciągi znaków, np. w odpowiedziach API czy wprowadzanych przez użytkownika, co umożliwia łatwiejszą manipulację i formatowanie dat.
-
 ## Jak to zrobić:
+
 
 ### Używając `DateFormatter` z biblioteki Foundation
 Standardowa biblioteka Swifta, Foundation, dostarcza `DateFormatter` do konwertowania stringów na obiekty `Date` i vice versa. Aby sparsować datę ze stringa, należy określić format daty odpowiadający stringowi, a następnie użyć formatera do jej parsowania.

@@ -16,9 +16,6 @@ title: "\uC0C8 \uD504\uB85C\uC81D\uD2B8 \uC2DC\uC791\uD558\uAE30"
 weight: 1
 ---
 
-## What & Why? (무엇과 왜?)
-새 프로젝트를 시작한다는 것은 공백 상태에서 아이디어를 실현하려는 과정입니다. 프로그래머들은 새로운 문제를 해결하거나, 기능을 개선하기 위하여 새 프로젝트를 만듭니다.
-
 ## How to: (방법)
 Let's start a new Haskell project with Stack. First, install Stack if you haven't yet:
 

@@ -11,12 +11,7 @@ title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---
 
-## Quoi & Pourquoi ?
-
-Générer des nombres aléatoires en programmation consiste à créer des valeurs qui ne peuvent pas être prédites logiquement à l'avance. Les programmeurs font cela pour diverses raisons, y compris générer des identifiants uniques, simuler des scénarios dans le développement de jeux, ou sélectionner des échantillons aléatoires à partir de données pour analyse.
-
 ## Comment faire :
-
 En Clojure, la génération de nombres aléatoires est simple, et il existe quelques fonctions intégrées qui peuvent être utilisées immédiatement.
 
 Pour générer un nombre à virgule flottante aléatoire entre 0 (inclus) et 1 (exclus), vous pouvez utiliser la fonction `rand` :
@@ -50,7 +45,6 @@ Cette fonction `rand-range` retournera un nombre à virgule flottante aléatoire
 Pour des scénarios nécessitant des distributions plus complexes ou des séquences de nombres aléatoires où la répétabilité est nécessaire (utilisation de graines), vous pourriez avoir besoin de regarder dans des bibliothèques supplémentaires qui vont au-delà de ce qui est intégré.
 
 ## Plongée Profonde
-
 Le mécanisme sous-jacent pour générer des nombres aléatoires dans la plupart des langages de programmation, y compris Clojure, repose généralement sur un générateur de nombres pseudo-aléatoires (PRNG). Un PRNG utilise un algorithme pour produire une séquence de nombres qui approximent les propriétés des nombres aléatoires. Il est important de noter que, parce qu'ils sont générés algorithmiquement, ils ne sont pas véritablement aléatoires mais peuvent être suffisants pour la plupart des utilisations pratiques.
 
 Aux premiers jours de l'informatique, générer des nombres aléatoires de haute qualité était un défi significatif, conduisant au développement de divers algorithmes pour améliorer l'aléa et la distribution. Pour Clojure, les fonctions intégrées, telles que `rand` et `rand-int`, sont pratiques pour une utilisation quotidienne et couvrent un large éventail de cas d'utilisation courants.

@@ -11,11 +11,7 @@ title: Refactoring
 weight: 19
 ---
 
-## Was & Warum?
-Refactoring ist der Prozess der Überarbeitung Ihres Codes, um seine Struktur und Lesbarkeit zu verbessern, ohne das externe Verhalten oder die Funktionalität zu ändern. Programmierer*innen betreiben Refactoring, um ihren Code sauberer, leichter verständlich und wartbarer zu machen, was auf lange Sicht das Debugging und das Hinzufügen neuer Funktionen erheblich erleichtert.
-
 ## Wie geht das:
-
 Nehmen wir an, Sie haben eine Funktion auf Ihrem Arduino, die viel zu viel macht, so wie diese:
 
 ```Arduino

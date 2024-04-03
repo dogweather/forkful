@@ -11,11 +11,7 @@ title: Creando un archivo temporal
 weight: 21
 ---
 
-## What & Why?
-Crear archivos temporales es el proceso de generar ficheros que sólo se necesitan durante la ejecución de un programa. Los programadores los utilizan para almacenar datos transitorios sin afectar la estructura permanente del sistema de archivos. 
-
 ## How to:
-
 Kotlin facilita la creación de archivos temporales con funciones incorporadas. Aquí te muestro cómo:
 
 ```kotlin
@@ -42,7 +38,6 @@ fun main() {
 Si corres este código, verás dos líneas de salida con las rutas completas de los nuevos archivos temporales.
 
 ## Deep Dive
-
 La necesidad de crear archivos temporales se remonta a los días de los sistemas operativos primigenios, donde el aislamiento de datos en uso era crucial para el rendimiento y la seguridad. Hoy en día, con la programación multitarea y en entornos concurrentes, estos archivos son esenciales para prevenir la corrupción de datos.
 
 En Java, la clase `java.io.File` proporcionaba métodos para crear archivos temporales. Kotlin, interoperando con la API de Java, hace uso de `java.nio.file.Files` para una mejor experiencia.
@@ -54,6 +49,5 @@ Detalles de implementación a considerar:
 - La función `deleteOnExit()` elimina el archivo cuando termina la máquina virtual de Java, pero no es 100% confiable en entornos donde hay varios proceso. Es mejor implementar una limpieza manual más rigurosa.
 
 ## See Also
-
 - La documentación oficial de la clase [`Files`](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html) para más métodos y detalles.
 - Para entender cómo Java maneja los archivos temporales y cómo esto se aplica a Kotlin: [Oracle Java Documentation - The `java.io.File` Class](https://docs.oracle.com/javase/7/docs/api/java/io/File.html#createTempFile(java.lang.String,%20java.lang.String)).

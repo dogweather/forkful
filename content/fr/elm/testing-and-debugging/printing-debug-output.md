@@ -10,9 +10,6 @@ title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---
 
-## What & Why? 
-Qu'est-ce que c'est l'impression de débogage ? C’est l’art de balancer des infos dans la console pour comprendre ce qui se passe dans ton code. Pourquoi on le fait ? Pour traquer les bogues plus malins qu’un renard et pour saisir le comportement de notre programme en direct.
-
 ## How to:
 Déboguer dans Elm, c'est simple. Utilise `Debug.log` pour afficher des valeurs. Voici un exemple :
 

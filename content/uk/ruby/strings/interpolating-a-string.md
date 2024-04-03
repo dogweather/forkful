@@ -10,9 +10,6 @@ title: "\u0406\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F
 weight: 8
 ---
 
-## What & Why? (Що та Чому?)
-String interpolation lets you plug values into a string. It's handy to avoid messy concatenation and make code more readable.
-
 ## How to: (Як це зробити:)
 ```Ruby
 name = "Іван"

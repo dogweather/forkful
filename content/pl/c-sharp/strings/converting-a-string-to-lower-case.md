@@ -11,9 +11,6 @@ title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## What & Why? (Co i Dlaczego?)
-Zmienianie ciągu znaków na małe litery to proces zamiany wszystkich wielkich liter w tekście na ich małe odpowiedniki. Programiści to robią, aby ujednolicić dane, np. przy porównywaniu ciągów lub przygotowaniu tekstu do wyświetlenia.
-
 ## How to: (Jak to zrobić:)
 W C# zamiana na małe litery jest prosta dzięki metodzie `ToLower()`. Poniżej przykład użycia:
 

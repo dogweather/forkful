@@ -9,9 +9,6 @@ title: Organizzazione del codice in funzioni
 weight: 18
 ---
 
-## Cosa & Perché?
-Organizzare il codice in funzioni divide il tuo script in blocchi riutilizzabili. Si tratta di rendere il codice pulito, gestibile e meno soggetto a errori. Il codice modulare è fantastico perché ti fa risparmiare tempo, mantiene la tua sanità mentale e semplifica il debug e il test delle unità.
-
 ## Come fare:
 Immagina di scrivere uno script veloce per salutare gli utenti:
 

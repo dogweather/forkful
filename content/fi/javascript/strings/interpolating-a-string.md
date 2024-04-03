@@ -11,9 +11,6 @@ title: Merkkijonon interpolointi
 weight: 8
 ---
 
-## What & Why? - Mitä ja miksi?
-String-interpolointi tarkoittaa muuttujien ja ilmaisujen yhdistämistä merkkijonoihin. Koodareiden arjessa tämä on käytännöllistä, sillä se helpottaa dynaamisten tekstien luomista ja tekee koodista luettavampaa.
-
 ## How to: - Näin teet sen:
 ```JavaScript
 // Perinteinen yhdistely +

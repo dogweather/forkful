@@ -14,12 +14,7 @@ title: Trabajando con TOML
 weight: 39
 ---
 
-## Qué y por qué?
-
-TOML (Tom's Obvious, Minimal Language o El Lenguaje Mínimo y Obvio de Tom) es un formato de archivo de configuración fácil de leer debido a su clara semántica. Los programadores lo usan para archivos de configuración en aplicaciones porque su simplicidad y legibilidad para humanos lo hacen una excelente elección sobre formatos como XML o JSON en ciertos contextos.
-
 ## Cómo hacerlo:
-
 Para trabajar con TOML en C, primero necesitas una biblioteca capaz de analizar archivos TOML, ya que la biblioteca estándar de C no incluye esta funcionalidad. Una opción popular es `tomlc99`, un analizador TOML ligero para C99. Aquí tienes una guía rápida para leer un simple archivo de configuración TOML:
 
 Primero, asegúrate de tener `tomlc99` instalado y correctamente vinculado en tu proyecto.
@@ -83,7 +78,6 @@ Puerto 2: 8002
 ```
 
 ## Análisis Profundo
-
 TOML fue creado por Tom Preston-Werner, cofundador de GitHub, como respuesta a las limitaciones que percibía en otros formatos de archivo de configuración. Su objetivo es ser directo y no ambiguo, tanto para humanos como para computadoras, para leer y escribir sin necesidad de reglas de análisis complejas. En el ecosistema de C, TOML no es un ciudadano de primera clase como podría serlo en lenguajes de programación de alto nivel como Rust con su `serde_toml` o Python con `toml`, que tienen bibliotecas con soporte nativo. Sin embargo, los desarrolladores de C necesitan confiar en bibliotecas externas como `tomlc99`, pero esto es típico dada la énfasis de C en el minimalismo y el rendimiento.
 
 Aunque TOML es elogiado por su claridad, al elegir un formato de archivo de configuración, es vital considerar las necesidades del proyecto. En escenarios que requieren estructuras más complejas o interactividad con APIs web, JSON o incluso YAML podrían ofrecer un mejor ajuste a pesar de su mayor complejidad. TOML brilla en configuraciones donde la legibilidad y simplicidad son primordiales, no necesariamente donde se necesitan las estructuras de datos más avanzadas.

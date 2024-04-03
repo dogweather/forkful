@@ -12,9 +12,6 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-Afronden van getallen betekent het trimmen van een decimaal naar de dichtstbijzijnde gehele waarde of naar een vastgesteld aantal decimalen. Programmeurs ronden getallen af om ze makkelijker leesbaar en hanteerbaar te maken, vooral wanneer precisie voorbij een bepaald punt onnodig is of tot fouten kan leiden.
-
 ## Hoe:
 In Arduino kunt u getallen afronden met ingebouwde functies. Belangrijke spelers zijn `round`, `ceil`, en `floor`. Hier is een snelle demo:
 

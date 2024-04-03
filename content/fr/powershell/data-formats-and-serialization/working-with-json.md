@@ -14,14 +14,10 @@ title: Travailler avec JSON
 weight: 38
 ---
 
-## Quoi & Pourquoi ?
-
-L’intégration de PowerShell avec le JSON (JavaScript Object Notation) concerne le parsing (lecture) et la génération (écriture) de données JSON, un format courant pour l'échange de données sur le web. Les programmeurs travaillent avec le JSON pour interagir avec des API web, des fichiers de configuration, ou pour faciliter l'échange de données entre différents langages et plateformes en raison de sa nature légère et indépendante du langage.
-
 ## Comment faire :
 
-### Parser le JSON
 
+### Parser le JSON
 Pour lire ou parser du JSON dans PowerShell, vous pouvez utiliser le cmdlet `ConvertFrom-Json`. Étant donné une chaîne JSON, ce cmdlet la convertit en un objet PowerShell.
 
 ```powershell
@@ -39,7 +35,6 @@ John Doe
 Cet exemple démontre comment parser une simple chaîne JSON pour accéder aux propriétés de l'objet résultant.
 
 ### Générer du JSON
-
 Pour générer du JSON à partir d'un objet PowerShell, vous pouvez utiliser le cmdlet `ConvertTo-Json`. Cela est pratique pour préparer des données à envoyer à un service web ou à sauvegarder dans un fichier de configuration.
 
 ```powershell

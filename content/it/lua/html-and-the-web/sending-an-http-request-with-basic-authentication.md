@@ -10,9 +10,6 @@ title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---
 
-## What & Why?
-Invio di una richiesta HTTP con autenticazione di base significa inserire username e password per accedere a risorse protette sul web. I programmatori lo fanno per interagire con API sicure o per raccogliere dati da siti che richiedono l'accesso.
-
 ## How to:
 ```Lua
 -- Carichiamo il modulo necessario

@@ -17,9 +17,6 @@ title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---
 
-## Gì và Tại sao?
-Việc kiểm tra sự tồn tại của một thư mục là để xác nhận liệu có một thư mục nào đó tồn tại tại một đường dẫn cụ thể trong hệ thống tệp hay không. Lập trình viên thực hiện điều này để tránh các lỗi như cố gắng đọc từ hoặc viết vào một thư mục không tồn tại.
-
 ## Làm thế nào:
 Trong JavaScript (chạy trong môi trường Node.js), có một mô-đun tích hợp gọi là `fs` mà bạn có thể sử dụng để kiểm tra xem thư mục có tồn tại hay không. Dưới đây là một ví dụ nhanh:
 

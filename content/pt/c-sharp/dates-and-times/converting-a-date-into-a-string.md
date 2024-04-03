@@ -10,9 +10,6 @@ title: Convertendo uma data em uma string
 weight: 28
 ---
 
-## What & Why?
-Converter uma data em uma string transforma o objeto `DateTime` em texto legível. Fazemos isso para exibir datas de forma adequada em interfaces de usuário ou para preparar dados para armazenamento e log.
-
 ## How to:
 O C# oferece o método `ToString()` para formatar e converter datas. Vamos a alguns exemplos:
 

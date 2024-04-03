@@ -14,9 +14,6 @@ title: Einen Datum aus einem String analysieren
 weight: 30
 ---
 
-## Was & Warum?
-Das Parsen eines Datums aus einem String besteht darin, Text, der ein Datum repräsentiert, in ein `Date`- oder `DateTime`-Objekt umzuwandeln, das Ruby versteht. Programmierer tun dies, um Operationen wie Vergleiche, Berechnungen oder Formatierungen mit Datumsangaben durchzuführen, was bei Anwendungen, die sich mit Planung, Analytik oder Datenverarbeitung beschäftigen, häufig vorkommt.
-
 ## Wie:
 In Ruby bietet die Standardbibliothek direkte Wege, um Daten aus Strings mithilfe der Klassen `Date` und `DateTime` zu parsen. Hier ist, wie man es mit Rubys integrierten Methoden macht:
 
@@ -47,7 +44,6 @@ puts parsed_date_custom
 ```
 
 ### Verwendung von Drittanbieter-Bibliotheken:
-
 Obwohl die integrierten Fähigkeiten von Ruby mächtig sind, zieht man manchmal Drittanbieter-Bibliotheken vor, die zusätzliche Funktionen oder eine einfachere Syntax bieten. Eine beliebte Wahl ist das `Chronic`-Gem für die Verarbeitung natürlicher Sprache:
 
 1. Fügen Sie zunächst Chronic zu Ihrem Gemfile hinzu und führen Sie `bundle install` aus:

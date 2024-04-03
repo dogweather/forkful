@@ -11,9 +11,6 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## Hva & Hvorfor?
-Interpolering av en streng betyr å sette inn variabler eller uttrykk inni en tekststreng. Programmere bruker det for å bygge dynamisk innhold og meldinger.
-
 ## Hvordan:
 ```Bash
 name="Verden"

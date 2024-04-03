@@ -11,9 +11,6 @@ title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---
 
-## Qué y Por Qué?
-Calcular una fecha en el futuro o pasado significa encontrar una fecha específica antes o después de otra conocida. Los programadores lo hacen para manejar eventos, plazos, o simplemente para registrar cuánto tiempo ha pasado.
-
 ## Cómo Hacerlo:
 Para calcular fechas en Rust, puedes usar la crate `chrono`. Primero, agregamos `chrono` a nuestro `Cargo.toml`:
 

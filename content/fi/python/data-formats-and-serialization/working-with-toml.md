@@ -10,9 +10,6 @@ title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---
 
-## Mikä & Miksi?
-TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on tiedon serialisointiformaatti, joka muistuttaa JSONia tai YAMLia, mutta pyrkii yksinkertaisuuteen ja luettavuuteen. Ohjelmoijat käyttävät TOMLia konfiguraatiotiedostoihin, koska se on helppo kirjoittaa ja ymmärtää, ja se kartoittuu siististi ohjelmointikielten, kuten Pythonin, tietorakenteisiin.
-
 ## Kuinka:
 Ennen sukeltamista sisään, asenna `toml`-paketti komennolla `pip install toml`. Käsitellään TOML-tiedosto:
 

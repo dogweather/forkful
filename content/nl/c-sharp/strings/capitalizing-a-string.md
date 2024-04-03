@@ -13,12 +13,7 @@ title: Een string met hoofdletters maken
 weight: 2
 ---
 
-## Wat & Waarom?
-
-Een tekenreeks kapitaliseren in programmeren betekent alle letters in een tekenreeks in hoofdletters omzetten. Het is een vaak voorkomende taak voor het formatteren van uitvoer, het verbeteren van de leesbaarheid, of het voorbereiden van gegevens voor vergelijking of opslagconsistentie.
-
 ## Hoe:
-
 In C# kan je een tekenreeks kapitaliseren met de `ToUpper` methode op een tekenreeksinstantie. Zo ziet het eruit:
 
 ```C#
@@ -31,7 +26,6 @@ Console.WriteLine(gekapitaliseerd); // Uitvoer: HALLO WERELD!
 Zo simpel is het - je tekenreeks schreeuwt nu naar je in alle hoofdletters.
 
 ## Diepere Duik
-
 Kapitaliseren is geen moderne uitvinding. Oude manuscripten begonnen vaak met grote, decoratieve capitulum, of hoofdletters. Snel vooruit naar de informatica: kapitaliseren dient praktische rollen, zoals het laten opvallen van titels of het waarborgen van hoofdletterongevoelige vergelijkingen.
 
 Hoewel `.ToUpper()` eenvoudig is, let op de alternatieven en eigenaardigheden:
@@ -56,7 +50,6 @@ Console.WriteLine(gekapitaliseerdInvariant); // Uitvoer: İÇÇE
 Merk op dat de punt over de 'i' blijft na het kapitaliseren volgens de regels van de invariant cultuur.
 
 ## Zie Ook:
-
 - Officiële documentatie van Microsoft over `.ToUpper()`:
   [MSDN - String.ToUpper Methode](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
   

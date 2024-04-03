@@ -15,9 +15,6 @@ title: "\u4E0B\u8F7D\u7F51\u9875"
 weight: 42
 ---
 
-## 什么 & 为什么？
-下载网页，就是从互联网上获取网页内容到本地。程序员这么做，可能是为了数据分析，或者是想在本地保存网页备用。
-
 ## 如何：
 ```Clojure
 (require '[clj-http.client :as client])

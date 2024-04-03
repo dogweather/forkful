@@ -11,9 +11,6 @@ title: Calcolo di una data futura o passata
 weight: 26
 ---
 
-## Cosa & Perché?
-Calcolare una data nel futuro o nel passato significa trovare una data specifica a partire da un'altra aggiungendo o sottraendo giorni, mesi o anni. I programmatori lo fanno per gestire eventi pianificati, scadenze o semplicemente per tracciare il tempo trascorso.
-
 ## Come fare:
 ```Arduino
 #include <Wire.h>

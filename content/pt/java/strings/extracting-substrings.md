@@ -10,9 +10,6 @@ title: Extraindo substrings
 weight: 6
 ---
 
-## What & Why?
-Extrair substrings significa pegar pedaços específicos de uma string. Programadores fazem isso para manipular, analisar ou comparar partes de texto de forma eficiente.
-
 ## How to:
 ```Java
 public class ExtractorDeSubstring {

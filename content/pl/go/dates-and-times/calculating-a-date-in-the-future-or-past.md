@@ -14,12 +14,7 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-## Co i dlaczego?
-
-Obliczanie daty w przyszłości lub przeszłości w Go polega na manipulowaniu wartościami daty i czasu, aby określić konkretny punkt względem podanej daty. Programiści powszechnie wykonują to zadanie dla aplikacji wymagających harmonogramowania, terminów, przypomnień lub dowolnej funkcjonalności, gdzie postęp lub regresja czasu jest niezbędna.
-
 ## Jak to zrobić:
-
 Go udostępnia pakiet `time` do obsługi operacji na datach i czasie, oferując proste mechanizmy dodawania lub odejmowania czasu. Oto spojrzenie na wykorzystanie pakietu `time` do obliczania dat przyszłych lub przeszłych:
 
 ```go
@@ -59,7 +54,6 @@ Przyszły czas (5 godzin i 30 minut później):  2023-04-01 20:34:05.123456789 +
 Zauważ, jak metoda `AddDate` jest używana do manipulacji datą przez lata, miesiące i dni, podczas gdy metoda `Add` jest używana do bardziej precyzyjnych delt czasu, takich jak godziny, minuty i sekundy.
 
 ## Głębsze zanurzenie
-
 Pakiet `time` języka programowania Go ułatwia manipulację czasem z silnym bezpieczeństwem typu i jasną składnią, cechy, za które Go jest bardzo cenione. Jego implementacja opiera się na funkcjonalnościach manipulacji czasem dostarczanych przez leżący u podstaw system operacyjny, zapewniając efektywność i dokładność. Historycznie rzecz biorąc, obsługa dat i czasu w programowaniu była pełna złożoności z powodu różnic w strefach czasowych, latach przestępnych i zmianach czasu letniego. Pakiet `time` w Go abstrahuje dużą część tej złożoności, oferując programistom solidne narzędzia do manipulacji czasem.
 
 Chociaż rodzimy pakiet `time` Go obejmuje szeroki zakres potrzeb manipulacji czasem, alternatywne biblioteki, takie jak `github.com/jinzhu/now`, oferują dodatkowe udogodnienia i funkcjonalności dla bardziej specyficznych przypadków użycia. Te alternatywy mogą być szczególnie użyteczne dla bardziej złożonych potrzeb manipulacji datą i czasem, nieobsługiwanych bezpośrednio przez rodzimy pakiet `time`.

@@ -14,16 +14,10 @@ title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---
 
-## Was & Warum?
-
-Reguläre Ausdrücke (regex) in PHP sind Muster, die verwendet werden, um Zeichenkombinationen in Zeichenketten abzugleichen, wodurch komplexe Such- und Ersetzungsoperationen und Datenvalidierung ermöglicht werden. Programmierer nutzen regex wegen seiner Stärke und Flexibilität beim Parsen von Texten, Validieren von Formularen oder Extrahieren von Webdaten, was es zu einem unverzichtbaren Werkzeug im Arsenal eines Entwicklers macht.
-
 ## Wie man es benutzt:
-
 PHP unterstützt reguläre Ausdrücke durch die PCRE-Bibliothek (Perl Compatible Regular Expressions), die einen reichen Satz von Funktionen bietet. So verwendet man sie:
 
 ### Ein Muster abgleichen:
-
 Um zu überprüfen, ob ein Muster innerhalb einer Zeichenkette existiert, verwendet man `preg_match()`. Diese Funktion gibt 1 zurück, wenn das Muster in der Zeichenkette gefunden wurde, und 0, wenn nicht.
 
 ```php
@@ -36,7 +30,6 @@ if (preg_match("/\bweb\b/i", "PHP ist eine Skriptsprache für das Web")) {
 ```
 
 ### Alle Treffer finden:
-
 `preg_match_all()` wird verwendet, wenn man alle Vorkommen eines Musters in einer Zeichenkette finden muss.
 
 ```php
@@ -48,7 +41,6 @@ print_r($matches[0]);
 ```
 
 ### Text ersetzen:
-
 Um Text zu ersetzen, der einem regulären Ausdruck entspricht, wird `preg_replace()` verwendet. Es ist unglaublich mächtig für die Formatierung und Bereinigung von Daten.
 
 ```php
@@ -60,7 +52,6 @@ echo preg_replace($pattern, $replacement, $originalText);
 ```
 
 ### Zeichenketten aufteilen:
-
 Man kann eine Zeichenkette in ein Array aufteilen, indem man `preg_split()` verwendet und ein Muster für den Trenner angibt.
 
 ```php

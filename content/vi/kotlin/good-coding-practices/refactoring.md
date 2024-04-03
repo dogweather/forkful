@@ -16,9 +16,6 @@ title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---
 
-## Cái gì & Tại sao?
-Tái cấu trúc là quy trình chỉnh sửa mã nguồn hiện có nhằm cải thiện cấu trúc, độ dễ đọc, và hiệu suất của nó mà không thay đổi hành vi bên ngoài của chương trình. Các lập trình viên tiến hành tái cấu trúc để làm cho mã nguồn dễ bảo dưỡng hơn, đơn giản hóa việc thêm các tính năng mới, và dễ dàng phát hiện và sửa lỗi hơn.
-
 ## Làm thế nào:
 Dưới đây là một đoạn mã Kotlin mô tả một "mùi" mã phổ biến và phiên bản đã được tái cấu trúc của nó. Chúng ta bắt đầu với một khối mã đang làm quá nhiều công việc:
 

@@ -10,12 +10,7 @@ title: Logging
 weight: 17
 ---
 
-## What & Why?
-
-Logging, at its core, is the practice of recording events and data from a software application to an external output, like a file or console. Programmers log stuff to trace through code, troubleshoot issues, and keep an eye on an app’s behavior in the wild, providing critical insights that can't be gleaned as effectively in any other way.
-
 ## How to:
-
 In Kotlin, logging could be done using the built-in `println()` function for simple cases, or with more sophisticated libraries like SLF4J with Logback or Log4j for advanced needs.
 
 Below is a basic example using `println()`:
@@ -67,7 +62,6 @@ java.lang.Exception: Simulated error
 ```
 
 ## Deep Dive
-
 Historically, logging in software developed along with the increasing complexity of applications and systems. Simple print statements were enough for the early days, where programs were often run and debugged by the developer themselves. But as systems networked and ran in different environments across different users, a robust and persistent logging system became crucial.
 
 Before Kotlin became popular, Java developers widely adopted libraries like Log4j and later SLF4J. These have inspired similar practices in Kotlin, leveraging the interoperability of Kotlin with Java libraries. SLF4J acts as an abstraction layer, allowing the actual logging implementation to be swapped—usually Logback or Log4j2 are the preferred choices.
@@ -87,7 +81,6 @@ Other common features of advanced logging frameworks include:
 These tools and features are critical for maintaining a reliable, observable system especially in complex, distributed, or highly scaled environments.
 
 ## See Also
-
 For further learning and insight into Kotlin logging, check out:
 
 - SLF4J (Simple Logging Facade for Java) [http://www.slf4j.org/](http://www.slf4j.org/)

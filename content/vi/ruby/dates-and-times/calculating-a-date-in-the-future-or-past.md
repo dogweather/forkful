@@ -16,12 +16,7 @@ title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1
 weight: 26
 ---
 
-## Cái gì & Tại sao?
-
-Tính toán ngày trong tương lai hoặc quá khứ có nghĩa là tìm hiểu ngày sẽ là gì, hoặc đã là gì, sau hoặc trước một khoảng thời gian nhất định. Lập trình viên làm điều này cho các tính năng như nhắc nhở, đăng ký, hoặc phân tích dữ liệu lịch sử.
-
 ## Làm thế nào:
-
 Ruby làm việc với ngày cực kỳ đơn giản thông qua lớp `Date` đã tích hợp sẵn và gem `active_support` cho một số tính năng thú vị. Dưới đây là cách thực hiện:
 
 ```Ruby
@@ -56,7 +51,6 @@ Trong 2 tháng nữa, sẽ là: 2023-06-07
 ```
 
 ## Tìm hiểu kỹ hơn
-
 Trước khi Ruby tích hợp các chức năng tính toán ngày vào các thư viện chuẩn và bổ sung của mình, nhà phát triển thường phải tính toán ngày một cách thủ công, xem xét năm nhuận, chiều dài khác nhau của các tháng, và múi giờ—điều này khá là đau đầu.
 
 Lớp `Date` chuẩn làm được rất nhiều thứ ngay từ hộp. Bạn có thể cộng (`+`) hoặc trừ (`-`) ngày một cách dễ dàng. Tuy nhiên, để thao tác khoảng thời gian một cách trực quan hơn, như "2 tháng từ bây giờ", chúng ta dựa vào `active_support`, được rút ra từ Ruby on Rails. Gem này sử dụng các tiện ích mở rộng cho các lớp Ruby chuẩn, làm cho các tính toán này thân thiện hơn với con người.
@@ -66,7 +60,6 @@ Khi tính toán ngày trong quá khứ hoặc tương lai, nếu bạn cũng xem
 Còn tồn tại các lựa chọn khác, như các gem `time-lord` và `ice_cube`, cung cấp thêm đường viền ngữ pháp hoặc các tính năng đặc biệt (như sự kiện định kỳ), tương ứng.
 
 ## Tham khảo
-
 - Xử lý múi giờ trong Ruby: [https://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html](https://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html)
 - Gem `time-lord` cho các biểu thức giống như con người: [https://github.com/krainboltgreene/time-lord](https://github.com/krainboltgreene/time-lord)
 - Gem `ice_cube` cho việc xử lý các sự kiện định kỳ: [https://github.com/seejohnrun/ice_cube](https://github.com/seejohnrun/ice_cube)

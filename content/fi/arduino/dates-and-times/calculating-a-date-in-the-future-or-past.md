@@ -10,9 +10,6 @@ title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---
 
-## What & Why?
-Mitä on päivämäärän laskeminen tulevaisuuteen tai menneisyyteen? Käytännössä säädämme kelloja ja kalentereita ohjelmallisesti. Miksi? Kalenteritoiminnot ovat kriittisiä muistutuksille, aikatauluille ja tapahtumien seurannalle.
-
 ## How to:
 Arduino ei suoraan tue päivämääräkäsittelyä, mutta voimme käyttää kirjastoja kuten `TimeLib.h`. Tässä esimerkki tulevan päivämäärän laskennasta:
 

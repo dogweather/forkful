@@ -10,9 +10,6 @@ title: Lokitus
 weight: 17
 ---
 
-## Mikä & Miksi?
-Lokitusta tarkoittaa sovelluksen tapahtumien tallentamista ohjelman suorituksen aikana, tarjoten jäljityspolkua jälkianalyysiin ja reaaliaikaiseen valvontaan. Ohjelmoijat tekevät sitä, koska se auttaa virheiden jäljityksessä, suorituskyvyn valvonnassa ja käyttäjien toimien seuraamisessa turvallisuuden ja analysoinnin kannalta.
-
 ## Kuinka:
 Python sisältää sisäänrakennetun moduulin lokitukseen. Tässä on perusasetus:
 ```Python

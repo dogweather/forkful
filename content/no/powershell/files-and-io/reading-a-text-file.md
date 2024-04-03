@@ -11,9 +11,6 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## Hva & Hvorfor?
-Å lese en tekstfil betyr å få tilgang til innholdet i filen via et program. Programmerere gjør dette for å behandle data, konfigurere programmer, eller automatisere oppgaver basert på tekstinnhold.
-
 ## Slik gjør du det:
 Å lese fra en fil i PowerShell er enkelt. Her er et grunnleggende eksempel:
 

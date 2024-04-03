@@ -12,12 +12,7 @@ title: Utilizzo di array associativi
 weight: 15
 ---
 
-## Cosa e Perché?
-
-Gli array associativi, o mappe hash, in Clojure consentono di memorizzare e recuperare dati tramite coppie chiave-valore. Sono la scelta preferita per la gestione di dati strutturati, rendendo più rapido l'accesso a elementi specifici senza dover iterare attraverso una lista.
-
 ## Come fare:
-
 In Clojure, creare e manipolare array associativi (mappe hash) è semplice. Vediamo alcuni esempi.
 
 Per creare una mappa hash:
@@ -72,7 +67,6 @@ E per un accesso condizionale, `find` restituisce una coppia chiave-valore se la
 ```
 
 ## Approfondimento
-
 Gli array associativi in Clojure, comunemente noti anche come mappe hash, sono incredibilmente versatili ed efficienti per la gestione di dati basati su coppie chiave-valore. Fanno parte della ricca libreria di collezioni di Clojure, profondamente radicata nella filosofia del linguaggio dell'immutabilità e della programmazione funzionale. A differenza degli array o delle liste che richiedono una complessità temporale O(n) per l'accesso agli elementi, le mappe hash forniscono una complessità temporale quasi costante per l'accesso, rendendole altamente efficienti per le operazioni di ricerca.
 
 Si potrebbe sostenere che i vettori in Clojure potrebbero servire a uno scopo simile attraverso l'accesso indicizzato, ma le mappe hash eccellono quando si tratta di gestire dati non sequenziali e etichettati, dove la chiave fornisce un descrittore significativo piuttosto che un indice arbitrario.

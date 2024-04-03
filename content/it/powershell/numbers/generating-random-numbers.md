@@ -10,9 +10,6 @@ title: Generazione di numeri casuali
 weight: 12
 ---
 
-## Cosa & Perché?
-Generare numeri casuali in PowerShell riguarda la creazione di valori numerici imprevedibili entro un intervallo specificato. I programmatori utilizzano questa capacità per una miriade di motivi, inclusi test, simulazione e scopi di sicurezza, dove l'imprevedibilità o il mimetizzare la casualità del mondo reale è cruciale.
-
 ## Come fare:
 PowerShell offre un approccio diretto per generare numeri casuali usando il cmdlet `Get-Random`. Questo cmdlet può produrre numeri casuali entro un intervallo predefinito o specificato.
 

@@ -10,9 +10,6 @@ title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---
 
-## Cosa & Perché?
-In C# eliminare caratteri che corrispondono a un pattern significa usare algoritmi per rimuovere sequenze specifiche di caratteri da una stringa. I programmatori lo fanno per normalizzare dati, validare input o pulire testo da caratteri non desiderati.
-
 ## Come fare:
 Ecco una stringa esempio e un pattern che vogliamo eliminare. Facciamo uso delle espressioni regolari (`Regex`):
 

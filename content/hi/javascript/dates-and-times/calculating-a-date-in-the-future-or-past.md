@@ -28,12 +28,7 @@ title: "\u092D\u0935\u093F\u0937\u094D\u092F \u092F\u093E \u0905\u0924\u0940\u09
 weight: 26
 ---
 
-## क्या और क्यों?
-
-JavaScript में भविष्य या अतीत की तारीख की गणना करना सरल है। इसकी जरूरत छुट्टियों की योजना, समय-सीमा तय करने, या पुरानी फाइलों के रिकार्ड्‌स को संभालने में पड़ सकती है। 
-
 ## कैसे करें:
-
 ```Javascript
 // आज की तिथि
 const today = new Date();
@@ -50,11 +45,9 @@ console.log(thirtyDaysAgo.toString()); // "Thu Mar 02 2023 12:00:00 GMT+0530 (In
 ```
 
 ## गहराई से जानकारी:
-
-तिथियों की गणना के लिए JavaScript में `Date` ऑब्जेक्ट शुरू से ही रहा है, लेकिन समय के साथ इसमें सुधार होते रहे हैं। अन्य तरीकों में, Moment.js और Date-fns जैसे लाइब्रेरीज शामिल हैं, लेकिन ज्यादा सरल गणना के लिए आमतौर पर इनकी जरूरत नहीं पड़ती। जब आप `setDate()` मेथड का उपयोग करते हैं, तो JavaScript खुद ही महीने और वर्ष को संभाल लेता है, अगर तारीखें उनकी सीमा को पार कर जाती हैं। यह समझने के लिए कि JavaScript किस तरह तारीखों को संभालता है, MDN Web Docs का उपयोग कर सकते हैं। 
+तिथियों की गणना के लिए JavaScript में `Date` ऑब्जेक्ट शुरू से ही रहा है, लेकिन समय के साथ इसमें सुधार होते रहे हैं। अन्य तरीकों में, Moment.js और Date-fns जैसे लाइब्रेरीज शामिल हैं, लेकिन ज्यादा सरल गणना के लिए आमतौर पर इनकी जरूरत नहीं पड़ती। जब आप `setDate()` मेथड का उपयोग करते हैं, तो JavaScript खुद ही महीने और वर्ष को संभाल लेता है, अगर तारीखें उनकी सीमा को पार कर जाती हैं। यह समझने के लिए कि JavaScript किस तरह तारीखों को संभालता है, MDN Web Docs का उपयोग कर सकते हैं।
 
 ## संबंधित स्रोत:
-
 - MDN Web Docs on JavaScript Dates: [Mozilla MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 - JavaScript Info on Date and Time: [JavaScript.info](https://javascript.info/date)
 - Moment.js Library: [Moment.js](https://momentjs.com/)

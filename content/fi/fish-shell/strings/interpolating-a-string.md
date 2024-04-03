@@ -10,9 +10,6 @@ title: Merkkijonon interpolointi
 weight: 8
 ---
 
-## What & Why? (Mikä & Miksi?)
-Interpolointi yhdistää muuttujat ja tekstiä yhdeksi merkkijonoksi. Koodarit hyödyntävät tätä luodakseen dynaamista dataa tai viestejä käyttäjille.
-
 ## How to: (Kuinka tehdä:)
 ```Fish Shell
 # Aseta muuttuja

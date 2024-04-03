@@ -11,9 +11,6 @@ title: Code in Funktionen organisieren
 weight: 18
 ---
 
-## Was & Warum?
-Code in Funktionen zu organisieren bedeutet, Ihr Skript in mundgerechte Stücke zu zerlegen – denken Sie an funktionale LEGO-Blöcke. Wir machen das für Klarheit, Wiederverwendbarkeit und geistige Gesundheit. Es macht unseren Code ordentlich, lesbar und wartbar.
-
 ## Wie geht das:
 ```Lua
 -- Definiere eine einfache Funktion zur Begrüßung

@@ -13,12 +13,7 @@ title: Lavorare con YAML
 weight: 41
 ---
 
-## Cosa & Perché?
-
-YAML, acronimo di "YAML Ain't Markup Language", è uno standard di serializzazione dati leggibile dall'uomo che può essere utilizzato per svariate applicazioni, dai file di configurazione alla memorizzazione dei dati. I programmatori spesso lavorano con YAML quando hanno bisogno di un formato facile da leggere e da scrivere per file di configurazione o per lo scambio di dati tra lingue e sistemi.
-
 ## Come fare:
-
 Lavorare con YAML in C richiede una libreria, poiché la libreria standard di C non fornisce supporto diretto per l'analisi o la serializzazione di YAML. Una delle librerie YAML più popolari per C è `libyaml`, che offre interfacce a basso e alto livello per l'analisi e la generazione di YAML. Di seguito è riportato un esempio di come analizzare un semplice file YAML utilizzando `libyaml`:
 
 **Prima**, è necessario installare la libreria `libyaml`. Se si utilizza un sistema simile a Unix, è possibile solitamente installarla tramite il gestore di pacchetti. Ad esempio, su Ubuntu:
@@ -90,7 +85,6 @@ Valore: false
 ```
 
 ## Approfondimento
-
 YAML è stato rilasciato per la prima volta nel 2001 ed è stato progettato per essere più leggibile e facile da usare rispetto ad altri formati di serializzazione dati come XML o JSON, prendendo ispirazione da vari linguaggi come C, Perl e Python per la sua filosofia di design. Nonostante i suoi vantaggi in termini di leggibilità e facilità di modifica umana, YAML può essere complesso da analizzare programmaticamente a causa della sua dipendenza dall'indentazione e dal suo vasto set di funzionalità, incluse referenze e tipi personalizzati.
 
 Sebbene `libyaml` fornisca un accesso robusto e a basso livello all'analisi e alla generazione di YAML in C, può essere ingombrante per compiti semplici a causa della sua API verbosa. Per questi motivi, alcuni programmatori preferiscono utilizzare librerie di livello superiore o addirittura altri formati di serializzazione dati come JSON quando lavorano in C, specialmente quando l'analisi performante con minimo overhead di codice è una priorità. Tuttavia, YAML rimane una scelta popolare per file di configurazione e situazioni in cui la leggibilità umana è fondamentale. Alternative come TinyYAML o l'incorporazione di un interprete di alto livello (ad esempio, l'incorporamento di Python o Lua) potrebbero fornire maggiore comodità per applicazioni specifiche, bilanciando tra facilità d'uso e necessità di prestazioni.

@@ -13,9 +13,6 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-Complexe getallen, bestaande uit een reëel deel en een imaginair deel (meestal geschreven als a + bi), maken berekeningen die onpraktisch of onmogelijk zijn met alleen reële getallen mogelijk. Programmeurs gebruiken ze op gebieden zoals signaalverwerking, kwantumcomputing en toegepaste wiskunde, waar tweedimensionale getallenweergaven essentieel zijn.
-
 ## Hoe te:
 Om complexe getallen in TypeScript te hanteren, is een toegewijde klasse nodig. Laten we er een maken en door de optelling en vermenigvuldiging heen werken.
 

@@ -10,9 +10,6 @@ title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---
 
-## Quoi & Pourquoi ?
-Télécharger une page web, c'est récupérer son contenu via Internet. Les programmeurs le font pour analyser des données, automatiser des tâches ou agréger du contenu.
-
 ## Comment faire :
 ```Clojure
 (require '[clj-http.client :as client])

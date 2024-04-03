@@ -11,9 +11,6 @@ title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---
 
-## Was & Warum?
-Das Löschen von Zeichen, die einem Muster entsprechen, ermöglicht es, Strings in Bash effizient zu bearbeiten. Programmierer nutzen dies, um Eingaben zu validieren, Daten zu säubern oder spezifische Formate zu erzeugen.
-
 ## Wie geht das?
 ```Bash
 # Variable mit Wert

@@ -14,12 +14,7 @@ title: "HTML:n j\xE4sennys"
 weight: 43
 ---
 
-## Mikä ja miksi?
-
-HTML:n jäsentäminen Rustilla koskee tietojen poimimista HTML-dokumenteista, mikä on olennaista web-skaapaukselle, datan poiminnalle tai web-kiipijöiden rakentamiselle. Ohjelmoijat tekevät tämän automatisoidakseen tiedonkeruun verkosta, analysoidakseen web-sisältöä tai siirtääkseen sisältöä alustalta toiselle.
-
 ## Kuinka:
-
 Jäsennettäessä HTML:ää Rustilla käytetään usein `scraper`-pakettia, joka tarjoaa korkean tason rajapinnan HTML-dokumenttien läpikäymiseen ja manipulointiin.
 
 Lisää ensin `scraper` `Cargo.toml`-tiedostoosi:

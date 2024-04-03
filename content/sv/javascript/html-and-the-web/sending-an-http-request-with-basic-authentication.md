@@ -12,9 +12,6 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-förfrågan med basic authentication innebär att man skickar användarnamn och lösenord i klartext, kodat med base64, för att autentisera en användare mot en server. Programmerare gör detta för att begränsa åtkomst till resurser så att endast auktoriserade användare kan nå dem.
-
 ## Hur man gör:
 För att skicka en HTTP-förfrågan med basic authentication i JavaScript kan du använda 'fetch' funktionen tillsammans med `headers` där du anger 'Authorization'.
 

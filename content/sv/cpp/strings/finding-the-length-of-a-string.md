@@ -11,9 +11,6 @@ title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---
 
-## Vad & Varför?
-Att hitta längden på en sträng innebär att bestämma antalet tecken den innehåller. Programmerare gör detta för att manipulera text, validera indata eller hantera minnesutrymme effektivt.
-
 ## Hur man gör:
 ```C++
 #include <iostream>

@@ -14,12 +14,7 @@ title: "T\u1EA3i trang web"
 weight: 42
 ---
 
-## Cái gì và Tại sao?
-
-Tải xuống một trang web nghĩa là lấy nội dung HTML từ URL bạn đang xem. Các lập trình viên làm điều này để kéo dữ liệu, cập nhật gadget của họ, hoặc đơn giản là sử dụng internet nhiều hơn là chỉ xem video mèo.
-
 ## Cách thực hiện:
-
 Dưới đây là chi tiết: làm cho Arduino của bạn lướt web và thu thập những gì bạn cần.
 
 ```Arduino
@@ -62,7 +57,6 @@ void loop() {
 Khởi động, và bạn sẽ thấy HTML của trang web trong Serial Monitor. Nhớ rằng, bạn sẽ cần mô-đun Wi-Fi ESP8266 và một kết nối.
 
 ## Sâu hơn nữa
-
 Ngày xưa, Arduinos là những sinh vật đơn giản không kết nối mạng. Sau đó, các shield và module đã kết nối chúng với mạng lớn khó lường. ESP8266 là một phép màu như vậy, biến Arduino của bạn thành một người lướt internet.
 
 Có lựa chọn khác không? Chắc chắn rồi. Có ESP32, Ethernet Shield, và các lựa chọn khác cho cùng một công việc.
@@ -70,7 +64,6 @@ Có lựa chọn khác không? Chắc chắn rồi. Có ESP32, Ethernet Shield, 
 Chất lượng của kết nối internet, sự mạnh mẽ của nguồn cấp điện, và thậm chí thời gian trong ngày có thể ảnh hưởng đến việc Arduino của bạn tải trang đó như thế nào. Thực sự chúng ta đang kết nối với nhiều yếu tố hơn là chỉ viết code sành điệu.
 
 ## Xem Thêm
-
 Muốn khám phá thêm? Hãy xem những điều này:
 
 - [Mạng Arduino](https://www.arduino.cc/en/Guide/ArduinoEthernetShield)

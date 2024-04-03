@@ -12,9 +12,6 @@ title: Schrijven naar standaardfout
 weight: 25
 ---
 
-## Wat & Waarom?
-Schrijven naar standaardfout (stderr) is het uitvoeren van foutmeldingen en diagnostiek gescheiden van reguliere output. Programmeurs doen dit om applicaties te debuggen en te monitoren zonder foutmeldingen te vermengen met de standaarduitvoer (stdout).
-
 ## Hoe:
 Elm draait op het web, en browsers maken geen onderscheid tussen stdout en stderr zoals command-line interfaces dat doen. Je kunt echter stderr simuleren met behulp van JavaScript-interoperabiliteit via poorten. Zo stel je het in:
 

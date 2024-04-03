@@ -15,9 +15,6 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä & Miksi?
-Tekstitiedoston kirjoittaminen Kotlinilla sisältää tiedoston luomisen ja tekstisisällön syöttämisen siihen, mikä on yleinen tehtävä datan tallentamiseksi, lokitiedostojen kirjaamiseksi tai asetusten määrittämiseksi. Ohjelmoijat tekevät tämän tallentaakseen ja manipuloidakseen dataa ohimenevän muistin ulkopuolella, varmistaen tiedon pysyvyyden istuntojen välillä.
-
 ## Kuinka:
 Kotlin tarjoaa suoraviivaisen tavan tiedostoihin kirjoittamiseen, hyödyntäen standardikirjastoa ilman, että tarvitaan lisäkolmannen osapuolen kirjastoja. Tässä on yksinkertainen esimerkki:
 

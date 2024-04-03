@@ -14,10 +14,8 @@ title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---
 
-## Vad & Varför?
-Reguljära uttryck (regex) i C# är ett kraftfullt verktyg för mönsterpassning inom strängar, vilket möjliggör för programmerare att söka, ersätta, dela upp eller extrahera data effektivt. Programmerare använder sig av regex för uppgifter som sträcker sig från enkla valideringar, som kontroll av e-postformat, till komplexa textbearbetningsuppgifter på grund av dess flexibilitet och prestanda.
-
 ## Hur man gör:
+
 
 ### Enkel Mönsterpassning
 För att kontrollera om en sträng innehåller ett specifikt mönster kan du använda metoden `Regex.IsMatch` från namnrymden `System.Text.RegularExpressions`.

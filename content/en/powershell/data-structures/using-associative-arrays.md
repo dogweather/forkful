@@ -11,12 +11,7 @@ title: Using associative arrays
 weight: 15
 ---
 
-## What & Why?
-
-Associative arrays, also known as hash tables or dictionaries in PowerShell, let you store data in key-value pairs, making data retrieval straightforward and efficient. Programmers use them for storing related data together in a way that's easy to access by key.
-
 ## How to:
-
 Creating and using associative arrays in PowerShell is pretty straightforward. Here’s how you do the magic:
 
 **Creating an associative array:**
@@ -74,7 +69,6 @@ location : New York
 ```
 
 ## Deep Dive
-
 The concept of associative arrays is common across many programming languages, typically called a dictionary, map, or hash table depending on the language. In PowerShell, associative arrays are implemented as hash tables, which are quite efficient for looking up keys, storing data, and maintaining a collection of unique keys.
 
 Historically, associative arrays provide a means to manage collections of objects where each item can be quickly retrieved without iterating through the entire collection, using its key. The efficiency of data retrieval and modification in associative arrays makes them a preferred choice for various tasks. However, they do have limitations, such as maintaining order, for which ordered dictionaries or custom objects could be a better alternative.

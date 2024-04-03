@@ -11,9 +11,6 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## What & Why? (Co i Dlaczego?)
-Rozpoczynanie nowego projektu to tworzenie fundamentu pod przyszłe zadania programistyczne. Programiści robią to, żeby zorganizować kod, środowisko pracy i ustawić scenę dla rozwoju aplikacji.
-
 ## How to: (Jak to zrobić:)
 Tworzenie nowego projektu w PowerShellu zaczyna się od struktury katalogów i plików. Użyj `New-Item` do tworzenia katalogów/projektów, a `Set-Location` do zmiany aktywnego katalogu.
 

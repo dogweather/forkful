@@ -12,9 +12,6 @@ title: Registro de Logs
 weight: 17
 ---
 
-## O Que e Por Quê?
-O log é essencialmente o equivalente de software ao diário de bordo de um navio; é uma maneira de registrar eventos que acontecem enquanto uma aplicação está em execução. Programadores fazem isso para manter um registro desses eventos para depuração, trilhas de auditoria ou para obter insights sobre o comportamento de um sistema em produção.
-
 ## Como fazer:
 Clojure se apoia nas facilidades de log do Java, mas você pode acessá-las de uma maneira mais idiomática de Clojure. Vamos dar uma olhada em como você pode usar `clojure.tools.logging`, que oferece uma abstração simples sobre vários frameworks de log:
 

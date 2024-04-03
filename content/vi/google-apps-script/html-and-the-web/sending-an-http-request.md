@@ -15,12 +15,7 @@ title: "G\u1EEDi y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---
 
-## Gì & Tại Sao?
-
-Gửi một yêu cầu HTTP trong Google Apps Script là việc lập trình gọi đến một máy chủ web hoặc API bên ngoài. Lập trình viên làm điều này để truy xuất hoặc gửi dữ liệu đến các dịch vụ web, tích hợp một lĩnh vực rộng lớn của nguồn và chức năng web trực tiếp vào dự án Google Apps Script của họ.
-
 ## Làm thế nào:
-
 Trong Google Apps Script, cách chính để gửi một yêu cầu HTTP là sử dụng dịch vụ `UrlFetchApp`. Dịch vụ này cung cấp các phương thức để thực hiện các yêu cầu HTTP GET và POST. Dưới đây là một ví dụ đơn giản về việc thực hiện một yêu cầu GET để truy xuất dữ liệu JSON:
 
 ```javascript
@@ -59,7 +54,6 @@ function postExample() {
 Những đoạn mã này cho thấy các thực hiện cơ bản của yêu cầu GET và POST. Kết quả sẽ phụ thuộc vào phản hồi của API và có thể được xem trong Logger của Google Apps Script.
 
 ## Đào sâu
-
 Dịch vụ `UrlFetchApp` của Google Apps Script đã phát triển đáng kể từ khi ra đời, cung cấp khả năng điều khiển tinh vi hơn đối với yêu cầu HTTP với các tính năng như thiết lập tiêu đề, payload, và xử lý multipart/form-data cho việc tải lên tệp. Mặc dù nó cung cấp một phương tiện đơn giản để tích hợp các dịch vụ web bên ngoài, các nhà phát triển đến từ các ngôn ngữ backend mạnh mẽ hơn có thể thấy chức năng của nó hạn chế một chút so với các thư viện như `requests` của Python hay `fetch` API trong Node.js của JavaScript.
 
 Một hạn chế đáng chú ý là giới hạn thời gian thực thi cho Google Apps Script, ảnh hưởng đến các yêu cầu thực hiện trong thời gian dài. Hơn nữa, mặc dù `UrlFetchApp` bao gồm một phạm vi rộng lớn của trường hợp sử dụng, các tình huống phức tạp hơn liên quan đến xác thực OAuth hoặc xử lý tải lớn dữ liệu có thể yêu cầu các giải pháp sáng tạo hoặc tận dụng thêm nguồn lực của Google Cloud.

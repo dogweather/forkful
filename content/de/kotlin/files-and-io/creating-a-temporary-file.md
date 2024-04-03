@@ -11,9 +11,6 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-## Was & Warum?
-Temporäre Dateien sind flüchtige Speicherstücke, die Daten während der Ausführung eines Programms aufnehmen. Sie werden oft genutzt, um Zwischenergebnisse zu speichern oder Daten zwischen verschiedenen Teilen eines Programms auszutauschen, ohne die Festplatte mit langfristig unnötigen Dateien zu belasten.
-
 ## How to:
 Kotlin bietet einen simplen Weg, temporäre Dateien zu erstellen. Hier siehst du, wie's geht:
 

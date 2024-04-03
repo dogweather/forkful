@@ -12,12 +12,7 @@ title: Tekst zoeken en vervangen
 weight: 10
 ---
 
-## Wat & Waarom?
-
-Tekst zoeken en vervangen stelt je in staat specifieke reeksen in een tekst te vinden en deze te vervangen door iets anders. Programmeurs doen dit voor snelle bewerkingen, omvangrijke herschikkingen of geautomatiseerde tekstverwerking. Het is een basale, maar krachtige, techniek voor tekstmanipulatie.
-
 ## Hoe:
-
 In Clojure gebruiken we de functie `clojure.string/replace` om tekst te zoeken en te vervangen. Laten we meteen ter zake komen met wat code:
 
 ```clojure
@@ -41,7 +36,6 @@ In Clojure gebruiken we de functie `clojure.string/replace` om tekst te zoeken e
 Zo simpel is het. Draai het, en je ziet de transformaties direct in je REPL.
 
 ## Diepere Duik
-
 Tekst zoeken en vervangen is niet nieuw. Het is al oud in de informatica. We hebben het van vroege editors zoals `sed` in Unix. Sindsdien zijn we een lange weg gekomen.
 
 Clojure, dat op de JVM draait, betekent dat je de kracht van Java's reguliere expressies onder de motorkap hebt. Wat prestaties betreft, is het handig voor snelle scripts, maar onthoud dat overmatig gebruik bij grootschalige tekstverwerking de prestaties kan schaden.
@@ -51,7 +45,6 @@ Wat betreft alternatieven, naast `clojure.string/replace`, zijn er op regex-geba
 Functioneel gezien betekent Clojure's benadering van onveranderlijkheid dat elke vervanging resulteert in een nieuwe string. Geen veranderlijke strings betekent minder bugs en verrassingen.
 
 ## Zie Ook
-
 Om dieper in te duiken, bekijk deze bronnen:
 
 - Clojure's `clojure.string` [API documentatie](https://clojuredocs.org/clojure.string/replace)

@@ -13,12 +13,7 @@ title: Trabajando con CSV
 weight: 37
 ---
 
-## ¿Qué y Por Qué?
-
-Trabajar con archivos CSV (Valores Separados por Comas) implica analizar y generar datos de texto organizados en filas y columnas, utilizando comas para separar los valores individuales. Los programadores a menudo se involucran en este proceso para facilitar el intercambio de datos entre diferentes aplicaciones, bases de datos o para tareas de procesamiento y análisis de datos, debido al amplio soporte y simplicidad del CSV.
-
 ## Cómo hacerlo:
-
 En Lua, trabajar con archivos CSV se puede abordar utilizando operaciones básicas de E/S de archivos proporcionadas por el lenguaje, sin necesidad de bibliotecas externas para tareas simples. Para operaciones más complejas, como el manejo de casos especiales (por ejemplo, comas dentro de los valores), podría ser beneficioso usar bibliotecas de terceros como `lua-csv`.
 
 ### Leyendo un archivo CSV

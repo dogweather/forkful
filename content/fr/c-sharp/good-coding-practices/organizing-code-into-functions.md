@@ -11,9 +11,6 @@ title: Organisation du code en fonctions
 weight: 18
 ---
 
-## Quoi et pourquoi ?
-Regrouper le code en fonctions, c'est comme trier des briques LEGO dans des bacs – cela facilite leur recherche et leur utilisation. Nous faisons cela pour éviter la répétition, pour simplifier la compréhension, et pour rendre la maintenance moins pénible.
-
 ## Comment faire :
 Imaginez que vous ayez du code qui affiche une salutation plusieurs fois. Sans fonctions, c'est un désordre. Avec des fonctions, c'est soigné.
 

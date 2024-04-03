@@ -13,16 +13,10 @@ title: Mallin mukaisten merkkien poistaminen
 weight: 5
 ---
 
-## Mikä & Miksi?
-
-Merkkien poistaminen tietyllä kaavalla Visual Basic for Applications (VBA) -ohjelmassa tarkoittaa tiettyjen ehtojen täyttävien merkkien tai merkkijonojen tunnistamista ja poistamista. Tämä toimenpide on yleinen datan puhdistamisessa ja muotoilutehtävissä, joissa tarpeettomien tai ei-toivottujen merkkien poistaminen merkkijonoista on olennaista datan eheyden ylläpitämiseksi ja datan käsittelyn helpottamiseksi.
-
 ## Kuinka:
-
 VBA:ssa voit käyttää `Replace`-funktiota tai säännöllisiä lausekkeita merkkien poistamiseen kaavan mukaisesti. Tässä on esimerkit molemmista menetelmistä:
 
 ### Käyttäen `Replace`-funktiota
-
 `Replace`-funktio on suoraviivainen tietyille merkeille tai sekvensseille poistamiseen.
 
 ```basic
@@ -40,7 +34,6 @@ End Sub
 ```
 
 ### Käyttäen säännöllisiä lausekkeita
-
 Monimutkaisemmille kaavoille säännölliset lausekkeet tarjoavat voimakkaan vaihtoehdon.
 
 Ota ensin käyttöön Microsoft VBScript Regular Expressions -kirjasto kohdassa Työkalut > Viittaukset Visual Basic -editorissa.
@@ -72,7 +65,6 @@ End Sub
 ```
 
 ## Syväsukellus
-
 Historiallisesti kaavan mukainen vastaaminen ja merkkijonokäsittely VBA:ssa on ollut jonkin verran rajallista, erityisesti verrattuna nykyaikaisiin ohjelmointikieliin, jotka tarjoavat laajoja vakio-kirjastoja näille tehtäville. `Replace`-funktio on yksinkertainen ja tehokas suorille korvauksille, mutta se ei tarjoa joustavuutta monimutkaisempiin kaavan mukaisiin vastaamisiin. Tässä säännölliset lausekkeet (RegEx) tulevat mukaan, tarjoten paljon rikkaamman syntaksin kaavan mukaiseen vastaamiseen ja merkkijonokäsittelyyn. Kuitenkin säännöllisten lausekkeiden käyttö VBA:ssa vaatii lisäasetuksia, kuten Microsoft VBScript Regular Expressions -viitteen käyttöönoton, joka saattaa olla este uudemmille käyttäjille.
 
 Näistä rajoituksista huolimatta RegEx-tuen esittely VBA:ssa oli merkittävä askel eteenpäin, tarjoten voimakkaamman työkalun ohjelmoijille, jotka työskentelevät tekstin käsittelyn parissa. Monimutkaisemmissa skenaarioissa, joissa sisäänrakennetut merkkijonofunktiot jäävät vajaaksi, säännölliset lausekkeet tarjoavat monipuolisen ja tehokkaan vaihtoehdon.

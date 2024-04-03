@@ -11,9 +11,6 @@ title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---
 
-## What & Why? (Co i Dlaczego?)
-Znalezienie długości łańcucha znaków to po prostu określenie, ile znaków znajduje się w tekście. Programiści robią to, aby walidować dane wejściowe, przetwarzać tekst czy zarządzać pamięcią.
-
 ## How to: (Jak to zrobić?)
 ```javascript
 // Prosty przykład

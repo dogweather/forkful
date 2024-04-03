@@ -10,9 +10,6 @@ title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
 
-## What & Why? (Mikä ja Miksi?)
-JavaScriptissa virheiden jäljitys (debugging) tarkoittaa koodin suorituksen tarkkailua, jotta voidaan ymmärtää, missä ja miksi virheitä ilmenee. Kehittäjät tulostavat debug-viestejä, koska se auttaa paikantamaan ja korjaamaan ongelmia nopeammin.
-
 ## How to: (Kuinka tehdä:)
 ```Javascript
 // Perus console.log esimerkki

@@ -11,9 +11,6 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co i dlaczego?
-Obsługa błędów dotyczy zarządzania nieoczekiwanymi sytuacjami w programach – jak ochroniarz radzący sobie z awanturnikami. Programiści lubią gdy wszystko idzie gładko; obsługa błędów pomaga utrzymać problemy w ryzach, zapewniając, że ich kod nie potknie się i nie upadnie, kiedy napotka niespodziewane przeszkody.
-
 ## Jak to zrobić:
 Clojure, tak jak jego lispowe przodki, opiera się na wyjątkach do radzenia sobie z błędami. Oto jak pokazać na co cię stać, gdy sprawy przybiorą zły obrót.
 

@@ -14,12 +14,7 @@ title: Skrive tester
 weight: 36
 ---
 
-## Hva & Hvorfor?
-
-Å skrive tester i Kotlin innebærer å lage kodeutsnitt som automatisk validerer den funksjonelle korrektheten av programvaremodulene dine, og sørger for at de fungerer som forventet. Programmerere gjør dette for å fange opp feil tidlig, legge til rette for kodeomstrukturering og gi dokumentasjon på hvordan programvarekomponenter er ment å fungere.
-
 ## Hvordan:
-
 Kotlin støtter testdrevet utvikling med forskjellige rammeverk, der de mest populære er JUnit, Kotest og MockK for mocking. Her er et enkelt eksempel som bruker JUnit:
 
 ```kotlin

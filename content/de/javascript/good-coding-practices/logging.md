@@ -10,9 +10,6 @@ title: Protokollierung
 weight: 17
 ---
 
-# Was & Warum?
-Logging ist im Grunde genommen so, als würde man ein Tagebuch für seine Anwendung führen – es zeichnet Ereignisse, Fehler und andere bedeutende Aktionen auf, die während des Betriebs der Software auftreten. Programmierer tun dies nicht nur, um in Echtzeit zu verstehen, was unter der Haube passiert, sondern auch, um eine historische Aufzeichnung zu haben, die für die Fehlersuche, die Überprüfung und die Optimierung der Leistung entscheidend ist.
-
 ## Wie geht das:
 JavaScript bietet direkt nach der Installation eine einfache Möglichkeit, Nachrichten in die Konsole zu loggen:
 

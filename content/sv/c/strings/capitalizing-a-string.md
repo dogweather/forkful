@@ -14,12 +14,7 @@ title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---
 
-## Vad & Varför?
-
-Att göra en sträng versal i C innebär att konvertera det första tecknet i varje ord i en given sträng till versal om det är en gemen bokstav. Programmerare utför ofta denna operation för att standardisera användarinput för sökningar, sorteringsoperationer eller visningssyften, vilket säkerställer konsekvens och läsbarhet i textdata.
-
 ## Hur man gör:
-
 Att göra en sträng versal i C kräver en grundläggande förståelse för teckenmanipulation och strängtraversering. Eftersom C inte har en inbyggd funktion för detta, kommer du vanligtvis att kontrollera varje tecken, och justera dess fall vid behov. Nedan är en enkel implementation:
 
 ```c
@@ -56,7 +51,6 @@ Capitalized string: Hello World. Programming In C!
 Detta program traverserar strängen `exampleString`, kontrollerar varje tecken om det ska göras versalt. Funktionen `islower` kontrollerar om ett tecken är en gemen bokstav, medan `toupper` konverterar det till versalt. Flaggen `capNext` bestämmer om nästa bokstav som stöts på bör konverteras, den ställs in efter varje mellanslag (' ') som hittas, och inledningsvis för att göra strängens första tecken versalt.
 
 ## Fördjupning
-
 Tekniken som demonstreras är enkel men brister i effektivitet för mycket stora strängar eller när den utförs upprepade gånger i prestandakritiska applikationer. I historiskt och genomförandekontext involverar strängmanipulation i C, inklusive kapitalisering, ofta direkt buffertmanipulation, vilket återspeglar Cs lågnivåansats och ger programmeraren full kontroll över minne och prestandaavvägningar.
 
 Det finns alternativa, mer sofistikerade metoder för att göra strängar versala, särskilt när man tar hänsyn till lokaler och Unicode-tecken, där kapitaliseringsregler kan skilja sig avsevärt från det enkla ASCII-scenariot. Bibliotek som ICU (International Components for Unicode) erbjuder robusta lösningar för dessa fall men introducerar beroenden och overhead som kanske inte är nödvändiga för alla applikationer.

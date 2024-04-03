@@ -12,11 +12,7 @@ title: Tekst zoeken en vervangen
 weight: 10
 ---
 
-## Wat & Waarom?
-Zoeken en vervangen van tekst is het proces van het vinden van strings binnen strings en deze omwisselen voor iets anders. Programmeurs doen dit om gegevens te bewerken, code te herstructureren, of tekstmanipulatie te automatiseren.
-
 ## Hoe:
-
 ```Rust
 fn main() {
     let text = "Hallo daar!";

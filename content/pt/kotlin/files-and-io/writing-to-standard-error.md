@@ -14,12 +14,7 @@ title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---
 
-## O que & Por quê?
-
-Escrever no erro padrão (stderr) trata de enviar mensagens de erro e diagnósticos para um fluxo separado, distinto da saída padrão (stdout), o que permite um melhor manejo de erros e análise de logs. Programadores fazem isso para facilitar a depuração e para garantir que mensagens de erro possam ser facilmente identificadas e redirecionadas se necessário, mantendo os logs de saída ou mensagens para o usuário limpos.
-
 ## Como fazer:
-
 Em Kotlin, escrever no stderr pode ser alcançado usando `System.err.println()`. Este método é similar a `System.out.println()`, mas direciona a saída para o fluxo de erro padrão em vez do fluxo de saída padrão.
 
 ```kotlin

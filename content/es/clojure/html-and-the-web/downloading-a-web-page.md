@@ -11,12 +11,7 @@ title: "Descargando una p\xE1gina web"
 weight: 42
 ---
 
-## Qué y Por Qué?
-
-Descargar una página web significa obtener su contenido, usualmente en formato HTML, a través de Internet. Los programadores lo hacen para analizar datos, monitorear cambios o incorporar información en aplicaciones.
-
 ## Cómo Hacerlo:
-
 Para descargar una página web en Clojure, te muestro cómo usar la librería `clj-http`, que es fácil de usar y muy potente.
 
 Primero, añade la dependencia en tu archivo `project.clj`:
@@ -41,7 +36,6 @@ Luego, aquí tienes un ejemplo básico para descargar el contenido de una págin
 Probablemente veas mucho HTML en tu pantalla, que es el contenido de la página `https://www.ejemplo.com`.
 
 ## Profundizando:
-
 El concepto de descargar páginas web data desde el principio de la web. Originalmente se hacía con herramientas de línea de comandos como `wget` o `curl`.
 
 En el mundo de Clojure, `clj-http` es apenas una opción. Alternativas como `http-kit` o `aleph` también existen, y algunas ofrecen funcionalidades asincrónicas.
@@ -49,7 +43,6 @@ En el mundo de Clojure, `clj-http` es apenas una opción. Alternativas como `htt
 Cuando usas `clj-http`, realmente envuelves a `Apache HttpComponents` – una librería Java potente. Esto significa que puedes acceder a funciones avanzadas si las necesitas, como manejo de cookies, autenticación, y conexiones seguras.
 
 ## Ver También:
-
 - `clj-http` en GitHub: https://github.com/dakrone/clj-http
 - Documentación sobre `Apache HttpComponents`: https://hc.apache.org/
 - Para tareas asíncronas o websockets en Clojure, revisa `http-kit`: http://www.http-kit.org

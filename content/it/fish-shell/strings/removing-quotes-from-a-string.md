@@ -10,12 +10,7 @@ title: Rimuovere le virgolette da una stringa
 weight: 9
 ---
 
-## Cos'è & Perché?
-
-Rimuovere le virgolette da una stringa significa togliere quei fastidiosi segni di virgoletta singola (' ') o doppia (" ") dai tuoi dati di testo. I programmatori spesso fanno questo per sanificare l'input o preparare i dati per ulteriori elaborazioni senza l'ingombro delle virgolette.
-
 ## Come fare:
-
 Fish ha delle funzionalità integrate magiche per questo tipo di compito. Usa la funzione `string` senza sudare. Dai un'occhiata a questi incantesimi:
 
 ```fish
@@ -31,7 +26,6 @@ echo $unquoted # Output: Ciao, Universo!
 ```
 
 ## Approfondimento
-
 Nell'era della linea di comando della pietra, avresti lottato con `sed` o `awk` per rimuovere le virgolette; un vero groviglio di backslash e flag criptici. La funzione `string` di Fish appartiene a un'era più recente, rendendo il codice più pulito e intuitivo.
 
 Le alternative in altre shell potrebbero ancora affidarsi a questi vecchi strumenti o potrebbero utilizzare i loro metodi integrati come l'espansione dei parametri di bash o i modificatori di zsh.
@@ -39,7 +33,6 @@ Le alternative in altre shell potrebbero ancora affidarsi a questi vecchi strume
 La funzione `string` va oltre il taglio delle virgolette. È un coltellino svizzero per le operazioni sulle stringhe in Fish. Con `string`, puoi affettare, dividere, unire o persino fare match con espressioni regolari direttamente nel tuo terminale.
 
 ## Vedi Anche
-
 Approfondisci `string` con l'aiuto della documentazione ufficiale:
 - [Documentazione String di Fish Shell](https://fishshell.com/docs/current/commands.html#string)
 

@@ -15,12 +15,7 @@ title: "\u65E5\u4ED8\u3092\u6BD4\u8F03\u3059\u308B"
 weight: 27
 ---
 
-## What & Why? (何となぜ？)
-
-比較する二つの日付。プログラム上で、イベントの順序を決定したり、期間を計算したりする時に必要。
-
 ## How to (方法)
-
 ```TypeScript
 const date1 = new Date('2023-03-30T00:00:00');
 const date2 = new Date('2023-04-02T00:00:00');
@@ -38,7 +33,6 @@ if (date1 < date2) {
 ```
 
 ## Deep Dive (深堀り)
-
 日付の比較は、JavaScriptの初期からあります。背後では`Date`オブジェクトはUnixエポック時からのミリ秒数に変換され、これにより比較が可能になります。`getTime`メソッドで明示的にミリ秒を取得し比較することもできます。以下に、比較する代替方法を示します。
 
 ```TypeScript
@@ -60,7 +54,6 @@ if (date1.getTime() < date2.getTime()) {
 違うタイムゾーンを考慮に入れるなら、`Date`オブジェクト作成時にUTCの日付文字列を使うか、または適切なタイムゾーン情報で日付をパースするライブラリ（例えば`moment-timezone`）を使用することが重要です。
 
 ## See Also (関連情報)
-
 - MDN Web Docsにおける`Date`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 - `moment.js`ライブラリ: https://momentjs.com/
 - `date-fns`ライブラリ（現代的な代替品）: https://date-fns.org/

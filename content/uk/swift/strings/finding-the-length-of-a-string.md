@@ -11,9 +11,6 @@ title: "\u0412\u0438\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F \u0434\u043
 weight: 7
 ---
 
-## What & Why? (Що і Чому?)
-Finding the length of a string in Swift is about getting the count of characters it contains. Programmers do this to validate inputs, size elements, manage loops, and more. It's a bread-and-butter operation for almost any app dealing with text.
-
 ## How to (Як це зробити):
 Swift makes checking a string's length straightforward. Use the `count` property of a string instance. Here's how:
 

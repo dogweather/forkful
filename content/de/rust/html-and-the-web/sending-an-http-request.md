@@ -10,9 +10,6 @@ title: Einen HTTP-Request senden
 weight: 44
 ---
 
-## Was & Warum?
-HTTP-Anfragen sind der Austausch von Daten über das Internet nach dem Client-Server-Modell. Programmierer verwenden sie, um mit Webdiensten zu interagieren, Daten abzurufen oder zu senden – etwa, um Web-APIs zu nutzen oder Server-Status zu überprüfen.
-
 ## How to:
 Um in Rust eine HTTP-Anfrage zu senden, nutzen wir die `reqwest`-Bibliothek. Hier ist ein einfaches Beispiel, wie man eine GET-Anfrage absendet:
 

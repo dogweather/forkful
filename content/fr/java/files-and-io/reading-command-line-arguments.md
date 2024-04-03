@@ -10,9 +10,6 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## What & Why?
-Lire des arguments de ligne de commande, c'est récupérer les données que l'utilisateur passe à votre application. Les programmeurs font ça pour personnaliser l'exécution d'un programme selon les besoins de l'utilisateur.
-
 ## How to:
 La magie opère dans la signature de la méthode `main`. Voilà comment ça marche :
 

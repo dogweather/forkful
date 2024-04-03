@@ -10,9 +10,6 @@ title: Working with XML
 weight: 40
 ---
 
-## What & Why?
-Working with XML means parsing, manipulating, and writing XML data using programming. Programmers handle XML to exchange data across different systems, for configuration files, or when working with standards like SOAP that rely on XML.
-
 ## How to:
 ```TypeScript
 import { parseString } from 'xml2js';

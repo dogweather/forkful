@@ -10,9 +10,6 @@ title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-HTTP-Anfragen mit Basic-Authentifizierung senden Daten über Benutzername und Passwort im Header, um Zugriff auf geschützte Ressourcen zu erhalten. Programmierer nutzen das für einfache Authentifizierungsprozesse in Web-APIs.
-
 ## How to:
 ```Ruby
 require 'net/http'

@@ -11,9 +11,6 @@ title: Calculando la longitud de una cadena
 weight: 7
 ---
 
-## Qué y Por Qué?
-En elm, encontrar la longitud de una cadena significa contar cuántos caracteres contiene. Los programadores lo hacen para validar entradas, limitar texto en la interfaz de usuario, o simplemente para manejar datos de manera más precisa.
-
 ## Cómo hacerlo:
 Para obtener la longitud de una cadena en Elm, utiliza la función `String.length`. Aquí tienes un ejemplo:
 

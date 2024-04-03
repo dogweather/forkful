@@ -21,12 +21,7 @@ title: "\u30A6\u30A7\u30D6\u30DA\u30FC\u30B8\u306E\u30C0\u30A6\u30F3\u30ED\u30FC
 weight: 42
 ---
 
-## What & Why? (何となぜ？)
-
-ウェブページをダウンロードすることは、インターネット上の情報を取得するプロセスです。プログラマはデータ収集やサービスの統合、または単純に内容のオフライン閲覧のためにこれを行います。
-
 ## How to: (方法：)
-
 Rustでウェブページをダウンロードする標準的な手法を紹介します。
 
 ```Rust
@@ -54,7 +49,6 @@ Body:
 ```
 
 ## Deep Dive (詳細情報：)
-
 歴史的には、Rustにおけるウェブページのダウンロードは`hyper`クレートなどを直接使っていましたが、`reqwest`が登場してからは、より使いやすいインターフェースを提供しています。`reqwest`は内部で`hyper`を利用しながらも、直接使う場合よりも簡潔に記述できます。
 
 この機能を使ううえで、`tokio`の非同期ランタイムを使用する点も注目です。非同期処理はRustでネットワーク通信のパフォーマンスを高めるのに役立ちます。
@@ -64,7 +58,6 @@ Body:
 実践においては、エラーハンドリングを適切に行い、失敗に備えることが重要です。例外の発生源を特定しやすくするためにも、エラーを適切にBox化することをおすすめします。
 
 ## See Also (関連情報：)
-
 - [Reqwest Crate Documentation](https://docs.rs/reqwest/)
 - [Tokio Crate Documentation](https://docs.rs/tokio/)
 - [Hyper Crate Documentation](https://docs.rs/hyper/)

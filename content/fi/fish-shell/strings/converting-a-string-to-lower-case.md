@@ -10,9 +10,6 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## What & Why?
-Mitä ja Miksi? Kääntäminen merkkijono pieniksi kirjaimiksi tarkoittaa kaikkien kirjainten muuttamista niiden pienikokoisiksi vastineiksi. Ohjelmoijat käyttävät tätä esimerkiksi syötteiden yhdenmukaistamiseen, helpottamaan vertailua ja vähentämään isot ja pienet kirjaimet huomioivat virheet.
-
 ## How to:
 Kuinka? Fish Shellillä saat merkkijonon pieniksi kirjaimiksi `string lower`-komennolla. Helppoa ja suoraviivaista. Kokeile itse:
 

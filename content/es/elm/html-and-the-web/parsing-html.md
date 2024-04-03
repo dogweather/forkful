@@ -11,9 +11,6 @@ title: Analizando HTML
 weight: 43
 ---
 
-## ¿Qué y Por Qué?
-Parsear HTML en Elm implica extraer información de documentos HTML. Los programadores lo hacen para interactuar con contenido web o APIs que retornan HTML, permitiendo la creación de aplicaciones web más interactivas y dinámicas.
-
 ## Cómo hacerlo:
 Elm no dispone de una biblioteca incorporada para parsear HTML directamente, al igual que bibliotecas en JavaScript o Python debido a su énfasis en la seguridad de tipos y la evitación de errores en tiempo de ejecución. Sin embargo, puedes utilizar solicitudes `Http` para obtener contenido y luego usar expresiones regulares o procesamiento del lado del servidor para extraer la información necesaria. Para un análisis de HTML más complejo, un enfoque común implica utilizar un servicio de backend dedicado para parsear el HTML y retornar los datos en un formato con el que Elm pueda trabajar directamente, como JSON.
 

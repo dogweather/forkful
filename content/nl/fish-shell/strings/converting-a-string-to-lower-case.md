@@ -12,12 +12,7 @@ title: Een string omzetten naar kleine letters
 weight: 4
 ---
 
-## Wat & Waarom?
-
-Het omzetten van een string naar kleine letters verandert alle letters in die string naar hun kleine lettervorm. Programmeurs doen dit voor consistentie, vergelijking, sortering of om te voldoen aan de hoofdlettergevoeligheidsvereisten van sommige systemen.
-
 ## Hoe:
-
 Met behulp van het `string` commando is tekst omzetten naar kleine letters eenvoudig. Doe gewoon:
 
 ```Fish Shell
@@ -44,7 +39,6 @@ shouty case text
 ```
 
 ## Diepgaande Duik:
-
 Voor Fish Shell gebruikten Unix-gebruikers vaak `tr '[:upper:]' '[:lower:]'` of `awk '{print tolower($0)}'`. Hoewel deze werken, zijn ze niet zo schoon of eenvoudig als de ingebouwde `string lower` functie van Fish.
 
 Fish introduceerde `string` in v2.3.0 (mei 2016), waardoor stringmanipulatie een kernonderdeel van de shell werd, in plaats van dat er externe commando's nodig waren. Dit voegde eenvoud en snelheid toe aan veelvoorkomende taken zoals hoofdletteromzetting.
@@ -52,7 +46,6 @@ Fish introduceerde `string` in v2.3.0 (mei 2016), waardoor stringmanipulatie een
 Waarom niet gewoon `tr` of `awk` gebruiken? `string lower` is ingebouwd in Fish, wat betekent dat het sneller is (er worden geen nieuwe processen gestart) en werkt op een consistente en voorspelbare manier op verschillende systemen. Het maakt ook deel uit van een breder `string` commandosuite dat andere stringbewerkingen afhandelt, wat het schrijven van scripts netter en efficiënter kan maken.
 
 ## Zie Ook:
-
 - Officiële documentatie voor `string`: https://fishshell.com/docs/current/cmds/string.html
 - Fish Shell GitHub-repository: https://github.com/fish-shell/fish-shell
 - De historische context en vergelijking van `string` versus traditionele Unix-commando's: https://github.com/fish-shell/fish-shell/issues/159

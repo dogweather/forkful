@@ -14,12 +14,7 @@ title: Gebruik van associatieve arrays
 weight: 15
 ---
 
-## Wat & Waarom?
-
-Associatieve arrays in PHP zijn als super-opgeladen lijsten waar elk element toegankelijk is met behulp van een voor mensen leesbare sleutel in plaats van alleen nummers. Programmeurs gebruiken ze om data intuïtiever op te slaan en te manipuleren, wat zorgt voor makkelijker leesbare en beter onderhoudbare code.
-
 ## Hoe te:
-
 In PHP is het creëren en gebruiken van associatieve arrays eenvoudig. Hier is een snelle uitleg:
 
 ```PHP
@@ -65,7 +60,6 @@ foreach ($persoon as $sleutel => $waarde) {
 Let op hoe sleutels elke string kunnen zijn, wat je toestaat elementen te benaderen met behulp van deze sleutels in plaats van numerieke indexen, die minder betekenisvol en moeilijker te onthouden kunnen zijn.
 
 ## Diepgaand
-
 Associatieve arrays in PHP zijn intern geïmplementeerd met behulp van hash-tabellen, die zeer snelle toegang tot elementen op sleutel bieden, waardoor ze zeer efficiënt zijn voor veel taken. Deze efficiëntie, gecombineerd met hun gebruiksgemak, maakt associatieve arrays een hoeksteen van PHP-programmering.
 
 Historisch gezien zijn PHP's arrays (zowel geïndexeerd als associatief) ongelofelijk flexibel geweest, waardoor ze konden functioneren als lijsten, stacks, wachtrijen, en meer. Echter, deze flexibiliteit kan soms leiden tot minder efficiënte code als er niet zorgvuldig mee wordt omgegaan.

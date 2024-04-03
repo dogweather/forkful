@@ -13,12 +13,7 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä & Miksi?
-
-YAML, lyhenteenä ilmaisulle YAML Ain't Markup Language, on ihmisen luettavaa tietojen sarjallistamismuotoa. Ohjelmoijat käyttävät sitä usein konfiguraatiotiedostoissa ja tietojen vaihdossa kielten välillä sen yksinkertaisuuden ja luettavuuden vuoksi verrattuna JSONiin tai XML:ään.
-
 ## Kuinka:
-
 JavaScriptissä YAMLin kanssa työskentely tapahtuu tyypillisesti käyttämällä kolmannen osapuolen kirjastoa, koska kieli ei sisällä sisäänrakennettua jäsentäjää YAMLille. Yksi suosituimmista kirjastoista tähän tarkoitukseen on `js-yaml`. Voit käyttää `js-yaml`ia jäsentämään YAMLia JavaScript-objekteiksi ja päinvastoin.
 
 Ensin sinun on asennettava `js-yaml`:

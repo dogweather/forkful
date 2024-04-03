@@ -11,9 +11,6 @@ title: Lecture d'un fichier texte
 weight: 22
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Lire un fichier texte, c'est extraire son contenu pour l'utiliser dans notre code. C'est crucial pour gérer les données configurables, les sauvegardes ou même pour traiter des logs.
-
 ## How to: (Comment faire :)
 En Kotlin, lire un fichier texte c'est simple. Voici un exemple :
 

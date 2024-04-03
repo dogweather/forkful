@@ -14,12 +14,7 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i Dlaczego?
-
-Zapisywanie do pliku tekstowego w Lua polega na utworzeniu lub otwarciu pliku w trybie do zapisu, a następnie używaniu operacji na plikach do wstawiania tekstu. Jest to podstawowa operacja dla zadań takich jak logowanie, przechowywanie danych czy zarządzanie konfiguracją, umożliwiająca programom trwałe zapisywanie danych między sesjami.
-
 ## Jak to zrobić:
-
 Praca z plikami pod kątem zapisu w Lua jest prosta. Zwykle używa się funkcji `io.open()`, aby otworzyć (lub utworzyć) plik, określając tryb działania -- w tym przypadku `"w"` dla zapisu. Jeśli plik nie istnieje, zostaje utworzony; jeśli istnieje, jego zawartość jest nadpisywana. Ważne jest, aby zamknąć plik po zapisie, aby zapewnić prawidłowe zapisanie danych i zwolnienie zasobów.
 
 Oto prosty przykład, który zapisuje ciąg znaków do pliku o nazwie "example.txt":

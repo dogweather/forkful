@@ -10,9 +10,6 @@ title: "Loggf\xF8ring"
 weight: 17
 ---
 
-## Hva & Hvorfor?
-Logging i programmeringssammenheng er prosessen med å registrere hendelser, tilstander og informasjon til en fil eller annet utgangsmedium. Programmerere logger for å holde oversikt over hva som skjer i applikasjonene sine, for å feilsøke problemer, og for å overvåke ytelse til fremtidig analyse og optimalisering.
-
 ## Hvordan:
 La oss si at du jobber på en Linux-maskin og du vil kaste loggene dine til en fil med god gammeldags C++. Du vil inkludere bibliotekene `<iostream>` og `<fstream>` for å håndtere filoperasjoner. Her er et raskt eksempel:
 

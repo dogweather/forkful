@@ -11,9 +11,6 @@ title: Recherche et remplacement de texte
 weight: 10
 ---
 
-## What & Why?
-Rechercher et remplacer du texte, c'est comme jouer à cache-cache avec des mots pour les troquer contre d'autres. Les programmeurs le font pour corriger des erreurs, mettre à jour des données ou transformer du code.
-
 ## How to:
 ```Clojure
 ;; Recherche et remplacement simple avec `clojure.string/replace`

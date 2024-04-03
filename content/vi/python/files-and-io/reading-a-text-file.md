@@ -16,9 +16,6 @@ title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---
 
-## Gì & Tại sao?
-Đọc một tệp văn bản trong Python là việc lấy dữ liệu từ một tệp có sẵn trên đĩa của bạn hoặc qua mạng. Các lập trình viên đọc tệp để sử dụng dữ liệu lưu trữ (như cấu hình, đầu vào của người dùng, nhật ký, v.v.) trong ứng dụng của họ.
-
 ## Cách thực hiện:
 ```python
 # Đọc toàn bộ tệp một lần

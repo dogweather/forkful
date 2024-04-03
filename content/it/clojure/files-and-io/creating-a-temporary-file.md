@@ -11,9 +11,6 @@ title: Creazione di un file temporaneo
 weight: 21
 ---
 
-## What & Why?
-Creare un file temporaneo significa generare un file destinato a essere usato per poco tempo, spesso come spazio di lavoro temporaneo o per evitare modifiche dirette ai dati originali. I programmatori lo fanno per gestire i dati in maniera sicura, per testare, o per manipolare i dati senza rischi.
-
 ## How to:
 In Clojure, creiamo file temporanei usando la libreria `java.io.File` nativa di Java. Guarda:
 

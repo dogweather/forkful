@@ -14,12 +14,7 @@ title: Code organiseren in functies
 weight: 18
 ---
 
-## Wat & Waarom?
-
-Code organiseren in functies gaat over het structureren van je Google Apps Script code door logische segmenten te scheiden in duidelijke blokken, elk met een specifieke taak. Programmeurs doen dit om de leesbaarheid, onderhoudbaarheid en herbruikbaarheid van code te verbeteren, ervoor zorgend dat complexe scripts makkelijker te begrijpen en debuggen zijn.
-
 ## Hoe te:
-
 In Google Apps Script, dat gebaseerd is op JavaScript, definieer je functies met het trefwoord `function`, gevolgd door een unieke functienaam, haakjes `()` die parameters kunnen bevatten, en accolades `{}` die het codeblok van de functie omsluiten. Hier is een basisvoorbeeld:
 
 ```javascript
@@ -68,7 +63,6 @@ populateSheet(salesData);
 In dit voorbeeld bereidt `setupSheet` het blad voor, en `populateSheet` neemt een array van verkoopgegevens om het blad te vullen. Deze zorgen scheiden maakt de code schoner en meer aanpasbaar aan veranderingen.
 
 ## Diepgaande Duik
-
 Het concept van het verdelen van code in functies is niet nieuw of uniek voor Google Apps Script; het is een fundamentele programmeerpraktijk die in bijna alle programmeertalen wordt geadviseerd. Historisch gezien zijn functies geëvolueerd vanuit het wiskundige concept van het afbeelden van invoer naar uitvoer, wat een hoeksteen werd in gestructureerd programmeren. Deze benadering bevordert modulariteit en codehergebruik, en biedt duidelijke paden voor het testen van individuele delen van het script.
 
 Google Apps Script, gebaseerd op JavaScript, profiteert aanzienlijk van JavaScript's eersteklas functies, waardoor functies als argumenten doorgegeven kunnen worden, geretourneerd vanuit andere functies, en toegewezen aan variabelen. Deze functie opent geavanceerde patronen zoals callbacks en functioneel programmeren, hoewel deze patronen complexiteit kunnen introduceren die onnodig kan zijn voor eenvoudige automatiseringstaken in Google Apps Script.

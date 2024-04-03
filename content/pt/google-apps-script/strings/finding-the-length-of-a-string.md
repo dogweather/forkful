@@ -14,9 +14,6 @@ title: Encontrando o comprimento de uma string
 weight: 7
 ---
 
-## O Que & Por Que?
-Encontrar o comprimento de uma string no Google Apps Script, uma linguagem de scripting em nuvem JavaScript que permite automatizar tarefas em produtos do Google, trata-se de determinar o número de caracteres que uma string contém. Programadores frequentemente realizam essa operação para verificar entrada de dados, percorrer caracteres ou manipular strings para várias tarefas de automação dentro dos Apps do Google.
-
 ## Como fazer:
 No Google Apps Script, você pode encontrar o comprimento de uma string usando a propriedade `.length`, similar ao JavaScript. Esta propriedade retorna o número de caracteres dentro da string, incluindo espaços e caracteres especiais. Aqui estão alguns exemplos:
 

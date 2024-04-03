@@ -11,9 +11,6 @@ title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---
 
-## What & Why?
-Długość ciągu znaków – to ile znaków zawiera. Programiści muszą to wiedzieć, aby np. weryfikować dane wejściowe czy obsługiwać teksty o zmiennej długości.
-
 ## How to:
 W Elm używa się funkcji `String.length` do uzyskania długości ciągu znaków. Oto przykład:
 

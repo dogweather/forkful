@@ -12,12 +12,7 @@ title: Scrivere test
 weight: 36
 ---
 
-## Cosa & Perché?
-
-Scrivere test in Go comporta la creazione di piccoli frammenti di codice gestibili che validano la funzionalità e il comportamento della tua applicazione. I programmatori scrivono test per assicurarsi che il loro codice funzioni come previsto in varie condizioni, per facilitare il refactoring e per aiutare a prevenire regressioni.
-
 ## Come fare:
-
 In Go, i test sono tipicamente scritti nello stesso pacchetto del codice che testano. I file contenenti i test sono nominati con il suffisso `_test.go`. I test sono funzioni che prendono un puntatore all'oggetto testing.T (dal pacchetto `testing`) come argomento, e segnalano il fallimento chiamando metodi come `t.Fail()`, `t.Errorf()`, ecc.
 
 Esempio di un semplice test per la funzione `Add` definita in `math.go`:
@@ -79,7 +74,6 @@ func TestAddTableDriven(t *testing.T) {
 ```
 
 ## Approfondimenti
-
 Il framework di test di Go, introdotto in Go 1 insieme al linguaggio stesso, è stato progettato per integrarsi perfettamente con la toolchain di Go, riflettendo l'accento di Go sulla semplicità ed efficienza nello sviluppo software. A differenza di alcuni framework di test in altri linguaggi che si basano su librerie esterne o configurazioni complesse, il pacchetto `testing` integrato in Go offre un modo diretto per scrivere ed eseguire test.
 
 Un aspetto interessante dell'approccio di Go al testing è il principio di convenzione rispetto alla configurazione che adotta, come il pattern di denominazione dei file (`_test.go`) e l'uso delle funzionalità della libreria standard rispetto alle dipendenze esterne. Questo approccio minimalista incoraggia gli sviluppatori a scrivere test, poiché la barriera all'ingresso è bassa.

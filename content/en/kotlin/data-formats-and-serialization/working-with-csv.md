@@ -10,16 +10,10 @@ title: Working with CSV
 weight: 37
 ---
 
-## What & Why?
-
-Working with CSV (Comma-Separated Values) involves reading from and writing data to CSV files, a common format for storing tabular data in plain text. Programmers manipulate CSV files to easily exchange data between different applications, databases, or to facilitate data processing and analysis tasks.
-
 ## How to:
-
 Kotlin, being a statically typed programming language that runs on the JVM, does not include a built-in library for handling CSV files. However, you can use the Java `BufferedReader` and `FileWriter` classes for basic operations, or leverage popular third-party libraries like `kotlinx.serialization` and `opencsv` for more advanced functionality.
 
 ### Reading a CSV file using BufferedReader:
-
 ```kotlin
 import java.io.BufferedReader
 import java.io.FileReader
@@ -45,7 +39,6 @@ _Sample output:_
 ```
 
 ### Writing to a CSV file using FileWriter:
-
 ```kotlin
 import java.io.FileWriter
 
@@ -67,7 +60,6 @@ fun main() {
 This will create or overwrite `output.csv` with the provided data.
 
 ### Using kotlinx.serialization for CSV serialization:
-
 First, add the dependency to your `build.gradle.kts`:
 
 ```kotlin
@@ -106,7 +98,6 @@ Jane Smith,25,London
 ```
 
 ### Using OpenCSV for advanced operations:
-
 Add OpenCSV to your project's dependencies:
 
 ```kotlin

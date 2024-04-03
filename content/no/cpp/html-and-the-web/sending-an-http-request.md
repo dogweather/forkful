@@ -11,9 +11,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel betyr å be en webserver om data eller handlinger. Programmerere gjør dette for å integrere nettressurser, hente informasjon, eller samhandle med andre tjenester.
-
 ## Hvordan gjøre det:
 C++ har ingen innebygd HTTP-støtte, så vi må bruke et bibliotek. `Curl` er et populært valg. Her er en grunnleggende kode for å sende en GET-forespørsel:
 

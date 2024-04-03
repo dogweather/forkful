@@ -11,9 +11,6 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O Que & Porquê?
-Refactoring é o processo de reestruturação do código de computador existente—mudando a fatoração—sem alterar seu comportamento externo. Programadores fazem isso para melhorar atributos não funcionais do software, melhorando a legibilidade, reduzindo a complexidade e tornando o código mais fácil de manter para futuras empreitadas.
-
 ## Como fazer:
 Vamos pegar uma classe Java simples que está clamando por refactoring devido a sua má organização e falta de clareza.
 

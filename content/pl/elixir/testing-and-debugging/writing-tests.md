@@ -13,9 +13,6 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i dlaczego?
-Pisanie testów w Elixirze polega na tworzeniu zautomatyzowanych skryptów w celu weryfikacji zachowania Twojego kodu. Programiści robią to, aby zapewnić jakość, zapobiec regresji i ułatwić refaktoryzację kodu, czyniąc proces rozwoju bardziej niezawodnym i efektywnym.
-
 ## Jak to zrobić:
 Elixir używa ExUnit jako wbudowanego frameworka do testów, który jest niezwykle potężny i łatwy w użyciu. Oto podstawowy przykład:
 

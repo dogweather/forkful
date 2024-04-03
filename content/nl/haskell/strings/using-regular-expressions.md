@@ -12,9 +12,6 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-Reguliere expressies (regex) zoeken en manipuleren teksten op basis van patronen. Programmeurs gebruiken ze voor taken zoals formulier validatie, parsing, en tekstbewerking omdat ze krachtig en bondig zijn.
-
 ## Hoe te gebruiken:
 In Haskell kun je regex gebruiken met het `regex-tdfa` pakket. Hier pakken we getallen uit een tekst.
 

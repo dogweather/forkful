@@ -11,9 +11,6 @@ title: "Koodin uudelleenj\xE4rjestely"
 weight: 19
 ---
 
-## Mitä & Miksi?
-Koodin refaktorointi on prosessi, jossa koodia muokataan siten, että sen ulkoinen toiminta ei muutu. Kyse on koodin siistimisestä ja järjestämisestä, jotta koodi olisi helpompi lukea, ylläpitää ja laajentaa. Se voi myös auttaa korjaamaan bugeja ja parantamaan suorituskykyä.
-
 ## Miten:
 Oletetaan, että sinulla on pätkä Haskell-koodia, joka toistaa itseään enemmän kuin lempikappaleesi. Tässä on nopea katsaus siihen, miten voisit refaktoroida sitä funktioiden avulla.
 

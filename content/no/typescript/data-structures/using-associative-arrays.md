@@ -13,12 +13,7 @@ title: Bruke associative tabeller
 weight: 15
 ---
 
-## Hva & Hvorfor?
-
-Assosiative arrays, eller objekter i TypeScript, lar deg bruke strenger (eller nøkler) for å få tilgang til verdi-par. Programmerere bruker dem for mer dynamiske datatilgangsmønstre sammenlignet med tradisjonelle arrays, noe som gir en fleksibel måte å strukturere og få tilgang til data på uten å være knyttet til numeriske indekser.
-
 ## Hvordan:
-
 Å opprette og bruke assosiative arrays i TypeScript er enkelt. Her er en grunnleggende gjennomgang:
 
 ```TypeScript
@@ -70,7 +65,6 @@ Utdata:
 ```
 
 ## Dypdykk
-
 I TypeScript er det vi refererer til som assosiative arrays egentlig objekter. Historisk sett, i språk som PHP, er assosiative arrays en grunnleggende type, men JavaScript (og ved forlengelse, TypeScript) bruker objekter for dette formålet. Denne tilnærmingen er både en styrke og en begrensning. Objekter gir en svært dynamisk struktur for å assosiere strenger til verdier, men de er ikke ment å bli brukt som 'arrays' i tradisjonell forstand. For eksempel kan du ikke bruke array-metoder som `push` eller `pop` direkte på disse objektene.
 
 For tilfeller hvor du trenger ordnede samlinger av nøkkel-verdi-par med array-lignende operasjoner, tilbyr TypeScript (og moderne JavaScript) `Map`-objektet:

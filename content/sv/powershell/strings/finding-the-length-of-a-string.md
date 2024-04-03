@@ -11,9 +11,6 @@ title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---
 
-## Vad & Varför?
-Hitta stränglängd innebär att räkna antalet tecken i en sträng. Programmerare gör detta för att validera indata, hantera textdata och optimera prestanda.
-
 ## Så här gör du:
 Här är ett enkelt exempel på hur du hittar en strängs längd i PowerShell:
 

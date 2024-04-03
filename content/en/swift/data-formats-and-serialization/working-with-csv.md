@@ -12,12 +12,7 @@ title: Working with CSV
 weight: 37
 ---
 
-## What & Why?
-
-Working with CSV (Comma-Separated Values) files involves parsing and generating structured data from text files where each line represents a record and each record consists of fields separated by commas. Programmers often engage in this activity to easily import, export, and manipulate tabular data using a format that is widely supported across different platforms and programming languages, due to its simplicity and human-readable format.
-
 ## How to:
-
 In Swift, there isn't native support for parsing CSV files directly, but you can handle CSV data by using the `String` methods to split the contents, or by leveraging third-party libraries such as SwiftCSV for a more streamlined approach. Here are both methods:
 
 ### Manual Parsing without External Libraries

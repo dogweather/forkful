@@ -11,9 +11,6 @@ title: Sammenlikning av to datoer
 weight: 27
 ---
 
-## Hva & Hvorfor?
-Sammenligne to datoer handler om å finne ut hvilken som er tidligst eller om de er like. Programmerere trenger å gjøre dette for å sortere eventer, håndtere utløpsdatoer, eller spore tidslinjer.
-
 ## Hvordan:
 ```Python
 from datetime import date

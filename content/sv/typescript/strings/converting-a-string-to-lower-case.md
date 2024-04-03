@@ -11,9 +11,6 @@ title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---
 
-## Vad & Varför?
-Att konvertera en sträng till gemener innebär att omvandla alla stora bokstäver till små i en given text. Programmerare gör det för att standardisera data, förbättra sökbarheten eller möjliggöra jämförelser oberoende av skiftläge.
-
 ## Hur gör man:
 ```TypeScript
 let greeting: string = "Hej Världen!";

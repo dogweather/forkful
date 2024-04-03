@@ -11,9 +11,6 @@ title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---
 
-## ¿Qué y Por Qué?
-Los números complejos amplían la idea de las líneas numéricas unidimensionales a un plano complejo bidimensional. Los programadores los utilizan en campos como ingeniería, física y gráficos para cálculos que requieren dos componentes, como señales o rotaciones.
-
 ## Cómo hacerlo:
 En Fish, manejamos números complejos usando `math` con partes reales e imaginarias. Aquí tienes un inicio:
 

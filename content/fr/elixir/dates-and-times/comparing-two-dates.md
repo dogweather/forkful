@@ -11,9 +11,6 @@ title: Comparer deux dates
 weight: 27
 ---
 
-## Quoi et Pourquoi ?
-Comparer deux dates, c'est mesurer leur écart ou vérifier leur ordre chronologique. On fait ça pour planifier des événements, calculer des délais ou valider des périodes.
-
 ## Comment faire :
 ```elixir
 # On utilise NaiveDateTime pour des dates sans fuseau horaire

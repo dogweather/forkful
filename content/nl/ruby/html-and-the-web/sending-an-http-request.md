@@ -12,11 +12,7 @@ title: Een HTTP-verzoek verzenden
 weight: 44
 ---
 
-## Wat & Waarom?
-Een HTTP-verzoek verzenden betekent dat je data opvraagt van een bron op het web. Programmeurs doen dit om te communiceren met API's, webinhoud te schrapen of om met servers te praten.
-
 ## Hoe te:
-
 Ruby maakt het vrij eenvoudig om HTTP-verzoeken te verzenden. Hier is de snelste manier met de standaardbibliotheek Net::HTTP.
 
 ```Ruby
@@ -44,7 +40,6 @@ puts res.body
 Dit verzendt een POST-verzoek met data en toont de reactie.
 
 ## Diepgaand:
-
 In het verleden was het verzenden van HTTP-verzoeken omslachtiger, en moest je mogelijk een gem zoals `HTTParty` gebruiken. Maar Ruby's ingebouwde `Net::HTTP` bibliotheek is enorm verbeterd. Het ondersteunt nu de meeste dingen die je nodig zult hebben.
 
 Maar, `Net::HTTP` kan langdradig zijn. Als je project meer HTTP-functies of syntactische suiker nodig heeft, zijn `HTTParty` of `Faraday` geweldige alternatieven. Deze gems bieden een meer expressieve API en kunnen complexere scenario's aan zoals middleware of verschillende adapters.
@@ -63,7 +58,6 @@ puts response.body
 Dit doet hetzelfde als `Net::HTTP.get`, maar met minder configuratie.
 
 ## Zie ook:
-
 Voor meer gedetailleerde info zijn de documenten van Ruby erg behulpzaam:
 - Net::HTTP: https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/Net/HTTP.html
 - HTTParty: https://github.com/jnunemaker/httparty

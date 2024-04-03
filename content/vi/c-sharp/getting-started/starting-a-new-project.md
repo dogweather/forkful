@@ -17,9 +17,6 @@ title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---
 
-## Cái gì & Tại sao?
-Bắt đầu một dự án C# mới có nghĩa là thiết lập một giải pháp mới từ đầu và các tập tin dự án để cấu trúc mã của bạn. Lập trình viên bắt đầu những dự án mới để biến ý tưởng thành phần mềm, giải quyết vấn đề, hoặc khám phá công nghệ.
-
 ## Cách thực hiện:
 Hãy lăn tay áo lên và bắt tay vào công việc với một số mã lệnh. Giả sử bạn đã có .NET 6 hoặc phiên bản mới hơn - đó là phiên bản mới nhất tại thời điểm viết. Bạn sẽ sử dụng .NET CLI cho việc này.
 

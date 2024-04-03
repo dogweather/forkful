@@ -10,9 +10,6 @@ title: Vergleich von zwei Daten
 weight: 27
 ---
 
-## Was & Warum?
-Das Vergleichen von zwei Daten bedeutet, sie hinsichtlich ihrer zeitlichen Reihenfolge zu prüfen. Programmierer machen das, um Zeitabschnitte zu berechnen, Fristen zu überwachen oder Chronologien zu ermitteln.
-
 ## So geht's:
 In Fish nutzt man oft `date`, um mit Daten zu hantieren. Hier ein schneller Weg, um zwei Daten zu vergleichen:
 

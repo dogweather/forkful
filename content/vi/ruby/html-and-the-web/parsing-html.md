@@ -15,9 +15,6 @@ title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---
 
-## Cái gì & Tại sao?
-Phân tích cú pháp HTML có nghĩa là phân tách một khối mã HTML để hiểu rõ cấu trúc và nội dung của nó. Các lập trình viên thực hiện điều này để trích xuất dữ liệu, thao túng nội dung, hoặc chuyển đổi thông tin giữa các định dạng và hệ thống.
-
 ## Cách thực hiện:
 Để phân tích cú pháp HTML trong Ruby, hãy cài đặt gem 'Nokogiri' bằng câu lệnh `gem install nokogiri`. Nokogiri giống như một công cụ đa năng cho việc làm việc với HTML và XML trong Ruby. Dưới đây là một ví dụ nhanh:
 

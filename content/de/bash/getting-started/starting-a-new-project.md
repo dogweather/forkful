@@ -10,9 +10,6 @@ title: Einen neuen Projekt starten
 weight: 1
 ---
 
-## Was & Warum?
-Ein neues Projekt zu starten bedeutet, eine frische Codebasis zu erschaffen, um deine brillanten Ideen Wirklichkeit werden zu lassen. Programmierer beginnen neue Projekte, um Probleme zu lösen, Neues zu lernen oder bestehende Werkzeuge zu verbessern.
-
 ## How to:
 Einen neuen Projektordner erstellen und reinwechseln:
 ```Bash
@@ -37,6 +34,7 @@ Füge alle Dateien hinzu und mache deinen ersten Commit:
 git add .
 git commit -m "Initialer Projektcommit"
 ```
+
 ## Deep Dive
 Projekte zu starten ist fast so alt wie das Programmieren selbst. Früher, als es noch keinen Git gab, haben Programmierer Backup-Kopien ihrer Codebasen manuell erstellt. Heute nutzen wir Versionskontrollsysteme wie Git, um den Fortschritt zu sichern und zu teilen.
 

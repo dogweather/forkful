@@ -20,11 +20,7 @@ title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 weight: 38
 ---
 
-## 什么 & 为什么？
-在Elm中处理JSON关乎于将JSON数据解码为Elm类型以及将Elm值编码回JSON。这一过程对于网络应用程序与API和外部数据源交互至关重要，允许在客户端（Elm）与服务器或其他服务之间无缝地交换数据。
-
 ## 如何操作：
-
 Elm对JSON处理的态度是明确和安全的，主要使用`Json.Decode`和`Json.Encode`模块。开始处理JSON之前，你首先需要为你的数据类型定义一个解码器。假设我们正在处理一个简单的用户资料对象。
 
 首先，定义你的Elm类型：
@@ -38,7 +34,6 @@ type alias UserProfile =
 ```
 
 ### 将JSON解码为Elm
-
 要将JSON字符串解码为`UserProfile`类型，创建一个解码器：
 
 ```elm
@@ -71,7 +66,6 @@ Result.Ok { id = 1, name = "John Doe", email = "john@example.com" }
 ```
 
 ### 将Elm编码为JSON
-
 要将Elm值编码回JSON，利用`Json.Encode`模块。
 
 ```elm
@@ -96,7 +90,6 @@ encodeUserProfile { id = 1, name = "John Doe", email = "john@example.com" }
 ```
 
 ### 第三方库
-
 像`elm-json-decode-pipeline`这样的Elm包可以通过管道风格简化解码器的创建，这对解码复杂对象特别有用。
 
 首先，将库添加到您的项目中：

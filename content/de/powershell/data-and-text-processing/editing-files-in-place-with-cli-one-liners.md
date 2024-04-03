@@ -11,14 +11,10 @@ title: Bearbeiten von Dateien im Place mit CLI-Einzeilern
 weight: 32
 ---
 
-## Was & Warum?
-
-Dateien direkt über die CLI (Command Line Interface) mit Einzeilern in PowerShell zu bearbeiten, bedeutet, direkte Änderungen an Dateien von der Kommandozeile aus vorzunehmen, ohne sie in einem Editor öffnen zu müssen. Dieser Ansatz spart Zeit und kann besonders nützlich für die Stapelverarbeitung oder die Automatisierung von wiederkehrenden Bearbeitungsaufgaben über mehrere Dateien hinweg sein.
-
 ## Wie geht das:
 
-### Text in einer einzelnen Datei ersetzen
 
+### Text in einer einzelnen Datei ersetzen
 Beginnen wir mit einer einfachen Aufgabe: Sie möchten alle Instanzen von "oldtext" durch "newtext" in einer Datei namens example.txt ersetzen. So würde man das machen:
 
 ```PowerShell
@@ -28,7 +24,6 @@ Beginnen wir mit einer einfachen Aufgabe: Sie möchten alle Instanzen von "oldte
 Dieser Einzeiler liest den Inhalt, führt die Ersetzung durch und schreibt den Inhalt zurück in die Originaldatei.
 
 ### Mehrere Dateien bearbeiten
-
 Was ist, wenn Sie dieselbe Änderung über mehrere Dateien hinweg vornehmen müssen? Hier ist ein Ansatz mit einer Schleife:
 
 ```PowerShell
@@ -40,7 +35,6 @@ Get-ChildItem *.txt | ForEach-Object {
 Dieses Snippet findet alle `.txt` Dateien im aktuellen Verzeichnis und ersetzt in jeder "oldtext" durch "newtext".
 
 ### Inhalt am Anfang oder Ende von Dateien hinzufügen
-
 Das Anhängen oder Voranstellen von Inhalten kann ebenfalls vereinfacht werden:
 
 ```PowerShell
@@ -54,7 +48,6 @@ Das Anhängen oder Voranstellen von Inhalten kann ebenfalls vereinfacht werden:
 Hier konkatenieren wir einfach den neuen Inhalt vor oder nach dem bestehenden Inhalt und speichern ihn zurück.
 
 ## Tiefere Einblicke
-
 Historisch gesehen wird die in-place-Bearbeitung eher mit Unix-Tools wie `sed` und `awk` in Verbindung gebracht. PowerShell, als relativ neuer Akteur, enthält nicht standardmäßig eine dedizierte Funktion zur in-place-Bearbeitung. Dies ist teilweise auf seine Designphilosophie zurückzuführen, die die Bedeutung von Objekten über Textströme hervorhebt, im Gegensatz zu Unix-Tools, die die meisten Eingaben als Text behandeln.
 
 Alternativen zu PowerShell für diese Aufgabe umfassen die Verwendung traditioneller Unix-Tools, die durch Cygwin oder das Windows-Subsystem für Linux (WSL) auf Windows verfügbar sind. Diese Tools bieten oft eine prägnantere Syntax für die in-place-Bearbeitung aufgrund ihres textzentrierten Designs.

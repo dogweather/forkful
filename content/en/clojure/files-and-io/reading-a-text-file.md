@@ -10,12 +10,7 @@ title: Reading a text file
 weight: 22
 ---
 
-## What & Why?
-
-Reading a text file means getting data from a file stored on your disk into your program. Programmers do this to process or analyze content without manual input, automate tasks, or parse configuration data.
-
 ## How to:
-
 ```Clojure
 ;; Read entire file as string
 (slurp "example.txt")
@@ -34,7 +29,6 @@ Reading a text file means getting data from a file stored on your disk into your
 ```
 
 ## Deep Dive
-
 Traditionally, reading files in programming languages was a verbose task with many steps to handle errors and resources. In Clojure, you benefit from the `slurp` function, an elegant one-liner to grab the whole file's content. For line-by-line reading, `line-seq` coupled with `with-open` ensures efficient and safe file handling. It's also worth mentioning that while `slurp` is handy, it's not ideal for large files due to memory constraints. That's when `line-seq` shines, as it reads the file lazily, one line at a time.
 
 Alternatives for reading files in Clojure include using the `clojure.java.io/file` with functions like `reader` and constructs like `with-open` to manage the file handle manually. The trade-off here is between ease of use (`slurp`) and fine-grained control combined with resource safety (`with-open` and `reader`).
@@ -42,7 +36,6 @@ Alternatives for reading files in Clojure include using the `clojure.java.io/fil
 Implementation-wise, Clojure's approach is grounded in Java's IO classes, therefore when you're dealing with files in Clojure, you're dealing with Java's mature, well-tested libraries, wrapped in a functional idiom. Always keep an eye on resources: open files consume handles and memory, so clean file handling is a neat habit.
 
 ## See Also
-
 - ClojureDocs for `slurp`: https://clojuredocs.org/clojure.core/slurp
 - ClojureDocs for `line-seq`: https://clojuredocs.org/clojure.core/line-seq
 - Java interop in Clojure: https://clojure.org/reference/java_interop

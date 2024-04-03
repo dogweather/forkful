@@ -14,12 +14,7 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mitä & Miksi?
-
-Testien kirjoittaminen Dartissa sisältää testitapausten luomisen, joiden avulla automaattisesti varmistetaan, että ohjelman eri osat toimivat odotetusti. Ohjelmoijat tekevät tämän varmistaakseen, että heidän koodinsa on luotettavaa ja vapaa puutteista, mikä helpottaa päivityksiä ja refaktorointia estäen samalla regressiot.
-
 ## Kuinka:
-
 Dartissa `test`-pakettia käytetään yleisesti testien kirjoittamiseen. Lisää ensin `test`-paketti `pubspec.yaml`-tiedostoosi:
 
 ```yaml
@@ -62,7 +57,6 @@ Esimerkkitulostus voi näyttää tältä:
 ```
 
 ### Kolmannen osapuolen kirjaston käyttö: Mockito mock-olioiden luomiseen
-
 Monimutkaisten riippuvuuksien koodin testaamisessa saatat käyttää Mockitoa mock-olioiden luomiseen. Lisää ensin Mockito `pubspec.yaml`-tiedostoosi:
 
 ```yaml

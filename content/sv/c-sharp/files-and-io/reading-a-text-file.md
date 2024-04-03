@@ -11,9 +11,6 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## Vad & Varför?
-Att läsa en textfil innebär att man hämtar data från en fil som är lagrad på disk i textformat. Programmerare gör detta för att till exempel ladda konfigurationer, bearbeta användardata eller läsa innehållet för att visa det.
-
 ## Hur gör man:
 ```C#
 using System;

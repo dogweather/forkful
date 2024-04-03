@@ -12,9 +12,6 @@ title: Werken met XML
 weight: 40
 ---
 
-## Wat & Waarom?
-XML, de afkorting voor eXtensible Markup Language, is zoals de breedsprakige neef van JSON. Je zult met XML worstelen wanneer je te maken hebt met legacy systemen, bedrijfssoftware, of API's die de overstap naar JSON niet hebben gemaakt. XML is essentieel voor gegevensuitwisseling waar het zijn grond behoudt.
-
 ## Hoe te:
 In Rust kun je met XML omgaan met crates zoals `xml-rs`. Installeer door `xml-rs = "0.8"` toe te voegen aan je `Cargo.toml`. Hier is hoe je een eenvoudige XML kunt parsen:
 

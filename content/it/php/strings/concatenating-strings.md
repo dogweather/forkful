@@ -9,9 +9,6 @@ title: Concatenazione di stringhe
 weight: 3
 ---
 
-## What & Why? (Cosa e Perché?)
-Concatenare stringhe significa unire due o più testi in uno. I programmatori lo fanno per costruire dinamicamente messaggi, SQL query, URL, ecc.
-
 ## How to (Come Fare)
 ```PHP
 // Concatenazione con l'operatore punto

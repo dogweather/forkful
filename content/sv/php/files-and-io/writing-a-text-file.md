@@ -13,9 +13,6 @@ title: Att skriva en textfil
 weight: 24
 ---
 
-## Vad & Varför?
-Att skriva en textfil i PHP innebär att skapa eller öppna en fil och infoga innehåll i den. Programmerare gör detta för att bevara data, som användargenererat innehåll eller loggar, bortom programmets livscykel.
-
 ## Hur man gör:
 PHP stöder nativt filskrivning genom funktioner som `file_put_contents`, `fopen` tillsammans med `fwrite` och `fclose`. Så här använder du dem:
 

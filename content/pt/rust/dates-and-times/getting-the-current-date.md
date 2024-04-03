@@ -14,11 +14,8 @@ title: Obtendo a data atual
 weight: 29
 ---
 
-## O quê & Por quê?
-
-Recuperar a data atual em Rust é uma tarefa comum para atividades como registro (logging), operações baseadas em tempo, ou simplesmente para exibir a data. Ao contrário de algumas linguagens que incluem funcionalidades de data e hora em sua biblioteca padrão, o Rust incentiva o uso de uma biblioteca de terceiros robusta, chrono, para manipulação abrangente de data e hora devido à sua funcionalidade superior e facilidade de uso.
-
 ## Como fazer:
+
 
 ### Usando a Biblioteca Padrão do Rust
 A biblioteca padrão do Rust oferece uma maneira limitada, mas rápida, de obter o horário atual, embora não diretamente a data atual em um formato calendário. Veja como fazer isso:

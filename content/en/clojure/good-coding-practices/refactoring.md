@@ -10,12 +10,7 @@ title: Refactoring
 weight: 19
 ---
 
-## What & Why?
-
-Refactoring is the process of restructuring existing computer code without changing its external behavior, aimed at improving nonfunctional attributes. Programmers refactor to make their code cleaner, more efficient, and easier to maintain, effectively enhancing the readability and reducing the complexity of their software.
-
 ## How to:
-
 Refactoring in Clojure—thanks to its clean syntax and functional paradigm—can be incredibly straightforward. Let's tackle a common scenario: iterating over collections. You might start with a `for` loop, like so:
 
 ```clojure
@@ -38,7 +33,6 @@ Calling `(old-way)` will give us 55, the sum from 1 to 10. But, hey, we can refa
 This refactored `(new-way)` function uses threading macros to pass the range directly into `reduce`, trimming the excess fat.
 
 ## Deep Dive
-
 The art of refactoring has its roots in the early days of software development but really gained traction with Martin Fowler's seminal book "Refactoring: Improving the Design of Existing Code" published in 1999. In Clojure, refactoring often leans on functional programming principles, favoring pure functions and immutable data structures.
 
 Alternatives to manual refactoring in Clojure could include using tools like Cursive, a popular IntelliJ IDEA plugin, that offers automated refactors specific to Clojure. There's also clj-refactor, an Emacs package for Clojure, providing a suite of refactoring functions.
@@ -46,7 +40,6 @@ Alternatives to manual refactoring in Clojure could include using tools like Cur
 A challenge peculiar to refactoring in Clojure is dealing with state and side-effects in a principally immutable and side-effect free paradigm. Careful use of atoms, refs, agents, and transients are pivotal in maintaining both performance and correctness during refactorings.
 
 ## See Also
-
 - Martin Fowler's "Refactoring: Improving the Design of Existing Code" for the foundational concepts.
 - [Clojure Docs](https://clojuredocs.org/) for specific examples of idiomatic Clojure code.
 - [clj-refactor](https://github.com/clojure-emacs/clj-refactor.el) for refactoring automation in Emacs.

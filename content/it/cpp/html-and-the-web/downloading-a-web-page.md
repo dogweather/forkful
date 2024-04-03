@@ -10,9 +10,6 @@ title: Scaricare una pagina web
 weight: 42
 ---
 
-## What & Why? (Cosa e Perché?)
-Scaricare una pagina web significa raccogliere dati da Internet direttamente nel tuo programma. I programmatori lo fanno per analizzare contenuti, raccogliere dati o interagire con servizi online.
-
 ## How to: (Come fare:)
 ```C++
 #include <iostream>

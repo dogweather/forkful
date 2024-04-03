@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## What & Why? - Mitä ja Miksi?
-HTTP-pyyntöjen lähettäminen on tapa kommunikoida verkkopalveluiden kanssa. Koodarit tekevät tämän hakeakseen tietoja tai lähettääkseen niitä, ja usein tämä tapahtuu web APIen kautta.
-
 ## How to: - Kuinka tehdä:
 C# tekee HTTP-pyyntöjen lähettämisestä suoraviivaista käyttämällä `HttpClient`-luokkaa. Tässä lyhyt demo:
 

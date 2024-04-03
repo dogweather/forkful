@@ -13,12 +13,7 @@ title: "Refactorizaci\xF3n"
 weight: 19
 ---
 
-## ¿Qué y Por Qué?
-
-Refactorizar en la programación implica reestructurar el código informático existente—cambiando el factoreo—sin alterar su comportamiento externo. Los programadores llevan a cabo este proceso para mejorar la legibilidad del código, reducir la complejidad y aumentar la mantenibilidad, haciendo finalmente el software más fácil de entender y modificar.
-
 ## Cómo hacerlo:
-
 En Go, la refactorización puede variar desde ajustes simples en el código hasta cambios más complejos. Comencemos con un ejemplo básico: simplificar una función inicial de Go para mejorar la legibilidad y eficiencia.
 
 **Antes de la Refactorización:**
@@ -121,7 +116,6 @@ func main() {
 Refactorizar para usar una interfaz (`Logger`) en lugar de un tipo concreto (`ConsoleLogger`) mejora la flexibilidad de la función y desacopla el procesamiento de datos de la implementación específica de registro.
 
 ## Estudio en Profundidad
-
 Refactorizar en Go debe equilibrar la simplicidad (una de las filosofías centrales de Go) con la flexibilidad necesaria en proyectos de software grandes. Dado el enfoque minimalista de Go en características—sin genéricos (hasta hace poco) y con un fuerte énfasis en la legibilidad—, el lenguaje guía naturalmente a los desarrolladores hacia estructuras de código más simples y mantenibles. Sin embargo, esto no significa que el código de Go no se beneficie de la refactorización; significa que la refactorización siempre debe priorizar la claridad y la simplicidad.
 
 Históricamente, la falta de ciertas características en Go (por ejemplo, los genéricos antes de Go 1.18) llevó a soluciones creativas pero a veces enrevesadas para la reutilización del código y la flexibilidad, haciendo de la refactorización para la abstracción una práctica común. Con la introducción de los genéricos en Go 1.18, los desarrolladores de Go ahora están refactorizando el código legado para aprovechar esta característica para una mejor seguridad de tipo y reutilización del código, demostrando la naturaleza evolutiva de las prácticas de refactorización en Go.

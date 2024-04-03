@@ -11,9 +11,6 @@ title: Merkkijonojen osien poimiminen
 weight: 6
 ---
 
-## What & Why? (Mitä & Miksi?)
-Substringien poiminta tarkoittaa isomman merkkijonon sisältä tietyn osan irrottamista. Ohjelmoijat tekevät tätä, koska usein tarvitaan vain jonkin tiedon palanen, esimerkiksi käyttäjänimi tai tiedostopääte.
-
 ## How to: (Kuinka tehdään:)
 ```Ruby
 # Oletusmerkkijono
@@ -40,7 +37,7 @@ puts substringi  # eiMa
 ## Deep Dive (Sukellus syvemmälle):
 Substringien poiminta Rubyssä on helppoa ja joustavaa, ja se on ollut kielen ominaisuus jo ensiversioista lähtien. Historiallisesti, Ruby on inspiroitunut monista aiemmista kielistä, kuten Perlista, jossa merkkijonojen käsittelyä on aina pidetty tärkeänä.
 Vaihtoehtoisia tapoja poimia osajonoja Rubyssa ovat `slice` ja `slice!` metodit, jotka toimivat samankaltaisesti kuin hakasulkumerkintä, mutta voivat myös muuttaa alkuperäistä merkkijonoa.
-Suorituskyvyn näkökulmasta Ruby käsittelee merkkijonoja omana tietorakenteenaan, mutta jos merkkijonoja manipuloidaan paljon, suorituskyky voi heikentyä suurilla datamäärillä, koska jokainen operaatio luo uuden merkkijonon. 
+Suorituskyvyn näkökulmasta Ruby käsittelee merkkijonoja omana tietorakenteenaan, mutta jos merkkijonoja manipuloidaan paljon, suorituskyky voi heikentyä suurilla datamäärillä, koska jokainen operaatio luo uuden merkkijonon.
 
 ## See Also (Katso myös):
 - Ruby-dokumentaatio merkkijonoista: [https://ruby-doc.org/core/String.html](https://ruby-doc.org/core/String.html)

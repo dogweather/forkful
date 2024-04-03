@@ -10,9 +10,6 @@ title: Lendo argumentos da linha de comando
 weight: 23
 ---
 
-## O que é e Por quê?
-Ler argumentos da linha de comando é o processo de capturar dados passados ao executar um programa. Programadores fazem isso para permitir que seus programas sejam mais flexíveis e interativos, ajustando o comportamento baseado nas entradas do usuário.
-
 ## Como fazer:
 Agora, o Elm é focado em web frontend, então ele naturalmente não tem acesso direto a argumentos da linha de comando como você teria em outras linguagens mais 'backend'. Mas, vamos fingir que estamos usando algum tipo de Node.js com Elm ou algo parecido que permitiria tal interação. Aqui está um exemplo fictício:
 

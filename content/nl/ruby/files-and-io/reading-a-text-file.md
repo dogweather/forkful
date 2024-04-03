@@ -12,11 +12,7 @@ title: Een tekstbestand lezen
 weight: 22
 ---
 
-## Wat & Waarom?
-Het lezen van een tekstbestand betekent het toegang krijgen tot de inhoud van een bestand dat op de schijf is opgeslagen via code. Programmeurs doen dit om gegevens binnen hun applicaties te verwerken, analyseren of weer te geven.
-
 ## Hoe:
-
 Een bestand lezen in Ruby is eenvoudig. Je kunt de `File` klasse gebruiken, die verschillende methoden biedt om bestanden te lezen. Hier is een simpel voorbeeld van het lezen van een heel bestand:
 
 ```Ruby
@@ -44,7 +40,6 @@ Hallo, Ruby!
 ```
 
 ## Diepgaand:
-
 Historisch gezien is het lezen van bestanden een kernfunctie van programmeertalen geweest, waardoor interacties met het bestandssysteem mogelijk zijn.
 
 In Ruby kun je ook op verschillende manieren een bestand lezen:
@@ -56,6 +51,5 @@ In Ruby kun je ook op verschillende manieren een bestand lezen:
 Er is een afweging te overwegen: `File.read` is netjes voor kleine bestanden, maar het kan geheugenintensief zijn voor grotere. Dat is wanneer het lezen regel voor regel of in stukken waardevol wordt.
 
 ## Zie ook:
-
 - Ruby Docs voor de `File` klasse: [ruby-doc.org/core/File.html](https://ruby-doc.org/core/File.html)
 - Stack Overflow discussies over het lezen van bestanden in Ruby: [stackoverflow.com/questions/tagged/ruby+file-io](https://stackoverflow.com/questions/tagged/ruby+file-io)

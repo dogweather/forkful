@@ -12,16 +12,10 @@ title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---
 
-## Was & Warum?
-
-Reguläre Ausdrücke in der Programmierung ermöglichen das Mustervergleichen und die Manipulation von Zeichenketten basierend auf spezifischen Mustern. Programmierer verwenden sie für Aufgaben wie Validierung, Suche und Textmanipulation aufgrund ihrer Vielseitigkeit und Effizienz im Umgang mit komplexen Zeichenkettenoperationen.
-
 ## Wie:
-
 Lua unterstützt reguläre Ausdrücke nicht nativ auf die gleiche Weise wie Sprachen wie Perl oder Python. Stattdessen bietet es Musterabgleich-Funktionen, die viele gängige Anwendungsfälle von regulären Ausdrücken abdecken. Für eine vollwertige Unterstützung regulärer Ausdrücke kann jedoch eine externe Bibliothek, wie `lrexlib`, verwendet werden.
 
 ### Grundlegende Musterabgleiche in Lua:
-
 Lua bietet ein leistungsstarkes System für Musterabgleiche, das Sie für einfache Substitutionen und Suchvorgänge nutzen können:
 
 ```lua
@@ -39,7 +33,6 @@ print(s)
 ```
 
 ### Erfassen von Teilzeichenketten:
-
 Sie können Teile der Zeichenkette erfassen, die den Mustern entsprechen:
 
 ```lua
@@ -50,7 +43,6 @@ print("Tag:", d, "Monat:", m, "Jahr:", y)
 ```
 
 ### Verwenden von `lrexlib` für reguläre Ausdrücke:
-
 Um echte reguläre Ausdrücke zu verwenden, können Sie `lrexlib` installieren und nutzen. Angenommen, Sie haben es installiert (`luarocks install lrexlib-pcre`), können Sie komplexere Musterabgleiche durchführen:
 
 ```lua

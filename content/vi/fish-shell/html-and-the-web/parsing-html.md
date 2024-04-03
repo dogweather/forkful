@@ -15,9 +15,6 @@ title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---
 
-## Gì & Tại Sao?
-Phân tích cú pháp HTML là quá trình giải mã lingua franca của web để lọc dữ liệu hoặc thao tác nội dung. Các lập trình viên phân tích cú pháp HTML để tự động hóa việc thu thập dữ liệu web, tích hợp API, hoặc chuyển đổi định dạng dữ liệu.
-
 ## Làm thế nào:
 Fish Shell không phải là lựa chọn hàng đầu để phân tích cú pháp HTML, nhưng với các công cụ phù hợp, việc này có thể thực hiện được. Hãy sử dụng `pup`, một trình phân tích cú pháp HTML dòng lệnh, để làm việc với nội dung HTML.
 

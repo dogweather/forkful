@@ -10,9 +10,6 @@ title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---
 
-## Vad & Varför?
-Att konvertera en sträng till gemener innebär att alla stora bokstäver i texten förvandlas till små. Programmerare gör detta för att standardisera textdata, till exempel vid sökningar eller jämförelser, där det inte ska spela någon roll om ord är skrivna med stora eller små bokstäver.
-
 ## Hur gör man:
 Ruby gör det enkelt att konvertera strängar till gemener med metoden `.downcase`. Här är ett snabbt exempel:
 

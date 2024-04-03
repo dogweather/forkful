@@ -10,9 +10,6 @@ title: Zeichenketten interpolieren
 weight: 8
 ---
 
-## Was & Warum?
-Stringinterpolation bedeutet, Variablen oder Ausdrücke in einen Textstring einzusetzen. Programmierer nutzen das, um dynamische Werte in Skripten einfach zu integrieren und die Lesbarkeit des Codes zu erhöhen.
-
 ## Anleitung:
 ```Bash
 #!/bin/bash

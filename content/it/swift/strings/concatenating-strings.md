@@ -10,9 +10,6 @@ title: Concatenazione di stringhe
 weight: 3
 ---
 
-## What & Why?
-Concatenare le stringhe significa unire due o più sequenze di testo in una sola. Lo facciamo perché spesso dobbiamo combinare vari pezzi di informazioni testuali in un formato specifico o costruire messaggi dinamici.
-
 ## How to:
 Swift rende la concatenazione di stringhe semplice e diretta. Puoi usare l'operatore `+` per unire le stringhe o `\()` per inserire valori all'interno di una stringa.
 

@@ -12,9 +12,6 @@ title: Controleren of een directory bestaat
 weight: 20
 ---
 
-## Wat & Waarom?
-Controleren of een directory bestaat betekent bevestigen of een specifiek map pad aanwezig is in het bestandssysteem. Programmeurs doen dit om fouten te voorkomen bij het openen, lezen of schrijven van bestanden.
-
 ## Hoe te:
 Elm is een front-end web programmeertaal, dus het heeft geen directe toegang tot het bestandssysteem. Echter, je zou typisch een commando naar een backend dienst in JavaScript sturen. Hier is hoe je zo'n interactie met Elm zou kunnen structureren:
 

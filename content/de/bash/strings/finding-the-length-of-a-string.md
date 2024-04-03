@@ -11,11 +11,7 @@ title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---
 
-## Was & Warum?
-Länge eines Strings messen heißt, zu zählen, wie viele Zeichen er enthält. Das brauchen Programmierer, um Eingaben zu validieren, Textdaten zu verarbeiten oder Speicherplatzbedarf abzuschätzen.
-
 ## So geht's:
-
 ```Bash
 # String-Länge mit ${#string}
 str="Hallo, Welt!"
@@ -50,7 +46,6 @@ echo -n $str | wc -c
 Die Implementierung mit `${#string}` ist direkt ins Bash eingebaut, effizient und schnell. Sie zählt tatsächlich die Zeichen, was bei Multibyte-Zeichen wie im UTF-8-Kodierung wichtig ist.
 
 ## Siehe auch:
-
 - Bash Manual: https://www.gnu.org/software/bash/manual/
 - Advanced Bash-Scripting Guide: https://tldp.org/LDP/abs/html/
 - Stack Overflow: Diskussionen über das Zählen von Stringlängen und spezielle Fälle: https://stackoverflow.com/

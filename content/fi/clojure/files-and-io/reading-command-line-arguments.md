@@ -11,9 +11,6 @@ title: Komennoriviparametrien lukeminen
 weight: 23
 ---
 
-## What & Why?
-Komennoriviparametrien lukeminen tarkoittaa argumenttien vastaanottamista suoraan ohjelmalle, kun sen käynnistää terminaalista. Ohjelmoijat tekevät sen, jotta voivat antaa dynaamisia syötteitä ja muuttaa ohjelman toimintaa lennosta.
-
 ## How to:
 Clojure-ohjelmissa komennoriviparametrien käyttö on suoraviivaista. Tässä on helppo esimerkki:
 

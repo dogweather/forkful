@@ -14,12 +14,7 @@ title: Arbeiten mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-
-Die Arbeit mit komplexen Zahlen in der Programmierung beinhaltet die Manipulation von Zahlen, die sowohl einen Real- als auch einen Imaginärteil haben, typischerweise ausgedrückt als `a + bi`. Programmierer beschäftigen sich in verschiedenen Bereichen, wie Ingenieurwesen, Physik und Datenanalyse, mit komplexen Zahlen, um Probleme zu lösen, die Quadratwurzeln von negativen Zahlen, Wellenformanalysen und mehr beinhalten.
-
 ## Wie:
-
 In Go werden komplexe Zahlen mit den integrierten Funktionen `complex`, `real` und `imag`, zusammen mit den Typen `complex64` und `complex128` (die jeweils komplexe Zahlen mit 64 Bit und 128 Bit darstellen) behandelt. Hier ist eine Schnellstartanleitung:
 
 ```go
@@ -56,7 +51,6 @@ func main() {
 Dieses Beispiel deckt die Grundlagen ab, aber es gibt noch viel mehr, was Sie mit komplexen Zahlen machen können, einschließlich der Nutzung des `math/cmplx` Pakets für fortgeschrittenere Operationen wie die Bestimmung der Magnitude, Phase und vieles mehr.
 
 ## Tiefere Einblicke
-
 Das Konzept der komplexen Zahlen reicht zurück bis ins 16. Jahrhundert, erhielt jedoch erst im 19. Jahrhundert breite Anerkennung und eine strenge Formalisierung. In der Computerprogrammierung sind komplexe Zahlen seit den frühen Tagen für komplexe Arithmetik in wissenschaftlichen und ingenieurtechnischen Berechnungen unverzichtbar. Der Ansatz von Go für komplexe Zahlen, indem sie als erstklassige Bürger mit integrierter Unterstützung und umfassender Standardbibliotheksunterstützung durch das `math/cmplx` Paket behandelt werden, sticht unter den Programmiersprachen hervor. Diese Designentscheidung spiegelt Gos Schwerpunkt auf Einfachheit und Leistung wider.
 
 Dennoch ist es erwähnenswert, dass die Arbeit mit komplexen Zahlen in Go, obwohl leistungsfähig, nicht immer der beste Ansatz für alle Anwendungen sein kann, insbesondere für solche, die symbolische Mathematik oder hochpräzise Arithmetik erfordern. Sprachen und Umgebungen, die auf wissenschaftliches Rechnen spezialisiert sind, wie Python mit Bibliotheken wie NumPy und SciPy oder Software wie MATLAB, könnten mehr Flexibilität und ein breiteres Spektrum an Funktionalitäten für spezifische Anwendungen bieten.

@@ -14,9 +14,6 @@ title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---
 
-## Gì và Tại sao?
-Nội suy chuỗi bao gồm việc chèn các biến vào trong một chuỗi ký tự. Lập trình viên thực hiện điều này để tạo ra chuỗi một cách động, làm cho việc bao gồm dữ liệu biến trong đầu ra trở nên dễ dàng hơn.
-
 ## Cách thực hiện:
 Swift làm cho việc nội suy chuỗi trở nên dễ dàng với cú pháp `\(tênBiến)`.
 

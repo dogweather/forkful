@@ -11,9 +11,6 @@ title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---
 
-## What & Why?
-I Elm handler sammenslåing av strenger om å sette sammen to eller flere tekstfragmenter til en lengre tekst. Vi gjør dette for å bygge dynamisk innhold, som brukernavn eller datoer i meldinger.
-
 ## How to:
 Elm gjør det lett å slå sammen strenger med `++` operatoren. Her er et eksempel:
 

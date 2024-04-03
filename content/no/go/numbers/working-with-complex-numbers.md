@@ -14,12 +14,7 @@ title: "\xC5 Arbeide med Komplekse Tall"
 weight: 14
 ---
 
-## Hva & Hvorfor?
-
-Å arbeide med komplekse tall i programmering innebærer å manipulere tall som har både en reell og en imaginær del, som typisk uttrykkes som `a + bi`. Programmerere håndterer komplekse tall innenfor ulike domener, som ingeniørvitenskap, fysikk og dataanalyse, for å løse problemer som involverer kvadratrøtter av negative tall, bølgeformanalyser og mer.
-
 ## Hvordan:
-
 I Go håndteres komplekse tall ved hjelp av de innebygde funksjonene `complex`, `real`, og `imag`, sammen med typene `complex64` og `complex128` (som representerer henholdsvis 64-biter og 128-biters komplekse tall). Her er en rask introduksjon:
 
 ```go
@@ -56,7 +51,6 @@ func main() {
 Dette eksemplet dekker grunnleggende informasjon, men det er mye mer du kan gjøre med komplekse tall, inkludert å utnytte pakken `math/cmplx` for mer avanserte operasjoner som å finne størrelse, fase, og mye mer.
 
 ## Dypdykk
-
 Konseptet med komplekse tall går tilbake til 1500-tallet, men fikk først bred anerkjennelse og streng formalisering på 1800-tallet. I dataprogrammering har komplekse tall vært en grunnpilar for kompleks aritmetikk i vitenskapelige og ingeniørmessige beregninger siden de tidlige dager. Gos tilnærming til komplekse tall, ved å gjøre dem til førsteklasses borgere med innebygd støtte og omfattende standardbibliotekstøtte gjennom pakken `math/cmplx`, skiller seg ut blant programmeringsspråk. Denne designbeslutningen reflekterer Gos vekt på enkelhet og ytelse.
 
 Det er likevel verdt å merke seg at selv om arbeid med komplekse tall i Go kan være kraftfullt, er det ikke alltid den beste tilnærmingen for alle applikasjoner, særlig de som krever symbolsk matematikk eller høy presisjonsaritmetikk. Språk og miljøer som er spesialiserte på vitenskapelig databehandling, som Python med biblioteker som NumPy og SciPy, eller programvare som MATLAB, kan tilby mer fleksibilitet og et bredere spekter av funksjonaliteter for spesifikke applikasjoner.

@@ -11,9 +11,6 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## What & Why?
-Pobieranie strony internetowej to proces, dzięki któremu możemy uzyskać jej zawartość w formacie tekstowym. Programiści robią to, by analizować dane, monitorować zmiany lub wydobywać informacje automatycznie.
-
 ## How to:
 W Java można to zrobić za pomocą `java.net.HttpURLConnection` albo popularnych bibliotek takich jak `Jsoup`. Oto prosty przykład użycia `HttpURLConnection`:
 

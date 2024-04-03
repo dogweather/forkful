@@ -11,9 +11,6 @@ title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---
 
-## Co i Dlaczego?
-Długość łańcucha znaków to ilość znaków, z których się składa. Programiści muszą to sprawdzać, aby zarządzać tekstem, np. w walidacji, ekstrakcji danych, czy manipulacji ciągami.
-
 ## Jak to zrobić:
 W PowerShell mierzenie długości łańcucha jest proste. Użyj właściwości `Length`
 

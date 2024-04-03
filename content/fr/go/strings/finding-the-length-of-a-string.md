@@ -13,9 +13,6 @@ title: "Trouver la longueur d'une cha\xEEne"
 weight: 7
 ---
 
-## Quoi & Pourquoi ?
-Trouver la longueur d'une chaîne en Go consiste à déterminer le nombre de caractères qu'elle contient. Les programmeurs effectuent régulièrement cette opération pour manipuler efficacement les chaînes de caractères, que ce soit pour la validation, l'extraction de sous-chaînes ou simplement pour appliquer des contraintes aux entrées des utilisateurs.
-
 ## Comment faire :
 En Go, les chaînes sont traitées comme des séquences d'octets immuables. Vous pouvez trouver la longueur d'une chaîne en utilisant la fonction intégrée `len()` qui retourne le nombre d'octets, pas nécessairement le nombre de caractères. Voici comment l'utiliser :
 

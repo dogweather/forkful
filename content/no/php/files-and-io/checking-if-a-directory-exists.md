@@ -13,12 +13,7 @@ title: Sjekker om en mappe eksisterer
 weight: 20
 ---
 
-## Hva & Hvorfor?
-
-Å sjekke om en mappe finnes er en grunnleggende oppgave i PHP-programmering, da det lar deg verifisere tilstedeværelsen av en mappe før du utfører operasjoner som å lese fra eller skrive til filer i den. Denne operasjonen bidrar til å forhindre feil som kan oppstå ved forsøk på å få tilgang til ikke-eksisterende mapper og er essensiell for dynamisk filhåndtering i applikasjonene dine.
-
 ## Hvordan:
-
 Den innfødte måten å sjekke om en mappe finnes i PHP er ved å bruke `is_dir()`-funksjonen. Denne funksjonen tar en filbane som argument og returnerer `true` hvis mappen finnes og er en mappe, eller `false` ellers.
 
 ```php

@@ -10,9 +10,6 @@ title: Conversione di una stringa in minuscolo
 weight: 4
 ---
 
-## What & Why?
-Convertire una stringa in minuscolo significa trasformare tutti i caratteri alfabeticitesti da maiuscolo a minuscolo. I programmatori fanno ciò per uniformare i dati, facilitare confronti case-insensitive e migliorare la ricerca.
-
 ## How to:
 In TypeScript, usiamo il metodo `.toLowerCase()` per convertire una stringa in minuscolo.
 

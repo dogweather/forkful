@@ -11,9 +11,6 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-L'extraction de sous-chaînes consiste à prendre des morceaux spécifiques d'une chaîne de caractères. Les développeurs le font pour analyser, manipuler ou afficher des données textuelles de manière plus pertinente.
-
 ## How to: (Comment faire :)
 Voici comment extraire des sous-chaînes en TypeScript avec `substring`, `slice` et `substr` (déprécié mais bon à connaître).
 

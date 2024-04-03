@@ -11,9 +11,6 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## What & Why?
-Pobieranie strony internetowej oznacza ściągnięcie jej zawartości do lokalnej pamięci komputera. Programiści to robią, by przetworzyć dane, zautomatyzować zadania lub po prostu zarchiwizować informacje.
-
 ## How to:
 W Clojure do pobierania stron www użyjemy biblioteki `clj-http`. Przykład:
 

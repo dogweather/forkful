@@ -13,9 +13,6 @@ title: Werken met XML
 weight: 40
 ---
 
-## Wat & Waarom?
-Werken met XML betekent het parseren, genereren en manipuleren van XML (eXtensible Markup Language) documenten met behulp van code. Programmeurs doen dit om te interacteren met veel webdiensten, configuratiebestanden en data-uitwisselingsformaten waar XML de lingua franca is.
-
 ## Hoe te:
 Laten we REXML, inbegrepen bij Ruby, gebruiken om een XML-snippet te parsen:
 ```Ruby

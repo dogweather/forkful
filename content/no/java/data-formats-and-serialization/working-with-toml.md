@@ -9,9 +9,6 @@ title: Jobbe med TOML
 weight: 39
 ---
 
-## Hva & Hvorfor?
-TOML står for Toms Opplagte, Minimale Språk. Det er et data serialiseringsformat brukt for konfigurasjonsfiler. Programmerere bruker det fordi det er lett å lese, skrive, og kartlegges fint til en hashtabell.
-
 ## Hvordan:
 Du trenger et TOML tolkingsbibliotek. Jeg anbefaler `toml4j`. Legg det til i prosjektet ditt slik:
 

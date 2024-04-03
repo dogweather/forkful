@@ -14,12 +14,7 @@ title: "H\xE4mta aktuellt datum"
 weight: 29
 ---
 
-## Vad och Varför?
-
-I Visual Basic för Applikationer (VBA) är det en vanlig uppgift att hämta aktuellt datum, vilket möjliggör för programmerare att dynamiskt arbeta med datum i deras makron eller applikationer. Denna funktionalitet är avgörande för operationer som loggning, tidsstämpling av transaktioner eller att göra datum-baserade beräkningar.
-
 ## Hur gör man:
-
 Att hämta det aktuella datumet i VBA är enkelt, med hjälp av `Date`-funktionen, medan `Now`-funktionen ger både det aktuella datumet och tiden. Så här kan du arbeta med båda:
 
 ```vb
@@ -46,7 +41,6 @@ Aktuellt Datum och Tid: 2023-04-12 15:45:22
 Kom ihåg att datumformatet kan variera baserat på användarens dators systeminställningar.
 
 ## Fördjupning
-
 `Date`- och `Now`-funktionerna omsluter komplexiteten med att hantera datum och tid i Visual Basic för Applikationer, och erbjuder en applikationsnivå-abstraktion som gör det enkelt och intuitivt att arbeta med datum. Historiskt sett har hanteringen av datum och tid i programmering varit fylld med utmaningar, inklusive att hantera olika tidszoner, sommartidändringar och olika datumformat.
 
 I VBA förlitar sig dessa funktioner på det underliggande systemets datum och tid, vilket innebär att de påverkas av användarens lokaliseringsinställningar och systeminställningar. Det är ett tveeggat svärd som säkerställer konsistens med användarens miljö men också kräver noggrann hantering av lokaliseringsjusteringar och tidszonsanpassningar i globala applikationer.

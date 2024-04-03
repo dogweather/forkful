@@ -15,12 +15,7 @@ title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---
 
-## Cái gì & Tại sao?
-
-Phân tích cú pháp HTML có nghĩa là lọc qua mê cung các thẻ HTML để tìm kiếm dữ liệu bạn cần. Lập trình viên thực hiện điều này để trích xuất thông tin, tự động hóa tương tác web, hoặc chuyển dữ liệu.
-
 ## Cách thức:
-
 Lua không tự nhiên thông minh về web như Python hay JavaScript, nhưng với các thư viện `luasocket` và `luahtml`, nó có thể bước vào lĩnh vực phân tích cú pháp HTML. Hãy cùng khám phá với một ví dụ cơ bản:
 
 ```Lua
@@ -47,7 +42,6 @@ end
 Điều này sẽ in nội dung của tất cả các thẻ đoạn văn (`<p>`) từ trang web đã lấy.
 
 ## Sâu lắng
-
 Phân tích cú pháp HTML trong Lua không phải là một giải pháp toàn diện. Bạn phải kết hợp các thư viện khác nhau, khác với những ngôn ngữ được thiết kế với việc phân tích web trong tâm trí. Lịch sử, Lua đã là một trợ lý cho lập trình nhúng nhanh trong các ứng dụng, không phải web scraping.
 
 Các lựa chọn khác? Ngoài `luahtml`, còn có `luascrape` và `luaxpath` cho những nhu cầu phân tích khác nhau. Không có sự lựa chọn 'tốt nhất' một cách chắc chắn—mỗi thư viện đều có những điểm đặc biệt mà bạn cần đối mặt.
@@ -55,7 +49,6 @@ Các lựa chọn khác? Ngoài `luahtml`, còn có `luascrape` và `luaxpath` c
 Khi đi sâu vào thực thi, các thư viện Lua thường tận dụng API C để tăng cường hiệu suất. Khi lọc qua HTML, bạn sẽ xoay sở với các nút và phần tử, mỗi cái là một cơ hội để điều tra các chi tiết khó chịu của cấu trúc web.
 
 ## Xem thêm
-
 - Tài liệu LuaSocket: http://w3.impa.br/~diego/software/luasocket/http.html
 - luahtml trên GitHub để đi sâu vào các phương pháp phân tích cú pháp: https://github.com/o-lim/luahtml
 - Lua Users Wiki cho những viên ngọc cộng đồng và khắc phục sự cố: http://lua-users.org/wiki/

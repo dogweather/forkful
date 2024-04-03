@@ -11,9 +11,6 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-En REPL, eller Read-Eval-Print Loop, låter dig skriva C#-kod och köra den interaktivt. Programmerare använder det för snabba experiment, felsökning eller för att lära sig C#, utan den extra börda som det innebär att sätta upp fullständiga projekt.
-
 ## Hur man gör:
 Starta en REPL i din C#-miljö genom att använda C# Interactive-fönstret eller köra `dotnet-script` i din terminal. Här är ett smakprov på att använda den:
 

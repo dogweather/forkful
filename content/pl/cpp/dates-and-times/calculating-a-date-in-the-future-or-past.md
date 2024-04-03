@@ -11,9 +11,6 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-## Co & Dlaczego?
-Obliczanie daty w przeszłości lub przyszłości to określenie nowego momentu w czasie względem znanego punktu odniesienia. Programiści wykorzystują tę umiejętność do planowania zdarzeń, przewidywania terminów i zarządzania cachowaniem danych.
-
 ## Jak to zrobić?
 ```c++
 #include <iostream>

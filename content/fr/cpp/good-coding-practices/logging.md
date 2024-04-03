@@ -12,9 +12,6 @@ title: Journalisation
 weight: 17
 ---
 
-## Quoi & Pourquoi ?
-La journalisation, dans le contexte de la programmation, est le processus d'enregistrement des événements, des états et des informations dans un fichier ou un autre support de sortie. Les programmeurs créent des journaux pour suivre ce qui se passe dans leurs applications, pour déboguer les problèmes et pour surveiller la performance pour des analyses et optimisations futures.
-
 ## Comment faire :
 Disons que vous travaillez sur un système Linux et que vous souhaitez jeter vos logs dans un fichier avec le bon vieux C++. Vous devrez inclure les bibliothèques `<iostream>` et `<fstream>` pour effectuer des opérations sur les fichiers. Voici un exemple rapide :
 

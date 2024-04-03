@@ -14,12 +14,7 @@ title: Skriving til standardfeil
 weight: 25
 ---
 
-## Hva & hvorfor?
-
-Å skrive til standard feil (stderr) i Arduino-programmering innebærer å dirigere feilmeldinger og diagnostikk til en separat kanal, slik at de ikke blandes med standard utdata (stdout). Programmerere gjør dette for å skille normale programutdata fra feilmeldinger, noe som gjør feilsøking og logganalyse mer rett frem.
-
 ## Hvordan:
-
 Arduino skiller ikke innebygd mellom standard utdata og standard feil slik konvensjonelle databehandlingssystemer gjør. Både `Serial.print()` og `Serial.println()` metodene skriver til samme serielle utdata, som vanligvis ses i Arduino IDE Seriell Monitor. Men vi kan etterligne skriving til stderr ved spesifikt å formatere feilmeldinger eller dirigere dem til et alternativt utdata, som en fil på et SD-kort eller over en nettverksforbindelse.
 
 For å etterligne stderr, kan du prefikse feilmeldinger med en tag som "ERROR:" for å skille dem ut i Seriell Monitor:

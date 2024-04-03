@@ -13,9 +13,6 @@ title: Escribir pruebas
 weight: 36
 ---
 
-## ¿Qué y por qué?
-Escribir pruebas en C implica crear programas o funciones auxiliares más pequeños que verifiquen automáticamente la funcionalidad de tu código. Los programadores lo hacen para asegurarse de que su software funcione como se espera, para detectar errores temprano y para facilitar modificaciones futuras del código sin efectos secundarios no deseados.
-
 ## Cómo hacerlo:
 Aunque C no cuenta con un marco de pruebas integrado como algunos otros lenguajes, aún puedes escribir pruebas efectivas usando assert.h para afirmaciones simples o integrar marcos de terceros como CUnit o Unity para pruebas más estructuradas. Aquí hay un ejemplo básico usando assert.h para probar una función que suma dos enteros:
 

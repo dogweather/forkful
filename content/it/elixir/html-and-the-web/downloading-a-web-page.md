@@ -11,9 +11,6 @@ title: Scaricare una pagina web
 weight: 42
 ---
 
-## Che cosa & Perché?
-Scaricare una pagina web significa copiare i suoi contenuti dal server a un dispositivo locale; i programmatori lo fanno per analizzare dati, testare performance o accedere a informazioni senza un browser web.
-
 ## Come fare:
 Elixir rende il download delle pagine web un gioco da ragazzi con la libreria HTTPoison. Installala aggiungendo `{:httpoison, "~> 1.8"}` al tuo `mix.exs` e esegui `mix deps.get`.
 

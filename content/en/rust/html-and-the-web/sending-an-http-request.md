@@ -10,9 +10,6 @@ title: Sending an HTTP request
 weight: 44
 ---
 
-## What & Why?
-Sending an HTTP request fetches data from or sends data to a web server. Programmers do it to interact with web services or APIs – grabbing info, posting updates, you name it.
-
 ## How to:
 To send a GET request in Rust, we use the `reqwest` crate. First, add it to your `Cargo.toml`:
 

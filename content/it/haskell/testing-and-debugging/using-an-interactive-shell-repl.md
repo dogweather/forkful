@@ -11,9 +11,6 @@ title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---
 
-## Cosa & Perché?
-Un guscio interattivo, o REPL (Read-Eval-Print Loop), in Haskell ti permette di eseguire frammenti di codice dal vivo. È un campo di gioco per avere feedback rapidi, testare funzioni e imparare il linguaggio.
-
 ## Come fare:
 Per avviare il GHCi (ambiente interattivo del Glasgow Haskell Compiler), digita semplicemente `ghci` nel tuo terminale. Ecco come usarlo:
 

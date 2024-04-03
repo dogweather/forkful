@@ -10,9 +10,6 @@ title: Calcolo di una data futura o passata
 weight: 26
 ---
 
-## What & Why?
-Calcolare una data nel futuro o nel passato permette di trovare date specifiche a partire da un punto noto. I programmatori lo fanno per gestire eventi, scadenze, oppure per funzioni di logging.
-
 ## How to:
 ```Lua
 -- Carica il modulo 'os' per lavorare con date e tempi

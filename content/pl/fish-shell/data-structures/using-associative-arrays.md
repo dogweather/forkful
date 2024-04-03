@@ -14,12 +14,7 @@ title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---
 
-## Co i Dlaczego?
-
-Tablice asocjacyjne, czyli mapy haszowe, pozwalają przechowywać dane jako pary klucz-wartość, co ułatwia organizowanie i odzyskiwanie informacji za pomocą klucza. Są przydatne, gdy potrzebujesz bardziej strukturalnego sposobu na obsługę danych niż tylko listy, zwłaszcza w konfiguracjach i przy radzeniu sobie z różnymi atrybutami.
-
 ## Jak to zrobić:
-
 Fish nie obsługuje natywnie tablic asocjacyjnych tak jak Bash 4+, ale można osiągnąć podobną funkcjonalność, używając kombinacji list i manipulacji ciągami znaków. Oto jak je naśladować:
 
 Najpierw ustawiając elementy "tablicy asocjacyjnej" oddzielnie:
@@ -61,5 +56,4 @@ end
 ```
 
 ## Głębsze zanurzenie
-
 Prawdziwe tablice asocjacyjne, jak w innych językach skryptowych, nie są jeszcze częścią podejścia Fish. Obejście pokazane wykorzystuje możliwości manipulacji ciągami znaków i list Fish, aby stworzyć strukturę pseudo-tablicy asocjacyjnej. Chociaż to działa, nie jest to tak czyste lub wolne od błędów, jak gdyby wsparcie dla wbudowanych tablic asocjacyjnych było dostępne. Inne powłoki, takie jak Bash i Zsh, zapewniają wbudowaną funkcjonalność tablic asocjacyjnych, co skutkuje bardziej prostym, czytelnym kodem. Jednak filozofia projektowania Fish ma na celu prostotę i przyjazność dla użytkownika, możliwe kosztem takich funkcji. Obejście zaspokaja większość potrzeb, ale warto obserwować ewolucję Fish Shell - jego twórcy aktywnie ulepszają i dodają funkcje na podstawie opinii społeczności.

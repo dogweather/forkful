@@ -13,9 +13,6 @@ title: Schrijven naar standaardfout
 weight: 25
 ---
 
-## Wat & Waarom?
-Schrijven naar standaard fout (`stderr`) kanalen cruciale berichten naar een speciale uitvoerstroom gereserveerd voor fouten, gescheiden van de hoofd uitvoer (`stdout`). Programmeurs gebruiken het voor het loggen van fouten en diagnostische berichten zodat ze gewone programmagegevens niet in de war brengen en gemakkelijk gevolgd of omgeleid kunnen worden.
-
 ## Hoe te:
 Swift maakt schrijven naar `stderr` eenvoudig. Zie het onderstaande voorbeeld:
 

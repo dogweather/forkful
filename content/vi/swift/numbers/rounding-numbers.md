@@ -16,12 +16,7 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Cái gì & Tại sao?
-
-Làm tròn số có nghĩa là ước lượng một giá trị số với độ chính xác nhất định, thường nhằm loại bỏ các số thập phân không mong muốn. Các lập trình viên thực hiện làm tròn để quản lý bộ nhớ, cải thiện khả năng đọc và đáp ứng các yêu cầu cụ thể của lĩnh vực như ràng buộc về tiền tệ.
-
 ## Làm thế nào:
-
 Swift cung cấp một số cách để làm tròn số. Dưới đây là một số ví dụ:
 
 ```Swift
@@ -45,7 +40,6 @@ print("Chuẩn: \(standardRounded), Thập phân: \(decimalRounded), Xuống: \(
 Kết quả: `Chuẩn: 3.0, Thập phân: 3.142, Xuống: 3.0, Lên: 4.0`
 
 ## Sâu hơn
-
 Về mặt lịch sử, làm tròn là một khái niệm toán học tồn tại trước cả máy tính, rất quan trọng trong thương mại và khoa học. Khung `Foundation` của Swift cung cấp chức năng làm tròn toàn diện:
 
 - `round(_: )` là phương pháp làm tròn nửa lên truyền thống.
@@ -55,5 +49,4 @@ Về mặt lịch sử, làm tròn là một khái niệm toán học tồn tạ
 Lưu ý về kiểu `Decimal` cho các tính toán tài chính chính xác, tránh lỗi số dấu phẩy động. Cũng khám phá `NSDecimalNumber` cho khả năng tương thích với Objective-C.
 
 ## Xem thêm
-
 - Tiêu chuẩn IEEE cho Số học dấu phẩy động (IEEE 754): [IEEE 754](https://ieeexplore.ieee.org/document/4610935)

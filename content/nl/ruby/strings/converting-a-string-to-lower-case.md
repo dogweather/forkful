@@ -12,12 +12,7 @@ title: Een string omzetten naar kleine letters
 weight: 4
 ---
 
-## Wat & Waarom?
-
-In Ruby betekent het converteren van een string naar kleine letters dat alle hoofdletters in de string worden veranderd in hun kleine letter tegenhangers. Programmeurs doen dit voor consistentie, vooral bij taken zoals het vergelijken van gebruikersinvoer of sorteren.
-
 ## Hoe te:
-
 ```ruby
 # Met behulp van de downcase methode
 my_string = "Hello World!"
@@ -32,7 +27,6 @@ puts my_string           # => "hallo wereld!"
 ```
 
 ## Diepgaande duik
-
 Historisch gezien is het converteren van hoofdletter naar kleine letter een basis in programmeertalen om tekstuniformiteit te waarborgen. Het ondersteunt hoofdletterongevoelige vergelijkingen en zoekopdrachten, vandaar het belang.
 
 De methoden `downcase` en `downcase!` in Ruby komen voort uit het principe van de taal om zowel niet-destructieve als destructieve methoden voor stringmanipulatie te bieden. De niet-destructieve `downcase` geeft een nieuwe string terug, terwijl de originele onaangeroerd blijft, terwijl de destructieve `downcase!` de originele string ter plaatse wijzigt, wat geheugenefficiënter kan zijn.
@@ -48,6 +42,5 @@ puts my_string.mb_chars.downcase  # => "äöü"
 Wat implementatie betreft, gebruiken Ruby's `downcase` en `downcase!` intern Unicode-mapping om elk karakter van de string naar zijn kleine letter equivalent te converteren.
 
 ## Zie ook
-
 - Ruby-documentatie voor `downcase` en `downcase!`: [Ruby Doc downcase](https://ruby-doc.org/core-3.1.2/String.html#method-i-downcase), [Ruby Doc downcase!](https://ruby-doc.org/core-3.1.2/String.html#method-i-downcase-21)
 - Voor complexe letterconversies, zie de ActiveSupport Core Extensions: [ActiveSupport String](https://api.rubyonrails.org/classes/String.html)

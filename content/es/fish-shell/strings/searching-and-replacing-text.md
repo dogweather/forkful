@@ -10,9 +10,6 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## Qué y Por Qué?
-Buscar y reemplazar texto es cambiar una cadena de caracteres por otra en un archivo o conjunto de archivos. Los programadores lo usan para corregir errores, actualizar nombres de variables o modificar código eficientemente.
-
 ## Cómo Hacerlo:
 Para buscar y reemplazar texto en Fish te puedes apoyar en herramientas como `sed`. Aquí un ejemplo rápido:
 

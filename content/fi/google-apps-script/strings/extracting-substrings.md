@@ -13,12 +13,7 @@ title: Alimerkkijonojen erottaminen
 weight: 6
 ---
 
-## Mitä & Miksi?
-
-Merkkijonojen osien poiminta tarkoittaa osan merkkijonosta ottamista - käytännössä uuden merkkijonon luomista olemassa olevan osasta. Ohjelmoijat tekevät tämän lukuisista syistä, mukaan lukien datan jäsentäminen, tekstimanipulaatiot käyttöliittymiä varten tai syötteen käsittely erilaisissa sovelluksissa, mikä tekee merkkijonon osien poiminnasta monipuolisen työkalun kaikille skriptaajille.
-
 ## Miten:
-
 Google Apps Scriptissä, joka perustuu moderniin JavaScriptiin, merkkijonon osien poiminnan voi suorittaa usealla eri tavalla, mukaan lukien `substring()`, `substr()` ja `slice()` -metodit. Jokaisella on omat vivahteensa, mutta kaikki palvelevat tarkoitusta poimia määritellyt merkit merkkijonosta.
 
 ```javascript
@@ -39,7 +34,6 @@ console.log(resultSlice); // Tuloste: world!
 Jokainen metodi ottaa kaksi argumenttia: aloituspaikan ja, slice()-metodia lukuun ottamatta joka voi ottaa negatiivisia indeksejä aloittaakseen lopusta, lopetuspaikan tai poimittavien merkkien määrän. On huomionarvoista, että alkuperäinen merkkijono pysyy muuttumattomana näiden toimintojen jälkeen, sillä ne palauttavat uusia merkkijonoarvoja.
 
 ## Syväsukellus
-
 Historiallisesti JavaScriptin metodit merkkijonojen osien poimintaan ovat aiheuttaneet sekaannusta niiden samankaltaisten nimien ja toiminnallisuuksien vuoksi. Kuitenkin, Google Apps Scriptissä ja modernissa JavaScriptissä, `substring()` ja `slice()` ovat useimmiten käytössä, `substr()`-metodia pidetään vanhentuneena. Tämä on tärkeää huomioida kirjoitettaessa tulevaisuudenkestävää koodia.
 
 Pääero `substring()` ja `slice()` -metodien välillä on siinä, miten ne käsittelevät negatiivisia indeksejä; `substring()` käsittelee negatiiviset indeksit nollana, kun taas `slice()` voi ottaa negatiivisen indeksin aloittaakseen poiminnan merkkijonon lopusta. Tämä tekee `slice()`-metodista erityisen kätevän tapauksissa, joissa merkkijonon tarkkaa pituutta ei ehkä tunneta tai kun on tarpeen poimia lopusta.

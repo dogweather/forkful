@@ -13,9 +13,6 @@ title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---
 
-## Vad & Varför?
-Att extrahera delsträngar handlar om att hämta specifika delar av en sträng baserat på deras positioner eller mönster. Programmerare gör detta för uppgifter som att tolka användarinmatning, datahantering eller extrahera relevant information från större textkällor.
-
 ## Hur man gör:
 I Dart kan du använda olika metoder för att extrahera delsträngar, såsom `substring()`, `split()` och reguljära uttryck. Varje metod tjänar olika syften och erbjuder flexibilitet i hanteringen av strängar.
 

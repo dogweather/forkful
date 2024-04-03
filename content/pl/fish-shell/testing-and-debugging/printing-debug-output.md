@@ -11,12 +11,7 @@ title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---
 
-## What & Why? (Co i Dlaczego?)
-
-Drukowanie danych diagnostycznych to wyświetlanie informacji, które pomagają zrozumieć, co się dzieje w skrypcie. Programiści robią to, żeby szybko znaleźć i naprawić błędy.
-
 ## How to: (Jak to zrobić:)
-
 Najprostszy sposób to użyć `echo` do wypisania wartości zmiennych lub komunikatów.
 
 ```Fish Shell
@@ -37,7 +32,6 @@ echo "To jest błąd" >&2
 ```
 
 ## Deep Dive (Dogłębna analiza)
-
 Historia: Fish, krótko od "friendly interactive shell", istnieje od 2005 roku. Jego celem jest bycie bardziej przystępnym i interaktywnym niż tradycyjne shelle.
 
 Alternatywy: Oprócz `echo`, można używać `printf` do formatowania wyjścia, co daje większą kontrolę.
@@ -50,7 +44,6 @@ printf "Debug: '%s' is the answer\n" $my_value
 Szczegóły implementacyjne: STDOUT i STDERR to dwa główne strumienie danych w shellach Uniksowych. Pisanie na STDERR (`echo "error" >&2`) zapewnia, że tylko faktyczne dane wyjściowe trafiają do STDOUT, co jest ważne przy przekierowywaniu wyniku komend do plików czy innych komend.
 
 ## See Also (Zobacz również)
-
 1. [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
 2. [The Unix Philosophy](http://www.catb.org/esr/writings/taoup/html/)
 3. [Writing Robust Shell Scripts](https://www.davidpashley.com/articles/writing-robust-shell-scripts/)

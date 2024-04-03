@@ -10,9 +10,6 @@ title: Datum in einen String umwandeln
 weight: 28
 ---
 
-## Was & Warum?
-Das Umwandeln eines Datums in einen String bedeutet, ein Date-Objekt in eine Textform zu überführen. Programmierer brauchen das, um Daten benutzerfreundlich anzuzeigen oder in einem bestimmten Format zu speichern.
-
 ## Anleitung:
 ```Ruby
 require 'date'

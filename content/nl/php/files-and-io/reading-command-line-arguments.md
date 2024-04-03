@@ -12,9 +12,6 @@ title: Commandoregelargumenten lezen
 weight: 23
 ---
 
-## Wat & Waarom?
-Het lezen van opdrachtregelargumenten in PHP betekent het binnenhalen van invoer die aan je script wordt doorgegeven wanneer het in de console wordt uitgevoerd. Programmeurs doen dit om hun scripts interactief en configureerbaar te maken zonder waarden hard te coderen.
-
 ## Hoe:
 PHP gebruikt een globale array `$argv` om opdrachtregelargumenten op te slaan, waarbij `$argv[0]` de scriptnaam is. Zo gebruik je het:
 

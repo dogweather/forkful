@@ -11,9 +11,6 @@ title: Opprette en midlertidig fil
 weight: 21
 ---
 
-## Hva & Hvorfor?
-Å lage en midlertidig fil er prosessen med å opprette en fil som kun skal brukes midlertidig. Programmerere gjør dette for å lagre data midlertidig uten å påvirke de permanente datasystemene, noe som er nyttig for ting som å håndtere store datamengder, foreta komplekse beregninger, eller holde på en fil så lenge en applikasjon kjører.
-
 ## Hvordan Gjøre Det:
 For å lage en midlertidig fil i JavaScript, kan man bruke innebygde moduler som `fs` i Node.js. Her er et eksempel på hvordan man oppretter og bruker en midlertidig fil:
 

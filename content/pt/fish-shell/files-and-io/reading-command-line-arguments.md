@@ -11,9 +11,6 @@ title: Lendo argumentos da linha de comando
 weight: 23
 ---
 
-## What & Why?
-Ler argumentos da linha de comandos é pegar as informações que um usuário digita quando executa seu script. Programadores fazem isso para permitir que os scripts sejam mais flexíveis e interativos.
-
 ## How to:
 Ler argumentos em Fish não podia ser mais direto. Vamos usar o `$argv`, que é uma lista contendo os argumentos passados para o script. 
 

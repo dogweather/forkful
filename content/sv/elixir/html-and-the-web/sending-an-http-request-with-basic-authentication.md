@@ -12,9 +12,6 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---
 
-## Vad och varför?
-Att skicka en HTTP-begäran med basautentisering innebär att du använder användarnamn och lösenord för att få tillgång till en resurs på webben. Programmerare gör detta för att säkerställa åtkomst till skyddade resurser där enkelheten och standardiseringen av metoden är viktig.
-
 ## Steg för steg
 ```elixir
 # Använd HTTPoison-biblioteket – lägg till det i din mix.exs fil:

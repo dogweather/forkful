@@ -13,12 +13,7 @@ title: Usando arrays associativos
 weight: 15
 ---
 
-## O que & Por quê?
-
-Arrays associativos, mais conhecidos como hashes no Ruby, permitem associar chaves únicas a valores. Eles são indispensáveis quando você precisa rastrear elementos através de uma referência específica, como armazenar as propriedades de um objeto ou acessar rapidamente dados por um identificador único.
-
 ## Como fazer:
-
 Criar e usar hashes no Ruby é simples. Você pode inicializar um hash vazio, preenchê-lo com pares chave-valor, acessar valores por suas chaves e mais. Veja como fazer:
 
 ```Ruby
@@ -55,7 +50,6 @@ puts symbol_hash[:name] # Saída: Jane Doe
 ```
 
 ## Mergulho Profundo:
-
 O conceito de arrays associativos não é único do Ruby; muitas linguagens os implementam sob diversos nomes, como dicionários no Python ou objetos no JavaScript (quando usados como pares chave-valor). Nos estágios iniciais do Ruby, os hashes eram um pouco mais lentos e não tão versáteis. No entanto, com o tempo, a implementação de hashes no Ruby tornou-se altamente otimizada, especialmente para chaves de símbolos, tornando-os extremamente eficientes para acessos e atualizações frequentes.
 
 Os hashes do Ruby se destacam pela sua facilidade de uso sintático e flexibilidade - você pode usar quase qualquer tipo de objeto como chave, embora símbolos e strings sejam os mais comuns. Internamente, os hashes do Ruby são implementados usando um algoritmo de hashing que equilibra velocidade e eficiência de memória, mesmo quando o número de elementos aumenta.

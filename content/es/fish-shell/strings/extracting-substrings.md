@@ -11,9 +11,6 @@ title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---
 
-## ¿Qué y Por Qué?
-Extraer subcadenas significa tomar una porción específica de una cadena de texto. Es esencial para manipular datos, limpiar entradas y preparar strings para comparaciones o almacenamiento.
-
 ## Cómo hacerlo:
 ```Fish Shell
 # Ejemplo 1: Extraer los primeros 5 caracteres

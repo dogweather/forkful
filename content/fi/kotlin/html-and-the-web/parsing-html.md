@@ -11,9 +11,6 @@ title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---
 
-## What & Why?
-HTML-tiedostojen jäsentäminen eli parsing tarkoittaa HTML-koodin muuttamista rakenteelliseksi tiedoksi, mitä ohjelma voi käyttää hyödyksi. Koodaajat tekevät tätä sisällön automaattiseen käsittelyyn ja tiedon uuttamiseen verkkosivuilta.
-
 ## How to:
 Kotlin-kehittäjät käyttävät usein jsoup-kirjastoa HTML-dokumenttien jäsentämiseen. Alla on yksinkertainen esimerkki:
 

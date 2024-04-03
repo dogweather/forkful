@@ -10,12 +10,7 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-
-Writing tests in Elm involves crafting test cases to verify the correctness of your Elm code, ensuring it behaves as expected. Programmers do it to catch bugs early, ease maintenance, and improve the quality and reliability of their applications.
-
-## How to: 
-
+## How to:
 Elm uses the `elm-explorations/test` package for writing unit and fuzz tests. Start by adding the package to your project:
 
 ```elm

@@ -12,11 +12,6 @@ title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---
 
-## What & Why?
-(Suppression de caractères correspondant à un motif)
-
-Dans la programmation, lorsque nous parlons de supprimer des caractères selon un motif, on fait référence à l'élimination sélective de certains caractères dans une chaîne de texte qui correspondent à un modèle spécifique. Les programmeurs font cela pour nettoyer les données, par exemple, en supprimant des balises HTML d'une chaîne ou en assurant qu'un numéro de téléphone respecte un format particulier.
-
 ## How to:
 (Comment faire : )
 

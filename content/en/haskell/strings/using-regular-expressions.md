@@ -10,9 +10,6 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-Regular expressions in programming are sequences of characters that define a search pattern, typically employed for string searching and manipulation. Haskell programmers utilize regular expressions for tasks ranging from simple string matching to complex text processing, capitalizing on their efficiency and versatility in dealing with text data.
-
 ## How to:
 In Haskell, regex functionalities are not part of the standard library, necessitating the use of third-party packages like `regex-base` along with a compatible backend like `regex-posix` (for POSIX regex support), `regex-pcre` (for Perl-compatible regex), etc. Here's how you can use these packages to work with regular expressions.
 
@@ -27,7 +24,6 @@ cabal install regex-pcre
 ```
 
 ### Using `regex-posix`:
-
 ```haskell
 import Text.Regex.Posix ((=~))
 
@@ -48,7 +44,6 @@ main = do
 ```
 
 ### Using `regex-pcre`:
-
 ```haskell
 import Text.Regex.PCRE ((=~))
 

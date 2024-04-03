@@ -12,9 +12,6 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-förfrågan med grundläggande autentisering innebär att en klient skickar användarnamn och lösenord kodat i bas64-format i en HTTP-header för att få tillgång till skyddade resurser. Programmerare gör detta för att enkelt skydda mot obehörig åtkomst när man kallar API:er eller andra webbtjänster.
-
 ## Steg för steg:
 ```TypeScript
 import axios from 'axios';

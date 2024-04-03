@@ -12,9 +12,6 @@ title: Protokollierung
 weight: 17
 ---
 
-## Was & Warum?
-Protokollierung ist im Wesentlichen der Prozess der Aufzeichnung von Ereignissen und Datenausgaben einer Software während ihres Betriebs – man kann sie sich wie das Tagebuch der Software vorstellen. Programmierer nutzen die Protokollierung, um den Überblick darüber zu behalten, was unter der Haube passiert – sie ist äußerst wertvoll für das Debugging, die Überwachung des Systemverhaltens in Echtzeit und die Analyse vergangener Aktivitäten zur Leistungsoptimierung oder für Audits.
-
 ## Wie geht das:
 Elms Architektur unterstützt Seiteneffekte wie Protokollierung nicht direkt – diese werden durch Befehle gehandhabt, die ein Teil der Architektur Ihrer Anwendung sind. Zu Lehrzwecken schauen wir uns an, wie Sie Protokollierung simulieren könnten, indem Sie über Ports Nachrichten an JavaScript senden.
 

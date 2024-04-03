@@ -15,12 +15,7 @@ title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---
 
-## Co i dlaczego?
-
-Parsowanie daty ze stringa w Arduino polega na wydobywaniu i konwertowaniu komponentów daty (rok, miesiąc, dzień) z reprezentacji tekstowej na format, który może być wykorzystany do prowadzenia ewidencji czasu, porównań lub manipulacji w szkicach. Programiści często wykonują to zadanie, aby połączyć się z komponentami takimi jak zegary czasu rzeczywistego, loggery lub aby przetworzyć dane wejściowe z interfejsów API webowych i interfejsów użytkownika, gdzie daty mogą być przedstawiane w czytelnym formacie.
-
 ## Jak to zrobić:
-
 Bezpośrednie podejście bez biblioteki zewnętrznej:
 
 ```cpp

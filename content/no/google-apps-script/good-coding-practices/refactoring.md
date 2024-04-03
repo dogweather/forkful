@@ -14,12 +14,7 @@ title: Refaktorering
 weight: 19
 ---
 
-## Hva & Hvorfor?
-
-Omstrukturering i programmeringsspråket refererer til prosessen med å restrukturere eksisterende dataprogramkode - endre faktoriseringen uten å endre den eksterne oppførselen - for å forbedre ikke-funksjonelle attributter. Det er et viktig steg for programmerere å forbedre kodelesbarhet, redusere kompleksitet, og potensielt avdekke latente feil, noe som fremmer lettere vedlikehold og fremtidig kode-skalerbarhet.
-
 ## Hvordan gjøre det:
-
 I Google Apps Script er et vanlig scenario som drar nytte av omstrukturering, forenklingen av tungvinte skript som samhandler med Google Sheets eller Docs. Opprinnelig kan skript være skrevet på en rask og skitten måte for å få resultater raskt. Over tid, ettersom skriptet vokser, blir det uhåndterlig. La oss gå gjennom et eksempel på omstrukturering for bedre lesbarhet og effektivitet.
 
 **Opprinnelig skript:**
@@ -58,7 +53,6 @@ Utdata i Logger vil se omtrent slik ut, forutsatt at Google Sheets-dokumentet di
 Det omstrukturerte skriptet oppnår det samme resultatet, men er renere og lettere å forstå ved første øyekast.
 
 ## Dypdykk
-
 Omstrukturering i Google Apps Script arver delvis sine prinsipper fra den bredere programvareteknikkpraksisen. Det ble mer anerkjent og strukturert som et konsept på slutten av 1990-tallet, særlig på grunn av Martin Fowlers banebrytende bok "Refactoring: Improving the Design of Existing Code" (1999), som ga en omfattende guide til forskjellige omstruktureringsteknikker. Mens detaljene i omstrukturering kan variere på tvers av programmeringsspråk på grunn av deres syntaktiske og funksjonelle forskjeller, forblir det sentrale målet det samme: å forbedre koden uten å endre dens eksterne oppførsel.
 
 I konteksten av Google Apps Script, er en nøkkelaspekt å vurdere under omstrukturering, tjenestekvoter og begrensninger pålagt av Google. Effektivt omstrukturert kode leses ikke bare bedre, men kjører også raskere og mer pålitelig innenfor disse begrensningene. For eksempel, batchoperasjoner (`Range.setValues()` i stedet for å sette verdier en celle om gangen) kan betydelig redusere utførelsestid og kvoteforbruk.

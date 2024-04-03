@@ -12,12 +12,7 @@ title: Werken met TOML
 weight: 39
 ---
 
-## Wat & Waarom?
-
-TOML, kort voor Tom's Obvious, Minimal Language, is een gegevensserialisatieformaat dat gemakkelijk te lezen is vanwege de duidelijke semantiek. Programmeurs gebruiken het voor configuratiebestanden, omdat het een evenwicht biedt tussen leesbaar voor mensen en vriendelijk voor machines.
-
 ## Hoe te:
-
 In PowerShell is er geen native cmdlet om TOML te parsen. Typisch zou je een module gebruiken of TOML naar JSON converteren met een tool zoals `toml-to-json` als je met PowerShell wilt werken. Hier is hoe je het zou doen met een fictieve module `PowerShellTOML`:
 
 ```PowerShell
@@ -41,13 +36,11 @@ Write-Output $config.database.server
 ```
 
 ## Diepere Duik
-
 TOML werd gecreëerd door Tom Preston-Werner, mede-oprichter van GitHub, als een eenvoudiger alternatief voor XML en YAML voor configuratiebestanden. De eerste versie verscheen in 2013. TOML is vergelijkbaar met JSON, maar het is ontworpen om vriendelijker te zijn voor mensen, wat het een goede keuze maakt voor configuraties die door mensen worden onderhouden. Alternatieven zijn YAML, JSON en XML.
 
 Wat betreft de implementatie, zou een PowerShell-module voor TOML typisch een wrapper zijn rond een TOML-bibliotheek geschreven in een meer prestatiegerichte taal zoals C#. PowerShell heeft geen ingebouwde ondersteuning voor TOML, wat de reden is waarom zo'n module nodig is om gemakkelijk met het TOML-formaat te kunnen werken.
 
 ## Zie Ook
-
 - TOML standaard: https://toml.io/nl/
 - GitHub repository voor `toml` PowerShell module (indien deze bestaat op het moment van lezing): https://github.com/powershell/PowerShellTOML
 - Een introductie tot TOML: https://github.com/toml-lang/toml

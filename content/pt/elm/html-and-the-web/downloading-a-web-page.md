@@ -11,9 +11,6 @@ title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---
 
-## O Que & Porquê?
-Baixar uma página web significa pegar o conteúdo dela, geralmente em HTML, através da internet. Programadores fazem isso para processar essa informação, extrair dados ou até mesmo para testar a disponibilidade e o tempo de resposta das páginas.
-
 ## Como fazer:
 Elm torna a tarefa de baixar uma página web uma jornada tranquila, principalmente com o pacote `Http`. Vamos ver como fazer isso na prática.
 

@@ -11,9 +11,6 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## Hva & Hvorfor?
-Å lese en tekstfil betyr å hente innhold fra en fil lagret på lagringsmediet, for eksempel et SD-kort, så du kan bruke dataene i programmet ditt. Programmerere gjør dette for å kunne arbeide med konfigurasjoner, lagre data eller logge informasjon uten å hardkode det direkte i Arduino-sketchen.
-
 ## Hvordan gjøre det:
 ```Arduino
 #include <SPI.h>

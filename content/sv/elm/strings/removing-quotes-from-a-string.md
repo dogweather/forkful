@@ -12,9 +12,6 @@ title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---
 
-## Vad & Varför?
-Att ta bort citattecken från en sträng innebär att man rensar bort de extra dubbla eller enkla citattecken som du faktiskt inte behöver i den bearbetade texten. Programmerare gör detta för att sanera inmatning, förbereda data för lagring eller göra utdatan mer läslig för människor när citattecken inte är nödvändiga för det givna sammanhanget.
-
 ## Hur man gör:
 I Elm kan du använda `String`-funktionerna för att manipulera strängar, såsom att ta bort citattecken. Här är ett enkelt sätt att göra det på:
 

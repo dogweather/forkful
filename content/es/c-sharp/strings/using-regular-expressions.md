@@ -13,10 +13,8 @@ title: Usando expresiones regulares
 weight: 11
 ---
 
-## ¿Qué y por qué?
-Las expresiones regulares (regex) en C# son una herramienta poderosa para la coincidencia de patrones dentro de cadenas, lo que permite a los programadores buscar, reemplazar, dividir o extraer datos de manera eficiente. Los programadores utilizan regex para tareas que van desde validaciones simples, como la verificación del formato de correo electrónico, hasta tareas complejas de procesamiento de texto debido a su flexibilidad y rendimiento.
-
 ## Cómo:
+
 
 ### Coincidencia de Patrones Simple
 Para verificar si una cadena contiene un patrón específico, puedes utilizar el método `Regex.IsMatch` del espacio de nombres `System.Text.RegularExpressions`.

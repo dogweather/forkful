@@ -14,9 +14,6 @@ title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---
 
-## Co i dlaczego?
-Parsowanie daty ze stringa polega na interpretacji formatu ciągu znaków w celu wyodrębnienia składników daty, takich jak dzień, miesiąc i rok. Programiści robią to, aby obsłużyć dane wejściowe użytkownika, odczytać pliki danych lub współpracować z API, które komunikują daty w formatach tekstowych. Jest to istotne dla przetwarzania danych, walidacji oraz wykonywania arytmetyki dat w aplikacjach.
-
 ## Jak to zrobić:
 We współczesnym C++ można użyć biblioteki `<chrono>` do obsługi dat i czasów natywnie, ale nie obsługuje ona bezpośrednio parsowania ze stringów bez ręcznego parsowania dla bardziej skomplikowanych formatów. Jednak dla formatów dat ISO 8601 i prostych niestandardowych formatów, oto jak możesz osiągnąć parsowanie.
 

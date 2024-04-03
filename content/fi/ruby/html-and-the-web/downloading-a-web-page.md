@@ -11,9 +11,6 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## What & Why? - Mitä & Miksi?
-Ladataan verkkosivu tarkoittaa sivun sisällön noutamista internetistä ohjelmoimalla. Ohjelmoijat tekevät tämän esimerkiksi tiedonkeruuta, sisällön analysointia tai automatisoitua testausta varten.
-
 ## How to: - Kuinka:
 ```Ruby
 require 'net/http'

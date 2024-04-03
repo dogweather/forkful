@@ -11,18 +11,12 @@ title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---
 
-## O Que & Porquê?
-
-Gerar números aleatórios em Haskell implica na criação de números que são imprevisíveis segundo padrões humanos. Isso é crítico em cenários que vão desde aplicações criptográficas até simulações onde o elemento de chance é necessário para modelar fenômenos do mundo real de forma precisa.
-
 ## Como fazer:
-
 Para gerar números aleatórios em Haskell, normalmente se utiliza o pacote `random`, que faz parte da Plataforma Haskell. Aqui está um guia passo a passo:
 
 Primeiro, certifique-se de que você tenha o pacote `random` instalado. Se não, você pode obtê-lo via Cabal ou Stack.
 
 ### Gerando um Número Aleatório
-
 Para gerar um número aleatório simples, você pode usar a função `randomRIO`, que produz um valor aleatório dentro de um intervalo especificado.
 
 ```Haskell
@@ -35,7 +29,6 @@ main = do
 ```
 
 ### Gerando uma Lista de Números Aleatórios
-
 Gerar uma lista de números aleatórios é um pouco mais complicado, mas ainda assim direto:
 
 ```Haskell
@@ -57,7 +50,6 @@ main = do
 Este trecho de código cria uma função `randomList` que gera uma lista de inteiros aleatórios. Substitua `(1, 100)` pelo intervalo desejado.
 
 ## Aprofundamento
-
 O pacote `random` de Haskell fornece um gerador de números pseudo-aleatórios (PRNG), o que significa que os números gerados não são verdadeiramente aleatórios, mas podem parecer ser aleatórios para muitas aplicações. O cerne da capacidade de geração de números aleatórios de Haskell reside na classe de tipo `RandomGen`, que abstrai diferentes métodos de geração de números aleatórios, e na classe de tipo `Random`, que inclui tipos que podem ser gerados aleatoriamente.
 
 Historicamente, a abordagem de Haskell para a geração de números aleatórios enfatizou a pureza e a reprodutibilidade. É por isso que operações que envolvem aleatoriedade são explicitamente tratadas na monada `IO` ou exigem a passagem e atualização manual dos estados do gerador — para manter a transparência referencial.

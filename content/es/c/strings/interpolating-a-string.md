@@ -13,12 +13,7 @@ title: Interpolando una cadena de texto
 weight: 8
 ---
 
-## ¿Qué y por qué?
-
-La interpolación de cadenas, en programación, implica la construcción de cadenas mediante la incrustación de expresiones dentro de cadenas literales. Los programadores hacen esto para crear mensajes informativos, consultas dinámicas, o para construir cualquier cadena con contenido variable de manera eficiente y limpia, a menudo con fines de salida para el usuario o de registro.
-
 ## Cómo hacerlo:
-
 C, a diferencia de algunos lenguajes de alto nivel, no soporta directamente la interpolación de cadenas en su sintaxis. En cambio, la construcción de cadenas con contenido variable se logra típicamente utilizando la función `printf` o sus variantes para la salida, y `sprintf` para la creación de cadenas. He aquí una mirada a cómo construir dinámicamente cadenas en C:
 
 ```c
@@ -48,7 +43,6 @@ Nombre: Jane Doe, Edad: 28
 Estos fragmentos demuestran la forma tradicional de incorporar datos variables en cadenas en C, proporcionando flexibilidad en la construcción de cadenas detalladas.
 
 ## Estudio Profundo
-
 Antes de la llegada de lenguajes de programación más modernos con características de interpolación de cadenas incorporadas, los desarrolladores de C tenían que confiar en funciones como `sprintf()`, `snprintf()`, y sus variantes para componer cadenas con contenido variable. Este enfoque, aunque efectivo, introduce riesgos potenciales como el desbordamiento de búfer si no se gestiona con cuidado, especialmente con `sprintf()`.
 
 Considerando alternativas, lenguajes como Python y JavaScript introdujeron características de interpolación de cadenas más intuitivas, tales como f-strings (cadenas literales formateadas) y literales de plantilla, respectivamente. Estas características permiten a los desarrolladores incrustar expresiones directamente dentro de las cadenas literales, haciendo el código más legible y conciso.

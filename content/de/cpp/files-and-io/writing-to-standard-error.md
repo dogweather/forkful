@@ -12,12 +12,7 @@ title: Schreiben auf Standardfehler
 weight: 25
 ---
 
-## Was & Warum?
-
-Das Schreiben auf den Standardfehler (`stderr`) in C++ beinhaltet die Ausgabe von Fehlermeldungen oder Diagnosen, die getrennt von der Hauptprogrammausgabe sind. Programmierer tun dies, um Fehler auf einen anderen Stream umzuleiten, was das Debugging und die Fehlerbehandlung durch die Unterscheidung zwischen normaler Ausgabe und Fehlermeldungen erleichtert.
-
 ## Wie geht das:
-
 In C++ kann das Schreiben auf den Standardfehler mit dem `cerr`-Stream erreicht werden, der Teil der Standardbibliothek ist. Hier ist ein einfaches Beispiel:
 
 ```cpp

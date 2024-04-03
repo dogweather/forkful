@@ -13,9 +13,6 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-Complexe getallen hebben een reëel deel en een imaginair deel (zoals 3 + 4i). Programmeurs gebruiken ze in Swift voor taken zoals signaalverwerking, het oplossen van bepaalde wiskundige problemen en het simuleren van natuurkunde.
-
 ## Hoe:
 Swift heeft geen ingebouwde ondersteuning voor complexe getallen, maar we kunnen onze eigen maken:
 

@@ -13,10 +13,8 @@ title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---
 
-## ¿Qué y por qué?
-Escribir en el error estándar (stderr) implica enviar mensajes de error y diagnósticos a la consola o terminal. Los programadores lo hacen para separar la información de error de la salida estándar (stdout), facilitando la depuración y el análisis de logs.
-
 ## Cómo hacerlo:
+
 
 ### Salida básica a stderr en Java
 Java proporciona una forma sencilla de escribir en stderr utilizando `System.err.print()` o `System.err.println()`. Así es cómo se hace:
@@ -45,7 +43,6 @@ Esto imprimirá directamente el mensaje de error al flujo de error estándar.
 Para aplicaciones que necesitan un manejo de errores y registro más sofisticados, es común usar una biblioteca de registro como SLF4J con Logback o Log4J2. Esto permite más flexibilidad en la gestión de la salida de errores, incluyendo la redirección de archivos, filtrado y formateo.
 
 #### Ejemplo con Logback
-
 Primero, añade la dependencia de Logback a tu archivo `pom.xml` (Maven) o `build.gradle` (Gradle). Para Maven:
 
 ```xml

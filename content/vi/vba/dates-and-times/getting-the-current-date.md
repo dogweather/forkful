@@ -17,12 +17,7 @@ title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---
 
-## Gì và Tại sao?
-
-Trong Visual Basic for Applications (VBA), việc lấy ngày hiện tại là một nhiệm vụ phổ biến giúp các lập trình viên có thể làm việc với ngày một cách linh hoạt trong các macro hoặc ứng dụng của họ. Chức năng này rất quan trọng cho các hoạt động như ghi nhận, dấu thời gian cho các giao dịch, hoặc thực hiện các phép tính dựa trên ngày.
-
 ## Cách thực hiện:
-
 Việc lấy ngày hiện tại trong VBA là khá dễ dàng, sử dụng hàm `Date`, trong khi hàm `Now` cung cấp cả ngày và giờ hiện tại. Dưới đây là cách bạn có thể làm việc với cả hai:
 
 ```vb
@@ -49,7 +44,6 @@ Ngày và Giờ hiện tại: 12/4/2023 3:45:22 CH
 Hãy nhớ rằng định dạng ngày có thể thay đổi dựa trên cài đặt hệ thống của máy tính người dùng.
 
 ## Sâu hơn
-
 Hàm `Date` và `Now` tóm gọn sự phức tạp khi làm việc với ngày và giờ trong Visual Basic for Applications, cung cấp một trừu tượng cấp ứng dụng giúp việc làm việc với ngày trở nên đơn giản và trực quan. Trong lịch sử, việc xử lý ngày và giờ trong lập trình đã đầy rẫy những thách thức, bao gồm việc xử lý các múi giờ khác nhau, thay đổi giờ tiết kiệm ánh sáng, và các định dạng ngày khác nhau.
 
 Trong VBA, những hàm này dựa trên ngày và giờ của hệ thống cơ bản, điều này nghĩa là chúng bị ảnh hưởng bởi ngôn ngữ và cài đặt hệ thống của người dùng. Đó là một con dao hai lưỡi đảm bảo sự nhất quán với môi trường của người dùng nhưng cũng đòi hỏi sự xử lý cẩn thận về địa phương hóa và điều chỉnh múi giờ trong các ứng dụng toàn cầu.

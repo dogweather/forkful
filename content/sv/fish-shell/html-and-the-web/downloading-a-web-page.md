@@ -11,9 +11,6 @@ title: "H\xE4mta en webbsida"
 weight: 42
 ---
 
-## Vad & Varför?
-Att ladda ner en webbsida innebär att hämta sidans innehåll från internet till din dator. Programmerare gör detta för att analysera sidinnehållet, automatisera datainsamling eller testa webbservrar.
-
 ## How to:
 För att ladda ner en webbsida i Fish Shell kan vi använda `curl` eller `wget`. Här är hur man gör det:
 

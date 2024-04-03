@@ -12,9 +12,6 @@ title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---
 
-## Co i dlaczego?
-Logowanie to w zasadzie oprogramowaniowy odpowiednik dziennika pokładowego statku; jest to sposób na rejestrowanie zdarzeń, które mają miejsce podczas działania aplikacji. Programiści robią to aby śledzić te zdarzenia w celu debugowania, tworzenia ścieżek audytu, lub zdobycia wglądu w zachowanie systemu w środowisku produkcyjnym.
-
 ## Jak to zrobić:
 Clojure opiera się o udogodnienia logowania Javy, ale możesz się do nich dobrać w bardziej idiomatyczny dla Clojure sposób. Przyjrzyjmy się, jak możesz użyć `clojure.tools.logging`, które dostarcza prostej abstrakcji dla kilku frameworków logujących:
 

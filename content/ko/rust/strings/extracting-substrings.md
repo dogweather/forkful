@@ -17,9 +17,6 @@ title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
 weight: 6
 ---
 
-## What & Why? (무엇과 왜?)
-문자열에서 부분 문자열(substrings)을 추출하는 것은 문자열의 특정 부분만 사용하고 싶을 때 필요합니다. 데이터를 파싱하거나 사용자 입력을 처리할 경우에 자주 사용되죠.
-
 ## How to (방법)
 ```Rust
 fn main() {

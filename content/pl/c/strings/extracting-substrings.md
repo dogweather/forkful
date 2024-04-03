@@ -15,16 +15,10 @@ title: "Wydobywanie podci\u0105g\xF3w"
 weight: 6
 ---
 
-## Co i dlaczego?
-
-Wyodrębnianie podciągów w C polega na tworzeniu mniejszego łańcucha znaków (podciągu) z większego łańcucha na podstawie określonych kryteriów, takich jak pozycja i długość. Programiści często wykonują to zadanie do analizy tekstu, przetwarzania danych lub walidacji wprowadzanych danych, co czyni je kluczową umiejętnością w efektywnej manipulacji i analizie danych tekstowych.
-
 ## Jak to zrobić:
-
 W przeciwieństwie do niektórych języków wyższego poziomu, które oferują wbudowane metody do wyodrębniania podciągów, C wymaga bardziej ręcznego podejścia przy użyciu jego funkcji manipulacji łańcuchami. Oto jak skutecznie wyodrębnić podciąg w C:
 
 ### Przykład 1: Użycie `strncpy`
-
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -44,7 +38,6 @@ int main() {
 ```
 
 ### Przykład 2: Tworzenie funkcji
-
 Do wielokrotnego użytku bardziej efektywne może być dedykowana funkcja do wyodrębniania podciągów:
 
 ```c
@@ -69,7 +62,6 @@ int main() {
 ```
 
 ## Pogłębiona analiza
-
 Wyodrębnianie podciągów w C jest przede wszystkim obsługiwane poprzez manipulację wskaźnikami i staranne zarządzanie pamięcią, co odzwierciedla niższopoziomowe podejście języka do obsługi danych. Metoda ta sięga wczesnych dni programowania w C, kiedy efektywne zarządzanie zasobami było kluczowe ze względu na ograniczoną moc obliczeniową. Chociaż brak wbudowanej funkcji podciągu może wydawać się niedociągnięciem, jest to przykład filozofii C, która daje programistom pełną kontrolę nad zarządzaniem pamięcią, często prowadząc do optymalizacji, ale bardziej złożonego kodu.
 
 W obszarze współczesnego programowania języki takie jak Python i JavaScript oferują wbudowane metody do wyodrębniania podciągów, takie jak `slice()` lub wycinanie łańcuchów znaków przy użyciu indeksów. Te języki wyższego poziomu obsługują zarządzanie pamięcią za kulisami, oddając pewien stopień kontroli w zamian za łatwość użycia i czytelność.

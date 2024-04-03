@@ -11,12 +11,7 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-
-Calculating future or past dates involves manipulating dates to find out what they'll be after a certain period or what they were. Programmers do this for things like scheduling events, reminders, or figuring out expiration dates.
-
 ## How to:
-
 In Clojure, you'll mainly use the `clj-time` library for date operations. Here's a quick show:
 
 ```clojure
@@ -42,7 +37,6 @@ Sample output:
 ```
 
 ## Deep Dive
-
 In the earlier days, Coders used Java's `Date` and `Calendar` classes. But, let's be honest, they're a headache—verbose and error-prone. The `clj-time` library brought some sanity, wrapping Joda-Time's more developer-friendly API.
 
 Alternatives? Java 8 introduced `java.time` (JSR-310), which is quite good, but in Clojure's neck of the woods, we're still cozy with `clj-time`.
@@ -50,6 +44,5 @@ Alternatives? Java 8 introduced `java.time` (JSR-310), which is quite good, but 
 When calculating dates, you use periods for concepts like "days" and "months" and durations for precise millisecond counts. Keep in mind time zones—dates and times can shift dramatically depending on the time zone rules, and daylight saving time (DST) can throw a spanner in your works.
 
 ## See Also
-
 - `clj-time` GitHub repo: [https://github.com/clj-time/clj-time](https://github.com/clj-time/clj-time)
 - Clojure’s `java-time`: [https://github.com/dm3/clojure.java-time](https://github.com/dm3/clojure.java-time)

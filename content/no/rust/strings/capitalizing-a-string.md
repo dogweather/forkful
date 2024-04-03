@@ -14,16 +14,10 @@ title: Sette stor bokstav i en streng
 weight: 2
 ---
 
-## Hva & Hvorfor?
-
-Å kapitalisere en streng i Rust innebærer å endre strengen slik at dens første bokstav er stor hvis det er en bokstav, mens resten av strengen forblir uendret. Programmerere utfører ofte denne operasjonen for formateringsformål, slik som å forberede ord for titler eller sikre konsekvens i brukerinput.
-
 ## Hvordan:
-
 For å kapitalisere en streng i Rust, har du to hovedruter: å bruke standardbibliotekfunksjoner eller å bruke tredjeparts cratest for mer komplekse eller spesifikke behov. Her er hvordan du kan gjøre begge deler.
 
 ### Ved å bruke Rusts standardbibliotek
-
 Rusts standardbibliotek tilbyr ikke en direkte metode for å kapitalisere strenger, men du kan oppnå dette ved å manipulere strengens tegn.
 
 ```rust
@@ -42,7 +36,6 @@ fn main() {
 ```
 
 ### Ved å bruke `heck` Craten
-
 For en mer rett frem tilnærming, spesielt når du arbeider innenfor en større tekstbehandlingskontekst, kan du foretrekke å bruke tredjepartsbiblioteker som `heck`. `heck` craten tilbyr ulike kasusomformingsfunksjonaliteter, inkludert en enkel måte å kapitalisere strenger på.
 
 Først, legg til `heck` i din `Cargo.toml`:

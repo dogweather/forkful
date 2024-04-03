@@ -11,18 +11,12 @@ title: Generierung von Zufallszahlen
 weight: 12
 ---
 
-## Was & Warum?
-
-Das Generieren von Zufallszahlen in Haskell umfasst das Erstellen von Zahlen, die nach menschlichen Maßstäben unvorhersehbar sind. Dies ist kritisch in Szenarien, die von kryptografischen Anwendungen bis hin zu Simulationen reichen, bei denen das Element des Zufalls erforderlich ist, um reale Phänomene genau zu modellieren.
-
 ## Wie geht das:
-
 Um Zufallszahlen in Haskell zu generieren, verwendet man typischerweise das `random` Paket, das Teil der Haskell Plattform ist. Hier ist eine Schritt-für-Schritt-Anleitung:
 
 Zunächst stellen Sie sicher, dass Sie das `random` Paket installiert haben. Wenn nicht, können Sie es über Cabal oder Stack erhalten.
 
 ### Eine Zufallszahl generieren
-
 Um eine einfache Zufallszahl zu generieren, können Sie die Funktion `randomRIO` verwenden, die einen zufälligen Wert innerhalb eines spezifizierten Bereichs erzeugt.
 
 ```Haskell
@@ -35,7 +29,6 @@ main = do
 ```
 
 ### Eine Liste von Zufallszahlen generieren
-
 Eine Liste von Zufallszahlen zu generieren ist etwas aufwändiger, aber immer noch unkompliziert:
 
 ```Haskell
@@ -57,7 +50,6 @@ main = do
 Dieser Code-Schnipsel erstellt eine Funktion `zufallsListe`, die eine Liste von zufälligen Ganzzahlen generiert. Ersetzen Sie `(1, 100)` mit Ihrem gewünschten Bereich.
 
 ## Tiefergehend
-
 Das Haskell `random` Paket stellt einen Pseudozufallszahlengenerator (PRNG) zur Verfügung, was bedeutet, dass die generierten Zahlen nicht wahrhaft zufällig sind, aber für viele Anwendungen als zufällig erscheinen können. Der Kern von Haskells Fähigkeit zur Zufallszahlengenerierung liegt in der `RandomGen` Typklasse, die verschiedene Methoden zur Generierung von Zufallszahlen abstrahiert, und der `Random` Typklasse, die Typen umfasst, die zufällig generiert werden können.
 
 Historisch hat Haskell bei der Zufallszahlengenerierung Wert auf Reinheit und Reproduzierbarkeit gelegt. Das ist der Grund, warum Operationen, die Zufälligkeit involvieren, explizit in der `IO` Monad gehandhabt werden oder das manuelle Durchreichen und Aktualisieren von Generatorzuständen erfordern — um die Referenztransparenz zu erhalten.

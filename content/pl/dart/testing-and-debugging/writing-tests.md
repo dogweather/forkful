@@ -14,12 +14,7 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i dlaczego?
-
-Pisanie testów w Dart polega na tworzeniu przypadków testowych, aby automatycznie weryfikować, czy różne części programu działają zgodnie z oczekiwaniami. Programiści robią to, aby upewnić się, że ich kod jest niezawodny i wolny od defektów, co ułatwia łatwiejsze aktualizacje i refaktoryzację, a także zapobiega regresji.
-
 ## Jak to zrobić:
-
 W Dartcie często używa się pakietu `test` do pisania testów. Najpierw dodaj pakiet `test` do pliku `pubspec.yaml`:
 
 ```yaml
@@ -62,7 +57,6 @@ Przykładowe wyjście może wyglądać tak:
 ```
 
 ### Używanie biblioteki firm trzecich: Mockito do mockowania
-
 Do testowania kodu, który ma złożone zależności, możesz użyć Mockito do tworzenia obiektów mock. Najpierw dodaj Mockito do swojego `pubspec.yaml`:
 
 ```yaml

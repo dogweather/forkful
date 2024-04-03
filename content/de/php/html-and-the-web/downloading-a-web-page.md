@@ -10,9 +10,6 @@ title: Webseite herunterladen
 weight: 42
 ---
 
-## What & Why? (Was & Warum?)
-Das Herunterladen einer Webseite bedeutet, ihre Inhalte zu holen, um sie zu analysieren oder zu verarbeiten. Programmierer tun das, um Daten zu sammeln, Automatisierungen zu erstellen oder den Inhalt offline verfügbar zu machen.
-
 ## How to: (Anleitung:)
 ```PHP
 <?php

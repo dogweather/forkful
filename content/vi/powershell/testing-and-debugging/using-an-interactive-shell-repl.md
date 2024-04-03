@@ -15,9 +15,6 @@ title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---
 
-## Gì & Tại sao?
-Shell tương tác, hay Vòng lặp Đọc-Đánh giá-In (REPL), cho phép bạn nhập các lệnh PowerShell và nhận phản hồi tức thì. Lập trình viên sử dụng nó để nhanh chóng kiểm tra các đoạn mã, gỡ lỗi, hoặc học các lệnh mới mà không cần viết một script đầy đủ.
-
 ## Làm thế nào:
 Khởi chạy PowerShell và bạn sẽ ở trong REPL. Thử lệnh Cmdlet `Get-Date`:
 

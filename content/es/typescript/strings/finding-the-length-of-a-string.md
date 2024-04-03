@@ -10,9 +10,6 @@ title: Calculando la longitud de una cadena
 weight: 7
 ---
 
-## What & Why?
-En TypeScript, hallar la longitud de una cadena implica contar la cantidad de caracteres que contiene. Saber esto es clave cuando manipulamos texto: para validar entradas, subcadenas, o simplemente medir la información.
-
 ## How to:
 La propiedad `length` devuelve el número de caracteres en una cadena:
 

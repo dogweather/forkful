@@ -11,9 +11,6 @@ title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---
 
-## O Que & Porquê?
-Remover caracteres que correspondem a um padrão é uma operação de filtragem de strings para moldá-las conforme a necessidade. Programadores fazem isso para limpar dados, validar entradas, ou preparar textos para processamento.
-
 ## Como Fazer:
 ```kotlin
 fun main() {

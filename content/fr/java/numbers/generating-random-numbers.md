@@ -11,12 +11,7 @@ title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---
 
-## Quoi et pourquoi ?
-
-La génération de nombres aléatoires consiste à produire des séquences ou des valeurs uniques imprévisibles dans une plage définie. Les programmeurs utilisent cette technique pour diverses raisons, notamment les simulations, les jeux, les applications de sécurité et les méthodes d'échantillonnage pour tester des algorithmes dans différentes conditions.
-
 ## Comment faire :
-
 En Java, la génération de nombres aléatoires peut être réalisée à l'aide de la classe `Random` du package `java.util`, ou des classes `ThreadLocalRandom` et `SecureRandom` pour des cas d'utilisation spécifiques. Les exemples suivants illustrent comment utiliser ces classes.
 
 ### Utilisation de la classe `Random`
@@ -79,7 +74,6 @@ public class ExempleSecureRandom {
 ```
 
 ## Plongée profonde
-
 La génération de nombres aléatoires a considérablement évolué depuis les débuts de l'informatique. La classe `Random` de Java utilise une formule linéaire congruentielle pour générer des nombres pseudo-aléatoires, qui sont déterministes et ne conviennent pas pour des applications à haute sécurité. Cela a conduit à l'introduction de `SecureRandom`, qui utilise des algorithmes plus sophistiqués (par exemple, SHA1PRNG) pour produire des nombres aléatoires cryptographiquement robustes.
 
 Cependant, `Random` et `SecureRandom` ont leurs lacunes, telles que la dégradation des performances dans les environnements multithreads. La classe `ThreadLocalRandom` a été introduite dans Java 7 pour résoudre ce problème en fournissant des générateurs de nombres aléatoires locaux aux threads, améliorant ainsi considérablement les performances dans les applications concurrentes.

@@ -14,12 +14,7 @@ title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---
 
-## Co i Dlaczego?
-
-Zwiększanie wielkości pierwszej litery ciągu polega na zamianie pierwszej litery ciągu na wielką, przy jednoczesnym zapewnieniu, że reszta liter jest mała. Ta czynność jest powszechnie potrzebna do formatowania danych wejściowych użytkownika lub wyświetlania tekstu w interfejsach użytkownika, gdzie istotne są spójność i czytelność.
-
 ## Jak to zrobić:
-
 Elixir oferuje prosty sposób na zwiększenie wielkości litery ciągów za pomocą swoich wbudowanych funkcji, bez potrzeby używania zewnętrznych bibliotek. Oto prosty przykład:
 
 ```elixir

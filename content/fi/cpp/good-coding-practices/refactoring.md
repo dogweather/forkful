@@ -11,12 +11,7 @@ title: Koodin refaktorointi
 weight: 19
 ---
 
-## Mikä & Miksi?
-
-Koodin uudelleenjärjestäminen (refaktorointi) on prosessi, jossa muutetaan tietokoneohjelman sisäistä rakennetta muuttamatta sen ulkoista toimintaa. Ohjelmoijat tekevät sitä siistiäkseen koodiaan, jolloin se on helpompi ymmärtää, ylläpitää ja laajentaa.
-
 ## Kuinka:
-
 Kuvittele, että sinulla on funktio, joka tekee hieman liikaa, kuten tämä kömpelö metodi, joka alustaa olion ja suorittaa myös lokitusta:
 
 ```C++
@@ -71,7 +66,6 @@ w.logInit();
 Tämä muutos ei ole muuttanut ohjelman toimintaa, mutta tekee `Widget`-luokasta modulaarisemman ja sen käytön selkeämmäksi.
 
 ## Syväsukellus
-
 Nykyajan tuntemamme refaktoroinnin konseptilla on juurensa 1980-luvun Smalltalk-ohjelmointiyhteisöissä ja se tuli vahvasti tunnetuksi Martin Fowlerin kirjasta "Refactoring: Improving the Design of Existing Code" vuodelta 1999. Nykyään refaktorointi on modernin ohjelmistokehityksen ydinosa, joka on integroitu erilaisiin kehitysmenetelmiin, kuten Agileen ja TDD:hen (Test-Driven Development).
 
 Puhuttaessa vaihtoehdoista refaktoroinnille, siirrytään uudelleenkirjoittamisen tai uudelleensuunnittelun alueelle. Refaktorointi on strategista ja asteittaista, kun taas uudelleenkirjoitus saattaa hylätä olemassa olevan koodin uuden ratkaisun hyväksi. Uudelleensuunnittelu puolestaan voi sisältää merkittävämpiä muutoksia, mukaan lukien toiminnallisuuden muuttaminen, mikä ei ole puhdasoppisen refaktoroinnin tavoite.
@@ -81,7 +75,6 @@ Refaktoroinnin toteutuksen yksityiskohdat voivat olla varsin yksityiskohtaisia. 
 Lisäksi, refaktorointi vaatii vankan testisarjan varmistaakseen, että toiminnallisuus pysyy muuttumattomana. Ilman testejä olet käytännössä lentämässä sokeana ja riskeeraat regressioita.
 
 ## Katso Myös
-
 Syvemmän ymmärryksen saavuttamiseksi refaktoroinnista ja lisäesimerkkien näkemiseksi, saatat haluta tutustua:
 
 - Martin Fowlerin klassikkotekstiin "Refactoring: Improving the Design of Existing Code" perusideoista ja strategioista.

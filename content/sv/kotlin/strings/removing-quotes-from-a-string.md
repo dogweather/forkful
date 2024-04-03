@@ -12,12 +12,7 @@ title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---
 
-## Vad & Varför?
-
-Att ta bort citattecken från en sträng innebär att man tar bort alla förekomster av citattecken, antingen enkla (' ') eller dubbla (" "), från textdata man arbetar med. Programmerare behöver ofta göra detta för datatvätt, för att förbereda för ytterligare bearbetning, eller när citattecknen i sig inte är relevanta för datans mening.
-
 ## Hur man gör:
-
 Här är ett enkelt sätt att ta bort båda typerna av citattecken från en sträng i Kotlin:
 
 ```kotlin
@@ -51,7 +46,6 @@ fun main() {
 ```
 
 ## Fördjupning
-
 Historiskt sett har hantering av strängar och tecken som ska ignoreras varit en kärndel av programmering, eftersom text är ett grundläggande sätt vi interagerar med data på. Citattecken inom strängar behöver ibland ignoreras. Detta indikeras av ett föregående omvänt snedstreck (t.ex. `"Hon sa, \"Hej!\""`). När du bearbetar sådana strängar kan du behöva ta bort escape-tecken, eller själva citattecknen för att få en renare eller mer användbar text.
 
 Alternativ till `replace`-metoden inkluderar borttagning baserad på reguljära uttryck eller manuell tolkning av strängen, tecken för tecken. Dock kan reguljära uttryck vara överdrift för enkla operationer och manuell tolkning är mindre effektiv än att använda inbyggda strängfunktioner. Kotlins `replace`-funktion utnyttjar den underliggande Javas `String` `replace`-metod, som är väl optimerad för prestanda.
@@ -59,7 +53,6 @@ Alternativ till `replace`-metoden inkluderar borttagning baserad på reguljära 
 När det gäller implementering är det värt att nämna att Kotlin är interoperabelt med Java, så i effekt är alla operationer du utför på strängar lika prestandaeffektiva som de skulle vara i Java. Det är avgörande när man tar bort citattecken att vara medveten om kantfall, som inbäddade citattecken, vilket kan kräva en mer sofistikerad metod, möjligtvis med användning av reguljära uttryck eller ett parserbibliotek.
 
 ## Se även
-
 För mer kontext om hantering av strängar i Kotlin, kan du kolla in den officiella dokumentationen:
 
 - [Kotlins String-dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)

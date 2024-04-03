@@ -12,9 +12,6 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-Complexe getallen, die een reëel deel en een imaginair deel hebben (zoals 3 + 4i), zijn essentieel in vakgebieden zoals techniek, natuurkunde en datawetenschap. Programmeurs gebruiken ze voor simulaties, signaalverwerking en het oplossen van specifieke soorten wiskundige problemen.
-
 ## Hoe te:
 PowerShell heeft geen ingebouwde ondersteuning voor complexe getallen, dus je moet ofwel je eigen oplossing ontwikkelen of .NET's `System.Numerics.Complex` gebruiken.
 

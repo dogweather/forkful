@@ -13,12 +13,7 @@ title: Controleren of een directory bestaat
 weight: 20
 ---
 
-## Wat & Waarom?
-
-Controleren of een directory bestaat is simpelweg verifiëren of een map aanwezig is op een gespecificeerd pad in het bestandssysteem. Programmeurs doen dit om fouten te voorkomen, bestanden efficiënt te beheren en te zorgen dat gegevens van of naar de juiste locaties worden geschreven of gelezen.
-
 ## Hoe:
-
 Gebruik de `Test-Path` cmdlet om te controleren op het bestaan van een directory. Deze cmdlet retourneert een boolean: `$true` als de directory bestaat, en `$false` als dat niet zo is.
 
 ```PowerShell
@@ -49,7 +44,6 @@ if (Test-Path $directoryPath) {
 ```
 
 ## Diepere Duik
-
 De `Test-Path` cmdlet is er al sinds PowerShell v1.0. Het is geen eendagsvlieg; naast directories kan het ook gebruikt worden voor het controleren van bestanden, registervermeldingen, en andere items via verschillende 'paden'.
 
 Er zijn alternatieven. PowerShell is gebouwd op het .NET Framework, dus je zou kunnen overstappen op .NET-methoden als je dat wilt:
@@ -63,7 +57,6 @@ Dit dient hetzelfde doel maar is de "lange route". Waarom deze moeite, wanneer `
 Wat implementatie betreft, is het controleren op een directory voordat operaties worden uitgevoerd best practice. Het gaat om voorspelbaarheid. Je zou toch ook geen dragrace beginnen met een lege tank? Dus je leest niet van of schrijft niet naar een niet-bestaande directory, evenzeer.
 
 ## Zie Ook
-
 Voor meer informatie, bekijk deze links:
 
 - [Test-Path Cmdlet Documentatie](https://docs.microsoft.com/nl-nl/powershell/module/microsoft.powershell.management/test-path)

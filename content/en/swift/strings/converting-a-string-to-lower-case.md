@@ -10,12 +10,7 @@ title: Converting a string to lower case
 weight: 4
 ---
 
-## What & Why?
-
-Converting a string to lowercase means swapping any uppercase letters to their lowercase counterparts. Programmers do this for consistency, often for case-insensitive comparisons or standardizing text input.
-
 ## How to:
-
 Swift makes this easy with a property called `lowercased`. Here's how you use it:
 
 ```Swift
@@ -30,7 +25,6 @@ hello, world!
 ```
 
 ## Deep Dive:
-
 Historically, ensuring consistent string case has been crucial in programming, mainly since early computers were very case-sensitive. In Swift, `lowercased()` is a method available on instances of the `String` type. By invoking it, you convert all characters within the string that have lowercased variants to their lowercased forms.
 
 Alternatives to `lowercased()` could be manually traversing the string and replacing each character with its lowercased equivalent by using a mapping function. But, honestly, that's reinventing the wheel.
@@ -46,7 +40,6 @@ print(lowercasedTurkishString) // "i̇stanbul", correct in Unicode, but 'I' with
 The implementation of `lowercased()` under the hood leverages the Unicode standard which includes complex mapping rules for characters in various scripts, not all of which are a simple matter of 'a' replacing 'A'.
 
 ## See Also:
-
 To explore more on strings and character transformations in Swift, dip into the following resources:
 
 - Swift String and Characters documentation: [Swift.org](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

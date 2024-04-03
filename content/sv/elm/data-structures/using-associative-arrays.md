@@ -14,12 +14,7 @@ title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---
 
-## Vad & Varför?
-
-Associativa arrayer, eller som Elm kallar dem, Ordböcker, mappar nycklar till värden på ett sätt som gör uppslag, infogning och borttagning av värden supersmidigt. De är din tillgång när du behöver hålla reda på saker utan en strikt ordning, som användarpreferenser eller inventarielistor.
-
 ## Hur man gör:
-
 I Elm arbetar du med Ordböcker i `Dict`-modulen, så låt oss dyka in i ett snabbt exempel:
 
 ```Elm
@@ -52,7 +47,6 @@ Exempelutdata när man visar `dictToList`:
 Detta demonstrerar de grundläggande operationerna: att skapa, uppdatera, komma åt och iterera över en Ordbok.
 
 ## Fördjupning
-
 Ordböcker i Elm använder internt en struktur som är känd som ett AVL-träd - en typ av självbalanserande binärt sökträd. Detta val balanserar mellan att säkerställa att operationer som insert, get och remove har bra prestanda (logaritmisk tidskomplexitet) och att bibehålla enkelhet i hanteringen av data.
 
 Trots styrkorna med Elm:s `Dict`, är det inte en lösning som passar för allt. För samlingar som är ordnade eller behöver itereras över sekventiellt kan List eller Array vara mer lämpliga. Dessutom, när man arbetar med en fast uppsättning kända nycklar, kan att använda sig av anpassade typer (Elms version av enums) erbjuda mer typsäkerhet och tydligare avsikter i din kod.

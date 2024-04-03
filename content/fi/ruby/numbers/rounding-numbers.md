@@ -11,11 +11,7 @@ title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä & Miksi?
-Pyöristäminen tarkoittaa lukujen säätämistä lähimpään kokonaislukuun tai määritettyyn tarkkuusasteeseen. Ohjelmoijat pyöristävät lukuja yksinkertaistaakseen, vastatakseen ihmisten odotuksiin tai sovittaakseen tiedot tiettyihin muotoihin—ajattele taloudellisia laskelmia, graafisia näyttöjä tai tallennustilan vähentämistä.
-
 ## Miten:
-
 ```Ruby
 # Peruspyöristäminen
 puts 3.14159.round      # => 3

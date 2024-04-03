@@ -11,9 +11,6 @@ title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---
 
-## What & Why? (Co i Dlaczego?)
-Interpolacja stringów pozwala wstawiać zmienne lub wyrażenia bezpośrednio do łańcuchów znaków. Programiści używają jej dla czytelności i wygody, unikając ciągłego łączenia stringów.
-
 ## How to: (Jak to zrobić:)
 ```rust
 fn main() {

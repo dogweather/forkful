@@ -11,9 +11,6 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-Het vinden van de lengte van een string betekent het tellen van de tekens. Programmeurs doen dit om invoer te valideren, door tekens te loopen of opslag toe te wijzen.
-
 ## Hoe:
 ```kotlin
 fun main() {

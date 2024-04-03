@@ -13,9 +13,6 @@ title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---
 
-## ¿Qué y por qué?
-Analizar una fecha desde una cadena implica convertir representaciones textuales de fechas y horas en un formato que pueda ser manipulado y analizado por el programa. Esta es una tarea común en la programación, ya que permite el manejo de entradas del usuario, almacenamiento de datos con sello de tiempo e interacciones con APIs, lo que resulta en aplicaciones más funcionales y amigables para el usuario.
-
 ## Cómo hacerlo:
 TypeScript, siendo un superconjunto de JavaScript, se basa en el objeto Date para analizar fechas desde cadenas. Sin embargo, trabajar con fechas en JS/TS puede volverse verboso o impreciso debido a las peculiaridades del objeto Date. Aquí hay un ejemplo básico seguido por un enfoque que utiliza una biblioteca popular, `date-fns`, para soluciones más robustas.
 

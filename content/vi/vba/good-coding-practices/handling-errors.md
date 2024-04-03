@@ -15,12 +15,7 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Cái gì & Tại sao?
-
-Xử lý lỗi trong Visual Basic cho Ứng dụng (VBA) là quá trình nhận biết, phát hiện và giải quyết lỗi lập trình, ứng dụng hoặc giao tiếp. Việc triển khai xử lý lỗi mạnh mẽ là rất quan trọng để duy trì tính toàn vẹn của ứng dụng và cải thiện trải nghiệm người dùng bằng cách quản lý một cách nhẹ nhàng các vấn đề không mong đợi mà không gây ra sự cố đột ngột hoặc mất dữ liệu.
-
 ## Cách thực hiện:
-
 Trong VBA, xử lý lỗi thường được triển khai sử dụng câu lệnh `On Error` mà chỉ dẫn VBA cách tiến hành khi một lỗi xảy ra. Các chiến lược xử lý lỗi phổ biến bao gồm `On Error GoTo` label, `On Error Resume Next`, và `On Error GoTo 0`.
 
 **Ví dụ 1: Sử dụng `On Error GoTo`**
@@ -65,7 +60,6 @@ End Sub
 Trong trường hợp này, chương trình không dừng lại khi có lỗi; nó kiểm tra xem lỗi có xảy ra không, xử lý nếu có, và sau đó xóa lỗi.
 
 ## Sâu hơn nữa
-
 Trong quá khứ, xử lý lỗi trong ngôn ngữ lập trình đã tiến hóa từ các câu lệnh goto đơn giản đến các cơ chế tinh vi hơn như ngoại lệ trong các ngôn ngữ như Java và C#. Mặc dù xử lý lỗi VBA không mạnh mẽ hay linh hoạt bằng cách xử lý ngoại lệ hiện đại, nhưng nó phục vụ mục đích của mình trong bối cảnh ứng dụng của ngôn ngữ trong tự động hóa các tác vụ trong môi trường Microsoft Office.
 
 Hạn chế chính của xử lý lỗi VBA nằm ở cách tiếp cận tương đối cồng kềnh và thủ công, đòi hỏi phải đặt cẩn thận mã xử lý lỗi và hiểu rõ luồng thực thi. Các ngôn ngữ lập trình hiện đại thường cung cấp các giải pháp tinh tế hơn, như các khối try-catch, mà tự động điều khiển dòng chảy đến mã xử lý lỗi mà không cần kiểm tra hoặc nhảy trong thực thi mã thủ công.

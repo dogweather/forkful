@@ -13,11 +13,7 @@ title: Schrijven naar standaardfout
 weight: 25
 ---
 
-## Wat & Waarom?
-Schrijven naar standaardfout (stderr) in Haskell laat je fouten en debug informatie rapporteren, los van de standaarduitvoer (stdout). Dit wordt gedaan om de uitvoerstromen georganiseerd te houden, waardoor het gemakkelijker wordt om alleen om te gaan met wat nodig is—zoals het doorvoeren van uitvoer of het loggen van fouten.
-
 ## Hoe:
-
 Gebruik System.IO om naar stderr te schrijven. Hier is een eenvoudige demo:
 
 ```Haskell
@@ -44,12 +40,10 @@ runhaskell jouw_programma.hs 2> fout.log
 `fout.log` bevat nu "Dit gaat naar stderr".
 
 ## Diepere Duik
-
 Het IO-systeem van Haskell onderscheidt tussen stdout en stderr, waarbij de Unix-conventies in stand worden gehouden. Voor Haskell stelden talen zoals C het precedent van gescheiden stromen in—stdout voor resultaten, stderr voor fouten en logs.
 
 Alternatieve manieren van uitvoer omvatten het gebruiken van bibliotheken zoals `System.Log.Logger` voor meer complexe logboekregistratie. Met betrekking tot implementatie is stderr in Haskell een `Handle`, net als een bestandshandle, maar vooraf gedefinieerd om naar de systeemfoutuitvoer te verwijzen.
 
 ## Zie Ook
-
 - [Haskell System.IO-bibliotheek](https://hackage.haskell.org/package/base-4.16.0.0/docs/System-IO.html): Gedetailleerde documentatie over System.IO.
 - [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/): Een inleidend boek over Haskell dat I/O behandelt.

@@ -12,9 +12,6 @@ title: Logboekregistratie
 weight: 17
 ---
 
-## Wat & Waarom?
-"Loggen" is het bijhouden van een register van gebeurtenissen, transacties of activiteiten die over tijd plaatsvinden in een systeem. Programmeurs gebruiken het voor het debuggen, monitoren van de systeemgezondheid, verzamelen van statistieken, of zelfs voor het auditen van gebruik, wat het een onmisbare praktijk maakt voor het onderhouden en begrijpen van het gedrag van hun code onder verschillende omstandigheden.
-
 ## Hoe:
 Arduino wordt niet geleverd met een ingebouwde logbibliotheek zoals sommige andere omgevingen, maar je kunt basaal loggen naar de seriële console implementeren met minimale moeite. Hier is een snel voorbeeld om je op weg te helpen:
 

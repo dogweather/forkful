@@ -12,9 +12,6 @@ title: Analisi del HTML
 weight: 43
 ---
 
-## Cosa & Perché?
-Parsare l'HTML significa sezionare il markup di una pagina web in qualcosa che un programma può capire e manipolare. I programmatori eseguono il parsing dell'HTML per estrarre dati, automatizzare interazioni web o migrare contenuti tra sistemi.
-
 ## Come fare:
 Kotlin semplifica il parsing dell'HTML con librerie come Jsoup. Ecco come si fa:
 

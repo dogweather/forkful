@@ -13,9 +13,6 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-Getting the current date in Elixir involves accessing the system's date and time information, a common task for logging, data stamping, or any functionality that requires knowledge of the current date. This operation is essential for creating time-aware applications and for tasks like generating reports or timestamps in a web application.
-
 ## How to:
 Elixir's standard library, through the `DateTime` module, allows fetching the current date and time. Since Elixir runs on the Erlang VM (BEAM), it leverages the underlying Erlang functionalities for time operations.
 

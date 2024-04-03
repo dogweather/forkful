@@ -12,9 +12,6 @@ title: "\u041E\u0431\u0447\u0438\u0441\u043B\u0435\u043D\u043D\u044F \u0434\u043
 weight: 26
 ---
 
-## What & Why? (Що і Чому?)
-Calculating a future or past date is manipulating a current date to get another date. Programmers do it to manage events, deadlines, or schedules.
-
 ## How to: (Як це зробити:)
 C# makes date manipulation straightforward. Use `DateTime` and `TimeSpan`. Here’s how:
 

@@ -10,9 +10,6 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-Comparing dates is about figuring out which of two dates is earlier, later, or if they're the same. Programmers do it for organizing events, expiring promotions, scheduling, reminders—basically, anything with a time component.
-
 ## How to:
 C++ makes life easy with the `<chrono>` header.
 

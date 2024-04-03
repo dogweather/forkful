@@ -13,12 +13,7 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## Co i dlaczego?
-
-Wysyłanie żądania HTTP w języku Dart to proces inicjowania komunikacji z serwerem internetowym lub API z aplikacji Dart. Programiści robią to, aby pobierać dane z sieci, wysyłać formularze i wchodzić w interakcje z usługami RESTful, co czyni to podstawową operacją dla rozwoju aplikacji internetowych, po stronie serwera i aplikacji mobilnych w Dart.
-
 ## Jak to zrobić:
-
 Dart zawiera pakiet `http`, który jest potężnym i wygodnym sposobem na pracę z zasobami HTTP. Najpierw należy go dołączyć do pliku pubspec.yaml:
 
 ```yaml

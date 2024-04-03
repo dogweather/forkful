@@ -14,12 +14,7 @@ title: "Mettre une cha\xEEne en majuscules"
 weight: 2
 ---
 
-## Quoi et pourquoi ?
-
-Capitaliser une chaîne de caractères consiste à transformer en majuscule le premier caractère d'une chaîne donnée s'il est en minuscule, pour s'assurer que la chaîne se démarque ou respecte certaines normes grammaticales. Les programmeurs effectuent fréquemment cette opération pour formater des entrées d'utilisateur, afficher des noms propres ou garantir la cohérence des données à travers des applications logicielles.
-
 ## Comment faire :
-
 En Go, le package `strings` ne fournit pas de fonction directe pour capitaliser uniquement la première lettre d'une chaîne. Par conséquent, nous combinons la fonction `strings.ToUpper()`, qui convertit une chaîne en majuscules, avec du découpage pour atteindre notre objectif. Voici comment faire :
 
 ```go
@@ -54,7 +49,6 @@ func main() {
 Cette fonction vérifie si la chaîne est vide ou si le premier caractère est déjà en majuscule. Elle utilise le package `unicode/utf8` pour gérer correctement les caractères Unicode, s'assurant que notre fonction fonctionne avec une large gamme d'entrées au-delà du basic ASCII.
 
 ## Exploration détaillée
-
 Le besoin de capitaliser des chaînes en Go sans fonction intégrée pourrait sembler être une limitation, en particulier pour les programmeurs venant de langages où les fonctions de manipulation de chaînes sont plus complètes. Cette contrainte encourage la compréhension de la manipulation des chaînes et l'importance de l'Unicode dans le développement logiciel moderne.
 
 Historiquement, les langages de programmation ont évolué dans leur traitement des chaînes, les premiers langages négligeant souvent l'internationalisation. L'approche de Go, bien que nécessitant un peu plus de code pour des tâches apparemment simples, garantit que les développeurs sont attentifs aux utilisateurs mondiaux dès le départ.

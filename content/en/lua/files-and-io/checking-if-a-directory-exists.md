@@ -12,12 +12,7 @@ title: Checking if a directory exists
 weight: 20
 ---
 
-## What & Why?
-
-Checking if a directory exists is a fundamental operation when writing scripts that interact with the filesystem, ensuring that your program operates on valid paths and prevents errors related to nonexistent directories. This task is crucial for creating new files in directories, reading from them, or performing directory-specific operations safely.
-
 ## How to:
-
 In Lua, you don't have a built-in function to directly check if a directory exists, so you often rely on the Lua File System (lfs) library, a popular third-party library for file operations.
 
 First, ensure you have Lua File System installed. If not, you can generally install it using LuaRocks:

@@ -13,12 +13,7 @@ title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---
 
-## Qué y Por Qué?
-
-Generar números aleatorios en Elixir es una tarea de programación fundamental, vital para aplicaciones que necesitan resultados impredecibles como en la generación de tokens seguros, el muestreo de datos o en algoritmos de juegos. Los programadores lo usan para introducir un nivel de aleatoriedad y variabilidad en sus aplicaciones, haciéndolas más dinámicas y menos deterministas.
-
 ## Cómo hacerlo:
-
 Para generar números aleatorios en Elixir, se utiliza principalmente el módulo `:rand` que proporciona varias funciones para este propósito. Aquí tienes una guía rápida para comenzar:
 
 Primero, asegúrate de sembrar el generador de números aleatorios para inicializarlo con un punto de partida único:
@@ -53,7 +48,6 @@ IO.puts(random_float_range)
 Recuerda, estos números son pseudoaleatorios; están determinados por la semilla y el algoritmo pero son suficientes para la mayoría de las aplicaciones.
 
 ## Estudio Profundo
-
 Las capacidades de generación de números aleatorios de Elixir se apoyan en el módulo `:rand` de Erlang, reflejando su herencia y estrecha relación con Erlang. El módulo `:rand` reemplazó al antiguo módulo `:random`, ofreciendo algoritmos mejorados para la generación de números aleatorios. Proporciona una variedad de algoritmos, siendo `exsplus` el predeterminado, pero también soporta otros como `exs64`, `exsl`, y más, cada uno con sus compensaciones en términos de velocidad y calidad de aleatoriedad.
 
 Un aspecto interesante de la generación de números aleatorios en Elixir (y por lo tanto en Erlang) es su manejo de las semillas. El sistema mantiene estados de semilla separados para cada proceso, asegurando que los procesos concurrentes no interfieran entre sí en sus secuencias de números aleatorios. Esto es particularmente útil en aplicaciones concurrentes, asegurando la previsibilidad y fiabilidad en sistemas distribuidos.

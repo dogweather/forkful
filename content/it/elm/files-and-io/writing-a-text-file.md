@@ -13,12 +13,7 @@ title: Scrivere un file di testo
 weight: 24
 ---
 
-## Cosa & Perché?
-
-Scrivere un file di testo in Elm comporta la creazione e il salvataggio di dati testuali in un file da un'applicazione Elm. Spesso, ai programmatori è necessario generare report, log o esportare dati in un formato di testo strutturato (ad esempio, JSON, CSV) per l'utilizzo in altre applicazioni o per fini di archiviazione. Tuttavia, a causa dell'architettura di Elm che si concentra sulla purezza e sulla sicurezza, la scrittura diretta di file - come molti altri effetti collaterali - è gestita tramite comandi all'ambiente JavaScript circostante.
-
 ## Come fare:
-
 Poiché Elm viene eseguito nel browser ed è progettato per essere un linguaggio di programmazione puro senza effetti collaterali, non ha accesso diretto al file system. Pertanto, scrivere su un file tipicamente comporta l'invio dei dati a JavaScript tramite porte (ports). Ecco come puoi configurare questo processo:
 
 1. **Definisci un modulo port per inviare testo a JavaScript:**

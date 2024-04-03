@@ -10,9 +10,6 @@ title: Journalisation
 weight: 17
 ---
 
-# Quoi & Pourquoi ?
-La journalisation est le processus d'enregistrement des événements d'une application et des sorties de données pendant l'exécution. Les programmeurs créent des journaux pour diagnostiquer les bogues, surveiller la performance du logiciel, suivre les actions des utilisateurs et maintenir la conformité avec les normes de sécurité et commerciales.
-
 ## Comment faire :
 En C#, vous pouvez utiliser l'espace de noms intégré `System.Diagnostics` ou des bibliothèques tierces comme NLog ou log4net. Voici un exemple rapide en utilisant l'interface `ILogger` disponible dans .NET Core :
 

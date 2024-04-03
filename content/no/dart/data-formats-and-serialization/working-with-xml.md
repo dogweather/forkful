@@ -14,12 +14,7 @@ title: Arbeider med XML
 weight: 40
 ---
 
-## Hva & Hvorfor?
-
-Å jobbe med XML i Dart innebærer parsing, spørre og modifisere XML-dokumenter, en prosess som er avgjørende for applikasjoner som samhandler med webtjenester, konfigurasjonsfiler eller arvesystemer. Programmerere gjør dette for å muliggjøre datautveksling, konfigurasjoner eller til og med fjernprosedyrekall i et strukturert, hierarkisk format som er både menneskelesbart og maskinparbart.
-
 ## Hvordan:
-
 Dart inkluderer ikke innebygget støtte for XML-håndtering i sitt standardbibliotek, noe som nødvendiggjør bruk av tredjepartspakker. En populær pakke er `xml`. For å bruke den, må du først legge den til i `pubspec.yaml`:
 
 ```yaml

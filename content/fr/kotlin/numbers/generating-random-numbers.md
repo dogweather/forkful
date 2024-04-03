@@ -11,16 +11,10 @@ title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---
 
-## Quoi & Pourquoi ?
-
-Générer des nombres aléatoires en programmation consiste à créer des nombres qui ne présentent aucun schéma prévisible. Les programmeurs font cela pour diverses raisons, y compris les simulations, les tests d'algorithme, les jeux et les applications de sécurité, où l'imprévisibilité est la clé pour obtenir des résultats réalistes ou sécurisés.
-
 ## Comment faire :
-
 Kotlin offre une manière simple de générer des nombres aléatoires grâce à sa bibliothèque standard. Voici comment vous pouvez générer différents types de valeurs aléatoires :
 
 ### Générer un Entier Aléatoire
-
 Pour générer un entier aléatoire dans une plage spécifique :
 
 ```kotlin
@@ -33,7 +27,6 @@ fun main() {
 ```
 
 ### Générer un Double Aléatoire
-
 De manière similaire, pour générer un double aléatoire :
 
 ```kotlin
@@ -46,7 +39,6 @@ fun main() {
 ```
 
 ### Générer un Booléen Aléatoire
-
 Pour générer une valeur booléenne aléatoire :
 
 ```kotlin
@@ -59,7 +51,6 @@ fun main() {
 ```
 
 ### Utiliser un Seed pour des Résultats Reproductibles
-
 Dans les cas où vous avez besoin de séquences reproductibles de nombres aléatoires (par exemple, lors des tests), vous pouvez initialiser le générateur de nombres aléatoires avec une valeur de départ (seed) :
 
 ```kotlin
@@ -74,7 +65,6 @@ fun main() {
 ```
 
 ## Plongée Profonde
-
 L'approche de la bibliothèque standard Kotlin pour générer des nombres aléatoires tire parti de `java.util.Random` de Java en coulisse, assurant un équilibre entre facilité d'utilisation et performance. Cependant, il est crucial de noter que ces méthodes génèrent des nombres pseudo-aléatoires, ce qui signifie que les nombres semblent aléatoires mais sont générés à l'aide d'un processus déterministe.
 
 Pour la plupart des applications, la randomicité fournie par la classe `Random` de Kotlin est suffisante. Cependant, pour des applications plus sensibles à la sécurité, comme la cryptographie, où la qualité de la randomicité est primordiale, on devrait envisager d'utiliser `java.security.SecureRandom` à la place. SecureRandom est spécifiquement conçu pour les opérations cryptographiques, fournissant une qualité de randomicité supérieure, bien qu'avec un compromis potentiel en termes de performance.

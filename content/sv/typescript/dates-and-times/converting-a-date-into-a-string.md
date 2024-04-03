@@ -11,9 +11,6 @@ title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---
 
-## Vad & Varför?
-Att konvertera ett datum till en sträng innebär att ändra datumets dataformat till textform. Programmerare gör detta för att underlätta visning och lagring, samt att göra datumen läsbara för människor.
-
 ## Hur man gör:
 ```TypeScript
 const formatDate = (date: Date): string => {

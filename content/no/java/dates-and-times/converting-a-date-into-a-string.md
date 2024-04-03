@@ -11,9 +11,6 @@ title: Konvertere en dato til en streng
 weight: 28
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Å konvertere en dato til en streng betyr å endre datoen fra et format Java forstår til tekst vi mennesker lett leser. Vi gjør dette for å vise datoelementer på skjermen eller for å formatere dem før lagring og deling.
-
 ## How to: (Slik gjør du det:)
 I moderne Java bruker vi `java.time.format.DateTimeFormatter` sammen med `java.time.LocalDate` eller `java.time.LocalDateTime` for datokonvertering:
 

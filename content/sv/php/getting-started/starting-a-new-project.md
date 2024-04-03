@@ -11,9 +11,6 @@ title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---
 
-## Vad & Varför?
-Att starta ett nytt projekt innebär att lägga grunden för en ny applikation eller funktion. Programmerare gör det för att lösa problem, utforska idéer eller för att skapa verktyg och tjänster som har ett värde.
-
 ## Hur gör man:
 Att kickstarta ett PHP-projekt är enkelt:
 1. Installera en lokal server som XAMPP eller MAMP.

@@ -11,9 +11,6 @@ title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---
 
-## Cos'è e Perché?
-Le shell interattive, o REPL (Read-Eval-Print Loops, Cicli di Lettura-Valutazione-Stampa), ti permettono di eseguire codice al volo, testare funzioni, algoritmi o sperimentare con idee. Sono gli appunti veloci della programmazione, rapidi e senza fronzoli, senza dover configurare un intero ambiente di sviluppo.
-
 ## Come fare:
 Node.js include una REPL accessibile tramite il terminale. Aprila, e sei pronto per iniziare. Ecco un assaggio:
 

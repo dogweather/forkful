@@ -11,9 +11,6 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## Co i dlaczego?
-Porównywanie dwóch dat pozwala zrozumieć, która jest wcześniejsza czy późniejsza. Programiści robią to, aby zarządzać terminami, sprawdzać różnice czasowe i wdrażać logikę opartą na czasie.
-
 ## Jak to zrobić:
 ```Javascript
 // Tworzenie dwóch dat

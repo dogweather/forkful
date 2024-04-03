@@ -10,11 +10,7 @@ title: Generating random numbers
 weight: 12
 ---
 
-## What & Why?
-Generating random numbers in Dart involves creating numerical values that are unpredictable and differ on each execution. Programmers leverage this functionality for a variety of reasons, from simulating real-world scenarios in testing environments to enabling game mechanics and ensuring security through randomness in cryptographic operations.
-
 ## How to:
-
 Dart's core library includes support for generating random numbers with the `Random` class found in `dart:math`. Here's a basic example:
 
 ```dart

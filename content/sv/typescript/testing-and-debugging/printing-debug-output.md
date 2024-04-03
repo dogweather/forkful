@@ -11,9 +11,6 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## What & Why?
-Utskrift för felsökning (debugging) är när du skriver ut data till konsolen för att se vad som händer i din kod. Programmerare gör det för att snabbt identifiera och rätta till buggar.
-
 ## How to:
 ```TypeScript
 function addNumbers(a: number, b: number): number {

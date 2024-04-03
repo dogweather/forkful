@@ -11,9 +11,6 @@ title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---
 
-## Vad & Varför?
-Att söka och ersätta text är grundläggande: vi letar efter en textsträng och byter ut den mot en annan. Programmerare gör detta för att uppdatera data, redigera kod snabbt eller automatisera textbaserade ändringar.
-
 ## How to:
 För att köra TypeScript-koden nedan behöver du först installera Node.js och npm. Installera sedan TypeScript globalt med `npm install -g typescript`. Du kan kompilera ditt `*.ts`-fil till JavaScript genom att köra `tsc filnamn.ts`.
 

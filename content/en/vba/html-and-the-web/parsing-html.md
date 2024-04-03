@@ -10,12 +10,7 @@ title: Parsing HTML
 weight: 43
 ---
 
-## What & Why?
-
-Parsing HTML in Visual Basic for Applications (VBA) involves extracting specific information from an HTML document. Programmers do it to automate the process of reading and handling data from web pages, such as scraping website content or automating form submissions and data retrieval, within applications like Microsoft Excel or Access that support VBA.
-
 ## How to:
-
 In VBA, you can parse HTML using the `Microsoft HTML Object Library`. Add a reference to this library in your VBA editor by going to Tools > References and checking `Microsoft HTML Object Library`. This gives you access to classes for navigating and manipulating HTML documents.
 
 Here's a simple example that shows how to load an HTML document from a file and extract all the links (anchor tags):
@@ -51,7 +46,6 @@ End Sub
 This script reads an HTML file's contents, loads it into an `HTMLDocument` object, retrieves all anchor elements (`<a>` tags), and then iterates over them, printing the `href` attribute of each to the Immediate Window.
 
 ## Deep Dive:
-
 Historically, parsing HTML in VBA has been a bit cumbersome due to the lack of direct support for modern web scraping and document handling technologies. The Microsoft HTML Object Library, despite being powerful, is somewhat dated and may not handle modern web standards as smoothly as newer technologies.
 
 For complex HTML parsing and web scraping tasks, alternative tools and languages like Python with libraries such as Beautiful Soup or Scrapy are often recommended. These modern tools offer more flexibility, better performance, and are more in tune with current web standards. However, when working within the Microsoft Office ecosystem, using VBA with the Microsoft HTML Object Library remains a valuable skill. It unlocks direct manipulation of HTML content in a way that integrates seamlessly with applications like Excel and Access, providing a straightforward method for accomplishing tasks that involve basic HTML document handling without the need to step outside the familiar VBA environment.

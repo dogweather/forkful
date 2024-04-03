@@ -12,9 +12,6 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i dlaczego?
-Liczby zespolone poszerzają nasz system liczbowy o liczby urojone, umożliwiając rozwiązywanie równań, które nie mają rzeczywistych rozwiązań. Programiści pracują z nimi w dziedzinach takich jak inżynieria, fizyka i przetwarzanie sygnałów, gdzie te liczby są niezbędne do modelowania i rozwiązywania problemów.
-
 ## Jak to zrobić:
 C# ma wbudowaną strukturę `System.Numerics.Complex` do przetwarzania liczb zespolonych. Oto krótkie wprowadzenie:
 

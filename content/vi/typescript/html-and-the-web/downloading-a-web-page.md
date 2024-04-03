@@ -15,12 +15,7 @@ title: "T\u1EA3i trang web"
 weight: 42
 ---
 
-## Cái gì & Tại sao?
-
-Tải một trang web có nghĩa là truy xuất HTML, CSS và có thể là các tài nguyên khác từ URL mà bạn truy cập. Lập trình viên thực hiện việc này để xử lý nội dung, kéo dữ liệu, kiểm tra các bản cập nhật, hoặc để lưu trữ trang web cho việc sử dụng ngoại tuyến.
-
 ## Làm thế nào:
-
 Bạn có thể tải một trang web trong TypeScript sử dụng Node.js và thư viện `node-fetch`. Dưới đây là cách làm:
 
 ```TypeScript
@@ -51,7 +46,6 @@ Mẫu đầu ra (được ngắn gọn):
 ```
 
 ## Thảo luận sâu hơn
-
 Trong quá khứ, việc tải nội dung web được thực hiện qua các công cụ như `wget` hoặc `curl` trong môi trường dòng lệnh. Tuy nhiên, trong lập trình hiện đại, chúng ta có các thư viện như `node-fetch`, `axios`, hoặc `request` (đã lỗi thời nhưng vẫn được sử dụng) cung cấp nhiều chức năng hơn và dễ dàng tích hợp vào ứng dụng JavaScript/TypeScript của mình hơn.
 
 Khi tải một trang web, không chỉ có HTML. CSS, JavaScript, hình ảnh, và các tài sản khác là một phần của nó. Thông thường, chỉ HTML được truy xuất trước, và sau đó bất kỳ xử lý hoặc tải xuống bổ sung nào được quyết định bởi những gì bạn cần từ trang web.
@@ -61,7 +55,6 @@ Về mặt thực hiện, `node-fetch` cơ bản là API fetch của window cho 
 Hãy nhớ rằng quyền truy cập dữ liệu web được quy định bởi tệp `robots.txt` và điều khoản dịch vụ của một trang web. Luôn chắc chắn rằng bạn được phép kéo dữ liệu từ trang và tuân thủ giới hạn tốc độ để tránh vấn đề pháp lý hoặc bị cấm IP.
 
 ## Xem Thêm
-
 - [Tài liệu `node-fetch`](https://github.com/node-fetch/node-fetch)
 - [MDN Web Docs về Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 - [Thư viện `axios`](https://github.com/axios/axios)

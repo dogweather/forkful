@@ -11,9 +11,6 @@ title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---
 
-## O Que & Por Que?
-Deletar caracteres que correspondem a um padrão é uma forma de filtrar strings, preservando só o que é relevante para o seu contexto. Programadores fazem isso para limpar dados, validar entradas ou simplificar a manipulação de strings.
-
 ## Como Fazer:
 ```Python
 import re

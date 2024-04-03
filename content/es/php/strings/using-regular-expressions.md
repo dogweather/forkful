@@ -13,16 +13,10 @@ title: Usando expresiones regulares
 weight: 11
 ---
 
-## ¿Qué y Por Qué?
-
-Las expresiones regulares (regex) en PHP son patrones utilizados para coincidir con combinaciones de caracteres en cadenas de texto, permitiendo operaciones de búsqueda y reemplazo sofisticadas y validación de datos. Los programadores aprovechan regex por su potencia y flexibilidad en el análisis de texto, validación de formularios o scraping de datos web, convirtiéndolo en una herramienta indispensable en el arsenal de un desarrollador.
-
 ## Cómo utilizarlas:
-
 PHP soporta las expresiones regulares a través de la biblioteca PCRE (Perl Compatible Regular Expressions), ofreciendo un rico conjunto de funciones. Así es cómo se utilizan:
 
 ### Coincidir con un patrón:
-
 Para verificar si un patrón existe dentro de una cadena, se utiliza `preg_match()`. Esta función devuelve 1 si el patrón fue encontrado en la cadena y 0 si no.
 
 ```php
@@ -35,7 +29,6 @@ if (preg_match("/\bweb\b/i", "PHP es un lenguaje de scripting web")) {
 ```
 
 ### Encontrando todas las coincidencias:
-
 `preg_match_all()` se utiliza cuando necesitas encontrar todas las ocurrencias de un patrón dentro de una cadena.
 
 ```php
@@ -47,7 +40,6 @@ print_r($coincidencias[0]);
 ```
 
 ### Reemplazando texto:
-
 Para reemplazar texto que coincide con una expresión regular, se utiliza `preg_replace()`. Es increíblemente poderoso para formatear y limpiar datos.
 
 ```php
@@ -59,7 +51,6 @@ echo preg_replace($patrón, $reemplazo, $textoOriginal);
 ```
 
 ### Dividiendo cadenas:
-
 Puedes dividir una cadena en un arreglo usando `preg_split()`, especificando un patrón para el delimitador.
 
 ```php

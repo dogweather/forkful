@@ -13,9 +13,6 @@ title: Analizando HTML
 weight: 43
 ---
 
-## Qué y Por Qué?
-Analizar HTML implica extraer datos e información de documentos HTML, lo cual es crucial para el raspado web, análisis de datos y tareas de automatización. Los programadores realizan esto para recopilar, analizar o manipular contenido web programáticamente, permitiendo la automatización de lo que de otro modo sería la extracción manual de datos de sitios web.
-
 ## Cómo hacerlo:
 Lua no tiene una biblioteca integrada para analizar HTML, pero puedes utilizar bibliotecas de terceros como `LuaHTML` o aprovechar los enlaces para `libxml2` a través de `LuaXML`. Un enfoque popular es usar la biblioteca `lua-gumbo` para analizar HTML, que proporciona una capacidad de análisis compatible con HTML5, directa y sencilla.
 

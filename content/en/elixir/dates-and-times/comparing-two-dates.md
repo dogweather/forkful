@@ -10,9 +10,6 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-Comparing two dates means checking if they're the same or determining which comes first or last. Programmers do this to handle events, schedule tasks, validate input, or track durations.
-
 ## How to:
 Elixir makes comparing dates straightforward. Here's an example comparing today with tomorrow:
 

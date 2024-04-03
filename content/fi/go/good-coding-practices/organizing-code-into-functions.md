@@ -14,12 +14,7 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mikä ja miksi?
-
-Koodin järjestäminen funktioihin Go:ssa tarkoittaa koodin jakamista uudelleenkäytettäviksi, modulaarisiksi lohkoiksi, jotka suorittavat tiettyjä tehtäviä. Tämä lähestymistapa parantaa koodin luettavuutta, ylläpidettävyyttä ja helpottaa tiimityöskentelyä mahdollistamalla ohjelmoijille työskentelyn eri funktioiden parissa samanaikaisesti.
-
 ## Kuinka:
-
 Go:ssa funktio määritellään käyttämällä `func`-avainsanaa, jonka jälkeen tulee funktion nimi, parametrit (jos niitä on) ja palautustyyppi. Esitellään asia yksinkertaisella esimerkillä:
 
 ```go
@@ -74,7 +69,6 @@ func main() {
 ```
 
 ## Syvä sukellus
-
 Koodin järjestäminen funktioihin ei ole omituista vain Go:lle—se on perusohjelmointiperiaate. Go kuitenkin tuo tiettyjä käytäntöjä ja kykyjä, jotka erottavat sen funktionhallinnassa. Esimerkiksi kyky palauttaa useita arvoja funktioista on suhteellisen ainutlaatuinen ja voi johtaa puhtaampaan, ymmärrettävämpään koodiin, erityisesti kun käsitellään operaatioita, jotka perinteisesti saattaisivat vaatia osoittimien käyttöä tai poikkeusten käsittelyä.
 
 Lisäksi Go:n tuki ensiluokan funktioille—funktioille, joita voidaan välittää argumentteina muihin funktioihin, palauttaa arvoina funktioista ja sijoittaa muuttujiin—parantaa kielen tukea funktionaalisille ohjelmointimalleille. Tämä ominaisuus on erityisen hyödyllinen korkeamman tason funktioiden luomisessa, jotka manipuloivat tai yhdistävät muita funktioita.

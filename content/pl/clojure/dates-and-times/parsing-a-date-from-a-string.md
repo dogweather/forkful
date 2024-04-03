@@ -14,9 +14,6 @@ title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---
 
-## Co i dlaczego?
-Parsowanie daty z ciągu znaków w Clojure polega na przekształcaniu tekstowych reprezentacji dat i czasów na bardziej użyteczną formę (np. obiekt DateTime Clojure). Ten proces jest podstawą dla przetwarzania danych, logowania lub dowolnej aplikacji manipulującej danymi czasowymi, umożliwiając programistom wykonywanie operacji, porównań czy manipulacji na datach efektywnie.
-
 ## Jak to zrobić:
 Clojure, będąc językiem JVM, pozwala bezpośrednio korzystać z bibliotek daty i czasu Javy. Zacznijmy od wbudowanej interoperacyjności z Javą, a następnie zobaczymy, jak wykorzystać popularną bibliotekę stron trzecich, clj-time, dla bardziej idiomatycznych rozwiązań w Clojure.
 

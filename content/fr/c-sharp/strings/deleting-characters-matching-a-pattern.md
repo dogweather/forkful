@@ -11,9 +11,6 @@ title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Supprimer des caractères correspondant à un motif, c'est filtrer votre texte pour ne garder que l'essentiel. Les programmeurs font ça pour nettoyer des données, valider des entrées ou simplifier des chaînes.
-
 ## How to (Comment Faire ?)
 Voici comment supprimer des caractères avec `Regex` en C# :
 

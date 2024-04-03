@@ -13,9 +13,6 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-De lengte van een string vinden, betekent bepalen hoeveel karakters deze bevat. Programmeurs doen dit om invoer te valideren, limieten af te dwingen of uitvoer uit te lijnen.
-
 ## Hoe:
 In Elixir krijg je de lengte van een string met de `String.length/1` functie. Zo werkt het:
 

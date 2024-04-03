@@ -10,12 +10,7 @@ title: Enviando una solicitud http
 weight: 44
 ---
 
-## Qué es y Por Qué?
-
-Enviar una petición HTTP es el proceso de solicitar o enviar datos a un servidor web. Los programadores lo hacen para interactuar con servicios web, obtener información, o enviar datos para procesamiento y almacenamiento.
-
 ## Cómo hacerlo:
-
 Para enviar una petición HTTP en Java, el JDK proporciona la clase `HttpClient`. Aquí hay un ejemplo de cómo hacer una petición GET a un servidor y manejar la respuesta:
 
 ```java
@@ -56,7 +51,6 @@ Output de muestra:
 ```
 
 ## Profundización
-
 El envío de peticiones HTTP no es nuevo. Ha sido una piedra angular de la comunicación entre clientes y servidores desde los primeros días de la web. Java ha evolucionado en este aspecto. Antes de `HttpClient` que se introdujo en Java 11, las opciones incluían clases como `HttpURLConnection` y bibliotecas de terceros como Apache HttpClient.
 
 La implementación moderna `HttpClient` soporta HTTP/2 y también hace más fácil manejar respuestas asíncronas, mejorando el rendimiento. Si necesitas trabajar con diferentes métodos HTTP (como POST, PUT, DELETE), `HttpRequest.Builder` ofrece métodos para construir la petición específica que necesitas.
@@ -64,7 +58,6 @@ La implementación moderna `HttpClient` soporta HTTP/2 y también hace más fác
 Alternativas como OkHttp y Retrofit siguen siendo populares para ciertos casos de uso y ofrecen su propia gama de características y facilidades.
 
 ## Vea También
-
 - Documentación oficial de `HttpClient`: [https://docs.oracle.com/en/java/javase/15/docs/api/java.net.http/java/net/http/HttpClient.html](https://docs.oracle.com/en/java/javase/15/docs/api/java.net.http/java/net/http/HttpClient.html)
 - OkHttp: [https://square.github.io/okhttp/](https://square.github.io/okhttp/)
 - Retrofit: [https://square.github.io/retrofit/](https://square.github.io/retrofit/)

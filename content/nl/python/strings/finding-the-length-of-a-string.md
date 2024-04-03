@@ -12,12 +12,7 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-
-De lengte van een string vinden betekent het tellen van de karakters. Programmeurs doen dit om invoer te valideren, door strings te loopen, bronnen toe te wijzen, onder andere taken.
-
 ## Hoe te:
-
 ```python
 # Eenvoudig gebruik van de len() functie
 mijn_string = "Hallo, Wereld!"
@@ -35,7 +30,6 @@ if len(mijn_string) > 10:
 ```
 
 ## Diepgaand
-
 Historisch gezien is de `len()` functie Python's standaard manier om de lengte van een string te vinden. Het is elegant en snel. Onderliggend zijn Python strings arrays van bytes die Unicode karakters voorstellen, en `len()` telt deze. De functie werkt niet alleen met strings, maar met elk iterabel.
 
 Alternatieven? Wel, niet vaak gebruikt voor strings, maar je zou handmatig door een string kunnen lopen en karakters kunnen tellen—onhandig en inefficiënt. Voor Unicode-ondersteuning was de lengte van een string soms anders dan de geheugengrootte, maar aangezien Python 3's strings Unicode-native zijn, vertegenwoordigt de `len()` nauwkeurig het aantal karakters.
@@ -43,7 +37,6 @@ Alternatieven? Wel, niet vaak gebruikt voor strings, maar je zou handmatig door 
 Implementatiegewijs zijn Python-strings objecten met metadata, inclusief lengte, dus `len()` is eigenlijk een O(1) operatie—constante tijd, ongeacht de grootte van de string. Dat is alsof je met je vingers knipt en een antwoord krijgt.
 
 ## Zie Ook
-
 - Python documentatie voor `len()`: https://docs.python.org/3/library/functions.html#len
 - Unicode en Stringcodering in Python: https://docs.python.org/3/howto/unicode.html
 - Python's tijdcomplexiteit voor ingebouwde typen: https://wiki.python.org/moin/TimeComplexity

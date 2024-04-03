@@ -9,9 +9,6 @@ title: Finding the length of a string
 weight: 7
 ---
 
-## What & Why?
-Finding the length of a string means counting its characters. It's basic but crucial for tasks like validation, text-processing, and determining storage needs.
-
 ## How to:
 Ruby keeps it simple with the `.length` method:
 

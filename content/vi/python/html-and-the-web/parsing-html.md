@@ -17,12 +17,7 @@ title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---
 
-## Cái Gì & Tại Sao?
-
-Việc phân tích cú pháp HTML là quá trình lấy mã HTML và trích xuất thông tin từ nó, giống như việc tìm kim trong đống rơm—nếu như đống rơm được làm từ các thẻ và kim là dữ liệu bạn muốn. Lập trình viên làm điều này để kéo dữ liệu từ các trang web, có thể là mọi thứ từ tiêu đề trên một trang tin tức đến giá cả trong một cửa hàng trực tuyến.
-
 ## Làm Thế Nào:
-
 Hãy sử dụng Python để "cướp" một số dữ liệu từ một mẫu HTML bằng cách sử dụng thư viện `BeautifulSoup`, làm cho việc phân tích cú pháp trở nên dễ dàng. Nếu bạn chưa cài đặt gói, hãy cài đặt bằng `pip install beautifulsoup4`.
 
 ```Python
@@ -72,7 +67,6 @@ Tên và đường dẫn URL của các chị em:
 ```
 
 ## Sâu Hơn Nữa
-
 Trong những ngày đầu của web, bạn sẽ phân tích cú pháp HTML bằng regex và rất nhiều hy vọng. Điều này rất lộn xộn bởi vì HTML không phải lúc nào cũng gọn gàng và dễ đoán. Vào cuộc, các thư viện như BeautifulSoup, điều hướng cấu trúc cây của HTML, cung cấp một cách nhẹ nhàng để cắt và chia dữ liệu.
 
 Cũng có các phương tiện thay thế như `lxml` và `html.parser`, mà chính BeautifulSoup có thể sử dụng như là bộ phân tích cú pháp. `lxml` nhanh hơn nhưng kém tha thứ với HTML xấu, trong khi `html.parser` chậm hơn nhưng không soi mói về các thẻ hỏng.
@@ -80,7 +74,6 @@ Cũng có các phương tiện thay thế như `lxml` và `html.parser`, mà ch�
 Phía sau, những thư viện này xây dựng một cây phân tích cú pháp, biến các thẻ thành những đối tượng mà bạn có thể tương tác. BeautifulSoup như một giao diện thân thiện với những bộ phân tích cú pháp này, dịch các câu hỏi của bạn—như "Tiêu đề là gì?" hoặc "Có liên kết nào ở đây không?"—thành các hành động trên cây.
 
 ## Xem Thêm
-
 - Tài liệu BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 - Giới thiệu về phân tích cú pháp HTML bằng regex (và tại sao bạn không nên làm điều đó): https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags
 - Web scraping với Python (hướng dẫn thực hành): https://realpython.com/beautiful-soup-web-scraper-python/

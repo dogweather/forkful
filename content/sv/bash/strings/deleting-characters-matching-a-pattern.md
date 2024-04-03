@@ -11,9 +11,6 @@ title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---
 
-## Vad & Varför?
-Att ta bort tecken som matchar ett mönster innebär att filtrera en textsträng för att endast behålla önskat innehåll. Programmerare gör detta för att rensa data, bearbeta text eller förbereda strängar för vidare behandling.
-
 ## Hur gör man?:
 ```Bash
 # Ta bort alla siffror från en sträng

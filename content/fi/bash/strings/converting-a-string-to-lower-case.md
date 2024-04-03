@@ -9,9 +9,6 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## Mitä & Miksi?
-Muuttaa kirjaimet pieniksi tekstissä. Auttaa vertailemaan sisältöä huomiottaen kirjainkoon.
-
 ## Miten:
 ```Bash
 # Yksinkertainen tapa

@@ -13,9 +13,6 @@ title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---
 
-## Hva & Hvorfor?
-Regulære uttrykk, eller regex, er sekvenser av tegn som danner et søkemønster, ofte brukt til oppgaver som sammenligning eller manipulasjon av tekststrenger. Programmerere benytter dem til alt fra datavalidering og parsing til transformasjoner, noe som gjør dem til et uunnværlig verktøy i tekstbehandlings- og manipuleringsoppgaver på tvers av ulike programmeringsspråk, inkludert Swift.
-
 ## Hvordan:
 Swifts innebygde støtte for regex benytter klassen `NSRegularExpression`, sammen med String-klassens område- og erstatningsmetoder. Nedenfor er et eksempel på bruk av regex for å finne og markere e-postadresser i en tekstblokk:
 

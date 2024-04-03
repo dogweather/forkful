@@ -14,12 +14,7 @@ title: Suchen und Ersetzen von Text
 weight: 10
 ---
 
-## Was & Warum?
-
-Die Suche und das Ersetzen von Text in der Programmierung erleichtert die Modifikation und Verwaltung von Zeichenketten, was eine grundlegende Aufgabe bei der Datenmanipulation und Softwareentwicklung ist. Programmierer führen diese Operationen durch, um textuelle Daten effizient zu aktualisieren, zu bereinigen oder zu transformieren.
-
 ## Wie:
-
 In Go bietet das `strings`-Paket verschiedene Funktionen zum Suchen und Ersetzen von Text innerhalb von Zeichenketten. Lassen Sie uns ein paar gängige Methoden erkunden.
 
 **Verwenden von `strings.Contains` zum Suchen von Text:**
@@ -78,7 +73,6 @@ func main() {
 ```
 
 ## Tiefergehende Betrachtung
-
 In Go ist die Textmanipulation, einschließlich der Such- und Ersetzungsoperationen, darauf ausgelegt, unkompliziert und effizient zu sein, und nutzt die umfassende Standardbibliothek von Go. Das `strings`-Paket bietet grundlegende Funktionalitäten, die für die meisten gängigen Anwendungsfälle geeignet sind, während das `regexp`-Paket für komplexere Muster, die reguläre Ausdrücke erfordern, zuständig ist.
 
 Historisch gesehen hat Go bei der Handhabung von Zeichenketten und der Textmanipulation Wert auf Einfachheit und Leistung gelegt. Die Entscheidung, leistungsfähige Pakete wie `strings` und `regexp` als Teil der Standardbibliothek einzubeziehen, wurde von dem Wunsch getrieben, Go zu einer praktischen Wahl für Webentwicklung und Textverarbeitungsanwendungen zu machen, bei denen solche Operationen häufig sind.

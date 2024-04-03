@@ -22,15 +22,10 @@ title: "\u89E3\u6790HTML"
 weight: 43
 ---
 
-## 什么 & 为什么？
-在 PowerShell 中解析 HTML 意味着解析 HTML 内容以提取特定数据或自动化与网络相关的任务。程序员这样做是为了与网页交互、抓取网页内容，或者自动化表单提交和其他网络交互，而不需要网络浏览器。
-
 ## 如何操作：
-
 PowerShell 没有原生支持的专 dedicated 的 HTML 解析器，但你可以使用 `Invoke-WebRequest` cmdlet 来访问和解析 HTML 内容。对于更复杂的解析和操作，可以使用 HtmlAgilityPack，这是一个流行的 .NET 库。
 
 ### 使用 `Invoke-WebRequest`：
-
 ```powershell
 # 简单示例，从网页获取标题
 $response = Invoke-WebRequest -Uri 'http://example.com'
@@ -46,7 +41,6 @@ Example Domain
 ```
 
 ### 使用 HtmlAgilityPack：
-
 首先，你需要安装 HtmlAgilityPack。你可以通过 NuGet 包管理器进行安装：
 
 ```powershell

@@ -26,12 +26,7 @@ title: "XML\u306E\u6271\u3044\u65B9"
 weight: 40
 ---
 
-## 何となぜ？
-
-XMLを使用するということは、コードを使用してXMLコンテンツの解析、操作、生成を意味します。プログラマーがそれを行う理由は、XMLが設定ファイル、データ交換、およびWebサービスに広く使用されているためです。これは、XMLが人間が読める形式でありながら、機械が解析可能な特性を持つからです。
-
 ## 方法：
-
 XMLの解析方法は以下の通りです：
 
 ```javascript
@@ -62,7 +57,6 @@ console.log(xmlString);
 ```
 
 ## 詳細解説
-
 XMLはeXtensible Markup Languageの略で、90年代後半からあるデータ形式です。これは、人間と機械の両方が読めるドキュメントをエンコーディングするための一連のルールを定義します。歴史的に、XMLはその柔軟性と構造化された階層によって、SOAPのようなWebサービスや数多くの設定ファイルに選ばれてきました。
 
 XMLの代替品には、JavaScriptでの使用のしやすさと軽量さで人気があるJSON（JavaScript Object Notation）があります。また、YAMLも人間に優しく設定ファイルによく用いられる選択肢として価値があります。
@@ -70,7 +64,6 @@ XMLの代替品には、JavaScriptでの使用のしやすさと軽量さで人�
 XMLは、JavaScriptではDOMParserとXMLSerializerインターフェイスを使用して実装されます。XML DOM（Document Object Model）によって、HTMLと同じようにXMLドキュメントをナビゲートし、編集することができます。JSONの台頭にもかかわらず、多くのレガシーシステムや特定の業界がデータ交換にそれを依然として頼っているため、XMLを理解することは重要です。
 
 ## 参照
-
 - MDN Web Docs (XML 解析): https://developer.mozilla.org/en-US/docs/Web/API/DOMParser
 - W3Schools (XML DOM チュートリアル): https://www.w3schools.com/xml/dom_intro.asp
 - 「XMLとは何か？」: https://www.w3.org/XML/

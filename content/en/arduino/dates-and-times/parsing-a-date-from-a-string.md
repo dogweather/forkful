@@ -11,12 +11,7 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-
-Parsing a date from a string in Arduino involves extracting and converting the date components (year, month, day) from a textual representation into a format that can be utilized for timekeeping, comparisons, or manipulations within sketches. Programmers frequently perform this task to interface with components like real-time clocks, loggers, or to process input from web APIs and user interfaces where dates might be presented in a readable format.
-
 ## How to:
-
 Direct approach without a third-party library:
 
 ```cpp

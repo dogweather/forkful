@@ -10,9 +10,6 @@ title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---
 
-## What & Why? (Quoi & Pourquoi ?)
-Télécharger une page web, c'est récupérer son contenu via Internet. Les programmeurs font ça pour analyser des données, tester des services ou automatiser des interactions avec des sites web.
-
 ## How to: (Comment faire :)
 ```Haskell
 -- On utilise la librairie `http-conduit` pour télécharger une page web.

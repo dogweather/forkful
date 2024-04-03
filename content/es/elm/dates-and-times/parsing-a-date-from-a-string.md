@@ -13,9 +13,6 @@ title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---
 
-## Qué y Por Qué?
-Analizar una fecha de una cadena en Elm implica convertir información textual que representa fechas y horas en un formato que Elm pueda entender y manipular, específicamente en el tipo `Date`. Este proceso es crucial para manejar la entrada del usuario, mostrar fechas correctamente localizadas y realizar cálculos relacionados con fechas, asegurando que tus aplicaciones en Elm puedan procesar datos temporales de manera inteligente.
-
 ## Cómo hacerlo:
 Elm no tiene capacidades integradas tan robustas como algunos otros lenguajes para el análisis de fechas, dependiendo principalmente de la interoperabilidad con Javascript o bibliotecas para operaciones más complejas. Sin embargo, puedes usar el paquete `elm/time` para análisis básico, y para necesidades más complejas, la biblioteca de terceros `justinmimbs/date` es ampliamente recomendada.
 

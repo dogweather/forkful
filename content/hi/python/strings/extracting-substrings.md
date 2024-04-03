@@ -27,12 +27,7 @@ title: "\u0938\u092C\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917\u094D\u0938
 weight: 6
 ---
 
-## What & Why? (क्या और क्यों?)
-
-उपशब्द (substring) निकालना मतलब है किसी दिए गए स्ट्रिंग से कुछ हिस्सा लेना। प्रोग्रामर्स यह काम तब करते हैं जब उन्हें बड़ी सूचना में से सिर्फ ज़रूरी डेटा चाहिए होता है।
-
 ## How to: (कैसे करें:)
-
 Python में substrings को निकालने के लिए सबसे सीधा तरीका स्ट्रिंग slicing है:
 
 ```Python
@@ -60,7 +55,6 @@ if start_index != -1:
 ```
 
 ## Deep Dive (गहराई में जानकारी)
-
 स्ट्रिंग स्लाइसिंग Python की क्षमता है जो 1991 से ही उपयोग में है, जब Guido van Rossum ने Python को बनाया। इसका सैटेक्स सरल है: `s[start:stop:step]` जहाँ `start` स्टार्ट इंडेक्स है, `stop` एंड इंडेक्स है और `step` जंप की साइज है।
 
 अगर `start` या `stop` में कोई संख्या नहीं दि जाए तो Python उसे समझता है और पूरी लेंथ लेता है। `step` में निगेटिव वैल्यू से उलटी स्लाइसिंग भी कर सकते हैं।
@@ -71,6 +65,5 @@ Alternatives और उनकी ताकत:
 - Regular Expressions (regex): जटिल पैटर्न मिलान और String manipulation के लिए।
 
 ## See Also (और भी देखें)
-
 - Python के ऑफिशियल डॉक्युमेंटेशन में [String Methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
 - [Regex tutorial](https://www.regular-expressions.info/) - Regular Expressions सीखने के लिए comprehensive guide

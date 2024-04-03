@@ -12,11 +12,7 @@ title: Het huidige datum ophalen
 weight: 29
 ---
 
-## Wat & Waarom?
-De huidige datum op een Arduino krijgen betekent het bevragen van een realtimeklok (RTC) of een internetgebaseerde tijdsdienst om de datum van dit moment te achterhalen. Waarom dit doen? Gebeurtenissen loggen, data van een tijdstempel voorzien, of acties plannen—het kennen van de datum kan cruciaal zijn voor deze taken.
-
 ## Hoe:
-
 Laten we onze Arduino slim maken over de datum. We gebruiken een RTC-module, zoals de DS3231, die nauwkeurig is en een backupbatterij heeft.
 
 ```arduino

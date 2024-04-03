@@ -11,9 +11,6 @@ title: Komennoriviparametrien lukeminen
 weight: 23
 ---
 
-## What & Why? (Mitä & Miksi?)
-Komentoriviparametrit ovat tietoja, jotka siirtyvät ohjelmaasi käynnistyksen yhteydessä. Niitä käytetään muokkaamaan ohjelman toimintaa lennosta ja antamaan tarvittava sisältö ilman kovakoodausta.
-
 ## How to: (Kuinka tehdä:)
 ```ruby
 # example.rb

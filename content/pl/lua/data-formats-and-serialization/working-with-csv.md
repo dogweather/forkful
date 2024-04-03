@@ -14,12 +14,7 @@ title: Praca z plikami CSV
 weight: 37
 ---
 
-## Co i dlaczego?
-
-Praca z plikami CSV (Comma-Separated Values), czyli wartościami oddzielonymi przecinkami, polega na parsowaniu i generowaniu danych tekstowych zorganizowanych w wiersze i kolumny, przy użyciu przecinków do oddzielania poszczególnych wartości. Programiści często angażują się w ten proces, aby ułatwić wymianę danych między różnymi aplikacjami, bazami danych lub do zadań przetwarzania i analizy danych, ze względu na powszechne wsparcie i prostotę CSV.
-
 ## Jak to zrobić:
-
 W Lua, praca z plikami CSV może być podejmowana za pomocą podstawowych operacji wejścia/wyjścia plików oferowanych przez język, bez potrzeby używania zewnętrznych bibliotek do prostych zadań. Dla bardziej skomplikowanych operacji, takich jak obsługa specjalnych przypadków (np. przecinki w wartościach), korzystanie z bibliotek stron trzecich, takich jak `lua-csv`, może być korzystne.
 
 ### Odczytywanie pliku CSV

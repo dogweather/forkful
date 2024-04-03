@@ -11,9 +11,6 @@ title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mitä & Miksi?
-Numeroiden pyöristäminen tarkoittaa niiden säätämistä lähimpään kokonaislukuun tai tietyn tarkkuuden murto-osaan. Ohjelmoijat pyöristävät numeroita yksinkertaistaakseen arvoja ihmisen luettaviksi, täyttääkseen määrittelyvaatimukset tai vähentääkseen laskennallista taakkaa liukulukutoimituksissa.
-
 ## Kuinka:
 Rust tekee pyöristämisestä tuulenhuuhtoman. Tutustu näihin menetelmiin `f32` tai `f64` tyypeille:
 

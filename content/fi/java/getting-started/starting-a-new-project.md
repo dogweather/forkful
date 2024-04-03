@@ -11,9 +11,6 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## What & Why? (Mitä & Miksi?)
-Aloittaa uuden projektin Java-ohjelmoinnissa tarkoittaa tyhjästä aloittamista; uutta koodikantaa, uusia ideoita, uutta energiaa. Koodarit aloittavat uusia projekteja ratkaistakseen ongelmia, oppiakseen, tai vain kokeillakseen jotain uutta ja jännittävää.
-
 ## How to: (Kuinka tehdä:)
 ```java
 // Luo 'ExampleProject' hakemiston

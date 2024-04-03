@@ -10,11 +10,7 @@ title: Sending an HTTP request
 weight: 44
 ---
 
-## What & Why?
-Sending an HTTP request is about knocking on a web server's door, asking for data or serving some. Programmers do it to interact with APIs, download content, or communicate with other services.
-
 ## How to:
-
 Swift makes it straightforward to send HTTP requests using the `URLSession` class. Here's a simple GET request example:
 
 ```Swift
@@ -89,7 +85,6 @@ Alternatives to `URLSession` include third-party libraries like Alamofire that s
 An implementation detail to note is that network requests are asynchronous by nature in Swift. They run in the background, allowing the app to stay responsive. When a response comes back, a completion handler is called. It's crucial to handle thread management properly, especially when updating the UI, which must happen on the main thread.
 
 ## See Also:
-
 - [URLSession | Apple Developer Documentation](https://developer.apple.com/documentation/foundation/urlsession)
 - [Working with JSON in Swift](https://developer.apple.com/swift/blog/?id=37)
 - [Alamofire GitHub Repository](https://github.com/Alamofire/Alamofire)

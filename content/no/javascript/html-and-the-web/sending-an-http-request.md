@@ -11,9 +11,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## What & Why?
-Å sende en HTTP-forespørsel lar en nettside hente data eller initiere transaksjoner med servere over internett. Programmerere gjør dette for å bygge interaktive og dynamiske webapplikasjoner.
-
 ## How to:
 Her er en enkel måte å sende `GET` og `POST` forespørsler ved hjelp av `fetch`:
 

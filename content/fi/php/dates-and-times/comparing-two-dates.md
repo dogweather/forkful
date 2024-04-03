@@ -12,9 +12,6 @@ title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---
 
-## Mitä & Miksi?
-Vertailemme kahta päivämäärää, kun haluamme tietää niiden ajallisen eron tai selvittää kumpi on aikaisempi tai myöhäisempi. Tämä on tärkeää esimerkiksi vanhentuneiden tiedostojen karsimisessa tai tapahtumien ajoittamisessa.
-
 ## Kuinka:
 ```php
 <?php

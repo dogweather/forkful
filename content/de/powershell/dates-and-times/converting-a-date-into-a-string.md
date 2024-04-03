@@ -10,9 +10,6 @@ title: Datum in einen String umwandeln
 weight: 28
 ---
 
-## Was & Warum?
-Das Umwandeln eines Datums in einen String ermöglicht es uns, das Datum in einem benutzerfreundlichen oder spezifischen Format zu präsentieren. Programmierer tun dies oft für Log-Dateien, Benutzeroberflächen oder beim Exportieren von Daten.
-
 ## So geht's:
 ```PowerShell
 # Aktuelles Datum im Standardformat bekommen

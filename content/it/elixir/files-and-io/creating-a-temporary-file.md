@@ -10,9 +10,6 @@ title: Creazione di un file temporaneo
 weight: 21
 ---
 
-## What & Why?
-Creare un file temporaneo significa generare un file destinato a essere utilizzato solo per un breve periodo di tempo. I programmatori lo fanno per manipolare dati senza influenzare i file permanenti, per testare codice, o per maneggiare dati sensibili che non devono persistere.
-
 ## How to:
 Elixir non include una libreria standard per la creazione di file temporanei, ma possiamo utilizzare `System.cmd/3` per invocare comandi Unix direttamente.
 

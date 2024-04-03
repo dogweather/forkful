@@ -10,9 +10,6 @@ title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---
 
-## Vad & Varför?
-Kommandoradsargument är parametrar som skickas till ett program vid start. Programmerare använder dem för att styra programbeteendet utan att ändra koden.
-
 ## Hur man gör:
 För att läsa kommandoradsargument i Swift, använder vi `CommandLine.arguments`. Här är ett litet exempel:
 

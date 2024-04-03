@@ -12,12 +12,7 @@ title: Concatenando cadenas de texto
 weight: 3
 ---
 
-## Qué y Por Qué?
-
-Concatenar cadenas implica unir dos o más cadenas de extremo a extremo para formar una nueva cadena. Los programadores hacen esto para generar texto dinámicamente, como construir mensajes, rutas o consultas complejas, haciendo los programas más interactivos y receptivos.
-
 ## Cómo hacerlo:
-
 En Go, hay varias formas de concatenar cadenas. Aquí hay un vistazo a algunos métodos comunes con ejemplos:
 
 ### Usando el Operador `+`:
@@ -61,7 +56,6 @@ fmt.Println(path) // ruta/a/archivo
 ```
 
 ## Análisis Profundo
-
 La concatenación de cadenas, aunque parece una operación sencilla, toca aspectos más profundos de cómo Go maneja las cadenas. En Go, las cadenas son inmutables; lo que significa, cada operación de concatenación crea una nueva cadena. Esto puede llevar a problemas de rendimiento cuando se concatenan grandes cantidades de cadenas o cuando se hace en bucles ajustados, debido a la frecuente asignación y copia de memoria.
 
 Históricamente, los lenguajes han abordado la inmutabilidad de las cadenas y la eficiencia de la concatenación de varias maneras, y el enfoque de Go con `strings.Builder` y `strings.Join` proporciona a los programadores herramientas que equilibran la facilidad de uso con el rendimiento. El tipo `strings.Builder`, introducido en Go 1.10, es particularmente notable ya que proporciona una manera eficiente de construir cadenas sin incurrir en la sobrecarga de múltiples asignaciones de cadenas. Lo hace mediante la asignación de un búfer que crece según sea necesario, en el cual se añaden las cadenas.

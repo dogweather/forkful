@@ -18,12 +18,7 @@ title: "S\u1EED d\u1EE5ng giao di\u1EC7n d\xF2ng l\u1EC7nh t\u01B0\u01A1ng t\xE1
 weight: 34
 ---
 
-## Cái gì và Tại sao?
-
-Một shell tương tác, còn được gọi là Vòng lặp Đọc-Đánh giá-In (REPL), cho phép lập trình viên nhập biểu thức hoặc mã và ngay lập tức thấy kết quả, tăng cường quá trình học tập và gỡ lỗi. Mặc dù C không truyền thống hỗ trợ môi trường REPL một cách nguyên bản, hiện đại công cụ đang làm cầu nối cho khoảng trống này, cung cấp khám phá động các chương trình C.
-
 ## Làm thế nào:
-
 Để tương tác với REPL C, bạn có thể sẽ không tìm thấy một con đường thẳng thắn như trong ngôn ngữ như Python hoặc JavaScript. Tuy nhiên, các công cụ như `Cling`, một bản thông dịch C/C++ dựa trên công nghệ Clang và LLVM, làm cho việc này trở nên khả thi. Dưới đây là cách để bắt đầu:
 
 1. **Cài đặt Cling**: Tùy thuộc vào hệ điều hành của bạn, bạn có thể tìm thấy Cling trong trình quản lý gói của mình hoặc cần phải xây dựng từ mã nguồn. Ví dụ, trên Ubuntu, có thể đơn giản là `sudo apt-get install cling`.
@@ -60,7 +55,6 @@ Căn bậc hai của 4.000000 là 2.000000
 ```
 
 ## Sâu rộng hơn:
-
 Sự ra đời của môi trường REPL có từ Lisp vào những năm 1960, được thiết kế để hỗ trợ việc đánh giá mã một cách tương tác. Tuy nhiên, bản chất tĩnh và biên soạn của C đã tạo ra những thách thức để thực hiện sự ngay lập tức trong điều chỉnh thực thi mã. Sự phát triển của Cling và các bản thông dịch C/C++ khác đánh dấu bước tiến quan trọng hướng tới việc tích hợp đánh giá động vào các ngôn ngữ có kiểu tĩnh.
 
 Đáng chú ý, sử dụng một bản thông dịch như Cling có thể không hoàn hảo phản ánh hành vi của mã C đã biên soạn do sự khác biệt trong tối ưu hoá và thực thi. Ngoài ra, mặc dù rất có giá trị cho mục đích giáo dục, tạo mẫu nhanh và gỡ lỗi, REPL cho C đôi khi có thể chậm hơn và kém thực tiễn cho việc phát triển mã ở cấp độ sản xuất so với chu trình biên soạn-chạy-gỡ lỗi truyền thống.

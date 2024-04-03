@@ -10,12 +10,7 @@ title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---
 
-## Qu'est-ce que c'est & Pourquoi ?
-
-Télécharger une page web, c'est récupérer son contenu via Internet. Les programmeurs font ça pour interagir avec des données en ligne, collecter des informations ou contrôler des appareils à distance.
-
 ## Comment faire :
-
 ```Arduino
 #include <ESP8266WiFi.h>
 
@@ -85,11 +80,9 @@ Status Line: HTTP/1.1 200 OK
 ```
 
 ## Exploration approfondie :
-
 Historiquement, les Arduinos étaient utilisés pour des projets locaux. Avec l’avènement d'Arduino équipés de WiFi comme l'ESP8266 ou l'ESP32, il est possible de télécharger des pages web, ouvrant ainsi la voie à l’Internet des Objets (IoT). Alternatives ? Il existe d'autres manières d'interagir avec le web, comme l'utilisation d'API REST, MQTT pour la communication entre appareils IoT, ou même d'autres cartes comme Raspberry Pi pour des tâches plus lourdes. Les détails criticels de la mise en œuvre incluent la sécurisation des connexions via HTTPS, la gestion des requêtes asynchrones pour ne pas bloquer le programme, et le parsing efficace des données reçues.
 
 ## À voir également :
-
 - Documentation Arduino sur la gestion du WiFi : https://www.arduino.cc/en/Reference/WiFi
 - Guide d'utilisation de l'ESP8266 avec Arduino : https://randomnerdtutorials.com/projects-esp8266/
 - Tutoriels sur l'interaction avec des APIs web via Arduino : https://www.arduino.cc/en/Tutorial/WebClient  

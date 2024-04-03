@@ -10,12 +10,7 @@ title: Praca z yaml
 weight: 41
 ---
 
-## What & Why? (Co i Dlaczego?)
-
-YAML to format danych używany do konfiguracji i serializacji. Programiści korzystają z niego ze względu na jego czytelność i prostotę.
-
 ## How to: (Jak to zrobić:)
-
 Elm nie ma wbudowanego wsparcia dla YAML, więc trzeba użyć zewnętrznej biblioteki lub konwertować YAML do JSON. Oto przykład konwersji YAML do JSON przy użyciu JavaScript i wysyłki danych do Elm:
 ```Elm
 port module Main exposing (..)
@@ -82,11 +77,9 @@ elmApp.ports.configFromYaml.send(config);
 Ważne: Musisz zintegrować Elm z JavaScript, aby obsłużyć YAML.
 
 ## Deep Dive (Dogłębna analiza)
-
 YAML powstał w 2001 roku jako human-friendly alternatywa do XML i JSON. Inne języki mają biblioteki do bezpośredniej pracy z YAML (np. PyYAML dla Pythona, ruamel.yaml dla Ruby), ale w Elm musisz to robić przez interfejs portów i JavaScript. Implementacja może się różnić w zależności od potrzeb, ale zaletą jest łatwość czytania i pisanie YAML.
 
 ## See Also (Zobacz również)
-
 - YAML Specyfikacja: https://yaml.org/spec/1.2/spec.html
 - Biblioteka `js-yaml` do konwersji w JavaScript: https://github.com/nodeca/js-yaml
 - Elm Ports: https://guide.elm-lang.org/interop/ports.html

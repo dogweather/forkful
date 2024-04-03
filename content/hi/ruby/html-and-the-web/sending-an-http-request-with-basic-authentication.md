@@ -35,12 +35,7 @@ title: "\u092C\u0947\u0938\u093F\u0915 \u092A\u094D\u0930\u092E\u093E\u0923\u094
 weight: 45
 ---
 
-## क्या और क्यों? (What & Why?)
-
-HTTP अनुरोध जब बेसिक प्रमाणीकरण के साथ भेजा जाता है, तब प्रोग्राम एक सुरक्षित तरीके से यूज़रनेम और पासवर्ड का इस्तेमाल करके सर्वर से डेटा का आदान-प्रदान करता है। डेवलपर्स इस प्रक्रिया का इस्तेमाल तब करते हैं जब वे सिक्योर एपीआई या वेब सर्विसेज़ से जुड़ना चाहते हों।
-
 ## कैसे करें? (How to:)
-
 ```Ruby
 require 'net/http'
 require 'uri'
@@ -64,11 +59,9 @@ end
 ```
 
 ## विस्तार से जानकारी (Deep Dive)
-
 HTTP बेसिक प्रमाणीकरण में 'Authorization' हैडर का इस्तेमाल होता है, जो बेस-64 कोडिंग का प्रयोग करता है। यह तकनीक वेब की शुरुआत के दिनों से है और अभी भी सरल और फटाफट ऑथेंटिकेशन के लिए प्रयोग होती है। वैसे तो यह बहुत सिक्योर नहीं है, इसलिए आमतौर पर इसे SSL/TLS के साथ इस्तेमाल किया जाता है। इसके अलावा, ज्यादा सुरक्षित विकल्प जैसे कि OAuth, Digest प्रमाणीकरण और API कीज भी मौजूद हैं।
 
 ## संबंधित स्रोत (See Also)
-
 - Ruby's Net::HTTP documentation: [Ruby-Doc.org](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
 - Base64 encoding in Ruby: [apidock.com](https://apidock.com/ruby/Base64)
 - More about HTTP Basic Authentication: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)

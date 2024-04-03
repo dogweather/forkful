@@ -12,12 +12,7 @@ title: Editando arquivos in loco com linhas de comando
 weight: 32
 ---
 
-## O Que & Por Que?
-
-Editar arquivos in-loco com linhas de comando únicas (CLI one-liners) é sobre fazer mudanças diretamente nos arquivos a partir da linha de comando, sem abrir eles em um editor de texto. Programadores fazem isso para economizar tempo e automatizar tarefas de edição repetitivas, tornando seu fluxo de trabalho mais suave e eficiente.
-
 ## Como fazer:
-
 Fish Shell, conhecido por suas características amigáveis ao usuário e poderosas capacidades de script, oferece várias maneiras de editar arquivos in-loco. No entanto, ao contrário de alguns outros shells, Fish não tem um mecanismo embutido para edição in-loco (`sed -i` no Bash, por exemplo). Mas não tema, você ainda pode alcançar isso com um pouco de criatividade e ajuda de ferramentas externas como `sed` e `awk`.
 
 ### Usando `sed` para substituições simples
@@ -42,7 +37,6 @@ awk '{print $1 * 2}' file.txt > temp && mv temp file.txt
 Lembre-se, ao usar essas ferramentas a partir do Fish, capturar erros e entender suas mensagens é crucial. Use o robusto tratamento de erros do Fish para fazer seus scripts mais confiáveis.
 
 ## Mergulho Profundo
-
 Historicamente, a edição de arquivos in-loco tem sido um ponto principal da programação Unix e Linux, oferecendo uma maneira eficiente de realizar edições rápidas sem abrir manualmente os arquivos. Ferramentas como `sed` e `awk` são utilidades veneráveis que existem desde os primeiros dias do Unix, tornando-se indispensáveis para tarefas de processamento de texto.
 
 Fish Shell, sendo mais moderno e ostentando melhorias em usabilidade e script, carece de edição in-loco embutida principalmente devido à sua filosofia de design focada em interatividade e amigável ao usuário. A ausência de um comando nativo de edição in-loco no Fish sublinha a importância das ferramentas externas nos ecossistemas semelhantes ao Unix.

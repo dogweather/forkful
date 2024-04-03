@@ -13,12 +13,7 @@ title: Interpolando una cadena de texto
 weight: 8
 ---
 
-## ¿Qué y por qué?
-
-La interpolación de cadenas es el proceso de inyectar valores de variables directamente en cadenas de texto, a menudo para crear mensajes significativos sin concatenaciones engorrosas. Los programadores lo hacen para tener un código más limpio, legible y para prevenir errores propensos a ocurrir en concatenaciones de cadenas complejas.
-
 ## Cómo hacerlo:
-
 En Dart, la interpolación de cadenas es sencilla, utilizando el símbolo `$` para interpolar expresiones directamente dentro de literales de cadena:
 
 ```dart

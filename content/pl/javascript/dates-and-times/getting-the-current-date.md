@@ -14,9 +14,6 @@ title: Pobieranie aktualnej daty
 weight: 29
 ---
 
-## Co i dlaczego?
-Pobieranie bieżącej daty w JavaScript jest podstawowym zadaniem, obejmującym pobieranie i ewentualnie manipulowanie dzisiejszą datą i czasem. Programiści wykonują to, aby wyświetlać daty na stronach internetowych, w aplikacjach, śledzić interakcje użytkowników lub obsługiwać dane wrażliwe czasowo.
-
 ## Jak to zrobić:
 W czystym JavaScript używa się obiektu `Date`, aby pracować z datami i czasem. Oto jak można uzyskać bieżącą datę i czas:
 

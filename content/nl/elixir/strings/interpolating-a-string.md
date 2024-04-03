@@ -12,9 +12,6 @@ title: Een string interpoleren
 weight: 8
 ---
 
-## Wat & Waarom?
-Stringinterpolatie stelt je in staat om variabelen of berekeningen in een string in te voegen. Het is handig voor het dynamisch opbouwen van strings zonder de rommel van concatenatie.
-
 ## Hoe:
 ```elixir
 name = "Josie"

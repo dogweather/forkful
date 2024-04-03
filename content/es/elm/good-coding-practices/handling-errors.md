@@ -10,9 +10,6 @@ title: Manejo de errores
 weight: 16
 ---
 
-## ¿Qué y Por Qué?
-Manejar errores significa escribir código que pueda anticipar y lidiar con situaciones problemáticas. Los programadores lo hacen para prevenir fallas, proteger la integridad de los datos y proporcionar a los usuarios alternativas elegantes ante fallos.
-
 ## Cómo hacerlo:
 La filosofía central de Elm es No Excepciones en Tiempo de Ejecución. Por lo tanto, Elm aprovecha su sistema de tipos con tipos como `Maybe` y `Result` para manejar errores.
 

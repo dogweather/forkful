@@ -10,9 +10,6 @@ title: Suchen und Ersetzen von Text
 weight: 10
 ---
 
-## Was & Warum?
-Suchen und Ersetzen von Text ermöglicht es, spezifische Zeichen oder Zeichenfolgen in einem Textblock zu finden und durch andere auszutauschen. Programmierer nutzen diese Funktion, um Code schnell zu aktualisieren oder Daten zu bereinigen.
-
 ## So geht's:
 In Elm benutzt du oft Funktionen aus dem `String`-Modul, um Text zu manipulieren. Hier ist ein einfaches Beispiel:
 

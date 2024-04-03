@@ -10,9 +10,6 @@ title: "V\xE9rification de l'existence d'un r\xE9pertoire"
 weight: 20
 ---
 
-## What & Why?
-"Quoi et Pourquoi ?": Vérifier si un dossier existe c'est s'assurer que le chemin d'accès pointe vers quelque chose de réel. Les développeurs font ça pour éviter des erreurs en tentant d'accéder ou de modifier un dossier inexistant.
-
 ## How to:
 "Comment Faire :"
 

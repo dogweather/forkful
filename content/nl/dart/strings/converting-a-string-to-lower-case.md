@@ -13,12 +13,7 @@ title: Een string converteren naar onderkast
 weight: 4
 ---
 
-## Wat & Waarom?
-
-Een string omzetten naar kleine letters is een fundamentele bewerking waarbij alle tekens in een gegeven string worden getransformeerd naar hun equivalenten in kleine letters. Programmeurs voeren deze bewerking doorgaans uit om hoofdletterongevoelige vergelijkingen te bereiken of om tekstinput te standaardiseren voor verdere verwerking, waardoor applicaties gebruiksvriendelijker worden en data consistenter.
-
 ## Hoe:
-
 In Dart kun je een string omzetten naar kleine letters met behulp van de `toLowerCase()` methode die door de `String` klasse wordt aangeboden. Deze methode retourneert een nieuwe string waarin alle hoofdletters zijn omgezet naar kleine letters. Laten we eens kijken hoe dit werkt met een eenvoudig voorbeeld:
 
 ```dart

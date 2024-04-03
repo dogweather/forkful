@@ -12,9 +12,6 @@ title: Een string omzetten naar kleine letters
 weight: 4
 ---
 
-## Wat & Waarom?
-Een string omzetten naar kleine letters betekent elke letter in de string veranderen in een kleine letter. Het is handig voor hoofdletterongevoelige vergelijkingen of om tekst voor te bereiden voor uniforme verwerking.
-
 ## Hoe te:
 ```Rust
 fn main() {

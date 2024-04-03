@@ -12,9 +12,6 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## Qué y Por Qué?
-Buscar y reemplazar texto es como usar el comando "buscar" de tu lector PDF, pero en el código puedes cambiar todas las apariciones de un patrón por otro. Los programadores lo hacen para corregir errores, actualizar datos o mejorar la legibilidad.
-
 ## Cómo hacerlo:
 ```Kotlin
 fun main() {

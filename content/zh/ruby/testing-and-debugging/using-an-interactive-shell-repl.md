@@ -16,9 +16,6 @@ title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uF
 weight: 34
 ---
 
-## 什么 & 为什么？
-交互式shell，或REPL（读取-求值-打印 循环），让你能实时测试代码。程序员使用它来实验、调试，并在不创建完整脚本的情况下学习Ruby的细微之处。
-
 ## 如何操作：
 Ruby的REPL称为IRB（交互式Ruby）。跳进去，直接从你的终端尝试Ruby：
 

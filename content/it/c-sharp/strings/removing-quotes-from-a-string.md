@@ -11,9 +11,6 @@ title: Rimuovere le virgolette da una stringa
 weight: 9
 ---
 
-## Cos'è e Perché?
-Rimuovere le virgolette da una stringa in C# significa eliminare quei fastidiosi caratteri di virgolette doppie (`"`) o singole (`'`) che avvolgono il tuo testo. I programmatori fanno ciò per pulire i dati, prepararli per l'inserimento nel database o rendere le stringhe sicure per ulteriori elaborazioni in modo che le cose non vanno in tilt quando compare una virgoletta fuori posto.
-
 ## Come fare:
 ```csharp
 string withQuotes = "\"Hello, World!\"";

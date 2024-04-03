@@ -13,12 +13,7 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## Co i dlaczego?
-
-Pobieranie strony internetowej polega na pobraniu treści HTML strony internetowej za pośrednictwem protokołu HTTP/HTTPS. Programiści często robią to w celu scrapowania danych, analizy danych lub po prostu programowego interakcji ze stronami internetowymi, aby automatyzować zadania.
-
 ## Jak to zrobić:
-
 W języku Go standardowa biblioteka zapewnia potężne narzędzia do wykonywania zapytań internetowych, zwłaszcza pakiet `net/http`. Do pobierania strony internetowej głównie używamy metody `http.Get`. Oto podstawowy przykład:
 
 ```go
@@ -65,7 +60,6 @@ Ten prosty program wykonuje żądanie HTTP GET do określonego adresu URL, a nas
 Uwaga: We współczesnym programowaniu w Go, `ioutil.ReadAll` jest uznawane za przestarzałe od wersji Go 1.16 na rzecz `io.ReadAll`.
 
 ## Pogłębiona analiza
-
 Język Go ma filozofię projektowania, która podkreśla prostotę, efektywność i niezawodne obsługiwanie błędów. Jeśli chodzi o programowanie sieciowe, a konkretnie pobieranie stron internetowych, standardowa biblioteka Go, zwłaszcza `net/http`, jest efektywnie zaprojektowana do obsługi operacji żądań i odpowiedzi HTTP.
 
 Podejście do żądań sieciowych w Go sięga początków języka, czerpiąc koncepcje od poprzedników, ale znacznie poprawiając efektywność i prostotę. Dla pobierania treści, model współbieżności Go z użyciem gorutyn sprawia, że jest to wyjątkowo potężne narzędzie do wykonywania asynchronicznych żądań HTTP, obsługując tysiące żądań równolegle z łatwością.

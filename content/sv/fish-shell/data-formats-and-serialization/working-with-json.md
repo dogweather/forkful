@@ -13,12 +13,7 @@ title: Arbeta med JSON
 weight: 38
 ---
 
-## Vad & Varför?
-
-Att arbeta med JSON i Fish Shell innebär att tolka och generera JSON-data, en vanlig uppgift för att konfigurera applikationer, API-interaktion och effektivisering av arbetsflöden i kommandotolken. Med tanke på JSON:s allestädes närvaro i webb- och applikationsutveckling, kan att bemästra dess manipulation direkt i skalet avsevärt förbättra automatiseringen och effektiviteten i hanteringen av data för programmerare.
-
 ## Hur man gör:
-
 Fish Shell har i sig inte inbyggda verktyg för att tolka och generera JSON. Dock integreras den sömlöst med tredjepartsverktyg som `jq` för bearbetning av JSON. `jq` är en kraftfull och mångsidig kommandoradsprocess för JSON som låter dig skiva, filtrera, mappa och transformera strukturerad data med ett enkelt och uttrycksfullt språk.
 
 ### Tolkning av JSON med jq

@@ -11,9 +11,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel er prosessen der du ber en server om data eller utfører en handling. Programmerere gjør dette for å integrere med webtjenester, hente innhold, eller snakke med REST APIer.
-
 ## Slik gjør du:
 For å sende en HTTP-forespørsel i C#, bruk `HttpClient`. Her er et enkelt eksempel:
 

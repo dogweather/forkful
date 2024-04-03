@@ -14,9 +14,6 @@ title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---
 
-## ¿Qué y por qué?
-Analizar una fecha a partir de una cadena implica interpretar el formato de la cadena para extraer componentes de la fecha como el día, el mes y el año. Los programadores hacen esto para manejar la entrada de usuario, leer archivos de datos o interactuar con APIs que comunican fechas en formatos de cadena. Es esencial para el procesamiento de datos, la validación y la realización de aritmética de fechas en aplicaciones.
-
 ## Cómo:
 En C++ moderno, puedes utilizar la biblioteca `<chrono>` para manejar fechas y horas de manera nativa, pero no admite directamente el análisis desde cadenas sin un análisis manual para formatos más complejos. Sin embargo, para formatos de fecha ISO 8601 y formatos personalizados simples, aquí te mostramos cómo puedes lograr el análisis.
 

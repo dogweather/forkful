@@ -17,12 +17,7 @@ title: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---
 
-## Cái Gì & Tại Sao?
-
-Việc bắt đầu một dự án mới trong Visual Basic for Applications (VBA) bao gồm việc thiết lập một môi trường trong một ứng dụng chủ như Excel để tự động hóa các tác vụ hoặc mở rộng chức năng. Các lập trình viên khám phá lãnh thổ này để khai thác sức mạnh của VBA trong việc tùy chỉnh và tự động hóa các ứng dụng Microsoft Office, từ đó giúp luồng công việc trở nên mạch lạc hơn và tăng cường năng suất.
-
 ## Cách thực hiện:
-
 Khi bạn sẵn lòng để bắt đầu một dự án VBA mới, điểm khởi đầu thường bao gồm việc truy cập vào trình soạn thảo VBA và khởi tạo khung dự án của bạn. Hãy cùng đi qua các bước sử dụng Excel là ứng dụng chủ:
 
 1. **Mở Trình Soạn Thảo VBA**: Trong Excel, nhấn `Alt + F11` để truy cập trình soạn thảo VBA.
@@ -46,7 +41,6 @@ Một hộp thông báo với "Xin chào, Thế giới!" được hiển thị.
 5. **Lưu Dự Án của Bạn**: Trước khi thoát, hãy đảm bảo bạn lưu công việc của mình. Nếu sổ làm việc Excel của bạn trước đó chưa được lưu, bạn sẽ được yêu cầu lưu dưới dạng sổ làm việc có kích hoạt macro (định dạng tệp `.xlsm`).
 
 ## Đi Sâu vào Đề Tài
-
 Visual Basic for Applications đã là một trụ cột trong các chiến lược tự động hóa của Microsoft kể từ khi nó được giới thiệu vào năm 1993. Bắt nguồn là một sự tiến hóa của người tiền nhiệm, MacroBasic, VBA đã cung cấp một giải pháp mạnh mẽ hơn với tích hợp cải thiện trên toàn bộ bộ Office của Microsoft. Sự chuyển đổi sang VBA đã đánh dấu một bước ngoặt quan trọng, hướng tới những khả năng lập trình phức tạp hơn sử dụng sức mạnh của các ngôn ngữ lập trình đầy đủ.
 
 Dù đã có tuổi đời, VBA vẫn đang phổ biến trong môi trường văn phòng hiện đại, phần lớn nhờ vào tích hợp sâu rộng trong các sản phẩm Office và lượng mã nguồn lưu trữ lớn tại nhiều tổ chức. Tuy nhiên, điều quan trọng cần lưu ý là, đối với các ứng dụng web mới hơn hoặc cho những tác vụ yêu cầu khả năng mở rộng và tích hợp với các ứng dụng ngoài Office, các ngôn ngữ và khung làm việc như Python với hệ sinh thái thư viện phong phú của nó, hoặc JavaScript cho Office Scripts, cung cấp một cách tiếp cận hiện đại và linh hoạt hơn. Những lựa chọn thay thế này, dù đòi hỏi đường cong học tập dốc và thiết lập ban đầu, cung cấp tính ứng dụng rộng lớn hơn và hỗ trợ cho các thực hành phát triển hiện đại như kiểm soát phiên bản và đường ống triển khai.

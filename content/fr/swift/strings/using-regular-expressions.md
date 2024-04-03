@@ -14,9 +14,6 @@ title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---
 
-## Quoi & Pourquoi ?
-Les expressions régulières, ou regex, sont des séquences de caractères qui forment un motif de recherche, souvent utilisé pour des tâches de correspondance ou de manipulation de chaînes. Les programmeurs les utilisent pour tout, de la validation de données et l'analyse au transformations, les rendant un outil indispensable dans les tâches de traitement et de manipulation du texte à travers divers langages de programmation, y compris Swift.
-
 ## Comment faire :
 La prise en charge native de Swift pour les regex utilise la classe `NSRegularExpression`, ainsi que les méthodes de plage et de remplacement de la classe String. Voici un exemple d'utilisation des regex pour trouver et mettre en évidence des adresses e-mail dans un bloc de texte :
 

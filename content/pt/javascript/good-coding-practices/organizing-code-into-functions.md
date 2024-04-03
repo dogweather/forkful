@@ -11,11 +11,7 @@ title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---
 
-## O Que & Por Quê?
-Organizar o código em funções segmenta tarefas em pedaços reutilizáveis, tornando o código mais limpo e fácil de manter. Fazemos isso para reduzir a redundância, facilitar o teste e melhorar a legibilidade.
-
 ## Como fazer:
-
 ```javascript
 // Define uma função para calcular a área de um retângulo
 function calculateArea(largura, altura) {

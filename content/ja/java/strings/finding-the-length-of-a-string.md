@@ -23,10 +23,6 @@ title: "\u6587\u5B57\u5217\u306E\u9577\u3055\u3092\u6C42\u3081\u308B"
 weight: 7
 ---
 
-## What & Why?
-文字列の長さの探し方とは？
-プログラミングで文字列の長さが分かることは、入力の検証、ループの制御、テキストの処理などに不可欠です。具体的な長さを知ることで、それを基準に色々な処理が可能になります。
-
 ## How to:
 Javaで文字列の長さを求めるには、`.length()`メソッドを使います。シンプルなので、すぐにマスターできます。
 
@@ -57,7 +53,6 @@ long length = greeting.chars().count();
 しかし、だいたいの場合 `.length()` がシンプルで直感的です。`chars().count()` はストリームを生成して処理するため、単純な文字列の長さを知りたいときにはオーバーヘッドになります。
 
 ## See Also
-
 - [`String` documentation in Oracle's Java docs](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html)
 - [Java String tutorial from W3Schools](https://www.w3schools.com/java/java_strings.asp)
 - [Java 8 `Stream` documentation](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html)

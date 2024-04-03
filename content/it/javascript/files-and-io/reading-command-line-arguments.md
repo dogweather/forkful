@@ -10,9 +10,6 @@ title: Lettura degli argomenti della riga di comando
 weight: 23
 ---
 
-## What & Why? - Cosa e Perché?
-Leggere gli argomenti da linea di comando permette al tuo programma JavaScript di accettare input esterno, rendendolo interattivo. I programmatori utilizzano questa funzionalità per creare script personalizzabili, per gestire configurazioni, e per rispondere a specifiche esigenze dell'utente.
-
 ## How to: - Come fare:
 Per leggere gli argomenti dalla linea di comando in Node.js, puoi usare `process.argv`. Ecco un esempio:
 

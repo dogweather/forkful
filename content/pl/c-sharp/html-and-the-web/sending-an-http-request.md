@@ -11,9 +11,6 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## What & Why?
-Wysyłanie żądania HTTP to komunikowanie się z serwerem – wysyłasz komendę, serwer odpowiada. Programiści robią to, by pobierać dane, wysyłać informacje, autentykować użytkowników – podstawa pracy sieciowej.
-
 ## How to:
 W C# używamy `HttpClient`. Spójrz:
 
@@ -50,6 +47,8 @@ class Program
 Odpowiedź serwera pojawi się w konsoli – jako tekst strony `example.com`.
 
 ## Deep Dive
+
+
 ### Historia
 Klasa `HttpClient` pojawiła się w .NET Framework 4.5. Zastąpiła starsze narzędzia jak `WebRequest` – z większym naciskiem na asynchroniczność i wydajność.
 

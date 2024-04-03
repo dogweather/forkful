@@ -28,12 +28,7 @@ title: "\u0926\u094B \u0924\u093E\u0930\u0940\u0916\u094B\u0902 \u0915\u0940 \u0
 weight: 27
 ---
 
-## What & Why? (क्या और क्यों?)
-
-तारीखों की तुलना का मतलब है दो डेट्स को आपस में मिलाना या उनका क्रम जानना। प्रोग्रामर इसे अक्सर समय-सीमित कार्यों, ईवेंट शेड्यूलिंग और डेटा वैलिडेशन में करते हैं।
-
 ## How to (कैसे करें):
-
 Java में, `LocalDate`, `LocalDateTime`, और `ZonedDateTime` क्लासेस द्वारा आसानी से डेट्स की तुलना की जा सकती है। चलिए देखते हैं कैसे:
 
 ```java
@@ -58,7 +53,6 @@ public class DateComparison {
 इस कोड का आउटपुट आज की तारीख पर निर्भर करेगा।
 
 ## Deep Dive (गहन जानकारी):
-
 तारीखों की तुलना का इतिहास Java के संस्करणों के साथ बदला है। `java.util.Date` और `java.util.Calendar` से शुरू होकर, Java 8 में `java.time` पैकेज ने इस काम को आसान और अधिक आधुनिक बना दिया।
 
 पुराने `Date` और `Calendar` ऑब्जेक्ट्स के बजाय, `LocalDate` का इस्तेमाल करना बेहतर है क्योंकि यह immutable होते हैं और thread-safe होते हैं। इसके अलावा, `LocalDate` में केवल दिन, महीने और साल होते हैं, न कि टाइम ज़ोन और टाइम जैसे एक्स्ट्रा डिटेल्स।
@@ -88,7 +82,6 @@ public class DateTimeComparison {
 यहां भी आउटपुट वर्तमान समय पर निर्भर करेगा।
 
 ## See Also (और भी देखें):
-
 - [Oracle's Java Tutorials - Date Time](https://docs.oracle.com/javase/tutorial/datetime/)
 - [Baeldung's Guide on Java 8 Date Time API](https://www.baeldung.com/java-8-date-time-intro)
 - [JavaDoc for LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)

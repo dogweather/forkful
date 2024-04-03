@@ -20,9 +20,6 @@ title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uF
 weight: 34
 ---
 
-## 什么 & 为什么？
-读取-执行-打印-循环（REPL）是一种编程环境，它接受单个用户输入，执行它们，并将结果返回给用户。程序员使用REPL来快速试验代码片段、调试以及学习新语言特性，而无需创建完整的应用程序的开销。
-
 ## 如何操作：
 TypeScript本身没有内置REPL。让我们使用`ts-node`，这是一个用于Node.js的TypeScript执行环境，包含一个REPL。
 

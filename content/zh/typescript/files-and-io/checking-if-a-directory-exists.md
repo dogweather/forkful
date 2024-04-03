@@ -22,15 +22,10 @@ title: "\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728"
 weight: 20
 ---
 
-## 什么 & 为什么？
-在TypeScript中检查目录是否存在对于文件管理任务至关重要，例如从文件中读取或向文件写入数据，确保只在有效目录上执行操作。这个操作对于避免尝试访问或操作不存在的目录而产生的错误至关重要。
-
 ## 如何操作：
-
 当在Node.js环境中运行TypeScript时，你可以使用`fs`模块来检查目录是否存在，该模块提供了`existsSync()`函数或异步的`access()`函数结合`constants.F_OK`。
 
 ### 使用`fs.existsSync()`：
-
 ```typescript
 import { existsSync } from 'fs';
 
@@ -44,7 +39,6 @@ if (existsSync(directoryPath)) {
 ```
 
 ### 使用`fs.access()`搭配`fs.constants.F_OK`：
-
 ```typescript
 import { access, constants } from 'fs';
 
@@ -70,7 +64,6 @@ access(directoryPath, constants.F_OK, (err) => {
 ```
 
 ### 使用第三方库 - `fs-extra`：
-
 `fs-extra`是一个受欢迎的第三方库，它增强了内置的`fs`模块，并提供了更方便的函数。
 
 ```typescript

@@ -14,12 +14,7 @@ title: Einen Datum aus einem String analysieren
 weight: 30
 ---
 
-## Was & Warum?
-
-Das Parsen eines Datums aus einem String in Arduino umfasst das Extrahieren und Konvertieren der Datumsbestandteile (Jahr, Monat, Tag) aus einer textuellen Darstellung in ein Format, das für die Zeitmessung, Vergleiche oder Manipulationen innerhalb von Skizzen genutzt werden kann. Programmierer führen diese Aufgabe häufig durch, um mit Komponenten wie Echtzeituhren, Loggern zu interagieren oder um Eingaben von Web-APIs und Benutzeroberflächen zu verarbeiten, bei denen Daten in einem lesbaren Format präsentiert werden könnten.
-
 ## Wie:
-
 Direkter Ansatz ohne Drittanbieter-Bibliothek:
 
 ```cpp

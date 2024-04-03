@@ -14,9 +14,6 @@ title: "Tilap\xE4isen tiedoston luominen"
 weight: 21
 ---
 
-## Mikä & Miksi?
-Väliaikaistiedoston luominen C:ssä tarkoittaa tiedoston generointia, joka on tarkoitettu lyhytaikaiseen käyttöön, yleensä datankäsittelyn tai säilytyksen väliaikaiseen tilaan. Ohjelmoijat tekevät sen hallitakseen väliaikaista dataa vaikuttamatta ohjelman pysyvään säilytykseen tai varmistaakseen, että arkaluonteinen data poistetaan käytön jälkeen.
-
 ## Kuinka:
 Väliaikaistiedoston luominen C-ohjelmointikielessä voi hyödyntää funktioita, kuten `tmpfile()` ja `mkstemp()`.
 

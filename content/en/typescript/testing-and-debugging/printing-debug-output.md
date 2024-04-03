@@ -11,9 +11,6 @@ title: Printing debug output
 weight: 33
 ---
 
-## What & Why?
-Debug output is your flashlight in a dark code alley; it helps you spot bugs by letting you peek into what your code's doing at runtime. Programmers do it because, well, we’re human and our code isn’t always perfect on the first try.
-
 ## How to:
 Want to print debug output in TypeScript? Console methods are your go-to. See `console.log`, `console.error`, and friends in action:
 

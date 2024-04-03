@@ -12,9 +12,6 @@ title: Capitalizando uma string
 weight: 2
 ---
 
-## O que & Por quê?
-Capitalizar uma string no PowerShell envolve transformar o primeiro caractere de uma string dada em maiúsculo, deixando o restante da string inalterado. Programadores frequentemente realizam essa tarefa para fins de formatação, como preparar texto para exibição em interfaces de usuário ou seguir regras gramaticais em documentos gerados.
-
 ## Como fazer:
 O PowerShell, sendo uma ferramenta versátil, permite que você capitalize uma string usando métodos diretos sem a necessidade de bibliotecas de terceiros. Veja como você pode fazer isso:
 

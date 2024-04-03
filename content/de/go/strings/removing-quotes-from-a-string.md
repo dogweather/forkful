@@ -14,12 +14,7 @@ title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---
 
-## Was & Warum?
-
-Das Entfernen von Anführungszeichen aus einem String in Go bedeutet, die führenden und abschließenden Anführungszeichen (`"` oder `'`) aus einem gegebenen String zu entfernen. Programmierer müssen diese Aufgabe oft durchführen, um Benutzereingaben zu bereinigen, Textdaten effektiver zu parsen oder Strings für eine weitere Verarbeitung vorzubereiten, die inhalte ohne Anführungszeichen erfordert.
-
 ## Wie:
-
 Go bietet verschiedene Ansätze zum Entfernen von Anführungszeichen aus einem String, aber eine der unkompliziertesten Methoden ist die Verwendung der Funktionen `Trim` und `TrimFunc`, die vom `strings`-Paket bereitgestellt werden. So geht's:
 
 ```go
@@ -56,7 +51,6 @@ Verwendung von strings.TrimFunc: Dies ist ein 'zitierter' String
 Beide Methoden entfernen effektiv die führenden und abschließenden Anführungszeichen aus dem String.
 
 ## Vertiefung
-
 Die Funktionen `Trim` und `TrimFunc` aus dem `strings`-Paket sind Teil der umfangreichen Standardbibliothek von Go, die darauf ausgelegt ist, leistungsfähige und dennoch unkomplizierte Möglichkeiten zur Stringmanipulation ohne die Notwendigkeit von Drittanbieterpaketen zu bieten. Historisch gesehen ergibt sich die Notwendigkeit, Strings effizient zu handhaben und zu manipulieren, aus dem Schwerpunkt von Go auf Netzwerkservern und Datenparsern, wo die Stringverarbeitung eine häufige Aufgabe ist.
 
 Ein bemerkenswerter Aspekt dieser Funktionen ist ihre Implementierung auf Basis von Runen (Gos Darstellung eines Unicode-Codepunkts). Dieses Design ermöglicht es ihnen, nahtlos Strings zu handhaben, die mehrbyte Zeichen enthalten, was GOS Ansatz zur Stringmanipulation sowohl robust als auch Unicode-freundlich macht.

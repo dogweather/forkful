@@ -15,12 +15,7 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---
 
-## Gì và Tại sao?
-
-Trong Elm, việc gửi một yêu cầu HTTP là cách ứng dụng của bạn giao tiếp với các dịch vụ web khác để trao đổi dữ liệu. Lập trình viên làm điều này để tải lên hoặc gửi thông tin đến máy chủ, thúc đẩy dinamika của ứng dụng như tài khoản người dùng, điểm số, hoặc cập nhật tin tức.
-
 ## Làm thế nào:
-
 Được rồi, đến lúc viết code. Elm thực hiện yêu cầu HTTP sử dụng mô-đun `Http`. Dưới đây là một ví dụ nhanh để tải xuống một số JSON:
 
 ```Elm
@@ -66,11 +61,9 @@ update msg model =
 ```
 
 ## Sâu hơn
-
 Việc gửi yêu cầu HTTP không phải là mới; nó đã là cột sống của giao tiếp web kể từ những năm 90. Elm đóng gói sự phức tạp trong mô-đun `Http` thân thiện với người dùng, tập trung vào sự an toàn và đơn giản. Không giống như những ngày đầu, Elm trừu tượng hóa các phần rối rắm như XMLHttprequest và phân tích cú pháp JSON. Các phương pháp thay thế như sử dụng Fetch API hoặc XMLHttpRequest trực tiếp của JavaScript có thể thực hiện được thông qua cổng, nhưng cách tích hợp sẵn của Elm giữ cho mã của bạn an toàn về kiểu và nguyên sơ. Nó xử lý các tác dụng phụ thông qua kiến trúc mạnh mẽ mà không làm tổn hại đến độ tin cậy của ứng dụng của bạn.
 
 ## Xem thêm
-
 Để biết thêm giải thích chi tiết và khắc phục sự cố, hãy xem những nguồn lực sau:
 
 - Tài liệu gói Elm cho HTTP: [https://package.elm-lang.org/packages/elm/http/latest/](https://package.elm-lang.org/packages/elm/http/latest/)

@@ -14,12 +14,7 @@ title: "Lukujen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä & Miksi?
-
-Pyöristäminen, peruskäsite tietokoneohjelmoinnissa, tarkoittaa luvun säätämistä lähimpään kokonaislukuun tai tiettyyn määrään desimaalipaikkoja. Ohjelmoijat suorittavat usein pyöristämisen yksinkertaistaakseen lukuja ihmiselle luettavassa muodossa tai täyttääkseen erityiset laskentatarpeet, varmistaen tarkkuuden ja vähentäen laskennallista kuormaa.
-
 ## Kuinka:
-
 Google Apps Script, ollessaan JavaScript-pohjainen kieli, tarjoaa standardimenetelmiä numeroiden pyöristämiseen. Tässä on yhteenveto kolmesta yleisesti käytetystä tekniikasta:
 
 ### Math.round()
@@ -61,7 +56,6 @@ Logger.log(preciseRound); // Tulostaa: 2.57
 ```
 
 ## Syväsukellus
-
 Numeroiden pyöristäminen Google Apps Scriptissä ei eroa paljoakaan siitä, miten se tehdään muissa JavaScript-ympäristöissä. Kuitenkin pyöristysmenetelmien erojen ymmärtäminen ja liukulukuaritmetiikan mahdollisten ongelmien tiedostaminen on ratkaisevaa. Esimerkiksi tietokoneiden tapa esittää liukulukuja johtaa siihen, että kaikkia desimaalilukuja ei voida esittää täydellisellä tarkkuudella, mikä voi johtaa joskus odottamattomiin pyöristystuloksiin.
 
 Historiallisesti JavaScript (ja laajennettuna Google Apps Script) käsittelee tämän noudattamalla IEEE 754 -standardia, jota monet muut ohjelmointikielet käyttävät liukulukuaritmetiikkaan. Tämä standardi määrittelee, miten numerot pyöristetään, varmistaen yhtenäisyyden eri alustojen ja kielten välillä.

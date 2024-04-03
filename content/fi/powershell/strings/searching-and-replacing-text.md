@@ -11,9 +11,6 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## What & Why - Mitä ja miksi?
-Tekstin etsiminen ja korvaaminen on tapa bongata tietyt merkkijonot ja vaihtaa ne toisiin. Koodarit tekevät tätä automatisoidakseen tylsät ja virhealttiit tekstimuokkaustehtävät.
-
 ## How to - Näin se tehdään
 Voit etsiä ja korvata tekstiä PowerShellissa käyttämällä `-replace` operaattoria.
 

@@ -16,9 +16,6 @@ title: "\u5C06\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4ED8\u3092\u8A08
 weight: 26
 ---
 
-## What & Why? (何となぜ？)
-計算日付は未来または過去の特定日を求めること。プログラマは期限やスケジュールを管理するために使う。
-
 ## How to: (方法)
 ```Haskell
 import Data.Time

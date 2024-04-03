@@ -13,12 +13,7 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## Co i dlaczego?
-
-Wysyłanie żądania HTTP w Google Apps Script polega na programowym wywołaniu zewnętrznego serwera internetowego lub API. Programiści robią to, aby pobierać lub wysyłać dane do usług internetowych, integrując ogromną sferę zasobów i funkcjonalności sieciowych bezpośrednio w swoich projektach Google Apps Script.
-
 ## Jak to zrobić:
-
 W Google Apps Script podstawowym sposobem na wysłanie żądania HTTP jest użycie usługi `UrlFetchApp`. Usługa ta dostarcza metody do wykonywania żądań HTTP GET i POST. Oto prosty przykład wykonania żądania GET w celu pobrania danych JSON:
 
 ```javascript
@@ -57,7 +52,6 @@ function postExample() {
 Te fragmenty kodu pokazują podstawową realizację żądań GET i POST. Wynik będzie zależał od odpowiedzi API i można go zobaczyć w rejestrze Logger Google Apps Script.
 
 ## Pogłębiona analiza
-
 Usługa `UrlFetchApp` w Google Apps Script znacznie ewoluowała od momentu swojego powstania, oferując bardziej zniuansowaną kontrolę nad żądaniami HTTP z funkcjami takimi jak ustawianie nagłówków, ładunku oraz obsługa multipart/form-data dla przesyłania plików. Choć zapewnia prosty sposób na integrację z zewnętrznymi usługami sieciowymi, deweloperzy pochodzący z bardziej rozbudowanych języków backendowych mogą uznać jej funkcjonalność za nieco ograniczoną w porównaniu z bibliotekami takimi jak `requests` w Pythonie czy `fetch` API w JavaScript w Node.js.
 
 Jednym z widocznych ograniczeń jest limit czasu wykonania dla Google Apps Script, który wpływa na żądania o długim czasie wykonywania. Dodatkowo, chociaż `UrlFetchApp` obejmuje szeroki zakres przypadków użycia, bardziej złożone scenariusze, wymagające uwierzytelnienia OAuth lub obsługi bardzo dużych ładunków, mogą wymagać kreatywnych rozwiązań lub wykorzystania dodatkowych zasobów Google Cloud.

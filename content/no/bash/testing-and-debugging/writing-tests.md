@@ -13,9 +13,6 @@ title: Skrive tester
 weight: 36
 ---
 
-## Hva & Hvorfor?
-Å skrive tester i Bash innebærer å lage testtilfeller for å validere funksjonaliteten til Bash-skriptene dine. Programmerere utfører tester for å sikre at skriptene deres fungerer som forventet under ulike forhold, og fanger opp feil og bugs før utrulling.
-
 ## Hvordan:
 Bash har ikke et innebygd testrammeverk, men du kan skrive enkle testfunksjoner. For mer sofistikerte tester er tredjepartsverktøy som `bats-core` populære.
 

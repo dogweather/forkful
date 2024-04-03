@@ -11,9 +11,6 @@ title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---
 
-## ¿Qué y Por Qué?
-Enviar una petición HTTP con autenticación básica significa incluir credenciales de usuario para acceder a recursos protegidos. Los programadores lo hacen para interactuar con servidores y APIs que requieren una capa extra de seguridad.
-
 ## Cómo Hacerlo:
 ```Elm
 import Http

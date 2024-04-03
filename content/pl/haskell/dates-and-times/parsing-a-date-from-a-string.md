@@ -14,12 +14,7 @@ title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---
 
-## Co i dlaczego?
-
-Przetwarzanie daty z ciągu znaków w Haskellu polega na przekształceniu tekstowych reprezentacji dat na strukturalny format, który program może manipulować. Ten proces jest fundamentalny dla aplikacji zajmujących się danymi kalendarzowymi, umożliwiając funkcje takie jak obliczanie czasu trwania, planowanie i walidację danych.
-
 ## Jak to zrobić:
-
 Od samego początku, Haskell oferuje podstawowe narzędzia do przetwarzania dat, ale wykorzystanie bibliotek takich jak `time` dla podstawowej funkcjonalności oraz `date-parse` lub `time-parse` dla bardziej elastycznego przetwarzania może znacząco uprościć zadanie.
 
 Najpierw upewnij się, że masz dostępną bibliotekę `time`; jest ona często dołączana do GHC, ale jeśli musisz określić ją jako zależność, dodaj `time` do pliku cabal Twojego projektu lub użyj `cabal install time`, aby ręcznie ją zainstalować.

@@ -11,9 +11,6 @@ title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---
 
-## Co i Dlaczego?
-Logowanie to w zasadzie notowanie tego, co robi Twoja aplikacja – rodzaj dziennika, ale dla kodu. Programiści używają go, aby śledzić detale, takie jak zmiany stanów, zdarzenia systemowe i uporczywe błędy, upewniając się, że żadne zacięcia nie przejdą niezauważone.
-
 ## Jak to zrobić:
 W Fish, logowanie może być tak proste, jak przekierowanie standardowego wyjścia i strumienia błędów do pliku. Zróbmy wpis w logu dla czasu rozpoczęcia i zakończenia naszego skryptu.
 

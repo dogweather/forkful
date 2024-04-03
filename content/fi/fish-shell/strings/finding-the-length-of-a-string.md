@@ -11,9 +11,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## What & Why? (Mitä & Miksi?)
-Stringin pituuden määrittäminen tarkoittaa merkkijonon merkkien lukumäärän laskemista. Ohjelmoijat käyttävät tätä saadakseen tietoa datan muodosta, validoinnista ja tekstinkäsittelystä.
-
 ## How to (Kuinka tehdä)
 ```Fish Shell
 # Määritä jono

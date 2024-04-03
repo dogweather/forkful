@@ -14,14 +14,10 @@ title: "Mettre une cha\xEEne de caract\xE8res en majuscules"
 weight: 2
 ---
 
-## Quoi & Pourquoi ?
-
-Capitaliser une chaîne de caractères consiste à modifier la première lettre d'un mot ou d'une phrase entière en majuscule, tout en gardant le reste des caractères tels quels. Les programmeurs utilisent souvent cette technique pour formater les entrées des utilisateurs ou afficher du texte afin d'assurer la cohérence ou de respecter les règles grammaticales dans les interfaces utilisateur.
-
 ## Comment faire :
 
-### En utilisant les méthodes intégrées de Dart
 
+### En utilisant les méthodes intégrées de Dart
 Dart fournit des méthodes simples et directes pour la manipulation des chaînes de caractères. Pour capitaliser un mot ou une phrase, vous prendriez typiquement le premier caractère, le convertiriez en majuscule, puis le concaténeriez avec le reste de la chaîne. Voici comment vous pourriez l'implémenter :
 
 ```dart
@@ -37,7 +33,6 @@ void main() {
 ```
 
 ### Capitalisant chaque mot
-
 Pour capitaliser la première lettre de chaque mot dans une chaîne, vous pourriez diviser la chaîne en mots, capitaliser chacun d'eux, puis les rejoindre ensemble :
 
 ```dart
@@ -52,7 +47,6 @@ void main() {
 ```
 
 ### Utilisant des bibliothèques tierces
-
 Bien que la bibliothèque standard de Dart couvre les besoins de base, certaines tâches pourraient être plus facilement accomplies en utilisant des packages tiers. Un choix populaire pour des capacités de manipulation des chaînes étendues, y compris la capitalisation, est le package [`recase`](https://pub.dev/packages/recase). Après l'avoir ajouté au `pubspec.yaml` de votre projet, vous pouvez facilement capitaliser des chaînes parmi d'autres fonctionnalités :
 
 ```dart

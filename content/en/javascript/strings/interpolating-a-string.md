@@ -9,12 +9,7 @@ title: Interpolating a string
 weight: 8
 ---
 
-## What & Why?
-
-String interpolation is a way to embed variables directly within a string. Programmers use it to concatenate variables and strings efficiently, making code easier to read and maintain.
-
 ## How to:
-
 In JavaScript, string interpolation is often done using template literals. Here’s how you can do it:
 
 ```javascript
@@ -32,7 +27,6 @@ console.log(`Ten times five is ${a * b}.`); // Outputs: Ten times five is 50.
 ```
 
 ## Deep Dive
-
 Historically, string interpolation wasn't as straightforward in JavaScript. Before ES6 (ECMAScript 2015), concatenation was commonly done using the `+` operator:
 
 ```javascript
@@ -47,7 +41,6 @@ Alternatives to string interpolation include string concatenation with the `+` o
 The performance of template literals is generally on par with these older methods. However, readability and the ability to include expressions (like `${a * b}`) within strings make template literals a strong choice for developers.
 
 ## See Also
-
 - MDN on Template Literals: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 - String concatenation in JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/String_Operators
 - A history of JavaScript module "ECMAScript": https://www.ecma-international.org/publications-and-standards/standards/ecma-262/

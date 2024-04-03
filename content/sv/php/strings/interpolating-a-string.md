@@ -11,9 +11,6 @@ title: "Interpolera en str\xE4ng"
 weight: 8
 ---
 
-## Vad & Varför?
-Interpolera en sträng innebär att infoga variabelvärden direkt i strängen. Programmerare gör detta för att smidigt kunna bygga dynamiska texter utan att behöva bryta upp strängen.
-
 ## Så här gör du:
 ```PHP
 // Grundläggande interpolation

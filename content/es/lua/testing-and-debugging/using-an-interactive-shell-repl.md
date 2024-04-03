@@ -10,9 +10,6 @@ title: Usando una shell interactiva (REPL)
 weight: 34
 ---
 
-## Qué y Por Qué
-REPL significa Bucle de Leer-Evaluar-Imprimir, un entorno interactivo donde puedes probar rápidamente código. Los programadores lo utilizan para experimentar, depurar y aprender las peculiaridades de un lenguaje.
-
 ## Cómo hacerlo:
 Para saltar al REPL de Lua, simplemente ingresa `lua` en tu terminal. Aquí tienes un ejemplo de sesión:
 

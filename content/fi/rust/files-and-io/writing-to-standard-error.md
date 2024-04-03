@@ -14,9 +14,6 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mikä & Miksi?
-Virheilmoitusten kirjoittaminen standardivirheeseen (stderr) Rustissa tarkoittaa virheilmoitusten ja diagnostiikkatietojen ohjaamista konsoliin erillään standarditulosteesta (stdout). Ohjelmoijat tekevät näin erottaakseen ohjelman normaalin tulosteen virheilmoituksista, mikä helpottaa virheiden asianmukaista käsittelyä tai niiden ohjaamista lokiin tai tiedostoihin suorituksen aikana.
-
 ## Kuinka:
 Rust tarjoaa suoraviivaisen tavan kirjoittaa stderr:iin käyttämällä `eprintln!`-makroa, samankaltaisesti kuin `println!` käytetään stdoutille. Tässä on perusesimerkki:
 

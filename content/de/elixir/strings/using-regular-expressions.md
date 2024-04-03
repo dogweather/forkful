@@ -13,12 +13,7 @@ title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---
 
-## Was & Warum?
-
-Reguläre Ausdrücke (regex) in Elixir werden verwendet, um in Zeichenketten basierend auf spezifischen Mustern zu suchen, Übereinstimmungen zu finden und Zeichenketten zu manipulieren. Programmierer nutzen regex für Aufgaben wie die Validierung von Formaten (E-Mail, URLs), das Parsen von Logs oder die Datenextraktion, dank seiner Effizienz und Vielseitigkeit im Umgang mit Zeichenketten.
-
 ## Wie geht das:
-
 Elixir verwendet das `Regex`-Modul, welches die regex-Bibliothek von Erlang nutzt, für regex-Operationen. Hier sind grundlegende Anwendungen:
 
 ```elixir

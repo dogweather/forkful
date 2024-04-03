@@ -12,11 +12,8 @@ title: Manipolazione di file con one-liner da CLI
 weight: 31
 ---
 
-## Cosa & Perché?
-
-La manipolazione di file con one-liner CLI in PowerShell riguarda la modifica, lo spostamento o l'ottenimento di dati di file direttamente dalla riga di comando in modo veloce. I programmatori lo fanno per efficienza; è più veloce che navigare nelle GUI o scrivere lunghi script per compiti semplici.
-
 ## Come fare:
+
 
 ### Leggere un File
 Per visualizzare rapidamente il contenuto di un file, usare il comando `Get-Content`:
@@ -61,7 +58,6 @@ Get-ChildItem -Path .\*.log | Copy-Item -Destination C:\Logs
 ```
 
 ## Approfondimento
-
 Storicamente, PowerShell è stato introdotto come alternativa più potente al tradizionale prompt dei comandi in Windows, offrendo un accesso senza precedenti agli interni del sistema e ai dati. Combina la velocità della riga di comando con la flessibilità dello scripting, rendendolo uno strumento inestimabile per gli amministratori di sistema e gli sviluppatori basati su Windows.
 
 Alternative a PowerShell per la manipolazione dei file includono strumenti basati su Unix come `sed`, `awk`, `grep` e lo scripting `bash` per gli utenti Linux e MacOS. Sebbene questi strumenti siano estremamente potenti e abbiano i loro meriti, PowerShell offre un'integrazione profonda con gli ambienti Windows.

@@ -10,12 +10,7 @@ title: Concatenando strings
 weight: 3
 ---
 
-## O Que & Porquê?
-
-Concatenar strings significa juntar duas ou mais sequências de caracteres em uma só. Programadores fazem isso para construir mensagens, caminhos de arquivos, ou qualquer outro dado que precise ser unido ou manipulado como um texto completo.
-
 ## Como Fazer:
-
 ```C#
 string hello = "Olá";
 string world = "Mundo";
@@ -38,7 +33,6 @@ Console.WriteLine(result); // Saída: StringBuilder é útil.
 ```
 
 ## Mergulho Profundo:
-
 Na era pré-dotNET Framework 2.0, a concatenação era frequentemente feita com o operador `+`, mas isso podia ser ineficiente devido à imutabilidade das strings em C#. Cada concatenação resultava em um novo objeto string na memória. Para evitar tal desperdício, a classe `StringBuilder` foi concebida, otimizando a performance especialmente em situações com várias concatenações, como em loops.
 
 Alternativas modernas incluem o método `String.Concat`, `String.Join`, e interpolação de strings com o símbolo `$` desde o C# 6, que também melhoram a legibilidade e a eficiência da concatenação.
@@ -58,7 +52,6 @@ A seguir, as implementações e como elas funcionam:
 - Interpolação usa `String.Format` internamente e também evita criações excessivas de strings particulares.
 
 ## Veja Também:
-
 - Documentação da Microsoft sobre strings em C#: https://docs.microsoft.com/pt-br/dotnet/csharp/programming-guide/strings/
 - Uma visão geral sobre interpolação de strings: https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/tokens/interpolated
 - `StringBuilder` Classe: https://docs.microsoft.com/pt-br/dotnet/api/system.text.stringbuilder?view=net-6.0

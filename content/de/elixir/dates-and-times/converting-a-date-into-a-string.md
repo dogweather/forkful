@@ -10,9 +10,6 @@ title: Datum in einen String umwandeln
 weight: 28
 ---
 
-## Was & Warum?
-Datum in String umwandeln bedeutet, ein Datum in eine lesbare Zeichenkette zu verwandeln. Das ist praktisch für Ausgaben, Speicherung oder um Datumsinformationen in menschenlesbare Formate zu konvertieren.
-
 ## Anleitung:
 ```elixir
 # Ecto für den Umgang mit Datenstrukturen hinzufügen

@@ -11,9 +11,6 @@ title: Konvertere en dato til en streng
 weight: 28
 ---
 
-## Hva & Hvorfor?
-Å konvertere en dato til en streng er å omdanne et Date-objekt til en tekstrepresentasjon. Vi gjør dette for å gjøre datoer leselige for mennesker eller for å formatere dem for databaser eller filer.
-
 ## Hvordan gjøre det:
 ```kotlin
 import java.text.SimpleDateFormat

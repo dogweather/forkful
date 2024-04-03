@@ -18,12 +18,7 @@ title: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uD558\uAE30"
 weight: 42
 ---
 
-## What & Why? (무엇과 왜?)
-
-웹 페이지를 다운로드하는 것은 인터넷에서 페이지의 콘텐츠를가져와 내 프로그램에서 사용할 수 있게 하는 것입니다. 이는 페이지에서 데이터를 추출하거나 웹 스크래핑을 할 때 필요합니다.
-
 ## How to: (방법:)
-
 ```C++
 #include <iostream>
 #include <curl/curl.h>
@@ -71,11 +66,9 @@ int main() {
 ```
 
 ## Deep Dive (심층 분석)
-
 웹 페이지 다운로드는 인터넷 초기부터 있어왔습니다. 초기에는 FTP나 HTTP 프로토콜로 명령 줄에서 직접 다운로드했습니다. 오늘날엔 라이브러리가 있어 쉽게 다운로드합니다. C++에서 `libcurl`은 가장 인기 있는 라이브러리 중 하나입니다. 대안으로는 Poco 라이브러리도 있습니다. `libcurl`은 멀티 프로토콜 지원, 스레딩, 병렬 다운로드 등을 제공합니다.
 
 ## See Also (참고 자료)
-
 - cURL 공식 홈페이지: https://curl.se/
 - cURL for C++: https://curl.se/libcurl/c/
 - Poco Libraries: https://pocoproject.org/

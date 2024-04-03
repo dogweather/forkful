@@ -14,12 +14,7 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-
-Complexe getallen, bestaande uit een reëel en een imaginair deel, zijn essentieel in verschillende computationele velden zoals engineering, natuurkunde en signaalverwerking. Programmeurs gebruiken ze om vergelijkingen op te lossen die niet met reële getallen kunnen worden opgelost, zoals het vinden van de wortels van negatieve getallen.
-
 ## Hoe:
-
 Haskell gaat om met complexe getallen met de module `Data.Complex`. Hier is een snelle rondleiding:
 
 ```haskell
@@ -59,7 +54,6 @@ Voorbeelduitvoer na het laden van bovenstaande code in GHCi zou kunnen zijn:
 ```
 
 ## Diepere Duik
-
 Complexe getallen gaan terug tot de 16e eeuw maar werden veel later algemeen aanvaard. Haskell, net als veel talen, biedt inheemse ondersteuning voor complexe rekenkunde, waardoor het gemakkelijk is om met deze getallen te werken zonder de onderliggende wiskunde te implementeren.
 
 Alternatieven zijn het bouwen van je eigen complexe getaltype of het gebruiken van bibliotheken voor specifieke domeinen zoals quaternionen voor 3D-graphics. Maar voor de meeste gebruikssituaties is Haskell's `Data.Complex` ruim voldoende.
@@ -67,7 +61,6 @@ Alternatieven zijn het bouwen van je eigen complexe getaltype of het gebruiken v
 Onder de motorkap is `Data.Complex` gewoon een datatype dat twee `Float` of `Double` waarden paart, die respectievelijk het reële en imaginaire deel vertegenwoordigen. Het is een eenvoudige en efficiënte manier om met complexe getallen te werken op het Haskell-platform.
 
 ## Zie Ook
-
 Bekijk deze bronnen voor meer over complexe getallen in Haskell:
 
 - De officiële Haskell `Data.Complex` documentatie: [Hackage Data.Complex](https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-Complex.html)

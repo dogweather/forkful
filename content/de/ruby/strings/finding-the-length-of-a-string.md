@@ -11,9 +11,6 @@ title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---
 
-## Was & Warum?
-Die Länge eines Strings zu finden bedeutet, die Anzahl der Zeichen, aus denen er besteht, zu zählen. Programmierer machen das oft, um Benutzereingaben zu validieren, für Textverarbeitungen oder um bei der Datenverarbeitung Grenzfälle zu handhaben.
-
 ## So geht's:
 Ruby macht's simpel – hier eine kurze Demo:
 

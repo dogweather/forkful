@@ -10,9 +10,6 @@ title: Calcolo di una data futura o passata
 weight: 26
 ---
 
-## Cosa & Perché?
-Calcolare una data nel futuro o nel passato significa semplicemente aggiungere o sottrarre giorni, mesi, anni, ecc., da una data specifica. I programmatori lo fanno per gestire scadenze, prenotazioni, promemoria, tra gli altri usi.
-
 ## Come fare:
 ```PHP
 <?php

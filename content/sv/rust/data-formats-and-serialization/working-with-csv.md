@@ -13,9 +13,6 @@ title: Arbeta med CSV
 weight: 37
 ---
 
-## Vad & Varför?
-Att arbeta med CSV-filer (kommaseparerade värden) handlar om att läsa från och skriva till vanliga textfiler som lagrar tabelldata. Programmerare gör detta för att möjliggöra datadelning mellan olika program, system eller för att bearbeta stora datamängder på ett effektivt, läsbart format.
-
 ## Hur man gör:
 Rust, med dess fokus på säkerhet och prestanda, erbjuder utmärkta crates (bibliotek) för att hantera CSV-filer, där `csv` är det mest populära. Du kommer också att behöva `serde` för serialisering och deserialisering av data.
 
@@ -28,7 +25,6 @@ serde = { version = "1.0", features = ["derive"] }
 ```
 
 ### Läsa CSV
-
 För att läsa en CSV-fil, definiera en struktur som representerar dina data och härled `Deserialize` från `serde`:
 
 ```rust
@@ -71,7 +67,6 @@ Record { city: "New York", state: "NY", population: 8336817 }
 ```
 
 ### Skriva till CSV
-
 För att skriva till en CSV-fil, definiera en struktur och härled `Serialize`:
 
 ```rust

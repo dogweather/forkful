@@ -17,9 +17,6 @@ title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---
 
-## Những gì & Tại sao?
-Việc in ấn thông tin debug giống như chiếc đèn pin trong ngõ tối của mã lệnh; nó giúp bạn phát hiện lỗi bằng cách cho phép bạn nhìn thấu những gì mã lệnh của mình đang thực hiện tại thời gian chạy. Các lập trình viên làm điều này vì, chà, chúng ta là con người và mã lệnh của mình không luôn hoàn hảo ngay từ lần thử đầu tiên.
-
 ## Cách thực hiện:
 Muốn in thông tin debug trong TypeScript? Các phương thức của Console chính là lựa chọn của bạn. Xem `console.log`, `console.error`, và những người bạn khác được áp dụng:
 

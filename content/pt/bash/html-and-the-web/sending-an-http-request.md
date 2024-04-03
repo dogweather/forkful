@@ -11,9 +11,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---
 
-## O Que & Porquê?
-Enviar uma requisição HTTP significa solicitar dados ou serviços através da internet. Programadores fazem isso para interagir com APIs, serviços web, ou simplesmente para automatizar a coleta de dados.
-
 ## Como Fazer:
 Para enviar uma requisição HTTP do Bash, você pode usar o comando `curl`. Aqui estão alguns exemplos:
 

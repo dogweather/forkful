@@ -15,14 +15,10 @@ title: Trabajando con CSV
 weight: 37
 ---
 
-## ¿Qué y por qué?
-
-Trabajar con archivos CSV (Valores Separados por Comas) se trata de procesar y manipular datos almacenados en un formato de texto simple, donde cada línea del texto representa una fila en una tabla, y las comas separan las columnas individuales. Los programadores utilizan esto para importar, exportar y gestionar datos a través de diferentes sistemas debido a la amplia aceptación de CSV como un formato de intercambio de datos ligero, legible por humanos.
-
 ## Cómo:
 
-### Leer un archivo CSV usando la Biblioteca Estándar de C++:
 
+### Leer un archivo CSV usando la Biblioteca Estándar de C++:
 ```cpp
 #include <fstream>
 #include <iostream>
@@ -54,7 +50,6 @@ int main() {
 ```
 
 ### Escribir en un archivo CSV:
-
 ```cpp
 #include <fstream>
 #include <vector>
@@ -80,7 +75,6 @@ int main() {
 ```
 
 ### Usando una biblioteca de terceros: `csv2`:
-
 Mientras que la Biblioteca Estándar de C++ proporciona las herramientas básicas para trabajar con archivos y cadenas, aprovechar bibliotecas de terceros puede simplificar el procesamiento de CSV. Una de estas bibliotecas es `csv2`, conocida por su facilidad de uso y eficiencia.
 
 - Instalación: Generalmente instalada a través de gestores de paquetes como Conan o directamente desde su repositorio en GitHub.

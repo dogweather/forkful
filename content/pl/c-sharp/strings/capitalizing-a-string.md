@@ -14,9 +14,6 @@ title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---
 
-## Co i dlaczego?
-Wielkość liter w ciągu znaków w C# polega na zamianie pierwszego znaku ciągu na wielką literę, jeśli nie jest ona już wielka. Ta zmiana może być kluczowa dla formatowania wyjść, egzekwowania standardów kodowania lub zwiększenia czytelności tekstów interfejsu użytkownika.
-
 ## Jak to zrobić:
 C# oferuje prostą metodę na kapitalizację ciągów za pomocą wbudowanych metod. Najprostszym sposobem jest bezpośrednia modyfikacja ciągu tą metodą. Dla bardziej skomplikowanych lub specyficznych zasad kapitalizacji (np. wielka litera na początku każdego słowa) mogą być potrzebne dodatkowe biblioteki lub metody ręczne. Poniżej przedstawiono przykłady, demonstrujące, jak kapitalizować ciąg na różne sposoby w C#.
 

@@ -11,11 +11,7 @@ title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---
 
-## Quoi et Pourquoi ?
-Imprimer des informations de débogage, c'est afficher des valeurs internes du programme pour comprendre son comportement. Les programmeurs le font pour traquer les bugs plus facilement.
-
 ## Comment Faire :
-
 ```TypeScript
 function debugExemple(valeur: any): void {
   console.debug('Valeur de débogage:', valeur);
@@ -29,7 +25,6 @@ debugExemple('Hello, TypeScript!');
 ```
 
 ## Exploration en Profondeur
-
 Historiquement, le débogage en programmation vient de l'époque où de vrais insectes, comme les mites, causaient des problèmes dans les circuits électriques des premiers ordinateurs. "Déboguer" était littéralement enlever ces bugs physiques.
 
 En TypeScript, `console.debug()` est une façon de faire, mais on pourrait aussi utiliser `console.log()`, `console.info()`, ou `console.warn()`, selon le niveau de sévérité ou l'importance de l'information.
@@ -39,7 +34,6 @@ Il est important de retirer ou commenter ces instructions de débogage avant de 
 Enfin, sachez que TypeScript compile en JavaScript, donc les mécanismes de débogage sont essentiellement ceux de JavaScript.
 
 ## À Voir Aussi
-
 Pour aller plus loin dans le débogage TypeScript :
 
 - [TypeScript Documentation - Compiler Options](https://www.typescriptlang.org/docs/handbook/compiler-options.html)

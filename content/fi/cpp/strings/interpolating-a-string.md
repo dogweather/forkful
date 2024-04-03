@@ -11,9 +11,6 @@ title: Merkkijonon interpolointi
 weight: 8
 ---
 
-## Mitä & Miksi?
-Merkkijonon interpolointi tarkoittaa muuttujien ja lausekkeiden yhdistämistä merkkijonojen sisään. Sitä käytetään dynaamisen tekstin luontiin, joka helpottaa esimerkiksi käyttäjän syötteiden tai muuttujien arvojen näyttämistä ohjelmassa.
-
 ## Miten:
 ```C++
 #include <iostream>

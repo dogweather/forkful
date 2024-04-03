@@ -16,9 +16,6 @@ title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 weight: 7
 ---
 
-## What & Why? (무엇과 왜?)
-문자열의 길이 찾기는 문자열에 있는 문자의 수를 확인하는 것입니다. 프로그래머들은 데이터 유효성 검사, 메모리 관리, 입력 크기 제한 등을 위해서 이를 사용합니다.
-
 ## How to: (방법:)
 ```java
 public class StringLengthExample {

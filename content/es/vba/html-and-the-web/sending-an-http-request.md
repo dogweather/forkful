@@ -13,12 +13,7 @@ title: Enviando una solicitud HTTP
 weight: 44
 ---
 
-## Qué y Por Qué?
-
-Enviar una solicitud HTTP en Visual Basic para Aplicaciones (VBA) implica acceder programáticamente a recursos o servicios web mediante solicitudes sobre HTTP. Los programadores hacen esto para obtener datos, interactuar con APIs en línea, o enviar formularios programáticamente desde dentro de sus aplicaciones habilitadas para VBA como Excel, Access o soluciones personalizadas de VBA.
-
 ## Cómo hacerlo:
-
 La clave para enviar una solicitud HTTP en VBA es utilizar la biblioteca `Microsoft XML, v6.0` (o versiones anteriores, dependiendo de su sistema). Primero, asegúrese de que esta referencia esté habilitada en su proyecto yendo a Herramientas > Referencias en el editor de VBA y marcando `Microsoft XML, v6.0`.
 
 Aquí le mostramos cómo enviar una simple solicitud HTTP GET:
@@ -64,7 +59,6 @@ La salida de muestra para una solicitud exitosa podría ser una cadena JSON o un
 ```
 
 ## Análisis Profundo
-
 El método mostrado utiliza el objeto `MSXML2.XMLHTTP`, parte de los Servicios Centrales XML de Microsoft (MSXML). Fue introducido para ofrecer a los desarrolladores de VBA una forma de realizar operaciones basadas en XML y, con el tiempo, se convirtió en una herramienta común para solicitudes HTTP, incluso cuando no se trabaja directamente con datos XML. A pesar de su edad, sigue siendo una opción confiable para interacciones web simples en VBA.
 
 Sin embargo, VBA y sus mecanismos de solicitud HTTP carecen de la robustez y flexibilidad que se encuentran en entornos de programación modernos. Por ejemplo, manejar solicitudes asíncronas o trabajar dentro de aplicaciones que requieren características HTTP avanzadas (como websockets o eventos enviados por el servidor) está fuera del alcance de VBA. Cuando se trabaja en proyectos de integración web más complejos, los desarrolladores a menudo recurren a bibliotecas o herramientas externas, o incluso automatizan el comportamiento del navegador a través de técnicas de web scraping, aunque estas son soluciones alternativas más que soluciones.

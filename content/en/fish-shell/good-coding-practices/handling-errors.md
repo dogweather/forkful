@@ -9,9 +9,6 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-Error handling lets your script deal with the unexpected gracefully. We do it to manage failure without turning our user's hair gray.
-
 ## How to:
 To catch errors in Fish, lean on the `status` command and conditionals. Say `ping` fails; here's how to detect that:
 

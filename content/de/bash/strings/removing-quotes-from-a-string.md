@@ -11,9 +11,6 @@ title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---
 
-## Was & Warum?
-Das Entfernen von Anführungszeichen aus einem String beinhaltet das Entfernen der Anführungszeichen, die den String einschließen. Programmierer möchten dies oft tun, um Eingabedaten zu bereinigen, Daten für Vergleichszwecke vorzubereiten oder einem spezifischen Datenformat zu folgen, wenn sie mit anderen Programmen oder Systemen interagieren.
-
 ## Wie:
 Bash bietet mehrere Möglichkeiten, Anführungszeichen aus Strings zu entfernen. Hier einige schnelle Beispiele:
 

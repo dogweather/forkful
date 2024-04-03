@@ -16,12 +16,7 @@ title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---
 
-## Cái gì & Tại sao?
-
-Việc so sánh hai ngày trong C bao gồm việc xác định mối quan hệ theo thời gian giữa chúng -- liệu một ngày có xảy ra trước ngày kia hay chúng có giống nhau. Khả năng này rất quan trọng trong các ứng dụng liên quan đến lập lịch, hạn chót hoặc ghi chép, vì nó cho phép tổ chức và thao tác với dữ liệu nhạy cảm về thời gian.
-
 ## Cách thực hiện:
-
 C không có kiểu dữ liệu dành riêng cho ngày tháng, do đó cần sử dụng thư viện `time.h` để làm việc với cấu trúc ngày và giờ. Cấu trúc `tm` và hàm `difftime()` thường được sử dụng để so sánh ngày tháng. Dưới đây là một ví dụ minh họa cách so sánh hai ngày:
 
 ```c
@@ -71,7 +66,6 @@ Ngày đầu tiên xảy ra trước ngày thứ hai.
 Chương trình này khởi tạo hai cấu trúc `tm` với các ngày cụ thể, chuyển chúng sang định dạng `time_t` bằng cách sử dụng `mktime()`, và cuối cùng so sánh chúng bằng cách dùng `difftime()`, hàm này trả về sự khác biệt về giây (dưới dạng `double`) giữa hai thời điểm.
 
 ## Sâu hơn
-
 Trong những ngày đầu của C, các phép toán ngày và giờ đòi hỏi phải tính toán thủ công, thường cần xem xét đến năm nhuận, số ngày biến đổi trong các tháng, và thậm chí là giây nhuận. Sự ra đời của `time.h` trong tiêu chuẩn ANSI C đã đưa vào sự tiêu chuẩn hóa việc xử lý thời gian trong C, đơn giản hóa các hoạt động liên quan đến ngày và giờ.
 
 Sử dụng `time.h` để so sánh ngày là khá đơn giản nhưng có hạn chế. Cấu trúc `tm` không tính đến múi giờ hay giờ tiết kiệm ánh sáng, và `difftime()` chỉ cung cấp sự khác biệt về giây, thiếu sự chi tiết tinh tế cho một số ứng dụng.

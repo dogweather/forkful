@@ -14,12 +14,7 @@ title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---
 
-## Cái gì và Tại sao?
-
-Trích xuất các chuỗi con có nghĩa là kéo ra các phần cố định của một chuỗi. Lập trình viên làm điều này để cô lập dữ liệu, làm sạch nó, hoặc làm việc với các phần thay vì toàn bộ.
-
 ## Làm thế nào:
-
 Trong Haskell, bạn có thể cắt và chia chuỗi bằng các hàm có sẵn như `take`, `drop`, và `substring` (từ `Data.Text`).
 
 ```haskell
@@ -50,7 +45,6 @@ print $ unpack (substring 8 5 (pack exampleStr)) -- "makes"
 ```
 
 ## Đào sâu
-
 Việc trích xuất các chuỗi con đã là một phần của Haskell từ lâu. Ban đầu, nó dựa vào danh sách, vì chuỗi là danh sách các ký tự. Hiệu suất không tốt lắm. Nhập `Data.Text`, cung cấp các thao tác chuỗi hiệu quả.
 
 Các lựa chọn thay thế bao gồm các thao tác danh sách, biểu thức chính quy, và thư viện phân tích cú pháp. Thao tác danh sách đơn giản hơn nhưng chậm hơn với chuỗi lớn. Biểu thức chính quy mạnh mẽ nhưng quá mức cho các nhiệm vụ đơn giản. Thư viện phân tích cú pháp được sử dụng cho việc phân tích phức tạp nhưng cũng có thể xử lý các chuỗi con.
@@ -58,7 +52,6 @@ Các lựa chọn thay thế bao gồm các thao tác danh sách, biểu thức 
 Việc thực hiện một hàm chuỗi con tùy chỉnh trong Haskell là đơn giản sử dụng `take` và `drop` từ `Data.Text`, cung cấp khả năng xử lý chuỗi nhanh hơn so với các thao tác dựa trên danh sách.
 
 ## Tham khảo thêm
-
 - Tài liệu mô-đun `Data.Text`: https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html
 - Học Haskell Để Tốt Lên! cho một cái nhìn dễ dàng vào chuỗi Haskell: http://learnyouahaskell.com/starting-out#immutability
 - Haskell Trong Thực Tế cho các trường hợp sử dụng thực tế: http://book.realworldhaskell.org/read/

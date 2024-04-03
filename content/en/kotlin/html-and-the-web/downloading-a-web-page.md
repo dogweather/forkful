@@ -10,9 +10,6 @@ title: Downloading a web page
 weight: 42
 ---
 
-## What & Why?
-Downloading a web page means grabbing the HTML from a given URL to see or use locally. Programmers do this for stuff like web scraping, offline reading, or automated testing.
-
 ## How to:
 Let's roll with Kotlin’s `HttpURLConnection` to quickly nab a web page. We'll also use coroutines for smooth background ops. Here's a primer:
 

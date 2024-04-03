@@ -11,9 +11,6 @@ title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---
 
-## What & Why? (Co i Dlaczego?)
-Interpolacja łańcuchów pozwala wpleść wartości zmiennych w tekst. Programiści robią to, by dynamicznie generować treść – dzięki temu kod jest bardziej elastyczny i czytelny.
-
 ## How to (Jak to zrobić):
 Clojure używa funkcji `str` do łączenia stringów, ale nie ma wbudowanej interpolacji. Możesz to osiągnąć za pomocą `format` albo biblioteki jak `clojure.string`:
 

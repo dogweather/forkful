@@ -12,9 +12,6 @@ title: Alimerkkijonojen erottaminen
 weight: 6
 ---
 
-## Mikä & Miksi?
-Merkkijonojen osien erottelu liittyy tiettyjen merkkijonojen osien noutamiseen niiden sijainnin tai mallien perusteella. Ohjelmoijat tekevät tämän tehtäviä varten kuten käyttäjäsyötteen jäsentäminen, datan käsittely tai oleellisen tiedon erottaminen suuremmista tekstilähteistä.
-
 ## Kuinka:
 Dartissa voit käyttää erilaisia menetelmiä merkkijonojen osien erotteluun, kuten `substring()`, `split()` ja säännölliset lausekkeet. Jokainen menetelmä palvelee eri tarkoituksia ja tarjoaa joustavuutta merkkijonojen käsittelyssä.
 

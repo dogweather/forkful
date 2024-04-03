@@ -10,9 +10,6 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## Hva & Hvorfor?
-Interpolering av strenger i JavaScript betyr å sette sammen bitene av tekst og variabler til en helhetlig streng. Vi gjør det for å lage dynamiske meldinger, bygge spørringer, og for at koden skal være mer lesbart og vedlikeholde.
-
 ## Hvordan gjøre det:
 ```javascript
 // Eksempel med Template Literals (ES6+)

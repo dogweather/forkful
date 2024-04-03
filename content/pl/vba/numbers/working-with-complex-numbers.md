@@ -14,12 +14,7 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i dlaczego?
-
-Praca z liczbami zespolonymi polega na wykonywaniu operacji matematycznych na liczbach, które mają zarówno część rzeczywistą, jak i urojoną. Programiści często zajmują się liczbami zespolonymi w dziedzinach takich jak inżynieria, fizyka i wszędzie tam, gdzie zajmują się rozwiązywaniem równań, które nie są możliwe do rozwiązania tylko za pomocą liczb rzeczywistych.
-
 ## Jak to zrobić:
-
 W Visual Basic for Applications (VBA), obsługa liczb zespolonych może być nieco mniej prosta w porównaniu z językami, które mają dla nich natywne wsparcie. Jednak można zarządzać operacjami zespolonymi, tworząc funkcje lub korzystając z istniejących funkcji bibliotecznych. Przyjrzyjmy się podstawowemu przykładowi dodawania, odejmowania, mnożenia i dzielenia liczb zespolonych:
 
 ```vb
@@ -49,7 +44,6 @@ End Sub
 Chociaż to pokazuje dodawanie, podobne podejścia można dostosować do odejmowania, mnożenia i dzielenia. Dla złożonych operacji wykraczających poza podstawową arytmetykę, warto rozważyć eksplorację zewnętrznych bibliotek lub integrację z innymi rozwiązaniami, które bardziej natywnie obsługują operacje na liczbach zespolonych.
 
 ## Dogłębna analiza:
-
 VBA nie zawiera wbudowanego wsparcia dla liczb zespolonych, aspekt, w którym pozostaje w tyle za językami takimi jak Python, który posiada klasę liczb zespolonych (`complex`) lub C++ ze swoją Standard Template Library (`std::complex`). Historycznie, potrzeba bezpośredniej manipulacji liczbami zespolonymi w VBA jest stosunkowo rzadka, ponieważ jest on często używany do automatyzacji, manipulacji aplikacjami Office i zadań, które tradycyjnie nie wymagają złożonych obliczeń matematycznych. Kiedy VBA była projektowana i rozwijana, jej przypadki użycia były głównie skoncentrowane na aplikacjach biznesowych, a nie na obliczeniach naukowych, co może tłumaczyć tę pominięcie.
 
 Dla zadań, które wymagają rozległych manipulacji liczbami zespolonymi, programiści mogą uznawać za korzystne używanie bardziej zorientowanego na matematykę języka. Jednakże, dla tych, którzy są zaangażowani lub ograniczeni do używania VBA, pisanie własnych funkcji (jak pokazano) lub integracja z oprogramowaniem, które posiada te możliwości (takie jak MATLAB czy w pewnym stopniu sam Excel) są możliwymi kierunkami do przodu. Pomimo swoich ograniczeń, kreatywne rozwiązania i zewnętrzne integracje mogą rozszerzyć użyteczność VBA o dziedziny, do których nie został pierwotnie zaprojektowany, w tym prace z liczbami zespolonymi.

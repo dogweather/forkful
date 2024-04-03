@@ -13,12 +13,7 @@ title: "Usando express\xF5es regulares"
 weight: 11
 ---
 
-## O que & Por quê?
-
-Expressões regulares (regex) em Elixir são usadas para buscar, combinar e manipular strings baseadas em padrões específicos. Programadores utilizam regex para tarefas como validar formatos (email, URLs), analisar logs, ou extrair dados, graças à sua eficiência e versatilidade no manuseio de strings.
-
 ## Como fazer:
-
 Elixir utiliza o módulo `Regex`, aproveitando a biblioteca regex do Erlang, para operações com regex. Aqui estão usos básicos:
 
 ```elixir

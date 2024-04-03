@@ -11,9 +11,6 @@ title: Rimuovere le virgolette da una stringa
 weight: 9
 ---
 
-## Cosa e Perché?
-Rimuovere le virgolette da una stringa significa solitamente eliminare le superflue virgolette doppie (") o singole ('). I programmatori fanno ciò per sanificare l'input o quando le virgolette non sono necessarie per l'elaborazione successiva - come quando si salva del testo in un database o si prepara per la visualizzazione.
-
 ## Come fare:
 Python offre diversi modi per liberarsi delle virgolette indesiderate dalle stringhe. Vediamo alcuni esempi:
 

@@ -11,9 +11,6 @@ title: "H\xE4mta en webbsida"
 weight: 42
 ---
 
-## Vad & Varför?
-Att ladda ner en webbsida innebär att hämta dess innehåll, som HTML, CSS och bilder, till din dator. Programmerare gör det för att automatisera datainsamling, testa webbsidor eller övervaka innehållsförändringar.
-
 ## How to:
 Använd `Invoke-WebRequest` för att ladda ner en webbsida.
 ```PowerShell

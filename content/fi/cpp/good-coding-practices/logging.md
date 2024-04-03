@@ -10,9 +10,6 @@ title: Lokitus
 weight: 17
 ---
 
-## Mikä & Miksi?
-Ohjelmoinnin yhteydessä lokiin kirjaaminen tarkoittaa tapahtumien, tilojen ja tiedon tallentamista tiedostoon tai muuhun ulostuloalustaan. Ohjelmoijat kirjaavat lokiin pysyäkseen kärryillä siitä, mitä heidän sovelluksissaan tapahtuu, debugatakseen ongelmia ja seuratakseen suorituskykyä tulevaa analyysia ja optimointia varten.
-
 ## Kuinka:
 Oletetaan, että työskentelet Linux-koneella ja haluat dumpata lokitiedostot tiedostoon käyttäen hyvää vanhaa C++. Haluat sisällyttää `<iostream>`- ja `<fstream>`-kirjastot tiedosto-operaatioita varten. Tässä on nopea esimerkki:
 

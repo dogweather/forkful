@@ -11,9 +11,6 @@ title: Analyse av HTML
 weight: 43
 ---
 
-## Hva & Hvorfor?
-Parsing av HTML betyr å tolke og organisere HTML-kode slik at data kan leses og håndteres av et program. Programmører parser HTML for å hente ut informasjon, manipulere innhold eller integrere webdata i applikasjoner.
-
 ## Hvordan:
 ```Java
 import org.jsoup.Jsoup;

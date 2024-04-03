@@ -11,9 +11,6 @@ title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Supprimer des caractères selon un patron, c'est filtrer une chaîne de caractères pour en éliminer certains éléments. Les programmeurs le font pour nettoyer les données, valider des entrées ou formater des informations.
-
 ## How to: (Comment faire :)
 ```TypeScript
 let rawInput: string = "C3eci est un t3exte av3ec des ch1ffres!";

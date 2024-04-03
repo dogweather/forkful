@@ -11,18 +11,12 @@ title: Generering av tilfeldige tall
 weight: 12
 ---
 
-## Hva & Hvorfor?
-
-Å generere tilfeldige tall i Haskell innebærer å skape tall som er uforutsigbare etter menneskelige standarder. Dette er avgjørende i scenarier som strekker seg fra kryptografiske applikasjoner til simuleringer der elementet av tilfeldighet er nødvendig for å modellere virkelighetens fenomener nøyaktig.
-
 ## Hvordan:
-
 For å generere tilfeldige tall i Haskell, bruker man typisk `random`-pakken, som er en del av Haskell Platform. Her er en steg-for-steg-guide:
 
 Først, sørg for at du har `random`-pakken installert. Hvis ikke, kan du få tak i den via Cabal eller Stack.
 
 ### Generere et tilfeldig tall
-
 For å generere et enkelt tilfeldig tall, kan du bruke `randomRIO`-funksjonen, som produserer en tilfeldig verdi innenfor et spesifisert område.
 
 ```Haskell
@@ -35,7 +29,6 @@ main = do
 ```
 
 ### Generere en liste med tilfeldige tall
-
 Å generere en liste med tilfeldige tall er litt mer involvert, men fortsatt greit:
 
 ```Haskell
@@ -57,7 +50,6 @@ main = do
 Dette kodeutdraget lager en funksjon `randomList` som genererer en liste med tilfeldige heltall. Erstatt `(1, 100)` med ditt ønskede område.
 
 ## Dypdykk
-
 Haskell `random`-pakken tilbyr en pseudo-tilfeldig tallgenerator (PRNG), noe som betyr at tallene som genereres ikke er virkelig tilfeldige, men kan se ut til å være tilfeldige for mange applikasjoner. Kjernen i Haskells evne til å generere tilfeldige tall ligger i `RandomGen` typeklassen, som abstraherer forskjellige metoder for å generere tilfeldige tall, og `Random` typeklassen, som inkluderer typer som kan genereres tilfeldig.
 
 Historisk har Haskells tilnærming til generering av tilfeldige tall lagt vekt på renhet og reproduserbarhet. Dette er grunnen til at operasjoner som involverer tilfeldighet eksplisitt håndteres i `IO`-monaden eller krever manuell passering og oppdatering av generatorstatuser — for å opprettholde referansegjennomsiktighet.

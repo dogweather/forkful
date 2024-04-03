@@ -11,9 +11,6 @@ title: Checking if a directory exists
 weight: 20
 ---
 
-## What & Why?
-Checking if a directory exists in Fish Shell allows scripts to make decisions based on the presence or absence of directory structures, enabling tasks like conditional file operations, logging, or environment setup. This technique is crucial for writing robust scripts that interact with the filesystem in a predictable way.
-
 ## How to:
 Fish Shell uses the `test` command to check file types and characteristics, including whether a target is a directory. Here's a basic pattern for checking if a directory exists:
 

@@ -10,11 +10,6 @@ title: Komennoriviparametrien lukeminen
 weight: 23
 ---
 
-## What & Why?
-"Mitä & Miksi?"
-
-Komennonriviargumentit ovat ohjelmaan ulkoa syötettäviä parametreja. Niitä käytetään ohjelman toiminnan muokkaamiseen lennossa, ilman koodin muuttamista.
-
 ## How to:
 "Miten tehdään:"
 

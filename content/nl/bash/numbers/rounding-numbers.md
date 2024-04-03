@@ -12,12 +12,7 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-
-Het afronden van getallen betekent het afhakken van de decimalen tot een eenvoudigere waarde die goed genoeg is voor een bepaalde context. Programmeurs ronden getallen af om resultaten te vereenvoudigen, ruimte te besparen of omdat de exacte waarde niet vitaal is - zoals wanneer je CPU-gebruik of schijfruimte inschat en decimalen je dag niet zullen maken of breken.
-
 ## Hoe te:
-
 Hier is de informatie over afronden in Bash:
 
 ```Bash
@@ -44,7 +39,6 @@ Voorbeelduitvoeren—rechtstreeks uit de mond van de terminal:
 ```
 
 ## Diepduiken
-
 Vroeger was er geen `bc` of `printf` in Bash-scripts om wiskundige trucs te doen. Oudgedienden moesten vertrouwen op externe tools of slimme workarounds. Nu, `bc` laat je precisierekenkunde doen. Bedenk wel, `bc` rondt niet standaard af—it maakt gebruik van afronding naar beneden. Het scale deel bepaalt de actie van het decimaalteken.
 
 Alternatieven? Je zou `awk` kunnen gebruiken voor afronding zonder over te schakelen naar `bc` of worstelen met `perl` voor zwaardere wiskundige behoeften. Voor de masochistische onder ons, ga puur Bash met, laten we zeggen, iteratieve tekenreeksmanipulatie - maar waarom?
@@ -52,7 +46,6 @@ Alternatieven? Je zou `awk` kunnen gebruiken voor afronding zonder over te schak
 Wat betreft details, `bc` doet niet alleen afronding, het doet veel wiskundige dingen - schaal het, sinus het, wortel het, noem maar op. Met `printf`, gaat het meer over tekst formatteren, maar hé, het rondt getallen af, dus we klagen niet.
 
 ## Zie ook
-
 Voor degenen die meer willen weten:
 
 - GNU `bc` handleiding: https://www.gnu.org/software/bc/manual/html_mono/bc.html

@@ -14,14 +14,10 @@ title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---
 
-## Mikä ja miksi?
-
-Merkkijonon alkukirjaimen suurentaminen tarkoittaa sanan tai kokonaisen lauseen ensimmäisen kirjaimen muuttamista suuraakkoseksi, samalla kun loput merkit säilytetään ennallaan. Ohjelmoijat käyttävät tätä tekniikkaa usein käyttäjän syötteiden muotoilussa tai tekstin näyttämisessä, jotta voidaan varmistaa johdonmukaisuus tai noudattaa kielioppisääntöjä käyttöliittymissä.
-
 ## Kuinka:
 
-### Käyttäen Dart:in Sisäänrakennettuja Menetelmiä
 
+### Käyttäen Dart:in Sisäänrakennettuja Menetelmiä
 Dart tarjoaa yksinkertaisia, suoraviivaisia menetelmiä merkkijonojen käsittelyyn. Sanan tai lauseen alkukirjaimen suurentamiseksi ottaisit tyypillisesti ensimmäisen merkin, muuttaisit sen suuraakkoseksi ja sitten yhdistäisit sen lopun merkkijonon kanssa. Näin voisit toteuttaa sen:
 
 ```dart
@@ -37,7 +33,6 @@ void main() {
 ```
 
 ### Jokaisen sanan alkukirjaimen suurentaminen
-
 Merkkijonon jokaisen sanan ensimmäisen kirjaimen suurentamiseksi voisit jakaa merkkijonon sanoiksi, suurentaa jokaisen sanan ensimmäisen kirjaimen ja sitten yhdistää ne takaisin yhteen:
 
 ```dart
@@ -52,7 +47,6 @@ void main() {
 ```
 
 ### Kolmannen osapuolen kirjastojen käyttäminen
-
 Vaikka Dartin vakio kirjasto kattaa perustarpeet, tietyt tehtävät saattaa olla kätevämpää suorittaa käyttämällä kolmannen osapuolen paketteja. Suosittu valinta laajennettuihin merkkijonojen käsittelymahdollisuuksiin, mukaan lukien alkukirjaimen suurentaminen, on [`recase`](https://pub.dev/packages/recase) paketti. Lisäämällä sen projektiisi `pubspec.yaml`:iin, voit helposti suurentaa merkkijonojen alkukirjaimia muiden toiminnallisuuksien ohella:
 
 ```dart

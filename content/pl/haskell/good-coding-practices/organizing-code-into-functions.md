@@ -11,9 +11,6 @@ title: Organizacja kodu w funkcje
 weight: 18
 ---
 
-## Co i Dlaczego?
-Organizowanie kodu w funkcje w Haskellu oznacza rozkładanie kodu na wielokrotnie używalne, nazwane bloki. Dlaczego? Pozwala to zachować zasadę DRY (Nie Powtarzaj Się), czyni kod czytelnym oraz ułatwia debugowanie.
-
 ## Jak to zrobić:
 Oto jak można pisać i używać funkcji w Haskellu:
 

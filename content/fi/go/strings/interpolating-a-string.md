@@ -14,12 +14,7 @@ title: Merkkijonon interpolaatio
 weight: 8
 ---
 
-## Mikä & Miksi?
-
-Merkkijonojen interpolaatio on menetelmä, jolla rakennetaan merkkijonoja, joihin sisällytetään muuttujia, mahdollistaen dynaamisen merkkijonon luomisen. Ohjelmoijat tekevät tämän räätälöidäkseen viestejä, rakentaakseen URL-osoitteita, luodakseen SQL-kyselyitä ja muuta, mikä mahdollistaa luettavamman ja ylläpidettävämmän koodin.
-
 ## Miten:
-
 Gossa merkkijonojen interpolaatio saavutetaan yleisesti käyttämällä `fmt`-pakettia, erityisesti `Sprintf`-funktiota, joka antaa sinun syöttää muuttujia merkkijonoon määrittelemällä muotoiluverbimerkkejä. Verbimerkit ovat paikkamerkkejä muotoilumerkkijonossa ja ne korvataan annettujen muuttujien arvoilla. Näin sitä käytetään:
 
 ```go
@@ -42,7 +37,6 @@ func main() {
 Huomaa, että `%s` käytetään merkkijonoille ja `%d` kokonaisluvuille. `fmt`-paketin dokumentaatio tarjoaa kattavan listan muotoiluverbimerkeistä eri tietotyypeille.
 
 ## Syväsukellus
-
 Merkkijonojen interpolaation konsepti esiintyy monissa ohjelmointikielissä, joskin eri syntakseilla ja kyvyillä. Gossa, vaikka `fmt`-paketin `Sprintf`-funktio on yleisimmin käytetty lähestymistapa, se ei välttämättä aina ole tehokkain, erityisesti yksinkertaisissa yhdistämisissä tai suorituskyvyltään erittäin herkässä koodissa.
 
 `fmt`-paketti käyttää heijastusta (reflection) tulkatakseen dynaamisesti muuttujien tyypit ajonaikaisesti, mikä, vaikka joustavaa, aiheuttaa lisäkustannuksia. Suorituskyvyltään kriittisissä skenaarioissa suora merkkijonojen yhdistäminen tai `strings.Builder`-tyyppi voivat tarjota parempia vaihtoehtoja. Suora yhdistäminen on suoraviivaista, mutta voi muuttua hankalaksi monien muuttujien kanssa. `strings.Builder` puolestaan tarjoaa tehokkaamman ja luettavamman tavan rakentaa monimutkaisia merkkijonoja silmukassa tai käsiteltäessä monia muuttujia:

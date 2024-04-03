@@ -10,9 +10,6 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad & Varför?
-Komplexa tal har en reell del och en imaginär del (som `3 + 4i`). De används inom ingenjörsarbete, fysik och vissa dataproblem. Programmerare arbetar med dem för simuleringar, signalbehandling och för att lösa vissa typer av matematiska problem effektivt.
-
 ## Hur man gör:
 Elixir har inte inbyggda komplexa tal, så vi skapar våra egna eller använder ett bibliotek, som `ComplexNum`. Här är ett snabbt exempel med ett bibliotek:
 

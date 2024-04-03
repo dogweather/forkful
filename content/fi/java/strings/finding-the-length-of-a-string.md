@@ -10,9 +10,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## What & Why?
-Mitä ja miksi? Stringin pituuden selvittäminen tarkoittaa merkkijonon merkkien määrän laskemista. Ohjelmoijat tarvitsevat tätä toimintoa esimerkiksi silloin, kun haluavat varmistaa, että syöte on tietyn mittainen tai kun he pilkkovat ja käsittelevät tekstiä.
-
 ## How to:
 Koodiesimerkit ja tulosteet
 

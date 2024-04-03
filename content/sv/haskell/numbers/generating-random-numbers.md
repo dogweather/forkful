@@ -11,18 +11,12 @@ title: Generera slumptal
 weight: 12
 ---
 
-## Vad & Varför?
-
-Att generera slumpmässiga tal i Haskell innebär att skapa tal som är oförutsägbara enligt mänskliga standarder. Detta är avgörande i scenarier som sträcker sig från kryptografiska applikationer till simuleringar där slumpens element krävs för att exakt modellera verkliga fenomen.
-
 ## Hur man gör:
-
 För att generera slumpmässiga tal i Haskell använder man vanligtvis `random`-paketet, som är en del av Haskell-plattformen. Här är en steg-för-steg-guide:
 
 Först, se till att du har `random`-paketet installerat. Om inte, kan du få det via Cabal eller Stack.
 
 ### Generera ett slumpmässigt tal
-
 För att generera ett enkelt slumpmässigt tal kan du använda funktionen `randomRIO`, som producerar ett slumpmässigt värde inom ett angivet intervall.
 
 ```Haskell
@@ -35,7 +29,6 @@ main = do
 ```
 
 ### Generera en lista av slumpmässiga tal
-
 Att generera en lista av slumpmässiga tal är något mer involverat men fortfarande rakt på sak:
 
 ```Haskell
@@ -57,7 +50,6 @@ main = do
 Den här kodsnutten skapar en funktion `randomList` som genererar en lista av slumpmässiga heltal. Ersätt `(1, 100)` med ditt önskade intervall.
 
 ## Fördjupning
-
 Haskell `random`-paketet tillhandahåller en pseudoslumpmässig nummergenerator (PRNG), vilket betyder att de genererade talen inte är verkligt slumpmässiga men kan framstå som slumpmässiga för många applikationer. Kärnan i Haskells förmåga att generera slumpmässiga tal ligger i typklassen `RandomGen`, som abstraherar olika metoder för att generera slumpmässiga tal, och typklassen `Random`, som innefattar typer som kan genereras slumpmässigt.
 
 Historiskt sett har Haskells tillvägagångssätt för generering av slumpmässiga tal betonat renhet och reproducerbarhet. Det är därför operationer som involverar slumpmässighet explicit hanteras i `IO`-monaden eller kräver manuell passage och uppdatering av generatorns tillstånd - för att bibehålla referenstransparens.

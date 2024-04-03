@@ -9,9 +9,6 @@ title: "\u05E9\u05DC\u05D9\u05D7\u05EA \u05D1\u05E7\u05E9\u05EA HTTP"
 weight: 44
 ---
 
-## What & Why? (מה ולמה?)
-HTTP requests are how we ask for stuff on the web. Programmers send them to get data, post data, and interact with web services. Essential for web development and APIs.
-
 ## How to: (איך לעשות:)
 Here’s a quick code snippet using `requests` in Python:
 

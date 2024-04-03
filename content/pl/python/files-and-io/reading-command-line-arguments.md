@@ -11,9 +11,6 @@ title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---
 
-## What & Why? | Co i dlaczego?
-Czytanie argumentów linii poleceń pozwala twojemu skryptowi Python na przyjmowanie danych z zewnątrz, kiedy jest uruchamiany. Robimy to, gdy chcemy, aby nasz program był elastyczny i dostosował się do różnych sytuacji bez ingerencji w kod.
-
 ## How to: | Jak to zrobić:
 Po pierwsze, zaimportuj `argv` z modułu `sys`. Potem możesz wykorzystać `argv` do pobrania argumentów.
 

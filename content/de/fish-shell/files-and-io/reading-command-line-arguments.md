@@ -11,9 +11,6 @@ title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---
 
-## Was & Warum?
-Das Lesen von Befehlszeilenargumenten erlaubt es Skripten, verschiedene Eingaben zu verarbeiten und anzupassen. Programmierer nutzen dies, um flexible und interaktive Tools zu erstellen.
-
 ## Wie geht das:
 ```Fish Shell
 # Einfacher Zugriff auf Argumente

@@ -10,9 +10,6 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## What & Why?
-Estrarre le sottostringhe significa selezionare parti specifiche di una stringa. Lo facciamo per validazione, manipolazione dei dati, o semplicemente per ottenerne una porzione rilevante.
-
 ## How to:
 ```typescript
 let str: string = "Ciao, mondo!";

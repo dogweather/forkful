@@ -14,12 +14,7 @@ title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---
 
-## Lý do & Vì sao?
-
-Lấy ngày hiện tại trong PowerShell chỉ là lấy ý tưởng của hệ thống về ngày hôm nay. Lập trình viên sử dụng điều này để đánh dấu thời gian trong các bản ghi nhật ký, tính toán khoảng thời gian, hoặc kích hoạt các thao tác theo thời gian cụ thể.
-
 ## Cách thực hiện:
-
 Dưới đây là đoạn mã đơn giản để lấy ngày hôm nay:
 
 ```PowerShell
@@ -56,7 +51,6 @@ Kết quả:
 ```
 
 ## Sâu hơn nữa
-
 Trở lại thời kỳ trước, việc lấy ngày trong ngôn ngữ script không phải là chuyện nhỏ. Nhưng PowerShell, đã học hỏi từ sự phức tạp và nhu cầu của lịch sử computing, đã làm cho nó trở thành một dòng mã.
 
 Ngoài `Get-Date`, các lựa chọn khác bao gồm việc đào sâu vào lớp .NET System.DateTime cho những nhu cầu phức tạp hơn, hoặc sử dụng WMI (Windows Management Instrumentation) để lấy thông tin hệ thống. Tuy nhiên, `Get-Date` là lựa chọn hàng đầu về sự đơn giản và hiệu quả.
@@ -66,7 +60,6 @@ Bên trong, `Get-Date` tận dụng đồng hồ hệ thống và các thiết l
 Nó còn có thể tùy chỉnh hoàn toàn. Bạn có thể tạo ra định dạng đầu ra theo ý thích của mình sử dụng các chuỗi định dạng tiêu chuẩn hoặc tùy chỉnh - một tính năng tiện lợi cho các bản ghi nhật ký cần tuân theo một số quy ước nhất định hoặc cho sự hài hòa về mặt hình thức trong đầu ra của bạn.
 
 ## Xem thêm
-
 Dưới đây là một số tài nguyên để xem xét:
 
 - [Tài liệu Get-Date](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)

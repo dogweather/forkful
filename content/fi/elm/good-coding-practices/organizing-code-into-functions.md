@@ -10,9 +10,6 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mitä & Miksi?
-Koko koodisi heittäminen yhteen suureen kasaa? Huono idea. Jakaminen funktioihin? Hyvä idea. Se pitää Elm-koodisi siistinä, uudelleenkäytettävänä ja helpommin testattavana. Organisoimalla koodisi funktioihin ryhmittelet tiettyjä tehtäviä suorittavan koodin yhteen, mikä tekee sovelluksestasi ylläpidettävämmän ja ymmärrettävämmän.
-
 ## Miten:
 Tässä on palanen Elm-koodia, jossa on yksinkertainen funktio käyttäjän tervehtimiseen:
 

@@ -13,12 +13,7 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad & Varför?
-
-Komplexa tal består av en reell del och en imaginär del, representerade som `a + bi` där `i` är kvadratroten av `-1`. Programmerare arbetar med komplexa tal inom olika områden som elektroteknik, kvantdatorer och fluidmekanik, där de utnyttjar deras unika egenskaper för simuleringar, signalbehandling och löser särskilda typer av matematiska ekvationer.
-
 ## Hur man gör:
-
 I C stöds komplexa tal av standardbiblioteket, specifikt `<complex.h>`. För att använda dem, deklarera variabler med typen `double complex` (eller `float complex` för enkel precision). Så här utför du grundläggande operationer:
 
 ```c
@@ -55,5 +50,4 @@ int main() {
 Observera att `I` är en konstant som representerar den imaginära enheten i `<complex.h>`. Funktioner som `creal()` och `cimag()` extraherar reella och imaginära delar, respektive, medan `conj()` beräknar det komplexa konjugatet. För magnitud och fas (argument) av komplexa tal används `cabs()` och `carg()`.
 
 ## Djupdykning
-
 Stödet för komplexa tal i C är relativt nytt, standardiserat i C99. Innan detta var aritmetik med komplexa tal i C besvärlig, ofta krävdes anpassade datastrukturer och funktioner. Inkluderingen av `<complex.h>` och de komplexa datatyperna gav ett betydande lyft till språkets kapacitet för vetenskapliga och tekniska tillämpningar. Det är dock värt att notera att vissa språk, som Python, erbjuder mer intuitivt stöd för komplexa tal genom inbyggda datatyper och en rikare uppsättning biblioteksfunktioner. Trots detta är prestanda och kontroll som C erbjuder ett föredraget val för uppgifter som kräver högpresterande databehandling, även om det innebär att man måste hantera en något mer omständlig syntax för komplex aritmetik.

@@ -12,9 +12,6 @@ title: Substrings extraheren
 weight: 6
 ---
 
-## Wat & Waarom?
-Het extraheren van deelreeksen betekent het uithalen van een specifiek stukje uit een reeks tekens. Programmeurs doen dit om specifieke gegevens binnen een grotere tekst te isoleren, te analyseren of te manipuleren.
-
 ## Hoe:
 In Lua, gebruik de functie `string.sub`:
 

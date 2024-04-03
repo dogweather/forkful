@@ -21,9 +21,6 @@ title: "\uCF54\uB4DC\uB97C \uD568\uC218\uB85C \uAD6C\uC131\uD558\uB294 \uBC29\uB
 weight: 18
 ---
 
-## 무엇 & 왜?
-코드를 함수로 구성한다는 것은 특정 작업을 수행하기 위해 스크립트의 일부를 묶는 것에 대해 이야기합니다. 코드를 더 쉽게 읽고, 테스트하며, 재사용할 수 있게 하기 위해서입니다 — 아무도 코드 스파게티의 늪을 헤치고 싶어하지 않습니다.
-
 ## 방법:
 Fish에서 함수를 작성하는 방법은 `function` 키워드를 사용하고 이름을 붙인 다음, `end`로 끝냅니다. 여기 간단한 예가 있습니다:
 
@@ -66,11 +63,9 @@ Bash와 같은 몇몇 쉘은 `function`이나 그냥 중괄호를 사용합니�
 Fish는 그다지 중요시하지 않기 때문에 `return` 값이 필요 없습니다; 함수의 출력이 그 반환값입니다. 그리고 향후 세션에도 지속적으로 사용할 수 있는 함수를 원한다면 `funcsave`를 기억하세요.
 
 ## 참고
-
 - 함수에 관한 fish 튜토리얼: [https://fishshell.com/docs/current/tutorial.html#tut_functions](https://fishshell.com/docs/current/tutorial.html#functions)
 
 ### 함수 명령어
-
 - [function](https://fishshell.com/docs/current/cmds/function.html) — 함수 생성
 - [functions](https://fishshell.com/docs/current/cmds/functions.html) — 함수를 출력하거나 지움
 - [funcsave](https://fishshell.com/docs/current/cmds/funcsave.html) — 사용자의 자동 로드 디렉토리에 함수의 정의를 저장

@@ -12,12 +12,7 @@ title: Capitalizing a string
 weight: 2
 ---
 
-## What & Why?
-
-Capitalizing a string involves transforming the first character of a given string to uppercase if it is in lowercase, making sure the string stands out or adheres to specific grammatical norms. Programmers frequently perform this operation for formatting user inputs, displaying proper names, or ensuring data consistency across software applications.
-
 ## How to:
-
 In Go, the `strings` package does not provide a direct function to capitalize only the first letter of a string. Hence, we combine the `strings.ToUpper()` function, which converts a string to uppercase, with slicing to achieve our goal. Here's how to do it:
 
 ```go
@@ -52,7 +47,6 @@ func main() {
 This function checks if the string is empty or if the first character is already uppercase. It uses the `unicode/utf8` package to correctly handle Unicode characters, ensuring our function works with a wide range of input beyond basic ASCII.
 
 ## Deep Dive
-
 The need to capitalize strings in Go without a built-in function could seem like a limitation, especially for programmers coming from languages where string manipulation functions are more comprehensive. This constraint encourages understanding string handling and the importance of Unicode in modern software development.
 
 Historically, programming languages have evolved in their treatment of strings, with early languages often overlooking internationalization. Go’s approach, while requiring a bit more code for seemingly simple tasks, ensures developers are mindful of global users from the start.

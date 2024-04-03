@@ -13,11 +13,8 @@ title: Arbeiten mit CSV
 weight: 37
 ---
 
-## Was & Warum?
-
-Im Bereich der Programmierung beinhaltet die Arbeit mit CSV-Dateien (Comma-Separated Values, d.h. durch Kommas getrennte Werte) das Lesen von und das Schreiben auf Textdateien, die zeilenweise organisiert sind, wobei jede Zeile einen Datensatz repräsentiert und die Felder jedes Datensatzes durch Kommas getrennt sind. Programmierer manipulieren CSV-Dateien, um die Datenimport/-export zwischen verschiedenen Systemen zu erleichtern, aufgrund ihrer breiten Unterstützung und Einfachheit bei der Speicherung von tabellarischen Daten.
-
 ## Wie geht das:
+
 
 ### CSV-Dateien lesen
 Um eine CSV-Datei in C zu lesen, verwenden wir Standard-Datei-I/O-Funktionen zusammen mit Zeichenkettenmanipulationsfunktionen, um jede Zeile zu parsen. Unten finden Sie ein grundlegendes Beispiel dafür, wie eine CSV-Datei gelesen und die Felder jeder Zeile auf der Konsole ausgegeben werden.
@@ -93,7 +90,6 @@ Jane Doe,27,Datenwissenschaftlerin
 ```
 
 ## Vertiefung
-
 Das CSV-Format, obwohl scheinbar unkompliziert, bringt seine Nuancen mit, wie beispielsweise den Umgang mit Kommas innerhalb von Feldern und das Einschließen von Feldern in Anführungszeichen. Die gezeigten grundlegenden Beispiele berücksichtigen solche Komplexitäten nicht und behandeln mögliche Fehler nicht robust.
 
 Historisch gesehen war die Arbeit mit CSV in C hauptsächlich manuell wegen der niedrigen Ebene der Sprache und des Mangels an eingebauten, hochstufigen Abstraktionen für solche Aufgaben. Dieses manuelle Management beinhaltet das Öffnen von Dateien, das Lesen von Zeilen, das Aufteilen von Zeichenketten und das Umwandeln von Datentypen nach Bedarf.

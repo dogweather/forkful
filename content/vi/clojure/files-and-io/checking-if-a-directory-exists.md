@@ -17,9 +17,6 @@ title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---
 
-## Cái gì & Tại sao?
-Kiểm tra xem một thư mục có tồn tại không có nghĩa là xác nhận liệu một đường dẫn có trỏ đến một thư mục trên hệ thống tệp của bạn không. Lập trình viên làm điều này để ngăn chặn lỗi, đảm bảo xử lý tệp chính xác và thiết lập các điều kiện cần thiết trước khi thực hiện các thao tác tệp.
-
 ## Làm thế nào:
 Sử dụng `clojure.java.io/file` để tạo một đối tượng File và `.exists` để kiểm tra xem nó có tồn tại hay không. Phương thức `isDirectory` xác nhận liệu File có phải là một thư mục không.
 

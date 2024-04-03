@@ -13,9 +13,6 @@ title: Analysering av en dato fra en streng
 weight: 30
 ---
 
-## Hva & Hvorfor?
-Å tolke en dato fra en streng innebærer å forstå strengformatet for å trekke ut dato-komponenter som dag, måned og år. Programmerere gjør dette for å håndtere brukerinndata, lese datafiler eller samhandle med API-er som kommuniserer datoer i strengformater. Det er essensielt for databehandling, validering, og utføring av datoaritmetikk i applikasjoner.
-
 ## Hvordan gjøre det:
 I moderne C++, kan du bruke biblioteket `<chrono>` for å håndtere datoer og tider på en nativ måte, men det støtter ikke direkte tolking fra strenger uten manuell parsing for mer komplekse formater. Imidlertid, for ISO 8601 datoformater og enkle tilpassede formater, her er hvordan du kan oppnå parsing.
 

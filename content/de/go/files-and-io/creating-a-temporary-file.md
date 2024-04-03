@@ -15,12 +15,7 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-## Was & Warum?
-
-Das Erstellen einer temporären Datei in Go ermöglicht die Generierung einer nicht-persistenten Datei, die für den kurzfristigen Gebrauch bestimmt ist, hauptsächlich für Aufgaben wie das Speichern von Zwischendaten oder die Unterstützung bei Batch-Verarbeitungs-Jobs. Programmierer nutzen diese Funktion, um sicher mit Daten umzugehen, ohne das permanente Dateisystem zu beeinflussen oder eine manuelle Bereinigung zu benötigen.
-
 ## Wie:
-
 In Go bot das `ioutil` Paket ursprünglich Hilfsmittel zur Erstellung von temporären Dateien. Doch ab Go 1.16 wurde die Benutzung der Funktionen der `os` und `io/ioutil` Pakete in besser organisierte Bereiche gefördert. Jetzt werden die `os` und `io` Pakete bevorzugt behandelt, um mit temporären Dateien umzugehen.
 
 Hier ist eine Schritt-für-Schritt-Anleitung zur Erstellung, Beschreibung und Löschung einer temporären Datei:
@@ -83,7 +78,6 @@ Beispielausgabe:
 ```
 
 ## Vertiefung
-
 Der Mechanismus hinter der Handhabung von temporären Dateien in Go hat sich entwickelt. Ursprünglich wurde das Erstellen von temporären Dateien überwiegend durch die jetzt veraltete Funktion `ioutil.TempFile` verwaltet, was breitere Trends in der Softwareentwicklung hin zu sichereren und effizienteren Dateiverarbeitungspraktiken widerspiegelt. Der Übergang, diese Funktionalitäten in die `os` und `io` Pakete mit Go 1.16 zu integrieren, signalisiert einen breiteren Schub zur Straffung der Standardbibliothek der Sprache und fördert die Verwendung von einheitlicheren und kohäsiveren APIs.
 
 Während die Verwendung von temporären Dateien eine gängige und oft wesentliche Praxis in der Programmierung ist, ist es wichtig zu beachten, dass sich zu stark auf sie zu verlassen, um große Datenmengen zu speichern oder für langfristige Aufgaben, zu Leistungsproblemen führen kann. Darüber hinaus können, wenn die Erstellung von temporären Dateien nicht streng kontrolliert wird oder wenn sie nicht adäquat aufgeräumt werden, Ressourcenlecks entstehen, die das Dateisystem negativ beeinträchtigen könnten. In Szenarien, die eine persistente Speicherung erfordern oder die Verarbeitung erheblicher Datenströme beinhalten, bieten Alternativen wie Datenbanken oder im Speicher befindliche Datenspeicher oft eine bessere Leistung und Zuverlässigkeit im Vergleich zu temporären Dateien.

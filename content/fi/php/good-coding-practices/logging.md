@@ -12,12 +12,7 @@ title: Lokitus
 weight: 17
 ---
 
-## Mikä ja miksi?
-
-Lokittaminen on käytännössä kuin päiväkirjan pitämistä koodillesi; se on tapa tallentaa tapahtumia, virheitä ja muita merkittäviä datapisteitä, jotka tapahtuvat sovelluksesi suorittaessa. Ohjelmoijat tekevät sitä pitääkseen kirjaa siitä, mitä "konepellin alla" tapahtuu, virheiden jäljittämiseen ja auditointikirjanpidon ylläpitämiseen myöhempää analysointia tai vaatimustenmukaisuutta varten.
-
 ## Kuinka:
-
 PHP:ssä on sisäänrakennettu virhelokitusfunktio, joka on helppokäyttöinen. Lisää vain `error_log()` koodiisi lähettääksesi viestin palvelimesi lokeihin. Voit myös muokata sitä kirjoittamaan tiettyyn tiedostoon.
 
 ```php
@@ -50,7 +45,6 @@ $logger->error('Tämä on virhelokin merkintä!');
 Tämä tulostaa lokisi joko palvelimen lokiin tai määrittelemääsi tiedostoon tavallisessa tekstimuodossa.
 
 ## Syväsukellus:
-
 Aiemmin PHP-kehittäjät turvautuivat `error_log()`-funktioon tai Apache/Nginx-lokeihin ongelmien havaitsemiseksi, mutta se voi olla kaoottista, kun tarvitsisi jäsentää tavallisia tekstitiedostoja eikä ole helppoa tapaa suodattaa tai järjestää niitä. Tästä syystä lokitus-kirjastot kuten Monolog, ovat tuoneet PHP:hen rakenteellisen lokituksen aikakauden. Nämä ratkaisut tarjoavat paremman hallinnan monipuolisten lokituskanavien, vakavuustasojen ja muotoillun tulosteen (kuten JSON, mikä on unelma ohjelmallisessa jäsentämisessä) avulla.
 
 Vaihtoehtoja Monologille sisältävät Log4php, KLogger ja Apachen Log4php. Toteutukseltaan vankka lokitus vaatii muutakin kuin datan pudottamista minne sattuu, vaan myös asioiden kuten lokikierron, arkistointistrategioiden ja integrointi valvontatyökaluihin ottamista huomioon ollakseen todella hyödyllistä.
@@ -58,7 +52,6 @@ Vaihtoehtoja Monologille sisältävät Log4php, KLogger ja Apachen Log4php. Tote
 Sinun tulisi pitää mielessä [PSR-3 Logger Interface](https://www.php-fig.org/psr/psr-3/), joka hahmottelee yhteisen rajapinnan lokitus-kirjastoille, varmistaen yhteensopivuutta ja johdonmukaista tapaa päästä käsiksi lokitusmekanismeihin.
 
 ## Katso myös:
-
 - [Monolog GitHub-varasto](https://github.com/Seldaek/monolog)
 - [PSR-3 Logger Interface -määrittely](https://www.php-fig.org/psr/psr-3/)
 - [PHP Virhelokidokumentaatio](https://www.php.net/manual/en/function.error-log.php)

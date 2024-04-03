@@ -10,9 +10,6 @@ title: Analisi dell'HTML
 weight: 43
 ---
 
-## Che Cosa & Perché?
-L'interpretazione dell'HTML (parsing) serve a estrarre dati da pagine web. I programmatori lo fanno per analizzare, manipolare o estrarre informazioni in modo programmatico.
-
 ## Come Fare:
 Swift non ha librerie standard per il parsing HTML, quindi usiamo `SwiftSoup`, una libreria di terze parti:
 

@@ -14,12 +14,7 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-
-En interaktiv skal, eller Read-Eval-Print Loop (REPL), är en enkel, interaktiv programmeringsmiljö som tar emot enskilda användarinmatningar (uttryck), utvärderar dem och returnerar resultatet till användaren. Programmerare använder REPLs för snabb prototypning, felsökning och lärande av ett programmeringsspråks syntax och beteende interaktivt.
-
 ## Hur:
-
 Google Apps Script, ett molnbaserat skriptspråk för automatisering av uppgifter över Googles produkter, har inte ett inbyggt REPL-verktyg liknande de i språk som Python eller JavaScripts Node.js. Du kan dock simulera en liknande upplevelse genom att använda Apps Script-redigerarens logg- och felsökningsfunktioner eller genom att sätta upp en extern miljö. Här fokuserar vi på att skapa en provisorisk REPL inuti Apps Script-redigeraren.
 
 1. **Skapa en provisorisk REPL-funktion**:
@@ -61,7 +56,6 @@ Efter att ha kört `myREPL()`, kontrollera Loggarna (Visa > Loggar) för utmatni
 För mer komplex felsökning, strö `Logger.log(variabel);` inom din kod för att skriva ut variabel tillstånd, vilket hjälper dig att förstå flödet och mellanliggande tillstånden i dina script.
 
 ## Fördjupning
-
 Konceptet med en REPL är djupt rotad i databehandlingens historia, härstammande från tidsdelningssystemen från 1960-talet som tillät interaktiva sessioner. Språk som Lisp blomstrade i denna miljö, eftersom REPL var avgörande för deras iterativa utvecklingsprocess. I kontrast, Google Apps Script, som dök upp mycket senare, är främst designat för webben och fokuserar på att automatisera uppgifter inom Googles svit snarare än iterativ, konsolbaserad programmering.
 
 Google Apps Script stöder traditionellt sett inte realtids, interaktiva kodningssessioner direkt ur lådan på grund av dess molnbaserade natur och fokus på webbapplikationsdistribution. Dess exekveringsmodell kretsar kring funktioner utlösta av webbhändelser, tidsdrivna triggers, eller manuell anropning inom miljön, snarare än omedelbara återkopplingsloopar som tillhandahålls av en REPL.

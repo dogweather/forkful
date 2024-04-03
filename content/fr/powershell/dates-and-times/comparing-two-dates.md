@@ -11,11 +11,7 @@ title: Comparer deux dates
 weight: 27
 ---
 
-## What & Why?
-Comparer deux dates permet simplement de dire si une date est plus récente, plus ancienne ou identique à une autre. Les programmeurs en ont besoin pour gérer des échéances, des logs, ou effectuer des actions basées sur le temps.
-
 ## How to:
-
 ```PowerShell
 # Créer deux objets DateTime pour la comparaison
 $date1 = Get-Date '2023-04-01'
@@ -46,7 +42,6 @@ La différence en jours est : 14
 ```
 
 ## Deep Dive
-
 En PowerShell, la comparaison de dates est une pratique courante, une extension naturelle du framework .NET, dont les objets `DateTime` sont utilisés pour représenter les moments dans le temps. Historiquement, dans des langages plus anciens, les dates pouvaient être plus difficiles à manipuler, nécessitant des calculs complexes et des considérations de format. 
 
 PowerShell a simplifié le processus avec de puissants opérateurs de comparaison et la méthode `Get-Date`. Alternativement, pour des comparaisons plus complexes ou des calculs de temps, on peut utiliser la classe `TimeSpan` pour représenter une durée de temps.
@@ -54,7 +49,6 @@ PowerShell a simplifié le processus avec de puissants opérateurs de comparaiso
 Au niveau de l'implémentation, lorsqu'on compare les objets `DateTime`, PowerShell les traite comme des instances de structure et compare leurs valeurs. Si nécessaire, vous pouvez aussi utiliser les méthodes `CompareTo` ou `Equals` pour une vérification explicite.
 
 ## See Also
-
 - Documentation PowerShell sur `Get-Date`: https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.utility/get-date
 - Guide Microsoft sur les objets `DateTime`: https://docs.microsoft.com/fr-fr/dotnet/api/system.datetime
 - Informations complémentaires sur la structure `TimeSpan`: https://docs.microsoft.com/fr-fr/dotnet/api/system.timespan

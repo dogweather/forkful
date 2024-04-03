@@ -13,9 +13,6 @@ title: Obteniendo la fecha actual
 weight: 29
 ---
 
-## ¿Qué y Por Qué?
-Recuperar la fecha actual en Haskell implica obtener el tiempo actual del sistema y transformarlo en un formato de fecha legible. Los programadores hacen esto para realizar operaciones basadas en la fecha, como registro de actividades, programación de tareas o estampado de tiempo en eventos en aplicaciones.
-
 ## Cómo hacerlo:
 La biblioteca estándar de Haskell, `base`, proporciona el módulo `Data.Time` que ofrece funcionalidad para trabajar con fechas y horas. He aquí cómo usarlo para obtener la fecha actual:
 

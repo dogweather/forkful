@@ -16,9 +16,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Cái Gì & Tại Sao?
-Làm việc với XML bao gồm việc phân tích cú pháp, tạo và thao tác với các tài liệu XML - một ngôn ngữ đánh dấu dùng cho việc lưu trữ và truyền dữ liệu. Các lập trình viên thực hiện việc này bởi vì nhiều hệ thống vẫn trao đổi dữ liệu dưới dạng XML, và điều này cần thiết cho việc hỗ trợ cũ và tích hợp với các công nghệ hiện có.
-
 ## Làm Thế Nào:
 Trong Kotlin, bạn có thể sử dụng `javax.xml.parsers` tích hợp sẵn để phân tích cú pháp:
 

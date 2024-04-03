@@ -11,9 +11,6 @@ title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---
 
-## Vad & Varför?
-Att räkna ut ett framtida eller förflutet datum innebär att lägga till eller dra ifrån dagar till en given dag. Programmerare gör detta för att hantera bokningar, påminnelser eller tidsbaserade funktioner i sina applikationer.
-
 ## Hur gör man:
 ```Ruby
 require 'date'

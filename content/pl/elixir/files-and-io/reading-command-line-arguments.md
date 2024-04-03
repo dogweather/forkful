@@ -11,9 +11,6 @@ title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---
 
-## What & Why? (Co i dlaczego?)
-Czytanie argumentów linii poleceń pozwala na interakcję z twoim programem podczas jego uruchamiania. Programiści używają tego, by uczynić aplikacje elastycznymi i dostosowywalnymi do potrzeb użytkownika.
-
 ## How to (Jak to zrobić?)
 Oto jak w Elixirze możemy odczytać argumenty linii poleceń:
 

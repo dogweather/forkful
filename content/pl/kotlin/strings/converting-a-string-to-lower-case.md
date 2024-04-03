@@ -11,9 +11,6 @@ title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## What & Why? (Co i Dlaczego?)
-Zamiana łańcucha znaków na małe litery to proces, gdzie wszystkie wielkie litery w tekście stają się małymi. Programiści używają tej zmiany dla unifikacji danych, porównywania łańcuchów bez uwzględnienia wielkości liter lub przygotowania tekstu do wyświetlenia w jednolitym formacie.
-
 ## How to: (Jak to zrobić:)
 ```kotlin
 fun main() {

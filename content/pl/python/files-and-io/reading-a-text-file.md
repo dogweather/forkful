@@ -11,9 +11,6 @@ title: Odczytywanie pliku tekstowego
 weight: 22
 ---
 
-## Co i Dlaczego?
-Czytanie pliku tekstowego to proces wyciągania informacji z pliku zapisanego na dysku. Programiści robią to, by manipulować danymi, wyświetlać je użytkownikowi, lub wczytywać konfiguracje swoich aplikacji.
-
 ## Jak to zrobić:
 ```Python
 # Przykład 1: Odczytanie całego pliku

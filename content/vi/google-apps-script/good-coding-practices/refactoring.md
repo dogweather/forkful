@@ -17,12 +17,7 @@ title: "T\xE1i c\u1EA5u tr\xFAc m\xE3 ngu\u1ED3n"
 weight: 19
 ---
 
-## Cái gì & Tại sao?
-
-Tái cấu trúc trong ngôn ngữ lập trình đề cập đến quá trình cải tổ mã máy tính hiện có - thay đổi cấu trúc mà không thay đổi hành vi bên ngoài - nhằm cải thiện các thuộc tính phi chức năng. Đây là một bước quan trọng để các lập trình viên nâng cao khả năng đọc mã, giảm độ phức tạp và tiềm ẩn khai thác lỗi, tạo điều kiện bảo trì dễ dàng hơn và khả năng mở rộng mã trong tương lai.
-
 ## Cách thực hiện:
-
 Trong Google Apps Script, một tình huống phổ biến được hưởng lợi từ việc tái cấu trúc là việc đơn giản hóa các kịch bản giao tiếp với Google Sheets hoặc Docs một cách nặng nề. Ban đầu, các kịch bản có thể được viết một cách nhanh chóng để đạt kết quả nhanh. Theo thời gian, khi kịch bản phát triển, nó trở nên cồng kềnh. Hãy cùng xem xét một ví dụ về tái cấu trúc để đạt được khả năng đọc và hiệu quả tốt hơn.
 
 **Kịch bản Gốc:**
@@ -61,7 +56,6 @@ Kết quả trong Logger sẽ trông như thế này, giả sử tài liệu Goo
 Kịch bản đã tái cấu trúc đạt được kết quả tương tự nhưng sạch sẽ và dễ hiểu hơn ngay từ cái nhìn đầu tiên.
 
 ## Sâu hơn nữa
-
 Tái cấu trúc trong Google Apps Script một phần kế thừa các nguyên tắc từ thực hành kỹ thuật phần mềm rộng lớn hơn. Nó trở nên được công nhận và cấu trúc hơn như một khái niệm vào cuối những năm 1990, đáng chú ý nhờ cuốn sách tiên phong "Refactoring: Improving the Design of Existing Code" (1999) của Martin Fowler, cung cấp một hướng dẫn toàn diện về các kỹ thuật tái cấu trúc. Mặc dù các chi tiết cụ thể của việc tái cấu trúc có thể khác nhau giữa các ngôn ngữ lập trình do sự khác biệt về cú pháp và chức năng, mục tiêu cốt lõi vẫn giống nhau: cải thiện mã mà không thay đổi hành vi bên ngoài của nó.
 
 Trong bối cảnh của Google Apps Script, một khía cạnh quan trọng cần xem xét trong quá trình tái cấu trúc là các hạn ngạch và giới hạn do Google áp đặt. Mã được tái cấu trúc một cách hiệu quả không chỉ dễ đọc hơn mà còn chạy nhanh và đáng tin cậy hơn trong những ràng buộc này. Ví dụ, các hoạt động hàng loạt (`Range.setValues()` thay vì thiết lập giá trị cho từng ô một) có thể giảm đáng kể thời gian thực thi và tiêu thụ hạn ngạch.

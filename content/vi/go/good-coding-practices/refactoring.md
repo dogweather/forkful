@@ -16,12 +16,7 @@ title: "T\xE1i c\u1EA5u tr\xFAc"
 weight: 19
 ---
 
-## Gì và Tại sao?
-
-Tái cấu trúc trong lập trình bao gồm việc cấu trúc lại mã máy tính hiện có—thay đổi cách phân chia—mà không thay đổi hành vi bên ngoài của nó. Các lập trình viên thực hiện quy trình này để cải thiện khả năng đọc mã, giảm độ phức tạp và tăng khả năng bảo trì, cuối cùng làm cho phần mềm dễ hiểu và chỉnh sửa hơn.
-
 ## Làm thế nào:
-
 Trong Go, tái cấu trúc có thể dao động từ những chỉnh sửa mã đơn giản đến những thay đổi phức tạp hơn. Hãy bắt đầu với một ví dụ cơ bản: đơn giản hóa một hàm Go ban đầu để cải thiện khả năng đọc và hiệu quả.
 
 **Trước khi Tái Cấu Trúc:**
@@ -124,7 +119,6 @@ func main() {
 Việc tái cấu trúc sử dụng một giao diện (`Logger`) thay vì một kiểu cụ thể (`ConsoleLogger`) làm tăng tính linh hoạt của hàm và tách biệt quá trình xử lý dữ liệu khỏi cài đặt log cụ thể.
 
 ## Sâu Hơn Nữa
-
 Tái cấu trúc trong Go phải cân bằng giữa sự đơn giản (một trong những triết lý cốt lõi của Go) với tính linh hoạt cần thiết trong các dự án phần mềm lớn. Với cách tiếp cận tối giản đối với các tính năng—không có generics (cho đến gần đây) và với sự nhấn mạnh mạnh mẽ vào khả năng đọc—ngôn ngữ tự nhiên hướng dẫn nhà phát triển về phía các cấu trúc mã dễ bảo trì hơn, đơn giản hơn. Tuy nhiên, điều này không có nghĩa là mã Go không hưởng lợi từ việc tái cấu trúc; nó chỉ có nghĩa là việc tái cấu trúc luôn cần ưu tiên sự rõ ràng và đơn giản.
 
 Trong lịch sử, sự thiếu một số tính năng của Go (ví dụ, generics trước Go 1.18) đã dẫn đến các giải pháp sáng tạo nhưng đôi khi phức tạp cho việc tái sử dụng mã và tính linh hoạt, làm cho việc tái cấu trúc cho tính trừu tượng trở thành một thực hành phổ biến. Với việc giới thiệu generics trong Go 1.18, các nhà phát triển Go giờ đây đang tái cấu trúc mã kế thừa để tận dụng tính năng này cho sự an toàn kiểu dữ liệu và tái sử dụng mã tốt hơn, minh họa cho bản chất phát triển của các thực hành tái cấu trúc trong Go.

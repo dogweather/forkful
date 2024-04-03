@@ -13,12 +13,7 @@ title: "Usando express\xF5es regulares"
 weight: 11
 ---
 
-## O Que & Porquê?
-
-Expressões regulares (regex) em Java permitem definir padrões específicos para pesquisar, manipular ou validar strings no seu código. Programadores as utilizam para tarefas como análise de arquivos de log, validação de entrada de usuário, ou procura por padrões específicos dentro de textos, possibilitando um processamento sofisticado de strings com esforço mínimo.
-
 ## Como fazer:
-
 O suporte embutido do Java para regex é primariamente através das classes `Pattern` e `Matcher` no pacote `java.util.regex`. Aqui está um exemplo simples para encontrar e imprimir todas as ocorrências de uma palavra em uma string, ignorando maiúsculas e minúsculas:
 
 ```java

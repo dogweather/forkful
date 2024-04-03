@@ -11,9 +11,6 @@ title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mitä ja miksi?
-Numeroiden pyöristäminen tarkoittaa niiden säätämistä tiettyyn tarkkuusasteeseen. Ohjelmoijat tekevät sen yksinkertaistaakseen numeroita luettavuuden vuoksi, täyttääkseen tiettyjä vaatimuksia tai varmistaakseen, että laskelmat mahtuvat tiettyihin rajoituksiin, kuten välttääkseen tarkkuusvirheitä liukulukuaritmetiikassa.
-
 ## Miten:
 Java tarjoaa useita tapoja pyöristää numeroita. Tässä nopea demo `Math.round()`, `BigDecimal` ja `DecimalFormat` käytöstä.
 

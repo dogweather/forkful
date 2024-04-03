@@ -11,9 +11,6 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O Que & Por Quê?
-Refatoração é o processo de reestruturar o código de computador existente sem alterar seu comportamento externo. Os programadores fazem isso para limpar a base de código, melhorando a legibilidade, a manutenibilidade e abrindo caminho para futuras funcionalidades com uma dívida técnica mínima.
-
 ## Como Fazer:
 Vamos começar com um exemplo básico em Swift onde temos algum código repetitivo:
 

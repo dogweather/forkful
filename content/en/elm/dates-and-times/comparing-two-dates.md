@@ -10,11 +10,7 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-Comparing two dates means figuring out which one is earlier or how much time is between them. Programmers do it to handle stuff like deadlines, schedules, or time-based features.
-
 ## How to:
-
 Elm makes date comparisons straightforward. Let's say you've got two dates. Here's how you'd check which one comes first:
 
 ```Elm

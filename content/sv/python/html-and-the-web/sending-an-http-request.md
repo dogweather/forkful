@@ -10,9 +10,6 @@ title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## Vad & Varför?
-Skicka en HTTP-begäran är hur din kod pratar med webbservern. Programmerare gör detta för att hämta data, skicka information eller interagera med olika webbtjänster.
-
 ## How to:
 I Python använder vi ofta `requests`-biblioteket för att hantera HTTP-begäranden.
 

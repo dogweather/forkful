@@ -11,9 +11,6 @@ title: Removendo aspas de uma string
 weight: 9
 ---
 
-## O Que & Por Que?
-Remover aspas de uma string significa eliminar aquelas aspas duplas ou simples extras que você não precisa no texto processado. Programadores fazem isso para higienizar a entrada, preparar dados para armazenamento ou tornar a saída mais legível para humanos quando as aspas não são necessárias para o contexto dado.
-
 ## Como Fazer:
 No Elm, você pode usar as funções de `String` para manipular strings, como remover aspas. Aqui está uma maneira direta de fazer isso:
 

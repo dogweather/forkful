@@ -14,9 +14,6 @@ title: Skriva till standardfel
 weight: 25
 ---
 
-## Vad & Varför?
-Att skriva till standardfel (stderr) i Ruby handlar om att dirigera felmeddelanden eller diagnostik till en separat utmatningsström, skild från standardutmatningen (stdout). Programmerare gör detta för att skilja regelbunden programutmatning från fel och felsökningsinformation, vilket underlättar diagnos av problem och parsning av loggar.
-
 ## Hur man gör:
 Rubys standardbibliotek ger ett enkelt sätt att skriva till stderr med `$stderr` eller `STDERR`. Du behöver inte tredjepartsbibliotek för denna grundläggande operation.
 

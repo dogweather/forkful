@@ -25,9 +25,6 @@ title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u094B \u091B\u09
 weight: 4
 ---
 
-## What & Why? (क्या और क्यों?)
-String को lower case में बदलना मतलब अक्षरों को छोटा करना। Programmers इसे तब करते हैं जब case sensitivity महत्वपूर्ण हो, जैसे यूजर इनपुट को साफ करना या डेटा की consistency बनाए रखना।
-
 ## How to: (कैसे करें:)
 ```PowerShell
 # एक सिंपल स्ट्रिंग को Lower Case में कन्वर्ट करना
@@ -58,7 +55,7 @@ PowerShell में स्ट्रिंग को lower case में बद
 
 Alternatives के तौर पर, `ToLowerInvariant()` का यूज़ करना भी मुमकिन है, जो कल्चर-इनसेंसिटिव कन्वर्जन देता है। PowerShell Core में `ToLowerInvariant()` अक्सर प्रेफर किया जाता है, क्योंकि यह क्रॉस-प्लेटफॉर्म है। 
 
-परफॉर्मेंस के लिहाज से, `.ToLower()` और `.ToLowerInvariant()` दोनों ही फास्ट हैं और लार्ज डेटा पर भी अच्छे रिजल्ट्स देते हैं। 
+परफॉर्मेंस के लिहाज से, `.ToLower()` और `.ToLowerInvariant()` दोनों ही फास्ट हैं और लार्ज डेटा पर भी अच्छे रिजल्ट्स देते हैं।
 
 ## See Also (अधिक जानकारी के लिए)
 - [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)

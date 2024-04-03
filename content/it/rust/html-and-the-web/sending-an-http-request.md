@@ -11,9 +11,6 @@ title: Inviare una richiesta http
 weight: 44
 ---
 
-## What & Why?
-Mandare una richiesta HTTP è come bussare a una porta di un servizio web per ricevere dati o inviarne. I programmatori lo fanno per interagire con API web, scambiare dati e integrare funzionalità esterne nei loro programmi.
-
 ## How to:
 Installiamo `reqwest`, una libreria HTTP di Rust. Aggiungi al tuo `Cargo.toml`:
 

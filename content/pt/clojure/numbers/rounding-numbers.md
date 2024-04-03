@@ -11,9 +11,6 @@ title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---
 
-## O Quê & Porquê?
-Arredondar números é ajustar um número para o inteiro mais próximo, ou para uma certa precisão decimal. Arredondamos números para simplificá-los para leitura humana, reduzir a carga computacional, ou satisfazer requisitos numéricos específicos.
-
 ## Como fazer:
 Em Clojure, usamos principalmente `Math/round`, `Math/floor` e `Math/ceil`:
 

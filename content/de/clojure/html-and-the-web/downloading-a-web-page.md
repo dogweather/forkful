@@ -10,9 +10,6 @@ title: Webseite herunterladen
 weight: 42
 ---
 
-## What & Why?
-Das Herunterladen einer Webseite ermöglicht es uns, den Inhalt abzurufen und zu nutzen. Programmierer machen dies, um Daten zu analysieren, zu überwachen, oder um Webinhalte in ihre Anwendungen zu integrieren.
-
 ## How to:
 Clojure macht das Abrufen von Webcontent einfach. Hier ist ein minimalistisches Beispiel mit `clj-http`:
 

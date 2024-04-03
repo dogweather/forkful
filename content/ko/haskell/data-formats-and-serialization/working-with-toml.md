@@ -16,9 +16,6 @@ title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE3
 weight: 39
 ---
 
-## 무엇 & 왜?
-Haskell을 사용한 TOML 작업은 TOML(Tom's Obvious, Minimal Language) 데이터를 파싱하고 생성하는 것을 포함합니다. 프로그래머들이 강력한 타입 보증과 최소한의 문법 번거로움으로 구성 파일을 쉽게 관리하거나 데이터 교환을 할 수 있도록 하기 위해 이 작업을 합니다.
-
 ## 방법:
 먼저, TOML 파싱 라이브러리를 갖추고 있는지 확인합니다. Haskell의 경우, `htoml`은 인기 있는 선택입니다. 프로젝트의 의존성에 추가해야 합니다.
 

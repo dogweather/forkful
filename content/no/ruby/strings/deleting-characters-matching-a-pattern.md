@@ -10,9 +10,6 @@ title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---
 
-## What & Why?
-Hva er det og hvorfor? Vi sletter tegn som samsvarer med et mønster for å rense strenger - for å fjerne uønskede karakterer eller formatere data. Programmerere gjør dette for å forenkle inndatahåndtering, validering og for å forbedre brukeropplevelsen.
-
 ## How to:
 Slette med `delete` og `gsub`:
 

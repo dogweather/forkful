@@ -13,10 +13,8 @@ title: Analisando uma data a partir de uma string
 weight: 30
 ---
 
-## O Que e Por Que?
-Analisar uma data a partir de uma string envolve converter representações textuais de data e hora em um objeto `Date`. Este processo é essencial em aplicações onde as datas são comunicadas como strings, como em respostas de API ou entradas de usuário, permitindo uma manipulação e formatação de datas mais fácil.
-
 ## Como Fazer:
+
 
 ### Usando o `DateFormatter` da Foundation
 A biblioteca padrão do Swift, Foundation, fornece `DateFormatter` para converter strings em objetos `Date` e vice-versa. Para analisar uma data a partir de uma string, você especifica o formato da data que corresponde à string, e então usa o formatador para analisá-la.

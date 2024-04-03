@@ -10,12 +10,7 @@ title: Downloading a web page
 weight: 42
 ---
 
-## What & Why?
-
-Downloading a webpage means grabbing its content, like HTML, CSS, and JavaScript, programmatically. Programmers do this to process data, monitor changes, or test their web apps.
-
 ## How to:
-
 ```java
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -53,7 +48,6 @@ Sample output might look like this:
 ```
 
 ## Deep Dive
-
 Back in the day, downloading a webpage was elementary—HTTP was simple, websites were mostly static HTML. Today's web is complex—think HTTPS, JavaScript-driven content, and AJAX galore. 
 
 For static content, `java.net.URL` and `java.net.HttpURLConnection` are straight-up choices—no-frills, just works. But if you're targeting sites full of dynamic content loaded by JavaScript, those classes won't cut it alone, and you're looking at tools like Selenium or HtmlUnit instead.
@@ -63,7 +57,6 @@ Don't forget, picking the right tool also hinges on what you need to do with the
 Remember the politeness policy: don't pummel a site with rapid-fire requests, or you're asking for a ban. And make sure you’re playing nice with the website’s `robots.txt` guidelines.
 
 ## See Also
-
 - The [Jsoup library](https://jsoup.org/) for HTML parsing and extraction.
 - The [Selenium WebDriver](https://www.selenium.dev/documentation/en/webdriver/) for more complex tasks including JavaScript execution.
 - A guide to [HttpURLConnection](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html) for those wanting the nitty-gritty on Java's built-in way to handle HTTP.

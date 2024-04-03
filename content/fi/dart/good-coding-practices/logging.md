@@ -12,12 +12,7 @@ title: "Lokitiedostojen k\xE4sittely"
 weight: 17
 ---
 
-## Mikä ja miksi?
-
-Dartissa lokitus viittaa ohjelman suorituksen aikana tapahtuvaan eri tasojen tiedon tallentamiseen. Ohjelmoijat tekevät sen seuratakseen ohjelmiston käyttäytymistä, debugataakseen ongelmia ja analysoidakseen suorituskykyä, mikä tekee sovelluksen ylläpidosta ja parantamisesta ajan myötä helpompaa.
-
 ## Kuinka:
-
 Dart sisältää yksinkertaisen lokitusmekanismin `dart:developer` kirjaston kautta. Monimutkaisempien lokitustarpeiden osalta ohjelmoijat kääntyvät usein kolmansien osapuolien kirjastojen, kuten `logger` ja `log4dart`, puoleen.
 
 ### Käyttäen `dart:developer`

@@ -32,12 +32,7 @@ title: "\u0938\u092C\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917\u094D\u0938
 weight: 6
 ---
 
-## What & Why? (क्या और क्यों?)
-
-Java में substring निकालना मतलब है किसी स्ट्रिंग के एक हिस्से को पकड़ना। इसे प्रोग्रामर्स तब इस्तेमाल करते हैं जब उन्हें सिर्फ स्ट्रिंग के एक खास हिस्से की जरूरत होती है, जैसे किसी यूजरनेम में से डोमेन निकालना या फिर प्रोडक्ट कोड में से खास सीरियल नंबर को पाना।
-
 ## How to: (कैसे करें:)
-
 ```java
 public class SubstringExample {
     public static void main(String[] args) {
@@ -60,11 +55,9 @@ Substring 2: World
 ```
 
 ## Deep Dive (गहराई से जानकारी):
-
 `substring()` मेथड Java में बहुत पहले से है, और ये String class का एक महत्वपूर्ण हिस्सा रहा है। जैसे-जैसे Java अपग्रेड होता गया, `substring()` में भी सुधार होते रहे, जिससे ये और भी कुशल हो गया। अलग-अलग तरीकों में `StringBuffer` और `StringBuilder` जैसे क्लासेस का भी इस्तेमाल होता है, जैसे `substring()` का इस्तेमाल करके भी कर सकते हैं। इंप्लीमेंटेशन डिटेल्स की बात करें तो, पुराने Java वर्जन्स में `substring()` का इस्तेमाल थोड़ा संसाधन गहन होता था क्योंकि यह नए स्ट्रिंग के लिए हमेशा नई memory अलॉकेट करता था।
 
 ## See Also (इसे भी देखें):
-
 - Oracle Java Documentation: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#substring(int,int)
 - Java String tutorial from w3schools: https://www.w3schools.com/java/java_strings.asp
 - Java String `substring()` method from GeeksforGeeks: https://www.geeksforgeeks.org/substring-in-java/

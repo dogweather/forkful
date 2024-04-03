@@ -14,12 +14,7 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i dlaczego?
-
-Zapisywanie do pliku tekstowego w Fish Shell umożliwia trwałe przechowywanie danych, co ułatwia ich późniejsze pobieranie lub manipulowanie, zarówno przez ten sam skrypt Fish, jak i inne programy. Programiści robią to dla celów logowania, zapisywania ustawień konfiguracyjnych lub eksportowania danych do dalszej obróbki.
-
 ## Jak to zrobić:
-
 Aby zapisać do pliku tekstowego w Fish, można użyć polecenia `echo` połączonego z operatorami przekierowania. Nie ma popularnych bibliotek firm trzecich specjalnie do zapisywania plików w Fish, ponieważ wbudowane komendy powłoki są proste i efektywne w tym celu.
 
 ### Zapisywanie tekstu do nowego pliku lub nadpisywanie istniejącego pliku:

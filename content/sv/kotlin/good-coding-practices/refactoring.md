@@ -12,9 +12,6 @@ title: Omskrivning av kod
 weight: 19
 ---
 
-## Vad & Varför?
-Refaktorisering är processen att justera befintlig kod för att förbättra dess struktur, läsbarhet och prestanda utan att ändra dess externa beteende. Programmerare refaktoriserar för att göra koden mer underhållbar, för att förenkla tillägget av nya funktioner samt för att lättare kunna hitta och åtgärda buggar.
-
 ## Hur man gör:
 Här är ett Kotlin-utdrag som visar en vanlig kodlukt och dess refaktoriserade version. Vi börjar med en kodsnutt som gör för mycket:
 

@@ -11,9 +11,6 @@ title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---
 
-## Quoi & Pourquoi ?
-La boucle Lire-Évaluer-Imprimer (REPL) est un environnement de programmation simple et interactif qui prend en charge les entrées utilisateur individuelles, les évalue, et renvoie le résultat à l'utilisateur. Les programmeurs Elm utilisent le REPL pour des expériences rapides, le débogage ou pour apprendre le langage.
-
 ## Comment faire :
 Elm ne vient pas avec un REPL intégré. Cependant, vous pouvez utiliser `elm repl` depuis votre ligne de commande pour démarrer une session Elm après avoir installé Elm.
 

@@ -11,9 +11,6 @@ title: "Registro de Actividades en Programaci\xF3n"
 weight: 17
 ---
 
-## ¿Qué y por qué?
-El registro (logging) en el contexto de la programación es el proceso de grabar eventos, estados e información en un archivo u otro medio de salida. Los programadores realizan registros para seguir la pista de lo que está sucediendo en sus aplicaciones, para depurar problemas y para monitorear el rendimiento para análisis y optimización futuros.
-
 ## Cómo hacerlo:
 Digamos que estás trabajando en una máquina Linux y quieres volcar tus registros en un archivo usando el buen y viejo C++. Querrás incluir las librerías `<iostream>` y `<fstream>` para realizar operaciones con archivos. Aquí tienes un ejemplo rápido:
 

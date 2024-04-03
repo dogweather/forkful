@@ -19,12 +19,7 @@ title: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306E\u9001\u4FE1"
 weight: 44
 ---
 
-## What & Why? (何となぜ？)
-
-HTTPリクエストっていうのは、Webサーバーに情報を要求する方法です。この技術を使う理由は、外部データの取得やAPIとの連携のため。簡単かつ強力です。
-
 ## How to: (やり方)
-
 以下のサンプルコードを使って、JavaでHTTP GETリクエストを送る方法を見てみましょう。
 
 ```java
@@ -60,10 +55,8 @@ public class Main {
 ```
 
 ## Deep Dive (深く掘り下げて)
-
 かつてJavaでは、`HttpURLConnection` クラスを使ってHTTPリクエストを送っていましたが、Java 11からは `java.net.http.HttpClient` クラスが導入され、よりシンプルかつモダンなAPIとして推奨されています。他の言語のライブラリと同様に、非同期処理もサポートされています。`HttpClient`の使用により、HTTP/2のサポートやWebSocketなど、他にも強力な機能を利用できます。
 
 ## See Also (関連情報)
-
 - [Oracleの公式ドキュメンテーション](https://docs.oracle.com/en/java/javase/17/docs/api/java.net.http/java/net/http/HttpClient.html)
 - [HTTPリクエストのバリエーションを理解する](https://www.baeldung.com/java-9-http-client)

@@ -12,10 +12,9 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mikä & Miksi?
-Testien kirjoittaminen ohjelmoinnissa tarkoittaa skriptien luomista ja suorittamista, jotka varmistavat koodin toimivan odotetusti eri olosuhteissa. Ohjelmoijat tekevät sen laadun varmistamiseksi, regressioiden estämiseksi ja turvallisen refaktoroinnin mahdollistamiseksi, mikä on ratkaisevan tärkeää terveellisen, skaalautuvan ja bugittoman koodikannan ylläpitämiseksi.
-
 ## Kuinka:
+
+
 ### Natiivi PHP – PHPUnit
 Laajalti käytetty työkalu PHP:n testaamiseen on PHPUnit. Asenna se Composerin kautta:
 ```bash

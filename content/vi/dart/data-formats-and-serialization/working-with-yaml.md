@@ -15,12 +15,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---
 
-## Gì và Tại sao?
-
-YAML, viết tắt của YAML Ain't Markup Language, là một định dạng tuần tự hóa dữ liệu dễ đọc cho con người. Lập trình viên sử dụng nó cho các tệp cấu hình, trao đổi dữ liệu và trong các ứng dụng cần lưu trữ hoặc truyền dữ liệu trong một định dạng dễ hiểu.
-
 ## Cách thực hiện:
-
 Trong Dart, làm việc với YAML thường liên quan đến việc sử dụng một thư viện bên thứ ba vì ngôn ngữ này không bao gồm khả năng phân tích cú pháp YAML tích hợp sẵn. Một lựa chọn phổ biến là gói `yaml`. Để bắt đầu, bạn cần thêm gói này vào `pubspec.yaml` của mình:
 
 ```yaml
@@ -31,7 +26,6 @@ dependencies:
 Nhớ chạy `pub get` để tải gói.
 
 ### Đọc YAML
-
 Để đọc một tệp YAML, đầu tiên, nhập gói `yaml` và sau đó sử dụng hàm `loadYaml`:
 
 ```dart
@@ -55,7 +49,6 @@ age: 30
 ```
 
 ### Viết YAML
-
 Mặc dù gói `yaml` rất tốt cho việc phân tích, nó không hỗ trợ viết YAML. Đối với điều này, bạn có thể cần chuyển đổi dữ liệu của mình thành YAML một cách thủ công hoặc sử dụng một gói khác nếu có. Hoặc, một cách trực tiếp hơn, quản lý các biến đổi dữ liệu của bạn và xuất chúng dưới dạng chuỗi khớp với cú pháp YAML:
 
 ```dart

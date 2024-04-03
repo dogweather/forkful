@@ -10,9 +10,6 @@ title: Inviare una richiesta http
 weight: 44
 ---
 
-## What & Why? (Cos'è e Perché?)
-Inviare una richiesta HTTP è il modo in cui un programma richiede informazioni da un server. I programmatori lo fanno per interagire con web API, scaricare dati o inviare informazioni.
-
 ## How to: (Come fare:)
 Usiamo `curl`, un tool da linea di comando, per mandare richieste HTTP. Ecco degli esempi con output in Fish Shell:
 

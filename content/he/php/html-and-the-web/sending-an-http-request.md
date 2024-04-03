@@ -21,11 +21,7 @@ title: "\u05E9\u05DC\u05D9\u05D7\u05EA \u05D1\u05E7\u05E9\u05EA HTTP"
 weight: 44
 ---
 
-## מה ולמה?
-שליחת בקשת HTTP מאפשרת לתכנית PHP שלך לדבר עם שרתים אחרים - זה כמו לשלוח מסר בבקבוק בים הדיגיטלי. תוכניתנים עושים את זה כדי להשיג מידע, לאמת נתונים, להתחבר ל-APIs או לשלוח נתונים למקומות אחרים.
-
 ## איך לעשות:
-
 בואו נשתמש ב-cURL שהוא אחד הכלים הפופולריים ב-PHP לשליחת בקשות HTTP.
 
 ```PHP
@@ -65,7 +61,6 @@ echo $response;
 - **פרטי יישום:** בזמן שליחת בקשה צריך להיות ער לפרטי אבטחה כמו HTTPS, שימוש ב-headers נכונים וניהול תעודות SSL.
 
 ## ראה גם:
-
 - [דוקומנטציה רשמית של PHP על cURL](https://www.php.net/manual/en/book.curl.php)
 - [Guzzle, HTTP client for PHP](https://docs.guzzlephp.org/en/stable/)
 - [PHP Streams (file_get_contents)](https://www.php.net/manual/en/function.file-get-contents.php)

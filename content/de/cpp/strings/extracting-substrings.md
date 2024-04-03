@@ -8,11 +8,12 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## What & Why?
 ### Was & Warum?
 Substring-Extraktion ist das Herausgraben von Teilsequenzen aus einem String. Programmierer nutzen sie, um bestimmte Daten zu isolieren oder Formatierungsprobleme zu lösen.
 
 ## How to:
+
+
 ### Wie geht das:
 ```C++
 #include <iostream>
@@ -39,10 +40,14 @@ Berlin
 ```
 
 ## Deep Dive:
+
+
 ### Tiefergehend:
 Der `.substr()` Befehl ist seit C++98 Standard. Alternativ kann man `std::string::find` mit `std::string::substr` kombinieren, um dynamische Positionen zu nutzen. Beispielsweise, um genau ab dem ersten Leerzeichen zu teilen. Hinsichtlich Performance? `std::string_view` (seit C++17 verfügbar) ist für Leseoperationen effizienter, da es den Originalstring nicht kopiert.
 
 ## See Also:
+
+
 ### Siehe auch:
 - C++ Standardbibliotheksdokumentation zu `std::string`: https://en.cppreference.com/w/cpp/string/basic_string
 - Stack Overflow Diskussionen zu Substrings in C++: https://stackoverflow.com/questions/tagged/c%2b%2b+substring

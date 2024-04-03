@@ -14,16 +14,10 @@ title: Trabalhando com CSV
 weight: 37
 ---
 
-## O Que & Por Quê?
-
-Trabalhar com arquivos CSV (Valores Separados por Vírgula) envolve ler ou escrever em arquivos de texto simples nos quais os campos de dados são separados por vírgulas. Programadores frequentemente realizam essa tarefa para facilitar a troca de dados entre diferentes aplicações de software, dada a simplicidade e ampla adoção do formato CSV em vários ambientes de programação.
-
 ## Como Fazer:
-
 O Visual Basic para Aplicações (VBA) simplifica o trabalho com arquivos CSV por meio de funções e métodos integrados que permitem a leitura e escrita desses arquivos de maneira transparente. Abaixo estão exemplos que ilustram operações básicas com arquivos CSV.
 
 ### Lendo um Arquivo CSV:
-
 ```basic
 Sub ReadCSV()
     Dim filePath As String
@@ -46,7 +40,6 @@ End Sub
 ```
 
 ### Escrevendo em um Arquivo CSV:
-
 ```basic
 Sub WriteCSV()
     Dim filePath As String
@@ -68,7 +61,6 @@ ID,Name,Age
 ```
 
 ## Aprofundamento
-
 Historicamente, arquivos CSV têm sido um método direto para armazenar dados tabulares em um formato de texto. A simplicidade de sua estrutura, onde cada linha corresponde a um registro de dados e cada campo dentro de um registro é separado por uma vírgula, é tanto a força quanto a limitação do CSV. O formato não suporta nativamente tipos de dados, o que significa que todos os dados são armazenados como strings, e a responsabilidade de converter os dados para o tipo correto recai sobre o programador.
 
 No Visual Basic para Aplicações, lidar com arquivos CSV é feito principalmente por meio de operações básicas de arquivo, como mostrado nos exemplos anteriores. Não há suporte direto para análise de CSV como em linguagens mais modernas (por exemplo, o módulo csv do Python), que oferece mais controle e conveniência no manuseio de dados CSV.

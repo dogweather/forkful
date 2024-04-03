@@ -14,12 +14,7 @@ title: "Envoyer une requ\xEAte HTTP avec une authentification de base"
 weight: 45
 ---
 
-## Quoi & Pourquoi ?
-
-Envoyer une requête HTTP avec une authentification de base implique l'ajout d'un nom d'utilisateur et d'un mot de passe à une requête pour vérifier l'identité de l'utilisateur. Les programmeurs utilisent cette méthode pour accéder à des ressources nécessitant une authentification, assurant ainsi une communication sécurisée entre le client et le serveur.
-
 ## Comment faire :
-
 En Dart, vous pouvez utiliser le package `http` pour envoyer des requêtes HTTP avec une authentification de base. Tout d'abord, ajoutez le package `http` à votre fichier `pubspec.yaml` :
 
 ```yaml

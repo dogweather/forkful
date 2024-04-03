@@ -10,9 +10,6 @@ title: Confronto tra due date
 weight: 27
 ---
 
-## Cosa e Perché?
-Confrontare due date significa stabilire quale sia precedente, successiva o se coincidano. Lo si fa per tracciare intervalli di tempo, gestire eventi e attività schedulate.
-
 ## Come Fare:
 ```Arduino
 #include <TimeLib.h>

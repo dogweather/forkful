@@ -12,9 +12,6 @@ title: Registro de Logs
 weight: 17
 ---
 
-## O Que & Por Quê?
-Registrar (logging) é essencialmente o processo de gravação de eventos e saídas de dados de um software enquanto ele está em execução, pense nisso como o diário do software. Os programadores usam o registro para acompanhar o que está acontecendo por debaixo dos panos - é inestimável para depurar problemas, monitorar o comportamento do sistema em tempo real e analisar atividades passadas para otimizações de desempenho ou auditorias.
-
 ## Como fazer:
 A arquitetura do Elm não suporta efeitos colaterais como o registro imediatamente - você os gerencia por meio de comandos, que são uma parte da arquitetura da sua aplicação. Para fins educativos, vamos ver como você poderia simular o registro enviando mensagens para o JavaScript através de portas.
 

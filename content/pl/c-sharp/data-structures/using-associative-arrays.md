@@ -13,12 +13,7 @@ title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---
 
-## Co i dlaczego?
-
-Tablice asocjacyjne, czyli słowniki w C#, pozwalają przechowywać i zarządzać parami kluczy i wartości. Są Twoim pierwszym wyborem, gdy potrzebujesz szybko pobierać wartości na podstawie unikatowego identyfikatora, co ułatwia zarządzanie danymi w skomplikowanych aplikacjach.
-
 ## Jak używać:
-
 W C# pracujesz z tablicami asocjacyjnymi za pomocą klasy `Dictionary<TKey, TValue>`. Oto krótki przykład, aby zacząć:
 
 ```C#
@@ -64,7 +59,6 @@ Jabłka: 7
 Przykład pokazuje tworzenie słownika, dodawanie, dostęp, aktualizację i usuwanie elementów, oraz iterację przez niego.
 
 ## Szczegółowe omówienie
-
 Koncepcja tablic asocjacyjnych sięga ich użycia w językach skryptowych takich jak Perl i PHP, gdzie oferują one elastyczność w zarządzaniu kolekcjami danych. W C#, `Dictionary<TKey, TValue>` jest faktyczną implementacją, wprowadzoną w .NET Framework 2.0. Przechowuje dane w tablicy haszującej, zapewniając efektywne wyszukiwanie, dodawanie i usuwanie.
 
 Jednakże warto zauważyć, że mimo iż słowniki są niezwykle wszechstronne, nie zawsze mogą być najlepszym rozwiązaniem. Dla utrzymania uporządkowanych kolekcji, możesz rozważyć `SortedDictionary<TKey, TValue>` lub `SortedList<TKey, TValue>`, które oferują uporządkowanie kosztem wolniejszych operacji wstawiania i usuwania. W scenariuszach wymagających bezpieczeństwa wątków, `ConcurrentDictionary<TKey, TValue>` dodaje obciążenie, ale zapewnia bezpieczny dostęp z wielu wątków bez ręcznego blokowania.

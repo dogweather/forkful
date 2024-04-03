@@ -9,9 +9,6 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## What & Why? - Mitä & Miksi?
-Aloitettaessa uusi projekti, luot pohjan koodille. Programmoijat aloittavat uusia projekteja testatakseen ideoita, ratkaistakseen ongelmia tai kehittääkseen taitojaan.
-
 ## How to: - Näin teet:
 Aloita luomalla uusi kansio ja alustamalla Node-projekti:
 

@@ -16,12 +16,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---
 
-## Gì và Tại sao?
-
-YAML, viết tắt của "YAML Ain't Markup Language", là một ngôn ngữ tuần tự hóa dữ liệu dễ đọc cho con người, thường được sử dụng cho các tệp cấu hình. Lập trình viên thường sử dụng nó vì sự đơn giản và dễ đọc của nó trong nhiều môi trường lập trình khác nhau, bao gồm cả trong lĩnh vực viết kịch bản của Visual Basic for Applications (VBA) nhằm tăng cường khả năng tương thích và lưu trữ, trao đổi dữ liệu.
-
 ## Làm thế nào:
-
 Làm việc với YAML trong VBA đòi hỏi phải hiểu cách phân tích và chuyển đổi YAML thành định dạng mà VBA có thể dễ dàng thao tác, thường là dictionaries hoặc collections. Thật không may, VBA không hỗ trợ phân tích cú pháp hoặc tuần tự hóa YAML một cách tự nhiên. Tuy nhiên, bạn có thể sử dụng sự kết hợp của các công cụ chuyển đổi JSON và đối tượng dictionary để làm việc với dữ liệu YAML, xem xét mối quan hệ chặt chẽ của YAML với JSON.
 
 Đầu tiên, chuyển đổi dữ liệu YAML của bạn sang JSON sử dụng một trình chuyển đổi trực tuyến hoặc công cụ chuyển đổi YAML thành JSON trong môi trường phát triển của bạn. Sau khi chuyển đổi, bạn có thể sử dụng ví dụ sau để phân tích JSON trong VBA, lưu ý rằng cách tiếp cận này gián tiếp cho phép bạn làm việc với YAML:
@@ -52,7 +47,6 @@ End Function
 Trong ví dụ này, hàm `JsonParser` là nơi bạn sẽ phân tích JSON. Có các thư viện khác nhau hỗ trợ phân tích JSON, vì thư viện phân tích YAML trực tiếp cho VBA là khá ít.
 
 ## Sâu hơn nữa
-
 Sự vắng mặt của việc xử lý trực tiếp YAML trong VBA có thể được giải thích bởi độ tuổi và môi trường mà nó được xây dựng cho, không được thiết kế ban đầu với các định dạng tuần tự hóa dữ liệu hiện đại. YAML xuất hiện như một định dạng cấu hình và tuần tự hóa phổ biến vào đầu những năm 2000, cùng với sự xuất hiện của các ứng dụng đòi hỏi tệp cấu hình thân thiện với con người hơn.
 
 Lập trình viên thường sử dụng công cụ hoặc thư viện bên ngoài để cầu nối giữa VBA và YAML. Điều này thường liên quan đến việc chuyển đổi YAML sang JSON, như đã chỉ ra, do sự hỗ trợ JSON có sẵn qua các thư viện khác nhau và sự tương đồng giữa JSON và YAML về cấu trúc và mục đích.

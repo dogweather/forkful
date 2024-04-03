@@ -11,12 +11,7 @@ title: Generating random numbers
 weight: 12
 ---
 
-## What & Why?
-
-Generating random numbers is a fundamental task in programming, used for everything from data sampling to game development. In Fish Shell, making use of system tools and built-in functions for this purpose allows programmers to incorporate randomness and variability into scripts and applications effectively.
-
 ## How to:
-
 Generating a random number in Fish can be straightforward, using the combination of system utilities and shell capabilities. Below are some examples demonstrating how to generate random numbers within specified ranges.
 
 **Generate a random number between 0 and 100:**
@@ -68,7 +63,6 @@ B
 Please note, the output will vary every time you run these commands due to the nature of randomness.
 
 ## Deep Dive
-
 The Fish Shell `random` function provides an easy-to-use interface for generating pseudo-random numbers. Internally, it wraps around system-level random number generation utilities, offering a portable way to introduce randomness into your scripts. However, it's essential to remember that the randomness provided by `random` is sufficient for most scripting tasks but might not meet the cryptographic security requirements for applications needing a higher degree of unpredictability.
 
 For high-stakes security contexts, consider using dedicated tools or programming libraries designed for cryptographic purposes, which provide stronger randomness guarantees. Nonetheless, for general scripting and applications where the highest security standards for randomness are not a requirement, Fish Shell's `random` function offers a convenient and effective solution.

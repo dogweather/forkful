@@ -11,9 +11,6 @@ title: Merkkijonon interpolointi
 weight: 8
 ---
 
-## What & Why? (Mitä ja Miksi?)
-Interpoloinnissa yhdistetään muuttujia ja kiinteää tekstiä yhdeksi merkkijonoksi. Koodarit käyttävät tätä menetelmää siksi, että se tekee koodista selkeämpää ja dynaamista sisällön yhdistämisen kautta.
-
 ## How to: (Kuinka tehdä:)
 ```PowerShell
 # Perusesimerkki

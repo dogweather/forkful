@@ -15,11 +15,7 @@ title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---
 
-## Cái gì & Tại sao?
-Các đối số dòng lệnh cho phép người dùng truyền dữ liệu vào chương trình khi họ chạy nó. Các lập trình viên sử dụng chúng để tùy chỉnh hành vi của chương trình mà không cần thay đổi mã.
-
 ## Làm thế nào:
-
 Trong TypeScript, bạn sử dụng Node.js để đọc các đối số dòng lệnh. Dưới đây là cách:
 
 ```typescript
@@ -39,7 +35,6 @@ Chạy script này như `ts-node yourscript.ts arg1 arg2` và xem:
 ```
 
 ## Đi sâu hơn
-
 Trở lại những ngày đầu dòng lệnh, tương tác người dùng chỉ xoay quanh văn bản. Linux, UNIX, và Windows sử dụng đối số dòng lệnh để bảo chương trình phải làm gì.
 
 Bây giờ để xem các phương án thay thế: ngoài `process.argv`, trong Node.js, bạn có thể sử dụng các thư viện như `yargs` hoặc `commander` để có thêm các tính năng như phân tích và xác nhận.
@@ -47,7 +42,6 @@ Bây giờ để xem các phương án thay thế: ngoài `process.argv`, trong 
 Bản chất của việc này trong TypeScript là đơn giản: `process.argv` là một mảng với tất cả các đối số. Chỉ mục 0 là đường dẫn đến Node, chỉ mục 1 là đường dẫn của script, nên các đối số thực sự bắt đầu từ chỉ mục 2.
 
 ## Xem thêm
-
 Để khám phá thêm, bắt đầu với những điều này:
 
 - [Tài liệu về process.argv của Node.js](https://nodejs.org/docs/latest/api/process.html#process_process_argv)

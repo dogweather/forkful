@@ -15,9 +15,6 @@ title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
 weight: 28
 ---
 
-## What & Why? 什么和为什么？
-将日期转换为字符串意味着把日期数据格式改成文本形式。程序员这样做为了显示数据、存储或日志记录等方便。
-
 ## How to: 怎么做？
 ```Python
 from datetime import datetime

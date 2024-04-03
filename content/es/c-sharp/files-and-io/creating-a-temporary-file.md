@@ -11,9 +11,6 @@ title: Creando un archivo temporal
 weight: 21
 ---
 
-## ¿Qué y Por Qué?
-Crear un archivo temporal significa hacer un fichero que se usa durante una sesión y luego se descarta o elimina automáticamente. Los programadores hacen esto para gestionar datos que son importantes temporalmente, como caché, o para evitar el uso excesivo de recursos de memoria.
-
 ## Cómo hacerlo:
 Para crear un archivo temporal en C#, podemos usar la clase `Path` para generar un nombre de archivo único y `File` para trabajar con el archivo. Aquí un ejemplo:
 

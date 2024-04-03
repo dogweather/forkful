@@ -11,9 +11,6 @@ title: Lavorare con TOML
 weight: 39
 ---
 
-## Cosa & Perché?
-TOML, acronimo di Tom's Obvious, Minimal Language (Linguaggio Minimo e Ovvio di Tom), è un formato di serializzazione dei dati. I programmatori lo adorano per la sua semplicità e leggibilità; è eccellente per file di configurazione, ha un'atmosfera simile a YAML ma meno ingombrante di JSON per un essere umano.
-
 ## Come Fare:
 Prima di tutto, installare `toml-cli` per giocare con TOML in Bash. Utile per leggere o modificare file TOML al volo.
 

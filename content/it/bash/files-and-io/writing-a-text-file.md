@@ -12,12 +12,7 @@ title: Scrivere un file di testo
 weight: 24
 ---
 
-## Cosa e Perché?
-
-Scrivere un file di testo in Bash consente di automatizzare la memorizzazione dei dati, il logging, le impostazioni di configurazione e altro. È una competenza fondamentale per la scrittura di script di shell, che consente ai programmatori di salvare l'output dei comandi, l'esecuzione di script o l'input dell'utente per la generazione di rapporti, l'elaborazione o l'esecuzione futura.
-
 ## Come fare:
-
 Bash fornisce metodi semplici per scrivere in un file. I più comuni sono l'utilizzo degli operatori di reindirizzamento (`>`, `>>`) e il comando `tee`. Ecco un breve sguardo ad entrambe le tecniche.
 
 Utilizzando il reindirizzamento, è possibile scrivere l'output direttamente in un file. L'operatore `>` scrive il contenuto in un file, sostituendolo se esiste già, mentre `>>` aggiunge al file esistente senza cancellarne il contenuto.

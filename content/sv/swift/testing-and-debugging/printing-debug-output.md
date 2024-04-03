@@ -11,9 +11,6 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## Vad & Varför?
-Skriva ut debug-meddelanden hjälper utvecklare att förstå vad som händer i koden under körning. Det används för felsökning och för att snabbt få insikt i programmets tillstånd eller variabelvärden.
-
 ## Hur gör man:
 ```Swift
 // Enkel utskrift

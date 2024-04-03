@@ -11,9 +11,6 @@ title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---
 
-## Hva og hvorfor?
-Å strippe anførselstegn fra en streng innebærer å fjerne de ekstra innpakningene for å få tak i den rene teksten inni. Programmerere gjør dette for å sanere input, unngå feil og forberede data til bearbeiding der anførselstegn er hinder, ikke funksjoner.
-
 ## Hvordan:
 Elixir har ingen innebygd 'fjern anførselstegn'-funksjon, men det er enkelt å rulle din egen med mønsterpassing eller `String`-funksjoner. Se disse kodestykkene:
 

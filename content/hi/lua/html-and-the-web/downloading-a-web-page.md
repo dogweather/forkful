@@ -28,12 +28,7 @@ title: "\u0935\u0947\u092C \u092A\u0947\u091C \u0921\u093E\u0909\u0928\u0932\u09
 weight: 42
 ---
 
-## What & Why? (क्या और क्यों?)
-
-वेब पेज डाउनलोड करना मतलब इंटरनेट से सूचना लेकर उसे अपने कंप्यूटर पर सेव करना। प्रोग्रामर्स इसे डाटा एनालिसिस, टेस्टिंग और वेब साइट की कंटेंट मॉनिटरिंग के लिए करते हैं।
-
 ## How to: (कैसे करें:)
-
 Lua में वेब पेज डाउनलोड करने के लिए सबसे सीधा तरीका `socket.http` मॉड्यूल का इस्तेमाल करना है। इसे `luasocket` लाइब्रेरी के तौर पर इंस्टॉल करना पड़ता है।
 
 ```Lua
@@ -59,13 +54,11 @@ Web page downloaded successfully!
 ```
 
 ## Deep Dive (गहराई से समझें):
-
 पहले जमाने में, वेब पेज डाउनलोड करना बहोत जटिल था। लेकिन आज, `luasocket` जैसे लाइब्रेरीज ने इसे बहोत सरल बना दिया है। हालांकि `socket.http` बहुत ही बुनियादी है, और यह सिर्फ HTTP GET रिक्वेस्ट को हैंडल कर सकता है। अगर आपको POST रिक्वेस्ट या कुकीज़ को मैनेज करना है, तो आपको `luasec` जो कि `luasocket` पर आधारित है, या किसी और अधिक एडवांस लाइब्रेरी की जरुरत होगी।
 
 आप वेब स्क्रेपिंग के लिए `Lua` के साथ-साथ दूसरे ऑप्शन्स भी तलाश सकते हैं, जैसे कि `Python` के `BeautifulSoup` या `Scrapy`। लेकिन Lua का सादगी और परफॉरमेंस में उत्कृष्टता इसे कुछ अनुप्रयोगों के लिए एक बेहतर पसंद बनाते हैं।
 
 ## See Also (देखें भी):
-
 - LuaSocket reference: [http://w3.impa.br/~diego/software/luasocket/http.html](http://w3.impa.br/~diego/software/luasocket/http.html)
 - LuaSec for HTTPS support: [https://github.com/brunoos/luasec](https://github.com/brunoos/luasec)
 - Lua programming homepage: [https://www.lua.org/](https://www.lua.org/)

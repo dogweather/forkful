@@ -11,9 +11,6 @@ title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---
 
-## Vad & Varför?
-Att ta bort citattecken från en sträng innebär att man skalar bort de dubbla eller enkla citattecken som omsluter textvärden. Programmerare gör ofta detta för att rensa användarinput, för att säkerställa konsekvens i databehandlingen, eller för att förbereda data för system som kan bli förvirrade av de extra tecknen.
-
 ## Hur:
 Ruby har några fiffiga knep i ärmen för att klippa bort de där irriterande citattecknen. Du kan använda `gsub` eller `delete` metoder för att utföra jobbet. Här är lite kod att tugga på:
 

@@ -12,12 +12,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mikä & Miksi?
-
-Assosiatiiviset taulukot eli hajautustaulut Clojuressa mahdollistavat tietojen tallentamisen ja hakemisen avain-arvo -pareina. Ne ovat avainratkaisu rakenteellisen datan hallintaan, tehden tiettyjen elementtien hakemisesta nopeampaa ilman listan läpikäyntiä.
-
 ## Kuinka:
-
 Clojuressa assosiatiivisten taulukoiden (hajautustaulujen) luominen ja käsittely on suoraviivaista. Sukelletaan sisään esimerkkien kautta.
 
 Hajautustaulun luominen:
@@ -72,7 +67,6 @@ Ja ehdolliseen pääsyyn, `find` palauttaa avain-arvo -parin, jos avain löytyy:
 ```
 
 ## Syväsukellus
-
 Clojuren assosiatiiviset taulukot, joita yleisesti kutsutaan myös hajautustauluiksi, ovat uskomattoman monipuolisia ja tehokkaita avain-arvo -pohjaisen datan hallintaan. Ne ovat osa Clojuren rikasta kokoelmakirjastoa, syvällä kielen filosofiassa, joka korostaa muuttumattomuutta ja funktionaalista ohjelmointia. Toisin kuin taulukot tai listat, jotka vaativat O(n) aikavaativuuden elementtien hakemiseen, hajautustaulut tarjoavat lähes vakioajan aikavaativuuden haettessa, tehden niistä erittäin tehokkaita hakutoiminnoissa.
 
 Voisi väittää, että Clojuren vektorit voisivat palvella samankaltaista tarkoitusta indeksoinnin kautta, mutta hajautustaulut loistavat käsiteltäessä epäjärjestäytynyttä ja merkityksellä varustettua dataa, jossa avain tarjoaa merkityksellisen kuvauksen pikemminkin kuin mielivaltainen indeksi.

@@ -10,12 +10,7 @@ title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä & Miksi?
-
-Numeroiden pyöristäminen tarkoittaa desimaalien karsimista yksinkertaisempaan arvoon, joka on riittävän hyvä tietyssä kontekstissa. Ohjelmoijat pyöristävät numeroita yksinkertaistaakseen tuloksia, säästääkseen tilaa tai koska tarkka arvo ei ole olennainen—kuten silloin, kun silmämääräisesti tarkastellaan prosessorin käyttöä tai levytilaa, ja desimaaleilla ei ole päivää kaatavaa merkitystä.
-
 ## Kuinka:
-
 Tässä tietoisku Bashin pyöristämisestä:
 
 ```Bash
@@ -42,7 +37,6 @@ Esimerkkitulosteet—suoraan terminaalista:
 ```
 
 ## Syväsukellus
-
 Aikoinaan, kun Bash-skripteissä ei ollut `bc`:tä tai `printf`:iä matematiikan temppuihin, vanhan koulukunnan täytyi turvautua ulkoisiin työkaluihin tai nokkeliin kiertoteihin. Nyt `bc` mahdollistaa tarkan matematiikan tekemisen. On kuitenkin hyvä muistaa, että `bc` ei pyöristä oletusarvoisesti—se suorittaa alaspäin pyöristämisen. Scale-osio määrittää desimaalipisteen käsittelyn.
 
 Vaihtoehtoja? Voisit käyttää `awk`:ia pyöristämiseen vaihtamatta `bc`:hen tai käsitellä `perl`:iä painavampien matematiikan tarpeiden kanssa. Masokisteille, mene puhdas Bash esimerkiksi iteratiivisella merkkijonomanipulaatiolla – mutta miksi?
@@ -50,7 +44,6 @@ Vaihtoehtoja? Voisit käyttää `awk`:ia pyöristämiseen vaihtamatta `bc`:hen t
 Yksityiskohtien osalta, `bc` ei vain pyöristä, se tekee paljon matematiikkajuttuja—skaalaa, sinittää, neliöjuurittaa, sinä nimität sen. `printf` on enemmän tekstien muotoilusta, mutta hei, se pyöristää numeroita, joten emme valita.
 
 ## Katso Myös
-
 Niille, jotka haluavat lisää:
 
 - GNU `bc` manuaali: https://www.gnu.org/software/bc/manual/html_mono/bc.html

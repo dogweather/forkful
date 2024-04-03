@@ -13,9 +13,6 @@ title: Escrevendo um arquivo de texto
 weight: 24
 ---
 
-## O Que & Por Que?
-Escrever um arquivo de texto em JavaScript geralmente está relacionado a criar e salvar dados em um formato simples e legível para fins de registro (logging), exportação de entrada de usuário ou configurações. Essa funcionalidade é crucial para aplicações que precisam persistir dados além do tempo de vida do processo da aplicação, fornecendo uma maneira de armazenar e, posteriormente, recuperar ou compartilhar informações.
-
 ## Como Fazer:
 Em um ambiente Node.js, você pode usar o módulo integrado `fs` (File System) para escrever arquivos de texto. Este exemplo demonstra como escrever texto em um arquivo de forma assíncrona:
 

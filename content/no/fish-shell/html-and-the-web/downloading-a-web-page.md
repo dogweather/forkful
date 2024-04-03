@@ -11,9 +11,6 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## Hva & Hvorfor?
-Nedlasting av en nettside betyr å hente HTML-koden fra en nettadresse til lokalt lagringsmedium. Programmerere gjør dette for å analysere innhold, teste nettsider eller automatisere datainnsamling.
-
 ## Hvordan:
 ```Fish Shell
 # Last ned en nettside med curl

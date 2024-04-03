@@ -18,9 +18,6 @@ title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---
 
-## Cái gì & Tại sao?
-So sánh hai ngày trong Dart bao gồm việc đánh giá sự khác biệt về thời gian hoặc thứ tự giữa chúng, là một chức năng thiết yếu trong các ứng dụng quản lý sự kiện, hạn chót hoặc bất kỳ dữ liệu nhạy cảm với thời gian nào. Lập trình viên thường cần điều này để kiểm soát luồng logic, xác thực hoặc sắp xếp dữ liệu dựa trên điều kiện thời gian.
-
 ## Làm thế nào:
 Trong Dart, bạn có thể so sánh các ngày sử dụng lớp `DateTime`, có các phương thức như `isBefore`, `isAfter`, và `isAtSameMomentAs` để so sánh trực tiếp. Bên cạnh đó, sự khác biệt giữa các ngày có thể được xác định sử dụng phương thức `difference()`, cung cấp một đối tượng `Duration` chi tiết khoảng thời gian giữa hai điểm thời gian.
 

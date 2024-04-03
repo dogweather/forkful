@@ -9,9 +9,6 @@ title: Organizing code into functions
 weight: 18
 ---
 
-## What & Why?
-Organizing code into functions splits your script into reusable chunks. It's all about making your code clean, manageable, and less buggy. Modular code rocks because it saves you time, keeps your sanity, and simplifies debugging and unit testing.
-
 ## How to:
 Imagine you're writing a quick script to greet users:
 

@@ -10,9 +10,6 @@ title: "An\xE1lise de HTML"
 weight: 43
 ---
 
-## O Que é e Porquê?
-Analisar HTML é o processo de converter string contendo HTML em algo que possamos manipular no código, como um DOM (Document Object Model). Programadores fazem isso para poder extrair informações, modificar o conteúdo ou interagir com páginas web de forma programática.
-
 ## Como Fazer:
 Para analisar HTML em TypeScript, você pode usar a biblioteca `node-html-parser`. Aqui está um exemplo de código simples para começar:
 

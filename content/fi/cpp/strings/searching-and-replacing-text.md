@@ -10,9 +10,6 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## What & Why? (Mitä & Miksi?)
-Tekstin etsiminen ja korvaaminen on tekstipätkien vaihtamista. Ohjelmoijat käyttävät sitä korjatakseen bugeja, päivittääkseen koodia tai muokatakseen dataa.
-
 ## How to: (Kuinka:)
 ```C++
 #include <iostream>

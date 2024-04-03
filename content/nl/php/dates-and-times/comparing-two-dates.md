@@ -12,9 +12,6 @@ title: Twee datums vergelijken
 weight: 27
 ---
 
-## Wat & Waarom?
-Twee datums vergelijken betekent controleren of ze hetzelfde zijn, of uitvinden welke eerder of later is. Programmeurs doen dit voor het beheren van planningen, evenementvolgordes of tijdgevoelige operaties zoals sessie-timeouts of het verlopen van abonnementen.
-
 ## Hoe te:
 PHP's `DateTime` objecten en vergelijkingsoperators maken dit eenvoudig. Hier is een eenvoudig voorbeeld:
 

@@ -12,14 +12,10 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mitä & Miksi?
-
-Testien kirjoittaminen JavaScriptillä viittaa automatisoitujen skriptien luomiseen, jotka ajavat koodiasi varmistaakseen sen toimivan odotetulla tavalla. Tämä voi merkittävästi parantaa sovellustesi luotettavuutta ja ylläpidettävyyttä. Ohjelmoijat tekevät tämän virheiden varhaisen havaitsemisen, koodin refaktoroinnin helpottamisen ja uusien ominaisuuksien varmistamisen, etteivät ne riko olemassa olevaa toiminnallisuutta, vuoksi.
-
 ## Miten:
 
-### Natiivi lähestymistapa (käyttäen Jest)
 
+### Natiivi lähestymistapa (käyttäen Jest)
 Jest on suosittu testauskehys, joka tarjoaa ystävällisen API:n yksikkötestien kirjoittamiseen JavaScriptillä. Se vaatii minimaalisen konfiguraation ja sisältää ominaisuuksia kuten mock-funktiot, ajastimet ja tilannevedostestauksen.
 
 1. **Asennus**:
@@ -54,7 +50,6 @@ PASS  ./sum.test.js
 ```
 
 ### Asynkronisen koodin testaaminen
-
 Jest tekee lupauksien ja async/await-syntaksin testaamisesta helppoa:
 
 ```javascript
@@ -70,7 +65,6 @@ test('asynkroninen summaus toimii', async () => {
 ```
 
 ### Kolmansien osapuolien kirjastojen käyttö (Mocha & Chai)
-
 Mocha on toinen suosittu testauskehys, jota usein käytetään yhdessä väittämäkirjasto Chain kanssa ilmaisuvoimaisempien testien tekemiseen.
 
 1. **Asennus**:

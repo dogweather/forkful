@@ -10,9 +10,6 @@ title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---
 
-## ¿Qué y Por Qué?
-¿Volcar todo tu código en un gran montón? Mala idea. ¿Dividirlo en funciones? Buena idea. Mantiene tu código Elm limpio, reutilizable y más fácil de probar. Al organizar tu código en funciones, agrupas el código que realiza tareas específicas, lo que hace que tu aplicación sea más mantenible y comprensible.
-
 ## Cómo hacerlo:
 Aquí tienes un fragmento de código Elm con una sencilla función para saludar a un usuario:
 

@@ -11,12 +11,7 @@ title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437
 weight: 45
 ---
 
-## What & Why? (Що та Чому?)
-
-Ruby allows sending HTTP requests with basic authentication easily. Basic authentication protects resources by requiring credentials (username, password). Programmers use it to access APIs or web services that require user verification.
-
 ## How to: (Як це зробити:)
-
 Here's the simplest way to send an HTTP request with basic authentication using Ruby's `net/http` library:
 
 ```Ruby
@@ -41,9 +36,7 @@ Sample output might look like the content of the requested resource:
 ```
 
 ## Deep Dive (Поглиблено):
-
 Ruby has supported HTTP requests for a long time. Basic auth isn't the latest trend (more secure alternatives exist, like OAuth), but it remains relevant for simplicity and legacy systems. Behind the scenes, Ruby encodes the credentials and adds an `Authorization` header to the HTTP request. It's not super secure (think plain text over HTTP), so use HTTPS to encrypt the transmission. Also, consider storing credentials securely and not hard-coding them.
 
 ## See Also (Дивіться також):
-
 - `HTTP` gem for a more feature-rich and friendly API: [https://github.com/httprb/http](https://github.com/httprb/http)

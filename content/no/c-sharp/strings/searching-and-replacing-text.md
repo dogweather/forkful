@@ -11,9 +11,6 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## Hva & Hvorfor?
-Søk og erstatt tekst er prosessen med å finne strenger innenfor en tekst og bytte dem ut med noe annet. Vi programmerere gjør dette for å endre data, automatisere redigeringer, eller massemodifisere kode.
-
 ## Slik gjør du:
 ```C#
 using System;

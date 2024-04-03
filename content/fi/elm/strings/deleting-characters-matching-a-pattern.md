@@ -11,9 +11,6 @@ title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---
 
-## What & Why? - Mikä ja Miksi?
-Poistamme merkkijonoista merkkejä, jotka vastaavat tiettyä mallia, siivotaan data tai muokataan tekstiä. Tämä on hyödyllistä, kun halutaan puhdistaa syötteitä, kuten käyttäjän syöttämiä tietoja tai tiedostojen sisältöä.
-
 ## How to: - Kuinka:
 ```Elm
 removePattern : String -> String -> String

@@ -15,11 +15,8 @@ title: Analisando uma data a partir de uma string
 weight: 30
 ---
 
-## O Que & Por Quê?
-
-Analisar uma data a partir de uma string é uma tarefa comum ao lidar com entrada de usuário ou leitura de dados de arquivos, o que envolve converter os dados em string para um formato de data reconhecido pela linguagem de programação. Em Rust, isso é essencial para operações com datas, como comparações, aritmética ou formatação, e melhora a validação e integridade dos dados em aplicações.
-
 ## Como Fazer:
+
 
 ### Usando a Biblioteca Padrão do Rust (`chrono` Crate)
 A biblioteca padrão do Rust não inclui diretamente a análise de datas, mas o `crate chrono`, amplamente utilizado, é uma solução robusta para manipulação de data e hora. Primeiro, adicione `chrono` ao seu `Cargo.toml`:

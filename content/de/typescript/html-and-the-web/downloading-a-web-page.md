@@ -10,9 +10,6 @@ title: Webseite herunterladen
 weight: 42
 ---
 
-## What & Why? (Was & Warum?)
-Das Herunterladen einer Webseite bedeutet, ihre Inhalte programmgesteuert abzurufen, um sie zu verarbeiten oder offline zu speichern. Programmierer machen das häufig, um Daten zu sammeln oder automatisch auf Webinhalte zu reagieren.
-
 ## How to: (Wie geht das:)
 ```TypeScript
 import axios from 'axios';

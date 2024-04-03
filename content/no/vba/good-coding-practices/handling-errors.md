@@ -13,12 +13,7 @@ title: "H\xE5ndtering av feil"
 weight: 16
 ---
 
-## Hva & Hvorfor?
-
-Feilhåndtering i Visual Basic for Applications (VBA) refererer til prosessen med å forutse, oppdage og løse programmerings-, applikasjons- eller kommunikasjonsfeil. Implementering av robust feilhåndtering er avgjørende for å opprettholde integriteten til applikasjoner og forbedre brukeropplevelsen ved å håndtere uventede problemer på en nådig måte uten å forårsake brå krasj eller tap av data.
-
 ## Hvordan:
-
 I VBA blir feilhåndtering typisk implementert ved bruk av `On Error`-setningen som instruerer VBA i hvordan man skal fortsette når en feil oppstår. De mest vanlige feilhåndteringsstrategiene involverer `On Error GoTo`-merket, `On Error Resume Next`, og `On Error GoTo 0`.
 
 **Eksempel 1: Bruk av `On Error GoTo`**
@@ -63,7 +58,6 @@ End Sub
 I dette tilfellet brytes ikke programmet på grunn av feilen; det sjekkes om en feil har oppstått, håndterer den hvis det har skjedd, og deretter tilbakestilles feilen.
 
 ## Dypdykk
-
 Historisk sett har feilhåndtering i programmeringsspråk utviklet seg fra enkle goto-setninger til mer sofistikerte mekanismer som unntak i språk som Java og C#. VBAs feilhåndtering, selv om den ikke er like kraftig eller fleksibel som moderne unntakshåndtering, tjener sitt formål innenfor konteksten av språkets anvendelse i automatisering av oppgaver i Microsoft Office-miljøer.
 
 Den primære begrensningen til VBAs feilhåndtering ligger i dens noe tungvinte og manuelle tilnærming, som krever nøye plassering av feilhåndteringskode og klar forståelse av utførelsesflyten. Moderne programmeringsspråk tilbyr typisk mer elegante løsninger, som try-catch-blokker, som automatisk håndterer flyten til feilhåndteringskoden uten behov for manuelle sjekker eller hopp i kodeutførelsen.

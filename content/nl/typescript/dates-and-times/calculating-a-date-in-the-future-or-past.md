@@ -14,12 +14,7 @@ title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---
 
-## Wat & Waarom?
-
-Een toekomstige of verleden datum berekenen gaat over het aanpassen van een huidige datum om te zien welke dag het zal zijn, bijvoorbeeld over 10 dagen, of welke dag het 10 dagen geleden was. Programmeurs doen dit voor functies zoals vervaldatums, het plannen van evenementen, of het uitvogelen van tijdsverschillen.
-
 ## Hoe te:
-
 ```TypeScript
 // Huidige datum ophalen
 const today: Date = new Date();
@@ -39,7 +34,6 @@ Tien dagen geleden was: Woe Apr 03 2023
 ```
 
 ## Uitdieping
-
 Historisch gezien is het beheren van datums in JavaScript—en bij uitbreiding TypeScript—lastig geweest vanwege de eigenaardigheden van het Date-object en tijdzones. Alternatieve bibliotheken zoals Moment.js en date-fns hebben abstracties geboden om deze complexiteit te hanteren. Met ES6 kwam betere ondersteuning voor internationalisatie via de `Intl` API, die TypeScript ook kan gebruiken.
 
 Bij het berekenen van datums, let op veranderingen in de zomertijd en schrikkelseconden. Deze kunnen eenvoudige berekeningen zoals het toevoegen van 24 uur aan een datum verstoren. Overweeg ook altijd de locale en tijdzone van de gebruiker bij het weergeven van berekende datums.
@@ -56,7 +50,6 @@ console.log(result.toDateString());
 Ze behandelen ook randgevallen en tijdzoneproblemen, waardoor veel van de pijn van datumrekenkunde weggenomen wordt.
 
 ## Zie ook
-
 - [MDN Datumreferentie](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 - [date-fns Bibliotheek](https://date-fns.org/)
 - [Luxon Documentatie](https://moment.github.io/luxon/#/)

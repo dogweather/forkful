@@ -11,9 +11,6 @@ title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---
 
-## Vad & Varför?
-Att beräkna ett datum i framtiden eller förflutet innebär att ta ett befintligt datum och lägga till eller dra ifrån tid. Programmerare gör detta för att hantera bokningar, påminnelser, tidsfrister eller varje gång tid är en viktig faktor i applikationen.
-
 ## Hur gör man:
 PHP gör datumhantering enkel med inbyggda funktioner. Här är ett snabbt exempel:
 
@@ -31,6 +28,7 @@ $pastDate->sub($interval);
 echo $pastDate->format('Y-m-d') . "\n"; // Visar förflutet datum
 ?>
 ```
+
 ### Exempelutskrift:
 ```
 2023-04-27  // 10 dagar från idag i framtiden

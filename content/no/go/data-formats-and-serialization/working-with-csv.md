@@ -13,16 +13,10 @@ title: Arbeide med CSV
 weight: 37
 ---
 
-## Hva og hvorfor?
-
-Comma-Separated Values (CSV)-formatet er allestedsnærværende for datautveksling på grunn av sin enkelhet og enkel integrasjon med de fleste programmeringsspråk, inkludert Go. Programmerere jobber ofte med CSV-filer for datamigrering, rapportskaping, eller dataanalyse, noe som gjør forståelse av CSV-manipulasjon kritisk i et programvareutviklingsverktøysett.
-
 ## Hvordan:
-
 Å jobbe med CSV-filer i Go er greit, takket være standardbiblioteket, `encoding/csv`. Nedenfor er en grunnleggende gjennomgang på hvordan lese og skrive CSV-filer.
 
 ### Lese en CSV-fil
-
 For å lese fra en CSV-fil, åpner du først filen ved hjelp av `os.Open`, deretter oppretter du en ny CSV-leser med `csv.NewReader`.
 
 ```go
@@ -56,7 +50,6 @@ func main() {
 Denne kodesnutten vil lese alle poster fra `data.csv` og skrive dem ut. Hver post er en skive av felt.
 
 ### Skrive til en CSV-fil
-
 For skriving, bruker du `csv.NewWriter` og `writer.WriteAll` eller `writer.Write` for å skrive flere eller enkelt CSV-poster, henholdsvis.
 
 ```go
@@ -92,7 +85,6 @@ func main() {
 Dette vil skape en fil med navnet `output.csv` med de oppgitte postene. Husk alltid å tømme skrivebufferen for å sikre at alle bufrede data skrives til filen.
 
 ## Dypdykk
-
 Go `encoding/csv`-pakken gir robust støtte for lesing og skriving av CSV-filer, men den er designet med enkelhet i tankene, noe som betyr at den ikke håndterer mer komplekse scenarioer som automatisk oppdagelse av skilletegn, håndtering av sitater eller innebygde linjeskift i felt uten manuell håndtering.
 
 Historisk har håndtering av CSV i programmeringsspråk ofte vært omstendelig på grunn av disse kompleksitetene, men Gos standardbibliotek abstraherer mange av disse problemene, slik at utviklere kan jobbe med CSV-data med relativ letthet. For mer kompleks CSV-manipulasjon kan det imidlertid være nødvendig med tredjepartsbiblioteker som `gocsv` eller å håndtere parsing manuelt.

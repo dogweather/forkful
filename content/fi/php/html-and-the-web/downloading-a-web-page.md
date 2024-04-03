@@ -11,9 +11,6 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## What & Why? (Mitä & Miksi?)
-Webbisivun lataaminen tarkoittaa sivun sisällön noutamista internetistä. Ohjelmoijat lataavat sivuja datan keräämiseen, API-vasteiden tarkistamiseen ja automaation toteuttamiseen.
-
 ## How to: (Kuinka tehdä:)
 PHP:llä webbisivun lataaminen onnistuu `file_get_contents`-funktiolla tai cURL-kirjastolla. Tässä on esimerkki molemmista.
 

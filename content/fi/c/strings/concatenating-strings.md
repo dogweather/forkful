@@ -13,12 +13,7 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## Mitä & Miksi?
-
-Merkkijonojen yhdistäminen C-kielessä tarkoittaa kahden tai useamman merkkijonon liittämistä peräkkäin uuden merkkijonon muodostamiseksi. Ohjelmoijat suorittavat tämän toimenpiteen dynaamisesti rakentaakseen merkkijonoja suoritusaikana, mikä on olennaista merkityksellisten viestien, tiedostopolkujen tai muiden eri merkkijonolähteistä koottujen tietojen luomisessa.
-
 ## Miten:
-
 C-kielessä merkkijonot ovat merkkejä sisältäviä taulukoita, jotka päättyvät nolla-merkkiin (`\0`). Toisin kuin korkeamman tason kielissä, C ei tarjoa sisäänrakennettua merkkijonojen yhdistämistoimintoa. Sen sijaan käytät `<string.h>` kirjaston `strcat()`- tai `strncat()`-funktioita.
 
 Tässä on yksinkertainen esimerkki `strcat()` käytöstä:
@@ -61,7 +56,6 @@ int main() {
 Tämä rajoittaa yhdistämisen lähdemerkkijonon ensimmäisiin `num` merkkeihin, auttaen estämään puskuriylivuotoja.
 
 ## Syväsukellus
-
 Funktiot `strcat()` ja `strncat()` ovat olleet osa C:n standardikirjastoa sen alusta lähtien, heijastaen kielen matalan tason luonnetta, joka vaatii manuaalista merkkijonojen ja muistin hallintaa. Toisin kuin monet nykyaikaiset ohjelmointikielet, jotka käsittelevät merkkijonoja ensiluokkaisina objekteina sisäänrakennettujen yhdistämisoperaattoreiden (kuten `+` tai `.concat()`) kanssa, C:n lähestymistapa vaatii syvempää ymmärrystä osoittimista, muistin varauksesta ja potentiaalisista riskeistä, kuten puskuriylivuodoista.
 
 Vaikka `strcat()`- ja `strncat()`-funktiot ovat laajalti käytössä, niitä usein arvostellaan niiden mahdollisuudesta luoda tietoturvariskejä, jos niitä ei käytetä varoen. Puskuriylivuodot, joissa tiedot ylittävät varatun muistin, voivat johtaa kaatumisiin tai niitä voidaan käyttää mielivaltaisen koodin suorittamiseen. Tämän seurauksena ohjelmoijat kääntyvät yhä enemmän turvallisempien vaihtoehtojen, kuten `snprintf()`, puoleen, mikä tarjoaa ennustettavamman käyttäytymisen rajoittamalla kohdemerkkijonoon kirjoitettavien merkkien määrää sen koon perusteella:

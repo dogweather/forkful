@@ -15,9 +15,6 @@ title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1
 weight: 26
 ---
 
-## Cái gì & Tại sao?
-Việc tính toán một ngày trong tương lai hoặc quá khứ là để tìm ra ngày trước hoặc sau một khoảng thời gian nhất định. Lập trình viên thực hiện điều này cho các nhiệm vụ như thiết lập nhắc nhở, chạy các công việc theo lịch trình, hoặc xử lý ngày hết hạn.
-
 ## Làm thế nào:
 Trong Bash, bạn có thể sử dụng lệnh `date` kèm theo cờ `-d` để thao tác với các ngày. Dưới đây là cách làm:
 

@@ -9,9 +9,6 @@ title: Merkkijonojen osien poimiminen
 weight: 6
 ---
 
-## What & Why? - Mitä ja Miksi?
-Substringit ovat merkkijonoista poimittuja osajonoja. Ne auttavat meitä työstämään ja analysoimaan tekstiä tarpeen mukaan.
-
 ## How to: - Kuinka:
 ```Javascript
 let fullString = "Hei maailma!";
@@ -29,6 +26,7 @@ let slicedString = fullString.slice(8);
 
 console.log(slicedString); // Tulostaa: ilma!
 ```
+
 ## Deep Dive - Sukellus Syvyyksiin:
 Substringit ovat vanhastaan osa ohjelmointia. JavaScriptissä on useita tapoja: `substr`, `substring` ja `slice`. 
 

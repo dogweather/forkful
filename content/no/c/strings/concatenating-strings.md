@@ -13,12 +13,7 @@ title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---
 
-## Hva & Hvorfor?
-
-Strengsammensetning i C innebærer å slå sammen to eller flere strenger ende-til-ende for å danne en ny streng. Programmerere utfører denne operasjonen for å dynamisk konstruere strenger i kjøretid, essensielt for å lage meningsfulle meldinger, filbaner, eller hvilken som helst data sammensatt fra ulike strengkilder.
-
 ## Hvordan:
-
 I C er strenger er arrayer av tegn som avsluttes med et nulltegn (`\0`). I motsetning til i høyere programmeringsspråk, tilbyr ikke C en innebygd funksjon for strengsammensetning. I stedet bruker du `strcat()` eller `strncat()` funksjonene fra `<string.h>` biblioteket.
 
 Her er et enkelt eksempel som bruker `strcat()`:
@@ -61,7 +56,6 @@ int main() {
 Dette begrenser sammensetningen til de første `num` tegnene av kildestrengen, noe som hjelper med å forhindre bufferoverflyt.
 
 ## Dypdykk
-
 Funksjonene `strcat()` og `strncat()` har vært en del av C-standardbiblioteket siden dets begynnelse, noe som reflekterer språkets lavnivå-natur som krever manuell håndtering av strenger og minne. I motsetning til mange moderne programmeringsspråk som behandler strenger som førsteklasses objekter med innebygde sammensetningsoperatorer (som `+` eller `.concat()`), krever C's tilnærming en dypere forståelse av pekere, minnetildeling, og potensielle farer som bufferoverflyt.
 
 Selv om `strcat()` og `strncat()` er mye brukt, kritiseres de ofte for deres potensial til å skape sikkerhetsproblemer om de ikke brukes forsiktig. Bufferoverflyt, hvor data overskrider minnet som er tildelt, kan føre til krasj eller bli utnyttet for vilkårlig kodeeksekusjon. Som et resultat vender programmerere seg stadig mer til tryggere alternativer, slik som `snprintf()`, som gir mer forutsigbar oppførsel ved å begrense antallet tegn skrevet til målstrengen basert på størrelsen dens:

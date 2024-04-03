@@ -17,12 +17,7 @@ title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---
 
-## Gì và Tại sao?
-
-Xóa các ký tự khớp với một mẫu trong Lua là về việc sử dụng các mẫu để xác định và loại bỏ những chuỗi ký tự cụ thể khỏi một chuỗi. Các lập trình viên làm điều này cho các tác vụ như làm sạch đầu vào, loại bỏ dữ liệu không mong muốn, hoặc tiền xử lý văn bản cho các thao tác tiếp theo.
-
 ## Làm thế nào:
-
 Trong Lua, chúng ta có thể sử dụng hàm `gsub` để thay thế các lần xuất hiện của một mẫu với một chuỗi khác – một chuỗi rỗng khi chúng ta muốn xóa chúng:
 
 ```lua
@@ -37,7 +32,6 @@ print("Số lượng thay thế đã thực hiện:", numOfReplacements) -- Kế
 Lưu ý rằng `gsub` cũng trả lại số lượng thay thế đã thực hiện, đây có thể là thông tin hữu ích.
 
 ## Sâu hơn nữa
-
 Mẫu Lua đơn giản hơn so với các biểu thức chính quy tìm thấy trong các ngôn ngữ khác nhưng vẫn rất mạnh mẽ. Lịch sử, quyết định của Lua để triển khai một cơ chế khớp mẫu nhẹ hơn bắt nguồn từ việc giữ cho ngôn ngữ này cả nhẹ và nhanh.
 
 Các phương án khác bao gồm việc sử dụng vòng lặp với `string.find` và `string.sub` để kiểm tra và thao tác chuỗi một cách thủ công, nhưng điều này nói chung kém hiệu quả hơn so với việc khớp mẫu với `gsub`.
@@ -45,7 +39,6 @@ Các phương án khác bao gồm việc sử dụng vòng lặp với `string.f
 Về mặt triển khai, khi `gsub` được gọi với một mẫu, Lua nội bộ biên dịch mẫu này thành một mã bytecode, sau đó được thực thi bởi trình khớp mẫu. Đáng chú ý là có sự khác biệt giữa mẫu Lua và biểu thức chính quy thực sự, với cái trước có bộ đặc điểm nhỏ hơn bao gồm loại trừ các cấu trúc như nhìn trước hoặc tham chiếu ngược.
 
 ## Xem Thêm
-
 - Lua 5.4 Manual tham khảo cho `string.gsub`: https://www.lua.org/manual/5.4/manual.html#pdf-string.gsub
 - Lập trình trong Lua (ấn bản đầu tiên) có sẵn trực tuyến để hiểu về mẫu: https://www.lua.org/pil/20.2.html
 - Trình kiểm tra mẫu Lua trực tuyến để thử nghiệm với khớp mẫu của Lua: https://www.lua.org/cgi-bin/demo

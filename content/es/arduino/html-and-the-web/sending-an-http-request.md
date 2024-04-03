@@ -10,9 +10,6 @@ title: Enviando una solicitud http
 weight: 44
 ---
 
-## Qué es y por qué?
-Enviar una petición HTTP es básicamente pedirle datos a una página web o servidor. Lo hacemos para interactuar con servicios web, sea para recoger información o enviarla.
-
 ## Cómo hacerlo:
 El siguiente código usa la biblioteca ESP8266WiFi para un módulo ESP8266, pero es similar para otros módulos:
 

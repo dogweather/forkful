@@ -11,9 +11,6 @@ title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Envoyer une requête HTTP, c'est demander des données à un serveur web. Les programmeurs font ça pour interagir avec des services web, récupérer des infos, soumettre des formulaires, etc.
-
 ## How to: (Comment faire :)
 Pour envoyer une requête HTTP en C++, vous pouvez utiliser la bibliothèque `cpr`. Voici comment :
 

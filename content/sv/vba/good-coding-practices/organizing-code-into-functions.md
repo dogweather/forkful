@@ -13,12 +13,7 @@ title: Att organisera kod i funktioner
 weight: 18
 ---
 
-## Vad & Varför?
-
-Att organisera kod i funktioner i Visual Basic for Applications (VBA) innebär att man bryter ner ett program i mindre, hanterbara delar kända som funktioner. Programmerare gör detta för att förbättra kodläsbarheten, återanvända kod effektivt samt förenkla felsökning och underhållsprocesser.
-
 ## Hur man gör:
-
 I VBA definieras funktioner med hjälp av uttrycken `Function` och `End Function`. Här är ett enkelt exempel på hur man skapar en funktion som beräknar arean av en rektangel:
 
 ```basic
@@ -40,7 +35,6 @@ End Sub
 När den här koden körs, visar den en meddelanderuta som säger: `Arean är 50`.
 
 ### Skicka variabler ByRef och ByVal
-
 VBA tillåter dig att skicka variabler till funktioner antingen genom referens (`ByRef`) eller genom värde (`ByVal`). Det förra innebär att den ursprungliga variabeln kan modifieras av funktionen, medan det senare skickar en kopia, vilket skyddar den ursprungliga variabeln från förändringar.
 
 ```basic
@@ -55,7 +49,6 @@ End Function
 ```
 
 ## På djupet
-
 VBA, som ett händelsedrivet programmeringsspråk, lägger stor vikt vid funktioner och subrutiner för att hantera olika uppgifter. Till skillnad från många moderna språk har VBA en unik egenskap där nyckelordet `Function` inte bara deklarerar en block av återanvändbar kod utan också tillåter ett implicit returvärde som direkt tilldelas funktionens namn.
 
 Historiskt sett har designen av VBA-funktioner påverkats av tidigare programmeringsparadigmer där inkapsling och modularitet gradvis erkändes för deras betydelse i mjukvaruutveckling. Denna historiska bakgrund har lett till att VBA antagit en något konservativ men funktionell ansats till att organisera kod.

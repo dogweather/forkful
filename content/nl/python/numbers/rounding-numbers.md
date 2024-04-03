@@ -13,9 +13,6 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-Getallen afronden betekent dat ze worden aangepast om dichter bij een eenvoudigere of meer significante waarde te liggen. Programmeurs ronden getallen af om resultaten te vereenvoudigen, het aantal decimalen voor weergave te beperken, of voor bepaalde wiskundige doeleinden.
-
 ## Hoe te:
 Hier is de essentie van het afronden van getallen in Python:
 

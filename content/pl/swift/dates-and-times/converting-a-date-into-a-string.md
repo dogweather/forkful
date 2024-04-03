@@ -10,9 +10,6 @@ title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---
 
-## What & Why?
-Co i dlaczego? Konwersja daty na ciąg znaków umożliwia łatwy wyświetlanie i zapisywanie dat. Programiści robią to, by formatować daty w sposób zrozumiały dla użytkowników i różnych systemów.
-
 ## How to:
 Jak to zrobić? Użyj `DateFormatter` w Swift, aby przekształcić `Date` w `String`.
 

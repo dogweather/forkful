@@ -9,9 +9,6 @@ title: Trabajando con XML
 weight: 40
 ---
 
-## ¿Qué y por qué?
-XML es un lenguaje de marcado utilizado para almacenar y transportar datos. Los programadores trabajan con XML para permitir la interoperabilidad entre aplicaciones y sistemas - piense en intercambio de datos y configuraciones.
-
 ## Cómo hacerlo:
 Leer XML con SimpleXML:
 

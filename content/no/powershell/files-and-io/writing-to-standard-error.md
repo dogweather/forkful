@@ -14,12 +14,7 @@ title: Skriving til standardfeil
 weight: 25
 ---
 
-## Hva & Hvorfor?
-
-Å skrive til standardfeil (stderr) i PowerShell innebærer å sende feilmeldinger eller diagnostikk direkte til stderr-strømmen, forskjellig fra standardutdata-strømmen (stdout). Denne separasjonen tillater mer presis kontroll over et skripts utdata, og muliggjør for utviklere å dirigere normale og feilmeldinger til forskjellige destinasjoner, noe som er grunnleggende for feilhåndtering og logging.
-
 ## Hvordan:
-
 PowerShell forenkler prosessen med å skrive til stderr gjennom bruk av `Write-Error` cmdlet eller ved å dirigere utdata til `$host.ui.WriteErrorLine()` metoden. Men, for direkte stderr-omdirigering, kan du foretrekke å bruke .NET metoder eller fildeskriptoromdirigering tilbudt av PowerShell selv.
 
 **Eksempel 1:** Bruke `Write-Error` for å skrive en feilmelding til stderr.

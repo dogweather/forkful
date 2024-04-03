@@ -15,12 +15,7 @@ title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---
 
-## Cái gì và Tại sao?
-
-Đọc các đối số dòng lệnh trong Rust cho phép chương trình nhận đầu vào từ người dùng khi khởi chạy. Điều này quan trọng cho hành vi tùy chỉnh mà không cần giao diện người dùng đồ họa (GUI).
-
 ## Cách thực hiện:
-
 Đây là cách đơn giản nhất để lấy các đối số:
 
 ```Rust
@@ -58,7 +53,6 @@ stuff
 ```
 
 ## Tìm hiểu kỹ lưỡng
-
 Lịch sử, các đối số dòng lệnh là hồi tưởng về những ngày mà giao diện đồ họa không phổ biến. Bây giờ, chúng tốt cho các kịch bản (scripts), máy chủ, hoặc công cụ.
 
 `std::env::args` của Rust sử dụng bộ lặp (iterator), hiệu quả về mặt bộ nhớ và hoạt động một cách lười biếng (lazy). Nó cũng xử lý Unicode. Có thêm `args_os` cho các chuỗi OS thô.
@@ -66,7 +60,6 @@ Lịch sử, các đối số dòng lệnh là hồi tưởng về những ngày
 Đối với việc phân tích phức tạp, các crate như `clap` hoặc `structopt` rất hữu ích. Chúng phân tích cờ lệnh, tùy chọn, và các lệnh phụ.
 
 ## Xem thêm
-
 - [Mô-đun `std::env` của Rust](https://doc.rust-lang.org/std/env/)
 - [Tài liệu crate `clap`](https://docs.rs/clap/)
 - [Sách Rust về Đối số Dòng Lệnh](https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html)

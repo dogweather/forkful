@@ -11,9 +11,6 @@ title: Comparando duas datas
 weight: 27
 ---
 
-## O Que & Porquê?
-Comparar duas datas significa verificar a relação temporal entre elas: qual é anterior, posterior ou se são a mesma. Programadores fazem isso para organizar eventos, validar períodos, gerenciar agendas ou qualquer tarefa que dependa de ordem cronológica.
-
 ## Como Fazer:
 No Haskell, você pode usar a biblioteca `Data.Time` para trabalhar com datas. Aqui está um exemplo simples:
 

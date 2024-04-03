@@ -14,9 +14,6 @@ title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---
 
-## Là gì & Tại sao?
-Nối chuỗi có nghĩa là ghép hai hoặc nhiều phần văn bản lại với nhau. Đó là một việc cơ bản và thiết yếu như sử dụng băng dính, cho phép bạn tạo ra các chuỗi mới một cách linh hoạt để hiển thị thông điệp, tạo mẫu, và nhiều hơn nữa.
-
 ## Làm thế nào:
 Elm có một toán tử tuyệt vời `(++)` để cứu ngày:
 

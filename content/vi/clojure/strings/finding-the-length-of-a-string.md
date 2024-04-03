@@ -15,9 +15,6 @@ title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---
 
-## Cái gì & Tại sao?
-Việc tìm độ dài của một chuỗi trong Clojure trả về số lượng các ký tự trong chuỗi đó. Các lập trình viên thường cần thông tin này để xác thực đầu vào, lặp qua các ký tự, hoặc cho các tác vụ thao tác chuỗi.
-
 ## Làm thế nào:
 Để lấy độ dài của một chuỗi trong Clojure, sử dụng hàm `count`:
 

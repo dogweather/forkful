@@ -13,12 +13,7 @@ title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---
 
-## Vad & Varför?
-
-Associativa arrayer, eller hashkartor, i Clojure låter dig lagra och hämta data med nyckel-värde-par. De är en gå-till-lösning för att hantera strukturerad data, vilket gör det snabbare att komma åt specifika element utan att iterera genom en lista.
-
 ## Hur man gör:
-
 I Clojure är det enkelt att skapa och manipulera associativa arrayer (hashkartor). Låt oss dyka in med exempel.
 
 För att skapa en hashkarta:
@@ -73,7 +68,6 @@ Och för villkorlig tillgång ger `find` ett nyckel-värde-par om nyckeln finns:
 ```
 
 ## Fördjupning
-
 Associativa arrayer i Clojure, även ofta benämnda som hashkartor, är otroligt mångsidiga och effektiva för att hantera nyckel-värde-baserad data. De är en del av Clojures rika samling av bibliotek, djupt rotade i språkets filosofi kring oföränderlighet och funktionell programmering. Till skillnad från arrayer eller listor som kräver O(n) tidskomplexitet för tillgång till element, erbjuder hashkartor nästan konstant tidskomplexitet för tillgång, vilket gör dem högeffektiva för uppslagsoperationer.
 
 Man kan argumentera för att vektorer i Clojure kan tjäna ett liknande syfte genom indexerad tillgång, men hashkartor lyser när det kommer till att hantera icke-sekventiell och märkt data, där nyckeln ger en meningsfull beskrivning snarare än ett godtyckligt index.

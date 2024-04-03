@@ -12,12 +12,7 @@ title: Generowanie liczb losowych
 weight: 12
 ---
 
-## Co i dlaczego?
-
-Generowanie losowych liczb polega na tworzeniu liczb, których nie można rozsądnie przewidzieć lepiej niż przez przypadek, co jest kluczowe dla rozwoju symulacji, gier i algorytmów bezpieczeństwa. Programiści robią to, aby wprowadzić nieprzewidywalność lub symulować zjawiska rzeczywiste w swoich aplikacjach.
-
 ## Jak to zrobić:
-
 Python dostarcza moduł `random`, który pomaga w generowaniu losowych liczb do różnych zastosowań. Oto jak zacząć:
 
 1. **Importowanie modułu**
@@ -65,7 +60,6 @@ Python dostarcza moduł `random`, który pomaga w generowaniu losowych liczb do 
     Przykładowy wynik: `[2, 5, 0, 4, 9, 8, 1, 7, 6, 3]`
 
 ## Dogłębna analiza
-
 Moduł `random` w Pythonie korzysta z generatora liczb pseudolosowych (PRNG), konkretnie z algorytmu Mersenne Twister, który jest dobry do zastosowań ogólnego użytku, ale nie nadaje się do celów kryptograficznych ze względu na jego przewidywalność, jeśli obserwuje się wystarczająco dużo wyników. Moduł `secrets`, wprowadzony w Pythonie 3.6, oferuje lepszą alternatywę do generowania kryptograficznie mocnych liczb losowych, szczególnie przydatną w aplikacjach wrażliwych na bezpieczeństwo. Na przykład generowanie bezpiecznego, losowego tokenu do linku resetowania hasła:
 
 ```Python

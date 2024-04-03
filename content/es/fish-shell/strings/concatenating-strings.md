@@ -9,9 +9,6 @@ title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---
 
-## Qué & Por Qué?
-Concatenar cadenas significa unirlas para formar una sola. Los programadores lo hacen para manipular texto, crear comandos o generar salidas específicas.
-
 ## Cómo hacerlo:
 En Fish Shell, concatenar es directo. Aquí unos ejemplos:
 

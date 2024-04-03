@@ -13,9 +13,6 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## Cosa & Perché?
-Stampare l'output di debug in Visual Basic for Applications (VBA) implica posizionare strategicamente istruzioni di stampa all'interno del codice per visualizzare i valori delle variabili, il flusso di esecuzione o messaggi di debug personalizzati. Questa tecnica è essenziale per il debugging, permettendo ai programmatori di capire il comportamento del loro codice durante l'esecuzione e identificare qualsiasi comportamento inaspettato o bug.
-
 ## Come fare:
 In VBA, l'istruzione `Debug.Print` è il fulcro per stampare le informazioni di debug nella Finestra Immediata nell'Editor di Visual Basic (VBE). Per utilizzare questa funzionalità efficacemente, è necessario avere la Finestra Immediata visibile (Visualizza > Finestra Immediata o premi `Ctrl+G` nel VBE).
 

@@ -10,9 +10,6 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## What & Why?
-Cercare e sostituire testo è una tecnica per identificare stringhe specifiche e cambiarle con altre. I programmatori lo fanno per correggere errori, aggiornare dati o modificare codice in modo efficiente.
-
 ## How to:
 Clojure offre funzioni potenti per cercare e sostituire. Ecco degli esempi:
 

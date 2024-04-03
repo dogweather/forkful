@@ -11,9 +11,6 @@ title: Konvertere en dato til en streng
 weight: 28
 ---
 
-## Hva & Hvorfor?
-Konvertering av en dato til en streng betyr å forvandle datoområdet til tekstformat. Programmere gjør dette for å gjøre datoene lesbare for mennesker eller for å formatere dem for lagring og sammenligning.
-
 ## Hvordan:
 ```Lua
 os.setlocale('nb_NO') -- Setter norsk lokalisering

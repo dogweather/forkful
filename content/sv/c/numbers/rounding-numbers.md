@@ -14,12 +14,7 @@ title: Avrundning av nummer
 weight: 13
 ---
 
-## Vad & Varför?
-
-Avrundning av tal är processen att justera siffrorna i ett tal för att minska dess precision enligt vissa regler, antingen mot det närmaste hela talet eller ett specificerat antal decimaler. Programmerare gör detta av skäl som sträcker sig från att begränsa mängden lagringsutrymme som behövs, till att förenkla utdata för användarkonsumtion, eller för att säkerställa korrekta matematiska operationer som är känsliga för mycket små variationer.
-
 ## Hur man gör:
-
 Att avrunda tal i C kan åstadkommas med olika funktioner, men det vanligaste tillvägagångssättet involverar funktionerna `floor()`, `ceil()`, och `round()`. Dessa funktioner är en del av standardmatematikbiblioteket, så du måste inkludera `math.h` i ditt program.
 
 ```c
@@ -58,7 +53,6 @@ Avrundning till två decimaler: 9.53
 ```
 
 ## Fördjupning
-
 Avrundning av tal har djupa historiska rötter i matematik och beräkning, oerhört viktigt för både teoretiska och tillämpade aspekter. I C ger `floor()`, `ceil()`, och `round()` grundläggande funktionalitet, men essensen av att avrunda flytpunkttal till heltal eller specifika decimalställen är mer nyanserad på grund av den binära representationen av flytpunkttal. Denna representation kan leda till oväntade resultat på grund av hur tal som inte kan representeras exakt i binärt (som 0.1) hanteras.
 
 Dessa funktioner är en del av C-standardbiblioteket, definierat i `<math.h>`. När du avrundar tal, särskilt för finansiella eller precisa ingenjörsberäkningar, måste man överväga implikationerna av att använda binära flytpunkttal. Alternativ till de inbyggda C-funktionerna för mycket exakt eller decimal-specifik avrundning kan inkludera att implementera anpassade avrundningsfunktioner eller att använda bibliotek designade för godtycklig precision i aritmetiken, som GMP eller MPFR, även om dessa introducerar ytterligare komplexitet och beroenden.

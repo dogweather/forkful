@@ -12,9 +12,6 @@ title: Samenvoegen van strings
 weight: 3
 ---
 
-## Wat & Waarom?
-Het samenvoegen van strings betekent dat je ze achter elkaar plakt om een nieuwe te maken. Programmeurs doen dit om dynamisch tekst op te bouwen, zoals het creëren van berichten of het genereren van code.
-
 ## Hoe te:
 In Lua voeg je strings samen met de `..` operator. Laten we het in actie zien:
 

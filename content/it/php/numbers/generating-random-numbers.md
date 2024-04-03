@@ -11,12 +11,7 @@ title: Generazione di numeri casuali
 weight: 12
 ---
 
-## Cosa e perché?
-
-Generare numeri casuali in PHP riguarda la produzione di valori imprevedibili all'interno di un intervallo specificato, essenziale per compiti come la creazione di ID utente unici, la generazione di password o per l'uso in simulazioni e giochi. I programmatori si affidano alla casualità per aggiungere imprevedibilità e variabilità nelle loro applicazioni, rendendo processi come il testing o le esperienze utente più robusti e coinvolgenti.
-
 ## Come fare:
-
 PHP offre diverse funzioni per generare numeri casuali, ma le più comunemente usate sono `rand()`, `mt_rand()` e, per scopi crittografici, `random_int()`.
 
 Per generare un numero casuale semplice tra 0 e getrandmax() (il valore più grande possibile restituito da `rand()`), puoi usare:
@@ -48,7 +43,6 @@ echo random_int(1, 100);
 Anche in questo caso, l'output è un numero casuale tra 1 e 100, come `84`, ma con una garanzia più forte di casualità.
 
 ## Approfondimento
-
 La funzione `rand()` è presente in PHP dalle sue prime versioni, fungendo come l'approccio iniziale per generare numeri casuali. Tuttavia, non è la scelta migliore per applicazioni che richiedono un elevato grado di casualità a causa del suo algoritmo relativamente prevedibile.
 
 `mt_rand()`, introdotto in PHP 4, si basa sull'algoritmo Mersenne Twister - di gran lunga superiore in termini di velocità e della casualità che può generare rispetto a `rand()`. È rapidamente diventato l'opzione preferita per la maggior parte delle esigenze non criptografiche.

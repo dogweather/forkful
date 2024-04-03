@@ -12,11 +12,7 @@ title: Koodin refaktorointi
 weight: 19
 ---
 
-## Mitä ja miksi?
-Refaktorointi on prosessi, jossa koodiasi työstetään uudelleen parantaaksesi sen rakennetta ja luettavuutta muuttamatta ulkoista käyttäytymistä tai toiminnallisuutta. Ohjelmoijat refaktoroivat tehdäkseen koodistaan selkeämpää, helpommin ymmärrettävää ja helpommin ylläpidettävää, mikä pitkällä aikavälillä tekee vianetsinnästä ja uusien ominaisuuksien lisäämisestä paljon vähemmän päänsärkyä.
-
 ## Miten:
-
 Oletetaan, että sinulla on Arduino-ohjelmassasi funktio, joka tekee aivan liikaa, kuten tässä:
 
 ```Arduino

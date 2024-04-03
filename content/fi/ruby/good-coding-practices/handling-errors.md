@@ -11,12 +11,7 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä ja miksi?
-
-Virheenkäsittelyssä on kyse odottamattoman odottamisesta koodissa – hallitaan virheet ja ongelmat sulavasti ilman, että ohjelma kaatuu. Ohjelmoijat tekevät sitä hallitakseen kulun, kun asiat menevät pieleen ja pitääkseen käyttäjäkokemuksen sujuvana.
-
 ## Kuinka:
-
 Ruby käyttää `begin`, `rescue`, `ensure` ja `end` avainsanoja virheenkäsittelyssä. Käärit riskaabelin koodin `begin` ja `end` rakenteen sisään. Jos virhe tapahtuu, `rescue` aktivoituu.
 
 ```Ruby
@@ -37,7 +32,6 @@ Tämä suoritetaan aina, olipa virhettä tai ei.
 ```
 
 ## Syväsukellus
-
 Historiallisesti ohjelmointikielten virheenkäsittely on kehittynyt merkittävästi, ja varhaisilla kielillä oli usein alkeellisia tai olemattomia mekanismeja. Rubyn poikkeuskäsittely on inspiroitunut kielistä kuten Python ja Smalltalk.
 
 Vaihtoehtoja `begin-rescue` -rakenteelle Rubyssa on käyttää `rescue`-sanaa metodeissa tai käyttää `throw` ja `catch` komentoja ei-standardeissa ohjelmankulun hallinnassa, mutta niitä ei käytetä tyypilliseen virheenkäsittelyyn.
@@ -45,6 +39,5 @@ Vaihtoehtoja `begin-rescue` -rakenteelle Rubyssa on käyttää `rescue`-sanaa me
 Yksi mielenkiintoinen yksityiskohta: Rubyn poikkeukset ovat olioita (Exception-luokan ja sen alaluokkien instansseja), joten voit määrittää omia virheluokkia ja tehdä enemmän kuin vain kirjata virheitä – voit kuljettaa rikasta tilaa ympäri ohjelmaa robustimpaan virheenkäsittelyyn.
 
 ## Katso myös
-
 - Rubyn dokumentaatio poikkeuksista ja virheenkäsittelystä: [ruby-doc.org](https://ruby-doc.org/core-3.1.0/doc/syntax/exceptions_rdoc.html)
 - Yksityiskohtainen opas Rubyn virheenkäsittelyn parhaista käytänteistä: [thoughtbot.com](https://thoughtbot.com/blog/rescue-standarderror-not-exception)

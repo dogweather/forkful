@@ -10,9 +10,6 @@ title: Code in Funktionen organisieren
 weight: 18
 ---
 
-## Was & Warum?
-Code in Funktionen zu organisieren teilt Ihr Skript in wiederverwendbare Blöcke auf. Es geht darum, Ihren Code sauber, handhabbar und weniger fehleranfällig zu machen. Modularer Code ist toll, weil er Zeit spart, den Verstand schont und das Debuggen sowie das Unit Testing vereinfacht.
-
 ## Wie geht das:
 Stellen Sie sich vor, Sie schreiben ein schnelles Skript, um Benutzer zu begrüßen:
 

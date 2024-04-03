@@ -11,12 +11,7 @@ title: Starting a new project
 weight: 1
 ---
 
-## What & Why?
-
-Starting a new project in C involves setting up a foundational code structure and environment to efficiently manage development tasks. Programmers do it to streamline the build process, enforce consistency, and facilitate easier maintenance and scalability of the software over time.
-
 ## How to:
-
 At the heart of any C project is the source code. A typical starting point involves creating a main file, often named `main.c`, which houses the entry point of a program. In addition, a `Makefile` is essential for managing compilation to streamline project builds.
 
 Here's a minimal example:
@@ -52,5 +47,4 @@ Hello, world!
 ```
 
 ## Deep Dive
-
 Initiating a project in C is not just about writing code; it's about setting a solid foundation for project management. This practice evolved from the early days of programming, drawing from the need to organize and streamline the process of compiling large, complex systems from the UNIX world. The GNU Make system, introduced in the '80s, revolutionized this by automating the build process, making it a critical tool in modern C projects. However, the rise of integrated development environments (IDEs) and other high-level programming languages introduced different project initialization practices that might include more automated build systems, dependency management, and version control integration from the start. Despite these advancements, the simplicity and control offered by a Makefile and a well-organized source code directory remain invaluable, especially for systems-level programming where efficiency and resource management are paramount. Nonetheless, for larger projects, tools like CMake or Meson are becoming preferable for their ability to handle complex builds and cross-platform compatibility, suggesting a trend towards more sophisticated project initiation tools in the C ecosystem.

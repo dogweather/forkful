@@ -11,9 +11,6 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-Das Runden von Zahlen bedeutet, einen Wert auf die nächste ganze Zahl oder die angegebene Dezimalstelle zu justieren. Programmierer runden Zahlen, um Daten zu vereinfachen, die Lesbarkeit zu verbessern oder bestimmten mathematischen Anforderungen während der Berechnungen gerecht zu werden.
-
 ## Wie:
 Sie haben einige praktische Cmdlets und Methoden in PowerShell zum Runden:
 

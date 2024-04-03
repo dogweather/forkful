@@ -11,9 +11,6 @@ title: Organisation du code en fonctions
 weight: 18
 ---
 
-## Quoi et Pourquoi ?
-Organiser le code en fonctions consiste à envelopper des blocs de code qui accomplissent des tâches spécifiques et à leur attribuer un nom. Cela est fait pour rendre le code réutilisable, lisible et maintenable. Au lieu de réécrire le même code, appelez une fonction. Vous souhaitez dépanner ou mettre à niveau ? Ajustez la fonction sans avoir à fouiller dans des tas de scripts.
-
 ## Comment faire :
 Écrivons une fonction pour calculer la somme de deux nombres. C'est simple, mais cela illustre le principe.
 

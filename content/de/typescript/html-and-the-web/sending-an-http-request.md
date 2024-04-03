@@ -11,9 +11,6 @@ title: Einen HTTP-Request senden
 weight: 44
 ---
 
-## Was & Warum?
-HTTP-Anfragen sind das Werkzeug, um mit Servern zu kommunizieren – sie senden Daten und holen Antworten. Programmierer nutzen das, um Webinhalte dynamisch zu laden, APIs anzusprechen oder Daten zu synchronisieren.
-
 ## How to:
 TypeScript mit Axios:
 

@@ -10,9 +10,6 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## What & Why? (Mitä & Miksi?)
-Uuden projektin aloittaminen on puhtaan koodisivun luomista ja projektikansion rakentamista. Koodarit aloittavat uusia projekteja organisoidakseen ideansa ja aloittaakseen puhtaalta pöydältä.
-
 ## How to: (Kuinka tehdä:)
 ```Bash
 # Luo uusi kansio projektille

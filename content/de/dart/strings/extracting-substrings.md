@@ -12,9 +12,6 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## Was & Warum?
-Das Extrahieren von Teilzeichenketten bezieht sich auf das Abrufen spezifischer Abschnitte einer Zeichenkette basierend auf ihren Positionen oder Mustern. Programmierer tun dies für Aufgaben wie das Parsen von Benutzereingaben, Datenmanipulation oder das Extrahieren relevanter Informationen aus größeren Textquellen.
-
 ## Wie:
 In Dart können Sie verschiedene Methoden verwenden, um Teilzeichenketten zu extrahieren, wie `substring()`, `split()` und reguläre Ausdrücke. Jede Methode dient unterschiedlichen Zwecken und bietet Flexibilität im Umgang mit Zeichenketten.
 

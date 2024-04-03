@@ -15,12 +15,7 @@ title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---
 
-## Cái gì và Tại sao?
-
-Biểu thức chính quy (regex) trong lập trình được sử dụng để tìm kiếm, khớp và thao tác chuỗi dựa trên các mẫu cụ thể. Các lập trình viên sử dụng chúng cho những nhiệm vụ từ kiểm tra hợp lệ đơn giản đến xử lý văn bản phức tạp, làm cho chúng trở nên không thể thiếu để xử lý văn bản một cách linh hoạt và hiệu quả.
-
 ## Cách thức:
-
 Trong Go, gói `regexp` cung cấp chức năng regex. Dưới đây là hướng dẫn từng bước về cách sử dụng nó:
 
 1. **Biên dịch một Biểu thức Chính quy**
@@ -84,7 +79,6 @@ fmt.Println("Đã thay thế:", result) // Output: Đã thay thế: Java Java Ja
 ```
 
 ## Sâu lắng hơn
-
 Được giới thiệu trong thư viện tiêu chuẩn của Go, gói `regexp` thực hiện việc tìm kiếm biểu thức chính quy và khớp mẫu dựa trên cú pháp của Perl. Phía dưới cùng, động cơ regex của Go biên dịch các mẫu thành một dạng mã byte, sau đó được thực thi bởi một động cơ khớp viết bằng chính Go. Cài đặt này đánh đổi một vài tốc độ tìm thấy trong việc thực thi trực tiếp trên phần cứng vì sự an toàn và dễ sử dụng, tránh được các lỗ hổng về tràn bộ đệm thường gặp trong các thư viện dựa trên C.
 
 Mặc dù có sức mạnh, regex trong Go không phải luôn là giải pháp tối ưu cho khớp mẫu, đặc biệt khi đối phó với dữ liệu có cấu trúc cao như JSON hoặc XML. Trong những trường hợp này, các trình phân tích hoặc thư viện chuyên biệt được thiết kế cho các định dạng dữ liệu này cung cấp hiệu suất và độ tin cậy tốt hơn. Tuy nhiên, đối với các nhiệm vụ liên quan đến xử lý văn bản phức tạp không có cấu trúc được xác định trước, regex vẫn là một công cụ thiết yếu trong bộ công cụ của lập trình viên, cung cấp sự cân bằng giữa sức mạnh và linh hoạt mà ít lựa chọn thay thế nào có thể đối sánh.

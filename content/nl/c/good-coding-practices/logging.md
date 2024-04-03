@@ -13,12 +13,7 @@ title: Loggen
 weight: 17
 ---
 
-## Wat & Waarom?
-
-Loggen in C houdt in dat je de stroom en opmerkelijke gebeurtenissen van een programma tijdens de uitvoering registreert, waardoor een tastbare beoordeling van zijn gedrag en prestaties wordt geboden. Programmeurs gebruiken loggen voor debugdoeleinden, het monitoren van de softwaregezondheid en het waarborgen van de systeembeveiliging.
-
 ## Hoe te:
-
 In C kan loggen worden bereikt met basisbestandsbewerkingen of met behulp van meer geavanceerde bibliotheken. Voor de eenvoud beginnen we met de standaard I/O-bibliotheek. De volgende snippets laten basisimplementaties van loggen zien.
 
 Om eenvoudige berichten te loggen:
@@ -94,7 +89,6 @@ Uitvoer in `detailed.log`:
 ```
 
 ## Diepe Duik
-
 Loggen in C, zoals gedemonstreerd, vertrouwt op eenvoudige bestandsbewerkingen, wat effectief is maar niet zo krachtig of flexibel als logvoorzieningen in andere talen, zoals Python's `logging` module of Java's `Log4j`. Voor meer geavanceerde logmogelijkheden in C wenden ontwikkelaars zich vaak tot bibliotheken zoals `syslog` op Unix-achtige systemen, die systeembrede logmanagement biedt, of externe bibliotheken zoals `log4c`.
 
 Historisch gezien is loggen een integraal onderdeel van programmeren geweest, dat teruggaat tot vroege programmeerpraktijken waarbij het volgen en begrijpen van de programmastroom en fouten voornamelijk werd gedaan door middel van fysieke afdrukken. Naarmate systemen evolueerden, werd loggen geavanceerder, nu ondersteunend aan verschillende niveaus van ernst, logrotatie en asynchrone logging.

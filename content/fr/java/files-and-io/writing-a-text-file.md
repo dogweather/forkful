@@ -14,14 +14,10 @@ title: "R\xE9diger un fichier texte"
 weight: 24
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire un fichier texte en Java consiste à utiliser les capacités du langage pour créer et écrire du contenu dans des fichiers sur le système de fichiers. Les programmeurs font cela pour diverses raisons, telles que l'enregistrement de logs, l'exportation de données, ou la sauvegarde de l'état d'une application pour une récupération ultérieure.
-
 ## Comment faire :
 
-### Utiliser `java.nio.file` (Bibliothèque Standard)
 
+### Utiliser `java.nio.file` (Bibliothèque Standard)
 Le package New I/O (NIO) de Java (`java.nio.file`) offre une approche plus polyvalente pour traiter avec les fichiers. Voici une manière simpliste d'écrire dans un fichier en utilisant `Files.write()`:
 
 ```java
@@ -50,7 +46,6 @@ Fichier écrit avec succès !
 ```
 
 ### Utiliser `java.io` (Bibliothèque Standard)
-
 Pour une approche plus traditionnelle, `java.io.FileWriter` est un bon choix pour écrire simplement des fichiers textes :
 
 ```java
@@ -77,7 +72,6 @@ Fichier écrit avec succès !
 ```
 
 ### Utiliser Apache Commons IO
-
 La bibliothèque Apache Commons IO simplifie de nombreuses opérations, y compris l'écriture de fichiers. Voici comment écrire dans un fichier en utilisant `FileUtils.writeStringToFile()` :
 
 D'abord, ajoutez la dépendance à votre projet. Si vous utilisez Maven, incluez :

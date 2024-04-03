@@ -11,9 +11,6 @@ title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---
 
-## What & Why?
-Wycinanie podłańcuchów to proces wyodrębniania fragmentów tekstu z większego ciągu znaków. Programiści robią to, aby manipulować i analizować dane tekstowe, weryfikować wprowadzone informacje oraz ułatwić przetwarzanie komunikatów.
-
 ## How to:
 Do wydobycia podłańcuchów w Arduino służy metoda `substring()`. Poniżej znajdziesz przykłady użycia:
 

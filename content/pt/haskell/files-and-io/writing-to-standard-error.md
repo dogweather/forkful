@@ -13,9 +13,6 @@ title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---
 
-## O Que & Por Que?
-Escrever para o erro padrão (stderr) em Haskell permite que os programas diferenciem sua saída entre resultados normais e mensagens de erro. Isso é crucial para sinalizar problemas e depurar, sem encher a saída padrão (stdout) que muitas vezes carrega os dados principais ou resultado do programa.
-
 ## Como fazer:
 Em Haskell, escrever para stderr é direto com o módulo `System.IO` da biblioteca base. Abaixo está um exemplo básico para demonstrar:
 

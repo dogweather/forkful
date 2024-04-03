@@ -12,9 +12,6 @@ title: Analisi del HTML
 weight: 43
 ---
 
-## Cosa & Perché?
-Analizzare HTML in Elm implica l'estrazione di informazioni da documenti HTML. I programmatori lo fanno per interfacciarsi con contenuti web o API che restituiscono HTML, consentendo la creazione di applicazioni web più interattive e dinamiche.
-
 ## Come Fare:
 Elm non ha una libreria integrata per l'analisi diretta dell'HTML simile a quelle in JavaScript o Python a causa del suo enfasi sulla sicurezza del tipo e sull'evitare errori di runtime. Tuttavia, è possibile utilizzare richieste `Http` per recuperare contenuti e poi usare espressioni regolari o elaborazione lato server per estrarre le informazioni necessarie. Per un'analisi HTML più complessa, un approccio comune coinvolge l'uso di un servizio backend dedicato per analizzare l'HTML e restituire i dati in un formato con cui Elm può lavorare direttamente, come JSON.
 

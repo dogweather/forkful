@@ -12,9 +12,6 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## Co i Dlaczego?
-Usuwanie znaków pasujących do wzorca to zabieg, gdzie wybierasz i eliminujesz określone sekwencje tekstu z większej całości. Programiści to robią, aby oczyścić dane, uproszczyć tekst lub przygotować go do dalszej obróbki.
-
 ## Jak to zrobić:
 ```PowerShell
 # Usuwanie cyfr z ciągu znaków

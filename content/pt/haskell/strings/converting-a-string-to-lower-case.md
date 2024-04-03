@@ -11,9 +11,6 @@ title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---
 
-## O Que e Por Quê?
-Converter uma string para minúsculas é transformar todos os caracteres alfabéticos dela em suas versões minúsculas. Programadores fazem isso para uniformizar dados, facilitar comparações e buscas de texto.
-
 ## Como fazer:
 Vamos usar a biblioteca `Data.Char` para converter strings para minúsculas em Haskell:
 

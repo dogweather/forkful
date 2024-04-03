@@ -11,9 +11,6 @@ title: "\u0406\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F
 weight: 8
 ---
 
-## What & Why? (Що і чому?)
-Interpolating a string means inserting variables or expressions right into a string. Programmers do it to dynamically build or customize messages, configurations, or code.
-
 ## How to: (Як це зробити:)
 In Bash, place the variable name inside `${}` or directly after a `$` within double quotes.
 

@@ -11,9 +11,6 @@ title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---
 
-## Vad & Varför?
-Att läsa in kommandoradsargument innebär att ditt C++-program kan ta emot och använda data direkt från terminalen när det startar. Det är användbart för att göra programmet flexibelt och för att kunna köra det med olika konfigurationer utan att ändra koden.
-
 ## How to:
 ```C++
 #include <iostream>

@@ -10,9 +10,6 @@ title: Webseite herunterladen
 weight: 42
 ---
 
-## Was & Warum?
-Webseiten herunterladen bedeutet, den Inhalt einer Webseite zu holen und lokal zu speichern. Programmierer machen das, um Daten zu analysieren, Informationen zu sammeln oder Inhalte offline verfügbar zu machen.
-
 ## Anleitung:
 Mit Python kannst du mit nur wenigen Zeilen Code eine Webseite herunterladen. Ein beliebtes Paket dafür ist `requests`.
 

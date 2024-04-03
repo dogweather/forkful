@@ -13,12 +13,7 @@ title: Een tijdelijk bestand aanmaken
 weight: 21
 ---
 
-## Wat en Waarom?
-
-Het aanmaken van een tijdelijk bestand in Visual Basic for Applications (VBA) houdt in dat je programmatisch een bestand genereert voor kortstondig gebruik, typisch voor gegevensverwerking of als buffer in automatiseringstaken. Programmeurs doen dit om gegevens te beheren die niet op lange termijn hoeven te worden opgeslagen, waardoor rommel wordt verminderd en efficiëntie in het gebruik van geheugen wordt gegarandeerd.
-
 ## Hoe te:
-
 In VBA kan het aanmaken van een tijdelijk bestand worden bereikt met behulp van het `FileSystemObject` dat beschikbaar is in de Microsoft Scripting Runtime-bibliotheek. Dit object biedt methoden om bestanden en mappen te maken, lezen, schrijven en verwijderen. Hier is een stapsgewijze handleiding voor het maken van een tijdelijk bestand:
 
 1. **Microsoft Scripting Runtime inschakelen**: Zorg eerst dat de referentie Microsoft Scripting Runtime is ingeschakeld in je VBA-omgeving. Ga naar Extra > Referenties in de VBA-editor en vink "Microsoft Scripting Runtime" aan.
@@ -58,7 +53,6 @@ Tijdelijk bestand aangemaakt op: C:\Users\[JeGebruikersnaam]\AppData\Local\Temp\
 ```
 
 ## Dieper Duiken
-
 De getoonde methode gebruikt het `FileSystemObject` (FSO) onderdeel van de Microsoft Scripting Runtime. FSO is een krachtige tool voor het manipuleren van bestandssystemen, geïntroduceerd met Visual Basic Scripting Edition. Ondanks de leeftijd wordt het nog steeds veel gebruikt in VBA vanwege de eenvoud en brede functionaliteit.
 
 Het aanmaken van tijdelijke bestanden speelt een cruciale rol in veel programmerings- en scripttaken, en biedt een zandbak voor testen of een werkruimte voor processen die geen permanente opslag vereisen. Ontwikkelaars dienen echter zorgvuldig om te gaan met deze bestanden, door te zorgen dat ze worden verwijderd of gewist wanneer ze niet meer nodig zijn, om accidentele gegevenslekkage of onnodig verbruik van schijfruimte te voorkomen.

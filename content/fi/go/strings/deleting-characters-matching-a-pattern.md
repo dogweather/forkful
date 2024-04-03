@@ -15,12 +15,7 @@ title: Merkkien poistaminen vastaavan mallin mukaan
 weight: 5
 ---
 
-## Mikä & Miksi?
-
-Merkkien poistaminen, jotka täsmäävät tiettyyn malliin, tarkoittaa tiettyjen merkkien tai merkkijonojen poistamista merkkijonoista, sääntöjen perusteella, jotka määritellään mallilla (yleensä säännöllisten lausekkeiden kautta). Ohjelmoijien on usein tarpeen suorittaa tämä tehtävä dataa puhdistaessa, esikäsiteltäessä analyysiä varten, muotoiltaessa tulosteita tai yksinkertaisesti manipuloidessa merkkijonoja sovellusvaatimusten mukaisesti.
-
 ## Kuinka:
-
 Go-kielessä merkkien poistaminen, jotka täsmäävät malliin, voidaan suorittaa tehokkaasti käyttäen `regexp`-pakettia. Tässä näytämme, kuinka kaikki numerot poistetaan ja sitten kaikki ei-alfanumeeriset merkit merkkijonosta esimerkkeinä.
 
 1. **Kaikkien numeroiden poistaminen:**
@@ -78,7 +73,6 @@ func main() {
 ```
 
 ## Syväsukellus
-
 Go:n `regexp`-paketti tarjoaa tehokkaan rajapinnan mallien vastaavuuden tarkistamiseen ja manipulointiin säännöllisten lausekkeiden avulla. Sen toteutus perustuu RE2:een, säännöllisten lausekkeiden kirjastoon, joka on suunniteltu takaamaan lineaarinen suoritusaika ja välttämään "katastrofaalisen takaisinkytkennän" ongelmat, jotka ovat läsnä joissakin muissa regex-moottoreissa. Tämä tekee Go:n regexistä suhteellisen turvallisen ja tehokkaan laajan valikoiman sovelluksia varten.
 
 Vaikka `regexp`-paketti on kattava ratkaisu mallien käsittelyyn, on syytä huomata, että yksinkertaisempiin tai erittäin spesifisiin merkkijonomanipulaatioihin muut merkkijonofunktiot, kuten `strings.Replace()`, `strings.Trim()` tai leikkaaminen, saattavat tarjota tehokkaampia vaihtoehtoja. Säännölliset lausekkeet ovat tehokas työkalu, mutta niiden suhteellinen laskennallinen kustannus tarkoittaa, että operaatioille, jotka voidaan määritellä ilman niitä, vakio kirjaston vaihtoehtojen tutkiminen voi joskus johtaa yksinkertaisempaan ja tehokkaampaan koodiin.

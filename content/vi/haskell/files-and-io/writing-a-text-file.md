@@ -14,9 +14,6 @@ title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---
 
-## Cái gì & Tại sao?
-Trong Haskell, việc ghi một tệp văn bản là về việc lưu dữ liệu vào một tệp. Lập trình viên làm điều này để duy trì dữ liệu giữa các phiên làm việc, chia sẻ thông tin, hoặc ghi lại đầu ra của chương trình.
-
 ## Làm thế nào:
 Việc ghi tệp văn bản trong Haskell rất đơn giản. Dưới đây là ý chính sử dụng `writeFile`:
 

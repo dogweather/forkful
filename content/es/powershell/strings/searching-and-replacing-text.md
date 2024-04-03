@@ -10,9 +10,6 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## Qué y Por Qué?
-Buscar y reemplazar texto es el proceso de encontrar una cadena específica y cambiarla por otra. Los programadores lo hacen para corregir errores, actualizar información o refactorizar código de manera eficiente.
-
 ## Cómo hacerlo:
 Para buscar y reemplazar texto en PowerShell, puedes usar el cmdlet `Replace` o el operador `-replace`. Aquí tienes algunos ejemplos:
 

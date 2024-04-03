@@ -13,12 +13,7 @@ title: Merkkijonon muuttaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## Mikä ja Miksi?
-
-Merkkijonon muuttaminen pieniksi kirjaimiksi on perusoperaatio, joka käsittää kaikkien annetun merkkijonon merkkien muuttamisen niiden pienikirjaimisiin vastineisiin. Ohjelmoijat suorittavat tyypillisesti tämän operaation saavuttaakseen kirjainkoosta riippumattomat vertailut tai standardoidakseen tekstisyötteen edelleen käsittelyä varten, mikä tekee sovelluksista käyttäjäystävällisempiä ja tiedosta johdonmukaisempaa.
-
 ## Kuinka:
-
 Dartissa voit muuttaa merkkijonon pieniksi kirjaimiksi käyttämällä `String`-luokan tarjoamaa `toLowerCase()`-metodia. Tämä metodi palauttaa uuden merkkijonon, jossa kaikki suurkirjaimet on muutettu pieniksi kirjaimiksi. Katsotaan, miten tämä toimii yksinkertaisen esimerkin avulla:
 
 ```dart

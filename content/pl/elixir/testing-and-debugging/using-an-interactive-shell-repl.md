@@ -11,9 +11,6 @@ title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---
 
-## Co i dlaczego?
-Interaktywna powłoka, czyli REPL (Read-Eval-Print Loop - Pętla Czytaj-Ewaluuj-Wydrukuj), pozwala na testowanie fragmentów kodu w czasie rzeczywistym. Programiści Elixira używają REPL, zwanego IEx (Interaktywny Elixir), do eksperymentowania, debugowania i uczenia się języka.
-
 ## Jak to zrobić:
 Aby uruchomić IEx, otwórz terminal i wpisz `iex`. Oto mały przedsmak:
 

@@ -12,12 +12,7 @@ title: Substrings extraheren
 weight: 6
 ---
 
-## Wat & Waarom?
-
-Het extraheren van substrings betekent dat je slechts een deel van een string pakt—alsof je een lint knipt tot de lengte die je nodig hebt. Programmeurs doen dit om specifieke stukjes tekstgegevens te isoleren, analyseren of manipuleren, zoals gebruikersinvoer, bestandsnamen of tekstverwerking.
-
 ## Hoe:
-
 Swift maakt het vrij eenvoudig om met substrings te werken. Laten we er direct induiken met enkele voorbeelden.
 
 ```swift
@@ -53,7 +48,6 @@ Swift
 ```
 
 ## Diep duiken
-
 Substrings extraheren in Swift houdt in dat je begrijpt hoe Swift strings behandelt, wat een beetje anders is dan talen zoals Python of C#. In Swift zijn strings verzamelingen van karakters die geen integerindexen gebruiken. Dit komt voort uit de ondersteuning van Swift voor Unicode-conforme karakters, waardoor strings niet een vaste lengte hebben, maar eerder een verzameling van grafeme clusters (wat een gebruiker ziet als een enkel karakter).
 
 Dit ontwerp betekent dat directe integer-subscriptie niet werkt met Swift-strings; je moet werken met `String.Index`. Hoewel het niet zo onmiddellijk intuïtief is als het gebruik van integers, behandelt het verschillende tekstscripts en emoji consequent.
@@ -63,7 +57,6 @@ Alternatieven omvatten het gebruik van `NSString` uit Objective-C, zoals getoond
 Implementatiedetails zijn cruciaal—naïeve substring-extractie kan leiden tot prestatieproblemen, omdat elke oproep aan `index(_: offsetBy:)` O(n) kan zijn bij het omgaan met Unicode-conforme strings. Bovendien, wanneer je een substring in Swift maakt, deelt deze het geheugen van de oorspronkelijke string, wat efficiënt is, maar iets om rekening mee te houden als je later de oorspronkelijke string muteert.
 
 ## Zie ook
-
 Voor meer over dit onderwerp, raadpleeg de officiële documentatie:
 
 - Swift String en Karakters: [https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

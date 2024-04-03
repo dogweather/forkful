@@ -11,9 +11,6 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## Vad & Varför?
-Att läsa en textfil innebär att din Kotlin-kod hämtar data från en fil som sparats på disken. Programmerare gör detta för att hantera indata, konfigurationer, eller för att processa stora mängder av information utan att behöva hårdkoda den i applikationen.
-
 ## Hur man gör:
 ```kotlin
 import java.io.File

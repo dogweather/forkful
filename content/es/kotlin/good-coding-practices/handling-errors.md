@@ -11,9 +11,6 @@ title: Manejo de errores
 weight: 16
 ---
 
-## ¿Qué y por qué?
-El manejo de errores es cómo tu código se ocupa de los problemas que surgen durante la ejecución—como manejar una bola curva sin dejarla caer. Los programadores lo hacen para prevenir fallos y ofrecer a los usuarios una experiencia fluida.
-
 ## Cómo hacerlo:
 Kotlin proporciona `try`, `catch`, `finally` y `throw` para gestionar errores. Así es cómo los utilizas:
 

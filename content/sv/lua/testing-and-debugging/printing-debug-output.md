@@ -11,9 +11,6 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## What & Why?
-Skriva ut felsökningsmeddelanden i Lua hjälper dig att förstå vad som händer i koden. Vi gör det för att snabbt identifiera och åtgärda buggar.
-
 ## How to:
 Använd `print()` för att visa värden. Kolla exemplet:
 

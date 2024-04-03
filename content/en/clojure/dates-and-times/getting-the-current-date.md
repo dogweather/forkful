@@ -10,10 +10,8 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-Getting the current date in programming is crucial for a myriad of reasons, including logging, timestamping events, and scheduling tasks. In Clojure, a Lisp dialect on the JVM, this task leverages Java interop capabilities, allowing for straightforward access to the rich Java Date-Time API.
-
 ## How to:
+
 
 ### Using Java Interop
 Clojure's seamless interoperability with Java allows you to tap into the Java Date-Time API directly. Here's how you can get the current date:

@@ -13,9 +13,6 @@ title: Een string met hoofdletters maken
 weight: 2
 ---
 
-## Wat & Waarom?
-Het kapitaliseren van een string betekent meestal het omzetten van het eerste karakter van een string naar een hoofdletter en de rest naar kleine letters. Maar soms kan het ook gewoon betekenen dat je ervoor zorgt dat het eerste karakter een hoofdletter is, terwijl je de rest van de string onveranderd laat. Eerlijk gezegd, naar mijn mening, is het een enigszins vaag begrip.
-
 ## Hoe:
 Ruby biedt [eenvoudige methoden voor stringmanipulatie](https://docs.ruby-lang.org/en/3.3/String.html), inclusief kapitalisatie:
 

@@ -11,16 +11,10 @@ title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---
 
-## ¿Qué y Por Qué?
-
-Generar números aleatorios en TypeScript es acerca de crear valores numéricos impredecibles dentro de un rango especificado. Los programadores aprovechan estos dígitos aleatorios para una variedad de propósitos, tales como generar identificadores únicos, simular datos para pruebas o añadir imprevisibilidad a juegos y simulaciones.
-
 ## Cómo hacerlo:
-
 En TypeScript, puedes generar números aleatorios utilizando el objeto global `Math`. A continuación se presentan algunos ejemplos prácticos que demuestran cómo producir números aleatorios para diferentes requisitos.
 
 ### Generando un Número Aleatorio Básico
-
 Para generar un número decimal aleatorio básico entre 0 (inclusive) y 1 (exclusivo), usas `Math.random()`. Esto no requiere ninguna manipulación adicional:
 
 ```TypeScript
@@ -31,7 +25,6 @@ console.log(randomNumber);
 Esto podría producir un valor como `0.8995452185604771`.
 
 ### Generando un Entero Aleatorio Entre Dos Valores
-
 Cuando necesitas un entero entre dos valores específicos, incorporas tanto `Math.random()` como algo de aritmética:
 
 ```TypeScript
@@ -48,7 +41,6 @@ console.log(randomInt);
 Esto podría producir un valor entero entre 1 y 10, como `7`.
 
 ### Generando un Identificador Único
-
 Los números aleatorios pueden combinarse con otros métodos para crear identificadores únicos, por ejemplo, un fragmento de código para generar un UUID simple:
 
 ```TypeScript
@@ -66,7 +58,6 @@ console.log(uuid);
 Esto genera una cadena que se asemeja a un UUID, como `110e8400-e29b-41d4-a716-446655440000`.
 
 ## Investigación Profunda
-
 El método principal para generar números aleatorios en JavaScript y, por ende, en TypeScript, `Math.random()`, depende de un generador de números aleatorios pseudoaleatorios (PRNG). Es importante notar que mientras los resultados puedan parecer aleatorios, son generados por un algoritmo determinista basado en un valor semilla inicial. Por lo tanto, los números producidos por `Math.random()` no son verdaderamente aleatorios y no deben usarse para propósitos criptográficos.
 
 Para números aleatorios criptográficamente seguros, la Web Crypto API ofrece `crypto.getRandomValues()`, que es accesible en entornos que soportan el estándar Web Crypto, incluyendo navegadores modernos y Node.js (a través del módulo `crypto`). Aquí hay un ejemplo rápido que ilustra su uso en TypeScript para generar un número aleatorio seguro dentro de un rango:

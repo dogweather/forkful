@@ -14,9 +14,6 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-Das Schreiben einer Textdatei in PowerShell beinhaltet das Erstellen und Manipulieren von textbasierten Dateien, was eine grundlegende Operation für Logging, Datenspeicherung und Konfigurationsskripting ist. Programmierer nutzen dies zur Automatisierung von Systemaufgaben, Datenanalyse und Integration mit anderen Anwendungen oder Skripten.
-
 ## Wie geht das:
 PowerShell bietet einfache Cmdlets zum Umgang mit Dateien. Das Cmdlet `Out-File` und die Umleitungsoperatoren werden primär für diesen Zweck verwendet. Hier sind Beispiele, die zeigen, wie man Text in verschiedenen Szenarien in Dateien schreibt:
 

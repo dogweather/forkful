@@ -12,9 +12,6 @@ title: Code organiseren in functies
 weight: 18
 ---
 
-## Wat & Waarom?
-Het organiseren van code in functies gaat over het opsplitsen van je code in herbruikbare blokken met gedefinieerde doeleinden. We doen dit om dingen netjes te houden, redundantie te voorkomen en het debuggen een fluitje van een cent te maken.
-
 ## Hoe:
 Stel je voor dat we herhalende code hebben voor het begroeten van gebruikers. In plaats daarvan zullen we het inpakken in een functie zoals `greet_user`:
 

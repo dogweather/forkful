@@ -9,12 +9,7 @@ title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---
 
-## ¿Qué & Por Qué?
-
-Extraer substrings significa sacar partes específicas de un string. Lo hacemos para manipular, analizar o modificar datos de manera más precisa.
-
 ## How to:
-
 ```Ruby
 # Strings son colecciones de caracteres
 frase = "Hola, bienvenido a Ruby!"
@@ -41,7 +36,6 @@ Ruby
 ```
 
 ## Profundizando
-
 Extracting substrings es esencial desde los inicios del lenguaje por su utilidad en campos como el procesamiento de texto, parsing y en el desarrollo web. En versiones antiguas de Ruby, métodos como `slice` o sus alias se usaban frecuentemente, y aunque todavía son válidos, la sintaxis de índices con corchetes ha ganado popularidad por su claridad.
 
 En cuanto a alternativas, se puede usar la gema `strscan` para extracciones más complejas o la función `split` para dividir strings en arrays por algún delimitador, y luego extraer los substrings necesarios.
@@ -49,5 +43,4 @@ En cuanto a alternativas, se puede usar la gema `strscan` para extracciones más
 Un detalle de implementación a considerar es que extraer substrings crea nuevos objetos string en memoria, lo que es importante en términos de rendimiento si se trabaja con strings muy grandes o en operaciones a gran escala.
 
 ## Ver También
-
 - Documentación oficial de Ruby para strings: [Ruby-Doc String](https://ruby-doc.org/core/String.html)

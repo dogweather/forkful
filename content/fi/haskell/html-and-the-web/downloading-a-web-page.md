@@ -9,9 +9,6 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## What & Why? - Mikä ja Miksi?
-Ladataan nettisivu, eli noudetaan webbisivun sisältö ohjelmoitavasti. Ohjelmoijat tekevät tämän datan keräämiseen, testaukseen tai palvelujen automatisointiin.
-
 ## How to: - Kuinka tehdään:
 Haskellilla webbisivujen lataaminen onnistuu kirjastoilla kuten `http-conduit`. Asentakaa ensin tarvittavat kirjastot:
 

@@ -12,9 +12,6 @@ title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---
 
-## Was & Warum?
-Anführungszeichen aus einem String zu entfernen bedeutet, jegliche Anführungszeichen—einfache (' ') oder doppelte (" ")—, die Teil der Stringdaten sind, herauszufiltern. Programmierer machen dies, um Eingaben zu bereinigen, Texte zur Verarbeitung vorzubereiten oder unnötige Zeichen loszuwerden, die die Datenverarbeitung und -operationen stören könnten.
-
 ## Wie zu:
 In Haskell können wir eine Funktion erstellen, die alle Anführungszeichen aus einem gegebenen String entfernt. Es ist, als würde man den Anführungszeichen sagen, sie sollen verschwinden, und sich vergewissern, dass sie den Wink verstehen.
 

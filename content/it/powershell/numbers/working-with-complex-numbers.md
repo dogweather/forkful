@@ -11,9 +11,6 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-## Cosa & Perché?
-I numeri complessi, quelli con una parte reale e una parte immaginaria (come 3 + 4i), sono fondamentali in ambiti come l'ingegneria, la fisica e la scienza dei dati. I programmatori li usano per simulazioni, elaborazione di segnali e la risoluzione di tipi specifici di problemi matematici.
-
 ## Come fare:
 PowerShell non ha un supporto incorporato per i numeri complessi, quindi puoi o creare una tua soluzione o utilizzare `System.Numerics.Complex` di .NET.
 

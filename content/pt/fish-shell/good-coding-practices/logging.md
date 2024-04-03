@@ -11,9 +11,6 @@ title: Registro de Logs
 weight: 17
 ---
 
-## O que & Por quê?
-Registrar (logging) é, essencialmente, anotar o que seu aplicativo está fazendo — um diário, por assim dizer, mas para o código. Os programadores fazem isso para acompanhar os detalhes, como mudanças de estado, eventos do sistema e bugs irritantes, garantindo que nenhum contratempo passe despercebido.
-
 ## Como fazer:
 No Fish, registrar pode ser tão simples quanto redirecionar as saídas padrão e de erro para um arquivo. Vamos criar uma entrada de registro para os horários de início e término do nosso script.
 

@@ -15,12 +15,7 @@ title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---
 
-## Co i Dlaczego?
-
-Wypisywanie do standardowego błędu (stderr) dotyczy przekazywania komunikatów o błędach i diagnostyki do oddzielnego strumienia, odrębnego od standardowego wyjścia (stdout), co pozwala na lepsze zarządzanie błędami i parsowanie logów. Programiści stosują tę praktykę, aby ułatwić debugowanie oraz zapewnić, że komunikaty o błędach można łatwo zidentyfikować i przekierować w razie potrzeby, utrzymując czystość logów wyjściowych czy komunikatów użytkownika.
-
 ## Jak to zrobić:
-
 W Kotlinie, zapis do stderr można osiągnąć za pomocą `System.err.println()`. Ta metoda jest podobna do `System.out.println()`, ale kieruje wyjście do strumienia błędu standardowego, a nie do standardowego strumienia wyjściowego.
 
 ```kotlin

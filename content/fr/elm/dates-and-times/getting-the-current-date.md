@@ -11,9 +11,6 @@ title: Obtenir la date actuelle
 weight: 29
 ---
 
-## Quoi et Pourquoi ?
-En programmation, obtenir la date actuelle c'est récupérer la date et l'heure précises à l'instant T. Les développeurs en ont besoin pour tout : des timestamps jusqu'aux fonctionnalités basées sur la date.
-
 ## Comment faire :
 ```Elm
 -- Vous aurez besoin du paquet elm/time

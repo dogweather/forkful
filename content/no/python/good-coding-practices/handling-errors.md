@@ -12,12 +12,7 @@ title: "Feilh\xE5ndtering"
 weight: 16
 ---
 
-## Hva & Hvorfor?
-
-Feilhåndtering i Python (eller ethvert programmeringsspråk) handler om å forvente det uventede – det er kunsten å håndtere nådige problemer når ting går galt i koden din. Vi gjør det for å forhindre krasj, veilede brukere, og gjøre programmene våre robuste og pålitelige.
-
 ## Hvordan gjøre:
-
 ``` Python
 # Grunnleggende try-except-blokk
 try:
@@ -56,7 +51,6 @@ Det er ikke et tall!
 ```
 
 ## Dypdykk
-
 Siden programmeringens begynnelse har feilhåndtering vært avgjørende. Tidlige tilnærminger var rudimentære, som å sjekke forhold før hver risikofylt operasjon. Pythons `try-except`-syntaks kommer fra en arv av unntakshåndtering i eldre språk som C++ og Java, noe som forenkler prosessen.
 
 Når du `try` (forsøker) en blokk med kode, ser Python etter eventuelle unntak. Hvis en feil dukker opp, fanger `except`-blokken den. Du kan bli spesifikk om unntakene du fanger, eller fange alle med et enkelt `except`. Men, det er bedre å være spesifikk først – det er presist, ikke et fangstnett for alt.
@@ -66,7 +60,6 @@ Når du `try` (forsøker) en blokk med kode, ser Python etter eventuelle unntak.
 Alternativer? De finnes helt sikkert. Noen språk bruker returkoder i stedet for unntak. Du kan også møte på `with`-setninger for håndtering av ressurser, eller `assertions` som sjekker forhold under utvikling. Men når vi snakker om solide feilhåndteringsstrategier, skiller try-catch-modellen seg ut for sin lesbarhet og struktur.
 
 ## Se også
-
 Her er noen gode ekstra ressurser for å dykke enda dypere:
 
 - Pythons offisielle dokumentasjon om feil og unntak: [Python Docs – Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html)

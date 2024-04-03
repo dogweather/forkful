@@ -11,9 +11,6 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## What & Why? (Che Cos'è e Perché?)
-Cercare e sostituire testo è un'operazione che ti permette di trovare stringhe specifiche in un flusso di testo e cambiarle con altre. Programmatori la usano per refactoring del codice, pulizia dei dati, e per automatizzare la correzione di errori.
-
 ## How to (Come Fare)
 Ecco un esempio semplice in C# per cercare e sostituire testo:
 

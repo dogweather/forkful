@@ -14,9 +14,6 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mikä & Miksi?
-Nykyisen päivämäärän noutaminen Haskellissa käsittää järjestelmän nykyisen ajan hankkimisen ja sen muuntamisen luettavaan päivämäärämuotoon. Ohjelmoijat tekevät tämän suorittaakseen toimintoja päivämäärän perusteella, kuten lokitusta, tehtävien ajoitusta tai tapahtumien aikaleimausta sovelluksissa.
-
 ## Kuinka:
 Haskellin vakiokirjasto, `base`, tarjoaa `Data.Time` -moduulin, joka tarjoaa toiminnallisuuden työskentelyyn päivämäärien ja aikojen kanssa. Tässä on miten sitä käytetään nykyisen päivämäärän saamiseen:
 

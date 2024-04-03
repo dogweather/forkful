@@ -11,9 +11,6 @@ title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---
 
-## What & Why? (Co i dlaczego?)
-Długość ciągu to po prostu liczba znaków w tekście. Programiści liczą znaki, by zarządzać danymi - na przykład sprawdzając hasła czy ograniczając wprowadzany tekst.
-
 ## How to (Jak to zrobić):
 W C# masz właściwość `Length` do liczenia znaków:
 

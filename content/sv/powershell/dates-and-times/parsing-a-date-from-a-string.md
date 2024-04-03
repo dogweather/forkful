@@ -14,9 +14,6 @@ title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---
 
-## Vad & Varför?
-Att tolka ett datum från en sträng handlar om att känna igen och konvertera skrivna datum i textform till en datatyp som PowerShell kan förstå och arbeta med. Programmerare gör detta för att manipulera, formatera, jämföra eller beräkna datum, vilket är vanliga uppgifter i skript som hanterar loggfiler, användarinmatning eller databehandling.
-
 ## Hur man gör:
 PowerShell gör det enkelt att tolka datum från strängar med sin `Get-Date` cmdlet och typacceleratorn `[datetime]`, som fungerar väl för standarddatumformat. För mer komplexa eller icke-standard datumsträngar, kan metoden `[datetime]::ParseExact` användas för att specificera det exakta formatet.
 

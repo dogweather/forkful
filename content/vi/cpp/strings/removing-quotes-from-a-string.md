@@ -16,9 +16,6 @@ title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---
 
-## Lý do & Tại sao?
-Loại bỏ dấu ngoặc khỏi một chuỗi có nghĩa là gỡ bỏ những ký tự kép hoặc đơn gây phiền phức bao quanh văn bản của chúng ta (' hoặc "). Các lập trình viên thường làm việc này để làm sạch dữ liệu đầu vào, lưu trữ văn bản trong cơ sở dữ liệu, hoặc chuẩn bị chuỗi cho quá trình xử lý tiếp theo mà không cần những dấu ngoặc kéo lê.
-
 ## Cách thực hiện:
 Dưới đây là một cách thẳng thắn để loại bỏ những dấu ngoặc đó khỏi C++:
 

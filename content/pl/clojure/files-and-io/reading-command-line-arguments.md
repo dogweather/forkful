@@ -11,9 +11,6 @@ title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---
 
-## What & Why? (Co i Dlaczego?)
-Czytanie argumentów linii poleceń to sposób na przekazanie parametrów do aplikacji. Programiści robią to, by obsługiwać różne scenariusze działania programu bez zmiany kodu.
-
 ## How to (Jak to zrobić):
 W Clojure, argumenty linii poleceń są dostępne jako lista stringów `*command-line-args*`. Oto jak to wygląda w praktyce:
 

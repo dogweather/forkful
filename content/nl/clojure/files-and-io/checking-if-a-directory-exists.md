@@ -13,9 +13,6 @@ title: Controleren of een directory bestaat
 weight: 20
 ---
 
-## Wat & Waarom?
-Controleren of een directory bestaat betekent bevestigen of een pad naar een directory op je bestandssysteem wijst. Programmeurs doen dit om fouten te voorkomen, correcte bestandsafhandeling te garanderen en noodzakelijke voorwaarden in te stellen voordat bestandsbewerkingen worden uitgevoerd.
-
 ## Hoe:
 Gebruik `clojure.java.io/file` om een File-object te creëren en `.exists` om te controleren of het bestaat. De `isDirectory` methode bevestigt of het File een directory is.
 

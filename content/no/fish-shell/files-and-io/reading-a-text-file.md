@@ -10,9 +10,6 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## What & Why?
-Lesing av tekstfiler lar deg hente data lagret på din disk. Programmerere gjør dette for å bearbeide data, konfigurere systemer eller bare for å hente informasjon.
-
 ## How to:
 I Fish Shell, bruk `read` for å lese linjer, eller `cat` og `grep` for å se gjennom filer. Her er et eksempel:
 

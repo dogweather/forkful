@@ -11,9 +11,6 @@ title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---
 
-## Vad & Varför?
-Sök och ersätt av text är en grundläggande process där vi hittar specifika teckenkombinationer och byter ut dem mot nya. Programmerare använder det för att manipulera textdata snabbt, som att korrigera stavfel, uppdatera information eller bearbeta datafiler.
-
 ## Så här gör du:
 Här är ett snabbt exempel i Swift:
 

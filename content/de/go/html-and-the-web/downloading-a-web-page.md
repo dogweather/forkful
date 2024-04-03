@@ -12,12 +12,7 @@ title: Herunterladen einer Webseite
 weight: 42
 ---
 
-## Was & Warum?
-
-Das Herunterladen einer Webseite bezieht sich auf das Abrufen des HTML-Inhalts einer Webseite über das HTTP/HTTPS-Protokoll. Programmierer tun dies oft für das Web Scraping, die Datenanalyse oder einfach, um programmatisch mit Webseiten zu interagieren und Aufgaben zu automatisieren.
-
 ## Wie geht das:
-
 In Go bietet die Standardbibliothek leistungsstarke Tools für Webanfragen, insbesondere das `net/http`-Paket. Zum Herunterladen einer Webseite verwenden wir hauptsächlich die Methode `http.Get`. Hier ist ein einfaches Beispiel:
 
 ```go
@@ -64,7 +59,6 @@ Dieses einfache Programm macht eine HTTP-GET-Anfrage an die angegebene URL, lies
 Hinweis: In der zeitgenössischen Go-Programmierung wird `ioutil.ReadAll` seit Go 1.16 als veraltet betrachtet und durch `io.ReadAll` ersetzt.
 
 ## Vertiefung
-
 Die Programmiersprache Go hat eine Designphilosophie, die Einfachheit, Effizienz und zuverlässige Fehlerbehandlung betont. Wenn es um Netzwerkprogrammierung geht, und speziell um das Herunterladen von Webseiten, ist Go's Standardbibliothek, insbesondere `net/http`, effizient gestaltet, um HTTP-Anfrage- und Antwortoperationen zu handhaben.
 
 Der Ansatz für Netzwerkanfragen in Go reicht zurück bis zu den Ursprüngen der Sprache, nimmt Konzepte von Vorgängern auf, verbessert diese jedoch erheblich in Bezug auf Effizienz und Einfachheit. Für das Herunterladen von Inhalten macht Go's Konkurrenzmodell mit Goroutinen es zu einem außergewöhnlich leistungsfähigen Werkzeug für die Durchführung asynchroner HTTP-Anfragen, die Tausende von Anfragen parallel mit Leichtigkeit bewältigen können.

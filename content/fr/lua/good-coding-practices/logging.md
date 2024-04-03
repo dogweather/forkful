@@ -12,14 +12,7 @@ title: Journalisation
 weight: 17
 ---
 
-Certainly, here is the French translation of the source text titled "Logging with Lua":
-
-## Quoi et Pourquoi ?
-
-Le logging est la pratique consistant à enregistrer des événements, des erreurs et d'autres points de données significatifs qui se produisent tout au long du cycle de vie d'une application logicielle. Les programmeurs utilisent les logs pour aider au débogage, surveiller l'état du système, analyser le comportement des utilisateurs, et maintenir un historique d'audit pour des raisons de sécurité et de conformité.
-
 ## Comment faire :
-
 Lua n'a pas de cadre de logging intégré, mais la mise en œuvre d'une fonction de logging simple est directe. Voici un exemple basique d'une telle fonction :
 
 ```lua
@@ -44,7 +37,6 @@ Lorsque vous exécutez le code ci-dessus, vous verrez une sortie comme ceci :
 Pour des besoins de logging plus sophistiqués, des bibliothèques tiers comme LuaLogging peuvent être incluses pour fournir des fonctionnalités supplémentaires telles que les niveaux de log, des gestionnaires multiples et des spécifications de format.
 
 ## Étude Approfondie
-
 Historiquement, le logging a été un aspect essentiel du diagnostic logiciel, devenant une pratique établie depuis les premiers jours de la programmation. L'importance du logging ne peut pas être exagérée, car il sert de 'boîte noire' en cas de défaillance du système, fournissant des aperçus sur les causes profondes des problèmes.
 
 Alors que l'exemple ci-dessus ne satisfait que les besoins les plus rudimentaires, il existe de nombreuses alternatives dotées de jeux de fonctionnalités plus riches. Certaines de ces alternatives incluent :
@@ -58,7 +50,6 @@ Lors de l'approfondissement de la mise en œuvre d'un système de logging, les p
 Pour le logging dans les systèmes distribués, il est courant d'utiliser des solutions centralisées de gestion de logs comme ELK (Elasticsearch, Logstash et Kibana) ou Splunk, qui peuvent agréger des logs de sources multiples, fournir des capacités de recherche robustes et visualiser les données pour faciliter le débogage et l'analyse.
 
 ## Voir Aussi
-
 - Bibliothèque LuaLogging sur GitHub : https://github.com/lunarmodules/lualogging
 - Introduction à la pile ELK : https://www.elastic.co/fr/what-is/elk-stack
 - Le wiki des utilisateurs de Lua sur le Logging : http://lua-users.org/wiki/LoggingCategory

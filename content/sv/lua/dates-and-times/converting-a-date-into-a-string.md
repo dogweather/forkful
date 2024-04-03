@@ -12,9 +12,6 @@ title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---
 
-## Vad & Varför?
-Datum till sträng-konvertering handlar om att omvandla den sätt som datum lagras i kod (ofta som ett numeriskt värde eller ett datumobjekt) till en läsbar textform. Programmerare gör detta för att visa datum på skärmar eller i loggfiler på ett sätt som människor enkelt kan förstå och använda.
-
 ## Hur gör man:
 ```Lua
 os.setlocale('sv_SE')  -- Sätt lokalen till svensk för datumformat

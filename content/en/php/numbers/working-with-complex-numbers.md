@@ -10,9 +10,6 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-Complex numbers have a real part and an imaginary part, usually written as `a + bi`. They're crucial in advanced math, physics, engineering, and certain computer algorithms. Programmers work with them to handle calculations that involve square roots of negative numbers and oscillating functions.
-
 ## How to:
 PHP provides built-in support for complex numbers using the `ext-intl` extension with the `NumberFormatter` class. Here's an example:
 

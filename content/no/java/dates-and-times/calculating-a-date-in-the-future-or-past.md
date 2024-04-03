@@ -11,9 +11,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## Hva & Hvorfor?
-Å regne ut en dato i fremtiden eller fortiden handler om å legge til eller trekke fra tid fra en gitt dato. Utviklere gjør dette for å håndtere frister, planlegge events eller sporingsperioder.
-
 ## Hvordan gjøre det:
 ```java
 import java.time.LocalDate;

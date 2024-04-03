@@ -11,12 +11,7 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-
-Fehler zu behandeln bedeutet, Code zu schreiben, der damit umgehen kann, wenn etwas schiefgeht. Programmierer tun das, um Abstürze zu verhindern und um sicherzustellen, dass ihre Programme sich anmutig erholen können, wenn das Murphys Gesetz zuschlägt.
-
 ## Wie geht das:
-
 In Elixir verwenden wir oft Pattern Matching und die `case`-Anweisung, um verschiedene Ergebnisse zu behandeln, einschließlich Fehler.
 
 ```elixir
@@ -47,7 +42,6 @@ Fehler: Division durch Null nicht möglich.
 Wenn Sie diesen Elixir-Code ausführen, erhalten Sie je nach Eingabe entweder eine erfolgreiche Division oder eine Fehlermeldung. Keine Abstürze hier!
 
 ## Vertiefung
-
 Früher war die Fehlerbehandlung oft mit der Überprüfung von Rückgabewerten verbunden. Mit den funktionalen Wurzeln von Elixir haben wir jedoch Pattern Matching und getagte Tupel, wie `{:ok, wert}` oder `{:error, grund}`, die eleganter sind.
 
 Es gibt andere Wege, um Fehler in Elixir zu behandeln:
@@ -58,7 +52,6 @@ Es gibt andere Wege, um Fehler in Elixir zu behandeln:
 In der Implementierung baut Elixir auf die Robustheit von Erlang auf. Fehler werden behandelt wie jede andere Art von Nachricht, mit all dem Pattern Matching und funktionalen Feinheiten.
 
 ## Siehe auch
-
 Für weitere Informationen zur Fehlerbehandlung in Elixir, siehe:
 
 - Elixirs offizieller Leitfaden zur [Fehlerbehandlung](https://elixir-lang.org/getting-started/try-catch-and-rescue.html).

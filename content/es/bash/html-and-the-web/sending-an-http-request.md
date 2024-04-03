@@ -10,9 +10,6 @@ title: Enviando una solicitud http
 weight: 44
 ---
 
-## Qué y Por Qué?
-Enviar una solicitud HTTP permite a tu script interactuar con servicios web, obtener datos o invocar operaciones remotas. Los programadores hacen esto para integrar aplicaciones, automatizar tareas o acceder a APIs.
-
 ## Cómo:
 ```Bash
 # Usar cURL para enviar una solicitud GET simple

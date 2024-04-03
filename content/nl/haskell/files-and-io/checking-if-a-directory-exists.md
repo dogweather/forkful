@@ -13,9 +13,6 @@ title: Controleren of een directory bestaat
 weight: 20
 ---
 
-## Wat & Waarom?
-Controleren of een directory bestaat betekent bevestigen of een map daadwerkelijk is waar je denkt dat deze is in het bestandssysteem. Programmeurs doen dit om fouten te voorkomen, zoals het proberen te lezen van een niet-bestaande directory of het per ongeluk creëren van dubbele mappen.
-
 ## Hoe te:
 Haskell gebruikt het `directory`-pakket voor interacties met het bestandssysteem. Installeer het met het commando `cabal install directory` als je dat nog niet hebt gedaan. Zo controleer je een directory:
 

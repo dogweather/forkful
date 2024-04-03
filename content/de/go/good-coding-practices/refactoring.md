@@ -13,12 +13,7 @@ title: Refaktorisierung
 weight: 19
 ---
 
-## Was & Warum?
-
-Refactoring in der Programmierung beinhaltet die Umstrukturierung bestehenden Computer-Codes - das Ändern der Faktorisierung - ohne dessen externes Verhalten zu verändern. Programmierer*innen nehmen diesen Prozess in Angriff, um die Lesbarkeit des Codes zu verbessern, Komplexität zu verringern und die Wartbarkeit zu erhöhen, was letztendlich die Software leichter verständlich und modifizierbar macht.
-
 ## Wie:
-
 In Go kann das Refactoring von einfachen Code-Anpassungen bis hin zu komplexeren Änderungen reichen. Beginnen wir mit einem grundlegenden Beispiel: die Vereinfachung einer anfänglichen Go-Funktion für bessere Lesbarkeit und Effizienz.
 
 **Vor dem Refactoring:**
@@ -121,7 +116,6 @@ func main() {
 Das Refactoring zur Nutzung einer Schnittstelle (`Logger`) anstelle eines konkreten Typs (`ConsoleLogger`) verbessert die Flexibilität der Funktion und entkoppelt die Datenverarbeitung von der spezifischen Implementierung der Protokollierung.
 
 ## Vertiefung
-
 Refactoring in Go muss Einfachheit (eines der Kernelemente von Go) mit der in großen Softwareprojekten benötigten Flexibilität ausbalancieren. Angesichts des minimalistischen Ansatzes von Go zu Funktionen - ohne Generics (bis vor kurzem) und mit starkem Fokus auf Lesbarkeit - führt die Sprache Entwickler*innen natürlich zu einfacheren, wartbareren Code-Strukturen. Dies bedeutet jedoch nicht, dass Go-Code nicht vom Refactoring profitiert; es bedeutet, dass Refactoring immer Klarheit und Einfachheit priorisieren muss.
 
 Historisch gesehen führte das Fehlen bestimmter Funktionen in Go (z.B. Generics vor Go 1.18) zu kreativen, aber manchmal umständlichen Lösungen für Code-Wiederverwendung und Flexibilität, was das Refactoring zur Abstraktion zu einer gängigen Praxis machte. Mit der Einführung von Generics in Go 1.18 refaktorisieren Go-Entwickler*innen nun Altcode, um dieses Feature für bessere Typsicherheit und Code-Wiederverwendung zu nutzen, was die sich entwickelnde Natur der Refactoring-Praktiken in Go zeigt.

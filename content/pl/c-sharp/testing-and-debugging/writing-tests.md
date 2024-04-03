@@ -14,12 +14,7 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i dlaczego?
-
-Pisanie testów w C# polega na tworzeniu zautomatyzowanych skryptów w celu weryfikacji funkcjonalności kodu, gwarantując, że działa on zgodnie z oczekiwaniami. Programiści wykonują to, aby wyłapywać błędy we wczesnej fazie, ułatwiać refaktoryzację kodu oraz zapewniać, że nowe zmiany nie zakłócają istniejących funkcji, tym samym zwiększając jakość i niezawodność oprogramowania.
-
 ## Jak to zrobić:
-
 Deweloperzy C# głównie używają frameworków NUnit lub xUnit do pisania testów ze względu na ich elastyczność i obszerny zestaw funkcjonalności. Oto podstawowy przykład użycia NUnit do testowania prostej funkcji dodawania:
 
 1. **Zainstaluj NUnit i NUnit3TestAdapter** poprzez menedżera pakietów NuGet lub interfejs wiersza poleceń .NET:
@@ -73,7 +68,6 @@ dotnet test
 ```
 
 ### Przykładowy wynik:
-
 Zakładając, że twój test przeszedł pomyślnie, powinieneś zobaczyć wynik podobny do tego:
 ```
 Test Run Successful.
@@ -83,7 +77,6 @@ Total tests: 1
 ```
 
 ### Użycie xUnit:
-
 Jeśli preferujesz xUnit, konfiguracja jest podobna do NUnit. Oto jak przepisać przykładowy test dla klasy `Calculator` używając xUnit:
 
 1. **Zainstaluj xUnit i xUnit.runner.visualstudio**:

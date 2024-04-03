@@ -10,9 +10,6 @@ title: "Descargando una p\xE1gina web"
 weight: 42
 ---
 
-## Qué es y por qué?
-Descargar una página web significa traer su contenido a tu equipo local. Programadores hacen esto para analizar la información, probar la conectividad o monitorear cambios en el sitio.
-
 ## Cómo hacerlo:
 Ruby hace esto fácil con bibliotecas como `open-uri` y `nokogiri`. Aquí hay un ejemplo básico con `open-uri`:
 

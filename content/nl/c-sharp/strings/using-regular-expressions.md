@@ -12,9 +12,6 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-Reguliere expressies (regex) zijn patronen die worden gebruikt om reeksen van tekens te matchen. Programmeurs gebruiken ze voor het zoeken, bewerken of valideren van tekst. Ze zijn krachtig en efficiënt, en snijden door strings heen als een warm mes door boter.
-
 ## Hoe te:
 Laten we kijken naar het matchen, vervangen en splitsen van strings met regex in C#.
 

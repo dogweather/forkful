@@ -17,12 +17,7 @@ title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---
 
-## Cái gì & Tại sao?
-
-Việc tạo ra số ngẫu nhiên bao gồm việc tạo ra các số không thể dự đoán một cách hợp lý hơn so với ngẫu nhiên, điều này rất cần thiết cho việc phát triển các mô phỏng, trò chơi và thuật toán bảo mật. Lập trình viên làm điều này để giới thiệu tính không chắc chắn hoặc mô phỏng các hiện tượng thực tế trong ứng dụng của họ.
-
 ## Cách thực hiện:
-
 Python cung cấp mô-đun `random` giúp tạo ra các số ngẫu nhiên cho nhiều mục đích sử dụng. Dưới đây là cách bắt đầu:
 
 1. **Nhập mô-đun**
@@ -70,7 +65,6 @@ Python cung cấp mô-đun `random` giúp tạo ra các số ngẫu nhiên cho n
     Kết quả mẫu: `[2, 5, 0, 4, 9, 8, 1, 7, 6, 3]`
 
 ## Đào Sâu Hơn
-
 Mô-đun `random` trong Python sử dụng một bộ tạo số giả ngẫu nhiên (PRNG), cụ thể là thuật toán Mersenne Twister, rất tốt cho các ứng dụng mục tiêu tổng quát nhưng không phù hợp cho mục đích mật mã do dự đoán được nếu đủ số lượng đầu ra được quan sát. Mô-đun `secrets`, được giới thiệu trong Python 3.6, cung cấp một lựa chọn tốt hơn cho việc tạo ra số ngẫu nhiên mạnh về mặt mật mã, đặc biệt hữu ích trong các ứng dụng nhạy cảm về bảo mật. Ví dụ, tạo một mã token ngẫu nhiên, bảo mật cho liên kết đặt lại mật khẩu:
 
 ```Python

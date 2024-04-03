@@ -13,16 +13,10 @@ title: Utilizzo delle espressioni regolari
 weight: 11
 ---
 
-## Cosa e Perché?
-
-Le espressioni regolari (regex) in PHP sono modelli usati per corrispondere combinazioni di caratteri nelle stringhe, consentendo operazioni sofisticate di ricerca-e-sostituzione e validazione di dati. I programmatori sfruttano le regex per la loro potenza e flessibilità nell'analisi del testo, nella validazione di form o nello scraping di dati web, rendendole uno strumento indispensabile nell'arsenale di uno sviluppatore.
-
 ## Come fare:
-
 PHP supporta le espressioni regolari attraverso la libreria PCRE (Perl Compatible Regular Expressions), offrendo un ricco set di funzioni. Ecco come usarle:
 
 ### Corrispondenza di un modello:
-
 Per verificare se un modello esiste all'interno di una stringa, si usa `preg_match()`. Questa funzione restituisce 1 se il modello è stato trovato nella stringa e 0 se non lo è.
 
 ```php
@@ -35,7 +29,6 @@ if (preg_match("/\bweb\b/i", "PHP è un linguaggio di scripting web")) {
 ```
 
 ### Trovare tutte le corrispondenze:
-
 `preg_match_all()` viene usato quando è necessario trovare tutte le occorrenze di un modello all'interno di una stringa.
 
 ```php
@@ -47,7 +40,6 @@ print_r($matches[0]);
 ```
 
 ### Sostituire il testo:
-
 Per sostituire il testo che corrisponde a un'espressione regolare, si usa `preg_replace()`. È incredibilmente potente per formattare e pulire i dati.
 
 ```php
@@ -59,7 +51,6 @@ echo preg_replace($pattern, $sostituzione, $testoOriginale);
 ```
 
 ### Suddividere le stringhe:
-
 Puoi suddividere una stringa in un array usando `preg_split()`, specificando un modello per il delimitatore.
 
 ```php

@@ -11,9 +11,6 @@ title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---
 
-## O Que é & Porquê?
-Imprimir saídas de debug é escrever no console aquilo que o seu código está fazendo, para que você possa entender melhor e corrigir o comportamento. Programadores fazem isso para verificar o fluxo do programa, valores de variáveis e encontrar bugs mais rapidamente.
-
 ## Como Fazer:
 ```Ruby
 # Exemplo simples de imprimir uma variável.

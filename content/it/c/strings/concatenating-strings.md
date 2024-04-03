@@ -13,12 +13,7 @@ title: Concatenazione di stringhe
 weight: 3
 ---
 
-## Cosa e Perché?
-
-La concatenazione di stringhe in C consiste nell'unire due o più stringhe da capo a coda per formare una nuova stringa. I programmatori eseguono questa operazione per costruire dinamicamente stringhe a runtime, essenziale per creare messaggi significativi, percorsi di file o qualsiasi dato assemblato da varie fonti di stringhe.
-
 ## Come fare:
-
 In C, le stringhe sono array di caratteri che terminano con un carattere nullo (`\0`). A differenza dei linguaggi di livello superiore, C non fornisce una funzione di concatenazione di stringhe incorporata. Invece, si utilizzano le funzioni `strcat()` o `strncat()` dalla libreria `<string.h>`.
 
 Ecco un semplice esempio utilizzando `strcat()`:
@@ -61,7 +56,6 @@ int main() {
 Questo limita la concatenazione ai primi `num` caratteri della stringa sorgente, aiutando a prevenire overflow del buffer.
 
 ## Approfondimento
-
 Le funzioni `strcat()` e `strncat()` fanno parte della libreria standard di C fin dalla sua nascita, riflettendo la natura a basso livello del linguaggio che richiede la gestione manuale delle stringhe e della memoria. A differenza di molti linguaggi di programmazione moderni che trattano le stringhe come oggetti di prima classe con operatori di concatenazione incorporati (come `+` o `.concat()`), l'approccio del C richiede una comprensione più approfondita dei puntatori, dell'allocazione della memoria e dei potenziali pericoli come gli overflow del buffer.
 
 Sebbene `strcat()` e `strncat()` siano ampiamente utilizzati, sono spesso criticati per il loro potenziale di creare vulnerabilità di sicurezza se non usati con attenzione. Gli overflow del buffer, dove i dati superano la memoria allocata, possono portare a crash o essere sfruttati per l'esecuzione arbitraria di codice. Di conseguenza, i programmatori stanno sempre più orientandosi verso alternative più sicure, come `snprintf()`, che offre un comportamento più prevedibile limitando il numero di caratteri scritti nella stringa di destinazione in base alla sua dimensione:

@@ -9,9 +9,6 @@ title: Einen HTTP-Request senden
 weight: 44
 ---
 
-## Was & Warum?
-HTTP-Anfragen ermöglichen es, mit Webdiensten zu kommunizieren. Programmierer nutzen sie, um Daten zu senden und zu empfangen, was für moderne Anwendungen unerlässlich ist.
-
 ## How to:
 Swift macht es mit der URLSession-API einfach, HTTP-Requests zu starten. Hier ist ein minimalistischer GET-Request:
 

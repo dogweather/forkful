@@ -11,9 +11,6 @@ title: Lendo argumentos da linha de comando
 weight: 23
 ---
 
-## What & Why?
-Ler argumentos da linha de comando permite que programas Swift recebam inputs externos ao serem executados. Programadores fazem isso para personalizar a execução de apps via terminal ou scripts, baseando-se em dados fornecidos por usuários ou outros programas.
-
 ## How to:
 Ler argumentos em Swift é simples. A propriedade `CommandLine.arguments` retorna um array de strings com os argumentos passados. Veja o exemplo:
 

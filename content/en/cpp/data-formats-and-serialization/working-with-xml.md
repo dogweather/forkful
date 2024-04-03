@@ -10,9 +10,6 @@ title: Working with XML
 weight: 40
 ---
 
-## What & Why?
-Working with XML means parsing, creating, and manipulating XML (eXtensible Markup Language) data. Programmers manage XML to handle structured data interchange, configuration, and more, due to its platform-neutral nature.
-
 ## How to:
 Here's a simple way to parse XML using the TinyXML-2 library:
 

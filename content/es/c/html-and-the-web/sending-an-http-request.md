@@ -13,12 +13,7 @@ title: Enviando una solicitud HTTP
 weight: 44
 ---
 
-## Qué y Por Qué?
-
-Enviar una solicitud HTTP implica crear y enviar una solicitud a un servidor web para recuperar o enviar datos. Los programadores hacen esto en C para interactuar con APIs web, descargar páginas web o comunicarse con otros servicios en red directamente desde sus aplicaciones.
-
 ## Cómo hacerlo:
-
 Para enviar una solicitud HTTP en C, generalmente dependerás de bibliotecas como libcurl, ya que C no tiene soporte integrado para protocolos web. Aquí hay un ejemplo simple usando libcurl para realizar una solicitud GET:
 
 Primero, asegúrate de tener libcurl instalado en tu sistema. Luego, incluye los encabezados necesarios y enlaza contra la biblioteca libcurl en tu archivo fuente:
@@ -55,11 +50,9 @@ int main(void) {
 Compila esto con algo similar a `gcc -o http_request http_request.c -lcurl`, ejecutarlo debería realizar una simple solicitud GET a "http://example.com".
 
 ### Ejemplo de Salida
-
 Dado que el ejemplo no procesa la respuesta del servidor, ejecutarlo no producirá una salida visible más allá de los posibles mensajes de error. Integrar la función de retrollamada para procesar los datos recibidos es esencial para una interacción significativa.
 
 ## Análisis Profundo
-
 El concepto de enviar solicitudes HTTP desde un programa en C se basa en las poderosas capacidades de red del lenguaje, junto con bibliotecas externas ya que el propio C es un lenguaje de bajo nivel sin soporte integrado para protocolos de internet de alto nivel. Históricamente, los programadores usarían manualmente la programación de sockets en C, un proceso complejo y tedioso, para interactuar con servidores web antes de la llegada de bibliotecas dedicadas como libcurl.
 
 Libcurl, construido sobre C, simplifica el proceso, abstrayendo los detalles ásperos de la programación de sockets y las especificaciones del protocolo HTTP. Soporta una multitud de protocolos más allá de HTTP/HTTPS, incluyendo FTP, SMTP y más, lo que lo hace una herramienta versátil para la programación de redes en C.

@@ -11,12 +11,7 @@ title: Generera slumptal
 weight: 12
 ---
 
-## Vad & Varför?
-
-Att generera slumpmässiga tal i programmering innebär att skapa sekvenser av tal som saknar förutsägbar ordning eller mönster. Programmerare använder ofta dessa tal för olika ändamål såsom att simulera oförutsägbara händelser, vid testning och felsökning, samt i spelalgoritmer för att säkerställa rättvisa eller oförutsägbarhet.
-
 ## Hur man gör:
-
 För att generera slumpmässiga tal i C++ använder man sig vanligtvis av `<random>`-headern, som introducerades i C++11, och som erbjuder ett brett utbud av faciliteter för att generera slumpmässiga tal från olika distributioner.
 
 ```C++
@@ -47,7 +42,6 @@ Exempel på utdata kan se ut så här, men kom ihåg att varje körning sannolik
 ```
 
 ## Fördjupning:
-
 Historiskt sett har generering av slumpmässiga tal i C++ i hög grad förlitat sig på funktionen `rand()` och funktionen `srand()` för seedning, som finns i `<cstdlib>`-headern. Denna metod har dock ofta kritiserats för sin brist på uniformitet och förutsägbarhet i fördelningen av genererade tal.
 
 Introduktionen av `<random>`-headern i C++11 markerade en betydande förbättring och erbjöd ett sofistikerat system för att producera slumpmässiga tal. De faciliteter som tillhandahålls inkluderar en mängd motorer (som `std::mt19937` för Mersenne Twister) och distributioner (som `std::uniform_int_distribution` för likformig fördelning av heltal) som kan kombineras för att passa programmörens specifika behov, vilket leder till mer förutsägbart beteende, bättre prestanda och större flexibilitet.

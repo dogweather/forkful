@@ -14,12 +14,7 @@ title: Trabalhando com TOML
 weight: 39
 ---
 
-## O que é & Por quê?
-
-TOML, que significa Tom's Obvious, Minimal Language (Linguagem Mínima e Óbvia do Tom), é um formato de arquivo de configuração fácil de ler devido à sua semântica clara. Programadores costumam usá-lo para arquivos de configuração em aplicações porque é direto e legível por humanos, tornando o gerenciamento de configurações e ajustes de aplicativos sem esforço em diferentes ambientes.
-
 ## Como fazer:
-
 Visto que o Google Apps Script é essencialmente JavaScript com acesso ao pacote de aplicativos do Google, trabalhar com TOML diretamente dentro do Google Apps Script requer um pouco de engenhosidade. O Google Apps Script não suporta nativamente o processamento de TOML, mas você pode aproveitar bibliotecas JavaScript ou escrever um analisador simples para necessidades básicas.
 
 Vamos analisar uma simples string de configuração TOML como exemplo:
@@ -74,7 +69,6 @@ A saída de exemplo do `console.log` se pareceria com um objeto JSON, facilitand
 ```
 
 ## Aprofundamento
-
 TOML foi criado por Tom Preston-Werner, um dos fundadores do GitHub, para ser mais amigável para humanos do que JSON para arquivos de configuração, mantendo a capacidade de ser analisado sem ambiguidades. Tem a intenção de ser o mais simples possível, um objetivo que se alinha bem com o ethos de muitos projetos de desenvolvimento que buscam simplicidade e legibilidade em seus códigos.
 
 No contexto do Google Apps Script, usar TOML pode introduzir algum esforço extra, dada a falta de suporte direto e a necessidade de analisá-lo manualmente ou por meio de bibliotecas de terceiros. Para projetos menores ou aqueles não profundamente integrados ao ecossistema do Google, alternativas como JSON ou até mesmo estruturas simples de pares chave-valor em propriedades de script podem ser suficientes e mais simples de implementar. No entanto, para aplicações que priorizam arquivos de configuração amigáveis para humanos e estão já comprometidas com TOML, integrar a análise de TOML por meio de scripts personalizados adiciona uma camada útil de flexibilidade e manutenção sem se desviar dos paradigmas de configuração preferidos.

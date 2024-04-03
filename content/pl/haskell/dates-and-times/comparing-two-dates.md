@@ -11,9 +11,6 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## What & Why?
-Porównywanie dat pozwala określić, która z nich jest wcześniejsza, późniejsza, czy może identyczna. Programiści robią to, żeby obsługiwać wydarzenia chronologicznie, zarządzać terminami i sprawdzać okresy ważności.
-
 ## How to:
 Do porównania dat w Haskellu możemy użyć modułu `Data.Time`. Oto przykład:
 

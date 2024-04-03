@@ -13,14 +13,10 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä & Miksi?
-
-CSV-tiedostojen käsittelyyn kuuluu lukeminen ja kirjoittaminen pilkuilla erotettuihin arvoihin (CSV) tiedostoihin, mikä on suosittu tiedonvaihdon muoto, koska se on yksinkertainen ja laajalti tuettu. Ohjelmoijat manipuloivat CSV-tiedostoja tehtäviin, kuten tiedon tuonti/vienti, datan analysointi ja tiedon jakaminen eri järjestelmien välillä.
-
 ## Kuinka:
 
-### CSV-tiedoston lukeminen käyttäen standardia Java-kirjastoa
 
+### CSV-tiedoston lukeminen käyttäen standardia Java-kirjastoa
 Java ei tue CSV:tä sisäänrakennetusti sen vakio-kirjastossa, mutta voit helposti lukea CSV-tiedoston käyttämällä `java.io` luokkia.
 
 ```java
@@ -49,7 +45,6 @@ public class ReadCSVExample {
 ```
 
 ### Kirjoittaminen CSV-tiedostoon käyttäen standardia Java-kirjastoa
-
 Jotta voit kirjoittaa dataa CSV-tiedostoon, voit käyttää `java.io` luokkia, kuten `FileWriter` ja `BufferedWriter`.
 
 ```java
@@ -78,7 +73,6 @@ public class WriteCSVExample {
 ```
 
 ### Kolmannen osapuolen kirjaston käyttö: Apache Commons CSV
-
 Apache Commons CSV on suosittu kirjasto CSV-tiedostojen käsittelyyn Javassa. Se yksinkertaistaa merkittävästi CSV-tiedostojen lukemista ja kirjoittamista.
 
 Lisää riippuvuus projektiisi:
@@ -94,7 +88,6 @@ Mavenille:
 ```
 
 #### CSV-tiedoston lukeminen:
-
 ```java
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -123,7 +116,6 @@ public class ApacheReadCSVExample {
 ```
 
 #### Kirjoittaminen CSV-tiedostoon:
-
 ```java
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;

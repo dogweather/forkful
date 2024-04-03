@@ -16,9 +16,6 @@ title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---
 
-## Là gì và Tại sao?
-In thông điệp gỡ lỗi giống như việc trò chuyện với mã lệnh của bạn; bạn rắc vào các câu lệnh in để kiểm tra sức khỏe và tư duy của nó. Lập trình viên làm điều này để tìm và khắc phục lỗi hoặc để đảm bảo mọi thứ đang diễn ra suôn sẻ—giống như đang kiểm tra nhanh mã lệnh của bạn.
-
 ## Làm thế nào:
 Dưới đây là một đoạn mã cho thấy cách in một thông điệp gỡ lỗi đơn giản ra bảng điều khiển.
 

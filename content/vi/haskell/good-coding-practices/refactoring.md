@@ -15,9 +15,6 @@ title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---
 
-## Cái gì và Tại sao?
-Tái cấu trúc là quá trình chỉnh sửa mã nguồn của bạn mà không thay đổi hành vi bên ngoài của nó. Đó tất cả là về việc dọn dẹp và tổ chức lại công việc của bạn để làm cho mã nguồn dễ đọc, bảo trì và mở rộng hơn. Nó cũng có thể giúp loại bỏ lỗi và cải thiện hiệu suất.
-
 ## Làm thế nào:
 Giả sử bạn có một khối mã Haskell đang lặp lại nhiều hơn bài hát yêu thích của bạn. Dưới đây là cái nhìn nhanh về cách bạn có thể tái cấu trúc điều đó bằng cách sử dụng các hàm.
 

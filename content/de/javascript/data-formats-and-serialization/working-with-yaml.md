@@ -12,12 +12,7 @@ title: Arbeiten mit YAML
 weight: 41
 ---
 
-## Was & Warum?
-
-YAML, die Abkürzung für YAML Ain't Markup Language, ist ein menschenlesbares Daten-Serialisierungsformat. Programmierer verwenden es oft für Konfigurationsdateien und den Datenaustausch zwischen Sprachen aufgrund seiner Einfachheit und Lesbarkeit im Vergleich zu JSON oder XML.
-
 ## Wie zu:
-
 Bei der Arbeit mit YAML in JavaScript ist typischerweise die Verwendung einer Drittanbieterbibliothek erforderlich, da die Sprache keinen eingebauten Parser für YAML enthält. Eine der beliebtesten Bibliotheken für diesen Zweck ist `js-yaml`. Mit `js-yaml` können Sie YAML in JavaScript-Objekte parsen und umgekehrt.
 
 Zuerst müssen Sie `js-yaml` installieren:

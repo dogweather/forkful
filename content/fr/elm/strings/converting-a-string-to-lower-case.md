@@ -11,9 +11,6 @@ title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---
 
-## What & Why?
-Convertir une chaîne en minuscules, c'est transformer tous les caractères d'une chaîne en leur équivalent minuscule. Les développeurs font ça pour normaliser les données, simplifier les comparaisons de texte et améliorer la cohérence.
-
 ## How to:
 ```Elm
 import String

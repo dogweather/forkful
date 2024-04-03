@@ -12,12 +12,7 @@ title: "Manipulando archivos con comandos de l\xEDnea de una sola l\xEDnea"
 weight: 31
 ---
 
-## Qué y por qué?
-
-Manipular archivos con líneas de comando en una sola línea en Ruby se trata de realizar operaciones comunes con archivos directamente desde tu terminal utilizando scripts de Ruby. Es un método poderoso para automatizar y ejecutar rápidamente tareas relacionadas con archivos, ahorrando a los programadores un tiempo valioso y reduciendo el potencial de errores manuales.
-
 ## Cómo hacerlo:
-
 Ruby, con su sintaxis expresiva, permite líneas de comando sucintas y legibles que pueden manejar una variedad de operaciones con archivos. Aquí hay algunos ejemplos que podrías encontrar útiles:
 
 **Leyendo un archivo**
@@ -55,7 +50,6 @@ Cuando necesitas limpiar y eliminar archivos, este es tu línea de comando a seg
 Mientras estos ejemplos demuestran la facilidad con la que Ruby puede manipular archivos desde el CLI, es importante manejar las operaciones con archivos con cuidado para evitar la pérdida accidental de datos. Siempre haz una copia de seguridad de datos importantes antes de ejecutar operaciones destructivas como eliminar o sobrescribir.
 
 ## Profundización
-
 La manipulación de archivos con líneas de comando en Ruby no es única de Ruby; lenguajes como Perl y Awk se han utilizado para tareas similares durante décadas. Ruby, sin embargo, combina el poder expresivo de Perl con legibilidad, haciendo que la creación de scripts sea más intuitiva. Dicho esto, una de las debilidades de Ruby en la manipulación de archivos CLI podría ser su rendimiento, especialmente al tratar con archivos grandes o operaciones complejas: los lenguajes de scripting generalmente son más lentos que los lenguajes compilados o herramientas dedicadas de Unix como `sed` o `awk` para tareas de procesamiento de texto.
 
 A pesar de eso, los scripts de Ruby son increíblemente versátiles y pueden integrarse fácilmente en aplicaciones de Ruby más grandes o proyectos de Rails. Su legibilidad y las vastas funcionalidades ofrecidas a través de la biblioteca estándar y las gemas hacen de Ruby una opción sólida para los desarrolladores que buscan un equilibrio entre rendimiento y productividad.

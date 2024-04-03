@@ -15,9 +15,6 @@ title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---
 
-## Cái gì & Tại sao?
-Refactoring là quá trình tái cấu trúc code máy tính hiện có—thay đổi cách tổ chức—mà không làm thay đổi hành vi bên ngoài của nó. Các lập trình viên thực hiện điều này để dọn dẹp code, cải thiện tính dễ đọc, và làm cho việc bảo trì và mở rộng trở nên dễ dàng hơn, tất cả mà không thêm mới tính năng nào.
-
 ## Làm thế nào:
 Giả sử bạn có một đoạn code tính toán và in ra diện tích và chu vi của một hình chữ nhật khi biết chiều dài và chiều rộng. Nó thực hiện công việc, nhưng có phần lặp lại và hơi lộn xộn.
 

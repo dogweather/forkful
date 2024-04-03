@@ -13,12 +13,7 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä & Miksi?
-
-Tiedostoon kirjoittaminen Elixirilla on olennainen taito kehittäjille, sillä se mahdollistaa datan pysyvyyden, lokitiedon kirjaamisen tai ihmisluettavan sisällön viemisen. Ohjelmoijat saavuttavat tämän tallentamalla sovelluksen tilan, vianetsintätiedot, konfiguraatiot tai minkä tahansa datan vaihdon järjestelmien välillä, jotka suosivat yleiskäyttöistä formaattia, kuten tekstiä.
-
 ## Kuinka:
-
 Elixir tekee tiedoston käsittelystä yksinkertaista sisäänrakennettujen moduulien avulla. Pääasiallinen tapa kirjoittaa tiedostoon on käyttämällä `File.write/2` tai `File.write!/2` funktioita, joista edellinen palauttaa `:ok` tai `:error` tuplen ja jälkimmäinen nostaa virheen epäonnistuessa.
 
 Tässä on yksinkertainen esimerkki:

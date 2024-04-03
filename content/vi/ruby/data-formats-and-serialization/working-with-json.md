@@ -14,9 +14,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---
 
-## Cái gì & Tại sao?
-JSON, hay JavaScript Object Notation, là một định dạng trao đổi dữ liệu nhẹ. Lập trình viên sử dụng JSON để lưu trữ và trao đổi dữ liệu bởi vì nó dễ đọc và viết cho con người và đơn giản để phân tích đối với máy.
-
 ## Làm thế nào:
 Trong Ruby, bạn có thể làm việc với JSON sử dụng thư viện 'json' được tích hợp sẵn. Để sử dụng nó, chỉ cần yêu cầu 'json' ở đầu mã của bạn.
 

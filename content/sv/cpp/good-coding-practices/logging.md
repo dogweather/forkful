@@ -10,9 +10,6 @@ title: Loggning
 weight: 17
 ---
 
-## Vad & Varför?
-Loggning i programmeringssammanhang är processen att spela in händelser, tillstånd och information till en fil eller ett annat utgångsmedium. Programmerare loggar för att hålla koll på vad som händer i deras applikationer, för att felsöka problem, samt för att övervaka prestanda för framtida analys och optimering.
-
 ## Hur man gör:
 Säg att du jobbar på en Linux-maskin och du vill slänga dina loggar i en fil med god gammal C++. Då vill du inkludera biblioteken `<iostream>` och `<fstream>` för att hantera filoperationer. Här är ett snabbt exempel:
 

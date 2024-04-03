@@ -12,9 +12,6 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O Que & Por Quê?
-Refatoração é o processo de ajustar o código existente para melhorar sua estrutura, legibilidade e desempenho sem alterar seu comportamento externo. Programadores refatoram para tornar o código mais fácil de manter, simplificar a adição de novos recursos e detectar e corrigir bugs mais facilmente.
-
 ## Como Fazer:
 Aqui está um trecho em Kotlin mostrando um problema comum no código e sua versão refatorada. Começamos com um trecho de código que está fazendo demais:
 

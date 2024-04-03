@@ -13,9 +13,6 @@ title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---
 
-## Co i dlaczego?
-Parsowanie HTML polega na rozbijaniu zawartości HTML na coś, co program może zrozumieć i manipulować. Programiści robią to w celu wyodrębniania danych, manipulowania treścią lub integracji z zadaniami web scrapingu w ich aplikacjach.
-
 ## Jak to zrobić:
 C++ nie posiada wbudowanych możliwości parsowania HTML. Często używa się do tego biblioteki, takiej jak Gumbo-parser od Google'a, lub czegoś podobnego. Oto krótki przykład użycia Gumbo-parser:
 

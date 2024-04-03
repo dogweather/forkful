@@ -10,9 +10,6 @@ title: Removing quotes from a string
 weight: 9
 ---
 
-## What & Why?
-Stripping quotes from a string means shedding off those extra wrappers to get the clean text inside. Programmers do this to sanitize input, avoid errors, and prep data for processing where quotes are nuisances, not features.
-
 ## How to:
 Elixir has no built-in 'remove quotes' function, but it's a cinch to roll your own with pattern matching or `String` functions. See these snippets:
 

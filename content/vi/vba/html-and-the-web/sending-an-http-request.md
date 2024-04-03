@@ -16,12 +16,7 @@ title: "G\u1EEDi y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---
 
-## Cái gì & Tại sao?
-
-Việc gửi một yêu cầu HTTP trong Visual Basic for Applications (VBA) bao gồm việc truy cập vào các tài nguyên web hoặc dịch vụ web một cách lập trình bằng cách thực hiện các yêu cầu qua HTTP. Lập trình viên làm việc này để lấy dữ liệu, tương tác với các API trực tuyến, hoặc gửi các biểu mẫu một cách lập trình từ bên trong các ứng dụng của họ có hỗ trợ VBA như Excel, Access, hoặc các giải pháp VBA được xây dựng tùy chỉnh.
-
 ## Làm thế nào:
-
 Chìa khóa để gửi một yêu cầu HTTP trong VBA là sử dụng thư viện `Microsoft XML, v6.0` (hoặc các phiên bản cũ hơn, tùy thuộc vào hệ thống của bạn). Đầu tiên, đảm bảo tham chiếu này được kích hoạt trong dự án của bạn bằng cách đi tới Tools > References trong trình biên soạn VBA và kiểm tra `Microsoft XML, v6.0`.
 
 Dưới đây là cách gửi một yêu cầu GET HTTP đơn giản:
@@ -67,7 +62,6 @@ Kết quả mẫu cho một yêu cầu thành công có thể là một chuỗi 
 ```
 
 ## Đào Sâu
-
 Phương pháp được trình bày sử dụng đối tượng `MSXML2.XMLHTTP`, một phần của Microsoft XML Core Services (MSXML). Nó đã được giới thiệu để cung cấp cho các nhà phát triển VBA một cách thực hiện các hoạt động dựa trên XML và, theo thời gian, trở thành công cụ phổ biến cho các yêu cầu HTTP, ngay cả khi không làm việc trực tiếp với dữ liệu XML. Mặc dù đã lâu, nhưng nó vẫn là một lựa chọn đáng tin cậy cho các tương tác web đơn giản trong VBA.
 
 Tuy nhiên, VBA và các cơ chế yêu cầu http của nó thiếu tự tin và linh hoạt so với môi trường lập trình hiện đại. Ví dụ, xử lý các yêu cầu bất đồng bộ hoặc làm việc trong các ứng dụng đòi hỏi các tính năng HTTP tiên tiến (như websockets hay sự kiện được gửi từ máy chủ) là ngoài phạm vi của VBA. Khi làm việc trên các dự án tích hợp web phức tạp hơn, các nhà phát triển thường sử dụng các thư viện hoặc công cụ bên ngoài, hoặc thậm chí tự động hóa hành vi trình duyệt qua các kỹ thuật web scraping, mặc dù những cách này là giải pháp tạm thời chứ không phải là giải pháp dài hạn.

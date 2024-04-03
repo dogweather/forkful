@@ -11,9 +11,6 @@ title: Przetwarzanie HTML
 weight: 43
 ---
 
-## What & Why? (Co & Dlaczego?)
-Parsing HTML oznacza proces analizowania struktury kodu HTML, aby wydobyć z niego konkretne dane. Programiści robią to, by pozyskać informacje ze stron internetowych, które nie oferują API, lub dla szybkiej transformacji treści HTML na inne formaty.
-
 ## How to: (Jak to zrobić:)
 Swift nie ma wbudowanej obsługi parsowania HTML, więc wykorzystamy bibliotekę zewnętrzną, jak `SwiftSoup`. Aby jej użyć, musisz dodać zależność do swojego pliku `Package.swift`:
 

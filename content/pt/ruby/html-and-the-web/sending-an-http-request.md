@@ -11,9 +11,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---
 
-## O Que é & Porquê?
-Enviar uma requisição HTTP é o ato de pedir informações a um servidor web. Programadores fazem isso para interagir com APIs, solicitar dados, ou submeter informações.
-
 ## Como fazer:
 Ruby é pura conveniência quando se trata de enviar requisições HTTP. Você pode usar a biblioteca `net/http` padrão ou, para algo mais avançado, `httparty`. Aqui está um exemplo básico:
 

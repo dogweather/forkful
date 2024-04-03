@@ -15,9 +15,6 @@ title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE3
 weight: 39
 ---
 
-## 무엇 & 왜?
-TOML은 Tom's Obvious, Minimal Language의 약자로, 데이터 직렬화 형식입니다. 프로그래머들은 그것의 단순함과 가독성 때문에 선호하는데; 설정 파일에 아주 적합하며, YAML과 비슷한 느낌이지만 사람이 보기에는 JSON보다 덜 번거롭습니다.
-
 ## 방법:
 먼저, Bash에서 TOML을 가지고 놀기 위해 `toml-cli`를 설치합니다. 즉석에서 TOML 파일을 읽거나 편집하기에 유용합니다.
 

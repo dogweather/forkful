@@ -12,9 +12,6 @@ title: Gestione degli errori
 weight: 16
 ---
 
-## Cosa e Perché?
-La gestione degli errori è il modo in cui il tuo codice si occupa dei problemi che emergono durante l'esecuzione, come se gestisse una palla curva senza farla cadere. I programmatori lo fanno per prevenire crash ed offrire agli utenti un'esperienza fluida.
-
 ## Come fare:
 Kotlin fornisce `try`, `catch`, `finally` e `throw` per gestire gli errori. Ecco come si usano:
 

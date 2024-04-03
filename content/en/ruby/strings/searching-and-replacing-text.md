@@ -10,9 +10,6 @@ title: Searching and replacing text
 weight: 10
 ---
 
-## What & Why?
-Searching and replacing text is swapping specific words or phrases with alternatives in a string. Programmers do it to update data, fix errors, or change formatting - it keeps things accurate and tidy.
-
 ## How to:
 Ruby makes it easy. Use `gsub` to globally substitute text, or `sub` for a single instance. Here's a quick look:
 
@@ -41,7 +38,7 @@ puts "make me pretty".gsub(/\b\w/) { |match| match.upcase }
 # => Make Me Pretty
 ```
 
-Why bother? For starters, using regex with `gsub` lets you tackle nuanced cases where you need more finesse than blunt 'find this, replace with that'. 
+Why bother? For starters, using regex with `gsub` lets you tackle nuanced cases where you need more finesse than blunt 'find this, replace with that'.
 
 ## See Also
 Sharpen those skills - dive into the docs or check out these resources:

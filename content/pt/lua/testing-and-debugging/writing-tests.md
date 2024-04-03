@@ -14,16 +14,10 @@ title: Escrevendo testes
 weight: 36
 ---
 
-## O Que & Por Quê?
-
-Escrever testes em programação envolve criar pequenas peças separadas de código para verificar automaticamente se diferentes partes da sua aplicação funcionam conforme esperado. Para programadores Lua, testar garante a confiabilidade e auxilia na manutenção da qualidade do código, acelerando o processo de depuração e tornando as modificações no código-base mais seguras.
-
 ## Como fazer:
-
 Lua, sendo uma linguagem de script leve, porém poderosa, não inclui um framework de teste integrado. No entanto, bibliotecas de terceiros como Busted e LuaUnit tornam o teste relativamente direto. Aqui, vamos olhar para exemplos usando ambos.
 
 ### Usando Busted
-
 Busted é um framework de teste Lua popular que oferece uma maneira flexível de escrever testes. Primeiramente, instale o Busted através do LuaRocks (gerenciador de pacotes do Lua) com `luarocks install busted`. Uma vez instalado, você pode escrever seus testes. Aqui está um teste simples para uma função `add` que soma dois números:
 
 ```lua
@@ -54,7 +48,6 @@ Para executar os testes, execute `busted` no seu terminal. A saída de exemplo p
 ```
 
 ### Usando LuaUnit
-
 LuaUnit é outro framework de teste que segue as convenções xUnit e é fácil de configurar. Instale o LuaUnit via LuaRocks usando `luarocks install luaunit`. Aqui está como você poderia escrever um teste semelhante ao de cima com LuaUnit:
 
 ```lua

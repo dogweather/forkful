@@ -10,9 +10,6 @@ title: Manipulation des nombres complexes
 weight: 14
 ---
 
-## Quoi & Pourquoi ?
-Les nombres complexes étendent l'idée de la ligne numérique unidimensionnelle dans le plan bidimensionnel en incluant un axe imaginaire perpendiculaire. Les programmeurs travaillent avec eux dans des domaines tels que le traitement des signaux, la dynamique des fluides et l'ingénierie électrique, où ils sont essentiels pour représenter les oscillations et autres phénomènes.
-
 ## Comment faire :
 En Lua, vous pouvez représenter les nombres complexes avec des tables. Les opérations de base impliquent d'ajouter, de soustraire, de multiplier et de diviser ces tables. Voici comment :
 

@@ -13,11 +13,7 @@ title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---
 
-## Vad & Varför?
-Att tolka ett datum från en sträng i C# innebär att omvandla textuella representationer av datum och tider till ett `DateTime`-objekt. Detta är avgörande för applikationer som behöver manipulera, lagra eller visa datum och tider i olika format, såsom planeringsappar, loggprocessorer eller vilket system som helst som hanterar datumindata från användare eller externa källor.
-
 ## Hur man gör:
-
 **Grundläggande tolkning:**
 
 Metoderna `DateTime.Parse` och `DateTime.TryParse` är de främsta alternativen för att omvandla en sträng till ett `DateTime`. Här är ett snabbt exempel:

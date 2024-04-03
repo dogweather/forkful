@@ -11,9 +11,6 @@ title: "Feilh\xE5ndtering"
 weight: 16
 ---
 
-## Hva & Hvorfor?
-Håndtering av feil er hvordan koden din takler problemer som oppstår under utførelse—som å fange en kurveball uten å miste den. Programmerere gjør dette for å forhindre krasj og gi brukerne en jevn opplevelse.
-
 ## Hvordan:
 Kotlin tilbyr `try`, `catch`, `finally`, og `throw` for å håndtere feil. Slik bruker du dem:
 

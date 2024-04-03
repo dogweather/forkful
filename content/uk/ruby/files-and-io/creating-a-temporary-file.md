@@ -11,12 +11,7 @@ title: "\u0421\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u0442\u0438\u043
 weight: 21
 ---
 
-## What & Why? / Що і Чому?
-
-Temporary files are files created to hold data temporarily while a program is running. Programmers use them for tasks like managing large data that won't fit into memory, inter-process communication, and storing data that doesn't need to persist after the program ends.
-
 ## How to: / Як це зробити:
-
 Ruby provides a simple way to work with temporary files using the `Tempfile` class. Here's an example:
 
 ```Ruby
@@ -37,10 +32,8 @@ end
 ```
 
 ## Deep Dive / Поглиблене вивчення:
-
 The `Tempfile` class has been a part of Ruby's Standard Library for ages, helping developers manage temporary files easily. An alternative is to manage files manually, creating and deleting them, which is riskier due to potential file leaks. Under the hood, `Tempfile` creates files in a special temp directory, which on most UNIX-like systems is '/tmp'. The files are usually named with a random sequence to avoid clashes, and get deleted automatically when the object is garbage collected or when the program exits.
 
 ## See Also / Дивіться також:
-
 - Ruby's Standard Library documentation: [https://ruby-doc.org/stdlib/](https://ruby-doc.org/stdlib/)
 - For an in-depth look at file I/O: [https://www.tutorialspoint.com/ruby/ruby_input_output.htm](https://www.tutorialspoint.com/ruby/ruby_input_output.htm)

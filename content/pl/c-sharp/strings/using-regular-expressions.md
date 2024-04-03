@@ -14,10 +14,8 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-Wyrażenia regularne (regex) w C# są potężnym narzędziem do dopasowywania wzorców w ciągach znaków, co pozwala programistom na efektywne wyszukiwanie, zastępowanie, dzielenie lub ekstrakcję danych. Programiści wykorzystują wyrażenia regularne do zadań o różnym stopniu skomplikowania, począwszy od prostych walidacji, takich jak sprawdzanie formatu adresu e-mail, po złożone zadania przetwarzania tekstu, dzięki ich elastyczności i wydajności.
-
 ## Jak to zrobić:
+
 
 ### Proste dopasowywanie wzorców
 Aby sprawdzić, czy ciąg zawiera określony wzorzec, można użyć metody `Regex.IsMatch` z przestrzeni nazw `System.Text.RegularExpressions`.

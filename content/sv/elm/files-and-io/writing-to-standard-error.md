@@ -13,12 +13,7 @@ title: Skriva till standardfel
 weight: 25
 ---
 
-## Vad & Varför?
-
-Att skriva till standardfel (stderr) handlar om att omdirigera felmeddelanden och diagnostik separat från huvudprogrammets utdata, som går till standardutdata (stdout). Programmerare gör detta för att göra felsökning och loggning mer hanterbart, särskilt i miljöer där utdataåtskillnad är avgörande för felsökning och övervakning.
-
 ## Hur man gör:
-
 Elm är främst inriktad på webbutveckling, där konceptet att skriva direkt till stderr inte tillämpas på samma sätt som det gör i traditionella kommandoradsmiljöer. Dock, för Elm-program som körs i Node.js eller liknande miljöer, är interaktion med JavaScript genom portar den främsta metoden för att uppnå liknande funktionalitet. Här är hur du kan ställa in det:
 
 Elm-kod (`Main.elm`):

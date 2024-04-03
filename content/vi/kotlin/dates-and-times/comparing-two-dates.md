@@ -15,12 +15,7 @@ title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---
 
-## Cái gì & Tại sao?
-
-So sánh hai ngày nghĩa là kiểm tra xem ngày nào đến trước hoặc sau ngày kia, hoặc nếu chúng là cùng một thời điểm. Lập trình viên thực hiện điều này cho các nhiệm vụ như sắp xếp sự kiện, lập lịch, và kiểm tra khoảng thời gian giữa các ngày.
-
 ## Cách thực hiện:
-
 ```Kotlin
 import java.time.LocalDate
 
@@ -47,7 +42,6 @@ false
 ```
 
 ## Đi sâu vào vấn đề
-
 Trước đây, Java cung cấp các lớp `Date` và `Calendar` nhưng chúng không thân thiện với người sử dụng. Kotlin sử dụng các lớp tương tự phía dưới nhưng khuyến khích sử dụng gói `java.time` được giới thiệu trong Java 8 để có sự rõ ràng và tiện ích tốt hơn.
 
 Có những lựa chọn thay thế như `Instant` cho các dấu thời gian, `ZonedDateTime` cho các ngày cụ thể theo múi giờ, hoặc sử dụng một thư viện bên thứ ba như Joda-Time. Hãy giữ ý các chi tiết triển khai — `Instant` sử dụng dấu thời gian Unix truyền thống trong khi `LocalDate` tách biệt điều này và xử lý một ngày hình thành không có thời gian hoặc múi giờ.
@@ -55,7 +49,6 @@ Có những lựa chọn thay thế như `Instant` cho các dấu thời gian, `
 Biết lớp nào phù hợp nhất với nhu cầu của bạn là thiết yếu. `LocalDate` phù hợp cho hầu hết các so sánh ngày, nhưng để so sánh chính xác thời điểm trong thời gian, hãy cân nhắc `ZonedDateTime` hoặc `Instant`.
 
 ## Xem thêm
-
 - Tài liệu chính thức của Kotlin về ngày và giờ: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/)
 - Hướng dẫn về Ngày và Giờ của Java 8: [https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html)
 - Thư viện Joda-Time: [https://www.joda.org/joda-time/](https://www.joda.org/joda-time/)

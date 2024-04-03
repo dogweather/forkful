@@ -13,12 +13,7 @@ title: Calcolo di una data nel futuro o nel passato
 weight: 26
 ---
 
-## Cosa & Perché?
-
-Calcolare una data nel futuro o nel passato in Go comporta la manipolazione dei valori di data e ora per determinare un punto specifico relativo a una data data. I programmatori eseguono comunemente questa attività per applicazioni che richiedono pianificazione, scadenze, promemoria o qualsiasi funzionalità dove la progressione o la regressione temporale è essenziale.
-
 ## Come fare:
-
 Go fornisce il pacchetto `time` per gestire le operazioni di data e ora, offrendo meccanismi semplici per aggiungere o sottrarre tempo. Ecco uno sguardo su come sfruttare il pacchetto `time` per calcolare date future o passate:
 
 ```go
@@ -58,7 +53,6 @@ Tempo Futuro (5 ore e 30 minuti dopo):  2023-04-01 20:34:05.123456789 +0000 UTC
 Si noti come il metodo `AddDate` viene utilizzato per la manipolazione delle date per anni, mesi e giorni, mentre il metodo `Add` viene utilizzato per delta di tempo più precisi come ore, minuti e secondi.
 
 ## Approfondimento
-
 Il pacchetto `time` del linguaggio di programmazione Go facilita la manipolazione del tempo con una forte sicurezza dei tipi e una sintassi chiara, tratti per i quali Go è ben celebrato. La sua implementazione si basa sulle funzionalità di manipolazione del tempo fornite dal sistema operativo sottostante, garantendo efficienza e precisione. Storicamente, gestire date e orari nella programmazione è stato pieno di complessità a causa delle variazioni nei fusi orari, negli anni bisestili e nei cambiamenti dell'ora legale. Il pacchetto `time` di Go astrae gran parte di questa complessità, offrendo agli sviluppatori un robusto kit di strumenti per la manipolazione del tempo.
 
 Sebbene il pacchetto `time` nativo di Go copra un ampio spettro di esigenze di manipolazione del tempo, librerie alternative come `github.com/jinzhu/now` offrono comodità e funzionalità aggiuntive per casi d'uso più specifici. Queste alternative possono essere particolarmente utili per esigenze di manipolazione di date e orari più complesse non supportate direttamente dal pacchetto `time` nativo.

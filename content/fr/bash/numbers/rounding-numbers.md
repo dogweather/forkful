@@ -12,12 +12,7 @@ title: Arrondir les nombres
 weight: 13
 ---
 
-## Quoi & Pourquoi ?
-
-Arrondir les nombres signifie éliminer les décimales pour arriver à une valeur plus simple qui est suffisamment bonne pour un contexte donné. Les programmeurs arrondissent les nombres pour simplifier les résultats, économiser de l'espace ou parce que la valeur exacte n'est pas vitale - comme lorsque vous estimez visuellement l'utilisation du CPU ou l'espace disque, et que les décimales ne changeront pas votre journée.
-
 ## Comment :
-
 Voici l'essentiel sur l'arrondissement dans Bash :
 
 ```Bash
@@ -44,7 +39,6 @@ Exemples de résultats — directement de la bouche du terminal :
 ```
 
 ## Approfondissement
-
 Dans le temps, il n'y avait pas de `bc` ou `printf` dans les scripts Bash pour faire la magie des mathématiques. Les vieux de la vieille devaient compter sur des outils externes ou des solutions astucieuses. Maintenant, `bc` vous permet de faire des mathématiques de précision. Gardez à l'esprit que par défaut, `bc` n'arrondit pas — il prend l'inférieur. La partie scale définit l'action du point décimal.
 
 Des alternatives ? Vous pourriez utiliser `awk` pour arrondir sans passer à `bc` ou vous débattre avec `perl` pour des besoins mathématiques plus lourds. Pour les masochistes, allez-y en pur Bash avec, disons, une manipulation de chaînes de caractères itérative – mais pourquoi faire ?
@@ -52,7 +46,6 @@ Des alternatives ? Vous pourriez utiliser `awk` pour arrondir sans passer à `bc
 Quant aux détails, `bc` ne se limite pas à arrondir, il fait beaucoup de trucs en mathématiques — le mettre à l'échelle, le sinus, la racine carrée, vous l'appelez. Avec `printf`, il s'agit davantage de formater du texte, mais hé, ça arrondit les nombres, alors on ne se plaint pas.
 
 ## Voir Aussi
-
 Pour ceux qui en veulent plus :
 
 - Manuel de GNU `bc` : https://www.gnu.org/software/bc/manual/html_mono/bc.html

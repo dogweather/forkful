@@ -11,9 +11,6 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## What & Why?
-Extraire des sous-chaînes, c'est simplement récupérer une partie d'une chaîne de caractères. Les programmeurs le font pour analyser, manipuler ou tester des données textuelles spécifiques.
-
 ## How to:
 Kotlin offre plusieurs façons d'extraire des sous-chaînes. Voici des exemples simples :
 

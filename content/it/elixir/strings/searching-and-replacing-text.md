@@ -10,9 +10,6 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## What & Why?
-Cercare e sostituire testo è fondamentale per manipolare stringhe e automatizzare l'editing. I programmatori lo fanno per correggere errori, aggiornare codici o dati, e semplificare la refactoring.
-
 ## How to:
 Elixir rende semplice la ricerca e sostituzione con la funzione `String.replace/4`. Vediamo qualche esempio:
 

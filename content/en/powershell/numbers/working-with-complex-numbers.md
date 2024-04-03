@@ -10,9 +10,6 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-Complex numbers, the ones with a real part and an imaginary part (like 3 + 4i), are vital in fields like engineering, physics, and data science. Programmers use them for simulations, signal processing, and solving specific types of math problems.
-
 ## How to:
 PowerShell doesn't have built-in complex number support, so you either roll your own solution or use .NET's `System.Numerics.Complex`.
 

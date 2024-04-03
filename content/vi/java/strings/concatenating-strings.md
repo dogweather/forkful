@@ -16,12 +16,7 @@ title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---
 
-## Cái gì & Tại sao?
-
-Nối chuỗi có nghĩa là ghép chúng lại với nhau từ đầu đến cuối để tạo thành một chuỗi mới. Điều này rất tiện lợi để tạo ra các thông điệp tùy chỉnh, xây dựng văn bản để xuất ra, hoặc xử lý nhập liệu từ người dùng.
-
 ## Làm thế nào:
-
 Dưới đây là cách nối chuỗi trong Java:
 
 ```java
@@ -47,7 +42,6 @@ public class StringConcatenationDemo {
 ```
 
 ## Tìm hiểu sâu
-
 Việc nối chuỗi có vẻ đơn giản, phải không? Nó đã có mặt trong Java từ những ngày đầu, và chúng ta có một vài cách để thực hiện. Các phiên bản Java sớm sử dụng `StringBuilder` ngầm định mỗi khi bạn thực hiện phép cộng `+`. Sau đó, Java 5 ra đời, và mọi thứ trở nên hiệu quả hơn với sự giới thiệu của `StringJoiner` và nhiều cải tiến cho lớp `StringBuilder`.
 
 Bây giờ, bạn có thể tự hỏi tại sao không luôn sử dụng toán tử `+` nếu nó giống nhau? Hóa ra, `+` rất tốt cho một công việc nhanh chóng với những chuỗi nhỏ hoặc một vài phép nối. Tuy nhiên, đằng sau hậu trường, nó có thể trở nên tốn kém về hiệu suất nếu bạn sử dụng nó trong một vòng lặp với nhiều lần lặp lại vì nó tạo ra các đối tượng tạm thời trước khi đạt được phiên bản chuỗi cuối cùng.
@@ -59,7 +53,6 @@ Trong những trường hợp nặng nề đó, `StringBuilder` hoặc `StringBu
 Tính đến Java 8 trở đi, chúng ta cũng có `String.join()`, rất gọn cho việc kết nối các bộ sưu tập chuỗi với một dấu phân cách.
 
 ## Xem Thêm
-
 - [Tài liệu lớp `String`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)
 - [Tài liệu lớp `StringBuilder`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html)
 - [Tài liệu lớp `StringBuffer`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuffer.html)

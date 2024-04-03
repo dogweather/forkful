@@ -12,16 +12,10 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## Was & Warum?
-
-Das Extrahieren von Teilzeichenketten beinhaltet das Abrufen spezifischer Teile einer Zeichenkette basierend auf ihren Positionen. Programmierer führen diese Operation häufig durch, um Textdaten effizient zu verarbeiten oder zu manipulieren, wie zum Beispiel das Parsen von Eingaben, das Validieren von Formaten oder das Vorbereiten von Ausgaben.
-
 ## Wie:
-
 In Go ist der `string` Typ ein schreibgeschützter Slice von Bytes. Um Teilzeichenketten zu extrahieren, verwendet man hauptsächlich die `slice` Syntax, zusammen mit der integrierten `len()` Funktion für die Längenprüfung und dem `strings` Paket für komplexere Operationen. So können Sie dies erreichen:
 
 ### Grundlegendes Slicing
-
 ```go
 package main
 
@@ -39,7 +33,6 @@ func main() {
 ```
 
 ### Verwendung des `strings` Pakets
-
 Für fortgeschrittenere Teilzeichenketten-Extraktionen, wie das Extrahieren von Zeichenketten nach oder vor einer spezifischen Teilzeichenkette, können Sie das `strings` Paket verwenden.
 
 ```go
@@ -62,7 +55,6 @@ func main() {
 Es ist wichtig zu beachten, dass Go-Zeichenketten UTF-8 kodiert sind und ein direkter Byte-Slice nicht immer in gültigen Zeichenketten resultiert, wenn sie Mehrbyte-Zeichen enthalten. Für die Unterstützung von Unicode ziehen Sie die Verwendung von `range` oder das `utf8` Paket in Betracht.
 
 ### Umgang mit Unicode-Zeichen
-
 ```go
 package main
 
@@ -82,7 +74,6 @@ func main() {
 ```
 
 ## Tiefere Einblicke
-
 Das Extrahieren von Teilzeichenketten in Go ist dank seiner Slice-Syntax und umfangreichen Standardbibliothek unkompliziert. Historisch gesehen boten frühere Programmiersprachen direktere Funktionen oder Methoden für solche Textmanipulationen. Gleichwohl betont Golang Sicherheit und Effizienz, insbesondere mit seinen unveränderlichen Zeichenketten und der expliziten Handhabung von Unicode-Zeichen durch Runen.
 
 Während grundlegendes Slicing von der Leistungseffizienz profitiert, erbt es die Komplexitäten der direkten Handhabung von UTF-8 Zeichen. Die Einführung des `rune` Typs erlaubt es Go-Programmen, sicher mit Unicode-Text umzugehen, was es zu einer leistungsstarken Alternative für internationale Anwendungen macht.

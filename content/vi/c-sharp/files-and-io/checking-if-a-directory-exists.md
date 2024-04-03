@@ -16,9 +16,6 @@ title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---
 
-## Cái gì & Tại sao?
-Kiểm tra sự tồn tại của một thư mục trong C# giúp bạn xác định xem một thư mục cụ thể có sẵn trên hệ thống tệp hay không. Các lập trình viên thực hiện điều này để tránh các lỗi như cố gắng đọc từ hoặc ghi vào một thư mục không tồn tại, điều này sẽ khiến chương trình của họ bị lỗi hoặc hoạt động không dự đoán được.
-
 ## Cách làm:
 Dưới đây là cách bạn có thể kiểm tra xem một thư mục có tồn tại không sử dụng namespace `System.IO`:
 

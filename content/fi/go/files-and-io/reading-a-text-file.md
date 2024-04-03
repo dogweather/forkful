@@ -14,12 +14,7 @@ title: Tekstitiedoston lukeminen
 weight: 22
 ---
 
-## Mikä & Miksi?
-
-Tekstitiedoston lukeminen Go-kielellä sisältää sisällön hakemisen ja noutamisen levyltä tallennetusta tiedostosta käsittelyä tai analysointia varten. Ohjelmoijat suorittavat tätä toimintoa usein datan manipuloimiseksi, sovellusten konfiguroimiseksi tai ohjelman suorituksen syötteen lukemiseksi, mikä tekee siitä ohjelmistokehityksen perustaidon.
-
 ## Kuinka:
-
 Tekstitiedoston lukeminen Gossa voidaan toteuttaa useilla eri tavoilla, mutta yksi suoraviivaisimmista menetelmistä on käyttää `ioutil`-pakettia. Tässä on perusesimerkki:
 
 ```go
@@ -80,7 +75,6 @@ func main() {
 Tämä lähestymistapa ei ole ainoastaan modernimpi, mutta se tukee myös suurempia tiedostoja, koska se lukee tiedostoa rivi riviltä sen sijaan, että lataisi koko sisällön muistiin kerralla.
 
 ## Syväsukellus:
-
 Gon käsittely tiedosto-operaatioille, mukaan lukien tiedostojen lukeminen, heijastaa kielen filosofiaa yksinkertaisuudesta ja tehokkuudesta. Alun perin `ioutil`-paketti tarjosi suoraviivaisia tiedosto-operaatioita. Kuitenkin, Gon standardikirjaston parantuessa ja siirryttäessä kohti selkeämpää virheenkäsittelyä ja resurssienhallintaa, `os`- ja `io`-paketit ovat tulleet suositelluiksi vaihtoehdoiksi tiedostojen käsittelyyn.
 
 Nämä muutokset korostavat Gon sitoutumista suorituskykyyn ja turvallisuuteen, erityisesti välttämällä muistiongelmia, jotka voivat ilmetä, kun suuria tiedostoja ladataan kokonaisuudessaan. `bufio.Scanner`-metodin esittely tiedostojen lukemiseen rivi riviltä korostaa kielen sopeutumiskykyä ja keskittymistä nykyaikaisiin tietojenkäsittelyhaasteisiin, kuten suurten datasettien käsittelyyn tai tiedon suoratoistoon.

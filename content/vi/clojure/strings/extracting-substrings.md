@@ -16,9 +16,6 @@ title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---
 
-## Cái gì & Tại sao?
-Rút trích chuỗi con có nghĩa là bắt lấy một phần cụ thể của một chuỗi—như lấy những phần ngon nhất từ một chiếc bánh sandwich. Lập trình viên làm điều này để cô lập dữ liệu, xác thực đầu vào, hoặc đơn giản vì chúng ta chỉ cần phần đó mà không cần toàn bộ khối văn bản.
-
 ## Cách thực hiện:
 Clojure làm cho việc làm việc với chuỗi trở nên dễ dàng. Để rút trích chuỗi con, `subs` là hàm bạn cần đến:
 

@@ -12,12 +12,7 @@ title: Arbeider med TOML
 weight: 39
 ---
 
-## Hva & Hvorfor?
-
-TOML, som står for Toms Opplagte, Minimale Språk, er et data-serieliseringsformat som hovedsakelig brukes for konfigurasjonsfiler. Programmerere benytter TOML for dets lesbarhet og enkle kartlegging til datastrukturer, noe som muliggjør enkel konfigurasjon av applikasjoner på tvers av forskjellige programmeringsmiljøer, inkludert Visual Basic for Applications (VBA).
-
 ## Hvordan:
-
 Å jobbe med TOML i VBA involverer parsing av TOML-filen for å lese konfigurasjoner eller innstillinger inn i ditt VBA-prosjekt. VBA har ikke innebygd støtte for TOML, så du vil typisk bruke en parser eller konvertere TOML-data til et format som VBA kan jobbe med enkelt, som JSON eller XML. Her er hvordan du manuelt parser en enkel TOML-konfigurasjonsfil:
 
 1. **Eksempel på TOML-fil** (`config.toml`):
@@ -74,5 +69,4 @@ Databaseserver: 192.168.1.1
 ```
 
 ## Dypdykk
-
 Den praktiske aksepten av TOML i utviklerfellesskapet viser en trend mot enklere, mer menneskelesbare konfigurasjonsfiler, i kontrast til det tidligere utbredte XML. TOMLs designfilosofi understreker klare semantikker og sikter mot grei parsing med minimal overhead. I VBA innebærer håndtering av TOML direkte parsing eller bruk av eksterne verktøy for å konvertere TOML til et mer VBA-vennlig format på grunn av mangelen på innebygd støtte. Selv om denne manuelle parsemetoden viser en grunnleggende tilnærming, kan bruk av eksterne biblioteker eller mellomformater som JSON tilby mer robuste og feilbestandige parsestrategier. Gitt VBAs omfattende integrasjon med Microsoft Office, kan konvertering av TOML til JSON og bruk av VBAs innebygde JSON-parsefunksjoner (der det er aktuelt) eller tredjeparts JSON-parsere, gi en mer strømlinjeformet arbeidsflyt. Videre, med den kontinuerlige utviklingen av data-serieliseringsformater, bør programmerere også vurdere YAML, som, lik TOML, legger vekt på menneskelig lesbarhet, men tilbyr forskjellige avveininger når det gjelder kompleksitet og fleksibilitet.

@@ -12,9 +12,6 @@ title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---
 
-## Cosa & Perché?
-Inviare una richiesta HTTP con autenticazione di base significa includere le credenziali di accesso (username e password) nell'header HTTP per accedere a risorse protette. I programmatori lo fanno quando devono interagire con API o servizi web che richiedono autenticazione per garantire protezione e controllo degli accessi.
-
 ## Come fare:
 Elixir usa la libreria `HTTPoison` per fare richieste HTTP con autenticazione di base in modo semplice. Installa prima la libreria aggiungendo `{:httpoison, "~> 1.8"}` al tuo `mix.exs` e poi esegui `mix deps.get`. Ecco un esempio di come usarla:
 

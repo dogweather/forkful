@@ -16,10 +16,8 @@ title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1
 weight: 26
 ---
 
-## Cái gì & Tại sao?
-Việc tính toán một ngày trong tương lai hoặc quá khứ nghĩa là xác định xem ngày sẽ là bao nhiêu sau hoặc trước một khoảng thời gian nhất định. Các lập trình viên làm việc này để tự động hóa việc nhắc nhở, lên lịch cho các nhiệm vụ, hoặc xử lý các ngày hết hạn.
-
 ## Làm thế nào:
+
 
 ### Thêm ngày vào ngày hiện tại:
 ```PowerShell

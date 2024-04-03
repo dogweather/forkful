@@ -12,12 +12,7 @@ title: Controleren of een directory bestaat
 weight: 20
 ---
 
-## Wat & Waarom?
-
-Controleren of een directory bestaat in Python gaat over het bevestigen van de aanwezigheid van een map op het bestandssysteem voordat er acties op worden uitgevoerd. Programmeurs doen dit om fouten zoals het proberen te openen of schrijven naar een directory die er niet is, te vermijden.
-
 ## Hoe:
-
 Python maakt het controleren op een directory eenvoudig met de `os` en `pathlib` modules:
 
 Gebruikmakend van `os.path`:
@@ -53,7 +48,6 @@ De directory bestaat niet.
 ```
 
 ## Diepgaand:
-
 Historisch gezien gebruikte Python de `os` module voor bestandssysteemoperaties. Echter, `os.path.isdir()` was de feitelijke standaard voor het controleren van directories. Het probleem was dat `os.path` werkte met strings voor paden, wat onhandig kon zijn.
 
 Enter de modernere `pathlib` module, geïntroduceerd in Python 3.4. Het gebruikt object-georiënteerde paden, wat de code leesbaarder en bondiger maakt. Nu heb je `Path.is_dir()`, een methode die niet alleen je code netter maakt, maar er is ook iets aangenaams aan het aaneenkoppelen van methoderoepen aan een Path-object.
@@ -61,7 +55,6 @@ Enter de modernere `pathlib` module, geïntroduceerd in Python 3.4. Het gebruikt
 Als deze methoden `False` teruggeven voor een niet-bestaande directory, kan dat twee dingen betekenen: of de directory is er echt niet, of je programma heeft niet de toestemming om het te zien.
 
 ## Zie ook:
-
 1. Documentatie van de `os` module: https://docs.python.org/3/library/os.html
 2. Documentatie van de `pathlib` module: https://docs.python.org/3/library/pathlib.html
 3. Bestandssysteempermissies in Python: https://docs.python.org/3/library/os.html#os.access

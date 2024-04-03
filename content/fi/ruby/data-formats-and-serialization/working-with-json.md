@@ -14,16 +14,10 @@ title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---
 
-## Mikä & Miksi?
-
-JSON (JavaScript Object Notation) on kevyt tiedonvaihtomuoto, joka on yleinen verkkosovelluksissa datan vaihtamiseen asiakkaiden ja palvelinten välillä. Ohjelmoijat työskentelevät Rubyssa JSON:n kanssa jäsentääkseen ulkoisista lähteistä saatuja tietoja tai muotoillakseen dataa API-vastausten muodossa, hyödyntäen sen ihmiselle luettavaa rakennetta helppoon datan käsittelyyn ja tallennukseen.
-
 ## Miten:
-
 Ruby tarjoaa standardikirjastonsa avulla saumattomia tapoja jäsentää ja tuottaa JSON-muotoista dataa. Päämoduuli näille toiminnoille on `json`, joka voidaan helposti integroida mihin tahansa Ruby-sovellukseen.
 
 ### JSON:n jäsentäminen:
-
 JSON-merkkijonon muuntamiseksi Ruby-hashiksi voit käyttää `JSON.parse` -metodia.
 
 ```ruby
@@ -37,7 +31,6 @@ puts ruby_hash
 ```
 
 ### JSON:n tuottaminen:
-
 Vastaavasti, kun haluat muuntaa Ruby-hashin JSON-merkkijonoksi, käytät `JSON.generate` -metodia tai `to_json` -metodia, joka on käytettävissä Ruby-objekteilla sen jälkeen, kun `json`-kirjasto on vaadittu.
 
 ```ruby
@@ -51,11 +44,9 @@ puts json_merkkijono
 ```
 
 ### Kolmannen osapuolen kirjastot:
-
 Vaikka Rubyn standardikirjasto kattaa perus JSON-käsittelyn, monet projektit nojaavat kolmannen osapuolen kirjastoihin parannetun toiminnallisuuden ja suorituskyvyn vuoksi. Yksi suosittu vaihtoehto on `Oj` (Optimized JSON).
 
 #### Jäsentäminen Oj:n avulla:
-
 ```ruby
 require 'oj'
 
@@ -67,7 +58,6 @@ puts ruby_hash
 ```
 
 #### Tuottaminen Oj:n avulla:
-
 Oj tarjoaa myös nopean tavan tuottaa JSON-muotoista dataa Ruby-objekteista:
 
 ```ruby

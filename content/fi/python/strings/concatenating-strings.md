@@ -10,9 +10,6 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## What & Why? (Mitä & Miksi?)
-Yhdistämme merkkijonoja luodaksemme pidempiä tekstejä. Ohjelmoijat tarvitsevat sitä käyttöliittymien tekstien, logiviestien ja datan käsittelyn yhteydessä.
-
 ## How to: (Kuinka tehdä:)
 ```Python
 # Yksinkertainen esimerkki

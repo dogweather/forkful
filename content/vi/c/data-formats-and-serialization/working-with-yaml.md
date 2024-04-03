@@ -17,12 +17,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---
 
-## Gì và Tại sao?
-
-YAML, viết tắt của "YAML Ain't Markup Language," là một chuẩn hóa chuỗi dữ liệu dễ đọc với con người, có thể được sử dụng cho hàng loạt ứng dụng, từ tệp cấu hình đến lưu trữ dữ liệu. Lập trình viên thường làm việc với YAML khi họ cần một định dạng dễ đọc và dễ viết cho tệp cấu hình hoặc trao đổi dữ liệu giữa các ngôn ngữ và hệ thống.
-
 ## Cách làm:
-
 Để làm việc với YAML trong C cần có một thư viện, vì thư viện chuẩn C không cung cấp hỗ trợ trực tiếp cho việc phân tích cú pháp hoặc chuỗi hóa YAML. Một trong những thư viện YAML phổ biến nhất cho C là `libyaml`, cung cấp cả giao diện cấp thấp và cấp cao để phân tích cú pháp và phát sinh YAML. Dưới đây là một ví dụ về cách phân tích một tệp YAML đơn giản sử dụng `libyaml`:
 
 **Đầu tiên**, bạn cần cài đặt thư viện `libyaml`. Nếu bạn sử dụng hệ thống giống Unix, bạn có thể thường xuyên cài đặt nó qua trình quản lý gói. Chẳng hạn, trên Ubuntu:
@@ -94,7 +89,6 @@ Giá trị: false
 ```
 
 ## Sâu hơn
-
 YAML được phát hành lần đầu vào năm 2001 và được thiết kế để dễ đọc và thân thiện với người dùng hơn các định dạng hàng chuỗi dữ liệu khác như XML hoặc JSON, vay mượn từ một số ngôn ngữ như C, Perl và Python cho triết lý thiết kế của mình. Mặc dù có lợi thế về độ dễ đọc và dễ chỉnh sửa bởi con người, YAML có thể phức tạp khi phân tích cú pháp một cách tự động do nó phụ thuộc vào thụt dòng và bộ tính năng rộng lớn của mình, bao gồm tham chiếu và các loại tùy chỉnh.
 
 Mặc dù `libyaml` cung cấp quyền truy cập mạnh mẽ, cấp thấp để phân tích cú pháp và phát sinh YAML trong C, nó có thể gây rắc rối cho các nhiệm vụ đơn giản do API rườm rà của mình. Vì những lý do này, một số lập trình viên thích sử dụng các thư viện cấp cao hơn hoặc thậm chí các định dạng hàng chuỗi dữ liệu khác như JSON khi làm việc trong C, đặc biệt khi cần phân tích cú pháp hiệu suất cao với tải mã tối thiểu. Tuy nhiên YAML vẫn là lựa chọn phổ biến cho các tệp cấu hình và các tình huống mà độ dễ đọc bởi con người là quan trọng nhất. Các lựa chọn thay thế như TinyYAML hoặc nhúng một bộ thông dịch cấp cao (ví dụ, nhúng Python hoặc Lua) có thể cung cấp sự thuận tiện hơn cho các ứng dụng cụ thể, cân bằng giữa sự dễ sử dụng và nhu cầu về hiệu suất.

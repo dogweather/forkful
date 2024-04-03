@@ -11,9 +11,6 @@ title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---
 
-## Hva & Hvorfor?
-Slette tegn som matcher et mønster handler om å finne og fjerne bestemte sekvenser fra en tekststreng. Programmerere gjør dette for å rense input, formatere data eller strippe unødvendig informasjon.
-
 ## Hvordan Gjøre Det:
 ```TypeScript
 let tekst: string = "Dette er en4 tekst med1 noen2 tall7.";

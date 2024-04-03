@@ -12,9 +12,6 @@ title: Trabajando con TOML
 weight: 39
 ---
 
-## ¿Qué y Por Qué?
-TOML es un acrónimo de Tom's Obvious, Minimal Language, un formato de archivo de configuración que es fácil de leer debido a sus semánticas claras. Los programadores lo usan para archivos de configuración, simplificando el intercambio de datos entre sistemas, y porque logra un equilibrio entre la legibilidad humana y la capacidad de análisis por máquinas.
-
 ## Cómo hacerlo:
 Primero, instala un analizador de TOML como `Tomlyn`. Usa tu gestor de paquetes:
 

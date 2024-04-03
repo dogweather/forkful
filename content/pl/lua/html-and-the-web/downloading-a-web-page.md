@@ -11,9 +11,6 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## Co i dlaczego?
-Pobieranie strony internetowej to proces uruchomienia kodu, który ściąga zawartość strony www do analizy lub przetwarzania. Programiści robią to, aby automatycznie zbierać dane, monitorować zmiany czy testować aplikacje.
-
 ## Jak to zrobić:
 Użyjemy biblioteki `socket.http` z Lua. Sprawdzimy, czy strona jest dostępna i pobierzemy zawartość.
 

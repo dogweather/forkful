@@ -14,9 +14,6 @@ title: Analisi del HTML
 weight: 43
 ---
 
-## Cosa & Perché?
-L'analisi dell'HTML in Google Apps Script comporta l'estrazione di dati da contenuti HTML, il che è particolarmente utile quando si interagisce con pagine web o fonti di dati basate sul web. I programmatori fanno ciò per automatizzare la raccolta dei dati, manipolare i contenuti web o integrare le funzionalità web con Google Apps come Fogli e Documenti.
-
 ## Come fare:
 Google Apps Script non dispone di un metodo incorporato per l'analisi dell'HTML. Tuttavia, puoi sfruttare il servizio `UrlFetchApp` per recuperare contenuti HTML e poi usare metodi JavaScript o regex (espressioni regolari) per l'analisi. Di seguito è riportato un esempio base di come recuperare e analizzare il tag del titolo di una pagina web.
 

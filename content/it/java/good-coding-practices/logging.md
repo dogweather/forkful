@@ -10,9 +10,6 @@ title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---
 
-## Cosa e perché?
-Il logging è essenzialmente il processo di registrazione degli eventi che si verificano all'interno di una applicazione software. I programmatori registrano questi eventi per catturare informazioni in tempo di esecuzione, per diagnosticare problemi, monitorare il comportamento del sistema, e creare una traccia di verifica per scopi di sicurezza e conformità.
-
 ## Come fare:
 Ecco un modo semplice per iniziare con il logging in Java utilizzando il pacchetto integrato `java.util.logging`.
 

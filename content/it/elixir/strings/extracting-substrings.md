@@ -9,9 +9,6 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## Cosa & Perché?
-Estrarre sottostringhe significa selezionare parti di una stringa di testo. Lo si fa per analizzare, manipolare o trasformare solo certi pezzi di informazioni, senza toccare il resto del testo.
-
 ## Come fare:
 Elixir rende semplice lavorare con le sottostringhe. Ecco qualche esempio pratico:
 

@@ -11,12 +11,7 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-
-Tests schrijven controleert of code werkt zoals verwacht. Programmeurs doen dit om fouten vroegtijdig op te sporen, betrouwbaarheid te garanderen en toekomstige code wijzigingen te vergemakkelijken.
-
 ## Hoe:
-
 Ruby gebruikt Minitest en RSpec voor het testen - laten we RSpec gebruiken. Installeer het eerst:
 
 ```ruby
@@ -77,11 +72,9 @@ Voltooid in 0.002 seconden (bestanden duurden 0.08 seconden om te laden)
 ```
 
 ## Diepgaande Duik
-
 Testen in Ruby gaat terug tot Test::Unit, maar RSpec, geïntroduceerd in 2005, heeft het testen in Ruby met "behavior-driven development" gerevolutioneerd. Alternatieven voor RSpec zijn Minitest en Test::Unit. RSpec focust op leesbaarheid en de zakelijke kant; Minitest is minimalistischer en sneller. Typisch bootsen tests softwaregebruik na, controleren functies, data en randgevallen. Voor bestaande projecten, begin met het testen van de meest cruciale delen.
 
 ## Zie Ook
-
 - RSpec GitHub: [github.com/rspec/rspec](https://github.com/rspec/rspec)
 - Minitest: [rubygems.org/gems/minitest](https://rubygems.org/gems/minitest)
 - "Effectief Testen met RSpec 3": Lees voor meer over RSpec principes en patronen.

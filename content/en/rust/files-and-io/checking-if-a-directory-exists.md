@@ -11,9 +11,6 @@ title: Checking if a directory exists
 weight: 20
 ---
 
-## What & Why?
-In software development, it's often necessary to check if a directory exists to avoid errors when attempting to access, read, or write files. Rust, being a systems programming language, provides robust methods to perform this task, ensuring your program can handle files and directories safely and efficiently.
-
 ## How to:
 Rust's standard library (`std`) includes functionality to check for the existence of a directory through the `std::path::Path` and `std::fs` modules. Here's a simple example using Rust's standard approach:
 

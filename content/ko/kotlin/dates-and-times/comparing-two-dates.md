@@ -15,9 +15,6 @@ title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
 weight: 27
 ---
 
-## What & Why? (무엇을 왜?)
-날짜 비교하기, 즉 두 날짜가 같고, 더 이른지, 늦은지 확인하는 것입니다. 일정 관리, 기간 계산, 데이터 정렬 등 프로그래밍에서 자주 사용됩니다.
-
 ## How to? (어떻게?)
 ```kotlin
 import java.time.LocalDate

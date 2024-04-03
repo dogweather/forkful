@@ -13,12 +13,7 @@ title: "Concat\xE9nation de cha\xEEnes"
 weight: 3
 ---
 
-## Quoi & Pourquoi ?
-
-La concaténation de chaînes en C consiste à joindre deux chaînes ou plus bout à bout pour former une nouvelle chaîne. Les programmeurs effectuent cette opération pour construire dynamiquement des chaînes à l'exécution, ce qui est essentiel pour la création de messages significatifs, de chemins de fichiers, ou de toute donnée assemblée à partir de diverses sources de chaînes.
-
 ## Comment procéder :
-
 En C, les chaînes sont des tableaux de caractères se terminant par un caractère nul (`\0`). Contrairement aux langues de plus haut niveau, C ne fournit pas de fonction de concaténation de chaînes intégrée. Au lieu de cela, vous utilisez les fonctions `strcat()` ou `strncat()` de la bibliothèque `<string.h>`.
 
 Voici un exemple simple utilisant `strcat()` :
@@ -61,7 +56,6 @@ int main() {
 Cela limite la concaténation aux premiers caractères `num` de la chaîne source, aidant à prévenir les débordements de tampon.
 
 ## Examen approfondi
-
 Les fonctions `strcat()` et `strncat()` font partie de la bibliothèque standard C depuis sa création, reflétant la nature de bas niveau du langage qui nécessite une gestion manuelle des chaînes et de la mémoire. Contrairement à de nombreux langages de programmation modernes qui traitent les chaînes de caractères comme des objets de première classe avec des opérateurs de concaténation intégrés (tels que `+` ou `.concat()`), l'approche de C nécessite une compréhension plus approfondie des pointeurs, de l'allocation mémoire et des pièges potentiels comme les débordements de tampon.
 
 Bien que `strcat()` et `strncat()` soient largement utilisés, ils sont souvent critiqués pour leur potentiel à créer des vulnérabilités de sécurité s'ils ne sont pas utilisés avec précaution. Les débordements de tampon, où les données dépassent la mémoire allouée, peuvent conduire à des plantages ou être exploités pour l'exécution de code arbitraire. En conséquence, les programmeurs se tournent de plus en plus vers des alternatives plus sûres, telles que `snprintf()`, qui offre un comportement plus prévisible en limitant le nombre de caractères écrits dans la chaîne de destination en fonction de sa taille :

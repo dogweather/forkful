@@ -9,9 +9,6 @@ title: Debug-Ausgaben drucken
 weight: 33
 ---
 
-## Was & Warum?
-Das Ausgeben von Debug-Informationen hilft beim Verstehen, was im Code passiert. Programmierer nutzen es, um Fehler schnell zu finden und den Programmfluss nachzuvollziehen.
-
 ## How to:
 Um in Lua Debug-Informationen auszugeben, verwendet man die `print()` Funktion. Hier ein paar Beispiele:
 

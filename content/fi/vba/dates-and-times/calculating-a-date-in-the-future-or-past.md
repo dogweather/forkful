@@ -15,9 +15,6 @@ title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---
 
-## Mikä & Miksi?
-Tulevaisuuden tai menneisyyden päivämäärän laskeminen liittyy päivämäärän määrittämiseen, joka on määrätyn lukumäärän päiviä, kuukausia tai vuosia pois annetusta päivämäärästä. Ohjelmoijat tarvitsevat usein tätä toiminnallisuutta automatisoidakseen muistutuksia, tilauksia, voimassaolon päättymispäiviä ja aikataulutustehtäviä erilaisissa sovelluksissa.
-
 ## Kuinka:
 Visual Basic for Applications (VBA) -ohjelmassa ensisijainen funktio tulevaisuuden tai menneisyyden päivämäärien laskemiseen on `DateAdd()`. Tämä funktio lisää määritetyn aikavälin päivämäärään ja palauttaa uuden päivämäärän.
 

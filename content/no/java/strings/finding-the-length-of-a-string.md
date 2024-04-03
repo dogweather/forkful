@@ -9,9 +9,6 @@ title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---
 
-## What & Why?
-Finne lengden på en streng betyr å telle antall tegn den inneholder. Programmerere trenger dette for validering, looping og manipulering av tekstdata.
-
 ## How to:
 I Java bruker du `.length()`-metoden for å få lengden på en streng. Her er et enkelt eksempel:
 

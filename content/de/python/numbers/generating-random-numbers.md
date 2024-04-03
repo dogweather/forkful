@@ -13,12 +13,7 @@ title: Generierung von Zufallszahlen
 weight: 12
 ---
 
-## Was & Warum?
-
-Das Generieren von Zufallszahlen beinhaltet das Erstellen von Zahlen, die nicht vernünftigerweise besser als durch Zufall vorhergesagt werden können, was für die Entwicklung von Simulationen, Spielen und Sicherheitsalgorithmen unerlässlich ist. Programmierer tun dies, um Unvorhersehbarkeit einzuführen oder reale Phänomene in ihren Anwendungen zu simulieren.
-
 ## Wie:
-
 Python bietet das `random`-Modul, das beim Generieren von Zufallszahlen für verschiedene Verwendungen hilft. So fängst du an:
 
 1. **Importieren des Moduls**
@@ -66,7 +61,6 @@ Python bietet das `random`-Modul, das beim Generieren von Zufallszahlen für ver
     Beispiel-Ausgabe: `[2, 5, 0, 4, 9, 8, 1, 7, 6, 3]`
 
 ## Vertiefung
-
 Das `random`-Modul in Python verwendet einen Pseudozufallszahlengenerator (PRNG), speziell den Mersenne-Twister-Algorithmus, der gut für allgemeine Anwendungen geeignet ist, aber aufgrund seiner Vorhersehbarkeit, wenn genügend Ausgaben beobachtet werden, nicht für kryptografische Zwecke geeignet ist. Das `secrets`-Modul, eingeführt in Python 3.6, bietet eine bessere Alternative für die Generierung kryptografisch starker Zufallszahlen, besonders nützlich bei sicherheitssensiblen Anwendungen. Zum Beispiel das Generieren eines sicheren, zufälligen Tokens für einen Passwort-Reset-Link:
 
 ```Python

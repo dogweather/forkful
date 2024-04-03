@@ -10,9 +10,6 @@ title: Organisering av kode i funksjoner
 weight: 18
 ---
 
-## Hva og hvorfor?
-Å organisere kode i funksjoner betyr å bryte opp koden din i gjenbrukbare, modulære blokker. Vi gjør dette for å holde ting DRY (Don't Repeat Yourself), noe som gjør koden renere, enklere å lese og en lek å feilsøke.
-
 ## Hvordan:
 Forestille deg at du lager en grunnleggende kalkulator. I stedet for å skrive tilleggslogikken overalt hvor du trenger den, opprett en `add`-funksjon:
 

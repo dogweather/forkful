@@ -12,9 +12,6 @@ title: Logboekregistratie
 weight: 17
 ---
 
-## Wat & Waarom?
-Loggen is in essentie het proces van het vastleggen van gebeurtenissen die plaatsvinden binnen een softwareapplicatie. Programmeurs loggen deze gebeurtenissen om runtime-informatie te verzamelen, problemen te debuggen, systeemgedrag te monitoren en een audit trail te creëren voor beveiligings- en nalevingsdoeleinden.
-
 ## Hoe:
 Hier is een eenvoudige manier om te beginnen met loggen in Java met behulp van het ingebouwde `java.util.logging` pakket.
 

@@ -9,9 +9,6 @@ title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---
 
-## Mikä & Miksi?
-TOML tarkoittaa Tom's Obvious, Minimal Language -kieltä. Se on datan serialisointiformaatti, jota käytetään konfiguraatiotiedostoissa. Ohjelmoijat käyttävät sitä, koska se on helppolukuinen, helppokirjoitettava ja kuvautuu hyvin hajautustauluun.
-
 ## Kuinka:
 Tarvitset TOML-jäsennyskirjaston. Suosittelen `toml4j`:tä. Lisää se projektiisi näin:
 

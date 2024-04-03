@@ -11,9 +11,6 @@ title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---
 
-## ¿Qué y Por Qué?
-Comparar dos fechas es básicamente medir el tiempo entre ellas o determinar cuál es anterior o posterior. Los programadores hacen esto para manejar eventos, calcular períodos o validar rangos de fechas.
-
 ## Cómo:
 ```Fish Shell
 # Para obtener la fecha actual:

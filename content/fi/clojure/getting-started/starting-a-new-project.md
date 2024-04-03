@@ -9,9 +9,6 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## What & Why? - Mistä ja Miksi?
-Kun aloitat uuden projektin, luot pohjan tulevalle koodillesi. Koodarit aloittavat uusia projekteja testatakseen ideoita, ratkaistakseen ongelmia tai pelkästään oppiakseen.
-
 ## How to - Kuinka Tehdä:
 ```Clojure
 ; Asenna Leiningen, Clojure-projektien hallintatyökalu

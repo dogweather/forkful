@@ -12,9 +12,6 @@ title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---
 
-## Wat & Waarom?
-Het berekenen van een toekomstige of verleden datum houdt in dat je met datums speelt om erachter te komen welke dag het was of zal zijn. Programmeurs doen dit voor het plannen, herinneringen, of het bepalen van duur en deadlines.
-
 ## Hoe te:
 Hier is een coole manier om met datums om te gaan in Fish Shell:
 

@@ -13,12 +13,7 @@ title: Strings verketten
 weight: 3
 ---
 
-## Was & Warum?
-
-Die Verkettung in Visual Basic for Applications (VBA) beinhaltet das Zusammenfügen von zwei oder mehr Zeichenketten zu einer einzigen Einheit. Dies ist eine grundlegende Aufgabe beim Programmieren, die für das Erzeugen von Benutzernachrichten, das Erstellen von SQL-Abfragen und mehr essentiell ist, da sie die dynamische Erstellung und Manipulation von Zeichendaten ermöglicht.
-
 ## Wie:
-
 VBA bietet eine unkomplizierte Methode zum Verketten von Zeichenketten mit dem `&`-Operator oder der `Verketten`-Funktion. Lassen Sie uns beide Methoden mit Beispielen erkunden:
 
 1. **Verwenden des `&`-Operators:**
@@ -54,7 +49,6 @@ Debug.Print Nachricht 'Ausgabe: Hallo John!
 Die Wahl zwischen dem `&`-Operator und der `Verketten`-Funktion hängt von der persönlichen Vorliebe und den spezifischen Anforderungen Ihres Projekts ab.
 
 ## Vertiefung
-
 Die Zeichenkettenverkettung ist ein grundlegendes, aber mächtiges Feature in VBA, das seine Wurzeln bis in die Anfänge der Programmiersprachen zurückverfolgt. Die Prävalenz des `&`-Operators in VBA für die Verkettung gegenüber dem `+`-Operator, der in vielen anderen Sprachen verwendet wird, unterstreicht den Fokus von VBA auf explizite Zeichenkettenbehandlung und vermeidet so unbeabsichtigte Datentypeninkongruenzen und Fehler.
 
 Während der `&`-Operator effizient und weit verbreitet ist, glänzt die `Verketten`-Funktion in Szenarien, die mehr Klarheit erfordern oder spezielle Verkettungsfälle behandeln, wie etwa den Umgang mit Arrays. Es ist jedoch wichtig zu beachten, dass moderne Versionen von Excel die `TEXTJOIN`-Funktion eingeführt haben, die zum Verketten von Arrays von Zeichenketten mit einem Trennzeichen effizienter sein kann, obwohl sie nicht direkt Teil von VBA ist.

@@ -12,11 +12,7 @@ title: Einen Datum aus einem String analysieren
 weight: 30
 ---
 
-## Was & Warum?
-Das Parsen eines Datums aus einem String in C# beinhaltet das Umwandeln von textuellen Darstellungen von Daten und Zeiten in ein `DateTime`-Objekt. Dies ist essentiell für Anwendungen, die Daten und Zeiten in verschiedenen Formaten manipulieren, speichern oder anzeigen müssen, wie beispielsweise Planungs-Apps, Log-Verarbeitungen oder jegliches System, das Dateneingaben von Benutzern oder externen Quellen handhabt.
-
 ## Wie geht das:
-
 **Basis-Parsing:**
 
 Die Methoden `DateTime.Parse` und `DateTime.TryParse` sind die ersten Anlaufstellen, um einen String in ein `DateTime` umzuwandeln. Hier ist ein kurzes Beispiel:

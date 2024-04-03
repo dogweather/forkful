@@ -11,9 +11,6 @@ title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---
 
-## What & Why? (Co i Dlaczego?)
-Interpolacja napisów to wstawianie wartości wyrażeń do napisu. Programiści używają tego, aby tworzyć tekst z dynamicznie zmieniającymi się danymi, co ułatwia czytelność i utrzymanie kodu.
-
 ## How to: (Jak to zrobić:)
 ```PowerShell
 # Tworzenie zmiennych

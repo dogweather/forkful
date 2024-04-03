@@ -11,9 +11,6 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-Obtaining the current date in Java is a fundamental operation that allows programmers to manipulate date objects for operations such as logging, date calculations, and time-based conditions. It's vital in applications where tracking, scheduling, and temporal data analysis are crucial.
-
 ## How to:
 Java offers multiple ways to get the current date, using both the old `java.util.Date` class and the newer `java.time` package (introduced in Java 8) which is more versatile and intuitive.
 
@@ -28,6 +25,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### Using `java.time.LocalDateTime`
 ```java
 import java.time.LocalDateTime;
@@ -39,6 +37,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### Using `java.util.Date` (Legacy)
 ```java
 import java.util.Date;
@@ -50,6 +49,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### Utilizing a Third-party Library: Joda-Time
 Before Java 8, Joda-Time was the de-facto standard for date and time in Java. If you are working on legacy systems or have a preference for Joda-Time, here’s how you can use it to get the current date:
 ```java

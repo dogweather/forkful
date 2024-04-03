@@ -10,9 +10,6 @@ title: Umgang mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-Komplexe Zahlen bestehen aus einem Realteil und einem Imaginärteil (wie `3 + 4i`). Sie werden in der Ingenieurwissenschaft, Physik und bei bestimmten Computerproblemen verwendet. Programmierer arbeiten für Simulationen, Signalverarbeitung und zur effizienten Lösung bestimmter Mathematikprobleme mit ihnen.
-
 ## Wie:
 Elixir bietet keine eingebauten komplexen Zahlen, daher müssen wir unsere eigenen erstellen oder eine Bibliothek wie `ComplexNum` verwenden. Hier ist ein schnelles Beispiel mit einer Bibliothek:
 

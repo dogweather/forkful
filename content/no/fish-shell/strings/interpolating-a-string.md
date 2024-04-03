@@ -10,9 +10,6 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## Hva & Hvorfor?
-Interpolering av strenger lar deg bake inn variabler eller uttrykk i en tekststreng. Det gjør koden mer fleksibel og lesbar når du skal bygge dynamisk innhold.
-
 ## Slik gjør du:
 Interpoler en variabel i Fish:
 
@@ -51,7 +48,6 @@ Interpolering i Fish blir håndtert direkte i skallskriptene uten bruk av ekster
 Fish har ingen eksplosiv syntaks for å utføre variabelinterpolering. Det er bare å sette `$` foran variabelnavnet der du vil ha verdien erstattet.
 
 ## Se også
-
 - Fish dokumentasjon om variabler: `https://fishshell.com/docs/current/#variables`
 - Tutorial for Fish Shell scripting: `https://fishshell.com/docs/current/tutorial.html`
 - Stack Overflow for spesifikke spørsmål og svar om Fish: `https://stackoverflow.com/questions/tagged/fish`

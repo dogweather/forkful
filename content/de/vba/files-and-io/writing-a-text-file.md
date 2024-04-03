@@ -15,12 +15,7 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-
-Das Schreiben einer Textdatei in Visual Basic for Applications (VBA) umfasst das Erstellen, Modifizieren oder Anhängen von Textdaten an Dateien, eine grundlegende Aufgabe für die Speicherung von Ausgaben, Logging oder die Interaktion mit anderen Anwendungen. Programmierer nutzen diese Funktionalität, um Berichterstellung, Datenexport oder die Generierung von Konfigurationsdateien im Microsoft Office-Ökosystem zu automatisieren.
-
 ## Wie geht das:
-
 VBA bietet mehrere Methoden, um in eine Datei zu schreiben, aber einer der einfachsten Wege ist die Verwendung des `FileSystemObject`. Hier ist eine Schritt-für-Schritt-Anleitung zum Erstellen einer einfachen Textdatei und zum Schreiben von Daten in sie:
 
 1. **Microsoft Scripting Runtime referenzieren**: Zuerst stellen Sie sicher, dass Ihr VBA-Editor Zugriff auf das `FileSystemObject` hat. Gehen Sie in dem VBA-Editor zu Extras > Verweise und setzen Sie ein Häkchen bei "Microsoft Scripting Runtime".
@@ -55,7 +50,6 @@ Hallo, VBA!
 ```
 
 ## Vertiefung:
-
 Das `FileSystemObject` (FSO), Teil der Microsoft Scripting Runtime-Bibliothek, bietet einen umfangreichen Satz an Eigenschaften und Methoden für Dateioperationen, der über das hinausgeht, was traditionelle VBA-Dateibehandlung bietet (z. B. `Open`, `Print` #, `Write` #). Neben der Dateibehandlung kann FSO auch Ordner und Laufwerke manipulieren, was es zu einem leistungsstarken Werkzeug für Dateisystemoperationen innerhalb von VBA macht.
 
 Es ist jedoch zu beachten, dass FSO, obwohl es einen moderneren Ansatz für Dateioperationen in VBA darstellt, für einfache Aufgaben im Vergleich zu den nativen Dateibehandlungsbefehlen von VBA Overhead verursachen kann. Darüber hinaus könnte die Portabilität und Kompatibilität mit anderen Systemen (z. B. frühere Office-Versionen, Mac Office) wegen der Zugehörigkeit zu einer externen Bibliothek Anlass zur Sorge geben.

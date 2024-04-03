@@ -11,9 +11,6 @@ title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---
 
-## Vad och varför?
-Beräkning av datum i framtiden eller förflutna handlar om att hitta en specifik tidspunkt före eller efter ett känt datum. Programmerare gör detta för att hantera bokningar, uppföljningar, och tidbaserade påminnelser i sina applikationer.
-
 ## Så här gör du:
 Elm ger inget inbyggt stöd för datum och tid, så vi lutar oss mot `elm/time` paketet. Här kommer en kodsnutt för att räkna ut framtida och förflutna datum:
 

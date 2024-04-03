@@ -10,9 +10,6 @@ title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---
 
-## Co i Dlaczego?
-Wyciąganie podciągów (ang. "substring extraction") to sposób na wyjęcie specyficznej części z ciągu znaków. Programiści to robią, żeby pracować tylko z tym, co akurat potrzebują – może to być sprawdzanie formatu, pobieranie danych, czy jakakolwiek manipulacja tekstem.
-
 ## Jak to zrobić:
 W Elixirze, używamy głównie funkcji `String.slice/3`, żeby wyciągnąć podciąg.
 

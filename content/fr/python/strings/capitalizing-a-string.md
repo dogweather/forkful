@@ -13,10 +13,8 @@ title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---
 
-## Quoi & Pourquoi ?
-Mettre une chaîne en capitales signifie convertir le premier caractère d'une chaîne en majuscule et le reste en minuscule. Cette opération est couramment utilisée dans le traitement des données pour normaliser les entrées ou améliorer la lisibilité pour les titres, noms, et autres.
-
 ## Comment faire :
+
 
 ### En utilisant la méthode intégrée de Python :
 Python dispose d'une méthode intégrée `.capitalize()` pour les chaînes permettant de réaliser cette tâche facilement.

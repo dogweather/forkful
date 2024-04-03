@@ -13,9 +13,6 @@ title: "Trouver la longueur d'une cha\xEEne"
 weight: 7
 ---
 
-## Quoi & Pourquoi ?
-Trouver la longueur d'une chaîne en C revient à déterminer le nombre de caractères avant le terminateur nul `\0`. Les programmeurs font cela pour manipuler correctement les chaînes sans rencontrer d'erreurs comme des dépassements de tampon, qui peuvent conduire à des vulnérabilités de sécurité ou des plantages de programme.
-
 ## Comment faire :
 En C, la fonction de la bibliothèque standard `strlen()` est couramment utilisée pour trouver la longueur d'une chaîne. Voici un exemple rapide :
 

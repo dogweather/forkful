@@ -11,9 +11,6 @@ title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---
 
-## Vad & Varför?
-Att läsa kommandoradsargument är processen att fånga data som användaren skickar in till ditt program från terminalen. Vi gör det för att tillåta användaren att justera programmet's beteende eller för att mata in viktig information utan att behöva ändra koden.
-
 ## Hur gör man:
 Ruby har en enkel och rättfram syn på kommandoradsargument genom att använda den globala arrayen `ARGV`. Här är ett grundläggande exempel:
 

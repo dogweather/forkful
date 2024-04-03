@@ -11,9 +11,6 @@ title: Arrondir les nombres
 weight: 13
 ---
 
-## Quoi & Pourquoi ?
-Arrondir les nombres consiste à réduire un chiffre à une précision spécifique. Les programmeurs le font pour contrôler la sortie numérique afin d'améliorer la lisibilité, les besoins d'affichage ou lorsque une précision spécifique est requise après des opérations qui produisent des résultats à virgule flottante.
-
 ## Comment faire :
 L'arrondi en TypeScript peut se faire en utilisant plusieurs méthodes. Voici un rapide aperçu :
 

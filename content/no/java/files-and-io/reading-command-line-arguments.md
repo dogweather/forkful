@@ -11,9 +11,6 @@ title: Lese kommandolinjeargumenter
 weight: 23
 ---
 
-## Hva & Hvorfor?
-Lesing av kommandolinjeargumenter lar deg ta imot data når du starter et Java-program. Programmererne gjør dette for å gjøre programmene fleksible og tilpasse kjøringen uten å endre koden.
-
 ## Hvordan:
 ```java
 public class CommandLineExample {

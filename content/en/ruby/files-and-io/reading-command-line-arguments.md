@@ -11,9 +11,6 @@ title: Reading command line arguments
 weight: 23
 ---
 
-## What & Why?
-Reading command-line arguments in Ruby allows scripts to take input right when they're run, like configuring options or passing data. Programmers use them to make scripts dynamic and adaptable without hardcoding values.
-
 ## How to:
 To grab command-line arguments, Ruby provides a simple array: `ARGV`. It contains all the arguments passed, in the order they were given.
 

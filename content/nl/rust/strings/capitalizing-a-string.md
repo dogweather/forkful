@@ -12,12 +12,7 @@ title: Een string met hoofdletters maken
 weight: 2
 ---
 
-## Wat & Waarom?
-
-Het kapitaliseren van een string betekent dat je de eerste letter van elk woord in hoofdletters zet terwijl de rest in kleine letters blijft. Programmeurs doen dit voor opmaakdoeleinden, om te voldoen aan linguïstische normen in gebruikersinterfaces, of om gegevensconsistentie in tekstverwerking te waarborgen.
-
 ## Hoe:
-
 Rust bevat geen ingebouwde methode om elk woord in een string te kapitaliseren, maar we kunnen eenvoudig onze eigen methode implementeren met behulp van de `to_ascii_uppercase` methode voor enkele karakters en door de woorden te doorlopen.
 
 ```Rust
@@ -47,7 +42,6 @@ Hallo Wereld
 ```
 
 ## Diepgaand:
-
 Historisch gezien heeft Rust prioriteit gegeven aan een minimale standaardbibliotheek, met veel nutsfuncties die door de gemeenschap worden aangeboden via crates. Voor stringkapitalisatie kun je de `heck` crate gebruiken voor meer geavanceerde gevalconversies, zoals CamelCase, snake_case en meer.
 
 Het kapitaliseren van een string kan lastig zijn met Unicode-karakters. Het `char`-type van Rust is een Unicode scalar-waarde, wat zorgt voor de juiste afhandeling van de meeste karakters. Bij het omgaan met volledige Unicode-normalisatie moeten geavanceerdere bibliotheken, zoals `unicode-segmentation`, worden overwogen voor operaties die rekening houden met grafeemclusters.
@@ -55,7 +49,6 @@ Het kapitaliseren van een string kan lastig zijn met Unicode-karakters. Het `cha
 Qua implementatie is onze `capitalize_words` functie niet erg prestatiegericht omdat het een nieuwe `String` voor elk woord toewijst. In toepassingen die hoge prestaties vereisen, zou het voordelig zijn om stringmanipulatie te optimaliseren om overmatige geheugentoewijzingen te vermijden.
 
 ## Zie Ook:
-
 - Rust-documentatie voor 'char': https://doc.rust-lang.org/std/primitive.char.html
 - 'Heck' crate voor gevalconversies: https://crates.io/crates/heck
 - 'Unicode Normalization Forms' in Rust: https://unicode-rs.github.io/unicode-normalization/unicode_normalization/index.html

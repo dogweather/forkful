@@ -10,9 +10,6 @@ title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---
 
-## What & Why?
-La interpolación de strings nos permite insertar valores de variables dentro de cadenas de texto. Lo hacemos para construir mensajes dinámicos sin ensuciar el código con un montón de concatenaciones.
-
 ## How to:
 TypeScript, al igual que JavaScript, utiliza backticks (`` ` ``) para definir template literals, permitiéndonos insertar expresiones directamente usando `${expresión}`. Aquí te dejo unos ejemplos:
 

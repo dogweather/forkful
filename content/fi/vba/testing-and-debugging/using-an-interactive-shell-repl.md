@@ -14,12 +14,7 @@ title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mikä ja miksi?
-
-Interaktiivinen kuori eli Lue-Eval-Tulosta -silmukka (REPL) mahdollistaa käyttäjän syöttämien komentojen suorittamisen ja tulosten näkemisen reaaliajassa. Ohjelmoijat hyödyntävät REPL:iä nopeaan prototyypin kehitykseen, koodinpätkien testaamiseen tai debuggaukseen interaktiivisemmassa ja iteratiivisemmassa ympäristössä, mikä parantaa tuottavuutta ja koodin ymmärtämistä.
-
 ## Kuinka:
-
 Visual Basic for Applications (VBA) itsessään ei natiivisti tue interaktiivista kuorta tai REPL-kokemusta kuten kielissä, kuten Python tai JavaScript. Voit kuitenkin jäljitellä tätä kokemusta tietyssä määrin käyttämällä Välitön-ikkunaa VBA:n IDE:ssä (Integroitu Kehitysympäristö).
 
 **Välitön-ikkunaan pääsy:**
@@ -59,7 +54,6 @@ Call SayHello
 **Huom:** Välitön-ikkunalla on rajoituksia. Se on erinomainen nopeisiin testauksiin ja suorien funktiokutsujen tekemiseen, mutta se ei tue funktioiden tai alirutiinien määrittelyä suoraan siinä. Monimutkaisia debuggaus- ja ohjelmointitehtäviä varten saattaa vaatia koko moduulin kehittämisen.
 
 ## Syventävä tarkastelu
-
 VBA:ssa Välitön-ikkuna toimii lähimpänä vastineena interaktiivisille kuorille löytyneille muissa ohjelmointiekosysteemeissä, huolimatta sen rajoituksista. Historiallisesti VBA on keskittynyt Microsoft Office -sovellusten toiminnallisuuksien laajentamiseen skripteillä ja makroilla pikemminkin kuin itsenäiseen ohjelmistokehitykseen, mikä saattaa selittää täyden REPL:n puuttumisen.
 
 Tehtäviin, jotka vaativat kattavaa interaktiivista testausta tai monimutkaista logiikan kehitystä, muut ohjelmointiympäristöt, jotka on varustettu natiivilla REPL-tuella, kuten Python sen IDLE:lla tai JavaScript Node.js:llä, saattavat tarjota parempia vaihtoehtoja. Nämä ympäristöt tarjoavat ei ainoastaan interaktiivisia kuoria, vaan myös robustimmat ohjelmoinnin, debuggauksen ja testauksen välineet.

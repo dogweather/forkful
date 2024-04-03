@@ -11,9 +11,6 @@ title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---
 
-## What & Why?
-L'interpolation de chaînes permet d'insérer des valeurs dans une chaîne de caractères. On l'utilise pour composer des messages dynamiques, lisibles et personnalisables.
-
 ## How to:
 ```Swift
 let name = "Marie"

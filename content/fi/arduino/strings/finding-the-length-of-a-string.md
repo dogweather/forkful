@@ -11,9 +11,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## Mitä & Miksi?
-"Stringin" pituuden selvittäminen tarkoittaa merkkijonossa olevien merkkien lukumäärän laskemista. Ohjelmoijat tekevät tämän esimerkiksi tietojen validoinnin ja tekstipohjaisten komentojen käsittelyn yhteydessä.
-
 ## Näin teet:
 ```Arduino
 void setup() {

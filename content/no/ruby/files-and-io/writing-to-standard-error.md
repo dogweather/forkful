@@ -13,9 +13,6 @@ title: Skriving til standardfeil
 weight: 25
 ---
 
-## Hva & Hvorfor?
-Å skrive til standardfeil (stderr) i Ruby handler om å dirigere feilmeldinger eller diagnostikk til en separat utstrøm, forskjellig fra standardutgangen (stdout). Programmerere gjør dette for å skille vanlig programutskrift fra feil og feilsøkingsinformasjon, noe som letter diagnosen av problemer og parsing av logger.
-
 ## Hvordan:
 Rubys standardbibliotek gir en enkel måte å skrive til stderr ved å bruke `$stderr` eller `STDERR`. Du trenger ikke tredjepartsbiblioteker for denne grunnleggende operasjonen.
 

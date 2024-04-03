@@ -10,12 +10,7 @@ title: Reading command line arguments
 weight: 23
 ---
 
-## What & Why?
-
-Reading command line arguments lets scripts behave differently based on inputs outside the code. Programmers use them because they make scripts flexible, usable in many scenarios without editing the code itself.
-
 ## How to
-
 PowerShell reads command line arguments using the `$args` array or parameters. `$args` is quick for one-off scripts; parameters are better for robust tools.
 
 ### Using `$args`
@@ -45,7 +40,6 @@ Hello, Sarah! You are 32 years old.
 ```
 
 ## Deep Dive
-
 PowerShell's modern approach to command line arguments is akin to a legacy from its predecessors like cmd and Bash. However, it amplifies flexibility and precision.
 
 ### Historical Context
@@ -58,6 +52,5 @@ There are alternatives, like parsing raw input with `Read-Host` or accepting pip
 `$args` is a simple array, good for arbitrary input. Parameters, with their attributes and types, can validate input and even prompt the user, making scripts self-documenting and less prone to errors.
 
 ## See Also
-
 - [About Parameters](https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/cmdlet-parameter-sets?view=powershell-7)
 - [Automatic Variables in PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7&viewFallbackFrom=powershell-6)

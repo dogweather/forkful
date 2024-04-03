@@ -10,9 +10,6 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-Writing tests in Swift involves creating and executing code that verifies the correctness of other code units in your application. Programmers do it to ensure reliability, detect bugs early in the development cycle, and facilitate future code refactoring without unintentional consequences.
-
 ## How to:
 Swift supports testing through its XCTest framework, which is integrated into Xcode. You can write unit tests to verify individual parts of your code, for example, a function that calculates the sum of two numbers.
 

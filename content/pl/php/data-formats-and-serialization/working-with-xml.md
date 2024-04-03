@@ -11,9 +11,6 @@ title: Praca z XML
 weight: 40
 ---
 
-## Co i dlaczego?
-XML to język znaczników używany do przechowywania i transportu danych. Programiści pracują z XML, aby umożliwić interoperacyjność między aplikacjami i systemami - myśl o wymianie danych i ustawieniach konfiguracyjnych.
-
 ## Jak to zrobić:
 Odczytywanie XML za pomocą SimpleXML:
 

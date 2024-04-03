@@ -11,9 +11,6 @@ title: Calculando la longitud de una cadena
 weight: 7
 ---
 
-## ¿Qué y Por Qué?
-Encontrar la longitud de una cadena significa saber cuántos caracteres contiene. Los programadores lo hacen para validar entradas, controlar bucles, y manejar datos de texto precisamente.
-
 ## Cómo hacerlo:
 ```Ruby
 cadena = "¡Hola, Mundo!"

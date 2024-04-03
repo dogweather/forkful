@@ -11,9 +11,6 @@ title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---
 
-## What & Why?
-Wyciąganie podciągów to tak naprawdę wycinanie kawałków tekstu z większych łańcuchów znaków. Programiści robią to, żeby dostać użyteczne informacje, czyścić dane, czy też do zastosowań logiki biznesowej.
-
 ## How to:
 ```Elm
 import String exposing (slice)

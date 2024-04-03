@@ -11,9 +11,6 @@ title: Iniciando um novo projeto
 weight: 1
 ---
 
-## O Que & Por Quê?
-Iniciar um novo projeto é como abrir uma página em branco onde você colocará seu código criativo em ação. Programadores fazem isso para transformar ideias em realidade, resolver problemas, ou simplesmente para brincar com as possibilidades infinitas da programação.
-
 ## Como Fazer:
 Vamos criar um novo projeto simples. Primeiro, inicie um projeto Node.js com `npm init`.
 

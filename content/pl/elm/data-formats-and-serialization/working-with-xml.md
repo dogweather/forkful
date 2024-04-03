@@ -11,9 +11,6 @@ title: Praca z XML
 weight: 40
 ---
 
-## Co i dlaczego?
-Praca z XML oznacza analizowanie, transformowanie i generowanie dokumentów XML w Elm. Robi się to, aby współdziałać z wieloma serwisami internetowymi i starszymi systemami, które używają XML jako swój format danych.
-
 ## Jak to zrobić:
 W Elm zajmujesz się XML za pomocą pakietu `elm/xml`. Oto szybki sposób na analizę fragmentu XML:
 

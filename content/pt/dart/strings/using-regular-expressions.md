@@ -13,9 +13,6 @@ title: "Usando express\xF5es regulares"
 weight: 11
 ---
 
-## O Que & Por Que?
-Expressões regulares (regex) em Dart oferecem uma maneira poderosa de buscar e manipular strings, permitindo que programadores realizem tarefas complexas de processamento de texto de forma eficiente. Ao compreender regex, os desenvolvedores podem executar validações de texto, buscar padrões e transformar textos rapidamente, o que é essencial para o processamento de formulários, análise de dados e manipulações gerais de strings em aplicações modernas.
-
 ## Como fazer:
 Dart utiliza a classe `RegExp` para expressões regulares. Aqui está um exemplo básico para combinar um padrão simples dentro de uma string:
 

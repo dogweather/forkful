@@ -14,12 +14,7 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä & Miksi?
-
-Tekstitiedostoon kirjoittaminen Luassa tarkoittaa tiedoston luomista tai avaamista kirjoitustilassa ja sen jälkeen tiedosto-operaatioiden käyttämistä tekstin lisäämiseen. Tämä on perusoperaatio tehtävissä kuten lokitiedostojen kirjaaminen, datan tallennus tai konfiguraation hallinta, jonka avulla ohjelmat voivat tallentaa tietoa pysyvästi istuntojen välillä.
-
 ## Kuinka:
-
 Luassa tiedostojen käsittely kirjoitusta varten on suoraviivaista. Tyypillisesti käytät `io.open()` -funktiota tiedoston avaamiseen (tai luomiseen), määritellen toimintatilan -- tässä tapauksessa `"w"` kirjoittamista varten. Jos tiedostoa ei ole olemassa, se luodaan; jos on, sen sisältö ylikirjoitetaan. On tärkeää sulkea tiedosto kirjoittamisen jälkeen, jotta tiedot tallentuvat kunnolla ja resurssit vapautetaan.
 
 Tässä on yksinkertainen esimerkki, joka kirjoittaa merkkijonon tiedostoon nimeltä "example.txt":

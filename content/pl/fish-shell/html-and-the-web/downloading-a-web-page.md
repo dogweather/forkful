@@ -11,9 +11,6 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## What & Why? (Co i dlaczego?)
-Ściąganie strony internetowej to proces zapisywania zawartości z internetu na lokalnym dysku. Programiści to robią, by analizować dane, testować aplikacje lub pracować offline.
-
 ## How to: (Jak to zrobić:)
 ```Fish Shell
 function fetch_page -d "Download web page content"

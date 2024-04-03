@@ -10,9 +10,6 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-REPL, eller Read-Eval-Print Loop, är en interaktiv programmeringsmiljö som tar enskilda användarinmatningar, exekverar dem och returnerar resultatet. Programmerare använder den för omedelbar återkoppling, felsökning och snabb experimentell utforskning av programmeringskoncept utan den overhead som kommer med att kompilera och köra ett fullständigt program.
-
 ## Hur man gör:
 I Fish är den interaktiva skalet standardläget när du startar det. Så här ser det ut i aktion:
 

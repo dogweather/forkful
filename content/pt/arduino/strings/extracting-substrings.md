@@ -10,9 +10,6 @@ title: Extraindo substrings
 weight: 6
 ---
 
-## O Que & Porquê?
-Extrair substrings significa pegar partes específicas de uma string. Programadores fazem isso para manipular, analisar ou validar dados de texto de forma mais eficiente.
-
 ## Como Fazer:
 ```Arduino
 String texto = "Olá, Mundo!";

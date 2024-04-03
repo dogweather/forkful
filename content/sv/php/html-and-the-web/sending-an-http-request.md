@@ -11,9 +11,6 @@ title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-begäran är processen att be en server om data eller utföra en åtgärd. Programmerare gör detta för att interagera med webbtjänster, hämta filer, skicka formulärdata, eller uppdatera en webbsida utan att ladda om den.
-
 ## Hur gör man:
 För att skicka en HTTP-begäran i PHP är `cURL` en vanlig metod. Här är ett enkelt skript som gör en GET-begäran:
 
@@ -79,7 +76,6 @@ Alternativ till cURL inkluderar `file_get_contents()` för enklare GET-begäran 
 När det gäller implementation är det viktigt att hantera fel korrekt, använda timeout för att undvika långa väntetider och säkerställa att data är säkert skickade, speciellt med känslig information.
 
 ## Se även:
-
 - [PHP.NET cURL manual](https://www.php.net/manual/en/book.curl.php) – Komplett manual för cURL i PHP.
 - [Guzzle documentation](http://docs.guzzlephp.org/en/stable/) – Läs mer om Guzzle-biblioteket.
 - [REST API tutorial](https://www.restapitutorial.com/) – För att bättre förstå REST API:er som ofta använder HTTP-begäran.

@@ -12,12 +12,7 @@ title: Iniciando un nuevo proyecto
 weight: 1
 ---
 
-## Qué y Por Qué?
-
-Iniciar un nuevo proyecto en Go implica configurar un espacio de trabajo e inicializarlo con los módulos de Go necesarios. Los programadores hacen esto para organizar el código, gestionar dependencias de manera eficaz y facilitar los procesos de construcción. Es fundamental para crear software en Go que sea escalable y mantenible.
-
 ## Cómo hacerlo:
-
 Primero, asegúrate de tener Go instalado ejecutando `go version` en tu terminal. Deberías ver la versión de Go que has instalado como salida. A continuación, comencemos un nuevo proyecto. Navega a tu espacio de trabajo y ejecuta:
 
 ```shell
@@ -72,7 +67,6 @@ Deberías ver:
 ¡Felicidades! Acabas de iniciar un nuevo proyecto en Go y ejecutar tu primer programa en Go.
 
 ## Análisis profundo
-
 La iniciativa de introducir módulos como el estándar para la gestión de dependencias en Go fue un cambio significativo en el ecosistema de Go, oficialmente adoptado en Go 1.11. Antes de los módulos, los desarrolladores de Go confiaban en la variable de entorno GOPATH para gestionar dependencias, lo cual era menos intuitivo y a menudo conducía al infame "infierno de dependencias".
 
 Los módulos proporcionan una manera encapsulada de gestionar las dependencias del proyecto, la versioning, y son un paso hacia la realización de proyectos de Go más autocontenidos y portátiles. Cada módulo especifica sus dependencias que Go rastrea en el archivo `go.mod`, simplificando la gestión de dependencias a través de diferentes entornos y etapas de desarrollo.

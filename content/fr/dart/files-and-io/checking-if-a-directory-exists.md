@@ -14,12 +14,7 @@ title: "V\xE9rification de l'existence d'un r\xE9pertoire"
 weight: 20
 ---
 
-## Quoi & Pourquoi ?
-
-Vérifier si un répertoire existe en Dart consiste à vérifier la présence d'un répertoire à un chemin spécifié sur le système de fichiers avant d'effectuer des opérations comme lire ou écrire des fichiers. Les programmeurs font cela pour éviter les erreurs qui surviennent lorsqu'ils tentent d'accéder ou de modifier des répertoires qui n'existent pas.
-
 ## Comment faire :
-
 Dart utilise la bibliothèque `dart:io` pour travailler avec les fichiers et les répertoires. Voici une manière simple de vérifier si un répertoire existe :
 
 ```dart

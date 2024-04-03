@@ -14,16 +14,10 @@ title: Travailler avec CSV
 weight: 37
 ---
 
-## Quoi & Pourquoi ?
-
-Travailler avec du CSV (Valeurs Séparées par des Virgules) implique d'analyser et de générer des fichiers qui stockent des données tabulaires dans un format texte simple. Cette pratique est courante chez les programmeurs pour permettre un échange de données facile entre différentes applications ou pour traiter de grands ensembles de données de manière efficace et sûre en termes de type dans Elm.
-
 ## Comment faire :
-
 Elm ne dispose pas d'un support intégré pour l'analyse ou la génération de CSV ; à la place, des paquets tiers tels que `panosoft/elm-csv` sont souvent utilisés. Les exemples ci-dessous mettent en lumière l'utilisation de base de cette bibliothèque pour l'analyse et la génération de CSV.
 
 ### Analyser du CSV
-
 Tout d'abord, vous devez ajouter le paquet CSV à votre projet Elm :
 
 ```bash
@@ -47,7 +41,6 @@ parseResult =
 ```
 
 ### Générer du CSV
-
 Pour générer une chaîne CSV à partir des données Elm, utilisez la fonction `Csv.encode` :
 
 ```elm

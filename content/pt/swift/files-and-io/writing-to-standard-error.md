@@ -14,12 +14,7 @@ title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---
 
-## O Que & Por Quê?
-
-Escrever no erro padrão (stderr) trata de direcionar as mensagens de erro ou diagnósticos do seu programa para uma saída separada, distinta da saída padrão (stdout). Isso é crucial para depuração e registro de erros sem poluir a saída padrão, facilitando o entendimento do estado e problemas do programa tanto para desenvolvedores quanto para usuários.
-
 ## Como Fazer:
-
 Em Swift, escrever no erro padrão pode ser feito usando a classe `FileHandle` para acesso direto ao stderr. Aqui está um exemplo simples:
 
 ```swift

@@ -10,9 +10,6 @@ title: Working with TOML
 weight: 39
 ---
 
-## What & Why?
-TOML, short for Tom's Obvious, Minimal Language, is a data serialization language. Elm programmers use it to manage configuration data because it's human-readable and maps neatly to key-value pairs needed in applications.
-
 ## How to:
 Elm doesn’t have a built-in TOML parser, but you can interop with JavaScript or use a community package. Here’s how you might parse TOML using a hypothetical `elm-toml` package:
 

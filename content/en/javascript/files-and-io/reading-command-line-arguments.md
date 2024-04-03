@@ -10,9 +10,6 @@ title: Reading command line arguments
 weight: 23
 ---
 
-## What & Why?
-Reading command line arguments means grabbing the extras users tack onto commands when they run your script. Programmers do it to let users customize behavior without changing code.
-
 ## How to:
 Here's the straight-up way to do it in Node.js:
 

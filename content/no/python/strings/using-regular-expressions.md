@@ -13,9 +13,6 @@ title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---
 
-## Hva & Hvorfor?
-Regulære uttrykk (regex) er mønstre som brukes til å finne kombinasjoner av tegn i strenger. Programmerere benytter dem for søk, redigering eller manipulasjon av tekst basert på definerte mønstre, noe som gjør dem uunnværlige for oppgaver som datavalidering, parsing eller transformasjon.
-
 ## Hvordan:
 Å bruke regex i Python involverer `re`-modulen, som tilbyr et sett med funksjoner for å behandle tekst ved hjelp av regulære uttrykk.
 

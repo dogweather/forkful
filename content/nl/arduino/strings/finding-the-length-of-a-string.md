@@ -12,9 +12,6 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-Het vinden van de lengte van een string betekent uitzoeken hoeveel tekens deze bevat. Programmeurs doen dit om input te valideren, door tekens te loopen, tekst uit te lijnen of data dynamisch te beheren.
-
 ## Hoe:
 ```Arduino
 void setup() {

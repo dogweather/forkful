@@ -14,12 +14,7 @@ title: Rechercher et remplacer du texte
 weight: 10
 ---
 
-## Quoi et Pourquoi ?
-
-La recherche et le remplacement de texte en C consiste à identifier des sous-chaînes spécifiques au sein d'une chaîne plus grande et à les substituer par différentes sous-chaînes. Les programmeurs effectuent ces opérations pour manipuler des données textuelles - pour des tâches allant de la sanitisation et du formatage de données à la génération dynamique de contenu.
-
 ## Comment faire :
-
 C ne dispose pas de fonctions intégrées pour effectuer directement la recherche et le remplacement sur des chaînes. Cependant, vous pouvez y parvenir en combinant diverses fonctions de manipulation de chaînes disponibles dans la bibliothèque `<string.h>` ainsi que de la logique personnalisée. Ci-dessous se trouve un exemple basique de comment rechercher une sous-chaîne dans une chaîne et la remplacer. Pour simplifier, cet exemple suppose une taille de tampon suffisante et ne gère pas les problèmes d'allocation de mémoire, que vous devriez considérer dans le code de production.
 
 ```c
@@ -77,7 +72,6 @@ Chaîne modifiée : Bonjour, ceci est un exemple. Cet exemple est simple.
 Ce code démontre une approche simple pour rechercher toutes les instances d'une sous-chaîne (`sub`) dans une chaîne source et les remplacer par une autre sous-chaîne (`newSub`), en utilisant la fonction `strstr` pour trouver le point de départ de chaque correspondance. C'est un exemple très basique qui ne gère pas des scénarios complexes tels que les sous-chaînes chevauchantes.
 
 ## Plongée Profonde
-
 L'approche utilisée dans la section "Comment faire" est fondamentale, illustrant comment réaliser la recherche et le remplacement de texte en C sans aucune bibliothèque tierce. Historiquement, du fait de l'accent mis par C sur la gestion de la mémoire de bas niveau et la performance, sa bibliothèque standard n'encapsule pas les fonctionnalités de manipulation de chaînes de haut niveau comme celles que l'on trouve dans des langues telles que Python ou JavaScript. Les programmeurs doivent gérer manuellement la mémoire et combiner diverses opérations de chaînes pour atteindre les résultats souhaités, ce qui augmente la complexité mais offre plus de contrôle et d'efficacité.
 
 Il est crucial de noter que cette approche manuelle peut être sujette à erreurs, particulièrement lors de la gestion des allocations de mémoire et des tailles de tampon. Une manipulation incorrecte peut conduire à des dépassements de tampon et à la corruption de la mémoire, rendant le code vulnérable à des risques de sécurité.

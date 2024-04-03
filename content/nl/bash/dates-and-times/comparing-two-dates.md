@@ -12,9 +12,6 @@ title: Twee datums vergelijken
 weight: 27
 ---
 
-## Wat & Waarom?
-Het vergelijken van twee datums stelt je in staat om uit te zoeken welke earlier, later is, of als ze op hetzelfde moment plaatsvinden. Programmeurs doen dit om gebeurtenissen te sorteren, getimede acties te activeren, of gewoon om verstreken tijd bij te houden.
-
 ## Hoe te:
 Hier is een snelle manier om twee datums in Bash te vergelijken:
 

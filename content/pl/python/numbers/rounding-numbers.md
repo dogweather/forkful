@@ -11,9 +11,6 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i dlaczego?
-Zaokrąglanie liczb polega na dostosowywaniu ich do bliższej, prostszej lub bardziej znaczącej wartości. Programiści zaokrąglają liczby, aby upraszczać wyniki, ograniczać miejsca dziesiętne do wyświetlania lub dla pewnych celów matematycznych.
-
 ## Jak to zrobić:
 Oto podstawowe informacje o zaokrąglaniu liczb w Pythonie:
 

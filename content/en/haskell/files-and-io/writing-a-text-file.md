@@ -11,12 +11,7 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-
-Writing to a text file in Haskell is about programmatically creating or updating files with textual content. Programmers do this to persist data such as log messages, application output, or to store user-generated content, making it a fundamental task for applications that require data persistence or logging.
-
 ## How to:
-
 Haskell's standard Prelude provides elementary support for writing to files using the `writeFile` and `appendFile` functions from the `System.IO` module. Here's a basic example of creating a new file (or overwriting an existing one) and then appending text to a file.
 
 ```haskell

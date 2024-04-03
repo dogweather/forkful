@@ -10,9 +10,6 @@ title: Code in Funktionen organisieren
 weight: 18
 ---
 
-## Was & Warum?
-Code in Funktionen zu organisieren, bedeutet, Aufgaben in wiederverwendbare Blöcke zu zerlegen. Es macht den Code sauberer, weniger fehleranfällig und einfacher zu debuggen oder zu refaktorisieren.
-
 ## Wie geht das:
 Stellen Sie sich eine Aufgabe vor: Berechnen Sie den Durchschnitt eines Arrays. Ohne Funktionen würden Sie alles im Hauptteil belassen. Mit Funktionen würden Sie es so machen:
 

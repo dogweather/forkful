@@ -14,12 +14,7 @@ title: Registro de Logs
 weight: 17
 ---
 
-## O que & Por quê?
-
-Registrar logs em C envolve documentar o fluxo e eventos notáveis de um programa durante sua execução, fornecendo uma revisão tangível do seu comportamento e desempenho. Programadores utilizam o registro de logs para fins de depuração, monitoramento da saúde do software e garantia da segurança do sistema.
-
 ## Como fazer:
-
 Em C, o registro de logs pode ser alcançado com operações básicas de arquivo ou usando bibliotecas mais sofisticadas. Para simplicidade, começaremos com a biblioteca padrão de E/S. Os trechos a seguir demonstram implementações básicas de registro de logs.
 
 Para registrar mensagens simples:
@@ -95,7 +90,6 @@ Saída em `detailed.log`:
 ```
 
 ## Aprofundamento
-
 O registro de logs em C, como demonstrado, depende de operações simples de arquivo, o que é eficaz, mas não tão poderoso ou flexível quanto as facilidades de registro em outras linguagens, como o módulo `logging` do Python ou o `Log4j` do Java. Para capacidades de registro de logs mais avançadas em C, desenvolvedores muitas vezes recorrem a bibliotecas como `syslog` em sistemas semelhantes ao Unix, que fornecem gerenciamento de logs em todo o sistema, ou bibliotecas de terceiros, como `log4c`.
 
 Historicamente, o registro de logs tem sido uma parte integral da programação, remontando às práticas de programação iniciais onde o rastreamento e a compreensão do fluxo do programa e dos erros eram feitos principalmente através de impressões físicas. À medida que os sistemas evoluíram, o registro de logs tornou-se mais sofisticado, agora suportando vários níveis de severidade, rotação de logs e registro de logs assíncrono.

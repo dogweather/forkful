@@ -34,12 +34,7 @@ title: "\u09B8\u09CD\u099F\u09CD\u09B0\u09BF\u0982 \u098F\u09B0 \u09A6\u09C8\u09
 weight: 7
 ---
 
-## কি এবং কেন?
-
-একটি স্ট্রিংয়ের দৈর্ঘ্য নির্ধারণ করা মানে এতে কতগুলো অক্ষর রয়েছে তা মাপা। প্রোগ্রামাররা ইনপুট যাচাই করা, অক্ষরগুলোর মধ্য দিয়ে লুপ করা, অথবা টেক্সট প্রদর্শন সীমিত করা সহ অন্যান্য কারণে এটি করে থাকেন।
-
 ## কিভাবে:
-
 TypeScript-এ, আপনি একটি স্ট্রিংয়ের দৈর্ঘ্য `.length` প্রপার্টি ব্যবহার করে পেতে পারেন। এখানে একটি দ্রুত উদাহরণ দেওয়া হল:
 
 ```typescript
@@ -50,7 +45,6 @@ console.log(greeting.length); // আউটপুট: 18
 এই কোডটি `greeting` নামের একটি স্ট্রিং ভেরিয়েবল ঘোষণা করে এবং তারপর এর দৈর্ঘ্য কন্সোলে লগ করে।
 
 ## গভীরে নিবেশ
-
 `.length` প্রপার্টি হচ্ছে JavaScript থেকে আসা, TypeScript-এর পূর্বপুরুষ। এটি একটি সোজা এবং সর্বজনীনভাবে সমর্থিত একটি উপায় যা একটি স্ট্রিংয়ের আকার নির্ধারণ করে।
 
 বিকল্প পদ্ধতি থাকলেও, সেগুলি সাধারণত জিনিসগুলিকে জটিল করে তোলে। উদাহরণস্বরূপ, আপনি স্ট্রিংটিকে একটি অ্যারেতে রূপান্তর করতে পারেন এবং উপাদানগুলি গণনা করতে পারেন:
@@ -78,7 +72,6 @@ console.log(countCodePoints(fancyGreeting)); // আউটপুট: 9
 এই ফাংশনটি স্ট্রিং এনকোডিংয়ের জটিলতা নিয়ে কাজ করে নিশ্চিত করে যে, প্রতিটি বর্ণ, একক বা দ্বৈত কোড ইউনিট নির্বিশেষে, সঠিকভাবে গণনা করা হয়।
 
 ## আরও দেখুন
-
 - TypeScript Handbook স্ট্রিংস সম্পর্কে: [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#strings)
 - MDN Web Docs স্ট্রিং দৈর্ঘ্য প্রপার্টি সম্পর্কে: [String.prototype.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
 - Unicode এবং JavaScript: [JavaScript-এর একটি Unicode সমস্যা আছে - Mathias Bynens](https://mathiasbynens.be/notes/javascript-unicode)

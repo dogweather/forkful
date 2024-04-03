@@ -11,9 +11,6 @@ title: Sammenlikning av to datoer
 weight: 27
 ---
 
-## What & Why?
-Sammenligne to datoer betyr å sjekke om de er identiske, hvilken som kommer først, eller hvor lang tid det er mellom dem. Programmerere gjør dette for å håndtere frister, tidsstyrte hendelser eller loggføre tidsforløp.
-
 ## How to:
 Sammenligne dager direkte:
 ```PowerShell

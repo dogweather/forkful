@@ -11,9 +11,6 @@ title: Webseite herunterladen
 weight: 42
 ---
 
-## Was & Warum?
-Das Herunterladen einer Webseite bedeutet, ihren Inhalt über das Internet abzurufen. Programmierer machen das, um Daten zu sammeln, automatisierte Tests durchzuführen oder Inhalte für die Verarbeitung zu extrahieren.
-
 ## So geht's:
 Elixir verwendet die HTTPoison-Bibliothek für HTTP-Anfragen. Wir installieren HTTPoison, machen eine Anfrage und verarbeiten die Antwort:
 

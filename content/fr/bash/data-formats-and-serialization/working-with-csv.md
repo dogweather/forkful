@@ -14,11 +14,7 @@ title: Travailler avec CSV
 weight: 37
 ---
 
-## Quoi & Pourquoi ?
-Travailler avec des fichiers CSV (Valeurs Séparées par des Virgules) dans Bash consiste à traiter et manipuler des données tabulaires stockées au format texte brut. C'est essentiel pour les programmeurs car cela permet l'automatisation des tâches de transformation, d'analyse et d'intégration des données directement depuis la ligne de commande, sans nécessité d'utiliser des outils plus lourds ou des environnements de programmation.
-
 ## Comment faire :
-
 **Lire un fichier CSV ligne par ligne**
 
 ```bash

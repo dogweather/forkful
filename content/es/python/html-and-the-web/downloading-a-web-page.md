@@ -11,9 +11,6 @@ title: "Descargando una p\xE1gina web"
 weight: 42
 ---
 
-## ¿Qué & Por Qué?
-Descargar una página web significa traer su contenido HTML a tu disco local. Los programadores lo hacen para analizar la estructura de la página, extraer información o monitorear cambios.
-
 ## How To:
 Usaremos `requests`, una biblioteca de Python fácil de usar para solicitudes HTTP:
 

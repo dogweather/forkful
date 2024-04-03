@@ -15,9 +15,6 @@ title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
 weight: 23
 ---
 
-## What & Why? (是什么？为什么？)
-在命令行中读取参数让程序接收用户输入。这意味着可以在程序运行时定制行为，非常灵活。
-
 ## How to: (如何操作：)
 ```TypeScript
 // app.ts

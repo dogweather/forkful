@@ -11,9 +11,6 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## What & Why?
-Extraire des sous-chaînes, c'est comme découper un morceau précis de votre baguette préférée. Les programmeurs le font pour manipuler, analyser ou simplement afficher un fragment spécifique d'un texte.
-
 ## How to:
 Dans Fish, extrayons des morceaux de chaînes de caractères. Imaginez que vous avez un morceau de texte et que vous voulez juste un bout.
 

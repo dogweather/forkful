@@ -14,12 +14,7 @@ title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---
 
-## Cái gì & Tại sao?
-
-Nội suy chuỗi có nghĩa là kết hợp các biến hoặc biểu thức vào trong một chuỗi. Điều này giúp tiết kiệm thời gian và nâng cao tính dễ đọc bằng cách cho phép nội dung động mà không cần đến những thao tác ghép chuỗi phức tạp.
-
 ## Làm thế nào:
-
 Trong Fish, bạn sử dụng dấu ngoặc kép và đặt biến hoặc lệnh mà bạn muốn nội suy với dấu đô la `$` ngay trong chuỗi.
 
 ```fish
@@ -46,7 +41,6 @@ I have 9 files in this directory.
 Các biến và lệnh được đánh giá và gói gọn ngay vào vị trí bạn đặt chúng.
 
 ## Sâu hơn
-
 Trước Fish và các shell hiện đại khác, bạn thường phải sử dụng một tổ hợp cồng kềnh của dấu ngoặc và ghép chuỗi—hoặc dựa vào các công cụ bên ngoài—để đưa biến vào chuỗi.
 
 Trong bash, ví dụ, nó sẽ trông như thế này:
@@ -77,7 +71,6 @@ Trong trường hợp này, `%s` là một ký tự đại diện cho biến chu
 Về mặt triển khai, khi Fish xử lý dòng lệnh, nó phân tách các chuỗi được bao bởi dấu ngoặc kép và thay thế các biến bằng giá trị của chúng một cách trực tiếp. Điều này rất tinh tế và mô phỏng sự nội suy biến tìm thấy trong các ngôn ngữ cấp cao như Ruby hoặc PHP.
 
 ## Xem thêm
-
 Để biết thêm thông tin về việc thao tác chuỗi và viết kịch bản với Fish, hãy xem:
 
 - [Tài liệu Fish Shell: Dấu ngoặc](https://fishshell.com/docs/current/index.html#quotes)

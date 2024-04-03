@@ -10,9 +10,6 @@ title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---
 
-## Mikä & Miksi?
-Kompleksiluvut laajentavat yksiulotteisen lukusuoran ideaa kaksiulotteiseen tasoon sisällyttämällä pystysuoran imaginääriakselin. Ohjelmoijat työskentelevät niiden parissa aloilla kuten signaalinkäsittely, fluididynamiikka ja sähkötekniikka, joissa ne ovat olennaisia esittämään oskillaatioita ja muita ilmiöitä.
-
 ## Miten:
 Luassa voit esittää kompleksilukuja taulukoiden avulla. Perustoiminnot sisältävät taulukoiden lisäämisen, vähentämisen, kertomisen ja jakamisen. Näin se tapahtuu:
 

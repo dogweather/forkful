@@ -12,9 +12,6 @@ title: Werken met TOML
 weight: 39
 ---
 
-## Wat & Waarom?
-Werken met TOML omvat het parsen en genereren van TOML (Tom's Obvious, Minimal Language) data met Haskell. Programmeurs doen dit om gemakkelijk configuratiebestanden of data-uitwisseling te beheren met sterke typegaranties en minimale syntax rompslomp.
-
 ## Hoe:
 Zorg eerst dat je een TOML-parseerbibliotheek hebt. Voor Haskell is `htoml` een populaire keuze. Je moet het toevoegen aan de afhankelijkheden van je project.
 

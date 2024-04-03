@@ -12,12 +12,7 @@ title: "Convertir une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## Quoi et Pourquoi ?
-
-Convertir une date en chaîne de caractères en C implique de traduire une structure de date ou un horodatage en un format lisible par l'homme. Les programmeurs effectuent souvent cette tâche pour afficher les dates dans des journaux, interfaces utilisateur, ou lorsqu'ils stockent des dates dans un format basé sur du texte comme JSON ou CSV.
-
 ## Comment faire :
-
 La fonction `strftime` de la bibliothèque `<time.h>` est couramment utilisée à cette fin. Elle vous permet de formater la date et l'heure de diverses manières en spécifiant des indicateurs de format. Voici un exemple rapide :
 
 ```c
@@ -46,7 +41,6 @@ Date et Heure actuelles : Mer Jun 30 21:49:08 2021
 Vous pouvez personnaliser le format en changeant les indicateurs de format passés à `strftime`. Par exemple, pour obtenir la date au format `AAAA-MM-JJ`, vous utiliseriez `"%Y-%m-%d"`.
 
 ## Approfondissement
-
 La fonction `strftime` et la bibliothèque `<time.h>` font partie de la Bibliothèque Standard C, qui remonte à la norme ANSI C originale (C89/C90). Bien qu'elle soit simple et prise en charge sur de nombreuses plateformes, cette approche peut sembler de bas niveau et encombrante par rapport aux langues de programmation modernes qui offrent des bibliothèques de dates et d'heures plus intuitives.
 
 Il convient de noter, bien que les fonctions de temps de la bibliothèque standard C soient largement supportées et relativement simples à utiliser, elles manquent de certaines des fonctionnalités de manipulation de fuseaux horaires et d'internationalisation plus complexes trouvées dans les bibliothèques de langues plus récentes ou dans des bibliothèques C tierces telles que les Composants Internationaux pour Unicode (ICU).

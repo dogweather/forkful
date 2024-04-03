@@ -11,9 +11,6 @@ title: Removing quotes from a string
 weight: 9
 ---
 
-## What & Why?
-Stripping quotes from a string means getting rid of those pesky quotation marks that can mess with your code, especially when you're parsing data or constructing JSON objects. Programmers do it to sanitize inputs, avoid syntax errors, and make strings play nice with other parts of their code.
-
 ## How to:
 Imagine you've got a string that's wrapped in double quotes, like `"\"Hello, World!\""` and you want the pure, unquoted text. Here's a quick JavaScript snippet to free your string from those quote shackles:
 

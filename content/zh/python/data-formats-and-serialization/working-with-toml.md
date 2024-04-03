@@ -22,9 +22,6 @@ title: "\u4F7F\u7528TOML"
 weight: 39
 ---
 
-## 是什么 & 为什么？
-TOML，代表Tom's Obvious, Minimal Language（汤姆的明显、最简语言），是一种类似于JSON或YAML的数据序列化格式，但它旨在简单和易读。程序员使用TOML进行配置文件编写，因为它易于编写和理解，并且能够整齐地映射到像Python这样的编程语言中的数据结构上。
-
 ## 如何操作：
 在开始之前，使用`pip install toml`安装`toml`包。让我们解析一个TOML文件：
 

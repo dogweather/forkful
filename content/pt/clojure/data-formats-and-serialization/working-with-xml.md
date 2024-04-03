@@ -11,9 +11,6 @@ title: Trabalhando com XML
 weight: 40
 ---
 
-## O Quê & Porquê?
-XML é uma linguagem de marcação para codificar documentos de forma que sejam legíveis por humanos e máquinas. É chave em serviços web, arquivos de configuração e intercâmbio de dados porque carrega dados em um formato estruturado e hierárquico.
-
 ## Como fazer:
 Clojure oferece a biblioteca `clojure.data.xml` para análise (parsing) e emissão de XML. Primeiro, vamos analisar algum XML:
 

@@ -14,16 +14,10 @@ title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---
 
-## Mikä & Miksi?
-
-Merkkijonon ensimmäisen kirjaimen muuttaminen suuraakkoseksi Rustissa tarkoittaa merkkijonon muokkaamista siten, että sen ensimmäinen merkki muutetaan suuraakkoseksi, jos se on kirjain, samalla kun loput merkkijonosta jätetään muuttumattomiksi. Ohjelmoijat suorittavat usein tämän toimenpiteen muotoilutarkoituksissa, kuten valmistellessaan sanoja otsikoita varten tai varmistaakseen johdonmukaisuuden käyttäjän syötteessä.
-
 ## Kuinka:
-
 Merkkijonon ensimmäisen kirjaimen muuttamiseksi suuraakkoseksi Rustissa on kaksi pääreittiä: standardikirjaston toiminnallisuuksien käyttö tai kolmannen osapuolen pakettien käyttö monimutkaisempien tai erityistarpeiden kannalta. Tässä on, miten voit tehdä molemmat.
 
 ### Käyttäen Rustin Standardikirjastoa
-
 Rustin standardikirjasto ei tarjoa suoraa menetelmää merkkijonojen suuraakkostamiseksi, mutta voit saavuttaa tämän manipuloimalla merkkijonon merkkejä.
 
 ```rust
@@ -42,7 +36,6 @@ fn main() {
 ```
 
 ### Käyttäen `heck`-pakettia
-
 Suoraviivaisempaa lähestymistapaa varten, erityisesti työskennellessä laajemmassa tekstinkäsittelykontekstissa, saatat mieluummin käyttää kolmannen osapuolen kirjastoja, kuten `heck`. `heck`-paketti tarjoaa erilaisia kirjainkoon muuntotoiminnallisuuksia, mukaan lukien yksinkertaisen tavan muuttaa merkkijonojen ensimmäinen kirjain suuraakkoseksi.
 
 Lisää ensin `heck` `Cargo.toml`-tiedostoosi:

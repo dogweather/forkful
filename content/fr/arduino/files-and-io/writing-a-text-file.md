@@ -14,9 +14,6 @@ title: "R\xE9diger un fichier texte"
 weight: 24
 ---
 
-## Quoi & Pourquoi ?
-Écrire un fichier texte avec Arduino implique de sauvegarder des données dans un fichier sur une carte SD ou un module de stockage similaire, souvent dans le but de consigner des données. Les programmeurs font cela pour enregistrer les lectures de capteurs, sauvegarder des configurations ou journaliser des événements d'application au fil du temps, cela étant crucial pour les projets nécessitant une analyse de données ou un suivi.
-
 ## Comment :
 Pour écrire dans un fichier texte sur une carte SD en utilisant Arduino, vous devez d'abord inclure la bibliothèque `SD.h`, qui fournit les fonctions nécessaires pour interagir avec les cartes SD. Assurez-vous que votre carte Arduino est connectée à un module de carte SD.
 

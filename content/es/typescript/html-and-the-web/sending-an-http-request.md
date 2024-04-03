@@ -10,9 +10,6 @@ title: Enviando una solicitud http
 weight: 44
 ---
 
-## Qué & Por Qué?
-Mandar una solicitud HTTP es el proceso de pedir o enviar datos a un servidor web. Lo hacemos para interactuar con APIs, obtener recursos, enviar formularios y más - es la base de la comunicación en la red.
-
 ## How to:
 Para mandar una solicitud HTTP, vamos a usar `fetch`, que está ya incluido en JavaScript y es accesible en TypeScript.
 

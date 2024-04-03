@@ -14,12 +14,7 @@ title: "R\xE9daction d'un fichier texte"
 weight: 24
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire un fichier texte dans Google Apps Script permet aux développeurs de stocker des données de manière persistante, rendant ces données accessibles pour une utilisation ou une analyse future. Cette opération est une pratique courante pour la journalisation, la sauvegarde de configurations, ou l'exportation d'informations dans un format simple et lisible.
-
 ## Comment :
-
 Créer et écrire dans un fichier texte avec Google Apps Script peut être accompli grâce au service Google DriveApp. Voici un guide étape par étape avec des exemples de code pour vous aider à démarrer :
 
 **Étape 1 : Créer un nouveau fichier texte**
@@ -49,7 +44,6 @@ Ce code récupère un fichier existant en utilisant son ID unique, puis ajoute "
 Aucune sortie explicite n'est affichée en exécutant les fragments de code ci-dessus, mais si vous naviguez vers le Google Drive où le fichier est situé, vous verrez "Example.txt" pour le premier fragment de code. Pour le deuxième fragment, si vous ouvrez le fichier spécifié par ID, vous devriez voir le contenu original suivi par la nouvelle ligne "Nouveau contenu ajouté."
 
 ## Plongée profonde
-
 Écrire un fichier texte dans Google Apps Script tire parti du service DriveApp, exploitant essentiellement les capacités de Google Drive pour le stockage et la gestion de fichiers. Cette approche remonte à la création de Google Apps Script, qui a été conçu pour automatiser facilement des tâches à travers la suite d'outils de productivité de Google, y compris Drive.
 
 Bien que la manipulation directe de fichiers via Google Apps Script soit simple et étroitement intégrée à Google Workspace, les développeurs venant d'autres horizons (par exemple, Python, Node.js) pourraient la trouver différente de travailler avec un système de fichiers local ou d'autres services de stockage en nuage comme AWS S3. Ces plateformes offrent souvent un ensemble de capacités de manipulation de fichiers plus complexes, mais nécessitent une configuration supplémentaire pour l'authentification et les permissions.

@@ -10,9 +10,6 @@ title: Refaktoryzacja
 weight: 19
 ---
 
-## Co i dlaczego?
-Refaktoryzacja to proces restrukturyzacji istniejącego kodu komputerowego bez zmiany jego zewnętrznego zachowania. Jest to kluczowa praktyka, aby zmniejszyć złożoność, poprawić możliwość utrzymania kodu i zachować zdrową oraz łatwiejszą do zrozumienia bazę kodów dla obecnych i przyszłych programistów.
-
 ## Jak to zrobić:
 Rozważmy prosty skrypt Bash, który wymaga refaktoryzacji. Jest nieporęczny, z powtarzającym się kodem i trudny do śledzenia:
 

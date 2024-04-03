@@ -12,9 +12,6 @@ title: Den aktuellen Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-Das aktuelle Datum in Swift zu bekommen, erfordert die Verwendung der `Date`-Klasse, um auf das Datum und die Uhrzeit zuzugreifen, zu denen die App ausgeführt wird. Programmierer müssen aus einer Vielzahl von Gründen das aktuelle Datum abrufen, die von der Zeitstempelung von Ereignissen, der Durchführung von Datumsberechnungen bis hin zur Anzeige von Daten und Uhrzeiten in einer Benutzeroberfläche reichen.
-
 ## Wie geht das:
 Das `Foundation`-Framework von Swift stellt die `Date`-Klasse bereit, was es unkompliziert macht, das aktuelle Datum und die Uhrzeit zu erhalten. Hier ist ein einfaches Beispiel dafür, wie man das aktuelle Datum bekommt:
 

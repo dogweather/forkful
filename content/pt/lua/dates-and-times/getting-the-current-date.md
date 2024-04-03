@@ -14,12 +14,7 @@ title: Obtendo a data atual
 weight: 29
 ---
 
-## O Que & Por Que?
-
-Recuperar a data atual na programação é uma tarefa crucial para uma infinidade de aplicações, incluindo registro de atividades (logging), marcação de eventos com carimbo de data/hora ou agendamento de tarefas. No Lua, essa funcionalidade permite que os programadores lidem com operações de data e hora de maneira integrada em suas aplicações, garantindo que o software possa interagir efetivamente com dados em tempo real.
-
 ## Como fazer:
-
 O Lua fornece a função `os.date` para obter a data e a hora atuais. A função pode ser usada sem argumentos para obter uma string formatada ou com especificadores de formato para personalizar a saída. Veja como usá-la:
 
 ```lua

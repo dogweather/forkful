@@ -10,9 +10,6 @@ title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---
 
-## Mikä ja miksi?
-TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on datan serialisointiformaatti, joka on samankaltainen kuin JSON tai YAML. Ohjelmoijat käyttävät sitä sen ihmisen luettavuuden ja suoraviivaisen datatyyppien kartoituksen vuoksi, mikä tekee siitä suositun valinnan konfiguraatiotiedostoille ja datan vaihdolle.
-
 ## Kuinka:
 Ensimmäiseksi tarvitset TOML-jäsentimen. `@iarna/toml` on suosittu valinta. Asenna se npm:n kautta: `npm install @iarna/toml --save`. Näin luet TOML-tiedoston ja jäsenät sen JavaScript-objektiksi:
 

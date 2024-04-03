@@ -11,12 +11,7 @@ title: "HTML:n j\xE4sennys"
 weight: 43
 ---
 
-## Mikä & Miksi?
-
-HTML:n jäsentäminen Elixirissä tarkoittaa tietojen poimimista HTML-dokumenteista. Ohjelmoijat tekevät tämän ohjelmallisesti vuorovaikuttaakseen verkkosivujen kanssa, kaapiakseen dataa tai automatisoidakseen verkkovuorovaikutuksia, mahdollistaen sovellusten ymmärtää ja hyödyntää verkkosisältöä dynaamisesti.
-
 ## Kuinka:
-
 Elixir, sen vankkumattoman rinnakkaisuuden mallin ja funktionaalisen ohjelmointiparadigman kanssa, ei sisällä sisäänrakennettuja HTML-jäsentämisen valmiuksia. Voit kuitenkin käyttää suosittuja kolmannen osapuolen kirjastoja kuten `Floki` tähän tarkoitukseen. Floki tekee HTML-jäsentämisestä intuitiivista ja tehokasta, hyödyntäen Elixiriä mallin sopivuudesta ja putkituksesta.
 
 Lisää ensin Floki mix.exs riippuvuuksiisi:

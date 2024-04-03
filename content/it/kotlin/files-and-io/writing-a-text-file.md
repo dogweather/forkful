@@ -13,9 +13,6 @@ title: Scrivere un file di testo
 weight: 24
 ---
 
-## Cosa & Perché?
-Scrivere un file di testo in Kotlin comporta la creazione di un file e l'inserimento di contenuto testuale in esso, un compito comune per l'archiviazione dei dati, la registrazione o le impostazioni di configurazione. I programmatori lo fanno per salvare e manipolare dati al di fuori dello spazio di memoria volatile, assicurando la persistenza attraverso le sessioni.
-
 ## Come fare:
 Kotlin offre un approccio diretto per scrivere su file, sfruttando la libreria standard senza necessità di biblioteche di terze parti aggiuntive. Ecco un esempio semplice:
 

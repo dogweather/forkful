@@ -16,9 +16,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---
 
-## Cái gì & Tại sao?
-TOML, viết tắt của Tom's Obvious, Minimal Language, là một định dạng dữ liệu tương tự như JSON hoặc YAML, nhưng dễ đọc hơn đối với con người. Các lập trình viên sử dụng nó cho các tệp cấu hình vì nó rõ ràng và dễ dàng chuyển đổi sang các cấu trúc dữ liệu.
-
 ## Cách thức:
 Đầu tiên, hãy đảm bảo bạn đã cài đặt thư viện phân tích TOML, như `yosymfony/toml`. Chúng ta hãy phân tích một tệp TOML:
 
@@ -64,6 +61,7 @@ Array
 
 )
 ```
+
 ## Sâu hơn nữa
 TOML ra đời vào năm 2013, được tạo ra bởi Tom Preston-Werner, đồng sáng lập của GitHub, như một lựa chọn thân thiện với người dùng hơn so với XML và JSON cho các tệp cấu hình. Trong khi JSON đơn giản cho máy móc, cấu trúc của TOML lại dễ chịu với mắt người, không có sự phức tạp của YAML.
 

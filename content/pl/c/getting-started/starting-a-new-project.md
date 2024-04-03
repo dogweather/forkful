@@ -12,12 +12,7 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## Co i dlaczego?
-
-Rozpoczęcie nowego projektu w C wymaga ustawienia podstawowej struktury kodu i środowiska, aby efektywnie zarządzać zadaniami programistycznymi. Programiści robią to, aby usprawnić proces budowania, zapewnić spójność oraz ułatwić łatwiejszą konserwację i skalowalność oprogramowania z czasem.
-
 ## Jak to zrobić:
-
 Sercem każdego projektu w C jest kod źródłowy. Typowy punkt wyjścia obejmuje utworzenie głównego pliku, często nazwanego `main.c`, który zawiera punkt wejścia programu. Dodatkowo, `Makefile` jest niezbędny do zarządzania kompilacją, aby usprawnić budowanie projektu.
 
 Oto minimalny przykład:
@@ -53,5 +48,4 @@ Cześć, świecie!
 ```
 
 ## Szczegółowa analiza
-
 Inicjowanie projektu w C to nie tylko pisanie kodu; to ustanowienie solidnej podstawy dla zarządzania projektem. Praktyka ta wyewoluowała od wczesnych dni programowania, czerpiąc z potrzeby organizacji i usprawnienia procesu kompilowania dużych, złożonych systemów ze świata UNIX. System GNU Make, wprowadzony w latach 80., zrewolucjonizował to, automatyzując proces budowy, czyniąc go kluczowym narzędziem we współczesnych projektach w C. Jednakże, pojawienie się zintegrowanych środowisk programistycznych (IDE) i innych języków programowania wysokiego poziomu przedstawiło różne praktyki inicjacji projektu, które mogą obejmować bardziej zautomatyzowane systemy budowy, zarządzanie zależnościami i integrację kontroli wersji od samego początku. Pomimo tych postępów, prostota i kontrola oferowana przez Makefile i dobrze zorganizowany katalog kodu źródłowego pozostają nieocenione, zwłaszcza przy programowaniu na poziomie systemowym, gdzie efektywność i zarządzanie zasobami są kluczowe. Niemniej jednak, dla większych projektów, narzędzia takie jak CMake lub Meson stają się preferowane ze względu na ich zdolność do obsługi złożonych kompilacji i kompatybilności międzyplatformowej, co sugeruje tendencję do bardziej zaawansowanych narzędzi inicjacji projektu w ekosystemie C.

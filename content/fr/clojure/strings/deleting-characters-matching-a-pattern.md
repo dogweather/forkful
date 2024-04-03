@@ -11,9 +11,6 @@ title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---
 
-## What & Why?
-En programmation, supprimer des caractères selon un motif, c'est chercher et enlever des séquences spécifiques dans une chaîne de texte. On fait ça souvent pour nettoyer des données ou pour conformer des inputs à un format désiré.
-
 ## How to:
 Pour supprimer des caractères qui correspondent à un motif en Clojure, utilisez les fonctions `clojure.string/replace` et `re-pattern` :
 

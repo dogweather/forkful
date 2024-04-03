@@ -10,9 +10,6 @@ title: Debug-Ausgaben drucken
 weight: 33
 ---
 
-## Was & Warum?
-Debug-Ausgaben drucken heißt, Informationen während der Laufzeit eines Programms zur Problemdiagnose auszugeben. Entwickler nutzen es, um den Programmfluss zu verstehen und Fehler schnell zu finden.
-
 ## How to:
 Ein einfaches Beispiel, um Daten auf der seriellen Schnittstelle auszugeben:
 

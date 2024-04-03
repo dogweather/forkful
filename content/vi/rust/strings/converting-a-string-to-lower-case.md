@@ -15,9 +15,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---
 
-## Cái gì & Tại sao?
-Chuyển đổi một chuỗi thành chữ thường có nghĩa là biến mỗi chữ trong chuỗi thành chữ cái nhỏ. Điều này rất tiện lợi cho việc so sánh không phân biệt kiểu chữ hoặc chuẩn bị văn bản cho quá trình xử lý đồng nhất.
-
 ## Làm thế nào:
 ```Rust
 fn main() {

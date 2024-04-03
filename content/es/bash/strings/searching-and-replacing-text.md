@@ -10,9 +10,6 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## Qué y Por Qué?
-Buscar y reemplazar texto es cambiar una cadena por otra en un archivo o conjunto de archivos. Los programadores lo hacen para corregir errores, actualizar datos o modificar código de manera eficiente.
-
 ## Cómo:
 ```Bash
 # Buscar y reemplazar "hola" por "adiós" en 'archivo.txt'

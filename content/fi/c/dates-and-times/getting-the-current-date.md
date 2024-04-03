@@ -14,12 +14,7 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mikä & Miksi?
-
-Nykyisen päivämäärän saaminen C-kielessä tarkoittaa standardin C-kirjaston hyödyntämistä järjestelmän nykyisen ajan ja päivämäärän noutamiseen ja muotoilemiseen. Ohjelmoijat tarvitsevat tätä toiminnallisuutta usein lokitiedostojen, aikaleimojen tai suunniteltujen toimintojen toteuttamiseen sovelluksissaan.
-
 ## Kuinka:
-
 C-kielessä otsikkotiedosto `<time.h>` tarjoaa tarvittavat funktiot ja tyypit päivämäärien ja aikojen käsittelyyn. `time()`-funktio hakee nykyisen ajan, kun taas `localtime()` muuntaa tämän ajan paikalliseen aikavyöhykkeeseen. Päivämäärän näyttämiseksi käytämme `strftime()`-funktiota sen muotoilemiseen merkkijonoksi.
 
 Tässä on perusesimerkki:
@@ -53,7 +48,6 @@ Tämän päivän päivämäärä on 2023-04-12
 ```
 
 ## Syväsukellus
-
 C-kielessä ajan käsittely `<time.h>`:n kautta juontaa juurensa kielen ja UNIX-järjestelmien alkuaikoihin. Se on rakennettu `time_t`-tietotyypin ympärille, joka edustaa nykyistä aikaa sekuntien määränä Unix Epochista lähtien (1. tammikuuta 1970). Vaikka tämä on tehokasta ja universaalisti yhteensopivaa, se myös tarkoittaa, että standardin C-kirjaston aikafunktiot ovat perustavanlaatuisesti rajoittuneita `time_t`:n tarkkuuden ja vaihteluvälin suhteen.
 
 Nykysovellukset, erityisesti ne, jotka vaativat korkean tarkkuuden aikaleimoja tai käsittelevät kaukaisia tai menneitä päivämääriä, saattavat kokea nämä rajoitukset haastaviksi. Esimerkiksi Vuosi 2038 -ongelma on kuuluisa esimerkki, jossa 32-bittistä `time_t`:a käyttävät järjestelmät ylivuotavat.

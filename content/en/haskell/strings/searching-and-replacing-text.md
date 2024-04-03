@@ -9,11 +9,7 @@ title: Searching and replacing text
 weight: 10
 ---
 
-## What & Why?
-Searching and replacing text lets you find strings and swap them out. Programmers use it to update code, refactor, or change data quickly.
-
 ## How to:
-
 Let's search and replace text using Haskell. We'll use `Data.Text` for Unicode text handling and efficiency. Make sure to import `Data.Text` like this: 
 
 ```haskell
@@ -36,7 +32,6 @@ main = do
 The `replace` function does the heavy lifting. We've wrapped it in `replaceText` for clarity.
 
 ## Deep Dive
-
 Haskell's text replacement functions like `T.replace` are built on top of array processing capabilities of Haskell. Looking back, Haskell was first conceived in the '80s, with a focus on functional programming. This paradigm makes operations like text replacement elegant and less error-prone due to immutability and strong type systems.
 
 As for alternatives, you could manually iterate over text and replace substrings, but that's more error-prone and inefficient. 
@@ -44,7 +39,6 @@ As for alternatives, you could manually iterate over text and replace substrings
 The `Data.Text` library uses a different internal representation than the `String` type (which is just a list of characters), making it better suited for large-scale text operations. The `T.replace` function itself uses efficient algorithms for string searching, which offer good performance even for large texts.
 
 ## See Also
-
 For more on `Data.Text`, check out: 
 
 - [Text package on Hackage](https://hackage.haskell.org/package/text)

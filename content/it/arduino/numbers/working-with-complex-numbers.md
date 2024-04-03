@@ -10,9 +10,6 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-## Cosa & Perché?
-I numeri complessi hanno una parte reale e una immaginaria, tipicamente scritti come `a + bi`. Sono vitali per alcuni progetti Arduino pesanti dal punto di vista matematico che coinvolgono l'elaborazione di segnali, l'ingegneria elettrica, o qualsiasi altro dominio dove i fenomeni sono meglio modellati in un piano.
-
 ## Come fare:
 ```Arduino
 #include <Complex.h>

@@ -13,9 +13,6 @@ title: "\u0412\u0438\u0434\u0430\u043B\u0435\u043D\u043D\u044F \u0441\u0438\u043
 weight: 5
 ---
 
-## What & Why? (Що та Чому?)
-Deleting characters matching a pattern means we’re getting rid of specific letters or symbols based on rules—like tossing out all vowels from a sentence. Programmers do this to clean data, shape inputs for databases, or simplify text for processing.
-
 ## How to (Як це зробити):
 Let's remove all digits from a string using PHP's preg_replace function:
 

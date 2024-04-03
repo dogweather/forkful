@@ -11,9 +11,6 @@ title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---
 
-## Vad & Varför?
-Att starta ett nytt projekt innebär att sätta upp en ny kodbas från grunden. Programmerare gör det för att skapa unika lösningar eller utforska nya idéer.
-
 ## Så här gör du:
 För att skapa nytt Haskell-projekt rekommenderar vi att använda Stack, ett kraftfullt verktyg som hanterar projektets bygge och beroenden.
 

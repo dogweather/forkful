@@ -15,9 +15,6 @@ title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---
 
-## Gì & Tại sao?
-Tìm kiếm và thay thế văn bản là việc tìm kiếm các chuỗi cụ thể trong một chuỗi lớn hơn và thay thế chúng bằng một cái gì khác. Các lập trình viên sử dụng nó cho các nhiệm vụ như cập nhật tên biến, sửa đổi dữ liệu, hoặc tự động hóa việc chỉnh sửa trên nhiều tệp.
-
 ## Cách thực hiện:
 C++ cung cấp nhiều cách để tìm kiếm và thay thế văn bản. Dưới đây là một ví dụ sử dụng `std::string::find` và `std::string::replace`.
 

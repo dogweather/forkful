@@ -11,9 +11,6 @@ title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---
 
-## Was & Warum?
-In Clojure und anderen Sprachen bedeutet das Verketten von Strings, dass wir sie aneinanderreihen, um einen neuen, längeren String zu bilden. Das ist nützlich, um Texte dynamisch zu generieren oder Daten zu formatieren.
-
 ## How to:
 Hier sind ein paar Beispiele, wie man Strings in Clojure verketten kann:
 

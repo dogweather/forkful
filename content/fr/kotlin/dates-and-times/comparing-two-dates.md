@@ -11,9 +11,6 @@ title: Comparer deux dates
 weight: 27
 ---
 
-## What & Why?
-Comparer deux dates, c'est vérifier laquelle est plus tôt ou plus tard, ou si elles sont les mêmes. Les programmeurs le font pour trier les événements, valider des périodes ou mesurer des durées.
-
 ## Comment faire :
 ```Kotlin
 import java.time.LocalDate

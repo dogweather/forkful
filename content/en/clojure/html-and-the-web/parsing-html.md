@@ -10,16 +10,10 @@ title: Parsing HTML
 weight: 43
 ---
 
-## What & Why?
-
-Parsing HTML in Clojure involves programmatically extracting information from HTML documents. Programmers do this to access, manipulate, or monitor web content dynamically, automating tasks or feeding data into applications.
-
 ## How to:
-
 Clojure does not have built-in HTML parsing capabilities, but you can leverage Java libraries or Clojure wrappers such as `enlive` or `hickory`. Here's how to use both:
 
 ### Using Enlive:
-
 Enlive is a popular choice for HTML parsing and web scraping. First, include it in your project dependencies:
 
 ```clojure
@@ -44,7 +38,6 @@ Output might look like:
 ```
 
 ### Using Hickory:
-
 Hickory provides a way to parse HTML into a format that is easier to work with in Clojure. Add Hickory to your project dependencies:
 
 ```clojure

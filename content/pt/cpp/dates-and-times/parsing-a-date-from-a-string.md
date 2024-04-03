@@ -13,9 +13,6 @@ title: Analisando uma data a partir de uma string
 weight: 30
 ---
 
-## O Que & Por Que?
-Analisar uma data a partir de uma string envolve interpretar o formato da string para extrair componentes da data como dia, mês e ano. Programadores fazem isso para manipular entradas de usuários, ler arquivos de dados ou interagir com APIs que comunicam datas em formatos de strings. É essencial para processamento de dados, validação e execução de aritmética de datas em aplicações.
-
 ## Como Fazer:
 No C++ moderno, você pode usar a biblioteca `<chrono>` para manipular datas e horas nativamente, mas ela não suporta diretamente a análise de strings sem um parsing manual para formatos mais complexos. No entanto, para formatos de data ISO 8601 e formatos customizados simples, aqui está como você pode realizar a análise.
 

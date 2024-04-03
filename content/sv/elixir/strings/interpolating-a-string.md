@@ -11,9 +11,6 @@ title: "Interpolera en str\xE4ng"
 weight: 8
 ---
 
-## What & Why? (Vad & Varför?)
-I Elixir använder vi stränginterpolering för att effektivt bygga en sträng med variabler eller uttryck. Programmerare gör detta för att spara tid, öka läsbarheten och underlätta underhåll av koden.
-
 ## How to (Hur till)
 ```elixir
 name = "Världen"

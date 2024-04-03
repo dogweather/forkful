@@ -10,9 +10,6 @@ title: Uthenting av delstrenger
 weight: 6
 ---
 
-## Hva & Hvorfor?
-Å trekke ut substringer betyr å hente ut bestemte deler av en streng. Programmerere gjør dette for å bearbeide, sjekke eller manipulere tekst på et mer detaljnivå.
-
 ## Hvordan:
 Her er noen eksempler på hvordan man trekker ut substringer i Lua med funksjonen `string.sub`:
 

@@ -11,9 +11,6 @@ title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u0940 \u0932\u09
 weight: 7
 ---
 
-## What & Why? (क्या और क्यों?)
-String ki length jaanna matlab ye pata karna ki string me kitne characters hain. Programmers isse isliye karte hain taaki text data ko process ya validate kar sakein, jaise user input ki length check karna ya specific operations ke liye.
-
 ## How to: (कैसे करें:)
 TypeScript me string ki length nikalne ke liye `.length` property ka istemaal hota hai. Simple hai, dekho:
 

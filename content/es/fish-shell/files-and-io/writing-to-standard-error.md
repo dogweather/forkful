@@ -14,12 +14,7 @@ title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---
 
-## ¿Qué y Por Qué?
-
-Escribir en el error estándar (stderr) en Fish Shell se trata de dirigir mensajes de error o diagnósticos de forma separada de la salida estándar (stdout). Los programadores hacen esto para asegurarse de que la información de error pueda ser fácilmente identificada, gestionada o redirigida, facilitando procesos de depuración y registro más suaves.
-
 ## Cómo hacerlo:
-
 En Fish Shell, puedes escribir en stderr redirigiendo tu salida usando `>&2`. Aquí hay un ejemplo básico:
 
 ```fish

@@ -15,9 +15,6 @@ title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---
 
-## Cái gì & Tại sao?
-Lấy ngày hiện tại trong mã lệnh của bạn giúp bạn ghi lại các sự kiện ngay khi chúng xảy ra. Điều này rất quan trọng cho việc ghi nhật ký, theo dõi dữ liệu nhạy cảm về thời gian, và tùy chỉnh trải nghiệm của người dùng dựa trên ngày tháng.
-
 ## Cách thực hiện:
 Trong Haskell, bạn lấy ngày hiện tại bằng cách sử dụng thư viện `Data.Time`. Đầu tiên, nhập những gì bạn cần:
 

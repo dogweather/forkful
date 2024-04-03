@@ -11,9 +11,6 @@ title: "Descargando una p\xE1gina web"
 weight: 42
 ---
 
-## Qué y Por Qué?
-Descargar una página web significa traer su contenido a nuestra máquina local. Los programadores lo hacen para extraer información, interactuar con APIs REST o probar la disponibilidad de un sitio web.
-
 ## Cómo se hace:
 Para descargar una página web en C#, puedes usar `HttpClient`. Aquí un ejemplo práctico:
 

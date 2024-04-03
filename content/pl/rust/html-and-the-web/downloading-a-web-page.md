@@ -11,9 +11,6 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## What & Why? (Co i Dlaczego?)
-Pobieranie strony internetowej to proces ściągania jej zawartości. Programiści robią to, by analizować dane, monitorować zmiany, czy integrować usługi.
-
 ## How to: (Jak to zrobić:)
 ```rust
 // Dołącz bibliotekę "reqwest" do Cargo.toml

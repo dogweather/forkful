@@ -13,12 +13,7 @@ title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---
 
-## Wat & Waarom?
-
-Het verzenden van een HTTP-verzoek met basisauthenticatie houdt in dat je een gebruikersnaam en wachtwoord toevoegt aan je verzoek om toegang te krijgen tot een beveiligde bron. Programmeurs doen dit om veilige toegang tot en overdracht van gegevens te garanderen, en onbevoegde gebruikers buiten te houden.
-
 ## Hoe te:
-
 Om een HTTP-verzoek met basisauthenticatie in Elixir te versturen, kun je de `HTTPoison` bibliotheek gebruiken:
 
 ```elixir
@@ -57,7 +52,6 @@ IO.inspect(response.status_code)  # Zou 200 moeten zijn als de authenticatie suc
 Als de basisauthenticatie succesvol is, krijg je een `200` statuscode. Mislukte authenticatie resulteert doorgaans in een `401`.
 
 ## Diepgaand
-
 Basisauthenticatie is een deel van HTTP gedefinieerd in RFC 7617, daterend uit de vroege dagen van het web. Het is eenvoudig maar minder veilig dan moderne methoden, aangezien inloggegevens bij elke aanvraag worden verzonden (base64 gecodeerd, niet versleuteld).
 
 Alternatieven zijn onder meer:
@@ -73,7 +67,6 @@ Wat betreft implementatie, wanneer we `HTTPoison` gebruiken, wij:
 Onthoud, basisauth is in klare tekst en kan gemakkelijk worden gedecodeerd. Het is alleen veilig over HTTPS.
 
 ## Zie Ook
-
 - HTTPoison documentatie: https://hexdocs.pm/httpoison
 - Schema voor basisauthenticatie (RFC 7617): https://tools.ietf.org/html/rfc7617
 - Documentatie van Elixir's `Base` module: https://hexdocs.pm/elixir/Base.html

@@ -11,9 +11,6 @@ title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---
 
-## What & Why?
-Imprimir saídas de debug é simplesmente mostrar na tela o estado de variáveis ou o fluxo do código. Programadores fazem isso para entender e corrigir problemas – é o famoso debbugar.
-
 ## How to:
 Rust tem macros legais pra isso: `println!` para exibir textos e `dbg!` para detalhes de debug.
 

@@ -11,9 +11,6 @@ title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---
 
-## What & Why?
-Trouver la longueur d'une chaîne de caractères, c'est déterminer le nombre de caractères qu'elle contient. Les programmeurs font ça pour valider des entrées, formater du texte, ou simplement pour interagir avec les données de manière contrôlée.
-
 ## How to:
 En Elixir, la longueur d'une chaîne est trouvée avec la fonction `String.length/1`. Voici comment ça marche :
 

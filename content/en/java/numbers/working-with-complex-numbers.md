@@ -10,12 +10,7 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-
-Complex numbers expand the real number line through the addition of an imaginary unit, `i`, where `i^2 = -1`. They're crucial in fields like engineering, physics, and advanced mathematics, where they model phenomena that real numbers can't handle, like electrical currents and signal processing.
-
 ## How to:
-
 Java doesn't have built-in support for complex numbers, but we can roll our own class or use a library. Here's a quick example of how to create a simple `ComplexNumber` class and use it:
 
 ```java
@@ -55,7 +50,6 @@ Sum: 3.0 + 7.0i
 ```
 
 ## Deep Dive
-
 Before high-level languages like Java, programmers worked directly with math libraries in languages like Fortran or C to manage complex operations. The concept harks back to the 16th century, credited to mathematicians like Gerolamo Cardano and Rafael Bombelli.
 
 In Java, `java.lang.Math` is a go-to for essentials but skips complex numbers, probably because not every programmer uses them. Alternatives? Use libraries. Apache Commons Math provides a `Complex` class packed with methods for manipulation. Here's why rolling your own is neat though: Lightweight, tailored to your exact needs, and no library overhead.
@@ -63,7 +57,6 @@ In Java, `java.lang.Math` is a go-to for essentials but skips complex numbers, p
 One important detail: watch out for floating-point precision. Computers can't represent some numbers exactly, leading to rounding errors. When performing repetitive complex operations, these errors can accumulate!
 
 ## See Also
-
 For deeper dives and more complex operations, check:
 
 - [Apache Commons Math](https://commons.apache.org/proper/commons-math/)

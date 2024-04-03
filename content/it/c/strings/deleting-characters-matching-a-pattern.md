@@ -13,12 +13,7 @@ title: Eliminazione dei caratteri corrispondenti a un pattern
 weight: 5
 ---
 
-## Cosa & Perché?
-
-Eliminare i caratteri che corrispondono a uno specifico pattern dalle stringhe in C consiste nel rimuovere tutte le istanze di certi caratteri che soddisfano criteri predefiniti. I programmatori eseguono questo compito per sanificare gli input, preparare i dati per l'elaborazione o semplicemente pulire le stringhe per l'output o ulteriori manipolazioni, assicurando che i dati gestiti siano esattamente come necessario per un dato contesto o algoritmo.
-
 ## Come fare:
-
 C non dispone di una funzione integrata per eliminare direttamente i caratteri da una stringa in base a un pattern, a differenza di alcuni linguaggi di livello superiore. Tuttavia, è possibile eseguire facilmente questo compito iterando manualmente sulla stringa e costruendone una nuova che esclude i caratteri non desiderati. Per esempio, supponiamo che tu voglia rimuovere tutti i numeri da una stringa. Puoi farlo nel modo seguente:
 
 ```c
@@ -52,7 +47,6 @@ Result: C Programming : The Basics!
 Questo esempio sfrutta `isdigit` da `ctype.h` per identificare i numeri, spostando i caratteri non numerici all'inizio della stringa e terminando la stringa una volta valutati tutti i caratteri.
 
 ## Approfondimento
-
 La soluzione presentata utilizza un approccio a due puntatori all'interno dello stesso array per filtrare efficacemente i caratteri indesiderati, una tecnica emblematica della filosofia di gestione della memoria di C. Questo metodo è efficiente perché opera sul posto, evitando la necessità di allocazione di memoria aggiuntiva e quindi minimizzando il sovraccarico.
 
 Storicamente, l'assenza di funzioni di manipolazione delle stringhe di alto livello in C ha costretto i programmatori a sviluppare una profonda comprensione della gestione delle stringhe a livello di memoria, portando a approcci innovativi come quello sopra. Sebbene ciò abbia il vantaggio di un maggiore controllo e efficienza, comporta un rischio più elevato di errori, come sovrascritture di buffer e errori di off-by-one.

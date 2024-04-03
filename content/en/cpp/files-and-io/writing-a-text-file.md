@@ -12,14 +12,10 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-Writing to a text file in C++ involves creating or opening a file and then writing data to it, which is a fundamental task for applications that need to persist data, such as logs, user-generated content, or configuration settings. Programmers do this to save data generated during a program’s execution or to export data for use by other programs or users.
-
 ## How to:
 C++ offers several ways to write to a text file, but one of the most straightforward methods is using the `<fstream>` library which provides the `ofstream` (output file stream) class designed for file writing operations.
 
 ### Example using `<fstream>`:
-
 ```cpp
 #include <fstream>
 #include <iostream>
@@ -46,7 +42,6 @@ Writing to a file in C++ is simple.
 When dealing with more complex data or needing more control over the writing process, programmers might turn to third-party libraries such as Boost Filesystem.
 
 ### Example using Boost Filesystem:
-
 To use Boost for file operations, you'll first need to install the Boost libraries. The following example demonstrates creating and writing to a file using `boost::filesystem` and `boost::iostreams`.
 
 ```cpp

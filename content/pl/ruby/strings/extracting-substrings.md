@@ -11,9 +11,6 @@ title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---
 
-## Co i dlaczego?
-Wyciąganie podciągów (substring extraction) polega na wyodrębnieniu określonej części tekstu ze stringa. Programiści robią to, by manipulować i analizować dane tekstowe, co jest niezbędne przy obróbce tekstów, walidacji danych czy feature extraction.
-
 ## Jak to zrobić:
 ```ruby
 # Przykładowy string

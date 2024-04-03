@@ -13,12 +13,7 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## ¿Qué & Por qué?
-
-Escribir pruebas en Elm implica crear casos de prueba para verificar la corrección de tu código Elm, asegurando que se comporte como se espera. Los programadores lo hacen para detectar errores temprano, facilitar el mantenimiento y mejorar la calidad y la fiabilidad de sus aplicaciones.
-
 ## Cómo hacerlo:
-
 Elm utiliza el paquete `elm-explorations/test` para escribir pruebas unitarias y pruebas de fuzz. Comienza añadiendo el paquete a tu proyecto:
 
 ```elm

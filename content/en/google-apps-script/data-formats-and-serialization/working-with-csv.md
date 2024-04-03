@@ -11,14 +11,10 @@ title: Working with CSV
 weight: 37
 ---
 
-## What & Why?
-
-Working with CSV (Comma-Separated Values) files in Google Apps Script involves reading, modifying, and writing plain-text files where each line represents a data record with values separated by commas. Programmers do this to easily exchange data between different applications, databases, or programming languages due to CSV's wide adoption as a simple, text-based data interchange format.
-
 ## How to:
 
-### Reading CSV Data
 
+### Reading CSV Data
 To read CSV data from a file stored in Google Drive, you first need to get the file's content as a string, then parse it. Google Apps Script makes fetching file content straightforward with the DriveApp service.
 
 ```javascript
@@ -36,7 +32,6 @@ function readCSV() {
 ```
 
 ### Writing CSV Data
-
 Creating and writing to a CSV entails constructing a string with comma-separated values and newlines, then saving or exporting it. This example demonstrates creating a new CSV file in Google Drive.
 
 ```javascript
@@ -51,7 +46,6 @@ function writeCSV() {
 ```
 
 ### Sample Output
-
 When logging row cells from reading a CSV:
 
 ```plaintext
@@ -68,7 +62,6 @@ Jane Smith,34,Designer
 ```
 
 ## Deep Dive
-
 Historically, CSV files have been favored for their simplicity and human readability, making them accessible to non-programmers and useful for quick data-inspection tasks. However, Google Apps Script operates within the realm of Google's ecosystem, where Google Sheets acts as a powerful, user-friendly alternative for CSV manipulation. Sheets not only provide a GUI for editing data but also support complex formulas, styling, and many more features that raw CSVs lack.
 
 Despite the advantages offered by Google Sheets, direct CSV manipulation in Google Apps Script remains important for automated tasks, especially when dealing with external systems that generate or require data in CSV format. For instance, integrating with legacy systems, exporting data for use in other applications, or preprocessing before feeding data into Google Sheets.

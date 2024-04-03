@@ -11,9 +11,6 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva og hvorfor?
-Avrunding av tall innebærer å trimme et desimaltall til sin nærmeste hele verdi eller til et bestemt antall desimalplasser. Programmerere runder av tall for å gjøre dem enklere å lese og håndtere, spesielt når presisjon utover et visst punkt er unødvendig eller kan føre til feil.
-
 ## Hvordan:
 I Arduino kan du avrunde tall ved å bruke innebygde funksjoner. Viktige aktører er `round`, `ceil` og `floor`. Her er en rask demo:
 

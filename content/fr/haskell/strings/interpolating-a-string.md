@@ -11,9 +11,6 @@ title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---
 
-## Quoi & Pourquoi ?
-L'interpolation de chaînes de caractères permet d'insérer des variables ou des expressions directement dans une chaîne. Les programmeurs l'utilisent pour simplifier la concaténation de chaînes et pour améliorer la lisibilité du code.
-
 ## Comment faire :
 Haskell n'offre pas l'interpolation de chaînes nativement comme dans d'autres langages. Pour interpoler, il faut utiliser des bibliothèques comme `printf` ou `interpolate`. Voici quelques exemples :
 
@@ -41,7 +38,6 @@ Le package `interpolate` utilise la technique des quasi-quotes, une fonctionnali
 Alternativement, vous pouvez utiliser `fmt` qui fournit une DSL pour le formatage qui peut être plus sécurisée. Il faut garder en tête que chaque bibliothèque externe rajoute une dépendance à votre projet.
 
 ## Voir Aussi
-
 - [`printf` documentation](https://hackage.haskell.org/package/base-4.16.1.0/docs/Text-Printf.html)
 - [`interpolate` package](https://hackage.haskell.org/package/interpolate)
 - [`fmt` library](https://hackage.haskell.org/package/fmt-0.6.1.2/docs/Fmt.html)

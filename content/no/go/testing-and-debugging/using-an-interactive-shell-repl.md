@@ -12,12 +12,7 @@ title: Bruk av interaktiv shell (REPL)
 weight: 34
 ---
 
-## Hva & Hvorfor?
-
-En interaktiv shell, eller Read-Eval-Print Loop (REPL), lar deg eksperimentere med Go-kode i sanntid, kjøre kommandoer og få umiddelbar tilbakemelding. Denne tilnærmingen brukes mye til læring, feilsøking og prototyping, da den går utenom den tradisjonelle rediger-kompiler-kjør-syklusen, noe som gjør utviklingsprosessen raskere og mer intuitiv.
-
 ## Hvordan:
-
 Selv om Go ikke inkluderer en innebygd REPL, har samfunnet skapt verktøy som `gore` for å fylle dette gapet. Først, installer `gore` ved å kjøre:
 
 ```
@@ -60,7 +55,6 @@ Området av en sirkel med radius 4: 50.26548245743669
 ```
 
 ## Dypdykk:
-
 Konseptet med en REPL er eldgammelt, som går tilbake til Lisp-maskinene på 1960-tallet, og tilbyr en interaktiv programmeringsopplevelse. I motsetning til språk som Python eller JavaScript, ble Go designet uten en REPL, med fokus i stedet på kompilerte binærfiler for ytelse og enkelhet. Dette reflekterer Gos filosofi om enkelhet og dets design for skalerbar og vedlikeholdbar programvare.
 
 Verktøy som `gore` eller `goplay`, derimot, fremhever Go-samfunnets ressursstyrke i å bygge bro over dette gapet. Disse verktøyene parser Go-kode dynamisk og bruker `go/eval`-pakken eller lignende mekanismer til å kjøre den i sanntid, om enn med noen begrensninger sammenlignet med et opprinnelig REPL-miljø. Disse begrensningene stammer fra Gos typsystem og kompileringsmodell, som kan gjøre utførelse på stående fot utfordrende.

@@ -10,9 +10,6 @@ title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---
 
-## ¿Qué & Para Qué?
-La concatenación de cadenas es el proceso de unir dos o más cadenas de texto en una sola. Los programadores concatenan cadenas para formar mensajes, construir URLs, o cuando necesitan unir información textual de diferentes fuentes.
-
 ## Cómo:
 ```Python
 # Concatenar con el operador +

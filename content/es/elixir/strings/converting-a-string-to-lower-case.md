@@ -10,9 +10,6 @@ title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---
 
-## ¿Qué y Por Qué?
-Convertir una cadena a minúsculas significa cambiar todos los caracteres de la cadena a su versión en minúscula. Los programadores hacen esto para normalizar los datos, facilitar las comparaciones sin distinción de mayúsculas/minúsculas, y a veces para cumplir con requisitos técnicos o de diseño.
-
 ## Cómo se hace:
 Aquí, un ejemplo rápido en Elixir. Usamos la función `String.downcase/1` para convertir toda la cadena a minúsculas.
 

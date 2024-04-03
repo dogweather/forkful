@@ -11,9 +11,6 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mikä ja miksi?
-Koodin järjestäminen funktioihin jakaa skriptisi uudelleenkäytettäviin osiin. Kaikki on kiinni siitä, että koodisi on siistiä, hallittavaa ja vähemmän virhealtista. Modulaarinen koodi on mahtavaa, koska se säästää aikaa, pitää järkesi kasassa ja yksinkertaistaa vianetsintää sekä yksikkötestausta.
-
 ## Kuinka:
 Kuvittele, että kirjoitat pikaskriptin käyttäjien tervehtimiseen:
 

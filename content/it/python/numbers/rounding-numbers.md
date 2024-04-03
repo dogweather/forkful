@@ -10,9 +10,6 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Cosa e perché?
-Arrotondare i numeri significa regolarli per avvicinarli a un valore più semplice o più significativo. I programmatori arrotondano i numeri per semplificare i risultati, limitare i decimali per la visualizzazione o per determinati scopi matematici.
-
 ## Come fare:
 Ecco le informazioni essenziali sull'arrotondamento dei numeri in Python:
 

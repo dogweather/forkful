@@ -12,9 +12,6 @@ title: "R\xE9daction de tests"
 weight: 36
 ---
 
-## Quoi & Pourquoi ?
-Écrire des tests en TypeScript implique de créer des scripts automatisés pour vérifier la fonctionnalité et la correction de votre code. Les programmeurs le font pour assurer la fiabilité, attraper rapidement les bugs, et faciliter une croissance de code maintenable, étant donné que le typage statique de TypeScript ajoute un niveau de prévisibilité aux tests JavaScript.
-
 ## Comment faire :
 TypeScript fonctionne harmonieusement avec la plupart des cadres de test JavaScript. À titre de démonstration, nous utiliserons Jest, un cadre de test populaire, en raison de sa configuration zéro pour les projets TypeScript.
 

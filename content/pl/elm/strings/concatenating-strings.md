@@ -11,9 +11,6 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## Co i dlaczego?
-Łączenie ciągów znaków (string concatenation) to proces łączenia dwóch lub więcej tekstów w jeden ciąg. Programiści robią to, aby tworzyć wiadomości, generować kod lub po prostu łączyć dane w sposób czytelny.
-
 ## Jak to zrobić:
 W Elm, możemy użyć operatora `++`, żeby połączyć ciągi znaków. Oto jak to wygląda w praktyce:
 

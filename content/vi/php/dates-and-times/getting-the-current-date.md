@@ -15,9 +15,6 @@ title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---
 
-## Cái gì & Tại sao?
-Lấy ngày hiện tại trong PHP là việc chụp lấy ngày và giờ của hôm nay trực tiếp từ máy chủ. Các lập trình viên làm điều này để theo dõi hành động của người dùng, đánh dấu thời gian cho bài viết, hoặc chỉ đơn giản là nói, "Này, hôm nay là thứ Sáu!"
-
 ## Cách thực hiện:
 Bạn triệu hồi ngày hiện tại trong PHP bằng hàm `date()`. Ví dụ:
 

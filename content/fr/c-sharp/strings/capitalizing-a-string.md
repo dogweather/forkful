@@ -14,9 +14,6 @@ title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---
 
-## Quoi & Pourquoi ?
-Mettre en majuscule une chaîne de caractères en C# consiste à convertir le premier caractère d'une chaîne en majuscule s'il ne l'est pas déjà. Cette modification peut être cruciale pour formater les sorties, appliquer des normes de codage ou rendre les textes de l'interface utilisateur plus lisibles.
-
 ## Comment faire :
 C# propose une approche simple pour mettre en majuscule les chaînes de caractères en utilisant des méthodes intégrées. La manière la plus simple d'y parvenir est de modifier directement la chaîne avec ces méthodes. Pour des règles de capitalisation plus complexes ou spécifiques (par exemple, mettre en majuscule chaque mot), des bibliothèques supplémentaires ou des méthodes manuelles peuvent être nécessaires. Ci-dessous, des exemples démontrent comment mettre en majuscule une chaîne de caractères de différentes manières en C#.
 

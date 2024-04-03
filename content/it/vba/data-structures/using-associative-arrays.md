@@ -12,12 +12,7 @@ title: Utilizzo di array associativi
 weight: 15
 ---
 
-## Cos'è e perché?
-
-Gli array associativi, spesso noti come dizionari in Visual Basic for Applications (VBA), consentono ai programmatori di creare collezioni di coppie chiave-valore. Questa funzionalità è fondamentale per un'efficace memorizzazione e recupero dei dati, offrendo un modo più flessibile e intuitivo di gestire i dati rispetto agli indici degli array tradizionali.
-
 ## Come fare:
-
 In VBA, l'oggetto `Dictionary` fornisce funzionalità simili agli array associativi. Devi prima aggiungere un riferimento al Microsoft Scripting Runtime per usarlo:
 
 1. Nell'editor VBA, vai su Strumenti > Riferimenti...
@@ -53,7 +48,6 @@ Next Key
 ```
 
 ## Approfondimento
-
 L'oggetto `Dictionary` si interfaccia, sottotraccia, con componenti del Windows Scripting Host. Come tale, è un oggetto COM con binding tardivo, che era un modo comune per estendere la funzionalità di VBA in passato. Il suo utilizzo in VBA può migliorare significativamente la capacità del linguaggio di manipolare set di dati complessi senza imporre una struttura rigida, come si vede negli array tradizionali o negli intervalli di Excel.
 
 Una limitazione da tenere presente è che l'accesso al `Dictionary` richiede l'impostazione di un riferimento al Microsoft Scripting Runtime, ciò può complicare la distribuzione dei tuoi progetti VBA. Esistono alternative come le Collezioni all'interno di VBA ma mancano di alcune delle caratteristiche chiave del `Dictionary`, come la possibilità di controllare facilmente l'esistenza di una chiave senza innescare un errore.

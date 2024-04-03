@@ -11,9 +11,6 @@ title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---
 
-## Vad & Varför?
-Att söka och ersätta text handlar om att hitta specifika textsträngar och byta ut dem mot andra. Programmerare gör det för att uppdatera data, refactora kod eller massmodifiera konfigurationsfiler.
-
 ## Hur gör man:
 ```Clojure
 ;; Söker och ersätter enligt ett mönster

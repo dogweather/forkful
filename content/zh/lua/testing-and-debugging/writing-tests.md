@@ -22,16 +22,10 @@ title: "\u7F16\u5199\u6D4B\u8BD5"
 weight: 36
 ---
 
-## 什么 & 为什么?
-
-在编程中编写测试涉及创建小型、独立的代码片段，以自动验证应用程序的不同部分是否按预期工作。对于Lua程序员来说，测试保证了可靠性，并有助于保持代码质量，加快了调试过程，使代码库修改更加安全。
-
 ## 如何进行：
-
 Lua是一种轻量级却强大的脚本语言，它没有内置的测试框架。但是，第三方库如Busted和LuaUnit使得测试相对直接。在这里，我们将看看使用这两者的示例。
 
 ### 使用 Busted
-
 Busted是一个受欢迎的Lua测试框架，提供了一种灵活的方式来写测试。首先，通过LuaRocks（Lua的包管理器）用`luarocks install busted`安装Busted。安装后，你就可以编写你的测试了。这里有一个简单的测试，用于一个`add`函数，该函数将两个数字相加：
 
 ```lua
@@ -62,7 +56,6 @@ end)
 ```
 
 ### 使用 LuaUnit
-
 LuaUnit是另一个遵循xUnit惯例的测试框架，设置简单。通过LuaRocks使用`luarocks install luaunit`安装LuaUnit。以下是如何用LuaUnit写一个类似上面的测试：
 
 ```lua

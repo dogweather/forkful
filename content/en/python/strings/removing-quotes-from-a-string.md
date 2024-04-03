@@ -11,9 +11,6 @@ title: Removing quotes from a string
 weight: 9
 ---
 
-## What & Why?
-Removing quotes from a string usually means stripping away extraneous double (") or single (') quotation marks. Programmers do this to sanitize input or when quotes are not needed for further processing—like when saving text to a database or preparing it for display.
-
 ## How to:
 Python offers several ways to get rid of unwanted quotes from strings. Let's roll through some examples:
 

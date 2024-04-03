@@ -11,9 +11,6 @@ title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---
 
-## Vad & Varför?
-Att radera tecken som matchar ett mönster är att plocka bort specifika tecken eller sekvenser av tecken från en sträng. Vi gör det för att rensa data, validera inmatning eller förbereda text för bearbetning.
-
 ## Hur man gör:
 ```java
 import java.util.regex.Pattern;

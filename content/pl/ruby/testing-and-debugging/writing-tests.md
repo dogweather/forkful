@@ -13,9 +13,6 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i dlaczego?
-Testowanie w Ruby polega na weryfikacji, czy Twój kod zachowuje się zgodnie z oczekiwaniami w różnych warunkach. Programiści piszą testy, aby zapewnić poprawność, zapobiegać regresji i ułatwić refaktoryzację, dążąc do stworzenia solidnych i łatwych w utrzymaniu aplikacji.
-
 ## Jak to zrobić:
 Ruby jest wyposażony w wbudowaną bibliotekę o nazwie `Test::Unit` do pisania testów jednostkowych, zawierającą praktyki testowe w prostych strukturach. Jednak społeczność Ruby często skłania się ku bibliotekom stron trzecich, takim jak RSpec i Minitest, ze względu na ich zwiększoną ekspresywność i elastyczność.
 

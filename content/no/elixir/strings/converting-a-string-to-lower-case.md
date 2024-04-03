@@ -11,9 +11,6 @@ title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---
 
-## What & Why?
-Konvertering av strenger til små bokstaver betyr å endre alle tegn i en tekststreng til deres små bokstavversjon. Programmerere gjør dette for å standardisere data, for eksempel for søkeoptimalisering eller for å sammenligne strenger uavhengig av bokstavstørrelse.
-
 ## How to:
 I Elixir bruker vi `String.downcase/2` for å konvertere strenger til små bokstaver. Her er et eksempel:
 

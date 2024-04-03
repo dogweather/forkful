@@ -11,11 +11,8 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-
-Regular expressions (regex) in Bash allow you to search, manipulate, and handle strings and files based on specific patterns. Programmers use regex for tasks like input validation, parsing log files, and data extraction because it offers a flexible and powerful way to specify patterns for complex text processing needs.
-
 ## How to:
+
 
 ### Basic Pattern Matching
 To find if a string matches a pattern, you can use `grep`, a command-line utility for searching plain-text data sets for lines that match a regular expression:

@@ -13,9 +13,6 @@ title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---
 
-## O que & Por quê?
-No desenvolvimento de software, é frequentemente necessário verificar se um diretório existe para evitar erros ao tentar acessar, ler ou escrever arquivos. Rust, sendo uma linguagem de programação de sistemas, oferece métodos robustos para realizar essa tarefa, garantindo que o seu programa possa manipular arquivos e diretórios de forma segura e eficiente.
-
 ## Como:
 A biblioteca padrão do Rust (`std`) inclui funcionalidades para verificar a existência de um diretório por meio dos módulos `std::path::Path` e `std::fs`. Aqui está um exemplo simples usando a abordagem padrão do Rust:
 

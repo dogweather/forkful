@@ -11,9 +11,6 @@ title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---
 
-## What & Why? (Co i Dlaczego?)
-Drukowanie wyników debugowania to pokazywanie wartości zmiennych, stanu aplikacji, czy akcji w konsoli. Programiści robią to, aby szybko diagnozować problemy i śledzić, co się dzieje w kodzie.
-
 ## How to: (Jak to zrobić:)
 ```python
 # Podstawowe wyświetlanie komunikatów

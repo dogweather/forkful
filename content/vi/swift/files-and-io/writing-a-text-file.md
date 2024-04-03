@@ -17,9 +17,6 @@ title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---
 
-## Gì & Tại Sao?
-Viết một tệp văn bản liên quan đến việc lưu trữ dữ liệu dưới dạng văn bản có thể đọc được, sử dụng một mã hóa ký tự như UTF-8. Lập trình viên làm điều này để ghi nhật ký, bảo quản dữ liệu, hoặc cấu hình.
-
 ## Làm thế nào:
 Viết văn bản vào một tệp trong Swift rất dễ dàng với lớp `String` và `FileManager`. Dưới đây là một ví dụ nhanh:
 

@@ -14,12 +14,7 @@ title: Scrivere un file di testo
 weight: 24
 ---
 
-## Cosa e perché?
-
-Scrivere un file di testo in C comporta la creazione o l'apertura di un file in modalità di scrittura e poi l'uso delle funzioni di I/O su file di C per salvare i dati di testo al suo interno. I programmatori fanno ciò per preservare i dati, come eventi di log, impostazioni di configurazione o contenuti generati dagli utenti, consentendo alle applicazioni di mantenere lo stato, le preferenze o il progresso dell'utente attraverso le sessioni.
-
 ## Come fare:
-
 Per scrivere testo in un file in C, è principalmente necessario essere a conoscenza delle funzioni `fopen()`, `fprintf()`, `fputs()` e `fclose()`. Qui sotto c'è un esempio semplice che dimostra come creare e scrivere su un file:
 
 ```c
@@ -55,7 +50,6 @@ File scritto con successo
 Dopo aver eseguito questo programma, troverai un file chiamato `example.txt` nella stessa directory, contenente il testo che hai scritto tramite `fprintf()` e `fputs()`.
 
 ## Approfondimento
-
 Il concetto di file e sistemi di file è stato fondamentale per i sistemi informatici, con la loro gestione che rappresenta un aspetto critico dei sistemi operativi. In C, la gestione dei file viene eseguita utilizzando un insieme di funzioni standard della libreria I/O, basate sulla filosofia di trattare i file come flussi di byte. Questa astrazione permette un metodo diretto ed efficiente di lettura e scrittura dei file, anche se può sembrare a basso livello rispetto agli approcci più moderni disponibili in linguaggi di alto livello come Python o Ruby.
 
 Storicamente, queste operazioni di I/O su file in C hanno posto le basi per la manipolazione dei file in molti linguaggi di programmazione, offrendo un'interfaccia vicina all'hardware con i sistemi di gestione dei file del sistema operativo. Questo non solo fornisce un controllo granulare sugli attributi del file e sulle operazioni di I/O, ma presenta anche insidie per i programmatori incauti, come la necessità di gestire manualmente le risorse (cioè, chiudere sempre i file) e i problemi di buffering.

@@ -10,9 +10,6 @@ title: Conversione di una stringa in minuscolo
 weight: 4
 ---
 
-## What & Why? - Cosa e Perché?
-Convertire una stringa in minuscolo significa trasformare tutti i caratteri alfabeticamente maiuscoli in minuscoli. I programmatori lo fanno per uniformare i dati, facilitare i confronti tra stringhe e garantire la coerenza nelle ricerche e nei processi.
-
 ## How to - Come Fare
 In PowerShell, convertire una stringa in minuscolo è semplicissimo. Usa il metodo `.ToLower()` su una stringa, così:
 

@@ -14,9 +14,6 @@ title: "T\u1EA3i trang web"
 weight: 42
 ---
 
-## Cái gì & Tại sao?
-Tải một trang web có nghĩa là lấy nội dung HTML từ internet. Các lập trình viên làm điều đó để phân tích dữ liệu, thu thập thông tin, hoặc theo dõi các thay đổi một cách có chương trình.
-
 ## Làm thế nào:
 Ruby làm cho việc tải một trang web trở nên đơn giản với các thư viện như `net/http` và gems như `open-uri`. Dưới đây là cách làm bằng `net/http`:
 

@@ -11,9 +11,6 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## Vad & Varför?
-Att läsa en textfil innebär att man programmeringsmässigt extraherar innehåll från en fil på disk. Programmerare gör detta för att hantera data, konfigurera program, eller bearbeta textbaserad information.
-
 ## Hur Man Gör:
 Läs hela filen på en gång:
 ```Bash

@@ -13,12 +13,7 @@ title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---
 
-## O Que & Porquê?
-
-Escrever no erro padrão (stderr) em Elixir é um método de direcionar mensagens de erro e diagnósticos separadamente do output principal (stdout). Os programadores usam stderr para depurar e tratar erros sem encher o output principal do programa, tornando mais fácil identificar e abordar problemas.
-
 ## Como fazer:
-
 Em Elixir, você pode usar funções do módulo `IO` como `IO.puts/2` e `IO.warn/2` para escrever mensagens no erro padrão:
 
 ```elixir

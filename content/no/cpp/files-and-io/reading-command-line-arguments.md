@@ -11,9 +11,6 @@ title: Lese kommandolinjeargumenter
 weight: 23
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Å lese kommandolinjeargumenter betyr å fange opp data gitt direkte når du kjører programmet ditt. Programmere gjør dette for å tillate dynamiske inputverdier og skreddersy programoppførsel uten å måtte endre koden.
-
 ## How to (Slik gjør du det)
 ```C++
 #include <iostream>

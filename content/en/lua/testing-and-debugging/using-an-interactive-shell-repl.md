@@ -12,9 +12,6 @@ title: Using an interactive shell (REPL)
 weight: 34
 ---
 
-## What & Why?
-REPL stands for Read-Eval-Print Loop, an interactive environment where you quickly test code. Programmers use it for experimenting, debugging, and learning a language's quirks.
-
 ## How to:
 To hop into Lua's REPL, just enter `lua` in your terminal. Here's an example session:
 

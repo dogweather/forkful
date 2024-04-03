@@ -12,9 +12,6 @@ title: Een HTTP-verzoek verzenden
 weight: 44
 ---
 
-## Wat & Waarom?
-Het versturen van een HTTP-verzoek is een manier voor programma's om via het web te communiceren, door het vragen om gegevens of het indienen ervan. Programmeurs doen dit om te interageren met API's, diensten of om webinhoud binnen te halen.
-
 ## Hoe:
 C# maakt het versturen van HTTP-verzoeken eenvoudig met `HttpClient`. Hier is het skelet van een GET-verzoek:
 

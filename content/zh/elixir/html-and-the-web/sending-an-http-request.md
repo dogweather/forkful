@@ -15,9 +15,6 @@ title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---
 
-## What & Why? (是什么&为什么?)
-HTTP请求，就是从你的应用发向服务器的消息。程序员用它获取数据、提交表单、跟其他服务交互。
-
 ## How to: (如何做：)
 Elixir中发送HTTP请求要用到外部库，比如`HTTPoison`。安装后，就这么写：
 

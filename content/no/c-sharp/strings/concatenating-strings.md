@@ -10,9 +10,6 @@ title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Sammenkjeding av strenger i C# er det å slå sammen tekst. Det lar deg raskt sette sammen variabler, input og statisk tekst for utskrift, lagring eller videre behandling.
-
 ## How to: (Slik gjør du det:)
 ```C#
 string hello = "Hei ";

@@ -10,9 +10,6 @@ title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---
 
-## Vad & Varför?
-Att söka och ersätta text är en grundsten i programmering; det handlar om att finna specifika strängar och byta ut dem mot andra. Anledningen? Automatisering och effektivitet – det är oftast snabbare än att plocka och ändra manuellt.
-
 ## Hur man gör:
 Låt oss dyka rakt in i några PowerShell-kommandon:
 

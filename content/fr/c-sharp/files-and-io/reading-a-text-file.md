@@ -9,9 +9,6 @@ title: Lecture d'un fichier texte
 weight: 22
 ---
 
-## What & Why? - Quoi et Pourquoi ?
-Lire un fichier texte, c'est parcourir son contenu avec votre programme. On le fait pour récupérer des données, les analyser ou les transformer.
-
 ## How to: - Comment faire :
 ```C#
 using System;

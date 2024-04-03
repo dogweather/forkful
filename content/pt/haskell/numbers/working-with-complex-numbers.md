@@ -12,12 +12,7 @@ title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---
 
-## O que & Por quê?
-
-Números complexos, consistindo em uma parte real e uma parte imaginária, são essenciais em diversos campos computacionais como engenharia, física e processamento de sinais. Programadores os utilizam para resolver equações que números reais não conseguem, como encontrar as raízes de números negativos.
-
 ## Como fazer:
-
 Haskell lida com números complexos através do módulo `Data.Complex`. Aqui está um rápido tour:
 
 ```haskell
@@ -57,7 +52,6 @@ A saída de amostra após carregar o código acima no GHCi pode ser:
 ```
 
 ## Aprofundamento
-
 Os números complexos remontam ao século 16, mas foram amplamente aceitos muito tempo depois. Haskell, como muitas linguagens, fornece suporte nativo para aritmética complexa, tornando fácil trabalhar com esses números sem implementar a matemática subjacente.
 
 Alternativas incluem construir seu próprio tipo de número complexo ou usar bibliotecas para domínios específicos, como quaternions para gráficos 3D. Mas, para a maioria dos casos de uso, o `Data.Complex` de Haskell é mais do que suficiente.
@@ -65,7 +59,6 @@ Alternativas incluem construir seu próprio tipo de número complexo ou usar bib
 Por baixo dos panos, `Data.Complex` é apenas um tipo de dado que emparelha dois valores `Float` ou `Double`, representando as partes real e imaginária, respectivamente. É uma maneira simples e eficiente de trabalhar com números complexos na plataforma Haskell.
 
 ## Veja Também
-
 Confira esses recursos para mais sobre números complexos em Haskell:
 
 - A documentação oficial do Haskell `Data.Complex`: [Hackage Data.Complex](https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-Complex.html)

@@ -10,10 +10,6 @@ title: Tworzenie pliku tymczasowego
 weight: 21
 ---
 
-## What & Why?
-("Co i dlaczego?")
-Tworzenie pliku tymczasowego daje ci miejsce do przechowywania danych, które są ważne w trakcie wykonywania programu, ale nie po jego zakończeniu. Programiści używają ich, żeby nie zaśmiecać dysku trwałymi plikami, których wkrótce nie będą potrzebować.
-
 ## How to:
 ("Jak to zrobić:")
 ```C++

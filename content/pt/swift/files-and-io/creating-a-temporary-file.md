@@ -12,9 +12,6 @@ title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---
 
-## What & Why?
-Criar um arquivo temporário é o processo de gerar um arquivo que é usado durante a execução de um programa, mas que não é necessário após o fim do uso. Programadores fazem isso para armazenar dados transitórios, como caching, evitar conflitos de escrita ou manter informações sensíveis que não devem persistir em um armazenamento mais durável.
-
 ## How to:
 Swift facilita a criação de arquivos temporários usando o pacote `Foundation`. Aqui está um exemplo rápido:
 

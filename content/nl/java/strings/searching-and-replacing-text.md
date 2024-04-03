@@ -13,12 +13,7 @@ title: Tekst zoeken en vervangen
 weight: 10
 ---
 
-## Wat & Waarom?
-
-Zoeken en vervangen in Java overschrijft originele strings met nieuwe karakters - zie het als een digitale correctievloeistof. Programmeurs gebruiken dit vaak om gegevens te schonen, instellingen aan te passen of berichten op maat te maken.
-
 ## Hoe te:
-
 Zoeken en vervangen in Java is een fluitje van een cent dankzij de `String` klasse en zijn `replace()` methode. Zo doe je het:
 
 ```java
@@ -65,7 +60,6 @@ Na: Er zijn # seconden in # dagen.
 ```
 
 ## Diepgaand:
-
 De `replace()` methode vindt zijn oorsprong in de vroegste dagen van Java. Het maakt deel uit van de onveranderlijke `String` klasse, wat betekent dat elke keer dat je het gebruikt, je een nieuwe string creëert. Heel milieuvriendelijk, geen verspilling van het oude spul.
 
 Maar wat is het verhaal met `Pattern` en `Matcher`, vraag je je af? Deze klassen maken deel uit van Java's reguliere expressie (regex) API, geïntroduceerd in Java 1.4. Ze voegen tanden toe aan zoeken en vervangen, waardoor je complexe patronen kunt detecteren en tekst dynamisch kunt aanpassen. Het is alsof je een scalpel gebruikt in plaats van een voorhamer.
@@ -75,7 +69,6 @@ Bovendien zijn er `replaceAll()` en `replaceFirst()`, twee methoden van de `Matc
 Een andere optie is het gebruik van de `StringBuffer` of `StringBuilder` klassen wanneer je te maken hebt met tonnen wijzigingen omdat, in tegenstelling tot `String`, deze buffers veranderlijk zijn.
 
 ## Zie ook:
-
 - [Java String Documentatie](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)
 - [Java Pattern Documentatie](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html)
 - [Matcher Documentatie](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Matcher.html)

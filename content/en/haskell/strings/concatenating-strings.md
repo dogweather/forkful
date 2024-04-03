@@ -9,9 +9,6 @@ title: Concatenating strings
 weight: 3
 ---
 
-## What & Why?
-Concatenating strings means smushing them together end to end. Programmers do it when they need to stitch together bits of text to form a new string, like generating messages or creating file paths.
-
 ## How to:
 Haskell makes string concatenation pretty straightforward with the `(++)` operator:
 

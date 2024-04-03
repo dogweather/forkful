@@ -13,12 +13,7 @@ title: Capitalizando uma string
 weight: 2
 ---
 
-## O Que & Por Quê?
-
-Capitalizar uma string em C envolve converter o primeiro caractere de cada palavra em uma dada string para maiúsculo, caso seja uma letra minúscula. Os programadores frequentemente realizam essa operação para padronizar a entrada do usuário para buscas, operações de ordenação ou propósitos de exibição, assegurando consistência e legibilidade através dos dados de texto.
-
 ## Como Fazer:
-
 A capitalização de uma string em C requer um entendimento básico sobre manipulação de caracteres e percurso de string. Como C não possui uma função integrada para isso, tipicamente se verifica cada caractere, ajustando sua caixa conforme necessário. Abaixo está uma implementação simples:
 
 ```c
@@ -55,7 +50,6 @@ String capitalizada: Hello World. Programming In C!
 Este programa percorre a string `exemploString`, verificando cada caractere se deve ser capitalizado. A função `islower` verifica se um caractere é uma letra minúscula, enquanto `toupper` converte para maiúsculo. A flag `capNext` determina se a próxima letra encontrada deve ser convertida, sendo configurada após cada espaço (' ') encontrado, e inicialmente para capitalizar o primeiro caractere da string.
 
 ## Aprofundamento
-
 A técnica demonstrada é direta mas carece de eficiência para strings muito grandes ou quando executada repetidamente em aplicações críticas de desempenho. Em contextos históricos e de implementação, a manipulação de strings em C, incluindo capitalização, frequentemente envolve manipulação direta do buffer, refletindo a abordagem de baixo nível de C e dando ao programador controle total sobre compromissos de memória e desempenho.
 
 Existem métodos alternativos, mais sofisticados para capitalizar strings, especialmente ao considerar localidades e caracteres unicode, onde as regras de capitalização podem diferir significativamente do cenário ASCII simples. Bibliotecas como ICU (International Components for Unicode) fornecem soluções robustas para estes casos, mas introduzem dependências e sobrecarga que podem não ser necessárias para todas as aplicações.

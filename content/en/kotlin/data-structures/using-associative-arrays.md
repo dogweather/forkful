@@ -10,12 +10,7 @@ title: Using associative arrays
 weight: 15
 ---
 
-## What & Why?
-
-Associative arrays, or maps, in Kotlin are collections that store key-value pairs. Programmers use them for efficiently organizing and retrieving data based on unique keys, making it easier to manage information.
-
 ## How to:
-
 Creating and using a map in Kotlin is straightforward. Here's a quick guide on how to do it:
 
 ```Kotlin
@@ -46,7 +41,6 @@ fun main() {
 ```
 
 ## Deep Dive
-
 Kotlin's maps come directly from its interoperability with Java, where maps are an essential part of collections. However, Kotlin enhances their usability by providing both mutable (`MutableMap`) and read-only (`Map`) interfaces, unlike Java's unified `Map` interface. This distinction makes it clear whether a collection is intended for modification or not.
 
 A significant detail about Kotlin's map implementation is the explicit distinction between mutable and immutable maps, which emphasizes the language's focus on immutability and thread safety.

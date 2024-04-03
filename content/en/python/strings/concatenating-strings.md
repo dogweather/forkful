@@ -9,9 +9,6 @@ title: Concatenating strings
 weight: 3
 ---
 
-## What & Why?
-Concatenating strings means sticking them end-to-end to make a new string. It's like string Lego. We do this to build up text; think usernames, error messages, and dynamic content.
-
 ## How to:
 Let's smash some strings together.
 

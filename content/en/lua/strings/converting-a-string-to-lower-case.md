@@ -10,9 +10,6 @@ title: Converting a string to lower case
 weight: 4
 ---
 
-## What & Why?
-Converting a string to lower case means swapping all uppercase letters in the string for their lowercase counterparts. Programmers do this for consistency, especially when comparing or processing text data where case shouldn't matter, like user input or search queries.
-
 ## How to:
 In Lua, you lighten your load with `string.lower()`. Feed it a string, out pops the lowercase version. Observe:
 

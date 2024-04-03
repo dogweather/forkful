@@ -12,9 +12,6 @@ title: Commandoregelargumenten lezen
 weight: 23
 ---
 
-## Wat & Waarom?
-Commandoregelargumenten lezen betekent het grijpen van de extra's die gebruikers toevoegen aan commando's wanneer ze je script uitvoeren. Programmeurs doen dit om gebruikers in staat te stellen gedrag aan te passen zonder code te wijzigen.
-
 ## Hoe:
 Hier is de directe manier om het in Node.js te doen:
 

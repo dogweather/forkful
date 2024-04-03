@@ -23,12 +23,7 @@ title: "\u65E5\u4ED8\u3092\u6BD4\u8F03\u3059\u308B"
 weight: 27
 ---
 
-## What & Why? (何となぜ？)
-
-日付を比較するとは、2つの日付が同じか、どちらが先か、後かを判断することです。プログラマーは、イベント発生順の管理、有効期限の確認、日付範囲内のデータフィルタリングなど、さまざまな目的で行います。
-
 ## How to: (やり方)
-
 Haskellで日付を比較する例を見てみましょう。以下は、`Data.Time` モジュールを使った簡単なコードです。
 
 ```Haskell
@@ -52,7 +47,6 @@ False
 ```
 
 ## Deep Dive (詳細情報)
-
 Haskellでは日付の比較が簡単です。`Data.Time` モジュールがあり、標準で日付操作をサポートしています。Haskellがこれを可能にしているのは、`UTCTime` や `LocalTime` のデータ型が `Ord` クラスのインスタンスであるため、比較演算子が使えるからです。
 
 歴史的に見ると、Haskellは標準的な日付操作を長らく提供してきましたが、初期のライブラリは現在ほど洗練されていませんでした。今日、`Data.Time` は広く使用され、強力な機能を提供しています。
@@ -62,7 +56,6 @@ Haskellでは日付の比較が簡単です。`Data.Time` モジュールがあ�
 実装の詳細としては、`Data.Time` はタイムゾーンをサポートし、日付と時刻の計算も可能です。「ZonedTime」や「TimeZone」のような型を使います。
 
 ## See Also (関連情報)
-
 - Haskell `Data.Time` ドキュメント: https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html
 - Haskell `utctDay` 関数の紹介: https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html#g:2
 - Haskell Wikiの日付と時刻: https://wiki.haskell.org/Working_with_time

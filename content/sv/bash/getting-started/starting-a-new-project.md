@@ -10,9 +10,6 @@ title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---
 
-## Vad & Varför?
-När du startar ett nytt projekt skapar du en grund för din kod. Programmerare gör detta för att organisera och strukturera sitt arbete från början.
-
 ## Kom igång:
 Så här sätter du upp en grundläggande projektstruktur:
 

@@ -10,9 +10,6 @@ title: Lectura de un archivo de texto
 weight: 22
 ---
 
-## ¿Qué & Por Qué?
-Leer un archivo de texto es básicamente obtener el contenido de un archivo almacenado en tu disco para trabajar con él en tu programa. Los programadores lo hacen para acceder y procesar datos, configuraciones o cualquier tipo de información que se necesite para la ejecución de sus aplicaciones.
-
 ## Cómo hacerlo:
 ```rust
 use std::fs;
@@ -35,11 +32,9 @@ fn main() -> io::Result<()> {
 ```
 
 ## Análisis Profundo
-
 Históricamente, la lectura de archivos en los lenguajes de programación suele involucrar manejo de errores y la seguridad es clave para evitar bugs y vulnerabilidades. Rust proporciona una serie de herramientas integradas para manejar archivos de manera segura y eficiente. Alternativas a `fs::read_to_string` incluyen `fs::read` para obtener bytes en lugar de un `String`, o abrir el archivo con `File::open` y leerlo en partes usando un `BufReader`. Detalles de implementación importantes en Rust incluyen el manejo de `Result` para errores posibles y la utilización de `Path` para representar rutas de archivo de manera segura y compatible con la plataforma.
 
 ## Ver También
-
 - Documentación oficial sobre `std::fs`: https://doc.rust-lang.org/std/fs/
 - Tutorial de Rust sobre manejo de archivos: https://doc.rust-lang.org/book/ch12-02-reading-from-files.html
 - `BufReader` para manejo eficiente de archivos grandes: https://doc.rust-lang.org/std/io/struct.BufReader.html

@@ -11,11 +11,8 @@ title: Hantera filer med CLI-engreppskommandon
 weight: 31
 ---
 
-## Vad & Varför?
-
-Att manipulera filer med CLI-enradare i PowerShell handlar om att snabbt ändra, flytta eller erhålla fildata direkt från kommandoraden. Programmerare gör det för effektivitet; det är snabbare än att navigera i GUI:er eller skriva långa skript för enkla uppgifter.
-
 ## Hur man gör:
+
 
 ### Läsa en fil
 För att snabbt visa innehållet i en fil, använd kommandot `Get-Content`:
@@ -60,7 +57,6 @@ Get-ChildItem -Path .\*.log | Copy-Item -Destination C:\Logs
 ```
 
 ## Fördjupning
-
 Historiskt sett introducerades PowerShell som ett kraftfullare alternativ till den traditionella kommandotolken i Windows, och erbjöd en aldrig tidigare skådad tillgång till systemets inre och datalager. Det kombinerar kommandoradens hastighet med skriptningens flexibilitet, vilket gör det till ett ovärderligt verktyg för Windows-baserade systemadministratörer och utvecklare liknande.
 
 Alternativ till PowerShell för filmanipulering inkluderar Unix-baserade verktyg som `sed`, `awk`, `grep` och `bash`-skriptning för Linux- och MacOS-användare. Även om dessa verktyg är extremt kraftfulla och har sina egna förtjänster, erbjuder PowerShell djup integration med Windows-miljöer.

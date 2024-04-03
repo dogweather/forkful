@@ -12,12 +12,7 @@ title: Leggere gli argomenti della riga di comando
 weight: 23
 ---
 
-## Cosa & Perché?
-
-Leggere gli argomenti della riga di comando in Visual Basic for Applications (VBA) comporta l'accesso ai parametri passati al tuo programma all'esecuzione. Questa tecnica è spesso usata per influenzare il comportamento o l'output di un programma senza la necessità di interazione da parte dell'utente, rendendo l'automazione e lo scripting compiti significativamente più semplici e versatili.
-
 ## Come fare:
-
 A differenza di ambienti di programmazione più diretti, VBA non ha una funzionalità integrata per leggere direttamente gli argomenti della riga di comando in senso convenzionale perché è principalmente progettato per essere incorporato all'interno delle applicazioni Microsoft Office. Tuttavia, con un po' di creatività, possiamo usare Windows Script Host (WSH) o chiamare API esterne per ottenere una funzionalità simile. Ecco una soluzione pratica usando WSH:
 
 1. **Crea uno script VBScript per Passare Argomenti a VBA:**
@@ -52,7 +47,6 @@ cscript yourScript.vbs "Hello" "World"
    Questo dovrebbe comportare l'esecuzione della tua macro VBA con gli argomenti "Hello" e "World", visualizzandoli in una finestra di messaggio.
 
 ## Approfondimento:
-
 Nel contesto storico, VBA è stato concepito per estendere le capacità delle applicazioni Microsoft Office, non come ambiente di programmazione autonomo. Di conseguenza, l'interazione diretta con la riga di comando è al di fuori del suo ambito primario, il che spiega la mancanza di supporto integrato per la lettura degli argomenti della riga di comando.
 
 Il metodo delineato sopra, sebbene efficace, è più una soluzione alternativa che una soluzione nativa, sfruttando lo scripting esterno per colmare il divario. Questo approccio può introdurre complessità e potenziali preoccupazioni per la sicurezza, poiché richiede l'abilitazione delle macro e, potenzialmente, l'abbassamento delle impostazioni di sicurezza per l'esecuzione.

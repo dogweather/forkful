@@ -9,9 +9,6 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-Zahlen runden bedeutet, sie an einen bestimmten Genauigkeitsgrad anzupassen. Programmierer tun dies, um Zahlen für die Lesbarkeit zu vereinfachen, bestimmte Spezifikationen zu erfüllen oder um sicherzustellen, dass Berechnungen innerhalb bestimmter Grenzen passen, wie z.B. Genauigkeitsfehler bei Gleitkommaarithmetik zu vermeiden.
-
 ## Wie geht das:
 Java bietet mehrere Möglichkeiten, Zahlen zu runden. Hier ist eine schnelle Demonstration mit `Math.round()`, `BigDecimal` und `DecimalFormat`.
 

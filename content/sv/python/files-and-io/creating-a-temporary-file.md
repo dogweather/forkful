@@ -11,9 +11,6 @@ title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---
 
-## What & Why?
-Skapa en tillfällig fil innebär att du skapar en fil som endast behövs under en kort stunds tid. Programmerare gör detta för att hantera data som inte behövs permanent, som mellanlager i databearbetning eller för att undvika att skriva över befintliga filer.
-
 ## How to:
 I Python kan du använda `tempfile`-modulen för att skapa tillfälliga filer. Här är ett exempel:
 

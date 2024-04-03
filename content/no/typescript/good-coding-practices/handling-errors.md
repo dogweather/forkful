@@ -11,9 +11,6 @@ title: "Feilh\xE5ndtering"
 weight: 16
 ---
 
-## Hva & Hvorfor?
-Å håndtere feil handler om å forvente det uforventede; det er hvordan vi tar oss av situasjoner når ting går galt i koden vår. Vi gjør det for å unngå krasjer og for å gi brukerne en problemfri opplevelse, selv når det uforventede inntreffer.
-
 ## Hvordan:
 I TypeScript innebærer feilhåndtering ofte bruk av `try`, `catch`, og `finally` blokker.
 

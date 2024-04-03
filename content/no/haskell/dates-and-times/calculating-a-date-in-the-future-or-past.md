@@ -11,9 +11,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## Hva & Hvorfor?
-Å regne ut en dato i fremtiden eller fortiden handler om å finne en bestemt dag før eller etter en kjent dato. Programmerere gjør dette for å håndtere frister, planlegging eller beregne tidsintervaller.
-
 ## Hvordan gjøre det:
 Haskell bruker biblioteket `Data.Time` for datooperasjoner. Her er et eksempel på hvordan du finner en fremtidig dato:
 

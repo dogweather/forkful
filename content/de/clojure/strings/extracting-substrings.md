@@ -9,10 +9,6 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## What & Why?
-"Was & Warum?"
-Das Extrahieren von Teilstrings bedeutet, Teile eines Strings herauszuschneiden und zu verwenden. Programmierer machen dies, um spezifische Daten zu manipulieren oder zu analysieren.
-
 ## How to:
 "So geht's:"
 ```clojure

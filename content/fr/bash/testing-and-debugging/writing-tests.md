@@ -13,9 +13,6 @@ title: "R\xE9daction de tests"
 weight: 36
 ---
 
-## Quoi & Pourquoi ?
-Écrire des tests en Bash implique de scripter des cas de test pour valider la fonctionnalité de vos scripts Bash. Les programmeurs effectuent des tests pour s'assurer que leurs scripts fonctionnent comme prévu dans diverses conditions, capturant les erreurs et les bugs avant le déploiement.
-
 ## Comment faire :
 Bash n'a pas de cadre de test intégré, mais vous pouvez écrire des fonctions de test simples. Pour des tests plus sophistiqués, des outils tiers comme `bats-core` sont populaires.
 

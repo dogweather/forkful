@@ -12,12 +12,7 @@ title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---
 
-## ¿Qué y Por Qué?
-
-Enviar una solicitud HTTP con autenticación básica implica incluir credenciales de usuario (usuario y contraseña) en una solicitud para acceder a recursos protegidos en un servidor. Los programadores lo hacen para interactuar con APIs o webs que requieren autenticización segura.
-
 ## Cómo Hacerlo:
-
 Puedes usar `http-client` y `http-client-tls` para hacer solicitudes seguras.
 
 ```Haskell
@@ -51,7 +46,6 @@ Response status code: 200
 ```
 
 ## Profundizando:
-
 La autenticación básica es un estándar de HTTP remontándose a los primeros días del web. Aunque ya no es la forma más segura de autenticación debido a que las credenciales van codificadas en Base64 (no cifradas), viene in handy para la comunicación entre servidores confiables o cuando se utiliza sobre HTTPS.
 
 Alternativas más seguras incluyen OAuth y JWT. Pero para pruebas rápidas o entornos controlados, la autenticación básica es simple y directa.
@@ -59,7 +53,6 @@ Alternativas más seguras incluyen OAuth y JWT. Pero para pruebas rápidas o ent
 Implementación en Haskell es sencilla gracias a bibliotecas como `http-client` que manejan las conexiones y autenticación de forma abstracta, permitiendo que te concentres en la lógica de tu aplicación.
 
 ## Vea También:
-
 - Documentación de `http-client`: http://hackage.haskell.org/package/http-client
 - Documentación de `http-client-tls`: http://hackage.haskell.org/package/http-client-tls
 - RFC 7617 – The 'Basic' HTTP Authentication Scheme: https://tools.ietf.org/html/rfc7617

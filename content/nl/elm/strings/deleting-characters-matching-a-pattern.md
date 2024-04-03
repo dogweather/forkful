@@ -12,9 +12,6 @@ title: Karakters die overeenkomen met een patroon verwijderen
 weight: 5
 ---
 
-## Wat & Waarom?
-Het verwijderen van tekens die overeenkomen met een patroon betekent het uitwissen van specifieke reeksen tekens uit tekst, gebaseerd op regels (patronen). Programmeurs doen dit voor het opschonen van tekst, gegevensverwerking, of om invoer te vereenvoudigen voor het parsen.
-
 ## Hoe:
 Elm ondersteunt van nature geen regex, maar je kunt karakterverwijdering simuleren. Hier is een voorbeeld met `String.filter` om cijfers uit een string te verwijderen.
 

@@ -14,12 +14,7 @@ title: Refaktoryzacja
 weight: 19
 ---
 
-## Co i dlaczego?
-
-Refaktoryzacja w programowaniu polega na modyfikowaniu struktury kodu bez zmiany jego zachowania, aby poprawić aspekty takie jak czytelność, łatwość utrzymania czy wydajność. Programiści przeprowadzają refaktoryzację, aby kod był bardziej efektywny, łatwiejszy do zrozumienia, prostszy w modyfikacji w przyszłości i aby zredukować prawdopodobieństwo błędów.
-
 ## Jak to zrobić:
-
 Rozważmy podstawowy przykład w Visual Basic for Applications (VBA), gdzie mamy subrutynę, która drukuje szczegóły pracownika. Początkowo kod jest zagracony, trudny do utrzymania lub rozbudowy.
 
 ```vb
@@ -80,7 +75,6 @@ End Sub
 Te kroki transformują zagracony kod w modularny, uporządkowany kod, znacznie poprawiając czytelność i łatwość utrzymania.
 
 ## Głębsze spojrzenie
-
 Koncepcja refaktoryzacji jest tak stara jak samo programowanie, ale książka Martina Fowlera "Refaktoryzacja: Udoskonalanie struktury istniejącego kodu" wprowadziła ją do głównego nurtu, podkreślając jej znaczenie w procesie rozwoju oprogramowania. W Visual Basic for Applications refaktoryzacja może być nieco bardziej wymagająca ze względu na brak wbudowanych narzędzi, które można znaleźć w nowocześniejszych zintegrowanych środowiskach programistycznych (IDE), wspierających automatyczną refaktoryzację.
 
 Jednakże nie umniejsza to jej znaczenia. Nawet w VBA, stosowanie podstawowych technik refaktoryzacji ręcznie może znacznie ulepszyć bazę kodu, czyniąc ją czystszą i bardziej wydajną. Chociaż VBA nie posiada tych samych nowoczesnych udogodnień, zasady dobrego projektowania kodu pozostają uniwersalne. Programiści, którzy przeszli z innych języków, mogą uznać ręczny proces za uciążliwy, ale niewątpliwie docenią korzyści płynące z inwestycji czasu w poprawę jakości kodu od samego początku.

@@ -10,16 +10,10 @@ title: Using associative arrays
 weight: 15
 ---
 
-## What & Why?
-
-Associative arrays, known as `std::map` or `std::unordered_map` in C++, bridge the gap between array indices and real-world data, letting you use meaningful keys. They're the go-to when you need fast lookups, insertions, and deletions using keys rather than index positions.
-
 ## How to:
-
 In C++, associative arrays come to life with the `<map>` and `<unordered_map>` headers. Let's break into examples to see both in action.
 
 ### Using `std::map`
-
 `std::map` keeps elements sorted based on the key. Here’s how you get started:
 
 ```C++
@@ -47,7 +41,6 @@ int main() {
 ```
 
 ### Using `std::unordered_map`
-
 When order doesn't matter, but performance does, `std::unordered_map` is your friend, offering faster average complexity for insertions, lookups, and deletions.
 
 ```C++
@@ -75,7 +68,6 @@ int main() {
 ```
 
 ## Deep Dive
-
 Associative arrays in C++, particularly `std::map` and `std::unordered_map`, are not just about storing elements. They provide a foundation for more complex data management by allowing operations like search, insert, and remove in efficient time complexities (logarithmic for `std::map` and average case constant time for `std::unordered_map`). This efficiency comes from the underlying data structures: a balanced tree for `std::map` and a hash table for `std::unordered_map`.
 
 Historically, before these were part of the standard library, programmers would have to implement their own versions or use third-party libraries, leading to inconsistencies and potential inefficiencies. The inclusion of maps in C++'s standard library not only standardized their use but also optimized them for performance across different compilers and platforms.

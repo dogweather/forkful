@@ -14,11 +14,8 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---
 
-## Mikä & Miksi?
-
-Päivämäärän jäsentäminen merkkijonosta on yleinen tehtävä, kun käsitellään käyttäjän syötettä tai luetaan tietoja tiedostoista. Tämä sisältää merkkijonotiedon muuntamisen ohjelmointikielen tunnistamaan päivämäärämuotoon. Rustissa tämä on olennaista päivämäärien käsittelyä varten, kuten vertailuja, aritmeettisia toimintoja tai muotoilua varten, ja se parantaa tietojen validointia ja eheyttä sovelluksissa.
-
 ## Miten:
+
 
 ### Käyttäen Rustin Standardikirjastoa (`chrono`-paketti)
 Rustin standardikirjasto ei sisällä suoraan päivämäärän jäsentämistä, mutta laajasti käytetty `chrono`-paketti on vankka ratkaisu päivämäärien ja ajan käsittelyyn. Lisää ensin `chrono` `Cargo.toml`-tiedostoosi:

@@ -12,12 +12,7 @@ title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---
 
-## Mikä & Miksi?
-
-Merkkijonosta lainausmerkkien poistaminen Rustilla tarkoittaa tarpeettomien ylimääräisten lainausmerkkien poistamista tekstiaineistosi ympäriltä. Ohjelmoijat tekevät näin, kun heidän täytyy siistiä tai normalisoida merkkijonoja, ehkä tiedoston tietojen jälkeen parsittaessa, tai valmisteltaessa sitä toiseen muotoon, jossa lainausmerkit saattavat olla ongelmallisia tai tarpeettomia.
-
 ## Miten:
-
 ```Rust
 fn remove_quotes(s: &str) -> String {
     s.trim_matches(|c| c == '\"' || c == '\'').to_string()
@@ -45,7 +40,6 @@ fn main() {
 Tässä, vain uloimmat heittomerkit poistetaan.
 
 ## Syväsukellus
-
 Lainausmerkkien poistamisessa merkkijonosta saatat miettiä, miksi se ei ole vain yksinkertainen `.replace("\"", "")`. Alkuun tekstinkäsittely oli vähemmän standardoitua, ja eri järjestelmissä oli erilaisia tapoja säilyttää ja siirtää tekstiä, usein jonkinlaisen 'paokoodauksen' kanssa erikoismerkeille. Rustin `trim_matches`-metodi on monipuolisempi, mahdollistaen useamman merkin määrittämisen leikattavaksi, ja sen, haluatko leikata alusta (etuliitteestä), lopusta (jälkiliitteestä) tai molemmilta puolilta merkkijonoa.
 
 Vaihtoehtoja on tietysti olemassa. Regex on voimapesä merkkijonojen käsittelyyn, kykenevä vastaamaan monimutkaisiin malleihin, ja olisi liioittelua vain lainausmerkkien poistamiseen. Kirjastot, kuten `trim_in_place`, voivat tarjota paikan päällä tehtävän leikkauksen ilman uuden `String`-objektin luomisen ylikuormitusta, mikä voisi olla toivottavaa suorituskykyä vaativissa sovelluksissa.
@@ -53,7 +47,6 @@ Vaihtoehtoja on tietysti olemassa. Regex on voimapesä merkkijonojen käsittelyy
 Pinnan alla, `trim_matches` itse asiassa iteroiden käy läpi merkkijonon merkit molemmista päistä, tarkastaen annettua mallia kunnes vastaamaton merkki löytyy. Se on tehokas siihen, mitä se tekee, mutta ole aina tietoinen, että se työskentelee Unicode-skaala-arvojen kanssa. Jos merkkijonossasi saattaa olla monitavuisia Unicode-merkkejä, sinun ei tarvitse huolehtia niiden rikkoontumisesta.
 
 ## Katso myös
-
 - Rustin dokumentaatio merkkijonojen käsittelystä: https://doc.rust-lang.org/book/ch08-02-strings.html
 - `regex`-laatikko monimutkaisiin malleihin: https://crates.io/crates/regex
 - Rust by Example käytännön koodaus-skenaarioihin: https://doc.rust-lang.org/stable/rust-by-example/std/str.html

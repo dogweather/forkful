@@ -13,12 +13,7 @@ title: Trabajando con JSON
 weight: 38
 ---
 
-## ¿Qué y por qué?
-
-Trabajar con JSON en Fish Shell implica analizar y generar datos JSON, una tarea común para configurar aplicaciones, interacción con API y optimizar flujos de trabajo en la línea de comandos. Dada la ubicuidad de JSON en el desarrollo web y de aplicaciones, dominar su manipulación directamente en la shell puede mejorar significativamente la eficiencia en automatización y manejo de datos para los programadores.
-
 ## Cómo hacerlo:
-
 Fish Shell, por sí mismo, no tiene utilidades incorporadas para analizar y generar JSON. Sin embargo, se integra sin problemas con herramientas de terceros como `jq` para el procesamiento de JSON. `jq` es un procesador de JSON de línea de comandos potente y versátil que te permite cortar, filtrar, mapear y transformar datos estructurados con un lenguaje simple y expresivo.
 
 ### Analizando JSON con jq

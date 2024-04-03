@@ -10,9 +10,6 @@ title: Convertendo uma data em uma string
 weight: 28
 ---
 
-## O Que & Por Quê?
-Converter uma data em uma string é o processo de transformar um objeto de data num texto legível. Programadores fazem isso para exibir datas em interfaces de usuário, para salvar em banco de dados ou para formatar de acordo com localidades específicas.
-
 ## Como fazer:
 ```kotlin
 import java.text.SimpleDateFormat

@@ -9,9 +9,6 @@ title: Interpolating a string
 weight: 8
 ---
 
-## What & Why?
-String interpolation is about inserting variables into strings. We do it to construct messages on the fly, personalize output, or build dynamic queries.
-
 ## How to:
 C++ doesn't have built-in string interpolation like some other languages. You often use `std::ostringstream`, `std::format` (from C++20), or printf-style formatting.
 

@@ -9,9 +9,6 @@ title: Reading a text file
 weight: 22
 ---
 
-## What & Why?
-Reading a text file is pulling info from a .txt document into your program. Programmers do it to access and manipulate data: config settings, logs, exports, and so on. Plain and simple.
-
 ## How to:
 Here's how you go about reading a text file in current JavaScript:
 
@@ -59,7 +56,7 @@ Originally, reading files in JavaScript was mostly a server-side affair, dealt w
 
 Alternatives? Oh, there are a few. Streams can handle big files without hogging memory. Workers prevent UI freeze-ups. Libraries make complex tasks easier. Each has its place.
 
-Under the hood, file reading may involve buffer management, character encoding (UTF-8, etc.), and error handling. Be mindful of security, too; browsers restrict file access for good reasons. 
+Under the hood, file reading may involve buffer management, character encoding (UTF-8, etc.), and error handling. Be mindful of security, too; browsers restrict file access for good reasons.
 
 ## See Also
 Take your learning further with these resources:

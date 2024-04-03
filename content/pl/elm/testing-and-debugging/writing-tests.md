@@ -14,12 +14,7 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i dlaczego?
-
-Pisanie testów w Elm polega na tworzeniu przypadków testowych w celu zweryfikowania poprawności kodu Elm, zapewniając, że działa on zgodnie z oczekiwaniami. Programiści robią to, aby wyłapywać błędy wcześnie, ułatwiać utrzymanie i poprawiać jakość oraz niezawodność swoich aplikacji.
-
 ## Jak to zrobić:
-
 Elm używa pakietu `elm-explorations/test` do pisania testów jednostkowych i testów fuzz. Zacznij od dodania pakietu do swojego projektu:
 
 ```elm

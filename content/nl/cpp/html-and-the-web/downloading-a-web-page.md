@@ -12,9 +12,6 @@ title: Een webpagina downloaden
 weight: 42
 ---
 
-## Wat & Waarom?
-Een webpagina downloaden betekent simpelweg de inhoud ervan ophalen, gewoonlijk in HTML-formaat, om lokaal te bekijken of te verwerken. Programmeurs downloaden webpagina's om gegevens te scrapen, veranderingen te monitoren, of te integreren met webservices.
-
 ## Hoe:
 In de huidige C++ versie kunt u de `CURL` bibliotheek gebruiken om webinhoud te downloaden. Hier is een basisvoorbeeld:
 

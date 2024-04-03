@@ -12,9 +12,6 @@ title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---
 
-## Was & Warum?
-Reguläre Ausdrücke in C++ sind Zeichenfolgen, die ein Suchmuster definieren, genutzt für Zeichenkettenabgleiche oder -manipulation. Programmierer verwenden sie für Aufgaben wie die Validierung von Eingaben, die Suche nach Vorkommen in Zeichenketten oder das Aufteilen von Zeichenketten in Tokens. Dies macht sie zu einem unverzichtbaren Werkzeug für effiziente und effektive Textverarbeitung.
-
 ## Wie geht das:
 C++11 führte Unterstützung für reguläre Ausdrücke in der Standardbibliothek `<regex>` ein und bietet ein robustes Framework für die Suche und Manipulation von Zeichenketten. Hier ein einfaches Beispiel für die Verwendung regulärer Ausdrücke zur Suche nach einem Muster innerhalb einer Zeichenkette:
 

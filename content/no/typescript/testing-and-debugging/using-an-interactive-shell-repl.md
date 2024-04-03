@@ -10,9 +10,6 @@ title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---
 
-## Hva & Hvorfor?
-En Les-Evaluer-Skriv-Løkke (REPL) er et programmeringsmiljø som tar enkeltbrukerinput, utfører dem og returnerer resultatet til brukeren. Programmerere bruker en REPL for å raskt eksperimentere med kodesnutter, feilsøke, og lære nye språkegenskaper uten overhead av å skape en fullstendig applikasjon.
-
 ## Hvordan:
 TypeScript kommer ikke med sin egen REPL. La oss bruke `ts-node`, et TypeScript kjøremiljø for Node.js som inkluderer en REPL.
 

@@ -15,9 +15,6 @@ title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---
 
-## Gì và Tại sao?
-Biểu thức chính quy (regex) là các mẫu được sử dụng để so khớp các tổ hợp ký tự trong chuỗi. Lập trình viên sử dụng chúng để tìm kiếm, chỉnh sửa hoặc xác nhận văn bản bởi vì chúng chính xác và hiệu quả.
-
 ## Làm thế nào:
 Hãy cùng tìm hiểu một số cơ bản về regex trong Ruby.
 

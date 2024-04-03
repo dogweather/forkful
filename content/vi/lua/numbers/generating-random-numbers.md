@@ -18,12 +18,7 @@ title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---
 
-## Cái gì & Tại sao?
-
-Việc tạo số ngẫu nhiên trong lập trình là về việc sản xuất các giá trị số không thể đoán trước được có thể sử dụng cho một loạt các mục đích như mô phỏng, trò chơi hoặc ứng dụng bảo mật. Các lập trình viên sử dụng tính năng này để giới thiệu một yếu tố không chắc chắn hoặc mô phỏng sự biến động của đời sống thực trong các dự án của họ.
-
 ## Làm thế nào:
-
 Lua cung cấp hỗ trợ sẵn có cho việc tạo số ngẫu nhiên thông qua hàm `math.random`. Hàm này có thể được sử dụng theo nhiều cách, tùy thuộc vào kết quả mong muốn:
 
 1. **Tạo một số thực ngẫu nhiên giữa 0 và 1:**
@@ -48,7 +43,6 @@ Kết quả mẫu có thể là `7`. Một lần nữa, kết quả sẽ thay đ
 Việc thiết lập hạt giống với `math.randomseed` là cực kỳ quan trọng vì nếu không, `math.random` có thể sinh ra cùng một chuỗi số mỗi khi một chương trình được chạy. Thông thường, việc gieo hạt với thời gian hiện tại, `os.time()`, đảm bảo các chuỗi khác nhau cho mỗi lần thực thi.
 
 ## Sâu hơn
-
 Cơ chế đằng sau việc tạo số ngẫu nhiên trong Lua (và hầu hết các ngôn ngữ lập trình) không thực sự là ngẫu nhiên mà là giả ngẫu nhiên, được sinh ra bởi một thuật toán. Các trình sinh số giả ngẫu nhiên (PRNGs) là có tính xác định và yêu cầu một giá trị hạt giống để bắt đầu chuỗi sinh số. Việc chọn lựa hạt giống là cực kỳ quan trọng cho chất lượng ngẫu nhiên, đó là lý do tại sao sử dụng thời gian hiện tại là một thực hành phổ biến.
 
 Về lịch sử, khả năng tạo số ngẫu nhiên của Lua đã phát triển. Các phiên bản trước dựa vào hàm `rand()` của thư viện tiêu chuẩn C, có chất lượng và hiệu suất thay đổi giữa các triển khai. Phiên bản hiện tại của Lua cải thiện điều này bằng cách có thể sử dụng các cơ chế mạnh mẽ hơn tùy thuộc vào nền tảng cơ sở, cung cấp sự nhất quán và tiện ích cao hơn trong việc tạo số ngẫu nhiên.

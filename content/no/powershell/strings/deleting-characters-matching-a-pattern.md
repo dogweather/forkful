@@ -11,9 +11,6 @@ title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Sletting av tegn som matcher et mønster gjør at vi kan finrense tekst ved å ta vekk uønskede deler, som ekstrategn eller kode. Programmerere gjør dette for å bearbeide data smidig og automatisere tekstbehandlingen.
-
 ## How to: (Hvordan:)
 ```PowerShell
 $myString = "Hei, verden! 123 POWERshell!"

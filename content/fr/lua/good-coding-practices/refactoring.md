@@ -12,9 +12,6 @@ title: 'Refactoring : Mode d''emploi'
 weight: 19
 ---
 
-## Quoi & Pourquoi ?
-Le remaniement (ou refactoring) est l'art de retoucher le code existant pour améliorer sa structure, sa lisibilité et son efficacité sans en altérer le comportement externe. Les programmeurs le font pour rendre leur code plus maintenable, réduire la complexité, et souvent comme une étape préliminaire avant d'ajouter de nouvelles fonctionnalités ou de corriger des bugs.
-
 ## Comment faire :
 Prenons une simple fonction Lua et refactorisons-la. Nous commençons avec une fonction qui calcule la somme des nombres dans une liste mais est écrite sans beaucoup de souci pour l'efficacité ou la clarté :
 

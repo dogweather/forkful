@@ -11,9 +11,6 @@ title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---
 
-## Hva & Hvorfor?
-"Printing debug output" betyr å vise mellomliggende data fra et program for å forstå hva som skjer under kjøring. Programmerere gjør dette for å feilsøke og finjustere kode.
-
 ## Hvordan:
 ```Haskell
 main :: IO ()

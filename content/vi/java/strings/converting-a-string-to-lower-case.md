@@ -16,12 +16,7 @@ title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---
 
-## Cái gì & Tại sao?
-
-Chuyển một chuỗi sang chữ thường có nghĩa là biến đổi tất cả các chữ cái trong chuỗi về dạng chữ thường. Lập trình viên thực hiện việc này để chuẩn hóa dữ liệu, đơn giản hóa việc so sánh, và cho mục đích hiển thị thẩm mỹ.
-
 ## Cách thực hiện:
-
 Lớp `String` trong Java có phương thức `toLowerCase()` tiện lợi giúp bạn thực hiện công việc khó khăn này. Hãy xem ví dụ đơn giản sau:
 
 ```java
@@ -43,7 +38,6 @@ java rocks!
 Đó là tất cả. Chuỗi đã được "hạ âm lượng" xuống chế độ chữ thường dễ chịu.
 
 ## Đào Sâu Hơn
-
 Ngày xưa, xử lý văn bản là một công việc rắc rối. Các ngôn ngữ khác nhau, các dạng chữ cái khác nhau, các hệ thống máy tính la hét trong sự nhầm lẫn. Java, ra đời trong những năm '90, đã tìm cách làm mọi thứ dễ dàng hơn. Phương thức `toLowerCase()` đã là một phần của lớp `String` của Java ngay từ những ngày đầu.
 
 Nhưng có một số điều thú vị bên dưới nắp capo. Bạn có thể tự hỏi tại sao `toLowerCase()` lại cần thiết. Điều đó là vì, không phải tất cả các nền văn hóa đều định nghĩa "chữ thường" theo cùng một cách. Phương thức này nhạy cảm với địa phương, sử dụng địa phương mặc định của hệ thống của bạn, hoặc bạn có thể chỉ định một địa phương sử dụng `toLowerCase(Locale locale)`.
@@ -55,7 +49,6 @@ Có phương án thay thế? Chắc chắn, bạn có thể chạy qua chuỗi b
 Ngoài ra, điều này có thể làm ngạc nhiên cho một số người: chuỗi trong Java là bất biến. Khi bạn sử dụng `toLowerCase()`, bạn không chỉnh sửa chuỗi gốc, bạn đang tạo một chuỗi mới hoàn toàn, áo giáp và tất cả.
 
 ## Xem Thêm
-
 Hãy xem qua các tài nguyên này để nâng cao trò chơi chuỗi của bạn:
 
 - Java String API: [](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)

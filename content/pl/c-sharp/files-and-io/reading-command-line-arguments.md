@@ -10,11 +10,6 @@ title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---
 
-## What & Why?
-(Co i Dlaczego?)
-
-Czytanie argumentów linii komend to sposób, by nasz program C# mógł otrzymywać dane bezpośrednio od użytkownika za pomocą terminala. Programiści używają tej metody, by zwiększyć elastyczność i interaktywność programów, także by ułatwić automatyzację zadań i przetwarzanie wsadowe.
-
 ## How to:
 (Jak to zrobić?)
 

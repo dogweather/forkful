@@ -12,12 +12,7 @@ title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---
 
-## O Que é & Porquê?
-
-Enviar uma requisição HTTP com autenticação básica é um método de incluir credenciais de usuário e senha na cabeçalho de uma requisição para acessar recursos protegidos. Programadores fazem isso para interagir com APIs ou serviços web que requerem identificação simples para conceder acesso.
-
 ## Como Fazer:
-
 ```C#
 using System;
 using System.Net;
@@ -57,7 +52,6 @@ Output:
 ```
 
 ## Deep Dive
-
 A autenticação básica é um dos modos mais antigos de autenticação em HTTP, embora simples, não é o mais seguro. A senha e o usuário são enviados em texto base64, que pode ser facilmente decodificado. Por isso, é imprescindível usar sempre HTTPS quando se opta por esse método.
 
 Alternativas mais seguras incluem autenticação Digest, OAuth e tokens de acesso JWT (JSON Web Token). No entanto, a autenticação básica ainda é comum para scripts internos ou em casos onde a simplicidade é prioritária e a segurança não é uma grande preocupação.
@@ -65,7 +59,6 @@ Alternativas mais seguras incluem autenticação Digest, OAuth e tokens de acess
 Detalhes de implementação importantes incluem a forma como as credenciais são armazenadas e manipuladas. Deve-se evitar manter informações sensíveis no código-fonte e considerar a utilização de variáveis de ambiente ou serviços de gerenciamento de segredos.
 
 ## Veja Também
-
 - Documentação da Microsoft sobre o `HttpClient`: https://docs.microsoft.com/pt-br/dotnet/api/system.net.http.httpclient
 - OWASP sobre autenticação básica: https://owasp.org/www-community/controls/Basic_Authentication
 - RFC 7617, "The 'Basic' HTTP Authentication Scheme": https://tools.ietf.org/html/rfc7617

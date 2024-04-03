@@ -10,9 +10,6 @@ title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---
 
-## What & Why?
-Mitä ja miksi? Kun poistetaan merkkejä, jotka vastaavat tiettyä kaavaa, siivotaan merkkijonoja. Tämä auttaa meitä pääsemään eroon ei-toivotuista merkeistä, kuten ylimääräisistä välilyönneistä tai erikoismerkeistä, järkeistämään syötettä tai valmistelemaan dataa käsittelyyn.
-
 ## How to:
 Käytännössä:
 ```TypeScript

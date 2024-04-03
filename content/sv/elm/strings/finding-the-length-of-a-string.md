@@ -11,9 +11,6 @@ title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---
 
-## What & Why?
-Att hitta längden av en sträng innebär att räkna antalet tecken i strängen. Programutvecklare behöver veta detta för att validera input, hantera textutdata eller bearbeta datastrukturer.
-
 ## How to:
 Elm gör det enkelt med `String.length` funktionen. Här är ett exempel:
 

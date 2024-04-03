@@ -14,12 +14,7 @@ title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---
 
-## ¿Qué y Por Qué?
-
-Escribir en el error estándar (stderr) se trata de enviar mensajes de error y diagnósticos a un flujo separado, distinto del salida estándar (stdout), lo que permite un mejor manejo de errores y análisis de registros. Los programadores hacen esto para facilitar la depuración y asegurar que los mensajes de error se puedan identificar fácilmente y redirigir si es necesario, manteniendo registros de salida limpios o mensajes para el usuario.
-
 ## Cómo hacerlo:
-
 En Kotlin, escribir en stderr se puede lograr utilizando `System.err.println()`. Este método es similar a `System.out.println()`, pero dirige la salida al flujo de error estándar en lugar del flujo de salida estándar.
 
 ```kotlin

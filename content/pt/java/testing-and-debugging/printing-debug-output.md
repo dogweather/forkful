@@ -11,9 +11,6 @@ title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---
 
-## What & Why?
-No mundo da programação, imprimir saídas de depuração é o equivalente a uma lâmpada que piscar quando algo errado acontece. É extremamente útil: ajuda a entender o que está se passando no seu código e a encontrar bugs rapidinho.
-
 ## How to:
 Vamos partir para o código. Aqui estão alguns exemplos de como exibir mensagens de depuração em Java:
 

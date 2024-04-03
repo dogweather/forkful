@@ -10,9 +10,6 @@ title: Searching and replacing text
 weight: 10
 ---
 
-## What & Why?
-Searching and replacing text is about finding strings in a block of text and changing them to something else. Programmers do it for editing code, processing data, or automating refactoring tasks.
-
 ## How to:
 ```Python
 # Using str.replace() for simple replacement

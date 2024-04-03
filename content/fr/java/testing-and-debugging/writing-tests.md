@@ -13,14 +13,10 @@ title: "R\xE9daction de tests"
 weight: 36
 ---
 
-## Quoi & Pourquoi ?
-Écrire des tests en Java consiste à vérifier que votre code se comporte comme prévu dans diverses conditions. Les programmeurs écrivent des tests pour prévenir les bugs, garantir que la fonctionnalité reste correcte après des modifications et favoriser les principes de bonne conception logicielle.
-
 ## Comment faire :
 Les développeurs Java utilisent principalement deux cadres de test : JUnit et TestNG. Ici, nous nous concentrerons sur JUnit, le choix le plus populaire pour écrire des tests en raison de sa simplicité et de son adoption généralisée.
 
 ### Bases de JUnit
-
 Pour utiliser JUnit dans votre projet Maven, ajoutez la dépendance suivante à votre `pom.xml` :
 
 ```xml
@@ -51,7 +47,6 @@ public class CalculatorTest {
 L'exécution de ce test se soldera soit par une réussite, indiquant que la méthode `add` fonctionne comme prévu, soit par un échec, affichant un message d'erreur.
 
 ### Simulation avec Mockito
-
 Dans des scénarios réels, les objets dépendent souvent d'autres objets. Mockito est un cadre de simulation populaire qui aide à créer des objets mock pour les besoins des tests.
 
 Ajoutez Mockito à votre projet Maven :

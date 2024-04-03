@@ -10,16 +10,10 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-
-Writing tests in Rust involves creating automated checks to ensure your code performs as expected. Programmers do this to catch bugs early, facilitate refactoring, and maintain code quality over time.
-
 ## How to:
-
 Rust's built-in test framework supports unit, integration, and documentation tests without the need for external libraries. Tests are annotated with `#[test]`, and any function annotated as such is compiled as a test.
 
 ### Writing a Unit Test:
-
 Place unit tests in the module they're testing using a `tests` sub-module marked with `#[cfg(test)]` to ensure they're only compiled when testing.
 
 ```rust
@@ -57,7 +51,6 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
 ### Writing Integration Tests:
-
 Integration tests go in a tests directory at the top level of your project, next to `src`. Each `.rs` file in `tests` is compiled as its own separate crate.
 
 ```rust
@@ -71,7 +64,6 @@ fn it_adds_two() {
 ```
 
 ### Testing with Popular Third-party Libraries:
-
 For more extensive testing capabilities, the `proptest` library can generate a wide range of inputs to test functions.
 
 Add `proptest` as a dev dependency in `Cargo.toml`:

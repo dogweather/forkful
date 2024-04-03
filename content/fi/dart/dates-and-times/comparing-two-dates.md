@@ -15,9 +15,6 @@ title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertaaminen"
 weight: 27
 ---
 
-## Mikä & Miksi?
-Kahden päivämäärän vertaaminen Dartissa sisältää niiden ajallisen eron tai järjestyksen arvioimisen, mikä on olennainen toiminnallisuus sovelluksissa, jotka hallinnoivat tapahtumia, määräaikoja tai mitä tahansa aikaan sidottua dataa. Ohjelmoijat tarvitsevat tätä usein logiikan virran hallitsemiseen, datan validointiin tai aikaolosuhteisiin perustuvaan järjestämiseen.
-
 ## Miten:
 Dartissa voit verrata päivämääriä käyttämällä `DateTime`-luokkaa, joka tarjoaa suoria vertailumetodeja kuten `isBefore`, `isAfter` ja `isAtSameMomentAs`. Lisäksi päivämäärien välisen eron voi määrittää käyttämällä `difference()`-metodia, joka antaa `Duration`-objektin, joka yksityiskohtaisesti kertoo ajanjakson kahden aikapisteen välillä.
 

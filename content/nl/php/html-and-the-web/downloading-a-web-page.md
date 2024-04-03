@@ -13,12 +13,7 @@ title: Een webpagina downloaden
 weight: 42
 ---
 
-## Wat & Waarom?
-
-Het downloaden van een webpagina betekent het binnenhalen van de online inhoud, zodat je deze offline kunt gebruiken of analyseren. Programmeurs doen dit voor web scraping, gegevensanalyse of om programmatisch met webinhoud om te gaan.
-
 ## Hoe:
-
 PHP maakt het downloaden van een webpagina vrij eenvoudig. Hier is een simpel voorbeeld met `file_get_contents()`:
 
 ```php
@@ -62,7 +57,6 @@ Pagina succesvol gedownload.
 ```
 
 ## Diepgaande Uitleg
-
 Webpagina's downloaden is een praktijk zo oud als het web zelf. Om aanvankelijk met webpagina's te interageren, zou je command-line tools zoals `wget` of `curl` gebruiken. Echter, naarmate PHP evolueerde, maakten functies deze taken binnen scripts mogelijk.
 
 Laten we vergelijken:
@@ -77,7 +71,6 @@ Achter de schermen stuurt `file_get_contents()` een standaard GET-verzoek. Dat b
 Onthoud, sommige sites stellen het niet op prijs om gescrapt te worden. Respecteer altijd `robots.txt` en de gebruiksvoorwaarden.
 
 ## Zie Ook
-
 - [PHP Handleiding over file_get_contents()](http://php.net/manual/en/function.file-get-contents.php)
 - [PHP Handleiding over cURL](http://php.net/manual/en/book.curl.php)
 - [robots.txt Specificaties](https://developers.google.com/search/docs/advanced/robots/robots_txt)

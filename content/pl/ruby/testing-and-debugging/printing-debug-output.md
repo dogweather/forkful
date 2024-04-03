@@ -12,9 +12,6 @@ title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---
 
-## Co i dlaczego?
-Wypisywanie informacji diagnostycznych to sposób na wyświetlanie danych w trakcie działania programu, żeby zrozumieć, co się w nim dzieje. Debugowanie jest nieodłączne od programowania – pomaga znajdować i naprawiać błędy.
-
 ## Jak to zrobić:
 ```Ruby
 # prosty przykład wypisywania komunikatu

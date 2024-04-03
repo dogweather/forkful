@@ -14,9 +14,6 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä & Miksi?
-CSV (Comma-Separated Values) tiedostot ovat yleinen datan vaihtoformaatti, joka esittää taulukollista tietoa puhtaana tekstinä käyttäen pilkkuja arvojen erottamiseen. Ohjelmoijat työskentelevät CSV-tiedostojen parissa tuodakseen, viedäkseen ja muokatakseen dataa vaivattomasti eri sovellusten ja palveluiden välillä, koska kyseessä on yksinkertainen, laajasti tuettu muoto, joka on yhteensopiva taulukkolaskentaohjelmien, tietokantojen ja ohjelmointikielien kanssa.
-
 ## Kuinka:
 CSV-tiedostojen käsittely C#:ssa voidaan suorittaa `System.IO` nimiavaruuden avulla perustoimintoja varten, ja monimutkaisempien manipulointien tai suurempien tiedostojen käsittelyyn sujuvasti voi harkita kolmannen osapuolen kirjastoja, kuten `CsvHelper`. Alla on esimerkkejä, kuinka lukea ja kirjoittaa CSV-tiedostoja käyttäen molempia lähestymistapoja.
 

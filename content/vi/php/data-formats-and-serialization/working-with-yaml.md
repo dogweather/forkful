@@ -10,14 +10,10 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---
 
-## Làm việc với YAML bằng PHP
-
 ## Cái gì & Tại sao?
-
 YAML là một định dạng tuần tự hóa dữ liệu thân thiện với con người. Các lập trình viên sử dụng nó cho các tệp cấu hình, trao đổi dữ liệu và lưu trữ do khả năng đọc và đơn giản của nó.
 
 ## Cách thực hiện:
-
 Để bắt đầu với YAML trong PHP, bạn cần phải có tiện ích mở rộng `yaml`. Dưới đây là cách nhanh chóng để bắt đầu:
 
 **Cài đặt tiện ích mở rộng YAML** (nếu chưa được cài đặt):
@@ -76,11 +72,9 @@ settings:
 ```
 
 ## Sâu hơn:
-
 YAML, viết tắt của "YAML Ain't Markup Language," tập trung vào dữ liệu và cấu trúc dữ liệu, và nó nổi bật ở nơi mà các ngôn ngữ như XML có thể quá phức tạp. Nó được phát hành lần đầu tiên vào năm 2001. Các lựa chọn thay thế bao gồm JSON và XML; YAML thường được ưu tiên vì khả năng đọc của con người. Tiện ích mở rộng `yaml` của PHP kết nối với thư viện `libyaml`, đảm bảo việc phân tích cú pháp và phát ra nhanh chóng.
 
 ## Xem thêm:
-
 - Tài liệu mở rộng chính thức của PHP về YAML: https://www.php.net/manual/en/book.yaml.php
 - Trang web chính thức của YAML: https://yaml.org
 - So sánh các định dạng tuần tự hóa dữ liệu: https://en.wikipedia.org/wiki/Comparison_of_data_serialization_formats

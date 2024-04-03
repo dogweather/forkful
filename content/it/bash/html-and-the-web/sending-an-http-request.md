@@ -10,9 +10,6 @@ title: Inviare una richiesta http
 weight: 44
 ---
 
-## Cos'è e Perché?
-Inviare una richiesta HTTP permette ai vostri script Bash di comunicare con il web, scambiando dati con i server. I programmatori lo fanno per interagire con API, scaricare file o verificare la disponibilità di una risorsa web.
-
 ## Come Fare:
 ```Bash
 # Utilizzo di cURL per effettuare una richiesta GET

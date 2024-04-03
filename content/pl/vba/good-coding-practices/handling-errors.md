@@ -14,12 +14,7 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co i dlaczego?
-
-Obsługa błędów w Visual Basic dla Aplikacji (VBA) odnosi się do procesu przewidywania, wykrywania i rozwiązywania błędów programowania, aplikacji lub komunikacji. Implementacja solidnej obsługi błędów jest kluczowa dla utrzymania integralności aplikacji oraz poprawy doświadczeń użytkownika poprzez eleganckie zarządzanie nieoczekiwanymi problemami bez powodowania nagłych awarii czy utraty danych.
-
 ## Jak to zrobić:
-
 W VBA obsługa błędów jest zazwyczaj implementowana za pomocą instrukcji `On Error`, która instruuje VBA, jak postępować w przypadku wystąpienia błędu. Najczęstsze strategie obsługi błędów obejmują `On Error GoTo` etykieta, `On Error Resume Next`, oraz `On Error GoTo 0`.
 
 **Przykład 1: Użycie `On Error GoTo`**
@@ -64,7 +59,6 @@ End Sub
 W tym przypadku, program nie przerywa działania na błędzie; sprawdza, czy wystąpił błąd, obsługuje go, jeśli wystąpił, a następnie czyści błąd.
 
 ## Wnikliwie
-
 Historycznie obsługa błędów w językach programowania ewoluowała od prostych instrukcji goto do bardziej zaawansowanych mechanizmów, takich jak wyjątki w językach takich jak Java i C#. Obsługa błędów w VBA, choć nie jest tak potężna czy elastyczna jak nowoczesne mechanizmy obsługi wyjątków, spełnia swoje zadanie w kontekście zastosowania języka do automatyzacji zadań w środowiskach Microsoft Office.
 
 Podstawową ograniczeniem obsługi błędów w VBA jest jej nieco toporna i ręczna metoda, wymagająca ostrożnego umieszczania kodu obsługi błędów i jasnego zrozumienia przepływu wykonania. Nowoczesne języki programowania zazwyczaj oferują bardziej eleganckie rozwiązania, takie jak bloki try-catch, które automatycznie zarządzają przepływem do kodu obsługi błędów bez potrzeby ręcznych sprawdzeń lub skoków w wykonaniu kodu.

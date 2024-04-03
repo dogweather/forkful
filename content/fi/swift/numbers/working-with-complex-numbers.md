@@ -11,9 +11,6 @@ title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---
 
-## Mitä ja miksi?
-Kompleksiluvuilla on sekä reaaliosa että imaginaariosa (kuten 3 + 4i). Ohjelmoijat käyttävät niitä Swiftissä tehtäviin, kuten signaalinkäsittely, tiettyjen matemaattisten ongelmien ratkaiseminen ja fysiikan simuloiminen.
-
 ## Kuinka:
 Swift ei sisällä valmista tukea kompleksiluvuille, mutta voimme luoda oman:
 

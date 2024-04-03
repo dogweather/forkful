@@ -12,12 +12,7 @@ title: Analizando HTML
 weight: 43
 ---
 
-## Qué y Por Qué?
-
-Analizar HTML en Go implica analizar el contenido de archivos HTML para extraer datos, manipular la estructura o convertir HTML en otros formatos. Los programadores hacen esto para el raspado web, la creación de plantillas y la minería de datos, aprovechando las fuertes características de concurrencia de Go para el procesamiento eficiente de grandes volúmenes de páginas web.
-
 ## Cómo hacerlo:
-
 Para analizar HTML en Go, típicamente se usa el paquete `goquery` o el paquete `net/html` de la biblioteca estándar. Aquí hay un ejemplo básico usando `net/html` para extraer todos los enlaces de una página web:
 
 ```go
@@ -74,7 +69,6 @@ http://www.iana.org/domains/reserved
 Este código solicita una página HTML, la analiza y recorre recursivamente el DOM para encontrar e imprimir los atributos `href` de todas las etiquetas `<a>`.
 
 ## Análisis Detallado
-
 El paquete `net/html` proporciona lo básico para analizar HTML en Go, implementando directamente los algoritmos de tokenización y construcción de árboles especificados por el estándar HTML5. Este enfoque de bajo nivel es potente pero puede ser verboso para tareas complejas.
 
 En contraste, el paquete de terceros `goquery`, inspirado en jQuery, ofrece una interfaz de más alto nivel que simplifica la manipulación y el recorrido del DOM. Permite a los desarrolladores escribir código conciso y expresivo para tareas como la selección de elementos, la extracción de atributos y la manipulación de contenido.

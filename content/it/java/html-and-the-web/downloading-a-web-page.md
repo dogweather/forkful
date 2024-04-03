@@ -10,9 +10,6 @@ title: Scaricare una pagina web
 weight: 42
 ---
 
-## Cosa & Perché?
-Scaricare una pagina web significa prelevare il contenuto HTML di una pagina da Internet. I programmatori fanno questo per processare dati, alimentare applicazioni con contenuti dinamici o analizzare siti web.
-
 ## Come fare:
 Per scaricare una pagina web in Java, possiamo usare la classe `URLConnection` combinata con un `BufferedReader`. Ecco un esempio pratico:
 

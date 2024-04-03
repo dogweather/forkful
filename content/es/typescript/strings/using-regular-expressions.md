@@ -12,11 +12,7 @@ title: Usando expresiones regulares
 weight: 11
 ---
 
-## ¿Qué y Por Qué?
-Las expresiones regulares, o regex, son una herramienta poderosa para coincidencia de patrones y búsqueda en programación. Los programadores utilizan regex para tareas como validar entradas de usuarios, buscar en texto o manipular cadenas de caracteres porque es eficiente y versátil.
-
 ## Cómo hacerlo:
-
 Saltemos a TypeScript y veamos cómo se utiliza regex para tareas comunes.
 
 ```TypeScript
@@ -39,7 +35,6 @@ console.log(mes, día, año); // Salida: "Abril" "10" "2021"
 ```
 
 ## Profundización
-
 Atrás en los años 50, el matemático Stephen Kleene describió las expresiones regulares como un modelo para representar lenguajes regulares, que más tarde se volvieron esenciales en ciencia de la computación. Avanzando rápido, el regex es ubicuo en programación para tratar con texto.
 
 Aunque regex es una navaja suiza para operaciones con cadenas, no está sin alternativas. Dependiendo de la complejidad de la tarea, a veces métodos de cadena como `includes()`, `startsWith()`, `endsWith()`, o incluso análisis con una biblioteca pueden ser mejores. Por ejemplo, analizar una cadena JSON compleja usando regex puede ser una pesadilla—usa un analizador JSON en su lugar.
@@ -47,7 +42,6 @@ Aunque regex es una navaja suiza para operaciones con cadenas, no está sin alte
 En cuanto a la implementación, regex en JavaScript y TypeScript se basa en la especificación del lenguaje ECMAScript. Por debajo del capó, los motores utilizan máquinas de estados para coincidir patrones eficientemente. Vale la pena notar que las operaciones regex pueden ser costosas en términos de rendimiento, especialmente con patrones mal escritos—ten cuidado con el "backtracking catastrófico".
 
 ## Consulta También
-
 - Documentos Web MDN sobre Expresiones Regulares: [Expresiones Regulares MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions)
 - Regex101: una herramienta para probar y depurar patrones regex [Regex101](https://regex101.com/)
 - Libro "Dominando las Expresiones Regulares" para una comprensión profunda: [O'Reilly](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)

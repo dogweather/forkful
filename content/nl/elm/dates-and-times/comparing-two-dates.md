@@ -13,11 +13,7 @@ title: Twee datums vergelijken
 weight: 27
 ---
 
-## Wat & Waarom?
-Het vergelijken van twee datums betekent uitzoeken welke van de twee eerder is of hoeveel tijd er tussen hen in zit. Programmeurs doen dit om zaken zoals deadlines, schema's of tijdgebonden functies te beheren.
-
 ## Hoe:
-
 Elm maakt datumvergelijkingen eenvoudig. Laten we zeggen dat je twee datums hebt. Hier is hoe je zou controleren welke als eerste komt:
 
 ```Elm

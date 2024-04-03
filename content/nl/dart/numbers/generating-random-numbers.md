@@ -12,11 +12,7 @@ title: Genereren van willekeurige getallen
 weight: 12
 ---
 
-## Wat & Waarom?
-Het genereren van willekeurige getallen in Dart omvat het creëren van numerieke waarden die onvoorspelbaar zijn en bij elke uitvoering verschillen. Programmeurs gebruiken deze functionaliteit om verschillende redenen, van het simuleren van realistische scenario's in testomgevingen tot het mogelijk maken van spelmechanismen en het waarborgen van veiligheid door willekeurigheid in cryptografische bewerkingen.
-
 ## Hoe te:
-
 De kernbibliotheek van Dart bevat ondersteuning voor het genereren van willekeurige getallen met de `Random` klasse, te vinden in `dart:math`. Hier is een eenvoudig voorbeeld:
 
 ```dart

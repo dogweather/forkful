@@ -15,9 +15,6 @@ title: "T\u1EA3i trang web"
 weight: 42
 ---
 
-## Cái gì & Tại sao?
-Tải một trang web xuống có nghĩa là lấy dữ liệu từ web và đưa nó vào ứng dụng của bạn. Lập trình viên thực hiện việc này để tìm nội dung, tương tác với dịch vụ trực tuyến hoặc thu thập dữ liệu.
-
 ## Làm thế nào:
 Hãy sử dụng `URLSession` để thực hiện công việc này. Swift làm cho nó trở nên đơn giản và dễ dàng.
 

@@ -10,9 +10,6 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-Comparing two dates means checking if they're the same, or finding out which one is earlier or later. Programmers do it to handle scheduling, event sequencing, or time-sensitive operations like session timeouts or subscription expiries.
-
 ## How to:
 PHP's `DateTime` objects and comparison operators make this simple. Here's a straightforward example:
 

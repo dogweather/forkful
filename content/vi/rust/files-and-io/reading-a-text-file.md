@@ -15,9 +15,6 @@ title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---
 
-## Gì & Tại Sao?
-Đọc một tệp văn bản là việc lấy nội dung văn bản từ một tệp .txt trên ổ đĩa của bạn. Lập trình viên làm điều này để xử lý dữ liệu như cấu hình, nhập liệu của người dùng, hoặc để xử lý văn bản số lượng lớn.
-
 ## Làm cách nào:
 Thư viện tiêu chuẩn của Rust giúp việc đọc tệp trở nên đơn giản.
 

@@ -12,9 +12,6 @@ title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---
 
-## Quoi & Pourquoi ?
-Enlever les guillemets d'une chaîne signifie supprimer ces marques de citations doubles ou simples supplémentaires dont vous n'avez pas réellement besoin dans le texte traité. Les programmeurs font cela pour assainir l'entrée, préparer les données pour le stockage ou rendre la sortie plus lisible pour l'humain lorsque les guillemets ne sont pas nécessaires dans le contexte donné.
-
 ## Comment faire :
 En Elm, vous pouvez utiliser les fonctions `String` pour manipuler des chaînes de caractères, telles que l'enlèvement des guillemets. Voici une manière simple de le faire :
 

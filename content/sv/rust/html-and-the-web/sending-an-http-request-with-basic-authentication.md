@@ -12,9 +12,6 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-begäran med grundläggande autentisering innebär att inkludera användarnamn och lösenord i en HTTP-header för att få tillgång till skyddade resurser. Programmerare gör detta för att interagera med webbtjänster som kräver användarverifiering.
-
 ## Hur gör man:
 ```Rust
 use reqwest::header::{Authorization, Basic};

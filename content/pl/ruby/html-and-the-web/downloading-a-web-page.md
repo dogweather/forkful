@@ -8,14 +8,13 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## What & Why?
 ## Co i dlaczego?
-
 Pobieranie strony internetowej to proces ściągania jej zawartości do analizy lub przetwarzania. Programiści robią to, by np. zbierać dane (web scraping), monitorować zmiany czy testować aplikacje.
 
 ## How to:
-## Jak to zrobić:
 
+
+## Jak to zrobić:
 Przykład w Ruby wykorzystuje gem `net/http` do pobrania strony:
 
 ```Ruby
@@ -47,13 +46,15 @@ Sample output (wyjście próbkowe):
 ```
 
 ## Deep Dive
-## W głąb tematu
 
+
+## W głąb tematu
 W Ruby, klasy z modułu `net/http` są używane od lat do interakcji z HTTP. Alternatywą jest `open-uri` dla prostych zastosowań lub gem `httparty` dla większej kontroli nad żądaniami. Głębsze szczegóły implementacji `net/http` obejmują obsługę różnych metod HTTP, szyfrowanie SSL/TLS i możliwość pracy z proxy.
 
 ## See Also
-## Zobacz również
 
+
+## Zobacz również
 - Ruby `Net::HTTP` dokumentacja: https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/Net/HTTP.html
 - `httparty` gem: https://github.com/jnunemaker/httparty
 - Przewodnik po web scraping w Ruby: https://www.rubyguides.com/2012/01/web-scraping-tutorial-ruby/

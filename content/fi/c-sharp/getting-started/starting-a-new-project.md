@@ -10,9 +10,6 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## What & Why? / Mitä & Miksi?
-Uuden projektin aloittaminen tarkoittaa uuden sovelluksen tai ohjelmiston kehitysvaiheen aloittamista. Ohjelmoijat tekevät sen, jotta voivat ratkaista ongelmia, toteuttaa ideoita tai vastata kysyntään.
-
 ## How to: / Kuinka:
 Aloitetaan uusi C#-projekti Visual Studio 2022:ssa. Ei mitään ylimääräistä.
 

@@ -11,9 +11,6 @@ title: Registrazione Eventi (Logging)
 weight: 17
 ---
 
-## Cosa e Perché?
-Il logging, essenzialmente, consiste nell'annotare ciò che la tua applicazione sta facendo – potremmo dire un diario, ma per il codice. I programmatori lo fanno per tenere traccia dei dettagli, come cambiamenti di stato, eventi di sistema e fastidiosi bug, assicurandosi che nessun inconveniente passi inosservato.
-
 ## Come fare:
 In Fish, effettuare il logging può essere semplice come reindirizzare gli output standard e gli stream di errore verso un file. Facendo un'entrata nel log per indicare l'inizio e la fine del nostro script.
 

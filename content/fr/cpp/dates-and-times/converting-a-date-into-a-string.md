@@ -10,9 +10,6 @@ title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Convertir une date en chaîne de caractères permet de l'afficher ou la stocker facilement. Les programmeurs utilisent cette conversion pour l'interface utilisateur, les fichiers logs, ou encore pour la persistance de données.
-
 ## How To (Comment faire ?)
 ```C++
 #include <iostream>

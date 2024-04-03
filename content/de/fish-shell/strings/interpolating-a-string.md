@@ -10,9 +10,6 @@ title: Zeichenketten interpolieren
 weight: 8
 ---
 
-## What & Why?
-Interpolieren, also das Einfügen von Variablen in Strings, spart dir viel Tipparbeit und vereinfacht die Code-Wartung. Es ermöglicht dynamische Textausgaben, was essentiell ist für Skripte, die auf Nutzereingaben oder ändernden Daten operieren.
-
 ## How to:
 Fish Shell macht's leicht:
 

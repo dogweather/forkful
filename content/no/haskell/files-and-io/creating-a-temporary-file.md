@@ -11,9 +11,6 @@ title: Opprette en midlertidig fil
 weight: 21
 ---
 
-## What & Why?
-Oppretting av en midlertidig fil lar programmer lagre data som trengs for kort tid. Vi gjør dette for å håndtere data som ikke trenger å bli varig lagret eller når vi vil unngå å påvirke programmets tilstand eller ytelse.
-
 ## How to:
 ```Haskell
 import System.IO.Temp (withSystemTempFile)

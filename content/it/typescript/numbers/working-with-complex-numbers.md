@@ -11,9 +11,6 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-## Cos'è e Perché?
-I numeri complessi, composti da una parte reale e una immaginaria (solitamente scritti come a + bi), rendono possibili calcoli impraticabili o impossibili con i soli numeri reali. I programmatori li utilizzano in campi come l'elaborazione dei segnali, il calcolo quantistico e la matematica applicata, dove le rappresentazioni numeriche bidimensionali sono essenziali.
-
 ## Come Fare:
 Gestire i numeri complessi in TypeScript richiede una classe dedicata. Creiamone una e procediamo con l'addizione e la moltiplicazione.
 

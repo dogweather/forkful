@@ -12,12 +12,7 @@ title: Een nieuw project starten
 weight: 1
 ---
 
-## Wat & Waarom?
-
-Een nieuw project starten in Dart omvat het opzetten van een omgeving die bevorderlijk is voor efficiënte ontwikkeling, testen en implementatie. Programmeurs initiëren nieuwe Dart-projecten om te profiteren van Dart's optimale prestaties en robuuste ecosysteem, met name voor web- en mobiele app-ontwikkeling met frameworks zoals Flutter.
-
 ## Hoe:
-
 1. **Installeer Dart**:
    Zorg ervoor dat Dart op je systeem is geïnstalleerd. Zo niet, dan kun je het downloaden van [https://dart.dev/get-dart](https://dart.dev/get-dart). Verifieer de installatie met:
 

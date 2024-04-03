@@ -12,9 +12,6 @@ title: Arbeiten mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-Komplexe Zahlen, die als Kombination aus reellen und imaginären Einheiten dargestellt werden (z.B. 3 + 4i), sind grundlegend für verschiedene Berechnungsprobleme, insbesondere in Ingenieurwesen, Physik und angewandter Mathematik. Das Erlernen der Manipulation dieser Zahlen in Google Apps Script ermöglicht es Programmierern, ihre Fähigkeiten auf wissenschaftliches Rechnen, Signalverarbeitung und darüber hinaus auszudehnen.
-
 ## Wie:
 Google Apps Script bietet keine integrierte Unterstützung für komplexe Zahlen, was die Implementierung von benutzerdefinierten Funktionalitäten erforderlich macht. Unten ist eine grundlegende Struktur für den Umgang mit komplexen Zahlen dargestellt, einschließlich Addition, Subtraktion und Multiplikation.
 

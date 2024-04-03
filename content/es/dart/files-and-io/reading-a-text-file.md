@@ -12,12 +12,7 @@ title: Leyendo un archivo de texto
 weight: 22
 ---
 
-## Qué y por qué?
-
-Leer un archivo de texto en Dart implica acceder y recuperar datos de archivos almacenados en el sistema de archivos. Los programadores hacen esto para manejar datos de entrada, configuraciones o leer conjuntos de datos, lo que lo convierte en una operación fundamental para muchas aplicaciones, desde scripts simples hasta aplicaciones complejas.
-
 ## Cómo hacerlo:
-
 La biblioteca central de Dart, `dart:io`, proporciona las funcionalidades necesarias para leer archivos de texto de manera sincrónica o asincrónica. A continuación, se explica cómo abordar ambas.
 
 **De forma sincrónica:**

@@ -10,9 +10,6 @@ title: Lettura degli argomenti della riga di comando
 weight: 23
 ---
 
-## What & Why?
-Leggere gli argomenti della riga di comando significa estrarre i dati inseriti dagli utenti quando avviano il tuo programma da terminale. I programmatori lo fanno per rendere le applicazioni interattive e per passare parametri al volo, senza hardcoding.
-
 ## How to:
 Swift rende la lettura degli argomenti da riga di comando un gioco da ragazzi. Ecco come:
 

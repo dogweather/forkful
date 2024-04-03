@@ -14,9 +14,6 @@ title: Tolka HTML
 weight: 43
 ---
 
-## Vad & Varför?
-Att tolka HTML innebär processen att bryta ner och tolka strukturen av HTML-innehåll, typiskt för att extrahera specifik data eller hantera detta innehåll programmatiskt. Programmerare engagerar sig i HTML-tolkning för webbskrapning, datautvinning, automatiserad testning och innehållsmigrering, vilket möjliggör att applikationer kan interagera med och bearbeta webbdokument effektivt.
-
 ## Hur man gör:
 Swift inkluderar som standard inte ett inbyggt bibliotek för HTML-tolkning, vilket kräver användning av tredjepartsbibliotek för att effektivt hantera denna uppgift. Ett av de mest populära valen är SwiftSoup, ett rent Swift-bibliotek som erbjuder jQuery-lik syntax för HTML-tolkning och manipulation.
 

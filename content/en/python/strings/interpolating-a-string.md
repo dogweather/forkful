@@ -12,9 +12,6 @@ title: Interpolating a string
 weight: 8
 ---
 
-## What & Why?
-String interpolation is the method of embedding expressions within string literals. Programmers use it to dynamically insert values into strings, which makes the code more readable and cleaner than traditional string concatenation.
-
 ## How to:
 In Python 3.6 and above, you can interpolate strings using f-strings. Here's how:
 

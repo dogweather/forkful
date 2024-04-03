@@ -13,12 +13,7 @@ title: Schrijven naar standaardfout
 weight: 25
 ---
 
-## Wat & Waarom?
-
-Schrijven naar standaardfout (stderr) laat je programma praten over fouten zonder de standaarduitvoer (stdout) te verstoppen. Het is een duidelijk signaal naar gebruikers en andere programma's dat er aandacht nodig is.
-
 ## Hoe te:
-
 Lua communiceert met stderr via `io.stderr`. Zo print je een eenvoudige foutmelding:
 
 ```lua
@@ -40,7 +35,6 @@ end
 ```
 
 ## Diepgaand Onderzoek
-
 Lang geleden kregen computers twee aparte stromen voor uitvoer—stdout voor de hoofdgegevens, stderr voor de oepsjes. Lua hield deze Unix-conventie in stand. Soms leiden mensen stdout om (zoals naar een bestand) maar willen ze fouten toch op het scherm hebben. Daar komt stderr om de hoek kijken.
 
 Alternatieven? Sommigen schrijven naar een logbestand, gebruiken een logboekbibliotheek, of sturen het over netwerken. Maar stderr is laagdrempelig voor eenvoudige zaken.
@@ -48,7 +42,6 @@ Alternatieven? Sommigen schrijven naar een logbestand, gebruiken een logboekbibl
 Wat implementatie betreft, Lua’s `io.stderr` is een bestandshandle. Het is net als `io.stdout` of `io.stdin`, klaar voor gebruik zonder gedoe. Achter de schermen, of het nu een tekstbestand of een terminal is, Lua zweet niet—`io.stderr` handelt het af.
 
 ## Zie Ook
-
 Duik dieper of krijg wat context:
 
 - De Lua 5.4 Referentiehandleiding: http://www.lua.org/manual/5.4/

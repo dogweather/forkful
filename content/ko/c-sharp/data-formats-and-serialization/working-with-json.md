@@ -19,14 +19,10 @@ title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 weight: 38
 ---
 
-## 무엇 & 왜?
-
-JSON(JavaScript Object Notation)을 다루는 것은 JSON 데이터를 파싱, 생성 및 쿼리하는 것을 포함하여 현대 프로그래밍에 있어 필수적인 기술입니다. 이 데이터 교환 형식은 읽기 쉽고 언어 독립성이 있어 웹 서비스 및 API에서 광범위하게 사용되고 있어, 네트워크 응용 프로그램을 작업하거나 웹 기반 데이터와 상호 작용하는 C# 프로그래머에게 필수적입니다.
-
 ## 방법:
 
-### JSON 문자열을 객체로 파싱하기
 
+### JSON 문자열을 객체로 파싱하기
 C#은 효율적인 JSON 처리를 위해 `System.Text.Json` 네임스페이스를 제공합니다. JSON 문자열을 C# 객체로 파싱하려면 JSON 구조와 일치하는 클래스를 정의하고 `JsonSerializer.Deserialize` 메서드를 사용하십시오.
 
 ```csharp
@@ -53,7 +49,6 @@ public class Program
 ```
 
 ### 객체에서 JSON 생성하기
-
 C# 객체를 다시 JSON 문자열로 변환하려면 `JsonSerializer.Serialize` 메서드를 사용하십시오.
 
 ```csharp
@@ -78,7 +73,6 @@ public class Program
 ```
 
 ### Newtonsoft.Json 사용하기
-
 `Newtonsoft.Json`(또는 Json.NET)은 JSON 직렬화 및 역직렬화를 위한 더 많은 유연성과 옵션을 제공하는 인기 있는 타사 라이브러리입니다.
 
 Json.NET을 사용하려면 먼저 NuGet을 통해 `Newtonsoft.Json` 패키지를 설치해야 합니다. 그런 다음 다음과 같이 JSON 문자열을 역직렬화할 수 있습니다:

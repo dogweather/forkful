@@ -11,9 +11,6 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## What & Why?
-Teilstrings extrahieren bedeutet, bestimmte Abschnitte aus einem längeren String herauszuschneiden. Programmierer machen das, um Daten zu manipulieren, zu validieren oder Features wie Suchen und Ersetzen zu implementieren.
-
 ## How to:
 TypeScript bietet mehrere Methoden, um Teilstrings zu extrahieren: `slice()`, `substring()`, und `substr()` (letztere ist veraltet). Hier sehen wir, wie man sie anwendet:
 

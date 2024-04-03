@@ -12,9 +12,6 @@ title: Lavorare con JSON
 weight: 38
 ---
 
-## Cos'è & Perché?
-Lavorare con JSON (JavaScript Object Notation) in Haskell comporta l'analisi dei dati JSON in tipi Haskell e la conversione dei tipi Haskell di nuovo in JSON. I programmatori fanno ciò per consentire alle loro applicazioni Haskell di scambiare dati con servizi web o API senza problemi, una pratica comune nello sviluppo software moderno per lo scambio di dati cross-platform.
-
 ## Come fare:
 Haskell non ha un supporto integrato per JSON come JavaScript, ma con l'aiuto di librerie di terze parti come **Aeson**, la gestione del JSON diventa semplice. Aeson fornisce funzioni sia ad alto livello che a basso livello per la codifica (conversione dei valori Haskell in JSON) e la decodifica (analisi del JSON in valori Haskell).
 

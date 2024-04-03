@@ -12,12 +12,7 @@ title: Een string omzetten naar kleine letters
 weight: 4
 ---
 
-## Wat & Waarom?
-
-In PHP betekent het converteren van een string naar kleine letters dat alle alfabetische karakters in een string worden getransformeerd naar hun kleine lettervariant. Programmeurs doen dit voor consistentie, vooral bij het vergelijken of sorteren van strings, waar hoofdlettergevoeligheid dingen in de war kan schoppen.
-
 ## Hoe:
-
 PHP gebruikt `strtolower` om alle karakters in een string naar kleine letters te maken. Zo werkt het:
 
 ```php
@@ -41,7 +36,6 @@ echo $lowerCaseString; // Geeft uit: istanbul (converteert İ correct naar i)
 ```
 
 ## Diepgaand
-
 Historisch gezien is de `strtolower`-functie van PHP de standaardfunctie geweest voor conversie van hoofdletters naar kleine letters, geïntroduceerd in de zeer vroege versies van PHP. Echter, naarmate PHP-applicaties wereldwijder werden, kwam de noodzaak om multibyte karaktercoderingen correct te kunnen verwerken, wat leidde tot `mb_strtolower`.
 
 Alternatieven voor `strtolower` en `mb_strtolower` omvatten het gebruik van reguliere expressies met de `mb_ereg_replace_callback`-functie of `preg_replace_callback`, maar voor eenvoudige conversie naar kleine letters zijn ze te ingewikkeld.
@@ -49,7 +43,6 @@ Alternatieven voor `strtolower` en `mb_strtolower` omvatten het gebruik van regu
 In PHP zijn strings traditioneel op byte gebaseerd, niet op karakter gebaseerd, wat betekent dat elke byte één karakter is. Dit werkt voor enkele-bytecoderingen zoals ASCII, waar elk karakter inderdaad één byte is. Voor multibyte coderingen begrijpt `mb_strtolower` karaktercodering en behandelt tekens zoals ze behandeld moeten worden.
 
 ## Zie Ook
-
 - PHP-handleiding over `strtolower`: https://www.php.net/manual/nl/function.strtolower.php
 - PHP-handleiding over `mb_strtolower`: https://www.php.net/manual/nl/function.mb-strtolower.php
 - UTF-8 en Unicode voor PHP-ontwikkelaars: https://www.php.net/manual/nl/book.mbstring.php

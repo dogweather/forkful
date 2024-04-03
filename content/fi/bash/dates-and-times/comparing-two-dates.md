@@ -11,9 +11,6 @@ title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---
 
-## What & Why? (Mitä & Miksi?)
-Vertaillaan kahta päivämäärää selvittääksemme, kumpi on aikaisempi tai myöhäisempi. Ohjelmoijat tekevät tätä, kun he haluavat ajastaa tehtäviä, tarkistaa voimassaolot tai ajoittaa tapahtumia.
-
 ## How to: (Kuinka tehdä:)
 ```Bash
 #!/bin/bash

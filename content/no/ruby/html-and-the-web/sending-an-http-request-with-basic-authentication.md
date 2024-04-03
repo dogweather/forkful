@@ -12,11 +12,7 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel med grunnleggende autentisering betyr å tilføye brukernavn og passord i en forespørsel for å få tilgang til beskyttede ressurser. Programmerere gjør dette for å sikre at kun autoriserte brukere har tilgang.
-
 ## Hvordan gjøre det:
-
 ```ruby
 require 'net/http'
 require 'uri'
@@ -39,7 +35,6 @@ Velkommen til den hemmelige siden!
 ```
 
 ## Dypdykk
-
 Før i tiden var grunnleggende autentisering mye brukt for enkel brukeridentifikasjon. I dag, på grunn av sikkerhetsbegrensninger (det er ikke kryptert), brukes det mindre, ofte i interne systemer eller der dataene ikke er sensitive. 
 
 Alternativer inkluderer OAuth2 og JWT (JSON Web Tokens), begge tilbyr større sikkerhet og er bedre egnet for moderne applikasjoner.
@@ -47,7 +42,6 @@ Alternativer inkluderer OAuth2 og JWT (JSON Web Tokens), begge tilbyr større si
 Teknisk sett koder grunnleggende autentisering brukernavn og passord med base64 og legger det til HTTP-forespørselens `Authorization` header. Imidlertid er dette ikke særlig sikkert over HTTP, så det anbefales å bruke HTTPS.
 
 ## Se også
-
 - RFC 7617, 'The 'Basic' HTTP Authentication Scheme': [https://tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)
 - Bedre sikkerhetspraksis med OAuth: [https://oauth.net/2/](https://oauth.net/2/) 
 - JWT for autentisering: [https://jwt.io/](https://jwt.io/)

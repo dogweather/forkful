@@ -12,9 +12,6 @@ title: Koodin refaktorointi
 weight: 19
 ---
 
-## Mikä & Miksi?
-Refaktorointi on käytännössä koodikannan kevätsiivous – siinä uudelleenjärjestetään olemassa olevaa koodia muuttamatta sen ulkoista toimintaa. Ohjelmoijat tekevät sitä tehdäkseen koodista luettavampaa, vähentääkseen monimutkaisuutta, parantaakseen ylläpidettävyyttä ja helpottaakseen sen laajentamista.
-
 ## Kuinka:
 Kuvittele, että sinulla on Elm-funktio, joka tekee liikaa, kuten sekoittaa käyttöliittymälogiikkaa tilan päivityksiin. Se on täydellinen kandidaatti refaktorointiin. Alun perin:
 

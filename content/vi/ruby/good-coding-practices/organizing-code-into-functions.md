@@ -15,9 +15,6 @@ title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---
 
-## Cái gì & Tại sao?
-Tổ chức mã lệnh thành các hàm chia nhỏ kịch bản của bạn thành các khối có thể tái sử dụng. Điều này giúp cho mã của bạn trở nên gọn gàng, dễ quản lý và ít lỗi hơn. Mã modular (mã được tổ chức theo mô đun) tuyệt vời vì nó giúp bạn tiết kiệm thời gian, giữ được sự tỉnh táo và làm đơn giản hóa việc gỡ lỗi và kiểm thử đơn vị.
-
 ## Làm thế nào:
 Hãy tưởng tượng bạn đang viết một kịch bản nhanh để chào mừng người dùng:
 

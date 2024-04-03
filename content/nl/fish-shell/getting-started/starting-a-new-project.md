@@ -13,9 +13,6 @@ title: Een nieuw project starten
 weight: 1
 ---
 
-## Wat & Waarom?
-Een nieuw project starten betekent het initialiseren van een verse map met alles wat je nodig hebt om te beginnen met coderen. Programmeurs doen dit om de ontwikkeling op een schone, georganiseerde manier te starten.
-
 ## Hoe te:
 ```fish
 # Een nieuwe map maken en erin gaan

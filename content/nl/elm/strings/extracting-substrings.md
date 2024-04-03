@@ -12,11 +12,7 @@ title: Substrings extraheren
 weight: 6
 ---
 
-## Wat & Waarom?
-Substringen extraheren betekent specifieke delen uit een string halen. Programmeurs doen dit om stukken tekstgegevens te isoleren, te manipuleren of te analyseren.
-
 ## Hoe te:
-
 Elm maakt het gemakkelijk. Laten we beginnen met `String.slice`:
 
 ```Elm
@@ -51,7 +47,6 @@ rechtseTekst = right 5 volledigeTekst
 ```
 
 ## Diepgaand
-
 Historisch gezien is het extraheren van substrings zo oud als het programmeren zelf. In Elm, zoals in andere functionele talen, zijn de functies voor het manipuleren van strings onveranderlijk - ze retourneren nieuwe strings in plaats van het origineel te veranderen.
 
 Er bestaan alternatieven zoals `String.dropLeft` en `String.dropRight`. Deze trimmen karakters van één van de uiteinden van de string:
@@ -75,7 +70,6 @@ verwijderdRechtsTekst = dropRight 6 volledigeTekst
 Wat betreft implementatie, deze functies zijn ingebouwd in de Elm standaardbibliotheek en gaan om met Unicode, hoewel er overwegingen moeten worden gemaakt met betrekking tot Unicodes surrogate paren en combinerende karakters.
 
 ## Zie Ook
-
 - Elm `String` module documentatie: https://package.elm-lang.org/packages/elm/core/latest/String
 - Elm gids over strings: https://guide.elm-lang.org/strings/
 - MDN Web Docs over Unicode: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt

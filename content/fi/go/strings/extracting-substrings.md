@@ -13,16 +13,10 @@ title: Alimerkkijonojen erottaminen
 weight: 6
 ---
 
-## Mikä & Miksi?
-
-Merkkijonojen osien poimiminen käsittää tiettyjen merkkijonojen osien hakemisen niiden sijaintien perusteella. Ohjelmoijat suorittavat tätä toimenpidettä usein tekstidataa käsitelläkseen tai muokatakseen tehokkaasti, kuten syötteen jäsentämiseen, muotojen validointiin tai tulosteen valmisteluun.
-
 ## Miten:
-
 Go-kielessä `string`-tyyppi on vain luku -taulukko (slice) tavuja. Merkkijonojen osien poimimiseen käytetään pääasiassa `slice`-syntaksia yhdessä sisäänrakennetun `len()`-funktion kanssa pituuden tarkistamiseen ja `strings`-paketin kanssa monimutkaisempiin operaatioihin. Näin voit saavuttaa tämän:
 
 ### Perustason viipalointi
-
 ```go
 package main
 
@@ -40,7 +34,6 @@ func main() {
 ```
 
 ### Käyttäen `strings`-pakettia
-
 Monimutkaisempien alimerkkijonojen poimimiseen, kuten merkkijonojen poimimiseen ennen tai jälkeen tietyn alimerkkijonon, voit käyttää `strings`-pakettia.
 
 ```go
@@ -63,7 +56,6 @@ func main() {
 On tärkeää huomata, että Go-merkkijonot ovat UTF-8-koodattuja ja suora tavutaulukko (byte slice) ei aina johda kelvollisiin merkkijonoihin, jos ne sisältävät monitavuisia merkkejä. Unicode-tuen huomioimiseen harkitse `range`-toiminnon tai `utf8`-paketin käyttöä.
 
 ### Unicode-merkkien käsittely
-
 ```go
 package main
 
@@ -83,7 +75,6 @@ func main() {
 ```
 
 ## Syväsukellus
-
 Merkkijonojen osien poiminta Gossa on suoraviivaista, kiitos sen viipale-syntaksin ja kattavan standardikirjaston. Historiallisesti aiemmat ohjelmointikielet tarjosivat suorempia funktioita tai menetelmiä tällaiseen tekstinkäsittelyyn. Kuitenkin, Gon lähestymistapa korostaa turvallisuutta ja tehokkuutta, erityisesti sen muuttumattomien merkkijonojen ja selkeän Unicode-merkkien käsittelyn kautta rune-tyypin avulla.
 
 Vaikka suoraviivainen viipalointi hyötyy suorituskykytehokkuudesta, se perii UTF-8 -merkkien suoran käsittelyn monimutkaisuudet. `rune`-tyypin esittely mahdollistaa Go-ohjelmien turvallisen Unicode-tekstin käsittelyn, tehden siitä vahvan vaihtoehdon kansainvälisissä sovelluksissa.

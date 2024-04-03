@@ -11,9 +11,6 @@ title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---
 
-## Vad & Varför?
-Att starta ett nytt projekt innebär att skapa en ny mapp och filstruktur för ett programmeringsprojekt. Programmerare gör detta för att organisera kod, dela upp problem i hanterbara bitar och främja återanvändning.
-
 ## How to:
 Skapa en ny mapp i din arbetsyta:
 

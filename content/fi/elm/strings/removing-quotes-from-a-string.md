@@ -12,9 +12,6 @@ title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---
 
-## Mikä ja miksi?
-Merkkijonosta lainausmerkkien poistaminen tarkoittaa ylimääräisten kaksois- tai yksittäisten lainausmerkkien karsimista, joita et todellisuudessa tarvitse käsitellyssä tekstissä. Ohjelmoijat tekevät tämän puhdistaakseen syötettä, valmistellakseen tietoja tallennusta varten tai tehdäkseen tulosteesta ihmiselle luettavamman, kun lainausmerkit eivät ole välttämättömiä annetussa kontekstissa.
-
 ## Miten:
 Elmissä voit käyttää `String`-funktioita merkkijonojen manipulointiin, kuten lainausmerkkien poistamiseen. Tässä on suoraviivainen tapa tehdä se:
 

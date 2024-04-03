@@ -10,9 +10,6 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-Das Runden von Zahlen bedeutet, die Dezimalstellen auf eine festgelegte Genauigkeit abzuschneiden, oft auf ganze Zahlen. Programmierer runden, um Berechnungen zu vereinfachen, die Leistung zu verbessern oder Ausgaben benutzerfreundlich zu gestalten.
-
 ## Wie geht das:
 PHP bietet einige Möglichkeiten, Zahlen zu runden: `round()`, `ceil()` und `floor()`. So funktionieren sie:
 

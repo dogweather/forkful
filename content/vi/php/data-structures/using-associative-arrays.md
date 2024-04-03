@@ -16,12 +16,7 @@ title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---
 
-## Cái gì & Tại sao?
-
-Mảng kết hợp trong PHP giống như những danh sách nâng cao, nơi mỗi phần tử có thể được truy cập bằng một khóa dễ hiểu thay vì chỉ là số. Lập trình viên sử dụng chúng để lưu trữ và thao tác dữ liệu một cách trực quan hơn, cho phép mã dễ đọc và dễ bảo trì hơn.
-
 ## Làm thế nào:
-
 Trong PHP, việc tạo và sử dụng mảng kết hợp rất đơn giản. Dưới đây là một bản tóm tắt nhanh:
 
 ```PHP
@@ -67,7 +62,6 @@ foreach ($person as $key => $value) {
 Chú ý là khóa có thể là bất kỳ chuỗi nào, cho phép bạn truy cập các phần tử bằng những khóa này thay vì chỉ dùng các chỉ số số, có thể kém ý nghĩa và khó nhớ hơn.
 
 ## Nghiên cứu sâu
-
 Mảng kết hợp trong PHP được triển khai nội bộ sử dụng bảng băm, cung cấp việc truy cập rất nhanh đến các phần tử bằng khóa, làm cho chúng rất hiệu quả cho nhiều nhiệm vụ. Hiệu quả này, kết hợp với sự dễ sử dụng, làm cho mảng kết hợp trở thành một trụ cột của lập trình PHP.
 
 Trong lịch sử, mảng của PHP (cả chỉ mục và mảng kết hợp) đã rất linh hoạt, cho phép chúng phục vụ như danh sách, ngăn xếp, hàng đợi, và nhiều hơn nữa. Tuy nhiên, tính linh hoạt này đôi khi có thể dẫn đến mã kém hiệu quả nếu không được sử dụng một cách cẩn thận.

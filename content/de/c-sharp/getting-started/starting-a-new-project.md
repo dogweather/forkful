@@ -11,9 +11,6 @@ title: Einen neuen Projekt starten
 weight: 1
 ---
 
-## Was & Warum?
-Ein neues Projekt zu starten, bedeutet, dass du in C# von Grund auf etwas Eigenes erschaffst. Programmierer tun das, um neue Ideen umzusetzen, Probleme zu lösen oder um einfach etwas Neues zu lernen.
-
 ## How to:
 ```C#
 using System;

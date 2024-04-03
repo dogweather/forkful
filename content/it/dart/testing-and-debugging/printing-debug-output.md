@@ -14,12 +14,7 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## Cosa e perché?
-
-Stampare l'output di debug in Dart riguarda la visualizzazione di informazioni sulla console durante l'esecuzione, permettendo agli sviluppatori di tracciare il flusso di esecuzione, indagare lo stato delle variabili o identificare la fonte degli errori. I programmatori lo utilizzano comunemente per la risoluzione dei problemi e per verificare che il loro codice si comporti come previsto, facilitando un processo di sviluppo più fluido ed efficiente.
-
 ## Come fare:
-
 In Dart, puoi stampare l'output di debug utilizzando la funzione `print()`. Ecco come stampare semplici messaggi e valori delle variabili:
 
 ```dart

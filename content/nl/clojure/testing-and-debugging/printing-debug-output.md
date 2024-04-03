@@ -12,9 +12,6 @@ title: Debug-output afdrukken
 weight: 33
 ---
 
-## Wat & Waarom?
-Debug-output afdrukken is als het achterlaten van broodkruimels in je code: het toont het spoor van gegevens en logische stroom tijdens de uitvoering. Programmeurs gebruiken het om lastige bugs op te sporen en om te begrijpen of hun code zich gedraagt zoals verwacht.
-
 ## Hoe te:
 In Clojure print je vaak debug-output met behulp van `println`, `printf`, `pr`, of `prn`. Hier is hoe je wat debug-prints toevoegt:
 

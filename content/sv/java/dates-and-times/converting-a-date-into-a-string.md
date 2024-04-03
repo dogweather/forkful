@@ -11,9 +11,6 @@ title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---
 
-## What & Why?
-Att konvertera ett datum till en sträng innebär att du förvandlar ett datumobjekt till en formaterad textrepresentation. Programmerare gör detta för att underlätta visning och lagring av datum på ett läsbart format för människor.
-
 ## How to:
 Vi använder `java.time.format.DateTimeFormatter` och `java.time.LocalDate` i Java för datumkonvertering.
 

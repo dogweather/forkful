@@ -11,9 +11,6 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-De lengte van een string bepalen betekent het tellen van de karakters. Programmeurs doen dit om invoer te valideren, door karakters te loopen, of simpelweg om uitvoer uit te lijnen.
-
 ## Hoe doe je dat:
 Het `#` symbool klaart de klus in bash. Gebruik het met parameterexpansie. Zo werkt het:
 

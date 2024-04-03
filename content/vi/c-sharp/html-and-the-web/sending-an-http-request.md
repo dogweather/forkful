@@ -15,9 +15,6 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---
 
-## Gì & Tại sao?
-Gửi một yêu cầu HTTP là cách để các chương trình giao tiếp qua mạng, yêu cầu dữ liệu hoặc gửi dữ liệu. Lập trình viên thực hiện điều này để tương tác với các API, dịch vụ hoặc để thu thập nội dung web.
-
 ## Cách thực hiện:
 C# làm cho việc gửi yêu cầu HTTP trở nên đơn giản với `HttpClient`. Dưới đây là bộ xương của một yêu cầu GET:
 

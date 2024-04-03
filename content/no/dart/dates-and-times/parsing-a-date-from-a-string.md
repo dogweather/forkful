@@ -13,9 +13,6 @@ title: Analyserer en dato fra en streng
 weight: 30
 ---
 
-## Hva & hvorfor?
-Å analysere en dato fra en streng i Dart innebærer konvertering av tekstlig representasjon av datoer og tider til et `DateTime`-objekt. Denne operasjonen er vesentlig for applikasjoner som omhandler planlegging, dataanalyse, eller enhver funksjon som krever manipulering av datoer, for å sikre at datorelatert data blir korrekt forstått og behandlet av programmet.
-
 ## Hvordan:
 Darts kjernebibliotek forenkler datoparsing gjennom `DateTime`-klassen. For greie tilfeller der du kjenner formatet på datostrengen, kan du bruke `DateTime.parse()`-metoden. Men, for mer komplekse scenarioer, eller når man håndterer flere formater, blir `intl`-pakken, spesifikt `DateFormat`-klassen, uvurderlig.
 

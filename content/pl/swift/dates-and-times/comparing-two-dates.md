@@ -10,11 +10,6 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## What & Why?
-(Po co i dlaczego?)
-
-Porównywanie dat pozwala określić, która z nich jest wcześniejsza, a która późniejsza. Programiści robią to, by zarządzać czasem i wydarzeniami, obsługiwać harmonogramy, upływ czasu, czy ważność tokenów.
-
 ## How to:
 (Jak to zrobić?)
 

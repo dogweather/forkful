@@ -11,9 +11,6 @@ title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---
 
-## O Que & Por Quê?
-Converter uma string para minúsculas significa transformar todos os caracteres alfabéticos do texto para a sua forma minúscula. Programadores fazem isso para padronizar os dados, facilitar comparações e buscas insensíveis a maiúsculas/minúsculas.
-
 ## Como Fazer:
 Swift torna o processo de converter strings para minúsculas muito simples com o uso da propriedade `lowercased`. Aqui tem um exemplo:
 

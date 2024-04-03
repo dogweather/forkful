@@ -11,9 +11,6 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## Hva & Hvorfor?
-Tekstsøk og -erstattning lar deg finne spesifikke ord eller fraser og endre dem til noe annet. Programmerere bruker dette for å oppdatere kode, korrigere feil eller endre data dynamisk.
-
 ## Hvordan:
 ```Arduino
 String tekst = "Hilsen fra Arduino verdenen!";

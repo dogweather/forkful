@@ -14,12 +14,7 @@ title: Lesen von Befehlszeilenargumenten
 weight: 23
 ---
 
-## Was & Warum?
-
-Das Lesen von Befehlszeilenargumenten in Google Apps Script ist etwas irreführend, denn im Gegensatz zu traditionellen Befehlszeilenschnittstellen in Programmiersprachen wie Python oder Node.js unterstützt Google Apps Script keine Befehlszeilenausführung oder Parameteranalyse von Natur aus. Stattdessen simulieren Programmierer diesen Prozess oft durch benutzerdefinierte Funktionen und URL-Parameter beim Ausführen von Web-Apps oder automatisierten Aufgaben, was eine dynamische Interaktion mit den Skriptfunktionalitäten basierend auf Benutzereingaben oder vordefinierten Parametern ermöglicht.
-
 ## Wie:
-
 Um den Prozess des Lesens von Befehlszeilenargumenten in Google Apps Script nachzuahmen, besonders bei Web-Apps, können Sie Query-String-Parameter nutzen. Wenn ein Benutzer auf die URL der Web-App zugreift, können Sie Argumente wie `?name=John&age=30` anhängen und diese innerhalb Ihres Apps Script Codes parsen. So könnte die Einrichtung aussehen:
 
 ```javascript
@@ -45,7 +40,6 @@ Name: John, Alter: 30
 Dieser Ansatz ist ausschlaggebend für die Erstellung personalisierter Interaktionen in Web-Apps oder die programmgesteuerte Steuerung von Skriptausführungen.
 
 ## Vertiefung
-
 Befehlszeilenargumente, wie sie im Kontext traditioneller Programmiersprachen verstanden werden, bringen die Fähigkeit für Skripte und Anwendungen mit sich, Laufzeitparameter zu verarbeiten. Dies ermöglicht flexible und dynamische Codeausführungen basierend auf Benutzereingaben oder automatisierten Prozessen. Google Apps Script, als eine cloud-basierte Skriptsprache für die leichte Anwendungsentwicklung im Google Workspace Ökosystem, operiert nicht nativ über eine Befehlszeilenschnittstelle. Stattdessen erfolgt seine Ausführung weitgehend ereignisgesteuert oder manuell ausgelöst durch die Apps Script und Google Workspace UI, oder über Web-Apps, die URL-Parameter als Pseudo-Befehlszeilenargumente parsen können.
 
 Angesichts dieses architektonischen Unterschieds müssen Programmierer, die aus einem Hintergrund von CLI-schweren Sprachen kommen, ihren Ansatz möglicherweise anpassen, wenn sie Aufgaben automatisieren oder Anwendungen in Google Apps Script entwickeln. Statt der traditionellen Befehlszeilenargumentanalyse, kann die Nutzung der Web-App-Funktionalität von Google Apps Script oder sogar Google Sheets benutzerdefinierte Funktionen für die interaktive Datenverarbeitung ähnliche Ziele erreichen. Obwohl dies anfangs als Einschränkung erscheinen mag, fördert es die Entwicklung von benutzerfreundlicheren Schnittstellen und zugänglicheren Webanwendungen, was mit dem Fokus von Google Apps Script auf nahtloser Integration und Erweiterung von Google Workspace Anwendungen übereinstimmt.

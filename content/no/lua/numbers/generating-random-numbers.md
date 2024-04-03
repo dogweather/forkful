@@ -11,12 +11,7 @@ title: Generering av tilfeldige tall
 weight: 12
 ---
 
-## Hva & Hvorfor?
-
-Generering av tilfeldige tall i programmering handler om å produsere uforutsigbare numeriske verdier som kan brukes til en rekke formål, som simuleringer, spill eller sikkerhetsapplikasjoner. Programmerere bruker denne funksjonen til å introdusere et element av usikkerhet eller etterligne variabilitet fra det virkelige liv i prosjektene sine.
-
 ## Hvordan:
-
 Lua har innebygd støtte for å generere tilfeldige tall via `math.random`-funksjonen. Denne funksjonen kan brukes på flere måter, avhengig av ønsket utdata:
 
 1. **Generere et tilfeldig flyttall mellom 0 og 1:**
@@ -41,7 +36,6 @@ Eksempel på utdata kan være `7`. Igjen, vil utdata variere med hver utførelse
 Det er avgjørende å sette frøet med `math.randomseed` fordi uten det, kunne `math.random` generere den samme sekvensen av tall hver gang et program kjøres. Å vanligvis så med gjeldende tid, `os.time()`, sikrer forskjellige sekvenser per utførelse.
 
 ## Dypdykk
-
 Mekanismen som ligger til grunn for generering av tilfeldige tall i Lua (og de fleste programmeringsspråk) er ikke virkelig tilfeldig, men pseudotilfeldig, generert av en algoritme. Disse pseudotilfeldige tallgeneratorene (PRNG-er) er deterministiske og krever en startverdi for å begynne sekvensen av tallgenerering. Valget av såing er avgjørende for kvaliteten på tilfeldigheten, noe som er grunnen til at bruken av gjeldende tid er en vanlig praksis.
 
 Historisk har Lua's muligheter for generering av tilfeldige tall utviklet seg. Tidligere versjoner stolte på C-standardsbibliotekets `rand()`-funksjon, som varierte i kvalitet og ytelse på tvers av implementasjoner. Den nåværende versjonen av Lua forbedrer dette ved muligens å bruke mer robuste mekanismer avhengig av den underliggende plattformen, og tilbyr større konsistens og nyttighet i generering av tilfeldige tall.

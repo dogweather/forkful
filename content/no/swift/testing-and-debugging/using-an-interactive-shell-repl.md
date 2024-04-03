@@ -11,9 +11,6 @@ title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---
 
-## Hva og hvorfor?
-Bruk av et interaktivt skall, eller en Les-Evaluer-Skriv Ut-løkke (REPL), lar deg kode interaktivt. Programmerere bruker det til raskt å teste Swift-snutter, feilsøke eller lære språket.
-
 ## Hvordan:
 Start REPL ved å åpne en terminal og kjøre `swift`. Skriv kode direkte og trykk Enter for å kjøre den. Her er en smakebit:
 

@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Gì và Tại Sao?
-Làm việc với XML có nghĩa là phân tích cú pháp, tạo và thao tác dữ liệu XML (eXtensible Markup Language - Ngôn ngữ Đánh dấu Mở rộng). Các lập trình viên quản lý XML để xử lý trao đổi dữ liệu có cấu trúc, cấu hình và nhiều hơn nữa, do bản chất không phụ thuộc vào nền tảng của nó.
-
 ## Làm thế nào:
 Dưới đây là một cách đơn giản để phân tích cú pháp XML sử dụng thư viện TinyXML-2:
 

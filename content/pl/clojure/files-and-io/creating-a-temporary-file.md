@@ -11,9 +11,6 @@ title: Tworzenie pliku tymczasowego
 weight: 21
 ---
 
-## Co i dlaczego?
-Tworzenie tymczasowego pliku to proces generowania pliku, który zostanie użyty krótkotrwale, a potem usunięty. Programiści tworzą je do przechowywania danych przejściowych, testowania i obróbki danych, nie zaśmiecając stałego systemu plików.
-
 ## Jak to zrobić:
 ```clojure
 (require '[clojure.java.io :as io])

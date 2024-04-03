@@ -13,12 +13,7 @@ title: Werken met YAML
 weight: 41
 ---
 
-## Wat & Waarom?
-
-Werken met YAML in Go houdt in dat je YAML-bestanden (YAML Ain't Markup Language), een gebruikersvriendelijke gegevensserialisatiestandaard, analyseert naar Go-datastructuren en vice versa. Programmeurs doen dit om de eenvoud en leesbaarheid van YAML te benutten voor configuratiebestanden, applicatie-instellingen of gegevensuitwisseling tussen diensten en componenten geschreven in verschillende talen.
-
 ## Hoe:
-
 Om met YAML in Go te werken, moet je eerst een bibliotheek importeren die ondersteuning biedt voor het parseren en serialiseren van YAML, aangezien de standaardbibliotheek van Go geen directe ondersteuning voor YAML omvat. De populairste bibliotheek hiervoor is "gopkg.in/yaml.v3". Hier is hoe je kunt beginnen:
 
 1. **Het YAML-pakket installeren:**
@@ -111,7 +106,6 @@ database:
 ```
 
 ## Diepgaand:
-
 Het gebruik van YAML in softwareontwikkeling is gegroeid vanwege zijn leesbare formaat, waardoor het een ideale keuze is voor configuratiebestanden, documentatie of gegevensuitwisselingsformaten. In vergelijking met JSON, zijn tegenhanger, biedt YAML commentaren, scalaire typen en relatiefuncties, waardoor een rijker raamwerk voor gegevensserialisatie wordt geboden. Echter, zijn flexibiliteit en functies komen met de kosten van complexiteit in het parseren, wat kan leiden tot mogelijke veiligheidsrisico's als het niet zorgvuldig wordt behandeld (bijv., willekeurige code-uitvoering).
 
 De bibliotheek "gopkg.in/yaml.v3" voor Go is een robuuste oplossing voor YAML-verwerking, die een balans vindt tussen gebruiksgemak en uitgebreide functieondersteuning. Vanaf de huidige staat, hoewel er alternatieven zijn zoals "go-yaml/yaml" (de bibliotheek achter "gopkg.in/yaml.v3"), hangt de gekozen versie meestal af van specifieke projectvereisten of persoonlijke voorkeur. Bij het omgaan met enorme datasets of prestatiekritieke applicaties, kunnen programmeurs simpelere formaten zoals JSON overwegen vanwege hun verminderde parseertijd en geheugenoverhead. Desondanks blijft YAML voor configuratiebestanden of instellingen waar menselijke leesbaarheid en gebruiksgemak van groot belang zijn, een sterke mededinger in het Go-ecosysteem.

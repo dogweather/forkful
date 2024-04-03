@@ -15,9 +15,6 @@ title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---
 
-## Cái gì & Tại sao?
-So sánh hai ngày có nghĩa là xác định xem ngày nào trước, ngày nào sau, hoặc nếu chúng giống nhau. Các lập trình viên thực hiện việc này để theo dõi các sự kiện dựa trên thời gian, như lên lịch các tác vụ hoặc ghi lại dữ liệu theo thời gian.
-
 ## Cách thực hiện:
 Trong Arduino, bạn có thể so sánh các ngày sử dụng thư viện `TimeLib.h`. Trước tiên, hãy cài đặt nó. Sau đó, hãy xem đoạn mã sau:
 

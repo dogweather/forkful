@@ -13,16 +13,10 @@ title: Trabajando con CSV
 weight: 37
 ---
 
-## Qué y Por Qué?
-
-Trabajar con archivos CSV (Valores Separados por Comas) implica analizar y generar archivos de texto donde cada línea mantiene valores separados por comas. Los programadores hacen esto para permitir el intercambio de datos entre diferentes aplicaciones o para facilitar el almacenamiento de datos en un formato ligero y legible por humanos.
-
 ## Cómo hacerlo:
-
 Para manejar archivos CSV en Dart, generalmente se procesa el texto manualmente o se utilizan bibliotecas de terceros para simplificar la tarea. Aquí, veremos ambos enfoques.
 
 ### Analizando CSV Manualmente
-
 Si tus necesidades son simples, podrías optar por analizar manualmente una cadena CSV. Esto se puede lograr usando las funciones de manipulación de cadenas del núcleo de Dart:
 
 ```dart
@@ -55,7 +49,6 @@ void main() {
 ```
 
 ### Usando una Biblioteca de Terceros: `csv`
-
 Para escenarios más complejos o para simplificar tu código, puedes usar una biblioteca de terceros popular como `csv`. Primero, agrégala a tu proyecto incluyendo `csv: ^5.0.0` (o la última versión) en tu archivo `pubspec.yaml` bajo `dependencies`. Luego úsala de la siguiente manera:
 
 ```dart

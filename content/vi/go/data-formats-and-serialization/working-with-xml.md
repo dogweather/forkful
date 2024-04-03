@@ -16,11 +16,8 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Làm thế nào & Tại sao?
-
-Làm việc với XML trong Go bao gồm việc phân tích cú pháp (đọc) và tạo (viết) các tài liệu XML - một định dạng chuẩn cho giao tiếp dữ liệu có cấu trúc. Lập trình viên làm điều này để lưu trữ dữ liệu, cài đặt cấu hình, hoặc trao đổi dữ liệu giữa các hệ thống, đặc biệt là trong các môi trường nơi XML là định dạng dữ liệu ưa thích hoặc kế thừa.
-
 ## Cách thực hiện:
+
 
 ### Phân tích cú pháp XML trong Go
 Để phân tích cú pháp XML trong Go, bạn sử dụng gói `encoding/xml`. Gói này cung cấp các công cụ cần thiết để giải mã (phân tích cú pháp) XML thành cấu trúc Go. Ví dụ, xem xét dữ liệu XML sau đây đại diện cho một quyển sách:
@@ -118,7 +115,6 @@ Kết quả đầu ra:
 ```
 
 ## Tìm hiểu sâu
-
 Độ phức tạp và dài dòng của XML đã khiến JSON và các định dạng khác trở nên phổ biến hơn cho nhiều ứng dụng. Tuy nhiên, khả năng biểu diễn dữ liệu phân cấp phức tạp của XML và sự sử dụng rộng rãi của nó trong các hệ thống kế thừa và các lĩnh vực cụ thể (ví dụ, dịch vụ SOAP) đảm bảo tính liên quan của nó.
 
 Gói `encoding/xml` trong Go cung cấp các cơ chế mạnh mẽ để làm việc với XML, nhưng cần lưu ý các hạn chế của nó. Ví dụ, việc xử lý không gian tên XML có thể gặp khó khăn và có thể yêu cầu hiểu biết chi tiết hơn về thông số kỹ thuật XML so với các trường hợp sử dụng đơn giản hơn. Ngoài ra, trong khi kiểu định kiểu tĩnh của Go và khả năng chuyển đổi và giải mã của gói `encoding/xml` nói chung là hiệu quả, các lập trình viên có thể gặp phải thách thức với các cấu trúc lồng nhau sâu hoặc khi xử lý các tài liệu XML không ánh xạ gọn gàng vào hệ thống kiểu của Go.

@@ -14,9 +14,6 @@ title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---
 
-## Was & Warum?
-In der Softwareentwicklung ist es oft notwendig zu überprüfen, ob ein Verzeichnis existiert, um Fehler zu vermeiden, wenn versucht wird, Dateien zu öffnen, zu lesen oder zu schreiben. Rust, als eine Systemprogrammiersprache, bietet robuste Methoden, um diese Aufgabe auszuführen und sicherzustellen, dass Ihr Programm Dateien und Verzeichnisse sicher und effizient handhaben kann.
-
 ## Wie:
 Die Standardbibliothek von Rust (`std`) enthält Funktionen, um die Existenz eines Verzeichnisses über die Module `std::path::Path` und `std::fs` zu überprüfen. Hier ist ein einfaches Beispiel, das Rusts Standardansatz verwendet:
 

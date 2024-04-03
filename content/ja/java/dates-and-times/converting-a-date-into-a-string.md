@@ -21,12 +21,7 @@ title: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B"
 weight: 28
 ---
 
-## What & Why? (なにを、そしてなぜ？)
-
-Javaで日付を文字列に変換するって、具体的には`Date`オブジェクトをテキスト形式にすることだよ。なぜこれが必要かって？データをユーザーにわかりやすく表示したり、特定の形式で保存したりするためさ。
-
 ## How to: (やり方)
-
 ```java
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -46,7 +41,6 @@ public class DateFormatExample {
 このコードを実行すると、コンソールに現在の日付と時刻が `yyyy/MM/dd HH:mm:ss` の形式で表示されるよ。
 
 ## Deep Dive (深掘り)
-
 日付と文字列の変換はJavaが初期に登場してから必要とされていた。`SimpleDateFormat`はその一例で、Java 1.1から利用可能だ。ただ、`Thread`セーフじゃないから、Java 8以降では`DateTimeFormatter`を使うことが推奨されている。
 
 ```java
@@ -68,7 +62,6 @@ public class ModernDateFormatExample {
 `SimpleDateFormat`と比べて、`DateTimeFormatter`は不変であり、かつスレッドセーフ。パフォーマンスや安全性を理由に、現代のJavaコードでは`DateTimeFormatter`の使用が望ましい。
 
 ## See Also (関連情報)
-
 - [SimpleDateFormat documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/text/SimpleDateFormat.html)
 - [DateTimeFormatter documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/format/DateTimeFormatter.html)
 - [Java Date and Time - Baeldung](https://www.baeldung.com/java-8-date-time-intro)

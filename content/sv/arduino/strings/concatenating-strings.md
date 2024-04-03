@@ -11,9 +11,6 @@ title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---
 
-## Vad & Varför?
-Strängsammanslagning innebär att man kombinerar två eller flera textsträngar till en enda. Programmerare gör detta för att bygga upp meddelanden, skapa dynamiska kommandon eller samla indata i en läsbar format.
-
 ## Hur man gör:
 ```Arduino
 String fornamn = "Anna";

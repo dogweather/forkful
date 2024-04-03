@@ -15,9 +15,6 @@ title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
 weight: 45
 ---
 
-## What & Why?
-发送带有基本认证的HTTP请求，就像是给网络请求贴上身份标签。程序员这么做主要为了安全地访问受保护的网络资源。
-
 ## How to:
 Ruby发送HTTP请求很简单。这里有个示例：
 

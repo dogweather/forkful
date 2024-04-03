@@ -12,11 +12,7 @@ title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---
 
-## O Que & Porquê?
-Enviar uma requisição HTTP com autenticação básica é o processo de acessar um recurso web protegido, incluindo um cabeçalho de autorização com um nome de usuário e senha codificados. Programadores utilizam isso para se conectar de forma segura a APIs ou serviços que requerem verificação de identidade.
-
 ## Como fazer:
-
 ```java
 import java.net.Authenticator;
 import java.net.PasswordAuthentication;
@@ -57,7 +53,6 @@ Exemplo de Saída:
 ```
 
 ## Mergulho Profundo
-
 Historicamente, a autenticação básica é um método antiquado porém ainda em uso devido à sua simplicidade. Ela envia o nome de usuário e senha codificados em Base64, mas não criptografados, o que significa que, se interceptados, podem ser decodificados facilmente. Por isso, é essencial usar HTTPS em vez de HTTP ao enviar requisições de autenticação básica.
 
 Como alternativas, temos as autenticações Digest e OAuth, que oferecem mais segurança. A autenticação Digest envia uma hash criptografada das credenciais do usuário, enquanto OAuth usa tokens de acesso que podem ser revogados a qualquer momento sem a necessidade de alterar as senhas dos usuários.
@@ -65,7 +60,6 @@ Como alternativas, temos as autenticações Digest e OAuth, que oferecem mais se
 Na implementação, ao enviar uma requisição HTTP com autenticação básica em Java, o uso de `HttpClient` simplifica o processo ao gerenciar a conexão. Usar `Authenticator` e `PasswordAuthentication` são opções também, para quem prefere mais controle sobre o processo de autenticação.
 
 ## Veja Também
-
 - [Documentação oficial do HttpClient](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
 - [RFC 7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
 - [Tutorial de autenticação OAuth](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)

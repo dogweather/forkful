@@ -13,9 +13,6 @@ title: Sjekker om en mappe eksisterer
 weight: 20
 ---
 
-## Hva & Hvorfor?
-Å sjekke om en mappe eksisterer i Kotlin innebærer å verifisere tilstedeværelsen av en mappe på en spesifisert sti. Programmerere utfører denne oppgaven for å forhindre feil, som for eksempel å forsøke å lese fra eller skrive til en mappe som ikke eksisterer, noe som sikrer smidigere filhåndtering og datagestjonering innen applikasjoner.
-
 ## Hvordan:
 Kotlin, som kjører på JVM, benytter Java File API for filoperasjoner, noe som gjør kontroll av mappetilstedeværelse enkelt. Her er et grunnleggende eksempel:
 

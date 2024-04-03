@@ -17,9 +17,6 @@ title: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306E\u9001\u4FE1"
 weight: 44
 ---
 
-## What & Why? (何となぜ？)
-プログラマーがHTTPリクエストを送ると、ウェブサーバーとデータを交換できます。APIとの通信や情報取得のためによく使われます。
-
 ## How to: (やり方)
 ```Haskell
 -- 'http-conduit' パッケージを利用

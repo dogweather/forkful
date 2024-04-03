@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## What & Why? (Mitä & Miksi?)
-PHP:ssä HTTP-pyyntö lähettää tietoja palvelimelle tai hakee niitä sieltä. Ohjelmoijat tekevät tämän, jotta voivat siirtää dataa, hakea resursseja tai kommunikoida muiden palveluiden kanssa.
-
 ## How to: (Miten tehdään:)
 PHP:ssä HTTP-pyyntöjen tekeminen voi olla yksinkertaista. Tässä esimerkkejä `file_get_contents`- ja `cURL`-funktioilla:
 

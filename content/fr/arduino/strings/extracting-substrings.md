@@ -11,9 +11,6 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## What & Why? (Quoi et Pourquoi?)
-Extraire des sous-chaînes consiste à sélectionner des portions spécifiques d'une chaîne de caractères. Les programmeurs le font pour analyser, manipuler ou tester des données de texte.
-
 ## How to: (Comment faire:)
 ```Arduino
 void setup() {

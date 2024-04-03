@@ -13,12 +13,7 @@ title: Lecture d'un fichier texte
 weight: 22
 ---
 
-## Quoi & Pourquoi ?
-
-Lire un fichier texte en Dart implique l'accès et la récupération de données à partir de fichiers stockés sur le système de fichiers. Les programmeurs font cela pour gérer les données d'entrée, les paramètres de configuration, ou lire des ensembles de données, ce qui en fait une opération fondamentale pour de nombreuses applications allant de simples scripts à des applications complexes.
-
 ## Comment faire :
-
 La bibliothèque principale de Dart, `dart:io`, fournit les fonctionnalités nécessaires pour lire des fichiers texte de manière synchrone ou asynchrone. Voici comment aborder les deux.
 
 **De manière synchrone :**

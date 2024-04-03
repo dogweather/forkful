@@ -10,9 +10,6 @@ title: Datum in einen String umwandeln
 weight: 28
 ---
 
-## Was & Warum?
-Datum zu String-Konversion ist der Prozess der Umwandlung eines Datumsobjekts in eine lesbare Zeichenkette. Programmierer machen das, um Daten benutzerfreundlich anzuzeigen oder für den Export und die Weiterverarbeitung zu formatieren.
-
 ## So geht’s:
 ```C++
 #include <iostream>

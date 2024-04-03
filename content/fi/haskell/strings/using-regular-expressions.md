@@ -14,9 +14,6 @@ title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---
 
-## Mitä & Miksi?
-Ohjelmoinnissa säännölliset lausekkeet ovat merkkijonoja, jotka määrittelevät hakukaavan, ja niitä käytetään yleensä merkkijonojen etsimiseen ja käsittelyyn. Haskell-ohjelmoijat hyödyntävät säännöllisiä lausekkeita tehtävissä, jotka vaihtelevat yksinkertaisesta merkkijonon vastaavuuden tarkistamisesta monimutkaiseen tekstinkäsittelyyn, hyödyntäen niiden tehokkuutta ja monipuolisuutta tekstidataa käsiteltäessä.
-
 ## Kuinka:
 Haskellissa säännöllisen lausekkeen toiminnot eivät kuulu vakio kirjastoon, joten on tarpeen käyttää kolmannen osapuolen paketteja kuten `regex-base` yhdessä yhteensopivan taustajärjestelmän kanssa kuten `regex-posix` (POSIX-yhteensopivaa regex-tukea varten), `regex-pcre` (Perl-yhteensopivaa regex-tukea varten), jne. Tässä on, miten voit käyttää näitä paketteja työskennelläksesi säännöllisten lausekkeiden kanssa.
 
@@ -31,7 +28,6 @@ cabal install regex-pcre
 ```
 
 ### Käyttäen `regex-posix`:
-
 ```haskell
 import Text.Regex.Posix ((=~))
 
@@ -52,7 +48,6 @@ main = do
 ```
 
 ### Käyttäen `regex-pcre`:
-
 ```haskell
 import Text.Regex.PCRE ((=~))
 

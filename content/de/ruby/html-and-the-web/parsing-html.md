@@ -12,9 +12,6 @@ title: HTML parsen
 weight: 43
 ---
 
-## Was & Warum?
-HTML zu parsen bedeutet, ein Stück HTML-Code zu zerlegen, um seine Struktur und seinen Inhalt zu erfassen. Programmierer machen das, um Daten zu extrahieren, Inhalte zu manipulieren oder Informationen zwischen Formaten und Systemen zu migrieren.
-
 ## Wie:
 Um HTML in Ruby zu parsen, installiere das 'Nokogiri'-Gem mit `gem install nokogiri`. Nokogiri ist wie ein Schweizer Taschenmesser für die Arbeit mit HTML und XML in Ruby. Hier ein schnelles Beispiel:
 

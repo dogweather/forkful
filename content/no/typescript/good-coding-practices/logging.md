@@ -12,12 +12,7 @@ title: "Loggf\xF8ring"
 weight: 17
 ---
 
-## Hva & Hvorfor?
-
-Logging er prosessen med å registrere hendelser, feil og annen viktig informasjon under kjøringen av et program til et eksternt medium, ofte filer eller databaser. Programmerere bruker logger for å overvåke programvareatferd, feilsøke problemer og spore systemaktiviteter for sikkerhets- og ytelsesanalyse.
-
 ## Hvordan:
-
 I TypeScript kan du enkelt implementere grunnleggende logging ved hjelp av konsollmetoder eller integrere mer avansert logging med biblioteker som `winston` eller `pino`. Her er et grunnleggende eksempel som bruker `console.log` og et mer avansert ett med `winston`.
 
 ```TypeScript
@@ -58,7 +53,6 @@ logger.error('Klarte ikke å koble til databasen.');
 ```
 
 ## Dypdykk:
-
 Konseptet logging innen databehandling går tilbake til de tidlige dagene av programmering, hvor selve uttrykket er avledet fra "logg", et nautisk system for å føre oppføringer. Historisk sett ble programhendelser ofte logget til fysiske utskrifter eller terminalutganger, spesielt under stormaskinæraen.
 
 Hvis vi spoler frem til i dag, har du et vell av verktøy og biblioteker til disposisjon som imøtekommer ulike loggebehov, fra enkle tekstfiler til komplekse loggestyringssystemer. Alternativer til `winston` inkluderer `pino`, som skryter av høy ytelse, og `Bunyan`, som er basert på JSON. Når du jobber med Node.js, tilbyr loggingbiblioteker ofte strømmemekanismer for å kanalisere logger til forskjellige bestemmelsessteder, støtte for loggrotasjon og tilpassbare formaterere.
@@ -66,7 +60,6 @@ Hvis vi spoler frem til i dag, har du et vell av verktøy og biblioteker til dis
 Når det gjelder implementering, inneholder loggmeldinger vanligvis et tidsstempel, et alvorlighetsnivå (som info, warn, error) og selve meldingen. God loggepraksis anbefaler å kategorisere loggnivåene skikkelig, unngå sensitiv data i logger og vurdere ytelsesimplikasjoner i applikasjoner med høy gjennomstrømning.
 
 ## Se Også:
-
 - [Winston - En logger for så og si alt](https://www.npmjs.com/package/winston)
 - [Pino - Veldig rask Node.js logger](https://www.npmjs.com/package/pino)
 - [Beste praksiser for logging i Node.js](https://thisdavej.com/using-winston-a-versatile-logging-library-for-node-js/)

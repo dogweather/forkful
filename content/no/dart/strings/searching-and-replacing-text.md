@@ -14,16 +14,10 @@ title: "S\xF8k og erstatt tekst"
 weight: 10
 ---
 
-## Hva og Hvorfor?
-
-Søking og erstatting av tekst i Dart innebærer å undersøke strenger for å finne visse mønstre eller sekvenser av tegn og erstatte dem med nytt innhold. Denne operasjonen er grunnleggende for oppgaver som datavalidering, formatering av utdata, parsing av brukerinndata, eller til og med manipulering av URL-er og filstier, noe som gjør applikasjoner mer dynamiske og responsive overfor brukerbehov.
-
 ## Hvordan:
-
 Dart tilbyr robuste metoder for søking og erstatting av tekst direkte gjennom sin `String`-klasse, uten behov for eksterne biblioteker. Slik kan du gjøre det:
 
 ### Grunnleggende søking og erstatting
-
 For å søke etter en delstreng og erstatte den med en annen streng, kan du bruke `replaceAll`:
 
 ```dart
@@ -33,7 +27,6 @@ print(modifiedText); // Utdata: Hallo, Flutter! Flutter er flott.
 ```
 
 ### Bruk av regulære uttrykk
-
 For mer komplekse søke- og erstatningsbehov, benytter Dart regulære uttrykk via `RegExp`-klassen. Dette tillater mønstersøking og erstatning i strenger:
 
 ```dart
@@ -45,7 +38,6 @@ print(modifiedText); // Utdata: Dart 2024, Flutter 2024
 Dette eksempelet finner alle forekomster av ett eller flere sifre (`\d+`) i strengen og erstatter dem med "2024".
 
 ### Søking uten hensyn til bokstavstørrelse
-
 For å utføre et søk uten hensyn til bokstavstørrelse, kan du endre `RegExp`-konstruktøren for å ignorere bokstavstørrelse:
 
 ```dart
@@ -55,7 +47,6 @@ print(modifiedText); // Utdata: Velkommen til Flutter, programmeringsspråket.
 ```
 
 ### Erstatning med en funksjon
-
 For dynamiske erstatninger basert på selve treffet, tillater Dart å sende en funksjon til `replaceAllMapped`. Denne funksjonen kan utføre operasjoner eller beregninger på de funnede sekvensene:
 
 ```dart

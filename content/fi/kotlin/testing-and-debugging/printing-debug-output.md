@@ -10,9 +10,6 @@ title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
 
-## What & Why?
-Mikä ja miksi? Debug-tulosteiden tulostaminen tarkoittaa koodin toiminnan tarkkailua reaaliajassa. Kehittäjät käyttävät sitä sovellusten virheiden etsimiseen ja korjaamiseen.
-
 ## How to:
 Koodiesimerkit ja tulosteet.
 

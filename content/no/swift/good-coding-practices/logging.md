@@ -10,9 +10,6 @@ title: "Loggf\xF8ring"
 weight: 17
 ---
 
-## Hva & Hvorfor?
-Logging er prosessen med å registrere applikasjonsatferd, feil, og annen viktig informasjon til et vedvarende medium, som en fil eller database. Programmerere gjør dette for å spore helsen og ytelsen til appene sine, for å feilsøke problemer, og for å holde et øye med hva som skjer under panseret i produksjonsmiljøer.
-
 ## Hvordan gjøre det:
 I Swift kan du skrive logger til konsollen med utskriftssetninger eller det mer fleksible `os.log` API-et, som kobler seg på det enhetlige loggsystemet på Apple-plattformer.
 

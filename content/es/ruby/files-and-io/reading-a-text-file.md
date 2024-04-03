@@ -10,9 +10,6 @@ title: Lectura de un archivo de texto
 weight: 22
 ---
 
-## Qué y Por Qué?
-Leer un archivo de texto en Ruby significa que tu programa carga el contenido del archivo para trabajar con él. Los programadores hacen esto para manipular datos, configurar programas, y muchas otras razones prácticas.
-
 ## Cómo Hacerlo:
 Aquí te muestro cómo leer un archivo:
 

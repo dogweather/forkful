@@ -11,9 +11,6 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## What & Why? / Co i Dlaczego?
-W Elm, wysyłanie zapytania HTTP to sposób na połączenie się z serwerem i pobranie lub wysłanie danych. Programiści robią to, aby ich aplikacje mogły komunikować się z zewnętrznymi API, pobierać aktualizacje lub przekazywać informacje.
-
 ## How to / Jak to zrobić:
 ```Elm
 import Http

@@ -14,14 +14,10 @@ title: "Modification de fichiers sur place avec des lignes de commande en une se
 weight: 32
 ---
 
-## Quoi et pourquoi ?
-
-L'édition de fichiers directement avec des lignes de commande (CLI) en une ligne avec PowerShell consiste à effectuer des modifications directes sur les fichiers depuis la ligne de commande, sans avoir besoin de les ouvrir dans un éditeur. Cette approche permet de gagner du temps et peut être particulièrement utile pour le traitement par lots ou l’automatisation des tâches d’édition répétitives sur plusieurs fichiers.
-
 ## Comment faire :
 
-### Remplacer du texte dans un fichier unique
 
+### Remplacer du texte dans un fichier unique
 Commençons par une tâche simple : vous voulez remplacer toutes les instances de "oldtext" par "newtext" dans un fichier nommé example.txt. Voici comment vous pouvez le faire :
 
 ```PowerShell
@@ -31,7 +27,6 @@ Commençons par une tâche simple : vous voulez remplacer toutes les instances d
 Cette ligne de commande lit le contenu, effectue le remplacement et réécrit le contenu dans le fichier original.
 
 ### Éditer plusieurs fichiers
-
 Que faire si vous avez besoin d'appliquer le même changement à plusieurs fichiers ? Voici une approche utilisant une boucle :
 
 ```PowerShell
@@ -43,7 +38,6 @@ Get-ChildItem *.txt | ForEach-Object {
 Ce bout de code trouve tous les fichiers `.txt` dans le répertoire courant, en remplaçant "oldtext" par "newtext" dans chacun d'eux.
 
 ### Ajouter du contenu au début ou à la fin des fichiers
-
 Ajouter ou préfixer du contenu peut également être simplifié :
 
 ```PowerShell
@@ -57,7 +51,6 @@ Ajouter ou préfixer du contenu peut également être simplifié :
 Ici, nous concaténons simplement le nouveau contenu avant ou après le contenu existant et le sauvegardons.
 
 ## Plongée profonde
-
 Historiquement, l'édition directe dans les fichiers est plus généralement associée à des outils Unix tels que `sed` et `awk`. PowerShell, étant un nouvel arrivant, n'inclut pas de fonctionnalité d'édition directe en soi. Cela est en partie dû à sa philosophie de conception, soulignant l'importance des objets par rapport aux flux de texte, contrairement aux outils Unix qui traitent la plupart des entrées comme du texte.
 
 Les alternatives à PowerShell pour cette tâche incluent l'utilisation d'outils Unix traditionnels disponibles sur Windows via Cygwin ou le sous-système Windows pour Linux (WSL). Ces outils offrent souvent une syntaxe plus concise pour l'édition directe en raison de leur conception centrée sur le texte.

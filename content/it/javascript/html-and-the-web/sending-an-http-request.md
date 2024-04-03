@@ -10,9 +10,6 @@ title: Inviare una richiesta http
 weight: 44
 ---
 
-## Che Cosa & Perché?
-Mandare una richiesta HTTP consente al tuo codice JavaScript di comunicare con un server web e scambiare dati. I programmatori lo fanno per ottenere nuovi contenuti, inviare informazioni e integrare servizi esterni nelle loro applicazioni.
-
 ## Come Fare:
 JavaScript moderno offre l'API `fetch()` per inviare richieste HTTP in modo facile. Qui, un esempio semplice e la risposta attesa:
 

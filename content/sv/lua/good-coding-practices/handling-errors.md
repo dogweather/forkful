@@ -10,9 +10,6 @@ title: Hantering av fel
 weight: 16
 ---
 
-## Vad & Varför?
-Att hantera fel i kodning är att vänta sig det oväntade. Det är konsten att planera för när saker och ting går snett så att du kan hålla ditt program körande smidigt.
-
 ## Hur gör man:
 Lua använder två huvudfunktioner för felhantering: `pcall` och `xpcall`. Så här använder du dem:
 

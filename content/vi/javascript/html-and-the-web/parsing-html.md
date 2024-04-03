@@ -15,9 +15,6 @@ title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---
 
-## Cái Gì & Tại Sao?
-Phân tích cú pháp HTML có nghĩa là trích xuất dữ liệu từ tài liệu HTML. Các lập trình viên thực hiện điều này để tương tác với hoặc thao tác nội dung web, tự động hóa việc trích xuất dữ liệu, hoặc cho mục đích web scraping.
-
 ## Làm Thế Nào:
 Hãy phân tích cú pháp HTML sử dụng API `DOMParser` trong JavaScript.
 

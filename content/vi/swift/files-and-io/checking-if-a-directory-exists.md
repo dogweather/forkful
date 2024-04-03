@@ -16,9 +16,6 @@ title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---
 
-## Gì và Tại sao?
-Trong Swift, việc kiểm tra nếu một thư mục tồn tại giúp bạn xác nhận trạng thái của hệ thống tệp trước khi bạn đọc hoặc ghi dữ liệu. Lập trình viên làm điều này để tránh lỗi, như đọc từ một thư mục không tồn tại, có thể làm cho ứng dụng bị crash hoặc dẫn đến các hoạt động sai lầm.
-
 ## Làm thế nào:
 `FileManager` của Swift có các công cụ cho việc này. Sử dụng phương thức `fileExists(atPath:)` của nó:
 

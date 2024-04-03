@@ -16,9 +16,6 @@ title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---
 
-## Cái gì & Tại sao?
-Loại bỏ dấu ngoặc kép khỏi một chuỗi có nghĩa là loại bỏ những dấu ngoặc kép hoặc dấu ngoặc đơn bao quanh các giá trị văn bản. Các lập trình viên thường làm điều này để làm sạch đầu vào từ người dùng, đảm bảo tính nhất quán trong việc xử lý dữ liệu, hoặc chuẩn bị dữ liệu cho các hệ thống có thể bị nhầm lẫn bởi những ký tự thừa.
-
 ## Làm thế nào:
 Ruby có một số thủ thuật hay ho để cắt bỏ những dấu ngoặc kép phiền phức đó. Bạn có thể sử dụng các phương thức `gsub` hoặc `delete` để hoàn thành công việc. Dưới đây là một số mã để tham khảo:
 

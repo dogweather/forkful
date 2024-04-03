@@ -14,14 +14,10 @@ title: Att Arbeta med CSV
 weight: 37
 ---
 
-## Vad och Varför?
-
-Att arbeta med CSV-filer (Comma-Separated Values) i Google Apps Script innebär att läsa, modifiera och skriva textfiler där varje rad representerar en datapost med värden separerade av komman. Programmerare gör detta för att enkelt utbyta data mellan olika applikationer, databaser eller programmeringsspråk på grund av CSV:s breda användning som ett enkelt, textbaserat datautbytesformat.
-
 ## Hur man gör:
 
-### Läsa CSV-data
 
+### Läsa CSV-data
 För att läsa CSV-data från en fil som är lagrad i Google Drive, behöver du först hämta filens innehåll som en sträng för att sedan tolka det. Google Apps Script gör det enkelt att hämta filinnehåll med DriveApp-tjänsten.
 
 ```javascript
@@ -39,7 +35,6 @@ function readCSV() {
 ```
 
 ### Skriva CSV-data
-
 Att skapa och skriva till en CSV innebär att konstruera en sträng med komma-separerade värden och radbrytningar, för att sedan spara eller exportera den. Detta exempel demonstrerar skapandet av en ny CSV-fil i Google Drive.
 
 ```javascript
@@ -54,7 +49,6 @@ function writeCSV() {
 ```
 
 ### Exempel på utdata
-
 När man loggar cellraderna från att ha läst en CSV:
 
 ```plainttext
@@ -71,7 +65,6 @@ Jane Smith,34,Designer
 ```
 
 ## Fördjupning
-
 Historiskt sett har CSV-filer varit omtyckta för deras enkelhet och läsbarhet för människor, vilket gjort dem tillgängliga för icke-programmerare och användbara för snabba uppgifter för datainspektion. Dock, Google Apps Script verkar inom ramen för Googles ekosystem, där Google Kalkylark fungerar som ett kraftfullt, användarvänligt alternativ för manipulering av CSV. Kalkylark erbjuder inte bara ett grafiskt användargränssnitt för att redigera data men stöder också komplexa formler, styling och många fler funktioner som råa CSV-filer saknar.
 
 Trots fördelarna som erbjuds av Google Kalkylark, är direkt manipulering av CSV i Google Apps Script fortfarande viktigt för automatiserade uppgifter, särskilt när man hanterar externa system som genererar eller kräver data i CSV-format. Till exempel, integration med äldre system, exportera data för användning i andra applikationer eller förbehandling innan data matas in i Google Kalkylark.

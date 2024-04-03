@@ -10,9 +10,6 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-Writing a text file in PHP involves creating or opening a file and inserting content into it. Programmers do this to persist data, like user-generated content or logs, beyond the lifecycle of the program.
-
 ## How to:
 PHP natively supports file writing through functions like `file_put_contents`, `fopen` together with `fwrite`, and `fclose`. Here is how to use them:
 

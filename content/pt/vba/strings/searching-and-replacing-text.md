@@ -12,16 +12,10 @@ title: Pesquisando e substituindo texto
 weight: 10
 ---
 
-## O Que & Por Quê?
-
-Pesquisar e substituir texto em Visual Basic for Applications (VBA) é essencial para editar documentos, planilhas e bancos de dados programaticamente. Essa capacidade permite que programadores automatizem edições em massa, corrigindo erros ou atualizando informações em grandes conjuntos de dados sem intervenção manual.
-
 ## Como fazer:
-
 No VBA, pesquisar e substituir texto pode ser alcançado usando a função `Replace` ou por meio de modelos de objetos específicos em aplicações como Excel ou Word. Abaixo estão exemplos que ilustram ambas as abordagens.
 
 ### Usando a Função `Replace`:
-
 A função `Replace` é direta para substituições simples de texto. Ela tem a forma `Replace(expressão, encontrar, substituirPor[, início[, contagem[, comparar]]])`.
 
 Exemplo:
@@ -40,7 +34,6 @@ Olá, Todos! Programar em VBA é divertido.
 ```
 
 ### Pesquisando e Substituindo no Excel:
-
 Para o Excel, você pode usar o método `Range.Replace` que oferece mais controle, como sensibilidade a maiúsculas e minúsculas e substituições de palavras inteiras.
 
 Exemplo:
@@ -56,7 +49,6 @@ End Sub
 ```
 
 ### Pesquisando e Substituindo no Word:
-
 De forma semelhante, o Word tem um recurso `Find` e `Replace` poderoso acessível através do VBA.
 
 Exemplo:
@@ -74,7 +66,6 @@ End Sub
 ```
 
 ## Aprofundamento:
-
 Pesquisar e substituir texto no VBA remonta às capacidades de automação iniciais nas aplicações do Microsoft Office, aumentando significativamente a produtividade ao scriptar tarefas repetitivas. Com o tempo, essas funções evoluíram para se tornarem mais poderosas e flexíveis, atendendo a uma ampla gama de casos de uso.
 
 Enquanto a função `Replace` do VBA é conveniente para operações simples de texto, os modelos de objeto do Excel e Word oferecem maior controle e devem ser usados para tarefas específicas de aplicativos. Eles suportam recursos avançados como correspondência de padrões, preservação de formatação e critérios de pesquisa nuances (por exemplo, combinar caso, palavras inteiras).

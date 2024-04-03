@@ -10,9 +10,6 @@ title: "XML:n k\xE4sittely"
 weight: 40
 ---
 
-## Mitä & Miksi?
-XML (eXtensible Markup Language) koskee datan rakenteellistamista luettavassa muodossa. Ohjelmoijat käsittelevät XML:ää konfiguraatioon, datan vaihtoon sovellusten välillä ja kun määritykset sitä vaativat – ajattele SOAP-protokollaa tai web API:ja.
-
 ## Kuinka:
 ```C#
 using System;

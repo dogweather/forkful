@@ -14,12 +14,7 @@ title: Organisering av kode i funksjoner
 weight: 18
 ---
 
-## Hva & Hvorfor?
-
-Å organisere kode i funksjoner i Visual Basic for Applications (VBA) innebærer å bryte ned et program i mindre, håndterbare deler kjent som funksjoner. Programmerere gjør dette for å øke kodelesbarheten, gjenbruke kode effektivt, og forenkle feilsøking og vedlikeholdsprosesser.
-
 ## Hvordan:
-
 I VBA defineres funksjoner ved å bruke `Function` og `End Function`-uttalelsene. Her er et enkelt eksempel på hvordan du oppretter en funksjon som beregner arealet av et rektangel:
 
 ```basic
@@ -41,7 +36,6 @@ End Sub
 Når utført, viser denne koden en meldingsboks som sier: `Arealet er 50`.
 
 ### Overføre Variabler ByRef og ByVal
-
 VBA lar deg overføre variabler til funksjoner enten ved referanse (`ByRef`) eller ved verdi (`ByVal`). Det første betyr at den originale variabelen kan modifiseres av funksjonen, mens det sistnevnte overfører en kopi, og beskytter den originale variabelen mot endringer.
 
 ```basic
@@ -56,7 +50,6 @@ End Function
 ```
 
 ## Dypdykk
-
 VBA, som et hendelsesdrevet programmeringsspråk, legger betydelig vekt på funksjoner og subrutiner for å håndtere ulike oppgaver. I motsetning til mange moderne språk, har VBA en unik egenskap der `Function`-nøkkelordet ikke bare erklærer en blokk med gjenbrukbar kode, men også tillater en implisitt returverdi direkte tildelt til funksjonens navn.
 
 Historisk sett har designet av VBA-funksjoner vært påvirket av tidligere programmeringsparadigmer der innkapsling og modularitet gradvis ble anerkjent for deres betydning i programvareutviklingen. Denne historiske bakgrunnen har ført til at VBA adopterte en noe konservativ, men funksjonell tilnærming til organisering av kode.

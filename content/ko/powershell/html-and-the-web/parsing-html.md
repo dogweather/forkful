@@ -21,15 +21,10 @@ title: "HTML \uD30C\uC2F1"
 weight: 43
 ---
 
-## 무엇 & 왜?
-PowerShell에서 HTML 파싱은 특정 데이터를 추출하거나 웹 관련 작업을 자동화하기 위해 HTML 콘텐츠를 분석하는 것을 의미합니다. 프로그래머들은 웹 페이지와 상호작용하거나 웹 콘텐츠를 스크레이핑하거나 웹 브라우저 없이 폼 제출이나 다른 웹 상호작용을 자동화하기 위해 이 작업을 수행합니다.
-
 ## 방법:
-
 PowerShell은 기본적으로 전용 HTML 파서를 가지고 있지 않지만, `Invoke-WebRequest` cmdlet을 사용하여 HTML 콘텐츠에 접근하고 파싱할 수 있습니다. 보다 복잡한 파싱과 조작을 위해서는 인기 있는 .NET 라이브러리인 HtmlAgilityPack을 활용할 수 있습니다.
 
 ### `Invoke-WebRequest` 사용하기:
-
 ```powershell
 # 웹페이지에서 제목을 가져오는 간단한 예
 $response = Invoke-WebRequest -Uri 'http://example.com'
@@ -45,7 +40,6 @@ Example Domain
 ```
 
 ### HtmlAgilityPack 사용하기:
-
 먼저, HtmlAgilityPack을 설치해야 합니다. NuGet 패키지 관리자를 통해 설치할 수 있습니다:
 
 ```powershell

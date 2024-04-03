@@ -14,12 +14,7 @@ title: Lecture d'un fichier texte
 weight: 22
 ---
 
-## Quoi & Pourquoi ?
-
-Lire un fichier texte en Visual Basic pour Applications (VBA) implique d'accéder programmatiquement et d'extraire le contenu d'un fichier texte depuis une application Office. Les programmeurs effectuent souvent cette tâche pour importer ou traiter des données stockées dans des fichiers plats, facilitant ainsi l'automatisation et la manipulation de données directement dans l'écosystème Office.
-
 ## Comment faire :
-
 La manière la plus simple de lire un fichier texte en VBA est d'utiliser l'instruction `Open` en combinaison avec les fonctions `Input` ou `Line Input`. Voici comment vous pouvez le faire :
 
 1. **Ouvrir le fichier pour lecture** - Premièrement, vous devez ouvrir le fichier. Assurez-vous que le chemin du fichier est accessible à l'application.
@@ -67,7 +62,6 @@ Bonne lecture !
 La sortie dans la fenêtre Immédiate serait le texte complet ou ligne par ligne en fonction de la méthode choisie.
 
 ## Approfondissement
-
 La lecture de fichiers texte en VBA est une pierre angulaire des tâches d'automatisation de bureau depuis des décennies. Les méthodes illustrées, bien qu'efficaces dans l'écosystème VBA, peuvent sembler archaïques par rapport aux pratiques de programmation modernes qui emploient souvent des abstractions de plus haut niveau ou des bibliothèques pour les opérations sur fichiers. Par exemple, Python utilise la fonction `open()` à l'intérieur d'une instruction `with`, offrant une syntaxe plus claire et des capacités de gestion automatique des fichiers.
 
 Cela dit, lorsqu'on travaille dans les limites de l'environnement Microsoft Office, VBA fournit une méthode directe et native pour manipuler des fichiers, ce qui peut être crucial pour des applications nécessitant une interopérabilité avec les produits Office. La simplicité d'ouvrir un fichier texte, de lire et de traiter son contenu ligne par ligne ou dans son intégralité, sans avoir besoin de bibliothèques externes ou de configurations complexes, fait de VBA un outil précieux dans la boîte à outils du développeur Office.

@@ -15,9 +15,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---
 
-## Mikä & Miksi?
-Päivämäärän jäsentäminen merkkijonosta tarkoittaa tekstissä kirjoitettujen päivämäärien tunnistamista ja muuntamista päivämäärätyypiksi, jonka PowerShell ymmärtää ja jolla se voi työskennellä. Ohjelmoijat tekevät tämän manipuloidakseen, muotoillakseen, vertailakseen tai lasketakseen päivämääriä, mikä on yleinen tehtävä skripteissä, jotka käsittelevät lokitiedostoja, käyttäjän syötteitä tai datan prosessointia.
-
 ## Kuinka:
 PowerShell tekee päivämäärän jäsentämisen merkkijonoista suoraviivaista `Get-Date` cmdlet:llä ja `[datetime]` tyypin kiihdyttimellä, jotka toimivat hyvin standardimuotoisille päivämäärille. Monimutkaisempia tai ei-standardimuotoisia päivämäärämerkkijonoja varten voidaan käyttää `[datetime]::ParseExact` metodia määrittelemään tarkka muoto.
 

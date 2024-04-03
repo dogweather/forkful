@@ -16,9 +16,6 @@ title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Gì và Tại sao?
-Tạo một tệp tạm thời có nghĩa là tạo một tệp để sử dụng trong thời gian ngắn, thường là để lưu trữ dữ liệu trong suốt một phiên làm việc. Các lập trình viên thực hiện việc này để tránh làm rối loạn hệ thống và để xử lý dữ liệu không cần được lưu trữ lâu dài.
-
 ## Cách thực hiện:
 Để tạo ra một tệp tạm thời trong PowerShell, bạn sử dụng `New-TemporaryFile`. Cmdlet này tạo một tệp tạm thời trong thư mục temp của bạn. Dưới đây là bí kíp:
 

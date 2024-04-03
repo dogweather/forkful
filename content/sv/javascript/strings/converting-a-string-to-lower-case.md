@@ -11,9 +11,6 @@ title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---
 
-## What & Why? (Vad & Varför?)
-Att konvertera en sträng till gemener innebär att omvandla alla bokstäver i strängen till små bokstäver. Programmerare gör detta för att standardisera textdata, till exempel för att underlätta jämförelser eller sökningar oavsett hur datan matades in.
-
 ## How to: (Hur gör man:)
 ```javascript
 let greeting = "Hej Världen!";

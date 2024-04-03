@@ -11,9 +11,6 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva & Hvorfor?
-Å avrunde tall betyr å justere dem til en nærliggende verdi for enkelhets skyld eller for å matche en viss presisjon. Det er nyttig for å forbedre lesbarheten, redusere lagringsplass eller møte domenespesifikke behov, som pengekalkulasjoner hvor du vil avrunde til nærmeste øre.
-
 ## Hvordan:
 I Elixir kan du bruke `Float.round/2` for å avrunde et flyttall. Du kan spesifisere antallet desimaler du vil beholde. Slik fungerer det:
 

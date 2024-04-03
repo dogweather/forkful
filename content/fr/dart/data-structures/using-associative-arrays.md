@@ -13,12 +13,7 @@ title: Utilisation des tableaux associatifs
 weight: 15
 ---
 
-## Quoi & Pourquoi ?
-
-Les tableaux associatifs en Dart, communément appelés Maps, sont des structures de données qui stockent des données en paires clé-valeur. Ils permettent aux programmeurs d'accéder aux éléments non pas à travers des indices, mais des clés, rendant la récupération de données intuitive et efficace, surtout lorsqu'on travaille avec des données structurées où chaque élément a un identifiant unique.
-
 ## Comment faire :
-
 Dart offre une syntaxe simple pour créer et manipuler des Maps. Ci-dessous, des exemples démontrant les opérations de base telles que la création, l'ajout d'éléments et la récupération de valeurs.
 
 ```dart

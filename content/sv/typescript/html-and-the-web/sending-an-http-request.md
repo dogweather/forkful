@@ -11,9 +11,6 @@ title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## What & Why?
-Att skicka en HTTP-begäran handlar om att be en server att skicka data tillbaka till din applikation. Programmerare gör detta för att hämta resurser, skicka information eller initiera åtgärder på fjärrservrar.
-
 ## How to:
 I TypeScript använder vi ofta 'fetch'-API:et för att skicka HTTP-förfrågningar. Här är ett exempel:
 

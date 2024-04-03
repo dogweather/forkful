@@ -11,9 +11,6 @@ title: Registro de Logs
 weight: 17
 ---
 
-## O Quê & Por Quê?
-A "logging" em programação é o processo de registrar eventos, estados e informações em um arquivo ou em outro meio de saída. Os programadores fazem logs para acompanhar o que está acontecendo em suas aplicações, para depurar problemas e para monitorar o desempenho para futuras análises e otimizações.
-
 ## Como:
 Vamos supor que você esteja trabalhando em um sistema Linux e queira jogar seus logs em um arquivo com o bom e velho C++. Você vai querer incluir as bibliotecas `<iostream>` e `<fstream>` para realizar operações com arquivos. Aqui está um exemplo rápido:
 

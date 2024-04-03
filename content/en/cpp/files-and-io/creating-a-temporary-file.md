@@ -10,12 +10,7 @@ title: Creating a temporary file
 weight: 21
 ---
 
-## What & Why?
-
-Creating a temporary file means making a file that's designed to store data temporarily and is deleted after use. Programmers do it to handle intermediate data without cluttering the filesystem or risking conflict with other files.
-
 ## How to:
-
 Here's how to create and use a temporary file in current C++:
 
 ```C++
@@ -57,7 +52,6 @@ Temporary file created at: /tmp/abc123
 ```
 
 ## Deep Dive
-
 Temporary files come in handy in cases like saving state, sorting large datasets, or handling output that doesn't need to persist. Historically, temp files were created in a common directory (like `/tmp` on Unix systems) with a simple naming scheme, risking collisions. Modern C++ uses the `<filesystem>` library to avoid such issues.
 
 Alternatives include using RAM-based temporary storage (like tmpfs in most Unix-like systems) or database blobs. These methods keep the ephemeral data in memory or managed systems, reducing I/O overhead and improving performance.
@@ -68,7 +62,6 @@ Implementation wise, remember that:
 - Clean up: Delete your temporaries (although the system often does, it’s a good habit).
 
 ## See Also
-
 - [C++ Filesystem Library](https://en.cppreference.com/w/cpp/filesystem)
 - [C++ IOstreams Library](https://en.cppreference.com/w/cpp/io)
 - [Temporary File Handling in C](http://www.cplusplus.com/reference/cstdio/tmpfile/)

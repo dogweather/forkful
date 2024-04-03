@@ -11,9 +11,6 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Che cosa & Perché?
-Arrotondare i numeri significa tagliare le cifre decimali fino a una precisione impostata, spesso fino ai numeri interi. I programmatori arrotondano per semplificare i calcoli, migliorare le prestazioni o rendere gli output più facili da comprendere per l'utente.
-
 ## Come fare:
 PHP offre alcuni modi per arrotondare i numeri: `round()`, `ceil()` e `floor()`. Ecco come funzionano:
 

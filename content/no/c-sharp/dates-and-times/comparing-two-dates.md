@@ -11,9 +11,6 @@ title: Sammenlikning av to datoer
 weight: 27
 ---
 
-## What & Why?
-Comparing two dates means figuring out their relationship—are they the same, is one earlier, or is one later? Programmers need to do this to sort events, calculate durations, and manage deadlines or schedules.
-
 ## How to:
 ```C#
 using System;

@@ -16,9 +16,6 @@ title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
 weight: 44
 ---
 
-## What & Why? (무엇이며 왜?)
-HTTP 요청을 보내는 것은 웹 서버에 정보를 요청하거나 전송하는 방법입니다. 프로그래머들은 데이터를 주고받거나, 웹 API와 상호 작용하기 위해 이를 사용합니다.
-
 ## How to:
 Elixir에서 HTTP 요청을 보내려면, `HTTPoison` 라이브러리를 사용하는 것이 일반적입니다. `mix.exs` 파일에 의존성을 추가하고, 예시로 간단한 GET 요청을 보내 봅시다.
 

@@ -11,12 +11,7 @@ title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---
 
-## ¿Qué & Por Qué?
-
-Eliminar caracteres que coinciden con un patrón es como hacer una limpieza en tu texto, manteniendo solo lo que necesitas. Los programadores lo hacen para validar entradas, limpiar datos o simplificar cadenas antes de manipularlas o almacenarlas.
-
 ## Cómo hacerlo:
-
 Aquí va un ejemplos sencillo. Queremos quitar todos los dígitos de una cadena de texto:
 
 ```javascript
@@ -42,7 +37,6 @@ console.log(textoSinpuntuacion); // "¡Hola mundo ¿Todo bien"
 ```
 
 ## Análisis Profundo:
-
 Históricamente, manipular cadenas de texto ha sido una necesidad común en la programación. En JavaScript, `.replace()` ha sido el método go-to para esto. Usa expresiones regulares (regex) para identificar patrones. 
 
 Alternativas al método `.replace()` incluyen el uso de librerías como Lodash o crear funciones específicas. Cada enfoque tiene sus ventajas: `.replace()` es rápido y nativo, mientras que las librerías a menudo ofrecen funciones más legibles y personalizables.
@@ -50,7 +44,6 @@ Alternativas al método `.replace()` incluyen el uso de librerías como Lodash o
 Los detalles de implementación para eliminar caracteres dependen de la precisión del patrón regex. Un patrón incorrecto o mal formado puede resultar en que se eliminen los caracteres equivocados o ninguno. La bandera 'g' en la regex asegura que se aplique la eliminación a toda la cadena, no solo al primer match encontrado.
 
 ## Ver También:
-
 - MDN Web Docs sobre .replace(): https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/replace
 - Expresiones Regulares en JavaScript: https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
 - Lodash, una librería de utilidades de JavaScript: https://lodash.com/

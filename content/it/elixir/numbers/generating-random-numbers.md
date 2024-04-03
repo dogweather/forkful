@@ -12,12 +12,7 @@ title: Generazione di numeri casuali
 weight: 12
 ---
 
-## Cosa & Perché?
-
-La generazione di numeri casuali in Elixir è un compito di programmazione fondamentale, vitale per applicazioni che necessitano di risultati imprevedibili come nella generazione di token sicuri, nel campionamento di dati o in algoritmi di gioco. I programmatori lo utilizzano per introdurre un livello di casualità e variabilità nelle loro applicazioni, rendendole più dinamiche e meno deterministiche.
-
 ## Come fare:
-
 Per generare numeri casuali in Elixir, si utilizza principalmente il modulo `:rand`, che fornisce diverse funzioni per questo scopo. Ecco una guida rapida per iniziare:
 
 Prima di tutto, assicurati di inizializzare il generatore di numeri casuali con un punto di partenza unico:
@@ -52,7 +47,6 @@ IO.puts(random_float_range)
 Ricorda, questi numeri sono pseudo-casuali; sono determinati dal seme e dall'algoritmo ma sono sufficienti per la maggior parte delle applicazioni.
 
 ## Approfondimento
-
 Le capacità di generazione di numeri casuali di Elixir si basano sul modulo `:rand` di Erlang, riflettendo la sua eredità e stretta relazione con Erlang. Il modulo `:rand` ha sostituito il più vecchio modulo `:random`, offrendo algoritmi migliorati per la generazione di numeri casuali. Fornisce una varietà di algoritmi, il predefinito è `exsplus`, ma supporta anche altri come `exs64`, `exsl`, e altro, ognuno con i suoi compromessi in termini di velocità e qualità della casualità.
 
 Un aspetto interessante della generazione di numeri casuali in Elixir (e quindi di Erlang) è il suo trattamento dei semi. Il sistema mantiene stati dei semi separati per ogni processo, assicurando che i processi concorrenti non interferiscano con le sequenze di numeri casuali l'uno dell'altro. Questo è particolarmente utile in applicazioni concorrenti, garantendo prevedibilità e affidabilità nei sistemi distribuiti.

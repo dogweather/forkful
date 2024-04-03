@@ -11,9 +11,6 @@ title: "\xC5 jobbe med XML"
 weight: 40
 ---
 
-## Hva & Hvorfor?
-Å jobbe med XML innebærer å manipulere og få tilgang til data strukturert i det utvidbare merkespråket (eXtensible Markup Language). Programmerere arbeider med XML for å muliggjøre samspill med andre systemer eller for å lese og skrive konfigurasjonsfiler, datastrømmer og andre strukturerte dokumenter vanlige i webtjenester.
-
 ## Hvordan:
 ```PowerShell
 # Laste en XML-fil inn i en variabel

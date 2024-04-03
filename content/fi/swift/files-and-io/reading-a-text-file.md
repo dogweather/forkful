@@ -11,9 +11,6 @@ title: Tekstitiedoston lukeminen
 weight: 22
 ---
 
-## Mikä & Miksi?
-Luemme tekstifailia, kun haluamme ohjelmassamme käsitellä failissa olevaa dataa. Se on arkipäiväinen tapa saada sisältöä ohjelmaan; olkoon kyse konfiguraatiosta, input-datasetistä tai vaikkapa logien purkamisesta.
-
 ## How to:
 ```Swift
 import Foundation

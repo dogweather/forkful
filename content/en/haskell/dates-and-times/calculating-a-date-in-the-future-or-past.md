@@ -10,12 +10,7 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-
-Calculating a future or past date means finding a date before or after a given number of days, months, or years from a specific starting point. Programmers do this for things like expiration dates, scheduling, or determining the time elapsed between events.
-
 ## How to:
-
 Haskell uses libraries like `time` to deal with dates. Here's how to add days or months to a date, or subtract them to find a past date.
 
 ```Haskell
@@ -54,7 +49,6 @@ printFormattedDate date = putStrLn $ formatTime defaultTimeLocale "%F" date
 ```
 
 ## Deep Dive
-
 In Haskell, we often reach for the `time` library for date calculations. This library provides types and functions for DateTime arithmetic, parsing, and formatting. Historically, people would manually adjust dates, but libraries like `time` handle the quirks of calendars (like leap years).
 
 Alternatives to `time` include `Data.Time.Calendar.OrdinalDate` and `Data.Time.Clock.POSIX` for different needs, like working with week numbers or timestamps.
@@ -62,7 +56,6 @@ Alternatives to `time` include `Data.Time.Calendar.OrdinalDate` and `Data.Time.C
 Implementation wise, calculating dates is surprisingly complex. Even with `time`, functions like `addGregorianMonthsClip` ensure the resulting date is valid. For example, adding one month to January 31st will "clip" to the last day of February (either the 28th or 29th), not March 3rd.
 
 ## See Also
-
 - Haskell `time` library: http://hackage.haskell.org/package/time
 - Date and Time guide from The Haskell School: https://school.haskellforall.com/#date-and-time
 - ZonedTime and UTC explanation: https://www.47deg.com/blog/dealing-with-time-in-haskell/

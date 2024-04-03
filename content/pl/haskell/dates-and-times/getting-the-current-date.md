@@ -13,9 +13,6 @@ title: Pobieranie aktualnej daty
 weight: 29
 ---
 
-## Co i dlaczego?
-Pobranie aktualnej daty w Haskellu polega na uzyskaniu bieżącego czasu systemu i przekształceniu go na czytelny format daty. Programiści robią to, aby wykonywać operacje oparte na dacie, takie jak logowanie, planowanie zadań czy znakowanie czasem zdarzeń w aplikacjach.
-
 ## Jak to zrobić:
 Standardowa biblioteka Haskella, `base`, dostarcza moduł `Data.Time`, który oferuje funkcjonalność do pracy z datami i czasem. Oto jak użyć go do uzyskania aktualnej daty:
 

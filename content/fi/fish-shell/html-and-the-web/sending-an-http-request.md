@@ -9,9 +9,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## What & Why? (Mitä & Miksi?)
-HTTP-pyynnöt ovat tapa kommunikoida web-palvelimien kanssa. Ohjelmoijat käyttävät niitä dataa liikuttaakseen, API-kutsuja tehden ja verkkososiaalisuutta hallinnoidakseen.
-
 ## How to: (Kuinka tehdä:)
 Fish Shellissa HTTP-pyynnön lähettäminen onnistuu `curl` tai `httpie` komentojen avulla. 
 

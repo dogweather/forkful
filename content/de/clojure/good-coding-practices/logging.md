@@ -12,9 +12,6 @@ title: Protokollierung
 weight: 17
 ---
 
-## Was & Warum?
-Logging ist im Grunde das softwaretechnische Äquivalent zu einem Schiffslogbuch; es ist eine Methode, um Ereignisse aufzuzeichnen, die während des Betriebs einer Anwendung geschehen. Programmierer machen dies, um diese Ereignisse für das Debugging, die Überprüfung von Abläufen oder um Einblicke in das Verhalten eines Systems im Produktionsbetrieb zu erhalten.
-
 ## Wie geht das:
 Clojure stützt sich auf die Logging-Funktionen von Java, aber Sie können diese auf eine idiomatischere Clojure-Art anzapfen. Lassen Sie uns anschauen, wie Sie `clojure.tools.logging` verwenden könnten, das eine einfache Abstraktion über mehrere Logging-Frameworks bereitstellt:
 

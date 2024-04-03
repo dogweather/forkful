@@ -10,9 +10,6 @@ title: Iniciando un nuevo proyecto
 weight: 1
 ---
 
-## ¿Qué y Por Qué?
-Iniciar un nuevo proyecto en Haskell es abrir la puerta a un mundo de programación funcional pura. Los programadores emprenden esta tarea para explorar soluciones elegantes, resolver problemas complejos o experimentar con conceptos avanzados de tipo y función.
-
 ## Cómo Hacerlo:
 Para comenzar un nuevo proyecto en Haskell, lo más común es usar Stack, una herramienta de construcción que facilita la gestión de proyectos. Aquí tienes un ejemplo rápido:
 

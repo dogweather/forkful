@@ -11,9 +11,6 @@ title: Comparer deux dates
 weight: 27
 ---
 
-## Quoi & Pourquoi ?
-Comparer deux dates, c'est vérifier si elles sont égales, savoir laquelle est antérieure ou postérieure. On le fait souvent pour gérer des échéances, trier des événements ou valider des durées.
-
 ## Comment faire :
 ```Bash
 #!/bin/bash

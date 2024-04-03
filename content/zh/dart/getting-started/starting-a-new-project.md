@@ -22,12 +22,7 @@ title: "\u542F\u52A8\u65B0\u9879\u76EE"
 weight: 1
 ---
 
-## 什么和为什么？
-
-在 Dart 中启动一个新项目涉及到设置一个有助于高效开发、测试和部署的环境。程序员启动新的 Dart 项目以利用 Dart 的最佳性能和强大生态系统，特别是用于使用像 Flutter 这样的框架的 Web 和移动应用程序开发。
-
 ## 如何操作：
-
 1. **安装 Dart**：
    确保系统上已安装 Dart。如果没有，您可以从 [https://dart.dev/get-dart](https://dart.dev/get-dart) 下载。用下面的命令验证安装：
 

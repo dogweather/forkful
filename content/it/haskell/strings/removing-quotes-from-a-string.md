@@ -12,9 +12,6 @@ title: Rimuovere le virgolette da una stringa
 weight: 9
 ---
 
-## Cosa & Perché?
-Rimuovere le virgolette da una stringa significa togliere tutti i segni di virgolettatura—sia singoli (' ') che doppi (" ")—che fanno parte dei dati della stringa. I programmatori lo fanno per sanificare gli input, preparare il testo per l'elaborazione o eliminare i caratteri non necessari che potrebbero interferire con la gestione dei dati e le operazioni.
-
 ## Come fare:
 In Haskell, possiamo creare una funzione che rimuove tutte le virgolette da una stringa data. È come dire alle virgolette di andarsene, e assicurarsi che colgano l'indizio.
 

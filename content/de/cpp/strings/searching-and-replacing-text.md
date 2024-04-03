@@ -10,9 +10,6 @@ title: Suchen und Ersetzen von Text
 weight: 10
 ---
 
-## Was & Warum?
-Suchen und Ersetzen von Text ist ein Basiskonzept, bei dem Zeichenketten innerhalb einer größeren Textmenge gefunden und durch andere ersetzt werden. Programmierer verwenden es zum effizienten Ändern von Code, Datenaktualisierungen oder zum Verarbeiten von Textdaten.
-
 ## Wie geht das?
 ```C++
 #include <iostream>

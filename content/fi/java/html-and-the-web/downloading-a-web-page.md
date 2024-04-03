@@ -11,9 +11,6 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## What & Why? - Mitä & Miksi?
-Lataamme verkkosivun sisältöä tutkiaksemme sen rakennetta tai hyödyntääksemme tietoja. Ohjelmoijat tekevät tätä esimerkiksi datankeruuseen, palveluiden integraatioon tai sisällön seurantaan.
-
 ## How to: - Kuinka:
 ```java
 import java.io.*;

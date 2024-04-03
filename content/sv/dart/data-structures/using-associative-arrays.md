@@ -13,12 +13,7 @@ title: "Anv\xE4ndning av associativa arrayer"
 weight: 15
 ---
 
-## Vad & Varför?
-
-Associativa arrayer i Dart, som vanligtvis kallas Maps, är datastrukturer som lagrar data i nyckel-värde-par. De möjliggör för programmerare att nå element inte genom index, utan nycklar, vilket gör datahämtning intuitiv och effektiv, särskilt när man arbetar med strukturerad data där varje element har en unik identifierare.
-
 ## Hur gör man:
-
 Dart erbjuder en enkel syntax för att skapa och manipulera Maps. Nedan följer exempel som demonstrerar grundläggande operationer som att skapa, lägga till element och hämta värden.
 
 ```dart

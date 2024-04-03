@@ -11,9 +11,6 @@ title: Tratamento de erros
 weight: 16
 ---
 
-## O Que e Por Quê?
-Tratar erros em programação é sobre gerenciar o inesperado—coisas que podem dar errado. Programadores fazem isso para garantir que seus programas possam lidar com essas situações de forma elegante, sem quebrar ou produzir resultados errados.
-
 ## Como fazer:
 Haskell lida com erros de forma robusta através de tipos como `Maybe` e `Either`. Aqui está uma rápida olhada:
 

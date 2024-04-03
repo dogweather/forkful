@@ -12,12 +12,7 @@ title: Een string omzetten naar kleine letters
 weight: 4
 ---
 
-## Wat & Waarom?
-
-Een string omzetten naar kleine letters betekent dat alle letters binnen een string worden veranderd in hun kleine lettervorm. Programmeurs doen dit voor consistentie in gegevensopslag, vergelijkingen en zoekopdrachten.
-
 ## Hoe te:
-
 Elixir maakt het een fluitje van een cent. Gebruik de `String.downcase/1` functie:
 
 ```elixir
@@ -36,7 +31,6 @@ lorem ipsum
 ```
 
 ## Diepere Duik
-
 Elixirs stringverwerking is zich bewust van Unicode, wat erg belangrijk is voor correcte omzetting naar kleine letters in verschillende alfabetten en schriftsystemen. Historisch gezien, hielden programmeertalen niet altijd rekening met deze complexiteit bij stringmanipulatie. 
 
 Voordat Elixir deze huidige aanpak had, boden sommige oudere talen simplistische methoden die prima zouden kunnen werken voor Engels, maar zouden struikelen over talen zoals het Turks, waar bijvoorbeeld een hoofdletter 'İ' niet wordt 'I' maar 'İ'.
@@ -57,7 +51,6 @@ gölcük
 In het bovenstaande voorbeeld, let op hoe het 'İ'-karakter passend wordt behouden volgens de Turkse omzettingsregels.
 
 ## Zie Ook
-
 - Elixirs officiële documentatie van het `String`-module: https://hexdocs.pm/elixir/String.html
 - Unicode-kaartvorming voor kasten: https://www.unicode.org/reports/tr21/tr21-5.html
 - Een snelle gids voor Unicode in Elixir: https://elixir-lang.org/blog/2017/01/05/elixir-and-unicode-part-1/

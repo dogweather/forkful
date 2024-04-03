@@ -11,9 +11,6 @@ title: Trabalhando com TOML
 weight: 39
 ---
 
-## O Que & Por Quê?
-TOML é um formato de arquivo de configuração, fácil de ler e escrever para humanos, e fácil de analisar e gerar para máquinas. Programadores trabalham com TOML para arquivos de configuração claros e hierárquicos em projetos onde a legibilidade é essencial.
-
 ## Como fazer:
 Para ler e manipular TOML no Fish, você pode usar uma ferramenta como `yj`, que pode converter TOML para JSON. Veja como:
 

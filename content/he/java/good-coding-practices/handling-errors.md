@@ -22,12 +22,7 @@ title: "\u05D8\u05D9\u05E4\u05D5\u05DC \u05D1\u05E9\u05D2\u05D9\u05D0\u05D5\u05E
 weight: 16
 ---
 
-## מה ולמה?
-
-טיפול בשגיאות משמעו כתיבת קוד שמתחשב באפשרות שדברים ילכו לא כשורה ומתמודד עמם. מתכנתים עושים זאת במטרה ליצור תוכנה עמידה, שתמנע קריסות והתנהגות מוזרה.
-
 ## איך לעשות:
-
 ג'אווה משתמשת בחריגים (exceptions) לטיפול בשגיאות. אתה מקיף קוד בעל סיכון לאיונים בבלוק `try` ותופס חריגים באמצעות `catch`. הנה דוגמה פשוטה:
 
 ```java
@@ -53,7 +48,6 @@ public class ErrorHandlingExample {
 ```
 
 ## צלילה עמוקה
-
 טיפול בשגיאות בג'אווה השתנה לאורך השנים. בתחילת הדרך לא היו חריגים; המתכנתים בדקו קודי שגיאה. לאחר מכן ג'אווה הציגה בלוקי try-catch, שמאפשרים טיפול יותר אלגנטי בשגיאות.
 
 אלטרנטיבות ל`try-catch` המסורתי כוללות את `try-with-resources` לסגירת משאבים אוטומטית וקוד נקי יותר, שהוצג בג'אווה 7.
@@ -61,7 +55,6 @@ public class ErrorHandlingExample {
 פרטי המימוש חשובים. לדוגמה, לתפוס `Exception` או `Throwable` בדרך כלל נחשב לתרגול רע. זה רחב מדי ויכול להסתיר באגים שאולי אתה לא מודע להם. עדיף להתמקד בחריגים ספציפיים.
 
 ## ראה גם
-
 - המדריכים הרשמיים של אורקל לג'אווה על חריגים: [https://docs.oracle.com/javase/tutorial/essential/exceptions/](https://docs.oracle.com/javase/tutorial/essential/exceptions/)
 - תיעוד ההצהרה של ג'אווה `try-with-resources`: [https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html)
 - Effective Java מאת ג'ושוע בלוך, למיטב התרגולים בנושא חריגים.

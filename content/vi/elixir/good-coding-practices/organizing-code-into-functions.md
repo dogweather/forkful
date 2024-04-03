@@ -15,9 +15,6 @@ title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---
 
-## Cái gì & Tại sao?
-Tổ chức code thành các hàm (functions) có nghĩa là gom các thao tác liên quan vào những khối có thể tái sử dụng. Chúng ta làm điều này để cải thiện khả năng đọc và bảo trì, giảm trùng lặp và đơn giản hóa việc kiểm thử.
-
 ## Làm thế nào:
 Hãy cùng tạo một hàm Elixir đơn giản để viết hoa các từ:
 

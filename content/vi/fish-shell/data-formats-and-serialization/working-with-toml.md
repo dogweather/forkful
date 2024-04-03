@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---
 
-## Gì và Tại sao?
-TOML là định dạng tệp cấu hình, dễ đọc và viết bởi con người, cũng như dễ dàng phân tích và tạo ra bởi máy móc. Lập trình viên sử dụng TOML cho các tệp cấu hình phân cấp, rõ ràng trong các dự án nơi mà tính dễ đọc là chìa khóa.
-
 ## Làm thế nào:
 Để đọc và thao tác với TOML trong Fish, bạn có thể sử dụng một công cụ như `yj`, có thể chuyển đổi TOML sang JSON. Dưới đây là cách làm:
 

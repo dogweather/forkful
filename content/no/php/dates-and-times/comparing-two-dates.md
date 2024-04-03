@@ -11,9 +11,6 @@ title: Sammenlikning av to datoer
 weight: 27
 ---
 
-## Hva & Hvorfor?
-Å sammenligne to datoer betyr å sjekke om de er like, hvilken som kommer først, eller hvor lang tid det er mellom dem. Programmerere gjør dette for å håndtere frister, tidslinjer og tidssensitive data.
-
 ## Hvordan:
 ```PHP
 <?php

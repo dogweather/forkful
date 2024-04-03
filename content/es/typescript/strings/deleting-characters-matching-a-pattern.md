@@ -10,9 +10,6 @@ title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---
 
-## ¿Qué y Por Qué?
-Eliminar caracteres que coinciden con un patrón es simplemente buscar ciertos caracteres en un texto y quitarlos. Los programadores lo hacen para limpiar cadenas, validar entradas o preparar textos para procesamientos más complejos.
-
 ## Cómo hacerlo:
 Para ejecutar esto en TypeScript, podemos usar el método `replace` con expresiones regulares. Aquí hay un ejemplo básico y su resultado.
 

@@ -11,9 +11,6 @@ title: Tratamento de erros
 weight: 16
 ---
 
-## O Que & Por Quê?
-Tratar erros é sobre esperar o inesperado; é como gerenciamos quando as coisas dão errado no nosso código. Fazemos isso para evitar falhas e para dar aos usuários uma experiência suave, mesmo quando o inesperado acontece.
-
 ## Como fazer:
 Em TypeScript, o tratamento de erros frequentemente envolve blocos `try`, `catch` e `finally`.
 

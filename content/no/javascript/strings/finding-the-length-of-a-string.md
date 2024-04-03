@@ -10,9 +10,6 @@ title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---
 
-## Hva & Hvorfor?
-I JavaScript bestemmer vi lengden på en streng med `.length`-egenskapen. Det hjelper oss med å håndtere tekst, som å validering av input eller looping gjennom hver karakter.
-
 ## Hvordan:
 ```javascript
 let greeting = "Hei, verden!";

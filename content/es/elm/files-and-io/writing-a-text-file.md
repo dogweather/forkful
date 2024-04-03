@@ -10,9 +10,6 @@ title: Escritura de un archivo de texto
 weight: 24
 ---
 
-## Qué & Por Qué?
-Escribir un archivo de texto consiste en guardar datos en un documento que puedas leer y editar. Los programadores lo hacen para mantener la configuración, guardar datos de aplicación o para registrar eventos del sistema.
-
 ## Cómo Hacerlo:
 Elm es un lenguaje funcional que se centra en el frontend y, actualmente, no tiene capacidades de escritura de archivos directamente en el sistema de archivos. Sin embargo, puedes manejar la creación y descarga de archivos de texto en el navegador. Aquí te muestro cómo:
 

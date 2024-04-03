@@ -11,9 +11,6 @@ title: Creazione di un file temporaneo
 weight: 21
 ---
 
-## Cosa & Perché?
-Creare un file temporaneo significa che il tuo programma può tenere dei dati temporaneamente durante l'esecuzione. I programmatori fanno questo per non intasare il disco con dati effimeri o per gestire dati sensibili che non devono rimanere permanenti.
-
 ## Come si fa:
 ```Python
 import tempfile

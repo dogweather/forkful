@@ -12,9 +12,6 @@ title: Werken met XML
 weight: 40
 ---
 
-## Wat & Waarom?
-XML is een opmaaktaal die wordt gebruikt voor het opslaan en transporteren van gegevens. Programmeurs werken met XML om interoperabiliteit tussen applicaties en systemen mogelijk te maken - denk aan gegevensuitwisseling en configuratie-instellingen.
-
 ## Hoe:
 XML lezen met SimpleXML:
 

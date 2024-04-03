@@ -11,12 +11,7 @@ title: Downloading a web page
 weight: 42
 ---
 
-## What & Why?
-
-Downloading a web page means fetching the HTML content from the URL you're looking at. Programmers do this to pull data, update their gadgets, or simply use the internet for more than cat videos.
-
 ## How to:
-
 Here's the nitty-gritty: make your Arduino surf the web and grab what you need.
 
 ```Arduino
@@ -59,7 +54,6 @@ void loop() {
 Power it up, and you should see the webpage's HTML in the Serial Monitor. Remember, you'll need the ESP8266 Wi-Fi module and a connection.
 
 ## Deep Dive
-
 Once upon a time, Arduinos were simple offline creatures. Then came shields and modules that connected them to the big bad web. ESP8266 is one such magical gizmo, turning your Arduino into an internet surfer.
 
 Alternatives? You bet. There's the ESP32, Ethernet Shield, and others for the same job.
@@ -67,7 +61,6 @@ Alternatives? You bet. There's the ESP32, Ethernet Shield, and others for the sa
 Quality of your internet connection, power supply robustness, and even the time of day could tip the scales on how well your Arduino downloads that page. We're really plugging into more factors than just writing slick code.
 
 ## See Also
-
 Dig more? Check these out:
 
 - [Arduino Networking](https://www.arduino.cc/en/Guide/ArduinoEthernetShield)

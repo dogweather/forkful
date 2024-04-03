@@ -16,12 +16,7 @@ title: "\u5904\u7406XML"
 weight: 40
 ---
 
-## 什么 & 为什么？
-
-在 Haskell 中处理 XML 涉及解析、操作和生成 XML 结构。程序员处理 XML 是为了与使用 XML 作为数据格式的众多应用程序和协议进行交互，例如 Web 服务和配置文件。
-
 ## 如何操作：
-
 Haskell 提供了如 `xml-conduit` 这样的库来处理 XML。以下示例演示了解析 XML 字符串和查询元素的方法：
 
 ```haskell
@@ -48,7 +43,6 @@ main = do
 ```
 
 ## 深入探索
-
 XML，全称为可扩展标记语言，长期以来一直是数据序列化的基石，早在 JSON 崛起之前就已如此。它虽然冗长，但结构严格且标准化，非常适合于严格的企业环境、遗留系统，以及金融和医疗等行业。
 
 Haskell 有几个用于 XML 的库；然而，`xml-conduit` 是最强大和广泛使用的一个，主要是因为它高效的流处理和解析能力，是处理数据流的 `conduit` 家族的一部分。
@@ -58,7 +52,6 @@ Haskell 有几个用于 XML 的库；然而，`xml-conduit` 是最强大和广�
 在 Haskell 中实现 XML 处理时，必须注意编码问题，因为 Haskell 字符串是 Unicode 的，而 XML 数据可能不是。此外，XML 命名空间可能会增加解析的复杂性。
 
 ## 另见：
-
 - `xml-conduit` 包文档：https://hackage.haskell.org/package/xml-conduit
 - Haskell XML 工具箱（HXT）：http://hackage.haskell.org/package/hxt
 - 《实际 Haskell 编程》一书，第 16 章，关于 XML 处理：http://book.realworldhaskell.org/read/xml.html

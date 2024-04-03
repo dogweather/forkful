@@ -13,11 +13,7 @@ title: "Usando express\xF5es regulares"
 weight: 11
 ---
 
-## O Que & Por Quê?
-Expressões regulares, ou regex, são uma ferramenta poderosa de correspondência de padrões e busca na programação. Os programadores utilizam regex para tarefas como validar entradas de usuários, buscar textos ou manipular strings porque é eficiente e versátil.
-
 ## Como fazer:
-
 Vamos mergulhar no TypeScript e ver como o regex é usado para tarefas comuns.
 
 ```TypeScript
@@ -40,7 +36,6 @@ console.log(mês, dia, ano); // Saída: "Abril" "10" "2021"
 ```
 
 ## Aprofundamento
-
 Na década de 1950, o matemático Stephen Kleene descreveu expressões regulares como um modelo para representar linguagens regulares, que mais tarde se tornaram essenciais em ciência da computação. Avançando no tempo, regex é onipresente na programação para lidar com texto.
 
 Embora regex seja um canivete suíço para operações com string, não está sem alternativas. Dependendo da complexidade da tarefa, às vezes métodos de string como `includes()`, `startsWith()`, `endsWith()`, ou até mesmo análise com uma biblioteca podem ser melhores. Por exemplo, analisar uma string JSON complexa usando regex pode ser um pesadelo—use um analisador JSON em vez disso.
@@ -48,7 +43,6 @@ Embora regex seja um canivete suíço para operações com string, não está se
 Quanto à implementação, regex em JavaScript e TypeScript é baseada na especificação da linguagem ECMAScript. Por debaixo do capô, os motores usam máquinas de estado para combinar padrões de forma eficiente. Vale ressaltar que operações regex podem se tornar caras em termos de desempenho, especialmente com padrões mal escritos—cuidado com o "catastrophic backtracking".
 
 ## Veja Também
-
 - MDN Web Docs sobre Expressões Regulares: [MDN Expressões Regulares](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)
 - Regex101: Uma ferramenta para testar e depurar padrões regex [Regex101](https://regex101.com/)
 - Livro "Mastering Regular Expressions" para um entendimento aprofundado: [O'Reilly](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)

@@ -13,16 +13,10 @@ title: "Usando express\xF5es regulares"
 weight: 11
 ---
 
-## O Que & Por Que?
-
-Expressões regulares em programação permitem a correspondência e manipulação de strings baseadas em padrões específicos. Programadores as usam para tarefas como validação, pesquisa e manipulação de texto devido à sua versatilidade e eficiência no tratamento de operações complexas com strings.
-
 ## Como:
-
 Lua não suporta expressões regulares nativamente da mesma forma que linguagens como Perl ou Python. Em vez disso, oferece capacidades de correspondência de padrões que cobrem muitos casos de uso comuns de expressões regulares. No entanto, para um suporte completo a expressões regulares, pode-se usar uma biblioteca de terceiros, como `lrexlib`.
 
 ### Correspondência de Padrões Básica em Lua:
-
 Lua fornece um sistema de correspondência de padrões poderoso que você pode usar para substituições e pesquisas simples:
 
 ```lua
@@ -40,7 +34,6 @@ print(s)
 ```
 
 ### Capturando Substrings:
-
 Você pode capturar partes da string que correspondem aos padrões:
 
 ```lua
@@ -51,7 +44,6 @@ print("Dia:", d, "Mês:", m, "Ano:", a)
 ```
 
 ### Usando `lrexlib` para Expressões Regulares:
-
 Para usar expressões regulares de fato, você pode instalar e usar `lrexlib`. Supondo que você tenha instalado (`luarocks install lrexlib-pcre`), você pode fazer correspondências de padrões mais complexas:
 
 ```lua

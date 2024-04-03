@@ -10,9 +10,6 @@ title: Comparer deux dates
 weight: 27
 ---
 
-## What & Why?
-Comparer deux dates, c'est mesurer la différence de temps entre elles. Les programmeurs le font pour organiser des événements, filtrer des données ou tout simplement pour suivre le temps. 
-
 ## How to:
 Comparons deux dates en Elm. Utilisons le module `Date` fourni par `elm/time`.
 

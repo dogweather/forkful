@@ -13,16 +13,10 @@ title: Capitalizando una cadena de texto
 weight: 2
 ---
 
-## ¿Qué y Por Qué?
-
-Capitalizar una cadena en Swift modifica la cadena dada de modo que su primer carácter sea mayúscula y los caracteres restantes sean minúsculas. Los programadores hacen esto por propósitos como formatear nombres o frases de acuerdo con las reglas gramaticales o los estándares de la interfaz de usuario.
-
 ## Cómo hacerlo:
-
 Las estructuras `String` de Swift vienen con un par de métodos integrados para manipular el caso de las cadenas. Aquí hay algunos enfoques para capitalizar cadenas en Swift, incluido el uso de métodos estándar y bibliotecas de terceros si es necesario.
 
 ### Usando métodos integrados
-
 Para capitalizar la primera letra de una cadena y convertir el resto en minúsculas:
 
 ```swift
@@ -40,7 +34,6 @@ print(capitalizedSentence) // Salida: "Hola, Mundo"
 ```
 
 ### Usando una biblioteca de terceros
-
 Aunque la biblioteca estándar de Swift es bastante completa, algunos formatos de capitalización específicos podrían requerir operaciones más complejas o pueden simplificarse utilizando bibliotecas de terceros. Una de las más populares para la manipulación de cadenas es SwiftRichString. (Nota: Siempre asegúrate de incluir bibliotecas de terceros a través de Swift Package Manager, CocoaPods o Carthage, e importarlas en tu archivo.)
 
 Primero, necesitarías agregar `SwiftRichString` a tu proyecto. Una vez instalado, puedes usarlo para realizar varias operaciones de cadena, incluidas necesidades de capitalización específicas. Sin embargo, hasta ahora, los métodos integrados de Swift cubren adecuadamente la mayoría de los casos de uso de capitalización sin necesidad de bibliotecas externas solo para capitalizar cadenas.

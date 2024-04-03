@@ -12,9 +12,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---
 
-## O Que & Por Que?
-Enviar uma requisição HTTP com autenticação básica consiste em incluir credenciais de usuário e senha codificadas em Base64 no cabeçalho da requisição. Programadores fazem isso para acessar recursos na web que exigem identificação do usuário de forma simples, mas não totalmente segura.
-
 ## Como Fazer:
 ```Ruby
 require 'net/http'

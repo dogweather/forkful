@@ -19,12 +19,7 @@ title: "\u30C6\u30AD\u30B9\u30C8\u306E\u691C\u7D22\u3068\u7F6E\u63DB"
 weight: 10
 ---
 
-## What & Why? (何となぜ？)
-
-テキスト検索と置換は、ある文字列を見つけて他の文字列に変える操作です。プログラマはコードの修正、データ整形、自動化処理でこれをよく使います。
-
 ## How to: (方法)
-
 ```Fish Shell
 # 文字列 'fish' を 'shark' に置換する
 echo "I love fish tacos" | string replace "fish" "shark"
@@ -36,11 +31,9 @@ string replace -a -i "fish" "shark" file.txt
 ```
 
 ## Deep Dive (深い潜水)
-
 Fish Shellでは`string`ツールが文字列操作のために用意されています。古いシェルでは`sed`や`awk`が主流でしたが、Fishはより直観的に使えるコマンドを提供します。例えば、`string replace`は直接的な命名で何をするか明白です。実装面では、FishはUTF-8エンコーディングの文字列に対応し、設計が単純でわかりやすいです。
 
 ## See Also (関連情報)
-
 - [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
 - [Fish Tutorial](https://fishshell.com/docs/current/tutorial.html)
 - [GNU Sed Manual](https://www.gnu.org/software/sed/manual/sed.html) - 別の検索・置換ツール

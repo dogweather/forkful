@@ -12,12 +12,7 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-
-Foutafhandeling is hoe je beheert wat er gebeurt wanneer er iets misgaat in je code. Het is essentieel omdat het ervoor zorgt dat je programma's op een elegante manier falen en duidelijke instructies geven aan gebruikers, in plaats van gewoonweg te crashen en te branden.
-
 ## Hoe:
-
 Hier is het klassieke `try-catch` blok:
 
 ```javascript
@@ -57,7 +52,6 @@ fetchData();
 ```
 
 ## Diepere Duik
-
 Foutafhandeling in JavaScript is geëvolueerd. Terug in de dag (ES3, circa 1999), hadden we alleen het `try-catch` blok. Niet super flexibel, maar het deed het werk.
 
 ES6 (2015) introduceerde Promises en gaf ons `.then()` en `.catch()`, waardoor we asynchrone fouten eleganter konden afhandelen.
@@ -73,7 +67,6 @@ Wat betreft implementatiedetails, wanneer een fout wordt veroorzaakt, creëren J
 Alternatieven? Je zou foutafhandeling kunnen negeren (slecht idee), callbacks gebruiken met fout-eerste parameters (hallo, Node.js stijl), of het mooier maken met bibliotheken en frameworks die hun eigen interpretaties bieden.
 
 ## Zie Ook
-
 Voor meer over foutafhandeling:
 
 - MDN over try-catch: [MDN try...catch](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Statements/try...catch)

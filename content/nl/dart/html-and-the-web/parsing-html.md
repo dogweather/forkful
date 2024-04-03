@@ -11,9 +11,6 @@ title: HTML Parsen
 weight: 43
 ---
 
-## Wat & Waarom?
-HTML parseren in programmeren betreft het extraheren van gegevens uit HTML-documenten. Programmeurs doen dit om te interageren met of webinhoud te schrapen voor informatie-extractie, testen of automatiseringsdoeleinden, zelfs wanneer officiële API's niet beschikbaar zijn.
-
 ## Hoe te:
 Dart biedt geen ingebouwde ondersteuning voor HTML-parsing in zijn kernbibliotheken. Je kunt echter een externe package zoals `html` gebruiken om HTML-documenten te parsen en te manipuleren.
 

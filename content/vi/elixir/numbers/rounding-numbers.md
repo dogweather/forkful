@@ -17,9 +17,6 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Cái gì & Tại sao?
-Làm tròn số nghĩa là điều chỉnh chúng về một giá trị gần nhất để đơn giản hóa hoặc phù hợp với một độ chính xác nhất định. Việc làm này hữu ích cho việc cải thiện khả năng đọc, giảm dung lượng lưu trữ, hoặc đáp ứng nhu cầu cụ thể của lĩnh vực, như tính toán tiền bạc khi bạn muốn làm tròn đến phần trăm gần nhất.
-
 ## Làm thế nào:
 Trong Elixir, bạn có thể sử dụng `Float.round/2` để làm tròn một số dấu phẩy động. Bạn có thể chỉ định số chữ số thập phân mà bạn muốn giữ. Dưới đây là cách nó hoạt động:
 

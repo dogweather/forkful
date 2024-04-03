@@ -11,9 +11,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---
 
-## What & Why?
-Enviar uma requisição HTTP é o processo de pedir dados ou enviar dados para um servidor web. Programadores fazem isso para interagir com APIs, para buscar informações ou enviar dados para serem processados e armazenados remotamente.
-
 ## How to:
 No Swift, para enviar uma requisição HTTP, usamos principalmente a classe `URLSession`. Vou mostrar um exemplo rápido de como buscar um JSON de uma API:
 

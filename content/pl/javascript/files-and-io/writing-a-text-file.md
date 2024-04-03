@@ -14,9 +14,6 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i dlaczego?
-Pisanie pliku tekstowego w JavaScript często odnosi się do tworzenia i zapisywania danych w prostym, czytelnym formacie dla celów logowania, eksportowania danych użytkownika lub konfiguracji. Ta funkcjonalność jest kluczowa dla aplikacji, które muszą zachować dane poza czasem życia procesu aplikacji, dostarczając sposób na przechowywanie i późniejsze pobieranie lub udostępnianie informacji.
-
 ## Jak to zrobić:
 W środowisku Node.js możesz użyć wbudowanego modułu `fs` (File System) do pisania plików tekstowych. Ten przykład demonstruje asynchroniczne pisanie tekstu do pliku:
 

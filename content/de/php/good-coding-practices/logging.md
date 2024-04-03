@@ -11,12 +11,7 @@ title: Protokollierung
 weight: 17
 ---
 
-## Was & Warum?
-
-Logging ist im Grunde genommen wie das Führen eines Tagebuchs für Ihren Code; es ist der Akt des Aufzeichnens von Ereignissen, Fehlern und anderen bedeutsamen Datenpunkten, die auftreten, wenn Ihre Anwendung läuft. Programmierer machen dies, um den Überblick darüber zu behalten, was unter der Haube geschieht, Probleme zu debuggen und eine Prüfspur für spätere Analysen oder zur Einhaltung von Compliance-Anforderungen zu pflegen.
-
 ## Wie geht das:
-
 PHP verfügt über eine integrierte Fehlerprotokollierungsfunktion, die einfach zu verwenden ist. Fügen Sie einfach `error_log()` in Ihren Code ein, um eine Nachricht an Ihre Server-Logs zu senden. Sie können es auch so anpassen, dass es in eine bestimmte Datei schreibt.
 
 ```php
@@ -49,7 +44,6 @@ $logger->error('Das ist ein Fehler-Log!');
 Dies wird Ihre Protokolle entweder in das Serverprotokoll oder in Ihre angegebene Datei im Klartextformat ausgeben.
 
 ## Vertiefung:
-
 Früher verließen sich PHP-Entwickler auf die `error_log()` Funktion oder die Apache/Nginx-Logs, um Probleme zu erfassen, aber das kann chaotisch sein mit der Notwendigkeit, Klartextdateien zu parsen und sie nicht leicht filtern oder sortieren zu können. Hier kommen Protokollierungsbibliotheken wie Monolog ins Spiel, die das Zeitalter des strukturierten Loggings in PHP eingeleitet haben. Diese Lösungen geben Ihnen eine bessere Kontrolle, indem sie mehrere Protokollierungskanäle, Schweregrade und formatierte Ausgaben (wie JSON, was ein Traum für die programmatische Analyse ist) anbieten.
 
 Alternativen zu Monolog umfassen Log4php, KLogger und Apache's Log4php. In Bezug auf die Implementierung erfordert robustes Logging nicht nur das beliebige Ablegen von Daten, sondern berücksichtigt Dinge wie Protokollrotation, Archivierungsstrategien und die Integration mit Überwachungswerkzeugen, um wirklich nützlich zu sein.
@@ -57,7 +51,6 @@ Alternativen zu Monolog umfassen Log4php, KLogger und Apache's Log4php. In Bezug
 Sie sollten die [PSR-3 Logger Interface](https://www.php-fig.org/psr/psr-3/) im Kopf behalten, die eine gemeinsame Schnittstelle für Protokollierungsbibliotheken definiert und die Interoperabilität und eine konsistente Art und Weise, auf Protokollierungsmechanismen zuzugreifen, gewährleistet.
 
 ## Siehe auch:
-
 - [Monolog GitHub-Repository](https://github.com/Seldaek/monolog)
 - [PSR-3 Logger Interface Spezifikation](https://www.php-fig.org/psr/psr-3/)
 - [PHP-Fehlerprotokoll-Dokumentation](https://www.php.net/manual/de/function.error-log.php)

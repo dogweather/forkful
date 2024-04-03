@@ -12,12 +12,7 @@ title: Gebruik van associatieve arrays
 weight: 15
 ---
 
-## Wat & Waarom?
-
-Associatieve arrays, in Ruby vaker bekend als 'hashes', stellen je in staat om unieke sleutels aan waarden te koppelen. Ze zijn onmisbaar wanneer je elementen moet bijhouden via een specifieke referentie, zoals het opslaan van de eigenschappen van een object of het snel toegang krijgen tot gegevens via een unieke identificatie.
-
 ## Hoe te:
-
 Het creëren en gebruiken van hashes in Ruby is eenvoudig. Je kunt een lege hash initialiseren, deze vullen met sleutel-waarde paren, waarden openen door hun sleutels, en meer. Zo doe je dat:
 
 ```Ruby
@@ -54,7 +49,6 @@ puts symbol_hash[:name] # Uitvoer: Jane Doe
 ```
 
 ## Diepere Duik:
-
 Het concept van associatieve arrays is niet uniek voor Ruby; veel talen implementeren ze onder verschillende namen, zoals dictionaries in Python of objecten in JavaScript (wanneer gebruikt als sleutel-waarde paren). In de vroege stadia van Ruby waren hashes enigszins trager en niet zo veelzijdig. Echter, in de loop van de tijd, is de implementatie van hashes in Ruby sterk geoptimaliseerd, vooral voor symboolsleutels, waardoor ze uiterst efficiënt zijn voor frequente toegang en updates.
 
 Ruby's hashes onderscheiden zich door hun syntactische gebruiksgemak en flexibiliteit - je kunt bijna elk objecttype als sleutel gebruiken, hoewel symbolen en strings het meest voorkomen. Intern zijn Ruby hashes geïmplementeerd met behulp van een hashing algoritme dat snelheid en geheugenefficiëntie in balans houdt, zelfs als het aantal elementen toeneemt.

@@ -11,9 +11,6 @@ title: Descobrindo o comprimento de uma string
 weight: 7
 ---
 
-## What & Why?
-Saber o comprimento de uma string é descobrir o número de caracteres que ela contém. Programadores fazem isso para validar entradas, limitar conteúdo, ou simplesmente para manipular dados de forma precisa.
-
 ## How to:
 Em C#, você consegue o tamanho de uma string usando a propriedade `Length`. Veja alguns exemplos:
 

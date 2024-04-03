@@ -16,9 +16,6 @@ title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---
 
-## Cái gì & Tại sao?
-Việc lấy ngày hiện tại trong Dart đề cập đến việc truy vấn hệ thống để lấy ngày và giờ hiện tại. Chức năng này thường được sử dụng trong các ứng dụng cho các tính năng như đánh dấu thời gian sự kiện, hiển thị ngày hiện tại cho người dùng, hoặc tính toán thời lượng. Việc biết cách lấy và thao tác với ngày hiện tại một cách hiệu quả là cơ bản cho việc lập lịch, ghi nhật ký, và các tính năng nhạy cảm với thời gian.
-
 ## Cách thực hiện:
 Thư viện cốt lõi của Dart cung cấp quyền truy cập trực tiếp vào ngày và giờ hiện tại thông qua lớp `DateTime`. Dưới đây là ví dụ cơ bản để lấy ngày hiện tại:
 

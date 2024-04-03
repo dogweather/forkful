@@ -15,16 +15,10 @@ title: "Konwersja daty na ci\u0105g znak\xF3w"
 weight: 28
 ---
 
-## Co i dlaczego?
-
-Konwersja daty na łańcuch znaków w Dart jest częstym zadaniem, gdy potrzebujemy wyświetlić informacje o dacie i godzinie w formacie czytelnym dla człowieka, lub gdy zamierzamy serializować dane do przechowywania lub transmisji. Ten proces umożliwia łatwą reprezentację i manipulację wartościami daty i czasu w formacie, który jest zarówno zrozumiały, jak i może być dostosowany w zależności od przypadku użycia.
-
 ## Jak to zrobić:
-
 Dart dostarcza klasę `DateTime` do obsługi dat i czasów, oraz pakiet `intl` do formatowania. Najpierw, upewnij się, że masz pakiet `intl`, dodając `intl: ^0.17.0` (lub najnowszą wersję) do pliku `pubspec.yaml`.
 
 ### Korzystanie z biblioteki podstawowej Darta
-
 ```dart
 DateTime now = DateTime.now();
 String formattedDate = "${now.year}-${now.month}-${now.day}";
@@ -34,7 +28,6 @@ print(formattedDate); // Wyjście: 2023-4-12 (na przykład, to zależy od aktual
 Ten przykład bezpośrednio konstruuje łańcuch znaków z właściwości `DateTime`.
 
 ### Korzystanie z pakietu `intl`
-
 Najpierw zaimportuj pakiet:
 
 ```dart

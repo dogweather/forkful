@@ -9,9 +9,6 @@ title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---
 
-## Qué y Por Qué?
-Extraer subcadenas significa sacar partes específicas de un texto. Los programadores lo hacen para analizar y manipular datos más facilmente.
-
 ## Cómo hacerlo:
 ```kotlin
 fun main() {

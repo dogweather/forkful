@@ -11,9 +11,6 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## Hva & Hvorfor?
-Å lese en tekstfil betyr at vi henter innholdet i fila til programmet vårt. Programmerere gjør dette for å behandle data, konfigurere systemer eller laste inn ressurser.
-
 ## Hvordan:
 ```kotlin
 import java.io.File

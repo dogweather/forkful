@@ -15,9 +15,6 @@ title: "XML \uB2E4\uB8E8\uAE30"
 weight: 40
 ---
 
-## 무엇 & 왜?
-XML은 eXtensible Markup Language의 약어로, JSON의 장황한 사촌과 같습니다. 여러분은 레거시 시스템, 엔터프라이즈 소프트웨어 또는 JSON 대열에 오르지 않은 API를 다룰 때 XML과 씨름하게 될 것입니다. XML은 데이터 교환에서 여전히 그 가치를 지니고 있습니다.
-
 ## 어떻게:
 Rust에서는 `xml-rs`와 같은 크레이트로 XML을 다룰 수 있습니다. `Cargo.toml`에 `xml-rs = "0.8"`을 추가하여 설치하세요. 다음은 간단한 XML을 파싱하는 방법입니다:
 

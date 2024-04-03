@@ -11,9 +11,6 @@ title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---
 
-## What & Why? (Quoi et Pourquoi?)
-Imprimer un débogage, c'est afficher des infos dans la console pour suivre ce que fait le code. Les développeurs le font pour repérer les bugs et comprendre le flot du programme.
-
 ## How to: (Comment faire:)
 ```Bash
 # Affichage simple

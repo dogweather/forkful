@@ -13,12 +13,7 @@ title: Bruke associative tabeller
 weight: 15
 ---
 
-## Hva & Hvorfor?
-
-Assosiative arrayer, eller hash-maps, lar deg lagre data som nøkkel-verdipar, noe som gjør det enklere å organisere og hente informasjon via nøkkel. De er hendige når du trenger en mer strukturert måte å håndtere data på enn bare lister, spesielt i konfigurasjoner og når du håndterer et spekter av attributter.
-
 ## Hvordan:
-
 Fish støtter ikke assosiative arrayer naturlig som Bash 4+, men du kan oppnå lignende funksjonalitet ved å bruke en kombinasjon av lister og strengmanipulasjon. Her er hvordan du etterligner dem:
 
 Først, setter du opp "assosiativt array"-elementer separat:
@@ -60,5 +55,4 @@ end
 ```
 
 ## Dypdykk
-
 Ekte assosiative arrayer som i andre skriptspråk er ennå ikke en del av Fish sin tilnærming. Fiksen som vises nytter Fish sin strengmanipulasjon og listekapasiteter for å skape en pseudo-assosiativ array-struktur. Selv om det fungerer, er det ikke like rent eller feilfritt som innebygd støtte for assosiativ array ville vært. Andre skall som Bash og Zsh tilbyr innebygd funksjonalitet for assosiative arrayer, noe som resulterer i mer rettfram, lesbart kode. Imidlertid sikter Fish sitt designprinsipp mot enkelhet og brukervennlighet, muligens på bekostning av slike funksjoner. Fiksen dekker de fleste behov, men hold et øye med utviklingen av Fish Shell - utviklerne forbedrer aktivt og legger til funksjoner basert på tilbakemeldinger fra samfunnet.

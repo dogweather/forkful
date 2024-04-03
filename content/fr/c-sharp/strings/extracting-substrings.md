@@ -11,9 +11,6 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## Quoi et Pourquoi ?
-Extraire des sous-chaînes, c'est découper une partie d'une chaîne de caractères. On fait ça pour analyser, manipuler ou valider des morceaux spécifiques d'une donnée texte.
-
 ## Comment faire :
 Voici un peu de code C# pour montrer comment extraire des substrings. C'est simple, mate ça :
 

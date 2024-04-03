@@ -13,9 +13,6 @@ title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---
 
-## Vad & Varför?
-Reguljära uttryck (regex) är sekvenser av tecken som definierar sökmönster, främst använda för strängmatchning och manipulation. Programmerare använder regex i Arduino-projekt för att tolka seriell inmatning, validera användarinmatning eller extrahera data från strängar, vilket ökar effektiviteten och flexibiliteten i databehandlingen.
-
 ## Hur:
 Arduino har inte inbyggt stöd för regex direkt i sitt standardbibliotek. Du kan dock uppnå regex-liknande funktionalitet för enkla mönster genom att använda grundläggande strängfunktioner, eller för mer komplexa behov, integrera ett tredjepartsbibliotek som `regex`.
 

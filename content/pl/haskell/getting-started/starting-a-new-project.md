@@ -11,9 +11,6 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## What & Why? (Co i dlaczego?)
-Zaczynanie nowego projektu w Haskellu to stworzenie struktury i plików startowych. Programiści robią to, by nakreślić fundamenty aplikacji i zorganizować kod od samego początku.
-
 ## How to: (Jak to zrobić:)
 ```Haskell
 -- Instalacja programu Stack, który zarządza projektami w Haskellu:

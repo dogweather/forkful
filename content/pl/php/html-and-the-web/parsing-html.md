@@ -13,9 +13,6 @@ title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---
 
-## Co i dlaczego?
-Parsowanie HTML w PHP polega na wydobywaniu określonych informacji z dokumentów HTML. Programiści wykonują to zadanie, aby automatyzować ekstrakcję danych, web scraping, lub integrować zawartość z różnych stron internetowych w swoich aplikacjach, zwiększając funkcjonalność bez ręcznej interwencji.
-
 ## Jak to zrobić:
 Do parsowania HTML, programiści PHP mogą wykorzystać wbudowane funkcje lub opierać się na solidnych bibliotekach takich jak Simple HTML DOM Parser. Tutaj zbadamy przykłady używając zarówno klasy `DOMDocument` PHP, jak i Simple HTML DOM Parser.
 

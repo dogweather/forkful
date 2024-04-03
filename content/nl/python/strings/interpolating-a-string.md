@@ -14,9 +14,6 @@ title: Een string interpoleren
 weight: 8
 ---
 
-## Wat & Waarom?
-String interpolatie is de methode van het invoegen van expressies binnen string literals. Programmeurs gebruiken het om dynamisch waarden in strings in te voegen, wat de code leesbaarder en schoner maakt dan traditionele stringconcatenatie.
-
 ## Hoe:
 In Python 3.6 en hoger, kun je strings interpoleren met f-strings. Zo werkt het:
 

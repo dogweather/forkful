@@ -11,9 +11,6 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-Comparing two dates in Dart involves evaluating the temporal difference or order between them, an essential functionality in applications managing events, deadlines, or any time-sensitive data. Programmers frequently require this to control logic flow, validate, or sort data based on time conditions.
-
 ## How to:
 In Dart, you can compare dates using the `DateTime` class, which offers methods like `isBefore`, `isAfter`, and `isAtSameMomentAs` for direct comparison. Additionally, the difference between dates can be determined using the `difference()` method, providing a `Duration` object that details the span between the two points in time.
 

@@ -11,9 +11,6 @@ title: Protokollierung
 weight: 17
 ---
 
-## Was & Warum?
-Logging ist im Grunde das Hinterlassen einer Spur innerhalb Ihres Codes - es ist die Art und Weise, wie Sie verfolgen, was passiert, wenn Ihr Skript in der Praxis läuft. Entwickler nutzen das Logging, um Fehler zu finden, das Verhalten von Anwendungen zu verfolgen, die Leistung zu überwachen und um nach Unregelmäßigkeiten Ausschau zu halten.
-
 ## Wie man es macht:
 Hier sind einige grundlegende Informationen darüber, wie Sie einfaches Logging in Ihre Skripte einbauen:
 

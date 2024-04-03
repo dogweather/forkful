@@ -15,9 +15,6 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mikä & Miksi?
-C#:ssa vakiovirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien ja diagnostiikkatietojen ohjaamista erillään säännöllisestä tulosteesta (stdout) auttaakseen käyttäjiä ja kehittäjiä erottamaan normaalin ohjelman tulosteen ja virheilmoitukset toisistaan. Ohjelmoijat tekevät näin tehdäkseen virheenkorjauksesta ja lokituksesta tehokkaampaa, mikä mahdollistaa sovellusten sujuvamman toiminnan ja ylläpidon.
-
 ## Kuinka:
 C#:ssa vakiovirheeseen kirjoittamisen voi saavuttaa käyttämällä `Console.Error`-virtaa. Tätä virtaa käytetään nimenomaan virheviestien ja diagnostiikan varten. Tässä on yksinkertainen esimerkki:
 

@@ -15,9 +15,6 @@ title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---
 
-## Cái gì & Tại sao?
-Viết test nghĩa là lập trình các đoạn mã để kiểm tra xem mã khác hoạt động đúng hay không. Các lập trình viên thực hiện việc này để bắt lỗi sớm, tiết kiệm thời gian và đảm bảo phần mềm thực hiện đúng những gì nó cần làm một cách nhất quán.
-
 ## Cách thực hiện:
 Kotlin sử dụng JUnit để thực hiện kiểm tra. Dưới đây là cách viết và chạy một bài kiểm tra đơn giản:
 

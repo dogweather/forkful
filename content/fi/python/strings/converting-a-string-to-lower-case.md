@@ -11,9 +11,6 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## What & Why? - Mitä & Miksi?
-Muuttamalla merkkijonon pieniksi kirjaimiksi varmistetaan, että teksti on yhdenmukainen ja vertailukelpoinen. Tämä on hyödyllistä erityisesti tietojen syöttämisen ja hakutoimintojen yhteydessä.
-
 ## How to: - Miten:
 ```Python
 # Pythonilla merkkijonon muuttaminen pieniksi kirjaimiksi on helppoa:

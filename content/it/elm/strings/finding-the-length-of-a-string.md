@@ -11,10 +11,6 @@ title: Trovare la lunghezza di una stringa
 weight: 7
 ---
 
-## What & Why?
-(Find out the length)
-Capire la lunghezza di una stringa significa determinare quanti caratteri contiene. I programmatori lo fanno per validare l'input, limitare il testo, o semplicemente per manipolare dati testuali.
-
 ## How to:
 (Step by step)
 Elm rende semplice trovare la lunghezza di una stringa. Usa la funzione `String.length`:

@@ -14,12 +14,7 @@ title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---
 
-## Mikä ja miksi?
-
-HTML:n jäsentäminen Go-kielessä tarkoittaa HTML-tiedostojen sisällön analysointia datan poimimiseksi, rakenteen muokkaamiseksi tai HTML:n muuntamiseksi muihin formaatteihin. Ohjelmoijat tekevät tätä verkkosivujen kaapimiseen, mallipohjiin ja datan louhintaan, hyödyntäen Go:n vahvoja samanaikaisuusominaisuuksia suurten verkkosivumäärien tehokkaaseen käsittelyyn.
-
 ## Kuinka:
-
 HTML:n jäsentämiseen Go:ssa käytetään yleensä `goquery`-pakettia tai standardikirjaston `net/html`-pakettia. Tässä on perusesimerkki käyttäen `net/html`-pakettia kaikkien linkkien poimimiseen verkkosivulta:
 
 ```go
@@ -76,7 +71,6 @@ http://www.iana.org/domains/varattu
 Tämä koodi pyytää HTML-sivua, jäsentää sen ja käy rekursiivisesti läpi DOM-rakenteen löytääkseen ja tulostaakseen kaikkien `<a>`-tagien `href`-attribuutit.
 
 ## Syväsukellus
-
 `net/html`-paketti tarjoaa perustyökalut HTML:n jäsentämiseen Go:ssa, toteuttaen suoraan HTML5-standardin määrittelemät tokenisointi- ja puurakennusalgoritmit. Tämä matalan tason lähestymistapa on tehokas, mutta voi olla monimutkainen monimutkaisemmissa tehtävissä.
 
 Senaikaisesti kolmannen osapuolen `goquery`-paketti, jonka on inspiroinut jQuery, tarjoaa korkeamman tason rajapinnan, joka yksinkertaistaa DOM-manipulointia ja -traversointia. Se mahdollistaa kehittäjien kirjoittaa tiiviimpää ja ilmaisuvoimaisempaa koodia tehtäviin, kuten elementin valintaan, attribuuttien poimintaan ja sisällön manipulointiin.

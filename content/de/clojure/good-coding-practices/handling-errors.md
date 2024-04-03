@@ -11,9 +11,6 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-Fehlerbehandlung geht darum, das Unerwartete in Programmen zu managen – wie ein Türsteher, der sich um Unruhestifter kümmert. Programmierer mögen es reibungslos; Fehlerbehandlung hilft dabei, die Problemfälle in Schach zu halten, um sicherzustellen, dass ihr Code nicht stolpert und fällt, wenn er mit dem Unerwarteten konfrontiert wird.
-
 ## Wie geht das:
 Clojure, wie seine Lisp-Vorfahren, stützt sich auf Ausnahmen (Exceptions), um mit Fehlern umzugehen. Hier ist, wie du dein Können zeigst, wenn die Dinge schiefgehen.
 

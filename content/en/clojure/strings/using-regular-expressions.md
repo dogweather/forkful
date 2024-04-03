@@ -11,9 +11,6 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-Regular expressions, a powerful tool for pattern matching and data manipulation, are essential in text processing tasks such as validating input, searching, and replacing text. Programmers use them extensively for handling complex string parsing and data validation tasks efficiently and succinctly.
-
 ## How to:
 Clojure, staying true to its roots in the Lisp family, offers a rich set of functions that interface seamlessly with Java's regular expression capabilities. Here's how you can leverage them:
 

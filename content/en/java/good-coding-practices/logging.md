@@ -10,9 +10,6 @@ title: Logging
 weight: 17
 ---
 
-## What & Why?
-Logging is essentially the process of recording events that occur within a software application. Programmers log these events to capture runtime information, debug issues, monitor system behavior, and create an audit trail for security and compliance purposes.
-
 ## How to:
 Here's a simple way to get started with logging in Java using the built-in `java.util.logging` package.
 

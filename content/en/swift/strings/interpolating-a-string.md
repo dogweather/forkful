@@ -9,9 +9,6 @@ title: Interpolating a string
 weight: 8
 ---
 
-## What & Why?
-Interpolating a string involves inserting variables into a string literal. Programmers do it to construct strings dynamically, making it easier to include variable data in output.
-
 ## How to:
 Swift makes string interpolation a breeze with the `\(variableName)` syntax.
 

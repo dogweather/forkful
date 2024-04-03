@@ -10,8 +10,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Làm việc với XML bằng Elixir
-
 ### Gì & Tại sao?
 Làm việc với XML trong Elixir có nghĩa là phân tích cú pháp, tạo và thao tác dữ liệu XML. Lập trình viên xử lý XML vì nó phổ biến trong dịch vụ web, tệp cấu hình và hệ thống cũ.
 

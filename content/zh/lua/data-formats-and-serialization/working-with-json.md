@@ -24,9 +24,6 @@ title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 weight: 38
 ---
 
-## 什么和为什么？
-在Lua中处理JSON涉及到将JSON格式化的字符串解析成Lua表格，反之亦然，这使得在Lua应用程序和Web服务或外部API之间的数据交换变得简单。程序员这样做是为了利用JSON轻量级和易于解析的格式，以实现数据存储、配置或API通信的效率。
-
 ## 如何操作：
 Lua自身不包含用于JSON处理的内置库。因此，一个流行的第三方库是`dkjson`，你可以轻松使用它进行JSON编码和解码。首先，确保安装`dkjson`，例如，通过LuaRocks（`luarocks install dkjson`），然后按照下面的例子操作。
 

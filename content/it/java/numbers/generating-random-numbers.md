@@ -10,12 +10,7 @@ title: Generazione di numeri casuali
 weight: 12
 ---
 
-## Cosa e Perché?
-
-Generare numeri casuali consiste nel produrre sequenze o valori singoli imprevedibili all'interno di un intervallo definito. I programmatori utilizzano questa tecnica per vari motivi, inclusi simulazioni, giochi, applicazioni di sicurezza e metodi di campionamento per testare algoritmi in diverse condizioni.
-
 ## Come fare:
-
 In Java, la generazione di numeri casuali può essere realizzata utilizzando la classe `Random` del pacchetto `java.util`, o le classi `ThreadLocalRandom` e `SecureRandom` per casi d'uso specifici. Gli esempi seguenti illustrano come utilizzare queste classi.
 
 ### Usando la classe `Random`
@@ -78,7 +73,6 @@ public class SecureRandomExample {
 ```
 
 ## Approfondimento
-
 La generazione di numeri casuali si è evoluta significativamente dai primi giorni del computing. La classe `Random` di Java utilizza una formula congruenziale lineare per generare numeri pseudo-casuali, che sono deterministici e non adatti per applicazioni ad alta sicurezza. Questo ha portato all'introduzione di `SecureRandom`, che utilizza algoritmi più sofisticati (ad esempio, SHA1PRNG) per produrre numeri casuali crittograficamente forti.
 
 Tuttavia, `Random` e `SecureRandom` hanno i loro svantaggi, come il degrado delle prestazioni in ambienti multithreading. La classe `ThreadLocalRandom` è stata introdotta in Java 7 per affrontare questo problema fornendo generatori di numeri casuali locali al thread, migliorando significativamente le prestazioni in applicazioni concorrenti.

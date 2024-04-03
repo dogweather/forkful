@@ -10,9 +10,6 @@ title: Interpolazione di una stringa
 weight: 8
 ---
 
-## What & Why?
-L'interpolazione di stringhe è il processo di inserimento di valori variabili all'interno di una stringa. I programmatori la usano per costruire dinamicamente testi con dati specifici, rendendo il codice più leggibile e manutenibile.
-
 ## How to:
 C++ moderno offre diverse strade per interpolare stringhe. Vediamone un paio:
 

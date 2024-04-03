@@ -10,10 +10,8 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-Parsing a date from a string involves converting textual date and time representations into a `Date` object. This process is essential in applications where dates are communicated as strings, such as in API responses or user inputs, allowing for easier date manipulation and formatting.
-
 ## How to:
+
 
 ### Using Foundation's `DateFormatter`
 Swift's standard library, Foundation, provides `DateFormatter` for converting strings to `Date` objects and vice versa. To parse a date from a string, you specify the date format that matches the string, then use the formatter to parse it.

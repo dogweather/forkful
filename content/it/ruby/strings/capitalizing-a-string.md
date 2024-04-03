@@ -13,9 +13,6 @@ title: Capitalizzare una stringa
 weight: 2
 ---
 
-## Cosa e Perché?
-Capitalizzare una stringa di solito significa convertire il primo carattere di una stringa in maiuscolo e il resto in minuscolo. Ma a volte può significare semplicemente assicurarsi che il primo carattere sia maiuscolo lasciando invariato il resto della stringa. Onestamente, secondo me, è un termine alquanto vago.
-
 ## Come fare:
 Ruby fornisce [metodi diretti per la manipolazione delle stringhe](https://docs.ruby-lang.org/en/3.3/String.html), inclusa la capitalizzazione:
 

@@ -11,12 +11,7 @@ title: Generowanie liczb losowych
 weight: 12
 ---
 
-## Co i dlaczego?
-
-Generowanie liczb losowych w programowaniu polega na tworzeniu wartości, których nie można logicznie przewidzieć z góry. Programiści robią to z różnych powodów, w tym generowania unikalnych identyfikatorów, symulowania scenariuszy w rozwoju gier czy wybierania losowych próbek z danych do analizy.
-
 ## Jak to zrobić:
-
 W Clojure generowanie liczb losowych jest proste, i istnieje kilka wbudowanych funkcji, które można od razu wykorzystać.
 
 Aby wygenerować losową liczbę zmiennoprzecinkową pomiędzy 0 (włącznie) a 1 (wyłącznie), można użyć funkcji `rand`:
@@ -50,7 +45,6 @@ Ta funkcja `rand-range` zwróci losową liczbę zmiennoprzecinkową pomiędzy wa
 W scenariuszach wymagających bardziej skomplikowanych rozkładów lub sekwencji liczb losowych, gdzie powtarzalność jest konieczna (użycie ziaren), możesz potrzebować zajrzeć do dodatkowych bibliotek, które oferują więcej niż to, co jest wbudowane.
 
 ## Zagłębienie się
-
 Podstawowy mechanizm generowania liczb losowych w większości języków programowania, w tym w Clojure, zazwyczaj polega na użyciu generatora liczb pseudolosowych (PRNG). PRNG używa algorytmu do wytwarzania sekwencji liczb, które przybliżają właściwości liczb losowych. Warto zauważyć, że ponieważ są one generowane algorytmicznie, nie są one prawdziwie losowe, ale mogą być wystarczające dla większości praktycznych zastosowań.
 
 W pierwszych dniach komputeryzacji generowanie wysokiej jakości liczb losowych było znaczącym wyzwaniem, co doprowadziło do rozwoju różnych algorytmów mających na celu poprawę losowości i dystrybucji. Dla Clojure wbudowane funkcje, takie jak `rand` i `rand-int`, są wygodne do codziennego użytku i obejmują szeroki zakres typowych przypadków użycia.

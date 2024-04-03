@@ -13,12 +13,7 @@ title: Att skriva en textfil
 weight: 24
 ---
 
-## Vad & Varför?
-
-Att skriva till en textfil i Lua innebär att skapa eller öppna en fil i skrivläge, och sedan använda filoperationer för att infoga text. Det är en grundläggande operation för uppgifter som loggning, datalagring eller konfigurationshantering, vilket möjliggör att program kan spara data på ett bestående sätt mellan sessioner.
-
 ## Hur man gör:
-
 I Lua är det enkelt att arbeta med filer för att skriva. Du kommer typiskt att använda funktionen `io.open()` för att öppna (eller skapa) en fil, där du anger läget för operationen -- i detta fall `"w"` för att skriva. Om filen inte finns skapas den; om den finns, skrivs dess innehåll över. Det är avgörande att stänga filen efter att ha skrivit för att säkerställa att data sparas korrekt och att resurser frigörs.
 
 Här är ett enkelt exempel som skriver en sträng till en fil med namnet "example.txt":

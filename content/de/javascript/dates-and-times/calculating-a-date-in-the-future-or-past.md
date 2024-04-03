@@ -11,9 +11,6 @@ title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---
 
-## What & Why?
-Datum-Berechnungen sind nötig, um Vergangenheits- oder Zukunftsdaten zu ermitteln. Programmierer nutzen dies für Features wie Erinnerungen, Zeitabläufe und Gültigkeitschecks.
-
 ## How to:
 JavaScript bietet eingebaute Funktionen, um mit Daten zu arbeiten. Hier zwei Beispiele:
 

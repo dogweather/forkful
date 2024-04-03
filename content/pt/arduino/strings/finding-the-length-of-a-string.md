@@ -11,9 +11,6 @@ title: Descobrindo o comprimento de uma string
 weight: 7
 ---
 
-## What & Why?
-Descobrir o tamanho de uma string significa saber quantos caracteres ela possui. Programadores fazem isso para manipular texto de forma eficiente, validar entradas ou economizar memória.
-
 ## How to:
 ```Arduino
 String texto = "Olá, Arduino!";
@@ -24,7 +21,6 @@ Serial.println(tamanho);  // Saída: 13
 A função `.length()` é sua amiga aqui. Inicia a comunicação serial, envia o tamanho. Olha só, 13 caracteres.
 
 ## Deep Dive
-
 Antes de `String`, usávamos `char[]` - vetores de caracteres - em C puro, onde se contava manualmente com loops. `String` facilitou demais a vida.
 
 Alternativas? Há `strlen()` para `char[]` e outras bibliotecas de manipulação de strings, mas `String` já está aqui pra isso.

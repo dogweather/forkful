@@ -11,9 +11,6 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## What & Why? (Cosa e Perché?)
-Estrarre sottosequenze di stringhe significa prelevare parti di testo da una stringa più grande. Questo è utile per analizzare i dati, manipolare il testo e permettere agli algoritmi di lavorare solo con le informazioni necessarie.
-
 ## How to: (Come fare:)
 ```C++
 #include <iostream>

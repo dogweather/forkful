@@ -14,12 +14,7 @@ title: "Interpolation d'une cha\xEEne de caract\xE8res"
 weight: 8
 ---
 
-## Quoi et pourquoi ?
-
-L'interpolation de chaîne est une méthode pour construire des chaînes qui incorporent des variables, permettant la création dynamique de chaînes. Les programmeurs font cela pour personnaliser les messages, construire des URL, créer des requêtes SQL, et plus encore, permettant d'obtenir un code plus lisible et maintenable.
-
 ## Comment faire :
-
 En Go, l'interpolation de chaîne est couramment réalisée en utilisant le package `fmt`, particulièrement avec la fonction `Sprintf`, qui vous permet d'injecter des variables dans une chaîne en spécifiant des verbes de formatage. Les verbes sont des espaces réservés dans la chaîne de format et sont remplacés par les valeurs des variables données. Voici comment l'utiliser :
 
 ```go
@@ -42,7 +37,6 @@ func main() {
 Notez que `%s` est utilisé pour les chaînes, et `%d` pour les entiers. La documentation du package `fmt` fournit une liste complète des verbes de formatage pour différents types de données.
 
 ## Plongée Profonde
-
 Le concept d'interpolation de chaîne existe dans de nombreux langages de programmation, bien que avec des syntaxes et capacités différentes. En Go, alors que la fonction `Sprintf` du package `fmt` est l'approche la plus couramment utilisée, elle n'est pas toujours la plus efficace, spécialement pour les concaténations simples ou lorsque l'on travaille dans du code très sensible à la performance.
 
 Le package `fmt` utilise la réflexion pour interpréter dynamiquement les types des variables à l'exécution, ce qui, bien que flexible, entraîne une surcharge. Pour les scénarios où la performance est critique, la concaténation directe de chaînes ou le type `strings.Builder` peuvent offrir de meilleures alternatives. La concaténation directe est simple mais peut devenir lourde avec plusieurs variables. `strings.Builder`, d'autre part, offre une manière plus performante et lisible de construire des chaînes complexes dans une boucle ou lorsqu'on traite avec de nombreuses variables :

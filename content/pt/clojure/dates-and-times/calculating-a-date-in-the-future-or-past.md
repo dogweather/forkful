@@ -11,9 +11,6 @@ title: Calculando uma data no futuro ou passado
 weight: 26
 ---
 
-## O quê & Por quê?
-Calcular uma data no futuro ou passado consiste em alterar uma data base por um certo período de tempo. Programadores realizam essa tarefa para agendar eventos, calcular prazos ou até verificar a validade de certos dados.
-
 ## Como fazer:
 ```Clojure
 ;; Adicionando dias a uma data

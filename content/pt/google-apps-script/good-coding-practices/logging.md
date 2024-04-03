@@ -13,12 +13,7 @@ title: Registro
 weight: 17
 ---
 
-## O Que & Por Que?
-
-Registrar eventos, erros ou ocorrências notáveis durante a execução de um programa é o que constitui o logging na programação. Programadores fazem isso para depurar problemas, monitorar desempenho e manter um registro de dados operacionais, tornando-o fundamental para manter e compreender o comportamento do software em produção.
-
 ## Como Fazer:
-
 No Google Apps Script, o registro pode ser realizado usando vários métodos, como a classe `Logger` e `console.log()`. A classe Logger é a maneira tradicional, adequada para depuração simples e propósitos de desenvolvimento. Com atualizações recentes, `console.log()` oferece mais flexibilidade e integração com o Stackdriver Logging, fornecendo uma solução mais robusta para monitorar seus Apps Scripts na Google Cloud Platform.
 
 **Usando Logger:**
@@ -65,7 +60,6 @@ Registrando um objeto: {name: "Jane", role: "Desenvolvedor"}
 Ao transitar para `console.log()` para aplicações complexas, desenvolvedores podem analisar e parsear logs de maneira eficiente usando os poderosos filtros e ferramentas fornecidos pelo GCP, o que não é tão direto com a classe Logger tradicional.
 
 ## Aprofundando:
-
 O registro no Google Apps Script evoluiu significativamente. Inicialmente, a classe `Logger` era o método principal para os desenvolvedores depurarem seus scripts. É simples e suficiente para scripts básicos, mas falta capacidade para aplicações modernas na nuvem, como pesquisar logs ou analisar tendências de logs ao longo do tempo.
 
 A introdução do `console.log()` preencheu essa lacuna integrando o registro do Google Apps Script com o Stackdriver Logging do Google Cloud (agora chamado de Operations Suite), fornecendo uma plataforma centralizada para registro, monitoramento e depuração de aplicações. Isso não apenas permitiu o registro em escala, mas também abriu recursos avançados de gerenciamento de logs, como métricas baseadas em logs, análise de logs em tempo real e integração com outros serviços do Google Cloud.

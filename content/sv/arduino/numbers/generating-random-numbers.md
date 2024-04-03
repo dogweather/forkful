@@ -12,9 +12,6 @@ title: Generera slumptal
 weight: 12
 ---
 
-## Vad & Varför?
-Att generera slumpmässiga tal i Arduino-projekt innebär att producera värden som är oförutsägbara av design, vilket är avgörande för tillämpningar som spel, simuleringar och säkerhetssystem. Programmerare använder denna teknik för att införa variabilitet eller fatta beslut som inte bör vara deterministiska.
-
 ## Hur man gör:
 Arduino tillhandahåller enkla funktioner för att generera slumpmässiga tal: `randomSeed()` och `random()`. För att börja, seeda slumpmätaregeneratorn för att säkerställa olika sekvenser av tal varje gång ditt program körs. En ofta använd metod är att seeda med en analog avläsning från en oansluten pin.
 

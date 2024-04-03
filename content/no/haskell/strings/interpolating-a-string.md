@@ -10,11 +10,7 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## Hva & Hvorfor?
-Strenginterpolering lar deg sette inn variabler eller uttrykk inni en tekststreng. Det gjør det enklere å bygge dynamiske tekster, og holder koden ryddig og leselig.
-
 ## Hvordan:
-
 Interpolering i Haskell kan gjøres med `printf` fra `Text.Printf` biblioteket eller med `interpolate` fra `Data.String.Interpolate` for å få en mer moderne syntaks à la template strings i JavaScript.
 
 ```Haskell
@@ -47,7 +43,6 @@ Hei, Verden!
 ```
 
 ## Deep Dive
-
 Tidligere i Haskell, var strengkonkatenering og `++` operatoren normen for å bygge strenger med variabler. Men det var tungvint og feilutsatt. `printf`-stilen kom fra C og ble adoptert i Haskell for tradisjonell strengformatering. Den fungerer, men syntaksen er ikke ideell.
 
 `Data.String.Interpolate` er et tredjepartsbibliotek som introduserer moderne strenginterpolering. Dette biblioteket bruker en quasiquote syntaks (`[i|...|]`), som gir mer lesbar kode og direkte støtte for interpolering uten å måtte bruke spesielle tegn eller formatteringsdirektiver som med `printf`.
@@ -55,7 +50,6 @@ Tidligere i Haskell, var strengkonkatenering og `++` operatoren normen for å by
 For å implementere strenginterpolering på denne måten, bruker `Data.String.Interpolate` Haskell sin Template Haskell-funksjonalitet, som er en kraftig metaprogrammeringsfasilitet. Det oversetter interpolerte strenger til effektiv konkatenert kode ved kompileringstid, og sikrer god ytelse.
 
 ## See Also
-
 For videre lesning og dybdekunnskap, sjekk ut disse ressursene:
 - [Haskell's Text.Printf documentation](http://hackage.haskell.org/package/base-4.14.0.0/docs/Text-Printf.html)
 - [Data.String.Interpolate on Hackage](http://hackage.haskell.org/package/interpolate)

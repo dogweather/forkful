@@ -11,9 +11,6 @@ title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---
 
-## Vad & Varför?
-Att radera tecken som matchar ett mönster innebär att vi tar bort specifika tecken från en sträng baserat på bestämda kriterier. Programmerare gör detta för att rensa data, validera inmatningar eller forma textdata för specifika ändamål.
-
 ## Hur man gör:
 PHP erbjuder `preg_replace` för mönstermatchning och strängmanipulering. Här är hur man använder det:
 

@@ -11,9 +11,6 @@ title: "\u05E9\u05E8\u05E9\u05D5\u05E8 \u05DE\u05D7\u05E8\u05D5\u05D6\u05D5\u05E
 weight: 3
 ---
 
-## What & Why? מה ולמה?
-Concatenating strings means sticking them together end-to-end to form a new string. Programmers do it to combine text in a flexible and dynamic way, like generating messages or assembling data.
-
 ## How to: איך לעשות זאת
 In Python, concatenating strings can be done in several ways:
 

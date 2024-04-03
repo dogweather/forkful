@@ -11,9 +11,6 @@ title: Praca z XML
 weight: 40
 ---
 
-## Co i dlaczego?
-Praca z XML w kontekście Swift oznacza analizę i generowanie danych XML. Programiści robią to dla wymiany danych, zwłaszcza podczas integracji z systemami, gdzie XML jest standardowym formatem.
-
 ## Jak to zrobić:
 Swift zapewnia `XMLParser` oraz `XMLDocument` do analizy danych XML. Oto fragment kodu do analizy prostego ciągu XML:
 

@@ -18,11 +18,7 @@ title: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F"
 weight: 26
 ---
 
-## 何为与为何？
-计算未来或过去的日期就是确定一个相对于当前日期之前或之后的确切日期。程序员进行这种计算以处理事件预定、数据存档或任何需要时间差异的任务。
-
 ## 示例代码：
-
 Swift 语言中使用 `Date`, `Calendar`, 和 `DateComponents` 类实现日期计算。
 
 ```Swift
@@ -59,7 +55,6 @@ if let tenDaysBefore = calendar.date(byAdding: .day, value: -10, to: now) {
 日期计算涉及时区和夏令时这样的实现细节，这可能会对结果产生影响。因此，在处理日期时，总是要考虑到 Locale 和 TimeZone。
 
 ## 相关资源：
-
 - [Swift Documentation - Date](https://developer.apple.com/documentation/foundation/date)
 - [Swift Documentation - Calendar](https://developer.apple.com/documentation/foundation/calendar)
 - [SwiftDate Library](https://github.com/malcommac/SwiftDate)

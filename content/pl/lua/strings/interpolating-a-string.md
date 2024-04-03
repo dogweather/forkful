@@ -11,9 +11,6 @@ title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---
 
-## What & Why? (Co i Dlaczego?)
-Interpolacja łańcuchów pozwala wpleść wartości zmiennych do tekstu. Programiści używają jej dla czytelności i wygody, eliminując potrzebę ciągłego łączenia ciągów za pomocą konkatenacji.
-
 ## How to: (Jak to zrobić:)
 Lua nie ma wbudowanej funkcji interpolacji łańcuchów, ale można osiągnąć podobny efekt wykorzystując `string.format` lub grawisów (w wersji 5.3+).
 

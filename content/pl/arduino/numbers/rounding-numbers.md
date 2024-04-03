@@ -11,9 +11,6 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i dlaczego?
-Zaokrąglanie liczb to redukcja liczby dziesiętnej do najbliższej wartości całkowitej lub do określonej liczby miejsc po przecinku. Programiści zaokrąglają liczby, aby były łatwiejsze do odczytania i obsługi, szczególnie gdy dokładność poza pewnym punktem jest niepotrzebna lub mogłaby prowadzić do błędów.
-
 ## Jak to zrobić:
 W Arduino możesz zaokrąglać liczby używając wbudowanych funkcji. Kluczowe są `round`, `ceil` i `floor`. Oto krótka demonstracja:
 

@@ -13,12 +13,7 @@ title: Refactoring
 weight: 19
 ---
 
-## Wat & Waarom?
-
-Refactoring in de programmeertaal verwijst naar het proces van het herstructureren van bestaande computercode—het veranderen van de factoring zonder het externe gedrag te wijzigen—om niet-functionele attributen te verbeteren. Het is een essentiële stap voor programmeurs om de leesbaarheid van de code te verhogen, complexiteit te verminderen en potentieel verborgen bugs naar boven te halen, wat gemakkelijkere onderhoud en toekomstige schaalbaarheid van de code bevordert.
-
 ## Hoe te:
-
 In Google Apps Script is een veelvoorkomend scenario dat baat heeft bij refactoring het vereenvoudigen van omslachtige scripts die interageren met Google Sheets of Docs. Aanvankelijk kunnen scripts op een snelle en vuile manier worden geschreven om snel resultaten te behalen. Na verloop van tijd, als het script groeit, wordt het onhandelbaar. Laten we een voorbeeld doorlopen van refactoring voor betere leesbaarheid en efficiëntie.
 
 **Origineel Script:**
@@ -57,7 +52,6 @@ De uitvoer in Logger zal er ongeveer zo uitzien, ervan uitgaande dat je Google S
 Het gerefactoriseerde script bereikt hetzelfde resultaat, maar is schoner en gemakkelijker te begrijpen in één oogopslag.
 
 ## Diepere duik
-
 Refactoring in Google Apps Script erft gedeeltelijk zijn principes van de bredere software-engineeringpraktijk. Het werd meer erkend en gestructureerd als een concept in de late jaren '90, opvallend vanwege Martin Fowler's baanbrekende boek "Refactoring: Improving the Design of Existing Code" (1999), die een uitgebreide gids bood voor verschillende refactoringtechnieken. Hoewel de details van refactoring kunnen variëren tussen programmeertalen vanwege hun syntactische en functionele verschillen, blijft het kernobjectief hetzelfde: het verbeteren van code zonder zijn externe gedrag te veranderen.
 
 In de context van Google Apps Script is een belangrijk aspect om tijdens het refactoren te overwegen de servicequota's en beperkingen die door Google worden opgelegd. Efficiënt gerefactoriseerde code leest niet alleen beter, maar draait ook sneller en betrouwbaarder binnen deze beperkingen. Bijvoorbeeld, batchbewerkingen (`Range.setValues()` in plaats van waarden één cel per keer instellen) kunnen de uitvoeringstijd en quotumconsumptie aanzienlijk verminderen.

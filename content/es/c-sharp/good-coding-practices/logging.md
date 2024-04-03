@@ -10,9 +10,6 @@ title: "Registro de Actividades en Programaci\xF3n"
 weight: 17
 ---
 
-## ¿Qué es y por qué?
-El registro (logging) es el proceso de grabar eventos de aplicaciones y salida de datos durante el tiempo de ejecución. Los programadores realizan registros para diagnosticar errores, monitorear el rendimiento del software, rastrear acciones de los usuarios y mantener el cumplimiento de estándares de seguridad y empresariales.
-
 ## Cómo hacerlo:
 En C#, puedes usar el espacio de nombres incorporado `System.Diagnostics` o bibliotecas de terceros como NLog o log4net. Aquí tienes un ejemplo rápido utilizando la interfaz `ILogger` disponible en .NET Core:
 

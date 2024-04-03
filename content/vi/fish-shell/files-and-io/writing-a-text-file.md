@@ -15,9 +15,6 @@ title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---
 
-## Cái gì & Tại sao?
-Viết vào một tập tin văn bản có nghĩa là lưu trữ dữ liệu như văn bản hoặc mã trên máy tính của bạn. Các lập trình viên làm điều này để lưu trữ cấu hình, thông tin nhật ký, hoặc lưu dữ liệu để sử dụng sau.
-
 ## Cách thực hiện:
 Để viết vào một tập tin văn bản trong Fish, sử dụng `echo` hoặc `printf` sau đó là toán tử `>` hoặc `>>`. `>` tạo một tập tin mới hoặc ghi đè lên một tập tin đã tồn tại, trong khi `>>` thêm vào cuối tập tin.
 

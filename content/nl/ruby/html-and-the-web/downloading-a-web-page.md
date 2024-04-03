@@ -12,9 +12,6 @@ title: Een webpagina downloaden
 weight: 42
 ---
 
-## Wat & Waarom?
-Het downloaden van een webpagina betekent het ophalen van de HTML-inhoud van het internet. Programmeurs doen dit om de gegevens te parsen, informatie te scrapen of veranderingen programmatisch te monitoren.
-
 ## Hoe te:
 Ruby maakt het downloaden van een webpagina eenvoudig met bibliotheken zoals `net/http` en gems zoals `open-uri`. Zo doe je het met `net/http`:
 

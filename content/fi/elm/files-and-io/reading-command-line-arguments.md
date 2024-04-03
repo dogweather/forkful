@@ -11,9 +11,6 @@ title: Komennoriviparametrien lukeminen
 weight: 23
 ---
 
-## Mitä & Miksi?
-Komennon rivin argumenttien lukeminen tarkoittaa syötteiden vastaanottamista käynnistyksen yhteydessä. Ohjelmoijat käyttävät tätä toimintoa, koska se mahdollistaa ohjelmien joustavan käytön ja mukauttamisen käyttäjän tarpeisiin.
-
 ## Näin toimit:
 Elm ei suoraan tue komentorivin argumenttien käsittelyä, koska se on suunniteltu pääasiassa web-kehitykseen. Tämän sijaan, voit käyttää JavaScriptin `process.argv` ominaisuutta Elm-ohjelmasta käsin käyttämällä portteja (ports). Tässä on esimerkki kuinka voit saada argumentit Elm-ohjelmaasi:
 

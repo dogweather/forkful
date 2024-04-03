@@ -12,9 +12,6 @@ title: Skriva till standardfel
 weight: 25
 ---
 
-## Vad & Varför?
-Att skriva till standardfel (stderr) handlar om att dirigera felmeddelanden och diagnostik till stderr-strömmen, separat från standardutdata (stdout). Programmerare gör detta för att skilja vanlig programutdata från felmeddelanden, vilket möjliggör mer effektiv felsökning och loggning.
-
 ## Hur man gör:
 I Clojure kan du skriva till stderr med hjälp av `*err*`-strömmen. Här är ett grundläggande exempel:
 

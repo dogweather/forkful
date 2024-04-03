@@ -10,9 +10,6 @@ title: Manipulation des nombres complexes
 weight: 14
 ---
 
-## Quoi & Pourquoi ?
-Les nombres complexes, composés d'une partie réelle et d'une partie imaginaire (comme 3+4i), sont un pilier dans l'ingénierie et la physique. Les programmeurs les utilisent dans des simulations, le traitement de signal et la résolution d'équations qui ne fonctionnent pas bien avec seulement des nombres réels.
-
 ## Comment faire :
 Ruby facilite la manipulation des nombres complexes. Vous pouvez les créer et les manipuler en utilisant la classe Complex :
 

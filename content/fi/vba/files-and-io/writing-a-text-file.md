@@ -14,12 +14,7 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä ja Miksi?
-
-Tekstitiedoston kirjoittaminen Visual Basic for Applications (VBA) -ohjelmistolla liittyy tiedostoihin tekstidatan luomiseen, muokkaamiseen tai liittämiseen, mikä on perustehtävä tulosten tallentamisessa, lokitiedostojen käsittelyssä tai muiden sovellusten kanssa vuorovaikutuksessa. Ohjelmoijat hyödyntävät tätä toiminnallisuutta automatisoidakseen raportoinnin, datan viennin tai konfiguraatiotiedostojen luomisen Microsoft Officen ekosysteemissä.
-
 ## Miten:
-
 VBA tarjoaa useita menetelmiä tiedostoon kirjoittamiseen, mutta yksi suoraviivaisimmista tavoista on käyttää `FileSystemObject`-oliota. Tässä on askel askeleelta opas yksinkertaisen tekstitiedoston luomiseen ja datan kirjoittamiseen siihen:
 
 1. **Viittaa Microsoft Scripting Runtimeen**: Varmista ensin, että VBA-editorillasi on pääsy `FileSystemObject`-olioon. Mene Työkalut > Viitteet VBA-editorissa ja merkitse "Microsoft Scripting Runtime."
@@ -54,7 +49,6 @@ Hello, VBA!
 ```
 
 ## Syväsukellus:
-
 `FileSystemObject` (FSO), osa Microsoft Scripting Runtime -kirjastoa, tarjoaa rikkaan joukon ominaisuuksia ja metodeja tiedosto-operaatioihin, joita menevät perinteisten VBA-tiedostonkäsittelytarjoumien ohi (esim., `Open`, `Print` #, `Write` #). Tiedostojen käsittelyn lisäksi FSO voi myös manipuloida kansioita ja asemia, mikä tekee siitä voimakkaan työkalun tiedostojärjestelmän operaatioihin VBA:ssa.
 
 On kuitenkin huomioitava, että vaikka FSO tarjoaa nykyaikaisemman lähestymistavan tiedosto-operaatioihin VBA:ssa, se voi tuoda lisäkuormitusta yksinkertaisiin tehtäviin verrattuna VBA:n natiiveihin tiedostonkäsittelylauseisiin. Lisäksi, koska FSO on osa ulkoista kirjastoa, siirrettävyys ja yhteensopivuus muiden järjestelmien kanssa (esim., aiemmat Office-versiot, Mac Office) voivat olla huolenaiheita.

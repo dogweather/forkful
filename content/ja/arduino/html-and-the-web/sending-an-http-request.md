@@ -19,9 +19,6 @@ title: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306E\u9001\u4FE1"
 weight: 44
 ---
 
-## What & Why? (何となぜ？)
-HTTPリクエストを送るとは、インターネット上のサーバーに情報を求めるか、データを送ることです。この機能は、IoTデバイスが外の世界と通信するためによく使われます。
-
 ## How to: (方法)
 ```Arduino
 #include <ESP8266WiFi.h>

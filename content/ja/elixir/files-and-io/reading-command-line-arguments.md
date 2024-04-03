@@ -20,12 +20,7 @@ title: "\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\u6570\u306E\u8AAD\u307F
 weight: 23
 ---
 
-## What & Why? (何となぜ？)
-
-コマンドライン引数を読むことは、プログラム実行時に追加情報を渡す方法だ。プログラマは状況に応じてカスタマイズした振る舞いをプログラムにさせるためにこれを利用する。
-
 ## How to (方法)
-
 ```elixir
 # コマンドライン引数を取得するには
 args = System.argv()
@@ -60,12 +55,10 @@ CLIExample.main(System.argv())
 ```
 
 ## Deep Dive (深掘り)
-
 Elixirでコマンドライン引数を読むのは簡単だ。Erlang VM上で動くElixirは、古くから進化してきたErlangの豊富な機能を活用できる。他の言語では引数解析のために外部ライブラリが必要かもしれないが、Elixirは`System.argv()`がそのまま使える。
 
 しかし、より複雑な引数解析が必要な時は、`OptionParser`モジュールが使える。これにより、フラグやキー/値オプションなどを扱えるようになる。どちらの方法も、コマンドラインツールを作成するために実装がシンプルで信頼性が高い。
 
 ## See Also (関連情報)
-
 - [Elixirの公式ドキュメント](https://elixir-lang.org/docs.html)
 - [OptionParserモジュールのドキュメント](https://hexdocs.pm/elixir/OptionParser.html)

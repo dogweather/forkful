@@ -16,9 +16,6 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mikä & Miksi?
-PowerShellissa hakemiston olemassaolon tarkistaminen on yleinen tehtävä, joka auttaa skriptejä tekemään päätöksiä tiedostojärjestelmän rakenteeseen perustuen—kuten välttämään virheitä vahvistamalla, että kohdehakemisto on paikallaan ennen luku- tai kirjoitusyritystä. Se on olennaista varmistaaksesi, että skriptisi toimii luotettavasti monenlaisissa ympäristöissä.
-
 ## Miten:
 PowerShell tarjoaa suoraviivaisen tavan tarkistaa hakemiston läsnäolo käyttämällä `Test-Path`-cmdletia. Tämä cmdlet palauttaa Boolean-arvon, joka ilmaisee, onko määritetty polku olemassa. Näin voit käyttää sitä:
 

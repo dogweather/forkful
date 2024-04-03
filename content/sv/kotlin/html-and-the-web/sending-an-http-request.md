@@ -11,9 +11,6 @@ title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-begäran innebär att din applikation begär data från eller skickar data till en server över internet. Programutvecklare gör detta för att interagera med webbtjänster, hämta uppdaterad information eller publicera användardata.
-
 ## Att göra:
 Kotlin använder bibliotek som `khttp` eller `Fuel` för HTTP-begäran, men här fokuserar vi på Ktor, ett Kotlin-eget sätt:
 

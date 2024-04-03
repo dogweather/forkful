@@ -14,16 +14,10 @@ title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---
 
-## Vad & Varför?
-
-Associativa arrayer, kända som `std::map` eller `std::unordered_map` i C++, överbryggar klyftan mellan arrayindex och verkliga data, vilket låter dig använda meningsfulla nycklar. De är det självklara valet när du behöver snabba uppslag, insättningar och raderingar med nycklar istället för indexpositioner.
-
 ## Hur man gör:
-
 I C++ får associativa arrayer liv med `<map>` och `<unordered_map>`-biblioteken. Låt oss bryta ner exempel för att se båda i aktion.
 
 ### Använda `std::map`
-
 `std::map` håller element sorterade baserade på nyckeln. Så här kommer du igång:
 
 ```C++
@@ -51,7 +45,6 @@ int main() {
 ```
 
 ### Använda `std::unordered_map`
-
 När ordningen inte spelar någon roll, men prestanda gör det, är `std::unordered_map` din vän, som erbjuder snabbare genomsnittlig komplexitet för insättningar, uppslag och raderingar.
 
 ```C++
@@ -79,7 +72,6 @@ int main() {
 ```
 
 ## Djupdykning
-
 Associativa arrayer i C++, särskilt `std::map` och `std::unordered_map`, handlar inte bara om att lagra element. De ger grunden för mer komplex dataskötsel genom att tillåta operationer som sökning, infogning och borttagning i effektiva tidskomplexiteter (logaritmisk för `std::map` och genomsnittlig konstant tid för `std::unordered_map`). Denna effektivitet kommer från de underliggande datastrukturerna: ett balanserat träd för `std::map` och en hashtabell för `std::unordered_map`.
 
 Historiskt sett, innan dessa var en del av standardbiblioteket, skulle programmerare behöva implementera sina egna versioner eller använda tredjepartsbibliotek, vilket ledde till inkonsekvenser och potentiella ineffektiviteter. Inkluderingen av maps i C++:s standardbibliotek standardiserade inte bara deras användning utan optimerade dem också för prestanda över olika kompilatorer och plattformar.

@@ -11,9 +11,6 @@ title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---
 
-## Mitä & Miksi?
-TOML:lla työskentely sisältää TOML-datan (Tom's Obvious, Minimal Language) jäsentämisen ja luomisen Haskellilla. Ohjelmoijat tekevät sen helposti hallitakseen konfiguraatiotiedostoja tai tietojenvaihtoa vankkojen tyyppitakuuksien ja minimaalisen syntaksin vaivan kanssa.
-
 ## Kuinka:
 Ensin, varmista että sinulla on TOML-jäsennyskirjasto. Haskellille `htoml` on suosittu valinta. Sinun on lisättävä se projektisi riippuvuuksiin.
 

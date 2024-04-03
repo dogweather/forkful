@@ -13,12 +13,7 @@ title: Lavorare con XML
 weight: 40
 ---
 
-## Cosa & Perché?
-
-Lavorare con XML in Dart coinvolge l'analisi, l'interrogazione e la modifica dei documenti XML, un processo fondamentale per le applicazioni che interagiscono con i servizi web, file di configurazione o sistemi legacy. I programmatori fanno ciò per abilitare lo scambio di dati, configurazioni o persino chiamate di procedura remote in un formato strutturato, gerarchico che sia leggibile dall'uomo e analizzabile dalla macchina.
-
 ## Come fare:
-
 Dart non include il supporto incorporato per la gestione dell'XML nella sua libreria standard, rendendo necessario l'uso di pacchetti di terze parti. Un pacchetto popolare è `xml`. Per usarlo, devi prima aggiungerlo al tuo `pubspec.yaml`:
 
 ```yaml

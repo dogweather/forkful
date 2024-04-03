@@ -14,11 +14,8 @@ title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---
 
-## Was & Warum?
-
-Reguläre Ausdrücke (regex) sind ein mächtiges Werkzeug zur Textverarbeitung, das es Programmierern ermöglicht, mit fortgeschrittenen Musterabgleichtechniken nach Zeichenfolgen zu suchen, Übereinstimmungen zu finden und Zeichenfolgen zu manipulieren. In Kotlin hilft die Nutzung von regex, komplexe Textverarbeitungsaufgaben wie Validierung, Parsing oder Transformation effizient durchzuführen, was es für Aufgaben von einfacher Zeichenfolgenmanipulation bis hin zu komplexer Textanalyse unentbehrlich macht.
-
 ## Wie geht das:
+
 
 ### Basisabgleich
 Um zu überprüfen, ob eine Zeichenfolge in Kotlin einem bestimmten Muster entspricht, können Sie die `matches` Methode der `Regex` Klasse verwenden.

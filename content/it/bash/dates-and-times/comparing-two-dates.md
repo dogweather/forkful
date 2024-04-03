@@ -11,9 +11,6 @@ title: Confronto tra due date
 weight: 27
 ---
 
-## Cos'è e Perché?
-Comparare due date significa verificare qual è la più recente o calcolare la differenza temporale tra di esse. I programmatori lo fanno per gestire scadenze, eventi e cronologie all'interno delle applicazioni.
-
 ## Come Fare:
 ```Bash
 #!/bin/bash

@@ -13,9 +13,6 @@ title: Substrings extraheren
 weight: 6
 ---
 
-## Wat & Waarom?
-Substrings extraheren betekent kleinere delen uit een string halen op basis van bepaalde criteria. Programmeurs extraheren substrings om tekstgegevens te manipuleren en te analyseren, zoals het opsplitsen van invoer in nuttigere stukken of het bereiken van de sappige gegevens die in een zin verborgen zitten.
-
 ## Hoe te:
 Hier is hoe je strings kunt snijden en hacken in PowerShell:
 

@@ -11,9 +11,6 @@ title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---
 
-## What & Why? (Co i Dlaczego?)
-Wypisywanie informacji diagnostycznych (debug) pomaga śledzić, co się dzieje w programie. Używamy tego, by szybko znaleźć i naprawić błędy.
-
 ## How to: (Jak to zrobić:)
 ```Arduino
 void setup() {

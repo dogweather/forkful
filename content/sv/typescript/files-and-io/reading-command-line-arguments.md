@@ -11,9 +11,6 @@ title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---
 
-## Vad & Varför?
-Att läsa in kommandoradsargument är metoden att fånga användarinput från konsolen i ditt program. Programmerare gör det för att tillåta användare att skräddarsy exekveringen av applikationen genom att ge olika värden vid start.
-
 ## Hur gör man:
 Dags att dyka in. För att börja, installera `ts-node` för att kunna köra TypeScript filer direkt:
 

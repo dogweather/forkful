@@ -11,9 +11,6 @@ title: Organizing code into functions
 weight: 18
 ---
 
-## What & Why?
-Organizing code into functions is about breaking down your code into reusable chunks with specific purposes. We do it to make code cleaner, easier to read, debug, and update. 
-
 ## How to:
 Let's say you're writing a script to calculate the square and cube of a number. Without functions, it's a mess of repetition:
 

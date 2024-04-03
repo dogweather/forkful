@@ -13,12 +13,7 @@ title: Herunterladen einer Webseite
 weight: 42
 ---
 
-## Was & Warum?
-
-Das Herunterladen einer Webseite beinhaltet das Abrufen des Inhalts einer Webseite über ihre URL zur Verarbeitung oder Speicherung. Programmierer tun dies, um Informationen zu extrahieren, Änderungen zu überwachen oder Inhalte zu archivieren, was es zu einem Grundpfeiler beim Web Scraping, Data Mining und automatisierten Tests macht.
-
 ## Wie:
-
 Dart stellt das `http`-Paket bereit, eine beliebte Drittanbieterbibliothek für HTTP-Anfragen. Hier ist ein grundlegendes Beispiel, wie man es verwendet, um eine Webseite herunterzuladen:
 
 Fügen Sie zunächst das `http`-Paket zu Ihrer `pubspec.yaml` hinzu:

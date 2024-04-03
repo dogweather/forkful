@@ -13,12 +13,7 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## Cosa & Perché?
-
-La ricerca e la sostituzione di testo nella programmazione facilitano la modifica e la gestione delle stringhe, che sono compiti fondamentali nella manipolazione dei dati e nello sviluppo del software. I programmatori eseguono queste operazioni per aggiornare, pulire o trasformare dati testuali in modo efficiente.
-
 ## Come fare:
-
 In Go, il pacchetto `strings` offre varie funzioni per cercare e sostituire testo all'interno delle stringhe. Esploriamo un paio di metodi comuni.
 
 **Utilizzare `strings.Contains` per cercare testo:**
@@ -77,7 +72,6 @@ func main() {
 ```
 
 ## Approfondimento
-
 In Go, la manipolazione del testo, inclusa le operazioni di ricerca e sostituzione, è progettata per essere semplice ed efficiente, sfruttando l'ampia libreria standard di Go. Il pacchetto `strings` fornisce funzionalità di base, adatte per la maggior parte dei casi d'uso comuni, mentre il pacchetto `regexp` è dedicato a modelli più complessi che richiedono espressioni regolari.
 
 Storicamente, l'approccio di Go alla gestione delle stringhe e alla manipolazione del testo ha enfatizzato semplicità e prestazioni. La decisione di includere pacchetti potenti come `strings` e `regexp` come parte della libreria standard è stata guidata dal desiderio di rendere Go una scelta pratica per lo sviluppo web e le applicazioni di elaborazione del testo, dove tali operazioni sono frequenti.

@@ -10,9 +10,6 @@ title: Einen neuen Projekt starten
 weight: 1
 ---
 
-## Was & Warum?
-Ein neues Projekt zu starten bedeutet, den Grundstein für eine frische Code-Basis zu legen. Programmierer tun dies, um Ideen in funktionale Software umzusetzen und Probleme mit maßgeschneiderten Lösungen zu bewältigen.
-
 ## How to:
 Hier ist ein minimalistisches Beispiel, um ein Haskell-Projekt mit Stack zu starten:
 

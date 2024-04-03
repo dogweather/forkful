@@ -10,12 +10,7 @@ title: Generering av tilfeldige tall
 weight: 12
 ---
 
-## Hva & Hvorfor?
-
-Å generere tilfeldige tall i C# involverer opprettelsen av uforutsigbare numeriske verdier innenfor et spesifisert område. Programmerere bruker disse metodene for å implementere funksjoner som kryptografi, simuleringer og spill hvor uforutsigbarhet eller simulering av ekte verdens tilfeldighet kreves.
-
 ## Hvordan:
-
 Den vanligste måten å generere tilfeldige tall i C# er ved bruk av `System.Random`-klassen. Her er et enkelt eksempel som demonstrerer bruken:
 
 ```C#
@@ -67,7 +62,6 @@ public class SecureRandomExample
 ```
 
 ## Dykk dypere
-
 Generering av tilfeldige tall i C# har utviklet seg over årene. Opprinnelig var `System.Random`-klassen gå-til-metoden for å generere pseudo-tilfeldige tall. Det er pseudo-tilfeldig fordi, gitt en spesifikk seed-verdi, vil den produsere samme sekvens av tall, noe som kan være nyttig for feilsøking eller gjentakbarhet av tester.
 
 Selv om den er tilstrekkelig for grunnleggende behov, er ikke `System.Random` trådsikker og kan produsere forutsigbare utfall, noe som ikke er egnet for sikkerhetsavhengige applikasjoner. Denne begrensningen førte til introduksjonen av `RNGCryptoServiceProvider` for kryptografisk tilfeldighet, som er mer sikker, men også mer ressurskrevende.

@@ -11,9 +11,6 @@ title: Lavorare con XML
 weight: 40
 ---
 
-## Cosa e Perché?
-"Lavorare con XML" si riferisce al processo di lettura, creazione e modifica dei file XML (eXtensible Markup Language) utilizzando la programmazione. I programmatori lo fanno perché XML è ampiamente utilizzato per lo scambio di dati a causa della sua natura indipendente dalla piattaforma e del formato auto-descrittivo.
-
 ## Come fare:
 Il modulo `xml.etree.ElementTree` di Python offre strumenti per lavorare con XML.
 

@@ -14,12 +14,7 @@ title: Capitalizando uma String
 weight: 2
 ---
 
-## O Que & Por Quê?
-
-Capitalizar uma string no Visual Basic for Applications (VBA) envolve converter o primeiro caractere de cada palavra em uma string para maiúscula enquanto garante que o restante esteja em minúscula. Programadores fazem isso para normalização de dados, melhorando a legibilidade e garantindo consistência em entradas ou exibições de dados textuais.
-
 ## Como fazer:
-
 O VBA não possui uma função embutida especificamente para capitalizar cada palavra em uma string, como algumas outras linguagens de programação têm. No entanto, você pode alcançar isso combinando alguns métodos e funções como `UCase`, `LCase` e `Mid`.
 
 Aqui está um exemplo simples de como capitalizar uma string:
@@ -46,7 +41,6 @@ End Sub
 A função `CapitalizeString` divide a string de entrada em palavras, capitaliza a primeira letra de cada palavra e, finalmente, as une de volta para formar a string devidamente capitalizada.
 
 ## Aprofundando
-
 Visual Basic for Applications, surgido no início dos anos 90 como uma linguagem de macro para aplicações do Microsoft Office, foi projetado para oferecer um modelo de programação acessível. Suas capacidades de manipulação de string, embora extensas, carecem de algumas abstrações de alto nível encontradas em linguagens mais novas. Muitos ambientes de programação modernos fornecem um método dedicado para capitalização de string, muitas vezes denominado como formatação de título ou similar. Python, por exemplo, inclui o método `.title()` para strings.
 
 Ao comparar, a ausência de uma única função embutida no VBA para capitalizar palavras em uma string pode parecer uma desvantagem. No entanto, isso oferece aos programadores uma compreensão mais profunda e controle sobre como eles manipulam texto e acomodam nuances não estritamente aderidas por um método genérico. Por exemplo, o manuseio de acrônimos ou casos especiais onde certas palavras menores em títulos não devem ser capitalizadas pode ser melhor personalizado no VBA através de funções explícitas.

@@ -15,9 +15,6 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co & Dlaczego?
-Obsługa błędów w Dart polega na przewidywaniu i zarządzaniu wyjątkami, które pojawiają się podczas wykonywania programu, aby zwiększyć jego niezawodność i użyteczność. Programiści implementują obsługę błędów, aby zapobiec awariom i zapewnić użytkownikom znaczące informacje zwrotne, gwarantując płynniejsze, bezpieczniejsze doświadczenie z aplikacją.
-
 ## Jak to zrobić:
 Dart obsługuje dwa typy błędów: błędy *w czasie kompilacji* oraz błędy *w czasie wykonania*. Błędy w czasie kompilacji są wykrywane przez analizator Darta przed uruchomieniem kodu, natomiast błędy w czasie wykonania, czyli wyjątki, występują podczas wykonania. Oto jak obsługiwać wyjątki w Dart:
 

@@ -13,12 +13,7 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mitä & Miksi?
-
-Testien kirjoittaminen Go-kielellä käsittää pienien, hallittavien koodipätkien luomisen, jotka varmistavat sovelluksesi toiminnallisuuden ja käyttäytymisen. Ohjelmoijat kirjoittavat testejä varmistaakseen, että heidän koodinsa toimii odotetusti eri olosuhteissa, helpottaakseen uudelleenkirjoittamista ja auttaakseen estämään regressioita.
-
 ## Miten:
-
 Go:ssa testit kirjoitetaan tyypillisesti samaan pakettiin testattavan koodin kanssa. Testeihin tarkoitetut tiedostot on nimetty `_test.go`-liitteellä. Testit ovat funktioita, jotka ottavat argumentiksi osoittimen testing.T-objektiin (`testing`-paketista), ja ne ilmaisevat epäonnistumisen kutsumalla metodeita, kuten `t.Fail()`, `t.Errorf()` jne.
 
 Esimerkki yksinkertaisesta testistä `Add`-funktiolle, joka on määritelty `math.go`-tiedostossa:
@@ -80,7 +75,6 @@ func TestAddTableDriven(t *testing.T) {
 ```
 
 ## Syväsukellus
-
 Go-testauskehys, joka esiteltiin Go:n version 1 yhteydessä itse kielen ohella, on suunniteltu integroitumaan saumattomasti Go-työkaluketjuun, heijastaen Go:n painotusta yksinkertaisuuteen ja tehokkuuteen ohjelmistokehityksessä. Toisin kuin jotkut muissa kielissä käytetyt testauskehykset, jotka nojaavat ulkoisiin kirjastoihin tai monimutkaisiin asetuksiin, Go:n sisäänrakennettu `testing`-paketti tarjoaa suoraviivaisen tavan kirjoittaa ja suorittaa testejä.
 
 Mielenkiintoinen näkökulma Go:n testauslähestymistapaan on konventio yli konfiguraation periaate, jonka se omaksuu, kuten tiedostonimen kaava (`_test.go`) ja standardikirjaston toimintojen käyttö ulkoisten riippuvuuksien sijaan. Tämä minimalistinen lähestymistapa kannustaa kehittäjiä kirjoittamaan testejä, koska aloituskynnys on matala. 

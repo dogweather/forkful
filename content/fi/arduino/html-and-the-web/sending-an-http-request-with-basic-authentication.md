@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---
 
-## What & Why? (Mikä ja Miksi?)
-HTTP-pyyntö perusautentikoinnilla lähettää tietoa palvelimelle suojattuna. Se on turvallinen tapa päästä käsiksi API:hin tai palveluun, joka vaatii käyttäjätunnistusta.
-
 ## How to: (Kuinka tehdä:)
 ```Arduino
 #include <ESP8266WiFi.h>

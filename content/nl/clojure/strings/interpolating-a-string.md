@@ -12,9 +12,6 @@ title: Een string interpoleren
 weight: 8
 ---
 
-## Wat & Waarom?
-Stringinterpolatie stelt ons in staat variabelen zonder moeite in strings te gooien. Waarom? Om dynamisch tekst te construeren - veel handiger dan de ouderwetse stringconcatenatie.
-
 ## Hoe te:
 ```Clojure
 ;; Basis met `str` en `format`

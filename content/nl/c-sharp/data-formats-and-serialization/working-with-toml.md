@@ -12,9 +12,6 @@ title: Werken met TOML
 weight: 39
 ---
 
-## Wat & Waarom?
-TOML is een acroniem voor Tom's Obvious, Minimal Language, een configuratiebestandsformaat dat gemakkelijk te lezen is vanwege de duidelijke semantiek. Programmeurs gebruiken het voor configuratiebestanden, om gegevensuitwisseling tussen systemen te vereenvoudigen, en omdat het een evenwicht biedt tussen leesbaarheid voor mensen en parseerbaarheid door machines.
-
 ## Hoe:
 Installeer eerst een TOML-parser zoals `Tomlyn`. Gebruik je pakketbeheerder:
 

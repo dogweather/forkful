@@ -18,12 +18,7 @@ title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---
 
-## Cái gì và Tại sao?
-
-Mảng liên kết, được biết đến trong các ngôn ngữ khác như bản đồ hoặc từ điển, là các cặp khóa-giá trị được sử dụng để tra cứu và thao tác dữ liệu một cách hiệu quả. Khác với mảng truyền thống sử dụng chỉ số nguyên, mảng liên kết sử dụng khóa, làm cho việc truy cập dữ liệu trở nên trực quan và linh hoạt hơn cho lập trình viên.
-
 ## Làm thế nào:
-
 C không có hỗ trợ tích hợp sẵn cho mảng liên kết như một số ngôn ngữ cấp cao, nhưng bạn có thể mô phỏng chúng sử dụng cấu trúc và băm. Dưới đây là một ví dụ đơn giản sử dụng sự kết hợp của một struct và một hàm băm đơn giản để triển khai một mảng liên kết để lưu trữ và truy cập số nguyên bằng khóa chuỗi.
 
 Đầu tiên, định nghĩa một cấu trúc để đại diện cho một cặp khóa-giá trị và một cái khác để đại diện cho chính mảng liên kết:
@@ -100,7 +95,6 @@ int main() {
 Ví dụ này biểu diễn các thao tác cơ bản: khởi tạo một mảng liên kết, chèn vào các cặp khóa-giá trị và tìm kiếm giá trị bằng khóa. Lưu ý rằng code này thiếu xử lý va chạm và chỉ nhằm mục đích giáo dục.
 
 ## Sâu hơn
-
 Khái niệm về mảng liên kết tồn tại trước C, nhưng bản chất cấp thấp của ngôn ngữ không trực tiếp hỗ trợ chúng như các kiểu tích hợp sẵn. Điều này khuyến khích một sự hiểu biết sâu sắc hơn về cấu trúc dữ liệu và thuật toán, bao gồm cơ chế băm để ánh xạ khóa-giá trị một cách hiệu quả. Nhiều thư viện và khung làm việc C cung cấp các cách tiếp cận tinh vi hơn cho việc triển khai mảng liên kết, như `GHashTable` của GLib, cung cấp một thực hiện mạnh mẽ hoàn chỉnh với xử lý va chạm, thay đổi kích thước động và hỗ trợ các loại khóa và giá trị tùy ý.
 
 Mặc dù việc xây dựng mảng liên kết bằng tay trong C có thể được coi là cồng kềnh so với các ngôn ngữ có hỗ trợ tích hợp, nhưng nó cung cấp những hiểu biết quý giá về cách hoạt động bên trong của cấu trúc dữ liệu, tăng cường kỹ năng giải quyết vấn đề và tối ưu hóa của lập trình viên. Tuy nhiên, đối với mã nguồn sản phẩm hoặc các ứng dụng phức tạp hơn, việc sử dụng các thư viện hiện có như GLib thường là cách tiếp cận thực tế và tiết kiệm thời gian hơn.

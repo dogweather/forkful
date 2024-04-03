@@ -10,9 +10,6 @@ title: Sending an HTTP request with basic authentication
 weight: 45
 ---
 
-## What & Why?
-Sending an HTTP request with basic authentication adds a layer of security by requiring a username and password. Programmers use it to access APIs or web services that are locked down to authorized users only.
-
 ## How to:
 To make this happen on an Arduino, you first need to include the necessary libraries – typically `<ESP8266WiFi.h>` for ESP8266 or `<WiFi.h>` for ESP32, and `<Base64.h>` for encoding authentication details. Here's a bare-bones snippet to get you started:
 
@@ -56,7 +53,6 @@ void loop() {
 Upon running, the Arduino will connect to the specified server with the credentials and fetch the protected content.
 
 ## Deep Dive
-
 HTTP Basic Authentication has been around since the early days of the web, defined in 1996 by RFC 2617. It's simple: encode username and password in base64 and slap it onto an HTTP header. It's not the most secure method (because base64 is easily reversible), but it's straightforward for low-stakes or internal tools.
 
 There are alternatives, like Digest Access Authentication or OAuth, which are more secure, but they're also heavier on resources – something to consider on a tiny Arduino.

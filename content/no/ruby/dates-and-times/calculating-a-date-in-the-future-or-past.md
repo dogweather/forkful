@@ -9,9 +9,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## Hva & Hvorfor?
-Dato-operasjoner lar oss beregne fremtidige eller fortidige datoer. Programmerere trenger dette for funksjoner som utløpsfrister, planlegging og tidsstyring.
-
 ## Hvordan gjøre det:
 ```Ruby
 require 'date'

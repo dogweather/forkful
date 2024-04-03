@@ -13,12 +13,7 @@ title: Debug-output afdrukken
 weight: 33
 ---
 
-## Wat & Waarom?
-
-Debuguitvoer naar de seriële monitor printen is een manier om een kijkje te nemen in de geest van een Arduino. Programmeurs doen dit om problemen op te sporen, aannames te testen en realtime gegevens te monitoren zonder gebruik te maken van geavanceerde debugtechnieken.
-
 ## Hoe te:
-
 Laten we meteen tot de kern komen. Stel je voor dat je elke seconde "Hallo, wereld!" wilt printen. Hier is het codefragment:
 
 ```Arduino
@@ -42,7 +37,6 @@ Hallo, wereld!
 ```
 
 ## Diepere Duik
-
 Voordat `Serial` onze trouwe bondgenoot werd, gebruikten mensen knipperende LED's om te communiceren - het stenen tijdperk van debuggen. Daarna kwam serieuze debug hardware langs, maar dat was prijzig. `Serial.print()` en zijn verwanten laten ons nu tegen lage kosten teksten op het scherm slingeren, snel als de bliksem.
 
 Alternatieven? Nou, je hebt LCD's, loggen naar SD-kaarten, zelfs Bluetooth voor degenen die draadloos willen. Elk methode heeft zijn eigenaardigheden; `Serial` is gewoon de rechtdoorzee optie - eenvoudig, direct, altijd daar.
@@ -50,7 +44,6 @@ Alternatieven? Nou, je hebt LCD's, loggen naar SD-kaarten, zelfs Bluetooth voor 
 Onder de motorkap zet `Serial.print()` jouw gegevens om in bytes die via de USB naar je computer sluipen. Dit gebeurt via hardware (UART) of software-geëmuleerde (SoftSerial) seriële poorten. Het is betrouwbaar, maar de poort belasten met te veel gegevens kan de stroom van je programma verstoren, dus gebruik seriële prints zoals je een steak zou kruiden, niet zoals je een soep zou overstromen.
 
 ## Zie Ook
-
 Voor degenen die meer willen weten:
 
 - Arduino's gids voor `Serial`: [Arduino Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)

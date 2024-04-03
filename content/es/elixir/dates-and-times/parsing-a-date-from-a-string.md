@@ -13,12 +13,7 @@ title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---
 
-## Qué y Por Qué?
-
-Convertir una fecha de un string se trata de tomar texto, como "2023-04-05", y convertirlo a un formato de fecha que tu programa pueda entender y usar. Los programadores hacen esto porque las fechas vienen en muchos formatos, y necesitan consistencia para compararlas, ordenarlas o almacenarlas adecuadamente.
-
 ## Cómo hacerlo:
-
 En Elixir, puedes analizar fechas usando el módulo `Date`. Así se convierte un string en una fecha:
 
 ```elixir
@@ -47,7 +42,6 @@ Salida de muestra:
 ```
 
 ## Análisis Profundo
-
 La función `Date.from_iso8601/1` es parte de la biblioteca estándar de Elixir, introducida para asegurar un análisis fácil del estándar de fecha ISO8601 - un formato de fecha común. Pero la vida no es tan simple; las fechas vienen en toneladas de formatos. Ahí es donde `Timex`, una biblioteca de terceros de Elixir, entra en juego. Es más rica que las funciones de fecha integradas en Elixir y ayuda a manejar una amplia variedad de formatos de fecha.
 
 Elixir en sí es inmutable, lo que significa que las fechas analizadas no son una excepción; no pueden cambiarse una vez creadas. Esta característica se remonta a las raíces de programación funcional de Elixir, garantizando predictibilidad y facilitando la depuración.
@@ -55,7 +49,6 @@ Elixir en sí es inmutable, lo que significa que las fechas analizadas no son un
 Históricamente, el análisis de fechas ha sido difícil debido a los estándares variados. Sin embargo, con bibliotecas como `Timex` y características del lenguaje en Elixir, la complejidad se abstrae, haciendo la vida de un desarrollador un poco más sencilla.
 
 ## Ver También
-
 - [Fecha de Elixir](https://hexdocs.pm/elixir/Date.html) (en inglés)
 - [Documentación de Timex](https://hexdocs.pm/timex/Timex.html) (en inglés)
 - [Estándar ISO8601](https://www.iso.org/iso-8601-date-and-time-format.html) (en inglés)

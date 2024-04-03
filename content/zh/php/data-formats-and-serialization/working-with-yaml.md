@@ -22,16 +22,10 @@ title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 weight: 41
 ---
 
-## 什么 & 为什么？
-
-YAML，即“YAML Ain't Markup Language”（YAML不是标记语言），是一种人类可读的数据序列化格式，常用于配置文件。程序员选择使用YAML是因为它简单易读，非常适合以易于管理的形式存储设置、参数乃至复杂的数据结构。
-
 ## 如何操作：
-
 截至当前版本，PHP尚不支持在其标准库中解析YAML。在PHP中使用YAML最直接的方式是通过使用Symfony YAML组件或者`yaml` PECL扩展。
 
 ### 使用Symfony YAML组件
-
 首先，通过Composer安装Symfony YAML组件：
 
 ```bash
@@ -95,7 +89,6 @@ framework:
 ```
 
 ### 使用`yaml` PECL扩展
-
 如果您愿意，或者如果您的项目要求允许，PECL扩展可以是另一种有效的方法来处理YAML。首先，确保安装了扩展：
 
 ```bash

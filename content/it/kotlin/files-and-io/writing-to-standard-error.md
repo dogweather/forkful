@@ -13,12 +13,7 @@ title: Scrivere sull'errore standard
 weight: 25
 ---
 
-## Cosa e Perché?
-
-Scrivere su standard error (stderr) consiste nell'inviare messaggi di errore e diagnostica su un flusso separato, distinto dall'output standard (stdout), ciò consente una migliore gestione degli errori e analisi dei log. I programmatori fanno ciò per facilitare il debug e per garantire che i messaggi di errore possano essere facilmente identificati e reindirizzati se necessario, mantenendo puliti i log di output o i messaggi agli utenti.
-
 ## Come fare:
-
 In Kotlin, scrivere su stderr può essere realizzato utilizzando `System.err.println()`. Questo metodo è simile a `System.out.println()`, ma indirizza l'output al flusso di errore standard piuttosto che al flusso di output standard.
 
 ```kotlin

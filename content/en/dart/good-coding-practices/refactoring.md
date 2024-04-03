@@ -11,14 +11,10 @@ title: Refactoring
 weight: 19
 ---
 
-## What & Why?
-
-Refactoring in Dart is the process of restructuring existing code without changing its external behavior, aimed at improving its internal structure, readability, and maintainability. Programmers often refactor to make code cleaner, easier to understand, or more efficient, facilitating easier future modifications and decreasing the likelihood of bugs.
-
 ## How to:
 
-### Example 1: Renaming and Extracting Methods
 
+### Example 1: Renaming and Extracting Methods
 Before refactoring, you might have a piece of code that mixes different levels of abstraction or responsibilities, like calculating a discount and then applying it:
 
 ```dart
@@ -58,7 +54,6 @@ Final price: 80.0
 By extracting the calculation into a method, you now have a clearly defined operation that can be reused, tested independently, and easily modified.
 
 ### Example 2: Simplifying Conditional Expressions
-
 Before refactoring, conditional statements might be overly complex or hard to read:
 
 ```dart
@@ -104,8 +99,7 @@ void main() {
 Discount: 0.05
 ```
 
-This refactor not only makes the code more concise but also encapsulates the logic for determining discounts in a way that's easier to understand and maintain. 
+This refactor not only makes the code more concise but also encapsulates the logic for determining discounts in a way that's easier to understand and maintain.
 
 ### Third-party Libraries for Refactoring
-
 When it comes to refactoring in Dart, especially within Flutter apps, the [Dart DevTools](https://dart.dev/tools/dart-devtools) suite is invaluable. It includes performance tools, a widget inspector, and a source-level debugger. While not a third-party library, Dart DevTools is often used alongside libraries like `flutter_bloc` for cleanly managing state in a way that's conducive to refactoring for improved modularity and readability. Unfortunately, due to the scope of this entry, specific code examples using third-party libraries won't be provided here, but developers are encouraged to explore these tools to enhance the refactoring process in their Dart/Flutter applications.

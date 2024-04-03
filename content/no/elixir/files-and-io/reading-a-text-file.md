@@ -10,9 +10,6 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## Hva & Hvorfor?
-Å lese en tekstfil handler om å laste innholdet fra filen inn i programmet. Programmerere gjør dette for å manipulere data, lagre innstillinger, eller lese kommandoer.
-
 ## Hvordan gjør man det:
 ```Elixir
 # Åpne og lese en hel fil

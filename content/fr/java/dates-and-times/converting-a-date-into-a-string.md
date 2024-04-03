@@ -10,9 +10,6 @@ title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## What & Why?
-Convertir une date en chaîne de caractères permet de la formater pour l'affichage ou le stockage. C'est essentiel pour communiquer des informations temporelles lisibles par des humains ou pour interagir avec des systèmes nécessitant un format de date spécifique.
-
 ## How to:
 Voici comment transformer une date en string en Java :
 

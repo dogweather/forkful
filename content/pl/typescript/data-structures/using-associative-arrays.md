@@ -14,12 +14,7 @@ title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---
 
-## Co i dlaczego?
-
-Asocjacyjne tablice, czyli obiekty w TypeScript, pozwalają używać ciągów znaków (lub kluczy) do dostępu do par wartości. Programiści używają ich do bardziej dynamicznych wzorców dostępu do danych w porównaniu z tradycyjnymi tablicami, zapewniając elastyczny sposób na strukturyzację i dostęp do danych bez bycia związanym z indeksami numerycznymi.
-
 ## Jak to zrobić:
-
 Tworzenie i używanie asocjacyjnych tablic w TypeScript jest proste. Oto krótki przewodnik:
 
 ```TypeScript
@@ -71,7 +66,6 @@ Wynik:
 ```
 
 ## W głąb
-
 W TypeScript, to co nazywamy asocjacyjnymi tablicami, są w zasadzie obiektami. Historycznie, w językach takich jak PHP, asocjacyjne tablice są fundamentalnym typem, ale JavaScript (i przez rozszerzenie, TypeScript) używa obiektów do tego celu. To podejście jest zarówno siłą, jak i ograniczeniem. Obiekty zapewniają wysoce dynamiczną strukturę do kojarzenia ciągów znaków z wartościami, ale nie są przeznaczone do użytku jako "tablice" w tradycyjnym sensie. Na przykład, nie można bezpośrednio używać na tych obiektach metod tablicowych takich jak `push` czy `pop`.
 
 W przypadkach, gdy potrzebujesz uporządkowanych kolekcji par klucz-wartość z operacjami podobnymi do tablic, TypeScript (i nowoczesny JavaScript) oferuje obiekt `Map`:

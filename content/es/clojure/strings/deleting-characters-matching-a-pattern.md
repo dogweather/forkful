@@ -11,9 +11,6 @@ title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---
 
-## Qué y Por Qué?
-Eliminar caracteres según un patrón es filtrar ciertos caracteres de una cadena de texto, dejando solo los que necesitamos. Los programadores lo hacen para limpiar y preparar datos, como quitar espacios o caracteres especiales antes de procesarlos.
-
 ## Cómo hacerlo:
 ```Clojure
 (defn eliminar-patron [texto patron]

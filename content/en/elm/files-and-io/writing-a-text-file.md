@@ -11,12 +11,7 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-
-Writing a text file in Elm involves creating and saving textual data to a file from an Elm application. Programmers often need to generate reports, logs, or export data in a structured text format (e.g., JSON, CSV) for use in other applications or for record-keeping purposes. However, due to Elm's architecture focusing on purity and safety, direct file writing—like many other side-effects—is handled through commands to the surrounding JavaScript environment.
-
 ## How to:
-
 Since Elm runs in the browser and is designed to be a pure programming language without side effects, it does not have direct access to the file system. Thus, writing to a file typically involves sending the data out to JavaScript through ports. Here’s how you can set this up:
 
 1. **Define a port module for sending text to JavaScript:**

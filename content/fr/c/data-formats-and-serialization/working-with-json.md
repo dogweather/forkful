@@ -12,12 +12,7 @@ title: Travailler avec JSON
 weight: 38
 ---
 
-## Quoi et Pourquoi ?
-
-Travailler avec JSON (JavaScript Object Notation) en C implique l'analyse, la génération, et la manipulation des structures de données JSON. Les programmeurs font cela pour permettre la communication avec les services web, le stockage de données, ou les fichiers de configuration dans un format allégé et lisible par l'homme.
-
 ## Comment :
-
 Pour travailler avec JSON en C, vous utiliserez généralement une bibliothèque comme `jansson` ou `json-c` en raison du manque de support intégré pour JSON en C. Ici, nous nous concentrerons sur `jansson` pour sa facilité d'utilisation et sa maintenance active. Tout d'abord, installez la bibliothèque (par exemple, en utilisant un gestionnaire de paquets comme `apt` sur Ubuntu : `sudo apt-get install libjansson-dev`).
 
 Commençons par analyser une chaîne JSON et accéder à son contenu :
@@ -81,7 +76,6 @@ Exemple de sortie :
 Ces exemples démontrent les bases du chargement d'une chaîne JSON, du déballage de ses valeurs, de la création d'un nouvel objet JSON et ensuite de son affichage sous forme de chaîne.
 
 ## Plongée Profonde
-
 La nécessité de travailler avec JSON en C provient de l'adoption du JSON par le web comme format principal pour l'échange de données. La simplicité et l'efficacité de JSON l'ont rapidement fait surpasser XML, malgré l'absence initiale en C d'un support direct pour la manipulation de JSON. Les premières solutions impliquaient une manipulation manuelle des chaînes - sujette aux erreurs et inefficace. Des bibliothèques comme `jansson` et `json-c` sont apparues pour combler ce vide, offrant des API robustes pour l'analyse, la construction, et la sérialisation de JSON.
 
 Tandis que `jansson` offre simplicité et facilité d'utilisation, `json-c` pourrait séduire ceux qui recherchent un ensemble de fonctionnalités plus large. Néanmoins, des alternatives comme les bibliothèques d'analyse en C++ offrent des abstractions plus sophistiquées, grâce aux structures de données plus complexes de ce langage et au support de la bibliothèque standard. Cependant, lorsqu'on travaille dans des environnements où le C est la langue préférée ou requise - comme dans les systèmes embarqués ou lors de l'interface avec des bibliothèques C existantes - l'utilisation de `jansson` ou `json-c` devient indispensable.

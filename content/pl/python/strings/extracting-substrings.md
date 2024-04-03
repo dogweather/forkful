@@ -11,9 +11,6 @@ title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---
 
-## Co i dlaczego?
-Wyciąganie podłańcuchów to proces wzięcia kawałka tekstu z większego ciągu znaków. Programiści robią to, by operować na określonych fragmentach danych - czy to dla weryfikacji, wyszukiwania czy manipulacji tekstem.
-
 ## Jak to zrobić:
 Wyciągając podłańcuch w Pythonie, często używamy indeksowania i wycinania (`slicing`). Oto kilka przykładów:
 

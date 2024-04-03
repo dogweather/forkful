@@ -14,9 +14,6 @@ title: Analisando uma data a partir de uma string
 weight: 30
 ---
 
-## O Que & Por Quê?
-A análise de uma data a partir de uma string consiste em reconhecer e converter datas escritas em forma de texto para um tipo de dado de data que o PowerShell pode entender e manipular. Programadores fazem isso para manipular, formatar, comparar ou calcular datas, o que são tarefas comuns em scripts que lidam com arquivos de log, entrada de usuário ou processamento de dados.
-
 ## Como Fazer:
 O PowerShell torna a análise de datas a partir de strings direta com seu cmdlet `Get-Date` e o acelerador de tipo `[datetime]`, que funcionam bem para formatos de data padrão. Para strings de data mais complexas ou não padronizadas, o método `[datetime]::ParseExact` pode ser utilizado para especificar o formato exato.
 

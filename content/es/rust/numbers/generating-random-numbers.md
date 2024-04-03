@@ -12,12 +12,7 @@ title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---
 
-## Qué y Por Qué
-
-Generar números aleatorios en Rust implica utilizar bibliotecas para producir valores numéricos imprevistos, lo cual es indispensable para tareas que van desde la criptografía y simulaciones hasta juegos y algoritmos aleatorizados.
-
 ## Cómo hacerlo:
-
 Rust depende de crates externos para la generación de números aleatorios, siendo `rand` el más comúnmente utilizado. Para comenzar a generar números aleatorios, primero necesitarás agregar `rand` a tu archivo `Cargo.toml`:
 
 ```toml
@@ -53,7 +48,6 @@ Flotante Aleatorio: 0.9401077112175732
 Nota que volver a ejecutar el programa producirá valores diferentes.
 
 ## Análisis Profundo
-
 La generación de números aleatorios en Rust, facilitada a través de `rand` y sus dependencias como `getrandom`, representa una amplia abstracción sobre las facilidades del sistema operativo y los generadores algorítmicos. Históricamente, la aleatoriedad en la computación ha evolucionado desde algoritmos simples y predecibles hasta métodos complejos y criptográficamente seguros. La aproximación de Rust encapsula esta evolución a través de su rasgo `Rng` enchufable, que puede ser respaldado por varios generadores de acuerdo con la calidad de aleatoriedad requerida y el rendimiento.
 
 Para la mayoría de las aplicaciones, depender de `rand` y del RNG del sistema proporciona un buen equilibrio entre simplicidad y entropía. Sin embargo, para aplicaciones criptográficas, crates como `rand` delegan en `getrandom` para la semilla, que a su vez depende de mecanismos específicos del SO (p.ej., `/dev/urandom` en sistemas similares a Unix), asegurando aleatoriedad criptográficamente segura.

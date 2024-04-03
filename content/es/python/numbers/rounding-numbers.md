@@ -11,9 +11,6 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## Qué y Por Qué?
-Redondear números significa ajustarlos para que estén más cerca de un valor más simple o más significativo. Los programadores redondean los números para simplificar resultados, limitar lugares decimales para la visualización o para ciertos fines matemáticos.
-
 ## Cómo hacerlo:
 Aquí tienes los detalles sobre cómo redondear números en Python:
 

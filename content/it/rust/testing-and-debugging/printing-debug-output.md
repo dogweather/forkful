@@ -11,9 +11,6 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## What & Why?
-Il debug consiste nel stampare informazioni di output per controllare lo stato del tuo programma. Programmatori fanno ciò per diagnosticare e sistemare i difetti nel codice.
-
 ## How to:
 Per stampare output di debug in Rust si usa la macro `println!` per testo normale, o `dbg!` per output che include il file e la linea di codice.
 

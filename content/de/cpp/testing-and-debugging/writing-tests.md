@@ -12,14 +12,10 @@ title: Tests Schreiben
 weight: 36
 ---
 
-## Was & Warum?
-
-Tests in C++ zu schreiben bedeutet, kleine, in sich geschlossene Programme zu erstellen, die automatisch das Verhalten von Abschnitten Ihrer Codebasis verifizieren. Programmierer tun dies, um sicherzustellen, dass ihr Code wie erwartet funktioniert, um Regressionen zu verhindern (d. h., neue Änderungen brechen bestehende Funktionalitäten), und um mit der Zeit wartbare Codebasen zu erleichtern.
-
 ## Wie:
 
-### Verwendung des Google Test Frameworks
 
+### Verwendung des Google Test Frameworks
 Eine der beliebtesten Dritt-Bibliotheken zum Schreiben von Tests in C++ ist Google Test. Zuerst müssen Sie Google Test installieren und es mit Ihrem Projekt verlinken. Sobald alles eingerichtet ist, können Sie mit dem Schreiben von Testfällen beginnen.
 
 ```cpp
@@ -54,7 +50,6 @@ Speichern Sie den Code in einer Datei und kompilieren Sie ihn mit dem g++-Compil
 ```
 
 ### Verwendung von Catch2
-
 Ein weiteres beliebtes Testframework für C++ ist Catch2. Es hat eine einfachere Syntax und erfordert in der Regel keine Verlinkung gegen eine Bibliothek (nur Header). Hier ist ein Beispiel, wie man einen einfachen Test mit Catch2 schreibt:
 
 ```cpp

@@ -11,9 +11,6 @@ title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---
 
-## Vad & Varför?
-Att konvertera en sträng till gemener innebär att ändra alla bokstäver till små bokstäver. Programmerare gör det för att förenkla jämförelser och sökningar, då det tar bort skillnaden mellan stora och små bokstäver.
-
 ## How to:
 För att konvertera en sträng till gemener i Fish Shell kan du använda `string lower`.
 

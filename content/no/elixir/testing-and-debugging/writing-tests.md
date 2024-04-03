@@ -13,9 +13,6 @@ title: Skrive tester
 weight: 36
 ---
 
-## Hva & Hvorfor?
-Å skrive tester i Elixir involverer å lage automatiserte skript for å validere oppførselen til koden din. Programmerere gjør dette for å sikre kvalitet, forhindre regresjoner, og lette koderestrukturering, noe som gjør utviklingsprosessen mer pålitelig og effektiv.
-
 ## Hvordan:
 Elixir bruker ExUnit som sitt innebygde testrammeverk, som er ekstremt kraftfullt og enkelt å bruke. Her er et grunnleggende eksempel:
 

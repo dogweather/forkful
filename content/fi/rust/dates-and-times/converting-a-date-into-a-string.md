@@ -10,11 +10,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---
 
-## What & Why?
-Mikä & Miksi?
-
-Päivämäärän muunto merkkijonoksi mahdollistaa ajanhetkien tallentamisen tekstipohjaisessa muodossa. Ohjelmoijat tekevät tämän helpottaakseen päivämäärien käsittelyä, säilytystä ja jakamista.
-
 ## How to:
 Miten:
 

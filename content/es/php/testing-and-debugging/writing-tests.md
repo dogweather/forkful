@@ -13,10 +13,9 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## Qué y Por Qué?
-Escribir pruebas en programación implica crear y ejecutar scripts que verifican que el código se comporte como se espera bajo diversas condiciones. Los programadores lo hacen para asegurar la calidad, prevenir regresiones y facilitar la refactorización segura, lo cual es crucial para mantener una base de código saludable, escalable y libre de errores.
-
 ## Cómo hacerlo:
+
+
 ### PHP Nativo – PHPUnit
 Una herramienta ampliamente utilizada para pruebas en PHP es PHPUnit. Instálalo vía Composer:
 ```bash

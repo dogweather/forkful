@@ -9,9 +9,6 @@ title: Concatenating strings
 weight: 3
 ---
 
-## What & Why?
-Combining strings, or concatenation, is like making a train of words. We do it to stitch together text values, creating phrases, sentences, or anything where separate strings need to buddy up and become one.
-
 ## How to:
 Let's get straight to it:
 

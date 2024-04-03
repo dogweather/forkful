@@ -13,9 +13,6 @@ title: Capitalizando uma string
 weight: 2
 ---
 
-## O Que & Por Que?
-Capitalizar uma string envolve modificar a primeira letra de cada palavra na string para maiúscula enquanto assegura que o restante permaneça em minúscula. Essa tarefa comum de manipulação de string é útil para formatar texto em aplicações, como preparar nomes de usuários ou títulos para exibição de acordo com a convenção ou correção gramatical.
-
 ## Como fazer:
 A biblioteca padrão do Java não fornece um método direto para capitalizar strings inteiras de uma vez, mas você pode realizar isso com uma combinação de métodos integrados. Para necessidades mais sofisticadas, bibliotecas de terceiros como Apache Commons Lang oferecem soluções diretas.
 
@@ -47,7 +44,6 @@ public class CapitalizeString {
 Este trecho de código converte a string inteira para minúscula e depois itera por cada caractere, capitalizando a primeira letra de cada palavra. Ele considera espaços, pontos e apóstrofos como separadores de palavras.
 
 ### Usando Apache Commons Lang
-
 A biblioteca Apache Commons Lang fornece uma solução mais elegante com o método `WordUtils.capitalizeFully()`, que lida com vários casos extremos e delimitadores para você:
 ```java
 // Adicione a dependência: org.apache.commons:commons-lang3:3.12.0

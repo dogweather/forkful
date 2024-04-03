@@ -11,9 +11,6 @@ title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---
 
-## What & Why? | Co i Dlaczego?
-Określenie długości stringa to po prostu zliczenie ilości znaków w nim zawartych. Programiści robią to, by walidować dane, manipulować tekstami czy po prostu określić ich zasoby.
-
 ## How to: | Jak to zrobić:
 W Fish Shell mierzenie długości stringa jest banalnie proste.
 ```Fish Shell

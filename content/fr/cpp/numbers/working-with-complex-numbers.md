@@ -11,9 +11,6 @@ title: Manipulation des nombres complexes
 weight: 14
 ---
 
-## Quoi et Pourquoi ?
-Les nombres complexes étendent les nombres réels en ajoutant une unité imaginaire, représentée par 'i', où i^2 = -1. Les programmeurs les utilisent pour des simulations, le traitement de signal, et la résolution de problèmes mathématiques qui exigent de travailler en deux dimensions.
-
 ## Comment faire :
 C++ possède une bibliothèque intégrée `<complex>` qui facilite le travail avec les nombres complexes. Voici un bref aperçu :
 

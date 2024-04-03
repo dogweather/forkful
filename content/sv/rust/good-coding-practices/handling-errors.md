@@ -10,12 +10,7 @@ title: Hantering av fel
 weight: 16
 ---
 
-## Vad & Varför?
-
-Felhantering handlar om att hantera saker när de inte går som planerat. Programmerare gör det för att hantera det oväntade och säkerställa att deras Rust-program är robusta och inte bara kraschar när de stöter på ett problem.
-
 ## Hur gör man?
-
 Rust hanterar fel på två stora sätt: återhämtande och oåterhämtande fel. Låt oss titta på båda.
 
 Återhämtande fel använder `Result<T, E>`:
@@ -54,7 +49,6 @@ fn main() {
 Kör det, och du kommer att se ett panikmeddelande. Ditt program stoppas direkt.
 
 ## Fördjupning
-
 Historiskt sett har felhantering i programmering varit en röra. Rust gör det rätt med en tydlig skillnad mellan återhämtande och oåterhämtande fel.
 
 Enumet `Result` är för återhämtande fel. Det är uttryckligt - du hanterar varianten `Ok` eller `Err`. Du har metoder som `unwrap()` och `expect()` också, men de är snabba och smutsiga genvägar som kan leda till en `panic!`.
@@ -66,7 +60,6 @@ Felhantering genom att returnera `Result` är att föredra när du förväntar d
 Alternativ? Visst, du kan använda andra felhanteringspaket för fler funktioner eller ergonomisk användning. Som `anyhow` för enkel felhantering, eller `thiserror` för fel i bibliotekskod.
 
 ## Se även
-
 Intresserad av att fördjupa dig? Här är vart du ska gå:
 
 - [Rust Book om Felhantering](https://doc.rust-lang.org/book/ch09-00-error-handling.html) - En utmärkt plats för att förstå Rusts filosofi kring felhantering.

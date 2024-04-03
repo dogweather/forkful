@@ -12,11 +12,7 @@ title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---
 
-## O Que É & Porquê?
-Criar um arquivo temporário é gerar um arquivo que é destinado a ser utilizado durante a execução de um programa e, geralmente, excluído após o uso. Programadores fazem isso para manter dados voláteis, como caches, ou para manipular informações sem riscos de alterar dados permanentes.
-
 ## Como Fazer:
-
 Para criar um arquivo temporário em Haskell, você pode usar a biblioteca `temporary`. Vou te mostrar como rola:
 
 ```haskell
@@ -39,7 +35,6 @@ O arquivo temporário é: /tmp/meuTemp.txt123456
 Pronto! O arquivo existe enquanto seu código roda, e depois, puff, some.
 
 ## Mergulho Profundo
-
 Antigamente, antes de termos abstrações bacanas como `withSystemTempFile`, você teria que gerenciar os arquivos temporários na mão. Isso poderia ser enrolado e trazer bugs.
 
 Alternativas? Claro, você pode criar arquivos com nomes únicos manualmente, mas por que reinventar a roda?
@@ -47,7 +42,6 @@ Alternativas? Claro, você pode criar arquivos com nomes únicos manualmente, ma
 Implementação... a `withSystemTempFile` cuida do ciclo de vida do arquivo temporário. Ela cria, passa o handle pro seu código, e assegura que o arquivo seja deletado após o bloco. Conveniente, né?
 
 ## Veja Também
-
 - [Pacote temporary no Hackage](https://hackage.haskell.org/package/temporary)
 - [Tutorial de IO em Haskell](http://learnyouahaskell.com/input-and-output)
 - [Repositório GHC, onde você pode bisbilhotar como as coisas são feitas em Haskell](https://gitlab.haskell.org/ghc/ghc) 

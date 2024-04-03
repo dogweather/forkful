@@ -11,9 +11,6 @@ title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---
 
-## Vad & Varför?
-Att hitta stränglängden innebär att räkna antalet tecken i en sträng. Programmerare gör detta för att validera indata, begränsa längden, eller för att manipulera text effektivt.
-
 ## Hur man gör:
 ```Clojure
 ;; Använd `count` för att hitta längden på en sträng

@@ -11,9 +11,6 @@ title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---
 
-## What & Why?
-Å starte et nytt prosjekt innebærer å opprette en grunnleggende ramme for kode du skal skrive. Programmerere gjør dette for å organisere og strukturere arbeidet sitt fra starten, noe som gjør det enklere å utvide og vedlikeholde koden.
-
 ## How to:
 For å sette i gang et nytt Kotlin-prosjekt, kan du bruke IntelliJ IDEA eller et annet verktøy som støtter Kotlin. Her er de grunnleggende stegene:
 

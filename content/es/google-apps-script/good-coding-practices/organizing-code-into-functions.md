@@ -14,12 +14,7 @@ title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---
 
-## Qué y Por Qué?
-
-Organizar el código en funciones se trata de estructurar su código de Google Apps Script separando segmentos lógicos en bloques distintos, cada uno realizando una tarea específica. Los programadores hacen esto para mejorar la legibilidad, mantenibilidad y reusabilidad del código, asegurando que los scripts complejos sean más fáciles de entender y depurar.
-
 ## Cómo hacerlo:
-
 En Google Apps Script, que se basa en JavaScript, se definen las funciones utilizando la palabra clave `function`, seguida por un nombre de función único, paréntesis `()` que pueden contener parámetros y llaves `{}` que encapsulan el bloque de código de la función. Aquí hay un ejemplo básico:
 
 ```javascript
@@ -68,7 +63,6 @@ poblarHoja(datosDeVentas);
 En este ejemplo, `configurarHoja` prepara la hoja, y `poblarHoja` toma un array de datos de ventas para llenar la hoja. Separar estas preocupaciones hace que el código sea más limpio y más adaptable a los cambios.
 
 ## Análisis Profundo
-
 El concepto de dividir el código en funciones no es nuevo ni único de Google Apps Script; es una práctica de programación fundamental defendida en casi todos los lenguajes de programación. Históricamente, las funciones evolucionaron del concepto matemático de mapear entradas a salidas, lo cual se convirtió en una piedra angular en la programación estructurada. Este enfoque promueve la modularidad y reutilización de código, ofreciendo caminos claros para probar partes individuales del script.
 
 Google Apps Script, al estar basado en JavaScript, se beneficia significativamente de las funciones de primera clase de JavaScript, lo que permite que las funciones se pasen como argumentos, se devuelvan de otras funciones y se asignen a variables. Esta característica abre patrones avanzados como callbacks y programación funcional, aunque estos patrones pueden introducir complejidad que podría ser innecesaria para tareas simples de automatización en Google Apps Script.

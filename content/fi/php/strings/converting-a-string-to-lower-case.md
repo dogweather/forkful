@@ -11,9 +11,6 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## What & Why?
-Muuttaminen pieniksi kirjaimiksi tarkoittaa merkkijonon kirjainten muuntamista pienaakkosiksi. Tämä helpottaa esimerkiksi käyttäjän syötteen vertailua, hakutoimintoja ja tietojen yhdenmukaistamista.
-
 ## How to:
 PHP:ssä merkkijonon voi muuttaa pieniksi kirjaimiksi `strtolower()`-funktiolla. Tässä helppo esimerkki:
 

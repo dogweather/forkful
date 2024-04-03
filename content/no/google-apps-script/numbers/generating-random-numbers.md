@@ -12,16 +12,10 @@ title: Generere tilfeldige tall
 weight: 12
 ---
 
-## Hva & Hvorfor?
-
-Å generere tilfeldige tall er en grunnleggende oppgave i programmering som brukes til en rekke applikasjoner, som simuleringer, spill og sikkerhetssystemer. Programmerere bruker denne teknikken i Google Apps Script for å introdusere variabilitet, teste scenarier og legge til uforutsigbarhet i applikasjonene sine innenfor Google-økosystemet, inkludert Sheets, Docs og Forms.
-
 ## Hvordan:
-
 I Google Apps Script kan du generere tilfeldige tall ved å bruke `Math.random()`-funksjonen, lik JavaScript. Denne funksjonen returnerer et flyttall, pseudo-tilfeldig tall i området 0 (inklusivt) til 1 (eksklusivt). For å tilpasse disse tallene for ulike bruksområder, som å generere heltall innenfor et spesifikt område, kan det være nødvendig med ytterligere beregninger.
 
 ### Generere et grunnleggende tilfeldig tall
-
 For å generere et enkelt tilfeldig tall og logge det til konsollen:
 
 ```javascript
@@ -33,7 +27,6 @@ function generateRandomNumber() {
 *Eksempelutdata:* `0.1234567890123456`
 
 ### Generere et heltall innenfor et spesifikt område
-
 For å generere et tilfeldig heltall mellom to verdier (`min` og `max`), inklusivt:
 
 ```javascript
@@ -53,7 +46,6 @@ getRandomInt(1, 10);
 Husk at `Math.ceil()`-funksjonen brukes til å runde minimumsverdien opp, og `Math.floor()` brukes til å runde maksimumsverdien ned, noe som sikrer at det tilfeldige tallet er innenfor det spesifiserte området.
 
 ## Dypdykk
-
 Mekanismen for å generere tilfeldige tall i Google Apps Script, og faktisk i de fleste programmeringsspråk, benytter en pseudo-tilfeldig tallgenerator (PRNG). Denne teknikken er deterministisk og stoler på en initialverdi, kjent som frøet, for å produsere en sekvens av tall som ser tilfeldige ut. Selv om dette er tilstrekkelig for mange applikasjoner, er det viktig å merke seg at pseudo-tilfeldige tall kanskje ikke er passende der høy sikkerhet eller ekte tilfeldighet er nødvendig, som i kryptografiske applikasjoner.
 
 Ekte tilfeldighet kan oppnås gjennom maskinvare tilfeldig tallgeneratorer eller tjenester som genererer tilfeldighet fra naturlige fenomener. Imidlertid, for de fleste daglige skriptbehov i Google Apps Script, holder `Math.random()`.

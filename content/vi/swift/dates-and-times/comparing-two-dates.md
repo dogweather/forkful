@@ -14,9 +14,6 @@ title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---
 
-## Cái gì & Tại sao?
-So sánh hai ngày giống như hỏi, "Con gà hay quả trứng cái nào có trước?" nhưng với ngày trên lịch. Lập trình viên làm điều đó để sắp xếp sự kiện, kích hoạt hành động và đánh giá thời gian.
-
 ## Làm thế nào:
 Swift sử dụng kiểu `Date` cho ngày và giờ. Dưới đây là cách đơn giản để so sánh hai ngày:
 

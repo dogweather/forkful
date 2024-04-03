@@ -11,9 +11,6 @@ title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---
 
-## Qué y Por Qué?
-Leer argumentos de la línea de comandos es capturar los datos que un usuario introduce al ejecutar un programa desde la terminal. Los programadores usan estos argumentos para personalizar la ejecución de un software, como especificar archivos de entrada o configurar opciones al vuelo.
-
 ## Cómo:
 ```Rust
 use std::env;

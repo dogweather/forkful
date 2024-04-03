@@ -12,9 +12,6 @@ title: Schrijven naar standaardfout
 weight: 25
 ---
 
-## Wat & Waarom?
-Schrijven naar standaardfout (`stderr`) betekent het verzenden van foutmeldingen en diagnostiek naar een aparte stroom, los van reguliere uitvoer (`stdout`). Programmeurs doen dit voor een duidelijke scheiding van normale uitvoer en fouten, waardoor programmatuuruitvoer makkelijker te hanteren en debuggen is.
-
 ## Hoe:
 C++ gebruikt `cerr` voor het schrijven naar `stderr`. Hier is hoe je het gebruikt:
 

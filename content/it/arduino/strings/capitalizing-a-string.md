@@ -12,9 +12,6 @@ title: Capitalizzare una stringa
 weight: 2
 ---
 
-## Cos'è & Perché?
-Capitalizzare una stringa implica convertire il primo carattere di ogni parola in una stringa in maiuscolo, assicurando che il resto rimanga in minuscolo. Questa operazione è comune nella formattazione dei dati e nella normalizzazione dell'input dell'utente per mantenere la coerenza e migliorare la leggibilità.
-
 ## Come fare:
 Arduino, principalmente noto per l'interazione con l'hardware, include anche capacità di base di manipolazione delle stringhe attraverso il suo oggetto `String`. Tuttavia, manca di una funzione `capitalize` diretta vista nei linguaggi di livello superiore. Quindi, implementiamo la capitalizzazione iterando su una stringa e applicando trasformazioni di maiuscolo/minuscolo.
 

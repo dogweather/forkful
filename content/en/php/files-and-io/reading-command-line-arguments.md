@@ -10,9 +10,6 @@ title: Reading command line arguments
 weight: 23
 ---
 
-## What & Why?
-Reading command line arguments in PHP means grabbing inputs passed to your script when it's run in the console. Programmers do it to make their scripts interactive and configurable without hard-coding values.
-
 ## How to:
 PHP uses a global array `$argv` to store command line arguments, with `$argv[0]` being the script name. Here's how you use it:
 

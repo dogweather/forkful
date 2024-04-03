@@ -14,9 +14,6 @@ title: Skriva till standardfel
 weight: 25
 ---
 
-## Vad & Varför?
-Att skriva till standardfel (stderr) i C# innebär att rikta felmeddelanden och diagnostik separat från reguljär utdata (stdout) för att hjälpa användare och utvecklare att skilja mellan normal programutdata och felnotifikationer. Programmerare gör detta för att göra felsökning och loggning mer effektiv, vilket möjliggör smidigare drift och underhåll av applikationer.
-
 ## Hur man gör:
 I C# kan skrivning till standardfel uppnås genom att använda strömmen `Console.Error`. Denna ström används specifikt för felmeddelanden och diagnostik. Här är ett grundläggande exempel:
 

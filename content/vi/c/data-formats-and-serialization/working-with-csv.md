@@ -20,11 +20,8 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---
 
-## Cái gì & Tại sao?
-
-Trong lĩnh vực lập trình, việc làm việc với các tệp CSV (Comma-Separated Values - Giá trị được tách biệt bằng dấu phẩy) bao gồm việc đọc từ và viết dữ liệu vào các tệp văn bản được tổ chức theo hàng, nơi mỗi hàng đại diện cho một bản ghi và các trường của mỗi bản ghi được tách biệt bằng dấu phẩy. Các lập trình viên thao tác với tệp CSV để dễ dàng nhập/xuất dữ liệu qua lại các hệ thống khác nhau, do sự hỗ trợ rộng rãi và đơn giản của chúng trong việc lưu trữ dữ liệu bảng.
-
 ## Làm thế nào:
+
 
 ### Đọc Tệp CSV
 Để đọc một tệp CSV trong C, chúng ta sử dụng các hàm I/O tệp tiêu chuẩn cùng với các hàm xử lý chuỗi để phân tích từng dòng. Dưới đây là một ví dụ cơ bản về việc đọc một tệp CSV và in các trường của mỗi hàng ra bảng điều khiển.
@@ -100,7 +97,6 @@ Jane Doe,27,Nhà khoa học dữ liệu
 ```
 
 ## Sâu hơn
-
 Định dạng CSV, mặc dù có vẻ đơn giản, nhưng đi kèm với những sắc thái của nó, chẳng hạn như xử lý dấu phẩy trong các trường và bao bọc các trường bằng dấu ngoặc kép. Các ví dụ sơ bộ được hiển thị không tính đến những phức tạp như vậy, cũng không xử lý các lỗi tiềm năng một cách mạnh mẽ.
 
 Về lịch sử, việc xử lý CSV trong C chủ yếu là thủ công do bản chất thấp của ngôn ngữ và thiếu các trừu tượng cao cấp tích hợp sẵn cho những nhiệm vụ như vậy. Việc quản lý thủ công này bao gồm mở tệp, đọc dòng, phân chia chuỗi và chuyển đổi các loại dữ liệu theo yêu cầu.

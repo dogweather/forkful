@@ -11,9 +11,6 @@ title: Comparer deux dates
 weight: 27
 ---
 
-## Quoi et Pourquoi ?
-Comparer deux dates, c'est décider laquelle vient avant ou après, ou si elles sont identiques. Les développeurs le font pour trier des événements, gérer des réservations ou vérifier des délais.
-
 ## Comment faire :
 ```C#
 using System;

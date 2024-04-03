@@ -12,9 +12,6 @@ title: HTML Parsen
 weight: 43
 ---
 
-## Wat & Waarom?
-HTML parsen is het proces van het decoderen van de lingua franca van het web om data te zeven of inhoud te manipuleren. Programmeurs parsen HTML om webscraping te automatiseren, API's te integreren of gegevensformaten te converteren.
-
 ## Hoe te:
 Fish Shell is niet de eerste keuze voor het parsen van HTML, maar met de juiste tools is het haalbaar. Laten we `pup`, een command-line HTML-parser, gebruiken om met HTML-inhoud te werken.
 

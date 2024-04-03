@@ -13,9 +13,6 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-Complexe getallen zijn getallen met een reëel en een imaginair deel (zoals 3 + 4i). Ze komen voor in verschillende programmeerproblemen, met name in signaalverwerking, quantumcomputing en het oplossen van polynomiale vergelijkingen. Programmeurs jongleren ermee om dit soort taken effectief aan te pakken.
-
 ## Hoe:
 JavaScript heeft geen ingebouwde ondersteuning voor complexe getallen, maar je kunt de mouwen opstropen en het aanpakken met objecten en wiskunde. Hier is een snelle handleiding.
 

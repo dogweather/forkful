@@ -14,9 +14,6 @@ title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---
 
-## O quê e Por quê?
-Escrever para o erro padrão (stderr) no Bash é sobre direcionar mensagens de erro ou qualquer saída de diagnóstico importante separadamente da saída padrão (stdout). Programadores fazem isso para garantir que mensagens de erro possam ser facilmente identificadas, registradas ou até ignoradas, auxiliando nos processos de depuração e registro.
-
 ## Como fazer:
 No Bash, você usa `>&2` para redirecionar a saída para stderr. Aqui está um exemplo básico:
 

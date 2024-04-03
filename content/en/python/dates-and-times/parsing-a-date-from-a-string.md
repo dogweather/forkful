@@ -10,9 +10,6 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-Parsing a date from a string involves converting textual date and time information into a datetime object or equivalent structured format. This is commonly performed to enable date arithmetic, comparisons, and formatting operations in a way that is language and region-agnostic. Programmers do it to efficiently handle and manipulate temporal data extracted from logs, user inputs, or external sources.
-
 ## How to:
 Python's standard library provides the `datetime` module, which includes the `strptime` method for this purpose. The method requires two arguments: the date string and a format directive that specifies the pattern of the input string.
 

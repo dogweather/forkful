@@ -37,9 +37,6 @@ title: "\u0E01\u0E32\u0E23\u0E08\u0E31\u0E14\u0E23\u0E30\u0E40\u0E1A\u0E35\u0E22
 weight: 18
 ---
 
-## อะไรและทำไม?
-การจัดระเบียบโค้ดเข้าไปในฟังก์ชันหมายถึงการรวบรวมส่วนของสคริปต์เพื่อทำงานเฉพาะกิจ ทำอย่างนี้เพราะมันทำให้โค้ดอ่านง่ายขึ้น, ทดสอบได้ง่ายและนำไปใช้ซ้ำ — ไม่มีใครอยากต้องค้นทะลุพงหญ้าของโค้ดสปาเก็ตตี้
-
 ## วิธีการ:
 ใน Fish, คุณเขียนฟังก์ชันโดยใช้คีย์เวิร์ด `function`, ตั้งชื่อให้มัน และจบด้วย `end` ต่อไปนี้เป็นตัวอย่างง่ายๆ:
 
@@ -82,11 +79,9 @@ Hey there, your_username!
 คุณไม่จำเป็นต้องใช้ค่า `return` เพราะ Fish ไม่ได้ให้ความสำคัญกับสิ่งนั้น; ผลลัพธ์ของฟังก์ชันคือการคืนค่าของมัน และหากคุณต้องการฟังก์ชันที่มีอยู่ตามปกติสำหรับเซสชันในอนาคต, อย่าลืม `funcsave`.
 
 ## ดูเพิ่มเติม
-
 - บทเรียน เกี่ยวกับฟังก์ชันใน fish: [https://fishshell.com/docs/current/tutorial.html#tut_functions](https://fishshell.com/docs/current/tutorial.html#functions)
 
 ### คำสั่งฟังก์ชัน
-
 - [function](https://fishshell.com/docs/current/cmds/function.html) — สร้างฟังก์ชัน
 - [functions](https://fishshell.com/docs/current/cmds/functions.html) — แสดงหรือลบฟังก์ชัน
 - [funcsave](https://fishshell.com/docs/current/cmds/funcsave.html) — บันทึกคำนิยามของฟังก์ชันไปยังไดเรกทอรี autoload ของผู้ใช้

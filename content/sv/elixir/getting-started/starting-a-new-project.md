@@ -11,9 +11,6 @@ title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---
 
-## Vad & Varför?
-Att starta ett nytt projekt i Elixir innebär att skapa en ren arbetsyta för din kod. Programmerare gör det för att få en strukturerad början och identifiera vilka byggstenar som behövs.
-
 ## Så här gör du:
 För att skapa ett nytt Elixir-projekt, använd `mix`, Elixirs byggverktyg. 
 

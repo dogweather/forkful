@@ -10,9 +10,6 @@ title: Zeichenketten interpolieren
 weight: 8
 ---
 
-## What & Why?
-String-Interpolation bedeutet, Variable-Werte direkt in Zeichenketten einzufügen. Das ist praktisch, um dynamische Texte wie Benutzereingaben oder Berechnungsergebnisse zu erzeugen.
-
 ## How to:
 Elm hat keine eingebaute String-Interpolation wie du es von JavaScript vielleicht kennst. Stattdessen nutzt man Funktionen wie `String.concat` oder `++` Operator.
 

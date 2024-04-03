@@ -13,12 +13,7 @@ title: Debug-uitvoer afdrukken
 weight: 33
 ---
 
-## Wat & Waarom?
-
-Debug-uitvoer afdrukken in Dart gaat over het weergeven van informatie in de console tijdens runtime, waardoor ontwikkelaars de uitvoeringsstroom kunnen volgen, de staat van variabelen kunnen onderzoeken, of de bron van fouten kunnen identificeren. Programmeurs gebruiken het vaak voor probleemoplossing en om te verifiëren dat hun code zich gedraagt zoals verwacht, wat een soepeler en efficiënter ontwikkelingsproces bevordert.
-
 ## Hoe doe je dat:
-
 In Dart kun je debug-uitvoer afdrukken met de `print()` functie. Hier is hoe je eenvoudige berichten en variabele waarden uitvoert:
 
 ```dart

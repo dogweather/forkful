@@ -11,9 +11,6 @@ title: "Interpolera en str\xE4ng"
 weight: 8
 ---
 
-## Vad & Varför?
-Stringinterpolering är när du plockar in variabler eller uttryck direkt i en textsträng. Det gör din kod mer läsbar och effektiv eftersom du slipper klumpiga plusoperatorer för att bygga dina strängar.
-
 ## Så Här Gör Du:
 I Kotlin använder du dollar-tecken `$` följt av variabelnamnet, eller `${}` för uttryck. 
 

@@ -11,9 +11,6 @@ title: Een tekstbestand lezen
 weight: 22
 ---
 
-## Wat & Waarom?
-Een tekstbestand lezen is informatie uit een .txt-document in je programma halen. Programmeurs doen dit om toegang te krijgen tot en data te manipuleren: configuratie-instellingen, logs, exportbestanden, enzovoort. Simpel gezegd.
-
 ## Hoe:
 Hier is hoe je een tekstbestand leest in huidig JavaScript:
 

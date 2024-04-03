@@ -12,16 +12,10 @@ title: Satunnaisten numeroiden generointi
 weight: 12
 ---
 
-## Mitä & Miksi?
-
-Satunnaislukujen generointi ohjelmoinnissa on kyse sellaisten lukusarjojen luomisesta, joita ei voida kohtuullisesti ennustaa paremmin kuin sattumalta. Ohjelmoijat tekevät niin monista syistä, mukaan lukien simulaatiot, pelit ja turvallisuussovellukset, joissa arvaamattomuus on avain toiminnallisuuteen tai salassapitoon.
-
 ## Kuinka:
-
 Go:ssa satunnaislukuja generoidaan käyttämällä `math/rand` -pakettia pseudo-satunnaislukuja varten tai `crypto/rand` -pakettia kryptografisesti turvallisia pseudo-satunnaislukuja varten. Tutkitaan molempia.
 
 ### Käyttäen `math/rand` Pseudo-satunnaislukuja Varten
-
 Ensimmäiseksi, tuo `math/rand` -paketti ja `time` -paketti alustamaan generaattoria. Alustaminen varmistaa, että saat eri lukusarjan joka suorituskerralla.
 
 ```go
@@ -42,7 +36,6 @@ func main() {
 Esimerkkituloste: `Satunnainen luku: 42`
 
 ### Käyttäen `crypto/rand` Kryptografisesti Turvallisia Pseudo-satunnaislukuja Varten
-
 Turvallisuusherkkien sovellusten osalta `crypto/rand` -paketti sopii, sillä se generoi satunnaislukuja, jotka ovat vaikeasti ennustettavissa, tehden niistä sopivia kryptografisiin toimenpiteisiin.
 
 ```go
@@ -63,7 +56,6 @@ func main() {
 Esimerkkituloste: `Turvallinen satunnainen luku: 81`
 
 ## Syväsukellus
-
 Perusero `math/rand` ja `crypto/rand` -pakettien välillä Go:ssa juontaa juurensa niiden entropian lähteestä ja niiden käyttötarkoituksista. `math/rand` generaattori tuottaa pseudo-satunnaislukuja perustuen alkusijoitukseen; näin ollen sekvenssi on deterministinen ja voidaan ennustaa, jos siemen on tiedossa. Tämä soveltuu skenaarioihin, joissa suorituskyky ja ei absoluuttinen arvaamattomuus on avainasia, kuten simulaatioissa tai peleissä.
 
 Toisaalta, `crypto/rand` johtaa satunnaisuuden käyttöjärjestelmän alta, tehden siitä sopivan kryptografisiin käyttöihin, joissa arvaamattomuus on kriittistä. Tämä kuitenkin tulee suorituskyvyn ja monimutkaisuuden kustannuksella numeroiden käsittelyssä (kuten käsiteltäessä `*big.Int` -tyyppiä kokonaisluvuille).

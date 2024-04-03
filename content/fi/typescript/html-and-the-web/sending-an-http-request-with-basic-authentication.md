@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---
 
-## Mitä & Miksi?
-Lähettäessäsi HTTP-pyyntöä perusautentikoinnilla lisäät käyttäjätunnuksen ja salasanan pyyntöösi. Ohjelmoijat tekevät tämän varmistaakseen käyttöoikeudet ennen tietojen vastaanottamista tai lähettämistä.
-
 ## Kuinka:
 ```TypeScript
 import axios from 'axios';

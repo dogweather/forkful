@@ -11,9 +11,6 @@ title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---
 
-## O que & Por quê?
-Arredondar números consiste em eliminar casas decimais para simplificar seus dados ou adequá-los a formatos específicos. Programadores fazem isso para exibir dados de forma amigável ao usuário, armazenar de maneira eficiente, ou quando a precisão decimal não é um problema.
-
 ## Como fazer:
 No Fish, o arredondamento de números depende do comando `math`. Use `math -s0` para arredondar para o inteiro mais próximo.
 

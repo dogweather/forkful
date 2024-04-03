@@ -12,9 +12,6 @@ title: Skriving til standardfeil
 weight: 25
 ---
 
-## Hva & Hvorfor?
-Å skrive til standardfeil (stderr) handler om å lede feilmeldinger og diagnostiske utdata til en egen kanal, adskilt fra standard utdata (stdout). Programmerere gjør dette for å skille vanlige programresultater fra feilinformasjon, noe som forenkler feilsøking og loggføringsprosesser.
-
 ## Hvordan:
 I Lua kan skriving til stderr oppnås ved å bruke funksjonen `io.stderr:write()`. Her er hvordan du kan skrive en enkel feilmelding til standardfeil:
 

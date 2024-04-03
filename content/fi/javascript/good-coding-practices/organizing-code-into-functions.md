@@ -12,11 +12,7 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mitä & Miksi?
-Koodin järjestäminen funktioihin pilkkoo tehtävät uudelleenkäytettäviksi osiksi, mikä tekee koodista siistimpää ja ylläpidettävämpää. Tämä vähentää toistoa, helpottaa testaamista ja parantaa luettavuutta.
-
 ## Kuinka tehdä:
-
 ```javascript
 // Määritellään funktio suorakulmion pinta-alan laskemiseksi
 function calculateArea(width, height) {

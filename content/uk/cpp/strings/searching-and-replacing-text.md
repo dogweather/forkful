@@ -12,9 +12,6 @@ title: "\u041F\u043E\u0448\u0443\u043A \u0442\u0430 \u0437\u0430\u043C\u0456\u04
 weight: 10
 ---
 
-## What & Why? (Що і чому?)
-Searching and replacing text is about finding specific sequences of characters in a string and swapping them out for something else. Programmers do it to manipulate data, automate editing tasks, or preprocess text for other operations. It’s a bread-and-butter skill because text processing happens in almost every app.
-
 ## How to: (Як робити:)
 ```C++
 #include <iostream>

@@ -11,9 +11,6 @@ title: Rifattorizzazione
 weight: 19
 ---
 
-## Cos'è & Perché?
-Il refactoring è il processo di ristrutturazione del codice informatico esistente senza cambiarne il comportamento esterno. È una pratica fondamentale per ridurre la complessità, migliorare la manutenibilità e mantenere il tuo codice sano e più facile da comprendere sia per gli sviluppatori attuali sia per quelli futuri.
-
 ## Come fare:
 Consideriamo uno script Bash semplice che necessita di un po' di refactoring. È goffo, con codice ripetuto ed è difficile da seguire:
 

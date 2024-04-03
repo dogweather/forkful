@@ -18,9 +18,6 @@ title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
 weight: 27
 ---
 
-## What & Why?
-두 날짜를 비교한다는 것은 캘린더 상에서 두 날짜가 어떻게 서로 관계되는지를 파악하는 것입니다. 프로그래머들은 기한 검사, 시간 차이 계산, 정렬 및 데이터 유효성 검증 등을 할 때 두 날짜를 비교합니다.
-
 ## How to:
 ```Java
 import java.time.LocalDate;

@@ -11,9 +11,6 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## What & Why? (Co i Dlaczego?)
-Porównywanie dat to sprawdzanie, która data jest wcześniejsza, późniejsza, czy równa drugiej. Programiści robią to, aby zarządzać wydarzeniami, logami czy ważnością danych.
-
 ## How to: (Jak to zrobić:)
 ```Fish Shell
 # Przykład porównania dwóch dat:

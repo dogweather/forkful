@@ -11,9 +11,6 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-Getting the current date in C# involves fetching the current date and time details from the system. Programmers often need to access this information for logging, timestamping operations, or scheduling tasks within applications, ensuring that actions are timed accurately and data is marked with precise timestamps.
-
 ## How to:
 C# provides a straightforward way to get the current date using the `DateTime` class which is part of the .NET Framework's System namespace. The example below demonstrates how to get the current date, and optionally, the time.
 

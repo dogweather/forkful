@@ -11,9 +11,6 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Last ned en nettside innebærer å hente HTML-innholdet fra URL-en og lagre det lokalt. Programmerere gjør dette for datainnhenting, web scraping, eller offline-lesing.
-
 ## How to: (Hvordan:)
 ```Java
 import java.io.*;

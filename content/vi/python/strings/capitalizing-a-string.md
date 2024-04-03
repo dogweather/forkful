@@ -15,9 +15,6 @@ title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---
 
-## Cái gì & Tại sao?
-Việc viết hoa một chuỗi nghĩa là chuyển ký tự đầu tiên thành chữ cái in hoa và phần còn lại thành chữ cái thường. Các lập trình viên thường thực hiện việc này để chuẩn hóa dữ liệu nhập từ người dùng hoặc đảm bảo các danh từ riêng được định dạng một cách chính xác.
-
 ## Làm thế nào:
 Sử dụng phương thức `capitalize()` hoặc `title()` có sẵn trong Python cho công việc này.
 

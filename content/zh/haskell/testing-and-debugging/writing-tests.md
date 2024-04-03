@@ -20,16 +20,10 @@ title: "\u7F16\u5199\u6D4B\u8BD5"
 weight: 36
 ---
 
-## 什么 & 为什么？
-
-在 Haskell 中编写测试是为了通过自动化检查确保你的函数按预期工作。程序员这样做是为了尽早捕获错误，促进重构，并记录行为，使代码库更易于维护和扩展。
-
 ## 如何进行：
-
 Haskell 支持各种测试框架，但两个流行的是 `Hspec` 和 `QuickCheck`。Hspec 允许你为代码定义人类可读的规范，而 QuickCheck 让你通过描述代码应满足的属性来自动生成测试。
 
 ### 使用 Hspec
-
 首先，在你的构建工具配置中添加 `hspec`（例如，`stack.yaml` 或 `cabal` 文件）。然后，导入 `Test.Hspec` 并将测试写为规范：
 
 ```haskell
@@ -58,7 +52,6 @@ MyLib.add
 ```
 
 ### 使用 QuickCheck
-
 使用 QuickCheck，你表达函数应满足的属性。将 `QuickCheck` 添加到你的项目配置中，然后导入它：
 
 ```haskell

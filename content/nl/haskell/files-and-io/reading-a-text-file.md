@@ -12,9 +12,6 @@ title: Een tekstbestand lezen
 weight: 22
 ---
 
-## Wat & Waarom?
-Een tekstbestand lezen in programmeren stelt je code in staat gegevens te absorberen, zoals het gieten van koffie in je hersenen in de ochtend. We doen dit om programma's informatie te geven die ze anders niet zouden hebben, zoals instellingen, te verwerken gegevens, of instructies om op te handelen.
-
 ## Hoe:
 Hier is hoe je Haskell tekstbestanden laat lezen zonder een druppel zweet te vergieten. Open je favoriete editor, en laten we wat code schrijven.
 
@@ -54,7 +51,6 @@ Hello, World!
 ```
 
 ## Diepere Duik
-
 Lang geleden waren programma's asociale wezens, die voornamelijk gegevens verwerkten die ze zelf genereerden. Maar complexiteit groeide, en zo ook de behoefte om externe info binnen te trekken, dus werd het lezen van bestanden een basisbehoefte.
 
 Haskell biedt verschillende manieren om bestanden te lezen. We kunnen het op de low-level manier doen met `openFile`, `hGetContents`, en `hClose` of het koeltjes spelen met `readFile`, die alles netjes bundelt.
@@ -64,7 +60,6 @@ Haskell biedt verschillende manieren om bestanden te lezen. We kunnen het op de 
 Haskell's standaard `IO` acties hanteren bestanden met behulp van de onderliggende OS-mechanismen. De bibliotheken abstraheren deze in meer gebruiksvriendelijke operaties, maar aan het einde van de dag, zijn ze gebouwd bovenop Haskell's `IO` monad, wat verzekert dat acties in de juiste volgorde gebeuren.
 
 ## Zie Ook
-
 - Voor officiële Haskell-documentatie, bekijk [Haskell's documentatie over invoer en uitvoer](https://www.haskell.org/tutorial/io.html).
 - Als je dorst hebt naar meer, savoureer een kopje kennis bij [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/input-and-output).
 - Verdiep je begrip van bestandsbeheer met [Real World Haskell's kijk op IO](http://book.realworldhaskell.org/read/io.html).

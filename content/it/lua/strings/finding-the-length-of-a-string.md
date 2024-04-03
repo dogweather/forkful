@@ -9,9 +9,6 @@ title: Trovare la lunghezza di una stringa
 weight: 7
 ---
 
-## What & Why?
-Scoprire la lunghezza di una stringa significa sapere quanti caratteri contiene. Lo facciamo quando, ad esempio, dobbiamo validare l'input, manipolare testi o semplicemente per avere informazioni sulla struttura dei dati che stiamo trattando.
-
 ## How to:
 In Lua, ottenere la lunghezza di una stringa è un gioco da ragazzi. Usa l'operatore `#` per farlo. Ecco un esempio:
 

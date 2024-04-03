@@ -11,9 +11,6 @@ title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---
 
-## Vad & Varför?
-Att jämföra två datum innebär att avgöra vilket av dem som är tidigast eller senast. Programmerare gör detta för att hantera tidsberoende händelser, t.ex. för att avgöra giltighetstider, event ordning eller uppskjutna uppgifter.
-
 ## How to:
 Jämför två datum i Python med `datetime`-modulen:
 

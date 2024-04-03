@@ -11,12 +11,7 @@ title: Hantering av fel
 weight: 16
 ---
 
-## Vad & Varför?
-
-Felhantering i dina program fångar de oväntade ting som försöker sätta käppar i hjulet. Du gör det för att hålla din Arduino från att smälta ned när det oväntade inträffar.
-
 ## Hur man gör:
-
 Låt oss säga att din Arduino läser av en sensor som ibland kan producera värden utanför området. Så här kan du hantera det:
 
 ```Arduino
@@ -38,7 +33,6 @@ Fel: Sensorns värde är utanför området.
 ```
 
 ## Fördjupning
-
 Felhantering har inte alltid varit så rakt på sak. I de tidiga dagarna ignorerade utvecklare ofta fel, vilket ledde till den fruktade "odefinierade beteendet". När programmeringen utvecklades, gjorde även verktygen det – nu har du undantag (exceptions) i många språk, men i Arduino-världen är det ofta fortfarande en gammaldags 'kolla-först' på grund av hårdvarubegränsningar och C++-rötter.
 
 I Arduino-programmering ser man ofta `if-else`-satser för felhantering. Men det finns alternativ: använda `assert`-funktionen för att stoppa körningen om ett villkor misslyckas eller att utforma inbyggda säkerhetsåtgärder i själva hårdvaruuppsättningen.
@@ -46,7 +40,6 @@ I Arduino-programmering ser man ofta `if-else`-satser för felhantering. Men det
 När du implementerar felhantering, överväg effekten av att stoppa programmet versus att tillåta det att fortsätta i ett standard- eller säkert tillstånd. Det finns en avvägning, och det rätta valet beror på potentiell skada av avbrott kontra felaktig drift.
 
 ## Se också
-
 Förbättra din kunskap om feldetektering och hantering med dessa:
 
 - Arduino språkreferens: https://www.arduino.cc/reference/en/

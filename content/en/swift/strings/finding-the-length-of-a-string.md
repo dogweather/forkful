@@ -11,9 +11,6 @@ title: Finding the length of a string
 weight: 7
 ---
 
-## What & Why?
-Finding the length of a string means figuring out how many characters it contains. Programmers do this to validate input, manipulate text, or simply to understand the size of their data.
-
 ## How to:
 In Swift, you get a string's length by accessing its `count` property. Straightforward, let's do it:
 

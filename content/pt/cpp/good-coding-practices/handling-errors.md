@@ -10,9 +10,6 @@ title: Tratamento de erros
 weight: 16
 ---
 
-## O Que & Por Quê?
-Tratar erros significa planejar para quando as coisas derem errado. É vital por ajudar a evitar falhas e tornar seu software robusto e amigável para o usuário.
-
 ## Como fazer:
 Aqui está um bloco básico try-catch para tratar uma exceção:
 

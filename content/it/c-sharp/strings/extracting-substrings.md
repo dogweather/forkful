@@ -9,10 +9,6 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## What & Why?
-(Estrarre sottostringhe: Cosa e Perché?)
-Estrarre sottostringhe è prelevare pezzi specifici di una stringa. I programmatori fanno ciò per manipolare testi, come dati inseriti dagli utenti o per analisi di stringhe, ad esempio, nel parsing di file o dati web.
-
 ## How to:
 (Come fare:)
 Utilizza `Substring`, `Span<T>`, `String.Split`, `^` e `..` per estrarre sottostringhe. Ecco degli esempi:

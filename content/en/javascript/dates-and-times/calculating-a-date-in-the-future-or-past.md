@@ -10,9 +10,6 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-Calculating a future or past date means finding a date some days, weeks, months, or years from a certain point. Programmers often need this for tasks like setting expiration dates, reminders, or scheduling events.
-
 ## How to:
 JavaScript's `Date` object is your go-to for date gymnastics. Let's play with some examples:
 

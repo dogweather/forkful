@@ -11,9 +11,6 @@ title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-begäran är hur en dator eller app frågar efter data från en server eller en tjänst på nätet. Programmerare gör detta för att interagera med webbaserade API:er, hämta webbsidor, eller kommunicera mellan tjänster.
-
 ## Hur gör man:
 För att skicka en HTTP-förfrågan i Clojure, kan du använda `clj-http` biblioteket. Installera det först med Leiningen eller Boot i ditt projekt. Här är ett enkelt exempel:
 

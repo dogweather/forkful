@@ -14,9 +14,6 @@ title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---
 
-## Cái gì & Tại sao?
-REPL (Read-Eval-Print Loop) là môi trường lập trình máy tính tương tác, đơn giản. Các lập trình viên sử dụng nó để thử nghiệm mã nhanh chóng, kiểm tra đoạn mã, hoặc học cú pháp của một ngôn ngữ mà không cần tạo một ứng dụng đầy đủ.
-
 ## Cách thực hiện:
 Khởi chạy REPL của Kotlin rất dễ dàng. Mở terminal của bạn và gõ `kotlinc`. Bạn sẽ nhập vào shell Kotlin. Hãy thử định nghĩa một biến và in giá trị của nó:
 

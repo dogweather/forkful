@@ -13,16 +13,10 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mikä & Miksi?
-
-Testien kirjoittaminen Rustissa käsittää automaattisten tarkistusten luomisen varmistamaan, että koodisi toimii odotetulla tavalla. Ohjelmoijat tekevät tämän virheiden varhaisen havaitsemisen, refaktoroinnin helpottamisen ja koodin laadun ylläpitämisen vuoksi ajan myötä.
-
 ## Miten:
-
 Rustin sisäänrakennettu testikehys tukee yksikkö-, integraatio- ja dokumentaatiotestejä ilman ulkopuolisten kirjastojen tarvetta. Testit merkitään `#[test]`-annotaatiolla, ja mikä tahansa näin merkitty funktio kääntyy testiksi.
 
 ### Yksikkötestin kirjoittaminen:
-
 Sijoita yksikkötestit testaamaansa moduuliin käyttäen `tests`-alimoduulia, joka on merkitty `#[cfg(test)]`-annotaatiolla varmistaaksesi, että ne kääntyvät vain testattaessa.
 
 ```rust
@@ -60,7 +54,6 @@ testitulos: ok. 1 läpäisi; 0 epäonnistui; 0 ohitettiin; 0 mitattiin; 0 suodat
 ```
 
 ### Integraatiotestien kirjoittaminen:
-
 Integraatiotestit sijoitetaan `tests`-hakemistoon projektisi ylimmälle tasolle, `src`:n viereen. Jokainen `.rs`-tiedosto `tests`-hakemistossa kääntyy omaksi erilliseksi cratesikseen.
 
 ```rust
@@ -74,7 +67,6 @@ fn it_adds_two() {
 ```
 
 ### Testaaminen suosittujen kolmannen osapuolen kirjastojen kanssa:
-
 Laajempien testausominaisuuksien saavuttamiseksi `proptest`-kirjasto voi generoida laajan valikoiman syötteitä funktioiden testaamiseen.
 
 Lisää `proptest` kehitysriippuvuudeksi `Cargo.toml`-tiedostoon:

@@ -11,9 +11,6 @@ title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---
 
-## Mikä & Miksi?
-TOML:n kanssa työskentely sisältää TOML-tietojen (Tom’s Obvious, Minimal Language) jäsentämisen ja tuottamisen Lualla. Ohjelmoijat käyttävät TOML:ää konfiguraatiotiedostoihin sen luettavuuden ja yksinkertaisen syntaksin vuoksi, joka kääntyy helposti datarakenteeksi.
-
 ## Kuinka:
 Ensiksi, varmista että Lua-ympäristössäsi on TOML-jäsennin. Tässä esimerkissä käytämme `lua-toml`:ia.
 

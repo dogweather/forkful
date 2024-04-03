@@ -16,12 +16,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---
 
-## Gì và Tại Sao?
-
-JSON (JavaScript Object Notation) là một định dạng văn bản cho việc trao đổi dữ liệu, tương tự như XML nhưng nhẹ hơn và dễ đọc hơn. Các lập trình viên Elm sử dụng JSON để gửi và nhận dữ liệu từ/như máy chủ, tạo ra các ứng dụng web đầy động và dựa trên dữ liệu.
-
 ## Cách thực hiện:
-
 Elm xử lý JSON sử dụng các module `Json.Decode` và `Json.Encode`. Dưới đây là một ví dụ cơ bản:
 
 ```Elm
@@ -53,13 +48,11 @@ Chào mừng, Elm
 ```
 
 ## Sâu hơn
-
 JSON đã trở thành tiêu chuẩn de facto cho các API web kể từ đầu những năm 2000, thay thế XML bởi sự đơn giản của nó. Mặc dù Elm được biết đến với tính ngắn gọn và an toàn về kiểu dữ liệu, việc xử lý JSON có thể trở nên rườm rà do nhu cầu phải có các bộ giải mã rõ ràng.
 
 Các lựa chọn khác như Haskell sử dụng typeclasses cho việc mã hóa/giải mã JSON, cung cấp nhiều chức năng "thuận tiện" hơn ngay từ đầu. Tuy nhiên, cách tiếp cận của Elm giúp duy trì an toàn về kiểu dữ liệu và tránh lỗi thời gian chạy. Các bộ giải mã chỉ rõ cách để chuyển đổi JSON thành kiểu dữ liệu của Elm, và bộ mã hóa thực hiện quá trình ngược lại.
 
 ## Xem thêm
-
 Để biết thêm thông tin và tài liệu:
 
 - Hướng dẫn JSON chính thức của Elm: [Làm việc với JSON trong Elm](https://guide.elm-lang.org/effects/json.html)

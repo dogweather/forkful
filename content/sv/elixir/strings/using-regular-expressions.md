@@ -13,12 +13,7 @@ title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---
 
-## Vad & Varför?
-
-Reguljära uttryck (regex) i Elixir används för att söka, matcha och manipulera strängar baserat på specifika mönster. Programmerare använder regex för uppgifter som att validera format (e-post, URL:er), tolka loggar eller dataextraktion, tack vare dess effektivitet och mångsidighet i hantering av strängar.
-
 ## Hur man gör:
-
 Elixir använder `Regex`-modulen, som utnyttjar Erlangs regex-bibliotek, för regex-operationer. Här är grundläggande användningsområden:
 
 ```elixir

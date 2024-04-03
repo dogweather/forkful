@@ -15,9 +15,6 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Cái gì & Tại sao?
-Xử lý lỗi có nghĩa là lên kế hoạch cho những khi mọi thứ diễn ra không như mong đợi. Điều này quan trọng vì nó giúp tránh gây sập chương trình và làm cho phần mềm của bạn robust và thân thiện với người dùng.
-
 ## Làm thế nào:
 Dưới đây là một khối cơ bản try-catch để xử lý một ngoại lệ:
 

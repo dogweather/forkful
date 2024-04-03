@@ -13,14 +13,10 @@ title: Skrive tester
 weight: 36
 ---
 
-## Hva & hvorfor?
-
-Å skrive tester i C++ innebærer å lage små, selvstendige programmer som automatisk verifiserer oppførselen til deler av koden. Programmerere gjør dette for å sikre at koden fungerer som forventet, for å forhindre regresjoner (dvs. at nye endringer bryter eksisterende funksjonalitet), og for å lette vedlikehold av kodebasen over tid.
-
 ## Hvordan:
 
-### Bruke Google Test Framework
 
+### Bruke Google Test Framework
 En av de mest populære tredjepartsbibliotekene for å skrive tester i C++ er Google Test. Først må du installere Google Test og lenke den med prosjektet ditt. Når alt er satt opp, kan du begynne å skrive testtilfeller.
 
 ```cpp
@@ -55,7 +51,6 @@ Lagre koden i en fil, og kompiler den med g++-kompilatoren, lenk Google Test-bib
 ```
 
 ### Bruke Catch2
-
 Et annet populært testrammeverk for C++ er Catch2. Det har en enklere syntaks og krever vanligvis ikke lenking mot et bibliotek (kun header). Her er et eksempel på hvordan du skriver en enkel test med Catch2:
 
 ```cpp

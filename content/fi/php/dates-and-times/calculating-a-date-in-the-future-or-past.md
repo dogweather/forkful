@@ -11,9 +11,6 @@ title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---
 
-## What & Why? - Mitä ja miksi?
-Laskemme päivämääriä tulevaisuudessa tai menneisyydessä hallitaksemme aikatauluja ja määrittäksemme määräaikoja. Ohjelmoijat tekevät sen automatisoidakseen muistutuksia, vanhenemispäiviä ja tapahtumien aikatauluja.
-
 ## How to - Kuinka tehdä:
 Php:ssä käytämme `DateTime`-luokkaa ja `DateInterval`-luokkaa päivämäärien laskemiseen.
 

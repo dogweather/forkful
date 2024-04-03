@@ -12,9 +12,6 @@ title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---
 
-## Was & Warum?
-Eine interaktive Shell für Rust, oder REPL (Read-Eval-Print Loop), ermöglicht es Ihnen, Rust-Code sofort auszuführen und sofortige Ergebnisse zu sehen, ideal für Experimente oder zum Lernen. Programmierer nutzen es, um Code-Schnipsel zu testen, zu debuggen oder einfach mit Sprachfunktionen zu spielen, ohne die Last, ein vollständiges Projekt zu kompilieren.
-
 ## Wie:
 Bis jetzt hat Rust keine offizielle REPL, die damit ausgeliefert wird. Sie können jedoch Drittanbieter-Tools wie `evcxr_repl` verwenden. Installieren Sie es mit Cargo:
 

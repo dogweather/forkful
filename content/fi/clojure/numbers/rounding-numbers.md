@@ -11,9 +11,6 @@ title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä & Miksi?
-Numeroiden pyöristäminen tarkoittaa numeron säätämistä lähimpään kokonaislukuun tai tiettyyn desimaalitarkkuuteen. Pyöristämme numeroita yksinkertaistaaksemme niitä ihmisen luettaviksi, vähentääksemme laskentakuormaa tai täyttääksemme tiettyjä numeerisia vaatimuksia.
-
 ## Kuinka:
 Clojuressa käytämme pääasiassa `Math/round`, `Math/floor` ja `Math/ceil`:
 

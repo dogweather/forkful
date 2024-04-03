@@ -28,12 +28,7 @@ title: "\u0938\u092C\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917\u094D\u0938
 weight: 6
 ---
 
-## What & Why? (क्या और क्यों?)
-
-सबस्ट्रिंग एक्सट्रैक्शन यानी मुख्य स्ट्रिंग से छोटे टुकड़े को निकालना। प्रोग्रामर लॉग्स पढ़ने, डेटा पर्सिंग या कंटेंट में से खास जानकारी निकालने के लिए यह करते हैं।
-
 ## How to: (कैसे करें:)
-
 Fish Shell में सबस्ट्रिंग निकालने के उदाहरण:
 
 ```Fish Shell
@@ -50,7 +45,6 @@ echo $txt[8..-1]
 ```
 
 ## Deep Dive (गहराई में जानकारी):
-
 सबस्ट्रिंग एक्सट्रैक्शन की कुछ इतिहास और विस्तार से जानकारी:
 
 1. इतिहास: स्ट्रिंग मैनिपुलेशन हमेशा से प्रोग्रामिंग का हिस्सा रहा है और समय के साथ इसमें लगातार सुधार हुआ है।
@@ -60,7 +54,6 @@ echo $txt[8..-1]
 3. लागू करने की डिटेल्स: Fish Shell तरीके बताता है कि कैसे सिंपल इंडेक्स सिंटेक्स का इस्तेमाल करके आसानी से और इफेक्टिवली सबस्ट्रिंग्स निकाले जा सकते हैं।
 
 ## See Also (इसे भी देखें):
-
 1. Fish Shell Documentation: [https://fishshell.com/docs/current/index.html#syntax](https://fishshell.com/docs/current/index.html#syntax)
 2. String Manipulation in Fish Shell: [https://fishshell.com/docs/current/cmds/string.html](https://fishshell.com/docs/current/cmds/string.html)
 3. Community Tutorials and Guides: [https://github.com/fish-shell/fish-shell/wiki/Tutorial](https://github.com/fish-shell/fish-shell/wiki/Tutorial)

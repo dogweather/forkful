@@ -10,11 +10,7 @@ title: Lecture d'un fichier texte
 weight: 22
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Lire un fichier texte, c'est récupérer son contenu pour l'utiliser dans votre programme. Les programmeurs le font souvent pour charger des configurations, des données ou pour analyser du texte.
-
 ## How to: (Comment faire :)
-
 Lire un fichier texte en TypeScript est simple. Ici, on utilise `fs` de Node.js avec des promesses.
 
 ```typescript
@@ -37,7 +33,6 @@ readTextFile(filepath).then(console.log).catch(console.error);
 La console affiche le contenu de `monFichier.txt` ou une erreur si la lecture échoue.
 
 ## Deep Dive (Plongée en profondeur)
-
 Avant l’ère de Node.js et TypeScript, la lecture de fichiers était l’apanage de langages bas niveau comme C. Avec Node.js, cette opération devient native en JavaScript et, par extension, en TypeScript. 
 Entre les méthodes synchrone, asynchrone avec callbacks et asynchrone avec promesses, la dernière est privilégiée pour son style plus lisible et moins pyramidale. C’est ce qu’on utilise dans l’exemple.
 En alternatives, il y a des librairies comme `fs-extra` qui simplifient certaines opérations, ou le nouveau API `fs.promises` pour les promesses, plus moderne et propre.
@@ -45,7 +40,6 @@ En alternatives, il y a des librairies comme `fs-extra` qui simplifient certaine
 Pour la lecture de gros fichiers, envisagez `fs.createReadStream`, qui lit par morceaux, empêchant ainsi de surcharger la mémoire.
 
 ## See Also (Voir aussi)
-
 - Documentation Node.js sur `fs`: https://nodejs.org/api/fs.html
 - Guide sur les stream Node.js: https://nodejs.org/api/stream.html
 - TypeScript Handbook: https://www.typescriptlang.org/docs/handbook/intro.html

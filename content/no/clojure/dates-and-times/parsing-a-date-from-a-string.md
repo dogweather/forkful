@@ -13,9 +13,6 @@ title: Analysering av en dato fra en streng
 weight: 30
 ---
 
-## Hva & Hvorfor?
-Å parse en dato fra en streng i Clojure handler om å konvertere tekstlige representasjoner av datoer og tider til en mer brukbar form (f.eks. Clojures DateTime-objekt). Denne prosessen er grunnleggende for databehandling, logging, eller enhver applikasjon som manipulerer tidspunktsdata, og tillater programmerere å utføre operasjoner, sammenligninger, eller manipulasjoner på datoer effektivt.
-
 ## Hvordan:
 Clojure, som et JVM-språk, lar deg bruke Javas dato- og tidsbiblioteker direkte. La oss starte med den innebygde Java-interoperabiliteten og deretter utforske hvordan man utnytter et populært tredjepartsbibliotek, `clj-time`, for mer idiomatiske Clojure-løsninger.
 

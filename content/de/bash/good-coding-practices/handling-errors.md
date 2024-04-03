@@ -11,12 +11,7 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-
-Fehlerbehandlung in Bash-Skripten bedeutet, vorherzusehen, wo Probleme auftreten könnten, und diese elegant zu behandeln. Warum? Nun, es hält Ihr Skript robust und bewahrt die Benutzer davor, sich den Kopf zu zerbrechen, wenn Dinge nicht wie erwartet funktionieren.
-
 ## Wie geht das:
-
 ```Bash
 #!/bin/bash
 
@@ -49,7 +44,6 @@ cat: temp_datei.txt: Datei oder Verzeichnis nicht gefunden
 ```
 
 ## Vertiefung
-
 Die Fehlerbehandlung in Bash-Skripten geht zurück auf die Ursprünge der Unix-Shell, wo robuste und zuverlässige Skripte für die Systemadministration und Automatisierung (und sind) unerlässlich waren.
 
 Traditionell werden Fehler in Bash behandelt, indem der Exit-Status eines Befehls überprüft wird, der konventionsgemäß 0 für Erfolg und einen von Null verschiedenen Wert für ein Scheitern zurückgibt.
@@ -63,7 +57,6 @@ Alternativen zur eingebauten Fehlerbehandlung von Bash umfassen das explizite Ü
 Obwohl sorgfältige Fehlerbehandlung manchmal für kleine Skripte übertrieben erscheint, ist es eine Praxis, die viel Zeit beim Debuggen sparen kann und unerwartetes Verhalten sowohl für Sie als auch für die Benutzer verhindert.
 
 ## Siehe auch
-
 - Bash-Handbuch zu Shell-Parametern: https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameters
 - Abschnitt über Fehlerbehandlung im Advanced Bash-Scripting Guide: https://www.tldp.org/LDP/abs/html/exit-status.html
 - Ein ausführlicher Leitfaden zu `trap`: https://mywiki.wooledge.org/SignalTrap

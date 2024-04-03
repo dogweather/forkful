@@ -14,12 +14,7 @@ title: Kontrollera om en katalog existerar
 weight: 20
 ---
 
-## Vad & Varför?
-
-Att kontrollera om en mapp finns är en grundläggande uppgift i PHP-programmering eftersom det låter dig verifiera närvaron av en mapp innan du utför operationer som att läsa från eller skriva till filer inuti den. Denna operation hjälper till att förhindra fel som kan uppstå vid försök att komma åt icke-existerande mappar och är väsentlig för dynamisk filhantering inom dina applikationer.
-
 ## Hur man gör:
-
 Det infödda sättet att kontrollera om en mapp finns i PHP är att använda funktionen `is_dir()`. Denna funktion tar en filväg som argument och returnerar `true` om mappen finns och är en mapp, eller `false` i annat fall.
 
 ```php

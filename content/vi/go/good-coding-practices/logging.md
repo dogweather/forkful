@@ -17,12 +17,7 @@ title: "Ghi nh\u1EADt k\xFD"
 weight: 17
 ---
 
-## Gì và Tại sao?
-
-Trong phát triển phần mềm, việc ghi nhật ký (logging) là quy trình ghi lại thông tin về quá trình thực thi của chương trình, được thiết kế để theo dõi hành vi và chẩn đoán các vấn đề. Các lập trình viên thực hiện việc ghi nhật ký để giám sát hiệu suất phần mềm, gỡ lỗi, và đảm bảo an ninh hệ thống cũng như tuân thủ, làm cho nó trở thành công cụ không thể thiếu cho bảo trì và phân tích ứng dụng.
-
 ## Làm thế nào:
-
 Trong Go, việc ghi nhật ký có thể được thực hiện sử dụng gói thư viện chuẩn `log`. Gói này cung cấp khả năng ghi nhật ký đơn giản, chẳng hạn như ghi vào đầu ra chuẩn hay vào các tệp. Hãy bắt đầu với một ví dụ cơ bản về việc ghi nhật ký vào đầu ra chuẩn:
 
 ```go
@@ -88,7 +83,6 @@ NHẬT KÝ TÙY CHỈNH: 2009/11/10 23:00:00 main.go:11: Đây là một thông 
 Ví dụ này thêm tiền tố "NHẬT KÝ TÙY CHỈNH: " vào mỗi thông điệp nhật ký và bao gồm ngày, giờ và vị trí tệp nguồn.
 
 ## Đi sâu hơn
-
 Gói `log` của thư viện chuẩn Go là đơn giản và đủ cho nhiều ứng dụng, nhưng nó thiếu một số tính năng tiên tiến hơn được tìm thấy trong các thư viện ghi nhật ký của bên thứ ba, chẳng hạn như ghi nhật ký có cấu trúc, quay vòng nhật ký, và ghi nhật ký dựa trên cấp độ. Các gói như `zap` và `logrus` cung cấp những tính năng tiên tiến này và được cộng đồng Go đánh giá cao về hiệu suất và tính linh hoạt của chúng.
 
 Ví dụ, ghi nhật ký có cấu trúc cho phép bạn ghi dữ liệu theo một định dạng có cấu trúc (như JSON), rất hữu ích cho các ứng dụng dựa trên đám mây hiện đại nơi các nhật ký có thể được phân tích bằng các công cụ hoặc dịch vụ khác nhau. `zap`, cụ thể là được biết đến với hiệu suất cao và gánh nặng phân bổ thấp, làm cho nó phù hợp cho các ứng dụng nơi tốc độ và hiệu quả là quan trọng.

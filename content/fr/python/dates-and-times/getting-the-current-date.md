@@ -13,12 +13,7 @@ title: Obtenir la date actuelle
 weight: 29
 ---
 
-## Quoi et Pourquoi ?
-
-L'obtention de la date actuelle en Python est une opération essentielle pour de nombreuses applications, telles que la journalisation, l'analyse de données et la prise de décisions basée sur le temps. Il s'agit de récupérer la date actuelle du système, ce qui est crucial pour les tâches dépendant du contexte temporel.
-
 ## Comment faire :
-
 **En utilisant la bibliothèque standard `datetime` :**
 
 Le module `datetime` dans la bibliothèque standard de Python fournit des classes pour manipuler des dates et des heures. Pour obtenir la date actuelle, vous pouvez utiliser la méthode `date.today()`.

@@ -11,9 +11,6 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## Co i dlaczego?
-Wysyłanie żądania HTTP to komunikacja z serwerem w sieci; można prosić o dane lub wysyłać je. Programiści to robią, by pobierać informacje, autoryzować użytkowników, czy integrować usługi.
-
 ## Jak to zrobić:
 Wysyłanie prostej żądania GET w Javie:
 ```java

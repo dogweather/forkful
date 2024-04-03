@@ -12,12 +12,7 @@ title: Werken met CSV
 weight: 37
 ---
 
-## Wat & Waarom?
-
-CSV (Comma-Separated Values) bestanden zijn eenvoudige tekstbestanden voor het opslaan van tabelgegevens. Programmeurs gebruiken ze omdat ze gemakkelijk te lezen en te schrijven zijn, en breed ondersteund worden over systemen en talen heen.
-
 ## Hoe:
-
 Laten we een CSV-bestand lezen en de inhoud ervan parseren in Swift.
 
 Eerst gaan we ervan uit dat we een `data.csv` bestand hebben met deze inhoud:
@@ -63,11 +58,9 @@ Voorbeelduitvoer:
 ```
 
 ## Diepgaand
-
 CSV bestaat al sinds de vroege computertijd - gebruikt voor het verplaatsen van gegevens tussen programma's, databases en systemen. Alternatieven zoals JSON en XML bestaan, maar CSV blijft populair vanwege zijn eenvoudigheid. Qua efficiëntie hanteren Swift's `String` methoden CSV's goed voor kleine datasets, maar grootschalige gegevens zouden wellicht een gespecialiseerde bibliotheek zoals SwiftCSV of CodableCSV nodig hebben voor prestatie en gemak.
 
 ## Zie Ook
-
 - Apple's Swift documentatie voor String manipulatie: [https://developer.apple.com/documentation/swift/string](https://developer.apple.com/documentation/swift/string)
 - SwiftCSV, een gespecialiseerde CSV-bibliotheek voor Swift: [https://github.com/swiftcsv/SwiftCSV](https://github.com/swiftcsv/SwiftCSV)
 - CodableCSV, een CSV-encoder/decoder voor Swift: [https://github.com/dehesa/CodableCSV](https://github.com/dehesa/CodableCSV)

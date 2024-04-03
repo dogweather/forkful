@@ -12,11 +12,7 @@ title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---
 
-## Wat & Waarom?
-Karakters verwijderen die overeenkomen met een patroon betekent specifieke sequenties uit een string verwijderen. Programmeurs doen dit om gegevens te schonen, formaten af te dwingen, of ongewenste informatie te verwijderen.
-
 ## Hoe te:
-
 Om karakters te verwijderen met behulp van een patroon in Clojure, gebruik je reguliere expressies met de functies `re-seq`, `re-find`, of `re-matches` in combinatie met `clojure.string/replace`.
 
 ```Clojure

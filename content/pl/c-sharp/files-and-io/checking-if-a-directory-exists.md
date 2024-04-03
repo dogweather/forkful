@@ -13,14 +13,10 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i dlaczego?
-
-Sprawdzanie, czy katalog istnieje w C#, polega na weryfikowaniu obecności folderu w określonej ścieżce w systemie plików. Programiści robią to, aby uniknąć błędów, takich jak próby odczytu z lub zapisu do nieistniejącego katalogu, zapewniając płynniejsze manipulacje plikami i katalogami.
-
 ## Jak to zrobić:
 
-### Używając System.IO
 
+### Używając System.IO
 C# zapewnia przestrzeń nazw `System.IO`, która zawiera klasę `Directory`, oferującą bezpośredni sposób na sprawdzenie istnienia katalogu za pomocą metody `Exists`.
 
 ```csharp
@@ -51,7 +47,6 @@ Katalog istnieje: False
 W przypadku, gdy katalog istnieje pod ścieżką `C:\ExampleDirectory`, wynik będzie `True`.
 
 ### Używając System.IO.Abstractions do testów jednostkowych
-
 Gdy chodzi o możliwość testowania jednostkowego kodu, szczególnie gdy wchodzi on w interakcję z systemem plików, pakiet `System.IO.Abstractions` jest popularnym wyborem. Pozwala on abstrahować i udawać operacje na systemie plików w testach. Oto jak można sprawdzić istnienie katalogu, korzystając z tego podejścia:
 
 Najpierw upewnij się, że zainstalowałeś pakiet:

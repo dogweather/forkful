@@ -10,12 +10,7 @@ title: Concatenating strings
 weight: 3
 ---
 
-## What & Why?
-
-String concatenation in C involves joining two or more strings end-to-end to form a new string. Programmers perform this operation to dynamically construct strings at runtime, essential for creating meaningful messages, file paths, or any data assembled from various string sources.
-
 ## How to:
-
 In C, strings are arrays of characters ending with a null character (`\0`). Unlike in higher-level languages, C does not provide a built-in string concatenation function. Instead, you use the `strcat()` or `strncat()` functions from the `<string.h>` library.
 
 Here’s a simple example using `strcat()`:
@@ -58,7 +53,6 @@ int main() {
 This limits the concatenation to the first `num` characters of the source string, helping prevent buffer overflows.
 
 ## Deep Dive
-
 The functions `strcat()` and `strncat()` have been part of the C standard library since its inception, reflecting the language's low-level nature that requires manual management of strings and memory. Unlike many modern programming languages that treat strings as first-class objects with built-in concatenation operators (such as `+` or `.concat()`), C's approach requires a more in-depth understanding of pointers, memory allocation, and potential pitfalls like buffer overflows.
 
 While `strcat()` and `strncat()` are widely used, they are often criticized for their potential to create security vulnerabilities if not used carefully. Buffer overflows, where data exceeds the memory allocated, can lead to crashes or be exploited for arbitrary code execution. As a result, programmers are increasingly turning to safer alternatives, such as `snprintf()`, which provides more predictable behavior by limiting the number of characters written to the destination string based on its size:

@@ -12,12 +12,7 @@ title: Utilizzo di espressioni regolari
 weight: 11
 ---
 
-## Cosa & Perché?
-
-Le espressioni regolari (regex) in Visual Basic for Applications (VBA) offrono un modo potente per cercare, corrispondere e manipolare stringhe. I programmatori le utilizzano per compiti come la convalida dei dati, il parsing e la trasformazione grazie alla loro flessibilità ed efficienza nel gestire schemi di stringhe complessi.
-
 ## Come fare:
-
 Per utilizzare le espressioni regolari in VBA, è prima necessario abilitare la libreria Microsoft VBScript Regular Expressions. Nell'editor VBA, vai su `Strumenti` -> `Riferimenti`, quindi seleziona `Microsoft VBScript Regular Expressions 5.5`.
 
 Ecco un esempio base per trovare se un modello esiste all'interno di una stringa:
@@ -63,7 +58,6 @@ End Sub
 ```
 
 ## Approfondimento
-
 L'inclusione delle espressioni regolari nei linguaggi di programmazione spesso risale agli strumenti Unix degli anni '70. VBA ha integrato le regex tramite la libreria VBScript Regular Expressions, evidenziando la sua importanza nei compiti di elaborazione del testo anche in applicazioni non tipicamente associate alla manipolazione intensiva di testi come Excel o Access.
 
 Nonostante la loro potenza, le regex in VBA a volte possono essere meno intuitive o performanti rispetto a implementazioni più moderne in linguaggi come Python o JavaScript. Ad esempio, il modulo `re` di Python offre un ampio supporto per gruppi nominati e funzionalità di corrispondenza di modelli più sofisticate, fornendo un approccio più pulito e potenzialmente più leggibile. Tuttavia, quando si lavora all'interno dell'ecosistema VBA, le espressioni regolari rimangono uno strumento inestimabile per compiti che richiedono corrispondenze di modelli o manipolazione del testo. Il compromesso sull'efficienza è spesso trascurabile alla luce della comodità e delle capacità che le regex portano alla tavola quando si tratta con stringhe nelle applicazioni Office.

@@ -14,12 +14,7 @@ title: Att Arbeta med YAML
 weight: 41
 ---
 
-## Vad & Varför?
-
-YAML, som står för "YAML Ain't Markup Language", är en standard för serialisering av data som är läslig för människor och används ofta för konfigurationsfiler och datautbyte mellan språk med olika datastrukturer. Programmerare arbetar ofta med YAML på grund av dess enkelhet och läsbarhet, särskilt i projekt som kräver omfattande konfiguration eller vid överföring av strukturerad data mellan olika system.
-
 ## Hur man gör:
-
 Medan Google Apps Script (GAS) inte stöder YAML-tolkning eller serialisering som standard, kan du manipulera YAML-data genom att använda JavaScript-bibliotek eller skriva egna tolkningsfunktioner. För demonstration, låt oss överväga hur man tolkar en YAML-sträng med hjälp av en anpassad funktion, eftersom externa bibliotek inte kan importeras direkt i GAS.
 
 Anta att du har en enkel YAML-konfiguration:
@@ -77,7 +72,6 @@ När `testYamlParsing()` körs, ger det utskriften:
 Detta anpassade tolkningsansats är ganska grundläggande och kan behöva justeras för att kunna hantera komplexa YAML-filer.
 
 ## Fördjupning
-
 YAML, som ursprungligen släpptes 2001, syftade till att vara mer läsbart för människor än dess föregångare som XML eller JSON. Medan dess enkelhet och användarvänlighet är mycket uppskattad, presenterar hanteringen av YAML i Google Apps Script utmaningar på grund av bristen på direkt stöd. Följaktligen litar programmerare ofta på JavaScripts mångsidighet för att tolka och generera YAML-data. Dock, för komplexa användningsfall, särskilt de som involverar djup nästling och avancerade datastrukturer, kan denna metod bli besvärlig och benägen för fel.
 
 JSON stöds däremot infödd i Google Apps Script och de flesta andra programmeringsmiljöer, och erbjuder en mer rakt på sak strategi för data-serialisering och deserialisering utan extra tolkningsöverhuvud. JSONs syntax är mindre långvärd än YAMLs, vilket gör den mer lämplig för datautbyte i webbapplikationer. Dock förblir YAML populärt för konfigurationsfiler och situationer där människans läsbarhet är av yttersta vikt.

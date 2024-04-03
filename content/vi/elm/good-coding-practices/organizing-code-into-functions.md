@@ -15,9 +15,6 @@ title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---
 
-## Cái gì và Tại sao?
-Đổ tất cả mã của bạn vào một đống lớn? Ý tưởng tồi. Chia nó thành các hàm? Ý tưởng tốt. Việc này giữ cho mã Elm của bạn được sạch sẽ, có thể tái sử dụng và dễ kiểm thử hơn. Bằng cách tổ chức mã của bạn thành các hàm, bạn nhóm các đoạn mã thực hiện các tác vụ cụ thể lại với nhau, làm cho ứng dụng của bạn dễ bảo trì và dễ hiểu hơn.
-
 ## Làm thế nào:
 Dưới đây là một đoạn mã Elm với một hàm đơn giản để chào mừng người dùng:
 

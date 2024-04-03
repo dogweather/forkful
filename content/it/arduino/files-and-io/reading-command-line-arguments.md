@@ -11,9 +11,6 @@ title: Lettura degli argomenti della riga di comando
 weight: 23
 ---
 
-## Che Cosa & Perché?
-Leggere gli argomenti da riga di comando significa raccogliere input quando eseguiamo un programma, utili per modificarne il comportamento senza cambiare il codice. I programmatori lo fanno per rendere i programmi flessibili e facilmente adattabili a diverse situazioni.
-
 ## Come Fare:
 ```Arduino
 // Attenzione: gli esempi mostrano come utilizzare gli argomenti passati attraverso una seriale in Arduino, non la riga di comando tradizionale

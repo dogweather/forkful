@@ -13,9 +13,6 @@ title: Bruke associative tabeller
 weight: 15
 ---
 
-## Hva og hvorfor?
-I Arduino-verdenen lar assoiative matriser deg pare nøkler med verdier, litt som å matche sokker med deres par. De er et førstevalg når du trenger å lagre og hente data ved hjelp av beskrivende navn, noe som gjør koden din renere og mye mer forståelig.
-
 ## Hvordan:
 Arduino, strengt tatt, har ikke innebygd støtte for assoiative matriser slik du ville funnet i høyere programmeringsspråk. Men, frykt ikke. Vi kan være kreative ved å bruke strukturer og matriser for å etterligne denne funksjonaliteten. Her er et enkelt eksempel på å lage en grunnleggende "assosiativ matrise" for lagring og tilgang til temperaturer for forskjellige byer.
 

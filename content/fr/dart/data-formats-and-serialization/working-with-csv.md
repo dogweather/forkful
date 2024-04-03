@@ -16,16 +16,10 @@ title: Travailler avec CSV
 weight: 37
 ---
 
-## Quoi & Pourquoi ?
-
-Travailler avec des fichiers CSV (Comma Separated Values), c'est-à-dire des fichiers texte où chaque ligne contient des valeurs séparées par des virgules, permet aux programmeurs de faciliter l'échange de données entre différentes applications ou de stocker des données dans un format léger et lisible par l'homme.
-
 ## Comment faire :
-
 Pour gérer les fichiers CSV en Dart, vous pouvez soit traiter le texte manuellement, soit utiliser des bibliothèques tierces pour simplifier la tâche. Ici, nous examinerons les deux approches.
 
 ### Analyse manuelle de CSV
-
 Si vos besoins sont simples, vous pourriez choisir d'analyser manuellement une chaîne CSV. Cela peut être réalisé en utilisant les fonctions de manipulation de chaînes de caractères de base de Dart :
 
 ```dart
@@ -58,7 +52,6 @@ void main() {
 ```
 
 ### Utilisation d'une bibliothèque tierce : `csv`
-
 Pour des scénarios plus complexes ou pour simplifier votre code, vous pouvez utiliser une bibliothèque tierce populaire comme `csv`. Commencez par l'ajouter à votre projet en incluant `csv: ^5.0.0` (ou la version la plus récente) dans votre fichier `pubspec.yaml` sous `dependencies`. Utilisez-la ensuite comme suit :
 
 ```dart

@@ -11,9 +11,6 @@ title: Werken met XML
 weight: 40
 ---
 
-## Wat & Waarom?
-Werken met XML betekent het parseren en genereren van XML-gegevens in Swift. Programmeurs doen dit voor gegevensuitwisseling, vooral wanneer ze integreren met systemen waar XML het standaardformaat is.
-
 ## Hoe:
 Swift biedt `XMLParser` en `XMLDocument` voor het parseren van XML-gegevens. Hier is een fragment om een eenvoudige XML-string te parseren:
 

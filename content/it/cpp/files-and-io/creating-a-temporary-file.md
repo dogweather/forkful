@@ -10,12 +10,7 @@ title: Creazione di un file temporaneo
 weight: 21
 ---
 
-## What & Why? (Cosa e Perché?)
-
-Creare un file temporaneo serve a immagazzinare dati che non necessitano di persistenza a lungo termine. I programmatori li utilizzano per memorizzare output intermedii, dati cache, o per evitare conflitti durante l'accesso concorrente ai file.
-
 ## How to: (Come fare:)
-
 In C++17, è stata introdotta la `<filesystem>` library per gestire i file in maniera più semplice. Di seguito, un esempio su come creare e usare un file temporaneo:
 
 ```C++
@@ -52,7 +47,6 @@ File temporaneo creato in: /tmp/mytempfile7b6b58
 ```
 
 ## Deep Dive (Approfondimento)
-
 Storicamente, in C++ prima di C++17, per creare un file temporaneo si potevano usare funzioni C come `tmpfile()` o `mkstemp()`, ma queste non erano così sicure o facili da usare. `tmpfile()` crea e apre un file temporaneo che sarà automaticamente eliminato alla chiusura del programma, mentre `mkstemp()` crea un file temporaneo con un nome univoco ma richiede una gestione manuale del file descriptor. Inoltre, non si integrano bene con le astrazioni di C++ standard sulla gestione dei file.
 
 Ci sono altre alternative come `boost::filesystem` e librerie terze, ma la `<filesystem>` standard è diretta e ben integrata nel linguaggio.
@@ -60,7 +54,6 @@ Ci sono altre alternative come `boost::filesystem` e librerie terze, ma la `<fil
 Riguardo l'implementazione, creare un file temporaneo robusto richiede di assicurarsi che il nome sia univoco e non si sovrapponga a file esistenti, che sia un'operazione atomica per prevenire condizioni di gara, e che il file sia accessibile solo dal processo che lo crea per prevenire questioni di sicurezza. Questo è ottenibile utilizzando funzioni come `std::filesystem::unique_path()` combinato con le opportune flags di creazione del file.
 
 ## See Also (Vedi Anche)
-
 - Documentazione ufficiale della libreria `<filesystem>`: https://en.cppreference.com/w/cpp/filesystem
 - Dettagli su `tmpfile()`: https://en.cppreference.com/w/cpp/io/c/tmpfile
 - Dettagli su `mkstemp()`: https://man7.org/linux/man-pages/man3/mkstemp.3.html

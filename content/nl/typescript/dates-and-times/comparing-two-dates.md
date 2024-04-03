@@ -12,12 +12,7 @@ title: Twee datums vergelijken
 weight: 27
 ---
 
-## Wat & Waarom?
-
-Het vergelijken van twee datums houdt in dat je hun chronologische relatie uitzoekt - zijn ze hetzelfde, is de ene eerder, of misschien later? Programmeurs doen dit om evenementen te plannen, tijdlijnen te sorteren en de duur te controleren.
-
 ## Hoe te:
-
 Laten we enkele datums vergelijken:
 
 ```TypeScript
@@ -45,7 +40,6 @@ onwaar
 ```
 
 ## Diepere Duik
-
 Vroeger waren datums een hooiberg van formaten en door elkaar gehaalde berekeningen. Met JavaScript (en bij uitbreiding TypeScript), vereenvoudigde het `Date` object zaken, door te standaardiseren hoe we met tijd omgaan.
 
 Alternatieven? Zeker. Bibliotheken zoals `moment.js` of `date-fns` vergroten de functionaliteit van datumbehandeling met extra functies. Maar voor basisvergelijkingen? De eenvoud van de native Date doet vaak het werk.
@@ -53,7 +47,6 @@ Alternatieven? Zeker. Bibliotheken zoals `moment.js` of `date-fns` vergroten de 
 Achter de schermen krijgt `Date.getTime()` de milliseconden sinds het tijdperk (1 januari 1970). Het vergelijken van deze waarden elimineert eigenaardigheden van tijdzones en schrikkelseconden, en reduceert het tot nummers.
 
 ## Zie Ook
-
 - [Mozilla Developer Network Datum Referentie](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) voor de ins en outs van Date objecten.
 - [You Don't Need Moment.js](https://github.com/you-dont-need/You-Dont-Need-Momentjs) voor de tijden dat je misschien wel of niet een bibliotheek wilt.
 - [TypeScript Officiële Documentatie](https://www.typescriptlang.org/docs/) voor meer over de kracht en valkuilen van TypeScript.

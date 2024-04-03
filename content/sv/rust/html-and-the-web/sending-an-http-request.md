@@ -11,9 +11,6 @@ title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-begäran innebär att din kod begär data från, eller skickar data till, en server på internet. Programmerare gör detta för att interagera med webbtjänster, hämta webbinnehåll eller kommunicera mellan klient och server.
-
 ## Hur gör man:
 ```Rust
 // Lägg till biblioteket reqwest i Cargo.toml

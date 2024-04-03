@@ -16,12 +16,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---
 
-## Gì & Tại sao?
-
-Làm việc với CSV (Comma-Separated Values hay giá trị được phân tách bằng dấu phẩy) có nghĩa là xử lý các tệp văn bản đơn giản lưu trữ dữ liệu dạng bảng. Lập trình viên sử dụng CSV vì nó đơn giản và tương thích trên nhiều hệ thống, hoàn hảo cho việc trao đổi dữ liệu giữa các phần mềm khác nhau.
-
 ## Làm thế nào:
-
 Dưới đây là một đoạn mã đọc tệp CSV và in nội dung của nó.
 
 ```C++
@@ -63,11 +58,9 @@ Jane 28
 ```
 
 ## Đi sâu hơn
-
 CSV đã tồn tại từ đầu những năm 1970. Đây là định dạng đi đến cho việc xuất khẩu và nhập dữ liệu đơn giản nhưng không tốt cho dữ liệu phân cấp phức tạp, mà XML và JSON xử lý tốt hơn. C++ không hỗ trợ CSV một cách sẵn có, nhưng việc xử lý tệp và chuỗi là khá trực tiếp. Bạn giải quyết với I/O chuẩn và thao tác chuỗi, trong khi chú ý đến các trường hợp ngoại lệ như dấu ngoặc kép và dấu phẩy trong các ô. Các thư viện như `libcsv` và `Boost.Tokenizer` có thể đơn giản hóa nhiệm vụ nếu bạn đang xử lý các tệp CSV phức tạp hơn.
 
 ## Xem thêm
-
 - [RFC 4180](https://tools.ietf.org/html/rfc4180), định dạng chung và loại MIME cho các tệp CSV.
 - [Tham khảo C++ cho I/O](http://www.cplusplus.com/reference/fstream/)
 - [Thư viện C++ Boost](https://www.boost.org/)

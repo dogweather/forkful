@@ -11,9 +11,6 @@ title: Concatenazione di stringhe
 weight: 3
 ---
 
-## What & Why?
-La concatenazione di stringhe è l'unione di due o più stringhe in un'unica. I programmatori la usano per manipolare testi, creare messaggi, o combinare dati vari in modo dinamico.
-
 ## How to:
 ```Java
 public class ConcatenazioneStringhe {

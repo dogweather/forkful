@@ -14,12 +14,7 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## Hva & Hvorfor?
-
-Strenginterpolering i Google Apps Script gjør det mulig for dynamisk innlemming av uttrykk innenfor strenger, noe som letter skapelsen av mer lesbare og vedlikeholdbare koder. Programmerere bruker denne teknikken for sømløst å innarbeide variabler og uttrykk i strenger uten den tungvinte konkateneringssyntaksen.
-
 ## Hvordan:
-
 I Google Apps Script oppnås strenginterpolering gjennom mal-literaler. Dette er strengliteraler som tillater innebygde uttrykk, angitt med omvendte anførselstegn (\`) i stedet for de vanlige anførselstegnene. Slik kan du bruke dem:
 
 ```javascript
@@ -56,7 +51,6 @@ multiLineStringExample();
 Disse eksemplene illustrerer grunnleggende bruk, innlemming av uttrykk, og skapelsen av flerlinjestrenger med interpolerte verdier.
 
 ## Dypdykk
-
 Mal-literaler, inkludert strenginterpolering, ble introdusert i ECMAScript 2015 (ES6) og deretter adoptert i Google Apps Script. Før dette måtte programmerere stole rent på strengkonkatenasjon, som kunne bli uhåndterlig for komplekse strenger eller når man integrerer mange variabelverdier.
 
 ```javascript

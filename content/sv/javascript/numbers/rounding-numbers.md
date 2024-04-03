@@ -11,9 +11,6 @@ title: Avrundning av tal
 weight: 13
 ---
 
-## Vad och varför? 
-Avrundning innebär att skära av "bruset" efter en viss punkt i ett tal. Programmerare avrundar för att kontrollera precision, hantera minne eller göra utskriften användarvänlig—som att göra om 2.998 till ett rent 3.
-
 ## Hur man gör:
 Så här avrundar du tal i JavaScript med `Math.round()`, `Math.ceil()`, och `Math.floor()`: 
 

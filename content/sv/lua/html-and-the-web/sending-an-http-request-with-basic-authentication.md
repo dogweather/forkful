@@ -12,9 +12,6 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-begäran med grundläggande autentisering innebär att du inkluderar användarnamn och lösenord i din förfrågan för att få åtkomst till skyddade resurser. Programmerare gör detta för att säkra kommunikationen mellan klient och server.
-
 ## Hur gör man:
 ```Lua
 local http = require("socket.http")

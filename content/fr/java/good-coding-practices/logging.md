@@ -11,9 +11,6 @@ title: Journalisation
 weight: 17
 ---
 
-## Quoi & Pourquoi ?
-Le journalisation (logging en anglais) est essentiellement le processus d'enregistrement d’événements qui se produisent au sein d'une application logicielle. Les programmeurs enregistrent ces événements pour capturer des informations en temps d'exécution, déboguer des problèmes, surveiller le comportement du système et créer un historique d'audit pour des raisons de sécurité et de conformité.
-
 ## Comment faire :
 Voici une façon simple de commencer à utiliser la journalisation en Java en utilisant le package intégré `java.util.logging`.
 

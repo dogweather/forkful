@@ -8,11 +8,6 @@ title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---
 
-## What & Why?
-"## Co i Dlaczego?"
-
-Wyciąganie podciągów polega na wydobywaniu konkretnych fragmentów tekstu z większego ciągu znaków. Programiści robią to, by manipulować i analizować dane, często przetwarzając i weryfikując input użytkownika lub pliki.
-
 ## How to:
 "## Jak to zrobić:"
 

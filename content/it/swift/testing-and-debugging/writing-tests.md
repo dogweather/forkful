@@ -13,9 +13,6 @@ title: Scrivere test
 weight: 36
 ---
 
-## Cosa e Perché?
-Scrivere test in Swift comporta la creazione e l'esecuzione di codice che verifica la correttezza di altre unità di codice nella tua applicazione. I programmatori lo fanno per garantire affidabilità, rilevare bug all'inizio del ciclo di sviluppo e facilitare il futuro refactoring del codice senza conseguenze non intenzionali.
-
 ## Come fare:
 Swift supporta i test attraverso il suo framework XCTest, che è integrato in Xcode. Puoi scrivere test unitari per verificare singole parti del tuo codice, per esempio, una funzione che calcola la somma di due numeri.
 

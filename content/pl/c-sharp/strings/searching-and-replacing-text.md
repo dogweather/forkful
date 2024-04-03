@@ -10,9 +10,6 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## Co i dlaczego?
-Szukanie i zamiana tekstu to codzienny chleb programisty. Robimy to, aby modyfikować dane, poprawiać błędy, czy też dostosowywać ciągi znaków pod konkretne potrzeby. Proste, ale niezwykle istotne narzędzie w naszej kuchni kodu.
-
 ## Jak to zrobić:
 W C# używamy głównie klasy `String`. Oto jak szukać i zamieniać tekst:
 

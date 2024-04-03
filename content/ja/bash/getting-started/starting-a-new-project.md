@@ -21,12 +21,7 @@ title: "\u65B0\u3057\u3044\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u59CB\u3081
 weight: 1
 ---
 
-## What & Why? (何となぜ？)
-
-プロジェクトの開始とは、新しいアイデアやソリューションを形にするために始める作業のこと。プログラマーは、課題解決や学習、収益化などの理由で新しいプロジェクトを始める。
-
 ## How to: (方法)
-
 ```Bash
 # プロジェクトディレクトリの作成
 mkdir my_new_project
@@ -59,13 +54,11 @@ Initialized empty Git repository in /path/to/my_new_project/.git/
 ```
 
 ## Deep Dive (深い潜入)
-
 プロジェクトの始め方は過去数十年にわたって進化してきた。初期のUNIXシステムでは、全てが手作業だったが、今ではGitのようなバージョン管理システムがプロジェクトの始め方と成長を大きく変えた。代替手段として、MercurialやSVNも使うことができるが、Gitが現在最も人気で強力である。
 
 実装の詳細では、自動化スクリプトを用いることでさらに効率的にプロジェクトを始めることが可能だ。たとえば、プロジェクトの骨格を作成するスクリプトや、CI/CD（継続的インテグレーション/継続的デリバリー）パイプラインのセットアップを行うスクリプトなどがある。
 
 ## See Also (関連項目)
-
 - [Git 公式ドキュメント](https://git-scm.com/doc)
 - [Pro Git Book（日本語版）](https://git-scm.com/book/ja/v2)
 - [GitHub Hello World ガイド](https://docs.github.com/ja/github/getting-started-with-github/create-a-repo)

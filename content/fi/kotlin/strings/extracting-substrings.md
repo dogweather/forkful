@@ -9,9 +9,6 @@ title: Merkkijonojen osien poimiminen
 weight: 6
 ---
 
-## What & Why?
-Substring on osajono, pala isompaa merkkijonoa. Koodarit kaivavat substringeja datan parsimiseen, tietojen näyttämiseen tai yksinkertaisesti, koska tarvitaan vain tietty pätkä tekstiä.
-
 ## How to:
 ``` Kotlin
 val fullString = "Hello, mahtava Kotlin!"

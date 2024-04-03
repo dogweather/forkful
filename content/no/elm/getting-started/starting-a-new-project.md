@@ -11,9 +11,6 @@ title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---
 
-## What & Why?
-Et nytt prosjekt er starten på en frisk kodebase, og programmerere starter nye prosjekter for å realisere unike ideer eller løse spesifikke problemer. Det gir ren arkitektur og nytt potensial.
-
 ## How to:
 Installer først `elm` på systemet ditt. Bruk `elm init` for å sette opp et nytt prosjekt:
 

@@ -12,9 +12,6 @@ title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---
 
-## Co i dlaczego?
-Wysyłanie zapytania HTTP z podstawową autentykacją to proces uwierzytelniania użytkownika przez serwer przy użyciu loginu i hasła zakodowanych w base64. Programiści stosują tę metodę, by zapewnić bezpieczny dostęp do API lub zasobów webowych.
-
 ## Jak to zrobić:
 ```java
 import java.io.IOException;

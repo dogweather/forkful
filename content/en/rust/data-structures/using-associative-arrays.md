@@ -10,13 +10,7 @@ title: Using associative arrays
 weight: 15
 ---
 
-## What & Why?
-
-Associative arrays, or what Rustaceans call "hash maps," are collections that store data in key-value pairs. Programmers use them for quick data lookup, allowing efficient data manipulation based on unique keys.
-
-
 ## How to:
-
 In Rust, the `HashMap` type from the `std::collections` module provides the functionality of associative arrays. Here's how you can work with them:
 
 ```Rust
@@ -47,5 +41,4 @@ fn main() {
 ```
 
 ## Deep Dive
-
 The `HashMap` in Rust uses a hashing function to map keys to values, which enables rapid data retrieval. However, this efficiency comes with a cost: hash maps do not maintain the order of their elements. This is in contrast to other associative arrays implementations, like those in Python (`dict`) or Ruby, which as of recent versions maintain insertion order as a feature. For use cases where the order of key-value pairs is significant, Rust developers might consider using the `BTreeMap` from the `std::collections` module, which maintains order but might offer slower insertion and retrieval compared to `HashMap`. Ultimately, the choice between `HashMap` and `BTreeMap` depends on specific requirements around ordering and performance.

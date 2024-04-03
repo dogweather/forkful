@@ -13,9 +13,6 @@ title: Escrevendo um arquivo de texto
 weight: 24
 ---
 
-## O Que & Porquê?
-Escrever um arquivo de texto em TypeScript é uma habilidade crucial para a persistência de dados, configurações ou geração de logs. Programadores frequentemente realizam essa tarefa para armazenar e manipular dados fora da memória da aplicação por razões como análise de dados, reportagem ou simplesmente para salvar as configurações do usuário entre sessões.
-
 ## Como fazer:
 O TypeScript por si só não lida diretamente com operações de arquivo, pois é compilado para JavaScript, que tradicionalmente é executado no navegador com acesso limitado ao sistema de arquivos. No entanto, quando utilizado em um ambiente Node.js, o módulo `fs` (Sistema de Arquivos) fornece funcionalidades para escrever arquivos.
 

@@ -10,10 +10,6 @@ title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---
 
-## What & Why?
-"Mikä & Miksi?"
-Ajan laskeminen tulevaisuuteen tai menneisyyteen tarkoittaa päivämäärän laskemista n päivää, viikkoa, kuukautta tai vuotta ennen tai jälkeen annetun päivämäärän. Koodaajat tekevät tätä aikataulujen hallintaan, ajanjaksojen seurantaan ja määräaikojen asettamiseen.
-
 ## How to:
 "Kuinka tehdä:"
 ```Ruby

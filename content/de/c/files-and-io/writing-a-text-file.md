@@ -13,12 +13,7 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-
-Das Schreiben einer Textdatei in C beinhaltet das Erstellen oder Öffnen einer Datei im Schreibmodus und dann die Verwendung von Cs Datei-I/O-Funktionen, um Textdaten darin zu speichern. Programmierer tun dies, um Daten zu speichern, wie z.B. Log-Ereignisse, Konfigurationseinstellungen oder von Benutzern generierte Inhalte, die es Anwendungen ermöglichen, Zustand, Präferenzen oder Benutzerfortschritte über Sitzungen hinweg beizubehalten.
-
 ## Wie:
-
 Um Text in eine Datei in C zu schreiben, müssen Sie vor allem mit den Funktionen `fopen()`, `fprintf()`, `fputs()` und `fclose()` vertraut sein. Unten ist ein einfaches Beispiel, das das Erstellen und Schreiben in eine Datei demonstriert:
 
 ```c
@@ -54,7 +49,6 @@ Datei erfolgreich geschrieben
 Nach dem Ausführen dieses Programms finden Sie eine Datei mit dem Namen `example.txt` im selben Verzeichnis, die den Text enthält, den Sie über `fprintf()` und `fputs()` geschrieben haben.
 
 ## Vertiefung
-
 Das Konzept von Dateien und Dateisystemen ist grundlegend für Computersysteme gewesen, wobei deren Verwaltung ein kritischer Aspekt von Betriebssystemen ist. In C wird die Dateiverwaltung mithilfe eines Satzes von Standard-I/O-Bibliotheksfunktionen durchgeführt, die in der Philosophie verankert sind, Dateien als Ströme von Bytes zu behandeln. Diese Abstraktion ermöglicht eine unkomplizierte und effiziente Methode zum Lesen und Schreiben von Dateien, auch wenn dies im Vergleich zu moderneren Ansätzen, die in Hochsprachen wie Python oder Ruby verfügbar sind, low-level erscheinen mag.
 
 Historisch gesehen haben diese Datei-I/O-Operationen in C das Fundament für die Dateimanipulation in vielen Programmiersprachen gelegt und bieten eine nah an der Maschine orientierte Schnittstelle mit den Dateiverwaltungssystemen des Betriebssystems. Dies bietet nicht nur eine granulare Kontrolle über Dateiattribute und I/O-Operationen, sondern stellt auch Fallstricke für unvorsichtige Programmierer dar, wie die Notwendigkeit, Ressourcen manuell zu verwalten (d.h. Dateien immer zu schließen) und Pufferungsprobleme.

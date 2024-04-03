@@ -14,9 +14,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---
 
-## Cái gì & Tại sao?
-YAML là một định dạng serialization dữ liệu thân thiện với con người. Các lập trình viên sử dụng nó cho các tệp cấu hình, trao đổi dữ liệu giữa các ngôn ngữ, và bởi vì nó dễ đọc và viết so với XML hoặc JSON.
-
 ## Làm thế nào:
 Để làm việc với YAML trong PowerShell, bạn sẽ cần sử dụng một module như `powershell-yaml`. Cài đặt nó trước tiên:
 

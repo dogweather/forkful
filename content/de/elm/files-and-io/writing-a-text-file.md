@@ -12,12 +12,7 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-
-Das Schreiben einer Textdatei in Elm beinhaltet das Erstellen und Speichern von textuellen Daten in einer Datei aus einer Elm-Anwendung heraus. Programmierer müssen häufig Berichte, Logs oder exportierte Daten in einem strukturierten Textformat (z.B. JSON, CSV) generieren, um sie in anderen Anwendungen zu verwenden oder zu Dokumentationszwecken zu speichern. Jedoch wird das direkte Schreiben von Dateien - wie viele andere Seiteneffekte auch - aufgrund der auf Reinheit und Sicherheit fokussierten Architektur von Elm, durch Befehle an die umgebende JavaScript-Umgebung gehandhabt.
-
 ## Wie zu:
-
 Da Elm im Browser läuft und als reine Programmiersprache ohne Seiteneffekte konzipiert ist, hat es keinen direkten Zugriff auf das Dateisystem. Daher beinhaltet das Schreiben in eine Datei typischerweise das Senden der Daten an JavaScript durch Ports. Hier erfahren Sie, wie Sie dies einrichten können:
 
 1. **Definieren Sie ein Port-Modul zum Senden von Text an JavaScript:**

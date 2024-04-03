@@ -14,16 +14,10 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i dlaczego?
-
-Pisanie testów w Fish Shell polega na tworzeniu skryptów, które automatycznie uruchamiają Twój kod w celu zweryfikowania jego zachowania względem oczekiwanych wyników. Praktyka ta jest kluczowa, ponieważ zapewnia, że skrypty powłoki działają zgodnie z zamiarem, pozwalając na wczesne wykrywanie błędów i ułatwiając utrzymanie.
-
 ## Jak to zrobić:
-
 Fish nie posiada wbudowanego frameworku testowego, jak niektóre inne środowiska programistyczne. Niemniej jednak, możesz pisać proste skrypty testowe, które używają asercji do sprawdzania zachowania Twoich funkcji. Dodatkowo, możesz wykorzystać narzędzia stron trzecich, takie jak `fishtape`, dla bardziej kompleksowego zestawu testowego.
 
 ### Przykład 1: Podstawowy skrypt testowy
-
 Zacznijmy od podstawowej funkcji w Fish, która oblicza sumę dwóch liczb:
 
 ```fish
@@ -55,7 +49,6 @@ test_add przeszedł
 ```
 
 ### Przykład 2: Użycie Fishtape
-
 Dla bardziej solidnego rozwiązania testowego, możesz użyć `fishtape`, generującego TAP runnera testów dla Fish.
 
 Najpierw zainstaluj `fishtape`, jeśli jeszcze tego nie zrobiłeś:

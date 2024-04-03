@@ -15,16 +15,10 @@ title: Arbeiten mit YAML
 weight: 41
 ---
 
-## Was & Warum?
-
-YAML, was für "YAML Ain't Markup Language" steht, ist ein für den Menschen lesbarer Daten-Serialisierungsstandard, der für Konfigurationsdateien sowie in Anwendungen verwendet werden kann, in denen Daten gespeichert oder übertragen werden. Programmierer ziehen YAML wegen seiner Klarheit und Einfachheit vor, besonders in Projekten mit komplexen Konfigurationen oder dem Bedarf an leicht editierbaren Datenstrukturen.
-
 ## Wie:
-
 Direkt mit YAML in Bash zu arbeiten, erfordert ein wenig Einfallsreichtum, da Bash keine integrierte Unterstützung für das Parsen von YAML bietet. Sie können jedoch externe Tools wie `yq` (einen leichten und tragbaren Kommandozeilen YAML-Prozessor) nutzen, um effizient mit YAML-Dateien zu interagieren. Gehen wir einige gängige Operationen durch:
 
 ### `yq` installieren:
-
 Bevor Sie in die Beispiele eintauchen, stellen Sie sicher, dass Sie `yq` installiert haben. Sie können es normalerweise über Ihren Paketmanager installieren, zum Beispiel auf Ubuntu:
 
 ```bash
@@ -34,7 +28,6 @@ sudo apt-get install yq
 Oder Sie können es direkt aus seinem GitHub-Repository herunterladen.
 
 ### Einen Wert lesen:
-
 Angenommen, Sie haben eine Datei namens `config.yaml` mit dem folgenden Inhalt:
 
 ```yaml
@@ -59,7 +52,6 @@ localhost
 ```
 
 ### Einen Wert aktualisieren:
-
 Um den Namen des Benutzers in `config.yaml` zu aktualisieren, verwenden Sie den Befehl `yq eval` mit der Option `-i` (in-place):
 
 ```bash
@@ -79,7 +71,6 @@ neuadmin
 ```
 
 ### Ein neues Element hinzufügen:
-
 Um ein neues Element im Datenbankabschnitt hinzuzufügen, wie ein neues Feld `timeout`:
 
 ```bash
@@ -89,7 +80,6 @@ yq e '.database.timeout = 30' -i config.yaml
 Das Überprüfen des Inhalts der Datei wird die Ergänzung bestätigen.
 
 ### Ein Element löschen:
-
 Um das Passwort unter Benutzer zu entfernen:
 
 ```bash

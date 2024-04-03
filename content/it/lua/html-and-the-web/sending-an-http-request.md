@@ -10,9 +10,6 @@ title: Inviare una richiesta http
 weight: 44
 ---
 
-## Che cosa & Perché?
-Inviare una richiesta HTTP significa chiedere dati o servizi da un server web. I programmatori lo fanno per scaricare pagine, interagire con API o inviare dati a servizi online.
-
 ## Come fare:
 Per inviare una richiesta HTTP in Lua, useremo `socket.http` proveniente dalla libreria `LuaSocket`. Prima, installa la libreria con `luarocks install luasocket`. Ecco un esempio di come fare una richiesta GET:
 

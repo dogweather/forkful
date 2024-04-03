@@ -11,9 +11,6 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## What & Why?
-Lire les arguments de la ligne de commande, c'est récupérer les infos que l'utilisateur passe à notre programme lorsqu'il le démarre. Les programmeurs font ça pour personnaliser l'exécution de l'app directement depuis le terminal.
-
 ## How to:
 Elm n'est pas conçu pour créer des applications CLI, donc lire directement les arguments de la ligne de commande n'est pas possible. Mais on peut intégrer Elm dans une application Node.js, par exemple, pour le faire. Voici comment utiliser Elm avec `Process.argv` de Node.js :
 

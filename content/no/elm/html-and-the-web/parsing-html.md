@@ -11,9 +11,6 @@ title: Analyse av HTML
 weight: 43
 ---
 
-## Hva & Hvorfor?
-Parsing av HTML betyr å gjøre om HTML-kode til noe et program kan forstå og bruke. Programmerere gjør dette for å manipulere, hente ut data eller generere dynamisk innhold.
-
 ## Slik gjør du:
 I Elm bruker du vanligvis `elm/html` biblioteket for å jobbe med HTML. La oss kjøre gjennom et enkelt eksempel der vi parser en statisk HTML-streng.
 

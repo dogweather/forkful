@@ -25,12 +25,7 @@ title: "\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F
 weight: 28
 ---
 
-## What & Why? (Що та Чому?)
-
-Преобразування дати у рядок дозволяє зберігати дату в текстовому форматі, який легко читати й обмінюватися ним. Програмісти роблять це для логування, відображення дат користувачам чи збереження у базах даних.
-
 ## How to: (Як зробити:)
-
 ```java
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -57,11 +52,9 @@ Sample Output:
 ```
 
 ## Deep Dive (Глибоке Занурення)
-
 Converting dates to strings isn't new. With Java's development, historic classes like `java.util.Date` were superseded by the `java.time` package from Java 8 for better time-zone handling and immutability. Alternatives? Sure. You've got `SimpleDateFormat` (now less used due to thread safety issues), third-party libraries like Joda-Time (inspiration for `java.time`), and database-specific formats (watch out for SQL injection!). Implementation wise, `DateTimeFormatter` is king now, with its thread-safe, immutable objects.
 
 ## See Also (Дивіться також)
-
 For more, hover through the Java API docs and some well-versed articles:
 - Official Java documentation on `LocalDateTime`: https://docs.oracle.com/javase/10/docs/api/java/time/LocalDateTime.html
 - Oracle tutorial on `DateTimeFormatter`: https://docs.oracle.com/javase/tutorial/datetime/iso/format.html

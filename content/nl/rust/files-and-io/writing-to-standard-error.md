@@ -13,12 +13,7 @@ title: Schrijven naar standaardfout
 weight: 25
 ---
 
-## Wat & Waarom?
-
-Schrijven naar standaardfout (stderr) betekent tekst uitvoeren naar de foutenstroom, los van de standaarduitvoer (stdout). Programmeurs doen dit om fouten en diagnostische berichten te loggen zonder de reguliere uitvoer te vervuilen, die mogelijk wordt omgeleid of doorgegeven aan andere programma's.
-
 ## Hoe:
-
 Rust maakt het schrijven naar stderr eenvoudig. Gebruik de macro `eprintln!` voor tekst, net zoals `println!`, maar dan voor fouten.
 
 ```Rust
@@ -48,7 +43,6 @@ Dit is een foutbericht.
 Hier zal `output.txt` alleen "Dit is een regulier bericht." bevatten.
 
 ## Diepgaande Verkenning
-
 Het scheiden van stdout en stderr stelt Unix-systemen historisch in staat om reguliere en foutgegevens anders te behandelen. Het is een goede praktijk en helpt bij automatisering en logging.
 
 Alternatieven voor het schrijven naar stderr zijn lager niveau, zoals het gebruik van `std::io::stderr`. Dit geeft meer controle en werkt goed voor niet-tekstgegevens.
@@ -69,7 +63,6 @@ fn main() -> io::Result<()> {
 Binnen de motorkap, `eprintln!` is een macro die `writeln!` naar stderr omwikkelt, waardoor dingen DRY blijven (Don't Repeat Yourself - Herhaal Jezelf Niet).
 
 ## Zie Ook
-
 Voor meer over foutafhandeling en logging:
 
 - Rust Bij Voorbeeld over stdio: https://doc.rust-lang.org/rust-by-example/std_misc/stdio.html

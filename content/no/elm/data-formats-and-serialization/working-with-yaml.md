@@ -9,9 +9,6 @@ title: Arbeid med YAML
 weight: 41
 ---
 
-## What & Why?
-YAML er et dataformat for å skrive konfigurasjoner lett leslig for mennesker. Programmerere bruker det for å håndtere konfigurasjoner og datautveksling.
-
 ## How to:
 Elm har ingen innebygd støtte for YAML. Men du kan bruke JavaScript-biblioteker med `ports` for parsing. Her er et eksempel som bruker `js-yaml`:
 

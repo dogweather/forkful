@@ -14,12 +14,7 @@ title: Escrevendo testes
 weight: 36
 ---
 
-## O que & Por quê?
-
-Escrever testes em Elm envolve a criação de casos de teste para verificar a correção do seu código Elm, garantindo que ele se comporte conforme esperado. Os programadores fazem isso para capturar bugs precocemente, facilitar a manutenção e melhorar a qualidade e confiabilidade de suas aplicações.
-
 ## Como fazer:
-
 Elm utiliza o pacote `elm-explorations/test` para escrever testes unitários e de fuzz. Comece adicionando o pacote ao seu projeto:
 
 ```elm

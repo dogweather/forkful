@@ -12,9 +12,6 @@ title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---
 
-## Co i Dlaczego?
-Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem to proces, gdzie przekazujesz swoje dane logowania w formie nagłówka HTTP, aby uzyskać dostęp do zabezpieczonych zasobów. Programiści używają tej metody do komunikacji z API, które wymaga autoryzacji.
-
 ## Jak to zrobić:
 Będziesz potrzebować `curl`, narzędzia dostępnego w większości dystrybucji Linuxa. Oto jak to zrobić:
 

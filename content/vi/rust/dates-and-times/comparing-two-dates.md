@@ -15,9 +15,6 @@ title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---
 
-## Cái gì & Tại sao?
-So sánh hai ngày tháng có nghĩa là kiểm tra xem chúng có bằng nhau không, hoặc một ngày nào đó diễn ra trước hoặc sau ngày kia. Lập trình viên sử dụng điều này để sắp xếp các sự kiện, xác thực đầu vào, xử lý hết hạn, và theo dõi thời lượng.
-
 ## Làm thế nào:
 Rust sử dụng `chrono` để dễ dàng xử lý ngày tháng. Đầu tiên, `cargo.toml` cần `chrono = "0.4"`. Sau đó, bạn có thể so sánh ngày như sau:
 

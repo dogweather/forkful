@@ -11,12 +11,7 @@ title: Comparando duas datas
 weight: 27
 ---
 
-## O Que & Porquê?
-
-Comparar duas datas é um jeito de verificar qual delas vem antes, depois ou se são iguais. Programadores fazem isso para lidar com prazos, eventos e lógicas de tempo em aplicativos.
-
 ## Como fazer:
-
 Imagine que você tem duas datas e quer saber qual é a mais recente. No Swift, você usaria `Date()` para criar os objetos de data e depois compará-los usando operadores como `<`, `>` e `==`. Aqui está como isso funciona:
 
 ```Swift
@@ -44,7 +39,6 @@ A primeira data é mais cedo do que a segunda.
 ```
 
 ## Detalhamento:
-
 Swift usa o tipo `Date` para representar pontos específicos no tempo. Comparar datas é um recurso básico, mas vital para coisas como verificar eventos pendentes ou calcular a diferença entre períodos de tempo.
 
 Antes de Swift, em Objective-C e outras linguagens antigas, esse processo era mais complexo e menos intuitivo.
@@ -52,7 +46,6 @@ Antes de Swift, em Objective-C e outras linguagens antigas, esse processo era ma
 Além de comparar datas com operadores básicos, você pode usar `Calendar` para componentes de data (como dia, mês, ano) e `DateComponents` para representar diferenças de tempo.
 
 ## Veja Também:
-
 - Documentação oficial da Apple sobre `Date`: https://developer.apple.com/documentation/foundation/date
 - Comparando datas com `Calendar` e `DateComponents`: https://developer.apple.com/documentation/foundation/calendar
 - Um guia mais aprofundado sobre DateFormatter: https://developer.apple.com/documentation/foundation/dateformatter

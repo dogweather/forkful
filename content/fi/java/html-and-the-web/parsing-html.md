@@ -13,12 +13,7 @@ title: "HTML:n j\xE4sennys"
 weight: 43
 ---
 
-## Mitä & Miksi?
-
-HTML:n jäsentäminen tarkoittaa merkintäkielen läpikäyntiä tietojen, kuten tekstin, linkkien tai muiden elementtien, poimimiseksi. Teemme sen vuorovaikuttaaksemme tai kaapiaksemme verkkosisältöä, automatisoidaksemme selailutehtäviä tai testataksemme web-sovelluksia.
-
 ## Kuinka:
-
 Käytetään Jsoupia, kätevää kirjastoa työskentelyyn todellisen maailman HTML:n kanssa. Lisätään ensin riippuvuus:
 
 ```xml
@@ -65,7 +60,6 @@ for (Element link : links) {
 ```
 
 ## Syväsukellus
-
 Aikoinaan HTML:ää kesytettiin regex-kuvioilla, menetelmällä, joka oli virhealtis ja painajaismainen monimutkaisille dokumenteille. Myöhemmin 2000-luvulla tuli Jsoup, joka tarjosi jQueryn kaltaisen käyttöliittymän Javalle HTML:n jäsentämiseen, kulkemiseen ja manipuloimiseen.
 
 Jsoup ei ole ainoa vaihtoehto. On HtmlUnit täysmittaiseen web-sovellusten testaukseen JavaScript-tuella, mutta se on raskaampi ja monimutkaisempi. Kevyempiin tehtäviin Apache Commons Validator on loistava vain URL-osoitteiden poimintaan.
@@ -75,7 +69,6 @@ Sisäisesti Jsoup käyttää DOM-jäsentäjää, joka mallintaa koko dokumentin 
 Muista, kun teet kaavintaa, tarkistaa aina sivuston `robots.txt` ja käyttöehdot, jotta vältät lailliset ongelmat tai IP-eston.
 
 ## Katso Myös
-
 - Jsoup Virallinen Dokumentaatio: https://jsoup.org/
 - HtmlUnit: http://htmlunit.sourceforge.net/
 - Apache Commons Validator: https://commons.apache.org/proper/commons-validator/

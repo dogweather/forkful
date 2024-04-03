@@ -11,9 +11,6 @@ title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---
 
-## What & Why? - Czym i Dlaczego?
-Konwersja daty na łańcuch znaków to zamiana formatu daty na tekst. Programiści robią to dla czytelności, do zapisu w plikach czy bazy danych.
-
 ## How to: - Jak to zrobić:
 ```Bash
 # Aktualna data w standardowym formacie

@@ -11,9 +11,6 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-Fehlerbehandlung bedeutet, mit dem Unerwarteten zu rechnen; es geht darum, wie wir damit umgehen, wenn in unserem Code etwas schiefgeht. Wir tun dies, um Abstürze zu vermeiden und den Benutzern ein reibungsloses Erlebnis zu bieten, auch wenn das Unerwartete eintritt.
-
 ## Wie geht das:
 In TypeScript umfasst die Fehlerbehandlung oft `try`, `catch`- und `finally`-Blöcke.
 

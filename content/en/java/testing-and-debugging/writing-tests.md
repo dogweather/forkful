@@ -10,14 +10,10 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-Writing tests in Java is about verifying that your code behaves as expected under various conditions. Programmers write tests to prevent bugs, ensure functionality remains correct after changes, and foster good software design principles. 
-
 ## How to:
 Java developers primarily use two testing frameworks: JUnit and TestNG. Here, we'll focus on JUnit, the more popular choice for writing tests due to its simplicity and widespread adoption.
 
 ### JUnit Basics
-
 To use JUnit in your Maven project, add the following dependency to your `pom.xml`:
 
 ```xml
@@ -48,7 +44,6 @@ public class CalculatorTest {
 Executing this test will either pass, indicating the `add` method works as expected, or fail, showing an error message.
 
 ### Mocking with Mockito
-
 In real-world scenarios, objects often depend on other objects. Mockito is a popular mocking framework that helps in creating mock objects for the purpose of testing.
 
 Add Mockito to your Maven project:

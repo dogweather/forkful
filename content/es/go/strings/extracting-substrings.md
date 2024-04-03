@@ -13,16 +13,10 @@ title: Extrayendo subcadenas
 weight: 6
 ---
 
-## Qué y Por Qué?
-
-Extraer subcadenas implica recuperar porciones específicas de una cadena basándose en sus posiciones. Los programadores realizan frecuentemente esta operación para procesar o manipular datos de texto de manera eficiente, como analizar entradas, validar formatos o preparar salidas.
-
 ## Cómo hacerlo:
-
 En Go, el tipo `string` es un segmento de bytes de solo lectura. Para extraer subcadenas, principalmente se utiliza la sintaxis de `slice` (segmento), junto con la función integrada `len()` para la comprobación de longitud y el paquete `strings` para operaciones más complejas. Aquí te mostramos cómo puedes lograrlo:
 
 ### Cortes Básicos
-
 ```go
 package main
 
@@ -40,7 +34,6 @@ func main() {
 ```
 
 ### Usando el paquete `strings`
-
 Para una extracción de subcadena más avanzada, como extraer cadenas después o antes de una subcadena específica, puedes usar el paquete `strings`.
 
 ```go
@@ -63,7 +56,6 @@ func main() {
 Es esencial tener en cuenta que las cadenas de Go están codificadas en UTF-8 y un segmento de bytes directo no siempre resultará en cadenas válidas si incluyen caracteres de varios bytes. Para soporte Unicode, considera usar `range` o el paquete `utf8`.
 
 ### Manejando Caracteres Unicode
-
 ```go
 package main
 
@@ -83,7 +75,6 @@ func main() {
 ```
 
 ## Estudio Profundo
-
 Extraer subcadenas en Go es sencillo, gracias a su sintaxis de segmentos y su amplia biblioteca estándar. Históricamente, los lenguajes de programación anteriores proporcionaban funciones o métodos más directos para manejar tal manipulación de texto. Sin embargo, el enfoque de Go enfatiza la seguridad y la eficiencia, particularmente con sus cadenas inmutables y el manejo explícito de caracteres Unicode a través de runas.
 
 Aunque el cortado directo se beneficia de la eficiencia en rendimiento, hereda las complejidades de manejar directamente los caracteres UTF-8. La introducción del tipo `rune` permite que los programas en Go manejen de manera segura el texto Unicode, lo que lo convierte en una alternativa poderosa para aplicaciones internacionales.

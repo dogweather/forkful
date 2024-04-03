@@ -14,14 +14,10 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-Das Schreiben in eine Textdatei in C++ beinhaltet das Erstellen oder Öffnen einer Datei und dann das Schreiben von Daten in diese, was eine grundlegende Aufgabe für Anwendungen ist, die Daten persistent speichern müssen, wie beispielsweise Protokolle, von Benutzern generierte Inhalte oder Konfigurationseinstellungen. Programmierer tun dies, um während der Ausführung eines Programms generierte Daten zu speichern oder um Daten für die Nutzung durch andere Programme oder Benutzer zu exportieren.
-
 ## Wie geht das:
 C++ bietet mehrere Möglichkeiten, in eine Textdatei zu schreiben, aber eine der einfachsten Methoden ist die Verwendung der Bibliothek `<fstream>`, die die Klasse `ofstream` (output file stream) für Dateischreiboperationen zur Verfügung stellt.
 
 ### Beispiel mit `<fstream>`:
-
 ```cpp
 #include <fstream>
 #include <iostream>
@@ -48,7 +44,6 @@ In eine Datei in C++ zu schreiben ist einfach.
 Wenn es um den Umgang mit komplexeren Daten geht oder mehr Kontrolle über den Schreibprozess benötigt wird, könnten sich Programmierer an Drittanbieter-Bibliotheken wie Boost Filesystem wenden.
 
 ### Beispiel mit Boost Filesystem:
-
 Um Boost für Dateioperationen zu nutzen, müssen Sie zuerst die Boost-Bibliotheken installieren. Das folgende Beispiel demonstriert das Erstellen und Schreiben in eine Datei unter Verwendung von `boost::filesystem` und `boost::iostreams`.
 
 ```cpp

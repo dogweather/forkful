@@ -13,9 +13,6 @@ title: Refactoring
 weight: 19
 ---
 
-## Wat & Waarom?
-Refactoren is de kunst van het aanpassen van bestaande code om de structuur, leesbaarheid en efficiëntie ervan te verbeteren, zonder het externe gedrag ervan te veranderen. Programmeurs doen dit om hun code beter onderhoudbaar te maken, complexiteit te verminderen en vaak als een voorbereidende stap voordat ze nieuwe functies toevoegen of bugs repareren.
-
 ## Hoe:
 Laten we een eenvoudige Lua-functie nemen en refactoren. We beginnen met een functie die de som van nummers in een lijst berekent, maar zonder veel aandacht voor efficiëntie of duidelijkheid is geschreven:
 

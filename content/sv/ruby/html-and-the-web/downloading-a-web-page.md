@@ -10,9 +10,6 @@ title: "H\xE4mta en webbsida"
 weight: 42
 ---
 
-## Vad & Varför?
-Att ladda ner en webbsida betyder att hämta dess HTML-innehåll. Programmerare gör det för att analysera sidans struktur, skrapa data eller testa sidans uppladdningstid.
-
 ## Gör så här:
 Ruby erbjuder många sätt att ladda ner webbsidor, men här använder vi `net/http` biblioteket som är inbyggt och rakt på sak.
 

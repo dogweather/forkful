@@ -12,9 +12,6 @@ title: Refactoring
 weight: 19
 ---
 
-## Was & Warum?
-Refactoring ist im Grunde genommen wie ein Frühjahrsputz für Ihre Codebasis – es geht darum, bestehenden Code umzustrukturieren, ohne sein externes Verhalten zu ändern. Programmierer tun dies, um den Code lesbarer zu machen, Komplexität zu reduzieren, die Wartbarkeit zu verbessern und ihn einfacher erweiterbar zu machen.
-
 ## Wie geht das:
 Angenommen, Sie haben eine Elm-Funktion, die zu viel macht, wie zum Beispiel UI-Logik mit Statusaktualisierungen zu vermischen. Sie ist ein perfekter Kandidat für das Refactoring. Ursprünglich:
 

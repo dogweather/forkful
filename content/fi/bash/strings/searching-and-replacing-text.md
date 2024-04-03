@@ -11,9 +11,6 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## What & Why? (Mikä ja Miksi?)
-Tekstin etsiminen ja korvaaminen on prosessi, jossa löydät tiettyä tekstiä ja vaihdat sen toiseen. Ohjelmoijat käyttävät sitä koodin virheiden korjaamiseen, asetusten päivittämiseen ja tylsän toistotyön välttämiseen.
-
 ## How to: (Kuinka tehdä:)
 ```Bash
 # Etsi ja korvaa kertakäyttöisesti tiedostossa käyttäen sed-komentoa

@@ -12,9 +12,6 @@ title: Een datum converteren naar een string
 weight: 28
 ---
 
-## Wat & Waarom?
-Een datum omzetten naar een string in Swift stelt je in staat om datums op te maken voor mensen. Het is essentieel voor de weergave in de UI, logboekregistratie, of wanneer je wilt dat datums begrijpelijk zijn voor mensen, niet alleen voor code.
-
 ## Hoe te:
 Swift gebruikt `DateFormatter` om `Date` objecten om te zetten in leesbare strings. Hier is hoe:
 

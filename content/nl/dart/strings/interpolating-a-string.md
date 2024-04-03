@@ -12,12 +12,7 @@ title: Een string interpoleren
 weight: 8
 ---
 
-## Wat & Waarom?
-
-Stringinterpolatie is het proces van het direct invoegen van variabele waarden in strings, vaak om betekenisvolle berichten te creëren zonder lastige aaneenschakelingen. Programmeurs doen dit voor schonere, beter leesbare code en om fouten te voorkomen die gemakkelijk kunnen gebeuren bij complexe stringaaneenschakelingen.
-
 ## Hoe te:
-
 In Dart is stringinterpolatie eenvoudig, met behulp van het `$`-symbool om uitdrukkingen direct in string literals te interpoleren:
 
 ```dart

@@ -13,12 +13,7 @@ title: Lavorare con i CSV
 weight: 37
 ---
 
-## Cosa & Perché?
-
-Lavorare con i CSV (Valori Separati da Virgola) implica l'analisi e la generazione di file che memorizzano dati tabellari in un formato semplice e basato su testo. I programmatori si impegnano spesso in questo compito per importare o esportare dati in modo efficiente da fogli di calcolo, database, o per facilitare lo scambio di dati tra diversi programmi.
-
 ## Come fare:
-
 In Haskell, la gestione dei file CSV può essere realizzata utilizzando la libreria `cassava`, una delle più popolari librerie di terze parti per questo scopo. Di seguito sono riportati esempi che mostrano come leggere e scrivere file CSV utilizzando `cassava`.
 
 **1. Leggere un file CSV:**

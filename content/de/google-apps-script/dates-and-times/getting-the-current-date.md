@@ -14,12 +14,7 @@ title: Das aktuelle Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-
-Das Abrufen des aktuellen Datums in Google Apps Script handelt vom Abrufen des aktuellen Datums und der Uhrzeit, einer gängigen Aufgabe zur Automatisierung von Aufgaben, Protokollierung und Zeitstempelung in Apps, die an das Google-Ökosystem gebunden sind. Programmierer verwenden dies für die Generierung dynamischer Inhalte, das Verfolgen von Fristen und die Planung innerhalb von Google Docs, Sheets und anderen Google-Diensten.
-
 ## Wie geht das:
-
 Google Apps Script, das auf JavaScript basiert, bietet einfache Methoden, um das aktuelle Datum zu erhalten. Sie können den Konstruktor `new Date()` verwenden, um ein neues Datumsobjekt zu erstellen, das das aktuelle Datum und die Uhrzeit darstellt. So können Sie dies auf verschiedene Weisen manipulieren und anzeigen.
 
 ```javascript
@@ -46,7 +41,6 @@ function showCurrentDate() {
 Diese Schnipsel zeigen, wie man das aktuelle Datum und die Uhrzeit aufnimmt und formatiert, und zeigen die Vielseitigkeit für verschiedene Programmieraufgaben innerhalb von Google Apps Script.
 
 ## Tiefergehend
-
 Bevor JavaScript sich auf das `Date`-Objekt festlegte, mussten Programmierer die Zeit und das Datum manuell durch weniger standardisierte und umständlichere Mittel verfolgen. Dies umfasste die Verwendung von Zeitstempel-Integern und selbstgemachten Datumsfunktionen, die von einer Programmierumgebung zur anderen variierten und zu Inkonsistenzen und Kompatibilitätsproblemen führten.
 
 Die Einführung des `new Date()`-Objekts in JavaScript und somit auch in Google Apps Script standardisierte Datum- und Zeitoperationen, machte sie intuitiver und reduzierte die für datumsbezogene Operationen notwendige Code-Menge. Es ist erwähnenswert, dass, obwohl die Implementierung von Google Apps Script bequem und für viele Anwendungen innerhalb der Produktpalette von Google ausreichend ist, sie möglicherweise nicht allen Szenarien gerecht wird, insbesondere solchen, die eine komplexe Zeitzonenbehandlung oder präzise Zeitstempelprotokollierung in schnelllebigen Umgebungen erfordern.

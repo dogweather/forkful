@@ -10,9 +10,6 @@ title: Usando um shell interativo (REPL)
 weight: 34
 ---
 
-## O Que é & Por Quê?
-Um REPL, ou Ciclo Ler-Avaliar-Imprimir, permite que você digite código C# e o execute interativamente. Programadores utilizam isso para experimentos rápidos, depuração ou aprender C#, sem a sobrecarga de configurar projetos completos.
-
 ## Como fazer:
 Inicie um REPL no seu ambiente C# usando a janela Interativa C# ou execute `dotnet-script` no seu terminal. Aqui está um gostinho de como usá-lo:
 

@@ -14,9 +14,6 @@ title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---
 
-## Hva & Hvorfor?
-Regulære uttrykk (regex) i Dart tilbyr en kraftfull måte å søke og manipulere strenger på, som gjør det mulig for programmerere å utføre komplekse tekstbehandlingsoppgaver effektivt. Ved å forstå regex, kan utviklere utføre tekstvalideringer, søkemønstre og teksttransformasjoner raskt, noe som er essensielt for behandling av skjemaer, dataparsing og generell strengmanipulasjon i moderne applikasjoner.
-
 ## Hvordan:
 Dart bruker `RegExp`-klassen for regulære uttrykk. Her er et grunnleggende eksempel for å matche et enkelt mønster i en streng:
 

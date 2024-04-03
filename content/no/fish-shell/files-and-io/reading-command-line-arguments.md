@@ -11,9 +11,6 @@ title: Lese kommandolinjeargumenter
 weight: 23
 ---
 
-## Hva & Hvorfor?
-Å lese kommandolinjeargumenter betyr å hente og bruke data som brukeren skriver inn når de kjører et skript. Programmerere bruker dette for å gjøre skript fleksible og for å kunne kjøre diverse oppgaver basert på brukerinndata.
-
 ## Hvordan:
 ```Fish Shell
 # eksempel_skript.fish

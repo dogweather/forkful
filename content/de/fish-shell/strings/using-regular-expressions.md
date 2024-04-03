@@ -14,12 +14,7 @@ title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---
 
-## Was & Warum?
-
-Reguläre Ausdrücke (regex) in der Fish Shell ermöglichen es Ihnen, Zeichenketten basierend auf bestimmten Mustern zu suchen, zu vergleichen und zu manipulieren. Programmierer nutzen regex für Aufgaben wie Eingabevalidierung, Parsing und Textverarbeitung, da es eine kompakte und leistungsfähige Möglichkeit bietet, komplexe Textmuster zu spezifizieren.
-
 ## Wie:
-
 Obwohl die Fish Shell selbst keinen eingebauten Befehl für regex hat, nutzt sie effektiv externe Befehle wie `grep`, `sed` und `awk`, die regex unterstützen und Ihnen erlauben, regex-Operationen in Ihre Skripte zu integrieren.
 
 ### Grundlegende Musterabgleiche mit `grep`

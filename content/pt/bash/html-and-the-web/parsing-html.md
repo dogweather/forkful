@@ -13,12 +13,7 @@ title: Analisando HTML
 weight: 43
 ---
 
-## O Quê & Por Quê?
-
-Analisar HTML significa vasculhar a estrutura e o conteúdo de um arquivo HTML para extrair informações. Programadores fazem isso para acessar dados, manipular conteúdo ou raspar websites.
-
 ## Como fazer:
-
 Bash não é a primeira opção para análise de HTML, mas pode ser feito com ferramentas como `grep`, `awk`, `sed`, ou utilitários externos como `lynx`. Para robustez, usaremos `xmllint` do pacote `libxml2`.
 
 ```bash
@@ -54,7 +49,6 @@ O conteúdo do parágrafo é: Bash pode me ler.
 ```
 
 ## Aprofundando
-
 No passado, programadores usavam ferramentas baseadas em regex como `grep` para escanear HTML, mas isso era complicado. HTML não é regular - é contextual. Ferramentas tradicionais não percebem isso e podem ser propensas a erros.
 
 Alternativas? Muitas. Python com Beautiful Soup, PHP com DOMDocument, JavaScript com analisadores DOM - linguagens com bibliotecas projetadas para entender a estrutura do HTML.
@@ -62,7 +56,6 @@ Alternativas? Muitas. Python com Beautiful Soup, PHP com DOMDocument, JavaScript
 Usar `xmllint` em scripts bash é sólido para tarefas simples. Ele entende XML, e por extensão, XHTML. HTML regular pode ser imprevisível, no entanto. Ele nem sempre segue as regras estritas do XML. `xmllint` força o HTML a se adequar a um modelo XML o que funciona bem para HTML bem formado, mas pode tropeçar em coisas bagunçadas.
 
 ## Veja Também
-
 - [W3Schools - HTML DOM Parser](https://www.w3schools.com/xml/dom_intro.asp): Desmistifica o DOM HTML.
 - [MDN Web Docs - Parsing and serializing XML](https://developer.mozilla.org/pt-BR/docs/Web/Guide/Parsing_and_serializing_XML): Para princípios de análise de XML que se aplicam ao XHTML.
 - [Documentação Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/): Uma biblioteca Python para análise de HTML.

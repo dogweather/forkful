@@ -13,9 +13,6 @@ title: Analisando uma data a partir de uma string
 weight: 30
 ---
 
-## O que & Por quê?
-Analisar uma data de uma string envolve converter informações textuais de data e hora em um objeto datetime ou formato estruturado equivalente. Isso é comumente realizado para permitir operações de aritmética de datas, comparações e formatações de uma maneira que seja independente de idioma e região. Programadores fazem isso para manipular e tratar eficientemente dados temporais extraídos de logs, entradas de usuários ou fontes externas.
-
 ## Como fazer:
 A biblioteca padrão do Python fornece o módulo `datetime`, que inclui o método `strptime` para essa finalidade. O método requer dois argumentos: a string da data e uma diretiva de formato que especifica o padrão da string de entrada.
 

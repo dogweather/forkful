@@ -12,10 +12,8 @@ title: Werken met JSON
 weight: 38
 ---
 
-## Wat & Waarom?
-JSON (JavaScript Object Notation) is een lichtgewicht gegevensformaat voor gegevensuitwisseling. Programmeurs gebruiken het omdat het makkelijk te lezen/schrijven is en taalonafhankelijk, wat het ideaal maakt voor API's en webdiensten.
-
 ## Hoe te:
+
 
 ### Een array naar JSON coderen
 ```php
@@ -49,11 +47,9 @@ if(json_last_error() != JSON_ERROR_NONE) {
 ```
 
 ## Diepgaand
-
 JSON is sinds de vroege jaren 2000 de de facto standaard voor webgegevensuitwisseling geworden, waarbij XML werd vervangen vanwege de eenvoud. Alternatieven zoals XML en YAML bestaan, maar de compactheid en snelheid van JSON hebben het tot een topkeuze gemaakt. De PHP `json_encode()` en `json_decode()` functies serialiseren en deserializeren gegevens respectievelijk. Sinds PHP 5.4.0 maakt de optie `JSON_PRETTY_PRINT` de uitvoer leesbaarder, en vanaf PHP 7.3.0 kunnen ontwikkelaars `JsonException` gooien voor foutafhandeling, waardoor het parsen van JSON robuuster wordt.
 
 ## Zie Ook
-
 - PHP Handleiding over JSON: https://www.php.net/manual/en/book.json.php
 - JSON Homepage: http://json.org/
 - PHP op de Juiste Manier (JSON handling sectie): https://phptherightway.com/#json

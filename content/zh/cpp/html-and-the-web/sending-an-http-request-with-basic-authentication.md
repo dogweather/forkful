@@ -17,12 +17,7 @@ title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
 weight: 45
 ---
 
-## What & Why? (什么和为什么？)
-
-发送带基本认证的HTTP请求让你的应用可以安全访问需要用户名和密码的资源。程序员这么做为了保护数据，避免未授权访问。
-
 ## How to: (如何实现：)
-
 ```C++
 #include <iostream>
 #include <curl/curl.h>
@@ -66,7 +61,6 @@ int main() {
 这段代码没有输出。成功时，它默默工作。失败时，会在控制台打印错误信息。
 
 ## Deep Dive (深入探究):
-
 发送带基本认证的HTTP请求是互联网早期常用的一种认证方式，它简单但不是最安全。基本认证通过编码'用户名:密码'（并不是加密！）并附加在请求头上。现代web更推荐使用基于token的方法，比如OAuth。
 
 C++中发送HTTP请求可以用不同库，比如CURL或Boost.Beast。CURL是C语言库，但可以很好地和C++集成。不同于CURL，Boost.Beast是纯C++，利用了现代C++特性。选择合适的库取决于项目需求和个人偏好。
@@ -74,7 +68,6 @@ C++中发送HTTP请求可以用不同库，比如CURL或Boost.Beast。CURL是C�
 确保你了解了HTTPS和加密的重要性。基本认证如果不通过HTTPS发送，用户名和密码可能被拦截。
 
 ## See Also (另请参阅):
-
 - CURL官方文档: https://curl.se/libcurl/c/libcurl.html
 - Boost.Beast库: https://www.boost.org/doc/libs/release/libs/beast/
 - RFC 7617 The 'Basic' HTTP Authentication Scheme: https://tools.ietf.org/html/rfc7617

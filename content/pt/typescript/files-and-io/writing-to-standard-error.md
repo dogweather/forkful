@@ -14,9 +14,6 @@ title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---
 
-## O Que & Por Quê?
-Em TypeScript, escrever para o erro padrão (stderr) é um processo de enviar mensagens de erro ou logs diretamente para o fluxo de saída de erro do ambiente (por exemplo, o console em node.js ou um navegador web). Isso é essencial para diagnosticar problemas sem interferir com a saída padrão (stdout), que é tipicamente usada para dados de programas, garantindo que o tratamento de erros e o registro de logs sejam gerenciados de forma eficiente e coesa.
-
 ## Como Fazer:
 TypeScript, sendo um superconjunto de JavaScript, depende do ambiente de execução JS subjacente (como Node.js) para escrever no stderr. Aqui está como você pode fazer isso diretamente:
 

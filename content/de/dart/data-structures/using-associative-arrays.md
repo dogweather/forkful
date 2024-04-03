@@ -12,12 +12,7 @@ title: Verwendung von assoziativen Arrays
 weight: 15
 ---
 
-## Was & Warum?
-
-Assoziative Arrays in Dart, allgemein bekannt als Maps, sind Datenstrukturen, die Daten in Schlüssel-Wert-Paaren speichern. Sie ermöglichen es Programmierern, auf Elemente nicht über Indizes, sondern über Schlüssel zuzugreifen, was das Abrufen von Daten intuitiv und effizient macht, insbesondere beim Arbeiten mit strukturierten Daten, bei denen jedes Element einen eindeutigen Identifikator hat.
-
 ## Wie geht das:
-
 Dart bietet eine unkomplizierte Syntax zum Erstellen und Manipulieren von Maps. Unten finden Sie Beispiele, die grundlegende Operationen wie Erstellung, Hinzufügen von Elementen und Abrufen von Werten demonstrieren.
 
 ```dart

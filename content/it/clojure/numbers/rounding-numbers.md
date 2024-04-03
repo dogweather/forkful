@@ -10,9 +10,6 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Cosa e Perché?
-Arrotondare i numeri consiste nel modificare un numero per approssimarlo all'intero più vicino, o a una certa precisione decimale. Arrotondiamo i numeri per semplificarli in termini di leggibilità umana, ridurre il carico computazionale o soddisfare specifici requisiti numerici.
-
 ## Come fare:
 In Clojure, utilizziamo principalmente `Math/round`, `Math/floor` e `Math/ceil`:
 

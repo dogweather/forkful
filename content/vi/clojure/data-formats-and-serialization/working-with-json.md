@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---
 
-## Cái gì & Tại sao?
-JSON (JavaScript Object Notation) là một định dạng dữ liệu được sử dụng để lưu trữ và truyền tải dữ liệu. Lập trình viên sử dụng JSON vì sự dễ sử dụng với các web API và định dạng văn bản độc lập với ngôn ngữ, làm cho nó rất tiện lợi cho việc trao đổi dữ liệu.
-
 ## Cách thực hiện:
 Hãy thử nghiệm với JSON trong Clojure. Bạn sẽ cần `Cheshire`, một thư viện phổ biến cho mã hóa/giải mã JSON.
 

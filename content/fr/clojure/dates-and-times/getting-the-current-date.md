@@ -14,10 +14,8 @@ title: Obtenir la date actuelle
 weight: 29
 ---
 
-## Quoi et pourquoi ?
-Obtenir la date actuelle en programmation est crucial pour une myriade de raisons, y compris la journalisation, le marquage temporel des événements et la planification des tâches. En Clojure, un dialecte de Lisp sur la JVM, cette tâche tire parti des capacités d'interopérabilité avec Java, permettant un accès simple à la riche API Java Date-Time.
-
 ## Comment faire :
+
 
 ### Utiliser l’Interopérabilité avec Java
 L’interopérabilité fluide de Clojure avec Java vous permet d’accéder directement à l’API Java Date-Time. Voici comment obtenir la date actuelle :

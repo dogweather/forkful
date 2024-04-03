@@ -10,9 +10,6 @@ title: Trabajando con XML
 weight: 40
 ---
 
-## Qué y Por Qué?
-Trabajar con XML implica manipular y acceder a datos estructurados en el lenguaje de marcado eXtensible. Los programadores trabajan con XML para permitir la interoperabilidad con otros sistemas o para leer y escribir archivos de configuración, fuentes de datos y otros documentos estructurados comunes en servicios web.
-
 ## Cómo:
 ```PowerShell
 # Cargando un archivo XML en una variable

@@ -11,9 +11,6 @@ title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---
 
-## What & Why? / ¿Qué y Por Qué?
-Imprimir mensajes de depuración significa mostrar información interna de tu script mientras se ejecuta. Los programadores lo hacen para rastrear errores y entender mejor qué está pasando bajo el capó, en tiempo real.
-
 ## How to / Cómo hacerlo
 Para imprimir mensajes de depuración en Bash, usamos `echo` o `printf`. Aquí van ejemplos sencillos:
 

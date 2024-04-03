@@ -14,9 +14,6 @@ title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---
 
-## Quoi et Pourquoi ?
-Dans le développement de logiciels, il est souvent nécessaire de vérifier si un répertoire existe pour éviter les erreurs lors de la tentative d'accès, de lecture ou d'écriture de fichiers. Rust, étant un langage de programmation système, fournit des méthodes robustes pour effectuer cette tâche, assurant que votre programme puisse gérer les fichiers et répertoires de manière sûre et efficace.
-
 ## Comment faire :
 La bibliothèque standard de Rust (`std`) inclut des fonctionnalités pour vérifier l'existence d'un répertoire à travers les modules `std::path::Path` et `std::fs`. Voici un exemple simple utilisant l'approche standard de Rust :
 

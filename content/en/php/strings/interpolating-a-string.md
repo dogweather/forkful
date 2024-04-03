@@ -10,12 +10,7 @@ title: Interpolating a string
 weight: 8
 ---
 
-## What & Why?
-
-String interpolation lets you inject variable values directly into a string. Programmers use it to weave variables into text, making the code cleaner and more readable.
-
 ## How to:
-
 In PHP, you can interpolate strings using double quotes or heredoc syntax:
 
 ```php
@@ -42,7 +37,6 @@ echo 'Hello, $name!'; // Output: Hello, $name!
 ```
 
 ## Deep Dive
-
 Before PHP introduced interpolation, concatenation with the dot operator (.) was the way to go. For example:
 
 ```php
@@ -58,7 +52,6 @@ Alternatives to interpolation exist, such as using `sprintf()` for formatted str
 Implementation-wise, PHP looks for variables inside strings when they are in double quotes or heredoc syntax and replaces them with the variable's value. The parser ignores the dollar sign ($) in single-quoted strings, treating it as a regular character.
 
 ## See Also
-
 - [PHP: Strings](http://php.net/manual/en/language.types.string.php) - Official PHP documentation on strings.
 - [PHP: Heredoc syntax](https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc) - PHP manual's detailed section on Heredoc.
 - [PHP: String Operators](https://www.php.net/manual/en/language.operators.string.php) - More on string concatenation and the dot operator.

@@ -13,12 +13,7 @@ title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---
 
-## Vad & Varför?
-
-Att göra om en sträng så att första bokstaven är stor och resten små är en vanlig metoder för att formatera namn eller titlar. Det innebär att man ändrar på input så att den första karaktären är stor bokstav medan resten förblir små bokstäver. Programmerare gör detta för att säkerställa datakonsistens och förbättra läsbarheten i användargränssnitt eller dokument.
-
 ## Hur gör man:
-
 Google Apps Script, som bygger på JavaScript, tillåter flera metoder för att göra om en sträng till stor bokstav i början, även om det inte finns någon inbyggd funktion för detta. Här är ett par kortfattade exempel:
 
 **Metod 1: Använda charAt() och slice()**
@@ -51,7 +46,6 @@ console.log(result);  // Utdata: Hej, världen
 Båda metoderna säkerställer att den första bokstaven i strängen är stor och resten små, lämpliga för en mängd olika tillämpningar inklusive men inte begränsat till manipulation av Google Sheets eller dokumentredigering via Apps Script.
 
 ## Fördjupning
-
 Att göra om strängar till stor bokstav i början i Google Apps Script är okomplicerat, genom att utnyttja JavaScripts kraftfulla strängmanipuleringsförmågor. Historiskt sett har språk som Python erbjudit inbyggda metoder som `.capitalize()` för att uppnå detta, vilket lägger till ett extra steg för JavaScript- och Apps Script-programmerare. Dock, frånvaron av en inbyggd funktion i JavaScript/Google Apps Script uppmuntrar till flexibilitet och en djupare förståelse för tekniker för strängmanipulering.
 
 För mer komplexa scenarier, såsom att göra om varje ord i en sträng till stor bokstav i början (Titelstil), kan programmerare kombinera regex-metoder med `split()` och `map()` funktioner för att bearbeta varje ord individuellt. Även om Google Apps Script inte erbjuder en direkt metod för att göra om strängar till stor bokstav i början, ger användningen av befintliga JavaScript-strängmanipuleringsmetoder stor flexibilitet, vilket tillåter utvecklare att hantera strängar effektivt enligt deras specifika behov.

@@ -13,14 +13,10 @@ title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---
 
-## Hva og hvorfor?
-
-Regulære uttrykk (regex) i JavaScript er mønstre som brukes for å samsvare med tegnkombinasjoner i strenger. Programmerere bruker dem til å søke, utvinne og manipulere tekst, noe som tillater kraftige strengbehandlingsoperasjoner med kortfattet kode.
-
 ## Hvordan:
 
-### Grunnleggende samsvarende
 
+### Grunnleggende samsvarende
 For å starte, kan du lage et enkelt regex-mønster og bruke det til å finne samsvarende i en streng. Her vil vi finne ordet "kode":
 
 ```javascript
@@ -31,7 +27,6 @@ console.log(result); // true
 ```
 
 ### Bruk av `String.prototype.match()`
-
 For å hente en matrise av samsvarende:
 
 ```javascript
@@ -41,7 +36,6 @@ console.log(matches.index); // 10
 ```
 
 ### Globalt søk
-
 For å finne alle samsvarende, bruk `g`-flagget:
 
 ```javascript
@@ -50,7 +44,6 @@ console.log(globalMatches); // ["o", "o", "o"]
 ```
 
 ### Samsvarende uten å ta hensyn til bokstavstørrelse
-
 `i`-flagget ignorerer bokstavstørrelse:
 
 ```javascript
@@ -59,7 +52,6 @@ console.log(caseInsensitiveMatch[0]); // "JavaScript"
 ```
 
 ### Erstatte tekst
-
 Bruk `String.prototype.replace()` til å erstatte deler av strengen:
 
 ```javascript
@@ -68,7 +60,6 @@ console.log(newStr); // "JavaScript er fantastisk"
 ```
 
 ### Bruke grupper
-
 Grupper kan fange deler av mønsteret:
 
 ```javascript
@@ -78,7 +69,6 @@ console.log(replaceWithGroups); // "gøy er JavaScript"
 ```
 
 ### Tredjepartsbiblioteker
-
 Selv om JavaScripts innebygde regex-kapasiteter er kraftige, kan noen oppgaver forenkles med biblioteker som `XRegExp`. Det tilbyr ekstra syntaks og flagg, noe som gjør komplekse mønstre mer lesbare:
 
 ```javascript

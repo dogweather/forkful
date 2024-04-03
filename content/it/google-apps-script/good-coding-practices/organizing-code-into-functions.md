@@ -14,12 +14,7 @@ title: Organizzare il codice in funzioni
 weight: 18
 ---
 
-## Cos'è e perché?
-
-Organizzare il codice in funzioni riguarda la strutturazione del codice di Google Apps Script separando i segmenti logici in blocchi distinti, ognuno dei quali esegue un compito specifico. I programmatori fanno ciò per migliorare la leggibilità, la manutenibilità e la riutilizzabilità del codice, garantendo che gli script complessi siano più facili da comprendere e da correggere.
-
 ## Come fare:
-
 In Google Apps Script, che si basa su JavaScript, si definiscono le funzioni utilizzando la parola chiave `function`, seguita da un nome di funzione unico, parentesi `()` che possono contenere parametri e parentesi graffe `{}` che racchiudono il blocco di codice della funzione. Ecco un esempio di base:
 
 ```javascript
@@ -68,7 +63,6 @@ populateSheet(salesData);
 In questo esempio, `setupSheet` prepara il foglio e `populateSheet` prende un array di dati di vendita per popolare il foglio. Separare queste preoccupazioni rende il codice più pulito e più adattabile ai cambiamenti.
 
 ## Approfondimento
-
 Il concetto di dividere il codice in funzioni non è nuovo né unico per Google Apps Script; è una pratica di programmazione fondamentale sostenuta in quasi tutti i linguaggi di programmazione. Storicamente, le funzioni si sono evolute dal concetto matematico di mappare input a output, diventando una pietra miliare nella programmazione strutturata. Questo approccio promuove la modularità e il riutilizzo del codice, offrendo percorsi chiari per testare parti individuali dello script.
 
 Google Apps Script, essendo basato su JavaScript, beneficia significativamente delle funzioni di prima classe del JavaScript, che consentono di passare funzioni come argomenti, restituirle da altre funzioni e assegnarle a variabili. Questa caratteristica apre a pattern avanzati come callback e programmazione funzionale, anche se questi pattern possono introdurre complessità che potrebbe essere non necessaria per semplici attività di automazione in Google Apps Script.

@@ -11,9 +11,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---
 
-## What & Why?
-Muunnetaan päivämäärä merkkijonoksi, jotta sitä voi käyttää tekstiyhteyksissä, kuten käyttöliittymissä ja raporteissa. Koodarit tekevät tämän esittääkseen päivämääriä ymmärrettävässä muodossa ja suorittaakseen päivämäärien kanssa tehtäviä manipulointeja.
-
 ## How to:
 ```Ruby
 require 'date'

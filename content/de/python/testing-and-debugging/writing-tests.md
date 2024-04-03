@@ -12,9 +12,6 @@ title: Tests Schreiben
 weight: 36
 ---
 
-## Was & Warum?
-Das Schreiben von Tests in Python beinhaltet das Erstellen automatisierter Skripte, um die Korrektheit Ihres Codes zu validieren. Programmierer tun dies, um sicherzustellen, dass ihre Funktionen oder Klassen unter verschiedenen Bedingungen wie erwartet funktionieren, was hilft, Fehler frühzeitig zu erkennen und die Wartung sowie das Refactoring zu erleichtern.
-
 ## Wie geht das:
 Python kommt mit einem integrierten Modul zum Schreiben von Tests namens `unittest`. So können Sie es verwenden, um eine einfache Funktion zu testen:
 

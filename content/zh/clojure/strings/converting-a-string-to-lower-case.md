@@ -17,9 +17,6 @@ title: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199"
 weight: 4
 ---
 
-## What & Why? 什么和为什么？
-将字符串转换为小写就是把所有的字母字符变成小写形式。程序员这么做通常是为了数据比较或确保数据一致性，比如在搜索和排序时。
-
 ## How to: 如何操作
 ```Clojure
 ; 使用clojure.string/lower-case函数

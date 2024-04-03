@@ -11,9 +11,6 @@ title: Avrundning av tal
 weight: 13
 ---
 
-## Vad & Varför?
-Att avrunda tal innebär att klippa av decimalerna till en inställd precision, ofta till hela tal. Programmerare avrundar för att förenkla beräkningar, förbättra prestanda eller göra utdata användarvänliga.
-
 ## Hur man gör:
 PHP erbjuder några sätt att avrunda tal: `round()`, `ceil()` och `floor()`. Här är hur de fungerar:
 

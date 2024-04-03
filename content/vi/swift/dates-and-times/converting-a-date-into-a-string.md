@@ -15,9 +15,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---
 
-## Gì và Tại sao?
-Việc chuyển đổi ngày tháng thành chuỗi trong Swift giúp bạn định dạng ngày tháng cho con người. Đây là chìa khóa cho việc hiển thị giao diện người dùng, ghi nhật ký, hoặc bất cứ khi nào bạn cần ngày tháng trở nên có ý nghĩa với mọi người, chứ không chỉ với code.
-
 ## Làm thế nào:
 Swift sử dụng `DateFormatter` để chuyển đổi đối tượng `Date` thành chuỗi dễ đọc. Dưới đây là cách thức:
 

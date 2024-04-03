@@ -11,9 +11,6 @@ title: Praca z XML
 weight: 40
 ---
 
-## Co i Dlaczego?
-Praca z XML polega na manipulowaniu i dostępowi do danych zorganizowanych w języku eXtensible Markup Language. Programiści pracują z XML, aby umożliwić interoperacyjność z innymi systemami lub odczytywać i zapisywać pliki konfiguracyjne, kanały danych i inne strukturyzowane dokumenty powszechne w usługach internetowych.
-
 ## Jak to zrobić:
 ```PowerShell
 # Wczytywanie pliku XML do zmiennej

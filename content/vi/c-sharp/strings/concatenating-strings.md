@@ -14,12 +14,7 @@ title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---
 
-## Cái gì & Tại sao?
-
-Nối chuỗi là quá trình ghép các chuỗi lại với nhau từ đầu đến cuối. Chúng ta thực hiện điều này vì thường xuyên chúng ta cần kết hợp các từ hoặc biểu tượng để tạo ra cụm từ, thông điệp, hoặc tính toán các giá trị động thành văn bản dễ đọc.
-
 ## Cách thực hiện:
-
 Nối chuỗi trong C# có thể được thực hiện theo vài cách:
 
 Sử dụng toán tử `+`:
@@ -54,7 +49,6 @@ Console.WriteLine(concatenated); // Đầu ra: Hello, World!
 ```
 
 ## Sâu hơn nữa
-
 Nối chuỗi không phải là điều mới mẻ; nó đã được sử dụng từ những ngày đầu của lập trình. Tuy nhiên, cách chúng ta thực hiện nó trong C# đã phát triển. Ban đầu, toán tử `+` được sử dụng rộng rãi, nhưng không phải lúc nào cũng hiệu quả, đặc biệt là trong các vòng lặp, vì chuỗi trong .NET là bất biến. Mỗi thao tác `+` tạo ra một chuỗi mới, có thể dẫn đến các vấn đề về hiệu suất.
 
 `String.Concat()` là một lời gọi phương thức trực tiếp cũng không thân thiện với vòng lặp nhưng ổn cho một số lượng chuỗi nhỏ và cố định.
@@ -66,6 +60,5 @@ Nội suy chuỗi, được giới thiệu trong C# 6.0, cho phép mã dễ đ�
 Mỗi phương pháp đều có chỗ đứng của mình: nối nhanh (`+`), kết hợp một vài chuỗi (`String.Concat()`), xây dựng chuỗi nặng nề (`StringBuilder`), và chuỗi được định dạng sạch sẽ, mượt mà (nội suy chuỗi).
 
 ## Xem thêm
-
 - Tài liệu Microsoft về nối chuỗi: [Nối Chuỗi](https://docs.microsoft.com/en-us/dotnet/csharp/how-to/concatenate-multiple-strings)
 - Tài liệu Microsoft về `StringBuilder`: [Lớp StringBuilder](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder)

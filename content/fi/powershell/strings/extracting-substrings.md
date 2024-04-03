@@ -11,9 +11,6 @@ title: Merkkijonojen osien poimiminen
 weight: 6
 ---
 
-## What & Why? (Mitä & Miksi?)
-Substringien poiminta on prosessi, jolla valikoidaan ja otetaan tietty osa merkkijonosta. Ohjelmoijat tekevät tätä, koska usein tarvitaan vain pala dataa esimerkiksi analyysia tai formaattia varten.
-
 ## How to: (Kuinka tehdä:)
 ```PowerShell
 # Otetaan esimerkiksi merkkijono

@@ -10,9 +10,6 @@ title: Creazione di un file temporaneo
 weight: 21
 ---
 
-## What & Why?
-Creare un file temporaneo significa generare un file destinato a un uso breve, spesso come un'area di lavoro o per operazioni di trascinamento. I programmatori lo fanno per maneggiare dati transitori senza impattare i sistemi di memorizzazione permanenti o condividere informazioni sensibili.
-
 ## How to:
 In Elm, direttamente non possiamo creare file temporanei poiché Elm è un linguaggio per la programmazione front-end che gira sul browser e non ha accesso diretto al file system. Tuttavia, possiamo gestire dati temporanei in sessione:
 

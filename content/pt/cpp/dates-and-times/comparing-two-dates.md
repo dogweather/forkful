@@ -11,9 +11,6 @@ title: Comparando duas datas
 weight: 27
 ---
 
-## O Que & Porquê?
-Comparar datas é verificar a relação temporal entre elas - qual é mais cedo ou mais tarde. Programadores fazem isso para ordenar eventos, validar períodos, e controlar a lógica que depende de tempo.
-
 ## Como Fazer:
 ```C++
 #include <iostream>

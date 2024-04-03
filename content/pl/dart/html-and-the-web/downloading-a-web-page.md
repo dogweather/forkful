@@ -12,12 +12,7 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## Co i dlaczego?
-
-Pobieranie strony internetowej polega na pobraniu zawartości strony internetowej za pomocą jej adresu URL w celu przetworzenia lub przechowania. Programiści robią to, aby ekstrahować informacje, monitorować zmiany lub archiwizować zawartość, co czyni to podstawą w web scraping, data mining i zautomatyzowanych testach.
-
 ## Jak to zrobić:
-
 Dart oferuje pakiet `http`, popularną bibliotekę stron trzecich do wykonywania żądań HTTP. Oto podstawowy przykład, jak go użyć do pobrania strony internetowej:
 
 Najpierw dodaj pakiet `http` do twojego `pubspec.yaml`:

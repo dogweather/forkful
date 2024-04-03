@@ -13,9 +13,6 @@ title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---
 
-## Wat & Waarom?
-Het verwijderen van tekens die overeenkomen met een patroon gaat over het vinden en verwijderen van specifieke reeksen tekens uit strings op basis van regels (zoals regex). Programmeurs doen dit om gegevens op te schonen, invoer te valideren of tekst te manipuleren voor diverse doeleinden.
-
 ## Hoe:
 Wil je sommige tekens kwijt? Zo doe je dat in C#:
 

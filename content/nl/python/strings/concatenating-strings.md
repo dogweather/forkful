@@ -12,9 +12,6 @@ title: Samenvoegen van strings
 weight: 3
 ---
 
-## Wat & Waarom?
-Strings samenvoegen betekent ze aan elkaar plakken om een nieuwe string te maken. Het is zoals Lego met strings. We doen dit om tekst op te bouwen; denk aan gebruikersnamen, foutmeldingen en dynamische inhoud.
-
 ## Hoe:
 Laten we wat strings aan elkaar plakken.
 

@@ -11,14 +11,10 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-
-Writing a text file in Clojure involves creating or modifying files to save data outside your application, enabling persistence, configuration, logging, or inter-process communication. Programmers perform this task to externalize application state, configurations, or share information between different parts of a program or different programs altogether.
-
 ## How to:
 
-### Writing text to a file using Clojure's built-in functions
 
+### Writing text to a file using Clojure's built-in functions
 The `spit` function is the simplest way to write text to a file in Clojure. It takes two arguments: the file path and the string to write. If the file doesn't exist, `spit` will create it. If it does, `spit` will overwrite it.
 
 ```clojure
@@ -39,7 +35,6 @@ Let's add this new line.
 ```
 
 ### Using third-party libraries
-
 While Clojure's built-in capabilities are often sufficient, the community has developed robust libraries for more complex or specific tasks. For file I/O, one popular library is `clojure.java.io`, which provides a more Java-like approach to file handling.
 
 To use `clojure.java.io` for writing to a file, you first need to import it:

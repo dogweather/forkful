@@ -12,9 +12,6 @@ title: Een datum uit een string parsen
 weight: 30
 ---
 
-## Wat & Waarom?
-Het parseren van een datum uit een tekenreeks betekent het converteren van tekst die een datum voorstelt naar een formaat waarmee een programma kan werken. Programmeurs doen dit om datums te manipuleren—denk aan het sorteren van evenementen of het berekenen van tijdsduren—in apps die gaan over planning, deadlines, en meer.
-
 ## Hoe te:
 Elm gebruikt de `Date` module om met datums om te gaan, maar voor zover mijn kennis reikt in begin 2023, is er geen ingebouwde Elm-bibliotheek voor het parseren van datums uit tekenreeksen. Je zult waarschijnlijk een pakket zoals `justinmimbs/date` gebruiken om de taak uit te voeren. Zo ga je ermee om:
 

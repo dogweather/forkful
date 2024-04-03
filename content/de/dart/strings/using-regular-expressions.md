@@ -14,9 +14,6 @@ title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---
 
-## Was & Warum?
-Reguläre Ausdrücke (regex) in Dart bieten eine leistungsfähige Möglichkeit, Strings zu suchen und zu manipulieren, wodurch Programmierer komplexe Textverarbeitungsaufgaben effizient durchführen können. Durch das Verständnis von regex können Entwickler Textvalidierungen, Suchmuster und Texttransformationen schnell ausführen, was für die Verarbeitung von Formularen, Daten-Parsing und allgemeine String-Manipulationen in modernen Anwendungen wesentlich ist.
-
 ## Wie:
 Dart verwendet die `RegExp`-Klasse für reguläre Ausdrücke. Hier ist ein einfaches Beispiel, um ein einfaches Muster innerhalb eines Strings zu finden:
 

@@ -14,12 +14,7 @@ title: Das aktuelle Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-
-In Visual Basic for Applications (VBA) ist das Abrufen des aktuellen Datums eine gängige Aufgabe, die es Programmierern ermöglicht, dynamisch mit Daten in ihren Makros oder Anwendungen zu arbeiten. Diese Funktionalität ist entscheidend für Operationen wie Logging, Zeitstempel für Transaktionen oder das Durchführen datumsbasierter Berechnungen.
-
 ## Wie:
-
 Das Abrufen des aktuellen Datums in VBA ist unkompliziert und erfolgt mittels der `Date`-Funktion, während die `Now`-Funktion sowohl das aktuelle Datum als auch die Uhrzeit liefert. So können Sie mit beidem arbeiten:
 
 ```vb
@@ -46,7 +41,6 @@ Aktuelles Datum und Uhrzeit: 12.4.2023 15:45:22
 Beachten Sie, dass das Datumsformat je nach den Systemeinstellungen des Computers des Benutzers variieren kann.
 
 ## Vertiefung
-
 Die `Date`- und `Now`-Funktionen kapseln die Komplexität des Umgangs mit Datum und Uhrzeit in Visual Basic for Applications ein, indem sie eine Anwendungsebene der Abstraktion bieten, die das Arbeiten mit Daten einfach und intuitiv macht. Historisch gesehen war der Umgang mit Datum und Uhrzeit in der Programmierung mit Herausforderungen verbunden, einschließlich der Handhabung verschiedener Zeitzonen, der Sommerzeitumstellungen und verschiedener Datumsformate.
 
 In VBA verlassen sich diese Funktionen auf das zugrunde liegende Systemdatum und die -uhrzeit, was bedeutet, dass sie von der Lokalität und den Systemeinstellungen des Benutzers beeinflusst werden. Es ist ein zweischneidiges Schwert, das eine Konsistenz mit der Umgebung des Benutzers gewährleistet, aber auch eine sorgfältige Handhabung der Lokalisierung und Zeitzoneinstellungen in globalen Anwendungen erfordert.

@@ -12,12 +12,7 @@ title: Registro de Logs
 weight: 17
 ---
 
-## O Que & Por Quê?
-
-Logging é o processo de registrar eventos, erros e outras informações significativas durante a execução de um programa em um meio externo, frequentemente arquivos ou bancos de dados. Programadores utilizam logs para monitorar o comportamento do software, depurar problemas e rastrear atividades do sistema para análise de segurança e desempenho.
-
 ## Como Fazer:
-
 Em TypeScript, você pode facilmente implementar um logging básico usando os métodos do console ou integrar um logging mais avançado com bibliotecas como `winston` ou `pino`. Aqui está um exemplo básico usando `console.log` e um mais avançado com `winston`.
 
 ```TypeScript
@@ -58,7 +53,6 @@ logger.error('Falha ao conectar ao banco de dados.');
 ```
 
 ## Aprofundamento:
-
 O conceito de logging no contexto da computação remonta aos primeiros dias da programação, onde o termo em si é derivado do "logbook", um sistema de registro usado na navegação. Historicamente, eventos de programas eram frequentemente registrados em impressões físicas ou saídas de terminais, especialmente durante a era dos mainframes.
 
 Avançando para hoje, temos à disposição uma infinidade de ferramentas e bibliotecas que atendem a várias necessidades de logging, desde arquivos de texto simples até sistemas complexos de gerenciamento de logs. Alternativas ao `winston` incluem o `pino`, que se orgulha de alta performance, e o `Bunyan`, baseado em JSON. Ao trabalhar com Node.js, bibliotecas de logging frequentemente fornecem mecanismos de stream para direcionar logs para diferentes destinos, suporte para rotação de logs e formatadores personalizáveis.
@@ -66,7 +60,6 @@ Avançando para hoje, temos à disposição uma infinidade de ferramentas e bibl
 Em termos de implementação, mensagens de log geralmente contêm um carimbo de data/hora, um nível de severidade (como info, warn, error) e a mensagem atual. Boas práticas de logging recomendam categorizar os níveis de log adequadamente, evitar dados sensíveis nos logs e considerar as implicações de desempenho em aplicações de alto throughput.
 
 ## Veja Também:
-
 - [Winston - Um logger para praticamente tudo](https://www.npmjs.com/package/winston)
 - [Pino - Logger Node.js de muito baixo overhead](https://www.npmjs.com/package/pino)
 - [Melhores Práticas de Logging em Node.js](https://thisdavej.com/using-winston-a-versatile-logging-library-for-node-js/)

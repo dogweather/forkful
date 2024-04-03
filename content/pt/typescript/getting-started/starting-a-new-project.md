@@ -11,9 +11,6 @@ title: Iniciando um novo projeto
 weight: 1
 ---
 
-## O que é & Por que?
-Começar um novo projeto é como abrir um livro em branco para um programador: é uma oportunidade de criar algo do zero. Programadores começam novos projetos para resolver problemas, explorar tecnologias novas, ou simplesmente por diversão.
-
 ## Como Fazer:
 Vamos montar um projeto TypeScript básico. Primeiro, certifique-se de ter o Node.js e o npm instalados. Depois, instale o TypeScript globalmente:
 
@@ -79,7 +76,6 @@ Olá, mundo!
 ```
 
 ## Aprofundando:
-
 TypeScript foi criado pela Microsoft, lançado pela primeira vez em 2012. Oferece tipagem estática opcional para JavaScript, o que significa que você pode capturar muitos erros em tempo de compilação antes que seu código vá para produção.
 
 Alternativas para o TypeScript incluem Flow do Facebook, mas TypeScript tem se destacado pela vasta adoção e suporte integrado em muitos editores de texto como o Visual Studio Code.
@@ -89,7 +85,6 @@ Quando você inicializa um projeto TypeScript com `tsc --init`, está criando um
 Você pode personalizar seu `tsconfig.json` para adequar-se ao seu projeto, definindo resolução de módulos, adicionando aliases para importações, entre outras otimizações.
 
 ## Veja Também:
-
 - [Documentação Oficial do TypeScript](https://www.typescriptlang.org/docs/)
 - [TypeScript no GitHub](https://github.com/Microsoft/TypeScript)
 - [Porque TypeScript? - Uma visão geral](https://medium.com/@basarat/why-typescript-77a9de7bfb38)

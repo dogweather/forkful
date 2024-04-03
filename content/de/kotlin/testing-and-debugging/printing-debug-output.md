@@ -11,9 +11,6 @@ title: Debug-Ausgaben drucken
 weight: 33
 ---
 
-## Was & Warum?
-Debug-Ausgaben dienen dazu, den Programmfluss und Variablenwerte während der Laufzeit zu beobachten. Programmierer nutzen sie, um Fehler schneller zu finden und ihre Software zu verstehen.
-
 ## How to:
 Debugging in Kotlin ist simpel. Verwende `println()` für schnelles Feedback:
 ```kotlin

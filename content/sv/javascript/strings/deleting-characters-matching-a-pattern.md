@@ -11,9 +11,6 @@ title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---
 
-## Vad & Varför?
-Att radera tecken som matchar ett mönster innebär att du filtrerar en sträng baserat på specifika regler eller uttryck. Programmerare gör detta för att rensa data, validera input eller forma text till ett önskvärt format.
-
 ## How to:
 För att ta bort tecken som matchar ett mönster i JavaScript använder vi oftast `replace()`-metoden tillsammans med reguljära uttryck.
 

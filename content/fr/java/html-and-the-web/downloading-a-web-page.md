@@ -10,9 +10,6 @@ title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---
 
-## What & Why?
-Télécharger une page web, c'est récupérer son contenu via HTTP. Les programmeurs font ça pour analyser des données, surveiller des changements ou alimenter des applications.
-
 ## How to:
 En Java, `java.net.http.HttpClient` est notre ami pour télécharger une page. Voici un exemple simple :
 

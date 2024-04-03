@@ -9,9 +9,6 @@ title: Confronto tra due date
 weight: 27
 ---
 
-## What & Why?
-Confrontare due date significa verificarne l'ordine cronologico. I programmatori lo fanno per tracciare scadenze, confrontare eventi nel tempo o gestire prenotazioni.
-
 ## How to:
 ```Python
 from datetime import datetime

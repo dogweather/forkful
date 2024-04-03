@@ -10,9 +10,6 @@ title: Protokollierung
 weight: 17
 ---
 
-## Was & Warum?
-Das Protokollieren in der Programmierung gleicht dem Führen eines Tagebuchs für Ihre Anwendung. Es ist die systematische Aufzeichnung von Ereignissen, Nachrichten und Datenpunkten, die Ihnen Einblick geben in das, was Ihre Anwendung tut und wie sie sich verhält. Entwickler protokollieren, weil es entscheidend für das Debugging ist, die Überwachung der Anwendungsgesundheit und das Erhalten von Hinweisen über potenzielle Probleme, bevor diese zu echten Schwierigkeiten werden.
-
 ## Wie man das macht:
 Ruby verfügt über ein eingebautes Modul zum Protokollieren, `Logger`, das super einfach zu verwenden ist. Hier ist ein schnelles Beispiel, um Ihnen den Einstieg zu erleichtern:
 

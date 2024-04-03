@@ -18,9 +18,6 @@ title: "YAML\uB85C \uC791\uC5C5\uD558\uAE30"
 weight: 41
 ---
 
-## 무엇인가 & 왜인가?
-YAML은 "YAML Ain't Markup Language"를 의미하며, 인간이 읽을 수 있는 데이터 직렬화 포맷입니다. 프로그래머들은 YAML을 설정 파일, 프로세스 간 메시징, 데이터 저장에 사용합니다. 이는 XML이나 JSON같은 다른 포맷들에 비해 문법이 단순하고 읽기 쉽기 때문입니다.
-
 ## 방법:
 Python에서 YAML을 읽고 쓰기 위해서는 일반적으로 제3의 라이브러리를 사용하며, `PyYAML`이 가장 인기가 많습니다. 시작하기 위해서는 `pip install PyYAML`을 실행하여 PyYAML을 설치해야 합니다.
 

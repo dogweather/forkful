@@ -12,12 +12,7 @@ title: Commandoregelargumenten lezen
 weight: 23
 ---
 
-## Wat & Waarom?
-
-Het lezen van commandoregelargumenten stelt je Swift-programma in staat om extra details te grijpen wanneer gebruikers het uitvoeren. Dit is belangrijk omdat het maatwerk en controle toevoegt zonder de noodzaak van gebruikersinteractie terwijl het programma draait.
-
 ## Hoe te:
-
 Swift maakt het lezen van commandoregelargumenten super eenvoudig. Ze zijn toegankelijk via de `CommandLine` structuur. Hier is de essentie:
 
 ```swift
@@ -37,7 +32,6 @@ bar
 Dat is elk argument uitgeprint, inclusief het pad naar je programma als het eerste element - onthoud dat altijd!
 
 ## Diepe Duik
-
 Historisch gezien zijn commandoregelargumenten een basisgeweest in programmering, waardoor mensen het gedrag van een programma kunnen aanpassen zonder code te veranderen. Het is de erfenis van Unix, en vrijwel alle talen ondersteunen deze functie.
 
 In Swift is `CommandLine.arguments` een array van strings, met elk element een stukje van je invoer, gesplitst door witruimte. Deze array wordt door het besturingssysteem overhandigd wanneer je programma start; Swift maakt het gewoon makkelijk toegankelijk.
@@ -47,7 +41,6 @@ Naast `CommandLine.arguments`, kun je dieper duiken in meer complexe parsing met
 Wat betreft implementatie, die commandoregelargumenten komen bij je via een C-array achter de schermen - goede oude `argc` en `argv`. Swift houdt het verborgen, maar behoudt nog steeds hetzelfde basisgedrag dat je zou vinden in C of C++.
 
 ## Zie Ook
-
 - Voor een brede kijk op commandoregelprogramma's in Swift, bekijk de [Swift.org Documentatie](https://swift.org/getting-started/#using-the-package-manager).
 - Om je argument parsing spel te verbeteren, ga naar de [Swift Argument Parser GitHub repo](https://github.com/apple/swift-argument-parser) voor meer geavanceerde opstellingen.
 - Als je nieuwsgierig bent hoe andere talen dit aanpakken, probeer dit dan te vergelijken met Python's `sys.argv` of Node's `process.argv`.

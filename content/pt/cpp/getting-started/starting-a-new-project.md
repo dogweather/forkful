@@ -11,9 +11,6 @@ title: Iniciando um novo projeto
 weight: 1
 ---
 
-## O Que é & Porquê?
-Iniciar um novo projeto em C++ é criar um espaço de trabalho limpo para desenvolver código desde o começo. Programadores fazem isso para organizar melhor suas ideias e garantir que todas as dependências estejam corretas desde o início.
-
 ## Como Fazer:
 Vamos iniciar um projeto simples. Usaremos o CMake, uma ferramenta popular para gerar arquivos de build.
 

@@ -11,9 +11,6 @@ title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---
 
-## What & Why?
-L'interpolation de chaînes permet d'insérer des valeurs de variables directement dans une chaîne de caractères. Les programmeurs l'utilisent pour assembler du texte dynamique de manière lisible et efficace.
-
 ## How to:
 L'Arduino n'a pas d'interpolation de chaînes intégrée comme dans d'autres langages, mais on peut concaténer et utiliser `sprintf`. Voici un exemple :
 

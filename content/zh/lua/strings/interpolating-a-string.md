@@ -11,9 +11,6 @@ title: "\u5B57\u7B26\u4E32\u63D2\u503C"
 weight: 8
 ---
 
-## What & Why? (是什么？为什么？)
-String interpolation is replacing placeholders within a string with actual values, a common practice for crafting messages or assembling texts dynamically. Programmers do it for readability and efficiency in their code.
-
 ## How to: (如何操作：)
 Lua doesn't have built-in string interpolation, but we can get the job done nicely with some creativity. Here's how:
 

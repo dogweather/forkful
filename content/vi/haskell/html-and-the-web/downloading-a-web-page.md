@@ -16,12 +16,7 @@ title: "T\u1EA3i trang web"
 weight: 42
 ---
 
-## Cái gì & Tại sao?
-
-Tải một trang web có nghĩa là lấy dữ liệu của nó qua internet; nó giống như lưu một bản sao để đọc hoặc xử lý ở cục bộ. Các lập trình viên thực hiện điều này để thu thập nội dung, tương tác với các dịch vụ web, hoặc sao chép các trang web.
-
 ## Làm thế nào:
-
 Hãy thử với một ví dụ đơn giản sử dụng thư viện `http-conduit` của Haskell. Đầu tiên, cài đặt nó bằng `cabal install http-conduit`. Sau đó:
 
 ```Haskell
@@ -43,7 +38,6 @@ main = do
 Chạy chương trình này, bạn sẽ thấy HTML của `http://example.com` trên màn hình của bạn.
 
 ## Đi sâu
-
 Các yêu cầu HTTP trong Haskell không luôn luôn gọn gàng như vậy. Các thư viện cũ hơn như `HTTP` yêu cầu nhiều mã dàn trải hơn. Với `http-conduit`, độ phức tạp được trừu tượng hóa đi.
 
 Các phương pháp khác tồn tại, như lệnh `wget` trong một kịch bản shell hay thư viện `requests` của Python. Nhưng những cái này không luôn hiệu quả hoặc biểu đạt tốt trong môi trường chức năng của Haskell.
@@ -51,6 +45,5 @@ Các phương pháp khác tồn tại, như lệnh `wget` trong một kịch b�
 Bên dưới, `http-conduit` sử dụng một Quản lý để xử lý việc pooling kết nối và Keep-Alive cho HTTP1.1, làm cho nó hiệu quả hơn cho nhiều yêu cầu.
 
 ## Xem thêm
-
 - Để sử dụng nâng cao `http-conduit`: [http-conduit trên Hackage](https://hackage.haskell.org/package/http-conduit)
 - Để hiểu về ByteString: [ByteString trên Hackage](https://hackage.haskell.org/package/bytestring)

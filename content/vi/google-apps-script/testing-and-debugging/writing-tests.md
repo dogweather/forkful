@@ -17,12 +17,7 @@ title: "Vi\u1EBFt ki\u1EC3m th\u1EED"
 weight: 36
 ---
 
-## Gì và Tại sao?
-
-Viết test trong Google Apps Script (GAS) là về việc tạo ra các script tự động để xác minh hành vi của mã lệnh của bạn, đảm bảo chúng hoạt động như mong đợi dưới các điều kiện khác nhau. Các lập trình viên làm điều này để bắt lỗi sớm, cải thiện chất lượng mã lệnh, và tạo điều kiện dễ dàng hơn cho việc cập nhật và bảo trì.
-
 ## Làm thế nào:
-
 Mặc dù Google Apps Script không có một khung kiểm thử tích hợp sẵn như một số môi trường lập trình khác, bạn vẫn có thể viết và chạy các bài test bằng cách tận dụng các hàm GAS đơn giản hoặc tích hợp các thư viện kiểm thử bên ngoài như `QUnit`. Đây là một ví dụ cơ bản sử dụng một hàm GAS đơn giản để kiểm tra một hàm khác trong script của bạn:
 
 ```javascript
@@ -60,7 +55,6 @@ QUnit.test("Kiểm thử hàm add", function (assert) {
 Để xem kết quả, mở tệp HTML trong Trình chỉnh sửa Script GAS hoặc triển khai nó như một ứng dụng web.
 
 ## Sâu hơn
-
 Lịch sử, việc kiểm thử trong Google Apps Script đã được coi nhẹ phần nào, có thể do nguồn gốc và các trường hợp sử dụng chính của nền tảng tập trung vào các tác vụ tự động hóa nhanh chóng, quy mô nhỏ hơn thay vì các ứng dụng lớn. Do đó, GAS không cung cấp các khung kiểm thử và công cụ mạnh mẽ như những môi trường lập trình truyền thống khác. Tuy nhiên, cộng đồng đã thích nghi bằng cách kết hợp các thư viện mã nguồn mở và sử dụng sáng tạo các công cụ hiện có của Google.
 
 Sử dụng các thư viện như QUnit đánh dấu một bước tiến quan trọng nhưng cũng đặt ra bộ thách thức riêng của nó, như thiết lập một môi trường kiểm thử phù hợp và học một cú pháp bổ sung. Tuy nhiên, đối với những người quan tâm đến việc xây dựng các ứng dụng phức tạp và đáng tin cậy hơn với GAS, nỗ lực này là đáng giá.

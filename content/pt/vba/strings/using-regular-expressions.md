@@ -12,12 +12,7 @@ title: "Usando express\xF5es regulares"
 weight: 11
 ---
 
-## O Que & Por Quê?
-
-Expressões regulares (regex) no Visual Basic for Applications (VBA) oferecem uma maneira poderosa de pesquisar, combinar e manipular strings. Programadores as utilizam para tarefas como validação de dados, análise e transformação devido à sua flexibilidade e eficiência no manuseio de padrões de string complexos.
-
 ## Como:
-
 Para usar expressões regulares no VBA, você primeiro precisa habilitar a biblioteca Microsoft VBScript Regular Expressions. No editor do VBA, vá em `Ferramentas` -> `Referências`, e então marque `Microsoft VBScript Regular Expressions 5.5`.
 
 Aqui está um exemplo básico para encontrar se um padrão existe dentro de uma string:
@@ -63,7 +58,6 @@ End Sub
 ```
 
 ## Aprofundamento
-
 A inclusão de expressões regulares em linguagens de programação muitas vezes remonta a ferramentas Unix dos anos 1970. O VBA integrou regex por meio da biblioteca VBScript Regular Expressions, destacando sua importância em tarefas de processamento de texto mesmo em aplicações não tipicamente associadas à manipulação intensa de texto como Excel ou Access.
 
 Apesar de seu poder, regex no VBA às vezes pode ser menos intuitivo ou performático comparado a implementações mais modernas em linguagens como Python ou JavaScript. Por exemplo, o módulo `re` do Python oferece suporte extensivo para grupos nomeados e recursos de correspondência de padrões mais sofisticados, proporcionando uma abordagem mais limpa e potencialmente mais legível. No entanto, ao trabalhar dentro do ecossistema VBA, as expressões regulares permanecem uma ferramenta inestimável para tarefas que requerem correspondência de padrões ou manipulação de texto. O compromisso de eficiência é frequentemente negligenciável à luz da conveniência e das capacidades que regex traz para a mesa ao lidar com strings em aplicações do Office.

@@ -14,12 +14,7 @@ title: Willekeurige getallen genereren
 weight: 12
 ---
 
-## Wat & Waarom?
-
-Het genereren van willekeurige getallen in PHP gaat over het produceren van onvoorspelbare waarden binnen een gespecificeerd bereik, wat essentieel is voor taken zoals het creëren van unieke gebruikers-ID's, het genereren van wachtwoorden, of voor gebruik in simulaties en spellen. Programmeurs vertrouwen op willekeur om onvoorspelbaarheid en variabiliteit in hun applicaties te brengen, waardoor processen zoals testen of gebruikerservaringen robuuster en boeiender worden.
-
 ## Hoe te:
-
 PHP biedt verschillende functies voor het genereren van willekeurige getallen, maar de meest gebruikte zijn `rand()`, `mt_rand()`, en voor cryptografische doeleinden `random_int()`.
 
 Om een eenvoudig willekeurig getal tussen 0 en getrandmax() (de grootst mogelijke waarde geretourneerd door `rand()`) te genereren, kun je gebruiken:
@@ -51,7 +46,6 @@ echo random_int(1, 100);
 Opnieuw is de uitvoer een willekeurig getal tussen 1 en 100, zoals `84`, maar met een sterkere garantie van willekeur.
 
 ## Diepgaand
-
 De `rand()` functie is al sinds de eerste versies van PHP aanwezig en diende als de initiële benadering voor het genereren van willekeurige getallen. Het is echter niet de beste keuze voor toepassingen die een hoge mate van willekeur vereisen vanwege zijn relatief voorspelbare algoritme.
 
 `mt_rand()`, geïntroduceerd in PHP 4, is gebaseerd op het Mersenne Twister-algoritme - ver superieur in termen van snelheid en de willekeur die het kan genereren in vergelijking met `rand()`. Het werd snel de voorkeursoptie voor de meeste niet-cryptografische behoeften.

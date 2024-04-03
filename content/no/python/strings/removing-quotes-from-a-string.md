@@ -11,9 +11,6 @@ title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---
 
-## Hva & Hvorfor?
-Å fjerne anførselstegn fra en streng betyr vanligvis å strippe bort overflødige doble (") eller enkle (') anførselstegn. Programmerere gjør dette for å rense inndata eller når anførselstegn ikke er nødvendige for videre behandling – som når man lagrer tekst i en database eller forbereder den for visning.
-
 ## Hvordan:
 Python tilbyr flere måter å bli kvitt uønskede anførselstegn fra strenger på. La oss gå gjennom noen eksempler:
 

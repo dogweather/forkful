@@ -10,9 +10,6 @@ title: Capitalizing a string
 weight: 2
 ---
 
-## What & Why?
-Capitalizing a string involves converting the first character of each word in a string to uppercase while ensuring the rest remain lowercase. This operation is common in data formatting and user input normalization to maintain consistency and improve readability. 
-
 ## How to:
 Arduino, primarily known for interacting with hardware, also includes basic string manipulation capabilities through its `String` object. However, it lacks a direct `capitalize` function seen in higher-level languages. Thus, we implement capitalization by iterating over a string and applying case transformations.
 

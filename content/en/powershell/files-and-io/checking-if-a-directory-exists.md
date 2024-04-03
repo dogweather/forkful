@@ -13,9 +13,6 @@ title: Checking if a directory exists
 weight: 20
 ---
 
-## What & Why?
-In PowerShell, checking if a directory exists is a common task that helps scripts make decisions based on filesystem structure—such as avoiding errors by confirming a target directory is in place before attempting to read from or write to it. It's essential for ensuring your script behaves reliably in diverse environments.
-
 ## How to:
 PowerShell offers a straightforward way to check for the presence of a directory using the `Test-Path` cmdlet. This cmdlet returns a Boolean value indicating whether the specified path exists. Here's how you can use it:
 

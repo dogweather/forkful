@@ -16,16 +16,10 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---
 
-## Gì và Tại sao?
-
-Làm việc với JSON (JavaScript Object Notation) trong Go đề cập đến việc mã hóa và giải mã dữ liệu giữa các cấu trúc dữ liệu của Go và định dạng JSON. Công việc này phổ biến trong các dịch vụ web và API, khi mà JSON phục vụ như một định dạng trao đổi dữ liệu nhẹ, dựa trên văn bản và độc lập với ngôn ngữ, cho phép chia sẻ dữ liệu đơn giản giữa các môi trường lập trình khác nhau.
-
 ## Làm thế nào:
-
 Trong Go, gói `encoding/json` là cánh cổng của bạn đến với việc điều khiển JSON, cung cấp cơ chế để chuyển đổi cấu trúc dữ liệu của Go sang JSON (mã hóa) và ngược lại (giải mã). Dưới đây là các ví dụ cơ bản để bạn bắt đầu:
 
 ### Mã hóa (Marshalling)
-
 Để chuyển đổi một struct của Go sang JSON, bạn có thể sử dụng `json.Marshal`. Xem xét struct Go sau:
 
 ```go
@@ -60,7 +54,6 @@ func main() {
 ```
 
 ### Giải mã (Unmarshalling)
-
 Để phân tích JSON thành một cấu trúc dữ liệu của Go, sử dụng `json.Unmarshal`:
 
 ```go
@@ -92,7 +85,6 @@ Với struct `User` như trước, đoạn mã này phân tích chuỗi JSON th�
 ```
 
 ## Sâu hơn
-
 Gói `encoding/json` trong Go cung cấp một API trực quan, che giấu nhiều sự phức tạp liên quan đến việc điều khiển JSON. Được giới thiệu sớm trong quá trình phát triển của Go, gói này phản ánh triết lý đơn giản và hiệu quả của Go. Tuy nhiên, việc sử dụng phản xạ của `encoding/json` để kiểm tra và chỉnh sửa các struct tại thời gian chạy có thể dẫn đến hiệu suất kém hơn trong các kịch bản sử dụng nhiều CPU.
 
 Những phương án thay thế như `json-iterator/go` và `ffjson` đã xuất hiện, cung cấp việc xử lý JSON nhanh hơn bằng cách tạo ra mã mã hóa và giải mã tĩnh. Tuy nhiên, `encoding/json` vẫn là gói được sử dụng phổ biến nhất do sự đơn giản, bền vững của nó và thực tế là nó là một phần của thư viện chuẩn, đảm bảo tính tương thích và ổn định qua các phiên bản Go.

@@ -11,9 +11,6 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-Fouten afhandelen in programmeren gaat over het verwachten van het onverwachte. Het is de kunst van het plannen voor wanneer dingen misgaan, zodat je programma soepel kan blijven draaien.
-
 ## Hoe te:
 Lua gebruikt twee belangrijke functies voor foutafhandeling: `pcall` en `xpcall`. Dit is hoe je ze gebruikt:
 

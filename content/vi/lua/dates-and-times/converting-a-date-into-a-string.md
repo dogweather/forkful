@@ -16,9 +16,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---
 
-## Gì và Tại sao?
-Chuyển đổi một ngày thành chuỗi là về thay đổi cách hiển thị dữ liệu ngày/giờ. Lập trình viên làm điều này để tăng tính đọc được, địa phương hóa, hoặc sự nhất quán định dạng xuyên suốt các ứng dụng.
-
 ## Làm thế nào:
 Trong Lua, chúng ta sử dụng `os.date` để định dạng ngày thành chuỗi. Dưới đây là một đoạn mã để bạn tham khảo.
 

@@ -11,12 +11,7 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## Hva & Hvorfor?
-
-Å beregne en dato i fremtiden eller fortiden handler om å tilføye eller trekke fra dager, måneder eller år fra en nærværende dato. Programutviklere gjør dette for å håndtere alt fra utløpsdatoer og frister til tidsstyring av hendelser eller funksjonelle påminnelser i applikasjonene deres.
-
 ## Slik gjør du:
-
 ```Kotlin
 import java.time.LocalDate
 import java.time.temporal.ChronoUnit
@@ -40,13 +35,11 @@ For to uker siden: 2023-03-18
 ```
 
 ## Dypdykk
-
 I gamle dager måtte programmerere regne ut datoforandringer manuelt, med mange fallgruver som skuddår og varierende månedslengder. Java 8 introduserte `java.time`-pakken, som Kotlin også benytter, gjør dette enklere og tryggere. Alternativer inkluderer Joda-Time biblioteket før Java 8 og threeten-backport for eldre Java-versjoner. Den interne implementasjonen håndterer alle de kompliserte delene av datoberegning, som tidssoner og kalenderspesifikke regler.
 
 Du kan bruke forskjellige metoder i `LocalDate` for å tilpasse datoen din, som `plusDays`, `minusWeeks` eller `plusMonths`. Kotlin tillater også å bruke `minus`- og `plus`-funksjonene med `Duration` og `Period` for å representere tidsmengder.
 
 ## Se Også
-
 - Offisielle Kotlin-dokumenter om dato- og tids-håndtering: [Kotlinlang Documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/)
 - `java.time`-pakken i Java 8: [Oracle Docs](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
 - Joda-Time, et alternativ før `java.time`: [Joda-Time](http://www.joda.org/joda-time/)

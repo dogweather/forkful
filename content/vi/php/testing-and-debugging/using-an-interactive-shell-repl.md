@@ -15,9 +15,6 @@ title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---
 
-## Cái gì & Tại sao?
-Một shell tương tác, hay REPL (Read-Eval-Print Loop - Vòng lặp Đọc-Đánh giá-In), cho phép bạn viết và chạy mã PHP ngay lập tức. Nó lý tưởng cho việc thử nghiệm, gỡ lỗi, hoặc học hỏi, vì bạn có thể thử nghiệm các đoạn mã mà không cần tới việc tạo một script đầy đủ.
-
 ## Làm thế nào:
 Khởi chạy REPL PHP bằng cách chạy `php -a` trong terminal của bạn. Dưới đây là một ví dụ về cách nó hoạt động:
 

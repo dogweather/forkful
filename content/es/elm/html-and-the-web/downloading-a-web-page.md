@@ -11,9 +11,6 @@ title: "Descargando una p\xE1gina web"
 weight: 42
 ---
 
-## What & Why?
-Bajar una página web es el proceso de obtener su contenido HTML a través de internet. Los programadores lo hacen para procesar datos, mostrar contenido en sus aplicaciones o interactuar con servicios web.
-
 ## How to:
 Para descargar una web en Elm, usamos el módulo `Http`. Aquí hay un ejemplo simple que muestra cómo hacer una petición GET:
 

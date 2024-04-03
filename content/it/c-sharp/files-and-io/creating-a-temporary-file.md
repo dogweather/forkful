@@ -10,9 +10,6 @@ title: Creazione di un file temporaneo
 weight: 21
 ---
 
-## What & Why?
-Creare file temporanei significa generare file destinati a essere utilizzati solo per la durata di una sessione o di una specifica operazione. I programmatori li usano per immagazzinare dati volatili, come cache, log intermedi o come sandbox per processi che non devono intaccare dati permanenti.
-
 ## How to:
 Per creare un file temporaneo in C#, puoi usare la classe `Path` per generare un nome di file univoco e la classe `File` per scrivere sul file:
 

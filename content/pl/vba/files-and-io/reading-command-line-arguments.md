@@ -14,12 +14,7 @@ title: "Czytanie argument\xF3w z linii polece\u0144"
 weight: 23
 ---
 
-## Co i Dlaczego?
-
-Odczytywanie argumentów linii komend w Visual Basic for Applications (VBA) polega na dostępie do parametrów przekazanych do programu podczas jego wykonania. Technika ta jest często stosowana, aby wpłynąć na zachowanie lub wynik programu bez potrzeby interakcji użytkownika, co znacznie upraszcza zadania automatyzacji i skryptowania, czyniąc je bardziej wszechstronnymi.
-
 ## Jak to zrobić:
-
 W przeciwieństwie do bardziej prostych środowisk programistycznych, VBA nie posiada wbudowanej funkcji bezpośredniego odczytu argumentów linii komend w tradycyjnym sensie, ponieważ jest przede wszystkim przeznaczony do wbudowania w aplikacje Microsoft Office. Jednak, dzięki odrobinie kreatywności, możemy użyć Windows Script Host (WSH) lub wywołać zewnętrzne API, aby osiągnąć podobną funkcjonalność. Oto praktyczne obejście przy użyciu WSH:
 
 1. **Utwórz skrypt VBScript, aby przekazać argumenty do VBA:**
@@ -54,7 +49,6 @@ cscript yourScript.vbs "Hello" "World"
    To powinno skutkować wykonaniem Twojego makra VBA z argumentami "Hello" i "World", które zostaną wyświetlone w oknie wiadomości.
 
 ## W głąb tematu:
-
 W kontekście historycznym, VBA został zaprojektowany, aby rozszerzyć możliwości aplikacji Microsoft Office, a nie jako samodzielne środowisko programistyczne. Dlatego bezpośrednia interakcja z linią komend wykracza poza jego główny zakres, co tłumaczy brak wbudowanego wsparcia dla odczytu argumentów linii komend.
 
 Przedstawiona powyżej metoda, choć skuteczna, jest raczej obejściem niż natywnym rozwiązaniem, wykorzystując skrypty zewnętrzne, aby zasypać lukę. Podejście to może wprowadzać złożoność i potencjalne zagrożenia bezpieczeństwa, ponieważ wymaga włączenia makr i potencjalnie obniżenia ustawień bezpieczeństwa, aby je wykonywać.

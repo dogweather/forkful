@@ -10,9 +10,6 @@ title: "H\xE4mta en webbsida"
 weight: 42
 ---
 
-## Vad & Varför?
-Att ladda ned en webbsida innebär att hämta allt innehåll från en webbsida till din lokala enhet. Programmerare gör detta för att analysera webbinnehållet, skapa säkerhetskopior eller för att arbeta offline.
-
 ## Så här gör du:
 Enkel nedladdning med `curl`:
 ```Bash

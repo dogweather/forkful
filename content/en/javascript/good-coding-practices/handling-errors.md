@@ -9,12 +9,7 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-
-Error handling is how you manage when things go sideways in your code. It's key because it helps your programs fail gracefully and instructs users clearly, instead of just crashing and burning.
-
 ## How to:
-
 Here's the classic `try-catch` block:
 
 ```javascript
@@ -54,7 +49,6 @@ fetchData();
 ```
 
 ## Deep Dive
-
 Error handling in JavaScript has evolved. Back in the day (ES3, circa 1999), we just had the `try-catch` block. Not super flexible, but it did the job.
 
 ES6 (2015) introduced Promises and gave us `.then()` and `.catch()`, allowing us to handle asynchronous errors more gracefully.
@@ -70,7 +64,6 @@ As for implementation details, when an error is thrown, JavaScript engines creat
 Alternatives? You could ignore error handling (bad idea), use callbacks with error-first parameters (hello, Node.js style), or get fancier with libraries and frameworks that offer their takes.
 
 ## See Also
-
 For more on error handling:
 
 - MDN on try-catch: [MDN try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)

@@ -14,12 +14,7 @@ title: "Drukowanie informacji wyj\u015Bciowych debugowania"
 weight: 33
 ---
 
-## Co i dlaczego?
-
-Drukowanie wyjścia debugowania polega na strategicznym umieszczaniu w kodzie instrukcji logowania w celu wyświetlenia wartości zmiennych, przepływu wykonania lub błędów komunikatów podczas uruchamiania. Programiści wykorzystują to intensywnie do śledzenia i diagnozowania zachowania ich skryptów, zapewniając poprawność i efektywność w swoich aplikacjach Google Apps Script.
-
 ## Jak to zrobić:
-
 Google Apps Script zapewnia klasę `Logger` dla podstawowego debugowania, a dla bardziej zaawansowanych potrzeb, klasę `console` wprowadzoną w środowisku uruchomieniowym V8.
 
 **Korzystanie z Logger:**
@@ -56,7 +51,6 @@ Aktualny status: aktywny, Ilość: 150
 ```
 
 ## Pogłębiona analiza
-
 Początkowo `Logger.log` był głównym narzędziem do debugowania w Google Apps Script, oferując prosty, bezpośredni sposób na drukowanie wyjścia do inspekcji. Jednakże, w miarę jak skrypty stawały się bardziej złożone i integrowane z usługami Google Cloud Platform, potrzeba bardziej solidnego rozwiązania do logowania stała się oczywista.
 
 Wprowadzenie środowiska uruchomieniowego V8 przyniosło `console.log` do użytku. Nie tylko dostosowuje Google Apps Script do standardowej składni JavaScript, czyniąc język bardziej dostępnym dla programistów znających JavaScript, ale także wykorzystuje potężną infrastrukturę logowania Google Cloud. Wprowadzenie `console.log` i jego integracja z Google Cloud Platform oznacza znaczną ewolucję w zakresie możliwości debugowania w Google Apps Script, zapewniając programistom bardziej dynamiczne i skalowalne podejście do monitorowania i rozwiązywania problemów ze swoimi skryptami.

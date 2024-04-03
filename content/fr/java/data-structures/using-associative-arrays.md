@@ -13,12 +13,7 @@ title: Utilisation des tableaux associatifs
 weight: 15
 ---
 
-## Quoi & Pourquoi ?
-
-En Java, les tableaux associatifs ou les maps, vous permettent de stocker des paires clé-valeur pour une recherche et une manipulation efficaces des données. Les programmeurs les utilisent pour des tâches comme compter les occurrences d'éléments ou mapper des utilisateurs à leurs permissions parce qu'ils offrent un accès et des mises à jour rapides.
-
 ## Comment :
-
 Java n'a pas de tableaux associatifs intégrés comme certains langages, mais il fournit l'interface `Map` et des classes comme `HashMap` et `TreeMap` pour remplir ce rôle. Voici comment utiliser un `HashMap` :
 
 ```Java
@@ -62,7 +57,6 @@ Charlie a 28 ans.
 `HashMap` est seulement une implémentation. Si vos clés sont uniques et que vous avez besoin qu'elles soient triées, considérez `TreeMap`. Pour une map qui retient l'ordre d'insertion, `LinkedHashMap` est votre ami.
 
 ## Plongée profonde
-
 Les maps en Java font partie du Framework de Collections, introduit dans JDK 1.2, mais ont vu des améliorations significatives au fil des années, y compris l'introduction de la méthode `forEach` dans Java 8 pour une itération plus facile sur les entrées. Le choix de l'implémentation de map (`HashMap`, `LinkedHashMap`, `TreeMap`) devrait être dicté par vos besoins spécifiques en termes d'ordonnancement et de performance. Par exemple, `HashMap` offre une performance de temps O(1) pour les opérations de base (get et put), en supposant que la fonction de hachage disperse correctement les éléments parmi les seaux. Cependant, si vous avez besoin d'un tri basé sur l'ordre naturel ou des comparateurs personnalisés, `TreeMap` est à privilégier, offrant un temps O(log n) pour l'insertion et la recherche.
 
 Avant l'introduction de `Map`, les tableaux associatifs étaient généralement implémentés avec deux tableaux parallèles (un pour les clés, un pour les valeurs) ou des structures de données personnalisées avec moins d'efficacité. Les alternatives actuelles à `Map` et ses implémentations pourraient inclure des bibliothèques tierces offrant des maps spécialisées, telles que les maps bidirectionnelles (BiMap dans la bibliothèque Guava de Google) pour les cas où vous avez besoin de trouver une clé par sa valeur efficacement. Cependant, pour la plupart des cas d'utilisation en Java, les maps de la bibliothèque standard sont assez robustes et flexibles pour gérer la tâche.

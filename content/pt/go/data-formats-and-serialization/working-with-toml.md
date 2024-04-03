@@ -13,12 +13,7 @@ title: Trabalhando com TOML
 weight: 39
 ---
 
-## O Que & Por Quê?
-
-TOML (Tom's Obvious, Minimal Language) é um formato de arquivo de configuração que é fácil de ler devido à sua sintaxe simples. Programadores usam TOML para configurar configurações de aplicativos e dependências por causa de sua clareza e mapeamento direto para estruturas de dados, tornando-o uma escolha popular em muitos projetos Go para configurar e gerenciar configurações.
-
 ## Como Fazer:
-
 Para começar a trabalhar com TOML em Go, você primeiro precisa incluir uma biblioteca que possa analisar arquivos TOML, já que a biblioteca padrão do Go não suporta TOML nativamente. O pacote `BurntSushi/toml` é uma escolha popular para isso. Primeiro, certifique-se de instalá-lo:
 
 ```bash
@@ -78,7 +73,6 @@ Servidor da Base de Dados: 192.168.1.1
 ```
 
 ## Aprofundando
-
 TOML foi criado por Tom Preston-Werner, um dos cofundadores do GitHub, para oferecer um formato de arquivo de configuração direto que pode ser facilmente mapeado para uma tabela de hash e ser compreendido à primeira vista sem conhecimento prévio do formato. Ele contrasta com JSON ou YAML, que, embora também amplamente usados, podem ser menos amigáveis para arquivos de configuração por conta de chaves, aspas e problemas de indentação.
 
 O pacote `BurntSushi/toml` em Go é uma biblioteca robusta que permite não apenas a decodificação, mas também a codificação de arquivos TOML, tornando-a uma escolha versátil para aplicações que precisam ler e escrever arquivos de configuração neste formato. No entanto, deve-se observar que com o avanço das tecnologias e a introdução de novas versões do Go, alternativas como `pelletier/go-toml` surgiram, oferecendo melhor desempenho e recursos adicionais como manipulação de árvores e suporte a consultas.

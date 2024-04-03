@@ -16,9 +16,6 @@ title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---
 
-## Cái gì & Tại sao?
-Việc bắt đầu một dự án mới là việc đặt nền móng cho tác phẩm lập trình của bạn. Là những lập trình viên, chúng ta làm điều này để khởi đầu một ý tưởng mới hoặc triển khai các giải pháp một cách có tổ chức, dễ mở rộng.
-
 ## Cách thực hiện:
 PowerShell làm cho việc tạo một dự án mới trở nên đơn giản. Bạn có thể muốn tạo một thư mục cho dự án của mình và thiết lập một kho lưu trữ git. Dưới đây là cách làm:
 

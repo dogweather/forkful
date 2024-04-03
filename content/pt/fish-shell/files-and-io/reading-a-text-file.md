@@ -11,9 +11,6 @@ title: Lendo um arquivo de texto
 weight: 22
 ---
 
-## O Quê & Por Quê?
-Ler um arquivo de texto é acessar o conteúdo de um arquivo no formato de texto simples. Programadores fazem isso para processamento, análise de dados e automação de tarefas.
-
 ## Como fazer:
 ```Fish Shell
 # Ler todo o conteúdo do arquivo

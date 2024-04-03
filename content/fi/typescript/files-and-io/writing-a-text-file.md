@@ -12,9 +12,6 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä ja miksi?
-Tekstitiedoston kirjoittaminen TypeScriptillä on kriittinen taito datan pysyvyyden, konfiguraatioiden tai lokiin kirjoittamisen kannalta. Ohjelmoijat suorittavat usein tämän tehtävän tallentaakseen ja manipuloidakseen tietoa sovelluksen muistin ulkopuolella syistä kuten datan analysointi, raportointi tai yksinkertaisesti käyttäjäasetusten tallentaminen istuntojen välillä.
-
 ## Kuinka:
 TypeScript ei itsessään käsittele suoraan tiedosto-operaatioita, sillä se kääntyy JavaScriptiksi, joka perinteisesti toimii selaimessa rajoitetulla pääsyllä tiedostojärjestelmään. Kuitenkin, kun sitä käytetään Node.js-ympäristössä, `fs`-moduuli (File System) tarjoaa toiminnallisuuden tiedostojen kirjoittamiseen.
 

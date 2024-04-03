@@ -10,9 +10,6 @@ title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---
 
-## Was & Warum?
-Ein REPL (Read-Eval-Print Loop) ist eine interaktive Shell, die einzelne Benutzereingaben verarbeitet, Code ausführt und das Ergebnis zurückgibt. Programmierer nutzen es für schnelle Experimente, Debugging oder zum Lernen, da es sofortiges Feedback und Iteration ermöglicht.
-
 ## Wie geht das:
 Ein REPL in Java zu starten ist einfach mit dem `jshell`-Werkzeug, das in Java 9 eingeführt wurde. So bekommen Sie es in die Hand und starten eine Grundsession:
 

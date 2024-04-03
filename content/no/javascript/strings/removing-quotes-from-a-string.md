@@ -12,9 +12,6 @@ title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---
 
-## Hva & Hvorfor?
-Å fjerne anførselstegn fra en streng betyr å bli kvitt de irriterende anførselstegnene som kan rote til koden din, spesielt når du analyserer data eller konstruerer JSON-objekter. Programmerere gjør det for å rense inndata, unngå syntaksfeil og få strenger til å spille fint sammen med andre deler av koden sin.
-
 ## Hvordan:
 Forestille deg at du har en streng som er innpakket i doble anførselstegn, som `"\"Hei, verden!\""` og du ønsker den rene, uten anførselstegn-teksten. Her er et raskt JavaScript-kodesnutt for å frigjøre strengen din fra de anførselstegns lenkene:
 

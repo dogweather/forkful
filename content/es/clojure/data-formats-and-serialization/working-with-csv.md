@@ -13,11 +13,8 @@ title: Trabajando con CSV
 weight: 37
 ---
 
-## Qué y Por Qué
-
-Trabajar con archivos CSV (Valores Separados por Comas) implica analizar y generar datos de texto estructurados como filas y columnas, similar a los datos de una hoja de cálculo. Este proceso es esencial para el intercambio de datos entre aplicaciones, bases de datos, y para tareas de transformación de datos, debido a la amplia adopción del CSV como un formato ligero e interoperable.
-
 ## Cómo:
+
 
 ### Leyendo un Archivo CSV
 Clojure no tiene análisis de CSV incorporado en su biblioteca estándar, pero puedes usar la biblioteca `clojure.data.csv` para este propósito. Primero, añade la biblioteca a las dependencias de tu proyecto.
@@ -52,5 +49,4 @@ Para escribir datos en un archivo CSV, puedes usar la misma biblioteca `clojure.
 Esto crea o sobrescribe `archivodesalida.csv`, llenándolo con los datos especificados.
 
 ### Usando una Biblioteca de Terceros: `clojure.data.csv`
-
 Aunque `clojure.data.csv` es posiblemente la biblioteca más sencilla para manejar CSV en Clojure, para tareas más complejas, como manejar CSVs con caracteres especiales o delimitadores no convencionales, podrías explorar opciones adicionales dentro del ecosistema o incluso considerar interoperabilidad con Java con bibliotecas como Apache Commons CSV. Sin embargo, para la mayoría de las tareas estándar de procesamiento de CSV en Clojure, `clojure.data.csv` proporciona un conjunto de herramientas simple y efectivo.

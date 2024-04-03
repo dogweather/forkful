@@ -11,9 +11,6 @@ title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---
 
-## Mikä & Miksi?
-Lainausmerkkien poistaminen merkkijonosta tarkoittaa ärsyttävien kaksin- tai yksinkertaisten merkkien (‘ tai ”) kuorimista tekstistämme. Ohjelmoijat tekevät tätä usein syötteen puhdistamiseksi, tekstin tallentamiseksi tietokantaan tai merkkijonojen esikäsittelyksi ilman lainausmerkkien sotkua.
-
 ## Kuinka:
 Tässä suoraviivainen tapa heittää nuo lainausmerkit roskakoriin C++:ssa:
 

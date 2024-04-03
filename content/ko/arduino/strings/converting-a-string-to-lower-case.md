@@ -16,9 +16,6 @@ title: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uAE
 weight: 4
 ---
 
-## What & Why? (무엇과 왜?)
-문자열을 소문자로 변환한다는 것은, 모든 대문자 알파벳을 소문자로 바꾸는 것을 말합니다. 이는 데이터 처리나 사용자 입력을 표준화하기 위해 필요합니다.
-
 ## How to: (방법)
 ```Arduino
 String originalString = "Hello, World!";

@@ -13,9 +13,6 @@ title: Een tekstbestand lezen
 weight: 22
 ---
 
-## Wat & Waarom?
-Een tekstbestand lezen is het ophalen van gegevens uit een bestand dat tekst bevat. Programmeurs doen dit om configuraties te laden, gegevens te lezen of bronnen op te halen die te omvangrijk of ongeschikt zijn om hard in de code te zetten.
-
 ## Hoe te:
 Laten we er direct induiken. Hier is hoe je uit een bestand leest in C# met `System.IO`.
 

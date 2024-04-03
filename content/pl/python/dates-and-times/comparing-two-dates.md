@@ -11,9 +11,6 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## Co i Dlaczego?
-Porównywanie dwóch dat to sprawdzanie, która z nich jest wcześniejsza, późniejsza lub czy są identyczne. Programiści to robią, by zarządzać wydarzeniami, wygasaniem certyfikatów czy datami ważności.
-
 ## Jak to zrobić:
 ```Python
 from datetime import datetime

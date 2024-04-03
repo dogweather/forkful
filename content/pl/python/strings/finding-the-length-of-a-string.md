@@ -10,9 +10,6 @@ title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---
 
-## What & Why? (Co i Dlaczego?)
-Zliczanie znaków w ciągu znaków to podstawa. Programiści robią to, by wiedzieć, ile danych mają przed sobą – czy to walidując input, formatując tekst, czy sprawdzając na potrzeby logiki programu.
-
 ## How to: (Jak to zrobić:)
 ```Python
 # Zliczanie znaków w Pythonie

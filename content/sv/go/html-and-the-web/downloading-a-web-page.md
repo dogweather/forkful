@@ -13,12 +13,7 @@ title: Ladda ner en webbsida
 weight: 42
 ---
 
-## Vad & Varför?
-
-Att ladda ner en webbsida handlar om att hämta HTML-innehållet på en webbsida via HTTP/HTTPS-protokollet. Programmerare gör ofta detta för webbskrapning, dataanalys eller helt enkelt för att programmässigt interagera med webbplatser för att automatisera uppgifter.
-
 ## Hur man gör:
-
 I Go tillhandahåller standardbiblioteket kraftfulla verktyg för webbansökningar, framför allt `net/http`-paketet. För att ladda ner en webbsida använder vi främst metoden `http.Get`. Här är ett grundläggande exempel:
 
 ```go
@@ -65,7 +60,6 @@ Detta enkla program gör en HTTP GET-förfrågan till den angivna URL:en, läser
 Notera: I modern Go-programmering anses `ioutil.ReadAll` vara föråldrad sedan Go 1.16 till förmån för `io.ReadAll`.
 
 ## Djupdykning
-
 Go-språket har en designfilosofi som betonar enkelhet, effektivitet och pålitlig felhantering. När det kommer till nätverksprogrammering, och specifikt nedladdning av webbsidor, är Go:s standardbibliotek, särskilt `net/http`, effektivt utformat för att hantera HTTP-begäran- och svar-operationer.
 
 Tillvägagångssättet för nätverksförfrågningar i Go går tillbaka till språkets ursprung, där man lånat koncept från föregångare men betydligt förbättrat effektiviteten och enkelheten. För nedladdning av innehåll gör Go:s konkurrensmodell med hjälp av gorutiner det till ett exceptionellt kraftfullt verktyg för att göra asynkrona HTTP-förfrågningar, och hantera tusentals förfrågningar parallellt med lätthet.

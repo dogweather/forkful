@@ -12,11 +12,7 @@ title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---
 
-## What & Why?
-Lasketaan tulevaisuuden tai menneisyyden päivämäärä: ohjelmoijat tekevät tätä, kun tarvitaan erityispäivien käsittelyä tai aikajaksojen laskentaa.
-
 ## How to:
-
 Laske päivä 10 päivän päähän:
 
 ```PowerShell

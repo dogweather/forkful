@@ -13,16 +13,10 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i dlaczego?
-
-Pisanie testów w Rust polega na tworzeniu automatycznych kontroli, aby zapewnić, że kod działa zgodnie z oczekiwaniami. Programiści robią to, aby wcześnie wykrywać błędy, ułatwić refaktoryzację i utrzymać jakość kodu na przestrzeni czasu.
-
 ## Jak to zrobić:
-
 Wbudowany framework testowy Rusta wspiera testy jednostkowe, integracyjne oraz dokumentacyjne bez potrzeby korzystania z zewnętrznych bibliotek. Testy są oznaczane za pomocą `#[test]`, a każda funkcja tak oznaczona jest kompilowana jako test.
 
 ### Pisząc test jednostkowy:
-
 Umieść testy jednostkowe w module, który testują, używając podmodułu `tests`, oznaczonego za pomocą `#[cfg(test)]`, aby zapewnić, że będą kompilowane tylko podczas testowania.
 
 ```rust
@@ -60,7 +54,6 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
 ### Pisząc testy integracyjne:
-
 Testy integracyjne umieszcza się w katalogu tests na najwyższym poziomie projektu, obok `src`. Każdy plik `.rs` w `tests` jest kompilowany jako oddzielny crate.
 
 ```rust
@@ -74,7 +67,6 @@ fn it_adds_two() {
 ```
 
 ### Testowanie z popularnymi bibliotekami innych firm:
-
 Dla bardziej zaawansowanych możliwości testowania, biblioteka `proptest` może generować szeroki zakres danych wejściowych do testowania funkcji.
 
 Dodaj `proptest` jako zależność deweloperską w `Cargo.toml`:

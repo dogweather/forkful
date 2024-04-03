@@ -12,9 +12,6 @@ title: Lavorare con YAML
 weight: 41
 ---
 
-## Cosa & Perché?
-YAML, acronimo di YAML Ain't Markup Language, è un formato di serializzazione di dati leggibile dall'uomo. I programmatori utilizzano YAML per file di configurazione, messaggistica tra processi e archiviazione di dati a causa della sua semplice sintassi e della facilità di lettura rispetto ad altri formati come XML o JSON.
-
 ## Come fare:
 Leggere e scrivere YAML in Python in genere comporta l'utilizzo di una libreria di terze parti, con `PyYAML` che è la più popolare. Per iniziare, dovrai installare PyYAML eseguendo `pip install PyYAML`.
 

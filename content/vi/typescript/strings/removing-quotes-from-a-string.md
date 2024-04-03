@@ -16,9 +16,6 @@ title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---
 
-## Cái gì & Tại sao?
-Xóa dấu ngoặc khỏi một chuỗi có nghĩa là loại bỏ các ký tự dấu ngoặc đơn (`'`) hoặc dấu ngoặc kép (`"`) bao quanh định nghĩa chuỗi trong code. Lập trình viên làm điều này vì nhiều lý do, như định dạng đầu ra, làm sạch đầu vào người dùng, hoặc chuẩn bị chuỗi cho việc phân tích cú pháp hoặc lưu trữ khi mà dấu ngoặc là không cần thiết hoặc có thể gây ra lỗi.
-
 ## Làm thế nào:
 Đây là hướng dẫn không lan man về cách cắt bỏ những dấu ngoặc phiền phức khỏi chuỗi của bạn trong TypeScript.
 

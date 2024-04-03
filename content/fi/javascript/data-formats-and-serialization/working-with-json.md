@@ -14,11 +14,8 @@ title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---
 
-## Mikä & Miksi?
-
-JSON (JavaScript Object Notation) on kevyt datanvaihtoformaatti, joka on ihmisten luettavissa ja kirjoitettavissa sekä koneiden jäsentämässä ja generoimassa helposti. Ohjelmoijat käyttävät sitä datan tallentamiseen ja kuljettamiseen web-sovelluksissa, tehden siitä nykyaikaisten APIen ja web-palveluiden kommunikaation selkärangan.
-
 ## Kuinka:
+
 
 ### JSONin jäsentäminen
 JSON-merkkijonon muuntamiseksi JavaScript-objektiksi, käytä `JSON.parse()`.

@@ -12,12 +12,7 @@ title: "\xC5 Arbeide med JSON"
 weight: 38
 ---
 
-## Hva og hvorfor?
-
-JSON, eller JavaScript Object Notation, er et lettvektsformat for lagring og transport av data, ideelt for server-til-klient-kommunikasjon og konfigurasjonsfiler. Programmerere utnytter det i Google Apps Script for sømløs datautveksling mellom Googles tjenester (som Sheets, Docs, Drive) og eksterne kilder, på grunn av dets menneskelesbare struktur og enkle integrasjon i JavaScript-baserte miljøer.
-
 ## Hvordan:
-
 I Google Apps Script er manipulering av JSON en grei prosess, mye på grunn av den native støtten JavaScript tilbyr for JSON-parsing og stringifisering. Her er noen vanlige operasjoner:
 
 **1. Parse JSON**: Anta at vi henter en JSON-streng fra en webtjeneste; å parse den til et JavaScript-objekt er essensielt for datahåndtering.
@@ -52,7 +47,6 @@ Logger.log(jsonString); // Utdata: '[{"name":"Prosjekt 1","version":"1.0"},{"nam
 ```
 
 ## Dypdykk
-
 JSONs allestedsnærvær i moderne webapplikasjoner kan ikke undervurderes, rodfestet i dets enkelhet og hvor sømløst det integrerer med JavaScript, nettets språk. Dets design, inspirert av JavaScript objektlitteraler, om enn strengere, letter dets raske adopsjon. I begynnelsen av 2000-tallet, vant JSON popularitet som et alternativ til XML for AJAX-drevne webapplikasjoner, som tilbyr et lettere og mindre ordrikt datautvekslingsformat. Gitt Google Apps Scripts dype integrasjon med diverse Google APIer og eksterne tjenester, tjener JSON som et sentralt format for strukturering, transport og manipulering av data på disse plattformene.
 
 Selv om JSON troner øverst for webapplikasjoner, eksisterer alternative dataformater som YAML for konfigurasjonsfiler eller Protobuf for mer effektiv binær serialisering i høytytende miljøer. Likevel, JSONs balanse av lesbarhet, brukervennlighet, og bred støtte på tvers av programmeringsspråk og verktøy, sementerer dets posisjon som et standardvalg for mange utviklere som går inn i Google Apps Script og videre.

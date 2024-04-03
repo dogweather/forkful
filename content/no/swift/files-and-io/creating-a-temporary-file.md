@@ -11,9 +11,6 @@ title: Opprette en midlertidig fil
 weight: 21
 ---
 
-## What & Why?
-Midlertidige filer er som engangsbestikk for data – de brukes litt, og så forsvinner de. Programmerere bruker dem for å lagre midlertidig data som ikke trenger permanent plass, for eksempel under komplekse beregninger eller når de håndterer store databehandlingsoppgaver.
-
 ## How to:
 Lag en midlertidig fil med Swift slik:
 

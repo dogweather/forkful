@@ -11,12 +11,7 @@ title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---
 
-## Qué es y Por Qué?
-
-Interpolar una cadena es insertar variables o expresiones dentro de una cadena de texto. Los programadores lo hacen para construir mensajes dinámicos sin concatenar trozos de cadenas constantemente, simplificando así el código.
-
 ## Cómo Hacerlo:
-
 Aquí te voy a mostrar cómo interpolar cadenas en tus scripts de PowerShell. Echale un vistazo:
 
 ```PowerShell
@@ -43,7 +38,6 @@ El total con impuesto es 19.3469
 ```
 
 ## Profundizando
-
 Históricamente, antes de que la interpolación de cadenas fuera común, los programadores concatenaban variables y cadenas, lo cual podía ser tedioso. En PowerShell, la interpolación se hace sencilla gracias a las comillas dobles, que permiten incluir directamente las variables dentro del texto.
 
 Alternativas a la interpolación en PowerShell podrían incluir el uso del operador `-f`, que funciona de manera similar a `printf` en otros lenguajes:
@@ -58,5 +52,4 @@ Write-Output $saludo
 En cuanto a los detalles de implementación, la interpolación en PowerShell evalúa todo lo que esté dentro de `$()` como una expresión, lo que significa que puedes incluso realizar operaciones complejas y llamar funciones dentro de una cadena.
 
 ## Vea También
-
 Para más información, puedes visitar la documentación oficial de PowerShell:

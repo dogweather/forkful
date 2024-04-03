@@ -11,11 +11,7 @@ title: Reading a text file
 weight: 22
 ---
 
-## What & Why?
-Reading a text file means accessing the content of a file stored on disk through code. Programmers do it to process, analyze, or display data within their applications.
-
 ## How to:
-
 Reading a file in Ruby is straightforward. You can use the `File` class, which provides different methods to read files. Here's a simple example of reading an entire file:
 
 ```Ruby
@@ -43,7 +39,6 @@ Hello, Ruby!
 ```
 
 ## Deep Dive:
-
 Historically, reading files has been a core feature of programming languages, allowing interactions with the filesystem.
 
 In Ruby, you can also read a file with different tools:
@@ -55,6 +50,5 @@ In Ruby, you can also read a file with different tools:
 There's a trade-off to consider: `File.read` is neat for small files, but it can be memory intensive for larger ones. That's when reading line by line or in chunks becomes valuable.
 
 ## See Also:
-
 - Ruby Docs for the `File` class: [ruby-doc.org/core/File.html](https://ruby-doc.org/core/File.html)
 - Stack Overflow discussions on file reading in Ruby: [stackoverflow.com/questions/tagged/ruby+file-io](https://stackoverflow.com/questions/tagged/ruby+file-io)

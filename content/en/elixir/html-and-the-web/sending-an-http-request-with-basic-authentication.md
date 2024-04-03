@@ -11,12 +11,7 @@ title: Sending an HTTP request with basic authentication
 weight: 45
 ---
 
-## What & Why?
-
-Sending an HTTP request with basic authentication involves adding a username and password to your request to access a protected resource. Programmers do it to ensure secure data access and transfer, keeping unauthorized users out.
-
 ## How to:
-
 To send an HTTP request with basic authentication in Elixir, you can use the `HTTPoison` library:
 
 ```elixir
@@ -55,7 +50,6 @@ IO.inspect(response.status_code)  # Should be 200 if authentication is successfu
 If basic authentication is successful, you'll get a `200` status code. Failed authentication typically results in a `401`.
 
 ## Deep Dive
-
 Basic authentication is a part of HTTP defined in RFC 7617, dating back to the very early web. It's simple but less secure than modern methods, sending credentials in every request (base64 encoded not encrypted).
 
 Alternatives include:
@@ -71,7 +65,6 @@ Implementation-wise, when using `HTTPoison`, we:
 Remember, basic auth is clear-text and can be easily decoded. It's safe only over HTTPS.
 
 ## See Also
-
 - HTTPoison documentation: https://hexdocs.pm/httpoison
 - Basic authentication schema (RFC 7617): https://tools.ietf.org/html/rfc7617
 - Elixir's `Base` module documentation: https://hexdocs.pm/elixir/Base.html

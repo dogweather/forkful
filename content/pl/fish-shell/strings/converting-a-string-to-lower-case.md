@@ -11,9 +11,6 @@ title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## Co i Dlaczego?
-Konwersja ciągu znaków na małe litery polega na zmianie wszystkich wielkich liter w napisie na ich małe odpowiedniki. Programiści robią to, by ujednolicić dane, np. przy porównywaniu ciągów bez uwzględniania wielkości liter.
-
 ## Jak to zrobić:
 W Fish, przekształcanie tekstu na małe litery jest takie proste, jak użycie wbudowanej funkcji `string`. Oto jak to działa:
 

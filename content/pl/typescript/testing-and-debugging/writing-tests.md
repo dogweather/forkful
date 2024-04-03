@@ -13,9 +13,6 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i Dlaczego?
-Pisanie testów w TypeScript polega na tworzeniu automatycznych skryptów sprawdzających funkcjonalność i poprawność Twojego kodu. Programiści robią to, aby zapewnić niezawodność, szybko łapać błędy i ułatwić utrzymywanie wzrostu kodu, ponieważ statyczne typowanie TypeScript dodaje poziom przewidywalności do testowania JavaScript.
-
 ## Jak to zrobić:
 TypeScript doskonale współpracuje z większością frameworków do testowania JavaScript. Dla celów demonstracyjnych użyjemy Jest, popularnego frameworka testowego, ze względu na jego konfigurację zerową dla projektów TypeScript.
 

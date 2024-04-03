@@ -13,11 +13,7 @@ title: Arbeide med CSV
 weight: 37
 ---
 
-## Hva & Hvorfor?
-Å arbeide med CSV-filer (Comma-Separated Values) i Bash innebærer å behandle og manipulere tabelldata lagret i vanlig tekstformat. Dette er essensielt for programmerere da det muliggjør automatisering av oppgaver relatert til datatransformasjon, analyse og integrasjon direkte fra kommandolinjen, uten behov for tyngre verktøy eller programmeringsmiljøer.
-
 ## Hvordan:
-
 **Lese en CSV-fil Linje for Linje**
 
 ```bash

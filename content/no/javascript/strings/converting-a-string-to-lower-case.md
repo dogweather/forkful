@@ -11,9 +11,6 @@ title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---
 
-## Hva & Hvorfor?
-Å konvertere en streng til små bokstaver betyr å endre alle store bokstaver i teksten til deres små bokstav-ekvivalenter. Programmerere gjør dette for å forenkle sammenligning og behandling av tekst, for eksempel søk eller sortering.
-
 ## Hvordan:
 ```javascript
 let hilsen = "Hei, Verden!";
@@ -21,6 +18,7 @@ let litenHilsen = hilsen.toLowerCase();
 
 console.log(litenHilsen);  // Output: "hei, verden!"
 ```
+
 ## Dypdykk:
 Tidligere måtte programmerere kanskje håndtere omregning av tekst manuelt, men JavaScript har lenge hatt innebygde metoder for å gjøre dette enkelt. Metoden `toLowerCase()` er ikke den eneste—det finnes også `toUpperCase()`, for å gjøre om til store bokstaver, og med ECMAScript 2015 (ES6) kan vi bruke `localeCompare()` for å sammenligne strenger på en lokalisert måte.
 

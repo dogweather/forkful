@@ -12,9 +12,6 @@ title: "Loggf\xF8ring"
 weight: 17
 ---
 
-## Hva & Hvorfor?
-Logging, kort fortalt, er som å føre en dagbok for din applikasjon – det registrerer hendelser, feil og andre vesentlige handlinger som finner sted mens programvaren kjører. Programmerere gjør dette ikke bare for å forstå hva som skjer under panseret i sanntid, men også for å ha en historisk oversikt som er avgjørende for feilsøking, revisjon og optimalisering av ytelse.
-
 ## Hvordan gjøre det:
 Rett ut av boksen, tilbyr JavaScript en enkel måte å logge meldinger til konsollen på:
 

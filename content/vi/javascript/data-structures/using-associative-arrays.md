@@ -16,12 +16,7 @@ title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---
 
-## Cái gì & Tại sao?
-
-Mảng kết hợp, hoặc như chúng được biết đến chính xác hơn trong JavaScript, là đối tượng (objects), cho phép bạn ánh xạ các khóa với giá trị. Điều này rất tiện lợi khi bạn cần một tập hợp các phần tử mà bạn muốn truy cập thông qua các tên cụ thể (các khóa) thay vì chỉ mục số, làm cho mã của bạn trở nên dễ đọc và linh hoạt hơn.
-
 ## Cách thực hiện:
-
 Việc tạo và sử dụng mảng kết hợp (objects) trong JavaScript rất đơn giản. Bạn định nghĩa một đối tượng với các dấu ngoặc nhọn `{}`, và bên trong đó, bạn có thể định nghĩa một tập hợp các cặp khóa-giá trị. Các khóa luôn là chuỗi, và giá trị có thể là bất kỳ thứ gì: chuỗi, số, mảng, thậm chí là các đối tượng khác.
 
 ```javascript
@@ -67,7 +62,6 @@ console.log(userInfo);
 Như bạn thấy, việc truy cập, thêm, hoặc xóa các phần tử trong một mảng kết hợp khá trực tiếp và trực quan.
 
 ## Sâu hơn nữa
-
 Trong thế giới JavaScript, mặc dù chúng ta thường nghe thuật ngữ "mảng kết hợp," đó kỹ thuật là một tên gọi không chính xác bởi vì JavaScript không có mảng kết hợp thực sự như các ngôn ngữ khác (ví dụ: PHP). Những gì JavaScript có là các đối tượng phục vụ một mục đích tương tự nhưng là một cấu trúc mạnh mẽ và linh hoạt hơn.
 
 Truyền thống, các mảng trong ngôn ngữ lập trình được thiết kế để chứa một tập hợp các mục, được truy cập thông qua chỉ mục số của chúng. Tuy nhiên, khi phát triển phần mềm tiến triển, nhu cầu về các cấu trúc dữ liệu linh hoạt hơn xuất hiện. Mảng kết hợp, hoặc từ điển trong các ngôn ngữ khác, là một phản ứng, cho phép truy cập vào các phần tử thông qua các khóa tùy ý.

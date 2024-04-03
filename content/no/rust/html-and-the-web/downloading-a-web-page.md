@@ -10,9 +10,6 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Nedlasting av en nettside betyr å hente dens innhold over internett. Programmerere gjør det for å analysere data, sjekke tilgjengelighet eller integrere eksterne data i egne applikasjoner.
-
 ## How to: (Hvordan:)
 ```Rust
 use reqwest;

@@ -11,9 +11,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---
 
-## What & Why? (Mitä ja Miksi?)
-Muunnamme päivämäärän merkkijonoksi, koska ihmissilmälle ymmärrettävä muoto on helpompi käsitellä. Ohjelmoinnissa se on hyödyllistä lokitusta, käyttöliittymien näyttöä ja päivämääräkäsittelyä varten.
-
 ## How to: (Kuinka tehdä:)
 ```Java
 import java.time.LocalDate;

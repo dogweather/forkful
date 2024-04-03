@@ -12,9 +12,6 @@ title: "XML:n k\xE4sittely"
 weight: 40
 ---
 
-## Mikä & Miksi?
-XML:n käsittely tarkoittaa tietojen käsittelyä laajalti käytetyssä, rakenteellisessa muodossa, jota käytetään konfiguraatioissa, viestinnässä ja muussa. Ohjelmoijat manipuloivat XML:ää lukeakseen, kirjoittaakseen, päivittääkseen ja kyselläkseen tietoja - elintärkeää interoperabiliteetille lukemattomissa appeissa ja palveluissa.
-
 ## Kuinka:
 Fish ei sisällä valmiina XML-jäsentämistä, joten nojaudut ulkoisiin työkaluihin, kuten `xmllint` tai `xmlstarlet`. Tässä on katkelma arvojen lukemiseksi:
 

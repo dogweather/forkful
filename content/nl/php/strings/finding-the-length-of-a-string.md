@@ -12,12 +12,7 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-
-De lengte van een string bepalen betekent vaststellen uit hoeveel karakters deze bestaat. Programmeurs hebben deze informatie vaak nodig voor taken zoals het valideren van invoer, het beheren van substrings of gewoon het formatteren van de output.
-
 ## Hoe:
-
 Gebruik de `strlen()` functie zoals dit:
 
 ```php
@@ -31,7 +26,6 @@ echo $length; // Uitvoer: 13
 Als je dit uitvoert, zie je `13` op je scherm omdat "Hello, world!" 13 karakters lang is, inclusief de spatie en uitroepteken.
 
 ## Diepgaand
-
 De `strlen()` functie is onderdeel van PHP sinds de vroege versies. Het is eenvoudig en werkt op basis van het aantal bytes, wat meestal overeenkomt met het aantal karakters in strings zonder speciale coderingsoverwegingen.
 
 Echter, met de internationalisering van webapplicaties werd het gebruikelijk om met meerdere talen en karaktercoderingen om te gaan. Karakters in UTF-8 kunnen bijvoorbeeld meer dan één byte gebruiken. Dat is waar `mb_strlen()` om de hoek komt kijken:
@@ -50,7 +44,6 @@ Vijf karakters, maar meer bytes. De `mb_strlen()` functie respecteert karakterco
 `strlen()` is snel en geschikt voor single-byte karaktersets. `mb_strlen()`, hoewel iets langzamer vanwege de noodzaak om met meer complexe codering om te gaan, is noodzakelijk wanneer je werkt met geïnternationaliseerde tekst.
 
 ## Zie Ook
-
 - [PHP `strlen()` officiële documentatie](https://www.php.net/manual/en/function.strlen.php)
 - [PHP `mb_strlen()` officiële documentatie](https://www.php.net/manual/en/function.mb-strlen.php)
 - [PHP Multibyte String uitbreiding](https://www.php.net/manual/en/book.mbstring.php)

@@ -12,12 +12,7 @@ title: Het huidige datum ophalen
 weight: 29
 ---
 
-## Wat & Waarom?
-
-In programmeren helpt het verkrijgen van de huidige datum bij het volgen van gebeurtenissen of het loggen van gegevens. Het is praktisch voor zaken zoals tijdstempels, schema's, of gewoon weten wanneer iets gebeurt.
-
 ## Hoe te:
-
 ```Rust
 use chrono::{DateTime, Local};
 
@@ -33,7 +28,6 @@ Uitvoer:
 ```
 
 ## Diepere Duik
-
 Rust, een systeemtaal die zich richt op veiligheid en prestaties, is niet voorzien van datum- en tijdfunctionaliteiten in zijn standaardbibliotheek. In plaats daarvan bouwt de gemeenschap crates - Rust's term voor bibliotheken of pakketten. Een uitblinker is `chrono`.
 
 `chrono` biedt uitgebreide datum- en tijdfuncties. Bovendien handelt het tijdzones af, wat niet triviaal is. De crate gebruikt de tijdszonegegevens van `IANA` (Internet Assigned Numbers Authority) om lokale datums en tijden correct weer te geven.
@@ -45,7 +39,6 @@ Het verkrijgen van de lokale tijd houdt systeemaanroepen in die interageren met 
 De implementatiedetails verdienen ook een knik naar de ontwerpfilosofie. Rust heeft een voorkeur voor explicietheid. Dus, wanneer je de huidige tijd pakt, kies je expliciet voor lokale tijd vs. UTC, bewustzijn van tijdzones, enzovoort - dit minimaliseert verrassingen en bevordert intentioneel coderen.
 
 ## Zie Ook:
-
 - Documentatie van Rust's `chrono` crate: https://docs.rs/chrono/
 - Documentatie van Rust's `time` crate: https://docs.rs/time/
 - `IANA` tijdszonedatabase: https://www.iana.org/time-zones

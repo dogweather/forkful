@@ -11,9 +11,6 @@ title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---
 
-## Hva & Hvorfor?
-Å finne lengden på en streng betyr å telle hvor mange tegn den inneholder. Programmerere gjør dette for validering, begrensning av input, eller for å løkke gjennom hver bokstav.
-
 ## Hvordan gjøre det:
 ```TypeScript
 let greeting: string = "Hei, verden!";
@@ -35,7 +32,7 @@ Lengden på en streng i TypeScript hentes ganske enkelt ved å bruke `.length`-e
 
 Viktige detaljer:
 - `.length` returnerer antall 16-bits verdier i strengen, noe som kan være forvirrende med emojis eller andre multibyte tegn.
-- Alternativer til `.length` for mer komplekse behov kan inkludere å bruke en String iterator eller en regex for riktig opptelling av tegn, spesielt når vi håndterer Unicode-tegn. 
+- Alternativer til `.length` for mer komplekse behov kan inkludere å bruke en String iterator eller en regex for riktig opptelling av tegn, spesielt når vi håndterer Unicode-tegn.
 
 ## Se også:
 - MDN Web Docs om `length`: [developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)

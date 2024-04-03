@@ -10,9 +10,6 @@ title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---
 
-## Qué es y Por Qué?
-Extraer subcadenas es sacar partes específicas de un string. Los programadores hacemos esto para manipular y procesar datos de textos como entrada o para validaciones/formato.
-
 ## Cómo Hacerlo:
 ```elixir
 # Obtener substring con String.slice/3

@@ -10,9 +10,6 @@ title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---
 
-## ¿Qué & Por Qué?
-Leer argumentos de la línea de comandos en Ruby significa capturar datos que los usuarios o scripts externos pasan a tu programa al ejecutarlo. Los programadores lo hacen para personalizar la ejecución de sus programas directamente desde el terminal, permitiendo una mayor flexibilidad y control.
-
 ## Cómo hacerlo:
 ```Ruby
 # argumentos.rb

@@ -11,12 +11,7 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä & Miksi?
-
-Virheiden käsittely tarkoittaa koodin kirjoittamista, joka pystyy käsittelemään kun asiat menevät pieleen. Ohjelmoijat tekevät sitä estääkseen kaatumiset ja varmistaakseen, että ohjelmat voivat toipua arvokkaasti, kun Murphy’n laki iskee.
-
 ## Kuinka:
-
 Elixirissä käytämme usein mallin vastaavuutta ja `case`-lauseketta eri lopputulosten, mukaan lukien virheet, käsittelyyn.
 
 ```elixir
@@ -47,7 +42,6 @@ Virhe: Nollalla jakaminen ei ole mahdollista.
 Kun ajat tämän Elixir-koodin, saat joko onnistuneen jakotuloksen tai virheilmoituksen riippuen syötteestäsi. Ei kaatumisia täällä!
 
 ## Syväsukellus
-
 Aikaisemmin virheiden käsittely oli usein paluuarvojen tarkistamista. Elixirin funktionaalisten juurien ansiosta meillä on nyt mallin vastaavuus ja merkityt tuplat, kuten `{:ok, value}` tai `{:error, reason}`, jotka ovat elegantimpi ratkaisu.
 
 Elixirissä on muitakin tapoja käsitellä virheitä:
@@ -58,7 +52,6 @@ Elixirissä on muitakin tapoja käsitellä virheitä:
 Toteutuksen kannalta Elixir rakentuu Erlangin luotettavuuden varaan. Se käsittelee virheitä vain toisen tyyppisenä viestinä, joka käsitellään kaiken mallin vastaavuuden ja funktionaalisen hyvyyden avulla.
 
 ## Katso Myös
-
 Lisätietoa Elixirin virheenkäsittelystä, tutustu:
 
 - Elixirin virallinen opas [virheenkäsittelystä](https://elixir-lang.org/getting-started/try-catch-and-rescue.html).

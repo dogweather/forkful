@@ -12,9 +12,6 @@ title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---
 
-## Mitä & Miksi?
-Merkkijonosta lainausmerkkien poistaminen C#:ssä tarkoittaa sitä, että poistat tekstiäsi ympäröivät ärsyttävät kaksois- (`"`) tai yksinkertaiset (`'`) lainausmerkit. Ohjelmoijat tekevät tämän puhdistaakseen dataa, valmistellakseen tietokantamerkintää varten tai tehdäkseen merkkijonoista turvallisia jatkokäsittelyä varten, jotta asiat eivät mene sekaisin, kun eksynyt lainausmerkki ilmaantuu.
-
 ## Miten:
 ```csharp
 string withQuotes = "\"Hello, World!\"";

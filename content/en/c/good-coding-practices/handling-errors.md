@@ -11,12 +11,7 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-
-Handling errors in C involves detecting and responding to anomalous conditions that arise during program execution. Programmers do this to prevent bugs, crashes, and unpredictable behavior, ensuring the software functions reliably and efficiently under various scenarios.
-
 ## How to:
-
 C does not have built-in support for exceptions like some other languages. Instead, it relies on a few conventional error-handing strategies, such as returning special values from functions and setting global variables like `errno`.
 
 **Returning Special Values**
@@ -77,7 +72,6 @@ Error opening file: No such file or directory
 ```
 
 ## Deep Dive
-
 Historically, the C programming language's minimalistic design has excluded a built-in exception handling mechanism, reflective of its low-level, systems programming origins where maximum performance and close-to-the-metal control are critical. Instead, C adopts a more manual error handling approach that fits its philosophy of giving programmers as much control as possible, even at the cost of convenience.
 
 While this approach aligns well with C's design goals, it can also lead to verbose error-checking code and the potential for missed error checks, which modern languages address with structured exception handling mechanisms. For instance, exceptions in languages like Java or C# allow for centralized error processing, making code cleaner and error management more straightforward. However, exceptions introduce their overhead and complexity, which might not be ideal for system-level programming where C shines.

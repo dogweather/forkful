@@ -12,9 +12,6 @@ title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---
 
-## Quoi & Pourquoi ?
-L'envoi d'une requête HTTP avec authentification de base consiste à fournir un nom d'utilisateur et un mot de passe pour accéder à une ressource protégée sur le web. Les programmeurs le font pour interagir de manière sécurisée avec des API ou des services web nécessitant une vérification d'identité.
-
 ## Comment faire :
 ```Fish Shell
 # Encodage des identifiants en base64

@@ -15,9 +15,6 @@ title: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE"
 weight: 1
 ---
 
-## What & Why? 什么和为什么？
-开始新项目就是创建一份全新的代码框架。程序员这么做为了解决新问题，实验创新的想法，或是学习新技能。
-
 ## How to: 如何操作
 ```C++
 #include <iostream>

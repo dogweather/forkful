@@ -13,12 +13,7 @@ title: Organisation von Code in Funktionen
 weight: 18
 ---
 
-## Was & Warum?
-
-Code in Funktionen zu organisieren, bedeutet, Ihren Google Apps Script Code zu strukturieren, indem logische Segmente in separate Blöcke aufgeteilt werden, wobei jeder Block eine spezifische Aufgabe erfüllt. Programmierer tun dies, um die Lesbarkeit, Wartbarkeit und Wiederverwendbarkeit des Codes zu verbessern und sicherzustellen, dass komplexe Skripte einfacher zu verstehen und zu debuggen sind.
-
 ## Wie:
-
 In Google Apps Script, das auf JavaScript basiert, definieren Sie Funktionen mit dem Schlüsselwort `function`, gefolgt von einem einzigartigen Funktionsnamen, Klammern `()` die Parameter enthalten können, und geschweiften Klammern `{}`, die den Codeblock der Funktion umschließen. Hier ist ein grundlegendes Beispiel:
 
 ```javascript
@@ -67,7 +62,6 @@ populateSheet(salesData);
 In diesem Beispiel bereitet `setupSheet` das Blatt vor, und `populateSheet` verwendet ein Array von Verkaufsdaten, um das Blatt zu befüllen. Diese Aufteilung der Anliegen macht den Code sauberer und anpassungsfähiger an Veränderungen.
 
 ## Tiefergehend
-
 Das Konzept, Code in Funktionen aufzuteilen, ist nicht neu oder einzigartig für Google Apps Script; es ist eine grundlegende Programmierpraxis, die in fast allen Programmiersprachen befürwortet wird. Historisch gesehen entwickelten sich Funktionen aus dem mathematischen Konzept, Eingaben auf Ausgaben abzubilden, was zu einem Eckpfeiler der strukturierten Programmierung wurde. Dieser Ansatz fördert die Modularität und Wiederverwendung von Code und bietet klare Wege für das Testen einzelner Teile des Skripts.
 
 Google Apps Script profitiert erheblich von den erstklassigen Funktionen von JavaScript, die es ermöglichen, Funktionen als Argumente zu übergeben, von anderen Funktionen zurückzugeben und Variablen zuzuweisen. Diese Funktion eröffnet fortgeschrittene Muster wie Callbacks und funktionale Programmierung, obwohl diese Muster eine Komplexität einführen können, die für einfache Automatisierungsaufgaben in Google Apps Script unnötig sein mag.

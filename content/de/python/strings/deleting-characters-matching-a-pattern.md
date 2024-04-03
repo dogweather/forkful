@@ -11,9 +11,6 @@ title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---
 
-## Was & Warum?
-Das Löschen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte Zeichen aus einer Zeichenkette (String) zu entfernen. Programmierer tun dies, um Daten zu bereinigen, Eingaben zu validieren oder einfach um unerwünschte Informationen zu filtern.
-
 ## So geht's:
 ```Python
 import re

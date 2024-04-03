@@ -12,12 +12,7 @@ title: Een tekstbestand schrijven
 weight: 24
 ---
 
-## Wat & Waarom?
-
-Een tekstbestand schrijven in Java betekent tekstgegevens opslaan op een bestand op schijf. Ontwikkelaars doen dit voor taken zoals loggen, configureren, of het exporteren van menselijk leesbare gegevens.
-
 ## Hoe te:
-
 Met Java's `java.nio.file` pakket is schrijven naar een tekstbestand eenvoudig. Bekijk `Files.write()` voor een snelle opslag:
 
 ```java
@@ -46,11 +41,9 @@ Succesvol geschreven naar het bestand.
 ```
 
 ## Diepgaande Duik
-
 In de goede oude tijd ging Java I/O helemaal over `FileWriter` en `BufferedWriter`. Nu is het NIO-pakket (`java.nio.file`) de te volgen weg. `Files.write()` is handig—het handelt creatie, opening, en schrijven in één keer af. Alternatief? `FileOutputStream` voor controle op byte-niveau. Onder de motorkap gebruikt `Files.write()` een `BufferedWriter` en `Charset` om tekst als bytes te coderen.
 
 ## Zie Ook
-
 Duik dieper in bestands-I/O met deze links:
 
 - Officiële documentatie van `java.nio.file.Files`: https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html

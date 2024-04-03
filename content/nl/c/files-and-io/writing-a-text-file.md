@@ -13,12 +13,7 @@ title: Een tekstbestand schrijven
 weight: 24
 ---
 
-## Wat & Waarom?
-
-Een tekstbestand schrijven in C houdt in dat je een bestand maakt of opent in schrijfmodus en vervolgens de bestands-I/O-functies van C gebruikt om tekstgegevens erin op te slaan. Programmeurs doen dit om gegevens te bewaren, zoals logevents, configuratie-instellingen of door gebruikers gegenereerde inhoud, waardoor applicaties staat, voorkeuren of gebruikersvoortgang over sessies kunnen behouden.
-
 ## Hoe:
-
 Om tekst naar een bestand in C te schrijven, moet je voornamelijk bekend zijn met de `fopen()`, `fprintf()`, `fputs()`, en `fclose()` functies. Hieronder staat een eenvoudig voorbeeld dat het creëren en schrijven naar een bestand demonstreert:
 
 ```c
@@ -54,7 +49,6 @@ Bestand succesvol geschreven
 Na het uitvoeren van dit programma vind je een bestand met de naam `voorbeeld.txt` in dezelfde map, bevattende de tekst die je hebt geschreven via `fprintf()` en `fputs()`.
 
 ## Diepgaand
-
 Het concept van bestanden en bestandssystemen is fundamenteel geweest voor computersystemen, waarbij hun beheer een kritiek aspect van besturingssystemen is. In C wordt het omgaan met bestanden uitgevoerd met behulp van een reeks standaard I/O-bibliotheekfuncties, gebaseerd op de filosofie van het behandelen van bestanden als stromen van bytes. Deze abstractie biedt een eenvoudige en efficiënte methode om te lezen van en te schrijven naar bestanden, hoewel het laag-niveau kan lijken vergeleken met modernere benaderingen die beschikbaar zijn in high-level talen zoals Python of Ruby.
 
 Historisch gezien hebben de bestands-I/O-operaties in C de basis gelegd voor bestandsmanipulatie in veel programmeertalen, en bieden een dicht-op-het-metaal-interface met de bestandsbeheersystemen van het besturingssysteem. Dit biedt niet alleen een gedetailleerde controle over bestandsattributen en I/O-operaties, maar vormt ook valkuilen voor onoplettende programmeurs, zoals de noodzaak om handmatig bronnen te beheren (d.w.z. altijd bestanden sluiten) en bufferingproblemen.

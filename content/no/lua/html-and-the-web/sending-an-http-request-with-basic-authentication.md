@@ -12,12 +12,7 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---
 
-## Hva & Hvorfor?
-
-Å sende en HTTP-forespørsel med grunnleggende autentisering betyr å inkludere brukernavn og passord i forespørselen for å få tilgang til beskyttede ressurser. Programmerere gjør dette for å sikre at kun autoriserte brukere kan hente eller endre data.
-
 ## Hvordan:
-
 ```Lua
 local http = require("socket.http")
 local ltn12 = require("ltn12")
@@ -50,7 +45,6 @@ Eksempelutdata:
 ```
 
 ## Dypdykk
-
 Før SSL/TLS ble utbredt, var grunnleggende autentisering over HTTP vanlig for å beskytte ressurser. Til tross for svakhetene fortsatt brukt, spesielt der enkelhet er prioritert. 
 
 Digest-autentisering er et alternativ som er litt sikrere, da det ikke sender passord i klartekst. Moderne alternativer inkluderer OAuth og API-nøkler, som både gir mer robust sikkerhet og fleksibilitet.
@@ -58,7 +52,6 @@ Digest-autentisering er et alternativ som er litt sikrere, da det ikke sender pa
 Grunnleggende autentisering fungerer ved å inkludere en `Authorization` header i HTTP-forespørselen. Verdien er ordet "Basic" fulgt av en base64-enkodet streng av brukernavn og passord. Lua krever et eksternt bibliotek, som `socket.http` i vårt eksempel, for å håndtere HTTP-forespørsler.
 
 ## Se Også
-
 - LuaSec for HTTPS-støtte: https://github.com/brunoos/luasec/wiki
 - HTTP-biblioteker for Lua: http://w3.impa.br/~diego/software/luasocket/http.html
 - Lua Socket dokumentasjon: http://w3.impa.br/~diego/software/luasocket/

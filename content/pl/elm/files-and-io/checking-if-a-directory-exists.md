@@ -10,11 +10,6 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## What & Why?
-"Co i dlaczego?"
-
-Sprawdzanie istnienia katalogu pozwala potwierdzić, czy dany folder jest dostępny w systemie plików. Programiści robią to, aby uniknąć błędów przy próbie dostępu do plików lub zapisywania w nieistniejącym katalogu.
-
 ## How to:
 "Jak to zrobić:"
 

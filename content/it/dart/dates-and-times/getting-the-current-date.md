@@ -12,9 +12,6 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Cosa e Perché?
-Ottenere la data corrente in Dart comporta l'interrogazione del sistema per conoscere la data e l'ora attuali. Questa funzionalità è comunemente utilizzata nelle applicazioni per funzionalità come la marcatura temporale degli eventi, mostrare la data corrente agli utenti o calcolare le durate. Sapere come recuperare e manipolare efficientemente la data corrente è fondamentale per la pianificazione, la registrazione e le funzionalità sensibili al tempo.
-
 ## Come fare:
 La libreria core di Dart fornisce un accesso semplice alla data e all'ora correnti attraverso la classe `DateTime`. Ecco l'esempio base per ottenere la data corrente:
 

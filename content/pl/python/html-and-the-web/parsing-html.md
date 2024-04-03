@@ -15,9 +15,6 @@ title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---
 
-## Co i dlaczego?
-Parsowanie HTML-a polega na analizowaniu kodu HTML strony internetowej w celu wyodrębnienia określonych informacji lub elementów, co jest powszechnym zadaniem przy web scrapingu, wydobywaniu danych lub automatyzowaniu interakcji ze stronami internetowymi. Programiści wykonują to, aby programistycznie wchodzić w interakcje z witrynami internetowymi, automatyzować zadania lub testować aplikacje internetowe.
-
 ## Jak to zrobić:
 Python oferuje potężne biblioteki takie jak BeautifulSoup i requests do web scrapingu i parsowania HTML-a. Aby zacząć, musisz zainstalować te biblioteki, jeśli jeszcze tego nie zrobiłeś:
 

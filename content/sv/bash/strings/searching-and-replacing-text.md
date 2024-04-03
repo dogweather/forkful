@@ -11,9 +11,6 @@ title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---
 
-## Vad & Varför?
-Sökning och ersättning av text hanterar automatisk ändring av strängar i filer. Programmerare använder det för att effektivisera uppdateringar, korrigera fel eller ändra kod snabbt.
-
 ## Hur gör man:
 ```Bash
 # Sök och ersätt första förekomsten av "gammalt" med "nytt" i filen.txt

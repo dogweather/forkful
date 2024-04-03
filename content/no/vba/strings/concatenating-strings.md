@@ -13,12 +13,7 @@ title: Sammensetting av strenger
 weight: 3
 ---
 
-## Hva & Hvorfor?
-
-Konkatenering i Visual Basic for Applications (VBA) innebærer å sette sammen to eller flere strenger til en enkelt enhet. Dette er en fundamental oppgave i programmering, essensiell for å generere brukermeldinger, lage SQL-spørringer og mer, ettersom det tillater dynamisk oppretting og manipulering av strengdata.
-
 ## Hvordan:
-
 VBA gir en grei metode for å konkatere strenger ved bruk av `&`-operatøren eller `Concatenate`-funksjonen. La oss utforske begge metodene med eksempler:
 
 1. **Bruke `&`-operatøren:**
@@ -54,7 +49,6 @@ Debug.Print message 'Utdata: Hello John!
 Valget mellom `&`-operatøren og `Concatenate`-funksjonen avhenger av personlig preferanse og de spesifikke kravene til prosjektet ditt.
 
 ## Dykk Dypere
-
 Strengkonkatenering er en grunnleggende, men kraftfull funksjon i VBA, med sine røtter tilbake til tidlige programmeringsspråk. `&`-operatørens utbredelse i VBA for sammenføyning fremfor `+`-operatøren, som er vanlig brukt i mange andre språk, understreker VBAs fokus på eksplisitt strengbehandling, dermed unngås utilsiktede datatypemismatcher og feil.
 
 Mens `&`-operatøren er effektiv og bredt adoptert, utmerker `Concatenate`-funksjonen seg i scenarioer som krever mer klarhet eller håndterer spesielle konkateneringstilfeller, som for eksempel med samlinger. Det er imidlertid viktig å merke seg at moderne versjoner av Excel har introdusert `TEXTJOIN`-funksjonen, som kan være mer effektiv for sammenføyning av samlinger av strenger med en skilletegn, selv om den ikke direkte er en del av VBA.

@@ -15,12 +15,7 @@ title: Refaktoryzacja
 weight: 19
 ---
 
-## Co i dlaczego?
-
-Refaktoryzacja w programowaniu polega na restrukturyzacji istniejącego kodu bez zmiany jego zewnętrznego zachowania, mając na celu poprawę atrybutów niefunkcjonalnych, takich jak czytelność, redukcję złożoności i zwiększenie utrzymywalności. Programiści refaktoryzują, aby utrzymać kod w czystości, zminimalizować dług techniczny i ułatwić oraz bezpieczniej wprowadzać przyszłe zmiany.
-
 ## Jak to zrobić:
-
 Refaktoryzacja może obejmować szereg działań, od zmiany nazw zmiennych dla większej jasności po zmianę struktury kodu w celu lepszej modularizacji. Oto prosty przykład pokazujący, jak zrefaktoryzować fragment kodu C dla lepszej jasności i wydajności.
 
 Przed refaktoryzacją:
@@ -63,7 +58,6 @@ int main() {
 Wynik pozostaje niezmieniony, ale funkcjonalność zamiany wartości została przeniesiona do oddzielnej funkcji (`swap`), co poprawia czytelność i możliwość ponownego użycia.
 
 ## Dogłębna analiza
-
 Praktyka refaktoryzacji kodu istnieje tak długo, jak rozwój oprogramowania, ewoluując wraz z paradygmatami i językami programowania. W C, języku zarówno potężnym, jak i pełnym możliwości do nieefektywności i błędów ze względu na jego niskopoziomowy charakter, refaktoryzacja jest szczególnie kluczowa. Może oznaczać różnicę między bazą kodu, która jest utrzymywalna, a taką, która jest plątaniną nieefektywności.
 
 Specyficzna uwaga dotycząca C to balans między mikrooptymalizacjami a czytelnością/utrzymywalnością. Chociaż kuszące jest ręczne dostosowywanie kodu C dla każdej kropli wydajności, takie optymalizacje mogą uczynić kod bardziej kruchym i trudniejszym do odczytania. Dlatego zwykle lepiej jest priorytetowo traktować czysty, czytelny kod i polegać na optymalizatorze kompilatora, aby możliwie poprawić wydajność, gdzie to możliwe.

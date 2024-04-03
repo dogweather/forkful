@@ -16,9 +16,6 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Làm thế nào & Tại sao?
-Xử lý lỗi trong Dart là việc dự đoán và quản lý các ngoại lệ phát sinh trong khi thực thi chương trình để cải thiện độ tin cậy và khả năng sử dụng. Các lập trình viên thực hiện xử lý lỗi nhằm ngăn chặn sự cố và cung cấp phản hồi có ý nghĩa cho người dùng, đảm bảo trải nghiệm ứng dụng mượt mà, an toàn hơn.
-
 ## Cách thực hiện:
 Dart hỗ trợ hai loại lỗi: lỗi *thời gian biên dịch* và lỗi *thời gian chạy*. Lỗi thời gian biên dịch được Dart analyzer phát hiện trước khi mã chạy, trong khi lỗi thời gian chạy, hay ngoại lệ, xảy ra trong khi thực thi. Dưới đây là cách bạn xử lý ngoại lệ trong Dart:
 

@@ -11,16 +11,10 @@ title: Working with CSV
 weight: 37
 ---
 
-## What & Why?
-
-Working with CSV (Comma-Separated Values) files involves reading from and writing data to these files, a common necessity for tasks requiring data import/export or simple storage solutions. Programmers leverage this functionality for data interchange between systems, quick data editing, or for situations where a lightweight and easily manipulable data format is advantageous.
-
 ## How to:
-
 Elixir, with its powerful pattern matching and support for pipelining, can handle CSV files efficiently, even without third-party libraries. However, for more advanced needs, the `nimble_csv` library is a fast and straightforward choice.
 
 ### Reading a CSV File Without External Libraries
-
 You can read and parse a CSV file by using Elixir's built-in functions:
 
 ```elixir
@@ -39,7 +33,6 @@ CSVReader.read_file("data.csv")
 ```
 
 ### Writing to a CSV File
-
 Similarly, to write data to a CSV file:
 
 ```elixir
@@ -60,7 +53,6 @@ CSVWriter.write_to_file("output.csv", data)
 ```
 
 ### Using `nimble_csv`
-
 For more complex CSV handling, `nimble_csv` provides a powerful and flexible way to work with CSV data. First, add `nimble_csv` to your dependencies in `mix.exs` and run `mix deps.get`:
 
 ```elixir

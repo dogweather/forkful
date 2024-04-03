@@ -10,9 +10,6 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-## Cosa & Perché?
-I numeri complessi estendono l'idea delle linee numeriche unidimensionali a un piano complesso bidimensionale. I programmatori li utilizzano in campi come l'ingegneria, la fisica e la grafica per calcoli che richiedono due componenti, come segnali o rotazioni.
-
 ## Come fare:
 In Fish, gestiamo i numeri complessi utilizzando `math` con parti reale e immaginaria. Ecco una partenza rapida:
 

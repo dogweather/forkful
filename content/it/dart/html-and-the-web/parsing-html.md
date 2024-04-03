@@ -13,9 +13,6 @@ title: Analisi del HTML
 weight: 43
 ---
 
-## Cosa & Perché?
-L'analisi di HTML nella programmazione implica l'estrazione di dati da documenti HTML. I programmatori fanno ciò per interagire o raschiare contenuti web per l'estrazione di informazioni, test o scopi di automazione, anche quando non sono disponibili API ufficiali.
-
 ## Come fare:
 Dart non fornisce supporto integrato per l'analisi di HTML nelle sue librerie core. Tuttavia, puoi utilizzare un pacchetto di terze parti come `html` per analizzare e manipolare documenti HTML.
 

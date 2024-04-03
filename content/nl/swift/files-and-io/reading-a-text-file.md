@@ -12,9 +12,6 @@ title: Een tekstbestand lezen
 weight: 22
 ---
 
-## Wat & Waarom?
-Een tekstbestand lezen in Swift betekent het ophalen van de inhoud van een bestand dat is opgeslagen op schijf. Programmeurs doen dit om te werken met opgeslagen gegevens zoals configuraties, logs of door gebruikers gegenereerde inhoud.
-
 ## Hoe:
 Om tekst uit een bestand in Swift te lezen, gebruik je de gemaksfuncties van de `String` klasse. Hier is een klein voorbeeld:
 

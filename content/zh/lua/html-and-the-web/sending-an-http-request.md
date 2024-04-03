@@ -15,9 +15,6 @@ title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---
 
-## What & Why? (是什么？为什么？)
-发送HTTP请求让你从网上获取或发送信息。程序员这么做来交互应用数据，比如自动化任务或者使用网络API。
-
 ## How to: (如何操作)
 Lua没有内建的HTTP功能。你需要一个外部库，比如LuaSocket。下面的例子使用LuaSocket发送一个GET请求。
 

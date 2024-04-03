@@ -14,12 +14,7 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-
-Wyrażenia regularne (regex) to sekwencje znaków formujące wzorzec wyszukiwania, głównie używane do wyszukiwania ciągów znaków i ich manipulacji. Programiści wykorzystują regex w PowerShell do zadań takich jak walidacja danych, parsowanie i transformacja ze względu na jego efektywność i elastyczność w obsłudze złożonych wzorców.
-
 ## Jak używać:
-
 W PowerShell można używać operatorów `-match`, `-replace` i `-split`, między innymi, do wykonywania działań z wyrażeniami regularnymi. Przyjrzyjmy się kilku przykładom:
 
 ### Używanie `-match` do sprawdzenia, czy ciąg pasuje do wzorca

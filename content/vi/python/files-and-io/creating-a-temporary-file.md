@@ -15,9 +15,6 @@ title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Gì và Tại sao?
-Tạo một tệp tạm thời tức là bạn tạo một tệp mà bạn không cần giữ lại sau khi sử dụng xong. Lập trình viên thực hiện việc này cho dữ liệu chỉ cần thiết trong quá trình thực thi chương trình, như kết quả trung gian hoặc để tránh chiếm dụng bộ nhớ.
-
 ## Làm thế nào:
 Mô-đun `tempfile` của Python được xây dựng cho mục đích này. Hãy xem nó hoạt động như thế nào:
 

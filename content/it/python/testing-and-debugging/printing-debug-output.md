@@ -10,9 +10,6 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## What & Why? (Che Cosa & Perché?)
-Stampare l'output di debug significa visualizzare informazioni per capire meglio cosa sta succedendo nel codice. Questa pratica è fondamentale per rilevare e risolvere errori velocemente.
-
 ## How to: (Come Fare:)
 ```Python
 # Esempio di output di debug con print()

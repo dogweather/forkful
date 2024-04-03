@@ -12,16 +12,10 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## ¿Qué y Por Qué?
-
-Escribir pruebas en Fish Shell implica crear scripts que ejecuten automáticamente tu código para validar su comportamiento frente a los resultados esperados. Esta práctica es crucial ya que asegura que tus scripts de shell funcionen como se espera, capturando errores tempranamente y facilitando el mantenimiento.
-
 ## Cómo:
-
 Fish no tiene un marco de pruebas integrado como algunos otros entornos de programación. Sin embargo, puedes escribir scripts de pruebas simples que usen afirmaciones para verificar el comportamiento de tus funciones. Adicionalmente, puedes aprovechar herramientas de terceros como `fishtape` para un conjunto de pruebas más completo.
 
 ### Ejemplo 1: Script de Prueba Básico
-
 Comencemos con una función básica en Fish que calcula la suma de dos números:
 
 ```fish
@@ -53,7 +47,6 @@ test_add aprobado
 ```
 
 ### Ejemplo 2: Usando Fishtape
-
 Para una solución de pruebas más robusta, puedes usar `fishtape`, un corredor de pruebas que produce TAP para Fish.
 
 Primero, instala `fishtape` si aún no lo has hecho:

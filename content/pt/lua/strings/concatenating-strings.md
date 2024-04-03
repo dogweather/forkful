@@ -11,9 +11,6 @@ title: Concatenando strings
 weight: 3
 ---
 
-## O Que é & Porquê?
-Concatenar strings é basicamente juntar textos diferentes em um só. Programadores fazem isso para construir mensagens, caminhos de arquivos, e sempre que precisam combinar palavras e frases de forma dinâmica.
-
 ## Como Fazer:
 No Lua, concatenamos strings usando o operador `..`. É direto assim:
 

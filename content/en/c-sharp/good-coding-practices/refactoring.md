@@ -10,12 +10,7 @@ title: Refactoring
 weight: 19
 ---
 
-## What & Why?
-
-Refactoring is the process of restructuring existing computer code without changing its external behavior. Programmers do it to clean up code, enhance readability, reduce complexity, and improve maintainability.
-
 ## How to:
-
 Let's refactor a simple C# method that calculates and prints the sum of an array of numbers:
 
 Before Refactoring:
@@ -65,7 +60,6 @@ calculator.DisplaySum();
 By refactoring, we've separated concerns, made the `Calculator` class more flexible by allowing it to take any array of numbers, and leveraged LINQ to make the sum calculation more concise.
 
 ## Deep Dive
-
 Refactoring has its roots in the smalltalk programming community and was popularized in the 1990s by Martin Fowler's book "Refactoring: Improving the Design of Existing Code". Over the years, it's become a fundamental part of agile methodologies and good coding practices.
 
 There are various approaches to refactoring, such as Red-Green-Refactor in Test-Driven Development (TDD). It ensures that refactoring doesn't introduce bugs by starting with a failing test, making it pass, and then cleaning up the code.
@@ -73,7 +67,6 @@ There are various approaches to refactoring, such as Red-Green-Refactor in Test-
 When implementing refactoring, it's crucial to have a comprehensive test suite to ensure that no functionality gets broken during the process. Automated refactoring tools, like ReSharper for C#, can also aid in this process by providing safe ways to change code structures. However, tooling should be supplementary to a deep understanding of the codebase and coding principles.
 
 ## See Also
-
 - Martin Fowler's seminal work on Refactoring: [Refactoring: Improving the Design of Existing Code](https://martinfowler.com/books/refactoring.html)
 - Microsoft's guide on Refactoring in Visual Studio: [Refactoring (C#)](https://docs.microsoft.com/en-us/visualstudio/ide/refactoring-in-visual-studio?view=vs-2022)
 - A detailed look into Refactoring patterns with examples: [SourceMaking Refactoring](https://sourcemaking.com/refactoring)

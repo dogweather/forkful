@@ -11,9 +11,6 @@ title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---
 
-## ¿Qué es y Por Qué?
-Leer argumentos de la línea de comandos permite a tu programa Lua recibir información externa al momento de ser ejecutado, brindándote flexibilidad. Los programadores lo usamos para personalizar la ejecución sin cambiar el código y para interactuar con el sistema operativo o scripts.
-
 ## Cómo hacerlo:
 Para leer argumentos de la línea de comandos en Lua, se utiliza la tabla global `arg`. Aquí un ejemplo básico:
 

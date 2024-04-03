@@ -14,9 +14,6 @@ title: Kontrollera om en katalog existerar
 weight: 20
 ---
 
-## Vad & Varför?
-Att kontrollera om en katalog finns i JavaScript är avgörande för filhanteringsuppgifter, vilket möjliggör för skript att verifiera katalogens närvaro innan de läser från eller skriver till den. Denna operation förhindrar fel och säkerställer en smidigare programkörning, särskilt i applikationer som dynamiskt hanterar filer eller kataloger baserat på användarinput eller externa datakällor.
-
 ## Hur:
 I Node.js, eftersom JavaScript i sig inte har direkt tillgång till filsystemet, används vanligtvis `fs`-modulen för sådana operationer. Här är ett enkelt sätt att kontrollera om en katalog finns med `fs.existsSync()`:
 

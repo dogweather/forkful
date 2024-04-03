@@ -16,9 +16,6 @@ title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---
 
-## Cái gì và Tại sao?
-Phân chia mã thành các hàm có nghĩa là chia nhỏ script thành các khối nhỏ hơn, có thể sử dụng lại được và thực hiện các nhiệm vụ cụ thể. Điều này làm cho mã nguồn trở nên sạch sẽ hơn, dễ hiểu hơn và dễ gỡ lỗi hơn.
-
 ## Cách thực hiện:
 Tạo một hàm đơn giản trong Bash:
 

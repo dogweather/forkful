@@ -15,9 +15,6 @@ title: Trabajando con YAML
 weight: 41
 ---
 
-## ¿Qué y Por Qué?
-YAML, abreviatura de "YAML Ain't Markup Language" (YAML no es un lenguaje de marcado), es un estándar de serialización de datos legible por humanos que los programadores utilizan para archivos de configuración, volcados de datos y transmisión de datos entre lenguajes. Es popular debido a su legibilidad y facilidad de uso, lo que lo convierte en una opción común para configurar aplicaciones y servicios.
-
 ## Cómo:
 En Java, puedes trabajar con archivos YAML utilizando bibliotecas de terceros, ya que la Edición Estándar de Java no incluye soporte incorporado para YAML. Una biblioteca popular es SnakeYAML, que permite analizar y generar datos YAML fácilmente.
 

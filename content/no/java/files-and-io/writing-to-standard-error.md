@@ -13,10 +13,8 @@ title: Skriving til standardfeil
 weight: 25
 ---
 
-## Hva & Hvorfor?
-Å skrive til standard feil (stderr) innebærer å sende ut feilmeldinger og diagnostikk til konsollen eller terminalen. Programmerere gjør dette for å skille feilinformasjon fra standard utgang (stdout), noe som letter feilsøking og logganalyse.
-
 ## Hvordan:
+
 
 ### Grunnleggende stderr-utskrift i Java
 Java gir en grei måte å skrive til stderr på ved bruk av `System.err.print()` eller `System.err.println()`. Slik gjør du det:
@@ -45,7 +43,6 @@ Dette vil direkte skrive ut feilmeldingen til standard feilstrømmen.
 For applikasjoner som trenger mer sofistikert feilhåndtering og logging, er det vanlig å bruke et loggingbibliotek som SLF4J med Logback eller Log4J2. Dette tillater mer fleksibilitet i håndteringen av feilutskrifter, inkludert filomdirigering, filtrering og formatering.
 
 #### Eksempel med Logback
-
 Først, legg til avhengigheten for Logback i din `pom.xml` (Maven) eller `build.gradle` (Gradle) fil. For Maven:
 
 ```xml

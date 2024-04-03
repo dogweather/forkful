@@ -10,9 +10,6 @@ title: Reading a text file
 weight: 22
 ---
 
-## What & Why?
-Reading a text file is grabbing data from a file that contains text. Programmers do this to load configurations, read data, or fetch resources that are too bulky or inappropriate to hard-code.
-
 ## How to:
 Let's get straight to it. Here's how you read from a file in C# using `System.IO`.
 

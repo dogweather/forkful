@@ -14,9 +14,6 @@ title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uA
 weight: 26
 ---
 
-## What & Why? (무엇과 왜?)
-날짜 계산은 미래나 과거의 특정 날짜를 찾는 것입니다. 일정 관리, 기한 설정, 시간 기반의 기능 구현 등 프로그래밍에서 자주 필요합니다.
-
 ## How to (어떻게 하나요?)
 Kotlin을 사용해 날짜를 계산하는 예제입니다. Java의 `LocalDateTime`과 `Period` 클래스를 활용합니다.
 

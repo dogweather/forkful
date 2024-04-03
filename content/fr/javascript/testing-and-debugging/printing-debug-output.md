@@ -11,9 +11,6 @@ title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---
 
-## What & Why? (Quoi & Pourquoi ?)
-L'affichage de messages de débogage, c'est écrire des infos dans la console pour comprendre ce qui se passe dans le code. On le fait parce que personne n'aime chercher une aiguille dans une botte de foin sans indice.
-
 ## How to (Comment faire ?)
 Pour afficher des messages, utilisez `console.log()`. Pour des messages d'avertissement ou d'erreur, essayez `console.warn()` et `console.error()`.
 

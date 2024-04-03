@@ -11,12 +11,7 @@ title: Pesquisando e substituindo texto
 weight: 10
 ---
 
-## O Que & Porquê?
-
-Buscar e substituir texto é o processo de localizar sequências específicas num texto e substituí-las por outras. Programadores fazem isso constantemente para corrigir erros, atualizar códigos ou modificar dados rapidamente sem ter que refazer tudo manualmente.
-
 ## Como Fazer:
-
 ```elixir
 # Para substituir todas as ocorrências de uma string:
 original = "Elixir é incrível e fácil de aprender. Elixir agiliza o desenvolvimento."
@@ -39,11 +34,9 @@ IO.puts regex_modified
 ```
 
 ## Aprofundando
-
 A função de busca e substituição não é exclusiva do Elixir; ela existe em diversas linguagens de programação e editores de texto há anos. Nas origens da edição de texto computacional, utilitários como `sed` no UNIX já permitiam essas operações através da linha de comando. No Elixir, busca e substituição é frequentemente realizada com as funções `String.replace/3` e `String.replace/4`, que são parte do módulo `String`, ou com expressões regulares usando a sigil `~r/`. A primeira opção é boa para substituições diretas, enquanto a segunda é mais poderosa e flexível quando padrões complexos estão envolvidos. Na prática, ao escolher entre strings normais e expressões regulares, pondera-se a simplicidade versus a necessidade de um padrão mais complexo de busca.
 
 ## Veja Também
-
 - [Documentação oficial da função String.replace/4](https://hexdocs.pm/elixir/String.html#replace/4)
 - [Erlang's regex library documentation](https://erlang.org/doc/man/re.html)
 - [Learn Regular Expressions (Regex)](https://www.regular-expressions.info/tutorial.html)

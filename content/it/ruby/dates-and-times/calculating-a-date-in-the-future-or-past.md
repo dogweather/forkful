@@ -11,9 +11,6 @@ title: Calcolo di una data futura o passata
 weight: 26
 ---
 
-## Che cos'è e perché?
-Calcolare una data futura o passata significa semplicemente scoprire che giorno sarà o è stato dopo o prima di un certo periodo. I programmatori lo fanno per gestire eventi, scadenze, promemoria e tutto ciò che è legato alla pianificazione nel tempo.
-
 ## Come fare:
 Ruby rende questo tipo di operazione molto diretta grazie alla libreria `Date`. Ecco un esempio di come calcolare date future e passate:
 

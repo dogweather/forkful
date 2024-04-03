@@ -16,9 +16,6 @@ title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---
 
-## Cái gì & Tại sao?
-Tổ chức mã lệnh thành các hàm nghĩa là phân chia mã lệnh của bạn thành các phần có thể tái sử dụng, mỗi phần thực hiện một công việc cụ thể. Lập trình viên làm điều này để làm cho mã lệnh dễ đọc, dễ gỡ lỗi, và tái sử dụng hơn. Nó giống như việc sắp xếp Lego vào các hộp - nó giúp bạn tránh phải lục lọi qua một đống hỗn loạn mỗi lần bạn muốn xây dựng thứ gì đó.
-
 ## Cách thực hiện:
 Hãy tưởng tượng bạn muốn nhấp nháy một đèn LED. Không có hàm, `vòng lặp` của bạn sẽ là một đống lộn xộn. Với hàm, nó gọn gàng. Đây là cách:
 

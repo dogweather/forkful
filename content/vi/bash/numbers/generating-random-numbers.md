@@ -17,9 +17,6 @@ title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---
 
-## Gì và Tại sao?
-Việc tạo số ngẫu nhiên trong Bash mang lại cách thức để bổ sung tính không dự đoán trước vào các script, điều này rất cần thiết cho các tác vụ như tạo mật khẩu an toàn, mô phỏng dữ liệu, hoặc cho lập trình game. Các lập trình viên tận dụng khả năng này để thêm biến thể vào script của họ hoặc để kiểm thử chương trình của họ dưới nhiều điều kiện được tạo ra một cách ngẫu nhiên.
-
 ## Cách thực hiện:
 Trong Bash, biến `$RANDOM` là lựa chọn hàng đầu để tạo số ngẫu nhiên. Mỗi lần bạn tham chiếu đến nó, Bash cung cấp một số nguyên giả ngẫu nhiên từ 0 đến 32767. Hãy khám phá một số ví dụ thực tế:
 

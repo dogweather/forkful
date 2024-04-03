@@ -11,9 +11,6 @@ title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---
 
-## Qué y Por Qué?
-Comparar dos fechas significa ver si una es anterior, posterior o la misma que la otra. Los programadores hacen esto para manejar eventos cronológicos en scripts y aplicaciones, como vencimientos, agendas o historiales.
-
 ## Cómo:
 Aquí está el cómo. Digamos que tienes dos fechas: `$fecha1` y `$fecha2`. Quieres compararlas. Usa `-lt` para "menor que", `-gt` para "mayor que" y `-eq` para "igual que". Así se ve en acción:
 

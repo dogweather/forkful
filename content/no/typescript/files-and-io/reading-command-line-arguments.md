@@ -10,9 +10,6 @@ title: Lese kommandolinjeargumenter
 weight: 23
 ---
 
-## Hva & Hvorfor?
-Lesing av kommandolinjeargumenter lar programmereren hente input direkte fra brukerens terminal. Det er nyttig for skript og applikasjoner som krever dynamisk input, og for å tilpasse hvordan et program oppfører seg.
-
 ## Hvordan:
 ```TypeScript
 import { argv } from 'process';

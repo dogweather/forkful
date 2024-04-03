@@ -10,9 +10,6 @@ title: Removendo aspas de uma string
 weight: 9
 ---
 
-## O Que & Por Que?
-Remover aspas de uma string significa eliminar aquelas marcas de aspas duplas ou simples que envolvem os valores de texto. Programadores frequentemente fazem isso para limpar a entrada do usuário, para garantir consistência no processamento de dados, ou para preparar dados para sistemas que possam se confundir com esses caracteres extras.
-
 ## Como Fazer:
 O Ruby tem alguns truques interessantes na manga para cortar fora essas aspas incômodas. Você pode usar os métodos `gsub` ou `delete` para realizar essa tarefa. Aqui está um código para refletir:
 

@@ -10,9 +10,6 @@ title: Concatenazione di stringhe
 weight: 3
 ---
 
-## Cosa e Perché?
-La concatenazione di stringhe è il processo di unione di due o più stringhe di testo in una sola. I programmatori la usano per creare messaggi dinamici, componendo testi complessi da parti semplici.
-
 ## Come fare:
 ```Arduino
 String saluto = "Ciao";

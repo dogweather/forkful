@@ -11,12 +11,7 @@ title: HTML parsen
 weight: 43
 ---
 
-## Was & Warum?
-
-HTML in Elixir zu parsen, umfasst das Extrahieren von Informationen aus HTML-Dokumenten. Programmierer tun dies, um programmatisch mit Webseiten zu interagieren, Daten zu scrapen oder Webinteraktionen zu automatisieren, wodurch Anwendungen Webinhalte dynamisch verstehen und nutzen können.
-
 ## Wie geht das:
-
 Elixir, mit seinem robusten Nebenläufigkeitsmodell und dem Paradigma der funktionalen Programmierung, enthält keine integrierten HTML-Parsing-Funktionen. Sie können jedoch beliebte Drittanbieter-Bibliotheken wie `Floki` für diesen Zweck verwenden. Floki macht HTML-Parsing intuitiv und effizient und nutzt dabei Elixirs Musterabgleich und Pipe-Funktionen.
 
 Fügen Sie zunächst Floki zu Ihren Abhängigkeiten in mix.exs hinzu:

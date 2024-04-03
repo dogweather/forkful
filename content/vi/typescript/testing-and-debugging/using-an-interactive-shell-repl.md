@@ -16,9 +16,6 @@ title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---
 
-## Gì & Tại Sao?
-Một Vòng Lặp Đọc-Đánh Giá-In (REPL) là môi trường lập trình nhận các mã nhập từ người dùng, thực thi chúng và trả kết quả về cho người dùng. Lập trình viên sử dụng REPL để thử nghiệm nhanh chóng với đoạn mã, gỡ lỗi và học các tính năng ngôn ngữ mới mà không cần phải tạo một ứng dụng đầy đủ.
-
 ## Cách thực hiện:
 TypeScript không đi kèm với REPL riêng của mình. Hãy sử dụng `ts-node`, một môi trường thực thi TypeScript cho Node.js bao gồm cả REPL.
 

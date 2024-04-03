@@ -10,12 +10,7 @@ title: Protokollierung
 weight: 17
 ---
 
-## Was & Warum?
-
-Logging ist die Praxis, Ereignisse, Fehler und andere bedeutsame Informationen von laufenden Prozessen eines Programms in eine Datei oder einen Ausgabestrom aufzuzeichnen. Programmierer tun dies, um das Verhalten ihrer Anwendungen zu verfolgen, Probleme zu debuggen und ein historisches Protokoll der Vorgänge zu führen, das bei zukünftigen Problemlösungen helfen kann.
-
 ## Wie geht das:
-
 Im Bash kann Logging so einfach sein wie das Umleiten oder Anhängen der Ausgabe an eine Datei. Hier ein einfaches Beispiel:
 
 ```Bash
@@ -40,7 +35,6 @@ Skript beendet am Tue Mar 23 09:26:35 PDT 2021
 ```
 
 ## Vertiefung
-
 Historisch gesehen wurde das Logging in Unix-ähnlichen Systemen durch den syslog-Dienst erleichtert, der es verschiedenen Anwendungen und Teilen des Systems ermöglicht, Nachrichten zentral zu protokollieren. Dies ermöglicht die Implementierung eines standardisierten Loggingmechanismus im gesamten System.
 
 Wenn es um Alternativen geht, könnten einige in Betracht ziehen, `syslog-ng` oder `rsyslog` für fortgeschrittenere Logging-Funktionen zu nutzen oder Logs in einer Zeitreihendatenbank für Analysezwecke zu schreiben. Für Anwendungen mit höherem Komplexitätsgrad kann es sogar für eine Skriptsprache wie Bash sinnvoll sein, eine dedizierte Logging-Bibliothek oder Anwendung wie Log4j (im Java-Ökosystem) oder Monolog (in PHP) zu verwenden, die strukturierte und konfigurierbare Logging-Optionen bieten.
@@ -48,7 +42,6 @@ Wenn es um Alternativen geht, könnten einige in Betracht ziehen, `syslog-ng` od
 Die Art und Weise, wie Sie das Logging implementieren, hängt stark von den Anforderungen Ihrer Anwendung ab. Wenn Sie lediglich eine einfache Ausgabe benötigen, um den Fortschritt des Skripts zu verfolgen, ist das Anhängen von Nachrichten an eine Datei einfach und bequem. Für ein skalierbares und robustes Logging jedoch sollten Sie eine Integration mit einem Logging-System in Erwägung ziehen, das Funktionen wie Log-Rotation, Log-Level und Remote-Logging unterstützt.
 
 ## Siehe auch
-
 - Die `man`-Seiten für die Funktionen `logger` und `syslog` sind immer hilfreich, probieren Sie `man logger` oder `man syslog`.
 - Für einen vertieften Einblick in das Systemlogging ziehen Sie das Lesen der Dokumentation von `rsyslog` und `syslog-ng` in Betracht.
 - Um mehr über den historischen Kontext und die Prinzipien hinter dem Logging in Unix-ähnlichen Systemen zu erfahren, bietet das im RFC 5424 dokumentierte `Syslog`-Protokoll umfassende Informationen.

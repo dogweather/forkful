@@ -10,9 +10,6 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## What & Why? (Cosa e Perché?)
-Nella programmazione, cercare e sostituire testo significa scansionare delle stringhe per trovarne frammenti e cambiare questi con nuovi contenuti. I programmatori lo fanno per manipolare i dati, automatizzare le correzioni, localizzare le applicazioni e tant'altro.
-
 ## How to (Come fare):
 Ecco un esempio semplice in PHP:
 
@@ -47,9 +44,7 @@ echo $frase_modificata;  // Stampa "Le rose sono colore, il cielo è colore."
 ```
 Questo mostra come un singolo pattern possa corrispondere a più casi.
 
-
 ## See Also (Vedi Anche):
-
 - [PHP str_replace() Function](https://www.php.net/manual/en/function.str-replace.php)
 - [PHP preg_replace() Function](https://www.php.net/manual/en/function.preg-replace.php)
 - [Regular Expressions (Regex) - A Simple, non-technical explanation](https://www.regular-expressions.info/)

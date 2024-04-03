@@ -12,9 +12,6 @@ title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---
 
-## Vad och varför?
-Att ta bort citationstecken från en sträng innebär att strippa bort alla citattecken—enkla (' ') eller dubbla (" ")—som är en del av strängdatan. Programmerare gör detta för att sanera inmatningar, förbereda text för bearbetning eller bli av med onödiga tecken som kan störa hanteringen och operationerna av datan.
-
 ## Hur man gör:
 I Haskell kan vi snabbt skapa en funktion som tar bort alla citattecken från en given sträng. Det är som att säga åt citattecknen att dra åt skogen och se till att de fattar vinken.
 

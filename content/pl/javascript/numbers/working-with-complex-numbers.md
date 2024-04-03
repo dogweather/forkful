@@ -11,9 +11,6 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i dlaczego?
-Liczby zespolone to liczby mające część rzeczywistą i urojoną (jak 3 + 4i). Pojawiają się one w różnych problemach programistycznych, zwłaszcza w przetwarzaniu sygnałów, obliczeniach kwantowych i rozwiązywaniu równań wielomianowych. Programiści żonglują nimi, by skutecznie rozwiązywać tego typu zadania.
-
 ## Jak to zrobić:
 JavaScript nie posiada wbudowanego wsparcia dla liczb zespolonych, ale można podwinąć rękawy i poradzić sobie z tym za pomocą obiektów i matematyki. Oto szybki przegląd.
 

@@ -13,12 +13,7 @@ title: Logging
 weight: 17
 ---
 
-## Hva & Hvorfor?
-
-Logging i programvareutvikling er prosessen med å registrere informasjon om et programs utførelse, designet for å spore dets oppførsel og diagnostisere problemer. Programmerere implementerer logging for å overvåke programvareytelse, feilsøke feil, og sikre systemets sikkerhet og overholdelse, noe som gjør det til et uunnværlig verktøy for vedlikehold og analyse av applikasjoner.
-
 ## Hvordan gjøre det:
-
 I Go kan logging implementeres ved å bruke standardbibliotekpakken `log`. Denne pakken gir enkle loggefunksjoner, som å skrive til standard utdata eller til filer. La oss starte med et grunnleggende eksempel på logging til standard utdata:
 
 ```go
@@ -84,7 +79,6 @@ EGEN LOGG: 2009/11/10 23:00:00 main.go:11: Dette er en tilpasset loggmelding.
 Dette eksempelet prefikser hver loggmelding med "EGEN LOGG: " og inkluderer datoen, tiden, og kildefilplasseringen.
 
 ## Dypdykk
-
 Go standardbibliotekets `log`-pakke er grei og tilstrekkelig for mange applikasjoner, men den mangler noen av de mer sofistikerte funksjonene som finnes i tredjeparts loggbiblioteker, som strukturert logging, loggrotasjon, og loggnivåbasert logging. Pakker som `zap` og `logrus` tilbyr disse avanserte funksjonene og er høyt ansett i Go-samfunnet for deres ytelse og fleksibilitet.
 
 Strukturert logging, for eksempel, lar deg logge data i et strukturert format (som JSON), noe som er spesielt nyttig for moderne skybaserte applikasjoner der logger kanskje analyseres av ulike verktøy eller tjenester. `zap` er spesielt kjent for sin høye ytelse og lave allokeringsoverhead, noe som gjør den egnet for applikasjoner der hastighet og effektivitet er kritisk.

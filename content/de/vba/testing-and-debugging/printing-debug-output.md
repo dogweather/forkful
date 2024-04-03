@@ -14,9 +14,6 @@ title: Debug-Ausgabe drucken
 weight: 33
 ---
 
-## Was & Warum?
-Das Ausgeben von Debug-Informationen in Visual Basic for Applications (VBA) beinhaltet das strategische Platzieren von Druckanweisungen innerhalb Ihres Codes, um Variablenwerte, den Ausführungsfluss oder benutzerdefinierte Debug-Nachrichten anzuzeigen. Diese Technik ist essenziell für das Debugging und ermöglicht es Programmierern, das Verhalten ihres Codes zur Laufzeit zu verstehen und unerwartetes Verhalten oder Fehler zu identifizieren.
-
 ## Wie:
 In VBA ist die Anweisung `Debug.Print` das Arbeitspferd, um Debug-Informationen im Sofortfenster im Visual Basic Editor (VBE) auszudrucken. Um diese Funktion effektiv zu nutzen, müssen Sie das Sofortfenster sichtbar machen (Ansicht > Sofortfenster oder drücken Sie `Ctrl+G` im VBE).
 

@@ -19,9 +19,6 @@ title: "\u30A6\u30A7\u30D6\u30DA\u30FC\u30B8\u306E\u30C0\u30A6\u30F3\u30ED\u30FC
 weight: 42
 ---
 
-## What & Why? (何して、なんで？)
-Webページをダウンロードするってのは、インターネット上の情報を手に入れるプロセスだ。プログラマーはデータ分析、監視、テストのためにこれをやるんだ。
-
 ## How to: (やり方)
 ```PowerShell
 # Invoke-WebRequest を使ってWebページの内容を取得する

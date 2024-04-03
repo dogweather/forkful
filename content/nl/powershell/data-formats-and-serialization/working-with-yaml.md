@@ -11,9 +11,6 @@ title: Werken met YAML
 weight: 41
 ---
 
-## Wat & Waarom?
-YAML is een gebruiksvriendelijk data serialisatieformaat. Programmeurs gebruiken het voor configuratiebestanden, gegevensuitwisseling tussen talen en omdat het gemakkelijker te lezen en te schrijven is in vergelijking met XML of JSON.
-
 ## Hoe te:
 Om met YAML in PowerShell te werken, moet je een module zoals `powershell-yaml` gebruiken. Installeer het eerst:
 

@@ -15,9 +15,6 @@ title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---
 
-## Cái gì & Tại sao?
-Phân tích cú pháp ngày tháng từ một chuỗi là việc làm rõ thông tin ngày tháng được chứa trong văn bản. Lập trình viên thực hiện việc này để có thể thực hiện các phép tính, so sánh, và lưu trữ ngày tháng theo một định dạng chuẩn.
-
 ## Cách thực hiện:
 PowerShell làm cho việc phân tích cú pháp ngày tháng trở nên khá đơn giản. Hãy xem cách chuyển đổi một chuỗi thành đối tượng DateTime.
 

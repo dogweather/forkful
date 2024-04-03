@@ -12,9 +12,6 @@ title: Een tekstbestand schrijven
 weight: 24
 ---
 
-## Wat & Waarom?
-Schrijven naar een tekstbestand betekent het opslaan van gegevens zoals tekst of code op je computer. Programmeurs doen dit om configuraties op te slaan, informatie te loggen of gegevens voor later gebruik te bewaren.
-
 ## Hoe te:
 Om naar een tekstbestand in Fish te schrijven, gebruik je `echo` of `printf` gevolgd door de `>` of `>>` operatoren. `>` creëert een nieuw bestand of overschrijft een bestaand bestand, terwijl `>>` aan een bestand toevoegt.
 

@@ -16,12 +16,7 @@ title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---
 
-## Gì & Tại Sao?
-
-Phân tích cú pháp HTML có nghĩa là lọc qua "bát canh" mã của một trang web để tìm những thông tin hữu ích — văn bản, liên kết, hình ảnh, v.v. Các lập trình viên làm điều này để trích xuất dữ liệu, tự động hóa tương tác web, hoặc nhập nội dung vào ứng dụng của họ.
-
 ## Làm thế nào:
-
 Swift không có chức năng phân tích cú pháp HTML sẵn có; chúng ta cần một công cụ hỗ trợ. Hãy sử dụng SwiftSoup, một thư viện Swift giống như BeautifulSoup của Python. Đầu tiên, thêm SwiftSoup vào dự án của bạn sử dụng Swift Package Manager.
 
 Dưới đây là cách thực hiện:
@@ -46,7 +41,6 @@ do {
 ```
 
 ## Sâu hơn
-
 HTML, hay Ngôn ngữ Đánh dấu Siêu Văn bản, đã là xương sống của web từ khi Tim Berners-Lee giới thiệu nó (và web) vào năm 1991. Khi web phát triển, HTML cũng vậy, làm tăng độ phức tạp của việc phân tích cú pháp.
 
 Dưới đây là lý do SwiftSoup tỏa sáng:
@@ -62,7 +56,6 @@ Có phương án khác? Chắc chắn rồi!
 Tuy nhiên, hãy nhớ rằng một công cụ phân tích cú pháp giống như SwiftSoup không chỉ đọc trang như nó vốn có; nó không biết đến bất kỳ nội dung nào được tải động bằng JavaScript. Đối với điều đó, hãy hướng tới các giải pháp liên quan đến WebKit hoặc chế độ không giao diện của trình duyệt.
 
 ## Xem Thêm
-
 - SwiftSoup trên GitHub: [https://github.com/scinfu/SwiftSoup](https://github.com/scinfu/SwiftSoup)
 - Swift Package Manager: [https://swift.org/package-manager/](https://swift.org/package-manager/)
 - Tài liệu WebKit: [https://developer.apple.com/documentation/webkit](https://developer.apple.com/documentation/webkit)

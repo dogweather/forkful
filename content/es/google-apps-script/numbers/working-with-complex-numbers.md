@@ -13,9 +13,6 @@ title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---
 
-## Qué y Por Qué?
-Los números complejos, representados como una combinación de unidades reales e imaginarias (por ejemplo, 3 + 4i), son fundamentales en varios problemas computacionales, especialmente en ingeniería, física y matemáticas aplicadas. Aprender a manipular estos números en Google Apps Script permite a los programadores extender sus capacidades hacia la computación científica, el procesamiento de señales y más allá.
-
 ## Cómo hacerlo:
 Google Apps Script no tiene soporte incorporado para números complejos, lo que requiere la implementación de funcionalidad personalizada. A continuación, se muestra una estructura básica para manejar números complejos, incluyendo la adición, sustracción y multiplicación.
 

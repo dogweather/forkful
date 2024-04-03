@@ -17,12 +17,7 @@ title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---
 
-## Cái gì & Tại sao?
-
-Đọc một tệp văn bản là lấy nội dung từ một tệp được cấu trúc dưới dạng văn bản đọc được, thay vì dữ liệu nhị phân. Các lập trình viên đọc tệp văn bản để truy cập dữ liệu, cấu hình, hoặc để nhập khẩu lượng lớn văn bản vào ứng dụng của họ.
-
 ## Làm thế nào:
-
 Elm chủ yếu tập trung vào phát triển web front-end, nơi mà truy cập trực tiếp vào hệ thống tệp là không thể vì lý do an ninh. Thay vào đó, bạn xử lý việc tải tệp lên bởi người dùng. Dưới đây là cách bạn có thể đọc một tệp văn bản mà người dùng chọn:
 
 ```Elm
@@ -76,7 +71,6 @@ main =
 Chạy code trong trình duyệt của bạn, nhấp vào nút và chọn một tệp văn bản. Nội dung sẽ hiển thị trong ứng dụng Elm của bạn.
 
 ## Đào sâu
-
 Elm không đọc tệp trực tiếp từ hệ thống tệp của máy chủ - nó không được thiết kế cho các hoạt động ở phía máy chủ. Thay vào đó, Elm quản lý nhập tệp thông qua API Tệp trong trình duyệt, thường được kích hoạt bởi một hành động của người dùng, chẳng hạn như việc chọn tệp hoặc hành động kéo và thả. Đó là một biện pháp an ninh.
 
 Trong quá khứ, bạn có thể đã sử dụng JavaScript và Node.js để đọc tệp ở phía máy chủ, hoặc XMLHttpRequest (XHR) để đọc ở phía máy khách mà không cần tương tác của người dùng. Những cái này có các mô hình an ninh và khả năng khác nhau.
@@ -84,7 +78,6 @@ Trong quá khứ, bạn có thể đã sử dụng JavaScript và Node.js để 
 Các module `File` và `File.Selector` trong Elm giúp việc xử lý đọc tệp trong trình duyệt khá mượt mà, nhưng hãy nhớ về triết lý "không tác dụng phụ" của Elm. Điều đó có nghĩa là việc đọc tệp được kiểm soát chặt chẽ, yêu cầu các hành động rõ ràng của người dùng. Ngoài ra, việc phân tích và giải mã nội dung tệp cần phải cẩn thận để phù hợp với kiểu mạnh của Elm.
 
 ## Xem thêm
-
 - Tài liệu API Tệp Elm chính thức: https://package.elm-lang.org/packages/elm/file/latest/
 - Hướng dẫn về các lệnh và đăng ký trong Elm (để hiểu về các hoạt động bất đồng bộ): https://guide.elm-lang.org/effects/
 - Elm Discuss cho các câu hỏi và tương tác cộng đồng: https://discourse.elm-lang.org/

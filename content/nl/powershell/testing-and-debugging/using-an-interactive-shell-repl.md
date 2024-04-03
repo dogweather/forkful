@@ -12,9 +12,6 @@ title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---
 
-## Wat & Waarom?
-De interactieve shell, of Lees-Evalueer-Print Lus (REPL), stelt je in staat om PowerShell-commando's te typen en onmiddellijke feedback te krijgen. Programmeurs gebruiken het om snel codefragmenten te testen, te debuggen of nieuwe commando's te leren zonder een volledig script te schrijven.
-
 ## Hoe:
 Start PowerShell en je bevindt je in de REPL. Probeer de `Get-Date` Cmdlet:
 

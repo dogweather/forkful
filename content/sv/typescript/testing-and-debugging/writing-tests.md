@@ -13,9 +13,6 @@ title: Skriva tester
 weight: 36
 ---
 
-## Vad & Varför?
-Att skriva tester i TypeScript innebär att man skapar automatiska skript för att verifiera funktionaliteten och korrektheten i koden. Programmerare gör detta för att säkerställa tillförlitlighet, snabbt upptäcka buggar och underlätta underhåll av kodtillväxten, eftersom TypeScript's statiska typning lägger till en nivå av förutsägbarhet till JavaScript-testning.
-
 ## Hur man gör:
 TypeScript fungerar harmoniskt med de flesta JavaScript-testningsramverk. För demonstrationsändamål kommer vi att använda Jest, ett populärt testningsramverk, på grund av dess konfigurationsfria uppsättning för TypeScript-projekt.
 

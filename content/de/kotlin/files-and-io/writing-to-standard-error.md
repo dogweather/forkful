@@ -13,12 +13,7 @@ title: Schreiben auf Standardfehler
 weight: 25
 ---
 
-## Was & Warum?
-
-Das Schreiben auf den Standardfehler (stderr) bezieht sich auf das Ausgeben von Fehlermeldungen und Diagnosen auf einem separaten Stream, abgegrenzt vom Standardausgabestream (stdout), was eine bessere Fehlerbehandlung und Protokollierung ermöglicht. Programmierer tun dies, um das Debugging zu erleichtern und sicherzustellen, dass Fehlermeldungen leicht identifiziert und bei Bedarf umgeleitet werden können, um saubere Ausgabe-Logs oder Benutzermeldungen zu erhalten.
-
 ## Wie:
-
 In Kotlin kann das Schreiben auf stderr mit `System.err.println()` erreicht werden. Diese Methode ähnelt `System.out.println()`, leitet die Ausgabe jedoch an den Standardfehlerstrom statt an den Standardausgabestrom.
 
 ```kotlin

@@ -11,9 +11,6 @@ title: "H\xE4mta en webbsida"
 weight: 42
 ---
 
-## Vad & Varför?
-Att ladda ner en webbsida innebär att hämta dess innehåll över internet. Programmerare gör detta för att extrahera data, automatisera testning av webbsidor eller för att påbörja webbskrapning.
-
 ## How to:
 Använd `HttpClient` för att begära och få en webbsidas innehåll. Se exempel nedan:
 

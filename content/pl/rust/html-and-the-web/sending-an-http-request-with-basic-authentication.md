@@ -12,9 +12,6 @@ title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---
 
-## Co i dlaczego?
-Wysyłanie żądania HTTP z podstawową autentykacją to proces, gdzie przekazujesz nazwę użytkownika i hasło w nagłówku, aby uzyskać dostęp do zasobów wymagających weryfikacji. Programiści używają tego, gdy potrzebują bezpiecznego sposobu na komunikację z serwerem.
-
 ## Jak to zrobić:
 ```rust
 use reqwest::header::{Authorization, Basic};

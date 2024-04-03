@@ -10,9 +10,6 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-Regular expressions (regex) in programming are patterns used for matching character combinations in strings. In Elm, just like in other languages, programmers use regex for tasks like validating input, searching, and replacing text within strings due to their flexibility and efficiency.
-
 ## How to:
 Elm does not have built-in regex functions in its core library, requiring the use of third-party libraries for these operations. One of the popular choices for working with regex is `elm/regex`. You can add it to your project using `elm install elm/regex`.
 

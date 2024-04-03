@@ -12,9 +12,6 @@ title: Analisi del HTML
 weight: 43
 ---
 
-## Cosa & Perché?
-L'analisi dell'HTML in PHP coinvolge l'estrazione di informazioni specifiche dai documenti HTML. I programmatori svolgono questo compito per automatizzare l'estrazione dei dati, il web scraping, o per integrare contenuti da varie pagine web nelle loro applicazioni, migliorando la funzionalità senza interventi manuali.
-
 ## Come fare:
 Per l'analisi dell'HTML, i programmatori PHP possono utilizzare funzioni integrate o affidarsi a robuste librerie come Simple HTML DOM Parser. Qui, esploreremo esempi utilizzando sia `DOMDocument` di PHP che il Simple HTML DOM Parser.
 

@@ -15,9 +15,6 @@ title: "Affichage du d\xE9bogage"
 weight: 33
 ---
 
-## Quoi et Pourquoi ?
-Imprimer des sorties de débogage dans Visual Basic pour Applications (VBA) implique de placer stratégiquement des instructions print dans votre code pour afficher les valeurs des variables, le flux d'exécution ou des messages de débogage personnalisés. Cette technique est essentielle pour le débogage, permettant aux programmeurs de comprendre le comportement de leur code à l'exécution et d'identifier tout comportement inattendu ou bugs.
-
 ## Comment faire :
 Dans VBA, l’instruction `Debug.Print` est le pilier pour imprimer des informations de débogage dans la fenêtre immédiate dans l’éditeur Visual Basic (VBE). Pour utiliser efficacement cette fonctionnalité, vous devez avoir la fenêtre immédiate visible (Afficher > Fenêtre immédiate ou appuyer sur `Ctrl+G` dans le VBE).
 

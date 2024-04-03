@@ -10,9 +10,6 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## Co i dlaczego?
-Szukanie i zamiana tekstu to chleb powszedni w programowaniu: odnajdujemy określone frazy i zmieniamy je na inne. Robimy to, gdy potrzebujemy masowo poprawić dane, zaktualizować kod lub po prostu zautomatyzować nudne zadania edycyjne.
-
 ## Jak to zrobić:
 ```Swift
 var text = "Witaj świecie! Swift jest fajny."

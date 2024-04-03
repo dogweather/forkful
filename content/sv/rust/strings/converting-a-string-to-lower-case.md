@@ -11,9 +11,6 @@ title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---
 
-## Vad & Varför?
-Att konvertera en sträng till gemener innebär att alla stora bokstäver i texten förvandlas till småa bokstäver. Programmerare gör detta för att förenkla jämförelser och sökningar, eftersom skillnader i versalisering då inte spelar någon roll.
-
 ## Hur man gör:
 Rust använder metoden `to_lowercase()` för att konvertera en sträng till enbart små bokstäver. Här är ett kort exempel:
 

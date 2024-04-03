@@ -11,9 +11,6 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## Vad & Varför?
-Utskrift av felsökningsdata är att få programmet att skriva ut vad det tänker på. Programmerare använder detta för att förstå vad som händer under huven och snabbt hitta kryphål.
-
 ## Hur gör man:
 ```Clojure
 ; Skriv ut en enkel sträng

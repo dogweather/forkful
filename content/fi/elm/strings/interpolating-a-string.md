@@ -10,9 +10,6 @@ title: Merkkijonon interpolointi
 weight: 8
 ---
 
-## What & Why?
-Mikä on merkkijonojen interpolointi ja miksi ohjelmoijat käyttävät sitä? Merkkijonojen interpoloinnilla tarkoitetaan muuttujien tai lausekkeiden upottamista suoraan merkkijonoon. Tämä helpottaa dynaamisten arvojen yhdistämistä tekstiin, mikä on hyödyllistä esimerkiksi käyttöliittymien teksteissä tai viestien muodostamisessa.
-
 ## How to:
 Elmissä, merkkijonojen yhdistäminen tapahtuu `++` operaattorilla, koska suoraa interpolointia ei tueta. Tässä esimerkki:
 

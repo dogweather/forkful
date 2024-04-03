@@ -17,9 +17,6 @@ title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE3
 weight: 39
 ---
 
-## 무엇 & 왜?
-TOML을 사용한다는 것은 Elixir를 사용하여 TOML(Tom's Obvious, Minimal Language) 데이터를 파싱하고 생성하는 것을 의미합니다. 프로그래머들은 TOML이 읽기 쉽고, 파싱하기 쉽고, 해시 데이터 구조에 잘 매핑되기 때문에 구성 파일을 다루기 위해 사용합니다.
-
 ## 사용 방법:
 먼저 mix 의존성에 TOML 파서를 추가합니다. 이 예제는 `toml-elixir`를 사용합니다:
 

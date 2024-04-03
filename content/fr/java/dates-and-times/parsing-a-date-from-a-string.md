@@ -14,10 +14,8 @@ title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---
 
-## Quoi & Pourquoi ?
-Analyser une date à partir d'une chaîne de caractères implique de convertir la représentation textuelle d'une date et d'une heure en un objet `Date` ou en un objet `LocalDateTime` plus moderne. Les programmeurs font cela pour manipuler, formater, comparer ou stocker des dates dans un format standardisé, ce qui est crucial pour les applications nécessitant des calculs de dates, une validation, ou une internationalisation cohérente.
-
 ## Comment faire :
+
 
 ### Utilisation du package `java.time` (Recommandé dans Java 8 et ultérieur) :
 ```java

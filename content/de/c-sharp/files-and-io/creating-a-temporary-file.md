@@ -10,9 +10,6 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-## Was & Warum?
-Ein temporäres File ist eine Datei, die zur kurzzeitigen Datenspeicherung während der Laufzeit eines Programms erstellt wird. Programmierer nutzen solche temporären Dateien für vielfältige Zwecke, beispielsweise zum sicheren Umgang mit großen Datenmengen, die nicht im Hauptspeicher gehalten werden können, oder zum Erstellen von Backup-Kopien.
-
 ## How To:
 Hier ist ein einfaches Beispiel in C#, wie man eine temporäre Datei erstellt.
 

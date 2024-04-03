@@ -10,9 +10,6 @@ title: Remaniement de code
 weight: 19
 ---
 
-## Quoi & Pourquoi ?
-La refactorisation est le processus de restructuration du code informatique existant sans en changer le comportement externe. Les programmeurs le font pour nettoyer la base de code, améliorer la lisibilité, la maintenabilité et préparer le terrain pour les futures fonctionnalités avec une dette technique minimale.
-
 ## Comment faire :
 Commençons par un exemple simple en Swift où nous avons du code répétitif :
 

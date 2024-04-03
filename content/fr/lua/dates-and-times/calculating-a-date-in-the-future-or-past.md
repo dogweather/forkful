@@ -11,12 +11,7 @@ title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---
 
-## Quoi et Pourquoi ?
-
-Calculer une date dans le futur ou le passé, c'est déterminer une date relative à aujourd'hui ou une autre date de référence. Les programmeurs le font pour planifier des évènements, échéances, rappels, ou pour manipuler des données temporelles.
-
 ## Comment faire :
-
 En Lua, on utilise souvent `os.date` et `os.time`. Voici un exemple basique :
 
 ```Lua
@@ -46,7 +41,6 @@ Il y a 5 jours, on était le 02/04/2023
 ```
 
 ## Pour aller plus loin :
-
 Historiquement, gérer les dates en programmation a toujours été un peu casse-tête à cause des fuseaux horaires et des années bissextiles. Lua ne fait pas exception, mais offre une certaine simplicité avec `os.date` et `os.time`.
 
 Des alternatives incluent l'utilisation de bibliothèques tierces comme `luadate`, qui a des fonctions plus avancées pour manipuler les dates.
@@ -54,7 +48,6 @@ Des alternatives incluent l'utilisation de bibliothèques tierces comme `luadate
 En termes de mise en œuvre, on effectue souvent des calculs en se basant sur des secondes puisqu'une date en Lua est simplement le nombre de secondes depuis l'époque (1er janvier 1970). C'est ce qu'on appelle un timestamp.
 
 ## Voir Aussi :
-
 - La documentation de Lua sur les fonctions `os.date` et `os.time`: https://www.lua.org/manual/5.4/manual.html#6.9
 - LuaDate, une bibliothèque de manipulation de dates : https://github.com/Tieske/date
 - Gestion des fuseaux horaires : https://stackoverflow.com/a/16946812/2924421

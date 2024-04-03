@@ -13,12 +13,7 @@ title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---
 
-## Hva & Hvorfor?
-
-Å konvertere en streng til små bokstaver er en grunnleggende operasjon som involverer å transformere alle tegnene i en gitt streng til deres småbokstavtilsvarende. Programmerere utfører vanligvis denne operasjonen for å oppnå sammenligninger som er uavhengige av bokstavstørrelse, eller for å standardisere tekstinput for videre behandling, noe som gjør applikasjoner mer brukervennlige og data mer konsekvente.
-
 ## Hvordan:
-
 I Dart kan du konvertere en streng til småbokstaver ved å bruke `toLowerCase()`-metoden som tilbys av `String`-klassen. Denne metoden returnerer en ny streng med alle store bokstaver konvertert til småbokstaver. La oss se hvordan dette fungerer med et enkelt eksempel:
 
 ```dart

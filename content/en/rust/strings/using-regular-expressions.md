@@ -10,12 +10,7 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-
-Regular expressions, or regex, allow developers to search, match, and manipulate strings with advanced pattern-matching techniques. In Rust, utilizing regex aids in efficiently parsing and handling text data, making tasks such as data validation, searching, and text transformations more streamlined and maintainable.
-
 ## How to:
-
 Rust's `regex` library is a go-to for working with regular expressions. To use it, you'll first need to add it to your `Cargo.toml`:
 
 ```toml
@@ -26,7 +21,6 @@ regex = "1"
 Then, you can start implementing regex functionalities in your Rust code. Here's how to perform some common operations:
 
 ### Matching a Pattern in a String
-
 ```rust
 use regex::Regex;
 
@@ -40,7 +34,6 @@ fn main() {
 ```
 
 ### Finding and Accessing Matches
-
 ```rust
 use regex::Regex;
 
@@ -59,7 +52,6 @@ fn main() {
 ```
 
 ### Replacing Text
-
 ```rust
 use regex::Regex;
 
@@ -74,7 +66,6 @@ fn main() {
 ```
 
 ### Splitting Text Using a Regex
-
 ```rust
 use regex::Regex;
 

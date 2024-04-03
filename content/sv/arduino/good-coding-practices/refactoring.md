@@ -12,11 +12,7 @@ title: Refaktorisering
 weight: 19
 ---
 
-## Vad & Varför?
-Refaktorisering är processen där du omarbetar din kod för att förbättra dess struktur och läsbarhet utan att ändra det externa beteendet eller funktionaliteten. Programmerare refaktoriserar för att göra sin kod renare, lättare att förstå och mer underhållbar, vilket på lång sikt gör felsökning och tillägg av nya funktioner mycket mindre av ett huvudbry.
-
 ## Hur man gör:
-
 Låt oss säga att du har en funktion på din Arduino som gör alldeles för mycket, så här:
 
 ```Arduino

@@ -13,12 +13,7 @@ title: Usando arrays associativos
 weight: 15
 ---
 
-## O Que & Por Que?
-
-Arrays associativos, ou objetos no TypeScript, permitem que você utilize strings (ou chaves) para acessar pares de valor. Programadores os usam para padrões de acesso a dados mais dinâmicos comparados aos arrays tradicionais, oferecendo uma maneira flexível de estruturar e acessar dados sem estar atados a índices numéricos.
-
 ## Como Fazer:
-
 Criar e usar arrays associativos no TypeScript é simples. Aqui está um passo a passo básico:
 
 ```TypeScript
@@ -70,7 +65,6 @@ Saída:
 ```
 
 ## Aprofundando
-
 No TypeScript, o que nos referimos como arrays associativos são essencialmente objetos. Historicamente, em linguagens como PHP, arrays associativos são um tipo fundamental, mas JavaScript (e por extensão, TypeScript) usa objetos para esse propósito. Essa abordagem é tanto uma força quanto uma limitação. Objetos fornecem uma estrutura altamente dinâmica para associar strings a valores, mas eles não são destinados a ser usados como 'arrays' no sentido tradicional. Por exemplo, você não pode utilizar métodos de array como `push` ou `pop` diretamente nesses objetos.
 
 Para casos onde você precisa de coleções ordenadas de pares de chave-valor com operações estilo array, TypeScript (e JavaScript moderno) oferece o objeto `Map`:

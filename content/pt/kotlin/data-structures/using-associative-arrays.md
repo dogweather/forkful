@@ -13,12 +13,7 @@ title: Usando arrays associativos
 weight: 15
 ---
 
-## O quê & Por quê?
-
-Arrays associativos, ou mapas, em Kotlin são coleções que armazenam pares de chave-valor. Os programadores os usam para organizar e recuperar dados de forma eficiente com base em chaves únicas, facilitando o gerenciamento de informações.
-
 ## Como fazer:
-
 Criar e usar um mapa em Kotlin é simples. Aqui está um guia rápido sobre como fazê-lo:
 
 ```Kotlin
@@ -49,7 +44,6 @@ fun main() {
 ```
 
 ## Mergulho Profundo
-
 Os mapas de Kotlin vêm diretamente de sua interoperabilidade com Java, onde os mapas são uma parte essencial das coleções. No entanto, Kotlin aprimora a usabilidade deles fornecendo interfaces mutáveis (`MutableMap`) e somente leitura (`Map`), ao contrário da interface `Map` unificada do Java. Essa distinção deixa claro se uma coleção é destinada à modificação ou não.
 
 Um detalhe importante sobre a implementação do mapa de Kotlin é a distinção explícita entre mapas mutáveis e imutáveis, o que enfatiza o foco da linguagem na imutabilidade e segurança de thread.

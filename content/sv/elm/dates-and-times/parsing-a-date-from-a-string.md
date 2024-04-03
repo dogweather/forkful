@@ -14,9 +14,6 @@ title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---
 
-## Vad & Varför?
-Att tolka ett datum från en sträng i Elm innebär att konvertera textuell information som representerar datum och tider till ett format som Elm kan förstå och manipulera, specifikt till `Date`-typen. Denna process är avgörande för att hantera användarinmatning, visa datum korrekt lokaliserat och utföra beräkningar relaterade till datum, vilket säkerställer att dina Elm-applikationer kan behandla temporär data på ett intelligent sätt.
-
 ## Hur man gör:
 Elm har inte inbyggda funktioner som är lika robusta som vissa andra språk för datumtolkning, och förlitar sig huvudsakligen på Javascript-interoperabilitet eller bibliotek för mer komplexa operationer. Du kan dock använda paketet `elm/time` för grundläggande tolkning, och för mer komplexa behov rekommenderas ofta det tredjepartsbiblioteket `justinmimbs/date`.
 

@@ -12,12 +12,7 @@ title: Generering av tilfeldige tall
 weight: 12
 ---
 
-## Hva & Hvorfor?
-
-Generering av tilfeldige tall innebærer å skape tall som ikke kan forutsies med rimelighet bedre enn ved sjansen, noe som er essensielt for utviklingen av simuleringer, spill og sikkerhetsalgoritmer. Programmører gjør dette for å innføre uforutsigbarhet eller simulere fenomener fra den virkelige verden i applikasjonene sine.
-
 ## Hvordan:
-
 Python tilbyr `random`-modulen som hjelper i generering av tilfeldige tall for ulike bruksområder. Her er hvordan du kommer i gang:
 
 1. **Importere modulen**
@@ -65,7 +60,6 @@ Python tilbyr `random`-modulen som hjelper i generering av tilfeldige tall for u
     Eksempel på utdata: `[2, 5, 0, 4, 9, 8, 1, 7, 6, 3]`
 
 ## Fordypning
-
 `Random`-modulen i Python bruker en pseudotilfeldig tallgenerator (PRNG), spesifikt Mersenne Twister-algoritmen, som er god for generelle applikasjoner, men ikke egnet for kryptografiske formål på grunn av forutsigbarheten hvis nok utdata observeres. `Secrets`-modulen, introdusert i Python 3.6, tilbyr et bedre alternativ for generering av kryptografisk sterke tilfeldige tall, spesielt nyttig i sikkerhetssensitive applikasjoner. For eksempel, generering av en sikker, tilfeldig token for en tilbakestilling av passordlenke:
 
 ```Python

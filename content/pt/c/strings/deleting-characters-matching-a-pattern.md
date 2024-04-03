@@ -14,12 +14,7 @@ title: "Deletando caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---
 
-## O Que & Por Quê?
-
-Remover caracteres que correspondem a um padrão específico de strings em C trata-se de eliminar todas as instâncias de certos caracteres que se encaixam em critérios pré-definidos. Programadores realizam essa tarefa para higienizar entradas, preparar dados para processamento, ou simplesmente limpar strings para saída ou manipulação adicional, garantindo que os dados manipulados estejam exatamente como necessários para um dado contexto ou algoritmo.
-
 ## Como fazer:
-
 C não possui uma função embutida para deletar diretamente caracteres de uma string baseado em um padrão, ao contrário de algumas linguagens de nível mais alto. No entanto, você pode facilmente realizar essa tarefa manualmente iterando sobre a string e construindo uma nova que exclua os caracteres indesejados. Por exemplo, vamos supor que você queira remover todos os dígitos de uma string. Você pode fazer isso da seguinte forma:
 
 ```c
@@ -53,7 +48,6 @@ Resultado: C Programming : The Basics!
 Este exemplo utiliza `isdigit` de `ctype.h` para identificar dígitos, deslocando caracteres não-dígitos para o início da string e terminando a string uma vez que todos os caracteres foram avaliados.
 
 ## Aprofundamento
-
 A solução apresentada utiliza uma abordagem de dois ponteiros dentro do mesmo array para efetivamente filtrar caracteres indesejados, uma técnica emblemática da filosofia de gerenciamento de memória prático do C. Este método é eficiente porque opera in-place, evitando a necessidade de alocação de memória adicional e assim minimizando sobrecarga.
 
 Historicamente, a ausência de funções de manipulação de string de alto nível em C forçou programadores a desenvolver um entendimento profundo do manuseio de strings no nível da memória, levando a abordagens inovadoras como a acima. Embora isso tenha a vantagem de maior controle e eficiência, vem com um risco maior de erros, como estouros de buffer e erros off-by-one.

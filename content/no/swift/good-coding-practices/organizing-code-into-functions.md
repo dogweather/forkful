@@ -11,9 +11,6 @@ title: Organisering av kode i funksjoner
 weight: 18
 ---
 
-## Hva & Hvorfor?
-Å gruppere kode i funksjoner er å bryte ned oppgaver i gjenbrukbare deler. Det gjør koden ren, mindre utsatt for feil, og enklere å feilsøke eller restrukturere.
-
 ## Hvordan gjøre det:
 Forestille deg en oppgave: kalkulere gjennomsnittet av en array. Uten funksjoner, ville du klemt det hele inn i main. Med funksjoner, ville du gjort dette:
 

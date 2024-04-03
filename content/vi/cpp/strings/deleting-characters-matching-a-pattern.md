@@ -16,9 +16,6 @@ title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---
 
-## Gì và Tại Sao?
-Xóa các ký tự phù hợp với một mẫu có nghĩa là loại bỏ các chuỗi cụ thể khỏi một chuỗi văn bản. Lập trình viên thực hiện điều này để dọn dẹp, định dạng dữ liệu, hoặc để đáp ứng các quy tắc của ứng dụng.
-
 ## Làm Thế Nào:
 Hãy loại bỏ các ký tự sử dụng `erase` và `remove_if` cùng với biểu thức lambda. Dưới đây là một ví dụ nhanh:
 

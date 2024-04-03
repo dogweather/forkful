@@ -11,9 +11,6 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i dlaczego?
-Liczby zespolone mają część rzeczywistą i część urojoną (takie jak `3 + 4i`). Są używane w inżynierii, fizyce i w pewnych problemach obliczeniowych. Programiści pracują z nimi przy symulacjach, przetwarzaniu sygnałów oraz rozwiązywaniu pewnych typów problemów matematycznych efektywnie.
-
 ## Jak to zrobić:
 Elixir nie posiada wbudowanych typów liczbowych zespolonych, więc musimy stworzyć własne lub skorzystać z biblioteki, takiej jak `ComplexNum`. Oto szybki przykład z użyciem biblioteki:
 

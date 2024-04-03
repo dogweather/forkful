@@ -11,12 +11,7 @@ title: Avrundning av tal
 weight: 13
 ---
 
-## Vad & Varför?
-
-Avrundning av tal innebär att man klipper av decimalerna till ett enklare värde som är tillräckligt bra för ett givet sammanhang. Programmerare avrundar tal för att förenkla resultat, spara utrymme, eller för att det exakta värdet inte är avgörande - som när du överslagsberäknar CPU-användning eller diskutrymme, och decimalerna inte är avgörande för din dag.
-
 ## Hur man gör:
-
 Här är det låga ner på avrundning i Bash:
 
 ```Bash
@@ -43,7 +38,6 @@ Exempelutskrifter - direkt från terminalens mun:
 ```
 
 ## Fördjupning
-
 Förr i tiden, fanns det ingen `bc` eller `printf` i Bash-skript för att göra matematikmagi. Gamla rävar var tvungna att förlita sig på externa verktyg eller påhittiga omvägar. Nu låter `bc` dig göra precision matematik. Kom ihåg, `bc` avrundar inte som standard - det utför flooring. Scale-delen ställer in decimalpunktsaktionen.
 
 Alternativ? Du kan använda `awk` för avrundning utan att byta till `bc` eller brottas med `perl` för tyngre matematikbehov. För den masochistiska, gå ren Bash med, låt oss säga, iterativ strängmanipulation - men varför?
@@ -51,7 +45,6 @@ Alternativ? Du kan använda `awk` för avrundning utan att byta till `bc` eller 
 När det gäller detaljer, gör `bc` inte bara avrundningar, det gör massor av mattegrejer - skala det, sinus det, sqrt det, du nämner det. Med `printf` handlar det mer om textformatering, men hej, det avrundar tal, så vi klagar inte.
 
 ## Se även
-
 För de som är sugna på mer:
 
 - GNU `bc`-manual: https://www.gnu.org/software/bc/manual/html_mono/bc.html

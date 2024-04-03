@@ -10,11 +10,7 @@ title: Deleting characters matching a pattern
 weight: 5
 ---
 
-## What & Why?
-Deleting characters matching a pattern means scrubbing specific sequences from a string. Programmers do it to clean data, enforce formats, or remove unwanted info.
-
 ## How to:
-
 To remove characters using a pattern in Clojure, you employ regular expressions with the `re-seq`, `re-find`, or `re-matches` functions paired with `clojure.string/replace`.
 
 ```Clojure

@@ -10,9 +10,6 @@ title: Conversione di una data in una stringa
 weight: 28
 ---
 
-## What & Why? (Cosa & Perché?)
-Convertire una data in una stringa significa trasformare la rappresentazione di un momento temporale in testo leggibile. Lo facciamo per memorizzare, visualizzare, e condividere date in un formato comprensibile agli esseri umani.
-
 ## How to: (Come fare:)
 ```Haskell
 import Data.Time

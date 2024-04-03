@@ -13,9 +13,6 @@ title: "\xC5 finne lengden p\xE5 en streng"
 weight: 7
 ---
 
-## Hva & Hvorfor?
-Å finne lengden på en streng i C innebærer å bestemme antall tegn før nullterminatoren `\0`. Programmerere gjør dette for å kunne manipulere strenger korrekt uten å støte på feil som bufferoverløp, som kan føre til sikkerhetssårbarheter eller krasj i programmet.
-
 ## Hvordan:
 I C brukes standardbibliotekfunksjonen `strlen()` vanligvis for å finne lengden på en streng. Her er et kjapt eksempel:
 

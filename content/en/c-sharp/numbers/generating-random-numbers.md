@@ -10,12 +10,7 @@ title: Generating random numbers
 weight: 12
 ---
 
-## What & Why?
-
-Generating random numbers in C# involves the creation of unpredictable numeric values within a specified range. Programmers use these methods to implement features like cryptography, simulations, and games where unpredictability or the simulation of real-world randomness is required.
-
 ## How to:
-
 The most common way to generate random numbers in C# is using the `System.Random` class. Here's a simple example demonstrating its usage:
 
 ```C#
@@ -67,7 +62,6 @@ public class SecureRandomExample
 ```
 
 ## Deep Dive
-
 Random number generation in C# has evolved over the years. Initially, the `System.Random` class was the go-to for generating pseudo-random numbers. It is pseudo-random because, given a specific seed value, it will produce the same sequence of numbers, which can be useful for debugging or repeatability of tests.
 
 While sufficient for basic needs, `System.Random` is not thread-safe and can produce predictable outcomes, which is not suitable for security-dependent applications. This limitation led to the introduction of the `RNGCryptoServiceProvider` for cryptographic randomness, which is more secure but also more resource-intensive.

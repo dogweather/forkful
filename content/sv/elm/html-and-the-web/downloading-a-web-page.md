@@ -10,9 +10,6 @@ title: "H\xE4mta en webbsida"
 weight: 42
 ---
 
-## Vad & Varför?
-Att ladda ner en webbsida betyder att hämta dess innehåll via internet. Programmerare gör detta för att bearbeta information, fylla appar med data eller spara sidor för offline-användning.
-
 ## Hur man gör:
 ```Elm
 import Http
@@ -72,7 +69,7 @@ decoder =
 ## Fördjupning
 Historiskt sett har webbsidor hämtats med många olika tekniker, från enkla HTTP-anrop till komplexa webbskrapningsverktyg. Elm är en funktionell programmeringsspråk designad för webbutveckling, fokuserad på säkerhet och underhållbarhet. I Elm hanterar vi sidhämtning genom `Http`-modulen. Alternativ till Elm för att ladda ner webbsidor inkluderar JavaScript med XMLHttpRequest eller Fetch API, eller serversidespråk som Python med requests-biblioteket.
 
-Elms Http-paket använder "tasks", vilket är Elm-specifika asynkrona operationer. Det är skräddarsytt för att jobba med Elm Runtime för att hantera sidoeffekter som nätverksanrop. Http.get-definierar hur du hämtar innehållet och vad du förväntar dig som svar - i vårt fall, en sträng. Felet hanteras i update-funktionen, där användaren antingen får innehållet eller ett felmeddelande. 
+Elms Http-paket använder "tasks", vilket är Elm-specifika asynkrona operationer. Det är skräddarsytt för att jobba med Elm Runtime för att hantera sidoeffekter som nätverksanrop. Http.get-definierar hur du hämtar innehållet och vad du förväntar dig som svar - i vårt fall, en sträng. Felet hanteras i update-funktionen, där användaren antingen får innehållet eller ett felmeddelande.
 
 ## Se även
 - Elm's officiella [Http-paket dokumentation](https://package.elm-lang.org/packages/elm/http/latest/)

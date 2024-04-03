@@ -11,9 +11,6 @@ title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---
 
-## What & Why?
-"Concatenating strings" betyr å lime sammen tekster for å danne nye. Programmerere gjør dette for å manipulere tekst, vise meldinger eller kombinere data dynamisk.
-
 ## How to:
 ```TypeScript
 let hello: string = "Hei";
@@ -39,7 +36,6 @@ ES6 introduserte "template literals" som lar deg lage mer lesbare strenger med v
 Det er også andre metoder som `concat()` funksjonen eller `join()` på arrays, men disse er mer aktuelle når man jobber med lister av strenger.
 
 TypeScript, som er en overbygning over JavaScript, følger disse samme metodene for strengsammensetning og legger til type-sjekking for ekstra sikkerhet.
-
 
 ## See Also
 - MDN Web Docs on String concatenation: [String concatenation - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)

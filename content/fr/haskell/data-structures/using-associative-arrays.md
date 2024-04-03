@@ -14,12 +14,7 @@ title: Utilisation des tableaux associatifs
 weight: 15
 ---
 
-## Quoi & Pourquoi ?
-
-Les tableaux associatifs, ou dictionnaires, en Haskell concernent principalement la mise en correspondance de clés et de valeurs pour une recherche rapide et une gestion efficace des données. Les programmeurs les utilisent pour gérer des collections d'éléments appariés, où la recherche d'un élément est simple, comparativement aux listes.
-
 ## Comment faire :
-
 Haskell n'inclut pas de tableaux associatifs directement comme certains autres langages, mais il propose une bibliothèque standard puissante appelée `Data.Map` pour travailler avec des paires clé-valeur. Retroussons nos manches et voyons comment les utiliser !
 
 Tout d'abord, assurez-vous de l'importer :
@@ -58,7 +53,6 @@ Map.elems languagesUpdated
 Ces opérations de base devraient couvrir la plupart des utilisations, mais il y a encore beaucoup à explorer dans `Data.Map` !
 
 ## Exploration approfondie
-
 Le module `Data.Map` de la bibliothèque standard de Haskell est construit au-dessus d'arbres binaires équilibrés, spécifiquement des arbres AVL. Ce choix assure que la plupart des opérations sur la map, telles que l'insertion, la suppression, et la recherche, peuvent être effectuées en temps O(log n), où n est le nombre d'éléments dans la map. C'est un choix efficace pour de nombreux cas d'utilisation, bien que ce ne soit pas le plus rapide absolu pour tous les scénarios.
 
 Il y a également une nuance historique : avant que `Data.Map` devienne la solution privilégiée, les programmeurs Haskell utilisaient souvent des listes de paires pour simuler des tableaux associatifs. Cependant, les opérations sur de telles structures sont en O(n) pour la recherche, faisant de `Data.Map` une amélioration significative en termes de performance.

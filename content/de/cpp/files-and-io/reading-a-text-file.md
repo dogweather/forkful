@@ -11,9 +11,6 @@ title: Textdatei einlesen
 weight: 22
 ---
 
-## Was & Warum?
-Das Lesen einer Textdatei in C++ bedeutet, dass wir den Inhalt einer Datei in unserem Programm verwenden. Wir machen das, um Daten zu verarbeiten, die in Dateien gespeichert sind, sei es Konfiguration, Benutzereingaben oder Log-Daten.
-
 ## How to:
 Ein einfaches Beispiel, um eine Textdatei Zeile für Zeile zu lesen:
 

@@ -11,9 +11,6 @@ title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---
 
-## Vad & Varför?
-Att ta bort citattecken från en sträng innebär att man avlägsnar dessa extra omslag för att få fram den klara texten inuti. Programmerare gör detta för att sanera indata, undvika fel och förbereda data för behandling där citattecken är hinder, inte funktioner.
-
 ## Hur man gör:
 Elixir har ingen inbyggd funktion för att ta bort citattecken, men det är enkelt att skapa din egen med mönstermatchning eller `String`-funktioner. Se dessa kodsnuttar:
 

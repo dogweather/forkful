@@ -9,9 +9,6 @@ title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
 
-## What & Why? (Mikä & Miksi?)
-Debug-tulostus auttaa ymmärtämään ohjelman toimintaa. Koodareita se auttaa paikkaamaan bugeja ja varmistamaan koodin toimivuuden.
-
 ## How to: (Kuinka tehdä:)
 ```Python
 # Yksinkertainen esimerkki

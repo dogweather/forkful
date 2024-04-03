@@ -11,11 +11,7 @@ title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---
 
-## Qué y Por Qué?
-Enviar una solicitud HTTP con autenticación básica significa incluir credenciales de usuario y contraseña codificadas en la cabecera de la solicitud. Los programadores lo hacen para acceder a recursos que requieren identificación de manera sencilla y rápida.
-
 ## Cómo:
-
 ```TypeScript
 import axios from 'axios';
 

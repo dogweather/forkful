@@ -16,9 +16,6 @@ title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1
 weight: 26
 ---
 
-## Cái gì & Tại sao?
-Việc tính toán một ngày trong tương lai hoặc quá khứ liên quan đến việc tính toán một ngày cách biệt nhiều ngày, tháng, hoặc năm từ một điểm thời gian cụ thể. Lập trình viên thường cần điều này để theo dõi sự kiện, lên lịch công việc, hoặc xử lý ngày hết hạn.
-
 ## Cách thực hiện:
 Sử dụng mô-đun `Date` được tích hợp sẵn của Elixir, bạn có thể dễ dàng chơi với dòng thời gian.
 

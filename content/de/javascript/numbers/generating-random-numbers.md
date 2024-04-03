@@ -13,14 +13,10 @@ title: Generierung von Zufallszahlen
 weight: 12
 ---
 
-## Was & Warum?
-
-Das Generieren von Zufallszahlen in JavaScript ist eine Technik, die verwendet wird, um Unvorhersehbarkeit in Anwendungen zu schaffen, von Spielen, die ein zufälliges Verhalten von Gegnern benötigen, bis hin zu Sicherheitsalgorithmen, die kryptografische Zufälligkeit erfordern. Diese Fähigkeit ist entscheidend für die Entwicklung dynamischer Benutzererfahrungen und sicherer Anwendungen.
-
 ## Wie geht das:
 
-### Grundlegende Zufallszahlengenerierung
 
+### Grundlegende Zufallszahlengenerierung
 Die einfachste Möglichkeit, eine Zufallszahl in JavaScript zu generieren, besteht darin, `Math.random()` zu verwenden. Diese Funktion gibt eine Gleitkommazahl, eine pseudo-zufällige Zahl im Bereich von 0 (einschließlich) bis 1 (ausschließlich), zurück.
 
 ```javascript
@@ -29,7 +25,6 @@ console.log(randomNumber);
 ```
 
 ### Generierung einer Zufallszahl innerhalb eines Bereichs
-
 Oft möchte man eine ganze Zufallszahl innerhalb eines bestimmten Bereichs. Dies kann erreicht werden, indem man die Ausgabe von `Math.random()` skaliert und rundet.
 
 ```javascript
@@ -43,7 +38,6 @@ console.log(getRandomInt(1, 100));
 ```
 
 ### Kryptografisch sichere Zufallszahlen
-
 Für Anwendungen, die einen höheren Grad an Zufälligkeit erfordern (z. B. kryptografische Operationen), kann die Methode `crypto.getRandomValues()` verwendet werden. Diese bietet kryptografische Zufälligkeit, im Gegensatz zu den pseudo-zufälligen Zahlen, die von `Math.random()` generiert werden.
 
 ```javascript
@@ -55,7 +49,6 @@ Für Anwendungen, die einen höheren Grad an Zufälligkeit erfordern (z. B. kryp
 ```
 
 ## Tiefergehend
-
 Historisch gesehen war die Generierung von Zufallszahlen in JavaScript ausschließlich auf die Funktion `Math.random()` angewiesen. Sie ist zwar bequem für die meisten gelegentlichen Anwendungsfälle, ihr Algorithmus, typischerweise eine Variante eines Pseudorandom-Number-Generator (PRNG) wie Mersenne Twister, bietet jedoch keine kryptografische Sicherheit.
 
 Die Einführung der Web Cryptography API brachte die Methode `crypto.getRandomValues()`, die eine Möglichkeit bietet, Zahlen zu generieren, die weit weniger vorhersehbar und für sicherheitssensitive Anwendungen geeignet sind. Diese Methode greift auf die Zufälligkeitsquellen des zugrunde liegenden Betriebssystems zurück, wie `/dev/random` auf Unix/Linux, die robuster sind und sich besser für kryptografische Operationen eignen.

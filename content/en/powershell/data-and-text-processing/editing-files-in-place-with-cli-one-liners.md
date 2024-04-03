@@ -11,14 +11,10 @@ title: Editing files in-place with CLI one-liners
 weight: 32
 ---
 
-## What & Why?
-
-Editing files in-place with CLI one-liners in PowerShell is about making direct modifications to files from the command line, without the need to open them in an editor. This approach saves time and can be particularly handy for batch processing or automating repetitive editing tasks across multiple files.
-
 ## How to:
 
-### Replacing Text in a Single File
 
+### Replacing Text in a Single File
 Let's start with a simple task: you want to replace all instances of "oldtext" with "newtext" in a file named example.txt. Here's how you would do it:
 
 ```PowerShell
@@ -28,7 +24,6 @@ Let's start with a simple task: you want to replace all instances of "oldtext" w
 This one-liner reads the content, performs the replacement, and writes the content back to the original file.
 
 ### Editing Multiple Files
-
 What if you need to apply the same change across multiple files? Here's an approach using a loop:
 
 ```PowerShell
@@ -40,7 +35,6 @@ Get-ChildItem *.txt | ForEach-Object {
 This snippet finds all `.txt` files in the current directory, replacing "oldtext" with "newtext" in each one.
 
 ### Add Content at the Beginning or End of Files
-
 Appending or prepending content can also be streamlined:
 
 ```PowerShell
@@ -54,7 +48,6 @@ Appending or prepending content can also be streamlined:
 Here, we simply concatenate the new content before or after the existing content and save it back.
 
 ## Deep Dive
-
 Historically, in-place editing is more commonly associated with Unix tools like `sed` and `awk`. PowerShell, being a more recent entrant, does not include a dedicated in-place editing feature out of the box. This is partly due to its design philosophy, highlighting the importance of objects over text streams, unlike Unix tools that treat most inputs as text.
 
 Alternatives to PowerShell for this task include using traditional Unix tools available on Windows through Cygwin or the Windows Subsystem for Linux (WSL). These tools often provide a more concise syntax for in-place editing due to their text-centric design.

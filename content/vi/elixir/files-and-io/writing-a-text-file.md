@@ -17,11 +17,7 @@ title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---
 
-## Cái gì & Tại sao?
-Việc viết một tập tin văn bản liên quan đến việc lưu dữ liệu vào một tập tin theo định dạng có thể đọc được bởi con người. Các lập trình viên thực hiện điều này để duy trì thông tin như log, cài đặt, và kết quả dữ liệu.
-
 ## Cách thực hiện:
-
 Elixir làm cho việc viết tập tin văn bản trở nên đơn giản. Dưới đây là một ví dụ đơn giản về việc viết vào một tập tin tên là "hello.txt".
 
 ```elixir
@@ -46,11 +42,9 @@ Một dòng khác!
 ```
 
 ## Đi sâu hơn
-
 Phương pháp viết tập tin của Elixir phản ánh di sản Erlang của nó, tập trung vào tính đáng tin cậy và đồng thời. Các lựa chọn thay thế bao gồm việc sử dụng dòng dữ liệu cho dữ liệu lớn hơn. Nội bộ, Elixir sử dụng mô-đun :file của Erlang, mô-đun này tương tác với hệ điều hành cơ bản.
 
 ## Xem thêm
-
 - Tài liệu mô-đun `File` của Elixir: https://hexdocs.pm/elixir/File.html
 - Tài liệu mô-đun `:file` của Erlang: https://erlang.org/doc/man/file.html 
 - Tìm hiểu về mô-đun Stream của Elixir cho việc xử lý dữ liệu lớn: https://hexdocs.pm/elixir/Stream.html

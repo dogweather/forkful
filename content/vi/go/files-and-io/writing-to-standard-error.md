@@ -15,12 +15,7 @@ title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---
 
-## Cái gì & Tại sao?
-
-Việc viết vào lỗi chuẩn (stderr) trong Go bao gồm việc chỉ đạo các thông báo lỗi hoặc chẩn đoán không dành cho dòng xuất chính. Các lập trình viên sử dụng điều này để phân tách đầu ra thông thường khỏi thông tin lỗi, làm cho việc gỡ lỗi và phân tích nhật ký trở nên đơn giản hơn.
-
 ## Làm thế nào:
-
 Trong Go, gói `os` cung cấp giá trị `Stderr`, đại diện cho tệp lỗi chuẩn. Bạn có thể sử dụng nó với các hàm `fmt.Fprint`, `fmt.Fprintf`, hoặc `fmt.Fprintln` để viết vào stderr. Dưới đây là một ví dụ đơn giản:
 
 ```go
@@ -56,7 +51,6 @@ Quá trình hoàn thành với 4 lỗi.
 Nhớ rằng, các thông báo này sẽ không xuất hiện trong đầu ra thông thường (stdout) mà trong dòng lỗi, có thể được chuyển hướng riêng biệt trong hầu hết các hệ điều hành.
 
 ## Sâu hơn
-
 Khái niệm về lỗi chuẩn có nguồn gốc sâu sắc trong triết lý Unix, phân biệt rõ ràng giữa đầu ra bình thường và thông báo lỗi để xử lý và quản lý dữ liệu một cách hiệu quả hơn. Trong Go, quy ước này được chấp nhận thông qua gói `os`, cung cấp trực tiếp quyền truy cập vào các bộ điều khiển tệp stdin, stdout và stderr.
 
 Trong khi viết trực tiếp vào `os.Stderr` phù hợp với nhiều ứng dụng, Go cũng cung cấp các gói đăng nhập chi tiết hơn như `log`, cung cấp các tính năng bổ sung như dấu thời gian và cấu hình đầu ra linh hoạt hơn (ví dụ: viết vào tệp). Sử dụng gói `log`, đặc biệt cho các ứng dụng lớn hơn hoặc nơi cần có các tính năng đăng nhập toàn diện hơn, có thể là một lựa chọn tốt hơn. Cũng đáng chú ý là cách tiếp cận của Go đối với việc xử lý lỗi, khuyến khích trả về lỗi từ các hàm, bổ sung cho thực hành viết thông báo lỗi vào stderr, cho phép kiểm soát lỗi và báo cáo lỗi một cách chi tiết hơn.

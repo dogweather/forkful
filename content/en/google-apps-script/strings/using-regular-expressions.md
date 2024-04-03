@@ -10,16 +10,10 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-
-Regular Expressions (regex) are patterns used to match character combinations in strings. Programmers utilize them for searching, editing, or manipulating text and data, making them indispensable for pattern matching and data parsing tasks.
-
 ## How to:
-
 Using regular expressions in Google Apps Script is straightforward thanks to the JavaScript-based syntax. Here's how you can incorporate regex into your scripts for common tasks like searching and data validation.
 
 ### Searching Strings
-
 Suppose you want to find if a string contains a specific pattern, such as an email address. Here’s a simple example:
 
 ```javascript
@@ -38,7 +32,6 @@ findEmailInText("Contact us at info@example.com.");
 ```
 
 ### Data Validation
-
 Regular expressions shine in data validation. Below is a function that validates an input string to check if it adheres to a simple password policy (at least one uppercase letter, one lowercase letter, and a minimum of 8 characters).
 
 ```javascript
@@ -53,7 +46,6 @@ Logger.log(validatePassword("weak"));       // Outputs: false
 ```
 
 ## Deep Dive
-
 Regular expressions in Google Apps Script are inherited from JavaScript, first standardized in ECMAScript language specification in June 1997. Although powerful, they can sometimes lead to confusing and hard-to-maintain code, especially when overused or used for complex pattern matching tasks that might be more efficiently solved through other parsing methods.
 
 For instance, while you can use regex for HTML or XML parsing in a pinch, doing so is generally discouraged due to the nested and intricate structures of these documents. Instead, tools specifically designed for parsing such structures, like DOM parsers for HTML, are more reliable and readable.

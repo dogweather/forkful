@@ -11,9 +11,6 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## What & Why?
-Å søke og erstatte tekst betyr å finne spesifikke ord eller strenger og bytte dem ut med noe annet. Programmerere bruker dette for å oppdatere kode, behandle data, eller masseendre tekstfiler.
-
 ## How to:
 Lua gjør søk og erstatt enkelt med `string.gsub`. Her er hvordan du gjør det:
 

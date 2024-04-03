@@ -12,9 +12,6 @@ title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---
 
-## What & Why? - Mitä & Miksi?
-Java-ohjelmoinnissa merkkien poistaminen kuvioita vastaavasti tarkoittaa tietyn säännöllisen lausekkeen (regex) määrittämiä merkkejä olevien kohtien poistamista merkkijonosta. Tätä tehdään yleensä syötteen siistimiseen, datan muotoiluun tai tarpeettoman tiedon suodattamiseen.
-
 ## How to: - Miten:
 ```java
 public class CharacterDeletion {

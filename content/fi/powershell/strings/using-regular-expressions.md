@@ -14,12 +14,7 @@ title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---
 
-## Mikä & Miksi?
-
-Säännölliset lausekkeet (regex) ovat merkkijonoja, jotka muodostavat hakukaavan, ja niitä käytetään pääasiassa merkkijonojen haussa ja käsittelyssä. Ohjelmoijat hyödyntävät regexiä PowerShellissä tehtäviin, kuten datan validointiin, jäsentämiseen ja muunteluun, sen tehokkuuden ja joustavuuden ansiosta monimutkaisten kaavojen käsittelyssä.
-
 ## Miten:
-
 PowerShellissa voit käyttää `-match`, `-replace` ja `-split` operaattoreita, muun muassa, suorittamaan toimintoja säännöllisten lausekkeiden avulla. Tutkitaan muutamia esimerkkejä:
 
 ### Käyttäen `-match`-operaattoria tarkistamaan, vastaako merkkijono kaavaa

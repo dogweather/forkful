@@ -11,9 +11,6 @@ title: Rimuovere le virgolette da una stringa
 weight: 9
 ---
 
-## Cosa e Perché?
-Rimuovere le virgolette da una stringa significa liberarsi di quegli involucri extra per ottenere il testo pulito all'interno. I programmatori fanno ciò per sanificare l'input, evitare errori e preparare i dati per l'elaborazione in cui le virgolette sono d'impiccio, non funzionalità.
-
 ## Come fare:
 Elixir non ha una funzione incorporata per 'rimuovere le virgolette', ma è un gioco da ragazzi creare la propria funzione utilizzando il pattern matching o le funzioni di `String`. Vedere questi frammenti:
 

@@ -16,9 +16,6 @@ title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
 weight: 34
 ---
 
-## 무엇인가 & 왜인가?
-인터랙티브 셸, 또는 REPL(Read-Eval-Print Loop)은 실시간으로 코드를 테스트할 수 있게 해줍니다. 프로그래머들은 이를 사용하여 전체 스크립트를 작성하지 않고도 Ruby의 미묘한 차이점을 실험하고, 디버그하며, 배울 수 있습니다.
-
 ## 사용 방법:
 Ruby의 REPL은 IRB(Interactive Ruby)라고 불립니다. 터미널에서 바로 Ruby를 시도해 보세요:
 

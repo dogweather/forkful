@@ -15,12 +15,7 @@ title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---
 
-## O Que & Por Quê?
-
-Converter uma string para letras minúsculas no Google Apps Script, uma linguagem de script baseada na nuvem para automatização de tarefas através dos produtos Google, é uma tarefa fundamental com o objetivo de padronizar os dados de texto. Os programadores frequentemente realizam essa ação para garantir consistência na entrada de dados dos usuários, no processamento de dados, ou ao comparar strings, pois isso elimina questões de sensibilidade a maiúsculas e minúsculas.
-
 ## Como:
-
 Converter uma string para minúsculas no Google Apps Script é simples, graças aos métodos JavaScript integrados disponíveis no ambiente de script. O método `toLowerCase()` é o que você usará na maioria das vezes. Aqui está como você pode implementá-lo:
 
 ```javascript
@@ -50,7 +45,6 @@ function convertArrayItemsToLower() {
 Este exemplo enfatiza a versatilidade do `toLowerCase()` ao lidar com múltiplos dados de string, garantindo uniformidade em todo o seu conjunto de dados.
 
 ## Aprofundando
-
 O método `toLowerCase()`, herdado do JavaScript e utilizado dentro do Google Apps Script, tem sido uma parte integral da manipulação de strings desde as primeiras versões do JavaScript. Seu principal propósito é auxiliar no tratamento insensível a casos de dados textuais, uma necessidade que surgiu com o advento de aplicações web dinâmicas e interativas com o usuário. Apesar de sua simplicidade, o mecanismo desempenha um papel crucial na validação de dados, ordenação e algoritmos de busca ao reduzir a complexidade introduzida pela sensibilidade a maiúsculas e minúsculas.
 
 Em termos de desempenho, o processo de conversão é altamente otimizado nos motores JavaScript modernos; no entanto, sua aplicação ainda deve ser judiciosa em operações de dados em grande escala para evitar sobrecarga de processamento desnecessária.

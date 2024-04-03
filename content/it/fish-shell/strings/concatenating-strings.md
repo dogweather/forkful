@@ -9,9 +9,6 @@ title: Concatenazione di stringhe
 weight: 3
 ---
 
-## What & Why? (Cosa e Perché?)
-Concatenare le stringhe significa unirle fine a fine. I programmatori lo fanno per creare messaggi, comandi, o per manipolare dati che devono essere visualizzati o processati insieme.
-
 ## How to: (Come fare:)
 Per concatenare stringhe in Fish, puoi semplicemente scrivere una dopo l'altra.
 

@@ -11,12 +11,7 @@ title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---
 
-## O Que & Porquê?
-
-Enviar uma requisição HTTP com autenticação básica significa que você está acessando um recurso protegido na web com usuário e senha. Programadores fazem isso para interagir com APIs ou serviços que exigem credenciais de acesso restrito.
-
 ## Como Fazer:
-
 Para enviar uma solicitação HTTP com autenticação básica em Lua, vamos usar o módulo `socket.http` e `mime`. Primeiro, instale o módulo `luasocket` se ainda não estiver instalado:
 
 ```sh
@@ -60,13 +55,11 @@ Saída de exemplo:
 ```
 
 ## Aprofundamento
-
 A autenticação básica HTTP é um método antigo e simples de proteger recursos: não é o mais seguro, mas é fácil de implementar. Uma alternativa moderna e mais segura é a autenticação via tokens, como OAuth. Ao fazer uma solicitação com autenticação básica, o usuário e a senha são codificados em Base64, mas não criptografados, o que pode ser inseguro em conexões não HTTPS.
 
 Outro detalhe é que, ao usar Lua para requisições HTTP, o luasocket é um dos módulos mais populares, mas existem alternativas como o `LuaSec` para a conexão segura HTTPS. Não esqueça de gerenciar adequadamente a privacidade das credenciais para evitar vazamentos de informações sensíveis.
 
 ## Ver Também
-
 - [Documentação do LuaSocket](http://w3.impa.br/~diego/software/luasocket/http.html)
 - [Documentação do MIME (luasocket)](http://w3.impa.br/~diego/software/luasocket/mime.html)
 - [Tutorial de LuaSec para HTTPS](https://github.com/brunoos/luasec/wiki)

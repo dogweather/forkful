@@ -14,12 +14,7 @@ title: Uso de matrices asociativas
 weight: 15
 ---
 
-## Qué y Por Qué?
-
-Los arrays asociativos, también conocidos como tablas hash o diccionarios en PowerShell, te permiten almacenar datos en pares clave-valor, haciendo que la recuperación de datos sea directa y eficiente. Los programadores los utilizan para almacenar datos relacionados juntos de una manera que es fácil de acceder por clave.
-
 ## Cómo hacerlo:
-
 Crear y usar arrays asociativos en PowerShell es bastante sencillo. Aquí está cómo hacer la magia:
 
 **Creando un array asociativo:**
@@ -77,7 +72,6 @@ ubicación : Nueva York
 ```
 
 ## Profundización
-
 El concepto de arrays asociativos es común en muchos lenguajes de programación, normalmente llamado diccionario, mapa, o tabla hash dependiendo del lenguaje. En PowerShell, los arrays asociativos se implementan como tablas hash, que son bastante eficientes para buscar claves, almacenar datos y mantener una colección de claves únicas.
 
 Históricamente, los arrays asociativos proveen un medio para manejar colecciones de objetos donde cada ítem puede ser rápidamente recuperado sin iterar a través de toda la colección, usando su clave. La eficiencia de recuperación y modificación de datos en arrays asociativos los hace una opción preferida para diversas tareas. Sin embargo, sí tienen limitaciones, como mantener el orden, para lo cual los diccionarios ordenados u objetos personalizados podrían ser una mejor alternativa.

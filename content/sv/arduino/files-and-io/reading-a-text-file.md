@@ -11,9 +11,6 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## Vad & Varför?
-Läsa en textfil innebär att extrahera dess innehåll för vidare bearbetning eller visning. Programmerare gör detta för att hantera konfigurationer, lagra data eller bara som en del av en större datahantering.
-
 ## Så här gör du:
 Arduino kan hantera filer på ett SD-kort med SD-biblioteket. Här är hur man öppnar och läser en textfil:
 

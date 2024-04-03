@@ -19,16 +19,10 @@ title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 weight: 38
 ---
 
-## 무엇이며 왜인가?
-
-JSON(JavaScript Object Notation)을 사용하는 것은 JSON 형식의 문자열을 파이썬 객체로 파싱하고 그 반대의 과정을 포함합니다. 이는 웹과 API 개발에 있어 핵심적인데, JSON이 서버와 클라이언트 간에 데이터를 교환하는 공용어 역할을 하기 때문입니다.
-
 ## 어떻게 사용하나:
-
 파이썬에 내장된 `json` 라이브러리는 인코딩(파이썬 객체를 JSON으로 변환) 및 디코딩(JSON을 파이썬 객체로 변환) 과정을 단순화합니다. 다음은 그 사용 방법입니다:
 
 ### 파이썬 객체를 JSON으로 인코딩:
-
 ```python
 import json
 
@@ -67,7 +61,6 @@ print(json_string)
 ```
 
 ### JSON을 파이썬 객체로 디코딩:
-
 ```python
 json_string = '''
 {
@@ -106,11 +99,9 @@ print(data)
 ```
 
 ### 타사 라이브러리 사용하기:
-
 스키마 유효성 검사 또는 URL로부터 직접 JSON 파일을 파싱하는 것과 같은 복잡한 JSON 처리를 위해, `requests` 라이브러리를 HTTP 요청용으로, `jsonschema` 라이브러리를 유효성 검사용으로 사용할 수 있습니다.
 
 #### URL에서 JSON 파싱을 위한 `requests` 예제:
-
 ```python
 import requests
 
@@ -123,7 +114,6 @@ print(data)
 이 스니펫은 주어진 URL로부터 JSON 데이터를 가져와서 직접 파이썬 객체로 변환합니다.
 
 #### `jsonschema`를 사용한 JSON 유효성 검사:
-
 먼저 pip를 통해 라이브러리 설치:
 
 ```bash

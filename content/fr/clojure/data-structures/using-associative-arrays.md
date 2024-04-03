@@ -13,12 +13,7 @@ title: Utilisation des tableaux associatifs
 weight: 15
 ---
 
-## Quoi & Pourquoi ?
-
-Les tableaux associatifs, ou hash maps, dans Clojure vous permettent de stocker et de récupérer des données avec des paires clé-valeur. Ils sont un choix privilégié pour gérer des données structurées, facilitant l'accès rapide à des éléments spécifiques sans avoir à parcourir une liste.
-
 ## Comment faire :
-
 Dans Clojure, créer et manipuler des tableaux associatifs (hash maps) est simple. Plongeons dans quelques exemples.
 
 Pour créer une hash map :
@@ -73,7 +68,6 @@ Et pour un accès conditionnel, `find` retourne une paire clé-valeur si la clé
 ```
 
 ## Approfondissement
-
 Les tableaux associatifs dans Clojure, également communément appelés hash maps, sont incroyablement polyvalents et efficaces pour gérer des données basées sur des paires clé-valeur. Ils font partie de la riche bibliothèque de collections de Clojure, profondément enracinée dans la philosophie du langage de l'immutabilité et de la programmation fonctionnelle. Contrairement aux tableaux ou listes qui nécessitent une complexité temporelle de O(n) pour accéder aux éléments, les hash maps fournissent une complexité temporelle quasi constante pour l'accès, les rendant hautement efficaces pour les opérations de recherche.
 
 On pourrait soutenir que les vecteurs dans Clojure pourraient servir un but similaire grâce à l'accès indexé, mais les hash maps se distinguent lorsqu'il s'agit de traiter des données non séquentielles et étiquetées, où la clé offre un descripteur significatif plutôt qu'un index arbitraire.

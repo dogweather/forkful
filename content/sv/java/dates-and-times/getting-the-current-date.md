@@ -14,9 +14,6 @@ title: "F\xE5 det aktuella datumet"
 weight: 29
 ---
 
-## Vad & Varför?
-Att erhålla dagens datum i Java är en grundläggande operation som tillåter programmerare att manipulera datumobjekt för operationer såsom loggning, datumberäkningar och tidsbaserade villkor. Det är avgörande i applikationer där spårning, schemaläggning och analys av tidsdata är kritiskt.
-
 ## Hur man gör:
 Java erbjuder flera sätt att få dagens datum, genom att använda både den gamla `java.util.Date`-klassen och det nyare `java.time`-paketet (introducerat i Java 8) som är mer mångsidigt och intuitivt.
 
@@ -31,6 +28,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### Använda `java.time.LocalDateTime`
 ```java
 import java.time.LocalDateTime;
@@ -42,6 +40,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### Använda `java.util.Date` (Äldre)
 ```java
 import java.util.Date;
@@ -53,6 +52,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### Använda ett tredjepartbibliotek: Joda-Time
 Innan Java 8 var Joda-Time den de facto-standarden för datum och tid i Java. Om du arbetar med äldre system eller föredrar Joda-Time, här är hur du kan använda det för att få dagens datum:
 ```java

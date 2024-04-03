@@ -10,12 +10,7 @@ title: Protokollierung
 weight: 17
 ---
 
-## Was & Warum?
-
-Das Protokollieren ist im Grunde die Praxis, Ereignisse und Daten aus einer Softwareanwendung in eine externe Ausgabe, wie eine Datei oder Konsole, aufzuzeichnen. Programmierer protokollieren Vorgänge, um durch den Code zu navigieren, Probleme zu beheben und das Verhalten einer App in freier Wildbahn im Auge zu behalten, und bieten kritische Einsichten, die auf keine andere Weise so effektiv gewonnen werden können.
-
 ## Wie geht das:
-
 In Kotlin kann das Protokollieren mithilfe der eingebauten `println()`-Funktion für einfache Fälle erfolgen oder mit ausgefeilteren Bibliotheken wie SLF4J mit Logback oder Log4j für fortgeschrittene Bedürfnisse.
 
 Hier ist ein einfaches Beispiel mit `println()`:
@@ -67,7 +62,6 @@ java.lang.Exception: Simulierter Fehler
 ```
 
 ## Tiefergehende Betrachtung
-
 Historisch gesehen entwickelte sich die Protokollierung in der Software parallel zur steigenden Komplexität von Anwendungen und Systemen. Einfache Druckbefehle waren in den Anfangstagen ausreichend, in denen Programme oft von den Entwicklern selbst ausgeführt und debuggt wurden. Aber als Systeme vernetzt wurden und in verschiedenen Umgebungen unter unterschiedlichen Benutzern liefen, wurde ein robustes und beständiges Protokolliersystem entscheidend.
 
 Bevor Kotlin populär wurde, hatten Java-Entwickler Bibliotheken wie Log4j und später SLF4J weit verbreitet angenommen. Diese haben ähnliche Praktiken in Kotlin inspiriert, die Interoperabilität von Kotlin mit Java-Bibliotheken nutzend. SLF4J fungiert als Abstraktionsschicht, die es erlaubt, die tatsächliche Protokollierungsimplementierung auszutauschen – normalerweise sind Logback oder Log4j2 die bevorzugten Optionen.
@@ -87,7 +81,6 @@ Andere häufige Funktionen von fortschrittlichen Protokollierungsframeworks umfa
 Diese Werkzeuge und Funktionen sind entscheidend für die Aufrechterhaltung eines zuverlässigen, beobachtbaren Systems, insbesondere in komplexen, verteilten oder hochskalierten Umgebungen.
 
 ## Siehe auch
-
 Für weiteres Lernen und Einblicke in die Protokollierung mit Kotlin, schauen Sie sich an:
 
 - SLF4J (Simple Logging Facade for Java) [http://www.slf4j.org/](http://www.slf4j.org/)

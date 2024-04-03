@@ -13,12 +13,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mikä & Miksi?
-
-Associatiiviset taulukot, Pythonissa tunnettu nimellä sanakirjat, map-paavat avaimet arvoihin, mikä tekee datan hakemisesta, muokkaamisesta tai seuraamisesta uniikin tunnisteen avulla helppoa. Ohjelmoijat käyttävät niitä niiden tehokkuuden vuoksi elementtien haussa ja niiden joustavuuden vuoksi monimutkaisten datarakenteiden esittämisessä.
-
 ## Miten:
-
 Sanakirjan luominen Pythonissa on suoraviivaista. Sijoitat avain-arvo -pareja aaltosulkuihin `{}`, avainten ja arvojen ollessa erotettu kaksoispisteellä:
 
 ```Python
@@ -76,7 +71,6 @@ email: john@example.com
 ```
 
 ## Syventävä tarkastelu
-
 Pythonin associatiiviset taulukot, eli sanakirjat, otettiin käyttöön tarjoamaan datarakennetta tehokkaaseen datan hakuun ja manipulointiin. Toisin kuin sekvenssit, jotka on indeksoitu numeroiden avulla, sanakirjat indeksoidaan avainten mukaan, jotka voivat olla mitä tahansa muuttumatonta tyyppiä. Tämä suunnitteluvalinta tekee sanakirjoista ihanteellisesti soveltuvia nopeille haku taulukoille, joissa avaimet map-paavat uniikkeihin arvoihin.
 
 Historiallisesti Pythonin sanakirjat on toteutettu käyttäen hajautustaulua, varmistaen, että keskimääräinen aikavaativuus haku-, lisäys- ja poisto-operaatioissa on O(1). Python 3.6:sta ja sitä myöhemmistä versioista lähtien, sanakirjat ylläpitävät myös elementtien lisäysjärjestystä, yhdistäen hajautustaulujen edut lisäysjärjestyksen ennustettavuuteen, jota nähdään järjestetyissä datarakenteissa.

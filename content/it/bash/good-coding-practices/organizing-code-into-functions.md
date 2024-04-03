@@ -10,9 +10,6 @@ title: Organizzazione del codice in funzioni
 weight: 18
 ---
 
-## Cosa e Perché?
-Dividere il codice in funzioni significa suddividere gli script in blocchi più piccoli e riutilizzabili che svolgono compiti specifici. Rende il codice più pulito, più comprensibile e più facile da correggere.
-
 ## Come fare:
 Creare una semplice funzione in Bash:
 

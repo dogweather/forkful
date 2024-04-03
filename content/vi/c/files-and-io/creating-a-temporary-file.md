@@ -18,9 +18,6 @@ title: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Gì và Tại sao?
-Việc tạo một tập tin tạm thời trong C bao gồm việc tạo ra một tập tin được dùng để sử dụng trong một khoảng thời gian ngắn, thường được sử dụng như một không gian tạm thời cho việc xử lý hoặc lưu trữ dữ liệu. Các lập trình viên thực hiện điều này để quản lý dữ liệu tạm thời mà không ảnh hưởng đến bộ nhớ vĩnh viễn của chương trình hoặc để đảm bảo dữ liệu nhạy cảm được xóa sau khi sử dụng.
-
 ## Làm thế nào:
 Việc tạo một tập tin tạm thời trong ngôn ngữ lập trình C có thể tận dụng các hàm như `tmpfile()` và `mkstemp()`.
 

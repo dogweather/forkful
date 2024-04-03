@@ -11,9 +11,6 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## What & Why? - Mitä ja Miksi?
-Stringien yhdistäminen tarkoittaa kahden tai useamman tekstinpätkän liittämistä yhteen. Koodarit tekevät tätä muodostaakseen käyttäjälle näytettäviä viestejä, tehdäkseen tiedon käsittelystä dynaamista ja järjestelläkseen tietoja järkevästi.
-
 ## How to - Kuinka Tehdä:
 ```javascript
 let tervehdys = "Hei";

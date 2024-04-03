@@ -11,12 +11,7 @@ title: "Feilh\xE5ndtering"
 weight: 16
 ---
 
-## Hva & Hvorfor?
-
-Feilhåndtering i programmene dine fanger opp de uforutsette tingene som vil prøve å snuble deg opp. Du gjør det for å hindre at Arduinoen din får et sammenbrudd når det uventede skjer.
-
 ## Hvordan gjøre det:
-
 La oss si at Arduinoen din leser en sensor som kan produsere verdier utenfor rekkevidden av og til. Slik kan du håndtere det:
 
 ```Arduino
@@ -38,7 +33,6 @@ Feil: Sensorverdi utenfor rekkevidde.
 ```
 
 ## Dypdykk
-
 Feilhåndtering har ikke alltid vært så greit. I de tidlige dagene ignorerte ofte utviklere feil, noe som førte til den fryktede "udefinerte oppførselen". Etter hvert som programmering utviklet seg, ble verktøyene forbedret — du har nå unntak i mange språk, men i Arduino-verdenen er det fremdeles en gammeldags 'sjekk-først' på grunn av maskinvarebegrensninger og C++ røtter.
 
 I Arduino-programmering ser man ofte `if-else`-setninger for feilhåndtering. Men det finnes alternativer: å bruke `assert`-funksjonen for å stoppe utførelsen hvis en betingelse mislykkes, eller å designe feilsikre mekanismer inne i selve maskinvareoppsettet.
@@ -46,7 +40,6 @@ I Arduino-programmering ser man ofte `if-else`-setninger for feilhåndtering. Me
 Når du implementerer feilhåndtering, bør du vurdere effekten av å stoppe programmet kontra å tillate det å fortsette med en standard eller sikker tilstand. Det er en avveiing, og det riktige valget avhenger av potensiell skade ved avbrudd kontra feilbetjening.
 
 ## Se også
-
 Friske opp feildeteksjon og håndtering med disse:
 
 - Arduino Språkreferanse: https://www.arduino.cc/reference/en/

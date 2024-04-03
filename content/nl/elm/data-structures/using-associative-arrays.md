@@ -13,12 +13,7 @@ title: Gebruik van associatieve arrays
 weight: 15
 ---
 
-## Wat & Waarom?
-
-Associatieve arrays, of zoals Elm ze noemt, Woordenboeken (Dictionaries), koppelen sleutels aan waarden op een manier die het opzoeken, invoegen en verwijderen van waarden supersnel maakt. Ze zijn je beste keuze wanneer je zaken bij moet houden zonder strikte volgorde, zoals gebruikersvoorkeuren of inventarislijsten.
-
 ## Hoe te gebruiken:
-
 In Elm werk je met Woordenboeken in de `Dict`-module, dus laten we duiken in een snel voorbeeld:
 
 ```Elm
@@ -51,7 +46,6 @@ Voorbeelduitvoer bij het weergeven van `dictToList`:
 Dit demonstreert de basisbewerkingen: creëren, bijwerken, toegang krijgen tot en itereren over een Woordenboek.
 
 ## Diepere Duik
-
 Woordenboeken in Elm gebruiken intern een structuur die bekend staat als een AVL-boom - een type zelfbalancerende binaire zoekboom. Deze keuze biedt een evenwicht tussen het garanderen dat operaties zoals invoegen, ophalen en verwijderen een goede prestatie hebben (logaritmische tijdscomplexiteit) en het behouden van eenvoud in de omgang met de gegevens.
 
 Ondanks de sterke punten van Elm's `Dict`, is het geen oplossing die in alle gevallen past. Voor collecties die geordend zijn of sequentieel overlopen moeten worden, kunnen lijsten of arrays toepasselijker zijn. Verder, bij het werken met een vastgestelde set van bekende sleutels, kunnen aangepaste types (Elm's versie van enums) meer typeveiligheid bieden en de intentie in je code duidelijker maken.

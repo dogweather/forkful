@@ -13,9 +13,6 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-Reguliere expressies, of kortweg regex, zijn reeksen van tekens die zoekpatronen vormen. Programmeurs gebruiken regex om tekst te zoeken, bewerken of te manipuleren door het matchen van complexe patronen, vaak voor validatie- of parsingdoeleinden.
-
 ## Hoe te:
 Rust gebruikt de `regex` crate voor regex-operaties. Voeg het eerst toe aan je `Cargo.toml`:
 

@@ -11,9 +11,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## Hva & Hvorfor?
-Å regne ut en dato i fremtiden eller fortiden er å finne eksakte dager før eller etter en gitt dato. Programmerere gjør dette for å håndtere eventer, frister, abonnementer og tidsstempeldata.
-
 ## Hvordan:
 ```PHP
 <?php

@@ -11,9 +11,6 @@ title: Odczytywanie pliku tekstowego
 weight: 22
 ---
 
-## Co i Dlaczego?
-Czytanie pliku tekstowego to proces pobierania danych zawartych w pliku tekstowym do dalszego przetwarzania. Programiści robią to, by obsługiwać konfiguracje, importować dane lub po prostu wyświetlać tekst użytkownikowi.
-
 ## Jak to zrobić:
 ```PHP
 <?php

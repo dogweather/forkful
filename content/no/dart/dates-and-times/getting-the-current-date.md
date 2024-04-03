@@ -13,9 +13,6 @@ title: "F\xE5 den n\xE5v\xE6rende datoen"
 weight: 29
 ---
 
-## Hva & Hvorfor?
-Å få tak i den nåværende datoen i Dart innebærer å spørre systemet om den nåværende datoen og tiden. Denne funksjonaliteten brukes ofte i applikasjoner for funksjoner som tidsstempling av hendelser, vise den nåværende datoen til brukere, eller beregning av varigheter. Å vite hvordan man effektivt henter og manipulerer den nåværende datoen er grunnleggende for planlegging, logging, og tidsfølsomme funksjoner.
-
 ## Hvordan:
 Darts kjerneprogrambibliotek gir enkel tilgang til den nåværende datoen og tiden gjennom `DateTime`-klassen. Her er et grunnleggende eksempel for å få den nåværende datoen:
 

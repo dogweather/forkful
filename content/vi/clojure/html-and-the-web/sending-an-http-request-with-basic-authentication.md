@@ -17,12 +17,7 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1
 weight: 45
 ---
 
-## Gì và Tại sao?
-
-Gửi một yêu cầu HTTP với xác thực cơ bản bao gồm việc thêm tên người dùng và mật khẩu vào một yêu cầu để truy cập vào các tài nguyên bị hạn chế. Các lập trình viên thực hiện điều này để truy cập vào các API hoặc dịch vụ web đòi hỏi một số mức độ bảo mật.
-
 ## Cách thực hiện:
-
 Trong Clojure, bạn sẽ thường sử dụng thư viện `clj-http` cho các yêu cầu HTTP, bao gồm cả những yêu cầu với xác thực cơ bản. Hãy bắt đầu bằng cách thêm dependency (`[clj-http "3.12.3"]` tính đến lần cập nhật cuối cùng của tôi) vào `project.clj` của bạn.
 
 Tiếp theo, dưới đây là cách bạn tạo một yêu cầu GET với xác thực cơ bản:
@@ -45,7 +40,6 @@ Nội dung: {Dữ liệu JSON hoặc cái gì đó khác ở đây}
 ```
 
 ## Sâu hơn
-
 Xác thực cơ bản HTTP có nguồn gốc từ các giao thức web sơ khai. Nó truyền tên người dùng và mật khẩu trong một tiêu đề HTTP được mã hóa sử dụng Base64. Mặc dù nó đơn giản, nhưng không phải là an toàn nhất vì thông tin đăng nhập có thể dễ dàng được giải mã nếu bị ngắt quãng.
 
 Các phương thức thay thế:
@@ -58,7 +52,6 @@ Bên dưới phần thư viện `clj-http`, chỉ định `:basic-auth` trong ha
 Hãy nhớ rằng, để truyền tải an toàn, HTTPS nên được sử dụng để ngăn chặn người khác chặn thông tin đăng nhập của bạn.
 
 ## Xem thêm
-
 - Kho GitHub clj-http: https://github.com/dakrone/clj-http
 - Tài liệu chính thức của Clojure: https://clojure.org/
 - Xác thực HTTP trên MDN: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication 

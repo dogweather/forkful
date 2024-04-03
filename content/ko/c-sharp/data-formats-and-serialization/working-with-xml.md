@@ -15,9 +15,6 @@ title: "XML \uB2E4\uB8E8\uAE30"
 weight: 40
 ---
 
-## 무엇인가 & 왜인가?
-XML(eXtensible Markup Language)은 데이터를 읽기 쉬운 형식으로 구조화하는 것에 관한 것입니다. 프로그래머들은 설정, 앱 간 데이터 교환, 그리고 SOAP이나 웹 API와 같은 사양을 요구할 때 XML을 다룹니다.
-
 ## 방법:
 ```C#
 using System;

@@ -12,9 +12,6 @@ title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---
 
-## What & Why? - Mitä & Miksi?
-Poistamme merkkijonoista kuvioita vastaavat merkit, koska haluamme usein puhdistaa syötteitä, muotoilla tietoja tai tehdä merkkijonokäsittelyä. Esimerkiksi tiedostonimistä voidaan poistaa välilyönnit tai erikoismerkit järjestyksen ja yhtenäisyyden vuoksi.
-
 ## How to: - Miten:
 Käytä `string` komentoa kuvioita vastaavien merkkien poistoon. Tässä esimerkki, jossa poistetaan kaikki pisteet merkkijonosta:
 

@@ -12,9 +12,6 @@ title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---
 
-## Vad & Varför?
-Att konvertera ett datum till en sträng innebär att omvandla datumdata till textform, vilket gör det enklare att visa eller lagra datumet på ett läsbart sätt. Programmerare gör detta för att hantera datum på ett flexibelt sätt i användargränssnitt eller när de kommunicerar med servrar och databaser.
-
 ## Hur man gör:
 Elm gör det enkelt att hantera datum och strängar med hjälp av `Date` och `String` modulerna. Här är ett exempel:
 

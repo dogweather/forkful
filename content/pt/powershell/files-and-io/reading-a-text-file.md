@@ -10,9 +10,6 @@ title: Lendo um arquivo de texto
 weight: 22
 ---
 
-## O Que & Por Quê?
-Ler um arquivo de texto significa acessar e interpretar o conteúdo de um arquivo armazenado em disco. Programadores fazem isso para extrair dados, configurar aplicações ou manipular informações armazenadas em formatos de texto simples.
-
 ## Como Fazer:
 ```PowerShell
 # Usando Get-Content para ler um arquivo de texto

@@ -11,12 +11,7 @@ title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---
 
-## Quoi et Pourquoi ?
-
-Calculer une date future ou passée, c'est simplement ajouter ou soustraire du temps à une date existante. Les programmeurs font ça pour des rappels, des abonnements, des fonctionnalités de rétrospective, et bien d'autres raisons.
-
 ## Comment faire :
-
 ```javascript
 // Date actuelle
 const maintenant = new Date();
@@ -31,7 +26,6 @@ console.log(cinqAnsPlusTot); // Affiche la date 5 ans plus tôt
 ```
 
 ## Immersion :
-
 Historiquement, gérer le temps avec JavaScript pouvait être frustrant à cause des incohérences et du manque de fonctionnalités. Des bibliothèques comme Moment.js étaient alors incontournables mais elles perdent du terrain maintenant grâce aux améliorations des navigateurs et au langage lui-même. 
 
 Pour des calculs simples, `Date` est amplement suffisant mais attention aux années bissextiles lors de calculs sur de longues périodes. Pour plus de précision, les librairies comme `date-fns` ou `Luxon` sont recommandées car elles gèrent mieux les subtilités du temps. 
@@ -39,7 +33,6 @@ Pour des calculs simples, `Date` est amplement suffisant mais attention aux ann�
 JavaScript utilise le temps universel coordonné (UTC) pour créer des dates, mais il est facile de se retrouver avec des problèmes de fuseau horaire si ce n'est pas pris en compte.
 
 ## Voir également :
-
 - MDN Web Docs Date Reference: https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Date
 - Luxon Documentation: https://moment.github.io/luxon/#/
 - date-fns Documentation: https://date-fns.org/

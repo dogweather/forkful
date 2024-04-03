@@ -15,9 +15,6 @@ title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---
 
-## Quoi & Pourquoi ?
-L'analyse d'une date à partir d'une chaîne de caractères implique d'extraire les informations de date encodées au sein de chaînes et de les convertir en un format structuré que les environnements de programmation peuvent reconnaître et manipuler. Les programmeurs font cela pour permettre des opérations telles que la comparaison de dates, l'arithmétique, le formatage et la localisation, qui sont essentielles pour gérer efficacement la planification, les horodatages et les données historiques dans les logiciels.
-
 ## Comment faire :
 Dans Fish Shell, il n'y a pas de commandes intégrées spécifiquement conçues pour l'analyse de dates à partir de chaînes. À la place, vous vous appuyez sur des utilitaires externes comme `date` (disponible sous Linux et macOS) ou utilisez des outils tiers populaires tels que `GNU date` pour une analyse plus complexe. Voici comment s'y prendre :
 

@@ -13,9 +13,6 @@ title: Analisando uma data a partir de uma string
 weight: 30
 ---
 
-## O que & Por quê?
-Analisar uma data de uma string permite que programadores convertam representações textuais de datas em objetos `Date` do JavaScript, facilitando manipulações, comparações e operações de formatação de datas. Este processo é essencial para lidar com entrada de usuários, processamento de dados de bancos de dados ou trabalhando com APIs que comunicam datas em formatos de strings.
-
 ## Como fazer:
 JavaScript oferece nativamente o método `Date.parse()` e o construtor `Date` para analisar strings de datas. No entanto, essas abordagens têm limitações e inconsistências entre diferentes navegadores, especialmente com formatos de datas não padronizados. Para lidar com esses problemas, bibliotecas de terceiros como `Moment.js` e `date-fns` são populares por sua robustez e facilidade de uso.
 

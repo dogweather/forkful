@@ -10,12 +10,7 @@ title: Concatenating strings
 weight: 3
 ---
 
-## What & Why?
-
-Concatenating strings means sticking them together end-to-end to make a new string. It's handy for creating custom messages, building up text for output, or processing user input.
-
 ## How to:
-
 Here's the down-and-dirty on how to concatenate strings in Java:
 
 ```java
@@ -41,7 +36,6 @@ public class StringConcatenationDemo {
 ```
 
 ## Deep Dive
-
 Concatenating strings seems simple enough, right? It's been in Java since the beginning, and we've got a few ways to do it. Early Java versions used StringBuilder under the hood whenever you did a simple `+`. Then came Java 5, and things got more efficient with the introduction of the `StringJoiner` and more improvements to the `StringBuilder` class. 
 
 Now, you might wonder why not always use the `+` operator if it's the same thing? Turns out, `+` is great for a quick job with small strings or a few concatenations. Behind the scenes, though, it can get costly with performance if you're using it in a loop with a lot of iterations because it creates temporary objects before reaching the final string version.
@@ -53,7 +47,6 @@ For the `concat()` method, it's straightforward but not as flexible as `StringBu
 As of Java 8 and beyond, we also have `String.join()` which is pretty neat for joining collections of strings with a delimiter.
 
 ## See Also
-
 - [The `String` class documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)
 - [The `StringBuilder` class documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuilder.html)
 - [The `StringBuffer` class documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/StringBuffer.html)

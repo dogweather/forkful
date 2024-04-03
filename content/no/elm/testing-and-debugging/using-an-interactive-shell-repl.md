@@ -10,9 +10,6 @@ title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---
 
-## Hva & Hvorfor?
-Read-Eval-Print Loop (REPL) er et enkelt, interaktivt programmeringsmiljø som tar enkeltbrukerinput, evaluerer dem, og returnerer resultatet til brukeren. Elm-programmerere bruker REPL for raske eksperimenter, feilsøking eller for å lære språket.
-
 ## Hvordan:
 Elm kommer ikke med en integrert REPL. Likevel kan du bruke `elm repl` fra kommandolinjen din for å starte en Elm økt etter å ha installert Elm.
 

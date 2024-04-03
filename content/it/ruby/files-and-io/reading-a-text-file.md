@@ -10,11 +10,7 @@ title: Lettura di un file di testo
 weight: 22
 ---
 
-## What & Why?
-Leggere un file di testo in Ruby significa accedere al contenuto di un file salvato sul disco. I programmatori lo fanno per manipolare dati, configurare programmi, o semplicemente per salvare e leggere informazioni.
-
 ## How to:
-
 Per leggere un file di testo in Ruby, possiamo usare vari metodi. Qui sotto due esempi:
 
 ```Ruby
@@ -46,7 +42,6 @@ Benvenuti nel file di esempio.
 ```
 
 ## Deep Dive
-
 La lettura di file in Ruby è supportata da una serie di metodi introdotti con le prime versioni del linguaggio. Inizialmente, l'accesso ai file era semplice, ma si è evoluto per offrire una maggiore flessibilità e controllo errori.
 
 Alternative:
@@ -62,7 +57,6 @@ Dettagli implementativi:
 Si noti che la lettura di file potrebbe generare eccezioni, come `Errno::ENOENT` quando il file non esiste, quindi è consigliabile gestirle con un blocco `begin-rescue`.
 
 ## See Also
-
 Per approfondire, ecco alcune risorse utili (in inglese):
 
 - Ruby API Documentation: [File](https://ruby-doc.org/core/File.html)

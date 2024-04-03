@@ -13,9 +13,6 @@ title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---
 
-## Wat & Waarom?
-Het berekenen van een datum in de toekomst of het verleden gaat over het vinden van de datum vóór of na een bepaalde periode. Programmeurs doen dit voor taken zoals het instellen van herinneringen, het uitvoeren van geplande taken, of het omgaan met vervaldatums.
-
 ## Hoe te:
 In Bash kun je het `date` commando gebruiken samen met de `-d` vlag om datums te manipuleren. Hier is hoe:
 

@@ -12,12 +12,7 @@ title: "\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F
 weight: 4
 ---
 
-## What & Why? (Що і Чому?)
-
-Converting a string to lower case means changing all the uppercase letters within a string to their lowercase equivalents. Programmers do it for consistency, especially when comparing strings, ignoring case differences.
-
 ## How to: (Як це зробити:)
-
 Use `toLowerCase()` method:
 
 ```java
@@ -36,11 +31,9 @@ hello, друзі!
 ```
 
 ## Deep Dive (Поглиблений розбір)
-
 Historically, converting strings to lower case helped normalize data, avoiding mismatches due to case differences. Alternatives include using regular expressions or manually mapping characters, but `toLowerCase()` is built-in and robust. It considers locale: `String.toLowerCase(Locale locale)`. With this, you can specify how conversion behaves with locale-specific characters.
 
 ## See Also (Дивіться також)
-
 - Oracle Java Documentation: [String.toLowerCase()](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toLowerCase())
 - Tutorial on Java Strings and locales: [Working with Strings](https://docs.oracle.com/javase/tutorial/i18n/text/string.html)
 - Explore the Locale class: [Locale](https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html)

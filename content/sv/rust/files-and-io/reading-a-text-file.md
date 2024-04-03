@@ -11,9 +11,6 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## Vad & Varför?
-Att läsa en textfil innebär att inhämta textdata från en fil på din hårddisk. Programmerare gör det för att behandla och använda data, som konfigurationer, användarinput eller för att analysera information.
-
 ## Hur man gör:
 Det enklaste sättet att läsa en textfil i Rust är med `std::fs`.
 

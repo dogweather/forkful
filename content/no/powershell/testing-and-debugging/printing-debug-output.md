@@ -8,11 +8,6 @@ title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---
 
-## What & Why?
-"## Hva & Hvorfor?"
-
-Printing debug output i PowerShell er som å legge små lys langs veien: det hjelper deg å se hvor du er og hvor du skal. Vi gjør det for å spore verdiene og flyten i koden, noe som er uvurderlig for feilsøking og å forstå hva programmet faktisk gjør.
-
 ## How to:
 "## Slik gjør du:"
 

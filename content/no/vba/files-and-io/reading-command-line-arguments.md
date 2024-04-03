@@ -14,12 +14,7 @@ title: Lese kommandolinje-argumenter
 weight: 23
 ---
 
-## Hva & Hvorfor?
-
-Å lese kommandolinjeargumenter i Visual Basic for Applications (VBA) innebærer å få tilgang til parametere som er sendt til programmet ditt ved utførelse. Denne teknikken brukes ofte for å påvirke oppførselen eller utdataene til et program uten behov for brukerinteraksjon, noe som gjør automatisering og skripting betydelig enklere og mer allsidig.
-
 ## Hvordan:
-
 I motsetning til mer rettframme programmeringsmiljøer, har ikke VBA en innebygd funksjon for å direkte lese kommandolinjeargumenter i tradisjonell forstand fordi det primært er designet for å bli integrert innen Microsoft Office-applikasjoner. Imidlertid, med litt kreativitet, kan vi bruke Windows Script Host (WSH) eller kalle eksterne APIer for å oppnå lignende funksjonalitet. Her er en praktisk omgåelse ved bruk av WSH:
 
 1. **Lag et VBScript for å Sende Argumenter til VBA:**
@@ -54,7 +49,6 @@ cscript dittSkript.vbs "Hallo" "Verden"
    Dette bør resultere i at VBA-makroen din blir utført med argumentene "Hallo" og "Verden", som vises i en meldingsboks.
 
 ## Dypdykk:
-
 I en historisk kontekst ble VBA utviklet for å utvide funksjonaliteten til Microsoft Office-applikasjoner, ikke som et selvstendig programmeringsmiljø. Som sådan, er direkte interaksjon med kommandolinjen utenfor dets primære omfang, noe som forklarer mangelen på innebygd støtte for å lese kommandolinjeargumenter.
 
 Metoden som er skissert ovenfor, selv om den er effektiv, er mer en omvei enn en naturlig løsning, og tar i bruk eksternt skripting for å tette gapet. Denne tilnærmingen kan introdusere kompleksitet og potensielle sikkerhetsproblemer, da det krever at makroer aktiveres og potensielt redusere sikkerhetsinnstillinger for å utføre.

@@ -14,12 +14,7 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mikä & Miksi?
-
-Testien kirjoittaminen PowerShellillä tarkoittaa skriptien luomista, jotka automaattisesti varmistavat PowerShell-koodisi toiminnallisuuden, taaten sen toimivan odotetulla tavalla. Ohjelmoijat tekevät tämän havaitakseen virheet ajoissa, yksinkertaistaakseen koodin ylläpitoa ja varmistaakseen, että koodimuutokset eivät tahattomasti riko olemassa olevaa toiminnallisuutta.
-
 ## Miten:
-
 PowerShell ei sisällä sisäänrakennettua testauskehystä, mutta Pester, suosittu kolmannen osapuolen moduuli, on laajalti käytetty testien kirjoittamiseen ja suorittamiseen. Näin pääset alkuun Pesterin kanssa testataksesi PowerShell-funktioitasi.
 
 Ensin, asenna Pester, jos et ole vielä tehnyt niin:

@@ -11,12 +11,7 @@ title: Iniciando um novo projeto
 weight: 1
 ---
 
-## O Que & Por Quê?
-
-Iniciar um novo projeto Arduino significa criar um esboço (sketch) do zero, um código que vai dar vida à sua ideia. Programadores pegam essa rota para transformar conceitos em realidade, testar novas soluções, ou simplesmente por diversão e aprendizado.
-
 ## Como Fazer:
-
 Primeiro, conecte seu Arduino ao computador. Abra a IDE do Arduino e selecione 'Novo' para começar um sketch limpo.
 
 ```Arduino
@@ -42,13 +37,11 @@ Olá, mundo!
 ```
 
 ## Mergulho Profundo
-
 O Arduino começou em 2005 na Itália para fornecer uma plataforma de eletrônica de baixo custo e acessível para artistas e designers. Comparando com outras opções como Raspberry Pi ou microcontroladores baseados em ARM, o Arduino se destaca pela simplicidade e comunidade vasta e ativa.
 
 Ao começar um novo projeto, lembre-se das limitações de hardware do seu modelo específico de Arduino (memória, portas I/O, etc.). A modularidade do Arduino permite acoplar shields (placas de expansão) para funcionalidades adicionais, mas cada projeto exigirá consideração das limitações físicas e da energia disponível.
 
 ## Veja Também
-
 - [Página oficial do Arduino](https://www.arduino.cc/)
 - [Tutoriais Arduino para Iniciantes](https://www.arduino.cc/en/Tutorial/BuiltInExamples)
 - [Lista de Shields Arduino](https://www.arduino.cc/en/Main/Products#shields)

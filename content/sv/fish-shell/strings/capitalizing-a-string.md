@@ -13,12 +13,7 @@ title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---
 
-## Vad & Varför?
-
-Att skriva med stor bokstav innebär att man ändrar den så att den första bokstaven är versal och resten av strängen är gemener. Detta är en vanlig uppgift inom textbehandling, normalisering av användarinmatning och dataformatering för att säkerställa konsekvens eller för att möta specifika formateringskriterier.
-
 ## Hur man gör:
-
 I Fish Shell kan strängar manipuleras direkt med inbyggda funktioner, utan behov av externa verktyg eller bibliotek. För att göra en sträng med stor börjanbokstav kan du kombinera `string`-kommandot med underkommandon.
 
 ```fish

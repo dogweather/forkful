@@ -12,9 +12,6 @@ title: Werken met TOML
 weight: 39
 ---
 
-## Wat & Waarom?
-TOML is een configuratiebestandsformaat, makkelijk voor mensen om te lezen en schrijven en eenvoudig voor machines om te parsen en genereren. Programmeurs werken met TOML voor duidelijke, hiërarchische configuratiebestanden in projecten waar leesbaarheid cruciaal is.
-
 ## Hoe te:
 Om TOML te lezen en te manipuleren in Fish, kun je een tool zoals `yj` gebruiken, die TOML naar JSON kan converteren. Zo doe je dat:
 

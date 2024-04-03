@@ -13,16 +13,10 @@ title: Willekeurige getallen genereren
 weight: 12
 ---
 
-## Wat & Waarom?
-
-Het genereren van willekeurige getallen in programmering gaat over het creëren van getallen die geen enkel voorspelbaar patroon hebben. Programmeurs doen dit om verschillende redenen, waaronder simulaties, het testen van algoritmes, gaming en veiligheidstoepassingen, waar onvoorspelbaarheid cruciaal is om realistische of veilige resultaten te bereiken.
-
 ## Hoe:
-
 Kotlin biedt een eenvoudige manier om willekeurige getallen te genereren via zijn standaardbibliotheek. Hier is hoe je verschillende soorten willekeurige waarden kunt genereren:
 
 ### Een Willekeurig Geheel Getal Genereren
-
 Om een willekeurig geheel getal binnen een specifiek bereik te genereren:
 
 ```kotlin
@@ -35,7 +29,6 @@ fun main() {
 ```
 
 ### Een Willekeurige Double Genereren
-
 Op een vergelijkbare manier, een willekeurige double genereren:
 
 ```kotlin
@@ -48,7 +41,6 @@ fun main() {
 ```
 
 ### Een Willekeurige Boolean Genereren
-
 Om een willekeurige booleanwaarde te genereren:
 
 ```kotlin
@@ -61,7 +53,6 @@ fun main() {
 ```
 
 ### Seeding voor Reproduceerbare Resultaten
-
 In gevallen waar je reproduceerbare reeksen van willekeurige getallen nodig hebt (bijvoorbeeld, in testen), kun je de willekeurige getallengenerator seeden:
 
 ```kotlin
@@ -76,7 +67,6 @@ fun main() {
 ```
 
 ## Diepgaand
-
 De benadering van de Kotlin-standaardbibliotheek voor het genereren van willekeurige getallen maakt onder de motorkap gebruik van Java's `java.util.Random`, wat zorgt voor een combinatie van gebruiksgemak en prestaties. Het is echter cruciaal om op te merken dat deze methoden pseudo-willekeurige getallen genereren, wat betekent dat de getallen willekeurig lijken, maar worden gegenereerd met behulp van een deterministisch proces.
 
 Voor de meeste toepassingen is de willekeurigheid die door Kotlin's `Random`-klasse wordt geboden, voldoende. Echter, voor meer beveiligingsgevoelige toepassingen, zoals cryptografie, waar de kwaliteit van willekeurigheid van het grootste belang is, zou men moeten overwegen om `java.security.SecureRandom` te gebruiken in plaats daarvan. SecureRandom is specifiek ontworpen voor cryptografische operaties en biedt een hogere kwaliteit van willekeurigheid, zij het met een mogelijke afweging in prestaties.

@@ -11,9 +11,6 @@ title: Att arbeta med XML
 weight: 40
 ---
 
-## Vad & Varför?
-Att arbeta med XML innebär att manipulera och komma åt data strukturerad i det utvidgbara märkspråket. Programmerare arbetar med XML för att möjliggöra interoperabilitet med andra system eller för att läsa och skriva konfigurationsfiler, datakällor och andra strukturerade dokument som är vanliga i webbtjänster.
-
 ## Hur man gör:
 ```PowerShell
 # Ladda en XML-fil in i en variabel

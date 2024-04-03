@@ -12,9 +12,6 @@ title: Scrivere un file di testo
 weight: 24
 ---
 
-## Cosa & Perché?
-Scrivere un file di testo in Rust comporta la creazione, la scrittura e, potenzialmente, l'aggiunta di dati a un file sul file system. I programmatori eseguono questa operazione per rendere persistenti i dati, come log delle applicazioni, configurazioni o contenuti generati dagli utenti, garantendo la durata dei dati oltre l'ambito dell'esecuzione del programma.
-
 ## Come fare:
 La libreria standard di Rust offre strumenti robusti per la manipolazione dei file, principalmente incapsulati nei moduli `std::fs` e `std::io`. Ecco un esempio base per creare e scrivere un file di testo:
 

@@ -10,11 +10,7 @@ title: Working with XML
 weight: 40
 ---
 
-## What & Why?
-Working with XML means parsing, manipulating, and producing XML content using code. Programmers do it because XML is widely used for configuration files, data exchange, and web services due to its human-readable and machine-parsable nature.
-
 ## How to:
-
 Here's how to parse XML:
 
 ```javascript
@@ -45,7 +41,6 @@ console.log(xmlString);
 ```
 
 ## Deep Dive
-
 XML is short for eXtensible Markup Language, a data format that's been around since the late 90s. It defines a set of rules for encoding documents that both humans and machines can read. Historically, XML gained traction for its flexibility and structured hierarchy, making it a choice for web services, such as SOAP, and numerous configuration files.
 
 Alternatives to XML include JSON (JavaScript Object Notation), which has grown popular for its ease of use with JavaScript and lighter weight. YAML is another alternative, valued for being both human-friendly and a common choice for configuration.
@@ -53,7 +48,6 @@ Alternatives to XML include JSON (JavaScript Object Notation), which has grown p
 XML is implemented in JavaScript using the DOMParser and XMLSerializer interfaces. The XML DOM (Document Object Model) allows for navigating and editing XML documents just like you would with HTML. Despite JSON's ascent, understanding XML is key, as numerous legacy systems and specific industries still rely on it for data exchange.
 
 ## See Also
-
 - MDN Web Docs (XML Parsing): https://developer.mozilla.org/en-US/docs/Web/API/DOMParser
 - W3Schools (XML DOM Tutorial): https://www.w3schools.com/xml/dom_intro.asp
 - "What is XML?": https://www.w3.org/XML/

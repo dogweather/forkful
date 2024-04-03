@@ -9,9 +9,6 @@ title: Extracting substrings
 weight: 6
 ---
 
-## What & Why?
-Extracting substrings means pulling out specific parts of a string. Programmers do it to isolate data, clean inputs, or dissect info for further processing.
-
 ## How to:
 In Fish, you use `string` command to manipulate strings. Here's how:
 

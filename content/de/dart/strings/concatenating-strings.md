@@ -13,9 +13,6 @@ title: "Zeichenketten zusammenf\xFCgen"
 weight: 3
 ---
 
-## Was & Warum?
-Das Verketten von Zeichenfolgen in der Programmierung beinhaltet das Kombinieren von zwei oder mehreren Strings zu einem. Programmierer machen dies, um Textdaten einfach zu manipulieren, Nachrichten zu konstruieren oder Teile einer Benutzeroberfläche dynamisch zusammenzusetzen.
-
 ## Wie geht das:
 Dart bietet mehrere einfache Wege, um Strings zu verketten. Unten sind die gängigsten Methoden:
 

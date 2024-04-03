@@ -11,9 +11,6 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## What & Why?
-Créer un fichier temporaire, c'est une façon d'avoir un stockage éphémère pendant l'exécution d'un programme. Les programmeurs le font pour manipuler des données sans affecter le système de fichiers permanent.
-
 ## How to:
 Rust a le crate `tempfile` pour simplifier la création de fichiers temporaires. Voici comment l'utiliser :
 

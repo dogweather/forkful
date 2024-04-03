@@ -14,9 +14,6 @@ title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---
 
-## Cái gì & Tại sao?
-Chúng ta lấy ngày hiện tại để biết dữ liệu của ngày hôm nay. Điều này rất quan trọng cho hàng tấn tính năng – nghĩ đến nhật ký, dùng thử, sự kiện. Bạn nói đến nó, ngày thường luôn có mặt ở đó.
-
 ## Làm thế nào:
 ```Kotlin
 import java.time.LocalDate

@@ -12,9 +12,6 @@ title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---
 
-## Co i dlaczego?
-Wielką literą na początku ciągu znaków (ang. capitalizing a string) rozumiemy zamianę pierwszej litery ciągu na dużą, pozostawiając pozostałe znaki bez zmian. Operacja ta jest często wykonywana w JavaScript w celu formatowania danych wejściowych użytkownika, wyświetlania nazw lub tytułów oraz zapewnienia spójności tekstów interfejsu użytkownika.
-
 ## Jak to zrobić:
 W JavaScript nie ma wbudowanej metody bezpośrednio przeznaczonej do zmiany pierwszej litery ciągu na wielką, ale można to łatwo zrealizować, korzystając z podstawowych metod manipulacji ciągami.
 

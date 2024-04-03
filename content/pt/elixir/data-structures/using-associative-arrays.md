@@ -13,12 +13,7 @@ title: Usando arrays associativos
 weight: 15
 ---
 
-## O que & Por quê?
-
-Em Elixir, os arrays associativos, chamados de Mapas, são coleções de pares chave-valor onde uma chave única aponta para um valor. Eles são extremamente úteis para armazenar e recuperar dados de forma rápida, tornando seu código mais limpo e sua vida mais fácil.
-
 ## Como fazer:
-
 Criar um Mapa é simples. Você usa a sintaxe `%{}`, assim:
 
 ```elixir
@@ -50,7 +45,6 @@ IO.inspect(mapa_reduzido)
 Saída: `%{"localização" => "NY", "nome" => "Alex"}`
 
 ## Aprofundando
-
 Mapas em Elixir são uma evolução dos antigos tipos de armazenamento chave-valor, como Hashes em Ruby ou Dicionários em Python. Eles permitem buscas e inserções mais eficientes, tornando-os uma opção preferencial para programação moderna em Elixir. Vale notar que, antes dos Mapas, Elixir utilizava os módulos HashDict e Dict, que estão depreciados agora.
 
 No entanto, para cenários que requerem dados ordenados, você pode considerar listas de palavras-chave em Elixir. Essas são listas de tuplas, eficientes para coleções menores mas não tão amigáveis em termos de desempenho para grandes conjuntos de dados como os Mapas.

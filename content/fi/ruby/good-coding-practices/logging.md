@@ -9,9 +9,6 @@ title: Lokitus
 weight: 17
 ---
 
-## Mikä & Miksi?
-Lokitus ohjelmoinnissa on kuin päiväkirjan pitämistä sovelluksellesi. Se on systemaattista tapahtumien, viestien ja datapisteiden tallentamista, jotka antavat sinulle käsityksen siitä, mitä sovelluksesi tekee ja miten se käyttäytyy. Koodaajat lokittavat, koska se on tärkeää virheenkorjauksessa, sovelluksen terveyden seurannassa ja potentiaalisten ongelmien havaitsemisessa ennen kuin ne paisuvat todellisiksi ongelmiksi.
-
 ## Miten:
 Ruby sisältää sisäänrakennetun moduulin lokitukseen, `Logger`, joka on superhelppo käyttää. Tässä on nopea esimerkki, jolla pääset alkuun:
 

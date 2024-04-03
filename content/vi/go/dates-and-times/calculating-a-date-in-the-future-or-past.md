@@ -16,12 +16,7 @@ title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1
 weight: 26
 ---
 
-## Cái gì & Tại sao?
-
-Việc tính toán một ngày trong tương lai hoặc quá khứ trong Go liên quan đến việc thao tác các giá trị ngày và giờ để xác định một điểm cụ thể so với một ngày đã cho. Các lập trình viên thường thực hiện nhiệm vụ này cho các ứng dụng cần lịch trình, hạn chót, nhắc nhở, hoặc bất kỳ chức năng nào mà tiến triển hoặc lùi lại thời gian là thiết yếu.
-
 ## Cách thực hiện:
-
 Go cung cấp gói `time` để xử lý các hoạt động ngày và giờ, đưa ra các cơ chế đơn giản để thêm hoặc bớt thời gian. Dưới đây là cách tận dụng gói `time` để tính toán các ngày trong tương lai hoặc quá khứ:
 
 ```go
@@ -61,7 +56,6 @@ Thời gian tương lai (sau 5 giờ và 30 phút):  2023-04-01 20:34:05.1234567
 Lưu ý cách sử dụng phương thức `AddDate` để thao tác ngày theo năm, tháng và ngày, trong khi phương thức `Add` được sử dụng cho các khoảng thời gian chính xác hơn như giờ, phút và giây.
 
 ## Sâu hơn nữa
-
 Gói `time` của ngôn ngữ lập trình Go hỗ trợ thao tác thời gian với độ an toàn kiểu mạnh và cú pháp rõ ràng, những đặc trưng mà Go được đánh giá cao. Việc triển khai này dựa vào các chức năng thao tác thời gian được cung cấp bởi hệ điều hành cơ bản, đảm bảo hiệu quả và chính xác. Lịch sử, việc xử lý ngày và giờ trong lập trình đã gặp nhiều phức tạp do sự khác biệt trong múi giờ, năm nhuận, và thay đổi giờ tiết kiệm ánh sáng. Gói `time` của Go tóm gọn nhiều phức tạp này, cung cấp cho các nhà phát triển một bộ công cụ mạnh mẽ để thao tác thời gian.
 
 Mặc dù gói `time` nguyên bản của Go bao phủ một phạm vi rộng lớn các nhu cầu thao tác thời gian, nhưng các thư viện thay thế như `github.com/jinzhu/now` cung cấp thêm tiện ích và chức năng cho các trường hợp sử dụng cụ thể hơn. Những thư viện thay thế này có thể đặc biệt hữu ích cho nhu cầu thao tác ngày và giờ phức tạp hơn không được hỗ trợ trực tiếp bởi gói `time` nguyên bản.

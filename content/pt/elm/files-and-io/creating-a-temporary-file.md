@@ -11,9 +11,6 @@ title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---
 
-## What & Why?
-Criar um arquivo temporário é simplesmente gerar um arquivo que é destinado a ser usado por um breve período de tempo. Programadores fazem isso para testes, operações de buffer ou quando precisam de um espaço seguro e isolado para manipular dados que não precisam ser persistidos a longo prazo.
-
 ## How to:
 Como Elm é uma linguagem para construir interfaces de usuário no navegador, não tem acesso direto ao sistema de arquivos do dispositivo. Portanto, em Elm, você não pode criar um arquivo temporário no sentido tradicional. Em vez disso, vamos focar em como você pode gerar dados para downloads temporários (que podem ser considerados arquivos temporários no contexto de aplicações web).
 

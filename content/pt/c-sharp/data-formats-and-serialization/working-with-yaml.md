@@ -14,9 +14,6 @@ title: Trabalhando com YAML
 weight: 41
 ---
 
-## O quê & Por quê?
-YAML, que significa "YAML Ain't Markup Language" (YAML Não é Uma Linguagem de Marcação), é um formato de serialização de dados legível por humanos. Programadores frequentemente o utilizam para arquivos de configuração, mensagens entre processos e armazenamento de dados devido à sua simplicidade e legibilidade comparado a outros formatos de dados como XML ou JSON.
-
 ## Como fazer:
 C# não tem suporte integrado para YAML, mas você pode facilmente trabalhar com YAML utilizando bibliotecas de terceiros, como *YamlDotNet*. Primeiro, você precisa instalar o pacote YamlDotNet:
 

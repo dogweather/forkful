@@ -13,9 +13,6 @@ title: Skriving til standardfeil
 weight: 25
 ---
 
-## Hva & Hvorfor?
-Å skrive til standard error (stderr) i Haskell lar programmer skille utdataene sine mellom vanlige resultater og feilmeldinger. Dette er avgjørende for å signalisere problemer og for feilsøking, uten å rotetil det standard utdata (stdout) som ofte bærer programmets primære data eller resultat.
-
 ## Hvordan:
 I Haskell er det enkelt å skrive til stderr med basebibliotekets `System.IO`-modul. Nedenfor er et grunnleggende eksempel for å demonstrere:
 

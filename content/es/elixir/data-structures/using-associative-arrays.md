@@ -12,12 +12,7 @@ title: Uso de matrices asociativas
 weight: 15
 ---
 
-## Qué y Por Qué?
-
-En Elixir, los arreglos asociativos, llamados Mapas, son colecciones de pares clave-valor donde una clave única apunta a un valor. Son extremadamente útiles para almacenar y recuperar datos sobre la marcha, haciendo tu código más limpio y tu vida más fácil.
-
 ## Cómo hacerlo:
-
 Crear un Mapa es sencillo. Usas la sintaxis `%{}`, así:
 
 ```elixir
@@ -49,7 +44,6 @@ IO.inspect(trimmed_map)
 Salida: `%{"location" => "NY", "name" => "Alex"}`
 
 ## Profundización
-
 Los Mapas en Elixir son una evolución de antiguos tipos de almacenamiento de clave-valor, como Hashes en Ruby o Diccionarios en Python. Permiten búsquedas e inserciones más eficientes, convirtiéndolos en la opción preferida para la programación moderna con Elixir. Vale la pena mencionar que antes de los Mapas, Elixir usaba los módulos HashDict y Dict, que ahora están obsoletos.
 
 Sin embargo, para escenarios que requieren datos ordenados, podrías mirar las listas de palabras clave en Elixir. Estas son listas de tuplas, eficientes para colecciones más pequeñas pero no tan amigables en rendimiento para grandes conjuntos de datos como los Mapas.

@@ -12,12 +12,7 @@ title: Een datum converteren naar een string
 weight: 28
 ---
 
-## Wat & Waarom?
-
-Het omzetten van een datum naar een tekenreeks in C betreft het vertalen van een datumstructuur of tijdstempel naar een voor mensen leesbaar formaat. Programmeurs voeren deze taak vaak uit om datums weer te geven in logs, gebruikersinterfaces, of wanneer datums in een tekstgebaseerd formaat zoals JSON of CSV worden opgeslagen.
-
 ## Hoe te:
-
 De `strftime` functie uit de `<time.h>` bibliotheek wordt hier vaak voor gebruikt. Het stelt je in staat om datum en tijd op verschillende manieren te formatteren door opmaakspecifiers op te geven. Hier is een snel voorbeeld:
 
 ```c
@@ -46,7 +41,6 @@ Huidige Datum en Tijd: Wed Jun 30 21:49:08 2021
 Je kunt het formaat aanpassen door de opmaakspecifiers die aan `strftime` worden doorgegeven te veranderen. Om bijvoorbeeld de datum in het formaat `YYYY-MM-DD` te krijgen, zou je `"%Y-%m-%d"` gebruiken.
 
 ## Diepgaande duik
-
 De `strftime` functie en de `<time.h>` bibliotheek zijn onderdeel van de C Standard Library, die teruggaat tot de originele ANSI C standaard (C89/C90). Hoewel eenvoudig en ondersteund op vele platforms, kan deze benadering laagdrempelig en omslachtig lijken in vergelijking met moderne programmeertalen die intuïtievere datum- en tijdbibliotheken bieden.
 
 Men moet opmerken, hoewel de tijd functies van de C standaardbibliotheek algemeen ondersteund worden en relatief eenvoudig te gebruiken zijn, missen ze enkele van de meer complexe tijdzone manipulatie- en internationaliseringsfuncties die te vinden zijn in bibliotheken van nieuwere talen of in third-party C bibliotheken zoals International Components for Unicode (ICU).

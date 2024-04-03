@@ -11,9 +11,6 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-Das Runden von Zahlen bedeutet, sie auf die nächstliegende ganze Zahl oder eine bestimmte Dezimalstelle anzupassen. Es ist ein Grundelement in der Programmierung, um die Komplexität zu reduzieren, die Leistung zu steigern und für Zeiten, in denen Genauigkeit über einen bestimmten Punkt hinaus keinen Wert hinzufügt.
-
 ## Wie geht das:
 ```lua
 -- Grundlegendes Runden in Lua ist nicht standardmäßig enthalten, aber Sie können eine Funktion definieren:

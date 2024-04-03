@@ -14,9 +14,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Cái gì & Tại sao?
-XML, viết tắt của eXtensible Markup Language, giống như anh em họ dài dòng của JSON. Bạn sẽ phải đối mặt với XML khi làm việc với các hệ thống cũ, phần mềm doanh nghiệp, hoặc các API đã bỏ lỡ "chuyến tàu" JSON. XML vô cùng quan trọng trong việc trao đổi dữ liệu, nơi mà XML vẫn giữ vững vị thế của mình.
-
 ## Làm thế nào:
 Trong Rust, bạn có thể xử lý XML với các crates như `xml-rs`. Cài đặt bằng cách thêm `xml-rs = "0.8"` vào file `Cargo.toml` của bạn. Dưới đây là cách để phân tích cú pháp một XML đơn giản:
 

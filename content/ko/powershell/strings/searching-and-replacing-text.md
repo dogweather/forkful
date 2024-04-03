@@ -16,9 +16,6 @@ title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
 weight: 10
 ---
 
-## What & Why? (무엇 그리고 왜?)
-텍스트 검색 및 바꾸기는 문자열 내에서 특정 단어나 패턴을 찾고 변경하는 작업입니다. 프로그래머들은 데이터 조작, 설정 변경, 코드 리팩토링 등을 위해 이 기능을 사용합니다.
-
 ## How to: (방법:)
 ```PowerShell
 # 텍스트 내 단어 'apple'을 'orange'로 바꾸기

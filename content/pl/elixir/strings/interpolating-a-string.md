@@ -11,9 +11,6 @@ title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---
 
-## What & Why? (Co i dlaczego?)
-Interpolacja łańcuchów znaków to wstawianie wartości zmiennych wewnątrz stringa. Programiści używają jej do tworzenia elastycznych wiadomości i dynamicznego kodu bez konieczności ciągłego łączenia ciągów znaków.
-
 ## How to: (Jak to zrobić:)
 ```elixir
 name = "Łukasz"

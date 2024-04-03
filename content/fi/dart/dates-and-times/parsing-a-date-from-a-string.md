@@ -13,9 +13,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---
 
-## Mikä & Miksi?
-Päivämäärän jäsentäminen merkkijonosta Dartissa tarkoittaa päivämäärien ja kellonaikojen tekstiesitysten muuntamista `DateTime`-objektiksi. Tämä toiminto on olennainen sovelluksille, jotka käsittelevät aikataulutusta, data-analyysiä tai mitä tahansa ominaisuutta, joka vaatii päivämäärän käsittelyä, varmistaen, että päivämäärään liittyvät tiedot ymmärretään oikein ja käsitellään ohjelmassa kunnolla.
-
 ## Miten:
 Dartin ydinkirjasto yksinkertaistaa päivämäärän jäsentämistä `DateTime`-luokan avulla. Suoraviivaisissa tapauksissa, joissa tiedät päivämäärämerkkijonon muodon, voit käyttää `DateTime.parse()`-metodia. Kuitenkin monimutkaisemmissa skenaarioissa tai kun käsitellään useita muotoja, `intl`-paketti, erityisesti `DateFormat`-luokka, on korvaamaton.
 

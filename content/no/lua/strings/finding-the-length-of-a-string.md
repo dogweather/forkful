@@ -10,9 +10,6 @@ title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Å finne lengden på en streng betyr å bestemme antall tegn den inneholder. Programmere gjør dette for å validere inndata, strukturere tekst, eller for å manipulere strenger bredt.
-
 ## How to: (Hvordan:)
 ```Lua
 -- Enkel bruk av # operatoren for å finne lengden på en streng

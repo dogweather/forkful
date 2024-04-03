@@ -10,12 +10,7 @@ title: Iniciando um novo projeto
 weight: 1
 ---
 
-## O que é & Por quê?
-
-Iniciar um novo projeto é como arrumar um terreno vazio para construir algo do zero. Programadores fazem isso para transformar ideias em realidade, testar conceitos ou simplesmente aprender algo novo.
-
 ## Como fazer:
-
 Primeiro, instale o Elixir e a ferramenta de linha de comando `mix`. Então, crie seu projeto:
 
 ```elixir
@@ -45,7 +40,6 @@ You can use "mix compile" to compile your project,
 Pronto, você tem um projeto novo pra brincar!
 
 ## Mergulho Profundo:
-
 O `mix` é uma ferramenta poderosa no ecossistema Elixir que gerencia tarefas como compilar o código, rodar testes e gerenciar dependências. Ele vem da época quando José Valim e a comunidade estavam criando Elixir, inspirados por ferramentas de outras linguagens como `bundler`, `lein` e `rebar`.
 
 Alternativas? Bom, no universo Elixir não tem muita opção além do `mix` porque ele é muito enraizado na cultura da linguagem.
@@ -53,7 +47,6 @@ Alternativas? Bom, no universo Elixir não tem muita opção além do `mix` porq
 Detalhes de implementação: Quando você roda `mix new`, está invocando uma tarefa do mix que prepara a base de um projeto Elixir. Isto inclui o conteúdo do `mix.exs`, onde você define as especificidades do seu projeto, como dependências, configuração e tarefas personalizadas.
 
 ## Veja Também:
-
 - Documentação oficial do `mix`: https://hexdocs.pm/mix/Mix.html
 - Elixir Getting Started Guide: https://elixir-lang.org/getting-started/introduction.html
 - Elixir School, uma coleção de lições sobre programação Elixir: https://elixirschool.com/

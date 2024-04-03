@@ -14,11 +14,7 @@ title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---
 
-## Quoi & Pourquoi ?
-Mettre en majuscule une chaîne de caractères consiste à modifier le premier caractère d'une chaîne donnée en majuscule s'il est en minuscule, laissant souvent le reste de la chaîne inchangé. Cette opération est généralement utilisée pour garantir que les noms propres ou les débuts de phrases respectent les règles grammaticales dans le traitement de texte, rendant les sorties professionnelles et lisibles.
-
 ## Comment faire :
-
 TypeScript, étant un sur-ensemble de JavaScript, permet diverses méthodes pour mettre des chaînes en majuscule, allant des approches purement JavaScript à l'utilisation de bibliothèques tierces pour des cas d'utilisation plus complexes ou spécifiques.
 
 **Approche Purement JavaScript :**

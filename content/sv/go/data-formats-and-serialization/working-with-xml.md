@@ -13,11 +13,8 @@ title: Att arbeta med XML
 weight: 40
 ---
 
-## Vad och varför?
-
-Att arbeta med XML i Go innebär att tolka (läsa) och generera (skriva) XML-dokument – ett standardformat för utbyte av strukturerad data. Programmerare gör det för datalagring, konfigurationsinställningar eller datautbyte mellan system, särskilt i miljöer där XML är det föredragna eller äldre dataformatet.
-
 ## Hur man gör:
+
 
 ### Tolka XML i Go
 För att tolka XML i Go använder du paketet `encoding/xml`. Detta paket tillhandahåller nödvändiga verktyg för att avkoda (tolka) XML till Go-strukturer. Betrakta till exempel följande XML-data som representerar en bok:
@@ -115,7 +112,6 @@ Utskrift:
 ```
 
 ## Djupdykning
-
 XML:s ordfyllnad och komplexitet har lett till att JSON och andra format har blivit populärare för många applikationer. Dock säkerställer XML:s förmåga att representera komplex hierarkisk data och dess utbredda användning i äldre system och specifika domäner (t.ex. SOAP-tjänster) dess relevans.
 
 Paketet `encoding/xml` i Go erbjuder kraftfulla mekanismer för att arbeta med XML, men det är värt att notera dess begränsningar. Till exempel kan hantering av XML-namnrymder vara besvärligt och kan kräva en mer detaljerad förståelse för XML-specifikationen än för enklare användningsfall. Dessutom kan utvecklare stöta på utmaningar med djupt nästlade strukturer eller när de hanterar XML-dokument som inte passar snyggt in i Gos typsystem, även om Gos statiska typning och `encoding/xml`-packetets kodnings- och avkodningsförmåga generellt sett är effektiva.

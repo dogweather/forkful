@@ -11,9 +11,6 @@ title: Enviando una solicitud http
 weight: 44
 ---
 
-## Qué es y por qué?
-Enviar una solicitud HTTP es la forma de pedir datos o realizar una acción en un servidor web. Los programadores lo hacen para interactuar con APIs, servicios web o cualquier recurso disponible en internet.
-
 ## Cómo hacerlo:
 Clojure ofrece varias bibliotecas para realizar solicitudes HTTP. Vamos a usar `clj-http` por su simplicidad y popularidad.
 

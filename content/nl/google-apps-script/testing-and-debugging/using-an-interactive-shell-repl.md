@@ -13,12 +13,7 @@ title: Gebruik van een interactieve shell (REPL)
 weight: 34
 ---
 
-## Wat & Waarom?
-
-Een interactieve shell, of Read-Eval-Print Loop (REPL), is een eenvoudige, interactieve programmeeromgeving die individuele gebruikersinvoer (expressies) neemt, deze evalueert en het resultaat aan de gebruiker teruggeeft. Programmeurs gebruiken REPL's voor snelle prototyping, debugging en om de syntaxis en het gedrag van een programmeertaal interactief te leren kennen.
-
 ## Hoe te:
-
 Google Apps Script, een op de cloud gebaseerde scripttaal voor het automatiseren van taken over Google-producten, heeft geen ingebouwde REPL-tool vergelijkbaar met die in talen zoals Python of JavaScript's Node.js. Je kunt echter een soortgelijke ervaring simuleren met behulp van de log- en debugfuncties van de Apps Script Editor of door een externe omgeving op te zetten. Hier richten we ons op het creëren van een geïmproviseerde REPL binnen de Apps Script editor.
 
 1. **Een geïmproviseerde REPL-functie maken**:
@@ -60,7 +55,6 @@ Na `myREPL()` uitgevoerd te hebben, controleer de Logs (Weergave > Logs) voor de
 Voor complexere debugging, verspreid `Logger.log(variabele);` binnen je code om variabele staten af te drukken, wat je helpt de flow en tussenstaten van je scripts te begrijpen.
 
 ## Diepere Duik
-
 Het concept van een REPL is diep geworteld in de geschiedenis van het computergebruik, voortkomend uit de timesharing-systemen van de jaren 60 die interactieve sessies mogelijk maakten. Talen zoals Lisp gedijden in deze omgeving, aangezien de REPL cruciaal was voor hun iteratieve ontwikkelingsproces. In tegenstelling, Google Apps Script, dat veel later is ontstaan, is voornamelijk ontworpen voor het web, met een focus op het automatiseren van taken binnen Google's suite in plaats van iteratieve, op de console gebaseerde programmering.
 
 Google Apps Script ondersteunt traditioneel geen real-time, interactieve codingsessies rechtstreeks vanwege zijn cloudgebaseerde aard en de focus op webapp-deployments. Zijn uitvoeringsmodel draait om functies die worden geactiveerd door webgebeurtenissen, tijdgestuurde triggers of handmatige oproepen binnen de omgeving, in plaats van de onmiddellijke feedbackloops die een REPL biedt.

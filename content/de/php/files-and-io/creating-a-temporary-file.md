@@ -11,9 +11,6 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-## Was & Warum?
-Das Erstellen einer temporären Datei bedeutet, eine Datei für kurzzeitige Nutzung zu generieren, die nach Gebrauch meist automatisch gelöscht wird. Programmierer nutzen temporäre Dateien, um Daten flüchtig zu speichern, etwa für Zwischenergebnisse oder Pufferung, ohne das dauerhafte Dateisystem zu belasten.
-
 ## So geht's:
 In PHP ist das Erstellen einer temporären Datei ein Kinderspiel. Hier ist ein schnelles Beispiel:
 

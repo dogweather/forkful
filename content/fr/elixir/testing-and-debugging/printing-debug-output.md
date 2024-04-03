@@ -10,9 +10,6 @@ title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---
 
-## Quoi & Pourquoi ?
-Imprimer des messages de débogage, c'est écrire des infos temporaires dans votre console pour comprendre comment votre code Elixir se comporte en direct. On fait ça pour traquer des bogues vicieux ou vérifier que tout se passe comme prévu.
-
 ## Comment faire :
 ```elixir
 defmodule Debutant do

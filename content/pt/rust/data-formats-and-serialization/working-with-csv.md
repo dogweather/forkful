@@ -12,9 +12,6 @@ title: Trabalhando com CSV
 weight: 37
 ---
 
-## O Que & Por Quê?
-Trabalhar com arquivos CSV (Valores Separados por Vírgula) é sobre a leitura e escrita de arquivos de texto simples que armazenam dados tabulares. Programadores fazem isso para permitir o compartilhamento de dados entre diferentes programas, sistemas, ou para processar conjuntos de dados grandes de forma eficiente e legível para humanos.
-
 ## Como fazer:
 Rust, com seu foco em segurança e desempenho, oferece excelentes crates (bibliotecas) para lidar com arquivos CSV, sendo `csv` a mais popular. Você também precisará do `serde` para serializar e desserializar dados.
 
@@ -27,7 +24,6 @@ serde = { version = "1.0", features = ["derive"] }
 ```
 
 ### Lendo CSV
-
 Para ler um arquivo CSV, defina uma struct que represente seus dados e derive `Deserialize` de `serde`:
 
 ```rust
@@ -70,7 +66,6 @@ Record { city: "New York", state: "NY", population: 8336817 }
 ```
 
 ### Escrevendo em CSV
-
 Para escrever em um arquivo CSV, defina uma struct e derive `Serialize`:
 
 ```rust

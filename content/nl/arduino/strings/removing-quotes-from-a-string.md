@@ -13,9 +13,6 @@ title: Quotes verwijderen uit een string
 weight: 9
 ---
 
-## Wat & Waarom?
-Het verwijderen van quotes uit een string betekent het weglaten van enkele (`'`) of dubbele (`"`) aanhalingstekens die de tekst omgeven. Programmeurs doen dit vaak om invoer te saneren, strings voor te bereiden voor vergelijking, of tekstgegevens te verwerken die per ongeluk aanhalingstekens als deel van de stringinhoud kunnen bevatten.
-
 ## Hoe te:
 Om aanhalingstekens uit een string in Arduino te verwijderen, kun je over de karakters lopen en de string herbouwen zonder de aanhalingstekens. Bijvoorbeeld:
 

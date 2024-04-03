@@ -11,9 +11,6 @@ title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437
 weight: 44
 ---
 
-## What & Why? (Що та Чому?)
-Sending an HTTP request is how your JavaScript code asks the internet for data or sends data to a server. We do it to interact with web services, grab fresh content, submit forms, and basically breathe life into websites.
-
 ## How to: (Як зробити:)
 Here's how to send a GET request using the `fetch` API to grab some JSON data and then post data using `fetch`.
 

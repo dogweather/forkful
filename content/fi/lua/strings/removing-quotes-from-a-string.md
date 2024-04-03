@@ -10,9 +10,6 @@ title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---
 
-## Mitä & Miksi?
-Lainausmerkkien poistaminen merkkijonosta tarkoittaa niiden kaksinkertaisten tai yksinkertaisten lainausmerkkien kuorimista tekstisi ympäriltä. Koodaajat tekevät tämän syötteiden puhdistamiseksi, jäsentämisen helpottamiseksi tai epäjohdonmukaisesti lainatussa datassa harmonian saavuttamiseksi.
-
 ## Kuinka:
 Tässä on miten heität lainausmerkit nurkkaan Luassa:
 

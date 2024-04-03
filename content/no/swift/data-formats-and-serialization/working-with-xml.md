@@ -10,9 +10,6 @@ title: "\xC5 jobbe med XML"
 weight: 40
 ---
 
-## Hva & Hvorfor?
-Å jobbe med XML betyr å analysere og generere XML-data i Swift. Programmerere gjør dette for datamellomlagring, spesielt når de integrerer med systemer der XML er standardformatet.
-
 ## Hvordan:
 Swift gir `XMLParser` og `XMLDocument` for å analysere XML-data. Her er et eksempel for å analysere en enkel XML-streng:
 

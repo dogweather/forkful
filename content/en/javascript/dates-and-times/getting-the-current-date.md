@@ -10,9 +10,6 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-Getting the current date in JavaScript is a fundamental task, involving retrieving and possibly manipulating today's date and time. Programmers perform this to display dates on websites, in applications, to track user interactions, or to handle time-sensitive data.
-
 ## How to:
 In vanilla JavaScript, the `Date` object is used to work with dates and times. Here’s how you can get the current date and time:
 

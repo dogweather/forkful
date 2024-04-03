@@ -11,9 +11,6 @@ title: Descobrindo o comprimento de uma string
 weight: 7
 ---
 
-## What & Why?
-Calcular o comprimento de uma string é simplesmente descobrir quantos caracteres ela possui. Programadores fazem isso para validar entradas, limitar texto numa interface gráfica, ou simplesmente para manipulação de dados.
-
 ## How to:
 O Haskell possui uma função integrada chamada `length` que retorna o comprimento de uma lista, incluindo strings que, em Haskell, são listas de caracteres. Veja só:
 

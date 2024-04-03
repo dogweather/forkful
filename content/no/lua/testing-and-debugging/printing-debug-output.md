@@ -11,9 +11,6 @@ title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---
 
-## What & Why? - Hva & Hvorfor?
-Å skrive ut feilsøkingsinformasjon betyr at du legger inn ekstra kode som hjelper deg å se hva som skjer i programmet ditt. Programmerere gjør dette for å finne og rette feil enkelt og raskt.
-
 ## How to: - Hvordan:
 I Lua, bruk `print()` funksjonen for å vise verdier mens programmet kjører.
 

@@ -13,12 +13,7 @@ title: Willekeurige getallen genereren
 weight: 12
 ---
 
-## Wat & Waarom?
-
-Het genereren van willekeurige getallen in C houdt in dat waarden worden gecreëerd die onvoorspelbaar zijn en een specifieke verdeling volgen, zoals uniform of normaal. Deze mogelijkheid is cruciaal voor toepassingen variërend van simulaties en spellen tot cryptografische operaties, waar onvoorspelbaarheid of de simulatie van echte wereld-aleatoriek essentieel is.
-
 ## Hoe:
-
 In C kunnen willekeurige getallen gegenereerd worden met behulp van de `rand()` functie, die deel uitmaakt van de C-standaardbibliotheek `<stdlib.h>`. Standaard produceert `rand()` pseudo-willekeurige getallen in het bereik van 0 tot `RAND_MAX` (een constante gedefinieerd in `<stdlib.h>`). Voor meer controle over het bereik, kunnen programmeurs de uitvoer van `rand()` manipuleren.
 
 Hier is een eenvoudig voorbeeld van het genereren van een willekeurig getal tussen 0 en 99:
@@ -51,7 +46,6 @@ Om willekeurige getallen binnen een ander bereik te genereren, kun je de modulo-
 Het is belangrijk op te merken dat het zaaien van de pseudo-willekeurige getallengenerator (`srand()` oproep) met de huidige tijd (`time(NULL)`) zorgt voor verschillende reeksen van willekeurige getallen bij verschillende uitvoeringen van het programma. Zonder te zaaien (`srand()`), zou `rand()` elke keer dat het programma wordt uitgevoerd dezelfde reeks getallen produceren.
 
 ## Diepere Duik
-
 De `rand()` functie en de bijbehorende zaai-functie `srand()` maken al decennia deel uit van de C-standaardbibliotheek. Ze zijn gebaseerd op algoritmen die reeksen van getallen genereren die alleen schijnbaar willekeurig zijn - vandaar de term "pseudo-willekeurig". Het onderliggende algoritme in `rand()` is meestal een lineaire congruentiegenerator (LCG).
 
 Hoewel `rand()` en `srand()` voldoende zijn voor veel toepassingen, hebben ze bekende beperkingen, met name wat betreft de kwaliteit van de willekeurigheid en mogelijke voorspelbaarheid. Voor toepassingen die hoogwaardige willekeurigheid vereisen, zoals cryptografische operaties, moeten alternatieven zoals `/dev/random` of `/dev/urandom` (op Unix-achtige systemen), of API's aangeboden door cryptografische bibliotheken, worden overwogen.

@@ -9,9 +9,6 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## Cosa e Perché?
-Estrarre sottosequenze significa prendere pezzi di una stringa. Lo facciamo per manipolare dati in ingresso o semplicemente per isolare informazioni utili dalle stringhe.
-
 ## How to:
 ```Arduino
 String testo = "Arduino è fantastico!";

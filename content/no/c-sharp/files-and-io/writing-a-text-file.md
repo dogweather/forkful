@@ -14,9 +14,6 @@ title: Skrive en tekstfil
 weight: 24
 ---
 
-## Hva & Hvorfor?
-Å skrive en tekstfil i C# involverer å programmert skape eller endre tekstfiler på filsystemet - en grunnleggende oppgave for mange applikasjoner, slik som logging, dataeksport, eller konfigurasjonsstyring. Programmerere utfører denne operasjonen for å bevare data mellom økter, dele informasjon på tvers av systemer, eller lagre lettleselige utdata.
-
 ## Hvordan:
 C# forenkler filoperasjoner med sitt `System.IO` navnerom, som gir enkle metoder for å skrive tekstfiler. Her er hvordan man skriver en grunnleggende tekstfil og legger til tekst i en eksisterende fil.
 

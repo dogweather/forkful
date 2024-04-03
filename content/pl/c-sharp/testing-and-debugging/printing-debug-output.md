@@ -10,9 +10,6 @@ title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---
 
-## What & Why? (Co i dlaczego?)
-Debugowanie to proces śledzenia, co się dzieje w programie. Programiści drukują informacje debugowania, żeby łatwiej znaleźć i naprawić błędy.
-
 ## How to (Jak to zrobić):
 ```C#
 using System;

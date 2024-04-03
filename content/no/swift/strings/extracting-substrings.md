@@ -10,9 +10,6 @@ title: Uthenting av delstrenger
 weight: 6
 ---
 
-## Hva & Hvorfor?
-Utdrag av understrenger betyr å velge spesifikke deler av en streng. Programmerere gjør dette for å manipulere, analysere eller formatere tekstdata mer spesifikt.
-
 ## Slik gjør du:
 For å ekstrahere understrenger i Swift, bruk `String`-indekser og substring-metoder som `prefix`, `suffix`, `split`, eller `subscript`-området.
 

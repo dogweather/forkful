@@ -11,11 +11,7 @@ title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---
 
-## What & Why? (Mitä & Miksi?)
-Laskemalla tulevaisuuden tai menneisyyden päivämäärä, tarkoitetaan päivämäärän määrittämistä suhteessa nykyhetkeen. Ohjelmoijat tekevät tämän esimerkiksi tehtävien määräaikojen, tapahtumien ajoituksen tai korkolaskelmien määrittämiseksi.
-
 ## How to: (Kuinka tehdä:)
-
 ```C#
 using System;
 
@@ -44,7 +40,6 @@ Date 15 days ago: 31.03.2023
 ```
 
 ## Deep Dive (Syväsukellus):
-
 In computing, datetime manipulation is essential for schedules, archives, and time-dependent algorithms. Introduced with .NET Framework, `DateTime` is a backbone of date calculations in C#. There are methods like `AddDays`, `AddMonths`, `AddYears` for basic date arithmetic.
 
 Alternatives include `TimeSpan` for precise duration calculations and third-party libraries like NodaTime for robust time zone-aware operations.
@@ -52,7 +47,6 @@ Alternatives include `TimeSpan` for precise duration calculations and third-part
 When using `DateTime`, you might encounter DateTimeKind, which indicates whether the date is local, UTC, or unspecified. This affects operations when converting between time zones.
 
 ## See Also (Katso myös):
-
 - [DateTime Struct (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
 - [AddDays Method (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.adddays?view=net-6.0)
 - [NodaTime Documentation](https://nodatime.org/2.4.x/userguide)

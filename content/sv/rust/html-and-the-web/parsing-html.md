@@ -14,12 +14,7 @@ title: Tolka HTML
 weight: 43
 ---
 
-## Vad & Varför?
-
-Att tolka HTML i Rust handlar om att extrahera data från HTML-dokument, vilket är väsentligt för webbskrapning, dataextraktion eller att bygga webb-crawlers. Programmerare gör detta för att automatisera insamlingen av information från webben, analysera webbinnehåll eller migrera innehåll från en plattform till en annan.
-
 ## Hur gör man:
-
 För att tolka HTML i Rust kommer du ofta att använda `scraper`-paketet, som erbjuder ett högnivågränssnitt för att traversera och manipulera HTML-dokument.
 
 Först, lägg till `scraper` i din `Cargo.toml`:

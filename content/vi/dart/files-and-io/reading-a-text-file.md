@@ -16,12 +16,7 @@ title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---
 
-## Cái gì & Tại sao?
-
-Đọc một tệp văn bản trong Dart liên quan đến việc truy cập và lấy dữ liệu từ các tệp lưu trữ trên hệ thống tệp. Các lập trình viên thực hiện điều này để xử lý dữ liệu nhập vào, cài đặt cấu hình, hoặc đọc các bộ dữ liệu, làm cho nó trở thành một hoạt động cơ bản cho nhiều ứng dụng từ các script đơn giản đến các ứng dụng phức tạp.
-
 ## Làm thế nào:
-
 Thư viện cốt lõi của Dart, `dart:io`, cung cấp các chức năng cần thiết để đọc tệp văn bản một cách đồng bộ hoặc bất đồng bộ. Dưới đây là cách tiếp cận cả hai.
 
 **Một cách đồng bộ:**

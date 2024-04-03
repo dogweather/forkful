@@ -10,9 +10,6 @@ title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---
 
-## Quoi & Pourquoi ?
-REPL est l'acronyme de Read-Eval-Print Loop (Boucle Lire-Évaluer-Imprimer), un environnement de programmation informatique simple et interactif. Les codeurs l'utilisent pour écrire et tester rapidement du code, expérimenter avec la syntaxe et apprendre les concepts de programmation sans le fardeau de créer et d'exécuter des applications complètes.
-
 ## Comment faire :
 Dans Bash, votre terminal est essentiellement un REPL. Vous tapez une commande ; il la lit, l'évalue, imprime le résultat et boucle en attendant votre prochaine commande. Voici un exemple d'utilisation de Bash comme un REPL :
 

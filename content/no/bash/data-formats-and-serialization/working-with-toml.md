@@ -11,9 +11,6 @@ title: Jobbe med TOML
 weight: 39
 ---
 
-## Hva & Hvorfor?
-TOML, som står for Toms åpenbare, minimale språk, er et format for dataserialisering. Programmerere digger det for dets enkelhet og lesbarhet; det er prikke for konfigurasjonsfiler, lignende vibes som YAML, men mindre klønete enn JSON for et menneske.
-
 ## Hvordan:
 Først, installer `toml-cli` for å leke med TOML i Bash. Praktisk for å lese eller redigere TOML-filer på sparket.
 

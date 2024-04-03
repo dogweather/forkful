@@ -10,9 +10,6 @@ title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---
 
-## Mitä & Miksi?
-Kompleksiluvut, ne joilla on reaaliosa ja imaginaariosa (kuten 3 + 4i), ovat elintärkeitä aloilla kuten insinööritiede, fysiikka ja data-analytiikka. Ohjelmoijat käyttävät niitä simulaatioihin, signaalinkäsittelyyn ja erityisten matemaattisten ongelmien ratkaisuun.
-
 ## Kuinka:
 PowerShell ei tue kompleksilukuja suoraan, joten sinun on joko kehitettävä oma ratkaisusi tai käytettävä .NET:n `System.Numerics.Complex`.
 

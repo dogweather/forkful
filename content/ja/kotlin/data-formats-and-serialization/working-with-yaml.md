@@ -21,9 +21,6 @@ title: "YAML \u3092\u64CD\u4F5C\u3059\u308B"
 weight: 41
 ---
 
-## 何となぜ？
-YAML（YAML Ain't Markup Languageの略）は、設定ファイル、データストレージやプロセス間メッセージングによく使用される、読みやすいデータシリアライゼーション形式です。プログラマーは、可読性が重要な場合にJSONやXMLよりも明確さとシンプルさのメリットを享受しながら、設定と設定を構造化されたが分かりやすい方法で管理するために、頻繁にYAMLを扱います。
-
 ## どのようにして：
 KotlinにはYAMLの解析やシリアライゼーションのための組み込みサポートはありませんが、`snakeyaml`（一般的なYAML解析用）や`kotlinx.serialization`（YAML形式の拡張を使用）などの人気のあるサードパーティライブラリを利用してYAMLファイルを扱うことができます。
 
@@ -61,6 +58,7 @@ database:
 ```
 {database={host=localhost, port=5432}}
 ```
+
 ### `kotlinx.serialization`をYAMLで使用する
 まず、適切なYAMLサポートライブラリを含む`kotlinx-serialization`ライブラリがあることを確認してください（`kotlinx.serialization`は主にJSONおよびその他の形式を直接対象としていますが、使用可能であれば、YAMLサポートや代替ライブラリもチェックしてください）。
 

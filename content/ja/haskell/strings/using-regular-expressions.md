@@ -28,9 +28,6 @@ title: "\u6B63\u898F\u8868\u73FE\u306E\u4F7F\u7528"
 weight: 11
 ---
 
-## 何となぜ？
-プログラミングで使われる正規表現は、文字列の検索パターンを定義する文字の連続であり、通常、文字列検索や操作のために用いられます。Haskell プログラマーは、簡単な文字列マッチングから複雑なテキスト処理まで、その効率性とテキストデータを扱う際の汎用性を活かして正規表現を利用します。
-
 ## 使い方：
 Haskellでは、regex機能は標準ライブラリには含まれておらず、`regex-base`のようなサードパーティ製のパッケージと、POSIX正規表現サポート用の`regex-posix`、Perl互換の正規表現用の`regex-pcre`など、互換性のあるバックエンドの使用が必要になります。以下のようにしてこれらのパッケージを使用して正規表現を扱います。
 
@@ -45,7 +42,6 @@ cabal install regex-pcre
 ```
 
 ### `regex-posix` を使う：
-
 ```haskell
 import Text.Regex.Posix ((=~))
 
@@ -66,7 +62,6 @@ main = do
 ```
 
 ### `regex-pcre` を使う：
-
 ```haskell
 import Text.Regex.PCRE ((=~))
 

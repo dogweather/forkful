@@ -14,12 +14,7 @@ title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---
 
-## Mikä & Miksi?
-
-Päivämäärien vertailu C-kielessä tarkoittaa niiden kronologisen suhteen määrittämistä - onko toinen päivämäärä ennen toista tai ovatko ne samat. Tämä kyky on olennainen sovelluksissa, jotka käsittelevät aikataulutusta, määräaikoja tai kirjanpitoa, koska se mahdollistaa aikaan sidotun tiedon järjestämisen ja manipuloinnin.
-
 ## Miten:
-
 C ei sisällä valmista tyyppiä päivämäärille, mikä tekee `time.h` kirjaston käytön tarpeelliseksi työskentelyssä päivämäärä- ja aikarakenteiden kanssa. `tm` rakenne ja `difftime()` funktio ovat yleisesti käytössä päivämäärien vertailussa. Alla on esimerkki, joka näyttää, miten vertailla kahta päivämäärää:
 
 ```c
@@ -69,7 +64,6 @@ Ensimmäinen päivämäärä on ennen toista.
 Tämä ohjelma alustaa kaksi `tm` rakennetta tietyillä päivämäärillä, muuntaa ne `time_t` formaattiin käyttämällä `mktime()`, ja lopuksi vertaa niitä käyttämällä `difftime()`, joka palauttaa aikaeron sekunteina (kaksinkertaisena) kahden ajankohdan välillä.
 
 ## Syväsukellus
-
 C:n alkuaikoina päivämäärä- ja aikaoperaatiot vaativat manuaalisia laskelmia, ottaen usein huomioon karkausvuodet, kuukausien vaihtelevat päivämäärät ja jopa karkaussekunnit. `Time.h` esittely ANSI C -standardissa toi standardisoinnin C:n ajan käsittelyyn, yksinkertaistaen päivämäärä- ja aikaoperaatioita.
 
 `Time.h` käyttö päivämäärien vertailussa on suoraviivaista, mutta sillä on rajoituksensa. `Tm` rakenne ei ota huomioon aikavyöhykkeitä tai kesäaikaa, ja `difftime()` tarjoaa vain eron sekunteina, puuttuen hienojakoisempaa tarkkuutta tietyissä sovelluksissa.

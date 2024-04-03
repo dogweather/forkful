@@ -10,9 +10,6 @@ title: Merkkijonojen osien poimiminen
 weight: 6
 ---
 
-## What & Why?
-Mikä se on ja miksi se on tarpeellista? Merkkijonojen osien irrottaminen – eli substringien eristäminen – tarkoittaa tietyn merkkijonon aliosan kaivamista ja käsittelyä. Ohjelmoijat tekevät tätä datan jäsentämiseen, esimerkiksi tiedostonimistä päätteiden poistamiseen tai päivämäärien muotoiluun.
-
 ## How to:
 Fish Shellillä substringien käsittely onnistuu esimerkiksi `string`-komennon avulla:
 

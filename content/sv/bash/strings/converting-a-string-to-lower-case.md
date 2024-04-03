@@ -11,9 +11,6 @@ title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---
 
-## Vad & Varför?
-Att konvertera en sträng till gemener innebär att ändra alla storbokstäver i texten till småbokstäver. Programmerare gör det för att förenkla jämförelse av texter och hantera användarinput som inte är fallet känslig.
-
 ## Gör så här:
 ```Bash
 # Användning av tr-kommandot

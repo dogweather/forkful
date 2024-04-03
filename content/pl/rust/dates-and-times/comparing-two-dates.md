@@ -11,9 +11,6 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## Co i Dlaczego?
-Porównywanie dwóch dat polega na ustaleniu, która z nich jest wcześniejsza, późniejsza lub czy są identyczne. Programiści robią to, aby zarządzać wydarzeniami w czasie, np. sortować wpisy bloga, sprawdzać ważność certyfikatów, czy organizować harmonogramy.
-
 ## Jak to zrobić:
 ```Rust
 use chrono::{DateTime, Utc};

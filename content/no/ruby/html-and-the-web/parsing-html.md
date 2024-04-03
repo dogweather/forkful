@@ -13,9 +13,6 @@ title: Analysering av HTML
 weight: 43
 ---
 
-## Hva & Hvorfor?
-Parsing av HTML betyr å rive fra hverandre en bit HTML-kode for å forstå dens struktur og innhold. Programmerere gjør dette for å ekstrahere data, manipulere innhold, eller migrere informasjon mellom formater og systemer.
-
 ## Hvordan:
 For å parse HTML i Ruby, installer 'Nokogiri'-gemmen med `gem install nokogiri`. Nokogiri er som en Sveitsisk lommekniv for å jobbe med HTML og XML i Ruby. Her er et kjapt eksempel:
 

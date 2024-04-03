@@ -10,9 +10,6 @@ title: Calculando la longitud de una cadena
 weight: 7
 ---
 
-## ¿Qué & Por Qué?
-Encontrar la longitud de una cadena es simplemente determinar cuántos caracteres contiene. Lo hacemos para validar entradas, manipular texto o simplemente para saber el tamaño de la información que estamos manejando.
-
 ## Cómo hacerlo:
 ```elixir
 cadena = "Hola, Mundo"

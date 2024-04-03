@@ -11,9 +11,6 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## What & Why? (Mitä & Miksi?)
-Yhdistämme merkkijonoja siksikin, että voimme luoda pitkiä tekstinpätkiä pienistä palasista. Tätä tekevät ohjelmoijat everywhere luodaakseen dynaamisia viestejä tai yhdistelläkseen käyttäjäsyötettä.
-
 ## How to: (Miten tehdään:)
 ```Swift
 // Yksinkertainen yhdistäminen operaattorilla +
@@ -34,7 +31,7 @@ print(viesti) // "Kello on 18:00."
 ```
 
 ## Deep Dive (Syväsukellus):
-Merkkijonojen yhdistely on vanha käytäntö, ja kielessä kuin kielessä löytyy siihen keinot. Ennen Swiftiä Objective-C:ssä joutui käyttämään `NSString` -luokan `stringByAppendingString`:iä, mikä ei ollut niin suoraviivaista. Swiftissä keinoja on useita, mutta kaikkein suosituinta on käyttää `+` operaattoria yksinkertaisuuden ja luettavuuden vuoksi. Interpolaatio on varteenotettava vaihtoehto, kun halutaan sisällyttää muuttujia tai laskentoja. `append`-metodi taas on hyödyllinen, kun halutaan lisätä tekstiä olemassa olevaan merkkijonoon ilman uuden luomista. Tehokkuuden kannalta merkkijonojen liittämisen voi tehdä monella tapaa, ja suorituskyvyn vaikutukset riippuvat kontekstista. 
+Merkkijonojen yhdistely on vanha käytäntö, ja kielessä kuin kielessä löytyy siihen keinot. Ennen Swiftiä Objective-C:ssä joutui käyttämään `NSString` -luokan `stringByAppendingString`:iä, mikä ei ollut niin suoraviivaista. Swiftissä keinoja on useita, mutta kaikkein suosituinta on käyttää `+` operaattoria yksinkertaisuuden ja luettavuuden vuoksi. Interpolaatio on varteenotettava vaihtoehto, kun halutaan sisällyttää muuttujia tai laskentoja. `append`-metodi taas on hyödyllinen, kun halutaan lisätä tekstiä olemassa olevaan merkkijonoon ilman uuden luomista. Tehokkuuden kannalta merkkijonojen liittämisen voi tehdä monella tapaa, ja suorituskyvyn vaikutukset riippuvat kontekstista.
 
 ## See Also (Katso Myös):
 - [Swift Standard Library - String](https://developer.apple.com/documentation/swift/string)

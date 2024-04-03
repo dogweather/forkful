@@ -10,9 +10,6 @@ title: Lendo um arquivo de texto
 weight: 22
 ---
 
-## What & Why?
-Ler um arquivo de texto significa acessar e manipular o que está escrito nele através de um programa. Programadores fazem isso para carregar configurações, analisar dados ou simplesmente exibir conteúdo.
-
 ## How to:
 Swift torna a leitura de arquivos de texto direta e indolora. Veja como fazer:
 

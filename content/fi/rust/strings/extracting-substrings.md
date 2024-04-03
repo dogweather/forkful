@@ -10,10 +10,7 @@ title: Merkkijonojen osien poimiminen
 weight: 6
 ---
 
-## What & Why? 
-Mikä ja miksi? Substringien eli alimerkkijonojen poimiminen on prosessi, jossa otetaan osia kiinteistä merkkijonoista. Ohjelmoijat tekevät tätä tietojen eristämiseen, tietojen muotoiluun tai tekstin pohjalta tehtävään päätöksentekoon.
-
-## How to: 
+## How to:
 Kuinka tehdään:
 
 ```Rust
@@ -35,10 +32,10 @@ fn main() {
 }
 ```
 
-## Deep Dive 
+## Deep Dive
 Syväsukellus: Rust ei oikeastaan puhu "substringeista" vaan viipaleista, "slices". Historiallisesti viipaleet ovat Rustin yritys tarjota turvallista pääsyä merkkijonoihin paniikkien ja väärien muistiviitteiden välttämiseksi. Erona esim. Pythoniin, Rust vaatii, että viipaleet ovat voimassaolevia UTF-8 sekvenssejä, joten suora indeksointi ei aina ole mahdollista. Tämän takia `.get(..)` metodi on kätevä, sillä se palauttaa `Option`-tyypin, joka kertoo, onnistuiko leikkaus. `.chars().collect()` ja muut metodit auttavat iterointiin, jos tarvitaan enemmän kontrollia Unicode-merkkien yli.
 
-## See Also 
+## See Also
 Katso myös:
 
 - Rust's official string slices documentation: [https://doc.rust-lang.org/std/primitive.str.html](https://doc.rust-lang.org/std/primitive.str.html)

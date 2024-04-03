@@ -11,9 +11,6 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-Afronden is het weglaten van de 'ruis' na een bepaald punt in een nummer. Programmeurs ronden af om precisie te beheersen, geheugen te beheren of de output gebruiksvriendelijk te maken—zoals het omzetten van 2.998 in een schone 3.
-
 ## Hoe:
 Hier is hoe je nummers afrondt in JavaScript met `Math.round()`, `Math.ceil()`, en `Math.floor()`:
 

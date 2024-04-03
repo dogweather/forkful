@@ -10,11 +10,6 @@ title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---
 
-## What & Why?
-(Mitä & Miksi?)
-
-Vertaamme kahta päivämäärää tunnistaaksemme niiden eron. Ohjelmoijat tekevät tämän aikataulujen hallintaan, aikaleimojen tarkkailuun tai vanhentumispäivien tsekkaamiseen.
-
 ## How to:
 (Miten:)
 

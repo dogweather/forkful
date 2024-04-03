@@ -12,12 +12,7 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## Qué y Por Qué?
-
-Escribir pruebas en C# implica crear scripts automatizados para validar la funcionalidad de tu código, asegurando que se comporte como se espera. Los programadores lo hacen para detectar errores tempranamente, facilitar la refactorización del código y asegurar que los nuevos cambios no interrumpan las funciones existentes, aumentando así la calidad y fiabilidad del software.
-
 ## Cómo hacerlo:
-
 Los desarrolladores de C# usan principalmente los marcos de trabajo NUnit o xUnit para escribir pruebas debido a su flexibilidad y extenso conjunto de características. Aquí hay un ejemplo básico utilizando NUnit para probar una simple función de adición:
 
 1. **Instala NUnit y NUnit3TestAdapter** a través del Administrador de Paquetes NuGet o la CLI de .NET:
@@ -71,7 +66,6 @@ dotnet test
 ```
 
 ### Salida de Muestra:
-
 Asumiendo que tu prueba sea exitosa, deberías ver una salida similar a esta:
 ```
 Test Run Successful.
@@ -81,7 +75,6 @@ Total tests: 1
 ```
 
 ### Usando xUnit:
-
 Si prefieres xUnit, la configuración es similar a NUnit. Así es como reescribirías el ejemplo de prueba para la clase `Calculator` usando xUnit:
 
 1. **Instala xUnit y xUnit.runner.visualstudio**:

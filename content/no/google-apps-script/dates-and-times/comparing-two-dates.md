@@ -13,9 +13,6 @@ title: Sammenligning av to datoer
 weight: 27
 ---
 
-## Hva & Hvorfor?
-Å sammenligne to datoer i Google Apps Script, en avledning av JavaScript tilpasset for Googles apppakke, er en vesentlig oppgave for utviklere som håndterer planlegging, tidslinjer eller andre datorelaterte data. Å forstå hvordan man nøyaktig kan sammenligne datoer muliggjør for programmerere å implementere funksjoner som frister, arrangementplanlegging eller innholdsplanlegging effektivt.
-
 ## Hvordan:
 I Google Apps Script sammenlignes datoer ved bruk av JavaScript Date-objekter, som muliggjør bruk av standardmetoder for å evaluere hvilken av to datoer som er tidligere, senere, eller om de er de samme. Her er en grunnleggende tilnærming:
 

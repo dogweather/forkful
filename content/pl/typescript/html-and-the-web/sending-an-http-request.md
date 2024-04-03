@@ -11,9 +11,6 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## What & Why? (Co i Dlaczego?)
-Wysyłanie zapytania HTTP pozwala naszej aplikacji porozumiewać się z serwerem, wymieniając dane. Programiści robią to, by pobrać, stworzyć, aktualizować lub usunąć zasoby - kluczowe operacje w aplikacjach internetowych.
-
 ## How to: (Jak to zrobić:)
 ```TypeScript
 import axios from 'axios';

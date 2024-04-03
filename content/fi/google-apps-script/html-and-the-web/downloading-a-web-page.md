@@ -14,12 +14,7 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## Mikä & Miksi?
-
-Web-sivun lataaminen Google Apps Scriptillä sisältää sivun sisällön noutamisen HTML:n kautta eri tarkoituksiin, kuten verkon kaavintaan (web scraping), tiedon poimintaan tai muutosten seurantaan. Ohjelmoijat valitsevat tämän operaation automatisoidakseen datankeruu- tai integraatiotehtäviä, vähentäen manuaalista työtä ja varmistaen reaaliaikaisen datan käsittelyn.
-
 ## Kuinka:
-
 Google Apps Scriptissä `UrlFetchApp`-palvelu on keskeinen web-sisällön lataamisessa. Alla on vaiheittainen opas ja yksinkertainen esimerkki, joka näyttää kuinka noutaa ja logata verkkosivun HTML-sisältö:
 
 1. **Perusnouto-operaatio:**
@@ -57,7 +52,6 @@ function downloadSecureWebPage() {
 Ole tietoinen Google Apps Scriptin kiintiöistä; raskas käyttö voi vaatia virheenkäsittelyä nopeusrajoitusten yhteydessä.
 
 ## Syväsukellus
-
 Historiallisesti web-sisällön lataaminen ja käsittely alkoi yksinkertaisilla HTTP-pyynnöillä, ja se on kehittynyt merkittävästi skriptikielien myötä. Google Apps Script mahdollistaa tällaisten tehtävien suoraviivaisen toteutuksen G Suite -ekosysteemissä, hyödyntäen Googlen vankkaa infrastruktuuria. `UrlFetchApp`-palvelu on tämän toiminnallisuuden ydin, kapseloiden monimutkaiset HTTP/S-pyynnöt yksinkertaisempaan sovellustason rajapintaan.
 
 Sen mukavuudesta huolimatta Google Apps Script ei välttämättä aina ole paras työkalu raskaaseen verkkosivujen kaavintaan tai kun vaaditaan monimutkaista jälkikäsittelyä noudetulle datalle johtuen Googlen asettamista suoritusaikarajoituksista ja kiintiöistä. Tällaisissa tapauksissa omistautuneet verkkosivujen kaavintakehykset tai asynkroniseen I/O-toimintoihin suunnitellut kielet, kuten Node.js kirjastoineen kuten Puppeteer tai Cheerio, saattavat tarjota enemmän joustavuutta ja voimaa.

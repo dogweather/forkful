@@ -12,12 +12,7 @@ title: Scrivere un file di testo
 weight: 24
 ---
 
-## Cosa & Perché?
-
-Scrivere su un file di testo in Haskell consiste nella creazione o aggiornamento programmato di file contenenti testo. I programmatori eseguono questa operazione per rendere persistenti dati come messaggi di log, output di applicazioni o per memorizzare contenuti generati dagli utenti, rendendolo un compito fondamentale per applicazioni che richiedono persistenza dei dati o registrazione (logging).
-
 ## Come fare:
-
 Il Prelude standard di Haskell fornisce un supporto elementare per scrivere su file utilizzando le funzioni `writeFile` e `appendFile` dal modulo `System.IO`. Ecco un esempio base di come creare un nuovo file (o sovrascrivere uno esistente) e poi aggiungere del testo a un file.
 
 ```haskell

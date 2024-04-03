@@ -10,9 +10,6 @@ title: Avrundning av tal
 weight: 13
 ---
 
-## Vad & Varför?
-Avrundning av tal innebär att trimma ett nummer till en specifik precision. Programmerare gör detta för att kontrollera numerisk utdata för läsbarhet, visningssyften eller när specifik precision krävs efter operationer som ger flyttalsresultat.
-
 ## Hur man gör:
 Avrundning i TypeScript kan göras med flera metoder. Här är en snabb genomgång:
 

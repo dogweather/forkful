@@ -14,12 +14,7 @@ title: Verwendung einer interaktiven Shell (REPL)
 weight: 34
 ---
 
-## Was & Warum?
-
-Eine interaktive Shell oder Read-Eval-Print-Schleife (REPL) ermöglicht es Benutzern, Befehle einzugeben, auszuführen und die Ergebnisse in Echtzeit zu sehen. Programmierer nutzen REPLs für schnelles Prototyping, Testen von Code-Schnipseln oder Debugging in einer interaktiveren und iterativen Umgebung, was die Produktivität und das Verständnis des Codes verbessert.
-
 ## Wie geht das:
-
 Visual Basic for Applications (VBA) unterstützt von sich aus keine interaktive Shell oder REPL-Erfahrung, wie sie in Sprachen wie Python oder JavaScript zu sehen ist. Sie können diese Erfahrung jedoch in gewisser Weise mithilfe des Sofortfensters in der VBA-IDE (Integrated Development Environment) simulieren.
 
 **Zugriff auf das Sofortfenster:**
@@ -59,7 +54,6 @@ Call SayHello
 **Hinweis:** Das Sofortfenster hat Einschränkungen. Es ist hervorragend für schnelle Tests und direkte Funktionsaufrufe geeignet, unterstützt jedoch nicht das direkte Definieren von Funktionen oder Prozeduren darin. Komplexe Debugging- und Programmieraufgaben könnten die vollständige Modulentwicklung erfordern.
 
 ## Tiefer eintauchen
-
 Das Sofortfenster in VBA dient trotz seiner Einschränkungen als nächstgelegener Gegenpart zu interaktiven Shells, die in anderen Programmierökosystemen zu finden sind. Historisch gesehen lag der Schwerpunkt von VBA darauf, die Fähigkeiten von Microsoft Office-Anwendungen durch Skripte und Makros zu erweitern, statt eigenständige Softwareentwicklung zu betreiben, was das Fehlen einer vollwertigen REPL erklären könnte.
 
 Für Aufgaben, die umfangreiche interaktive Tests oder komplexe Logikentwicklungen erfordern, könnten andere Programmierumgebungen mit nativer REPL-Unterstützung, wie Python mit seinem IDLE oder JavaScript mit Node.js, bessere Alternativen bieten. Diese Umgebungen bieten nicht nur interaktive Shells, sondern auch robustere Programmier-, Debugging- und Testeinrichtungen.

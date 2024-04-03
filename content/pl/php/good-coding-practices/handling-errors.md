@@ -12,9 +12,6 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co i dlaczego?
-Obsługa błędów w PHP dotyczy zarządzania i reagowania na warunki, które zakłócają normalny przepływ programu, takie jak brakujące pliki czy błędne dane wejściowe. Programiści obsługują błędy, aby zapobiec awariom i zapewnić użytkownikom płynniejsze doświadczenie.
-
 ## Jak to zrobić:
 W PHP możesz zarządzać błędami za pomocą bloków `try-catch`, a także dostosować proces poprzez własne procedury obsługi błędów i wyjątki.
 

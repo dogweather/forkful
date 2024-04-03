@@ -11,9 +11,6 @@ title: "XML:n k\xE4sittely"
 weight: 40
 ---
 
-## Mitä & Miksi?
-XML:n käsittely tarkoittaa XML-tietojen jäsentämistä ja tuottamista Swiftissä. Ohjelmoijat tekevät tätä tiedonvaihtoa varten, erityisesti silloin, kun integroituminen järjestelmiin, joissa XML on standardimuoto, on tarpeen.
-
 ## Kuinka:
 Swift tarjoaa `XMLParser`- ja `XMLDocument`-luokat XML-tietojen jäsentämiseen. Tässä on pätkä yksinkertaisen XML-merkkijonon jäsentämiseen:
 

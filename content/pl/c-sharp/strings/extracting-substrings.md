@@ -11,9 +11,6 @@ title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---
 
-## What & Why? (Co i dlaczego?)
-Wycinanie podciągów to odizolowanie wybranych części z większego ciągu znaków. Robimy to, by manipulować danymi, wyciągać istotne informacje, czy sprawdzić strukturę tekstu.
-
 ## How to: (Jak to zrobić:)
 ```C#
 using System;

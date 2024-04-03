@@ -14,12 +14,7 @@ title: Verwendung von assoziativen Arrays
 weight: 15
 ---
 
-## Was & Warum?
-
-Assoziative Arrays, in Go als Maps bekannt, ermöglichen es dir, Schlüssel-Wert-Paare zu speichern, bei denen jeder einzigartige Schlüssel auf einen Wert verweist. Programmierer verwenden Maps für effizientes Datenabrufen, Modifizieren und zur Pflege einer Sammlung von Elementen, auf die schnell mit einzigartigen Schlüsseln zugegriffen werden kann.
-
 ## Wie man:
-
 Das Erstellen und Initialisieren einer Map in Go kann auf verschiedene Arten erfolgen. Hier ist ein einfaches Beispiel, um zu beginnen:
 
 ```go
@@ -74,7 +69,6 @@ for color, hex := range colors {
 Denke daran, dass Maps in Go ungeordnet sind. Die Reihenfolge der Iteration ist nicht garantiert.
 
 ## Tiefer eintauchen
-
 In Go sind Maps als Hashtabellen implementiert. Jeder Eintrag in der Map besteht aus zwei Elementen: einem Schlüssel und einem Wert. Der Schlüssel wird gehasht, um den Eintrag zu speichern, was Operationen in konstanter Zeit für eine kleine Menge an Daten und eine durchschnittliche Zeitkomplexität von O(1) mit ordentlichem Hashing ermöglicht, die sich im schlimmsten Fall mit vielen Hash-Kollisionen auf O(n) verschlechtern kann.
 
 Ein wichtiger Hinweis für neue Go-Programmierer ist, dass Map-Typen Referenztypen sind. Das bedeutet, wenn du eine Map an eine Funktion übergibst, sind alle Änderungen, die innerhalb dieser Funktion an der Map vorgenommen werden, für den Aufrufer sichtbar. Das unterscheidet sich beispielsweise von der Übergabe eines Structs an eine Funktion, bei der der Struct kopiert wird, es sei denn, er wird per Pointer übergeben.

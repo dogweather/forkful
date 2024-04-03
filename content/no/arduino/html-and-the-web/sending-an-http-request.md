@@ -11,9 +11,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## Hva & Hvorfor?
-En HTTP-forespørsel lar en Arduino snakke med internett - den spør, og et server svarer. Vi gjør dette for å slå opp data, styre ting på avstand, eller logge informasjon online.
-
 ## Slik gjør du:
 Arduino-kode for å sende en enkel GET-forespørsel:
 

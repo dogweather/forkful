@@ -11,9 +11,6 @@ title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---
 
-## O Que & Por Que?
-Organizar o código em funções se trata de dividir o código em blocos reutilizáveis com propósitos específicos. Fazemos isso para tornar o código mais limpo, fácil de ler, depurar e atualizar.
-
 ## Como fazer:
 Vamos supor que você está escrevendo um script para calcular o quadrado e o cubo de um número. Sem funções, é uma bagunça de repetições:
 

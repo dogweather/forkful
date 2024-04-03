@@ -13,12 +13,7 @@ title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---
 
-## Co i dlaczego?
-
-Parsowanie HTML w Elixirze polega na ekstrakcji informacji z dokumentów HTML. Programiści robią to, aby programowo współdziałać ze stronami internetowymi, pobierać dane lub automatyzować interakcje w sieci, umożliwiając aplikacjom dynamiczne zrozumienie i wykorzystanie treści internetowych.
-
 ## Jak to zrobić:
-
 Elixir, z jego rozbudowanym modelem współbieżności i paradygmatem programowania funkcyjnego, nie zawiera wbudowanych możliwości parsowania HTML. Można jednak użyć popularnych bibliotek stron trzecich, takich jak `Floki`, do tego celu. Floki czyni parsowanie HTML intuicyjnym i efektywnym, wykorzystując dopasowanie wzorców i rury (piping) w Elixirze.
 
 Najpierw dodaj Floki do swoich zależności w mix.exs:

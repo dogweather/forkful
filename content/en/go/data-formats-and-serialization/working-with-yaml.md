@@ -11,12 +11,7 @@ title: Working with YAML
 weight: 41
 ---
 
-## What & Why?
-
-Working with YAML in Go involves parsing YAML (YAML Ain't Markup Language) files, a human-friendly data serialization standard, into Go data structures and vice versa. Programmers do this to leverage YAML's simplicity and readability for configuration files, application settings, or data exchange between services and components written in different languages.
-
 ## How to:
-
 To work with YAML in Go, you'll first need to import a library that supports YAML parsing and serialization since Go's standard library doesn't include direct support for YAML. The most popular library for this purpose is "gopkg.in/yaml.v3". Here's how to get started:
 
 1. **Installing the YAML package:**
@@ -109,7 +104,6 @@ database:
 ```
 
 ## Deep Dive:
-
 The use of YAML in software development has grown due to its human-readable format, making it an ideal choice for configuration files, documentation, or data exchange formats. Compared to JSON, its counterpart, YAML offers comments, scalar types, and relationship features, providing a richer data serialization framework. However, its flexibility and features come at the cost of complexity in parsing, leading to potential security risks when not handled with care (e.g., arbitrary code execution).
 
 The "gopkg.in/yaml.v3" library for Go is a robust solution for YAML processing, striking a balance between ease of use and comprehensive feature support. As of the current state, while there are alternatives like "go-yaml/yaml" (the library behind "gopkg.in/yaml.v3"), the version picked usually depends on specific project requirements or personal preference. When dealing with massive data sets or performance-critical applications, programmers might consider simpler formats like JSON for their reduced parsing time and memory overhead. Nonetheless, for configuration files or settings where human readability and ease of use are paramount, YAML remains a strong contender in the Go ecosystem.

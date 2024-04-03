@@ -13,14 +13,10 @@ title: Skriva tester
 weight: 36
 ---
 
-## Vad & Varför?
-
-Att skriva tester i C++ innebär att skapa små, självständiga program som automatiskt verifierar beteendet hos delar av din kodbas. Programmerare gör detta för att säkerställa att deras kod fungerar som förväntat, för att förhindra regressioner (dvs. nya ändringar som bryter befintlig funktionalitet) och för att underlätta underhållbara kodbasar över tid.
-
 ## Hur man gör:
 
-### Använda Google Test Framework
 
+### Använda Google Test Framework
 Ett av de mest populära tredjepartsbiblioteken för att skriva tester i C++ är Google Test. Först behöver du installera Google Test och länka det med ditt projekt. När det är inställt kan du börja skriva testfall.
 
 ```cpp
@@ -55,7 +51,6 @@ Spara koden i en fil och kompilera den med g++-kompilatorn, länkande Google Tes
 ```
 
 ### Använda Catch2
-
 Ett annat populärt testramverk för C++ är Catch2. Det har en enklare syntax och kräver oftast inte länkning mot ett bibliotek (endast header-fil). Här är ett exempel på hur man skriver ett enkelt test med Catch2:
 
 ```cpp

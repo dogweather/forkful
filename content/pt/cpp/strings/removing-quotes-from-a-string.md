@@ -10,9 +10,6 @@ title: Removendo aspas de uma string
 weight: 9
 ---
 
-## O que é & Por quê?
-Stripar aspas de uma string significa remover aquelas incômodas aspas duplas ou simples que envolvem nosso texto (' ou "). Programadores frequentemente fazem isso para higienizar a entrada, armazenar texto em um banco de dados, ou preparar strings para mais processamentos sem o embaraço das aspas.
-
 ## Como fazer:
 Aqui vai uma maneira direta de se livrar dessas aspas em C++:
 

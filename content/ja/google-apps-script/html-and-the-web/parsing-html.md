@@ -28,9 +28,6 @@ title: "HTML\u306E\u89E3\u6790"
 weight: 43
 ---
 
-## 何となぜ？
-Google Apps ScriptでHTMLを解析するとは、HTMLコンテンツからデータを抽出することを意味します。これは、WebページやWebベースのデータソースとのやり取りをするときに特に有用です。プログラマーは、データ収集を自動化したり、Webコンテンツを操作したり、Google Apps（SheetsやDocsなど）とWeb機能を統合したりするためにこれを行います。
-
 ## 方法：
 Google Apps Scriptには、HTMLを解析するための内蔵メソッドはありません。ただし、HTMLコンテンツを取得するために`UrlFetchApp`サービスを利用し、その後にJavaScriptのメソッドや正規表現（regex）を使用して解析することができます。以下は、Webページからtitleタグをフェッチして解析する基本的な例です。
 

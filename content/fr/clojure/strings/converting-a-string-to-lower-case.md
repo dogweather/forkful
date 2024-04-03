@@ -11,9 +11,6 @@ title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---
 
-## What & Why?
-Convertir une chaîne en minuscules, c'est transformer tous les caractères alphabétiques en leur équivalent minuscule. Pourquoi ? Pour uniformiser les données avant comparaison ou traitement, éliminant ainsi les problèmes de casse.
-
 ## How to:
 Clojure rend la conversion super facile avec la fonction `clojure.string/lower-case`. Jetons un œil :
 

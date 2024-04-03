@@ -10,9 +10,6 @@ title: "Registro de Actividades en Programaci\xF3n"
 weight: 17
 ---
 
-## ¿Qué y Por Qué?
-"Registrar" es mantener un registro de eventos, transacciones o actividades que suceden con el tiempo en un sistema. Los programadores lo utilizan para depurar, monitorear la salud del sistema, recopilar estadísticas o incluso auditar el uso, lo que lo convierte en una práctica indispensable para mantener y entender el comportamiento de su código bajo diversas condiciones.
-
 ## Cómo hacerlo:
 Arduino no viene con una biblioteca de registro integrada como algunos otros entornos, pero puedes implementar un registro básico en la consola Serial con un mínimo esfuerzo. Aquí tienes un ejemplo rápido para comenzar:
 

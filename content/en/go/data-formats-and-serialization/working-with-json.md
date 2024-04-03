@@ -10,16 +10,10 @@ title: Working with JSON
 weight: 38
 ---
 
-## What & Why?
-
-Working with JSON (JavaScript Object Notation) in Go involves encoding and decoding data between Go data structures and JSON format. This task is ubiquitous in web services and APIs, as JSON serves as a lightweight, text-based, and language-independent data interchange format, enabling simple data sharing across different programming environments.
-
 ## How to:
-
 In Go, the `encoding/json` package is your gateway to JSON manipulation, providing mechanisms to convert Go data structures to JSON (marshalling) and back (unmarshalling). Below are basic examples to get you started:
 
 ### Encoding (Marshalling)
-
 To convert a Go struct to JSON, you can use `json.Marshal`. Consider the following Go struct:
 
 ```go
@@ -54,7 +48,6 @@ Output:
 ```
 
 ### Decoding (Unmarshalling)
-
 To parse JSON into a Go data structure, use `json.Unmarshal`:
 
 ```go
@@ -86,7 +79,6 @@ Output:
 ```
 
 ## Deep Dive
-
 The `encoding/json` package in Go offers a straightforward API that abstracts much of the complexity involved in JSON manipulation. Introduced early in Go's development, this package reflects Go's philosophy of simplicity and efficiency. However, the use of reflection by `encoding/json` to inspect and modify structs at runtime can lead to less than optimal performance in CPU-intensive scenarios.
 
 Alternatives like `json-iterator/go` and `ffjson` have emerged, providing faster JSON processing by generating static marshalling and unmarshalling code. However, `encoding/json` remains the most commonly used package due to its simplicity, robustness, and the fact that it's part of the standard library, ensuring compatibility and stability across Go versions.

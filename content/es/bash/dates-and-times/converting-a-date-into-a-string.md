@@ -10,10 +10,9 @@ title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---
 
-## Qué y Por Qué?
-Convertir una fecha a texto significa cambiar el formato de fecha a una cadena de caracteres. Los programadores lo hacen para mostrar fechas de manera legible o para formatearlas antes de guardarlas en archivos o bases de datos.
-
 ## Cómo hacerlo:
+
+
 ### Convertir una fecha actual a un formato de cadena:
 ```Bash
 fecha=$(date '+%Y-%m-%d')

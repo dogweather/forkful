@@ -10,9 +10,6 @@ title: "Feilh\xE5ndtering"
 weight: 16
 ---
 
-## Hva & Hvorfor?
-Å håndtere feil i koding handler om å forvente det uventede. Det er kunsten å planlegge for når ting går galt, slik at du kan holde programmet ditt i jevn drift.
-
 ## Hvordan:
 Lua bruker to hovedfunksjoner for feilhåndtering: `pcall` og `xpcall`. Slik bruker du dem:
 

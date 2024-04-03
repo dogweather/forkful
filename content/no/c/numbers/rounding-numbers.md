@@ -14,12 +14,7 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva & Hvorfor?
-
-Avrunding av tall er prosessen med å justere sifrene i et tall for å redusere presisjonen i henhold til visse regler, enten mot nærmeste hele tall eller et spesifikt antall desimalplasser. Programmerere gjør dette av grunner som varierer fra å begrense mengden lagringsplass som trengs, til å forenkle utdata for brukerkonsum, eller å sikre nøyaktige matematiske operasjoner som er følsomme for veldig små variasjoner.
-
 ## Hvordan:
-
 Avrunding av tall i C kan utføres ved hjelp av ulike funksjoner, men den vanligste tilnærmingen involverer funksjonene `floor()`, `ceil()`, og `round()`. Disse funksjonene er en del av standard mattebiblioteket, så du må inkludere `math.h` i programmet ditt.
 
 ```c
@@ -58,7 +53,6 @@ Avrunding til to desimalplasser: 9.53
 ```
 
 ## Dypdykk
-
 Avrunding av tall har dype historiske røtter i matematikk og databehandling, integral både til teoretiske og anvendte aspekter. I C, mens `floor()`, `ceil()`, og `round()` tilbyr grunnleggende funksjonalitet, er essensen av avrunding av flyttall til heltall eller bestemte desimalplasser mer nyansert på grunn av den binære representasjonen av flyttall. Denne representasjonen kan føre til uventede resultater på grunn av hvordan tall som ikke kan representeres nøyaktig i binær form (som 0.1) håndteres.
 
 Disse funksjonene er en del av C-standardbiblioteket, definert i `<math.h>`. Når man avrunder tall, spesielt for finansielle eller presise tekniske beregninger, må man vurdere implikasjonene av å bruke binære flyttall. Alternativer til de innebygde C-funksjonene for svært nøyaktig eller desimal-spesifikk avrunding kan inkludere å implementere tilpassede avrundingsfunksjoner eller å bruke biblioteker designet for vilkårlig-presisjons aritmetikk, som GMP eller MPFR, selv om disse introduserer ekstra kompleksitet og avhengigheter.

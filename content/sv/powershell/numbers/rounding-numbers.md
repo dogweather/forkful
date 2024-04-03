@@ -11,9 +11,6 @@ title: Avrundning av tal
 weight: 13
 ---
 
-## Vad & Varför?
-Att avrunda tal handlar om att justera ett värde till närmaste heltal eller angiven decimalplats. Programmerare avrundar tal för att förenkla data, förbättra läsbarheten eller uppfylla vissa matematiska krav under beräkningar.
-
 ## Hur man gör:
 Du har några praktiska cmdlet:er och metoder i PowerShell för avrundning:
 

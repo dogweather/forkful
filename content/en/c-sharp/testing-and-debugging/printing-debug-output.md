@@ -10,9 +10,6 @@ title: Printing debug output
 weight: 33
 ---
 
-## What & Why?
-Printing debug output is about spitting out information key to understanding what's going on under the hood of your code. Programmers do this to track variable values, the flow of execution, and sniff out bugs—sort of like a breadcrumb trail in a digital forest.
-
 ## How to:
 Straightforward stuff: use `Console.WriteLine()` to print to the output console. For debugging purposes specifically, `Debug.WriteLine()` can be your go-to, provided you have `System.Diagnostics` in your using directives. If you're targeting a UI application, `Trace.WriteLine()` could be the tool for the job since it allows listeners to capture the output.
 

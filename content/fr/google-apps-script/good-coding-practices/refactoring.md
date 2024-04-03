@@ -15,12 +15,7 @@ title: Refonte
 weight: 19
 ---
 
-## Quoi & Pourquoi ?
-
-Le refactoring, dans le lexique de la programmation, désigne le processus de restructuration du code informatique existant – modifier la facturation sans changer son comportement externe – afin d'améliorer les attributs non fonctionnels. C'est une étape cruciale pour les programmeurs afin d'améliorer la lisibilité du code, de réduire la complexité et de potentiellement découvrir des bugs latents, favorisant ainsi une maintenance plus aisée et l'évolutivité future du code.
-
 ## Comment procéder :
-
 Dans Google Apps Script, un scénario courant qui bénéficie du refactoring est la simplification de scripts lourds qui interagissent avec Google Sheets ou Docs. Initialement, les scripts peuvent être écrits de manière rapide et sale pour obtenir des résultats rapidement. Avec le temps, à mesure que le script s’étoffe, il devient difficile à gérer. Prenons l'exemple d'un refactoring pour une meilleure lisibilité et efficacité.
 
 **Script original :**
@@ -59,7 +54,6 @@ La sortie dans Logger ressemblera à ceci, en supposant que votre document Googl
 Le script refactoré obtient le même résultat mais est plus propre et plus facile à comprendre en un coup d'œil.
 
 ## Analyse approfondie
-
 Le refactoring dans Google Apps Script hérite en partie de ses principes de la pratique plus large du génie logiciel. Il est devenu plus reconnu et structuré en tant que concept à la fin des années 1990, notamment grâce au livre séminal de Martin Fowler "Refactoring: Improving the Design of Existing Code" (1999), qui a fourni un guide complet sur diverses techniques de refactoring. Bien que les spécificités du refactoring puissent varier d'un langage de programmation à l'autre en raison de leurs différences syntaxiques et fonctionnelles, l'objectif principal reste le même : améliorer le code sans altérer son comportement externe.
 
 Dans le contexte de Google Apps Script, un aspect clé à considérer pendant le refactoring est les quotas de service et les limitations imposées par Google. Un code efficacement refactoré ne se lit pas seulement mieux, mais fonctionne également plus rapidement et de manière plus fiable dans ces contraintes. Par exemple, les opérations par lots (`Range.setValues()` au lieu de définir les valeurs une cellule à la fois) peuvent considérablement réduire le temps d'exécution et la consommation de quota.

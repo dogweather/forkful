@@ -11,12 +11,7 @@ title: Extracting substrings
 weight: 6
 ---
 
-## What & Why?
-
-Extracting substrings means grabbing just a piece of a string—like snipping a ribbon to the length you need. Programmers do this to isolate, analyze, or manipulate specific bits of text data, such as user input, filenames, or text processing.
-
 ## How to:
-
 Swift makes it pretty straightforward to work with substrings. Let's dive right into it with some examples.
 
 ```swift
@@ -52,7 +47,6 @@ Swift
 ```
 
 ## Deep Dive
-
 Extracting substrings in Swift involves understanding how Swift handles strings, which is a bit different from languages like Python or C#. In Swift, strings are collections of characters that don't use integer indexes. This stems from Swift's support for Unicode-compliant characters, making strings not a fixed length, but rather a collection of grapheme clusters (what a user perceives as a single character).
 
 This design means direct integer subscripting doesn't fly with Swift strings; you need to work with `String.Index`. While it’s not as immediately intuitive as using integers, it handles various text scripts and emoji consistently.
@@ -62,7 +56,6 @@ Alternatives include using `NSString` from Objective-C, as shown in the examples
 Implementation details are crucial—naive substring extraction can lead to performance hits because each call to `index(_: offsetBy:)` can be O(n) when dealing with Unicode-compliant strings. Additionally, when you create a substring in Swift, it shares the memory of the original string, making it efficient, but something to be aware of if you mutate the original string later.
 
 ## See Also
-
 For more on this topic, hit up the official docs:
 
 - Swift String and Characters: [https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

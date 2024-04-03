@@ -10,9 +10,6 @@ title: Finding the length of a string
 weight: 7
 ---
 
-## What & Why?
-Finding the length of a string in Go is about determining the number of characters it contains. Programmers routinely perform this operation to manipulate strings effectively, be it for validation, substring extraction, or simply to enforce constraints in user inputs.
-
 ## How to:
 In Go, strings are treated as immutable bytes sequences. You can find the length of a string using the built-in `len()` function which returns the number of bytes, not necessarily the number of characters. Here's how to use it:
 

@@ -10,12 +10,7 @@ title: Reading command line arguments
 weight: 23
 ---
 
-## What & Why?
-
-Reading command line arguments lets scripts behave differently based on user input. It's how scripts can be versatile and not just one-trick ponies.
-
 ## How to:
-
 ```Bash
 #!/bin/bash
 
@@ -49,7 +44,6 @@ done
 ```
 
 ## Deep Dive
-
 Bash has supported command line arguments for ages; they are positional parameters, `$0` to `$9`, with `$@` and `$*` showing all. `$0` is the script itself, `$1` to `$9` are the first to ninth argument; braces like `${10}` are needed from tenth on.
 
 Using `$@` is usually better than `$*` as it handles arguments containing spaces correctly. `$@` gives each argument as a separate "word"; `$*` combines them all into a single "word".
@@ -59,7 +53,6 @@ You can shift through arguments using the `shift` command, which bumps `$2` to `
 Alternatives? Sure. `getopts` and `getopt` provide more control for options (like -h for help) and flag parsing; check them out if `$1`, `$2`,... don't cut it.
 
 ## See Also
-
 - Bash Manual on Special Parameters: https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html
 - Advanced Bash-Scripting Guide: https://www.tldp.org/LDP/abs/html/
 - `getopts` tutorial: https://wiki.bash-hackers.org/howto/getopts_tutorial

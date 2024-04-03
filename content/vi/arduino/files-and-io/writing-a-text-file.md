@@ -16,9 +16,6 @@ title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---
 
-## Cái gì & Tại sao?
-Việc tạo một tệp văn bản trên Arduino có nghĩa là lưu trữ dữ liệu dưới dạng văn bản trong một tệp, thường là trên thẻ SD. Các lập trình viên thực hiện điều này để lưu các dữ liệu như các bản đọc cảm biến để phân tích sau hoặc để ghi lại các sự kiện theo thời gian.
-
 ## Cách thực hiện:
 Trước tiên, kết nối đầu đọc thẻ SD với Arduino của bạn. Sau đó bạn sẽ cần thư viện SD. Dưới đây là một đoạn mã nhanh:
 

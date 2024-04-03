@@ -11,9 +11,6 @@ title: HTML parsen
 weight: 43
 ---
 
-## Was & Warum?
-HTML in Elm zu parsen, bedeutet, Informationen aus HTML-Dokumenten zu extrahieren. Programmierer tun dies, um mit Webinhalten oder APIs zu interagieren, die HTML zurückgeben, was die Erstellung interaktiverer und dynamischerer Webanwendungen ermöglicht.
-
 ## Wie geht das:
 Elm verfügt nicht über eine integrierte Bibliothek zum direkten Parsen von HTML, ähnlich wie Bibliotheken in JavaScript oder Python, aufgrund seiner Betonung auf Typsicherheit und der Vermeidung von Laufzeitfehlern. Sie können jedoch `Http`-Anfragen verwenden, um Inhalte abzurufen und dann reguläre Ausdrücke oder serverseitige Verarbeitung zu nutzen, um die benötigten Informationen zu extrahieren. Für komplexeres HTML-Parsen besteht ein üblicher Ansatz darin, einen dedizierten Backend-Service zu verwenden, der das HTML parst und die Daten in einem Format zurückgibt, mit dem Elm direkt arbeiten kann, wie z.B. JSON.
 

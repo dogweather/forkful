@@ -12,9 +12,6 @@ title: Het huidige datum ophalen
 weight: 29
 ---
 
-## Wat & Waarom?
-De huidige datum in JavaScript verkrijgen, is het vastleggen van de datum en tijd van de huidige dag. Programmeurs doen dit voor zaken zoals tijdstempels, schema's en tijdgebonden logica.
-
 ## Hoe te:
 ```javascript
 const now = new Date();

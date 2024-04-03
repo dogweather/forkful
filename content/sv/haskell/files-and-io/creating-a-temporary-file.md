@@ -11,9 +11,6 @@ title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---
 
-## Vad & Varför?
-Att skapa en temporär fil innebär att vi tillfälligt lagrar data under programmets körning. Programmerare gör detta för att hantera data som inte behöver vara permanent eller när de vill undvika att kladda ner användarens filsystem.
-
 ## Så Här Gör Du:
 I Haskell kan du skapa och hantera temporära filer med `System.IO.Temp`. Koden nedan visar hur:
 

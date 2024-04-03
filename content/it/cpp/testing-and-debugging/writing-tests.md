@@ -12,14 +12,10 @@ title: Scrivere test
 weight: 36
 ---
 
-## Cosa e Perché?
-
-Scrivere test in C++ implica creare piccoli programmi autocontenuti che verificano automaticamente il comportamento di sezioni del tuo codice. I programmatori fanno ciò per assicurarsi che il loro codice funzioni come previsto, per prevenire regressioni (cioè, nuove modifiche che rompono funzionalità esistenti) e per facilitare la manutenibilità dei codici nel tempo.
-
 ## Come fare:
 
-### Utilizzando Google Test Framework
 
+### Utilizzando Google Test Framework
 Una delle librerie di terze parti più popolari per scrivere test in C++ è Google Test. Prima di tutto, dovrai installare Google Test e collegarlo al tuo progetto. Una volta configurato, puoi iniziare a scrivere casi di test.
 
 ```cpp
@@ -54,7 +50,6 @@ Salva il codice in un file e compilalo con il compilatore g++, collegando la lib
 ```
 
 ### Utilizzando Catch2
-
 Un altro framework di test popolare per C++ è Catch2. Ha una sintassi più semplice e di solito non richiede il collegamento a una libreria (solo header). Ecco un esempio di come scrivere un semplice test con Catch2:
 
 ```cpp

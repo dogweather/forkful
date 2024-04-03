@@ -13,12 +13,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mitä & Miksi?
-
-Elixirissä assosiatiiviset taulukot, kutsuttuina karttoina (Maps), ovat avain-arvo-pareista koostuvia kokoelmia, joissa uniikki avain osoittaa arvoon. Ne ovat erittäin käteviä tietojen tallentamisessa ja hakemisessa lennossa, tehden koodistasi siistimpää ja elämästäsi helpompaa.
-
 ## Kuinka:
-
 Kartan luominen on suoraviivaista. Käytät `%{}`-syntaksia, näin:
 
 ```elixir
@@ -50,7 +45,6 @@ IO.inspect(trimmed_map)
 Tuloste: `%{"location" => "NY", "name" => "Alex"}`
 
 ## Syväsukellus
-
 Elixirin kartat ovat vanhempien avain-arvo-tallennustyyppien, kuten Rubyn Hashien tai Pythonin sanakirjojen, evoluutio. Ne mahdollistavat tehokkaammat haut ja lisäykset, tehden niistä modernin Elixir-ohjelmoinnin suosikkeja. On huomionarvoista, että ennen karttoja, Elixir käytti HashDict ja Dict -moduuleja, jotka ovat nyt vanhentuneita.
 
 Kuitenkin, skenaarioita varten, jotka vaativat järjestettyä dataa, saatat katsoa Elixirin avainsanalistoja. Nämä ovat tuple-pareista koostuvia listoja, tehokkaita pienemmille kokoelmille, mutta eivät yhtä suorituskykyisiä suurille datamäärille kuin kartat.

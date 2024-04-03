@@ -12,12 +12,7 @@ title: Lokitus
 weight: 17
 ---
 
-## Mikä ja Miksi?
-
-Lokitus on käytäntö tallentaa tapahtumia, virheitä ja muita merkittäviä datapisteitä, jotka ilmenevät ohjelmistosovelluksen elinkaaren aikana. Ohjelmoijat käyttävät lokitietoja avuksi vianetsinnässä, järjestelmän terveyden valvonnassa, käyttäjäkäyttäytymisen analysoinnissa sekä turvallisuuden ja lainsäädännön noudattamisen auditoimiseksi.
-
 ## Kuinka:
-
 Lua ei sisällä sisäänrakennettua lokitusjärjestelmää, mutta yksinkertaisen lokitusfunktion toteuttaminen on suoraviivaista. Alla on perusesimerkki tällaisesta funktiosta:
 
 ```lua
@@ -42,7 +37,6 @@ Kun yllä olevaa koodia ajetaan, näet tulosteen kuten seuraavasti:
 Monimutkaisempiin lokitusvaatimuksiin voidaan käyttää kolmannen osapuolen kirjastoja, kuten LuaLogging, joka tuo lisäominaisuuksia kuten lokitasot, useat käsittelijät ja muotoiluspesifikaatiot.
 
 ## Syväsukellus
-
 Historiallisesti lokitus on ollut olennainen osa ohjelmistojen vianmääritystä ja se on vakiintunut käytäntö programmeroinnin alkuaikojen jälkeen. Lokituksen merkitystä ei voida liioitella, sillä se toimii 'mustana laatikkona' järjestelmän vikatilanteessa tarjoten näkemyksiä ongelmien juurisyihin.
 
 Vaikka yllä oleva esimerkki täyttää vain perustarpeet, olemassa on paljon vaihtoehtoja, joissa on rikkaampi ominaisuusjoukko. Näitä ovat muun muassa:
@@ -56,7 +50,6 @@ Sukeltaessa lokitusjärjestelmän toteuttamiseen päätöskohtiin voi kuulua sop
 Hajautetuissa järjestelmissä on tavallista käyttää keskitettyjä lokien hallintaratkaisuja, kuten ELK (Elasticsearch, Logstash ja Kibana) tai Splunk, jotka voivat aggregoida lokit monista lähteistä, tarjota tehokkaita hakutoimintoja ja visualisoida dataa helpottaakseen vianmääritystä ja analyysiä.
 
 ## Katso Myös
-
 - LuaLogging-kirjasto GitHubissa: https://github.com/lunarmodules/lualogging
 - Johdatus ELK Pinolle: https://www.elastic.co/what-is/elk-stack
 - Luau-käyttäjien wiki lokituksesta: http://lua-users.org/wiki/LoggingCategory

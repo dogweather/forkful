@@ -12,9 +12,6 @@ title: Refactoring
 weight: 19
 ---
 
-## Quoi et pourquoi ?
-Le remaniement (ou refactoring) est essentiellement le grand ménage de votre base de code - il s'agit de restructurer le code existant sans en changer le comportement externe. Les programmeurs le font pour rendre le code plus lisible, réduire la complexité, améliorer la maintenabilité, et faciliter son extension.
-
 ## Comment faire :
 Imaginez que vous avez une fonction Elm qui fait trop de choses, comme mélanger la logique de l'interface utilisateur avec les mises à jour d'état. C'est un candidat parfait pour le refactoring. À l'origine :
 

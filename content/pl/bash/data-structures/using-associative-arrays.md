@@ -14,12 +14,7 @@ title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---
 
-## Co i dlaczego?
-
-Tablice asocjacyjne to jakby naładowane tablice, które pozwalają używać ciągów znaków jako indeksów zamiast samych liczb całkowitych. Programiści używają ich do bardziej złożonych struktur danych, co ułatwia obsługę danych, które nie mieszczą się łatwo w sekwencyjnej liście.
-
 ## Jak to zrobić:
-
 Na początek zadeklaruj tablicę asocjacyjną w Bashu:
 
 ```Bash
@@ -67,7 +62,6 @@ unset my_array["topic"]
 ```
 
 ## Pogłębienie
-
 Tablice asocjacyjne zostały wprowadzone w wersji Bash 4.0, co czyni je stosunkowo nowym dodatkiem do języka. Przed ich wprowadzeniem, obsługa tablic z indeksami innymi niż liczby całkowite była uciążliwa, często wymagając obejść lub zewnętrznych narzędzi takich jak `awk` lub `sed`.
 
 Pod spodem Bash implementuje tablice asocjacyjne przy użyciu tablic mieszających. Ta implementacja pozwala na efektywne wyszukiwanie kluczy, które pozostaje stosunkowo stałe niezależnie od rozmiaru tablicy, co jest kluczową cechą dla wydajności wykonania skryptu.

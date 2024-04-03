@@ -10,9 +10,6 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-Complex numbers extend the real numbers by adding an imaginary unit, represented as 'i', where i^2 = -1. Programmers use them for simulations, signal processing, and solving math problems that demand working in two dimensions.
-
 ## How to:
 C++ has a built-in library `<complex>` that eases working with complex numbers. Here's a quick look:
 

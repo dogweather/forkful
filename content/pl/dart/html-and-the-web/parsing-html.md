@@ -13,9 +13,6 @@ title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---
 
-## Co i dlaczego?
-Przetwarzanie HTML w programowaniu polega na ekstrakcji danych z dokumentów HTML. Programiści robią to, aby wchodzić w interakcję lub scrapować zawartość internetową w celu ekstrakcji informacji, testowania lub automatyzacji, nawet kiedy nie są dostępne oficjalne API.
-
 ## Jak to zrobić:
 Dart nie zapewnia wbudowanego wsparcia dla przetwarzania HTML w swoich bibliotekach podstawowych. Jednakże możesz użyć pakietu zewnętrznego, takiego jak `html`, do przetwarzania i manipulowania dokumentami HTML.
 

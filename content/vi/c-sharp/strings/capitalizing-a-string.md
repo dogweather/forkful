@@ -15,12 +15,7 @@ title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---
 
-## Cái gì & Tại sao?
-
-Chuyển một chuỗi thành chữ hoa trong lập trình nghĩa là làm cho tất cả các chữ cái trong một chuỗi thành chữ hoa. Đây là một tác vụ phổ biến để định dạng đầu ra, cải thiện khả năng đọc hoặc chuẩn bị dữ liệu cho việc so sánh hoặc bảo quản nhất quán.
-
 ## Làm thế nào:
-
 Trong C#, bạn có thể chuyển một chuỗi thành chữ hoa sử dụng phương thức `ToUpper` trên một thể hiện của chuỗi. Dưới đây là cách làm:
 
 ```C#
@@ -33,7 +28,6 @@ Console.WriteLine(capitalized); // Đầu ra: HELLO WORLD!
 Chỉ đơn giản như vậy - chuỗi của bạn giờ đây đang "hét" lên ở dạng chữ hoa.
 
 ## Tìm hiểu sâu hơn
-
 Việc viết hoa không phải là một phát minh hiện đại. Trên thực tế, các bản thảo cổ thường bắt đầu bằng những chữ cái đầu lớn, trang trí, mà còn được gọi là capitulum, hoặc chữ cái viết hoa. Tiến lên phía trước đến kỷ nguyên máy tính: viết hoa đóng vai trò thực tế, như làm cho tiêu đề nổi bật hơn hoặc đảm bảo so sánh không phụ thuộc vào kí tự hoa thường.
 
 Trong khi `.ToUpper()` khá đơn giản, hãy nhận thức được về những lựa chọn thay thế và những điều đặc biệt:
@@ -58,7 +52,6 @@ Console.WriteLine(capitalizedInvariant); // Đầu ra: İÇÇE
 Chú ý rằng dấu chấm trên 'i' vẫn còn sau khi viết hoa theo quy tắc văn hóa không phụ thuộc.
 
 ## Xem thêm:
-
 - Tài liệu chính thức của Microsoft về `.ToUpper()`:
   [MSDN - Phương thức String.ToUpper](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
   

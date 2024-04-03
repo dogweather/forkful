@@ -10,9 +10,6 @@ title: Sammenlikning av to datoer
 weight: 27
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Sammenligning av to datoer sjekker hvilken dato som kommer før eller etter en annen. Programmerere gjør det for å håndtere tidsfrister, organisere hendelser, eller spore tidslinjer.
-
 ## How to: (Hvordan:)
 ```Swift
 import Foundation

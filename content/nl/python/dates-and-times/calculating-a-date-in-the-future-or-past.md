@@ -12,9 +12,6 @@ title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---
 
-## Wat & Waarom?
-Een toekomstige of verleden datum berekenen betekent het vinden van een datum voor of na een specifiek tijdinterval. Programmeurs doen dit voor herinneringen, vervaldatums, planningen of tijdgebaseerde berekeningen.
-
 ## Hoe:
 Python's `datetime` module maakt werken met datums en tijden een fluitje van een cent. Kijk maar:
 

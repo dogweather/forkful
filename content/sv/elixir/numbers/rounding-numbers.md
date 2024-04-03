@@ -11,9 +11,6 @@ title: Avrundning av tal
 weight: 13
 ---
 
-## Vad & Varför?
-Att avrunda tal innebär att justera dem till ett närliggande värde för enkelhetens skull eller för att matcha en viss precision. Det är användbart för att förbättra läsbarheten, minska lagringsutrymmet eller möta domänspecifika behov, som pengaberäkningar där du vill avrunda till närmaste öre.
-
 ## Hur man gör:
 I Elixir kan du använda `Float.round/2` för att avrunda ett flyttal. Du kan ange antalet decimaler du vill behålla. Så här fungerar det:
 

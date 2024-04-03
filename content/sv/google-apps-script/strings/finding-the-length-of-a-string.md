@@ -13,9 +13,6 @@ title: "Att hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---
 
-## Vad & Varför?
-Att hitta längden på en sträng i Google Apps Script, ett JavaScript-baserat molnskriptspråk som låter dig automatisera uppgifter över Googles produkter, handlar om att bestämma antalet tecken en sträng innehåller. Programmerare utför ofta denna operation för att verifiera inmatning, loopa igenom tecken, eller manipulera strängar för olika automatiseringsuppgifter inom Google Apps.
-
 ## Hur gör man:
 I Google Apps Script kan du hitta längden på en sträng med `.length`-egenskapen, likt i JavaScript. Denna egendom returnerar antalet tecken inom strängen, inklusive mellanslag och specialtecken. Här är några exempel:
 

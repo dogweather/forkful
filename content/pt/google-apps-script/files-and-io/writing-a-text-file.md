@@ -13,12 +13,7 @@ title: Escrevendo um arquivo de texto
 weight: 24
 ---
 
-## O que & Por quê?
-
-Escrever um arquivo de texto no Google Apps Script permite que os desenvolvedores armazenem dados de maneira persistente, tornando-os acessíveis para uso futuro ou análise. Esta operação é uma prática comum para registro de logs, salvamento de configurações ou exportação de informações em um formato simples e legível.
-
 ## Como fazer:
-
 Criar e escrever em um arquivo de texto no Google Apps Script pode ser realizado através do serviço Google DriveApp. Abaixo está um guia passo a passo com exemplos de código para começar:
 
 **Passo 1: Criar um Novo Arquivo de Texto**
@@ -48,7 +43,6 @@ Este código recupera um arquivo existente usando seu ID único, e então acresc
 Não é exibida uma saída explícita ao executar os trechos de código acima, mas se você navegar até o Google Drive onde o arquivo está localizado, você verá "Exemplo.txt" para o primeiro trecho de código. Para o segundo trecho, se você abrir o arquivo especificado pelo ID, deverá ver o conteúdo original seguido pela nova linha "Novo conteúdo adicionado."
 
 ## Aprofundamento
-
 Escrever um arquivo de texto no Google Apps Script aproveita o serviço DriveApp, essencialmente aproveitando as capacidades do Google Drive para armazenamento e gerenciamento de arquivos. Esta abordagem remonta à concepção do Google Apps Script, que foi projetado para automatizar facilmente tarefas através da suíte de ferramentas de produtividade do Google, incluindo o Drive.
 
 Enquanto manipular arquivos diretamente através do Google Apps Script é direto e integrado ao Google Workspace, desenvolvedores de outros backgrounds (por exemplo, Python, Node.js) podem achar diferente de trabalhar com um sistema de arquivos local ou outros serviços de armazenamento em nuvem como o AWS S3. Essas plataformas frequentemente oferecem um conjunto mais complexo de capacidades de manipulação de arquivos, mas exigem configuração adicional para autenticação e permissões.

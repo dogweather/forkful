@@ -11,9 +11,6 @@ title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---
 
-## Wat & Waarom?
-Een REPL (Read-Eval-Print-Loop) is een eenvoudige, interactieve programmeeromgeving. Programmeurs gebruiken het voor realtime taalexperimenten, snelle taken, of om nieuwe concepten te begrijpen zonder de overhead van het creëren van volledige applicaties.
-
 ## Hoe te gebruiken:
 C++ heeft geen ingebouwde REPL, maar tools zoals Cling bieden die mogelijkheid. Hier is hoe je Cling kunt gebruiken om de som van twee getallen te berekenen:
 

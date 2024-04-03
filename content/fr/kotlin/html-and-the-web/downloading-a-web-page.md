@@ -10,9 +10,6 @@ title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---
 
-## Quoi et Pourquoi ?
-Télécharger une page web, c'est récupérer son contenu via Internet. Les programmeurs le font pour traiter des données, alimenter des applications ou collecter des informations.
-
 ## Comment faire :
 ```Kotlin
 import java.net.URL

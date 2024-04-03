@@ -11,9 +11,6 @@ title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---
 
-## Was & Warum?
-Das Löschen von Zeichen, die einem Muster entsprechen, bezeichnet man, wenn man bestimmte Zeichen aus Strings entfernt, die auf ein gegebenes Muster passen. Programmierer nutzen dies, um Daten zu bereinigen, Eingaben zu validieren oder Informationen zu formatieren.
-
 ## How to:
 ```Clojure
 (defn delete-matching-chars [pattern string]

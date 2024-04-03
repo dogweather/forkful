@@ -11,9 +11,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---
 
-## What & Why?
-Päivämäärän muuntaminen merkkijonoksi tarkoittaa LocalDateTime-olioista, Date-objekteista tai vastaavista päivämäärärepresentaatioista merkkijonoformaatissa esittämistä. Koodarit tekevät tätä, koska ihmiskäyttäjien on helpompi lukea ja ymmärtää päivämääriä tekstimuodossa.
-
 ## How to:
 Kotlinissa LocalDate- ja LocalDateTime-luokkien avulla päivämäärän muotoilu onnistuu näppärästi. Tässä pari esimerkkiä:
 

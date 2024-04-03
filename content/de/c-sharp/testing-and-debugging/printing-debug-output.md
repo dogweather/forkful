@@ -10,9 +10,6 @@ title: Debug-Ausgaben drucken
 weight: 33
 ---
 
-## Was & Warum?
-Beim Debuggen von C# Programmen ist das Ausgeben von Zwischenergebnissen und Fehlersuchinformationen essenziell. Es hilft Entwicklerinnen und Entwicklern, den Programmfluss zu verfolgen und Fehler schneller zu finden.
-
 ## How to:
 Einfache Ausgabe auf der Konsole mit `Console.WriteLine`:
 

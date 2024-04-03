@@ -11,16 +11,10 @@ title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---
 
-## O Que e Por Quê?
-
-Gerar números aleatórios em programação é sobre criar números que não têm qualquer padrão previsível. Programadores fazem isso por várias razões, incluindo simulações, teste de algoritmos, jogos e aplicações de segurança, onde a imprevisibilidade é chave para alcançar resultados realistas ou seguros.
-
 ## Como fazer:
-
 Kotlin fornece uma maneira direta de gerar números aleatórios através de sua biblioteca padrão. Veja como você pode gerar diferentes tipos de valores aleatórios:
 
 ### Gerando um Inteiro Aleatório
-
 Para gerar um inteiro aleatório dentro de um intervalo específico:
 
 ```kotlin
@@ -33,7 +27,6 @@ fun main() {
 ```
 
 ### Gerando um Double Aleatório
-
 De maneira similar, gerando um double aleatório:
 
 ```kotlin
@@ -46,7 +39,6 @@ fun main() {
 ```
 
 ### Gerando um Boolean Aleatório
-
 Para gerar um valor booleano aleatório:
 
 ```kotlin
@@ -59,7 +51,6 @@ fun main() {
 ```
 
 ### Semeadura para Resultados Reproduzíveis
-
 Em casos onde você precisa de sequências reproduzíveis de números aleatórios (por exemplo, em testes), você pode semear o gerador de números aleatórios:
 
 ```kotlin
@@ -74,7 +65,6 @@ fun main() {
 ```
 
 ## Aprofundando
-
 A abordagem da biblioteca padrão do Kotlin para gerar números aleatórios utiliza por baixo dos panos o `java.util.Random` do Java, garantindo uma mistura de facilidade de uso e performance. No entanto, é crucial notar que esses métodos geram números pseudoaleatórios, o que significa que os números parecem aleatórios, mas são gerados usando um processo determinístico.
 
 Para a maioria das aplicações, a aleatoriedade fornecida pela classe `Random` do Kotlin é suficiente. No entanto, para aplicações mais sensíveis à segurança, como a criptografia, onde a qualidade da aleatoriedade é primordial, deve-se considerar o uso de `java.security.SecureRandom` em vez disso. SecureRandom é especificamente projetado para operações criptográficas, fornecendo uma qualidade de aleatoriedade superior, embora com uma possível troca de performance.

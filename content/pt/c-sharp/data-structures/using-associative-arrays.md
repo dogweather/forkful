@@ -13,12 +13,7 @@ title: Utilizando arrays associativos
 weight: 15
 ---
 
-## O que & Por quê?
-
-Arrays associativos, ou dicionários em C#, permitem armazenar e gerenciar pares de chaves e valores. Eles são sua melhor opção quando você precisa buscar valores rapidamente com base em um identificador único, tornando a gestão de dados uma tarefa fácil em aplicações complexas.
-
 ## Como fazer:
-
 Em C#, você trabalha com arrays associativos usando a classe `Dictionary<TKey, TValue>`. Aqui está um exemplo rápido para começar:
 
 ```C#
@@ -64,7 +59,6 @@ Apples: 7
 Este exemplo mostra como criar um dicionário, adicionar, acessar, atualizar e remover elementos, e iterar sobre ele.
 
 ## Aprofundamento
-
 O conceito de arrays associativos remonta ao seu uso em linguagens de script como Perl e PHP, onde oferecem flexibilidade na gestão de coleções de dados. Em C#, `Dictionary<TKey, TValue>` é a implementação de facto, introduzida no .NET Framework 2.0. Ele armazena dados em uma tabela hash, garantindo buscas, adições e deleções eficientes.
 
 No entanto, vale ressaltar que, embora os dicionários sejam incrivelmente versáteis, eles podem não ser sempre a melhor opção. Para manter coleções ordenadas, você pode considerar `SortedDictionary<TKey, TValue>` ou `SortedList<TKey, TValue>`, que oferecem ordem classificada a custo de operações de inserção e remoção mais lentas. Para cenários que exigem segurança entre threads, `ConcurrentDictionary<TKey, TValue>` adiciona sobrecarga mas garante acesso seguro de múltiplos threads sem bloqueio manual.

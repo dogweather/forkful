@@ -12,12 +12,7 @@ title: Utilizzo delle espressioni regolari
 weight: 11
 ---
 
-## Cosa & Perché?
-
-Le espressioni regolari (regex) in Elixir vengono utilizzate per cercare, abbinare e manipolare stringhe basate su specifici schemi. I programmatori sfruttano le regex per compiti come la validazione di formati (email, URL), l'analisi dei log o l'estrazione di dati, grazie alla loro efficienza e versatilità nella gestione delle stringhe.
-
 ## Come fare:
-
 Elixir utilizza il modulo `Regex`, sfruttando la libreria regex di Erlang, per le operazioni con le regex. Ecco alcuni utilizzi di base:
 
 ```elixir

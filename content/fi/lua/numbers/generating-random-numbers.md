@@ -11,12 +11,7 @@ title: Satunnaislukujen generointi
 weight: 12
 ---
 
-## Mikä & Miksi?
-
-Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa arvaamattomien numeeristen arvojen luomista, joita voidaan käyttää monenlaisiin tarkoituksiin, kuten simulaatioihin, peleihin tai turvasovelluksiin. Ohjelmoijat käyttävät tätä ominaisuutta tuodakseen epävarmuutta tai jäljitelläkseen todellisen elämän vaihtelevuutta projekteissaan.
-
 ## Kuinka:
-
 Lua tarjoaa sisäänrakennetun tuen satunnaislukujen tuottamiselle `math.random` -funktion kautta. Tätä funktiota voidaan käyttää usealla tavalla riippuen halutusta tuloksesta:
 
 1. **Satunnaisen liukuluvun tuottaminen välillä 0 ja 1:**
@@ -41,7 +36,6 @@ Esimerkkituloste voisi olla `7`. Jälleen, tulos vaihtelee jokaisella suoritukse
 On ratkaisevan tärkeää asettaa siemen `math.randomseed` avulla, koska ilman sitä `math.random` saattaisi tuottaa saman sekvenssin numeroita joka kerta, kun ohjelmaa suoritetaan. Tyypillisesti, siementäminen nykyisellä ajalla, `os.time()`, varmistaa eri sekvenssit suorituskerralla.
 
 ## Syväsukellus
-
 Mekanismi, joka on Lua:n (ja useimpien ohjelmointikielten) satunnaislukujen tuottamisen taustalla, ei ole todella satunnainen, vaan pseudosatunnainen, ja sen generoi algoritmi. Nämä pseudosatunnaislukugeneraattorit (PRNG) ovat deterministisiä ja vaativat siemenarvon aloittaakseen lukujen sarjan tuottamisen. Siementämisen valinta on ratkaisevan tärkeä satunnaisuuden laadun kannalta, minkä vuoksi nykyisen ajan käyttö on yleinen käytäntö.
 
 Historiallisesti Lu’an satunnaislukujen tuottamisen kyvykkyydet ovat kehittyneet. Aiemmat versiot luottivat C-standaardikirjaston `rand()` funktioon, jonka laatu ja suorituskyky vaihtelivat toteutuksissa. Lu’an nykyversio parantaa tätä mahdollisesti käyttämällä robustimpia mekanismeja riippuen taustalla olevasta alustasta, tarjoten suuremman johdonmukaisuuden ja hyödyn satunnaislukujen tuottamisessa. 

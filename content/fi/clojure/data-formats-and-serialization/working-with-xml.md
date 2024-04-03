@@ -10,9 +10,6 @@ title: "XML:n k\xE4sittely"
 weight: 40
 ---
 
-## Mikä & Miksi?
-XML on merkintäkieli dokumenttien koodaamiseen tavalla, joka on sekä ihmis- että koneellisesti luettavissa. Se on avainasemassa verkkopalveluissa, konfiguraatiotiedostoissa ja datan vaihdossa, koska se kuljettaa tietoa rakenteellisessa, hierarkisessa muodossa.
-
 ## Kuinka:
 Clojure tarjoaa `clojure.data.xml` kirjaston XML:n jäsentämiseen ja tuottamiseen. Aloitetaan XML:n jäsentämisestä:
 

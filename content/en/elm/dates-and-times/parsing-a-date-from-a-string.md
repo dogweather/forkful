@@ -11,9 +11,6 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-Parsing a date from a string in Elm involves converting textual information representing dates and times into a format that Elm can understand and manipulate, specifically into the `Date` type. This process is crucial for handling user input, displaying dates correctly localized, and performing date-related calculations, ensuring your Elm applications can intelligently process temporal data.
-
 ## How to:
 Elm does not have built-in capabilities as robust as some other languages for date parsing, primarily relying on Javascript interop or libraries for more complex operations. However, you can use the `elm/time` package for basic parsing, and for more complex needs, the third-party `justinmimbs/date` library is widely recommended.
 

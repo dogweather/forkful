@@ -11,9 +11,6 @@ title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---
 
-## Hva & Hvorfor?
-Sammenkjeding av strenger handler om å slå sammen tekster til én. Programmerere gjør dette for å bygge setninger, vise data og kombinere brukerinput.
-
 ## Hvordan:
 I Haskell, bruker vi `(++)` operatoren eller `concat` funksjonen. Her er litt kode:
 

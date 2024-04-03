@@ -14,11 +14,8 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mikä & Miksi?
-
-Nykyisen päivämäärän hakeminen Rustissa on yleinen tehtävä lokitusta, aikaan perustuvia operaatioita tai yksinkertaisesti päivämäärän näyttämistä varten. Toisin kuin jotkut kielet, jotka sisältävät päivämäärän ja ajan toiminnallisuuden standardikirjastossaan, Rust kannustaa käyttämään vankkaa kolmannen osapuolen kirjastoa, chrono, perusteelliseen päivämäärän ja ajan käsittelyyn sen paremman toiminnallisuuden ja käyttöhelppouden vuoksi.
-
 ## Kuinka:
+
 
 ### Käyttäen Rustin standardikirjastoa
 Rustin standardikirjasto tarjoaa rajoitetun, mutta nopean tavan saada nykyinen aika, vaikkakaan ei suoraan nykyistä päivämäärää kalenterimuodossa. Näin teet sen:

@@ -14,12 +14,7 @@ title: Usando arrays associativos
 weight: 15
 ---
 
-## O Quê & Por Quê?
-
-Arrays associativos, ou dicionários, em Haskell são todos sobre mapear chaves a valores para uma busca rápida e um gerenciamento eficiente de dados. Programadores os utilizam para lidar com coleções de elementos emparelhados, onde buscar um elemento é fácil, comparado a listas.
-
 ## Como fazer:
-
 Haskell não possui arrays associativos prontos da mesma forma que algumas outras linguagens, mas oferece uma biblioteca padrão poderosa chamada `Data.Map` para trabalhar com pares chave-valor. Vamos arregaçar as mangas e ver como usá-los!
 
 Primeiro, certifique-se de importá-la:
@@ -58,7 +53,6 @@ Map.elems languagesUpdated
 Estas operações básicas devem cobrir a maioria dos usos, mas há muito mais para explorar em `Data.Map`!
 
 ## Aprofundando
-
 O módulo `Data.Map` na biblioteca padrão de Haskell é construído em cima de árvores binárias balanceadas, especificamente árvores AVL. Essa escolha garante que a maioria das operações no mapa, como inserção, remoção, e busca, possam ser feitas em tempo O(log n), onde n é o número de elementos no mapa. É uma escolha eficiente para muitos casos de uso, embora não seja a mais rápida absoluta para todos os cenários.
 
 Há uma nuance histórica também: antes do `Data.Map` se tornar a opção principal, programadores Haskell frequentemente usavam listas de pares para simular arrays associativos. Entretanto, operações nessas estruturas são O(n) para busca, tornando o `Data.Map` uma melhoria significativa em termos de desempenho.

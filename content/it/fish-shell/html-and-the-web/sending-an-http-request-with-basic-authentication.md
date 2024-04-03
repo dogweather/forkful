@@ -10,9 +10,6 @@ title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---
 
-## What & Why?
-Inviare una richiesta HTTP con autenticazione di base significa trasmettere username e password per accedere a risorse protette su un server. I programmatori lo fanno per interagire con API che richiedono una dimostrazione di identità.
-
 ## How to:
 Per inviare una richiesta con autenticazione di base in Fish, puoi utilizzare `curl`. Ecco un esempio: 
 

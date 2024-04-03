@@ -10,9 +10,6 @@ title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---
 
-## Hva & hvorfor?
-Å finne lengden av en streng er å måle antallet tegn den inneholder. Programmerere gjør dette for data validering, grensesjekking og når man manipulerer tekstbasert data.
-
 ## Slik gjør du:
 Swift gjør det enkelt å finne lengden av en streng. Her er et eksempel:
 

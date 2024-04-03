@@ -11,9 +11,6 @@ title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---
 
-## What & Why?
-Imprimer un débogage, c'est écrire dans la console pour suivre ce que fait votre programme. On le fait pour repérer les bugs et comprendre le flux d'exécution.
-
 ## How to:
 Imprimons "Hello, world!" et un nombre en boucle avec Arduino.
 

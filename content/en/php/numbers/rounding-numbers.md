@@ -10,9 +10,6 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-Rounding numbers means chopping off the decimals to a set precision, often to whole numbers. Programmers round to simplify calculations, improve performance, or make outputs user-friendly.
-
 ## How to:
 PHP offers a few ways to round numbers: `round()`, `ceil()`, and `floor()`. Here's how they work:
 

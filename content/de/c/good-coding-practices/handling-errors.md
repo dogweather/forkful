@@ -13,12 +13,7 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-
-Die Fehlerbehandlung in C umfasst das Erkennen und Reagieren auf anomale Bedingungen, die während der Programmausführung auftreten. Programmierer tun dies, um Fehler, Abstürze und unvorhersehbares Verhalten zu verhindern und sicherzustellen, dass die Software zuverlässig und effizient unter verschiedenen Szenarien funktioniert.
-
 ## Wie zu:
-
 C bietet keine integrierte Unterstützung für Ausnahmen wie einige andere Sprachen. Stattdessen stützt es sich auf einige konventionelle Fehlerbehandlungsstrategien, wie das Zurückgeben spezieller Werte aus Funktionen und das Setzen globaler Variablen wie `errno`.
 
 **Spezielle Werte zurückgeben**
@@ -79,7 +74,6 @@ Fehler beim Öffnen der Datei: Datei oder Verzeichnis nicht gefunden
 ```
 
 ## Tiefere Betrachtung
-
 Historisch gesehen hat das minimalistische Design der C-Programmiersprache einen integrierten Ausnahmebehandlungsmechanismus ausgeschlossen, was seine Ursprünge in der Systemprogrammierung widerspiegelt, wo maximale Leistung und Kontrolle nahe an der Maschine kritisch sind. Stattdessen bevorzugt C einen manuelleren Ansatz zur Fehlerbehandlung, der zu seiner Philosophie passt, Programmierern so viel Kontrolle wie möglich zu geben, selbst auf Kosten der Bequemlichkeit.
 
 Obwohl dieser Ansatz gut zu den Gestaltungszielen von C passt, kann er auch zu umfangreichem Fehlerprüfcode und der potenziellen Möglichkeit, Fehlerprüfungen zu verpassen, führen, was moderne Sprachen mit strukturierten Ausnahmehandlungsmechanismen ansprechen. Beispielsweise ermöglichen Ausnahmen in Sprachen wie Java oder C# eine zentralisierte Fehlerverarbeitung, die den Code sauberer und das Fehlermanagement einfacher macht. Allerdings führen Ausnahmen ihre eigenen Überkopfkosten und Komplexität ein, die für die Systemebenenprogrammierung, in der C glänzt, nicht ideal sein könnten.

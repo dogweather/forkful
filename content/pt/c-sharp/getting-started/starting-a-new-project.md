@@ -12,9 +12,6 @@ title: Iniciando um novo projeto
 weight: 1
 ---
 
-## O Quê & Porquê?
-Começar um novo projeto em C# é criar uma base de código do zero que pode evoluir para qualquer coisa, desde uma aplicação simples até um sistema complexo. Programadores fazem isso para solucionar problemas, testar ideias, ou simplesmente por diversão e aprendizado.
-
 ## Como Fazer:
 Para iniciar um novo projeto C#, primeiro garanta de ter o .NET SDK instalado. Depois, abra seu terminal favorito.
 
@@ -28,6 +25,7 @@ dotnet run
 ```
 Hello, World!
 ```
+
 ### Iniciando um Projeto Web (ASP.NET Core):
 ```C#
 dotnet new webapp -o MeuWebApp
@@ -44,7 +42,6 @@ Há alternativas como usar IDEs (Integrated Development Environment), por exempl
 Ao criar seu projeto pela linha de comando, o .NET CLI usa templates que podem ser estendidos ou customizados. Isso facilita a criação de projetos que já vêm com boilerplate code (códigos predefinidos) necessários para iniciar rapidamente.
 
 ## Veja Também
-
 - Documentação oficial do .NET CLI: https://docs.microsoft.com/pt-br/dotnet/core/tools/
 - Informações sobre templates do .NET: https://docs.microsoft.com/pt-br/dotnet/core/tools/dotnet-new
 - Tutorial de ASP.NET Core: https://docs.microsoft.com/pt-br/aspnet/core/getting-started/

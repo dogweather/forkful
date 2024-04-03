@@ -10,9 +10,6 @@ title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---
 
-## Mikä & Miksi?
-TOML tarkoittaa Tom's Obvious, Minimal Language -kieltä. Sitä käytetään konfiguraatiotiedostoihin, koska se on ihmisten luettavissa ja kirjoitettavissa helposti, mutta koneiden on myös helppo jäsentää sitä. Kehittäjät turvautuvat TOMLiin välttääkseen XML:n sekavuuden ja JSON:n kikkailut, kun he käsittelevät konfiguraatioita.
-
 ## Kuinka:
 Kotlinin kanssa TOMLin käsittelyyn voisi käyttää kirjastoa, kuten `ktoml`. Aloitetaan lisäämällä riippuvuus `build.gradle.kts`-tiedostoosi:
 

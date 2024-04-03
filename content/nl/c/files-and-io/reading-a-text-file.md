@@ -13,12 +13,7 @@ title: Een tekstbestand lezen
 weight: 22
 ---
 
-## Wat & Waarom?
-
-Een tekstbestand lezen in C houdt in dat je een bestand op je systeem opent om informatie te extraheren en deze naar behoefte te manipuleren of weer te geven. Programmeurs doen dit vaak om configuratiebestanden te verwerken, invoer voor verwerking te lezen, of om gegevens die in bestandsformaat zijn opgeslagen te analyseren, wat zorgt voor flexibiliteit en verhoogde functionaliteit in applicaties.
-
 ## Hoe:
-
 Om te beginnen met het lezen van een tekstbestand in C, werk je voornamelijk met de `fopen()`, `fgets()`, en `fclose()` functies uit de standaard I/O-bibliotheek. Hier is een eenvoudig voorbeeld dat een bestand genaamd `example.txt` leest en de inhoud ervan naar de standaarduitvoer afdrukt:
 
 ```c
@@ -61,7 +56,6 @@ Welkom bij C programmeren.
 ```
 
 ## Diepgaand
-
 Het lezen van bestanden in C kent een rijke geschiedenis, die teruggaat tot de vroege dagen van Unix toen de eenvoud en elegantie van tekststromen fundamenteel waren. Dit leidde tot de adoptie van tekstbestanden voor een scala aan doeleinden, inclusief configuratie, logboeking en interprocescommunicatie. De eenvoud van de bestand-I/O-bibliotheek van de C-taal, geïllustreerd door functies als `fopen()`, `fgets()`, en `fclose()`, onderstreept de ontwerpfilosofie van het bieden van basisgereedschappen waarmee programmeurs complexe systemen kunnen bouwen.
 
 Hoewel deze functies historisch gezien talloze toepassingen goed hebben gediend, hebben moderne programmeerpraktijken enkele beperkingen aan het licht gebracht, vooral met betrekking tot foutafhandeling, bestandscodering (bijv. Unicode-ondersteuning) en gelijktijdige toegang in multi-threaded applicaties. Alternatieve benaderingen in andere talen, of zelfs binnen C met behulp van bibliotheken zoals `libuv` of `Boost.Asio` voor C++, bieden robuustere oplossingen door deze zorgen rechtstreeks aan te pakken met meer geavanceerde I/O-beheercapaciteiten, inclusief asynchrone I/O-operaties die de prestaties van applicaties die te maken hebben met uitgebreide bestandsleesactiviteiten of I/O-gebonden taken aanzienlijk kunnen verbeteren.

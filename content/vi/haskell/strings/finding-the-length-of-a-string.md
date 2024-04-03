@@ -15,12 +15,7 @@ title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---
 
-## Cái gì & Tại sao?
-
-Việc tìm độ dài của một chuỗi trong Haskell liên quan đến việc xác định xem nó chứa bao nhiêu ký tự. Các lập trình viên thường cần điều này để kiểm soát các vòng lặp, xác thực đầu vào, phân bổ kích thước, hoặc cho mục đích gỡ lỗi.
-
 ## Làm thế nào:
-
 ```Haskell
 -- Sử dụng hàm `length`
 main = do
@@ -34,7 +29,6 @@ Kết quả mẫu:
 ```
 
 ## Sâu hơn
-
 Haskell là một ngôn ngữ chức năng thuần túy nơi mà các chuỗi được biểu diễn như danh sách các ký tự. Hàm `length`, một phần của Prelude (thư viện mặc định được nhập vào trong mọi chương trình Haskell), hoạt động dựa trên biểu diễn này.
 
 Lịch sử, việc chọn chuỗi là danh sách là một lựa chọn tự nhiên cho Haskell do tính đơn giản và thực tế là Lisp đã đưa ra lựa chọn thiết kế tương tự (và đã ảnh hưởng nhiều ngôn ngữ chức năng). Hàm `length` chỉ đếm các phần tử trong danh sách này.
@@ -58,7 +52,6 @@ myLength (_:xs) = 1 + myLength xs  -- Đệ quy cộng 1 cho phần còn lại c
 Đối với các kiểu dữ liệu `Text` và `ByteString`, chúng có các chi tiết thực thi nội bộ của riêng chúng làm cho chúng hiệu quả hơn so với một danh sách liên kết đơn giản của các ký tự.
 
 ## Xem thêm
-
 - [Tài liệu chính thức của hàm `length` trong Haskell](https://hackage.haskell.org/package/base-4.16.1.0/docs/Prelude.html#v:length)
 - [Gói `text` trên Hackage](https://hackage.haskell.org/package/text)
 - [Gói `bytestring` trên Hackage](https://hackage.haskell.org/package/bytestring)

@@ -10,12 +10,7 @@ title: Organizing code into functions
 weight: 18
 ---
 
-## What & Why?
-
-Organizing code into functions in C involves breaking down complex tasks into smaller, reusable blocks of code. This practice enhances readability, facilitates easier debugging, and promotes code reuse, making applications more modular and maintainable.
-
 ## How to:
-
 In C, a function is declared with a return type, a name, and parameters (if any), followed by a block of code. Let's start with a simple example: a function that adds two integers.
 
 ```c
@@ -71,7 +66,6 @@ The area of the rectangle is: 50
 ```
 
 ## Deep Dive
-
 The concept of functions in C, inherited from earlier programming practices, is fundamental to structured programming. Functions allow developers to abstract away details, manage complexity, and organize their code logically. Since its inception, the function has been a core construct in C, influencing numerous other languages.
 
 However, as programming paradigms have evolved, alternative approaches like object-oriented programming (OOP) in languages such as C++ and Java, have extended the concept of functions with methods associated with objects. Although C does not support OOP out of the box, it's possible to mimic object-oriented designs by carefully structuring functions and data.

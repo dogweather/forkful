@@ -10,9 +10,6 @@ title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---
 
-## What & Why? (Qué y Por qué)
-Convertir una cadena a minúsculas significa cambiar todos los caracteres alfabéticos de una cadena de texto a su equivalente en minúsculas. Los programadores hacen esto para unificar los datos, mejorar las comparaciones de texto y evitar problemas de sensibilidad a mayúsculas/minúsculas.
-
 ## How to: (Cómo hacerlo)
 ```PowerShell
 # Conversion básica a minúsculas

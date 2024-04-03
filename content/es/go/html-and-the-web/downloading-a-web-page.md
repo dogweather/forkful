@@ -13,12 +13,7 @@ title: "Descargando una p\xE1gina web"
 weight: 42
 ---
 
-## Qué y Por Qué?
-
-Descargar una página web trata de obtener el contenido HTML de una página web a través del protocolo HTTP/HTTPS. Los programadores a menudo hacen esto para el scraping web, análisis de datos, o simplemente para interactuar programáticamente con sitios web para automatizar tareas.
-
 ## Cómo hacerlo:
-
 En Go, la biblioteca estándar proporciona herramientas poderosas para solicitudes web, notablemente el paquete `net/http`. Para descargar una página web, principalmente usamos el método `http.Get`. Aquí hay un ejemplo básico:
 
 ```go
@@ -65,7 +60,6 @@ Este programa sencillo realiza una solicitud HTTP GET a la URL especificada, lue
 Nota: En la programación moderna de Go, `ioutil.ReadAll` se considera obsoleto desde Go 1.16 a favor de `io.ReadAll`.
 
 ## Análisis Profundo
-
 El lenguaje Go tiene una filosofía de diseño que enfatiza la simplicidad, eficiencia y un manejo de errores fiable. Cuando se trata de programación de red, y específicamente la descarga de páginas web, la biblioteca estándar de Go, notablemente `net/http`, está diseñada eficientemente para manejar operaciones de solicitud y respuesta HTTP.
 
 El enfoque de las solicitudes de red en Go se remonta a los orígenes del lenguaje, tomando conceptos de sus predecesores pero mejorando significativamente en eficiencia y simplicidad. Para descargar contenido, el modelo de concurrencia de Go usando goroutines lo hace una herramienta excepcionalmente poderosa para hacer solicitudes HTTP asincrónicas, manejando miles de solicitudes en paralelo con facilidad.

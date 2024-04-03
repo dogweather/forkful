@@ -16,9 +16,6 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Cái gì & Tại sao?
-Làm tròn số là việc điều chỉnh giá trị về số nguyên gần nhất hoặc vị trí thập phân được chỉ định. Lập trình viên thường làm tròn số để đơn giản hóa dữ liệu, tăng cường khả năng đọc hoặc đáp ứng một số yêu cầu toán học nhất định trong quá trình tính toán.
-
 ## Làm thế nào:
 Bạn có một số cmdlet và phương thức hữu ích trong PowerShell để làm tròn:
 

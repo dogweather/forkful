@@ -12,12 +12,7 @@ title: Willekeurige getallen genereren
 weight: 12
 ---
 
-## Wat & Waarom?
-
-Het genereren van willekeurige getallen in programmeren gaat over het creëren van waarden die van tevoren niet logisch voorspeld kunnen worden. Programmeurs doen dit om verschillende redenen, waaronder het genereren van unieke identificatoren, het simuleren van scenario's bij spelontwikkeling of het selecteren van willekeurige monsters uit data voor analyse.
-
 ## Hoe:
-
 In Clojure is het genereren van willekeurige getallen eenvoudig, en er zijn een paar ingebouwde functies die meteen gebruikt kunnen worden.
 
 Om een willekeurig zwevendekommagetal tussen 0 (inclusief) en 1 (exclusief) te genereren, kunt u de `rand` functie gebruiken:
@@ -51,7 +46,6 @@ Deze functie `rand-range` zal een willekeurig zwevendekommagetal teruggeven tuss
 Voor scenario's die meer complexe distributies of reeksen van willekeurige getallen vereisen waar herhaalbaarheid noodzakelijk is (gebruikmakend van zaden), moet u mogelijk kijken naar aanvullende bibliotheken die verder gaan dan wat ingebouwd is.
 
 ## Diepduiken
-
 Het onderliggende mechanisme voor het genereren van willekeurige getallen in de meeste programmeertalen, inclusief Clojure, vertrouwt doorgaans op een pseudo-willekeurige getallengenerator (PRNG). Een PRNG gebruikt een algoritme om een reeks getallen te produceren die de eigenschappen van willekeurige getallen benadert. Het is de moeite waard om op te merken dat, omdat deze algoritmisch gegenereerd worden, ze niet echt willekeurig zijn, maar wel voldoende kunnen zijn voor de meeste praktische doeleinden.
 
 In de begindagen van de computerwetenschap was het genereren van hoogwaardige willekeurige getallen een aanzienlijke uitdaging, wat leidde tot de ontwikkeling van verschillende algoritmen om willekeurigheid en distributie te verbeteren. Voor Clojure zijn de ingebouwde functies, zoals `rand` en `rand-int`, handig voor dagelijks gebruik en dekken ze een breed spectrum van algemene gebruikssituaties.

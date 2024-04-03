@@ -14,12 +14,7 @@ title: Utilisation des tableaux associatifs
 weight: 15
 ---
 
-## Quoi & Pourquoi ?
-
-Les tableaux associatifs, connus sous le nom de maps en Go, vous permettent de stocker des paires clé-valeur où chaque clé unique est associée à une valeur. Les programmeurs utilisent les maps pour récupérer, modifier des données efficacement, et pour maintenir une collection d'éléments qui peuvent être rapidement accédés en utilisant des clés uniques.
-
 ## Comment faire :
-
 Créer et initialiser une map en Go peut se faire de différentes manières. Voici un exemple de base pour commencer :
 
 ```go
@@ -74,7 +69,6 @@ for couleur, hex := range colors {
 Rappelez-vous, les maps en Go ne sont pas ordonnées. L'ordre d'itération n'est pas garanti.
 
 ## Plongée Profonde
-
 En Go, les maps sont implémentées comme des tables de hachage. Chaque entrée dans la map consiste en deux éléments : une clé et une valeur. La clé est hachée pour stocker l'entrée, ce qui permet des opérations en temps constant pour un petit ensemble de données et une complexité temporelle moyenne de O(1) avec un hachage adéquat, pouvant se dégrader à O(n) dans le pire des cas avec de nombreuses collisions de hachage.
 
 Une note importante pour les nouveaux programmeurs en Go est que les types de map sont des types de référence. Cela signifie que lorsque vous passez une map à une fonction, tout changement apporté à la map au sein de cette fonction est visible par l'appelant. C'est différent, par exemple, de passer une structure à une fonction, où la structure est copiée à moins qu'elle ne soit passée par un pointeur.

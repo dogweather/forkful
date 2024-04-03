@@ -11,9 +11,6 @@ title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---
 
-## Hva & Hvorfor?
-I koding er det å sette sammen strenger (concatenating) som å lime sammen ord eller setninger for å lage nye. Vi gjør dette for å kunne lage dynamiske meldinger, brukergrensesnitt og lagre data på en ryddig måte.
-
 ## Hvordan:
 ```Lua
 -- Enkel eksempel på sammenslåing av strenger

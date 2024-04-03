@@ -16,12 +16,7 @@ title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---
 
-## Gì và Tại sao?
-
-Mảng kết hợp, được biết đến với cái tên từ điển trong Swift, cho phép bạn lưu trữ và quản lý dữ liệu dưới dạng cặp khóa-giá trị. Lập trình viên sử dụng chúng để tổ chức dữ liệu một cách hiệu quả, làm cho việc truy cập và thao tác với giá trị dựa trên khóa duy nhất trở nên dễ dàng hơn.
-
 ## Làm thế nào:
-
 Swift làm cho việc làm việc với mảng kết hợp trở nên đơn giản. Dưới đây là cách bạn có thể khai báo, thêm, xóa và truy cập các mục trong từ điển Swift:
 
 ```Swift
@@ -53,7 +48,6 @@ for (fruit, color) in fruitColors {
 Từ điển cực kỳ linh hoạt, cho phép bạn thao tác và truy cập dữ liệu một cách động. Bản chất không có thứ tự của chúng không ảnh hưởng đến tốc độ truy xuất dữ liệu, đây là một lợi ích đáng kể khi xử lý các bộ dữ liệu lớn.
 
 ## Sâu hơn
-
 Việc Swift triển khai từ điển như một mảng kết hợp xuất phát từ khả năng mạnh mẽ của chúng trong việc ánh xạ khóa duy nhất với giá trị. Trong lịch sử, các ngôn ngữ lập trình đã triển khai khái niệm này dưới nhiều tên gọi khác nhau như bảng băm hoặc bản đồ, ngụ ý về chức năng của chúng trong việc tạo ra một "bản đồ" giữa khóa và giá trị.
 
 Trong Swift, từ điển được tối ưu hóa cho hiệu suất, tận dụng khóa có thể băm để truy xuất dữ liệu một cách hiệu quả. Điều này có nghĩa là kiểu `Key` trong một từ điển `[Key: Value]` phải tuân thủ giao thức `Hashable`, đúng với hầu hết các kiểu tiêu chuẩn của Swift như `Int`, `String` và `Double`.

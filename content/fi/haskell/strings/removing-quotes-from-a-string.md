@@ -10,9 +10,6 @@ title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---
 
-## Mikä & Miksi?
-Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksittäisten (' ') tai kaksinkertaisten (" ") lainausmerkkien karsimista osana merkkijonotietoa. Ohjelmoijat tekevät sen puhdistaakseen syötteitä, valmistaakseen tekstiä käsittelyä varten tai poistaakseen tarpeettomia merkkejä, jotka saattaisivat häiritä datan käsittelyä ja toimintoja.
-
 ## Kuinka:
 Haskellissa voimme luoda funktion, joka poistaa kaikki lainausmerkit annetusta merkkijonosta. Se on kuin sanoisimme lainausmerkeille, että häipykää, ja varmistaisimme, että ne ymmärtävät vihjeen.
 

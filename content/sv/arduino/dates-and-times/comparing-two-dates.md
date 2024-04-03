@@ -11,9 +11,6 @@ title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---
 
-## Vad & Varför?
-Att jämföra två datum innebär att bedöma deras ordning i tiden och avgöra tidsintervaller. Programmerare gör detta för att hantera och utvärdera tidsrelaterade händelser, som utlöpare, tidsfrister eller hålla reda på varaktigheter.
-
 ## Hur gör man:
 ```arduino
 #include <RTClib.h>

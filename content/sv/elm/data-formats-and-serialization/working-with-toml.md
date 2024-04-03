@@ -11,9 +11,6 @@ title: Att arbeta med TOML
 weight: 39
 ---
 
-## Vad & Varför?
-TOML, som står för Toms Uppenbara, Minimala Språk, är ett data-serialiseringsspråk. Elm-programmerare använder det för att hantera konfigurationsdata eftersom det är läsligt för människor och kartlägger snyggt till nyckel-värdepar som behövs i applikationer.
-
 ## Hur man gör:
 Elm har ingen inbyggd TOML-tolkare, men du kan samverka med JavaScript eller använda ett community-paket. Så här kan du tolka TOML med hjälp av ett hypotetiskt `elm-toml`-paket:
 

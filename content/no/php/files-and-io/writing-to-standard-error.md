@@ -13,12 +13,7 @@ title: Skriving til standardfeil
 weight: 25
 ---
 
-## Hva & Hvorfor?
-
-Å skrive til standardfeil (stderr) i PHP handler om å dirigere feilmeldinger eller diagnostikk separat fra standard ut (stdout). Dette lar utviklere bedre håndtere sine utstrømsdata for feilsøking og logging. Programmerere bruker denne teknikken for å sikre at feilmeldinger ikke forstyrrer programmets utdata, noe som gjør det enklere å overvåke og feilsøke applikasjoner.
-
 ## Hvordan:
-
 I PHP kan skriving til stderr oppnås ved å bruke funksjonen `fwrite()` sammen med den forhåndsdefinerte konstanten `STDERR`, som representerer feilutstrømmen.
 
 ```php

@@ -13,12 +13,7 @@ title: "Einen String gro\xDFschreiben"
 weight: 2
 ---
 
-## Was & Warum?
-
-Das Kapitalisieren eines Strings bedeutet, ihn so zu modifizieren, dass der erste Buchstabe großgeschrieben und der Rest des Strings kleingeschrieben wird. Dies ist eine gängige Aufgabe bei der Textverarbeitung, der Normalisierung von Benutzereingaben und der Datenformatierung, um Konsistenz zu gewährleisten oder bestimmte Formatierungskriterien zu erfüllen.
-
 ## Wie geht das:
-
 In Fish Shell können Strings direkt mit eingebauten Funktionen manipuliert werden, ohne dass externe Tools oder Bibliotheken erforderlich sind. Um einen String zu kapitalisieren, können Sie den `string`-Befehl mit Unterbefehlen kombinieren.
 
 ```fish

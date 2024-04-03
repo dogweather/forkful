@@ -10,9 +10,6 @@ title: Odczytywanie pliku tekstowego
 weight: 22
 ---
 
-## What & Why? (Co i dlaczego?)
-Czytanie pliku tekstowego to pobieranie danych z pliku zapisanego na dysku. Programiści to robią, aby wczytać konfiguracje, dane wejściowe lub po prostu tekst do przetworzenia.
-
 ## How to: (Jak to zrobić:)
 ```kotlin
 import java.io.File

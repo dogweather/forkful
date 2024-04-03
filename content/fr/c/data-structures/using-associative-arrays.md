@@ -14,12 +14,7 @@ title: Utilisation des tableaux associatifs
 weight: 15
 ---
 
-## Quoi et pourquoi ?
-
-Les tableaux associatifs, connus dans d'autres langues sous le nom de cartes ou dictionnaires, sont des paires clé-valeur utilisées pour la recherche et la manipulation efficaces des données. Contrairement aux tableaux traditionnels qui utilisent des index entiers, les tableaux associatifs utilisent des clés, rendant l'accès aux données plus intuitif et flexible pour les programmeurs.
-
 ## Comment faire :
-
 Le langage C ne dispose pas d'un support intégré pour les tableaux associatifs comme certains langages de plus haut niveau, mais vous pouvez les simuler à l'aide de structures et de hachage. Ci-dessous, un exemple simpliste utilisant une combinaison d'une structure et d'une fonction de hachage simple pour implémenter un tableau associatif permettant de stocker et d'accéder à des entiers par des clés de chaîne de caractères.
 
 D'abord, définissez une structure pour représenter une unique paire clé-valeur et une autre pour représenter le tableau associatif lui-même :
@@ -96,7 +91,6 @@ int main() {
 Cet exemple démontre les opérations de base : l'initialisation d'un tableau associatif, l'insertion de paires clé-valeur, et la recherche de valeurs par les clés. Notez que ce code manque de gestion de collisions et est destiné à des fins éducatives.
 
 ## Examen approfondi
-
 Le concept des tableaux associatifs préexiste au C, mais la nature de bas niveau du langage ne les supporte pas directement comme types intégrés. Cela encourage une compréhension plus profonde des structures de données et des algorithmes, y compris les mécanismes de hachage pour une cartographie clé-valeur efficace. De nombreuses bibliothèques et cadres de travail en C offrent des approches plus sophistiquées pour implémenter des tableaux associatifs, comme `GHashTable` de GLib, qui fournit une implémentation robuste complète avec gestion des collisions, redimensionnement dynamique, et prise en charge de types de clés et de valeurs arbitraires.
 
 Alors que la construction manuelle de tableaux associatifs en C peut être vue comme fastidieuse par rapport aux langues avec un support intégré, elle offre des aperçus inestimables sur le fonctionnement interne des structures de données, aiguisant les compétences d’un programmeur en résolution de problèmes et en optimisation. Cependant, pour le code de production ou des applications plus complexes, l'utilisation de bibliothèques existantes comme GLib est souvent une approche plus pratique et efficace en termes de temps.

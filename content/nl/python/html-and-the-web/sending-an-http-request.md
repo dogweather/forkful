@@ -12,12 +12,7 @@ title: Een HTTP-verzoek verzenden
 weight: 44
 ---
 
-## Wat & Waarom?
-
-Een HTTP-verzoek versturen is hoe je code een ander systeem vraagt om data of services via het web. Programmeurs doen dit om te communiceren met web-API's, webinhoud op te halen of te communiceren met andere servers.
-
 ## Hoe:
-
 De externe `requests` library van Python maakt het doen van HTTP-aanroepen een fluitje van een cent. Hieronder staat hoe je een eenvoudige GET-aanvraag stuurt:
 
 ```python
@@ -45,7 +40,6 @@ print(response.json())
 ```
 
 ## Diepere Duik
-
 HTTP-verzoeken zijn hoe het web werkt — ze bestaan al sinds de vroege jaren 90. Alternatieven voor Python's `requests` omvatten de standaardbibliotheek `urllib`, maar deze is een beetje omslachtiger.
 
 Het begrijpen van hoe HTTP-verzoeken te versturen, omvat kennis van methoden (GET, POST, PUT, DELETE, enz.), statuscodes (bijv., 200 OK, 404 Niet Gevonden), headers en body data.
@@ -55,7 +49,6 @@ Voor streaming of asynchrone verzoeken, zou je de asynchrone tegenhanger van `re
 Historisch gezien wordt `requests` beschouwd als de go-to vanwege zijn eenvoud en kracht, maar `httpx`, een nieuwere asynchrone-compatibele bibliotheek, wint terrein.
 
 ## Zie Ook
-
 - De documentatie van de `requests`-bibliotheek: https://requests.readthedocs.io
 - HTTP-statuscodes uitgelegd: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 - Python's `urllib` documentatie: https://docs.python.org/3/library/urllib.html

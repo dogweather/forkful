@@ -14,9 +14,6 @@ title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
 weight: 3
 ---
 
-## What & Why? (무엇이며, 왜?)
-문자열 연결이란, 두 개 이상의 문자열을 하나로 붙이는 것입니다. 데이터를 표현하거나 출력 형식을 조정할 때 필요합니다.
-
 ## How to: (어떻게 하나요?)
 ```Elm
 import Html exposing (text)

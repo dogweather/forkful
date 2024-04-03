@@ -11,9 +11,6 @@ title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---
 
-## Was & Warum?
-Ein REPL, oder Read-Eval-Print-Lopp, ist eine Programmierumgebung, die einzelne Benutzereingaben nimmt, sie ausführt und das Ergebnis an den Benutzer zurückgibt. Programmierer nutzen es für schnelle Tests, zum Lernen, Debuggen oder für Berechnungen "on-the-fly".
-
 ## Wie geht das:
 Spring direkt in Pythons REPL, indem du `python` in deine Kommandozeile eingibst. Sobald du dort bist, teste einfache Operationen oder mehrzeiligen Code:
 

@@ -13,11 +13,7 @@ title: Een HTTP-verzoek verzenden
 weight: 44
 ---
 
-## Wat & Waarom?
-Een HTTP-verzoek verzenden gaat over het aankloppen bij de deur van een webserver, om gegevens te vragen of aan te bieden. Programmeurs doen dit om te interageren met API's, inhoud te downloaden of te communiceren met andere diensten.
-
 ## Hoe:
-
 Swift maakt het eenvoudig om HTTP-verzoeken te verzenden met behulp van de `URLSession` klasse. Hier is een eenvoudig voorbeeld van een GET-verzoek:
 
 ```Swift
@@ -92,7 +88,6 @@ Alternatieven voor `URLSession` omvatten bibliotheken van derden zoals Alamofire
 Een implementatiedetail om op te merken is dat netwerkaanvragen van nature asynchroon zijn in Swift. Ze worden op de achtergrond uitgevoerd, waardoor de app responsief kan blijven. Wanneer een reactie terugkomt, wordt een voltooiingshandler aangeroepen. Het is cruciaal om het beheer van threads goed te hanteren, vooral bij het bijwerken van de UI, wat op de hoofdthread moet gebeuren.
 
 ## Zie ook:
-
 - [URLSession | Apple Developer Documentation](https://developer.apple.com/documentation/foundation/urlsession)
 - [Werken met JSON in Swift](https://developer.apple.com/swift/blog/?id=37)
 - [Alamofire GitHub Repository](https://github.com/Alamofire/Alamofire)

@@ -10,12 +10,7 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## What & Why? - Mitä ja miksi?
-
-Etsimällä ja korvaamalla tekstiä voit muokata merkkijonoja nopeasti. Koodareille tämä on keskeistä, kun päivitetään dataa tai siistitään syötettä.
-
 ## How to: - Kuinka:
-
 ```Lua
 -- Yksinkertainen tekstinkorvaus
 local original = "Hello, world!"
@@ -36,7 +31,6 @@ print(fixed_story)  -- Output: The fox jumps over the lazy cat. The cat did not 
 ```
 
 ## Deep Dive - Syväsukellus
-
 Lua-kielessä tekstinkorvaus tehdään `string.gsub` -funktiolla. `gsub` lyhenee "global substitution" eli globaalista korvauksesta. Se löi läpi versiossa 5, joka toi mukanaan tehokkaat kuviovasteet ja säännölliset lausekkeet.
 
 Vaihtoehdot? Voit käyttää `string.find` etsiäksesi ennen korvausta tai koota monimutkaisempia käsittelyitä. Mutta monesti `gsub` riittää.
@@ -44,7 +38,6 @@ Vaihtoehdot? Voit käyttää `string.find` etsiäksesi ennen korvausta tai koota
 Mitä teknisempiin yksityiskohtiin tulee, `gsub` käyttää 'pattern matching' -tekniikkaa, joka on yksinkertaistettu säännöllisten lausekkeiden muoto. Huomaathan, ettei Lua tue täysiä säännöllisiä lausekkeita kuten jotkin muut kielet.
 
 ## See Also - Katso myös
-
 - Lua 5.4 referenssidokumentaatio: `string.gsub`: https://www.lua.org/manual/5.4/manual.html#pdf-string.gsub
 - Lua-users wiki, String Library Tutorial: http://lua-users.org/wiki/StringLibraryTutorial
 - Lua-users wiki, Patterns Tutorial: http://lua-users.org/wiki/PatternsTutorial

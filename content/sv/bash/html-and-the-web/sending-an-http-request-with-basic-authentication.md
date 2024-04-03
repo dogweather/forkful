@@ -12,9 +12,6 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-begäran med grundläggande autentisering innebär att man skickar användarnamn och lösenord över nätet för att bevisa sin identitet. Programmerare gör det för att komma åt skyddade resurser på webbservrar.
-
 ## Hur man gör:
 ```Bash
 # Skapa en variabel med användarnamn och lösenord

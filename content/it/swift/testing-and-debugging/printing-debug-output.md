@@ -9,9 +9,6 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## What & Why? (Cosa e Perché?)
-Stampare l'output di debug aiuta a vedere cosa succede nel tuo codice. Usiamo questa tecnica per controllare i valori delle variabili e capire il flusso dell'esecuzione del programma.
-
 ## How to: (Come fare:)
 ```Swift
 // Stampa semplice

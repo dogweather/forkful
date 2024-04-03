@@ -10,9 +10,6 @@ title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---
 
-## What & Why?
-Co i dlaczego? Znalezienie długości łańcucha znaków to nic innego, jak ustalenie, ile znaków zawiera dana fraza lub zdanie. Programiści robią to, by weryfikować wpisy użytkowników, dostosować wyświetlanie tekstu, bądź po prostu operować danymi tekstowymi efektywnie.
-
 ## How to:
 Poniżej znajdziesz przykładowy kod w TypeScript, który pokazuje, jak sprawdzić długość stringa:
 

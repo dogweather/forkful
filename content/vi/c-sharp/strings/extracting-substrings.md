@@ -16,9 +16,6 @@ title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---
 
-## Lý do và Lý do tại sao?
-Rút trích các chuỗi con là hành động lấy một phần cụ thể của một chuỗi — giống như cách bạn múc một phần ưa thích từ một chiếc bánh. Lập trình viên thực hiện việc này để thao tác, phân tích, hoặc xác thực các phần nhỏ hơn của một chuỗi lớn mà không cần phải giải quyết toàn bộ chuỗi.
-
 ## Cách thức:
 C# làm cho việc rút trích các chuỗi con từ một chuỗi trở nên dễ dàng. Dưới đây là cái nhìn nhanh về cách thực hiện sử dụng phương thức `Substring` và cắt chuỗi với các toán tử phạm vi.
 

@@ -11,9 +11,6 @@ title: Organizzazione del codice in funzioni
 weight: 18
 ---
 
-## Cosa e perché?
-Raggruppare il codice in funzioni è come ordinare i mattoncini LEGO in contenitori—rende più facile trovarli e utilizzarli. Lo facciamo per evitare ripetizioni, semplificare la comprensione e rendere la manutenzione meno problematica.
-
 ## Come fare:
 Immagina di avere un codice che stampa un saluto più volte. Senza funzioni, è un disordine. Con le funzioni, è ordinato.
 

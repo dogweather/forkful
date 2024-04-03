@@ -11,9 +11,6 @@ title: "\xC5 jobbe med XML"
 weight: 40
 ---
 
-## Hva & Hvorfor?
-Å jobbe med XML innebærer parsing og manipulering av XML-dokumenter ved hjelp av kode. Programmerere gjør dette for å lese, skrive og modifisere data i et strukturert, portabelt format som er mye brukt for datautveksling og lagring.
-
 ## Hvordan:
 Lua inkluderer ikke innebygd XML-parsing, men det finnes biblioteker som LuaXML og xml2lua som får jobben gjort. Her er et kjapt blikk på parsing av XML med xml2lua:
 

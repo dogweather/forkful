@@ -9,9 +9,6 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## What & Why?
-I Lua läser du en textfil för att hämta information. Programmerare gör det för att spara, ändra eller använda data.
-
 ## How to:
 ```Lua
 -- Öppnar en textfil i läsläge

@@ -13,10 +13,8 @@ title: Capitalizando una cadena de texto
 weight: 2
 ---
 
-## ¿Qué y Por Qué?
-Capitalizar una cadena significa convertir el primer carácter de una cadena a mayúscula y el resto a minúsculas. Esta operación es comúnmente utilizada en el procesamiento de datos para normalizar entradas o mejorar la legibilidad de títulos, nombres, y cosas por el estilo.
-
 ## Cómo hacerlo:
+
 
 ### Usando el Método Incorporado de Python:
 Python tiene un método incorporado `.capitalize()` para cadenas para realizar esta tarea fácilmente.

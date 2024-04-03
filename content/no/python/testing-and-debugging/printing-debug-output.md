@@ -11,9 +11,6 @@ title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---
 
-## What & Why?
-Å skrive ut debug-informasjon betyr å vise data som hjelper deg å forstå hva programmet ditt gjør. Programmerere gjør dette for å feilsøke kode og sikre at alt kjører som det skal.
-
 ## How to:
 For å printe debug-informasjon kan du bruke `print()` funksjonen. Legg til `print()` statements der du trenger innsikt.
 

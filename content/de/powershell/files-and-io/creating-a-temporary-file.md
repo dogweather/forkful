@@ -10,9 +10,6 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-## What & Why?
-Temporäre Dateien sind flüchtige Dateien, die während der Programmausführung genutzt werden. Programmierer schaffen sie für kurzlebige Aufgaben wie Zwischenspeicherung, Datenverarbeitung oder zum Testen.
-
 ## How to:
 ```PowerShell
 # Eine temporäre Datei erstellen

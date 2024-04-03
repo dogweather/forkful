@@ -12,9 +12,6 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i dlaczego?
-Liczby zespolone rozszerzają ideę jednowymiarowej linii liczbowej na dwuwymiarową płaszczyznę, poprzez włączenie prostopadłej osi urojonej. Programiści pracują z nimi w dziedzinach takich jak przetwarzanie sygnałów, dynamika płynów i elektrotechnika, gdzie są niezbędne do reprezentowania oscylacji i innych zjawisk.
-
 ## Jak to zrobić:
 W Lua można reprezentować liczby zespolone za pomocą tabel. Podstawowe operacje obejmują dodawanie, odejmowanie, mnożenie i dzielenie tych tabel. Oto jak:
 

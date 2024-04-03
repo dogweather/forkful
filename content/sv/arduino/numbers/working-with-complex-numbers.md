@@ -11,9 +11,6 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad och Varför?
-Komplexa tal har en reell del och en imaginär del, vanligtvis skrivet som `a + bi`. De är avgörande för vissa matematikintensiva Arduino-projekt som involverar signalbehandling, elektroteknik eller något annat område där fenomen bäst modelleras i ett plan.
-
 ## Hur man gör:
 ```Arduino
 #include <Complex.h>

@@ -14,12 +14,7 @@ title: Analisando HTML
 weight: 43
 ---
 
-## O Que & Por Quê?
-
-Analisar HTML em Rust trata-se de extrair dados de documentos HTML, o que é essencial para web scraping, extração de dados ou construção de web crawlers. Programadores fazem isso para automatizar a coleta de informações da web, analisar conteúdo da web ou migrar conteúdo de uma plataforma para outra.
-
 ## Como fazer:
-
 Para analisar HTML em Rust, você normalmente usará o crate `scraper`, que fornece uma interface de alto nível para percorrer e manipular documentos HTML.
 
 Primeiro, adicione `scraper` ao seu `Cargo.toml`:

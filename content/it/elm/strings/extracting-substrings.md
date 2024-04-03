@@ -10,9 +10,6 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## What & Why?
-Estrarre sottostringhe significa selezionare parti specifiche di una stringa. I programmatori lo fanno per manipolare o analizzare testi in modo più dettagliato.
-
 ## How to:
 Elm usa funzioni come `String.slice` per estrarre sottostringhe. Ecco come funziona:
 

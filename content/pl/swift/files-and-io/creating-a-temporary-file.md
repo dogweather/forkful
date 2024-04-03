@@ -11,9 +11,6 @@ title: Tworzenie pliku tymczasowego
 weight: 21
 ---
 
-## Co i dlaczego?
-Tworzenie tymczasowego pliku pozwala na przechowywanie danych tymczasowo podczas działania aplikacji. Programiści robią to, aby na przykład uniknąć zaśmiecania dysku stałymi plikami czy przeprowadzić operacje na danych, które są potrzebne tylko przez chwilę.
-
 ## Jak to zrobić:
 ```Swift
 import Foundation

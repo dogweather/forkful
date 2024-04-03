@@ -10,12 +10,7 @@ title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---
 
-## Was & Warum?
-
-Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist das Ermitteln eines spezifischen Zeitpunkts vor oder nach einem bekannten Datum. Programmierer tun dies häufig für Features wie Erinnerungen, Buchungs-Systeme oder Ablaufdaten.
-
 ## How to:
-
 Swift bietet das `Date` und `Calendar` Framework für Datumsberechnungen. Hier ein paar Beispiele:
 
 ```Swift
@@ -43,7 +38,6 @@ if let vergangenheit = kalender.date(byAdding: .weekOfYear, value: -3, to: heute
 ```
 
 ## Deep Dive
-
 Berechnungen mit Daten sind nich neu. Historisch wurden Kalendersysteme angepasst, um präzisere Zeitberechnungen zu erlauben – denken wir an die Gregorianische Kalenderreform. In der Programmierung haben wir es einfacher. Statt astronomische Tabellen zu wälzen, nutzen wir Frameworks. `DateComponents` bietet eine Alternative zu `date(byAdding:value:to:)`. Es lässt uns spezifischere Anforderungen stellen:
 
 ```Swift
@@ -56,5 +50,4 @@ if let zukunftigesDatum = kalender.date(byAdding: komponenten, to: heute) {
 Beim Implementieren solltest du Zeitzonen und lokale Kalendereinstellungen beachten. `Calendar.current` bezieht sich auf die Systemeinstellungen des Users.
 
 ## See Also
-
 - `DateComponents` und `Calendar` Dokumentation: [Date and Time Programming Guide for Cocoa](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DatesAndTimes/DatesAndTimes.html)

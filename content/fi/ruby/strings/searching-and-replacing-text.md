@@ -11,9 +11,6 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## What & Why? (Mitä ja miksi?)
-Tekstin etsiminen ja korvaaminen tarkoittaa jonkin merkkijonon löytämistä ja muuttamista toiseksi. Ohjelmoijat käyttävät tätä toimintoa päivittäessään koodia, muokatessaan dataa tai tehdessään massamuutoksia.
-
 ## How to: (Kuinka tehdään:)
 Ruby tekee etsimisestä ja korvaamisesta helppoa. Tässä on pari esimerkkiä:
 

@@ -13,12 +13,7 @@ title: Controleren of een directory bestaat
 weight: 20
 ---
 
-## Wat & Waarom?
-
-Controleren of een map bestaat in Go is cruciaal voor applicaties die interageren met het bestandssysteem, om fouten te voorkomen bij het proberen te benaderen of wijzigen van mappen. Deze operatie is essentieel voor taken zoals het garanderen van voorwaarden voor bestandsbewerkingen, configuratiebeheer en het implementeren van software die afhankelijk is van specifieke mapstructuren.
-
 ## Hoe te:
-
 In Go biedt het `os`-pakket functionaliteiten voor interactie met het besturingssysteem, inclusief het controleren of een map bestaat. Hier is hoe je het kunt doen:
 
 ```go
@@ -62,7 +57,6 @@ Map /tmp/exampleDir bestaat niet.
 Afhankelijk van of `/tmp/exampleDir` bestaat.
 
 ## Diepere duik
-
 De functie `os.Stat` retourneert een `FileInfo`-interface en een fout. Als de fout van het type `os.ErrNotExist` is, betekent dit dat de map niet bestaat. Als er geen fout is, controleren we verder of het pad inderdaad naar een map verwijst via de methode `IsDir()` van de `FileInfo`-interface.
 
 Deze methode valt op door zijn eenvoud en effectiviteit, maar het is belangrijk op te merken dat het controleren op het bestaan van een map vóór bewerkingen zoals creëren of schrijven tot racecondities kan leiden in gelijktijdige omgevingen. Voor veel scenario's, vooral in gelijktijdige applicaties, kan het veiliger zijn om de operatie (bijv. bestandscreatie) te proberen en fouten achteraf af te handelen, in plaats van eerst te controleren.

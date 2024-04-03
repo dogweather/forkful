@@ -13,12 +13,7 @@ title: Teilzeichenketten extrahieren
 weight: 6
 ---
 
-## Was & Warum?
-
-Das Extrahieren von Teilzeichenfolgen beinhaltet das Nehmen eines Teils einer Zeichenkette - im Wesentlichen das Erstellen einer neuen Zeichenkette aus einem Teil einer bestehenden. Programmierer tun dies aus einer Vielzahl von Gründen, einschließlich Daten- Parsing, Textmanipulation für Benutzeroberflächen oder Verarbeitung von Eingaben für verschiedene Anwendungen, was das Extrahieren von Teilzeichenfolgen zu einem vielseitigen Werkzeug in jedem Skriptarsenal macht.
-
 ## Wie:
-
 In Google Apps Script, das auf modernem JavaScript basiert, kann das Extrahieren von Teilzeichenfolgen durch mehrere Methoden erreicht werden, einschließlich `substring()`, `substr()` und `slice()`. Jede hat ihre Nuancen, aber alle dienen dem Zweck, bestimmte Zeichen aus einer Zeichenkette zu ziehen.
 
 ```javascript
@@ -39,7 +34,6 @@ console.log(resultSlice); // Ausgabe: Welt!
 Jede Methode nimmt zwei Argumente: die Startposition und, außer bei `slice()`, das auch negative Indizes akzeptieren kann, um vom Ende aus zu starten, die Endposition oder die Anzahl der Zeichen, die extrahiert werden sollen. Es ist bemerkenswert, dass die ursprüngliche Zeichenkette nach diesen Operationen unverändert bleibt, da sie neue Zeichenkettenwerte zurückgeben.
 
 ## Tiefergehende Betrachtung
-
 Historisch gesehen waren die JavaScript-Methoden zum Extrahieren von Teilzeichenfolgen aufgrund ihrer ähnlichen Namen und Funktionalitäten eine Quelle der Verwirrung. In Google Apps Script und modernem JavaScript werden jedoch `substring()` und `slice()` am häufigsten verwendet, wobei `substr()` als veraltet angesehen wird. Dies ist wichtig zu beachten für diejenigen, die zukunftssicheren Code schreiben.
 
 Der Hauptunterschied zwischen `substring()` und `slice()` liegt darin, wie sie negative Indizes behandeln; `substring()` behandelt negative Indizes als 0, während `slice()` einen negativen Index akzeptieren kann, um die Extraktion vom Ende der Zeichenkette zu beginnen. Dies macht `slice()` besonders praktisch für Fälle, in denen die genaue Länge der Zeichenkette nicht bekannt sein könnte oder wenn eine Extraktion vom Ende notwendig ist.

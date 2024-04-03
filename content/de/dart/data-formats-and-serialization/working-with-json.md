@@ -14,12 +14,7 @@ title: Arbeiten mit JSON
 weight: 38
 ---
 
-## Was & Warum?
-
-Die Arbeit mit JSON (JavaScript Object Notation) beinhaltet das Parsen von JSON-Daten aus Strings in Dart-Objekte und umgekehrt, eine gängige Aufgabe in der Web- und App-Entwicklung für den Datenaustausch. Programmierer tun dies, um Daten von APIs, Konfigurationen oder der internen Komponentenkommunikation innerhalb ihrer Apps effizient zu verarbeiten.
-
 ## Wie geht das:
-
 Dart bietet mit der Bibliothek `dart:convert` eingebaute Unterstützung für JSON, was das Codieren und Dekodieren von JSON sehr einfach macht. Unten finden Sie Beispiele, die grundlegende Operationen zeigen:
 
 **JSON-String in Dart-Objekt parsen:**

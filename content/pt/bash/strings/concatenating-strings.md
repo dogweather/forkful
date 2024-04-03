@@ -11,9 +11,6 @@ title: Concatenando strings
 weight: 3
 ---
 
-## O Que & Porquê?
-Concatenar strings é o ato de juntar texto em pedaços, criando uma única sequência contínua. Programadores fazem isso para montar mensagens, gerar caminhos de arquivo, e muitas outras tarefas onde juntar informações em formato de texto é necessário.
-
 ## Como Fazer:
 ```Bash
 # Concatenação simples com '+' (evite, não é tão bacana quanto parece)

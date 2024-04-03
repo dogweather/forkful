@@ -11,9 +11,6 @@ title: Odczytywanie pliku tekstowego
 weight: 22
 ---
 
-## What & Why?
-Czytanie pliku tekstowego to proces pobierania danych z pliku przechowywanego na dysku. Programiści robią to, by załadować i przetworzyć informacje, często konieczne do działania ich aplikacji.
-
 ## How to:
 Czytanie pliku tekstowego w Haskellu jest proste. Użyjemy funkcji `readFile`, którą dostarcza standardowa biblioteka.
 

@@ -10,9 +10,6 @@ title: Calculando uma data no futuro ou passado
 weight: 26
 ---
 
-## O Que & Porquê?
-Calcular datas futuras ou passadas é o processo de adicionar ou subtrair dias a uma data específica. Programadores utilizam essa habilidade para automatizar lembretes, gerenciar prazos ou criar relatórios baseados em períodos de tempo.
-
 ## Como Fazer:
 Calculando 5 dias no futuro:
 ```Fish Shell

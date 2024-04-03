@@ -14,12 +14,7 @@ title: Convertendo uma data em uma string
 weight: 28
 ---
 
-## O Que & Por Quê?
-
-Converter datas em strings é uma tarefa fundamental que possibilita aos programadores manipular e apresentar informações de data em um formato legível por humanos. Isso é crucial para criar interfaces de usuário, gerar relatórios ou registrar informações em aplicações desenvolvidas com o Google Apps Script.
-
 ## Como fazer:
-
 O Google Apps Script, por ser baseado em JavaScript, permite várias métodos para realizar a conversão de datas para strings. Abaixo estão alguns exemplos ilustrando abordagens diferentes:
 
 ### Usando o Método `toString()`:
@@ -53,7 +48,6 @@ Logger.log(formattedDate); // Saída: "2023-04-05"
 Este método é particularmente poderoso para gerar datas em formatos que são específicos da localidade ou adequados a requisitos específicos da aplicação.
 
 ## Aprofundamento
-
 A necessidade de converter datas em strings não é única do Google Apps Script; ela é prevalente em todas as linguagens de programação. No entanto, a abordagem do Google Apps Script, herdada do JavaScript, oferece um conjunto flexível de opções voltadas para scripts baseados na web. `Utilities.formatDate()` se destaca ao reconhecer as complexidades do trabalho com fusos horários – um desafio muitas vezes negligenciado.
 
 Historicamente, lidar com datas e horários tem sido uma fonte de bugs e complexidade no desenvolvimento de software, principalmente devido às diferenças nos fusos horários e formatos. A introdução de `Utilities.formatDate()` no Google Apps Script é um aceno para a padronização das manipulações de data e hora, especialmente no contexto dos produtos da Google, que são usados globalmente.

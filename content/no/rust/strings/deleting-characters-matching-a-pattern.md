@@ -10,9 +10,6 @@ title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---
 
-## Hva & Hvorfor?
-Slette tegn som matcher et mønster handler om å filtrere ut spesifikke karakterer fra en streng. Programmerere gjør dette for å rense data, forberede tekster for prosessering, eller for å formatere brukerinput.
-
 ## Slik gjør du det:
 ```Rust
 fn main() {

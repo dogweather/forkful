@@ -11,9 +11,6 @@ title: Tworzenie pliku tymczasowego
 weight: 21
 ---
 
-## Co i dlaczego?
-Tworzenie tymczasowych plików to chwilowe przechowywanie danych, które są potrzebne tylko przez krótki czas. Programiści robią to, by obsłużyć dane, które nie muszą być trwałe, na przykład do przechowywania tymczasowych wyników procesów lub jako bufor wymiany danych między aplikacjami.
-
 ## Jak to zrobić:
 ```C#
 using System;

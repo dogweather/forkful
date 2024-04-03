@@ -11,9 +11,6 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## What & Why?
-Pobieranie strony internetowej to proces ściągania jej danych na nasze urządzenie. Programiści robią to, by pozyskiwać informacje w czasie rzeczywistym lub integrować różne usługi.
-
 ## How to:
 Do pobierania stron potrzebujesz modułu sieciowego, np. ESP8266. Poniżej znajdziesz prosty kod, który łączy się z Wi-Fi, pobiera dane ze strony i wyświetla je w Serial Monitor.
 

@@ -12,9 +12,6 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## What & Why? (Co i Dlaczego?)
-Rozpoczynanie nowego projektu to jak otwieranie pustej książki — miejsce, gdzie zaczyna się snuć nową opowieść kodowania, wprowadzając pomysły w życie. Programiści biorą się za to, aby rozwiązywać problemy, nauczyć się nowych technologii, lub zrealizować unikatowy pomysł.
-
 ## How to: (Jak to zrobić:)
 ```C++
 #include <iostream>

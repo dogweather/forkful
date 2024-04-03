@@ -11,9 +11,6 @@ title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Envoyer une requête HTTP, c'est demander des données à un serveur web. Les développeurs s'en servent pour interagir avec des services web, récupérer des informations et automatiser des tâches.
-
 ## How to: (Comment faire :)
 Ruby facilite l'envoi de requêtes HTTP avec des bibliothèques comme Net::HTTP, qui vient intégrée, ou des gemmes externes comme `httparty`. Voici un exemple avec Net::HTTP :
 

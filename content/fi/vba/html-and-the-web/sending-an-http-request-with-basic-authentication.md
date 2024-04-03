@@ -14,12 +14,7 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---
 
-## Mikä ja Miksi?
-
-HTTP-pyynnön lähettäminen perusautentikoinnilla Visual Basic for Applications (VBA) -ohjelmassa liittyy verkkoresurssien käyttämiseen, jotka on suojattu käyttäjätunnuksen ja salasanan avulla. Ohjelmoijat tekevät tämän vuorovaikuttaakseen turvallisten APIen tai web-palveluiden kanssa VBA:lla varustetuissa sovelluksissaan, kuten automatisoidakseen tehtäviä Excelissä tai Accessissa tietojen avulla turvatuista päätepisteistä.
-
 ## Kuinka:
-
 VBA:ssa voit käyttää `Microsoft XML, v6.0` (MSXML2) kirjastoa lähettääksesi HTTP-pyynnöt perusautentikoinnilla. Tämä sisältää `"Authorization"`-otsikon asettamisen pyynnössä sisällyttämään tunnistetiedot base64-koodatussa muodossa. Tässä on askel askeleelta -opas:
 
 1. **Viittaa MSXML2**: Ensin varmista, että VBA-projektissasi on viittaus `Microsoft XML, v6.0` kirjastoon. VBA-editorissa, siirry kohtaan Työkalut > Viittaukset ja valitse `Microsoft XML, v6.0`.
@@ -63,7 +58,6 @@ VBA:ssa voit käyttää `Microsoft XML, v6.0` (MSXML2) kirjastoa lähettääkses
 Tämä lähettää GET-pyynnön osoitteeseen `http://example.com/api/resource` määritetyillä perusautentikointitunnuksilla ja tulostaa vastauksen.
 
 ## Syväsukellus
-
 Tässä käytetty lähestymistapa, vaikka se onkin tehokas yksinkertaisissa tapauksissa, nojaa perusautentikointiskeemaan, joka lähettää tunnistetiedot helposti dekoodattavassa muodossa (base64-koodaus ei ole salaus). Sen haavoittuvuuden vuoksi, erityisesti ei-HTTPS-yhteyksissä, perusautentikointia ei suositella arkaluonteisten tietojen siirtämiseen internetin yli ilman lisäturvakerroksia kuten SSL/TLS.
 
 Historiallisesti perusautentikointi oli yksi ensimmäisistä kehitetyistä menetelmistä verkkoresurssien käyttöoikeuksien hallintaan. Nykyään uusille sovelluksille yleensä suositaan turvallisempia ja joustavampia autentikointistandardeja, kuten OAuth 2.0. VBA:n rajoitteiden ja edistyneempiin autentikointimenetelmiin vaadittavien ulkoisten riippuvuuksien vuoksi kehittäjät käyttävät usein VBA:ta sisäisissä tai vähemmän turvallisuuskriittisissä ympäristöissä tai käyttävät sitä nopeiden prototyyppien kehittämiseen.

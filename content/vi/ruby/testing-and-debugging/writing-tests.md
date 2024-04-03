@@ -14,12 +14,7 @@ title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---
 
-## Cái Gì & Tại Sao?
-
-Viết các bài test kiểm tra xem code có hoạt động như mong đợi. Lập trình viên thực hiện việc này để phát hiện lỗi sớm, bảo đảm độ tin cậy và dễ dàng thay đổi code trong tương lai.
-
 ## Làm Thế Nào:
-
 Ruby sử dụng Minitest và RSpec cho việc test—hãy sử dụng RSpec. Đầu tiên, cài đặt nó:
 
 ```ruby
@@ -80,11 +75,9 @@ Hoàn thành trong 0.002 giây (tệp mất 0.08 giây để tải)
 ```
 
 ## Đào Sâu
-
 Việc test trong Ruby quay trở lại với Test::Unit, nhưng RSpec, giới thiệu năm 2005, đã cách mạng hóa việc test Ruby với "phát triển dựa trên hành vi". Các lựa chọn thay thế cho RSpec bao gồm Minitest và Test::Unit. RSpec tập trung vào khả năng đọc và mặt doanh nghiệp; Minitest minimalist hơn và nhanh hơn. Thông thường, các bài test mô phỏng cách sử dụng phần mềm, kiểm tra các chức năng, dữ liệu và trường hợp rìa. Đối với các dự án đã tồn tại, bắt đầu bằng cách test những phần quan trọng nhất.
 
 ## Xem Thêm
-
 - RSpec GitHub: [github.com/rspec/rspec](https://github.com/rspec/rspec)
 - Minitest: [rubygems.org/gems/minitest](https://rubygems.org/gems/minitest)
 - "Effective Testing with RSpec 3": Đọc thêm về nguyên tắc và mô hình RSpec.

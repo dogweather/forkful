@@ -9,11 +9,12 @@ title: "\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F
 weight: 28
 ---
 
-## What & Why?
 ## Що і Чому?
 Date to string conversion means transforming a date (like year, month, day) into a text format. Programmers do this to display dates on screens, log events, or format data for storage.
 
 ## How to:
+
+
 ## Як це зробити:
 Arduino doesn't have a built-in date type, but you can use libraries like `RTClib` for real-time clocks or `TimeLib` for time functions. Here's how you do it with `TimeLib`:
 
@@ -39,10 +40,14 @@ Sample output:
 ```
 
 ## Deep Dive
+
+
 ## Детальніше
 Originally, Arduino lacked time and date handling until libraries like `TimeLib` filled the gap. Alternatives like `RTClib` interface directly with real-time clock hardware. For converting date to string, `sprintf` is your go-to in C++, which Arduino uses. It formats data into a buffer. Careful with buffer sizes—they must be large enough to hold your string, including the terminating null character `\0`.
 
 ## See Also
+
+
 ## Дивіться також
 - Arduino `TimeLib` library: https://github.com/PaulStoffregen/Time
 - Arduino `RTClib` library by Adafruit: https://github.com/adafruit/RTClib

@@ -16,9 +16,6 @@ title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---
 
-## Cái gì & Tại sao?
-Việc lấy ngày hiện tại trong chương trình C++ của bạn có thể rất tiện lợi: hãy nghĩ đến việc ghi log, dấu thời gian, hoặc các tính năng lên kế hoạch. Nó giúp phần mềm của bạn luôn phù hợp với thời điểm hiện tại - phần mềm biết hôm nay là ngày nào, giống như bạn vậy.
-
 ## Làm thế nào:
 Dưới đây là cách lấy ngày hiện tại với `<chrono>`—hiện đại, sạch sẽ, không lằng nhằng.
 

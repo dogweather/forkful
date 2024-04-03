@@ -10,12 +10,7 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-
-Complex numbers, consisting of a real and imaginary part, are essential in various computational fields like engineering, physics, and signal processing. Programmers use them to solve equations that real numbers can't, like finding the roots of negative numbers.
-
 ## How to:
-
 Haskell handles complex numbers with the `Data.Complex` module. Here's a quick tour:
 
 ```haskell
@@ -55,7 +50,6 @@ Sample output after loading the above code in GHCi might be:
 ```
 
 ## Deep Dive
-
 Complex numbers date back to the 16th century but were widely accepted much later. Haskell, like many languages, provides native support for complex arithmetic, making it easy to work with these numbers without implementing the underlying math.
 
 Alternatives include building your custom complex number type or using libraries for specific domains such as quaternions for 3D graphics. But for most use cases, Haskell's `Data.Complex` is plenty.
@@ -63,7 +57,6 @@ Alternatives include building your custom complex number type or using libraries
 Under the hood, `Data.Complex` is just a data type pairing two `Float` or `Double` values, representing the real and imaginary parts, respectively. It's a straightforward and efficient way to work with complex numbers on the Haskell platform.
 
 ## See Also
-
 Check out these resources for more on complex numbers in Haskell:
 
 - The official Haskell `Data.Complex` documentation: [Hackage Data.Complex](https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-Complex.html)

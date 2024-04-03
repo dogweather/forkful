@@ -12,12 +12,7 @@ title: "F\xE5 dagens dato"
 weight: 29
 ---
 
-## Hva & Hvorfor?
-
-Å hente dagens dato i Python er en grunnleggende operasjon for mange applikasjoner, som logging, dataanalyse og tidsbasert beslutningstaking. Det handler om å hente systemets nåværende dato, som er avgjørende for oppgaver som avhenger av tidskontekst.
-
 ## Hvordan:
-
 **Bruke standardbiblioteket `datetime`:**
 
 `Datetime`-modulen i Pythons standardbibliotek tilbyr klasser for manipulering av datoer og klokkeslett. For å få dagens dato, kan du bruke `date.today()`-metoden.

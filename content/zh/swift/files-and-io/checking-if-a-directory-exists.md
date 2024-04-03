@@ -20,11 +20,7 @@ title: "\u68C0\u67E5\u76EE\u5F55\u662F\u5426\u5B58\u5728"
 weight: 20
 ---
 
-## 什么 & 为什么？
-在文件系统中检查目录是否存在对于从 Swift 应用程序内部管理文件结构至关重要。这一任务使得开发者能够在尝试读取或写入它们之前，验证目录的存在性，从而避免可能的运行时错误。
-
 ## 如何操作：
-
 Swift 的 Foundation 框架提供了 `FileManager` 类，它有管理文件系统的方法。您可以使用 `FileManager` 来检查目录是否存在。这里是如何做到这一点的代码片段：
 
 ```swift
@@ -57,7 +53,6 @@ if fileManager.fileExists(atPath: path, isDirectory: &isDirectory), isDirectory.
 ```
 
 ### 使用第三方库
-
 到目前为止，由于 `FileManager` 类的强大，通常不需要使用第三方库来检查 Swift 中的目录是否存在。然而，对于更复杂的文件操作和检查，像 John Sundell 的 **Files** 这样的库提供了一个更符合 Swift 风格的 API。
 
 以下是你可能使用它的方式：

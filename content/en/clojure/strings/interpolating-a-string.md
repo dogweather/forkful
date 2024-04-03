@@ -9,9 +9,6 @@ title: Interpolating a string
 weight: 8
 ---
 
-## What & Why?
-String interpolation lets us toss variables into strings without a fuss. Why? To dynamically construct text—way handier than old-school string concatenation.
-
 ## How to:
 ```Clojure
 ;; Basics with `str` and `format`

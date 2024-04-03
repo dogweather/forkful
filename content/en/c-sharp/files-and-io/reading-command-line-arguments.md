@@ -10,9 +10,6 @@ title: Reading command line arguments
 weight: 23
 ---
 
-## What & Why?
-Reading command line arguments allows a C# program to process user inputs given at launch. Programmers use this to customize app behavior without altering code.
-
 ## How to:
 Here's how to gobble up those command line arguments:
 

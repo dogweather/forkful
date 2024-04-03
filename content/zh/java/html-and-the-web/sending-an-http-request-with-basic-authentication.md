@@ -15,9 +15,6 @@ title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
 weight: 45
 ---
 
-## 什么 & 为什么？
-发送带有基本认证的HTTP请求是一种通过网络向服务器验证身份的方式。程序员这么做主要是为了安全地访问受保护的资源。
-
 ## 如何：
 ```java
 import java.net.Authenticator;

@@ -11,9 +11,6 @@ title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---
 
-## Vad & Varför?
-Omvandling av en textsträng till gemener innebär att alla versaler i en text blir små bokstäver. Programmerare använder detta för att standardisera text för sökning, jämförelse eller för att möta användarinterface-krav.
-
 ## Hur man gör:
 För att konvertera en sträng till gemener i Kotlin är det enkelt - använd `toLowerCase()`-funktionen. Här är ett exempel:
 

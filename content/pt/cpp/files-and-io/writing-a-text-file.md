@@ -14,14 +14,10 @@ title: Escrevendo um arquivo de texto
 weight: 24
 ---
 
-## O Que & Por Que?
-Escrever em um arquivo de texto em C++ envolve criar ou abrir um arquivo e, em seguida, escrever dados nele, o que é uma tarefa fundamental para aplicações que precisam persistir dados, como logs, conteúdo gerado por usuários ou configurações. Programadores fazem isso para salvar dados gerados durante a execução de um programa ou para exportar dados para uso por outros programas ou usuários.
-
 ## Como Fazer:
 C++ oferece várias maneiras de escrever em um arquivo de texto, mas um dos métodos mais diretos é usando a biblioteca `<fstream>`, que proporciona a classe `ofstream` (fluxo de arquivo de saída) projetada para operações de escrita em arquivo.
 
 ### Exemplo usando `<fstream>`:
-
 ```cpp
 #include <fstream>
 #include <iostream>
@@ -48,7 +44,6 @@ Escrever em um arquivo em C++ é simples.
 Ao lidar com dados mais complexos ou precisando de mais controle sobre o processo de escrita, programadores podem recorrer a bibliotecas de terceiros, como o Boost Filesystem.
 
 ### Exemplo usando Boost Filesystem:
-
 Para usar o Boost para operações de arquivo, você primeiro precisará instalar as bibliotecas Boost. O exemplo a seguir demonstra a criação e escrita em um arquivo usando `boost::filesystem` e `boost::iostreams`.
 
 ```cpp

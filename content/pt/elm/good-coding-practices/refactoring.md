@@ -12,9 +12,6 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O Que & Por Que?
-Refatoração é essencialmente uma limpeza de primavera no seu código — trata-se de reestruturar o código existente sem alterar seu comportamento externo. Os programadores fazem isso para tornar o código mais legível, reduzir a complexidade, melhorar a manutenção e facilitar a extensão.
-
 ## Como Fazer:
 Considere que você tem uma função Elm que está fazendo demais, como misturar lógica de UI com atualizações de estado. É um candidato perfeito para refatoração. Originalmente:
 

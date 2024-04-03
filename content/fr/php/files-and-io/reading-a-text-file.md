@@ -11,11 +11,7 @@ title: Lecture d'un fichier texte
 weight: 22
 ---
 
-## What & Why? (Quoi & Pourquoi ?)
-Lire un fichier texte, c'est extraire son contenu pour l'utiliser dans votre script PHP. On fait ça pour accéder aux données, configurer des paramètres, ou lire des logs.
-
 ## How to: (Comment faire :)
-
 Utilisons `file_get_contents()` pour lire un fichier entier :
 
 ```PHP
@@ -48,7 +44,6 @@ fclose($file);
 Avec le même contenu `exemple.txt`, la sortie sera identique.
 
 ## Deep Dive (Plongée profonde)
-
 Historiquement, PHP permet les opérations sur fichiers en s'inspirant de C. La fonction `fopen()`, par exemple, ouvre un fichier, tandis que `fgets()` et `fread()` lisent les données.
 
 En alternative, on a `file()` qui lit le fichier en un seul appel et renvoie un tableau. Pratique, mais consomme plus de mémoire pour les gros fichiers.
@@ -56,7 +51,6 @@ En alternative, on a `file()` qui lit le fichier en un seul appel et renvoie un 
 Il est important de gérer les droits d'accès et l'existence du fichier pour éviter des erreurs d'exécution. Utilisez `is_readable()` avant de lire.
 
 ## See Also (Voir aussi)
-
 - La documentation officielle de PHP pour `file_get_contents()`: https://www.php.net/manual/fr/function.file-get-contents.php
 
 - La documentation de `fgets()` : https://www.php.net/manual/fr/function.fgets.php

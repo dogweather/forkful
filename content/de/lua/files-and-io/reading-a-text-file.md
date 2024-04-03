@@ -11,8 +11,6 @@ title: Textdatei einlesen
 weight: 22
 ---
 
-# Textdateien in Lua lesen: Ein unkomplizierter Leitfaden
-
 ## Was & Warum?
 Lesen einer Textdatei bedeutet, den Inhalt dieser Datei in ein Programm zu laden. Programmierer machen das, um Daten zu manipulieren, Konfigurationen zu laden oder einfach Informationen zu verarbeiten.
 

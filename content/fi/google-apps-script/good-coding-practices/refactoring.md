@@ -14,12 +14,7 @@ title: Uudelleenkoodaus
 weight: 19
 ---
 
-## Mikä ja miksi?
-
-Ohjelmoinnin sanastossa refaktorointi viittaa olemassa olevan tietokonekoodin uudelleenjärjestämiseen—muuttamalla sen toteutusta muuttamatta sen ulkoista käytöstä—parantaakseen ei-toiminnallisia ominaisuuksia. Se on elintärkeä askel ohjelmoijille koodin luettavuuden parantamiseksi, monimutkaisuuden vähentämiseksi ja potentiaalisesti piilevien virheiden löytämiseksi, helpottaen ylläpitoa ja tulevan koodin skaalautuvuutta.
-
 ## Kuinka:
-
 Google Apps Scriptissä, yleinen skenaario, joka hyötyy refaktoroinnista, on kömpelöiden skriptien yksinkertaistaminen, jotka vuorovaikuttavat Google Sheetsin tai Docsin kanssa. Alun perin skriptejä saatetaan kirjoittaa nopeasti ja likaisesti tulosten saamiseksi nopeasti. Ajan myötä, kun skripti kasvaa, se muuttuu hankalaksi. Käydään läpi esimerkki paremman luettavuuden ja tehokkuuden saavuttamiseksi refaktoroinnilla.
 
 **Alkuperäinen skripti:**
@@ -58,7 +53,6 @@ Loggerissa näyttäisi jotakin tältä, olettaen että Google Sheets -dokumentis
 Refaktoroitu skripti saavuttaa saman tuloksen, mutta on siistimpi ja helpompi ymmärtää ensisilmäyksellä.
 
 ## Syväsukellus
-
 Refaktorointi Google Apps Scriptissä perii osittain sen periaatteet laajemmasta ohjelmistotekniikan käytännöstä. Se tuli tunnetummaksi ja rakenteellisemmaksi käsitteeksi 1990-luvun lopulla, erityisesti Martin Fowlerin merkittävän kirjan "Refactoring: Improving the Design of Existing Code" (1999) ansiosta, joka tarjosi kattavan oppaan erilaisille refaktorointitekniikoille. Vaikka refaktoroinnin erityiskohdat voivat vaihdella ohjelmointikielten välillä niiden syntaktisten ja toiminnallisten erojen vuoksi, ydin tavoite pysyy samana: parantaa koodia muuttamatta sen ulkoista käytöstä.
 
 Google Apps Scriptin kontekstissa refaktoroinnissa tärkeä näkökohta on Googlen asettamat palvelukiintiöt ja rajoitukset. Tehokkaasti refaktoroitu koodi ei vain lueta paremmin, vaan se myös toimii nopeammin ja luotettavammin näiden rajoitusten puitteissa. Esimerkiksi eräoperaatiot (`Range.setValues()` sijaan arvojen asettaminen yksi solu kerrallaan) voivat merkittävästi vähentää suoritusaikaa ja kiintiönkulutusta.

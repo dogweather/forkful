@@ -10,9 +10,6 @@ title: Confronto tra due date
 weight: 27
 ---
 
-## What & Why?
-Confrontare due date significa controllare se sono uguali, o determinare quale precede o segue l'altra. I programmatori lo fanno per gestire scadenze, eventi, e ordinare cronologicamente dati.
-
 ## How to:
 ```Java
 import java.time.LocalDate;

@@ -11,12 +11,7 @@ title: Generering av tilfeldige tall
 weight: 12
 ---
 
-## Hva & Hvorfor?
-
-Å generere tilfeldige tall i Elixir er en grunnleggende programmeringsoppgave, vital for applikasjoner som trenger uforutsigbare resultater som i generering av sikre tokens, sampling av data, eller i spillalgoritmer. Programmerere bruker det for å innføre et nivå av tilfeldighet og variabilitet i applikasjonene sine, noe som gjør dem mer dynamiske og mindre deterministiske.
-
 ## Hvordan:
-
 For å generere tilfeldige tall i Elixir, bruker du primært `:rand`-modulen som tilbyr flere funksjoner for dette formålet. Her er en rask guide for å komme i gang:
 
 Først, sørg for at du sår tilfeldighetstallgeneratoren for å initialisere den med et unikt utgangspunkt:
@@ -51,7 +46,6 @@ IO.puts(random_float_range)
 Husk, disse tallene er pseudotilfeldige; de er bestemt av såkornet og algoritmen, men er tilstrekkelige for de fleste applikasjoner.
 
 ## Dypdykk
-
 Elixirs evner til å generere tilfeldige tall er avhengig av Erlangs `:rand`-modul, noe som reflekterer sin arv og nære forhold til Erlang. `:rand`-modulen erstattet den eldre `:random`-modulen, og tilbyr forbedrede algoritmer for generering av tilfeldige tall. Den gir en variasjon av algoritmer, med standarden som er `exsplus`, men støtter også andre som `exs64`, `exsl`, og mer, hver med sine kompromisser i form av hastighet og kvalitet på tilfeldighet.
 
 Et interessant aspekt ved Elixirs (og dermed Erlangs) generering av tilfeldige tall er dens håndtering av såkorn. Systemet opprettholder separate såkornstilstander for hver prosess, noe som sikrer at samtidige prosesser ikke forstyrrer hverandres sekvenser av tilfeldige tall. Dette er spesielt nyttig i samtidige applikasjoner, og sikrer forutsigbarhet og pålitelighet i distribuerte systemer.

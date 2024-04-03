@@ -13,9 +13,6 @@ title: Analizando HTML
 weight: 43
 ---
 
-## ¿Qué y por qué?
-Analizar HTML en PHP implica extraer información específica de documentos HTML. Los programadores realizan esta tarea para automatizar la extracción de datos, el web scraping o para integrar contenido de varias páginas web en sus aplicaciones, mejorando la funcionalidad sin intervención manual.
-
 ## Cómo hacerlo:
 Para analizar HTML, los programadores de PHP pueden utilizar funciones integradas o apoyarse en bibliotecas robustas como Simple HTML DOM Parser. Aquí, exploraremos ejemplos usando tanto `DOMDocument` de PHP como el Simple HTML DOM Parser.
 

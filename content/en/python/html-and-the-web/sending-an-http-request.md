@@ -11,12 +11,7 @@ title: Sending an HTTP request
 weight: 44
 ---
 
-## What & Why?
-
-Sending an HTTP request is how your code asks another system for data or services over the web. Programmers do this to interact with web APIs, fetch web content, or communicate with other servers.
-
 ## How to:
-
 Python's third-party `requests` library makes HTTP calls a breeze. Below is how to send a simple GET request:
 
 ```python
@@ -44,7 +39,6 @@ print(response.json())
 ```
 
 ## Deep Dive
-
 HTTP requests are how the web works — they've been around since the early 90s. Alternatives to Python's `requests` include the standard library's `urllib`, but it's a bit more cumbersome.
 
 Understanding how to send HTTP requests involves knowing methods (GET, POST, PUT, DELETE, etc.), status codes (e.g., 200 OK, 404 Not Found), headers, and body data. 
@@ -54,7 +48,6 @@ For streaming or asynchronous requests, you might explore `requests`' async coun
 Historically, `requests` is considered a go-to due to its simplicity and power, but `httpx`, a newer async-compatible library, is gaining traction.
 
 ## See Also
-
 - The `requests` library documentation: https://requests.readthedocs.io
 - HTTP status codes explained: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status
 - Python's `urllib` documentation: https://docs.python.org/3/library/urllib.html

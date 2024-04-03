@@ -10,10 +10,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## What & Why?
-"Mikä & Miksi?"
-Stringin pituuden selvittäminen tarkoittaa merkkijonossa olevien merkkien määrän laskemista. Ohjelmoijat tekevät tämän, jotta voivat hallita ja validoida syötteitä tai käsitellä tekstin pituudesta riippuvia toimintoja.
-
 ## How to:
 "Näin teet:"
 Elixirisssa stringin pituuden saa selville `String.length/1` funktiolla. Helppoa ja yksinkertaista.

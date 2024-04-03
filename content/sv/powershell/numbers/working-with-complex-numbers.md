@@ -10,9 +10,6 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad & Varför?
-Komplexa tal, de med en reell del och en imaginär del (som 3 + 4i), är avgörande inom områden som ingenjörsvetenskap, fysik och data vetenskap. Programmerare använder dem för simuleringar, signalbehandling och för att lösa specifika typer av matematiska problem.
-
 ## Hur:
 PowerShell har inte inbyggt stöd för komplexa tal, så du måste antingen skapa din egen lösning eller använda .NET's `System.Numerics.Complex`.
 

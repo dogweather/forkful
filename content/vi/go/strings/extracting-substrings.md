@@ -15,16 +15,10 @@ title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---
 
-## Cái gì & Tại sao?
-
-Việc trích xuất các chuỗi con bao gồm việc lấy ra các phần cụ thể của một chuỗi dựa trên vị trí của chúng. Các lập trình viên thường xuyên thực hiện thao tác này để xử lý hoặc thao tác dữ liệu văn bản một cách hiệu quả, như phân tích đầu vào, xác thực định dạng, hoặc chuẩn bị đầu ra.
-
 ## Làm thế nào:
-
 Trong Go, kiểu `string` là một mảng byte chỉ đọc. Để trích xuất các chuỗi con, người ta chủ yếu sử dụng cú pháp `slice`, cùng với hàm `len()` được tích hợp sẵn để kiểm tra độ dài và gói `strings` cho các thao tác phức tạp hơn. Dưới đây là cách bạn có thể thực hiện:
 
 ### Cắt Cơ Bản
-
 ```go
 package main
 
@@ -42,7 +36,6 @@ func main() {
 ```
 
 ### Sử dụng Gói `strings`
-
 Đối với việc trích xuất chuỗi con tiên tiến hơn, như trích xuất chuỗi sau hoặc trước một chuỗi con cụ thể, bạn có thể sử dụng gói `strings`.
 
 ```go
@@ -65,7 +58,6 @@ func main() {
 Cần lưu ý rằng chuỗi Go được mã hóa UTF-8 và một mảng byte trực tiếp không phải lúc nào cũng tạo ra chuỗi hợp lệ nếu chúng bao gồm các ký tự nhiều byte. Để hỗ trợ Unicode, bạn nên xem xét sử dụng `range` hoặc gói `utf8`.
 
 ### Xử Lý Ký Tự Unicode
-
 ```go
 package main
 
@@ -85,7 +77,6 @@ func main() {
 ```
 
 ## Sâu hơn
-
 Việc trích xuất chuỗi con trong Go khá đơn giản, nhờ cú pháp slice và thư viện tiêu chuẩn đầy đủ. Trong lịch sử, các ngôn ngữ lập trình trước đây cung cấp các hàm hoặc phương pháp trực tiếp hơn để xử lý việc thao tác văn bản như vậy. Tuy nhiên, cách tiếp cận của Go nhấn mạnh vào an toàn và hiệu quả, đặc biệt với chuỗi không thể thay đổi và việc xử lý rõ ràng các ký tự Unicode thông qua runes.
 
 Mặc dù việc cắt trực tiếp thuận tiện có lợi từ hiệu quả hiệu suất, nó thừa hưởng sự phức tạp của việc xử lý trực tiếp các ký tự UTF-8. Sự giới thiệu của kiểu `rune` cho phép các chương trình Go xử lý một cách an toàn văn bản Unicode, tạo nên một lựa chọn mạnh mẽ cho các ứng dụng quốc tế.

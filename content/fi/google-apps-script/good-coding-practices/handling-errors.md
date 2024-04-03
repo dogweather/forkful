@@ -13,12 +13,7 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mitä & Miksi?
-
-Virheenkäsittely Google Apps Scriptissä tarkoittaa poikkeustilanteiden tai virheiden ennakointia, kiinniottamista ja niihin vastaamista koodin suorituksen aikana. Ohjelmoijat toteuttavat sitä suojellakseen skriptejään odottamattomilta virhetilanteilta, taatakseen sujuvammat, käyttäjäystävälliset sovellukset, jotka voivat hallita tai lokittaa virheitä sujuvasti ilman äkillisiä kaatumisia.
-
 ## Kuinka:
-
 Google Apps Script, koska se perustuu JavaScriptiin, mahdollistaa perinteisen `try-catch`-lauseen käytön virheiden käsittelyyn, sekä `finally`-lauseen, jos loppusiivous on tarpeen riippumatta siitä, tapahtuiko virhe tai ei.
 
 ```javascript
@@ -56,7 +51,6 @@ Funktio suoritettu.
 Google Apps Script tukee myös omien virheiden heittämistä käyttäen `Error`-objektia ja tarvittaessa tiettyjen virhetyyppien kiinniottamista. Kuitenkaan, edistyneen virheenkategorisoinnin puuttuessa on olennaista tukeutua virheviesteihin tarkkuuden saavuttamiseksi.
 
 ## Syväsukellus
-
 Historiallisesti, virheenkäsittely skriptauskielissä, kuten JavaScriptissä (ja siten Google Apps Scriptissä), on ollut vähemmän kehittynyttä verrattuna joihinkin käännetyihin kieliin, jotka tarjoavat ominaisuuksia, kuten yksityiskohtaisia poikkeushierarkioita ja kattavia virheenjäljitystyökaluja. Google Apps Scriptin malli on suhteellisen suoraviivainen, hyödyntäen JavaScriptin `try-catch-finally`-paradigmaa. Tämä yksinkertaisuus on linjassa kielen suunnittelun kanssa, jonka tavoitteena on kehittää ja ottaa nopeasti käyttöön pieniä-keskisuuria sovelluksia Googlen ekosysteemissä, mutta se voi joskus rajoittaa kehittäjiä monimutkaisten virhetilanteiden käsittelyssä.
 
 Monimutkaisemmissa sovelluksissa ohjelmoijat täydentävät usein Google Apps Scriptin natiivia virheenkäsittelyä omilla lokitus- ja virheilmoitusmekanismeilla. Tämä voi sisältää virheiden kirjoittamisen Google Sheetiiin tarkistusta varten tai kolmannen osapuolen lokituspalveluiden käyttämisen Google Apps Scriptin URL Fetch Services -palvelun kautta virhetietojen lähettämiseen skriptiympäristön ulkopuolelle.

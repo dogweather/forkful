@@ -16,9 +16,6 @@ title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---
 
-## Cái gì và Tại sao?
-In đầu ra để gỡ lỗi trong Ruby giống như việc để lại dấu vết trong mã của bạn để theo dõi giá trị của biến và dòng chảy của chương trình. Các lập trình viên làm điều này để phát hiện lỗi bằng cách kiểm tra code của họ đang làm gì ở các điểm khác nhau.
-
 ## Cách thực hiện:
 Trong Ruby, `puts` và `p` là các phương thức bạn nên sử dụng khi muốn xuất đầu ra nhanh chóng lên console.
 

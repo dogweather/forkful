@@ -14,12 +14,7 @@ title: Wyszukiwanie i zamienianie tekstu
 weight: 10
 ---
 
-## Co i dlaczego?
-
-Wyszukiwanie i zamiana tekstu w programowaniu ułatwia modyfikację i zarządzanie ciągami znaków, co jest podstawowym zadaniem w manipulacji danymi i rozwoju oprogramowania. Programiści wykonują te operacje, aby efektywnie aktualizować, czyścić lub transformować dane tekstowe.
-
 ## Jak to zrobić:
-
 W Go pakiet `strings` oferuje różne funkcje do wyszukiwania i zamiany tekstu w ciągach znaków. Przyjrzymy się kilku powszechnym metodam.
 
 **Używanie `strings.Contains` do wyszukiwania tekstu:**
@@ -78,7 +73,6 @@ func main() {
 ```
 
 ## Dogłębna analiza
-
 W Go manipulacja tekstem, w tym operacje wyszukiwania i zamiany, została zaprojektowana tak, aby była prosta i efektywna, wykorzystując obszerną bibliotekę standardową Go. Pakiet `strings` dostarcza podstawowych funkcjonalności, odpowiednich dla większości powszechnych przypadków użycia, natomiast pakiet `regexp` obsługuje bardziej skomplikowane wzorce wymagające wyrażeń regularnych.
 
 Historycznie rzecz biorąc, podejście Go do obsługi ciągów znaków i manipulacji tekstem podkreślało prostotę i wydajność. Decyzja o włączeniu potężnych pakietów takich jak `strings` i `regexp` do biblioteki standardowej była podyktowana chęcią uczynienia Go praktycznym wyborem dla rozwoju aplikacji internetowych i przetwarzania tekstu, gdzie takie operacje są częste.

@@ -11,9 +11,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## Hva & Hvorfor?
-Regne ut en fremtidig eller fortidig dato betyr å beregne en dato før eller etter et bestemt startpunkt. Programmerere gjør dette for å håndtere tidsbestemte funksjoner som gjentagende hendelser, frister eller tidsfrister.
-
 ## Slik Gjør Du:
 ```Swift
 import Foundation

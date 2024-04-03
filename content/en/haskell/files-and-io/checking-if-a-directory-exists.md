@@ -11,9 +11,6 @@ title: Checking if a directory exists
 weight: 20
 ---
 
-## What & Why?
-Checking if a directory exists is a fundamental operation in many programming tasks, allowing for conditional actions based on the presence or absence of directory structures. It's crucial for file manipulation, automated scripts, and during the initial setup of software to ensure that necessary directories are in place, or to avoid duplicating directories.
-
 ## How to:
 Haskell, through its base library, offers straightforward ways to check for directory existence, mainly using the `System.Directory` module. Let's look at a basic example:
 

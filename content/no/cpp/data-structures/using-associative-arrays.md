@@ -13,16 +13,10 @@ title: Bruke associative tabeller
 weight: 15
 ---
 
-## Hva & Hvorfor?
-
-Assosiative tabeller, kjent som `std::map` eller `std::unordered_map` i C++, brobygger gapet mellom tabellindekser og virkelige data, og lar deg bruke meningsfulle nøkler. De er det foretrukne valget når du trenger raske oppslag, innsettinger og slettinger ved bruk av nøkler i stedet for indeksposisjoner.
-
 ## Hvordan:
-
 I C++ blir assosiative tabeller levendegjort med hodefilene `<map>` og `<unordered_map>`. La oss ta noen eksempler for å se begge i aksjon.
 
 ### Bruk av `std::map`
-
 `std::map` holder elementer sortert basert på nøkkelen. Slik kommer du i gang:
 
 ```C++
@@ -50,7 +44,6 @@ int main() {
 ```
 
 ### Bruk av `std::unordered_map`
-
 Når rekkefølge ikke spiller noen rolle, men ytelsen gjør det, er `std::unordered_map` din venn, som tilbyr raskere gjennomsnittlig kompleksitet for innsettinger, oppslag og slettinger.
 
 ```C++
@@ -78,7 +71,6 @@ int main() {
 ```
 
 ## Dykk dypere
-
 Assosiative tabeller i C++, spesielt `std::map` og `std::unordered_map`, handler ikke bare om å lagre elementer. De legger grunnlaget for mer kompleks datamodellering ved å tillate operasjoner som søk, innsetting og fjerning i effektive tidskompleksiteter (logaritmisk for `std::map` og gjennomsnittlig konstant tid for `std::unordered_map`). Denne effektiviteten kommer fra de underliggende datastrukturene: et balansert tre for `std::map` og en hashtabell for `std::unordered_map`.
 
 Historisk sett, før disse var en del av standardbiblioteket, måtte programmerere implementere sine egne versjoner eller bruke tredjeparts biblioteker, noe som førte til inkonsekvenser og potensielle ineffektiviteter. Inkluderingen av kart i C++'s standardbibliotek standardiserte ikke bare bruken av dem, men optimaliserte dem også for ytelse på tvers av ulike kompilatorer og plattformer.

@@ -15,12 +15,7 @@ title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---
 
-## Cái gì & Tại sao?
-
-Mảng kết hợp, hay từ điển trong C#, cho phép bạn lưu trữ và quản lý các cặp khoá và giá trị. Chúng là lựa chọn hàng đầu khi bạn cần lấy nhanh giá trị dựa trên một bộ nhận diện duy nhất, làm cho việc quản lý dữ liệu trở nên dễ dàng trong các ứng dụng phức tạp.
-
 ## Cách thức:
-
 Trong C#, bạn làm việc với mảng kết hợp sử dụng lớp `Dictionary<TKey, TValue>`. Dưới đây là một ví dụ nhanh để bạn bắt đầu:
 
 ```C#
@@ -66,7 +61,6 @@ Apples: 7
 Ví dụ này trình bày cách tạo một từ điển, thêm, truy cập, cập nhật, xóa các phần tử và duyệt qua nó.
 
 ## Sâu hơn
-
 Khái niệm về mảng kết hợp trở lại từ việc sử dụng chúng trong các ngôn ngữ kịch bản như Perl và PHP, nơi chúng cung cấp sự linh hoạt trong quản lý bộ sưu tập dữ liệu. Trong C#, `Dictionary<TKey, TValue>` là triển khai mặc định, được giới thiệu trong .NET Framework 2.0. Nó lưu trữ dữ liệu trong một bảng băm, đảm bảo hiệu suất tìm kiếm, thêm và xóa hiệu quả.
 
 Tuy nhiên, đáng chú ý là mặc dù từ điển rất linh hoạt, chúng không phải lúc nào cũng là lựa chọn tốt nhất của bạn. Để duy trì bộ sưu tập có thứ tự, bạn có thể xem xét `SortedDictionary<TKey, TValue>` hoặc `SortedList<TKey, TValue>`, chúng cung cấp thứ tự được sắp xếp nhưng tốn kém hơn về thao tác chèn và xóa. Đối với các kịch bản đòi hỏi tính an toàn với các luồng, `ConcurrentDictionary<TKey, TValue>` thêm gánh nặng nhưng đảm bảo truy cập an toàn từ nhiều luồng mà không cần khoá thủ công.

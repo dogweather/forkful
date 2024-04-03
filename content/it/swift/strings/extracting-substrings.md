@@ -10,9 +10,6 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## What & Why?
-Estrarre delle sottostringhe significa prelevare una porzione specifica di una stringa di testo. I programmatori lo fanno per manipolare, cercare, o processare solo la parte di dati che interessa.
-
 ## How to:
 Ecco come estrarre sottostringhe in Swift. Prendi una stringa. Trova l’indice di partenza e quello di arrivo. Preleva la sottostringa.
 

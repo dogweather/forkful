@@ -10,9 +10,6 @@ title: "C\xE1lculo de una fecha en el futuro o el pasado"
 weight: 26
 ---
 
-## Qué & Por Qué?
-Calcular una fecha en el futuro o pasado es simplemente sumar o restar días, meses o años a una fecha existente. Los programadores hacen esto para gestionar eventos, suscripciones, recordatorios o cualquier situación que requiera seguimiento temporal.
-
 ## Cómo hacerlo:
 ```C#
 using System;

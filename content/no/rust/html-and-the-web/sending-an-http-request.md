@@ -9,9 +9,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## Hva & Hvorfor?
-En HTTP-forespørsel lar oss snakke med en webserver. Vi gjør dette for å hente data, sende informasjon, eller starte handlinger på nett.
-
 ## Slik gjør du:
 Rust har ikke innebygget støtte for å sende HTTP-forespørsler, men `reqwest`-biblioteket gjør jobben enkel. Først, inkluder det i `Cargo.toml`:
 

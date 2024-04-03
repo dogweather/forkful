@@ -13,12 +13,7 @@ title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---
 
-## Co i dlaczego?
-
-Tablice asocjacyjne, znane bardziej jako hashe w Ruby, umożliwiają parowanie unikalnych kluczy z wartościami. Są niezastąpione, kiedy potrzebujesz śledzić elementy za pomocą konkretnego odniesienia, jak przechowywanie właściwości obiektu lub szybkie dostęp do danych przez unikalny identyfikator.
-
 ## Jak to zrobić:
-
 Tworzenie i używanie hashy w Ruby jest proste. Możesz zainicjalizować pusty hash, wypełnić go parami klucz-wartość, uzyskać dostęp do wartości przez ich klucze i więcej. Oto jak to zrobisz:
 
 ```Ruby
@@ -55,7 +50,6 @@ puts symbol_hash[:name] # Wynik: Jane Doe
 ```
 
 ## Pogłębiona analiza:
-
 Koncepcja tablic asocjacyjnych nie jest unikatowa dla Ruby; wiele języków implementuje je pod różnymi nazwami, jak słowniki w Pythonie czy obiekty w JavaScript (kiedy używane jako pary klucz-wartość). We wczesnych etapach Ruby, hashe były nieco wolniejsze i nie tak wszechstronne. Jednak z czasem, implementacja hashy w Ruby stała się bardzo zoptymalizowana, szczególnie dla kluczy symboli, czyniąc je niezwykle efektywnymi dla częstego dostępu i aktualizacji.
 
 Hashi w Ruby wyróżniają się swoją syntaktyczną łatwością użycia i elastycznością - można używać prawie każdego typu obiektu jako klucz, chociaż najczęściej używa się symboli i łańcuchów znaków. Wewnętrznie, hashi w Ruby są implementowane używając algorytmu haszującego, który balansuje między szybkością a efektywnością pamięci, nawet gdy liczba elementów rośnie.

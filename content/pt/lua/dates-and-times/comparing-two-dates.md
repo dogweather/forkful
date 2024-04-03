@@ -11,9 +11,6 @@ title: Comparando duas datas
 weight: 27
 ---
 
-## O Que & Por Que?
-Comparar duas datas é verificar a diferença entre elas - quem vem antes, quem vem depois ou se são iguais. Programadores fazem isso para organizar eventos, validar prazos, agendar tarefas ou qualquer coisa que dependa de tempo.
-
 ## Como Fazer:
 ```Lua
 -- Carregar a biblioteca os para manipulação de datas

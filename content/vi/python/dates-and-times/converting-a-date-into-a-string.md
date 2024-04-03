@@ -16,9 +16,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---
 
-## Cái gì & Tại sao?
-Chuyển đổi ngày tháng thành xâu ký tự biến đổi một đối tượng ngày tháng thành định dạng văn bản. Lập trình viên thực hiện điều này để hiển thị ngày tháng một cách thân thiện với người dùng hoặc để chuẩn bị chúng cho việc lưu trữ trong các định dạng dựa trên văn bản như CSV hoặc JSON.
-
 ## Làm thế nào:
 Python làm cho việc chuyển đổi ngày tháng thành xâu ký tự trở nên dễ dàng. Sử dụng phương thức `strftime` có sẵn trên các đối tượng ngày tháng. Dưới đây là cách làm:
 

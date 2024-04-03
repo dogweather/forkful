@@ -11,9 +11,6 @@ title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---
 
-## O Que & Porquê?
-Converter uma string para minúsculas é o processo de transformar todas as letras maiúsculas de uma dada string em minúsculas. Programadores fazem isso para normalizar dados, facilitar comparações de strings e atender a regras de formatação.
-
 ## Como Fazer:
 Em Lua, a conversão de strings para minúsculas é feita com a função `string.lower()`. Aqui está um exemplo simples:
 

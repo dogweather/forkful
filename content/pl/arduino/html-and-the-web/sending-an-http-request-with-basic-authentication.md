@@ -11,12 +11,7 @@ title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---
 
-## Co i dlaczego?
-
-Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem pozwala Arduino komunikować się z zabezpieczonymi serwerami. Programiści używają tej metody, aby wymieniać dane z API lub stronami internetowymi, które wymagają loginu i hasła.
-
 ## Jak to zrobić:
-
 Instalacja biblioteki do zarządzania połączeniami WiFi i HTTP jest pierwszym krokiem. Użyjemy `WiFiNINA.h` i `HTTPClient.h`. Przykład kodu:
 
 ```Arduino
@@ -67,13 +62,11 @@ void loop() {
 Wyjście (sample output) będzie wyglądać jako ciąg informacji zwrotnych od serwera, w tym kod odpowiedzi, który powie nam, czy żądanie się powiodło.
 
 ## Głębsze spojrzenie
-
 O wykorzystaniu HTTP już w latach 90 XX wieku decydowała prostota i uniwersalność. W Arduino, do komunikacji z serwerami, kluczowe są biblioteki, takie jak `WiFiNINA.h`, która obsługuje standardy sieci WiFi, oraz `HTTPClient.h`, pozwalająca na tworzenie żądań HTTP.
 
 Istnieją też alternatywy, jak `ESP8266HTTPClient.h` dla modułów ESP8266, czy rozwiązania zewnętrznych usług, np. IFTTT lub MQTT dla innych typów zadań IoT. Parametry uwierzytelnienia w 'basic authentication' są kodowane w base64, ale to załatwia za nas biblioteka 'HTTPClient.h'.
 
 ## Zobacz także
-
 Dokumentacja i przykłady:
 - [Biblioteka WiFiNINA](https://www.arduino.cc/en/Reference/WiFiNINA)
 - [Biblioteka HTTPClient](https://www.arduino.cc/reference/en/libraries/httpclient/)

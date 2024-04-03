@@ -17,12 +17,7 @@ title: "In \u0111\u1EA7u ra debug"
 weight: 33
 ---
 
-## Gì và Tại sao?
-
-Việc in thông điệp gỡ lỗi là việc tạo ra những thông báo nhật ký tạm thời, mang tính thông tin giúp lập trình viên hiểu được dòng chảy và trạng thái của chương trình trong quá trình thực hiện. Lập trình viên thực hiện điều này để xác định và chẩn đoán các lỗi phần mềm hay hành vi không mong muốn trong lôgic của chương trình.
-
 ## Cách thực hiện:
-
 Trong C, cách phổ biến nhất để in thông điệp gỡ lỗi là sử dụng hàm `printf` từ thư viện I/O chuẩn. Hàm `printf` cho phép định dạng đầu ra đến thiết bị đầu ra chuẩn, thường là màn hình. Dưới đây là một ví dụ đơn giản:
 
 ```c
@@ -68,7 +63,6 @@ GỠ LỖI: example.c:6: Giá trị kiểm tra là 10
 Lưu ý rằng trong ví dụ này, chúng ta đang sử dụng `fprintf` để xuất ra luồng lỗi chuẩn (`stderr`), thường phù hợp hơn cho các thông điệp gỡ lỗi.
 
 ## Sâu hơn nữa
-
 Về mặt lịch sử, các kỹ thuật gỡ lỗi trong C đã được thực hiện một cách thủ công và cơ bản, do triết lý gần với phần cứng và tuổi đời của ngôn ngữ. Trong khi các ngôn ngữ hiện đại có thể bao gồm các thư viện gỡ lỗi tích hợp sẵn phức tạp hoặc phụ thuộc nhiều vào các tính năng của Môi trường Phát triển Tích hợp (IDE), các lập trình viên C thường tự chèn các câu lệnh in ra như được hiển thị ở trên để theo dõi việc thực thi chương trình của họ.
 
 Một điều cần cảnh báo với các thông điệp gỡ lỗi là khả năng chúng làm rối loạn đầu ra và dẫn đến vấn đề về hiệu suất, đặc biệt là nếu chúng vô tình được để lại trong mã sản phẩm. Vì những lý do này, sử dụng biên dịch có điều kiện (ví dụ, `#ifdef DEBUG ... #endif`) có thể là cách tiếp cận tốt hơn, cho phép bao gồm hoặc loại bỏ các câu lệnh gỡ lỗi dựa trên các cờ biên dịch.

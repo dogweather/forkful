@@ -15,12 +15,7 @@ title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---
 
-## O Que & Por Que?
-
-Criar um arquivo temporário em Go permite a geração de um arquivo não persistente projetado para uso de curto prazo, principalmente para tarefas como armazenamento de dados intermediários ou auxílio em trabalhos de processamento em lote. Os programadores utilizam essa funcionalidade para manipular dados com segurança sem afetar o sistema de arquivos permanente ou necessitar de limpeza manual.
-
 ## Como Fazer:
-
 No Go, o pacote `ioutil` originalmente fornecia utilidades para a criação de arquivos temporários. Contudo, o Go 1.16 promoveu o uso das funções dos pacotes `os` e `io/ioutil` para lugares mais organizados. Agora, os pacotes `os` e `io` são preferidos para manipulação de arquivos temporários.
 
 Aqui está um guia passo a passo para criar, escrever e excluir um arquivo temporário:
@@ -83,7 +78,6 @@ Saída de Exemplo:
 ```
 
 ## Aprofundamento
-
 O mecanismo por trás do manejo de arquivos temporários pelo Go evoluiu. Inicialmente, a criação de arquivos temporários era predominantemente gerenciada pela agora obsoleta função `ioutil.TempFile`, refletindo tendências mais amplas no desenvolvimento de software em direção a práticas de manipulação de arquivos mais seguras e eficientes. A mudança para integrar essas funcionalidades nos pacotes `os` e `io` com o Go 1.16 sinaliza um impulso mais amplo em direção à racionalização da biblioteca padrão da linguagem e encorajando o uso de APIs mais unificadas e coesas.
 
 Embora o uso de arquivos temporários seja uma prática comum e muitas vezes essencial na programação, é importante notar que depender muito deles para armazenar grandes quantidades de dados ou para tarefas de longo prazo pode levar a problemas de desempenho. Além disso, quando a criação de arquivos temporários não é rigorosamente controlada ou quando eles não são adequadamente limpos, isso pode levar a vazamentos de recursos que poderiam impactar negativamente o sistema de arquivos. Em cenários que exigem armazenamento persistente ou requerem o manejo de fluxos de dados substanciais, alternativas como bancos de dados ou armazenamentos de dados em memória geralmente oferecem melhor desempenho e confiabilidade em comparação a arquivos temporários.

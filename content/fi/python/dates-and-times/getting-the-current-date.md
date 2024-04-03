@@ -13,12 +13,7 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mikä ja miksi?
-
-Nykyisen päivämäärän noutaminen Pythonissa on perustoiminto monille sovelluksille, kuten lokitiedostoille, data-analyysille ja aikaan perustuvalle päätöksenteolle. Kyse on järjestelmän nykyisen päivämäärän noutamisesta, mikä on elintärkeää tehtäville, jotka riippuvat ajallisesta kontekstista.
-
 ## Miten:
-
 **Käyttäen standardikirjastoa `datetime`:**
 
 `Datetime`-moduuli Pythonin standardikirjastossa tarjoaa luokkia päivämäärien ja aikojen käsittelyyn. Nykyisen päivämäärän saat `date.today()`-metodilla.

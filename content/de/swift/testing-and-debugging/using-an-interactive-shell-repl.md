@@ -10,9 +10,6 @@ title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---
 
-## Was & Warum?
-Die Verwendung einer interaktiven Shell oder einer Read-Eval-Print-Schleife (REPL) ermöglicht es Ihnen, interaktiv zu programmieren. Programmierer nutzen sie, um schnell Swift-Schnipsel zu testen, zu debuggen oder die Sprache zu lernen.
-
 ## Wie:
 Rufen Sie REPL auf, indem Sie ein Terminal öffnen und `swift` ausführen. Geben Sie direkt Code ein und drücken Sie Enter, um ihn auszuführen. Hier ist ein Vorgeschmack:
 

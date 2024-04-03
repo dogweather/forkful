@@ -10,9 +10,6 @@ title: Lettura di un file di testo
 weight: 22
 ---
 
-## What & Why?
-Leggere un file di testo significa accedere e lavorare con il contenuto salvato in un file di testo semplice. I programmatori lo fanno per manipolare dati, configurare applicazioni, o semplicemente per recuperare informazioni.
-
 ## How to:
 In C# leggere un file di testo si può fare in vari modi. Eccone due semplici:
 

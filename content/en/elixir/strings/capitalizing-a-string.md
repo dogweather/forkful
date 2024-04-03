@@ -10,12 +10,7 @@ title: Capitalizing a string
 weight: 2
 ---
 
-## What & Why?
-
-Capitalizing a string involves converting the first letter of the string to uppercase while ensuring the rest of the letters are in lowercase. This action is commonly needed for formatting user input or displaying text in user interfaces, where consistency and readability are important.
-
 ## How to:
-
 Elixir provides a straightforward way to capitalize strings using its built-in functions without the need for third-party libraries. Here's a simple example:
 
 ```elixir

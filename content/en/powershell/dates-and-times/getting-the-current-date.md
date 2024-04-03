@@ -10,12 +10,7 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-
-Retrieving the current date in PowerShell is about fetching the system’s current date and time. This operation is fundamental for tasks such as logging, timing operations, or making decisions based on dates. Programmers use this capability to track events, schedule tasks, and handle date-specific logic in scripts and applications.
-
 ## How to:
-
 PowerShell provides straightforward cmdlets for getting the date and time. The `Get-Date` cmdlet is the primary tool for this purpose. It can return the full date and time, which you can format or manipulate according to your needs.
 
 ```powershell
@@ -54,7 +49,6 @@ Get-Date -Format "HH:mm:ss"
 ```
 
 ### Using .NET Class
-
 PowerShell allows direct access to .NET classes, offering an alternative way to work with dates and times.
 
 ```powershell

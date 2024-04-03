@@ -10,9 +10,6 @@ title: Downloading a web page
 weight: 42
 ---
 
-## What & Why?
-Downloading a web page means grabbing the data from the web and bringing it into your app. Programmers do it to fetch content, interact with online services, or scrape data.
-
 ## How to:
 Let's use `URLSession` to do the job. Swift makes it straight to the point.
 

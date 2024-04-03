@@ -25,15 +25,10 @@ title: "\uB514\uB809\uD1A0\uB9AC\uAC00 \uC874\uC7AC\uD558\uB294\uC9C0 \uD655\uC7
 weight: 20
 ---
 
-## 무엇인가 & 왜인가?
-TypeScript에서 디렉토리가 존재하는지 확인하는 것은 파일 읽기나 쓰기 등의 파일 관리 작업에 필수적이며, 유효한 디렉토리에서만 작업을 수행함으로써 존재하지 않는 디렉토리에 접근하거나 조작을 시도할 때 발생하는 오류를 피하는 데 중요한 작업입니다.
-
 ## 방법:
-
 Node.js 환경에서 실행될 때 TypeScript는 `fs` 모듈을 사용하여 디렉토리가 존재하는지 확인할 수 있으며, 이 모듈은 동기 함수인 `existsSync()` 함수 또는 비동기 함수인 `access()` 함수와 `constants.F_OK`를 조합하여 사용할 수 있습니다.
 
 ### `fs.existsSync()` 사용하기:
-
 ```typescript
 import { existsSync } from 'fs';
 
@@ -47,7 +42,6 @@ if (existsSync(directoryPath)) {
 ```
 
 ### `fs.access()`와 `fs.constants.F_OK` 사용하기:
-
 ```typescript
 import { access, constants } from 'fs';
 
@@ -73,7 +67,6 @@ access(directoryPath, constants.F_OK, (err) => {
 ```
 
 ### 제3자 라이브러리 사용하기 - `fs-extra`:
-
 `fs-extra`는 내장된 `fs` 모듈을 보완하고 더 편리한 함수들을 제공하는 인기 있는 제3자 라이브러리입니다.
 
 ```typescript

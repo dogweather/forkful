@@ -11,9 +11,6 @@ title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---
 
-## O Que & Por Quê?
-Apagar caracteres que correspondem a um padrão são técnicas usadas para limpar strings - eliminar o que não é necessário ou formatar texto. Programadores fazem isso para simplificar o processamento de dados ou prepará-los para exibição, armazenamento ou outra operação de manipulação de texto.
-
 ## Como Fazer:
 ```Bash
 # Remover todos os dígitos de uma string

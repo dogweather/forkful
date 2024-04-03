@@ -13,12 +13,7 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mikä ja miksi?
-
-Virheilmoitusten kirjoittaminen standardivirhevirtaan (stderr) Dart-kielessä tarkoittaa virheviestien ja diagnostiikkatietojen lähettämistä erilliseen virtaan, joka eroaa tavallisesta tulostevirrasta (stdout). Ohjelmoijat tekevät näin erottaakseen ohjelman normaalin tulosteen ja virhe- tai varoitusviestit, mikä mahdollistaa helpomman vianmäärityksen ja lokitiedostojen käsittelyn.
-
 ## Miten:
-
 Dart-kielessä stderr-virtaan kirjoittaminen on suoraviivaista käyttämällä `dart:io`:ssa saatavilla olevaa `stderr`-objektia. Tässä on yksinkertainen esimerkki:
 
 ```dart

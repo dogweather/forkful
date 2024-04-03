@@ -14,9 +14,6 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-Het vinden van de lengte van een String in Dart gaat over het bepalen van het aantal code-eenheden (in wezen het aantal tekens als je er simplistisch over denkt) in een gegeven String. Programmeurs doen dit om strings nauwkeuriger te manipuleren, zoals het valideren van invoer, het inkorten van weergavetekst, of het verwerken van gegevensformaten waar de lengte belangrijk is (bijv. protocollen met berichten met lengtevoorvoegsel).
-
 ## Hoe:
 Dart maakt het eenvoudig om de lengte van een string te krijgen met behulp van de `length` eigenschap. Hier is een basisvoorbeeld:
 

@@ -10,9 +10,6 @@ title: Creating a temporary file
 weight: 21
 ---
 
-## What & Why?
-Creating a temporary file means you're generating a file for a short-term purpose, like storing data that's only needed during the execution of a program. Programmers do this for various reasons, such as avoiding memory constraints or keeping a temporary state during complex operations.
-
 ## How to:
 Here's a quick way to create and write to a temporary file in C#:
 

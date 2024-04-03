@@ -11,9 +11,6 @@ title: Konvertere en dato til en streng
 weight: 28
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Konvertering av en dato til en streng betyr å endre datotypen `Date` til lesbar tekst. Programmerere gjør dette for å vise datoer på brukervennlige måter i applikasjoner.
-
 ## How to: (Hvordan:)
 Elm gir ikke innebygd datoformatering, så vi bruker ofte `justinmimbs/date` pakken. Her er et grunnleggende eksempel:
 

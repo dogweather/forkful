@@ -10,9 +10,6 @@ title: Creazione di un file temporaneo
 weight: 21
 ---
 
-## What & Why?
-La creazione di un file temporaneo è il processo di generazione di un file che si intende utilizzare per un breve periodo di tempo. In Rust, i programmatori lo fanno per gestire dati temporanei senza preoccuparsi di possibili conflitti di nomi di file o della pulizia dei file dopo l'uso.
-
 ## How to:
 Utilizziamo il crate `tempfile` per creare e lavorare con file temporanei.
 

@@ -15,12 +15,7 @@ title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---
 
-## Cái gì & Tại sao?
-
-Việc viết vào lỗi chuẩn (`stderr`) gửi thông điệp lỗi và chẩn đoán riêng biệt khỏi đầu ra chuẩn (`stdout`). Lập trình viên làm điều này để gỡ lỗi và ghi nhật ký lỗi mà không làm lộn xộn đầu ra chương trình thông thường.
-
 ## Làm thế nào:
-
 Trong TypeScript, bạn có thể viết vào `stderr` sử dụng `console.error` hoặc `process.stderr.write`. Dưới đây là cả hai đang hoạt động:
 
 ```TypeScript
@@ -37,11 +32,9 @@ Mẫu đầu ra cho cả hai dòng:
 ```
 
 ## Sâu hơn
-
 Truyền thống, việc tách biệt `stdout` và `stderr` cho phép người dùng Unix chỉ định đầu ra và lỗi vào các điểm đến khác nhau. Bạn có thể ghi nhật ký lỗi để phân tích trong khi vẫn có dữ liệu đầu ra sạch sẽ. Các phương án thay thế cho việc viết trực tiếp vào `stderr` bao gồm thư viện ghi nhật ký hay khung làm việc cung cấp nhiều kiểm soát và tính năng hơn. Về mặt thực thi, `console.error` bọc quanh `process.stderr.write` với khả năng định dạng bổ sung, do đó sử dụng `console.error` nói chung là tiện lợi hơn cho các thông điệp đơn giản.
 
 ## Xem thêm
-
 - Tài liệu Node.js về console: https://nodejs.org/api/console.html
 - Luồng chuẩn của quy trình Node.js: https://nodejs.org/api/process.html#process_process_stderr
 - Thảo luận về `console.error` so với `process.stderr.write`: https://stackoverflow.com/questions/4976466/difference-between-process-stdout-write-and-console-log-in-node-js

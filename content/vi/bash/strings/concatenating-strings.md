@@ -14,12 +14,7 @@ title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---
 
-## Cái gì & Tại sao?
-
-Nối chuỗi trong Bash có nghĩa là ghép hai hoặc nhiều đoạn văn bản lại với nhau. Lập trình viên thực hiện điều đó để xây dựng các lệnh, tạo đường dẫn tệp, hoặc đơn giản là định dạng văn bản đầu ra.
-
 ## Cách thực hiện:
-
 Dưới đây là cách nhanh chóng để nối các chuỗi của bạn trong Bash:
 
 ```Bash
@@ -42,7 +37,6 @@ echo $filename  # Đầu ra: sao_lưu_20230315.tar.gz
 ```
 
 ## Đào sâu hơn
-
 Trở lại những ngày trước khi giao diện người dùng đồ họa thống trị, dòng lệnh và kịch bản là vua của sự tương tác máy tính. Việc nối chuỗi luôn là thiết yếu bởi vì nó cho phép thao tác lệnh và tệp linh hoạt.
 
 Một phương thức thay thế lịch sử là lệnh `expr`, giờ đây cảm thấy như một cổ vật:
@@ -65,6 +59,5 @@ echo $full_greeting  # Đầu ra: Xin chào, thế giới!
 ```
 
 ## Xem thêm
-
 - [Hướng dẫn GNU Bash](https://www.gnu.org/software/bash/manual/) cho tất cả mọi thứ về Bash.
 - [Hướng dẫn Lập trình nâng cao với Bash-Scripting](https://tldp.org/LDP/abs/html/) cho các bài tập và nhiều ví dụ hơn.

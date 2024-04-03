@@ -14,11 +14,7 @@ title: Sette stor bokstav i en streng
 weight: 2
 ---
 
-## Hva & Hvorfor?
-Å sette stor forbokstav i en streng i Bash innebærer å omdanne det første tegnet i strengen til en stor bokstav, mens resten av strengen forblir uendret. Denne teknikken brukes ofte for å formatere utdata eller for å overholde kodingskonvensjoner som krever at visse strenger starter med en stor bokstav for lesbarhet eller stilistiske preferanser.
-
 ## Hvordan:
-
 Bash har ikke en innebygd funksjon spesifikt for å sette stor bokstav i strenger, men du kan oppnå dette ved å bruke parameterutvidelse eller eksterne verktøy som `awk`. Her er noen måter å sette stor bokstav i en streng i Bash:
 
 **Ved bruk av parameterutvidelse:**

@@ -10,9 +10,6 @@ title: Calcolo di una data futura o passata
 weight: 26
 ---
 
-## Cosa e Perché?
-Calcolare una data futura o passata significa determinare una data specifica che sia a una certa distanza temporale da oggi o da una data di partenza. I programmatori fanno ciò per gestire scadenze, eventi, promemoria e per tracciare periodi in app e sistemi.
-
 ## Come fare:
 Swift offre `Date`, `Calendar`, e `DateComponents` per lavorare con le date. Ecco come si fa:
 ```Swift

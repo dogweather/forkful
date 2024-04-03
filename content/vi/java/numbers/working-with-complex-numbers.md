@@ -15,12 +15,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Cái gì & Tại sao?
-
-Số phức mở rộng dãy số thực thông qua việc thêm một đơn vị ảo, `i`, nơi mà `i^2 = -1`. Chúng rất quan trọng trong các lĩnh vực như kỹ thuật, vật lý và toán học nâng cao, nơi chúng mô hình hóa các hiện tượng mà số thực không thể xử lý, như dòng điện và xử lý tín hiệu.
-
 ## Làm thế nào:
-
 Java không có hỗ trợ sẵn cho số phức, nhưng chúng ta có thể tự tạo lớp hoặc sử dụng một thư viện. Dưới đây là một ví dụ nhanh về cách tạo một lớp `ComplexNumber` đơn giản và sử dụng nó:
 
 ```java
@@ -60,7 +55,6 @@ Tổng: 3.0 + 7.0i
 ```
 
 ## Sâu hơn
-
 Trước khi có các ngôn ngữ cấp cao như Java, lập trình viên làm việc trực tiếp với các thư viện toán học trong các ngôn ngữ như Fortran hoặc C để quản lý các phép toán phức tạp. Khái niệm trở về thế kỷ 16, được ghi nhận do các nhà toán học như Gerolamo Cardano và Rafael Bombelli.
 
 Trong Java, `java.lang.Math` là điểm đến cho các nhu cầu cơ bản nhưng bỏ qua số phức, có lẽ bởi vì không phải lập trình viên nào cũng sử dụng chúng. Các lựa chọn khác? Sử dụng thư viện. Apache Commons Math cung cấp một lớp `Complex` chứa đầy các phương pháp để thao tác. Đây là lý do tại sao tự tạo của bạn là tốt: Nhẹ, được tùy chỉnh theo nhu cầu cụ thể của bạn, và không có overhead của thư viện.
@@ -68,7 +62,6 @@ Trong Java, `java.lang.Math` là điểm đến cho các nhu cầu cơ bản nh�
 Một chi tiết quan trọng: cẩn thận với độ chính xác của số điểm dấu phẩy động. Máy tính không thể biểu diễn một số số một cách chính xác, dẫn đến lỗi làm tròn. Khi thực hiện các phép toán phức tạp lặp đi lặp lại, những lỗi này có thể tích tụ!
 
 ## Xem thêm
-
 Để khám phá sâu hơn và thực hiện các phép toán phức tạp hơn, kiểm tra:
 
 - [Apache Commons Math](https://commons.apache.org/proper/commons-math/)

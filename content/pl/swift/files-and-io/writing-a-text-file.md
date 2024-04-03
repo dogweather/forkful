@@ -15,14 +15,10 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i Dlaczego?
-
-Pisanie plików tekstowych w języku Swift pozwala na trwałe przechowywanie danych tekstowych w systemie plików, co jest niezbędne do zadań takich jak zapisywanie ustawień konfiguracyjnych, danych użytkownika czy logów. Programiści często robią to, aby utrzymać dane między uruchomieniami aplikacji, dzielić dane pomiędzy różnymi częściami aplikacji lub eksportować dane do użytku przez inne programy.
-
 ## Jak to zrobić:
 
-### Korzystając z Biblioteki Standardowej Swifta
 
+### Korzystając z Biblioteki Standardowej Swifta
 Biblioteka standardowa Swifta zawiera wszystkie narzędzia potrzebne do pisania plików tekstowych. Oto podstawowe podejście:
 
 ```swift
@@ -43,7 +39,6 @@ do {
 Ten fragment kodu zapisuje ciąg znaków do pliku o nazwie `przyklad.txt` w katalogu dokumentów. Obsługuje potencjalne błędy za pomocą mechanizmu obsługi błędów do-try-catch Swifta.
 
 ### Korzystając z FileManagera dla Większej Kontroli
-
 Dla większej kontroli nad atrybutami plików lub aby sprawdzić, czy plik już istnieje, można użyć `FileManagera`:
 
 ```swift
@@ -69,7 +64,6 @@ if let katalogDokumentow = katalogi.first {
 ```
 
 ### Korzystając z Bibliotek Trzecich
-
 Jedną z popularnych bibliotek trzecich do operacji na systemie plików w Swift jest `Files` autorstwa Johna Sundella:
 
 Najpierw dodaj Files do swojego projektu, zazwyczaj za pomocą Swift Package Manager.

@@ -16,12 +16,7 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---
 
-## Gì và Tại sao?
-
-Gửi một yêu cầu HTTP có nghĩa là yêu cầu một máy chủ từ xa về dữ liệu hoặc hành động. Lập trình viên làm điều này để tương tác với các dịch vụ web, lấy các nguồn lực, hoặc giao tiếp với các API.
-
 ## Làm thế nào:
-
 Lua không hỗ trợ HTTP mặc định, vì vậy chúng ta sử dụng các thư viện. Một lựa chọn phổ biến là `lua-requests`. Dưới đây là một ví dụ nhanh:
 
 ```lua
@@ -49,7 +44,6 @@ Kết quả mẫu có thể trông như này:
 ```
 
 ## Tìm hiểu sâu hơn
-
 Sự đơn giản của Lua không tự nhiên hỗ trợ HTTP, đó là nơi mà các thư viện bước vào. `lua-requests` phản ánh tính năng của thư viện Requests trong Python, làm cho nó trở nên dễ dàng cho những người quen thuộc với Python.
 
 Các lựa chọn khác bao gồm `LuaSocket` cho công việc HTTP cấp thấp hơn và `luasocket.http` để kiểm soát nhiều hơn. Lua cũng có bindings cho `libcurl` (thông qua `Lua-cURL`) cho các hoạt động HTTP phức tạp.
@@ -59,6 +53,5 @@ Về mặt lịch sử, việc thiếu hỗ trợ HTTP mặc định phản ánh
 Về mặt triển khai, khi bạn gửi một yêu cầu HTTP, nó đi qua mạng đến máy chủ được chỉ định. Máy chủ xử lý yêu cầu và trả lời. Các thư viện Lua tóm gọn việc lập trình socket cần thiết, xử lý tất cả những vấn đề phức tạp của giao tiếp mạng để bạn tập trung vào yêu cầu và phản hồi thực tế.
 
 ## Xem thêm
-
 - [Kho lưu trữ GitHub lua-requests](https://github.com/JakobGreen/lua-requests)
 - [Sổ tay tham khảo LuaSocket](http://w3.impa.br/~diego/software/luasocket/http.html)

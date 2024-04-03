@@ -10,9 +10,6 @@ title: Tekstitiedoston lukeminen
 weight: 22
 ---
 
-## What & Why?
-Tekstin lukeminen tiedostosta on yksinkertaisesti tiedon hakemista levyltä. Ohjelmoijat tekevät tätä datan käsittelyn, analysoinnin tai tulosten tallentamisen vuoksi.
-
 ## How to:
 ```haskell
 import System.IO

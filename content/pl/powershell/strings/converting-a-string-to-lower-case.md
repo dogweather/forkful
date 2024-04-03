@@ -11,9 +11,6 @@ title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## What & Why?
-Konwersja stringa do małych liter polega na zmianie każdej wielkiej litery na odpowiadającą jej małą. Programiści robią to, by ujednolicić dane – na przykład, w sytuacjach, gdy wielkość liter nie ma znaczenia, jak przy porównywaniu tekstów.
-
 ## How to:
 Aby przekształcić string do małych liter w PowerShell, używamy metody `.ToLower()`. Oto jak to działa:
 

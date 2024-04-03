@@ -13,9 +13,6 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mikä & Miksi?
-Arduino-ohjelmoinnin kontekstissa kansion olemassaolon tarkistus SD-kortilla tai vastaavassa tallennusmoduulissa mahdollistaa tiedostojen lukemisen tai kirjoittamisen ilman virheitä. Tämä toimenpide on olennainen datan kirjaamiselle, kokoonpanon hallinnalle tai mille tahansa tehtävälle, joka vaatii jäsenneltyä tiedostojen tallennusta, varmistaen luotettavuuden ja sujuvan suorituskyvyn sovelluksissasi.
-
 ## Kuinka:
 Arduino ei natiivisti tue monimutkaisia tiedostojärjestelmäoperaatioita suoraan paketista. Kuitenkin käyttämällä SD-kirjastoa, joka on osa standardia Arduino IDE:tä, voit helposti työskennellä tiedostojen ja hakemistojen kanssa. Kansion olemassaolon tarkistamiseksi sinun on ensin alustettava SD-kortti ja sen jälkeen käytettävä SD-kirjaston `exists()`-metodia.
 

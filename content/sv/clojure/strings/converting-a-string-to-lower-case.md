@@ -11,9 +11,6 @@ title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---
 
-## Vad & Varför?
-Att konvertera en sträng till små bokstäver innebär att ändra varje bokstav till dess motsvarighet i gemener. Programmerare gör detta för att normalisera textdata för sökning, sortering eller andra jämförelser där skiftlägen inte ska spela någon roll.
-
 ## Hur man gör:
 ```Clojure
 ;; Använd `clojure.string/lower-case` för att konvertera till små bokstäver

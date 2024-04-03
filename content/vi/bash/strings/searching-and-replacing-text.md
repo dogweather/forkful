@@ -15,9 +15,6 @@ title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---
 
-## Cái gì & Tại sao?
-Tìm kiếm và thay thế văn bản trong bash có nghĩa là thay thế từ hoặc mẫu trong một chuỗi hoặc tệp bằng thứ gì đó khác. Đây là một nhiệm vụ hàng ngày cho việc làm sạch dữ liệu, sửa chữa mã, hoặc tự động hóa các chỉnh sửa.
-
 ## Cách làm:
 Dưới đây là cách bạn sử dụng sức mạnh của tìm kiếm và thay thế trong bash:
 
@@ -43,7 +40,6 @@ sed "s/$old/$new/g" <<< "I like apple pies"
 Nhớ rằng, `g` ở cuối có nghĩa là "toàn cầu", vì vậy bạn thay đổi mỗi lần khớp trong dòng, không chỉ lần đầu tiên.
 
 ## Sâu hơn nữa
-
 Chúng ta đã có công cụ xử lý văn bản trên các hệ thống giống Unix từ rất lâu. `sed`, viết tắt của Stream Editor, là một công cụ như vậy, và nó đã tồn tại từ những năm 1970. Nó không chỉ dùng để thay thế đơn giản; `sed` còn có thể cắt và chia văn bản theo các mẫu phức tạp nữa.
 
 Có lựa chọn khác không? Chắc chắn rồi. `awk` phức tạp hơn một chút và có thể làm việc thần kỳ với các cột và hàng. Đối với các sửa đổi nhanh chóng, `grep` có thể giúp bạn tìm thứ gì đó, nhưng nó sẽ không thay thế - nó giống như người canh gác hơn.

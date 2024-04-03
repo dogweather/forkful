@@ -13,9 +13,6 @@ title: Den aktuellen Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-Das Abrufen des aktuellen Datums ist eine grundlegende Aufgabe in nahezu jedem Programmierprojekt - vom Protokollieren von Aktivitäten in einer Anwendung bis hin zum Generieren von Berichten mit Datumsstempeln. In Ruby lässt sich dies leicht mit der Standardbibliothek bewerkstelligen, was Operationen, die Daten involvieren, vereinfacht.
-
 ## Wie macht man das:
 Rubys Standardbibliothek enthält die Klassen `Date` und `Time` zur Handhabung von Datums- und Zeitangaben. So können Sie das aktuelle Datum abrufen:
 

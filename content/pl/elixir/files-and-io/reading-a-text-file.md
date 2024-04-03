@@ -10,9 +10,6 @@ title: Odczytywanie pliku tekstowego
 weight: 22
 ---
 
-## What & Why?
-Czytanie pliku tekstowego to po prostu wczytywanie danych z pliku na dysku. Programiści to robią, by przetwarzać, analizować dane i integrować systemy.
-
 ## How to:
 ```elixir
 # Otwieramy i czytamy plik linia po linii

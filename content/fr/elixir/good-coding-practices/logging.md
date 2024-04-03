@@ -12,9 +12,6 @@ title: Journalisation
 weight: 17
 ---
 
-## Quoi et Pourquoi ?
-La journalisation dans le développement de logiciels est la technique permettant d'enregistrer les événements qui se produisent pendant l'exécution d'un programme, typiquement dans un fichier ou un système externe. Les programmeurs le font pour obtenir des aperçus du comportement du logiciel, dépanner des problèmes, et maintenir un enregistrement de l'historique opérationnel qui est crucial pour le débogage et la surveillance de la santé des applications.
-
 ## Comment faire :
 Dans Elixir, la méthode principale pour enregistrer des informations est l'utilisation du module intégré `Logger`. Voici comment vous pouvez l'utiliser :
 

@@ -11,9 +11,6 @@ title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---
 
-## What & Why?
-Concaténer des chaînes de caractères, c'est les joindre bout à bout. On le fait pour créer des textes dynamiques ou assembler des bouts d'info.
-
 ## How to:
 ```Kotlin
 fun main() {

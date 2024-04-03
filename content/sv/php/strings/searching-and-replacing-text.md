@@ -11,9 +11,6 @@ title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---
 
-## What & Why? (Vad & Varför?)
-Att söka och ersätta text är grundläggande: det handlar om att hitta specifik text och byta ut den mot något annat. Programmerare gör detta för att uppdatera data, korrigera fel eller automatisera redigering av kod och innehåll.
-
 ## How to (Hur man gör)
 I PHP är `str_replace()` en vän i nöden för att byta textsträngar. Här är ett exempel:
 

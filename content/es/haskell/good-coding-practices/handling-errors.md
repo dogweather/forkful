@@ -10,9 +10,6 @@ title: Manejo de errores
 weight: 16
 ---
 
-## ¿Qué y Por Qué?
-Manejar errores en la programación es gestionar lo inesperado—cosas que pueden salir mal. Los programadores lo hacen para asegurar que sus programas puedan afrontar estas situaciones con gracia, sin colapsar o producir resultados incorrectos.
-
 ## Cómo hacerlo:
 Haskell maneja errores de manera sólida a través de tipos como `Maybe` y `Either`. Aquí hay un vistazo rápido:
 

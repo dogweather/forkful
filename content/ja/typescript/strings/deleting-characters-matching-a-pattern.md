@@ -24,9 +24,6 @@ title: "\u30D1\u30BF\u30FC\u30F3\u306B\u4E00\u81F4\u3059\u308B\u6587\u5B57\u3092
 weight: 5
 ---
 
-## What & Why? (何となぜ？)
-文字パターンを削除することは、特定の形式や規則にマッチする文字や文字列を取り除くプロセスです。プログラマーはデータをクリーンにする、フォーマット統一する、または不要な情報を削除するためにこれを行います。
-
 ## How to: (方法)
 ```TypeScript
 function deleteMatchingPattern(text: string, regex: RegExp): string {

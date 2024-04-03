@@ -15,9 +15,6 @@ title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---
 
-## Cái gì và Tại sao?
-Nối chuỗi là việc ghép các chuỗi lại với nhau từ đầu đến cuối. Các lập trình viên thực hiện điều này để xây dựng các câu, tạo thông điệp, hoặc kết hợp dữ liệu đầu vào để xử lý hoặc hiển thị.
-
 ## Làm thế nào:
 Trong C++, chúng ta có một vài cách để nối các chuỗi. Dưới đây là một ví dụ sử dụng `std::string` và toán tử cộng (`+`):
 

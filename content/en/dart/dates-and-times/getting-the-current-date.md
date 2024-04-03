@@ -10,9 +10,6 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-Getting the current date in Dart involves querying the system for the current date and time. This functionality is commonly used in applications for features like timestamping events, showing the current date to users, or calculating durations. Knowing how to efficiently retrieve and manipulate the current date is foundational for scheduling, logging, and time-sensitive features.
-
 ## How to:
 Dart's core library provides straightforward access to the current date and time through the `DateTime` class. Here's the basic example to get the current date:
 

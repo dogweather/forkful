@@ -12,9 +12,6 @@ title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---
 
-## Co i dlaczego?
-Logowanie w programowaniu polega zasadniczo na pozostawianiu śladu w postaci zarejestrowanych zdarzeń lub wiadomości, które mogą być wykorzystane do śledzenia, co aplikacja robi w danym momencie. Programiści robią to, aby debugować problemy, monitorować wydajność systemu i audytować zachowanie ze względów bezpieczeństwa i zgodności.
-
 ## Jak to zrobić:
 W Haskellu logowanie można zaimplementować za pomocą bibliotek takich jak `monad-logger` czy `hslogger`. Oto krótki przykład użycia `monad-logger`:
 

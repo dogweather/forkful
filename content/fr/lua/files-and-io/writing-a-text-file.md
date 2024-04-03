@@ -14,12 +14,7 @@ title: "R\xE9diger un fichier texte"
 weight: 24
 ---
 
-## Quoi et pourquoi ?
-
-Écrire dans un fichier texte avec Lua implique la création ou l'ouverture d'un fichier en mode écriture, puis l'utilisation d'opérations sur le fichier pour insérer du texte. Il s'agit d'une opération fondamentale pour des tâches telles que la journalisation, le stockage de données, ou la gestion de configuration, permettant aux programmes de sauvegarder des données de manière persistante entre les sessions.
-
 ## Comment faire :
-
 Travailler avec des fichiers pour l'écriture est simple en Lua. Vous utiliserez typiquement la fonction `io.open()` pour ouvrir (ou créer) un fichier, en spécifiant le mode d'opération -- dans ce cas, `"w"` pour l'écriture. Si le fichier n'existe pas, il est créé ; s'il existe déjà, son contenu est écrasé. Il est crucial de fermer le fichier après l'écriture pour s'assurer que les données sont correctement sauvegardées et que les ressources sont libérées.
 
 Voici un exemple simple qui écrit une chaîne de caractères dans un fichier nommé "example.txt" :

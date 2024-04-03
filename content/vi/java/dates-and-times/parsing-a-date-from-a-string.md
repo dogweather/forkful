@@ -16,12 +16,7 @@ title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---
 
-## Cái Gì & Tại Sao?
-
-Phân tích cú pháp của một ngày từ một chuỗi có nghĩa là chuyển văn bản thành một đối tượng Date mà một chương trình có thể sử dụng. Các lập trình viên làm điều này để hiểu người dùng nhập vào hoặc dữ liệu được lưu trữ ở định dạng dễ đọc.
-
 ## Làm Thế Nào:
-
 Java có một lớp `java.time.format.DateTimeFormatter` dành cho loại công việc này. Dưới đây là cách bạn sử dụng nó.
 
 ```java
@@ -52,7 +47,6 @@ Ngày đã phân tích cú pháp: 2023-03-15
 ```
 
 ## Sâu Hơn Nữa
-
 Trước khi `java.time` đẹp trai nhập cuộc với Java 8 vào năm 2014, mọi người đã quen với việc sử dụng `java.util.Date` và `SimpleDateFormat`. Những cái cũ không chỉ thù địch với luồng mà còn là một cơn đau đầu khi sử dụng với các quirk về múi giờ của chúng.
 
 Ngày nay, `java.time` là cái mới. Nó an toàn với luồng, bất biến (không thay đổi một cách lén lút), và rõ ràng hơn về ý định. Thêm vào đó, bạn có thể chọn từ một bộ các bộ định dạng đã định nghĩa sẵn hoặc tự tạo của mình với các mẫu.
@@ -62,6 +56,5 @@ Các lựa chọn thay thế, bạn hỏi? Thư viện như Joda-Time đã mở 
 Dưới capô, phân tích cú pháp với `DateTimeFormatter` thực hiện một số công việc nặng nhọc. Nó kiểm tra các mẫu, xác thực đầu vào, xử lý ngoại lệ và cung cấp một `LocalDate`, `LocalTime` hoặc thậm chí `ZonedDateTime` tùy thuộc vào nhu cầu của bạn.
 
 ## Xem Thêm
-
 - Tài liệu Java chính thức cho `java.time.format.DateTimeFormatter`: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
 - Các hướng dẫn Java của Oracle, bao gồm ngày và giờ: https://docs.oracle.com/javase/tutorial/datetime/

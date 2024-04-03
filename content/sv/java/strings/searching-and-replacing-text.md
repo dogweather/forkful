@@ -11,9 +11,6 @@ title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---
 
-## Vad & Varför?
-Att söka och ersätta text innebär att automatiskt hitta specifika teckensträngar i en text och byta ut dem mot andra strängar. Programmerare gör detta för att snabbt modifiera kod, korrigera stavfel eller uppdatera data.
-
 ## How to:
 Java erbjuder `String` metoder för att enkelt hantera sökning och ersättning, samt `Pattern` och `Matcher` klasser för avancerade behov. Här är några exempel:
 

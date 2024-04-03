@@ -12,9 +12,6 @@ title: Debug-output afdrukken
 weight: 33
 ---
 
-## Wat & Waarom?
-Debug-output afdrukken gaat over het uitspuwen van informatie die cruciaal is om te begrijpen wat er onder de motorkap van je code gebeurt. Programmeurs doen dit om variabelenwaarden, de stroom van uitvoering te volgen, en om bugs op te sporen—soort van als een spoor van broodkruimels in een digitaal bos.
-
 ## Hoe te:
 Rechttoe rechtaan spul: gebruik `Console.WriteLine()` om naar de uitvoerconsole te printen. Specifiek voor debugdoeleinden kan `Debug.WriteLine()` je beste keuze zijn, mits je `System.Diagnostics` hebt in je gebruiksdirectieven. Als je een UI-applicatie target, zou `Trace.WriteLine()` de tool voor de taak kunnen zijn, aangezien het luisteraars in staat stelt de uitvoer te vangen.
 

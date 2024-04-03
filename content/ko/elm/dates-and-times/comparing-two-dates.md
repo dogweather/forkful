@@ -16,9 +16,6 @@ title: "\uB450 \uB0A0\uC9DC \uBE44\uAD50\uD558\uAE30"
 weight: 27
 ---
 
-## What & Why? (무엇과 왜?)
-두 날짜를 비교하는 것은 그들 사이의 차이를 계산하거나 순서를 결정하는 프로세스입니다. 프로그래머는 유효성 검사, 기간 계산, 이벤트 예정과 같은 다양한 이유로 날짜를 비교합니다.
-
 ## How to: (어떻게 하나요?)
 ```Elm
 import Time exposing (Posix)

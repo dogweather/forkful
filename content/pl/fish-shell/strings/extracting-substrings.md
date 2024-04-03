@@ -11,9 +11,6 @@ title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---
 
-## Co i dlaczego?
-Wyciąganie podciągów to proces wydobywania określonych fragmentów tekstu ze zmiennej czy łańcucha znaków. Programiści robią to, aby manipulować i analizować dane, wyodrębniać informacje czy też formatować tekst na potrzeby specyficzne dla aplikacji.
-
 ## Jak to zrobić:
 ```Fish Shell
 # Przykładowy ciąg znaków

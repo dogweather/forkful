@@ -10,9 +10,6 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## What & Why? (Cosa e Perché?)
-Cercare e sostituire testo significa scansionare delle stringhe e cambiarne parti specifiche con altre. I programmatori lo fanno per correggere errori, aggiornare dati, o manipolare testi senza impazzire.
-
 ## How to: (Come Fare:)
 Ecco un po' di Python semplice e diretto per cercare e sostituire del testo.
 
@@ -30,7 +27,7 @@ pattern = re.compile(r'\bMondo\b')
 testo_modificato = pattern.sub("Universo", testo_originale)
 print(testo_modificato)
 # Output: Ciao Universo! Python è fantastico.
-``` 
+```
 
 ## Deep Dive (Approfondimento)
 Prima dell'avvento dei computer, cercare e sostituire era un lavoro manuale nei testi stampati o scritti a macchina. Poi sono arrivati editor di testo e IDE (Integrated Development Environments) con funzioni di ricerca e sostituzione integrate. In Python, il modulo `re` permette sostituzioni complesse usando espressioni regolari, dando potenza e flessibilità.

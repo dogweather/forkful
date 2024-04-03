@@ -11,9 +11,6 @@ title: "Refactorizaci\xF3n"
 weight: 19
 ---
 
-## ¿Qué y Por Qué?
-Refactorizar es el arte de ajustar código existente para mejorar su estructura, legibilidad y eficiencia sin alterar su comportamiento externo. Los programadores lo hacen para hacer su código más mantenible, reducir la complejidad y, a menudo, como un paso preliminar antes de agregar nuevas características o corregir errores.
-
 ## Cómo hacerlo:
 Tomemos una función simple de Lua y la refactorizamos. Comenzamos con una función que calcula la suma de números en una lista pero está escrita sin mucha consideración por la eficiencia o claridad:
 

@@ -11,9 +11,6 @@ title: Iniciando un nuevo proyecto
 weight: 1
 ---
 
-## ¿Qué & Por Qué?
-Iniciar un nuevo proyecto es crear la base sobre la cual construirás tu aplicación. Los programadores comienzan nuevos proyectos para transformar ideas en realidad, resolver problemas o explorar nuevas tecnologías. 
-
 ## Cómo:
 Para empezar con Lua, instala la última versión y luego crea un archivo `main.lua`. Aquí un "Hola, mundo!" básico:
 

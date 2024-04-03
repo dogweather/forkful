@@ -11,9 +11,6 @@ title: Avvio di un nuovo progetto
 weight: 1
 ---
 
-## What & Why?
-Partire con un nuovo progetto è eccitante; è l'atto di creare un ambiente di codice da zero. I programmatori lo fanno perché vogliono trasformare le idee in codice strutturato e funzionante, spesso per risolvere un problema o esplorare nuove tecnologie.
-
 ## How to:
 Per iniziare un nuovo progetto in Rust, nulla di più semplice. Rust utilizza `cargo`, il suo sistema di build e gestore di pacchetti. Ecco come configurarlo:
 

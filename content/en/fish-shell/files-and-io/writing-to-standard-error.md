@@ -10,12 +10,7 @@ title: Writing to standard error
 weight: 25
 ---
 
-## What & Why?
-
-Writing to standard error (stderr) in Fish Shell is about directing error messages or diagnostics separately from the standard output (stdout). Programmers do this to ensure that error information can be easily identified, managed, or redirected, facilitating smoother debugging and logging processes.
-
 ## How to:
-
 In Fish Shell, you can write to stderr by redirecting your output using `>&2`. Here is a basic example:
 
 ```fish

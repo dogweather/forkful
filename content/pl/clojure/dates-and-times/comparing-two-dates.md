@@ -11,9 +11,6 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## Co i Dlaczego?
-Porównywanie dwóch dat to sprawdzanie, która data jest wcześniejsza, a która późniejsza lub czy są identyczne. W programowaniu robimy to, aby zarządzać terminami, wydarzeniami i harmonogramami w aplikacjach.
-
 ## Jak to zrobić:
 ```Clojure
 ;; Zaimportuj moduły

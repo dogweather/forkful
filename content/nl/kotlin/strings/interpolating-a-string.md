@@ -13,9 +13,6 @@ title: Een string interpoleren
 weight: 8
 ---
 
-## Wat & Waarom?
-Stringinterpolatie stelt je in staat om variabelen direct in strings in te sluiten. Het is handig voor het creëren van dynamische, leesbare tekst zonder onhandige samenvoeging.
-
 ## Hoe te:
 ```kotlin
 fun main() {

@@ -11,9 +11,6 @@ title: Arrondir les nombres
 weight: 13
 ---
 
-## Quoi & Pourquoi ?
-Arrondir des nombres signifie les ajuster à une valeur proche pour la simplicité ou pour correspondre à une certaine précision. C'est utile pour améliorer la lisibilité, réduire l'espace de stockage ou répondre à des besoins spécifiques au domaine, comme les calculs d'argent où vous souhaitez arrondir au centime le plus proche.
-
 ## Comment faire :
 Dans Elixir, vous pouvez utiliser `Float.round/2` pour arrondir un nombre à virgule flottante. Vous pouvez spécifier le nombre de décimales que vous souhaitez conserver. Voici comment cela fonctionne :
 

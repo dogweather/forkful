@@ -12,12 +12,7 @@ title: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 komentorivin yhden rivin
 weight: 32
 ---
 
-## Mikä & Miksi?
-
-Tiedostojen muokkaaminen paikan päällä CLI:n (Command Line Interface) yksirivikomennolla Rubyssa mahdollistaa tiedostojen suoran muokkaamisen terminaalista, ilman että niitä täytyy avata editorissa, tehdä muutokset ja tallentaa takaisin. Tämä tekniikka on uskomattoman hyödyllinen pikamuutoksille, eräpäivityksille tai toistuvien tehtävien automatisoinnille, säästäen sekä aikaa että vaivaa.
-
 ## Miten:
-
 Ruby tarjoaa suoraviivaisen tavan muokata tiedostoja paikan päällä suoraan komentoriviltä. Käyttämällä Rubyn `-i` vipua, voit kertoa Rubylle toimimaan suoraan annetuissa tiedostoissa. Katsotaan muutamia esimerkkejä nähdäksemme, miten tämä toimii käytännössä. Kuvitellaan, että sinulla on tiedosto `greetings.txt` seuraavalla sisällöllä:
 
 ```
@@ -49,7 +44,6 @@ ruby -i.bak -pe "gsub(/Hello/, 'Bye')" greetings.txt
 Nyt, muokatun `greetings.txt`:n lisäksi, löydät samasta hakemistosta `greetings.txt.bak` -tiedoston, joka sisältää alkuperäisen sisällön.
 
 ## Syväsukellus
-
 Rubyn paikan päällä tapahtuvan tiedostojen muokkauksen taika kumpuaa sen yhdistelmästä Perl-tyyliseen tekstinkäsittelykykyyn ja Rubyn omaan syntaksin eleganssiin. Historiallisesti Perl oli mennä kieli pikaisille yhden rivin koodauksille, erityisesti tekstimanipulaation osalta. Ruby omaksui tämän paradigman, mahdollistaen tehokkaat komentorivin skriptauskyvyt.
 
 Vaihtoehtoja paikan päällä tapahtuvalle muokkaukselle on olemassa muissakin kielissä, kuten itse Perlassa ja sed:ssä, stream-muokkaimessa Unix-järjestelmissä. Kullakin on vahvuutensa - Perl on tunnettu tekstinkäsittelykyvyistään, kun taas sed on vertaansa vailla yksinkertaisuudessaan stream-muokkaustehtävissä. Ruby tarjoaa kuitenkin tasapainon, tarjoten vahvan tekstimanipulaation lukijaystävällisemmällä ja käyttäjäystävällisemmällä syntaksilla, erityisesti niille, jotka ovat jo tuttuja Rubyn kanssa.

@@ -13,16 +13,10 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Cosa & Perché?
-
-L'arrotondamento dei numeri consiste nell'aggiustare il valore di un numero al suo intero più vicino o a un numero specifico di cifre decimali. I programmatori lo fanno per motivi come migliorare la leggibilità, semplificare i calcoli o soddisfare requisiti di precisione specifici del dominio.
-
 ## Come fare:
-
 In Go, non esiste una funzione incorporata che arrotondi direttamente i numeri a un numero specifico di cifre decimali nel pacchetto math. Tuttavia, è possibile ottenere l'arrotondamento attraverso una combinazione di funzioni per numeri interi o implementare una funzione personalizzata per le cifre decimali.
 
 ### Arrotondamento al numero intero più vicino:
-
 Per arrotondare al numero intero più vicino, si può utilizzare la funzione `math.Floor()` con aggiunta di 0.5 per i numeri positivi, e `math.Ceil()` meno 0.5 per i numeri negativi, a seconda della direzione verso cui si desidera arrotondare.
 
 ```go
@@ -40,7 +34,6 @@ func main() {
 ```
 
 ### Arrotondamento a un numero specifico di cifre decimali:
-
 Per l'arrotondamento a un numero specifico di cifre decimali, è possibile utilizzare una funzione personalizzata in cui si moltiplica il numero per 10^n (dove n è il numero di cifre decimali), si arrotonda al numero intero più vicino come prima e poi si divide per 10^n.
 
 ```go
@@ -63,7 +56,6 @@ func main() {
 ```
 
 ## Approfondimento
-
 L'arrotondamento dei numeri è un'operazione fondamentale nella programmazione informatica, legata alla sfida storica di rappresentare i numeri reali in un sistema binario. La necessità di arrotondare nasce dal fatto che molti numeri reali non possono essere rappresentati con precisione in binario, portando a errori di approssimazione.
 
 In Go, l'approccio all'arrotondamento è in qualche modo manuale rispetto a linguaggi che offrono funzioni di arrotondamento incorporate a cifre decimali specifiche. Tuttavia, il pacchetto `math` della libreria standard di Go fornisce i blocchi di costruzione di base (come `math.Floor` e `math.Ceil`) per costruire qualsiasi meccanismo di arrotondamento richiesto dall'applicazione.

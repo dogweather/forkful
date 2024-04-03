@@ -14,12 +14,7 @@ title: "Sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## Hva & Hvorfor?
-
-Å sende en HTTP-forespørsel innebærer å initiere et kall fra din Go-applikasjon til en webserver, API eller en hvilken som helst annen HTTP-basert tjeneste. Programmerere gjør dette for å samhandle med webressurser, hente data, sende inn skjemaer eller kommunisere med andre tjenester over internett.
-
 ## Hvordan:
-
 I Go involverer sending av en HTTP-forespørsel og håndtering av responsen å bruke pakken `net/http`. Her er et steg-for-steg eksempel som viser hvordan du sender en enkel GET-forespørsel og leser responsen:
 
 ```go
@@ -101,7 +96,6 @@ func main() {
 ```
 
 ## Dypdykk
-
 Pakken `net/http` i Go gir en kraftfull og fleksibel måte å samhandle med HTTP-servere på. Dens design reflekterer Gos vekt på enkelhet, effektivitet og robusthet. Opprinnelig krevde funksjonaliteter som håndtering av JSON eller XML datalast manuelt utforming av forespørselskroppen og innstilling av passende overskrifter. Ettersom Go har utviklet seg, har fellesskapet utviklet høyere nivå-pakker som ytterligere forenkler disse oppgavene, som `gorilla/mux` for ruting og `gjson` for JSON-manipulering.
 
 Et fremtredende aspekt ved Gos HTTP-klient er dens bruk av grensesnitt og strukturer, som `http.Client` og `http.Request`, som tillater omfattende tilpasning og testing. For eksempel kan du modifisere `http.Client` for å sette tidsavbrudd på forespørsler eller holde forbindelser i live for ytelse.

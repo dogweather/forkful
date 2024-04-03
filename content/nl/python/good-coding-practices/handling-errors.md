@@ -13,12 +13,7 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-
-Het afhandelen van fouten in Python (of elke programmeertaal) gaat over het verwachten van het onverwachte - het is de kunst van het gracieus omgaan met situaties waarin dingen misgaan in je code. We doen dit om crashes te voorkomen, gebruikers te begeleiden en onze programma's robuust en betrouwbaar te maken.
-
 ## Hoe:
-
 ``` Python
 # Basis try-except blok
 try:
@@ -57,7 +52,6 @@ Dat is geen nummer!
 ```
 
 ## Diepere Duik
-
 Sinds de dageraad van het programmeren is foutafhandeling cruciaal geweest. Eerste benaderingen waren rudimentair, zoals het controleren van condities voor elke risicovolle operatie. Pythons `try-except` syntax komt uit een erfgoed van uitzonderingsafhandeling in oudere talen zoals C++ en Java, wat het proces vereenvoudigt.
 
 Wanneer je een blok code `probeert`, let Python op eventuele uitzonderingen. Als er een fout optreedt, vangt het `except` blok deze. Je kunt specifiek zijn over de uitzonderingen die je vangt of ze allemaal vangen met een kale `except`. Echter, specifiek zijn is de betere aanpak - het is precies, geen vangnet dat alles opvangt.
@@ -67,7 +61,6 @@ Wanneer je een blok code `probeert`, let Python op eventuele uitzonderingen. Als
 Alternatieven? Die zijn er zeker. Sommige talen gebruiken retourcodes in plaats van uitzonderingen. Je kunt ook `with`-instructies tegenkomen voor het beheren van middelen of `assertions` die condities controleren tijdens de ontwikkeling. Maar als we het hebben over solide strategieën voor foutafhandeling, valt het try-catch model op vanwege zijn leesbaarheid en structuur.
 
 ## Zie Ook
-
 Hier zijn enkele goede aanvullende bronnen om nog dieper te duiken:
 
 - De officiële documentatie van Python over fouten en uitzonderingen: [Python Docs – Fouten en Uitzonderingen](https://docs.python.org/3/tutorial/errors.html)

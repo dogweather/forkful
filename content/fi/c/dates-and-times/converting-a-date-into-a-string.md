@@ -14,12 +14,7 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuttaminen merkkijonoksi"
 weight: 28
 ---
 
-## Mitä ja Miksi?
-
-Päivämäärän muuntaminen merkkijonoksi C:ssä tarkoittaa päivämäärärakenteen tai aikaleiman kääntämistä ihmisen luettavaan muotoon. Ohjelmoijat suorittavat usein tämän tehtävän näyttääkseen päivämääriä lokeissa, käyttöliittymissä tai tallentaessaan päivämääriä tekstipohjaiseen muotoon kuten JSON tai CSV.
-
 ## Kuinka:
-
 `<time.h>` kirjaston `strftime` funktiota käytetään yleisesti tähän tarkoitukseen. Se mahdollistaa päivämäärän ja ajan muotoilun monin eri tavoin määrittämällä muotoiluspesifikaattoreita. Tässä on nopea esimerkki:
 
 ```c
@@ -48,7 +43,6 @@ Nykyinen päivämäärä ja aika: Wed Jun 30 21:49:08 2021
 Voit räätälöidä muodon vaihtamalla `strftime` -funktiolle annettavia muotoiluspesifikaattoreita. Esimerkiksi saadaksesi päivämäärän muodossa `VVVV-KK-PP`, käyttäisit `"Y-%m-%d"`.
 
 ## Syväsukellus
-
 `strftime` funktio ja `<time.h>` kirjasto ovat osa C Standard Kirjastoa, joka juontaa juurensa alkuperäiseen ANSI C standardiin (C89/C90). Vaikka suoraviivainen ja laajalti tuettu monilla alustoilla, tämä lähestymistapa voi tuntua matalan tason ja hankalalta verrattuna moderneihin ohjelmointikieliin, jotka tarjoavat intuitiivisempia päivämäärä- ja aikakirjastoja.
 
 Tulisi huomata, vaikkakin C standardikirjaston aikatoiminnot ovat laajalti tuetut ja suhteellisen yksinkertaisia käyttää, ne kaipaavat joitakin monimutkaisempia aikavyöhykkeiden käsittelyn ja kansainvälistämisen ominaisuuksia, jotka löytyvät uudempien kielten kirjastoista tai kolmansien osapuolien C kirjastoista, kuten International Components for Unicode (ICU).

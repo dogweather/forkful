@@ -10,9 +10,6 @@ title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---
 
-## What & Why?
-Concaténer des chaînes, c'est les assembler bout à bout. On le fait pour construire du texte dynamiquement, combiner des données ou créer des commandes.
-
 ## How to:
 ```Arduino
 void setup() {

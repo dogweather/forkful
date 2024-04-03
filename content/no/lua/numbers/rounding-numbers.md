@@ -10,9 +10,6 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva & Hvorfor?
-Avrunding av tall betyr å justere dem til nærmeste heltall eller angitt desimalplass. Det er en grunnpilar i programmering for å redusere kompleksitet, forbedre ytelse, og for når presisjon utover et visst punkt ikke tilfører verdi.
-
 ## Hvordan:
 ```lua
 -- Grunnleggende avrunding i Lua kommer ikke innebygd, men du kan definere en funksjon:

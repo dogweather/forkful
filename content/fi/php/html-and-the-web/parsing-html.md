@@ -12,9 +12,6 @@ title: "HTML:n j\xE4sennys"
 weight: 43
 ---
 
-## Mikä & Miksi?
-HTML:n jäsentäminen PHP:lla tarkoittaa tiettyjen tietojen poimimista HTML-dokumenteista. Ohjelmoijat suorittavat tämän tehtävän automatisoidakseen tietojen keruun, verkkosivujen kaapimisen tai integroidakseen sisältöä eri verkkosivuilta sovelluksiinsa, parantaen toiminnallisuutta ilman manuaalista sekaantumista.
-
 ## Kuinka:
 HTML:n jäsentämiseen PHP-ohjelmoijat voivat hyödyntää sisäänrakennettuja funktioita tai nojata vankkoihin kirjastoihin, kuten Simple HTML DOM Parser. Tässä tutustumme esimerkkeihin käyttäen sekä PHP:n `DOMDocument` että Simple HTML DOM Parseria.
 

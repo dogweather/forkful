@@ -13,14 +13,10 @@ title: Kontrollera om en katalog existerar
 weight: 20
 ---
 
-## Vad & Varför?
-
-Att kontrollera om en katalog finns i C# innebär att man verifierar närvaron av en mapp på en angiven sökväg i filsystemet. Programmerare gör detta för att undvika fel såsom att försöka läsa från eller skriva till en icke-existerande katalog, vilket säkerställer smidigare hantering av filer och kataloger.
-
 ## Hur man gör:
 
-### Använda System.IO
 
+### Använda System.IO
 C# tillhandahåller namnrymden `System.IO` som innehåller `Directory`-klassen, som erbjuder ett direkt sätt att kontrollera en katalogs existens genom metoden `Exists`.
 
 ```csharp
@@ -51,7 +47,6 @@ Directory exists: False
 I fall katalogen faktiskt finns på sökvägen `C:\ExampleDirectory`, kommer utdatan att vara `True`.
 
 ### Använda System.IO.Abstractions för enhetstestning
-
 När det kommer till att göra din kod enhetstestbar, speciellt när den interagerar med filsystemet, är paketet `System.IO.Abstractions` ett populärt val. Det låter dig abstrahera och förlöjliga (mocka) filsystemoperationer i dina tester. Så här kan du kontrollera om en katalog finns genom att använda detta tillvägagångssätt:
 
 Först, se till att du har installerat paketet:

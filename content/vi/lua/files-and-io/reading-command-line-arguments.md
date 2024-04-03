@@ -15,12 +15,7 @@ title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---
 
-## Cái gì & Tại sao?
-
-Đọc các đối số dòng lệnh có nghĩa là nắm bắt những phần bổ sung bạn gõ sau tên của script trong bảng điều khiển. Lập trình viên làm điều này để điều chỉnh hành vi của chương trình mà không thay đổi mã, như chọn một tệp để mở hoặc thiết lập độ chi tiết của đầu ra.
-
 ## Làm thế nào:
-
 Dưới đây là cách nắm bắt những đối số đó trong Lua:
 
 ```Lua
@@ -44,7 +39,6 @@ Xin chào, người lạ!
 ```
 
 ## Đi sâu vào vấn đề
-
 Lua giữ mọi thứ đơn giản với bảng `arg` toàn cục. Lịch sử cho thấy, mọi người đã đọc các đối số dòng lệnh trong lập trình từ khi thời sơ khai (chà, từ khi UNIX ra đời, ít nhất). Đó là một phần không thể thiếu của việc tùy chỉnh.
 
 Trong Lua, `arg` là một mảng chứa tất cả các món ngon dòng lệnh. `arg[0]` là tên script, và `arg[1]` trở đi là các đối số thực sự. Bạn có thể thu thập tất cả chúng với một vòng lặp nếu bạn cảm thấy oách:
@@ -60,7 +54,6 @@ Có phương pháp khác không? Chắc chắn, có các thư viện ngoài kia 
 Về chi tiết triển khai, nhớ rằng mảng của Lua bắt đầu từ 1 (đếm bắt đầu từ 1), không phải 0 như nhiều ngôn ngữ khác. Đó là lý do tại sao `arg[1]` là đối số đầu tiên chứ không phải `arg[0]`.
 
 ## Xem Thêm
-
 Đối với những ai muốn tìm hiểu thêm, dưới đây là một số thông tin bổ sung:
 
 - Sổ tay tham khảo Lua 5.4 về bảng `arg`: https://www.lua.org/manual/5.4/manual.html#6.1

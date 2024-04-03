@@ -11,9 +11,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---
 
-## What & Why? - Mitä & Miksi?
-Päivämäärän muuntaminen merkkijonoksi tarkoittaa päivämäärää edustavan tietorakenteen siirtämistä tekstiesitykseen. Ohjelmoijat tekevät tämän, jotta päivämäärät voi näyttää käyttöliittymässä tai tallentaa ihmisluettavassa muodossa.
-
 ## How to: - Kuinka:
 ```C++
 #include <iostream>

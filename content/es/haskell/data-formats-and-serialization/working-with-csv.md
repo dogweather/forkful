@@ -12,12 +12,7 @@ title: Trabajando con CSV
 weight: 37
 ---
 
-## ¿Qué y Por Qué?
-
-Trabajar con CSVs (Valores Separados por Comas) implica analizar y generar archivos que almacenan datos tabulares en un formato de texto simple. Los programadores frecuentemente realizan esta tarea para importar o exportar datos de manera eficiente desde hojas de cálculo, bases de datos, o para facilitar el intercambio de datos entre diferentes programas.
-
 ## Cómo hacerlo:
-
 En Haskell, el manejo de archivos CSV se puede lograr utilizando la biblioteca `cassava`, una de las bibliotecas de terceros más populares para este propósito. A continuación, se muestran ejemplos de cómo leer y escribir en archivos CSV usando `cassava`.
 
 **1. Leyendo un archivo CSV:**

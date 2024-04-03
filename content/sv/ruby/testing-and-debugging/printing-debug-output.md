@@ -11,9 +11,6 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## What & Why?
-Utskrift för felsökning är när vi spottar ut text till konsolen för att se vad som händer i vår kod. Programmerare gör detta för att snabbt hitta och rätta till fel.
-
 ## How to:
 Ruby ger oss `puts` och `p` för att skriva ut värden:
 

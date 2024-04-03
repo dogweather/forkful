@@ -22,11 +22,8 @@ title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 weight: 38
 ---
 
-## 什么 & 为什么？
-
-使用 JSON（JavaScript 对象表示法）涉及将 JSON 数据解析为 TypeScript 中可用的格式，并从该格式解析出来。程序员这样做是为了轻松地操作、存储或传输结构化数据，因为 JSON 是轻量级的、基于文本的，并且对人类和机器都易于阅读。
-
 ## 如何操作：
+
 
 ### 将 JSON 解析为 TypeScript 对象
 要将 JSON 字符串转换为 TypeScript 对象，您使用 `JSON.parse()` 方法。这在从 Web 服务器接收 JSON 数据或读取 JSON 文件时很有用。

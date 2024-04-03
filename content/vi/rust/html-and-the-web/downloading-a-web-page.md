@@ -14,12 +14,7 @@ title: "T\u1EA3i trang web"
 weight: 42
 ---
 
-## Cái gì & Tại sao?
-
-Tải xuống một trang web có nghĩa là lấy dữ liệu mà nó chứa. Lập trình viên làm điều này để lấy thông tin, tự động hóa các bài test, cào dữ liệu, hoặc kiểm tra tính khả dụng của trang web.
-
 ## Cách thực hiện:
-
 Hãy tải xuống một trang web sử dụng crate `reqwest` của Rust, nó cung cấp một API không đồng bộ, đơn giản để thực hiện các yêu cầu HTTP.
 
 Đầu tiên, thêm `reqwest` và `tokio` vào file `Cargo.toml` của bạn:
@@ -62,7 +57,6 @@ Nội dung:
 ```
 
 ## Đi sâu vào vấn đề
-
 Crate `reqwest` là một trong những cách đơn giản nhất để tải nội dung web bằng Rust. Nó được phát triển từ các thư viện HTTP trước đó, cung cấp cả giao diện đồng bộ và không đồng bộ.
 
 Các phương án thay thế bao gồm các thư viện cấp thấp hơn như `hyper` (mà chính `reqwest` sử dụng dưới hình thức cơ bản), hoặc sử dụng các liên kết `curl` cho Rust.
@@ -70,7 +64,6 @@ Các phương án thay thế bao gồm các thư viện cấp thấp hơn như `
 Các bước thực hiện chính cho việc tải một trang bao gồm việc thực hiện một yêu cầu GET HTTP và xử lý phản hồi. Lập trình không đồng bộ với `tokio` có nghĩa là ứng dụng của bạn vẫn phản hồi trong khi hoạt động mạng hoàn thành.
 
 ## Tham khảo thêm:
-
 - [Tài liệu `reqwest`](https://docs.rs/reqwest/)
 - [Tài liệu `tokio`](https://docs.rs/tokio/)
 - [Sách về `async`/`await` của Rust](https://rust-lang.github.io/async-book/)

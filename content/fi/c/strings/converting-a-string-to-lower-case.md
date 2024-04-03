@@ -14,12 +14,7 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## Mikä ja miksi?
-
-Merkkijonon muuntaminen pieniksi kirjaimiksi C-kielessä sisältää sen, että kaikki annetun merkkijonon isot kirjaimet muunnetaan vastaaviksi pieniksi kirjaimiksi. Ohjelmoijat suorittavat usein tämän toimenpiteen, jotta tekstisyöte standardoitaisiin vertailua, hakuoperaatioita varten, tai yksinkertaisesti ulostulon esteettisen yhtenäisyyden vuoksi.
-
 ## Kuinka:
-
 C:ssä ei ole sisäänrakennettua funktiota merkkijonon muuntamiseksi suoraan pieniksi kirjaimiksi, toisin kuin jotkut korkean tason kielet. Tämä prosessi voidaan kuitenkin helposti toteuttaa käyttämällä C-standardikirjaston funktioita. Alla on askel askeleelta opas ja esimerkki siitä, miten merkkijono muunnetaan pieniksi kirjaimiksi.
 
 ```c
@@ -54,7 +49,6 @@ Pienikirjaiminen: hello, world!
 Esimerkissä `toLowerCase` funktio käy läpi jokaisen syötemerkkijonon merkin, muuntaen sen pienikirjaimiseksi vastineeksi käyttäen `tolower` funktiota `ctype.h`:sta. Muutos tehdään paikan päällä, muokaten alkuperäistä merkkijonoa.
 
 ## Syvemmälle
-
 Esimerkissä yllä käytetty `tolower` funktio on osa C-standardikirjastoa, erityisesti `ctype.h` otsikkotiedostossa. Se toimii nykyisen lokaalin perusteella, mutta standardille "C" lokaalille se käsittelee ASCII-merkistöä, jossa 'A':sta 'Z':aan muunnetaan 'a':ksi 'z':aan.
 
 Historiallisesti merkistöjen koodaamisen ja kirjainkoon muuntamisen käsittely C:ssä oli tiiviisti sidoksissa ASCII-merkistöön, rajoittaen sen hyödyllisyyttä kansainvälisissä tai lokaaleissa sovelluksissa, joissa tavalliset merkit ASCII-merkistön ulkopuolelta ovat yleisiä. Modernit ohjelmointikielet saattavat tarjota sisäänrakennettuja merkkijonometodeja suorittamaan kirjainkoon muunnoksen ottaen huomioon lokaalin ja Unicode-merkit, joita C:ssä ei ole natiivisti.

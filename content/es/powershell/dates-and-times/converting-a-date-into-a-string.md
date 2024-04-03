@@ -10,9 +10,6 @@ title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---
 
-## Qué y Por Qué?
-Convertir una fecha en cadena permite presentarla en un formato legible o específico. Los programadores lo hacen para mejorar la interfaz de usuario, almacenar información de manera uniforme o facilitar comparaciones de fechas.
-
 ## Cómo hacerlo:
 Usa el método `ToString()` de un objeto DateTime para convertirlo en cadena. Puedes especificar el formato:
 

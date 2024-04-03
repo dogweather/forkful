@@ -11,9 +11,6 @@ title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---
 
-## What & Why? - "Vad & Varför?"
-Jämföra två datum innebär att bestämma deras relation - är ett tidigare, senare eller samma dag. Programmerare gör detta för att hantera tidsbaserade händelser, som utgångsdatum, schemaläggning eller att beräkna tidsintervaller.
-
 ## How to: - "Hur gör man:"
 ```TypeScript
 const date1: Date = new Date('2023-04-01T00:00:00');

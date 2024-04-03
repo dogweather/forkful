@@ -14,12 +14,7 @@ title: Usando arrays associativos
 weight: 15
 ---
 
-## O Que & Porquê?
-
-Arrays associativos, ou como o Elm os chama, Dicionários, mapeiam chaves para valores de uma forma que torna a busca, inserção e exclusão de valores extremamente rápidas. Eles são sua melhor opção quando você precisa acompanhar coisas sem uma ordem estrita, como preferências de usuários ou listas de inventário.
-
 ## Como:
-
 No Elm, você trabalha com Dicionários no módulo `Dict`, então vamos mergulhar em um exemplo rápido:
 
 ```Elm
@@ -52,7 +47,6 @@ Saída de amostra ao exibir `dictToList`:
 Isso demonstra as operações básicas: criar, atualizar, acessar e iterar sobre um Dicionário.
 
 ## Aprofundamento
-
 Os Dicionários no Elm internamente usam uma estrutura conhecida como árvore AVL - um tipo de árvore binária de busca autoequilibrada. Essa escolha equilibra garantir que operações como inserir, obter e remover tenham bom desempenho (complexidade de tempo logarítmico) e manter a simplicidade no manuseio dos dados.
 
 Apesar das forças do `Dict` do Elm, ele não é uma solução que serve para todos os casos. Para coleções que são ordenadas ou precisam ser iteradas sequencialmente, Lista ou Array podem ser mais apropriados. Além disso, ao trabalhar com um conjunto fixo de chaves conhecidas, usar tipos personalizados (a versão do Elm de enums) pode oferecer mais segurança de tipo e uma intenção mais clara no seu código.

@@ -10,9 +10,6 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-REPL står för Read-Eval-Print Loop, en enkel, interaktiv programmeringsmiljö. Programmerare använder den för att snabbt skriva och testa kod, experimentera med syntax och lära sig programmeringskoncept utan overheaden av att skapa och köra hela applikationer.
-
 ## Hur man gör:
 I Bash är din terminal i princip en REPL. Du skriver ett kommando; den läser det, utvärderar det, skriver ut resultatet och loopar tillbaka och väntar på ditt nästa kommando. Här är ett exempel på hur du använder Bash som en REPL:
 

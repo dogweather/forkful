@@ -11,9 +11,6 @@ title: Lancement d'un nouveau projet
 weight: 1
 ---
 
-## Quoi & Pourquoi ?
-Démarrer un nouveau projet en C++, c'est créer un monde de possibilités. Les programmeurs se lancent dans cette aventure pour résoudre des problèmes, apprendre ou innover.
-
 ## Comment faire :
 Imaginons un projet simple : un programme qui dit bonjour. Voici le code.
 
@@ -46,7 +43,6 @@ Pourquoi ne pas utiliser un framework ou une bibliothèque ? C'est utile, mais p
 L'implémentation d'un projet va différer selon le système d'exploitation. Si vous êtes sous Windows, le processus peut impliquer l'utilisation de Visual Studio et de son compilateur MSVC. Sous Linux, `g++` est souvent utilisé avec un éditeur de texte, et tout se fait via le terminal.
 
 ## Voir Aussi
-
 - Tutoriels C++ pour débutants : [cplusplus.com](http://www.cplusplus.com/)
 - Installation et configuration de votre environnement de développement C++ : [cppreference.com](https://en.cppreference.com/w/cpp/compiler_support)
 - Documentation officielle de g++ : [GCC online documentation](https://gcc.gnu.org/onlinedocs/)

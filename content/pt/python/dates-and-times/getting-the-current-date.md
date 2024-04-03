@@ -14,12 +14,7 @@ title: Obtendo a data atual
 weight: 29
 ---
 
-## O Que & Por Que?
-
-Buscar a data atual em Python é uma operação fundamental para muitas aplicações, como registros (logging), análise de dados e tomada de decisões baseadas no tempo. Trata-se de obter a data atual do sistema, o que é crucial para tarefas que dependem do contexto temporal.
-
 ## Como Fazer:
-
 **Usando a biblioteca padrão `datetime`:**
 
 O módulo `datetime` na biblioteca padrão do Python fornece classes para manipulação de datas e horários. Para obter a data atual, você pode usar o método `date.today()`.

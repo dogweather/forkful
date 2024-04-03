@@ -12,9 +12,6 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## What & Why? ("Co i Dlaczego?")
-Wyszukiwanie i zamiana tekstu to podstawowe operacje umożliwiające zmianę jednego ciągu znaków na inny w obrębie większego tekstu. Programiści robią to często: aby poprawić błędy, zmieniać nazwy czy dostosowywać dane.
-
 ## How to: ("Jak to zrobić:")
 ```java
 import java.util.regex.Matcher;

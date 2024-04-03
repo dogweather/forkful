@@ -12,12 +12,7 @@ title: Usando expresiones regulares
 weight: 11
 ---
 
-## Qué y Por Qué?
-
-Las expresiones regulares (regex) ofrecen una manera de buscar, coincidir y manipular cadenas utilizando patrones definidos. Los programadores las utilizan extensivamente para tareas como validar entradas, analizar datos de texto y encontrar patrones dentro de grandes archivos de texto, convirtiéndolas en una herramienta poderosa en cualquier lenguaje, incluyendo C.
-
 ## Cómo hacerlo:
-
 Para usar expresiones regulares en C, principalmente estarás trabajando con la biblioteca de regex POSIX (`<regex.h>`). Este ejemplo demuestra el emparejamiento de patrones básico:
 
 ```c
@@ -66,7 +61,6 @@ No se encontró coincidencia
 ```
 
 ## Profundización:
-
 Las expresiones regulares en C, como parte del estándar POSIX, ofrecen una manera robusta de realizar coincidencias y manipulaciones de cadenas. Sin embargo, la API de la biblioteca regex POSIX en C se considera más engorrosa que aquellas encontradas en lenguajes diseñados con características de manipulación de cadenas de primera clase como Python o Perl. La sintaxis para patrones es similar a través de los lenguajes, pero C requiere una gestión manual de la memoria y más código de plantilla para preparar, ejecutar y limpiar después de usar patrones regex.
 
 A pesar de estos desafíos, aprender a usar regex en C es gratificante porque profundiza la comprensión de conceptos de programación de bajo nivel. Adicionalmente, abre posibilidades para la programación en C en áreas como el procesamiento de texto y la extracción de datos donde regex es indispensable. Para patrones más complejos u operaciones regex, alternativas como la biblioteca PCRE (Perl Compatible Regular Expressions) podrían ofrecer una interfaz más rica en características y algo más fácil, aunque requiere integrar una biblioteca externa en tu proyecto C.

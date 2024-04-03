@@ -12,9 +12,6 @@ title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---
 
-## Wat & Waarom?
-Een interactieve shell gebruiken, of een Read-Eval-Print Loop (REPL), stelt je in staat om interactief te coderen. Programmeurs gebruiken het om snel Swift-snippets te testen, te debuggen of de taal te leren.
-
 ## Hoe te:
 Roep REPL op door een terminal te openen en `swift` te draaien. Typ direct code in en druk op Enter om het uit te voeren. Hier is een voorproefje:
 

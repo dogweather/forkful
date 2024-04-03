@@ -11,9 +11,6 @@ title: Conversione di una data in una stringa
 weight: 28
 ---
 
-## What & Why?
-Tradurre una data in una stringa vuol dire trasformarla in un formato leggibile per gli umani. I programmatori lo fanno per mostrare le date in un'app o per memorizzarle in un formato standardizzato.
-
 ## How to:
 In Swift, usiamo `DateFormatter` per convertire le date in stringhe. Ecco un esempio:
 

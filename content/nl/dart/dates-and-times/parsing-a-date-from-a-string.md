@@ -13,9 +13,6 @@ title: Een datum ontleden uit een string
 weight: 30
 ---
 
-## Wat & Waarom?
-Een datum parseren vanuit een string in Dart houdt in dat je tekstuele weergaven van datums en tijden omzet naar een `DateTime` object. Deze bewerking is essentieel voor applicaties die te maken hebben met planning, gegevensanalyse, of elke functie die datummanipulatie vereist, zodat ervoor zorg gedragen wordt dat de datum gerelateerde gegevens correct worden begrepen en verwerkt door het programma.
-
 ## Hoe te:
 De kernbibliotheek van Dart vereenvoudigt het parseren van datums door de `DateTime` klasse. Voor eenvoudige gevallen waarin je het formaat van de datumstring kent, kun je de `DateTime.parse()` methode gebruiken. Echter, voor meer complexe scenario's of wanneer je te maken hebt met meerdere formaten, wordt het `intl` package, specifiek de `DateFormat` klasse, onmisbaar.
 

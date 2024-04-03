@@ -11,11 +11,6 @@ title: "\u521B\u5EFA\u4E34\u65F6\u6587\u4EF6"
 weight: 21
 ---
 
-## What & Why?
-什么以及为什么?
-
-Temporary files are those created to temporarily contain information while a program is running. Programmers create them for tasks like intermediate data processing, which helps in preserving memory and avoiding clutter.
-
 ## How to:
 怎么做:
 

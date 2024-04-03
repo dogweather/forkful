@@ -12,9 +12,6 @@ title: Samenvoegen van strings
 weight: 3
 ---
 
-## Wat & Waarom?
-Stringconcatenatie is het aan elkaar plakken van strings om een nieuwe te maken. We doen dit om berichten te construeren, output te genereren of dynamisch met tekst te werken.
-
 ## Hoe:
 Rust biedt je een paar manieren om teksten samen te voegen. Laten we het eens bekijken.
 

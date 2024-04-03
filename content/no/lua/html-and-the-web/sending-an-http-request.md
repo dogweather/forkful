@@ -10,9 +10,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel betyr å be om data fra en server. Programmerere gjør dette for å kommunisere med webtjenester, hente innhold, eller legge til data på en fjern server.
-
 ## Hvordan:
 ```Lua
 -- Last inn HTTP-biblioteket

@@ -16,12 +16,7 @@ title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---
 
-## Gì và Tại sao?
-
-Viết vào lỗi chuẩn (stderr) trong Dart là về việc gửi thông điệp lỗi và chẩn đoán đến một luồng riêng biệt, khác biệt so với đầu ra chuẩn (stdout). Các lập trình viên làm điều này để phân biệt giữa đầu ra chương trình bình thường và các lỗi hoặc cảnh báo thông điệp, cho phép dễ dàng gỡ lỗi và ghi nhật ký hơn.
-
 ## Làm thế nào:
-
 Trong Dart, viết vào stderr rất đơn giản sử dụng đối tượng `stderr` có sẵn trong `dart:io`. Dưới đây là một ví dụ cơ bản:
 
 ```dart

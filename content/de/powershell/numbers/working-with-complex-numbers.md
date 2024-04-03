@@ -10,9 +10,6 @@ title: Umgang mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-Komplexe Zahlen, die einen Realteil und einen Imaginärteil haben (wie 3 + 4i), sind lebenswichtig in Bereichen wie Technik, Physik und Datenwissenschaft. Programmierer verwenden sie für Simulationen, Signalverarbeitung und zur Lösung spezifischer Arten von mathematischen Problemen.
-
 ## Wie zu:
 PowerShell hat keine eingebaute Unterstützung für komplexe Zahlen, daher müssen Sie entweder Ihre eigene Lösung entwickeln oder .NET's `System.Numerics.Complex` verwenden.
 

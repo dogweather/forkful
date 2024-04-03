@@ -31,12 +31,7 @@ title: "\u0924\u093E\u0930\u0940\u0916 \u0915\u094B \u0938\u094D\u091F\u094D\u09
 weight: 28
 ---
 
-## क्या और क्यों?
-
-डेट को स्ट्रिंग में बदलना मतलब है तारीख और समय को पठनीय फॉर्मेट में परिवर्तित करना। प्रोग्रामर्स इसे इसलिए करते हैं ताकि एप्लिकेशन यूजर्स आसानी से तारीख और समय को समझ सकें और स्क्रीन पर सही तरीके से प्रदर्शित हो।
-
 ## कैसे करें:
-
 Swift में `DateFormatter` का इस्तेमाल करते हुए डेट को स्ट्रिंग में बदल सकते हैं। नीचे कोड दिया गया है:
 
 ```Swift
@@ -57,10 +52,8 @@ print(dateString)
 ```
 
 ## गहराई में जानकारी:
-
 `DateFormatter` में `dateFormat` का इस्तेमाल करके डेट को विभिन्न प्रकार के स्ट्रिंग फॉर्मेट्स में प्रदर्शित किया जा सकता है। `DateFormatter` कौन्सेप्ट 1980s से है, जब आईबीएम के सिस्टम/३८ में समान उपकरण थे। वैकल्पिक रूप से, `ISO8601DateFormatter` का उपयोग करके ISO-8601 मानक तारीखें बनाई जा सकती हैं। Swift में `Date` और `String` के बीच परिवर्तन कई तरीकों से किया जा सकता है, जिसमें `.timeIntervalSince1970` या कस्टम पैर्टन्स जैसे `"EEEE, MMM d, yyyy"` भी शामिल हैं।
 
 ## संबंधित सूत्रों की जानकारी:
-
 - [Apple's Date Formatting Guide](https://developer.apple.com/documentation/foundation/dateformatter)
 - [Swift Documentation: DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)

@@ -18,12 +18,7 @@ title: "\u5904\u7406\u9519\u8BEF"
 weight: 16
 ---
 
-## 何为“错误处理”以及为什么要进行错误处理？
-
-错误处理是指在代码执行不正常时您管理这些问题的方式。它非常关键，因为错误处理帮助您的程序优雅地失败并清晰地指导用户，而不是简单地崩溃和燃烧。
-
 ## 如何处理：
-
 这里是经典的`try-catch`块：
 
 ```javascript
@@ -63,7 +58,6 @@ fetchData();
 ```
 
 ## 深入探讨
-
 JavaScript中的错误处理已经发展。早在ES3时代（大约1999年），我们只有`try-catch`块。虽然不是非常灵活，但它完成了任务。
 
 ES6（2015）引入了Promises，并提供了`.then()`和`.catch()`，使我们能够更优雅地处理异步错误。
@@ -79,7 +73,6 @@ fetch('https://api.example.com/data')
 其他选择？您可以忽略错误处理（坏主意），使用具有错误优先参数的回调（你好，Node.js风格），或者使用提供他们看法的库和框架来进行更高级的处理。
 
 ## 另见
-
 有关错误处理的更多信息：
 
 - MDN上的try-catch：[MDN try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)

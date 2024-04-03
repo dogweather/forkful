@@ -15,9 +15,6 @@ title: "Supprimer les guillemets d'une cha\xEEne de caract\xE8res"
 weight: 9
 ---
 
-## Quoi & Pourquoi ?
-Enlever les guillemets d'une chaîne de caractères en Dart consiste à retirer les marques de citation doubles (") ou simples (') au début et à la fin d'une chaîne, utile pour le nettoyage de données ou la préparation des chaînes pour un traitement ultérieur. Les programmeurs font cela pour normaliser les entrées de données, assurer l'uniformité dans le stockage des données ou lorsqu'ils interagissent avec des API qui peuvent retourner des données au format cité.
-
 ## Comment faire :
 Dart offre des moyens directs pour enlever les guillemets d'une chaîne en utilisant des méthodes de chaîne intégrées, sans nécessiter de bibliothèques tierces.
 

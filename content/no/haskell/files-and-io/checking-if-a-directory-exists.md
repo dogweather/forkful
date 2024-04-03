@@ -14,9 +14,6 @@ title: Sjekker om en mappe eksisterer
 weight: 20
 ---
 
-## Hva & Hvorfor?
-Å sjekke om en mappe eksisterer er en grunnleggende operasjon i mange programmeringsoppgaver, som tillater betingede handlinger basert på tilstedeværelsen eller fraværet av katalogstrukturer. Det er avgjørende for filmanipulasjon, automatiserte skript, og under den innledende oppsettet av programvare for å sikre at nødvendige mapper er på plass, eller for å unngå å duplisere mapper.
-
 ## Hvordan:
 Haskell, gjennom sitt basebibliotek, tilbyr enkle måter å sjekke for eksistensen av mapper, hovedsakelig ved å bruke `System.Directory`-modulen. La oss se på et grunnleggende eksempel:
 

@@ -11,11 +11,7 @@ title: Calcolo di una data futura o passata
 weight: 26
 ---
 
-## Cosa & Perché?
-Calcolare una data nel futuro o nel passato significa semplicemente aggiungere o sottrarre un certo numero di giorni, mesi o anni da una data specifica. I programmatori fanno questo per gestire eventi, scadenze, funzionalità legate al tempo in applicazioni, o per analizzare intervalli temporali.
-
 ## Come fare:
-
 ```TypeScript
 const calcolaDataFutura = (dataIniziale: Date, giorni: number): Date => {
   const risultato = new Date(dataIniziale);

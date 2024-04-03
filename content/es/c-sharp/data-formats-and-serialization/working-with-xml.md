@@ -11,9 +11,6 @@ title: Trabajando con XML
 weight: 40
 ---
 
-## ¿Qué y Por Qué?
-XML (Lenguaje de Marcas eXtensible) trata sobre estructurar datos en un formato legible. Los programadores manejan XML para configuración, intercambio de datos entre aplicaciones y donde las especificaciones lo requieran—piense en SOAP o APIs web.
-
 ## Cómo hacerlo:
 ```C#
 using System;

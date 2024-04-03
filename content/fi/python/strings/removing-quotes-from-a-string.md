@@ -11,9 +11,6 @@ title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---
 
-## Mikä & Miksi?
-Lainausmerkkien poistaminen merkkijonosta tarkoittaa yleensä ylimääräisten kaksois- (") tai yksittäisten (') lainausmerkkien karsimista. Ohjelmoijat tekevät tämän syötteen desinfioimiseksi tai kun lainausmerkkejä ei tarvita jatkokäsittelyssä—kuten tekstin tallentamisessa tietokantaan tai valmisteltaessa sitä näyttöä varten.
-
 ## Kuinka:
 Python tarjoaa useita tapoja päästä eroon ei-toivotuista lainausmerkeistä merkkijonoista. Käydään läpi joitakin esimerkkejä:
 

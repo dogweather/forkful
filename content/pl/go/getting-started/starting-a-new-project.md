@@ -14,12 +14,7 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## Co i dlaczego?
-
-Rozpoczęcie nowego projektu w Go wiąże się z przygotowaniem obszaru roboczego i zainicjowaniem go przy pomocy niezbędnych modułów Go. Programiści robią to w celu organizacji kodu, skutecznego zarządzania zależnościami oraz ułatwienia procesów kompilacji. Jest to podstawowe dla tworzenia skalowalnych i łatwych w utrzymaniu oprogramowań w Go.
-
 ## Jak to zrobić:
-
 Najpierw upewnij się, że Go jest zainstalowane, uruchamiając `go version` w terminalu. Powinieneś zobaczyć zainstalowaną wersję Go jako wynik. Następnie, zacznijmy nowy projekt. Przejdź do swojego obszaru roboczego i uruchom:
 
 ```shell
@@ -74,7 +69,6 @@ Hello, World!
 Gratulacje! Właśnie zacząłeś nowy projekt Go i uruchomiłeś swój pierwszy program w Go.
 
 ## Wnikliwe spojrzenie
-
 Inicjatywa wprowadzenia modułów jako standardu do zarządzania zależnościami w Go była znaczącą zmianą w ekosystemie Go, oficjalnie przyjętą w Go 1.11. Przed modułami, programiści Go opierali się na zmiennej środowiskowej GOPATH do zarządzania zależnościami, co było mniej intuicyjne i często prowadziło do niesławnej "piekła zależności".
 
 Moduły zapewniają enkapsulowany sposób zarządzania zależnościami projektu, wersjonowania i są krokiem w kierunku robienia projektów Go bardziej samowystarczalnymi i przenośnymi. Każdy moduł określa swoje zależności, które Go śledzi w pliku `go.mod`, upraszczając zarządzanie zależnościami w różnych środowiskach i etapach rozwoju.

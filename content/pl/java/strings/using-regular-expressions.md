@@ -14,12 +14,7 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-
-Wyrażenia regularne (regex) w Javie pozwalają definiować specyficzne wzorce do wyszukiwania, manipulowania lub walidacji ciągów znaków w twoim kodzie. Programiści używają ich do zadań takich jak parsowanie plików logów, walidacja danych użytkownika lub wyszukiwanie konkretnych wzorców w tekście, umożliwiając zaawansowane przetwarzanie ciągów znaków z minimalnym wysiłkiem.
-
 ## Jak to zrobić:
-
 Wbudowane wsparcie dla regex w Javie zapewniają przede wszystkim klasy `Pattern` i `Matcher` z pakietu `java.util.regex`. Oto prosty przykład, jak znaleźć i wydrukować wszystkie wystąpienia słowa w ciągu znaków, niezależnie od wielkości liter:
 
 ```java

@@ -13,14 +13,10 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-
-Wyrażenia regularne (regex) w JavaScript są wzorcami używanymi do dopasowywania kombinacji znaków w ciągach tekstowych. Programiści używają ich do wyszukiwania, ekstrakcji i manipulowania tekstem, co pozwala na potężne operacje przetwarzania ciągów znaków za pomocą zwięzłego kodu.
-
 ## Jak to zrobić:
 
-### Podstawowe Dopasowanie
 
+### Podstawowe Dopasowanie
 Na początek możesz stworzyć prosty wzór regex i użyć go do znalezienia dopasowań w ciągu tekstowym. Tutaj znajdziemy słowo "kod":
 
 ```javascript
@@ -31,7 +27,6 @@ console.log(result); // true
 ```
 
 ### Użycie `String.prototype.match()`
-
 Aby otrzymać tablicę dopasowań:
 
 ```javascript
@@ -41,7 +36,6 @@ console.log(matches.index); // 10
 ```
 
 ### Globalne Wyszukiwanie
-
 Aby znaleźć wszystkie dopasowania, użyj flagi `g`:
 
 ```javascript
@@ -50,7 +44,6 @@ console.log(globalMatches); // ["o", "o", "o"]
 ```
 
 ### Dopasowanie Niezależne od Wielkości Liter
-
 Flaga `i` ignoruje wielkość liter:
 
 ```javascript
@@ -59,7 +52,6 @@ console.log(caseInsensitiveMatch[0]); // "JavaScript"
 ```
 
 ### Zastępowanie Tekstu
-
 Użyj `String.prototype.replace()`, aby zastąpić części ciągu tekstowego:
 
 ```javascript
@@ -68,7 +60,6 @@ console.log(newStr); // "JavaScript jest niesamowity"
 ```
 
 ### Użycie Grup
-
 Grupy mogą przechwytywać części wzorca:
 
 ```javascript
@@ -78,7 +69,6 @@ console.log(replaceWithGroups); // "fajny jest JavaScript"
 ```
 
 ### Biblioteki Stron Trzecich
-
 Chociaż wbudowane możliwości regex JavaScript są potężne, niektóre zadania mogą być uproszczone za pomocą bibliotek takich jak `XRegExp`. Oferuje dodatkową składnię i flagi, dzięki czemu skomplikowane wzorce są bardziej czytelne:
 
 ```javascript

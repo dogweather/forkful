@@ -14,9 +14,6 @@ title: "T\u1EA3i trang web"
 weight: 42
 ---
 
-## Cái gì & Tại sao?
-Tải xuống một trang web có nghĩa là lấy dữ liệu từ internet và lưu trữ cục bộ. Lập trình viên thực hiện điều này cho các mục đích như web scraping, phân tích ngoại tuyến, hoặc sao lưu.
-
 ## Cách thực hiện:
 Công cụ tiêu biểu cho công việc này? `curl`. Đó là một tiện ích dòng lệnh mạnh mẽ giúp tải dữ liệu từ web. Dưới đây là trường hợp sử dụng đơn giản nhất:
 

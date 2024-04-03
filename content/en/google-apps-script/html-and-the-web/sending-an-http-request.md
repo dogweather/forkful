@@ -11,12 +11,7 @@ title: Sending an HTTP request
 weight: 44
 ---
 
-## What & Why?
-
-Sending an HTTP request in Google Apps Script is about programmatically making a call to an external web server or API. Programmers do this to retrieve or send data to web services, integrating a vast realm of web resources and functionalities directly into their Google Apps Script projects.
-
 ## How to:
-
 In Google Apps Script, the primary way to send an HTTP request is by using the `UrlFetchApp` service. This service provides methods to make HTTP GET and POST requests. Here’s a simple example of making a GET request to retrieve JSON data:
 
 ```javascript
@@ -55,7 +50,6 @@ function postExample() {
 These snippets show basic GET and POST request implementations. The output will depend on the API response and can be viewed in Google Apps Script's Logger.
 
 ## Deep Dive
-
 Google Apps Script’s `UrlFetchApp` service has evolved significantly since its inception, offering more nuanced control over HTTP requests with features like setting headers, payload, and handling multipart/form-data for file uploads. While it provides a straightforward means to integrate external web services, developers coming from more robust backend languages may find its functionality somewhat limiting compared to libraries like Python's `requests` or JavaScript's `fetch` API in Node.js.
 
 One notable limitation is the execution time limit for Google Apps Script, which affects long-running requests. Additionally, while `UrlFetchApp` covers a wide range of use cases, more complex scenarios involving OAuth authentication or handling very large payloads may require creative solutions or leveraging additional Google Cloud resources.

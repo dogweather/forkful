@@ -12,9 +12,6 @@ title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---
 
-## What & Why?
-En JavaScript, supprimer des caractères qui correspondent à un motif, c'est comme filtrer les grains de sable d'un désert - on ne garde que ce qu'on veut. On le fait pour nettoyer des données, valider des entrées ou transformer du texte.
-
 ## How to:
 Utilisons `replace()` et les expressions régulières pour supprimer les chiffres d'une chaîne de caractères.
 

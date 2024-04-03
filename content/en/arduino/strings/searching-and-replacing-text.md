@@ -10,12 +10,7 @@ title: Searching and replacing text
 weight: 10
 ---
 
-## What & Why?
-
-Searching and replacing text lets you find specific characters or strings in a text and switch them out for something else. Programmers do it to modify code, data, or user inputs without a fuss.
-
 ## How to:
-
 Arduino doesn't natively support string search and replace in the way high-level languages do. However, you can work with character arrays or use the `String` class which offers the `replace()` method. While the former is memory-efficient, the latter is more straightforward. Let's focus on the `String` class for clarity.
 
 ```Arduino
@@ -37,7 +32,6 @@ I like oranges and oranges are great!
 ```
 
 ## Deep Dive
-
 Back in the day, string manipulation tasks on microcontrollers were rare — memory was limited, and applications were simpler. These days, with more complex projects and ample memory space (thanks to advances in microcontroller technology), such utilities are pretty standard.
 
 If you don't want to use the `String` class because of its dynamic memory use, which can cause fragmentation, you can still search and replace in C-style strings (null-terminated character arrays) using functions like `strchr()`, `strstr()`, and manual copying or replacement with loops. It's more involved but gives you greater control over memory.
@@ -81,7 +75,6 @@ I like oranges and oranges are great!
 ```
 
 ## See Also
-
 - [Arduino Reference: String Object](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
 - [Arduino Reference: String Replace Function](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
 - [Cplusplus.com: C String Functions](http://www.cplusplus.com/reference/cstring/)

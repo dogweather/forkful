@@ -11,9 +11,6 @@ title: Registrazione Eventi (Logging)
 weight: 17
 ---
 
-## Cos'è e Perché?
-"Logging" significa mantenere un registro degli eventi, delle transazioni o delle attività che si verificano nel tempo in un sistema. I programmatori lo utilizzano per eseguire il debug, monitorare lo stato di salute del sistema, raccogliere statistiche o persino audire l'uso, rendendolo una pratica indispensabile per mantenere e comprendere il comportamento del loro codice in varie condizioni.
-
 ## Come fare:
 Arduino non dispone di una libreria di logging integrata come alcuni altri ambienti, ma è possibile implementare un logging di base sulla console Seriale con poco sforzo. Ecco un esempio rapido per iniziare:
 

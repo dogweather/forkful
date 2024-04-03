@@ -10,9 +10,6 @@ title: "\u0417\u0430\u0432\u0430\u043D\u0442\u0430\u0436\u0435\u043D\u043D\u044F
 weight: 42
 ---
 
-## What & Why? (Що та Чому?)
-Downloading a web page means grabbing its HTML content from the internet. Programmers do this to automate data collection, test websites, or analyze online content.
-
 ## How to: (Як це зробити:)
 Let's use `curl` in Fish to download a webpage:
 

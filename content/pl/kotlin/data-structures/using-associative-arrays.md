@@ -13,12 +13,7 @@ title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---
 
-## Co i dlaczego?
-
-Tablice asocjacyjne, czyli mapy, w Kotlinie to kolekcje przechowujące pary klucz-wartość. Programiści używają ich do efektywnego organizowania i odzyskiwania danych na podstawie unikalnych kluczy, co ułatwia zarządzanie informacjami.
-
 ## Jak:
-
 Tworzenie i używanie mapy w Kotlinie jest proste. Oto krótki przewodnik, jak to zrobić:
 
 ```Kotlin
@@ -49,7 +44,6 @@ fun main() {
 ```
 
 ## Szczegółowa analiza
-
 Mapy Kotlinowe pochodzą bezpośrednio z jego interoperacyjności z Javą, gdzie mapy są istotną częścią kolekcji. Jednak Kotlin zwiększa ich użyteczność, dostarczając zarówno zmienne (`MutableMap`), jak i tylko do odczytu (`Map`) interfejsy, w przeciwieństwie do unifikowanego interfejsu `Map` Javy. To rozróżnienie jasno określa, czy kolekcja jest przeznaczona do modyfikacji, czy nie.
 
 Istotnym szczegółem w implementacji map w Kotlinie jest wyraźne rozróżnienie między mapami mutowalnymi a niemutowalnymi, co podkreśla skupienie języka na niemutowalności i bezpieczeństwie wątków.

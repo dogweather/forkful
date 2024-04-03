@@ -10,9 +10,6 @@ title: Lettura degli argomenti della riga di comando
 weight: 23
 ---
 
-## What & Why?
-Leggere gli argomenti della riga di comando permette di passare informazioni a un programma all'avvio. I programmatori lo fanno per rendere i loro script più flessibili e interattivi.
-
 ## How to:
 Clojure fornisce un modo semplice per accedere agli argomenti della riga di comando tramite la var `*command-line-args*`. Ecco un esempio:
 

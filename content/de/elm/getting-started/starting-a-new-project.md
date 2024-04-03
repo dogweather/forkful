@@ -10,9 +10,6 @@ title: Einen neuen Projekt starten
 weight: 1
 ---
 
-## Was & Warum?
-Ein neues Projekt zu starten bedeutet, von Grund auf etwas Neues zu schaffen. Programmierer machen das, um Ideen zu verwirklichen, Probleme zu lösen oder um neue Technologien zu erforschen.
-
 ## How to:
 Ein Elm-Projekt zu starten ist einfach. Hier ist, wie es geht:
 

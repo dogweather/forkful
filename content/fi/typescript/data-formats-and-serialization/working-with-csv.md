@@ -13,16 +13,10 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä & Miksi?
-
-CSV:n (pilkulla erotetut arvot) käsittelyyn kuuluu CSV-tiedostojen lukemista ja niihin kirjoittamista, mikä on yleinen tiedonvaihtomuoto sen yksinkertaisuuden ja laajan tuen ansiosta eri alustoilla ja kielillä. Ohjelmoijat käsittelevät CSV-tiedostoja tuodakseen tai viedäkseen tietoa sovelluksista, tietokannoista ja palveluista, mikä mahdollistaa helpon tiedon manipuloinnin ja jakamisen.
-
 ## Kuinka:
-
 TypeScriptissä voit työskennellä CSV-tiedostojen kanssa natiivikoodin tai kolmansien osapuolten kirjastojen, kuten `csv-parser` lukemiseen ja `csv-writer` kirjoittamiseen, avulla.
 
 ### CSV:n lukeminen `csv-parser` avulla
-
 Asenna ensin `csv-parser` npm:n kautta:
 
 ```
@@ -61,7 +55,6 @@ Tuloste on:
 ```
 
 ### CSV:n kirjoittaminen `csv-writer` avulla
-
 CSV-tiedostoon kirjoittaaksesi asenna ensin `csv-writer`:
 
 ```

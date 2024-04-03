@@ -11,9 +11,6 @@ title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---
 
-## What & Why?
-L'interpolation de chaînes c'est insérer des variables ou des expressions dans une chaîne de caractères. On le fait pour dynamiser les textes et les rendre plus flexibles.
-
 ## How to:
 En Fish, l'interpolation est simple et directe. Voici comment ça marche:
 

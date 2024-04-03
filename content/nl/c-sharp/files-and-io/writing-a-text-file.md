@@ -12,9 +12,6 @@ title: Een tekstbestand schrijven
 weight: 24
 ---
 
-## Wat & Waarom?
-Een tekstbestand schrijven betekent gegevens zoals strings opslaan in een bestand op je schijf. Programmeurs doen dit voor logging, het opslaan van configuraties, of gewoon datapersistentie.
-
 ## Hoe:
 Je kunt een tekstbestand in C# schrijven met `File.WriteAllText`, `File.AppendAllText` of een `StreamWriter`.
 

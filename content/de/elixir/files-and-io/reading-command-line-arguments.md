@@ -10,9 +10,6 @@ title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---
 
-## Was & Warum?
-Kommandozeilenargumente sind Infos, die du deinem Elixir-Programm beim Start übergibst. Wir nutzen sie, um das Verhalten unserer Programme dynamisch anzupassen, ohne den Code zu ändern.
-
 ## How to:
 In Elixir greifst du mit `System.argv()` auf die Argumente zu. Einfaches Beispiel:
 

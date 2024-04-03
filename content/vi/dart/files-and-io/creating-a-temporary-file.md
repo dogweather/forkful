@@ -19,9 +19,6 @@ title: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Cái gì và Tại sao?
-Việc tạo một tệp tạm thời trong Dart bao gồm việc tạo một tệp được dùng cho mục đích ngắn hạn, chủ yếu dùng trong các tình huống như lưu trữ dữ liệu tạm thời, bộ nhớ tạm thời cho quá trình xử lý tệp, hoặc giữ thông tin quá nhạy cảm để giữ lâu dài. Lập trình viên thực hiện điều này để quản lý dữ liệu không cần lưu trữ vĩnh viễn, từ đó cải thiện hiệu suất và duy trì vệ sinh dữ liệu.
-
 ## Cách thực hiện:
 Thư viện `dart:io` của Dart hỗ trợ việc tạo tệp tạm thời thông qua lớp `Directory`. Dưới đây là một cách đơn giản để tạo một tệp tạm thời và viết một số nội dung vào đó:
 
@@ -45,7 +42,6 @@ Future<void> main() async {
 ```
 
 ### Sử dụng Thư Viện Bên Thứ Ba: `path_provider`
-
 Đối với các ứng dụng (đặc biệt là ứng dụng di động với Flutter), bạn có thể muốn tạo tệp tạm thời một cách thống nhất và dễ quản lý hơn. Gói `path_provider` có thể giúp bạn tìm thư mục tạm thời chính xác trên các nền tảng khác nhau (iOS, Android, v.v.).
 
 Đầu tiên, thêm `path_provider` vào `pubspec.yaml` dưới dependencies:

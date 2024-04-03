@@ -14,12 +14,7 @@ title: Analyse Syntaxique de HTML
 weight: 43
 ---
 
-## Quoi & Pourquoi ?
-
-Analyser le HTML en C implique d'examiner les documents HTML pour en extraire efficacement des données, une structure ou des parties spécifiques, souvent en préparation au datamining ou au web scraping. Les programmeurs le font pour automatiser l'extraction d'informations, permettant ainsi le traitement ou la réutilisation programmatique du contenu web.
-
 ## Comment faire :
-
 Analyser le HTML peut sembler intimidant en raison de la complexité du HTML et de ses fréquentes déviations de structures propres et bien formées. Cependant, l'utilisation d'une bibliothèque telle que `libxml2`, spécifiquement son module d'analyse HTML, simplifie le processus. Cet exemple montre comment utiliser `libxml2` pour analyser le HTML et extraire des informations.
 
 D'abord, assurez-vous que `libxml2` est installé dans votre environnement. Dans de nombreuses distributions Linux, vous pouvez l'installer via le gestionnaire de paquets. Par exemple, sur Ubuntu :
@@ -64,7 +59,6 @@ Paragraphe trouvé : Bonjour, monde !
 Cet exemple se concentre sur l'extraction de texte au sein des balises de paragraphe, mais `libxml2` offre un support robuste pour naviguer et interroger diverses parties d'un document HTML.
 
 ## Plongée profonde
-
 Analyser le HTML en C remonte aux premiers jours du développement web. Initialement, les développeurs devaient compter sur des solutions d'analyse personnalisées, souvent rudimentaires, en raison du manque de bibliothèques standardisées et de l'état chaotique du HTML sur le web. L'introduction de bibliothèques comme `libxml2` a marqué une progression significative, offrant des approches plus standardisées, efficaces et résilientes pour l'analyse du HTML.
 
 Malgré la vitesse et le contrôle inégalés du C, il convient de noter que le C n'est pas toujours le meilleur outil pour analyser le HTML, surtout pour des tâches nécessitant des cycles de développement rapides ou traitant du HTML exceptionnellement mal formé. Les langages disposant de bibliothèques d'analyse HTML de haut niveau, tels que Python avec Beautiful Soup, fournissent des interfaces plus abstraites et conviviales au prix de certaines performances.

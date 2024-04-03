@@ -11,9 +11,6 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## What & Why?
-Créer un fichier temporaire, c'est générer un fichier destiné à un usage court terme, souvent pour manipuler des données transitoires. Les programmeurs le font pour éviter de surcharger la mémoire, faciliter le nettoyage après usage, ou pour sécuriser des opérations qui nécessitent des fichiers intermédiaires.
-
 ## How to:
 En Elixir, la création d'un fichier temporaire n'est pas directement intégrée dans la bibliothèque standard. On utilise généralement `:os.cmd` avec des commandes systèmes, ou des packages tiers, comme `Temp` de la bibliothèque Erlang.
 

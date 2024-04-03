@@ -11,9 +11,6 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-Handling errors in programming is about managing the unexpected—things that can go wrong. Programmers do it to ensure that their programs can cope with these situations gracefully, without crashing or producing wrong results.
-
 ## How to:
 Haskell handles errors robustly through types like `Maybe` and `Either`. Here's a quick look:
 

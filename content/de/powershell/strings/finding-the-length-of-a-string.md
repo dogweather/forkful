@@ -11,9 +11,6 @@ title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---
 
-## Was & Warum?
-Die Länge eines Strings zu finden bedeutet, die Anzahl der Zeichen zu zählen, die er enthält. Programmierer nutzen diese Information häufig, um Eingaben zu validieren, Daten zu verarbeiten oder bei der Textmanipulation.
-
 ## How to:
 PowerShell macht es einfach. Verwende die `.Length`-Eigenschaft eines Strings, um seine Länge zu erhalten:
 

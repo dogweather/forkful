@@ -11,12 +11,7 @@ title: Generering av tilfeldige tall
 weight: 12
 ---
 
-## Hva & Hvorfor?
-
-Å generere tilfeldige tall i programmering handler om å skape verdier som ikke kan forutses logisk på forhånd. Programmerere gjør dette av en rekke grunner, inkludert generering av unike identifikatorer, simulering av scenarioer i spillutvikling, eller valg av tilfeldige prøver fra data for analyse.
-
 ## Hvordan:
-
 I Clojure er generering av tilfeldige tall rett frem, og det finnes et par innebygde funksjoner som kan brukes med en gang.
 
 For å generere et tilfeldig flyttall mellom 0 (inkludert) og 1 (eksklusiv), kan du bruke `rand`-funksjonen:
@@ -50,7 +45,6 @@ Denne funksjonen `rand-range` vil returnere et tilfeldig flyttall mellom `min`- 
 For scenarioer som krever mer komplekse distribusjoner eller sekvenser av tilfeldige tall hvor gjentakbarhet er nødvendig (bruker frø), kan det hende du må se på ekstra biblioteker som strekker seg utover det som er innebygd.
 
 ## Dypdykk
-
 Den underliggende mekanismen for å generere tilfeldige tall i de fleste programmeringsspråk, inkludert Clojure, er vanligvis basert på en pseudotilfeldig tallgenerator (PRNG). En PRNG bruker en algoritme for å produsere en sekvens av tall som tilnærmer egenskapene til tilfeldige tall. Det er verdt å merke seg at fordi disse er algoritmisk genererte, er de ikke virkelig tilfeldige, men kan være tilstrekkelig for de fleste praktiske formål.
 
 I de tidlige dagene av databehandling var det å generere høykvalitets tilfeldige tall en betydelig utfordring, noe som førte til utviklingen av forskjellige algoritmer for å forbedre tilfeldighet og distribusjon. For Clojure er de innebygde funksjonene, som `rand` og `rand-int`, praktiske for daglig bruk og dekker et bredt spekter av vanlige bruksområder.

@@ -13,16 +13,10 @@ title: Skrive tester
 weight: 36
 ---
 
-## Hva & Hvorfor?
-
-Å skrive tester i Fish Shell innebærer å lage skript som automatisk kjører koden din for å validere dens oppførsel mot forventede resultater. Denne praksisen er avgjørende ettersom den sikrer at shell-skriptene dine fungerer som tiltenkt, fanger opp feil tidlig og gjør vedlikehold enklere.
-
 ## Hvordan:
-
 Fish har ikke innebygd testrammeverk som noen andre programmeringsmiljøer. Derimot, kan du skrive enkle testskript som bruker påstander for å sjekke oppførselen til funksjonene dine. I tillegg kan du utnytte tredjepartsverktøy som `fishtape` for en mer omfattende testsuite.
 
 ### Eksempel 1: Grunnleggende Testskript
-
 La oss starte med en grunnleggende funksjon i Fish som beregner summen av to tall:
 
 ```fish
@@ -54,7 +48,6 @@ test_add bestått
 ```
 
 ### Eksempel 2: Bruke Fishtape
-
 For en mer robust testløsning, kan du bruke `fishtape`, en TAP-produserende testkjører for Fish.
 
 Først, installer `fishtape` hvis du ikke allerede har gjort det:

@@ -11,9 +11,6 @@ title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---
 
-## Vad & Varför?
-Att söka och ersätta text innebär att hitta specifika strängar i en text och byta ut dem mot en annan sträng. Programmerare använder det för att effektivisera kodbearbetning, korrigera fel eller uppdatera data.
-
 ## Hur gör man:
 ```Elm
 import String

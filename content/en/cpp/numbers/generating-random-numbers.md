@@ -10,12 +10,7 @@ title: Generating random numbers
 weight: 12
 ---
 
-## What & Why?
-
-Generating random numbers in programming involves creating sequences of numbers that lack any predictable order or pattern. Programmers often utilize these numbers for various purposes such as simulating unpredictable events, in testing and debugging, and in gaming algorithms to ensure fairness or unpredictability. 
-
 ## How to:
-
 To generate random numbers in C++, you'd typically make use of the `<random>` header, which was introduced in C++11, offering a wide range of facilities for generating random numbers from various distributions.
 
 ```C++
@@ -46,7 +41,6 @@ Sample output might look like this, but keep in mind every execution will likely
 ```
 
 ## Deep Dive:
-
 Historically, random number generation in C++ relied heavily on the `rand()` function and the `srand()` function for seeding, found in the `<cstdlib>` header. However, this approach often faced criticism for its lack of uniformity and predictability in the distribution of generated numbers.
 
 The introduction of the `<random>` header in C++11 marked a significant improvement, offering a sophisticated system for producing random numbers. The facilities provided include a variety of engines (like `std::mt19937` for Mersenne Twister) and distributions (like `std::uniform_int_distribution` for uniform distribution of integers) that can be combined to suit the programmer's specific needs, leading to more predictable behavior, better performance, and greater flexibility.

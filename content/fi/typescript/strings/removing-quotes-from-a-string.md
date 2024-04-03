@@ -12,9 +12,6 @@ title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---
 
-## Mitä & Miksi?
-Merkkijonosta lainausmerkkien poistaminen tarkoittaa ympäröivien yksittäisten (`'`) tai kaksinkertaisten (`"`) lainausmerkkien poistamista, jotka määrittävät merkkijono-literaaleja koodissa. Ohjelmoijat tekevät näin useista syistä, kuten tulosteen muotoilu, käyttäjäsyötteen puhdistaminen tai merkkijonojen valmistelu jäsennykseen tai tallennukseen, joissa lainausmerkit ovat tarpeettomia tai saattavat aiheuttaa virheitä.
-
 ## Kuinka:
 Tässä on suoraviivainen opas niiden kiusallisten lainausmerkkien irrottamiseksi merkkijonoistasi TypeScriptillä.
 

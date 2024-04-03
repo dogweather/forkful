@@ -13,9 +13,6 @@ title: "F\xE5 det aktuella datumet"
 weight: 29
 ---
 
-## Vad & Varför?
-Att hämta det aktuella datumet i programmering är en grundläggande uppgift som möjliggör att hämta och manipulera systemets datum- och tidsdata. I skriptning och automatiseringsuppgifter är det väsentligt för att generera tidsstämplar, schemalägga uppgifter och skapa loggar.
-
 ## Hur man gör:
 Fish Shell använder externa kommandon som `date` för att hämta det aktuella datumet, vilket ger flexibilitet att formatera utdatan som behövs. Så här använder du det:
 

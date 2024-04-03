@@ -11,9 +11,6 @@ title: "Descargando una p\xE1gina web"
 weight: 42
 ---
 
-## Qué & Por Qué?
-Descargar una página web es básicamente pedirle a un servidor de internet que nos mande los datos de una página. Los programadores hacen esto para obtener información útil, actualizar datos en tiempo real o interactuar con servicios web.
-
 ## Cómo hacerlo:
 Para descargar una página web con Arduino, necesitas un módulo de red como el Ethernet Shield o un módulo WiFi. Acá un código de ejemplo usando WiFi:
 

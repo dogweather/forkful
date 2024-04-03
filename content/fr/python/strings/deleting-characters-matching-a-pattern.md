@@ -11,9 +11,6 @@ title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---
 
-## Quoi & Pourquoi ?
-Supprimer des caractères selon un motif, c'est retirer des séquences spécifiques dans une chaîne. Les programmeurs le font pour nettoyer des données, valider des entrées, ou manipuler du texte efficacement.
-
 ## Comment faire :
 ```python
 import re

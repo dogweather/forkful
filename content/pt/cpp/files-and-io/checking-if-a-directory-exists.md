@@ -14,9 +14,6 @@ title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---
 
-## O Que & Por Que?
-Verificar se um diretório existe é sobre determinar a presença de um diretório em um caminho especificado antes de realizar operações como ler ou escrever arquivos dentro dele. Os programadores fazem isso para evitar erros relacionados a operações de arquivo, garantindo uma execução mais suave e confiável das tarefas de manipulação de arquivos em suas aplicações.
-
 ## Como fazer:
 No C++ moderno (C++17 e além), você pode usar a biblioteca filesystem para verificar se um diretório existe. Ela fornece uma maneira direta e padronizada de realizar operações no sistema de arquivos, incluindo a verificação da existência de um diretório.
 

@@ -11,9 +11,6 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i dlaczego?
-Zaokrąglanie liczb polega na dostosowaniu liczby do najbliższej liczby całkowitej lub określonej precyzji dziesiętnej. Liczby zaokrąglamy w celu ich uproszczenia dla czytelności człowieka, zmniejszenia obciążenia obliczeniowego lub spełnienia konkretnych wymagań numerycznych.
-
 ## Jak to zrobić:
 W Clojure głównie używamy `Math/round`, `Math/floor` i `Math/ceil`:
 

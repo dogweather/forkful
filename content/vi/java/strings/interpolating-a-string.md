@@ -14,9 +14,6 @@ title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---
 
-## Cái gì và Tại sao?
-Nội suy chuỗi cho phép bạn chèn trực tiếp các biến vào trong chuỗi. Điều này làm cho mã lệnh trở nên gọn gàng và dễ đọc hơn bằng cách tránh việc nối chuỗi cồng kềnh.
-
 ## Cách thực hiện:
 Java giới thiệu `String.format()` cho việc nội suy:
 

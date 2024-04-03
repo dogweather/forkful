@@ -12,9 +12,6 @@ title: Usando una shell interactiva (REPL)
 weight: 34
 ---
 
-## ¿Qué y Por Qué?
-Un Bucle de Leer-Evaluar-Imprimir (REPL, por sus siglas en inglés) es un entorno de programación que toma entradas individuales del usuario, las ejecuta y devuelve el resultado al usuario. Los programadores utilizan un REPL para experimentar rápidamente con fragmentos de código, depurar y aprender nuevas características del lenguaje sin la sobrecarga de crear una aplicación completa.
-
 ## Cómo hacerlo:
 TypeScript no viene con su propio REPL. Vamos a usar `ts-node`, un entorno de ejecución de TypeScript para Node.js que incluye un REPL.
 

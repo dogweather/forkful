@@ -12,12 +12,7 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## What & Why? (Co i Dlaczego?)
-
-Wysyłanie żądania HTTP to sposób, aby twój program porozmawiał z serwerem: zapytał o dane, przesłał formularz albo pobił witrynę. Programiści robią to, żeby aplikacje mogły wchodzić w interakcje z internetem – wymieniać dane, synchronizować informacje, cokolwiek "online" znaczy dla twojego kodu.
-
 ## How to (Jak to zrobić):
-
 ```Swift
 import Foundation
 
@@ -59,7 +54,6 @@ Response: {
 ```
 
 ## Deep Dive (Dogłębna analiza):
-
 W dawnych czasach, wysyłanie żądania HTTP wymagało linijków w terminalu z `curl` albo komplikacji z `sockets`. Teraz, Swift załatwia ci większość pracy – używasz `URLSession` do zarządzania sesjami sieciowymi.
 
 Alternatywy? Biblioteki jak `Alamofire` upiększają kod i dodają dodatkową funkcjonalność. Da się też używać niższego poziomu `CFNetwork` dla większej kontroli. Wybór zależy od potrzeb.
@@ -67,6 +61,5 @@ Alternatywy? Biblioteki jak `Alamofire` upiększają kod i dodają dodatkową fu
 Implementacja? `URLRequest` tworzy twoje żądanie, ustalając metodę, nagłówki, ciało. `URLSession` obsługuje wysyłkę i odbiór danych. Można synchronicznie (`dataTask`) czy asynchronicznie (`dataTask(with:completionHandler:)`) – prawdziwa moc Swifta.
 
 ## See Also (Zobacz również):
-
 - [Swift’s URLSession Documentation](https://developer.apple.com/documentation/foundation/urlsession)
 - [Alamofire GitHub Repository](https://github.com/Alamofire/Alamofire)

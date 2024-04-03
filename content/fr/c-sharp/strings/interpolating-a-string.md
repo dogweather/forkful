@@ -14,9 +14,6 @@ title: "Interpolation d'une cha\xEEne de caract\xE8res"
 weight: 8
 ---
 
-## Quoi & Pourquoi ?
-L'interpolation de chaînes en C# vous permet de créer une nouvelle chaîne en incluant des expressions à l'intérieur d'un littéral de chaîne, facilitant ainsi le formatage et la concaténation des chaînes. Les programmeurs utilisent cette fonctionnalité pour améliorer la lisibilité et la maintenabilité du code, surtout lorsqu'ils traitent du contenu dynamique de chaînes.
-
 ## Comment faire :
 En C#, l'interpolation de chaînes est indiquée par un signe dollar (`$`) suivi d'un littéral de chaîne. Les noms de variables ou les expressions sont inclus entre des accolades (`{}`).
 

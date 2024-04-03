@@ -10,9 +10,6 @@ title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---
 
-## Hva og hvorfor?
-Komplekse tall, de som har en reell del og en imaginær del (som 3 + 4i), er essensielle i felt som ingeniørvitenskap, fysikk og datavitenskap. Programmerere bruker dem for simuleringer, signalbehandling og løsning av spesifikke typer matematiske problemer.
-
 ## Hvordan:
 PowerShell har ikke innebygd støtte for komplekse tall, så du må enten lage din egen løsning eller bruke .NETs `System.Numerics.Complex`.
 

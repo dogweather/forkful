@@ -12,12 +12,7 @@ title: Trabajando con YAML
 weight: 41
 ---
 
-## ¿Qué y Por Qué?
-
-YAML, que significa "YAML Ain't Markup Language" (YAML no es un lenguaje de marcado), es un formato de serialización de datos legible por humanos. Los programadores lo utilizan para archivos de configuración, volcado de datos y almacenamiento de datos jerárquicos debido a su legibilidad y sintaxis fácil de entender en comparación con XML o JSON.
-
 ## Cómo hacerlo:
-
 Para trabajar con YAML en C++, una opción popular es la biblioteca `yaml-cpp`. Primero, asegúrate de tener `yaml-cpp` instalado y correctamente vinculado a tu proyecto de C++.
 
 **Leyendo un archivo YAML:**

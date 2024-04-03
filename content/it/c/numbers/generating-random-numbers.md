@@ -13,12 +13,7 @@ title: Generazione di numeri casuali
 weight: 12
 ---
 
-## Cosa e perché?
-
-Generare numeri casuali in C comporta la creazione di valori che sono imprevedibili e seguono una specifica distribuzione, come uniforme o normale. Questa capacità è cruciale per applicazioni che vanno dalle simulazioni e giochi alle operazioni crittografiche, dove l'imprevedibilità o la simulazione del caso reale è essenziale.
-
 ## Come fare:
-
 In C, i numeri casuali possono essere generati utilizzando la funzione `rand()`, che fa parte della libreria standard C `<stdlib.h>`. Per impostazione predefinita, `rand()` produce numeri pseudo-casuali nell'intervallo da 0 a `RAND_MAX` (una costante definita in `<stdlib.h>`). Per avere più controllo sull'intervallo, i programmatori possono manipolare l'output di `rand()`.
 
 Ecco un semplice esempio di generazione di un numero casuale tra 0 e 99:
@@ -51,7 +46,6 @@ Per generare numeri casuali in un intervallo diverso, puoi regolare il modulo op
 È importante notare che inizializzare il generatore di numeri pseudo-casuali (`srand()`) con l'ora corrente (`time(NULL)`) assicura sequenze diverse di numeri casuali ad ogni esecuzione del programma. Senza l'inizializzazione (`srand()`), `rand()` produrrebbe la stessa sequenza di numeri ogni volta che il programma viene eseguito.
 
 ## Approfondimento
-
 La funzione `rand()` e la sua controparte per l'inizializzazione `srand()` fanno parte della libreria standard C da decenni. Sono basate su algoritmi che generano sequenze di numeri che sembrano essere casuali—da qui il termine "pseudo-casuali". L'algoritmo sottostante in `rand()` è tipicamente un generatore congruenziale lineare (LCG).
 
 Sebbene `rand()` e `srand()` siano sufficienti per molte applicazioni, presentano limitazioni note, specialmente riguardo alla qualità della casualità e alla potenziale prevedibilità. Per applicazioni che richiedono casualità di alta qualità, come le operazioni crittografiche, si dovrebbero considerare alternative come `/dev/random` o `/dev/urandom` (su sistemi simili a Unix), o API fornite da librerie crittografiche.

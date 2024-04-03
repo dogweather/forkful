@@ -10,9 +10,6 @@ title: Interpolazione di una stringa
 weight: 8
 ---
 
-## What & Why?
-L'interpolazione di stringhe permette di incorporare variabili direttamente all'interno di una stringa, per una concatenazione elegante e leggibile. I programmatori la utilizzano perché rende il codice più pulito e facile da mantenere.
-
 ## How to:
 In Lua non esiste un operatore di interpolazione di stringa nativo, ma si può utilizzare la funzione `string.format`.
 

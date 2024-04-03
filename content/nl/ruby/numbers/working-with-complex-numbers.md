@@ -13,9 +13,6 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-Complexe getallen, bestaande uit een reëel en een imaginair deel (zoals 3+4i), zijn een basiscomponent in engineering en fysica. Programmeurs werken ermee in simulaties, signaalverwerking en bij het oplossen van vergelijkingen die niet goed overweg kunnen met enkel reële getallen.
-
 ## Hoe:
 Ruby maakt het hanteren van complexe getallen heel eenvoudig. Je kunt ze creëren en manipuleren met behulp van de Complex klasse:
 

@@ -15,9 +15,6 @@ title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---
 
-## Gì và Tại sao?
-Trích xuất các chuỗi con có nghĩa là lấy ra các phần nhỏ hơn từ một chuỗi dựa trên một số tiêu chí nhất định. Các lập trình viên trích xuất chuỗi con để thao tác và phân tích dữ liệu văn bản, như chia nhỏ đầu vào thành các phần hữu ích hơn hoặc truy cập vào dữ liệu quan trọng ẩn bên trong một câu.
-
 ## Cách thực hiện:
 Dưới đây là cách để cắt và chia các chuỗi trong PowerShell:
 

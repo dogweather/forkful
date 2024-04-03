@@ -11,11 +11,7 @@ title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---
 
-## What & Why? (Quoi & Pourquoi ?)
-Envoyer une requête HTTP, c'est demander des données à un serveur web. On le fait souvent pour intégrer du contenu web dans nos apps ou pour communiquer avec des services en ligne.
-
 ## How to: (Comment faire :)
-
 ```Lua
 -- On utilise le module 'socket.http' pour les requêtes HTTP.
 local http = require("socket.http")

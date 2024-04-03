@@ -10,9 +10,6 @@ title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-L'impression de sortie de débogage consiste à afficher des informations à des fins de diagnostic lors de l'exécution d'un programme. Les programmeurs utilisent cette technique pour comprendre le comportement de leur code et repérer les bogues.
-
 ## How to: (Comment faire :)
 Voici un exemple de sortie de débogage simple avec `std::cout`. 
 

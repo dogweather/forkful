@@ -11,12 +11,7 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä & Miksi?
-
-Virheiden käsittely tarkoittaa sellaisen koodin kirjoittamista, joka ennakoi ja käsittelee virhetilanteita. Ohjelmoijat tekevät sitä tehdäkseen ohjelmistoista vankempia, ehkäistäkseen kaatumisia ja outoa käytöstä.
-
 ## Kuinka:
-
 Java käyttää poikkeuksia virheiden käsittelyyn. Sijoitat riskialttiin koodin `try`-lohkon sisään ja otat kiinni poikkeukset `catch`-avainsanalla. Tässä on yksinkertainen esimerkki:
 
 ```java
@@ -42,7 +37,6 @@ Hups, nollalla ei voi jakaa!
 ```
 
 ## Syväsukellus
-
 Virheenkäsittely Javassa on kehittynyt. Alkuaikoina ei ollut poikkeuksia; ohjelmoijat tarkistivat virhekoodit. Sitten Java toi käyttöön try-catch-lohkot, mahdollistaen tyylikkäämmän virheenkäsittelyn.
 
 Vaihtoehtoja perinteiselle `try-catch` -rakenteelle ovat `try-with-resources` automaattisesti sulkeutuvia resursseja varten ja puhtaamman koodin aikaansaamiseen, otettu käyttöön Javassa 7.
@@ -50,7 +44,6 @@ Vaihtoehtoja perinteiselle `try-catch` -rakenteelle ovat `try-with-resources` au
 Toteutuksen yksityiskohdat ovat tärkeitä. Esimerkiksi `Exception` tai `Throwable` -luokan poikkeusten ottaminen kiinni on yleensä huono käytäntö. Se on liian laaja-alainen, peittäen alleen mahdollisesti huomaamattomat virheet. Pysyttele tietyissä poikkeuksissa.
 
 ## Katso myös
-
 - Viralliset Oracle Java -opetusmateriaalit poikkeuksista: [https://docs.oracle.com/javase/tutorial/essential/exceptions/](https://docs.oracle.com/javase/tutorial/essential/exceptions/)
 - Javan `try-with-resources` -lauseen dokumentaatio: [https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html)
 - Effective Java kirjoittanut Joshua Bloch, parhaista käytännöistä poikkeuksien suhteen.

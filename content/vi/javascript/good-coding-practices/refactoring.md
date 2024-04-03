@@ -15,11 +15,7 @@ title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---
 
-## Cái gì & Tại sao?
-Tái cấu trúc là quá trình cải tổ mã máy tính đã tồn tại mà không thay đổi hành vi bên ngoài của nó. Các lập trình viên thực hiện việc này để cải thiện các thuộc tính phi chức năng của phần mềm, làm cho mã sạch sẽ và hiệu quả hơn, giúp đơn giản hóa việc bảo trì và tạo điều kiện dễ dàng hơn cho việc thêm tính năng trong tương lai.
-
 ## Làm thế nào:
-
 Hãy xem một ví dụ đơn giản về cách tái cấu trúc có thể làm cho mã của bạn gọn gàng và dễ đọc hơn. Tại đây, chúng ta tái cấu trúc một hàm tính tổng của một mảng số.
 
 Trước:
@@ -47,7 +43,6 @@ console.log(calculateSum([1, 2, 3, 4])); // Kết quả: 10
 Thấy cách phương thức `reduce` làm giảm kích thước của hàm mà vẫn giữ nguyên chức năng không? Đó chính là tái cấu trúc đó.
 
 ## Sâu hơn
-
 Tái cấu trúc không xuất hiện như một thực hành chính thống cho đến khi cuốn sách "Refactoring: Improving the Design of Existing Code" của Martin Fowler được xuất bản vào năm 1999. Cuốn sách này, cùng với sự nổi lên của phát triển phần mềm linh hoạt, đã giúp đẩy tái cấu trúc vào chính thống.
 
 Mô tả tái cấu trúc như một khía cạnh của phát triển phần mềm giống như giải thích lý do bạn dọn dẹp một xưởng: bạn làm vậy để lần sau khi bạn cần sửa chữa một thứ gì đó (trong trường hợp này là mã), bạn sẽ mất ít thời gian hơn để xử lý hỗn độn và chú trọng hơn vào vấn đề thực sự.
@@ -61,7 +56,6 @@ Tất cả đều về mã sạch, biểu đạt và dễ bảo trì. Các thu�
 Tái cấu trúc phải được thực hiện một cách cẩn thận; việc có một bộ kiểm tra mạnh mẽ là rất quan trọng để đảm bảo rằng các thay đổi của bạn không làm thay đổi hành vi của phần mềm một cách không mong muốn - một lý do khác tại sao Phát triển Dựa trên Kiểm thử (TDD) kết hợp tốt với tái cấu trúc, vì nó cung cấp mạng lưới an toàn đó theo mặc định.
 
 ## Xem thêm
-
 - Sách Refactoring của Martin Fowler: [Refactoring - Improving the Design of Existing Code](https://martinfowler.com/books/refactoring.html)
 - Các Khung Kiểm thử JavaScript (để đảm bảo tái cấu trúc không làm hỏng chức năng):
   - Jest: [Jest - Kiểm thử JavaScript thú vị](https://jestjs.io/)

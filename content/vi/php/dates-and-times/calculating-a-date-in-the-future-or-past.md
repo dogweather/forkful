@@ -15,9 +15,6 @@ title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1
 weight: 26
 ---
 
-## Cái Gì và Tại Sao?
-Tính toán ngày trong tương lai hoặc quá khứ có nghĩa là tìm kiếm một ngày trước hoặc sau một thời điểm cụ thể. Các lập trình viên làm điều này cho các chức năng như nhắc nhở, đăng ký, lập lịch, và hàng tấn các tính năng dựa trên thời gian khác trong ứng dụng.
-
 ## Làm Thế Nào:
 PHP làm cho phép tính ngày trở nên đơn giản với `DateTime` và `DateInterval`. Hãy xem xét điều này:
 

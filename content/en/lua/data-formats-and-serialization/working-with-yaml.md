@@ -11,12 +11,7 @@ title: Working with YAML
 weight: 41
 ---
 
-## What & Why?
-
-YAML, short for "YAML Ain't Markup Language," is a human-readable data serialization standard that is often used for configuration files and data exchange between languages. Programmers leverage YAML due to its simplicity and readability, making it a preferred choice for settings, diverse application configurations, or content that should be editable by non-programmers.
-
 ## How to:
-
 Lua does not have built-in support for YAML, but you can work with YAML files by using third-party libraries such as `lyaml`. This library allows for the encoding and decoding of YAML data with Lua. First, you'll need to install `lyaml` via LuaRocks, Lua's package manager:
 
 ```bash
@@ -24,7 +19,6 @@ luarocks install lyaml
 ```
 
 ### Decoding YAML:
-
 Suppose you have the following YAML content in a file named `config.yaml`:
 
 ```yaml
@@ -59,7 +53,6 @@ password: pass
 ```
 
 ### Encoding YAML:
-
 To encode Lua tables into YAML format, you use the `dump` function provided by `lyaml`. Considering you want to create a YAML representation of the following Lua table:
 
 ```lua

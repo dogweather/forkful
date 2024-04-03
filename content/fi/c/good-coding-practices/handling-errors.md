@@ -12,12 +12,7 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä & Miksi?
-
-Virheiden käsittely C:ssä tarkoittaa ohjelman suorituksen aikana esiintyvien poikkeavien tilanteiden havaitsemista ja niihin vastaamista. Ohjelmoijat tekevät tämän estääkseen bugeja, kaatumisia ja odottamatonta käytöstä, varmistaen että ohjelmisto toimii luotettavasti ja tehokkaasti erilaisissa skenaarioissa.
-
 ## Miten:
-
 C ei sisällä sisäänrakennettua tukea poikkeuksille kuten jotkut muut kielet. Sen sijaan se nojaa muutamiin perinteisiin virheidenkäsittelystrategioihin, kuten erityisten arvojen palauttamiseen funktioista ja globaalien muuttujien, kuten `errno`, asettamiseen.
 
 **Erityisten Arvojen Palauttaminen**
@@ -78,7 +73,6 @@ Virhe tiedoston avaamisessa: Tiedostoa tai hakemistoa ei ole
 ```
 
 ## Syväluotaus
-
 Historiallisesti C-ohjelmointikielen minimalistinen suunnittelu on jättänyt pois sisäänrakennetun poikkeusten käsittelymekanismin, mikä heijastaa sen matalan tason, järjestelmäohjelmoinnin alkuperää, jossa maksimaalinen suorituskyky ja suora hallinta ovat kriittisiä. Sen sijaan C omaksuu manuaalisemman virheidenkäsittelylähestymistavan, joka sopii sen filosofiaan antaa ohjelmoijille mahdollisimman paljon kontrollia, jopa mukavuuden kustannuksella.
 
 Vaikka tämä lähestymistapa on linjassa C:n suunnittelutavoitteiden kanssa, se voi johtaa myös sanalliseen virhetarkistuskoodiin ja mahdollisiin tarkistamatta jääviin virheisiin, jotka modernit kielet käsittelevät rakenteellisen poikkeustenkäsittelyn mekanismeilla. Esimerkiksi poikkeukset kielissä kuten Java tai C# mahdollistavat keskitetyn virheenkäsittelyn, mikä tekee koodista siistimpää ja virheenhallinnasta suoraviivaisempaa. Kuitenkin poikkeukset tuovat mukanaan oman ylikuormansa ja monimutkaisuutensa, joka ei välttämättä ole ihanteellista järjestelmätason ohjelmoinnissa, jossa C loistaa.

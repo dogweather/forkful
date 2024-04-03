@@ -11,9 +11,6 @@ title: Tworzenie pliku tymczasowego
 weight: 21
 ---
 
-## Co i dlaczego?
-Tworzenie tymczasowego pliku to sposób na zapis tymczasowych danych potrzebnych podczas działania skryptu czy programu. Programiści robią to, by nie zaśmiecać systemu stałymi plikami, które są potrzebne tylko chwilowo.
-
 ## Jak to zrobić:
 W Bashu tworzenie tymczasowych plików jest banalnie proste. Użyj `mktemp` aby zadbać o unikalność i bezpieczeństwo.
 

@@ -12,9 +12,6 @@ title: Substrings extraheren
 weight: 6
 ---
 
-## Wat & Waarom?
-Het extraheren van substrings gaat over het ophalen van specifieke delen van een string op basis van hun posities of patronen. Programmeurs doen dit voor taken zoals het parsen van gebruikersinvoer, datamanipulatie, of het extraheren van relevante informatie uit grotere tekstbronnen.
-
 ## Hoe te:
 In Dart kun je verschillende methoden gebruiken om substrings te extraheren, zoals `substring()`, `split()`, en reguliere expressies. Elke methode dient verschillende doeleinden en biedt flexibiliteit in het omgaan met strings.
 

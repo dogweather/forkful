@@ -10,12 +10,7 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-
-Das Runden von Zahlen ist das Anpassen einer Dezimalzahl auf ihren nächsten ganzzahligen Wert oder auf eine bestimmte Anzahl von Nachkommastellen. Programmierer runden, um die Komplexität zu reduzieren, die Lesbarkeit zu verbessern oder Präzisionsanforderungen zu erfüllen.
-
 ## Wie geht das:
-
 Das `Basics`-Modul von Elm bietet praktische Funktionen zum Runden: `round`, `floor` und `ceiling`. Hier ist, wie man sie verwendet.
 
 ```elm
@@ -45,7 +40,6 @@ toLocaleString 2 3.14159 --> "3.14"
 ```
 
 ## Vertiefung
-
 Elm ist eine streng typisierte funktionale Sprache, die Nebenwirkungen an die "Ränder" der Architektur delegiert. Das bedeutet, dass Funktionen wie das Runden rein und vorhersehbar sein müssen. Historisch gesehen ist das Runden eine gängige Operation in vielen Programmiersprachen, die sich mit der Ungenauigkeit der Fließkommazahlen-Arithmetik befassen.
 
 Elms Ansatz zum Runden ist unkompliziert - die Funktionen sind rein und halten sich an mathematische Definitionen für round, floor und ceiling. Elm antizipiert die gängigen Bedürfnisse, indem es eingebaute Funktionen zur Verfügung stellt, da das Präzisionsmanagement eine häufige Anforderung ist, besonders in den Bereichen Finanzen und Grafik.
@@ -55,7 +49,6 @@ Alternativen zu den eingebauten Funktionen von Elm könnten benutzerdefinierte I
 In der aktuellen Version verwendet Elm die zugrundeliegende Fließkommazahlen-Mathematik von JavaScript für diese Operationen und bleibt damit konsistent mit dem IEEE 754-Standard, was bei der Berücksichtigung von Präzision und potenziellen Fließkommazahlen-Fehlern zu bedenken ist.
 
 ## Siehe auch
-
 - Offizielle Dokumentation des `Basics`-Moduls von Elm: https://package.elm-lang.org/packages/elm/core/latest/Basics
 - Ein detaillierter Blick darauf, wie Fließkommazahlen in der Informatik funktionieren: https://floating-point-gui.de/
 - Elm `Float`-Modul für weitere Fließkommazahlen-Operationen: https://package.elm-lang.org/packages/elm/core/latest/Float

@@ -12,12 +12,7 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Cosa e perché?
-
-Ottenere la data corrente in Go è un compito fondamentale per i programmatori, paragonabile alla diffusione di "Hello, World!". È essenziale per compiti che vanno dalla registrazione e dalla marcatura temporale degli eventi al calcolo delle durate e alla pianificazione di eventi futuri.
-
 ## Come fare:
-
 In Go, il pacchetto `time` è la tua porta d'accesso per lavorare con date e orari. La funzione `time.Now()` ti fornisce la data e l'ora correnti, mentre altre funzioni e metodi ti permettono di formattare o manipolare questi dati. Ecco come ottenere la data corrente e le sue varie rappresentazioni:
 
 ```go
@@ -56,7 +51,6 @@ Giorno della settimana: Tuesday
 Notare come `Format` utilizzi una data specifica (2006-01-02) come stringa di layout. Questa è la data di riferimento scelta da Go, che funge da schema mnemonico per la formattazione delle date.
 
 ## Approfondimento
-
 La decisione di utilizzare il pacchetto `time` per la manipolazione di date e orari in Go riflette il dedicamento del linguaggio a librerie standard robuste e intuitive. A differenza di alcuni linguaggi che potrebbero avere multiple librerie in competizione o metodologie per la manipolazione delle date, Go dà priorità all'avere un'unica, ben documentata standard.
 
 La scelta peculiare della data di riferimento (`Mon Jan 2 15:04:05 MST 2006`) nella formattazione del tempo di Go, sebbene inizialmente possa sembrare confusa, è in realtà un colpo di maestria in termini di usabilità. Permette ai programmatori di rappresentare i formati di data e ora utilizzando un approccio basato sugli esempi, a differenza della memorizzazione di token o simboli che altri linguaggi potrebbero utilizzare.

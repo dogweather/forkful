@@ -14,16 +14,10 @@ title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---
 
-## Co i dlaczego?
-
-Zamiana pierwszej litery ciągu znaków na wielką (kapitalizacja) w programowaniu polega na konwersji pierwszego znaku ciągu na wielką literę, jeśli już taka nie jest. Jest to przydatne do formatowania danych wejściowych użytkownika lub wyświetlania tekstów w interfejsie użytkownika w bardziej ustandaryzowany lub przyjazny dla człowieka sposób. Programiści wykonują tę operację, aby zapewnić spójność danych lub spełnić konkretne wymagania dotyczące formatowania w swoich aplikacjach.
-
 ## Jak to zrobić:
-
 W Kotlinie napisy mogą być zamieniane na wielkie litery za pomocą standardowych funkcji biblioteki, bez potrzeby korzystania z bibliotek firm trzecich. Podejście Kotlina do obsługi ciągów znaków sprawia, że te operacje są proste i zwięzłe.
 
 ### Zamiana całego ciągu na wielkie litery:
-
 ```kotlin
 val message = "hello, world!"
 val capitalizedMessage = message.uppercase()
@@ -32,7 +26,6 @@ println(capitalizedMessage) // Wynik: HELLO, WORLD!
 ```
 
 ### Zamiana tylko pierwszej litery na wielką:
-
 Od Kotlin 1.5, funkcja `capitalize()` jest przestarzała i zastąpiona przez połączenie `replaceFirstChar` i wyrażenia lambda, które sprawdza, czy jest to mała litera, aby przekształcić ją na wielką.
 
 ```kotlin

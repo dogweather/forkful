@@ -10,9 +10,6 @@ title: Webseite herunterladen
 weight: 42
 ---
 
-## Was & Warum?
-Herunterladen einer Webseite bedeutet, den Content dieser Seite programmatisch zu holen. Programmierer tun das, um Daten zu scrapen, Inhalte offline zu verarbeiten oder ihre Verfügbarkeit zu prüfen.
-
 ## How to:
 Javascript bietet diverse Wege, um Webseiten herunterzuladen. Hier ein Beispiel mit `fetch`.
 

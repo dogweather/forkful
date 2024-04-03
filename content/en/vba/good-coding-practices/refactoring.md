@@ -11,12 +11,7 @@ title: Refactoring
 weight: 19
 ---
 
-## What & Why?
-
-Refactoring in programming involves modifying the structure of code without changing its behavior, to improve aspects like readability, maintainability, or performance. Programmers refactor to make code more efficient, easier to understand, easier to modify in the future, and to reduce the likelihood of bugs.
-
 ## How to:
-
 Consider a basic example in Visual Basic for Applications (VBA) where we have a subroutine that prints details of an employee. Initially, the code is cluttered, challenging to maintain, or extend.
 
 ```vb
@@ -77,7 +72,6 @@ End Sub
 These steps transform cluttered code into modular, structured code, significantly improving readability and maintainability.
 
 ## Deep Dive
-
 The concept of refactoring is as old as programming itself, but it was Martin Fowler's book "Refactoring: Improving the Design of Existing Code" that brought it into the mainstream, emphasizing its importance in the software development process. In Visual Basic for Applications, refactoring can be somewhat more challenging due to the lack of built-in tools found in more modern integrated development environments (IDEs) that support automated refactoring.
 
 However, this doesn't diminish its importance. Even in VBA, applying basic refactoring techniques manually can greatly enhance the code base, making it cleaner and more efficient. While VBA may not have the same modern conveniences, the principles of good code design remain universal. Developers coming from other languages might find the manual process tedious but will undoubtedly appreciate the benefits of investing time in improving code quality from the onset.

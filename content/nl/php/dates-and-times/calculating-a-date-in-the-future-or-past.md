@@ -12,9 +12,6 @@ title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---
 
-## Wat & Waarom?
-Een toekomstige of verleden datum berekenen betekent het vinden van een datum voor of na een gespecificeerde tijd. Programmeurs doen dit voor herinneringen, abonnementen, planning en talloze andere tijdgebonden functies in apps.
-
 ## Hoe:
 PHP maakt datumberekeningen eenvoudig met `DateTime` en `DateInterval`. Kijk maar:
 

@@ -11,9 +11,6 @@ title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---
 
-## Was & Warum?
-Die Read-Eval-Print-Schleife (REPL) ist eine einfache, interaktive Programmierumgebung, die einzelne Benutzereingaben annimmt, auswertet und das Ergebnis an den Benutzer zurückgibt. Elm-Programmierer nutzen REPL für schnelle Experimente, zum Debuggen oder zum Erlernen der Sprache.
-
 ## Wie geht das:
 Elm wird nicht mit einem integrierten REPL geliefert. Sie können jedoch `elm repl` von Ihrer Kommandozeile verwenden, um nach der Installation von Elm eine Elm-Sitzung zu starten.
 

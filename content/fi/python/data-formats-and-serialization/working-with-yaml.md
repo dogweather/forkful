@@ -12,9 +12,6 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä & Miksi?
-YAML, joka tulee sanoista YAML Ain't Markup Language, on ihmisen luettavissa oleva tiedon sarjallistamismuoto. Ohjelmoijat käyttävät YAMLia konfiguraatiotiedostoihin, prosessien väliseen viestintään ja datan tallennukseen sen yksinkertaisen syntaksin ja helposti luettavuuden vuoksi verrattuna muihin muotoihin kuten XML tai JSON.
-
 ## Kuinka:
 YAMLin lukeminen ja kirjoittaminen Pythonissa tyypillisesti sisältää kolmannen osapuolen kirjaston käytön, `PyYAML` ollessa suosituin. Aloittaaksesi sinun täytyy asentaa PyYAML suorittamalla `pip install PyYAML`.
 

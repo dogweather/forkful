@@ -14,12 +14,7 @@ title: Analyse Syntaxique du HTML
 weight: 43
 ---
 
-## Quoi & Pourquoi ?
-
-Analyser du HTML en Rust consiste à extraire des données de documents HTML, ce qui est essentiel pour le web scraping, l'extraction de données ou la création de web crawlers. Les programmeurs font cela pour automatiser la collecte d'informations sur le web, analyser le contenu web ou migrer du contenu d'une plateforme à une autre.
-
 ## Comment faire :
-
 Pour analyser du HTML en Rust, vous utiliserez souvent le crate `scraper`, qui fournit une interface de haut niveau pour parcourir et manipuler des documents HTML.
 
 Premièrement, ajoutez `scraper` à votre `Cargo.toml` :

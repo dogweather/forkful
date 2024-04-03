@@ -10,9 +10,6 @@ title: Interpolazione di una stringa
 weight: 8
 ---
 
-## What & Why? (Cosa & Perché?)
-L'interpolazione di stringhe consente di inserire variabili dentro una stringa di testo. Lo facciamo per rendere il codice più leggibile e per comporre messaggi dinamici senza complicarsi la vita.
-
 ## How to: (Come fare:)
 In Arduino, l'interpolazione diretta di stringhe non è supportata come in altri linguaggi, ma possiamo raggiungere lo stesso risultato con `sprintf()` o concatenando stringhe.
 

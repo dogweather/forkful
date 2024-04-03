@@ -10,9 +10,6 @@ title: Avvio di un nuovo progetto
 weight: 1
 ---
 
-## What & Why? - Cosa e Perché?
-Avviare un nuovo progetto Kotlin significa preparare l'ambiente per scrivere codice. Lo facciamo perché abbiamo un'idea da trasformare in un'app funzionante.
-
 ## How to - Come Fare:
 Inizia installando l'IDE IntelliJ IDEA, che ha un supporto eccellente per Kotlin. Apri IntelliJ, scegli "Create New Project", poi "Kotlin" e configura l'ambiente di sviluppo.
 

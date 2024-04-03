@@ -14,12 +14,7 @@ title: Debug-tulosteen tulostaminen
 weight: 33
 ---
 
-## Mikä & Miksi?
-
-Debug-tulosteen tulostaminen Dartissa tarkoittaa tietojen näyttämistä konsolissa suorituksen aikana, mikä mahdollistaa kehittäjien seurata suorituksen kulkua, tutkia muuttujien tilaa tai tunnistaa virheiden lähteen. Ohjelmoijat käyttävät sitä yleisesti vianetsintään ja varmistamaan, että heidän koodinsa toimii odotetusti, mikä helpottaa sujuvampaa ja tehokkaampaa kehitysprosessia.
-
 ## Kuinka:
-
 Dartissa voit tulostaa debug-tulosteen käyttämällä `print()`-funktiota. Näin voit tulostaa yksinkertaisia viestejä ja muuttujien arvoja:
 
 ```dart

@@ -13,9 +13,6 @@ title: Den aktuellen Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-Das Abrufen des aktuellen Datums in Java ist eine grundlegende Operation, die es Programmierern ermöglicht, Datum-Objekte für Operationen wie Protokollierung, Datumsberechnungen und zeitbasierte Bedingungen zu manipulieren. Es ist von entscheidender Bedeutung in Anwendungen, bei denen das Verfolgen, Planen und die Analyse zeitlicher Daten entscheidend sind.
-
 ## Wie:
 Java bietet mehrere Möglichkeiten, das aktuelle Datum abzurufen, sowohl mit der alten `java.util.Date`-Klasse als auch mit dem neueren `java.time`-Paket (eingeführt in Java 8), das vielseitiger und intuitiver ist.
 
@@ -30,6 +27,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### Verwendung von `java.time.LocalDateTime`
 ```java
 import java.time.LocalDateTime;
@@ -41,6 +39,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### Verwendung von `java.util.Date` (Legacy)
 ```java
 import java.util.Date;
@@ -52,6 +51,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### Verwendung einer Drittanbieterbibliothek: Joda-Time
 Vor Java 8 war Joda-Time der de-facto Standard für Datum und Zeit in Java. Wenn Sie an älteren Systemen arbeiten oder eine Vorliebe für Joda-Time haben, hier ist, wie Sie es verwenden können, um das aktuelle Datum zu erhalten:
 ```java

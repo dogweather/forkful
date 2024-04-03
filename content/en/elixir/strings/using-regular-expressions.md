@@ -10,12 +10,7 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-
-Regular expressions (regex) in Elixir are used for searching, matching, and manipulating strings based on specific patterns. Programmers leverage regex for tasks like validating formats (email, URLs), parsing logs, or data extraction, thanks to its efficiency and versatility in string handling.
-
 ## How to:
-
 Elixir uses the `Regex` module, leveraging Erlang's regex library, for regex operations. Here are basic uses:
 
 ```elixir

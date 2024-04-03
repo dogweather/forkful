@@ -10,12 +10,7 @@ title: Generating random numbers
 weight: 12
 ---
 
-## What & Why?
-
-Generating random numbers in C involves creating values that are unpredictable and follow a specific distribution, such as uniform or normal. This capability is crucial for applications ranging from simulations and games to cryptographic operations, where unpredictability or the simulation of real-world randomness is essential.
-
 ## How to:
-
 In C, random numbers can be generated using the `rand()` function, which is part of the C standard library `<stdlib.h>.` By default, `rand()` produces pseudo-random numbers in the range from 0 to `RAND_MAX` (a constant defined in `<stdlib.h>`). For more control over the range, programmers can manipulate the output of `rand()`.
 
 Here's a simple example of generating a random number between 0 and 99:
@@ -48,7 +43,6 @@ To generate random numbers within a different range, you can adjust the modulus 
 It is important to note that seeding the pseudo-random number generator (`srand()` call) with the current time (`time(NULL)`) ensures different sequences of random numbers across program executions. Without seeding (`srand()`), `rand()` would produce the same sequence of numbers every time the program is run.
 
 ## Deep Dive
-
 The `rand()` function and its seeding counterpart `srand()` have been part of the C standard library for decades. They are based on algorithms that generate sequences of numbers that only appear to be random—hence the term "pseudo-random." The underlying algorithm in `rand()` is typically a linear congruential generator (LCG).
 
 While `rand()` and `srand()` are sufficient for many applications, they have known limitations, especially concerning the quality of randomness and potential predictability. For applications requiring high-quality randomness, such as cryptographic operations, alternatives like `/dev/random` or `/dev/urandom` (on Unix-like systems), or APIs provided by cryptographic libraries, should be considered.

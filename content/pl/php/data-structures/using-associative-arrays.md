@@ -14,12 +14,7 @@ title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---
 
-## Co i dlaczego?
-
-Asocjacyjne tablice w PHP są jak naładowane możliwościami listy, gdzie każdy element można uzyskać przy użyciu klucza zrozumiałego dla człowieka zamiast tylko numerów. Programiści używają ich do przechowywania i manipulowania danymi bardziej intuicyjnie, co pozwala na tworzenie kodu łatwiejszego do czytania i bardziej zrozumiałego.
-
 ## Jak to zrobić:
-
 W PHP tworzenie i używanie tablic asocjacyjnych jest proste. Oto krótki przewodnik:
 
 ```PHP
@@ -65,7 +60,6 @@ foreach ($osoba as $klucz => $wartosc) {
 Zwróć uwagę, jak klucze mogą być dowolnym ciągiem znaków, co pozwala na dostęp do elementów używając tych kluczy zamiast indeksów numerycznych, które mogą być mniej znaczące i trudniejsze do zapamiętania.
 
 ## Szczegółowa analiza
-
 Asocjacyjne tablice w PHP są wewnętrznie implementowane przy użyciu tablic mieszających, które zapewniają bardzo szybki dostęp do elementów za pomocą klucza, co czyni je wysoce efektywnymi do wielu zadań. Ta efektywność, w połączeniu z ich łatwością użycia, czyni tablice asocjacyjne kamieniem węgielnym programowania w PHP.
 
 Historycznie tablice w PHP (zarówno indeksowane, jak i asocjacyjne) były niezwykle elastyczne, co pozwalało im służyć jako listy, stosy, kolejki i wiele więcej. Jednak ta elastyczność czasami może prowadzić do mniej efektywnego kodu, jeśli nie jest używana ostrożnie.

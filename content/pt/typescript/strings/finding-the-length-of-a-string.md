@@ -10,9 +10,6 @@ title: Descobrindo o comprimento de uma string
 weight: 7
 ---
 
-## What & Why?
-Encontrar o comprimento de uma string significa determinar a quantidade de caracteres que ela contém. Programadores fazem isso para validar entradas, limitar texto em interfaces de usuário ou qualquer outra lógica que dependa do tamanho de uma string.
-
 ## How to:
 Em TypeScript, a propriedade `length` é a forma padrão de obter o comprimento de uma string. Aqui estão alguns exemplos:
 

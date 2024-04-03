@@ -13,11 +13,8 @@ title: Ein neues Projekt starten
 weight: 1
 ---
 
-## Was & Warum?
-
-Ein neues Projekt in Python zu starten bedeutet, von Anfang an ein strukturiertes, wartbares Framework einzurichten. Programmierer machen dies, um sicherzustellen, dass ihr Code leicht zu lesen, zu debuggen und zu bearbeiten ist, besonders wenn das Projekt und das Team, das daran arbeitet, im Laufe der Zeit wachsen.
-
 ## Wie man:
+
 
 ### Virtuelle Umgebung erstellen
 Eine virtuelle Umgebung ist ein eigenständiges Verzeichnis, das alle notwendigen Ausführbaren enthält, um die Pakete zu verwenden, die ein Python-Projekt benötigen würde. Es ist ratsam, für jedes Projekt eine virtuelle Umgebung zu erstellen, um Konflikte zwischen Projekt-Abhängigkeiten zu vermeiden. Verwende das `venv`-Modul, das Teil der Standardbibliothek von Python ist.

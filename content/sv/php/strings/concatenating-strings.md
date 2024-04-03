@@ -11,9 +11,6 @@ title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---
 
-## What & Why?
-"Sammanslagning av strängar" innebär att kombinera flera textstycken till ett. Programmerare gör det för att manipulera textdata, skapa dynamiskt innehåll eller bygga upp strängar på ett flexibelt sätt.
-
 ## How to:
 I PHP sammanfogar du strängar med punktoperatorn (`.`). Enkelt och rakt på sak. Så här:
 

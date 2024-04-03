@@ -14,12 +14,7 @@ title: Capitalizando una cadena de texto
 weight: 2
 ---
 
-## ¿Qué y Por Qué?
-
-Capitalizar una cadena implica convertir la primera letra de la cadena en mayúscula mientras aseguramos que el resto de las letras estén en minúsculas. Esta acción es comúnmente necesaria para formatear la entrada del usuario o mostrar texto en interfaces de usuario, donde la consistencia y legibilidad son importantes.
-
 ## Cómo hacerlo:
-
 Elixir provee una manera directa de capitalizar cadenas utilizando sus funciones integradas sin la necesidad de librerías de terceros. Aquí hay un ejemplo simple:
 
 ```elixir

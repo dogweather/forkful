@@ -13,9 +13,6 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## Cosa & Perché?
-Estrarre sottosequenze si riferisce al recupero di porzioni specifiche di una stringa basate sulle loro posizioni o sui loro schemi. I programmatori fanno ciò per compiti come l'analisi dell'input dell'utente, la manipolazione dei dati o l'estrazione di informazioni rilevanti da fonti di testo più ampie.
-
 ## Come fare:
 In Dart, è possibile utilizzare vari metodi per estrarre sottosequenze, come `substring()`, `split()` ed espressioni regolari. Ogni metodo serve scopi diversi e offre flessibilità nella manipolazione delle stringhe.
 

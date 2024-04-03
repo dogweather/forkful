@@ -12,9 +12,6 @@ title: Generierung von Zufallszahlen
 weight: 12
 ---
 
-## Was & Warum?
-Die Erzeugung zufälliger Zahlen in Arduino-Projekten beinhaltet die Produktion von Werten, die konzeptionell unvorhersehbar sind, was für Anwendungen wie Spiele, Simulationen und Sicherheitssysteme entscheidend ist. Programmierer nutzen diese Technik, um Variabilität einzuführen oder Entscheidungen zu treffen, die nicht deterministisch sein sollten.
-
 ## Wie:
 Arduino bietet unkomplizierte Funktionen zur Erzeugung zufälliger Zahlen: `randomSeed()` und `random()`. Um zu beginnen, initialisieren Sie den Zufallszahlengenerator, um bei jedem Programmlauf verschiedene Zahlenfolgen zu gewährleisten. Ein oft genutzter Ansatz ist die Initialisierung mit einem Analogwert von einem nicht verbundenen Pin.
 

@@ -15,9 +15,6 @@ title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---
 
-## Cái gì & Tại sao?
-In ấn dữ liệu gỡ rối (debug output) tức là việc phát ra thông tin phụ trợ để giúp bạn hiểu code của mình đang làm gì. Lập trình viên làm việc này để phát hiện và sửa lỗi dễ dàng hơn.
-
 ## Cách làm:
 Làm quen với `echo` - dao găm Thụy Sĩ cho việc xuất dữ liệu trong Fish. Dưới đây là cách để rải rác in ấn gỡ rối vào các kịch bản shell của bạn.
 

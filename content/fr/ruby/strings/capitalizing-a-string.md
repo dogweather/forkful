@@ -14,9 +14,6 @@ title: "Mettre en majuscule une cha\xEEne de caract\xE8res"
 weight: 2
 ---
 
-## Quoi & Pourquoi ?
-Capitaliser une chaîne de caractères signifie généralement convertir le premier caractère d'une chaîne en majuscule et le reste en minuscule. Mais parfois, cela peut juste signifier s'assurer que le premier caractère est en majuscule tout en laissant le reste de la chaîne inchangé. Honnêtement, à mon avis, c'est un terme quelque peu vague.
-
 ## Comment faire :
 Ruby propose [des méthodes directes pour la manipulation de chaînes de caractères](https://docs.ruby-lang.org/en/3.3/String.html), y compris pour la capitalisation :
 

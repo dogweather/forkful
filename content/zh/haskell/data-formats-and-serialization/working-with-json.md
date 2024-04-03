@@ -24,9 +24,6 @@ title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 weight: 38
 ---
 
-## 什么 & 为什么？
-在 Haskell 中处理 JSON（JavaScript 对象表示法）涉及到将 JSON 数据解析成 Haskell 类型以及将 Haskell 类型反向转换成 JSON。程序员这样做是为了使他们的 Haskell 应用能够与网络服务或 API 无缝交换数据，这在现代软件开发中是跨平台数据交换的常见做法。
-
 ## 如何操作：
 Haskell 并没有像 JavaScript 那样内置对 JSON 的支持，但借助于第三方库比如 **Aeson**，处理 JSON 就变得简单了。Aeson 提供了用于编码（将 Haskell 值转换为 JSON）和解码（将 JSON 解析成 Haskell 值）的高级和低级函数。
 

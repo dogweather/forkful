@@ -11,9 +11,6 @@ title: Refaktoryzacja
 weight: 19
 ---
 
-## Co i dlaczego?
-Refaktoryzacja to proces modyfikowania kodu bez zmiany jego zewnętrznego zachowania. Chodzi o uporządkowanie i oczyszczenie kodu, aby stał się łatwiejszy do odczytania, utrzymania i rozszerzenia. Może również pomóc wyeliminować błędy i poprawić wydajność.
-
 ## Jak to zrobić:
 Załóżmy, że masz fragment kodu w Haskellu, który powtarza się częściej niż twoja ulubiona piosenka. Oto krótkie spojrzenie na to, jak można to zrefaktoryzować, używając funkcji.
 

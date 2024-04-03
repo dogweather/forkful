@@ -12,9 +12,6 @@ title: "\u041F\u043E\u0447\u0438\u043D\u0430\u0454\u043C\u043E \u043D\u043E\u043
 weight: 1
 ---
 
-## What & Why? (Що та Чому?)
-Starting a new Java project means setting up a space where your code will live and grow. Programmers do it to solve problems, create tools, or just for fun. It's how ideas become software.
-
 ## How to: (Як це зробити:)
 Let’s kick off with a simple Hello World in Java, assuming you have Java installed and your IDE (Integrated Development Environment) is prepped for action.
 

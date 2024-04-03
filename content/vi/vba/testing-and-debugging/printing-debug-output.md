@@ -17,9 +17,6 @@ title: "In ra th\xF4ng tin debug"
 weight: 33
 ---
 
-## Gì và Tại sao?
-Việc in ra thông tin gỡ lỗi trong Visual Basic for Applications (VBA) bao gồm việc đặt chiến lược các câu lệnh in trong mã của bạn để hiển thị giá trị biến, luồng thực thi hoặc các thông báo gỡ lỗi tùy chỉnh. Kỹ thuật này rất cần thiết cho việc gỡ lỗi, giúp các lập trình viên hiểu được hành vi của mã của họ trong quá trình chạy và nhận diện bất kỳ hành vi không mong đợi hoặc lỗi nào.
-
 ## Cách làm:
 Trong VBA, câu lệnh `Debug.Print` là công cụ chính để in thông tin gỡ lỗi ra Cửa sổ Ngay lập tức (Immediate Window) trong trình biên tập Visual Basic (VBE). Để sử dụng tính năng này một cách hiệu quả, bạn cần hiển thị Cửa sổ Ngay lập tức (Xem > Cửa sổ Ngay lập tức hoặc nhấn `Ctrl+G` trong VBE).
 

@@ -14,12 +14,7 @@ title: Zufallszahlen generieren
 weight: 12
 ---
 
-## Was & Warum?
-
-Das Generieren von Zufallszahlen in Visual Basic for Applications (VBA) ermöglicht es Programmen, Prozesse mit Elementen des Zufalls oder der Variabilität zu simulieren, wie Würfelwürfe oder das Samplen von Daten. Programmierer verwenden diese Techniken, um Modelle, Spiele oder Simulationen zu entwickeln, bei denen vorhersehbare Ergebnisse unrealistisch oder weniger nützlich wären.
-
 ## Wie:
-
 In VBA wird die `Rnd`-Funktion verwendet, um Zufallszahlen zu generieren. Standardmäßig erzeugt `Rnd` eine Fließkommazahl (Single-Precision) größer oder gleich 0 und kleiner als 1. Hier sind einige Schritte und Beispiele, um Zufallszahlen effektiv zu nutzen:
 
 1. **Einfache Zufallszahl:**
@@ -61,7 +56,6 @@ In VBA wird die `Rnd`-Funktion verwendet, um Zufallszahlen zu generieren. Standa
 Nach dem Ausführen von `RandomNumberInRange` könnten Sie eine Nachrichtenbox sehen, die eine Zahl wie `45` anzeigt.
 
 ## Tiefergehend:
-
 Die `Rnd`-Funktion in VBA, obwohl einfach zu verwenden, generiert eigentlich pseudo-zufällige Zahlen basierend auf einem deterministischen Algorithmus. Das bedeutet, dass die Sequenzen der Zahlen, die sie produziert, nicht wirklich zufällig sind, aber oft ausreichen für allgemeine Aufgaben, die stochastische Prozesse benötigen.
 
 Historisch gesehen reicht die Fähigkeit zur Zufallszahlengenerierung in VBA zurück bis zu frühen Versionen von Basic, die sich im Laufe der Zeit weiterentwickelt haben, um Funktionen wie `Randomize` einzuschließen, um die Zufälligkeit zu verbessern, indem der Algorithmus mit einem Startpunkt gespeist wird. Jedoch, für Anwendungen, die hohe Niveaus an Zufälligkeit benötigen, wie sichere kryptografische Operationen, ist VBA’s `Rnd` möglicherweise nicht das beste Werkzeug. Alternativen in robusteren Programmierumgebungen oder Sprachen, die mit Kryptographie im Sinn entworfen wurden, wie das `secrets`-Modul in Python oder `SecureRandom` in Java, sollten in Betracht gezogen werden.

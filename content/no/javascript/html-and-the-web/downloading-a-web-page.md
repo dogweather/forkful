@@ -11,9 +11,6 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## What & Why?
-Nettsider lastes ned for å hente og bruke data eller innhold uten en nettleser. Programmerere gjør dette for å analysere informasjonen, teste nettsider eller integrere data i egne applikasjoner.
-
 ## How to:
 Node.js er verktøyet vi bruker. Med `axios`, kan vi laste ned en nettside enkelt. Her er et eksempel:
 

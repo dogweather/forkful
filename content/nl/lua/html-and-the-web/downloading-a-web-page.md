@@ -13,9 +13,6 @@ title: Een webpagina downloaden
 weight: 42
 ---
 
-## Wat & Waarom?
-Een webpagina downloaden betekent het grijpen van de HTML-inhoud van het internet via de URL. Programmeurs doen dit om webinhoud te analyseren, taken te automatiseren of gegevens in hun apps te integreren.
-
 ## Hoe:
 Lua is standaard niet uitgerust voor webtaken, maar met de `socket` bibliotheek en `http` module, is het een fluitje van een cent. Hier is een snel voorbeeld met LuaSocket:
 

@@ -10,9 +10,6 @@ title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---
 
-## Was & Warum?
-Das Lesen von Kommandozeilenargumenten erlaubt deinen PHP-Skripten, Eingaben direkt aus der Befehlszeile zu erhalten. Wir nutzen es, um Skripte flexibler zu gestalten und ermöglichen dem Nutzer, Variablen bei der Ausführung zu übergeben.
-
 ## So geht's:
 Mit `$argv` und `$argc` kannst du auf die Argumente zugreifen:
 

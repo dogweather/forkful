@@ -11,9 +11,6 @@ title: Interpolando uma string
 weight: 8
 ---
 
-## O Que é & Porquê?
-Interpolar uma string significa incorporar variáveis ou expressões em meio a um texto fixo para criar mensagens dinâmicas. Programadores fazem isso para personalizar saídas, automatizar mensagens, e tornar o código mais legível e manutenível.
-
 ## Como Fazer:
 ```C++
 #include <iostream>

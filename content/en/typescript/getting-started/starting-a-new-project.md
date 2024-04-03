@@ -10,9 +10,6 @@ title: Starting a new project
 weight: 1
 ---
 
-## What & Why?
-Starting a new project in TypeScript is all about setting up a solid foundation to code on. Programmers initiate new projects to turn fresh ideas into working software, test out concepts, or learn new things.
-
 ## How to:
 ```TypeScript
 // Step 1: Install TypeScript globally (if not installed)

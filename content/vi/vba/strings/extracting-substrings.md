@@ -15,12 +15,7 @@ title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---
 
-## Cái gì & Tại sao?
-
-Trích xuất chuỗi con trong Visual Basic cho Ứng dụng (VBA) bao gồm việc tách ra các phần cụ thể của một chuỗi dựa trên các tiêu chí đã cho. Các lập trình viên làm điều này cho các nhiệm vụ như phân tích cú pháp dữ liệu, xác thực và định dạng, nơi mà việc thao tác và trích xuất thông tin từ dữ liệu văn bản là rất quan trọng.
-
 ## Làm thế nào:
-
 Trong VBA, bạn chủ yếu sử dụng các hàm `Mid`, `Left`, và `Right` để trích xuất chuỗi con. Dưới đây, chúng ta khám phá các hàm này với các ví dụ:
 
 1. **Mid**: Trích xuất một chuỗi con từ một chuỗi bắt đầu từ một vị trí cụ thể.
@@ -53,7 +48,6 @@ Trong VBA, bạn chủ yếu sử dụng các hàm `Mid`, `Left`, và `Right` đ
 Những hàm cơ bản này tạo thành nền tảng của việc trích xuất chuỗi con trong VBA, cung cấp các phương thức thao tác chuỗi mạnh mẽ và dễ dàng.
 
 ## Đi sâu:
-
 Lịch sử, khả năng thao tác với chuỗi trong lập trình đã không thể thiếu, với BASIC (tiền thân của VBA) là một trong những ngôn ngữ đầu tiên dân chủ hóa khả năng này trong những ngày đầu của máy tính cá nhân. Các hàm `Mid`, `Left`, và `Right` trong VBA kế thừa di sản này, mang lại giao diện đơn giản cho các lập trình viên hiện đại.
 
 Mặc dù những hàm này khá hiệu quả cho nhiều nhiệm vụ, sự xuất hiện của Biểu thức Chính quy trong các ngôn ngữ mới hơn đã cung cấp một cách làm việc mạnh mẽ và linh hoạt hơn với văn bản. Dù thế, sự đơn giản và sẵn có ngay lập tức của các hàm trích xuất chuỗi con truyền thống của VBA làm cho chúng hoàn toàn phù hợp cho các nhiệm vụ nhanh chóng và những người mới học lập trình.

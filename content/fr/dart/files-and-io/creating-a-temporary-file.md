@@ -16,9 +16,6 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## Quoi & Pourquoi ?
-La création d'un fichier temporaire en Dart implique de générer un fichier destiné à une utilisation à court terme, principalement pour des scénarios tels que la mise en cache des données, le stockage temporaire pour le traitement de fichiers, ou le maintien d'informations trop sensibles pour être conservées longtemps. Les programmeurs le font pour gérer des données qui n'ont pas besoin d'un stockage permanent, améliorant ainsi la performance et maintenant l'hygiène des données.
-
 ## Comment faire :
 La bibliothèque `dart:io` de Dart facilite la création de fichiers temporaires grâce à la classe `Directory`. Voici une manière simple de créer un fichier temporaire et d'y écrire du contenu :
 
@@ -42,7 +39,6 @@ Future<void> main() async {
 ```
 
 ### Utilisation d'une bibliothèque tierce : `path_provider`
-
 Pour les applications (notamment les applications mobiles avec Flutter), vous pourriez vouloir créer des fichiers temporaires de manière plus unifiée et gérable. Le package `path_provider` peut vous aider à trouver le bon répertoire temporaire à travers différentes plateformes (iOS, Android, etc.).
 
 Tout d'abord, ajoutez `path_provider` à votre `pubspec.yaml` sous dépendances :

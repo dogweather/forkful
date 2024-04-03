@@ -12,9 +12,6 @@ title: Obtenir la date actuelle
 weight: 29
 ---
 
-## Quoi & Pourquoi ?
-Récupérer la date actuelle en Bash implique l'utilisation de commandes intégrées pour afficher la date et l'heure dans divers formats. Les programmeurs utilisent cette fonctionnalité pour des tâches telles que le marquage horaire des journaux, la planification de tâches ou simplement comme partie de leurs scripts d'informations système pour suivre quand les actions ont été effectuées.
-
 ## Comment faire :
 En Bash, la commande `date` est votre principal outil pour obtenir la date et l'heure actuelles. Voici quelques exemples de comment l'utiliser :
 

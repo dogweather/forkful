@@ -11,12 +11,7 @@ title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---
 
-## Was & Warum?
-
-Kommandozeilenargumente lesen bedeutet, Parameter von der Shell ins Programm zu übertragen. Programmierer nutzen es, um Einstellungen zu steuern oder Eingaben zu verarbeiten, ohne das Programm interaktiv anzupassen.
-
 ## Wie geht das:
-
 Elm ist primär für Webanwendungen gedacht, daher gibt es keine eingebaute Funktionalität für das Lesen von Kommandozeilenargumenten wie in Node.js oder Python. Stattdessen würde man auf Ports zurückgreifen, um mit JavaScript zu interagieren.
 
 ```Elm
@@ -49,11 +44,9 @@ app.ports.cmdArgs.subscribe(function(args) {
 ```
 
 ## Tiefgang:
-
 Historisch gesehen ist Elm nicht für Skripting oder Kommandozeilenaufgaben entworfen worden, sondern für interaktive Webanwendungen mit einer starken Betonung auf Zuverlässigkeit und Sicherheit. Für Kommandozeilen-Aufgaben bietet sich eher Node.js an, welches das V8 JavaScript-Backend nutzt. Alternativ kann man Elm auch in Verbindung mit einer Hülle wie Electron verwenden, um mit dem Dateisystem zu interagieren.
 
 Die Kommunikation zwischen Elm und JavaScript (für Aufgaben außerhalb des Kernbereichs von Elm) erfolgt über Ports, welche einen Weg bieten, Nachrichten sicher und zuverlässig auszutauschen. Obwohl dies zusätzliche Arbeit bedeutet, hält es die Elm-Architektur sauber und prädictable.
 
 ## Weiterführendes:
-
 - Elm Ports Dokumentation: [https://guide.elm-lang.org/interop/ports.html](https://guide.elm-lang.org/interop/ports.html)

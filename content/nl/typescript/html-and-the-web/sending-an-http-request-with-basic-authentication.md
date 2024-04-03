@@ -13,12 +13,7 @@ title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---
 
-## Wat & Waarom?
-
-In TypeScript betekent het verzenden van een HTTP-verzoek met basisauthenticatie het over het web schieten van data met een eenvoudige gebruikersnaam:wachtwoord combinatie voor toegang. Het is wijdverspreid voor snelle-en-vuile auth omdat het eenvoudig te gebruiken is om je API-eindpunten te beschermen tegen ongewenste bezoekers.
-
 ## Hoe te:
-
 ```typescript
 import axios from 'axios';
 
@@ -47,7 +42,6 @@ Voorbeelduitvoer:
 ```
 
 ## Diepgaand
-
 Er was eens, voordat OAuth en JWTs de scene overnamen, was basisauth de go-to. Het is nog steeds handig voor interne gereedschappen of Proof of Concepts (PoCs). Het idee is eenvoudig: voeg een kop toe met 'Authorization', gebruik 'Basic ' + een base64 gecodeerde 'gebruikersnaam:wachtwoord'. Voilà, je bent door de poorten.
 
 Maar het is niet allemaal rozengeur en maneschijn. Er zijn risico's - als je geen HTTPS gebruikt, schreeuw je praktisch je inloggegevens hardop uit. Alternatieven? OAuth2-tokens, JWTs, API-sleutels - ze zijn als sterkere, stille types. Ze dienen vergelijkbare doeleinden maar met meer complexiteit en veiligheid.
@@ -57,7 +51,6 @@ Bij het implementeren van basisauth in TypeScript, is de gangbare keuze `axios` 
 Houd in gedachten: 'Basic' zal zijn leeftijd snel onthullen in het moderne web waar HTTPS een must is en veiligheidsnormen hoger zijn. Toch, voor interne netwerken of waar hogere beveiliging niet cruciaal is, is het een makkie.
 
 ## Zie Ook
-
 Voor meer authenticatiemethoden en beveiligingsbest practices:
 
 - [MDN Web Docs: Autorisatie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)

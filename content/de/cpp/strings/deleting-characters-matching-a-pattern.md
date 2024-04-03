@@ -11,9 +11,6 @@ title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---
 
-## Was & Warum?
-Das Löschen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte Zeichen aus einem String zu entfernen, die einer spezifischen Regel folgen. Programmierer nutzen diese Technik, um Daten zu bereinigen, Eingaben zu validieren oder Strings vor der Verarbeitung zu formatieren.
-
 ## So geht's:
 Stellen wir uns vor, wir möchten alle Ziffern aus einem String entfernen. Wir verwenden `<regex>` für Musterabgleich und `<algorithm>` für `std::remove_if`.
 

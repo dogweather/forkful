@@ -11,9 +11,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## What & Why? - Mitä ja Miksi?
-Selvitetään merkkijonon pituutta (`length`-ominaisuus) tietääksemme, montako merkkiä jono sisältää. Sitä tarvitaan esimerkiksi silloin, kun validoidaan käyttäjän syötteitä tai manipuloidaan tekstidataa.
-
 ## How to: - Kuinka tehdään:
 ```javascript
 let greeting = "Hei maailma!";

@@ -10,12 +10,7 @@ title: Reading command line arguments
 weight: 23
 ---
 
-## What & Why?
-
-Reading command line arguments lets a program grab info straight from the user's terminal command. Programmers do it to customize a program's behavior without changing the code itself.
-
 ## How to:
-
 In Clojure, you snag command line arguments with `*command-line-args*`. Here's a simple example:
 
 ```clojure
@@ -50,7 +45,6 @@ Upper-cased: ["HELLO" "WORLD"]
 ```
 
 ## Deep Dive
-
 The `*command-line-args*` is a var in Clojure, set to a sequence of arguments passed to the script. It's been around since Clojure's early days, showing Clojure treats command line args as first-class citizens.
 
 Alternatives? Java's mechanisms for grabbing command line args work in Clojure, too, thanks to interoperability. But that's more verbose.
@@ -58,7 +52,6 @@ Alternatives? Java's mechanisms for grabbing command line args work in Clojure, 
 As for implementation details, when Clojure starts, it parses the args and stores them in `*command-line-args*`. Your script can then do whatever with them—parse, ignore, transform, you name it.
 
 ## See Also
-
 - Official Clojure CLI tools: https://clojure.org/guides/deps_and_cli
 - Clojure from the ground up: Command-line scripting: https://aphyr.com/posts/305-clojure-from-the-ground-up-command-line
 - ClojureDocs on *command-line-args*: https://clojuredocs.org/clojure.core/*command-line-args*

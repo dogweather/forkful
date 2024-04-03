@@ -11,12 +11,7 @@ title: Concatenando strings
 weight: 3
 ---
 
-## O Que & Porquê?
-
-Concatenar strings é o ato de juntar duas ou mais sequências de caracteres para formar uma nova string. Programadores fazem isso para construir mensagens, gerar saídas de texto dinâmicas ou simplesmente combinar dados para processamento.
-
 ## Como Fazer:
-
 ```Rust
 fn main() {
     // Usando o operador `+`
@@ -41,11 +36,9 @@ fn main() {
 ```
 
 ## Aprofundamento
-
 Concatenar strings é essencial e não é nada novo. Em linguagens clássicas como C, era comum usar funções como `strcat` para isso, mas Rust moderniza o processo com segurança de tipo e de memória. Outras maneiras de concatenar strings incluem usar o método `join` da trait `Iterator` se você tiver uma coleção de strings. Quando se trata de desempenho, `format!` pode ser menos eficiente que outras técnicas, pois cria uma nova String a cada chamada, enquanto métodos como `push_str` e `+` modificam a String existente. Internamente, Rust gerencia o layout da string na memória usando um `Vec<u8>` para armazenar os dados.
 
 ## Veja Também
-
 - A [documentação oficial do Rust](https://doc.rust-lang.org/stable/std/string/index.html) sobre o tipo `String`.
 - O `book` do Rust, com um [capítulo sobre strings](https://doc.rust-lang.org/book/ch08-02-strings.html).
 - Uma exploração detalhada do [módulo std::str](https://doc.rust-lang.org/std/str/), que lida com strings de fatia, ou ‘slice’ strings, que são vistas frequentes no código Rust.

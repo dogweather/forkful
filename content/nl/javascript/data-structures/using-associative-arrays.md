@@ -12,12 +12,7 @@ title: Gebruik van associatieve arrays
 weight: 15
 ---
 
-## Wat & Waarom?
-
-Associatieve arrays, of zoals ze in JavaScript accurater bekend staan, objecten, stellen je in staat om sleutels aan waarden te koppelen. Dit is bijzonder handig wanneer je een verzameling elementen nodig hebt die je wilt kunnen benaderen via specifieke namen (sleutels) in plaats van numerieke indexen, wat je code leesbaarder en flexibeler maakt.
-
 ## Hoe te:
-
 Het creëren en gebruiken van associatieve arrays (objecten) in JavaScript is eenvoudig. Je definieert een object met accolades `{}`, en daarin kun je een set van sleutel-waarde paren definiëren. Sleutels zijn altijd strings, en waarden kunnen alles zijn: strings, getallen, arrays, zelfs andere objecten.
 
 ```javascript
@@ -63,7 +58,6 @@ console.log(userInfo);
 Zoals je kunt zien, is het benaderen, toevoegen of verwijderen van elementen in een associatieve array vrij direct en intuïtief.
 
 ## Diepgaand
-
 In de wereld van JavaScript, hoewel we vaak de term "associatieve array" horen, is het technisch gezien een foutieve benaming omdat JavaScript geen echte associatieve arrays heeft zoals andere talen (bijv. PHP). Wat JavaScript wel heeft, zijn objecten die een vergelijkbaar doel dienen maar een krachtigere en flexibelere constructie zijn.
 
 Historisch gezien waren arrays in programmeertalen ontworpen om een verzameling van items te houden, benaderd door hun numerieke index. Echter, naarmate de softwareontwikkeling evolueerde, ontstond de behoefte aan flexibelere datastructuren. Associatieve arrays, of woordenboeken in andere talen, waren een antwoord, waardoor toegang tot elementen via willekeurige sleutels mogelijk werd.

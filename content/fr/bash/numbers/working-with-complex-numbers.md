@@ -10,9 +10,6 @@ title: Manipulation des nombres complexes
 weight: 14
 ---
 
-## Quoi & Pourquoi ?
-Les nombres complexes se composent d'une partie réelle et d'une partie imaginaire. Les programmeurs les utilisent dans des domaines comme le traitement des signaux, la mécanique quantique, et chaque fois que le calcul les exige, parce que les nombres réels normaux ne suffisent tout simplement pas.
-
 ## Comment faire :
 Bash ne prend pas en charge les nombres complexes de manière native. Vous utiliserez souvent un outil externe comme `bc` avec son option `-l`. Voici comment manipuler les nombres complexes dans bash :
 

@@ -14,11 +14,8 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä ja miksi?
-
-CSV-tiedostojen (pilkuilla erotetut arvot) käsittely sisältää tekstidatan jäsentämisen ja generoinnin riveinä ja sarakkeina, samankaltaisesti kuin taulukkolaskentadatassa. Tämä prosessi on olennainen tiedonvaihdossa sovellusten, tietokantojen välillä ja datan muuntamistehtävissä, CSV:n laajan käytön vuoksi kevyenä, yhteensopivana muotona.
-
 ## Kuinka:
+
 
 ### CSV-tiedoston lukeminen
 Clojurella ei ole sisäänrakennettua CSV:n jäsentämistä sen vakio-kirjastossa, mutta voit käyttää `clojure.data.csv` -kirjastoa tähän tarkoitukseen. Lisää ensin kirjasto projektisi riippuvuuksiin.
@@ -53,5 +50,4 @@ Voit kirjoittaa dataa CSV-tiedostoon käyttämällä samaa `clojure.data.csv` -k
 Tämä luo tai ylikirjoittaa `tulostetiedosto.csv`, täyttäen sen määritellyllä datalla.
 
 ### Kolmannen osapuolen kirjaston käyttäminen: `clojure.data.csv`
-
 Vaikka `clojure.data.csv` onkin ehkä suoraviivaisin kirjasto CSV-käsittelyyn Clojuressa, monimutkaisempiin tehtäviin, kuten erikoismerkkejä sisältävien CSV:iden tai epätavallisten erotinmerkkien käsittelyyn, saattaisit tutkia lisävaihtoehtoja ekosysteemissä tai jopa harkita Java-interoppia kirjastojen kuten Apache Commons CSV kanssa. Kuitenkin useimmille standardeille CSV:n käsittelytehtäville Clojuressa, `clojure.data.csv` tarjoaa yksinkertaisen ja tehokkaan työkalupakin.

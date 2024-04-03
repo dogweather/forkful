@@ -12,9 +12,6 @@ title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---
 
-## Vad & Varför?
-Att ta bort citationstecken från en sträng i C# innebär att du tar bort de irriterande dubbla (`"`) eller enkla (`'`) citationstecken som omsluter din text. Programmerare gör detta för att rensa data, förbereda för databasinsättning eller göra strängar säkra för vidare bearbetning så att saker inte går överstyr när ett vilsekommet citattecken dyker upp.
-
 ## Hur man gör:
 ```csharp
 string withQuotes = "\"Hej, världen!\"";

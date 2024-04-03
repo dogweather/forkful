@@ -13,12 +13,7 @@ title: Werken met CSV
 weight: 37
 ---
 
-## Wat & Waarom?
-
-Werken met CSV, wat staat voor Comma-Separated Values (komma-gescheiden waarden), betekent het omgaan met gegevens in een eenvoudig tekstformaat waarbij elke regel een gegevensrecord is met door komma's gescheiden velden. Programmeurs duiken in CSV's omdat ze eenvoudig te gebruiken zijn, breed ondersteund worden en perfect zijn voor het uitwisselen van data tussen verschillende applicaties.
-
 ## Hoe:
-
 Laten we CSV-bestanden lezen en schrijven in Java met behulp van de veelgebruikte `OpenCSV` bibliotheek. Voeg eerst de afhankelijkheid toe aan je `pom.xml` als je Maven gebruikt.
 
 ```xml
@@ -30,7 +25,6 @@ Laten we CSV-bestanden lezen en schrijven in Java met behulp van de veelgebruikt
 ```
 
 ### Een CSV-bestand schrijven
-
 ```java
 import com.opencsv.CSVWriter;
 import java.io.FileWriter;
@@ -54,7 +48,6 @@ public class CSVWritingExample {
 ```
 
 ### Een CSV-bestand lezen
-
 ```java
 import com.opencsv.CSVReader;
 import java.io.FileReader;
@@ -83,11 +76,9 @@ Bob, 19, Canada
 ```
 
 ## Diepgaande Duik
-
 Historisch gezien worden CSV's al gebruikt sinds de vroege dagen van persoonlijke computing, waardoor ze een soort lingua franca zijn geworden voor gegevensuitwisseling. Alternatieven zoals JSON, XML of zelfs Excel-formaten kunnen geavanceerdere functies bieden, maar de eenvoud van CSV verzekert zijn voortbestaan. Wanneer je met Java werkt, terwijl `OpenCSV` een populaire keuze is, kun je ook `java.util.Scanner` of `java.io.BufferedReader` gebruiken voor zeer basistaken, hoewel je dan zelf de parsing moet afhandelen. `Apache Commons CSV` is een andere krachtige bibliotheek die beschikbaar is voor soortgelijke taken.
 
 ## Zie Ook
-
 - De OpenCSV-homepage voor documentatie en handleidingen: http://opencsv.sourceforge.net/
 - Apache Commons CSV voor een alternatieve aanpak: https://commons.apache.org/proper/commons-csv/
 - Officiële Java-tutorials van Oracle voor I/O-operaties: https://docs.oracle.com/javase/tutorial/essential/io/

@@ -12,12 +12,7 @@ title: Een nieuw project starten
 weight: 1
 ---
 
-## Wat & Waarom?
-
-Een nieuw project in C starten, betekent het opzetten van een fundamentele code-structuur en omgeving om ontwikkelingstaken efficiënt te beheren. Programmeurs doen dit om het bouwproces te stroomlijnen, consistentie af te dwingen en het onderhoud en de schaalbaarheid van de software in de loop van de tijd te vergemakkelijken.
-
 ## Hoe:
-
 In het hart van elk C-project staat de broncode. Een typisch startpunt omvat het creëren van een hoofdbestand, vaak `main.c` genoemd, dat de ingangspunt van een programma bevat. Daarnaast is een `Makefile` essentieel voor het beheren van de compilatie om projectbuilds te stroomlijnen.
 
 Hier is een minimaal voorbeeld:
@@ -53,5 +48,4 @@ Hallo, wereld!
 ```
 
 ## Diepgaande verkenning
-
 Een project in C initiëren gaat niet alleen over code schrijven; het gaat over een solide basis leggen voor projectmanagement. Deze praktijk is geëvolueerd vanaf de vroege dagen van programmeren, voortkomend uit de behoefte om het proces van het compileren van grote, complexe systemen uit de UNIX-wereld te organiseren en te stroomlijnen. Het GNU Make-systeem, geïntroduceerd in de jaren '80, heeft dit door automatisering van het bouwproces revolutionair veranderd, waardoor het een kritisch hulpmiddel in moderne C-projecten werd. Echter, de opkomst van geïntegreerde ontwikkelomgevingen (IDE's) en andere hogere programmeertalen introduceerde verschillende projectinitialisatiepraktijken die wellicht meer geautomatiseerde bouwsystemen, afhankelijkheidsbeheer en versiecontrointegratie vanaf het begin omvatten. Ondanks deze vooruitgang blijven de eenvoud en controle die geboden worden door een Makefile en een goed georganiseerde broncode-directory van onschatbare waarde, vooral voor systeemniveau-programmering waar efficiëntie en beheer van bronnen van het grootste belang zijn. Niettemin, voor grotere projecten worden tools zoals CMake of Meson steeds meer de voorkeur gegeven vanwege hun vermogen om complexe builds en cross-platform compatibiliteit te hanteren, wat wijst op een trend naar meer geavanceerde projectinitiatietools in het C-ecosysteem.

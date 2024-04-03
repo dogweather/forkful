@@ -13,12 +13,7 @@ title: Kirjoittaminen vakiovirheeseen
 weight: 25
 ---
 
-## Mikä ja Miksi?
-
-Virheiden kirjoittaminen Visual Basic for Applications (VBA) -ohjelmassa tarkoittaa virheilmoitusten tai diagnostiikan ohjaamista erilleen vakiotulosteesta, yleensä konsoliin tai lokitiedostoon. Ohjelmoijat tekevät tämän erottaakseen ohjelman säännöllisen tulosteen virheviesteistä, mikä helpottaa ohjelmien vianmääritystä tai käyttäjien varoittamista ongelmista pääteulostetta sotkematta.
-
 ## Kuinka:
-
 VBA:ssa, koska suoraa sisäänrakennettua funktiota nimenomaan virheen vakiotulostukseen ei ole kuten joissakin muissa ohjelmointikielissä, yleinen kiertotapa sisältää `Debug.Print`-komennon käytön kehitysvaiheen virhetulosteille tai oman lokitusfunktion luomisen, joka jäljittelee tätä käyttäytymistä tuotantosovelluksissa. Alla on esimerkki siitä, miten voisit toteuttaa ja käyttää tällaista funktiota:
 
 ```vb
@@ -48,7 +43,6 @@ VIRHE: Virhe tapahtui pyyntöäsi käsiteltäessä.
 ```
 
 ## Syväsukellus
-
 Visual Basic for Applications ei itsessään sisällä omistettua mekanismia kirjoittamaan vakiovirheeseen johtuen sen syvästä integroinnista emäntäsovellusten, kuten Excel, Word tai Access, kanssa, jotka perinteisesti nojaavat graafisiin käyttöliittymiin eivätkä konsolitulosteeseen. Tämä on merkittävä eroavaisuus konsolipohjaisiin sovelluksiin verrattuna, jotka yleensä kehitetään kielillä kuten C tai Python, jossa vakiotuloste ja vakiovirhevirrat ovat peruskäsitteitä.
 
 Historiallisesti VBA:n keskittyminen on aina ollut enemmän vuorovaikutuksessa sen emäntäsovellusten asiakirjamallien kanssa ja vähemmän perinteisissä sovelluslokitusmekanismeissa. Siksi kehittäjät turvautuvat usein oman lokitusratkaisun toteuttamiseen, kuten esimerkissä nähtiin, tai käyttävät Windows API -kutsuja edistyneempien virheiden käsittelyn ja lokituksen tarpeiden varten.

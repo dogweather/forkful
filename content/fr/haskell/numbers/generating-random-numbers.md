@@ -11,18 +11,12 @@ title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---
 
-## Quoi & Pourquoi ?
-
-Générer des nombres aléatoires en Haskell consiste à créer des nombres qui sont imprévisibles selon les normes humaines. Ceci est crucial dans des scénarios allant des applications cryptographiques aux simulations où l'élément de chance est nécessaire pour modéliser avec précision les phénomènes du monde réel.
-
 ## Comment faire :
-
 Pour générer des nombres aléatoires en Haskell, on utilise typiquement le package `random`, qui fait partie de la plateforme Haskell. Voici un guide étape par étape :
 
 D'abord, assurez-vous d'avoir installé le package `random`. Sinon, vous pouvez l'obtenir via Cabal ou Stack.
 
 ### Générer un Nombre Aléatoire
-
 Pour générer un simple nombre aléatoire, vous pouvez utiliser la fonction `randomRIO`, qui produit une valeur aléatoire dans une plage spécifiée.
 
 ```Haskell
@@ -35,7 +29,6 @@ main = do
 ```
 
 ### Générer une Liste de Nombres Aléatoires
-
 Générer une liste de nombres aléatoires est légèrement plus complexe mais reste simple :
 
 ```Haskell
@@ -57,7 +50,6 @@ main = do
 Ce fragment de code crée une fonction `randomList` qui génère une liste d'entiers aléatoires. Remplacez `(1, 100)` par la plage désirée.
 
 ## Exploration Approfondie
-
 Le package `random` de Haskell fournit un générateur de nombres pseudo-aléatoires (PRNG), ce qui signifie que les nombres générés ne sont pas véritablement aléatoires mais peuvent sembler l'être pour de nombreuses applications. Le cœur de la capacité de génération aléatoire de Haskell réside dans la classe de type `RandomGen`, qui abstrait différentes méthodes de génération de nombres aléatoires, et la classe de type `Random`, qui inclut les types qui peuvent être générés aléatoirement.
 
 Historiquement, l'approche de Haskell en matière de génération de nombres aléatoires a mis l'accent sur la pureté et la reproductibilité. C'est pourquoi les opérations impliquant l'aléatoire sont explicitement gérées dans la monade `IO` ou nécessitent de passer et de mettre à jour manuellement les états du générateur — pour maintenir la transparence référentielle.

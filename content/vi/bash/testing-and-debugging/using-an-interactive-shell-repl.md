@@ -15,9 +15,6 @@ title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---
 
-## Cái gì & Tại sao?
-REPL viết tắt của Read-Eval-Print Loop, một môi trường lập trình máy tính đơn giản, tương tác. Các lập trình viên sử dụng nó để nhanh chóng viết và kiểm tra mã, thử nghiệm với cú pháp, và học các khái niệm lập trình mà không cần tốn công sức tạo và chạy cả ứng dụng.
-
 ## Cách thức:
 Trong Bash, terminal của bạn về cơ bản là một REPL. Bạn gõ một lệnh; nó đọc, đánh giá, in kết quả, và lặp lại chờ lệnh tiếp theo của bạn. Dưới đây là một ví dụ về việc sử dụng Bash như một REPL:
 

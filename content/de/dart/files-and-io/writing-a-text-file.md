@@ -13,9 +13,6 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-Das Schreiben einer Textdatei in Dart beinhaltet das Erstellen oder Modifizieren von Dateien auf der Festplatte, um Daten in einem lesbaren Format zu speichern. Programmierer tun dies, um Anwendungsdaten, Konfigurationen, Protokolle oder jegliche Informationen, die zwischen den Ausführungen der Anwendung bestehen bleiben sollten oder Daten mit anderen Anwendungen oder Benutzern teilen sollen, zu speichern.
-
 ## Wie:
 Die Kernbibliothek von Dart bietet das `dart:io` Paket für die Dateibehandlung, das es Ihnen ermöglicht, ohne die Notwendigkeit von Drittanbieterbibliotheken, Textdateien zu schreiben. Hier ist ein einfaches Beispiel für das Schreiben einer Textdatei:
 

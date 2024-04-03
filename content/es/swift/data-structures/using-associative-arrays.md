@@ -12,12 +12,7 @@ title: Uso de matrices asociativas
 weight: 15
 ---
 
-## Qué y Por Qué?
-
-Los arreglos asociativos, conocidos como diccionarios en Swift, te permiten almacenar y gestionar datos en pares clave-valor. Los programadores los usan para organizar datos de manera eficiente, facilitando el acceso y la manipulación de valores basados en sus claves únicas.
-
 ## Cómo hacerlo:
-
 Swift facilita el trabajo con arreglos asociativos. Aquí te mostramos cómo puedes declarar, añadir, eliminar y acceder a elementos en un diccionario de Swift:
 
 ```Swift
@@ -49,7 +44,6 @@ for (fruit, color) in fruitColors {
 Los diccionarios son increíblemente versátiles, permitiéndote manipular y acceder a los datos de manera dinámica. Su naturaleza desordenada no afecta la velocidad de recuperación de datos, lo cual es un beneficio significativo al tratar con grandes conjuntos de datos.
 
 ## Análisis Profundo
-
 La implementación de diccionarios en Swift como un arreglo asociativo se deriva de su poderosa capacidad para mapear claves únicas a valores. Históricamente, los lenguajes de programación han implementado este concepto bajo varios nombres, como tablas hash o mapas, aludiendo a su funcionalidad de crear un "mapa" entre claves y valores.
 
 En Swift, los diccionarios están optimizados para el rendimiento, aprovechando claves hashables para una recuperación de datos eficiente. Esto significa que el tipo `Key` en un diccionario `[Key: Value]` debe cumplir con el protocolo `Hashable`, lo cual es el caso para la mayoría de los tipos estándar de Swift como `Int`, `String` y `Double`.

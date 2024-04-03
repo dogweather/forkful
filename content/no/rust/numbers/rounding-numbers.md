@@ -11,9 +11,6 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva & Hvorfor?
-Å runde av tall betyr å justere dem til nærmeste hele tall eller en brøkdel med en viss presisjon. Programmerere runder av tall for å forenkle verdier for menneskelig lesbarhet, for å møte spesifikasjonskrav, eller for å redusere databehandlingsoverhodet i operasjoner med flyttall.
-
 ## Hvordan:
 Rust gjør avrunding til en lek. Sjekk ut disse metodene for `f32` eller `f64` typer:
 

@@ -12,9 +12,6 @@ title: Analisi di una data da una stringa
 weight: 30
 ---
 
-## Cos'è e Perché?
-Analizzare una data da una stringa implica interpretare il formato della stringa per estrarre componenti della data come giorno, mese e anno. I programmatori fanno ciò per gestire l'input dell'utente, leggere file di dati o interagire con API che comunicano date in formati di stringhe. È essenziale per la elaborazione dei dati, la validazione e l'esecuzione di operazioni aritmetiche con le date nelle applicazioni.
-
 ## Come fare:
 Nel C++ moderno, è possibile utilizzare la libreria `<chrono>` per gestire date e orari nativamente, ma questa non supporta direttamente l'analisi da stringhe senza un parsing manuale per formati più complessi. Tuttavia, per i formati di data ISO 8601 e formati personalizzati semplici, ecco come è possibile eseguire il parsing.
 

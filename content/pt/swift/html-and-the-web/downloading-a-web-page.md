@@ -11,9 +11,6 @@ title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---
 
-## O Que & Porquê?
-Baixar uma página da web é basicamente pegar dados de um site para usá-los no seu app. Programadores fazem isso para obter conteúdo atualizado, interagir com serviços online e processar informações dinamicamente.
-
 ## Como Fazer:
 ```Swift
 import Foundation

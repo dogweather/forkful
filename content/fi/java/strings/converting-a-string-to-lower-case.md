@@ -9,9 +9,6 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## What & Why? (Mitä ja Miksi?)
-Muuttaa stringin pieniksi kirjaimiksi. Teemme näin muun muassa tiedon normalisointiin ja vertailuihin, jolloin isot kirjaimet eivät vaikuta tulokseen.
-
 ## How to (Kuinka tehdä):
 Java tarjoaa helpon tavan muuttaa merkkijonojen kirjainkoko metodia `toLowerCase()` käyttäen. Katsotaanpa koodia.
 

@@ -10,9 +10,6 @@ title: Calculando uma data no futuro ou passado
 weight: 26
 ---
 
-## O Que e Por Quê?
-Calcular uma data no futuro ou passado é simplesmente descobrir qual será ou qual foi a data após ou antes de um certo período de tempo. Programadores fazem isso para manipular cronogramas, verificar a validade de certificados, criar lembretes e para diversas outras funções que necessitam dessa manipulação temporal.
-
 ## Como Fazer:
 Vamos direto ao ponto. Aqui estão alguns exemplos usando PowerShell para calcular datas no futuro e no passado.
 
@@ -47,5 +44,4 @@ Existem alternativas a considerar. Por exemplo, para tarefas mais complexas de a
 Detalhes de implementação, como a formatação de saída, podem ser personalizados. O PowerShell permite a personalização do formato de data e hora usando o método `ToString()` com parâmetros específicos, o que é muito útil dependendo do contexto cultural ou os requerimentos do sistema onde está sendo utilizado.
 
 ## Veja Também
-
 - [StackOverflow: Operações com datas em PowerShell](https://stackoverflow.com/questions/tagged/powershell+date)

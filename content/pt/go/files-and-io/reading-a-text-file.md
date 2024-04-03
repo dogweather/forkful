@@ -12,12 +12,7 @@ title: Lendo um arquivo de texto
 weight: 22
 ---
 
-## O Que & Por Quê?
-
-Ler um arquivo de texto em Go envolve acessar e recuperar conteúdo de um arquivo armazenado no disco para processamento ou análise. Programadores frequentemente realizam essa operação para manipular dados, configurar aplicações ou ler entrada para execução de programas, tornando-a uma habilidade fundamental no desenvolvimento de software.
-
 ## Como fazer:
-
 Ler um arquivo de texto em Go pode ser realizado de várias maneiras, mas um dos métodos mais diretos é usar o pacote `ioutil`. Aqui está um exemplo básico:
 
 ```go
@@ -78,7 +73,6 @@ func main() {
 Esta abordagem não só é mais moderna mas também suporta arquivos maiores, pois lê o arquivo linha por linha em vez de carregar o conteúdo inteiro na memória de uma vez.
 
 ## Aprofundamento:
-
 O tratamento de operações com arquivos em Go, incluindo a leitura de arquivos, reflete a filosofia da linguagem de simplicidade e eficiência. Inicialmente, o pacote `ioutil` oferecia operações de arquivo diretas. No entanto, com melhorias na biblioteca padrão do Go e uma mudança em direção a um tratamento de erro mais explícito e gerenciamento de recursos, os pacotes `os` e `io` se tornaram as alternativas preferidas para trabalhar com arquivos.
 
 Essas mudanças enfatizam o compromisso do Go com desempenho e segurança, particularmente em evitar problemas de memória que podem surgir ao carregar arquivos grandes inteiramente. O método `bufio.Scanner` introduzido para ler arquivos linha por linha sublinha a adaptabilidade da linguagem e foco nos desafios computacionais modernos, como processamento de grandes conjuntos de dados ou dados de streaming.

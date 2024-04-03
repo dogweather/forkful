@@ -11,9 +11,6 @@ title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## What & Why? (Co i Dlaczego?)
-Zamiana łańcucha znaków na małe litery oznacza zmianę wszystkich dużych liter na ich małe odpowiedniki. Programiści robią to często, aby uniknąć problemów z wielkością liter, jak w przypadku porównywania haseł czy adresów email.
-
 ## How to: (Jak to zrobić:)
 W Bashu możemy użyć kilku prostych technik:
 

@@ -16,12 +16,7 @@ title: "S\u1EAFp x\u1EBFp m\xE3 l\u1EADp tr\xECnh v\xE0o trong h\xE0m"
 weight: 18
 ---
 
-## Cái gì và Tại sao?
-
-Việc tổ chức code thành các hàm trong Go bao gồm việc chia nhỏ code thành các khối có thể tái sử dụng, mô-đun thực hiện các nhiệm vụ cụ thể. Phương pháp này giúp tăng cường tính dễ đọc, dễ bảo trì của code và tạo điều kiện cho việc hợp tác trong nhóm bằng cách cho phép các lập trình viên làm việc trên các hàm khác nhau cùng một lúc.
-
 ## Làm thế nào:
-
 Trong Go, bạn định nghĩa một hàm sử dụng từ khóa `func`, theo sau là tên của hàm, các tham số (nếu có), và kiểu trả về. Hãy minh họa bằng một ví dụ đơn giản:
 
 ```go
@@ -76,7 +71,6 @@ func main() {
 ```
 
 ## Sâu hơn
-
 Khái niệm tổ chức code thành các hàm không chỉ riêng gì Go - đó là một nguyên tắc lập trình cơ bản. Tuy nhiên, Go giới thiệu một số quy ước và khả năng nhất định làm cho quản lý hàm của nó nổi bật. Ví dụ, khả năng trả về nhiều giá trị từ các hàm là tương đối độc đáo và có thể dẫn đến việc code sạch sẽ, dễ hiểu hơn, đặc biệt khi xử lý các thao tác mà truyền thống có thể cần dùng đến con trỏ hoặc xử lý ngoại lệ.
 
 Hơn nữa, việc Go hỗ trợ các hàm hạng nhất - các hàm có thể được truyền như là tham số cho các hàm khác, trả về như là giá trị từ các hàm và gán cho các biến - tăng cường hỗ trợ của ngôn ngữ này cho các mẫu lập trình hàm. Tính năng này đặc biệt hữu ích trong việc tạo ra các hàm cấp cao mà thao tác hoặc kết hợp các hàm khác.

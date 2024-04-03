@@ -11,9 +11,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## What & Why?
-Å beregne en dato i fremtiden eller fortiden handler om å finne en bestemt dag før eller etter et utgangspunkt. Utviklere bruker dette for å håndtere tidsfrister, planlegge events eller sjekke perioder.
-
 ## How to:
 ```Fish Shell
 # Legger til 10 dager til den nåværende datoen

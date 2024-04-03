@@ -10,9 +10,6 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## What & Why?
-Interpolering av strenger i Ruby lar deg sette variabler eller Ruby-kode inn i en streng. Vi gjør det for å bygge dynamiske strenger raskt og rent.
-
 ## How to:
 Interpolering gjøres med `#{}` inni en dobbeltfnuttet streng. Her er et eksempel:
 

@@ -15,9 +15,6 @@ title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
 weight: 3
 ---
 
-## What & Why? 什麼 & 為什麼?
-字符串拼接就是将多个字符串合并成一个。程序员这么做为了生成动态内容、构建路径或者组合消息。
-
 ## How to: 怎麼做
 Fish Shell 组合字符串很直接。
 
@@ -33,6 +30,7 @@ set full_greeting (string join '' $greeting $name)
 echo $full_greeting
 # 输出: 你好, 世界!
 ```
+
 ## Deep Dive 深入探討
 拼接字符串是编程中最基础的功能之一，Fish Shell 提供的方法简单且直观。历史上，不同的编程语言有不同的拼接方法，诸如在 C 语言中需要使用函数 `strcat`，Python 中可以用 `+` 或 `.join()`。Fish Shell 的隐式拼接符合其简洁易用的设计哲学，而 `string` 命令则提供了更多灵活性和功能。
 

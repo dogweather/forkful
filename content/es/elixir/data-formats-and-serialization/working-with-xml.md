@@ -10,9 +10,6 @@ title: Trabajando con XML
 weight: 40
 ---
 
-## ¿Qué y Por Qué?
-Trabajar con XML en Elixir implica analizar, crear y manipular datos XML. Los programadores abordan XML porque es muy común en servicios web, archivos de configuración y sistemas heredados.
-
 ## Cómo hacerlo:
 Elixir no incluye el análisis de XML en su biblioteca estándar. SweetXML es una elección popular. Aquí te mostramos cómo usarlo:
 

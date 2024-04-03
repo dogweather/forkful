@@ -10,9 +10,6 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## What & Why?
-La stampa dei messaggi di debug serve per monitorare cosa sta succedendo nel tuo script. Programmatori lo fanno per trovare e risolvere i bug più facilmente.
-
 ## How to:
 Ecco alcuni modi per stampare debug output in Bash:
 

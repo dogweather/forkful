@@ -9,9 +9,6 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## What & Why?
-Lesing av tekstfiler lar programmereren hente data utenfor appen. Det er nødvendig for lagring, konfigurasjoner, eller for å arbeide med brukergenerert innhold.
-
 ## How to:
 ```Swift
 import Foundation

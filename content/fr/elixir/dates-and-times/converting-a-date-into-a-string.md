@@ -11,9 +11,6 @@ title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## What & Why?
-Convertir une date en chaîne de caractères permet de l'afficher dans un format lisible pour l'humain. Les développeurs utilisent cette conversion pour enregistrer, partager ou afficher des données de façon compréhensible.
-
 ## How to:
 Elixir utilise le module `Date` pour manipuler les dates. Pour convertir une date en chaîne, l'approche standard est d'utiliser la fonction `to_string/1`.
 

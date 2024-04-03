@@ -16,9 +16,6 @@ title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---
 
-## Cái gì & Tại sao?
-Tổ chức mã lệnh thành các hàm là về việc phân chia chương trình của bạn thành các khối có thể tái sử dụng, mô-đun được xác định bởi một tên. Chúng ta làm điều này để làm cho mã lệnh của chúng ta sạch sẽ hơn, dễ đọc hơn và dễ gỡ lỗi hơn. Đó là về việc không lặp lại bản thân và tối ưu hóa các bản cập nhật.
-
 ## Làm thế nào:
 Giả sử bạn có mã lệnh tính toán diện tích của một hình tròn nhiều lần. Thay vì lặp lại công thức, bạn đóng gói nó vào một hàm.
 

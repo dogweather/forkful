@@ -14,12 +14,7 @@ title: Scrivere un file di testo
 weight: 24
 ---
 
-## Cosa & Perché?
-
-Scrivere su un file di testo in Lua comporta la creazione o l'apertura di un file in modalità di scrittura, quindi utilizzare le operazioni sui file per inserire testo. Questa è un'operazione fondamentale per compiti come la registrazione, la memorizzazione dei dati o la gestione della configurazione, consentendo ai programmi di salvare i dati in modo persistente tra le sessioni.
-
 ## Come fare:
-
 In Lua, lavorare con i file per scrivere è semplice. Di solito, si utilizza la funzione `io.open()` per aprire (o creare) un file, specificando la modalità di funzionamento -- in questo caso, `"w"` per la scrittura. Se il file non esiste, viene creato; se esiste, il suo contenuto viene sovrascritto. È cruciale chiudere il file dopo aver scritto per garantire che i dati siano salvati correttamente e le risorse rilasciate.
 
 Ecco un semplice esempio che scrive una stringa su un file chiamato "example.txt":

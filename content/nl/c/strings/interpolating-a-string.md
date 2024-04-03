@@ -12,12 +12,7 @@ title: Een string interpoleren
 weight: 8
 ---
 
-## Wat & Waarom?
-
-String interpolatie, in programmeren, houdt in dat strings worden opgebouwd door expressies in te sluiten binnen letterlijke strings. Programmeurs doen dit om informatieve berichten, dynamische queries te creëren, of om efficiënt en schoon elke string met variabele inhoud te construeren, vaak voor uitvoer naar de gebruiker of voor logdoeleinden.
-
 ## Hoe:
-
 C, in tegenstelling tot sommige hoog-niveau talen, ondersteunt geen directe string interpolatie in zijn syntaxis. In plaats daarvan wordt het construeren van strings met variabele inhoud typisch bereikt met behulp van de `printf` functie of zijn varianten voor uitvoer, en `sprintf` voor het creëren van strings. Hier is een blik op hoe dynamisch strings te construeren in C:
 
 ```c
@@ -46,7 +41,6 @@ Naam: Jane Doe, Leeftijd: 28
 Deze fragmenten demonstreren de traditionele manier om variabele gegevens in strings in C op te nemen, het biedt flexibiliteit in het construeren van gedetailleerde strings.
 
 ## Diepere Duik
-
 Voor de komst van meer moderne programmeertalen met ingebouwde string interpolatie functies, moesten C ontwikkelaars vertrouwen op functies zoals `sprintf()`, `snprintf()`, en hun varianten voor het samenstellen van strings met variabele inhoud. Deze aanpak, hoewel effectief, introduceert potentiële risico's zoals buffer overflow als het niet zorgvuldig wordt beheerd, vooral met `sprintf()`.
 
 Alternatieven overwegend, hebben talen zoals Python en JavaScript meer intuïtieve string interpolatie kenmerken geïntroduceerd, zoals f-strings (geformateerde string literals) en templaat literals, respectievelijk. Deze functies stellen ontwikkelaars in staat om expressies rechtstreeks in de string literals in te sluiten, wat de code leesbaarder en beknopter maakt.

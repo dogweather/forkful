@@ -11,9 +11,6 @@ title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---
 
-## Vad & Varför?
-Jämföra två datum handlar om att avgöra vilket datum som kommer först, eller om de är samma. Programmerare gör detta för att hantera tidsfrister, schemalägga händelser eller spåra tidsskillnader.
-
 ## Hur man gör:
 PowerShell gör det enkelt. Använd `Get-Date` för att skapa datumobjekt och jämför dem med `-lt` (mindre än), `-gt` (större än) eller `-eq` (lika med).
 

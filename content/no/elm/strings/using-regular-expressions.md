@@ -13,9 +13,6 @@ title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---
 
-## Hva & Hvorfor?
-Regulære uttrykk (regex) i programmering er mønstre brukt for å matche kombinasjoner av tegn i strenger. I Elm, akkurat som i andre språk, bruker programmerere regex for oppgaver som å validere inndata, søke etter og erstatte tekst i strenger på grunn av deres fleksibilitet og effektivitet.
-
 ## Hvordan:
 Elm har ikke innebygde regex-funksjoner i sitt kjernelager, noe som krever bruk av tredjepartsbiblioteker for disse operasjonene. Et av de populære valgene for å jobbe med regex er `elm/regex`. Du kan legge det til i prosjektet ditt ved hjelp av `elm install elm/regex`.
 

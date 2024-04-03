@@ -10,9 +10,6 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-Rounding numbers means adjusting them to be closer to a simpler or more significant value. Programmers round off numbers to simplify results, limit decimal places for display, or for certain mathematical purposes.
-
 ## How to:
 Here's the lowdown on rounding numbers in Python:
 

@@ -11,9 +11,6 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i dlaczego?
-Zaokrąglanie liczb oznacza dostosowanie wartości do najbliższej liczby całkowitej lub określonej precyzji. Programiści robią to, aby upraszczać, dostosowywać do realiów świata rzeczywistego lub poprawiać wydajność poprzez pozbywanie się nadmiernej precyzji.
-
 ## Jak to zrobić:
 C++ oferuje kilka sposobów na zaokrąglenie liczb, takich jak `floor()`, `ceil()`, i `round()`:
 

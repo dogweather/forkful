@@ -11,9 +11,6 @@ title: Att arbeta med XML
 weight: 40
 ---
 
-## Vad & Varför?
-Att arbeta med XML innebär att tolka och manipulera XML-dokument med hjälp av kod. Programmerare gör detta för att läsa, skriva och ändra data i ett strukturerat, portabelt format som är brett använt för datautbyte och lagring.
-
 ## Hur man gör:
 Lua inkluderar inte inbyggd XML-tolkning, men det finns bibliotek som LuaXML och xml2lua som gör jobbet. Här är en snabb titt på att tolka XML med xml2lua:
 

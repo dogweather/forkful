@@ -11,9 +11,6 @@ title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---
 
-## What & Why?
-Convertissez une chaîne de caractères en minuscules pour unifier le format des données textuelles. Les programmeurs le font souvent pour comparer des chaînes de manière insensible à la casse ou pour standardiser les entrées utilisateurs.
-
 ## How to:
 Elixir rend la conversion en minuscules simple avec la fonction `String.downcase/1`. 
 

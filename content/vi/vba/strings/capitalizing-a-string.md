@@ -17,12 +17,7 @@ title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---
 
-## Cái Gì & Tại Sao?
-
-Việc viết hoa một chuỗi trong Visual Basic for Applications (VBA) bao gồm việc chuyển ký tự đầu tiên của mỗi từ trong một chuỗi sang chữ hoa và đảm bảo rằng phần còn lại của chuỗi là chữ thường. Lập trình viên thực hiện điều này cho mục đích chuẩn hóa dữ liệu, tăng cường khả năng đọc và đảm bảo sự nhất quán giữa các dữ liệu văn bản được nhập hoặc hiển thị.
-
 ## Làm Thế Nào:
-
 VBA không có một hàm được xây dựng sẵn cụ thể cho việc viết hoa từng từ trong một chuỗi, giống như một số ngôn ngữ lập trình khác. Tuy nhiên, bạn có thể đạt được điều này bằng cách kết hợp một số phương thức và hàm như `UCase`, `LCase`, và `Mid`.
 
 Dưới đây là một ví dụ đơn giản về cách viết hoa một chuỗi:
@@ -49,7 +44,6 @@ End Sub
 Hàm `CapitalizeString` tách chuỗi đầu vào thành các từ, viết hoa chữ cái đầu tiên của mỗi từ, và cuối cùng là kết hợp chúng lại để tạo thành chuỗi đã được viết hoa một cách đúng đắn.
 
 ## Sâu Hơn
-
 Visual Basic for Applications, xuất hiện vào đầu những năm '90s như một ngôn ngữ macro cho các ứng dụng Microsoft Office, được thiết kế để cung cấp một mô hình lập trình dễ tiếp cận. Mặc dù khả năng thao tác chuỗi của nó rất rộng lớn, nhưng nó thiếu một số trừu tượng hóa cấp cao hơn được tìm thấy trong các ngôn ngữ mới hơn. Nhiều môi trường lập trình hiện đại cung cấp một phương thức chuyên biệt cho việc viết hoa chuỗi, thường được gọi là chế độ viết hoa tiêu đề hoặc tương tự. Python, chẳng hạn, bao gồm phương thức `.title()` cho chuỗi.
 
 Khi so sánh, sự thiếu vắng một hàm được xây dựng sẵn duy nhất trong VBA để viết hoa các từ của chuỗi có thể coi là một nhược điểm. Tuy nhiên, điều này cung cấp cho lập trình viên sự hiểu biết sâu rộng hơn và kiểm soát cách họ thao tác văn bản và thích ứng với những điều kiện đặc biệt không hoàn toàn tuân thủ bởi một phương thức tổng quát. Ví dụ, việc xử lý từ viết tắt hoặc trường hợp đặc biệt nơi mà một số từ nhỏ trong tiêu đề không nên được viết hoa có thể được tùy chỉnh tốt hơn trong VBA thông qua các hàm rõ ràng.

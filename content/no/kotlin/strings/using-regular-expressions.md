@@ -13,11 +13,8 @@ title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---
 
-## Hva & Hvorfor?
-
-Regulære uttrykk (regex) er et kraftig verktøy for tekstbehandling, som lar programmerere søke, matche og manipulere strenger med avanserte mønstersøkingsteknikker. I Kotlin gjør bruk av regex det mulig å utføre komplekse tekstbehandlingsoppgaver som validering, parsing eller transformasjon på en effektiv måte, noe som gjør det uunnværlig for oppgaver som strekker seg fra enkel strengmanipulering til kompleks tekstanalyse.
-
 ## Hvordan:
+
 
 ### Grunnleggende Matching
 For å sjekke om en streng matcher et spesifikt mønster i Kotlin, kan du bruke `matches`-metoden til `Regex`-klassen.

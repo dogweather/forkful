@@ -11,9 +11,6 @@ title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---
 
-## What & Why?
-Envoyer une requête HTTP, c'est demander à un serveur web de faire quelque chose pour vous, comme récupérer une page web. Les développeurs le font pour interagir avec des APIs, récupérer des données, soumettre des formulaires, et bien plus.
-
 ## How to:
 Avec Java 11, c’est devenu très fluide. Vous pouvez utiliser le client HTTP intégré pour envoyer des requêtes et recevoir des réponses facilement. Voici comment faire :
 

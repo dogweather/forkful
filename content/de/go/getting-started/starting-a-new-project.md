@@ -12,12 +12,7 @@ title: Ein neues Projekt starten
 weight: 1
 ---
 
-## Was & Warum?
-
-Ein neues Projekt in Go zu starten, umfasst das Einrichten eines Arbeitsbereichs und dessen Initialisierung mit den notwendigen Go-Modulen. Programmierer tun dies, um Code zu organisieren, Abhängigkeiten effektiv zu verwalten und Build-Prozesse zu erleichtern. Dies ist grundlegend für die Erstellung skalierbarer und wartbarer Software in Go.
-
 ## Wie:
-
 Stellen Sie zuerst sicher, dass Go installiert ist, indem Sie `go version` in Ihrem Terminal ausführen. Sie sollten die installierte Version von Go als Ausgabe sehen. Als Nächstes starten wir ein neues Projekt. Navigieren Sie zu Ihrem Arbeitsbereich und führen Sie aus:
 
 ```shell
@@ -72,7 +67,6 @@ Hallo, Welt!
 Herzlichen Glückwunsch! Sie haben gerade ein neues Go-Projekt gestartet und Ihr erstes Go-Programm ausgeführt.
 
 ## Vertiefung
-
 Die Initiative, Module als Standard für die Abhängigkeitsverwaltung in Go einzuführen, war eine bedeutende Veränderung im Go-Ökosystem, die offiziell in Go 1.11 übernommen wurde. Vor Modulen verließen sich Go-Entwickler auf die Umgebungsvariable GOPATH, um Abhängigkeiten zu verwalten, was weniger intuitiv war und oft zur berüchtigten "Abhängigkeitshölle" führte.
 
 Module bieten eine gekapselte Möglichkeit, Projekt-Abhängigkeiten, Versionierung zu verwalten und sind ein Schritt in Richtung der Realisierung von selbstständigeren und portableren Go-Projekten. Jedes Modul gibt seine Abhängigkeiten an, die Go in der Datei `go.mod` nachverfolgt, wodurch die Abhängigkeitsverwaltung in unterschiedlichen Umgebungen und Entwicklungsphasen vereinfacht wird.

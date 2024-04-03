@@ -11,9 +11,6 @@ title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---
 
-## What & Why? (Co i dlaczego?)
-Interpolacja ciągu znaków umożliwia wstawianie zmiennych bezpośrednio w tekst. Używamy jej, by ułatwić tworzenie dynamicznych wiadomości i formatować je czytelnie.
-
 ## How to: (Jak to zrobić:)
 Arduino nie ma natywnej funkcji interpolacji ciągów, ale możemy osiągnąć podobny efekt używając `sprintf` lub łącząc ciągi przy użyciu operatora `+`.
 

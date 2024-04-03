@@ -14,9 +14,6 @@ title: Sette store bokstaver i en streng
 weight: 2
 ---
 
-## Hva og hvorfor?
-Å sette stor bokstav i en streng betyr vanligvis å konvertere det første tegnet i en streng til store bokstaver og resten til små bokstaver. Men noen ganger kan det bety bare å sørge for at det første tegnet er en stor bokstav mens resten av strengen forblir uendret. Ærlig talt, etter min mening, er det et noe vagt begrep.
-
 ## Hvordan:
 Ruby tilbyr [enkle metoder for manipulasjon av strenger](https://docs.ruby-lang.org/en/3.3/String.html), inkludert kapitalisering:
 

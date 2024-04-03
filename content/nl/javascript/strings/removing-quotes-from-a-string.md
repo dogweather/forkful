@@ -13,9 +13,6 @@ title: Quotes verwijderen uit een string
 weight: 9
 ---
 
-## Wat & Waarom?
-Aanhalingstekens uit een string verwijderen betekent dat je afkomt van die vervelende aanhalingstekens die je code in de war kunnen brengen, vooral wanneer je gegevens aan het parsen bent of JSON-objecten construeert. Programmeurs doen dit om invoer te saneren, syntaxisfouten te vermijden en ervoor te zorgen dat strings goed samenwerken met andere delen van hun code.
-
 ## Hoe:
 Stel je voor dat je een string hebt die omhuld is met dubbele aanhalingstekens, zoals `"\"Hallo, Wereld!\""` en je wilt de pure, ongeciteerde tekst. Hier is een snelle JavaScript-snippet om je string te bevrijden van die aanhalingstekenboeien:
 

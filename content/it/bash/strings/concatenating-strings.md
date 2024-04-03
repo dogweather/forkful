@@ -9,9 +9,6 @@ title: Concatenazione di stringhe
 weight: 3
 ---
 
-## What & Why?
-Concatenare stringhe significa unirle in una sola. È utile per costruire messaggi, comandi, o lavorare con percorsi di file.
-
 ## How to:
 Per concatenare stringhe in Bash basta metterle vicine. Senza spazi, senza niente.
 

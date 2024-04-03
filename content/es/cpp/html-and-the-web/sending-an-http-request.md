@@ -11,9 +11,6 @@ title: Enviando una solicitud http
 weight: 44
 ---
 
-## Qué y Por Qué?
-Enviar una solicitud HTTP es comunicarse con un servidor web, pidiendo información o enviando datos. Los programadores lo hacen para integrar funciones de red, como consumir APIs o servicios web en sus aplicaciones.
-
 ## Cómo hacerlo:
 Aquí utilizaremos la biblioteca [C++ Requests](https://github.com/libcpr/cpr), una envoltura simple y moderna para hacer solicitudes HTTP en C++ inspirada por la biblioteca Python requests. Primero, instálala:
 

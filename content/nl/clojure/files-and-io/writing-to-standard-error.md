@@ -12,9 +12,6 @@ title: Schrijven naar standaardfout
 weight: 25
 ---
 
-## Wat & Waarom?
-Naar de standaardfout (`stderr`) schrijven is een manier om foutmeldingen en diagnostiek uit te sturen. Programmeurs doen dit om ze te scheiden van de reguliere output (`stdout`), wat debuggen en loggen gemakkelijker maakt.
-
 ## Hoe:
 Om naar de standaardfout in Clojure te schrijven, gebruik je `binding` met `*err*`. Hier is een snel voorbeeld:
 
@@ -34,7 +31,7 @@ Dit gaat naar de standaardfout
 Dit fragment bindt `*err*` aan `*out*`, wat de standaarduitvoer is, zodat je kunt zien wat typisch naar `stderr` zou gaan.
 
 ## Diepere Duik
-Historisch gezien hadden Unix-systemen twee afzonderlijke uitvoerstromen, `stdout` en `stderr`, voor verschillende datatypes. In Clojure verwijst `*out*` naar `stdout` en `*err*` naar `stderr`. Alternatieven voor `binding` omvatten het direct gebruiken van Java interop (bv. `(.println System/err "bericht")`). Wat betreft implementatie, `*err*` is een dynamische var, wat toelaat voor thread-lokale bindingen — een nuance die kan beïnvloeden hoe fouten worden gelogd in gelijktijdige applicaties. 
+Historisch gezien hadden Unix-systemen twee afzonderlijke uitvoerstromen, `stdout` en `stderr`, voor verschillende datatypes. In Clojure verwijst `*out*` naar `stdout` en `*err*` naar `stderr`. Alternatieven voor `binding` omvatten het direct gebruiken van Java interop (bv. `(.println System/err "bericht")`). Wat betreft implementatie, `*err*` is een dynamische var, wat toelaat voor thread-lokale bindingen — een nuance die kan beïnvloeden hoe fouten worden gelogd in gelijktijdige applicaties.
 
 ## Zie Ook
 - Clojure Docs over `*err*`: https://clojuredocs.org/clojure.core/*err*

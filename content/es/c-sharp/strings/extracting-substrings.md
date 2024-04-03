@@ -9,9 +9,6 @@ title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---
 
-## ¿Qué & Por Qué?
-Extraer subcadenas implica tomar trozos de texto desde una cadena mayor. Los programadores lo hacen para analizar datos, validar entradas o simplemente para trabajar con partes específicas de texto de forma más cómoda.
-
 ## Cómo hacerlo:
 Vamos a ver cómo extraer subcadenas en C# usando el método `Substring`. Aquí hay un ejemplo:
 

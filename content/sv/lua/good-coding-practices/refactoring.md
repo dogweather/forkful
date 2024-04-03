@@ -12,9 +12,6 @@ title: Refaktorisering
 weight: 19
 ---
 
-## Vad & Varför?
-Refaktorisering är konsten att justera befintlig kod för att förbättra dess struktur, läsbarhet och effektivitet utan att ändra dess externa beteende. Programmerare gör det för att göra sin kod mer underhållbar, minska komplexiteten och ofta som ett förberedande steg innan de lägger till nya funktioner eller fixar buggar.
-
 ## Hur man gör:
 Låt oss ta en enkel Lua-funktion och refaktorisera den. Vi börjar med en funktion som beräknar summan av talen i en lista men är skriven utan mycket tanke på effektivitet eller klarhet:
 

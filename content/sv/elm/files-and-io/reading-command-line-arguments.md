@@ -11,9 +11,6 @@ title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---
 
-## What & Why?
-Att läsa kommandoradsargument innebär att tolka data som användarna anger när de startar ett program från terminalen. Programmerare gör detta för att tillåta dynamiskt beteende beroende på användarinput.
-
 ## How to:
 Elm är designat för webbprogram och saknar direkt tillgång till kommandoradsargument som server-sidans språk har. Men vi kan emulera en interaktion med nedanstående exempel.
 

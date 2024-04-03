@@ -15,9 +15,6 @@ title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---
 
-## Cái Gì & Tại Sao?
-Biến chữ hoa toàn bộ chuỗi nghĩa là chuyển tất cả các ký tự trong văn bản thành chữ in hoa. Lập trình viên làm điều này để tạo ra sự thống nhất, nhấn mạnh, hoặc đôi khi để đáp ứng một số tiêu chuẩn dữ liệu nào đó.
-
 ## Cách thực hiện:
 C++ cung cấp nhiều cách để biến chữ hoa chuỗi, nhưng đây là một ví dụ đơn giản:
 

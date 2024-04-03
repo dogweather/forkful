@@ -11,9 +11,6 @@ title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---
 
-## Vad & Varför?
-Att omvandla ett datum till en sträng innebär att man formaterar det i en textrepresentation. Programmerare gör detta för läsbarhet, för att spara datum i textfiler eller databaser, och för att manipulera datum i skript.
-
 ## Så Gör Du:
 Bash använder `date`-kommandot för att omvandla datum till strängar. Här är några exempel:
 

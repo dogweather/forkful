@@ -10,9 +10,6 @@ title: Concatenando strings
 weight: 3
 ---
 
-## O Que é & Porquê?
-Concatenar strings significa juntar duas ou mais sequências de caracteres para formar uma nova string. Programadores fazem isso para construir mensagens, gerar saídas formatadas ou trabalhar com dados textuais de forma dinâmica.
-
 ## Como Fazer:
 ```kotlin
 fun main() {

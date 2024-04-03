@@ -17,9 +17,6 @@ title: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uAE
 weight: 4
 ---
 
-## What & Why? (무엇과 왜?)
-문자열을 소문자로 바꾼다는 것은, 모든 대문자를 그에 해당하는 소문자로 변경하는 것입니다. 대소문자를 구분하지 않는 문자열 비교나 검색을 할 때 주로 사용됩니다.
-
 ## How to: (방법)
 ```javascript
 let greeting = 'Hello, World!';

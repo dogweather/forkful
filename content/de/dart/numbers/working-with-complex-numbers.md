@@ -14,16 +14,10 @@ title: Arbeiten mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-
-Komplexe Zahlen, bestehend aus einem Real- und einem Imaginärteil (üblicherweise als a + bi dargestellt), erweitern das Konzept der dimensionslosen Zahlen auf einen zweidimensionalen Raum. Programmierer arbeiten in Bereichen wie der Elektrotechnik, der Quanteninformatik und der Strömungsdynamik mit komplexen Zahlen, um Phänomene zu modellieren, die nicht allein entlang einer einzigen Dimension von reellen Zahlen dargestellt werden können.
-
 ## Wie geht das:
-
 Dart selbst beinhaltet keine integrierte Bibliothek für komplexe Zahlen, was entweder die Implementierung einer eigenen komplexen Zahlklasse oder die Verwendung einer Bibliothek von Drittanbietern erforderlich macht. Eine beliebte Wahl für wissenschaftliche Rechenaufgaben, die auch die Unterstützung für komplexe Zahlen umfasst, ist `package:scidart`.
 
 ### Implementierung einer grundlegenden komplexen Zahlklasse
-
 Für einfache Operationen können Sie leicht Ihre eigene komplexe Zahlklasse definieren:
 
 ```dart
@@ -53,7 +47,6 @@ void main() {
 ```
 
 ### SciDart für fortgeschrittene Operationen nutzen
-
 Für komplexere Operationen oder wenn die Leistung kritisch ist, bietet das `package:scidart` umfassende Unterstützung für komplexe Zahlen unter anderem wissenschaftlichen Rechenfunktionen. Fügen Sie zunächst SciDart zu Ihrer pubspec.yaml hinzu:
 
 ```yaml

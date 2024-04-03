@@ -14,12 +14,7 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-
-Foutafhandeling in Visual Basic for Applications (VBA) verwijst naar het proces van anticiperen, detecteren en oplossen van programmeer-, applicatie- of communicatiefouten. Het implementeren van robuuste foutafhandeling is cruciaal voor het behouden van de integriteit van applicaties en het verbeteren van de gebruikerservaring door onverwachte problemen elegant te beheren zonder abrupte crashes of dataverlies te veroorzaken.
-
 ## Hoe:
-
 In VBA wordt foutafhandeling typisch geïmplementeerd met behulp van de `On Error`-instructie die VBA vertelt hoe verder te gaan wanneer er een fout optreedt. De meest voorkomende strategieën voor foutafhandeling betreffen de `On Error GoTo`-label, `On Error Resume Next` en `On Error GoTo 0`.
 
 **Voorbeeld 1: Gebruik van `On Error GoTo`**
@@ -64,7 +59,6 @@ End Sub
 In dit geval stopt het programma niet bij een fout; het controleert of er een fout is opgetreden, handelt deze af als dat zo is en wist vervolgens de fout.
 
 ## Diepere Duik
-
 Historisch gezien is foutafhandeling in programmeertalen geëvolueerd van simpele goto-statements naar meer geavanceerde mechanismen zoals uitzonderingen in talen zoals Java en C#. De foutafhandeling van VBA, hoewel niet zo krachtig of flexibel als moderne uitzonderingsafhandeling, dient zijn doel binnen de context van de toepassing van de taal bij het automatiseren van taken in Microsoft Office-omgevingen.
 
 De primaire beperking van VBA's foutafhandeling ligt in zijn enigszins omslachtige en handmatige benadering, waarbij zorgvuldige plaatsing van foutafhandelingscode en duidelijk begrip van de uitvoeringsstroom vereist zijn. Moderne programmeertalen bieden meestal meer elegante oplossingen, zoals try-catch-blokken, die automatisch de stroom naar foutafhandelingscode beheren zonder de noodzaak voor handmatige controles of sprongen in code-uitvoering.

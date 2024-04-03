@@ -12,12 +12,7 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-
-Das Schreiben in eine Textdatei in der Fish Shell ermöglicht es Ihnen, Daten dauerhaft zu speichern. Dies erleichtert die Datenwiederherstellung oder -manipulation, sei es durch dasselbe Fish-Skript oder andere Programme. Programmierer tun dies für das Loggen, das Speichern von Konfigurationseinstellungen oder das Exportieren von Daten zur weiteren Verarbeitung.
-
 ## Wie:
-
 Um in Fish in eine Textdatei zu schreiben, können Sie den Befehl `echo` in Kombination mit Umleitungsoperatoren verwenden. Es gibt keine populären Drittanbieterbibliotheken speziell für das Schreiben in Dateien in Fish, da die in der Shell integrierten Befehle für diesen Zweck unkompliziert und effizient sind.
 
 ### Text in eine neue Datei schreiben oder eine vorhandene Datei überschreiben:

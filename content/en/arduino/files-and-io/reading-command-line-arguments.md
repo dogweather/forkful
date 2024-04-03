@@ -10,9 +10,6 @@ title: Reading command line arguments
 weight: 23
 ---
 
-## What & Why?
-Reading command line arguments means grabbing the data passed to a program when you start it from a terminal or command prompt. Programmers use arguments to customize a program's behavior without changing the code.
-
 ## How to:
 Arduino doesn't do command line arguments like traditional programming environments, because sketches are uploaded to microcontrollers without an accessible OS command line. But you can mimic this feature using serial communication. Here's how:
 

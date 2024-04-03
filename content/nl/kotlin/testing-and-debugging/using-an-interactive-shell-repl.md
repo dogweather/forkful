@@ -11,9 +11,6 @@ title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---
 
-## Wat & Waarom?
-Een REPL (Read-Eval-Print Loop) is een eenvoudige, interactieve computerprogrammeeromgeving. Programmeurs gebruiken het voor snelle codeerproeven, het testen van codefragmenten, of het leren van de syntax van een taal zonder een volledige applicatie te creëren.
-
 ## Hoe te:
 Het starten van Kotlin's REPL is een fluitje van een cent. Open je terminal en typ `kotlinc`. Je belandt in de Kotlin-shell. Laten we proberen een variabele te definiëren en de waarde ervan te printen:
 

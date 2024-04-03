@@ -10,9 +10,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## What & Why?
-Mittauksella tarkoitetaan merkkijonon pituuden selvittämistä. Ohjelmoijat tarvitsevat tätä toimintoa, jotta voivat käsitellä tekstidataa tehokkaasti ja tehdä päätöksiä ohjelmissaan.
-
 ## How to:
 Merkkijonon pituuden saat näin:
 

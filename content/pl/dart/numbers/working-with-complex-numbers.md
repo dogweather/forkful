@@ -14,16 +14,10 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i dlaczego?
-
-Liczby zespolone, składające się z części rzeczywistej i urojonej (zwykle oznaczane jako a + bi), rozszerzają koncepcję liczb bezwymiarowych na przestrzeń dwuwymiarową. Programiści pracują z liczbami zespolonymi w dziedzinach takich jak elektrotechnika, obliczenia kwantowe i dynamika płynów, aby modelować zjawiska, których nie można przedstawić tylko w jednowymiarowej przestrzeni liczb rzeczywistych.
-
 ## Jak to zrobić:
-
 Sam Dart nie zawiera wbudowanej biblioteki dla liczb zespolonych, co wymaga albo implementacji własnej klasy liczby zespolonej, albo użycia biblioteki stron trzecich. Popularnym wyborem dla zadań związanych z obliczeniami naukowymi, który obejmuje wsparcie dla liczb zespolonych, jest `package:scidart`.
 
 ### Implementacja podstawowej klasy liczby zespolonej
-
 Do prostych operacji łatwo można zdefiniować własną klasę liczby zespolonej:
 
 ```dart
@@ -53,7 +47,6 @@ void main() {
 ```
 
 ### Użycie SciDart do zaawansowanych operacji
-
 Do bardziej złożonych operacji lub gdy wydajność jest krytyczna, `package:scidart` oferuje wszechstronne wsparcie dla liczb zespolonych wśród innych funkcjonalności obliczeń naukowych. Najpierw dodaj SciDart do swojego pliku pubspec.yaml:
 
 ```yaml

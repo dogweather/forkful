@@ -10,9 +10,6 @@ title: Skriving av en tekstfil
 weight: 24
 ---
 
-## Hva & Hvorfor?
-Å skrive en tekstfil er å lagre tekstdata til en fil på disken. Programmerere gjør dette for å lagre data som app-innstillinger, logger eller å eksportere brukerdata.
-
 ## Hvordan:
 Elm har ikke direkte filsystem-tilgang, men du kan bruke Elm til å forberede filinnhold som brukeren kan laste ned. Her er et eksempel:
 

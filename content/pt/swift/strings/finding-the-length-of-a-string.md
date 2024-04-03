@@ -11,9 +11,6 @@ title: Descobrindo o comprimento de uma string
 weight: 7
 ---
 
-## O Que & Porquê?
-Saber o comprimento de uma string é descobrir quantos caracteres ela contém. Programadores fazem isso para validar entradas, manipular textos ou até mesmo para limitar o que é exibido na tela.
-
 ## Como fazer:
 ```swift
 let saudacao = "Olá, mundo!"

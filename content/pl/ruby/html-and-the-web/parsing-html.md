@@ -13,9 +13,6 @@ title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---
 
-## Co i dlaczego?
-Analiza HTML oznacza rozłożenie na czynniki pierwsze kawałka kodu HTML, aby zrozumieć jego strukturę i zawartość. Programiści robią to w celu wydobycia danych, manipulacji treścią lub migracji informacji między formatami i systemami.
-
 ## Jak to zrobić:
 Aby przeprowadzić analizę HTML w Ruby, zainstaluj gem 'Nokogiri' za pomocą `gem install nokogiri`. Nokogiri jest jak scyzoryk szwajcarski do pracy z HTML i XML w Ruby. Oto szybki przykład:
 

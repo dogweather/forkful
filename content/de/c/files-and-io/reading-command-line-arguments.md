@@ -13,12 +13,7 @@ title: Kommandozeilenargumente lesen
 weight: 23
 ---
 
-## Was & Warum?
-
-In der C-Programmierung ermöglicht das Lesen von Befehlszeilenargumenten, dass Programme Eingaben direkt aus dem Terminal akzeptieren können, was Flexibilität und Benutzerfreundlichkeit erhöht. Programmierer nutzen dies, um Skriptverhalten zu konfigurieren, ohne den Code zu ändern, was Anwendungen anpassbar und effizient macht.
-
 ## Wie geht das:
-
 In C kann die `main`-Funktion so gestaltet werden, dass sie Befehlszeilenargumente mit den Parametern `int argc` und `char *argv[]` akzeptiert. Hierbei stellt `argc` die Anzahl der übergebenen Argumente dar, und `argv` ist ein Array von Zeichenzeiger, die alle Argumente auflisten. Hier ist ein schnelles Beispiel zur Veranschaulichung:
 
 ```c
@@ -46,7 +41,6 @@ Argument 2: example
 Dies demonstriert, wie Befehlszeilenargumente in einem C-Programm geparst und genutzt werden können.
 
 ## Tiefergehende Einblicke
-
 Die Konvention, Argumente an Programme zu übergeben, reicht zurück bis zu den frühesten Tagen von Unix. In diesem traditionellen Ansatz bieten `argc` und `argv` eine einfache, aber leistungsstarke Schnittstelle für die Interaktion mit der Befehlszeile und verkörpern die Philosophie von Unix von kleinen, modularen Hilfsprogrammen, die zusammenarbeiten. Während moderne Sprachen oft anspruchsvollere Bibliotheken oder Frameworks für das Parsen von Befehlszeilenargumenten einführen, bietet die Direktheit der C-Methode unübertroffene Transparenz und Kontrolle.
 
 In jüngeren Entwicklungen haben Bibliotheken wie `getopt` in POSIX-Systemen sich entwickelt, um komplexere Parsing-Bedürfnisse zu unterstützen, wie die Handhabung von langen Optionsnamen oder Standardwerte für fehlende Argumente. Doch bleibt der grundlegende Mechanismus von `argc` und `argv` wesentlich, um zu verstehen, wie Programme in C mit ihrer Laufzeitumgebung interagieren.

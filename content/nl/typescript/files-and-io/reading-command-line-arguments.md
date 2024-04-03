@@ -13,11 +13,7 @@ title: Commandoregelargumenten lezen
 weight: 23
 ---
 
-## Wat & Waarom?
-Opdrachtregelargumenten stellen gebruikers in staat om gegevens door te geven aan een programma wanneer ze het uitvoeren. Programmeurs gebruiken ze om het gedrag van een programma aan te passen zonder de code te wijzigen.
-
 ## Hoe:
-
 In TypeScript gebruik je Node.js om opdrachtregelargumenten te lezen. Hier is hoe:
 
 ```typescript
@@ -37,7 +33,6 @@ Opdrachtregelargumenten: ['arg1', 'arg2']
 ```
 
 ## Diepgaand
-
 Terug in de vroege dagen van de opdrachtregel was gebruikersinteractie helemaal gebaseerd op tekst. Linux, UNIX, en Windows gebruikten opdrachtregelargumenten om programma's te vertellen wat ze moesten doen.
 
 Nu voor de alternatieven: naast `process.argv`, kun je in Node.js libraries zoals `yargs` of `commander` gebruiken voor meer functies zoals parsing en validatie.
@@ -45,7 +40,6 @@ Nu voor de alternatieven: naast `process.argv`, kun je in Node.js libraries zoal
 Het wezen van dit in TypeScript is eenvoudig: `process.argv` is een array met alle argumenten. Index 0 is het pad naar Node, index 1 is het scriptpad, dus echte argumenten beginnen vanaf index 2.
 
 ## Zie Ook
-
 Om verder te verkennen, begin met deze:
 
 - [Node.js process.argv documentatie](https://nodejs.org/docs/latest/api/process.html#process_process_argv)

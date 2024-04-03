@@ -12,12 +12,7 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-
-Tests schrijven betekent codefragmenten maken die controleren of andere stukjes code goed werken. Programmeurs doen dit om bugs vroeg te vinden, functionaliteit te waarborgen, en toekomstige wijzigingen te voorkomen die dingen in de war schoppen.
-
 ## Hoe:
-
 Rust maakt testen eenvoudig. Laten we een functie en een test ervoor schrijven.
 
 De functie:
@@ -56,13 +51,11 @@ test resultaat: ok. 1 geslaagd; 0 gefaald; 0 genegeerd; 0 gemeten; 0 gefilterd; 
 ```
 
 ## Diepere Duik
-
 Historisch gezien worden tests geschreven na de code (post-hoc testing). Rust moedigt aan om tests naast of voor uw code te schrijven (test-gedreven ontwikkeling, TDD). Er zijn andere vormen van testen - integratietests, doc tests, enz. - elk met unieke implementatiedetails.
 
 Tests in Rust worden typisch geschreven in hetzelfde bestand of een `tests/` directory. Ze kunnen unit tests zijn (zoals het `it_adds_two` voorbeeld), integratietests (in aparte bestanden), of documentatietests (ingebed in doc commentaren). De Rust compiler weet dat functies met `#[test]` als tests behandeld moeten worden om met `cargo test` uit te voeren.
 
 ## Zie Ook
-
 - Het Rust Boek over testen: https://doc.rust-lang.org/book/ch11-00-testing.html
 - Rust voorbeeld's testsectie: https://doc.rust-lang.org/stable/rust-by-example/testing.html
 - API richtlijnen over testen: https://rust-lang.github.io/api-guidelines/documentation.html#crate-provides-docs-including-rustdoc-and-tests-c-dox

@@ -14,12 +14,7 @@ title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---
 
-## Vad & Varför?
-
-Att tolka ett datum från en sträng i PHP innebär att konvertera text som representerar ett datum och/eller tid till ett PHP `DateTime`-objekt eller andra datum/tid-format. Detta är avgörande för datavalidering, manipulation, lagring och presentationssyften, särskilt när man arbetar med användarinmatning eller data från externa källor.
-
 ## Hur man gör:
-
 PHP:s inbyggda `DateTime`-klass tillhandahåller en kraftfull uppsättning funktioner för att tolka och arbeta med datum. Du kan skapa en `DateTime`-instans från en datumsträng med konstruktören och sedan formatera den efter behov. Så här gör du:
 
 ```php

@@ -11,9 +11,6 @@ title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---
 
-## Vad & Varför?
-Att extrahera delsträngar innebär att plocka ut specifika, mindre delar från en längre textsträng. Vi gör det för att bearbeta, analysera eller manipulera data på mer detaljerad nivå.
-
 ## Hur gör man?:
 ```Lua
 local str = "Hej, hur mår du idag?"

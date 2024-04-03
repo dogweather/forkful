@@ -13,9 +13,6 @@ title: "R\xE9daction de tests"
 weight: 36
 ---
 
-## Quoi & Pourquoi ?
-Le test en Ruby consiste à vérifier que votre code se comporte comme prévu dans diverses conditions. Les programmeurs écrivent des tests pour assurer la correction, prévenir les régressions et faciliter le remaniement, visant des applications robustes et maintenables.
-
 ## Comment faire :
 Ruby est fourni avec une bibliothèque intégrée appelée `Test::Unit` pour écrire des tests unitaires, encapsulant les pratiques de test dans des structures simples. Cependant, la communauté Ruby a souvent une préférence pour des bibliothèques tierces comme RSpec et Minitest en raison de leur expressivité et flexibilité accrues.
 

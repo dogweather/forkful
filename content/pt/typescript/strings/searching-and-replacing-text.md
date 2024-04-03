@@ -11,9 +11,6 @@ title: Pesquisando e substituindo texto
 weight: 10
 ---
 
-## O Que & Por Quê?
-Buscar e substituir texto é o processo de encontrar sequências de caracteres e trocá-las por outras. Programadores fazem isso para corrigir erros, atualizar dados ou simplificar refatorações em códigos.
-
 ## Como Fazer:
 ```TypeScript
 function substituirTexto(texto: string, busca: string, substituto: string): string {
@@ -36,7 +33,6 @@ Historicamente, a necessidade de buscar e substituir em textos vem desde os prim
 A implementação do `replace` no JavaScript e, por extensão, no TypeScript faz parte dos objetos `String`. Ela pode ser simples ou complexa, usando strings literais ou expressões regulares (RegExp) para encontrar padrões mais sofisticados. Importante: a função `replace()` por padrão substitui apenas a primeira ocorrência, a não ser que uma flag global 'g' seja usada na `RegExp`.
 
 ## Veja Também:
-
 - MDN Web Docs sobre a função `replace`: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
 - Guia de expressões regulares em JavaScript para iniciantes: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
 - Documentação TypeScript: [https://www.typescriptlang.org/docs/](https://www.typescriptlang.org/docs/)

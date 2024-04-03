@@ -11,9 +11,6 @@ title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---
 
-## What & Why?
-Eliminare i caratteri che corrispondono a un pattern significa scovare sequenze specifiche di testo e rimuoverle. I programmatori lo fanno per pulire i dati, validare input, o manipolare stringhe per esigenze specifiche.
-
 ## How to:
 Elm utilizza il modulo `Regex` per lavorare con le espressioni regolari, che permettono di identificare i pattern nei testi. Ecco un esempio:
 

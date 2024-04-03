@@ -10,16 +10,10 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-
-Calculating a date in the future or the past is about manipulating date objects to find dates beyond or before the present date, respectively. Programmers do this for tasks ranging from setting reminders and expiration dates to analyzing time-based data trends.
-
 ## How to:
-
 In Google Apps Script, which is based on JavaScript, you can manipulate dates using the `Date` object. Here’s how to calculate dates in the future and the past:
 
 ### Future Date Calculation
-
 To calculate a future date, you create a date object for the current date and then add the desired number of days (or any other time units) to it.
 
 ```javascript
@@ -34,7 +28,6 @@ Logger.log("Future Date: " + futureDate.toDateString());
 ```
 
 ### Past Date Calculation
-
 Similarly, to find a date in the past, subtract the number of days from the current date.
 
 ```javascript
@@ -49,7 +42,6 @@ Logger.log("Past Date: " + pastDate.toDateString());
 ```
 
 ### Sample Output
-
 This would output something like the following (assuming today is April 15, 2023):
 
 ```
@@ -60,7 +52,6 @@ Past Date: Wed Apr 05 2023
 Remember, the Date object in JavaScript (and thereby in Google Apps Script) automatically adjusts months and years as you add or subtract days.
 
 ## Deep Dive
-
 The manipulation of dates using the `Date` object stems from early JavaScript implementations. Over time, this approach has generally remained consistent, providing a straightforward way for developers to manage dates without needing external libraries. However, for more complex operations like timezone adjustments, or when working with extensive date-based data, libraries like `Moment.js` or the more modern `Luxon` might offer more functionality and easier handling.
 
 In Google Apps Script, specifically, despite the direct availability and simplicity of the `Date` object, it's crucial to be mindful of how date calculations can impact script performance and execution time, especially in time-driven triggers or extensive spreadsheet manipulations. Additionally, while Google Apps Script provides built-in methods to handle dates within its ecosystem (such as in Google Sheets or Calendar), integrating external libraries or leveraging Google's Advanced Services can sometimes provide more robust solutions for complex scenarios. 

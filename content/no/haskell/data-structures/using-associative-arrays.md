@@ -13,12 +13,7 @@ title: Bruke associative tabeller
 weight: 15
 ---
 
-## Hva & Hvorfor?
-
-Assosiative tabeller, eller ordbøker, i Haskell handler om å kartlegge nøkler til verdier for rask oppslag og effektiv datahåndtering. Programmerere bruker dem for å håndtere samlinger av parvise elementer, hvor det å søke etter et element er enkelt, sammenlignet med lister.
-
 ## Hvordan:
-
 Haskell har ikke assosiative tabeller rett ut av boksen på samme måte som noen andre språk, men det tilbyr et kraftfullt standardbibliotek kalt `Data.Map` for å arbeide med nøkkel-verdi-par. La oss brette opp ermene og se hvordan vi bruker dem!
 
 Først, sørg for å importere det:
@@ -57,7 +52,6 @@ Map.elems languagesUpdated
 Disse grunnleggende operasjonene bør dekke de fleste bruk, men det er mye mer å utforske i `Data.Map`!
 
 ## Dypdykk
-
 `Data.Map`-modulen i Haskells standardbibliotek er bygget på balanserte binære trær, spesifikt AVL-trær. Dette valget sikrer at de fleste operasjoner på kartet, som innsetting, sletting og oppslag, kan gjøres på O(log n) tid, hvor n er antall elementer i kartet. Det er et effektivt valg for mange brukstilfeller, selv om det ikke er det absolutt raskeste for alle scenarier.
 
 Det er også en historisk nyanse: før `Data.Map` ble gå-til-valget, brukte Haskell-programmerere ofte lister av par for å simulere assosiative tabeller. Men operasjoner på slike strukturer er O(n) for oppslag, noe som gjør `Data.Map` til en betydelig forbedring i ytelsen.

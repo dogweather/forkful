@@ -11,9 +11,6 @@ title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---
 
-## What & Why? (Mikä & Miksi?)
-Kun poistetaan merkkejä kuvion mukaisesti, käsitellään tekstitiedostoja tai merkkijonoja niin, että tietyt osat saadaan poistettua. Ohjelmoijat tekevät tämän datan siistimiseksi, muotoilun korjaamiseksi tai tarpeettoman tiedon karsimiseksi.
-
 ## How to: (Kuinka tehdä:)
 ```Bash
 # Yksinkertainen esimerkki: Poista kaikki "a" kirjaimet merkkijonosta

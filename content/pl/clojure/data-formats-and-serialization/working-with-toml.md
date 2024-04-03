@@ -12,9 +12,6 @@ title: Praca z TOML
 weight: 39
 ---
 
-## Co i dlaczego?
-Praca z TOML oznacza obsługę danych w formacie Minimal "Tom's Obvious, Minimal Language", popularnym w przypadku plików konfiguracyjnych ze względu na łatwość odczytu. Programiści używają go do prostego zarządzania konfiguracją, która działa od razu z przyjazną dla człowieka składnią.
-
 ## Jak to zrobić:
 Aby pracować z TOML w Clojure, potrzebujesz biblioteki takiej jak `clj-toml`. Najpierw dodaj ją do swojego `deps.edn`:
 

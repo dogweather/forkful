@@ -10,12 +10,7 @@ title: Manipolazione di file con one-liner da CLI
 weight: 31
 ---
 
-## Cosa & Perché?
-
-Manipolare file con one-liner CLI in Ruby consiste nell'eseguire operazioni comuni sui file direttamente dal tuo terminale utilizzando script Ruby. È un metodo potente per automatizzare ed eseguire rapidamente compiti legati ai file, risparmiando tempo prezioso ai programmatori e riducendo il potenziale per errori manuali.
-
 ## Come fare:
-
 Ruby, con la sua sintassi espressiva, consente di scrivere one-liner concisi e leggibili che possono gestire una varietà di operazioni sui file. Ecco alcuni esempi che potresti trovare utili:
 
 **Leggere un file**
@@ -53,7 +48,6 @@ Quando hai bisogno di pulire e rimuovere file, questo è il one-liner a cui fare
 Mentre questi esempi dimostrano la facilità con cui Ruby può manipolare file dalla CLI, è importante gestire le operazioni sui file con cura per evitare perdite di dati accidentali. Fai sempre un backup dei dati importanti prima di eseguire operazioni distruttive come eliminare o sovrascrivere.
 
 ## Approfondimento
-
 La manipolazione di file con one-liner Ruby non è unica di Ruby; linguaggi come Perl e Awk sono stati utilizzati per compiti simili per decenni. Ruby, tuttavia, combina la potenza espressiva di Perl con leggibilità, rendendo la creazione di script più intuitiva. Detto ciò, una delle debolezze di Ruby nella manipolazione dei file da CLI potrebbe essere la sua performance, specialmente quando si trattano file grandi o operazioni complesse - i linguaggi di scripting sono generalmente più lenti dei linguaggi compilati o degli strumenti Unix dedicati come `sed` o `awk` per attività di elaborazione del testo.
 
 Nonostante ciò, gli script Ruby sono incredibilmente versatili e possono essere facilmente integrati in applicazioni Ruby più grandi o progetti Rails. La loro leggibilità e le vaste funzionalità offerte attraverso la libreria standard e le gemme rendono Ruby una scelta solida per gli sviluppatori che cercano un equilibrio tra performance e produttività.

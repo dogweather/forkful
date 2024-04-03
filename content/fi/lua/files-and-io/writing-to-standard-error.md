@@ -12,9 +12,6 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mikä ja Miksi?
-Kirjoittaminen standardivirheeseen (stderr) tarkoittaa virheviestien ja diagnostiikkatulosteiden ohjaamista erilliseen kanavaan, eroon standarditulosteesta (stdout). Ohjelmoijat tekevät näin erottaakseen tavalliset ohjelman tulokset virhetiedoista, mikä tekee vianetsinnästä ja lokien kirjaamisesta sujuvampaa.
-
 ## Miten:
 Luassa virheiden kirjoittaminen stderr:iin on mahdollista `io.stderr:write()`-funktion avulla. Tässä on miten voit kirjoittaa yksinkertaisen virheviestin standardivirheeseen:
 

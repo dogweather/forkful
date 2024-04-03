@@ -12,12 +12,7 @@ title: Skriva tester
 weight: 36
 ---
 
-## Vad & Varför?
-
-Att skriva tester i Dart innebär att skapa testfall för att automatiskt verifiera att olika delar av ditt program fungerar som förväntat. Programmerare gör detta för att säkerställa att deras kod är tillförlitlig och fri från defekter, vilket underlättar uppdateringar och refaktorering samtidigt som regressionsproblem förhindras.
-
 ## Hur man gör:
-
 I Dart används ofta paketet `test` för att skriva tester. Först, lägg till paketet `test` i din `pubspec.yaml`:
 
 ```yaml
@@ -60,7 +55,6 @@ Exempel på utdata kan se ut som följer:
 ```
 
 ### Använda ett tredjepartsbibliotek: Mockito för att mocka
-
 För att testa kod som har komplexa beroenden kan du använda Mockito för att skapa mockobjekt. Först, lägg till Mockito i din `pubspec.yaml`:
 
 ```yaml

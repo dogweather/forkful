@@ -11,9 +11,6 @@ title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---
 
-## What & Why?
-Télécharger une page web, c'est récupérer son contenu via le réseau. Les développeurs font ça pour analyser des données, tester la disponibilité, ou intégrer des infos externes.
-
 ## How to:
 On utilise `reqwest`, une crate Rust populaire pour les requêtes HTTP.
 

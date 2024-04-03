@@ -11,9 +11,6 @@ title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---
 
-## Hva & Hvorfor?
-Komplekse tall har en reell del og en imaginær del, vanligvis skrevet som `a + bi`. De er avgjørende i avansert matematikk, fysikk, ingeniørfag og visse datamaskinalgoritmer. Programmerere jobber med dem for å håndtere beregninger som involverer kvadratrøtter av negative tall og oscillerende funksjoner.
-
 ## Hvordan:
 PHP tilbyr innebygd støtte for komplekse tall ved hjelp av `ext-intl`-utvidelsen med `NumberFormatter`-klassen. Her er et eksempel:
 

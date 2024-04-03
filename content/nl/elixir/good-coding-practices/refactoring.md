@@ -13,9 +13,6 @@ title: Refactoring
 weight: 19
 ---
 
-## Wat & Waarom?
-Refactoring is het proces van het herstructureren van bestaande code zonder het externe gedrag ervan te veranderen, gericht op het verbeteren van niet-functionele attributen zoals leesbaarheid en onderhoudbaarheid. Programmeurs doen dit om de code schoner, gemakkelijker te begrijpen en efficiënter te maken, wat toekomstige updates vergemakkelijkt en het risico op bugs vermindert.
-
 ## Hoe te:
 Laten we een veelvoorkomend Elixir-patroon opruimen. We gaan een functie `calculate_stats` refactoren die meer doet dan het zou moeten door het in kleinere, herbruikbare stukken te breken.
 

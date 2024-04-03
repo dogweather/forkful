@@ -10,9 +10,6 @@ title: Trovare la lunghezza di una stringa
 weight: 7
 ---
 
-## What & Why? ("Cosa & Perché?")
-Trovare la lunghezza di una stringa significa contare il numero di caratteri che la compongono. I programmatori lo fanno per esigenze come la validazione dei dati o la gestione della memoria.
-
 ## How to: ("Come fare:")
 ```Arduino
 void setup() {

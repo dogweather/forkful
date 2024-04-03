@@ -10,9 +10,6 @@ title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---
 
-## ¿Qué y Por Qué?
-La interpolación de cadenas permite insertar variables o expresiones dentro de una cadena de texto. Los programadores la usan para crear mensajes dinámicos y manipular fácilmente el contenido de las cadenas.
-
 ## Cómo Hacerlo:
 Interpolar en JavaScript? Pan comido con *template literals*. Aquí tienes ejemplos:
 

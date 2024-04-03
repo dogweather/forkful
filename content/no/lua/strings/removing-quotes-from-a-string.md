@@ -11,9 +11,6 @@ title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---
 
-## Hva & Hvorfor?
-Å fjerne anførselstegn fra en streng betyr å skrelle bort de doble eller enkle anførselstegnene som omfavner teksten din. Kodingsfolk gjør dette for å rense inndata, for å forenkle parsing, eller for å harmonisere data som kan være inkonsekvent sitert.
-
 ## Hvordan:
 Slik kicker du de anførselstegnene til kanten i Lua:
 

@@ -13,12 +13,7 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mikä & Miksi?
-
-Virheilmoitusten kirjoittaminen standardivirheeseen (`stderr`) C++:ssa tarkoittaa virheviestien tai diagnostiikkatietojen tulostamista, jotka ovat erillään pääohjelman tulosteesta. Ohjelmoijat tekevät näin ohjatakseen virheet eri virtaan, mikä mahdollistaa helpomman vianjäljityksen ja virheenkäsittelyn erottamalla normaalin tulosteen virheviesteistä.
-
 ## Kuinka:
-
 C++:ssa standardivirheeseen kirjoittaminen voidaan saavuttaa käyttämällä `cerr`-virtaa, joka on osa standardikirjastoa. Tässä on perusesimerkki:
 
 ```cpp

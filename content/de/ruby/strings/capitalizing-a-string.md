@@ -13,9 +13,6 @@ title: "Gro\xDFschreibung eines Strings"
 weight: 2
 ---
 
-## Was & Warum?
-Das Großschreiben eines Strings bedeutet normalerweise, das erste Zeichen eines Strings in Großbuchstaben umzuwandeln und den Rest in Kleinbuchstaben. Aber manchmal kann es auch einfach bedeuten, sicherzustellen, dass das erste Zeichen großgeschrieben wird, während der Rest des Strings unverändert bleibt. Ehrlich gesagt, meiner Meinung nach ist es ein etwas vager Begriff.
-
 ## Wie man es macht:
 Ruby bietet [einfache Methoden zur Stringmanipulation](https://docs.ruby-lang.org/en/3.3/String.html), einschließlich der Großschreibung:
 

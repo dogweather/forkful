@@ -11,12 +11,7 @@ title: Lecture d'un fichier texte
 weight: 22
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-
-Lire un fichier texte, c'est récupérer son contenu pour l'utiliser dans votre programme. Les programmeurs font ça pour accéder aux données, configurer des applications ou charger des scripts sans recompiler le code.
-
 ## How to (Comment faire) :
-
 Pour lire un fichier texte sur Arduino, il faut souvent utiliser une carte SD avec le module SD.h. Voici comment s'y prendre :
 
 ```Arduino
@@ -57,11 +52,9 @@ Contenu du fichier texte affiché ici.
 ```
 
 ## Deep Dive (Plongée en profondeur)
-
 Historiquement, la lecture de fichiers sur des microcontrôleurs était compliquée à cause des limites de mémoire et de stockage. Avec l’avènement de modules externes comme les cartes SD, cela est devenu plus accessible. Alternative aux cartes SD, l’EEPROM sur Arduino permet de stocker des données mais elle est plus limitée en taille. Pour la lecture de fichiers, il faut jongler avec les ressources en mémoire pour ne pas saturer l'Arduino, surtout pour les gros fichiers. Cela peut impliquer de lire par blocs et de traiter ces blocs ligne par ligne.
 
 ## See Also (Voir aussi)
-
 Pour plus d'infos sur le stockage de données avec Arduino, consultez les liens suivants :
 - Documentation sur le module SD.h : https://www.arduino.cc/en/reference/SD
 - Tutoriel pour la lecture et écriture de fichiers : https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadWrite

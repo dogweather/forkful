@@ -10,9 +10,6 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-Complex numbers, consisting of a real part and an imaginary part (usually written as a + bi), unlock calculations impractical or impossible with just reals. Programmers use them in fields like signal processing, quantum computing, and applied mathematics, where two-dimensional number representations are essential.
-
 ## How to:
 Handling complex numbers in TypeScript needs a dedicated class. Let's create one and work through addition and multiplication.
 

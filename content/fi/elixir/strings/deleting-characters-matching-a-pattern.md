@@ -9,10 +9,6 @@ title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---
 
-## What & Why?
-"Mikä ja miksi?"
-Kun puhutaan merkkien poistamisesta kuvion mukaisesti Elixirissä, tarkoitamme tiettyjen merkkijonojen tai merkkiryhmien poistamista tekstistä. Ohjelmoijat tekevät tämän datan puhdistamiseen ja muotoiluun, mikä on tärkeää esimerkiksi käyttäjän syötteen käsittelyssä tai tiedon esittämisessä halutussa muodossa.
-
 ## How to:
 "Näin teet:"
 Elixirissä RegExp-moduuli (regex) on työkalusi kun haluat poistaa merkkejä. Tässä on esimerkki koodi miten poistat kaikki numerot merkkijonosta:

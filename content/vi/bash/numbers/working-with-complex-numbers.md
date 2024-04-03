@@ -14,10 +14,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Số Phức: Làm Thế Nào và Tại Sao?
-
-Số phức bao gồm một phần thực và một phần ảo. Các lập trình viên sử dụng chúng trong các lĩnh vực như xử lý tín hiệu, cơ học lượng tử và bất cứ khi nào tính toán yêu cầu, bởi vì số thực thông thường không đủ đáp ứng.
-
 ## Cách thức:
 Bash không hỗ trợ số phức một cách tự nhiên. Bạn thường sử dụng một công cụ bên ngoài như `bc` với tùy chọn `-l` của nó. Dưới đây là cách bạn xử lý số phức trong bash:
 

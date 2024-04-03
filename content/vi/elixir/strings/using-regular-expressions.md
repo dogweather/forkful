@@ -15,12 +15,7 @@ title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---
 
-## Cái gì & Tại sao?
-
-Biểu thức chính quy (regex) là các mẫu được sử dụng để khớp các kết hợp ký tự trong văn bản. Các lập trình viên sử dụng chúng cho các nhiệm vụ như xác nhận định dạng, tìm kiếm và thay thế văn bản, và phân tích dữ liệu từ các chuỗi phức tạp.
-
 ## Làm thế nào:
-
 Trong Elixir, bạn sử dụng regex với các mẫu có sẵn hoặc tạo ra chúng của riêng bạn với module `Regex`. Dưới đây là một ví dụ nhanh:
 
 ```elixir
@@ -40,11 +35,9 @@ regex = ~r/hello/i
 ```
 
 ## Đào Sâu Hơn
-
 Regex được tiên phong vào những năm 1950 bởi nhà toán học Stephen Kleene. Elixir triển khai regex thông qua thư viện PCRE (Perl Compatible Regular Expressions), có khả năng khớp mẫu một cách mạnh mẽ. Các phương án thay thế như khớp chuỗi với `String.contains?/2` hay `String.starts_with?/2` tồn tại, nhưng chúng thiếu đi sự linh hoạt mà regex cung cấp. Module `Regex` của Elixir biên dịch các mẫu thành một định dạng nội bộ được tối ưu hóa cho việc sử dụng lặp đi lặp lại, tiết kiệm thời gian tính toán.
 
 ## Xem Thêm
-
 - Tài liệu module `Regex` của Elixir: [https://hexdocs.pm/elixir/Regex.html](https://hexdocs.pm/elixir/Regex.html)
 - Regex101, một công cụ kiểm tra và gỡ lỗi regex trực tuyến: [https://regex101.com/](https://regex101.com/)
 - "Programming Elixir" của Dave Thomas - một hướng dẫn toàn diện cũng bao gồm việc sử dụng regex.

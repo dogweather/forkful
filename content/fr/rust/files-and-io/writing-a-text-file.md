@@ -13,9 +13,6 @@ title: "R\xE9diger un fichier texte"
 weight: 24
 ---
 
-## Quoi & Pourquoi ?
-Écrire un fichier texte en Rust implique de créer, écrire et potentiellement ajouter des données à un fichier sur le système de fichiers. Les programmeurs effectuent cette opération pour persister des données, comme des journaux d'applications, des configurations ou du contenu généré par l'utilisateur, assurant la durabilité des données au-delà de la portée de l'exécution du programme.
-
 ## Comment faire :
 La bibliothèque standard de Rust fournit des outils robustes pour la manipulation de fichiers, encapsulés principalement dans les modules `std::fs` et `std::io`. Voici un exemple de base pour créer et écrire dans un fichier texte :
 

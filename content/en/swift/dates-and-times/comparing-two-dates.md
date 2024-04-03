@@ -10,9 +10,6 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-Comparing two dates is like asking, "Which came first, the chicken or the egg?" but with calendar dates. Programmers do it to sort events, trigger actions, and evaluate periods.
-
 ## How to:
 Swift uses the `Date` type for date and time. Here's a simple take on comparing two dates:
 

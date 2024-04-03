@@ -10,9 +10,6 @@ title: Trabajando con TOML
 weight: 39
 ---
 
-## ¿Qué y por qué?
-TOML es un lenguaje de serialización de datos legible por humanos, a menudo utilizado para configuraciones. Los programadores usan TOML por su simplicidad y claridad, traduciéndose fácilmente a un mapa hash en Rust.
-
 ## Cómo hacerlo:
 ```Rust
 // 1. Incluir la crate 'toml' en tu Cargo.toml

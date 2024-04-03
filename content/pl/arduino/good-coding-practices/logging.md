@@ -11,9 +11,6 @@ title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---
 
-## Co i dlaczego?
-"Logowanie" to tworzenie zapisu wydarzeń, transakcji lub działań, które mają miejsce w czasie w systemie. Programiści używają go do debugowania, monitorowania stanu systemu, zbierania statystyk, a nawet audytu używania, co czyni je nieodzowną praktyką dla utrzymania i zrozumienia zachowania ich kodu w różnych warunkach.
-
 ## Jak to zrobić:
 Arduino nie posiada wbudowanej biblioteki do logowania, tak jak niektóre inne środowiska, ale można zaimplementować podstawowe logowanie do konsoli szeregowej bez większego problemu. Oto krótki przykład, który pomoże Ci zacząć:
 

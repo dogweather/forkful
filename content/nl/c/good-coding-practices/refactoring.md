@@ -15,12 +15,7 @@ title: Refactoring
 weight: 19
 ---
 
-## Wat & Waarom?
-
-Refactoring in programmering betreft het herstructureren van bestaande code zonder het externe gedrag ervan te wijzigen, met als doel het verbeteren van niet-functionele attributen zoals leesbaarheid, het verminderen van complexiteit, en het verbeteren van onderhoudbaarheid. Programmeurs refactoren om de codebasis schoon te houden, technische schuld te minimaliseren en toekomstige wijzigingen gemakkelijker en veiliger te implementeren.
-
 ## Hoe:
-
 Refactoring kan een reeks tactieken omvatten, van het hernoemen van variabelen voor meer duidelijkheid tot het wijzigen van de structuur van code voor betere modularisatie. Hier is een eenvoudig voorbeeld dat laat zien hoe je een stuk C-code refactort voor betere helderheid en efficiëntie.
 
 Voor Refactoring:
@@ -63,7 +58,6 @@ int main() {
 De uitvoer blijft ongewijzigd, maar de functionaliteit voor het wisselen van waarden is verplaatst naar een aparte functie (`swap`), wat de leesbaarheid en herbruikbaarheid verbetert.
 
 ## Diepe Duik
-
 De praktijk van het refactoren van code bestaat al zolang als de softwareontwikkeling zelf, evoluerend naast programmeerparadigmas en talen. In C, een taal die zowel krachtig als beladen is met kansen voor inefficiëntie en fouten vanwege zijn laagdrempelige natuur, is refactoring vooral cruciaal. Het kan het verschil maken tussen een onderhoudbare codebasis en een verwarde wirwar van inefficiënties.
 
 Een overweging specifiek voor C is de balans tussen micro-optimalisaties en leesbaarheid/onderhoudbaarheid. Hoewel het verleidelijk is om C-code handmatig te tweaken voor elke laatste ons aan prestatie, kunnen dergelijke optimalisaties de code breekbaarder en moeilijker leesbaar maken. Daarom is het meestal beter om schone, leesbare code te prioriteren en te vertrouwen op de optimizer van de compiler om waar mogelijk verbeteringen in prestaties aan te brengen.

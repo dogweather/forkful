@@ -12,9 +12,6 @@ title: Een webpagina downloaden
 weight: 42
 ---
 
-## Wat & Waarom?
-Een webpagina downloaden betekent het bemachtigen van de inhoud ervan via het web. Programmeurs doen dit voor web scraping, offline bekijken, of het automatiseren van interacties met websites.
-
 ## Hoe:
 Hier is de magische formule om een webpagina te fetchen met PowerShell. We zullen `Invoke-WebRequest` gebruiken.
 

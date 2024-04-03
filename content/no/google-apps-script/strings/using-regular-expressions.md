@@ -12,16 +12,10 @@ title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---
 
-## Hva & Hvorfor?
-
-Regulære uttrykk (regex) er mønstre brukt til å matche kombinasjoner av tegn i strenger. Programmerere bruker dem til søking, redigering eller manipulering av tekst og data, noe som gjør dem uunnværlige for mønstersøking og databehandling.
-
 ## Hvordan:
-
 Å bruke regulære uttrykk i Google Apps Script er enkelt takket være JavaScript-basert syntaks. Her er hvordan du kan inkorporere regex i skriptene dine for vanlige oppgaver som søking og datavalidering.
 
 ### Søke i strenger
-
 Anta at du vil finne ut om en streng inneholder et spesifikt mønster, for eksempel en e-postadresse. Her er et enkelt eksempel:
 
 ```javascript
@@ -40,7 +34,6 @@ findEmailInText("Kontakt oss på info@example.com.");
 ```
 
 ### Datavalidering
-
 Regulære uttrykk skinner når det kommer til datavalidering. Nedenfor er en funksjon som validerer en inngangsstreng for å sjekke om den overholder en enkel passordpolicy (minst én stor bokstav, én liten bokstav og minst 8 tegn).
 
 ```javascript
@@ -55,7 +48,6 @@ Logger.log(validatePassword("weak"));       // Utdata: false
 ```
 
 ## Dypdykk
-
 Regulære uttrykk i Google Apps Script er arvet fra JavaScript, først standardisert i ECMAScript språkspesifikasjon i juni 1997. Selv om de er kraftfulle, kan de noen ganger føre til forvirrende og vanskelig å vedlikeholde kode, spesielt når de brukes for mye eller for komplekse mønstersøkeoppgaver som kanskje kan løses mer effektivt gjennom andre analysemetoder.
 
 For eksempel, selv om du kan bruke regex for HTML- eller XML-analyse i en klemme, er dette generelt frarådet på grunn av de nøstede og intrikate strukturene til disse dokumentene. I stedet er verktøy spesielt designet for å analysere slike strukturer, som DOM-parser for HTML, mer pålitelige og lesbare.

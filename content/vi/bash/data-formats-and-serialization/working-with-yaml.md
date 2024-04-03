@@ -10,8 +10,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---
 
-## Làm việc với YAML bằng Bash
-
 ## Cái gì & Tại sao?
 YAML ain't Markup Language (YAML) là một tiêu chuẩn mã hóa dữ liệu được con người có thể đọc. Lập trình viên sử dụng nó cho các tập tin cấu hình, lưu trữ dữ liệu, và tin nhắn giữa các quy trình do sự đơn giản và tính dễ đọc của nó.
 

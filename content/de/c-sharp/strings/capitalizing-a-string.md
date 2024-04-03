@@ -14,9 +14,6 @@ title: "Einen String gro\xDFschreiben"
 weight: 2
 ---
 
-## Was & Warum?
-Das Kapitalisieren eines Strings in C# beinhaltet die Umwandlung des ersten Zeichens eines Strings in Großbuchstaben, falls dies nicht bereits der Fall ist. Diese Änderung kann für die Formatierung von Ausgaben, die Durchsetzung von Codierungsstandards oder die Verbesserung der Lesbarkeit von Benutzeroberflächentexten entscheidend sein.
-
 ## Wie geht das:
 C# bietet einen unkomplizierten Ansatz zur Kapitalisierung von Strings mit eingebauten Methoden. Der einfachste Weg, dies zu erreichen, ist durch direkte Modifikation des Strings mit diesen Methoden. Für komplexere oder spezifischere Kapitalisierungsregeln (z.B. die Kapitalisierung jedes Wortes) könnten zusätzliche Bibliotheken oder manuelle Methoden notwendig sein. Unten sind Beispiele, die zeigen, wie man einen String in C# auf verschiedene Weisen kapitalisiert.
 

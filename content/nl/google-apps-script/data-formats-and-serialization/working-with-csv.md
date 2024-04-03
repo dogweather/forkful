@@ -13,14 +13,10 @@ title: Werken met CSV
 weight: 37
 ---
 
-## Wat & Waarom?
-
-Werken met CSV (Comma-Separated Values) bestanden in Google Apps Script houdt het lezen, wijzigen en schrijven van platte tekstbestanden in, waarbij elke regel een datarecord vertegenwoordigt met waarden gescheiden door komma's. Programmeurs doen dit om data gemakkelijk uit te wisselen tussen verschillende applicaties, databases of programmeertalen vanwege de brede acceptatie van CSV als een eenvoudig, op tekst gebaseerd gegevensuitwisselingsformaat.
-
 ## Hoe te:
 
-### CSV-gegevens lezen
 
+### CSV-gegevens lezen
 Om CSV-gegevens uit een bestand op Google Drive te lezen, moet u eerst de inhoud van het bestand als een string verkrijgen, vervolgens parseert u het. Google Apps Script maakt het ophalen van bestandsinhoud eenvoudig met de DriveApp-service.
 
 ```javascript
@@ -38,7 +34,6 @@ function readCSV() {
 ```
 
 ### CSV-gegevens schrijven
-
 Het maken en schrijven naar een CSV houdt in dat u een string construeert met komma-gescheiden waarden en nieuwe regels, en deze vervolgens opslaat of exporteert. Dit voorbeeld toont het maken van een nieuw CSV-bestand in Google Drive.
 
 ```javascript
@@ -53,7 +48,6 @@ function writeCSV() {
 ```
 
 ### Voorbeelduitvoer
-
 Bij het loggen van rijcellen bij het lezen van een CSV:
 
 ```plaintext
@@ -70,7 +64,6 @@ Jane Smith,34,Designer
 ```
 
 ## Diepere duik
-
 Historisch gezien zijn CSV-bestanden favoriet vanwege hun eenvoud en leesbaarheid voor mensen, waardoor ze toegankelijk zijn voor niet-programmeurs en nuttig voor snelle gegevensinspectietaken. Echter, Google Apps Script opereert binnen het ecosysteem van Google, waar Google Sheets fungeert als een krachtig, gebruiksvriendelijk alternatief voor CSV-manipulatie. Sheets bieden niet alleen een GUI voor het bewerken van gegevens, maar ondersteunen ook complexe formules, styling en vele andere functies die ruwe CSV's missen.
 
 Ondanks de voordelen die Google Sheets biedt, blijft directe CSV-manipulatie in Google Apps Script belangrijk voor geautomatiseerde taken, vooral wanneer wordt omgegaan met externe systemen die gegevens genereren of vereisen in CSV-formaat. Bijvoorbeeld, integratie met legacy-systemen, het exporteren van gegevens voor gebruik in andere applicaties, of preprocessing voordat gegevens in Google Sheets worden gevoerd.

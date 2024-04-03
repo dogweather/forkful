@@ -10,9 +10,6 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-Complex numbers extend the idea of the one-dimensional number line into the two-dimensional plane by including a perpendicular imaginary axis. Programmers work with them in fields like signal processing, fluid dynamics, and electrical engineering, where they're essential for representing oscillations and other phenomena.
-
 ## How to:
 In Lua, you can represent complex numbers with tables. The basic operations involve adding, subtracting, multiplying, and dividing these tables. Here's how:
 

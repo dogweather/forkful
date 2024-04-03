@@ -11,12 +11,7 @@ title: Interpolating a string
 weight: 8
 ---
 
-## What & Why?
-
-String interpolation in Google Apps Script allows for dynamic embedding of expressions within strings, facilitating the creation of more readable and maintainable code. Programmers use this technique to seamlessly incorporate variables and expressions into strings without the cumbersome concatenation syntax.
-
 ## How to:
-
 In Google Apps Script, string interpolation is achieved through template literals. These are string literals allowing embedded expressions, denoted by backticks (\`) instead of the usual quotes. Here's how you can use them:
 
 ```javascript
@@ -50,10 +45,9 @@ expressionInterpolationExample();
 multiLineStringExample();
 ```
 
-These examples illustrate basic usage, embedding expressions, and creating multi-line strings with interpolated values. 
+These examples illustrate basic usage, embedding expressions, and creating multi-line strings with interpolated values.
 
 ## Deep Dive
-
 Template literals, including string interpolation, were introduced in ECMAScript 2015 (ES6) and subsequently adopted in Google Apps Script. Before this, programmers had to rely purely on string concatenation, which could get unwieldy for complex strings or when integrating many variable values.
 
 ```javascript

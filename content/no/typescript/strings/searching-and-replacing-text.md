@@ -11,9 +11,6 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## Hva & Hvorfor?
-Søk og erstatt i tekstbehandling lar deg finne strenger og bytte dem ut med noe annet. Vi programmerere gjør det for å effektivisere kodeendringer, rette feil, eller oppdatere data.
-
 ## Hvordan gjøre det:
 ```TypeScript
 const replaceText = (input: string, search: string, replaceWith: string): string => {

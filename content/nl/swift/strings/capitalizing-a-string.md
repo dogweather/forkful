@@ -13,9 +13,6 @@ title: Een string met hoofdletters maken
 weight: 2
 ---
 
-## Wat & Waarom?
-Capitalisatie betekent het veranderen van de eerste letter van woorden naar hoofdletters; in strings gaat het vaak om het opmaken of gebruiksvriendelijk maken van tekst. Programmeurs gebruiken capitalisatie voor de leesbaarheid, om grammaticale regels te volgen of om een stijlgids te matchen.
-
 ## Hoe te:
 Swift maakt het capitaliseren van strings eenvoudig. Hier is een snelle rondleiding:
 

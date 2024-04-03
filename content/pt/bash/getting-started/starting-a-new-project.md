@@ -11,12 +11,7 @@ title: Iniciando um novo projeto
 weight: 1
 ---
 
-## O Que & Por Quê?
-
-Começar um novo projeto é dar o pontapé inicial no desenvolvimento de uma ideia de software. Programadores iniciam projetos para transformar conceitos em realidade funcional, resolver problemas ou simplesmente para aprender e se divertirem com novos desafios.
-
 ## Como Fazer:
-
 Para começar um projeto em Bash, primeiro criamos uma pasta e, em seguida, um script inicial. Aqui está o prático:
 
 ```Bash
@@ -36,11 +31,9 @@ Olá, mundo!
 ```
 
 ## Mergulho Profundo:
-
 Bash é o acrônimo para "Bourne Again SHell", e é uma melhora direta do shell Bourne (sh), criado por Steve Bourne. Há outras alternativas de shell como Zsh e Fish que oferecem funcionalidades diferentes, mas Bash é conhecido por sua portabilidade e amplo uso. Quando começamos um novo projeto em Bash, focamos em criar um ambiente isolado onde a lógica e os comandos podem ser testados e desenvolvidos. Usualmente, isso envolve escrever scripts, definir variáveis de ambiente e configurar permissões. A decisão sobre como estruturar pastas e arquivos depende do escopo e da complexidade do projeto.
 
 ## Veja Também:
-
 - [Bash Scripting Tutorial](https://linuxconfig.org/bash-scripting-tutorial)
 - [Linux Command Line Basics](https://www.udacity.com/course/linux-command-line-basics--ud595)
 - [The Bash Academy](http://guide.bash.academy/)

@@ -12,12 +12,7 @@ title: Samenvoegen van strings
 weight: 3
 ---
 
-## Wat & Waarom?
-
-Het samenvoegen van strings in Bash betekent het aan elkaar plakken van twee of meer tekststukken. Programmeurs doen dit om commando's op te bouwen, bestandspaden te creëren of simpelweg de uitvoertekst te formatteren.
-
 ## Hoe te:
-
 Hier is de snelle manier om je strings in Bash gezellig dicht bij elkaar te brengen:
 
 ```Bash
@@ -40,7 +35,6 @@ echo $filename  # Geeft uit: backup_20230315.tar.gz
 ```
 
 ## Diepere Duik
-
 Terug in de dagen voordat GUI's het land regeerden, waren commandoregels en scripts de koningen van computerinteractie. Het samenvoegen van strings is altijd essentieel geweest, omdat het dynamische commando- en bestandsmanipulatie mogelijk maakt.
 
 Een historisch alternatief is het `expr` commando, dat nu aanvoelt als een relikwie:
@@ -63,6 +57,5 @@ echo $full_greeting  # Geeft uit: Hallo, wereld!
 ```
 
 ## Zie Ook
-
 - [GNU Bash-handleiding](https://www.gnu.org/software/bash/manual/) voor de ins en outs van alles wat met BASH te maken heeft.
 - [Geavanceerde Bash-scriptinggids](https://tldp.org/LDP/abs/html/) voor scriptacrobatiek en meer voorbeelden.

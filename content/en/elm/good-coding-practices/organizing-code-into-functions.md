@@ -9,9 +9,6 @@ title: Organizing code into functions
 weight: 18
 ---
 
-## What & Why?
-Dumping all your code into one big pile? Bad idea. Breaking it up into functions? Good idea. It keeps your Elm code clean, reusable, and easier to test. By organizing your code into functions, you group code that performs specific tasks together, which makes your application more maintainable and understandable.
-
 ## How to:
 Here's a chunk of Elm code with a simple function to greet a user:
 

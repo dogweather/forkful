@@ -12,12 +12,7 @@ title: Een datum converteren naar een string
 weight: 28
 ---
 
-## Wat & Waarom?
-
-Het converteren van een datum naar een string in Rust stelt ons in staat om data weer te geven in een voor mensen leesbaar formaat. We doen dit voor UI's, logs of elke plaats waar mensen datums moeten kunnen begrijpen.
-
 ## Hoe te:
-
 Rust's `chrono` crate is de aangewezen keuze voor het omgaan met datums en tijden. Zorg ervoor dat het in je `Cargo.toml` staat:
 
 ```toml
@@ -39,7 +34,6 @@ fn main() {
 ```
 
 ## Diepgaande Duik
-
 Vóór `chrono` had Rust's standaardbibliotheek een paar datum- en tijd functies, maar die waren basic. `chrono` bouwde op die basis voort om uitgebreide functionaliteit te bieden. Een alternatief zou Rust's nieuwe `time` crate kunnen zijn, met als doel een veiligere en ergonomischere API.
 
 Wanneer je een datum naar een string converteert, ben je aan het serialiseren – je zet gegevens om naar een formaat dat gedeeld of opgeslagen kan worden. Het formaat dat je kiest (`%Y-%m-%d %H:%M:%S` in ons geval) is aan jou, en `chrono` ondersteunt veel van dergelijke patronen.
@@ -47,7 +41,6 @@ Wanneer je een datum naar een string converteert, ben je aan het serialiseren �
 Intern worden datums vaak opgeslagen als timestamps – seconden vanaf een startpunt, zoals het Unix-tijdperk (1 januari 1970). Wanneer je een datum formatteert, bereken je de leesbare vorm vanuit deze telling, met inachtneming van tijdzones en schrikkelseconden.
 
 ## Zie Ook
-
 - `chrono` crate documentatie: https://docs.rs/chrono/
 - Rust's `time` crate documentatie: https://docs.rs/time/
 - Datum formatteringssyntax: http://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table

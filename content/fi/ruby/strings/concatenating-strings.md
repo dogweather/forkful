@@ -10,9 +10,6 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## What & Why? / Mikä & Miksi?
-Yhdistämme merkkijonoja eli "stringejä" saumattomasti yhteen. Tähän on syynsä: näytetään käyttäjälle kustomoituja viestejä, rakennetaan dynaamista dataa tai muodostetaan koodin sisällä olevia hakulauseita.
-
 ## How to: / Kuinka:
 Merkkijonojen yhdistäminen eli "concatenation" Rubyssa on suoraviivaista. Tässä pari tapaa:
 

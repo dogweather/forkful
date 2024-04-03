@@ -13,12 +13,7 @@ title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---
 
-## Vad & Varför?
-
-Associerande arrayer, eller ordböcker, i Haskell handlar om att mappa nycklar till värden för snabb uppslagning och effektiv datahantering. Programmerare använder dem för att hantera samlingar av parade element, där det är enklare att söka efter ett element jämfört med listor.
-
 ## Hur gör man:
-
 Haskell har inte associerande arrayer direkt ur lådan på samma sätt som vissa andra språk, men det erbjuder ett kraftfullt standardbibliotek kallat `Data.Map` för att arbeta med nyckel-värde-par. Låt oss kavla upp ärmarna och se hur man använder dem!
 
 Först, se till att importera det:
@@ -57,7 +52,6 @@ Map.elems languagesUpdated
 Dessa grundläggande operationer bör täcka de flesta användningsfall, men det finns mycket mer att utforska i `Data.Map`!
 
 ## Djupdykning
-
 `Data.Map`-modulen i Haskells standardbibliotek är byggd ovanpå balanserade binärträd, specifikt AVL-träd. Detta val säkerställer att de flesta operationer på kartan, såsom insättning, borttagning och uppslagning, kan göras på O(log n) tid, där n är antalet element i kartan. Det är ett effektivt val för många användningsfall, även om det inte är det absolut snabbaste för alla scenarier.
 
 Det finns en historisk nyans också: innan `Data.Map` blev det självklara valet, använde Haskell-programmerare ofta listor av par för att simulera associerande arrayer. Däremot, operationer på sådana strukturer är O(n) för uppslagning, vilket gjorde `Data.Map` till en betydande förbättring i termer av prestanda.

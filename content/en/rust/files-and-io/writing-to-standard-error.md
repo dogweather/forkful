@@ -10,9 +10,6 @@ title: Writing to standard error
 weight: 25
 ---
 
-## What & Why?
-Writing to standard error (stderr) in Rust is about directing error messages and diagnostics to the console separately from the standard output (stdout). Programmers do this to differentiate normal program output from error messages, making it easier to handle errors appropriately or redirect them to logs or files during execution.
-
 ## How to:
 Rust provides a straightforward way to write to stderr using the `eprintln!` macro, similar to how `println!` is used for stdout. Here’s a basic example:
 

@@ -14,12 +14,7 @@ title: "R\xE9daction de tests"
 weight: 36
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire des tests en Kotlin consiste à créer des extraits de code qui valident automatiquement la correction fonctionnelle de vos modules logiciels, en s'assurant qu'ils fonctionnent comme prévu. Les programmeurs le font pour détecter les bogues tôt, faciliter le refactoring du code et fournir de la documentation sur le fonctionnement prévu des composants logiciels.
-
 ## Comment faire :
-
 Kotlin prend en charge le développement piloté par les tests avec divers frameworks, les plus populaires étant JUnit, Kotest, et MockK pour le mocking. Voici un exemple simple utilisant JUnit :
 
 ```kotlin

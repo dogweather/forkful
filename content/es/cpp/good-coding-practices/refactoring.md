@@ -10,12 +10,7 @@ title: "Refactorizaci\xF3n"
 weight: 19
 ---
 
-## ¿Qué y por qué?
-
-Refactorizar es el proceso de cambiar la estructura interna de un programa informático sin alterar su comportamiento externo. Los programadores lo hacen para limpiar su código, haciendo que sea más fácil de entender, mantener y extender.
-
 ## Cómo hacerlo:
-
 Imagina que tienes una función que está haciendo demasiado, como este método torpe que inicializa un objeto y también realiza registros (logging):
 
 ```C++
@@ -70,7 +65,6 @@ w.logInitialization();
 Este cambio no ha alterado lo que hace el programa pero hace que la clase `Widget` sea más modular y su uso más claro.
 
 ## Estudio profundo
-
 El concepto de refactorización como lo conocemos hoy tiene sus raíces en las comunidades de programación de Smalltalk de la década de 1980 y fue fuertemente popularizado por el libro de Martin Fowler "Refactoring: Improving the Design of Existing Code" de 1999. Hoy en día, la refactorización es una parte central del desarrollo de software moderno, integrado en diversas metodologías de desarrollo como Agile y TDD (Desarrollo Dirigido por Pruebas).
 
 Cuando hablamos de alternativas a la refactorización, nos adentramos en el territorio de reescritura o rediseño. La refactorización es estratégica e incremental, mientras que una reescritura puede descartar el código existente en favor de una nueva solución. El rediseño, mientras tanto, puede implicar cambios más significativos, incluyendo alterar la funcionalidad, lo cual no es un objetivo de la refactorización pura.
@@ -80,7 +74,6 @@ Los detalles de implementación sobre la refactorización pueden volverse bastan
 Además, la refactorización requiere un conjunto sólido de pruebas para asegurar que la funcionalidad permanezca sin cambios. Sin pruebas, básicamente estás volando a ciegas y arriesgándote a regresiones.
 
 ## Ver también
-
 Para una comprensión más profunda de la refactorización y para ver más ejemplos, podrías querer echar un vistazo a:
 
 - El texto clásico de Martin Fowler "Refactoring: Improving the Design of Existing Code" para ideas fundamentales y estrategias.

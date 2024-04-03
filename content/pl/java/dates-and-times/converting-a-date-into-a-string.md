@@ -10,10 +10,6 @@ title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---
 
-## What & Why?
-(Kiedy i dlaczego?)
-Przekształcanie daty na łańcuch znaków to proces formatowania obiektu daty w sposób czytelny dla człowieka. Programiści to robią, aby wyświetlać daty w zrozumiałych formatach lub zapisywać je w bazach danych i plikach tekstowych.
-
 ## How to:
 (Jak to zrobić?)
 ```java

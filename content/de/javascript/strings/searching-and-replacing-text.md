@@ -11,9 +11,6 @@ title: Suchen und Ersetzen von Text
 weight: 10
 ---
 
-## Was & Warum?
-Textsuche und -ersatz ermöglichen es, bestimmte Zeichenketten in einem Text zu finden und sie durch andere auszutauschen. Programmierer nutzen diese Funktion, um Daten zu aktualisieren, Fehler zu korrigieren oder einfach um Inhalte zu manipulieren.
-
 ## Wie geht das:
 In JavaScript verwendet man `.replace()` für Suchen und Ersetzen. Hier ein schnelles Beispiel:
 

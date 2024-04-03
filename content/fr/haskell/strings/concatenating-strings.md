@@ -10,9 +10,6 @@ title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---
 
-## What & Why? (Quoi et Pourquoi?)
-Concaténer des chaînes signifie les joindre bout à bout. Les programmeurs font cela pour assembler des textes, des messages, ou des données générés dynamiquement.
-
 ## How to: (Comment faire:)
 ```Haskell
 -- Concaténation simple avec l'opérateur (++)

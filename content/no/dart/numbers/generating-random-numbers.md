@@ -13,11 +13,7 @@ title: Genererer tilfeldige tall
 weight: 12
 ---
 
-## Hva og hvorfor?
-Generering av tilfeldige tall i Dart innebærer å skape numeriske verdier som er uforutsigbare og varierer ved hver kjøring. Programmerere utnytter denne funksjonaliteten av flere grunner, fra å simulere virkelige scenarioer i testmiljøer til å muliggjøre spillmekanikker og sikre sikkerhet gjennom tilfeldighet i kryptografiske operasjoner.
-
 ## Hvordan:
-
 Darts kjernebibliotek inkluderer støtte for å generere tilfeldige tall med `Random`-klassen funnet i `dart:math`. Her er et grunnleggende eksempel:
 
 ```dart

@@ -8,11 +8,6 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## What & Why?
-In italiano: "## Cosa e Perché?"
-
-Cercare e sostituire testo (search and replace) è come trovare una parola in un libro e cambiarla con un'altra. I programmatori lo fanno per correggere errori, aggiornare informazioni, o manipolare dati rapidamente.
-
 ## How to:
 In italiano: "## Come Fare:"
 

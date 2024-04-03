@@ -13,9 +13,6 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä & Miksi?
-YAML-tiedostojen käsittelyyn kuuluu YAML-tiedostojen (YAML Ain't Markup Language) jäsentäminen ja manipulointi, jotka ovat konfiguraatiotiedostoissa käytettyä datan sarjallistamismuotoa, Fish Shellissä. Ohjelmoijat tekevät tätä automatisoidakseen ja konfiguroidakseen sovelluksia tai palveluita tehokkaasti shell-ympäristöjen kontekstissa, helpottaen tehtäviä kuten konfiguraatioiden hallinta ja resurssien varaus.
-
 ## Kuinka:
 Fish Shellillä ei ole sisäänrakennettua tukea YAML:n jäsentämiseen, mutta voit käyttää kolmannen osapuolen työkaluja, kuten `yq` (kevyt ja kannettava komentorivin YAML-prosessori) käsittelemään YAML-dataa.
 

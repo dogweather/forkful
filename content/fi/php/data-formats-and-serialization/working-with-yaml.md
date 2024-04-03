@@ -13,16 +13,10 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä ja miksi?
-
-YAML, jonka nimi tulee sanoista "YAML Ain't Markup Language", on ihmisen luettavissa oleva datan serialisointiformaatti, jota käytetään yleisesti konfiguraatiotiedostoissa. Ohjelmoijat suosivat YAML:n käyttöä sen yksinkertaisuuden ja luettavuuden vuoksi, mikä tekee siitä erinomaisen valinnan asetusten, parametrien ja jopa monimutkaisten datarakenteiden tallentamiseen helposti hallittavassa muodossa.
-
 ## Kuinka:
-
 PHP ei nykyisissä versioissaan tue YAML:n jäsentämistä osana sen vakio kirjastoa. Helpoin tapa työskennellä YAML:n kanssa PHP:ssä on käyttämällä Symfony YAML -komponenttia tai `yaml` PECL-laajennusta.
 
 ### Käyttäen Symfony YAML -komponenttia
-
 Asenna ensin Symfony YAML -komponentti Composerin kautta:
 
 ```bash
@@ -86,7 +80,6 @@ framework:
 ```
 
 ### Käyttäen `yaml` PECL-laajennusta
-
 Jos haluat, tai jos projektin vaatimukset sallivat, PECL-laajennus voi olla toinen tehokas tapa työskennellä YAML:n kanssa. Varmista ensin, että laajennus on asennettu:
 
 ```bash

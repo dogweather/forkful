@@ -12,10 +12,7 @@ title: Conversione di una data in una stringa
 weight: 28
 ---
 
-## What & Why?
-Convertire una data in una stringa significa trasformare il modo in cui una data è memorizzata (spesso un numero) in un formato di testo leggibile e comprensibile. Lo facciamo per visualizzare le date in modi familiari agli umani o per integrarle nelle interfacce utente.
-
-## How to: 
+## How to:
 Supponendo di avere una data come oggetto `DateTime` di una libreria come `RTClib`, ecco come convertire una data in una stringa:
 
 ```arduino

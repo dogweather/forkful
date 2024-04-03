@@ -16,9 +16,6 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Cái gì & Tại sao?
-Làm tròn số có nghĩa là điều chỉnh chúng để gần với số nguyên hoặc vị trí thập phân được chỉ định nhất. Đây là một nhiệm vụ cơ bản trong lập trình để giảm bớt sự phức tạp, nâng cao hiệu suất, và cho những khi độ chính xác vượt qua một điểm nhất định không thêm giá trị.
-
 ## Làm thế nào:
 ```lua
 -- Làm tròn cơ bản trong Lua không có sẵn, nhưng bạn có thể định nghĩa một hàm:

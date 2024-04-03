@@ -14,11 +14,8 @@ title: Einen Datum aus einem String analysieren
 weight: 30
 ---
 
-## Was & Warum?
-
-Das Parsen eines Datums aus einem String ist eine gängige Aufgabe, wenn es um die Verarbeitung von Benutzereingaben oder das Lesen von Daten aus Dateien geht. Dabei wird die String-Daten in ein vom Programmiersystem erkanntes Datumsformat umgewandelt. In Rust ist dies essenziell für Operationen mit Daten, wie Vergleichen, Arithmetik oder Formatierung, und es verbessert die Datenvalidierung und -integrität in Anwendungen.
-
 ## Wie geht das:
+
 
 ### Verwendung der Standardbibliothek von Rust (`chrono` Crate)
 Die Standardbibliothek von Rust enthält keine direkte Datumsverarbeitung, aber das weit verbreitete `chrono` Crate ist eine robuste Lösung für die Manipulation von Datum und Uhrzeit. Zuerst fügen Sie `chrono` zu Ihrer `Cargo.toml` hinzu:

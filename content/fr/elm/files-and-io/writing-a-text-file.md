@@ -11,9 +11,6 @@ title: "\xC9criture d'un fichier texte"
 weight: 24
 ---
 
-## What & Why?
-Écrire un fichier texte consiste à sauvegarder des données en format lisible. Les développeurs le font pour conserver des configurations, sauver des résultats, ou gérer des logs.
-
 ## How to:
 Elm ne possède pas de système de fichiers intégré, car il est conçu pour la sécurité dans des applications web. Pour écrire un fichier, on interagit souvent avec une API backend ou on génère un téléchargement côté client. Voici un exemple de génération d'un fichier texte à télécharger via Elm :
 

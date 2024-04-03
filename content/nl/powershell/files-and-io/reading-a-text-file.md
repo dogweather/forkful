@@ -12,9 +12,6 @@ title: Een tekstbestand lezen
 weight: 22
 ---
 
-## Wat & Waarom?
-Een tekstbestand lezen betekent de inhoud ervan ophalen in een vorm waar je programma mee kan werken. Programmeurs doen dit voor gegevensverwerking, configuratie, loggen – altijd wanneer een bestand voor mensen leesbaar betrokken is.
-
 ## Hoe:
 Laten we beginnen met de basis! Zo lees je uit een tekstbestand in PowerShell:
 

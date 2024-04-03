@@ -11,9 +11,6 @@ title: Einen HTTP-Request senden
 weight: 44
 ---
 
-## Was & Warum?
-HTTP-Anfragen ermöglichen die Kommunikation mit Web-Servern: Daten anfragen oder senden. Programmierer brauchen das für Web-Interaktionen, APIs und Services.
-
 ## So geht's:
 In Haskell benutzt man oft die Bibliothek `http-client` für HTTP-Anfragen. Hier ein einfaches Beispiel:
 

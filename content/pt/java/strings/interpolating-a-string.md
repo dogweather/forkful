@@ -11,9 +11,6 @@ title: Interpolando uma string
 weight: 8
 ---
 
-## O Que & Porquê?
-Interpolação de strings é o processo de inserir valores de variáveis dentro de uma string. Programadores utilizam isso para facilitar a construção de mensagens dinâmicas e a concatenação de informações sem a necessidade de operadores adicionais.
-
 ## Como Fazer:
 ```java
 public class StringInterpolationExample {

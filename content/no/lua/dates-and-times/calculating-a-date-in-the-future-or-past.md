@@ -11,9 +11,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## Hva & Hvorfor?
-Beregning av fremtidige eller tidligere datoer handler om å legge til eller trekke fra tid fra en spesifikk dato. Programmerere gjør dette for å håndtere hendelser, frister, abonnementer, og lignende dato-sensitive funksjoner.
-
 ## Hvordan:
 ```Lua
 os.time() -- Gir nåværende tidspunkt som et timestamp.

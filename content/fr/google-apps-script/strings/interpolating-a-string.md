@@ -14,12 +14,7 @@ title: "Interpolation d'une cha\xEEne de caract\xE8res"
 weight: 8
 ---
 
-## Quoi & Pourquoi ?
-
-L'interpolation de chaînes dans Google Apps Script permet d'incorporer dynamiquement des expressions au sein des chaînes, facilitant ainsi la création d'un code plus lisible et plus facile à maintenir. Les programmeurs utilisent cette technique pour intégrer de manière transparente des variables et des expressions dans les chaînes sans la syntaxe de concaténation encombrante.
-
 ## Comment faire :
-
 Dans Google Apps Script, l'interpolation de chaînes est réalisée à travers les littéraux de gabarit. Il s'agit de littéraux de chaînes permettant des expressions intégrées, signalées par des accents graves (\`) au lieu des guillemets habituels. Voici comment vous pouvez les utiliser :
 
 ```javascript
@@ -56,7 +51,6 @@ multiLineStringExample();
 Ces exemples illustrent l'utilisation basique, l'intégration d'expressions et la création de chaînes sur plusieurs lignes avec des valeurs interpolées.
 
 ## Plongée Profonde
-
 Les littéraux de gabarit, incluant l'interpolation de chaînes, ont été introduits dans ECMAScript 2015 (ES6) et par la suite adoptés dans Google Apps Script. Avant cela, les programmeurs devaient se fier purement à la concaténation de chaînes, ce qui pouvait devenir lourd pour les chaînes complexes ou lors de l'intégration de nombreuses valeurs de variables.
 
 ```javascript

@@ -12,9 +12,6 @@ title: Controleren of een directory bestaat
 weight: 20
 ---
 
-## Wat & Waarom?
-Controleren of een map bestaat zorgt ervoor dat een programma werkt met geldige paden, wat fouten voorkomt. Het is cruciaal voor taken die specifieke mappen nodig hebben, zoals het lezen van bestanden of het loggen van gegevens.
-
 ## Hoe:
 Controleer of een map bestaat met een simpel `test` commando:
 ```Fish Shell
@@ -44,7 +41,6 @@ Implementatiedetails:
 Fish's ingebouwde `test` commando is efficiënt en betrouwbaar. Het vermijdt veel voorkomende valkuilen bij het aanroepen van externe commando's en biedt een eenvoudige syntax.
 
 ## Zie Ook
-
 - Documentatie van Fish Shell over `test`: https://fishshell.com/docs/current/cmds/test.html
 - POSIX specificatie voor `test`: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/test.html
 - Discussie over het controleren van bestaan van bestanden: https://unix.stackexchange.com/questions/590694/checking-if-a-directory-exists-in-unix-shell-scripting

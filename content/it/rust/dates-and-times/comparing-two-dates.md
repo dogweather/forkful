@@ -10,9 +10,6 @@ title: Confronto tra due date
 weight: 27
 ---
 
-## What & Why?
-Confrontare due date significa verificare se sono uguali, quale precede l'altra, o calcolarne la differenza. I programmatori lo fanno per gestire eventi, scadenze, ordinare eventi cronologicamente e altro ancora.
-
 ## How to:
 Ecco un esempio pratico con Rust:
 

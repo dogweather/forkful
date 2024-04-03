@@ -10,9 +10,6 @@ title: Refactoring
 weight: 19
 ---
 
-## Quoi & Pourquoi ?
-Le refactoring est le processus de restructuration du code informatique existant sans en changer le comportement externe. C'est une pratique essentielle pour réduire la complexité, améliorer la maintenabilité, et garder votre base de code saine et plus facile à comprendre tant pour les développeurs actuels que futurs.
-
 ## Comment faire :
 Considérons un script Bash simple qui nécessite un peu de refactoring. Il est maladroit, avec du code répété et il est difficile à suivre :
 

@@ -14,12 +14,7 @@ title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---
 
-## Vad & Varför?
-
-Att göra första bokstaven i en sträng stor handlar om att omvandla strängens första bokstav till versal samtidigt som man säkerställer att resten av bokstäverna är i gemener. Denna åtgärd är vanligt nödvändig för att formatera användarinmatning eller visa text i användargränssnitt, där konsekvens och läsbarhet är viktiga.
-
 ## Hur man gör:
-
 Elixir erbjuder ett enkelt sätt att göra första bokstaven stor i strängar med hjälp av sina inbyggda funktioner utan behov av tredjepartsbibliotek. Här är ett enkelt exempel:
 
 ```elixir

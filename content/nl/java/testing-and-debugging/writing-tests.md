@@ -12,12 +12,7 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-
-Tests schrijven is code ontwikkelen die controleert of andere code correct functioneert. Programmeurs doen dit om bugs vroegtijdig op te sporen, te zorgen dat software werkt zoals verwacht en de codekwaliteit over tijd te behouden.
-
 ## Hoe:
-
 Laten we een eenvoudige test schrijven met JUnit, een populair testraamwerk in Java. We zullen een methode testen die twee gehele getallen optelt.
 
 ```java
@@ -47,11 +42,9 @@ org.opentest4j.AssertionFailedError: 2 + 3 moet 5 zijn ==> verwacht: <5> maar wa
 ```
 
 ## Diepere Duik
-
 Testen was niet altijd een prioriteit voor programmeurs—het kreeg aandacht met Agile ontwikkeling en praktijken zoals Testgedreven Ontwikkeling (TDD). Alternatieven voor JUnit omvatten TestNG en Spock, elk met zijn eigen voordelen. Goede tests implementeren is een kunst; het omvat meestal het nabootsen van afhankelijkheden, het vasthouden aan testpatronen en het continu integreren van tests in het bouwproces.
 
 ## Zie Ook
-
 - JUnit 5 Gebruikersgids: [https://junit.org/junit5/docs/current/user-guide/](https://junit.org/junit5/docs/current/user-guide/)
 - Artikel over Testgedreven Ontwikkeling: [https://www.agilealliance.org/glossary/tdd/](https://www.agilealliance.org/glossary/tdd/)
 - Mocking frameworks: Mockito [https://site.mockito.org/](https://site.mockito.org/)

@@ -13,9 +13,6 @@ title: Einen Datum aus einem String analysieren
 weight: 30
 ---
 
-## Was & Warum?
-Das Parsen eines Datums aus einem String beinhaltet das Umwandeln von textuellen Datum- und Zeitinformationen in ein datetime-Objekt oder ein äquivalentes strukturiertes Format. Dies wird häufig durchgeführt, um Datumsarithmetik, Vergleiche und Formatierungsoperationen auf eine Weise zu ermöglichen, die sprach- und regionsagnostisch ist. Programmierer tun dies, um temporal Daten, die aus Logs, Benutzereingaben oder externen Quellen extrahiert wurden, effizient zu handhaben und zu manipulieren.
-
 ## Wie geht das:
 Die Standardbibliothek von Python stellt das `datetime` Modul bereit, welches die `strptime` Methode für diesen Zweck beinhaltet. Die Methode benötigt zwei Argumente: den Datum-String und eine Formatdirektive, die das Muster des Eingabestrings angibt.
 

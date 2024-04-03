@@ -15,9 +15,6 @@ title: "\u5F00\u59CB\u4E00\u4E2A\u65B0\u9879\u76EE"
 weight: 1
 ---
 
-## What & Why? (是什么 & 为什么?)
-创建新项目是构建全新软件程序的起点。程序员这么做是为了解决问题、实验新想法或开发创新的工具。
-
 ## How to: (如何操作)
 Clojure 项目通常使用 Leiningen 或 Clojure CLI 工具开始。Leiningen 是大家都爱的工具。下面是怎么用 Leiningen 创建一个新项目的步骤。
 

@@ -11,9 +11,6 @@ title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---
 
-## O Que & Porquê?
-Converter uma string para letras minúsculas significa transformar todos os caracteres alfabéticos dentro dela para a sua forma minúscula. Programadores fazem isso para normalizar texto, facilitando comparações e buscas de padrões, sem se preocupar com a capitalização original.
-
 ## Como fazer:
 ```Javascript
 let frase = "Olá, Mundo!";

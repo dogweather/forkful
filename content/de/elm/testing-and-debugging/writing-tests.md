@@ -14,12 +14,7 @@ title: Tests Schreiben
 weight: 36
 ---
 
-## Was & Warum?
-
-Tests in Elm zu schreiben, bedeutet, Testfälle zu erstellen, um die Korrektheit Ihres Elm-Codes zu überprüfen und sicherzustellen, dass er sich wie erwartet verhält. Programmierer machen das, um frühzeitig Fehler zu finden, die Wartung zu erleichtern und die Qualität und Zuverlässigkeit ihrer Anwendungen zu verbessern.
-
 ## Wie geht das:
-
 Elm verwendet das Paket `elm-explorations/test` für das Schreiben von Einheiten- und Fuzz-Tests. Beginnen Sie damit, das Paket Ihrem Projekt hinzuzufügen:
 
 ```elm

@@ -12,9 +12,6 @@ title: Een HTTP-verzoek verzenden
 weight: 44
 ---
 
-## Wat & Waarom?
-Het versturen van een HTTP-verzoek haalt gegevens op van of verzendt gegevens naar een webserver. Programmeurs doen dit om te interacteren met webdiensten of API's – informatie ophalen, updates plaatsen, noem maar op.
-
 ## Hoe:
 Om een GET-verzoek in Rust te versturen, gebruiken we de `reqwest` crate. Voeg deze eerst toe aan je `Cargo.toml`:
 

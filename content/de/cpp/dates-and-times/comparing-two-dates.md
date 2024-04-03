@@ -11,9 +11,6 @@ title: Vergleich von zwei Daten
 weight: 27
 ---
 
-## Was & Warum?
-Das Vergleichen zweier Daten bedeutet, ihre chronologische Reihenfolge zu bestimmen. Programmierer machen das, um Ereignisse zu organisieren, Deadlines zu verwalten oder Zeitspannen zu berechnen.
-
 ## How to:
 ```C++
 #include <iostream>

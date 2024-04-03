@@ -11,9 +11,6 @@ title: Organisering av kode i funksjoner
 weight: 18
 ---
 
-## Hva & Hvorfor?
-Å organisere kode i funksjoner handler om å bryte programmet ditt ned i gjenbrukbare, modulære biter identifisert ved et navn. Vi gjør dette for å gjøre koden vår renere, mer lesbar og enklere å feilsøke. Det handler om å ikke gjenta oss selv og å effektivisere oppdateringer.
-
 ## Hvordan:
 Si at du har kode som regner ut arealet av en sirkel flere ganger. I stedet for å gjenta formelen, pakker du den inn i en funksjon.
 

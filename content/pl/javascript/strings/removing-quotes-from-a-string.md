@@ -13,9 +13,6 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co i dlaczego?
-Usuwanie cudzysłowów z ciągu znaków oznacza pozbycie się tych irytujących znaków cudzysłowu, które mogą namieszać w twoim kodzie, szczególnie kiedy dokonujesz analizy danych lub konstruujesz obiekty JSON. Programiści robią to w celu oczyszczenia danych wejściowych, uniknięcia błędów składniowych oraz sprawienia, by ciągi znaków dobrze współgrały z innymi częściami ich kodu.
-
 ## Jak to zrobić:
 Wyobraź sobie, że masz ciąg znaków otoczony podwójnymi cudzysłowami, takimi jak `"\"Hello, World!\""` i chcesz uzyskać czysty tekst bez cudzysłowów. Oto szybki fragment kodu JavaScript, który uwolni twój ciąg znaków z tych łańcuchów cudzysłowu:
 

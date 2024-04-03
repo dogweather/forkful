@@ -10,9 +10,6 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## What & Why?
-La ricerca e la sostituzione di testo è una manipolazione di stringhe in cui troviamo certo contenuto e lo rimpiazziamo con altro. I programmatori lo fanno per aggiornare i dati, correggere errori, o modificare codice in modo rapido.
-
 ## How to:
 Ecco un esempio in Haskell utilizzando le funzioni `subRegex` dalla libreria `regex-compat`:
 

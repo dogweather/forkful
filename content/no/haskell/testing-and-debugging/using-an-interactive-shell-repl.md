@@ -11,9 +11,6 @@ title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---
 
-## Hva og hvorfor?
-Et interaktivt skall, eller REPL (Read-Eval-Print Loop), i Haskell lar deg kjøre kodefragmenter live. Det er en lekeplass for rask tilbakemelding, testing av funksjoner og læring av språket.
-
 ## Hvordan:
 For å starte GHCi (Glasgow Haskell Compiler's interaktive miljø), skriv ganske enkelt `ghci` i terminalen din. Her er hvordan du bruker det:
 

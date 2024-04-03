@@ -11,9 +11,6 @@ title: Deleting characters matching a pattern
 weight: 5
 ---
 
-## What & Why?
-Deleting characters matching a pattern in strings is about surgically removing bits you don't need, like stripping hashtags from tweets. Programmers do it to clean data, format it consistently, or prepare it for further processing.
-
 ## How to:
 ```Ruby
 # Simple deletion using String#gsub

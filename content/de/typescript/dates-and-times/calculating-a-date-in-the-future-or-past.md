@@ -10,9 +10,6 @@ title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---
 
-## Was & Warum?
-Das Berechnen eines Datums in der Zukunft oder Vergangenheit bedeutet, von einem bestimmten Datum ausgehend Zeit hinzuzufügen oder abzuziehen. Programmierer brauchen diese Berechnungen für Features wie Fristen, Erinnerungen oder Zeitstempel-Logs.
-
 ## So geht’s:
 ```TypeScript
 const heute = new Date();

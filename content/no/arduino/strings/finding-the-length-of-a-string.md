@@ -10,9 +10,6 @@ title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---
 
-## Hva & Hvorfor?
-Å finne lengden på en string betyr å telle antall tegn i den. Programmerere trenger det for å manipulere tekstdata presist, som for eksempel å sjekke passordstyrke eller formatere utdata.
-
 ## Hvordan gjøres det:
 ```Arduino
 String tekst = "Hei, Norge!";

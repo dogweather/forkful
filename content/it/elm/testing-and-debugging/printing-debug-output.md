@@ -11,9 +11,6 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## What & Why?
-La stampa del debug output è mostrare i valori delle variabili o messaggi su console per capire meglio cosa sta facendo il codice. I programmatori lo fanno per trovare e risolvere i bug più facilmente.
-
 ## How to:
 Elm usa `Debug.log` per stampare i messaggi di debug. Ecco un esempio base:
 

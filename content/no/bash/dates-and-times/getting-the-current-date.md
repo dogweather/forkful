@@ -12,9 +12,6 @@ title: "F\xE5 dagens dato"
 weight: 29
 ---
 
-## Hva & Hvorfor?
-Å hente dagens dato i Bash involverer bruk av innebygde kommandoer for å vise dato og tid i forskjellige formater. Programmerere bruker denne funksjonaliteten til oppgaver som å tidsstemple logger, planlegge oppgaver, eller bare som en del av sine systeminformasjonsskript for å spore når handlinger ble utført.
-
 ## Hvordan:
 I Bash er `date`-kommandoen ditt primære verktøy for å få tak i dagens dato og tid. Her er noen eksempler på hvordan du kan bruke den:
 

@@ -10,9 +10,6 @@ title: Vergleich von zwei Daten
 weight: 27
 ---
 
-## What & Why?
-Beim Vergleichen zweier Daten geht es darum, zu ermitteln, ob ein Datum vor, nach oder am gleichen Tag wie ein anderes liegt. Programmierer nutzen diesen Vergleich häufig für Aufgaben wie Gültigkeitsprüfungen, Zeitachsendarstellungen und Event-Management.
-
 ## How to:
 ```Kotlin
 import java.time.LocalDate

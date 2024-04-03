@@ -12,9 +12,6 @@ title: Capitalizzare una stringa
 weight: 2
 ---
 
-## Cos'è & Perché?
-Capitalizzare una stringa in C# comporta la conversione del primo carattere di una stringa in maiuscolo, se già non lo è. Questa modifica può essere fondamentale per formattare gli output, far rispettare gli standard di codifica, o rendere i testi dell'interfaccia utente più leggibili.
-
 ## Come fare:
 C# offre un approccio diretto alla capitalizzazione delle stringhe utilizzando metodi integrati. Il modo più semplice per raggiungere questo risultato è modificare direttamente la stringa con questi metodi. Per regole di capitalizzazione più complesse o specifiche (ad esempio, capitalizzare ogni parola), potrebbero essere necessarie librerie aggiuntive o metodi manuali. Di seguito sono riportati esempi che dimostrano come capitalizzare una stringa in vari modi in C#.
 

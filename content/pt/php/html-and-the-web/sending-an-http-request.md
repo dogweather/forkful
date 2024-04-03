@@ -11,9 +11,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---
 
-## O Que & Porquê?
-Enviar uma requisição HTTP é o processo de solicitar dados ou ações de um recurso especificado na web. Programadores fazem isso para interagir com APIs, serviços web e para integrar diferentes sistemas.
-
 ## Como Fazer:
 Vamos usar a biblioteca cURL do PHP para enviar uma requisição GET simples:
 

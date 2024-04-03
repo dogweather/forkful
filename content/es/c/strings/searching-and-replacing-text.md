@@ -13,12 +13,7 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## Qué y Por Qué?
-
-Buscar y reemplazar texto en C implica identificar subcadenas específicas dentro de una cadena más grande y sustituirlas con diferentes subcadenas. Los programadores realizan estas operaciones para manipular datos de texto, para tareas que van desde la saneamiento de datos y formateo hasta la generación dinámica de contenido.
-
 ## Cómo hacerlo:
-
 C no viene con funciones integradas para realizar búsqueda y reemplazo directamente en cadenas. Sin embargo, puedes lograr esto combinando varias funciones de manejo de cadenas disponibles en la biblioteca `<string.h>` junto con cierta lógica personalizada. A continuación, se muestra un ejemplo básico de cómo buscar una subcadena dentro de una cadena y reemplazarla. Por simplicidad, este ejemplo asume un tamaño de buffer suficiente y no maneja problemas de asignación de memoria que deberías considerar en el código de producción.
 
 ```c
@@ -76,7 +71,6 @@ Cadena modificada: Hello, this is a sample. This sample is simple.
 Este código demuestra un enfoque simple para buscar todas las instancias de una subcadena (`sub`) en una cadena fuente y reemplazarlas con otra subcadena (`newSub`), utilizando la función `strstr` para encontrar el punto de inicio de cada coincidencia. Es un ejemplo muy básico que no maneja escenarios complejos como subcadenas superpuestas.
 
 ## Análisis Profundo
-
 El enfoque utilizado en la sección "Cómo hacerlo" es fundamental, ilustrando cómo lograr la búsqueda y reemplazo de texto en C sin ninguna biblioteca de terceros. Históricamente, debido al énfasis de C en la gestión de memoria de bajo nivel y rendimiento, su biblioteca estándar no encapsula funcionalidades de manipulación de cadenas de alto nivel como las que se encuentran en lenguajes como Python o JavaScript. Los programadores tienen que manejar manualmente la memoria y combinar varias operaciones de cadenas para lograr los resultados deseados, lo que aumenta la complejidad pero ofrece más control y eficiencia.
 
 Es crucial notar que este enfoque manual puede ser propenso a errores, particularmente al manejar asignaciones de memoria y tamaños de buffer. La manipulación incorrecta puede llevar a desbordamientos de buffer y corrupción de memoria, haciendo el código vulnerable a riesgos de seguridad.

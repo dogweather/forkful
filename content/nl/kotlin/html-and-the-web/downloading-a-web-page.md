@@ -12,9 +12,6 @@ title: Een webpagina downloaden
 weight: 42
 ---
 
-## Wat & Waarom?
-Het downloaden van een webpagina betekent het ophalen van de HTML van een gegeven URL om lokaal te bekijken of te gebruiken. Programmeurs doen dit voor zaken zoals webscraping, offline lezen of geautomatiseerd testen.
-
 ## Hoe:
 Laten we aan de slag gaan met Kotlin's `HttpURLConnection` om snel een webpagina te grijpen. We gebruiken ook coroutines voor soepele achtergrondprocessen. Hier is een introductie:
 

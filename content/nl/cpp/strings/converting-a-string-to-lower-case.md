@@ -13,9 +13,6 @@ title: Een string omzetten naar kleine letters
 weight: 4
 ---
 
-## Wat & Waarom?
-Een string naar kleine letters omzetten betekent dat alle hoofdletters worden getransformeerd naar hun kleine letter equivalenten. Programmeurs doen dit voor consistentie in gebruikersinvoer, gegevensverwerking, en om tekstvergelijkingen te vereenvoudigen.
-
 ## Hoe:
 Hier is hoe je in C++ verschillen in hoofdletters platmaakt, waarbij hoofdletters buigen voor de kleine:
 

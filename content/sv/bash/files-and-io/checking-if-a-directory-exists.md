@@ -14,12 +14,7 @@ title: Kontrollera om en katalog existerar
 weight: 20
 ---
 
-## Vad & Varför?
-
-I Bash-programmering är det att kontrollera om en katalog finns en väsentlig kontrollmekanism som används för att verifiera närvaron av en katalog innan filoperationer utförs. Denna kontroll är avgörande för att undvika fel, såsom att försöka åtkomst eller modifiera kataloger som inte finns, vilket säkerställer smidigare och mer förutsägbar skriptkörning.
-
 ## Hur man gör:
-
 I grunden tillåter Bash dig att kontrollera om en katalog existerar med hjälp av villkorssatser och `-d`-operatorn. Nedan följer ett rakt på sak exempel som demonstrerar hur man utför denna kontroll.
 
 ```bash

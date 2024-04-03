@@ -28,12 +28,7 @@ title: "\u0420\u0430\u0441\u0447\u0435\u0442 \u0434\u0430\u0442\u044B \u0432 \u0
 weight: 26
 ---
 
-## Что и Почему?
-
-Расчёт даты в будущем или прошлом включает корректировку известной даты на определённое количество дней, месяцев или лет. Программисты делают это для функций, таких как напоминания, сроки истечения и планирование событий.
-
 ## Как сделать:
-
 ```java
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -60,7 +55,6 @@ public class DateCalculation {
 ```
 
 ## Погружение
-
 До Java 8 манипуляции с датами были трудоёмкими. Старые классы такие как `java.util.Date` и `java.util.Calendar` были подвержены ошибкам и были неудобны в использовании. Пакет `java.time`, введённый в Java 8, исправил это с помощью хорошо продуманных классов, таких как `LocalDate`, `LocalTime` и `ZonedDateTime`.
 
 Альтернативы? В эпоху до Java 8 были популярны сторонние библиотеки, такие как Joda-Time. В наши дни вы всё ещё можете использовать их, но стандартный `java.time` рекомендуется, потому что он официально является частью Java и элегантно обрабатывает переход на летнее время, часовые пояса и високосные годы.
@@ -68,7 +62,6 @@ public class DateCalculation {
 При кодировании расчётов дат учитывайте часовые пояса, если это важно для вашего контекста. Для UTC используйте `Instant` вместо `LocalDate`. Для конкретных зон вы обычно будете использовать `ZonedDateTime`. Помните, операции с датой-временем могут быть объединены, как `date.minusWeeks(1).plusHours(3)`, что делает ваш код чище.
 
 ## См. также
-
 1. Обзор пакета `java.time`: [Oracle Docs](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
 2. Обработка временных зон с `ZonedDateTime`: [Oracle ZonedDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html)
 3. Официальные шаблоны даты и времени для `java.time.format.DateTimeFormatter`: [Oracle DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)

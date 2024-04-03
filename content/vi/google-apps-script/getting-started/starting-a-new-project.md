@@ -14,12 +14,7 @@ title: "Kh\u1EDFi \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---
 
-## Bản Chất & Lý do?
-
-Khởi đầu một dự án mới trên Google Apps Script (GAS) bao gồm việc khởi tạo một file script bên trong hệ sinh thái của Google (Google Drive, Docs, Sheets, v.v.) để tự động hóa các nhiệm vụ hoặc mở rộng chức năng của các ứng dụng Google. Các lập trình viên thường bắt đầu hành trình này để tối ưu hóa quy trình làm việc, điều khiển các dịch vụ của Google một cách lập trình hoặc tạo ra các add-ons tùy chỉnh, tiết kiệm thời gian và khai thác sức mạnh của cơ sở hạ tầng của Google.
-
 ## Cách thức:
-
 Để bắt đầu một dự án mới trên Google Apps Script, bạn có một vài điểm nhập, nhưng hãy tập trung vào phương thức trực tiếp nhất: tạo một script từ Google Drive.
 
 1. **Tạo một Dự án trong Google Drive**
@@ -45,7 +40,6 @@ function helloWorld() {
 Xin chúc mừng, bạn vừa khởi đầu thành công một dự án mới trên Google Apps Script và đã chạy một hàm đơn giản!
 
 ## Sâu hơn
-
 Sự khởi đầu của Google Apps Script vào khoảng 2009 đã cung cấp một nền tảng mạnh mẽ nhưng dễ tiếp cận cho cả nhà phát triển lẫn người không chuyên về phát triển để tự động hóa, mở rộng, và xây dựng trên bộ sưu tập đồ sộ các dịch vụ của Google. Không giống như môi trường lập trình truyền thống, GAS mang lại một sự pha trộn độc đáo giữa sự đơn giản và tích hợp, trực tiếp trong hệ sinh thái của Google, mà không cần máy chủ bên ngoài hay cài đặt. Mô hình thực thi không máy chủ này giúp đơn giản hóa rất nhiều việc triển khai và quản lý dự án.
 
 Về mặt lịch sử, GAS cũng từng bị hạn chế bởi môi trường thực thi và phiên bản ngôn ngữ của nó, thường đi sau so với các tiêu chuẩn JavaScript hiện tại. Tuy nhiên, các cập nhật gần đây đã đưa cú pháp JavaScript hiện đại (ECMAScript 2015+) vào GAS, làm cho nó trở nên hấp dẫn hơn đối với các nhà phát triển quen với các phương pháp phát triển hiện đại.

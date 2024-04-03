@@ -12,9 +12,6 @@ title: Het huidige datum ophalen
 weight: 29
 ---
 
-## Wat & Waarom?
-De huidige datum in je code vastleggen stelt je in staat om gebeurtenissen te markeren op het moment dat ze plaatsvinden. Het is essentieel voor logging, het volgen van tijdgevoelige gegevens en het aanpassen van gebruikerservaringen op basis van de datum.
-
 ## Hoe doe je het:
 In Haskell krijg je de huidige datum met behulp van de `Data.Time` bibliotheek. Eerst importeer je wat je nodig hebt:
 

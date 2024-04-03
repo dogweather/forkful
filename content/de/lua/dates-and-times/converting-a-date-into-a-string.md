@@ -11,9 +11,6 @@ title: Datum in einen String umwandeln
 weight: 28
 ---
 
-## Was & Warum?
-Das Umwandeln eines Datums in einen String bedeutet, dass du eine Datum- und Zeitangabe in lesbaren Text umwandelst. Das ist praktisch, um Daten für Benutzer sichtbar zu machen oder für die Speicherung in Dateien und Datenbanken.
-
 ## So geht's:
 ```Lua
 -- Aktuelles Datum und Uhrzeit holen

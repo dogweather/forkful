@@ -17,9 +17,6 @@ title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---
 
-## Là gì & Tại sao?
-Biểu thức chính quy, thường được biết đến với tên gọi regex, là các mẫu được sử dụng để khớp các kết hợp ký tự trong chuỗi. Lập trình viên sử dụng chúng để tìm kiếm, chỉnh sửa và thao tác văn bản một cách chính xác và hiệu quả.
-
 ## Cách thực hiện:
 Dưới đây là cách sử dụng regex trong JavaScript:
 

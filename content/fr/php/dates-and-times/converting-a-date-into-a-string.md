@@ -11,12 +11,7 @@ title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-
-Transformer une date en chaîne de caractères permet de la formater pour l'affichage. Les développeurs font cela pour des raisons de lisibilité et pour s'adapter aux normes locales de date et d'heure.
-
 ## How to: (Comment faire:)
-
 Pour convertir une date en chaîne de caractères en PHP, utilisez la fonction `date_format()` ou la méthode `format` d'un objet `DateTime`. Voici quelques exemples :
 
 ```PHP
@@ -32,7 +27,6 @@ echo date('d/m/Y');  // Format jour/mois/année
 ```
 
 ## Deep Dive (Plongée en profondeur)
-
 Historiquement, PHP gère les dates avec la fonction `date()` introduite dans les premières versions. Plus récemment, l'objet `DateTime` a été introduit, apportant plus de flexibilité. Il existe plusieurs alternatives pour manipuler des dates en PHP :
 
 1. `DateTime` et `DateTimeImmutable` pour une approche orientée objet.
@@ -42,7 +36,6 @@ Historiquement, PHP gère les dates avec la fonction `date()` introduite dans le
 Une implémentation dépendra de vos besoins de formatage, de modification de fuseaux horaires, ou de calcul de dates. Par exemple, utiliser `DateTime` est recommandé pour un travail plus complexe car il offre des méthodes pour l'addition et la soustraction, la comparaison, et la modification de fuseaux horaires.
 
 ## See Also (Voir également)
-
 - Documentation officielle PHP sur DateTime: [php.net/manual/fr/class.datetime.php](https://www.php.net/manual/fr/class.datetime.php)
 - Formats de date et d'heure PHP: [php.net/manual/fr/function.date.php](https://www.php.net/manual/fr/function.date.php)
 - Extension intl pour l'internationalisation: [php.net/manual/fr/book.intl.php](https://www.php.net/manual/fr/book.intl.php)

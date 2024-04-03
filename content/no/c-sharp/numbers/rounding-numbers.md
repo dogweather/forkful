@@ -11,9 +11,6 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva & Hvorfor?
-Å avrunde tall betyr å justere dem til den nærmeste spesifiserte plassverdien—tenk å spenne dem ned til en enklere form. Programmerere runder av for å kontrollere presisjon, øke ytelse eller når de viser brukervennlige resultater—som priser som ikke trenger tre desimalplasser.
-
 ## Hvordan:
 Her er billetten for å avrunde tall i C#:
 

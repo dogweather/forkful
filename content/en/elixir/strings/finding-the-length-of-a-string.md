@@ -10,9 +10,6 @@ title: Finding the length of a string
 weight: 7
 ---
 
-## What & Why?
-Finding the length of a string means determining the number of characters it contains. Programmers do it to validate input, enforce limits, or align output.
-
 ## How to:
 In Elixir, you get a string's length with the `String.length/1` function. Here's how:
 

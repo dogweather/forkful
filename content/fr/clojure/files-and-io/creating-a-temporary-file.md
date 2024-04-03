@@ -11,9 +11,6 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## What & Why?
-Créer un fichier temporaire, c'est produire un fichier destiné à une utilisation courte et unique. Les programmeurs le font pour stocker des données transitoires sans affecter la persistance des données ou pour tester des morceaux de code.
-
 ## How to:
 En Clojure, on utilise la librairie Java intégrée pour créer et manipuler des fichiers temporaires. Voici comment faire:
 

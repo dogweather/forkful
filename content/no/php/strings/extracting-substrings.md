@@ -10,12 +10,7 @@ title: Uthenting av delstrenger
 weight: 6
 ---
 
-## Hva & Hvorfor?
-
-Utdrag av substringer er når du henter en del av en streng. Programmerere gjør dette for å manipulere og analysere tekst, som å hente ut et brukernavn fra en e-postadresse.
-
 ## Hvordan:
-
 La oss ta en titt. PHP har flere innebygde funksjoner for dette:
 
 ```PHP
@@ -43,7 +38,6 @@ ola.nordmann
 ```
 
 ## Dypdykk
-
 Før i tiden, når minne var dyrt, var substrings viktige for å spare plass. I PHP har `substr()` vært en støttespiller i lang tid. Med internasjonalisering ble `mb_substr()` viktig for støtte av multibyte-tegnsett, som UTF-8.
 
 Alternativer til substrings inkluderer strengfunksjoner som `explode()`, `strtok()`, eller regulære uttrykk med `preg_match()` for mer komplekse mønstre.
@@ -51,7 +45,6 @@ Alternativer til substrings inkluderer strengfunksjoner som `explode()`, `strtok
 `strstr()` kan også brukes for å finne en subtekst fra starten av en streng til første forekomst av et spesifisert tegn.
 
 ## Se Også
-
 - PHP.net on `substr()`: https://www.php.net/manual/en/function.substr.php
 - PHP.net on `mb_substr()`: https://www.php.net/manual/en/function.mb-substr.php
 - PHP.net on `strstr()`: https://www.php.net/manual/en/function.strstr.php

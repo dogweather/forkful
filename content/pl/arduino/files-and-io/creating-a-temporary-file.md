@@ -10,10 +10,6 @@ title: Tworzenie pliku tymczasowego
 weight: 21
 ---
 
-## What & Why?
-(Co i Dlaczego?)
-Tworzenie tymczasowego pliku to po prostu robienie miejsca na dane, które są potrzebne tylko na chwilę. Programiści robią to, by nie zaśmiecać pamięci trwałej i łatwo pozbyć się nieistotnych danych po użyciu.
-
 ## How to:
 (Jak to zrobić:)
 ```

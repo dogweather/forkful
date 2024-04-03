@@ -14,9 +14,6 @@ title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---
 
-## Quoi & Pourquoi ?
-Dans le contexte de la programmation Arduino, vérifier si un répertoire existe sur une carte SD ou un module de stockage similaire vous permet de lire ou d'écrire des fichiers sans erreurs. Cette opération est essentielle pour la journalisation des données, la gestion de configuration ou toute tâche nécessitant un stockage de fichiers structuré, assurant fiabilité et performance fluide dans vos applications.
-
 ## Comment faire :
 Arduino ne supporte pas nativement des opérations complexes sur les systèmes de fichiers directement. Cependant, grâce à l'utilisation de la bibliothèque SD, qui fait partie de l'environnement de développement standard Arduino IDE, vous pouvez facilement travailler avec des fichiers et des répertoires. Pour vérifier si un répertoire existe, vous devez d'abord initialiser la carte SD puis utiliser la méthode `exists()` de la bibliothèque SD.
 

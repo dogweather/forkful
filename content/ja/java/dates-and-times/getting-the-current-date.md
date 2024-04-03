@@ -26,9 +26,6 @@ title: "\u73FE\u5728\u306E\u65E5\u4ED8\u306E\u53D6\u5F97"
 weight: 29
 ---
 
-## 何となぜ？
-Javaで現在の日付を取得することは、ログ記録、日付計算、時間ベースの条件などの操作に日付オブジェクトを操作することを可能にする基本的な操作です。追跡、スケジューリング、および時間的データ分析が重要であるアプリケーションでは不可欠です。
-
 ## 方法：
 Javaでは、古い `java.util.Date` クラスと、より多様で直感的な新しい `java.time` パッケージ（Java 8で導入）の両方を使用して、現在の日付を取得する複数の方法があります。
 
@@ -43,6 +40,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### `java.time.LocalDateTime` を使用する
 ```java
 import java.time.LocalDateTime;
@@ -54,6 +52,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### `java.util.Date` を使用する（レガシー）
 ```java
 import java.util.Date;
@@ -65,6 +64,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### サードパーティライブラリの利用: Joda-Time
 Java 8以前では、Joda-TimeはJavaでの日付と時間に関する事実上の標準でした。レガシーシステムで作業している場合やJoda-Timeを好む場合は、現在の日付を取得するためにこう使うことができます：
 ```java

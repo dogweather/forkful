@@ -14,9 +14,6 @@ title: "F\xE5 det aktuella datumet"
 weight: 29
 ---
 
-## Vad & Varför?
-Att få det aktuella datumet i Arduino-projekt innebär att erhålla realtidsinformation som kan vara avgörande för loggning, tidsstämpling eller schemaläggning av uppgifter. Programmerare behöver ofta denna kapacitet för att förbättra funktionaliteten, säkerställa datarelevans och underlätta tidskänsliga operationer i deras IoT- och inbyggda projekt.
-
 ## Hur man gör:
 Arduino i sig har ingen inbyggd metod för att direkt hämta det aktuella datumet, eftersom den saknar en realtidsklocka (RTC). Detta kan dock åstadkommas genom att använda externa RTC-moduler som DS3231 och bibliotek såsom `RTClib`, utvecklat av Adafruit, vilket gör det enkelt att koppla upp sig mot dessa moduler.
 

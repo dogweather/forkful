@@ -12,9 +12,6 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mitä & Miksi?
-Testien kirjoittaminen C-kielellä tarkoittaa pienempien, apuohjelmien tai funktioiden luomista, jotka automaattisesti varmistavat koodisi toimivuuden. Ohjelmoijat tekevät niin varmistaakseen, että heidän ohjelmistonsa toimii odotetusti, löytääkseen virheet aikaisin ja helpottaakseen tulevia koodimuutoksia ilman ei-toivottuja sivuvaikutuksia.
-
 ## Miten:
 Vaikka C:ssä ei ole sisäänrakennettua testauskehystä kuten joissakin muissa kielissä, voit silti kirjoittaa tehokkaita testejä käyttäen assert.h-tiedostoa yksinkertaisiin väittämiin tai integroida kolmannen osapuolen kehyksiä, kuten CUnit tai Unity, rakenteellisempaan testaukseen. Tässä on perusesimerkki assert.h:n käytöstä testattaessa funktiota, joka lisää kaksi kokonaislukua:
 

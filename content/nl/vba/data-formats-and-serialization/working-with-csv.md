@@ -13,16 +13,10 @@ title: Werken met CSV
 weight: 37
 ---
 
-## Wat & Waarom?
-
-Werken met CSV (Comma Separated Values) bestanden houdt in dat er wordt gelezen van of geschreven naar platte tekstbestanden waar de gegevensvelden worden gescheiden door komma's. Programmeurs voeren deze taak vaak uit om gegevensuitwisseling tussen verschillende softwaretoepassingen te vergemakkelijken, gezien de eenvoud en brede acceptatie van het CSV-formaat in verschillende programmeeromgevingen.
-
 ## Hoe te:
-
 Visual Basic voor Applications (VBA) vereenvoudigt het werken met CSV-bestanden door ingebouwde functies en methoden die naadloos het lezen van en schrijven naar deze bestanden mogelijk maken. Hieronder volgen voorbeelden die basisbewerkingen met CSV-bestanden illustreren.
 
 ### Een CSV-bestand lezen:
-
 ```basic
 Sub ReadCSV()
     Dim filePath As String
@@ -45,7 +39,6 @@ End Sub
 ```
 
 ### Naar een CSV-bestand schrijven:
-
 ```basic
 Sub WriteCSV()
     Dim filePath As String
@@ -67,7 +60,6 @@ ID,Naam,Leeftijd
 ```
 
 ## Diepgaand
-
 Historisch gezien zijn CSV-bestanden een eenvoudige methode geweest om tabelgegevens in tekstformaat op te slaan. De eenvoud van zijn structuur, waar elke regel overeenkomt met één gegevensrecord en elk veld binnen een record wordt gescheiden door een komma, is zowel de kracht als de beperking van CSV. Het formaat ondersteunt van nature geen gegevenstypen, wat betekent dat alle gegevens als strings worden opgeslagen, en de last om gegevens naar het juiste type te converteren valt op de programmeur.
 
 In Visual Basic voor Applications wordt omgaan met CSV-bestanden voornamelijk gedaan door basisbestandsbewerkingen, zoals in de eerdere voorbeelden is getoond. Er is geen directe CSV-analyse ondersteuning zoals in modernere talen (bijv. Python's csv-module), die meer controle en gemak biedt bij het omgaan met CSV-gegevens.

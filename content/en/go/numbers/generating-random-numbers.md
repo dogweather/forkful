@@ -11,16 +11,10 @@ title: Generating random numbers
 weight: 12
 ---
 
-## What & Why?
-
-Generating random numbers in programming is about creating a sequence of numbers that cannot be reasonably predicted better than by chance. Programmers do it for a myriad of reasons, including simulations, games, and security applications, where unpredictability is key to functionality or secrecy.
-
 ## How to:
-
 In Go, random numbers are generated using the `math/rand` package for pseudo-random numbers or `crypto/rand` for cryptographically secure pseudo-random numbers. Let's explore both.
 
 ### Using `math/rand` for Pseudo-random Numbers
-
 First, import the `math/rand` package and the `time` package to seed the generator. Seeding ensures that you get a different sequence of numbers each run.
 
 ```go
@@ -41,7 +35,6 @@ func main() {
 Sample output: `A random number: 42`
 
 ### Using `crypto/rand` for Cryptographically Secure Pseudo-random Numbers
-
 For more security-sensitive applications, the `crypto/rand` package is suitable as it generates random numbers that are difficult to predict, making them suitable for cryptographic operations.
 
 ```go
@@ -62,7 +55,6 @@ func main() {
 Sample output: `A secure random number: 81`
 
 ## Deep Dive
-
 The core difference between the `math/rand` and `crypto/rand` packages in Go stems from their source of entropy and their intended use cases. `math/rand` generates pseudo-random numbers based on an initial seed; thus, the sequence is deterministic and can be predicted if the seed is known. This is suitable for scenarios where high performance and not absolute unpredictability is the key concern, like simulations or games.
 
 On the other hand, `crypto/rand` derives randomness from the underlying operating system, making it suitable for cryptographic uses where unpredictability is crucial. However, this comes at the cost of performance and complexity in handling the numbers it generates (like dealing with the `*big.Int` type for integers).

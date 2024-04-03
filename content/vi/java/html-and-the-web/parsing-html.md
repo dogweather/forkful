@@ -17,12 +17,7 @@ title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---
 
-## Gì & Tại Sao?
-
-Phân tích cú pháp HTML nghĩa là đào sâu vào đánh dấu để trích xuất dữ liệu như văn bản, liên kết hoặc các phần tử khác. Chúng ta làm điều này để tương tác với hoặc lấy dữ liệu từ nội dung web, tự động hóa các tác vụ duyệt web, hoặc kiểm thử ứng dụng web.
-
 ## Làm thế nào:
-
 Hãy sử dụng Jsoup, một thư viện tiện ích khi làm việc với HTML thế giới thực. Đầu tiên, thêm phụ thuộc:
 
 ```xml
@@ -69,7 +64,6 @@ for (Element link : links) {
 ```
 
 ## Sâu hơn nữa
-
 Ngày xưa, HTML được thuần hóa bởi các mẫu regex, một phương pháp dễ gặp lỗi và ác mộng đối với các tài liệu phức tạp. Enter Jsoup vào cuối những năm "aughts", cung cấp một giao diện giống jQuery cho Java để phân tích cú pháp, duyệt và thao tác HTML.
 
 Jsoup không phải là lựa chọn duy nhất. Có HtmlUnit cho việc kiểm thử ứng dụng web toàn diện với hỗ trợ JavaScript, nhưng nó nặng hơn và phức tạp hơn. Đối với các tác vụ nhẹ nhàng hơn, Apache Commons Validator tuyệt vời chỉ để trích xuất URL.
@@ -79,7 +73,6 @@ Bên dưới cùng, Jsoup sử dụng một trình phân tích cú pháp DOM, m�
 Nhớ rằng, khi lấy dữ liệu, luôn kiểm tra `robots.txt` và điều khoản dịch vụ của trang web để tránh rắc rối pháp lý hoặc bị cấm IP.
 
 ## Xem thêm
-
 - Tài liệu chính thức của Jsoup: https://jsoup.org/
 - HtmlUnit: http://htmlunit.sourceforge.net/
 - Apache Commons Validator: https://commons.apache.org/proper/commons-validator/

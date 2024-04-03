@@ -11,9 +11,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## What & Why?
-Beregning av fremtidig eller tidligere dato betyr å finne en dato før eller etter en spesifikk dag. Programmerere gjør dette for funksjonalitet som påminnelser, utløpskontroller eller timeplanlegging.
-
 ## How to:
 I Elm bruker du ofte `Time` og `Date` biblioteker for å håndtere datoer. Her er hvordan du kan beregne en dato i fremtiden eller fortiden:
 

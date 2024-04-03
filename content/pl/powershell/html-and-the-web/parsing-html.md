@@ -14,15 +14,10 @@ title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---
 
-## Co i dlaczego?
-Parsowanie HTML w PowerShell to proces analizowania zawartości HTML w celu wyodrębnienia konkretnych danych lub automatyzacji zadań związanych z siecią. Programiści robią to, aby wchodzić w interakcje ze stronami internetowymi, pobierać zawartość sieciową lub automatyzować wysyłanie formularzy oraz inne interakcje sieciowe bez potrzeby korzystania z przeglądarki internetowej.
-
 ## Jak to zrobić:
-
 PowerShell nie posiada natywnie dedykowanego analizatora HTML, ale można wykorzystać cmdlet `Invoke-WebRequest` do dostępu i analizowania treści HTML. Dla bardziej złożonego parsowania i manipulacji, można zastosować HtmlAgilityPack, popularną bibliotekę .NET.
 
 ### Korzystanie z `Invoke-WebRequest`:
-
 ```powershell
 # Prosty przykład pobierania tytułów ze strony internetowej
 $response = Invoke-WebRequest -Uri 'http://example.com'
@@ -38,7 +33,6 @@ Przykładowa domena
 ```
 
 ### Korzystanie z HtmlAgilityPack:
-
 Najpierw musisz zainstalować HtmlAgilityPack. Można to zrobić przez Menedżera Pakietów NuGet:
 
 ```powershell

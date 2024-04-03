@@ -11,9 +11,6 @@ title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---
 
-## Was & Warum?
-Eine Datumsberechnung in der Zukunft oder Vergangenheit ermöglicht es, mit Zeitintervallen zu arbeiten - zum Beispiel, um Fristen zu setzen oder Ereignisse zu planen. Programmierer nutzen dies häufig für Features wie Erinnerungen, Ablaufverfolgungen und Terminplanungen.
-
 ## How to:
 Mit Ruby ist es einfach:
 

@@ -14,12 +14,7 @@ title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---
 
-## O que & Por quê?
-
-Checar se um diretório existe em Dart é sobre verificar a presença de um diretório em um caminho especificado no sistema de arquivos antes de realizar operações como ler ou escrever arquivos. Programadores fazem isso para evitar erros que ocorrem ao tentar acessar ou modificar diretórios que não existem.
-
 ## Como fazer:
-
 Dart usa a biblioteca `dart:io` para trabalhar com arquivos e diretórios. Aqui está uma maneira simples de verificar se um diretório existe:
 
 ```dart

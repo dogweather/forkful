@@ -22,14 +22,10 @@ title: "\u5904\u7406CSV\u6587\u4EF6"
 weight: 37
 ---
 
-## 什么及为什么？
-
-处理 CSV 文件涉及从逗号分隔值（CSV）文件读取和向其写入数据，这是一种流行的数据交换格式，因为它简单且得到广泛支持。程序员操作 CSV 文件执行的任务，如数据导入/导出、数据分析，以及不同系统间的信息共享。
-
 ## 如何操作：
 
-### 使用标准 Java 库读取 CSV 文件
 
+### 使用标准 Java 库读取 CSV 文件
 Java 的标准库中没有内置对 CSV 的支持，但是您可以使用 `java.io` 类轻松读取 CSV 文件。
 
 ```java
@@ -58,7 +54,6 @@ public class ReadCSVExample {
 ```
 
 ### 使用标准 Java 库写入 CSV 文件
-
 要将数据写入 CSV 文件，您可以使用 `java.io` 类，如 `FileWriter` 和 `BufferedWriter`。
 
 ```java
@@ -87,7 +82,6 @@ public class WriteCSVExample {
 ```
 
 ### 使用第三方库：Apache Commons CSV
-
 Apache Commons CSV 是一个在 Java 中处理 CSV 文件的流行库。它大大简化了读取和写入 CSV 文件的操作。
 
 向您的项目中添加依赖：
@@ -103,7 +97,6 @@ Apache Commons CSV 是一个在 Java 中处理 CSV 文件的流行库。它大�
 ```
 
 #### 读取 CSV 文件：
-
 ```java
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -132,7 +125,6 @@ public class ApacheReadCSVExample {
 ```
 
 #### 写入 CSV 文件：
-
 ```java
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;

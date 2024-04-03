@@ -10,11 +10,8 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-
-Retrieving the current date in Rust is a common task for tasks such as logging, time-based operations, or simply displaying the date. Unlike some languages that include date and time functionality in their standard library, Rust encourages the use of a robust third-party library, chrono, for comprehensive date and time manipulation due to its superior functionality and ease of use.
-
 ## How to:
+
 
 ### Using Rust's Standard Library
 Rust's standard library provides a limited but quick way to get the current time, though not directly the current date in a calendar format. Here's how you do it:

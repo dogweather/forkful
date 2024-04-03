@@ -12,9 +12,6 @@ title: Registro de Logs
 weight: 17
 ---
 
-## O Quê & Por Quê?
-Log em programação é basicamente deixar um rastro de migalhas na forma de eventos ou mensagens gravadas, que podem ser usadas para acompanhar o que sua aplicação está fazendo em qualquer momento. Programadores fazem isso para depurar problemas, monitorar o desempenho do sistema e auditar o comportamento por motivos de segurança e conformidade.
-
 ## Como fazer:
 Em Haskell, log pode ser implementado usando bibliotecas como `monad-logger` ou `hslogger`. Aqui está um exemplo rápido usando `monad-logger`:
 

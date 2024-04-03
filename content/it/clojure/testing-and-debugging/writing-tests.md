@@ -13,9 +13,6 @@ title: Scrivere test
 weight: 36
 ---
 
-## Cosa e Perché?
-Scrivere test in Clojure, così come in altri linguaggi di programmazione, comporta la creazione di codice dedicato per verificare che il tuo codice principale funzioni come previsto. Aiuta ad assicurare la correttezza, facilita il refactoring e migliora la stabilità del codice.
-
 ## Come fare:
 Clojure, sfruttando la JVM, supporta vari framework di testing. Tuttavia, una libreria integrata comunemente usata è `clojure.test`. Ecco un esempio semplice:
 

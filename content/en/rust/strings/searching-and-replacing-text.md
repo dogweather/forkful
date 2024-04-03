@@ -11,11 +11,7 @@ title: Searching and replacing text
 weight: 10
 ---
 
-## What & Why?
-Searching and replacing text is the process of finding strings within strings and swapping them out for something else. Programmers do this to edit data, refactor code, or automate text manipulation.
-
 ## How to:
-
 ```Rust
 fn main() {
     let text = "Hello there!";

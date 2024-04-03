@@ -10,12 +10,7 @@ title: Enviando una solicitud http
 weight: 44
 ---
 
-## ¿Qué y Por Qué?
-
-Enviar una solicitud HTTP significa pedirle a un servidor información o enviarle datos. Los programadores lo hacen para interactuar con servicios web, acceder a APIs o comunicarse en la red.
-
 ## Cómo Hacerlo:
-
 Haskell ofrece varias bibliotecas para gestionar HTTP. Vamos a usar `http-conduit` por su simplicidad y potencia. Primero, instálalo con:
 
 ```shell
@@ -48,7 +43,6 @@ La respuesta es:
 ```
 
 ## Inmersión Profunda:
-
 El protocolo HTTP (HyperText Transfer Protocol) es el fundamento de la comunicación en la web. Haskell, aunque no conocido por su soporte de IO en comparación con lenguajes como JavaScript o Python, tiene bibliotecas muy competentes para lidiar con HTTP.
 
 `http-conduit` es parte del proyecto `conduit` que maneja el flujo de datos. Es potente y maneja automáticamente conexiones, codificación y otros aspectos tediosos.
@@ -58,7 +52,6 @@ Alternativas como `wreq` o `req` ofrecen abstracciones diferentes. Elije uno bas
 Internamente, estas bibliotecas manejan conexiones de red, protocolos de bajo nivel y representación de datos para facilitar la vida del programador.
 
 ## Ver También:
-
 - Tutorial `http-conduit`: https://haskell-lang.org/library/http-client
 - Documentación de `wreq`: http://www.serpentine.com/wreq/
 - Documentación de `req`: https://hackage.haskell.org/package/req

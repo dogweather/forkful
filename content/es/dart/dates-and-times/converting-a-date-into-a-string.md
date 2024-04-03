@@ -15,16 +15,10 @@ title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---
 
-## ¿Qué y por qué?
-
-Convertir una fecha en una cadena en Dart es una tarea común cuando necesitas mostrar información de fecha y hora en un formato legible por humanos, o cuando tienes la intención de serializar datos para almacenamiento o transmisión. Este proceso permite la fácil representación y manipulación de valores de fecha y hora en un formato que es comprensible y puede ser personalizado dependiendo del caso de uso.
-
 ## Cómo hacerlo:
-
 Dart proporciona la clase `DateTime` para manejar fechas y horas, y el paquete `intl` para formatear. Primero, asegúrate de tener el paquete `intl` agregando `intl: ^0.17.0` (o la última versión) a tu archivo `pubspec.yaml`.
 
 ### Usando la Biblioteca Central de Dart
-
 ```dart
 DateTime now = DateTime.now();
 String formattedDate = "${now.year}-${now.month}-${now.day}";
@@ -34,7 +28,6 @@ print(formattedDate); // Salida: 2023-4-12 (por ejemplo, esto depende de la fech
 Este ejemplo construye directamente una cadena a partir de las propiedades de `DateTime`.
 
 ### Usando el paquete `intl`
-
 Primero, importa el paquete:
 
 ```dart

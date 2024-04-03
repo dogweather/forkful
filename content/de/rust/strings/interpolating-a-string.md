@@ -11,9 +11,6 @@ title: Zeichenketten interpolieren
 weight: 8
 ---
 
-## Was & Warum?
-String-Interpolation ermöglicht es, Variable und Ausdrücke innerhalb eines Strings einzufügen, um dynamische Textinhalte zu erzeugen. Programmierer nutzen das, um flexibel Daten in Strings für Ausgaben und Log-Messages zu integrieren.
-
 ## How to:
 ```Rust
 fn main() {

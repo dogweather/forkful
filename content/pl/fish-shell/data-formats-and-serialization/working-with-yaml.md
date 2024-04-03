@@ -13,9 +13,6 @@ title: Praca z YAML
 weight: 41
 ---
 
-## Co i dlaczego?
-Praca z YAML polega na analizie i manipulacji plikami YAML (YAML Ain't Markup Language), formacie serializacji danych używanym dla plików konfiguracyjnych, w środowisku Fish Shell. Programiści robią to w celu automatyzacji i konfiguracji aplikacji lub usług w sposób efektywny w kontekście środowisk powłoki, ułatwiając zadania takie jak zarządzanie konfiguracjami i przydzielanie zasobów.
-
 ## Jak to zrobić:
 Fish Shell nie ma wbudowanego wsparcia do analizowania plików YAML, ale możesz wykorzystać narzędzia stron trzecich takie jak `yq` (lekki i przenośny procesor YAML działający z linii komend), aby obsługiwać dane YAML.
 

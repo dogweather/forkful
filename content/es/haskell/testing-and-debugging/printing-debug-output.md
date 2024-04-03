@@ -11,12 +11,7 @@ title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---
 
-## Qué & Por Qué?
-
-La impresión de mensajes de depuración es simplemente mostrar información en la consola para entender qué está pasando en tu código. Los programadores lo hacen para rastrear errores o verificar el flujo del programa.
-
 ## Cómo Hacerlo:
-
 Para imprimir algo en Haskell, usualmente usamos la función `print` o `putStrLn`.
 
 ```haskell
@@ -53,13 +48,11 @@ sumando 3 y 4
 ```
 
 ## Profundización
-
 Historicamente, los programas de Haskell no imprimían directamente a la consola, debido a su naturaleza puramente funcional. `Debug.Trace` permite añadir impurezas para la depuración. Como alternativa, puedes usar herramientas más avanzadas como depuradores o profilers para hacer un análisis más detallado.
 
 Haskell define operaciones de impresión en el módulo `System.IO`, y el uso de `print` es realmente un atajo para `putStrLn . show`. `Debug.Trace` es poderoso pero debería usarse con precaución, ya que puede romper la naturaleza perezosa y pura del código, llevando a resultados inesperados si no se retira después de la depuración.
 
 ## Ver También
-
 - Haskell Documentation for `Debug.Trace`: https://hackage.haskell.org/package/base-4.15.0.0/docs/Debug-Trace.html
 - GHC Documentation, para entender más sobre depuración en Haskell: https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html
 - "Real World Haskell", capítulo de depuración y optimización: http://book.realworldhaskell.org/read/profiling-and-optimization.html

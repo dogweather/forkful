@@ -12,12 +12,7 @@ title: Calculando uma data no futuro ou no passado
 weight: 26
 ---
 
-## O Que & Por Quê?
-
-Calcular uma data no futuro ou passado em Go envolve manipular valores de data e hora para determinar um ponto específico relativo a uma data dada. Programadores comumente realizam essa tarefa para aplicações que requerem agendamentos, prazos, lembretes ou qualquer funcionalidade onde a progressão ou regressão do tempo seja essencial.
-
 ## Como fazer:
-
 Go oferece o pacote `time` para lidar com operações de data e hora, oferecendo mecanismos diretos para adicionar ou subtrair tempo. Aqui está um olhar sobre como aproveitar o pacote `time` para calcular datas futuras ou passadas:
 
 ```go
@@ -57,7 +52,6 @@ Hora Futura (5 horas e 30 minutos depois):  2023-04-01 20:34:05.123456789 +0000 
 Observe como o método `AddDate` é usado para manipulação de data por anos, meses e dias, enquanto o método `Add` é usado para deltas de tempo mais precisos como horas, minutos e segundos.
 
 ## Aprofundamento
-
 O pacote `time` da linguagem de programação Go facilita a manipulação do tempo com forte segurança de tipo e sintaxe clara, características pelas quais Go é bem celebrado. Sua implementação se apoia nas funcionalidades de manipulação de tempo fornecidas pelo sistema operacional subjacente, garantindo eficiência e precisão. Historicamente, lidar com datas e hora na programação tem sido repleto de complexidade devido a variações em fusos horários, anos bissextos e mudanças de horário de verão. O pacote `time` do Go abstrai grande parte dessa complexidade, oferecendo aos desenvolvedores um robusto conjunto de ferramentas para a manipulação do tempo.
 
 Enquanto o pacote nativo `time` do Go cobre um amplo espectro de necessidades de manipulação do tempo, bibliotecas alternativas como `github.com/jinzhu/now` oferecem conveniências e funcionalidades adicionais para casos de uso mais específicos. Essas alternativas podem ser particularmente úteis para necessidades de manipulação de data e hora mais complexas não suportadas diretamente pelo pacote nativo `time`.

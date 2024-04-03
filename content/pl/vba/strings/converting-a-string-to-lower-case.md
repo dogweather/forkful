@@ -13,12 +13,7 @@ title: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## Co i dlaczego?
-
-Konwertowanie ciągu znaków na małe litery polega na przekształceniu wszystkich wielkich liter w ciągu na ich małe odpowiedniki. Proces ten jest niezbędny do różnych zadań programistycznych, w tym normalizacji danych, porównań niezależnych od wielkości liter oraz poprawy spójności danych wejściowych użytkownika.
-
 ## Jak to zrobić:
-
 W Visual Basic for Applications (VBA), konwersja ciągu znaków na małe litery jest prosta dzięki funkcji `LCase`. Funkcja ta przyjmuje ciąg znaków jako wejście i zwraca nowy ciąg z wszystkimi wielkimi literami przekształconymi na małe. Oto podstawowy przykład ilustrujący to:
 
 ```basic
@@ -42,7 +37,6 @@ End If
 Ten drugi przykład pokazuje, jak obsługiwać dane wejściowe użytkownika w sposób niezależny od wielkości liter, przekształcając wprowadzone dane na małe litery przed porównaniem.
 
 ## Szczegółowo
-
 Funkcja `LCase` leży u podstaw manipulacji ciągami znaków w VBA i jest podstawową funkcją od początku istnienia języka. Ułatwia zadania związane z konwersją liter, które są powszechne w analizie danych i przetwarzaniu danych wejściowych użytkownika. Chociaż `LCase` skutecznie zaspokaja potrzebę konwersji znaków na małe litery w różnych aplikacjach, ważne jest również rozpoznanie jej ograniczeń i alternatyw.
 
 Na przykład, chociaż `LCase` działa płynnie dla alfabetu angielskiego, obsługa języków o bardziej skomplikowanych zasadach wielkości liter może wymagać dodatkowych rozważeń lub użycia funkcji `StrConv` z odpowiednimi ustawieniami lokalizacji dla konwersji liter.

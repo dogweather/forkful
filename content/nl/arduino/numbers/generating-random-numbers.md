@@ -13,9 +13,6 @@ title: Willekeurige getallen genereren
 weight: 12
 ---
 
-## Wat & Waarom?
-Het genereren van willekeurige getallen in Arduino-projecten houdt in dat waarden worden geproduceerd die ontworpen zijn om onvoorspelbaar te zijn, cruciaal voor toepassingen zoals games, simulaties en beveiligingssystemen. Programmeurs gebruiken deze techniek om variabiliteit te introduceren of beslissingen te nemen die niet deterministisch mogen zijn.
-
 ## Hoe te:
 Arduino biedt eenvoudige functies voor het genereren van willekeurige getallen: `randomSeed()` en `random()`. Om te beginnen, initialiseer je de generator van willekeurige getallen om ervoor te zorgen dat je elke keer dat je programma draait verschillende getallenreeksen krijgt. Een vaak gebruikte benadering is om te zaaien met een analoge lezing van een niet-aangesloten pin.
 

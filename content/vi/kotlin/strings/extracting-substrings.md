@@ -14,9 +14,6 @@ title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---
 
-## Cái gì & Tại sao?
-Trích xuất chuỗi con có nghĩa là lấy ra các phần cụ thể từ một chuỗi. Chúng ta thực hiện điều này để thao tác hoặc phân tích dữ liệu văn bản, như lấy tên người dùng từ địa chỉ email hoặc cắt ngày để lấy tháng.
-
 ## Làm thế nào:
 Trong Kotlin, sử dụng các hàm `substring`, `take`, và `drop`.
 

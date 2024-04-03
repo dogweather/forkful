@@ -12,9 +12,6 @@ title: Tests Schreiben
 weight: 36
 ---
 
-## Was & Warum?
-Testen in Bash bedeutet, Testfälle zu scripten, um die Funktionalität Ihrer Bash-Skripte zu validieren. Programmierer führen Tests durch, um sicherzustellen, dass ihre Skripte unter verschiedenen Bedingungen wie erwartet funktionieren und um Fehler sowie Bugs vor der Bereitstellung zu finden.
-
 ## Wie geht das:
 Bash verfügt nicht über ein integriertes Testframework, aber Sie können einfache Testfunktionen schreiben. Für anspruchsvolleres Testen sind Drittanbieter-Tools wie `bats-core` beliebt.
 

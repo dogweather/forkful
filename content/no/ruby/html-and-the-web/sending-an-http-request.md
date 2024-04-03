@@ -11,9 +11,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## What & Why?
-Å sende en HTTP-forespørsel er å be en webserver om data eller om å utføre en handling. Programmerere gjør dette for å integrere med webtjenester, laste ned innhold eller sende data til en server.
-
 ## How to:
 Ruby har flere måter å sende HTTP-forespørsler på. Her er et enkelt eksempel med `net/http` biblioteket:
 

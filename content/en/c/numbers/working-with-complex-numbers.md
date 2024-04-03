@@ -10,12 +10,7 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-
-Complex numbers consist of a real part and an imaginary part, represented as `a + bi` where `i` is the square root of `-1`. Programmers work with complex numbers in various fields such as electrical engineering, quantum computing, and fluid dynamics, harnessing their unique properties for simulations, signal processing, and solving specific types of mathematical equations.
-
 ## How to:
-
 In C, complex numbers are supported by the Standard Library, specifically `<complex.h>`. To utilize them, declare variables with the `double complex` type (or `float complex` for single precision). Here's how to perform basic operations:
 
 ```c
@@ -52,5 +47,4 @@ int main() {
 Note that `I` is a constant representing the imaginary unit in `<complex.h>`. Functions like `creal()` and `cimag()` extract real and imaginary parts, respectively, while `conj()` computes the complex conjugate. For the magnitude and phase (argument) of complex numbers, `cabs()` and `carg()` are used.
 
 ## Deep Dive
-
 The support for complex numbers in C is relatively recent, having been standardized in C99. Prior to this, complex number arithmetic in C was cumbersome, often requiring custom data structures and functions. The inclusion of `<complex.h>` and the complex data types provided a significant boost to the language's capabilities for scientific and engineering applications. However, it's worth noting that some languages, like Python, offer more intuitive support for complex numbers through built-in data types and a richer set of library functions. Despite this, the performance and control offered by C make it a preferred choice for high-performance computing tasks, even if it means dealing with a slightly more verbose syntax for complex arithmetic.

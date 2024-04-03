@@ -16,12 +16,7 @@ title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---
 
-## Cái gì & Tại sao?
-
-Mảng kết hợp trong Dart, thường được biết đến với tên gọi Maps, là cấu trúc dữ liệu lưu trữ dữ liệu dưới dạng cặp khóa-giá trị. Chúng cho phép lập trình viên truy cập phần tử không qua chỉ mục, mà qua khóa, làm cho việc truy xuất dữ liệu trở nên trực quan và hiệu quả, đặc biệt khi làm việc với dữ liệu có cấu trúc mà mỗi phần tử đều có một định danh duy nhất.
-
 ## Cách làm:
-
 Dart cung cấp cú pháp đơn giản để tạo và thao tác với Maps. Dưới đây là các ví dụ minh họa các thao tác cơ bản như tạo, thêm phần tử và truy xuất giá trị.
 
 ```dart

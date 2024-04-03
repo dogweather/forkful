@@ -10,9 +10,6 @@ title: Capitalizing a string
 weight: 2
 ---
 
-## What & Why?
-Capitalizing a string involves modifying the first character of each word in a sentence to be uppercase, while ensuring the rest are lowercase. This technique is commonly used to format text for more professional or readable output, such as preparing titles or user input for display.
-
 ## How to:
 Lua does not have a built-in function for capitalizing strings, but you can easily accomplish this task using basic string manipulation functions. Here's a simple function to capitalize the first letter of a single word:
 

@@ -10,35 +10,26 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-
-Rounding numbers is the process of adjusting a number to its nearest whole number or to a specified number of decimal places. Programmers often round numbers to simplify calculations, improve readability, or prep data for display, ensuring consistency and clarity in numerical outputs.
-
 ## How to:
-
 Dart provides native methods in its core `num` type for rounding operations. Here, we'll explore methods like `round()`, `floor()`, `ceil()`, and how to round to a specific number of decimal places.
 
 ### Rounding to the nearest whole number:
-
 ```dart
 var number = 3.56;
 print(number.round()); // Outputs: 4
 ```
 
 ### Rounding down:
-
 ```dart
 print(number.floor()); // Outputs: 3
 ```
 
 ### Rounding up:
-
 ```dart
 print(number.ceil()); // Outputs: 4
 ```
 
 ### Rounding to a specific number of decimal places:
-
 To round to a specific number of decimal places, we can use the `toStringAsFixed()` method, which returns a string, or use a combination of `pow` from `dart:math` for a numerical result.
 
 ```dart

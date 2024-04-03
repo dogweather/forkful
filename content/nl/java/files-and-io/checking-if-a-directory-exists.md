@@ -13,9 +13,6 @@ title: Controleren of een directory bestaat
 weight: 20
 ---
 
-## Wat & Waarom?
-Controleren of een directory bestaat betekent verifiëren dat deze er is voordat je probeert bestanden erin te lezen of te schrijven. Programmeurs doen dit om fouten te voorkomen, zoals proberen een bestand op te slaan waar geen plaats is om het neer te zetten.
-
 ## Hoe te:
 Hier is hoe je controleert of een directory bestaat met `java.nio.file`:
 

@@ -14,9 +14,6 @@ title: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---
 
-## Qué y Por qué?
-Enviar una solicitud HTTP con autenticación básica en C implica crear una solicitud HTTP que incluya un encabezado de Autorización con credenciales de usuario codificadas en Base64. Este es un método común para añadir una capa de autenticación simple a las solicitudes HTTP, permitiendo acceder a recursos restringidos de manera programática.
-
 ## Cómo hacerlo:
 Para enviar una solicitud HTTP con autenticación básica en C, necesitaremos usar la biblioteca libcurl, una biblioteca de transferencia de URL del lado del cliente popular, versátil y fácil de usar. Maneja diversos protocolos, incluidos HTTP y HTTPS, haciendo nuestra tarea más simple. Asegúrate de que libcurl esté instalado en tu sistema antes de proceder. Aquí tienes un ejemplo básico que demuestra cómo enviar una solicitud GET con autenticación básica:
 

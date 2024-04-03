@@ -11,9 +11,6 @@ title: Opprette en midlertidig fil
 weight: 21
 ---
 
-## Hva & Hvorfor?
-Å lage en midlertidig fil betyr å skape en fil som er ment for kortvarig bruk. Programmerere gjør dette for å lagre data midlertidig uten å påvirke den permanente lagringen eller bruke overflødig diskplass.
-
 ## Hvordan Gjøre Det:
 Lage en midlertidig fil i Lua kan gjøres med `os.tmpname()` som gir en unik filnavn, og `io.open()` for å åpne og skrive til filen:
 

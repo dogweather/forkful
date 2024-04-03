@@ -13,9 +13,6 @@ title: Skriva tester
 weight: 36
 ---
 
-## Vad & Varför?
-Att skriva tester i Python innebär att skapa automatiserade skript för att validera korrektheten i din kod. Programmerare gör detta för att säkerställa att deras funktioner eller klasser fungerar som förväntat under olika förhållanden, vilket hjälper till att fånga upp fel tidigt och underlättar enklare underhåll och refaktorisering.
-
 ## Hur man gör:
 Python kommer med en inbyggd modul för att skriva tester som kallas `unittest`. Så här kan du använda den för att testa en enkel funktion:
 

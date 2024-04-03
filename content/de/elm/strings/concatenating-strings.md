@@ -10,9 +10,6 @@ title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---
 
-## Was & Warum?
-String-Konkatenierung ist das Zusammenfügen von zwei oder mehreren Textstücken zu einem einzigen String. Programmierer nutzen das, um dynamische Textinhalte zu erstellen oder bestehende Informationen zu erweitern.
-
 ## Vorgehensweise:
 ```Elm
 import Html exposing (text)

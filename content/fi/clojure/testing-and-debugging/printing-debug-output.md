@@ -11,9 +11,6 @@ title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
 
-## What & Why? (Mikä ja Miksi?)
-Printtaus debuggaustarkoituksiin on virheiden jäljitystä koodista tulostusten avulla. Koodarit käyttävät sitä, koska se auttaa ymmärtämään, missä homma menee metsään ja miksi.
-
 ## How to: (Kuinka tehdä:)
 Clojure tarjoaa `println` funktiota, kun tarvitset katsoa, mitä koodissasi tapahtuu. 
 

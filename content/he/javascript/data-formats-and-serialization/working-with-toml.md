@@ -17,9 +17,6 @@ title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD TOML"
 weight: 39
 ---
 
-## מה ולמה?
-TOML, המקוצר של Tom's Obvious, Minimal Language, מגדיר איך למבנה קבצי הגדרות. מתכנתים עובדים עם TOML מכיוון שהוא קריא, קל לכתיבה, וממופה יפה לטבלת האש, מה שהופך אותו לבחירה מועדפת להגדרות.
-
 ## איך לעשות:
 כדי לעבוד עם TOML ב-JavaScript, תצטרך מפענח כמו `@iarna/toml`. קודם כל, התקן אותו: `npm install @iarna/toml`. לאחר מכן, הפוך מחרוזת TOML לאובייקט של JavaScript או הפוך אובייקט של JavaScript למחרוזת בפורמט TOML.
 

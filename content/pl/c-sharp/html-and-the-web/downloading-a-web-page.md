@@ -11,9 +11,6 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## Co i Dlaczego?
-Pobieranie strony internetowej to proces zapisywania jej zawartości na dysku twardym. Programiści robią to, aby przetworzyć dane, przeprowadzić analizę treści lub utworzyć kopię zapasową.
-
 ## Jak to zrobić:
 W C# pobranie strony webowej jest proste. Używamy `HttpClient`, a oto przykład:
 

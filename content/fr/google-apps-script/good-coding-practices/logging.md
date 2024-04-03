@@ -13,12 +13,7 @@ title: Journalisation
 weight: 17
 ---
 
-## Quoi & Pourquoi ?
-
-La journalisation en programmation consiste à enregistrer des événements, des erreurs ou des occurrences notables pendant l'exécution. Les programmeurs le font pour déboguer des problèmes, surveiller les performances et conserver un enregistrement des données opérationnelles, ce qui est essentiel pour maintenir et comprendre le comportement du logiciel en production.
-
 ## Comment faire :
-
 Dans Google Apps Script, la journalisation peut être effectuée en utilisant diverses méthodes, telles que la classe `Logger` et `console.log()`. La classe Logger est la manière traditionnelle, adaptée pour un débogage simple et des fins de développement. À partir des mises à jour récentes, `console.log()` offre plus de flexibilité et d'intégration avec Stackdriver Logging, fournissant une solution plus robuste pour surveiller vos Apps Scripts dans Google Cloud Platform.
 
 **Utilisation de Logger :**
@@ -65,7 +60,6 @@ Journalisation d’un objet : {name: "Jane", role: "Développeur"}
 En passant à `console.log()` pour les applications complexes, les développeurs peuvent analyser efficacement les logs en utilisant les filtres et outils puissants fournis par GCP, ce qui n'est pas aussi direct avec la classe Logger traditionnelle.
 
 ## Approfondissement :
-
 La journalisation dans Google Apps Script a évolué de manière significative. Initialement, la classe `Logger` était la méthode principale pour les développeurs pour déboguer leurs scripts. Elle est simple et suffisante pour les scripts basiques, mais elle manque de capacités nécessaires pour les applications cloud modernes, telles que la recherche dans les logs ou l'analyse des tendances des logs au fil du temps.
 
 L'introduction de `console.log()` a comblé cette lacune en intégrant la journalisation Google Apps Script avec Stackdriver Logging de Google Cloud (maintenant appelé Operations Suite), fournissant une plateforme centralisée pour la journalisation, la surveillance et le débogage des applications. Ceci a non seulement permis la journalisation à grande échelle, mais a également ouvert des fonctionnalités avancées de gestion des logs, comme les métriques basées sur les logs, l'analyse des logs en temps réel et l'intégration avec d'autres services Google Cloud.

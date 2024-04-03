@@ -15,12 +15,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---
 
-## Làm thế nào & Tại sao?
-
-TOML, viết tắt của Tom's Obvious, Minimal Language, là một định dạng tệp cấu hình dễ đọc do ngữ nghĩa rõ ràng của nó. Các lập trình viên thường sử dụng nó cho các tệp cấu hình trong ứng dụng bởi vì nó đơn giản và dễ đọc, giúp quản lý các cài đặt và cấu hình ứng dụng một cách liền mạch qua các môi trường khác nhau.
-
 ## Cách thực hiện:
-
 Vì Google Apps Script cơ bản là JavaScript với quyền truy cập vào bộ ứng dụng của Google, việc làm việc trực tiếp với TOML trong Google Apps Script đòi hỏi một chút sáng tạo. Google Apps Script không hỗ trợ phân tích cú pháp TOML một cách tự nhiên, nhưng bạn có thể tận dụng các thư viện JavaScript hoặc viết một bộ phân tích cú pháp đơn giản cho các nhu cầu cơ bản.
 
 Hãy phân tích một chuỗi cấu hình TOML đơn giản như một ví dụ:
@@ -75,7 +70,6 @@ Kết quả mẫu từ `console.log` sẽ giống như một đối tượng JSO
 ```
 
 ## Sâu hơn
-
 TOML được tạo ra bởi Tom Preston-Werner, một trong những người sáng lập GitHub, với mục tiêu trở nên thân thiện với con người hơn JSON cho các tệp cấu hình trong khi vẫn giữ được khả năng phân tích cú pháp một cách không mơ hồ. Nó hướng tới mục tiêu càng đơn giản càng tốt, một mục tiêu phù hợp tốt với tinh thần của nhiều dự án phát triển luôn hướng tới sự đơn giản và dễ đọc trong cơ sở mã của họ.
 
 Trong bối cảnh của Google Apps Script, việc sử dụng TOML có thể tạo ra một số công việc phức tạp, khi xem xét đến việc thiếu hỗ trợ trực tiếp và cần phải phân tích cú pháp thủ công hoặc thông qua các thư viện bên thứ ba. Đối với các dự án nhỏ hoặc những dự án không sâu rộng tích hợp vào hệ sinh thái của Google, các phương án thay thế như JSON hoặc thậm chí là cấu trúc key-value đơn giản trong cài đặt script có thể đủ và dễ thực hiện hơn. Tuy nhiên, đối với các ứng dụng ưu tiên các tệp cấu hình thân thiện với con người và đã cam kết với TOML, việc tích hợp phân tích cú pháp TOML thông qua các script tùy chỉnh thêm một lớp linh hoạt và bảo dưỡng hữu ích mà không rời bỏ các mô hình cấu hình ưa thích.

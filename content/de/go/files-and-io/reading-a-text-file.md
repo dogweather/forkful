@@ -13,12 +13,7 @@ title: Eine Textdatei lesen
 weight: 22
 ---
 
-## Was & Warum?
-
-Das Lesen einer Textdatei in Go beinhaltet den Zugriff auf und das Abrufen von Inhalten aus einer auf dem Datenträger gespeicherten Datei zur Verarbeitung oder Analyse. Programmierer führen diese Operation häufig durch, um Daten zu manipulieren, Anwendungen zu konfigurieren oder Eingaben für die Programmausführung zu lesen, was es zu einer grundlegenden Fähigkeit in der Softwareentwicklung macht.
-
 ## Wie geht das:
-
 Das Lesen einer Textdatei in Go kann auf mehrere Arten durchgeführt werden, aber eine der einfachsten Methoden ist die Verwendung des `ioutil`-Pakets. Hier ist ein einfaches Beispiel:
 
 ```go
@@ -79,7 +74,6 @@ func main() {
 Dieser Ansatz ist nicht nur moderner, sondern unterstützt auch größere Dateien, da er die Datei Zeile für Zeile liest, anstatt den gesamten Inhalt auf einmal in den Speicher zu laden.
 
 ## Tiefergehende Betrachtung:
-
 Die Handhabung von Dateioperationen in Go, einschließlich des Lesens aus Dateien, spiegelt die Philosophie der Sprache in Bezug auf Einfachheit und Effizienz wider. Ursprünglich bot das `ioutil`-Paket unkomplizierte Dateioperationen an. Jedoch haben Verbesserungen in der Standardbibliothek von Go und eine Verschiebung hin zu expliziterer Fehlerbehandlung und Ressourcenverwaltung dazu geführt, dass die Pakete `os` und `io` die bevorzugten Alternativen für die Arbeit mit Dateien geworden sind.
 
 Diese Änderungen betonen das Engagement von Go für Leistung und Sicherheit, insbesondere um Speicherprobleme zu vermeiden, die beim Laden großer Dateien in ihrer Gesamtheit entstehen können. Die Einführung der Methode `bufio.Scanner` zum zeilenweisen Lesen von Dateien unterstreicht die Anpassungsfähigkeit der Sprache und den Fokus auf moderne Rechenprobleme, wie z. B. die Verarbeitung großer Datensätze oder Streaming-Daten.

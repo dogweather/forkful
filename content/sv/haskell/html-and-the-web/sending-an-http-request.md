@@ -11,9 +11,6 @@ title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-begäran innebär att be en webbserver om data eller att utföra en handling via internet. Programmerare gör detta för att kommunicera med webbtjänster, hämta information eller skicka data för bearbetning.
-
 ## How to:
 I Haskell används ofta biblioteket `http-conduit` för att skicka HTTP-begäran. Här är hur du gör en enkel GET-begäran:
 

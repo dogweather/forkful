@@ -13,14 +13,10 @@ title: Skrive en tekstfil
 weight: 24
 ---
 
-## Hva & Hvorfor?
-
-Å skrive en tekstfil i Swift gjør at du kan lagre strengdata permanent på filsystemet, noe som er avgjørende for oppgaver som å lagre konfigurasjonsinnstillinger, brukerdata eller logger. Programmerere gjør ofte dette for å opprettholde data mellom appoppstart, dele data mellom forskjellige deler av en applikasjon, eller eksportere data for bruk av andre programmer.
-
 ## Hvordan:
 
-### Ved bruk av Swift Standardbibliotek
 
+### Ved bruk av Swift Standardbibliotek
 Swifts standardbibliotek inneholder alle verktøyene som trengs for å skrive tekstfiler. Her er en grunnleggende tilnærming:
 
 ```swift
@@ -41,7 +37,6 @@ do {
 Denne koden skriver en streng til en fil kalt `eksempel.txt` i dokumentmappen. Den håndterer potensielle feil ved å bruke Swifts do-try-catch feilhåndtering.
 
 ### Bruke FileManager for mer kontroll
-
 For mer kontroll over filattributter eller for å sjekke om filen allerede eksisterer, kan `FileManager` brukes:
 
 ```swift
@@ -67,7 +62,6 @@ if let dokumentkatalog = kataloger.first {
 ```
 
 ### Bruke Tredjepartsbiblioteker
-
 Ett populært tredjepartsbibliotek for filsystemoperasjoner i Swift er `Files` av John Sundell:
 
 Først, legg Files til i prosjektet ditt, vanligvis via Swift Package Manager.

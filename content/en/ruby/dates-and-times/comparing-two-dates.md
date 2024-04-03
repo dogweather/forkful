@@ -10,12 +10,7 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-
-Comparing two dates means checking if they're equal, or figuring out which one comes before or after the other. Programmers do this to track events, handle reservations, sort timelines, and any task where time order matters.
-
 ## How to:
-
 Ruby simplifies our lives with the Date class. Let's see it in action.
 
 ```ruby
@@ -33,7 +28,6 @@ puts date1 >= Date.today # Output: depends on today's date
 ```
 
 ## Deep Dive
-
 Date comparison isn't new. It's fundamental, like comparing integers, but trickier 'cause dates have parts—days, months, years. In Ruby, the Date class (from the standard library) carries the weight, dealing with months, leap years, etc.
 
 You've seen basic comparisons: `==`, `!=`, `<`, `>`, `<=`, `>=`. But Ruby has more under the hood.
@@ -54,7 +48,6 @@ Alternatives to the Date class include:
 Comparisons get complex quickly. What if you're scheduling and need to compare date ranges, or handle recurring events? Higher-level abstractions built on Ruby's Date and Time are often needed. ActiveRecord's `between?` method or gems like 'IceCube' for recurring events can save tons of time and headaches.
 
 ## See Also
-
 - ActiveSupport's extensions: [Active Support Core Extensions](https://edgeguides.rubyonrails.org/active_support_core_extensions.html)
 - 'IceCube' gem for recurring events: [IceCube](https://github.com/seejohnrun/ice_cube)
 - Comprehensive guide to timezones in Ruby: [Timezone guides](https://thoughtbot.com/blog/its-about-time-zones)

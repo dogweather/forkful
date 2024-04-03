@@ -10,9 +10,6 @@ title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-Das Senden einer HTTP-Anfrage mit Basic Authentication beinhaltet das Übermitteln von Benutzername und Passwort in einem Base64-codierten Header. Programmierer nutzen dies für den sicheren Zugriff auf geschützte Ressourcen auf einem Server.
-
 ## So geht's:
 ```java
 import java.net.Authenticator;

@@ -15,9 +15,6 @@ title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---
 
-## Gì và Tại sao?
-Viết test là việc tạo ra code để kiểm tra xem phần mềm của bạn có hoạt động như đã dự định hay không. Lập trình viên thực hiện test để bắt lỗi sớm, đảm bảo chất lượng và đơn giản hóa việc bảo trì.
-
 ## Làm thế nào:
 Swift sử dụng bộ khung XCTest để thực hiện test. Dưới đây là một bài test đơn giản cho hàm `add(a:b:)`:
 

@@ -11,9 +11,6 @@ title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---
 
-## Co & Dlaczego?
-Konwersja daty na ciąg znaków (string) to proces przekształcenia formatu daty na tekst, który łatwo przeczytamy lub wyświetlimy. Programiści robią to, by data była zrozumiała dla użytkowników i mogła być zapisana w logach lub dokumentach.
-
 ## Jak to zrobić:
 W C++ mamy kilka sposobów na przekształcenie daty w string - najprościej użyć biblioteki `<chrono>` i `<iomanip>`:
 

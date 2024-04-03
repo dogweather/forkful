@@ -12,12 +12,7 @@ title: Generera slumptal
 weight: 12
 ---
 
-## Vad och Varför?
-
-Att generera slumpmässiga nummer i Elixir är en grundläggande programmeringsuppgift, avgörande för applikationer som behöver oförutsägbara resultat såsom vid generering av säkra tokens, dataurval eller i spela algoritmer. Programmerare använder det för att införa en nivå av slumpmässighet och variabilitet i sina applikationer, vilket gör dem mer dynamiska och mindre deterministiska.
-
 ## Hur man gör:
-
 För att generera slumpmässiga nummer i Elixir använder du främst `:rand`-modulen som tillhandahåller flera funktioner för detta ändamål. Här är en snabb guide för att komma igång:
 
 Först, se till att du sårar (seeder) slumptalsgeneratorn för att initiera den med en unik startpunkt:
@@ -52,7 +47,6 @@ IO.puts(random_float_range)
 Kom ihåg, dessa nummer är pseudoslumpmässiga; de bestäms av fröet och algoritmen men räcker för de flesta applikationer.
 
 ## Fördjupning
-
 Elixirs förmåga att generera slumpmässiga nummer lutar sig på Erlangs `:rand`-modul, vilket återspeglar dess arv och nära relation med Erlang. `:rand`-modulen ersatte den äldre `:random`-modulen, och erbjuder förbättrade algoritmer för generering av slumpmässiga nummer. Den tillhandahåller en mängd olika algoritmer, där standarden är `exsplus`, men stöder också andra som `exs64`, `exsl`, med mera, var och en med sina avvägningar när det gäller hastighet och slumpmässighetens kvalitet.
 
 En intressant aspekt av Elixirs (och därmed Erlangs) generering av slumpmässiga nummer är dess hantering av frön. Systemet underhåller separata frötilstånd för varje process, vilket säkerställer att samtidiga processer inte stör varandras sekvenser av slumpmässiga nummer. Detta är särskilt användbart i konkurrenta applikationer, för att säkerställa förutsägbarhet och tillförlitlighet i distribuerade system.

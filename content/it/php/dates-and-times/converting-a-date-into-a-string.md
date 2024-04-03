@@ -10,9 +10,6 @@ title: Conversione di una data in una stringa
 weight: 28
 ---
 
-## What & Why?
-Convertire una data in una stringa significa trasformarla in un formato leggibile e gestibile. I programmatori lo fanno per visualizzare date in modo chiaro per l'utente o per salvare i dati in un formato compatibile con altri sistemi.
-
 ## How to:
 ```PHP
 <?php

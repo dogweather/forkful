@@ -14,12 +14,7 @@ title: Att skriva en textfil
 weight: 24
 ---
 
-## Vad & Varför?
-
-Att skriva till en textfil i Fish Shell gör att du kan lagra data på ett beständigt sätt, vilket möjliggör enkel hämtning eller manipulation av data antingen av samma Fish-script eller andra program. Programmerare gör detta för att logga, spara konfigurationsinställningar eller exportera data för vidare bearbetning.
-
 ## Hur man gör:
-
 För att skriva till en textfil i Fish kan du använda `echo`-kommandot i kombination med omdirigeringsoperatorer. Det finns inte populära tredjepartsbibliotek specifikt för att skriva till filer i Fish, eftersom skalets inbyggda kommandon är enkla och effektiva för detta ändamål.
 
 ### Skriva text till en ny fil eller skriva över en befintlig fil:

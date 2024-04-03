@@ -11,9 +11,6 @@ title: Opprette en midlertidig fil
 weight: 21
 ---
 
-## Hva & Hvorfor?
-Oppretting av midlertidige filer lar oss holde data midlertidig under programmets kjøring. Programmerere gjør dette for sikkerhetskopiering, for å unngå databehandlingstap ved feil, eller når vi trenger et sted å sette fra oss data uten å påvirke permanente filer.
-
 ## Hvordan gjør man det:
 ```Bash
 # Opprett en midlertidig fil med mktemp-kommandoen

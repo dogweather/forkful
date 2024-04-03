@@ -12,9 +12,6 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-Getallen afronden gaat over het aanpassen van een getal naar het dichtstbijzijnde geheel of naar een bepaalde decimale precisie. We ronden getallen af om ze te vereenvoudigen voor menselijke leesbaarheid, rekenlast te verminderen, of aan specifieke numerieke eisen te voldoen.
-
 ## Hoe:
 In Clojure gebruiken we voornamelijk `Math/round`, `Math/floor`, en `Math/ceil`:
 

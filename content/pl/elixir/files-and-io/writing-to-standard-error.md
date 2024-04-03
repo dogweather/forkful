@@ -14,12 +14,7 @@ title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---
 
-## Co i dlaczego?
-
-Pisanie do standardowego błędu (stderr) w Elixirze to sposób na kierowanie komunikatów o błędach i diagnostyki, oddzielnie od głównego wyniku (stdout). Programiści używają stderr do debugowania i obsługi błędów bez zaśmiecania głównego wyniku programu, co ułatwia identyfikację i rozwiązywanie problemów.
-
 ## Jak to zrobić:
-
 W Elixirze możesz użyć funkcji modułu `IO` takich jak `IO.puts/2` i `IO.warn/2`, aby pisać wiadomości do standardowego błędu:
 
 ```elixir

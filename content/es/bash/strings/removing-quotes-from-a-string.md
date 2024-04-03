@@ -10,9 +10,6 @@ title: Eliminando comillas de una cadena
 weight: 9
 ---
 
-## ¿Qué y Por Qué?
-Eliminar las comillas de una cadena implica quitar las marcas de comillas que encierran la cadena. Los programadores a menudo quieren hacer esto para sanear los datos de entrada, preparar los datos para comparaciones, o adherirse a un formato de datos específico al interactuar con otros programas o sistemas.
-
 ## Cómo hacerlo:
 Bash tiene varias formas de eliminar comillas de las cadenas. Aquí hay algunos ejemplos rápidos:
 

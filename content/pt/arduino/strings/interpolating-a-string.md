@@ -10,9 +10,6 @@ title: Interpolando uma string
 weight: 8
 ---
 
-## What & Why?
-Interpolar uma string é encaixar valores de variáveis dentro dela. Programadores usam isso para facilitar a montagem de mensagens dinâmicas ou para exibir dados variáveis de forma legível.
-
 ## How to:
 Em Arduino, usamos a função `sprintf` para interpolar strings. Veja o código e sua saída:
 

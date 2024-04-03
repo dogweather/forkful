@@ -10,9 +10,6 @@ title: Einen HTTP-Request senden
 weight: 44
 ---
 
-## Was & Warum?
-HTTP-Anfragen sind der Weg, wie deine Webseite oder Anwendung mit anderen Servern und APIs spricht. Wir nutzen sie, um Daten zu holen, zu senden oder Dienste von externen Quellen zu nutzen.
-
 ## How to:
 In PHP nutzen wir cURL oder Streams, um HTTP-Anfragen zu senden. Hier ist ein PHP-Snippet, das zeigt, wie man eine GET-Anfrage mit cURL macht:
 

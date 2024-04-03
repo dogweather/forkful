@@ -10,9 +10,6 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## Hva & Hvorfor?
-Å laste ned en nettside er prosessen med å hente innholdet til en nettside via internett, slik at du kan se eller bearbeide det i et program. Programmerere gjør dette for å samle data, integrere funksjoner fra andre nettsteder, og automatisere oppgaver som ellers ville vært manuelle.
-
 ## Hvordan gjør man det:
 Elm gjør bruk av `Http` for å laste ned nettsider. Her er et grunnleggende eksempel:
 

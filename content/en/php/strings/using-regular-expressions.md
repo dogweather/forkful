@@ -10,16 +10,10 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-
-Regular expressions (regex) in PHP are patterns used to match character combinations in strings, allowing for sophisticated search-and-replace operations and data validation. Programmers leverage regex for its power and flexibility in parsing text, validating forms, or scraping web data, making it an indispensable tool in a developer's arsenal.
-
 ## How to:
-
 PHP supports regular expressions through the PCRE (Perl Compatible Regular Expressions) library, offering a rich set of functions. Here's how to use them:
 
 ### Matching a pattern:
-
 To check if a pattern exists within a string, use `preg_match()`. This function returns 1 if the pattern was found in the string and 0 if not.
 
 ```php
@@ -32,7 +26,6 @@ if (preg_match("/\bweb\b/i", "PHP is a web scripting language")) {
 ```
 
 ### Finding all matches:
-
 `preg_match_all()` is used when you need to find all occurrences of a pattern within a string.
 
 ```php
@@ -44,7 +37,6 @@ print_r($matches[0]);
 ```
 
 ### Replacing text:
-
 To replace text that matches a regular expression, `preg_replace()` is used. It's incredibly powerful for formatting and cleaning up data.
 
 ```php
@@ -56,7 +48,6 @@ echo preg_replace($pattern, $replacement, $originalText);
 ```
 
 ### Splitting strings:
-
 You can split a string into an array using `preg_split()`, specifying a pattern for the delimiter.
 
 ```php

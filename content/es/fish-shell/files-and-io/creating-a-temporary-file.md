@@ -10,9 +10,6 @@ title: Creando un archivo temporal
 weight: 21
 ---
 
-## Qué y Por Qué?
-Crear un archivo temporal significa generar un archivo que existe sólo durante la duración de un programa o proceso. Los programadores lo hacen para almacenar datos temporalmente sin afectar el sistema de archivos a largo plazo.
-
 ## Cómo hacerlo:
 ```Fish Shell
 # Crear un archivo temporal con mktemp

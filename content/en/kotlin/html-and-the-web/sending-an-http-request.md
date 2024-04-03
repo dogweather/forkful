@@ -10,12 +10,7 @@ title: Sending an HTTP request
 weight: 44
 ---
 
-## What & Why?
-
-Sending an HTTP request is like asking a web server to do something or give you something. Programmers do it to interact with web services, pull data, submit forms, or communicate with APIs.
-
 ## How to:
-
 Kotlin makes HTTP requests straightforward. Here's a basic example using `khttp`, a user-friendly library:
 
 ```Kotlin
@@ -51,7 +46,6 @@ suspend fun main() {
 Output similar to the first example.
 
 ## Deep Dive
-
 The `khttp` library is a convenient tool, modeled after Python's `requests`. It's great for quick scripts but hasn't been actively maintained. `ktor` is a newer, active project by JetBrains, designed with coroutines for asynchronous operations. It's meant for scalable apps. Both handle HTTP requests but serve different use cases.
 
 Historically, HTTP requests in Kotlin were done with Java libraries like `HttpURLConnection` or Apache's `HttpClient`. These are still valid but are more verbose and lack Kotlin's language features.
@@ -59,7 +53,6 @@ Historically, HTTP requests in Kotlin were done with Java libraries like `HttpUR
 As for implementation, remember to handle common HTTP errors and read the response code. You'll also want to use `try-catch` for network exceptions and might need to work with headers and query parameters.
 
 ## See Also
-
 - Ktor Documentation: https://ktor.io/
 - khttp GitHub Repository: https://github.com/jkcclemens/khttp (Note the maintenance status)
 - Kotlin HTTP calls with HttpURLConnection: https://kotlinlang.org/api/latest/jvm/stdlib/java.net/-http-u-r-l-connection/

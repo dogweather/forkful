@@ -11,9 +11,6 @@ title: Creating a temporary file
 weight: 21
 ---
 
-## What & Why?
-In Ruby, creating a temporary file helps protect sensitive data and manage fleeting storage needs. Programmers use it for secure, short-term file handling that avoids cluttering up the filesystem.
-
 ## How to:
 Ruby's standard library provides `Tempfile` for creating temporary files. Let's dive right in:
 

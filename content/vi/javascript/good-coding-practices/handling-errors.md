@@ -15,12 +15,7 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Gì và Tại sao?
-
-Xử lý lỗi là cách bạn quản lý khi mọi thứ diễn ra không như kế hoạch trong mã của bạn. Điều này quan trọng bởi vì nó giúp chương trình của bạn thất bại một cách nhẹ nhàng và hướng dẫn người dùng một cách rõ ràng, thay vì chỉ đơn giản là sụp đổ và bùng cháy.
-
 ## Cách thực hiện:
-
 Dưới đây là khối `try-catch` kinh điển:
 
 ```javascript
@@ -60,7 +55,6 @@ fetchData();
 ```
 
 ## Sâu hơn
-
 Xử lý lỗi trong JavaScript đã phát triển. Ngày xưa (ES3, khoảng năm 1999), chúng ta chỉ có khối `try-catch`. Không quá linh hoạt, nhưng nó đã hoàn thành công việc.
 
 ES6 (2015) đã giới thiệu Promises và tặng chúng ta `.then()` và `.catch()`, cho phép chúng ta xử lý lỗi bất đồng bộ một cách nhẹ nhàng hơn.
@@ -76,7 +70,6 @@ Về chi tiết triển khai, khi một lỗi được phát ra, engine JavaScri
 Những phương án khác? Bạn có thể bỏ qua xử lý lỗi (không phải là ý tưởng hay), sử dụng callbacks với tham số lỗi đầu tiên (xin chào, phong cách Node.js), hoặc trở nên tinh tế hơn với các thư viện và frameworks cung cấp quan điểm của chúng.
 
 ## Xem thêm
-
 Để hiểu thêm về xử lý lỗi:
 
 - MDN về try-catch: [MDN try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)

@@ -11,9 +11,6 @@ title: Conversione di una stringa in minuscolo
 weight: 4
 ---
 
-## What & Why?
-Convertire una stringa in minuscolo significa trasformare tutti i caratteri alfabetici in lettere minuscole. Questo è utile per uniformare i dati prima di confrontarli o memorizzarli, eliminando discrepanze dovute a differenze di maiuscole e minuscole.
-
 ## How to:
 In Haskell, possiamo utilizzare `Data.Text.toLower` per convertire una stringa in minuscolo. Ecco un esempio:
 

@@ -11,9 +11,6 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## What & Why? (Co i Dlaczego?)
-Rozpoczęcie nowego projektu oznacza stworzenie podstawy kodu, od którego zaczniemy budować nasze aplikacje. Programiści robią to, aby dopracować pomysł od zera i zbudować rozwiązania dopasowane do konkretnych potrzeb użytkowników.
-
 ## How to (Jak to zrobić):
 Tworzenie nowego projektu w Lua jest proste. Załóżmy, że nasz projekt to gra "Zgadnij Liczbę". Zacznij od podstawowego pliku `main.lua`.
 

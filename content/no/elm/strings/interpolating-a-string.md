@@ -10,9 +10,6 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## What & Why?
-Strenginterpolasjon betyr å smelte sammen variabler med tekst. Vi gjør det for å bygge brukertilpassede meldinger eller for å kombinere data dynamisk.
-
 ## How to:
 Elm bruker `++` operatoren for å sette sammen strenger. Det er ingen innebygget strenginterpolasjon, men vi kan lage klar og lesbar kode likevel:
 

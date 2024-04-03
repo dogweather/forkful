@@ -12,9 +12,6 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-Complexe getallen hebben een reëel deel en een imaginair deel en zijn cruciaal in diverse velden zoals engineering, fysica en computergrafiek. Programmeurs gebruiken ze om vergelijkingen op te lossen die gewone reële getallen niet aankunnen.
-
 ## Hoe te:
 Rust heeft geen ingebouwde ondersteuning voor complexe getallen, maar crates zoals `num-complex` staan voor je klaar. Hier is hoe je het gebruikt:
 

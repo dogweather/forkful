@@ -11,9 +11,6 @@ title: Praca z XML
 weight: 40
 ---
 
-## Co i Dlaczego?
-Praca z XML obejmuje parsowanie, kwerendowanie i manipulowanie dokumentami XML za pomocą Javy. Programiści robią to dla wymiany danych, zarządzania konfiguracją i ponieważ wiele systemów dziedzicznych oraz API komunikuje się przy użyciu XML.
-
 ## Jak to zrobić:
 Java udostępnia takie API jak DOM (Document Object Model), SAX (Simple API for XML) i StAX (Streaming API for XML) do pracy z XML. Oto przykład użycia DOM do parsowania pliku XML:
 

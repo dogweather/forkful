@@ -12,12 +12,7 @@ title: Schreiben auf Standardfehler
 weight: 25
 ---
 
-## Was & Warum?
-
-Das Schreiben auf Standardfehler (stderr) in Elixir ist eine Methode, Fehlermeldungen und Diagnosen getrennt von der Hauptausgabe (stdout) zu lenken. Programmierer verwenden stderr, um Fehler zu debuggen und zu behandeln, ohne die Hauptausgabe des Programms zu überladen, was das Identifizieren und Adressieren von Problemen erleichtert.
-
 ## Wie geht das:
-
 In Elixir können Sie Funktionen des `IO`-Moduls wie `IO.puts/2` und `IO.warn/2` verwenden, um Nachrichten an den Standardfehler zu schreiben:
 
 ```elixir

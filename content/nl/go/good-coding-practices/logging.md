@@ -14,12 +14,7 @@ title: Loggen
 weight: 17
 ---
 
-## Wat & Waarom?
-
-Loggen in softwareontwikkeling is het proces van het vastleggen van informatie over de uitvoering van een programma, ontworpen om zijn gedrag te volgen en problemen te diagnosticeren. Programmeurs implementeren loggen om softwareprestaties te monitoren, fouten te debuggen en de systeemveiligheid en -compliance te waarborgen, waardoor het een onmisbaar hulpmiddel wordt voor applicatieonderhoud en -analyse.
-
 ## Hoe te:
-
 In Go kan loggen worden geïmplementeerd met behulp van het standaardbibliotheekpakket `log`. Dit pakket biedt eenvoudige logmogelijkheden, zoals schrijven naar standaarduitvoer of naar bestanden. Laten we beginnen met een basisvoorbeeld van loggen naar de standaarduitvoer:
 
 ```go
@@ -85,7 +80,6 @@ AANGEPASTE LOG: 2009/11/10 23:00:00 main.go:11: Dit is een aangepast logbericht.
 Dit voorbeeld voorziet elk logbericht van de prefix "AANGEPASTE LOG: " en bevat de datum, tijd en locatie van het bronbestand.
 
 ## Dieper ingaan
-
 Het `log`-pakket van de Go-standaardbibliotheek is eenvoudig en voldoende voor veel toepassingen, maar mist enkele van de meer geavanceerde functies die in externe logbibliotheken worden gevonden, zoals gestructureerd loggen, logrotatie en loggen op basis van niveaus. Pakketten zoals `zap` en `logrus` bieden deze geavanceerde functies en worden in de Go-gemeenschap gewaardeerd om hun prestaties en flexibiliteit.
 
 Gestructureerd loggen maakt het bijvoorbeeld mogelijk om gegevens in een gestructureerd formaat (zoals JSON) te loggen, wat vooral nuttig is voor moderne cloud-gebaseerde applicaties waar logs mogelijk worden geanalyseerd door verschillende hulpmiddelen of diensten. `zap` staat in het bijzonder bekend om zijn hoge prestaties en lage allocatieoverhead, waardoor het geschikt is voor applicaties waar snelheid en efficiëntie cruciaal zijn.

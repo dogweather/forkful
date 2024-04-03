@@ -15,12 +15,7 @@ title: "Zamiana liter w ci\u0105gu na wielkie"
 weight: 2
 ---
 
-## Co i dlaczego?
-
-Zamiana pierwszej litery każdego wyrazu w ciągu znaków na wielką (capitalization) w Visual Basic for Applications (VBA) polega na przekształceniu pierwszego znaku każdego słowa w danej frazie na wielką literę, przy czym reszta liter jest zamieniana na małe. Programiści stosują tę technikę do normalizacji danych, poprawy czytelności oraz zapewnienia spójności między tekstowymi danymi wejściowymi lub wyświetlaniami.
-
 ## Jak to zrobić:
-
 VBA nie posiada wbudowanej funkcji specjalnie do zamiany liter na wielkie w każdym słowie ciągu znaków, w przeciwieństwie do niektórych innych języków programowania. Jednak można to osiągnąć, łącząc kilka metod i funkcji takich jak `UCase`, `LCase` i `Mid`.
 
 Oto prosty przykład, jak zamienić litery na wielkie w ciągu znaków:
@@ -47,7 +42,6 @@ End Sub
 Funkcja `CapitalizeString` dzieli łańcuch wejściowy na słowa, zmienia pierwszą literę każdego słowa na wielką, a następnie łączy je, tworząc poprawnie zamieniony ciąg znaków.
 
 ## Szczegółowa analiza
-
 Visual Basic for Applications, który pojawił się na początku lat 90. jako język makr dla aplikacji Microsoft Office, został zaprojektowany, aby zaoferować dostępny model programowania. Jego możliwości manipulowania ciągami znaków, choć rozległe, nie zawierają niektórych wyższych abstrakcji, które można znaleźć w nowszych językach. Wiele nowoczesnych środowisk programistycznych zapewnia poświęconą metodę do zamiany liter na wielkie, często określaną jako formatowanie tytułowe lub podobne. Na przykład Python zawiera metodę `.title()` dla ciągów znaków.
 
 W porównaniu brak pojedynczej, wbudowanej funkcji w VBA do zmieniania na wielkie litery słów w ciągu znaków może wydawać się niedociągnięciem. Jednak oferuje to programistom głębsze zrozumienie i kontrolę nad sposobem, w jaki manipulują tekstem oraz umożliwia dostosowanie do niuansów, które nie są ścisło przestrzegane przez generyczną metodę. Na przykład, obsługa akronimów lub specjalne przypadki, gdy niektóre mniejsze słowa w tytułach nie powinny być pisane wielką literą, mogą być lepiej dostosowane w VBA poprzez eksplicytne funkcje.

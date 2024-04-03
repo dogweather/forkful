@@ -11,9 +11,6 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i dlaczego?
-Zaokrąglanie liczb oznacza dostosowanie ich do określonego stopnia precyzji. Programiści robią to, aby uprościć liczby dla czytelności, spełnić określone specyfikacje, lub aby zapewnić, że obliczenia mieszczą się w określonych granicach, jak unikanie błędów precyzji w arytmetyce zmiennoprzecinkowej.
-
 ## Jak:
 Java oferuje wiele sposobów zaokrąglania liczb. Oto szybka demonstracja z `Math.round()`, `BigDecimal` i `DecimalFormat`.
 

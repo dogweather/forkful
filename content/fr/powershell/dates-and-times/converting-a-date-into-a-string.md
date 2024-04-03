@@ -11,9 +11,6 @@ title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## What & Why?
-Convertir une date en chaîne de caractères permet de la formater pour l'affichage ou le stockage. Les programmeurs font ça pour la lisibilité et pour respecter les normes de formatage locales.
-
 ## How to:
 PowerShell rend la tâche aisée avec la cmdlet `Get-Date` et la méthode `.ToString()`. Voici quelques tours de magie :
 

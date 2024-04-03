@@ -14,10 +14,8 @@ title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---
 
-## Hva & Hvorfor?
-Regulære uttrykk (regex) i C# er et kraftig verktøy for mønstersøking i strenger, som lar programmerere søke etter, erstatte, splitte eller trekke ut data effektivt. Programmerere bruker regex for oppgaver som strekker seg fra enkle valideringer, som sjekking av e-postformat, til komplekse tekstbehandlingsoppgaver på grunn av dets fleksibilitet og ytelse.
-
 ## Hvordan:
+
 
 ### Enkel Mønstersøking
 For å sjekke om en streng inneholder et spesifikt mønster, kan du bruke `Regex.IsMatch`-metoden fra `System.Text.RegularExpressions` navneområdet.

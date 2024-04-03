@@ -13,11 +13,7 @@ title: Een nieuw project starten
 weight: 1
 ---
 
-## Wat & Waarom?
-Een nieuw project starten betekent vaak het creëren van een mappenstructuur en initiële bestanden - een beetje zoals het leggen van de fundering van een huis. Programmeurs doen dit om gedachten, bestanden en taken te organiseren, chaos om te zetten in een nette to-do lijst.
-
 ## Hoe te:
-
 Laten we een eenvoudig script maken om een nieuw project op te starten.
 
 ```Bash
@@ -71,7 +67,6 @@ Project 'myproject' aangemaakt.
 ```
 
 ## Diepere Duik
-
 Voordat we scripts hadden, maakten we handmatig directories en bestanden elke keer aan - vermoeiend en foutgevoelig. Automatisering met een script minimaliseert fouten en versnelt dingen.
 
 Alternatieven zijn onder andere tools zoals Yeoman, die projecten in verschillende talen opzet, maar dat is als het gebruiken van een boormachine wanneer je een punaise nodig hebt.
@@ -79,7 +74,6 @@ Alternatieven zijn onder andere tools zoals Yeoman, die projecten in verschillen
 Het script hierboven is bewust eenvoudig. Het maakt een projectdirectory, subdirectories voor organisatie (zoals `src` voor broncode), en essentiële bestanden (zoals `README.md`). Daarnaast zet het een Git-repo op zodat je versies van je werk kunt opslaan. Je kunt het aanpassen en toevoegen aan de behoeften van elk project.
 
 ## Zie Ook
-
 - Git documentatie: https://git-scm.com/doc
 - Yeoman: http://yeoman.io/
 - Bash scripting tutorials: https://www.shellscript.sh/

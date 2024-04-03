@@ -9,9 +9,6 @@ title: Extraindo substrings
 weight: 6
 ---
 
-## What & Why?
-Extrair substrings é pegar pedaços específicos de uma string. Fazemos isso para manipular, analisar ou alterar dados de forma eficiente e direcionada.
-
 ## How to:
 Para extrair substrings em Ruby, você pode usar os métodos `slice`, `[]` e `slice!`. Aqui vão alguns exemplos práticos para você testar:
 

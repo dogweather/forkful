@@ -15,9 +15,6 @@ title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
 weight: 45
 ---
 
-## What & Why?
-发送带有基本认证的HTTP请求，是通过网络传输用户名和密码来认证用户的方式。开发者用它来保证数据交换的安全。
-
 ## How to:
 Kotlin中使用HttpURLConnection和Base64编码来实现带基本认证的HTTP请求。
 

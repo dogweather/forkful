@@ -11,9 +11,6 @@ title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---
 
-## ¿Qué y Por Qué?
-Calcular una fecha en el futuro o pasado es hallar una fecha específica antes o después de otra conocida. Programadores lo hacen para gestionar eventos, caducidades, recordatorios, o cualquier funcionalidad relacionada con el tiempo.
-
 ## Cómo Hacerlo:
 Lua no tiene funciones de fecha y hora incorporadas como otros lenguajes, pero puedes usar `os.date` para obtener la fecha actual y `os.time` para obtener el tiempo en segundos, y trabajar desde ahí. Aquí unos ejemplos:
 

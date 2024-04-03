@@ -11,9 +11,6 @@ title: Organizzare il codice in funzioni
 weight: 18
 ---
 
-## Cosa & Perché?
-Raggruppare il codice in funzioni significa scomporre compiti in blocchi riutilizzabili. Ciò rende il codice più pulito, meno incline a errori e più facile da debuggare o rifattorizzare.
-
 ## Come fare:
 Immagina un compito: calcolare la media di un array. Senza funzioni, inseriresti tutto nel main. Con le funzioni, faresti così:
 

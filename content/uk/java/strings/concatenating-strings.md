@@ -10,9 +10,6 @@ title: "\u041E\u0431'\u0454\u0434\u043D\u0430\u043D\u043D\u044F \u0440\u044F\u04
 weight: 3
 ---
 
-## What & Why? (Що та Чому?)
-String concatenation is the process of linking strings together. Programmers use it to combine text, like creating sentences dynamically in a program or generating complex formats.
-
 ## How to: (Як це зробити:)
 ```java
 public class StringConcatenationExample {

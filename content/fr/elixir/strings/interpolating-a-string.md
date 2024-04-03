@@ -9,9 +9,6 @@ title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---
 
-## What & Why? | Quoi et Pourquoi ?
-On insère des données dans une chaîne de caractères. On fait ça pour dynamiser les messages sans concaténer à l'ancienne.
-
 ## How to: | Comment faire :
 ```elixir
 name = "World"

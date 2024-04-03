@@ -14,10 +14,9 @@ title: Tests Schreiben
 weight: 36
 ---
 
-## Was & Warum?
-Tests in der Programmierung zu schreiben, bedeutet, Skripte zu erstellen und auszuführen, die überprüfen, ob der Code sich unter verschiedenen Bedingungen wie erwartet verhält. Programmierer tun dies, um Qualität zu gewährleisten, Regressionen zu verhindern und sicheres Refactoring zu erleichtern, was für die Aufrechterhaltung einer gesunden, skalierbaren und fehlerfreien Codebasis entscheidend ist.
-
 ## Wie:
+
+
 ### Native PHP – PHPUnit
 Ein weit verbreitetes Werkzeug für Tests in PHP ist PHPUnit. Installieren Sie es über Composer:
 ```bash

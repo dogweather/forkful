@@ -11,9 +11,6 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## What & Why? - Co i dlaczego?
-Wyszukiwanie i zamiana tekstu to zmiana jednego ciągu znaków na inny. Programiści robią to, aby szybko poprawiać błędy, aktualizować kod lub zmieniać dane.
-
 ## How to: - Jak to zrobić:
 ```Fish Shell
 # Wyszukaj 'stary_tekst' i zamień go na 'nowy_tekst' w pliku 'plik.txt'

@@ -11,9 +11,6 @@ title: Manipulation des nombres complexes
 weight: 14
 ---
 
-## Quoi et Pourquoi ?
-Les nombres complexes sont une combinaison de nombres réels et imaginaires, comme `a + bi` où `i` est la racine carrée de -1. Ils sont clés dans des domaines tels que l'ingénierie et la physique pour résoudre des problèmes que les nombres ordinaires ne peuvent pas aborder.
-
 ## Comment faire :
 Elm n'a pas de support intégré pour les nombres complexes, donc vous allez créer votre propre type et fonctions. Voici une configuration rapide :
 

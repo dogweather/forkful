@@ -12,9 +12,6 @@ title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---
 
-## What & Why? (Co i Dlaczego?)
-Wysyłanie żądania HTTP z podstawową autentykacją to proces, w którym klient internetowy przekazuje dane logowania do serwera w zabezpieczonym formacie. Programiści używają tego, by umożliwić aplikacjom dostęp do zasobów wymagających weryfikacji użytkownika.
-
 ## How To (Jak To Zrobić):
 C++ nie ma wbudowanego wsparcia dla HTTP, więc użyjemy biblioteki `CURL` oraz dodatkowo `cpp-base64` do zakodowania poświadczeń. Zainstaluj CURL i dołącz go do projektu. Poniżej kod:
 

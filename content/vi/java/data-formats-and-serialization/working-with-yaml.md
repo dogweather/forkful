@@ -14,12 +14,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---
 
-## Gì & Tại Sao?
-
-YAML, "YAML Ain't Markup Language," là một ngôn ngữ tuần tự hóa dữ liệu. Lập trình viên sử dụng nó do tính dễ đọc và đơn giản, đặc biệt là cho các tệp cấu hình, bản sao dữ liệu ban đầu, hoặc như một định dạng giao tiếp giữa các hệ thống khác nhau.
-
 ## Làm Thế Nào:
-
 Để xử lý YAML trong Java, hãy sử dụng `snakeyaml`, một thư viện phổ biến.
 
 Đầu tiên, thêm sự phụ thuộc vào `pom.xml` của bạn:
@@ -107,11 +102,9 @@ version: '2.0'
 ```
 
 ## Sâu Hơn
-
 YAML xuất hiện vào đầu những năm 2000 như một lựa chọn thay thế XML cho việc cấu trúc dữ liệu đơn giản hơn. Mặc dù sự phát triển của JSON đã làm lu mờ nó trong giao tiếp API, tính thân thiện với con người của YAML giữ cho nó phổ biến cho cấu hình. Cùng một dữ liệu, nhưng JSON và TOML là các lựa chọn thay thế cho YAML, tùy thuộc vào trường hợp sử dụng. Một lưu ý về YAML: không cho phép sử dụng tab để thụt lề; chỉ dùng khoảng trắng.
 
 ## Xem Thêm
-
 Khám phá thêm với các tài nguyên này:
 
 - Bản Spec YAML Chính Thức: https://yaml.org/spec/1.2.2/

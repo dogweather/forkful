@@ -10,9 +10,6 @@ title: Writing to standard error
 weight: 25
 ---
 
-## What & Why?
-Writing to standard error (stderr) is about directing error messages and diagnostic outputs to a separate channel, distinct from standard output (stdout). Programmers do this to differentiate regular program results from error information, streamlining debugging, and logging processes.
-
 ## How to:
 In Lua, writing to stderr can be achieved using the `io.stderr:write()` function. Here's how you can write a simple error message to standard error:
 

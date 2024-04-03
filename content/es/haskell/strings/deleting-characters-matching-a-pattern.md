@@ -10,12 +10,7 @@ title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---
 
-## ¿Qué y Por Qué?
-
-Eliminar caracteres que coinciden con un patrón es, simplemente, filtrar nuestro texto para quitar ciertas secuencias de caracteres. Los programadores hacen esto para limpiar datos, preparar cadenas para procesamiento o eliminar información innecesaria.
-
 ## Cómo hacerlo:
-
 ```Haskell
 import Data.Char (isSpace)
 import Text.Regex (mkRegex, subRegex)
@@ -40,7 +35,6 @@ main = do
 ```
 
 ## Profundización
-
 La eliminación de caracteres por coincidencia de patrones no es algo nuevo. Desde los primeros días de Unix, herramientas como `sed` o lenguajes como Perl se especializaban en este tipo de tareas gracias a las expresiones regulares. En Haskell, utilizamos bibliotecas como `Text.Regex` para manipulaciones de texto robustas y expresivas. 
 
 Las alternativas en Haskell incluyen usar funciones como `filter` para casos sencillos o incluso escribir parsers más complejos con herramientas como `parsec` o `megaparsec` cuando las necesidades son más específicas. 
@@ -48,7 +42,6 @@ Las alternativas en Haskell incluyen usar funciones como `filter` para casos sen
 La implementación puede variar desde funciones puras hasta monadas de entrada/salida (IO) dependiendo de si los datos se procesan en tiempo de ejecución o se leen desde un archivo, por ejemplo.
 
 ## Ver También
-
 - Paquete `regex-base`: [Hackage - regex-base](https://hackage.haskell.org/package/regex-base)
 - Paquete `regex-posix`, que permite expresiones regulares POSIX: [Hackage - regex-posix](https://hackage.haskell.org/package/regex-posix)
 - Documentación de Haskell sobre listas y funciones como `filter`: [Learn You a Haskell for Great Good! - Starting Out](http://learnyouahaskell.com/starting-out#texas-ranges)

@@ -13,12 +13,7 @@ title: Het huidige datum ophalen
 weight: 29
 ---
 
-## Wat & Waarom?
-
-De huidige datum verkrijgen betekent de huidige kalenderdatum van je systeem ophalen. Programmeurs doen dit om gebeurtenissen te timestampen, taken te plannen, of gewoon om de datum aan gebruikers te tonen.
-
 ## Hoe:
-
 In Fish Shell is het een koud kunstje om de huidige datum te pakken te krijgen. Gebruik het `date` commando:
 
 ```fish
@@ -49,7 +44,6 @@ echo $current_date
 ```
 
 ## Diepere Duik
-
 Historisch gezien komt het `date` commando van UNIX, en het bestaat al tientallen jaren. In Fish Shell gebruik je een vriendelijkere versie van dit oude gereedschap. Het `%Y-%m-%d` formaat voor het `date` commando geeft je het jaar, de maand en de dag, maar je hebt een heleboel andere opties zoals `%H` voor uren of `%M` voor minuten.
 
 Waarom Fish gebruiken in plaats van Bash of Zsh hiervoor? Nou, Fish staat bekend om zijn eenvoudigere, leesbaardere syntaxis. Het instellen van variabelen is bijvoorbeeld een stuk duidelijker (`set varname value` vs. `varname=value`), en je hoeft ze niet met `$` te prefixen wanneer je ze gebruikt.
@@ -59,6 +53,5 @@ Alternatieven voor de ingebouwde `date` van Fish kunnen zijn het installeren van
 Wat betreft implementatie, wanneer je `date` uitvoert in Fish, gebruik je Fish's wrapper rond het systeem's date commando. Dat betekent dat je op Linux waarschijnlijk `GNU date` gebruikt, terwijl je op macOS de BSD-versie gebruikt. Ze lijken erg op elkaar, maar er zijn enkele subtiele verschillen in de opties die ze ondersteunen.
 
 ## Zie Ook
-
 - [Fish Shell Documentatie](https://fishshell.com/docs/current/index.html)
 - [GNU Coreutils `date`](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)

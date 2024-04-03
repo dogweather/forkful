@@ -12,9 +12,6 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-Reguliere expressies (regex) zijn patronen die worden gebruikt om karaktercombinaties in tekst te vinden. Programmeurs gebruiken ze voor het zoeken, bewerken of manipuleren van strings op een efficiënte manier—tijd en regels code besparend.
-
 ## Hoe:
 Om regex in Java te gebruiken, heb je de klassen `Pattern` en `Matcher` nodig uit `java.util.regex`. Hier is een voorbeeld van het vinden van e-mailadressen in een string.
 

@@ -13,9 +13,6 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i dlaczego?
-Zapisywanie pliku tekstowego w PHP polega na utworzeniu lub otwarciu pliku i wstawieniu do niego zawartości. Programiści robią to, aby zachować dane, takie jak treści generowane przez użytkowników lub logi, poza cyklem życia programu.
-
 ## Jak to zrobić:
 PHP natywnie obsługuje zapisywanie do pliku za pomocą funkcji takich jak `file_put_contents`, `fopen` w połączeniu z `fwrite` oraz `fclose`. Oto jak z nich korzystać:
 

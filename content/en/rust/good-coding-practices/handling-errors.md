@@ -9,12 +9,7 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-
-Error handling is about dealing with things when they go sideways. Programmers do it to handle the unexpected, ensuring their Rust programs are robust and don’t just crash when faced with a hiccup.
-
 ## How to:
-
 Rust handles errors in two major ways: recoverable and unrecoverable errors. Let's check out both.
 
 Recoverable errors use `Result<T, E>`:
@@ -53,7 +48,6 @@ fn main() {
 Run it, and you'll see a panic message. Your program stops dead in its tracks.
 
 ## Deep Dive
-
 Historically, error handling in programming has been a mess. Rust gets it right with a clear distinction between recoverable and unrecoverable errors.
 
 The `Result` enum is for recoverable errors. It's explicit – you handle the `Ok` or `Err` variant. You've got methods like `unwrap()` and `expect()` too, but they're quick and dirty shortcuts that can lead to a `panic!`.
@@ -65,7 +59,6 @@ Error handling by returning `Result` is preferred when you expect to deal with e
 Alternatives? Sure, you could use other error handling crates for more features or ergonomic use. Like `anyhow` for simple error handling, or `thiserror` for errors in library code.
 
 ## See Also
-
 Interested in diving deeper? Here's where to go:
 
 - [Rust Book on Error Handling](https://doc.rust-lang.org/book/ch09-00-error-handling.html) - A great place to understand Rust's error handling philosophy.

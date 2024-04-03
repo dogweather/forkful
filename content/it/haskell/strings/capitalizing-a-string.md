@@ -13,9 +13,6 @@ title: Capitalizzare una stringa
 weight: 2
 ---
 
-## Cosa & Perché?
-Trasformare la prima lettera di una stringa in maiuscolo, garantendo che il resto delle lettere rimanga in minuscolo, è ciò che viene definito capitalizzazione di una stringa. I programmatori eseguono questa operazione per formattare gli output, aderire alla correttezza grammaticale nei testi o migliorare la leggibilità dei dati generati.
-
 ## Come fare:
 In Haskell, puoi capitalizzare una stringa utilizzando la libreria standard senza bisogno di librerie di terze parti.
 

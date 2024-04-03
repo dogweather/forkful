@@ -14,9 +14,6 @@ title: Creando un archivo temporal
 weight: 21
 ---
 
-## Qué y Por Qué
-Crear un archivo temporal en C implica generar un archivo que está destinado a ser utilizado por un corto período, generalmente como espacio de trabajo para el procesamiento o almacenamiento de datos. Los programadores lo hacen para manejar datos temporales sin afectar el almacenamiento permanente del programa o para asegurar que los datos sensibles se borren después de su uso.
-
 ## Cómo hacerlo:
 Crear un archivo temporal en el lenguaje de programación C puede aprovechar funciones como `tmpfile()` y `mkstemp()`.
 

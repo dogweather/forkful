@@ -10,12 +10,7 @@ title: Concatenando strings
 weight: 3
 ---
 
-## O Que é & Por Que?
-
-Concatenar strings é simplesmente juntar duas ou mais sequências de caracteres para formar uma nova. Programadores fazem isso para construir mensagens, comandos, ou para processar texto de maneira dinâmica.
-
 ## Como Fazer:
-
 ```Fish Shell
 # Concatenar duas strings
 set string1 "Hello, "
@@ -37,7 +32,6 @@ echo "O " $animal " faz " $barulho"."
 ```
 
 ## Aprofundando:
-
 Concatenar strings é uma operação básica na programação, existindo desde os primórdios das linguagens de programação. Cada linguagem tem sua forma peculiar de fazer isso, algumas utilizam operadores específicos (como + em Python ou . em PHP), enquanto outras utilizam funções. No Fish Shell, a concatenação é direta: basta escrever as strings e variáveis sequencialmente.
 
 Uma alternativa à concatenação direta é usar comandos como `string join` no Fish, que pode unir elementos com um separador específico.
@@ -45,7 +39,6 @@ Uma alternativa à concatenação direta é usar comandos como `string join` no 
 Detalhes de implementação no Fish: quando se concatena strings na Fish Shell, você está na verdade formando uma nova variável sem usar um operador explícito. É importante apenas garantir que não haja espaços entre as variáveis e as strings, a menos que esse espaço seja intencional.
 
 ## Veja Também:
-
 - Documentação oficial do Fish Shell sobre strings: https://fishshell.com/docs/current/index.html#syntax-string
 - Tutorial sobre manipulação de strings em Fish: https://fishshell.com/docs/current/tutorial.html#tut_strings
 - Fórum de discussão sobre Fish Shell para dúvidas e troca de informações: https://fishshell.com/docs/current/index.html#further-reading

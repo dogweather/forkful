@@ -15,12 +15,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Cái gì & Tại sao?
-
-Số phức bao gồm một phần thực và một phần ảo, được biểu diễn dưới dạng `a + bi` trong đó `i` là căn bậc hai của `-1`. Các lập trình viên làm việc với số phức trong nhiều lĩnh vực như kỹ thuật điện, tính toán lượng tử và động lực học chất lỏng, tận dụng các đặc tính độc đáo của chúng cho mô phỏng, xử lý tín hiệu, và giải các loại phương trình toán học cụ thể.
-
 ## Làm thế nào:
-
 Trong C, số phức được hỗ trợ bởi Thư viện Tiêu chuẩn, cụ thể là `<complex.h>`. Để sử dụng chúng, khai báo các biến với kiểu `double complex` (hoặc `float complex` cho độ chính xác đơn). Dưới đây là cách thực hiện các phép toán cơ bản:
 
 ```c
@@ -57,5 +52,4 @@ int main() {
 Lưu ý rằng `I` là một hằng số biểu thị đơn vị ảo trong `<complex.h>`. Các hàm như `creal()` và `cimag()` được sử dụng để trích xuất phần thực và phần ảo tương ứng, trong khi `conj()` tính toán liên hợp phức. Đối với độ lớn và pha (arg) của số phức, `cabs()` và `carg()` được sử dụng.
 
 ## Sâu hơn
-
 Việc hỗ trợ số phức trong C tương đối mới, được chuẩn hóa trong C99. Trước đó, việc tính toán số phức trong C khá cồng kềnh, thường yêu cầu cấu trúc dữ liệu và hàm tùy chỉnh. Sự bao gồm của `<complex.h>` và các loại dữ liệu phức đã tăng cường đáng kể khả năng của ngôn ngữ cho các ứng dụng khoa học và kỹ thuật. Tuy nhiên, đáng chú ý là một số ngôn ngữ, như Python, cung cấp hỗ trợ trực quan hơn cho số phức thông qua các kiểu dữ liệu tích hợp và bộ thư viện phong phú hơn. Mặc dù vậy, hiệu suất và kiểm soát mà C cung cấp khiến nó trở thành lựa chọn ưa thích cho các nhiệm vụ tính toán hiệu suất cao, ngay cả khi điều này có nghĩa là phải đối mặt với cú pháp tương đối dài dòng hơn cho số học phức.

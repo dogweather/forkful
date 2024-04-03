@@ -10,9 +10,6 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad & Varför?
-Komplexa tal utvidgar de reella talen med en ytterligare del, den imaginära enheten 'i'. Programmerare använder dem inom olika områden, inklusive signalbehandling, elektromagnetisk teori och fraktaler, där beräkningar som involverar kvadratroten av ett negativt tal är rutin.
-
 ## Hur man gör:
 Clojure erbjuder inbyggt stöd för komplexa tal genom verktygsklassen `clojure.lang.Numbers`. Använd `complex` för att skapa komplexa tal och utföra aritmetik.
 

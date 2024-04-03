@@ -10,12 +10,7 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä & Miksi?
-
-Virheiden käsittely Bash-skriptauksessa tarkoittaa mahdollisten ongelmakohtien ennakointia ja niiden arvokasta käsittelyä. Miksi? No, se tekee skriptistäsi luotettavan ja säästää käyttäjiä päänraapimiselta, kun asiat eivät toimi odotetulla tavalla.
-
 ## Kuinka:
-
 ```Bash
 #!/bin/bash
 
@@ -48,7 +43,6 @@ cat: temp_tiedosto.txt: Tiedostoa tai hakemistoa ei ole
 ```
 
 ## Syväluotaus
-
 Virheenkäsittely Bash-skriptauksessa juontaa juurensa Unix-komentotulkin alkuaikoihin, jolloin luotettavat ja kestävät skriptit olivat (ja ovat) elintärkeitä järjestelmien hallinnassa ja automaatioissa. Perinteisesti Bashissa virheet käsitellään tarkistamalla komennon poistumisstatus, joka konventioiden mukaan palauttaa 0 onnistumisesta ja muun kuin nollan epäonnistumisesta.
 
 Bash esitteli `trap`-komennon sisäänrakennettuna, joka sallii käyttäjien määritellä komentoja suoritettavaksi erilaisissa signaaleissa tai skriptin poistumisen yhteydessä. Tämä on hyödyllistä esimerkiksi siivoustoimiin tai viimeiseksi keinoksi virheenkäsittelymekanismina.
@@ -60,7 +54,6 @@ Vaihtoehtoja Bashin sisäiselle virheenkäsittelylle sisältävät mm. tiedostoj
 Vaikka huolellinen virheenkäsittely voi joskus tuntua ylilyönniltä pienille skripteille, se on harjoitus, joka voi säästää paljon aikaa debuggauksessa ja estää odottamattomia käyttäytymisiä sekä sinulle että käyttäjille.
 
 ## Katso Myös
-
 - Bash-käsikirja Kuoriparametreista: https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameters
 - Advanced Bash-Scripting Guide -osio Virheenkäsittelystä: https://www.tldp.org/LDP/abs/html/exit-status.html
 - Syvällinen opas `trap`:iin: https://mywiki.wooledge.org/SignalTrap

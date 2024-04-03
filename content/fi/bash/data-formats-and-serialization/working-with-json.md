@@ -13,9 +13,6 @@ title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---
 
-## Mikä ja miksi?
-JSONin käsittely Bash-ohjelmoinnissa sisältää JSON-tietojen jäsentämisen, poimimisen ja manipuloinnin suoraan komentoriviltä. Ohjelmoijat tekevät näin usein integroidakseen kuoriskriptejä saumattomasti web-API:en ja modernien tietovaihtoformaatien kanssa, tehden Bash-skriptauksesta voimakkaampaa ja relevantimpaa JSON-painotteisessa ekosysteemissä.
-
 ## Miten:
 Bash itsessään ei sisällä sisäänrakennettuja JSON-jäsennysominaisuuksia, mutta `jq` on voimakas komentorivin JSON-prosessori, joka täyttää tämän aukon. Näin voit käyttää sitä:
 

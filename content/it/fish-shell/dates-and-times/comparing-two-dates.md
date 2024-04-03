@@ -10,11 +10,7 @@ title: Confronto tra due date
 weight: 27
 ---
 
-## Cosa & Perché?
-Confrontare due date significa verificare se una precede, segue o coincide con l'altra. I programmatori lo fanno per gestire eventi, scadenze, o per organizzare dati cronologicamente.
-
 ## Come fare:
-
 Per confrontare due date in Fish, utilizza il comando `date` per ottenere i secondi dal 1° gennaio 1970 (timestamp) e confrontali con `-gt`, `-lt`, o `-eq`.
 
 ```Fish
@@ -37,7 +33,6 @@ end
 Output dipende dalla data corrente quando esegui il codice.
 
 ## Approfondimento
-
 Confrontare date in shell scripting non è sempre stato chiaro. Prima, ci si affidava a tool esterni come `dateutils`, ma ora Fish e le altre moderne shell offrono modi integrati per gestire date e orari, rendendo il lavoro più immediato.
 
 Tools alternativi includono awk o perl scripts per complessità maggiori. Dettagli di implementazione variano tra sistemi operativi (attenzione ai formati di data!).
@@ -45,7 +40,6 @@ Tools alternativi includono awk o perl scripts per complessità maggiori. Dettag
 Fish non ha una manipolazione di date altrettanto sofisticata come in altri linguaggi di programmazione, ma è sufficiente per le operazioni base come il confronto di timestamp.
 
 ## Vedere anche:
-
 - Documentazione Fish per il comando `date`: https://fishshell.com/docs/current/cmds/date.html
 - Tutorial sui comandi `test`: https://fishshell.com/docs/current/cmds/test.html
 - Comparazione di date UNIX timestamp: https://en.wikipedia.org/wiki/Unix_time

@@ -11,9 +11,6 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O que & Por quê?
-Refatoração é o processo de reestruturar código de computador existente sem alterar seu comportamento externo. Programadores refatoram para melhorar atributos não funcionais do software, tornando o código mais limpo, mais eficiente e mais fácil de manter.
-
 ## Como fazer:
 Vamos pegar um trecho clássico de PHP e aplicar um pouco de mágica de refatoração.
 

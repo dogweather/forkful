@@ -13,12 +13,7 @@ title: Commandoregelargumenten lezen
 weight: 23
 ---
 
-## Wat & Waarom?
-
-Het lezen van commandoregelargumenten in Visual Basic for Applications (VBA) houdt in dat je toegang krijgt tot parameters die aan je programma worden doorgegeven bij uitvoering. Deze techniek wordt vaak gebruikt om het gedrag of de uitvoer van een programma te beïnvloeden zonder de behoefte aan gebruikersinteractie, waardoor automatisering en scriptingtaken aanzienlijk eenvoudiger en veelzijdiger worden.
-
 ## Hoe:
-
 In tegenstelling tot eenvoudigere programmeeromgevingen heeft VBA geen ingebouwde functie om commandoregelargumenten rechtstreeks op een conventionele manier te lezen, omdat het vooral is ontworpen voor integratie binnen Microsoft Office-applicaties. Echter, met een beetje creativiteit kunnen we Windows Script Host (WSH) of externe API's gebruiken om een vergelijkbare functionaliteit te bereiken. Hier is een praktische oplossing met behulp van WSH:
 
 1. **Maak een VBScript om argumenten door te geven aan VBA:**
@@ -53,7 +48,6 @@ cscript jeScript.vbs "Hallo" "Wereld"
    Dit zou moeten resulteren in het uitvoeren van je VBA-macro met de argumenten "Hallo" en "Wereld", en deze te tonen in een berichtvenster.
 
 ## Diepgaand:
-
 In een historische context is VBA bedacht om de mogelijkheden van Microsoft Office-applicaties uit te breiden, niet als een zelfstandige programmeeromgeving. Als zodanig ligt directe interactie met de commandoregel buiten zijn primaire toepassingsgebied, wat het gebrek aan ingebouwde ondersteuning voor het lezen van commandoregelargumenten verklaart.
 
 De hierboven geschetste methode, hoewel effectief, is meer een omweg dan een inheemse oplossing, waarbij externe scripting wordt gebruikt om de kloof te overbruggen. Deze aanpak kan complexiteit en potentiële beveiligingsproblemen met zich meebrengen omdat het inschakelen van macro's vereist is en mogelijk het verlagen van beveiligingsinstellingen om uit te voeren.

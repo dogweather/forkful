@@ -11,9 +11,6 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## What & Why?
-Tekstin muuttaminen pieniksi kirjaimiksi tarkoittaa kaikkien merkkijonon kirjainten muuntamista vastaaviksi pienaakkosiksi. Tätä tehdään yhtenäistämään dataa, esimerkiksi käyttäjän syötteen vertailussa tai hakutoiminnallisuuksissa.
-
 ## How to:
 Swiftissä merkkijonon muuttaminen pieniksi kirjaimiksi on yksinkertaista. Käytä `lowercased()` metodia:
 

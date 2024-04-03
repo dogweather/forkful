@@ -17,12 +17,7 @@ title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---
 
-## Cái gì & Tại sao?
-
-Việc tạo ra các số ngẫu nhiên trong Visual Basic for Applications (VBA) cho phép các chương trình mô phỏng các quy trình với các yếu tố may rủi hoặc biến đổi, như lăn xúc xắc hay lấy mẫu dữ liệu. Các lập trình viên sử dụng những kỹ thuật này để phát triển mô hình, trò chơi hoặc các mô phỏng nơi mà các kết quả dễ đoán sẽ không thực tế hoặc ít hữu ích.
-
 ## Làm thế nào:
-
 Trong VBA, hàm `Rnd` được sử dụng để tạo ra số ngẫu nhiên. Theo mặc định, `Rnd` tạo ra một số điểm dấu chấm nổi đơn chính xác lớn hơn hoặc bằng 0 và nhỏ hơn 1. Dưới đây là một số bước và ví dụ để khai thác hiệu quả số ngẫu nhiên:
 
 1. **Số Ngẫu Nhiên Đơn Giản:**
@@ -64,7 +59,6 @@ Trong VBA, hàm `Rnd` được sử dụng để tạo ra số ngẫu nhiên. Th
 Sau khi chạy `RandomNumberInRange`, bạn có thể thấy một hộp thoại hiển thị một số như `45`.
 
 ## Đi Sâu:
-
 Hàm `Rnd` trong VBA, mặc dù dễ sử dụng, thực ra lại tạo ra các số giả ngẫu nhiên dựa trên một thuật toán định trước. Điều này có nghĩa là các chuỗi số nó tạo ra không thực sự ngẫu nhiên nhưng thường đủ cho nhiều nhiệm vụ cần quá trình stochastis.
 
 Lịch sử, khả năng tạo số ngẫu nhiên trong VBA đã có từ những phiên bản đầu của Basic, thích nghi theo thời gian để bao gồm các tính năng như `Randomize` để cải thiện tính ngẫu nhiên bằng cách gieo hạt thuật toán với một điểm bắt đầu. Tuy nhiên, đối với các ứng dụng cần mức độ ngẫu nhiên cao như các hoạt động mật mã bảo mật, `Rnd` của VBA có thể không phải là công cụ tốt nhất. Các lựa chọn khác trong môi trường lập trình mạnh mẽ hơn hoặc ngôn ngữ được thiết kế với mật mã hóa trong tâm trí như mô-đun `secrets` của Python hoặc `SecureRandom` của Java nên được xem xét.

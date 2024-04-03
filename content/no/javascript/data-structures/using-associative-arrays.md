@@ -13,12 +13,7 @@ title: Bruke associative tabeller
 weight: 15
 ---
 
-## Hva & Hvorfor?
-
-Assosiative arrays, eller som de mer nøyaktig er kjent som i JavaScript, objekter, lar deg knytte nøkler til verdier. Dette er super praktisk for når du trenger en samling av elementer som du ønsker å få tilgang til via spesifikke navn (nøkler) i stedet for numeriske indekser, noe som gjør koden din mer lesbar og fleksibel.
-
 ## Hvordan:
-
 Å opprette og bruke assosiative arrays (objekter) i JavaScript er enkelt. Du definerer et objekt med krøllparenteser `{}`, og innenfor disse kan du definere et sett av nøkkel-verdipar. Nøkler er alltid strenger, og verdier kan være hva som helst: strenger, tall, arrays, til og med andre objekter.
 
 ```javascript
@@ -64,7 +59,6 @@ console.log(userInfo);
 Som du kan se, er tilgang, tillegg eller sletting av elementer i et assosiativt array ganske direkte og intuitivt.
 
 ## Dypdykk
-
 I JavaScript-verdenen, selv om vi ofte hører uttrykket "assosiativt array," er det teknisk sett en feilbetegnelse fordi JavaScript ikke har ekte assosiative arrays som andre språk (for eksempel PHP). Det JavaScript har, er objekter som tjener et lignende formål, men som er en mer kraftfull og fleksibel konstruksjon.
 
 Historisk sett var arrays i programmeringsspråk designet for å holde på en samling av gjenstander, tilgjengelig ved deres numeriske indeks. Imidlertid, som programvareutvikling utviklet seg, oppsto behovet for mer fleksible datastrukturer. Assosiative arrays, eller ordbøker i andre språk, var ett svar, som tillot tilgang til elementer gjennom vilkårlige nøkler.

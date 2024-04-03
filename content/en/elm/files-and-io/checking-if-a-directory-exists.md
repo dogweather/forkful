@@ -10,9 +10,6 @@ title: Checking if a directory exists
 weight: 20
 ---
 
-## What & Why?
-Checking if a directory exists means confirming whether a specific folder path is present in the file system. Programmers do it to avoid errors when accessing, reading, or writing files.
-
 ## How to:
 Elm is a front-end web programming language, so it doesn't have direct access to the file system. However, you'd typically send a command to a backend service in JavaScript. Here's how you might structure such an interaction with Elm:
 

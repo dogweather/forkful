@@ -15,12 +15,7 @@ title: Lire les arguments de la ligne de commande
 weight: 23
 ---
 
-## Quoi & Pourquoi ?
-
-Lire les arguments de la ligne de commande en Dart permet aux programmeurs d'entrer des données directement dans la console lors de l'exécution d'un programme Dart, améliorant son interactivité et sa flexibilité pour divers cas d'utilisation, y compris les scripts d'automatisation, les outils CLI ou le traitement par lots. Cette fonctionnalité est essentielle pour créer des applications en ligne de commande adaptables et conviviales.
-
 ## Comment faire :
-
 Dart propose une approche simple pour accéder aux arguments de la ligne de commande via le `List<String> args` dans la méthode principale. Voici un exemple simple qui montre comment lire et utiliser les arguments de la ligne de commande.
 
 ```dart
@@ -48,7 +43,6 @@ Arguments de la ligne de commande :
 ```
 
 ### Utilisation d'une bibliothèque tierce populaire : `args`
-
 Bien que les capacités intégrées de Dart pour gérer les arguments de la ligne de commande soient robustes pour de nombreuses applications, le package `args` offre un moyen raffiné de définir et d'analyser les arguments de la ligne de commande pour des besoins plus complexes.
 
 Tout d'abord, ajoutez le package `args` à votre `pubspec.yaml` :

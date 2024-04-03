@@ -11,9 +11,6 @@ title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---
 
-## Vad & Varför?
-Att jämföra två datum innebär att avgöra vilket datum som kommer före eller efter det andra, eller om de är samma. Programmerare gör detta för att hantera bokningar, deadlines, tidslinjer och andra tidsberoende funktioner.
-
 ## Hur gör man?
 ```ruby
 require 'date'

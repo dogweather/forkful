@@ -11,9 +11,6 @@ title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---
 
-## ¿Qué es y por qué?
-Concatenar cadenas es simplemente juntar dos o más trozos de texto en uno solo. Lo hacemos porque a veces necesitamos construir mensajes personalizados o combinar información de diferentes fuentes.
-
 ## Así se hace:
 ```TypeScript
 let saludo = "Hola, ";

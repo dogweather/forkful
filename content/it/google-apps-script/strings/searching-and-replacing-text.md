@@ -13,16 +13,10 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## Cosa e Perché?
-
-La ricerca e sostituzione di testo in Google Apps Script consiste nell'identificare in modo programmato specifiche stringhe in un documento, foglio di calcolo o qualsiasi altro tipo di contenuto di Google Apps, e nel sostituirle con altri valori testuali. I programmatori utilizzano questa funzionalità per automatizzare la modifica di grandi volumi di contenuto, correggere errori comuni, standardizzare la terminologia tra diversi documenti o inserire dati dinamici in modelli.
-
 ## Come fare:
-
 Google Apps Script offre un modo semplice per cercare e sostituire testo, specialmente all'interno di Google Docs e Fogli. Di seguito sono riportati esempi per entrambi.
 
 ### Google Docs:
-
 Per cercare e sostituire testo in un Documento Google, si interagirà principalmente con la classe `DocumentApp`.
 
 ```javascript
@@ -43,7 +37,6 @@ searchReplaceInDoc();
 Questo frammento di codice cerca tutte le occorrenze di `'testoDaCercare'` nel Documento Google attivo e le sostituisce con `'testoDiSostituzione'`.
 
 ### Google Sheets:
-
 Analogamente, in Google Sheets, si può utilizzare `SpreadsheetApp` per eseguire operazioni di ricerca e sostituzione:
 
 ```javascript
@@ -62,7 +55,6 @@ searchReplaceInSheet();
 In questo esempio, `createTextFinder('testoDaCercare')` cerca nel foglio attivo 'testoDaCercare', e `replaceAllWith('testoDiSostituzione')` sostituisce tutte le occorrenze con 'testoDiSostituzione'.
 
 ## Approfondimento
-
 La funzionalità di ricerca e sostituzione in Google Apps Script è fortemente influenzata dalla sua natura basata sul web, consentendo agli script di manipolare testo in vari Google Apps senza soluzione di continuità. Storicamente, questa capacità deriva dal contesto più ampio della elaborazione e manipolazione di testo nella programmazione, dove le espressioni regolari e le funzioni di stringa in linguaggi come Perl e Python hanno stabilito un alto standard per flessibilità e potenza.
 
 Mentre la funzionalità di ricerca e sostituzione di Google Apps Script è potente per sostituzioni semplici, manca delle complete capacità di espressioni regolari trovate in alcuni altri linguaggi. Ad esempio, mentre è possibile utilizzare espressioni regolari di base in `createTextFinder` in Google Sheets, le opzioni per il pattern matching complesso e la manipolazione sono limitate rispetto a Perl o Python.

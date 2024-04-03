@@ -12,12 +12,7 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-
-Fouten afhandelen betekent code schrijven die kan omgaan met situaties die fout lopen. Programmeurs doen dit om crashes te voorkomen en om ervoor te zorgen dat hun programma's sierlijk kunnen herstellen wanneer de wet van Murphy toeslaat.
-
 ## Hoe te:
-
 In Elixir gebruiken we vaak pattern matching en de `case` statement om verschillende uitkomsten, inclusief fouten, te behandelen.
 
 ```elixir
@@ -48,7 +43,6 @@ Fout: Kan niet delen door nul.
 Wanneer je deze Elixir-code uitvoert, krijg je ofwel een succesvolle deling of een foutmelding, afhankelijk van je invoer. Geen crashes hier!
 
 ## Diepgaande duik
-
 Vroeger was foutafhandeling vaak gebaseerd op het controleren van retourwaarden. Met de functionele roots van Elixir hebben we echter pattern matching en getagde tuples, zoals `{:ok, waarde}` of `{:error, reden}`, die eleganter zijn.
 
 Er zijn andere manieren om fouten in Elixir te behandelen:
@@ -59,7 +53,6 @@ Er zijn andere manieren om fouten in Elixir te behandelen:
 Wat de implementatie betreft, bouwt Elixir voort op de robuustheid van Erlang. Het behandelt fouten als gewoon een ander type bericht dat moet worden afgehandeld met alle pattern matching en functionele goedheid.
 
 ## Zie ook
-
 Voor verder lezen over foutafhandeling in Elixir, bekijk:
 
 - De officiële gids van Elixir over [foutafhandeling](https://elixir-lang.org/getting-started/try-catch-and-rescue.html).

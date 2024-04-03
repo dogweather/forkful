@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---
 
-## Cái gì & Tại sao?
-JSON, hay JavaScript Object Notation, là một định dạng dữ liệu nhẹ để lưu trữ và truyền tải dữ liệu. Lập trình viên sử dụng nó vì nó dễ đọc/viết cho con người và máy móc có thể phân tích và tạo ra một cách nhanh chóng.
-
 ## Làm thế nào:
 Phân tích cú pháp JSON trong JavaScript:
 ```javascript

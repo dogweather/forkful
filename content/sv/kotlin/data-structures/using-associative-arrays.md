@@ -13,12 +13,7 @@ title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---
 
-## Vad & Varför?
-
-Associativa arrayer, eller kartor, i Kotlin är samlingar som lagrar nyckel-värdepar. Programmerare använder dem för att effektivt organisera och hämta data baserat på unika nycklar, vilket underlättar hanteringen av information.
-
 ## Hur man gör:
-
 Att skapa och använda en karta i Kotlin är enkelt. Här är en snabbguide om hur du gör det:
 
 ```Kotlin
@@ -49,7 +44,6 @@ fun main() {
 ```
 
 ## Djupdykning
-
 Kotlin kartor kommer direkt från dess interoperabilitet med Java, där kartor är en viktig del av samlingarna. Dock förbättrar Kotlin deras användbarhet genom att tillhandahålla både muterbara (`MutableMap`) och skrivskyddade (`Map`) gränssnitt, till skillnad från Javas enhetliga `Map`-gränssnitt. Denna distinktion gör det tydligt om en samling är avsedd för ändring eller inte.
 
 En viktig detalj om Kotlins kartimplementering är den explicita distinktionen mellan muterbara och oföränderliga kartor, vilket betonar språkets fokus på oföränderlighet och trådsäkerhet.

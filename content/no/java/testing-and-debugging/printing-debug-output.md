@@ -11,9 +11,6 @@ title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---
 
-## Hva & Hvorfor?
-Å skrive ut debug informasjon betyr å printe ut data for å forstå hva koden din gjør eller finne feil. Programmerere gjør dette for å se programflyten eller verdiene som brukes under kjøring.
-
 ## Slik gjør du:
 Bruk `System.out.println()` for enkel output til konsollen.
 

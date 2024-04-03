@@ -10,9 +10,6 @@ title: Lectura de un archivo de texto
 weight: 22
 ---
 
-## Qué & Por Qué?
-Leer un archivo de texto es el proceso de obtener y procesar información almacenada en un archivo de texto simple. Los programadores lo hacen para manipular datos, configuraciones o simplemente para importar información a sus programas.
-
 ## Cómo hacerlo:
 Con Fish Shell, leer un archivo es pan comido. Aquí tienes un ejemplo:
 

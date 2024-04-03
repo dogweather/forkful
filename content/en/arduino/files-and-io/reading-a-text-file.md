@@ -10,12 +10,7 @@ title: Reading a text file
 weight: 22
 ---
 
-## What & Why?
-
-Reading a text file in Arduino lets you fetch data stored on an SD card or in the device's memory—handy for settings, calibration data, or logs. Programmers do it to separate code from data, making updates and management easier.
-
 ## How to:
-
 ```Arduino
 #include <SPI.h>
 #include <SD.h>
@@ -52,7 +47,6 @@ void loop() {
 Expected output on the serial monitor will be the contents of `example.txt` if everything is wired and initialized correctly.
 
 ## Deep Dive
-
 Historically, microcontrollers like Arduino had tiny memory and couldn't handle files. But with SD card modules and larger onboard memories, we've got file I/O. Several libraries exist for this purpose, such as `<SD.h>`. It's built on top of `<SPI.h>` for communication with the SD card via the SPI bus.
 
 In terms of alternatives, you could use EEPROM (non-volatile memory) for small data or even connect an Arduino to a network and fetch files from a server. The `<SD.h>` library is a wrapper for lower-level functions, handling file management, reading, and writing in a way that's similar to standard C++ streams.
@@ -60,7 +54,6 @@ In terms of alternatives, you could use EEPROM (non-volatile memory) for small d
 Implementation on Arduino involves initializing the SD card module, opening the file, reading it until there's nothing left to read, and then closing it to free resources. It's essential to handle errors, like failing to initialize or open the file, as they're common causes of headaches in file operations.
 
 ## See Also
-
 - Official SD library reference: https://www.arduino.cc/en/Reference/SD
 - Arduino's SPI library for serial communication: https://www.arduino.cc/en/reference/SPI
 - Guide to using EEPROM with Arduino for smaller data storage tasks: https://www.arduino.cc/en/Tutorial/LibraryExamples/EEPROMReadWrite

@@ -11,9 +11,6 @@ title: Arrondir les nombres
 weight: 13
 ---
 
-## Quoi & Pourquoi ?
-Arrondir les nombres signifie les ajuster à la valeur de place la plus proche—pensez à les simplifier. Les programmeurs arrondissent pour contrôler la précision, améliorer la performance ou lors de l'affichage de résultats conviviaux pour l'utilisateur—comme les prix qui n'ont pas besoin de trois décimales.
-
 ## Comment faire :
 Voici le billet aller-retour pour arrondir les nombres en C# :
 

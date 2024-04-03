@@ -15,12 +15,7 @@ title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---
 
-## Co i dlaczego?
-
-Zmiana pierwszej litery łańcucha na wielką, a reszty na małe litery, oznacza modyfikację tekstu w taki sposób, by pierwsza litera była wielka, a pozostała część łańcucha była pisana małymi literami. Jest to powszechne zadanie w przetwarzaniu tekstów, normalizacji wejścia użytkownika oraz formacie danych, aby zapewnić spójność lub spełnić określone kryteria formatowania.
-
 ## Jak to zrobić:
-
 W Fish Shell, ciągi znaków mogą być manipulowane bezpośrednio za pomocą wbudowanych funkcji, bez potrzeby używania zewnętrznych narzędzi czy bibliotek. Aby uczynić pierwszą literę ciągu wielką, możesz połączyć polecenie `string` z podpoleceniami.
 
 ```fish

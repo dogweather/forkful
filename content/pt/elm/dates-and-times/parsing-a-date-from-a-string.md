@@ -13,9 +13,6 @@ title: Analisando uma data a partir de uma string
 weight: 30
 ---
 
-## O Que & Por Quê?
-Analisar uma data a partir de uma string em Elm envolve converter informações textuais que representam datas e horários em um formato que o Elm possa entender e manipular, especificamente no tipo `Date`. Esse processo é crucial para lidar com a entrada do usuário, exibir datas corretamente localizadas e realizar cálculos relacionados a datas, garantindo que suas aplicações Elm possam processar dados temporais de maneira inteligente.
-
 ## Como fazer:
 Elm não possui capacidades internas tão robustas quanto algumas outras linguagens para análise de datas, dependendo principalmente da interoperabilidade com Javascript ou bibliotecas para operações mais complexas. No entanto, você pode usar o pacote `elm/time` para análise básica, e para necessidades mais complexas, a biblioteca de terceiros `justinmimbs/date` é amplamente recomendada.
 

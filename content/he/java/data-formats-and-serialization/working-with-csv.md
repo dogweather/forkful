@@ -27,14 +27,10 @@ title: "\u05E2\u05D5\u05D1\u05D3\u05D9\u05DD \u05E2\u05DD CSV"
 weight: 37
 ---
 
-## מה ולמה?
-
-עבודה עם קבצי CSV כוללת קריאה מקבצי ערכים מופרדי פסיקים (CSV) וכתיבה אליהם, פורמט פופולרי להחלפת נתונים מכיוון שהוא פשוט ונתמך על ידי רבים. מתכנתים מניפולים קבצי CSV למשימות כמו ייבוא/ייצוא נתונים, ניתוח נתונים, ושיתוף מידע בין מערכות שונות.
-
 ## איך ל:
 
-### קריאת קובץ CSV באמצעות ספריית Java הסטנדרטית
 
+### קריאת קובץ CSV באמצעות ספריית Java הסטנדרטית
 ל-Java אין תמיכה מובנית ל-CSV בספרייתה הסטנדרטית, אך ניתן בקלות לקרוא קובץ CSV באמצעות מחלקות `java.io`.
 
 ```java
@@ -63,7 +59,6 @@ public class ReadCSVExample {
 ```
 
 ### כתיבה לקובץ CSV באמצעות ספריית Java הסטנדרטית
-
 לכתיבת נתונים לקובץ CSV, ניתן להשתמש במחלקות `java.io` כמו `FileWriter` ו-`BufferedWriter`.
 
 ```java
@@ -92,7 +87,6 @@ public class WriteCSVExample {
 ```
 
 ### שימוש בספרייה מצד שלישי: Apache Commons CSV
-
 Apache Commons CSV היא ספרייה פופולרית לטיפול בקבצי CSV ב-Java. היא מפשטת משמעותית את הקריאה והכתיבה של קבצי CSV.
 
 הוספת התלות לפרויקט שלך:
@@ -108,7 +102,6 @@ Apache Commons CSV היא ספרייה פופולרית לטיפול בקבצי 
 ```
 
 #### קריאת קובץ CSV:
-
 ```java
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -137,7 +130,6 @@ public class ApacheReadCSVExample {
 ```
 
 #### כתיבה לקובץ CSV:
-
 ```java
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;

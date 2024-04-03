@@ -15,9 +15,6 @@ title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---
 
-## Lý do & Mục đích?
-Phân tích cú pháp HTML có nghĩa là phá vỡ nội dung HTML để trích xuất dữ liệu cụ thể. Lập trình viên thực hiện điều này để tự động hóa việc thu thập dữ liệu web, khai thác dữ liệu, hoặc để tích hợp nội dung web vào ứng dụng.
-
 ## Cách thực hiện:
 Hãy lấy một số dữ liệu từ một trang web. Chúng ta sẽ sử dụng Invoke-WebRequest và sau đó lọc ra những gì chúng ta cần.
 

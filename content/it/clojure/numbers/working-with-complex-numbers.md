@@ -11,9 +11,6 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-## Cosa & Perché?
-I numeri complessi estendono i numeri reali con una parte aggiuntiva, l'unità immaginaria 'i'. I programmatori li utilizzano in vari ambiti, tra cui l'elaborazione dei segnali, la teoria elettromagnetica e i frattali, dove i calcoli che coinvolgono la radice quadrata di un numero negativo sono routine.
-
 ## Come fare:
 Clojure fornisce un supporto integrato per i numeri complessi tramite la classe di utilità `clojure.lang.Numbers`. Usa `complex` per creare numeri complessi ed eseguire operazioni aritmetiche.
 

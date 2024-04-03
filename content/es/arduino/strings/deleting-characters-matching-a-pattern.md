@@ -11,9 +11,6 @@ title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---
 
-## ¿Qué y Por Qué?
-Eliminar caracteres que coinciden con un patrón sirve para limpiar o procesar texto, como quitar espacios o caracteres especiales. Los programadores lo hacen para validar entradas o simplificar cadenas antes de usarlas.
-
 ## Cómo:
 ```Arduino
 String eliminarPatron(String str, String patron) {

@@ -12,9 +12,6 @@ title: Scrivere test
 weight: 36
 ---
 
-## Cosa & Perché?
-Scrivere test in Elixir comporta la creazione di script automatizzati per convalidare il comportamento del tuo codice. I programmatori lo fanno per garantire la qualità, prevenire le regressioni e facilitare il refactoring del codice, rendendo il processo di sviluppo più affidabile ed efficiente.
-
 ## Come fare:
 Elixir utilizza ExUnit come framework di test incorporato, che è estremamente potente e facile da usare. Ecco un esempio di base:
 

@@ -13,12 +13,7 @@ title: Analysering av en dato fra en streng
 weight: 30
 ---
 
-## Hva & Hvorfor?
-
-Å tolke en dato fra en tekststreng i Bash innebærer å ekstrahere og konvertere datoinformasjon fra tekstuelle data til et format som Bash kan manipulere eller bruke til videre prosesser. Dette er et vanlig krav i skripting for oppgaver som loggfilanalyse, filorganisering basert på datostempler, eller automatisert rapportering, noe som gjør det til en essensiell ferdighet for programmerere for å håndtere og utnytte tidsrelaterte data effektivt.
-
 ## Hvordan:
-
 Bash i seg selv er ganske begrenset i direkte datotolkningsmuligheter, ofte avhenger den av eksterne verktøy som `date` og `awk` for mer sofistikert manipulasjon. Her er hvordan du kan tolke et spesifikt format og deretter bruke det med `date`-kommandoen for å konvertere det eller utføre operasjoner.
 
 **Eksempel 1:** Uttrække en datostreng og konvertere den til et annet format.
@@ -65,7 +60,6 @@ Lørdag, april 01, 2023
 Dette eksemplet bruker `awk` for å splitte logglinjen og ekstrahere datodelen (`$1` representerer det første mellomrom-delt feltet), og deretter brukes `date` til å omformatere den.
 
 ### Bruk av tredjepartsverktøy
-
 For mer kompleks tolkning eller når man har å gjøre med en lang rekke datofortmatter, kan tredjepartsverktøy som `dateutils` være veldig nyttig.
 
 **Eksempel med `dateutils`:**

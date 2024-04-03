@@ -10,9 +10,6 @@ title: "Feilh\xE5ndtering"
 weight: 16
 ---
 
-## Hva & Hvorfor?
-Feilhåndtering dreier seg om å håndtere det uventede i programmer—ligner på en dørvakt som takler bråkmakere. Programmerere liker det problemfritt; feilhåndtering hjelper med å holde trøbbel i sjakk og sikrer at koden deres ikke snubler og faller når den står overfor det uventede.
-
 ## Hvordan:
 Clojure, i likhet med sine Lisp forfedre, støtter seg på unntak for å håndtere feil. Slik viser du hva du er laget av når ting går dårlig.
 

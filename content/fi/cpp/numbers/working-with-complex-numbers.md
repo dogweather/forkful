@@ -11,9 +11,6 @@ title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---
 
-## Mikä & Miksi?
-Kompleksiluvut laajentavat reaalilukuja lisäämällä imaginaariyksikön, joka esitetään 'i':nä, missä i^2 = -1. Ohjelmoijat käyttävät niitä simulaatioissa, signaalinkäsittelyssä ja matemaattisten ongelmien ratkaisemisessa, jotka vaativat työskentelyä kahdessa ulottuvuudessa.
-
 ## Kuinka:
 C++:ssa on valmiiksi sisäänrakennettu kirjasto `<complex>`, joka helpottaa kompleksilukujen käsittelyä. Tässä nopea katsaus:
 

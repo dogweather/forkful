@@ -11,9 +11,6 @@ title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---
 
-## Vad & Varför?
-Att ta bort tecken utifrån ett mönster handlar om att rensa strängar från oönskade sekvenser. Programmerare gör detta för att sanera data, extrahera information, eller förbereda text för vidare processer.
-
 ## Hur man gör:
 ```Rust
 fn main() {

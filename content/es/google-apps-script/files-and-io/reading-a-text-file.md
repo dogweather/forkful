@@ -13,12 +13,7 @@ title: Leyendo un archivo de texto
 weight: 22
 ---
 
-## Qué y Por qué?
-
-Leer un archivo de texto en Google Apps Script (GAS) implica acceder y extraer datos de texto de archivos almacenados en Google Drive u otro almacenamiento basado en la nube accesible. Los programadores a menudo necesitan leer estos archivos para importar, manipular o analizar datos de texto directamente dentro de sus proyectos de GAS, lo que permite la automatización e integración con la suite de productos de Google.
-
 ## Cómo:
-
 Para comenzar a leer un archivo de texto con Google Apps Script, generalmente necesitas usar la API de Google Drive. Aquí hay un ejemplo básico que demuestra cómo leer un archivo de Google Drive:
 
 ```javascript
@@ -44,7 +39,6 @@ Hola, mundo! Este es un archivo de texto de prueba.
 En este ejemplo, `fileId` es el identificador único del archivo que deseas leer. El servicio `DriveApp` busca el archivo, y `getDataAsString()` lee su contenido como una cadena. Luego puedes manipular o usar este texto como sea necesario.
 
 ## Análisis Profundo
-
 Históricamente, leer archivos de texto en aplicaciones basadas en la web, como aquellas construidas con Google Apps Script, presentó desafíos debido a restricciones de seguridad del navegador y la naturaleza asincrónica de JavaScript. Google Apps Script simplifica esto con sus servicios abstraídos como `DriveApp`, proporcionando una API de alto nivel para interactuar con archivos de Google Drive.
 
 Sin embargo, una consideración importante es el rendimiento y los límites de tiempo de ejecución impuestos por Google Apps Script, especialmente al leer archivos grandes o realizar operaciones complejas con los datos. En algunos casos, podría ser más eficiente usar los servicios de Google Cloud directamente desde un backend más potente o preprocesar archivos en trozos más manejables.

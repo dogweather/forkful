@@ -11,9 +11,6 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## What & Why?
-En programmation, créer un fichier temporaire, c'est un peu comme prendre des notes sur un bout de papier effaçable. On fait ça pour stocker des données qui nous intéressent seulement de manière éphémère, souvent pendant l'exécution d'un programme, sans encombrer le système de fichiers permanent.
-
 ## How to:
 Ruby rend la création de fichiers temporaires super facile grâce à la librairie standard `Tempfile`. Voici comment on s'y prend :
 

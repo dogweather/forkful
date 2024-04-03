@@ -10,9 +10,6 @@ title: Uthenting av delstrenger
 weight: 6
 ---
 
-## What & Why?
-Å hente ut understrenger betyr å ta ut en spesifisert del av en streng. Programmerere gjør dette for å bearbeide data, validere input eller simpelthen skille ut relevant informasjon.
-
 ## How to:
 ```TypeScript
 let fullString: string = "Hallo, verden!";

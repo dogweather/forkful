@@ -13,9 +13,6 @@ title: "Einen String gro\xDFschreiben"
 weight: 2
 ---
 
-## Was & Warum?
-Das Großschreiben eines Strings beinhaltet die Umwandlung des ersten Buchstabens eines gegebenen Strings in einen Großbuchstaben, während sichergestellt wird, dass die restlichen Buchstaben klein bleiben. Programmierer tun dies, um Ausgaben zu formatieren, die Grammatik in Texten einzuhalten oder die Lesbarkeit generierter Daten zu verbessern.
-
 ## Wie:
 In Haskell können Sie einen String mit der Standardbibliothek großschreiben, ohne dass Sie irgendwelche Drittanbieter-Bibliotheken benötigen.
 

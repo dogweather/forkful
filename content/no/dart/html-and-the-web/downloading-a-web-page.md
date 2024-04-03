@@ -13,12 +13,7 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## Hva & Hvorfor?
-
-Å laste ned en nettside innebærer å hente innholdet på en nettside via dens URL for behandling eller lagring. Programmerere gjør dette for å trekke ut informasjon, overvåke endringer, eller arkivere innhold, noe som gjør det til et grunnelement i web-skraping, datautvinning og automatiserte testoppgaver.
-
 ## Hvordan:
-
 Dart tilbyr `http`-pakken, et populært tredjepartsbibliotek for å gjøre HTTP-forespørsler. Her er et grunnleggende eksempel på hvordan man bruker det til å laste ned en nettside:
 
 Først, legg til `http`-pakken i din `pubspec.yaml`:

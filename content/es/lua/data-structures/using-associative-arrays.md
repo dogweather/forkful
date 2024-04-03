@@ -15,12 +15,7 @@ title: Uso de matrices asociativas
 weight: 15
 ---
 
-## Qué y Por Qué?
-
-Los arreglos asociativos son como apretones de manos secretos para datos en Lua—en vez de solo números alineándose obedientemente por índice, tus llaves pueden ser lo que quieras, haciendo la recuperación de datos muy fácil. ¿Por qué los programadores los usan? Porque a veces, necesitas llamar a un dato por su nombre, no por un número de orden.
-
 ## Cómo hacerlo:
-
 En Lua, crear un arreglo asociativo (o una tabla, en términos de Lua) es sencillo. Dejas de lado los índices numéricos habituales por llaves de tu propia elección. Mira esto:
 
 ```Lua
@@ -59,7 +54,6 @@ favLang: Lua
 ¿La parte genial? Interactúas con los datos usando llaves significativas para ti, haciendo el código más legible y mantenible.
 
 ## Análisis Profundo
-
 Cuando Lua apareció en escena, introdujo las tablas como una estructura de datos para todo uso, revolucionando cómo los desarrolladores manejan datos. A diferencia de en algunos lenguajes donde los arreglos asociativos y los arreglos son entidades distintas, las tablas de Lua sirven para ambos, simplificando el panorama de las estructuras de datos.
 
 Lo que hace particularmente poderosas a las tablas de Lua es su flexibilidad. Sin embargo, esta flexibilidad viene con el costo potencial de implicaciones en el rendimiento, especialmente con grandes conjuntos de datos donde una estructura de datos más especializada podría ser preferible por eficiencia.

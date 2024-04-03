@@ -11,11 +11,7 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-Rounding numbers means adjusting them to the nearest whole number or to a specified degree of precision. Programmers round numbers to simplify, to match human expectations, or to fit data into specific formats—think financial calculations, graphical displays, or reducing storage size.
-
 ## How to:
-
 ```Ruby
 # Basic rounding
 puts 3.14159.round      # => 3

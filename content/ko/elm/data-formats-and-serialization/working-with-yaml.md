@@ -16,9 +16,6 @@ title: "YAML \uB2E4\uB8E8\uAE30"
 weight: 41
 ---
 
-## What & Why? (무엇과 왜?)
-YAML (YAML Ain't Markup Language)은 데이터를 표현하기 위한 인간 친화적인 형식입니다. 프로그래머들은 설정 파일, 데이터 교환 등에 쉽게 읽고 쓸 수 있도록 하기 위해 YAML을 사용합니다.
-
 ## How to: (어떻게 사용 하나요?)
 Elm에서는 YAML을 직접적으로 다루는 내장 라이브러리가 없어요. 그래서 JavaScript와 연동하여 사용할 수 있는데, `port`와 `decoder`를 활용해보세요. 아래는 그 예제입니다.
 

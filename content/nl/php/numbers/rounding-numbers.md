@@ -12,9 +12,6 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-Getallen afronden betekent het afhakken van decimale getallen tot een vastgelegde nauwkeurigheid, vaak tot hele getallen. Programmeurs ronden af om berekeningen te vereenvoudigen, prestaties te verbeteren of uitvoer gebruiksvriendelijker te maken.
-
 ## Hoe:
 PHP biedt een paar manieren om getallen af te ronden: `round()`, `ceil()` en `floor()`. Hier is hoe ze werken:
 

@@ -10,9 +10,6 @@ title: Analyse av HTML
 weight: 43
 ---
 
-## Hva & Hvorfor?
-Parsing av HTML handler om å tolke og trekke ut data fra HTML-koder. Programmerere gjør dette for å automatisere prosesser, høste data eller integrere nettsider i apps.
-
 ## Hvordan:
 ```PowerShell
 # Installer nødvendig modul

@@ -11,9 +11,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## What & Why? (Mitä & Miksi?)
-Stringin pituuden selvittäminen tarkoittaa merkkijonossa olevien merkkien määrän laskemista. Ohjelmoijat tekevät tämän ymmärtääkseen datan kokoa ja rajoja, validoidakseen syötteen tai leikatakseen merkkijonoa.
-
 ## How to: (Kuinka tehdä:)
 ```C++
 #include <iostream>

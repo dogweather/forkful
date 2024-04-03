@@ -14,12 +14,7 @@ title: Verifica se una directory esiste
 weight: 20
 ---
 
-## Cosa & Perché?
-
-Controllare se una directory esiste è un'operazione fondamentale quando si scrivono script che interagiscono con il filesystem, garantendo che il proprio programma operi su percorsi validi e prevenga errori legati a directory inesistenti. Questo compito è cruciale per creare nuovi file nelle directory, leggerli o eseguire operazioni specifiche della directory in modo sicuro.
-
 ## Come fare:
-
 In Lua, non esiste una funzione integrata per verificare direttamente se una directory esiste, quindi spesso ci si affida alla libreria Lua File System (lfs), una popolare libreria di terze parti per le operazioni sui file.
 
 Prima di tutto, assicurati di avere Lua File System installato. In caso contrario, generalmente è possibile installarlo utilizzando LuaRocks:

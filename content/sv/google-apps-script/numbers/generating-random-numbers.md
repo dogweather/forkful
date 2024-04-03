@@ -14,16 +14,10 @@ title: "Generera slumpm\xE4ssiga nummer"
 weight: 12
 ---
 
-## Vad och varför?
-
-Att generera slumpmässiga nummer är en grundläggande uppgift inom programmering som används för en mängd olika tillämpningar, såsom simuleringar, spel och säkerhetssystem. Programmerare använder denna teknik i Google Apps Script för att införa variabilitet, testa scenarier och lägga till oförutsägbarhet i sina applikationer inom Googles ekosystem, inklusive Sheets, Docs och Forms.
-
 ## Hur man gör:
-
 I Google Apps Script kan du generera slumpmässiga nummer med hjälp av funktionen `Math.random()`, liknande JavaScript. Denna funktion returnerar ett flyttal, pseudo-slumpmässigt nummer i intervallet 0 (inklusive) till 1 (exklusive). För att anpassa dessa nummer för olika användningsområden, som att generera heltal inom ett specifikt intervall, kan du behöva utföra ytterligare beräkningar.
 
 ### Generera ett grundläggande slumpmässigt nummer
-
 För att generera ett enkelt slumpmässigt nummer och logga det till konsolen:
 
 ```javascript
@@ -35,7 +29,6 @@ function generateRandomNumber() {
 *Exempel på utdata:* `0.1234567890123456`
 
 ### Generera ett heltal inom ett specifikt intervall
-
 För att generera ett slumpmässigt heltal mellan två värden (`min` och `max`), inklusive:
 
 ```javascript
@@ -55,7 +48,6 @@ getRandomInt(1, 10);
 Kom ihåg, `Math.ceil()`-funktionen används för att avrunda det minsta värdet uppåt, och `Math.floor()` används för att avrunda det högsta värdet nedåt, vilket säkerställer att det slumpmässiga numret hamnar inom det angivna intervallet.
 
 ## Fördjupning
-
 Mekanismen för att generera slumpmässiga nummer i Google Apps Script, och faktiskt i de flesta programmeringsspråk, utnyttjar en pseudo-slumpmässig nummergenerator (PRNG). Denna teknik är deterministisk och förlitar sig på ett initialt värde, känt som seed, för att producera en sekvens av nummer som verkar slumpmässiga. Även om detta är tillräckligt för många applikationer, är det viktigt att notera att pseudo-slumpmässiga nummer kanske inte är lämpliga där hög säkerhet eller sann slumpmässighet krävs, som i kryptografiska tillämpningar.
 
 Sann slumpmässighet kan uppnås genom hårdvarubaserade slumpmässiga nummergeneratorer eller tjänster som genererar slumpmässighet från naturliga fenomen. Dock, för de flesta dagliga skriptbehov i Google Apps Script, är `Math.random()` tillräckligt.

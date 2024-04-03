@@ -13,12 +13,7 @@ title: Werken met YAML
 weight: 41
 ---
 
-## Wat & Waarom?
-
-Werken met YAML houdt in dat je gegevens parseert en genereert in de voor mensen vriendelijke YAML Ain't Markup Language. Programmeurs gebruiken het voor configuratiebestanden, gegevensserialisatie en toepassingsinstellingen vanwege de leesbaarheid en eenvoud.
-
 ## Hoe:
-
 YAML-ondersteuning is niet ingebouwd in C++. Je hebt een bibliotheek zoals `yaml-cpp` nodig. Hier is hoe je een eenvoudig YAML-bestand parseert:
 
 ```C++
@@ -52,11 +47,9 @@ Naam: John Doe, Leeftijd: 30
 ```
 
 ## Diepe Duik
-
 YAML werd voor het eerst geïntroduceerd in 2001 als een voor mensen leesbare gegevensserialisatienorm. Terwijl JSON en XML veelvoorkomende alternatieven zijn, heeft de minimale syntaxis van YAML het populair gemaakt voor configuratiebestanden. Bibliotheken zoals `yaml-cpp` behandelen het parsen en uitstoten van YAML-gegevens, en vertegenwoordigen deze in structuren zoals mappen en sequenties, vergelijkbaar met JSON-objecten en -arrays.
 
 ## Zie Ook
-
 - YAML 1.2 Specificatie: https://yaml.org/spec/1.2/spec.html
 - yaml-cpp GitHub Repository: https://github.com/jbeder/yaml-cpp
 - Een Introductie tot YAML: https://www.cloudbees.com/blog/yaml-tutorial-everything-you-need-get-started

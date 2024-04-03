@@ -14,16 +14,10 @@ title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---
 
-## Co & Dlaczego?
-
-Parsowanie HTML w programowaniu polega na analizie struktury dokumentu HTML, co pozwala na ekstrakcję, manipulację i interakcję z jego zawartością programowo. Programiści robią to, aby automatyzować web scraping, ekstrakcję danych, a nawet modyfikować strony internetowe lub dokumenty HTML dynamicznie dla różnych aplikacji, co czyni to kluczową umiejętnością w rozwoju stron internetowych, analizie danych i scenariuszach automatycznych testów.
-
 ## Jak to zrobić:
-
 Chociaż .NET oferuje podstawowe wsparcie dla pracy z HTML, takie jak `HttpClient` do pobierania stron internetowych, brakuje mu wbudowanego, kompleksowego parsera HTML. Dlatego większość programistów C# zwraca się do popularnych bibliotek stron trzecich, takich jak HtmlAgilityPack lub AngleSharp, dla solidnych możliwości parsowania HTML. Obie biblioteki umożliwiają łatwe zapytania, manipulację i przeglądanie obiektowego modelu dokumentu (DOM) HTML.
 
 ### Korzystanie z HtmlAgilityPack
-
 1. **Zainstaluj HtmlAgilityPack**: Najpierw dodaj pakiet HtmlAgilityPack do swojego projektu za pomocą NuGet.
    ```
    Install-Package HtmlAgilityPack
@@ -65,7 +59,6 @@ Chociaż .NET oferuje podstawowe wsparcie dla pracy z HTML, takie jak `HttpClien
    ```
 
 ### Korzystanie z AngleSharp
-
 1. **Zainstaluj AngleSharp**: Dodaj bibliotekę AngleSharp do swojego projektu za pomocą NuGet.
    ```
    Install-Package AngleSharp

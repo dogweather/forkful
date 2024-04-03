@@ -11,12 +11,7 @@ title: Textdatei einlesen
 weight: 22
 ---
 
-## Was & Warum?
-
-Lesen einer Textdatei in Ruby ist, wie man die Inhalte einer Datei in den Speicher lädt, um sie zu verarbeiten. Programmierer tun dies, um Daten zu analysieren, Konfigurationen zu lesen oder Inhalte zu manipulieren.
-
 ## So geht's:
-
 Um eine Datei zu lesen, nutze `File.read`, `File.readlines` oder den `File.open`-Block. Hier sind ein paar Beispiele:
 
 ```Ruby
@@ -46,7 +41,6 @@ Hier endet die Datei.
 ```
 
 ## Deep Dive
-
 Das Lesen von Textdateien ist ein grundlegendes Konzept und bereits seit den frühen Tagen der Programmierung essenziell. Vor Ruby hatten Programmiersprachen wie C oder Perl eigene Wege, um mit Dateien zu arbeiten. Ruby hat die Arbeit mit Dateien stark vereinfacht.
 
 Alternativen zum Lesen von Dateien in Ruby sind I/O-Streams (`IO`-Klasse) und niedrigere Level-Operationen mit `syscall`. Für größere Dateien ist es effizienter, den Inhalt zeilenweise über einen `File.open`-Block zu verarbeiten, damit nicht der gesamte Inhalt im Speicher gehalten wird.
@@ -62,7 +56,6 @@ end
 ```
 
 ## See Also
-
 - Die offizielle Ruby-Dokumentation zu File-Klassenmethoden: [Ruby-Docs File](https://ruby-doc.org/core/File.html)
 - Ein Rundgang durch Ruby I/O: [Ruby I/O](https://www.tutorialspoint.com/ruby/ruby_input_output.htm)
 - Fehlerbehandlung in Ruby: [Ruby Exception Handling](https://ruby-doc.org/core-2.5.1/Exception.html)

@@ -13,16 +13,10 @@ title: "Usando express\xF5es regulares"
 weight: 11
 ---
 
-## O Quê e Por Quê?
-
-Expressões Regulares (regex) são padrões utilizados para combinar sequências de caracteres em strings. Os programadores as utilizam para buscar, editar ou manipular textos e dados, tornando-as indispensáveis para tarefas de correspondência de padrões e análise de dados.
-
 ## Como:
-
 Usar expressões regulares no Google Apps Script é simples, graças à sintaxe baseada em JavaScript. Aqui está como você pode incorporar regex em seus scripts para tarefas comuns como busca e validação de dados.
 
 ### Pesquisando Strings
-
 Suponha que você queira encontrar se uma string contém um padrão específico, como um endereço de email. Aqui está um exemplo simples:
 
 ```javascript
@@ -41,7 +35,6 @@ findEmailInText("Contate-nos pelo info@example.com.");
 ```
 
 ### Validação de Dados
-
 Expressões regulares brilham na validação de dados. Abaixo está uma função que valida uma string de entrada para verificar se ela adere a uma política de senha simples (pelo menos uma letra maiúscula, uma letra minúscula e um mínimo de 8 caracteres).
 
 ```javascript
@@ -56,7 +49,6 @@ Logger.log(validatePassword("weak"));       // Saída: false
 ```
 
 ## Aprofundando
-
 As expressões regulares no Google Apps Script são herdadas do JavaScript, padronizadas pela primeira vez na especificação da linguagem ECMAScript em junho de 1997. Embora poderosas, às vezes podem levar a códigos confusos e difíceis de manter, especialmente quando usadas excessivamente ou para tarefas de correspondência de padrões complexos que poderiam ser resolvidas mais eficientemente através de outros métodos de análise.
 
 Por exemplo, embora você possa usar regex para análise de HTML ou XML em uma situação de aperto, fazer isso geralmente não é recomendado devido às estruturas aninhadas e intrincadas desses documentos. Em vez disso, ferramentas especificamente projetadas para analisar tais estruturas, como os analisadores DOM para HTML, são mais confiáveis e legíveis.

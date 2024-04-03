@@ -10,9 +10,6 @@ title: Eliminando comillas de una cadena
 weight: 9
 ---
 
-## ¿Qué y Por qué?
-Eliminar las comillas de una cadena significa deshacerse de esos molestos caracteres de comillas dobles o simples que envuelven tu texto. Los programadores hacen esto para limpiar datos, asegurar uniformidad o preparar cadenas para ser procesadas donde las comillas son indeseadas o pueden causar errores.
-
 ## Cómo hacerlo:
 En Clojure, las cadenas son inmutables, así que cuando hablamos de "eliminar comillas", realmente estamos hablando de crear una nueva cadena sin comillas. Aquí está lo esencial usando `clojure.string/replace`:
 

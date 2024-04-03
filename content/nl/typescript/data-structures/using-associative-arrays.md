@@ -13,12 +13,7 @@ title: Gebruik van associatieve arrays
 weight: 15
 ---
 
-## Wat & Waarom?
-
-Associatieve arrays, of objecten in TypeScript, laten je strings (of sleutels) gebruiken om toegang te krijgen tot waardeparen. Programmeurs gebruiken ze voor dynamischere gegevenstoegangspatronen in vergelijking met traditionele arrays, en bieden een flexibele manier om data te structureren en toegang te krijgen zonder vast te zitten aan numerieke indexen.
-
 ## Hoe te:
-
 Associatieve arrays maken en gebruiken in TypeScript is eenvoudig. Hier is een basishandleiding:
 
 ```TypeScript
@@ -70,7 +65,6 @@ Uitvoer:
 ```
 
 ## Diepgaand
-
 In TypeScript zijn wat we associatieve arrays noemen in wezen objecten. Historisch gezien, in talen zoals PHP, zijn associatieve arrays een fundamenteel type, maar JavaScript (en bij uitbreiding, TypeScript) gebruikt objecten voor dit doel. Deze aanpak is zowel een kracht als een beperking. Objecten bieden een zeer dynamische structuur voor het koppelen van strings aan waarden, maar ze zijn niet bedoeld om te worden gebruikt als 'arrays' in de traditionele zin. Bijvoorbeeld, je kunt geen arraymethoden zoals `push` of `pop` direct op deze objecten gebruiken.
 
 Voor gevallen waar je geordende collecties van sleutel-waardeparen met array-achtige operaties nodig hebt, biedt TypeScript (en modern JavaScript) het `Map` object:

@@ -10,8 +10,6 @@ title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---
 
-## Tìm kiếm và thay thế văn bản với Javascript
-
 ## Là gì & Tại sao?
 Tìm kiếm và thay thế văn bản có nghĩa là tìm các chuỗi con cụ thể và thay thế chúng bằng cái mới. Tại sao phải làm thế? Nó xuất hiện mọi nơi: sửa lỗi đánh máy trong tài liệu, tinh chỉnh code, hoặc chỉnh sửa dữ liệu hàng loạt.
 

@@ -11,9 +11,6 @@ title: Calculando uma data no futuro ou passado
 weight: 26
 ---
 
-## O Que & Por Quê?
-Calcular uma data futura ou passada significa simplesmente adicionar ou subtrair dias, meses ou anos de uma data específica. Programadores fazem isso para funções como agendar eventos, gerar lembretes, ou calcular prazos.
-
 ## Como Fazer:
 ```Python
 from datetime import datetime, timedelta

@@ -11,9 +11,6 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## What & Why?
-Yhdistämme merkkijonoja, jotta saamme yksittäiset sanat tai palaset muodostamaan järkeviä lauseita tai viestejä. Tämä on hyödyllistä dataa välitettäessä ihmiselle ymmärrettävässä muodossa tai kun rakennetaan dynaamisia komentoja laitteille.
-
 ## How to:
 ```Arduino
 void setup() {

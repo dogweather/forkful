@@ -11,9 +11,6 @@ title: "\u30C6\u30AD\u30B9\u30C8\u306E\u691C\u7D22\u3068\u7F6E\u63DB"
 weight: 10
 ---
 
-## What & Why? (何となぜ？)
-Searching and replacing text in Python means finding strings and swapping them with something else. Programmers do this for editing code, processing data, or automating tasks.
-
 ## How to: (方法：)
 Let’s see it in action.
 

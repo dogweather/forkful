@@ -14,16 +14,10 @@ title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---
 
-## Vad & varför?
-
-Att göra första bokstaven i en sträng stor i Rust innebär att modifiera strängen så att dess första tecken blir en stor bokstav om det är en bokstav, medan resten av strängen lämnas oförändrad. Programmerare utför ofta denna operation för formateringsändamål, som att förbereda ord för titlar eller säkerställa konsekvens i användarinmatning.
-
 ## Hur man gör:
-
 För att göra första bokstaven i en sträng stor i Rust har du två huvudvägar: använda standardbibliotekets funktionaliteter eller använda tredjepartskrater för mer komplexa eller specifika behov. Så här kan du göra båda.
 
 ### Använda Rusts standardbibliotek
-
 Rusts standardbibliotek erbjuder inte en direkt metod för att göra strängar stora, men du kan åstadkomma detta genom att manipulera strängens tecken.
 
 ```rust
@@ -42,7 +36,6 @@ fn main() {
 ```
 
 ### Använda `heck`-lådan
-
 För ett mer rakt på sak tillvägagångssätt, speciellt när man arbetar inom en större textbearbetningskontext, kan du föredra att använda tredjepartsbibliotek som `heck`. `heck`-lådan erbjuder olika funktionaliteter för omvandling av fall, inklusive ett enkelt sätt att göra strängar stora.
 
 Först, lägg till `heck` i din `Cargo.toml`:

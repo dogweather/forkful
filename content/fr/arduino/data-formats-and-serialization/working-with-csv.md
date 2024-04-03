@@ -15,9 +15,6 @@ title: Travailler avec CSV
 weight: 37
 ---
 
-## Quoi et pourquoi ?
-Travailler avec des fichiers CSV (Valeurs Séparées par des Virgules) dans Arduino consiste à lire et à écrire dans des fichiers CSV généralement stockés sur une carte SD, ce qui permet la journalisation des données, la configuration des paramètres et plus encore. Les programmeurs gèrent souvent les CSV pour la collecte de données de capteurs, le stockage des paramètres de configuration ou l'interface avec d'autres systèmes, en raison de sa simplicité et de son adoption généralisée sur les plates-formes.
-
 ## Comment faire :
 Arduino n'a pas de bibliothèque intégrée spécifiquement pour la gestion des fichiers CSV, mais vous pouvez utiliser les bibliothèques `SD` et `SPI` pour accéder aux fichiers sur une carte SD, puis analyser ou générer des données CSV en utilisant des techniques simples de manipulation de chaînes de caractères. Lors de la manipulation de CSV plus complexes, la bibliothèque tierce `ArduinoCSV` peut être utilisée pour faciliter l'analyse et l'écriture.
 

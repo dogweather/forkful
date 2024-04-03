@@ -14,12 +14,7 @@ title: Utilisation des tableaux associatifs
 weight: 15
 ---
 
-## Quoi & Pourquoi ?
-
-Les tableaux associatifs, ou comme les appelle Elm, les Dictionnaires, associent des clés à des valeurs de manière à rendre la recherche, l'insertion et la suppression de valeurs extrêmement rapides. Ils sont votre meilleur choix lorsque vous avez besoin de suivre des éléments sans ordre strict, comme les préférences des utilisateurs ou les listes d'inventaire.
-
 ## Comment faire :
-
 Dans Elm, vous travaillez avec les Dictionnaires dans le module `Dict`, alors plongeons dans un exemple rapide :
 
 ```Elm
@@ -52,7 +47,6 @@ Exemple de sortie lors de l'affichage de `dictToList` :
 Cela démontre les opérations de base : création, mise à jour, accès et itération sur un Dictionnaire.
 
 ## Plongée en profondeur
-
 À l'intérieur, les Dictionnaires dans Elm utilisent une structure connue sous le nom d'arbre AVL - un type d'arbre binaire de recherche auto-équilibré. Ce choix établit un équilibre entre assurer que des opérations comme insert, get et remove aient de bonnes performances (complexité temporelle logarithmique) et maintenir la simplicité dans la manipulation des données.
 
 Malgré les points forts du `Dict` d'Elm, ce n'est pas une solution universelle. Pour des collections qui sont ordonnées ou doivent être parcourues séquentiellement, List ou Array pourraient être plus appropriés. De plus, lorsqu'on travaille avec un ensemble fixe de clés connues, utiliser des types personnalisés (la version des énumérations par Elm) pourrait offrir plus de sécurité de type et une intention plus claire dans votre code.

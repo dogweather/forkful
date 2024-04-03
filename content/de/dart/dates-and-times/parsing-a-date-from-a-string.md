@@ -12,9 +12,6 @@ title: Einen Datum aus einem String analysieren
 weight: 30
 ---
 
-## Was & Warum?
-Das Parsen eines Datums aus einer Zeichenkette in Dart beinhaltet die Umwandlung von textueller Darstellung von Daten und Zeiten in ein `DateTime`-Objekt. Diese Operation ist essentiell für Anwendungen, die sich mit Planung, Datenanalyse oder jeder Funktion, die Datummanipulation benötigt, befassen, und stellt sicher, dass datumsbezogene Daten korrekt verstanden und vom Programm verarbeitet werden.
-
 ## Wie:
 Die Kernbibliothek von Dart vereinfacht das Parsen von Daten durch die `DateTime`-Klasse. Für einfache Fälle, in denen Sie das Format des Datumsstrings kennen, können Sie die Methode `DateTime.parse()` verwenden. Bei komplexeren Szenarien oder wenn Sie es mit mehreren Formaten zu tun haben, wird allerdings das `intl`-Paket, speziell die `DateFormat`-Klasse, unverzichtbar.
 

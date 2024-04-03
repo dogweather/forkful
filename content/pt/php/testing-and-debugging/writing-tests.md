@@ -14,10 +14,9 @@ title: Escrevendo testes
 weight: 36
 ---
 
-## O Que & Por Que?
-Escrever testes em programação envolve criar e executar scripts que verificam se o código se comporta conforme esperado sob várias condições. Os programadores fazem isso para garantir a qualidade, prevenir regressões e facilitar a refatoração segura, o que é crucial para manter uma base de código saudável, escalável e livre de bugs.
-
 ## Como fazer:
+
+
 ### PHP Nativo – PHPUnit
 Uma ferramenta amplamente utilizada para testes em PHP é o PHPUnit. Instale-a via Composer:
 ```bash

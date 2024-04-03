@@ -13,9 +13,6 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-Reguliere expressies, of regex, zijn patronen die gebruikt worden om combinaties van karakters in strings te matchen. Programmeurs gebruiken ze voor het zoeken, bewerken of valideren van tekst, waardoor taken die te maken hebben met stringmanipulatie efficiënter en minder foutgevoelig worden.
-
 ## Hoe?
 In Swift gebruik je de `NSRegularExpression` klasse om met regex om te gaan. Je definieert een patroon, maakt een regex-object aan en gebruikt het vervolgens om tekst te zoeken of te vervangen. Hier is een basisvoorbeeld:
 

@@ -17,9 +17,6 @@ title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
 weight: 45
 ---
 
-## What & Why? (是什么&为什么？)
-发送带基本认证的HTTP请求允许你通过用户名和密码保护的方式，从服务器获取数据。程序员这么做来确保数据的传输是安全的，只有授权用户才能访问。
-
 ## How to: (怎么做：)
 Lua中发送带基本认证的HTTP请求需要用到额外的库，如`socket.http`和`mime`。这里使用`lua-requests`简化过程：
 

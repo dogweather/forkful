@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Cái gì & Tại sao?
-Làm việc với XML bao gồm việc thao tác và truy cập dữ liệu được cấu trúc trong Ngôn ngữ Đánh dấu Mở rộng (eXtensible Markup Language). Các lập trình viên làm việc với XML để bật khả năng tương tác với các hệ thống khác hoặc để đọc và viết các tệp cấu hình, nguồn dữ liệu, và các tài liệu cấu trúc khác thường gặp trong dịch vụ web.
-
 ## Làm thế nào:
 ```PowerShell
 # Tải một tệp XML vào một biến

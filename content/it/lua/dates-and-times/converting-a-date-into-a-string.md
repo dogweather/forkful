@@ -11,9 +11,6 @@ title: Conversione di una data in una stringa
 weight: 28
 ---
 
-## What & Why?
-Convertire una data in una stringa significa trasformare un formato di data standard in testo. Si fa per facilitare la visualizzazione, il salvataggio o il trasferimento delle informazioni.
-
 ## How to:
 In Lua, convertire una data in stringa è semplice. Ecco un esempio con `os.date`.
 

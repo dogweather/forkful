@@ -14,11 +14,7 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---
 
-## Cái gì & Tại sao?
-Gửi một yêu cầu HTTP có nghĩa là yêu cầu dữ liệu từ một tài nguyên trên web. Các lập trình viên làm điều này để tương tác với các API, lấy dữ liệu từ web, hoặc giao tiếp với máy chủ.
-
 ## Cách thực hiện:
-
 Ruby làm cho việc gửi yêu cầu HTTP trở nên khá dễ dàng. Đây là cách nhanh nhất với thư viện chuẩn Net::HTTP.
 
 ```Ruby
@@ -46,7 +42,6 @@ puts res.body
 Điều này gửi một yêu cầu POST với dữ liệu và hiển thị phản hồi.
 
 ## Sâu hơn:
-
 Trước đây, gửi yêu cầu HTTP là khó khăn hơn và bạn có thể cần sử dụng một gem như `HTTParty`. Nhưng thư viện `Net::HTTP` tích hợp sẵn của Ruby đã phát triển rất nhiều. Hiện tại nó hỗ trợ hầu hết những gì bạn cần.
 
 Tuy nhiên, `Net::HTTP` có thể rườm rà. Nếu dự án của bạn cần nhiều tính năng HTTP hoặc cú pháp đẹp hơn, `HTTParty` hoặc `Faraday` là những lựa chọn tuyệt vời. Những gems này cung cấp một API biểu cảm hơn và có thể xử lý các tình huống phức tạp hơn như middleware hoặc các adapter khác nhau.
@@ -65,7 +60,6 @@ puts response.body
 Điều này làm cùng một việc với `Net::HTTP.get` nhưng với ít cấu hình hơn.
 
 ## Xem thêm:
-
 Để có thông tin chi tiết hơn, tài liệu của Ruby rất hữu ích:
 - Net::HTTP: https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/Net/HTTP.html
 - HTTParty: https://github.com/jnunemaker/httparty

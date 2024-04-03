@@ -12,12 +12,7 @@ title: Quotes verwijderen uit een string
 weight: 9
 ---
 
-## Wat & Waarom?
-
-Het verwijderen van aanhalingstekens uit een string gaat over het strippen van die lastige enkele (' ') of dubbele (" ") aanhalingstekens van je tekstgegevens. Programmeurs doen dit vaak om invoer te ontsmetten of gegevens voor te bereiden voor verdere verwerking zonder de rommel van aanhalingstekens.
-
 ## Hoe te:
-
 Fish heeft ingebouwde magie voor dit soort taak. Gebruik de `string` functie zonder een druppel zweet. Bekijk deze spreuken:
 
 ```fish
@@ -33,7 +28,6 @@ echo $unquoted # Uitvoer: Hallo, Universum!
 ```
 
 ## Diepere Duik
-
 Terug in het stenen tijdperk van de opdrachtregel, zou je worstelen met `sed` of `awk` om aanhalingstekens te verwijderen; een ware warboel van backslashes en cryptische vlaggen. Fish's `string` functie komt uit een nieuwere tijd, waardoor code schoner en intuïtiever wordt.
 
 Alternatieven in andere shells kunnen nog steeds afhankelijk zijn van deze oude tools of kunnen hun eigen ingebouwde methoden gebruiken, zoals bash's parameteruitbreiding of zsh's modificatoren.
@@ -41,7 +35,6 @@ Alternatieven in andere shells kunnen nog steeds afhankelijk zijn van deze oude 
 De `string` functie gaat verder dan het trimmen van aanhalingstekens. Het is een Zwitsers zakmes voor stringbewerkingen in Fish. Met `string` kun je strings snijden, splitsen, samenvoegen, of zelfs regex-matching van strings direct in je terminal doen.
 
 ## Zie Ook
-
 Duik dieper in `string` met de hulp van de officiële documentatie:
 - [Fish Shell String Documentatie](https://fishshell.com/docs/current/commands.html#string)
 

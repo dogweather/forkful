@@ -11,9 +11,6 @@ title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---
 
-## Hva & Hvorfor?
-Å fjerne anførselstegn fra en streng betyr å skrelle bort disse plagsomme doble eller enkle tegnene som omslutter teksten vår (' eller "). Programmerere gjør ofte dette for å rense inndata, lagre tekst i en database, eller forberede strenger for videre behandling uten rotet av anførselstegn.
-
 ## Hvordan:
 Her er en grei måte å sparke disse anførselstegnene til fortauskanten i C++:
 

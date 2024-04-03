@@ -10,11 +10,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---
 
-## What & Why?
-"Mikä & Miksi?"
-
-Päivämäärän muuntaminen merkkijonoksi palauttaa aika-arvon luettavassa muodossa. Ohjelmoijat tekevät tämän, koska se helpottaa päivämäärän esittämistä käyttöliittymissä ja tekee logien ja raporttien tarkastelusta selkeämpää.
-
 ## How to:
 "Näin tehdään:"
 
@@ -24,6 +19,7 @@ $nykyinenAika = new DateTime();
 echo $nykyinenAika->format('Y-m-d H:i:s'); // Tulostaa esim. "2023-04-01 12:45:31"
 ?>
 ```
+
 ## Deep Dive
 "Sukellus syvemmälle"
 

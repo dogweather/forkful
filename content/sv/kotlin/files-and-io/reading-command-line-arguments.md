@@ -11,9 +11,6 @@ title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---
 
-## What & Why?
-Kommandoradsargument låter program veta vad användaren vill direkt vid start. De används för att skräddarsy programkörningen utan en massa frågor efter att programmet startats.
-
 ## How to:
 För att läsa in argument från kommandoraden i Kotlin, använd `args` som finns tillgängliga i funktionens `main`:
 

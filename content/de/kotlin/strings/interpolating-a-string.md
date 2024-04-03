@@ -11,9 +11,6 @@ title: Zeichenketten interpolieren
 weight: 8
 ---
 
-## Was & Warum?
-String-Interpolation ermöglicht es, Variablen und Ausdrücke direkt in Strings einzufügen, was den Code lesbarer und die String-Konstruktion einfacher macht. Programmierer nutzen diese Technik zur dynamischen Erstellung von Textinhalten.
-
 ## So geht's:
 ```kotlin
 fun main() {

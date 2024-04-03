@@ -10,9 +10,6 @@ title: Rimuovere le virgolette da una stringa
 weight: 9
 ---
 
-## Cos'è e perché?
-Rimuovere le virgolette da una stringa significa liberarsi di quei fastidiosi caratteri di virgolette doppie o singole che avvolgono il tuo testo. I programmatori fanno ciò per pulire i dati, garantire uniformità o preparare le stringhe per l'elaborazione in cui le virgolette sono indesiderate o possono causare errori.
-
 ## Come fare:
 In Clojure, le stringhe sono immutabili, quindi quando parliamo di "rimuovere le virgolette", stiamo realmente parlando di creare una nuova stringa senza virgolette. Ecco l'essenziale usando `clojure.string/replace`:
 

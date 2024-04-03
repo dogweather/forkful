@@ -16,9 +16,6 @@ title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
 weight: 34
 ---
 
-## 무엇이며 왜인가?
-REPL이란 Read-Eval-Print Loop의 약자로, C# 코드를 입력하여 상호작용하며 실행할 수 있게 합니다. 프로그래머들은 복잡한 프로젝트 구성 없이 C#를 빠르게 실험, 디버깅하거나 학습하는 데에 REPL을 사용합니다.
-
 ## 사용 방법:
 C# 환경에서 C# Interactive 창을 사용하거나 터미널에서 `dotnet-script`를 실행하여 REPL을 시작하세요. 사용 예시는 다음과 같습니다:
 

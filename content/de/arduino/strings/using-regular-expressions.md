@@ -14,9 +14,6 @@ title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---
 
-## Was & Warum?
-Reguläre Ausdrücke (regex) sind Zeichenfolgen, die Suchmuster definieren, die hauptsächlich für die Zeichenkettenabgleichung und -manipulation verwendet werden. Programmierer nutzen regex in Arduino-Projekten, um serielle Eingaben zu parsen, Benutzereingaben zu validieren oder Daten aus Zeichenketten zu extrahieren, was die Effizienz und Flexibilität der Datenverarbeitung steigert.
-
 ## Wie:
 Arduino hat keine eingebaute Unterstützung für regex direkt in seiner Standardbibliothek. Sie können jedoch regex-ähnliche Funktionalitäten für einfache Muster mit grundlegenden Zeichenkettenfunktionen erreichen oder für komplexere Bedürfnisse eine Drittanbieterbibliothek wie `regex` integrieren.
 

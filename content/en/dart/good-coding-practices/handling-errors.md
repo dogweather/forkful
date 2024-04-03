@@ -10,9 +10,6 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-Handling errors in Dart is about anticipating and managing exceptions that arise during program execution to enhance reliability and usability. Programmers implement error handling to prevent crashes and provide meaningful feedback to users, ensuring a smoother, safer application experience.
-
 ## How to:
 Dart supports two types of errors: *compile-time* errors and *run-time* errors. Compile-time errors are detected by the Dart analyzer before the code runs, whereas run-time errors, or exceptions, occur during execution. Here's how you handle exceptions in Dart:
 

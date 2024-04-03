@@ -12,12 +12,7 @@ title: Een HTTP-verzoek verzenden
 weight: 44
 ---
 
-## Wat & Waarom?
-
-Het verzenden van een HTTP-verzoek houdt in dat je een verzoek creëert en verstuurt naar een webserver om gegevens op te halen of in te dienen. Programmeurs doen dit in C om te interageren met web-API's, webpagina's te downloaden of direct vanuit hun applicaties te communiceren met andere genetwerkte diensten.
-
 ## Hoe te:
-
 Om een HTTP-verzoek in C te verzenden, vertrouw je doorgaans op bibliotheken zoals libcurl, aangezien C geen ingebouwde ondersteuning heeft voor webprotocollen. Hier is een eenvoudig voorbeeld waarbij libcurl wordt gebruikt om een GET-verzoek uit te voeren:
 
 Zorg eerst dat je libcurl op je systeem hebt geïnstalleerd. Voeg vervolgens de nodige headers toe en link tegen de libcurl-bibliotheek in je bronbestand:
@@ -54,11 +49,9 @@ int main(void) {
 Compileer dit met iets zoals `gcc -o http_request http_request.c -lcurl`, het uitvoeren hiervan zou een eenvoudig GET-verzoek naar "http://example.com" moeten uitvoeren.
 
 ### Voorbeelduitvoer
-
 Aangezien het voorbeeld de respons van de server niet verwerkt, zal het uitvoeren ervan geen zichtbare uitvoer produceren, behalve mogelijke foutmeldingen. Het integreren van de callback-functie voor het verwerken van ontvangen gegevens is essentieel voor zinvolle interactie.
 
 ## Diepere duik
-
 Het concept van het verzenden van HTTP-verzoeken vanuit een C-programma leunt op de krachtige netwerkmogelijkheden van de taal, in combinatie met externe bibliotheken, aangezien C zelf een low-level taal is zonder ingebouwde ondersteuning voor hoogwaardige internetprotocollen. Historisch gezien zouden programmeurs handmatig socketprogrammering in C gebruiken, een complex en tijdrovend proces, om met webservers te interageren voordat speciale bibliotheken zoals libcurl beschikbaar kwamen.
 
 Libcurl, gebouwd bovenop C, stroomlijnt het proces door de lastige details van socketprogrammering en de specificaties van het HTTP-protocol weg te abstraheren. Het ondersteunt een veelvoud aan protocollen buiten HTTP/HTTPS, waaronder FTP, SMTP en meer, waardoor het een veelzijdige tool is voor netwerkprogrammering in C.

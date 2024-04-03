@@ -14,12 +14,7 @@ title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---
 
-## Mikä ja miksi?
-
-Elixirissä säännöllisiä lausekkeita (regex) käytetään merkkijonojen hakemiseen, täsmäämiseen ja manipulointiin tiettyjen mallien perusteella. Ohjelmoijat hyödyntävät regexiä tehtäviin kuten muotojen validointiin (sähköposti, URL-osoitteet), lokien jäsentämiseen tai datan poimintaan, kiitos sen tehokkuuden ja monipuolisuuden merkkijonojen käsittelyssä.
-
 ## Kuinka:
-
 Elixir käyttää `Regex`-moduulia, hyödyntäen Erlangin regex-kirjastoa, regex-operaatioihin. Tässä peruskäyttötapoja:
 
 ```elixir

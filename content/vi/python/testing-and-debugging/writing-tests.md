@@ -16,12 +16,7 @@ title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---
 
-## Cái gì & Tại sao?
-
-Việc viết kiểm thử tức là tạo ra mã để kiểm tra xem mã khác có hoạt động đúng không. Chúng ta làm điều này để bắt lỗi, đảm bảo độ tin cậy, và làm cho việc cập nhật ít đáng sợ hơn.
-
 ## Cách thực hiện:
-
 Hãy sử dụng bộ khung `unittest` có sẵn của Python.
 
 ```Python
@@ -54,11 +49,9 @@ OK
 Hai dấu chấm có nghĩa là hai bài kiểm thử đã vượt qua. Mọi thứ đều tốt.
 
 ## Sâu hơn nữa
-
 Việc kiểm thử Python bắt đầu trở nên phổ biến với `unittest` (lấy cảm hứng từ JUnit của Java). Bây giờ, có `pytest` và `nose`, những công cụ hiện đại hơn với cú pháp đơn giản và tính năng tốt hơn. Khi viết kiểm thử, hãy nhớ: cô lập các trường hợp kiểm thử, kiểm tra các trường hợp cực biên, và giả lập sự phụ thuộc bên ngoài để tập trung vào logic mã của bạn, không phải thế giới bên ngoài.
 
 ## Xem thêm
-
 Khám phá sâu hơn vào việc kiểm thử với những cái này:
 
 - Tài liệu `unittest` của Python: https://docs.python.org/3/library/unittest.html

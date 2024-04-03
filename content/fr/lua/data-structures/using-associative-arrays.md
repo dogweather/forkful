@@ -15,12 +15,7 @@ title: Utilisation des tableaux associatifs
 weight: 15
 ---
 
-## Quoi & Pourquoi ?
-
-Les tableaux associatifs sont comme des poignées de main secrètes pour les données en Lua—au lieu de simplement numéroter les indices de manière ordonnée, vos clés peuvent être celles que vous désirez, rendant la récupération des données un jeu d'enfant. Pourquoi les programmeurs les utilisent-ils ? Parce que parfois, vous avez besoin d'appeler une donnée par son nom, et non par un numéro d'ordre.
-
 ## Comment faire :
-
 En Lua, créer un tableau associatif (ou une table, en jargon Lua) est simple. Vous abandonnez les indices numériques habituels pour des clés de votre propre choix. Regardez cela :
 
 ```Lua
@@ -59,7 +54,6 @@ favLang: Lua
 Le point cool ? Vous interagissez avec les données en utilisant des clés qui ont du sens pour vous, rendant le code plus lisible et plus facile à maintenir.
 
 ## Plongée profonde
-
 Lorsque Lua a fait son entrée sur la scène, il a introduit les tables comme une structure de données à tout faire, révolutionnant comment les développeurs gèrent les données. Contrairement à certaines langues où les tableaux associatifs et les tableaux sont des entités distinctes, les tables de Lua servent à la fois de l'un et de l'autre, simplifiant le paysage des structures de données.
 
 Ce qui rend les tables Lua particulièrement puissantes, c'est leur flexibilité. Cependant, cette flexibilité a un coût en termes d'implications potentielles sur les performances, surtout avec de grands ensembles de données où une structure de données plus spécialisée pourrait être préférable pour l'efficacité.

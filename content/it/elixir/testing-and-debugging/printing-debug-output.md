@@ -10,9 +10,6 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## What & Why? (Cosa e Perché?)
-Stampare l'output di debug significa mostrare temporaneamente i valori in fase di esecuzione per capire che diavolo sta facendo il codice. Si fa per identificare e risolvere i bug più velocemente.
-
 ## How to: (Come fare:)
 ```elixir
 # Stampa semplice.

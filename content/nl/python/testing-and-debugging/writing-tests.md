@@ -12,12 +12,7 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-
-Testen schrijven betekent code maken om te controleren of andere code goed werkt. We doen dit om bugs te vangen, betrouwbaarheid te garanderen en updates minder eng te maken.
-
 ## Hoe te:
-
 Laten we Pythons ingebouwde `unittest` framework gebruiken.
 
 ```Python
@@ -50,11 +45,9 @@ OK
 Twee puntjes betekenen dat twee tests geslaagd zijn. Alles is in orde.
 
 ## Diepere Duik
-
 Python testing begon groot te worden met `unittest` (geïnspireerd door Java's JUnit). Nu zijn er `pytest` en `nose`, modernere tools met een eenvoudigere syntaxis en betere functies. Wanneer je tests schrijft, onthoud: isoleer testgevallen, test grensgevallen en simuleer externe afhankelijkheden om je te focussen op de logica van je code, niet op de buitenwereld.
 
 ## Zie Ook
-
 Verdiep je verder in testen met deze bronnen:
 
 - Python's `unittest` documentatie: https://docs.python.org/3/library/unittest.html

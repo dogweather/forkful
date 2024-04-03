@@ -10,11 +10,7 @@ title: Capitalizing a string
 weight: 2
 ---
 
-## What & Why?
-Capitalizing a string in Bash involves transforming the first character of the string to uppercase while leaving the rest of the string unchanged. This technique is commonly used for formatting output or complying with coding conventions that require certain strings to start with a capital letter for readability or stylistic preferences.
-
 ## How to:
-
 Bash does not have a built-in function specifically for capitalizing strings, but you can accomplish this task using parameter expansion or external tools like `awk`. Here are a few ways to capitalize a string in Bash:
 
 **Using Parameter Expansion:**

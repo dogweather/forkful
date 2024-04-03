@@ -13,12 +13,7 @@ title: "Manipulowanie plikami za pomoc\u0105 jednolinijkowc\xF3w CLI"
 weight: 31
 ---
 
-## Co i dlaczego?
-
-Manipulowanie plikami za pomocą jednoliniowych poleceń CLI (Command Line Interface) polega na używaniu skryptów Bash lub poleceń do wykonywania działań na plikach, takich jak tworzenie, czytanie, aktualizowanie lub usuwanie ich, wszystko z poziomu terminala. Programiści robią to dla efektywności, automatyzacji i ponieważ jest to wyjątkowo potężne narzędzie do obsługi operacji na plikach na serwerach lub systemach Linux, gdzie interfejsy graficzne mogą nie być dostępne.
-
 ## Jak to zrobić:
-
 Oto kilka potężnych jednoliniowców i co mogą zrobić:
 
 1. **Tworzenie pliku i wpisywanie do niego tekstu:**
@@ -64,7 +59,6 @@ Ta pętla przechodzi przez każdy plik `.txt` w bieżącym katalogu i zmienia je
 Te jednoliniowce CLI wykorzystują moc Bash do szybkiej i skutecznej manipulacji plikami, co jest umiejętnością niezbędną dla każdego programisty.
 
 ## Pogłębiona analiza
-
 Powłoka Bash, będąca podstawą na większości systemów podobnych do UNIX, wyewoluowała z Bourne Shell (sh), wprowadzonego w Unix Version 7 w 1979 roku. Bash rozszerza możliwości swojego poprzednika o ulepszone funkcje skryptowe, które sprawiły, że stał się popularny wśród administratorów systemów i programistów.
 
 Chociaż Bash jest niezwykle potężny do manipulacji plikami, ma swoje wady. Będąc opartym na tekście, skomplikowane operacje (takie jak te obejmujące dane binarne) mogą być uciążliwe lub nieefektywne w porównaniu z użyciem języka programowania zaprojektowanego z myślą o tych możliwościach, takiego jak Python.

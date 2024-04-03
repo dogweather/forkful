@@ -14,35 +14,26 @@ title: "Lukujen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä ja miksi?
-
-Numeroiden pyöristäminen on prosessi, jossa numero säädetään lähimpään kokonaislukuun tai määriteltyyn määrään desimaalipaikkoja. Ohjelmoijat pyöristävät usein numeroita yksinkertaistaakseen laskelmia, parantaakseen luettavuutta tai valmistellakseen tietoja näyttöä varten, varmistaen johdonmukaisuuden ja selkeyden numeerisissa tulosteissa.
-
 ## Kuinka:
-
 Dart tarjoaa alkuperäisiä metodeja sen perus `num` tyypissä pyöristysoperaatioille. Tässä tutkimme metodeja kuten `round()`, `floor()`, `ceil()`, ja kuinka pyöristää tietty määrä desimaalipaikkoja.
 
 ### Pyöristäminen lähimpään kokonaislukuun:
-
 ```dart
 var numero = 3.56;
 print(numero.round()); // Tulostaa: 4
 ```
 
 ### Pyöristäminen alas:
-
 ```dart
 print(numero.floor()); // Tulostaa: 3
 ```
 
 ### Pyöristäminen ylös:
-
 ```dart
 print(numero.ceil()); // Tulostaa: 4
 ```
 
 ### Pyöristäminen tiettyyn määrään desimaalipaikkoja:
-
 Pyöristääksemme tiettyyn määrään desimaalipaikkoja voimme käyttää `toStringAsFixed()` metodia, joka palauttaa merkkijonon, tai käyttää yhdistelmää `pow` `dart:math` kirjastosta saadaksemme numeerisen tuloksen.
 
 ```dart

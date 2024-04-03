@@ -14,12 +14,7 @@ title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---
 
-## Co i dlaczego?
-
-Tablice asocjacyjne, znane także jako mapy haszujące, w Clojure pozwalają przechowywać i pobierać dane za pomocą par klucz-wartość. Są one chętnie wykorzystywane do zarządzania danymi strukturalnymi, co ułatwia szybki dostęp do określonych elementów bez potrzeby iteracji przez listę.
-
 ## Jak to zrobić:
-
 W Clojure tworzenie i manipulowanie tablicami asocjacyjnymi (mapami haszującymi) jest proste. Zagłębmy się w przykłady.
 
 Aby utworzyć mapę haszującą:
@@ -74,7 +69,6 @@ I dla warunkowego dostępu, `find` zwraca parę klucz-wartość, jeśli klucz is
 ```
 
 ## Głębsze zanurzenie
-
 Tablice asocjacyjne w Clojure, nazywane również mapami haszującymi, są niesamowicie wszechstronne i efektywne w zarządzaniu danymi opartymi na parach klucz-wartość. Są częścią bogatej biblioteki kolekcji Clojure, głęboko zakorzenionej w filozofii immutability (niemutowalności) i programowania funkcyjnego. W przeciwieństwie do tablic czy list, które wymagają złożoności czasowej O(n) do dostępu do elementów, mapy haszujące zapewniają prawie stałą złożoność czasową dostępu, co sprawia, że są wysoce efektywne dla operacji wyszukiwania.
 
 Można argumentować, że wektory w Clojure mogłyby służyć podobnemu celowi poprzez dostęp zindeksowany, ale mapy haszujące świecą, gdy chodzi o radzenie sobie z danymi niesekwencyjnymi i oznakowanymi, gdzie klucz dostarcza znaczący deskryptor zamiast arbitralnego indeksu.

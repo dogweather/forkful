@@ -18,12 +18,7 @@ title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0907\u0902\u091F\u093
 weight: 8
 ---
 
-## What & Why? (क्या और क्यों?)
-
-String interpolation एक तरीका है जिसमें हम PHP variables को सीधे strings के अंदर डालते हैं. इससे कोड पढ़ने और लिखने में आसानी होती है क्योंकि यह variable values को string के साथ जोड़ने का एक short और clear तरीका है.
-
 ## How to: (कैसे करें:)
-
 ```PHP
 $name = 'अंकित';
 $greeting = "नमस्ते, $name! कैसे हैं आप?";
@@ -40,7 +35,6 @@ echo "आपका ऑर्डर नंबर { $order->number } प्रो�
 ```
 
 ## Deep Dive (गहराई से जानकारी):
-
 String interpolation पहली बार PHP में version 3 में आया था. हम double quotes ("") या heredoc syntax का इस्तेमाल कर string में variable डाल सकते हैं. Single quotes ('') में यह काम नहीं करता.
 
 Alternatives में concatenation (.) operator है, जो variables को strings के साथ जोड़ने के लिए use होता है, लेकिन यह थोड़ा clumsy हो सकता है:
@@ -54,7 +48,6 @@ Implementation details:
 - Performance के perspective से, string interpolation generally concatenation से तेज़ होता है.
 
 ## See Also (और जानकारी के लिए:)
-
 - PHP documentation on string interpolation: [php.net/manual/en/language.types.string.php#language.types.string.parsing](https://www.php.net/manual/en/language.types.string.php#language.types.string.parsing)
 - PHP string functions: [php.net/manual/en/ref.strings.php](https://www.php.net/manual/en/ref.strings.php)
 - PHP string operators: [php.net/manual/en/language.operators.string.php](https://www.php.net/manual/en/language.operators.string.php)

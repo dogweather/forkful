@@ -13,12 +13,7 @@ title: Logowanie
 weight: 17
 ---
 
-## Co i dlaczego?
-
-Logowanie w rozwoju oprogramowania to proces rejestrowania informacji o wykonaniu programu, zaprojektowany w celu śledzenia jego zachowania i diagnozowania problemów. Programiści implementują logowanie, aby monitorować wydajność oprogramowania, debugować błędy i zapewnić bezpieczeństwo systemu oraz zgodność, co czyni je niezbędnym narzędziem do konserwacji i analizy aplikacji.
-
 ## Jak to zrobić:
-
 W Go, logowanie może być zaimplementowane za pomocą standardowego pakietu biblioteki `log`. Ten pakiet oferuje proste możliwości logowania, takie jak zapisywanie do standardowego wyjścia lub do plików. Zacznijmy od podstawowego przykładu logowania do standardowego wyjścia:
 
 ```go
@@ -84,7 +79,6 @@ CUSTOM LOG: 2009/11/10 23:00:00 main.go:11: To jest niestandardowa wiadomość l
 Ten przykład dodaje do każdego komunikatu logu przedrostek "CUSTOM LOG: " i zawiera datę, czas oraz lokalizację pliku źródłowego.
 
 ## Wnikliwe spojrzenie
-
 Pakiet `log` standardowej biblioteki Go jest prosty i wystarczający dla wielu aplikacji, ale brakuje mu niektórych bardziej zaawansowanych funkcji, które można znaleźć w bibliotekach logowania stron trzecich, takich jak logowanie strukturalne, rotacja logów i logowanie oparte na poziomach. Pakiety takie jak `zap` i `logrus` oferują te zaawansowane funkcje i są cenione w społeczności Go za ich wydajność i elastyczność.
 
 Na przykład, logowanie strukturalne pozwala na rejestrowanie danych w strukturyzowanym formacie (takim jak JSON), co jest szczególnie przydatne dla nowoczesnych aplikacji opartych na chmurze, gdzie logi mogą być analizowane przez różne narzędzia lub usługi. `Zap`, w szczególności, jest znany ze swojej wysokiej wydajności i niskiego narzutu alokacji, co czyni go odpowiednim dla aplikacji, gdzie prędkość i efektywność są kluczowe.

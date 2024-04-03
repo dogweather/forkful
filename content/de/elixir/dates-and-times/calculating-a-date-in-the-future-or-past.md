@@ -11,12 +11,7 @@ title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---
 
-## Was & Warum?
-
-Datumskalkulation in der Zukunft oder Vergangenheit bedeutet, ein bestimmtes Date aus einem Startdatum zu berechnen, indem Tage, Wochen oder Jahre hinzugefügt oder abgezogen werden. Programmierer nutzen das häufig für Features wie Terminplaner, Ablauf-Erinnerungen oder Archivierungssysteme.
-
 ## How to:
-
 Elixir macht Datumskalkulation einfach mit dem `Date` Modul. Hier ist, wie du es machst:
 
 ```elixir
@@ -52,10 +47,8 @@ IO.puts(vergangenheit_zeit)
 ```
 
 ## Deep Dive:
-
 Die Datumsberechnung gab es schon in frühen Programmiersprachen. In Elixir macht es das eingebaute `Date` Modul leicht. Für komplexere Berechnungen gibt es Third-Party Libraries wie `Timex`, die zusätzliche Funktionalitäten bieten. Wichtig ist die Zeitzone – `Date` rechnet ohne Zeitzonen, während `DateTime` und `NaiveDateTime` UTC verwenden. Zeitberechnung ist wegen Schaltsekunden und Zeitumstellungen komplex. Deshalb sollten Operationen auf Daten und Zeiten vermieden werden, die ohne den Kontext der Zeitzone stattfinden.
 
 ## See Also:
-
 - [Elixir's Date module](https://hexdocs.pm/elixir/Date.html)
 - [Elixir's NaiveDateTime module](https://hexdocs.pm/elixir/NaiveDateTime.html)

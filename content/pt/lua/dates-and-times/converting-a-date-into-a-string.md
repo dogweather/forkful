@@ -11,9 +11,6 @@ title: Convertendo uma data em uma string
 weight: 28
 ---
 
-## O Que & Porquê?
-Converter uma data em uma string significa transformar um objeto de data, com sua estrutura própria, em texto simples. Fazemos isso para facilitar a leitura humana, salvar em arquivos de texto ou para integração com outras partes do código que exigem texto.
-
 ## Como Fazer:
 ```
 Lua

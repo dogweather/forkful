@@ -18,9 +18,6 @@ title: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uD558\uAE30"
 weight: 42
 ---
 
-## What & Why? (무엇이며 왜?)
-웹 페이지를 다운로드한다는 것은 인터넷에서 데이터를 가져와 로컬 환경에 저장하는 것입니다. 프로그래머들은 자동화, 데이터 분석, 백업 혹은 오프라인 접근을 위해 이 작업을 실행합니다.
-
 ## How to: (방법)
 ```Javascript
 const https = require('https');

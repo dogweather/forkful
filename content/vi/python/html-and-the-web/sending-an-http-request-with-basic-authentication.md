@@ -19,12 +19,7 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1
 weight: 45
 ---
 
-## Gì & Tại Sao?
-
-Việc gửi một yêu cầu HTTP với xác thực cơ bản bao gồm việc đưa tên người dùng và mật khẩu vào một yêu cầu gửi đến máy chủ để chứng minh rằng bạn được phép truy cập. Lập trình viên làm điều này để tương tác với các API hoặc dịch vụ web được khóa sau cổng thông tin đăng nhập của người dùng.
-
 ## Cách thực hiện:
-
 Dưới đây là cách bạn yêu cầu Python nói chuyện với máy chủ sử dụng Basic Auth.
 
 ```Python
@@ -59,7 +54,6 @@ Nhưng nếu bạn nhập sai thông tin đăng nhập:
 Đó là dấu hiệu không được vào đó.
 
 ## Sâu hơn
-
 Lịch sử, HTTP Basic Auth là cách cổ điển nhất của bảo mật web, một cách đơn giản để thực hiện bắt tay bí mật với một trang web. Nó không an toàn lắm nếu tự nó vì nó gửi thông tin đăng nhập dưới dạng văn bản rõ, chỉ được mã hóa base64 – không được mã hóa. Hãy luôn sử dụng HTTPS để ngăn thông tin đăng nhập dễ bị bắt giữ như lấy kẹo từ trẻ con.
 
 Có những phương pháp thay thế an toàn hơn, như Xác thực Truy cập Tiêu hóa nơi mật khẩu không bao giờ được gửi rõ ràng qua mạng. OAuth là một cái lớn khác, đặc biệt cho các API ngày nay. Nó giống như cấp một tấm vé VIP tạm thời hơn là hiển thị ID mỗi khi.
@@ -67,7 +61,6 @@ Có những phương pháp thay thế an toàn hơn, như Xác thực Truy cập
 Phía sau hậu trường, thư viện `requests` đang mã hóa tên người dùng và mật khẩu của bạn và gắn chúng vào một tiêu đề `Authorization` được định dạng như `Basic base64encodedcredentials`. Máy chủ giải mã tiêu đề này, kiểm tra thông tin đăng nhập của bạn, và nếu bạn hợp lệ, cho phép bạn truy cập.
 
 ## Xem Thêm
-
 - Tài liệu chính thức của thư viện `requests` cung cấp thông tin chi tiết về xác thực và nhiều hơn nữa: https://docs.python-requests.org/en/latest/
 - `http.client` cho những người muốn làm việc mà không cần thư viện bên thứ ba: https://docs.python.org/3/library/http.client.html
 - Real Python đào sâu vào cơ bản của HTTP và Python: https://realpython.com/python-requests/

@@ -10,9 +10,6 @@ title: Logging
 weight: 17
 ---
 
-## What & Why?
-Logging is the process of recording application events and data output during runtime. Programmers log to diagnose bugs, monitor software performance, track user actions, and maintain compliance with security and business standards.
-
 ## How to:
 In C#, you can use the built-in `System.Diagnostics` namespace or third-party libraries like NLog or log4net. Here's a quick example using the `ILogger` interface available in .NET Core:
 

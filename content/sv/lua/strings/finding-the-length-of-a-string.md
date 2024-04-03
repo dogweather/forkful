@@ -11,9 +11,6 @@ title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---
 
-## Vad & Varför?
-Att hitta längden på en sträng innebär att räkna antalet tecken den innehåller. Programmerare gör det för att validera indata, navigera genom text, eller manipulera strängar effektivt.
-
 ## Hur gör man:
 För att fånga längden på en sträng i Lua, använd `#` operatorn. Kolla här:
 

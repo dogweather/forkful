@@ -11,9 +11,6 @@ title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---
 
-## What & Why?
-Väliaikaistiedosto on väliaikaisessa käytössä oleva tiedosto, joka katoaa, kun se ei ole enää tarpeen. Ohjelmoijat luovat niitä tallentamaan dataa, joka on tarpeellista vain hetkellisesti, esimerkiksi suorituksen aikana tai testattaessa.
-
 ## How to:
 C# haihduttaa tiedostot sulavasti `Path`- ja `File`-luokkien avulla. Tsekkaa tämä:
 
@@ -48,7 +45,7 @@ Ennen vanhaan, levykkeiden ja rajoitetun tallennustilan aikakaudella, väliaikai
 
 Vaihtoehtoja on: voit käyttää `TempFileCollectionia` tai luoda kustomoitun väliaikaistiedoston hallintaan. Tiedoston nimessä temp-alku voi olla hyvä perusta, mutta `Path.GetTempFileName()` antaa uniikin nimen, mikä vähentää yhteentörmäysten riskiä.
 
-Järjestelmän väliaikaistiedostojen kansio on tyypillisesti paikka, minne väliaikaistiedosto kannattaa luoda, koska käyttöjärjestelmä ymmärtää pitää siivota siellä. `GetTempPath()` palauttaa tämän polun. 
+Järjestelmän väliaikaistiedostojen kansio on tyypillisesti paikka, minne väliaikaistiedosto kannattaa luoda, koska käyttöjärjestelmä ymmärtää pitää siivota siellä. `GetTempPath()` palauttaa tämän polun.
 
 ## See Also
 - [`Path.GetTempFileName`](https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename)

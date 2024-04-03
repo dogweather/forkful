@@ -10,9 +10,6 @@ title: Using an interactive shell (REPL)
 weight: 34
 ---
 
-## What & Why?
-A REPL (Read-Eval-Print Loop) is a simple, interactive computer programming environment. Programmers use it for quick coding trials, testing snippets, or learning a language's syntax without creating a full application.
-
 ## How to:
 Launching Kotlin's REPL is a breeze. Open your terminal and type `kotlinc`. You'll land in the Kotlin shell. Let's try defining a variable and printing its value:
 

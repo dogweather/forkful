@@ -13,11 +13,7 @@ title: Werken met CSV
 weight: 37
 ---
 
-## Wat & Waarom?
-Werken met CSV (Comma-Separated Values of komma-gescheiden waarden) in JavaScript betekent meestal het parseren en genereren van tekstgegevens voor spreadsheets of gegevensoverdracht. Programmeurs doen dit omdat CSV supergemeenschappelijk, lichtgewicht en gemakkelijk te lezen of te maken is.
-
 ## Hoe te:
-
 **CSV naar JSON parseren:**
 ```javascript
 const csv = `naam,leeftijd,stad
@@ -62,11 +58,9 @@ console.log(jsonToCsv(jsonData));
 ```
 
 ## Diepere duik
-
 CSV bestaat al sinds de vroege dagen van het computergebruik - gemakkelijk voor machines om te verwerken en voor mensen om te begrijpen. Maar het is niet perfect. Als je gegevens complex of genest zijn, kunnen JSON of XML een betere keuze zijn. Wat betreft de implementatie, had het omgaan met CSV in JavaScript zijn werk rondes nodig vanwege het gebrek aan een standaardbibliotheek hiervoor; echter, tegenwoordig vereenvoudigen talrijke bibliotheken zoals PapaParse of csv-parser deze taak. Ook kunnen randgevallen zoals nieuwe regeltekens binnen velden en karaktercodering de omgang met CSV gecompliceerd maken en zorgvuldige codering vereisen.
 
 ## Zie ook
-
 - MDN Web Docs over Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (CSV-gegevens van het web halen)
 - PapaParse: https://www.papaparse.com/ (Robuuste CSV-parser voor de browser)
 - RFC 4180: https://tools.ietf.org/html/rfc4180 (Standaarden voor CSV-bestanden)

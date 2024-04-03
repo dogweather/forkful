@@ -14,9 +14,6 @@ title: "R\xE9daction de tests"
 weight: 36
 ---
 
-## Quoi & Pourquoi ?
-Écrire des tests en Clojure, tout comme dans d'autres langages de programmation, implique de créer du code dédié pour vérifier que votre code principal fonctionne comme prévu. Cela aide à garantir la correction, à faciliter le refactoring et à améliorer la stabilité du code.
-
 ## Comment faire :
 Clojure, en tirant parti de la JVM, prend en charge divers frameworks de test. Toutefois, une bibliothèque intégrée couramment utilisée est `clojure.test`. Voici un exemple simple :
 

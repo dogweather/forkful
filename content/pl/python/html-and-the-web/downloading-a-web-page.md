@@ -8,11 +8,6 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## What & Why?
-"## Co i dlaczego?"
-
-Pobieranie strony internetowej to proces zapisywania jej zawartości na dysk. Programiści robią to, by przetwarzać dane, automatyzować zadania lub archiwizować informacje.
-
 ## How to:
 "## Jak to zrobić:"
 

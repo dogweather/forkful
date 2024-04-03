@@ -15,12 +15,7 @@ title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---
 
-## Co i dlaczego?
-
-Kapitalizacja łańcucha znaków polega na przekształceniu pierwszej litery danego łańcucha na wielką literę, zachowując resztę liter w formie małych, często w celu ujednolicenia formatowania lub czytelności. Programiści często wykonują to zadanie, aby zapewnić spójne prezentowanie danych, zwłaszcza w interfejsach użytkownika lub podczas przetwarzania i wyświetlania wprowadzonych przez użytkownika danych.
-
 ## Jak to zrobić:
-
 W Elm nie ma wbudowanej funkcji specjalnie do kapitalizacji łańcuchów znaków. Jednak można łatwo osiągnąć ten cel, korzystając z funkcji wbudowanego modułu `String`, takich jak `toUpper`, `toLower`, `left` i `dropLeft`.
 
 ```elm

@@ -16,9 +16,6 @@ title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Cái gì & Tại sao?
-Tạo một tệp tạm thời có nghĩa là tạo một tệp chỉ cần thiết trong một thời gian ngắn, thường là trong quá trình thực thi của một chương trình. Lập trình viên thực hiện việc này cho các tác vụ như lưu trữ dữ liệu quá lớn cho bộ nhớ, chia sẻ thông tin giữa các quá trình, hoặc lưu trạng thái trong các hoạt động phức tạp.
-
 ## Cách thức:
 Tạo một tệp tạm thời trong TypeScript không được tích hợp sẵn, nhưng bạn có thể sử dụng module `fs` trong Node.js để thực hiện công việc này. Dưới đây là cách đơn giản để tạo và sử dụng một tệp tạm thời.
 

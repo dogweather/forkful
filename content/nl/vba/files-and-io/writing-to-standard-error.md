@@ -14,12 +14,7 @@ title: Schrijven naar standaardfout
 weight: 25
 ---
 
-## Wat & Waarom?
-
-Schrijven naar standaardfout in Visual Basic for Applications (VBA) houdt in dat foutmeldingen of diagnostische berichten worden omgeleid, apart van de standaarduitvoer, gewoonlijk naar de console of een logbestand. Programmeurs doen dit om de reguliere programma-uitvoer te scheiden van foutmeldingen, wat het makkelijker maakt om programma's te debuggen of gebruikers te waarschuwen voor problemen zonder de hoofduitvoer te verstoren.
-
 ## Hoe te:
-
 In VBA, aangezien er geen directe ingebouwde functie bestaat om specifiek naar standaardfout te schrijven zoals in sommige andere programmeertalen, is een veelgebruikte workaround het gebruik van `Debug.Print` voor ontwikkelingsfoutuitvoer of het creëren van een aangepaste logfunctie die dit gedrag nabootst voor productietoepassingen. Hieronder vind je een voorbeeld van hoe je zo'n functie zou kunnen implementeren en gebruiken:
 
 ```vb
@@ -49,7 +44,6 @@ FOUT: Er is een fout opgetreden bij het verwerken van uw verzoek.
 ```
 
 ## Diepere Duik
-
 Visual Basic for Applications heeft van nature geen toegewijde mechanisme voor het schrijven naar standaardfout vanwege de diepgaande integratie met hosttoepassingen zoals Excel, Word of Access, die traditioneel vertrouwen op grafische gebruikersinterfaces in plaats van console-uitvoer. Dit is een opmerkelijke afwijking van console-gebaseerde applicaties die typisch zijn ontwikkeld in talen zoals C of Python, waar standaarduitvoer en standaardfoutstromen fundamentele concepten zijn.
 
 Historisch gezien heeft de focus van VBA altijd meer gelegen op de interactie met de documentmodellen van zijn hosttoepassingen en minder op traditionele applicatieloggingmechanismen. Daarom grijpen ontwikkelaars vaak naar het implementeren van aangepaste logoplossingen, zoals gezien in het voorbeeld, of het gebruiken van Windows API-oproepen voor meer geavanceerde foutafhandeling en logbehoeften.

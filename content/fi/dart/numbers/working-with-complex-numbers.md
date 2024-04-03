@@ -14,16 +14,10 @@ title: "Ty\xF6skentely kompleksilukujen kanssa"
 weight: 14
 ---
 
-## Mikä & Miksi?
-
-Kompleksiluvut, jotka koostuvat reaalisesta ja imaginaarisesta osasta (yleensä merkitty a + bi), laajentavat ulottuvuudettomien lukujen käsitettä kaksiulotteiseen avaruuteen. Ohjelmoijat työskentelevät kompleksilukujen parissa aloilla, kuten sähkötekniikka, kvanttilaskenta ja fluididynamiikka, mallintaakseen ilmiöitä, joita ei voida esittää pelkästään reaalilukujen yksittäisellä ulottuvuudella.
-
 ## Kuinka:
-
 Dart itsessään ei sisällä valmista kirjastoa kompleksiluvuille, mikä edellyttää joko oman kompleksilukuluokan toteuttamista tai kolmannen osapuolen kirjaston käyttöä. Suosittu valinta tieteellisen laskennan tehtäviin, joka sisältää tuen kompleksiluvuille, on `package:scidart`.
 
 ### Peruskompleksilukuluokan toteuttaminen
-
 Yksinkertaisiin toimenpiteisiin voit helposti määritellä oman kompleksilukuluokan:
 
 ```dart
@@ -53,7 +47,6 @@ void main() {
 ```
 
 ### SciDartin käyttäminen monimutkaisempiin toimenpiteisiin
-
 Monimutkaisemmissa toimenpiteissä tai kun suorituskyky on kriittistä, `package:scidart` tarjoaa kattavan tuen kompleksiluvuille muiden tieteellisen laskennan toiminnallisuuksien ohella. Lisää ensin SciDart pubspec.yaml-tiedostoosi:
 
 ```yaml

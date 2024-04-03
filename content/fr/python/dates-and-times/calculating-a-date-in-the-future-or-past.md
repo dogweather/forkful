@@ -11,9 +11,6 @@ title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---
 
-## Quoi et Pourquoi ?
-Calculer une date dans le futur ou le passé, c'est manipuler des dates pour en obtenir de nouvelles. Les programmeurs le font pour des raisons variées : planifications, rappels, ou suivis d'échéances.
-
 ## Comment faire :
 ```Python
 from datetime import datetime, timedelta

@@ -16,16 +16,10 @@ title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---
 
-## Cái gì & Tại sao?
-
-Trong C, việc trích xuất các chuỗi con bao gồm việc tạo một chuỗi nhỏ hơn (chuỗi con) từ một chuỗi lớn hơn dựa trên các tiêu chí cụ thể, như vị trí và độ dài. Các lập trình viên thường thực hiện công việc này để phân tích văn bản, xử lý dữ liệu hoặc kiểm tra đầu vào, làm cho việc này trở thành kỹ năng quan trọng trong việc thao tác và phân tích dữ liệu văn bản một cách hiệu quả.
-
 ## Làm thế nào:
-
 Khác với một số ngôn ngữ cấp cao cung cấp các phương thức có sẵn để trích xuất chuỗi con, C đòi hỏi một cách tiếp cận thủ công hơn bằng cách sử dụng các hàm thao tác chuỗi của nó. Dưới đây là cách để trích xuất một chuỗi con trong C một cách hiệu quả:
 
 ### Ví dụ 1: Sử dụng `strncpy`
-
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -45,7 +39,6 @@ int main() {
 ```
 
 ### Ví dụ 2: Tạo một hàm
-
 Đối với việc sử dụng lặp lại, việc tạo ra một hàm riêng để trích xuất chuỗi con có thể sẽ hiệu quả hơn:
 
 ```c
@@ -70,7 +63,6 @@ int main() {
 ```
 
 ## Sâu hơn nữa
-
 Việc trích xuất các chuỗi con trong C chủ yếu được xử lý thông qua việc thao tác con trỏ và quản lý bộ nhớ cẩn thận, phản ánh phương pháp tiếp cận ở cấp độ thấp hơn của ngôn ngữ này đối với việc xử lý dữ liệu. Phương pháp này có từ những ngày đầu của lập trình C, khi việc quản lý tài nguyên một cách hiệu quả là tối quan trọng do sức mạnh tính toán hạn chế. Dù việc thiếu một hàm trích xuất chuỗi con có sẵn có vẻ như là một sự thiếu sót, nhưng nó thể hiện triết lý của C trong việc cung cấp cho lập trình viên quyền kiểm soát hoàn toàn việc quản lý bộ nhớ, thường dẫn đến mã tối ưu nhưng phức tạp hơn.
 
 Trong lĩnh vực lập trình hiện đại, các ngôn ngữ như Python và JavaScript cung cấp các phương thức có sẵn cho việc trích xuất chuỗi con, như `slice()` hay cắt chuỗi bằng chỉ số. Những ngôn ngữ cấp cao này xử lý quản lý bộ nhớ đằng sau hậu trường, đánh đổi một số mức độ kiểm soát để đổi lấy sự dễ sử dụng và tính dễ đọc.

@@ -9,9 +9,6 @@ title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---
 
-## What & Why?
-Pourquoi convertir des chaînes en minuscules ? Simple : pour uniformiser les données. Ça aide à comparer, trier ou rechercher sans souci de casse.
-
 ## How to:
 Voilà le pain quotidien : la méthode `.lower()`. C'est facile et efficace.
 

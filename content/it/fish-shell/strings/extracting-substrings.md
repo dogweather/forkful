@@ -10,9 +10,6 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## What & Why?
-Estrarre sottosequenze significa prendere pezzi di stringa, un po' come tagliare una fetta di torta. I programmatori lo fanno per isolare informazioni utili, come dati o comandi specifici.
-
 ## How to:
 Utilizziamo il comando `string` di Fish per lavorare con le stringhe. Ecco un esempio semplice.
 

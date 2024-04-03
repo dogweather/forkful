@@ -10,9 +10,6 @@ title: Confronto tra due date
 weight: 27
 ---
 
-## Che Cosa & Perché?
-Comparare due date significa verificare se sono uguali, quale precede l'altra o quanti giorni ci sono tra di loro. I programmatori fanno questo per gestire scadenze, eventi e tutto ciò che ha a che fare con il tempo in applicazioni.
-
 ## Come Fare:
 ```Clojure
 (require '[clj-time.core :as time])

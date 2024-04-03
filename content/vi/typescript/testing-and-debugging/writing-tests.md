@@ -15,12 +15,7 @@ title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---
 
-## Gì & Tại sao?
-
-Viết kiểm thử nghĩa là tạo ra mã lệnh để kiểm tra xem mã lệnh khác có hoạt động đúng không. Các lập trình viên làm vậy để phát hiện lỗi sớm, tiết kiệm thời gian, và đảm bảo các thay đổi không làm hỏng mọi thứ.
-
 ## Làm thế nào:
-
 Hãy kiểm tra một hàm đơn giản sử dụng Jest, một khung kiểm thử phổ biến cho JavaScript và TypeScript.
 
 Đầu tiên, cài đặt Jest với hỗ trợ TypeScript:
@@ -70,7 +65,6 @@ PASS  ./math.test.ts
 ```
 
 ## Khám Phá Sâu
-
 Kiểm thử trong TypeScript dựa trên thực hành kiểm thử JavaScript. Dưới đây là những điều làm cho nó đặc biệt:
 
 - Bối cảnh lịch sử: TypeScript ra đời vào năm 2012. Mục đích là để thêm các kiểu dữ liệu vào JavaScript, giúp mã lệnh dễ bảo trì và kiểm thử hơn.
@@ -78,6 +72,5 @@ Kiểm thử trong TypeScript dựa trên thực hành kiểm thử JavaScript. 
 - Chi tiết triển khai: Các bài kiểm thử có thể sống cùng với mã hoặc riêng biệt. Các kiểu dữ liệu TypeScript giúp với việc tự động hoàn thành và tăng thêm sự tự tin trong kiểm thử.
 
 ## Xem Thêm
-
 - Jest: [Tài liệu Jest](https://jestjs.io/docs/getting-started)
 - So sánh Khung Kiểm Thử JS: [Khảo sát StateOfJS 2022](https://2022.stateofjs.com/en-US/libraries/testing/)

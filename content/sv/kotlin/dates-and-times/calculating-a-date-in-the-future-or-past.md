@@ -11,9 +11,6 @@ title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---
 
-## Vad & Varför?
-Att beräkna ett datum i framtiden eller det förflutna handlar om att lägga till eller dra bort tid från ett specifikt datum. Programmerare gör detta för att hantera tidsbaserade händelser, som utgångsdatum, påminnelser eller planeringsuppgifter.
-
 ## Hur gör man:
 ```kotlin
 import java.time.LocalDate

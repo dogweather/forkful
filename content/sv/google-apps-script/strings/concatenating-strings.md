@@ -13,16 +13,10 @@ title: "Konkatenering av str\xE4ngar"
 weight: 3
 ---
 
-## Vad & Varför?
-
-Att konkatenera strängar innebär att kombinera två eller flera strängar till en enda sträng. Programmerare gör detta för att dynamiskt konstruera meddelanden, webbadresser eller någon form av text som kräver en blandning av statiskt och variabelt innehåll.
-
 ## Hur man gör:
-
 I Google Apps Script, som är baserat på JavaScript, finns det flera sätt att konkatenera strängar på. Här är några vanliga metoder:
 
 ### Använda plusoperatorn (`+`):
-
 ```javascript
 var firstName = "John";
 var lastName = "Doe";
@@ -31,7 +25,6 @@ Logger.log(fullName); // Utdata: John Doe
 ```
 
 ### Använda metoden `concat()`:
-
 ```javascript
 var string1 = "Hello";
 var string2 = "World";
@@ -40,7 +33,6 @@ Logger.log(combinedString); // Utdata: Hello World
 ```
 
 ### Använda malliteraler (backticks):
-
 Detta är ett modernt och flexibelt sätt att konkatenera strängar på, som låter dig lätt infoga uttryck inom strängar.
 
 ```javascript
@@ -52,7 +44,6 @@ Logger.log(message); // Utdata: Learning Google Apps Script is fun!
 Var och en av dessa metoder har sina användningsfall, och valet mellan dem beror vanligen på krav på läsbarhet och komplexiteten hos de strängar som konkateneras.
 
 ## Fördjupning
-
 Strängkonkatenering är en grundläggande aspekt inte bara i Google Apps Script utan i många programmeringsspråk. Historiskt sätt utfördes ofta konkatenering av strängar med hjälp av plusoperatorn eller specialiserade funktioner/metoder som `concat()`. Dock, med införandet av malliteraler i ECMAScript 2015 (ES6), som Google Apps Script stödjer, har utvecklare fått ett kraftfullare och mer intuitivt sätt att hantera strängar på.
 
 Malliteraler förenklar inte bara syntaxen för att infoga uttryck inom strängar utan stödjer även flerledade strängar utan behov av explicita radbrytningstecken. Detta minskar potentialen för fel och förbättrar kodläsbarheten, särskilt när man hanterar komplexa strängar eller när man ersätter flera variabler i en textmall.

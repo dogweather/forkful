@@ -12,9 +12,6 @@ title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---
 
-## Mitä & Miksi?
-JavaScriptissa merkkien poistaminen tietyllä kaavalla tarkoittaa ei-toivottujen merkkien tai merkkijonojen karsimista tekstistä käyttämällä säännöllisiä lausekkeita tai metodeja. Ohjelmoijat tekevät tämän siistiäkseen dataa, kuten käyttäjän syötettä tai tiedostosta luetun tekstin.
-
 ## Miten:
 ```javascript
 let teksti = "H3i! M1t3n m3n33?";

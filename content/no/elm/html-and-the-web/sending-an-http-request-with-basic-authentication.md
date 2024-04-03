@@ -10,9 +10,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---
 
-## What & Why?
-Å sende en HTTP-forespørsel med grunnleggende autentisering betyr at man legger til brukernavn og passord i forespørselen for tilgangskontroll. Programmerere gjør dette for å sikre at kun autoriserte brukere får tilgang til bestemt data.
-
 ## How to:
 ```Elm
 import Http

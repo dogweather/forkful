@@ -11,9 +11,6 @@ title: Tekstitiedoston lukeminen
 weight: 22
 ---
 
-## What & Why? - Mitä ja Miksi?
-Lukemalla tekstitiedostoja, PHP:ssä voimme käsitellä dataa suoraan lähdemuodossaan. Tämä on tärkeää, koska se mahdollistaa tiedon dynaamisen hankkimisen ilman kovakoodattuja arvoja - olipa kyse sitten konfiguraatiosta, lokitiedostoista tai ulkoisesta sisällöstä.
-
 ## How to: - Kuinka:
 PHP tarjoaa useita tapoja lukea tekstitiedostoja. Alla on suoraviivainen esimerkki `file_get_contents` toiminnosta ja iteroinnista tiedoston riveille `file` toiminnolla.
 

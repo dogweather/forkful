@@ -10,11 +10,7 @@ title: Lettura di un file di testo
 weight: 22
 ---
 
-## What & Why?
-Leggere un file di testo permette ai programmi di processare dati salvati su disco. Programmatori lo fanno per analizzare, modificare o semplicemente visualizzare il contenuto del file.
-
 ## How to:
-
 Leggere tutto il contenuto di un file:
 
 ```Haskell
@@ -54,7 +50,6 @@ main = do
 ```
 
 ## Deep Dive
-
 La lettura dei file di testo in Haskell è stata storicamente influenzata dal desiderio del linguaggio di trattare le operazioni di input/output (IO) in un modo funzionale pur mantenendo la purezza. Per questo motivo, le operazioni IO sono segregate nel tipo `IO`.
 
 Esistono alternative alla funzione `readFile`, come `readLn` o pacchetti di terze parti come `text` e `bytestring` che offrono performance migliorate o ulteriori funzionalità.
@@ -62,7 +57,6 @@ Esistono alternative alla funzione `readFile`, come `readLn` o pacchetti di terz
 In dettaglio, `readFile` è una funzione non bloccante, che significa che viene restituito immediatamente un "handle" per i dati, e i dati vengono letti effettivamente quando se ne ha bisogno. Questo può essere utile per la gestione di grandi quantità di dati senza sovraccaricare la memoria.
 
 ## See Also
-
 - [Haskell Docs - System.IO](https://hackage.haskell.org/package/base-4.16.0.0/docs/System-IO.html)
 - Pacchetto [`text`](https://hackage.haskell.org/package/text)
 - Pacchetto [`bytestring`](https://hackage.haskell.org/package/bytestring)

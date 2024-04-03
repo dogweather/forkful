@@ -17,9 +17,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Làm gì & Tại sao?
-XML là một ngôn ngữ đánh dấu được thiết kế để mã hóa tài liệu một cách có thể đọc được bởi cả con người và máy móc. Nó đóng một vai trò chính trong các dịch vụ web, tệp cấu hình, và trao đổi dữ liệu vì nó chuyên chở dữ liệu theo một định dạng có cấu trúc, phân cấp.
-
 ## Cách thực hiện:
 Clojure cung cấp thư viện `clojure.data.xml` cho việc phân tích cú pháp và phát sinh XML. Đầu tiên, hãy phân tích cú pháp một số XML:
 

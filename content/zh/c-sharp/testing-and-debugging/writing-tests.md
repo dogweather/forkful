@@ -22,12 +22,7 @@ title: "\u7F16\u5199\u6D4B\u8BD5"
 weight: 36
 ---
 
-## 什么 & 为什么？
-
-用 C# 编写测试包括创建自动化脚本来验证您的代码功能，确保其表现如预期。程序员这样做是为了尽早捕捉到 bug，促进代码重构，并确保新变更不会破坏现有功能，从而提高软件质量和可靠性。
-
 ## 如何做：
-
 C# 开发者主要使用 NUnit 或 xUnit 框架来编写测试，因为它们的灵活性和广泛的功能集。这里有一个使用 NUnit 测试一个简单加法函数的基本示例：
 
 1. **通过 NuGet 包管理器或 .NET CLI 安装 NUnit 和 NUnit3TestAdapter**：
@@ -81,7 +76,6 @@ dotnet test
 ```
 
 ### 示例输出：
-
 假设您的测试通过，您应该看到类似于此的输出：
 ```
 测试运行成功。
@@ -91,7 +85,6 @@ dotnet test
 ```
 
 ### 使用 xUnit：
-
 如果您更喜欢 xUnit，设置与 NUnit 类似。这是您使用 xUnit 为 `Calculator` 类重写测试示例的方法：
 
 1. **安装 xUnit 和 xUnit.runner.visualstudio**：

@@ -12,9 +12,6 @@ title: Het huidige datum ophalen
 weight: 29
 ---
 
-## Wat & Waarom?
-De huidige datum in bash pakken gaat over het verkrijgen van de datum en tijd van het systeem. Programmeurs hebben dit nodig voor logboekregistratie, tijdstempeling of het plannen van taken.
-
 ## Hoe te:
 Om de huidige datum en tijd te halen, gebruik je `date`. Hier is de eenvoudige manier:
 

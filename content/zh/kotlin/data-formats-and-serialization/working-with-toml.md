@@ -18,9 +18,6 @@ title: "\u4F7F\u7528TOML"
 weight: 39
 ---
 
-## 什么 & 为什么？
-TOML 代表 Tom's Obvious, Minimal Language（汤姆的明显、最小语言）。它用于配置文件，因为它易于人类阅读和编写，同时也易于机器解析。开发者选择 TOML 来避免 XML 的杂乱和 JSON 的棘手，进行配置管理。
-
 ## 如何操作：
 要在 Kotlin 中处理 TOML，你可以使用像 `ktoml` 这样的库。首先，让我们在 `build.gradle.kts` 中添加依赖项：
 

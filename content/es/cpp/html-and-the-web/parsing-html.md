@@ -13,9 +13,6 @@ title: Analizando HTML
 weight: 43
 ---
 
-## ¿Qué y por qué?
-Analizar HTML significa descomponer el contenido HTML en algo que un programa puede entender y manipular. Los programadores hacen esto para extraer datos, manipular contenido o integrar la extracción de datos web en sus aplicaciones.
-
 ## Cómo hacerlo:
 C++ no viene con capacidades incorporadas para el análisis de HTML. A menudo se utiliza una biblioteca como Gumbo-parser de Google, o algo similar. Aquí tienes un ejemplo rápido usando Gumbo-parser:
 

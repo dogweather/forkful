@@ -12,9 +12,6 @@ title: Trabajando con JSON
 weight: 38
 ---
 
-## Qué y Por Qué?
-Trabajar con JSON (Notación de Objetos de JavaScript) significa manejar este formato ligero de intercambio de datos dentro de tus aplicaciones Java. Los programadores optan por JSON para serializar y transmitir datos estructurados a través de una red y configurar y almacenar datos fácilmente porque es legible por humanos e independiente del lenguaje.
-
 ## Cómo hacerlo:
 Vamos a remangarnos y empezar a codificar con JSON en Java.
 

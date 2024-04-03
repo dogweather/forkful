@@ -13,14 +13,10 @@ title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---
 
-## Mikä & Miksi?
-Merkkijonon alkukirjaimen suurentaminen tarkoittaa merkkijonon jokaisen sanan ensimmäisen merkin muuttamista suuraakkoseksi, jos se on pienaakkosena, samalla kun kaikki muut merkit jätetään muuttumattomiksi. Ohjelmoijat suorittavat usein tämän tehtävän tulosteiden muotoilun, käyttäjän syötteiden tai datan käsittelyn yhteydessä varmistaakseen tekstin esitys- tai käsittelytavan johdonmukaisuuden, erityisesti käyttöliittymissä tai datan normalisointitehtävissä.
-
 ## Kuinka:
 C++:ssa voit suurentaa merkkijonon alkukirjaimen käyttäen standardikirjastoa ilman kolmannen osapuolen kirjastoja. Kuitenkin monimutkaisempia tai erityisempiä suurentamiskäyttäytymisiä varten kirjastot, kuten Boost, voivat olla hyvin hyödyllisiä. Alla on esimerkkejä molemmista lähestymistavoista.
 
 ### Käyttäen Standard C++ Kirjastoa:
-
 ```cpp
 #include <iostream>
 #include <cctype> // std::tolower ja std::toupper käyttöön
@@ -51,7 +47,6 @@ int main() {
 ```
 
 ### Käyttäen Boost Kirjastoa:
-
 Monimutkaisempia merkkijonomanipulaatioita varten, mukaan lukien paikallisesta ympäristöstä tietoinen suurentaminen, saatat haluta käyttää Boost String Algo -kirjastoa.
 
 Varmista ensin, että sinulla on Boost-kirjasto asennettuna ja määritettynä projektissasi. Sen jälkeen voit sisällyttää tarvittavat otsikot ja käyttää sen ominaisuuksia kuten alla on esitetty.

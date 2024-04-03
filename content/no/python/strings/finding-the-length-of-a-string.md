@@ -10,9 +10,6 @@ title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Å finne lengden på en streng betyr å telle antall tegn i den. Programmerere gjør dette for å validere inndata, manipulere tekst, eller sammenligne strenger.
-
 ## How to: (Slik gjør du:)
 Python bruker `len()` funksjonen. Se eksempel:
 

@@ -13,9 +13,6 @@ title: Een tijdelijk bestand aanmaken
 weight: 21
 ---
 
-## Wat & Waarom?
-Een tijdelijk bestand aanmaken betekent dat je een bestand genereert voor een kortetermijndoel, zoals het opslaan van gegevens die alleen nodig zijn tijdens de uitvoering van een programma. Programmeurs doen dit om verschillende redenen, zoals het vermijden van geheugenbeperkingen of het bewaren van een tijdelijke staat tijdens complexe bewerkingen.
-
 ## Hoe te:
 Hier is een snelle manier om een tijdelijk bestand te creëren en er naar te schrijven in C#:
 

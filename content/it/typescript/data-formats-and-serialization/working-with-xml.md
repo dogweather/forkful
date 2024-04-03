@@ -11,9 +11,6 @@ title: Lavorare con XML
 weight: 40
 ---
 
-## Cos'è & Perché?
-Lavorare con XML significa analizzare, manipolare e scrivere dati XML utilizzando la programmazione. I programmatori gestiscono XML per lo scambio di dati tra diversi sistemi, per file di configurazione o quando si lavora con standard come SOAP che si affidano a XML.
-
 ## Come fare:
 ```TypeScript
 import { parseString } from 'xml2js';

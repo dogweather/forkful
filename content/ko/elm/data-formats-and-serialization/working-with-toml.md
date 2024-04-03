@@ -15,9 +15,6 @@ title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE3
 weight: 39
 ---
 
-## 무엇 & 왜?
-TOML은 Tom's Obvious, Minimal Language의 약자로, 데이터 직렬화 언어입니다. Elm 프로그래머들은 응용 프로그램에서 필요한 키-값 쌍에 깔끔하게 매핑되고 사람이 읽기 쉬운 이유로 구성 데이터를 관리하기 위해 사용합니다.
-
 ## 방법:
 Elm에는 내장 TOML 파서가 없지만, JavaScript와 상호 작용하거나 커뮤니티 패키지를 사용할 수 있습니다. 다음은 가상의 `elm-toml` 패키지를 사용하여 TOML을 구문 분석하는 방법입니다:
 

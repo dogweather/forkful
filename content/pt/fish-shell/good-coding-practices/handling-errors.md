@@ -10,9 +10,6 @@ title: Tratamento de erros
 weight: 16
 ---
 
-## O Quê & Por Quê?
-O tratamento de erros permite que seu script lide com o inesperado de forma elegante. Fazemos isso para gerenciar falhas sem deixar os cabelos dos nossos usuários ficarem grisalhos.
-
 ## Como fazer:
 Para capturar erros no Fish, conte com o comando `status` e condicionais. Digamos que o `ping` falhe; veja como detectar isso:
 

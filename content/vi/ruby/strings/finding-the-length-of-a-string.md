@@ -15,9 +15,6 @@ title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---
 
-## Cái gì & Tại sao?
-Tìm độ dài của một chuỗi nghĩa là đếm số ký tự của nó. Đây là một công việc cơ bản nhưng quan trọng cho các nhiệm vụ như xác thực, xử lý văn bản và xác định nhu cầu lưu trữ.
-
 ## Làm thế nào:
 Ruby giữ nó đơn giản với phương thức `.length`:
 

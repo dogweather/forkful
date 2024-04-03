@@ -11,9 +11,6 @@ title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---
 
-## O Que é & Porquê?
-Organizar o código em funções significa agrupar operações relacionadas em blocos reutilizáveis. Fazemos isso para melhorar a legibilidade e manutenibilidade, reduzir a duplicação de código e simplificar os testes.
-
 ## Como fazer:
 Vamos criar uma função simples em Elixir para capitalizar palavras:
 

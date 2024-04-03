@@ -11,12 +11,7 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-
-Fehlerbehandlung in Python (oder jeder anderen Programmiersprache) bedeutet, mit dem Unerwarteten zu rechnen – es ist die Kunst, anmutig zu handhaben, wenn etwas in Ihrem Code schiefgeht. Wir tun dies, um Abstürze zu verhindern, Benutzer zu leiten und unsere Programme robust und zuverlässig zu machen.
-
 ## Wie geht das:
-
 ``` Python
 # Grundlegender try-except-Block
 try:
@@ -55,7 +50,6 @@ Das ist keine Zahl!
 ```
 
 ## Tiefgehender Einblick
-
 Seit den Anfängen der Programmierung ist die Fehlerbehandlung von entscheidender Bedeutung. Frühere Ansätze waren rudimentär, wie das Prüfen von Bedingungen vor jeder riskanten Operation. Python’s `try-except`-Syntax stammt aus einem Erbe der Ausnahmebehandlung in älteren Sprachen wie C++ und Java, welches den Prozess vereinfacht.
 
 Wenn Sie einen Codeblock `try`, beobachtet Python auf alle Ausnahmen. Tritt ein Fehler auf, fängt der `except`-Block diesen ab. Sie können genau spezifizieren, welche Ausnahmen Sie fangen, oder Sie fangen sie alle mit einem einfachen `except`. Allerdings ist der spezifische Ansatz zuerst der bessere – er ist präzise, kein Auffangnetz für alles.
@@ -65,7 +59,6 @@ Wenn Sie einen Codeblock `try`, beobachtet Python auf alle Ausnahmen. Tritt ein 
 Alternativen? Die gibt es sicher. Einige Sprachen verwenden Rückgabecodes anstelle von Ausnahmen. Sie könnten auch `with`-Anweisungen für die Ressourcenverwaltung oder `assertions` antreffen, die beim Entwickeln Bedingungen prüfen. Aber wenn wir über solide Fehlerbehandlungsstrategien sprechen, sticht das try-catch-Modell durch seine Lesbarkeit und Struktur hervor.
 
 ## Siehe auch
-
 Hier sind einige gute zusätzliche Ressourcen, um noch tiefer einzutauchen:
 
 - Pythons offizielle Dokumentation zu Fehlern und Ausnahmen: [Python Docs – Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html)

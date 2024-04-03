@@ -13,9 +13,6 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-De lengte van een string vinden in Clojure geeft het aantal karakters in die string terug. Programmeurs hebben deze informatie vaak nodig om invoer te valideren, door karakters te loopen, of voor taken gerelateerd aan stringmanipulatie.
-
 ## Hoe:
 Om de lengte van een string in Clojure te krijgen, gebruik je de `count` functie:
 

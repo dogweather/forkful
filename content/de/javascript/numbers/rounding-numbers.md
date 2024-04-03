@@ -11,9 +11,6 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-Runden ist das Abschneiden von „Rauschen“ an einer Zahl nach einem bestimmten Punkt. Programmierer runden, um die Genauigkeit zu kontrollieren, Speicher zu verwalten oder die Ausgabe benutzerfreundlich zu machen – wie zum Beispiel 2,998 in eine saubere 3 umzuwandeln.
-
 ## Wie geht das:
 So runden Sie Zahlen in JavaScript unter Verwendung von `Math.round()`, `Math.ceil()` und `Math.floor()`: 
 

@@ -18,12 +18,7 @@ title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---
 
-## Cái gì & Tại sao?
-
-Mảng kết hợp, hay còn được biết đến với tên là từ điển, trong Haskell là về việc ánh xạ các khóa với các giá trị để tìm kiếm nhanh chóng và quản lý dữ liệu hiệu quả. Lập trình viên sử dụng chúng để xử lý các bộ sưu tập của các phần tử ghép đôi, nơi mà việc tìm kiếm một phần tử trở nên dễ dàng, so với việc sử dụng danh sách.
-
 ## Làm thế nào:
-
 Haskell không có mảng kết hợp ngay lập tức như một số ngôn ngữ khác, nhưng nó cung cấp một thư viện tiêu chuẩn mạnh mẽ được gọi là `Data.Map` để làm việc với các cặp khóa-giá trị. Hãy cán lên tay áo và xem cách sử dụng chúng!
 
 Đầu tiên, đảm bảo rằng bạn đã nhập nó:
@@ -62,7 +57,6 @@ Map.elems languagesUpdated
 Những thao tác cơ bản này nên đủ để đáp ứng hầu hết các nhu cầu sử dụng, nhưng còn rất nhiều điều để khám phá trong `Data.Map`!
 
 ## Sâu hơn
-
 Module `Data.Map` trong thư viện tiêu chuẩn của Haskell được xây dựng dựa trên các cây nhị phân cân bằng, cụ thể là cây AVL. Sự lựa chọn này đảm bảo rằng hầu hết các thao tác trên bản đồ, như chèn, xóa và tìm kiếm, có thể được thực hiện trong thời gian O(log n), nơi n là số lượng các phần tử trong bản đồ. Đây là một lựa chọn hiệu quả cho nhiều trường hợp sử dụng, mặc dù không phải là nhanh nhất cho tất cả các tình huống.
 
 Có một sự tinh tế của lịch sử cũng: trước khi `Data.Map` trở thành lựa chọn hàng đầu, các lập trình viên Haskell thường sử dụng các danh sách các cặp để mô phỏng mảng kết hợp. Tuy nhiên, các thao tác trên những cấu trúc như vậy là O(n) cho việc tìm kiếm, khiến `Data.Map` trở thành một cải tiến đáng kể về hiệu suất.

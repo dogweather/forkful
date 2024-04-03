@@ -10,12 +10,7 @@ title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---
 
-## Qué y Por Qué?
-
-Leer argumentos de la línea de comandos te permite personalizar el comportamiento de tu programa en tiempo real, pasando datos al ejecutarlo. Los programadores usan esto para hacer que sus programas sean flexibles y adaptables a diferentes situaciones y necesidades de usuario.
-
 ## Cómo:
-
 Python facilita la lectura de argumentos de la línea de comandos usando el módulo `sys`. Aquí hay un ejemplo simple:
 
 ```python
@@ -43,13 +38,11 @@ Argumento 2: mundo
 ```
 
 ## Deep Dive
-
 En la historia de la informática, los argumentos de la línea de comandos son tan antiguos como los propios sistemas operativos de tipo UNIX. Python provee acceso a ellos a través del módulo `sys`, aunque también hay alternativas como el módulo `argparse` que es más potente y ofrece funcionalidades adicionales, como parseo de argumentos, ayuda automática y manejo de errores.
 
 La lista `sys.argv` contiene los argumentos en el orden en que se introducen, siendo `sys.argv[0]` el nombre del script. El módulo `argparse`, por otro lado, te permite definir argumentos esperados y parsearlos de una manera más sofisticada, ayudándote a construir interfaces de línea de comandos más robustas con poco esfuerzo.
 
 ## Ver También
-
 - [Documentación oficial de sys.argv](https://docs.python.org/3/library/sys.html#sys.argv)
 - [Tutorial de argparse](https://docs.python.org/3/howto/argparse.html)
 - [PEP 389, la propuesta de argparse](https://www.python.org/dev/peps/pep-0389/)

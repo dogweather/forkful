@@ -10,9 +10,6 @@ title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---
 
-## Was & Warum?
-Berechnungen von zukünftigen oder vergangenen Daten ermöglichen es, Zeitintervalle zu bestimmen. Programmierer nutzen das, um Deadline-Management, Erinnerungsfunktionen oder Terminverfolgungen in Anwendungen zu implementieren.
-
 ## Wie geht das:
 Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, verwenden wir die `DateTime` und `DateInterval` Klassen. Hier ein paar Beispiele:
 

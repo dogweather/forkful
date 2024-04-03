@@ -13,9 +13,6 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-Reguliere expressies (regex) zijn hulpmiddelen voor het matchen van patronen in tekst. Programmeurs gebruiken ze om data efficiënt te zoeken, valideren of manipuleren.
-
 ## Hoe te:
 Kotlin maakt regex eenvoudig. Laten we enkele praktische codevoorbeelden bekijken:
 

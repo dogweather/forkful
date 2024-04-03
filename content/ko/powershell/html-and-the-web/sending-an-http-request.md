@@ -17,9 +17,6 @@ title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
 weight: 44
 ---
 
-## What & Why? (무엇과 왜?)
-HTTP 요청을 보낸다는 것은 웹 서버에 정보를 요구하거나 제출하는 행위입니다. 프로그래머들이 이를 사용하는 이유는 데이터를 받거나, 웹 서비스와 상호작용하거나, API를 통해 기능을 실행하기 위해서죠.
-
 ## How to: (어떻게 하나요?)
 PowerShell에서 HTTP 요청을 보내는 가장 간단한 방법은 `Invoke-WebRequest` 명령어를 사용하는 거에요. 예시를 들어 볼까요?
 

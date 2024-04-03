@@ -15,9 +15,6 @@ title: Trabalhando com YAML
 weight: 41
 ---
 
-## O Que & Por Quê?
-Elm não possui suporte nativo para YAML, um formato de serialização de dados frequentemente utilizado para arquivos de configuração ou compartilhamento de dados, devido à sua forte ênfase em segurança de tipos e resultados previsíveis. No entanto, programadores frequentemente encontram YAML ao lidar com APIs ou configurações no desenvolvimento web, necessitando métodos confiáveis para analisar dados YAML para o ecossistema estritamente tipado de Elm para integração e manipulação sem problemas.
-
 ## Como Fazer:
 Para lidar com YAML em Elm, normalmente é preciso converter YAML para JSON fora do Elm e então usar a funcionalidade de decodificador JSON integrada do Elm para trabalhar com os dados. Embora esta abordagem exija uma etapa adicional de conversão, ela aproveita o forte sistema de tipos do Elm para garantir a integridade dos dados. Ferramentas populares para conversão de YAML para JSON incluem conversores online ou serviços de backend. Uma vez que você tenha JSON, pode usar o módulo `Json.Decode` do Elm para trabalhar com os dados.
 

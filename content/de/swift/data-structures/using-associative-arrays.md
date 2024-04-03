@@ -14,12 +14,7 @@ title: Verwendung von assoziativen Arrays
 weight: 15
 ---
 
-## Was & Warum?
-
-Assoziative Arrays, in Swift als Wörterbücher (dictionaries) bekannt, ermöglichen es Ihnen, Daten als Schlüssel-Wert-Paare zu speichern und zu verwalten. Programmierer verwenden sie, um Daten effizient zu organisieren, was den Zugriff und die Manipulation von Werten basierend auf ihren einzigartigen Schlüsseln erleichtert.
-
 ## Wie man:
-
 Swift macht die Arbeit mit assoziativen Arrays unkompliziert. Hier ist, wie Sie ein Swift-Wörterbuch deklarieren, hinzufügen, entfernen und Elemente darin zugreifen können:
 
 ```Swift
@@ -51,7 +46,6 @@ for (fruit, color) in fruitColors {
 Wörterbücher sind unglaublich vielseitig, da sie es Ihnen ermöglichen, dynamisch auf Daten zuzugreifen und diese zu manipulieren. Ihre ungeordnete Natur hat keinen Einfluss auf die Geschwindigkeit des Datenabrufs, was ein bedeutender Vorteil beim Umgang mit großen Datenmengen ist.
 
 ## Vertiefung
-
 Die Implementierung von Wörterbüchern als assoziative Arrays in Swift stammt aus ihrer leistungsfähigen Fähigkeit, eindeutige Schlüssel zu Werten zuzuordnen. Historisch gesehen haben Programmiersprachen dieses Konzept unter verschiedenen Namen wie Hash-Tabellen oder Maps implementiert, was auf ihre Funktionalität anspielt, eine "Karte" zwischen Schlüsseln und Werten zu erstellen.
 
 In Swift sind Wörterbücher für die Leistung optimiert, indem sie hashbare Schlüssel für effizienten Datenabruf nutzen. Dies bedeutet, dass der `Key` Typ in einem `[Key: Value]` Wörterbuch dem `Hashable` Protokoll entsprechen muss, was bei den meisten Standardtypen von Swift wie `Int`, `String` und `Double` der Fall ist.

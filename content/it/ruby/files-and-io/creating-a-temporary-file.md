@@ -11,9 +11,6 @@ title: Creazione di un file temporaneo
 weight: 21
 ---
 
-## What & Why? (Che Cosa e Perché?)
-Creare un file temporaneo significa generare un file che è destinato ad essere usato per un breve periodo. I programmatori lo fanno per manipolare dati che non necessitano di una conservazione a lungo termine o per evitare conflitti con altri processi.
-
 ## How to: (Come Fare:)
 Ruby rende semplice la creazione di file temporanei con la libreria `Tempfile`. Ecco un esempio base:
 

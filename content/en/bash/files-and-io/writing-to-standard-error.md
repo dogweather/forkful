@@ -10,9 +10,6 @@ title: Writing to standard error
 weight: 25
 ---
 
-## What & Why?
-Writing to standard error (stderr) in Bash is about directing error messages or any important diagnostic output separate from the standard output (stdout). Programmers do this to ensure that error messages can be easily identified, logged, or even ignored, aiding in debugging and logging processes.
-
 ## How to:
 In Bash, you use `>&2` to redirect output to stderr. Here's a basic example:
 

@@ -10,9 +10,6 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-Rounding numbers means adjusting them to the nearest integer or specified decimal place. It's a staple in programming for reducing complexity, enhancing performance, and for times when precision beyond a certain point doesn't add value.
-
 ## How to:
 ```lua
 -- Basic rounding in Lua doesn't come built-in, but you can define a function:

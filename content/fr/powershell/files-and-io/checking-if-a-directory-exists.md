@@ -15,9 +15,6 @@ title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---
 
-## Quoi & Pourquoi ?
-Dans PowerShell, vérifier si un répertoire existe est une tâche courante qui aide les scripts à prendre des décisions basées sur la structure du système de fichiers—comme éviter les erreurs en confirmant qu'un répertoire cible est en place avant de tenter de lire ou d'écrire dedans. C'est essentiel pour assurer que votre script se comporte de manière fiable dans des environnements divers.
-
 ## Comment faire :
 PowerShell offre une manière directe de vérifier la présence d'un répertoire en utilisant le cmdlet `Test-Path`. Ce cmdlet retourne une valeur Booléenne indiquant si le chemin spécifié existe. Voici comment vous pouvez l'utiliser :
 

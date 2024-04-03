@@ -10,9 +10,6 @@ title: Webseite herunterladen
 weight: 42
 ---
 
-## Was & Warum?
-Das Herunterladen einer Webseite bedeutet, ihre Daten zu erfassen und lokal zu speichern. Programmierer tun dies, um Inhalte zu analysieren, zu archivieren oder offline zu verarbeiten.
-
 ## How to:
 Hier ist ein einfacher Weg, um mit Java eine Webseite herunterzuladen:
 

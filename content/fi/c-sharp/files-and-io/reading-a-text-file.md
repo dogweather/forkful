@@ -11,9 +11,6 @@ title: Tekstitiedoston lukeminen
 weight: 22
 ---
 
-## What & Why? (Mitä ja miksi?)
-Lukemalla tekstitiedoston C#:ssa voit hakea dataa tiedostoista ohjelmasi käyttöön. Tämä on välttämätön taito tiedon käsittelyä, säilytystä ja analysointia varten.
-
 ## How to: (Kuinka?)
 ```C#
 using System;
@@ -43,6 +40,8 @@ Hei, tässä on esimerkkitiedoston tekstiä!
 ```
 
 ## Deep Dive (Syväluotaus)
+
+
 ### Historiallinen konteksti
 Alkujaan tekstiedostojen lukeminen oli lähellä käyttöjärjestelmän toimintoja. C# tekee siitä helpompaa abstraktoimalla monimutkaiset asiat.
 

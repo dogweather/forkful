@@ -11,9 +11,6 @@ title: Konvertere en dato til en streng
 weight: 28
 ---
 
-## What & Why?
-Dato til tekstkonvertering innebærer å endre en dato-representasjon til en lesbar tekststreng. Programmerere gjør dette for å vise datoen i et format som er forståelig for brukeren eller for å formatere datoen for logging og rapporter.
-
 ## How to:
 ```Bash
 # For å vise dagens dato:

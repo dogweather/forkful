@@ -11,9 +11,6 @@ title: Att arbeta med TOML
 weight: 39
 ---
 
-## Vad & Varför?
-Att arbeta med TOML innebär att tolka och generera TOML-data (Toms Uppenbara, Minimala Språk) med Haskell. Programmerare gör det för att enkelt hantera konfigurationsfiler eller datautbyte med starka typgarantier och minimal syntaxkrångel.
-
 ## Hur:
 Först, se till att du har ett TOML-tolkande bibliotek. För Haskell är `htoml` ett populärt val. Du kommer att behöva lägga till det i ditt projekts beroenden.
 

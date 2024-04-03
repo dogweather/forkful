@@ -12,12 +12,7 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-
-En interaktiv skal, eller Read-Eval-Print Loop (REPL), tillåter användare att mata in kommandon, exekvera dem och se resultaten i realtid. Programmerare använder REPLs för snabb prototyping, att testa kodsnuttar, eller debugga i en mer interaktiv och iterativ miljö, vilket ökar produktivitet och förståelse för koden.
-
 ## Hur:
-
 Visual Basic for Applications (VBA) stödjer inte nativt en interaktiv skal eller REPL-upplevelse som man ser i språk som Python eller JavaScript. Dock kan du simulera denna upplevelse till en viss grad med Händelsefönstret i VBA IDE (Integrerad Utvecklingsmiljö).
 
 **Att komma åt Händelsefönstret:**
@@ -57,7 +52,6 @@ Call SayHello
 **Notera:** Händelsefönstret har begränsningar. Det är utmärkt för snabba tester och direkta funktionsanrop, men det stödjer inte att definiera funktioner eller subrutiner direkt inom det. Komplexa felsöknings- och programmeringsuppgifter kan kräva fullständig modulutveckling.
 
 ## Fördjupning
-
 Händelsefönstret i VBA tjänar som den närmaste motsvarigheten till interaktiva skal som finns i andra programmeringsekosystem, trots dess begränsningar. Historiskt har VBA varit fokuserat på att utöka funktionerna i Microsoft Office-applikationer genom skript och makron snarare än fristående programutveckling, vilket kanske förklarar frånvaron av en fullfjädrad REPL.
 
 För uppgifter som kräver omfattande interaktiv testning eller komplex logikutveckling kan andra programmeringsmiljöer utrustade med inbyggt REPL-stöd, såsom Python med sitt IDLE, eller JavaScript med Node.js, erbjuda bättre alternativ. Dessa miljöer erbjuder inte bara interaktiva skal utan också mer robust programmering, felsökning och testfaciliteter.

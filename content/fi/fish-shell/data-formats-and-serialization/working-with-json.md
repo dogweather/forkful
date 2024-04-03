@@ -14,12 +14,7 @@ title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---
 
-## Mikä & Miksi?
-
-JSON-tiedon käsittely Fish Shellissä sisältää JSON-datan jäsentämisen ja luomisen, mikä on yleinen tehtävä sovellusten konfiguroinnissa, API-vuorovaikutuksessa ja komentorivin työnkulkujen sujuvoittamisessa. Koska JSON on kaikkialla läsnä oleva web- ja sovelluskehityksessä, sen käsittelyn hallinta suoraan shellissä voi merkittävästi parantaa automaation ja datan käsittelyn tehokkuutta ohjelmoijille.
-
 ## Kuinka:
-
 Fish Shellillä itsellään ei ole sisäänrakennettuja työkaluja JSON-datan jäsentämiseen ja luomiseen. Kuitenkin, se integroituu saumattomasti kolmannen osapuolen työkalujen, kuten `jq`:n kanssa JSON-prosessoinnissa. `jq` on tehokas ja monipuolinen komentorivin JSON-prosessori, joka mahdollistaa rakenteellisen datan viipaloinnin, suodatuksen, kartoituksen ja muuntamisen yksinkertaisella ja ilmaisuvoimaisella kielellä.
 
 ### JSON-datan jäsentäminen jq:lla

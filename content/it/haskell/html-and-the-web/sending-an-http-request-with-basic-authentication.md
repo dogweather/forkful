@@ -10,9 +10,6 @@ title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---
 
-## What & Why?
-L'autenticazione di base HTTP è un metodo per inviare le credenziali (username e password) in un'intestazione HTTP. I programmatori la utilizzano per accedere a server e servizi web che richiedono identificazione.
-
 ## How to:
 Per eseguire una richiesta HTTP con autenticazione di base in Haskell, utilizziamo la libreria `http-conduit`. Installala con `cabal install http-conduit`.
 

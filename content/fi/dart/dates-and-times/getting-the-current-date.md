@@ -13,9 +13,6 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mikä ja miksi?
-Nykyisen päivämäärän saaminen Dartissa sisältää järjestelmän kyselyn nykyisen päivämäärän ja ajan osalta. Tätä toiminnallisuutta käytetään yleisesti sovelluksissa ominaisuuksiin, kuten tapahtumien aikaleimaus, nykyisen päivämäärän näyttäminen käyttäjille tai kestojen laskeminen. Nykyisen päivämäärän tehokas noutaminen ja käsittely on perustavanlaatuinen aikataulutusta, lokiintia ja aikaan liittyviä ominaisuuksia varten.
-
 ## Miten:
 Dartin ydin kirjasto tarjoaa suoraviivaisen pääsyn nykyiseen päivämäärään ja aikaan `DateTime` luokan kautta. Tässä on perusesimerkki nykyisen päivämäärän saamiseksi:
 

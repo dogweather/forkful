@@ -13,12 +13,7 @@ title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---
 
-## Hva & Hvorfor?
-
-Regulære uttrykk (regex) i Fish Shell lar deg søke, matche og manipulere strenger basert på spesifikke mønstre. Programmerere bruker regex til oppgaver som inndata-validering, parsing og tekstbehandling fordi det tilbyr en kompakt og kraftfull måte å spesifisere komplekse tekst mønstre på.
-
 ## Hvordan:
-
 Selv om Fish Shell i seg selv ikke har en innebygd kommando for regex, bruker den effektivt eksterne kommandoer som `grep`, `sed` og `awk` som støtter regex. Dette lar deg inkludere regex-operasjoner i skriptene dine.
 
 ### Grunnleggende Mønstersøk med `grep`

@@ -9,11 +9,12 @@ title: "\u0412\u0438\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F \u0434\u043
 weight: 7
 ---
 
-## What & Why?
 ## Що та Навіщо?
 Finding the length of a string means getting the number of characters it contains. Programmers do this to validate input, process text data, or just to manage string data efficiently.
 
 ## How to:
+
+
 ## Як це зробити:
 ```Lua
 -- Basic usage
@@ -36,6 +37,8 @@ end
 ```
 
 ## Deep Dive
+
+
 ## Поглиблений Аналіз
 In older programming languages, strings were different and getting their length was not this straightforward. Lua uses a simple `#` operator to find a string's length. It counts the number of bytes, which, for UTF-8 encoded strings, may differ from the expected character count. It's a direct operation with no extra frills — fast and memory-efficient.
 
@@ -49,6 +52,8 @@ print(utf8.len("Привіт"))  -- Output: 6
 This library handles multi-byte characters correctly. Implementation-wise, finding the length of a string is a matter of iterating over the string and counting elements, which languages handle differently. In Lua, simplicity is key, keeping the language approachable and code readable.
 
 ## See Also
+
+
 ## Дивіться також
 For more on strings in Lua:
 - The official Lua documentation on strings: https://www.lua.org/manual/5.4/manual.html#6.4

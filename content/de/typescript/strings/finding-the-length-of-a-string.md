@@ -11,9 +11,6 @@ title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---
 
-## Was & Warum?
-Die Länge eines Strings in TypeScript zu finden, bedeutet, zu ermitteln, wie viele Zeichen der String enthält. Programmierer müssen das häufig tun, um Texteingaben zu validieren, Schleifen zu steuern oder Daten zu manipulieren.
-
 ## So geht's:
 Um die Länge eines Strings zu bekommen, nutzt du die `.length` Eigenschaft. Hier ein schnelles Beispiel:
 

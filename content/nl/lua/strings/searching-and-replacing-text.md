@@ -12,9 +12,6 @@ title: Tekst zoeken en vervangen
 weight: 10
 ---
 
-## Wat & Waarom?
-Tekst zoeken en vervangen betekent specifieke tekenreeksen in een tekstblok omwisselen met andere. Programmeurs doen dit voor taken zoals het herstellen van fouten, het bijwerken van informatie of het formatteren van gegevens.
-
 ## Hoe:
 De `string.gsub` functie van Lua is je eerste keuze voor zoeken en vervangen. Het werkt als volgt:
 

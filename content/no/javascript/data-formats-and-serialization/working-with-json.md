@@ -12,11 +12,8 @@ title: Arbeider med JSON
 weight: 38
 ---
 
-## Hva & Hvorfor?
-
-JSON (JavaScript Object Notation) er et lettvekts datautvekslingsformat, enkelt for mennesker å lese og skrive og for maskiner å analysere og generere. Programmerere bruker det til å lagre og transportere data i webapplikasjoner, noe som gjør det til ryggraden i moderne API og webtjenestekommunikasjon.
-
 ## Hvordan:
+
 
 ### Parsing av JSON
 For å konvertere en JSON-streng til et JavaScript-objekt, bruk `JSON.parse()`.

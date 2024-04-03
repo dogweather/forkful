@@ -10,12 +10,7 @@ title: Manejo de errores
 weight: 16
 ---
 
-## ¿Qué y por qué?
-
-Manejar errores significa escribir código que pueda lidiar con las cosas cuando salen mal. Los programadores lo hacen para prevenir fallos y para asegurarse de que sus programas puedan recuperarse de manera controlada cuando la Ley de Murphy ataca.
-
 ## Cómo hacerlo:
-
 En Elixir, a menudo usamos el emparejamiento de patrones y la declaración `case` para manejar diferentes resultados, incluidos los errores.
 
 ```elixir
@@ -46,7 +41,6 @@ Error: No se puede dividir entre cero.
 Cuando ejecutas este código de Elixir, obtendrás o una división exitosa o un mensaje de error, dependiendo de tu entrada. ¡Aquí no hay fallos!
 
 ## Inmersión Profunda
-
 Hace tiempo, el manejo de errores a menudo se trataba de verificar valores de retorno. Sin embargo, con las raíces funcionales de Elixir, tenemos el emparejamiento de patrones y tuplas etiquetadas, como `{:ok, value}` o `{:error, reason}`, que son más elegantes.
 
 Hay otras maneras de manejar errores en Elixir:
@@ -57,7 +51,6 @@ Hay otras maneras de manejar errores en Elixir:
 En términos de implementación, Elixir se basa en la robustez de Erlang. Trata los errores como otro tipo de mensaje a ser manejado con toda la bondad del emparejamiento de patrones y la funcionalidad.
 
 ## Véase también
-
 Para lectura adicional sobre manejo de errores en Elixir, consulta:
 
 - La guía oficial de Elixir sobre [manejo de errores](https://elixir-lang.org/getting-started/try-catch-and-rescue.html).

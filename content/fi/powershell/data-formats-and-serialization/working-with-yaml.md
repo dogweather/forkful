@@ -13,9 +13,6 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä ja miksi?
-YAML, tai YAML Ain't Markup Language, on ihmisen luettavissa oleva datan serialisointikieli. Ohjelmoijat käyttävät sitä usein konfiguraatiotiedostojen ja datan siirron eri kielten välillä. Sen yksinkertaisuus ja luettavuus tekevät siitä erityisen suositun tehtäviin, jotka liittyvät ympäristöjen, sovellusten tai palvelujen perustamiseen, joissa konfiguraatioiden on oltava kriittisiä ja niiden tulee olla helposti ymmärrettäviä ja muokattavia.
-
 ## Kuinka:
 PowerShell ei oletuksena sisällä sisäänrakennettua cmdlet-komentoa YAML:n jäsentämiseen, mutta se toimii saumattomasti YAML:n kanssa, kun hyödynnät `powershell-yaml` -moduulia tai muunnat YAML:n PowerShell-objektiksi käyttäen `ConvertFrom-Json`-komentoa yhdessä työkalun, kuten `yq`, kanssa.
 

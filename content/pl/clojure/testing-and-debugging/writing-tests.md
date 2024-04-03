@@ -14,9 +14,6 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i dlaczego?
-Pisanie testów w Clojure, podobnie jak w innych językach programowania, polega na tworzeniu dedykowanego kodu, który weryfikuje, czy główna baza kodu działa zgodnie z oczekiwaniami. Pomaga to w zapewnieniu poprawności, ułatwia refaktoryzację oraz podnosi stabilność kodu.
-
 ## Jak to zrobić:
 Clojure, wykorzystując JVM, obsługuje różne frameworki do testowania. Jednak powszechnie używaną wbudowaną biblioteką jest `clojure.test`. Oto prosty przykład:
 

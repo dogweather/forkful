@@ -16,16 +16,10 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Cái gì và Tại sao?
-
-Số phức, gồm một phần thực và một phần ảo (thường được ký hiệu là a + bi), mở rộng khái niệm của các số không chiều sang không gian hai chiều. Lập trình viên làm việc với số phức trong các lĩnh vực như kỹ thuật điện, tính toán lượng tử và động lực học chất lỏng để mô hình hoá các hiện tượng không thể biểu diễn chỉ trên một chiều của số thực.
-
 ## Làm thế nào:
-
 Chính Dart không bao gồm một thư viện tích hợp sẵn cho số phức, đòi hỏi việc triển khai một lớp số phức tùy chỉnh hoặc sử dụng một thư viện bên thứ ba. Một lựa chọn phổ biến cho các tác vụ tính toán khoa học, bao gồm hỗ trợ cho số phức, là `package:scidart`.
 
 ### Triển khai Lớp Số Phức Cơ Bản
-
 Đối với các thao tác đơn giản, bạn có thể dễ dàng định nghĩa lớp số phức của riêng mình:
 
 ```dart
@@ -55,7 +49,6 @@ void main() {
 ```
 
 ### Sử dụng SciDart cho Các Thao Tác Phức Tạp
-
 Đối với các thao tác phức tạp hơn hoặc khi hiệu năng là quan trọng, `package:scidart` cung cấp hỗ trợ đầy đủ cho số phức cùng với các chức năng tính toán khoa học khác. Đầu tiên, thêm SciDart vào pubspec.yaml của bạn:
 
 ```yaml

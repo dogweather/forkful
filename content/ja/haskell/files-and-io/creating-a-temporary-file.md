@@ -17,9 +17,6 @@ title: "\u4E00\u6642\u30D5\u30A1\u30A4\u30EB\u306E\u4F5C\u6210"
 weight: 21
 ---
 
-## What & Why? (何となぜ？)
-プログラム中で一時ファイルを生成するのはデータ一時的に保管するため。デバッグや中間結果の保存、または外部プロセスに渡すデータ用です。
-
 ## How to: (方法)
 ```Haskell
 import System.IO.Temp (withSystemTempFile)

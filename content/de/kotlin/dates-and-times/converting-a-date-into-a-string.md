@@ -11,9 +11,6 @@ title: Datum in einen String umwandeln
 weight: 28
 ---
 
-## Was & Warum?
-Das Umwandeln eines Datums in einen String bedeutet, ein Datum so zu formatieren, dass es als lesbare Zeichenkette dargestellt wird. Programmierer machen das, um Daten benutzerfreundlich in Apps und Webseiten anzuzeigen oder sie in einem bestimmten Format zu speichern.
-
 ## So geht's:
 ```Kotlin
 import java.text.SimpleDateFormat

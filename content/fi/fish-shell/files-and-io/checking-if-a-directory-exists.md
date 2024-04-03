@@ -15,9 +15,6 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mikä ja miksi?
-Hakemiston olemassaolon tarkistaminen Fish Shellissä mahdollistaa skriptien tehdä päätöksiä perustuen hakemistorakenteiden läsnäoloon tai puuttumiseen, mahdollistaen tehtäviä kuten ehdolliset tiedosto-operaatiot, lokitiedot tai ympäristön asetukset. Tämä tekniikka on olennainen osa kestävien skriptien kirjoittamisessa, jotka vuorovaikuttavat tiedostojärjestelmän kanssa ennustettavalla tavalla.
-
 ## Miten:
 Fish Shell käyttää `test`-komentoa tarkistaakseen tiedostotyypit ja -ominaisuudet, mukaan lukien onko kohde hakemisto. Tässä on perusmalli hakemiston olemassaolon tarkistamiseksi:
 

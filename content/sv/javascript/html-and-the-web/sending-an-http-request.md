@@ -11,9 +11,6 @@ title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## What & Why?
-HTTP-begäran är hur din kod frågar efter data or skickar information till en server. Programmerare gör detta för att interagera med webbtjänster, hämta innehåll eller skicka användardata.
-
 ## How to:
 Använd `fetch` för att skicka en enkel GET-begäran:
 

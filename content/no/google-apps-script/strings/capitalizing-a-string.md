@@ -14,12 +14,7 @@ title: "\xC5 gj\xF8re om en streng til store bokstaver"
 weight: 2
 ---
 
-## Hva & Hvorfor?
-
-Å håndtere en streng innebærer å endre inndata slik at det første tegnet er stor bokstav mens resten er små bokstaver, ofte brukt for formatering av navn eller titler. Programmerere gjør dette for å sikre datakonsistens og forbedre lesbarheten i brukergrensesnitt eller dokumenter.
-
 ## Hvordan:
-
 Google Apps Script, som er basert på JavaScript, tillater flere metoder for å håndtere en streng, selv uten en innebygd funksjon. Her er et par korte eksempler:
 
 **Metode 1: Bruk av charAt() og slice()**
@@ -52,7 +47,6 @@ console.log(result);  // Utdata: Hello, world
 Begge metodene sikrer at det første tegnet i strengen er stor bokstav, og resten er små bokstaver, egnet for en rekke applikasjoner, inkludert men ikke begrenset til manipulering av Google Sheets eller dokumentredigering via Apps Script.
 
 ## Dypdykk
-
 Å håndtere strenger i Google Apps Script er greit, og utnytter JavaScripts kraftige funksjoner for strengmanipulering. Historisk sett tilbyr språk som Python innebygde metoder som `.capitalize()` for å oppnå dette, noe som plasserer et lite ekstra skritt for JavaScript og Apps Script-programmerere. Imidlertid oppmuntrer fraværet av en innebygd funksjon i JavaScript/Google Apps Script til fleksibilitet og en dypere forståelse av teknikker for strengmanipulering. 
 
 For komplekse scenarioer, som å håndtere hver ord i en streng (Title Case), kan programmerere kombinere regex-metoder med `split()` og `map()`-funksjoner for å behandle hvert ord individuelt. Selv om Google Apps Script ikke tilbyr en direkte metode for håndtering av strenger, gir bruken av eksisterende JavaScript-metoder for strengmanipulering stor fleksibilitet, slik at utviklere kan håndtere strenger effektivt i henhold til deres spesifikke behov. 

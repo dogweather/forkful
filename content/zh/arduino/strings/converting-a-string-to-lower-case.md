@@ -15,9 +15,6 @@ title: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199"
 weight: 4
 ---
 
-## 什么 & 为什么？
-字符串转换为小写，就是将所有大写字母变为小写。这在处理用户输入或做不区分大小写的比较时很有用。
-
 ## 如何：
 ```Arduino
 String original = "Hello, Arduino!";

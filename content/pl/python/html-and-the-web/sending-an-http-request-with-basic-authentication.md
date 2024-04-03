@@ -12,9 +12,6 @@ title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---
 
-## Co i dlaczego?
-Wysyłanie żądania HTTP z podstawową autentykacją to proces, gdzie klient HTTP przesyła swoją nazwę użytkownika i hasło w celu uzyskania dostępu do zasobów serwera. Programiści używają tego mechanizmu, żeby zapewnić bezpieczny dostęp do API czy zawartości internetowej wymagającej weryfikacji tożsamości.
-
 ## Jak to zrobić:
 Wykorzystamy bibliotekę `requests` do wysłania żądania HTTP. Upewnij się, że instalacja tej biblioteki jest już wykonana (`pip install requests`). Oto przykład:
 

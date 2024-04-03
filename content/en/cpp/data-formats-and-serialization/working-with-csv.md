@@ -11,14 +11,10 @@ title: Working with CSV
 weight: 37
 ---
 
-## What & Why?
-
-Working with CSV (Comma Separated Values) files is about processing and manipulating data stored in a simple text format, where each line of the text represents a row in a table, and commas separate individual columns. Programmers utilize this to import, export, and manage data across different systems due to CSV's wide acceptance as a lightweight, human-readable data interchange format.
-
 ## How to:
 
-### Reading a CSV file using C++ Standard Library:
 
+### Reading a CSV file using C++ Standard Library:
 ```cpp
 #include <fstream>
 #include <iostream>
@@ -50,7 +46,6 @@ int main() {
 ```
 
 ### Writing to a CSV file:
-
 ```cpp
 #include <fstream>
 #include <vector>
@@ -76,7 +71,6 @@ int main() {
 ```
 
 ### Using a third-party library: `csv2`:
-
 While the C++ Standard Library provides the basic tools for working with files and strings, leveraging third-party libraries can simplify CSV processing. One such library is `csv2`, known for its ease of use and efficiency.
 
 - Installation: Typically installed via package managers like Conan or directly from its GitHub repository.

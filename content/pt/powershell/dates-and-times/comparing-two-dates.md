@@ -11,9 +11,6 @@ title: Comparando duas datas
 weight: 27
 ---
 
-## O Que & Porquê?
-Comparar duas datas é essencialmente medir a diferença entre elas ou determinar qual vem antes ou depois. Programadores fazem isso para manipular períodos de tempo em tarefas como agendamentos, validações de campos de datas e controle de eventos cronológicos.
-
 ## Como Fazer:
 Vamos direto ao ponto com exemplos em PowerShell:
 
@@ -53,7 +50,6 @@ Existem alternativas à comparação direta de datas, como o uso de funções .N
 Quanto aos detalhes de implementação, o PowerShell trata datas como `DateTime` objetos e oferece um conjunto rico de operações e métodos para trabalhar com eles. O método `Subtract()`, por exemplo, pode ser usado para calcular a diferença entre datas, enquanto o operador `-` faz o mesmo de uma forma mais direta e legível.
 
 ## See Also
-
 - Documentação oficial do [Get-Date](https://docs.microsoft.com/pt-pt/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
 - Guia sobre [Comparação de Datas e Horas](https://docs.microsoft.com/pt-pt/dotnet/api/system.datetime.compare?view=net-6.0) no .NET
 - Página do [TimeSpan](https://docs.microsoft.com/pt-pt/dotnet/api/system.timespan?view=net-6.0) para uma compreensão mais aprofundada das diferenças entre datas

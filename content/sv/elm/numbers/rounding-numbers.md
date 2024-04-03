@@ -11,12 +11,7 @@ title: Avrundning av tal
 weight: 13
 ---
 
-## Vad & Varför?
-
-Att avrunda tal innebär att justera ett decimaltal till dess närmaste hela värde eller till ett angivet antal decimaler. Programmerare avrundar för att minska komplexitet, förbättra läsbarhet eller matcha precisionkrav.
-
 ## Hur man gör:
-
 Elms `Basics`-modul tillhandahåller finurliga funktioner för avrundning: `round`, `floor` och `ceiling`. Så här använder du dem.
 
 ```elm
@@ -46,7 +41,6 @@ toLocaleString 2 3.14159 --> "3.14"
 ```
 
 ## Fördjupning
-
 Elm är ett starkt typat funktionellt språk som delegerar sidoeffekter till arkitekturens "kanter". Detta betyder att funktioner som avrundning måste vara rena och förutsägbara. Historiskt sett är avrundning en vanlig operation i många programmeringsspråk som hanterar flyttalsaritmetikens oprecision.
 
 Elms tillvägagångssätt för avrundning är rakt på sak – funktionerna är rena och följer matematiska definitioner för avrundning, uppåt- och nedåtrundning. Elm förutser vanliga behov genom att tillhandahålla inbyggda funktioner, eftersom precisionshantering ofta är ett krav, speciellt inom finans och grafik.
@@ -56,7 +50,6 @@ Alternativ till Elms inbyggda funktioner kan inkludera anpassade genomföranden 
 I den nuvarande versionen använder Elm JavaScripts underliggande flyttalsmatematik för dessa operationer, och håller sig därmed konsekvent med IEEE 754-standarden, vilket är något att komma ihåg när man överväger precision och potentiella flyttalsfel.
 
 ## Se även
-
 - Elms officiella `Basics`-moduldokumentation: https://package.elm-lang.org/packages/elm/core/latest/Basics
 - En detaljerad titt på hur flyttal fungerar i datorberäkningar: https://floating-point-gui.de/
 - Elm `Float`-modulen för fler flyttalsoperationer: https://package.elm-lang.org/packages/elm/core/latest/Float

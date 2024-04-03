@@ -14,9 +14,6 @@ title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---
 
-## Was & Warum?
-Reguläre Ausdrücke in der Programmierung sind Zeichenfolgen, die ein Suchmuster definieren und typischerweise für die Suche und Manipulation von Zeichenketten verwendet werden. Haskell-Programmierer nutzen reguläre Ausdrücke für Aufgaben, die von der einfachen Zeichenkettenübereinstimmung bis zur komplexen Textverarbeitung reichen, und profitieren dabei von ihrer Effizienz und Vielseitigkeit im Umgang mit Textdaten.
-
 ## Wie:
 In Haskell sind Regex-Funktionalitäten nicht Teil der Standardbibliothek, was die Verwendung von Drittanbieterpaketen wie `regex-base` zusammen mit einem kompatiblen Backend wie `regex-posix` (für POSIX-Regex-Unterstützung), `regex-pcre` (für Perl-kompatible Regex) usw. erforderlich macht. So können Sie diese Pakete verwenden, um mit regulären Ausdrücken zu arbeiten.
 
@@ -31,7 +28,6 @@ cabal install regex-pcre
 ```
 
 ### Verwendung von `regex-posix`:
-
 ```haskell
 import Text.Regex.Posix ((=~))
 
@@ -52,7 +48,6 @@ main = do
 ```
 
 ### Verwendung von `regex-pcre`:
-
 ```haskell
 import Text.Regex.PCRE ((=~))
 

@@ -10,9 +10,6 @@ title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---
 
-## O que & Por quê?
-Números complexos consistem de uma parte real e uma imaginária. Programadores os utilizam em campos como processamento de sinal, mecânica quântica, e sempre que o cálculo exige, porque números reais comuns simplesmente não são suficientes.
-
 ## Como fazer:
 O Bash não suporta números complexos nativamente. Você frequentemente usará uma ferramenta externa como `bc` com sua opção `-l`. Aqui está como manipular números complexos no Bash:
 

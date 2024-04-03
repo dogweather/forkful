@@ -11,9 +11,6 @@ title: "Interpolera en str\xE4ng"
 weight: 8
 ---
 
-## Vad & Varför?
-Stringinterpolation innebär att blanda in variabler i en textsträng. Det gör kod läsbar och flexibel – vi slipper klumpigt plus-tecken (+) för att bygga meddelanden.
-
 ## Så här gör du:
 ```C++
 #include <iostream>

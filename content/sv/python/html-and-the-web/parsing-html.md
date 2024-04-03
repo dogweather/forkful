@@ -11,9 +11,6 @@ title: Tolka HTML
 weight: 43
 ---
 
-## What & Why? (Vad & Varför?)
-Parsing HTML innebär att omvandla HTML-kod till en struktur som ett program eller skript kan förstå och manipulera. Programmerare gör detta för att interagera med webbsidor, extrahera data, automatisera webbuppgifter eller testa webbapplikationer.
-
 ## How to: (Hur?)
 ```python
 from bs4 import BeautifulSoup

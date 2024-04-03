@@ -20,9 +20,6 @@ title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uF
 weight: 34
 ---
 
-## 什么与为何？
-Rust 交互式 shell，或 REPL（读取-求值-打印 循环），让你能即时运行 Rust 代码，看到即时结果，非常适合实验或学习。程序员使用它来测试代码片段、调试，或只是玩弄语言特性，无需编译整个项目的开销。
-
 ## 如何操作：
 截至目前，Rust 还没有官方随附的 REPL。你可以使用第三方工具如 `evcxr_repl`。通过 Cargo 安装它：
 

@@ -14,9 +14,6 @@ title: Encontrando o comprimento de uma string
 weight: 7
 ---
 
-## O Que e Por Quê?
-Encontrar o comprimento de uma String em Dart é sobre determinar o número de unidades de código (essencialmente, o número de caracteres se pensado de forma simplista) em uma dada String. Programadores fazem isso para manipular strings de maneira mais precisa, como validar entradas, truncar textos de exibição, ou processar formatos de dados onde o comprimento importa (por exemplo, protocolos com mensagens prefixadas por comprimento).
-
 ## Como fazer:
 Dart torna simples obter o comprimento de uma string usando a propriedade `length`. Aqui está um exemplo básico:
 

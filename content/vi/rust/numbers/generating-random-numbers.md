@@ -18,12 +18,7 @@ title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---
 
-## Là gì và Tại sao?
-
-Việc tạo ra các số ngẫu nhiên trong Rust liên quan đến việc sử dụng các thư viện để tạo ra các giá trị số không dự đoán trước, điều này là không thể thiếu cho các nhiệm vụ từ mã hoá và mô phỏng đến trò chơi và thuật toán ngẫu nhiên.
-
 ## Làm thế nào:
-
 Rust dựa vào các crates bên ngoài để tạo số ngẫu nhiên, với `rand` là cái được sử dụng phổ biến nhất. Để bắt đầu tạo số ngẫu nhiên, bạn sẽ cần thêm `rand` vào tệp `Cargo.toml` của mình trước tiên:
 
 ```toml
@@ -59,7 +54,6 @@ Số Thực Ngẫu Nhiên: 0.9401077112175732
 Lưu ý rằng chạy lại chương trình sẽ tạo ra các giá trị khác nhau.
 
 ## Tìm hiểu sâu
-
 Việc tạo số ngẫu nhiên trong Rust, được hỗ trợ thông qua `rand` và các phụ thuộc của nó như `getrandom`, đại diện cho một trừu tượng rộng lớn qua các tiện ích hệ thống và các bộ tạo số thuật toán. Lịch sử, sự ngẫu nhiên trong máy tính đã tiến hóa từ các thuật toán đơn giản, dễ dự đoán đến các phương pháp an toàn mã hoá phức tạp. Cách tiếp cận của Rust bao hàm sự tiến hóa này qua tính năng mở rộng của nó `Rng`, có thể được hỗ trợ bởi các bộ tạo số khác nhau tùy thuộc vào chất lượng và hiệu suất ngẫu nhiên cần thiết.
 
 Đối với hầu hết các ứng dụng, dựa vào `rand` và RNG của hệ thống cung cấp một sự cân bằng tốt giữa sự đơn giản và entropy. Tuy nhiên, đối với các ứng dụng mã hoá, các crates như `rand` chuyển sang sử dụng `getrandom` để seeding, chính nó dựa vào các cơ chế đặc biệt của hệ điều hành (ví dụ, `/dev/urandom` trên các hệ thống giống Unix), đảm bảo ngẫu nhiên an toàn mã hoá.

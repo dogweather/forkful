@@ -23,9 +23,6 @@ title: "\u0420\u0430\u0431\u043E\u0442\u0430 \u0441 JSON"
 weight: 38
 ---
 
-## Что и Почему?
-JSON (JavaScript Object Notation) является повсеместно используемым форматом обмена данными в Интернете. Программисты используют JSON для удобной передачи данных между серверами и веб-клиентами благодаря его простоте и тому, что он изначально понятен JavaScript, а следовательно, и веб-браузерам.
-
 ## Как использовать:
 Для работы с JSON в Python необходим модуль `json`. Вот краткое руководство:
 
@@ -60,9 +57,17 @@ person_json = json.dumps(person_dict)
 print(person_json)
 ```
 
-### Пример вывода:
+### Генерация JSON (`json.dumps`):
 ```Python
-'{"name": "Alice", "age": 30, "city": "Wonderland"}'
+import json
+
+# Словарь Python
+person_dict = {'name': 'Alice', 'age': 30, 'city': 'Wonderland'}
+
+# Преобразуйте словарь в строку в формате JSON
+person_json = json.dumps(person_dict)
+
+print(person_json)
 ```
 
 ## Глубокое погружение

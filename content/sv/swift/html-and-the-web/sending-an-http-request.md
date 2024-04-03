@@ -11,9 +11,6 @@ title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-begäran är hur din app pratar med en webbserver: att begära data eller skickar information. Programmerare gör detta för att interagera med webbaserade tjänster, hämta uppdaterat innehåll eller posta användardata.
-
 ## How to:
 Använd `URLSession` för att hantera nätverkskommunikation. Här är ett enkelt exempel på att göra en GET-förfrågan till en JSON-API.
 

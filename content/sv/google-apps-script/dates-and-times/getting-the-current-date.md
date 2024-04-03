@@ -13,12 +13,7 @@ title: "H\xE4mta aktuellt datum"
 weight: 29
 ---
 
-## Vad & Varför?
-
-Att få det aktuella datumet i Google Apps Script handlar om att hämta det levande datumet och tiden, en vanlig uppgift för att automatisera uppgifter, logga och tidsstämpla i appar knutna till Googles ekosystem. Programmerare använder detta för dynamisk innehållsgenerering, deadline-spårning och schemaläggning inom Google Docs, Sheets och andra Googletjänster.
-
 ## Hur man gör:
-
 Google Apps Script, som bygger på JavaScript, erbjuder enkla metoder för att få det aktuella datumet. Du kan använda konstruktören `new Date()` för att skapa ett nytt datumobjekt som representerar det aktuella datumet och tiden. Så här kan du manipulera och visa detta i olika format.
 
 ```javascript
@@ -45,7 +40,6 @@ function showCurrentDate() {
 Dessa kodsnuttar demonstrerar hur man fångar och formaterar det aktuella datumet och tiden, och visar på mångsidigheten för olika programmeringsbehov inom Google Apps Script.
 
 ## Fördjupning
-
 Innan JavaScript fastställde `Date`-objektet, var programmerare tvungna att manuellt hålla koll på tid och datum genom mindre standardiserade och mer otympliga medel. Detta inkluderade användning av tidsstämpelintegers och hemmagjorda datumfunktioner, vilka varierade från en programmeringsmiljö till en annan och ledde till inkonsekvens och kompatibilitetsproblem.
 
 Introduktionen av `new Date()`-objektet i JavaScript, och därigenom Google Apps Script, standardiserade datum- och tidsoperationer, vilket gjorde dem mer intuitiva och minskade mängden kod som behövs för datumrelaterade operationer. Det är värt att notera att även om Googles Apps Scripts implementering är bekväm och tillräcklig för många tillämpningar inom Googles produktserie, kan den inte tillgodose alla scenarier, särskilt de som kräver komplex tidszonshantering eller exakt tidstämpelloggning i snabba miljöer.

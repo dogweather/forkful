@@ -25,16 +25,10 @@ title: "\u05E2\u05D5\u05D1\u05D3\u05D9\u05DD \u05E2\u05DD CSV"
 weight: 37
 ---
 
-## מה ולמה?
-
-עבודה עם CSV (Comma-Separated Values או ערכים מופרדים בפסיקים) כוללת קריאה מתוך קבצים בפורמט CSV וכתיבה אליהם, פורמט נפוץ לאחסון נתונים טבלאיים בטקסט פשוט. מתכנתים מתעסקים בקבצי CSV כדי להחליף נתונים בין יישומים שונים, מסדי נתונים, או לסייע במשימות של עיבוד וניתוח נתונים בקלות.
-
 ## איך לעשות:
-
 Kotlin, שהיא שפת תכנות סטטית שמתבצעת על חלקת ה-JVM, אינה כוללת ספריה מובנית לעבודה עם קבצי CSV. עם זאת, ניתן להשתמש במחלקות `BufferedReader` ו-`FileWriter` של Java לפעולות בסיסיות, או לנצל ספריות צד שלישי פופולריות כמו `kotlinx.serialization` ו-`opencsv` לפונקציונליות מתקדמת יותר.
 
 ### קריאה מקובץ CSV באמצעות BufferedReader:
-
 ```kotlin
 import java.io.BufferedReader
 import java.io.FileReader
@@ -60,7 +54,6 @@ _דוגמא לפלט:_
 ```
 
 ### כתיבה לקובץ CSV באמצעות FileWriter:
-
 ```kotlin
 import java.io.FileWriter
 
@@ -82,7 +75,6 @@ fun main() {
 הדבר יוצר או דורס את הקובץ `output.csv` עם הנתונים שסופקו.
 
 ### שימוש ב-kotlinx.serialization לסריאליזציה של CSV:
-
 תחילה, הוסף את התלות ל-`build.gradle.kts` שלך:
 
 ```kotlin
@@ -121,7 +113,6 @@ Jane Smith,25,London
 ```
 
 ### שימוש ב-OpenCSV לפעולות מתקדמות:
-
 הוסף את OpenCSV לתלותיות של הפרויקט שלך:
 
 ```kotlin

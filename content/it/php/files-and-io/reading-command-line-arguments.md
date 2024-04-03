@@ -11,9 +11,6 @@ title: Lettura degli argomenti della riga di comando
 weight: 23
 ---
 
-## What & Why? - Cosa e Perché?
-Leggere gli argomenti della linea di comando significa pescare dati direttamente dall'input dell'utente in un ambiente CLI (Command Line Interface). Lo facciamo per permettere ai nostri script PHP di essere flessibili, ricevere parametri esterni e comportarsi diversamente in base alle necessità.
-
 ## How to: - Come fare:
 ```PHP
 <?php

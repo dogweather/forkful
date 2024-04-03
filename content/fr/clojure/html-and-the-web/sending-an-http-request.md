@@ -11,9 +11,6 @@ title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---
 
-## Quoi & Pourquoi ?
-Envoyer une requête HTTP, c'est comme envoyer une lettre numérique à un serveur web pour obtenir des données ou déclencher une action. Les programmeurs le font pour communiquer avec des API ou des services web, pour récupérer des informations ou envoyer des instructions.
-
 ## Comment faire :
 ```Clojure
 ;; Add clj-http to your project dependencies

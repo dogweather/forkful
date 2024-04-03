@@ -13,11 +13,7 @@ title: Capitalizando una cadena de texto
 weight: 2
 ---
 
-## Qué y por qué?
-Capitalizar una cadena en Bash implica transformar el primer carácter de la cadena a mayúscula mientras que el resto de la cadena permanece sin cambios. Esta técnica se utiliza comúnmente para formatear la salida o cumplir con convenciones de codificación que requieren que ciertas cadenas comiencen con una letra mayúscula por legibilidad o preferencias estilísticas.
-
 ## Cómo hacerlo:
-
 Bash no tiene una función integrada específicamente para capitalizar cadenas, pero puedes lograr esta tarea usando expansión de parámetros o herramientas externas como `awk`. Aquí hay algunas formas de capitalizar una cadena en Bash:
 
 **Usando expansión de parámetros:**

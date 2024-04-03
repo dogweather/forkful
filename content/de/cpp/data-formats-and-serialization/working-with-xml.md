@@ -10,9 +10,6 @@ title: Arbeiten mit XML
 weight: 40
 ---
 
-## Was & Warum?
-Mit XML zu arbeiten bedeutet, XML-Daten (eXtensible Markup Language) zu parsen, zu erstellen und zu manipulieren. Programmierer verwalten XML, um strukturierten Datenaustausch, Konfiguration und mehr zu handhaben, aufgrund seiner plattformneutralen Natur.
-
 ## Wie:
 Hier ist eine einfache Art, XML mit der TinyXML-2-Bibliothek zu parsen:
 

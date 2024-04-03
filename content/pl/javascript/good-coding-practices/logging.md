@@ -12,9 +12,6 @@ title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---
 
-## Co i dlaczego?
-Logowanie, w największym skrócie, przypomina prowadzenie dziennika dla Twojej aplikacji – rejestruje zdarzenia, błędy i inne znaczące akcje, które mają miejsce podczas działania oprogramowania. Programiści robią to nie tylko, aby zrozumieć co się dzieje pod maską w czasie rzeczywistym, ale również by mieć historyczny zapis, który jest kluczowy do debugowania, audytowania i optymalizacji wydajności.
-
 ## Jak to zrobić:
 W standardzie, JavaScript oferuje prosty sposób na logowanie wiadomości do konsoli:
 

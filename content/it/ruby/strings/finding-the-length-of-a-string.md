@@ -10,9 +10,6 @@ title: Trovare la lunghezza di una stringa
 weight: 7
 ---
 
-## What & Why?
-Capire la lunghezza di una stringa significa contare i caratteri che la compongono. Lo facciamo per validare l'input, limitare il testo, o gestire la formattazione.
-
 ## How to:
 ```Ruby
 # Usiamo il metodo .length per ottenere la lunghezza di una stringa

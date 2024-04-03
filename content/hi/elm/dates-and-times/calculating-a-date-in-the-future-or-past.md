@@ -28,12 +28,7 @@ title: "\u092D\u0935\u093F\u0937\u094D\u092F \u092F\u093E \u0905\u0924\u0940\u09
 weight: 26
 ---
 
-## क्या और क्यों? (What & Why?)
-
-तारीख की गणना का मतलब है भविष्य या अतीत में किसी खास दिन की तलाश। प्रोग्रामर इसे ईवेंट्स, रिमाइंडर्स, और टाइम-बाउंड कार्यों को हैंडल करने के लिए करते हैं।
-
 ## कैसे करें? (How to:)
-
 Elm में एक date को manipulate करने के लिए हम `Time` package का इस्तेमाल कर सकते हैं। यहाँ एक सिंपल उदाहरण है:
 
 ```Elm
@@ -58,11 +53,9 @@ addDays days date =
 ```
 
 ## गहराई से समझ (Deep Dive)
-
 इतिहास में, तारीख की गणना हमेशा कैलेंडर सिस्टम्स और टाइमज़ोन्स के जटिल नियमों के कारण चुनौतीपूर्ण रही है। Elm में `Date` और `Time` पैकेज सरलीकृत इंटरफेसेज प्रदान करते हैं लेकिन पूरी तरह से बारीकियों को संभालने के लिए नहीं। उदाहरण के लिए, लीप इयर्स और डेलाइट सेविंग्स टाइम जैसे इश्यूज पर खास ध्यान देना पड़ता है। `moment.js` एक JavaScript लाइब्रेरी है जो इन जटिलताओं को हैंडल करती है, और Elm प्रोजेक्ट में JavaScript इंटरऑपरेबिलिटी का इस्तेमाल करके इसका लाभ उठाया जा सकता है।
 
 ## देखें इसे भी (See Also)
-
 - [Elm Time Documentation](https://package.elm-lang.org/packages/elm/time/latest/)
 - [Elm Date Documentation](https://package.elm-lang.org/packages/justinmimbs/date/latest/)
 - [Elm Guide on Time](https://guide.elm-lang.org/effects/time.html)

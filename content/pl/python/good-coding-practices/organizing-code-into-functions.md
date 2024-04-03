@@ -10,9 +10,6 @@ title: Organizacja kodu w funkcje
 weight: 18
 ---
 
-## Co i dlaczego?
-Organizacja kodu w funkcje polega na podziale kodu na wielokrotnie używalne bloki o określonych celach. Robimy to, aby kod był bardziej przejrzysty, łatwiejszy do odczytania, debugowania i aktualizacji.
-
 ## Jak to zrobić:
 Załóżmy, że piszesz skrypt do obliczania kwadratu i sześcianu liczby. Bez funkcji to nieład powtarzania:
 

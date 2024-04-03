@@ -10,9 +10,6 @@ title: Reading a text file
 weight: 22
 ---
 
-## What & Why?
-Reading a text file in Python is grabbing data from a file that's accessible on your disk or over a network. Programmers read files to use the stored data (like configurations, user input, logs, etc.) within their applications.
-
 ## How to:
 ```python
 # Reading the whole file at once

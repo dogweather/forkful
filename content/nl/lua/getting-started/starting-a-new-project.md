@@ -12,9 +12,6 @@ title: Een nieuw project starten
 weight: 1
 ---
 
-## Wat & Waarom?
-Een nieuw project starten betekent dat je de basis legt voor jouw briljante idee. Programmeurs trappen af om concepten om te zetten in code die praktisch iets nuttigs doet.
-
 ## Hoe te:
 ```Lua
 -- Laten we beginnen met een nieuw Lua project

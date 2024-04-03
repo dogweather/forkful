@@ -12,9 +12,6 @@ title: Werken met XML
 weight: 40
 ---
 
-## Wat & Waarom?
-XML is een opmaaktaal voor het coderen van documenten op een wijze die zowel door mensen als machines gelezen kan worden. Het is cruciaal in webservices, configuratiebestanden en gegevensuitwisseling omdat het gegevens draagt in een gestructureerd, hiërarchisch formaat.
-
 ## Hoe:
 Clojure biedt de `clojure.data.xml` bibliotheek voor XML-parsing en -generatie. Laten we eerst wat XML parsen:
 

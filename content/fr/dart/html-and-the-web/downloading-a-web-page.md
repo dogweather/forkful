@@ -13,12 +13,7 @@ title: "T\xE9l\xE9charger une page web"
 weight: 42
 ---
 
-## Quoi & Pourquoi ?
-
-Télécharger une page web implique de récupérer le contenu d'une page web via son URL pour le traitement ou le stockage. Les programmeurs font cela pour extraire des informations, surveiller les changements, ou archiver du contenu, ce qui en fait un élément de base dans le web scraping, le data mining, et les tâches de test automatisées.
-
 ## Comment faire :
-
 Dart fournit le package `http`, une bibliothèque tierce populaire pour effectuer des requêtes HTTP. Voici un exemple basique de comment l'utiliser pour télécharger une page web :
 
 D'abord, ajoutez le package `http` à votre `pubspec.yaml` :

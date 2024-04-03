@@ -10,9 +10,6 @@ title: Concatenando strings
 weight: 3
 ---
 
-## O que é & Por quê?
-Concatenar strings significa juntar duas ou mais sequências de caracteres para formar uma nova. Programadores fazem isso para construir mensagens, combinar dados e manipular texto de maneira dinâmica.
-
 ## Como fazer:
 Concatenar strings no Clojure é direto, graças à função `str`. Veja só:
 

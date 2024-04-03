@@ -14,9 +14,6 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mikä & Miksi?
-Nykyisen päivämäärän hankkiminen TypeScriptissä, joka on JavaScript-pohjainen kieli, mahdollistaa nykyisen päivämäärän ja ajan tiedon käyttämisen ja manipuloinnin. Ohjelmoijat tarvitsevat usein tätä toiminnallisuutta luodakseen aikaleimoja, aikataulutusta ja muita aikaan sidottuja piirteitä sovelluksiinsa.
-
 ## Kuinka:
 TypeScriptissä voit käyttää `Date`-objektia nykyisen päivämäärän ja ajan saamiseksi. Näin voit tehdä sen:
 

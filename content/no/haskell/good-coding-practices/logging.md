@@ -12,9 +12,6 @@ title: "Loggf\xF8ring"
 weight: 17
 ---
 
-## Hva & Hvorfor?
-Logging i programmering innebærer i bunn og grunn å etterlate seg et spor av "smuler" i form av registrerte hendelser eller meldinger, som kan brukes til å spore hva applikasjonen din gjør i et gitt øyeblikk. Programmerere gjør dette for å feilsøke problemer, overvåke systemets ytelse, og revidere oppførsel for sikkerhets- og overholdelsesgrunner.
-
 ## Hvordan:
 I Haskell kan logging implementeres ved hjelp av biblioteker som `monad-logger` eller `hslogger`. Her er et kjapt eksempel som bruker `monad-logger`:
 

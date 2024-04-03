@@ -10,9 +10,6 @@ title: "Loggf\xF8ring"
 weight: 17
 ---
 
-## Hva & Hvorfor?
-Logging er i bunn og grunn prosessen med å ta opp hendelser som inntreffer i en programvareapplikasjon. Programmerere logger disse hendelsene for å fange opp kjøretidsinformasjon, feilsøke problemer, overvåke systemoppførsel og skape en sporingslogg for sikkerhet og etterlevelse av regler.
-
 ## Hvordan:
 Her er en enkel måte å komme i gang med logging i Java ved å bruke den innebygde pakken `java.util.logging`.
 

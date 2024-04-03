@@ -14,12 +14,7 @@ title: Een string met hoofdletters maken
 weight: 2
 ---
 
-## Wat & Waarom?
-
-Het kapitaliseren van een tekenreeks in Visual Basic for Applications (VBA) houdt in dat je de eerste letter van elk woord in een tekenreeks omzet in een hoofdletter, terwijl je ervoor zorgt dat de rest in kleine letters staat. Programmeurs doen dit voor gegevensnormalisatie, het verbeteren van de leesbaarheid en het waarborgen van consistentie in tekstuele gegevensinvoer of -weergave.
-
 ## Hoe:
-
 VBA heeft geen ingebouwde functie specifiek voor het kapitaliseren van elk woord in een tekenreeks, zoals sommige andere programmeertalen dat wel hebben. Je kunt dit echter bereiken door een combinatie van enkele methoden en functies zoals `UCase`, `LCase`, en `Mid`.
 
 Hier is een eenvoudige voorbeeld over hoe je een tekenreeks kunt kapitaliseren:
@@ -46,7 +41,6 @@ End Sub
 De functie `CapitalizeString` splitst de invoertekenreeks in woorden, zet de eerste letter van elk woord om in een hoofdletter en voegt ze ten slotte weer samen om de correct gekapitaliseerde tekenreeks te vormen.
 
 ## Diepere Duik
-
 Visual Basic for Applications, ontstaan in de vroege jaren '90 als een macrotaal voor Microsoft Office-toepassingen, was ontworpen om een toegankelijk programmeermodel te bieden. De mogelijkheden voor tekenreeksmanipulatie, hoewel uitgebreid, missen enkele hogere abstracties die in nieuwere talen worden gevonden. Veel moderne programmeeromgevingen bieden een specifieke methode voor tekenreekshoofdlettergebruik, vaak aangeduid als titelgebruik of iets dergelijks. Python bevat bijvoorbeeld de `.title()` methode voor tekenreeksen.
 
 Bij vergelijking kan de afwezigheid van een enkele, ingebouwde functie in VBA om woorden in een tekenreeks te kapitaliseren lijken als een nadeel. Dit biedt echter programmeurs een dieper inzicht en controle over hoe zij tekst manipuleren en nuances aanpakken die niet strikt worden nageleefd door een generieke methode. Bijvoorbeeld, het omgaan met acroniemen of speciale gevallen waar bepaalde kleinere woorden in titels niet moeten worden gekapitaliseerd, kan beter op maat worden gemaakt in VBA via expliciete functies.

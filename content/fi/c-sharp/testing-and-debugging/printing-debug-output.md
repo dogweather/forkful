@@ -10,10 +10,6 @@ title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
 
-## What & Why?
-Mikä & Miksi?
-Debug-tulosteiden printtaaminen on koodin tulostamista, nähdäksemme mitä siellä tapahtuu. Käytämme sitä virheiden jäljittämiseen ja ohjelman toiminnan ymmärtämiseen.
-
 ## How to:
 Miten:
 ```C#

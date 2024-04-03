@@ -11,9 +11,6 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## What & Why?
-Extraire des sous-chaînes, c'est comme découper un morceau de baguette – on prend juste la partie qu'on veut. Les programmeurs le font pour manipuler et analyser des données textuelles, simplifier ou localiser l'info.
-
 ## How to:
 En Clojure, on utilise `subs` pour extraire une sous-chaîne :
 

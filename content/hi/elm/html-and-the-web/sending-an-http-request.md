@@ -28,12 +28,7 @@ title: "HTTP \u0905\u0928\u0941\u0930\u094B\u0927 \u092D\u0947\u091C\u0928\u093E
 weight: 44
 ---
 
-## What & Why? (क्या और क्यों?)
-
-HTTP अनुरोध एक प्रकार का अनुरोध है जिसे वेबसर्वर पर भेजा जाता है ताकि डेटा लिया या भेजा जा सके। प्रोग्रामर इसे उपयोगकर्ताओं को जरूरी जानकारी देने या डाटा कलेक्ट करने के लिए करते हैं।
-
 ## How to: (कैसे करें:)
-
 ```Elm
 import Http
 import Json.Decode exposing (Decoder, string)
@@ -75,7 +70,6 @@ User { name = "Alice", age = 42 }
 ```
 
 ## Deep Dive (गहराई से जानकारी):
-
 एल्म में HTTP अनुरोध भेजने की प्रक्रिया साफ और निर्भर है। यह एक प्योर फंक्शनल प्रोग्रामिंग भाषा है, जिसका मतलब है कि साइड इफेक्ट्स, जैसे HTTP अनुरोध, को `Cmd` के माध्यम से manage किया जाता है। जावास्क्रिप्ट या अन्य भाषाओं की तरह Promise या Callback का इस्तेमाल नहीं होता।
 
 अतीत में, Ajax और XMLHttpRequest जैसे विभिन्न तरीके थे जिसके द्वारा वेब पर HTTP अनुरोध किए जाते थे। एल्म ने इसे अधिक सरल और अनुमानित बनाया है। डेटा को decode करने के लिए यह `Json.Decode` सिस्टम का उपयोग करता है, जो कि टाइप सुरक्षित है और रनटाइम एरर को कम करता है।
@@ -83,7 +77,6 @@ User { name = "Alice", age = 42 }
 HTTP पैकेज Elm 0.18 में जोड़ा गया था, और इसे Elm 0.19 में सुधारा गया। इसने एल्म एप्लिकेशन्स में HTTP इंटरेक्शन को और भी शक्तिशाली और लचीला बनाया।
 
 ## See Also (और देखें):
-
 - [Elm HTTP package documentation](https://package.elm-lang.org/packages/elm/http/latest/)
 - [Elm JSON Decode guide](https://guide.elm-lang.org/effects/json.html)
 - [Using Elm in Production](https://elm-lang.org/blog/small-assets-without-the-headache)

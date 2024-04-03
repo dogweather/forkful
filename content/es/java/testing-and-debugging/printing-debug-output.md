@@ -11,9 +11,6 @@ title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---
 
-## Qué & Por Qué?
-Imprimir mensajes de depuración es el arte de mostrar información temporal en la consola para entender qué está pasando en nuestro código. Los programadores lo hacen para diagnosticar y corregir errores más fácilmente.
-
 ## Cómo hacerlo:
 Aquí tienes un ejemplo sencillo:
 

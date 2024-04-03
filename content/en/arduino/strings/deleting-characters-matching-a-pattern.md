@@ -11,12 +11,7 @@ title: Deleting characters matching a pattern
 weight: 5
 ---
 
-## What & Why?
-
-Deleting characters matching a pattern means getting rid of specific sequences of characters from strings—think cleaning up data or inputs. Programmers do this to standardize, simplify, or validate the information before processing it.
-
 ## How to:
-
 Let's say we want to drop all numeric digits from our string. We've got a string with some random numbers, and we're going after a clean, letters-only result.
 
 ```Arduino
@@ -50,7 +45,6 @@ Arduino is awesome!
 ```
 
 ## Deep Dive
-
 Removing characters matching a specific pattern isn't a new concept. Early programming languages had functions to process and manipulate strings. In Arduino, although a high-level function for pattern deletion doesn't exist natively, we can create our custom logic, like in the `deletePattern` function above.
 
 There are alternatives in other languages, such as regex (regular expressions) in Python or JavaScript, but Arduino's coding environment is more basic. It doesn't include regex functions out of the box, mainly due to its limited processing power and memory.
@@ -58,7 +52,6 @@ There are alternatives in other languages, such as regex (regular expressions) i
 Under the hood, our `deletePattern` function iterates through our pattern string, uses the `String.replace()` method to search for the current character, and replaces it with an empty string, therefore "deleting" it from our original string.
 
 ## See Also
-
 - String manipulation with Arduino: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/
 - Arduino String reference: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
 - More on string replacement: http://www.cplusplus.com/reference/string/string/replace/

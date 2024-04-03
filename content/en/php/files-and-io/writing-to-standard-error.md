@@ -11,12 +11,7 @@ title: Writing to standard error
 weight: 25
 ---
 
-## What & Why?
-
-Writing to standard error (stderr) in PHP is about directing error messages or diagnostics separately from standard output (stdout), allowing developers to better manage their output streams for debugging and logging purposes. Programmers utilize this technique to ensure that error messages do not interfere with the program's output, making it easier to monitor and troubleshoot applications.
-
 ## How to:
-
 In PHP, writing to stderr can be achieved using the `fwrite()` function alongside the predefined constant `STDERR`, which represents the error output stream.
 
 ```php

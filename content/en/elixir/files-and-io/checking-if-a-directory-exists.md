@@ -10,9 +10,6 @@ title: Checking if a directory exists
 weight: 20
 ---
 
-## What & Why?
-Checking if a directory exists in Elixir is about verifying the presence of a directory at a specified path in the file system. Programmers do this to ensure they can safely read from, write to, or perform operations on the directory without encountering errors due to its absence.
-
 ## How to:
 Elixir's standard library offers a straightforward way to check for the existence of a directory through the `File` module. Here's how you can use it:
 

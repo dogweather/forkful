@@ -11,9 +11,6 @@ title: Refaktorisering
 weight: 19
 ---
 
-## Vad & Varför?
-Refaktorisering är processen att omstrukturera befintlig datorprogramkod utan att ändra dess externa beteende. Programmerare gör det för att städa upp i kodbasen, förbättra läsbarheten, underhållbarheten och bana väg för framtida funktioner med minimal teknisk skuld.
-
 ## Hur man gör:
 Låt oss börja med ett grundläggande Swift-exempel där vi har lite repetitiv kod:
 

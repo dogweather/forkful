@@ -13,12 +13,7 @@ title: Verwendung von assoziativen Arrays
 weight: 15
 ---
 
-## Was & Warum?
-
-Assoziative Arrays in PHP sind wie aufgeladene Listen, bei denen jedes Element mit einem lesbaren Schlüssel statt nur mit Nummern zugegriffen werden kann. Programmierer verwenden sie, um Daten intuitiver zu speichern und zu manipulieren, was den Code leichter lesbar und wartbarer macht.
-
 ## Wie geht das:
-
 In PHP ist das Erstellen und Verwenden von assoziativen Arrays unkompliziert. Hier eine schnelle Anleitung:
 
 ```PHP
@@ -64,7 +59,6 @@ foreach ($person as $key => $value) {
 Beachten Sie, wie Schlüssel beliebige Zeichenketten sein können, die es Ihnen erlauben, Elemente mit diesen Schlüsseln anstelle von numerischen Indizes zuzugreifen, die weniger aussagekräftig und schwerer zu merken sein können.
 
 ## Tiefergehend
-
 Assoziative Arrays in PHP werden intern mit Hashtabellen implementiert, die einen sehr schnellen Zugriff auf Elemente mit Schlüsseln bieten und sie für viele Aufgaben hochgradig effizient machen. Diese Effizienz, kombiniert mit ihrer Benutzerfreundlichkeit, macht assoziative Arrays zu einem Grundpfeiler der PHP-Programmierung.
 
 Historisch gesehen waren PHPs Arrays (sowohl indizierte als auch assoziative) unglaublich flexibel, was es ihnen erlaubt hat, als Listen, Stacks, Queues und mehr zu dienen. Diese Flexibilität kann jedoch manchmal zu weniger effizientem Code führen, wenn sie nicht vorsichtig verwendet wird.

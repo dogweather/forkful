@@ -11,9 +11,6 @@ title: Einen HTTP-Request senden
 weight: 44
 ---
 
-## Was & Warum?
-HTTP-Anfragen sind der Weg, wie Programme auf das Web zugreifen; sie holen oder senden Daten an Server. Programmierer nutzen diese, um mit Web-Diensten zu interagieren, Daten zu synchronisieren oder Inhalte dynamisch zu beziehen.
-
 ## Vorgehensweise:
 So sendet man eine simple HTTP GET-Anfrage in Lua:
 

@@ -15,11 +15,8 @@ title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---
 
-## Vad & Varför?
-
-Att tolka ett datum från en sträng är en vanlig uppgift när man hanterar användarinput eller läser data från filer, vilket innebär att konvertera strängdata till ett datumformat som programmeringsspråket känner igen. I Rust är detta avgörande för operationer på datum, såsom jämförelser, aritmetik eller formatering, och det förbättrar datavaliditet och integritet i applikationer.
-
 ## Hur man gör:
+
 
 ### Använda Rusts Standardbibliotek (`chrono` Crate)
 Rusts standardbibliotek inkluderar inte direkt datumtolkning, men den ofta använda `chrono`-craten är en robust lösning för datum- och tidsmanipulation. Lägg först till `chrono` i din `Cargo.toml`:

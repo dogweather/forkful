@@ -11,14 +11,10 @@ title: Capitalizing a string
 weight: 2
 ---
 
-## What & Why?
-Capitalizing a string involves converting the initial character of each word in the string to uppercase if it is in lowercase while keeping the remaining characters unchanged. Programmers often perform this task for formatting outputs, user inputs, or data processing to ensure consistency in how text is presented or processed, especially in user interfaces or data normalization tasks.
-
 ## How to:
 In C++, you can capitalize a string using the standard library without the need for third-party libraries. However, for more complex or specific capitalization behaviors, libraries like Boost can be quite helpful. Below are examples illustrating both approaches.
 
 ### Using Standard C++ Library:
-
 ```cpp
 #include <iostream>
 #include <cctype> // for std::tolower and std::toupper
@@ -49,7 +45,6 @@ int main() {
 ```
 
 ### Using Boost Library:
-
 For more advanced string manipulation, including locale-aware capitalization, you might want to use the Boost String Algo library.
 
 First, ensure you have the Boost library installed and configured in your project. Then you can include the necessary headers and use its features as shown below.

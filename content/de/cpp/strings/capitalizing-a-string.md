@@ -13,14 +13,10 @@ title: "Einen String gro\xDFschreiben"
 weight: 2
 ---
 
-## Was & Warum?
-Das Kapitalisieren eines Strings beinhaltet das Umwandeln des Anfangsbuchstabens jedes Wortes im String in Großbuchstaben, falls dieser in Kleinbuchstaben ist, während die restlichen Zeichen unverändert bleiben. Programmierer führen diese Aufgabe oft für die Formatierung von Ausgaben, Benutzereingaben oder die Datenverarbeitung durch, um Konsistenz in der Präsentation oder Verarbeitung von Text zu gewährleisten, insbesondere in Benutzeroberflächen oder bei der Datennormalisierung.
-
 ## Wie geht das:
 In C++ können Sie einen String unter Verwendung der Standardbibliothek kapitalisieren, ohne dass Bibliotheken von Drittanbietern benötigt werden. Für komplexere oder spezifische Kapitalisierungsverhaltensweisen können jedoch Bibliotheken wie Boost recht hilfreich sein. Unten finden Sie Beispiele, die beide Ansätze veranschaulichen.
 
 ### Verwendung der Standard-C++-Bibliothek:
-
 ```cpp
 #include <iostream>
 #include <cctype> // für std::tolower und std::toupper
@@ -51,7 +47,6 @@ int main() {
 ```
 
 ### Verwendung der Boost-Bibliothek:
-
 Für fortgeschrittenere String-Manipulationen, einschließlich ortsabhängiger Kapitalisierung, möchten Sie vielleicht die Boost String Algo-Bibliothek verwenden.
 
 Stellen Sie zunächst sicher, dass Sie die Boost-Bibliothek installiert und in Ihrem Projekt konfiguriert haben. Dann können Sie die notwendigen Header einbinden und deren Funktionen wie unten gezeigt verwenden.

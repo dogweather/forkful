@@ -11,9 +11,6 @@ title: Registro de Logs
 weight: 17
 ---
 
-## O que é & Por quê?
-A logística é essencialmente o processo de gravação de eventos que ocorrem dentro de uma aplicação de software. Os programadores registram esses eventos para capturar informações de tempo de execução, depurar problemas, monitorar o comportamento do sistema e criar um registro de auditoria para fins de segurança e conformidade.
-
 ## Como fazer:
 Aqui está uma maneira simples de começar com logística em Java usando o pacote integrado `java.util.logging`.
 

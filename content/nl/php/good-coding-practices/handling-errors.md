@@ -13,9 +13,6 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-Foutafhandeling in PHP gaat over het beheren van en reageren op situaties die de normale gang van een programma verstoren, zoals ontbrekende bestanden of slechte data-invoer. Programmeurs verwerken fouten om crashes te voorkomen en gebruikers een soepelere ervaring te bieden.
-
 ## Hoe:
 In PHP kun je fouten beheren met behulp van `try-catch` blokken, en je kunt het proces aanpassen met aangepaste foutafhandelaars en uitzonderingen.
 

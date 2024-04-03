@@ -15,12 +15,7 @@ title: Travailler avec JSON
 weight: 38
 ---
 
-## Quoi & Pourquoi ?
-
-Travailler avec le JSON (JavaScript Object Notation) en Rust consiste à analyser les données JSON pour les transformer en structures de données Rust et à sérialiser les structures de données Rust pour les reconvertir en JSON. Les programmeurs réalisent ces opérations pour interagir avec les API web, les fichiers de configuration, ou tout format d'échange de données où le JSON est utilisé de par son format léger et lisible par l'homme.
-
 ## Comment faire :
-
 Pour travailler avec le JSON en Rust, on utilise largement le crate `serde` ainsi que `serde_json` pour la sérialisation et la désérialisation. Tout d'abord, assurez-vous de les inclure dans votre `Cargo.toml` :
 
 ```toml
@@ -30,7 +25,6 @@ serde_json = "1.0"
 ```
 
 ### Exemple 1 : Désérialiser du JSON vers une structure Rust
-
 Définissez une structure Rust et utilisez les macros derive pour `Deserialize` et `Serialize` :
 
 ```rust
@@ -69,7 +63,6 @@ Email Utilisateur : jane.doe@example.com
 ```
 
 ### Exemple 2 : Sérialiser une structure Rust en JSON
-
 En utilisant la même structure `Utilisateur` :
 
 ```rust

@@ -10,9 +10,6 @@ title: Arbeiten mit XML
 weight: 40
 ---
 
-## Was & Warum?
-Die Arbeit mit XML auf Arduino umfasst das Parsen und Manipulieren von XML-Daten, die üblicherweise von Web-APIs oder Konfigurationsdateien kommen. Programmierer tun dies, um sich in Dienste zu integrieren, die XML für den Datenaustausch verwenden, oder um Daten in einem strukturierten, menschenlesbaren Format zu speichern.
-
 ## Wie geht das:
 Wir werden die `XMLWriter` Bibliothek verwenden, um XML zu erstellen, und die `tinyxml2` Bibliothek, um es zu parsen. Installieren Sie zuerst die Bibliotheken über den Bibliotheks-Manager in Ihrer Arduino IDE.
 

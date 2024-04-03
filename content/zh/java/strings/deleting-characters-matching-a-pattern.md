@@ -17,9 +17,6 @@ title: "\u5339\u914D\u6A21\u5F0F\u5220\u9664\u5B57\u7B26"
 weight: 5
 ---
 
-## What & Why? (什么和为什么？)
-在Java中删除匹配模式的字符是指通过代码去除字符串中符合特定规则的部分。程序员这么做是因为有时我们需要清理或提炼数据，保留有用信息。
-
 ## How to: (如何操作：)
 ```Java
 import java.util.regex.Pattern;

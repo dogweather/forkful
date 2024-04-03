@@ -11,9 +11,6 @@ title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---
 
-## Vad & Varför?
-Beräkning av datum handlar om att ta reda på exakta framtida eller förflutna tidpunkter baserat på nuvarande datum. Programmerare gör detta för att hantera tidsbegränsade händelser, som att ställa in påminnelser, löptider för uppgifter eller att visa tidslinjer.
-
 ## Så här gör du:
 TypeScript ger dig kraftfulla verktyg för att hantera datum. Här ser du hur enkelt det är:
 

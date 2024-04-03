@@ -12,12 +12,7 @@ title: Analisi del HTML
 weight: 43
 ---
 
-## Cosa e Perché?
-
-Analizzare l'HTML significa setacciare il codice HTML per trovare, estrarre o manipolare informazioni. I programmatori lo fanno per interagire con i contenuti web—magari per effettuare scraping di dati, o per automatizzare i browser.
-
 ## Come fare:
-
 Per iniziare, installa una libreria come `node-html-parser`. Eccoti il comando per il terminale:
 
 ```bash
@@ -46,7 +41,6 @@ console.log(bananas);  // "Banana"
 ```
 
 ## Approfondimento
-
 L'analisi dell'HTML non è una novità—esiste da quando sono nati i primi siti web. Inizialmente, gli sviluppatori potrebbero aver usato espressioni regolari, ma la situazione si è complicata rapidamente. Ecco quindi il Parser DOM: stabile, ma legato al browser.
 
 Librerie come `node-html-parser` semplificano la situazione. Ti permettono di interrogare l'HTML come faresti con jQuery, ma lato server con Node.js. Sono veloci, tolleranti all'HTML sporco, e amichevoli con il DOM.
@@ -56,7 +50,6 @@ C'è anche `jsdom`, che simula un intero ambiente browser. È più pesante ma pi
 Non dimentichiamoci poi di Cheerio. Combina velocità con una sintassi simile a jQuery e un ingombro minore, collocandosi felicemente tra i due.
 
 ## Vedi Anche
-
 Se sei alla ricerca di altro, immergiti in questi:
 - [Specifiche W3C per l'Analisi e la Serializzazione del DOM](https://www.w3.org/TR/DOM-Parsing/)
 - [node-html-parser su GitHub](https://github.com/taoqf/node-html-parser)

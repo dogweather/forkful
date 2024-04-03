@@ -11,12 +11,7 @@ title: Working with YAML
 weight: 41
 ---
 
-## What & Why?
-
-YAML, a recursive acronym for "YAML Ain't Markup Language," is a human-readable data serialization format used for configuration files and data exchange between languages with different data structures. Programmers leverage YAML due to its simplicity and readability, making it an ideal choice for configuring applications and facilitating data interchange in polyglot programming environments.
-
 ## How to:
-
 Clojure does not include built-in support for YAML, but you can utilize third-party libraries such as `clj-yaml` for parsing and generating YAML data. First, add the library to your project dependencies:
 
 ```clojure
@@ -27,7 +22,6 @@ Clojure does not include built-in support for YAML, but you can utilize third-pa
 Here's how you can use `clj-yaml` to parse YAML and convert Clojure maps to YAML.
 
 ### Parsing YAML:
-
 ```clojure
 (require '[clj-yaml.core :as yaml])
 
@@ -39,7 +33,6 @@ Here's how you can use `clj-yaml` to parse YAML and convert Clojure maps to YAML
 ```
 
 ### Generating YAML from Clojure:
-
 ```clojure
 (require '[clj-yaml.core :as yaml])
 

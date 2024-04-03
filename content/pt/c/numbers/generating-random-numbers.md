@@ -14,12 +14,7 @@ title: "Gerando n\xFAmeros aleat\xF3rios"
 weight: 12
 ---
 
-## O Que & Porquê?
-
-Gerar números aleatórios em C envolve a criação de valores que são imprevisíveis e seguem uma distribuição específica, como uniforme ou normal. Essa capacidade é crucial para aplicações que vão desde simulações e jogos até operações criptográficas, onde a imprevisibilidade ou a simulação de aleatoriedade do mundo real é essencial.
-
 ## Como fazer:
-
 Em C, números aleatórios podem ser gerados usando a função `rand()`, que faz parte da biblioteca padrão do C `<stdlib.h>`. Por padrão, `rand()` produz números pseudoaleatórios no intervalo de 0 a `RAND_MAX` (uma constante definida em `<stdlib.h>`). Para ter mais controle sobre o intervalo, os programadores podem manipular a saída de `rand()`.
 
 Aqui está um exemplo simples de geração de um número aleatório entre 0 e 99:
@@ -52,7 +47,6 @@ Para gerar números aleatórios em um intervalo diferente, você pode ajustar o 
 É importante notar que semear o gerador de números pseudoaleatórios (`srand()`) com o tempo atual (`time(NULL)`) garante sequências diferentes de números aleatórios a cada execução do programa. Sem a semeadura (`srand()`), `rand()` produziria a mesma sequência de números todas as vezes que o programa fosse executado.
 
 ## Aprofundamento
-
 A função `rand()` e seu par para semeadura `srand()` fazem parte da biblioteca padrão do C há décadas. Eles são baseados em algoritmos que geram sequências de números que apenas parecem ser aleatórios—daí o termo "pseudoaleatórios". O algoritmo subjacente em `rand()` é tipicamente um gerador linear congruencial (LCG).
 
 Embora `rand()` e `srand()` sejam suficientes para muitas aplicações, eles têm limitações conhecidas, especialmente no que diz respeito à qualidade da aleatoriedade e à potencial previsibilidade. Para aplicações que exigem aleatoriedade de alta qualidade, como operações criptográficas, alternativas como `/dev/random` ou `/dev/urandom` (em sistemas semelhantes ao Unix), ou APIs fornecidas por bibliotecas criptográficas, devem ser consideradas.

@@ -11,9 +11,6 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## What & Why? ("Vad & Varför?")
-Att läsa en textfil innebär att hämta information lagrad som text och att göra den läsbar för skript eller program. Programmerare gör detta för att hantera data, automatisera uppgifter eller konfigurera mjukvara.
-
 ## How to: ("Hur?")
 ```PowerShell
 # Läs hela filen med Get-Content

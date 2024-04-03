@@ -14,12 +14,7 @@ title: Praca z JSON
 weight: 38
 ---
 
-## Co i dlaczego?
-
-Praca z JSON polega na parsowaniu ciągów znaków w formacie JSON na struktury danych, które Elixir może manipulować, oraz na serializacji struktur danych Elixir z powrotem na ciągi znaków JSON. Jest to niezbędne do rozwoju stron internetowych, API i plików konfiguracyjnych, ponieważ JSON jest lekkim, tekstowym, niezależnym od języka formatem wymiany danych, szeroko stosowanym ze względu na swoją prostotę i czytelność dla człowieka.
-
 ## Jak to zrobić:
-
 W Elixirze możesz użyć biblioteki `Jason`, popularnego wyboru do parsowania i generowania JSON. Najpierw dodaj `Jason` do zależności Twojego projektu w `mix.exs`:
 
 ```elixir

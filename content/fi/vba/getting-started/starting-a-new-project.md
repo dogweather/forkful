@@ -14,12 +14,7 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## Mikä ja miksi?
-
-Uuden projektin aloittaminen Visual Basic for Applications (VBA) -ohjelmassa sisältää ympäristön pystyttämisen isäntäsovelluksen, kuten Excelin, sisällä tehtävien automatisoimiseksi tai toiminnallisuuden laajentamiseksi. Ohjelmoijat suuntaavat tähän alueeseen hyödyntääkseen VBA:n tehoa Microsoft Officen sovellusten mukauttamisessa ja automatisoinnissa, mikä virtaviivaistaa työnkulkuja ja parantaa tuottavuutta.
-
 ## Miten:
-
 Kun olet valmis aloittamaan uuden VBA-projektin, lähtökohtana on yleensä VBA-editorin käynnistäminen ja projektirunkosi alustaminen. Käydään läpi vaiheet käyttäen Exceliä isäntäsovelluksena:
 
 1. **Avaa VBA-editori**: Excelissä paina `Alt + F11` päästäksesi VBA-editoriin.
@@ -43,7 +38,6 @@ Viestilaatikko, jossa lukee "Hello, World!".
 5. **Tallenna projektisi**: Ennen poistumista varmista, että tallennat työsi. Jos Excel-työkirjaasi ei ollut aiemmin tallennettu, sinua pyydetään tallentamaan makroja sallivaan työkirjaan (`.xlsm`-tiedostomuoto).
 
 ## Syväsukellus
-
 Visual Basic for Applications on ollut kulmakivi Microsoftin automaatiostrategioissa sen esittelyn jälkeen vuonna 1993. Sen edeltäjän, MacroBasicin, evolutiona syntyneenä VBA tarjosi robustimman ratkaisun parannetulla integraatiolla Microsoftin Officen sarjaan. Siirtyminen VBA:han oli merkittävä, merkiten siirtymän kohti monimutkaisempia skriptausmahdollisuuksia, jotka hyödynsivät oikeiden ohjelmointikielten tehoa.
 
 Ikästään huolimatta VBA on yhä merkittävä modernissa toimistoympäristössä, suurelta osin sen syvän integraation ansiosta Officen tuotteissa ja monien organisaatioiden laajan perintökoodikannan vuoksi. On kuitenkin tärkeää huomata, että uudemmille, web-pohjaisille sovelluksille tai tehtäville, jotka vaativat enemmän skaalautuvuutta ja integraatiota Officen ulkopuolisten sovellusten kanssa, kielet ja kehykset kuten Python, sen rikkaan kirjastojen ekosysteemin kanssa, tai JavaScript Office-skripteille, tarjoavat modernimman ja monipuolisemman lähestymistavan. Nämä vaihtoehdot, vaikka vaativatkin jyrkemmän oppimiskurvin ja asetukset, tarjoavat laajemman soveltuvuuden ja tuen nykyaikaisille kehityskäytännöille, kuten versionhallinnalle ja julkaisuputkille.

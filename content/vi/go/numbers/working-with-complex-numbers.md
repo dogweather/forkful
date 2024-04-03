@@ -16,12 +16,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Lý do & Tại sao?
-
-Làm việc với số phức trong lập trình đề cập đến việc thao tác với các số có cả phần thực và phần ảo, thường được biểu diễn như `a + bi`. Các lập trình viên giải quyết số phức trong nhiều lĩnh vực, như kỹ thuật, vật lý và phân tích dữ liệu, để giải quyết các vấn đề liên quan đến căn bậc hai của số âm, phân tích hình dạng sóng, và nhiều hơn nữa.
-
 ## Làm thế nào:
-
 Trong Go, số phức được xử lý sử dụng các hàm built-in `complex`, `real`, và `imag`, cùng với các kiểu `complex64` và `complex128` (đại diện cho số phức 64-bit và 128-bit tương ứng). Dưới đây là hướng dẫn nhanh:
 
 ```go
@@ -58,7 +53,6 @@ func main() {
 Ví dụ này chỉ bao gồm cơ bản, nhưng có nhiều thứ bạn có thể làm với số phức, bao gồm việc tận dụng gói `math/cmplx` cho các thao tác nâng cao hơn như tìm độ lớn, pha, và nhiều hơn nữa.
 
 ## Sâu hơn nữa
-
 Khái niệm của số phức có từ thế kỷ 16, nhưng chỉ được công nhận rộng rãi và hệ thống hoá một cách nghiêm ngặt vào thế kỷ 19. Trong lập trình máy tính, số phức đã là một phần không thể thiếu cho số học phức tạp trong các tính toán khoa học và kỹ thuật từ những ngày đầu. Cách tiếp cận của Go đối với số phức, bằng cách biến chúng thành một công dân hạng nhất với sự hỗ trợ built-in và hỗ trợ thư viện tiêu chuẩn toàn diện thông qua gói `math/cmplx`, nổi bật giữa các ngôn ngữ lập trình. Quyết định thiết kế này phản ánh sự nhấn mạnh của Go vào sự đơn giản và hiệu suất.
 
 Tuy nhiên, đáng chú ý là làm việc với số phức trong Go, mặc dù mạnh mẽ, có thể không luôn luôn là cách tiếp cận tốt nhất cho tất cả các ứng dụng, đặc biệt là những ứng dụng yêu cầu toán học biểu tượng hoặc số học chính xác cao. Ngôn ngữ và môi trường chuyên biệt trong tính toán khoa học, như Python với các thư viện như NumPy và SciPy, hoặc phần mềm như MATLAB, có thể cung cấp nhiều tính linh hoạt hơn và một loạt chức năng rộng lớn hơn cho các ứng dụng cụ thể.

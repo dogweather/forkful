@@ -14,12 +14,7 @@ title: "Utskrift av feils\xF8kingsdata"
 weight: 33
 ---
 
-## Hva & Hvorfor?
-
-Å skrive ut feilsøkingsutdata handler om å generere midlertidige, informative loggmeldinger som kan hjelpe programmerere med å forstå programflyten og tilstanden til et program under kjøring. Programmerere gjør dette for å identifisere og diagnostisere programvarefeil eller uventet oppførsel i programmets logikk.
-
 ## Hvordan:
-
 I C er den vanligste måten å skrive ut feilsøkingsutdata på ved å bruke `printf`-funksjonen fra standard I/U-biblioteket. `printf`-funksjonen tillater formatert utdata til standard utenhetsenhet, som typisk er skjermen. Her er et enkelt eksempel:
 
 ```c
@@ -65,7 +60,6 @@ DEBUG: example.c:6: Testverdien er 10
 Merk at i dette eksemplet bruker vi `fprintf` for å skrive ut til feilstrømmen (`stderr`), som ofte er mer passende for feilsøkingsmeldinger.
 
 ## Dypdykk
-
 Historisk sett har feilsøkingsteknikker i C vært manuelle og grunnleggende, på grunn av språkets nærhet-til-maskinvaren filosofi og alder. Mens moderne språk kanskje inkluderer sofistikerte innebygde feilsøkingsbiblioteker eller i stor grad stoler på funksjoner i integrerte utviklingsmiljøer (IDEer), tyr C-programmererne ofte til å manuelt sette inn printf-uttrykk som vist ovenfor for å spore programkoden sin under kjøring.
 
 En ting man bør være forsiktig med når det gjelder feilsøkingsutskrifter er deres potensial til å forårsake rot i utdata og føre til ytelsesproblemer, spesielt hvis de ved et uhell blir liggende igjen i produksjonskoden. Av disse grunnene kan bruk av betinget kompilering (f.eks., `#ifdef DEBUG ... #endif`) være en bedre tilnærming, slik at feilsøkingssetninger kan inkluderes eller ekskluderes basert på kompileringstidsflagg.

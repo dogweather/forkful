@@ -11,9 +11,6 @@ title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---
 
-## Was & Warum?
-Das Berechnen eines zukünftigen oder vergangenen Datums in Python bedeutet, ein Datum um eine bestimmte Zeitspanne zu verschieben. Programmierer nutzen das, um Abgelaufenes zu datieren oder bevorstehende Ereignisse zu planen.
-
 ## Wie geht das:
 ```Python
 from datetime import datetime, timedelta

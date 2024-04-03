@@ -10,9 +10,6 @@ title: Conversione di una stringa in minuscolo
 weight: 4
 ---
 
-## What & Why?
-Convertire una stringa in minuscolo significa trasformare tutti i caratteri alfabetici in minuscole. I programmatori lo fanno per uniformare i dati, specialmente quando confrontano stringhe o li rendono case-insensitive.
-
 ## How to:
 Utilizza il metodo `.toLowerCase()` di JavaScript. Ecco un esempio:
 

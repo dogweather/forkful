@@ -14,12 +14,7 @@ title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---
 
-## Gì và Tại sao?
-
-Nội suy chuỗi cho phép bạn chèn trực tiếp giá trị của biến vào trong một chuỗi. Lập trình viên sử dụng nó để dệt các biến vào văn bản, làm cho mã nguồn trở nên sạch sẽ và dễ đọc hơn.
-
 ## Cách thực hiện:
-
 Trong PHP, bạn có thể nội suy chuỗi sử dụng dấu ngoặc kép hoặc cú pháp heredoc:
 
 ```php
@@ -46,7 +41,6 @@ echo 'Hello, $name!'; // Kết quả: Hello, $name!
 ```
 
 ## Sâu hơn:
-
 Trước khi PHP giới thiệu nội suy, sử dụng toán tử dấu chấm (.) để nối chuỗi là cách thức duy nhất. Ví dụ:
 
 ```php
@@ -62,7 +56,6 @@ Các phương pháp thay thế cho nội suy tồn tại, chẳng hạn như s�
 Về mặt triển khai, PHP tìm kiếm các biến bên trong chuỗi khi chúng ở trong dấu ngoặc kép hoặc cú pháp heredoc và thay thế chúng bằng giá trị của biến. Bộ phân tích cú pháp bỏ qua dấu đô la ($) trong chuỗi được bao bởi dấu ngoặc đơn, coi nó như một ký tự bình thường.
 
 ## Xem thêm
-
 - [PHP: Chuỗi](http://php.net/manual/en/language.types.string.php) - Tài liệu chính thức của PHP về chuỗi.
 - [PHP: Cú pháp Heredoc](https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc) - Phần chi tiết về Heredoc trong tài liệu của PHP.
 - [PHP: Toán tử Chuỗi](https://www.php.net/manual/en/language.operators.string.php) - Thêm thông tin về nối chuỗi và toán tử dấu chấm.

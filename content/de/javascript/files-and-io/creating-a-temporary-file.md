@@ -11,9 +11,6 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-## Was & Warum?
-Das Erstellen einer temporären Datei bedeutet, eine Datei für kurzzeitige Nutzung zu generieren, die typischerweise nach Gebrauch gelöscht wird. Programmierer nutzen solche Dateien für Datenverarbeitungen, bei denen weder eine dauerhafte Speicherung benötigt wird noch der Wunsch besteht, den permanenten Speicher zu belasten.
-
 ## How to:
 ```Javascript
 const fs = require('fs');

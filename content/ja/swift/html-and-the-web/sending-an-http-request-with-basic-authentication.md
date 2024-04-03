@@ -20,12 +20,7 @@ title: "\u57FA\u672C\u8A8D\u8A3C\u3092\u4F7F\u7528\u3057\u305FHTTP\u30EA\u30AF\u
 weight: 45
 ---
 
-## What & Why? (何となぜ？)
-
-HTTPリクエストにベーシック認証を付けるのは、サーバーへ安全にデータを送る方法です。認証情報でユーザーを識別しアクセスを許可するために使います。
-
 ## How to: (方法)
-
 ```Swift
 import Foundation
 
@@ -75,11 +70,9 @@ Got data: {"example":"data"}
 ```
 
 ## Deep Dive (深掘り)
-
 HTTPベーシック認証は、RFC 7617で定義されているシンプルな認証スキームです。ユーザー名とパスワードをコロンで繋げ、Base64でエンコードすることで認証情報を作ります。しかし、HTTPベーシック認証は安全ではないとされており、HTTPSの使用が推奨されます。安全性が求められる場合、OAuthやJWTなどの代替手段があります。また、iOSでは`URLSession`を使ってHTTPリクエストを簡単に扱うことができます。
 
 ## See Also (関連情報)
-
 - [HTTP Basic Auth on MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme)
 - [RFC 7617, The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
 - [URLSession on Apple Developer Documentation](https://developer.apple.com/documentation/foundation/urlsession)

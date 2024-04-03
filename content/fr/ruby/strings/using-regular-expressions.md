@@ -15,10 +15,9 @@ title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---
 
-## Quoi & Pourquoi ?
-Les expressions régulières (regex) en Ruby sont des motifs utilisés pour associer des combinaisons de caractères dans des chaînes de caractères, permettant aux développeurs de rechercher, d'associer et de manipuler du texte de manière efficace. Les programmeurs utilisent regex pour des tâches telles que la validation, l'analyse syntaxique, et la manipulation de chaînes de caractères, ce qui en fait un outil indispensable pour le traitement de texte.
-
 ## Comment faire :
+
+
 ### Association Basique
 Pour comparer une chaîne de caractères à un motif simple, vous pouvez utiliser la méthode `match`. Ci-dessous, nous vérifions si le mot "Ruby" existe dans une chaîne de caractères donnée.
 

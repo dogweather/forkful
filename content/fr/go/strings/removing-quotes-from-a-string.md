@@ -13,12 +13,7 @@ title: "Supprimer les guillemets d'une cha\xEEne de caract\xE8res"
 weight: 9
 ---
 
-## Quoi & Pourquoi ?
-
-Retirer les guillemets d'une chaîne en Go consiste à éliminer les guillemets de début et de fin (`"` ou `'`) d'une chaîne donnée. Les programmeurs ont souvent besoin d'effectuer cette tâche pour assainir l'entrée utilisateur, analyser plus efficacement les données textuelles ou préparer les chaînes pour un traitement ultérieur qui nécessite un contenu sans guillemets.
-
 ## Comment faire :
-
 Go propose plusieurs approches pour retirer les guillemets d'une chaîne, mais l'une des méthodes les plus simples est d'utiliser les fonctions `Trim` et `TrimFunc` fournies par le paquet `strings`. Voici comment procéder :
 
 ```go
@@ -55,7 +50,6 @@ En utilisant strings.TrimFunc : Ceci est une chaîne 'citée'
 Les deux méthodes permettent de retirer efficacement les guillemets de début et de fin de la chaîne.
 
 ## Approfondissement
-
 Les fonctions `Trim` et `TrimFunc` du paquet `strings` font partie de la vaste bibliothèque standard de Go, conçue pour offrir des capacités de manipulation de chaînes puissantes, mais simples, sans avoir besoin de paquets tiers. Historiquement, la nécessité de manipuler et de traiter efficacement les chaînes découle de l'objectif principal de Go sur les serveurs réseau et les analyseurs de données, où le traitement des chaînes est une tâche courante.
 
 Un aspect notable de ces fonctions est leur implémentation basée sur les runes (représentation par Go d'un point de code Unicode). Cette conception leur permet de gérer sans problème les chaînes contenant des caractères multi-octets, rendant l'approche de Go pour la manipulation des chaînes à la fois robuste et compatible avec Unicode.

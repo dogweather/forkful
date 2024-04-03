@@ -11,9 +11,6 @@ title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---
 
-## O Que & Por Que?
-Números complexos ampliam os números reais com uma parte adicional, a unidade imaginária 'i'. Programadores os utilizam em várias áreas, incluindo processamento de sinais, teoria eletromagnética e fractais, onde cálculos que envolvem a raiz quadrada de um número negativo são rotineiros.
-
 ## Como fazer:
 Clojure oferece suporte embutido para números complexos através da classe de utilidade `clojure.lang.Numbers`. Use `complex` para criar números complexos e realizar aritmética.
 

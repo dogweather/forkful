@@ -13,16 +13,10 @@ title: Skriva tester
 weight: 36
 ---
 
-## Vad & Varför?
-
-Att skriva tester i Rust innebär att skapa automatiserade kontroller för att säkerställa att din kod fungerar som förväntat. Programmerare gör detta för att upptäcka buggar tidigt, underlätta refaktorering och bibehålla kodkvaliteten över tid.
-
 ## Hur man gör:
-
 Rusts inbyggda testramverk stöder enhetstester, integrationstester och dokumentationstester utan behov av externa bibliotek. Tester markeras med `#[test]`, och varje funktion som är markerad så kompileras som ett test.
 
 ### Skriva ett enhetstest:
-
 Placera enhetstester i modulen de testar med hjälp av en `tests`-submodul märkt med `#[cfg(test)]` för att säkerställa att de endast kompileras när du testar.
 
 ```rust
@@ -60,7 +54,6 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
 ### Skriva integrationstester:
-
 Integrationstester placeras i en tests-katalog på högsta nivån av ditt projekt, bredvid `src`. Varje `.rs`-fil i `tests` kompileras som sin egen separata skräp.
 
 ```rust
@@ -74,7 +67,6 @@ fn it_adds_two() {
 ```
 
 ### Testa med populära tredjepartbibliotek:
-
 För mer omfattande testmöjligheter kan `proptest`-biblioteket generera en bred uppsättning indata för att testa funktioner.
 
 Lägg till `proptest` som en utvecklingsberoende i `Cargo.toml`:

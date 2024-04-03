@@ -10,9 +10,6 @@ title: Gestione degli errori
 weight: 16
 ---
 
-## Cos'è e perché?
-La gestione degli errori consente al tuo script di affrontare l'inaspettato con eleganza. Lo si fa per gestire i fallimenti senza far diventare i capelli dei nostri utenti grigi.
-
 ## Come fare:
 Per intercettare errori in Fish, affidati al comando `status` e alle condizionali. Diciamo che `ping` fallisce; ecco come rilevarlo:
 

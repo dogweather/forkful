@@ -10,9 +10,6 @@ title: Merkkijonon interpolointi
 weight: 8
 ---
 
-## What & Why? (Mikä & Miksi?)
-String-interpoloinnissa sijoitetaan muuttujia tai lausekkeita osaksi merkkijonoja. Koodarit tekevät tätä dynaamisten tekstien luomiseen ja koodin selkeyteen.
-
 ## How to: (Kuinka tehdään:)
 ```Clojure
 ;; Clojure ei sisällä oletuksena string-interpolaatiota, mutta voit käyttää `format` funktiota:

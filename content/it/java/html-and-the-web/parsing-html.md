@@ -10,9 +10,6 @@ title: Analisi dell'HTML
 weight: 43
 ---
 
-## What & Why? - Cosa e Perché?
-Il parsing di HTML consiste nell'analizzare il codice HTML per estrarne dati o manipolarlo. I programmatori lo fanno perché vogliono lavorare con il contenuto di pagine web: per esempio, per estrarre informazioni, automatizzare azioni o testare l'accessibilità.
-
 ## How to - Come fare:
 In Java, puoi utilizzare la libreria jsoup per fare il parsing dell'HTML. Ecco un esempio semplice:
 
@@ -42,7 +39,7 @@ Storicamente, il parsing di HTML è stato complesso a causa dei markup non stand
 
 Alternative al jsoup includono HtmlUnit e la classe org.w3c.dom in Java. Quest'ultima richiede più codice e non gestisce bene l'HTML malformato.
 
-Il parsing con jsoup è fondato su una rappresentazione DOM (Document Object Model) dell'HTML che permette di navigare e manipolare facilmente la struttura del documento. 
+Il parsing con jsoup è fondato su una rappresentazione DOM (Document Object Model) dell'HTML che permette di navigare e manipolare facilmente la struttura del documento.
 
 ## See Also - Vedi anche
 - [W3C DOM](https://www.w3.org/DOM/) - Informazioni sul Document Object Model per capire meglio come jsoup manipola l'HTML.

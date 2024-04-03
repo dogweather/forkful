@@ -10,9 +10,6 @@ title: "\u041E\u0431'\u0454\u0434\u043D\u0430\u043D\u043D\u044F \u0440\u044F\u04
 weight: 3
 ---
 
-## What & Why? / Що та Чому?
-Concatenating strings means sticking them end-to-end to form a new string. Programmers do it to combine messages and data into readable formats or build commands.
-
 ## How to / Як це зробити
 ```Arduino
 String partOne = "Привіт, ";

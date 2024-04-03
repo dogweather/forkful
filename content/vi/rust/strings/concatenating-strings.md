@@ -16,9 +16,6 @@ title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---
 
-## Cái gì & Tại sao?
-Nối chuỗi là việc ghép các chuỗi lại với nhau từ đầu đến cuối để tạo thành một cái mới. Chúng ta thực hiện điều này để xây dựng thông điệp, tạo ra đầu ra, hoặc làm việc với văn bản một cách linh hoạt.
-
 ## Làm thế nào:
 Rust cung cấp cho bạn một số cách để ghép các văn bản lại với nhau. Hãy cùng khám phá.
 

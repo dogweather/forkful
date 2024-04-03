@@ -11,9 +11,6 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## What & Why? (Mikä ja Miksi?)
-Muuttaminen merkkijono pieniksi kirjaimiksi tarkoittaa kaikkien isojen kirjainten muuntamista niiden pieniksi vastineiksi. Ohjelmoijat tekevät tämän yhdenmukaistaakseen dataa, helpottaakseen vertailua tai valmistellakseen tekstiä hakukoneille. 
-
 ## How to: (Kuinka tehdä:)
 ```C++
 #include <iostream>

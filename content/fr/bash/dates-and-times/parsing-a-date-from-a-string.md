@@ -14,12 +14,7 @@ title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---
 
-## Quoi et Pourquoi ?
-
-L'analyse d'une date à partir d'une chaîne en Bash consiste à extraire et convertir les informations de date à partir de données textuelles en un format que Bash peut manipuler ou utiliser pour des processus ultérieurs. C'est une exigence courante dans le scripting pour des tâches telles que l'analyse de fichiers journaux, l'organisation de fichiers basée sur des timbres de date, ou la création de rapports automatisés, rendant cela une compétence essentielle pour les programmeurs afin de gérer et d'utiliser efficacement les données temporelles.
-
 ## Comment faire :
-
 Bash lui-même est assez limité en capacités de parsing de date directes, s'appuyant souvent sur des outils externes comme `date` et `awk` pour une manipulation plus sophistiquée. Voici comment vous pouvez analyser un format spécifique puis l'utiliser avec la commande `date` pour le convertir ou effectuer des opérations.
 
 **Exemple 1 :** Extraire une chaîne de date et la convertir dans un autre format.
@@ -66,7 +61,6 @@ Samedi, avril 01, 2023
 Cet exemple utilise `awk` pour diviser la ligne de journal et extraire la partie date (`$1` représente le premier champ délimité par un espace), puis `date` est utilisé pour le reformatage.
 
 ### Utilisation d'outils tiers
-
 Pour un parsing plus complexe ou lorsqu'on traite une grande variété de formats de date, les outils tiers comme `dateutils` peuvent être très pratiques.
 
 **Exemple avec `dateutils` :**

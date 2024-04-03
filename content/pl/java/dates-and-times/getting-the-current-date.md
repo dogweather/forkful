@@ -14,9 +14,6 @@ title: Pobieranie aktualnej daty
 weight: 29
 ---
 
-## Co i dlaczego?
-Pobranie bieżącej daty w Java to podstawowa operacja, która pozwala programistom manipulować obiektami dat do operacji takich jak logowanie, obliczenia dat i warunki oparte na czasie. Jest to niezbędne w aplikacjach, gdzie kluczowe są śledzenie, planowanie i analiza danych czasowych.
-
 ## Jak:
 Java oferuje wiele sposobów na pobranie bieżącej daty, korzystając zarówno ze starej klasy `java.util.Date`, jak i nowszego pakietu `java.time` (wprowadzonego w Java 8), który jest bardziej wszechstronny i intuicyjny.
 
@@ -31,6 +28,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### Używając `java.time.LocalDateTime`
 ```java
 import java.time.LocalDateTime;
@@ -42,6 +40,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### Używając `java.util.Date` (Starsze)
 ```java
 import java.util.Date;
@@ -53,6 +52,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### Korzystając z biblioteki zewnętrznej: Joda-Time
 Przed Java 8, Joda-Time był de facto standardem dla daty i czasu w Java. Jeśli pracujesz nad starszymi systemami lub preferujesz Joda-Time, oto jak możesz go użyć, aby uzyskać bieżącą datę:
 ```java

@@ -11,9 +11,6 @@ title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---
 
-## What & Why?
-Convertir une chaîne de caractères en minuscules, c'est transformer tous les caractères alphabétiques en leur version minuscule. On le fait pour uniformiser les données, simplifier les comparaisons de textes et souvent lors de la gestion des entrées utilisateurs.
-
 ## How to:
 Swift rend la conversion en minuscules étonnamment simple. Voici comment :
 

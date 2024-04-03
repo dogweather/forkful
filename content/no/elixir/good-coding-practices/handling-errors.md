@@ -11,12 +11,7 @@ title: "Feilh\xE5ndtering"
 weight: 16
 ---
 
-## Hva & Hvorfor?
-
-Å håndtere feil betyr å skrive kode som kan takle at ting ikke går som planlagt. Programmerere gjør det for å hindre krasj og for å forsikre seg om at programmene deres kan komme seg elegant gjennom problemer når Murphy’s lov slår til.
-
 ## Hvordan:
-
 I Elixir bruker vi ofte mønstermatching og `case`-setningen for å behandle ulike utfall, inkludert feil.
 
 ```elixir
@@ -47,7 +42,6 @@ Feil: Kan ikke dele med null.
 Når du kjører denne Elixir-koden, vil du enten få et vellykket divisjon eller en feilmelding, avhengig av inndataene dine. Ingen kræsj her!
 
 ## Dypdykk
-
 I gamle dager handlet feilhåndtering oftere om å sjekke returverdier. Med Elixirs funksjonelle røtter har vi imidlertid mønstermatching og merkede tupler, som `{:ok, verdi}` eller `{:error, årsak}`, som er mer elegante.
 
 Det er andre måter å håndtere feil i Elixir:
@@ -58,7 +52,6 @@ Det er andre måter å håndtere feil i Elixir:
 Når det gjelder implementering bygger Elixir på Erlangs robusthet. Det behandler feil som bare en annen type melding som skal håndteres med all mønstermatching og funksjonelle finesser.
 
 ## Se også
-
 For videre lesing om feilhåndtering i Elixir, sjekk ut:
 
 - Elixirs offisielle guide om [feilhåndtering](https://elixir-lang.org/getting-started/try-catch-and-rescue.html).

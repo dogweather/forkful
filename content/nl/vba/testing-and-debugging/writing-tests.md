@@ -13,12 +13,7 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-
-Het schrijven van tests in programmeren omvat het creëren van specifieke procedures om de functionaliteit en prestaties van je code segmenten te valideren, ervoor zorgend dat ze werken zoals verwacht onder verschillende omstandigheden. Programmeurs doen dit om bugs vroeg te vangen, de codekwaliteit te verbeteren en toekomstig codeonderhoud en -verbeteringen te vergemakkelijken.
-
 ## Hoe te:
-
 Hoewel Visual Basic for Applications (VBA) niet wordt geleverd met een ingebouwd testraamwerk vergelijkbaar met die beschikbaar in talen zoals Python of JavaScript, kun je nog steeds eenvoudige testprocedures implementeren om de integriteit van je code te controleren. Hier is een voorbeeld ter illustratie:
 
 Stel je hebt een functie in VBA die twee getallen optelt:
@@ -46,7 +41,6 @@ End Sub
 `TestAddNumbers` uitvoeren zal een berichtvenster tonen dat aangeeft of de test geslaagd of mislukt is op basis van de uitvoer van de functie. Hoewel dit een vereenvoudigd scenario is, kun je complexere tests bouwen door lussen, verschillende invoerwaarden en tests voor meervoudige functies te incorporeren.
 
 ## Diepe Duik
-
 De benadering om tests in VBA te schrijven zoals hier getoond, is handmatig en mist de functies van geavanceerdere testraamwerken die beschikbaar zijn in andere programmeeromgevingen, zoals geautomatiseerde testuitvoeringen, setup/teardown-procedures en geïntegreerde rapportage van testresultaten. Voordat de bredere acceptatie van unit testraamwerken en test-gedreven ontwikkeling (TDD) plaatsvond, waren handmatige testprocedures vergelijkbaar met de beschrevene gebruikelijk. Hoewel deze methode eenvoudig is en effectief kan zijn voor kleine projecten of leerdoeleinden, is het niet schaalbaar of efficiënt voor grotere projecten of teams.
 
 In omgevingen die rijkere ontwikkelingstools ondersteunen, wenden programmeurs zich vaak tot raamwerken zoals NUnit voor .NET-toepassingen of JUnit voor Java-toepassingen, die uitgebreide tools bieden voor het systematisch schrijven en uitvoeren van tests. Deze raamwerken bieden geavanceerde functies zoals het bevestigen van testresultaten, het opzetten van mock-objecten en het meten van codebedekking.

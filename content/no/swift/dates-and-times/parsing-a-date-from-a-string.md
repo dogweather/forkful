@@ -13,10 +13,8 @@ title: Analysering av en dato fra en streng
 weight: 30
 ---
 
-## Hva og hvorfor?
-Å analysere en dato fra en streng innebærer å konvertere tekstuelle dato- og tidsrepresentasjoner til et `Date`-objekt. Denne prosessen er essensiell i applikasjoner der datoer kommuniseres som strenger, som i API-responser eller brukerinndata, noe som tillater enklere manipulering og formatering av datoer.
-
 ## Hvordan:
+
 
 ### Bruke Foundation's `DateFormatter`
 Swifts standardbibliotek, Foundation, tilbyr `DateFormatter` for å konvertere strenger til `Date`-objekter og omvendt. For å analysere en dato fra en streng, spesifiserer du datoformatet som matcher strengen, deretter bruker du formatteren til å analysere det.

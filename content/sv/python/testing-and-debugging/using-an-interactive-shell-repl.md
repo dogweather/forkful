@@ -12,9 +12,6 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-En REPL, eller Läs-Utvärdera-Skriv Loop, är en programmeringsmiljö som tar emot enskilda användarinput, exekverar dem och returnerar resultatet till användaren. Programmerare använder den för snabba tester, lärande, felsökning eller att göra beräkningar på flygande fot.
-
 ## Hur man gör:
 Dyk direkt in i Pythons REPL genom att skriva `python` i din kommandotolk. Väl där, testa enkla operationer eller flerlinjekod:
 

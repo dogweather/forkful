@@ -10,9 +10,6 @@ title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---
 
-## Mitä & Miksi?
-Kompleksiluvuilla on reaaliosa ja imaginaariosa, ja ne ovat keskeisiä monilla aloilla, kuten insinööritieteissä, fysiikassa ja tietokonegrafiikassa. Ohjelmoijat käyttävät niitä ratkaistakseen yhtälöitä, joita tavalliset reaaliluvut eivät pysty käsittelemään.
-
 ## Kuinka:
 Rust ei suoraan tue kompleksilukuja, mutta kirjastot, kuten `num-complex`, ovat apunasi. Näin voit käyttää sitä:
 

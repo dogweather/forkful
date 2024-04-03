@@ -12,12 +12,7 @@ title: Strings verketten
 weight: 3
 ---
 
-## Was & Warum?
-
-Das Verketten von Zeichenfolgen beinhaltet das aneinanderfügen von zwei oder mehreren Zeichenfolgen am Ende, um eine neue Zeichenfolge zu bilden. Programmierer tun dies, um dynamisch Text zu generieren, wie z. B. das Konstruieren von Nachrichten, Pfaden oder komplexen Anfragen, was Programme interaktiver und responsiver macht.
-
 ## Wie man es macht:
-
 In Go gibt es mehrere Möglichkeiten, Zeichenfolgen zu verketten. Hier ist ein Blick auf einige gängige Methoden mit Beispielen:
 
 ### Mit dem `+` Operator:
@@ -61,7 +56,6 @@ fmt.Println(path) // pfad/zu/datei
 ```
 
 ## Tiefergehend
-
 Die Verkettung von Zeichenfolgen, obwohl sie eine scheinbar einfache Operation ist, berührt tiefere Aspekte, wie Go mit Zeichenketten umgeht. In Go sind Zeichenfolgen unveränderlich; das bedeutet, dass bei jeder Verkettungsoperation eine neue Zeichenfolge erstellt wird. Dies kann zu Leistungsproblemen führen, wenn eine große Anzahl von Zeichenfolgen verkettet wird oder wenn dies in engen Schleifen geschieht, aufgrund der häufigen Zuweisung und Kopie von Speicher.
 
 Historisch gesehen haben Sprachen die Unveränderlichkeit von Zeichenketten und die Effizienz der Verkettung auf verschiedene Weise angegangen, und der Ansatz von Go mit `strings.Builder` und `strings.Join` bietet Programmierern Werkzeuge, die Benutzerfreundlichkeit mit Leistung in Einklang bringen. Der Typ `strings.Builder`, eingeführt in Go 1.10, ist besonders bemerkenswert, da er eine effiziente Möglichkeit bietet, Zeichenfolgen zu bauen, ohne die Overheads mehrfacher Zeichenkettenspeicherzuweisungen zu verursachen. Dies geschieht, indem ein Puffer zugewiesen wird, der bei Bedarf wächst und in den Zeichenfolgen eingefügt werden.

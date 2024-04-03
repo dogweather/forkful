@@ -11,9 +11,6 @@ title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---
 
-## Vad & Varför?
-Att jämföra två datum innebär att fastställa vilket som är tidigast eller senast, eller om de är samma. Programmerare gör detta för att hantera tidsbegränsningar, evenemang, eller tidslinjesfunktioner i applikationer.
-
 ## Hur man gör:
 I Fish Shell kan du använda `date` för att jämföra datum. Ta en titt:
 

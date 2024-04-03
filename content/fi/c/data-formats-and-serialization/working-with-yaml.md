@@ -13,12 +13,7 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä & Miksi?
-
-YAML, joka tarkoittaa "YAML Ain't Markup Language", on ihmisen luettavissa oleva datan serialisointistandardi, jota voidaan käyttää monenlaisiin sovelluksiin, konfiguraatiotiedostoista datan tallennukseen. Ohjelmoijat työskentelevät usein YAMLin kanssa, kun he tarvitsevat helposti luettavan ja helposti kirjoitettavan muodon konfiguraatiotiedostoille tai datan vaihdolle kielienvälisten ja järjestelmien välillä.
-
 ## Miten:
-
 Työskentely YAMLin kanssa C-kielessä vaatii kirjaston, sillä vakio C-kirjasto ei tarjoa suoraa tukea YAMLin jäsentämiselle tai serialisoinnille. Yksi suosituimmista YAML-kirjastoista C:lle on `libyaml`, joka tarjoaa sekä matalan tason että korkean tason rajapintoja YAMLin jäsentämiseen ja tuottamiseen. Alla on esimerkki siitä, kuinka jäsentää yksinkertainen YAML-tiedosto käyttäen `libyaml`-kirjastoa:
 
 **Ensimmäiseksi**, sinun täytyy asentaa `libyaml`-kirjasto. Jos käytät Unix-tyyppistä järjestelmää, voit yleensä asentaa sen paketinhallintasi kautta. Esimerkiksi Ubuntussa:
@@ -90,7 +85,6 @@ Arvo: false
 ```
 
 ## Syväsukellus
-
 YAML julkaistiin ensimmäisen kerran vuonna 2001 ja se on suunniteltu olemaan luettavampi ja käyttäjäystävällisempi kuin muut datan serialisointiformaatit, kuten XML tai JSON, lainaten useista kielistä, kuten C, Perl ja Python, sen suunnittelu filosofiaansa. Siitä huolimatta, että YAML:ssä on etuja luettavuudessa ja helpossa ihmisen tekemässä muokkauksessa, YAML voi olla monimutkainen jäsentää ohjelmallisesti sen sisennyksen käytön ja laajan ominaisuuskokonaisuuden vuoksi, mukaan lukien viittaukset ja mukautetut tyypit.
 
 Vaikka `libyaml` tarjoaa vankan, matalan tason pääsyn YAMLin jäsentämiseen ja tuottamiseen C:ssä, se voi olla hankalaa yksinkertaisissa tehtävissä sen verbose API:n vuoksi. Näistä syistä jotkut ohjelmoijat haluavat käyttää korkeamman tason kirjastoja tai jopa muita datan serialisointiformaatteja, kuten JSONia, työskennellessään C:ssä, erityisesti kun suorituskykyinen jäsentäminen minimaalisella koodin kuormituksella on prioriteetti. Kuitenkin YAML pysyy suosittuna valintana konfiguraatiotiedostoille ja tilanteissa, joissa ihmisen luettavuus on ensisijainen. Vaihtoehtoja, kuten TinyYAML tai korkeamman tason tulkkiin upottaminen (esim. Pythonin tai Luan upottaminen), voisi tarjota enemmän mukavuutta tietyissä sovelluksissa, tasapainotellen käytön helppouden ja suorituskyvyn tarpeiden välillä.

@@ -12,9 +12,6 @@ title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---
 
-## Mikä & Miksi?
-Lainausmerkkien poistaminen merkkijonosta tarkoittaa kiusallisten kaksin- tai yksinkertaisten lainausmerkkien hävittämistä tekstin ympäriltä. Ohjelmoijat tekevät tämän puhdistaakseen dataa, varmistaakseen yhtenäisyyden tai valmistaakseen merkkijonot käsittelyyn, jossa lainausmerkit ovat ei-toivottuja tai voivat aiheuttaa virheitä.
-
 ## Kuinka:
 Clojuressa merkkijonot ovat muuttumattomia, joten kun puhumme "lainausmerkkien poistamisesta", puhumme oikeastaan uuden merkkijonon luomisesta ilman lainausmerkkejä. Tässä tiivistelmä käyttäen `clojure.string/replace`:
 

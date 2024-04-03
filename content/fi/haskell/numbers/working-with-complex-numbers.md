@@ -12,12 +12,7 @@ title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---
 
-## Mikä ja miksi?
-
-Kompleksiluvut, jotka koostuvat reaali- ja imaginääriosasta, ovat olennaisia monilla laskennallisilla aloilla kuten insinööritieteessä, fysiikassa ja signaalinkäsittelyssä. Ohjelmoijat käyttävät niitä ratkaistakseen yhtälöitä, joita reaaliluvuilla ei voi, kuten negatiivisten lukujen juurten löytämisen.
-
 ## Kuinka:
-
 Haskell käsittelee kompleksilukuja `Data.Complex`-moduulin avulla. Tässä on pikakierros:
 
 ```haskell
@@ -57,7 +52,6 @@ Esimerkkituloste koodin lataamisen jälkeen GHCi:ssä voisi olla:
 ```
 
 ## Syväsukellus
-
 Kompleksiluvut ulottuvat 16. vuosisadalle, mutta ne hyväksyttiin laajalti paljon myöhemmin. Haskell, kuten monet muut kielet, tarjoaa natiivituen kompleksiaritmetiikalle, mikä tekee näiden lukujen kanssa työskentelystä helppoa ilman perustavanlaatuisen matematiikan toteuttamista.
 
 Vaihtoehtoihin kuuluu oman kompleksilukutyypin rakentaminen tai erityisille aloille, kuten quaternionit 3D-grafiikkaan, tarkoitettujen kirjastojen käyttäminen. Mutta useimmissa käyttötapauksissa Haskellin `Data.Complex` riittää.
@@ -65,7 +59,6 @@ Vaihtoehtoihin kuuluu oman kompleksilukutyypin rakentaminen tai erityisille aloi
 `Data.Complex`in alla on vain tietotyyppi, joka parittaa kaksi `Float` tai `Double` -arvoa, edustaen vastaavasti reaali- ja imaginääriosia. Se on suoraviivainen ja tehokas tapa työskennellä kompleksilukujen kanssa Haskell-alustalla.
 
 ## Katso myös
-
 Tutustu näihin resursseihin saadaksesi lisätietoja kompleksiluvuista Haskellissa:
 
 - Virallinen Haskell `Data.Complex` dokumentaatio: [Hackage Data.Complex](https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-Complex.html)

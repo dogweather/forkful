@@ -11,12 +11,7 @@ title: Sending an HTTP request with basic authentication
 weight: 45
 ---
 
-## What & Why?
-
-In Ruby, sending an HTTP request with basic authentication involves adding a username and password to your request header. Programmers do this to access resources that require user verification.
-
 ## How to:
-
 To send an HTTP request with basic authentication, you'll typically use the `Net::HTTP` module in Ruby. Here's a quick example:
 
 ```Ruby
@@ -40,7 +35,6 @@ puts response.body
 If you run this code with valid credentials, you'll see the body of the response printed out. If the credentials are invalid, you'll get an error message.
 
 ## Deep Dive
-
 Basic authentication has a long history as part of web protocols, going back to the early RFCs that defined the workings of the internet. It's a simple method of access control: the username and password are encoded with Base64 and passed in the HTTP header.
 
 However, basic authentication transmits credentials in plaintext (albeit encoded), so it's not secure over HTTP. It's better to use HTTPS to keep credentials safe from prying eyes. 
@@ -50,7 +44,6 @@ There are more secure alternatives like OAuth, which is often used for API authe
 One detail to note is that Ruby's `Net::HTTP` doesn’t handle Basic Auth natively until you explicitly use the `basic_auth` method. It's also crucial to handle possible exceptions and error responses that might result from the HTTP request.
 
 ## See Also
-
 - Ruby standard library `Net::HTTP` documentation: https://ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html
 - RFC 7617, 'The 'Basic' HTTP Authentication Scheme': https://tools.ietf.org/html/rfc7617
 - An intro to OAuth for authentication: https://oauth.net/2/

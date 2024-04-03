@@ -14,9 +14,6 @@ title: Usando expresiones regulares
 weight: 11
 ---
 
-## Qué y por qué?
-Las expresiones regulares (regex) en Dart ofrecen una forma poderosa de buscar y manipular cadenas, permitiendo a los programadores realizar tareas de procesamiento de texto complejas de manera eficiente. Al entender regex, los desarrolladores pueden ejecutar validaciones de texto, buscar patrones y realizar transformaciones de texto rápidamente, lo cual es esencial para procesar formularios, parseo de datos y manipulaciones generales de cadenas en aplicaciones modernas.
-
 ## Cómo:
 Dart utiliza la clase `RegExp` para expresiones regulares. Aquí hay un ejemplo básico para coincidir con un patrón simple dentro de una cadena:
 

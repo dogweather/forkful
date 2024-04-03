@@ -22,12 +22,7 @@ title: "\u7F16\u5199\u6587\u672C\u6587\u4EF6"
 weight: 24
 ---
 
-## 什么与为什么？
-
-在 Visual Basic for Applications (VBA) 中编写文本文件涉及创建、修改或向文件追加文本数据，这是存储输出、记录或与其他应用程序交互的基本任务。程序员利用这一功能来自动化报告、数据导出或在 Microsoft Office 生态系统内生成配置文件。
-
 ## 如何操作：
-
 VBA 提供了几种写入文件的方法，但使用 `FileSystemObject` 是其中一种最直接的方式。以下是一个创建简单文本文件并向其写入数据的分步指南：
 
 1. **引用 Microsoft 脚本运行时**：首先，确保你的 VBA 编辑器可以访问 `FileSystemObject`。在 VBA 编辑器中，转到 工具 > 引用 并勾选 "Microsoft Scripting Runtime"。
@@ -62,7 +57,6 @@ Hello, VBA!
 ```
 
 ## 深入了解：
-
 `FileSystemObject`（FSO），作为 Microsoft Scripting Runtime 库的一部分，为文件操作提供了丰富的属性和方法集，超出了传统 VBA 文件处理（例如，`Open`、`Print` #、`Write` #）所提供的。除了处理文件，FSO 还可以操作文件夹和驱动器，使其成为 VBA 内文件系统操作的强大工具。
 
 但值得注意的是，虽然 FSO 在 VBA 中为文件操作提供了一种更现代的方法，但与 VBA 的原生文件处理语句相比，它可能为简单任务引入了额外的开销。此外，由于 FSO 是外部库的一部分，可移植性和与其他系统的兼容性（例如，早期版本的 Office，Mac Office）可能是关切点。

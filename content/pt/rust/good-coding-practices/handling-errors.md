@@ -10,12 +10,7 @@ title: Tratamento de erros
 weight: 16
 ---
 
-## O Que & Por Quê?
-
-Tratamento de erros é sobre lidar com as coisas quando elas não seguem conforme o planejado. Programadores fazem isso para lidar com o inesperado, garantindo que seus programas em Rust sejam robustos e não simplesmente travem ao enfrentar um problema.
-
 ## Como fazer:
-
 Rust lida com erros de duas formas principais: erros recuperáveis e irrecuperáveis. Vamos ver ambos.
 
 Erros recuperáveis usam `Result<T, E>`:
@@ -54,7 +49,6 @@ fn main() {
 Execute e você verá uma mensagem de pânico. Seu programa para imediatamente.
 
 ## Mergulho Profundo
-
 Historicamente, o tratamento de erros na programação tem sido uma bagunça. Rust acerta ao fazer uma distinção clara entre erros recuperáveis e irrecuperáveis.
 
 O `Result` enum é para erros recuperáveis. É explícito - você lida com a variante `Ok` ou `Err`. Você tem métodos como `unwrap()` e `expect()` também, mas são atalhos rápidos e sujos que podem levar a um `panic!`.
@@ -66,7 +60,6 @@ Tratar erros retornando `Result` é preferido quando se espera lidar com erros. 
 Alternativas? Claro, você poderia usar outros pacotes de tratamento de erros para mais funcionalidades ou uso ergonômico. Como `anyhow` para tratamento de erros simples, ou `thiserror` para erros em código de biblioteca.
 
 ## Veja Também
-
 Interessado em explorar mais a fundo? Aqui está por onde ir:
 
 - [Livro Rust sobre Tratamento de Erros](https://doc.rust-lang.org/book/ch09-00-error-handling.html) - Ótimo lugar para entender a filosofia de tratamento de erros do Rust.

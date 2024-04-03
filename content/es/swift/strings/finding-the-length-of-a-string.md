@@ -10,9 +10,6 @@ title: Calculando la longitud de una cadena
 weight: 7
 ---
 
-## What & Why?
-En Swift, encontrar la longitud de un cadena (String) significa contar cuántos caracteres contiene. Los programadores lo hacen para validar entradas, limitar texto en UI, o manejar datos correctamente.
-
 ## How to:
 Swift facilita el conteo de caracteres en una cadena. Usamos la propiedad `count` del String.
 

@@ -12,11 +12,7 @@ title: Zufallszahlen generieren
 weight: 12
 ---
 
-## Was & Warum?
-Das Generieren von Zufallszahlen in Dart beinhaltet die Erstellung von numerischen Werten, die unvorhersehbar sind und bei jeder Ausführung variieren. Programmierer nutzen diese Funktionalität aus verschiedenen Gründen, von der Simulation realer Szenarien in Testumgebungen bis hin zur Aktivierung von Spielmechaniken und der Gewährleistung von Sicherheit durch Zufälligkeit in kryptografischen Operationen.
-
 ## Wie geht das:
-
 Die Kernbibliothek von Dart unterstützt das Generieren von Zufallszahlen mit der `Random`-Klasse, die in `dart:math` gefunden werden kann. Hier ist ein einfaches Beispiel:
 
 ```dart

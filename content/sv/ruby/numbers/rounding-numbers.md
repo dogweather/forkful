@@ -11,11 +11,7 @@ title: Avrundning av tal
 weight: 13
 ---
 
-## Vad & Varför?
-Att avrunda tal innebär att justera dem till närmaste heltal eller till en angiven precisionsgrad. Programmerare avrundar tal för att förenkla, för att möta mänskliga förväntningar, eller för att passa data i specifika format—tänk finansiella beräkningar, grafiska visningar eller för att minska lagringsstorlek.
-
 ## Hur man gör:
-
 ```Ruby
 # Grundläggande avrundning
 puts 3.14159.round      # => 3

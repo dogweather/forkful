@@ -14,16 +14,10 @@ title: "Generando n\xFAmeros aleatorios"
 weight: 12
 ---
 
-## ¿Qué y Por Qué?
-
-Generar números aleatorios es una tarea fundamental en la programación que se utiliza para una miríada de aplicaciones, tales como simulaciones, juegos y sistemas de seguridad. Los programadores emplean esta técnica en Google Apps Script para introducir variabilidad, probar escenarios y añadir imprevisibilidad a sus aplicaciones dentro del ecosistema de Google, incluyendo Hojas de Cálculo, Documentos y Formularios.
-
 ## Cómo hacerlo:
-
 En Google Apps Script, puedes generar números aleatorios usando la función `Math.random()`, similar a JavaScript. Esta función devuelve un número pseudoaleatorio de punto flotante en el rango de 0 (inclusive) a 1 (exclusivo). Para adaptar estos números para varios casos de uso, como generar enteros dentro de un rango específico, es posible que necesites realizar cálculos adicionales.
 
 ### Generando un Número Aleatorio Básico
-
 Para generar un número aleatorio simple y registrarle en la consola:
 
 ```javascript
@@ -35,7 +29,6 @@ function generateRandomNumber() {
 *Salida de muestra:* `0.1234567890123456`
 
 ### Generando un Entero Dentro de un Rango Específico
-
 Para generar un entero aleatorio entre dos valores (`min` y `max`), inclusivo:
 
 ```javascript
@@ -55,7 +48,6 @@ getRandomInt(1, 10);
 Recuerda, la función `Math.ceil()` se utiliza para redondear el valor mínimo hacia arriba, y `Math.floor()` se utiliza para redondear el valor máximo hacia abajo, asegurando que el número aleatorio esté dentro del rango especificado.
 
 ## Análisis Profundo
-
 El mecanismo para generar números aleatorios en Google Apps Script, y de hecho en la mayoría de los lenguajes de programación, utiliza un generador de números pseudoaleatorios (PRNG, por sus siglas en inglés). Esta técnica es determinista y se basa en un valor inicial, conocido como la semilla, para producir una secuencia de números que parece aleatoria. Aunque es suficiente para muchas aplicaciones, es importante tener en cuenta que los números pseudoaleatorios pueden no ser apropiados donde se requiera alta seguridad o verdadera aleatoriedad, como en aplicaciones criptográficas.
 
 La verdadera aleatoriedad se puede lograr a través de generadores de números aleatorios de hardware o servicios que generan aleatoriedad a partir de fenómenos naturales. Sin embargo, para la mayoría de las necesidades de script diarias en Google Apps Script, `Math.random()` es suficiente.

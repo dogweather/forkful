@@ -12,9 +12,6 @@ title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---
 
-## Wat & Waarom?
-Een interactieve shell, of REPL (Read-Eval-Print Loop), in Haskell laat je codefragmenten live uitvoeren. Het is een speeltuin voor snelle feedback, het testen van functies en het leren van de taal.
-
 ## Hoe te:
 Om de GHCi (Glasgow Haskell Compiler's interactieve omgeving) te starten, typ je simpelweg `ghci` in je terminal. Hier is hoe je het gebruikt:
 

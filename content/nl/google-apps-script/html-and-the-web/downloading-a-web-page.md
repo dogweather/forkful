@@ -13,12 +13,7 @@ title: Een webpagina downloaden
 weight: 42
 ---
 
-## Wat & Waarom?
-
-Het downloaden van een webpagina in Google Apps Script houdt in dat de inhoud van een webpagina via HTML wordt opgehaald voor verschillende doeleinden, zoals webscraping, gegevensextractie of het monitoren van wijzigingen. Programmeurs kiezen voor deze bewerking om dataverzameling of integratietaken te automatiseren, handmatige inspanning te minimaliseren en realtime gegevensverwerking te waarborgen.
-
 ## Hoe te:
-
 In Google Apps Script is de `UrlFetchApp`-service cruciaal voor het downloaden van webinhoud. Hieronder staat een stap-voor-stap handleiding en een eenvoudig voorbeeld dat demonstreert hoe je de HTML-inhoud van een webpagina kunt ophalen en loggen:
 
 1. **Basis Fetch-bewerking:**
@@ -56,7 +51,6 @@ function downloadSecureWebPage() {
 Let op de quota's van Google Apps Script; intensief gebruik kan foutafhandeling voor limieten vereisen.
 
 ## Diepgaande Verkenning
-
 Historisch gezien begon het downloaden en manipuleren van webinhoud met eenvoudige HTTP-verzoeken, aanzienlijk evoluerend met de komst van scripttalen. Google Apps Script maakt eenvoudige uitvoering van dergelijke taken mogelijk binnen het G Suite-ecosysteem, gebruikmakend van de robuuste infrastructuur van Google. De `UrlFetchApp`-service is een kernonderdeel van deze functionaliteit, die complexe HTTP/S-verzoeken inkapselt in een eenvoudigere applicatieniveau-interface.
 
 Ondanks het gemak is Google Apps Script mogelijk niet altijd het beste gereedschap voor intensieve webscraping of wanneer complexe nabewerking van opgehaalde gegevens vereist is vanwege de uitvoeringstijdlimieten en quota's opgelegd door Google. In dergelijke gevallen kunnen specifiek voor webscraping ontworpen frameworks of talen ontworpen voor asynchrone I/O-bewerkingen, zoals Node.js met bibliotheken zoals Puppeteer of Cheerio, meer flexibiliteit en kracht bieden.

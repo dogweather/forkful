@@ -13,12 +13,7 @@ title: Willekeurige getallen genereren
 weight: 12
 ---
 
-## Wat & Waarom?
-
-Het genereren van willekeurige getallen in programmeren houdt in dat er reeksen getallen worden gecreëerd die geen voorspelbare volgorde of patroon hebben. Programmeurs gebruiken deze getallen vaak voor verschillende doeleinden zoals het simuleren van onvoorspelbare gebeurtenissen, in testen en debuggen, en in spelalgoritmen om eerlijkheid of onvoorspelbaarheid te waarborgen.
-
 ## Hoe te:
-
 Om willekeurige getallen in C++ te genereren, maak je doorgaans gebruik van de `<random>` header, die werd geïntroduceerd in C++11 en een breed scala aan faciliteiten biedt voor het genereren van willekeurige getallen uit verschillende distributies.
 
 ```C++
@@ -49,7 +44,6 @@ Een voorbeelduitvoer kan er zo uitzien, maar houd er rekening mee dat elke uitvo
 ```
 
 ## Diepere Duik:
-
 Historisch gezien leunde de generatie van willekeurige getallen in C++ sterk op de `rand()` functie en de `srand()` functie voor het zaaien, gevonden in de `<cstdlib>` header. Deze benadering kreeg echter vaak kritiek vanwege het gebrek aan uniformiteit en voorspelbaarheid in de distributie van gegenereerde getallen.
 
 De introductie van de `<random>` header in C++11 markeerde een aanzienlijke verbetering en bood een geavanceerd systeem voor het produceren van willekeurige getallen. De geboden faciliteiten omvatten een verscheidenheid aan motoren (zoals `std::mt19937` voor Mersenne Twister) en distributies (zoals `std::uniform_int_distribution` voor uniforme distributie van integers) die gecombineerd kunnen worden om aan de specifieke behoeften van de programmeur te voldoen, wat leidt tot voorspelbaarder gedrag, betere prestaties en grotere flexibiliteit.

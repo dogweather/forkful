@@ -11,9 +11,6 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## Vad & Varför?
-Att läsa en textfil betyder att man hämtar innehållet från en fil för att använda det i sitt program. Programmerare gör detta för att manipulera data, ladda konfigurationer, eller helt enkelt för att visa informationen.
-
 ## Hur man gör:
 ```elixir
 # Läs hela filen på en gång

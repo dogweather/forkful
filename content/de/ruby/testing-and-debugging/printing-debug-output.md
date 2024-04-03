@@ -10,9 +10,6 @@ title: Debug-Ausgaben drucken
 weight: 33
 ---
 
-## Was & Warum?
-Drucken von Debug-Output ist, wenn wir programminterne Daten zur Laufzeit ausgeben, um Fehler zu finden und den Programmfluss zu verstehen. Wir machen das, weil es einfach und schnell ist, uns einen Überblick über die inneren Vorgänge eines Programms zu verschaffen.
-
 ## How to:
 Ruby bietet mehrere Wege, um Debug-Ausgaben zu machen. Hier sind ein paar Beispiele:
 

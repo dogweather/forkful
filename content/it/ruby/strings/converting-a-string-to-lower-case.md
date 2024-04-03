@@ -10,9 +10,6 @@ title: Conversione di una stringa in minuscolo
 weight: 4
 ---
 
-## What & Why? (Cosa e Perché?)
-Convertire una stringa in minuscolo significa cambiare tutti i caratteri dalla forma maiuscola alla forma minuscola. I programmatori lo fanno per uniformare i dati, facilitare i confronti o la ricerca di testo, e ignorare differenze di capitalizzazione nelle stringhe di testo.
-
 ## How to: (Come fare:)
 ```Ruby
 # Esempio base di conversione in minuscolo

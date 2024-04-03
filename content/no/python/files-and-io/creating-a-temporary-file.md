@@ -11,9 +11,6 @@ title: Opprette en midlertidig fil
 weight: 21
 ---
 
-## What & Why?
-Midlertidige filer er som papptallerkener; du bruker dem en gang, så kaster du dem vekk. Programmerere lager slike filer for å lagre data midlertidig uten å påvirke permanent lagring eller for å unngå kompleks håndtering av datastrømmer.
-
 ## How to:
 Python har et bibliotek som heter `tempfile` som er skreddersydd for midlertidige filer og mapper. Her er et eksempel:
 

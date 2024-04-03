@@ -11,9 +11,6 @@ title: Konvertere en dato til en streng
 weight: 28
 ---
 
-## Hva & Hvorfor?
-Å konvertere en dato til en streng i PHP betyr å endre et datoobjekt til et leselig format. Programmerere gjør det for å vise datoer på en forståelig måte for brukere eller for å formatere før lagring i databaser.
-
 ## Hvordan gjøre det:
 ```PHP
 <?php

@@ -13,9 +13,6 @@ title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---
 
-## ¿Qué y por qué?
-Analizar una fecha de una cadena implica extraer información de fecha codificada dentro de cadenas y convertirla en un formato estructurado que los entornos de programación pueden reconocer y manipular. Los programadores hacen esto para permitir operaciones como la comparación de fechas, aritmética, formateo y localización, que son esenciales para manejar la programación, marcas de tiempo y datos históricos de manera eficiente en el software.
-
 ## Cómo hacerlo:
 En Fish Shell, no tienes comandos integrados específicamente diseñados para analizar fechas de cadenas. En su lugar, dependes de utilidades externas como `date` (disponible en Linux y macOS) o aprovechas herramientas de terceros populares como `GNU date` para el análisis más complejo. Así es cómo abordarlo:
 

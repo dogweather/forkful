@@ -10,12 +10,7 @@ title: Sending an HTTP request
 weight: 44
 ---
 
-## What & Why?
-
-Sending an HTTP request involves initiating a call from your Go application to a web server, API, or any other HTTP-based service. Programmers do this to interact with web resources, fetch data, submit forms, or communicate with other services across the internet.
-
 ## How to:
-
 In Go, sending an HTTP request and handling the response involves using the `net/http` package. Here’s a step-by-step example showing how to send a simple GET request and read the response:
 
 ```go
@@ -97,7 +92,6 @@ func main() {
 ```
 
 ## Deep Dive
-
 The `net/http` package in Go provides a powerful and flexible way to interact with HTTP servers. Its design reflects Go's emphasis on simplicity, efficiency, and robustness. Originally, functionalities like handling JSON or XML payloads required manually crafting the request body and setting appropriate headers. As Go evolved, the community has developed higher-level packages that further simplify these tasks, such as `gorilla/mux` for routing and `gjson` for JSON manipulation.
 
 One notable aspect of Go’s HTTP client is its use of interfaces and structs, like `http.Client` and `http.Request`, which allow for extensive customization and testing. For example, you can modify the `http.Client` to timeout requests or keep connections alive for performance.

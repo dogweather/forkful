@@ -11,9 +11,6 @@ title: Praca z XML
 weight: 40
 ---
 
-## Co i dlaczego?
-Praca z XML oznacza manipulowanie danymi w powszechnym, strukturyzowanym formacie, używanym w konfiguracjach, komunikacji i wielu innych. Programiści manipulują XML-em, aby odczytywać, zapisywać, aktualizować i wyszukiwać dane — co jest kluczowe dla interoperacyjności w wielu aplikacjach i usługach.
-
 ## Jak to zrobić:
 Fish nie ma wbudowanego parsowania XML, więc będziesz polegać na zewnętrznych narzędziach, takich jak `xmllint` lub `xmlstarlet`. Oto fragment kodu do odczytu wartości:
 

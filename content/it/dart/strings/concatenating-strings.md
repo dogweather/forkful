@@ -13,9 +13,6 @@ title: Concatenazione di stringhe
 weight: 3
 ---
 
-## Cosa e Perché?
-La concatenazione di stringhe nella programmazione implica l'unione di due o più stringhe in una sola. I programmatori fanno ciò per manipolare facilmente i dati testuali, costruire messaggi o assemblare dinamicamente parti di un'interfaccia utente.
-
 ## Come fare:
 Dart offre diversi modi diretti per concatenare le stringhe. Di seguito sono riportati i metodi più comuni:
 

@@ -10,16 +10,10 @@ title: Parsing HTML
 weight: 43
 ---
 
-## What & Why?
-
-Parsing HTML in programming involves analyzing the structure of an HTML document, allowing you to extract, manipulate, and interact with its content programmatically. Programmers do this to automate web scraping, data extraction, or even modify web pages or HTML documents dynamically for various applications, making it an essential skill in web development, data analysis, and automated testing scenarios.
-
 ## How to:
-
 While .NET provides basic support for working with HTML, such as the `HttpClient` for fetching web pages, it lacks a built-in, comprehensive HTML parser. Therefore, most C# developers turn to popular third-party libraries like HtmlAgilityPack or AngleSharp for robust HTML parsing capabilities. Both libraries allow easy querying, manipulation, and traversal of the HTML DOM.
 
 ### Using HtmlAgilityPack
-
 1. **Install HtmlAgilityPack**: First, add the HtmlAgilityPack package to your project via NuGet.
    ```
    Install-Package HtmlAgilityPack
@@ -61,7 +55,6 @@ While .NET provides basic support for working with HTML, such as the `HttpClient
    ```
 
 ### Using AngleSharp
-
 1. **Install AngleSharp**: Add the AngleSharp library to your project through NuGet.
    ```
    Install-Package AngleSharp

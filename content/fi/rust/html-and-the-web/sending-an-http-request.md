@@ -10,9 +10,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## What & Why? - Mitä ja Miksi?
-Lähetämme HTTP-pyynnön vaihtaaksemme tietoja palvelimien kanssa. Sitä käytetään datan hakemiseen, lähettämiseen ja web-palveluiden hyödyntämiseen.
-
 ## How to: - Kuinka:
 Rustin käyttöön HTTP-pyyntöjen lähettämiseen tarvitset ulkoisen kirjaston, kuten `reqwest`. Asenna ensin `reqwest` lisäämällä se `Cargo.toml`-tiedostoon:
 

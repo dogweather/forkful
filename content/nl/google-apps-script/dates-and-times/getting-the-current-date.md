@@ -13,12 +13,7 @@ title: Het verkrijgen van de huidige datum
 weight: 29
 ---
 
-## Wat & Waarom?
-
-De huidige datum krijgen in Google Apps Script gaat over het ophalen van de live datum en tijd, een gebruikelijke taak voor het automatiseren van taken, loggen, en timestamping in apps die verbonden zijn met Google's ecosysteem. Programmeurs gebruiken dit voor het genereren van dynamische inhoud, deadline tracking, en planning binnen Google Docs, Sheets en andere Google-diensten.
-
 ## Hoe:
-
 Google Apps Script, dat is gebaseerd op JavaScript, biedt eenvoudige methoden om de huidige datum te krijgen. Je kunt de `new Date()` constructor gebruiken om een nieuw datumobject te creëren dat de huidige datum en tijd vertegenwoordigt. Hier is hoe je dit kunt manipuleren en weergeven in verschillende formaten.
 
 ```javascript
@@ -45,7 +40,6 @@ function toonHuidigeDatum() {
 Deze codevoorbeelden laten zien hoe je de huidige datum en tijd kunt vastleggen en vormgeven, waarmee de veelzijdigheid voor verschillende programmeerbehoeften binnen Google Apps Script wordt getoond.
 
 ## Diepere Duik
-
 Voordat JavaScript zich vestigde op het `Date` object, moesten programmeurs handmatig de tijd en datum bijhouden door middel van minder standaard en omslachtigere middelen. Dit omvatte het gebruik van timestamp integers en zelfgemaakte datumfuncties, die varieerden van de ene programmeeromgeving naar de andere, wat leidde tot inconsistentie en compatibiliteitsproblemen.
 
 De introductie van het `new Date()` object in JavaScript, en bij uitbreiding Google Apps Script, standaardiseerde datum- en tijdoperaties, maakte ze intuïtiever en verminderde de hoeveelheid code die nodig is voor datumgerelateerde bewerkingen. Het is belangrijk om op te merken dat hoewel de implementatie in Google Apps Script handig en voldoende is voor veel toepassingen binnen Google's suite van producten, het misschien niet voldoet aan alle scenario's, vooral die welke complexe tijdzonebehandeling of precieze tijd-stempelregistratie vereisen in snel veranderende omgevingen.

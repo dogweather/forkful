@@ -11,9 +11,6 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## Cosa e Perché?
-Estrarre sottostringhe significa selezionare una parte specifica di una stringa di testo. I programmatori lo fanno per manipolare e analizzare dati, per esempio per estrarre nomi utente da indirizzi email o per elaborare formati di data e ora.
-
 ## Come Fare:
 Ecco un frammento di codice semplice per estrarre sottostringhe in PowerShell:
 

@@ -18,9 +18,6 @@ title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uB
 weight: 45
 ---
 
-## What & Why? (무엇과 왜?)
-HTTP 요청에 기본 인증(Basic Authentication)을 붙이는 것은 사용자 이름과 비밀번호를 포함해 서버에 접근하게 합니다. 프로그래머들이 이를 사용하는 이유는 간단하게 API나 리소스에 보안을 요구할 때입니다.
-
 ## How to: (방법)
 ```TypeScript
 import axios from 'axios';

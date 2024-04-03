@@ -12,12 +12,7 @@ title: "HTML:n j\xE4sennys"
 weight: 43
 ---
 
-## Mitä & Miksi?
-
-HTML:n jäsentäminen Haskellissa mahdollistaa datan poiminnan, HTML-sisällön manipuloinnin tai ohjelmallisesti verkkosivujen kanssa vuorovaikuttamisen. Tämä toiminto on olennainen tehtävissä, kuten verkon raaputtamisessa (web scraping), verkkosovellusten automatisoidussa testaamisessa ja tietojen louhimisessa verkkosivustoilta - hyödyntäen Haskellin vahvaa tyyppijärjestelmää ja funktionaalisen ohjelmoinnin paradigmoja varmistaakseen kestävän ja ytimekään koodin.
-
 ## Miten:
-
 HTML:n jäsentämiseen Haskellissa käytämme `tagsoup`-kirjastoa sen yksinkertaisuuden ja joustavuuden vuoksi. Varmista ensin, että asennat kirjaston lisäämällä `tagsoup` projektisi cabal-tiedostoon tai suorittamalla `cabal install tagsoup`.
 
 ```haskell

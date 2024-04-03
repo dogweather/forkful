@@ -19,9 +19,6 @@ title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---
 
-## Cái gì & Tại sao?
-Việc tạo số ngẫu nhiên trong Elm bao gồm việc sử dụng module `Random` để sản xuất số giả ngẫu nhiên, rất hữu ích cho nhiều tác vụ như trò chơi, mô phỏng, và thậm chí là một phần của các thuật toán yêu cầu quá trình ngẫu nhiên học. Khả năng này cho phép các nhà phát triển thêm tính không chắc chắn và đa dạng vào ứng dụng của họ, nâng cao trải nghiệm và chức năng cho người dùng.
-
 ## Làm thế nào:
 Bản chất hàm mô phỏng thuần túy của Elm nghĩa là bạn không thể tạo số ngẫu nhiên trực tiếp như bạn có thể làm trong các ngôn ngữ mệnh lệnh. Thay vào đó, bạn sử dụng module `Random` kết hợp với các lệnh. Dưới đây là một ví dụ cơ bản tạo một số nguyên ngẫu nhiên từ 1 đến 100.
 

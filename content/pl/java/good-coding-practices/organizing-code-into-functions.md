@@ -11,9 +11,6 @@ title: Organizacja kodu w funkcje
 weight: 18
 ---
 
-## Co i dlaczego?
-Organizowanie kodu w funkcje oznacza podzielenie programu-potwora na zarządzalne kawałki, z których każdy pełni odrębne zadanie. Programiści robią to, aby kod był czytelny, możliwy do ponownego użycia i łatwy w utrzymaniu.
-
 ## Jak to zrobić:
 Oto klasyczny przykład — funkcja do obliczania silni liczby.
 

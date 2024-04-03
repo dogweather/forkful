@@ -14,12 +14,7 @@ title: "Imprimindo a sa\xEDda de depura\xE7\xE3o"
 weight: 33
 ---
 
-## O Que & Por Quê?
-
-Imprimir saídas de depuração envolve colocar estrategicamente declarações de registro no seu código para exibir valores de variáveis, fluxo de execução ou mensagens de erro durante a execução. Programadores utilizam isso extensivamente para rastrear e diagnosticar o comportamento de seus scripts, garantindo correção e eficiência em suas aplicações do Google Apps Script.
-
 ## Como fazer:
-
 O Google Apps Script oferece a classe `Logger` para depuração básica, e para necessidades mais avançadas, a classe `console` introduzida no tempo de execução V8.
 
 **Usando Logger:**
@@ -56,7 +51,6 @@ Status atual: ativo, Contagem: 150
 ```
 
 ## Aprofundamento
-
 Inicialmente, `Logger.log` era a ferramenta primária para depuração no Google Apps Script, oferecendo uma maneira simples e direta de imprimir saídas para inspeção. No entanto, à medida que os scripts se tornam mais complexos e integrados aos serviços da Google Cloud Platform, a necessidade de uma solução de registro mais robusta tornou-se evidente.
 
 Então veio o tempo de execução V8, trazendo `console.log` para o cenário. Isso não apenas alinha o Google Apps Script com a sintaxe JavaScript padrão, tornando a linguagem mais acessível para desenvolvedores familiarizados com JavaScript, mas também aproveita a poderosa infraestrutura de registro do Google Cloud. A introdução de `console.log` e sua integração com a Google Cloud Platform marca uma evolução significativa nas capacidades de depuração dentro do Google Apps Script, proporcionando aos desenvolvedores uma abordagem mais dinâmica e escalável para monitorar e solucionar problemas em seus scripts.

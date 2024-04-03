@@ -11,12 +11,7 @@ title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---
 
-## Co i dlaczego?
-
-Liczenie długości łańcucha to ustalenie, ile znaków zawiera tekst. Programiści robią to, żeby wiedzieć, jak dużo danych przetwarzają i by zarządzać nimi efektywnie w różnych kontekstach, jak formatowanie czy walidacja danych.
-
 ## Jak to zrobić:
-
 W Haskellu używamy funkcji `length` do znalezienia długości stringa. Oto jak to wygląda:
 
 ```haskell
@@ -32,7 +27,6 @@ Output:
 ```
 
 ## Zanurz się głębiej
-
 Historia języków programowania jest pełna różnych metod liczenia znaków w stringach. W Haskellu funkcja `length` jest częścią standardowej biblioteki i działa na dowolnej liście, ponieważ stringi to po prostu listy znaków.
 
 Inne sposoby? Można również użyć kombinatorów z biblioteki `Data.Text` dla wydajniejszej obsługi dużych tekstów, albo własnoręcznie przejść przez każdy znak używając rekurencji czy funkcji wyższego rzędu.
@@ -40,7 +34,6 @@ Inne sposoby? Można również użyć kombinatorów z biblioteki `Data.Text` dla
 Ciekawostka: `length` w Haskellu jest typowo implementowana jako funkcja przejścia przez całą listę do końca, więc ma złożoność liniową O(n). Nie jest to najwydajniejsze dla wielkich list, ale w przypadku stringów zazwyczaj nie stanowi problemu.
 
 ## Zobacz również
-
 - Dokumentacja funkcji `length`: [Hackage: base-4.16.0.0: Data.List](https://hackage.haskell.org/package/base-4.16.0.0/docs/Data-List.html#v:length)
 - Haskell Wiki o stringach: [HaskellWiki: String](https://wiki.haskell.org/String)
 - Lepsze praktyki z `Data.Text`: [Hackage: text](https://hackage.haskell.org/package/text)

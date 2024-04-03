@@ -11,9 +11,6 @@ title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---
 
-## What & Why?
-Converter uma string para minúsculas é o processo de transformar todas as letras de uma string para a forma minúscula. Programadores fazem isso para padronizar dados, facilitar comparações de strings e garantir consistência em operações que são sensíveis a maiúsculas e minúsculas.
-
 ## How to:
 ```Bash
 # Usando tr
@@ -34,7 +31,6 @@ outra string em maiúsculas
 ```
 
 ## Deep Dive
-
 A necessidade de converter strings para minúsculas remonta ao início da computação, onde a consistência na entrada de dados era crítica. No tempo dos primeiros computadores, a capacidade de processamento e memória era limitada, então a normalização de strings para um formato padrão economizava recursos valiosos.
 
 No UNIX e em seus derivados, como o Linux, ferramentas como `tr`, `awk`, e as capacidades internas do Bash, como operadores de substituição de padrões, oferecem diferentes formas de realizar a conversão para minúsculas.
@@ -48,7 +44,6 @@ No UNIX e em seus derivados, como o Linux, ferramentas como `tr`, `awk`, e as ca
 Ao escolher um método, considere o contexto do seu script. Por exemplo, para scripts simples, `tr` é geralmente suficiente. Se estiver trabalhando dentro de um script Bash maior que faz uso de variáveis, então `${variável,,}` é limpo e eficiente. Se precisar fazer mais processamento de dados além de apenas converter para minúsculas, `awk` pode ser a melhor ferramenta para integrar essa funcionalidade.
 
 ## See Also
-
 - [Bash Reference Manual](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
 - [GNU `tr` Manual](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html#tr-invocation)
 - [AWK Manual](https://www.gnu.org/software/gawk/manual/gawk.html)

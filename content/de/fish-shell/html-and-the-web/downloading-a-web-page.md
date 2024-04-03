@@ -10,9 +10,6 @@ title: Webseite herunterladen
 weight: 42
 ---
 
-## Was & Warum?
-Das Herunterladen einer Webseite bedeutet, ihre Daten zu erfassen, um sie offline zu analysieren oder zu verarbeiten. Programmierer machen das, um Inhalte zu sammeln, automatisiert zu arbeiten oder Webanwendungen zu testen.
-
 ## How to:
 Um eine Webseite herunterzuladen, verwenden wir `curl` oder `wget`. Hier ist ein einfaches Beispiel mit `curl`:
 

@@ -10,9 +10,6 @@ title: Umgang mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-Komplexe Zahlen bestehen aus einem Realteil und einem Imaginärteil (wie 3 + 4i). Programmierer verwenden sie in Swift für Aufgaben wie Signalverarbeitung, Lösen bestimmter mathematischer Probleme und Simulation von Physik.
-
 ## Wie geht das:
 Swift hat keine eingebaute Unterstützung für komplexe Zahlen, aber wir können unsere eigene erstellen:
 

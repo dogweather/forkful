@@ -13,12 +13,7 @@ title: Verwendung von assoziativen Arrays
 weight: 15
 ---
 
-## Was & Warum?
-
-Assoziative Arrays oder Hash-Maps ermöglichen es Ihnen, Daten als Schlüssel-Wert-Paare zu speichern, was die Organisation und das Abrufen von Informationen nach Schlüssel erleichtert. Sie sind praktisch, wenn Sie eine strukturiertere Möglichkeit benötigen, Daten zu handhaben als nur Listen, insbesondere bei Konfigurationen und beim Umgang mit verschiedenen Attributen.
-
 ## Wie zu:
-
 Fish unterstützt nicht nativ assoziative Arrays wie Bash 4+, aber Sie können eine ähnliche Funktionalität erreichen, indem Sie eine Kombination aus Listen und String-Manipulation verwenden. So können Sie sie nachahmen:
 
 Zuerst richten Sie "assoziative Array"-Elemente separat ein:
@@ -60,5 +55,4 @@ end
 ```
 
 ## Tiefergehend
-
 Echte assoziative Arrays, wie in anderen Skriptsprachen, sind noch kein Teil von Fishs Ansatz. Der gezeigte Workaround nutzt Fishs String-Manipulation und Listenfähigkeiten, um eine pseudo-assoziative Array-Struktur zu erstellen. Obwohl es funktioniert, ist es nicht so sauber oder fehlerfrei, wie es die eingebaute Unterstützung für assoziative Arrays wäre. Andere Shells wie Bash und Zsh bieten eingebaute assoziative Array-Funktionalität, was zu einfacherem, lesbarem Code führt. Allerdings zielt die Designphilosophie von Fish auf Einfachheit und Benutzerfreundlichkeit ab, möglicherweise auf Kosten solcher Funktionen. Der Workaround erfüllt die meisten Bedürfnisse, aber halten Sie ein Auge auf die Entwicklung von Fish Shell – dessen Entwickler verbessern aktiv und fügen Funktionen basierend auf Community-Feedback hinzu.

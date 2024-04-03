@@ -12,12 +12,7 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-
-Reguliere expressies (regex) bieden een manier om te zoeken, overeenkomsten te vinden en strings te manipuleren met behulp van gedefinieerde patronen. Programmeurs gebruiken ze uitgebreid voor taken zoals het valideren van invoer, het parsen van tekstgegevens en het vinden van patronen in grote tekstbestanden, waardoor ze een krachtig hulpmiddel zijn in elke taal, inclusief C.
-
 ## Hoe:
-
 Om reguliere expressies in C te gebruiken, werk je voornamelijk met de POSIX regex-bibliotheek (`<regex.h>`). Dit voorbeeld demonstreert basispatroonmatching:
 
 ```c
@@ -66,7 +61,6 @@ Geen match gevonden
 ```
 
 ## Diepere duik:
-
 Reguliere expressies in C, als onderdeel van de POSIX-standaard, bieden een robuuste manier om stringmatching en -manipulatie uit te voeren. Echter, de API van de POSIX regex-bibliotheek in C wordt beschouwd als omslachtiger dan die in talen die ontworpen zijn met eersteklas stringmanipulatiefuncties zoals Python of Perl. De syntaxis voor patronen is vergelijkbaar in verschillende talen, maar C vereist handmatig geheugenbeheer en meer boilerplate-code om de regex patronen voor te bereiden, uit te voeren en op te ruimen.
 
 Ondanks deze uitdagingen is leren om regex in C te gebruiken lonend omdat het een dieper begrip van low-level programmeerconcepten geeft. Daarnaast opent het mogelijkheden voor C-programmering op gebieden zoals tekstverwerking en gegevensextractie waar regex onmisbaar is. Voor meer complexe patronen of regex-operaties kunnen alternatieven zoals de PCRE (Perl Compatible Regular Expressions) bibliotheek een meer functierijke en enigszins gemakkelijkere interface bieden, hoewel het integreren van een externe bibliotheek in je C-project vereist is.

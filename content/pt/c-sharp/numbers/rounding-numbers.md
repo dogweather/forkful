@@ -11,9 +11,6 @@ title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---
 
-## O Que & Porquê?
-Arredondar números significa ajustá-los ao valor de lugar mais próximo—pense em simplificá-los. Programadores arredondam para controlar a precisão, aumentar o desempenho ou ao apresentar resultados amigáveis ao usuário—como preços que não precisam de três casas decimais.
-
 ## Como fazer:
 Aqui está o bilhete de ida e volta para arredondar números em C#:
 

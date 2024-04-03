@@ -12,9 +12,6 @@ title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---
 
-## What & Why?
-Luodaan tilapäisiä tiedostoja, kun tarvitsemme väliaikaisen säilytyspaikan datalle, joka häviää ohjelman suorituksen päätyttyä. Tämä on kätevää, koska säästämme levytilaa ja teemme datan käsittelystä turvallisempaa.
-
 ## How to:
 Rubyssa tilapäisen tiedoston luonti on suoraviivaista käyttämällä `Tempfile`-kirjastoa:
 

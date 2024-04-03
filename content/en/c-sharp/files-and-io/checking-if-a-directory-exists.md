@@ -10,14 +10,10 @@ title: Checking if a directory exists
 weight: 20
 ---
 
-## What & Why?
-
-Checking if a directory exists in C# involves verifying the presence of a folder at a specified path in the file system. Programmers do this to avoid errors such as attempting to read from or write to a non-existent directory, ensuring smoother file and directory manipulations.
-
 ## How to:
 
-### Using System.IO
 
+### Using System.IO
 C# provides the `System.IO` namespace which contains the `Directory` class, offering a direct way to check for a directory's existence through the `Exists` method. 
 
 ```csharp
@@ -48,7 +44,6 @@ Directory exists: False
 In case the directory does exist at the path `C:\ExampleDirectory`, the output will be `True`.
 
 ### Using System.IO.Abstractions for unit testing
-
 When it comes to making your code unit testable, especially when it interacts with the file system, the `System.IO.Abstractions` package is a popular choice. It allows you to abstract and mock file system operations in your tests. Here's how you could check for a directory's existence using this approach:
 
 First, ensure you have installed the package:

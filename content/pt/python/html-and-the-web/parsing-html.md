@@ -15,9 +15,6 @@ title: Analisando HTML
 weight: 43
 ---
 
-## O Quê e Por Quê?
-Analisar HTML envolve analisar o código HTML de uma página da web para extrair informações ou elementos específicos, uma tarefa comum para web scraping, mineração de dados ou automação de interações com sites. Os programadores fazem isso para interagir programaticamente com os sites ou extrair dados deles, automatizar tarefas ou testar aplicações web.
-
 ## Como fazer:
 Python oferece bibliotecas poderosas como BeautifulSoup e requests para web scraping e análise de HTML. Para começar, você precisa instalar essas bibliotecas, caso ainda não tenha feito:
 

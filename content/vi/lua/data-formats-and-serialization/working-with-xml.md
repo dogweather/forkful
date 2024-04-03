@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Gì và Tại sao?
-Làm việc với XML bao gồm việc phân tích cú pháp và thao tác với tài liệu XML sử dụng mã lập trình. Các lập trình viên làm việc này để đọc, viết và sửa đổi dữ liệu trong một định dạng có cấu trúc, dễ di chuyển, được sử dụng rộng rãi cho việc trao đổi và lưu trữ dữ liệu.
-
 ## Làm thế nào:
 Lua không bao gồm phân tích cú pháp XML gốc, nhưng có các thư viện như LuaXML và xml2lua làm được công việc đó. Dưới đây là cái nhìn nhanh về cách phân tích cú pháp XML với xml2lua:
 

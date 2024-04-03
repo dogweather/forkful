@@ -14,9 +14,6 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-Wyrażenia regularne w programowaniu to sekwencje znaków definiujące wzorzec wyszukiwania, typowo wykorzystywane do przeszukiwania i manipulacji ciągami znaków. Programiści Haskell wykorzystują wyrażenia regularne do zadań, począwszy od prostego dopasowywania ciągów znaków po złożone przetwarzanie tekstu, wykorzystując ich efektywność i wszechstronność w obsłudze danych tekstowych.
-
 ## Jak to zrobić:
 W Haskell funkcjonalności regex nie są częścią standardowej biblioteki, co wymaga używania pakietów stron trzecich takich jak `regex-base` wraz z kompatybilnym backendem jak `regex-posix` (dla wsparcia POSIX regex), `regex-pcre` (dla kompatybilnych z Perlem regex) itp. Oto jak możesz używać tych pakietów do pracy z wyrażeniami regularnymi.
 
@@ -31,7 +28,6 @@ cabal install regex-pcre
 ```
 
 ### Użycie `regex-posix`:
-
 ```haskell
 import Text.Regex.Posix ((=~))
 
@@ -52,7 +48,6 @@ main = do
 ```
 
 ### Użycie `regex-pcre`:
-
 ```haskell
 import Text.Regex.PCRE ((=~))
 

@@ -11,12 +11,7 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co i dlaczego?
-
-Obsługa błędów polega na pisaniu kodu, który przewiduje błędne sytuacje i radzi sobie z nimi. Programiści robią to, aby oprogramowanie było bardziej niezawodne, zapobiegając awariom i dziwnym zachowaniom.
-
 ## Jak to zrobić:
-
 Java używa wyjątków do obsługi błędów. Ryzykowny kod umieszcza się w bloku `try` oraz przechwytuje wyjątki w bloku `catch`. Oto prosty przykład:
 
 ```java
@@ -42,7 +37,6 @@ Ups, nie można dzielić przez zero!
 ```
 
 ## Wnikliwe spojrzenie
-
 Obsługa błędów w Javie ewoluowała. Na początku nie było wyjątków; programiści sprawdzali kody błędów. Następnie Java wprowadziła bloki try-catch, umożliwiające bardziej elegancką obsługę błędów.
 
 Alternatywami dla tradycyjnych bloków `try-catch` są `try-with-resources` dla automatycznego zamykania zasobów i czystszego kodu, wprowadzone w Java 7.
@@ -50,7 +44,6 @@ Alternatywami dla tradycyjnych bloków `try-catch` są `try-with-resources` dla 
 Szczegóły implementacji mają znaczenie. Na przykład łapanie `Exception` lub `Throwable` jest zazwyczaj złą praktyką. Jest to zbyt ogólne i maskuje błędy, o których możesz nie wiedzieć. Trzymaj się konkretnych wyjątków.
 
 ## Zobacz również
-
 - Oficjalne tutoriale Oracle Java na temat wyjątków: [https://docs.oracle.com/javase/tutorial/essential/exceptions/](https://docs.oracle.com/javase/tutorial/essential/exceptions/)
 - Dokumentacja instrukcji `try-with-resources` w Javie: [https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html)
 - Effective Java autorstwa Joshuy Blocha, dla najlepszych praktyk dotyczących wyjątków.

@@ -11,9 +11,6 @@ title: Eliminando comillas de una cadena
 weight: 9
 ---
 
-## ¿Qué y por qué?
-Quitar las comillas de una cadena significa despojar esos signos de comillas dobles o simples que envuelven los valores de texto. Los programadores a menudo hacen esto para limpiar la entrada del usuario, asegurar la consistencia en el procesamiento de datos o preparar datos para sistemas que podrían confundirse con esos caracteres adicionales.
-
 ## Cómo hacerlo:
 Ruby tiene algunos trucos ingeniosos bajo la manga para recortar esas molestas comillas. Puedes usar los métodos `gsub` o `delete` para hacer el trabajo. Aquí hay algo de código para masticar:
 

@@ -14,9 +14,6 @@ title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---
 
-## Gì và Tại sao?
-Lấy ngày hiện tại trong JavaScript là việc thu thập ngày và thời gian của ngày hiện tại. Lập trình viên thực hiện điều này cho các mục đích như dấu thời gian, lịch trình, và logic dựa trên thời gian.
-
 ## Cách thức:
 ```javascript
 const now = new Date();

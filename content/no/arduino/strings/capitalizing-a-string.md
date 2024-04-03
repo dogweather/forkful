@@ -14,9 +14,6 @@ title: Sette stor bokstav i en streng
 weight: 2
 ---
 
-## Hva & Hvorfor?
-Å sette stor bokstav i en streng innebærer å konvertere det første tegnet i hvert ord i en streng til stor bokstav mens resten forblir små bokstaver. Denne operasjonen er vanlig i dataformatering og normalisering av brukerinndata for å opprettholde konsistens og bedre lesbarhet.
-
 ## Hvordan:
 Arduino, primært kjent for å samhandle med maskinvare, inkluderer også grunnleggende funksjoner for manipulering av strenger gjennom sitt `String`-objekt. Det mangler imidlertid en direkte `capitalize`-funksjon sett i høyere nivåspråk. Derfor implementerer vi kapitalisering ved å iterere over en streng og anvende transformasjoner av bokstavstørrelse.
 

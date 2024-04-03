@@ -14,9 +14,6 @@ title: Comprobando si un directorio existe
 weight: 20
 ---
 
-## Qué y Por Qué?
-Comprobar si un directorio existe trata de determinar la presencia de un directorio en una ruta especificada antes de realizar operaciones como leer o escribir en archivos dentro de él. Los programadores lo hacen para evitar errores relacionados con las operaciones de archivo, asegurando una ejecución más suave y fiable de las tareas de manejo de archivos en sus aplicaciones.
-
 ## Cómo hacerlo:
 En C++ moderno (C++17 y posteriores), puedes usar la biblioteca de sistema de archivos para comprobar si un directorio existe. Ofrece una manera directa y estandarizada de realizar operaciones del sistema de archivos, incluyendo la verificación de la existencia de un directorio.
 

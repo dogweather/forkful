@@ -11,9 +11,6 @@ title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---
 
-## What & Why?
-Utskrift for feilsøking lar deg vise data og programflyt i konsollen for å forstå hva programmet ditt faktisk gjør. Programmerere bruker dette til å spore feil og sikre at koden oppfører seg som forventet.
-
 ## How to:
 For å skrive ut debug-informasjon i Ruby, bruk `puts` eller `p`. Her er et enkelt eksempel:
 

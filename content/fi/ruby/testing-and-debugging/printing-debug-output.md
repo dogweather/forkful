@@ -12,9 +12,6 @@ title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
 
-## What & Why? - Mitä & Miksi?
-Debug-tulostus on koodissa olevien `puts` tai `p` -komentojen käyttöä väliaikaisten viestien näyttämiseen, jotta nähdään mitä ohjelmassa tapahtuu. Se auttaa koodareita ymmärtämään ohjelman käyttäytymistä ja löytämään bugeja nopeasti.
-
 ## How to: - Näin teet:
 ```Ruby
 # Yksinkertainen esimerkki

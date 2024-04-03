@@ -16,9 +16,6 @@ title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---
 
-## Cái gì & Tại sao?
-Việc tạo số ngẫu nhiên trong PowerShell liên quan đến việc tạo ra các giá trị số không thể đoán trước trong một phạm vi được chỉ định. Các lập trình viên sử dụng khả năng này vì nhiều lý do, bao gồm kiểm thử, mô phỏng, và mục đích bảo mật, nơi sự không dự đoán hoặc mô phỏng sự ngẫu nhiên của thế giới thực là cần thiết.
-
 ## Cách thực hiện:
 PowerShell cung cấp một cách thẳng thắn để tạo số ngẫu nhiên bằng cách sử dụng cmdlet `Get-Random`. Cmdlet này có thể sản xuất ra số ngẫu nhiên trong phạm vi mặc định hoặc một phạm vi được chỉ định.
 

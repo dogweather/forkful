@@ -23,9 +23,6 @@ title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u094B \u091C\u09
 weight: 3
 ---
 
-## What & Why? (क्या और क्यों?)
-String concatenation दो या दो से अधिक strings को जोड़ने का काम है। इस काम को प्रोग्रामर्स अक्सर डेटा को format करने या मेसेजेस क्रिएट करने के लिए करते हैं।
-
 ## How to: (कैसे करें:)
 ```TypeScript
 // Simple String Concatenation with Plus (+) Operator

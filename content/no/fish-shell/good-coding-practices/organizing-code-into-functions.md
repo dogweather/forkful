@@ -14,9 +14,6 @@ title: Organisering av kode i funksjoner
 weight: 18
 ---
 
-## Hva & Hvorfor?
-Å organisere kode i funksjoner handler om å samle biter av skript for å utføre spesifikke oppgaver. Vi gjør det fordi det gjør koden lettere å lese, teste og gjenbruke – ingen ønsker å vasse gjennom et sumpområde av kodespagetti.
-
 ## Hvordan:
 I Fish skriver du en funksjon med `function`-nøkkelordet, gir den et navn, og avslutter med `end`. Her er en enkel en:
 
@@ -59,11 +56,9 @@ Noen shells, som Bash, bruker `function` eller rett og slett klammeparenteser. F
 Du trenger ikke en `return`-verdi fordi Fish ikke legger stor vekt på det; utdata fra din funksjon er dens retur. Og hvis du vil ha vedvarende funksjoner tilgjengelige for fremtidige økter, husk `funcsave`.
 
 ## Se også
-
 - Fish-opplæringen om funksjoner: [https://fishshell.com/docs/current/tutorial.html#tut_functions](https://fishshell.com/docs/current/tutorial.html#functions)
 
 ### Funksjonskommandoer
-
 - [function](https://fishshell.com/docs/current/cmds/function.html) — Opprette en funksjon
 - [functions](https://fishshell.com/docs/current/cmds/functions.html) — Skriv ut eller slett funksjoner
 - [funcsave](https://fishshell.com/docs/current/cmds/funcsave.html) — Lagre definisjonen av en funksjon til brukerens autoload-katalog

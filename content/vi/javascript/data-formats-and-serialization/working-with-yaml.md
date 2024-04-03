@@ -16,9 +16,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---
 
-## Làm thế nào & Tại sao?
-YAML (YAML ain't Markup Language), hay còn gọi là YAML, là một tiêu chuẩn hóa dữ liệu thân thiện với con người dành cho tất cả các ngôn ngữ lập trình. Lập trình viên làm việc với YAML bởi vì nó dễ đọc và viết, thường được sử dụng cho các tệp cấu hình, và trao đổi dữ liệu giữa các ngôn ngữ hoặc dịch vụ.
-
 ## Cách thực hiện:
 Chúng ta sẽ sử dụng thư viện `js-yaml` phổ biến để phân tích YAML thành các đối tượng JavaScript và chuyển đổi các đối tượng JavaScript thành YAML.
 

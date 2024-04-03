@@ -11,9 +11,6 @@ title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---
 
-## Co i dlaczego?
-Wyciąganie podciągów to wydobywanie konkretnych fragmentów tekstu z większych ciągów znaków. Programiści robią to, by manipulować danymi, weryfikować format, czy po prostu wydobyć potrzebne informacje.
-
 ## Jak to zrobić:
 ```Bash
 # Wyodrębnienie podciągu używając indeksów

@@ -10,9 +10,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## Hva & Hvorfor?
-I JavaScript kan vi beregne en dato i fremtiden eller fortiden; det er nyttig for funksjoner som påminnelser eller historiske dataanalyser. Programmerere støter ofte på behovet for å håndtere datoer når de bygger applikasjoner som involverer planlegging, aldersverifisering, eller tidsstyring.
-
 ## Hvordan gjøre det:
 For å beregne en ny dato, kan vi bruke `Date` objektet. Her er noen enkle eksempler:
 

@@ -11,9 +11,6 @@ title: Lokitus
 weight: 17
 ---
 
-## Mikä & Miksi?
-Lokitus on pohjimmiltaan prosessi, jossa tallennetaan tapahtumia ja ohjelmiston tuottamia tietoja sen suorituksen aikana, ajattele sitä ohjelmiston päiväkirjana. Ohjelmoijat käyttävät lokitusta seuratakseen, mitä konepellin alla tapahtuu - se on korvaamaton apuväline ongelmien selvittämisessä, järjestelmän käyttäytymisen seurannassa reaaliaikaisesti sekä menneen toiminnan analysoinnissa suorituskyvyn optimointia tai tarkastuksia varten.
-
 ## Kuinka:
 Elmin arkkitehtuuri ei tue sivuvaikutuksia kuten lokitusta valmiina - käsittelet niitä komentojen kautta, jotka ovat osa sovelluksesi arkkitehtuuria. Koulutustarkoituksessa, katsotaan miten voisit simuloida lokitusta lähettämällä viestejä JavaScriptiin porttien kautta.
 

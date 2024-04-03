@@ -9,12 +9,7 @@ title: Inviare una richiesta http
 weight: 44
 ---
 
-## What & Why?
-
-Mandare una richiesta HTTP significa chiedere al web qualcosa. I programmatori lo fanno per interagire con API, scaricare dati, o altro ancora.
-
 ## How to:
-
 Ecco come si invia una richiesta GET con PowerShell:
 
 ```PowerShell
@@ -39,7 +34,6 @@ id: 1234, status: 'successo', messaggio: 'Dati ricevuti correttamente.'
 ```
 
 ## Deep Dive
-
 Inizio: PowerShell ha introdotto `Invoke-RestMethod` in v3.0 (2012). Da allora, è lo standard per le richieste web.
 
 Alternative: Prima c'era `Invoke-WebRequest`, più verboso. Altre opzioni includono curl o strumenti .NET.
@@ -47,7 +41,6 @@ Alternative: Prima c'era `Invoke-WebRequest`, più verboso. Altre opzioni includ
 Dettagli: `Invoke-RestMethod` analizza la risposta JSON o XML. Ci sono parametri per intestazioni HTTP, autenticazione, e altro.
 
 ## See Also
-
 - [Invoke-RestMethod Documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod)
 - [About HTTP Requests](https://developer.mozilla.org/docs/Web/HTTP/Methods)
 - [PowerShell Scripting Guide](https://docs.microsoft.com/en-us/powershell/scripting/overview)

@@ -12,9 +12,6 @@ title: "F\xE5 dagens dato"
 weight: 29
 ---
 
-## Hva & Hvorfor?
-Å hente den gjeldende datoen i JavaScript er en grunnleggende oppgave som involverer å hente og muligens manipulere dagens dato og tid. Programmerere utfører dette for å vise datoer på nettsteder, i applikasjoner, for å spore brukerinteraksjoner eller for å håndtere tidsfølsomme data.
-
 ## Hvordan:
 I vanilla JavaScript brukes `Date`-objektet for å jobbe med datoer og tider. Slik kan du hente den gjeldende datoen og tiden:
 

@@ -11,9 +11,6 @@ title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---
 
-## Was & Warum?
-Das Entfernen von Anführungszeichen aus einem String in PowerShell entfernt einzelne (`'`) oder doppelte (`"`) Anführungszeichen, die Ihren Text umgeben. Programmierer müssen oft Strings für die Verarbeitung, den Vergleich oder die Ausgabe bereinigen, insbesondere wenn sie mit Benutzereingaben oder Dateiparsing zu tun haben.
-
 ## Wie:
 Sie können den Operator `-replace` verwenden, um Anführungszeichen aus einem String zu entfernen. So geht's:
 

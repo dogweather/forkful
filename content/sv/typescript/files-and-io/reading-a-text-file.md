@@ -11,9 +11,6 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## Vad & Varför?
-Läsning av en textfil innebär att hämta data från en fil som är lagrad på disken. Programmerare gör detta för att bearbeta, visa eller transformera information som är bekvämt arkiverad i textformat.
-
 ## Hur man gör:
 För att läsa en textfil i TypeScript kan du använda den inbyggda `fs`-modulen i Node.js. Se exempel nedan:
 

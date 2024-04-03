@@ -12,9 +12,6 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-Complexe getallen bestaan uit een reëel deel en een imaginair deel. Programmeurs gebruiken ze in velden zoals signaalverwerking, kwantummechanica, en wanneer de berekening ze vereist, omdat normale reële getallen gewoon niet volstaan.
-
 ## Hoe te:
 Bash ondersteunt van nature geen complexe getallen. Je gebruikt vaak een extern hulpmiddel zoals `bc` met zijn `-l` optie. Hier is hoe je complexe getallen in bash verwerkt:
 

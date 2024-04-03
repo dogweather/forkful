@@ -11,9 +11,6 @@ title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---
 
-## O Que & Por Que?
-Criar um arquivo temporário é o processo de fazer um arquivo que só existe durante a execução do programa ou até ser explicitamente removido. Programadores fazem isso para armazenar dados temporários sem correr o risco de conflito com outros arquivos ou processos e para garantir que os resíduos não se acumulem no sistema.
-
 ## Como Fazer:
 ```Bash
 # Criar um arquivo temporário com mktemp

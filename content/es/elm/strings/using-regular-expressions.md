@@ -12,9 +12,6 @@ title: Usando expresiones regulares
 weight: 11
 ---
 
-## ¿Qué y por qué?
-Las expresiones regulares (regex) en programación son patrones utilizados para emparejar combinaciones de caracteres en cadenas de texto. En Elm, al igual que en otros lenguajes, los programadores utilizan regex para tareas como validar entrada, buscar y reemplazar texto dentro de cadenas debido a su flexibilidad y eficiencia.
-
 ## Cómo hacerlo:
 Elm no tiene funciones regex incorporadas en su librería principal, lo que requiere el uso de librerías de terceros para estas operaciones. Una de las opciones populares para trabajar con regex es `elm/regex`. Puedes agregarlo a tu proyecto usando `elm install elm/regex`.
 

@@ -12,12 +12,7 @@ title: Generera slumptal
 weight: 12
 ---
 
-## Vad & Varför?
-
-Att generera slumpmässiga tal innebär att skapa tal som inte rimligen kan förutsägas bättre än genom slumpen, vilket är avgörande för utvecklingen av simuleringar, spel och säkerhetsalgoritmer. Programmerare gör detta för att införa oförutsägbarhet eller simulera verkliga fenomen i sina applikationer.
-
 ## Hur man gör:
-
 Python tillhandahåller modulen `random` som hjälper till att generera slumpmässiga tal för olika användningsområden. Så här kommer du igång:
 
 1. **Importera modulen**
@@ -65,7 +60,6 @@ Python tillhandahåller modulen `random` som hjälper till att generera slumpmä
     Exempel på utdata: `[2, 5, 0, 4, 9, 8, 1, 7, 6, 3]`
 
 ## Fördjupning
-
 Modulen `random` i Python använder en pseudoslumpgenerator (PRNG), specifikt Mersenne Twister-algoritmen, som är bra för allmänna applikationer men inte lämplig för kryptografiska ändamål på grund av dess förutsägbarhet om tillräckligt många utdata observeras. Modulen `secrets`, som introducerades i Python 3.6, erbjuder ett bättre alternativ för att generera kryptografiskt säkra slumpmässiga tal, särskilt användbart i säkerhetskänsliga applikationer. Till exempel generering av en säker, slumpmässig token för en länk för återställning av lösenord:
 
 ```Python

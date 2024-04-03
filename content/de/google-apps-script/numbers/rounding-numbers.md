@@ -13,12 +13,7 @@ title: Runden von Zahlen
 weight: 13
 ---
 
-## Was & Warum?
-
-Das Runden von Zahlen, ein grundlegendes Konzept in der Computerprogrammierung, beinhaltet die Anpassung einer Zahl auf die nächstgelegene ganze Zahl oder auf eine bestimmte Anzahl von Dezimalstellen. Programmierer führen das Runden oft durch, um Zahlen für die menschliche Lesbarkeit zu vereinfachen oder um spezifischen Berechnungsbedürfnissen zu entsprechen, wodurch Präzision sichergestellt und die Rechenlast reduziert wird.
-
 ## Wie:
-
 Google Apps Script, das auf der Programmiersprache JavaScript basiert, bietet Standardmethoden zum Runden von Zahlen. Hier ist eine Aufschlüsselung von drei häufig verwendeten Techniken:
 
 ### Math.round()
@@ -60,7 +55,6 @@ Logger.log(preciseRound); // Gibt aus: 2.57
 ```
 
 ## Vertiefung
-
 Das Runden von Zahlen in Google Apps Script weicht nicht viel von der Vorgehensweise in anderen JavaScript-Umgebungen ab. Allerdings ist das Verständnis der Unterschiede in den Rundungsmethoden und das Potenzial für Probleme mit der Fließkommazahlen-Arithmetik entscheidend. Beispielsweise können wegen der Art und Weise, wie Computer Fließkommazahlen darstellen, nicht alle Dezimalbrüche mit perfekter Genauigkeit repräsentiert werden, was manchmal zu unerwarteten Rundungsergebnissen führt.
 
 Historisch gesehen handhabt JavaScript (und somit auch Google Apps Script) dies durch die Konformität mit dem IEEE 754-Standard, der von vielen anderen Programmiersprachen für Fließkommazahlen-Arithmetik verwendet wird. Dieser Standard definiert, wie Zahlen gerundet werden, und gewährleistet Konsistenz über verschiedene Plattformen und Sprachen hinweg.

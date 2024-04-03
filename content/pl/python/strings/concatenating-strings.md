@@ -11,12 +11,7 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## What & Why? (Co i Dlaczego?)
-
-Łączenie ciągów znaków (stringów) to proces tworzenia jednego ciągu ze dwojga lub więcej. Programiści używają tej techniki do budowania komunikatów, danych i skryptów - to podstawy manipulowania tekstami.
-
 ## How to: (Jak to zrobić?)
-
 Łączenie stringów w Pythonie możemy zrealizować na różne sposoby. Tutaj kilka przykładów:
 
 ```Python
@@ -36,7 +31,6 @@ print(calosc)  # Wyjście: Hej to ja
 ```
 
 ## Deep Dive (Głębsze spojrzenie)
-
 Kiedyś, w Pythonie 2, popularnym sposobem łączenia stringów była operacja `%` zwaną operatorem interpolacji. Przykład:
 
 ```Python
@@ -55,7 +49,6 @@ powitanie = "Cześć, {}!".format(imie)
 Kwestią techniczną jest fakt, że ciągi znaków w Pythonie są niemutowalne, co oznacza, że każda operacja łączenia tworzy nowy ciąg, nie modyfikując istniejących. Dlatego, przy łączeniu dużej liczby stringów, `join()` jest wydajniejszy niż wielokrotne użycie `+`, ponieważ `+` w każdym kroku tworzy nowy string, co jest kosztowne przy dużych ilościach danych.
 
 ## See Also (Zobacz również)
-
 - Dokumentacja Pythona na temat f-stringów: https://docs.python.org/3/reference/lexical_analysis.html#formatted-string-literals
 - Dokumentacja metody `str.join()`: https://docs.python.org/3/library/stdtypes.html#str.join
 - Dokumentacja metody `format()`: https://docs.python.org/3/library/stdtypes.html#str.format

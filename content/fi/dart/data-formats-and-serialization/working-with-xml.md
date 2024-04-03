@@ -15,12 +15,7 @@ title: "Ty\xF6skentely XML:n kanssa"
 weight: 40
 ---
 
-## Mikä & Miksi?
-
-XML:n käsittely Dartissa sisältää XML-dokumenttien jäsennyksen, kyselyn ja muokkauksen, joka on olennainen prosessi sovelluksille, jotka ovat vuorovaikutuksessa verkkopalveluiden, konfiguraatiotiedostojen tai perintöjärjestelmien kanssa. Ohjelmoijat tekevät tämän mahdollistaakseen tietojenvaihdon, konfiguraatiot tai jopa etämenettelykutsut rakenteellisessa, hierarkisessa muodossa, joka on sekä ihmisen luettavissa että koneellisesti jäsentävissä.
-
 ## Kuinka tehdä:
-
 Dart ei sisällä sisäänrakennettua tukea XML:n käsittelyyn sen standardikirjastossa, mikä edellyttää kolmansien osapuolten pakettien käyttöä. Yksi suosittu paketti on `xml`. Käyttääksesi sitä, sinun on ensin lisättävä se `pubspec.yaml`-tiedostoosi:
 
 ```yaml

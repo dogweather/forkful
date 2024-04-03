@@ -11,9 +11,6 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## What & Why? (Mitä ja Miksi?)
-Stringin yhdistäminen eli konkatenointi tarkoittaa useampien tekstipätkien yhdistämistä yhdeksi. Sitä käytetään, koska halutaan rakentaa dynaamisia viestejä tai käsitellä muuttuvaa tekstidataa.
-
 ## How to: (Miten:)
 Java tarjoaa useita tapoja yhdistää merkkijonoja. Tässä muutama esimerkki:
 

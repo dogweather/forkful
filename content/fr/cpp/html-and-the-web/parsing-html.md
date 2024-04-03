@@ -12,9 +12,6 @@ title: Analyse Syntaxique du HTML
 weight: 43
 ---
 
-## Quoi & Pourquoi ?
-Analyser du HTML signifie décomposer le contenu HTML en quelque chose qu'un programme peut comprendre et manipuler. Les programmeurs font cela pour extraire des données, manipuler du contenu ou intégrer de l'extraction web dans leurs applications.
-
 ## Comment faire :
 C++ n'est pas livré avec des capacités d'analyse HTML intégrées. Vous utiliserez souvent une bibliothèque comme Gumbo-parser de Google, ou quelque chose de similaire. Voici un exemple rapide en utilisant Gumbo-parser :
 

@@ -10,10 +10,7 @@ title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---
 
-## What & Why?
-Co i dlaczego? Konwersja daty na tekst to proces zmiany formatu daty na łańcuch znaków. Programiści robią to, by daty były czytelne dla ludzi i by można je było łatwo wyświetlić w interfejsach użytkownika czy zapisywać w plikach tekstowych.
-
-## How to: 
+## How to:
 Jak to zrobić? W Haskellu, używamy biblioteki `time` i jej funkcji `formatTime` do konwersji daty na tekst:
 
 ```Haskell

@@ -14,12 +14,7 @@ title: HTML parsen
 weight: 43
 ---
 
-## Was & Warum?
-
-Das Parsen von HTML in Rust dient dazu, Daten aus HTML-Dokumenten zu extrahieren, was für das Web-Scraping, die Datengewinnung oder den Aufbau von Web-Crawlern unerlässlich ist. Programmierer tun dies, um die Sammlung von Informationen aus dem Web zu automatisieren, Webinhalte zu analysieren oder Inhalte von einer Plattform auf eine andere zu migrieren.
-
 ## Wie:
-
 Um HTML in Rust zu parsen, wirst du oft das `scraper`-Crate verwenden, das eine High-Level-Schnittstelle bietet, um HTML-Dokumente zu durchlaufen und zu manipulieren.
 
 Füge zunächst `scraper` deiner `Cargo.toml` hinzu:

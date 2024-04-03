@@ -10,9 +10,6 @@ title: Downloading a web page
 weight: 42
 ---
 
-## What & Why?
-Downloading a web page means grabbing the HTML content from the internet via its URL. Programmers do it to analyze web content, automate tasks, or integrate data into their apps.
-
 ## How to:
 Lua isn't equipped out of the box for web tasks, but with the `socket` library and `http` module, it's a cinch. Here's a quick example using LuaSocket:
 

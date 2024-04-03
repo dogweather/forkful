@@ -9,12 +9,7 @@ title: Interpolating a string
 weight: 8
 ---
 
-## What & Why?
-
-String interpolation lets you embed variables or expressions inside a string. We do this for cleaner, more readable code that glues together dynamic content with static text.
-
 ## How to:
-
 In Ruby, you wrap your variable or expression in `#{}` and plunk it down where you want it in a double-quoted string. Like so:
 
 ```Ruby
@@ -38,7 +33,6 @@ puts 'Hey there, #{name}!' # => Hey there, \#{name}!
 ```
 
 ## Deep Dive
-
 Back in the day, we'd concatenate strings and variables using `+` or `<<`, making things messy fast.
 
 ```Ruby
@@ -54,6 +48,5 @@ Enter string interpolation in Ruby, a more refined way to merge text with code. 
 Ruby's not unique; many languages have their own flavor of this handy feature. But caution: unlike some languages, Ruby strictly reserves this magic for double-quoted strings and certain other cases (like backticks and symbols). Single-quotes just spit out what's inside them, curly braces and all.
 
 ## See Also
-
 - Ruby Documentation on syntax: [Ruby Docs - Syntax](https://ruby-doc.org/core-3.1.2/doc/syntax/literals_rdoc.html#label-Strings)
 - A deeper look into string manipulation: [Ruby-Doc.org - String](https://ruby-doc.org/core-3.1.2/String.html)

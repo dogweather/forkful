@@ -10,9 +10,6 @@ title: Suchen und Ersetzen von Text
 weight: 10
 ---
 
-## Was & Warum?
-Suchen und Ersetzen von Text ist die Kunst, Zeichenketten in Daten zu finden und sie durch andere zu ersetzen. Programmierer nutzen dies, um Daten schnell zu aktualisieren, Fehler zu korrigieren oder Inhalte zu formatieren.
-
 ## How to:
 Hier sind ein paar Beispiele, wie man Text in PowerShell sucht und ersetzt.
 

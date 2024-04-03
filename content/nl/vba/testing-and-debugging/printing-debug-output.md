@@ -13,9 +13,6 @@ title: Afdrukken van debug output
 weight: 33
 ---
 
-## Wat & Waarom?
-Debuguitvoer afdrukken in Visual Basic for Applications (VBA) houdt in dat je strategisch printopdrachten in je code plaatst om variabelwaarden, uitvoeringsstroom of aangepaste debugberichten weer te geven. Deze techniek is essentieel voor het debuggen, waardoor programmeurs het gedrag van hun code tijdens runtime kunnen begrijpen en eventueel onverwacht gedrag of fouten kunnen identificeren.
-
 ## Hoe:
 In VBA is de `Debug.Print`-opdracht het werkpaard voor het afdrukken van debuginformatie naar het Direct Venster in de Visual Basic Editor (VBE). Om deze functie effectief te gebruiken, moet je ervoor zorgen dat het Direct Venster zichtbaar is (Beeld > Direct Venster of druk op `Ctrl+G` in de VBE).
 

@@ -11,12 +11,7 @@ title: Satunnaislukujen generointi
 weight: 12
 ---
 
-## Mikä & Miksi?
-
-Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa arvojen luomista, joita ei voi ennustaa loogisesti etukäteen. Ohjelmoijat tekevät tämän monista syistä, mukaan lukien yksilöllisten tunnisteiden tuottaminen, skenaarioiden simuloiminen pelikehityksessä tai satunnaisten otosten valinta analyysia varten datasta.
-
 ## Miten:
-
 Clojuressa satunnaislukujen generointi on suoraviivaista, ja siinä voi käyttää suoraan muutamia sisäänrakennettuja funktioita.
 
 Jos haluat generoida satunnaisen liukuluvun välillä 0 (mukaan lukien) ja 1 (ei mukaan lukien), voit käyttää `rand`-funktiota:
@@ -50,7 +45,6 @@ Tämä funktio `rand-range` palauttaa satunnaisen liukuluvun, jonka arvo on mä�
 Skenaarioissa, jotka vaativat monimutkaisempia jakautumisia tai satunnaislukujen sekvenssejä, joissa toistettavuus on tarpeen (käyttäen siemeniä), saatat tarvita lisäkirjastoja, jotka menevät sisäänrakennettujen toimintojen ulkopuolelle.
 
 ## Syväsukellus
-
 Useimpien ohjelmointikielien, Clojuren mukaan lukien, satunnaislukujen generoinnin taustalla oleva mekanismi perustuu yleensä pseudo-satunnaislukugeneraattoriin (PRNG). PRNG käyttää algoritmia tuottaakseen numerosekvenssin, joka jäljittelee satunnaisten lukujen ominaisuuksia. On huomionarvoista, että koska nämä on generoitu algoritmien avulla, ne eivät ole todella satunnaisia, mutta ne voivat olla riittäviä useimpiin käytännön tarkoituksiin.
 
 Tietojenkäsittelyn alkuaikoina korkealaatuisten satunnaislukujen generointi oli merkittävä haaste, mikä johti erilaisten algoritmien kehittämiseen satunnaisuuden ja jakautumisen parantamiseksi. Clojuren osalta sisäänrakennetut funktiot, kuten `rand` ja `rand-int`, ovat käteviä jokapäiväisessä käytössä ja kattavat laajan kirjon yleisiä käyttötarkoituksia.

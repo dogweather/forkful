@@ -16,12 +16,7 @@ title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---
 
-## Cái gì & Tại sao?
-
-Lấy ngày hiện tại trong C đòi hỏi phải truy cập vào thư viện chuẩn C để lấy và định dạng ngày và giờ hiện tại của hệ thống. Các lập trình viên thường cần chức năng này cho việc ghi log, đánh dấu thời gian, hoặc các tính năng lập lịch trong ứng dụng của họ.
-
 ## Cách làm:
-
 Trong C, tiêu đề `<time.h>` cung cấp các hàm và kiểu cần thiết để làm việc với ngày và giờ. Hàm `time()` lấy thời gian hiện tại, trong khi `localtime()` chuyển thời gian này sang múi giờ địa phương. Để hiển thị ngày, chúng ta sử dụng `strftime()` để định dạng nó thành chuỗi.
 
 Dưới đây là một ví dụ cơ bản:
@@ -55,7 +50,6 @@ Ngày hôm nay là 2023-04-12
 ```
 
 ## Tìm hiểu sâu
-
 Việc xử lý thời gian trong C, như được hỗ trợ bởi `<time.h>`, gợi nhớ về những ngày đầu tiên của ngôn ngữ này và hệ thống UNIX. Nó được xây dựng xung quanh kiểu dữ liệu `time_t`, đại diện cho thời gian hiện tại là số giây kể từ Unix Epoch (1 tháng 1 năm 1970). Mặc dù điều này hiệu quả và tương thích trên toàn cầu, nhưng nó cũng có nghĩa là các hàm thời gian của thư viện chuẩn C bị hạn chế bởi phạm vi và độ phân giải của `time_t`.
 
 Các ứng dụng hiện đại, đặc biệt là những ứng dụng cần dấu thời gian độ phân giải cao hoặc xử lý các ngày xa vào tương lai hoặc quá khứ, có thể thấy những hạn chế này khó khăn. Ví dụ, vấn đề năm 2038 là một minh họa nổi tiếng, nơi hệ thống sử dụng `time_t` 32 bit sẽ tràn.

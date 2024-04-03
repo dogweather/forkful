@@ -11,12 +11,7 @@ title: Using associative arrays
 weight: 15
 ---
 
-## What & Why?
-
-Associative arrays in Dart, commonly known as Maps, are data structures that store data in key-value pairs. They enable programmers to access elements not through indices, but keys, making data retrieval intuitive and efficient, especially when working with structured data where each element has a unique identifier.
-
 ## How to:
-
 Dart offers a straightforward syntax for creating and manipulating Maps. Below are examples demonstrating basic operations like creation, adding elements, and fetching values.
 
 ```dart

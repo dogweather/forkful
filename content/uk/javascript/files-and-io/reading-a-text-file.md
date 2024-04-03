@@ -10,9 +10,6 @@ title: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0442\u0435\u043A\u0441\u044
 weight: 22
 ---
 
-## What & Why? (Що та Чому?)
-Reading text files means grabbing text data from a .txt (or similar) file. Programmers read files to use data like configuration settings, import user data, or to analyze text outside of the application itself.
-
 ## How to: (Як зробити:)
 Use `fetch` for web files, `FileReader` for client-side operations, or `fs` in Node.js. Here’s the quick code.
 

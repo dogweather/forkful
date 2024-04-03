@@ -12,9 +12,6 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-förfrågan med basic-autentisering innebär att du tillhandahåller användarnamn och lösenord för att få åtkomst till en resurs på webben. Programmerare gör detta för att säkra kommunikationen med webbtjänster som kräver inloggning.
-
 ## Hur man gör:
 ```cpp
 #include <iostream>

@@ -11,9 +11,6 @@ title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---
 
-## What & Why?
-Kommandozeilenargumente sind Parameter, die ein Programm beim Start über die Konsole erhält. Sie ermöglichen es dem Benutzer, das Verhalten des Programms zu steuern und spezifische Aktionen durchzuführen.
-
 ## How to:
 Command-line arguments in Lua are pretty straightforward to handle. Here’s how you nab them:
 
@@ -30,6 +27,7 @@ Ausführung und Ausgabe, wenn das Skript `hello.lua` heißt und mit `lua hello.l
 Argument 1: Hallo
 Argument 2: Welt
 ```
+
 ## Deep Dive
 Lua behandelt Kommandozeilenargumente ziemlich unkompliziert. Das `arg`-Array ist deine Schatztruhe, die alle Argumente ab Index 1 speichert. Doch hier ist ein wenig historischer Kontext: In früheren Versionen hattest du `arg[0]`, das den Skriptnamen beinhaltete; ab Lua 5.1 bekommst du das über `arg[-1]`. Es gibt Alternativen wie das `os.getenv()` für Umgebungsvariablen oder eigene Parser für komplexere Szenarien. Beachte jedoch, dass die einfache `arg`-Tabelle in den meisten Fällen genügt.
 

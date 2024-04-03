@@ -17,12 +17,7 @@ title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---
 
-## Cái gì và Tại sao?
-
-Ghi vào lỗi chuẩn trong Visual Basic for Applications (VBA) liên quan đến việc hướng các thông báo lỗi hoặc chẩn đoán ra khỏi đầu ra chuẩn, thường là tới bảng điều khiển hoặc một tệp nhật ký. Các lập trình viên làm điều này để tách đầu ra chương trình thường xuyên khỏi các thông báo lỗi, giúp dễ dàng gỡ lỗi chương trình hoặc cảnh báo người dùng về các vấn đề mà không làm rối đầu ra chính.
-
 ## Cách thực hiện:
-
 Trong VBA, do không có hàm tích hợp sẵn trực tiếp để ghi cụ thể vào lỗi chuẩn như một số ngôn ngữ lập trình khác, một giải pháp thường gặp bao gồm việc sử dụng `Debug.Print` cho đầu ra lỗi phát triển hoặc tạo một hàm nhật ký tùy chỉnh mô phỏng hành vi này cho các ứng dụng sản xuất. Dưới đây là một ví dụ về cách bạn có thể thực hiện và sử dụng một hàm như vậy:
 
 ```vb
@@ -52,7 +47,6 @@ ERROR: An error occurred while processing your request.
 ```
 
 ## Sâu hơn
-
 Visual Basic for Applications không tự nhiên bao gồm một cơ chế dành riêng để ghi vào lỗi chuẩn do bản chất tích hợp sâu với các ứng dụng chủ như Excel, Word, hoặc Access, thường phụ thuộc vào giao diện người dùng đồ họa thay vì đầu ra bảng điều khiển. Đây là một sự khác biệt đáng chú ý từ các ứng dụng dựa trên bảng điều khiển thường được phát triển bằng ngôn ngữ như C hoặc Python, nơi các luồng đầu ra chuẩn và lỗi chuẩn là các khái niệm cơ bản.
 
 Theo truyền thống, VBA luôn tập trung nhiều hơn vào việc tương tác với các mô hình tài liệu của các ứng dụng chủ của mình và ít hơn vào các cơ chế ghi nhật ký ứng dụng truyền thống. Do đó, các nhà phát triển thường phải tìm cách thực hiện các giải pháp ghi nhật ký tùy chỉnh, như ví dụ đã cho, hoặc sử dụng các lời gọi API Windows cho các nhu cầu xử lý và ghi nhật ký lỗi nâng cao hơn.

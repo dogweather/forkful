@@ -13,12 +13,7 @@ title: Utilizzo di array associativi
 weight: 15
 ---
 
-## Cosa & Perché?
-
-Gli array associativi, noti in altri linguaggi come mappe o dizionari, sono coppie chiave-valore utilizzate per una ricerca e manipolazione efficienti dei dati. A differenza degli array tradizionali che utilizzano indici interi, gli array associativi utilizzano chiavi, rendendo l'accesso ai dati più intuitivo e flessibile per i programmatori.
-
 ## Come fare:
-
 C non ha un supporto incorporato per gli array associativi come alcuni linguaggi di livello superiore, ma è possibile simularli utilizzando strutture e hashing. Di seguito è riportato un esempio semplicistico che utilizza una combinazione di una struct e una semplice funzione di hashing per implementare un array associativo per memorizzare e accedere a interi tramite chiavi stringa.
 
 In primo luogo, definire una struttura per rappresentare una singola coppia chiave-valore e un'altra per rappresentare l'array associativo stesso:
@@ -95,7 +90,6 @@ int main() {
 Questo esempio dimostra le operazioni di base: inizializzazione di un array associativo, inserimento di coppie chiave-valore e ricerca di valori per chiave. Si noti che questo codice manca della gestione delle collisioni ed è destinato a scopi educativi.
 
 ## Approfondimento
-
 Il concetto di array associativi predata C, ma la natura di basso livello del linguaggio non li supporta direttamente come tipi incorporati. Questo incoraggia una comprensione più profonda delle strutture dati e degli algoritmi, inclusi i meccanismi di hashing per un mappaggio chiave-valore efficiente. Molte librerie e framework C offrono approcci più sofisticati per implementare gli array associativi, come il `GHashTable` di GLib, che fornisce un'implementazione robusta completa di gestione delle collisioni, ridimensionamento dinamico e supporto per tipi di chiavi e valori arbitrari.
 
 Sebbene la costruzione manuale degli array associativi in C possa essere vista come ingombrante rispetto ai linguaggi con supporto incorporato, offre preziose intuizioni sul funzionamento interno delle strutture dati, affinando le competenze di un programmatore nella risoluzione di problemi e nell'ottimizzazione. Tuttavia, per un codice di produzione o applicazioni più complesse, sfruttare le librerie esistenti come GLib è spesso un approccio più pratico ed efficiente in termini di tempo.

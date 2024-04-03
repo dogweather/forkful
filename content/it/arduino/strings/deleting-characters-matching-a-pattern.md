@@ -10,9 +10,6 @@ title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---
 
-## Cosa & Perché?
-Eliminare caratteri che corrispondono a un certo schema significa rimuovere specifici elementi da una stringa, per pulirla o per estrarre dati essenziali. I programmatori lo fanno per gestire meglio le informazioni e ridurre errori.
-
 ## Come fare:
 ```Arduino
 void setup() {
@@ -34,6 +31,7 @@ String deleteMatchingChars(String str, String pattern) {
   return str;
 }
 ```
+
 ## Approfondimento
 La rimozione di caratteri corrispondenti in una stringa non è una funzione nativa dei linguaggi di programmazione più antichi, ma si è evoluta con l'introduzione delle espressioni regolari (regex). Alternativamente, si potrebbero usare funzioni di manipolazione delle stringhe come `replace` o iterare manualmente attraverso ogni carattere. Dettagli d'implementazione variano a seconda del linguaggio: in C, ad esempio, è necessario manipolare gli array di caratteri manualmente, mentre linguaggi più nuovi offrono metodi più efficienti.
 

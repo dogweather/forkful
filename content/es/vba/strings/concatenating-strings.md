@@ -13,12 +13,7 @@ title: Concatenando cadenas de texto
 weight: 3
 ---
 
-## Qué y Por Qué?
-
-La concatenación en Visual Basic para Aplicaciones (VBA) implica unir dos o más cadenas en una única entidad. Esta es una tarea fundamental en programación, esencial para generar mensajes de usuario, crear consultas SQL y más, ya que permite la creación y manipulación dinámica de datos de cadena.
-
 ## Cómo hacerlo:
-
 VBA proporciona un método sencillo para concatenar cadenas usando el operador `&` o la función `Concatenate`. Vamos a explorar ambos métodos con ejemplos:
 
 1. **Usando el operador `&`:**
@@ -54,7 +49,6 @@ Debug.Print message 'Salida: Hello John!
 La elección entre el operador `&` y la función `Concatenate` depende de la preferencia personal y de los requisitos específicos de tu proyecto.
 
 ## Análisis Profundo
-
 La concatenación de cadenas es una característica básica pero poderosa en VBA, remontándose a los lenguajes de programación tempranos. La prevalencia del operador `&` en VBA para la concatenación sobre el operador `+`, comúnmente utilizado en muchos otros lenguajes, subraya el enfoque de VBA en el manejo explícito de cadenas, evitando así desajustes y errores no intencionados de tipos de datos.
 
 Mientras que el operador `&` es eficiente y ampliamente adoptado, la función `Concatenate` brilla en escenarios que requieren más claridad o manejo de casos de concatenación especiales, como el trato con arreglos. Sin embargo, es importante notar que las versiones modernas de Excel han introducido la función `TEXTJOIN`, que puede ser más eficiente para concatenar arreglos de cadenas con un delimitador, aunque no es parte directamente de VBA.

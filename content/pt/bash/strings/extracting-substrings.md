@@ -9,9 +9,6 @@ title: Extraindo substrings
 weight: 6
 ---
 
-## O Que & Porquê?
-Extrair substrings significa pegar pedaços de uma string. Programadores fazem isso para manipular e analisar dados mais facilmente.
-
 ## Como fazer:
 Vamos direto ao código. Suponha que você quer pegar um pedaço da string "Bash é demais!"
 

@@ -14,12 +14,7 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-
-Wyrażenia regularne (regex) w języku Elixir są używane do wyszukiwania, dopasowywania oraz manipulowania ciągami znaków na podstawie określonych wzorców. Programiści wykorzystują regex do zadań takich jak weryfikacja formatów (adresy e-mail, URL), parsowanie logów czy ekstrakcja danych, dzięki jego efektywności i wszechstronności w obsłudze ciągów znaków.
-
 ## Jak to zrobić:
-
 Elixir używa modułu `Regex`, wykorzystując bibliotekę regex Erlanga, do operacji z regex. Oto podstawowe zastosowania:
 
 ```elixir

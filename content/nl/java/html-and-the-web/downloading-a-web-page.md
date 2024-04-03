@@ -12,12 +12,7 @@ title: Een webpagina downloaden
 weight: 42
 ---
 
-## Wat & Waarom?
-
-Een webpagina downloaden betekent het programmatisch grijpen van de inhoud, zoals HTML, CSS en JavaScript. Programmeurs doen dit om gegevens te verwerken, wijzigingen te monitoren of hun webapps te testen.
-
 ## Hoe te:
-
 ```java
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -55,7 +50,6 @@ Een voorbeelduitvoer ziet er als volgt uit:
 ```
 
 ## Diepgaande duik
-
 Vroeger was het downloaden van een webpagina kinderspel - HTTP was eenvoudig, websites waren voornamelijk statische HTML. Het web van vandaag is complex - denk aan HTTPS, door JavaScript aangedreven inhoud en AJAX in overvloed.
 
 Voor statische inhoud zijn `java.net.URL` en `java.net.HttpURLConnection` de voor de hand liggende keuzes - zonder poespas, werkt gewoon. Maar als je gericht bent op sites vol met dynamische inhoud geladen door JavaScript, zullen die klassen alleen niet volstaan, en kijk je naar hulpmiddelen als Selenium of HtmlUnit in plaats daarvan.
@@ -65,7 +59,6 @@ Vergeet niet, het kiezen van het juiste hulpmiddel hangt ook af van wat je moet 
 Onthoud het beleid van beleefdheid: bestook een site niet met snelle verzoeken, anders vraag je om een verbanning. En zorg ervoor dat je netjes omgaat met de `robots.txt` richtlijnen van de website.
 
 ## Zie ook
-
 - De [Jsoup bibliotheek](https://jsoup.org/) voor HTML-parsing en -extractie.
 - De [Selenium WebDriver](https://www.selenium.dev/documentation/en/webdriver/) voor complexere taken inclusief JavaScript-uitvoering.
 - Een gids voor [HttpURLConnection](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html) voor degenen die de details willen weten over Java's ingebouwde manier om HTTP te hanteren.

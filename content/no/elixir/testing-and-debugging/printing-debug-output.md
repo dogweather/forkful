@@ -11,9 +11,6 @@ title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---
 
-## What & Why?
-Utskrift av feilsøkingsdata handler om å vise hva som foregår under panseret av koden din. Programmerere gjør dette for å forstå flyten og oppdage bugs raskt.
-
 ## How to:
 ```Elixir
 # Enkel utskrift av en melding

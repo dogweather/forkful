@@ -17,12 +17,7 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1
 weight: 45
 ---
 
-## Cái gì & Tại sao?
-
-Gửi một yêu cầu HTTP với xác thực cơ bản bao gồm việc đính kèm tên đăng nhập và mật khẩu vào một yêu cầu để xác minh danh tính của người dùng. Các lập trình viên sử dụng nó để truy cập vào các nguồn tài nguyên đòi hỏi xác thực, đảm bảo giao tiếp an toàn giữa máy khách và máy chủ.
-
 ## Cách làm:
-
 Trong Dart, bạn có thể sử dụng gói `http` để gửi các yêu cầu HTTP với xác thực cơ bản. Đầu tiên, thêm gói `http` vào tập tin `pubspec.yaml` của bạn:
 
 ```yaml

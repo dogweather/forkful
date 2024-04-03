@@ -11,9 +11,6 @@ title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---
 
-## Qué y Por Qué?
-Leer argumentos de la línea de comandos permite a los scripts recibir datos externos al ser ejecutados. Los programadores hacen esto para personalizar la ejecución según necesidades diferentes sin cambiar el código.
-
 ## Cómo:
 Ejemplo sencillo:
 

@@ -10,9 +10,6 @@ title: Lettura di un file di testo
 weight: 22
 ---
 
-## What & Why?
-Leggere un file di testo con Arduino significa far sì che il microcontrollore recuperi e utilizzi dati da un file conservato su una scheda SD o memoria simile. I programmatori lo fanno per vari motivi, inclusa la configurazione di dispositivi senza riscrivere il codice e per salvare dati sensibili come password o tokens.
-
 ## How to:
 Per leggere un file da una scheda SD, ti serve un modulo SD card, connessioni corrette e il seguente codice:
 

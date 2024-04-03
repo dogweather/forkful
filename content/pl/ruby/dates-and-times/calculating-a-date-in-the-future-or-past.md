@@ -11,9 +11,6 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-## Co i dlaczego?
-Obliczanie daty w przyszłości lub przeszłości to wyznaczanie konkretnych punktów czasowych przed lub po danej dacie. Programiści robią to, by zarządzać terminami, planować zadania, czy wykonywać operacje zależne od czasu.
-
 ## Jak to zrobić:
 Ruby śmiga z datami jak łyżwiarz na lodzie. Użyj `Date` i `Time`, plus trochę matematyki. Zobacz na przykłady:
 

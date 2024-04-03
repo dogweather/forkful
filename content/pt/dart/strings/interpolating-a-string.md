@@ -14,12 +14,7 @@ title: Interpolando uma string
 weight: 8
 ---
 
-## O Que e Por Quê?
-
-A interpolação de strings é o processo de injetar valores de variáveis diretamente em strings, muitas vezes para criar mensagens significativas sem concatenações complicadas. Programadores fazem isso para obter um código mais limpo, mais legível e para prevenir erros propensos a acontecer em concatenações complexas de strings.
-
 ## Como Fazer:
-
 No Dart, a interpolação de strings é direta, utilizando o símbolo `$` para interpolar expressões diretamente dentro de literais de string:
 
 ```dart

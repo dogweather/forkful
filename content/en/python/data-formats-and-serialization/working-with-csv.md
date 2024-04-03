@@ -11,13 +11,11 @@ title: Working with CSV
 weight: 37
 ---
 
-## What & Why?
-Working with CSV (Comma-Separated Values) involves reading from and writing data to CSV files, a common format for storing tabular data. Programmers do it to easily exchange and store data in a simple, text-based format that is widely supported across different platforms and languages.
-
 ## How to:
 Python provides the built-in `csv` module to handle CSV files, making it straightforward to read from and write to them. For more robust and complex data manipulation, the third-party library `pandas` is highly popular.
 
 ### Using the `csv` module
+
 
 #### Reading a CSV file
 ```python

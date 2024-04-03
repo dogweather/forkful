@@ -13,12 +13,7 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## Qué y Por Qué?
-
-Redondear números en la programación se refiere a aproximar un número a su número entero más cercano o a un cierto número de lugares decimales. Los programadores redondean números para simplificar cifras, mejorar la legibilidad o cumplir con criterios numéricos específicos en cálculos, especialmente en cálculos financieros donde la precisión importa.
-
 ## Cómo hacerlo:
-
 En Visual Basic para Aplicaciones (VBA), el redondeo se puede lograr utilizando varias funciones, cada una adecuada para escenarios específicos. Aquí están las funciones más comúnmente usadas con ejemplos:
 
 1. **Función Round**:
@@ -54,7 +49,6 @@ En Visual Basic para Aplicaciones (VBA), el redondeo se puede lograr utilizando 
    ```
 
 ## Análisis Profundo
-
 La función `Round` en VBA es fundamentalmente diferente de los métodos de redondeo en otros lenguajes debido a su uso del **Redondeo del Banquero**. El Redondeo del Banquero redondea al número par más cercano cuando está exactamente a la mitad entre dos números, reduciendo el sesgo en los cálculos a lo largo de un gran conjunto de datos y proporcionando un resultado más estadísticamente significativo. Sin embargo, esto puede llevar a un comportamiento inesperado para aquellos no familiarizados con él, especialmente cuando se espera precisión integral en cada caso.
 
 En contraste, muchos lenguajes de programación y sistemas utilizan el "redondeo aritmético" o "redondeo hacia arriba", donde un número exactamente a la mitad entre dos valores posibles de redondeo siempre se redondea hacia arriba. Al traducir o portar código de otros lenguajes a VBA, los programadores deben tener en cuenta estas diferencias para evitar sutiles errores o inexactitudes en aplicaciones financieras y estadísticas.

@@ -14,9 +14,6 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-Wyrażenia regularne w C++ to sekwencje znaków definiujące wzorzec wyszukiwania, używane do dopasowywania lub manipulacji ciągami znaków. Programiści używają ich do zadań takich jak walidacja danych wejściowych, wyszukiwanie wystąpień w ciągach znaków czy dzielenie ciągów na tokeny, co czyni je niezbędnym narzędziem dla efektywnej i skutecznej obróbki tekstu.
-
 ## Jak to zrobić:
 C++11 wprowadziło wsparcie dla wyrażeń regularnych w bibliotece standardowej, `<regex>`, oferując solidne ramy do wyszukiwania i manipulacji ciągami znaków. Oto podstawowy przykład użycia wyrażeń regularnych do wyszukiwania wzorca w ciągu znaków:
 

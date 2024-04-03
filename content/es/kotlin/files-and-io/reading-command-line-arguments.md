@@ -10,9 +10,6 @@ title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---
 
-## Qué y Por Qué?
-Leer argumentos de la línea de comandos permite a tu programa en Kotlin recibir datos externos al ejecutarse. Los programadores usan esto para personalizar la ejecución sin cambiar el código.
-
 ## Cómo:
 Para acceder a los argumentos de línea de comandos en Kotlin, usamos la función `main` que toma un array de Strings como argumento. Mira el ejemplo:
 

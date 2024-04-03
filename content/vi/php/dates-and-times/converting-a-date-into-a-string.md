@@ -16,9 +16,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---
 
-## Lý do và Mục đích
-Chuyển đổi một ngày thành chuỗi nghĩa là biến đổi một đối tượng ngày thành định dạng văn bản thuần túy. Lập trình viên làm điều này để dễ dàng đọc, lưu trữ, hoặc định dạng ngày theo các địa phương và tiêu chuẩn khác nhau.
-
 ## Cách thực hiện:
 Trong PHP, hàm `date()` định dạng một dấu thời gian thành chuỗi dễ đọc hơn. Đối tượng `DateTime` phục vụ mục đích tương tự với phương thức `format()` của nó. Dưới đây là cách chúng được sử dụng trong thực tế:
 

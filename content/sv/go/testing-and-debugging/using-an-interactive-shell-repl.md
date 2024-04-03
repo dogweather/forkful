@@ -12,12 +12,7 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-
-En interaktiv skal, eller Read-Eval-Print Loop (REPL), låter dig experimentera med Go-kod i realtid, genom att köra kommandon och få omedelbar återkoppling. Denna metod är mycket använd för lärande, felsökning och prototypning, eftersom den kringgår den traditionella redigera-kompilera-köra-cykeln, vilket gör utvecklingsprocessen snabbare och mer intuitiv.
-
 ## Hur man gör:
-
 Även om Go inte inkluderar en inbyggd REPL, har gemenskapen skapat verktyg som `gore` för att fylla detta gap. Först, installera `gore` genom att köra:
 
 ```
@@ -60,7 +55,6 @@ Area av cirkel med radien 4: 50.26548245743669
 ```
 
 ## Fördjupning:
-
 Konceptet med en REPL är uråldrigt, som går tillbaka till Lisp-maskinerna på 1960-talet, och ger en interaktiv programmeringsupplevelse. Till skillnad från språk som Python eller JavaScript, designades Go utan en REPL, med fokus istället på kompilerade binärer för prestanda och enkelhet. Detta återspeglar Gos filosofi om enkelhet och dess design för skalbar och underhållbar mjukvara.
 
 Dock visar verktyg som `gore` eller `goplay` Gos gemenskaps resursfullhet i att överbrygga detta gap. Dessa verktyg tolkar Go-kod dynamiskt och använder paketet `go/eval` eller liknande mekanismer för att exekvera den i realtid, om än med vissa begränsningar jämfört med en infödd REPL-miljö. Dessa begränsningar kommer från Gos typsystem och kompileringsmodell, vilket kan göra omedelbar utvärdering utmanande.

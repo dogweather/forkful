@@ -15,12 +15,7 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mikä & Miksi?
-
-Nykyisen päivämäärän hankkiminen Google Apps Scriptillä tarkoittaa live-päivämäärän ja -ajan hakemista, yleistä tehtävää automaatiotehtävissä, lokitiedoissa ja aikaleimoissa Googlen ekosysteemiin sidotuissa sovelluksissa. Ohjelmoijat käyttävät tätä dynaamisen sisällön tuottamiseen, määräaikojen seurantaan ja aikataulutukseen Google Docsissa, Sheeteissä ja muissa Googlen palveluissa.
-
 ## Kuinka:
-
 Google Apps Script, joka perustuu JavaScriptiin, tarjoaa suoraviivaisia menetelmiä nykyisen päivämäärän hankkimiseksi. Voit käyttää `new Date()`-rakentajaa luodaksesi uuden päivämääräobjektin, joka edustaa nykyistä päivämäärää ja aikaa. Näin voit manipuloida ja näyttää sen eri muodoissa.
 
 ```javascript
@@ -47,7 +42,6 @@ function showCurrentDate() {
 Nämä katkelmat osoittavat, kuinka nykyistä päivämäärää ja aikaa voi tallentaa ja muotoilla, osoittaen monipuolisuutta erilaisiin ohjelmointitarpeisiin Google Apps Scriptillä.
 
 ## Syväsukellus
-
 Ennen kuin JavaScript vakiintui `Date`-objektiin, ohjelmoijien piti manuaalisesti pitää kirjaa ajasta ja päivämäärästä vähemmän standardien ja hankalammin käsiteltävien keinojen kautta. Tämä sisälsi aikaleima-integerien käytön ja itsetehtyjen päivämääräfunktioiden, jotka vaihtelivat ohjelmointiympäristöstä toiseen, johtaen epäjohdonmukaisuuteen ja yhteensopivuusongelmiin.
 
 `new Date()`-objektin esittely JavaScriptissä, ja laajennettuna Google Apps Scriptissä, standardisoi päivämäärä- ja aikaoperaatiot, tehden niistä intuitiivisempia ja vähentäen tarvittavan koodin määrää päivämäärään liittyvissä toiminnoissa. On huomionarvoista, että vaikka Google Apps Scriptin toteutus on kätevä ja riittävä moniin sovelluksiin Googlen tuotevalikoimassa, se ei välttämättä vastaa kaikkia skenaarioita, erityisesti niitä, jotka vaativat monimutkaista aikavyöhykeiden käsittelyä tai tarkkaa aikaleiman kirjaamista nopeatempoisissa ympäristöissä.

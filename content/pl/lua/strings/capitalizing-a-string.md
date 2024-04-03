@@ -14,9 +14,6 @@ title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---
 
-## Co i dlaczego?
-Wielką literą zaczyna się każde słowo w zdaniu, modyfikując pierwszy znak każdego słowa na wielką literę, jednocześnie zapewniając, że pozostałe są małe. Ta technika jest powszechnie stosowana do formatowania tekstu na potrzeby bardziej profesjonalnej lub czytelnej prezentacji, takich jak przygotowywanie tytułów lub danych wejściowych użytkownika do wyświetlenia.
-
 ## Jak to zrobić:
 Lua nie posiada wbudowanej funkcji do zmiany wielkości liter w ciągu, ale możesz łatwo osiągnąć ten cel, używając podstawowych funkcji manipulacji ciągami. Oto prosta funkcja do zamiany pierwszej litery pojedynczego słowa na wielką:
 

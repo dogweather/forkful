@@ -10,9 +10,6 @@ title: Working with CSV
 weight: 37
 ---
 
-## What & Why?
-Working with CSV (Comma-Separated Values) files is about reading from and writing to plain text files that store tabular data. Programmers do this to enable data sharing between different programs, systems, or for processing large data sets in an efficient, human-readable format.
-
 ## How to:
 Rust, with its focus on safety and performance, offers excellent crates (libraries) for dealing with CSV files, with `csv` being the most popular. You'll also need `serde` for serializing and deserializing data.
 
@@ -25,7 +22,6 @@ serde = { version = "1.0", features = ["derive"] }
 ```
 
 ### Reading CSV
-
 To read a CSV file, define a struct that represents your data and derive `Deserialize` from `serde`:
 
 ```rust
@@ -68,7 +64,6 @@ Record { city: "New York", state: "NY", population: 8336817 }
 ```
 
 ### Writing to CSV
-
 To write to a CSV file, define a struct and derive `Serialize`:
 
 ```rust

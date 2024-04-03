@@ -14,12 +14,7 @@ title: Escrevendo um arquivo de texto
 weight: 24
 ---
 
-## O Quê & Porquê?
-
-Escrever um arquivo de texto em C envolve criar ou abrir um arquivo no modo de escrita e, em seguida, usar as funções de E/S (Entrada/Saída) de arquivos do C para salvar dados de texto nele. Programadores fazem isso para persistir dados, como eventos de log, configurações de ambiente ou conteúdo gerado por usuários, permitindo que aplicações mantenham estado, preferências ou progresso do usuário entre sessões.
-
 ## Como fazer:
-
 Para escrever texto em um arquivo em C, você precisa estar familiarizado principalmente com as funções `fopen()`, `fprintf()`, `fputs()` e `fclose()`. Abaixo está um exemplo simples que demonstra como criar e escrever em um arquivo:
 
 ```c
@@ -55,7 +50,6 @@ Arquivo escrito com sucesso
 Após executar este programa, você encontrará um arquivo chamado `example.txt` no mesmo diretório, contendo o texto que você escreveu por meio de `fprintf()` e `fputs()`.
 
 ## Aprofundamento
-
 O conceito de arquivos e sistemas de arquivos tem sido fundamental para os sistemas de computadores, com sua gestão sendo um aspecto crítico dos sistemas operacionais. Em C, o tratamento de arquivos é realizado usando um conjunto de funções padrão da biblioteca de E/S, fundamentadas na filosofia de tratar arquivos como fluxos de bytes. Esta abstração permite um método direto e eficiente de leitura e escrita em arquivos, embora possa parecer de baixo nível comparado com abordagens mais modernas disponíveis em linguagens de alto nível como Python ou Ruby.
 
 Historicamente, essas operações de E/S de arquivos em C estabeleceram a base para a manipulação de arquivos em muitas linguagens de programação, oferecendo uma interface próxima ao sistema operacional com os sistemas de gerenciamento de arquivos. Isso não apenas proporciona um controle granular sobre os atributos dos arquivos e operações de E/S, mas também apresenta armadilhas para programadores desavisados, como a necessidade de gerenciar manualmente recursos (ou seja, sempre fechar arquivos) e problemas de buffer.

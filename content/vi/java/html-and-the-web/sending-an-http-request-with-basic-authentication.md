@@ -17,9 +17,6 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1
 weight: 45
 ---
 
-## Gì & Tại sao?
-Việc gửi một yêu cầu HTTP với xác thực cơ bản bao gồm việc thêm một header với tên người dùng và mật khẩu để truy cập vào một tài nguyên được bảo vệ. Lập trình viên sử dụng nó cho việc ủy quyền đơn giản trong dịch vụ web khi không cần thiết phải sử dụng các phương pháp tiên tiến hơn.
-
 ## Làm thế nào:
 Java làm cho việc gửi yêu cầu HTTP với xác thực cơ bản trở nên khá đơn giản sử dụng lớp `HttpURLConnection`. Đây là một ví dụ nhanh:
 

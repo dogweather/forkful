@@ -12,12 +12,7 @@ title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---
 
-## ¿Qué y por qué?
-
-Enviar una solicitud HTTP con autenticación básica es el proceso de mandar una petición a un servidor que requiere un nombre de usuario y contraseña codificados en base64. Los programadores lo hacen para interactuar con APIs o servicios web seguros, para obtener o enviar datos mientras se verifica la identidad.
-
 ## Cómo se hace:
-
 ```Arduino
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
@@ -62,11 +57,9 @@ void loop() {
 ```
 
 ## Profundizando
-
 Enviar una solicitud HTTP con autenticación básica no es nada nuevo; ha existido prácticamente desde los inicios del protocolo HTTP. Alternativas modernas incluyen OAuth y tokens JWT, que proporcionan una seguridad más robusta. La autenticación básica codifica simplemente el usuario y la contraseña con Base64, lo cual puede ser decodificado fácilmente si la conexión no está asegurada con SSL/TLS. Implementar autenticación básica en Arduino involucra usar la biblioteca `ESP8266HTTPClient` para manejar la conexión HTTP, y la biblioteca `Base64` para la codificación requerida.
 
 ## Ver además
-
 - [Base64 Arduino Library](https://github.com/Densaugeo/base64_arduino)
 - [HTTP Authentication](https://developer.mozilla.org/es/docs/Web/HTTP/Authentication)
 - [Arduino and REST API Integration](https://create.arduino.cc/projecthub/arduino/projects/tag/rest%20api)

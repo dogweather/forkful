@@ -14,9 +14,6 @@ title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---
 
-## Co i dlaczego?
-Przetwarzanie daty z ciągu znaków polega na konwersji tekstowej informacji o dacie i czasie na obiekt datetime lub równoważny, uporządkowany format. Czynność ta jest powszechnie wykonywana, aby umożliwić operacje na datach, takie jak arytmetyka, porównania i formatowanie, w sposób niezależny od języka i regionu. Programiści robią to, aby efektywnie obsługiwać i manipulować danymi czasowymi pozyskanymi z logów, danych wprowadzonych przez użytkowników lub źródeł zewnętrznych.
-
 ## Jak to zrobić:
 Standardowa biblioteka Pythona dostarcza moduł `datetime`, który zawiera metodę `strptime` przeznaczoną do tego celu. Metoda ta wymaga dwóch argumentów: ciągu znaków z datą oraz dyrektywy formatującej, która określa wzór ciągu wejściowego.
 

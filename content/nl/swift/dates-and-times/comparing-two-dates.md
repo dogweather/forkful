@@ -11,9 +11,6 @@ title: Twee datums vergelijken
 weight: 27
 ---
 
-## Wat & Waarom?
-Twee datums vergelijken is als vragen, "Wie was er eerst, de kip of het ei?" maar dan met kalenderdatums. Programmeurs doen dit om evenementen te sorteren, acties te triggeren en periodes te beoordelen.
-
 ## Hoe doe je dat:
 Swift gebruikt het `Date` type voor datum en tijd. Hier is een simpele benadering voor het vergelijken van twee datums:
 

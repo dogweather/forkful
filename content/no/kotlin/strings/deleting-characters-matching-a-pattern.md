@@ -11,9 +11,6 @@ title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---
 
-## Hva & Hvorfor?
-I Kotlin, som i andre programmeringsspråk, betyr sletting av tegn som matcher et mønster å fjerne bestemte sekvenser fra en streng. Vi gjør dette for å rense data, for eksempel å fjerne uønsket whitespace, spesialtegn, eller sensitiv informasjon.
-
 ## Hvordan:
 ```Kotlin
 fun main() {

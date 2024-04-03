@@ -12,9 +12,6 @@ title: Werken met YAML
 weight: 41
 ---
 
-## Wat & Waarom?
-Werken met YAML betekent het parseren en genereren van YAML (Yet Another Markup Language) documenten in Python. Programmeurs doen dit om configuratiebestanden, applicatie-instellingen of gegevensserialisatie te beheren die eenvoudig zijn voor mensen om te lezen en te schrijven.
-
 ## Hoe:
 Om met YAML in Python te werken, heb je `pyyaml` nodig. Installeer het met:
 

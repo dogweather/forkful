@@ -11,9 +11,6 @@ title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---
 
-## O Que & Por Quê?
-Baixar uma página da web é simplesmente o ato de obter o conteúdo HTML dessa página para seu uso local. Programadores fazem isso para análise de dados, monitoramento de conteúdo ou para automatizar interações com sites.
-
 ## Como Fazer:
 Vamos usar a gema 'net/http' para baixar o conteúdo de uma página da web.
 

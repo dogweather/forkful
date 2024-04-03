@@ -11,9 +11,6 @@ title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---
 
-## What & Why? (Co i dlaczego?)
-Wyciąganie podciągów to proces wydobywania konkretnych części z dłuższego ciągu znaków. Robimy to, żeby pracować tylko z istotnymi fragmentami danych, na przykład unikając zbędnych informacji.
-
 ## How to: (Jak to zrobić:)
 ```Lua
 -- Prosta funkcja do wyciągania podciągu

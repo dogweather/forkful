@@ -11,9 +11,6 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad & Varför?
-Komplexa tal har en realdel och en imaginärdel och är avgörande inom olika områden såsom ingenjörsvetenskap, fysik och datorgrafik. Programmerare använder dem för att lösa ekvationer som vanliga reella tal inte klarar av.
-
 ## Hur:
 Rust har inte inbyggt stöd för komplexa tal, men paket som `num-complex` täcker dina behov. Så här använder du det:
 

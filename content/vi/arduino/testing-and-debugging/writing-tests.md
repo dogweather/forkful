@@ -17,9 +17,6 @@ title: "Vi\u1EBFt ki\u1EC3m th\u1EED"
 weight: 36
 ---
 
-## Cái gì & Tại sao?
-Viết kiểm thử có nghĩa là tạo ra một tập hợp các điều kiện để kiểm tra xem mã của bạn có hoạt động như mong đợi hay không. Lập trình viên làm điều này để phát hiện lỗi sớm, đảm bảo chất lượng phần mềm và tránh nhức đầu khi thêm tính năng mới.
-
 ## Cách làm:
 ```Arduino
 #include <Arduino.h>

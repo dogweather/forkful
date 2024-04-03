@@ -11,9 +11,6 @@ title: "XML:n k\xE4sittely"
 weight: 40
 ---
 
-## Mikä & Miksi?
-Työskentely XML:n kanssa tarkoittaa XML-dokumenttien jäsentämistä, muuntamista ja tuottamista Elm:ssä. Syy tähän on vuorovaikutuksessa monien web-palveluiden ja perintöjärjestelmien kanssa, jotka käyttävät XML:ää datamuotonaan.
-
 ## Kuinka:
 Elm:ssä käsittelet XML:ää käyttämällä `elm/xml` -pakettia. Tässä pikakatsaus XML-katkelman jäsentämiseen:
 

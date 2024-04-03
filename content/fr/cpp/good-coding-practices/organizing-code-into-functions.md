@@ -11,9 +11,6 @@ title: Organisation du code en fonctions
 weight: 18
 ---
 
-## Quoi et Pourquoi ?
-Découper le code en fonctions signifie diviser votre code en morceaux plus petits et réutilisables. Nous le faisons pour éviter la répétition, pour rendre notre code lisible et pour simplifier le débogage et les tests. Des fonctions bien organisées peuvent être comme avoir une boîte d'outils soigneusement étiquetés, prêts à l'emploi et à partager.
-
 ## Comment faire :
 Prenons une tâche courante : calculer l'aire d'un cercle. Au lieu d'écrire la même formule à chaque fois, nous l'encapsulons dans une fonction.
 

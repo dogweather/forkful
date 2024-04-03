@@ -13,12 +13,7 @@ title: Een HTTP-verzoek verzenden
 weight: 44
 ---
 
-## Wat & Waarom?
-
-Een HTTP-verzoek versturen is een manier om te communiceren met web servers om data op te halen of formulieren in te dienen. Programmeurs doen dit om te interacteren met webdiensten, API's of om taken te automatiseren die webinhoud bevatten.
-
 ## Hoe te:
-
 Bash kan tools zoals `curl` of `wget` gebruiken voor HTTP-verzoeken. Hier is een snel voorbeeld met `curl`.
 
 ```Bash
@@ -44,7 +39,6 @@ Voorbeeld `curl`-respons:
 ```
 
 ## Diepgaand
-
 HTTP-verzoeken bestaan sinds begin jaren '90 en vormen de basis van de communicatie op het web. `curl` en `wget` zijn Unix-commandoregeltools die respectievelijk in 1996 en 1996 geïntroduceerd zijn voor netwerkverzoeken.
 
 `wget` wordt typisch gebruikt voor het downloaden van bestanden, terwijl `curl` een breed scala aan protocollen kan afhandelen en meer functies biedt, waardoor het de voorkeurstool is voor het versturen van HTTP-verzoeken vanaf de commandoregel.
@@ -54,7 +48,6 @@ Het implementeren van een HTTP-verzoek met deze tools omvat het opstellen van de
 Alternatieve methoden voor het versturen van HTTP-verzoeken in scripts zijn onder andere het gebruik van scripttalen zoals Python met bibliotheken zoals `requests`, of het gebruik van tools zoals `httpie` voor een meer gebruiksvriendelijke interface.
 
 ## Zie Ook
-
 - curl officiële site: https://curl.se/
 - wget handleiding: https://www.gnu.org/software/wget/manual/wget.html
 - HTTPie: https://httpie.io/

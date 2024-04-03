@@ -13,9 +13,6 @@ title: Een tijdelijk bestand aanmaken
 weight: 21
 ---
 
-## Wat & Waarom?
-Het creëren van een tijdelijk bestand betekent het maken van een bestand dat niet hoeft te blijven bestaan nadat je klaar bent met het gebruiken ervan. Programmeurs doen dit voor gegevens die alleen nodig zijn tijdens de uitvoering van een programma, zoals tussenresultaten of om geheugengebruik te vermijden.
-
 ## Hoe:
 De `tempfile` module van Python is hier speciaal voor ontworpen. Kijk hoe het werkt:
 

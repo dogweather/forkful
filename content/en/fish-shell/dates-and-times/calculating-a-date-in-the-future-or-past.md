@@ -11,9 +11,6 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-Calculating a future or past date involves manipulating dates to find out what day it was or will be. Programmers do this for scheduling, reminders, or determining durations and deadlines.
-
 ## How to:
 Here's a cool way of rolling with dates in Fish Shell:
 

@@ -11,11 +11,8 @@ title: Manipulation de fichiers avec des commandes en une ligne en CLI
 weight: 31
 ---
 
-## Quoi & Pourquoi ?
-
-Manipuler des fichiers avec des commandes d'une ligne CLI dans PowerShell, c'est modifier, déplacer ou obtenir rapidement les données d'un fichier directement depuis la ligne de commande. Les programmeurs le font pour l'efficacité ; c'est plus rapide que de naviguer dans des interfaces graphiques ou d'écrire de longs scripts pour des tâches simples.
-
 ## Comment faire :
+
 
 ### Lire un fichier
 Pour afficher rapidement le contenu d'un fichier, utilisez la commande `Get-Content` :
@@ -60,7 +57,6 @@ Get-ChildItem -Path .\*.log | Copy-Item -Destination C:\Logs
 ```
 
 ## Approfondissement
-
 Historiquement, PowerShell a été introduit comme une alternative plus puissante à l'invite de commande traditionnelle sous Windows, offrant un accès sans précédent aux internes du système et aux magasins de données. Il combine la rapidité de la ligne de commande avec la flexibilité du script, ce qui en fait un outil inestimable pour les administrateurs système et les développeurs basés sur Windows.
 
 Les alternatives à PowerShell pour la manipulation de fichiers incluent des outils basés sur Unix comme `sed`, `awk`, `grep`, et le scriptage `bash` pour les utilisateurs de Linux et MacOS. Bien que ces outils soient extrêmement puissants et aient leurs propres mérites, PowerShell offre une intégration profonde avec les environnements Windows.

@@ -12,12 +12,7 @@ title: "Usando express\xF5es regulares"
 weight: 11
 ---
 
-## O Que & Por Quê?
-
-Expressões regulares (regex) fornecem uma maneira de buscar, combinar e manipular strings usando padrões definidos. Programadores as utilizam extensivamente para tarefas como validar entradas, analisar dados de texto e encontrar padrões dentro de grandes arquivos de texto, tornando-as uma ferramenta poderosa em qualquer linguagem, incluindo C.
-
 ## Como fazer:
-
 Para usar expressões regulares em C, você trabalhará principalmente com a biblioteca regex POSIX (`<regex.h>`). Este exemplo demonstra correspondência de padrões básica:
 
 ```c
@@ -66,7 +61,6 @@ Nenhuma combinação encontrada
 ```
 
 ## Aprofundamento:
-
 Expressões regulares em C, como parte do padrão POSIX, oferecem uma maneira robusta de realizar combinação e manipulação de strings. Contudo, a API da biblioteca regex POSIX em C é considerada mais complicada do que aquelas encontradas em linguagens projetadas com recursos de manipulação de strings de primeira classe, como Python ou Perl. A sintaxe para padrões é semelhante entre as linguagens, mas C requer gerenciamento manual de memória e mais código boilerplate para preparar, executar e limpar após o uso de padrões regex.
 
 Apesar desses desafios, aprender a usar regex em C é gratificante, pois aprofunda o entendimento de conceitos de programação de baixo nível. Além disso, abre possibilidades para programação em C em áreas como processamento de texto e extração de dados onde regex é indispensável. Para padrões mais complexos ou operações regex, alternativas como a biblioteca PCRE (Perl Compatible Regular Expressions) podem oferecer uma interface mais rica em recursos e um pouco mais fácil, embora requeira a integração de uma biblioteca externa ao seu projeto C.

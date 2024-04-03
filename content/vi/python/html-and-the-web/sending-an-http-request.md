@@ -15,12 +15,7 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---
 
-## Gì và Tại sao?
-
-Gửi một yêu cầu HTTP là cách mã của bạn yêu cầu một hệ thống khác cung cấp dữ liệu hoặc dịch vụ qua mạng. Lập trình viên thực hiện điều này để tương tác với API web, lấy nội dung web, hoặc giao tiếp với các máy chủ khác.
-
 ## Cách thực hiện:
-
 Thư viện `requests` bên thứ ba của Python làm việc gọi HTTP trở nên dễ dàng. Dưới đây là cách gửi một yêu cầu GET đơn giản:
 
 ```python
@@ -48,7 +43,6 @@ print(response.json())
 ```
 
 ## Sâu hơn
-
 Yêu cầu HTTP là cách mạng web hoạt động — chúng đã tồn tại kể từ đầu những năm 90. Các lựa chọn thay thế cho `requests` của Python bao gồm thư viện chuẩn `urllib`, nhưng nó hơi khó sử dụng hơn.
 
 Hiểu cách gửi yêu cầu HTTP bao gồm biết về các phương thức (GET, POST, PUT, DELETE, v.v.), mã trạng thái (ví dụ, 200 OK, 404 Not Found), tiêu đề, và dữ liệu thân.
@@ -58,7 +52,6 @@ Hiểu cách gửi yêu cầu HTTP bao gồm biết về các phương thức (G
 Lịch sử, `requests` được coi là lựa chọn hàng đầu do sự đơn giản và mạnh mẽ của nó, nhưng `httpx`, một thư viện tương thích không đồng bộ mới hơn, đang dần trở nên phổ biến.
 
 ## Xem thêm
-
 - Tài liệu thư viện `requests`: https://requests.readthedocs.io
 - Giải thích mã trạng thái HTTP: https://developer.mozilla.org/vi/docs/Web/HTTP/Status
 - Tài liệu `urllib` của Python: https://docs.python.org/3/library/urllib.html

@@ -10,12 +10,7 @@ title: Hantering av fel
 weight: 16
 ---
 
-## Vad och varför?
-
-Felhantering är hur du hanterar när saker går snett i din kod. Det är viktigt eftersom det hjälper dina program att misslyckas anständigt och instruerar användare klart och tydligt, istället för att bara krascha och brinna upp.
-
 ## Hur man gör:
-
 Här är den klassiska `try-catch`-blocket:
 
 ```javascript
@@ -55,7 +50,6 @@ fetchData();
 ```
 
 ## Djupdykning
-
 Felhantering i JavaScript har utvecklats. Förr i tiden (ES3, cirka 1999) hade vi bara `try-catch`-blocket. Inte superflexibelt, men det gjorde jobbet.
 
 ES6 (2015) introducerade Löften (Promises) och gav oss `.then()` och `.catch()`, vilket tillät oss att hantera asynkrona fel mer smidigt.
@@ -71,7 +65,6 @@ När det gäller implementationsdetaljer, när ett fel kastas, skapar JavaScript
 Alternativ? Du kan ignorera felhantering (dålig idé), använda funktioner med fel-först-parametrar (hej, Node.js-stil), eller bli flådigare med bibliotek och ramverk som erbjuder sina egna lösningar.
 
 ## Se även
-
 För mer om felhantering:
 
 - MDN om try-catch: [MDN try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)

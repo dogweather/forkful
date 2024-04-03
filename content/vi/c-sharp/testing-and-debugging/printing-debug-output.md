@@ -15,9 +15,6 @@ title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---
 
-## Cái gì & Tại sao?
-In thông tin gỡ lỗi là về việc xuất thông tin quan trọng để hiểu được những gì đang diễn ra bên dưới của mã lệnh. Các lập trình viên làm điều này để theo dõi giá trị của biến, dòng chảy của quá trình thực thi, và dò tìm lỗi—giống như một dấu vết trong một khu rừng số hóa.
-
 ## Cách thực hiện:
 Việc này khá đơn giản: sử dụng `Console.WriteLine()` để in ra bảng điều khiển xuất. Đặc biệt cho mục đích gỡ lỗi, `Debug.WriteLine()` có thể là công cụ bạn nên dùng, miễn là bạn đã có `System.Diagnostics` trong các chỉ thị sử dụng của mình. Nếu bạn đang hướng đến một ứng dụng UI, `Trace.WriteLine()` có thể là công cụ phù hợp vì nó cho phép người nghe thu được thông tin xuất.
 

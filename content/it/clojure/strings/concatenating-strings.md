@@ -9,9 +9,6 @@ title: Concatenazione di stringhe
 weight: 3
 ---
 
-## What & Why?
-Concatenare le stringhe significa unire due o più sequenze di caratteri. I programmatori lo fanno per costruire messaggi, combinare dati o semplicemente per generare una nuova stringa a partire da pezzi esistenti.
-
 ## Come Fare:
 La funzione `str` in Clojure combina stringhe. Ecco un esempio semplice:
 

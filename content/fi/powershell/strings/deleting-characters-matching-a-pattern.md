@@ -10,9 +10,6 @@ title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---
 
-## What & Why? (Mitä & Miksi?)
-Pattern matching on poistaa hahmoja merkkijonosta, jotka vastaavat tiettyä kaavaa. Ohjelmoijat tekevät sen, koska se auttaa puhdistamaan ja muokkaamaan dataa - esimerkiksi käyttäjän syötteestä tai tiedostoista.
-
 ## How to: (Kuinka tehdä:)
 ```PowerShell
 # Poista numeroita merkkijonosta

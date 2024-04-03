@@ -10,11 +10,7 @@ title: Refactoring
 weight: 19
 ---
 
-## Was & Warum?
-Refactoring ist der Prozess der Umstrukturierung vorhandenen Computer-Codes, ohne sein externes Verhalten zu ändern. Programmierer machen das, um die nichtfunktionalen Attribute der Software zu verbessern. Dadurch wird der Code sauberer und effizienter, was wiederum die Wartung vereinfacht und zukünftige Feature-Ergänzungen erleichtert.
-
 ## Wie geht das:
-
 Schauen wir uns ein einfaches Beispiel an, bei dem Refactoring Ihren Code konziser und lesbarer machen kann. Hier refaktorisieren wir eine Funktion, die die Summe eines Arrays von Zahlen berechnet.
 
 Vorher:
@@ -42,7 +38,6 @@ console.log(calculateSum([1, 2, 3, 4])); // Ausgabe: 10
 Sehen Sie, wie die `reduce` Methode die Größe der Funktion reduziert, während die Funktionalität intakt bleibt? Das ist Refactoring für Sie.
 
 ## Tiefer Eintauchen
-
 Refactoring wurde als formale Praxis erst mit der Veröffentlichung von Martin Fowlers Buch "Refactoring: Verbesserung des Designs bestehender Code" im Jahr 1999 etabliert. Dieses Buch, zusammen mit dem Aufkommen agiler Softwareentwicklung, half dabei, Refactoring in den Mainstream zu bringen.
 
 Refactoring als einen Aspekt der Softwareentwicklung zu beschreiben, ist wie zu erklären, warum man eine Werkstatt aufräumen würde: man macht es, damit man das nächste Mal, wenn man etwas reparieren muss (in diesem Fall Code), weniger Zeit mit dem Durcheinander verbringt und mehr mit dem eigentlichen Problem.
@@ -56,7 +51,6 @@ Es geht alles um sauberen, ausdrucksstarken und wartbaren Code. Komplexe Algorit
 Refactoring muss sorgfältig durchgeführt werden; es ist wesentlich, einen robusten Satz von Tests zu haben, um sicherzustellen, dass Ihre Änderungen das Verhalten der Software nicht unerwartet geändert haben – ein weiterer Grund, warum sich Test-Driven Development (TDD) gut mit Refactoring verbindet, da es standardmäßig dieses Sicherheitsnetz bietet.
 
 ## Siehe auch
-
 - Martin Fowlers Refactoring Buch: [Refactoring - Verbesserung des Designs bestehender Code](https://martinfowler.com/books/refactoring.html)
 - JavaScript-Test-Frameworks (um sicherzustellen, dass Refactoring die Funktionalität nicht bricht):
   - Jest: [Jest - Entzückendes JavaScript-Testing](https://jestjs.io/)

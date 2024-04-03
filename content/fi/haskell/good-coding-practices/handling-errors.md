@@ -11,9 +11,6 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä & Miksi?
-Virheiden käsittely ohjelmoinnissa tarkoittaa odottamattomien tilanteiden hallintaa—asioita, jotka voivat mennä pieleen. Ohjelmoijat tekevät sitä varmistaakseen, että heidän ohjelmansa pystyvät käsittelemään nämä tilanteet sujuvasti, ilman kaatumisia tai väärien tulosten tuottamista.
-
 ## Miten:
 Haskell käsittelee virheitä luotettavasti tyyppien kuten `Maybe` ja `Either` avulla. Tässä nopea katsaus:
 

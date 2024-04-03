@@ -11,9 +11,6 @@ title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---
 
-## Quoi & Pourquoi ?
-Calculer une date dans le futur ou le passé permet de déterminer un moment précis relatif à aujourd'hui. Les programmeurs l'utilisent pour gérer les échéances, rappels ou planifier des événements.
-
 ## Comment faire :
 ```PowerShell
 # Ajouter 10 jours à la date d'aujourd'hui

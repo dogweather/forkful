@@ -17,12 +17,7 @@ title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---
 
-## Cái gì & Tại sao?
-
-Mảng kết hợp, còn được biết đến như bảng băm hoặc từ điển trong PowerShell, cho phép bạn lưu trữ dữ liệu dưới dạng cặp khóa-giá trị, giúp việc truy xuất dữ liệu trở nên đơn giản và hiệu quả. Các lập trình viên sử dụng chúng để lưu trữ dữ liệu liên quan lại với nhau một cách dễ dàng để truy cập qua khóa.
-
 ## Làm thế nào:
-
 Việc tạo và sử dụng mảng kết hợp trong PowerShell khá là đơn giản. Dưới đây là cách bạn thực hiện phép thuật:
 
 **Tạo một mảng kết hợp:**
@@ -80,7 +75,6 @@ location : New York
 ```
 
 ## Sâu hơn nữa
-
 Khái niệm về mảng kết hợp phổ biến trong nhiều ngôn ngữ lập trình, thường được gọi là từ điển, bản đồ hoặc bảng băm tuỳ thuộc vào ngôn ngữ. Trong PowerShell, mảng kết hợp được thực hiện dưới dạng bảng băm, rất hiệu quả để tra cứu khóa, lưu trữ dữ liệu và duy trì một bộ sưu tập khóa duy nhất.
 
 Trong lịch sử, mảng kết hợp cung cấp một phương tiện để quản lý các bộ sưu tập đối tượng, mỗi đối tượng có thể được truy xuất nhanh chóng mà không cần lặp qua toàn bộ bộ sưu tập, sử dụng khóa của nó. Hiệu quả của việc truy xuất và chỉnh sửa dữ liệu trong mảng kết hợp làm chúng trở thành lựa chọn ưu tiên cho các nhiệm vụ khác nhau. Tuy nhiên, chúng cũng có hạn chế, như việc duy trì trật tự, cho nên từ điển được sắp xếp hoặc đối tượng tuỳ chỉnh có thể là một lựa chọn tốt hơn.

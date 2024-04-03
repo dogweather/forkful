@@ -13,9 +13,6 @@ title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---
 
-## Was & Warum?
-Reguläre Ausdrücke (regex) in der Programmierung sind Muster, die zum Abgleichen von Zeichenkombinationen in Strings verwendet werden. In Elm, genau wie in anderen Sprachen, verwenden Programmierer regex für Aufgaben wie das Validieren von Eingaben, das Suchen und Ersetzen von Text innerhalb von Strings aufgrund ihrer Flexibilität und Effizienz.
-
 ## Wie geht das:
 Elm verfügt nicht über eingebaute regex-Funktionen in seiner Kernbibliothek, was die Verwendung von Drittanbieter-Bibliotheken für diese Operationen erforderlich macht. Eine der beliebten Auswahlmöglichkeiten für die Arbeit mit regex ist `elm/regex`. Sie können es Ihrem Projekt hinzufügen, indem Sie `elm install elm/regex` verwenden.
 

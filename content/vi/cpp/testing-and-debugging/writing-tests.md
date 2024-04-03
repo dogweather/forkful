@@ -15,9 +15,6 @@ title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---
 
-## Cái gì & Tại sao?
-Viết các bài kiểm tra giúp kiểm tra xem mã của bạn có thực hiện đúng như mong đợi hay không, bắt được lỗi sớm. Các lập trình viên thực hiện kiểm tra để tiết kiệm thời gian, giảm đau đầu và đảm bảo độ tin cậy.
-
 ## Làm thế nào:
 Hãy sử dụng một hàm C++ đơn giản và một bài kiểm tra sử dụng framework Catch2.
 

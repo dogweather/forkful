@@ -11,9 +11,6 @@ title: Iniciando un nuevo proyecto
 weight: 1
 ---
 
-## Qué y Por Qué?
-Iniciar un nuevo proyecto es crear un espacio limpio y estructurado para tu código desde cero. Los programadores lo hacen para organizar ideas, facilitar la colaboración y gestionar recursos eficientemente.
-
 ## Cómo hacerlo:
 Para empezar un proyecto en PowerShell, puedes crear un nuevo directorio y establecer una estructura básica con scripts y módulos. Aquí te muestro cómo:
 

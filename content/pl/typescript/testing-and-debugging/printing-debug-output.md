@@ -11,9 +11,6 @@ title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---
 
-## What & Why? (Co i Dlaczego?)
-Wypisywanie informacji debugujących to wyświetlanie danych, które pomagają programiście zrozumieć, co się dzieje w kodzie. Programiści robią to, by szybko znaleźć i naprawić błędy.
-
 ## How to: (Jak to zrobić?)
 W TypeScript możesz wykorzystać `console.log` do pokazywania debug info. Spójrz jak to działa:
 

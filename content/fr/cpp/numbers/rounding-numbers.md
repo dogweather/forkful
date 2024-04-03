@@ -11,9 +11,6 @@ title: Arrondir les nombres
 weight: 13
 ---
 
-## Quoi et pourquoi ?
-Arrondir des nombres signifie ajuster une valeur à son entier le plus proche ou à la précision spécifiée. Les développeurs le font pour simplifier, se conformer aux contraintes du monde réel, ou améliorer la performance en éliminant la précision superflue.
-
 ## Comment faire :
 C++ offre plusieurs façons d'arrondir les nombres, comme `floor()`, `ceil()`, et `round()` :
 

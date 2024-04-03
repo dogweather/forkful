@@ -12,16 +12,10 @@ title: Zoeken en vervangen van tekst
 weight: 10
 ---
 
-## Wat & Waarom?
-
-Zoeken en vervangen van tekst in Visual Basic for Applications (VBA) is essentieel voor het programmatisch bewerken van documenten, spreadsheets en databases. Deze mogelijkheid stelt programmeurs in staat om bulkbewerkingen te automatiseren, fouten te corrigeren of informatie over uitgebreide datasets bij te werken zonder handmatige tussenkomst.
-
 ## Hoe:
-
 In VBA kan zoeken en vervangen van tekst worden bereikt met behulp van de `Replace` functie of via specifieke objectmodellen in applicaties zoals Excel of Word. Hieronder staan voorbeelden die beide benaderingen illustreren.
 
 ### Gebruik van de `Replace` functie:
-
 De `Replace` functie is eenvoudig voor simpele tekstvervangingen. Het heeft de vorm `Replace(uitdrukking, zoeken, vervangenDoor[, start[, aantal[, vergelijken]]])`.
 
 Voorbeeld:
@@ -40,7 +34,6 @@ Hallo, Iedereen! Programmeren in VBA is leuk.
 ```
 
 ### Zoeken en vervangen in Excel:
-
 Voor Excel kun je de `Range.Replace` methode gebruiken die meer controle biedt, zoals gevoeligheid voor hoofdletters/kleine letters en vervanging van hele woorden.
 
 Voorbeeld:
@@ -56,7 +49,6 @@ End Sub
 ```
 
 ### Zoeken en vervangen in Word:
-
 Evenzo, heeft Word een krachtige `Find` en `Replace` functie toegankelijk via VBA.
 
 Voorbeeld:
@@ -74,7 +66,6 @@ End Sub
 ```
 
 ## Diepere duik:
-
 Zoeken en vervangen van tekst in VBA grijpt terug op vroege automatiseringsmogelijkheden in Microsoft Office-applicaties, welke de productiviteit aanzienlijk verhoogden door repetitieve taken te scripten. In de loop van de tijd zijn deze functies geëvolueerd om krachtiger en flexibeler te worden, waarbij ze een breed scala aan gebruikssituaties ondersteunen.
 
 Hoewel de `Replace` functie van VBA handig is voor eenvoudige tekstbewerkingen, bieden de Excel- en Word-objectmodellen meer controle en moeten deze worden gebruikt voor applicatiespecifieke taken. Ze ondersteunen geavanceerde functies zoals patroonmatching, behoud van opmaak en genuanceerde zoekcriteria (bijv. overeenkomst met hoofdletters/kleine letters, hele woorden).

@@ -10,9 +10,6 @@ title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---
 
-## What & Why?
-Télécharger une page web, c'est récupérer son contenu via HTTP. Les programmeurs le font pour analyser des données, tester la disponibilité ou intégrer des informations en temps réel.
-
 ## How to:
 Il n’y a rien de plus simple que d'utiliser `file_get_contents` pour attraper le contenu brut d'une page web :
 

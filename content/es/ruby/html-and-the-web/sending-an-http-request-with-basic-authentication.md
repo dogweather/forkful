@@ -12,9 +12,6 @@ title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---
 
-## Qué y Por Qué?
-Enviar una solicitud HTTP con autenticación básica es el proceso de acceso a recursos web que requieren verificación de usuario y contraseña. Los programadores lo hacen para interactuar con APIs o servicios web que necesitan una capa extra de seguridad.
-
 ## Cómo hacerlo:
 Para enviar una solicitud HTTP con autenticación básica en Ruby, puedes usar la librería `net/http`. Aquí te muestro cómo.
 

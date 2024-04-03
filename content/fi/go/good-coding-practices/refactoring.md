@@ -14,12 +14,7 @@ title: Koodin uudelleenkirjoitus
 weight: 19
 ---
 
-## Mikä & Miksi?
-
-Ohjelmoinnissa refaktorointi tarkoittaa olemassa olevan tietokonekoodin uudelleenjärjestelyä—faktorisoinnin muuttamista—muuttamatta sen ulkoista käyttäytymistä. Ohjelmoijat toteuttavat tämän prosessin parantaakseen koodin luettavuutta, vähentääkseen monimutkaisuutta ja parantaakseen ylläpidettävyyttä, tehden ohjelmistosta lopulta helpomman ymmärtää ja muokata.
-
 ## Miten:
-
 Gossa refaktorointi voi vaihdella yksinkertaisista kooditweaksista monimutkaisempiin muutoksiin. Aloittakaamme perusesimerkillä: yksinkertaistetaan alustava Go-funktio paremman luettavuuden ja tehokkuuden saavuttamiseksi.
 
 **Ennen refaktorointia:**
@@ -122,7 +117,6 @@ func main() {
 Refaktorointi käyttämään rajapintaa (`Logger`) konkreettisen tyypin (`ConsoleLogger`) sijaan parantaa funktion joustavuutta ja irrottaa datan käsittelyn tietystä lokitoteutuksesta.
 
 ## Syväsukellus
-
 Gossa refaktoroinnin on tasapainotettava yksinkertaisuutta (yksi Gosin perusfilosofioista) suurten ohjelmistoprojektien tarvitseman joustavuuden kanssa. Goksen minimalistisen lähestymistavan vuoksi ominaisuuksiin—ilman yleistyyppejä (ainakin ennen viime aikoina) ja keskittyen vahvasti luettavuuteen—kieli luonnollisesti ohjaa kehittäjiä kohti yksinkertaisempia, helpommin ylläpidettäviä koodirakenteita. Tämä ei kuitenkaan tarkoita, etteikö Gos-koodi hyötyisi refaktoroinnista; se tarkoittaa, että refaktoroinnin täytyy aina priorisoida selkeyttä ja yksinkertaisuutta.
 
 Historiallisesti Gosin tiettyjen ominaisuuksien puute (esim. yleistyypit ennen Go 1.18) johti luoviin, mutta joskus monimutkaisiin ratkaisuihin koodin uudelleenkäytön ja joustavuuden osalta, mikä teki abstraktion refaktoroinnista yleisen käytännön. Goksen yleistyyppejä koskevan ominaisuuden käyttöönotolla Go 1.18:ssa Gos-kehittäjät refaktoroivat nyt perintäkoodia hyödyntääkseen tätä ominaisuutta paremman tyyppiturvallisuuden ja koodin uudelleenkäytön osalta, osoittaen refaktorointikäytäntöjen kehittyvän luonteen Gossa.

@@ -11,9 +11,6 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-Rounding numbers means adjusting them to the nearest specified place value—think buckling them down to a simpler form. Programmers round off to control precision, boost performance, or when showing user-friendly results—like prices that don't need three decimal places.
-
 ## How to:
 Here's the round-trip ticket for rounding numbers in C#:
 

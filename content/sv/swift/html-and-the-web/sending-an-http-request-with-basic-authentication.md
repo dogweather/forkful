@@ -12,9 +12,6 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-begäran med Basic Authentication innebär att du inkluderar användarens legitimationer i en header för att få tillgång till skyddade resurser på en server. Programmerare gör detta för att säkerställa att endast behöriga användare kan interagera med sensitiva delar av en webbtjänst.
-
 ## Så här gör du:
 För att skicka en HTTP-begäran med Basic Authentication i Swift, använd URLSession. Här är ett exempel som demonstrerar processen:
 
@@ -60,7 +57,7 @@ Om allt går som det ska bör du se serverns svar utskrivet i konsolen.
 ## Fördjupning
 Basic Authentication har använts i HTTP sedan tidigt 90-tal och ingår i HTTP/1.0-specifikationen. Trots sin enkelhet är det mindre säkert jämfört med modernare autentiseringsmetoder som OAuth 2.0, på grund av att användaruppgifter skickas i klartext (endast base64-kodat). Dock är Basic Authentication fortfarande relevant för interna tjänster eller enklare API:er där hög säkerhet inte är lika kritisk.
 
-Implementationen i Swift använder URLSession för att hantera HTTP-begäran och respons. Det är viktigt att nota att credentials alltid ska överföras över en säker anslutning (HTTPS) för att minimera risken för avlyssning. 
+Implementationen i Swift använder URLSession för att hantera HTTP-begäran och respons. Det är viktigt att nota att credentials alltid ska överföras över en säker anslutning (HTTPS) för att minimera risken för avlyssning.
 
 ## Se även
 - [Using URLSession in Swift](https://developer.apple.com/documentation/foundation/urlsession)

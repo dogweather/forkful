@@ -14,12 +14,7 @@ title: Bestanden manipuleren met CLI one-liners
 weight: 31
 ---
 
-## Wat & Waarom?
-
-In de wereld van het programmeren, vooral wanneer je te maken hebt met Linux- of Unix-omgevingen, is het manipuleren van bestanden rechtstreeks vanuit de command-line interface (CLI) niet alleen een kwestie van gemak - het is een krachtig hulpmiddel. Dankzij de Fish Shell, met zijn moderne syntax en hulpprogramma's, kun je je bestanden met behendigheid en precisie transformeren, verplaatsen of analyseren. Het gaat erom meer te doen met minder, processen te stroomlijnen, en de kracht van de command line te omarmen voor efficiënt bestandsbeheer.
-
 ## Hoe:
-
 Bestanden manipuleren in Fish Shell is zowel intuïtief als krachtig. Hier zijn enkele voorbeelden om de mogelijkheden te tonen:
 
 1. **Een bestand aanmaken** is zo eenvoudig als maar kan. Gebruik het `touch` commando:
@@ -81,7 +76,6 @@ end
 ```
 
 ## Diep Duiken
-
 Bestanden manipuleren vanuit de CLI met Fish Shell enkele regels is zowel een vaardigheid als een kunst. Historisch gezien hebben Unix- en Linux-systemen altijd een krachtige set van hulpmiddelen geboden voor bestandsmanipulatie, waarbij alles wordt behandeld als een bestand in hun filosofie. Dit heeft de weg geëffend voor moderne shells zoals Fish, die deze filosofieën niet alleen omarmen, maar ook uitbreiden met verbeterde syntax en toegevoegde hulpprogramma's.
 
 Hoewel Fish een uitstekende gebruikerservaring en scriptmogelijkheden biedt, is het vermeldenswaard dat er bepaalde POSIX-nalevingsproblemen kunnen ontstaan, vooral wanneer scripts worden overgezet van meer traditionele shells zoals Bash of SH. Dit komt omdat Fish niet ontworpen is om POSIX-conform te zijn, en in plaats daarvan kiest voor een gebruiksvriendelijkere benadering in zowel scripting als command-line gebruik. Als zodanig moeten programmeurs zich ervan bewust zijn dat, hoewel Fish op veel gebieden uitblinkt, scripts die strikte POSIX-naleving vereisen aanpassingen of alternatieven zoals `bash` of `zsh` nodig hebben voor compatibiliteit.

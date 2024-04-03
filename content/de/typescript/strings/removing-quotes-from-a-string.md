@@ -11,9 +11,6 @@ title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---
 
-## Was & Warum?
-Das Entfernen von Anführungszeichen aus einem String bedeutet, die umgebenden einfachen (`'`) oder doppelten (`"`) Anführungszeichen, die Zeichenfolgenliterale im Code definieren, herauszustreifen. Programmierer tun dies aus verschiedenen Gründen, wie zum Beispiel das Formatieren von Ausgaben, das Bereinigen von Benutzereingaben oder das Vorbereiten von Strings für das Parsen oder Speichern, wo die Anführungszeichen unnötig sind oder Fehler verursachen könnten.
-
 ## Wie:
 Hier ist dein unkomplizierter Leitfaden, um diese lästigen Anführungszeichen von deinen Strings in TypeScript loszuwerden.
 

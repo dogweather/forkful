@@ -11,9 +11,6 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-Figuring out a future or past date involves computing a date that is so many days, months, or years from a specific point in time. Programmers often need this to track events, schedule jobs, or handle expiry dates.
-
 ## How to:
 Using Elixir's built-in `Date` module, you can easily play with the timeline.
 

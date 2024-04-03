@@ -11,9 +11,6 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Cosa & Perché?
-L'arrotondamento consiste nel tagliare il rumore dopo un certo punto in un numero. I programmatori arrotondano per controllare la precisione, gestire la memoria o rendere l'output user-friendly—come trasformare 2.998 in un netto 3.
-
 ## Come fare:
 Ecco come arrotondare i numeri in JavaScript usando `Math.round()`, `Math.ceil()` e `Math.floor()`:
 

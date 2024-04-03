@@ -12,9 +12,6 @@ title: Werken met XML
 weight: 40
 ---
 
-## Wat & Waarom?
-Werken met XML houdt het parsen, opvragen en manipuleren van XML-documenten met Java in. Programmeurs doen dit voor gegevensuitwisseling, configuratiebeheer, en omdat veel legacy systemen en API's communiceren met behulp van XML.
-
 ## Hoe te:
 Java biedt API's zoals DOM (Document Object Model), SAX (Simple API for XML) en StAX (Streaming API for XML) om met XML te werken. Hier is een DOM-voorbeeld om een XML-bestand te parsen:
 

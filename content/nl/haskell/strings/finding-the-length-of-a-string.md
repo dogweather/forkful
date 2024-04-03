@@ -12,12 +12,7 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-
-De lengte van een string vinden in Haskell betekent bepalen hoeveel karakters deze bevat. Programmeurs hebben dit vaak nodig om lusiteratoren te beheersen, invoer te valideren, toewijzingen van grootte te regelen, of voor debugdoeleinden.
-
 ## Hoe te:
-
 ```Haskell
 -- Gebruik makend van de `length` functie
 main = do
@@ -31,7 +26,6 @@ Voorbeelduitvoer:
 ```
 
 ## Diepere Duik
-
 Haskell is een puur functionele taal waar strings worden weergegeven als lijsten van karakters. De `length` functie, onderdeel van de Prelude (de standaardbibliotheek die in elk Haskell-programma wordt geïmporteerd), werkt onder deze weergave.
 
 Historisch gezien waren strings als lijsten een natuurlijke keuze voor Haskell vanwege hun eenvoud en het feit dat Lisp een vergelijkbare ontwerpkeuze maakte (en veel functionele talen beïnvloedde). De `length` functie telt gewoon de elementen in deze lijst.
@@ -55,7 +49,6 @@ myLength (_:xs) = 1 + myLength xs  -- Recursief 1 optellen voor de rest van de l
 Voor `Text` en `ByteString` gegevenstypes hebben ze hun eigen interne implementatiedetails die ze efficiënter maken dan een simpele gelinkte lijst van karakters.
 
 ## Zie Ook
-
 - [Haskell `length` officiële documentatie](https://hackage.haskell.org/package/base-4.16.1.0/docs/Prelude.html#v:length)
 - [`text` pakket op Hackage](https://hackage.haskell.org/package/text)
 - [`bytestring` pakket op Hackage](https://hackage.haskell.org/package/bytestring)

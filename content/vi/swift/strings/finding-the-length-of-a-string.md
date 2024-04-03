@@ -14,9 +14,6 @@ title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---
 
-## Cái gì & Tại sao?
-Tìm độ dài của một chuỗi nghĩa là xác định xem nó chứa bao nhiêu ký tự. Lập trình viên làm điều này để xác thực đầu vào, thao tác với văn bản, hoặc đơn giản là để hiểu kích thước dữ liệu của họ.
-
 ## Cách thực hiện:
 Trong Swift, bạn có được độ dài của một chuỗi bằng cách truy cập vào thuộc tính `count` của nó. Thẳng thắn, hãy làm điều đó:
 

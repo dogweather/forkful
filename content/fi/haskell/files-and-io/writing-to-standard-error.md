@@ -13,9 +13,6 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mikä & Miksi?
-Standardivirheeseen (stderr) kirjoittaminen Haskellissa mahdollistaa ohjelmien tulosteiden erottamisen normaalien tulosten ja virheilmoitusten välillä. Tämä on ratkaisevan tärkeää ongelmien signaloimiseksi ja vianmääritykseksi, ilman että se sotkee standarditulostetta (stdout), joka usein sisältää ohjelman päädatan tai tuloksen.
-
 ## Kuinka:
 Haskellissa stderriin kirjoittaminen on suoraviivaista peruskirjaston `System.IO`-moduulin avulla. Alla on perusesimerkki esittelynä:
 

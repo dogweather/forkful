@@ -11,9 +11,6 @@ title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---
 
-## Vad & Varför?
-Att extrahera substrängar innebär att man plockar ut en specifik del av en textsträng. Programmerare gör detta för att bearbeta, validera eller manipulera data mer effektivt.
-
 ## Hur man gör:
 Extrahera en delsträng med `substring()`-metoden:
 

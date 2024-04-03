@@ -14,9 +14,6 @@ title: Eliminando comillas de una cadena de texto
 weight: 9
 ---
 
-## ¿Qué y por qué?
-Eliminar comillas de una cadena en Dart implica quitar las comillas dobles (") o simples (') del inicio y final de una cadena, útil para la limpieza de datos o la preparación de cadenas para su posterior procesamiento. Los programadores hacen esto para normalizar las entradas de datos, asegurar uniformidad en el almacenamiento de datos o cuando interactúan con APIs que pueden devolver datos en formatos entrecomillados.
-
 ## Cómo hacerlo:
 Dart proporciona maneras sencillas de eliminar comillas de una cadena usando métodos de cadena incorporados sin necesidad de bibliotecas de terceros.
 

@@ -14,12 +14,7 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## Co i dlaczego?
-
-Wysyłanie zapytania HTTP w Visual Basic for Applications (VBA) polega na programistycznym dostępie do zasobów sieciowych lub usług sieciowych poprzez wysyłanie zapytań za pomocą HTTP. Programiści robią to, aby pobierać dane, interaktywnie korzystać z internetowych API lub programistycznie wysyłać formularze z aplikacji obsługujących VBA, takich jak Excel, Access lub spersonalizowanych rozwiązań VBA.
-
 ## Jak to zrobić:
-
 Kluczem do wysyłania zapytania HTTP w VBA jest wykorzystanie biblioteki `Microsoft XML, w wersji 6.0` (lub starszych wersji, w zależności od systemu). Najpierw upewnij się, że to odniesienie jest włączone w twoim projekcie, przechodząc do Narzędzia > Odniesienia w edytorze VBA i zaznaczając `Microsoft XML, w wersji 6.0`.
 
 Oto jak wysłać proste zapytanie HTTP GET:
@@ -65,7 +60,6 @@ Przykładowy wynik dla udanego żądania może być ciągiem JSON lub stroną HT
 ```
 
 ## Szczegółowa analiza
-
 Metoda przedstawiona wykorzystuje obiekt `MSXML2.XMLHTTP`, będący częścią Microsoft XML Core Services (MSXML). Został wprowadzony, aby zaoferować programistom VBA sposób na wykonywanie operacji opartych na XML i z czasem stał się powszechnym narzędziem do zapytań HTTP, nawet gdy nie pracuje się bezpośrednio z danymi XML. Pomimo swojego wieku, pozostaje niezawodną opcją do prostych interakcji sieciowych w VBA.
 
 Jednakże VBA i jego mechanizmy zapytań HTTP brakuje wytrzymałości i elastyczności, które znajdują się w nowoczesnych środowiskach programistycznych. Na przykład, obsługa zapytań asynchronicznych lub praca w aplikacjach wymagających zaawansowanych funkcji HTTP (takich jak websockets czy zdarzenia wysyłane przez serwer) leży poza zakresem możliwości VBA. Pracując nad bardziej skomplikowanymi projektami integracji sieciowej, programiści często wykorzystują zewnętrzne biblioteki lub narzędzia, lub nawet automatyzują zachowanie przeglądarki za pomocą technik web scraping, chociaż są to rozwiązania doraźne, a nie ostateczne.

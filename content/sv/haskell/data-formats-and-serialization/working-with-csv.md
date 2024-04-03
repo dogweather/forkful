@@ -14,12 +14,7 @@ title: Arbeta med CSV
 weight: 37
 ---
 
-## Vad & Varför?
-
-Att arbeta med CSV-filer (Comma-Separated Values eller komma-separerade värden) innebär att tolka och generera filer som lagrar tabulär data i ett enkelt, textbaserat format. Programmerare sysslar ofta med denna uppgift för att effektivt importera eller exportera data från kalkylark, databaser, eller för att underlätta datautbyte mellan olika program.
-
 ## Hur:
-
 I Haskell kan hantering av CSV-filer uppnås med hjälp av `cassava`-biblioteket, ett av de populära tredjepartsbiblioteken för detta ändamål. Nedan finns exempel som visar hur man läser från och skriver till CSV-filer med `cassava`.
 
 **1. Läsa en CSV-fil:**

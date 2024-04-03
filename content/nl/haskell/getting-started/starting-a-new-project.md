@@ -13,9 +13,6 @@ title: Een nieuw project starten
 weight: 1
 ---
 
-## Wat & Waarom?
-Elk project begint met een eerste stap. Voor programmeurs betekent dat het opzetten van de initiële structuur en het schrijven van startcode. We doen dit om ideeën om te zetten in een concrete basis, klaar voor uitbreiding en innovatie.
-
 ## Hoe te:
 ```Haskell
 -- 1. Een nieuw Haskell-project initialiseren met Stack

@@ -27,12 +27,7 @@ title: "\u0412\u0438\u0434\u0430\u043B\u0435\u043D\u043D\u044F \u0441\u0438\u043
 weight: 5
 ---
 
-## What & Why? / Що і Чому?
-
-У програмуванні, видалення символів за патерном означає фільтрацію тексту, грунтуючись на визначених критеріях. Програмісти роблять це, щоб очистити дані, видаливши непотрібні символи чи форматування.
-
 ## How to: / Як це зробити:
-
 ```Elm
 module Main exposing (..)
 import Regex exposing (Regex, find, regex, replace)
@@ -61,11 +56,9 @@ main =
 Просто скопіюйте цей код в ваш Elm проєкт, та він видалить усе, що не є літерами, цифрами чи пробілами.
 
 ## Deep Dive / Глибоке Занурення:
-
 У видаленні символів за паттерном часто використовують регулярні вирази (regex). Elm використовує бібліотеку `elm/regex` для роботи з ними. Рідше, можна використовувати `String` функції без regex, але це менш гнучко. Регулярні вирази мають історію з 1950-х, і сьогодні є стандартом для операцій з текстом.
 
 ## See Also / Дивіться Також:
-
 - Elm Regex package documentation: [https://package.elm-lang.org/packages/elm/regex/latest](https://package.elm-lang.org/packages/elm/regex/latest)
 - Elm String module documentation: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
 - Regular expressions in-depth: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

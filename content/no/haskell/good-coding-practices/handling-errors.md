@@ -11,9 +11,6 @@ title: "Feilh\xE5ndtering"
 weight: 16
 ---
 
-## Hva & Hvorfor?
-Håndtering av feil i programmering handler om å styre det uventede—ting som kan gå galt. Programmerere gjør dette for å sikre at deres programmer kan håndtere disse situasjonene med nåde, uten å krasje eller produsere feil resultater.
-
 ## Hvordan:
 Haskell håndterer feil robust gjennom typer som `Maybe` og `Either`. Her er et raskt blikk:
 

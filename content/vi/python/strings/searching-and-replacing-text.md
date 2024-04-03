@@ -15,9 +15,6 @@ title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---
 
-## Cái gì & Tại sao?
-Tìm kiếm và thay thế văn bản là việc tìm kiếm các chuỗi trong một khối văn bản và thay đổi chúng thành cái khác. Lập trình viên làm việc này để chỉnh sửa mã, xử lý dữ liệu, hoặc tự động hóa các nhiệm vụ tái cấu trúc.
-
 ## Làm thế nào:
 ```Python
 # Sử dụng str.replace() cho việc thay thế đơn giản

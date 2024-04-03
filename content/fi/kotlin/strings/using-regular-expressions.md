@@ -14,11 +14,8 @@ title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---
 
-## Mikä & Miksi?
-
-Säännölliset lausekkeet (regex) ovat tehokas väline tekstinkäsittelyyn, joka mahdollistaa ohjelmoijien hakea, täsmätä ja manipuloida merkkijonoja edistyneillä mallinhakutekniikoilla. Kotlinissa regexien hyödyntäminen auttaa suorittamaan monimutkaisia tekstinkäsittelytehtäviä, kuten validoinnin, jäsentämisen tai muuntamisen tehokkaasti, tehdessään siitä välttämättömän työkalun yksinkertaisesta merkkijonomanipulaatiosta monimutkaiseen tekstianalyysiin.
-
 ## Kuinka:
+
 
 ### Perusvastaavuuden Tarkistaminen
 Tarkistaaksesi vastaako merkkijono tiettyä mallia Kotlinissa, voit käyttää `Regex`-luokan `matches`-metodia.

@@ -12,9 +12,6 @@ title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---
 
-## What & Why? (Co i Dlaczego?)
-Czytanie argumentów z linii poleceń pozwala naszym skryptom Lua na interakcję z użytkownikiem lub innymi programami poprzez parametry uruchomieniowe. Programiści wykorzystują tę technikę, by skrypty były elastyczne i mogły dostosować swoje działanie w zależności od potrzeb.
-
 ## How to: (Jak to zrobić:)
 Oto jak łatwo przeczytać argumenty z linii poleceń w Lua:
 

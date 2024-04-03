@@ -23,15 +23,10 @@ title: "\u05E4\u05D9\u05E2\u05E0\u05D5\u05D7 HTML"
 weight: 43
 ---
 
-## מה ולמה?
-פירוש HTML ב-PowerShell עוסק בפירוק תוכן HTML כדי לחלץ נתונים ספציפיים או לאוטומט פעולות קשורות לאינטרנט. תוכניתנים עושים זאת כדי להתערב בדפי אינטרנט, לגרד תוכן מהרשת, או לאוטומט הגשות טפסים ואינטראקציות אחרות ברשת ללא צורך בדפדפן.
-
 ## איך לעשות:
-
 ב-PowerShell אין מנתח HTML מוקדש כחלק מהמערכת, אך ניתן להשתמש בפקודת ה-`Invoke-WebRequest` כדי לגשת ולפרש תוכן HTML. לצורך פירוש ותיקון מורכב יותר, ניתן להשתמש ב-HtmlAgilityPack, ספריית .NET פופולרית.
 
 ### שימוש ב-`Invoke-WebRequest`:
-
 ```powershell
 # דוגמה פשוטה לאיסוף כותרות מדף אינטרנט
 $response = Invoke-WebRequest -Uri 'http://example.com'
@@ -47,7 +42,6 @@ Example Domain
 ```
 
 ### שימוש ב-HtmlAgilityPack:
-
 ראשית, צריך להתקין את HtmlAgilityPack. ניתן לעשות זאת דרך מנהל החבילות NuGet:
 
 ```powershell

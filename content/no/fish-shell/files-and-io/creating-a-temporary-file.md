@@ -11,9 +11,6 @@ title: Opprette en midlertidig fil
 weight: 21
 ---
 
-## What & Why?
-Temporary files er midlertidige lagringssteder for data som kun trengs under kjøring av et script eller program. Disse brukes for å unngå å forstyrre andre filer og for å holde på data som kan være for stort eller sensitivt for å plasseres i minnet.
-
 ## How to:
 Oppretting av en midlertidig fil i Fish Shell:
 

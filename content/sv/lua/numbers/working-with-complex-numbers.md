@@ -11,9 +11,6 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad & Varför?
-Komplexa tal utvidgar idén om en endimensionell tal-linje till ett tvådimensionellt plan genom att inkludera en vinkelrät imaginär axel. Programmerare arbetar med dem inom områden som signalbehandling, fluiddynamik och elektroteknik, där de är avgörande för att representera oscillationer och andra fenomen.
-
 ## Hur man gör:
 I Lua kan du representera komplexa tal med tabeller. De grundläggande operationerna innefattar att addera, subtrahera, multiplicera och dela dessa tabeller. Så här gör du:
 

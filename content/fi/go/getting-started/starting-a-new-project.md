@@ -13,12 +13,7 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## Mikä & Miksi?
-
-Uuden projektin aloittaminen Go:ssa sisältää työtilan pystyttämisen ja sen alustamisen tarvittavilla Go-moduuleilla. Ohjelmoijat tekevät tämän koodin organisoinnin, riippuvuuksien hallinnan tehostamisen ja rakennusprosessien helpottamisen vuoksi. Se on perustavanlaatuista skaalautuvan ja ylläpidettävän ohjelmiston luomiseen Go:ssa.
-
 ## Kuinka:
-
 Aloita varmistamalla, että Go on asennettu suorittamalla `go version` komentorivillä. Sinun pitäisi nähdä asentamasi Go-version tulosteena. Seuraavaksi, aloitetaan uusi projekti. Siirry työtilaasi ja suorita:
 
 ```shell
@@ -73,7 +68,6 @@ Hello, World!
 Onnittelut! Olet juuri aloittanut uuden Go-projektin ja suorittanut ensimmäisen Go-ohjelmasi.
 
 ## Syväsukellus
-
 Aloitteen tuoda moduulit Go:n riippuvuuksien hallinnan standardiksi oli merkittävä muutos Go-ekosysteemissä, virallisesti omaksuttu Go 1.11:ssä. Ennen moduuleja Go-kehittäjät turvautuivat GOPATH-ympäristömuuttujaan riippuvuuksien hallintaan, mikä oli vähemmän intuitiivista ja usein johti kuuluisaan "riippuvuushelvettiin".
 
 Moduulit tarjoavat kapseloidun tavan hallita projektiriippuvuuksia, versionhallintaa ja ovat siirtymä kohti Go-projekteja, jotka ovat enemmän itsenäisiä ja siirrettäviä. Jokainen moduuli määrittelee riippuvuutensa, jotka Go seuraa `go.mod` tiedostossa, yksinkertaistaen riippuvuuksien hallintaa eri ympäristöissä ja kehitysvaiheissa.

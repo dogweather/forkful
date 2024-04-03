@@ -12,12 +12,7 @@ title: Het verzenden van een HTTP-verzoek
 weight: 44
 ---
 
-## Wat & Waarom?
-
-Het versturen van een HTTP-verzoek in Dart is het proces van het starten van communicatie met een webserver of API vanuit een Dart-applicatie. Programmeurs doen dit om gegevens van het web op te halen, formulieren in te dienen en te interageren met RESTful-services, waardoor het een fundamentele operatie is voor de ontwikkeling van web-, serverzijde- en mobiele applicaties in Dart.
-
 ## Hoe:
-
 Dart bevat het `http`-pakket, een krachtige en handige manier om te werken met HTTP-bronnen. Voeg het eerst toe aan je pubspec.yaml-bestand:
 
 ```yaml

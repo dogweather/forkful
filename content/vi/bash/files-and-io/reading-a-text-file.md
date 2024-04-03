@@ -15,9 +15,6 @@ title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---
 
-## Đọc & Lý do?
-Đọc một tệp văn bản có nghĩa là lấy nội dung từ tệp vào trong kịch bản (script) của bạn. Lập trình viên thực hiện việc này để làm việc với dữ liệu, cấu hình hoặc để tự động hóa hệ thống dựa trên nội dung tệp văn bản đó.
-
 ## Cách thực hiện:
 Dưới đây là cách đơn giản nhất để đọc một tệp dòng này qua dòng khác:
 

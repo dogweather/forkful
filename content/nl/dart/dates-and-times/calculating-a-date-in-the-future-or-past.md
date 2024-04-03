@@ -13,9 +13,6 @@ title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---
 
-## Wat & Waarom?
-Een datum in de toekomst of het verleden berekenen is een veelvoorkomende taak voor programmeurs die bezig zijn met planning, herinneringen of elke functie die afhankelijk is van datumcalculaties. Het begrijpen van hoe je data kunt manipuleren is cruciaal voor backend systemen, gebruikersinterfaces en data-analyse, speciaal voor degenen die overstappen naar Dart en op zoek zijn naar een efficiënte implementatie van tijdslogica.
-
 ## Hoe:
 Dart biedt robuuste ondersteuning voor datummanipulatie door middel van zijn `DateTime` klasse. Hier is hoe je toekomstige of verleden data kunt berekenen met gebruik van enkel Dart, zonder de noodzaak van externe bibliotheken.
 

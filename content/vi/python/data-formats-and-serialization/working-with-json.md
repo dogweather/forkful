@@ -14,9 +14,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---
 
-## Gì và Tại sao?
-JSON (JavaScript Object Notation) là một định dạng trao đổi dữ liệu phổ biến trên web. Lập trình viên sử dụng JSON để dễ dàng truyền dữ liệu giữa máy chủ và các máy khách web do tính đơn giản của nó và thực tế là nó được hiểu một cách tự nhiên bởi JavaScript, và do đó, bởi trình duyệt web.
-
 ## Làm thế nào:
 Làm việc với JSON trong Python yêu cầu mô-đun `json`. Dưới đây là một hướng dẫn nhanh:
 
@@ -51,9 +48,17 @@ person_json = json.dumps(person_dict)
 print(person_json)
 ```
 
-### Đầu ra Mẫu:
+### Tạo JSON (`json.dumps`):
 ```Python
-'{"name": "Alice", "age": 30, "city": "Wonderland"}'
+import json
+
+# Từ điển Python
+person_dict = {'name': 'Alice', 'age': 30, 'city': 'Wonderland'}
+
+# Chuyển đổi từ điển thành một chuỗi được định dạng JSON
+person_json = json.dumps(person_dict)
+
+print(person_json)
 ```
 
 ## Sâu hơn

@@ -14,9 +14,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Cái gì & Tại sao?
-Số phức có một phần thực và một phần ảo (như 3 + 4i). Lập trình viên sử dụng chúng trong Swift cho các nhiệm vụ như xử lý tín hiệu, giải quyết một số vấn đề toán học, và mô phỏng vật lý.
-
 ## Làm thế nào:
 Swift không hỗ trợ số phức một cách sẵn có, nhưng chúng ta có thể tự lập trình:
 

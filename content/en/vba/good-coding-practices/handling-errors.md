@@ -11,12 +11,7 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-
-Error handling in Visual Basic for Applications (VBA) refers to the process of anticipating, detecting, and resolving programming, application, or communication errors. Implementing robust error handling is crucial for maintaining the integrity of applications and improving user experience by gracefully managing unexpected issues without causing abrupt crashes or data loss.
-
 ## How to:
-
 In VBA, error handling is typically implemented using the `On Error` statement which instructs VBA how to proceed when an error occurs. The most common error handling strategies involve the `On Error GoTo` label, `On Error Resume Next`, and `On Error GoTo 0`. 
 
 **Example 1: Using `On Error GoTo`**
@@ -61,7 +56,6 @@ End Sub
 In this case, the program doesn't break on error; it checks if an error occurred, handles it if it did, and then clears the error.
 
 ## Deep Dive
-
 Historically, error handling in programming languages has evolved from simple goto statements to more sophisticated mechanisms like exceptions in languages such as Java and C#. VBA's error handling, while not as powerful or flexible as modern exception handling, serves its purpose within the context of the language's application in automating tasks in Microsoft Office environments.
 
 The primary limitation of VBA's error handling lies in its somewhat cumbersome and manual approach, requiring careful placement of error handling code and clear understanding of the flow of execution. Modern programming languages typically offer more elegant solutions, such as try-catch blocks, that automatically handle the flow to error handling code without the need for manual checks or jumps in code execution.

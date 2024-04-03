@@ -14,9 +14,6 @@ title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---
 
-## Cái gì & Tại sao?
-Việc trích xuất các chuỗi con là việc lấy ra những phần cụ thể từ một chuỗi. Lập trình viên thực hiện việc này để xử lý hoặc thao tác dữ liệu, như lấy tên người dùng từ địa chỉ email hay một phần mở rộng tệp từ tên file.
-
 ## Làm thế nào:
 PHP cung cấp một số hàm để trích xuất các chuỗi con. Hãy xem xét `substr`, `mb_substr`, và `strstr`.
 

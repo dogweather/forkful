@@ -16,12 +16,7 @@ title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---
 
-## Cái gì & Tại sao?
-
-Viết một tập tin văn bản trong lập trình liên quan đến việc tạo và lưu dữ liệu vào một định dạng tập tin có thể đọc được, như .txt. Lập trình viên làm điều này để lưu trữ dữ liệu, cấu hình hệ thống, ghi nhận thông tin, hoặc xuất nội dung dễ đọc cho con người.
-
 ## Làm thế nào:
-
 Hãy viết "Hello, file!" vào tập tin "greeting.txt".
 
 ```Kotlin
@@ -57,7 +52,6 @@ Another line!
 ```
 
 ## Tìm hiểu sâu hơn
-
 Lịch sử, tập tin văn bản đã là một yếu tố quan trọng trong việc cấu hình và ghi nhật ký trong các hệ thống phần mềm. Mặc dù các công cụ và định dạng (như XML, JSON) đã phát triển, tập tin văn bản vẫn là một phương pháp đơn giản, có thể truy cập mọi lúc để tương tác với dữ liệu.
 
 Các phương pháp thay thế `java.io.File` bao gồm `java.nio.file.Files` và `java.io.FileWriter`, cung cấp nhiều quyền kiểm soát và hiệu quả hơn cho các tập tin lớn hơn hoặc các hoạt động phức tạp hơn.
@@ -68,7 +62,6 @@ Chi tiết thực hiện quan trọng:
 - **Xử lý Ngoại lệ**: Hãy cảnh giác với các `IOException` tiềm ẩn và xử lý chúng một cách phù hợp.
 
 ## Xem thêm
-
 - Tài liệu chính thức của Kotlin về File IO: [kotlinlang.org](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/)
 - Gói `java.nio.file` cho I/O tập tin hiện đại: [Java Docs](https://docs.oracle.com/javase/8/docs/api/java/nio/file/package-summary.html)
 - Tìm hiểu về `BufferedWriter` cho viết hiệu quả: [Java BufferedWriter](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedWriter.html)

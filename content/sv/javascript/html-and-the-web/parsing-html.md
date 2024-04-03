@@ -13,9 +13,6 @@ title: Analysera HTML
 weight: 43
 ---
 
-## Vad & Varför?
-Att tolka HTML innebär att extrahera data från HTML-dokument. Programmerare gör detta för att interagera med eller manipulera webbinnehåll, automatisera dataextraktion eller för webbskrapningsändamål.
-
 ## Hur man gör:
 Låt oss tolka HTML med hjälp av `DOMParser`-API i JavaScript.
 

@@ -12,9 +12,6 @@ title: Scrivere sull'errore standard
 weight: 25
 ---
 
-## Cosa & Perché?
-Scrivere sull'errore standard (stderr) riguarda l'indirizzare messaggi di errore e diagnostiche allo stream stderr, separato dall'output standard (stdout). I programmatori fanno questo per differenziare l'output regolare del programma dai messaggi di errore, consentendo un debugging e un logging più efficaci.
-
 ## Come fare:
 In Clojure, puoi scrivere su stderr utilizzando lo stream `*err*`. Ecco un esempio basilare:
 

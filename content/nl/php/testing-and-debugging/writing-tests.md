@@ -11,9 +11,6 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-Testen controleert of je code doet wat het moet doen. Het bespaart tijd door vroegtijdig fouten op te vangen en zorgt ervoor dat code-wijzigingen niets breken.
-
 ## Hoe:
 We duiken in PHPUnit, een populair PHP-testframework. Installeer het eerst met Composer:
 

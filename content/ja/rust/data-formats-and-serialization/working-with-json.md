@@ -20,12 +20,7 @@ title: "JSON\u3092\u6D3B\u7528\u3059\u308B"
 weight: 38
 ---
 
-## 何となぜ？
-
-RustでのJSON（JavaScript Object Notation）を扱うことは、JSONデータをRustのデータ構造にパースすることと、Rustのデータ構造をJSONにシリアライズすることについてです。プログラマーは、軽量で人間が読みやすいフォーマットであるため、ウェブAPI、設定ファイル、またはJSONが使用される任意のデータ交換フォーマットとやり取りするためにこれを行います。
-
 ## どうやって：
-
 RustでJSONを扱うために、シリアライゼーションとデシリアライゼーションのために`serde`クレートと`serde_json`が広く使用されます。まず、これらをあなたの`Cargo.toml`に含めていることを確認してください：
 
 ```toml
@@ -35,7 +30,6 @@ serde_json = "1.0"
 ```
 
 ### 例1: JSONをRust構造体にデシリアライズする
-
 Rust構造体を定義し、`Deserialize`と`Serialize`のためのderiveマクロを使用します：
 
 ```rust
@@ -74,7 +68,6 @@ fn main() {
 ```
 
 ### 例2: Rust構造体をJSONにシリアライズする
-
 同じ`User`構造体を使用して：
 
 ```rust

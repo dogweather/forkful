@@ -15,9 +15,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---
 
-## Mục đích & Lý do
-Chuyển đổi một chuỗi thành chữ thường có nghĩa là biến mọi ký tự trong chuỗi thành chữ thường. Các lập trình viên làm điều này để đảm bảo tính nhất quán khi so sánh, sắp xếp hoặc lưu trữ văn bản.
-
 ## Cách thực hiện:
 Hàm `toLowerCase()` của Kotlin chuyển tất cả các ký tự trong một chuỗi thành chữ thường một cách nhanh chóng. Dưới đây là cách bạn sử dụng nó:
 

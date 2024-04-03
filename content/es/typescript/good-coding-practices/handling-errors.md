@@ -11,9 +11,6 @@ title: Manejo de errores
 weight: 16
 ---
 
-## Qué & Por qué?
-El manejo de errores se refiere a esperar lo inesperado; es cómo administramos cuando las cosas van mal en nuestro código. Lo hacemos para evitar bloqueos y para brindar a los usuarios una experiencia fluida, incluso cuando ocurre lo inesperado.
-
 ## Cómo hacerlo:
 En TypeScript, el manejo de errores a menudo implica bloques `try`, `catch` y `finally`.
 

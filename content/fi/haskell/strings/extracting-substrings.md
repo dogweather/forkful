@@ -10,9 +10,6 @@ title: Merkkijonojen osien poimiminen
 weight: 6
 ---
 
-## What & Why?
-Subjonojen poiminta tarkoittaa merkkijonon osien irrottamista. Ohjelmoijat tekevät sitä, kun tarvitsevat käsitellä merkkijonojen erityisiä segmenttejä – kuten tietojen siistimistä tai merkkijonon analysointia.
-
 ## How to:
 Haskellissa käytetään usein funktioita `take`, `drop` ja `substring` merkkijonorakenteiden käsittelyyn. Tässä pari esimerkkiä:
 

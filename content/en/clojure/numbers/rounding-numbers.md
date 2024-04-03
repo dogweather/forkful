@@ -10,9 +10,6 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-Rounding numbers is about tweaking a number to the nearest whole, or to a certain decimal precision. We round numbers to simplify them for human readability, reduce computational load, or meet specific numerical requirements.
-
 ## How to:
 In Clojure, we primarily use `Math/round`, `Math/floor`, and `Math/ceil`:
 

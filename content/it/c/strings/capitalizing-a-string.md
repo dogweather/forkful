@@ -13,12 +13,7 @@ title: Capitalizzare una stringa
 weight: 2
 ---
 
-## Cosa & Perché?
-
-Capitalizzare una stringa in C implica convertire il primo carattere di ogni parola in una determinata stringa in maiuscolo, se questo è una lettera minuscola. I programmatori spesso eseguono questa operazione per standardizzare l'input utente per ricerche, operazioni di ordinamento o scopi di visualizzazione, garantendo coerenza e leggibilità attraverso i dati testuali.
-
 ## Come fare:
-
 Capitalizzare una stringa in C richiede una conoscenza di base della manipolazione dei caratteri e del traversamento delle stringhe. Dato che C non ha una funzione integrata per questo, normalmente si controlla ogni carattere, aggiustandone il caso se necessario. Di seguito è riportata un'implementazione semplice:
 
 ```c
@@ -55,7 +50,6 @@ Stringa capitalizzata: Hello World. Programming In C!
 Questo programma attraversa la stringa `exampleString`, controllando ogni carattere per vedere se dovrebbe essere capitalizzato. La funzione `islower` controlla se un carattere è una lettera minuscola, mentre `toupper` lo converte in maiuscolo. Il flag `capNext` determina se la lettera successiva incontrata dovrebbe essere convertita, essendo impostato dopo ogni spazio (' ') trovato, e inizialmente per capitalizzare il primo carattere della stringa.
 
 ## Approfondimento
-
 La tecnica dimostrata è semplice ma manca di efficienza per stringhe molto grandi o quando eseguita ripetutamente in applicazioni critiche per le prestazioni. In contesti storici e di implementazione, la manipolazione delle stringhe in C, inclusa la capitalizzazione, spesso implica la manipolazione diretta del buffer, riflettendo l'approccio di basso livello di C e dando al programmatore il pieno controllo sui compromessi tra memoria e prestazioni.
 
 Esistono metodi alternativi, più sofisticati per capitalizzare le stringhe, specialmente quando si considerano localizzazioni e caratteri unicode, dove le regole di capitalizzazione possono differire significativamente dal semplice scenario ASCII. Librerie come ICU (International Components for Unicode) forniscono soluzioni robuste per questi casi ma introducono dipendenze e sovraccarichi che potrebbero non essere necessari per tutte le applicazioni.

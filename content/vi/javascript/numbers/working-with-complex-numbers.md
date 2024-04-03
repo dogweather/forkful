@@ -14,9 +14,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Cái gì & Tại sao?
-Số phức là những số có một phần thực và một phần ảo (như 3 + 4i). Chúng xuất hiện trong nhiều vấn đề lập trình, đặc biệt là trong xử lý tín hiệu, tính toán lượng tử, và giải các phương trình đa thức. Các lập trình viên xử lý chúng để hiệu quả hóa việc giải quyết các loại nhiệm vụ này.
-
 ## Làm thế nào:
 JavaScript không hỗ trợ sẵn số phức, nhưng bạn có thể kỳ công và xử lý nó bằng cách sử dụng đối tượng và toán học. Dưới đây là một cái nhìn nhanh.
 

@@ -11,9 +11,6 @@ title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---
 
-## What & Why?
-Supprimer des caractères selon un motif, c’est filtrer une chaîne de caractères pour en retirer certains éléments indésirables. Les programmeurs font cela pour nettoyer les entrées de l'utilisateur, formater des données, ou encore simplifier le traitement du texte.
-
 ## How to:
 Elm utilise des "Regex" (expressions régulières) pour identifier les motifs à supprimer. Voyez l'exemple ci-dessous :
 

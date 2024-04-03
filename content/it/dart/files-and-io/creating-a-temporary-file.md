@@ -14,9 +14,6 @@ title: Creazione di un file temporaneo
 weight: 21
 ---
 
-## Cosa e perché?
-Creare un file temporaneo in Dart implica la generazione di un file destinato a un uso a breve termine, principalmente per scenari come la memorizzazione nella cache dei dati, lo storage temporaneo per l'elaborazione dei file o il mantenimento di informazioni troppo sensibili per essere conservate a lungo. Gli sviluppatori lo fanno per gestire dati che non necessitano di una conservazione permanente, migliorando così le prestazioni e mantenendo l'igiene dei dati.
-
 ## Come fare:
 La libreria `dart:io` di Dart facilita la creazione di file temporanei attraverso la classe `Directory`. Ecco un modo semplice per creare un file temporaneo e scrivere al suo interno del contenuto:
 
@@ -40,7 +37,6 @@ Future<void> main() async {
 ```
 
 ### Utilizzo di una libreria di terze parti: `path_provider`
-
 Per applicazioni (specialmente app mobili con Flutter), potresti voler creare file temporanei in un modo più unificato e gestibile. Il pacchetto `path_provider` può aiutarti a trovare la directory temporanea corretta su diverse piattaforme (iOS, Android, ecc.).
 
 Prima, aggiungi `path_provider` alle tue dipendenze in `pubspec.yaml`:

@@ -14,9 +14,6 @@ title: Analysering av en dato fra en streng
 weight: 30
 ---
 
-## Hva & Hvorfor?
-Å analysere en dato fra en streng handler om å konvertere tekst som representerer en dato til et `Date` eller `DateTime`-objekt som Ruby forstår. Programmerere gjør dette for å utføre operasjoner som sammenligninger, kalkulasjoner eller formatering på datoer, som er vanlige oppgaver i applikasjoner som håndterer planlegging, analytikk eller databehandling.
-
 ## Hvordan:
 I Ruby tilbyr standardbiblioteket direkte måter å analysere datoer fra strenger ved hjelp av `Date` og `DateTime`-klassene. Her er hvordan du gjør det ved bruk av Rubys innebygde metoder:
 
@@ -47,7 +44,6 @@ puts parsed_date_custom
 ```
 
 ### Bruke tredjepartsbiblioteker:
-
 Selv om Rubys innebygde funksjoner er kraftige, kan du noen ganger foretrekke tredjepartsbiblioteker for ekstra funksjoner eller enklere syntaks. Et populært valg er `Chronic`-gemen for naturlig språkanalyse:
 
 1. Legg først til Chronic i Gemfileen din og kjør `bundle install`:

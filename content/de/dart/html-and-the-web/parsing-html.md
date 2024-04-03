@@ -12,9 +12,6 @@ title: HTML Parsen
 weight: 43
 ---
 
-## Was & Warum?
-Das Parsen von HTML in der Programmierung beinhaltet das Extrahieren von Daten aus HTML-Dokumenten. Programmierer tun dies, um mit Webinhalten zu interagieren oder Informationen für die Extraktion, das Testen oder die Automatisierung zu sammeln, selbst wenn offizielle APIs nicht verfügbar sind.
-
 ## Wie geht das:
 Dart bietet in seinen Kernbibliotheken keine integrierte Unterstützung für das Parsen von HTML. Sie können jedoch ein Drittanbieter-Paket wie `html` verwenden, um HTML-Dokumente zu parsen und zu manipulieren.
 

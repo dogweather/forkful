@@ -10,9 +10,6 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-Parsing a date from a string involves interpreting the string format to extract date components like day, month, and year. Programmers do this to handle user input, read data files, or interact with APIs that communicate dates in string formats. It's essential for data processing, validation, and performing date arithmetic in applications.
-
 ## How to:
 In modern C++, you can use the `<chrono>` library to handle dates and times natively, but it doesn't directly support parsing from strings without manual parsing for more complex formats. However, for ISO 8601 date formats and simple custom formats, here's how you can accomplish parsing.
 

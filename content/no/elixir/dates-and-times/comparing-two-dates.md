@@ -11,9 +11,6 @@ title: Sammenlikning av to datoer
 weight: 27
 ---
 
-## What & Why?
-Sammenligne to datoer er å vurdere deres forhold til hverandre - før, etter, eller samme dag. Programmerere trenger dette for å håndtere tidsavhengige funksjoner som frister, planlegging og gyldighetskontroller.
-
 ## How to:
 Elixir gjør det enkelt å sammenligne datoer ved hjelp av `Date.compare/2` funksjonen. Her er hvordan du gjør det:
 

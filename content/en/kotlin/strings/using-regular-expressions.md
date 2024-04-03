@@ -11,11 +11,8 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-
-Regular expressions (regex) are a powerful tool for text processing, allowing programmers to search, match, and manipulate strings with advanced pattern-matching techniques. In Kotlin, leveraging regex helps efficiently perform complex text processing tasks like validation, parsing, or transformation, making it indispensable for tasks ranging from simple string manipulation to complex text analysis.
-
 ## How to:
+
 
 ### Basic Matching
 To check if a string matches a specific pattern in Kotlin, you can use the `matches` method of the `Regex` class.

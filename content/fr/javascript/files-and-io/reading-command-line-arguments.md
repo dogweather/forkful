@@ -11,9 +11,6 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## Quoi et Pourquoi ?
-Lire les arguments de ligne de commande, c'est récupérer les données que les utilisateurs passent à votre programme Node.js quand ils le lancent. On fait ça pour personnaliser l'exécution ou pour donner des instructions spécifiques au programme.
-
 ## Comment faire :
 Voici un petit exemple. Vous écrivez un script, l'utilisateur le lance avec des arguments, et votre script les utilise.
 

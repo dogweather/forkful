@@ -13,12 +13,7 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-
-Het schrijven van tests betekent het creëren van code die automatisch jouw andere code op fouten controleert. Programmeurs doen dit om bugs vroegtijdig te vinden, te zorgen dat de code werkt zoals verwacht, en om toekomstige wijzigingen veiliger te maken.
-
 ## Hoe te:
-
 ```Lua
 -- Eenvoudig Lua testvoorbeeld met assert
 
@@ -42,11 +37,9 @@ Geslaagd voor alle add() tests.
 ```
 
 ## Diepgaande duik
-
 Historisch gezien had Lua geen ingebouwd testframework, wat ertoe leidde dat ontwikkelaars hun eigen maakten of die van derden gebruikten, zoals LuaUnit of busted. Met een minimalistische kern, behandelen deze frameworks de setup/afbreek, beweringen, en rapportageformaten. Alternatieven omvatten het gebruik van de native `assert` functie voor eenvoudige tests of het integreren van Lua met continuous integration (CI) systemen voor geautomatiseerd testen in verschillende omgevingen. Implementatiedetails omvatten het schrijven van testbare code, het begrijpen van het belang van testdekking en het ontwerpen van tests die zowel uitgebreid als leesbaar zijn.
 
 ## Zie ook
-
 - LuaUnit GitHub: https://github.com/bluebird75/luaunit
 - busted GitHub: https://github.com/Olivine-Labs/busted
 - "Programmeren in Lua" (testhoofdstuk): https://www.lua.org/pil/11.html

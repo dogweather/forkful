@@ -12,9 +12,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## What & Why? (Mikä & Miksi?)
-HTTP-pyyntöjen lähettäminen on tapa kommunikoida verkon yli olevien palvelimien kanssa, esimerkiksi noutaaksesi dataa tai lähetettäessäsi sitä. Ohjelmoijat käyttävät sitä tiedon vaihtoon sovellusten ja backend-järjestelmien välillä.
-
 ## How to: (Kuinka tehdään:)
 Esimerkki: Hae JSON-datan GET-pyynnöllä.
 ```PowerShell

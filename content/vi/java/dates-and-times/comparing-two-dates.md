@@ -15,9 +15,6 @@ title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---
 
-## Cái gì và Tại sao?
-So sánh hai ngày tức là tìm ra xem một ngày đến trước, sau, hay trùng khớp với ngày nào đó. Lập trình viên làm điều này để xử lý lịch trình, hạn chót, sắp xếp theo thứ tự thời gian, và nhiều hơn nữa.
-
 ## Làm thế nào:
 Java làm cho việc so sánh ngày tháng trở nên khá dễ dàng. Sử dụng `LocalDate` và các phương thức `compareTo`, `isBefore`, hoặc `isAfter`. Dưới đây là phần mô tả ngắn gọn:
 

@@ -11,9 +11,6 @@ title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---
 
-## Hva & Hvorfor?
-Å slette tegn som matcher et mønster i Lua betyr å fjerne spesifikke deler av en streng basert på regler eller 'patterns'. Programmører gjør dette for å rense data, manipulere tekst eller forberede strenger for videre prosessering.
-
 ## Hvordan gjøre det:
 ```lua
 local tekst = "Hallo, Verden! 123"

@@ -11,9 +11,6 @@ title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---
 
-## What & Why?
-A impressão de saída de depuração envolve exibir valores intermediários para entender o comportamento do programa. Programadores o fazem para encontrar e corrigir erros mais facilmente.
-
 ## How to:
 Em Haskell, vamos usar a função `print` para saída de depuração. Veja como:
 

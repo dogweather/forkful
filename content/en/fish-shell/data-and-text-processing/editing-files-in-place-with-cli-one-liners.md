@@ -10,12 +10,7 @@ title: Editing files in-place with CLI one-liners
 weight: 32
 ---
 
-## What & Why?
-
-Editing files in-place with CLI one-liners is about making changes directly to files from the command line, without opening them in a text editor. Programmers do this to save time and automate repetitive editing tasks, making their workflow smoother and more efficient.
-
 ## How to:
-
 Fish Shell, known for its user-friendly features and powerful scripting capabilities, offers several ways to edit files in-place. However, unlike some other shells, Fish does not have a built-in mechanism for in-place editing (`sed -i` in Bash, for example). But fear not, you can still achieve this with a little creativity and some help from external tools like `sed` and `awk`.
 
 ### Using `sed` for simple replacements
@@ -40,7 +35,6 @@ awk '{print $1 * 2}' file.txt > temp && mv temp file.txt
 Remember, when using these tools from Fish, capturing errors and understanding their messages is crucial. Use Fish’s robust error handling to make your scripts more reliable.
 
 ## Deep Dive
-
 Historically, in-place file editing has been a staple of Unix and Linux programming, offering an efficient way to perform quick edits without manually opening files. Tools like `sed` and `awk` are venerable utilities that have been around since the early days of Unix, becoming indispensable for text processing tasks.
 
 Fish Shell, while more modern and boasting improvements in usability and scripting, lacks built-in in-place editing primarily due to its design philosophy focused on interactivity and user-friendliness. The absence of a native in-place editing command in Fish underscores the importance of external tools in Unix-like ecosystems.

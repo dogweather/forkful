@@ -11,9 +11,6 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## What & Why? (Co i dlaczego?)
-Usuwanie znaków pasujących do wzorca w Bashu to oczyszczanie ciągu znaków z niepotrzebnych elementów. Programiści używają tej metody dla uproszczenia danych wejściowych, wydobywania użytecznych informacji, czy też przygotowywania tekstu do dalszej obróbki.
-
 ## How to: (Jak to zrobić?)
 ```Bash
 # Przykład 1: Usuń wszystkie wystąpienia litery 'a'

@@ -11,12 +11,7 @@ title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---
 
-## Quoi & Pourquoi ?
-
-Télécharger une page web, c'est récupérer ses données (HTML, CSS, scripts) pour les manipuler ou les stocker. Les programmeurs le font pour analyser le contenu, surveiller les changements, ou alimenter des bases de données.
-
 ## Comment faire :
-
 ```TypeScript
 import axios from 'axios'; // N'oubliez pas d'installer axios avec npm ou yarn
 
@@ -49,7 +44,6 @@ Exemple de sortie :
 ```
 
 ## Plongée profonde
-
 Historiquement, les pages web étaient téléchargées en utilisant XMLHttpRequest, mais ce standard a été remplacé par l'API Fetch plus moderne, qui est basée sur les promesses. TypeScript, étant un sur-ensemble de JavaScript, permet d'utiliser ces API et d'autres outils comme `axios`, qui simplifie les requêtes HTTP.
 
 Il existe d'autres alternatives, comme `node-fetch` ou les librairies de bas niveau comme `http` et `https` modules de Node.js, qui donnent un contrôle plus fin.
@@ -57,7 +51,6 @@ Il existe d'autres alternatives, comme `node-fetch` ou les librairies de bas niv
 Concernant l'implémentation, prenez en compte la gestion des erreurs, le réglage des en-têtes HTTP pour gérer la politique de même origine (CORS), et l'encodage correct des caractères de la page.
 
 ## Voir aussi
-
 - Documentation Axios : [https://axios-http.com/docs/intro](https://axios-http.com/docs/intro)
 - API Fetch pour les navigateurs : [https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 - Module HTTP de Node.js : [https://nodejs.org/api/http.html](https://nodejs.org/api/http.html)

@@ -12,12 +12,7 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i dlaczego?
-
-Zaokrąglanie liczb oznacza odcięcie części dziesiętnych do prostszej wartości, która jest wystarczająco dobra w danym kontekście. Programiści zaokrąglają liczby, aby upraszczać wyniki, oszczędzać miejsce lub ponieważ dokładna wartość nie jest kluczowa — na przykład, gdy oceniasz użycie procesora lub miejsce na dysku i części dziesiętne nie zaważą na Twoim dniu.
-
 ## Jak to zrobić:
-
 Oto krótki przewodnik po zaokrąglaniu w Bashu:
 
 ```Bash
@@ -44,7 +39,6 @@ Przykłady wyników — prosto z terminala:
 ```
 
 ## Pogłębiona analiza
-
 Kiedyś nie było `bc` ani `printf` w skryptach Bash, aby wykonywać matematyczne magiczne działania. Staroświeccy musieli polegać na zewnętrznych narzędziach lub sprytnych obejściach. Teraz `bc` pozwala ci wykonywać precyzyjne obliczenia matematyczne. Pamiętaj, że `bc` domyślnie nie zaokrągla — wykonuje "floor". Część dotycząca "scale" ustawia działanie na punkcie dziesiętnym.
 
 Alternatywy? Możesz użyć `awk` do zaokrąglania bez przełączania się na `bc` lub zmagać się z `perl` dla bardziej wymagających potrzeb matematycznych. Dla masochistów, przejdź na czysty Bash, powiedzmy, z iteracyjną manipulacją ciągów – ale po co?
@@ -52,7 +46,6 @@ Alternatywy? Możesz użyć `awk` do zaokrąglania bez przełączania się na `b
 Jeśli chodzi o szczegóły, `bc` nie tylko zaokrągla, wykonuje mnóstwo matematycznych zadań — skaluje, liczy sinus, pierwiastkuje, masz na myśli. Z `printf`, chodzi bardziej o formatowanie tekstu, ale hej, zaokrągla liczby, więc nie narzekamy.
 
 ## Zobacz także
-
 Dla tych, którzy chcą więcej:
 
 - Podręcznik GNU `bc`: https://www.gnu.org/software/bc/manual/html_mono/bc.html

@@ -14,12 +14,7 @@ title: "F\xE5 det aktuella datumet"
 weight: 29
 ---
 
-## Vad & Varför?
-
-Att hämta det aktuella datumet i programmering är en avgörande uppgift för en mängd applikationer, inklusive loggning, tidsstämpling av händelser eller schemaläggning av uppgifter. I Lua möjliggör denna funktionalitet för programmerare att hantera datum- och tidsoperationer sömlöst inom sina applikationer, och säkerställer att deras mjukvara effektivt kan interagera med data i realtid.
-
 ## Hur man gör:
-
 Lua tillhandahåller funktionen `os.date` för att få det aktuella datumet och tiden. Funktionen kan användas utan argument för att få en formaterad sträng eller med formatspecifierare för att anpassa utdatat. Så här använder du den:
 
 ```lua

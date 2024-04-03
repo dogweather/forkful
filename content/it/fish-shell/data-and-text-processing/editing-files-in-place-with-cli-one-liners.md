@@ -11,12 +11,7 @@ title: Modifica dei file sul posto con righe di comando CLI
 weight: 32
 ---
 
-## Cosa & Perché?
-
-Modificare file sul posto con righe di comando è il processo di apportare cambiamenti direttamente ai file dalla riga di comando, senza aprirli in un editor di testo. I programmatori lo fanno per risparmiare tempo e automatizzare compiti di editing ripetitivi, rendendo il loro flusso di lavoro più fluido ed efficiente.
-
 ## Come fare:
-
 Fish Shell, noto per le sue funzionalità user-friendly e potenti capacità di scripting, offre diversi modi per modificare i file sul posto. Tuttavia, a differenza di altri shell, Fish non dispone di un meccanismo integrato per l'editing sul posto (`sed -i` in Bash, per esempio). Ma non temere, puoi comunque raggiungere questo obiettivo con un po' di creatività e l'aiuto di strumenti esterni come `sed` e `awk`.
 
 ### Usare `sed` per semplici sostituzioni
@@ -41,7 +36,6 @@ awk '{print $1 * 2}' file.txt > temp && mv temp file.txt
 Ricorda, quando usi questi strumenti da Fish, catturare gli errori e comprendere i loro messaggi è cruciale. Usa la robusta gestione degli errori di Fish per rendere i tuoi script più affidabili.
 
 ## Approfondimento
-
 Storicamente, la modifica dei file sul posto è stata un pilastro della programmazione Unix e Linux, offrendo un modo efficiente per eseguire modifiche rapide senza aprire manualmente i file. Strumenti come `sed` e `awk` sono utilità venerabili che esistono dai primi giorni di Unix, diventando indispensabili per le attività di elaborazione del testo.
 
 Fish Shell, pur essendo più moderno e vantando miglioramenti in termini di usabilità e scripting, manca di una funzionalità integrata di modifica sul posto principalmente a causa della sua filosofia di progettazione incentrata sull'interattività e la facilità di uso. L'assenza di un comando nativo di modifica sul posto in Fish sottolinea l'importanza degli strumenti esterni negli ecosistemi simili a Unix.

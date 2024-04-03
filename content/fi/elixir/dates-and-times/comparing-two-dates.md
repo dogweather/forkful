@@ -11,9 +11,6 @@ title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---
 
-## What & Why?
-`Päivämäärien vertailu` tarkoittaa kahta päivämäärää vertaamalla selvittämistä, kumpi on aikaisempi tai ovatko ne samat. Ohjelmoijat vertailevat päivämääriä, jotta voivat järjestellä tapahtumia, validoida ajanjaksoja tai hallita aikasidonnaisia toimintoja.
-
 ## How to:
 Elixirissä päivämäärien vertailu on suoraviivaista, käytämme `DateTime`-moduulia.
 

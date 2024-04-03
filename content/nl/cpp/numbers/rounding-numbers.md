@@ -13,9 +13,6 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-Het afronden van getallen betekent het aanpassen van een waarde naar de dichtstbijzijnde gehele getal of een gespecificeerde precisie. Ontwikkelaars doen dit om te vereenvoudigen, zich aan te passen aan realistische beperkingen, of de prestaties te verbeteren door overtollige precisie overboord te gooien.
-
 ## Hoe te:
 C++ biedt meerdere manieren om getallen af te ronden, zoals `floor()`, `ceil()`, en `round()`:
 

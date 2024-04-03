@@ -10,9 +10,6 @@ title: Scaricare una pagina web
 weight: 42
 ---
 
-## What & Why? 
-Scaricare una pagina web significa prelevare il suo contenuto HTML da internet. I programmatori lo fanno per analizzare dati, integrare funzionalità e automatizzare test sulle app web.
-
 ## How to:
 ```Lua
 local http = require("socket.http")

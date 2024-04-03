@@ -12,9 +12,6 @@ title: Strings samenvoegen
 weight: 3
 ---
 
-## Wat & Waarom?
-Het samenvoegen van strings in programmeren houdt in dat twee of meer strings tot één worden gecombineerd. Programmeurs doen dit om tekstgegevens gemakkelijk te manipuleren, berichten op te bouwen of onderdelen van een gebruikersinterface dynamisch samen te stellen.
-
 ## Hoe te:
 Dart biedt verschillende eenvoudige manieren om strings samen te voegen. Hieronder staan de meest voorkomende methoden:
 

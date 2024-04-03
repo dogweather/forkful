@@ -10,9 +10,6 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## What & Why? (Co i dlaczego?)
-Wyszukiwanie i zamiana tekstu to podstawy manipulacji stringami. Programiści robią to, by zmienić kod, poprawić dane, albo automatycznie aktualizować informacje.
-
 ## How to: (Jak to zrobić:)
 ```Clojure
 ; Znajdowanie tekstu z użyciem re-find

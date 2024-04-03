@@ -14,11 +14,7 @@ title: Refactoring
 weight: 19
 ---
 
-## Wat & Waarom?
-Refactoring is het proces van het herwerken van je code om zijn structuur en leesbaarheid te verbeteren zonder het externe gedrag of de functionaliteit te wijzigen. Programmeurs refactoren om hun code schoner, makkelijker te begrijpen en onderhoudbaarder te maken, wat op de lange termijn het debuggen en toevoegen van nieuwe functies veel minder hoofdpijn oplevert.
-
 ## Hoe:
-
 Stel je voor dat je een functie op je Arduino hebt die veel te veel doet, zoals dit:
 
 ```Arduino

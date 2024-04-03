@@ -12,9 +12,6 @@ title: Koodin refaktorointi
 weight: 19
 ---
 
-## Mikä & Miksi?
-*Nimeksi annettu* kehittäminen on prosessi, jossa olemassa olevaa tietokonekoodia uudelleenjärjestetään muuttamatta sen ulkoista käyttäytymistä. Ohjelmoijat tekevät *nimeksi annettu-a* parantaakseen ohjelmiston ei-toiminnallisia ominaisuuksia, tehdensä koodista selkeämpää, tehokkaampaa ja helpommin ylläpidettävää.
-
 ## Kuinka:
 Otetaan klassinen PHP-koodipätkä ja sovelletaan siihen *nimeksi annettu*-taikaa.
 

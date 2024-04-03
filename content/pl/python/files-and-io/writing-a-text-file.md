@@ -14,10 +14,9 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i dlaczego?
-Zapis do pliku tekstowego w Pythonie to podstawowe zadanie, które obejmuje tworzenie lub otwieranie pliku, a następnie dodawanie do niego tekstu lub nadpisywanie tekstu. Ta funkcjonalność jest kluczowa dla rejestrowania danych, zarządzania konfiguracją i przechowywania wyników generowanych przez programy, co czyni ją podstawowym, ale niezbędnym narzędziem w arsenale programisty.
-
 ## Jak to zrobić:
+
+
 ### Korzystając z wbudowanej funkcji `open()`
 Wbudowana funkcja `open()` w Pythonie jest najczęstszą metodą zapisu do plików. Funkcja pozwala na określenie trybu, w jakim plik jest otwierany - 'w' dla zapisu (nadpisywania), 'a' dla dodawania do końca i 'w+' dla zapisu+odczytu.
 
@@ -39,6 +38,7 @@ with open('example.txt', 'r') as file:
 Witaj, świecie!
 Dodaję więcej tekstu.
 ```
+
 ### Korzystając z `pathlib.Path`
 Dla bardziej zorientowanego obiektowo podejścia, klasa `Path` z modułu `pathlib` oferuje metodę zapisu do plików. Jest to popularna metoda w nowszych bazach kodu Pythona.
 

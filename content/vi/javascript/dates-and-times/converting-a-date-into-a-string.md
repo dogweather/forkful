@@ -17,9 +17,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---
 
-## Lý do và vì sao?
-Chuyển đổi từ ngày sang chuỗi biến một đối tượng Date thành định dạng văn bản dễ đọc, bởi vì con người thích "Ngày 1 Tháng 4, 2023" hơn là những dấu thời gian khó hiểu. Các lập trình viên thực hiện điều này để làm rõ trong giao diện người dùng và để định dạng ngày tháng cho việc lưu trữ hoặc chuyển giao mạng.
-
 ## Cách thực hiện:
 JavaScript có những phương thức được xây dựng sẵn để chuyển đổi ngày sang chuỗi. Dưới đây là cách sử dụng chúng:
 

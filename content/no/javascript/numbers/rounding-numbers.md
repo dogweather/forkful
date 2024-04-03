@@ -10,9 +10,6 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva og Hvorfor?
-Avrunding er å klippe av støyen etter et visst punkt i et tall. Programmerere avrunder for å kontrollere presisjon, håndtere minne, eller gjøre output brukervennlig—som å endre 2.998 til et rent 3.
-
 ## Hvordan:
 Her er hvordan du avrunder tall i JavaScript ved hjelp av `Math.round()`, `Math.ceil()`, og `Math.floor()`:
 

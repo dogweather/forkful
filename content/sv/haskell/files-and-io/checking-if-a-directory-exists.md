@@ -14,9 +14,6 @@ title: Kontrollera om en katalog existerar
 weight: 20
 ---
 
-## Vad & Varför?
-Att kontrollera om en katalog finns är en grundläggande operation i många programmeringsuppgifter, som möjliggör villkorliga åtgärder baserat på närvaron eller frånvaron av katalogstrukturer. Det är avgörande för filmanipulering, automatiska skript och under inledningen av mjukvaruinstallation för att säkerställa att nödvändiga kataloger finns på plats eller för att undvika att duplicera kataloger.
-
 ## Hur man gör:
 Haskell erbjuder, via sitt basbibliotek, raka vägar att kontrollera om en katalog existerar, främst genom att använda modulen `System.Directory`. Låt oss titta på ett grundläggande exempel:
 

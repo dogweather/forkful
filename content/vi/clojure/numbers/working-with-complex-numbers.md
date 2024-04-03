@@ -14,9 +14,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Làm Thế Nào & Tại Sao?
-Số phức mở rộng số thực với một phần bổ sung, đơn vị ảo 'i'. Các lập trình viên sử dụng chúng trong nhiều lĩnh vực, bao gồm xử lý tín hiệu, lý thuyết điện từ, và fractal, nơi mà các phép tính liên quan đến căn bậc hai của một số âm trở nên thông thường.
-
 ## Cách thực hiện:
 Clojure cung cấp hỗ trợ sẵn có cho số phức thông qua lớp tiện ích `clojure.lang.Numbers`. Sử dụng `complex` để tạo số phức và thực hiện các phép toán.
 

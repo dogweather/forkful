@@ -11,9 +11,6 @@ title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---
 
-## Vad & Varför?
-Att ta bort citattecken från en sträng innebär att man skalar bort de där dubbla eller enkla citattecken som kramar om din text. Koda gör detta för att sanera inmatningar, för att underlätta parsing eller för att harmonisera data som kan vara inkonsekvent citerad.
-
 ## Hur man gör:
 Så här sparkar du citattecknen till trottoaren i Lua:
 

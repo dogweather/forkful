@@ -9,9 +9,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---
 
-## O Que & Porquê?
-Fazer um pedido HTTP significa pedir ou enviar dados para a web. Programadores fazem isso para que Arduinos interajam com o mundo online, como obter dados de sensores remotos ou controlar algo à distância.
-
 ## Como Fazer:
 Para enviar um pedido HTTP, vamos usar uma biblioteca Ethernet para um Arduino com shield Ethernet ou uma biblioteca WiFi para um Arduino com capacidades WiFi.
 

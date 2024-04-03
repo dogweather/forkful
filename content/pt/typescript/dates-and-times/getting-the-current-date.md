@@ -13,9 +13,6 @@ title: Obtendo a data atual
 weight: 29
 ---
 
-## O Que e Por Quê?
-Obter a data atual em TypeScript, uma linguagem construída sobre o JavaScript, permite acessar e manipular as informações da data e hora atuais. Programadores frequentemente precisam dessa funcionalidade para criar registros de data e hora, agendamentos e outras características sensíveis ao tempo em suas aplicações.
-
 ## Como fazer:
 No TypeScript, você pode usar o objeto `Date` para obter a data e a hora atuais. Veja como você pode fazer isso:
 

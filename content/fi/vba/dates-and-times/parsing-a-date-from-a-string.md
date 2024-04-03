@@ -14,12 +14,7 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sent\xE4minen merkkijonosta"
 weight: 30
 ---
 
-## Mitä & Miksi?
-
-Päivämäärän jäsennys merkkijonosta Visual Basic for Applications (VBA) -ohjelmistossa tarkoittaa tekstin, joka esittää päivämäärää, muuntamista päivämäärätyyppiseksi tiedoksi. Ohjelmoijat tekevät tämän käsitelläkseen päivämääriä tehokkaammin sovelluksissaan, esimerkiksi vertailuja, laskelmia tai muotoiluja varten.
-
 ## Kuinka:
-
 VBA tarjoaa yksinkertaisen tavan jäsentää merkkijono päivämääräksi käyttämällä `CDate`-funktiota tai `DateValue`-funktiota. On kuitenkin olennaista, että merkkijono on tunnistettavassa päivämäärämuodossa.
 
 Tässä on perusesimerkki `CDate`:n käytöstä:
@@ -65,7 +60,6 @@ Jäsennetty päivämäärä käyttäen DateValue:a: 1.4.2023
 Pidä mielessä, että jäsennyksen onnistuminen riippuu merkkijonon päivämäärämuodon vastaamisesta järjestelmän tai sovellusasetuksia.
 
 ## Syväsukellus
-
 Sisäisesti, kun VBA jäsentää merkkijonon päivämääräksi, se käyttää Windows-käyttöjärjestelmän alueellisia asetuksia päivämäärämuodon tulkitsemiseen. Tämä on tärkeää ymmärtää, koska päivämäärämerkkijono, joka jäsentyy täydellisesti yhdellä järjestelmällä, saattaa aiheuttaa virheen toisessa, jos ne käyttävät erilaisia päivämäärä-/aika-asetuksia.
 
 Historiallisesti päivämäärien käsittely on ollut yleinen virheiden lähde sovelluksissa, erityisesti kansainvälisesti käytettävissä. Tämä VBA:n riippuvuus alueellisista asetuksista on syy, miksi jotkut saattavat harkita vaihtoehtoja, kuten ISO 8601 -muotoa (esim. "VVVV-KK-PP") yksiselitteisen päivämäärän esitysmuodon ja jäsennyksen kannalta eri järjestelmissä. Valitettavasti VBA ei tue ISO 8601:ä natiivisti, ja manuaalinen jäsennys olisi tarpeen tiukkaa noudattamista varten.

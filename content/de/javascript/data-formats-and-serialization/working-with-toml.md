@@ -11,9 +11,6 @@ title: Arbeiten mit TOML
 weight: 39
 ---
 
-## Was & Warum?
-TOML, eine Abkürzung für Toms Offensichtliche, Minimale Sprache, definiert, wie Konfigurationsdateien strukturiert werden sollen. Programmierer arbeiten mit TOML, weil es leicht zu lesen, zu schreiben ist und sich gut auf eine Hashtabelle abbilden lässt, was es zu einer bevorzugten Wahl für Konfigurationen macht.
-
 ## Wie man vorgeht:
 Um mit TOML in JavaScript zu arbeiten, benötigen Sie einen Parser wie `@iarna/toml`. Installieren Sie es zuerst: `npm install @iarna/toml`. Anschließend können Sie einen TOML-String in ein JavaScript-Objekt umwandeln oder ein JavaScript-Objekt in das TOML-Format umwandeln.
 

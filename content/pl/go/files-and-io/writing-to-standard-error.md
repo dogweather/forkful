@@ -14,12 +14,7 @@ title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---
 
-## Co i dlaczego?
-
-Pisanie do standardowego błędu (stderr) w Go polega na kierowaniu komunikatów o błędach lub diagnoz nieprzeznaczonych dla głównego strumienia wyjściowego. Programiści używają tego, aby oddzielić regularne wyjście od informacji o błędach, co ułatwia debugowanie i parsowanie logów.
-
 ## Jak to zrobić:
-
 W Go pakiet `os` dostarcza wartość `Stderr`, reprezentującą plik ze standardowym błędem. Możesz go użyć z funkcjami `fmt.Fprint`, `fmt.Fprintf` lub `fmt.Fprintln`, aby pisać do stderr. Oto proste przykład:
 
 ```go
@@ -55,7 +50,6 @@ Proces zakończony z 4 błędami.
 Pamiętaj, że te wiadomości nie pojawią się w regularnym wyjściu (stdout), ale w strumieniu błędów, który może być przekierowany osobno w większości systemów operacyjnych.
 
 ## Wgłębiając się
-
 Koncepcja standardowego błędu jest głęboko zakorzeniona w filozofii Unixowej, która wyraźnie rozróżnia pomiędzy normalnym wyjściem a komunikatami o błędach dla bardziej efektywnego przetwarzania i obsługi danych. W Go ta konwencja jest przyjęta poprzez pakiet `os`, który oferuje bezpośredni dostęp do deskryptorów plików stdin, stdout i stderr.
 
 Chociaż pisanie bezpośrednio do `os.Stderr` jest odpowiednie dla wielu aplikacji, Go oferuje również bardziej zaawansowane pakiety do logowania, takie jak `log`, które oferują dodatkowe funkcje, takie jak znakowanie czasem i bardziej elastyczne konfiguracje wyjścia (np. pisanie do plików). Używanie pakietu `log`, szczególnie dla większych aplikacji lub tam, gdzie potrzebne są bardziej kompleksowe funkcje logowania, może być lepszą alternatywą. Warto również zauważyć, że podejście Go do obsługi błędów, które zachęca do zwracania błędów z funkcji, dopełnia praktykę pisania komunikatów o błędach do stderr, pozwalając na bardziej szczegółową kontrolę zarządzania i raportowania błędów.

@@ -11,9 +11,6 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## Qué y Por Qué?
-Redondear números significa ajustar un valor a su entero más cercano o precisión especificada. Los desarrolladores lo hacen para simplificar, cumplir con restricciones del mundo real o mejorar el rendimiento al descartar precisión excesiva.
-
 ## Cómo hacerlo:
 C++ ofrece varias maneras de redondear números, como `floor()`, `ceil()` y `round()`:
 

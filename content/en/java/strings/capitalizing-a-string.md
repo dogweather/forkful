@@ -10,9 +10,6 @@ title: Capitalizing a string
 weight: 2
 ---
 
-## What & Why?
-Capitalizing a string involves modifying the first letter of each word in the string to uppercase while ensuring the rest remain lowercase. This common string manipulation task is useful for formatting text in applications, such as preparing user names or titles for display according to convention or grammatical correctness.
-
 ## How to:
 Java's standard library doesn't provide a direct method to capitalize entire strings in one go, but you can accomplish this with a combination of built-in methods. For more sophisticated needs, third-party libraries like Apache Commons Lang offer straightforward solutions.
 
@@ -46,7 +43,6 @@ public class CapitalizeString {
 This code snippet converts the entire string to lowercase, then iterates through each character, capitalizing the first letter of each word. It considers spaces, periods, and apostrophes as word separators.
 
 ### Using Apache Commons Lang
-
 The Apache Commons Lang library provides a more elegant solution with the `WordUtils.capitalizeFully()` method, which handles various edge cases and delimiters for you:
 
 ```java

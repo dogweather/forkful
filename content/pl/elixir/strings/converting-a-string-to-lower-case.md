@@ -11,9 +11,6 @@ title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## What & Why? (Co i dlaczego?)
-Zamiana napisu na małe litery to zmiana wszystkich wielkich liter na ich małe odpowiedniki. W programowaniu robimy to dla spójności danych, łatwiejszego porównywania ciągów znaków i wyszukiwania.
-
 ## How to: (Jak to zrobić:)
 ```elixir
 # Używamy funkcji String.downcase/1

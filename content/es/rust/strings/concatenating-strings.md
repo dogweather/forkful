@@ -9,9 +9,6 @@ title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---
 
-## Qué & Por Qué?
-Concatenar cadenas es simplemente unir dos o más strings en uno solo. Los programadores lo hacen para manipular texto - combinar mensajes, insertar valores en plantillas, y construir salidas programáticamente.
-
 ## Cómo hacerlo:
 Utiliza `+` o `format!` para concatenar. Aquí tienes ejemplos:
 

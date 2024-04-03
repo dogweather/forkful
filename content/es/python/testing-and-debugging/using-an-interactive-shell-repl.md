@@ -11,9 +11,6 @@ title: Usando una shell interactiva (REPL)
 weight: 34
 ---
 
-## ¿Qué y Por Qué?
-Un REPL, o Bucle de Leer-Evaluar-Imprimir, es un entorno de programación que toma entradas individuales del usuario, las ejecuta y devuelve el resultado al usuario. Los programadores lo utilizan para pruebas rápidas, aprender, depurar o hacer cálculos sobre la marcha.
-
 ## Cómo:
 Salta directamente al REPL de Python escribiendo `python` en tu línea de comandos. Una vez allí, prueba operaciones simples o código de varias líneas:
 

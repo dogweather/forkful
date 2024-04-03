@@ -14,11 +14,8 @@ title: "F\xE5 det aktuella datumet"
 weight: 29
 ---
 
-## Vad & Varför?
-
-Att hämta det aktuella datumet i Rust är en vanlig uppgift för sådana saker som loggning, tidsbaserade operationer eller helt enkelt för att visa datumet. Till skillnad från några språk som inkluderar datum- och tidsfunktionalitet i sitt standardbibliotek, uppmuntrar Rust användningen av ett robust tredjepartsbibliotek, chrono, för omfattande manipulation av datum och tid på grund av dess överlägsna funktionalitet och användarvänlighet.
-
 ## Hur man gör:
+
 
 ### Använda Rusts Standardbibliotek
 Rusts standardbibliotek erbjuder ett begränsat men snabbt sätt att få den aktuella tiden, dock inte direkt det aktuella datumet i ett kalenderformat. Så här gör du:

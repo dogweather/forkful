@@ -14,12 +14,7 @@ title: Willekeurige getallen genereren
 weight: 12
 ---
 
-## Wat & Waarom?
-
-Het genereren van willekeurige getallen houdt in dat er getallen worden gecreëerd die redelijkerwijs niet beter te voorspellen zijn dan bij toeval, wat essentieel is voor het ontwikkelen van simulaties, games en beveiligingsalgoritmen. Programmeurs doen dit om onvoorspelbaarheid te introduceren of realistische fenomenen in hun applicaties te simuleren.
-
 ## Hoe te:
-
 Python biedt de `random` module die helpt bij het genereren van willekeurige getallen voor verschillende doeleinden. Hier is hoe je kunt beginnen:
 
 1. **Het importeren van de module**
@@ -67,7 +62,6 @@ Python biedt de `random` module die helpt bij het genereren van willekeurige get
     Voorbeelduitvoer: `[2, 5, 0, 4, 9, 8, 1, 7, 6, 3]`
 
 ## Diepere duik
-
 De `random` module in Python gebruikt een pseudowillekeurige nummergenerator (PRNG), specifiek het Mersenne Twister-algoritme, dat goed is voor algemene toepassingen maar niet geschikt voor cryptografische doeleinden vanwege de voorspelbaarheid als voldoende uitvoer is waargenomen. De `secrets` module, geïntroduceerd in Python 3.6, biedt een beter alternatief voor het genereren van cryptografisch sterke willekeurige getallen, met name nuttig in beveiligingsgevoelige toepassingen. Bijvoorbeeld, het genereren van een veilige, willekeurige token voor een wachtwoordresetlink:
 
 ```Python

@@ -11,9 +11,6 @@ title: Umgang mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-Komplexe Zahlen sind eine Menge von Zahlen der Form `a + bi`, wobei `a` und `b` reelle Zahlen sind und `i` die imaginäre Einheit ist (`i^2 = -1`). In der Programmierung verwenden wir sie, um Probleme in verschiedenen Bereichen zu lösen, wie in der Elektrotechnik, der Signalverarbeitung und dem Quantencomputing.
-
 ## Wie:
 Python bietet eine eingebaute Unterstützung für komplexe Zahlen. Hier ist, wie man mit ihnen arbeiten kann:
 

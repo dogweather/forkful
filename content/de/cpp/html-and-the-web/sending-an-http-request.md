@@ -9,9 +9,6 @@ title: Einen HTTP-Request senden
 weight: 44
 ---
 
-## Was & Warum?
-HTTP-Anfragen ermöglichen die Kommunikation mit Web-Diensten. Programmierer senden solche Anfragen, um Daten zu erhalten, zu senden oder Web-Operationen auszuführen.
-
 ## Vorgehensweise:
 C++ hat keine eingebaute Unterstützung für HTTP. Bibliotheken wie `libcurl` oder `cpprestsdk` sind beliebt. Hier ein Beispiel mit `libcurl`.
 

@@ -11,9 +11,6 @@ title: Organisation du code en fonctions
 weight: 18
 ---
 
-## Quoi & Pourquoi ?
-Regrouper le code en fonctions, c'est décomposer les tâches en morceaux réutilisables. Cela rend le code propre, moins sujet aux erreurs et plus facile à déboguer ou à refactoriser.
-
 ## Comment faire :
 Imaginez une tâche : calculer la moyenne d'un tableau. Sans fonctions, vous mettriez tout dans le main. Avec les fonctions, vous feriez ceci :
 

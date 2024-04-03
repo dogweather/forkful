@@ -16,9 +16,6 @@ title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE3
 weight: 39
 ---
 
-## 무엇인가 & 왜인가?
-TOML (Tom's Obvious, Minimal Language)은 명확한 의미론으로 인해 읽기 쉬운 데이터 직렬화 포맷입니다. 프로그래머들은 인간의 가독성과 기계의 파싱 가능성 사이의 균형을 맞추기 때문에 설정 파일에 TOML을 사용합니다.
-
 ## 어떻게 사용하는가:
 C++에서 TOML을 작업하려면 `toml++`과 같은 라이브러리가 필요합니다. 다음은 빠른 시작 안내입니다:
 

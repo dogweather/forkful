@@ -14,12 +14,7 @@ title: Verwendung von assoziativen Arrays
 weight: 15
 ---
 
-## Was & Warum?
-
-Assoziative Arrays, bekannt als Objekte in Google Apps Script (eine Variante von JavaScript), ermöglichen es Programmierern, Sammlungen von Schlüssel-Wert-Paaren zu erstellen. Diese Funktionalität ist entscheidend für das Speichern und Manipulieren von Daten auf effiziente Weise, insbesondere wenn mit dynamisch benannten Eigenschaften gearbeitet wird oder wenn das lineare Speicher- und Zugriffsmodell eines traditionellen Arrays unzureichend ist.
-
 ## Wie:
-
 In Google Apps Script erstellt und manipuliert man assoziative Arrays (Objekte) mit geschweiften Klammern `{}`, indem man Schlüssel-Wert-Paare darin definiert. Schlüssel sind einzigartige Identifikatoren, und Werte können alles von Zeichenketten und Zahlen bis hin zu komplexeren Objekten oder Funktionen sein. Hier ist ein einfaches Beispiel:
 
 ```javascript
@@ -59,7 +54,6 @@ country: USA
 Beachten Sie, wie Sie sowohl Punkt-notation als auch Klammer-notation für den Zugriff und das Setzen von Eigenschaften verwenden können. Die Klammer-notation ist besonders nützlich, wenn mit Schlüsseln gearbeitet wird, die dynamisch bestimmt werden oder Zeichen enthalten, die in Identifikatoren nicht zulässig sind.
 
 ## Vertiefung
-
 Assoziative Arrays in Form von Objekten sind ein Grundpfeiler von JavaScript und damit auch von Google Apps Script, was dessen prototypbasierten Vererbungsmechanismus widerspiegelt. Im Gegensatz zu Sprachen mit traditionellen assoziativen Arrays oder Wörterbüchern (z. B. Pythons dict) bieten Objekte in Google Apps Script ein flexibles und mächtiges Mittel zur Datenstrukturierung, das von der dynamischen Natur von JavaScript profitiert.
 
 Es ist jedoch wichtig zu beachten, dass die ECMAScript 2015-Spezifikation `Map`- und `Set`-Objekte eingeführt hat, die eine unkompliziertere Handhabung assoziativer Sammlungen mit bestimmten Vorteilen gegenüber Objekten bieten, wie etwa die Beibehaltung der Einfügereihenfolge und eine bessere Leistung für große Datensätze. Obwohl Google Apps Script diese ebenfalls unterstützt, hängt die Wahl zwischen der Verwendung von Objekten oder den neueren `Map`/`Set`-Strukturen von den spezifischen Bedürfnissen und Leistungsüberlegungen ab. Für die meisten Aufgaben mit assoziativen Arrays bieten traditionelle objektbasierte Implementierungen einen vertrauten und vielseitigen Ansatz, aber es ist ratsam, neuere Alternativen zu prüfen, wenn die Komplexität Ihres Skripts zunimmt.

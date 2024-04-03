@@ -11,9 +11,6 @@ title: "\xC5 jobbe med XML"
 weight: 40
 ---
 
-## Hva & Hvorfor?
-Å jobbe med XML innebærer parsing, transformasjon og generering av XML-dokumenter i Elm. Det gjøres for å samhandle med mange webtjenester og eldre systemer som bruker XML som deres dataformat.
-
 ## Hvordan:
 I Elm, håndterer du XML ved hjelp av `elm/xml`-pakken. Her er en rask titt på parsing av et XML-utdrag:
 

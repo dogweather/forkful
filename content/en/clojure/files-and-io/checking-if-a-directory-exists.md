@@ -10,9 +10,6 @@ title: Checking if a directory exists
 weight: 20
 ---
 
-## What & Why?
-Checking if a directory exists in Clojure involves verifying the presence of a file system directory from within your Clojure application. This task is crucial for file operations, to prevent errors when reading from or writing to directories that may not be there, ensuring robust and error-free code execution.
-
 ## How to:
 Clojure, being a JVM language, can utilize Java's `java.io.File` class for this purpose. You don't need any third-party library for such a basic operation. Here's how you can do it:
 

@@ -11,9 +11,6 @@ title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---
 
-## What & Why? - Cosa e Perché?
-Inviare una richiesta HTTP con autenticazione di base significa passare username e password per accedere a risorse protette. I programmatori lo fanno per interagire con API che richiedono queste credenziali per l'accesso.
-
 ## How to - Come fare:
 ```Elm
 import Http

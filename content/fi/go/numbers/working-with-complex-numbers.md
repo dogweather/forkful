@@ -14,12 +14,7 @@ title: "Ty\xF6skenteleminen kompleksilukujen kanssa"
 weight: 14
 ---
 
-## Mikä & Miksi?
-
-Ohjelmoinnissa kompleksilukujen käsitteleminen sisältää lukujen manipulointia, joilla on sekä reaaliosa että imaginaariosa, tyypillisesti ilmaistuna muodossa `a + bi`. Ohjelmoijat käsittelevät kompleksilukuja eri aloilla, kuten insinööritieteissä, fysiikassa ja datan analysoinnissa, ratkaistakseen ongelmia, jotka liittyvät negatiivisten lukujen neliöjuuriin, aaltomuotojen analysointeihin ja muuhun.
-
 ## Kuinka:
-
 Go-kielessä käsitellään kompleksilukuja käyttämällä sisäänrakennettuja `complex`, `real` ja `imag` funktioita, sekä `complex64` ja `complex128` tyyppejä (edustavat 64-bittisiä ja 128-bittisiä kompleksilukuja vastaavasti). Tässä on pikaopas:
 
 ```go
@@ -56,7 +51,6 @@ func main() {
 Tämä esimerkki kattaa perusteet, mutta kompleksilukujen kanssa voi tehdä paljon enemmän, mukaan lukien `math/cmplx` paketin hyödyntäminen kehittyneemmille operaatioille kuten suuruuden, vaiheen ja paljon muun laskemiseen.
 
 ## Syväsukellus
-
 Kompleksilukujen konsepti juontaa juurensa 16. vuosisadalle, mutta sai laajan tunnustuksen ja perusteellisen formalisoinnin vasta 19. vuosisadalla. Tietokoneohjelmoinnissa kompleksiluvut ovat olleet vakiintuneita monimutkaisen aritmetiikan alueella tieteellisissä ja insinööritieteellisissä laskelmissa alusta alkaen. Go:n lähestymistapa kompleksilukuihin, tekemällä niistä ensiluokkaisia kansalaisia sisäänrakennetulla tuella ja kattavalla standardikirjaston tuella `math/cmplx` paketin kautta, erottuu ohjelmointikielten joukosta. Tämä suunnittelupäätös heijastaa Go:n painotusta yksinkertaisuuteen ja suorituskykyyn.
 
 Siitä huolimatta on syytä huomauttaa, että kompleksilukujen käyttö Go:ssa, vaikka voimakasta, ei aina välttämättä ole paras lähestymistapa kaikille sovelluksille, erityisesti niille, jotka vaativat symbolista matematiikkaa tai korkean tarkkuuden aritmetiikkaa. Tieteelliseen laskentaan erikoistuneet kielet ja ympäristöt, kuten Python kirjastoineen kuten NumPy ja SciPy, tai ohjelmisto kuten MATLAB, saattavat tarjota enemmän joustavuutta ja laajemman valikoiman toiminnallisuuksia tietyille sovelluksille.

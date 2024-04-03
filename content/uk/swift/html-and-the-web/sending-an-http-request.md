@@ -12,9 +12,6 @@ title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437
 weight: 44
 ---
 
-## What & Why? (Що і Чому?)
-Sending an HTTP request lets your app talk to a web server—like asking for data or sending it. Programmers use this to interact with web APIs, grabbing fresh info or pushing changes.
-
 ## How to: (Як це зробити:)
 ```Swift
 import Foundation

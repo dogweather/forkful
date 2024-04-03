@@ -21,12 +21,7 @@ title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437
 weight: 44
 ---
 
-## What & Why? (Що таке та Навіщо?)
-
-Відправлення HTTP запиту - це спосіб взаємодії Arduino з вебом. Передача даних чи отримання інформації з сервера. Програмісти роблять це для дистанційного керування пристроями, збору даних або інтеграції з веб-сервісами.
-
 ## How to (Як це зробити):
-
 Потрібно підключити ваш Arduino до інтернету через Ethernet shield або Wi-Fi модуль. Ось приклад коду:
 
 ```Arduino
@@ -66,11 +61,9 @@ void loop() {
 Результат у Serial Monitor буде виглядом відповіді сервера.
 
 ## Deep Dive (Глибший Занурення):
-
 HTTP запити почали свій розвиток ще з 1991 року, коли було створено протокол HTTP. Для Arduino, варіанти включають Ethernet shield, Wi-Fi модулі (ESP8266/ESP32), і навіть GPRS/3G/4G щити. Важливо знати тип запиту: GET для отримання даних, POST для відправлення. Бібліотеки, як `Ethernet.h` та `WiFi.h`, спрощують процес.
 
 ## See Also (Дивіться також):
-
 - [Arduino Ethernet Library](https://www.arduino.cc/en/Reference/Ethernet)
 - [Arduino WiFi Library](https://www.arduino.cc/en/Reference/WiFi)
 - HTTP протокол деталізація: [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP)

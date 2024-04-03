@@ -13,11 +13,7 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-Wyrażenia regularne, zwane również regex, to potężne narzędzie do dopasowywania wzorców i wyszukiwania w programowaniu. Programiści używają wyrażeń regularnych do zadań takich jak walidacja danych wejściowych użytkownika, przeszukiwanie tekstu czy manipulowanie ciągami, ponieważ jest to efektywne i wszechstronne.
-
 ## Jak to zrobić:
-
 Przejdźmy do TypeScript i zobaczmy, jak używać regex do typowych zadań.
 
 ```TypeScript
@@ -40,7 +36,6 @@ console.log(month, day, year); // Wynik: "Kwiecień" "10" "2021"
 ```
 
 ## Dogłębnie
-
 W latach 50. matematyk Stephen Kleene opisał wyrażenia regularne jako model do reprezentowania języków regularnych, które później stały się niezbędnym elementem informatyki. Idąc do przodu, regex stał się wszechobecny w programowaniu w kontekście pracy z tekstem.
 
 Chociaż regex jest scyzorykiem szwajcarskim dla operacji na ciągach, nie jest pozbawiony alternatyw. W zależności od złożoności zadania, czasami metody ciągów takie jak `includes()`, `startsWith()`, `endsWith()` lub nawet parsowanie przy użyciu biblioteki mogą być lepsze. Na przykład parsowanie złożonego ciągu JSON za pomocą regex może być koszmarem - użyj zamiast tego parsera JSON.
@@ -48,7 +43,6 @@ Chociaż regex jest scyzorykiem szwajcarskim dla operacji na ciągach, nie jest 
 Jeśli chodzi o implementację, regex w JavaScript i TypeScript opiera się na specyfikacji języka ECMAScript. Pod spodem, silniki używają automatów stanów do efektywnego dopasowywania wzorców. Warto zauważyć, że operacje regex mogą być kosztowne pod względem wydajności, szczególnie przy źle napisanych wzorcach - uważaj na "katastrofalne cofanie się".
 
 ## Zobacz także
-
 - MDN Web Docs o Wyrażeniach Regularnych: [MDN Regular Expressions](https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Regular_Expressions)
 - Regex101: Narzędzie do testowania i debugowania wzorców regex [Regex101](https://regex101.com/)
 - Książka "Opanowanie wyrażeń regularnych" dla dogłębnego zrozumienia: [O'Reilly](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)

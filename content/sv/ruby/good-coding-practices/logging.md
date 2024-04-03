@@ -11,9 +11,6 @@ title: Loggning
 weight: 17
 ---
 
-## Vad & Varför?
-Loggning inom programmering är som att hålla en dagbok för din applikation. Det är den systematiska registreringen av händelser, meddelanden och datapunkter som ger dig insyn i vad din applikation gör och hur den beter sig. Programmerare loggar eftersom det är avgörande för felsökning, övervakning av applikationens hälsa och för att få ledtrådar om potentiella problem innan de eskalerar till verkliga problem.
-
 ## Hur man gör:
 Ruby levereras med en inbyggd modul för loggning, `Logger`, som är superenkel att använda. Här är ett snabbt exempel för att komma igång:
 

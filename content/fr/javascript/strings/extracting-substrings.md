@@ -11,9 +11,6 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## Quoi & Pourquoi ?
-Extraire des sous-chaînes, c'est sélectionner des bouts spécifiques d'une chaîne de caractères. On le fait pour analyser, manipuler ou valider des données textuelles à la volée.
-
 ## Comment faire :
 Voici trois méthodes courantes pour extraire des sous-chaînes en JavaScript :
 

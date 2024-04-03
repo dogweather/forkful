@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Cái gì và Tại sao?
-Số phức, gồm có một phần thực và một phần ảo (như 3+4i), là nền tảng trong kỹ thuật và vật lý. Lập trình viên làm việc với chúng trong các mô phỏng, xử lý tín hiệu và giải các phương trình không thể giải quyết chỉ với số thực.
-
 ## Làm thế nào:
 Ruby làm cho việc xử lý số phức trở nên dễ dàng. Bạn có thể tạo và thao tác với chúng sử dụng lớp Complex:
 

@@ -13,16 +13,10 @@ title: Escrevendo testes
 weight: 36
 ---
 
-## O Que & Por Que?
-
-Escrever testes em Fish Shell envolve criar scripts que executam automaticamente o seu código para validar seu comportamento em relação aos resultados esperados. Essa prática é crucial, pois garante que seus scripts shell funcionem conforme planejado, capturando erros mais cedo e facilitando a manutenção.
-
 ## Como:
-
 Fish não possui uma estrutura de teste integrada como alguns outros ambientes de programação. No entanto, você pode escrever scripts de teste simples que usam asserções para verificar o comportamento de suas funções. Além disso, você pode aproveitar ferramentas de terceiros como `fishtape` para um conjunto de testes mais abrangente.
 
 ### Exemplo 1: Script de Teste Básico
-
 Vamos começar com uma função básica em Fish que calcula a soma de dois números:
 
 ```fish
@@ -54,7 +48,6 @@ test_add aprovado
 ```
 
 ### Exemplo 2: Usando Fishtape
-
 Para uma solução de teste mais robusta, você pode usar `fishtape`, um executor de teste que produz TAP para Fish.
 
 Primeiro, instale `fishtape`, se ainda não o fez:

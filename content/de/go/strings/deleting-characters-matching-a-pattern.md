@@ -14,12 +14,7 @@ title: "Zeichen l\xF6schen, die einem Muster entsprechen"
 weight: 5
 ---
 
-## Was & Warum?
-
-Das Löschen von Zeichen, die einem spezifischen Muster entsprechen, bezieht sich auf das Entfernen bestimmter Zeichen oder Zeichenfolgen aus Zeichenketten, basierend auf Regeln, die durch ein Muster definiert sind (normalerweise über reguläre Ausdrücke). Programmierer müssen diese Aufgabe häufig für die Datenbereinigung, die Vorverarbeitung zur Analyse, das Formatieren von Ausgaben oder einfach das Manipulieren von Zeichenketten, um Anforderungen von Anwendungen zu erfüllen, durchführen.
-
 ## Wie:
-
 In Go kann das Löschen von Zeichen, die einem Muster entsprechen, effizient mit dem `regexp`-Paket erreicht werden. Hier zeigen wir, wie man zunächst alle Ziffern und dann alle nicht alphanumerischen Zeichen aus einer Zeichenkette entfernt.
 
 1. **Entfernen aller Ziffern:**
@@ -77,7 +72,6 @@ func main() {
 ```
 
 ## Tiefere Einblicke
-
 Das `regexp`-Paket in Go bietet eine leistungsstarke Schnittstelle für Musterabgleich und Manipulation mit regulären Ausdrücken. Seine Implementierung ist von RE2 abgeleitet, einer regulären Ausdrucksbibliothek, die entwickelt wurde, um eine lineare Ausführungszeit zu garantieren und die Möglichkeit von "katastrophalem Zurückverfolgen" zu vermeiden, ein Problem, das in einigen anderen Regex-Engines vorhanden ist. Dies macht Go's Regex relativ sicher und effizient für eine breite Palette von Anwendungen.
 
 Obwohl das `regexp`-Paket eine umfassende Lösung für den Umgang mit Mustern ist, ist es erwähnenswert, dass für einfachere oder hochspezifische Zeichenkettenmanipulationen andere Zeichenkettenfunktionen wie `strings.Replace()`, `strings.Trim()`, oder das Schneiden leistungsfähigere Alternativen bieten können. Reguläre Ausdrücke sind ein mächtiges Werkzeug, aber ihre relative rechnerische Kosten bedeuten, dass für Operationen, die ohne sie spezifiziert werden können, die Erkundung von Standardbibliotheksalternativen manchmal zu einfacherem und effizienterem Code führen kann.

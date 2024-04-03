@@ -15,9 +15,6 @@ title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---
 
-## Cái gì & Tại sao?
-Kiểm thử đảm bảo mã của bạn hoạt động như mong đợi. Nó giúp tiết kiệm thời gian bằng cách phát hiện lỗi sớm và đảm bảo các thay đổi mã không làm hỏng mọi thứ.
-
 ## Cách thực hiện:
 Chúng ta sẽ tìm hiểu PHPUnit, một framework kiểm thử PHP phổ biến. Đầu tiên, cài đặt nó bằng Composer:
 

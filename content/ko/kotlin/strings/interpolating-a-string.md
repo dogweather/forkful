@@ -15,9 +15,6 @@ title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
 weight: 8
 ---
 
-## What & Why? (무엇인가요? 왜 사용하나요?)
-문자열 보간(string interpolation)은 변수나 표현식을 문자열 안에 끼워넣는 것입니다. 데이터를 동적으로 문자열과 합쳐서 읽기 쉬운 결과를 만들기 위해 사용합니다.
-
 ## How to: (어떻게 하나요?)
 ```kotlin
 fun main() {

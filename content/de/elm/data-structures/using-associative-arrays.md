@@ -14,12 +14,7 @@ title: Verwendung von assoziativen Arrays
 weight: 15
 ---
 
-## Was & Warum?
-
-Assoziative Arrays, oder wie sie in Elm genannt werden, Dictionaries, ordnen Schlüsseln Werte zu, was das Suchen, Einfügen und Löschen von Werten super schnell macht. Sie sind die erste Wahl, wenn Sie Dinge ohne strikte Reihenfolge verfolgen müssen, wie Benutzereinstellungen oder Inventarlisten.
-
 ## Wie geht das:
-
 In Elm arbeitet man mit Dictionaries im `Dict`-Modul, also lass uns in ein schnelles Beispiel eintauchen:
 
 ```Elm
@@ -52,7 +47,6 @@ Beispielausgabe beim Anzeigen von `dictToList`:
 Dies demonstriert die grundlegenden Operationen: erstellen, aktualisieren, zugreifen und iterieren über ein Dictionary.
 
 ## Tiefergehend
-
 Dictionaries in Elm verwenden intern eine Struktur, die als AVL-Baum bekannt ist - eine Art von selbstausgleichendem binären Suchbaum. Diese Wahl schafft ein Gleichgewicht zwischen der Sicherstellung, dass Operationen wie Einfügen, Abrufen und Entfernen eine gute Leistung (logarithmische Zeitkomplexität) haben und der Einfachheit in der Handhabung der Daten.
 
 Trotz der Stärken von Elms `Dict` ist es keine Lösung für alle Fälle. Für Sammlungen, die geordnet sind oder sequenziell iteriert werden müssen, könnten List oder Array angemessener sein. Weiterhin, wenn man mit einer festgelegten Menge von bekannten Schlüsseln arbeitet, könnten benutzerdefinierte Typen (Elms Version von Enums) mehr Typsicherheit und eine klarere Absicht in Ihrem Code bieten.

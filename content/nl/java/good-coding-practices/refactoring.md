@@ -12,9 +12,6 @@ title: Refactoring
 weight: 19
 ---
 
-## Wat & Waarom?
-Refactoring is het proces van het herstructureren van bestaande computercode - het wijzigen van de factoring - zonder het externe gedrag ervan te veranderen. Programmeurs doen dit om de niet-functionele attributen van de software te verbeteren, zoals het verhogen van de leesbaarheid, het verminderen van de complexiteit en het codeerwerk onderhoudbaarder te maken voor toekomstige projecten.
-
 ## Hoe:
 Laten we een eenvoudige Java-klasse nemen die schreeuwt om refactoring vanwege de slechte organisatie en het gebrek aan duidelijkheid.
 

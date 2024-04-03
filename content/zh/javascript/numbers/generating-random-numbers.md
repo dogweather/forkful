@@ -19,14 +19,10 @@ title: "\u751F\u6210\u968F\u673A\u6570"
 weight: 12
 ---
 
-## 什么 & 为什么？
-
-在 JavaScript 中生成随机数是一种用于在应用程序中创建不可预测性的技术，从需要随机敌人行为的游戏到需要密码学随机性的安全算法。这项能力对于开发动态用户体验和安全应用至关重要。
-
 ## 如何做：
 
-### 基本随机数生成
 
+### 基本随机数生成
 在 JavaScript 中生成随机数最简单的方法是使用 `Math.random()`。这个函数返回一个在 0（包含）到 1（不包含）范围内的浮点数，伪随机数。
 
 ```javascript
@@ -35,7 +31,6 @@ console.log(randomNumber);
 ```
 
 ### 生成指定范围内的随机数
-
 通常，你会想要在特定范围内得到一个随机整数。通过缩放和四舍五入 `Math.random()` 的输出可以实现这一点。
 
 ```javascript
@@ -49,7 +44,6 @@ console.log(getRandomInt(1, 100));
 ```
 
 ### 密码学安全随机数
-
 对于需要更高程度随机性的应用程序（例如，密码学操作），可以使用 `crypto.getRandomValues()` 方法。与 `Math.random()` 生成的伪随机数不同，这提供了密码学随机性。
 
 ```javascript
@@ -61,7 +55,6 @@ console.log(getRandomInt(1, 100));
 ```
 
 ## 深入探讨
-
 历史上，在 JavaScript 中的随机数生成完全依赖于 `Math.random()` 函数。虽然这对大多数普通用例而言足够方便，但其算法通常是伪随机数生成器（PRNG）的变体，如 Mersenne Twister，并不提供密码学安全。
 
 Web 密码学 API 的引入带来了 `crypto.getRandomValues()` 方法，提供了一种生成难以预测且适用于安全敏感应用的数字的方式。该方法利用底层操作系统的随机性源，如 Unix/Linux 上的 `/dev/random`，这些源更加健壮且适合密码学操作。

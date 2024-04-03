@@ -11,9 +11,6 @@ title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mikä & Miksi?
-REPL (Read-Eval-Print Loop, lue-arvioi-tulosta-silmukka) on yksinkertainen, vuorovaikutteinen ohjelmointiympäristö. Ohjelmoijat käyttävät sitä reaaliaikaiseen kielikokeiluun, nopeisiin tehtäviin tai uusien konseptien ymmärtämiseen ilman täysimittaisen sovelluksen luomisen vaivaa.
-
 ## Kuinka:
 C++ ei sisällä sisäänrakennettua REPL:iä, mutta työkalut, kuten Cling, tarjoavat kyseisen mahdollisuuden. Tässä on ohjeet, kuinka käyttää Clingiä kahden numeron summan laskemiseen:
 

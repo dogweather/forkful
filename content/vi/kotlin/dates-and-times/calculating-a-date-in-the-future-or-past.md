@@ -15,12 +15,7 @@ title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1
 weight: 26
 ---
 
-## Cái gì & Tại sao?
-
-Tính toán một ngày trong tương lai hoặc quá khứ có nghĩa là tìm một ngày cụ thể trước hoặc sau một ngày đã biết. Các lập trình viên thực hiện việc này cho các tính năng như nhắc nhở, thông báo hết hạn, hoặc công cụ lên kế hoạch—bất kỳ thứ gì liên quan đến thời gian.
-
 ## Cách thực hiện:
-
 Kotlin xử lý ngày và giờ với thư viện `java.time`. Để thêm hoặc bớt ngày, sử dụng `plusDays()` hoặc `minusDays()`. Dưới đây là cách làm:
 
 ```kotlin
@@ -48,7 +43,6 @@ Mười ngày trước: 2023-03-05
 Ngoài ngày, bạn cũng có thể thao tác với tháng và năm (`plusMonths()`, `minusMonths()`, `plusYears()`, `minusYears()`).
 
 ## Sâu hơn
-
 Việc tính toán ngày không phải là mới mẻ. Kể từ Java 8, gói `java.time` đã trở thành lựa chọn hàng đầu cho việc tính toán ngày-giờ—tốt hơn nhiều so với `Calendar` hoặc `Date` cũ, chúng cồng kềnh và không an toàn với luồng.
 
 `java.time` sử dụng các đối tượng bất biến, vì vậy bạn tránh được các lỗi khó chịu từ việc vô tình chỉnh sửa ngày của mình. Các đối tượng như `LocalDate`, `LocalTime`, `LocalDateTime`, và `ZonedDateTime` giúp bạn biểu diễn các khía cạnh khác nhau của thời gian một cách chính xác.
@@ -58,7 +52,6 @@ Có các phương án thay thế không? Dĩ nhiên. Trước `java.time`, Joda-
 API `java.time` cũng được thiết kế để nhận thức về múi giờ, nhờ các lớp như `ZonedDateTime`. Vì vậy, khi bạn điều chỉnh ngày, bạn có thể tôn trọng theo thời gian quay của Trái Đất.
 
 ## Xem thêm
-
 - Tài liệu chính thức `java.time`: [Java SE Ngày Giờ](https://docs.oracle.com/javase/tutorial/datetime/)
 - Đối với các nhà phát triển Android, chi tiết thư viện `ThreeTenABP`: [ThreeTenABP trên GitHub](https://github.com/JakeWharton/ThreeTenABP)
 - Một hướng dẫn chi tiết, nếu bạn muốn tìm hiểu sâu hơn về ngày và giờ: [Ngày và Giờ trong Java](https://www.baeldung.com/java-8-date-time-intro)

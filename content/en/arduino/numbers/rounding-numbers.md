@@ -11,9 +11,6 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-Rounding numbers is trimming a decimal to its closest whole value or to a set number of decimal places. Programmers round numbers to make them easier to read and handle, especially when precision beyond a certain point is unnecessary or could lead to errors.
-
 ## How to:
 In Arduino, you can round numbers using built-in functions. Key players are `round`, `ceil`, and `floor`. Here's a quick demo:
 

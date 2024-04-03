@@ -14,12 +14,7 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mikä & Miksi?
-
-Nykyisen päivämäärän hakeminen ohjelmoinnissa on olennainen tehtävä monille sovelluksille, mukaan lukien lokit, tapahtumien aikaleimat tai tehtävien ajoittaminen. Luassa tämä toiminnallisuus mahdollistaa ohjelmoijien käsittellä päivämäärä- ja aikaoperaatioita saumattomasti sovelluksissaan, varmistaen että heidän ohjelmistonsa voi toimia tehokkaasti reaaliaikaisen datan kanssa.
-
 ## Kuinka:
-
 Lua tarjoaa `os.date` funktion nykyisen päivämäärän ja ajan hakemiseen. Funktion voi käyttää ilman argumentteja saadakseen muotoillun merkkijonon tai muotoiluspesifikaattoreiden kanssa tuloksen mukauttamiseksi. Näin sitä käytetään:
 
 ```lua

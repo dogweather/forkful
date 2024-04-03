@@ -15,12 +15,7 @@ title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---
 
-## Cái gì & Tại sao?
-
-Chuyển đổi ngày tháng thành chuỗi trong C# là quá trình thay đổi định dạng từ đối tượng DateTime sang biểu diễn văn bản. Lập trình viên thực hiện điều này để hiển thị ngày tháng theo định dạng thân thiện với người dùng hoặc để tuần tự hóa dữ liệu cho việc lưu trữ và truyền tải.
-
 ## Làm thế nào:
-
 Trong C#, bạn có đối tượng `DateTime` và nhiều cách để chuyển nó thành chuỗi. Dưới đây là một số ví dụ:
 
 ```csharp
@@ -35,7 +30,6 @@ Console.WriteLine(withCulture); // Kết quả: "4/1/2023"
 ```
 
 ## Sâu hơn
-
 Trước kia, việc thao tác với ngày tháng và chuỗi khó khăn hơn. Ngày nay, `DateTime` của C# cung cấp `.ToString()` với các overloads cho văn hóa và định dạng. Giao diện `IFormatProvider`, như `CultureInfo`, kiểm soát định dạng đặc biệt cho văn hóa.
 
 Có phương án thay thế? Chắc chắn! `String.Format` và nội suy (`$"{now:yyyy-MM-dd}"`) là các lựa chọn cho việc chèn ngày tháng vào chuỗi với ngữ cảnh. `DateTimeOffset` hữu ích cho các đặc điểm về múi giờ.
@@ -43,7 +37,6 @@ Có phương án thay thế? Chắc chắn! `String.Format` và nội suy (`$"{n
 Về mặt triển khai, hãy nhớ rằng `DateTime` là một struct, do đó là kiểu giá trị. Việc chuyển đổi nó không thay đổi bản gốc: tính bất biến chiến thắng. Chọn định dạng chuỗi của bạn một cách khôn ngoan dựa trên đối tượng người dùng (người dùng cuối) và hệ thống bạn đang tương tác (cơ sở dữ liệu, API).
 
 ## Xem thêm
-
 - [Phương thức DateTime.ToString](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring)
 - [Chuỗi định dạng ngày và giờ tùy chỉnh](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
 - [Lớp CultureInfo](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo)

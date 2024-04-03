@@ -11,9 +11,6 @@ title: Tolka HTML
 weight: 43
 ---
 
-## Vad & Varför?
-Att parsa HTML innebär att man omvandlar HTML-strängar till en datastruktur som datorn kan jobba med. Programmerare gör detta för att enkelt kunna extrahera information, manipulera innehåll eller integrera webbinnehåll i sina applikationer.
-
 ## Hur gör man:
 För att parsa HTML i Haskell kan vi använda sig av biblioteket `hxt`, som står för Haskell XML Toolbox. Här är en snabb uppvisning:
 

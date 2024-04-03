@@ -14,12 +14,7 @@ title: "Convirtiendo una cadena a min\xFAsculas"
 weight: 4
 ---
 
-## Qué y Por Qué?
-
-Convertir una cadena a minúsculas es una operación fundamental que implica transformar todos los caracteres de una cadena dada a sus equivalentes en minúsculas. Los programadores suelen realizar esta operación para lograr comparaciones insensibles a mayúsculas o minúsculas o para estandarizar la entrada de texto para su posterior procesamiento, haciendo las aplicaciones más amigables para el usuario y los datos más consistentes.
-
 ## Cómo hacerlo:
-
 En Dart, puedes convertir una cadena a minúsculas utilizando el método `toLowerCase()` proporcionado por la clase `String`. Este método devuelve una nueva cadena con todos los caracteres en mayúsculas convertidos a minúsculas. Veamos cómo funciona esto con un ejemplo simple:
 
 ```dart

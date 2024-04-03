@@ -13,12 +13,7 @@ title: Commandoregelargumenten lezen
 weight: 23
 ---
 
-## Wat & Waarom?
-
-Het lezen van commandoregelargumenten laat een programma informatie rechtstreeks uit de terminalopdracht van de gebruiker halen. Programmeurs doen dit om het gedrag van een programma aan te passen zonder de code zelf te wijzigen.
-
 ## Hoe:
-
 In Clojure, pak je commandoregelargumenten met `*command-line-args*`. Hier is een eenvoudig voorbeeld:
 
 ```clojure
@@ -53,7 +48,6 @@ Hoofdletters: ["HALLO" "WERELD"]
 ```
 
 ## Diepere duik
-
 De `*command-line-args*` is een var in Clojure, ingesteld op een reeks argumenten die aan het script zijn doorgegeven. Het bestaat al sinds de beginjaren van Clojure, wat aantoont dat Clojure commandoregelargumenten als eersteklas burgers behandelt.
 
 Alternatieven? Java's mechanismen voor het grijpen van commandoregelargumenten werken ook in Clojure, dankzij interoperabiliteit. Maar dat is uitvoeriger.
@@ -61,7 +55,6 @@ Alternatieven? Java's mechanismen voor het grijpen van commandoregelargumenten w
 Wat betreft implementatiedetails, wanneer Clojure start, analyseert het de argumenten en slaat ze op in `*command-line-args*`. Je script kan er dan wat dan ook mee doen—analyseren, negeren, transformeren, noem maar op.
 
 ## Zie ook
-
 - Officiële Clojure CLI-tools: https://clojure.org/guides/deps_and_cli
 - Clojure vanaf de basis: Commandoregel-scripting: https://aphyr.com/posts/305-clojure-from-the-ground-up-command-line
 - ClojureDocs over *command-line-args*: https://clojuredocs.org/clojure.core/*command-line-args*

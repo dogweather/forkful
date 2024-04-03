@@ -14,12 +14,7 @@ title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---
 
-## Wat & Waarom?
-
-Het versturen van een HTTP-verzoek met basisauthenticatie in Go houdt in dat je een authorisatieheader aan je verzoek toevoegt die een gebruikersnaam en wachtwoord bevat in de vorm van een Base64-gecodeerde string. Programmeurs gebruiken deze methode om toegang te krijgen tot bronnen die gebruikersverificatie vereisen, zodat hun toepassingen veilig kunnen communiceren met diensten op het web.
-
 ## Hoe:
-
 Om een HTTP-verzoek met basisauthenticatie in Go te maken, moet je je verzoekheaders zo opstellen dat ze het `Authorization` veld bevatten, gevuld met je inloggegevens in het juiste formaat. Hieronder vind je een voorbeeld dat laat zien hoe je een GET-verzoek naar een API-eindpunt stuurt dat basisauthenticatie vereist:
 
 ```go
@@ -62,7 +57,6 @@ Reactie status: 200 OK
 ```
 
 ## Diepgaand
-
 Basisauthenticatie in HTTP-verzoeken is een breed ondersteunde methode voor het afdwingen van toegangscontroles tot webbronnen. Het stuurt simpelweg een gebruikersnaam en wachtwoord met elk verzoek mee, wat het eenvoudig te implementeren maakt maar niet de meest veilige methode die beschikbaar is. Een groot nadeel is dat de inloggegevens in duidelijke tekst worden verzonden (aangezien Base64 eenvoudig te decoderen is), tenzij het in combinatie met SSL/TLS wordt gebruikt. Dit kan gevoelige informatie blootstellen aan Man-in-the-Middle-aanvallen.
 
 In Go houdt het versturen van deze verzoeken in dat je de `Authorization`-header rechtstreeks manipuleert. Hoewel de standaardbibliotheek van Go (`net/http`) krachtige primitieven biedt voor het omgaan met HTTP(s)-communicatie, is het relatief laag niveau, wat vereist dat ontwikkelaars handmatig verschillende aspecten van HTTP-verzoek-/responsafhandeling behandelen. Dit geeft programmeurs veel flexibiliteit maar betekent ook dat men nauwer moet letten op beveiligingsimplicaties, codering en correct beheer van headers.

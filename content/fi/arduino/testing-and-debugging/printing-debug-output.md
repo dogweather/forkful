@@ -10,9 +10,6 @@ title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
 
-## What & Why? - Mikä ja Miksi?
-Debug-tulostus auttaa näkemään mitä ohjelmassasi tapahtuu. Sitä käytetään virheiden etsintään ja ohjelman toiminnan ymmärtämiseen.
-
 ## How to - Kuinka tehdä:
 ```Arduino
 void setup() {

@@ -11,9 +11,6 @@ title: Comparer deux dates
 weight: 27
 ---
 
-## What & Why? | Quoi & Pourquoi ?
-Comparer deux dates, c'est voir la différence ou la similarité entre elles. Les programmeurs le font pour trier des événements, valider des périodes, ou calculer des durées.
-
 ## How to: | Comment faire :
 ```python
 from datetime import datetime

@@ -14,9 +14,6 @@ title: Hantering av fel
 weight: 16
 ---
 
-## Vad & Varför?
-Att hantera fel i Dart handlar om att förutse och hantera undantag som uppstår under programkörning för att öka tillförlitligheten och användbarheten. Programmerare implementerar felhantering för att förhindra krascher och ge meningsfull återkoppling till användare, vilket säkerställer en mjukare, säkrare applikationsupplevelse.
-
 ## Hur gör man:
 Dart stöder två typer av fel: *kompileringstidsfel* och *körtidsfel*. Kompileringstidsfel upptäcks av Dart-analysatorn innan koden körs, medan körtidsfel, eller undantag, inträffar under körning. Så här hanterar du undantag i Dart:
 

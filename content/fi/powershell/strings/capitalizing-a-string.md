@@ -13,9 +13,6 @@ title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---
 
-## Mikä ja miksi?
-Merkkijonon alkukirjaimen muuttaminen isoksi kirjaimeksi PowerShellissä tarkoittaa annetun merkkijonon ensimmäisen merkin muuttamista isoksi kirjaimeksi, samalla kun loput merkkijonosta jätetään muuttumattomiksi. Ohjelmoijat suorittavat usein tämän tehtävän muotoilutarkoituksessa, esimerkiksi valmistellessaan tekstiä näytettäväksi käyttöliittymissä tai noudattaessaan kieliopillisia sääntöjä luoduissa dokumenteissa.
-
 ## Miten:
 PowerShell, ollessaan monipuolinen työkalu, mahdollistaa merkkijonon alkukirjaimen isoksi muuttamisen yksinkertaisilla menetelmillä ilman, että tarvitsee kolmannen osapuolen kirjastoja. Näin voit tehdä sen:
 

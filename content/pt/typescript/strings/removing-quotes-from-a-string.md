@@ -10,9 +10,6 @@ title: Removendo aspas de uma string
 weight: 9
 ---
 
-## O Que & Por Que?
-Remover aspas de uma string significa eliminar os caracteres de aspas simples (`'`) ou duplas (`"`) que delimitam os literais de strings no código. Programadores fazem isso por várias razões, como formatar saídas, higienizar entradas de usuários ou preparar strings para análise ou armazenamento onde as aspas são desnecessárias ou podem causar erros.
-
 ## Como fazer:
 Aqui está o seu guia direto para livrar suas strings dessas irritantes marcas de aspas no TypeScript.
 

@@ -10,12 +10,7 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## Was & Warum?
-
-Extrahieren von Teilzeichenketten bedeutet, spezifische Teile aus einem längeren String herauszunehmen. Programmierer machen das, um mit Daten zu jonglieren, Nutzereingaben zu verarbeiten oder einfach spezifische Informationen aus einem Text zu filtern.
-
 ## Anleitung:
-
 Elm bietet verschiedene Funktionen, um mit Strings zu arbeiten. Hier ein paar Beispiele, wie man Teilzeichenketten extrahiert:
 
 ```Elm
@@ -42,13 +37,11 @@ main =
 ```
 
 ## Hintergründe:
-
 Die Funktion `String.slice` in Elm ist ähnlich zu JavaScript's `substring` und hat ihre Wurzeln in den Anfängen der stringverarbeitenden Vorgängerprogrammiersprachen. Es ist zuverlässig, aber Achtung: Elm ist 0-basiert, d.h. der Startindex fürs Extrahieren ist 0, nicht 1. Alternativen wie `String.left` und `String.right` bieten noch andere Wege, um an Anfang oder Ende eines Strings zu schneiden, ohne die genauen Indizes zu benötigen.
 
 Ein wichtiger Punkt ist auch die Performance – bei großen Strings kann das Extrahieren von Teilstrings aufgrund der internen Repräsentation von Strings in Elm und anderen Sprachen aufwändiger werden. Immer daran denken, das nur bei Bedarf zu machen.
 
 ## Siehe auch:
-
 - Elm's `String` Modul Dokumentation: https://package.elm-lang.org/packages/elm/core/latest/String
 - Elm Programmierleitfäden: https://guide.elm-lang.org/
 - Weiterführende Artikel zur Stringmanipulation in funktionalen Sprachen.

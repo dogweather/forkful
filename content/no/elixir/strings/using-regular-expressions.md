@@ -13,12 +13,7 @@ title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---
 
-## Hva & Hvorfor?
-
-Regulære uttrykk (regex) i Elixir brukes for å søke, matche og manipulere strenger basert på spesifikke mønstre. Programmerere benytter seg av regex for oppgaver som validering av formater (e-post, URL-er), parsing av logger eller dataekstraksjon, takk være effektiviteten og allsidigheten i behandling av strenger.
-
 ## Hvordan:
-
 Elixir benytter `Regex`-modulen, som tar i bruk Erlangs regex-bibliotek, for regex-operasjoner. Her er grunnleggende bruk:
 
 ```elixir

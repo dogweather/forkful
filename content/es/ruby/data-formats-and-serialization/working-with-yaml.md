@@ -13,9 +13,6 @@ title: Trabajando con YAML
 weight: 41
 ---
 
-## ¿Qué y Por Qué?
-YAML, que significa "YAML Ain't Markup Language" (YAML No Es Un Lenguaje de Marcado), es ampliamente usado en Ruby para archivos de configuración y serialización de datos debido a su formato legible por humanos. Los programadores se inclinan hacia YAML cuando necesitan almacenar o transmitir objetos de datos de manera legible pero estructurada, simplificando tareas como la gestión de configuración, almacenamiento de datos e intercambio de datos entre lenguajes.
-
 ## Cómo hacerlo:
 Ruby viene con una biblioteca incorporada llamada Psych para analizar y emitir YAML. Para utilizarla, primero necesitas requerir la biblioteca estándar de YAML. Aquí tienes un ejemplo básico para comenzar:
 
@@ -57,7 +54,6 @@ puts loaded_person
 ```
 
 ### Usando Bibliotecas de Terceros:
-
 Aunque la biblioteca estándar es suficiente para tareas básicas, para necesidades complejas podrías considerar bibliotecas de terceros como 'safe_yaml'. Para usar tales bibliotecas, primero debes instalar la gema:
 
 ```bash

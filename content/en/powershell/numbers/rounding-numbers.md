@@ -10,9 +10,6 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-Rounding numbers is about tuning a value to the nearest integer or specified decimal place. Programmers round numbers to simplify data, enhance readability, or meet certain mathematical requirements during calculations.
-
 ## How to:
 You've got a few handy cmdlets and methods in PowerShell for rounding:
 

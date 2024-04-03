@@ -13,9 +13,6 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mikä ja miksi?
-Hakemiston olemassaolon tarkistaminen Kotlinissa tarkoittaa hakemiston läsnäolon varmistamista määritetyssä polussa. Ohjelmoijat suorittavat tämän tehtävän estääkseen virheitä, kuten yrityksiä lukea tai kirjoittaa olemattomaan hakemistoon, varmistaen sujuvamman tiedostonkäsittelyn ja datanhallinnan sovelluksissa.
-
 ## Miten:
 Kotlin, joka toimii JVM:n päällä, hyödyntää Java File API:a tiedosto-operaatioihin, tehden hakemiston olemassaolon tarkistuksista suoraviivaisia. Tässä on perusesimerkki:
 

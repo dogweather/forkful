@@ -15,9 +15,6 @@ title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---
 
-## Mikä & Miksi?
-JSONin käsittely Luassa käsittää JSON-muotoiltujen merkkijonojen jäsentämisen Lua-taulukoihin ja päinvastoin, mikä mahdollistaa helpon datan vaihdon Lualla tehtyjen sovellusten ja verkkopalveluiden tai ulkoisten APIen välillä. Ohjelmoijat tekevät tämän hyödyntääkseen JSONin kevyttä ja helposti jäsentävää muotoa tehokkaan datan tallennuksen, konfiguraation tai API-viestinnän kannalta.
-
 ## Kuinka:
 Lua ei sisällä valmiiksi tehtyä kirjastoa JSON-käsittelyyn. Siksi yhtenä suosittuna kolmannen osapuolen kirjastona on `dkjson`, jota voit helposti käyttää JSONin koodaamiseen ja dekoodaamiseen. Varmista ensin, että olet asentanut `dkjson`in, esim. käyttäen LuaRocksia (`luarocks install dkjson`), ja sitten seuraa alla olevia esimerkkejä.
 

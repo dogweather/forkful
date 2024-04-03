@@ -11,9 +11,6 @@ title: Comparer deux dates
 weight: 27
 ---
 
-## What & Why?
-Comparer deux dates permet de déterminer laquelle est la plus ancienne ou de calculer la durée entre elles. C’est crucial dans les tâches comme l’organisation d’événements, la gestion de réservations ou le suivi de délais.
-
 ## How to:
 Comparons deux dates en Haskell. On va utiliser `time` qui est une bibliothèque puissante pour manipuler les dates et les heures.
 

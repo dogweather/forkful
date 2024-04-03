@@ -12,12 +12,7 @@ title: Substrings extraheren
 weight: 6
 ---
 
-## Wat & Waarom?
-
-Het extraheren van substrings in Visual Basic voor Applications (VBA) omvat het isoleren van specifieke delen van een string op basis van gegeven criteria. Programmeurs doen dit voor taken zoals data-analyse, validatie en formattering, waarbij het manipuleren en extraheren van informatie uit tekstgegevens cruciaal is.
-
 ## Hoe:
-
 In VBA gebruik je voornamelijk de functies `Mid`, `Left` en `Right` om substrings te extraheren. Hieronder verkennen we deze functies met voorbeelden:
 
 1. **Mid**: Extraheert een substring van een string vanaf een opgegeven positie.
@@ -50,7 +45,6 @@ In VBA gebruik je voornamelijk de functies `Mid`, `Left` en `Right` om substring
 Deze fundamentele functies vormen de basis van substringextractie in VBA en bieden robuuste en eenvoudige benaderingen voor stringmanipulatie.
 
 ## Diepe Duik:
-
 Historisch gezien is het vermogen om strings in programmering te manipuleren essentieel geweest, waarbij BASIC (de voorloper van VBA) een van de eersten was die deze mogelijkheid democratiseerde in de vroege dagen van personal computing. De functies `Mid`, `Left` en `Right` in VBA erven deze erfenis en bieden een vereenvoudigde interface voor moderne programmeurs.
 
 Hoewel deze functies voor veel taken zeer effectief zijn, heeft de opkomst van Reguliere Expressies in nieuwere talen een krachtigere en flexibelere manier geboden om met tekst te werken. Ondanks dit, maken de directe eenvoud en beschikbaarheid van de traditionele VBA-substringfuncties ze perfect geschikt voor snelle taken en diegenen die nieuw zijn in programmeren.

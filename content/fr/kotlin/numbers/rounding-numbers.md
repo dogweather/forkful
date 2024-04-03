@@ -11,12 +11,7 @@ title: Arrondir les nombres
 weight: 13
 ---
 
-## Quoi & Pourquoi ?
-
-Arrondir des nombres signifie les ajuster au nombre entier le plus proche ou à un degré de précision spécifié. Les programmeurs le font pour améliorer la lisibilité, réduire les exigences de stockage, ou parce que la valeur exacte n'est pas critique pour les calculs subséquents.
-
 ## Comment faire :
-
 En Kotlin, l'arrondi peut être réalisé en utilisant plusieurs fonctions telles que `roundToInt()`, `roundToDouble()`, et en utilisant `BigDecimal` pour plus de contrôle :
 
 ```kotlin
@@ -36,7 +31,6 @@ fun main() {
 ```
 
 ## Plongée Profonde
-
 Historiquement, arrondir les nombres a été un concept fondamental en mathématiques et en informatique, conçu pour gérer les limitations de précision numérique. Dans les débuts de l'informatique, l'arrondi était crucial en raison du coût élevé de la mémoire.
 
 En Kotlin, l'arrondi est basé sur les bibliothèques Java standard. Les options pour l'arrondi incluent `Math.round()`, qui arrondit au nombre entier le plus proche, et `BigDecimal` pour un arrondi personnalisable, où vous pouvez spécifier une échelle et un `RoundingMode`.
@@ -44,7 +38,6 @@ En Kotlin, l'arrondi est basé sur les bibliothèques Java standard. Les options
 Chaque `RoundingMode` a des politiques différentes pour gérer les égalités (quand le chiffre est exactement au milieu des options d'arrondi). Par exemple, `RoundingMode.HALF_UP` arrondit vers le voisin le plus proche, à moins que les deux voisins ne soient à égale distance, auquel cas il arrondit à l'entier supérieur.
 
 ## Voir Aussi
-
 - Documentation Kotlin sur [`BigDecimal`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/java.math.-big-decimal/index.html)
 - Documentation Java d'Oracle pour [`RoundingMode`](https://docs.oracle.com/javase/8/docs/api/java/math/RoundingMode.html)
 - Norme IEEE pour l'arithmétique à virgule flottante (IEEE 754) [Norme IEEE 754](https://ieeexplore.ieee.org/document/4610935)

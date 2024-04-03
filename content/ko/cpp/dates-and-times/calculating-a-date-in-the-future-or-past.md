@@ -17,9 +17,6 @@ title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uA
 weight: 26
 ---
 
-## 뭐고 왜? (What & Why?)
-미래나 과거의 날짜 계산이란 특정 날로부터 일정 기간을 더하거나 빼서 다른 날짜를 찾는 것입니다. 프로그래머들은 기간 계산, 기념일, 예정된 이벤트 관리 등을 위해 이를 사용합니다.
-
 ## 어떻게? (How to:)
 ```C++
 #include <iostream>

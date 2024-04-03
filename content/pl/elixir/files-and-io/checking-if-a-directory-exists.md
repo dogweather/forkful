@@ -13,9 +13,6 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i dlaczego?
-Sprawdzanie, czy katalog istnieje w Elixirze, polega na weryfikacji obecności katalogu pod określoną ścieżką w systemie plików. Programiści robią to, aby upewnić się, że mogą bezpiecznie czytać z katalogu, zapisywać do niego lub wykonywać na nim operacje bez napotkania błędów spowodowanych jego brakiem.
-
 ## Jak to zrobić:
 Standardowa biblioteka Elixira oferuje prosty sposób na sprawdzenie, czy katalog istnieje, za pośrednictwem modułu `File`. Oto jak możesz z tego skorzystać:
 

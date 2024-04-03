@@ -12,9 +12,6 @@ title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---
 
-## Mikä ja miksi?
-Kompleksiluvut laajentavat lukujärjestelmäämme sisältämään imaginaarisia lukuja, mikä mahdollistaa yhtälöiden ratkaisun, kun todellisia ratkaisuja ei ole. Ohjelmoijat työskentelevät niiden parissa aloilla, kuten insinööritiede, fysiikka ja signaalinkäsittely, missä nämä luvut ovat olennaisia mallintamisessa ja ongelmanratkaisussa.
-
 ## Kuinka:
 C# sisältää valmiina `System.Numerics.Complex` rakenteen kompleksilukujen käsittelyyn. Tässä nopea läpikäynti:
 

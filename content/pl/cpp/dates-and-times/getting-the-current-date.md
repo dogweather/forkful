@@ -14,9 +14,6 @@ title: Pobieranie aktualnej daty
 weight: 29
 ---
 
-## Czym i dlaczego?
-Pobieranie bieżącej daty w C++ jest podstawowym zadaniem dla programów, które muszą przetwarzać lub wyświetlać daty w oparciu o zegar systemowy. Jest to niezbędne do logowania, znakowania czasu, planowania zadań i wszelkiej funkcjonalności, która opiera się na datach i czasie.
-
 ## Jak to zrobić:
 C++ oferuje kilka sposobów na uzyskanie bieżącej daty, w tym standardową bibliotekę C++ i biblioteki stron trzecich, takie jak Boost. Poniższe przykłady pokazują, jak to osiągnąć.
 

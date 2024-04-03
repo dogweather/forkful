@@ -14,9 +14,6 @@ title: HTML parsen
 weight: 43
 ---
 
-## Was & Warum?
-Das Parsen von HTML bezieht sich auf den Prozess des Aufbrechens und Interpretierens der Struktur von HTML-Inhalten, typischerweise um spezifische Daten zu extrahieren oder diesen Inhalt programmatisch zu manipulieren. Programmierer beschäftigen sich mit HTML-Parsing für Web-Scraping, Data-Mining, automatisierte Tests und Inhaltsmigrationen, was Anwendungen ermöglicht, effizient mit Webdokumenten zu interagieren und sie zu verarbeiten.
-
 ## Wie:
 Swift enthält standardmäßig keine integrierte Bibliothek für das HTML-Parsing, weshalb die Verwendung von Drittanbieter-Bibliotheken notwendig ist, um diese Aufgabe effektiv zu bewältigen. Eine der beliebtesten Optionen ist SwiftSoup, eine reine Swift-Bibliothek, die eine jQuery-ähnliche Syntax für das HTML-Parsing und die Manipulation bietet.
 

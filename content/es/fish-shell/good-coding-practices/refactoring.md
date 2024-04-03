@@ -10,9 +10,6 @@ title: "Refactorizaci\xF3n"
 weight: 19
 ---
 
-## ¿Qué & Por qué?
-La refactorización es el proceso de reestructurar código existente sin cambiar su comportamiento externo para mejorar atributos no funcionales. Los programadores lo hacen para hacer el código más legible, reducir la complejidad, mejorar la mantenibilidad y facilitar su escalado o modificación a futuro.
-
 ## Cómo hacerlo:
 Imagina que tienes un script que ha crecido bastante con el tiempo. Comenzó siendo simple, pero ahora es una bestia desbordante de lógica. Aquí hay un ejemplo pequeño de cómo refactorizar una función para que sea más legible y eficiente:
 

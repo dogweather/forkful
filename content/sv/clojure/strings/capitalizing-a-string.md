@@ -14,9 +14,6 @@ title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---
 
-## Vad & Varför?
-Att förstora en sträng innebär att ändra strängen så att dess första tecken är en versal, medan resten av strängen förblir oförändrad. Programmerare utför ofta strängförstoring för att säkerställa datakonsekvens, särskilt för namn och platser eller för att följa grammatiska regler i användargränssnitt.
-
 ## Hur man gör:
 Clojure, som är ett JVM-språk, låter dig använda Java String-metoder direkt. Här är ett grundläggande exempel på hur man förstorar en sträng i Clojure:
 

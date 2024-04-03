@@ -11,9 +11,6 @@ title: Recherche et remplacement de texte
 weight: 10
 ---
 
-## What & Why?
-La recherche et le remplacement de texte, c'est changer une chaîne de caractères par une autre dans une donnée. Les programmeurs font ça pour corriger des erreurs, mettre à jour des informations ou manipuler des données.
-
 ## How to:
 Chercher et remplacer avec JavaScript, c'est facile. Voici comment:
 

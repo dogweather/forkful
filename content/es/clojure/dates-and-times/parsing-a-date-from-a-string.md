@@ -13,9 +13,6 @@ title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---
 
-## ¿Qué y Por Qué?
-Analizar una fecha de una cadena en Clojure se trata de convertir representaciones textuales de fechas y horas en una forma más utilizable (por ejemplo, el objeto DateTime de Clojure). Este proceso es fundamental para el procesamiento de datos, registro o cualquier aplicación que manipule datos temporales, permitiendo a los programadores realizar tareas de operación, comparación o manipulación de fechas de manera eficiente.
-
 ## Cómo hacerlo:
 Dado que Clojure es un lenguaje JVM, te permite usar directamente las bibliotecas de fecha y hora de Java. Comencemos con la interoperabilidad con Java integrada y luego exploremos cómo utilizar una biblioteca de terceros popular, clj-time, para soluciones más idiomáticas de Clojure.
 

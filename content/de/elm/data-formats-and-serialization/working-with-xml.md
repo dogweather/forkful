@@ -11,9 +11,6 @@ title: Arbeiten mit XML
 weight: 40
 ---
 
-## Was & Warum?
-Arbeiten mit XML bedeutet das Parsen, Transformieren und Generieren von XML-Dokumenten in Elm. Es wird durchgeführt, um mit vielen Webdiensten und älteren Systemen zu interagieren, die XML als ihr Datenformat verwenden.
-
 ## Wie geht das:
 In Elm arbeitet man mit XML mithilfe des `elm/xml` Pakets. Hier ist ein kurzer Einblick in das Parsen eines XML-Snippets:
 

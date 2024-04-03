@@ -12,9 +12,6 @@ title: Konvertere en dato til en streng
 weight: 28
 ---
 
-## What & Why?
-Å konvertere en dato til en streng betyr å endre datoen fra et format som JavaScript Date-objektet forstår, til et tekstformat mennesker lett kan lese. Programmerere gjør dette for å vise datoer på nettsider eller i apper på en forståelig måte for brukerne.
-
 ## How to:
 ```TypeScript
 const currentDate: Date = new Date();

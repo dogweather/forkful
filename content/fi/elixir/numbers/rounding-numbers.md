@@ -11,9 +11,6 @@ title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä ja miksi?
-Numeroiden pyöristäminen tarkoittaa niiden säätämistä lähelle arvoon yksinkertaistamisen tai tietyn tarkkuuden saavuttamisen vuoksi. Se on hyödyllistä luettavuuden parantamisessa, tallennustilan vähentämisessä tai alakohtaisten tarpeiden täyttämisessä, kuten rahalaskelmissa, joissa haluat pyöristää lähimpään senttiin.
-
 ## Kuinka:
 Elixirissä voit käyttää `Float.round/2` funktiota liukuluvun pyöristämiseen. Voit määrittää, kuinka monta desimaalia haluat säilyttää. Näin se toimii:
 

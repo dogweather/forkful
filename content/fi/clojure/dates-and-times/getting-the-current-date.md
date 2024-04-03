@@ -14,10 +14,8 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mikä & Miksi?
-Nykyisen päivämäärän saaminen ohjelmoinnissa on ratkaisevan tärkeää monista syistä, mukaan lukien lokitiedot, tapahtumien aikaleimat ja tehtävien ajoittaminen. Clojuressa, Lisp-murteessa JVM:llä, tämä tehtävä hyödyntää Javan välisten toimintojen mahdollisuuksia, mahdollistaen suoraviivaisen pääsyn rikkaaseen Java Date-Time API:in.
-
 ## Kuinka tehdä:
+
 
 ### Käyttäen Javan välistä yhteentoimivuutta
 Clojuren saumaton yhteentoimivuus Javan kanssa antaa sinun hyödyntää Java Date-Time API:a suoraan. Näin voit saada nykyisen päivämäärän:

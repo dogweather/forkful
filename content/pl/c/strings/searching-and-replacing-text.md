@@ -14,12 +14,7 @@ title: Wyszukiwanie i zamienianie tekstu
 weight: 10
 ---
 
-## Co i dlaczego?
-
-Wyszukiwanie i zamienianie tekstu w C polega na identyfikacji określonych podciągów w obrębie większego ciągu i zastąpieniu ich innymi podciągami. Programiści wykonują te operacje w celu manipulacji danymi tekstowymi - od zadań związanych z sanitacją danych i formatowaniem po dynamiczne generowanie treści.
-
 ## Jak to zrobić:
-
 C nie posiada wbudowanych funkcji do bezpośredniego wyszukiwania oraz zamiany w ciągach znaków. Można jednak tego dokonać, łącząc różne dostępne funkcje obsługi ciągów z biblioteki `<string.h>` wraz z pewną logiką własną. Poniżej znajduje się podstawowy przykład, jak wyszukać podciąg w ciągu i go zastąpić. Dla uproszczenia, przykład zakłada wystarczającą wielkość bufora i nie zajmuje się kwestiami alokacji pamięci, które powinny być rozważone w kodzie produkcyjnym.
 
 ```c
@@ -77,7 +72,6 @@ Zmodyfikowany ciąg: Hello, this is a próba. This próba is simple.
 Ten kod demonstruje prostą metodę wyszukiwania wszystkich wystąpień podciągu (`sub`) w ciągu źródłowym i zastępowania ich innym podciągiem (`nowySub`), używając funkcji `strstr` do znalezienia punktu początkowego każdego dopasowania. Jest to bardzo podstawowy przykład, który nie zajmuje się złożonymi scenariuszami, takimi jak nakładające się na siebie podciągi.
 
 ## Dogłębna analiza
-
 Podejście użyte w sekcji "Jak to zrobić" jest podstawowe, ilustrujące, jak osiągnąć wyszukiwanie tekstu i zamianę w C bez żadnych zewnętrznych bibliotek. Historycznie, ze względu na nacisk C na zarządzanie pamięcią na niskim poziomie i wydajność, jego standardowa biblioteka nie obejmuje funkcji wysokiego poziomu manipulacji ciągami, jakie można znaleźć w językach takich jak Python czy JavaScript. Programiści muszą ręcznie zarządzać pamięcią i łączyć różne operacje na ciągach, aby osiągnąć pożądane rezultaty, co zwiększa złożoność, ale oferuje większą kontrolę i efektywność.
 
 Ważne jest, aby zauważyć, że to ręczne podejście może być podatne na błędy, szczególnie przy zarządzaniu alokacjami pamięci i rozmiarami buforów. Nieprawidłowe obsługiwanie może prowadzić do przepełnienia bufora i uszkodzenia pamięci, czyniąc kod podatnym na ryzyka bezpieczeństwa.

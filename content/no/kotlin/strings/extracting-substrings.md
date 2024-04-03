@@ -10,9 +10,6 @@ title: Uthenting av delstrenger
 weight: 6
 ---
 
-## What & Why?
-Hva er ekstrahering av delstrenger? Det er når du plukker ut deler av en tekststreng. Hvorfor? Fordi noen ganger trenger du bare et spesifikt stykke av informasjonen, som brukernavn fra en e-post eller en dato fra en tekst.
-
 ## How to:
 ```Kotlin
 fun main() {

@@ -13,9 +13,6 @@ title: Concatenando strings
 weight: 3
 ---
 
-## O que & Por quê?
-Concatenar strings na programação envolve combinar duas ou mais strings em uma. Os programadores fazem isso para manipular dados de texto com facilidade, construir mensagens ou montar partes de uma interface de usuário de forma dinâmica.
-
 ## Como fazer:
 O Dart oferece várias maneiras simples de concatenar strings. Abaixo estão os métodos mais comuns:
 

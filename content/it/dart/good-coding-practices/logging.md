@@ -13,12 +13,7 @@ title: Registrazione
 weight: 17
 ---
 
-## Cosa e Perché?
-
-Il logging in Dart si riferisce al processo di registrazione di vari livelli di informazioni durante l'esecuzione di un programma. I programmatori lo fanno per monitorare il comportamento del software, eseguire il debug di problemi e analizzare le prestazioni, rendendo più facile mantenere e migliorare l'applicazione nel tempo.
-
 ## Come fare:
-
 Dart include un meccanismo di logging semplice attraverso la libreria `dart:developer`. Per esigenze di logging più sofisticate, i programmatori spesso si rivolgono a librerie di terze parti come `logger` e `log4dart`.
 
 ### Utilizzando `dart:developer`

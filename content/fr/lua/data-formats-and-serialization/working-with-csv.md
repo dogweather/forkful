@@ -15,12 +15,7 @@ title: Travailler avec CSV
 weight: 37
 ---
 
-## Quoi & Pourquoi ?
-
-Travailler avec des fichiers CSV (Comma-Separated Values ou Valeurs Séparées par des Virgules) implique de parser et de générer des données textuelles organisées en lignes et colonnes, en utilisant des virgules pour séparer les valeurs individuelles. Les programmeurs s'engagent souvent dans ce processus pour faciliter l'échange de données entre différentes applications, bases de données, ou pour des tâches de traitement et d'analyse de données, en raison du support généralisé et de la simplicité du CSV.
-
 ## Comment faire :
-
 En Lua, travailler avec des fichiers CSV peut être abordé en utilisant les opérations de base d'entrée/sortie de fichiers fournies par le langage, sans nécessiter de bibliothèques externes pour des tâches simples. Pour des opérations plus complexes, comme la gestion de cas spéciaux (par exemple, des virgules dans les valeurs), il pourrait être bénéfique d'utiliser des bibliothèques tierces comme `lua-csv`.
 
 ### Lire un fichier CSV

@@ -13,9 +13,6 @@ title: Analisi di una data da una stringa
 weight: 30
 ---
 
-## Cosa & Perché?
-L'analisi di una data da una stringa comporta l'estrazione delle informazioni sulla data codificate all'interno di stringhe e la loro conversione in un formato strutturato che gli ambienti di programmazione possono riconoscere e manipolare. I programmatori fanno questo per consentire operazioni come il confronto di date, l'aritmetica, la formattazione e la localizzazione, che sono essenziali per gestire in modo efficiente la pianificazione, i timestamp e i dati storici nel software.
-
 ## Come fare:
 In Fish Shell, non si dispone di comandi integrati specificamente progettati per l'analisi delle date da stringhe. Invece, ci si affida a utility esterne come `date` (disponibile su Linux e macOS) o si sfruttano strumenti di terze parti popolari come `GNU date` per analisi più complesse. Ecco come procedere:
 

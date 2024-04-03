@@ -10,9 +10,6 @@ title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---
 
-## What & Why?
-I Swift smelter vi sammen strenger for å skape nye setninger eller setningselementer. Vi gjør det blant annet for å dynamisk generere tekst, som brukerinput eller data fra en server.
-
 ## How to:
 ```Swift
 // Enkel sammenføyning

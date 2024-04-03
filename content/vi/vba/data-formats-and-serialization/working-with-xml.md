@@ -16,12 +16,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Cái gì & Tại sao?
-
-Việc làm việc với XML trong Visual Basic for Applications (VBA) bao gồm việc phân tích cú pháp, tạo và sửa đổi các tài liệu XML trong bối cảnh của các ứng dụng Microsoft Office. Các lập trình viên quay lại với khả năng này để tích hợp các ứng dụng Office với dịch vụ web hoặc các nguồn dữ liệu khác phát ra XML, tạo điều kiện cho việc trao đổi dữ liệu và chức năng báo cáo.
-
 ## Làm thế nào:
-
 Để bắt đầu tương tác với XML, người ta thường sử dụng đối tượng `MSXML2.DOMDocument`. Giao diện này cho phép bạn tải, phân tích cú pháp và điều hướng các tài liệu XML. Dưới đây là một ví dụ đơn giản minh họa cách tải một tệp XML, điều hướng cấu trúc của nó và đọc thuộc tính và nội dung văn bản.
 
 ```basic
@@ -45,7 +40,6 @@ End If
 Trong đoạn mã mẫu trên, chúng tôi tạo một thể hiện của `MSXML2.DOMDocument60`, tải một tệp XML, sau đó kiểm tra lỗi. Nếu không tìm thấy lỗi, chúng tôi điều hướng đến một nút cụ thể sử dụng XPath và hiển thị nội dung văn bản của nó.
 
 ## Sâu hơn:
-
 Sự tích hợp các khả năng XML trong VBA bắt đầu từ đầu những năm 2000, khi nhu cầu để các ứng dụng Office tương tác với dữ liệu và dịch vụ web bắt đầu tăng lên. Thư viện `MSXML`, hay Microsoft XML Core Services, đã phát triển qua nhiều năm, với `MSXML2.DOMDocument60` là một trong những phiên bản mới nhất được khuyến khích sử dụng do hiệu suất và tính năng an toàn được cải thiện.
 
 Mặc dù mạnh mẽ, các khả năng xử lý XML của VBA được coi là kém hiệu quả và cồng kềnh hơn so với môi trường lập trình hiện đại như XML.etree của Python hoặc LINQ to XML của C#. Sự dài dòng vốn có của VBA và yêu cầu thêm và quản lý tham chiếu một cách thủ công có thể cản trở sự phát triển nhanh chóng. Hơn nữa, với sự xuất hiện của JSON như một định dạng trao đổi dữ liệu nhẹ hơn, nhiều lập trình viên và ứng dụng đang chuyển dịch khỏi XML trừ khi việc tương thích với các hệ thống cũ hoặc dịch vụ doanh nghiệp cụ thể yêu cầu sử dụng nó.

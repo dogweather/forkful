@@ -12,12 +12,7 @@ title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---
 
-## Wat & Waarom?
-
-Het verwijderen van karakters die overeenkomen met een patroon in PHP gaat over het vinden van specifieke reeksen karakters in strings en deze verwijderen. Programmeurs doen dit om gegevens te schonen, output te formatteren, of strings te manipuleren om aan specifieke criteria te voldoen, zoals het verwijderen van niet-alfanumerieke karakters uit gebruikersinvoer om veiligheidsredenen.
-
 ## Hoe doe je dat:
-
 PHP gebruikt de `preg_replace` functie om karakters die overeenkomen met een patroon te verwijderen met behulp van reguliere expressies. Hier is hoe je cijfers uit een string verwijdert:
 
 ```PHP
@@ -41,7 +36,6 @@ echo $result; // Geeft uit: Te veel spaties!
 ```
 
 ## Diepgaande Verkenning
-
 Het verwijderen van karakters door overeenkomende patronen is niet nieuw. PHP's `preg_replace` functie, die deze functionaliteit mogelijk maakt, gebruikt Perl-compatibele reguliere expressies, een basis van tekstverwerking sinds de opkomst van Perl in de late jaren '80. Alternatieven voor `preg_replace` zijn `str_replace` voor eenvoudige vervangingen en `trim`, `ltrim`, en `rtrim` voor het verwijderen van witruimtes uit strings. Voor meer genuanceerde patroonverwijderingen kan `preg_replace_callback` worden gebruikt voor extra controle tijdens het vervangingsproces.
 
 Het is goed om te weten dat de PREG in `preg_replace` staat voor Perl Regular Expressions, wat aangeeft dat PHP gebruik maakt van Perl's patroonsyntax. Hier is de uitleg:
@@ -54,7 +48,6 @@ De keuze tussen `preg_replace` en de alternatieven hangt af van wat je doet. Geb
 Onthoud dat verkeerd gebruik van reguliere expressies kan leiden tot inefficiënte code. Benchmark altijd en gebruik reguliere expressies slim.
 
 ## Zie Ook
-
 Voor meer over PHP's stringfuncties en patroonmatching:
 - [PHP Handleiding — preg_replace](https://www.php.net/manual/en/function.preg-replace.php)
 - [PHP Handleiding — Reguliere Expressies (Perl-Compatibel)](https://www.php.net/manual/en/book.pcre.php)

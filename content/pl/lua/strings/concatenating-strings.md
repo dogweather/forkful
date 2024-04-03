@@ -11,9 +11,6 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## What & Why? ("Co i dlaczego?")
-Łączenie napisów (string concatenation) to połączenie dwóch czy więcej napisów w jeden dłuższy. Programiści robią to, aby tworzyć wiadomości, zestawiać dane do wyświetlenia albo budować kody i komendy dynamicznie.
-
 ## How to: ("Jak to zrobić:")
 ```Lua
 -- Łączenie za pomocą operatora ..

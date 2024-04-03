@@ -13,12 +13,7 @@ title: "Descargando una p\xE1gina web"
 weight: 42
 ---
 
-## Qué y Por Qué?
-
-Descargar una página web implica obtener el contenido de una página web a través de su URL para su procesamiento o almacenamiento. Los programadores hacen esto para extraer información, monitorear cambios o archivar contenido, lo que lo convierte en un pilar en tareas de raspado web, minería de datos y pruebas automatizadas.
-
 ## Cómo hacerlo:
-
 Dart ofrece el paquete `http`, una biblioteca de terceros popular para realizar solicitudes HTTP. Aquí hay un ejemplo básico de cómo usarlo para descargar una página web:
 
 Primero, agrega el paquete `http` a tu `pubspec.yaml`:

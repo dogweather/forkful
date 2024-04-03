@@ -11,9 +11,6 @@ title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---
 
-## Co i dlaczego?
-REPL to skrót od Read-Eval-Print Loop, prostego, interaktywnego środowiska programistycznego. Programiści używają go do szybkiego pisania i testowania kodu, eksperymentowania ze składnią oraz nauki koncepcji programowania bez konieczności tworzenia i uruchamiania całych aplikacji.
-
 ## Jak to zrobić:
 W Bashu, twoje terminal to w zasadzie REPL. Wpisujesz polecenie; czyta je, ocenia, wypisuje wynik, i zaczyna od nowa czekając na twoje kolejne polecenie. Oto przykład użycia Bash jako REPL:
 

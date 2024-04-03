@@ -13,12 +13,7 @@ title: "F\xE5 det aktuella datumet"
 weight: 29
 ---
 
-## Vad & Varför?
-
-Att hämta aktuellt datum i Python är en grundläggande operation för många applikationer, såsom loggning, dataanalys och tidsbaserat beslutsfattande. Det handlar om att hämta systemets aktuella datum, vilket är avgörande för uppgifter som beror på tidskontext.
-
 ## Hur:
-
 **Använda standardbiblioteket `datetime`:**
 
 `datetime`-modulen i Pythons standardbibliotek tillhandahåller klasser för att manipulera datum och tider. För att få det aktuella datumet kan du använda metoden `date.today()`.

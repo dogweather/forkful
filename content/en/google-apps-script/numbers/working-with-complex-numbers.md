@@ -11,9 +11,6 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-Complex numbers, represented as a combination of real and imaginary units (e.g., 3 + 4i), are fundamental in various computational problems, especially in engineering, physics, and applied mathematics. Learning to manipulate these numbers in Google Apps Script allows programmers to extend their capabilities into scientific computing, signal processing, and beyond.
-
 ## How to:
 Google Apps Script does not have built-in support for complex numbers, necessitating the implementation of custom functionality. Below is a basic structure for handling complex numbers, including addition, subtraction, and multiplication.
 

@@ -13,9 +13,6 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä & Miksi?
-YAML, lyhenne sanoista "YAML Ain't Markup Language", on ihmisen luettavissa oleva datan serialisointistandardi, jota ohjelmoijat käyttävät konfiguraatiotiedostoihin, datan dumpaamiseen ja datan siirtoon kielten välillä. Se on suosittu sen luettavuuden ja käyttöhelppouden vuoksi, mikä tekee siitä yleisen valinnan sovellusten ja palveluiden konfigurointiin.
-
 ## Kuinka:
 Javassa voit työskennellä YAML-tiedostojen kanssa käyttämällä kolmannen osapuolen kirjastoja, koska Java Standard Edition ei sisällä sisäänrakennettua tukea YAML:lle. Yksi suosittu kirjasto on SnakeYAML, joka mahdollistaa YAML-datan jäsentämisen ja generoinnin helposti.
 

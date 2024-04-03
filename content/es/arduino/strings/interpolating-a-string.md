@@ -10,9 +10,6 @@ title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---
 
-## Qué y Por Qué?
-La interpolación de cadenas permite insertar valores de variables dentro de una cadena de texto, creando así una cadena compuesta dinámicamente. Programadores la usan porque simplifica la concatenación, mejora la legibilidad y facilita la localización de los textos.
-
 ## Cómo hacerlo:
 Para interpolar una cadena en Arduino, usualmente concatenamos con el operador `+` o con la función `sprintf()`. Aquí van dos ejemplos breves:
 

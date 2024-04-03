@@ -13,12 +13,7 @@ title: Uttrekking av delstrenger
 weight: 6
 ---
 
-## Hva & Hvorfor?
-
-Å utvinne substringer innebærer å ta en del av en streng - i hovedsak å skape en ny streng fra en del av en eksisterende streng. Programmerere gjør dette av en rekke årsaker, inkludert dataanalyse, tekstmanipulering for brukergrensesnitt, eller behandling av inndata for forskjellige applikasjoner, noe som gjør substring-utvinning til et allsidig verktøy i enhver skriptverktøykasse.
-
 ## Hvordan:
-
 I Google Apps Script, som er basert på moderne JavaScript, kan utvinning av substringer oppnås gjennom flere metoder, inkludert `substring()`, `substr()` og `slice()`. Hver har sine nyanser, men de tjener alle formålet med å trekke ut spesifiserte tegn fra en streng.
 
 ```javascript
@@ -39,7 +34,6 @@ console.log(resultSlice); // Output: world!
 Hver metode tar to argumenter: startposisjonen og, unntatt for `slice()` som kan ta negative indekser for å starte fra slutten, sluttposisjonen eller antall tegn å utvinne. Det er verdt å merke seg at den opprinnelige strengen forblir uendret etter disse operasjonene, da de returnerer nye strengverdier.
 
 ## Dypdykk
-
 Historisk sett har JavaScript-metodene for å utvinne substringer vært en kilde til forvirring på grunn av deres lignende navn og funksjonalitet. Men, i Google Apps Script og moderne JavaScript, er `substring()` og `slice()` mest brukt, med `substr()` som anses for å være foreldet. Dette er viktig å merke seg for de som skriver fremtidssikker kode.
 
 Hovedforskjellen mellom `substring()` og `slice()` er hvordan de håndterer negative indekser; `substring()` behandler negative indekser som 0, mens `slice()` kan akseptere en negativ indeks for å starte uttrekkingen fra slutten av strengen. Dette gjør `slice()` spesielt hendig for tilfeller hvor den eksakte lengden på strengen kanskje ikke er kjent, eller når man trenger å ekstrahere fra slutten.

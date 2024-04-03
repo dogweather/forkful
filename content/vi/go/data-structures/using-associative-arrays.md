@@ -18,12 +18,7 @@ title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---
 
-## Gì và Tại Sao?
-
-Mảng kết hợp, được biết đến như là bản đồ (maps) trong Go, cho phép bạn lưu trữ các cặp khóa-giá trị nơi mỗi khóa duy nhất được ánh xạ đến một giá trị. Các lập trình viên sử dụng bản đồ cho việc truy xuất dữ liệu hiệu quả, chỉnh sửa và duy trì một tập hợp các phần tử có thể được truy cập nhanh chóng sử dụng các khóa duy nhất.
-
 ## Làm Thế Nào:
-
 Việc tạo và khởi tạo một bản đồ trong Go có thể được thực hiện bằng nhiều cách. Dưới đây là một ví dụ cơ bản để bắt đầu:
 
 ```go
@@ -78,7 +73,6 @@ for color, hex := range colors {
 Hãy nhớ, bản đồ trong Go không được sắp xếp. Thứ tự lặp qua không được đảm bảo.
 
 ## Đi Sâu Hơn
-
 Trong Go, bản đồ được thực thi như là bảng băm. Mỗi nhập vào trong bản đồ bao gồm hai mục: một khóa và một giá trị. Khóa được băm để lưu trữ nhập vào, điều này cho phép thao tác thời gian hằng số cho một tập hợp dữ liệu nhỏ và độ phức tạp thời gian trung bình là O(1) với băm phù hợp, có thể suy giảm thành O(n) trong trường hợp xấu nhất với nhiều xung đột băm.
 
 Một lưu ý quan trọng cho các lập trình viên mới của Go là loại bản đồ là loại tham chiếu. Điều này có nghĩa là khi bạn đưa một bản đồ vào một hàm, bất kỳ thay đổi nào được thực hiện trên bản đồ bên trong hàm đó đều có thể thấy được bởi caller. Điều này khác với việc, chẳng hạn, đưa một cấu trúc vào một hàm, nơi cấu trúc được sao chép trừ khi được truyền bằng con trỏ.

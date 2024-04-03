@@ -11,16 +11,10 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-
-Writing tests in programming involves creating small, separate pieces of code to automatically verify that different parts of your application work as expected. For Lua programmers, testing ensures reliability and aids in maintaining code quality, speeding up the debugging process and making codebase modifications safer.
-
 ## How to:
-
 Lua, being a lightweight yet powerful scripting language, does not include a built-in testing framework. However, third-party libraries like Busted and LuaUnit make testing relatively straightforward. Here, we'll look at examples using both.
 
 ### Using Busted
-
 Busted is a popular Lua testing framework that offers a flexible way to write tests. Firstly, install Busted through LuaRocks (Lua's package manager) with `luarocks install busted`. Once installed, you can write your tests. Here's a simple test for a function `add` that sums two numbers:
 
 ```lua
@@ -51,7 +45,6 @@ To run the tests, execute `busted` in your terminal. Sample output for a passing
 ```
 
 ### Using LuaUnit
-
 LuaUnit is another testing framework that follows xUnit conventions and is easy to set up. Install LuaUnit via LuaRocks using `luarocks install luaunit`. Here is how you could write a similar test as above with LuaUnit:
 
 ```lua

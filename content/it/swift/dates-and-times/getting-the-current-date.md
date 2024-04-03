@@ -13,9 +13,6 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Cosa e perché?
-Ottenere la data corrente in Swift comporta l'uso della classe `Date` per accedere alla data e all'ora in cui l'app viene eseguita. I programmatori hanno bisogno di recuperare la data corrente per una miriade di motivi che vanno dalla timbratura degli eventi, all'esecuzione di calcoli sulla data, fino alla visualizzazione di date e orari in un'interfaccia utente.
-
 ## Come fare:
 Il framework `Foundation` di Swift fornisce la classe `Date`, rendendo semplice ottenere la data e l'ora correnti. Ecco un esempio basilare di come ottenere la data corrente:
 

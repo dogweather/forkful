@@ -9,9 +9,6 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-Handling errors means planning for when things go wrong. It's vital because it helps avoid crashes and makes your software robust and user-friendly.
-
 ## How to:
 Here's a basic try-catch block to handle an exception:
 

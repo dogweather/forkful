@@ -11,9 +11,6 @@ title: Praca z JSON
 weight: 38
 ---
 
-## What & Why?
-Praca z JSON (JavaScript Object Notation) to podstawa dla wymiany danych w aplikacjach. Programiści używają go, żeby łatwo serwisy mogły się "dogadywać" z różnymi platformami i językami.
-
 ## How to:
 W Swift używamy `Codable` do łatwego przetwarzania JSON.
 

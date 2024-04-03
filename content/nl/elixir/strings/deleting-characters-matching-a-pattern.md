@@ -13,12 +13,7 @@ title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---
 
-## Wat & Waarom?
-
-Het verwijderen van karakters die overeenkomen met een patroon gaat helemaal om het vinden van specifieke reeksen van karakters en het verwijderen ervan. Programmeurs doen dit om data te saneren, inhoud te formatteren, of strings te manipuleren op een manier die overeenkomt met hun specifieke behoeften.
-
 ## Hoe te:
-
 In Elixir, gebruik de `String.replace/4` functie om karakters te verwijderen die overeenkomen met een patroon. Bekijk deze voorbeelden:
 
 ```elixir
@@ -37,11 +32,9 @@ IO.puts(no_whitespace_string) # Uitvoer: "Elixir2023Rocks!"
 ```
 
 ## Diepgaande duik
-
 Het gebruik van patroonmatching om karakters in strings te verwijderen is niet uniek voor Elixir; het is een algemeen kenmerk in bijna alle programmeertalen, ontwikkeld uit de mogelijkheden van reguliere expressies (regex) in vroege Unix-tools zoals `sed` en `grep`. Alternatieven voor `String.replace/4` kunnen zijn het gebruik van patroonmatching en recursie om handmatig door een string te gaan en deze aan te passen, maar deze methode is over het algemeen uitgebreider en complexer, waardoor ingebouwde regex-functies een voor de hand liggende keuze zijn. Intern maakt `String.replace/4` gebruik van de Erlang-erfenis van Elixir, door de krachtige patroonmatching en stringmanipulatie-mogelijkheden van de BEAM-virtuele machine te benutten.
 
 ## Zie ook:
-
 - Elixir `String` module documentatie: [https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)
 - Regex in Elixir: [https://hexdocs.pm/elixir/Regex.html](https://hexdocs.pm/elixir/Regex.html)
 - 'Leer Reguliere Expressies': [https://www.regular-expressions.info/tutorial.html](https://www.regular-expressions.info/tutorial.html)

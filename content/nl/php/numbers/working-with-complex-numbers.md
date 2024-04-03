@@ -12,9 +12,6 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-Complexe getallen hebben een reëel deel en een imaginair deel, meestal geschreven als `a + bi`. Ze zijn cruciaal in geavanceerde wiskunde, natuurkunde, techniek en bepaalde computer algoritmes. Programmeurs werken ermee om berekeningen die te maken hebben met wortels van negatieve getallen en oscillerende functies, te kunnen hanteren.
-
 ## Hoe:
 PHP biedt ingebouwde ondersteuning voor complexe getallen via de `ext-intl` extensie met de `NumberFormatter` klasse. Hier is een voorbeeld:
 

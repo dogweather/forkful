@@ -11,9 +11,6 @@ title: Loggning
 weight: 17
 ---
 
-## Vad & Varför?
-"Loggning" innebär att man för en journal över händelser, transaktioner eller aktiviteter som sker över tid i ett system. Programmerare använder det för att felsöka, övervaka systemhälsan, samla statistik eller till och med granska användningen, vilket gör det till en oumbärlig praxis för att underhålla och förstå beteendet hos deras kod under olika förhållanden.
-
 ## Hur gör man:
 Arduino kommer inte med ett inbyggt loggningsbibliotek som vissa andra miljöer, men du kan implementera grundläggande loggning till Seriell-konsolen med minimal ansträngning. Här är ett snabbt exempel för att komma igång:
 

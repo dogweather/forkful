@@ -14,12 +14,7 @@ title: "Einen String gro\xDFschreiben"
 weight: 2
 ---
 
-## Was & Warum?
-
-Das Kapitalisieren eines Strings in Visual Basic for Applications (VBA) beinhaltet die Umwandlung des ersten Zeichens jedes Wortes in einem String in Großbuchstaben, während sichergestellt wird, dass die restlichen Zeichen in Kleinbuchstaben bleiben. Programmierer tun dies zur Datennormalisierung, um die Lesbarkeit zu erhöhen und Konsistenz über textuelle Dateneingaben oder -anzeigen zu gewährleisten.
-
 ## Wie geht das:
-
 VBA hat keine eingebaute Funktion speziell zum Großschreiben jedes Wortes in einem String, wie es einige andere Programmiersprachen haben. Allerdings können Sie dies erreichen, indem Sie einige Methoden und Funktionen wie `UCase`, `LCase` und `Mid` kombinieren.
 
 Hier ist ein einfaches Beispiel, wie man einen String kapitalisiert:
@@ -46,7 +41,6 @@ End Sub
 Die `CapitalizeString` Funktion teilt den Eingabestring in Worte auf, kapitalisiert den ersten Buchstaben jedes Wortes und setzt sie schließlich wieder zusammen, um den ordnungsgemäß kapitalisierten String zu bilden.
 
 ## Vertiefung
-
 Visual Basic for Applications, das sich Anfang der 90er Jahre als Makrosprache für Microsoft Office-Anwendungen herausbildete, wurde entworfen, um ein zugängliches Programmiermodell zu bieten. Seine Fähigkeiten zur String-Manipulation, obwohl umfangreich, vermissen einige höherstufige Abstraktionen, die in neueren Sprachen zu finden sind. Viele moderne Programmierumgebungen bieten eine spezielle Methode zur String-Kapitalisierung, oft als Titelkapitalisierung oder ähnlich bezeichnet. Python beispielsweise umfasst die `.title()` Methode für Strings.
 
 Im Vergleich mag das Fehlen einer einzigen, eingebauten Funktion in VBA zur Kapitalisierung von String-Wörtern als Nachteil erscheinen. Dies bietet jedoch Programmierern ein tieferes Verständnis und Kontrolle darüber, wie sie Text manipulieren und Nuancen berücksichtigen können, die von einer generischen Methode nicht strikt beachtet werden. Zum Beispiel ist die Handhabung von Akronymen oder Spezialfällen, in denen bestimmte kleinere Wörter in Titeln nicht kapitalisiert werden sollten, in VBA durch explizite Funktionen besser anzupassen.

@@ -12,9 +12,6 @@ title: Een webpagina downloaden
 weight: 42
 ---
 
-## Wat & Waarom?
-Een webpagina downloaden betekent het HTML van een URL ophalen, zodat je programma ermee kan werken. Programmeurs doen dit om gegevens te schrapen, webinteracties te automatiseren of de status van een site te controleren.
-
 ## Hoe te:
 In Clojure kun je `clj-http` gebruiken om snel een webpagina te downloaden. Hier is een eenvoudig voorbeeld:
 

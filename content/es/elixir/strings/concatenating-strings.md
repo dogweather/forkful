@@ -11,9 +11,6 @@ title: "Concatenaci\xF3n de cadenas"
 weight: 3
 ---
 
-## Qué y Por Qué?
-Concatenar cadenas trata sobre unir dos o más cadenas para formar un solo texto. Podrías necesitar fusionar texto para generar mensajes de usuario, crear rutas de archivo o para procesos de serialización de datos. Es una operación fundamental en cualquier lenguaje de programación, incluyendo Elixir, permitiendo a los desarrolladores construir cadenas dinámicas con facilidad.
-
 ## Cómo hacerlo:
 En Elixir, puedes concatenar cadenas de algunas maneras directas. Exploremos los métodos más comunes:
 

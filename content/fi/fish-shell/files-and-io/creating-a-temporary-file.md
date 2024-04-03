@@ -11,9 +11,6 @@ title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---
 
-## What & Why? (Mitä & Miksi?)
-Temp-tiedoston luonti on väliaikaisten, usein kertakäyttöisten tiedostojen tekemistä. Ohjelmoijat käyttävät niitä esimerkiksi datan väliaikaissäilytykseen tai testitilanteissa.
-
 ## How to: (Kuinka tehdä:)
 ```Fish Shell
 # Luo väliaikainen tiedosto

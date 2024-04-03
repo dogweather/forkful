@@ -16,12 +16,7 @@ title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---
 
-# Wat & Waarom?
-
-Een HTTP-verzoek verzenden met basisauthenticatie omvat het opnemen van een gebruikersnaam en wachtwoord gecodeerd in base64 binnen de verzoekheader. Programmeurs doen dit om toegang te krijgen tot bronnen die enige vorm van eenvoudige validatie behoeven om een zeker niveau van beveiliging te garanderen.
-
 ## Hoe:
-
 Hier is een snel voorbeeld met behulp van JavaScript's Fetch API:
 
 ```javascript
@@ -51,7 +46,6 @@ Voorbeelduitvoer (afgedrukt naar de console):
 ```
 
 ## Diepere Duik
-
 Voordat we beginnen, laten we wat context krijgen. Basisauthenticatie is een van de eenvoudigste vormen van webservicesbeveiliging, die referenties verzendt in headers bij elk verzoek.
 
 Historische Context:
@@ -69,7 +63,6 @@ Implementatiedetails:
 - Moderne ontwikkeling geeft de voorkeur aan tokens en sessiecookies voor authenticatie, aangezien ze veiliger en veelzijdiger zijn.
 
 ## Zie Ook
-
 - [Mozilla Developer Network - Autorisatie](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)
 - [RFC 7617 - HTTP Basis Auth](https://tools.ietf.org/html/rfc7617)
 - [Introductie tot OAuth 2.0](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)

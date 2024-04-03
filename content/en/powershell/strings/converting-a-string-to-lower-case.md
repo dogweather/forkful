@@ -11,12 +11,7 @@ title: Converting a string to lower case
 weight: 4
 ---
 
-## What & Why?
-
-Changing a string to lower case means making every letter in the string a small letter. Programmers do this to standardize text, to make comparisons, and sometimes to follow case-sensitive rules in coding or data storage.
-
 ## How to:
-
 PowerShell is pretty handy with strings. Use the `.ToLower()` method, like this:
 
 ```PowerShell
@@ -46,7 +41,6 @@ hello, world!
 ```
 
 ## Deep Dive
-
 Once upon a time, case insensitivity was pretty common in programming languages. In PowerShell, like its .NET ancestors, strings are objects with built-in methods for manipulation. When we use `.ToLower()`, we're invoking a method that handles the conversion process for us.
 
 Alternative ways to get the job done? Sure. You could use:
@@ -58,7 +52,6 @@ Alternative ways to get the job done? Sure. You could use:
 Why use the invariant culture with `ToLowerInvariant()`? It's essential for consistent results across different locales where the interpretation of what is a "lower" case could differ.
 
 ## See Also
-
 For more detailed adventures in string manipulation, visit these links:
 
 - [.NET String Class](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-6.0)

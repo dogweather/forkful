@@ -13,10 +13,8 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Cosa e Perché?
-Ottenere la data corrente nella programmazione è cruciale per una miriade di motivi, inclusi il logging, il timestamping degli eventi e la pianificazione delle attività. In Clojure, un dialetto Lisp sulla JVM, questo compito sfrutta le capacità di interoperabilità con Java, consentendo un accesso diretto all'API Java Date-Time ricca di funzionalità.
-
 ## Come fare:
+
 
 ### Utilizzando l'Interop con Java
 L'interoperabilità senza soluzione di continuità di Clojure con Java ti consente di attingere direttamente all'API Java Date-Time. Ecco come puoi ottenere la data corrente:

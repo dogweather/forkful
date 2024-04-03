@@ -15,9 +15,6 @@ title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---
 
-## Cái gì & Tại sao?
-Rút trích các chuỗi con là việc truy xuất các phần cụ thể của một chuỗi dựa trên vị trí hoặc các mẫu. Lập trình viên thực hiện điều này cho các nhiệm vụ như phân tích đầu vào của người dùng, thao tác dữ liệu, hoặc rút trích thông tin liên quan từ các nguồn văn bản lớn hơn.
-
 ## Làm thế nào:
 Trong Dart, bạn có thể sử dụng nhiều phương pháp khác nhau để rút trích các chuỗi con, như `substring()`, `split()`, và biểu thức chính quy. Mỗi phương pháp phục vụ các mục đích khác nhau và cung cấp sự linh hoạt trong việc xử lý chuỗi.
 

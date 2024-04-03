@@ -15,12 +15,7 @@ title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---
 
-## Co i Dlaczego?
-
-Tablice asocjacyjne to jak tajne uściski dłoni dla danych w Lua — zamiast samych numerów ustawiających się posłusznie według indeksu, Twoje klucze mogą być czymkolwiek chcesz, co sprawia, że odzyskiwanie danych jest dziecinnie proste. Dlaczego programiści ich używają? Ponieważ czasami trzeba wywołać kawałek danych po jego nazwie, a nie po numerze w kolejności.
-
 ## Jak to zrobić:
-
 W Lua, tworzenie tablicy asocjacyjnej (lub tabeli, jak mówią w Lua) jest proste. Rezygnujesz z typowych numerycznych indeksów na rzecz własnych kluczy. Spójrz na to:
 
 ```Lua
@@ -59,7 +54,6 @@ favLang: Lua
 Fajna sprawa? Wchodzisz w interakcję z danymi za pomocą kluczy, które mają dla Ciebie znaczenie, co sprawia, że kod jest czytelniejszy i łatwiejszy w utrzymaniu.
 
 ## Wnikliwe spojrzenie
-
 Kiedy Lua pojawiła się na scenie, wprowadziła tabele jako uniwersalną strukturę danych, rewolucjonizując sposób, w jaki deweloperzy zarządzają danymi. W przeciwieństwie do niektórych języków, gdzie tablice asocjacyjne i tablice są odrębnymi bytami, tabele w Lua służą jako oba typy, upraszczając krajobraz struktur danych.
 
 To, co sprawia, że tabele Lua są szczególnie potężne, to ich elastyczność. Jednak ta elastyczność ma swoją cenę w postaci potencjalnych konsekwencji wydajnościowych, szczególnie przy dużych zbiorach danych, gdzie bardziej wyspecjalizowana struktura danych może być preferowana dla efektywności.

@@ -10,9 +10,6 @@ title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---
 
-## What & Why?
-Inviare una richiesta HTTP con autenticazione di base significa trasmettere username e password in formato codificato per accedere a risorse protette. I programmatori usano questo metodo per interagire con API che richiedono autenticazione per ottenere dati o eseguire operazioni.
-
 ## How to:
 Per inviare una richiesta HTTP con autenticazione di base in C++, possiamo usare la libreria `cURL`. Ecco un esempio di codice:
 

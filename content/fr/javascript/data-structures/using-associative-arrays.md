@@ -14,12 +14,7 @@ title: Utilisation des tableaux associatifs
 weight: 15
 ---
 
-## Quoi & Pourquoi ?
-
-Les tableaux associatifs, ou comme ils sont plus précisément connus en JavaScript, les objets, vous permettent d’associer des clés à des valeurs. Ceci est extrêmement pratique lorsque vous avez besoin d'une collection d'éléments que vous souhaitez accéder via des noms spécifiques (clés) au lieu d'indices numériques, rendant votre code plus lisible et flexible.
-
 ## Comment :
-
 Créer et utiliser des tableaux associatifs (objets) en JavaScript est simple. Vous définissez un objet avec des accolades `{}`, et à l'intérieur de ces dernières, vous pouvez définir un ensemble de paires clé-valeur. Les clés sont toujours des chaînes de caractères, et les valeurs peuvent être n'importe quoi : des chaînes, des nombres, des tableaux, voire d'autres objets.
 
 ```javascript
@@ -65,7 +60,6 @@ console.log(userInfo);
 Comme vous pouvez le voir, accéder, ajouter ou supprimer des éléments dans un tableau associatif est assez direct et intuitif.
 
 ## Plongée en profondeur
-
 Dans le monde de JavaScript, bien que nous entendons souvent le terme "tableau associatif", c'est techniquement un abus de langage car JavaScript n'a pas de vrais tableaux associatifs comme d'autres langages (par exemple, PHP). Ce que JavaScript a, ce sont des objets qui servent un but similaire mais sont une construction plus puissante et flexible.
 
 Historiquement, les tableaux dans les langages de programmation étaient conçus pour contenir une collection d'articles, accessibles par leur indice numérique. Cependant, à mesure que le développement logiciel évoluait, le besoin de structures de données plus flexibles est apparu. Les tableaux associatifs, ou dictionnaires dans d'autres langages, étaient l'une des réponses, permettant l'accès aux éléments par des clés arbitraires.

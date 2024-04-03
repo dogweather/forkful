@@ -14,16 +14,10 @@ title: Sattumanvaraisten numeroiden generointi
 weight: 12
 ---
 
-## Mikä & Miksi?
-
-Satunnaislukujen tuottaminen on ohjelmoinnissa perustehtävä, jota käytetään lukuisissa sovelluksissa, kuten simulaatioissa, peleissä ja turvajärjestelmissä. Ohjelmoijat käyttävät tätä tekniikkaa Google Apps Scriptissä tuodakseen vaihtelevuutta, testatakseen skenaarioita ja lisätäkseen ennustamattomuutta sovelluksiinsa Google-ekosysteemissä, mukaan lukien Sheets, Docs ja Forms.
-
 ## Kuinka:
-
 Google Apps Scriptissä voit tuottaa satunnaislukuja käyttämällä `Math.random()`-funktiota, samoin kuin JavaScriptissä. Tämä funktio palauttaa liukuluvun, pseudo-satunnaisen luvun väliltä 0 (sisältyen) - 1 (ei sisältyen). Jotta nämä luvut voisi räätälöidä erilaisiin käyttötarkoituksiin, kuten kokonaislukujen tuottamiseksi tietyssä välissä, saatat tarvita lisälaskelmia.
 
 ### Perussatunnaisluvun tuottaminen
-
 Jotta voit tuottaa yksinkertaisen satunnaisluvun ja kirjata sen konsoliin:
 
 ```javascript
@@ -35,7 +29,6 @@ function generateRandomNumber() {
 *Esimerkkituloste:* `0.1234567890123456`
 
 ### Kokonaisluvun tuottaminen tietyssä välissä
-
 Jotta voit tuottaa satunnaisen kokonaisluvun kahden arvon (`min` ja `max`) välillä, mukaan luettuna:
 
 ```javascript
@@ -55,7 +48,6 @@ getRandomInt(1, 10);
 Muista, että `Math.ceil()`-funktiota käytetään pienimmän arvon pyöristämiseen ylöspäin, ja `Math.floor()`-funktiota käytetään suurimman arvon pyöristämiseen alaspäin, varmistaen, että satunnaisluku on määritellyssä välissä.
 
 ## Syväsukellus
-
 Mekanismi satunnaislukujen tuottamiseen Google Apps Scriptissä, ja itse asiassa useimmissa ohjelmointikielissä, hyödyntää pseudo-satunnaislukugeneraattoria (PRNG). Tämä tekniikka on deterministinen ja nojaa alkuperäisarvoon, jota kutsutaan siemeneksi, tuottaakseen lukujonoa, joka vaikuttaa satunnaiselta. Vaikka se riittää monille sovelluksille, on tärkeää huomata, että pseudo-satunnaisluvut eivät välttämättä sovi kohteisiin, joissa vaaditaan korkeaa turvallisuutta tai todellista satunnaisuutta, kuten kryptografisissa sovelluksissa.
 
 Todellista satunnaisuutta voidaan saavuttaa laitteistopohjaisilla satunnaislukugeneraattoreilla tai palveluilla, jotka tuottavat satunnaisuutta luonnollisista ilmiöistä. Kuitenkin useimmissa päivittäisissä käsikirjoitustarpeissa Google Apps Scriptissä, `Math.random()` riittää.

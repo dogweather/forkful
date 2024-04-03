@@ -11,9 +11,6 @@ title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---
 
-## Qué y Por Qué?
-Leer argumentos de la línea de comandos permite que tu programa en JavaScript reciba información desde el exterior cuando se inicia. Esto es útil, por ejemplo, para configurar cómo se ejecuta tu script o para pasarle datos sin hardcodear valores.
-
 ## Cómo:
 Node.js te da acceso a los argumentos de la línea de comandos a través de `process.argv`. Vamos directo al código:
 

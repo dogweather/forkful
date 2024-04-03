@@ -15,9 +15,6 @@ title: Trabajando con YAML
 weight: 41
 ---
 
-## ¿Qué y por qué?
-YAML, que significa "YAML Ain't Markup Language" (YAML no es un lenguaje de marcado), es un formato de serialización de datos altamente legible que se utiliza a menudo para archivos de configuración, almacenamiento de datos y mensajería entre procesos. Los programadores trabajan frecuentemente con YAML para gestionar configuraciones y ajustes de manera estructurada, pero simple, beneficiándose de su claridad y simplicidad sobre JSON o XML cuando la legibilidad es importante.
-
 ## Cómo hacerlo:
 Kotlin no tiene soporte integrado para el análisis y serialización de YAML, pero puedes utilizar bibliotecas de terceros populares como `snakeyaml` (para análisis de YAML en general) y `kotlinx.serialization` (con una extensión de formato YAML) para trabajar con archivos YAML.
 
@@ -55,6 +52,7 @@ database:
 ```
 {database={host=localhost, port=5432}}
 ```
+
 ### Usando `kotlinx.serialization` con YAML
 Primero, asegúrate de tener la biblioteca `kotlinx-serialization` con una biblioteca de soporte YAML adecuada (si está disponible, ya que `kotlinx.serialization` se dirige principalmente a JSON y otros formatos directamente).
 

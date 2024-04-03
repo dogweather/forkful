@@ -11,9 +11,6 @@ title: Merkkijonon interpolointi
 weight: 8
 ---
 
-## What & Why? - Mikä & Miksi?
-Stringien interpolointi tarkoittaa muuttujien ja lausekkeiden sisällyttämistä osaksi merkkijonoja. Koodarit käyttävät tätä, koska se tekee koodista selkeämpää ja muokattavuuden joustavammaksi.
-
 ## How to: - Kuinka:
 ```Bash
 # Muuttujien käyttö merkkijonon sisällä

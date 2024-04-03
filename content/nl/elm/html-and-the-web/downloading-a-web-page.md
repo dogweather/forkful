@@ -12,12 +12,7 @@ title: Een webpagina downloaden
 weight: 42
 ---
 
-## Wat & Waarom?
-
-Een webpagina downloaden betekent gegevens van het internet rechtstreeks in je app halen om deze weer te geven of te verwerken. Programmeurs doen dit om realtime informatie te verkrijgen of dynamische inhoud aan gebruikers te bieden.
-
 ## Hoe:
-
 Elm vereist dat neveneffecten zoals HTTP-verzoeken worden gestructureerd als commando's. Je gebruikt de `Http` module om te fetchen en de respons te verwerken.
 
 ```Elm
@@ -66,7 +61,6 @@ main =
 Bij een succesvolle fetch zal `inhoud` in je model de inhoud van de pagina bevatten. Bij een fout zal het een eenvoudige foutmelding bevatten.
 
 ## Diepgaand
-
 Elm behandelt neveneffecten als een Data, wat betekent dat HTTP-verzoeken worden beheerd door de Elm-runtime, niet direct in je code. Historisch gezien was dit een afwijking van talen zoals JavaScript, waar neveneffecten meer vrijblijvend zijn. Alternatieven in andere talen kunnen `fetch` zijn in JavaScript of `requests` in Python. Elm's benadering zorgt ervoor dat je app voorspelbaar en onderhoudbaar blijft door neveneffecten in typen te coderen en een gecentraliseerde `update` functie te gebruiken om veranderingen te beheren.
 
 De `Http` module bestond niet altijd in Elm. Eerdere versies bedachten hun eigen AJAX, wat omslachtig was. Nu biedt `Http` een reeks functies om verschillende gevallen te behandelen, zoals het verwachten van JSON of strings, wat het gebruiksvriendelijker maakt.
@@ -74,7 +68,6 @@ De `Http` module bestond niet altijd in Elm. Eerdere versies bedachten hun eigen
 Wat betreft de implementatie, wanneer je `fetchPagina` aanroept, stuurt Elm een bericht naar je `update` functie met het resultaat. Het zal ofwel `Ok data` zijn als het slaagt of `Err fout` als het faalt. Je matched op deze uitkomsten en werkt je `Model` en weergave dienovereenkomstig bij.
 
 ## Zie Ook
-
 - Elm's HTTP pakketdocumentatie: [https://package.elm-lang.org/packages/elm/http/latest/](https://package.elm-lang.org/packages/elm/http/latest/)
 - Elm Gids over Effecten: [https://guide.elm-lang.org/effects/](https://guide.elm-lang.org/effects/)
 - JSON Decoding in Elm (voor als de gegevens die je fetcht geen platte tekst zijn): [https://package.elm-lang.org/packages/elm/json/latest/](https://package.elm-lang.org/packages/elm/json/latest/)

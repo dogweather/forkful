@@ -15,9 +15,6 @@ title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---
 
-## Cái gì & Tại sao?
-Lấy ngày hiện tại trong một chương trình giống như việc hỏi, "Hôm nay là ngày bao nhiêu?" Chúng ta làm điều này để ghi dấu thời gian các sự kiện, xử lý lịch trình, hoặc chỉ đơn giản là cho người dùng biết hôm nay là ngày nào.
-
 ## Cách thực hiện:
 Elixir làm cho việc lấy ngày hiện tại trở nên đơn giản sử dụng mô-đun `Date`:
 

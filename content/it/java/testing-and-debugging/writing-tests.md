@@ -12,14 +12,10 @@ title: Scrivere test
 weight: 36
 ---
 
-## Cosa & Perché?
-Scrivere test in Java consiste nel verificare che il proprio codice si comporti come previsto in varie condizioni. I programmatori scrivono test per prevenire bug, assicurare che la funzionalità rimanga corretta dopo modifiche e promuovere buoni principi di progettazione del software.
-
 ## Come fare:
 Gli sviluppatori Java utilizzano principalmente due framework di test: JUnit e TestNG. Qui, ci concentreremo su JUnit, la scelta più popolare per scrivere test grazie alla sua semplicità e alla diffusa adozione.
 
 ### Fondamenti di JUnit
-
 Per utilizzare JUnit nel tuo progetto Maven, aggiungi la seguente dipendenza al tuo `pom.xml`:
 
 ```xml
@@ -50,7 +46,6 @@ public class CalculatorTest {
 Eseguendo questo test, il risultato sarà o il superamento, indicando che il metodo `add` funziona come previsto, o il fallimento, mostrando un messaggio di errore.
 
 ### Simulazione con Mockito
-
 In scenari reali, gli oggetti spesso dipendono da altri oggetti. Mockito è un framework di simulazione popolare che aiuta nella creazione di oggetti fittizi ai fini del test.
 
 Aggiungi Mockito al tuo progetto Maven:

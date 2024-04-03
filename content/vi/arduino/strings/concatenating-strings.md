@@ -15,9 +15,6 @@ title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---
 
-## Cái gì & Tại sao?
-Nối chuỗi là việc ghép chúng lại với nhau từ đầu đến cuối để tạo ra một chuỗi mới. Lập trình viên làm việc này để kết hợp các thông điệp, xây dựng lệnh, hoặc chỉ đơn giản là hiển thị thông tin một cách gọn gàng.
-
 ## Cách thực hiện:
 Hãy cùng thực hiện việc nối chuỗi! Tất cả sẽ được thực hiện trong hàm setup vì chúng ta chỉ muốn xem qua một lần—không cần vòng lặp lặp lại.
 

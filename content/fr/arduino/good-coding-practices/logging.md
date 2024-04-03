@@ -12,9 +12,6 @@ title: Journalisation
 weight: 17
 ---
 
-## Quoi & Pourquoi ?
-Le "logging", ou journalisation, consiste à conserver un enregistrement d’événements, de transactions ou d’activités qui se produisent dans un système au fil du temps. Les programmeurs l’utilisent pour déboguer, surveiller l’état du système, collecter des statistiques, ou même auditer l’usage, ce qui en fait une pratique indispensable pour maintenir et comprendre le comportement de leur code sous diverses conditions.
-
 ## Comment faire :
 L'Arduino ne dispose pas d'une librairie de journalisation intégrée comme certains autres environnements, mais vous pouvez mettre en œuvre une journalisation de base vers la console Série avec peu d'efforts. Voici un exemple rapide pour commencer :
 

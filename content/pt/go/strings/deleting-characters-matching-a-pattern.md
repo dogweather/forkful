@@ -14,12 +14,7 @@ title: "Deletando caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---
 
-## O Que & Por Que?
-
-Deletar caracteres que correspondem a um padrão específico é sobre remover certos caracteres ou sequências de caracteres de strings, com base em regras definidas por um padrão (geralmente via expressões regulares). Programadores frequentemente precisam realizar essa tarefa para limpeza de dados, pré-processamento para análise, formatação de saída ou simplesmente manipulando strings para atender aos requisitos da aplicação.
-
 ## Como fazer:
-
 Em Go, deletar caracteres que correspondem a um padrão pode ser eficientemente realizado usando o pacote `regexp`. Aqui, vamos mostrar como remover todos os dígitos, depois todos os caracteres não alfanuméricos de uma string como exemplos.
 
 1. **Removendo Todos os Dígitos:**
@@ -77,7 +72,6 @@ func main() {
 ```
 
 ## Aprofundamento
-
 O pacote `regexp` em Go fornece uma interface poderosa para correspondência de padrões e manipulação com expressões regulares. Sua implementação é derivada do RE2, uma biblioteca de expressão regular projetada para garantir uma execução em tempo linear, evitando a possibilidade de problemas de "retrocessos catastróficos" presentes em alguns outros motores de regex. Isso torna as regex de Go relativamente seguras e eficientes para uma ampla gama de aplicações.
 
 Embora o pacote `regexp` seja uma solução abrangente para lidar com padrões, vale ressaltar que para manipulações de strings mais simples ou altamente específicas, outras funções de string como `strings.Replace()`, `strings.Trim()`, ou fatiamento podem oferecer alternativas mais performáticas. Expressões regulares são uma ferramenta poderosa, mas seu relativo custo computacional significa que para operações que podem ser especificadas sem elas, explorar alternativas da biblioteca padrão às vezes pode levar a um código mais simples e eficiente.

@@ -11,9 +11,6 @@ title: Organisering av kode i funksjoner
 weight: 18
 ---
 
-## Hva & Hvorfor?
-Å organisere kode i funksjoner betyr å bryte ned et stort program inn i håndterbare deler, hvor hver gjør en distinkt oppgave. Programmerere gjør dette for å gjøre koden lesbar, gjenbrukbar og vedlikeholdbar.
-
 ## Hvordan:
 Her er et klassisk eksempel – en funksjon for å beregne fakultet av et tall.
 

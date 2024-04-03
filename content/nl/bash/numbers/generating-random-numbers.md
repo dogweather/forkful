@@ -14,9 +14,6 @@ title: Willekeurige getallen genereren
 weight: 12
 ---
 
-## Wat & Waarom?
-Het genereren van willekeurige getallen in Bash biedt een manier om onvoorspelbaarheid in scripts te introduceren, wat essentieel is voor taken zoals het genereren van veilige wachtwoorden, het simuleren van gegevens of voor het programmeren van spellen. Programmeurs benutten deze mogelijkheid om variabiliteit aan hun scripts toe te voegen of om hun programma's onder een verscheidenheid van willekeurig gegenereerde omstandigheden te testen.
-
 ## Hoe:
 In Bash is de `$RANDOM` variabele de go-to voor het genereren van willekeurige getallen. Elke keer dat je het referereert, biedt Bash een pseudo-willekeurig geheel getal tussen 0 en 32767. Laten we enkele praktische voorbeelden verkennen:
 

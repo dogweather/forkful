@@ -13,9 +13,6 @@ title: Het huidige datum ophalen
 weight: 29
 ---
 
-## Wat & Waarom?
-De huidige datum in PHP verkrijgen draait allemaal om het plukken van de datum en tijd van vandaag direct vanaf de server. Programmeurs doen dit om de acties van gebruikers te volgen, berichten te timestampen, of gewoon om te zeggen: "Hé, het is vrijdag!"
-
 ## Hoe:
 Je roept de huidige datum in PHP op met de `date()` functie. Bijvoorbeeld:
 

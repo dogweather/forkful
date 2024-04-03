@@ -24,12 +24,7 @@ title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 weight: 41
 ---
 
-## 什么 & 为什么？
-
-YAML是“YAML Ain't Markup Language”（YAML不是标记语言）的递归缩写，是一种人类可读的数据序列化格式，用于配置文件和不同数据结构语言之间的数据交换。程序员利用YAML因其简单易读，使其成为配置应用程序和促进多语言编程环境中数据交换的理想选择。
-
 ## 如何操作：
-
 Clojure没有内置对YAML的支持，但你可以利用第三方库如`clj-yaml`来解析和生成YAML数据。首先，将库添加到项目依赖中：
 
 ```clojure
@@ -40,7 +35,6 @@ Clojure没有内置对YAML的支持，但你可以利用第三方库如`clj-yaml
 以下是如何使用`clj-yaml`来解析YAML并将Clojure映射转换为YAML的方法。
 
 ### 解析YAML：
-
 ```clojure
 (require '[clj-yaml.core :as yaml])
 
@@ -52,7 +46,6 @@ Clojure没有内置对YAML的支持，但你可以利用第三方库如`clj-yaml
 ```
 
 ### 从Clojure生成YAML：
-
 ```clojure
 (require '[clj-yaml.core :as yaml])
 

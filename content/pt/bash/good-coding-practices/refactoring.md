@@ -11,9 +11,6 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O Que & Por Quê?
-Refatoração é o processo de reestruturar o código de computador existente sem alterar seu comportamento externo. É uma prática vital para reduzir a complexidade, melhorar a manutenibilidade e manter sua base de código saudável e mais fácil de entender para os desenvolvedores atuais e futuros.
-
 ## Como:
 Vamos considerar um simples script Bash que precisa de alguma refatoração. É desajeitado, com código repetido e é difícil de seguir:
 

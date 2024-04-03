@@ -14,9 +14,6 @@ title: Verifica se una directory esiste
 weight: 20
 ---
 
-## Cosa e Perché?
-In PowerShell, verificare l'esistenza di una directory è un compito comune che aiuta gli script a prendere decisioni basate sulla struttura dei file system—come evitare errori confermando che una directory di destinazione sia presente prima di tentare di leggerla o scriverci. È essenziale per garantire che lo script si comporti in modo affidabile in ambienti diversi.
-
 ## Come fare:
 PowerShell offre un modo semplice per verificare la presenza di una directory utilizzando il cmdlet `Test-Path`. Questo cmdlet restituisce un valore Booleano che indica se il percorso specificato esiste. Ecco come puoi usarlo:
 

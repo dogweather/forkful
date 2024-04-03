@@ -14,12 +14,7 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i dlaczego?
-
-Tworzenie pliku tekstowego w Google Apps Script pozwala deweloperom na trwałe przechowywanie danych, umożliwiając ich dostępność na przyszłe użycie lub analizę. Operacja ta jest powszechną praktyką dla logowania, zapisywania konfiguracji, lub eksportowania informacji w prostym, czytelnym formacie.
-
 ## Jak to zrobić:
-
 Tworzenie i zapisywanie do pliku tekstowego w Google Apps Script można zrealizować przy pomocy usługi Google DriveApp. Poniżej znajduje się przewodnik krok po kroku z przykładami kodu, aby zacząć:
 
 **Krok 1: Utwórz nowy plik tekstowy**
@@ -49,7 +44,6 @@ Ten kod odzyskuje istniejący plik używając jego unikalnego ID, a następnie d
 Uruchomienie powyższych fragmentów kodu nie wyświetla jawnego wyjścia, ale jeśli przejdziesz do Dysku Google, gdzie znajduje się plik, zobaczysz "Przyklad.txt" dla pierwszego fragmentu kodu. Dla drugiego fragmentu, jeśli otworzysz określony plik po ID, powinieneś zobaczyć oryginalne zawartości, a po nich nową linię "Dodano nową zawartość."
 
 ## Szczegółowe zagłębienie
-
 Pisanie pliku tekstowego w Google Apps Script wykorzystuje usługę DriveApp, wykorzystując zasadniczo możliwości Dysku Google do przechowywania i zarządzania plikami. Podejście to sięga początków Google Apps Script, które zostało zaprojektowane, aby łatwo automatyzować zadania w obrębie zestawu narzędzi produktywności Google, w tym Dysk.
 
 Chociaż bezpośrednia manipulacja plikami przez Google Apps Script jest prosta i ściśle zintegrowana z Google Workspace, deweloperzy pochodzący z innych środowisk (np. Python, Node.js) mogą uznać to za różniące się od pracy z lokalnym systemem plików czy innymi usługami przechowywania w chmurze, takimi jak AWS S3. Te platformy często oferują bardziej złożony zestaw możliwości manipulacji plikami, ale wymagają dodatkowego ustawienia uwierzytelniania i uprawnień.

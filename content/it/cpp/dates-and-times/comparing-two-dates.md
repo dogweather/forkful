@@ -9,9 +9,6 @@ title: Confronto tra due date
 weight: 27
 ---
 
-## What & Why?
-Comparare due date permette di stabilire quale avviene prima o dopo. È essenziale in applicazioni come prenotazioni, scadenze e timeline di eventi.
-
 ## How to:
 C++20 introduce `<chrono>` con facilmente usabili `year_month_day`, che rende il confronto di date chiaro.
 

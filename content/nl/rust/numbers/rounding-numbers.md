@@ -13,9 +13,6 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-Getallen afronden betekent ze aanpassen naar het dichtstbijzijnde hele getal of een fractie met een bepaalde precisie. Programmeurs ronden getallen af om waarden te vereenvoudigen voor menselijke leesbaarheid, om aan specificatievereisten te voldoen of om de computationele overhead in zwevendekommabewerkingen te verminderen.
-
 ## Hoe:
 Rust maakt afronden een fluitje van een cent. Bekijk deze methoden voor `f32` of `f64` types:
 

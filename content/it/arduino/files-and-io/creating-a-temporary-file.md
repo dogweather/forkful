@@ -11,9 +11,6 @@ title: Creazione di un file temporaneo
 weight: 21
 ---
 
-## What & Why?
-Creare un file temporaneo vuol dire far nascere un file destinato a breve esistenza, spesso usato per immagazzinare dati temporanei. I programmatori lo fanno per gestire dati volatili durante il funzionamento di un'applicazione, senza ingombrare la memoria a lungo termine.
-
 ## How to:
 Arduino usa una SD card per la gestione dei file. Per creare un file temporaneo, connettete prima la SD card, poi usate queste funzioni nel vostro sketch:
 

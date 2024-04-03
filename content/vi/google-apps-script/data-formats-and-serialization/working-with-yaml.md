@@ -18,12 +18,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---
 
-## Làm Gì và Tại Sao?
-
-YAML, viết tắt của "YAML Ain't Markup Language," là một chuẩn hóa dữ liệu dễ đọc cho con người, thường được sử dụng để tạo các tệp cấu hình và trao đổi dữ liệu giữa các ngôn ngữ với các cấu trúc dữ liệu khác nhau. Các lập trình viên thường làm việc với YAML vì tính đơn giản và dễ đọc của nó, đặc biệt trong các dự án yêu cầu cấu hình mở rộng hoặc khi chuyển dữ liệu có cấu trúc giữa các hệ thống khác nhau.
-
 ## Làm thế nào:
-
 Mặc dù Google Apps Script (GAS) không hỗ trợ trực tiếp việc phân tích cú pháp hay chuẩn hóa YAML, bạn có thể thao tác với dữ liệu YAML bằng cách sử dụng thư viện JavaScript hoặc viết các hàm phân tích cú pháp tùy chỉnh. Để minh họa, hãy xem xét cách phân tích cú pháp một chuỗi YAML bằng một hàm tùy chỉnh, do không thể nhập trực tiếp các thư viện bên ngoài vào GAS.
 
 Giả sử bạn có một cấu hình YAML đơn giản:
@@ -81,7 +76,6 @@ Khi `testYamlParsing()` được thực thi, nó xuất ra:
 Cách tiếp cận phân tích cú pháp tùy chỉnh này khá cơ bản và có thể cần được điều chỉnh để xử lý các tệp YAML phức tạp.
 
 ## Sâu hơn nữa
-
 YAML, được phát hành lần đầu vào năm 2001, nhằm mục đích dễ đọc hơn các định dạng trước đó như XML hoặc JSON. Mặc dù sự đơn giản và dễ sử dụng của nó được đánh giá cao, việc xử lý YAML trong Google Apps Script gặp thách thức do thiếu sự hỗ trợ trực tiếp. Do đó, các lập trình viên thường phụ thuộc vào sự linh hoạt của JavaScript để phân tích cú pháp và tạo ra dữ liệu YAML. Tuy nhiên, đối với các trường hợp sử dụng phức tạp, đặc biệt là những loại có cấu trúc lồng sâu và cấu trúc dữ liệu nâng cao, phương pháp này có thể trở nên rườm rà và dễ mắc lỗi.
 
 Ngược lại, JSON được hỗ trợ một cách tự nhiên trong Google Apps Script và hầu hết các môi trường lập trình khác, mang lại một cách tiếp cận thẳng thắn hơn cho việc chuẩn hóa và giải chuẩn hóa dữ liệu mà không cần thu gọn cú pháp thêm. Cú pháp của JSON ít loằng ngoằng hơn so với YAML, làm cho nó phù hợp hơn cho việc trao đổi dữ liệu trong các ứng dụng web. Tuy nhiên, YAML vẫn phổ biến trong các tệp cấu hình và các trường hợp mà tính dễ đọc là yếu tố quan trọng nhất.

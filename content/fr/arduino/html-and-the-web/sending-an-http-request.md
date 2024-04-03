@@ -11,11 +11,7 @@ title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Envoyer une requête HTTP, c'est demander des données à un serveur web. On le fait pour interagir avec le web : récupérer de l'info, envoyer des commandes, etc.
-
 ## How to: (Comment faire :)
-
 ```Arduino
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>

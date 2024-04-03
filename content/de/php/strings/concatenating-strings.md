@@ -9,9 +9,6 @@ title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---
 
-## Was & Warum?
-String-Konkatenation verbindet einfach zwei oder mehr Strings zu einem. Programmierer nutzen das, um dynamische Textausgaben zu erzeugen oder Daten aus verschiedenen Quellen zu kombinieren.
-
 ## How to:
 PHP nutzt den Punkt (`.`), um Strings zu verketten. Hier ein paar Schnipsel:
 

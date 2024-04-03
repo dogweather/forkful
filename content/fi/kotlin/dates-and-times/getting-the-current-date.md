@@ -14,10 +14,8 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mitä & Miksi?
-Ohjelmoinnissa nykyisen päivämäärän hankkiminen on perustehtävä, joka mahdollistaa kehittäjille pääsyn nykyisen päivämäärän tarkastelemiseen, näyttämiseen tai manipulointiin sovelluksissaan. Tämä ominaisuus on ratkaisevan tärkeä kaikkea varten lokituksesta ja tapahtumien aikaleimoista laskelmiin, jotka perustuvat päivämääriin.
-
 ## Kuinka:
+
 
 ### Käyttäen vakio Kotlinia
 Kotlinilla ei ole omaa päivämäärän ja ajan API:a, mutta se nojautuu Java Standard Libraryyn tämän toiminnallisuuden osalta. Näin voit hankkia nykyisen päivämäärän:

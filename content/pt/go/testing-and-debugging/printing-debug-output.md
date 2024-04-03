@@ -14,12 +14,7 @@ title: "Imprimindo sa\xEDda de depura\xE7\xE3o"
 weight: 33
 ---
 
-## O Quê & Porquê?
-
-Na programação de computadores, "Imprimir saída de depuração" envolve produzir mensagens detalhadas de informação que ajudam os desenvolvedores a entender o fluxo de execução de seu programa ou identificar problemas. Os programadores fazem isso para diagnosticar e resolver problemas de forma mais eficiente, tornando isso uma habilidade essencial em qualquer kit de ferramentas de programação, incluindo Go.
-
 ## Como fazer:
-
 Em Go, você pode usar o pacote padrão `fmt` para imprimir saída de depuração no console. O pacote `fmt` oferece uma variedade de funções, como `Println`, `Printf` e `Print`, atendendo a diferentes necessidades de formatação.
 
 ```go
@@ -81,7 +76,6 @@ A mensagem em `debug.log` ficaria algo como isto:
 ```
 
 ## Aprofundamento
-
 Imprimir saída de depuração é uma prática de longa data na programação de computadores, com sua implementação variando entre diferentes linguagens. Em Go, os pacotes padrão da biblioteca `fmt` e `log` fornecem opções diretas e versáteis. Enquanto o pacote `fmt` é suficiente para necessidades básicas de depuração, o pacote `log` oferece funcionalidade aprimorada como níveis de log e destinos de saída configuráveis.
 
 Além disso, à medida que as aplicações se tornam mais complexas, frameworks de log como `zap` e `logrus` podem oferecer recursos mais avançados como log estruturado e melhor desempenho. Esses pacotes de terceiros dão aos desenvolvedores a flexibilidade de adaptar sua estratégia de log às suas necessidades específicas.

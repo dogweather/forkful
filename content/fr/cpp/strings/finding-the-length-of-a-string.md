@@ -11,9 +11,6 @@ title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---
 
-## What & Why?
-Trouver la longueur d'une chaîne de caractères signifie compter le nombre de caractères qu'elle contient. Les programmeurs font cela pour manipuler les textes avec précision, comme valider des entrées ou gérer la mémoire.
-
 ## How to:
 Utilisez `std::string` et sa méthode `length()` pour obtenir la taille facilement.
 

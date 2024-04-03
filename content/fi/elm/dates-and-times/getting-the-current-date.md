@@ -11,9 +11,6 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## What & Why? ("Mitä & Miksi?")
-Saada nykyinen päivämäärä tarkoittaa kellonaikaan sidotun päivämäärätiedon hyödyntämistä. Käytämme tätä toiminnallisuutta esimerkiksi lokeissa, aikaleimoissa tai käyttäjän toiminnan ajastamisessa.
-
 ## How to: ("Kuinka tehdään:")
 Elmissä työskennellessä voit käyttää `Time` moduulia nykyisen päivämäärän saamiseksi. Tässä pikainen esimerkki:
 

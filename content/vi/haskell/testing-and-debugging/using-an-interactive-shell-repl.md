@@ -15,9 +15,6 @@ title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---
 
-## Cái gì & Tại sao?
-Một shell tương tác, hay REPL (Read-Eval-Print Loop), trong Haskell cho phép bạn chạy các đoạn mã trực tiếp. Đó là sân chơi cho phản hồi nhanh chóng, kiểm thử các hàm, và học ngôn ngữ.
-
 ## Làm thế nào:
 Để bắt đầu môi trường tương tác GHCi (Glasgow Haskell Compiler's interactive environment), chỉ cần gõ `ghci` trong terminal của bạn. Dưới đây là cách sử dụng nó:
 

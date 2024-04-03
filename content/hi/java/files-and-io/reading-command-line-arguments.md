@@ -25,12 +25,7 @@ title: "\u0915\u092E\u093E\u0902\u0921 \u0932\u093E\u0907\u0928 \u0906\u0930\u09
 weight: 23
 ---
 
-## What & Why? (क्या और क्यों?)
-
-Command line arguments वो पैरामीटर होते हैं जो हम Java प्रोग्राम को रन करते वक्त pass करते हैं। ये इसलिए ज़रूरी होते हैं क्योंकि इनकी मदद से हम program behavior को फ्लेक्सिबली कंट्रोल कर पाते हैं।
-
 ## How to: (कैसे करें:)
-
 जब हम Java में मेन मेथड लिखते हैं, `String[] args` उसका पार्ट होता है। ये `args` array में command line arguments स्टोर होते हैं। नीचे देखो कैसे:
 
 ```java
@@ -55,17 +50,15 @@ Argument: World
 ```
 
 ## Deep Dive (गहराई में जानकारी):
-
 Command line arguments इस्तेमाल करने की प्रक्रिया पुरानी है, और ये लगभग सभी programming languages में मौजूद है। इनका प्रयोग करके हम settings या फाइल के paths को dynamically specify कर सकते हैं। यह flexibility प्रोग्राम को बहुत powerful बनाती है।
 
 अलग methods भी हैं command line से डेटा प्राप्त करने के लिए, जैसे कि `Scanner` class या Java NIO पैकेज।
 
 लेकिन जब एप्लिकेशन को कस्टमाइज़ करना हो या किसी script के साथ इंटरफेस करना हो, command line arguments का प्रयोग बहुत आसान और एफेक्टिव होता है। 
 
-विशेष implementation की बात करें तो, Java `main` मेथड का `String[] args` पैरामीटर हमेशा non-null होता है। अगर कोई arguments पास नहीं किया गया, तो भी यह एक खाली `String` array होता है। 
+विशेष implementation की बात करें तो, Java `main` मेथड का `String[] args` पैरामीटर हमेशा non-null होता है। अगर कोई arguments पास नहीं किया गया, तो भी यह एक खाली `String` array होता है।
 
 ## See Also (और भी देखें):
-
 - [Oracle Java Documentation on Command-Line Arguments](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
 - [Java 11 Docs](https://docs.oracle.com/en/java/javase/11/)
 - [Stack Overflow Discussion on Java Arguments](https://stackoverflow.com/questions/890966/what-are-command-line-arguments-in-java)

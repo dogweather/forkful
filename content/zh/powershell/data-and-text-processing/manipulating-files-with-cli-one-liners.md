@@ -18,11 +18,8 @@ title: "\u4F7F\u7528\u547D\u4EE4\u884C\u4E00\u884C\u547D\u4EE4\u64CD\u4F5C\u6587
 weight: 31
 ---
 
-## 什么 & 为什么？
-
-使用 PowerShell 中的 CLI 单行命令操作文件，是关于如何直接从命令行快速更改、移动或获取文件数据。程序员这样做是为了效率；它比导航 GUI 或为简单任务编写冗长的脚本要快。
-
 ## 如何操作:
+
 
 ### 读取文件
 要快速显示文件的内容，使用 `Get-Content` 命令：
@@ -67,7 +64,6 @@ Get-ChildItem -Path .\*.log | Copy-Item -Destination C:\Logs
 ```
 
 ## 深入了解
-
 历史上，PowerShell 被引入作为传统命令提示符在 Windows 中的更强大替代品，提供了前所未有的对系统内部和数据存储的访问。它结合了命令行的速度与脚本的灵活性，成为 Windows 系统管理员和开发人员不可或缺的工具。
 
 PowerShell 用于文件操作的替代工具包括 Unix 基础工具，如 `sed`、`awk`、`grep`，以及 Linux 和 MacOS 用户的 `bash` 脚本。虽然这些工具非常强大，各有其优点，但 PowerShell 为 Windows 环境提供了深度整合。

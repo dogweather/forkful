@@ -10,9 +10,6 @@ title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---
 
-## What & Why?
-Mitä ja miksi? Lasketaan tulevaisuuden tai menneisyyden päivämääriä, koska elämme kalentereissa ja aikatauluissa. Ohjelmoijina tarvitsemme tätä toimintoa määrittämään eräpäiviä, muistutuksia tai aikavälejä.
-
 ## How to:
 Miten:
 

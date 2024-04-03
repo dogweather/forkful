@@ -12,12 +12,7 @@ title: Scrittura su errore standard
 weight: 25
 ---
 
-## Cosa & Perché?
-
-Scrivere sull'errore standard (stderr) in Dart consiste nell'inviare messaggi di errore e diagnostica a un flusso separato, distinto dall'output standard (stdout). I programmatori fanno ciò per differenziare tra l'output normale del programma e gli errori o i messaggi di avvertimento, permettendo così un debugging e un logging più semplici.
-
 ## Come fare:
-
 In Dart, scrivere su stderr è semplice utilizzando l'oggetto `stderr` disponibile in `dart:io`. Ecco un esempio base:
 
 ```dart

@@ -10,9 +10,6 @@ title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---
 
-## Vad & Varför?
-Att ta bort tecken som matchar ett mönster är att filtrera bort oönskade tecken ur en textsträng. Programmerare gör detta för datarensning, formatanpassning eller för att extrahera specifik information.
-
 ## Hur man gör:
 ```elixir
 # Elixir (1.14.0)

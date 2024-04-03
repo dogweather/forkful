@@ -16,12 +16,7 @@ title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---
 
-## Cái gì & Tại sao?
-
-Chuyển đổi một ngày thành chuỗi thay đổi đối tượng ngày thành định dạng văn bản. Lập trình viên làm điều này để dễ đọc hơn, lưu trữ hoặc hiển thị ngày cho người dùng.
-
 ## Làm thế nào:
-
 ```TypeScript
 // Chuyển đổi đơn giản sử dụng toLocaleString()
 let date = new Date();
@@ -42,7 +37,6 @@ console.log(customString); // "April 3, 2023"
 ```
 
 ## Tìm hiểu sâu hơn
-
 Hãy nghĩ về định dạng chuỗi ngày như là hộ chiếu của nó, cho phép nó di chuyển qua các ranh giới hệ thống - từ cơ sở dữ liệu đến trang web. Lịch sử, chúng ta đã gặp vấn đề với các định dạng ngày không nhất quán, đó là lý do tại sao các tiêu chuẩn như ISO 8601 được giới thiệu. Điều này làm cho việc trao đổi ngày trở nên đơn giản trên toàn thế giới.
 
 Các phương pháp thay thế cho các phương pháp được xây dựng sẵn? Thư viện! Moment.js đã là lựa chọn hàng đầu trong nhiều năm, nhưng ngày nay date-fns hoặc Luxon được ưa chuộng hơn - chúng nhẹ hơn và có tính mô-đun cao hơn.
@@ -50,7 +44,6 @@ Các phương pháp thay thế cho các phương pháp được xây dựng sẵ
 Bản chất của những chuyển đổi này nằm ở các phương pháp được sử dụng. `toLocaleString()` dựa vào ngôn ngữ của người dùng, làm cho nó hoàn hảo để hiển thị cho người dùng. `toISOString()`, tuy nhiên, giữ trung thành với định dạng ISO 8601, điều này rất tuyệt vời cho việc tuần tự hóa và lưu trữ ngày trong một định dạng tiêu chuẩn. Và `toLocaleDateString()` cho bạn kiểm soát về hình thức, phục vụ cho nhu cầu phong cách cụ thể.
 
 ## Xem thêm
-
 - [Đối tượng Ngày - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 - [Tài liệu date-fns](https://date-fns.org/docs/Getting-Started)
 - [Tài liệu Luxon](https://moment.github.io/luxon/)

@@ -9,9 +9,6 @@ title: Scaricare una pagina web
 weight: 42
 ---
 
-## What & Why?
-Scaricare una pagina web significa prelevare dati da un sito e salvarli localmente. I programmatori lo fanno per analizzare il contenuto, testare le prestazioni o monitorare la presenza di cambiamenti.
-
 ## How to:
 Per scaricare una pagina web con PHP, puoi usare `file_get_contents` o cURL. Ecco un esempio semplice:
 

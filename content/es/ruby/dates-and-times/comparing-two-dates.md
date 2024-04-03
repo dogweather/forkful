@@ -11,9 +11,6 @@ title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---
 
-## Qué & Por Qué?
-Comparar dos fechas es verificar cómo se relacionan temporalmente: si una es anterior, posterior o la misma que la otra. Los programadores lo hacen para validar plazos, calcular períodos o gestionar eventos.
-
 ## Cómo hacerlo:
 Ruby facilita la comparación de fechas con su biblioteca 'date'. Aquí un ejemplo sencillo:
 

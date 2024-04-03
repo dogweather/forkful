@@ -11,9 +11,6 @@ title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---
 
-## What & Why?
-Kommandoradsargument låter användare ge instruktioner till ett program när de startar det. Programmerare använder detta för att göra program flexibla och anpassningsbara till olika situationer.
-
 ## How to:
 Läs in argument från kommandoraden i Lua så här:
 

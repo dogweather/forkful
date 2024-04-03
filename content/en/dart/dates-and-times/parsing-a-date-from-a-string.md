@@ -10,9 +10,6 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-Parsing a date from a string in Dart involves converting textual representation of dates and times into a `DateTime` object. This operation is essential for applications dealing with scheduling, data analysis, or any feature requiring date manipulation, ensuring that date-related data is correctly understood and processed by the program.
-
 ## How to:
 Dart's core library simplifies date parsing through the `DateTime` class. For straightforward cases where you know the format of the date string, you can use `DateTime.parse()` method. However, for more complex scenarios or when dealing with multiple formats, the `intl` package, specifically the `DateFormat` class, becomes invaluable.
 

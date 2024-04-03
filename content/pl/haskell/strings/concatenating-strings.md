@@ -10,12 +10,7 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## Co i dlaczego?
-
-Łączenie napisów to po prostu sklejanie ich końców. Programiści robią to, aby tworzyć nowe ciągi znaków – ścieżki do plików, wiadomości, dynamiczne teksty w aplikacjach.
-
 ## Jak to zrobić:
-
 ```Haskell
 main :: IO ()
 main = do
@@ -33,12 +28,10 @@ Data: (2023,3,15)
 ```
 
 ## Głębsze spojrzenie:
-
 String w Haskell to lista znaków, więc łączenie napisów odbywa się przez konkatenację list. Operator `++` jest standardem od początku języka. Alternatywą może być `concat`, gdy łączymy listę stringów, czy `Data.Text`, biblioteka dla dużych napisów.
 
 Haskell był zaprojektowany z myślą o leniwej ewaluacji, więc połączone napisy nie są od razu tworzone w pamięci, co jest wydajne. Należy jednak pamiętać, że nadużycie `++` może prowadzić do kiepskiej wydajności dla dużych napisów ze względu na konieczność przechodzenia przez całą listę. Tutaj z pomocą przychodzi `Data.Text`, oferując szybszą alternatywę ze stałym czasem dorzucania na końcu.
 
 ## Zobacz również:
-
 - [Haskell Documentation on Strings](https://haskell.org/documentation)
 - [Hackage: Data.Text library](https://hackage.haskell.org/package/text)

@@ -11,9 +11,6 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä & Miksi?
-Virheenkäsittely antaa skriptillesi mahdollisuuden käsitellä odottamattomia tilanteita sulavasti. Teemme sen hallitaksemme epäonnistumisia aiheuttamatta käyttäjillemme harmaita hiuksia.
-
 ## Miten:
 Virheiden kiinniottamiseksi Fishissä, nojaa `status`-komentoon ja ehtolauseisiin. Sanokaamme, että `ping` epäonnistuu; tässä on miten voit havaita sen:
 

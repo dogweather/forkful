@@ -11,9 +11,6 @@ title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---
 
-## Hva & Hvorfor?
-Å starte et nytt prosjekt betyr å lage et nytt skript eller program fra bunnen av. Programmerere gjør dette for å skape tilpassede løsninger, lære nye ferdigheter eller utforske teknologiens grenser.
-
 ## Slik går du frem:
 Her er et simpelt blinkende LED eksempel:
 

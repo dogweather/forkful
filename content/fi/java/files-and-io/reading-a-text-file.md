@@ -9,9 +9,6 @@ title: Tekstitiedoston lukeminen
 weight: 22
 ---
 
-## Mitä & Miksi?
-Tekstitiedoston lukeminen tarkoittaa tiedon hakemista tiedostosta ohjelmallasi. Koodarit tekevät tätä datan käsittelyyn, analyysiin ja tiedonsiirtoon.
-
 ## Näin se tehdään:
 ```java
 import java.nio.file.*;

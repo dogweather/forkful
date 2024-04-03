@@ -10,16 +10,10 @@ title: Capitalizing a string
 weight: 2
 ---
 
-## What & Why?
-
-Capitalizing a string in Swift modifies the given string so that its first character is uppercase, and the remaining characters are lowercase. Programmers do this for purposes like formatting names or sentences according to grammatical rules or user interface standards.
-
 ## How to:
-
 Swift's `String` structs come with a couple of built-in methods to manipulate the case of strings. Here are a few approaches to capitalize strings in Swift, including the use of standard methods and third-party libraries if necessary.
 
 ### Using built-in methods
-
 To capitalize the first letter of a string and lowercasing the rest:
 
 ```swift
@@ -37,7 +31,6 @@ print(capitalizedSentence) // Output: "Hello, World"
 ```
 
 ### Using a third-party library
-
 While Swift's standard library is quite comprehensive, some specific capitalization formats might require more complex operations or can be simplified using third-party libraries. One of the popular ones for string manipulation is SwiftRichString. (Note: Always ensure to include third-party libraries through Swift Package Manager, CocoaPods, or Carthage, and import them in your file.)
 
 First, you would need to add `SwiftRichString` to your project. Once installed, you can use it to perform various string operations, including specific capitalization needs. However, as of now, Swift's built-in methods adequately cover most capitalization use cases without needing external libraries for just capitalizing strings.

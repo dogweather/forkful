@@ -14,9 +14,6 @@ title: "Ber\xE4kning av ett datum i framtiden eller f\xF6rflutet"
 weight: 26
 ---
 
-## Vad & Varför?
-Att beräkna ett datum i framtiden eller förflutet innebär att bestämma ett datum som är ett angivet antal dagar, månader eller år bort från ett givet datum. Programmerare behöver ofta denna funktionalitet för att automatisera påminnelser, prenumerationer, utgångsdatum och schemaläggning av uppgifter i olika applikationer.
-
 ## Hur man gör:
 I Visual Basic for Applications (VBA) är den primära funktionen som används för att beräkna framtida eller förflutna datum `DateAdd()`. Denna funktion lägger till ett angivet tidsintervall till ett datum och returnerar ett nytt datum.
 

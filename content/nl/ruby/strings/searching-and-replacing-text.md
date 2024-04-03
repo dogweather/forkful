@@ -12,9 +12,6 @@ title: Tekst zoeken en vervangen
 weight: 10
 ---
 
-## Wat & Waarom?
-Zoeken en vervangen van tekst is het verwisselen van specifieke woorden of zinnen met alternatieven in een string. Programmeurs doen dit om gegevens bij te werken, fouten te corrigeren of de opmaak te wijzigen - het houdt de zaken accuraat en opgeruimd.
-
 ## Hoe te:
 Ruby maakt het makkelijk. Gebruik `gsub` om tekst wereldwijd te vervangen, of `sub` voor een enkele instantie. Hier is een snelle blik:
 

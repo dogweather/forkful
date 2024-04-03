@@ -12,9 +12,6 @@ title: "\u0412\u0438\u0434\u0430\u043B\u0435\u043D\u043D\u044F \u0441\u0438\u043
 weight: 5
 ---
 
-## What & Why? / Що таке та навіщо?
-Deleting characters matching a pattern means finding specific sets of characters in a string and removing them. Programmers do this for data cleaning, formatting, or preparing input for further processing.
-
 ## How to: / Як це зробити:
 ```TypeScript
 function deleteMatchingChars(input: string, pattern: RegExp): string {

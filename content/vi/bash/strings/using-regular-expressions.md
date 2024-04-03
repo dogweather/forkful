@@ -14,9 +14,6 @@ title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---
 
-## Cái gì và Tại sao?
-Biểu thức chính quy (regex) là những mẫu định nghĩa tiêu chí tìm kiếm cho văn bản. Lập trình viên sử dụng chúng để tìm kiếm, thay thế, hoặc trích xuất các phần từ chuỗi dựa trên những mẫu này—nghĩ đến việc tìm và thay thế phức tạp được nâng cấp.
-
 ## Cách thực hiện:
 ```Bash
 # Tìm kiếm một mẫu

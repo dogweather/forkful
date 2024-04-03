@@ -11,9 +11,6 @@ title: Reading a text file
 weight: 22
 ---
 
-## What & Why?
-Reading a text file in Swift means grabbing the content from a file stored on disk. Programmers do this to work with saved data like configurations, logs, or user-generated content.
-
 ## How to:
 To read text from a file in Swift, use `String` class' convenience methods. Here's a bite-sized example:
 

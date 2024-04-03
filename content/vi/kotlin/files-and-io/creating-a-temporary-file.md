@@ -18,9 +18,6 @@ title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Cái gì & Tại sao?
-Tạo một tệp tạm thời là tạo ra một tệp được dự định sống ngắn hạn trên hệ thống tệp của bạn, thường được sử dụng cho những việc như dữ liệu trung gian. Các lập trình viên thực hiện điều này chủ yếu bởi vì nó có thể giúp quản lý không gian, giảm xung đột và tăng cường bảo mật trong quá trình chạy.
-
 ## Làm thế nào:
 Dưới đây là cách nhanh chóng để tạo một tệp tạm thời bằng Kotlin:
 

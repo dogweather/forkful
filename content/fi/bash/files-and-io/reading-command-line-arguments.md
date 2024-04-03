@@ -11,9 +11,6 @@ title: Komennoriviparametrien lukeminen
 weight: 23
 ---
 
-## What & Why?
-Komennon rivin argumentit ovat syötteitä, joita ohjelmat saavat käynnistyessään komentoriviltä. Ne mahdollistavat ohjelmalle eri tilanteisiin mukautumisen ilman koodimuutoksia.
-
 ## How to:
 ```Bash
 #!/bin/bash

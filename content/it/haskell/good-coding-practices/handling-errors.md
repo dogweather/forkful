@@ -10,9 +10,6 @@ title: Gestione degli errori
 weight: 16
 ---
 
-## Cosa e Perché?
-La gestione degli errori nella programmazione riguarda la gestione dell'inaspettato — cose che possono andare storte. I programmatori lo fanno per assicurarsi che i loro programmi possano affrontare queste situazioni con grazia, senza bloccarsi o produrre risultati errati.
-
 ## Come fare:
 Haskell gestisce in modo robusto gli errori attraverso tipi come `Maybe` e `Either`. Ecco uno sguardo rapido:
 

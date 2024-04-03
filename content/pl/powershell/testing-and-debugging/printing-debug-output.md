@@ -11,9 +11,6 @@ title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---
 
-## What & Why? (Co i Dlaczego?)
-Wypisywanie informacji debugowania to sposób pokazywania wewnętrznej pracy programu. Programiści robią to, by śledzić błędy i monitorować, co się dzieje podczas wykonywania kodu.
-
 ## How to: (Jak to zrobić:)
 ```PowerShell
 # Prosty przykład wypisywania tekstu

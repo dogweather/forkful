@@ -11,9 +11,6 @@ title: "H\xE4mta en webbsida"
 weight: 42
 ---
 
-## What & Why?
-Att ladda ner en webbsida innebär att hämta dess innehåll över internet så att det kan användas lokalt på din dator. Programmerare gör detta för att bearbeta data, testa webbsidor eller för att skapa en kopia av sidans innehåll.
-
 ## How to:
 Elixir gör det lätt att ladda ner webbsidor med hjälp av biblioteket HTTPoison. Här är ett enkelt exempel som visar hur du gör:
 

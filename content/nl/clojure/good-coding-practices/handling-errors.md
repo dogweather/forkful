@@ -13,9 +13,6 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-Foutafhandeling gaat over het beheren van het onverwachte in programma's - zoals een uitsmijter die te maken heeft met lastpakken. Programmeurs houden van een soepele afhandeling; foutafhandeling helpt om de problemen in toom te houden, zodat hun code niet struikelt en valt wanneer ze met het onverwachte worden geconfronteerd.
-
 ## Hoe te:
 Clojure, net als zijn Lisp-voorouders, leunt op uitzonderingen voor het omgaan met fouten. Hier zie je wat je in je mars hebt als de zaken mis gaan.
 

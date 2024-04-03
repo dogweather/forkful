@@ -14,12 +14,7 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co i dlaczego?
-
-Obsługa błędów w Google Apps Script dotyczy przewidywania, przechwytywania i reagowania na wyjątki lub błędy, które występują podczas wykonywania skryptu. Programiści implementują ją, aby zabezpieczyć skrypty przed nieoczekiwanymi awariami, zapewniając płynniejsze, przyjazne dla użytkownika aplikacje, które mogą elegancko zarządzać błędami lub rejestrować je bez nagłych awarii.
-
 ## Jak to zrobić:
-
 Google Apps Script, bazując na JavaScript, pozwala nam używać tradycyjnego wyrażenia `try-catch` do obsługi błędów, wraz z `finally`, jeśli wymagane jest sprzątanie bez względu na sukces lub błąd.
 
 ```javascript
@@ -57,7 +52,6 @@ Funkcja zakończona.
 Google Apps Script wspiera również generowanie niestandardowych błędów za pomocą obiektu `Error` i przechwytywanie konkretnych typów błędów, jeśli jest to potrzebne. Jednak brak zaawansowanej kategoryzacji błędów czyni niezbędnym poleganie na komunikatach o błędach dla szczegółowości.
 
 ## Pogłębiona analiza
-
 Historycznie, obsługa błędów w językach skryptowych, takich jak JavaScript (i przez rozszerzenie, Google Apps Script), była mniej zaawansowana niż w niektórych językach kompilowanych, które oferują funkcje takie jak szczegółowe hierarchie wyjątków i kompleksowe narzędzia debugowania. Model Google Apps Script jest stosunkowo prosty, wykorzystując paradigmat JavaScriptu `try-catch-finally`. Ta prostota wpisuje się w projekt języka mającego na celu szybki rozwój i wdrażanie aplikacji o małej do średniej skali w ekosystemie Google’a, ale czasami może ograniczać programistów mających do czynienia ze skomplikowanymi scenariuszami błędów.
 
 W bardziej skomplikowanych aplikacjach programiści często uzupełniają natywną obsługę błędów Google Apps Script o niestandardowe mechanizmy logowania i raportowania błędów. Może to obejmować zapisywanie błędów do arkusza Google do celów audytu lub korzystanie z usług zewnętrznych rejestrujących błędy poprzez usługi URL Fetch w Google Apps Script, aby wysyłać szczegóły błędu poza środowisko skryptu.

@@ -13,9 +13,6 @@ title: Tests Schreiben
 weight: 36
 ---
 
-## Was & Warum?
-Das Testen in Ruby dient dazu, zu verifizieren, dass Ihr Code unter verschiedenen Bedingungen wie erwartet funktioniert. Programmierer erstellen Tests, um die Korrektheit sicherzustellen, Regressionen zu verhindern und das Refactoring zu erleichtern, mit dem Ziel, robuste und wartbare Anwendungen zu erreichen.
-
 ## Wie:
 Ruby verfügt über eine eingebaute Bibliothek namens `Test::Unit` für das Schreiben von Unit-Tests, die Testpraktiken in übersichtlichen Strukturen kapseln. Die Ruby-Gemeinschaft neigt jedoch oft zu Drittbibliotheken wie RSpec und Minitest aufgrund ihrer gesteigerten Ausdrucksfähigkeit und Flexibilität.
 

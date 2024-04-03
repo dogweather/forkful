@@ -10,12 +10,7 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---
 
-## Hva & Hvorfor?
-
-Å sende en HTTP-forespørsel med grunnleggende autentisering betyr å inkludere brukernavn og passord i en forespørsels header for å tilgangskontrollere. Programmerere gjør dette for å sikre beskyttede ressurser på nettet.
-
 ## Hvordan:
-
 I Elixir kan `HTTPoison` benyttes for HTTP-forespørsler med grunnleggende autentisering. Her er et eksempel:
 
 ```elixir
@@ -46,7 +41,6 @@ Kjører du denne funksjonen får du et svar som dette:
 ```
 
 ## Dypdykk
-
 Grunnleggende autentisering har eksistert siden tidlig i HTTPs historie, spesifisert i RFC 7617. Enkelt, men mindre sikker enn moderne metoder, da det sender bruker-info i klar tekst (base64-kodet, ikke kryptert). 
 
 Alternativer inkluderer OAuth og API-nøkler. Ved å bruke en egnet bibliotek som `HTTPoison` eller `Tesla`, blir implementering av disse autentiseringsmetodene mer håndterbar i Elixir.
@@ -54,7 +48,6 @@ Alternativer inkluderer OAuth og API-nøkler. Ved å bruke en egnet bibliotek so
 For å forsterke sikkerheten, bør grunnleggende autentisering alltid brukes over HTTPS. Elixir's støtte for SSL gjør dette enkelt i både `HTTPoison` og `Tesla`. Potensielle feil i koden kan føre til lekkasje av sensitiv info; god håndtering av auth headeren er essensielt.
 
 ## Se Også
-
 - Elixir's HTTPoison dokumentasjon: https://hexdocs.pm/httpoison
 - RFC 7617, "The 'Basic' HTTP Authentication Scheme": https://tools.ietf.org/html/rfc7617
 - Elixir's Tesla dokumentasjon: https://github.com/teamon/tesla

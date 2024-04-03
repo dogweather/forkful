@@ -11,9 +11,6 @@ title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
 
-## What & Why? (Mitä ja miksi?)
-Tulostus debug-viestinnässä tarkoittaa koodin suorituksen aikana tuotettujen viestien näyttämistä. Kehittäjät käyttävät sitä virheiden jäljittämiseen ja ohjelman toiminnan ymmärtämiseen.
-
 ## How to: (Kuinka tehdä:)
 PowerShellissa debug-viestejä voi tulostaa `Write-Host`, `Write-Output`, `Write-Verbose`, `Write-Debug` ja `Write-Information` komentojen avulla. Tässä muutama esimerkki:
 

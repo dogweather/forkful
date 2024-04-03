@@ -14,12 +14,7 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i dlaczego?
-
-Zapisywanie do pliku tekstowego w Elixirze to podstawowa umiejętność dla programistów, pozwalająca na trwałość danych, logowanie lub eksportowanie treści czytelnych dla człowieka. Programiści wykonują to, aby zapisać stan aplikacji, informacje do debugowania, konfiguracje lub jakiekolwiek wymianę danych pomiędzy systemami, które preferują wszechobecny format, jakim jest tekst.
-
 ## Jak to zrobić:
-
 Elixir ułatwia pracę z plikami dzięki wbudowanym modułom. Podstawowym sposobem na zapis do pliku jest użycie funkcji `File.write/2` lub `File.write!/2`, gdzie pierwsza zwraca krotkę `:ok` lub `:error`, a druga zgłasza błąd w przypadku niepowodzenia.
 
 Oto prosty przykład:

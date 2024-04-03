@@ -15,12 +15,7 @@ title: "T\u1EA3i trang web"
 weight: 42
 ---
 
-## Cái gì & Tại sao?
-
-Tải một trang web nghĩa là lấy nội dung của trang đó, như HTML, CSS và JavaScript, một cách lập trình. Các lập trình viên làm việc này để xử lý dữ liệu, theo dõi sự thay đổi, hoặc kiểm tra ứng dụng web của họ.
-
 ## Cách làm:
-
 ```java
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -58,7 +53,6 @@ public class WebPageDownloader {
 ```
 
 ## Sâu hơn
-
 Ngày xưa, việc tải một trang web là cơ bản—HTTP đơn giản, trang web chủ yếu là HTML tĩnh. Web hiện nay phức tạp—nghĩ về HTTPS, nội dung dựa trên JavaScript, và AJAX cả mớ.
 
 Đối với nội dung tĩnh, `java.net.URL` và `java.net.HttpURLConnection` là lựa chọn đơn giản—không rườm rà, chỉ việc làm. Nhưng nếu bạn nhắm tới các trang đầy nội dung động được tải bởi JavaScript, những class này không đủ, và bạn phải nhìn vào các công cụ như Selenium hoặc HtmlUnit thay thế.
@@ -68,7 +62,6 @@ Ngày xưa, việc tải một trang web là cơ bản—HTTP đơn giản, tran
 Nhớ về chính sách lịch sự: đừng tấn công một trang web bằng những yêu cầu liên tục, nếu không bạn sẽ bị cấm. Và chắc chắn rằng bạn đang tuân thủ hướng dẫn `robots.txt` của trang web.
 
 ## Xem thêm
-
 - Thư viện [Jsoup](https://jsoup.org/) cho việc phân tích và trích xuất HTML.
 - [Selenium WebDriver](https://www.selenium.dev/documentation/en/webdriver/) cho những nhiệm vụ phức tạp hơn bao gồm thực thi JavaScript.
 - Hướng dẫn về [HttpURLConnection](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html) cho những ai muốn biết chi tiết về cách xử lý HTTP tích hợp trong Java.

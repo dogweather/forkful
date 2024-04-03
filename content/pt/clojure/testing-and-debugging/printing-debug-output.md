@@ -12,9 +12,6 @@ title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---
 
-## O Que é e Por Que Fazer?
-Imprimir saídas de depuração é essencialmente escrever informações dos seus programas para ajudar a entender o que está a acontecer enquanto o código corre. Programadores fazem isso para rastrear e resolver bugs mais rapidamente – é como ter uma conversa franca com o seu código.
-
 ## Como Fazer:
 Para imprimir algo no console em Clojure, você pode usar a função `println`. Aqui está o básico:
 

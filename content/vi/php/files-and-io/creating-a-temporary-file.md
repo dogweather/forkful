@@ -16,9 +16,6 @@ title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Cái Gì & Tại Sao?
-Việc tạo một tệp tạm thời trong PHP có nghĩa là tạo ra một tệp sẽ tồn tại trong thời gian ngắn để bạn sử dụng, sau đó, cái tệp đó sẽ biến mất. Tại sao lại làm vậy? Điều đó tuyệt vời cho việc xử lý các khối dữ liệu trong quá trình xử lý, giữ thông tin nhạy cảm không bị lưu trữ trên đĩa, và đảm bảo không có dấu vết nào còn lại sau khi script của bạn kết thúc.
-
 ## Làm Thế Nào:
 PHP giúp bạn tạo tệp tạm thời với hàm `tmpfile()`, hàm này tạo một tệp cho bạn trong thư mục temp của hệ thống. Dưới đây là một ví dụ nhanh:
 

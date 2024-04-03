@@ -11,9 +11,6 @@ title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---
 
-## Vad & Varför?
-Att läsa kommandoradsargument innebär att man hämtar och använder de värden som skickas till ett program vid start. Programmerare gör detta för att tillåta användare att påverka programmets beteende utan att ändra koden.
-
 ## Hur gör man:
 ```Clojure
 ; För att starta, anta att du sparar detta i en fil som heter `cli-args.clj`

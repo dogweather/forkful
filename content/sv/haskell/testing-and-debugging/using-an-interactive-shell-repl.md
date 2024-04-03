@@ -11,9 +11,6 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-En interaktiv skal, eller REPL (Read-Eval-Print Loop), i Haskell låter dig köra kodsnuttar live. Det är en lekplats för snabb feedback, testning av funktioner och inlärning av språket.
-
 ## Hur:
 För att starta GHCi (Glasgow Haskell Compiler's interaktiva miljö), skriv helt enkelt `ghci` i din terminal. Så här använder du det:
 

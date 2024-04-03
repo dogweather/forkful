@@ -10,9 +10,6 @@ title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---
 
-## Was & Warum?
-String-Konkatenation ist das Zusammenfügen von zwei oder mehreren Textstücken. Das ist nötig, um dynamische Texte zu erstellen oder unterschiedliche Datenquellen sinnvoll in einem String zu kombinieren.
-
 ## How to:
 Mit TypeScript geht das so:
 

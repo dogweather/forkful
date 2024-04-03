@@ -11,9 +11,6 @@ title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---
 
-## O Que & Por quê?
-Converter uma string para minúsculas significa transformar todos os caracteres alfabéticos do texto para sua forma minúscula. Programadores fazem isso para padronizar entradas de dados, facilitando comparações e buscas insensíveis a maiúsculas/minúsculas.
-
 ## Como fazer:
 ```Rust
 fn main() {

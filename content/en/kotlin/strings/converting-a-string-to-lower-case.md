@@ -10,9 +10,6 @@ title: Converting a string to lower case
 weight: 4
 ---
 
-## What & Why?
-Converting a string to lower case means making every character in the string a lower-case character. Programmers do this for consistency when comparing, sorting, or storing text.
-
 ## How to:
 Kotlin's `toLowerCase()` function turns all characters in a string to lower case quickly. Here's how you use it:
 

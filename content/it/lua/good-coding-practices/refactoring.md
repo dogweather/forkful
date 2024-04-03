@@ -11,9 +11,6 @@ title: Rifattorizzazione
 weight: 19
 ---
 
-## Cos'è & Perché?
-Il refactoring è l'arte di modificare il codice esistente per migliorarne la struttura, la leggibilità e l'efficienza senza alterarne il comportamento esterno. I programmatori lo fanno per rendere il loro codice più manutenibile, ridurre la complessità, e spesso come passo preliminare prima di aggiungere nuove funzionalità o correggere bug.
-
 ## Come fare:
 Prendiamo una semplice funzione Lua e rifattorizziamola. Cominciamo con una funzione che calcola la somma dei numeri in una lista, ma è scritta senza prestare molta attenzione all'efficienza o alla chiarezza:
 

@@ -15,12 +15,7 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---
 
-## Gì & Tại Sao?
-
-Gửi một yêu cầu HTTP là cách mà Arduino của bạn giao tiếp với web, như yêu cầu một máy chủ gửi lại một số dữ liệu. Các lập trình viên thực hiện điều này để cho phép Arduino của họ tương tác với các API, tải nội dung web hoặc giao tiếp với các dịch vụ dựa trên internet khác.
-
 ## Làm thế nào:
-
 Làm việc với Arduino yêu cầu thư viện `WiFiNINA` cho các tính năng mạng. Dưới đây là cách gửi một yêu cầu GET đơn giản:
 
 ```Arduino
@@ -78,7 +73,6 @@ Máy chủ: Apache/2.4.1 (Unix)
 ```
 
 ## Sâu Hơn
-
 Khái niệm gửi một yêu cầu HTTP từ một vi điều khiển không phải lúc nào cũng có. Trong quá khứ, vi điều khiển thường được biết đến với các cảm biến và tương tác với thế giới vật lý. Nhưng với sự xuất hiện của IoT (Internet of Things), những thiết bị này bắt đầu cần kết nối web. Arduino giờ đây có thể sử dụng các thư viện như `WiFiNINA` để xử lý những kết nối này một cách mạnh mẽ.
 
 Tùy thuộc vào phần cứng của bạn, có những lựa chọn thay thế cho `WiFiNINA`. Chẳng hạn, thư viện `Ethernet` tận dụng các kết nối có dây, trong khi `WiFi101` làm việc với các lá chắn WiFi cũ hơn.
@@ -86,7 +80,6 @@ Tùy thuộc vào phần cứng của bạn, có những lựa chọn thay thế
 Về mặt triển khai, việc tạo một yêu cầu HTTP có vẻ đơn giản, nhưng việc bắt tay, tiêu đề và các phương thức HTTP (GET, POST, v.v.) là một phần của một giao thức nghiêm ngặt cho phép các thiết bị giao tiếp qua web. Arduino giấu đi phần lớn sự phức tạp này, nhưng việc hiểu biết cơ bản giúp giải quyết sự cố khi mọi thứ không diễn ra suôn sẻ.
 
 ## Xem Thêm
-
 - Tài liệu thư viện `WiFiNINA` của Arduino: https://www.arduino.cc/en/Reference/WiFiNINA
 - Primer giao thức HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP
 - Trung tâm dự án Arduino cho các dự án kết nối web: https://create.arduino.cc/projecthub

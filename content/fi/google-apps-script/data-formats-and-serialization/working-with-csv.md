@@ -14,14 +14,10 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä ja miksi?
-
-CSV-tiedostojen (pilkuilla erotetut arvot) käsittely Google Apps Scriptillä sisältää tekstimuotoisten tiedostojen lukemisen, muokkaamisen ja kirjoittamisen, joissa jokainen rivi esittää datatietuetta, jonka arvot on erotettu pilkuilla. Ohjelmoijat tekevät näin helposti vaihtaakseen tietoja eri sovellusten, tietokantojen tai ohjelmointikielten välillä CSV:n laajan hyväksynnän ansiosta yksinkertaisena, tekstipohjaisena datanvaihtoformaattina.
-
 ## Kuinka:
 
-### CSV-datan lukeminen
 
+### CSV-datan lukeminen
 CSV-datatiedoston lukemiseksi Google Drivesta, sinun tulee ensin hankkia tiedoston sisältö merkkijonona ja sitten jäsentää se. Google Apps Script tekee tiedoston sisällön noutamisen suoraviivaiseksi DriveApp-palvelun avulla.
 
 ```javascript
@@ -39,7 +35,6 @@ function readCSV() {
 ```
 
 ### CSV-datan kirjoittaminen
-
 CSV:n luominen ja siihen kirjoittaminen merkitsee merkkijonon rakentamista, jossa on pilkulla erotetut arvot ja rivinvaihdot, jonka jälkeen tallennetaan tai viedään se. Tämä esimerkki osoittaa uuden CSV-tiedoston luomisen Google Driveen.
 
 ```javascript
@@ -54,7 +49,6 @@ function writeCSV() {
 ```
 
 ### Esimerkki tuloste
-
 Kun kirjataan rivi soluja CSV:stä lukiessa:
 
 ```plaintext
@@ -71,7 +65,6 @@ Jane Smith,34,Designer
 ```
 
 ## Syväsukellus
-
 Historiallisesti CSV-tiedostoja on suosittu niiden yksinkertaisuuden ja ihmisen luettavuuden vuoksi, mikä tekee niistä saavutettavia myös ei-ohjelmoijille ja hyödyllisiä nopeisiin datan tarkastustehtäviin. Kuitenkin Google Apps Script toimii Googlen ekosysteemin piirissä, jossa Google Sheets toimii tehokkaana, käyttäjäystävällisenä vaihtoehtona CSV-käsittelylle. Sheets ei tarjoa ainoastaan GUI:ta datan muokkamiseen vaan myös tukee kompleksisia kaavoja, tyylittelyä ja monia muita ominaisuuksia, joita raaka CSV ei tarjoa.
 
 Siitä huolimatta Google Sheetsin tarjoamista eduista huolimatta suora CSV-käsittely Google Apps Scriptillä pysyy tärkeänä automatisoiduissa tehtävissä, erityisesti kun käsitellään ulkoisia järjestelmiä, jotka tuottavat tai vaativat dataa CSV-muodossa. Esimerkiksi integrointi vanhoihin järjestelmiin, datan vieminen käyttöön muissa sovelluksissa tai esikäsittely ennen datan syöttämistä Google Sheetsiin.

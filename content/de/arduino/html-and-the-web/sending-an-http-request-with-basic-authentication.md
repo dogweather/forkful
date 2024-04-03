@@ -11,9 +11,6 @@ title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-HTTP-Requests mit Basic Authentication senden Daten an einen Server, geschützt durch Benutzername und Passwort. Programmierer nutzen das für sichere Datenübertragungen zu APIs oder Webdiensten.
-
 ## Anleitung:
 Hier ist ein einfacher Codeabschnitt für das Senden einer HTTP-Anfrage mit Basic Authentication auf einem Arduino.
 

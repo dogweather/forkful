@@ -12,12 +12,7 @@ title: Arbeide med XML
 weight: 40
 ---
 
-## Hva & Hvorfor?
-
-Å jobbe med XML i Google Apps Script lar programmerere parse, manipulere og generere XML-data, som er essensielt for webtjenester og konfigurasjoner. Programmerere adopterer denne tilnærmingen for å integrere med eldre systemer, utføre nettskraping eller kommunisere med tallrike API-er som fremdeles stoler på XML over JSON for datautveksling.
-
 ## Hvordan:
-
 Google Apps Script tilbyr `XmlService` for å jobbe med XML-data. Nedenfor demonstrerer vi hvordan du parser en XML-streng, modifiserer innholdet og genererer en ny XML-streng.
 
 Parsing av en XML-streng:
@@ -64,7 +59,6 @@ function createXML() {
 ```
 
 ## Dykk dypere
-
 Historisk var XML (Extensible Markup Language) den de facto standarden for datautveksling før JSON dukket opp som et lettere alternativ. XMLs verbøse syntaks og strenge parsingmodell ga et robust, om enn tungvint, dataformat. I Google Apps Script inneholder `XmlService` API-et opprettelse, parsing og manipulering av XML-data, og anerkjenner dens fortsatte betydning i ulike eldre og foretakssystemer, SOAP webtjenester og konfigurasjonsfiler for applikasjoner.
 
 Til tross for JSONs dominans i moderne webutvikling for dets enkelhet og brukervennlighet med JavaScript, forblir XML relevant på områder hvor dokumentvalidering og strukturerte hierarkier er avgjørende. Imidlertid, for nye prosjekter, spesielt de som lener seg mot web-APIer, er JSON ofte det mer praktiske valget på grunn av sin lette natur og sømløse integrasjon med JavaScript.

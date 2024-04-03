@@ -12,9 +12,6 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Cos'è e perché?
-Il recupero della data corrente in Bash comporta l'utilizzo di comandi integrati per visualizzare la data e l'ora in vari formati. I programmatori utilizzano questa funzionalità per compiti come la marcatura temporale dei log, la pianificazione delle attività, o semplicemente come parte dei loro script di informazioni di sistema per tracciare quando sono state eseguite delle azioni.
-
 ## Come fare:
 In Bash, il comando `date` è il tuo strumento principale per ottenere la data e l'ora correnti. Ecco alcuni esempi di come usarlo:
 

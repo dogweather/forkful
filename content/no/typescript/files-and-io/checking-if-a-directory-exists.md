@@ -14,15 +14,10 @@ title: Sjekker om en mappe eksisterer
 weight: 20
 ---
 
-## Hva og hvorfor?
-Å sjekke om en mappe eksisterer i TypeScript er essensielt for filhåndteringsoppgaver, slik som å lese fra eller skrive data til filer, og sikre at operasjoner kun utføres på gyldige mapper. Denne operasjonen er avgjørende for å unngå feil som oppstår fra å forsøke å få tilgang til eller manipulere ikke-eksisterende mapper.
-
 ## Hvordan:
-
 TypeScript, når det kjøres i et Node.js-miljø, lar deg sjekke om en mappe eksisterer ved å bruke `fs`-modulen, som gir `existsSync()`-funksjonen eller den asynkrone `access()`-funksjonen kombinert med `constants.F_OK`.
 
 ### Bruke `fs.existsSync()`:
-
 ```typescript
 import { existsSync } from 'fs';
 
@@ -36,7 +31,6 @@ if (existsSync(directoryPath)) {
 ```
 
 ### Bruke `fs.access()` med `fs.constants.F_OK`:
-
 ```typescript
 import { access, constants } from 'fs';
 
@@ -62,7 +56,6 @@ Mappen eksisterer ikke.
 ```
 
 ### Bruke et bibliotek fra tredjepart - `fs-extra`:
-
 `fs-extra` er et populært tredjeparts bibliotek som forbedrer det innebygde `fs`-modulen og gir mer bekvemme funksjoner.
 
 ```typescript

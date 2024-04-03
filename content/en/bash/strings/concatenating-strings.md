@@ -9,12 +9,7 @@ title: Concatenating strings
 weight: 3
 ---
 
-## What & Why?
-
-Concatenating strings in Bash means sticking two or more pieces of text together. Programmers do it to build up commands, create file paths, or simply format output text.
-
 ## How to:
-
 Here's the fast track to giving your strings a snug hug in Bash:
 
 ```Bash
@@ -37,7 +32,6 @@ echo $filename  # Outputs: backup_20230315.tar.gz
 ```
 
 ## Deep Dive
-
 Back in the days before GUIs ruled the land, command lines and scripts were the kings of computer interaction. Concatenating strings has always been essential since it allows for dynamic command and file manipulation.
 
 One historical alternative is the `expr` command, which feels like a relic now:
@@ -60,6 +54,5 @@ echo $full_greeting  # Outputs: Hello, world!
 ```
 
 ## See Also
-
 - [GNU Bash manual](https://www.gnu.org/software/bash/manual/) for the nuts and bolts of all things Bash.
 - [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/) for scripting gymnastics and more examples.

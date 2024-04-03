@@ -10,9 +10,6 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-## Was & Warum?
-Das Erstellen einer temporären Datei ermöglicht es einem Programm, Daten kurzzeitig zu speichern, ohne langfristige Spuren im Dateisystem zu hinterlassen. Programmierer nutzen dies für Datentransfers, Zwischenspeicherung oder zum Testen, um die Integrität des regulären Dateisystems zu bewahren.
-
 ## So geht's:
 Lua bietet keine eingebaute Funktion für das Erstellen temporärer Dateien, aber wir können das OS-Modul nutzen, um auf Dateisystemfunktionen zuzugreifen und eine temporäre Datei zu erstellen und zu verwenden. Hier ist ein einfaches Beispiel dafür:
 

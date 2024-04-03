@@ -13,12 +13,7 @@ title: Bestanden ter plekke bewerken met CLI one-liners
 weight: 32
 ---
 
-## Wat & Waarom?
-
-Bestanden in-place bewerken met CLI one-liners gaat over het direct aanbrengen van wijzigingen in bestanden vanaf de opdrachtregel, zonder ze in een teksteditor te openen. Programmeurs doen dit om tijd te besparen en repetitieve bewerkingstaken te automatiseren, wat hun workflow soepeler en efficiënter maakt.
-
 ## Hoe:
-
 Fish Shell, bekend om zijn gebruiksvriendelijke functies en krachtige scriptmogelijkheden, biedt verschillende manieren om bestanden in-place te bewerken. Echter, in tegenstelling tot sommige andere shells, heeft Fish geen ingebouwd mechanisme voor in-place bewerking (`sed -i` in Bash, bijvoorbeeld). Maar vrees niet, je kunt dit nog steeds bereiken met een beetje creativiteit en wat hulp van externe tools zoals `sed` en `awk`.
 
 ### Gebruikmaken van `sed` voor eenvoudige vervangingen
@@ -43,7 +38,6 @@ awk '{print $1 * 2}' file.txt > tijdelijk && mv tijdelijk file.txt
 Onthoud, bij het gebruik van deze tools vanuit Fish, het vastleggen van fouten en het begrijpen van hun berichten is cruciaal. Gebruik Fish’s solide foutafhandeling om je scripts betrouwbaarder te maken.
 
 ## Diepgaande duik
-
 Historisch gezien is in-place bestandsbewerking een basis van Unix- en Linux-programmering geweest, die een efficiënte manier biedt om snel wijzigingen aan te brengen zonder bestanden handmatig te openen. Hulpmiddelen zoals `sed` en `awk` zijn vereerde hulpmiddelen die al sinds de vroege dagen van Unix bestaan en onmisbaar zijn geworden voor tekstverwerkingsopdrachten.
 
 Fish Shell, hoewel moderner en met verbeteringen in gebruiksvriendelijkheid en scripting, mist ingebouwde in-place bewerking voornamelijk vanwege zijn ontwerpfilosofie gericht op interactiviteit en gebruiksvriendelijkheid. De afwezigheid van een native in-place bewerkingscommando in Fish onderstreept het belang van externe hulpmiddelen in Unix-achtige ecosystemen.

@@ -11,9 +11,6 @@ title: Iniciando un nuevo proyecto
 weight: 1
 ---
 
-## What & Why? (¿Qué y Por Qué?)
-Empezar un nuevo proyecto en Java es configurar un entorno desde cero para codificar una aplicación fresca. Programadores lo hacen para innovar, resolver problemas, aprender o ganar dinero.
-
 ## How to: (Cómo hacerlo:)
 Para iniciar un proyecto en Java, necesitas herramientas como JDK y un IDE. Aquí te muestro cómo hacerlo con el JDK actual y el IDE IntelliJ IDEA. Primero, asegúrate de tener instalado Java:
 

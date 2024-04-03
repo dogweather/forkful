@@ -10,9 +10,6 @@ title: Scaricare una pagina web
 weight: 42
 ---
 
-## What & Why?
-Scaricare una pagina web significa portare il contenuto di quella pagina sul tuo computer. I programmatori lo fanno per analizzare i dati, testare la disponibilità dei siti o automatizzare attività legate al web.
-
 ## How to:
 Usando Ruby, possiamo scaricare una pagina web con gemme come `open-uri` per un approccio semplice o `net/http` per uno più dettagliato.
 

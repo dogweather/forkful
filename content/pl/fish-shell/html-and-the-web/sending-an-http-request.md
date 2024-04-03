@@ -11,9 +11,6 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## What & Why? | Co i Dlaczego?
-Wysyłanie żądania HTTP to proces komunikacji z serwerem internetowym, by uzyskać dane lub wykonać operację. Programiści to robią, by współdziałać z API, pobierać treści stron, przesyłać dane formularzy lub testować aplikacje webowe.
-
 ## How to: | Jak to zrobić:
 W Fish Shell możemy użyć programów jak `curl` lub `httpie`. Prosty przykład z `curl`:
 

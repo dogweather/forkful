@@ -10,12 +10,7 @@ title: Logging
 weight: 17
 ---
 
-## What & Why?
-
-Logging is like keeping a journal for your application; it's the practice of recording events, errors, and other pertinent data during runtime. Developers use logs to diagnose problems, monitor system behavior, and gather insights that drive improvements—it's the bread and butter of operational intelligence.
-
 ## How to:
-
 Let's set up a basic logging scenario in Rust using the `log` crate, which provides a logging facade, and `env_logger`, a logging implementation for the `log` crate. First, add them to your Cargo.toml:
 
 ```toml
@@ -47,7 +42,6 @@ WARN: This is a warning message.
 Play around with the `RUST_LOG` environment variable by setting it to `error`, `warn`, `info`, `debug`, or `trace` to control the verbosity of your logs.
 
 ## Deep Dive
-
 The concept of logging isn't anything new; it has been around since the early days of computing. Before logging was common in software, developers relied on primitive methods such as print statements or debugger tools to trace program execution. As programs grew in complexity, so too did the need for structured approaches to logging.
 
 In Rust, the `log` crate abstracts away logging implementation details, allowing developers to plug in different logging backends. While `env_logger` is a common choice, there are alternatives like `fern`, `slog`, or `tracing` each with their own set of features and configuration options. 
@@ -65,7 +59,6 @@ Some considerations when implementing logging include:
 5. **Configuration**: Many logging frameworks support configuration through environment variables, configuration files, and/or code. This flexibility is key for fine-tuning output in different environments (development, staging, production).
 
 ## See Also
-
 - The `log` crate documentation: https://docs.rs/log/
 - The `env_logger` crate documentation: https://docs.rs/env_logger/
 - Rust by Example logging page: https://doc.rust-lang.org/rust-by-example/std_misc/log.html

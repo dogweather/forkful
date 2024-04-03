@@ -11,9 +11,6 @@ title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---
 
-## What & Why? - Mikä & Miksi?
-Luodaan väliaikainen tiedosto varastoimaan dataa, jota ei tarvita pysyvästi. Käytetään väliaikaisia tiedostoja säilyttämään ohjelman suorituksen aikana syntyvää dataa ilman, että sekoitamme pysyvään tallennustilaan.
-
 ## How to: - Kuinka tehdä:
 ```Clojure
 (require '[clojure.java.io :as io])

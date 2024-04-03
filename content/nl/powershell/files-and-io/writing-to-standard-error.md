@@ -12,9 +12,6 @@ title: Schrijven naar standaardfout
 weight: 25
 ---
 
-## Wat & Waarom?
-Schrijven naar standaardfout (stderr) stuurt foutmeldingen en diagnostische berichten apart van standaarduitvoer (stdout). Programmeurs doen dit om reguliere programma-uitvoer netjes te scheiden van foutinformatie, wat het debuggen en loggen makkelijker maakt.
-
 ## Hoe te:
 ```PowerShell
 # Schrijf een eenvoudige fout naar stderr

@@ -12,9 +12,6 @@ title: Een HTTP-verzoek verzenden
 weight: 44
 ---
 
-## Wat & Waarom?
-Een HTTP-verzoek verzenden is hoe jouw programma data van het web vraagt, een beetje zoals je een bibliothecaris om een boek zou vragen. Programmeurs doen dit om externe data op te halen, te verzenden of te manipuleren, van het krijgen van het weer tot het plaatsen van tweets.
-
 ## Hoe:
 Gebruik de `HTTPoison` bibliotheek van Elixir. Het is netjes, eenvoudig en klaart de klus.
 

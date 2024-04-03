@@ -12,9 +12,6 @@ title: Tolka HTML
 weight: 43
 ---
 
-## Vad & Varför?
-Att tolka HTML i programmering innebär att extrahera data från HTML-dokument. Programmerare gör detta för att interagera med eller skrapa webbinnehåll för informationsutvinning, testning eller automatisering, även när officiella API:er inte finns tillgängliga.
-
 ## Hur man gör:
 Dart erbjuder inte inbyggt stöd för HTML-tolkning i sina kärnbibliotek. Du kan dock använda ett tredjepartspaket som `html` för att tolka och manipulera HTML-dokument.
 

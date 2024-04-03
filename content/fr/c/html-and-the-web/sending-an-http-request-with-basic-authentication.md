@@ -14,9 +14,6 @@ title: "Envoyer une requ\xEAte HTTP avec une authentification de base"
 weight: 45
 ---
 
-## Quoi et Pourquoi ?
-Envoyer une requête HTTP avec une authentification de base en C nécessite de créer une requête HTTP qui inclut un en-tête d'autorisation avec les informations d'identification de l'utilisateur encodées en Base64. C'est une méthode courante pour ajouter une couche d'authentification simple aux requêtes HTTP, permettant d'accéder de manière programmatique à des ressources restreintes.
-
 ## Comment faire :
 Pour envoyer une requête HTTP avec une authentification de base en C, nous aurons besoin d'utiliser la bibliothèque libcurl, une bibliothèque de transfert d'URL côté client populaire, polyvalente et facile à utiliser. Elle gère divers protocoles, y compris HTTP et HTTPS, ce qui simplifie notre tâche. Assurez-vous que libcurl est installé sur votre système avant de continuer. Voici un exemple basique qui montre comment envoyer une requête GET avec une authentification de base :
 

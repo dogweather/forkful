@@ -11,9 +11,6 @@ title: Working with XML
 weight: 40
 ---
 
-## What & Why?
-XML (eXtensible Markup Language) is about structuring data in a readable format. Programmers juggle XML for configuration, data exchange between apps, and where specs ask for it—think SOAP or web APIs.
-
 ## How to:
 ```C#
 using System;

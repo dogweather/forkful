@@ -11,9 +11,6 @@ title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---
 
-## ¿Qué y Por Qué?
-Eliminar caracteres que coinciden con un patrón permite limpiar y normalizar datos en tus scripts. Programadores lo hacen para simplificar el análisis de datos o preparar strings para procesos adicionales.
-
 ## Cómo Hacerlo:
 A continuación, unos ejemplos prácticos de cómo eliminar caracteres usando patrones en PowerShell:
 

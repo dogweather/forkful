@@ -15,12 +15,7 @@ title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---
 
-## Quoi & Pourquoi ?
-
-Vérifier si un répertoire existe est une tâche fondamentale en programmation PHP, car cela permet de vérifier la présence d'un répertoire avant d'effectuer des opérations telles que la lecture ou l'écriture de fichiers à l'intérieur. Cette opération aide à prévenir les erreurs qui pourraient survenir en tentant d'accéder à des répertoires inexistants et est essentielle pour la gestion dynamique des fichiers au sein de vos applications.
-
 ## Comment faire :
-
 La manière native de vérifier si un répertoire existe en PHP est d'utiliser la fonction `is_dir()`. Cette fonction prend un chemin de fichier comme argument et retourne `true` si le répertoire existe et est un répertoire, ou `false` autrement.
 
 ```php

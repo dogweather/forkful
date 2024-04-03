@@ -14,16 +14,10 @@ title: Recherche et remplacement de texte
 weight: 10
 ---
 
-## Quoi & Pourquoi ?
-
-La recherche et le remplacement de texte dans Google Apps Script impliquent d'identifier de manière programmatique des chaînes spécifiques dans un document, un tableur ou tout autre type de contenu Google Apps, et de les substituer par d'autres valeurs textuelles. Les programmeurs utilisent cette fonctionnalité pour automatiser l'édition de grands volumes de contenu, corriger des erreurs communes, standardiser la terminologie à travers des documents, ou insérer des données dynamiques dans des modèles.
-
 ## Comment faire :
-
 Google Apps Script offre une manière directe de rechercher et remplacer du texte, en particulier au sein de Google Docs et Sheets. Voici des exemples pour les deux.
 
 ### Google Docs :
-
 Pour rechercher et remplacer du texte dans un document Google, vous interagirez principalement avec la classe `DocumentApp`.
 
 ```javascript
@@ -44,7 +38,6 @@ searchReplaceInDoc();
 Ce fragment de code recherche toutes les occurrences de `'searchText'` dans le document Google actif et les remplace par `'replacementText'`.
 
 ### Google Sheets :
-
 De manière similaire, dans Google Sheets, vous pouvez utiliser `SpreadsheetApp` pour effectuer des opérations de recherche et de remplacement :
 
 ```javascript
@@ -63,7 +56,6 @@ searchReplaceInSheet();
 Dans cet exemple, `createTextFinder('searchText')` recherche dans la feuille active 'searchText', et `replaceAllWith('replacementText')` remplace toutes les occurrences par 'replacementText'.
 
 ## Exploration Approfondie
-
 La fonctionnalité de recherche et de remplacement dans Google Apps Script est fortement influencée par sa nature basée sur le web, permettant aux scripts de manipuler du texte à travers diverses applications Google de manière transparente. Historiquement, cette capacité s'inscrit dans le contexte plus large du traitement et de la manipulation de texte en programmation, où les expressions régulières et les fonctions de chaîne dans des langues telles que Perl et Python ont établi des normes élevées de flexibilité et de puissance.
 
 Bien que la fonctionnalité de recherche et de remplacement de Google Apps Script soit puissante pour des substitutions simples, elle manque des capacités complètes des expressions régulières trouvées dans certaines autres langues. Par exemple, bien que vous puissiez utiliser des expressions régulières basiques dans `createTextFinder` dans Google Sheets, les options pour des motifs complexes et la manipulation sont limitées comparées à Perl ou Python.

@@ -11,12 +11,7 @@ title: Generating random numbers
 weight: 12
 ---
 
-## What & Why?
-
-Generating random numbers involves creating numbers that cannot be reasonably predicted better than by chance, which is essential for developing simulations, games, and security algorithms. Programmers do this to introduce unpredictability or simulate real-world phenomena in their applications.
-
 ## How to:
-
 Python provides the `random` module that helps in generating random numbers for various uses. Here's how to get started:
 
 1. **Importing the module**
@@ -64,7 +59,6 @@ Python provides the `random` module that helps in generating random numbers for 
     Sample output: `[2, 5, 0, 4, 9, 8, 1, 7, 6, 3]`
 
 ## Deep Dive
-
 The `random` module in Python uses a pseudorandom number generator (PRNG), specifically the Mersenne Twister algorithm, which is good for general-purpose applications but not suitable for cryptographic purposes due to its predictability if enough outputs are observed. The `secrets` module, introduced in Python 3.6, offers a better alternative for generating cryptographically strong random numbers, especially useful in security-sensitive applications. For example, generating a secure, random token for a password reset link:
 
 ```Python

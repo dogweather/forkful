@@ -12,9 +12,6 @@ title: Koodin refaktorointi
 weight: 19
 ---
 
-## Mikä & Miksi?
-Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia uudelleenjärjestetään muuttamatta sen ulkoista käyttäytymistä, pyrkimyksenä parantaa ohjelmiston ei-toiminnallisia ominaisuuksia. Ohjelmoijat refaktoroivat koodia tehdäkseen siitä selkeämpää, tehokkaampaa ja helpommin ymmärrettävää, mikä helpottaa ylläpitoa ja tulevia parannuksia.
-
 ## Miten:
 PowerShell ei sisällä erityistä refaktorointityökalua, mutta voit silti siistiä koodiasi luettavuuden ja suorituskyvyn parantamiseksi. Harkitse funktion, joka tekee liikaa ja miten voisimme refaktoroida sitä selkeyden vuoksi:
 

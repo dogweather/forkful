@@ -10,12 +10,7 @@ title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-
-Calculer une date dans le futur ou le passé, c'est intentionnellement ajuster la date et l'heure actuelles pour obtenir un moment précis. Les programmeurs le font pour des rappels, des abonnements, des échéances et pour gérer les évènements programmés.
-
 ## How to: (Comment faire :)
-
 Kotlin rend ce calcul super simple avec `LocalDateTime` et `Duration` de la bibliothèque `java.time`. Voici comment :
 
 ```kotlin
@@ -55,7 +50,6 @@ In five hours: 2023-04-12T20:37:52.042
 ```
 
 ## Deep Dive (Plongée Profonde)
-
 Avant `java.time`, Java utilisait `Date` et `Calendar` qui étaient difficiles à comprendre et à utiliser. `java.time` est plus intutitif et puissant. Cela fait partie de Joda-Time, une bibliothèque externe, qui a inspiré sa création.
 
 En Kotlin, on pourrait aussi utiliser Anko, une bibliothèque qui étend les capacités d'Android, ou des fonctions d'extension pour rendre le code encore plus lisible.
@@ -63,7 +57,6 @@ En Kotlin, on pourrait aussi utiliser Anko, une bibliothèque qui étend les cap
 Pour la performance et l'immuabilité, `LocalDateTime` est génial, car les instances sont immuables : lorsqu'on ajuste la date/heure, une nouvelle instance est créée.
 
 ## See Also (Voir Aussi)
-
 - [Oracle java.time tutorial](https://docs.oracle.com/javase/tutorial/datetime/)
 - [Joda-Time Library](https://www.joda.org/joda-time/)
 - [Anko Library for Android](https://github.com/Kotlin/anko)

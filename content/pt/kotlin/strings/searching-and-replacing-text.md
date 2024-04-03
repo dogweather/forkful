@@ -11,9 +11,6 @@ title: Pesquisando e substituindo texto
 weight: 10
 ---
 
-## O Que & Porquê?
-Buscar e substituir texto é mudar palavras ou sequências de caracteres específicas por outras em uma string. Programadores fazem isso para corrigir erros, atualizar dados ou alterar códigos de forma rápida e eficiente.
-
 ## Como Fazer:
 ```kotlin
 fun main() {

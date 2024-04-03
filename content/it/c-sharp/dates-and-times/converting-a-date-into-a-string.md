@@ -10,9 +10,6 @@ title: Conversione di una data in una stringa
 weight: 28
 ---
 
-## What & Why?
-Convertire una data in una stringa significa trasformare l'oggetto DateTime in una rappresentazione testuale. I programmatori lo fanno per visualizzare date in formati leggibili dall'uomo o per serializzarle in formati compatibili con altri sistemi.
-
 ## How to:
 In C# convertire una data in una stringa è semplice come usare il metodo `ToString()` su un oggetto `DateTime`. Ecco alcuni esempi:
 

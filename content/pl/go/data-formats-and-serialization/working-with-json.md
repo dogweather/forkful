@@ -13,16 +13,10 @@ title: Praca z JSON
 weight: 38
 ---
 
-## Co i dlaczego?
-
-Praca z JSON (JavaScript Object Notation) w Go polega na kodowaniu i dekodowaniu danych między strukturami danych Go a formatem JSON. To zadanie jest wszechobecne w usługach internetowych i API, ponieważ JSON służy jako lekki, tekstowy i niezależny od języka format wymiany danych, umożliwiając prostą wymianę danych w różnych środowiskach programistycznych.
-
 ## Jak to zrobić:
-
 W Go, pakiet `encoding/json` jest Twoją bramą do manipulacji JSONem, zapewniając mechanizmy konwersji struktur danych Go do JSON (marshalling) i z powrotem (unmarshalling). Poniżej znajdują się podstawowe przykłady, które pomogą Ci zacząć:
 
 ### Kodowanie (Marshalling)
-
 Aby przekonwertować strukturę Go na JSON, możesz użyć `json.Marshal`. Rozważ następującą strukturę Go:
 
 ```go
@@ -57,7 +51,6 @@ Wynik:
 ```
 
 ### Dekodowanie (Unmarshalling)
-
 Aby przeanalizować JSON do struktury danych Go, użyj `json.Unmarshal`:
 
 ```go
@@ -89,7 +82,6 @@ Wynik:
 ```
 
 ## Pogłębiona analiza
-
 Pakiet `encoding/json` w Go oferuje prosty API, który abstrahuje wiele złożoności związanych z manipulacją JSON. Wprowadzony we wczesnej fazie rozwoju Go, ten pakiet odzwierciedla filozofię Go dotyczącą prostoty i efektywności. Jednak użycie refleksji przez `encoding/json` do inspekcji i modyfikacji struktur w czasie rzeczywistym może prowadzić do mniejszej niż optymalna wydajność w scenariuszach intensywnie korzystających z CPU.
 
 Alternatywy takie jak `json-iterator/go` i `ffjson` pojawiły się, oferując szybsze przetwarzanie JSON poprzez generowanie statycznego kodu marshallingu i unmarshallingu. Jednakże, `encoding/json` pozostaje najczęściej używanym pakietem ze względu na swoją prostotę, solidność i fakt, że jest częścią standardowej biblioteki, zapewniając zgodność i stabilność przez różne wersje Go.

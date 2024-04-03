@@ -11,9 +11,6 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## Co i dlaczego?
-Wysyłanie żądania HTTP to proces komunikacji z serwerem w sieci. Programiści robią to, by pobierać dane, wysyłać formularze lub interaktywnie komunikować się z aplikacjami webowymi.
-
 ## Jak to zrobić:
 Do wysyłania żądań HTTP w Lua użyjemy biblioteki `socket.http`. Przykładowy kod:
 

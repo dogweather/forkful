@@ -19,9 +19,6 @@ title: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B"
 weight: 28
 ---
 
-## What & Why? (何となく？)
-日付を文字列に夢夢するとは、Date オブジェクトをテキスト形式に変換することです。データの保存、表示、またはログ記録目的で開発者がよく使います。
-
 ## How to (方法)
 ```javascript
 // 現在の日付を取得
@@ -36,6 +33,7 @@ console.log(now.toISOString()); // "2023-04-05T08:00:00.000Z"
 // toLocaleString()でローカライズされた日付
 console.log(now.toLocaleString('ja-JP')); // "2023/4/5 17:00:00"
 ```
+
 ## Deep Dive (掘り下げ)
 初期のJavaScriptでは、日付を扱う方法が非常に基本的でした。ECMAScript 5では、`Date.prototype.toISOString`のようなメソッドが登場し、ISO 8601形式で日付を文字列化する国際標準が提供されました。さらに、`Date.prototype.toLocaleString`はロケール情報に基づいた書式で表示でき、カスタムオプションも利用可能になりました。これらのメソッドは、ブラウザ間での一貫性とデータのグローバルな交換をサポートします。
 

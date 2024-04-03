@@ -11,12 +11,7 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-
-Comparing two dates means checking if one date is earlier, the same, or later than another. Programmers do this to organize events, validate input, and manage time-sensitive data.
-
 ## How to:
-
 With Fish Shell, we can compare two dates using the `date` command. Below are examples.
 
 ```fish
@@ -41,7 +36,6 @@ Specific date is earlier than the current date.
 ```
 
 ## Deep Dive
-
 Historically, comparing dates in programming has been a bit of a hassle due to various date formats and time zones. Fish Shell simplifies this task with its built-in `date` function, converting dates to seconds since the Unix epoch (January 1, 1970). This gives us a universal point in time to compare against.
 
 Alternatives to Fish Shell for comparing dates include scripting languages like Python or using `date` manipulation tools available in Unix-based systems, like `dateutil` in GNU core utilities (coreutils). Implementation-wise, when we use `date +%s`, Fish internally calls the system `date` command, which is why it's so effective cross-platform.
@@ -49,7 +43,6 @@ Alternatives to Fish Shell for comparing dates include scripting languages like 
 Comparing dates is also essential for cron jobs, backup scripts, and time-based access control. Being comfy with date comparisons means smoother automation and fewer temporal bugs.
 
 ## See Also
-
 - [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
 - [GNU Coreutils: Date](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
 - [The Unix Epoch Time](https://en.wikipedia.org/wiki/Unix_time)

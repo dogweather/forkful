@@ -12,9 +12,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---
 
-## What & Why? | Mikä & Miksi?
-Perusautentikoinnilla varustetun HTTP-pyynnön lähettäminen on prosessi, jossa käyttäjätunnus ja salasana lähetetään HTTP-otsikoissa palvelimelle. Käytämme tätä menetelmää, koska se on yksinkertainen tapa varmistaa käyttäjän identiteetti ennen palvelun käyttöoikeuksien myöntämistä.
-
 ## How to: | Kuinka:
 ```Elm
 import Http

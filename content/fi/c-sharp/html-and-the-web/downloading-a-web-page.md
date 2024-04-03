@@ -10,11 +10,7 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## What & Why? (Mitä ja Miksi?)
-Web-sivun lataaminen on sen sisällön hakemista internetistä ohjelmallisesti. Ohjelmoijat tekevät tämän tiedon käsittelyyn, analysointiin tai varmuuskopiointiin.
-
 ## How to: (Kuinka tehdä:)
-
 ```C#
 using System;
 using System.Net.Http;
@@ -51,7 +47,6 @@ Sample output:
 ```
 
 ## Deep Dive (Syväsukellus):
-
 Web-sivun lataamista ohjelmallisesti on tehty lähes niin kauan kuin web on ollut olemassa. Alkuaikoina käytettiin yksinkertaisia skriptejä, mutta nykyään on hienostuneempia työkaluja, kuten HttpClient C#:ssa.
 
 Vaihtoehtoisia tapoja ladata sivuja on monia: WebClient-luokka (nykyään vanhentunut), HttpWebRequest/Response (matalamman tason hallinta), tai kolmannen osapuolen kirjastot, kuten RestSharp tai HtmlAgilityPack.
@@ -59,7 +54,6 @@ Vaihtoehtoisia tapoja ladata sivuja on monia: WebClient-luokka (nykyään vanhen
 Tärkeimmät toteutusyksityiskohdat ovat virheenkäsittely (internet-yhteyksien epävarmuus), ja asynkroninen käyttö (et blokeeraa sovelluksesi toimintaa ladatessasi).
 
 ## See Also (Katso myös):
-
 - Microsoftin HttpClient-dokumentaatio: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
 - Asynkronisen ohjelmoinnin perusteet C# kielisessä ympäristössä: [docs.microsoft.com](https://docs.microsoft.com/en-us/dotnet/csharp/async)
 - HTTP:n perusteet: [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP)

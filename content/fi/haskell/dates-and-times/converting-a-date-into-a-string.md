@@ -11,9 +11,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---
 
-## What & Why? - Mikä ja Miksi?
-Muuttamalla päivämäärän merkkijonoksi voimme näyttää sen helposti ymmärrettävässä muodossa. Ohjelmoijat tekevät tämän, jotta päivämäärät sopivat käyttöliittymiin ja logeihin ihmisten luettaviksi.
-
 ## How to: - Kuinka tehdä:
 ```Haskell
 import Data.Time

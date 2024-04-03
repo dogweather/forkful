@@ -12,9 +12,6 @@ title: Registro de Actividades
 weight: 17
 ---
 
-## ¿Qué & Por qué?
-El registro (logging) es el proceso de grabar los comportamientos, errores y otra información importante de una aplicación en un medio persistente, como un archivo o base de datos. Los programadores lo hacen para rastrear la salud y el rendimiento de sus aplicaciones, para depurar problemas y para mantener un ojo en lo que está sucediendo bajo el capó en entornos de producción.
-
 ## Cómo hacerlo:
 En Swift, puedes escribir registros en la consola con instrucciones `print` o con la API `os.log`, más flexible, que se conecta con el Sistema de Registro Unificado en las plataformas de Apple.
 

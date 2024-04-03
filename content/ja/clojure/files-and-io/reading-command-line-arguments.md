@@ -25,9 +25,6 @@ title: "\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\u6570\u306E\u8AAD\u307F
 weight: 23
 ---
 
-## What & Why? (何となぜ？)
-コマンドライン引数の読み取りって何？ プログラムが起動するとき、ユーザーが入力したオプションやデータ。プログラマーはなぜ使用する？ 使い方をカスタマイズしたいから。コマンドライン引数で、プログラムに指示を伝えることができる。
-
 ## How to: (方法)
 ```Clojure
 ;; “args” refers to a vector of arguments passed from the command line

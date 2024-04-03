@@ -13,12 +13,7 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-
-Getallen afronden is het proces waarbij de cijfers van een nummer worden aangepast om de precisie volgens bepaalde regels te verminderen, hetzij naar het dichtstbijzijnde hele getal of een gespecificeerd aantal decimalen. Programmeurs doen dit om redenen variërend van het beperken van de hoeveelheid opslag die nodig is, tot het vereenvoudigen van de uitvoer voor consumptie door de gebruiker, of het verzekeren van nauwkeurige wiskundige bewerkingen die gevoelig zijn voor zeer kleine varianties.
-
 ## Hoe:
-
 Getallen afronden in C kan worden bereikt met behulp van verschillende functies, maar de meest voorkomende benadering omvat de `floor()`, `ceil()`, en `round()` functies. Deze functies maken deel uit van de standaard wiskunde-bibliotheek, dus je moet `math.h` in je programma opnemen.
 
 ```c
@@ -57,7 +52,6 @@ Afronden op twee decimalen: 9.53
 ```
 
 ## Diepgaande Duik
-
 Getallen afronden heeft diepe historische wortels in wiskunde en berekeningen, essentieel voor zowel theoretische als toegepaste aspecten. In C, hoewel `floor()`, `ceil()`, en `round()` basisfunctionaliteit bieden, is de essentie van het afronden van floats naar gehele getallen of specifieke decimalen genuanceerder vanwege de binaire representatie van zwevende-kommagetallen. Deze representatie kan leiden tot onverwachte resultaten vanwege hoe getallen die niet precies in binair kunnen worden gerepresenteerd (zoals 0.1) worden behandeld.
 
 Deze functies maken deel uit van de C-standaardbibliotheek, gedefinieerd in `<math.h>`. Bij het afronden van getallen, vooral voor financiële of precieze technische berekeningen, moet men de implicaties van het gebruik van binaire zwevende-kommagetallen overwegen. Alternatieven voor de ingebouwde C-functies voor zeer nauwkeurige of specifiek decimale afronding kunnen het implementeren van aangepaste afrondingsfuncties of het gebruik van bibliotheken voor willekeurige-precisie rekenkunde, zoals GMP of MPFR, omvatten, hoewel deze extra complexiteit en afhankelijkheden introduceren.

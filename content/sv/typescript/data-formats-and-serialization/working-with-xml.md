@@ -10,9 +10,6 @@ title: Att arbeta med XML
 weight: 40
 ---
 
-## Vad & Varför?
-Att arbeta med XML innebär att tolka, manipulera och skriva XML-data med programmering. Programmerare hanterar XML för att utbyta data mellan olika system, för konfigurationsfiler eller när de arbetar med standarder som SOAP som är beroende av XML.
-
 ## Hur man gör:
 ```TypeScript
 import { parseString } from 'xml2js';

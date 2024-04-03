@@ -12,9 +12,6 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad & Varför?
-Komplexa tal, bestående av en reell del och en imaginär del (vanligtvis skrivna som a + bi), möjliggör beräkningar som är opraktiska eller omöjliga med bara reella tal. Programmerare använder dem inom områden som signalbehandling, kvantdatorer och tillämpad matematik, där tvådimensionella talrepresentationer är nödvändiga.
-
 ## Hur:
 Att hantera komplexa tal i TypeScript kräver en dedikerad klass. Låt oss skapa en och arbeta igenom addition och multiplikation.
 

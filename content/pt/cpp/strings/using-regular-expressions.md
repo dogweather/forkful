@@ -14,9 +14,6 @@ title: "Usando express\xF5es regulares"
 weight: 11
 ---
 
-## O Que & Por Quê?
-Expressões regulares em C++ são sequências de caracteres que definem um padrão de busca, usados para a correspondência ou manipulação de strings. Programadores as utilizam em tarefas como validação de entrada, busca por ocorrências dentro de strings, ou divisão de strings em tokens, tornando-as uma ferramenta indispensável para o processamento de texto eficiente e eficaz.
-
 ## Como fazer:
 O C++11 introduziu suporte para expressões regulares na biblioteca padrão, `<regex>`, oferecendo uma estrutura robusta para busca e manipulação de strings. Aqui está um exemplo básico de uso de expressões regulares para buscar um padrão dentro de uma string:
 

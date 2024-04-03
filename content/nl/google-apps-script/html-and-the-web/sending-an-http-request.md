@@ -12,12 +12,7 @@ title: Een HTTP-verzoek verzenden
 weight: 44
 ---
 
-## Wat & Waarom?
-
-Een HTTP-verzoek versturen in Google Apps Script gaat over het programmatisch maken van een oproep naar een externe webserver of API. Programmeurs doen dit om gegevens op te halen of te versturen naar webservices, waarbij ze een breed scala aan webbronnen en functionaliteiten direct integreren in hun Google Apps Script-projecten.
-
 ## Hoe:
-
 In Google Apps Script is de primaire manier om een HTTP-verzoek te versturen het gebruiken van de `UrlFetchApp`-service. Deze service biedt methoden om HTTP GET- en POST-verzoeken te maken. Hier is een eenvoudig voorbeeld van het maken van een GET-verzoek om JSON-gegevens op te halen:
 
 ```javascript
@@ -56,7 +51,6 @@ function postExample() {
 Deze snippets tonen basisimplementaties van GET- en POST-verzoeken. De uitvoer is afhankelijk van de API-respons en kan worden bekeken in Google Apps Script's Logger.
 
 ## Diepere duik
-
 De `UrlFetchApp`-service van Google Apps Script is sinds de introductie aanzienlijk geëvolueerd, en biedt meer genuanceerde controle over HTTP-verzoeken met functies zoals het instellen van headers, payload en het afhandelen van multipart/form-data voor bestandsuploads. Hoewel het een eenvoudige manier biedt om externe webservices te integreren, vinden ontwikkelaars die afkomstig zijn van robuustere backendtalen zijn functionaliteit mogelijk enigszins beperkt in vergelijking met bibliotheken zoals Python's `requests` of JavaScript's `fetch` API in Node.js.
 
 Een opmerkelijke beperking is de uitvoeringstijdlimiet voor Google Apps Script, die lange verzoeken beïnvloedt. Bovendien, terwijl `UrlFetchApp` een breed scala aan gebruiksscenario's dekt, kunnen complexere scenario's die OAuth-authenticatie of het afhandelen van zeer grote payloads vereisen, creatieve oplossingen of het benutten van aanvullende Google Cloud-bronnen nodig hebben.

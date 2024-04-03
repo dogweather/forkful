@@ -12,9 +12,6 @@ title: Scrivere sull'errore standard
 weight: 25
 ---
 
-## Cosa e Perché?
-Scrivere su standard error (stderr) consiste nel dirigere messaggi di errore e output diagnostici su un canale separato, distinto dallo standard output (stdout). I programmatori fanno ciò per differenziare i risultati regolari del programma dalle informazioni di errore, razionalizzando i processi di debug e registrazione.
-
 ## Come fare:
 In Lua, scrivere su stderr può essere realizzato utilizzando la funzione `io.stderr:write()`. Ecco come è possibile scrivere un semplice messaggio di errore su stderr:
 

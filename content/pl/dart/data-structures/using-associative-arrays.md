@@ -13,12 +13,7 @@ title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---
 
-## Co i dlaczego?
-
-Tablice asocjacyjne w Dart, znane również jako Mapy, to struktury danych, które przechowują dane w parach klucz-wartość. Umożliwiają programistom dostęp do elementów nie przez indeksy, ale klucze, czyniąc odzyskiwanie danych intuicyjnym i efektywnym, szczególnie przy pracy ze strukturalnymi danymi, gdzie każdy element ma unikalny identyfikator.
-
 ## Jak to zrobić:
-
 Dart oferuje prostą składnię do tworzenia i manipulowania Mapami. Poniżej znajdują się przykłady demonstrujące podstawowe operacje, takie jak tworzenie, dodawanie elementów i pobieranie wartości.
 
 ```dart

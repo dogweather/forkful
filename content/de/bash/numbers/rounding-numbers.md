@@ -10,12 +10,7 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-
-Zahlen zu runden bedeutet, die Dezimalstellen auf einen einfacheren Wert zu kürzen, der für einen gegebenen Kontext ausreichend gut ist. Programmierer runden Zahlen, um Ergebnisse zu vereinfachen, Speicherplatz zu sparen oder weil der genaue Wert nicht entscheidend ist – wie etwa, wenn man den CPU-Verbrauch oder den Speicherplatz überschlägt und Dezimalstellen Ihren Tag nicht beeinflussen.
-
 ## Wie zu:
-
 Hier ist das Wichtigste zum Runden in Bash:
 
 ```Bash
@@ -42,7 +37,6 @@ Beispielausgaben—direkt aus dem Terminal:
 ```
 
 ## Tiefergehend
-
 Früher gab es in Bash-Skripten kein `bc` oder `printf`, um die Mathe-Magie zu bewerkstelligen. Die Alteingesessenen mussten sich auf externe Tools oder kunstvolle Umwege verlassen. Jetzt ermöglicht `bc` präzise Mathematik. Dabei sollte man im Kopf behalten, dass `bc` standardmäßig nicht rundet – es führt eine Bodenfunktion durch. Der Teil mit der "scale" legt die Dezimalstellenaktion fest.
 
 Alternativen? Man könnte `awk` für das Runden ohne Wechsel zu `bc` nutzen oder mit `perl` für anspruchsvollere Mathe-Bedürfnisse herumhantieren. Für Masochisten: Reines Bash mit, sagen wir, iterativer Zeichenkettenmanipulation – aber warum?
@@ -50,7 +44,6 @@ Alternativen? Man könnte `awk` für das Runden ohne Wechsel zu `bc` nutzen oder
 Was die Details betrifft, so rundet `bc` nicht nur, es macht jede Menge Mathe-Kram—es skaliert, sinust, wurzelt, was auch immer Sie wollen. Mit `printf` geht es mehr um das Formatieren von Text, aber hey, es rundet Zahlen, also beschweren wir uns nicht.
 
 ## Siehe auch
-
 Für die, die mehr wollen:
 
 - GNU `bc` Handbuch: https://www.gnu.org/software/bc/manual/html_mono/bc.html

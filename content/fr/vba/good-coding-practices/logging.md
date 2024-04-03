@@ -13,12 +13,7 @@ title: Journalisation
 weight: 17
 ---
 
-## Quoi et Pourquoi ?
-
-La journalisation dans Visual Basic pour Applications (VBA) implique l'enregistrement d'informations sur le comportement d'un programme lors de son exécution dans un fichier, une console ou une base de données. Les programmeurs utilisent la journalisation pour surveiller leurs applications, diagnostiquer des problèmes et comprendre les caractéristiques de performance.
-
 ## Comment faire :
-
 Dans VBA, il n'existe pas de cadre de journalisation intégré comme dans certains autres langages. Cependant, la mise en œuvre d'un mécanisme de journalisation simple est directe. Voici un exemple de comment créer un journaliseur de fichier basique.
 
 1. **Écrire dans un fichier journal** : Cet exemple de fonction, `LogMessage`, écrit des messages dans un fichier texte avec un horodatage.
@@ -77,5 +72,4 @@ End Sub
 ```
 
 ## Plongée profonde
-
 La journalisation en VBA, en raison de l'absence d'un cadre de journalisation natif, est généralement mise en œuvre via des opérations de fichier de base ou en exploitant la puissance d'objets COM externes pour des besoins plus avancés, tels que la journalisation dans une base de données ou l'interaction avec le Journal des événements Windows. Historiquement, la journalisation en VBA a été un moyen de contourner les limitations posées par ses outils rudimentaires de gestion des erreurs et de débogage. Bien qu'efficace, la manipulation directe des fichiers pour la journalisation est élémentaire et peut être inefficiente avec de grands volumes de données ou sous une haute concurrence. Pour des capacités de journalisation plus sophistiquées, les programmeurs se tournent souvent vers des bibliothèques externes ou s'intègrent à des systèmes spécifiquement conçus pour la journalisation, tels que la pile ELK (Elasticsearch, Logstash, Kibana) ou Splunk, à travers des appels de services web ou des bases de données intermédiaires. Bien que VBA n'offre pas les commodités modernes trouvées dans les langages de programmation plus récents, comprendre ses capacités et ses limitations permet aux programmeurs d'utiliser efficacement la journalisation comme un outil puissant pour le suivi et le diagnostic des applications.

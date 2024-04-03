@@ -18,9 +18,6 @@ title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uF
 weight: 34
 ---
 
-## 什么和为什么？
-交互式shell，或读取-求值-打印循环（REPL），让你能够输入PowerShell命令并立即获取反馈。程序员使用它来快速测试代码片段、调试或在不编写完整脚本的情况下学习新命令。
-
 ## 如何操作：
 启动PowerShell，你就进入了REPL。尝试使用`Get-Date` Cmdlet：
 

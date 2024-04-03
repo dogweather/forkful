@@ -11,9 +11,6 @@ title: Interpolazione di una stringa
 weight: 8
 ---
 
-## Cosa & Perché?
-L’interpolazione di stringhe in JavaScript consente di inserire espressioni all’interno di una stringa, rendendone la composizione dinamica e flessibile. È utile perché semplifica la concatenazione di stringhe e variabili, migliorando la leggibilità del codice.
-
 ## Come si fa:
 ```Javascript
 // Template strings con backticks

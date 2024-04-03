@@ -11,9 +11,6 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co i Dlaczego?
-Obsługa błędów w PowerShell polega na przewidywaniu nieprzewidzianych sytuacji i zarządzaniu nimi w sposób płynny. Programiści robią to, aby zapobiec awariom oraz dostarczyć użytkownikom przydatne informacje zwrotne.
-
 ## Jak to zrobić:
 ```PowerShell
 # Podstawowy blok Try-Catch do obsługi wyjątków
@@ -34,6 +31,7 @@ try {
 
 # Używanie zmiennej $Error do zbadania ostatniego błędu
 ```
+
 ## Pogłębiona wiedza
 PowerShell przeszedł długą drogę od czasu swoich początków jako Monad. Obsługa błędów stała się z czasem bardziej solidna, oferując funkcje podobne do tych z innych języków programowania. Składnia `try-catch-finally` to jeden z przykładów krzyżowania się z językami takimi jak C#. Przed jej wprowadzeniem, skrypciarze polegali głównie na sprawdzaniu warunków i używaniu automatycznej zmiennej `$Error`.
 

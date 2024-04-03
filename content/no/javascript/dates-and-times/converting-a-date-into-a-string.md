@@ -11,9 +11,6 @@ title: Konvertere en dato til en streng
 weight: 28
 ---
 
-## Hva & Hvorfor?
-Å konvertere datoer til strenger gjør det enkelt å lese og vise datoer for brukere. Programmerere gjør dette for å formatere eller lagre datoer som tekst i databaser, filer eller webapper.
-
 ## Hvordan gjøre det:
 ```javascript
 const dato = new Date();

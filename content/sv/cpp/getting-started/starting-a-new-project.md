@@ -11,9 +11,6 @@ title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---
 
-## Vad & Varför?
-Starta ett nytt projekt betyder att kicka igång en helt fräsch kodkodbas från nollpunkt. Programmerare gör detta för att förverkliga nya idéer, lösa unika problem eller utforska ny teknik.
-
 ## How to:
 Börja ett nytt C++-projekt i modern stil kan vara så enkelt som följande:
 

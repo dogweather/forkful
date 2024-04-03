@@ -19,9 +19,6 @@ title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE3
 weight: 39
 ---
 
-## 무엇 & 왜?
-TOML을 사용한다는 것은 "Tom's Obvious, Minimal Language"의 최소한 형태로 데이터를 처리한다는 것을 의미하며, 읽기 쉬움 때문에 설정 파일에 인기가 있습니다. 프로그래머들은 사람이 읽기 친화적인 문법으로 박스 바깥에서 바로 작동하는 간단한 구성 관리를 위해 사용합니다.
-
 ## 방법:
 Clojure에서 TOML을 사용하기 위해서는 `clj-toml`과 같은 라이브러리가 필요합니다. 먼저, 이를 `deps.edn`에 추가하세요:
 

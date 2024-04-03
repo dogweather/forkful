@@ -11,9 +11,6 @@ title: Refaktorering
 weight: 19
 ---
 
-## Hva & Hvorfor?
-Refaktorering er prosessen med å restrukturere eksisterende datamaskinkode uten å endre dens eksterne oppførsel, med mål om å forbedre de ikke-funksjonelle attributtene til programvaren. Programmerere refaktorerer kode for å gjøre den renere, mer effektiv og lettere å forstå, noe som letter vedlikehold og fremtidige forbedringer.
-
 ## Hvordan:
 PowerShell har ikke et dedikert refaktoreringsverktøy innebygd, men du kan fortsatt rydde opp i koden din for lesbarhet og ytelse. Vurder en funksjon som gjør for mye og hvordan vi kan refaktorere den for klarhet:
 

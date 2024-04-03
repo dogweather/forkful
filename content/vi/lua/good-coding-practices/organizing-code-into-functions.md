@@ -16,9 +16,6 @@ title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---
 
-## Tại sao & Làm thế nào?
-Tổ chức mã lệnh thành các hàm là việc phân chia kịch bản của bạn thành các khối nhỏ - hãy nghĩ đến chúng như các khối LEGO chức năng. Chúng ta làm điều này để tăng cường tính rõ ràng, khả năng tái sử dụng và sự tỉnh táo. Điều này làm cho mã lệnh của chúng ta gọn gàng, dễ đọc và dễ bảo trì.
-
 ## Cách thực hiện:
 ```Lua
 -- Định nghĩa một hàm đơn giản để chào hỏi

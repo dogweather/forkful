@@ -17,11 +17,7 @@ title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---
 
-## Cái gì & Tại sao?
-Bắt đầu một dự án mới thường có nghĩa là tạo ra một cấu trúc thư mục và các tệp ban đầu—giống như việc xây dựng nền móng cho một ngôi nhà. Lập trình viên làm điều đó để tổ chức suy nghĩ, tệp, và nhiệm vụ, biến sự hỗn loạn thành một danh sách công việc gọn gàng.
-
 ## Làm thế nào:
-
 Hãy tạo một script đơn giản để khởi động một dự án mới.
 
 ```Bash
@@ -75,7 +71,6 @@ Dự án 'myproject' đã được tạo.
 ```
 
 ## Sâu hơn
-
 Trước khi có script, chúng ta thường tạo thư mục và tệp một cách thủ công mỗi khi cần—công việc buồn tẻ và dễ mắc lỗi. Tự động hóa bằng script giảm thiểu sai sót và tăng tốc độ thực hiện.
 
 Các phương án thay thế bao gồm các công cụ như Yeoman, phát triển dự án trên nhiều ngôn ngữ, nhưng đó giống như việc sử dụng máy khoan điện khi bạn chỉ cần một cái đinh tán.
@@ -83,7 +78,6 @@ Các phương án thay thế bao gồm các công cụ như Yeoman, phát triể
 Script ở trên cố ý đơn giản. Nó tạo một thư mục dự án, các thư mục phụ cho việc tổ chức (như `src` cho mã nguồn), và các tệp cần thiết (như `README.md`). Hơn nữa, nó thiết lập một kho chứa Git để bạn có thể lưu các phiên bản công việc của mình. Bạn có thể chỉnh sửa và thêm vào nó cho nhu cầu của từng dự án.
 
 ## Xem thêm
-
 - Tài liệu Git: https://git-scm.com/doc
 - Yeoman: http://yeoman.io/
 - Hướng dẫn về script Bash: https://www.shellscript.sh/

@@ -14,16 +14,10 @@ title: Generowanie liczb losowych
 weight: 12
 ---
 
-## Co i dlaczego?
-
-Generowanie losowych liczb w programowaniu polega na tworzeniu sekwencji liczb, których nie można racjonalnie przewidzieć lepiej niż przez przypadek. Programiści robią to z wielu powodów, w tym w symulacjach, grach i zastosowaniach bezpieczeństwa, gdzie nieprzewidywalność jest kluczowa dla funkcjonalności lub tajemnicy.
-
 ## Jak to zrobić:
-
 W Go, losowe liczby są generowane za pomocą pakietu `math/rand` dla pseudo-losowych liczb lub `crypto/rand` dla kryptograficznie bezpiecznych pseudo-losowych liczb. Zbadajmy oba.
 
 ### Używanie `math/rand` dla Pseudo-losowych Liczb
-
 Najpierw zaimportuj pakiet `math/rand` i pakiet `time`, aby zasiać generator. Zasiew zapewnia, że za każdym razem dostajesz inną sekwencję liczb.
 
 ```go
@@ -44,7 +38,6 @@ func main() {
 Przykładowy wynik: `Losowa liczba: 42`
 
 ### Używanie `crypto/rand` dla Kryptograficznie Bezpiecznych Pseudo-losowych Liczb
-
 Dla aplikacji bardziej wrażliwych na bezpieczeństwo pakiet `crypto/rand` jest odpowiedni, ponieważ generuje losowe liczby trudne do przewidzenia, co czyni je odpowiednimi dla operacji kryptograficznych.
 
 ```go
@@ -65,7 +58,6 @@ func main() {
 Przykładowy wynik: `Bezpieczna losowa liczba: 81`
 
 ## Dogłębna analiza
-
 Podstawowa różnica między pakietami `math/rand` a `crypto/rand` w Go wynika z ich źródła entropii i przeznaczenia. `math/rand` generuje pseudo-losowe liczby na podstawie początkowego ziarna; zatem sekwencja jest deterministyczna i może być przewidziana, jeśli ziarno jest znane. Jest to odpowiednie dla scenariuszy, gdzie kluczowe jest wysoka wydajność, a nie absolutna nieprzewidywalność, jak symulacje czy gry.
 
 Z drugiej strony, `crypto/rand` czerpie losowość z podstawowego systemu operacyjnego, czyniąc go odpowiednim dla zastosowań kryptograficznych, gdzie nieprzewidywalność jest kluczowa. Jednak wiąże się to z kosztem wydajności i złożoności w obsłudze generowanych licz (jak radzenie sobie z typem `*big.Int` dla liczb całkowitych).

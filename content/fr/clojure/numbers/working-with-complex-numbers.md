@@ -11,9 +11,6 @@ title: Manipulation des nombres complexes
 weight: 14
 ---
 
-## Quoi et pourquoi ?
-Les nombres complexes étendent les nombres réels avec une partie supplémentaire, l'unité imaginaire 'i'. Les programmeurs les utilisent dans divers domaines, notamment le traitement du signal, la théorie électromagnétique et les fractales, où les calculs impliquant la racine carrée d'un nombre négatif sont courants.
-
 ## Comment faire :
 Clojure offre un support intégré pour les nombres complexes via la classe utilitaire `clojure.lang.Numbers`. Utilisez `complex` pour créer des nombres complexes et effectuer des calculs arithmétiques.
 

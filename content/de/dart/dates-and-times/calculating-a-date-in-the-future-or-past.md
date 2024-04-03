@@ -14,9 +14,6 @@ title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---
 
-## Was & Warum?
-Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist eine gängige Aufgabe für Programmierer, die sich mit Terminplanung, Erinnerungen oder jeder Funktion befassen, die von Datumsberechnungen abhängt. Das Verständnis, wie man mit Daten umgeht, ist entscheidend für Backend-Systeme, Benutzeroberflächen und Datenanalysen, besonders für diejenigen, die zu Dart wechseln und die zeitliche Logik effizient implementieren möchten.
-
 ## Wie:
 Dart bietet robuste Unterstützung für die Datumsmanipulation durch seine `DateTime` Klasse. So können Sie zukünftige oder vergangene Daten mit nativem Dart berechnen, ohne dass Sie Drittanbieterbibliotheken benötigen.
 

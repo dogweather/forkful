@@ -17,13 +17,7 @@ title: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306E\u9001\u4FE1"
 weight: 44
 ---
 
-## What & Why? (何となぜ？)
-
-HTTPリクエストを送るって？データ交換だ。
-ウェブサーバと話すときに使う。なぜか？情報を得たり、送ったりするためさ。
-
 ## How to: (やり方)
-
 ```Python
 # requests ライブラリを使おう
 import requests
@@ -46,13 +40,11 @@ print(response.text)
 ```
 
 ## Deep Dive (掘り下げ)
-
 歴史的背景：HTTPはウェブの中核。1991年に登場。
 代替手段：`http.client` や `urllib` でもできるが、`requests` は簡単。
 実装の詳細：`requests` は内部で `urllib3` を使用。安全で使いやすいAPIを提供する。
 
 ## See Also (関連情報)
-
 - Requests公式ドキュメント: https://requests.readthedocs.io/
 - Python HTTPリクエストの更なる情報: https://realpython.com/python-requests/
 - HTTPステータスコードの一覧: https://developer.mozilla.org/ja/docs/Web/HTTP/Status

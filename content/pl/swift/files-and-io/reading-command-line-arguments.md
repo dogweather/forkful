@@ -11,9 +11,6 @@ title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---
 
-## Co i dlaczego?
-Argumenty linii poleceń to parametry przekazywane do programu, kiedy jest on uruchamiany z terminala. Programiści korzystają z nich, by wpływać na zachowanie programu bez zmiany kodu.
-
 ## How to:
 Odczytujemy argumenty z tablicy `CommandLine.arguments`. Przykładowy kod:
 

@@ -11,9 +11,6 @@ title: Skrive til standardfeil
 weight: 25
 ---
 
-## What & Why?
-Skriving til standard feil (stderr) lar deg rapportere feil uten å blande det med hovedutdata. Programmerere bruker det til å skille normal output fra feilmeldinger.
-
 ## How to:
 Elm har ikke direkte tilgang til stderr som ren funksjonell språk. Du kan utføre sideeffekter som loggføring via ports sammen med JavaScript.
 

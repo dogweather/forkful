@@ -10,9 +10,6 @@ title: Rifattorizzazione
 weight: 19
 ---
 
-## Cosa & Perché?
-Il refactoring è il processo di ristrutturazione del codice informatico esistente senza cambiarne il comportamento esterno. I programmatori eseguono il refactoring per migliorare gli attributi non funzionali del software, rendendo il codice più pulito, più efficiente e più facile da mantenere.
-
 ## Come fare:
 Prendiamo un classico snippet di PHP e applichiamo un po' di magia del refactoring.
 

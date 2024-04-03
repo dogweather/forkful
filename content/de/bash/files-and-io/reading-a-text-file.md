@@ -11,9 +11,6 @@ title: Textdatei einlesen
 weight: 22
 ---
 
-## Was & Warum?
-Lesen einer Textdatei bedeutet, deren Inhalt in den Speicher zu laden, um ihn zu verarbeiten. Programmierer nutzen das, um Konfigurationen zu laden, Daten zu analysieren oder einfach um Informationen zwischen Programmen auszutauschen.
-
 ## So geht's:
 ```Bash
 # Eine Datei zeilenweise lesen

@@ -12,12 +12,7 @@ title: Usando arrays asociativos
 weight: 15
 ---
 
-## Qué y Por Qué?
-
-Los arreglos asociativos, conocidos como mapas en Go, te permiten almacenar pares clave-valor donde cada clave única se asocia a un valor. Los programadores utilizan mapas para la recuperación eficiente de datos, la modificación y para mantener una colección de elementos que pueden ser accedidos rápidamente usando claves únicas.
-
 ## Cómo hacerlo:
-
 Crear e inicializar un mapa en Go se puede hacer de varias maneras. Aquí tienes un ejemplo básico para empezar:
 
 ```go
@@ -72,7 +67,6 @@ for color, hex := range colors {
 Recuerda, los mapas en Go no están ordenados. El orden de iteración no está garantizado.
 
 ## Estudio Detallado
-
 En Go, los mapas se implementan como tablas hash. Cada entrada en el mapa consiste en dos elementos: una clave y un valor. La clave se hashea para almacenar la entrada, lo que permite operaciones de tiempo constante para un pequeño conjunto de datos y una complejidad de tiempo promedio de O(1) con un hashing adecuado, que puede degradarse a O(n) en el peor caso con muchas colisiones de hash.
 
 Una nota importante para los nuevos programadores de Go es que los tipos de mapa son tipos de referencia. Esto significa que cuando pasas un mapa a una función, cualquier cambio realizado en el mapa dentro de esa función es visible para el llamador. Esto es diferente de, digamos, pasar una estructura a una función, donde la estructura se copia a menos que se pase por un puntero.

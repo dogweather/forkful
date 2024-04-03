@@ -13,12 +13,7 @@ title: Gebruik van associatieve arrays
 weight: 15
 ---
 
-## Wat & Waarom?
-
-Associatieve arrays, of woordenboeken, in Haskell gaan helemaal over het koppelen van sleutels aan waarden voor snelle opzoekingen en efficiënt databeheer. Programmeurs gebruiken ze om collecties van gekoppelde elementen te behandelen, waarbij het zoeken naar een element een fluitje van een cent is, in vergelijking met lijsten.
-
 ## Hoe te:
-
 Haskell heeft niet standaard associatieve arrays zoals sommige andere talen, maar het biedt een krachtige standaardbibliotheek genaamd `Data.Map` voor het werken met sleutel-waardeparen. Laten we onze mouwen opstropen en kijken hoe we ze kunnen gebruiken!
 
 Zorg eerst dat je het importeert:
@@ -57,7 +52,6 @@ Map.elems languagesUpdated
 Deze basishandelingen moeten voor de meeste toepassingen volstaan, maar er is nog veel meer te ontdekken in `Data.Map`!
 
 ## Diepe Duik
-
 De `Data.Map` module in de standaardbibliotheek van Haskell is gebouwd op basis van gebalanceerde binaire bomen, specifiek AVL-bomen. Deze keuze zorgt ervoor dat de meeste bewerkingen op de kaart, zoals invoegen, verwijderen en opzoeken, kunnen worden gedaan in O(log n) tijd, waarbij n het aantal elementen in de kaart is. Het is een efficiënte keuze voor veel gebruiksscenario's, hoewel niet absoluut de snelste voor alle scenario's.
 
 Er is ook een historische nuance: voordat `Data.Map` de standaard werd, gebruikten Haskell-programmeurs vaak lijsten van paren om associatieve arrays te simuleren. Echter, operaties op dergelijke structuren zijn O(n) voor opzoeking, waardoor `Data.Map` een aanzienlijke verbetering betekent in termen van prestaties.

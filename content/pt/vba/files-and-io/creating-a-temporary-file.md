@@ -14,12 +14,7 @@ title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---
 
-## O Que & Por Que?
-
-Criar um arquivo temporário em Visual Basic for Applications (VBA) envolve gerar programaticamente um arquivo para uso de curto prazo, tipicamente para processamento de dados ou como um buffer em tarefas de automação. Programadores fazem isso para gerenciar dados que não precisam ser armazenados a longo prazo, reduzindo desordem e garantindo eficiência no uso da memória.
-
 ## Como Fazer:
-
 No VBA, criar um arquivo temporário pode ser alcançado usando o `FileSystemObject` disponível na biblioteca Microsoft Scripting Runtime. Este objeto fornece métodos para criar, ler, escrever e deletar arquivos e pastas. Aqui está um guia passo a passo sobre criar um arquivo temporário:
 
 1. **Habilitar Microsoft Scripting Runtime**: Primeiro, garanta que a referência do Microsoft Scripting Runtime esteja habilitada no seu ambiente VBA. Vá em Ferramentas > Referências no editor VBA e marque "Microsoft Scripting Runtime".
@@ -59,7 +54,6 @@ Arquivo temporário criado em: C:\Users\[SeuNomeDeUsuário]\AppData\Local\Temp\m
 ```
 
 ## Aprofundamento
-
 O método mostrado usa o `FileSystemObject` (FSO) parte da Microsoft Scripting Runtime. FSO é uma ferramenta poderosa para manipulação do sistema de arquivos, introduzida com a Visual Basic Scripting Edition. Apesar de sua idade, permanece amplamente usado em VBA pela sua simplicidade e amplitude de funcionalidades.
 
 Criar arquivos temporários desempenha um papel crítico em muitas tarefas de programação e script, fornecendo uma área de testes ou um espaço de trabalho para processos que não requerem armazenamento permanente. No entanto, desenvolvedores devem manusear esses arquivos com cuidado, garantindo que sejam removidos ou limpos quando não mais necessários, para prevenir vazamento acidental de dados ou consumo desnecessário de espaço em disco.

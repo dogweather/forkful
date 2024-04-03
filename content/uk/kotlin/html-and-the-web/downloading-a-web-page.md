@@ -10,9 +10,6 @@ title: "\u0417\u0430\u0432\u0430\u043D\u0442\u0430\u0436\u0435\u043D\u043D\u044F
 weight: 42
 ---
 
-## Що це таке & Навіщо?
-Downloading a web page means grabbing the data of a site. Programmers do it to parse data, monitor changes, or to interact with web services.
-
 ## Як це зробити:
 We use `HttpURLConnection` to fetch web content in Kotlin. Here’s the bare-bones way to do it:
 

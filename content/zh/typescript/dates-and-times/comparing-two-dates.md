@@ -17,9 +17,6 @@ title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
 weight: 27
 ---
 
-## What & Why? (是什么以及为什么?)
-比较两个日期意味着你在看哪个日期在日历上先，哪个后。程序员这样做是为了确认时间顺序、计算时间间隔或触发时间相关操作。
-
 ## How to: (如何做)
 ```TypeScript
 // Initialize two dates

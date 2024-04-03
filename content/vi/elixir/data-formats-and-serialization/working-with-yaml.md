@@ -16,12 +16,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---
 
-## Gì & Tại sao?
-
-Làm việc với YAML có nghĩa là phân tích và tạo ra dữ liệu định dạng YAML, một chuẩn hóa dữ liệu đọc được cho con người. Lập trình viên làm việc này cho các tệp cấu hình, trao đổi dữ liệu, và vì nó dễ đọc hơn JSON hay XML cho các cấu trúc dữ liệu phức tạp.
-
 ## Làm thế nào:
-
 Elixir không bao gồm hỗ trợ YAML tích hợp sẵn, nhưng bạn có thể sử dụng thư viện `yamerl`. Đầu tiên, thêm `yamerl` vào tệp `mix.exs` của bạn:
 
 ```elixir
@@ -84,11 +79,9 @@ name: John Doe
 ```
 
 ## Sâu hơn
-
 YAML, viết tắt của "YAML Ain't Markup Language" (một từ viết tắt đệ quy), đã có từ năm 2001. JSON và XML có thể phục vụ mục đích tương tự nhưng sự tập trung vào tính dễ đọc của YAML khiến nó trở nên phổ biến cho cấu hình. `yamerl`, một thư viện Erlang được điều chỉnh cho Elixir thông qua tính tương thích, là một lựa chọn vững chắc cho các lập trình viên Elixir. Nhớ lại, YAML rất nhạy cảm với thụt lề, khiến việc phân tích trở nên phức tạp hơn so với JSON.
 
 ## Xem thêm
-
 - Kho GitHub chính thức `yamerl`: https://github.com/yakaz/yamerl
 - Elixir `hexdocs` cho các thư viện YAML: https://hex.pm/packages?search=yaml&sort=recent_downloads
 - Trang web chính thức của YAML cho thông số kỹ thuật và hơn thế nữa: https://yaml.org

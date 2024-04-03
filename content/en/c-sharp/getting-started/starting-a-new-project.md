@@ -10,9 +10,6 @@ title: Starting a new project
 weight: 1
 ---
 
-## What & Why?
-Starting a new C# project means setting up a fresh solution and project files that structure your code. Programmers kick off new projects to turn ideas into software, solve problems, or explore tech.
-
 ## How to:
 Let's roll up our sleeves and get our hands on some code. Assume you've got .NET 6 or later - that's the latest at the time of writing. You'll use the .NET CLI for this.
 

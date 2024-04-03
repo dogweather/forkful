@@ -15,9 +15,6 @@ title: Praca z plikami CSV
 weight: 37
 ---
 
-## Co i dlaczego?
-Praca z plikami CSV (Comma-Separated Values - wartości oddzielone przecinkami) w Arduino wiąże się z odczytem z plików CSV i zapisywaniem do nich, zazwyczaj przechowywanych na karcie SD, co umożliwia rejestrowanie danych, ustawienia konfiguracyjne i wiele więcej. Programiści często obsługują pliki CSV do zbierania danych z czujników, przechowywania parametrów konfiguracyjnych lub interfejsów z innymi systemami, ze względu na jego prostotę i szerokie przyjęcie na różnych platformach.
-
 ## Jak to zrobić:
 Arduino nie posiada wbudowanej biblioteki specjalnie do obsługi plików CSV, ale możesz użyć bibliotek `SD` i `SPI` do dostępu do plików na karcie SD, a następnie przetwarzać lub generować dane CSV za pomocą podstawowych technik manipulacji ciągami znaków. Kiedy zajmujesz się bardziej złożoną manipulacją plikami CSV, biblioteka firm trzecich `ArduinoCSV` może być wykorzystana do łatwiejszego parsowania i zapisywania.
 

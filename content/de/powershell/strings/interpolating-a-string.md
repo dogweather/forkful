@@ -11,9 +11,6 @@ title: Zeichenketten interpolieren
 weight: 8
 ---
 
-## What & Why? (Was & Warum?)
-String-Interpolation ermöglicht das Einbetten von Variablen direkt in Zeichenketten, wodurch dynamischer und lesbarer Code entsteht. Programmierer nutzen das, um Werte einfach in Nachrichten oder Ausgaben einzufügen.
-
 ## How to (Anleitung)
 In PowerShell realisierst du String-Interpolation leicht mit dem Dollarzeichen und geschweiften Klammern innerhalb eines doppelten Anführungszeichens. Hier sind ein paar Beispiele:
 

@@ -11,9 +11,6 @@ title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---
 
-## What & Why? (Mikä & Miksi?)
-Kun poistetaan merkkejä, jotka vastaavat tiettyä kaavaa, siivotaan merkkijonoa tarpeettomasta sisällöstä. Tämä on hyödyllistä, jotta voidaan esimerkiksi puhdistaa käyttäjän syötteet tai muotoilla dataa jatkokäsittelyä varten.
-
 ## How to: (Kuinka tehdä:)
 ```kotlin
 fun main() {

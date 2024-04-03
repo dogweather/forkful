@@ -11,9 +11,6 @@ title: Satunnaislukujen generointi
 weight: 12
 ---
 
-## Mitä & Miksi?
-Satunnaislukujen tuottaminen Arduino-projekteissa tarkoittaa arvojen tuottamista, jotka on suunniteltu ennakoimattomiksi, mikä on olennaista sovelluksissa kuten pelit, simulaatiot ja turvajärjestelmät. Ohjelmoijat käyttävät tätä tekniikkaa tuomaan vaihtelua tai tekemään päätöksiä, jotka eivät saisi olla deterministisiä.
-
 ## Miten:
 Arduino tarjoaa yksinkertaisia funktioita satunnaislukujen tuottamiseen: `randomSeed()` ja `random()`. Aloita alustamalla satunnaislukugeneraattori varmistaaksesi, että saat eri numerosarjan joka kerta kun ohjelmasi suoritetaan. Usein käytetty lähestymistapa on alustaa lukema analogisen lukemalla kytkemättömästä pinnistä.
 

@@ -11,9 +11,6 @@ title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---
 
-## Was & Warum?
-String in Kleinbuchstaben umwandeln bedeutet, alle Großbuchstaben in einem String in ihre entsprechenden Kleinbuchstaben zu konvertieren. Wir machen das für konsistente Datenverarbeitung und Vergleiche, zum Beispiel bei der Eingabeprüfung.
-
 ## Anleitung:
 Um in Rust einen String in Kleinbuchstaben umzuwandeln, benutze die Methode `to_lowercase()`. Hier ist ein einfaches Beispiel:
 

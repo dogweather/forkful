@@ -10,9 +10,6 @@ title: Vergleich von zwei Daten
 weight: 27
 ---
 
-## Was & Warum?
-Vergleichen von zwei Daten bedeutet, ihre zeitliche Reihenfolge zu bestimmen und zu erkennen, ob sie gleich oder verschieden sind. Programmierer nutzen Datumsvergleiche oft, um Zeitabläufe zu kontrollieren, Gültigkeitszeiträume zu verifizieren oder Ereignisse zu organisieren.
-
 ## How to:
 ```Swift
 import Foundation

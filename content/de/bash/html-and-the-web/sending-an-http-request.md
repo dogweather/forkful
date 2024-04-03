@@ -10,10 +10,9 @@ title: Einen HTTP-Request senden
 weight: 44
 ---
 
-## Was & Warum?
-HTTP-Anfragen (Hypertext Transfer Protocol) sind die Basis des Webs. Programmierer nutzen sie, um mit Webservern zu kommunizieren – Daten abfragen oder senden.
-
 ## How to:
+
+
 ### Curl-Befehl
 ```Bash
 curl https://api.example.com/data
@@ -48,6 +47,8 @@ Output:
 ```
 
 ## Deep Dive
+
+
 ### Historischer Kontext
 HTTP-Anfragen existieren seit Anfang der 1990er, als Tim Berners-Lee das HTTP initiierte. Curl kam 1997, ermöglicht einfache Befehlszeilenanfragen.
 

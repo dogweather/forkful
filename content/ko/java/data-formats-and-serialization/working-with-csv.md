@@ -21,14 +21,10 @@ title: "CSV\uC640 \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
 weight: 37
 ---
 
-## 무엇 & 왜?
-
-CSV 파일 작업은 데이터를 읽고 쓰는 것을 포함하며, Comma-Separated Values(CSV) 파일 형식은 단순하고 널리 지원되기 때문에 데이터 교환에 인기 있는 형식입니다. 프로그래머들은 데이터의 가져오기/내보내기, 데이터 분석, 다른 시스템 간의 정보 공유와 같은 작업을 위해 CSV 파일을 조작합니다.
-
 ## 방법:
 
-### 표준 Java 라이브러리를 사용하여 CSV 파일 읽기
 
+### 표준 Java 라이브러리를 사용하여 CSV 파일 읽기
 Java는 표준 라이브러리에서 CSV를 직접 지원하지 않지만, `java.io` 클래스를 사용하여 쉽게 CSV 파일을 읽을 수 있습니다.
 
 ```java
@@ -57,7 +53,6 @@ public class ReadCSVExample {
 ```
 
 ### 표준 Java 라이브러리를 사용하여 CSV 파일 쓰기
-
 CSV 파일에 데이터를 쓰려면 `FileWriter` 및 `BufferedWriter`와 같은 `java.io` 클래스를 사용할 수 있습니다.
 
 ```java
@@ -86,7 +81,6 @@ public class WriteCSVExample {
 ```
 
 ### 타사 라이브러리 사용하기: Apache Commons CSV
-
 Apache Commons CSV는 Java에서 CSV 파일을 다루기 위한 인기 있는 라이브러리입니다. 이는 CSV 파일을 읽고 쓰는 작업을 대폭 단순화합니다.
 
 프로젝트에 종속성 추가하기:
@@ -102,7 +96,6 @@ Maven용:
 ```
 
 #### CSV 파일 읽기:
-
 ```java
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -131,7 +124,6 @@ public class ApacheReadCSVExample {
 ```
 
 #### CSV 파일 쓰기:
-
 ```java
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;

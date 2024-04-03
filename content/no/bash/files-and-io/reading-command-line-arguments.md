@@ -11,9 +11,6 @@ title: Lese kommandolinjeargumenter
 weight: 23
 ---
 
-## Hva & Hvorfor?
-Å lese kommandolinjeargumenter betyr ganske enkelt at skriptet ditt plukker opp informasjon direkte fra terminalen. Programmerere bruker dette til å gjøre skriptene fleksible og tilpassbare for ulike oppgaver uten å endre på koden hver gang.
-
 ## Hvordan:
 ```Bash
 #!/bin/bash
@@ -40,7 +37,7 @@ Kommandolinjeargumenter ble introdusert tidlig i UNIX-historien for at skript og
 
 Åpne filer eller prosesser med navn som argumenter er en vanlig praksis. Alternativer til `$1` inkluderer `getopts` for mere avanserte alternativer og `shift` for å traversere argumenter.
 
-Når det gjelder implementasjonsdetaljer, husk på at ubrukte argumenter ignoreres. Sjekk alltid for gyldighet og antall argumenter for robusthet. Bruk `$#` til å få antall argumenter. 
+Når det gjelder implementasjonsdetaljer, husk på at ubrukte argumenter ignoreres. Sjekk alltid for gyldighet og antall argumenter for robusthet. Bruk `$#` til å få antall argumenter.
 
 ## Se Også
 - [The Bash Guide](https://guide.bash.academy/)

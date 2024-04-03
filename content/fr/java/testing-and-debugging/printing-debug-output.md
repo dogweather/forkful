@@ -11,9 +11,6 @@ title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Le débogage, on connaît : imprimer des sorties dans la console pour comprendre ce qui se passe dans le code. Pourquoi ? Pour traquer les bugs plus vite et vérifier le comportement de notre programme.
-
 ## How to (Comment faire) :
 En Java, `System.out.println()` est notre ami pour afficher des messages de débogage.
 

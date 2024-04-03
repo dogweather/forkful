@@ -13,9 +13,6 @@ title: "Ty\xF6skentely kompleksilukujen kanssa"
 weight: 14
 ---
 
-## Mikä & Miksi?
-Kompleksiluvut, jotka esitetään reaaliluvun ja imaginaariyksikön yhdistelmänä (esim. 3 + 4i), ovat keskeisiä erilaisissa laskennallisissa ongelmissa, erityisesti insinööritieteissä, fysiikassa ja sovelletussa matematiikassa. Kompleksilukujen käsittelyn oppiminen Google Apps Scriptillä mahdollistaa ohjelmoijien kykyjen laajentamisen tieteelliseen laskentaan, signaalinkäsittelyyn ja sen ulkopuolelle.
-
 ## Kuinka:
 Google Apps Script ei tue kompleksilukuja sisäänrakennetusti, mikä edellyttää mukautetun toiminnallisuuden toteuttamista. Alla on perusrakenne kompleksilukujen käsittelyyn, mukaan lukien yhteenlasku, vähennyslasku ja kertolasku.
 

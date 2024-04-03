@@ -14,12 +14,7 @@ title: Arbeta med CSV
 weight: 37
 ---
 
-## Vad & Varför?
-
-Att arbeta med CSV (Comma-Separated Values) filer innebär att tolka och generera textdata organiserad i rader och kolumner, där komman används för att separera enskilda värden. Programmerare engagerar sig ofta i denna process för att underlätta datautbyte mellan olika applikationer, databaser, eller för uppgifter avseende databearbetning och analys, på grund av CSV:s utbredda stöd och enkelhet.
-
 ## Hur man gör:
-
 I Lua kan arbete med CSV-filer närmas genom grundläggande fil-IO-operationer som språket tillhandahåller, utan behov av externa bibliotek för enkla uppgifter. För mer komplexa operationer, såsom hantering av specialfall (t.ex., komman inom värden), kan det vara fördelaktigt att använda tredjepartsbibliotek som `lua-csv`.
 
 ### Läsa en CSV-fil

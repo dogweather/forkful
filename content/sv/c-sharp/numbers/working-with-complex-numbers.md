@@ -12,9 +12,6 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad & Varför?
-Komplexa tal utvidgar vårt talsystem för att inkludera imaginära tal, vilket möjliggör lösningar på ekvationer som inte har reella lösningar. Programmerare arbetar med dem inom områden som ingenjörsvetenskap, fysik och signalbehandling där dessa tal är väsentliga för modellering och problemlösning.
-
 ## Hur man gör:
 C# har en inbyggd `System.Numerics.Complex` struktur för att bearbeta komplexa tal. Här är en snabb genomgång:
 

@@ -11,9 +11,6 @@ title: Organisera kod i funktioner
 weight: 18
 ---
 
-## Vad & Varför?
-Att organisera kod i funktioner innebär att dela upp din kod i återanvändbara, modulära block. Vi gör detta för att hålla saker DRY (Don’t Repeat Yourself), vilket gör koden renare, lättare att läsa, och enkel att felsöka.
-
 ## Hur man gör:
 Föreställ dig att du gör en grundläggande kalkylator. Istället för att skriva logiken för addition överallt där du behöver det, skapa en `add`-funktion:
 

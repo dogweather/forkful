@@ -10,9 +10,6 @@ title: Convertendo uma data em uma string
 weight: 28
 ---
 
-## What & Why?
-Converter uma data em uma string trata-se de transformar o objeto Date em um texto legível. Programadores fazem isso para exibir datas de forma compreensível para usuários ou para preparar informações para armazenamento e transferência.
-
 ## How to:
 TypeScript oferece métodos nativos para converter datas em strings. Vamos ver alguns exemplos:
 ```TypeScript

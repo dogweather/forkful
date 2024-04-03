@@ -15,9 +15,6 @@ title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---
 
-## Cái gì & Tại sao?
-Bắt đầu một dự án mới bằng TypeScript chính là việc thiết lập một nền tảng vững chắc để lập trình. Các lập trình viên khởi xướng dự án mới để biến những ý tưởng mới thành phần mềm hoạt động, thử nghiệm các khái niệm, hoặc học hỏi điều mới.
-
 ## Cách thực hiện:
 ```TypeScript
 // Bước 1: Cài đặt TypeScript ở cấp độ toàn cục (nếu chưa được cài đặt)

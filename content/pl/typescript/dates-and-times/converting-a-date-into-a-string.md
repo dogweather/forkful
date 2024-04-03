@@ -11,9 +11,6 @@ title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---
 
-## What & Why? (Co i Dlaczego?)
-Zamiana daty na ciąg znaków to proces przekształcania obiektów daty w tekst. Robimy to, by łatwiej było przechowywać, wyświetlać oraz współdzielić informacje o dacie i czasie.
-
 ## How to: (Jak to zrobić:)
 ```TypeScript
 const currentDate: Date = new Date();

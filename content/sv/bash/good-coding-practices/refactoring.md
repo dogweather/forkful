@@ -10,9 +10,6 @@ title: Refaktorisering
 weight: 19
 ---
 
-## Vad & Varför?
-Refaktorisering är processen att omstrukturera befintlig dator kod utan att ändra dess externa beteende. Det är en vital metod för att reducera komplexitet, förbättra underhållbarheten och hålla din kodbas frisk och lättare att förstå för både nuvarande och framtida utvecklare.
-
 ## Hur gör man:
 Låt oss överväga ett enkelt Bash-skript som behöver någon refaktorisering. Det är klumpigt, med upprepad kod och svårt att följa:
 

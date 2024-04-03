@@ -17,12 +17,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---
 
-## Gì và Tại Sao?
-
-Làm việc với CSV (Comma-Separated Values - Giá Trị Được Phân Tách Bởi Dấu Phẩy) bao gồm việc phân tích cú pháp và thao tác dữ liệu được cấu trúc dưới dạng hàng và cột trong định dạng văn bản. Các lập trình viên sử dụng tệp CSV vì chúng đơn giản, được hỗ trợ rộng rãi và dễ dàng nhập hoặc xuất từ cơ sở dữ liệu và bảng tính.
-
 ## Cách thực hiện:
-
 1. Đọc một tệp CSV dòng theo dòng:
 ```Fish Shell
 for line in (cat file.csv)
@@ -53,13 +48,11 @@ Bob,25,Los Angeles
 ```
 
 ## Kỹ sâu
-
 Việc xử lý CSV đã tồn tại từ những ngày đầu của máy tính cá nhân, phát triển như một định dạng đơn giản cho giao tiếp dữ liệu. Mặc dù cơ bản, nhưng sự thiếu một tiêu chuẩn cố định của CSV có thể dẫn đến các vấn đề phân tích cú pháp, như sự khác biệt về dấu phân cách và mã hóa văn bản. Mặc dù Fish Shell không có công cụ phân tích cú pháp CSV tích hợp, `awk`, `sed`, và `cut` thường được sử dụng cùng với nó cho các nhiệm vụ phức tạp hơn.
 
 Cách tiếp cận của Fish Shell đối với CSV là dựa trên script và thủ công hơn, tận dụng khả năng thao tác chuỗi của nó để xử lý các trường CSV. Đối với việc xử lý dữ liệu nặng, cân nhắc các phương án thay thế như thư viện `pandas` của Python, hoặc các công cụ dòng lệnh như `csvkit`.
 
 ## Xem Thêm
-
 - Bắt đầu với `awk`: [AWK - Bài học và Giới thiệu](https://www.grymoire.com/Unix/Awk.html)
 - Giới thiệu về `sed`: [Sed - Giới thiệu và Bài học](https://www.grymoire.com/Unix/Sed.html)
 - Tài liệu chính thức của Fish Shell: [Tài liệu Fish Shell](https://fishshell.com/docs/current/index.html)

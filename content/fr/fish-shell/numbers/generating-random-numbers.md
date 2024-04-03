@@ -12,12 +12,7 @@ title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---
 
-## Quoi & Pourquoi ?
-
-La génération de nombres aléatoires est une tâche fondamentale en programmation, utilisée pour tout, de l'échantillonnage de données au développement de jeux. Dans Fish Shell, l'utilisation des outils système et des fonctions intégrées à cette fin permet aux programmeurs d'incorporer de l'aléatoire et de la variabilité dans les scripts et applications efficacement.
-
 ## Comment faire :
-
 Générer un nombre aléatoire dans Fish peut être simple, en utilisant la combinaison des utilitaires système et des capacités du shell. Ci-dessous, quelques exemples montrent comment générer des nombres aléatoires dans des plages spécifiées.
 
 **Générer un nombre aléatoire entre 0 et 100 :**
@@ -69,7 +64,6 @@ B
 Veuillez noter, la sortie variera à chaque fois que vous exécutez ces commandes en raison de la nature de l'aléatoire.
 
 ## Analyse Approfondie
-
 La fonction `random` de Fish Shell offre une interface facile à utiliser pour générer des nombres pseudo-aléatoires. En interne, elle s'appuie sur les utilitaires de génération de nombres aléatoires au niveau du système, offrant une manière portable d'introduire de l'aléatoire dans vos scripts. Cependant, il est essentiel de se rappeler que l'aléatoire fourni par `random` est suffisant pour la plupart des tâches de script mais pourrait ne pas répondre aux exigences de sécurité cryptographique pour les applications nécessitant un degré d'imprévisibilité plus élevé.
 
 Pour des contextes de sécurité à enjeux élevés, envisagez d'utiliser des outils dédiés ou des bibliothèques de programmation conçues à des fins cryptographiques, qui offrent des garanties de randomisation plus fortes. Néanmoins, pour les scripts généraux et les applications où les normes de sécurité les plus élevées pour l'aléatoire ne sont pas une exigence, la fonction `random` de Fish Shell offre une solution pratique et efficace.

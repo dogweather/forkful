@@ -10,9 +10,6 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## What & Why?
-Stampare output di debug permette di vedere che cosa succede nel codice durante l'esecuzione. I programmatori lo fanno per scovare errori o comportamenti inaspettati.
-
 ## How to:
 Ecco la base: `println()` per mandare in stampa i tuoi messaggi di debug. Semplice.
 

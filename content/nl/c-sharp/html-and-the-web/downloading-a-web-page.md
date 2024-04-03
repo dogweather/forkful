@@ -12,12 +12,7 @@ title: Een webpagina downloaden
 weight: 42
 ---
 
-## Wat & Waarom?
-
-Het downloaden van een webpagina betekent het ophalen van de ruwe HTML-inhoud van het internet met behulp van code. Programmeurs doen dit om gegevens te verwerken, interactie met webservices uit te voeren, of simpelweg informatie op te slaan voor offline gebruik.
-
 ## Hoe te:
-
 C# maakt het eenvoudig om een webpagina te downloaden met de `HttpClient` klasse. Hier volgt een snel voorbeeld:
 
 ```C#
@@ -53,7 +48,6 @@ class Program
 Dit zal de HTML-inhoud van de opgegeven webpagina naar de console uitvoeren.
 
 ## Diepere Duik
-
 Vóór `HttpClient`, gebruikte C# klassen zoals `WebClient` en `HttpWebRequest` om webinhoud te downloaden. `HttpClient` is de nieuwste en is ontworpen om herbruikbaar, efficiënt te zijn, en ondersteunt asynchrone bewerkingen, wat het de voorkeurkeuze maakt voor nieuwe applicaties.
 
 Er bestaan alternatieven. Zo kunnen bijvoorbeeld externe bibliotheken zoals `HtmlAgilityPack` HTML analyseren, wat het gemakkelijker maakt om door de DOM te navigeren of specifieke stukjes informatie te extraheren zonder te hoeven omgaan met rauwe HTML-strings.
@@ -61,7 +55,6 @@ Er bestaan alternatieven. Zo kunnen bijvoorbeeld externe bibliotheken zoals `Htm
 Bij het downloaden van webpagina's, vergeet niet: respecteer robots.txt-bestanden, handel uitzonderingen af, en wees bewust van de gebruiksvoorwaarden van websites.
 
 ## Zie Ook
-
 - [HttpClient Klasse Documentatie](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
 - [Asynchroon en Wachten](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/)
 - [HTML Agility Pack op GitHub](https://github.com/zzzprojects/html-agility-pack)

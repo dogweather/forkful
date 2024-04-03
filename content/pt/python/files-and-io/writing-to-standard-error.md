@@ -13,10 +13,9 @@ title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---
 
-## O Quê & Por Quê?
-Escrever para o erro padrão em Python trata-se de direcionar as mensagens de erro ou diagnósticos do seu programa para o fluxo de erro (`stderr`), separado da saída padrão (`stdout`). Os programadores fazem isso para diferenciar as saídas normais do programa das mensagens de erro, facilitando a depuração e análise de logs.
-
 ## Como fazer:
+
+
 ### Usando `sys.stderr`
 O módulo interno `sys` do Python permite escrever explicitamente para `stderr`. Esta abordagem é direta para mensagens de erro simples ou diagnósticos.
 

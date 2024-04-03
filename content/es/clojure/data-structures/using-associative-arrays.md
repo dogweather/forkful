@@ -12,12 +12,7 @@ title: Uso de matrices asociativas
 weight: 15
 ---
 
-## Qué y Por Qué
-
-Los arreglos asociativos, o mapas hash, en Clojure te permiten almacenar y recuperar datos con pares clave-valor. Son una opción predilecta para manejar datos estructurados, lo que hace que sea más rápido acceder a elementos específicos sin tener que iterar a través de una lista.
-
 ## Cómo:
-
 En Clojure, crear y manipular arreglos asociativos (mapas hash) es sencillo. Vamos a profundizar con ejemplos.
 
 Para crear un mapa hash:
@@ -72,7 +67,6 @@ Y para acceso condicional, `find` devuelve un par clave-valor si la clave existe
 ```
 
 ## Análisis Profundo
-
 Los arreglos asociativos en Clojure, comúnmente referidos como mapas hash, son increíblemente versátiles y eficientes para manejar datos basados en clave-valor. Son parte de la rica biblioteca de colecciones de Clojure, profundamente arraigados en la filosofía del lenguaje de inmutabilidad y programación funcional. A diferencia de los arreglos o listas que requieren una complejidad de tiempo O(n) para acceder a los elementos, los mapas hash proporcionan una complejidad de tiempo casi constante para el acceso, lo que los hace altamente eficientes para operaciones de búsqueda.
 
 Uno podría argumentar que los vectores en Clojure podrían servir un propósito similar a través del acceso indexado, pero los mapas hash brillan cuando se trata de lidiar con datos no secuenciales y etiquetados, donde la clave proporciona un descriptor significativo en lugar de un índice arbitrario.

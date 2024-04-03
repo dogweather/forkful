@@ -12,9 +12,6 @@ title: Twee datums vergelijken
 weight: 27
 ---
 
-## Wat & Waarom?
-Het vergelijken van data gaat over het uitvogelen welke van twee data vroeger, later is, of dat ze hetzelfde zijn. Programmeurs doen dit voor het organiseren van evenementen, het laten verlopen van promoties, planning, herinneringen - in principe alles met een tijdcomponent.
-
 ## Hoe:
 C++ maakt het leven makkelijk met de `<chrono>` header.
 

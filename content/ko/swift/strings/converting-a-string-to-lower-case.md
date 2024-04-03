@@ -18,9 +18,6 @@ title: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uAE
 weight: 4
 ---
 
-## What & Why? (무엇과 왜?)
-문자열을 소문자로 변환하는 것은, 대소문자를 구분하지 않는 비교를 가능하게 하거나, 사용자들에게 일관성 있는 텍스트 형태를 제공하기 위해 사용합니다.
-
 ## How to: (어떻게 하나요?)
 ```swift
 let greeting = "Hello, World!"

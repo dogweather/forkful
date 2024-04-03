@@ -13,11 +13,8 @@ title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---
 
-## Vad & Varför?
-
-Reguljära uttryck (regex) i Bash gör det möjligt att söka, manipulera och hantera strängar och filer baserat på särskilda mönster. Programmerare använder regex för uppgifter som validering av inmatning, parsning av loggfiler och dataextraktion eftersom det erbjuder ett flexibelt och kraftfullt sätt att specificera mönster för komplex textbearbetning.
-
 ## Hur man gör:
+
 
 ### Grundläggande mönstermatchning
 För att hitta om en sträng matchar ett mönster kan du använda `grep`, ett kommandoradsverktyg för att söka i vanliga textdatauppsättningar efter rader som matchar ett reguljärt uttryck:

@@ -10,11 +10,6 @@ title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---
 
-## What & Why?
-Co i Dlaczego?
-
-Wyliczanie długości ciągu znaków to sposób, by dowiedzieć się, ile znaków zawiera dany tekst. Programiści robią to, gdy potrzebują na przykład walidować dane wejściowe lub manipulować tekstem.
-
 ## How to:
 Jak to zrobić:
 

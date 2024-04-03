@@ -11,9 +11,6 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## Mikä & Miksi?
-Web-sivun lataaminen tarkoittaa sivun datan siirtämistä palvelimelta omalle koneelle. Ohjelmoijat tekevät tätä data-analyysin, testauksen tai sisällön aggregoinnin vuoksi.
-
 ## Miten:
 Voit käyttää Node.js:n `axios`-kirjastoa web-sivujen lataamiseen TypeScriptissä. Tässä yksinkertainen esimerkki:
 

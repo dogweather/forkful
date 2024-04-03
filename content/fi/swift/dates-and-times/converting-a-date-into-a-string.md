@@ -11,9 +11,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---
 
-## What & Why? - Mikä & Miksi?
-Muunnetaan päivämäärä merkkijonoksi jotta se olisi helpompi näyttää käyttäjälle. Tämä tehdään käyttäjäystävällisten muotojen ja paikallisten aikavyöhykkeiden näyttämiseksi.
-
 ## How to: - Kuinka tehdä:
 ```Swift
 import Foundation

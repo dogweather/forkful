@@ -11,9 +11,6 @@ title: "\xC5 jobbe med XML"
 weight: 40
 ---
 
-## Hva og Hvorfor?
-Å jobbe med XML betyr analyse, oppretting og manipulering av XML (eXtensible Markup Language)-data. Programmerere håndterer XML for å håndtere strukturert datautveksling, konfigurasjon og mer, på grunn av dens plattformnøytrale natur.
-
 ## Hvordan:
 Her er en enkel måte å analysere XML på ved hjelp av TinyXML-2-biblioteket:
 

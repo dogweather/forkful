@@ -16,9 +16,6 @@ title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Cái gì & Tại sao?
-Tạo một tập tin tạm thời trong Bash có nghĩa là tạo một tập tin mà các kịch bản của bạn có thể sử dụng để lưu trữ dữ liệu một cách ngắn gọn. Lập trình viên làm điều này để lưu giữ các thông tin nhỏ trong khi thực hiện các nhiệm vụ phức tạp, tránh làm đầy ổ cứng, và để giảm thiểu xung đột giữa các quá trình khác nhau cố gắng sử dụng cùng một tập tin.
-
 ## Làm thế nào:
 Bash có một lệnh được tích hợp sẵn gọi là `mktemp` để dễ dàng tạo tập tin tạm thời:
 

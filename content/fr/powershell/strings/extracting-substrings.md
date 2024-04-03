@@ -11,9 +11,6 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Extraire des sous-chaînes, c'est comme couper un morceau de votre baguette préférée – vous prenez juste la partie que vous voulez. Les programmeurs font ça pour isoler des données spécifiques d'une chaîne plus grande, souvent pour le traitement ou l'analyse.
-
 ## How to: (Comment faire :)
 Voici le pain et le beurre de l'extraction de sous-chaînes en PowerShell. Simple, direct.
 

@@ -12,11 +12,7 @@ title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---
 
-## O Que É e Por Que?
-A impressão de saída de depuração é o ato de exibir informações de interesse durante a execução de um programa, geralmente para rastrear bugs ou verificar o fluxo de execução. Programadores fazem isso para entender o que está acontecendo "sob o capô" do código e garantir que tudo funcione como esperado.
-
 ## Como Fazer:
-
 ```PHP
 <?php
 // Exemplo básico de saída de depuração
@@ -49,7 +45,6 @@ array(2) {
 ```
 
 ## Aprofundando:
-
 Historicamente, a depuração sempre foi uma parte crucial do desenvolvimento de programas. Antes, poderia ser tão primitivo quanto analisar a sequência de lâmpadas em um painel frontal. Hoje, temos ferramentas sofisticadas, mas a impressão de saída ainda é uma técnica rápida e fácil.
 
 Algumas alternativas à impressão direta são o uso de ferramentas de depuração integradas, como XDebug, que se integram com IDEs e fornecem um ambiente mais controlado e informações detalhadas. Porém, isso pode ser mais complexo e pesado durante a codificação rápida.
@@ -57,7 +52,6 @@ Algumas alternativas à impressão direta são o uso de ferramentas de depuraç�
 Em relação à implementação, PHP oferece funções específicas como `echo`, `print`, `print_r` e `var_dump`, cada qual com seus detalhes. `echo` e `print` são mais básicos, enquanto `print_r` e `var_dump` oferecem mais informações, com `var_dump` revelando detalhes como tipos e tamanhos de dados.
 
 ## Veja Também:
-
 - Documentação oficial do PHP sobre strings: [php.net/manual/pt_BR/language.types.string.php](https://www.php.net/manual/pt_BR/language.types.string.php)
 - Ferramenta de depuração XDebug: [xdebug.org](https://xdebug.org/)
 - PHP Debug Bar, uma barra de ferramentas visual para depuração: [phpdebugbar.com](http://phpdebugbar.com/)

@@ -12,9 +12,6 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-Reguliere expressies (regex) zijn krachtige patronen voor het overeenkomen van tekstreeksen. Programmeurs gebruiken regex om efficiënt te zoeken, valideren of inhoud te vervangen.
-
 ## Hoe:
 ```PowerShell
 # Een patroon overeenkomen dat begint met 'S', gevolgd door willekeurige karakters, eindigend op 'e'

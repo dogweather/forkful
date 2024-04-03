@@ -14,12 +14,7 @@ title: Utilizando arrays associativos
 weight: 15
 ---
 
-## O Que & Por Que?
-
-Arrays associativos, conhecidos em outras linguagens como mapas ou dicionários, são pares de chave-valor usados para a busca e manipulação eficiente de dados. Diferentemente dos arrays tradicionais que usam índices inteiros, os arrays associativos utilizam chaves, tornando o acesso aos dados mais intuitivo e flexível para os programadores.
-
 ## Como fazer:
-
 C não possui suporte embutido para arrays associativos como algumas linguagens de mais alto nível, mas você pode simulá-los usando estruturas e hashing. Abaixo está um exemplo simplista usando uma combinação de uma struct e uma função de hashing simples para implementar um array associativo para armazenar e acessar inteiros por chaves de string.
 
 Primeiro, defina uma estrutura para representar um único par chave-valor e outra para representar o próprio array associativo:
@@ -96,7 +91,6 @@ int main() {
 Este exemplo demonstra operações básicas: inicializando um array associativo, inserindo pares chave-valor e encontrando valores pelas chaves. Note que este código não trata colisões e é destinado a fins educacionais.
 
 ## Aprofundando
-
 O conceito de arrays associativos antecede a linguagem C, mas a natureza de baixo nível da linguagem não os suporta diretamente como tipos embutidos. Isso encoraja um entendimento mais profundo das estruturas de dados e algoritmos, incluindo mecanismos de hashing para mapeamento eficiente de chave-valor. Muitas bibliotecas e frameworks de C oferecem abordagens mais sofisticadas para implementar arrays associativos, como o `GHashTable` da GLib, que fornece uma implementação robusta completada com tratamento de colisões, redimensionamento dinâmico e suporte para tipos de chaves e valores arbitrários.
 
 Embora a construção manual de arrays associativos em C possa ser vista como trabalhosa comparada a linguagens com suporte embutido, ela oferece insights inestimáveis sobre o funcionamento interno das estruturas de dados, aprimorando as habilidades de resolução de problemas e otimização dos programadores. No entanto, para códigos de produção ou aplicações mais complexas, aproveitar bibliotecas existentes como a GLib geralmente é uma abordagem mais prática e eficiente em termos de tempo.

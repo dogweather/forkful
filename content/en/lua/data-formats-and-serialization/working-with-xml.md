@@ -9,9 +9,6 @@ title: Working with XML
 weight: 40
 ---
 
-## What & Why?
-Working with XML involves parsing and manipulating XML documents using code. Programmers do this to read, write, and modify data in a structured, portable format that’s widely used for data exchange and storage.
-
 ## How to:
 Lua doesn't include native XML parsing, but there are libraries like LuaXML and xml2lua that get the job done. Here's a quick look at parsing XML with xml2lua:
 

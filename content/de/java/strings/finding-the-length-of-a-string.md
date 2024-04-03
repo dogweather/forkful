@@ -11,9 +11,6 @@ title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---
 
-## Was & Warum?
-Die Länge eines Strings zu ermitteln bedeutet, zu zählen, wie viele Zeichen er enthält. Entwickler brauchen diese Information, um Eingaben zu validieren, Daten zu bearbeiten oder einfach die Größe eines Textes zu bestimmen.
-
 ## How to:
 Java macht es leicht, die Länge eines Strings zu erlangen – benutze einfach die `length()` Methode.
 

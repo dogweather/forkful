@@ -12,11 +12,8 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-
-Parsing a date from a string is a common task when dealing with user input or reading data from files, which involves converting string data into a date format recognized by the programming language. In Rust, this is essential for operations on dates, like comparisons, arithmetic, or formatting, and it enhances data validation and integrity in applications.
-
 ## How to:
+
 
 ### Using Rust's Standard Library (`chrono` Crate)
 The Rust standard library does not include date parsing directly, but the widely-used `chrono` crate is a robust solution for date and time manipulation. First, add `chrono` to your `Cargo.toml`:

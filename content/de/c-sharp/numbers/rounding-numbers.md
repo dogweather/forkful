@@ -10,9 +10,6 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-Zahlen runden bedeutet, sie auf den nächsten angegebenen Stellenwert anzupassen – man könnte sagen, sie auf eine einfachere Form zu reduzieren. Programmierer runden Zahlen, um die Präzision zu kontrollieren, die Leistung zu steigern oder benutzerfreundliche Ergebnisse anzuzeigen – wie Preise, die keine drei Dezimalstellen benötigen.
-
 ## Wie:
 Hier ist Ihr Rundreiseticket für das Runden von Zahlen in C#:
 

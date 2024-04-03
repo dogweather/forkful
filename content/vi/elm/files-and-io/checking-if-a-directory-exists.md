@@ -16,9 +16,6 @@ title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---
 
-## Gì & Tại sao?
-Kiểm tra xem một thư mục có tồn tại không có nghĩa là xác nhận liệu một đường dẫn thư mục cụ thể có mặt trong hệ thống tệp hay không. Lập trình viên thực hiện việc này để tránh lỗi khi truy cập, đọc hoặc ghi tệp.
-
 ## Cách thực hiện:
 Elm là một ngôn ngữ lập trình web front-end, vì vậy nó không có quyền truy cập trực tiếp vào hệ thống tệp. Tuy nhiên, bình thường bạn sẽ gửi một lệnh cho một dịch vụ phía backend trong JavaScript. Dưới đây là cách bạn có thể cấu trúc một tương tác như vậy với Elm:
 

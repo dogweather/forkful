@@ -12,12 +12,7 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-
-Tests schrijven in Go betekent kleine, beheersbare stukken code creëren die de functionaliteit en het gedrag van je applicatie valideren. Programmeurs schrijven tests om ervoor te zorgen dat hun code zoals verwacht werkt onder verschillende omstandigheden, om refactoring te faciliteren en om regressies te helpen voorkomen.
-
 ## Hoe te:
-
 In Go worden tests doorgaans geschreven in hetzelfde pakket als de code die ze testen. Bestanden met tests krijgen de `_test.go` suffix. Tests zijn functies die een pointer naar het testing.T object (uit het `testing` pakket) als argument nemen, en ze signaleren falen door methoden aan te roepen zoals `t.Fail()`, `t.Errorf()`, enz.
 
 Voorbeeld van een eenvoudige test voor een functie `Add` gedefinieerd in `math.go`:
@@ -79,7 +74,6 @@ func TestAddTableDriven(t *testing.T) {
 ```
 
 ## Diepgaand
-
 Het Go-testframework, geïntroduceerd in Go 1 samen met de taal zelf, was ontworpen om naadloos te integreren met de Go toolchain, wat Go's nadruk op eenvoud en efficiëntie in de softwareontwikkeling weerspiegelt. In tegenstelling tot sommige testframeworks in andere talen die afhankelijk zijn van externe bibliotheken of complexe opstellingen, biedt Go's ingebouwde `testing` pakket een eenvoudige manier om tests te schrijven en uit te voeren.
 
 Een interessant aspect van Go's benadering van testen is het principe van conventie boven configuratie dat het aanneemt, zoals het bestandsbenamingspatroon (`_test.go`) en het gebruik van standaardbibliotheekfunctionaliteiten boven externe afhankelijkheden. Deze minimalistische aanpak moedigt ontwikkelaars aan om tests te schrijven, aangezien de instapdrempel laag is.

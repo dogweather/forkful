@@ -11,9 +11,6 @@ title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---
 
-## What & Why? – Mitä & Miksi?
-Poistamme merkkejä, jotka vastaavat tiettyä kuviota, puhdistaaksemme syötteen tai valmistellaksemme jatkokäsittelyä varten. Liikakirjaimet voivat sotkea tulosteita tai katkaista tiedonkäsittelyn.
-
 ## How to: – Näin toimit:
 ```C++
 #include <iostream>

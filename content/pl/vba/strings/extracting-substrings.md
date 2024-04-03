@@ -14,12 +14,7 @@ title: "Wydobywanie podci\u0105g\xF3w"
 weight: 6
 ---
 
-## Co i dlaczego?
-
-Wyodrębnianie podciągów w Visual Basic for Applications (VBA) polega na izolowaniu określonych części ciągu na podstawie zadanych kryteriów. Programiści robią to w celu realizacji zadań takich jak przetwarzanie danych, walidacja i formatowanie, gdzie manipulacja i ekstrakcja informacji z danych tekstowych jest kluczowa.
-
 ## Jak to zrobić:
-
 W VBA głównie używa się funkcji `Mid`, `Left` i `Right` do wyodrębniania podciągów. Poniżej, badamy te funkcje na przykładach:
 
 1. **Mid**: Wyodrębnia podciąg z ciągu, zaczynając od określonej pozycji.
@@ -52,7 +47,6 @@ W VBA głównie używa się funkcji `Mid`, `Left` i `Right` do wyodrębniania po
 Te fundamentalne funkcje stanowią podstawę ekstrakcji podciągów w VBA, zapewniając solidne i proste podejścia do manipulacji ciągami.
 
 ## Pogłębione zagadnienie:
-
 Historycznie, zdolność do manipulowania ciągami w programowaniu była niezbędna, przy czym BASIC (poprzednik VBA) był jednym z pierwszych, który zdemokratyzował tę możliwość na wczesnym etapie komputerów osobistych. Funkcje `Mid`, `Left` i `Right` w VBA dziedziczą to dziedzictwo, oferując uproszczony interfejs dla nowoczesnych programistów.
 
 Chociaż te funkcje są dość skuteczne w wielu zadaniach, pojawienie się Wyrażeń Regularnych w nowszych językach zapewniło bardziej potężny i elastyczny sposób pracy z tekstem. Mimo to, bezpośrednia prostota i dostępność tradycyjnych funkcji podciągów VBA sprawiają, że są one doskonale dostosowane do szybkich zadań i osób nowych w programowaniu.

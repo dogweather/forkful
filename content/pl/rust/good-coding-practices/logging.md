@@ -12,12 +12,7 @@ title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---
 
-## Co i dlaczego?
-
-Logowanie jest jak prowadzenie dziennika dla twojej aplikacji; to praktyka rejestrowania zdarzeń, błędów i innych istotnych danych podczas działania programu. Deweloperzy używają logów do diagnozowania problemów, monitorowania zachowania systemu i zbierania wglądów, które napędzają ulepszenia — to chleb powszedni wywiadu operacyjnego.
-
 ## Jak to zrobić:
-
 Załóżmy podstawowe logowanie w Rust przy użyciu skrzynki (crate) `log`, która dostarcza fasadę logowania, oraz `env_logger`, implementację logowania dla skrzynki `log`. Najpierw dodaj je do twojego Cargo.toml:
 
 ```toml
@@ -49,7 +44,6 @@ WARN: To jest wiadomość ostrzegawcza.
 Pobaw się zmienną środowiskową `RUST_LOG`, ustawiając ją na `error`, `warn`, `info`, `debug`, lub `trace`, aby kontrolować werbalność twoich logów.
 
 ## Dogłębna analiza
-
 Koncepcja logowania nie jest niczym nowym; istnieje od wczesnych lat informatyki. Zanim logowanie stało się powszechne w oprogramowaniu, deweloperzy polegali na prymitywnych metodach, takich jak instrukcje wydruku lub narzędzia debuggerów, aby śledzić wykonanie programu. Wraz ze wzrostem złożoności programów rosła również potrzeba strukturalnych podejść do logowania.
 
 W Rust, skrzynka `log` abstrahuje szczegóły implementacji logowania, pozwalając deweloperom na podłączenie różnych zaplecz logowania. Chociaż `env_logger` jest często wybierany, istnieją alternatywy, takie jak `fern`, `slog` czy `tracing`, każda z własnym zestawem funkcji i opcji konfiguracji.
@@ -67,7 +61,6 @@ Niektóre kwestie do rozważenia przy implementacji logowania to:
 5. **Konfiguracja**: Wiele frameworków logowania wspiera konfigurację przez zmienne środowiskowe, pliki konfiguracyjne i/lub kod. Ta elastyczność jest kluczem do dostosowywania wyjścia w różnych środowiskach (rozwój, staging, produkcja).
 
 ## Zobacz także
-
 - Dokumentacja skrzynki `log`: https://docs.rs/log/
 - Dokumentacja skrzynki `env_logger`: https://docs.rs/env_logger/
 - Strona logowania Rust by Example: https://doc.rust-lang.org/rust-by-example/std_misc/log.html

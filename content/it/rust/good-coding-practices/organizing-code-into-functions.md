@@ -11,9 +11,6 @@ title: Organizzazione del codice in funzioni
 weight: 18
 ---
 
-## Cosa & Perché?
-Organizzare il codice in funzioni significa suddividere il programma in blocchi riutilizzabili e modulari identificati da un nome. Lo facciamo per rendere il nostro codice più pulito, più leggibile e più semplice da eseguire il debug. Si tratta di non ripetere noi stessi e di ottimizzare gli aggiornamenti.
-
 ## Come fare:
 Diciamo che hai del codice che calcola l'area di un cerchio più volte. Invece di ripetere la formula, la incapsuli in una funzione.
 

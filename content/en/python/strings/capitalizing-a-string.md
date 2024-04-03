@@ -10,10 +10,8 @@ title: Capitalizing a string
 weight: 2
 ---
 
-## What & Why?
-Capitalizing a string means converting the first character of a string to uppercase and the rest to lowercase. This operation is commonly used in data processing to normalize inputs or enhance readability for titles, names, and such.
-
 ## How to:
+
 
 ### Using Python's Built-in Method:
 Python has a built-in method `.capitalize()` for strings to accomplish this task easily. 

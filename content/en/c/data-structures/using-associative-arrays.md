@@ -10,12 +10,7 @@ title: Using associative arrays
 weight: 15
 ---
 
-## What & Why?
-
-Associative arrays, known in other languages as maps or dictionaries, are key-value pairs used for efficient data lookup and manipulation. Unlike traditional arrays that use integer indexes, associative arrays use keys, making data access more intuitive and flexible for programmers.
-
 ## How to:
-
 C does not have built-in support for associative arrays like some higher-level languages, but you can simulate them using structures and hashing. Below is a simplistic example using a combination of a struct and a simple hashing function to implement an associative array for storing and accessing integers by string keys.
 
 First, define a structure to represent a single key-value pair and another to represent the associative array itself:
@@ -92,7 +87,6 @@ int main() {
 This example demonstrates basic operations: initializing an associative array, inserting key-value pairs, and finding values by keys. Note that this code lacks collision handling and is meant for educational purposes.
 
 ## Deep Dive
-
 The concept of associative arrays predates C, but the language's low-level nature does not directly support them as built-in types. This encourages a deeper understanding of data structures and algorithms, including hashing mechanisms for efficient key-value mapping. Many C libraries and frameworks offer more sophisticated approaches for implementing associative arrays, such as GLib's `GHashTable`, which provides a robust implementation complete with collision handling, dynamic resizing, and support for arbitrary key and value types. 
 
 While the manual construction of associative arrays in C can be seen as cumbersome compared to languages with built-in support, it offers invaluable insights into the inner workings of data structures, sharpening a programmer’s skills in problem-solving and optimization. However, for production code or more complex applications, leveraging existing libraries like GLib is often a more practical and time-efficient approach.

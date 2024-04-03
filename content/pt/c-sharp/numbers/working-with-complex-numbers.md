@@ -12,9 +12,6 @@ title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---
 
-## O Que & Por Que?
-Números complexos expandem nosso sistema numérico para incluir números imaginários, permitindo-nos resolver equações que não têm soluções reais. Programadores trabalham com eles em campos como engenharia, física e processamento de sinais, onde esses números são essenciais para modelagem e resolução de problemas.
-
 ## Como:
 C# possui uma estrutura integrada `System.Numerics.Complex` para processar números complexos. Aqui está um rápido passo a passo:
 

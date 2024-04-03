@@ -11,9 +11,6 @@ title: Tworzenie pliku tymczasowego
 weight: 21
 ---
 
-## What & Why?
-Tworzymy tymczasowy plik, by obrabiać dane, które nie muszą trwać długo. Programiści robią to, by testować kod, przechowywać dane sekwencyjnie, lub ograniczyć zużycie pamięci.
-
 ## How to:
 W Elixirze nie ma wbudowanej obsługi dla tworzenia tymczasowych plików, ale możemy użyć `System.cmd/3` z `mktemp` dostępnym na większości systemów UNIX.
 

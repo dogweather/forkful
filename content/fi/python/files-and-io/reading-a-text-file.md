@@ -11,9 +11,6 @@ title: Tekstitiedoston lukeminen
 weight: 22
 ---
 
-## What & Why? (Mitä & Miksi?)
-Lukeminen tarkoittaa tiedoston datan siirtämistä ohjelmasi käyttöön. Ohjelmoijat lukevat tekstitiedostoja, koska niistä saa tärkeää tietoa – asetukset, dataa, ohjeita.
-
 ## How to: (Kuinka tehdä:)
 ```Python
 # Tiedoston avaaminen ja lukeminen

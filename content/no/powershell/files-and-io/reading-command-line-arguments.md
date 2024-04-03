@@ -11,9 +11,6 @@ title: Lese kommandolinjeargumenter
 weight: 23
 ---
 
-## Hva & Hvorfor?
-Kommandolinjeargumenter lar brukere gi input til et skript når de kjører det. Programmerere bruker dette for å lage fleksible og tilpassbare scripts.
-
 ## Hvordan:
 ```PowerShell
 # script.ps1

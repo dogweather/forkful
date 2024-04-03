@@ -9,12 +9,7 @@ title: "Descargando una p\xE1gina web"
 weight: 42
 ---
 
-## Qué es y por qué?
-
-Descargar una página web significa traer su contenido a tu programa. Esto lo hacen los programadores para analizar datos, interactuar con APIs, o simplemente para guardar información localmente.
-
 ## Cómo hacerlo:
-
 Vamos a usar Kotlin y una librería sencilla llamada `khttp` para hacer el trabajo. Asegúrate de incluir `khttp` en tu `build.gradle`:
 
 ```kotlin
@@ -47,7 +42,6 @@ fun main() = runBlocking {
 Esto imprime el HTML de `http://example.com`.
 
 ## Deep Dive:
-
 Históricamente, en Kotlin se usaba `HttpURLConnection`, pero era más verboso y propenso a errores. Con la evolución del lenguaje, surgieron bibliotecas como `khttp` y `ktor`, que simplifican las cosas.
 
 Ktor es asincrónico y más idiomático en Kotlin. Con las coroutines de Kotlin, la gestión de hilos es más sencilla y eficiente.
@@ -55,7 +49,6 @@ Ktor es asincrónico y más idiomático en Kotlin. Con las coroutines de Kotlin,
 Además de `ktor`, otro cliente HTTP popular es OkHttp, pero `ktor` tiene la ventaja de estar completamente escrito en Kotlin y ser diseñado para trabajar con coroutines desde el principio.
 
 ## Ver También:
-
 - La documentación oficial de Ktor Client: [https://ktor.io/docs/client.html](https://ktor.io/docs/client.html)
 - Tutorial de OkHttp: [https://square.github.io/okhttp/](https://square.github.io/okhttp/)
 - Más sobre coroutines en Kotlin: [https://kotlinlang.org/docs/coroutines-overview.html](https://kotlinlang.org/docs/coroutines-overview.html)

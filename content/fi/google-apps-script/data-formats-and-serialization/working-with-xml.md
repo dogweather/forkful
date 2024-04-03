@@ -14,12 +14,7 @@ title: "Ty\xF6skentely XML:n kanssa"
 weight: 40
 ---
 
-## Mikä ja miksi?
-
-XML:n käsittely Google Apps Scriptillä mahdollistaa ohjelmoijien jäsentää, manipuloida ja luoda XML-dataa, mikä on olennaista verkkopalveluille ja -asetuksille. Ohjelmoijat omaksuvat tämän lähestymistavan integroitumaan perintöjärjestelmiin, suorittamaan verkkoskrapausta tai kommunikoimaan useiden API:en kanssa, jotka edelleen nojaavat XML:ään JSONin sijaan datan vaihdossa.
-
 ## Kuinka:
-
 Google Apps Script tarjoaa `XmlService`-palvelun työskentelyyn XML-datan kanssa. Alla näytämme, kuinka jäsentää XML-merkkijono, muokata sen sisältöä ja luoda uusi XML-merkkijono.
 
 XML-merkkijonon jäsentäminen:
@@ -66,7 +61,6 @@ function createXML() {
 ```
 
 ## Syväsukellus
-
 Historiallisesti XML (Extensible Markup Language) oli de facto -standardi datan vaihdoille ennen kuin JSON nousi esiin kevyempänä vaihtoehtona. XML:n verbosi syntaksi ja tiukka jäsentämismalli tarjosi robustin, vaikkakin kömpelön, datamuodon. Google Apps Scriptissä `XmlService`-API kapseloi XML-datan luomisen, jäsentämisen ja manipuloinnin, tunnustaen sen jatkuvan merkityksen erilaisissa perintö- ja yritysjärjestelmissä, SOAP-verkkopalveluissa ja sovellusten konfiguraatiotiedostoissa.
 
 Huolimatta JSONin vallankumouksellisesta asemasta modernissa web-kehityksessä sen yksinkertaisuuden ja helpon käytettävyyden vuoksi JavaScriptin kanssa, XML säilyy relevanttina alueilla, joissa asiakirjojen validointi ja rakenteelliset hierarkiat ovat olennaisia. Uusissa projekteissa, erityisesti niissä, jotka kallistuvat web APIeihin, JSON on usein käytännöllisempi vaihtoehto sen kevyen luonteen ja saumattoman integraation ansiosta JavaScriptin kanssa.

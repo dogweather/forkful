@@ -10,9 +10,6 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## What & Why?
-La ricerca e sostituzione di testo permette di trovare stringhe specifiche e cambiarle con altre. I programmatori la usano per modificare codice, dati e documenti, rendendo le revisioni rapide ed efficienti.
-
 ## How to:
 Elm fornisce funzioni per lavorare con stringhe, ma non ha funzioni native per la sostituzione di testo. Usiamo `String.Extra` dalla libreria `elm-community/string-extra` per colmare questa lacuna.
 

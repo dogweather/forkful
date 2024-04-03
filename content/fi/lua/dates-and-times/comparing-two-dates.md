@@ -11,9 +11,6 @@ title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---
 
-## What & Why? - Mitä & Miksi?
-Vertaamme kahta päivämäärää selvittääksemme niiden järjestyksen tai aikaeron. Tämä on tärkeää aikataulutuksessa, määräaikojen seurannassa ja historiallisten tapahtumien käsittelyssä.
-
 ## How to: - Kuinka:
 ```Lua
 -- Esimerkki päivämäärien vertaamisesta

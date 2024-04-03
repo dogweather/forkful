@@ -11,11 +11,7 @@ title: Omskrivning av kod
 weight: 19
 ---
 
-## Vad & Varför?
-Refaktorisering är processen att omstrukturera befintlig dator kod utan att ändra dess externa beteende. Programmerare gör det för att förbättra de icke-funktionella attributen hos mjukvaran, vilket gör koden renare och effektivare, och i sin tur förenklar underhållet och gör framtida funktionstillägg enklare.
-
 ## Hur man gör:
-
 Låt oss titta på ett enkelt exempel där refaktorisering kan göra din kod mer koncis och läsbar. Här refaktoriserar vi en funktion som beräknar summan av en array med tal.
 
 Före:
@@ -43,7 +39,6 @@ console.log(calculateSum([1, 2, 3, 4])); // Utdata: 10
 Ser du hur `reduce`-metoden minskar storleken på funktionen samtidigt som funktionaliteten förblir intakt? Det är refaktorisering för dig.
 
 ## Djupdykning
-
 Refaktorisering dök inte upp som en formell praxis förrän efter publiceringen av Martin Fowlers bok "Refaktorisering: Att förbättra designen på befintlig kod" 1999. Denna bok, tillsammans med uppgången av agil programvaruutveckling, hjälpte till att föra refaktorisering in i huvudströmmen.
 
 Att beskriva refaktorisering som en aspekt av programvaruutveckling är som att förklara varför du skulle städa upp en verkstad: du gör det så att nästa gång du måste fixa något (i detta fall kod), kommer du att spendera mindre tid på att hantera röran och mer på det faktiska problemet.
@@ -57,7 +52,6 @@ Det handlar allt om ren, uttrycksfull och underhållbar kod. Sofistikerade algor
 Refaktorisering måste göras noggrant; det är viktigt att ha en robust uppsättning tester för att säkerställa att dina ändringar inte oväntat har ändrat programmets beteende—ännu en anledning varför Test-driven utveckling (TDD) passar bra ihop med refaktorisering eftersom det ger det säkerhetsnätet som standard.
 
 ## Se även
-
 - Martin Fowlers Refaktoreringsbok: [Refaktorisering - Att förbättra designen på befintlig kod](https://martinfowler.com/books/refactoring.html)
 - JavaScript-testramverk (för att säkerställa att refaktorisering inte bryter funktionalitet):
   - Jest: [Jest - Angenäm JavaScript Testning](https://jestjs.io/)

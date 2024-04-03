@@ -14,9 +14,6 @@ title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---
 
-## Lý do & Tại sao?
-Nội suy chuỗi cho phép bạn chèn biến hoặc tính toán vào trong một chuỗi. Nó rất tiện lợi để xây dựng chuỗi một cách động mà không lẫn lộn với việc nối chuỗi.
-
 ## Làm cách nào:
 ```elixir
 name = "Josie"

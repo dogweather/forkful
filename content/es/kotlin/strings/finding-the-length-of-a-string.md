@@ -10,9 +10,6 @@ title: Calculando la longitud de una cadena
 weight: 7
 ---
 
-## ¿Qué & Por Qué?
-Encontrar la longitud de una cadena de texto (string) significa saber cuántos caracteres contiene. Los programadores lo hacen para validar entradas, manipular texto, o cualquier cosa donde el tamaño importa.
-
 ## Cómo se hace:
 Kotlin lo hace simple. Usa `.length`. Así:
 

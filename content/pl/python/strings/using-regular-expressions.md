@@ -13,9 +13,6 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-Wyrażenia regularne (regex) to wzorce służące do wyszukiwania kombinacji znaków w ciągach tekstowych. Programiści wykorzystują je do wyszukiwania, edycji lub manipulowania tekstem na podstawie zdefiniowanych wzorców, co czyni je niezbędnymi do zadań takich jak walidacja danych, parsowanie czy transformacja.
-
 ## Jak używać:
 Użycie regex w Pythonie wiąże się z modułem `re`, który dostarcza zestaw funkcji do przetwarzania tekstu przy użyciu wyrażeń regularnych.
 

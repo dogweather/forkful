@@ -11,12 +11,7 @@ title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä & Miksi?
-
-Pyöristäminen on desimaalin säätämistä lähimpään kokonaisarvoon tai tiettyyn määrään desimaalilukuja. Ohjelmoijat pyöristävät vähentääkseen monimutkaisuutta, parantaakseen luettavuutta tai täyttääkseen tarkkuusvaatimukset.
-
 ## Kuinka:
-
 Elmin `Basics`-moduuli tarjoaa näppäriä funktioita pyöristämiseen: `round`, `floor` ja `ceiling`. Näin niitä käytetään.
 
 ```elm
@@ -46,7 +41,6 @@ toLocaleString 2 3.14159 --> "3.14"
 ```
 
 ## Syväsukellus
-
 Elm on vahvasti tyypitetty funktionaalinen kieli, joka siirtää sivuvaikutukset arkkitehtuurin "reunoihin". Tämä tarkoittaa, että funktiot kuten pyöristäminen on oltava puhtaita ja ennustettavia. Historiallisesti pyöristäminen on yleinen toiminto monissa ohjelmointikielissä, jotka käsittelevät liukulukuaritmetiikan epätarkkuutta.
 
 Elmin lähestymistapa pyöristämiseen on suoraviivainen - funktiot ovat puhtaita ja noudattavat matemaattisia määritelmiä pyöristämiseen, lattiaan ja kattoon. Elm ennakoi yleiset tarpeet tarjoamalla sisäänrakennettuja funktioita, sillä tarkkuuden hallinta on yleinen vaatimus, erityisesti rahoituksessa ja grafiikassa.
@@ -56,7 +50,6 @@ Vaihtoehtoja Elmin sisäänrakennetuille funktioille voisi sisältää mukautetu
 Nykyisessä versiossaan Elm käyttää JavaScriptin taustalla olevaa liukulukumatematiikkaa näille operaatioille, pysyen siten yhdenmukaisena IEEE 754 -standardin kanssa, mikä on hyvä muistaa, kun pohditaan tarkkuutta ja mahdollisia liukulukuvirheitä.
 
 ## Katso Myös
-
 - Elmin virallinen `Basics`-moduulin dokumentaatio: https://package.elm-lang.org/packages/elm/core/latest/Basics
 - Yksityiskohtainen tarkastelu siitä, miten liukuluvut toimivat tietotekniikassa: https://floating-point-gui.de/
 - Elm `Float`-moduuli lisää liukulukuoperaatioihin: https://package.elm-lang.org/packages/elm/core/latest/Float

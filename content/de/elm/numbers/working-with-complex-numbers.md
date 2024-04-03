@@ -11,9 +11,6 @@ title: Umgang mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-Komplexe Zahlen sind eine Kombination aus reellen und imaginären Zahlen, wie `a + bi`, wobei `i` die Quadratwurzel von -1 ist. Sie sind entscheidend in Bereichen wie Ingenieurwesen und Physik, um Probleme zu lösen, an denen sich reguläre Zahlen die Zähne ausbeißen.
-
 ## Wie geht das:
 Elm unterstützt komplexe Zahlen nicht direkt, daher müssen Sie Ihren eigenen Typ und Ihre eigenen Funktionen erstellen. Hier eine kurze Einrichtung:
 

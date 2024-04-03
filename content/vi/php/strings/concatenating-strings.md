@@ -14,12 +14,7 @@ title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---
 
-## Gì & Tại Sao?
-
-Nối chuỗi đơn giản chỉ là việc ghép các từ lại với nhau. Hãy tưởng tượng nó giống như việc tạo ra một đoàn tàu từ các từ chứ không phải các toa tàu. Các lập trình viên thực hiện việc này để kết hợp văn bản, như tên với lời chào, hoặc để xây dựng các thông điệp và dữ liệu cần phải linh hoạt.
-
 ## Cách thực hiện:
-
 Trong PHP, nối chuỗi tất cả đều quanh điểm nối (`.`). Lấy hai chuỗi, đặt một dấu chấm ở giữa chúng, và voila! Chúng giờ đây đã trở thành một.
 
 ```PHP
@@ -53,7 +48,6 @@ echo $message;
 ```
 
 ## Sâu hơn nữa
-
 Ngày xưa, những người dùng PHP phải sử dụng dấu chấm để ghép các chuỗi lại với nhau. Nó giống như băng dính cho các từ. Việc nối chuỗi là thiết yếu bởi vì dữ liệu không phải lúc nào cũng được truyền đi đúng định dạng cần thiết.
 
 Đối với các phương án thay thế, có vài cái. Các hàm `sprintf()` và `printf()` cho phép tạo chuỗi theo định dạng. Hãy tưởng tượng bạn đang tạo một kịch bản phim với các vị trí trống, và những hàm này điền vào tên của các diễn viên.
@@ -75,7 +69,6 @@ echo implode(' ', $array);
 Một điều cần xem xét là hiệu suất. Đối với các chuỗi dài hoặc các thao tác nặng, sử dụng `.` có thể chậm hơn so với các phương pháp khác như `implode()` hay thậm chí là đệm đầu ra. Nhưng đối với hầu hết các tác vụ hàng ngày, việc nối chuỗi bằng dấu chấm hoạt động rất hiệu quả.
 
 ## Xem thêm
-
 Dành cho những ai khát khao học hỏi thêm:
 
 - Tài liệu chính thức về toán tử chuỗi trong PHP là nơi tuyệt vời để hiểu biết về công cụ của bạn: [Toán tử chuỗi PHP](https://www.php.net/manual/en/language.operators.string.php)

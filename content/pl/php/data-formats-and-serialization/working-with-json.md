@@ -14,9 +14,6 @@ title: Praca z JSON
 weight: 38
 ---
 
-## Co i dlaczego?
-JSON, czyli Notacja Obiektowa JavaScriptu, to lekki format wymiany danych, łatwy do odczytania i zapisania przez ludzi, jak również łatwy do przetwarzania i generowania przez maszyny. Programiści często pracują z JSONem do wymiany danych między serwerami a aplikacjami internetowymi ze względu na jego prostotę i niezależność od języków, czyniąc go kamieniem węgielnym współczesnego rozwoju stron internetowych i API.
-
 ## Jak to zrobić:
 Praca z JSONem w PHP jest prosta dzięki wbudowanym funkcjom `json_encode()` i `json_decode()`. Poniżej znajdują się przykłady pokazujące, jak przekształcić tablicę PHP w ciąg JSON i odwrotnie:
 

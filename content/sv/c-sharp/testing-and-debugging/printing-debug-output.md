@@ -11,9 +11,6 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## What & Why?
-Vi pratar om `debug output` – textmeddelanden som hjälper utvecklare att felsöka kod. Varför? För att spåra vad koden gör och hitta buggarna snabbt.
-
 ## How to:
 Med `Console.WriteLine`, `Debug.WriteLine` eller `Trace.WriteLine` kan du skriva ut meddelanden. Använd `Console.WriteLine` för konsollappar och de andra när du behöver mer flexibilitet.
 

@@ -11,9 +11,6 @@ title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---
 
-## What & Why? (Was & Warum?)
-Ein String in Kleinbuchstaben umzuwandeln, bedeutet, jeden Großbuchstaben in seinem Äquivalent in Kleinbuchstaben zu ändern. Programmierer nutzen das, um die Nutzereingaben zu vereinheitlichen oder um Textvergleiche durchzuführen, unabhängig von der Groß- oder Kleinschreibung.
-
 ## How to: (Wie geht das?)
 In JavaScript wandelt die Funktion `toLowerCase()` eines String-Objekts den gesamten Text in Kleinbuchstaben um. Hier ist es in Aktion:
 

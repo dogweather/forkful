@@ -10,9 +10,6 @@ title: Uthenting av delstrenger
 weight: 6
 ---
 
-## What & Why?
-Utdrag av delstrenger er å ta ut spesifikke deler av en tekststreng. Vi gjør dette for å analysere, transformere, eller bruke deler av dataene uten å behøve hele teksten.
-
 ## How to:
 Python gjør det enkelt å hente ut delstrenger. Se på slice-syntaksen:
 

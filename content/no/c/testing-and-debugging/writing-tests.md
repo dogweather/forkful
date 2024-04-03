@@ -12,9 +12,6 @@ title: Skrive tester
 weight: 36
 ---
 
-## Hva & Hvorfor?
-Å skrive tester i C innebærer å lage mindre, hjelpeprogrammer eller funksjoner som automatisk verifiserer funksjonaliteten til koden din. Programmerere gjør dette for å sikre at programvaren deres fungerer som forventet, for å oppdage feil tidlig, og for å lette fremtidige kodeendringer uten uønskede bivirkninger.
-
 ## Hvordan:
 Selv om C ikke har et innebygget testrammeverk som noen andre språk, kan du fortsatt skrive effektive tester ved hjelp av assert.h for enkle påstander eller integrere tredjepartsrammeverk som CUnit eller Unity for mer strukturert testing. Her er et grunnleggende eksempel som bruker assert.h for å teste en funksjon som legger sammen to heltall:
 

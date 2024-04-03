@@ -13,12 +13,7 @@ title: Gebruik van associatieve arrays
 weight: 15
 ---
 
-## Wat & Waarom?
-
-Associatieve arrays, vaak bekend als woordenboeken in Visual Basic for Applications (VBA), stellen programmeurs in staat om collecties van sleutel-waardeparen te creëren. Deze functie is cruciaal voor efficiënte gegevensopslag en -opvraging en biedt een flexibelere en intuïtievere manier om gegevens te beheren dan traditionele array-indices.
-
 ## Hoe doe je het:
-
 In VBA biedt het `Dictionary`-object functionaliteit die vergelijkbaar is met associatieve arrays. Eerst moet je een verwijzing naar de Microsoft Scripting Runtime toevoegen om het te gebruiken:
 
 1. Ga in de VBA-editor naar Extra > Referenties...
@@ -54,7 +49,6 @@ Next Key
 ```
 
 ## Diepgaande Duik
-
 Het `Dictionary`-object maakt intern gebruik van componenten van de Windows Scripting Host. Als zodanig is het een laat-gebonden COM-object, wat een gebruikelijke manier was om de functionaliteit van VBA in het verleden uit te breiden. Het gebruik ervan in VBA kan de mogelijkheid van de taal om complexe datasets te manipuleren aanzienlijk verbeteren zonder een rigide structuur op te leggen, zoals gezien in traditionele arrays of Excel-bereiken.
 
 Een beperking om in gedachten te houden is dat toegang tot het `Dictionary` het instellen van een verwijzing naar de Microsoft Scripting Runtime vereist, wat de distributie van je VBA-projecten kan compliceren. Alternatieven zoals Collections bestaan binnen VBA maar missen enkele van de sleutelfuncties van het `Dictionary`, zoals het gemakkelijk controleren op de aanwezigheid van een sleutel zonder een fout te veroorzaken.

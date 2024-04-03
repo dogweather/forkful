@@ -11,9 +11,6 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-Das Runden von Zahlen besteht darin, Dezimalstellen abzuschneiden, um Ihre Daten zu vereinfachen oder spezifischen Formaten anzupassen. Programmierer tun dies für eine benutzerfreundliche Anzeige, effiziente Speicherung oder wenn die Dezimalgenauigkeit kein Thema ist.
-
 ## Wie:
 In Fish hängt das Runden von Zahlen vom Befehl `math` ab. Verwenden Sie `math -s0`, um auf die nächste ganze Zahl zu runden.
 

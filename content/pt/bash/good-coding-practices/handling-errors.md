@@ -11,12 +11,7 @@ title: Tratamento de erros
 weight: 16
 ---
 
-## O Que & Por Quê?
-
-Tratar erros em scripts Bash é antecipar onde as coisas podem dar errado e lidar com isso de maneira elegante. Por quê? Bom, isso mantém seu script robusto e poupa os usuários de quebra-cabeças quando as coisas não funcionam como esperado.
-
 ## Como fazer:
-
 ```Bash
 #!/bin/bash
 
@@ -49,7 +44,6 @@ cat: temp_file.txt: Arquivo ou diretório não encontrado
 ```
 
 ## Aprofundamento
-
 O tratamento de erros em scripts Bash remonta às origens do shell Unix, onde scripts robustos e confiáveis eram (e são) vitais para administração de sistemas e automação. Tradicionalmente, erros em Bash são tratados verificando o status de saída de um comando, que por convenção retorna 0 para sucesso e um valor não zero para falha.
 
 O Bash introduziu o comando `trap` como um built-in, permitindo que os usuários especifiquem comandos para rodar em vários sinais ou saídas de script. Isso é útil para tarefas de limpeza ou como um mecanismo de tratamento de erros de último recurso.
@@ -61,7 +55,6 @@ Alternativas ao tratamento de erro interno do Bash incluem a verificação expl�
 Embora o tratamento de erros rigoroso possa às vezes parecer exagero para scripts pequenos, é uma prática que pode economizar muito tempo de depuração e prevenir comportamentos inesperados tanto para você quanto para os usuários.
 
 ## Veja Também
-
 - Manual do Bash sobre Parâmetros de Shell: https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameters
 - Guia de Scripting Bash Avançado sobre Tratamento de Erros: https://www.tldp.org/LDP/abs/html/exit-status.html
 - Um guia aprofundado sobre `trap`: https://mywiki.wooledge.org/SignalTrap

@@ -18,12 +18,7 @@ title: "\u6587\u5B57\u5217\u306E\u9023\u7D50"
 weight: 3
 ---
 
-## What & Why? (何となぜ？)
-
-文字列を連結するとは、２つ以上の文字列を一つにつなげることです。これにより、動的なメッセージを作成したり、データの形式を整えたりします。
-
 ## How to: (方法)
-
 ```java
 public class StringConcatenation {
     public static void main(String[] args) {
@@ -47,13 +42,11 @@ public class StringConcatenation {
 ```
 
 ## Deep Dive (深掘り)
-
 文字列の連結はJavaの初期バージョンからありますが、パフォーマンスは時間と共に向上しています。`+`演算子は内部で`StringBuilder`を使って最適化され、多くの連結がある場合でも効率的です。しかし、扱う文字列が非常に多い場合、`StringBuilder`か`StringBuffer`クラスを直接使ったほうが速いことがあります。
 
 また、Java 8では`String.join`が登場し、複数の文字列を区切り文字で簡単に連結できるようになりました。さらにJava 11では`String`クラスに`repeat`メソッドが追加され、同じ文字列を繰り返して連結する要件が簡単に実装できるようになりました。
 
 ## See Also (関連リンク)
-
 - Oracle Java Documentation on Strings: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html
 - Java Performance Tuning Guide – String Concatenation: https://www.javaperformancetuning.com/articles/stringconcatenation.shtml
 - StringBuilder vs StringBuffer: https://www.baeldung.com/java-stringbuilder-stringbuffer

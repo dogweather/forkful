@@ -16,9 +16,6 @@ title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1
 weight: 26
 ---
 
-## Gì và Tại Sao?
-Tính toán một ngày trong tương lai hoặc quá khứ liên quan đến việc thao tác với các ngày để tìm ra ngày nào đó đã qua hoặc sẽ đến. Các lập trình viên làm điều này cho việc lập lịch, nhắc nhở, hoặc xác định thời hạn và kỳ hạn.
-
 ## Cách thực hiện:
 Đây là một cách hay để làm việc với ngày tháng trong Fish Shell:
 

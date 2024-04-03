@@ -10,9 +10,6 @@ title: Sammenlikning av to datoer
 weight: 27
 ---
 
-## What & Why?
-Sammenligning av to datoer handler om å finne ut hvilken som er tidligere, senere, eller om de er identiske. Programmerere gjør det for å håndtere frister, organisere hendelser eller spore tidslinjer.
-
 ## How to:
 Sammenlign to datoer med følgende Bash-kommandoer. Først, bruk `date` kommandoen til å konvertere datoer til sekunder siden Unix-epoken. Deretter sammenlign verdiene med `-lt`, `-gt`, eller `-eq`.
 

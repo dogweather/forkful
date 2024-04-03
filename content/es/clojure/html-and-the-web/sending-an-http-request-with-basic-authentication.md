@@ -10,12 +10,7 @@ title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---
 
-## ¿Qué y Por Qué?
-
-Enviar una solicitud HTTP con autenticación básica significa mandar información al servidor junto con un usuario y contraseña codificados. Los programadores lo hacen para acceder a recursos que requieren identificación, asegurando un nivel básico de seguridad.
-
 ## Cómo hacerlo:
-
 ```Clojure
 (require '[clj-http.client :as client])
 
@@ -34,7 +29,6 @@ Sample output (simulation):
 ```
 
 ## Profundización:
-
 La autenticación básica es un método clásico que se remonta a los primeros días de la web. No es el más seguro, puesto que depende de HTTPS para proteger las credenciales en tránsito. Si buscas mayor seguridad, considera usar tokens de autenticación, OAuth o JWT (JSON Web Tokens).
 
 Cuando usas Clojure para enviar solicitudes HTTP, puedes elegir entre `clj-http` y otras bibliotecas como `http-kit` o `aleph`. Cada una tiene sus peculiaridades, pero `clj-http` es conocida por su simplicidad y rica interfaz.
@@ -42,7 +36,6 @@ Cuando usas Clojure para enviar solicitudes HTTP, puedes elegir entre `clj-http`
 En la ejecución del código, asegúrate de que las credenciales no estén codificadas en el mismo. Utiliza variables de entorno o sistemas de gestión de configuración para mantener la seguridad.
 
 ## Ver También:
-
 - [clj-http documentation](https://github.com/dakrone/clj-http)
 - [The Clojure Toolbox - Lista de bibliotecas de Clojure](https://www.clojure-toolbox.com/)
 - [RFC 7617 - La autenticación básica en HTTP](https://tools.ietf.org/html/rfc7617)

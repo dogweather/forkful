@@ -13,9 +13,6 @@ title: Quotes verwijderen uit een string
 weight: 9
 ---
 
-## Wat & Waarom?
-Het verwijderen van aanhalingstekens uit een string houdt in dat de aanhalingstekens die de string omsluiten, worden weggestript. Programmeurs willen dit vaak doen om invoergegevens te saneren, gegevens voor te bereiden voor vergelijkingsdoeleinden, of om te voldoen aan een specifiek gegevensformaat bij de interactie met andere programma's of systemen.
-
 ## Hoe te:
 Bash heeft verschillende manieren om aanhalingstekens uit strings te verwijderen. Hier zijn enkele snelle voorbeelden:
 

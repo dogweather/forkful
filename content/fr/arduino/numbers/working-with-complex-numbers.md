@@ -11,9 +11,6 @@ title: Manipulation des nombres complexes
 weight: 14
 ---
 
-## Quoi et pourquoi ?
-Les nombres complexes possèdent une partie réelle et une partie imaginaire, généralement écrites comme `a + bi`. Ils sont essentiels pour certains projets Arduino lourds en mathématiques impliquant le traitement des signaux, l'ingénierie électrique, ou tout autre domaine où les phénomènes sont mieux modélisés dans un plan.
-
 ## Comment faire :
 ```Arduino
 #include <Complex.h>

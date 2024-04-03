@@ -10,12 +10,7 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-
-Working with complex numbers involves performing mathematical operations on numbers that have both a real part and an imaginary part. Programmers often engage with complex numbers in domains such as engineering, physics, and anywhere that involves solving equations that are not possible with just real numbers.
-
 ## How to:
-
 In Visual Basic for Applications (VBA), handling complex numbers can be somewhat less straightforward compared to languages with native support for them. However, you can manage complex operations by creating functions or using existing library functions. Let's explore a basic example of addition, subtraction, multiplication, and division of complex numbers:
 
 ```vb
@@ -45,7 +40,6 @@ End Sub
 While this demonstrates addition, similar approaches can be adapted for subtraction, multiplication, and division. For complex operations beyond basic arithmetic, it may be worth exploring external libraries or integrating other solutions that support complex number operations more natively.
 
 ## Deep Dive:
-
 VBA does not include built-in support for complex numbers, an aspect where it lags behind languages like Python, which has a complex number class (`complex`) or C++ with its Standard Template Library (`std::complex`). Historically, the need to manipulate complex numbers directly in VBA is relatively rare, as it is often used for automation, manipulating Office applications, and tasks that traditionally don't require complex mathematical calculations. When VBA was conceived and developed, its use cases were mainly focused on business applications rather than scientific computing, which could explain the omission.
 
 For tasks that require extensive complex number manipulations, programmers might find using a more mathematically oriented language beneficial. However, for those committed to or restricted by the use of VBA, writing custom functions (as illustrated) or integrating with software that has these capabilities (such as MATLAB or Excel itself to some extent) are viable paths forward. Despite its limitations, creative solutions and external integrations can extend VBA's utility into domains it wasn't originally designed for, including working with complex numbers.

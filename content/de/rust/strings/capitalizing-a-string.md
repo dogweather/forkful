@@ -14,16 +14,10 @@ title: "Einen String gro\xDFschreiben"
 weight: 2
 ---
 
-## Was & Warum?
-
-Das Großschreiben eines Strings in Rust involviert das Modifizieren des Strings, sodass sein erstes Zeichen ein Großbuchstabe ist, falls es sich um einen Buchstaben handelt, während der Rest des Strings unverändert bleibt. Programmierer führen diese Operation oft für Formatierungszwecke durch, wie zum Beispiel die Vorbereitung von Wörtern für Titel oder um Konsistenz in Benutzereingaben zu gewährleisten.
-
 ## Wie:
-
 Um einen String in Rust zu großzuschreiben, haben Sie zwei Hauptwege: die Nutzung von Standardbibliotheksfunktionalitäten oder die Verwendung von Drittanbieter-Crates für komplexere oder spezifischere Bedürfnisse. Hier ist, wie Sie beides machen können.
 
 ### Verwendung der Standardbibliothek von Rust
-
 Die Standardbibliothek von Rust bietet keine direkte Methode, um Strings großzuschreiben, aber Sie können dies erreichen, indem Sie die Zeichen des Strings manipulieren.
 
 ```rust
@@ -42,7 +36,6 @@ fn main() {
 ```
 
 ### Verwendung des `heck` Crates
-
 Für einen geradlinigeren Ansatz, besonders wenn Sie im Kontext einer größeren Textverarbeitung arbeiten, bevorzugen Sie möglicherweise die Verwendung von Drittanbieter-Bibliotheken wie `heck`. Das `heck` Crate bietet verschiedene Funktionalitäten zur Fallumwandlung, einschließlich einer einfachen Methode, um Strings großzuschreiben.
 
 Zuerst fügen Sie `heck` zu Ihrem `Cargo.toml` hinzu:

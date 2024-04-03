@@ -14,12 +14,7 @@ title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---
 
-## O Que e Por Quê?
-
-Arredondar números é o processo de ajustar os dígitos de um número para reduzir sua precisão de acordo com certas regras, seja em direção ao número inteiro mais próximo ou a um número especificado de casas decimais. Programadores fazem isso por vários motivos, desde limitar a quantidade de armazenamento necessária, simplificar a saída para consumo do usuário ou garantir operações matemáticas precisas que são sensíveis a variações muito pequenas.
-
 ## Como Fazer:
-
 Arredondar números em C pode ser realizado usando várias funções, mas a abordagem mais comum envolve as funções `floor()`, `ceil()` e `round()`. Estas funções fazem parte da biblioteca padrão de matemática, então você precisará incluir `math.h` em seu programa.
 
 ```c
@@ -58,7 +53,6 @@ Arredondando para duas casas decimais: 9.53
 ```
 
 ## Aprofundamento
-
 Arredondar números tem raízes históricas profundas na matemática e computação, integral tanto aos aspectos teóricos quanto aplicados. Em C, embora `floor()`, `ceil()` e `round()` ofereçam funcionalidade básica, a essência de arredondar floats para inteiros ou casas decimais específicas é mais matizada devido à representação binária dos números de ponto flutuante. Esta representação pode levar a resultados inesperados devido à forma como números que não podem ser precisamente representados em binário (como 0.1) são tratados.
 
 Essas funções fazem parte da biblioteca padrão C, definidas em `<math.h>`. Ao arredondar números, especialmente para cálculos financeiros ou de engenharia precisos, deve-se considerar as implicações do uso de números de ponto flutuante binário. Alternativas às funções incorporadas em C para arredondamentos altamente precisos ou específicos para decimais podem incluir a implementação de funções de arredondamento personalizadas ou o uso de bibliotecas projetadas para aritmética de precisão arbitrária, como GMP ou MPFR, embora essas introduzam complexidade e dependências adicionais.

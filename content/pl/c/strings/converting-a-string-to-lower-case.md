@@ -14,12 +14,7 @@ title: "Konwersja \u0142a\u0144cucha znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## Co i dlaczego?
-
-Konwersja łańcucha znaków na małe litery w języku C polega na przekształceniu wszystkich wielkich liter w danym łańcuchu na odpowiadające im małe litery. Programiści często wykonują tę operację, aby ujednolicić wejściowy tekst pod kątem porównań, operacji wyszukiwania, lub po prostu dla estetycznej spójności wyjścia.
-
 ## Jak to zrobić:
-
 C nie ma wbudowanej funkcji bezpośrednio konwertującej łańcuch znaków na małe litery, w przeciwieństwie do niektórych języków wyższego poziomu. Jednak proces ten można łatwo zaimplementować przy użyciu funkcji standardowej biblioteki C. Poniżej znajduje się przewodnik krok po kroku oraz przykład ilustrujący, jak przekonwertować łańcuch znaków na małe litery.
 
 ```c
@@ -54,7 +49,6 @@ Małe litery: hello, world!
 W tym przykładzie funkcja `toLowerCase` iteruje przez każdy znak wejściowego łańcucha, konwertując go na odpowiadającą mu małą literę przy użyciu funkcji `tolower` z `ctype.h`. Modyfikacja odbywa się w miejscu, zmieniając oryginalny łańcuch.
 
 ## Dogłębna analiza
-
 Funkcja `tolower` używana w powyższym przykładzie jest częścią standardowej biblioteki C, konkretnie w pliku nagłówkowym `ctype.h`. Działa ona na podstawie bieżącej lokalizacji, ale dla standardowej lokalizacji "C" obsługuje zestaw znaków ASCII, gdzie litery od 'A' do 'Z' są konwertowane na 'a' do 'z'.
 
 Historycznie, obsługa kodowania znaków i konwersji wielkości liter w C była ściśle związana z zestawem znaków ASCII, co ograniczało jej użyteczność w aplikacjach międzynarodowych lub lokalizowanych, gdzie powszechne są znaki spoza zestawu ASCII. Nowoczesne języki programowania mogą oferować wbudowane metody łańcuchowe do wykonywania konwersji przypadków, biorąc pod uwagę lokalizację i znaki Unicode, czego C nie posiada natywnie.

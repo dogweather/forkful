@@ -12,9 +12,6 @@ title: Werken met YAML
 weight: 41
 ---
 
-## Wat & Waarom?
-YAML ain't Markup Language (YAML) is een voor mensen leesbare standaard voor gegevensserialisatie. Programmeurs gebruiken het voor configuratiebestanden, gegevensopslag en interprocesberichtgeving vanwege de eenvoud en leesbaarheid.
-
 ## Hoe te:
 Hier is een eenvoudig voorbeeld van het lezen van een YAML-bestand met Bash.
 

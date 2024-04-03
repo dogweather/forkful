@@ -11,9 +11,6 @@ title: Protokollierung
 weight: 17
 ---
 
-## Was & Warum?
-Logging ist im Grunde das Festhalten, was Ihre Anwendung gerade macht – ein Tagebuch, wenn man so will, aber für Code. Programmierer tun dies, um den Überblick über die Details zu behalten, wie Zustandsänderungen, Systemereignisse und hartnäckige Fehler, und sicherzustellen, dass keine Störungen unbemerkt bleiben.
-
 ## Wie geht das:
 In Fish kann das Protokollieren so einfach sein wie das Weiterleiten der Standardausgabe und Fehlerströme in eine Datei. Lassen Sie uns einen Log-Eintrag für die Start- und Endzeiten unseres Skripts erstellen.
 

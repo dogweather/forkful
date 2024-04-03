@@ -14,12 +14,7 @@ title: Praca z plikami CSV
 weight: 37
 ---
 
-## Co i dlaczego?
-
-Praca z CSV (Comma-Separated Values, wartości rozdzielone przecinkami) polega na parsowaniu oraz generowaniu plików, które przechowują dane tabelaryczne w prostym, tekstowym formacie. Programiści często wykonują to zadanie, aby efektywnie importować lub eksportować dane z arkuszy kalkulacyjnych, baz danych, lub ułatwić wymianę danych pomiędzy różnymi programami.
-
 ## Jak to zrobić:
-
 W Haskellu obsługę plików CSV można osiągnąć za pomocą biblioteki `cassava`, jednej z popularnych bibliotek stron trzecich do tego celu. Poniżej przedstawiono przykłady pokazujące, jak czytać z plików CSV oraz jak do nich pisać, używając `cassava`.
 
 **1. Odczytywanie pliku CSV:**

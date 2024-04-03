@@ -10,12 +10,7 @@ title: Deleting characters matching a pattern
 weight: 5
 ---
 
-## What & Why?
-
-Deleting characters matching a pattern in PHP is about finding specific sequences of characters in strings and removing them. Programmers do this to clean data, format output, or manipulate strings to meet specific criteria, such as removing non-alphanumeric characters from user input for security reasons.
-
 ## How to:
-
 PHP uses the `preg_replace` function to delete characters that match a pattern using regular expressions. Here's how to strip digits from a string:
 
 ```PHP
@@ -39,7 +34,6 @@ echo $result; // Outputs: Too many spaces!
 ```
 
 ## Deep Dive
-
 Deleting characters by matching patterns isn't new. PHP's `preg_replace` function, which powers this functionality, uses Perl-compatible regular expressions, a staple of text processing since Perl's rise in the late '80s. Alternatives to `preg_replace` include `str_replace` for simple replacements and `trim`, `ltrim`, and `rtrim` for removing whitespaces from strings. For more nuanced pattern deletions, `preg_replace_callback` can be used for additional control during the replacement process.
 
 It's useful to know that the PREG in `preg_replace` stands for Perl Regular Expressions, signifying PHP's usage of Perl's pattern syntax. Here's the breakdown:
@@ -52,7 +46,6 @@ Choosing between `preg_replace` and its alternatives depends on what you're doin
 Remember, misuse of regular expressions can lead to inefficient code. Always benchmark and use regular expressions smartly.
 
 ## See Also
-
 For more on PHP's string functions and pattern matching:
 - [PHP Manual — preg_replace](https://www.php.net/manual/en/function.preg-replace.php)
 - [PHP Manual — Regular Expressions (Perl-Compatible)](https://www.php.net/manual/en/book.pcre.php)

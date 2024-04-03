@@ -11,9 +11,6 @@ title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0907\u0902\u091F\u093
 weight: 8
 ---
 
-## What & Why? (क्या और क्यों?)
-Interpolating a string means inserting dynamic values into a static string. Programmers do it to make code flexible and to dynamically create strings that include variable content.
-
 ## How to: (कैसे करें:)
 Lua doesn't have built-in string interpolation, but we can simulate it using `string.format`:
 

@@ -11,9 +11,6 @@ title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---
 
-## What & Why? (Co i Dlaczego?)
-Konwersja daty na ciąg znaków (string) pozwala na łatwe wyświetlanie i zapisywanie dat w czytelnej formie. Programiści wykonują tę operację, by poprawić interakcję z użytkownikiem oraz ułatwić logowanie i debugowanie programów.
-
 ## How to: (Jak to zrobić:)
 Arduino nie ma wbudowanej obsługi dat, ale można użyć biblioteki `TimeLib.h`. Oto przykład:
 
@@ -43,7 +40,7 @@ Historia obsługi czasu w Arduino jest mocno związana z ograniczeniami sprzęto
 
 Alternatywą do `sprintf` jest konkatencja stringów za pomocą operatora `+`, ale to mniej wydajne i mniej elastyczne. Można też użyć `String` obiektów, które są bardziej elastyczne, ale mają większy overhead.
 
-Kiedy konwertujesz datę na string, rozważ format – w różnych częściach świata daty przedstawiane są inaczej. 
+Kiedy konwertujesz datę na string, rozważ format – w różnych częściach świata daty przedstawiane są inaczej.
 
 ## See Also (Zobacz Również)
 - Dokumentacja Arduino do obsługi stringów: https://www.arduino.cc/reference/en/language/variables/data-types/string/

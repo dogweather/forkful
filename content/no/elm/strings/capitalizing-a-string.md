@@ -14,12 +14,7 @@ title: Sette stor bokstav i en streng
 weight: 2
 ---
 
-## Hva og hvorfor?
-
-Å kapitalisere en streng innebærer å omforme det første tegnet i en gitt streng til stor bokstav mens resten holdes i små bokstaver, ofte for standardisert formatering eller lesbarhetsformål. Programmerere utfører ofte denne oppgaven for å sikre at data presenteres konsistent, spesielt i brukergrensesnitt eller ved bearbeiding og visning av brukerinndata.
-
 ## Hvordan:
-
 I Elm finnes det ikke en innebygd funksjon spesifikt for å kapitalisere strenger. Du kan imidlertid enkelt oppnå dette ved å bruke innebygde `String` modulfunksjoner som `toUpper`, `toLower`, `left` og `dropLeft`.
 
 ```elm

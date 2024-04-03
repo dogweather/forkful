@@ -10,9 +10,6 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## What & Why?
-Estrarre sottosequenze (o sottostringhe) significa prendere parti specifiche di una stringa. Questo è utile per analisi, manipolazioni, e controllo di dati testuali.
-
 ## How to:
 Ecco come si fa in Haskell:
 

@@ -11,9 +11,6 @@ title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---
 
-## O Que & Por Que?
-Baixar uma página web significa puxar o seu conteúdo diretamente via Internet para processamento local. Programadores fazem isso para análise de dados, monitoramento de sites ou integração com outros serviços.
-
 ## Como Fazer:
 Aqui está um exemplo básico usando cURL em PHP:
 
@@ -31,7 +28,7 @@ echo $conteudo;
 Se bem-sucedido, você verá o HTML da página http://exemplo.com.
 
 ## Mergulho Profundo:
-Historicamente, a função `file_get_contents()` era comum para baixar páginas, mas cURL oferece mais flexibilidade e opções. Alternativamente, você pode usar bibliotecas como Guzzle para uma abordagem mais abstrata e recursos. No exemplo acima, o `curl_setopt()` com `CURLOPT_RETURNTRANSFER` informa ao cURL para devolver a resposta ao invés de imprimi-la. 
+Historicamente, a função `file_get_contents()` era comum para baixar páginas, mas cURL oferece mais flexibilidade e opções. Alternativamente, você pode usar bibliotecas como Guzzle para uma abordagem mais abstrata e recursos. No exemplo acima, o `curl_setopt()` com `CURLOPT_RETURNTRANSFER` informa ao cURL para devolver a resposta ao invés de imprimi-la.
 
 ## Veja Também:
 - [Documentação PHP cURL](https://www.php.net/manual/pt_BR/book.curl.php)

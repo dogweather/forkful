@@ -13,12 +13,7 @@ title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---
 
-## Co i Dlaczego?
-
-Tablice asocjacyjne, czy też dokładniej w kontekście JavaScript, obiekty, pozwalają na mapowanie kluczy do wartości. Jest to niezwykle przydatne, gdy potrzebujemy kolekcji elementów, do których chcemy mieć dostęp przez określone nazwy (klucze) zamiast numerycznych indeksów, co czyni kod bardziej czytelnym i elastycznym.
-
 ## Jak to zrobić:
-
 Tworzenie i używanie tablic asocjacyjnych (obiektów) w JavaScript jest proste. Definiuje się obiekt za pomocą nawiasów klamrowych `{}`, a wewnątrz nich można zdefiniować zestaw par klucz-wartość. Klucze są zawsze ciągami znaków, a wartości mogą być czymkolwiek: ciągami znaków, liczbami, tablicami, a nawet innymi obiektami.
 
 ```javascript
@@ -64,7 +59,6 @@ console.log(userInfo);
 Jak widać, dostęp, dodawanie lub usuwanie elementów w tablicy asocjacyjnej jest dość bezpośrednie i intuicyjne.
 
 ## Szczegółowo
-
 W świecie JavaScript, choć często słyszymy termin "tablica asocjacyjna", jest to technicznie niewłaściwe określenie, ponieważ JavaScript nie posiada prawdziwych tablic asocjacyjnych jak inne języki (np. PHP). To, co ma JavaScript, to obiekty, które pełnią podobną funkcję, ale są bardziej potężną i elastyczną konstrukcją.
 
 Historycznie, tablice w językach programowania były projektowane do przechowywania kolekcji przedmiotów, dostępnych poprzez ich numeryczny indeks. Jednak w miarę ewolucji rozwoju oprogramowania pojawiła się potrzeba bardziej elastycznych struktur danych. Tablice asocjacyjne, czy słowniki w innych językach, były jedną z odpowiedzi, umożliwiając dostęp do elementów przez dowolne klucze.

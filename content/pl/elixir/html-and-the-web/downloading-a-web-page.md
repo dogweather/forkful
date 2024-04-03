@@ -11,9 +11,6 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## Co i dlaczego?
-Pobieranie strony internetowej to proces ściągania jej treści, by móc przetwarzać lokalnie. Programiści robią to, aby analizować dane, monitorować zmiany lub pobierać informacje.
-
 ## Jak to zrobić:
 Poniżej znajdziesz kod w języku Elixir, który pobiera zawartość strony internetowej:
 

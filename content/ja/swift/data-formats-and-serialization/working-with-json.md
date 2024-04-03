@@ -26,12 +26,7 @@ title: "JSON\u3092\u6D3B\u7528\u3059\u308B"
 weight: 38
 ---
 
-## 何となぜ？
-
-SwiftでJSONを扱うということは、データ交換のための軽量なデータ形式を扱うことを意味します。プログラマーは、JSONをサーバーとWebアプリケーション間でデータを伝送するために使用します。これは、人間と機械の両方にとって読みやすく、解析しやすいためです。
-
 ## どのようにして：
-
 Swiftでは、`Codable`プロトコルを使ってJSONの解析を直感的に行えます。以下は、JSONをSwiftオブジェクトにデコードする方法です：
 
 ```Swift
@@ -69,11 +64,9 @@ if let jsonData = jsonString.data(using: .utf8) {
 ```
 
 ## 深掘り
-
 JSON（JavaScriptオブジェクト表記）は、ダグラス・クロックフォードが指定して以来、2000年代初頭から広く普及しました。JSONは、よりシンプルな構文と優れたパフォーマンスのために、多くのユースケースでXMLを置き換えました。Swiftの`Codable`はJSONに対する主なツールですが、Codable非準拠タイプを扱う場合の代替手段として`JSONSerialization`などが存在します。内部では、`Codable`は下層のパーシングを抽象化し、シリアル化/デシリアル化をシームレスにします。
 
 ## 関連項目
-
 - 公式のSwiftブログでJSONとSwiftについてもっと探求する：[Swift.org](https://swift.org/blog/)
 - `Codable`のドキュメントをチェックアウトする：[Swift Codable](https://developer.apple.com/documentation/swift/codable)
 - 複雑なJSON構造には、[GitHub](https://github.com/SwiftyJSON/SwiftyJSON)で入手可能なSwiftyJSONなどのサードパーティライブラリを検討する。

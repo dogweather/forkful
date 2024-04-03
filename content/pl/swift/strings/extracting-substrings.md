@@ -10,10 +10,6 @@ title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---
 
-## What & Why?
-(Ekstrakcja podciągów - o co chodzi i dlaczego to robimy?)
-Szukasz fragmentu tekstu w szerszym ciągu znaków? To ekstrakcja podciągów. Programiści wydzielają podciągi, by manipulować małymi porcjami tekstu bez potrzeby obchodzenia się z całością.
-
 ## How to:
 (Jak to zrobić: przykłady kodu)
 Swift jest jak kuchnia pełna narzędzi. Oto jak wyciągnąć coś smakowitego ze Stringa:

@@ -11,16 +11,10 @@ title: Generering av tilfeldige tall
 weight: 12
 ---
 
-## Hva & Hvorfor?
-
-Generering av tilfeldige tall i programmering handler om å skape tall som mangler ethvert forutsigbart mønster. Programmerere gjør dette av ulike grunner, inkludert simuleringer, algoritmetesting, spill og sikkerhetsapplikasjoner, hvor uforutsigbarhet er nøkkelen til å oppnå realistiske eller sikre resultater.
-
 ## Hvordan:
-
 Kotlin gir en enkel måte å generere tilfeldige tall gjennom sitt standardbibliotek. Slik kan du generere forskjellige typer tilfeldige verdier:
 
 ### Generere et tilfeldig heltall
-
 For å generere et tilfeldig heltall innenfor et spesifikt område:
 
 ```kotlin
@@ -33,7 +27,6 @@ fun main() {
 ```
 
 ### Generere et tilfeldig desimaltall
-
 På samme måte, for å generere et tilfeldig desimaltall:
 
 ```kotlin
@@ -46,7 +39,6 @@ fun main() {
 ```
 
 ### Generere en tilfeldig boolsk verdi
-
 For å generere en tilfeldig boolsk verdi:
 
 ```kotlin
@@ -59,7 +51,6 @@ fun main() {
 ```
 
 ### Seed for reproduserbare resultater
-
 I tilfeller hvor du trenger reproduserbare sekvenser av tilfeldige tall (for eksempel under testing), kan du seede generatoren av tilfeldige tall:
 
 ```kotlin
@@ -74,7 +65,6 @@ fun main() {
 ```
 
 ## Dypdykk
-
 Kotlin standardbiblioteks tilnærming til å generere tilfeldige tall benytter seg av Java sin `java.util.Random` under panseret, noe som sikrer en blanding av brukervennlighet og ytelse. Det er imidlertid viktig å merke seg at disse metodene genererer pseudotilfeldige tall, noe som betyr at tallene ser tilfeldige ut, men genereres ved hjelp av en deterministisk prosess.
 
 For de fleste applikasjoner er tilfeldigheten levert av Kotlins `Random`-klasse tilstrekkelig. Imidlertid, for mer sikkerhetssensitive applikasjoner, som kryptografi, hvor kvaliteten på tilfeldigheten er av største viktighet, bør man vurdere å bruke `java.security.SecureRandom` i stedet. SecureRandom er spesielt designet for kryptografiske operasjoner, og tilbyr en høyere kvalitet på tilfeldigheten, men med en potensiell ytelsestradeav.

@@ -14,9 +14,6 @@ title: "Calculer une date dans le futur ou le pass\xE9"
 weight: 26
 ---
 
-## Quoi & Pourquoi ?
-Calculer une date dans le futur ou le passé implique de déterminer une date qui se trouve à un nombre spécifié de jours, de mois ou d'années d'une date donnée. Les programmeurs ont souvent besoin de cette fonctionnalité pour automatiser des rappels, des abonnements, des dates d'expiration et des tâches de planification dans diverses applications.
-
 ## Comment :
 Dans Visual Basic pour Applications (VBA), la fonction principale utilisée pour calculer les dates futures ou passées est `DateAdd()`. Cette fonction ajoute un intervalle de temps spécifié à une date, retournant une nouvelle date.
 

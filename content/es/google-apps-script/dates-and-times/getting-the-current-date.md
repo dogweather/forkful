@@ -14,12 +14,7 @@ title: Obteniendo la fecha actual
 weight: 29
 ---
 
-## Qué y Por Qué?
-
-Obtener la fecha actual en Google Apps Script se trata de obtener la fecha y hora en vivo, una tarea común para automatizar tareas, registrar y poner marcas de tiempo en aplicaciones vinculadas al ecosistema de Google. Los programadores utilizan esto para la generación de contenido dinámico, seguimiento de fechas límite y programación dentro de Google Docs, Sheets y otros servicios de Google.
-
 ## Cómo:
-
 Google Apps Script, que se basa en JavaScript, ofrece métodos sencillos para obtener la fecha actual. Puedes usar el constructor `new Date()` para crear un nuevo objeto de fecha que represente la fecha y hora actuales. Así es como puedes manipular y mostrar esto en varios formatos.
 
 ```javascript
@@ -46,7 +41,6 @@ function mostrarFechaActual() {
 Estos fragmentos demuestran cómo capturar y formatear la fecha y hora actuales, mostrando la versatilidad para diversas necesidades de programación dentro de Google Apps Script.
 
 ## Estudio Detallado
-
 Antes de que JavaScript se decidiera por el objeto `Date`, los programadores tenían que seguir manualmente la hora y la fecha a través de medios menos estándar y más engorrosos. Esto incluía el uso de enteros de marca de tiempo y funciones de fecha caseras, que variaban de un entorno de programación a otro, lo que llevaba a inconsistencias y problemas de compatibilidad.
 
 La introducción del objeto `new Date()` en JavaScript, y por extensión en Google Apps Script, estandarizó las operaciones de fecha y hora, haciéndolas más intuitivas y reduciendo la cantidad de código necesario para operaciones relacionadas con la fecha. Vale la pena notar que, si bien la implementación de Google Apps Script es conveniente y suficiente para muchas aplicaciones dentro del conjunto de productos de Google, puede no atender a todos los escenarios, especialmente aquellos que requieren manejo complejo de zonas horarias o registro de marcas de tiempo preciso en entornos de ritmo rápido.

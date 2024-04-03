@@ -13,9 +13,6 @@ title: Analysering av HTML
 weight: 43
 ---
 
-## Hva & Hvorfor?
-Parsing av HTML involverer analyse av en nettsides HTML-kode for å trekke ut spesifikk informasjon eller elementer, en vanlig oppgave for web scraping, data mining eller automatisering av interaksjoner med nettsteder. Programmerere gjør dette for å programmert interagere med eller trekke ut data fra nettsteder, automatisere oppgaver, eller teste webapplikasjoner.
-
 ## Hvordan gjøre det:
 Python tilbyr kraftfulle biblioteker som BeautifulSoup og requests for web scraping og HTML-parsing. For å begynne, må du installere disse bibliotekene hvis du ikke allerede har gjort det:
 

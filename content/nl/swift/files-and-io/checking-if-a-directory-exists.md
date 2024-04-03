@@ -12,9 +12,6 @@ title: Controleren of een directory bestaat
 weight: 20
 ---
 
-## Wat & Waarom?
-In Swift helpt het controleren of een directory bestaat om de status van een bestandssysteem te bevestigen voordat je gegevens leest of schrijft. Programmeurs doen dit om fouten te voorkomen, zoals lezen vanuit een niet-bestaande directory, wat een app kan laten crashen of kan leiden tot foutieve operaties.
-
 ## Hoe te:
 Swift's `FileManager` heeft de tools hiervoor. Gebruik zijn `fileExists(atPath:)` methode:
 

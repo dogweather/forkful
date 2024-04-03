@@ -10,9 +10,6 @@ title: Lettura di un file di testo
 weight: 22
 ---
 
-## What & Why?
-Leggere un file di testo significa accedere al contenuto salvato in esso e interpretarlo. I programmatori leggono file di testo per elaborare dati, configurare software, o semplicemente per visualizzare contenuti.
-
 ## How to:
 Ecco come leggere un file in Bash:
 

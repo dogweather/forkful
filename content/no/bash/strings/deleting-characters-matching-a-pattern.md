@@ -11,9 +11,6 @@ title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---
 
-## Hva & Hvorfor?
-I Bash kan du slette tegn som matcher et mønster for å forenkle strenger eller rense data. Dette er nyttig når du jobber med tekstbehandling eller automatisering av skript.
-
 ## Hvordan:
 For å slette tegn fra en streng som matcher et mønster, bruk parameterexpansjon. Her er noen eksempler:
 

@@ -13,9 +13,6 @@ title: Sjekker om en mappe eksisterer
 weight: 20
 ---
 
-## Hva og hvorfor?
-Å sjekke om en katalog finnes i Elixir handler om å verifisere tilstedeværelsen av en katalog på en angitt bane i filsystemet. Programmerere gjør dette for å sikre at de trygt kan lese fra, skrive til eller utføre operasjoner på katalogen uten å støte på feil på grunn av dens fravær.
-
 ## Hvordan:
 Elixirs standardbibliotek tilbyr en enkel måte å sjekke for eksistensen av en katalog gjennom `File`-modulen. Her er hvordan du kan bruke den:
 

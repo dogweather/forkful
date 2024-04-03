@@ -14,9 +14,6 @@ title: "Interpolacja \u0142a\u0144cucha znak\xF3w"
 weight: 8
 ---
 
-## Co i dlaczego?
-Interpolacja ciągów w C# pozwala na tworzenie nowego ciągu przez włączenie wyrażeń wewnątrz literału ciągu, co ułatwia formatowanie i łączenie ciągów. Programiści używają tej funkcji, aby poprawić czytelność i możliwości utrzymania kodu, szczególnie przy pracy z dynamiczną zawartością ciągów.
-
 ## Jak to zrobić:
 W C#, interpolacja ciągu jest oznaczana znakiem dolara (`$`) po którym następuje literał ciągu. Nazwy zmiennych lub wyrażenia umieszcza się w nawiasach klamrowych (`{}`).
 

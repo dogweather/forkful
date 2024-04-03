@@ -11,15 +11,10 @@ title: Parsing HTML
 weight: 43
 ---
 
-## What & Why?
-Parsing HTML in PowerShell is about dissecting HTML content to extract specific data or to automate web-related tasks. Programmers do it to interact with web pages, scrape web content, or automate form submissions and other web interactions without needing a web browser.
-
 ## How to:
-
 PowerShell does not natively have a dedicated HTML parser, but you can utilize the `Invoke-WebRequest` cmdlet to access and parse HTML content. For more complex parsing and manipulation, the HtmlAgilityPack, a popular .NET library, can be employed.
 
 ### Using `Invoke-WebRequest`:
-
 ```powershell
 # Simple example to fetch titles from a webpage
 $response = Invoke-WebRequest -Uri 'http://example.com'
@@ -35,7 +30,6 @@ Example Domain
 ```
 
 ### Using HtmlAgilityPack:
-
 First, you need to install the HtmlAgilityPack. You can do this via NuGet Package Manager:
 
 ```powershell

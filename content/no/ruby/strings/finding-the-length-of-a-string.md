@@ -10,9 +10,6 @@ title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---
 
-## What & Why?
-Finne lengden til en streng er å telle antall tegn den inneholder. Programmerere gjør dette for validering, formatering eller andre logiske formål i kode.
-
 ## How to:
 For å finne lengden av en streng i Ruby, bruk metoden `.length` eller `.size`.
 

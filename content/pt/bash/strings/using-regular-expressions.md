@@ -13,11 +13,8 @@ title: "Usando express\xF5es regulares"
 weight: 11
 ---
 
-## O Que & Por Que?
-
-Expressões regulares (regex) no Bash permitem que você pesquise, manipule e manuseie strings e arquivos com base em padrões específicos. Programadores usam regex para tarefas como validação de entrada, análise de arquivos de log e extração de dados porque oferece uma maneira flexível e poderosa de especificar padrões para necessidades complexas de processamento de texto.
-
 ## Como:
+
 
 ### Correspondência de Padrões Básica
 Para encontrar se uma string corresponde a um padrão, você pode usar `grep`, uma utilidade de linha de comando para pesquisar conjuntos de dados de texto simples para linhas que correspondam a uma expressão regular:

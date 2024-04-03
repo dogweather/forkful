@@ -11,9 +11,6 @@ title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---
 
-## Was & Warum?
-REPL, oder Read-Eval-Print Loop (Lese-Auswerte-Drucke Schleife), ist eine interaktive Programmierumgebung, die einzelne Benutzereingaben entgegennimmt, ausführt und das Ergebnis zurückgibt. Programmierer nutzen sie für sofortiges Feedback, Fehlersuche und schnelles Experimentieren mit Programmierkonzepten, ohne das Overhead des Kompilierens und Ausführens eines vollständigen Programms.
-
 ## Wie:
 In Fish ist die interaktive Shell der Standardmodus beim Start. So sieht das in Aktion aus:
 

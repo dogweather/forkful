@@ -9,9 +9,6 @@ title: Interpolating a string
 weight: 8
 ---
 
-## What & Why?
-String interpolation lets you insert values into a string. It's handy for creating custom messages, automating commands, and scripting like a boss.
-
 ## How to:
 Bash strings play nice with variables. Drop a variable into a string with some curly braces, and you're golden.
 

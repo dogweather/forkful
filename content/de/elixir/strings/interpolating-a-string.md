@@ -11,9 +11,6 @@ title: Zeichenketten interpolieren
 weight: 8
 ---
 
-## What & Why?
-String-Interpolation ermöglicht es uns, Variablen oder Ausdrücke innerhalb eines Strings einzufügen. Das ist praktisch, um dynamische Inhalte zu erzeugen, ohne die Strings manuell zusammenzusetzen.
-
 ## How to:
 Elixir macht das Verwenden von String-Interpolation leicht mit dem `#{}` Mechanismus. Hier ein paar Beispiele:
 

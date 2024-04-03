@@ -13,11 +13,7 @@ title: Capitalizando uma string
 weight: 2
 ---
 
-## O Que & Por Que?
-Capitalizar uma string em Bash envolve transformar o primeiro caractere da string para maiúscula, mantendo o resto da string inalterado. Esta técnica é comumente usada para formatar saídas ou cumprir com convenções de código que requerem que certas strings comecem com uma letra maiúscula para legibilidade ou preferências estilísticas.
-
 ## Como fazer:
-
 O Bash não possui uma função embutida especificamente para capitalizar strings, mas você pode realizar essa tarefa usando expansão de parâmetro ou ferramentas externas como `awk`. Aqui estão algumas maneiras de capitalizar uma string em Bash:
 
 **Usando Expansão de Parâmetro:**

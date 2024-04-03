@@ -11,18 +11,12 @@ title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---
 
-## ¿Qué y por qué?
-
-Generar números aleatorios en Haskell implica crear números que son impredecibles según los estándares humanos. Esto es crítico en escenarios que van desde aplicaciones criptográficas hasta simulaciones donde el elemento de azar es requerido para modelar fenómenos del mundo real de manera precisa.
-
 ## Cómo hacerlo:
-
 Para generar números aleatorios en Haskell, uno típicamente usa el paquete `random`, que es parte de la Plataforma Haskell. Aquí tienes una guía paso a paso:
 
 Primero, asegúrate de tener instalado el paquete `random`. Si no, puedes obtenerlo vía Cabal o Stack.
 
 ### Generando un Número Aleatorio
-
 Para generar un número aleatorio simple, puedes usar la función `randomRIO`, la cual produce un valor aleatorio dentro de un rango especificado.
 
 ```Haskell
@@ -35,7 +29,6 @@ main = do
 ```
 
 ### Generando una Lista de Números Aleatorios
-
 Generar una lista de números aleatorios es un poco más complicado pero aún así directo:
 
 ```Haskell
@@ -57,7 +50,6 @@ main = do
 Este fragmento de código crea una función `randomList` que genera una lista de enteros aleatorios. Reemplaza `(1, 100)` con tu rango deseado.
 
 ## Profundización
-
 El paquete `random` de Haskell proporciona un generador de números pseudoaleatorios (PRNG), lo que significa que los números generados no son verdaderamente aleatorios pero pueden parecerlo para muchas aplicaciones. El núcleo de la capacidad de generación aleatoria de Haskell reside en la clase de tipo `RandomGen`, que abstrae diferentes métodos de generar números aleatorios, y la clase de tipo `Random`, que incluye tipos que pueden ser generados aleatoriamente.
 
 Históricamente, el enfoque de Haskell para la generación de números aleatorios ha enfatizado la pureza y la reproducibilidad. Es por esto que las operaciones que involucran aleatoriedad se manejan explícitamente en el monad `IO` o requieren pasar y actualizar manualmente los estados del generador — para mantener la transparencia referencial.

@@ -10,9 +10,6 @@ title: Confronto tra due date
 weight: 27
 ---
 
-## What & Why? (Cosa & Perché?)
-Confrontare due date significa verificare se sono uguali, quale precede o segue l'altra. I programmatori lo fanno per gestire eventi, scadenze, o cronologie nelle loro app.
-
 ## How to: (Come fare:)
 ```TypeScript
 // Creazione di due oggetti date

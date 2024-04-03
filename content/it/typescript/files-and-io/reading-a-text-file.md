@@ -9,9 +9,6 @@ title: Lettura di un file di testo
 weight: 22
 ---
 
-## What & Why?
-Leggere un file di testo significa accedere al suo contenuto tramite codice. I programmatori lo fanno per processare dati, configurazioni o per leggere risorse lato server.
-
 ## How to:
 Per leggere un file di testo in Node.js con TypeScript, uso la libreria `fs`. Ecco come fare:
 

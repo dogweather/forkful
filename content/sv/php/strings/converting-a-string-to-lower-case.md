@@ -11,9 +11,6 @@ title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---
 
-## What & Why?
-Att konvertera en sträng till små bokstäver innebär att ändra alla stora bokstäver till sina motsvarande små bokstäver. Programmerare gör detta för att standardisera textdata, förenkla sökningar och jämförelser utan att vara känsliga för skiftläge.
-
 ## How to:
 I PHP använder du `strtolower()` för att konvertera en sträng till små bokstäver. Enkelt och rakt på sak. Se koden nedan:
 

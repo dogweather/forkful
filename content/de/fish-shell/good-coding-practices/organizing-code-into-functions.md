@@ -14,9 +14,6 @@ title: Organisation von Code in Funktionen
 weight: 18
 ---
 
-## Was & Warum?
-Code in Funktionen zu organisieren bedeutet, Teile eines Skripts zu bündeln, um spezifische Aufgaben zu erledigen. Wir tun dies, da es den Code leichter lesbar, testbar und wiederverwendbar macht – niemand möchte durch einen Sumpf von Codespaghetti waten.
-
 ## Wie geht das:
 In Fish schreibst du eine Funktion mit dem Schlüsselwort `function`, gibst ihr einen Namen und beendest sie mit `end`. Hier ist eine einfache:
 
@@ -59,11 +56,9 @@ Manche Shells, wie Bash, verwenden `function` oder einfach direkte Klammern. Fis
 Du benötigst keinen `return` Wert, da Fish darauf nicht großen Wert legt; die Ausgabe deiner Funktion ist ihre Rückgabe. Und wenn du persistente Funktionen für zukünftige Sitzungen haben möchtest, erinnere dich an `funcsave`.
 
 ## Siehe auch
-
 - Das Fish-Tutorial zu Funktionen: [https://fishshell.com/docs/current/tutorial.html#tut_functions](https://fishshell.com/docs/current/tutorial.html#functions)
 
 ### Funktionsbefehle
-
 - [function](https://fishshell.com/docs/current/cmds/function.html) — Eine Funktion erstellen
 - [functions](https://fishshell.com/docs/current/cmds/functions.html) — Funktionen anzeigen oder löschen
 - [funcsave](https://fishshell.com/docs/current/cmds/funcsave.html) — Die Definition einer Funktion im Autoload-Verzeichnis des Benutzers speichern

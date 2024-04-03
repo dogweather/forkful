@@ -14,9 +14,6 @@ title: Logboekregistratie
 weight: 17
 ---
 
-## Wat & Waarom?
-Loggen is het proces van het vastleggen van applicatiegebeurtenissen terwijl een programma draait, waardoor een spoor van hints voor post-mortemanalyse en real-time monitoring wordt geboden. Programmeurs doen dit omdat het helpt bij het debuggen van problemen, het monitoren van prestaties, en het volgen van gebruikersacties voor beveiliging en analyse.
-
 ## Hoe te:
 Python wordt geleverd met een ingebouwde module voor loggen. Hier is een basisopstelling:
 ```Python

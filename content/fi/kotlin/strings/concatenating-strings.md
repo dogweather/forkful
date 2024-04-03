@@ -11,9 +11,6 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## Mitä & Miksi?
-Stringien yhdistäminen tarkoittaa kahden tai useamman merkkijonon liittämistä yhteen. Ohjelmoijat tekevät tätä, koska se helpottaa tekstipohjaisten arvojen käsittelyä ja yhdistelyä, mikä on usein tarpeen tulostettaessa tai tallennettaessa tietoja.
-
 ## Kuinka:
 ```Kotlin
 fun main() {

@@ -17,12 +17,7 @@ title: "T\u1EA3i v\u1EC1 m\u1ED9t trang web"
 weight: 42
 ---
 
-## Cái gì & Tại sao?
-
-Việc tải một trang web bằng Google Apps Script bao gồm việc lấy nội dung của trang web thông qua HTML cho các mục đích khác nhau, như lấy dữ liệu web, trích xuất dữ liệu, hoặc theo dõi sự thay đổi. Các lập trình viên chọn thao tác này để tự động hóa việc thu thập dữ liệu hoặc công việc tích hợp, giảm thiểu công sức thủ công và đảm bảo xử lý dữ liệu theo thời gian thực.
-
 ## Cách thực hiện:
-
 Trong Google Apps Script, dịch vụ `UrlFetchApp` là yếu tố then chốt để tải nội dung web. Dưới đây là hướng dẫn từng bước và một ví dụ đơn giản minh họa cách lấy và ghi nhật ký nội dung HTML của một trang web:
 
 1. **Thao tác lấy dữ liệu cơ bản:**
@@ -60,7 +55,6 @@ function downloadSecureWebPage() {
 Hãy lưu ý đến bảng quy định của Google Apps Script; việc sử dụng nặng có thể đòi hỏi xử lý lỗi cho giới hạn tốc độ.
 
 ## Tìm hiểu Sâu
-
 Lịch sử, việc tải và thao tác nội dung web bắt đầu với các yêu cầu HTTP đơn giản, phát triển đáng kể với sự xuất hiện của các ngôn ngữ kịch bản. Google Apps Script cho phép thực hiện như vậy một cách dễ dàng trong hệ sinh thái G Suite, tận dụng cơ sở hạ tầng vững chắc của Google. Dịch vụ `UrlFetchApp` là một phần cốt lõi của chức năng này, đóng gói các yêu cầu HTTP/S phức tạp vào một giao diện cấp ứng dụng đơn giản.
 
 Mặc dù rất tiện lợi, Google Apps Script có thể không phải luôn là công cụ tốt nhất cho việc lấy dữ liệu web nặng hoặc khi yêu cầu xử lý phức tạp sau khi thu thập dữ liệu do giới hạn thời gian thực thi và bảng quy định do Google đặt ra. Trong những trường hợp như vậy, các khuôn khổ lấy dữ liệu web chuyên dụng hoặc các ngôn ngữ được thiết kế cho các thao tác I/O bất đồng bộ, như Node.js với các thư viện như Puppeteer hoặc Cheerio, có thể cung cấp nhiều tính linh hoạt và sức mạnh hơn.

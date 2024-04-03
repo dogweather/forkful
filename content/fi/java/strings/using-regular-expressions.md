@@ -14,12 +14,7 @@ title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---
 
-## Mikä & Miksi?
-
-Säännölliset lausekkeet (regex) Javassa mahdollistavat tiettyjen mallien määrittämisen haettavaksi, manipuloitavaksi tai merkkijonojen validointiin koodissasi. Ohjelmoijat käyttävät niitä tehtäviin, kuten lokitiedostojen jäsentäminen, käyttäjän syötteen validointi tai tiettyjen mallien etsiminen tekstistä, mahdollistaen kehittyneen merkkijonokäsittelyn vähäisellä vaivalla.
-
 ## Kuinka:
-
 Javan sisäänrakennettu tuki regexille tapahtuu pääasiassa `Pattern`- ja `Matcher`-luokkien kautta `java.util.regex`-paketissa. Tässä on yksinkertainen esimerkki, jolla etsitään ja tulostetaan kaikki sanojen esiintymät merkkijonossa, välittämättä kirjainkoosta:
 
 ```java

@@ -13,9 +13,6 @@ title: Tolka HTML
 weight: 43
 ---
 
-## Vad & Varför?
-Att tolka HTML innebär att bryta ner HTML-innehåll till något som ett program kan förstå och manipulera. Programmerare gör detta för att extrahera data, manipulera innehåll eller integrera webbskrapning i sina applikationer.
-
 ## Hur man gör:
 C++ kommer inte med inbyggda funktioner för att tolka HTML. Du kommer ofta att använda ett bibliotek som Gumbo-parser från Google, eller något liknande. Här är ett snabbt exempel som använder Gumbo-parser:
 

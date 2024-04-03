@@ -11,9 +11,6 @@ title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---
 
-## Qué y Por Qué?
-Leer argumentos de la línea de comandos permite a los scripts de PowerShell recibir información externa al ejecutarse. Los programadores usan esta técnica para hacer sus scripts más flexibles y adaptativos a distintos contextos y necesidades.
-
 ## Cómo Hacerlo:
 Para leer argumentos en PowerShell, se usa la variable automática `$args`, que es un array. Aquí tienes algunos ejemplos prácticos:
 

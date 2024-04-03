@@ -11,12 +11,7 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-
-De lengte van een tekst vinden betekent uitzoeken hoeveel tekens deze bevat. Programmeurs doen dit om invoer te valideren, tekst te manipuleren of simpelweg tekens te tellen voor verschillende taken.
-
 ## Hoe:
-
 In Lua pak je de lengte van een string met de `#` operator. Eenvoudig en snel.
 
 ```lua
@@ -36,7 +31,6 @@ print(#emptyString)         -- Output: 0
 Zelfs met nieuwe lijntekens telt Lua elk teken. En ja, een lege string is 0 lang.
 
 ## Diepgaand
-
 Vroeger waren strings in sommige talen lastiger. Je had misschien functies of methoden nodig om de lengte van een string te krijgen. Vandaag, in Lua, is het zo direct als het gebruiken van de `#` operator.
 
 Alternatieven? Als je te maken hebt met Unicode-tekens, kan de `#` operator problemen veroorzaken met multibyte-tekens. In dat geval zou je bibliotheken zoals `utf8` verkennen. Lua 5.3 introduceerde deze ingebouwde bibliotheek.
@@ -50,7 +44,6 @@ print(utf8.len(unicodeString))  -- Output: 5 tekens zoals verwacht
 Een detail dat de moeite waard is om op te merken: Lua houdt strings onveranderlijk en intern hergebruikt via een mechanisme genaamd string interning. Dit is netjes omdat het geheugen bespaart en stringlengte-operaties snel maakt.
 
 ## Zie Ook
-
 - Lua 5.4 Referentiehandleiding: Stringmanipulatie – https://www.lua.org/manual/5.4/manual.html#6.4
 - `utf8.len` functie – Duik in het correct omgaan met Unicode-teksten – https://www.lua.org/manual/5.4/manual.html#pdf-utf8.len
 - Wat Lua-geschiedenis en informatie over string interning – https://www.lua.org/doc/hopl.pdf

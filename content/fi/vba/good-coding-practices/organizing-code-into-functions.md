@@ -14,12 +14,7 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mikä ja miksi?
-
-Koodin järjestäminen funktioihin Visual Basic for Applications (VBA) -ohjelmistossa tarkoittaa ohjelman pilkkomista pienempiin, hallittaviin osiin, joita kutsutaan funktioiksi. Ohjelmoijat tekevät näin parantaakseen koodin luettavuutta, käyttääkseen koodia tehokkaasti uudelleen ja yksinkertaistaakseen vianetsintä- ja ylläpitoprosesseja.
-
 ## Kuinka:
-
 VBA:ssa funktiot määritellään käyttämällä `Function` ja `End Function` -lauseita. Tässä on yksinkertainen esimerkki siitä, miten luoda funktio, joka laskee suorakulmion pinta-alan:
 
 ```basic
@@ -41,7 +36,6 @@ End Sub
 Kun tämä koodi suoritetaan, se näyttää viestiruudun, jossa sanotaan: `Pinta-ala on 50`.
 
 ### Muuttujien välittäminen ByRef ja ByVal avulla
-
 VBA mahdollistaa muuttujien välittämisen funktioihin joko viittauksella (`ByRef`) tai arvolla (`ByVal`). Ensimmäinen tarkoittaa, että alkuperäistä muuttujaa voidaan muokata funktiossa, kun taas jälkimmäinen välittää kopion, suojellen alkuperäistä muuttujaa muutoksilta.
 
 ```basic
@@ -56,7 +50,6 @@ End Function
 ```
 
 ## Syväsukellus
-
 VBA, tapahtumavetoisena ohjelmointikielenä, korostaa merkittävästi funktioiden ja aliohjelmien käyttöä erilaisten tehtävien käsittelyyn. Toisin kuin monet nykyaikaiset kielet, VBAlla on ainutlaatuinen piirre, jossa `Function`-avainsana ei ainoastaan julista uudelleenkäytettävää koodilohkoa, vaan myös mahdollistaa implisiittisen palautusarvon suoran sijoittamisen funktion nimeen.
 
 Historiallisesti VBA-funktioiden suunnitteluun on vaikuttanut aikaisemmat ohjelmointiparadigmat, joissa kapselointi ja modulaarisuus tunnustettiin vähitellen tärkeiksi ohjelmistokehityksessä. Tämä historiallinen tausta on johtanut VBA:n suht konservatiiviseen, mutta toiminnalliseen lähestymistapaan koodin järjestämisessä.

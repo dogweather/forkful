@@ -10,9 +10,6 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-Writing a text file in Dart involves creating or modifying files on the disk to store data in a readable format. Programmers do it to save application data, configurations, logs, or any information that should persist between application runs or share data with other applications or users.
-
 ## How to:
 Dart's core library provides the `dart:io` package for file handling, allowing you to write text files without the need for third-party libraries. Here's a simple example of writing a text file:
 

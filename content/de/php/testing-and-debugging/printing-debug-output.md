@@ -10,9 +10,6 @@ title: Debug-Ausgaben drucken
 weight: 33
 ---
 
-## What & Why?
-Druckausgabe zum Debuggen ist das Anzeigen von Variablenwerten und Programmstatus auf einer Konsole oder Logdatei während der Entwicklung. Programmierer machen das, um Fehler zu finden und die Programmausführung zu verstehen.
-
 ## How to:
 Hier ein einfacher Code zur Verwendung von `echo`:
 

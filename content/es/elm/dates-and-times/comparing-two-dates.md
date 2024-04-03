@@ -11,9 +11,6 @@ title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---
 
-## Qué y Por Qué?
-Comparar dos fechas significa verificar si son iguales, cuál es anterior o posterior. Programadores lo hacen para calcular intervalos, validar plazos, o gestionar eventos.
-
 ## Cómo Hacerlo:
 ```Elm
 import Time exposing (Posix)
@@ -43,6 +40,7 @@ resultado date1 date2 =
 
 -- Resultado esperado: "La primera fecha es anterior"
 ```
+
 ## Profundización
 Históricamente, la comparación de fechas ha sido un reto debido a zonas horarias y formatos distintos. En Elm, el tipo `Posix` y el módulo `Time` facilitan estas tareas, normalizando las fechas a UTC. Otras alternativas incluyen librerías como `elm-time`, pero `Time` generalmente suficiente. La implementación implica convertir fechas a un formato comparable (como milisegundos desde epoch) y aplicar lógica básica de comparación.
 

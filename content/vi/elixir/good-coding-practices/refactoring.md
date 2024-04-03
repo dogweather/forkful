@@ -17,9 +17,6 @@ title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---
 
-## Cái gì & Tại sao?
-Tái cấu trúc là quá trình tái cấu trúc lại code hiện tại mà không thay đổi hành vi bên ngoài của nó, nhằm mục đích cải thiện các thuộc tính phi chức năng như tính dễ đọc và khả năng bảo trì. Lập trình viên thực hiện việc này để làm cho mã sạch hơn, dễ hiểu hơn và hiệu quả hơn, tạo điều kiện cho việc cập nhật trong tương lai và giảm rủi ro của lỗi.
-
 ## Làm thế nào:
 Hãy sắp xếp lại một mẫu phổ biến trong Elixir. Chúng ta sẽ tái cấu trúc hàm `calculate_stats` làm nhiều hơn nó nên làm bằng cách chia nó thành các phần nhỏ, có thể tái sử dụng.
 

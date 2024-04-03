@@ -21,9 +21,6 @@ title: "\u5B57\u7B26\u4E32\u5927\u5199\u5316"
 weight: 2
 ---
 
-## 什么 & 为什么？
-将字符串首字母大写指的是将字符串的第一个字符转换为大写，同时保持其余字符不变。这种操作在JavaScript中常常用于格式化用户输入、显示名字或标题，以及确保用户界面文本的一致性。
-
 ## 如何操作：
 在JavaScript中，没有一个内建方法可以直接实现字符串首字母大写，但使用基本的字符串操作方法来实现这一点很简单。
 
@@ -36,6 +33,7 @@ function capitalize(str) {
 
 console.log(capitalize('hello world')); // 输出："Hello world"
 ```
+
 ### ES6版本
 利用ES6模板字符串，可以更简洁地编写该函数：
 ```javascript
@@ -43,6 +41,7 @@ const capitalize = (str) => !str ? '' : `${str[0].toUpperCase()}${str.slice(1)}`
 
 console.log(capitalize('hello ES6')); // 输出："Hello ES6"
 ```
+
 ### 使用Lodash
 Lodash是一个流行的第三方实用程序库，提供了广泛的功能来操作和处理JavaScript值，包括字符串。使用Lodash来实现字符串首字母大写：
 ```javascript

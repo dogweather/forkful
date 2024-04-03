@@ -14,16 +14,10 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä & Miksi?
-
-CSV-tiedostojen (pilkuilla erotetut arvot) käsittely käsittää teksti-tiedostojen jäsennyksen ja luonnin, missä jokainen rivi sisältää pilkuilla erotettuja arvoja. Ohjelmoijat tekevät tämän mahdollistaakseen tietojen vaihdon eri sovellusten välillä tai helpottaakseen tietojen tallennusta kevyessä, ihmissilmällä luettavassa muodossa.
-
 ## Kuinka:
-
 CSV-tiedostojen käsittelyyn Dartissa voit joko käsitellä tekstin manuaalisesti tai käyttää kolmannen osapuolen kirjastoja tehtävän yksinkertaistamiseksi. Tässä katsomme molempia lähestymistapoja.
 
 ### CSV:n manuaalinen jäsennys
-
 Jos tarpeesi ovat yksinkertaisia, saatat päättää jäsennellä CSV-merkkijonon manuaalisesti. Tämä voidaan saavuttaa käyttämällä Dart:n perus merkkijonojen käsittelyn toimintoja:
 
 ```dart
@@ -56,7 +50,6 @@ void main() {
 ```
 
 ### Kolmannen osapuolen kirjaston käyttö: `csv`
-
 Monimutkaisempiin tilanteisiin tai koodisi yksinkertaistamiseksi voit käyttää suosittua kolmannen osapuolen kirjastoa kuten `csv`. Lisää se projektiisi lisäämällä `csv: ^5.0.0` (tai viimeisin versio) `pubspec.yaml` tiedostosi `dependencies`-kohtaan. Käytä sitä seuraavasti:
 
 ```dart

@@ -11,8 +11,6 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-# Obliczanie daty w przeszłości lub przyszłości na Arduino
-
 ## Czym i dlaczego?
 Obliczanie daty w przyszłości lub przeszłości to ustalenie dnia, miesiąca i roku przed lub po danym dniu. Programiści robią to, by zarządzać czasem w projektach, np. w systemach przypomnień czy logowaniu zdarzeń.
 

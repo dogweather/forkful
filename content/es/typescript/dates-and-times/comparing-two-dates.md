@@ -10,9 +10,6 @@ title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---
 
-## ¿Qué y Por Qué?
-Comparar dos fechas es verificar si son iguales, cuál es anterior o posterior. Los programadores lo hacen para gestionar eventos, validar plazos y organizar datos cronológicamente.
-
 ## Cómo:
 Aquí tienes un ejemplo simple para comparar fechas en TypeScript:
 

@@ -13,14 +13,10 @@ title: "Koodin uudelleenj\xE4rjest\xE4minen"
 weight: 19
 ---
 
-## Mikä & Miksi?
-
-Uudelleenjärjestäminen (Refactoring) Dart-kielessä on olemassa olevan koodin uudelleenrakenteellistamisen prosessi muuttamatta sen ulkoista käyttäytymistä. Tavoitteena on parantaa sen sisäistä rakennetta, luettavuutta ja ylläpidettävyyttä. Ohjelmoijat usein refaktoroivat tehdäkseen koodista siistimpää, helpommin ymmärrettävää tai tehokkaampaa, mikä helpottaa tulevia muutoksia ja vähentää virheiden todennäköisyyttä.
-
 ## Kuinka:
 
-### Esimerkki 1: Uudelleennimeäminen ja metodeiden erottaminen
 
+### Esimerkki 1: Uudelleennimeäminen ja metodeiden erottaminen
 Ennen refaktorointia saatat omistaa koodin, joka sekoittaa eri abstraktiotasoja tai vastuita, kuten alennuksen laskeminen ja sen soveltaminen:
 
 ```dart
@@ -60,7 +56,6 @@ Lopullinen hinta: 80.0
 Laskennan erottamalla metodiin, sinulla on nyt selkeästi määritelty toiminto, jota voidaan käyttää uudelleen, testata itsenäisesti ja muokata helposti.
 
 ### Esimerkki 2: Ehtolausekkeiden yksinkertaistaminen
-
 Ennen refaktorointia, ehtolauseet saattavat olla liian monimutkaisia tai vaikeita lukea:
 
 ```dart
@@ -109,5 +104,4 @@ Alennus: 0.05
 Tämä uudelleenjärjestely ei ainoastaan tee koodista tiiviimpää, vaan myös kapseloi alennusten määrittämisen logiikan tavalla, joka on helpompi ymmärtää ja ylläpitää.
 
 ### Kolmannen osapuolen kirjastot refaktorointiin
-
 Dartissa refaktoroidessa, erityisesti Flutter-sovelluksissa, [Dart DevTools](https://dart.dev/tools/dart-devtools) -työkalusarja on korvaamaton. Se sisältää suorituskykytyökaluja, widget-tarkastajan ja lähdekooditason virheenjäljittimen. Vaikka Dart DevTools ei olekaan kolmannen osapuolen kirjasto, sitä käytetään usein yhdessä esimerkiksi `flutter_bloc`-kirjaston kanssa puhtaan tilanhallinnan aikaansaamiseksi tavalla, joka edistää modulaarisuuden ja luettavuuden parantamista refactoroinnissa. Valitettavasti tämän merkinnän laajuuden vuoksi tiettyjä koodiesimerkkejä käyttäen kolmannen osapuolen kirjastoja ei tarjota tässä, mutta kehittäjiä kannustetaan tutkimaan näitä työkaluja parantaakseen refaktorointiprosessiaan Dart/Flutter-sovelluksissaan.

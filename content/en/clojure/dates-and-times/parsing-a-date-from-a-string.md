@@ -10,9 +10,6 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-Parsing a date from a string in Clojure is about converting textual representations of dates and times into a more usable form (e.g., Clojure's DateTime object). This process is fundamental for data processing, logging, or any application manipulating temporal data, allowing programmers to perform operation, comparison, or manipulation tasks on dates efficiently.
-
 ## How to:
 Clojure, being a JVM language, allows you to use Java's date and time libraries directly. Let's start with the built-in Java interoperation and then explore how to utilize a popular third-party library, clj-time, for more idiomatic Clojure solutions.
 

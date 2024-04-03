@@ -11,9 +11,6 @@ title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---
 
-## ¿Qué & Por Qué?
-Convertir un `string` a minúsculas significa cambiar todas las letras mayúsculas de una cadena de texto a su versión en minúsculas. Esto se hace a menudo para normalizar los datos y facilitar comparaciones insensibles a mayúsculas.
-
 ## Cómo hacerlo:
 Usando C#, convierte un `string` a minúsculas con el método `.ToLower()` o `.ToLowerInvariant()`. Aquí van ejemplos:
 

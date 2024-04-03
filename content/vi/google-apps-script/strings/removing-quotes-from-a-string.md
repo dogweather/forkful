@@ -19,12 +19,7 @@ title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i k\xFD 
 weight: 9
 ---
 
-## Gì và Tại sao?
-
-Việc loại bỏ dấu ngoặc kép khỏi một chuỗi trong Google Apps Script là để loại bỏ những dấu ngoặc kép không cần thiết có thể bao quanh dữ liệu chuỗi của bạn, thường xuất phát từ các đối tượng JSON đã phân tích, nhập liệu từ người dùng, hoặc trích xuất dữ liệu. Các lập trình viên thực hiện điều này để làm sạch hoặc chuẩn hóa dữ liệu trước khi tiếp tục xử lý hoặc lưu trữ, đảm bảo độ chính xác và nhất quán trong các hoạt động như so sánh, đánh giá và nhập dữ liệu vào cơ sở dữ liệu.
-
 ## Cách thực hiện:
-
 Google Apps Script không chệch hướng xa so với các thực tiễn tiêu chuẩn của JavaScript khi nói đến việc xử lý chuỗi và thao tác với chúng. Để loại bỏ dấu ngoặc kép khỏi một chuỗi, người ta có thể sử dụng phương thức `replace()`, cho phép thay thế các phần của chuỗi sử dụng biểu thức chính quy. Dưới đây là một ví dụ nhanh:
 
 ```javascript
@@ -51,7 +46,6 @@ function removeSingleQuotes() {
 Những phương pháp này hoạt động tốt cho các nhiệm vụ đơn giản hàng ngày của việc loại bỏ dấu ngoặc kép nhưng có thể yêu cầu sự tinh chỉnh cho các chuỗi phức tạp hơn hoặc các loại ký tự bao quanh khác nhau.
 
 ## Sâu hơn
-
 Kỹ thuật loại bỏ dấu ngoặc kép từ chuỗi sử dụng biểu thức chính quy đã tồn tại từ những ngày đầu của lập trình, và không ngừng phát triển cùng với các ngôn ngữ. Trong Google Apps Script, việc tận dụng khả năng thao tác chuỗi mạnh mẽ của JavaScript, bao gồm cả biểu thức chính quy, cung cấp một bộ công cụ mạnh mẽ cho các nhà phát triển. Tuy nhiên, điều quan trọng cần lưu ý là những hạn chế và nguy cơ tiềm ẩn: Chủ yếu, phương pháp này giả định rằng các dấu ngoặc chỉ xuất hiện ở đầu và cuối chuỗi. Các dấu ngoặc ở bên trong hoặc dấu ngoặc được dự định làm một phần của dữ liệu của chuỗi có thể bị loại bỏ không đúng cách nếu không được xử lý đúng cách.
 
 Đối với những tình huống phức tạp hơn, như dấu ngoặc lồng nhau hoặc việc loại bỏ dấu ngoặc đơn một cách chọn lọc chỉ khi chúng bao quanh toàn bộ chuỗi, một cách tiếp cận tinh tế hơn hoặc một bộ phân tích cú pháp có thể được yêu cầu. Thư viện hoặc những hàm tích hợp sẵn trong các ngôn ngữ khác, như phương thức `strip()` của Python, cung cấp những chức năng này một cách sẵn có, cho thấy sự cân nhắc giữa sự đơn giản của Google Apps Script và các chức năng chuyên sâu, phong phú của các môi trường lập trình khác.

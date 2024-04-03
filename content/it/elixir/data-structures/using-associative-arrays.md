@@ -13,12 +13,7 @@ title: Utilizzo di array associativi
 weight: 15
 ---
 
-## Cosa & Perché?
-
-In Elixir, gli array associativi, chiamati Mappe, sono collezioni di coppie chiave-valore dove una chiave unica punta a un valore. Sono estremamente utili per memorizzare e recuperare dati al volo, rendendo il tuo codice più pulito e la tua vita più semplice.
-
 ## Come fare:
-
 Creare una Mappa è semplice. Si usa la sintassi `%{}`, così:
 
 ```elixir
@@ -50,7 +45,6 @@ IO.inspect(trimmed_map)
 Output: `%{"location" => "NY", "name" => "Alex"}`
 
 ## Approfondimento
-
 Le Mappe in Elixir sono un'evoluzione dei più vecchi tipi di memorizzazione chiave-valore, come gli Hash in Ruby o i Dizionari in Python. Consentono ricerche e inserimenti più efficienti, rendendole la scelta prediletta per la programmazione moderna in Elixir. È degno di nota che prima delle Mappe, Elixir utilizzava i moduli HashDict e Dict, che ora sono deprecati.
 
 Tuttavia, per scenari che richiedono dati ordinati, potresti guardare alle liste di parole chiave in Elixir. Queste sono liste di tuple, efficienti per collezioni più piccole ma non altrettanto performanti per grandi insiemi di dati come le Mappe.

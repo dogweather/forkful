@@ -10,9 +10,6 @@ title: Iniciando um novo projeto
 weight: 1
 ---
 
-## O Quê & Por Quê?
-Iniciar um novo projeto é como abrir um livro em branco, pronto para ser preenchido com código. Programadores embarcam nessa jornada para resolver problemas, expressar ideias ou aprender algo novo. Vamos começar um projeto Lua?
-
 ## Como Fazer:
 Primeiro, crie um arquivo chamado `main.lua`. Este é um ponto de partida padrão para muitos projetos Lua. Veja um exemplo básico de como dar vida ao seu projeto:
 

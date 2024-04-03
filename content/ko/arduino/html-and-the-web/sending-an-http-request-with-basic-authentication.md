@@ -18,11 +18,7 @@ title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uB
 weight: 45
 ---
 
-## What & Why? (무엇과 왜?)
-HTTP request with basic authentication은 서버에 정보를 요청하거나 제출할 때 사용자 이름과 비밀번호를 포함합니다. 이렇게 하면 서버가 사용자를 인증하여 데이터 보안을 유지할 수 있습니다.
-
 ## How to: (어떻게 하나요?)
-
 ```Arduino
 #include <ESP8266WiFi.h>
 #include <ESP8266HTTPClient.h>
@@ -69,11 +65,9 @@ Sample Output:
 ```
 
 ## Deep Dive (심층 분석)
-
 HTTP 기본 인증은 오래된 방식이며, RFC7617에서 정의합니다. 보안은 기본이어서 중요한 데이터를 다룰 때는 더 안전한 OAuth와 같은 대안을 고려해야 합니다. ESP8266WiFi 라이브러리는 기본 인증을 쉽게 처리하는 메서드 `setAuthorization`을 제공합니다. 이 메서드는 Base64로 사용자 이름과 비밀번호를 인코딩한 후 헤더에 추가하여 요청을 보냅니다.
 
 ## See Also (관련 자료)
-
 - [Base64 Encoding and HTTP Basic Authentication](https://tools.ietf.org/html/rfc7617)
 - [Wi-Fi Security and ESP8266](https://www.espressif.com/en/products/socs/esp8266/overview)
 - [OAuth 2.0 for more secure authentication](https://oauth.net/2/)

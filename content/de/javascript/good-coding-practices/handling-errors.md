@@ -10,12 +10,7 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-
-Fehlerbehandlung ist der Umgang mit Situationen, wenn im Code etwas schiefgeht. Sie ist entscheidend, weil sie hilft, dass Programme anmutig scheitern und Benutzer klar anleiten, statt einfach abzustürzen und auszufallen.
-
 ## Wie geht das:
-
 Hier ist der klassische `try-catch`-Block:
 
 ```javascript
@@ -55,7 +50,6 @@ fetchData();
 ```
 
 ## Tiefergehend
-
 Die Fehlerbehandlung in JavaScript hat sich weiterentwickelt. In der Vergangenheit (ES3, circa 1999) hatten wir nur den `try-catch`-Block. Nicht super flexibel, aber er erledigte seinen Job.
 
 ES6 (2015) führte Promises ein und gab uns `.then()` und `.catch()`, was es uns ermöglichte, asynchrone Fehler eleganter zu behandeln.
@@ -71,7 +65,6 @@ Was Implementierungsdetails angeht: Wenn ein Fehler ausgelöst wird, erstellen J
 Alternativen? Man könnte die Fehlerbehandlung ignorieren (schlechte Idee), Callbacks mit fehlerersten Parametern verwenden (hallo, Node.js-Stil) oder es wird ausgefeilter mit Bibliotheken und Frameworks, die ihre Ansichten anbieten.
 
 ## Siehe auch
-
 Für mehr Informationen zur Fehlerbehandlung:
 
 - MDN zu try-catch: [MDN try...catch](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/try...catch)

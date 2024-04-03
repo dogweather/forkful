@@ -13,12 +13,7 @@ title: Suchen und Ersetzen von Text
 weight: 10
 ---
 
-## Was & Warum?
-
-Das Suchen und Ersetzen von Text in C beinhaltet das Identifizieren spezifischer Teilstrings innerhalb eines größeren Strings und deren Substituierung durch verschiedene Teilstrings. Programmierer führen diese Operationen durch, um Textdaten zu manipulieren - für Aufgaben, die von der Datenbereinigung und Formatierung bis zur dynamischen Generierung von Inhalten reichen.
-
 ## Wie geht das:
-
 C bietet keine integrierten Funktionen für das direkte Suchen und Ersetzen von Strings. Sie können dies jedoch erreichen, indem Sie verschiedene in der `<string.h>`-Bibliothek verfügbare String-Handling-Funktionen kombinieren zusammen mit einiger benutzerdefinierter Logik. Unten ist ein grundlegendes Beispiel dafür, wie man nach einem Teilstring innerhalb eines Strings sucht und ihn ersetzt. Der Einfachheit halber geht dieses Beispiel von ausreichender Puffergröße aus und behandelt keine Speicherzuweisungsprobleme, die Sie in Produktionscode berücksichtigen sollten.
 
 ```c
@@ -76,7 +71,6 @@ Modifizierter String: Hallo, dies ist ein Beispiel. Dieses Beispiel ist einfach.
 Dieser Code demonstriert einen einfachen Ansatz, um nach allen Instanzen eines Teilstrings (`sub`) in einem Quellstring zu suchen und sie durch einen anderen Teilstring (`newSub`) zu ersetzen, wobei die Funktion `strstr` verwendet wird, um den Startpunkt jeder Übereinstimmung zu finden. Es ist ein sehr grundlegendes Beispiel, das komplexe Szenarien wie überlappende Teilstrings nicht behandelt.
 
 ## Tiefere Einblicke
-
 Der Ansatz im Abschnitt "Wie geht das" ist grundlegend und veranschaulicht, wie man Textsuche und -ersatz in C ohne jegliche Drittanbieterbibliotheken erreichen kann. Historisch gesehen, aufgrund der Betonung von C auf Low-Level-Speicherverwaltung und Leistung, kapselt seine Standardbibliothek keine hochstufigen String-Manipulationsfunktionalitäten ein, wie sie in Sprachen wie Python oder JavaScript zu finden sind. Programmierer müssen den Speicher manuell verwalten und verschiedene String-Operationen kombinieren, um gewünschte Ergebnisse zu erzielen, was die Komplexität erhöht, aber mehr Kontrolle und Effizienz bietet.
 
 Es ist wichtig zu beachten, dass dieser manuelle Ansatz fehleranfällig sein kann, insbesondere bei der Verwaltung von Speicherzuweisungen und Puffergrößen. Eine falsche Handhabung kann zu Pufferüberläufen und Speicherkorruption führen, was den Code für Sicherheitsrisiken anfällig macht.

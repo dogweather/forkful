@@ -13,12 +13,7 @@ title: "Envoyer une requ\xEAte HTTP avec une authentification de base"
 weight: 45
 ---
 
-## Quoi & Pourquoi ?
-
-Envoyer une requête HTTP avec authentification de base en Go implique d'ajouter un en-tête d'autorisation à votre requête qui comprend un nom d'utilisateur et un mot de passe sous forme de chaîne encodée en Base64. Les programmeurs utilisent cette méthode pour accéder à des ressources nécessitant une vérification de l'utilisateur, garantissant que leurs applications peuvent interagir de manière sécurisée avec des services sur le web.
-
 ## Comment faire :
-
 Pour effectuer une requête HTTP avec authentification de base en Go, vous devez préparer vos en-têtes de requête pour inclure le champ `Authorization`, rempli avec vos identifiants dans le format correct. Ci-dessous, un exemple qui montre comment effectuer une requête GET vers un point d'API qui nécessite une authentification de base :
 
 ```go
@@ -61,7 +56,6 @@ Statut de la réponse : 200 OK
 ```
 
 ## Approfondissement
-
 L'authentification de base dans les requêtes HTTP est une méthode largement prise en charge pour renforcer les contrôles d'accès aux ressources web. Elle envoie simplement un nom d'utilisateur et un mot de passe avec chaque requête, ce qui la rend facile à mettre en œuvre, mais ce n'est pas la méthode la plus sécurisée disponible. Un inconvénient majeur est que, sauf utilisation conjointe avec SSL/TLS, les identifiants sont envoyés en clair (puisque Base64 est facilement décodé), ce qui peut potentiellement exposer des informations sensibles aux attaques de type man-in-the-middle.
 
 En Go, l'envoi de ces requêtes implique de manipuler directement l'en-tête `Authorization`. Alors que la bibliothèque standard de Go (`net/http`) fournit des primitives puissantes pour traiter les communications HTTP(s), elle est relativement bas niveau, obligeant les développeurs à gérer manuellement divers aspects du traitement des requêtes/réponses HTTP. Cela offre beaucoup de flexibilité aux programmeurs, mais cela signifie également qu'il faut prêter une attention particulière aux implications en matière de sécurité, au codage et à la gestion correcte des en-têtes.

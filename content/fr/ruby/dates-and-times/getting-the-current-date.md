@@ -14,9 +14,6 @@ title: Obtenir la date actuelle
 weight: 29
 ---
 
-## Quoi & Pourquoi ?
-Récupérer la date actuelle est une tâche essentielle dans presque tous les projets de programmation, que ce soit pour consigner des activités dans une application ou pour générer des rapports avec des dates. En Ruby, cela peut être facilement accompli en utilisant la bibliothèque standard, simplifiant les opérations qui impliquent des dates.
-
 ## Comment faire :
 La bibliothèque standard de Ruby inclut les classes `Date` et `Time` pour gérer les dates et le temps. Voici comment obtenir la date actuelle :
 

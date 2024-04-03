@@ -10,16 +10,10 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-
-Writing tests in Haskell is about ensuring your functions work as expected through automated checks. Programmers do it to catch bugs early, facilitate refactoring, and document behavior, making the codebase more maintainable and scalable.
-
 ## How to:
-
 Haskell supports various testing frameworks, but two popular ones are `Hspec` and `QuickCheck`. Hspec allows you to define human-readable specifications for your code, while QuickCheck lets you generate tests automatically by describing properties that your code should satisfy.
 
 ### Using Hspec
-
 First, add `hspec` to your build tool configuration (e.g., `stack.yaml` or `cabal` file). Then, import `Test.Hspec` and write tests as specifications:
 
 ```haskell
@@ -48,7 +42,6 @@ Finished in 0.0001 seconds
 ```
 
 ### Using QuickCheck
-
 With QuickCheck, you express properties that your functions should satisfy. Add `QuickCheck` to your project configuration, then import it:
 
 ```haskell

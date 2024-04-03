@@ -11,12 +11,7 @@ title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---
 
-## What & Why? (Co i Dlaczego?)
-
-Wycinanie podciągów to pobieranie fragmentów z większego ciągu znaków. Programiści robią to, by manipulować danymi, wyciągać informacje lub sprawdzać format.
-
 ## How to: (Jak to zrobić?)
-
 Java używa metody `substring()` klasy `String` do wycinania podciągów. Przykłady:
 
 ```java
@@ -56,7 +51,6 @@ programistyczna
 ```
 
 ## Deep Dive (Głębsze spojrzenie)
-
 Metoda `substring()` istnieje w Javie od jej wczesnych wersji. W starszych wersjach Javy (przed Java 7 Update 6), używanie `substring()` w niektórych przypadkach mogło prowadzić do niespodziewanych problemów z wydajnością i pamięcią, bo wewnętrznie wyciągnięte podciągi wskazywały na te same tablice znaków co oryginalny ciąg.
 
 Alternatywne metody obejmują użycie `String.split()`, klas `StringBuilder` czy `StringTokenizer`. Każda ma swoje zastosowania w zależności od konkretnego scenariusza.
@@ -64,7 +58,6 @@ Alternatywne metody obejmują użycie `String.split()`, klas `StringBuilder` czy
 Szczegół implementacyjny: od Java 7 Update 6, `substring()` tworzy nowy ciąg znaków, co oznacza, że nie dzieli już pamięci z oryginalnym ciągiem, co jest bezpieczniejsze dla zarządzania pamięcią.
 
 ## See Also (Zobacz też)
-
 - Dokumentacja Oracle dla klasy [String](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)
 - Java API specyfikacja dla metody [substring](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html#substring(int,int))
 - Przewodnik Oracle do dobrych praktyk [Java Performance](https://docs.oracle.com/javase/8/docs/technotes/guides/performance/index.html)

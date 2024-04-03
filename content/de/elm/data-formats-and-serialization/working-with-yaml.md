@@ -11,9 +11,6 @@ title: Arbeiten mit YAML
 weight: 41
 ---
 
-## Was & Warum?
-YAML ist ein datenorientiertes Format zum Speichern und Übertragen von Informationen, ähnlich wie JSON, aber menschenlesbarer. Programmierer verwenden es für Konfigurationen, Datenimport/-export und weil es einfach zu lesen und zu schreiben ist.
-
 ## Anleitung:
 Elm hat standardmäßig keine eingebaute Bibliothek zur YAML-Analyse. Du musst eine externe JavaScript-Bibliothek verwenden und Elm's Ports nutzen, um YAML-String zu konvertieren.
 

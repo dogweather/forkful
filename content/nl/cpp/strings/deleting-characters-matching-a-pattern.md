@@ -13,9 +13,6 @@ title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---
 
-## Wat & Waarom?
-Het verwijderen van tekens die overeenkomen met een patroon betekent het uitsluiten van specifieke sequenties uit een string. Programmeurs doen dit voor opschoning, gegevensopmaak, of om aan applicatieregels te voldoen.
-
 ## Hoe:
 Laten we tekens verwijderen met `erase` en `remove_if` samen met lambda-expressies. Hier is een snel voorbeeld:
 

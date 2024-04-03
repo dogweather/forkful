@@ -10,9 +10,6 @@ title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---
 
-## Was & Warum?
-Kommandozeilenargumente sind die Parameter, die beim Starten eines Programms über die Konsole übergeben werden. Sie ermöglichen es, dass Programme dynamisch auf unterschiedliche Eingaben reagieren und sind essentiell für skriptartige oder batchverarbeitende Anwendungen.
-
 ## How to:
 Um in Kotlin Kommandozeilenargumente zu lesen, greift man einfach auf das Array `args` zu, das in die `main`-Funktion eingebettet ist. Sieht so aus:
 

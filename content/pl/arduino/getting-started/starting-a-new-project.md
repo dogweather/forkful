@@ -11,9 +11,6 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## What & Why? (Czym jest i dlaczego?)
-Zaczynanie nowego projektu to stworzenie miejsca na kod, który później zamieni się w działający program. Programiści robią to, by przekształcić pomysły w konkretne elektroniczne rozwiązania.
-
 ## How to:
 ```Arduino
 void setup() {

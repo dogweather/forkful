@@ -11,12 +11,7 @@ title: Gestione degli errori
 weight: 16
 ---
 
-## Cosa e Perché?
-
-La gestione degli errori nei tuoi programmi cattura gli imprevisti che cercheranno di farti inciampare. Si fa per evitare che il tuo Arduino vada in tilt quando si verifica l'inaspettato.
-
 ## Come fare:
-
 Diciamo che l'Arduino sta leggendo un sensore che occasionalmente può produrre valori fuori range. Ecco come potresti gestire la cosa:
 
 ```Arduino
@@ -38,7 +33,6 @@ Errore: Valore sensore fuori range.
 ```
 
 ## Approfondimenti
-
 La gestione degli errori non è sempre stata così diretta. Nei primi giorni, gli sviluppatori spesso ignoravano gli errori, conducendo al temuto "comportamento indefinito". Con l'evolversi della programmazione, sono evoluti anche gli strumenti - ora disponiamo di eccezioni in molte lingue, ma nel mondo Arduino si rimane ancora un po' all'antica con il 'controlla-prima' a causa dei vincoli hardware e delle radici in C++.
 
 Nella programmazione Arduino, spesso si incontrano istruzioni `if-else` per la gestione degli errori. Ma ci sono alternative: utilizzare la funzione `assert` per fermare l'esecuzione se una condizione fallisce o progettare dispositivi di sicurezza all'interno della configurazione hardware stessa.
@@ -46,7 +40,6 @@ Nella programmazione Arduino, spesso si incontrano istruzioni `if-else` per la g
 Quando implementi la gestione degli errori, considera l'impatto dello stop del programma rispetto al lasciarlo continuare in uno stato predefinito o sicuro. C'è un compromesso, e la scelta giusta dipende dal potenziale danno delle interruzioni rispetto al funzionamento errato.
 
 ## Vedi anche
-
 Approfondisci la rilevazione e la gestione degli errori con questi:
 
 - Riferimento del linguaggio Arduino: https://www.arduino.cc/reference/en/

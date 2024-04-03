@@ -10,9 +10,6 @@ title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---
 
-## Mikä ja Miksi?
-Lainausmerkkien poistaminen merkkijonosta tarkoittaa kaikkien lainausmerkkien—yhden (' '), kaksinkertaisen (" ") tai molempien—poistamista tekstidatasta. Ohjelmoijat tekevät näin puhdistaakseen syötteitä, valmistaakseen dataa tallennusta varten tai yksinkertaistaakseen jäsentämistehtäviä, joissa lainausmerkit ovat tarpeettomia ja potentiaalisesti ongelmallisia.
-
 ## Miten:
 Kiskotaanpa nuo ärsyttävät lainausmerkit pois tekstistämme. Käytämme `replace()`-metodia nopeisiin korjauksiin ja regexiä koviin pähkinöihin.
 

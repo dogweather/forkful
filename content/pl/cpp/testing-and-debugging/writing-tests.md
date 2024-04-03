@@ -13,14 +13,10 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i dlaczego?
-
-Pisanie testów w C++ polega na tworzeniu małych, samodzielnych programów, które automatycznie weryfikują zachowanie fragmentów twojej bazy kodu. Programiści robią to, aby upewnić się, że ich kod działa zgodnie z oczekiwaniami, aby zapobiec regresji (tj. nowe zmiany psujące istniejącą funkcjonalność) oraz aby ułatwić utrzymanie baz kodów w czasie.
-
 ## Jak to zrobić:
 
-### Korzystając z Google Test Framework
 
+### Korzystając z Google Test Framework
 Jedną z najpopularniejszych bibliotek firm trzecich do pisania testów w C++ jest Google Test. Najpierw musisz zainstalować Google Test i połączyć go z twoim projektem. Po skonfigurowaniu możesz zacząć pisać przypadki testowe.
 
 ```cpp
@@ -55,7 +51,6 @@ Zapisz kod w pliku i skompiluj go przy użyciu kompilatora g++, łącząc biblio
 ```
 
 ### Korzystając z Catch2
-
 Innym popularnym frameworkiem do testowania dla C++ jest Catch2. Posiada prostszą składnię i zazwyczaj nie wymaga łączenia z biblioteką (tylko nagłówek). Oto przykład, jak napisać prosty test z Catch2:
 
 ```cpp

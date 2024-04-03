@@ -12,12 +12,7 @@ title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---
 
-## Co i Dlaczego?
-
-Konwersja daty do formatu tekstowego (string) to proces zamieniania danych o czasie na zrozumiały i łatwy do zaprezentowania ciąg znaków. Programiści robią to, aby ułatwić wyświetlanie dat użytkownikom aplikacji w czytelnej i lokalnie akceptowalnej formie.
-
 ## Jak to zrobić:
-
 Kotlin pozwala na konwersję daty do stringa za pomocą klasy `SimpleDateFormat`. Przykład:
 
 ```Kotlin
@@ -42,7 +37,6 @@ Jeśli uruchomimy powyższy kod, na przykład 10 kwietnia 2023 o 15:30, wynik po
 ```
 
 ## Deep Dive
-
 Przed wprowadzeniem `java.time` w Java 8, standardem był pakiet `java.util` i klasy takie jak `Date` oraz `SimpleDateFormat`. Kotlin, będąc językiem działającym na JVM, dzieli ten sam zestaw narzędzi.
 
 Alternatywą dla `SimpleDateFormat` jest nowsze API `java.time`, dostępne od wersji Kotlin 1.3, które ułatwia manipulację czasem i jest bardziej odporny na błędy:
@@ -62,7 +56,6 @@ fun formatDatesWithJavaTime(): String {
 `DateTimeFormatter` jest bezpieczniejszy w użyciu, gdyż bierze pod uwagę kontekst takie jak strefy czasowe i wsparcie dla i18n (internacjonalizacje). Co więcej, unika błędów związanych z wielowątkowością, na które narażony jest `SimpleDateFormat`.
 
 ## Zobacz też
-
 - [SimpleDateFormat documentation](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
 - [DateTimeFormatter documentation](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
 - [Kotlin API docs](https://kotlinlang.org/api/latest/jvm/stdlib/)

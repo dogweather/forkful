@@ -18,9 +18,6 @@ title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Cái gì & Tại sao?
-Việc tạo một tệp tạm thời có nghĩa là bạn đang tạo một tệp cho một mục đích ngắn hạn, như lưu trữ dữ liệu chỉ cần trong quá trình thực thi của một chương trình. Các lập trình viên làm điều này vì nhiều lý do, như tránh hạn chế bộ nhớ hoặc giữ một trạng thái tạm thời trong quá trình thực hiện các thao tác phức tạp.
-
 ## Cách làm:
 Dưới đây là cách nhanh chóng để tạo và viết vào một tệp tạm thời trong C#:
 

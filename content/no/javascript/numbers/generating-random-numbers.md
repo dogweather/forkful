@@ -12,14 +12,10 @@ title: Generering av tilfeldige tall
 weight: 12
 ---
 
-## Hva & Hvorfor?
-
-Å generere tilfeldige tall i JavaScript er en teknikk som brukes for å skape uforutsigbarhet i applikasjoner, fra spill som trenger tilfeldig fiendeadferd til sikkerhetsalgoritmer som krever kryptografisk tilfeldighet. Denne evnen er avgjørende for å utvikle dynamiske brukeropplevelser og sikre applikasjoner.
-
 ## Hvordan:
 
-### Grunnleggende generering av tilfeldige tall
 
+### Grunnleggende generering av tilfeldige tall
 Den mest direkte måten å generere et tilfeldig tall i JavaScript på, er å bruke `Math.random()`. Denne funksjonen returnerer et flyttall, pseudo-tilfeldig tall i området 0 (inklusiv) til 1 (eksklusiv).
 
 ```javascript
@@ -28,7 +24,6 @@ console.log(randomNumber);
 ```
 
 ### Generere et tilfeldig tall innenfor et område
-
 Ofte vil du ha et tilfeldig heltall innenfor et spesifikt område. Dette kan oppnås ved å skalere og runde av utdataen fra `Math.random()`.
 
 ```javascript
@@ -42,7 +37,6 @@ console.log(getRandomInt(1, 100));
 ```
 
 ### Kryptografisk sikre tilfeldige tall
-
 For applikasjoner som krever en høyere grad av tilfeldighet (f.eks. kryptografiske operasjoner), kan metoden `crypto.getRandomValues()` brukes. Dette gir kryptografisk tilfeldighet, i motsetning til de pseudo-tilfeldige tallene som genereres av `Math.random()`.
 
 ```javascript
@@ -54,7 +48,6 @@ For applikasjoner som krever en høyere grad av tilfeldighet (f.eks. kryptografi
 ```
 
 ## Dypdykk
-
 Historisk sett har generering av tilfeldige tall i JavaScript utelukkende vært avhengig av funksjonen `Math.random()`. Selv om den er praktisk for de fleste tilfeldige bruksområder, gir algoritmen den bruker, typisk en variant av en pseudotilfeldig tallgenerator (PRNG) som Mersenne Twister, ikke kryptografisk sikkerhet.
 
 Introduksjonen av Web Cryptography API brakte med seg metoden `crypto.getRandomValues()`, som tilbyr en måte å generere tall som er langt mindre forutsigbare og egnet for sikkerhetssensitive applikasjoner. Denne metoden utnytter kildene til tilfeldighet i det underliggende operativsystemet, som `/dev/random` på Unix/Linux, som er mer robuste og egnet for kryptografiske operasjoner.

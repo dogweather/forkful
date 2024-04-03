@@ -13,12 +13,7 @@ title: Verwendung von assoziativen Arrays
 weight: 15
 ---
 
-## Was & Warum?
-
-In Java ermöglichen assoziative Arrays, oder Maps, das Speichern von Schlüssel-Wert-Paaren für eine effiziente Datensuche und -manipulation. Programmierer nutzen sie für Aufgaben wie das Zählen von Vorkommen von Elementen oder das Zuordnen von Benutzern zu ihren Berechtigungen, da sie schnellen Zugriff und Aktualisierungen bieten.
-
 ## Wie geht das:
-
 Java verfügt nicht über eingebaute assoziative Arrays wie einige andere Sprachen, stellt aber die `Map` Schnittstelle und Klassen wie `HashMap` und `TreeMap` zur Verfügung, um diese Rolle zu erfüllen. So verwenden Sie eine `HashMap`:
 
 ```Java
@@ -62,7 +57,6 @@ Charlie ist 28 Jahre alt.
 `HashMap` ist nur eine Implementierung. Wenn Ihre Schlüssel einzigartig sind und Sie diese sortiert benötigen, sollten Sie `TreeMap` in Betracht ziehen. Für eine Map, die die Einfügereihenfolge beibehält, ist `LinkedHashMap` Ihr Freund.
 
 ## Tiefer eintauchen
-
 Maps in Java sind Teil des Collections Frameworks, eingeführt in JDK 1.2, haben aber über die Jahre bedeutende Verbesserungen erfahren, einschließlich der Einführung der `forEach` Methode in Java 8 für eine einfachere Iteration über Einträge. Die Wahl der Map-Implementierung (`HashMap`, `LinkedHashMap`, `TreeMap`) sollte von Ihren spezifischen Bedürfnissen in Bezug auf Ordnung und Leistung bestimmt werden. Zum Beispiel bietet `HashMap` O(1) Zeitperformance für die grundlegenden Operationen (get und put), vorausgesetzt, die Hashfunktion verteilt die Elemente ordnungsgemäß unter den Buckets. Allerdings, wenn Sie eine Sortierung basierend auf natürlicher Ordnung oder benutzerdefinierten Vergleichsfunktionen benötigen, ist `TreeMap` die richtige Wahl und bietet O(log n) Zeit für Einfügung und Suche.
 
 Bevor `Map` eingeführt wurde, wurden assoziative Arrays üblicherweise mit zwei parallelen Arrays (eines für Schlüssel, eines für Werte) oder benutzerdefinierten Datenstrukturen mit geringerer Effizienz implementiert. Aktuelle Alternativen zu `Map` und seinen Implementierungen könnten Drittanbieter-Bibliotheken beinhalten, die spezialisierte Maps anbieten, wie z. B. bidirektionale Maps (BiMap in Googles Guava-Bibliothek) für Fälle, in denen Sie effizient einen Schlüssel nach seinem Wert finden müssen. Jedoch sind für die meisten Anwendungsfälle in Java die Maps der Standardbibliothek robust und flexibel genug, um die Aufgabe zu bewältigen.

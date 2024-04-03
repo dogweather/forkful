@@ -12,9 +12,6 @@ title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---
 
-## Qué y Por Qué?
-Leer argumentos de la línea de comandos permite que tus programas de Elixir reciban información externa al ser ejecutados, habilitándote para construir aplicaciones dinámicas que se adapten según los insumos del usuario. Los programadores usan esto para personalizar la ejecución o configurar opciones sin tener que cambiar el código.
-
 ## Cómo Hacerlo:
 Elixir hace que leer argumentos de la línea de comandos sea sencillo con `System.argv/0`. Ejemplo simple:
 

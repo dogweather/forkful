@@ -11,9 +11,6 @@ title: Kontrollera om en katalog finns
 weight: 20
 ---
 
-## Vad & Varför?
-Att kontrollera om en katalog finns är processen att verifiera en sökvägs existens i filsystemet. Programmerare gör detta för att försäkra sig om att filoperationer, som att läsa eller skriva filer, inte misslyckas på grund av saknade kataloger.
-
 ## Hur man gör:
 Eftersom Elm är inriktad på front-end utveckling och körs i webbläsare, hanterar det inte direkt åtkomst till filsystemet. Du kan dock kommunicera med en server via HTTP för att kontrollera en katalog. Här är ett fiktivt exempel:
 

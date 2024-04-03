@@ -13,9 +13,6 @@ title: "Analys av ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---
 
-## Vad & Varför?
-Att tolka ett datum från en sträng i Dart innebär att konvertera textrepresentation av datum och tider till ett `DateTime`-objekt. Denna operation är avgörande för applikationer som hanterar schemaläggning, dataanalys eller någon funktion som kräver datummanipulation, för att säkerställa att datumbaserade data förstås och bearbetas korrekt av programmet.
-
 ## Hur man gör:
 Darts kärnbibliotek förenklar datumtolkning genom klassen `DateTime`. För enkla fall där du känner till formatet på datumsträngen kan du använda metoden `DateTime.parse()`. Men, för mer komplexa scenarion eller när man har att göra med flera format, blir paketet `intl`, specifikt klassen `DateFormat`, ovärderligt.
 

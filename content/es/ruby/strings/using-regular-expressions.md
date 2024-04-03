@@ -13,10 +13,9 @@ title: Usando expresiones regulares
 weight: 11
 ---
 
-## ¿Qué y Por Qué?
-Las expresiones regulares (regex) en Ruby son patrones utilizados para coincidir con combinaciones de caracteres en cadenas, lo que permite a los desarrolladores buscar, coincidir y manipular texto de manera eficiente. Los programadores utilizan regex para tareas tales como validación, análisis y manipulación de cadenas, lo que lo hace una herramienta indispensable para el procesamiento de texto.
-
 ## Cómo hacerlo:
+
+
 ### Coincidencia Básica
 Para hacer coincidir una cadena con un patrón simple, puedes usar el método `match`. A continuación, estamos verificando si la palabra "Ruby" existe en una cadena dada.
 

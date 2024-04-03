@@ -13,12 +13,7 @@ title: Analisi del HTML
 weight: 43
 ---
 
-## Cosa & Perché?
-
-Parsare HTML in Haskell ti permette di estrarre dati, manipolare il contenuto HTML o interagire con le pagine web programmaticamente. Questa operazione è essenziale per compiti come lo scraping web, il testing automatizzato di applicazioni web e il data mining da siti web - sfruttando il robusto sistema di tipi di Haskell e i paradigmi di programmazione funzionale per garantire codice robusto e conciso.
-
 ## Come fare:
-
 Per parsare HTML in Haskell, useremo la libreria `tagsoup` per la sua semplicità e flessibilità. Prima di tutto, assicurati di installare la libreria aggiungendo `tagsoup` al file cabal del tuo progetto o eseguendo `cabal install tagsoup`.
 
 ```haskell

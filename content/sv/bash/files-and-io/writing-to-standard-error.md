@@ -12,9 +12,6 @@ title: Skriva till standardfel
 weight: 25
 ---
 
-## Vad & Varför?
-Att skriva till standardfel (stderr) i Bash handlar om att dirigera felmeddelanden eller annan viktig diagnostisk utdata separat från standardutdata (stdout). Programmerare gör detta för att se till att felmeddelanden enkelt kan identifieras, loggas eller till och med ignoreras, vilket hjälper till i felsökning och loggningsprocesser.
-
 ## Hur man gör:
 I Bash använder du `>&2` för att omdirigera utdata till stderr. Här är ett grundläggande exempel:
 

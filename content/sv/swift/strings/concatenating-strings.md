@@ -11,9 +11,6 @@ title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---
 
-## What & Why?
-Att slå ihop strängar, eller konkatenering, innebär att du sätter samman två eller flera textsträngar till en. Vi gör det för att skapa dynamisk text, som användarnamn i en hälsning eller värden i en loggfil.
-
 ## How to:
 Swift gör att konkatenera strängar ser ut som barnlek. Här är det enkelt:
 

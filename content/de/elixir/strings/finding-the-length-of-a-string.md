@@ -10,9 +10,6 @@ title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---
 
-## Was & Warum?
-Die Länge eines Strings zu ermitteln bedeutet, zu zählen, wie viele Zeichen er enthält. Diese Information ist wichtig für Input-Validierung, Textverarbeitung oder wenn die Leistung von Algorithmen auf Zeichenkettenlänge basiert.
-
 ## So geht’s:
 In Elixir kannst du einfach die eingebaute Funktion `String.length/1` verwenden:
 

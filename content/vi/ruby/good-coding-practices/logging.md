@@ -14,9 +14,6 @@ title: Ghi log
 weight: 17
 ---
 
-## Ghi chép và Lý do
-Ghi chép trong lập trình như là việc giữ một nhật ký cho ứng dụng của bạn. Đó là sự ghi chép có hệ thống các sự kiện, thông điệp và điểm dữ liệu mà cho bạn cái nhìn sâu sắc về những gì ứng dụng của bạn đang làm và cách nó hoạt động. Các lập trình viên ghi chép vì nó rất quan trọng để debug, giám sát sức khỏe ứng dụng, và nhận biết về những vấn đề tiềm ẩn trước khi chúng trở thành những vấn đề thực sự.
-
 ## Cách thức:
 Ruby đi kèm với một mô-đun được tích hợp sẵn cho việc ghi chép, `Logger`, rất dễ sử dụng. Dưới đây là một ví dụ nhanh để bạn bắt đầu:
 

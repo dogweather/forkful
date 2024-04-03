@@ -10,12 +10,7 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-
-Rounding numbers in programming is about approximating a number to its nearest whole number or to a certain number of decimal places. Programmers round numbers to simplify figures, improve readability, or meet specific numeric criteria in calculations, especially in financial computations where precision matters.
-
 ## How to:
-
 In Visual Basic for Applications (VBA), rounding can be achieved using several functions, each suited for specific scenarios. Here are the most commonly used functions with examples:
 
 1. **Round Function**:
@@ -51,7 +46,6 @@ In Visual Basic for Applications (VBA), rounding can be achieved using several f
    ```
 
 ## Deep Dive
-
 The `Round` function in VBA is inherently different from rounding methods in other languages due to its use of **Banker's Rounding**. Banker's Rounding rounds to the nearest even number when exactly halfway between two numbers, reducing bias in calculations over a large dataset and providing a more statistically significant result. However, this can lead to unexpected behavior for those unfamiliar with it, especially when integral precision is expected in every case.
 
 In contrast, many programming languages and systems use "arithmetic rounding" or "half-up rounding," where a number exactly halfway between two possible rounded values is always rounded up. When translating or porting code from other languages to VBA, programmers must keep these differences in mind to avoid subtle bugs or inaccuracies in financial and statistical applications.

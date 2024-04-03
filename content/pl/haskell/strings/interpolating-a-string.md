@@ -11,9 +11,6 @@ title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---
 
-## Co i dlaczego?
-Interpolacja ciągu znaków polega na wstawianiu wartości zmiennych bezpośrednio w stringu. Programiści robią to, aby generować dynamiczne teksty z danych, łatwiej formatować wyjścia i ogólnie uprościć pisanie kodu.
-
 ## Jak to zrobić:
 W Haskellu, interpolacja nie jest wbudowana jak w innych językach. Musimy użyć biblioteki, takiej jak `text` i jej quasi-quoterów. Oto jak:
 

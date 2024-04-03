@@ -10,9 +10,6 @@ title: Scaricare una pagina web
 weight: 42
 ---
 
-## What & Why?
-Scaricare una pagina web significa prelevare il contenuto HTML direttamente da Internet. I programmatori fanno ciò per processare dati, testare applicazioni o fare web scraping.
-
 ## How to:
 Usiamo `clj-http` per scaricare una pagina web. Si tratta di una biblioteca Clojure semplice ma potente.
 

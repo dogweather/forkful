@@ -10,12 +10,7 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-
-Comparing two dates involves figuring out their chronological relationship—are they the same, is one earlier, or maybe later? Programmers do this to schedule events, sort timelines, and check durations.
-
 ## How to:
-
 Let's compare some dates:
 
 ```TypeScript
@@ -43,7 +38,6 @@ false
 ```
 
 ## Deep Dive
-
 Back in the day, dates were a haystack of formats and mangled calculations. With JavaScript (and TypeScript by extension), the `Date` object simplified things, standardizing how we handle time.
 
 Alternatives? Sure. Libraries like `moment.js` or `date-fns` augment date handling with extra functionality. But for basic comparisons? Native Date's simplicity often does the job.
@@ -51,7 +45,6 @@ Alternatives? Sure. Libraries like `moment.js` or `date-fns` augment date handli
 Under the hood, `Date.getTime()` gets the milliseconds since epoch (Jan 1, 1970). Comparing these values clears out quirks of time zones and leap seconds, boiling it down to numbers.
 
 ## See Also
-
 - [Mozilla Developer Network Date Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) for the ins and outs of Date objects.
 - [You Don't Need Moment.js](https://github.com/you-dont-need/You-Dont-Need-Momentjs) for times you might, or might not, want a library.
 - [TypeScript Official Documentation](https://www.typescriptlang.org/docs/) for more on TypeScript's power and pitfalls.

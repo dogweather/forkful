@@ -10,9 +10,6 @@ title: Scaricare una pagina web
 weight: 42
 ---
 
-## What & Why?
-Scaricare una pagina web significa prelevare il contenuto che normalmente vediamo nel browser e salvarlo localmente. I programmatori fanno questo per processare o analizzare i dati, testare siti o creare applicazioni che interagiscono con il web.
-
 ## How to:
 Per scaricare una pagina web in Rust, useremo il pacchetto `reqwest`, molto popolare e con molte funzionalità. Prima di tutto, includi `reqwest` nel tuo `Cargo.toml`.
 

@@ -10,9 +10,6 @@ title: Usando una shell interactiva (REPL)
 weight: 34
 ---
 
-## Qué y Por Qué?
-Una shell interactiva, o REPL (Read-Eval-Print Loop, Bucle de Leer-Evaluar-Imprimir), te permite probar fragmentos de código en tiempo real. Los programadores de Elixir usan la REPL, llamada IEx (Elixir Interactivo), para experimentar, depurar y aprender el lenguaje.
-
 ## Cómo hacerlo:
 Para lanzar IEx, abre tu terminal y escribe `iex`. Aquí tienes un adelanto:
 

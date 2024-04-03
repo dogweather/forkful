@@ -12,12 +12,7 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä ja miksi?
-
-YAML, joka tarkoittaa "YAML Ain't Markup Language", on ihmisen luettavissa oleva tiedon sarjallistamisformaatti. Ohjelmoijat käyttävät sitä asetustiedostoihin, datan dumpaamiseen ja hierarkkisen datan tallentamiseen sen luettavuuden ja helposti ymmärrettävän syntaksin ansiosta verrattuna XML:ään tai JSON:iin.
-
 ## Miten:
-
 YAML:n käsittelyyn C++:ssa suosittu valinta on `yaml-cpp` kirjasto. Varmista ensin, että sinulla on `yaml-cpp` asennettuna ja oikein linkitettynä C++ projektiisi.
 
 **YAML-tiedoston lukeminen:**

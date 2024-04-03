@@ -15,9 +15,6 @@ title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---
 
-## Was & Warum?
-Das Überprüfen, ob ein Verzeichnis in Ruby existiert, ermöglicht es Programmierern, die Präsenz eines Verzeichnisses zu verifizieren, bevor sie Operationen wie das Lesen von Dateien oder das Erstellen neuer Verzeichnisse durchführen. Dies ist entscheidend, um Fehler bei der Dateibehandlung zu vermeiden und die Zuverlässigkeit von Dateisystem-Manipulationen zu gewährleisten.
-
 ## Wie:
 Die Standardbibliothek von Ruby bietet einfache Methoden, um die Existenz eines Verzeichnisses zu überprüfen. So machen Sie das mit reinem Ruby, ohne dass Sie Drittbibliotheken benötigen:
 

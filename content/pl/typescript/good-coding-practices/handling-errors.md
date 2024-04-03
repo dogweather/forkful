@@ -11,9 +11,6 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co i Dlaczego?
-Obsługa błędów polega na oczekiwaniu na nieoczekiwane; to, jak zarządzamy sytuacjami, gdy coś idzie nie tak w naszym kodzie. Robimy to, aby uniknąć awarii i zapewnić użytkownikom płynne doświadczenie, nawet kiedy zdarzy się coś nieoczekiwanego.
-
 ## Jak to zrobić:
 W TypeScript obsługa błędów często wiąże się z blokami `try`, `catch` i `finally`.
 

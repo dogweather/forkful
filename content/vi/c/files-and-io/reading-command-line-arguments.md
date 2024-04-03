@@ -16,12 +16,7 @@ title: "\u0110\u1ECDc c\xE1c tham s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---
 
-## Cái gì & Tại sao?
-
-Trong lập trình C, việc đọc các đối số dòng lệnh cho phép các chương trình nhận đầu vào ngay từ terminal, làm tăng tính linh hoạt và khả năng sử dụng. Các lập trình viên tận dụng điều này để cấu hình hành vi của script mà không cần chỉnh sửa mã, khiến cho ứng dụng trở nên linh hoạt và hiệu quả.
-
 ## Làm thế nào:
-
 Trong C, hàm `main` có thể được thiết kế để chấp nhận các đối số dòng lệnh sử dụng các tham số `int argc` và `char *argv[]`. Tại đây, `argc` đại diện cho số lượng đối số được truyền và `argv` là một mảng các con trỏ ký tự liệt kê tất cả các đối số. Dưới đây là một ví dụ nhanh để minh họa:
 
 ```c
@@ -49,7 +44,6 @@ Số lượng Đối số: 2
 Điều này minh họa việc đối số dòng lệnh có thể được phân tích và sử dụng trong một chương trình C.
 
 ## Sâu hơn
-
 Quy ước truyền đối số cho chương trình có từ những ngày đầu tiên của Unix. Trong cách tiếp cận truyền thống này, `argc` và `argv` cung cấp một giao diện đơn giản nhưng mạnh mẽ cho tương tác dòng lệnh, thể hiện triết lý của Unix về các công cụ nhỏ gọn, mô-đun có thể làm việc cùng nhau. Mặc dù các ngôn ngữ hiện đại thường giới thiệu các thư viện hoặc khung làm việc phức tạp hơn cho việc phân tích đối số dòng lệnh, nhưng sự trực tiếp của phương pháp C đem lại sự trong suốt và kiểm soát không thể so sánh.
 
 Trong các phát triển gần đây, các thư viện như `getopt` trong các hệ thống POSIX đã phát triển để hỗ trợ nhu cầu phân tích phức tạp hơn, như xử lý tên tùy chọn dài hoặc giá trị mặc định cho các đối số còn thiếu. Tuy nhiên, cơ chế cơ bản của `argc` và `argv` vẫn là cần thiết để hiểu cách các chương trình tương tác với môi trường thời gian chạy của mình trong C.

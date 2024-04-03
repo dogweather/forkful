@@ -12,9 +12,6 @@ title: Usando um shell interativo (REPL)
 weight: 34
 ---
 
-## O Que & Por Quê?
-Shells interativos, ou REPLs (Read-Eval-Print Loops, ou Laços de Ler-Avaliar-Imprimir), permitem que você execute código de forma instantânea, testando funções, algoritmos ou brincando com ideias. Eles são os blocos de notas da programação, rápidos e diretos, sem necessidade de configurar um ambiente de desenvolvimento completo.
-
 ## Como usar:
 O Node.js vem com um REPL acessível através do terminal. Abra-o e você está pronto para começar. Aqui vai uma amostra:
 

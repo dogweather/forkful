@@ -20,9 +20,6 @@ title: "\u57FA\u672C\u8A8D\u8A3C\u3092\u4F7F\u7528\u3057\u305FHTTP\u30EA\u30AF\u
 weight: 45
 ---
 
-## What & Why?（何となぜ？）
-HTTPリクエストに基本認証を付けて送ることは、サーバに「自分は誰だ」って教えるためです。安全性を高めるため、プログラマーは認証情報をリクエストに含めます。
-
 ## How to:（方法）
 Kotlinで基本認証付きHTTPリクエストを簡単に送るコードです。HttpURLConnectionを使ってみましょう。
 

@@ -11,9 +11,6 @@ title: Eliminando comillas de una cadena
 weight: 9
 ---
 
-## ¿Qué & Por qué?
-Eliminar comillas de una cadena generalmente significa deshacerse de las comillas dobles (") o simples (') innecesarias. Los programadores hacen esto para sanear la entrada o cuando las comillas no son necesarias para el procesamiento posterior, como al guardar texto en una base de datos o prepararlo para mostrar.
-
 ## Cómo hacerlo:
 Python ofrece varias formas de deshacerse de las comillas no deseadas de las cadenas. Veamos algunos ejemplos:
 

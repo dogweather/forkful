@@ -11,9 +11,6 @@ title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---
 
-## What & Why? (Was & Warum?)
-Das Ermitteln der Zeichenkettenlänge bedeutet, zu zählen, wie viele Zeichen in einer Zeichenkette vorhanden sind. Programmierer benötigen diese Information, um Daten zu validieren, Schleifen zu steuern oder Formatierungen vorzunehmen.
-
 ## How to: (Wie geht das:)
 Ein Beispiel in Fish Shell zur Bestimmung der Länge einer Zeichenkette:
 

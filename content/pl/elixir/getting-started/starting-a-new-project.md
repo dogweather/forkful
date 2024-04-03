@@ -11,9 +11,6 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## What & Why (Co i Dlaczego?)
-Rozpoczynanie nowego projektu to jak otwieranie nowego rozdziału: jest świeże, czyste i wszystko jest możliwe. Programiści zaczynają nowe projekty, by stworzyć coś unikalnego lub rozwiązać problem, każdorazowo kształtując kod do swoich potrzeb.
-
 ## How to (Jak to zrobić?)
 Zakładając, że masz już zainstalowany Elixir i narzędzie do zarządzania pakietami Hex, zaczynasz od utworzenia nowej aplikacji za pomocą polecenia `mix`.
 

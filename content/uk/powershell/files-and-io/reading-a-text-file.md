@@ -23,12 +23,7 @@ title: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0442\u0435\u043A\u0441\u044
 weight: 22
 ---
 
-## Що і чому?
-
-Читання текстового файлу — це процес отримання даних із файлу, який зберігає текст. Програмісти роблять це для обробки, аналізу, або виведення інформації, збереженої у цих файлах.
-
 ## Як робити:
-
 Читання всього файлу одразу:
 
 ```PowerShell
@@ -69,7 +64,6 @@ $stream.Close()
 ```
 
 ## Поглиблено
-
 Reading text files is fundamental in programming. In the DOS era, we had `TYPE` and `MORE` commands. PowerShell, more advanced, introduced `Get-Content` cmdlet, which is part of the Microsoft.PowerShell.Management module. 
 
 While `Get-Content` is handy for small-to-medium files, `StreamReader` (a .NET class) should be used for larger ones to save memory and improve performance. For instance, `StreamReader` reads a file lazily (line by line) when you loop through it, instead of loading the entire content into memory.
@@ -79,7 +73,6 @@ You can also use other .NET classes like `File.ReadAllLines` or `File.ReadAllTex
 Alternatives within PowerShell include `Import-Csv` for structured data and `Select-String` for pattern matching, which both internally handle text file reading but with additional layers for their specific use-cases.
 
 ## Дивіться також
-
 - [`Get-Content` documentation on Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content)
 - [About StreamReaders on Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader)
 - [PowerShell subreddit - a community for questions and sharing scripts](https://www.reddit.com/r/PowerShell/)

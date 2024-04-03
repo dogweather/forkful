@@ -11,9 +11,6 @@ title: "Feilh\xE5ndtering"
 weight: 16
 ---
 
-## Hva & Hvorfor?
-Feilhåndtering lar skriptet ditt takle det uventede på en nådig måte. Vi gjør det for å håndtere feil uten å gjøre brukernes hår grått.
-
 ## Hvordan:
 For å fange feil i Fish, støtt deg på `status` kommandoen og betingelser. Si at `ping` mislykkes; slik kan du oppdage det:
 

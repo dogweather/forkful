@@ -11,9 +11,6 @@ title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---
 
-## Vad & Varför?
-I programmering är 'substring' en delsträng från en annan sträng. Vi extraherar substrings för att manövrera specifika textsegment – till exempel, för datahantering, validering eller sökfunktionalitet.
-
 ## Hur gör man:
 ```C#
 string helaStrangen = "Hej Världen!";

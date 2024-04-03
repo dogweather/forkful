@@ -10,9 +10,6 @@ title: Arrondir les nombres
 weight: 13
 ---
 
-## Quoi & Pourquoi ?
-Arrondir des nombres signifie les ajuster pour les rapprocher d'une valeur plus simple ou plus significative. Les programmeurs arrondissent les nombres pour simplifier les résultats, limiter le nombre de décimales à afficher, ou pour certaines fins mathématiques.
-
 ## Comment faire :
 Voici l'essentiel sur l'arrondissement des nombres en Python :
 

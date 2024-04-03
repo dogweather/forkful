@@ -11,9 +11,6 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-Handling errors means writing code that can anticipate and deal with things going wrong. Programmers do it to prevent crashes, protect data integrity, and provide users with graceful fallbacks.
-
 ## How to:
 Elm’s core philosophy is No Runtime Exceptions. So, Elm leverages its type system with types like `Maybe` and `Result` to handle errors.
 

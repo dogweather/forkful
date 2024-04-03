@@ -16,12 +16,7 @@ title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---
 
-## Cái gì & Tại sao?
-
-Viết kiểm thử nghĩa là tạo ra những đoạn mã nhỏ kiểm tra xem các phần mã khác hoạt động đúng hay không. Các lập trình viên làm vậy để bắt lỗi sớm, đảm bảo chức năng và chắc chắn về việc ngăn chặn những thay đổi mới làm hỏng thứ gì đó.
-
 ## Làm thế nào:
-
 Rust làm cho việc kiểm thử trở nên dễ dàng. Hãy viết một hàm và một bài kiểm thử cho nó.
 
 Hàm:
@@ -60,13 +55,11 @@ kết quả kiểm thử: ok. 1 đã vượt qua; 0 thất bại; 0 bị bỏ qu
 ```
 
 ## Sâu hơn
-
 Theo lịch sử, các bài kiểm thử được viết sau mã (kiểm thử sau). Rust khuyến khích viết kiểm thử cùng với hoặc trước mã lệnh của bạn (phát triển dựa trên kiểm thử, TDD). Có các hình thức kiểm thử khác - kiểm thử tích hợp, kiểm thử tài liệu, v.v. - mỗi loại có chi tiết thực hiện độc đáo.
 
 Các bài kiểm thử trong Rust thường được viết trong cùng một tệp hoặc trong thư mục `tests/`. Chúng có thể là kiểm thử đơn vị (như ví dụ `it_adds_two`), kiểm thử tích hợp (trong các tệp riêng biệt) hoặc kiểm thử tài liệu (được nhúng trong các bình luận tài liệu). Biên dịch viên Rust biết cách xử lý các hàm với `#[test]` như là các bài kiểm thử để chạy với `cargo test`.
 
 ## Xem thêm
-
 - Sách Rust về kiểm thử: https://doc.rust-lang.org/book/ch11-00-testing.html
 - Mục kiểm thử trong Rust qua ví dụ: https://doc.rust-lang.org/stable/rust-by-example/testing.html
 - Hướng dẫn API về kiểm thử: https://rust-lang.github.io/api-guidelines/documentation.html#crate-provides-docs-including-rustdoc-and-tests-c-dox

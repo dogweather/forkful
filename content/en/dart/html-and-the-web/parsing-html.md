@@ -9,9 +9,6 @@ title: Parsing HTML
 weight: 43
 ---
 
-## What & Why?
-Parsing HTML in programming involves extracting data from HTML documents. Programmers do this to interact with or scrape web content for information extraction, testing, or automation purposes, even when official APIs are not available.
-
 ## How to:
 Dart does not provide built-in support for HTML parsing in its core libraries. However, you can use a third-party package like `html` to parse and manipulate HTML documents. 
 

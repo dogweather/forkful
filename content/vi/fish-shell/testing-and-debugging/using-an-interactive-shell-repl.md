@@ -16,9 +16,6 @@ title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---
 
-## Gì & Tại Sao?
-REPL, hay Vòng Lặp Đọc-Đánh Giá-In, là một môi trường lập trình tương tác lấy đầu vào từ người dùng, thực thi chúng và trả về kết quả. Các nhà phát triển sử dụng nó để nhận phản hồi tức thì, gỡ lỗi và thử nghiệm các khái niệm mã hóa một cách nhanh chóng mà không cần phải biên dịch và chạy một chương trình đầy đủ.
-
 ## Cách thực hiện:
 Trong Fish, shell tương tác là chế độ mặc định khi bạn khởi động nó. Dưới đây là một ví dụ về cách nó hoạt động:
 

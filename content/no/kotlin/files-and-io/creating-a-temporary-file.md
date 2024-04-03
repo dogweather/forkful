@@ -11,9 +11,6 @@ title: Opprette en midlertidig fil
 weight: 21
 ---
 
-## Hva & Hvorfor?
-Midlertidige filer er kortvarige datalagringselementer som skapes under kjøring av programmer. Programmerere lager dem for å håndtere store datastrømmer, mellomlagre informasjon som ikke trenger å bli bevart langsiktig, eller når de tester funksjonaliteter uten å påvirke den faktiske datalagringen.
-
 ## Slik gjør du:
 I Kotlin kan du enkelt opprette en midlertidig fil med `createTempFile`-funksjonen. Her er et eksempel:
 

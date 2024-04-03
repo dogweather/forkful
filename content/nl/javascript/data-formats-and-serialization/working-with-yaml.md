@@ -12,9 +12,6 @@ title: Werken met YAML
 weight: 41
 ---
 
-## Wat & Waarom?
-YAML ain't Markup Language, of YAML, is een gebruiksvriendelijke standaard voor gegevensserialisatie voor alle programmeertalen. Programmeurs werken met YAML omdat het gemakkelijk te lezen en te schrijven is, vaak gebruikt wordt voor configuratiebestanden, en voor gegevensuitwisseling tussen talen of diensten.
-
 ## Hoe te:
 We zullen de populaire `js-yaml` bibliotheek gebruiken om YAML te parseren naar JavaScript-objecten en JavaScript-objecten te converteren naar YAML.
 

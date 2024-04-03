@@ -24,12 +24,7 @@ title: "\u4F7F\u7528JSON\u5DE5\u4F5C"
 weight: 38
 ---
 
-## 什么 & 为什么？
-
-JSON（JavaScript 对象表示法）是一种轻量级的数据交换格式，人类易于读写，机器也容易解析和生成。程序员使用 JSON 在服务器与Web应用程序之间传输数据，或者在各种编程环境中（包括Visual Basic for Applications（VBA））以结构化、可访问的方式存储信息。
-
 ## 如何操作：
-
 VBA 本身不支持 JSON 解析或生成，因此我们将使用像 JScript 这样的脚本语言（通过 ScriptControl 对象）来解析 JSON 字符串和构建 JSON 对象。下面是你可以在 VBA 中解析 JSON 字符串的方法：
 
 ```basic
@@ -69,7 +64,6 @@ End Sub
 ```
 
 ## 深入探讨
-
 所展示的方法利用 ScriptControl 来处理 JSON，基本上是将工作外包给 JavaScript 引擎。这是一种创造性的解决方案，但并非处理 VBA 中 JSON 最高效或最现代化的方式。在更复杂的应用程序中，这种方法可能变得笨重，并引入性能开销或安全问题，因为 ScriptControl 在具有完全访问主机计算机权限的环境中执行。
 
 其他编程环境，如 Python 或 JavaScript，提供了对 JSON 的内置支持，使它们更适合需要大量 JSON 操作的应用程序。这些语言提供的综合库不仅方便解析和生成，还方便查询和格式化 JSON 数据。

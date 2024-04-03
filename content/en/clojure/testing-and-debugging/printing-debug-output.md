@@ -10,9 +10,6 @@ title: Printing debug output
 weight: 33
 ---
 
-## What & Why?
-Printing debug output is like leaving breadcrumbs in your code: it shows the trail of data and logic flow during execution. Programmers use it to track down pesky bugs and to understand whether their code is behaving as expected.
-
 ## How to:
 In Clojure, you often print debug output using `println`, `printf`, `pr`, or `prn`. Here's how you sprinkle in some debug prints:
 

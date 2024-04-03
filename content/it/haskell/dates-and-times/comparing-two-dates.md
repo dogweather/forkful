@@ -10,9 +10,6 @@ title: Confronto tra due date
 weight: 27
 ---
 
-## What & Why?
-In Haskell, confrontare due date significa verificare se una è prima, dopo o allo stesso momento dell'altra. Questo è utile per ordinare eventi cronologicamente, scadenze, o per calcolare intervalli di tempo.
-
 ## How to:
 In Haskell, usiamo il modulo `Data.Time` per lavorare con le date. Ecco come confrontarle:
 

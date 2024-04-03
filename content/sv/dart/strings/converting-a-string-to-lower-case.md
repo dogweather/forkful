@@ -14,12 +14,7 @@ title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---
 
-## Vad & Varför?
-
-Att konvertera en sträng till gemener är en grundläggande operation som innebär att man transformerar alla tecken i en given sträng till deras gemena motsvarigheter. Programmerare utför vanligtvis denna operation för att åstadkomma skiftlägesokänsliga jämförelser eller för att standardisera textinmatning för vidare bearbetning, vilket gör applikationer mer användarvänliga och data mer konsekventa.
-
 ## Hur man gör:
-
 I Dart kan du konvertera en sträng till gemener genom att använda metoden `toLowerCase()` som tillhandahålls av `String`-klassen. Denna metod returnerar en ny sträng där alla versaler har konverterats till gemener. Låt oss se hur detta fungerar med ett enkelt exempel:
 
 ```dart

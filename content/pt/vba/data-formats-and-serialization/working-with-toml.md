@@ -14,12 +14,7 @@ title: Trabalhando com TOML
 weight: 39
 ---
 
-## O Que & Por Quê?
-
-TOML, que significa Tom's Obvious, Minimal Language (Linguagem Mínima e Óbvia de Tom), é um formato de serialização de dados predominantemente usado para arquivos de configuração. Programadores aproveitam o TOML por sua legibilidade e mapeamento fácil para estruturas de dados, possibilitando a configuração simples de aplicações em diversos ambientes de programação, incluindo o Visual Basic for Applications (VBA).
-
 ## Como fazer:
-
 Trabalhar com TOML no VBA envolve analisar o arquivo TOML para ler configurações ou definições no seu projeto VBA. O VBA não tem suporte nativo para TOML, então normalmente você usaria um analisador ou converteria os dados TOML para um formato que o VBA possa trabalhar facilmente, como JSON ou XML. Aqui está como analisar manualmente um arquivo de configuração TOML simples:
 
 1. **Arquivo TOML de Exemplo** (`config.toml`):
@@ -76,5 +71,4 @@ Database Server: 192.168.1.1
 ```
 
 ## Aprofundamento
-
 A aceitação prática do TOML na comunidade de desenvolvedores mostra uma tendência para arquivos de configuração mais simples e legíveis para humanos, em contraste com o anteriormente prevalente XML. A filosofia de design do TOML enfatiza semânticas claras e visa uma análise direta com o mínimo de sobrecarga. No VBA, lidar diretamente com TOML envolve análise manual ou o aproveitamento de ferramentas externas para converter TOML em um formato mais amigável para o VBA, devido à falta de suporte nativo. Embora este método de análise manual mostre uma abordagem fundamental, a utilização de bibliotecas externas ou formatos intermediários como JSON pode oferecer estratégias de análise mais robustas e resistentes a erros. Dada a integração extensiva do VBA com o Microsoft Office, converter TOML para JSON e usar as capacidades nativas de análise de JSON do VBA (quando aplicável) ou analisadores de JSON de terceiros poderia proporcionar um fluxo de trabalho mais simplificado. Além disso, com a evolução contínua dos formatos de serialização de dados, os programadores também deveriam considerar YAML, que, como o TOML, enfatiza a legibilidade humana, mas oferece diferentes compensações em termos de complexidade e flexibilidade.

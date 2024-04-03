@@ -14,12 +14,7 @@ title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---
 
-## Was & Warum?
-
-Reguläre Ausdrücke, oder Regex, ermöglichen es Entwicklern, mit fortgeschrittenen Mustervergleichstechniken in Zeichenketten zu suchen, Übereinstimmungen zu finden und diese zu manipulieren. In Rust hilft die Nutzung von Regex dabei, das Parsen und den Umgang mit Textdaten effizient zu gestalten, wodurch Aufgaben wie Datenvalidierung, Suche und Texttransformationen einfacher und wartbarer werden.
-
 ## Wie geht das:
-
 Die `regex` Bibliothek in Rust ist der Anlaufpunkt, um mit regulären Ausdrücken zu arbeiten. Um sie zu nutzen, müssen Sie sie zuerst in Ihre `Cargo.toml` hinzufügen:
 
 ```toml
@@ -30,7 +25,6 @@ regex = "1"
 Danach können Sie anfangen, Regex-Funktionalitäten in Ihrem Rust-Code zu implementieren. Hier ist, wie man einige gängige Operationen durchführt:
 
 ### Ein Muster in einer Zeichenkette finden
-
 ```rust
 use regex::Regex;
 
@@ -44,7 +38,6 @@ fn main() {
 ```
 
 ### Übereinstimmungen finden und darauf zugreifen
-
 ```rust
 use regex::Regex;
 
@@ -63,7 +56,6 @@ fn main() {
 ```
 
 ### Text ersetzen
-
 ```rust
 use regex::Regex;
 
@@ -78,7 +70,6 @@ fn main() {
 ```
 
 ### Text mit einem Regex teilen
-
 ```rust
 use regex::Regex;
 

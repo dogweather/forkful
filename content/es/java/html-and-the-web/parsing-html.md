@@ -11,9 +11,6 @@ title: "An\xE1lisis de HTML"
 weight: 43
 ---
 
-## ¿Qué y Por Qué?
-Parsear HTML es el proceso de convertir el código HTML en algo que tu programa pueda entender y manipular. Los programadores lo hacen para interactuar con páginas web, extrayendo información o modificándola dinámicamente.
-
 ## Cómo hacerlo:
 Vamos a utilizar la librería [jsoup](https://jsoup.org/). Primero, agregala a tu proyecto usando Maven:
 

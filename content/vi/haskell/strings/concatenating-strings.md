@@ -15,9 +15,6 @@ title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---
 
-## Những gì & Tại sao?
-Nối chuỗi có nghĩa là ghép chúng lại với nhau từ đầu đến cuối. Lập trình viên thực hiện điều này khi họ cần ghép các đoạn văn bản lại với nhau để tạo thành một chuỗi mới, như khi tạo ra các thông điệp hoặc tạo đường dẫn tệp.
-
 ## Cách thực hiện:
 Haskell làm cho việc nối chuỗi trở nên khá đơn giản với toán tử `(++)`:
 

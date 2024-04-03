@@ -13,9 +13,6 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-Wyrażenia regularne (regex) w programowaniu to wzorce używane do dopasowywania kombinacji znaków w ciągach znaków. W Elm, podobnie jak w innych językach, programiści używają regexów do zadań takich jak walidacja danych wejściowych, wyszukiwanie oraz zamiana tekstu w ciągach znaków ze względu na ich elastyczność i wydajność.
-
 ## Jak to zrobić:
 Elm nie posiada wbudowanych funkcji regex w swojej głównej bibliotece, wymaga używania bibliotek stron trzecich dla tych operacji. Jednym z popularnych wyborów do pracy z regexami jest `elm/regex`. Możesz dodać to do swojego projektu używając `elm install elm/regex`.
 

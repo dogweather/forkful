@@ -10,9 +10,6 @@ title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---
 
-## Mikä & Miksi?
-Lainausmerkkien poistaminen merkkijonosta tarkoittaa tekstiarvojen ympärille kiedottujen kaksois- tai yksinkertaisten lainausmerkkien kuorimista pois. Ohjelmoijat tekevät tämän usein siistiäkseen käyttäjän syötteen, varmistaakseen tiedonkäsittelyn johdonmukaisuuden tai valmistaakseen tiedon järjestelmille, jotka saattavat sekaantua näistä ylimääräisistä merkeistä.
-
 ## Kuinka:
 Rubylla on muutama kätevä temppu hihassaan näiden kiusallisten lainausmerkkien leikkaamiseksi. Voit käyttää `gsub`- tai `delete`-metodeja tehtävän hoitamiseen. Tässä on hieman koodia purtavaksi:
 

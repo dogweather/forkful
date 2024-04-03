@@ -15,9 +15,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---
 
-## Điều gì & Tại sao?
-Chuyển đổi một ngày thành chuỗi nghĩa là biến một đối tượng ngày tháng thành văn bản dễ đọc cho con người. Lập trình viên làm điều này để hiển thị các ngày tháng theo các định dạng dễ hiểu hoặc để tuần tự hóa chúng cho việc lưu trữ và truyền tải.
-
 ## Cách thực hiện:
 Trong Clojure, chúng ta sử dụng các khả năng tương tác với Java để định dạng ngày tháng. Dưới đây là hướng dẫn nhanh:
 

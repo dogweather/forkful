@@ -11,9 +11,6 @@ title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---
 
-## Vad & Varför?
-Beräkning av ett datum i framtiden eller det förflutna innebär att ta ett specifikt datum och addera eller subtrahera tid från det. Programmerare gör detta för att hantera bokningar, påminnelser eller giltighetstider i mjukvaruapplikationer.
-
 ## Hur gör man:
 ```C#
 using System;

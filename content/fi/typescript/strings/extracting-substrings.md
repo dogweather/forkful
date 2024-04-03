@@ -9,9 +9,6 @@ title: Merkkijonojen osien poimiminen
 weight: 6
 ---
 
-## What & Why? (Mikä ja Miksi?)
-Substringit ovat string-tyypin osajonoja. Ne auttavat meitä pilkkomaan ja analysoimaan tekstiä esim. tietojen kaivamiseksi tai formaatin muuttamiseksi.
-
 ## How to: (Kuinka tehdä:)
 ```TypeScript
 // Otetaan esimerkki TypeScriptillä

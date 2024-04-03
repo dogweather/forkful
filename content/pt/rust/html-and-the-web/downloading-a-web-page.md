@@ -11,9 +11,6 @@ title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---
 
-## O que é & Por quê?
-Baixar uma página da web significa pegar seu conteúdo através da internet. Programadores fazem isso para processar dados, verificar status, ou integrar sistemas.
-
 ## Como fazer:
 ```Rust
 // Adicione a crate reqwest ao seu Cargo.toml

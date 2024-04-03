@@ -10,9 +10,6 @@ title: Datum in einen String umwandeln
 weight: 28
 ---
 
-## What & Why?
-Ein Datum in einen String umzuwandeln bedeutet, es in eine lesbare Zeichenfolge zu formatieren. Programmierer machen das, um Daten benutzerfreundlich anzuzeigen oder sie für andere Funktionen vorzubereiten.
-
 ## How to:
 ```Arduino
 #include <RTClib.h>

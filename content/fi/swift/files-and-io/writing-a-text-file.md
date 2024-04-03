@@ -15,14 +15,10 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä ja miksi?
-
-Tekstitiedoston kirjoittaminen Swift-ohjelmointikielellä mahdollistaa merkkijonotietojen pysyvän tallentamisen tiedostojärjestelmään, mikä on olennaista tehtävissä, kuten asetusten tallennuksessa, käyttäjätietojen tallentamisessa tai lokien tallennuksessa. Ohjelmoijat tekevät näin usein säilyttääkseen tietoja sovelluksen käynnistysten välillä, jakamaan tietoja sovelluksen eri osien kesken tai viemään tietoja muiden ohjelmien käytettäväksi.
-
 ## Miten:
 
-### Käyttäen Swiftin vakiokirjastoa
 
+### Käyttäen Swiftin vakiokirjastoa
 Swiftin vakiokirjasto sisältää kaikki tarvittavat työkalut tekstitiedostojen kirjoittamiseen. Tässä on peruslähestymistapa:
 
 ```swift
@@ -43,7 +39,6 @@ do {
 Tämä koodipätkä kirjoittaa merkkijonon nimellä `esimerkki.txt` sijaintiin dokumenttien kansio. Se käsittelee mahdolliset virheet käyttäen Swiftin do-try-catch-virheenkäsittelyä.
 
 ### Käyttäen FileManageria lisäkontrolliin
-
 Lisäkontrolliin tiedoston attribuuteista tai tarkistaaksesi, olemassaoleeko tiedosto jo, voi käyttää `FileManageria`:
 
 ```swift
@@ -69,7 +64,6 @@ if let dokumenttihakemisto = hakemistot.first {
 ```
 
 ### Käyttäen kolmannen osapuolen kirjastoja
-
 Yksi suosittu kolmannen osapuolen kirjasto tiedostojärjestelmätoimintojen käsittelyyn Swiftissä on `Files` John Sundelliltä:
 
 Lisää ensin Files projektiisi, yleensä Swift Package Managerin kautta.

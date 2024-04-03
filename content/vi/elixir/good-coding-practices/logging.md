@@ -16,10 +16,6 @@ title: Ghi log
 weight: 17
 ---
 
-## Ghi nhật ký trong phát triển phần mềm
-
-Ghi nhật ký trong phát triển phần mềm là kỹ thuật ghi lại các sự kiện xảy ra trong khi một chương trình đang chạy, thường là vào một tệp hoặc hệ thống bên ngoài. Lập trình viên thực hiện điều này để có cái nhìn sâu sắc về hành vi của phần mềm, khắc phục sự cố, và duy trì một bản ghi lịch sử hoạt động quan trọng cho việc gỡ lỗi và theo dõi sức khỏe của các ứng dụng.
-
 ## Cách thực hiện:
 Trong Elixir, cách chính để ghi nhật ký thông tin là thông qua mô-đun `Logger` được tích hợp sẵn. Dưới đây là cách bạn có thể sử dụng nó:
 

@@ -16,12 +16,7 @@ title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---
 
-## Gì và Tại sao?
-
-Xóa các ký tự khớp với một mẫu đề cập đến việc tìm kiếm và loại bỏ các chuỗi ký tự cụ thể trong một chuỗi dựa trên các quy tắc (mẫu). Các lập trình viên làm điều này để làm sạch dữ liệu, phân tích nội dung hoặc thao tác văn bản để đáp ứng các điều kiện nhất định.
-
 ## Làm thế nào:
-
 Đây là cách bạn có thể xóa các ký tự khớp với một mẫu trong Kotlin, sử dụng một mẫu regex đơn giản.
 
 ```Kotlin
@@ -43,7 +38,6 @@ Hello,  World! Đây là một ví dụ regex .
 ```
 
 ## Đi sâu hơn
-
 Trong những ngày trước khi có ngôn ngữ như Kotlin, việc khớp mẫu có thể là một nhiệm vụ cực nhọc, liên quan đến các vòng lặp, điều kiện và kiểm tra ký tự theo ký tự. Với Kotlin và các biểu thức chính quy (regex), nhiệm vụ trở nên đơn giản hơn nhiều.
 
 Regex tất cả về việc nhận dạng mẫu trong văn bản. Nó đã là một phần của khoa học máy tính từ những năm 1950 và trở thành một yếu tố cố định với sự ra đời của Perl vào những năm 1980. Kotlin kế thừa triển khai regex từ gói `java.util.regex` của Java, đảm bảo khả năng khớp mẫu chín muồi và mạnh mẽ.
@@ -55,7 +49,6 @@ Về chi tiết triển khai, phương thức `replace` trong lớp `Regex` củ
 Người ta phải cẩn thận khi đối phó với regex, đặc biệt là với các mẫu phức tạp, vì nó có thể dẫn đến các vấn đề về hiệu suất - thường được gọi là "catastrophic backtracking". Nhưng cho hầu hết các ứng dụng thực tế, đó là một công cụ mạnh mẽ trong bộ công cụ của lập trình viên.
 
 ## Xem Thêm
-
 - [Tài liệu lớp Kotlin Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
 - [Regular-Expressions.info](https://www.regular-expressions.info/), một nguồn tài nguyên toàn diện cho các mẫu và cách sử dụng regex.
 - [RegexOne](https://regexone.com/), cho các bài học tương tác và thực hành về biểu thức chính quy.

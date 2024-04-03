@@ -11,9 +11,6 @@ title: Vergleich von zwei Daten
 weight: 27
 ---
 
-## Was & Warum?
-Beim Vergleichen von zwei Daten wird geprüft, ob sie gleich sind, oder welches früher bzw. später liegt. Entwickler nutzen das, um Zeitabläufe zu steuern, Gültigkeiten zu prüfen oder Inhalte zu sortieren.
-
 ## So geht's:
 ```java
 import java.time.LocalDate;

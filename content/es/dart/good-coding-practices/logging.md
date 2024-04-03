@@ -13,12 +13,7 @@ title: Registro de Actividades
 weight: 17
 ---
 
-## ¿Qué y por qué?
-
-El registro en Dart se refiere al proceso de grabación de varios niveles de información durante la ejecución de un programa. Los programadores lo hacen para monitorear el comportamiento del software, depurar problemas y analizar el rendimiento, facilitando el mantenimiento y la mejora de la aplicación a lo largo del tiempo.
-
 ## Cómo hacerlo:
-
 Dart incluye un mecanismo de registro simple a través de la biblioteca `dart:developer`. Para necesidades de registro más sofisticadas, los programadores suelen recurrir a bibliotecas de terceros como `logger` y `log4dart`.
 
 ### Usando `dart:developer`

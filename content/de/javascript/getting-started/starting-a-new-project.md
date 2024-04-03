@@ -10,9 +10,6 @@ title: Einen neuen Projekt starten
 weight: 1
 ---
 
-## Was & Warum?
-Ein neues Projekt zu starten bedeutet, von Grund auf etwas Neues zu schaffen. Programmierer machen das, um ihre Ideen umzusetzen, Probleme zu lösen oder um neue Technologien zu erkunden.
-
 ## Vorgehensweise:
 Um ein neues JavaScript-Projekt zu starten, gibt es einige Schritte, die du befolgen kannst. Hier ist ein einfaches Beispiel mit `node.js` und `npm` (Node Package Manager):
 

@@ -11,9 +11,6 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## Mitä & Miksi?
-Tekstin etsiminen ja korvaaminen on prosessi, jossa tekstistä löydettyjä osia vaihdetaan toisiin. Ohjelmoijat tarvitsevat tätä toimintaa datan siivoukseen, muotoilun muuttamiseen ja automatisoidakseen monotoniset editointitehtävät.
-
 ## How to:
 PHP:ssa `str_replace`-funktio on yksi tapa tehdä tekstikorjauksia. Tässä yksinkertainen esimerkki:
 

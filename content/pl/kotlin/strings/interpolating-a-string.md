@@ -11,9 +11,6 @@ title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---
 
-## What & Why?
-Interpolacja stringów to proces wstawiania dynamicznie wyliczanych wartości do łańcuchów znakowych. Programiści używają tego, aby ułatwić sobie budowanie dynamicznych tekstów bez potrzeby sklejania ich części.
-
 ## How to:
 ```Kotlin
 fun main() {

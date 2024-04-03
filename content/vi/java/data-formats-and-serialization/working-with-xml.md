@@ -14,9 +14,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Cái gì & Tại sao?
-Làm việc với XML bao gồm việc phân tích cú pháp (parsing), truy vấn (querying), và thao tác (manipulating) các tài liệu XML bằng Java. Các lập trình viên thực hiện điều này để trao đổi dữ liệu, quản lý cấu hình và bởi vì nhiều hệ thống và API cũ sử dụng giao tiếp bằng XML.
-
 ## Làm thế nào:
 Java cung cấp các API như DOM (Document Object Model), SAX (Simple API for XML), và StAX (Streaming API for XML) để làm việc với XML. Dưới đây là một ví dụ về DOM để phân tích một tệp XML:
 

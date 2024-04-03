@@ -9,9 +9,6 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## What & Why? (Co i Dlaczego?)
-Szukanie i zamiana tekstu to zmiana fragmentów tekstu na inne. Programiści robią to dla automatyzacji, edycji danych i naprawy błędów.
-
 ## How to (Jak to zrobić)
 ```Javascript
 let text = "Mr Blue has a blue house and a blue car";

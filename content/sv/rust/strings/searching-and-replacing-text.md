@@ -11,9 +11,6 @@ title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---
 
-## Vad & Varför?
-Textsökning och ersättning innebär att hitta specifika strängar och byta ut dem mot andra. Programmerare gör det för att effektivt modifiera data eller kod, ofta för att fixa fel, uppdatera information eller automatisera uppgifter.
-
 ## Hur gör man?:
 I Rust använder vi standardbibliotekets metoder för att söka och ersätta text. Nedan är ett exempel på hur man kan göra.
 

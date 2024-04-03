@@ -12,9 +12,6 @@ title: De huidige datum krijgen
 weight: 29
 ---
 
-## Wat & Waarom?
-De huidige datum in Dart verkrijgen houdt in dat het systeem wordt geraadpleegd voor de huidige datum en tijd. Deze functionaliteit wordt vaak gebruikt in applicaties voor functies zoals het tijdstempelen van gebeurtenissen, het tonen van de huidige datum aan gebruikers of het berekenen van duur. Weten hoe je efficiënt de huidige datum kunt ophalen en manipuleren is fundamenteel voor planning, loggen en tijdgevoelige functies.
-
 ## Hoe:
 De kernbibliotheek van Dart biedt eenvoudige toegang tot de huidige datum en tijd via de `DateTime` klasse. Hier is het basisvoorbeeld om de huidige datum te krijgen:
 

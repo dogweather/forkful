@@ -11,12 +11,7 @@ title: "An\xE1lise de HTML"
 weight: 43
 ---
 
-## O Que é & Por Que?
-
-Parsing HTML é o processo de analisar o código de uma página da web para extrair informações específicas. Programadores fazem isso para automatizar a coleta de dados, testar sites ou integrar recursos na web aos seus aplicativos.
-
 ## Como Fazer:
-
 Para parsear HTML em Lua, você pode usar bibliotecas como `luahtml` ou `luaxpath`. Aqui está um exemplo usando `luahtml`:
 
 ```Lua
@@ -45,7 +40,6 @@ Olá Lua!
 ```
 
 ## Mergulho Profundo:
-
 A análise de HTML não é uma tarefa nativa em Lua; por isso, depende de bibliotecas externas. Inicialmente, Lua foi concebida como uma linguagem de script para uso geral, com foco na integração com C e rapidez. Com o aumento do desenvolvimento web, surgiu a necessidade de manipulação HTML, o que incentivou a criação de bibliotecas especializadas.
 
 Alternativas para parsing de HTML em Lua incluem usar expressões regulares (não recomendado devido à complexidade do HTML) ou construir seu próprio parser (desafiador, mas possível).
@@ -53,7 +47,6 @@ Alternativas para parsing de HTML em Lua incluem usar expressões regulares (nã
 Detalhes de implementação variam entre as bibliotecas, mas a maioria usa o modelo de Document Object Model (DOM) para representar o documento HTML, permitindo a navegação e a modificação da estrutura da página de maneiras complexas.
 
 ## Veja Também:
-
 - Documentação oficial Lua: https://www.lua.org/manual/5.4/
 - Repositório luahtml: https://github.com/leafo/luahtml
 - Tutorial sobre luaxpath: http://luaxpath.luaforge.net/tutorial.html

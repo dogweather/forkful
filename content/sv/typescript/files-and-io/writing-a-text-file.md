@@ -13,9 +13,6 @@ title: Att skriva en textfil
 weight: 24
 ---
 
-## Vad & Varför?
-Att skriva en textfil i TypeScript är en kritisk färdighet för datalagring, konfigurationer eller loggenerering. Programmerare utför ofta denna uppgift för att lagra och manipulera data utanför applikationens minne av skäl som dataanalys, rapportering eller helt enkelt att spara användarinställningar över sessioner.
-
 ## Hur:
 TypeScript hanterar inte direkt filoperationer då det kompileras till JavaScript, som traditionellt körs i webbläsaren med begränsad åtkomst till filsystemet. Dock, när det används i en Node.js-miljö, ger `fs`-modulen (File System) funktionalitet för att skriva filer.
 

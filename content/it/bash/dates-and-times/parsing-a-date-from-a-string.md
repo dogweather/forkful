@@ -13,12 +13,7 @@ title: Analisi di una data da una stringa
 weight: 30
 ---
 
-## Cosa & Perché?
-
-Analizzare una data da una stringa in Bash comporta l'estrazione e la conversione delle informazioni sulla data da dati testuali in un formato che Bash può manipolare o utilizzare per ulteriori processi. Questo è un requisito comune negli script per attività come l'analisi dei file di log, l'organizzazione dei file basata su timestamp o la generazione automatica di report, rendendolo una competenza essenziale per i programmatori per gestire ed utilizzare efficacemente i dati temporali.
-
 ## Come fare:
-
 Di per sé, Bash è piuttosto limitato nelle capacità dirette di analisi delle date, spesso si affida a strumenti esterni come `date` e `awk` per manipolazioni più sofisticate. Ecco come è possibile analizzare un formato specifico e poi utilizzarlo con il comando `date` per convertirlo o eseguire operazioni.
 
 **Esempio 1:** Estrai una stringa di data e convertila in un altro formato.
@@ -65,7 +60,6 @@ Sabato, Aprile 01, 2023
 Questo esempio utilizza `awk` per dividere la linea del log ed estrarre la parte della data (`$1` rappresenta il primo campo delimitato da spazi), e poi si usa `date` per riformattarla.
 
 ### Utilizzo di strumenti di terze parti
-
 Per analisi più complesse o quando si ha a che fare con una vasta varietà di formati di date, gli strumenti di terze parti come `dateutils` possono essere molto utili.
 
 **Esempio con `dateutils`:**

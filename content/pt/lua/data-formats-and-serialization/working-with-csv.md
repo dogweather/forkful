@@ -14,12 +14,7 @@ title: Trabalhando com CSV
 weight: 37
 ---
 
-## O que & Por quê?
-
-Trabalhar com arquivos CSV (Valores Separados por Vírgula) envolve analisar e gerar dados de texto organizados em linhas e colunas, usando vírgulas para separar valores individuais. Programadores frequentemente se engajam nesse processo para facilitar a troca de dados entre diferentes aplicações, bancos de dados, ou para tarefas de processamento e análise de dados, devido ao amplo suporte e simplicidade do CSV.
-
 ## Como fazer:
-
 Em Lua, trabalhar com arquivos CSV pode ser abordado usando operações básicas de IO (Entrada/Saída) de arquivos fornecidas pela linguagem, sem a necessidade de bibliotecas externas para tarefas simples. Para operações mais complexas, como lidar com casos especiais (ex.: vírgulas dentro dos valores), pode ser benéfico usar bibliotecas de terceiros como `lua-csv`.
 
 ### Lendo um arquivo CSV

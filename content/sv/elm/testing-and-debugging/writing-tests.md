@@ -14,12 +14,7 @@ title: Skriva tester
 weight: 36
 ---
 
-## Vad & Varför?
-
-Att skriva tester i Elm innebär att skapa testfall för att verifiera riktigheten av din Elm-kod, säkerställande att den fungerar som förväntat. Programmerare gör det för att fånga upp buggar tidigt, underlätta underhåll och förbättra kvaliteten och tillförlitligheten i deras applikationer.
-
 ## Hur man gör:
-
 Elm använder paketet `elm-explorations/test` för att skriva enhetstester och fuzz-tester. Börja med att lägga till paketet i ditt projekt:
 
 ```elm

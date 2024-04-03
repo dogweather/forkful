@@ -11,12 +11,7 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## Qué y Por Qué?
-
-Buscar y reemplazar texto es básicamente encontrar una cadena de caracteres y sustituirla por otra diferente. Programadores lo hacen para modificar código o datos de forma rápida y eficiente, sin tener que cambiar cada ocurrencia a mano.
-
 ## Cómo Hacerlo:
-
 Vamos a usar la biblioteca estándar de C++. Aquí un ejemplo sencillo:
 
 ```C++
@@ -43,7 +38,6 @@ int main() {
 Este código busca "Hola" y lo reemplaza por "Adiós" en toda la cadena.
 
 ## Inmersión Profunda:
-
 Buscar y reemplazar texto es un concepto tan viejo como la informática misma. Las primeras instancias de esta operación se realizaban con editores de texto y procesadores de palabra. En programación, manejar cadenas de texto eficientemente es crucial, especialmente en el procesamiento de datos y la generación de código.
 
 Existen varias librerías en C++ para tareas más complejas, como las expresiones regulares (regex) de la cabecera `<regex>`, que permiten patrones de búsqueda más avanzados. También hay herramientas de línea de comandos como `sed` en sistemas Unix para hacer estas operaciones fuera del entorno de programación.
@@ -51,7 +45,6 @@ Existen varias librerías en C++ para tareas más complejas, como las expresione
 En cuanto a los detalles de implementación, la función `find` busca la primera ocurrencia del substring y `replace` la cambia por otra cadena. Es importante actualizar la posición de búsqueda para no entrar en un bucle infinito.
 
 ## Ver También:
-
 Para expandir conocimientos, aquí tienes algunos enlaces útiles:
 
 - [Documentación de C++](http://www.cplusplus.com/reference/string/string/find/)

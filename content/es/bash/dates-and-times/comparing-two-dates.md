@@ -11,9 +11,6 @@ title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---
 
-## Qué y Por Qué?
-Comparar dos fechas significa verificar cuál es anterior o si son el mismo día. Programadores hacen esto para gestionar eventos, vencimientos, y ordenar datos cronológicamente.
-
 ## Cómo:
 ```Bash
 # Consigue la fecha actual en formato Año-Mes-Día
@@ -37,7 +34,7 @@ Aún hay tiempo antes de la fecha de entrega.
 ```
 
 ## Deep Dive
-Bash usa GNU `date` para manipular y comparar fechas. Antes de Bash versión 4, comparar fechas era un dolor: tenías que convertir fechas a segundos desde la "época" (1970-01-01) y luego comparar los números. Ahora, con el operador `[[`, lo hacemos directo. Hay alternativas: usar `date` para manipular fechas o `awk`. Pero estas pueden ser más complicadas o lentas. 
+Bash usa GNU `date` para manipular y comparar fechas. Antes de Bash versión 4, comparar fechas era un dolor: tenías que convertir fechas a segundos desde la "época" (1970-01-01) y luego comparar los números. Ahora, con el operador `[[`, lo hacemos directo. Hay alternativas: usar `date` para manipular fechas o `awk`. Pero estas pueden ser más complicadas o lentas.
 
 ## Ver También
 - `man date`: para más detalles sobre el comando `date`.

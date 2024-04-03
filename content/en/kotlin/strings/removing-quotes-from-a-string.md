@@ -11,12 +11,7 @@ title: Removing quotes from a string
 weight: 9
 ---
 
-## What & Why?
-
-Removing quotes from a string means stripping out any instances of quote characters, either single (' ') or double (" "), from the text data you're working with. Programmers often need to do this for data cleaning, to prepare for further processing, or when the quotes themselves are not relevant to the data's meaning.
-
 ## How to:
-
 Here's a simple way to remove both types of quotes from a string in Kotlin:
 
 ```kotlin
@@ -50,7 +45,6 @@ fun main() {
 ```
 
 ## Deep Dive
-
 Historically, handling strings and escaping characters has been a core part of programming, as text is a fundamental way we interface with data. Quotes within strings sometimes need to be escaped. This is indicated by a preceding backslash (e.g., `"She said, \"Hi!\""`). When processing such strings, you might need to remove the escape characters, or the quotes themselves for cleaner or more usable text.
 
 Alternatives to the `replace` method include regex-based removal or manually parsing the string, character by character. However, regex can be overkill for simple operations and manual parsing is less efficient than using built-in string functions. Kotlin's `replace` function leverages the underlying Java's `String` `replace` method, which is well-optimized for performance.
@@ -58,7 +52,6 @@ Alternatives to the `replace` method include regex-based removal or manually par
 Implementation-wise, it's worth mentioning that Kotlin is interoperable with Java, so, in effect, any operations you perform on strings are as performant as they would be in Java. It's crucial when removing quotes to be aware of edge cases, like nested quotes, which could require a more sophisticated approach, possibly utilizing regular expressions or a parser library.
 
 ## See Also
-
 For more context on handling strings in Kotlin, you can check out the official documentation:
 
 - [Kotlin's String documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)

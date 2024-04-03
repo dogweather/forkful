@@ -15,9 +15,6 @@ title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
 weight: 22
 ---
 
-## What & Why? (무엇과 왜?)
-텍스트 파일 읽기는 파일의 내용을 코드로 가져오는 것입니다. 프로그래머들은 데이터를 불러오거나 설정을 읽기 위해 이 작업을 합니다.
-
 ## How to (방법)
 ```TypeScript
 import * as fs from 'fs';

@@ -11,9 +11,6 @@ title: Tworzenie pliku tymczasowego
 weight: 21
 ---
 
-## What & Why? (Co i Dlaczego?)
-Tworzenie tymczasowych plików to proces, w którym program tworzy plik, który ma być użyty tylko na krótki czas. Programiści robią to, by zarządzać danymi tymczasowymi, które nie są potrzebne po zakończeniu zadania, jak np. cachowanie, przechowywanie dużych obiektów do zadań batchowych, lub jako miejsce pracy dla dużej operacji przetwarzania.
-
 ## How to: (Jak to zrobić:)
 Rust używa `tempfile` crate do łatwego tworzenia tymczasowych plików. Poniżej znajdziesz przykład:
 

@@ -11,9 +11,6 @@ title: Lancement d'un nouveau projet
 weight: 1
 ---
 
-## Quoi & Pourquoi ?
-Démarrer un nouveau projet, c'est comme mettre une graine dans le sol numérique. Les programmeurs le font pour créer du neuf, résoudre des problèmes, ou simplement pour le plaisir de coder.
-
 ## Comment faire :
 Démarrer un nouveau projet JavaScript, c'est souvent initialiser un environnement avec `npm` et configurer le tout avec un `package.json`.
 

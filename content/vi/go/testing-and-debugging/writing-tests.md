@@ -15,12 +15,7 @@ title: "Vi\u1EBFt ki\u1EC3m th\u1EED"
 weight: 36
 ---
 
-## Cái gì & Tại sao?
-
-Viết test trong Go bao gồm việc tạo ra những đoạn mã nhỏ, dễ quản lý nhằm xác nhận chức năng và hành vi của ứng dụng. Lập trình viên viết test để đảm bảo mã của họ hoạt động như mong đợi dưới các điều kiện khác nhau, hỗ trợ tái cấu trúc và giúp ngăn chặn sự quay lại của các lỗi đã sửa.
-
 ## Làm thế nào:
-
 Trong Go, test thường được viết trong cùng một gói với mã họ kiểm tra. Các file chứa test được đặt tên với hậu tố `_test.go`. Test là những hàm nhận một con trỏ đến đối tượng testing.T (từ gói `testing`) làm đối số, và chúng báo hiệu lỗi bằng cách gọi các phương thức như `t.Fail()`, `t.Errorf()`, v.v.
 
 Ví dụ về một test đơn giản cho hàm `Add` được định nghĩa trong `math.go`:
@@ -82,7 +77,6 @@ func TestAddTableDriven(t *testing.T) {
 ```
 
 ## Sâu hơn nữa
-
 Bộ khung kiểm tra Go, ra mắt trong Go 1 cùng với chính ngôn ngữ, được thiết kế để tích hợp liền mạch với bộ công cụ Go, phản ánh nhấn mạnh của Go vào sự đơn giản và hiệu quả trong phát triển phần mềm. Khác với một số khung kiểm tra trong các ngôn ngữ khác dựa trên thư viện bên ngoài hay cài đặt phức tạp, gói `testing` được tích hợp sẵn của Go cung cấp một cách thẳng thắn để viết và chạy test.
 
 Một điểm thú vị của cách tiếp cận kiểm tra của Go là nguyên tắc chọn lựa trước cấu hình mà nó áp dụng, như mô hình đặt tên file (`_test.go`) và việc sử dụng các chức năng của thư viện chuẩn hơn là các phụ thuộc bên ngoài. Cách tiếp cận tối giản này khuyến khích các nhà phát triển viết test, vì rào cản để bắt đầu thấp.

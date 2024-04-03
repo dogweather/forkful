@@ -11,9 +11,6 @@ title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---
 
-## ¿Qué y Por Qué?
-Organizar el código en funciones consiste en envolver segmentos de código que realizan tareas específicas y asignarles un nombre. Se hace para hacer el código reutilizable, legible y mantenible. En lugar de reescribir el mismo código, llama a una función. ¿Quieres solucionar problemas o actualizar? Modifica la función sin tener que examinar pilas de scripts.
-
 ## Cómo hacerlo:
 Escribamos una función para calcular la suma de dos números. Simple, pero ilustra el punto.
 

@@ -17,9 +17,6 @@ title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---
 
-## Cái gì và Tại sao?
-Việc kiểm tra xem một thư mục có tồn tại hay không là việc xác minh sự hiện diện của một thư mục trên bộ nhớ của bạn trước khi bạn thực hiện một số thao tác với nó. Các lập trình viên làm điều này để tránh lỗi, như cố gắng tạo một thư mục đã tồn tại, hoặc truy cập một thư mục không tồn tại.
-
 ## Cách thực hiện:
 Làm việc với thư mục trên Arduino thường liên quan đến thư viện SD để lưu trữ trên thẻ SD. Đầu tiên, hãy đảm bảo Arduino của bạn đã được kết nối đúng cách với mô-đun thẻ SD. Sau đó, bạn sử dụng hàm `SD.exists()` để kiểm tra sự tồn tại của một thư mục. Dưới đây là một ví dụ nhanh:
 ```Arduino

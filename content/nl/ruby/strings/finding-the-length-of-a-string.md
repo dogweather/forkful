@@ -11,9 +11,6 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-De lengte van een string vinden betekent het tellen van de karakters. Het is basis maar cruciaal voor taken zoals validatie, tekstverwerking, en het bepalen van opslagbehoeften.
-
 ## Hoe te:
 Ruby houdt het simpel met de `.length` methode:
 

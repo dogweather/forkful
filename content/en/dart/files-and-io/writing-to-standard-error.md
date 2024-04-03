@@ -10,12 +10,7 @@ title: Writing to standard error
 weight: 25
 ---
 
-## What & Why?
-
-Writing to standard error (stderr) in Dart is about sending error messages and diagnostics to a separate stream, distinct from the standard output (stdout). Programmers do this to differentiate between normal program output and errors or warning messages, allowing for easier debugging and logging.
-
 ## How to:
-
 In Dart, writing to stderr is straightforward using the `stderr` object available in `dart:io`. Here’s a basic example:
 
 ```dart

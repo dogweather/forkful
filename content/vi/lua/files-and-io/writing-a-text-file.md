@@ -16,9 +16,6 @@ title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---
 
-## Lý do & Tại sao?
-Viết một tệp văn bản bao gồm việc lưu dữ liệu vào một tệp dưới dạng có thể đọc được. Các lập trình viên thực hiện điều này để lưu cấu hình, lưu dữ liệu người dùng, hoặc ghi thông tin để gỡ lỗi.
-
 ## Cách thực hiện:
 ```Lua
 -- Viết vào một tệp văn bản trong Lua

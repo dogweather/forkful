@@ -11,9 +11,6 @@ title: Lendo um arquivo de texto
 weight: 22
 ---
 
-## O Que & Por Quê?
-Ler um arquivo de texto em Java é pegar a informação armazenada num arquivo no seu computador e usá-la dentro do seu programa. Fazemos isso porque, às vezes, os dados que precisamos estão guardados nesse formato, ou queremos permitir que usuários interajam com nossos programas por meio de arquivos.
-
 ## Como Fazer:
 ```Java
 import java.nio.file.*;

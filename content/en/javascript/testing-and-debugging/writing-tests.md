@@ -11,14 +11,10 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-
-Writing tests in JavaScript refers to the practice of creating automated scripts that run your code to ensure it behaves as expected, which can significantly improve the reliability and maintainability of your applications. Programmers do this to catch bugs early, facilitate code refactoring, and ensure new features don't break existing functionality.
-
 ## How to:
 
-### Native Approach (using Jest)
 
+### Native Approach (using Jest)
 Jest is a popular testing framework that provides a friendly API for writing unit tests in JavaScript. It requires minimal configuration and comes with features like mock functions, timers, and snapshot testing.
 
 1. **Installation**:
@@ -53,7 +49,6 @@ PASS  ./sum.test.js
 ```
 
 ### Testing Asynchronous Code
-
 Jest makes it easy to test promises and async/await syntax:
 
 ```javascript
@@ -70,7 +65,6 @@ test('async addition works', async () => {
 ```
 
 ### Using Third-Party Libraries (Mocha & Chai)
-
 Mocha is another popular testing framework, often used with the assertion library Chai for more expressive tests.
 
 1. **Installation**:

@@ -14,9 +14,6 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-Das Schreiben einer Textdatei in Arduino beinhaltet das Speichern von Daten auf einer Datei auf einer SD-Karte oder einem ähnlichen Speichermodul, oft zu Zwecken der Datenerfassung. Programmierer tun dies, um Sensormessungen aufzuzeichnen, Konfigurationen zu speichern oder Anwendungsereignisse über die Zeit zu protokollierieren, was für Projekte, die Datenanalyse oder Nachverfolgung erfordern, von entscheidender Bedeutung ist.
-
 ## Wie:
 Um in eine Textdatei auf einer SD-Karte mit Arduino zu schreiben, müssen Sie zuerst die Bibliothek `SD.h` einbinden, die die notwendigen Funktionen zur Interaktion mit SD-Karten bereitstellt. Stellen Sie sicher, dass Ihr Arduino-Board mit einem SD-Kartenmodul verbunden ist.
 

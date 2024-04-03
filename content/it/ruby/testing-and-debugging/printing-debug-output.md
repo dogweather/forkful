@@ -10,9 +10,6 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## What & Why? (Cosa & Perché?)
-Stampare output per debug è mostrare informazioni interne di un programma durante la sua esecuzione. Programmatori lo fanno per capire meglio come il codice si comporta in vivo, per scovare bug o problemi di prestazioni.
-
 ## How to (Come fare)
 Ruby rende super semplice stampare cose a schermo. Ecco un esempio:
 

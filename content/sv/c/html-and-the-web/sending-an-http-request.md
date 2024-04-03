@@ -13,12 +13,7 @@ title: "Att skicka en HTTP-beg\xE4ran"
 weight: 44
 ---
 
-## Vad och varför?
-
-Att skicka en HTTP-förfrågan innebär att skapa och skicka en förfrågan till en webbserver för att hämta eller skicka in data. Programmerare gör detta i C för att interagera med webb-API:er, ladda ner webbsidor eller kommunicera med andra nätverkstjänster direkt från sina applikationer.
-
 ## Hur man gör:
-
 För att skicka en HTTP-förfrågan i C kommer du vanligtvis att luta dig mot bibliotek som libcurl, eftersom C inte har inbyggt stöd för webbprotokoll. Här är ett enkelt exempel som använder libcurl för att utföra en GET-förfrågan:
 
 Först, se till att du har libcurl installerat på ditt system. Inkludera sedan de nödvändiga rubrikerna och länka mot libcurl-biblioteket i din källfil:
@@ -55,11 +50,9 @@ int main(void) {
 Kompilera detta med något liknande `gcc -o http_request http_request.c -lcurl`, att köra det bör utföra en enkel GET-förfrågan till "http://example.com".
 
 ### Exempel på utdata
-
 Eftersom exemplet inte bearbetar serverns respons, kommer körningen inte att producera en synlig utdata bortom potentiella felmeddelanden. Att integrera återuppringningsfunktionen för att bearbeta mottagen data är avgörande för meningsfull interaktion.
 
 ## Fördjupning
-
 Konceptet med att skicka HTTP-förfrågningar från ett C-program bygger på språkets kraftfulla nätverksfunktioner, tillsammans med externa bibliotek då C självt är ett lågnivåspråk utan inbyggt stöd för högnivå internetprotokoll. Historiskt sett skulle programmerare manuellt använda socket-programmering i C, en komplex och tråkig process, för att interagera med webbservrar innan dedikerade bibliotek som libcurl fanns.
 
 Libcurl, byggt ovanpå C, förenklar processen genom att abstrahera bort de tråkiga detaljerna i socket-programmering och specifikationerna för HTTP-protokollet. Det stöder en mängd protokoll utöver HTTP/HTTPS, inklusive FTP, SMTP och mer, vilket gör det till ett mångsidigt verktyg för nätverksprogrammering i C.

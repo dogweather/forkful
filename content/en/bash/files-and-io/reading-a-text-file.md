@@ -9,9 +9,6 @@ title: Reading a text file
 weight: 22
 ---
 
-## What & Why?
-Reading a text file means getting the content from a file into your script. Programmers do it to work with data, configuration, or to automate systems based on that text-file content.
-
 ## How to:
 Here's the simplest way to read a file line-by-line:
 

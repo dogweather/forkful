@@ -12,9 +12,6 @@ title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---
 
-## Wat & Waarom?
-Het berekenen van een toekomstige of verleden datum betekent het vinden van een datum een aantal dagen, weken, maanden of jaren vanaf een bepaald punt. Programmeurs hebben dit vaak nodig voor taken zoals het instellen van vervaldatums, herinneringen of het plannen van evenementen.
-
 ## Hoe:
 Het `Date`-object van JavaScript is je beste vriend voor datagymnastiek. Laten we spelen met enkele voorbeelden:
 

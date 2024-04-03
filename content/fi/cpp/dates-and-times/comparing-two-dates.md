@@ -11,9 +11,6 @@ title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---
 
-## What & Why? (Mitä ja Miksi?)
-Vertailemme päivämääriä ymmärtääksemme aikajärjestyksen ja määrittääksemme aikaeroja. Ohjelmoijat tarvitsevat tätä logiikkaa aikaleimojen vertailuun, määräaikojen hallintaan ja aikatauluautomaation toteuttamiseen.
-
 ## How to: (Kuinka Tehdään:)
 ```C++
 #include <iostream>

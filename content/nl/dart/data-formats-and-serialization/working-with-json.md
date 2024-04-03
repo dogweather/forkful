@@ -13,12 +13,7 @@ title: Werken met JSON
 weight: 38
 ---
 
-## Wat & Waarom?
-
-Werken met JSON (JavaScript Object Notation) houdt in dat JSON-gegevens worden omgezet van strings naar Dart-objecten en vice versa, een veelvoorkomende taak bij web- en app-ontwikkeling voor gegevensuitwisseling. Programmeurs doen dit om op een efficiënte manier om te gaan met gegevens van API's, configuraties of communicatie tussen onderdelen binnen hun apps.
-
 ## Hoe te:
-
 Dart biedt ingebouwde ondersteuning voor JSON met de `dart:convert`-bibliotheek, wat het coderen en decoderen van JSON eenvoudig maakt. Hieronder zijn voorbeelden die basisbewerkingen laten zien:
 
 **JSON-string parsen naar Dart-object:**

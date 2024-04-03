@@ -15,9 +15,6 @@ title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---
 
-## Quoi et Pourquoi ?
-Analyser une date à partir d'une chaîne de caractères consiste à convertir des représentations textuelles de dates et d'heures en un format qui peut être facilement manipulé, stocké ou comparé au sein d'un programme Lua. Les programmeurs effectuent cette tâche pour faciliter des opérations telles que la planification, la journalisation ou toute calcul temporel et pour combler le fossé entre les formats de dates lisibles par l'homme et les types de données structurées qu'un ordinateur peut traiter efficacement.
-
 ## Comment faire :
 Lua n'a pas de support intégré pour la manipulation des dates et des heures au-delà de la fonctionnalité limitée fournie par les fonctions `os.date` et `os.time`. Cependant, celles-ci peuvent être utilisées pour un parsing de base, et pour des besoins plus complexes, la bibliothèque `luadate`, une bibliothèque externe, peut être utilisée.
 

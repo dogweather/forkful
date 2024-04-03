@@ -10,12 +10,7 @@ title: Converting a string to lower case
 weight: 4
 ---
 
-## What & Why?
-
-Converting a string to lower case means transforming all the letters in a string to their lower-case form. Programmers do this to standardize data, simplify comparisons, and for aesthetic display purposes.
-
 ## How to:
-
 The `String` class in Java has a nifty `toLowerCase()` method that does the hard work for you. Check out this simple usage:
 
 ```java
@@ -37,7 +32,6 @@ java rocks!
 That's it. The string gets its volume turned down to a chilled-out lowercase.
 
 ## Deep Dive
-
 Once upon a time, handling text was a tricky business. Different languages, different cases, computer systems screaming in confusion. Java, arriving on the scene in the '90s, sought to make things easier. The `toLowerCase()` method has been part of Java's `String` class since the early days.
 
 But there's some cool stuff under the hood. You might wonder why `toLowerCase()` is even necessary. The thing is, not all cultures define "lower case" the same way. The method is locale-sensitive, using your system's default locale, or you can specify one using `toLowerCase(Locale locale)`.
@@ -49,7 +43,6 @@ Alternatives? Sure, you could romp through the string with a `for` loop, swappin
 Also, this might surprise some: strings in Java are immutable. When you `toLowerCase()`, you're not modifying the original string, you're creating a fresh new one, vest and all.
 
 ## See Also
-
 Check out these resources to up your string game:
 
 - Java String API: [](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/String.html)

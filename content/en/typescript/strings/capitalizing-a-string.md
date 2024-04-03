@@ -10,11 +10,7 @@ title: Capitalizing a string
 weight: 2
 ---
 
-## What & Why?
-Capitalizing a string involves modifying the first character of a given string to uppercase if it is in lowercase, often leaving the rest of the string unchanged. This operation is typically used to ensure proper nouns or the beginnings of sentences adhere to grammatical rules in text processing, making outputs appear professional and readable.
-
 ## How to:
-
 TypeScript, being a superset of JavaScript, allows for various methods to capitalize strings, ranging from pure JavaScript approaches to utilizing third-party libraries for more complex or specific use cases.
 
 **Pure JavaScript Approach:**

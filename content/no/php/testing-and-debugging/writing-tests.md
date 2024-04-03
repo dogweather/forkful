@@ -13,10 +13,9 @@ title: Skrive tester
 weight: 36
 ---
 
-## Hva & Hvorfor?
-Å skrive tester i programmering innebærer å lage og kjøre skript som verifiserer at koden oppfører seg som forventet under ulike forhold. Programmerere gjør dette for å sikre kvalitet, forhindre regresjoner og legge til rette for sikker refaktorering, noe som er avgjørende for å opprettholde en sunn, skalerbar og feilfri kodebase.
-
 ## Hvordan:
+
+
 ### Nativ PHP – PHPUnit
 Et mye brukt verktøy for testing i PHP er PHPUnit. Installer det via Composer:
 ```bash

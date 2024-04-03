@@ -13,12 +13,7 @@ title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---
 
-## Vad & Varför?
-
-Konkatenering i Visual Basic for Applications (VBA) innebär att sammanfoga två eller flera strängar till en enda enhet. Detta är en grundläggande uppgift inom programmering, väsentlig för att generera användarmeddelanden, skapa SQL-förfrågningar och mer, eftersom det tillåter dynamisk skapande och manipulering av strängdata.
-
 ## Hur man gör:
-
 VBA erbjuder en enkel metod för att konkatenera strängar med hjälp av `&`-operatorn eller `Concatenate`-funktionen. Låt oss utforska båda metoderna med exempel:
 
 1. **Använda `&`-operatorn:**
@@ -54,7 +49,6 @@ Debug.Print message 'Utskrift: Hello John!
 Valet mellan `&`-operatorn och `Concatenate`-funktionen beror på personligt preferens och de specifika krav som ditt projekt har.
 
 ## Fördjupning
-
 Strängkonkatenering är en grundläggande men kraftfull funktion i VBA, med sina rötter tillbaka till tidiga programmeringsspråk. Användningen av `&`-operatorn i VBA för konkatenering framför `+`-operatorn, som ofta används i många andra språk, understryker VBAs fokus på uttrycklig stränghantering, därmed undviks oavsiktliga datatypsmismatcher och fel.
 
 Medan `&`-operatorn är effektiv och bred accepterad, utmärker sig `Concatenate`-funktionen i scenarier som kräver mer klarhet eller hantering av speciella konkateneringsfall, såsom hantering av arrays. Dock är det viktigt att notera att moderna versioner av Excel har introducerat `TEXTJOIN`-funktionen, vilken kan vara mer effektiv för att sammanfoga arrayer av strängar med en avgränsare, även om den inte är direkt en del av VBA.

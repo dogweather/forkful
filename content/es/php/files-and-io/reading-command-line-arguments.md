@@ -11,9 +11,6 @@ title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---
 
-## Qué y Por Qué?
-Leer argumentos de la línea de comandos en PHP permite que tus scripts entiendan e interpreten datos de entrada proporcionados al ejecutarse. ¿Por qué? Es simple: personalización al momento. Dependiendo de los argumentos, el comportamiento del script puede variar sin tener que modificar el código fuente.
-
 ## Cómo Hacerlo:
 ```PHP
 <?php

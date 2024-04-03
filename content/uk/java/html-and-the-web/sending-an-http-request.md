@@ -25,12 +25,7 @@ title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437
 weight: 44
 ---
 
-## Що та Навіщо?
-
-Відправлення HTTP-запиту – це процес звернення вашої програми до сервера в інтернеті з метою отримання або надсилання даних. Програмісти роблять це, щоб інтегруватися з веб-сервісами, отримати важливу інформацію або взаємодіяти з іншими системами.
-
 ## Як Це Зробити:
-
 ```java
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -66,7 +61,6 @@ public class HttpExample {
 ```
 
 ## Поглиблено:
-
 Відправлення HTTP-запитів у Java – це не новина. З часів J2SE 1.4, HttpURLConnection була основним методом. Теперішня HttpClient API (з Java 11 і вище) пропонує сучасний та зручніший спосіб роботи з HTTP, як у синхронному, так і в асинхронному режимах.
 
 Альтернативи – це бібліотеки сторонніх розробників, наприклад, Apache HttpClient або OkHttp. Вони пропонують розширені можливості та гнучкість, але для багатьох стандартних задач новий HttpClient API в Java буде цілком достатнім.
@@ -74,7 +68,6 @@ public class HttpExample {
 Про історію: HttpClient API було представлено в Java 9 як експериментальний API (JEP 110), але стало стандартним в Java 11 (JEP 321).
 
 ## Дивіться Також:
-
 - [HttpClient documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html) – офіційна документація.
 - [JEP 110: HTTP Client API](https://openjdk.java.net/jeps/110) – Інформація про експериментальний HTTP API.
 - [JEP 321: HTTP Client (Standard)](https://openjdk.java.net/jeps/321) – Інформація про стандартизацію HTTP API.

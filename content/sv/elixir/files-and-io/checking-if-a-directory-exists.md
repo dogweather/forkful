@@ -13,9 +13,6 @@ title: Kontrollera om en katalog existerar
 weight: 20
 ---
 
-## Vad & Varför?
-Att kontrollera om en katalog finns i Elixir handlar om att verifiera närvaron av en katalog på en angiven sökväg i filsystemet. Programmerare gör detta för att säkerställa att de kan läsa från, skriva till eller utföra operationer på katalogen utan att stöta på fel på grund av dess frånvaro.
-
 ## Hur man gör:
 Elixirs standardbibliotek erbjuder ett enkelt sätt att kontrollera existensen av en katalog genom `File`-modulen. Så här kan du använda den:
 

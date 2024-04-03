@@ -11,9 +11,6 @@ title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---
 
-## O Que & Por Quê?
-Números complexos têm uma parte real e uma parte imaginária, geralmente escritos como `a + bi`. Eles são cruciais em matemática avançada, física, engenharia e certos algoritmos de computador. Programadores trabalham com eles para lidar com cálculos que envolvem raízes quadradas de números negativos e funções oscilantes.
-
 ## Como:
 O PHP oferece suporte integrado para números complexos usando a extensão `ext-intl` com a classe `NumberFormatter`. Aqui está um exemplo:
 

@@ -13,9 +13,6 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad & Varför?
-Komplexa tal, representerade som en kombination av reella och imaginära enheter (t.ex. 3 + 4i), är grundläggande i olika beräkningsproblem, särskilt inom ingenjörsvetenskap, fysik och tillämpad matematik. Att lära sig hantera dessa tal i Google Apps Script tillåter programmerare att utöka sina förmågor inom vetenskaplig beräkning, signalbehandling och mer.
-
 ## Hur man gör:
 Google Apps Script har inte inbyggt stöd för komplexa tal, vilket kräver implementering av anpassad funktionalitet. Nedan finns en grundläggande struktur för att hantera komplexa tal, inklusive addition, subtraktion och multiplikation.
 

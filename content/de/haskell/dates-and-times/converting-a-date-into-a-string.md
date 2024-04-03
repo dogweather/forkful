@@ -10,9 +10,6 @@ title: Datum in einen String umwandeln
 weight: 28
 ---
 
-## Was & Warum?
-Das Umwandeln eines Datums in einen String ist die Darstellung eines Datumsobjekts als Text. Programmierer nutzen das, um Datumsangaben nutzerfreundlich anzuzeigen oder in einem bestimmten Format zu speichern.
-
 ## How to:
 ```Haskell
 import Data.Time

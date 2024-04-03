@@ -11,9 +11,6 @@ title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---
 
-## Hva & Hvorfor?
-Komplekse tall er en mengde tall i formen `a + bi`, der `a` og `b` er reelle tall, og `i` er den imaginære enheten (`i^2 = -1`). I programmering bruker vi dem til å løse problemer i ulike domener, som elektroteknikk, signalbehandling og kvanteberegning.
-
 ## Hvordan:
 Python har innebygd støtte for komplekse tall. Her er hvordan du kan leke med dem:
 

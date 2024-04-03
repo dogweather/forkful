@@ -11,9 +11,6 @@ title: Att organisera kod i funktioner
 weight: 18
 ---
 
-## Vad & Varför?
-Att organisera kod i funktioner delar upp ditt script i återanvändbara delar. Det handlar allt om att göra din kod ren, hanterbar och mindre buggig. Modulär kod är fantastiskt eftersom den sparar tid, bevarar ditt förstånd och förenklar felsökning och enhetstestning.
-
 ## Hur man gör:
 Tänk dig att du skriver ett snabbt script för att hälsa på användare:
 

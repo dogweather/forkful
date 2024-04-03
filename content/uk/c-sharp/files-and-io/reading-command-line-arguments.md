@@ -13,9 +13,6 @@ title: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0430\u0440\u0433\u0443\u043
 weight: 23
 ---
 
-## What & Why? (Що та Чому?)
-Reading command line arguments means grabbing the extra bits of data you pass to a program when you start it in a console. Programmers do it to let users tailor the program's behavior without changing the code.
-
 ## How to: (Як це зробити:)
 Here's a simple code snippet for grabbing command line arguments in C#. Compile, run it via the console with some arguments, and see what happens.
 

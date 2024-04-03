@@ -10,9 +10,6 @@ title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---
 
-## Vad & Varför?
-Kommandoradsargument låter skripten anpassas vid körning. Programmerare använder det för att göra skript dynamiska och flexibla – användbara för olika scenarion utan ändring av koden.
-
 ## Hur gör man:
 ```PowerShell
 # Spara detta som test-script.ps1

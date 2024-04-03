@@ -10,9 +10,6 @@ title: Refactoring
 weight: 19
 ---
 
-## Was & Warum?
-Refactoring ist der Prozess des Umstrukturierens bestehenden Codes, ohne sein externes Verhalten zu ändern, um nichtfunktionale Attribute zu verbessern. Programmierer tun dies, um den Code lesbarer zu machen, Komplexität zu verringern, die Wartbarkeit zu verbessern und ihn einfacher skalierbar oder modifizierbar für die Zukunft zu machen.
-
 ## Wie:
 Stellen Sie sich vor, Sie haben ein Skript, das mit der Zeit ziemlich gewachsen ist. Es begann einfach, aber jetzt ist es ein Ungetüm, das mit Tentakeln der Logik wuchert. Hier ist ein mundgerechtes Beispiel für das Refactoring einer Funktion, um sie lesbarer und effizienter zu machen:
 

@@ -11,9 +11,6 @@ title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-HTTP-Anfragen mit Basic Authentication ermöglichen den Zugang zu geschützten Ressourcen durch Übermittlung von Benutzername und Passwort im Header. Programmierer nutzen dies, um sicher auf APIs und Webdienste zuzugreifen.
-
 ## Anleitung:
 Hier ist, wie man es in Lua anstellt:
 

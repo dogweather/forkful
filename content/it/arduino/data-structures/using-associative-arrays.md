@@ -12,9 +12,6 @@ title: Utilizzo di array associativi
 weight: 15
 ---
 
-## Cosa & Perché?
-Nel mondo di Arduino, gli array associativi ti permettono di abbinare chiavi a valori, un po' come accoppiare i calzini con i loro compagni. Sono la scelta prediletta quando hai bisogno di memorizzare e recuperare dati usando nomi descrittivi, rendendo il tuo codice più pulito e molto più comprensibile.
-
 ## Come fare:
 Arduino, parlando in termini stretti, non ha un supporto integrato per gli array associativi come lo troveresti nei linguaggi di programmazione di alto livello. Ma, non temere. Possiamo essere ingegnosi usando strutture e array per imitare questa funzionalità. Ecco un esempio semplice per creare un "array associativo" di base per memorizzare e accedere alle temperature di diverse città.
 

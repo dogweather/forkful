@@ -12,12 +12,7 @@ title: Een string omzetten naar kleine letters
 weight: 4
 ---
 
-## Wat & Waarom?
-
-Een string omzetten naar kleine letters betekent dat elke letter in de string een kleine letter wordt. Programmeurs doen dit om tekst te standaardiseren, vergelijkingen te maken, en soms om te voldoen aan hoofdlettergevoelige regels in codering of gegevensopslag.
-
 ## Hoe:
-
 PowerShell is vrij handig met strings. Gebruik de `.ToLower()` methode, zoals dit:
 
 ```PowerShell
@@ -47,7 +42,6 @@ hello, world!
 ```
 
 ## Diepgaand
-
 Er was een tijd dat hoofdletterongevoeligheid vrij gebruikelijk was in programmeertalen. In PowerShell, zoals zijn .NET voorgangers, zijn strings objecten met ingebouwde methoden voor manipulatie. Wanneer we `.ToLower()` gebruiken, roepen we een methode op die het conversieproces voor ons afhandelt.
 
 Alternatieve manieren om het werk gedaan te krijgen? Zeker. Je zou kunnen gebruiken:
@@ -59,7 +53,6 @@ Alternatieve manieren om het werk gedaan te krijgen? Zeker. Je zou kunnen gebrui
 Waarom de invariante cultuur gebruiken met `ToLowerInvariant()`? Het is essentieel voor consistente resultaten over verschillende locales waar de interpretatie van wat een "kleine" letter is, kan verschillen.
 
 ## Zie Ook
-
 Voor meer gedetailleerde avonturen in stringmanipulatie, bezoek deze links:
 
 - [.NET String Class](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-6.0)

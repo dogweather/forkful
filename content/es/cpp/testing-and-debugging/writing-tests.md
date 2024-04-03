@@ -14,14 +14,10 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## ¿Qué y Por qué?
-
-Escribir pruebas en C++ implica crear programas pequeños y autónomos que verifican automáticamente el comportamiento de secciones de tu base de código. Los programadores hacen esto para asegurarse de que su código funcione como se espera, para prevenir regresiones (es decir, cambios nuevos que rompen funcionalidades existentes) y para facilitar bases de código mantenibles con el tiempo.
-
 ## Cómo hacerlo:
 
-### Usando el Framework de Google Test
 
+### Usando el Framework de Google Test
 Una de las bibliotecas de terceros más populares para escribir pruebas en C++ es Google Test. Primero, necesitarás instalar Google Test y enlazarlo con tu proyecto. Una vez configurado, puedes comenzar a escribir casos de prueba.
 
 ```cpp
@@ -56,7 +52,6 @@ Guarda el código en un archivo y compílalo con el compilador g++, enlazando la
 ```
 
 ### Usando Catch2
-
 Otro framework de pruebas popular para C++ es Catch2. Tiene una sintaxis más simple y usualmente no requiere enlazarse contra una biblioteca (solo encabezado). Aquí hay un ejemplo de cómo escribir una prueba simple con Catch2:
 
 ```cpp

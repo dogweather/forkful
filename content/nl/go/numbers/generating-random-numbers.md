@@ -14,16 +14,10 @@ title: Willekeurige getallen genereren
 weight: 12
 ---
 
-## Wat & Waarom?
-
-Het genereren van willekeurige getallen in programmeren gaat over het creëren van een reeks getallen die niet redelijkerwijs beter voorspeld kunnen worden dan door toeval. Programmeurs doen dit om tal van redenen, waaronder simulaties, spelletjes en beveiligingstoepassingen, waar onvoorspelbaarheid essentieel is voor functionaliteit of geheimhouding.
-
 ## Hoe:
-
 In Go worden willekeurige getallen gegenereerd met het `math/rand` pakket voor pseudo-willekeurige getallen of `crypto/rand` voor cryptografisch veilige pseudo-willekeurige getallen. Laten we beide verkennen.
 
 ### Gebruik van `math/rand` voor Pseudo-willekeurige Getallen
-
 Importeer eerst het `math/rand` pakket en het `time` pakket om de generator te zaaien. Zaaien zorgt ervoor dat je elke keer een andere reeks getallen krijgt.
 
 ```go
@@ -44,7 +38,6 @@ func main() {
 Voorbeelduitvoer: `Een willekeurig getal: 42`
 
 ### Gebruik van `crypto/rand` voor Cryptografisch Veilige Pseudo-willekeurige Getallen
-
 Voor meer beveiligingsgevoelige toepassingen is het `crypto/rand` pakket geschikt omdat het willekeurige getallen genereert die moeilijk te voorspellen zijn, waardoor ze geschikt zijn voor cryptografische bewerkingen.
 
 ```go
@@ -65,7 +58,6 @@ func main() {
 Voorbeelduitvoer: `Een veilig willekeurig getal: 81`
 
 ## Diepgaand
-
 Het fundamentele verschil tussen de `math/rand` en `crypto/rand` pakketten in Go komt voort uit hun bron van entropie en hun beoogde gebruiksscenario's. `math/rand` genereert pseudo-willekeurige getallen op basis van een initiële zaad; dus, de reeks is deterministisch en kan voorspeld worden als het zaad bekend is. Dit is geschikt voor scenario's waar hoge prestaties en niet absolute onvoorspelbaarheid de belangrijkste zorg zijn, zoals simulaties of spelletjes.
 
 Aan de andere kant, `crypto/rand` haalt willekeurigheid uit het onderliggende besturingssysteem, waardoor het geschikt is voor cryptografisch gebruik waar onvoorspelbaarheid cruciaal is. Dit gaat echter ten koste van prestaties en complexiteit in de omgang met de getallen die het genereert (zoals omgaan met het `*big.Int` type voor gehele getallen).

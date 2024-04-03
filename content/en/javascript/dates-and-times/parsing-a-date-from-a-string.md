@@ -11,9 +11,6 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-Parsing a date from a string allows programmers to convert textual date representations into JavaScript `Date` objects, facilitating date manipulations, comparisons, and formatting operations. This process is essential for handling user input, processing data from databases, or working with APIs that communicate dates in string formats.
-
 ## How to:
 JavaScript natively offers the `Date.parse()` method and the `Date` constructor to parse date strings. However, these approaches have limitations and inconsistencies across different browsers, especially with non-standard date formats. To address these issues, third-party libraries like `Moment.js` and `date-fns` are popular for their robustness and ease of use.
 

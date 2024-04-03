@@ -15,12 +15,7 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---
 
-## Cái gì & Tại sao?
-
-Gửi một yêu cầu HTTP nghĩa là yêu cầu máy chủ về dữ liệu hoặc hành động, như mở một trang web hoặc gửi một biểu mẫu. Lập trình viên thực hiện điều này để tương tác với các dịch vụ web, API, và để làm cho ứng dụng của họ tương thích với những ứng dụng khác trên internet.
-
 ## Làm thế nào:
-
 Hãy sử dụng `HttpClient`, `HttpRequest`, và `HttpResponse` của Java 11 để thực hiện một yêu cầu GET và lấy một số dữ liệu:
 
 ```java
@@ -47,7 +42,6 @@ public class HttpRequestExample {
 Bạn chạy nó, và voilà—phản hồi từ máy chủ, ngay trên console của bạn.
 
 ## Sâu hơn nữa
-
 Trước Java 11, việc gửi một yêu cầu HTTP là một vũ điệu phức tạp hơn, thường yêu cầu sử dụng các thư viện của bên thứ ba như Apache HttpClient. `HttpURLConnection` cũng là một lựa chọn nhưng cảm thấy như một con khủng long—cồng kềnh và ít trực quan.
 
 Với Java 11, `HttpClient` xuất hiện, đơn giản hóa quy trình với cả hai phương pháp đồng bộ `.send` và bất đồng bộ `.sendAsync`. Nó phản ứng và không chặn—nghĩa là bạn không phải ngồi chờ trong lúc nó thực hiện công việc của mình. Điều này phù hợp với nhu cầu hiệu quả của ứng dụng hiện đại, nơi mà việc chờ đợi là lãng phí thời gian.
@@ -55,7 +49,6 @@ Với Java 11, `HttpClient` xuất hiện, đơn giản hóa quy trình với c�
 Các lựa chọn thay thế cho các thư viện tiêu chuẩn của Java? Các thư viện như OkHttp và Retrofit vẫn là sự yêu thích khi các tính năng mạnh mẽ và cấu hình tùy chỉnh được mong muốn. Và tại sao không? Chúng đi kèm với những ưu điểm của riêng mình, như quản lý kết nối và chuyển đổi cuộc gọi ngay lập tức.
 
 ## Xem thêm
-
 Đào sâu hơn vào HttpClient của Java với tài liệu chính thức của Java:
 - [HttpClient](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
 - [HttpRequest](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpRequest.html)

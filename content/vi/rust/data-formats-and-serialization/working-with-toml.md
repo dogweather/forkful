@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---
 
-## Điều gì và Tại sao?
-TOML là một ngôn ngữ tuần tự hóa dữ liệu dễ đọc cho con người, thường được sử dụng cho các tệp cấu hình. Lập trình viên sử dụng TOML vì tính đơn giản và rõ ràng của nó, dễ dàng dịch thành một bảng băm trong Rust.
-
 ## Cách thức:
 ```Rust
 // 1. Bao gồm crate 'toml' trong Cargo.toml của bạn

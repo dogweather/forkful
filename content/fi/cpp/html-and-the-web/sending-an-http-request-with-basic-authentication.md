@@ -11,12 +11,7 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---
 
-## What & Why?
-
-Lähetämme HTTP-pyyntöjä perusautentikoinnilla liittääksemme käyttäjätunnus-salasanapari verkkopalveluihin. Tämä on vakiomenetelmä suojattujen resurssien käyttöoikeuden hallintaan.
-
 ## How to:
-
 ```C++
 #include <iostream>
 #include <curl/curl.h>
@@ -67,7 +62,6 @@ Response from server: { "message": "Hello, world!" }
 ```
 
 ## Deep Dive
-
 HTTP Basic Authentication on vanhin verkkotunnistusmenetelmä. Sen käyttö on yksinkertaista: käyttäjätunnus ja salasana yhdistetään, koodataan Base64-koodauksella ja lähetetään `Authorization`-otsakkeessa. Historiallisesti, tämä oli helppo tapa suojata resursseja, mutta nykyään se ei ole parhaita käytäntöjä, koska perustiedot lähetetään tekstimuodossa, joka on helposti dekoodattavissa.
 
 Vaihtoehtoja perusautentikoinnille ovat OAuth, API-avaimet ja JWT-tunnukset. Näistä kukin tarjoaa eri tason turvallisuutta ja mukautuvuutta. Käyttäessäsi cURL-kirjastoa C++:lla, voit mukauttaa otsakkeita tarpeen mukaan erilaisten autentikointimenetelmien tueksi.
@@ -75,7 +69,6 @@ Vaihtoehtoja perusautentikoinnille ovat OAuth, API-avaimet ja JWT-tunnukset. Nä
 CURL on monipuolinen kirjasto HTTP-verkkopyyntöjen tekemiseen. Se käsittelee monia verkkosovellusten kehittämisen yksityiskohtia, kuten protokollatuki ja autentikointimekanismit, poistaen monimutkaisuutta suorasta ohjelmoinnista.
 
 ## See Also
-
 - cURL documentation: https://curl.se/libcurl/
 - 'Base64' encoding explained: https://en.wikipedia.org/wiki/Base64
 - Understanding HTTP Basic Authentication: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication 

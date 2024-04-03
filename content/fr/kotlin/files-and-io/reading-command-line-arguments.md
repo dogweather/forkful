@@ -11,11 +11,7 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## What & Why?
-Lire des arguments de ligne de commande, c'est récupérer des données fournies lorsque vous lancez votre programme. C'est crucial car ça permet aux utilisateurs de personnaliser l'exécution du programme sans changer le code.
-
 ## How to:
-
 ```kotlin
 fun main(args: Array<String>) {
     if(args.isNotEmpty()) {

@@ -14,12 +14,7 @@ title: Organizacja kodu w funkcje
 weight: 18
 ---
 
-## Co & Dlaczego?
-
-Organizacja kodu w funkcje polega na strukturyzowaniu kodu Google Apps Script poprzez oddzielanie logicznych segmentów w odrębne bloki, z których każdy wykonuje określone zadanie. Programiści robią to, aby zwiększyć czytelność, możliwość utrzymania i ponownego wykorzystania kodu, zapewniając, że skomplikowane skrypty są łatwiejsze do zrozumienia i debugowania.
-
 ## Jak to zrobić:
-
 W Google Apps Script, który opiera się na JavaScript, definiujesz funkcje, używając słowa kluczowego `function`, po którym następuje unikalna nazwa funkcji, nawiasy `()` mogące zawierać parametry i nawiasy klamrowe `{}`, które zawierają blok kodu funkcji. Oto podstawowy przykład:
 
 ```javascript
@@ -68,7 +63,6 @@ populateSheet(salesData);
 W tym przykładzie `setupSheet` przygotowuje arkusz, a `populateSheet` zapełnia arkusz tablicą danych sprzedaży. Oddzielenie tych kwestii sprawia, że kod jest czystszy i bardziej elastyczny pod kątem zmian.
 
 ## Głębsze zanurzenie
-
 Koncept dzielenia kodu na funkcje nie jest nowy ani unikatowy dla Google Apps Script; jest to fundamentalna praktyka programistyczna, popierana w prawie wszystkich językach programowania. Historycznie, funkcje ewoluowały z matematycznego konceptu mapowania wejść na wyjścia, co stało się kamieniem węgielnym programowania strukturalnego. To podejście promuje modularność i ponowne wykorzystanie kodu, oferując jasne ścieżki do testowania poszczególnych części skryptu.
 
 Google Apps Script, opierając się na JavaScript, znacząco korzysta z funkcji pierwszoklasowych JavaScriptu, pozwalając na przekazywanie funkcji jako argumentów, zwracanie ich z innych funkcji i przypisywanie do zmiennych. Ta funkcja otwiera zaawansowane wzorce takie jak wywołania zwrotne i programowanie funkcyjne, chociaż te wzorce mogą wprowadzać złożoność, która może być niepotrzebna dla prostych zadań automatyzacji w Google Apps Script.

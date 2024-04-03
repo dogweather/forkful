@@ -14,9 +14,6 @@ title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---
 
-## Cái gì & Tại sao?
-Nội suy chuỗi cho phép bạn chèn giá trị vào một chuỗi. Nó rất tiện lợi cho việc tạo ra các tin nhắn tùy chỉnh, tự động hóa lệnh và viết kịch bản như một ông chủ. 
-
 ## Cách thực hiện:
 Chuỗi trong Bash rất dễ dàng sử dụng với biến. Chỉ cần đưa một biến vào trong chuỗi với một vài dấu ngoặc nhọn, bạn đã hoàn thành xong.
 

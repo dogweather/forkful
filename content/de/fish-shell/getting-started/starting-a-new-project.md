@@ -11,9 +11,6 @@ title: Einen neuen Projekt starten
 weight: 1
 ---
 
-## What & Why?
-Ein neues Projekt zu starten bedeutet, eine frische Codebasis anzulegen, um eine Idee zum Leben zu erwecken. Programmierer tun dies, um Problemlösungen zu entwickeln, Innovationen voranzutreiben oder einfach ihre Skills zu verbessern.
-
 ## How to:
 Ein neues Projekt in Fish beginnen? Kein Problem. Zuerst ein Verzeichnis erstellen und dann rein wechseln:
 

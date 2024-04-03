@@ -11,9 +11,6 @@ title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---
 
-## Qué y Por Qué?
-Leer argumentos de la línea de comandos significa acceder a los datos que el usuario proporciona al ejecutar un programa. Los programadores lo hacen para personalizar la ejecución sin cambiar el código; dinamismo en estado puro.
-
 ## Cómo hacerlo:
 ```java
 public class Saludador {

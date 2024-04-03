@@ -12,9 +12,6 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## Co i dlaczego?
-Łączenie ciągów znaków, czyli "concatenating strings", pozwala skleić ze sobą dwie lub więcej różnych części tekstu. Programiści robią to, aby tworzyć zdania, wiadomości lub dynamicznie konstruować treść wyświetlaną użytkownikowi.
-
 ## Jak to zrobić?
 Oto kilka sposobów na łączenie ciągów znaków w JavaScript:
 

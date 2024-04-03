@@ -14,12 +14,7 @@ title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---
 
-## Quoi & Pourquoi ?
-
-Mettre en majuscule une chaîne de caractères signifie la modifier pour que la première lettre soit en majuscule et que le reste de la chaîne soit en minuscule. Il s'agit d'une tâche courante dans le traitement de texte, la normalisation des entrées utilisateur et le formatage des données pour garantir la cohérence ou pour répondre à des critères de formatage spécifiques.
-
 ## Comment faire :
-
 Dans Fish Shell, les chaînes peuvent être manipulées directement avec des fonctions intégrées, sans avoir besoin d'outils externes ou de bibliothèques. Pour mettre en majuscule une chaîne de caractères, vous pouvez combiner la commande `string` avec des sous-commandes.
 
 ```fish

@@ -14,9 +14,6 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i dlaczego?
-Sprawdzanie, czy katalog istnieje, to podstawowa operacja w wielu zadaniach programistycznych, pozwalająca na warunkowe działania w oparciu o obecność lub brak struktur katalogów. Jest to kluczowe dla manipulacji plikami, automatycznych skryptów oraz podczas początkowej konfiguracji oprogramowania, aby zapewnić, że niezbędne katalogi są na miejscu, lub aby uniknąć duplikacji katalogów.
-
 ## Jak to zrobić:
 Haskell, za pośrednictwem swojej biblioteki bazowej, oferuje proste sposoby na sprawdzenie istnienia katalogu, głównie za pomocą modułu `System.Directory`. Spójrzmy na podstawowy przykład:
 

@@ -12,9 +12,6 @@ title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---
 
-## What & Why?
-Ajanlaskennassa tulevaisuuden tai menneisyyden päivämäärän laskeminen tarkoittaa tietyn ajanjakson lisäämistä tai poistamista nykyhetkestä. Ohjelmoijat tekevät tätä esimerkiksi vanhentumispäivien asettamisessa, muistutussovelluksissa tai aikataulujen laskennassa.
-
 ## How to:
 Pythonissa voit käyttää `datetime`-moduulia päivämääristä laskemiseen. Tässä yksinkertainen esimerkki:
 

@@ -11,8 +11,6 @@ title: Textdatei einlesen
 weight: 22
 ---
 
-# Javascript: So liest du eine Textdatei ein
-
 ## Was & Warum?
 Das Einlesen einer Textdatei bedeutet, ihren Inhalt in deine Anwendung zu importieren. Programmierer machen das, um Daten zu verarbeiten, Einstellungen zu laden oder Inhalte dynamisch zu nutzen.
 
@@ -27,6 +25,7 @@ fetch('example.txt')
   .then(text => console.log(text))
   .catch(error => console.error('Error beim Laden der Datei:', error));
 ```
+
 ### In Node.js mit `fs`:
 ```javascript
 const fs = require('fs');

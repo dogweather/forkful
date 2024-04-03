@@ -12,9 +12,6 @@ title: Een string interpoleren
 weight: 8
 ---
 
-## Wat & Waarom?
-String interpolatie schuift waarden in een stringtemplate zoals stukken van een puzzel, waardoor strings dynamisch worden en de code schoner. Programmeurs gebruiken het om variabelen, expressies en opmaak direct binnen strings in te voegen, wat de rommel van concatenatie vermindert.
-
 ## Hoe te:
 In PowerShell, gebruik je interpolatie met dubbel aangehaalde strings en het `$` symbool voor de variabelenaam. Omring expressies met `$()` om ze direct binnen de string te evalueren.
 

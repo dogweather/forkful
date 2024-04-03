@@ -14,9 +14,6 @@ title: Analysering av en dato fra en streng
 weight: 30
 ---
 
-## Hva & hvorfor?
-Å analysere en dato fra en tekststreng handler om å gjenkjenne og konvertere skrevne datoer i tekstform til en datatype dato som PowerShell kan forstå og arbeide med. Programmerere gjør dette for å manipulere, formatere, sammenligne eller beregne datoer, noe som er vanlige oppgaver i skript som håndterer loggfiler, brukerinndata eller databehandling.
-
 ## Hvordan:
 PowerShell gjør det enkelt å analysere datoer fra tekststrenger med sin `Get-Date` cmdlet og `[datetime]` typeakselerator, som fungerer godt for standard datoformater. For mer komplekse eller ustandardiserte datostrøymer, kan metoden `[datetime]::ParseExact` brukes for å spesifisere det nøyaktige formatet.
 

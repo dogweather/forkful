@@ -15,9 +15,6 @@ title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---
 
-## Gì và Tại sao?
-Tìm kiếm và thay thế văn bản giống như chơi trốn tìm với chuỗi ký tự, sau đó thay người ẩn bằng người khác. Đó là một nhiệm vụ lập trình phổ biến, rất quan trọng cho các công việc như chỉnh sửa hàng loạt, làm sạch dữ liệu và tự động hóa những công việc nhàm chán.
-
 ## Làm thế nào:
 Kotlin đơn giản hóa việc thao tác với văn bản thông qua thư viện tiêu chuẩn của nó. Dưới đây, xem cách bạn sử dụng `replace` để đổi từ.
 

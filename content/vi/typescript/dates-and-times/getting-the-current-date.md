@@ -15,9 +15,6 @@ title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---
 
-## Cái gì và Tại sao?
-Lấy ngày hiện tại trong mã lệnh của bạn có nghĩa là nắm bắt khoảnh khắc hiện tại đến từng ngày. Lập trình viên làm điều này để đánh dấu thời gian cho các sự kiện, xử lý lịch trình, và theo dõi thời lượng hoặc các khoảng thời gian.
-
 ## Làm thế nào:
 Dưới đây là cách bạn lấy ngày hiện tại trong TypeScript:
 

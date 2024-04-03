@@ -10,9 +10,6 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva & Hvorfor?
-Å runde av tall betyr å justere dem til en spesifisert grad av presisjon. Programmerere gjør dette for å forenkle tall for lesbarhet, for å møte visse spesifikasjoner, eller for å sikre at beregninger holder seg innenfor visse grenser, som å unngå presisjonsfeil i flytpunkt-aritmetikk.
-
 ## Hvordan:
 Java tilbyr flere måter å runde av tall på. Her er en rask demo med `Math.round()`, `BigDecimal`, og `DecimalFormat`.
 

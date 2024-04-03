@@ -11,9 +11,6 @@ title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä & Miksi?
-Pyöristäminen tarkoittaa arvon säätämistä lähimpään kokonaislukuun tai määriteltyyn tarkkuuteen. Kehittäjät tekevät näin yksinkertaistaakseen, noudattaakseen todellisen maailman rajoituksia tai parantaakseen suorituskykyä hylkäämällä ylimääräisen tarkkuuden.
-
 ## Kuinka:
 C++ tarjoaa useita tapoja pyöristää numeroita, kuten `floor()`, `ceil()` ja `round()`:
 

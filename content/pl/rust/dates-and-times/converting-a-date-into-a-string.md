@@ -11,9 +11,6 @@ title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---
 
-## What & Why? (Co i Dlaczego?)
-Konwersja daty do ciągu znaków pozwala zaprezentować informacje o czasie w zrozumiałym formacie. Programiści robią to, by ułatwić użytkownikom odczytanie daty oraz umożliwić zapisanie daty w bazie danych czy pliku.
-
 ## How to: (Jak to zrobić?)
 Na początek, zaimportuj `chrono` – popularną bibliotekę do zarządzania czasem. Potem użyj właściwej metody do konwersji. Pokażę to na przykładzie:
 

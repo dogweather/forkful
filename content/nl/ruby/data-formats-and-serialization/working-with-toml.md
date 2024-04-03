@@ -13,12 +13,7 @@ title: Werken met TOML
 weight: 39
 ---
 
-## Wat & Waarom?
-
-TOML is een configuratiebestandsformaat dat gemakkelijk te lezen is vanwege de duidelijke semantiek. Programmeurs gebruiken TOML om app-configuraties en data-serialisatie te beheren zonder de zwaarte van XML of de eigenaardigheden van YAML.
-
 ## Hoe te:
-
 Installeer eerst de `toml-rb` gem. Dit is een populaire keuze voor TOML-verwerking in Ruby.
 
 ```Ruby
@@ -61,7 +56,6 @@ File.write('config.toml', toml_string)
 Controleer `config.toml` en je zal je instellingen netjes opgeslagen zien.
 
 ## Diepere Duik
-
 TOML, wat staat voor Tom's Obvious, Minimal Language, is gecreëerd door Tom Preston-Werner, de mede-oprichter van GitHub, rond 2013. Het primaire doel is om een overzichtelijk formaat te zijn dat gemakkelijk te ontleden is naar datastructuren. Terwijl JSON geweldig is voor API's, en YAML flexibel is, ligt de niche van TOML in de nadruk op gebruiksvriendelijkheid. Anders dan YAML, dat kieskeurig kan zijn met inspringing, streeft TOML naar een meer INI-achtige structuur die velen eenvoudiger en minder foutgevoelig vinden.
 
 Alternatieven zoals JSON, YAML, of XML hebben elk hun eigen sterke punten, maar TOML bloeit in scenario's waar een configuratie gemakkelijk onderhouden moet kunnen worden door zowel mensen als programma's. Het is niet alleen eenvoudiger maar handhaaft ook strikte en leesbare opmaak.
@@ -69,7 +63,6 @@ Alternatieven zoals JSON, YAML, of XML hebben elk hun eigen sterke punten, maar 
 Aan de technische kant, om TOML-inhoud te ontleden met Ruby, maken we gebruik van gems zoals `toml-rb`. Deze gem maakt gebruik van de dynamische aard van Ruby, door TOML-gegevens om te zetten in native Ruby hashes, arrays en andere basisgegevensstructuren. Deze omzetting betekent dat ontwikkelaars kunnen werken met TOML-gegevens met behulp van bekende Ruby-semantiek en methoden.
 
 ## Zie Ook
-
 - TOML project en specificatie: https://toml.io/en/
 - De `toml-rb` gem: https://github.com/emancu/toml-rb
 - TOML, YAML, en JSON vergelijken: https://blog.theodo.com/2021/08/compare-yml-toml-json/

@@ -11,12 +11,7 @@ title: Creating a temporary file
 weight: 21
 ---
 
-## What & Why?
-
-Creating a temporary file means making a file that's only needed for a short time, then deleted. Programmers do it for intermediate storage, like when you need to stash data between steps in a process or keep sensitive info out of long-term storage.
-
 ## How to:
-
 In Java, the `java.nio.file` package is your friend for temporary files. Check out this snippet:
 
 ```java
@@ -58,7 +53,6 @@ Temporary file deleted.
 Neat, right?
 
 ## Deep Dive
-
 Temporary files have been part of our toolkit for ages, way back to the dawn of computing. They're your best bet when you need to handle data that has no business sticking around. 
 
 Java's got your back with the `Files` class since Java 7, making temp file handling super simple. Before that, you'd have to juggle `File` objects and hope for the best (but don't go back to those dark days, embrace the new API).
@@ -68,7 +62,6 @@ The cool part about the `createTempFile` method is you can specify the directory
 Alternatives? Sure, you could go old-school and handle every file operation manually, or hook into an OS-specific method. However, the Java way is safer and more portable across platforms.
 
 ## See Also
-
 - [Java Path Class Documentation](https://docs.oracle.com/javase/10/docs/api/java/nio/file/Path.html)
 - [Java Files Class Documentation](https://docs.oracle.com/javase/10/docs/api/java/nio/file/Files.html)
 - [Oracle's Tutorial on File I/O](https://docs.oracle.com/javase/tutorial/essential/io/file.html)

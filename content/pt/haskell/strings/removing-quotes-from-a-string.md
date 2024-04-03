@@ -10,9 +10,6 @@ title: Removendo aspas de uma string
 weight: 9
 ---
 
-## O Que & Por Que?
-Remover aspas de uma string significa eliminar quaisquer marcas de aspas—simples (' ') ou duplas (" ")—que façam parte dos dados da string. Programadores fazem isso para sanitizar entradas, preparar texto para processamento ou se livrar de caracteres desnecessários que possam interferir no manuseio e operações de dados.
-
 ## Como fazer:
 Em Haskell, podemos criar uma função que remove todas as aspas de uma determinada string. É como dizer para as aspas vazarem, e garantir que elas captaram a mensagem.
 

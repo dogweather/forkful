@@ -10,11 +10,6 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## What & Why?
-"Co i Dlaczego?"
-
-Wyszukiwanie i zamiana tekstu to szybka edycja, zmieniająca fragmenty kodu czy tekstu. Programiści robią to, by poprawiać błędy, aktualizować dane czy czyszczenie kodu.
-
 ## How to:
 "Jak to zrobić?"
 

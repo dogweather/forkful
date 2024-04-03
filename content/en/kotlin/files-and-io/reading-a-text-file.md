@@ -11,12 +11,7 @@ title: Reading a text file
 weight: 22
 ---
 
-## What & Why?
-
-Reading a text file means pulling data from a file into your program, typically line by line. Programmers do this to process or analyze data that's stored externally.
-
 ## How to:
-
 In Kotlin, you can read a text file easily using the `readLines()` function or the `useLines` block.
 
 ```Kotlin
@@ -46,7 +41,6 @@ World
 ```
 
 ## Deep Dive
-
 Historically, reading files in Java could be verbose and clunky. With Kotlin, the standard library provides handy extensions to make file reading simpler.
 
 There are alternatives for file reading in Kotlin:
@@ -56,6 +50,5 @@ There are alternatives for file reading in Kotlin:
 Implementation-wise, when you use `useLines`, it takes care of closing the file after execution, preventing potential memory leaks. It's a functional approach that's encouraged in Kotlin for managing resources effectively.
 
 ## See Also
-
 - Kotlin documentation on reading files: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
 - `BufferedReader` documentation for more complex cases: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-buffered-reader/](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-buffered-reader/)

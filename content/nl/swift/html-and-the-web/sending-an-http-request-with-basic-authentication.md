@@ -12,12 +12,7 @@ title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---
 
-## Wat & Waarom?
-
-Een HTTP-verzoek verzenden met basisauthenticatie houdt in dat een gebruikersnaam en wachtwoord aan een verzoek voor afgeschermde webinhoud worden toegevoegd. Programmeurs doen dit om toegang te krijgen tot API's of bronnen die beperkt zijn tot geautoriseerde gebruikers.
-
 ## Hoe:
-
 Zo verstuur je een HTTP-verzoek met basisauthenticatie in Swift:
 
 ```Swift
@@ -55,7 +50,6 @@ dataTask.resume()
 De output zou de van de API teruggekregen gegevens moeten zijn, of een foutmelding als er iets misgaat.
 
 ## Diepere Duik
-
 In de vroege dagen van het web was basisauthenticatie een snelle manier om bronnen te beveiligen. Door de eenvoud werd het breed toegepast ondanks dat het minder veilig is dan moderne alternatieven zoals OAuth, omdat inloggegevens niet versleuteld, maar alleen gecodeerd worden.
 
 Naast basisauthenticatie bestaan er alternatieven zoals digestauthenticatie, API-sleutels, OAuth of JWT (JSON Web Tokens). Elk komt met voor- en nadelen rondom veiligheid, gebruiksgemak en het niveau van geboden bescherming.
@@ -63,7 +57,6 @@ Naast basisauthenticatie bestaan er alternatieven zoals digestauthenticatie, API
 Bij het verzenden van een HTTP-verzoek met basisauthenticatie is het de beste praktijk om ervoor te zorgen dat je HTTPS gebruikt, zodat je gecodeerde inloggegevens veilig worden verzonden. Ook is het aan te raden om inloggegevens niet hard te coderen; gebruik in plaats daarvan omgevingsvariabelen of veilige kluizen.
 
 ## Zie Ook
-
 - [Apple's URLSession](https://developer.apple.com/documentation/foundation/urlsession)
 - [HTTP Basic Auth RFC](https://tools.ietf.org/html/rfc7617)
 - [OAuth 2.0](https://oauth.net/2/)

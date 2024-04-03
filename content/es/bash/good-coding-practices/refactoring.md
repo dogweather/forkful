@@ -11,9 +11,6 @@ title: "Refactorizaci\xF3n"
 weight: 19
 ---
 
-## Qué y Por qué?
-La refactorización es el proceso de reestructurar código informático existente sin cambiar su comportamiento externo. Es una práctica vital para reducir la complejidad, mejorar la mantenibilidad y mantener tu base de código saludable y más fácil de entender para los desarrolladores actuales y futuros.
-
 ## Cómo hacerlo:
 Consideremos un simple script de Bash que necesita ser refactorizado. Es torpe, con código repetido y es difícil de seguir:
 

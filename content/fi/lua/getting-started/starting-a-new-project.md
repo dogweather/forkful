@@ -9,9 +9,6 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## What & Why? - Mitä & Miksi?
-Uusien projektien aloittaminen tarkoittaa puhtaalta pöydältä aloittamista. Ohjelmoijat tekevät sen tuodakseen uudet ideansa eloon ja ratkaistakseen ongelmia.
-
 ## How to: - Kuinka:
 ```Lua
 -- Luo uusi tiedosto, esim. main.lua

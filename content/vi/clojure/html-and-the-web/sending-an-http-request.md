@@ -15,9 +15,6 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---
 
-## Cái Gì & Tại Sao?
-Gửi một yêu cầu HTTP là cách chương trình của bạn yêu cầu một hệ thống khác cung cấp dữ liệu hoặc dịch vụ qua mạng. Lập trình viên thực hiện điều này để tương tác với các API web, lấy nguồn dữ liệu, hoặc giao tiếp giữa các dịch vụ.
-
 ## Làm Sao:
 Trong Clojure, bạn có thể gửi yêu cầu HTTP sử dụng khách hàng `clj-http`.
 

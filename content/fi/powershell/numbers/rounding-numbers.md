@@ -11,9 +11,6 @@ title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä & Miksi?
-Numeroiden pyöristäminen tarkoittaa arvon säätämistä lähimpään kokonaislukuun tai määriteltyyn desimaalipaikkaan. Ohjelmoijat pyöristävät numeroita yksinkertaistaakseen dataa, parantaakseen luettavuutta tai täyttääkseen tiettyjä matemaattisia vaatimuksia laskentojen aikana.
-
 ## Kuinka:
 PowerShellissa on muutama kätevä cmdlet ja menetelmä numeroiden pyöristämiseen:
 

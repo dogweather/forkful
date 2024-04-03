@@ -14,12 +14,7 @@ title: Refonte de Code
 weight: 19
 ---
 
-## Quoi & Pourquoi ?
-
-Le refactoring en programmation implique de restructurer le code informatique existant — changer le façonnage — sans modifier son comportement externe. Les programmeurs entreprennent ce processus pour améliorer la lisibilité du code, réduire sa complexité et améliorer sa maintenabilité, rendant finalement le logiciel plus facile à comprendre et à modifier.
-
 ## Comment faire :
-
 En Go, le refactoring peut aller de simples ajustements de code à des changements plus complexes. Commençons par un exemple de base : simplifier une fonction Go initiale pour une meilleure lisibilité et efficacité.
 
 **Avant le Refactoring :**
@@ -122,7 +117,6 @@ func main() {
 Refactoriser pour utiliser une interface (`Logger`) au lieu d'un type concret (`ConsoleLogger`) améliore la flexibilité de la fonction et découple le traitement des données de l'implémentation spécifique du logging.
 
 ## Plongée Profonde
-
 Le refactoring en Go doit équilibrer la simplicité (l'une des philosophies centrales de Go) avec la flexibilité nécessaire dans les grands projets logiciels. Étant donné l'approche minimaliste de Go en termes de fonctionnalités — sans génériques (jusqu'à récemment) et avec un fort accent sur la lisibilité — le langage guide naturellement les développeurs vers des structures de code plus simples et plus maintenables. Cependant, cela ne signifie pas que le code Go ne bénéficie pas du refactoring ; cela signifie que le refactoring doit toujours privilégier la clarté et la simplicité.
 
 Historiquement, l'absence de certaines fonctionnalités dans Go (par ex., les génériques avant Go 1.18) a conduit à des solutions créatives mais parfois alambiquées pour la réutilisation du code et la flexibilité, faisant du refactoring pour l'abstraction une pratique courante. Avec l'introduction des génériques dans Go 1.18, les développeurs de Go refactorisent maintenant le code hérité pour tirer parti de cette fonctionnalité pour une meilleure sécurité de type et réutilisation du code, démontrant la nature évolutive des pratiques de refactoring en Go.

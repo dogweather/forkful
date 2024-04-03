@@ -11,9 +11,6 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## Vad & Varför?
-Att läsa en textfil innebär att extrahera data från en fil på din dator till din kod. Programmerare gör detta för att hantera informationen, som konfigurationer, användardata eller loggfiler.
-
 ## Hur man gör:
 ```C++
 #include <iostream>

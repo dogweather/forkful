@@ -19,12 +19,7 @@ title: "\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u306E\u8AAD\u307F\u8FBC
 weight: 22
 ---
 
-## What & Why? (何となぜ？)
-
-ファイル読み込みは、テキストファイルからデータを取得するプロセスです。プログラマは、設定の読み込み、データの処理、またはコンテンツの分析のためにこれを行います。
-
 ## How to: (方法：)
-
 PowerShellでテキストファイルを読む最も簡単な方法を見てみましょう。
 
 ```PowerShell
@@ -47,10 +42,8 @@ Let's read files!
 ```
 
 ## Deep Dive (掘り下げ：)
-
 プログラマがファイルを読む理由はたくさんあります。設定ファイル、ログファイル、あるいはCSVなどのデータファイルを扱うことが多いです。PowerShellの`Get-Content` コマンドレットは、Windows PowerShell 1.0の時からあり、簡単にファイルの内容を引っ張ることができます。ほかの方法には、.NETのクラス（例: `System.IO.StreamReader`）を使うこともできますが、`Get-Content` は使いやすく、PowerShellスクリプトにおいて一般的です。ある時、大きなファイルを扱う場合、パフォーマンスのために各行を逐次処理したほうがいいかもしれません。
 
 ## See Also (関連情報：)
-
 - [about_Automatic_Variables](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1) (英語)
 - [Get-Content](https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1) (日本語)

@@ -10,9 +10,6 @@ title: Working with XML
 weight: 40
 ---
 
-## What & Why?
-Working with XML involves parsing, creating, and manipulating XML documents—a markup language for data storage and transfer. Programmers do it because many systems still interchange data in XML format, and it's needed for legacy support and integration with existing technologies.
-
 ## How to:
 In Kotlin, you can use the built-in `javax.xml.parsers` for parsing:
 

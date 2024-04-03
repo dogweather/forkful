@@ -15,12 +15,7 @@ title: Analisando uma data a partir de uma string
 weight: 30
 ---
 
-## O Que e Por Quê?
-
-Analisar uma data a partir de uma string no Arduino envolve extrair e converter os componentes da data (ano, mês, dia) de uma representação textual para um formato que possa ser utilizado para cronometragem, comparações ou manipulações dentro de sketches. Programadores frequentemente realizam essa tarefa para interfacear com componentes como relógios em tempo real, registradores ou para processar entradas de APIs da web e interfaces de usuário onde as datas possam ser apresentadas em um formato legível.
-
 ## Como fazer:
-
 Abordagem direta sem uma biblioteca de terceiros:
 
 ```cpp

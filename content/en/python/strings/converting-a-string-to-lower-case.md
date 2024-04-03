@@ -10,9 +10,6 @@ title: Converting a string to lower case
 weight: 4
 ---
 
-## What & Why?
-Converting a string to lowercase means changing all uppercase characters in the text to their lowercase equivalents. Programmers often do this for consistency, comparison, or searching purposes since 'A' isn’t the same as 'a' in the world of computers.
-
 ## How to:
 Lowercasing a string in Python is simple with the `.lower()` method.
 ```Python

@@ -13,9 +13,6 @@ title: Sjekker om en mappe eksisterer
 weight: 20
 ---
 
-## Hva & Hvorfor?
-Å sjekke om en katalog eksisterer i Clojure innebærer å verifisere tilstedeværelsen av en filsystemkatalog fra inne i din Clojure-applikasjon. Denne oppgaven er avgjørende for filoperasjoner, for å forhindre feil når man leser fra eller skriver til kataloger som kanskje ikke er der, og sikrer robust og feilfri kodeutførelse.
-
 ## Hvordan gjøre dette:
 Clojure, som er et JVM-språk, kan utnytte Java sin `java.io.File` klasse for dette formålet. Du trenger ikke noe tredjepartsbibliotek for en så grunnleggende operasjon. Her er hvordan du kan gjøre det:
 

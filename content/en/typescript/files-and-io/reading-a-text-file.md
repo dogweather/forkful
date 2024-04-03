@@ -10,12 +10,7 @@ title: Reading a text file
 weight: 22
 ---
 
-## What & Why?
-
-Reading a text file is grabbing the content from a file that's structured as human-readable text. Programmers do it to process or analyze the data, like reading configuration, importing data, or simply ingesting content to be processed by an application.
-
 ## How to:
-
 Let's read a text file in TypeScript using Node.js's `fs/promises` module. We'll keep this example simple: read a file named `example.txt` and log its content.
 
 ```typescript
@@ -39,7 +34,6 @@ Hello, this is content from the file!
 ```
 
 ## Deep Dive
-
 Historically, file reading in Node.js was heavily callback-based, which could lead to a phenomenon known as "callback hell". With the advent of Promises and `async/await`, this process became much more streamlined.
 
 Besides `fs/promises`, there's the older `fs` module that still works with callback patterns. There's also the option of using stream processing with `fs.createReadStream()`, useful for large files due to lower memory consumption.
@@ -47,7 +41,6 @@ Besides `fs/promises`, there's the older `fs` module that still works with callb
 Implementation-wise, accessing the file system is an I/O operation and inherently slower than in-memory operations. That's why asynchronous coding patterns are important — they help prevent blocking the main thread and allow Node.js to keep handling other tasks.
 
 ## See Also
-
 For a deeper dive into Node.js file system:
 - Node.js fs documentation: https://nodejs.org/api/fs.html
 - Understanding `fs/promises`: https://nodejs.org/dist/latest/docs/api/fs.html#filehandlepromises

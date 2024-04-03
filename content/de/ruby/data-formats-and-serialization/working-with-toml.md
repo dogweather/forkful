@@ -10,12 +10,7 @@ title: Arbeiten mit TOML
 weight: 39
 ---
 
-## Was & Warum?
-
-TOML ist ein Konfigurationsdateiformat, das aufgrund seiner klaren Semantik leicht zu lesen ist. Programmierer nutzen TOML, um App-Konfigurationen und Daten-Serialisierung zu verwalten, ohne die Schwere von XML oder die Eigenheiten von YAML.
-
 ## Wie geht das:
-
 Zuerst installieren Sie das `toml-rb` Gem. Es ist eine beliebte Wahl für das Parsen von TOML in Ruby.
 
 ```Ruby
@@ -58,7 +53,6 @@ File.write('config.toml', toml_string)
 Überprüfen Sie `config.toml` und Sie werden Ihre Einstellungen, ordentlich gespeichert, sehen.
 
 ## Tiefer Eintauchen
-
 TOML, das für Toms Offensichtliche, Minimale Sprache steht, wurde etwa 2013 von Tom Preston-Werner, dem Mitbegründer von GitHub, erstellt. Sein Hauptziel ist es, ein unkompliziertes Format zu sein, das leicht in Datenstrukturen zu parsen ist. Während JSON großartig für APIs ist und YAML flexibel ist, liegt die Nische von TOML in seinem Schwerpunkt auf Benutzerfreundlichkeit. Im Gegensatz zu YAML, das mit Einrückungen wählerisch sein kann, strebt TOML nach einer mehr INI-ähnlichen Struktur, die viele einfacher und weniger fehleranfällig finden.
 
 Alternativen wie JSON, YAML oder XML haben jeweils ihre eigenen Stärken, aber TOML blüht in Szenarien auf, in denen eine Konfiguration leicht von Menschen und Programmen gleichermaßen gewartet werden sollte. Es ist nicht nur einfacher, sondern erzwingt auch eine strenge und lesbare Formatierung.
@@ -66,7 +60,6 @@ Alternativen wie JSON, YAML oder XML haben jeweils ihre eigenen Stärken, aber T
 Auf der technischen Seite nutzen wir, um TOML-Inhalte mit Ruby zu parsen, Gems wie `toml-rb`. Dieses Gem nutzt die dynamische Natur von Ruby und konvertiert TOML-Daten in native Ruby-Hashes, Arrays und andere grundlegende Datenstrukturen. Diese Konvertierung bedeutet, dass Entwickler mit TOML-Daten mit den vertrauten Ruby-Semantiken und Methoden arbeiten können.
 
 ## Siehe auch
-
 - TOML-Projekt und Spezifikation: https://toml.io/en/
 - Das `toml-rb` Gem: https://github.com/emancu/toml-rb
 - Vergleich von TOML, YAML und JSON: https://blog.theodo.com/2021/08/compare-yml-toml-json/

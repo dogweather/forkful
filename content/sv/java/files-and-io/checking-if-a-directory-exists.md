@@ -15,9 +15,6 @@ title: Kontrollera om en katalog existerar
 weight: 20
 ---
 
-## Vad & Varför?
-Att kontrollera om en katalog finns i Java är en grundläggande uppgift som innebär att man verifierar närvaron av en katalog i filsystemet innan man läser från den, skriver till den eller utför andra operationer som kräver dess existens. Detta är avgörande för att undvika fel eller undantag i program som interagerar med filsystemet, vilket säkerställer en smidigare exekvering och bättre användarupplevelse.
-
 ## Hur man gör:
 I Java finns det flera sätt att kontrollera om en katalog finns, främst genom att använda klasserna `java.nio.file.Files` och `java.io.File`.
 

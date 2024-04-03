@@ -10,9 +10,6 @@ title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---
 
-## ¿Qué y por qué?
-Interpolar una cadena consiste en insertar variables o expresiones en medio de una cadena de texto. Programadores lo hacen para construir mensajes dinámicos sin complicarse concatenando trozos de texto.
-
 ## Cómo hacerlo:
 En Fish Shell, interpolar es sencillo. Usa las comillas dobles para interpretar variables dentro de una cadena. Si la variable es `username` y vale `Juan`, aquí tienes un ejemplo:
 

@@ -15,9 +15,6 @@ title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---
 
-## Cái gì & Tại sao?
-Biểu thức chính quy, hay còn gọi là regex, là các mẫu được sử dụng để khớp các kết hợp ký tự trong văn bản. Lập trình viên sử dụng chúng để tìm kiếm, chỉnh sửa và thao tác chuỗi vì chúng mạnh mẽ và hiệu quả.
-
 ## Cách thực hiện:
 Lua cung cấp hỗ trợ cơ bản cho các mẫu (phiên bản regex của nó) mà bạn có thể sử dụng với các hàm so khớp chuỗi. Dưới đây là một ví dụ nhanh:
 

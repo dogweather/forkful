@@ -14,9 +14,6 @@ title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---
 
-## Wat & Waarom?
-Het berekenen van een datum in de toekomst of het verleden houdt in dat je een datum bepaalt die zoveel dagen, maanden of jaren vanaf een specifiek moment ligt. Programmeurs hebben dit vaak nodig om evenementen bij te houden, taken te plannen of vervaldatums te hanteren.
-
 ## Hoe te:
 Met de ingebouwde `Date` module van Elixir kun je eenvoudig met de tijdlijn spelen.
 

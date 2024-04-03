@@ -13,9 +13,6 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mikä & Miksi?
-Testien kirjoittaminen Swiftillä sisältää koodin luomista ja suorittamista, joka varmistaa muiden sovelluksesi koodiyksiköiden oikeellisuuden. Ohjelmoijat tekevät sen varmistaakseen luotettavuuden, havaitakseen virheet varhaisessa kehitysvaiheessa ja helpottaakseen tulevia koodin uudelleenjärjestelyjä ilman tahattomia seurauksia.
-
 ## Kuinka:
 Swift tukee testausta XCTest-kehikon kautta, joka on integroitu Xcodeen. Voit kirjoittaa yksikkötestejä tarkistamaan koodisi yksittäisiä osia, esimerkiksi funktion, joka laskee kahden luvun summan.
 

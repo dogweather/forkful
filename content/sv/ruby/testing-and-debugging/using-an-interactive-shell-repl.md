@@ -11,9 +11,6 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-Ett interaktivt skal, eller REPL (Read-Eval-Print Loop), låter dig testa kod i realtid. Programmerare använder det för att experimentera, felsöka och lära sig Ruby's nyanser utan att skapa fullständiga skript.
-
 ## Hur man:
 Ruby's REPL kallas IRB (Interactive Ruby). Hoppa in och testa Ruby direkt från din terminal:
 

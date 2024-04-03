@@ -13,12 +13,7 @@ title: Lesen von Befehlszeilenargumenten
 weight: 23
 ---
 
-## Was & Warum?
-
-Das Lesen von Befehlszeilenargumenten in Visual Basic for Applications (VBA) beinhaltet den Zugriff auf Parameter, die beim Ausführen Ihres Programms übergeben werden. Diese Technik wird häufig verwendet, um das Verhalten oder die Ausgabe eines Programms ohne die Notwendigkeit einer Benutzerinteraktion zu beeinflussen, was Automatisierungs- und Skriptaufgaben erheblich einfacher und vielseitiger macht.
-
 ## Wie:
-
 Im Gegensatz zu einfacheren Programmierumgebungen verfügt VBA nicht über eine integrierte Funktion, um Befehlszeilenargumente im herkömmlichen Sinne direkt zu lesen, da es hauptsächlich für die Einbettung in Microsoft Office-Anwendungen konzipiert ist. Mit ein wenig Kreativität können wir jedoch Windows Script Host (WSH) verwenden oder externe APIs aufrufen, um eine ähnliche Funktionalität zu erreichen. Hier ist ein praktischer Workaround mit WSH:
 
 1. **Erstellen Sie ein VBScript, um Argumente an VBA zu übergeben:**
@@ -53,7 +48,6 @@ cscript yourScript.vbs "Hello" "World"
    Dies sollte dazu führen, dass Ihr VBA-Makro mit den Argumenten "Hello" und "World" ausgeführt wird und diese in einem Nachrichtenfeld angezeigt werden.
 
 ## Vertiefung:
-
 Im historischen Kontext wurde VBA entwickelt, um die Fähigkeiten von Microsoft Office-Anwendungen zu erweitern, und nicht als eigenständige Programmierumgebung. Daher liegt die direkte Interaktion mit der Befehlszeile außerhalb seines Hauptanwendungsbereichs, was das Fehlen einer integrierten Unterstützung für das Lesen von Befehlszeilenargumenten erklärt.
 
 Die oben dargelegte Methode, obwohl wirkungsvoll, ist mehr eine Umgehungslösung als eine native Lösung, die externe Skripterstellung nutzt, um die Lücke zu überbrücken. Dieser Ansatz kann Komplexität und potenzielle Sicherheitsbedenken einführen, da er das Aktivieren von Makros und möglicherweise das Senken von Sicherheitseinstellungen zur Ausführung erfordert.

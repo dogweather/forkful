@@ -11,16 +11,10 @@ title: Generera slumptal
 weight: 12
 ---
 
-## Vad & Varför?
-
-Att generera slumpmässiga tal i programmering handlar om att skapa tal som saknar förutsägbara mönster. Programmerare gör detta av olika skäl, inklusive simuleringar, algoritmtestning, spel och säkerhetsapplikationer, där oförutsägbarhet är nyckeln till att uppnå realistiska eller säkra resultat.
-
 ## Hur man gör:
-
 Kotlin erbjuder ett enkelt sätt att generera slumpmässiga tal genom sitt standardbibliotek. Så här kan du generera olika typer av slumpvärden:
 
 ### Generera ett slumpmässigt heltal
-
 För att generera ett slumpmässigt heltal inom ett specifikt intervall:
 
 ```kotlin
@@ -33,7 +27,6 @@ fun main() {
 ```
 
 ### Generera ett slumpmässigt Double
-
 På liknande sätt, för att generera ett slumpmässigt double:
 
 ```kotlin
@@ -46,7 +39,6 @@ fun main() {
 ```
 
 ### Generera ett slumpmässigt Boolean
-
 För att generera ett slumpmässigt boolean-värde:
 
 ```kotlin
@@ -59,7 +51,6 @@ fun main() {
 ```
 
 ### Seeding för reproducerbara resultat
-
 I fall där du behöver reproducerbara sekvenser av slumpmässiga tal (till exempel vid testning), kan du ange ett utsäde för slumpmässighetsgeneratorn:
 
 ```kotlin
@@ -74,7 +65,6 @@ fun main() {
 ```
 
 ## Fördjupning
-
 Kotlin standardbibliotekets tillvägagångssätt för att generera slumpmässiga tal utnyttjar Java's `java.util.Random` under huven, vilket garanterar en blandning av användarvänlighet och prestanda. Det är dock viktigt att notera att dessa metoder genererar pseudoslumpmässiga tal, vilket betyder att talen verkar slumpmässiga men genereras med en deterministisk process.
 
 För de flesta applikationer är slumpmässigheten som tillhandahålls av Klassens `Random` i Kotlin tillräcklig. Dock, för mer säkerhetskänsliga applikationer, såsom kryptografi, där kvaliteten på slumpmässigheten är av yttersta vikt, bör man överväga att använda `java.security.SecureRandom` istället. SecureRandom är specifikt utformad för kryptografiska operationer och erbjuder en högre kvalitet på slumpmässigheten, men kan innebära en potentiell avvägning i prestanda.

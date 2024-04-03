@@ -11,12 +11,7 @@ title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---
 
-## O Que & Por Que?
-
-Enviar um pedido HTTP é como você faz seu código conversar com a web. Programadores fazem isso para buscar dados, enviar informações, interagir com APIs – basicamente, para alimentar seus aplicativos com recursos da internet.
-
 ## Como Fazer:
-
 Vamos usar o `requests`, uma biblioteca em Python que facilita a emissão de pedidos HTTP. Primeiro, você precisa ter a biblioteca instalada:
 
 ```bash
@@ -50,7 +45,6 @@ else:
 ```
 
 ## Mergulho Profundo:
-
 Antes do `requests`, a galera usava `urllib` e `urllib2` – você pode ainda encontrá-los em código antigo, mas eles eram meio complicados de usar. O `requests` simplificou a vida dos desenvolvedores com uma API "menos é mais".
 
 Quanto às alternativas, o `httpx` é o novo queridinho para pedidos HTTP assíncronos, especialmente útil para aplicativos modernos que precisam lidar com concorrência.
@@ -58,7 +52,6 @@ Quanto às alternativas, o `httpx` é o novo queridinho para pedidos HTTP assín
 Nos bastidores, quando você manda um pedido HTTP, está basicamente enviando uma mensagem formatada rigorosamente (de acordo com o protocolo HTTP) sobre TCP/IP ao servidor, que então te responde na mesma moeda.
 
 ## Veja Também:
-
 - Documentação do `requests`: [https://requests.readthedocs.io/](https://requests.readthedocs.io/)
 - `httpx`, um pacote alternativo para pedidos HTTP assíncronos: [https://www.python-httpx.org/](https://www.python-httpx.org/)
 - RFC 2616, que especifica o protocolo HTTP/1.1: [https://www.ietf.org/rfc/rfc2616.txt](https://www.ietf.org/rfc/rfc2616.txt)

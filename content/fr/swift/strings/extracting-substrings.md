@@ -11,9 +11,6 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Extraction de sous-chaînes signifie récupérer une partie spécifique d'une chaîne de caractères. Les programmeurs le font pour analyser des données, manipuler du texte ou simplifier des entrées utilisateurs.
-
 ## How to: (Comment faire :)
 ```Swift
 // Exemple de base pour extraire une sous-chaîne

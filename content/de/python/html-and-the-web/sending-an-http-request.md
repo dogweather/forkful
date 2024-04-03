@@ -9,9 +9,6 @@ title: Einen HTTP-Request senden
 weight: 44
 ---
 
-## What & Why? (Was & Warum?)
-HTTP-Anfragen sind das Mittel, um mit Webdiensten zu reden. Programmierer nutzen sie, um Daten zu holen oder zu senden, APIs zu nutzen oder Webseiten-Inhalte zu scrapen.
-
 ## How to: (Wie man's macht:)
 ```Python
 # Python 3.10 oder neuer benötigt

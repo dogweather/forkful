@@ -10,9 +10,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## Hva & Hvorfor?
-I Java sender vi HTTP-forespørsler for å snakke med websider og tjenester. Det er essensielt for å hente data, sende informasjon og integrere med et utall av APIer på nett.
-
 ## Hvordan gjøre det:
 Her er en kjapp kodesnutt for å sende en GET-forespørsel og skrive ut responsen med Java 11 `HttpClient`:
 

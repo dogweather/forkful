@@ -13,9 +13,6 @@ title: Capitalizando una cadena de texto
 weight: 2
 ---
 
-## ¿Qué y Por Qué?
-Capitalizar una cadena generalmente significa convertir el primer carácter de una cadena a mayúsculas y el resto a minúsculas. Pero a veces puede significar simplemente asegurarse de que el primer carácter está en mayúscula mientras se deja el resto de la cadena sin cambios. Honestamente, en mi opinión, es un término algo vago.
-
 ## Cómo hacerlo:
 Ruby proporciona [métodos directos para la manipulación de cadenas](https://docs.ruby-lang.org/es/3.3/String.html), incluida la capitalización:
 

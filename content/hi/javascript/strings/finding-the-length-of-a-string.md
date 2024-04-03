@@ -22,9 +22,6 @@ title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u0940 \u0932\u09
 weight: 7
 ---
 
-## What & Why? (क्या और क्यों?)
-String की length पता करना मतलब होता है कि पता करें कि string में कितने characters हैं। ये जानना ज़रूरी है क्योंकि इससे हम text processing, validation और form inputs को handle करते हैं।
-
 ## How to: (कैसे करें:)
 ```javascript
 let greeting = 'नमस्ते दुनिया';

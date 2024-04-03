@@ -11,9 +11,6 @@ title: Recherche et remplacement de texte
 weight: 10
 ---
 
-## Quoi et pourquoi ?
-Rechercher et remplacer du texte, c'est modifier automatiquement une chaîne de caractères par une autre. Les programmeurs utilisent cette technique pour corriger des erreurs, mettre à jour des informations ou refactoriser leur code rapidement.
-
 ## Comment faire :
 ```Arduino
 String texteOriginal = "Bonjour Paris!";

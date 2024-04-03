@@ -10,12 +10,7 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-## Cosa e Perché?
-
-I numeri complessi estendono la linea dei numeri reali attraverso l'aggiunta di un'unità immaginaria, `i`, dove `i^2 = -1`. Sono fondamentali in campi come l'ingegneria, la fisica e la matematica avanzata, dove modellano fenomeni che i numeri reali non possono gestire, come le correnti elettriche e l'elaborazione dei segnali.
-
 ## Come fare:
-
 Java non ha un supporto incorporato per i numeri complessi, ma possiamo creare una nostra classe o usare una libreria. Ecco un esempio rapido di come creare una semplice classe `ComplexNumber` e utilizzarla:
 
 ```java
@@ -55,7 +50,6 @@ Somma: 3.0 + 7.0i
 ```
 
 ## Approfondimento
-
 Prima dei linguaggi ad alto livello come Java, i programmatori lavoravano direttamente con le librerie matematiche in linguaggi come Fortran o C per gestire operazioni complesse. Il concetto risale al XVI secolo, accreditato a matematici come Gerolamo Cardano e Rafael Bombelli.
 
 In Java, `java.lang.Math` è la scelta principale per l'essenziale ma omette i numeri complessi, probabilmente perché non tutti i programmatori li usano. Alternative? Utilizzare le librerie. Apache Commons Math fornisce una classe `Complex` ricca di metodi per la manipolazione. Ecco perché però creare la propria può essere interessante: Leggerezza, su misura per le proprie esatte necessità e nessun sovraccarico da librerie.
@@ -63,7 +57,6 @@ In Java, `java.lang.Math` è la scelta principale per l'essenziale ma omette i n
 Un dettaglio importante: attenzione alla precisione dei numeri in virgola mobile. I computer non possono rappresentare alcuni numeri esattamente, portando a errori di arrotondamento. Eseguendo operazioni complesse ripetitive, questi errori possono accumularsi!
 
 ## Vedere Anche
-
 Per approfondimenti e operazioni più complesse, controllare:
 
 - [Apache Commons Math](https://commons.apache.org/proper/commons-math/)

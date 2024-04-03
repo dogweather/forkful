@@ -13,9 +13,6 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-Das Schreiben einer Textdatei in PHP umfasst das Erstellen oder Öffnen einer Datei und das Einfügen von Inhalten. Programmierer tun dies, um Daten wie von Nutzern generierte Inhalte oder Protokolle über den Lebenszyklus des Programms hinaus zu speichern.
-
 ## Wie:
 PHP unterstützt das Schreiben von Dateien nativ durch Funktionen wie `file_put_contents`, `fopen` zusammen mit `fwrite` und `fclose`. Hier ist die Verwendung erklärt:
 

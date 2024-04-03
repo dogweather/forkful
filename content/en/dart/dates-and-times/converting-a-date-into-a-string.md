@@ -11,16 +11,10 @@ title: Converting a date into a string
 weight: 28
 ---
 
-## What & Why?
-
-Converting a date into a string in Dart is a common task when you need to display date and time information in a human-readable format, or when you intend to serialize data for storage or transmission. This process allows for the easy representation and manipulation of date-time values in a format that is both understandable and can be customized depending on the use case.
-
 ## How to:
-
 Dart provides the `DateTime` class for handling dates and times, and the `intl` package for formatting. First, ensure you have the `intl` package by adding `intl: ^0.17.0` (or the latest version) to your `pubspec.yaml` file.
 
 ### Using Dart's Core Library
-
 ```dart
 DateTime now = DateTime.now();
 String formattedDate = "${now.year}-${now.month}-${now.day}";
@@ -30,7 +24,6 @@ print(formattedDate); // Output: 2023-4-12 (for example, this depends on the cur
 This example directly constructs a string from the `DateTime`'s properties.
 
 ### Using `intl` package
-
 First, import the package:
 
 ```dart

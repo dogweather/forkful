@@ -12,9 +12,6 @@ title: Controleren of een directory bestaat
 weight: 20
 ---
 
-## Wat & Waarom?
-Controleren of een map bestaat gaat helemaal over het verifiëren van de aanwezigheid van een map op je opslag voordat je er iets mee doet. Programmeurs doen dit om fouten te voorkomen, zoals proberen een map te maken die er al is, of toegang proberen te krijgen tot een die er niet is.
-
 ## Hoe te:
 Werken met mappen op Arduino omvat vaak het gebruik van de SD-bibliotheek voor opslag op een SD-kaart. Zorg eerst dat je Arduino correct is aangesloten op een SD-kaartmodule. Vervolgens gebruik je de `SD.exists()` functie om te controleren op het bestaan van een map. Hier is een snel voorbeeld:
 ```Arduino

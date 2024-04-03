@@ -12,12 +12,7 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-## Cosa e Perché?
-
-I numeri complessi sono costituiti da una parte reale e una immaginaria, rappresentati come `a + bi` dove `i` è la radice quadrata di `-1`. I programmatori lavorano con numeri complessi in vari campi come l'ingegneria elettrica, il calcolo quantistico e la dinamica dei fluidi, sfruttando le loro proprietà uniche per simulazioni, elaborazione dei segnali e risoluzione di specifici tipi di equazioni matematiche.
-
 ## Come fare:
-
 In C, i numeri complessi sono supportati dalla Libreria Standard, specificamente `<complex.h>`. Per utilizzarli, dichiara variabili con il tipo `double complex` (o `float complex` per la precisione singola). Ecco come eseguire operazioni di base:
 
 ```c
@@ -54,5 +49,4 @@ int main() {
 Nota che `I` è una costante che rappresenta l'unità immaginaria in `<complex.h>`. Funzioni come `creal()` e `cimag()` estraggono rispettivamente le parti reale e immaginaria, mentre `conj()` calcola il coniugato complesso. Per la magnitudine e la fase (argomento) dei numeri complessi, si usano `cabs()` e `carg()`.
 
 ## Approfondimento
-
 Il supporto per i numeri complessi in C è relativamente recente, essendo stato standardizzato nel C99. Prima di ciò, l'aritmetica dei numeri complessi in C era ingombrante, spesso richiedendo strutture dati e funzioni personalizzate. L'inclusione di `<complex.h>` e i tipi di dati complessi hanno fornito un significativo impulso alle capacità del linguaggio per le applicazioni scientifiche e ingegneristiche. Tuttavia, vale la pena notare che alcuni linguaggi, come Python, offrono un supporto più intuitivo per i numeri complessi tramite tipi di dati integrati e un set più ricco di funzioni di libreria. Nonostante ciò, le prestazioni e il controllo offerti da C rendono una scelta preferenziale per compiti di calcolo ad alte prestazioni, anche se ciò significa avere a che fare con una sintassi leggermente più verbosa per l'aritmetica complessa.

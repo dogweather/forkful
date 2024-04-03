@@ -9,9 +9,6 @@ title: Concatenazione di stringhe
 weight: 3
 ---
 
-## What & Why? (Cosa e Perché?)
-Concatenare le stringhe significa unirle in una sola. I programmatori lo fanno per creare messaggi, interfacciarsi con l'utente, e manipolare dati testuali.
-
 ## How to: (Come fare:)
 ```Elm
 import Html exposing (text)

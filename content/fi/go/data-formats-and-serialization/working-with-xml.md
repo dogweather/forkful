@@ -12,11 +12,8 @@ title: "Ty\xF6skentely XML:n kanssa"
 weight: 40
 ---
 
-## Mikä ja miksi?
-
-XML:n käsittely Go:ssa kattaa XML-dokumenttien jäsennyksen (lukemisen) ja luonnin (kirjoittaminen) – vakiomuodon rakenteelliselle tietojenvaihdolle. Ohjelmoijat tekevät niin tietojen tallennus-, määritysasetusten tai järjestelmien välisen tietojenvaihdon vuoksi, erityisesti ympäristöissä, joissa XML on suosittu tai vanhahtava tietomuoto.
-
 ## Miten:
+
 
 ### XML:n jäsentäminen Go:ssa
 XML:n jäsentämiseksi Go:ssa käytetään `encoding/xml` -pakettia. Tämä paketti tarjoaa tarvittavat työkalut XML:n jäsentämiseksi (unmarshalling) Go:n rakenteisiin. Esimerkiksi, harkitse seuraavaa XML-tietoa, joka kuvaa kirjaa:
@@ -114,7 +111,6 @@ Tuloste:
 ```
 
 ## Syväsukellus
-
 XML:n verbositeetti ja monimutkaisuus ovat johtaneet siihen, että JSON ja muut muodot ovat tulleet suosituimmiksi moniin sovelluksiin. Kuitenkin XML:n kyky esittää monimutkaisia hierarkkisia tietoja ja sen laajamittainen käyttö vanhoissa järjestelmissä ja tietyillä alueilla (esim. SOAP-palvelut) varmistavat sen relevanssin.
 
 Go:ssa `encoding/xml` -paketti tarjoaa tehokkaita mekanismeja XML:n käsittelyyn, mutta on syytä huomata sen rajoitukset. Esimerkiksi XML-nimiavaruuden käsittely voi olla hankalaa ja vaatii ehkä yksityiskohtaisempaa ymmärrystä XML-spesifikaatiosta kuin yksinkertaisemmissa käyttötapauksissa. Lisäksi, vaikka Go:n staattinen tyypitys ja `encoding/xml` -paketin marshalointi ja unmarshalointi kyvyt ovat yleisesti tehokkaita, kehittäjät voivat kohdata haasteita syvästi sisäkkäisten rakenteiden tai XML-dokumenttien kanssa, jotka eivät siististi karttaudu Go:n tyyppijärjestelmään.

@@ -9,9 +9,6 @@ title: Merkkijonojen osien poimiminen
 weight: 6
 ---
 
-## What & Why?
-Substringien irrottaminen tarkoittaa merkkijonon osien poimimista. Ohjelmoijat tekevät tätä tietojen jäsentelyyn, tietokantojen käsittelyyn ja tekstitiedon kohdentamiseen.
-
 ## How to:
 Elixirissä substringien käsittely voi tapahtua useilla tavoilla. Tässä muutama esimerkki:
 
@@ -38,7 +35,7 @@ Elixirissä substringien käsittely voi tapahtua useilla tavoilla. Tässä muuta
    [match | _] = Regex.run(Regex, original)
    IO.puts match
    ```
-   Tulostuu: `Elixirin maailmaan` 
+   Tulostuu: `Elixirin maailmaan`
 
 ## Deep Dive
 Substring-toiminnot ovat olleet ohjelmointikielissä jo kauan. Elixirissä, joka pohjautuu Erlangiin ja hyödyntää BEAM-virtuaalikonetta, tekstinkäsittely on tehty tehokkaaksi. String-moduuli tarjoaa laajan valikoiman funktioita tekstinkäsittelyyn, jotka perustuvat UTF-8-merkkien käsittelyyn. Toisin kuin jotkin kielet, joissa merkkijono on vain merkkien taulukko, Elixirissä merkkijono on binaari, mikä tekee käsittelystä tehokasta.

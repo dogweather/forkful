@@ -11,9 +11,6 @@ title: Travailler avec XML
 weight: 40
 ---
 
-## Quoi & Pourquoi ?
-Travailler avec XML implique l'analyse, la création et la manipulation de documents XML - un langage de balisage pour le stockage et le transfert de données. Les programmeurs le font parce que de nombreux systèmes échangent encore des données au format XML, et c'est nécessaire pour le support des systèmes existants et l'intégration avec les technologies existantes.
-
 ## Comment faire :
 En Kotlin, vous pouvez utiliser le `javax.xml.parsers` intégré pour l'analyse :
 

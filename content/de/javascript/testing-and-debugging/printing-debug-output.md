@@ -11,9 +11,6 @@ title: Debug-Ausgaben drucken
 weight: 33
 ---
 
-## Was & Warum?
-Das Drucken von Debug-Informationen hilft beim Aufspüren von Fehlern im Code, indem es erlaubt, Werte und den Zustand des Programms zur Laufzeit zu überwachen. Programmierer*innen machen das, um Bugs schneller zu finden und zu beheben.
-
 ## So geht's:
 Das Drucken von Debug-Infos kann einfach mit `console.log()` gemacht werden. Hier ein Beispiel:
 

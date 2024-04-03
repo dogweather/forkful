@@ -15,9 +15,6 @@ title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---
 
-## What & Why? (什么 & 为什么？)
-发送 HTTP 请求就是让你的程序向网站或Web服务请求数据或动作。程序员这么做为了交换数据、获取更新或操纵远程资源。
-
 ## How to: (如何操作：)
 ```C++
 #include <iostream>

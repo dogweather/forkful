@@ -10,9 +10,6 @@ title: Avrundning av tal
 weight: 13
 ---
 
-## Vad & Varför?
-Att avrunda tal innebär att justera dem till en viss grad av noggrannhet. Programmerare gör det för att förenkla tal för läsbarhet, för att uppfylla vissa specifikationer, eller för att säkerställa att beräkningarna håller sig inom vissa gränser, som att undvika noggrannhetsfel i flyttalsaritmetik.
-
 ## Hur man gör:
 Java erbjuder flera sätt att avrunda tal. Här är en snabb demo med `Math.round()`, `BigDecimal`, och `DecimalFormat`.
 

@@ -10,9 +10,6 @@ title: Vergleich von zwei Daten
 weight: 27
 ---
 
-## Was & Warum?
-Daten zu vergleichen bedeutet, zwei Zeitpunkte miteinander in Relation zu setzen, um herauszufinden, welches Datum früher oder später ist. Programmierer nutzen das, um Zeitabläufe zu steuern, Gültigkeiten zu prüfen oder Ereignisse zu zeitlich zu ordnen.
-
 ## Wie geht das?
 ```Arduino
 #include <TimeLib.h>

@@ -11,12 +11,7 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co i dlaczego?
-
-Obsługa błędów polega na radzeniu sobie z sytuacjami, kiedy coś pójdzie nie tak. Programiści robią to, aby radzić sobie z niespodziewanym, zapewniając, że ich programy w Rust są solidne i nie zawieszają się przy pierwszym problemie.
-
 ## Jak to zrobić:
-
 Rust radzi sobie z błędami na dwa główne sposoby: odzyskiwalne i nieodzyskiwalne błędy. Przyjrzyjmy się obu.
 
 Odzyskiwalne błędy używają `Result<T, E>`:
@@ -55,7 +50,6 @@ fn main() {
 Uruchom to, a zobaczysz komunikat o panice. Twój program zatrzyma się w miejscu.
 
 ## Głębsze spojrzenie
-
 Historycznie, obsługa błędów w programowaniu była bałaganem. Rust robi to dobrze, jasno rozróżniając odzyskiwalne i nieodzyskiwalne błędy.
 
 Enum `Result` jest dla odzyskiwalnych błędów. Jest to jasne – obsługujesz wariant `Ok` lub `Err`. Masz też metody takie jak `unwrap()` czy `expect()`, ale są to szybkie i brudne skróty, które mogą prowadzić do `panic!`.
@@ -67,7 +61,6 @@ Obsługa błędów poprzez zwracanie `Result` jest preferowaną metodą, gdy spo
 Alternatywy? Jasne, możesz użyć innych crate'ów do obsługi błędów dla większych funkcji lub ergonomicznego użytku. Na przykład `anyhow` dla prostych błędów, lub `thiserror` dla błędów w kodzie bibliotek.
 
 ## Zobacz również
-
 Zainteresowany głębszym zanurzeniem? Oto, gdzie możesz się udać:
 
 - [Rust Book on Error Handling](https://doc.rust-lang.org/book/ch09-00-error-handling.html) - Świetne miejsce do zrozumienia filozofii obsługi błędów w Rust.

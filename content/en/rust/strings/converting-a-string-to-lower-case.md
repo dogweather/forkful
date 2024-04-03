@@ -11,9 +11,6 @@ title: Converting a string to lower case
 weight: 4
 ---
 
-## What & Why?
-Converting a string to lowercase means making every letter in the string a small letter. It's handy for case-insensitive comparisons or preparing text for uniform processing.
-
 ## How to:
 ```Rust
 fn main() {

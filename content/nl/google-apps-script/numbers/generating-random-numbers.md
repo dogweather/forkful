@@ -13,16 +13,10 @@ title: Willekeurige getallen genereren
 weight: 12
 ---
 
-## Wat & Waarom?
-
-Het genereren van willekeurige getallen is een fundamentele taak in programmeren die wordt gebruikt voor een myriade aan toepassingen, zoals simulaties, spellen en beveiligingssystemen. Programmeurs gebruiken deze techniek in Google Apps Script om variabiliteit te introduceren, scenario's te testen en onvoorspelbaarheid toe te voegen aan hun applicaties binnen het Google-ecosysteem, inclusief Sheets, Docs en Forms.
-
 ## Hoe te:
-
 In Google Apps Script kun je willekeurige getallen genereren met de functie `Math.random()`, vergelijkbaar met JavaScript. Deze functie retourneert een zwevendekommagetel, pseudo-willekeurig getal in het bereik van 0 (inclusief) tot 1 (exclusief). Om deze getallen aan te passen voor verschillende gebruikssituaties, zoals het genereren van gehele getallen binnen een specifiek bereik, moet je mogelijk aanvullende berekeningen uitvoeren.
 
 ### Een Basis Willekeurig Getal Genereren
-
 Om een eenvoudig willekeurig getal te genereren en dit in de console te loggen:
 
 ```javascript
@@ -34,7 +28,6 @@ function generateRandomNumber() {
 *Voorbeelduitvoer:* `0.1234567890123456`
 
 ### Een Geheel Getal binnen een Specifiek Bereik Genereren
-
 Om een willekeurig geheel getal tussen twee waarden (`min` en `max`) te genereren, inclusief:
 
 ```javascript
@@ -54,7 +47,6 @@ getRandomInt(1, 10);
 Onthoud, de `Math.ceil()` functie wordt gebruikt om de minimale waarde naar boven af te ronden, en `Math.floor()` wordt gebruikt om de maximale waarde naar beneden af te ronden, zodat het willekeurige getal binnen het gespecificeerde bereik valt.
 
 ## Diepgaand
-
 Het mechanisme voor het genereren van willekeurige getallen in Google Apps Script, en inderdaad in de meeste programmeertalen, maakt gebruik van een pseudo-willekeurige getallengenerator (PRNG). Deze techniek is deterministisch en vertrouwt op een initiële waarde, bekend als de zaaier, om een reeks van getallen te produceren die willekeurig lijken. Hoewel voldoende voor veel toepassingen, is het belangrijk om te noteren dat pseudo-willekeurige getallen mogelijk niet geschikt zijn waar hoge beveiliging of echte willekeur vereist is, zoals in cryptografische toepassingen.
 
 Echte willekeur kan worden bereikt door hardware willekeurige getallengeneratoren of diensten die willekeur genereren uit natuurlijke fenomenen. Echter, voor de meeste dagelijkse scriptingbehoeften in Google Apps Script, is `Math.random()` voldoende.

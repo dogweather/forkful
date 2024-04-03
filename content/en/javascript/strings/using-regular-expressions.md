@@ -10,14 +10,10 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-
-Regular expressions (regex) in JavaScript are patterns used to match character combinations in strings. Programmers use them for searching, extracting, and manipulating text, allowing for powerful string processing operations with concise code.
-
 ## How to:
 
-### Basic Matching
 
+### Basic Matching
 To start, you can create a simple regex pattern and use it to find matches in a string. Here, we'll find the word "code":
 
 ```javascript
@@ -28,7 +24,6 @@ console.log(result); // true
 ```
 
 ### Using `String.prototype.match()`
-
 To retrieve an array of matches:
 
 ```javascript
@@ -38,7 +33,6 @@ console.log(matches.index); // 10
 ```
 
 ### Global Search
-
 To find all the matches, use the `g` flag:
 
 ```javascript
@@ -47,7 +41,6 @@ console.log(globalMatches); // ["o", "o", "o"]
 ```
 
 ### Case-insensitive Matching
-
 The `i` flag ignores case:
 
 ```javascript
@@ -56,7 +49,6 @@ console.log(caseInsensitiveMatch[0]); // "JavaScript"
 ```
 
 ### Replacing Text
-
 Use `String.prototype.replace()` to replace parts of the string:
 
 ```javascript
@@ -65,7 +57,6 @@ console.log(newStr); // "JavaScript is awesome"
 ```
 
 ### Using Groups
-
 Groups can capture parts of the pattern:
 
 ```javascript
@@ -75,7 +66,6 @@ console.log(replaceWithGroups); // "fun is JavaScript"
 ```
 
 ### Third-Party Libraries
-
 Although JavaScript's built-in regex capabilities are powerful, some tasks might be simplified with libraries like `XRegExp`. It offers additional syntax and flags, making complex patterns more readable:
 
 ```javascript

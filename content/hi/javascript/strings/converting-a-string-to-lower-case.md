@@ -28,9 +28,6 @@ title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u094B \u091B\u09
 weight: 4
 ---
 
-## What & Why? (क्या और क्यों?)
-JavaScript में किसी string को lower case में बदलना मतलब उस string के सभी अक्षरों को छोटे (small letters) में परिवर्तित करना है। ऐसा तब किया जाता है जब हमें case sensitivity से बचना होता है, जैसे यूजर इनपुट को सामान्यीकृत करना या डेटा की comparison और sorting करते समय।
-
 ## How to: (कैसे करें:)
 ```Javascript
 // स्ट्रिंग को lower case में बदलने के लिए JavaScript में toLowerCase() मेथड का प्रयोग करते हैं।

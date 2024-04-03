@@ -10,9 +10,6 @@ title: Lecture d'un fichier texte
 weight: 22
 ---
 
-## Quoi & Pourquoi ?
-Lire un fichier texte, c'est extraire son contenu pour l'utiliser. Les programmeurs le font pour manipuler des données, configurer des systèmes, ou automatiser des tâches.
-
 ## Comment faire :
 ```Fish Shell
 # Pour afficher le contenu d'un fichier texte
@@ -27,6 +24,7 @@ end < mon_fichier.txt
 La première ligne de texte
 La deuxième ligne de texte
 ```
+
 ## Exploration en profondeur
 Historiquement, lire des fichiers est fondamental en programmation. En Unix, tout est fichier, d'où l'importance de maitriser cette opération. Sous Fish, `cat` est simple pour afficher des fichiers, mais des commandes comme `read` sont utiles pour un traitement plus fin, lire ligne par ligne par exemple. Comparé à d'autres shells, Fish se distingue par des syntaxes plus lisibles. Il existe aussi des utilitaires comme `awk` ou `sed` pour des manipulations avancées ; toutefois, Fish seul peut suffire pour des opérations de base.
 

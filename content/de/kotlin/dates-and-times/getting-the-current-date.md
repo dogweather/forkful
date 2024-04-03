@@ -13,10 +13,8 @@ title: Den aktuellen Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-In der Programmierung ist das Abrufen des aktuellen Datums eine grundlegende Aufgabe, die es Entwicklern ermöglicht, auf das aktuelle Datum zuzugreifen, es anzuzeigen oder damit zu arbeiten in ihren Anwendungen. Diese Fähigkeit ist entscheidend für alles, von der Protokollierung und Zeitstempelung von Ereignissen bis hin zu Berechnungen basierend auf Daten.
-
 ## Wie geht das:
+
 
 ### Verwendung von Standard Kotlin
 Kotlin hat keine eigene Datum- und Zeit-API, sondern verlässt sich auf die Java Standardbibliothek für diese Funktionalität. So können Sie das aktuelle Datum abrufen:

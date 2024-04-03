@@ -16,12 +16,7 @@ title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---
 
-## Điều gì và Tại sao?
-
-Đọc các đối số dòng lệnh trong Java là việc lấy input cung cấp bởi người dùng khi họ khởi động chương trình của bạn từ console. Lập trình viên làm điều này để khiến ứng dụng của họ phản hồi với nhu cầu của người dùng, linh hoạt xử lý các nhiệm vụ mà không cần giá trị cứng.
-
 ## Làm thế nào:
-
 Java thu thập các đối số dòng lệnh mà bạn phát ra với phương thức `main`. Hãy nhìn vào ví dụ ngắn gọn này:
 
 ```java
@@ -46,7 +41,6 @@ Arguments
 ```
 
 ## Đào sâu
-
 Xuất phát từ C, các đối số dòng lệnh đã là một phần không thể thiếu kể từ thời đại đen tối của lập trình—nghĩ về thẻ đục và chia sẻ thời gian. Java thừa kế công cụ này với lý do chính đáng. Nó cơ bản, linh hoạt và phù hợp với nhiều tình huống.
 
 Có nhiều lựa chọn thay thế? Chắc chắn, có rất nhiều. Các thư viện như JCommander hoặc Apache Commons CLI tăng cường khả năng phân tích của bạn. Họ xử lý các kịch bản phức tạp một cách tinh tế.
@@ -54,7 +48,6 @@ Có nhiều lựa chọn thay thế? Chắc chắn, có rất nhiều. Các thư
 Dưới cái nắp, phương thức `main` của Java thu một mảng `String`—`args`. Trong khi máy ảo chạy, khi bạn nhấn `java ClassName`, những gì theo sau là các input của bạn, được lưu trữ gọn gàng trong `args`.
 
 ## Xem thêm:
-
 - Để ôn lại các kiến thức cơ bản: [Hướng dẫn Java chính thức của Oracle](https://docs.oracle.com/javase/tutorial/)
 - Đào sâu vào JCommander cho việc phân tích phức tạp: [JCommander GitHub](https://github.com/cbeust/jcommander)
 - Khám phá Apache Commons CLI: [Apache Commons CLI](https://commons.apache.org/proper/commons-cli/)

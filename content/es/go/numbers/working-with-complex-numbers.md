@@ -14,12 +14,7 @@ title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---
 
-## ¿Qué y por qué?
-
-Trabajar con números complejos en programación implica manipular números que tienen tanto una parte real como una imaginaria, típicamente expresados como `a + bi`. Los programadores abordan los números complejos en diversos dominios, como ingeniería, física y análisis de datos, para resolver problemas que involucran raíces cuadradas de números negativos, análisis de formas de onda y más.
-
 ## Cómo:
-
 En Go, los números complejos se manejan utilizando las funciones integradas `complex`, `real` e `imag`, junto con los tipos `complex64` y `complex128` (que representan números complejos de 64 bits y 128 bits respectivamente). Aquí tienes una guía rápida:
 
 ```go
@@ -56,7 +51,6 @@ func main() {
 Este ejemplo cubre los conceptos básicos, pero hay mucho más que puedes hacer con los números complejos, incluida la utilización del paquete `math/cmplx` para operaciones más avanzadas como encontrar la magnitud, la fase, y mucho más.
 
 ## Estudio profundo
-
 El concepto de números complejos se remonta al siglo XVI, pero solo obtuvo un amplio reconocimiento y formalización rigurosa en el siglo XIX. En la programación de computadoras, los números complejos han sido un pilar para el cálculo aritmético complejo en cálculos científicos y de ingeniería desde los primeros días. El enfoque de Go hacia los números complejos, al convertirlos en ciudadanos de primera clase con soporte integrado y un amplio soporte en la biblioteca estándar a través del paquete `math/cmplx`, se destaca entre los lenguajes de programación. Esta decisión de diseño refleja el énfasis de Go en la simplicidad y el rendimiento.
 
 No obstante, vale la pena señalar que trabajar con números complejos en Go, aunque poderoso, puede no ser siempre el enfoque más adecuado para todas las aplicaciones, particularmente aquellas que requieren matemáticas simbólicas o aritmética de alta precisión. Los lenguajes y entornos especializados en la computación científica, como Python con bibliotecas como NumPy y SciPy, o software como MATLAB, podrían ofrecer más flexibilidad y una gama más amplia de funcionalidades para aplicaciones específicas.

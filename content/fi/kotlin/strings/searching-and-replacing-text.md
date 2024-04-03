@@ -11,9 +11,6 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## What & Why? (Mitä & Miksi?)
-Tekstin etsiminen ja korvaaminen on yksinkertaisesti tekstijonon vaihtamista toiseen. Koodareille tämä on tärkeää, koska koodin muokkaaminen, virheiden korjaaminen ja datan muokkaus vaativat usein nopeita tekstioperaatioita.
-
 ## How to: (Kuinka tehdä:)
 Kotlinissa tekstiä voi etsiä ja korvata `replace`-funktiolla. Alla on esimerkkejä käytännössä:
 

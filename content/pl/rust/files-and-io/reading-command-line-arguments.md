@@ -11,9 +11,6 @@ title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---
 
-## Co i dlaczego?
-Czytanie argumentów linii poleceń to pobieranie danych wprowadzonych przez użytkownika podczas wywoływania programu. Programiści używają tego, by umożliwić użytkownikom dostosowywanie działania aplikacji na potrzeby chwili.
-
 ## Jak to zrobić:
 W Rust używamy crate`a `std::env` do obsługi argumentów:
 

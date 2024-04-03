@@ -11,9 +11,6 @@ title: Descobrindo o comprimento de uma string
 weight: 7
 ---
 
-## O Que & Porquê?
-Descobrir o comprimento de uma string é saber quantos caracteres ela tem. Programadores fazem isso para validar dados, limitar input, ou otimizar espaços de armazenamento.
-
 ## Como Fazer:
 ```Fish Shell
 # Para obter o comprimento de uma string:

@@ -13,9 +13,6 @@ title: "F\xE5 det aktuella datumet"
 weight: 29
 ---
 
-## Vad & Varför?
-Att få det aktuella datumet i Swift innebär att använda `Date`-klassen för att få tillgång till datum och tid när appen körs. Programmerare behöver hämta det aktuella datumet av många olika skäl, från att tidstämpla händelser, utföra datumberäkningar, till att visa datum och tider i ett användargränssnitt.
-
 ## Hur man gör:
 Swifts `Foundation`-ramverk tillhandahåller `Date`-klassen, vilket gör det enkelt att få det aktuella datumet och tiden. Här är ett grundläggande exempel på hur du får det aktuella datumet:
 

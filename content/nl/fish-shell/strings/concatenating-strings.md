@@ -11,9 +11,6 @@ title: Samenvoegen van strings
 weight: 3
 ---
 
-## Wat & Waarom?
-Het aaneenschakelen van strings betekent dat ze achter elkaar worden geplakt. Programmeurs doen dit om tekst te combineren, zoals het bouwen van een volledige zin uit woorden of het creëren van bestandspaden.
-
 ## Hoe:
 In Fish plakt u strings aan elkaar met spaties ertussen of gebruikt u `string join`.
 

@@ -11,9 +11,6 @@ title: Lese kommandolinjeargumenter
 weight: 23
 ---
 
-## Hva & Hvorfor?
-Kommandolinjeargumenter lar brukere påvirke et programs oppførsel ved oppstart. Vi bruker det for å tilpasse kjøringen av koden uten å endre selve programmet.
-
 ## Slik gjør du:
 Elm er primært en språk for webapplikasjoner og det kjører i nettleseren, ikke direkte i terminalen. Men du kan bruke JavaScript interoperability, kjent som ports, for å bygge en Elm-applikasjon som kommuniserer med Node.js for å håndtere kommandolinjeargumenter:
 

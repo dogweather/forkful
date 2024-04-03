@@ -11,9 +11,6 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-## Was & Warum?
-Das Erstellen einer temporären Datei bedeutet, eine Datei zu generieren, die für die kurzfristige Verwendung vorgesehen ist. Programmierer nutzen sie für alles Mögliche, von der Datensicherung während eines unerwarteten Programmausfalls bis hin zu sicheren Tests von Funktionen ohne Einfluss auf Produktivdaten.
-
 ## How to:
 Elm ist eigentlich auf funktionale Frontend-Programmierung spezialisiert, daher gibt es keine eingebettete Funktionalität zum Arbeiten mit dem Dateisystem wie das Erstellen von temporären Dateien. Für solche Aufgaben muss auf JavaScript über Ports interagiert werden:
 

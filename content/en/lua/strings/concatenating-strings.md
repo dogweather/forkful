@@ -11,9 +11,6 @@ title: Concatenating strings
 weight: 3
 ---
 
-## What & Why?
-Concatenating strings means sticking them together end-to-end to make a new one. Programmers do it to build up text dynamically, like creating messages or generating code.
-
 ## How to:
 In Lua, you concatenate strings with the `..` operator. Let's see it in action:
 

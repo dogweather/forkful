@@ -13,9 +13,6 @@ title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 weight: 7
 ---
 
-## What & Why? (무엇과 왜?)
-문자열 길이 찾기는 글자 수를 세는 것입니다. 데이터 유효성 검사, 입력 처리, 루프 제어에서 필수적으로 사용됩니다.
-
 ## How to: (어떻게 하나요?)
 ```C#
 string exampleText = "안녕하세요!";

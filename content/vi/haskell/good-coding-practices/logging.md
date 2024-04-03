@@ -18,9 +18,6 @@ title: Ghi log
 weight: 17
 ---
 
-## Cái gì & Tại sao?
-Logging trong lập trình chính là để lại một dấu vết gồm những sự kiện hoặc thông điệp được ghi lại, có thể được sử dụng để theo dõi ứng dụng của bạn đang làm gì vào bất kỳ thời điểm nào. Lập trình viên làm điều này để gỡ lỗi, theo dõi hiệu suất hệ thống và kiểm toán hành vi cho mục đích bảo mật và tuân thủ.
-
 ## Cách thực hiện:
 Trong Haskell, logging có thể được thực hiện sử dụng các thư viện như `monad-logger` hoặc `hslogger`. Dưới đây là một ví dụ nhanh sử dụng `monad-logger`:
 

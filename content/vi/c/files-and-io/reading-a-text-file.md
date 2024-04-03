@@ -16,12 +16,7 @@ title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---
 
-## Cái gì & Tại sao?
-
-Đọc một tệp văn bản trong C liên quan đến việc mở một tệp trên hệ thống của bạn để trích xuất thông tin và thao tác hoặc hiển thị nó theo nhu cầu. Các lập trình viên thường làm điều này để xử lý các tệp cấu hình, đọc đầu vào để xử lý, hoặc phân tích dữ liệu được lưu trữ dưới dạng tệp, cho phép linh hoạt và tăng chức năng trong các ứng dụng.
-
 ## Làm thế nào:
-
 Để bắt đầu đọc một tệp văn bản trong C, bạn chủ yếu làm việc với các hàm `fopen()`, `fgets()`, và `fclose()` từ thư viện I/O tiêu chuẩn. Đây là một ví dụ đơn giản mà đọc một tệp gọi là `example.txt` và in nội dung của nó ra đầu ra chuẩn:
 
 ```c
@@ -64,7 +59,6 @@ Welcome to C programming.
 ```
 
 ## Sâu hơn nữa
-
 Đọc tệp trong C có một lịch sử phong phú, bắt nguồn từ những ngày đầu của Unix khi sự đơn giản và tinh tế của các luồng văn bản là cơ bản. Điều này đã dẫn đến việc áp dụng tệp văn bản cho nhiều mục đích, bao gồm cấu hình, ghi nhật ký, và giao tiếp giữa các tiến trình. Sự đơn giản của thư viện I/O tệp của ngôn ngữ C, được ví dụ qua các hàm như `fopen()`, `fgets()`, và `fclose()`, nhấn mạnh triết lý thiết kế của nó về việc cung cấp những công cụ cơ bản mà lập trình viên có thể sử dụng để xây dựng các hệ thống phức tạp.
 
 Từ góc độ lịch sử, mặc dù những hàm này đã phục vụ tốt cho hàng không số ứng dụng, thực hành lập trình hiện đại đã nêu bật một số hạn chế, đặc biệt là liên quan đến xử lý lỗi, mã hóa tệp (ví dụ, hỗ trợ Unicode), và truy cập song song trong các ứng dụng đa luồng. Các cách tiếp cận khác trong các ngôn ngữ khác, hoặc ngay cả trong C sử dụng các thư viện như `libuv` hoặc `Boost.Asio` cho C++, cung cấp các giải pháp mạnh mẽ hơn bằng cách giải quyết trực tiếp những lo lắng này với các khả năng quản lý I/O tinh vi hơn, bao gồm các hoạt động I/O bất đồng bộ có thể cải thiện đáng kể hiệu suất của các ứng dụng xử lý nhiều hoạt động đọc tệp hoặc nhiệm vụ bị ràng buộc bởi I/O.

@@ -11,12 +11,7 @@ title: Generera slumptal
 weight: 12
 ---
 
-## Vad & Varför?
-
-Att generera slumpmässiga tal i programmering handlar om att skapa icke-deterministiska eller oförutsägbara numeriska värden. Programmerare använder slumpmässiga tal av olika anledningar, såsom att simulera oförutsägbarhet i spel, välja slumpmässiga prover från datamängder eller för kryptografiska ändamål.
-
 ## Hur man gör:
-
 Swift erbjuder ett enkelt sätt att generera slumpmässiga tal genom sitt standardbibliotek. Så här gör du det för olika numeriska typer:
 
 ```Swift
@@ -36,7 +31,6 @@ print(randomBool)
 Exempelresultat kan variera eftersom, ja, vi har att göra med slumpmässighet efter allt. Att köra koden flera gånger kommer att ge olika nummer och booleska värden.
 
 ## Fördjupning
-
 Swifts tillvägagångssätt för att generera slumpmässiga tal bygger på en robust och effektiv pseudoslumptalsgenerator (PRNG). Före Swift 4.2 förlitade sig utvecklare på externa bibliotek eller den underliggande plattformens förmågor, vilket kunde leda till inkonsekvenser över olika plattformar och miljöer. Med introduktionen av inbyggda API:er i Swift 4.2 blev generering av slumpmässiga tal både enklare och mer konsekvent, oavsett underliggande plattform.
 
 Det är dock kritiskt att förstå att den standard slumpmässig talgenerator i Swift inte är lämplig för kryptografiska ändamål. För kryptografi bör utvecklare använda `Security`-ramverket på Apple-plattformar, som ger tillgång till kryptografiskt säkra slumpmässiga bytes. I min senaste uppdatering inkluderar Swift inte en plattformsoberoende kryptografisk slumpmässig talgenerator i sitt standardbibliotek, vilket tvingar utvecklare att söka efter tredjepartsbibliotek för sådana behov på icke-Apple-plattformar.

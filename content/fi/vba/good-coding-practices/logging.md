@@ -14,12 +14,7 @@ title: Lokiointi
 weight: 17
 ---
 
-## Mikä ja miksi?
-
-Logging Visual Basic for Applications (VBA) -ympäristössä tarkoittaa ohjelman suorituskäyttäytymisen tallentamista tiedostoon, konsoliin tai tietokantaan. Ohjelmoijat käyttävät lokia sovellustensa seurantaan, ongelmien diagnosointiin ja suorituskyvyn ymmärtämiseen.
-
 ## Kuinka:
-
 VBAssa ei ole sisäänrakennettua lokituskehystä, kuten joissakin muissa kielissä. Kuitenkin yksinkertaisen lokitusmekanismin toteuttaminen on suoraviivaista. Alla on esimerkki siitä, kuinka luoda perustason tiedostoloki.
 
 1. **Kirjoittaminen lokitiedostoon**: Tämä esimerkkifunktio, `LogMessage`, kirjoittaa viestejä tekstitiedostoon aikaleiman kera.
@@ -78,5 +73,4 @@ End Sub
 ```
 
 ## Syväsukellus
-
 Lokitus VBAssa, sen puuttuvan natiivin lokituskehyksen vuoksi, toteutetaan yleensä perus tiedosto-operaatioiden kautta tai hyödyntämällä ulkoisia COM-objekteja edistyneempiin tarpeisiin, kuten lokituksen tekemiseen tietokantaan tai vuorovaikutuksessa Windowsin tapahtumalokin kanssa. Historiallisesti lokitus VBAssa on ollut keino kiertää sen yksinkertaistettujen virheenkäsittely- ja debuggaustyökalujen asettamia rajoituksia. Vaikkakin tehokas, suoran tiedoston manipuloinnin käyttö lokitukseen on alkeellista ja voi olla tehotonta suurten datamäärien käsittelyssä tai suuren samanaikaisuuden alaisena. Tarkempaan lokituskykyyn ohjelmoijat kääntyvät usein ulkoisten kirjastojen puoleen tai integroituvat erityisesti lokitukseen suunniteltuihin järjestelmiin, kuten ELK-pino (Elasticsearch, Logstash, Kibana) tai Splunk, web-palvelukutsujen tai välitietokantojen kautta. Vaikka VBA ei tarjoakaan uudempien ohjelmointikielten moderneja mukavuuksia, sen kyvykkyyksien ja rajoitusten ymmärtäminen mahdollistaa ohjelmoijien tehokkaan hyödyntämisen lokitusta apuvälineenä sovellusten seurannassa ja diagnostiikassa.

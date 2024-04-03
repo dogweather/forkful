@@ -14,9 +14,6 @@ title: Pobieranie aktualnej daty
 weight: 29
 ---
 
-## Co i dlaczego?
-Pobieranie aktualnej daty w projektach Arduino polega na uzyskiwaniu informacji w czasie rzeczywistym, co może być kluczowe do logowania, stemplowania czasowego czy planowania zadań. Programiści często potrzebują tej funkcjonalności, by zwiększyć użyteczność, zapewnić aktualność danych i ułatwić operacje zależne od czasu w ich projektach IoT i wbudowanych.
-
 ## Jak to zrobić:
 Arduino samo w sobie nie ma wbudowanej metody bezpośredniego pobierania aktualnej daty, ponieważ brakuje mu zegara czasu rzeczywistego (RTC). Można to jednak osiągnąć, używając zewnętrznych modułów RTC, takich jak DS3231, oraz bibliotek, np. `RTClib`, opracowanej przez Adafruit, która ułatwia współpracę z tymi modułami.
 

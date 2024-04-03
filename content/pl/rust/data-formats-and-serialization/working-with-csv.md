@@ -13,9 +13,6 @@ title: Praca z plikami CSV
 weight: 37
 ---
 
-## Co i dlaczego?
-Praca z plikami CSV (Comma-Separated Values - Wartości Rozdzielone Przecinkami) polega na odczytywaniu z i zapisywaniu do prostych plików tekstowych, które przechowują dane tabelaryczne. Programiści wykonują tę czynność w celu umożliwienia wymiany danych pomiędzy różnymi programami, systemami lub dla przetwarzania dużych zbiorów danych w efektywnym, czytelnym dla człowieka formacie.
-
 ## Jak to zrobić:
 Rust, ze swoim naciskiem na bezpieczeństwo i wydajność, oferuje doskonałe crate'y (biblioteki) do pracy z plikami CSV, z `csv` jako najpopularniejszym. Będziesz także potrzebować `serde` do serializacji i deserializacji danych.
 
@@ -28,7 +25,6 @@ serde = { version = "1.0", features = ["derive"] }
 ```
 
 ### Odczytywanie CSV
-
 Aby odczytać plik CSV, zdefiniuj strukturę, która reprezentuje twoje dane i wywieź `Deserialize` z `serde`:
 
 ```rust
@@ -71,7 +67,6 @@ Record { city: "New York", state: "NY", population: 8336817 }
 ```
 
 ### Zapisywanie do CSV
-
 Aby zapisać do pliku CSV, zdefiniuj strukturę i wywieź `Serialize`:
 
 ```rust

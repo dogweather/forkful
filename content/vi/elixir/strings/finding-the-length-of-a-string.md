@@ -16,9 +16,6 @@ title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---
 
-## Cái Gì & Tại Sao?
-Tìm chiều dài của một chuỗi có nghĩa là xác định số lượng ký tự mà nó chứa. Lập trình viên thực hiện điều này để xác minh đầu vào, thực thi các giới hạn, hoặc căn chỉnh đầu ra.
-
 ## Làm Thế Nào:
 Trong Elixir, bạn có thể lấy chiều dài của chuỗi với hàm `String.length/1`. Dưới đây là cách làm:
 

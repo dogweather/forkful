@@ -11,9 +11,6 @@ title: Komennoriviparametrien lukeminen
 weight: 23
 ---
 
-## What & Why?
-Komennoriviargumenttien lukeminen tarkoittaa käyttäjän antamien syötteiden noutamista komentoriviltä ohjelman suorituksen aikana. Ohjelmoijat tekevät tämän, jotta voivat muokata ohjelmansa toimintaa lennosta tai antaa input-arvoja ilman kovan koodauksen tarvetta.
-
 ## How to:
 ```TypeScript
 // tiedosto: greet.ts

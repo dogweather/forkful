@@ -11,9 +11,6 @@ title: Arrondir les nombres
 weight: 13
 ---
 
-## Quoi & Pourquoi ?
-Arrondir des nombres consiste à ajuster une valeur au plus proche entier ou à un nombre de décimales spécifié. Les programmeurs arrondissent les nombres pour simplifier les données, améliorer la lisibilité ou répondre à certaines exigences mathématiques pendant les calculs.
-
 ## Comment faire :
 Vous disposez de quelques cmdlets et méthodes pratiques dans PowerShell pour l'arrondi:
 

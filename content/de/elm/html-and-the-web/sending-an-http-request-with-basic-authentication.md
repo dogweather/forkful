@@ -12,12 +12,7 @@ title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-
-Das Senden einer HTTP-Anfrage mit Basisauthentifizierung heißt, dass du deine Anmeldedaten in einer sicheren, codierten Form mitschickst, um Zugriff auf geschützte Ressourcen zu bekommen. Programmierer nutzen dies, um eine einfache Authentifizierung auf Webservern zu realisieren, wenn größere Sicherheitsmechanismen nicht erforderlich sind.
-
 ## So geht's:
-
 Elm macht HTTP-Anfragen mit Basisauthentifizierung simpel. Du musst nur die `Http`-Bibliothek verwenden und die `Headers` entsprechend setzen. Hier ist ein schnelles Beispiel:
 
 ```Elm
@@ -50,11 +45,9 @@ getProtectedResource creds url =
 Stelle sicher, dass du die `elm/http` und `truqu/elm-base64` Pakete in deinem Projekt installiert hast, um die obigen Importe zu nutzen.
 
 ## Tiefgang:
-
 Die Verwendung von Basisauthentifizierung geht auf das HTTP/1.0-Protokoll zurück und wird in der RFC 7617 spezifiziert. Während die Methode aufgrund des Fehlens von Verschlüsselung kritisiert wurde, ist es für einfache Authentifizierungsszenarien durchaus üblich. Als Alternative kannst du komplexere Authentifizierungsmechanismen wie OAuth nutzen, welche Tokens statt Benutzerdaten verwenden. Bei der Implementierung in Elm ist zu beachten, dass die Anmeldeinformationen (Benutzername und Passwort) kodiert und im `Authorization` Header gesendet werden müssen. Sicherheitsempfehlungen raten davon ab, Basisauthentifizierung ohne HTTPS zu verwenden, da die Anmeldeinformationen sonst leicht abgefangen werden können.
 
 ## Siehe auch:
-
 - Elm HTTP Paket Dokumentation: [https://package.elm-lang.org/packages/elm/http/latest/](https://package.elm-lang.org/packages/elm/http/latest/)
 - Elm Base64 Paket: [https://package.elm-lang.org/packages/truqu/elm-base64/latest/](https://package.elm-lang.org/packages/truqu/elm-base64/latest/)
 - RFC 7617, The 'Basic' HTTP Authentication Scheme: [https://tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)

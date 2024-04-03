@@ -14,9 +14,6 @@ title: Sette stor bokstav i en streng
 weight: 2
 ---
 
-## Hva & Hvorfor?
-Å gjøre første bokstav i en streng stor i C# innebærer å konvertere den første bokstaven i en streng til stor bokstav hvis den ikke allerede er det. Denne endringen kan være avgjørende for formatering av utdata, håndheving av kodingsstandarder eller gjøre tekst i brukergrensesnitt mer lesbart.
-
 ## Hvordan:
 C# tilbyr en enkel tilnærming til å gjøre strenger store med innebygde metoder. Den enkleste måten å oppnå dette på er ved å direkte endre strengen med disse metodene. For mer komplekse eller spesifikke regler for kapitalisering (f.eks. å gjøre første bokstav stor i hvert ord), kan det være nødvendig med ekstra biblioteker eller manuelle metoder. Nedenfor er eksempler som demonstrerer hvordan du kan gjøre første bokstav i en streng stor på ulike måter i C#.
 

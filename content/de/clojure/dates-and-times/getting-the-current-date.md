@@ -14,10 +14,8 @@ title: Den aktuellen Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-Das Abrufen des aktuellen Datums in der Programmierung ist aus einer Vielzahl von Gründen entscheidend, einschließlich Protokollierung, Zeitstempelung von Ereignissen und Planen von Aufgaben. In Clojure, einem Lisp-Dialekt auf der JVM, nutzt diese Aufgabe die Java-Interop-Fähigkeiten, die einen unkomplizierten Zugang zur umfangreichen Java Date-Time API ermöglichen.
-
 ## Wie man es macht:
+
 
 ### Verwendung von Java-Interop
 Die nahtlose Interoperabilität von Clojure mit Java ermöglicht es Ihnen, direkt auf die Java Date-Time API zuzugreifen. So können Sie das aktuelle Datum abrufen:

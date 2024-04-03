@@ -11,12 +11,7 @@ title: Using an interactive shell (REPL)
 weight: 34
 ---
 
-## What & Why?
-
-An interactive shell, also known as a Read-Eval-Print Loop (REPL), allows programmers to type in expressions or code and immediately see results, enhancing learning and debugging processes. Despite C not traditionally supporting REPL environments natively, modern tooling bridges this gap, offering dynamic exploration of C programs.
-
 ## How to:
-
 To engage with a C REPL, you might not find as straightforward a path as in languages like Python or JavaScript. However, tools like `Cling`, a C/C++ interpreter based on Clang and LLVM technology, make it possible. Here’s how to get started:
 
 1. **Install Cling**: Depending on your OS, you might find Cling in your package manager or need to build from source. For example, on Ubuntu, it could be as simple as `sudo apt-get install cling`.
@@ -53,7 +48,6 @@ Square root of 4.000000 is 2.000000
 ```
 
 ## Deep Dive:
-
 The inception of REPL environments dates back to Lisp in the 1960s, designed to support interactive code evaluation. However, the static and compiled nature of C posed challenges to realizing similar immediacy in code execution adjustments. The development of Cling and other C/C++ interpreters mark significant advances towards integrating dynamic evaluation into statically typed languages.
 
 Notably, using an interpreter like Cling may not perfectly mirror the behavior of compiled C code due to differences in optimization and execution. Also, while highly valuable for educational purposes, rapid prototyping, and debugging, REPLs for C can sometimes be slower and less practical for production-level code development compared to traditional compile-run-debug cycles.

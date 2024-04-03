@@ -11,9 +11,6 @@ title: Usando um shell interativo (REPL)
 weight: 34
 ---
 
-## O Que & Por Que?
-REPL significa Read-Eval-Print Loop (Laço de Ler-Avaliar-Imprimir), um ambiente interativo onde você pode testar código rapidamente. Programadores o utilizam para experimentar, depurar e aprender as peculiaridades de uma linguagem.
-
 ## Como Fazer:
 Para entrar no REPL do Lua, basta digitar `lua` no seu terminal. Aqui está um exemplo de sessão:
 

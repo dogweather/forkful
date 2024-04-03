@@ -11,9 +11,6 @@ title: Creando un archivo temporal
 weight: 21
 ---
 
-## Qué y Por Qué?
-Crear archivos temporales es práctica común en programación para guardar datos que solo necesitas durante la ejecución de tu script. Se hace para no dejar huellas innecesarias en el disco duro y para manejar información sensible que no queremos que perdure.
-
 ## Cómo hacerlo:
 Para trabajar con archivos temporales en Python, usamos el módulo `tempfile`. Aquí un ejemplo simple:
 
@@ -36,7 +33,6 @@ with tempfile.TemporaryFile(mode='w+t') as tmp:
 Si corres ese script, verás el contenido del archivo temporal, pero una vez que finalice, el archivo desaparecerá.
 
 ## Deep Dive
-
 Los archivos temporales no son un invento moderno. Desde los albores de la informática, manejar datos que no necesitaban persistir llevó a su creación. En sistemas Unix y similares, `/tmp` es un directorio típico para estos menesteres.
 
 Alternativamente, el módulo `tempfile` ofrece diferentes maneras de crear archivos y directorios temporales, como `NamedTemporaryFile` que te da un archivo con nombre el cual es útil si necesitas una referencia en el sistema de archivos, y `mkdtemp` para crear directorios temporales.
@@ -44,7 +40,6 @@ Alternativamente, el módulo `tempfile` ofrece diferentes maneras de crear archi
 Bajo el capó, `tempfile` se comunica con el sistema operativo para asegurarse de que estos archivos se guarden en lugares adecuados y se manejen de forma segura (e.g., con permisos apropiados).
 
 ## Ver También
-
 Aquí algunos enlaces útiles para profundizar:
 
 - [Documentación del módulo tempfile de Python](https://docs.python.org/3/library/tempfile.html)

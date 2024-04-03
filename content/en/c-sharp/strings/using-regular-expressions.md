@@ -11,10 +11,8 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-Regular expressions (regex) in C# are a powerful tool for pattern matching within strings, allowing programmers to search, replace, split, or extract data efficiently. Programmers utilize regex for tasks ranging from simple validations, like email format checking, to complex text processing tasks because of its flexibility and performance.
-
 ## How to:
+
 
 ### Simple Pattern Matching
 To check if a string contains a specific pattern, you can use the `Regex.IsMatch` method from the `System.Text.RegularExpressions` namespace.

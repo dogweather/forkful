@@ -12,9 +12,6 @@ title: Escrevendo testes
 weight: 36
 ---
 
-## O Que & Por Quê?
-Escrever testes em Elixir envolve a criação de scripts automatizados para validar o comportamento do seu código. Os programadores fazem isso para assegurar a qualidade, prevenir regressões e facilitar a refatoração do código, tornando o processo de desenvolvimento mais confiável e eficiente.
-
 ## Como fazer:
 Elixir usa o ExUnit como seu framework de teste integrado, que é extremamente poderoso e fácil de usar. Aqui está um exemplo básico:
 

@@ -12,12 +12,7 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## Hva & hvorfor?
-
-Strenginterpolasjon er en metode for å konstruere strenger som inkorporerer variabler, noe som muliggjør dynamisk oppretting av strenger. Programmerere gjør dette for å tilpasse meldinger, konstruere URL-er, lage SQL-forespørsler og mer, noe som tillater mer lesbar og vedlikeholdbar kode.
-
 ## Hvordan:
-
 I Go oppnås strenginterpolasjon vanligvis ved bruk av `fmt`-pakken, spesielt med `Sprintf`-funksjonen, som lar deg injisere variabler i en streng ved å spesifisere formatteringsverb. Verbene er plassholdere i formatstrengen og erstattes av de gitte variablenes verdier. Slik bruker du det:
 
 ```go
@@ -40,7 +35,6 @@ func main() {
 Merk at `%s` brukes for strenger, og `%d` for heltall. `fmt`-pakkens dokumentasjon gir en omfattende liste over formatteringsverb for forskjellige datatyper.
 
 ## Dypdykk
-
 Konseptet med strenginterpolasjon finnes i mange programmeringsspråk, om enn med forskjellige syntakser og kapasiteter. I Go, selv om `fmt`-pakkens `Sprintf`-funksjon er den mest vanlige tilnærmingen, er det kanskje ikke alltid den mest effektive, spesielt for enkle sammenføyninger eller når man arbeider innenfor kode som er svært følsom for ytelse.
 
 `fmt`-pakken bruker refleksjon for dynamisk å tolke variablenes typer ved kjøretid, noe som, selv om det er fleksibelt, medfører overhead. For scenarier hvor ytelse er kritisk, kan direkte strengsammensetning eller `strings.Builder`-typen tilby bedre alternativer. Direkte sammensetning er grei, men kan bli uhandterlig med flere variabler. `strings.Builder`, på den andre siden, gir en mer ytelseseffektiv og lesbar måte å bygge komplekse strenger på i en løkke eller når man håndterer mange variabler:

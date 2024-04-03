@@ -13,12 +13,7 @@ title: Mallin mukaisten merkkien poistaminen
 weight: 5
 ---
 
-## Mikä ja miksi?
-
-Merkkijonoista tietyn kuvion mukaisesti vastaavien merkkien poistaminen on olennaista datan validoinnissa, sanitoinnissa tai kun tekstiä valmistellaan edelleen käsiteltäväksi. Ohjelmoijat suorittavat tämän tehtävän varmistaakseen datan eheyden, parantaakseen luettavuutta ja ylläpitääkseen johdonmukaista formaattia tekstisyötteissä.
-
 ## Kuinka:
-
 Dart tekee merkkien, jotka vastaavat ennalta määritettyä kuviota, poistamisen suoraviivaiseksi käyttämällä säännöllisiä lausekkeita ja `replaceAll`-metodia. Peruskäyttöön ei vaadita kolmannen osapuolen kirjastoja, mikä tekee tästä lähestymistavasta erittäin saavutettavan.
 
 Tässä on yksinkertainen esimerkki, joka demonstroi, kuinka poistaa numerot merkkijonosta:

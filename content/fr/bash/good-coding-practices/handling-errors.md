@@ -11,12 +11,7 @@ title: Gestion des erreurs
 weight: 16
 ---
 
-## Quoi & Pourquoi ?
-
-Gérer les erreurs dans les scripts Bash, c'est prévoir où les choses pourraient mal tourner et y faire face avec élégance. Pourquoi ? Et bien, cela assure la robustesse de votre script et évite aux utilisateurs de se gratter la tête lorsque les choses ne se déroulent pas comme prévu.
-
 ## Comment faire :
-
 ```Bash
 #!/bin/bash
 
@@ -49,7 +44,6 @@ cat: temp_fichier.txt: Aucun fichier ou dossier de ce type
 ```
 
 ## Approfondissement
-
 Le traitement des erreurs dans les scripts Bash remonte aux origines du shell Unix, où des scripts robustes et fiables étaient (et sont toujours) essentiels pour l'administration système et l'automatisation. Traditionnellement, les erreurs dans Bash sont gérées en vérifiant le code de sortie d'une commande, qui, par convention, renvoie 0 en cas de succès et une valeur non nulle en cas d'échec.
 
 Bash a introduit la commande `trap` comme intégrée, permettant aux utilisateurs de spécifier les commandes à exécuter sur divers signaux ou à la sortie du script. Cela est utile pour les tâches de nettoyage ou comme mécanisme de gestion des erreurs en dernier recours.
@@ -61,7 +55,6 @@ Les alternatives à la gestion des erreurs intégrée dans Bash incluent la vér
 Bien que la gestion rigoureuse des erreurs puisse parfois sembler excessive pour des petits scripts, c'est une pratique qui peut économiser beaucoup de temps de débogage et prévenir des comportements inattendus tant pour vous que pour les utilisateurs.
 
 ## Voir aussi
-
 - Manuel Bash sur les paramètres du shell : https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameters
 - Guide de scriptage Bash avancé sur la gestion des erreurs : https://www.tldp.org/LDP/abs/html/exit-status.html
 - Un guide approfondi sur `trap` : https://mywiki.wooledge.org/SignalTrap

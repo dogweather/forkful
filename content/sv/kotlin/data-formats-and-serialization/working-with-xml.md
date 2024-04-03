@@ -11,9 +11,6 @@ title: Att arbeta med XML
 weight: 40
 ---
 
-## Vad & Varför?
-Att arbeta med XML innebär att tolka, skapa och manipulera XML-dokument – ett märkspråk för lagring och överföring av data. Programmerare gör detta eftersom många system fortfarande utbyter data i XML-format, och det behövs för stöd av äldre system och integration med befintliga teknologier.
-
 ## Hur man gör:
 I Kotlin kan du använda den inbyggda `javax.xml.parsers` för tolkning:
 

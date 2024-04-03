@@ -11,12 +11,7 @@ title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---
 
-## Co i Dlaczego?
-
-Wysyłanie zapytania HTTP z uwierzytelnianiem podstawowym to sposób na dostęp do zabezpieczonych zasobów sieciowych. Programiści stosują tę technikę, aby potwierdzić swoją tożsamość i uzyskać potrzebne dane.
-
 ## Jak to zrobić:
-
 ```kotlin
 import java.net.HttpURLConnection
 import java.net.URL
@@ -49,13 +44,11 @@ sendGetRequestWithBasicAuth(testUrl, username, password)
 ```
 
 ## Deep Dive:
-
 Uwierzytelnianie podstawowe (Basic Authentication) to standardowy sposób na przekazanie nazwy użytkownika i hasła w nagłówkach HTTP. Pochodzi z początków internetu, ale jest nadal popularne ze względu na swoją prostotę. Alternatywne metody uwierzytelniania obejmują OAuth i tokeny API, które oferują lepszą bezpieczeństwo, ale są bardziej skomplikowane w obsłudze.
 
 W implementacji Kotlin używamy klasy `HttpURLConnection`, do której dołączamy zakodowane w Base64 dane uwierzytelniające. Pamiętajmy, że taki sposób przesyłania wrażliwych informacji jest bezpieczny tylko przy użyciu szyfrowanego połączenia (HTTPS), inaczej dane mogą być przechwycone w transmisji.
 
 ## Zobacz też:
-
 - [Kotlin Documentation](https://kotlinlang.org/docs/home.html) - dokumentacja języka Kotlin.
 - [RFC 7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617) - specyfikacja uwierzytelniania podstawowego.
 - [Mozilla Developer Network - HTTP authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication) - przewodnik po uwierzytelnianiu HTTP.

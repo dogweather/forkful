@@ -12,12 +12,7 @@ title: Werken met YAML
 weight: 41
 ---
 
-## Wat & Waarom?
-
-Werken met YAML betekent omgaan met gegevens in het "YAML Ain't Markup Language" formaat - een mensvriendelijke standaard voor gegevensserialisatie. Programmeurs gebruiken het voor configuratiebestanden, gegevensopslag of overal waar ze gemakkelijk leesbare en schrijfbare gestructureerde gegevens nodig hebben.
-
 ## Hoe te:
-
 Om YAML in Rust te parsen en te genereren, gebruiken we de `serde_yaml` crate, die leunt op `serde` voor serialisatie/deserialisatie.
 
 Voeg eerst afhankelijkheden toe aan je `Cargo.toml`:
@@ -81,11 +76,9 @@ fn main() -> serde_yaml::Result<()> {
 ```
 
 ## Diepere Duik
-
 YAML is in 2001 gestart als een gebruiksvriendelijk alternatief voor XML. In tegenstelling tot JSON ondersteunt YAML commentaren en is het minder lawaaierig, waardoor het een favoriet is voor configuratiebestanden. Rust's `serde_yaml` benut `serde` voor gegevensconversie, waardoor hoge compatibiliteit en flexibiliteit worden gewaarborgd. Hoewel `serde_json` vaker wordt gebruikt vanwege de alomtegenwoordigheid van JSON in API's, blinkt `serde_yaml` uit voor lokale configuratie- en gegevensbestanden. Het is het vermelden waard dat overmatig complexe YAML-functies zelden worden gebruikt en soms ontmoedigd vanwege potentiële parseerproblemen.
 
 ## Zie Ook
-
 Voor verdere lezing en meer complexe gebruiksscenario's:
 
 - Serde's officiële documentatie: https://serde.rs/

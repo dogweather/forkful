@@ -10,12 +10,7 @@ title: Using associative arrays
 weight: 15
 ---
 
-## What & Why?
-
-Associative arrays, or as Elm calls them, Dictionaries, map keys to values in a way that makes lookup, insertion, and deletion of values super snappy. They're your go-to when you need to keep track of things without a strict order, like user preferences or inventory lists.
-
 ## How to:
-
 In Elm, you work with Dictionaries in the `Dict` module, so let's dive into a quick example:
 
 ```Elm
@@ -48,7 +43,6 @@ Sample output when displaying `dictToList`:
 This demonstrates the basic operations: creating, updating, accessing, and iterating over a Dictionary.
 
 ## Deep Dive
-
 Dictionaries in Elm internally use a structure known as an AVL tree - a type of self-balancing binary search tree. This choice strikes a balance between ensuring that operations like insert, get, and remove have good performance (logarithmic time complexity) and maintaining simplicity in handling the data.
 
 Despite the strengths of Elm's `Dict`, it's not a one-size-fits-all solution. For collections that are ordered or need to be iterated over sequentially, List or Array might be more appropriate. Furthermore, when working with a fixed set of known keys, using custom types (Elm's version of enums) could offer more type safety and clearer intent in your code.

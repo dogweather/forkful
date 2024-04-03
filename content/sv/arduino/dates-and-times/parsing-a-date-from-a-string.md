@@ -15,12 +15,7 @@ title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---
 
-## Vad & Varför?
-
-Att tolka ett datum från en sträng i Arduino innebär att extrahera och konvertera datumkomponenterna (år, månad, dag) från en textuell representation till ett format som kan användas för tidsuppföljning, jämförelser eller manipulationer inom sketcher. Programmerare utför ofta denna uppgift för att interagera med komponenter som realtidsklockor, loggar, eller för att bearbeta indata från webb-API:er och användargränssnitt där datum kan presenteras i ett läsbart format.
-
 ## Hur man gör:
-
 Direkt metod utan tredjepartsbibliotek:
 
 ```cpp

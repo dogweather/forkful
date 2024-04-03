@@ -14,9 +14,6 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-Eine Textdatei in Kotlin zu schreiben, beinhaltet das Erstellen einer Datei und das Eingeben von Textinhalten in diese, eine gängige Aufgabe zum Speichern von Daten, Protokollierung oder Konfigurationseinstellungen. Programmierer tun dies, um Daten außerhalb des flüchtigen Speicherplatzes zu speichern und zu manipulieren, wodurch die Persistenz über Sitzungen hinweg sichergestellt wird.
-
 ## Wie:
 Kotlin bietet einen unkomplizierten Ansatz zum Schreiben in Dateien, indem es die Standardbibliothek nutzt, ohne zusätzliche Drittanbieter-Bibliotheken zu benötigen. Hier ist ein einfaches Beispiel:
 

@@ -14,12 +14,7 @@ title: Iniciando um novo projeto
 weight: 1
 ---
 
-## O Que & Por Quê?
-
-Iniciar um novo projeto em Visual Basic para Aplicações (VBA) envolve configurar um ambiente dentro de um aplicativo host, como o Excel, para automatizar tarefas ou estender funcionalidades. Programadores se aventuram neste território para aproveitar o poder do VBA na personalização e automação de aplicativos do Microsoft Office, melhorando assim os fluxos de trabalho e aumentando a produtividade.
-
 ## Como:
-
 Quando estiver pronto para começar um novo projeto VBA, o ponto de partida geralmente envolve acessar o editor VBA e inicializar a estrutura do seu projeto. Vamos passar pelos passos usando o Excel como aplicativo host:
 
 1. **Abra o Editor VBA**: No Excel, pressione `Alt + F11` para acessar o Editor VBA.
@@ -43,7 +38,6 @@ Uma caixa de mensagem com "Olá, Mundo!" exibida.
 5. **Salve Seu Projeto**: Antes de sair, garanta que você salve o seu trabalho. Se o seu livro do Excel estava anteriormente não salvo, você será solicitado a salvar como um livro habilitado para macro (formato de arquivo `.xlsm`).
 
 ## Aprofundamento
-
 Visual Basic para Aplicações foi uma pedra angular nas estratégias de automação da Microsoft desde sua introdução, em 1993. Originando como uma evolução do seu predecessor, MacroBasic, o VBA forneceu uma solução mais robusta com melhor integração em toda a suíte Office da Microsoft. A transição para o VBA foi crucial, marcando uma mudança em direção a capacidades de script mais complexas que aproveitavam o poder de linguagens de programação completas.
 
 Apesar de sua idade, o VBA permanece prevalente em ambientes de escritório modernos, em grande parte devido à sua profunda integração dentro dos produtos Office e à extensa base de código legado em muitas organizações. No entanto, é importante notar que para aplicações mais novas, baseadas na web, ou para tarefas que requerem mais escalabilidade e integração com aplicativos que não são do Office, linguagens e frameworks como Python, com seu rico ecossistema de bibliotecas, ou JavaScript para Scripts do Office, oferecem uma abordagem mais moderna e versátil. Essas alternativas, embora requeiram uma curva de aprendizado mais íngreme e configuração, fornecem aplicabilidade mais ampla e suporte para práticas de desenvolvimento contemporâneas como controle de versão e pipelines de implantação.

@@ -12,9 +12,6 @@ title: Umgang mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-Komplexe Zahlen erweitern unser Zahlensystem um imaginäre Zahlen und ermöglichen es uns, Gleichungen zu lösen, die keine reellen Lösungen haben. Programmierer arbeiten in Bereichen wie Ingenieurwesen, Physik und Signalverarbeitung mit ihnen, wo diese Zahlen für die Modellierung und Problemlösung unverzichtbar sind.
-
 ## Wie geht das:
 C# verfügt über eine eingebaute `System.Numerics.Complex` Struktur zur Verarbeitung komplexer Zahlen. Hier ist eine kurze Anleitung:
 

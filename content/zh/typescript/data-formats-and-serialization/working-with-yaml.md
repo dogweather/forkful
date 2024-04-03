@@ -24,9 +24,6 @@ title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 weight: 41
 ---
 
-## 什么和为什么？
-YAML，一种旨在对人类友好的数据序列化语言，通常用于配置文件、进程间消息传递和数据存储。程序员之所以依赖YAML，是因为它的可读性和易用性，特别是在处理复杂的结构化数据时，这使其成为TypeScript开发的应用程序的绝佳选择。
-
 ## 如何操作：
 在TypeScript中处理YAML通常涉及将YAML内容解析为JavaScript对象，可能还包括将JavaScript对象转换回YAML。这需要一个解析器；一个流行的选择是`js-yaml`，这是一个可以轻松集成到TypeScript项目中的库。
 

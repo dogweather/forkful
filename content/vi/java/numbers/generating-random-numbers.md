@@ -17,12 +17,7 @@ title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---
 
-## Cái gì & Tại sao?
-
-Việc tạo số ngẫu nhiên liên quan đến việc sản xuất các chuỗi hoặc giá trị đơn lẻ không thể đoán trước trong một phạm vi được xác định. Các lập trình viên sử dụng kỹ thuật này cho nhiều mục đích khác nhau, bao gồm mô phỏng, trò chơi, ứng dụng bảo mật và các phương pháp lấy mẫu để kiểm tra các thuật toán dưới điều kiện khác nhau.
-
 ## Làm thế nào:
-
 Trong Java, việc tạo số ngẫu nhiên có thể được thực hiện bằng cách sử dụng lớp `Random` từ gói `java.util`, hoặc các lớp `ThreadLocalRandom` và `SecureRandom` cho các trường hợp sử dụng cụ thể. Các ví dụ dưới đây minh họa cách sử dụng các lớp này.
 
 ### Sử dụng lớp `Random`
@@ -85,7 +80,6 @@ public class SecureRandomExample {
 ```
 
 ## Sâu hơn
-
 Việc tạo số ngẫu nhiên đã phát triển đáng kể kể từ những ngày đầu của công nghệ thông tin. Lớp `Random` của Java sử dụng công thức tuyến tính đồng nhất để tạo ra các số ngẫu nhiên giả mạo, chúng có tính chất xác định và không phù hợp cho các ứng dụng có tính bảo mật cao. Điều này đã dẫn đến việc giới thiệu `SecureRandom`, sử dụng các thuật toán phức tạp hơn (ví dụ: SHA1PRNG) để sản xuất số ngẫu nhiên mạnh mẽ về mặt mật mã.
 
 Tuy nhiên, `Random` và `SecureRandom` có nhược điểm của chúng, chẳng hạn như suy giảm hiệu suất trong môi trường đa luồng. Lớp `ThreadLocalRandom` được giới thiệu trong Java 7 để giải quyết vấn đề này bằng cách cung cấp các bộ sinh số ngẫu nhiên cục bộ cho mỗi luồng, cải thiện đáng kể hiệu suất trong các ứng dụng đồng thời.

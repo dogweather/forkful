@@ -10,9 +10,6 @@ title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---
 
-## ¿Qué y por qué?
-Convertir una fecha a texto significa transformar datos de tiempo (como `Date` en Kotlin) a una cadena de caracteres (`String`). Lo hacemos para mostrar fechas en un formato legible para los humanos o para almacenar y transportar información de manera estandarizada.
-
 ## Cómo hacerlo:
 En Kotlin, puedes usar `SimpleDateFormat` para dar formato a un objeto `Date`. Aquí te muestro cómo:
 

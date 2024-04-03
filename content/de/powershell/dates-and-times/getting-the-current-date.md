@@ -12,12 +12,7 @@ title: Den aktuellen Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-
-Das Abrufen des aktuellen Datums in PowerShell handelt davon, das aktuelle Datum und die Zeit des Systems zu ermitteln. Diese Operation ist grundlegend für Aufgaben wie Protokollierung, Zeitmessung oder Entscheidungsfindung auf Basis von Daten. Programmierer nutzen diese Fähigkeit, um Ereignisse zu verfolgen, Aufgaben zu planen und datumsbezogene Logik in Skripten und Anwendungen zu handhaben.
-
 ## Wie geht das:
-
 PowerShell bietet unkomplizierte Cmdlets zum Abrufen von Datum und Uhrzeit. Das Cmdlet `Get-Date` ist das primäre Werkzeug zu diesem Zweck. Es kann das vollständige Datum und die Uhrzeit zurückgeben, welche Sie nach Ihren Bedürfnissen formatieren oder manipulieren können.
 
 ```powershell
@@ -56,7 +51,6 @@ Get-Date -Format "HH:mm:ss"
 ```
 
 ### Nutzung der .NET Klasse
-
 PowerShell ermöglicht den direkten Zugriff auf .NET-Klassen und bietet eine alternative Möglichkeit, mit Daten und Zeiten zu arbeiten.
 
 ```powershell

@@ -14,12 +14,7 @@ title: Verwendung von assoziativen Arrays
 weight: 15
 ---
 
-## Was & Warum?
-
-Assoziative Arrays, auch bekannt als Hashtabellen oder Wörterbücher in PowerShell, ermöglichen es Ihnen, Daten in Schlüssel-Wert-Paaren zu speichern, was das Abrufen von Daten unkompliziert und effizient macht. Programmierer verwenden sie, um verwandte Daten gemeinsam auf eine Weise zu speichern, die einfach über den Schlüssel zugänglich ist.
-
 ## Wie:
-
 Das Erstellen und Verwenden von assoziativen Arrays in PowerShell ist ziemlich unkompliziert. Hier ist, wie Sie die Magie bewirken:
 
 **Ein assoziatives Array erstellen:**
@@ -77,7 +72,6 @@ location : New York
 ```
 
 ## Tiefergehend
-
 Das Konzept der assoziativen Arrays ist in vielen Programmiersprachen üblich, in der Regel als Wörterbuch, Karte oder Hashtabelle bezeichnet, abhängig von der Sprache. In PowerShell werden assoziative Arrays als Hashtabellen implementiert, die recht effizient für das Suchen von Schlüsseln, das Speichern von Daten und das Aufrechterhalten einer Sammlung von eindeutigen Schlüsseln sind.
 
 Historisch bieten assoziative Arrays ein Mittel, um Sammlungen von Objekten zu verwalten, bei denen jedes Element schnell ohne Durchlaufen der gesamten Sammlung mit seinem Schlüssel abgerufen werden kann. Die Effizienz des Datenabrufs und der -modifikation in assoziativen Arrays macht sie zu einer bevorzugten Wahl für verschiedene Aufgaben. Sie haben jedoch Einschränkungen, wie z. B. das Aufrechterhalten der Reihenfolge, für die geordnete Wörterbücher oder benutzerdefinierte Objekte eine bessere Alternative sein könnten.

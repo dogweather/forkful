@@ -11,12 +11,7 @@ title: Umgang mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-
-Komplexe Zahlen, bestehend aus einem Real- und einem Imaginärteil, sind in verschiedenen Berechnungsbereichen wie Ingenieurwesen, Physik und Signalverarbeitung unerlässlich. Programmierer verwenden sie, um Gleichungen zu lösen, die mit reellen Zahlen nicht lösbar sind, wie zum Beispiel die Wurzeln aus negativen Zahlen zu finden.
-
 ## Wie geht das:
-
 Haskell behandelt komplexe Zahlen mit dem Modul `Data.Complex`. Hier ist ein schneller Überblick:
 
 ```haskell
@@ -56,7 +51,6 @@ Beispielausgabe nach dem Laden des obigen Codes in GHCi könnte sein:
 ```
 
 ## Tiefergehende Betrachtung
-
 Komplexe Zahlen reichen bis ins 16. Jahrhundert zurück, wurden aber viel später allgemein akzeptiert. Haskell bietet wie viele Sprachen eine native Unterstützung für komplexe Arithmetik, was das Arbeiten mit diesen Zahlen ohne die Implementierung der zugrunde liegenden Mathematik erleichtert.
 
 Alternativen beinhalten den Aufbau Ihres eigenen komplexen Zahlentyps oder die Verwendung von Bibliotheken für spezifische Domänen, wie Quaternions für 3D-Grafiken. Aber für die meisten Anwendungsfälle ist Hasells `Data.Complex` ausreichend.
@@ -64,7 +58,6 @@ Alternativen beinhalten den Aufbau Ihres eigenen komplexen Zahlentyps oder die V
 Im Kern ist `Data.Complex` nur ein Datentyp, der zwei `Float` oder `Double` Werte paart, die jeweils den Real- und Imaginärteil repräsentieren. Es ist eine unkomplizierte und effiziente Methode, um mit komplexen Zahlen auf der Haskell-Plattform zu arbeiten.
 
 ## Siehe auch
-
 Schauen Sie sich diese Ressourcen für mehr über komplexe Zahlen in Haskell an:
 
 - Die offizielle Haskell `Data.Complex` Dokumentation: [Hackage Data.Complex](https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-Complex.html)

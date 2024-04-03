@@ -14,35 +14,26 @@ title: Arrondissement des nombres
 weight: 13
 ---
 
-## Quoi & Pourquoi ?
-
-Arrondir des nombres est le processus qui consiste à ajuster un nombre à son nombre entier le plus proche ou à un nombre spécifié de décimales. Les programmeurs arrondissent souvent les nombres pour simplifier les calculs, améliorer la lisibilité, ou préparer les données pour l'affichage, assurant ainsi la cohérence et la clarté dans les sorties numériques.
-
 ## Comment faire :
-
 Dart fournit des méthodes natives dans son type de base `num` pour les opérations d'arrondissement. Ici, nous allons explorer des méthodes comme `round()`, `floor()`, `ceil()`, et comment arrondir à un nombre spécifique de décimales.
 
 ### Arrondir au nombre entier le plus proche :
-
 ```dart
 var number = 3.56;
 print(number.round()); // Affiche : 4
 ```
 
 ### Arrondir à l'inférieur :
-
 ```dart
 print(number.floor()); // Affiche : 3
 ```
 
 ### Arrondir à supérieur :
-
 ```dart
 print(number.ceil()); // Affiche : 4
 ```
 
 ### Arrondir à un nombre spécifique de décimales :
-
 Pour arrondir à un nombre spécifié de décimales, nous pouvons utiliser la méthode `toStringAsFixed()`, qui retourne une chaîne de caractères, ou utiliser une combinaison de `pow` de `dart:math` pour un résultat numérique.
 
 ```dart

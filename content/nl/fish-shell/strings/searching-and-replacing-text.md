@@ -13,9 +13,6 @@ title: Zoeken en vervangen van tekst
 weight: 10
 ---
 
-## Wat & Waarom?
-Tekst zoeken en vervangen is het vinden van specifieke reeksen en deze omwisselen met iets anders. Programmeurs doen dit om code bij te werken, fouten te corrigeren, of om gegevens te herformatteren — het is een enorme tijdsbesparing.
-
 ## Hoe te:
 Laten we alle instanties van 'kat' naar 'hond' veranderen in een string.
 

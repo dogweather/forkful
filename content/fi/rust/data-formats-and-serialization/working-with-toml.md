@@ -11,9 +11,6 @@ title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---
 
-## Mikä & Miksi?
-TOML on ihmisen luettavissa oleva datan serialisointikieli, jota käytetään usein konfiguraatioissa. Ohjelmoijat käyttävät TOMLia sen yksinkertaisuuden ja selkeyden vuoksi, mikä kääntyy helposti hajautustauluksi Rustissa.
-
 ## Kuinka toimia:
 ```Rust
 // 1. Sisällytä 'toml' laatikko Cargo.toml-tiedostoosi

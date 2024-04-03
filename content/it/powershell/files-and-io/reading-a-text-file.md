@@ -10,9 +10,6 @@ title: Lettura di un file di testo
 weight: 22
 ---
 
-## What & Why?
-Leggere un file di testo significa estrarre il suo contenuto per utilizzarlo in modo programmabile. I programmatori lo fanno per manipolare, analizzare dati o configurare software.
-
 ## How to:
 Ecco come leggere un file di testo con PowerShell in modo semplice e diretto:
 

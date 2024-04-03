@@ -11,9 +11,6 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad & Varför?
-Komplexa tal utvidgar de reella talen genom att lägga till en imaginär enhet, representerad som 'i', där i^2 = -1. Programmerare använder dem för simuleringar, signalbehandling och att lösa matematiska problem som kräver arbete i två dimensioner.
-
 ## Hur man gör:
 C++ har ett inbyggt bibliotek `<complex>` som underlättar arbete med komplexa tal. Här är en snabb titt:
 

@@ -13,9 +13,6 @@ title: Code organiseren in functies
 weight: 18
 ---
 
-## Wat & Waarom?
-Het organiseren van code in functies gaat over het bundelen van stukjes script om specifieke taken uit te voeren. We doen dit omdat het de code makkelijker maakt om te lezen, te testen en te hergebruiken — niemand wil door een moeras van codespaghetti waden.
-
 ## Hoe:
 In Fish schrijf je een functie met het trefwoord `function`, geef je het een naam en eindig je met `end`. Hier is een eenvoudige:
 
@@ -58,11 +55,9 @@ Sommige shells, zoals Bash, gebruiken `function` of gewoon rechte haakjes. Fish 
 Je hebt geen `return` waarde nodig omdat Fish daar niet sterk op inzet; de output van je functie is de return. En als je persistente functies wilt die beschikbaar zijn voor toekomstige sessies, onthoud dan `funcsave`.
 
 ## Zie Ook
-
 - De Fish tutorial over functies: [https://fishshell.com/docs/current/tutorial.html#tut_functions](https://fishshell.com/docs/current/tutorial.html#functions)
 
 ### Functie-commando's
-
 - [function](https://fishshell.com/docs/current/cmds/function.html) — Maak een functie
 - [functions](https://fishshell.com/docs/current/cmds/functions.html) — Print of verwijder functies
 - [funcsave](https://fishshell.com/docs/current/cmds/funcsave.html) — Sla de definitie van een functie op in de autolaadmap van de gebruiker

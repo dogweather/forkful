@@ -14,9 +14,6 @@ title: Een tijdelijk bestand aanmaken
 weight: 21
 ---
 
-## Wat & Waarom?
-Het aanmaken van een tijdelijk bestand in PHP betekent dat je een bestand maakt dat net lang genoeg blijft bestaan om te gebruiken, en dan poef—het is weg. Waarom zou je dat doen? Het is ideaal voor het verwerken van gegevensblokken tijdens de verwerking, het bewaren van gevoelige informatie buiten de schijf, en het zorgen dat er geen sporen achterblijven nadat je script is afgerond.
-
 ## Hoe:
 PHP helpt je bij het aanmaken van tijdelijke bestanden met de `tmpfile()` functie, die voor jou een bestand maakt in de tijdelijke directory van je systeem. Hier is een snel voorbeeld:
 

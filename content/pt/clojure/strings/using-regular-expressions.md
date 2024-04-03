@@ -14,11 +14,7 @@ title: "Usando express\xF5es regulares"
 weight: 11
 ---
 
-## O Que & Por Quê?
-Expressões regulares, uma ferramenta poderosa para correspondência de padrões e manipulação de dados, são essenciais em tarefas de processamento de texto como validar entrada, pesquisar e substituir texto. Programadores as usam extensivamente para lidar com análise de strings complexas e tarefas de validação de dados de forma eficiente e sucinta.
-
 ## Como:
-
 Clojure, fiel às suas raízes na família Lisp, oferece um rico conjunto de funções que se integram perfeitamente com as capacidades de expressão regular do Java. Veja como você pode aproveitá-las:
 
 ### Correspondência Básica

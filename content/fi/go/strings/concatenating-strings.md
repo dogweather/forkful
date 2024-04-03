@@ -13,12 +13,7 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## Mikä & Miksi?
-
-Merkkijonojen yhdistäminen tarkoittaa kahden tai useamman merkkijonon liittämistä peräkkäin uuden merkkijonon muodostamiseksi. Ohjelmoijat tekevät tämän generoidakseen dynaamisesti tekstiä, kuten viestejä, polkuja tai monimutkaisia kyselyitä, tehden ohjelmista interaktiivisempia ja responsiivisempia.
-
 ## Kuinka:
-
 Gossa on useita tapoja yhdistää merkkijonoja. Tässä katsaus joitakin yleisiä menetelmiä esimerkkeineen:
 
 ### Käyttäen `+` operaattoria:
@@ -62,7 +57,6 @@ fmt.Println(path) // path/to/file
 ```
 
 ## Syväsukellus
-
 Merkkijonojen yhdistäminen, vaikka näennäisesti suoraviivainen operaatio, liittyy Gossa syvemmälle siihen, miten merkkijonoja käsitellään. Gossa merkkijonot ovat muuttumattomia; tämä tarkoittaa, että jokainen yhdistämisoperaatio luo uuden merkkijonon. Tämä voi johtaa suorituskykyongelmiin yhdistettäessä suuria määriä merkkijonoja tai tehdessä niin tiukoissa silmukoissa, johtuen muistin toistuvasta varaamisesta ja kopioiden tekemisestä.
 
 Historiallisesti kielet ovat käsitelleet merkkijonojen muuttumattomuutta ja yhdistämisen tehokkuutta eri tavoin, ja Gon lähestymistapa `strings.Builder` ja `strings.Join` avulla tarjoaa ohjelmoijille työkaluja, jotka tasapainottavat käytön helppoutta suorituskyvyn kanssa. `strings.Builder` tyyppi, joka otettiin käyttöön Go 1.10:ssä, on erityisen merkittävä, koska se tarjoaa tehokkaan tavan rakentaa merkkijonoja ilman useiden merkkijonojen varaamisen aiheuttamaa ylikuormitusta. Se tekee tämän varaamalla puskurin, joka kasvaa tarvittaessa, ja johon merkkijonoja liitetään.

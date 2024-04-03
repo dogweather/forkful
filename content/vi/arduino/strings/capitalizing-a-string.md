@@ -16,12 +16,7 @@ title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---
 
-## Cái gì & Tại sao?
-
-Biến mỗi ký tự của một chuỗi thành chữ hoa có nghĩa là làm cho mọi ký tự đều trở thành chữ in hoa. Các lập trình viên làm điều này để đạt được sự nhất quán, đặc biệt là trong giao diện người dùng hoặc khi chuẩn bị dữ liệu cho việc lưu trữ hoặc so sánh.
-
 ## Cách thực hiện:
-
 Trong môi trường Arduino, không có hàm được xây dựng sẵn nào để biến toàn bộ một chuỗi thành chữ hoa, vì vậy chúng ta sẽ viết một hàm đơn giản để thực hiện việc này:
 
 ```Arduino
@@ -49,7 +44,6 @@ HELLO, WORLD!
 ```
 
 ## Tìm hiểu sâu hơn
-
 Trong lịch sử, việc thao tác chuỗi trong những ngôn ngữ cấp thấp như C đòi hỏi phải xử lý từng ký tự riêng lẻ do thiếu các hàm thao tác chuỗi cấp cao. Truyền thống này được kế thừa qua các biến thể C++ của Arduino.
 
 Một số phương án thay thế bao gồm việc sử dụng các đối tượng `String` có sẵn trong C++ của Arduino và gọi phương thức `.toUpperCase()`. Tuy nhiên, điều này sẽ tiêu tốn nhiều bộ nhớ hơn. Đối với những môi trường bị hạn chế về bộ nhớ như vi điều khiển, thường tốt hơn khi làm việc với mảng ký tự kiểu C (chuỗi) và thao tác trực tiếp trên đó.
@@ -60,7 +54,6 @@ Chi tiết thực hiện cần nhớ khi biến chuỗi thành chữ hoa trong A
 - Thao tác chuỗi có thể dẫn đến các vấn đề về bộ nhớ như tràn bộ đệm nếu không được xử lý cẩn thận.
 
 ## Xem thêm
-
 - Tham khảo Arduino cho phương thức String `.toUpperCase()`: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/
 - Tham khảo `toupper` tại Cplusplus.com: http://www.cplusplus.com/reference/cctype/toupper/ 
 - Ví dụ về thao tác chuỗi Arduino: https://www.arduino.cc/en/Tutorial/BuiltInExamples/StringAdditionOperator

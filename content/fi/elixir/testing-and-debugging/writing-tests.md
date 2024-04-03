@@ -13,9 +13,6 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mitä & Miksi?
-Testien kirjoittaminen Elixirissä sisältää automatisoitujen skriptien luomisen koodisi toiminnan varmentamiseksi. Ohjelmoijat tekevät tämän varmistaakseen laadun, estääkseen regressiot ja helpottaakseen koodin uudelleenjärjestämistä, mikä tekee kehitysprosessista luotettavamman ja tehokkaamman.
-
 ## Kuinka:
 Elixir käyttää sisäänrakennettuna testikehyksenään ExUnitia, joka on erittäin tehokas ja helppokäyttöinen. Tässä on yksinkertainen esimerkki:
 

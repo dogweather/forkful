@@ -10,9 +10,6 @@ title: Parsing HTML
 weight: 43
 ---
 
-## What & Why?
-Parsing HTML means breaking down HTML content into something a program can understand and manipulate. Programmers do this to extract data, manipulate content, or integrate web scraping into their applications.
-
 ## How to:
 C++ doesn't come with built-in HTML parsing capabilities. You'll often use a library like Gumbo-parser by Google, or something similar. Here's a quick example using Gumbo-parser:
 

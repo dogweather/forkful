@@ -19,12 +19,7 @@ title: "\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u306E\u8AAD\u307F\u8FBC
 weight: 22
 ---
 
-## What & Why? (何となぜ？)
-
-テキストファイルを読むっていうのは、単にファイルから文字データを取り出すことだ。プログラマーは設定、データの収集、あるいは簡単な通信のためにこれをよく行う。
-
 ## How to: (方法)
-
 以下に、Arduinoでテキストファイルを読み込む簡単なコードを示します。先にmicroSDカードに接続されたSDカードモジュールが必要です。
 
 ```Arduino
@@ -62,11 +57,9 @@ void loop() {
 このコードは"example.txt"の内容をシリアルモニタに出力します。
 
 ## Deep Dive (深堀り)
-
 テキストファイルを読む機能は、最初のコンピューターが登場して以来のもの。ファイルシステムはOSの大事な部分。Arduinoにおいては、通常SDカードモジュールを使用して実現する。SPI通信を経由し、`SD`ライブラリが利用される。他の方法としては、EEPROMやフラッシュメモリの使用もあるが、容量が大きなファイルではSDカードが適している。実装上の詳細では、`File`オブジェクト、`open`、`available`、`read`、`close`メソッドの使い方が重要。
 
 ## See Also (参照)
-
 - [Arduinoの公式SDライブラリドキュメント](https://www.arduino.cc/en/Reference/SD)
 - [SPI通信についての解説](https://www.arduino.cc/en/reference/SPI)
 - [フラッシュメモリとEEPROMの使用](https://www.arduino.cc/en/Reference/EEPROM)

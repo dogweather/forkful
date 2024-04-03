@@ -10,12 +10,7 @@ title: Finding the length of a string
 weight: 7
 ---
 
-## What & Why?
-
-Finding a string's length means counting its characters. We do it to validate input, loop through characters, allocate resources, or simple curiosity – knowing the size matters.
-
 ## How to:
-
 In C#, the `string.Length` property gives you the number of characters in a string. Here's how to use it:
 
 ```C#
@@ -34,7 +29,6 @@ class Program
 Easy, right? But remember, it counts *characters*, not bytes. With emojis or special characters, things can get tricky. More on that later.
 
 ## Deep Dive
-
 Historically, finding the length of a string was tied to memory management and manipulation in programming. Since C# is a high-level language, it abstracts that low-level work away. Still, it's good to know what's under the hood.
 
 Alternatives? Sure! You might see `example.ToCharArray().Length` out in the wild, but it's just doing extra legwork for the same result.
@@ -62,7 +56,6 @@ class Program
 Understand the difference? It's not just academic; it could affect text processing in meaningful ways.
 
 ## See Also
-
 Explore more with these resources:
 
 - [Microsoft's official documentation on strings](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)

@@ -16,12 +16,7 @@ title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xFD t\u1EF1"
 weight: 30
 ---
 
-## Cái gì và Tại sao?
-
-Phân tích cú pháp ngày từ một chuỗi trong Visual Basic for Applications (VBA) đề cập đến việc chuyển đổi văn bản biểu diễn ngày thành kiểu dữ liệu ngày. Các lập trình viên thực hiện điều này nhằm xử lý ngày một cách hiệu quả hơn trong ứng dụng của họ, chẳng hạn như cho mục đích so sánh, tính toán, hoặc định dạng.
-
 ## Cách thực hiện:
-
 VBA cung cấp một cách trực tiếp để phân tích cú pháp một chuỗi thành ngày bằng cách sử dụng hàm `CDate` hoặc hàm `DateValue`. Tuy nhiên, điều quan trọng là chuỗi phải ở trong một định dạng ngày đúng.
 
 Dưới đây là một ví dụ cơ bản sử dụng `CDate`:
@@ -67,7 +62,6 @@ Ngày đã phân tích cú pháp bằng DateValue: 4/1/2023
 Hãy nhớ rằng, sự thành công của việc phân tích cú pháp phụ thuộc vào việc định dạng ngày của chuỗi khớp với cài đặt hệ thống hoặc ứng dụng.
 
 ## Kỹ lưỡng hơn
-
 Bên trong, khi VBA phân tích cú pháp một chuỗi thành ngày, nó sử dụng các cài đặt khu vực của hệ điều hành Windows để giải thích định dạng ngày. Điều này rất quan trọng để hiểu vì một chuỗi ngày được phân tích cú pháp hoàn hảo trên một hệ thống có thể gây ra lỗi trên hệ thống khác nếu chúng sử dụng các cài đặt ngày/giờ khác nhau.
 
 Lịch sử, xử lý ngày đã là một nguồn cơn của các lỗi trong ứng dụng, đặc biệt là những ứng dụng được sử dụng quốc tế. Sự phụ thuộc vào các cài đặt khu vực trong VBA là lý do mà một số người có thể xem xét các alternativ như định dạng ISO 8601 (ví dụ: "YYYY-MM-DD") để biểu diễn và phân tích cú pháp ngày một cách không mơ hồ trên các hệ thống khác nhau. Thật không may, VBA không hỗ trợ ISO 8601 một cách tự nhiên và việc phân tích cú pháp thủ công sẽ được cần cho tuân thủ chặt chẽ.

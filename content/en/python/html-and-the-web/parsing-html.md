@@ -11,9 +11,6 @@ title: Parsing HTML
 weight: 43
 ---
 
-## What & Why?
-Parsing HTML involves analyzing a webpage's HTML code to extract specific information or elements, a common task for web scraping, data mining, or automating interactions with websites. Programmers do it to programmatically interact with or extract data from websites, automate tasks, or test web applications.
-
 ## How to:
 Python provides powerful libraries like BeautifulSoup and requests for web scraping and HTML parsing. To begin, you need to install these libraries if you haven't already:
 

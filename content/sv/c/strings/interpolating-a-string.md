@@ -13,12 +13,7 @@ title: "Interpolera en str\xE4ng"
 weight: 8
 ---
 
-## Vad & Varför?
-
-Stränginterpolering, i programmering, innebär konstruktionen av strängar genom att bädda in uttryck inom litterala strängar. Programmerare gör detta för att skapa informativa meddelanden, dynamiska förfrågningar eller för att konstruera en sträng med variabelt innehåll effektivt och rent, ofta för användarutmatning eller loggningssyften.
-
 ## Hur man går till väga:
-
 C, till skillnad från vissa högnivåspråk, stöder inte stränginterpolering direkt i sin syntax. Istället uppnås strängkonstruktion med variabelt innehåll typiskt genom användning av funktionen `printf` eller dess varianter för utmatning, och `sprintf` för strängskapande. Här är en titt på hur man dynamiskt konstruerar strängar i C:
 
 ```c
@@ -47,7 +42,6 @@ Namn: Jane Doe, Ålder: 28
 Dessa kodsnuttar demonstrerar det traditionella sättet att inkorporera variabel data i strängar i C, vilket ger flexibilitet i konstruktionen av detaljerade strängar.
 
 ## Fördjupning
-
 Innan mer moderna programmeringsspråk med inbyggda funktioner för stränginterpolering introducerades, var C-utvecklare tvungna att förlita sig på funktioner som `sprintf()`, `snprintf()`, och deras varianter för att komponera strängar med variabelt innehåll. Denna metod, även om effektiv, introducerar potentiella risker såsom buffertöverflöd om den inte hanteras försiktigt, särskilt med `sprintf()`.
 
 Med tanke på alternativ, introducerade språk som Python och JavaScript mer intuitiva funktioner för stränginterpolering, såsom f-strängar (formaterade stränglitteraler) och malliteraler, respektive. Dessa funktioner möjliggör för utvecklare att direkt bädda in uttryck i stränglitteralerna, vilket gör koden mer läsbar och koncis.

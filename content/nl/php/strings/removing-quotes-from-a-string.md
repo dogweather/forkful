@@ -14,9 +14,6 @@ title: Quotes verwijderen uit een string
 weight: 9
 ---
 
-## Wat & Waarom?
-Het verwijderen van aanhalingstekens uit een string in PHP betekent het weghalen van die vervelende dubbele (`"`) of enkele (`'`) aanhalingstekens die je code logica of database queries kunnen verstoren. Programmeurs doen dit om invoerdata schoon te maken of te desinfecteren, om ervoor te zorgen dat strings veilig gebruikt of opgeslagen kunnen worden.
-
 ## Hoe:
 Hier is een eenvoudig voorbeeld met behulp van PHP's ingebouwde functies:
 

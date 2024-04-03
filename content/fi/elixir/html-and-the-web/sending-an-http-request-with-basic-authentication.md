@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---
 
-## What & Why?
-HTTP-pyyntö perusautentikaatiolla on web-palvelimelle lähetetty pyyntö, jossa on käyttäjätunnus ja salasana. Koodarit käyttävät tätä yksinkertaiseen pääsynvalvontaan, kun haluavat suojata resurssejaan.
-
 ## How to:
 Lähettääksesi HTTP-pyynnön Elixirissä perusautentikaatiolla, voit käyttää `HTTPoison`-kirjastoa. Tässä on pikainen esimerkki:
 
@@ -52,7 +49,7 @@ Perusautentikaatio on HTTP-protokollan vanhin autentikointitapa. Se on suoraviiv
 
 Elixirissä `HTTPoison` on suosittu HTTP-asiakaskirjasto. Se tarjoaa yksinkertaisen tavan tehdä pyyntöjä ja käsittää vastauksia. Vaihtoehtona on `Tesla`, joka on joustavampi ja modulaarisempi asiakaskirjasto.
 
-Implementaation yksityiskohdista, lähetät `Authorization`-otsakkeen, joka sisältää `'Basic '`, ja perään Base64-koodatun merkkijonon `'käyttäjätunnus:salasana'`. Serveri dekoodaa ja tarkistaa tämän ennen resurssin paljastamista. 
+Implementaation yksityiskohdista, lähetät `Authorization`-otsakkeen, joka sisältää `'Basic '`, ja perään Base64-koodatun merkkijonon `'käyttäjätunnus:salasana'`. Serveri dekoodaa ja tarkistaa tämän ennen resurssin paljastamista.
 
 ## See Also
 - [HTTPoison GitHub](https://github.com/edgurgel/httpoison)

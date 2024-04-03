@@ -12,9 +12,6 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-De lengte van een string vinden betekent het tellen van het aantal tekens dat het bevat. Programmeurs doen dit om tekstgegevens efficiënt te valideren, formatteren of te verwerken.
-
 ## Hoe:
 Rust biedt je `len()` voor de directe lengte:
 

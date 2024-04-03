@@ -10,9 +10,6 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## Qué y Por Qué?
-Buscar y reemplazar texto se refiere a localizar ciertos caracteres o palabras y cambiarlos por otros. Programadores hacen esto para actualizar datos, corregir errores o modificar código de manera eficiente.
-
 ## Cómo Hacerlo:
 Ruby facilita la búsqueda y sustitución de texto con métodos como `gsub`. Aquí un ejemplo que cambia todas las apariciones de "hola" por "adiós":
 

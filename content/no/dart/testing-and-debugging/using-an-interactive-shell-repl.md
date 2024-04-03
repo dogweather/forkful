@@ -13,12 +13,7 @@ title: "\xC5 bruke et interaktivt skall (REPL)"
 weight: 34
 ---
 
-## Hva & Hvorfor?
-
-En interaktiv shell (REPL - Read-Evaluate-Print Loop) for Dart lar programmerere dynamisk skrive inn og kjøre Dart-kode linje for linje uten å måtte kompilere hele skript. Dette verktøyet er uvurderlig for å lære Dart-syntaks, eksperimentere med kodeutsnitt, eller feilsøking ved å tilby øyeblikkelig tilbakemelding og lette iterativ testing.
-
 ## Hvordan:
-
 Dart kommer ikke med en innebygd REPL. Du kan imidlertid oppnå REPL-lignende funksjonalitet ved å bruke DartPad (online) eller ved å benytte tredjepartsverktøy som `dart_repl`.
 
 **Bruke DartPad:**

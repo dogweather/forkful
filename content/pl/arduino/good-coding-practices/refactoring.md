@@ -12,11 +12,7 @@ title: Refaktoryzacja
 weight: 19
 ---
 
-## Co i dlaczego?
-Refaktoryzacja to proces przerabiania kodu w celu poprawy jego struktury i czytelności, bez zmiany zewnętrznego zachowania lub funkcjonalności. Programiści dokonują refaktoryzacji, aby ich kod był czystszy, łatwiejszy do zrozumienia i bardziej zrozumiały, co w długiej perspektywie znacznie ułatwia debugowanie i dodawanie nowych funkcji.
-
 ## Jak to zrobić:
-
 Załóżmy, że masz na swoim Arduino funkcję, która robi zbyt wiele, na przykład taką:
 
 ```Arduino

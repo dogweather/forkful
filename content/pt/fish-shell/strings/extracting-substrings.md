@@ -11,9 +11,6 @@ title: Extraindo substrings
 weight: 6
 ---
 
-## O Que é & Por Que?
-Extrair substrings é o ato de selecionar partes específicas de uma string. Programadores fazem isso para manipular e analisar dados de forma mais granular.
-
 ## Como Fazer:
 ```Fish Shell
 # Extraindo substrings com string sub

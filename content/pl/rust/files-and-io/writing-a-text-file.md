@@ -13,9 +13,6 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i dlaczego?
-Pisanie plików tekstowych w Rust polega na tworzeniu, zapisywaniu i potencjalnie dodawaniu danych do pliku w systemie plików. Programiści wykonują tę operację, aby zachować dane, takie jak logi aplikacji, konfiguracja czy treści generowane przez użytkowników, zapewniając trwałość danych poza zakresem wykonania programu.
-
 ## Jak to zrobić:
 Standardowa biblioteka Rusta oferuje solidne narzędzia do manipulacji plikami, głównie zawarte w modułach `std::fs` i `std::io`. Oto podstawowy przykład, jak stworzyć i zapisać do pliku tekstowego:
 

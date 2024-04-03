@@ -17,9 +17,6 @@ title: "HTTP\u30EA\u30AF\u30A8\u30B9\u30C8\u306E\u9001\u4FE1"
 weight: 44
 ---
 
-## What & Why? (何となぜ？)
-HTTPリクエストはWebサーバーに情報を求める方法です。データを取得したり、ウェブサービスと交信するためにプログラマーはこれを使います。
-
 ## How to: (方法)
 PowerShellでHTTPリクエストを送るには、`Invoke-WebRequest` や `Invoke-RestMethod` コマンドレットを使います。簡単な例を見てみましょう。
 

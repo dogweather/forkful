@@ -14,9 +14,6 @@ title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---
 
-## Quoi et pourquoi ?
-Capitaliser une chaîne consiste à modifier en majuscule la première lettre de chaque mot de la chaîne, tout en veillant à ce que le reste reste en minuscules. Cette manipulation de chaînes courante est utile pour formater du texte dans des applications, telles que la préparation des noms d'utilisateur ou des titres pour l'affichage selon la convention ou la correction grammaticale.
-
 ## Comment faire :
 La bibliothèque standard de Java ne propose pas de méthode directe pour capitaliser des chaînes entières en une seule fois, mais vous pouvez accomplir cela avec une combinaison de méthodes intégrées. Pour des besoins plus sophistiqués, des bibliothèques tierces comme Apache Commons Lang offrent des solutions simples.
 
@@ -50,7 +47,6 @@ public class CapitalizeString {
 Ce fragment de code convertit toute la chaîne en minuscules, puis itère à travers chaque caractère, en capitalisant la première lettre de chaque mot. Il considère les espaces, les points et les apostrophes comme des séparateurs de mots.
 
 ### En utilisant Apache Commons Lang
-
 La bibliothèque Apache Commons Lang fournit une solution plus élégante avec la méthode `WordUtils.capitalizeFully()`, qui gère divers cas limites et délimiteurs pour vous :
 
 ```java

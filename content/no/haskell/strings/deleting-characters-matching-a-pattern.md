@@ -11,9 +11,6 @@ title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---
 
-## What & Why?
-I Haskell handler sletting av tegn som matcher et mønster om å fjerne spesifikke tegn fra en tekststreng basert på gitte kriterier. Programmerere gjør dette for å rense data, forenkle tekstbehandling eller fjerne unødvendig eller sensitiv informasjon.
-
 ## How to:
 I Haskell kan vi bruke `Data.Text` biblioteket til å arbeide med tekst og `Data.Text` sin funksjon `filter` for å slette tegn. Her er et eksempel:
 

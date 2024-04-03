@@ -9,9 +9,6 @@ title: Downloading a web page
 weight: 42
 ---
 
-## What & Why?
-Downloading a web page means snagging its contents via the web. Coders do this for web scraping, offline viewing, or automating interactions with websites.
-
 ## How to:
 Here's the magic spell for fetching a web page using PowerShell. We'll harness `Invoke-WebRequest`.
 

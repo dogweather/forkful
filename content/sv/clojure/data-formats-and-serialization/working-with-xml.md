@@ -11,9 +11,6 @@ title: Att arbeta med XML
 weight: 40
 ---
 
-## Vad & Varför?
-XML är ett märkspråk för att koda dokument på ett sätt som är läsbart både för människor och maskiner. Det är viktigt inom webbtjänster, konfigurationsfiler och datautbyte eftersom det överför data i ett strukturerat, hierarkiskt format.
-
 ## Hur man gör:
 Clojure erbjuder biblioteket `clojure.data.xml` för XML-tolkning och generering. Först, låt oss tolka lite XML:
 

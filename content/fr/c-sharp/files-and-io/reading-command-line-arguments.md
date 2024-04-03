@@ -10,9 +10,6 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## What & Why?
-Les arguments de ligne de commande sont les données que vous balancez à votre programme au démarrage. Les programmeurs s'en servent pour customiser l'exécution sans recompilation – pratique pour les configs, les modes de debug, et tout ce qui est input variable.
-
 ## How to:
 ```C#
 using System;

@@ -10,9 +10,6 @@ title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---
 
-## What & Why?
-La longueur d'une chaîne, c'est combien de caractères elle contient. Pourquoi s'en soucier? Parce qu'on a souvent besoin de savoir où on en est, comme pour valider une saisie ou couper une chaîne trop longue.
-
 ## How to:
 Trouver la longueur d'une chaîne en Lua, c'est du gâteau. Utilisez l'opérateur `#` devant votre chaîne :
 

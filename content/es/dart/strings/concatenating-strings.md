@@ -13,9 +13,6 @@ title: Concatenando cadenas de texto
 weight: 3
 ---
 
-## Qué y Por Qué?
-Concatenar cadenas en la programación implica combinar dos o más cadenas en una. Los programadores hacen esto para manipular datos de texto fácilmente, construir mensajes o ensamblar partes de una interfaz de usuario de manera dinámica.
-
 ## Cómo hacerlo:
 Dart ofrece varias formas sencillas de concatenar cadenas. A continuación, se muestran los métodos más comunes:
 

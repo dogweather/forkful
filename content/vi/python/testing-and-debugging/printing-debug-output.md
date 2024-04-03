@@ -16,9 +16,6 @@ title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---
 
-## Gì & Tại Sao?
-In đầu ra để gỡ lỗi giống như việc bạn đang trò chuyện với mã của mình để tìm hiểu nó đang nghĩ gì. Các lập trình viên làm điều này để theo dõi và khắc phục những lỗi nghiêm trọng xảy ra trong chương trình của họ.
-
 ## Cách thực hiện:
 Đơn giản và dễ hiểu, bạn in những thứ ra để xem điều gì đang diễn ra. Dưới đây là điển hình:
 

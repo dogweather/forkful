@@ -9,9 +9,6 @@ title: Converting a date into a string
 weight: 28
 ---
 
-## What & Why?
-Converting a date to a string is about changing how date/time data is displayed. Programmers do this for readability, localization, or formatting consistency across applications.
-
 ## How to:
 In Lua, we use `os.date` to format dates into strings. Here's a slice of code to chew on.
 
@@ -39,7 +36,7 @@ Implementation details? The `os.date` function can behave in two ways:
 - Given a format string, it returns the formatted date.
 - Omit the format, and it returns a table with date components.
 
-Fun fact: Lua's time-related functions use the epoch as reference—the number of seconds since Jan 1, 1970. This quirk traces back to Unix time. 
+Fun fact: Lua's time-related functions use the epoch as reference—the number of seconds since Jan 1, 1970. This quirk traces back to Unix time.
 
 ## See Also
 - Lua's reference manual on `os.date`: https://www.lua.org/manual/5.4/manual.html#pdf-os.date

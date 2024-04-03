@@ -10,9 +10,6 @@ title: Praca z JSON
 weight: 38
 ---
 
-## What & Why?
-JSON (JavaScript Object Notation) to format wymiany danych. Programiści używają go, bo jest lekki i łatwy do czytania dla ludzi, a także łatwy do parsowania dla maszyn.
-
 ## How to:
 Użyjemy biblioteki `Jackson` do obsługi JSON w Java. Najpierw dodaj zależność do `pom.xml`:
 

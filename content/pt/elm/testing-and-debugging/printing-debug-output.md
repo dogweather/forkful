@@ -11,9 +11,6 @@ title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---
 
-## O Quê & Por Quê?
-Imprimir saída de debug é como espiar no funcionamento do seu código. Programadores fazem isso para entender o que está acontecendo, encontrar bugs e garantir que tudo está nos trilhos.
-
 ## Como Fazer:
 Vamos ver como isso funciona em Elm. Para imprimir algo para o console e ajudar no debug, você pode usar a função `Debug.log`. O seu programa continua funcionando normalmente após chamar esta função. Veja um exemplo:
 

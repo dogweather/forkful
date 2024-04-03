@@ -13,12 +13,7 @@ title: Czytanie pliku tekstowego
 weight: 22
 ---
 
-## Co i dlaczego?
-
-Czytanie pliku tekstowego w Visual Basic for Applications (VBA) polega na programowym dostępie i ekstrakcji zawartości pliku tekstowego z poziomu aplikacji Office. Programiści często wykonują to zadanie, aby importować lub przetwarzać dane przechowywane w plikach tekstowych, ułatwiając automatyzację i manipulację danymi bezpośrednio w ekosystemie Office.
-
 ## Jak to zrobić:
-
 Najprostszym sposobem na odczyt pliku tekstowego w VBA jest użycie instrukcji `Open` w połączeniu z funkcjami `Input` lub `Line Input`. Oto jak możesz to zrobić:
 
 1. **Otwórz plik do odczytu** - Najpierw musisz otworzyć plik. Upewnij się, że ścieżka do pliku jest dostępna dla aplikacji.
@@ -66,7 +61,6 @@ Miłego czytania!
 Wyjście w oknie Immediate będzie całym tekstem lub linią po linii, w zależności od wybranej metody.
 
 ## Dogłębna analiza
-
 Czytanie plików tekstowych w VBA jest kamieniem węgielnym zadań automatyzacji biurowej od dziesięcioleci. Metody zilustrowane, choć wydajne w ekosystemie VBA, mogą wydawać się archaiczne w porównaniu do nowoczesnych praktyk programistycznych, które często stosują wyższości abstrakcji lub biblioteki do operacji na plikach. Na przykład, Python używa funkcji `open()` w ramach instrukcji `with`, zapewniając czystrzą składnię i automatyczne funkcje obsługi plików.
 
 Jednak, pracując w ramach środowiska Microsoft Office, VBA zapewnia bezpośrednią i natywną metodę manipulowania plikami, co może być kluczowe dla aplikacji wymagających interoperacyjności z produktami Office. Prostota otwierania pliku tekstowego, czytania i przetwarzania jego zawartości linia po linii lub w całości, bez potrzeby korzystania z zewnętrznych bibliotek lub skomplikowanych konfiguracji, czyni VBA cennym narzędziem w zestawie dewelopera Office.

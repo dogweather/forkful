@@ -10,9 +10,6 @@ title: Comparer deux dates
 weight: 27
 ---
 
-## Quoi et Pourquoi ?
-Comparer deux dates, c'est évaluer leur ordre chronologique relatif. Les développeurs le font pour trier des événements, gérer des délais ou vérifier des périodes de validité.
-
 ## Comment faire :
 Voici quelques exemples simples pour comparer des dates en Clojure :
 

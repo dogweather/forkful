@@ -13,12 +13,7 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä & Miksi?
-
-Virheenkäsittely Visual Basic for Applications (VBA) -ohjelmoinnissa viittaa ohjelmoinnin, sovelluksen tai viestinnän virheiden ennakointiin, havaitsemiseen ja ratkaisemiseen. Vankka virheenkäsittelyn toteuttaminen on ratkaisevan tärkeää sovellusten eheyden ylläpitämiseksi ja käyttäjäkokemuksen parantamiseksi hallitsemalla odottamattomia ongelmia sujuvasti aiheuttamatta äkillisiä kaatumisia tai datan menetyksiä.
-
 ## Kuinka:
-
 VBA:ssa virheenkäsittely toteutetaan tyypillisesti käyttämällä `On Error` -lauseketta, joka ohjeistaa VBA:ta miten edetä kun virhe tapahtuu. Yleisimmät virheenkäsittelystrategiat sisältävät `On Error GoTo` -merkin, `On Error Resume Next` ja `On Error GoTo 0`.
 
 **Esimerkki 1: Käyttäen `On Error GoTo`**
@@ -63,7 +58,6 @@ End Sub
 Tässä tapauksessa ohjelma ei keskeydy virheeseen; se tarkistaa, tapahtuiko virhe, käsittelee sen jos niin on, ja sitten nollaa virheen.
 
 ## Syväsukellus
-
 Historiallisesti virheenkäsittely ohjelmointikielissä on kehittynyt yksinkertaisista goto-lauseista monimutkaisempiin mekanismeihin kuten poikkeuksiin (exceptions) kielissä kuten Java ja C#. VBA:n virheenkäsittely, vaikka ei olekaan yhtä voimakas tai joustava kuin modernit poikkeuskäsittelyt, palvelee tarkoitustaan kielen sovelluksessa Microsoft Office -ympäristöjen tehtävien automatisoinnissa.
 
 VBA:n virheenkäsittelyn ensisijainen rajoitus piilee sen jokseenkin kömpelössä ja manuaalisessa lähestymistavassa, joka vaatii virheenkäsittelykoodin huolellista sijoittelua ja selkeää ymmärrystä suorituksen kulusta. Nykyaikaiset ohjelmointikielet tarjoavat tyypillisesti elegantimpia ratkaisuja, kuten try-catch-lohkot, jotka automaattisesti hoitavat virran siirtymisen virheenkäsittelykoodiin ilman manuaalisia tarkistuksia tai hyppyjä koodin suorituksessa.

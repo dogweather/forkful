@@ -12,9 +12,6 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-## Was & Warum?
-Temporäre Dateien dienen dazu, Daten zwischenzuspeichern, die während der Laufzeit eines Programms benötigt, aber nicht dauerhaft gespeichert werden sollen. Sie sind hilfreich, um Speicherplatz zu schonen und die Sicherheit zu erhöhen, da sie nach Gebrauch gelöscht werden können.
-
 ## How to:
 Erzeugen einer temporären Datei in Clojure:
 

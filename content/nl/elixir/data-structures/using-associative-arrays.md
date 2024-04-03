@@ -12,12 +12,7 @@ title: Gebruik van associatieve arrays
 weight: 15
 ---
 
-## Wat & Waarom?
-
-In Elixir worden associatieve arrays, genaamd Maps, gebruikt als collecties van sleutel-waardeparen waar een unieke sleutel naar een waarde wijst. Ze zijn enorm handig voor het opslaan en ophalen van gegevens onderweg, waardoor je code schoner wordt en je leven makkelijker.
-
 ## Hoe te:
-
 Een Map maken is eenvoudig. Je gebruikt de `%{}` syntaxis, zo:
 
 ```elixir
@@ -49,7 +44,6 @@ IO.inspect(trimmed_map)
 Output: `%{"location" => "NY", "name" => "Alex"}`
 
 ## Diepere Duik
-
 Maps in Elixir zijn een evolutie van de oudere sleutel-waardeopslagtypes, zoals Hashes in Ruby of Dictionaries in Python. Ze zorgen voor efficiëntere zoekopdrachten en invoegingen, waardoor ze de voorkeur krijgen voor modern Elixir-programmeren. Het is opmerkelijk dat voor de Maps, Elixir gebruikmaakte van de HashDict en Dict modules, die nu verouderd zijn.
 
 Echter, voor scenario's waar geordende gegevens nodig zijn, kunt u kijken naar trefwoordlijsten in Elixir. Dit zijn lijsten van tuples, efficiënt voor kleinere verzamelingen maar niet zo prestatievriendelijk voor grote datasets als Maps.

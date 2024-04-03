@@ -12,12 +12,7 @@ title: Een datum uit een string parsen
 weight: 30
 ---
 
-## Wat & Waarom?
-
-Een datum uit een string parsen betekent het omzetten van tekst die een datum vertegenwoordigt naar een datumobject. Programmeurs doen dit omdat het cruciaal is voor het omgaan met datums in applicaties, zoals het sorteren van evenementen of het filteren van logs.
-
 ## Hoe te:
-
 In JavaScript kun je een datum uit een string parsen met de `Date` constructor of bibliotheken zoals `Date-fns` en `Moment.js`. Hier is de native manier:
 
 ```Javascript
@@ -42,7 +37,6 @@ console.log(dateFnsDate); // Geeft uit: Sat Apr 01 2023 00:00:00 GMT+0000 (UTC)
 ```
 
 ## Diepere Duik
-
 JavaScript heeft ingebouwde datumafhandeling, maar die was niet altijd geweldig. Eerdere versies hadden problemen met consistentie, tijdzones en opmaak. Mensen raakten vaak gefrustreerd en ontwikkelden hun eigen oplossingen of gebruikten bibliotheken van derden zoals `Moment.js`, die meer functies en betere parseeropties boden.
 
 In de loop der tijd verbeterde JavaScript, en nieuwe bibliotheken zoals `Date-fns` en `Luxon` kwamen tevoorschijn, gericht op kleinere, snellere en meer modulaire hulpprogramma’s. Een alternatief is de constructor `Intl.DateTimeFormat`, onderdeel van de Internationaliserings-API, die taalgevoelige datum- en tijdopmaak mogelijk maakt.
@@ -52,7 +46,6 @@ Hier is het fijne detail: het parsen is risicovol vanwege verschillen in formate
 Onthoud altijd voorzichtig te zijn met tijdzones bij het parsen van datums; ze kunnen de correctheid van je datumlogica maken of breken.
 
 ## Zie Ook
-
 - MDN Web Docs over `Date`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 - Moment.js: https://momentjs.com/docs/#/parsing/string/
 - Date-fns Documentatie: https://date-fns.org/v2.28.0/docs/parse

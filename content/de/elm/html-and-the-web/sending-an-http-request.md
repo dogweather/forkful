@@ -11,9 +11,6 @@ title: Einen HTTP-Request senden
 weight: 44
 ---
 
-## Was & Warum?
-HTTP-Anfragen werden genutzt, um mit Webservern zu kommunizieren – Daten zu holen und zu senden. Programmierer brauchen diese, um Webanwendungen zu erstellen, die mit Backend-Diensten interagieren.
-
 ## How to:
 Elm macht HTTP-Anfragen übersichtlich. Hier ist ein einfaches Beispiel, wie man eine GET-Anfrage schickt:
 

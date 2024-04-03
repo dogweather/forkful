@@ -11,9 +11,6 @@ title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---
 
-## Was & Warum?
-Umwandlung einer Zeichenkette in Kleinbuchstaben bedeutet, dass alle Großbuchstaben in ihrer kleingeschriebenen Form dargestellt werden. Das ist nützlich für Konsistenz bei Vergleichen oder wenn man Eingaben normalisieren will.
-
 ## Anleitung:
 In Kotlin ist die Umwandlung simpel — nutze die `toLowerCase()` Methode. Hier ist ein Beispiel:
 

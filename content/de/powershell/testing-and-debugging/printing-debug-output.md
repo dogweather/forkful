@@ -10,9 +10,6 @@ title: Debug-Ausgaben drucken
 weight: 33
 ---
 
-## Was & Warum?
-Druckausgaben zum Debuggen sind so etwas wie Wegweiser beim Programmieren - sie zeigen, wo die Daten entlanglaufen und wo sie sich verstecken. Programmierer nutzen sie, um den Überblick zu behalten, denken wir mal an Brotkrumen im Wald der Variablen und Funktionen.
-
 ## Wie geht das:
 PowerShell bietet das `Write-Host`, `Write-Debug`, `Write-Verbose` und `Write-Information` Cmdlet an, um unterschiedliche Arten von Ausgaben zu erzeugen. Einfach im Code an der gewünschten Stelle platziert:
 

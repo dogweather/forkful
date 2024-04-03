@@ -11,9 +11,6 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## What & Why? (Co i Dlaczego?)
-Usuwanie znaków zgodnych z wzorcem to filtracja ciągu tekstowego przez usunięcie określonych znaków. Programiści robią to, aby oczyścić dane wejściowe, przygotować tekst do analizy, czy też usunąć niechciane lub niebezpieczne treści.
-
 ## How to: (Jak to zrobić?)
 ```TypeScript
 function deleteMatchingCharacters(str: string, pattern: RegExp): string {

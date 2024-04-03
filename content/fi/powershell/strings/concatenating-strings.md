@@ -10,9 +10,6 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## Mitä & Miksi?
-Yhdistämme merkkijonoja luodaksemme uusia, kokonaisia tekstejä. Tämä on tarpeen, kun keräämme eri lähteistä tulevia tietoja tai haluamme muodostaa dynaamisia viestejä.
-
 ## Kuinka:
 ```PowerShell
 # Yksinkertainen yhdistäminen käyttäen plus-merkkiä (+)
@@ -44,6 +41,5 @@ Aikojen alussa, kun komentosarjoja ensin kirjoitettiin, merkkijonojen yhdistämi
 Yhdistämisen vaihtoehtoina ovat myös funktiot kuten `Join-String` PowerShell v6.0+:ssa tai .NET-metodit kuten `[string]::Concat()`. Yhdistettäessä suuria määriä tai suorituskyvyn ollessa kriittistä, `[System.Text.StringBuilder]` luokka tarjoaa resurssitehokkaan tavan kasata merkkijonoja.
 
 ## Katso Myös
-
 - `Join-String` cmdlet-ohje: [Join-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/join-string?view=powershell-7)
 - .NET `StringBuilder` luokka: [StringBuilder Class](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-6.0)

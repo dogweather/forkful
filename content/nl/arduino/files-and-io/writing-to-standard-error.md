@@ -12,9 +12,6 @@ title: Schrijven naar standaardfout
 weight: 25
 ---
 
-## Wat en Waarom?
-Schrijven naar standaardfout (stderr) rapporteert fouten en diagnostiek gescheiden van standaarduitvoer (stdout). Het is cruciaal voor het debuggen en loggen, waarbij ontwikkelaars problemen kunnen isoleren zonder foutmeldingen te vermengen met reguliere programma-uitvoer.
-
 ## Hoe te:
 Arduino ondersteunt van nature geen stderr, maar we kunnen dit nabootsen door naar Serial te schrijven. Stel je een LED-knipperprogramma voor met foutcontrole:
 

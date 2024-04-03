@@ -15,11 +15,8 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä & Miksi?
-
-Ohjelmoinnissa CSV-tiedostojen (pilkuin erotetut arvot) käsittely tarkoittaa tietojen lukemista ja kirjoittamista tekstiedostoihin, jotka on järjestetty riveittäin, missä jokainen rivi edustaa tietuetta ja jokaisen tietueen kentät on erotettu pilkuilla. Ohjelmoijat manipuloivat CSV-tiedostoja helpottaakseen datan tuontia/vientiä eri järjestelmissä, niiden laajan tuen ja yksinkertaisuuden vuoksi taulukollisen datan tallennuksessa.
-
 ## Miten:
+
 
 ### CSV-tiedostojen lukeminen
 Luetaan CSV-tiedosto C-kielellä käyttämällä standardin tiedosto I/O -funktioita yhdessä merkkijonojen käsittelyfunktioiden kanssa jokaisen rivin jäsentämiseksi. Alla on perusesimerkki CSV-tiedoston lukemisesta ja jokaisen rivin kenttien tulostamisesta konsoliin.
@@ -95,7 +92,6 @@ Jane Doe,27,Data Scientist
 ```
 
 ## Syväsukellus
-
 CSV-muoto, vaikkakin näennäisen suoraviivainen, sisältää hienovaraisuuksia, kuten kentissä esiintyvien pilkkujen käsittely ja kenttien sulkeminen lainausmerkeillä. Esitetyt perusesimerkit eivät huomioi tällaisia monimutkaisuuksia, eivätkä käsittele potentiaalisia virheitä robustisti.
 
 Historiallisesti CSV-käsittely C-kielessä on suurelta osin ollut manuaalista johtuen kielen matalan tason luonteesta ja korkean tason abstraktioiden puutteesta tällaisiin tehtäviin. Tämä manuaalinen hallinta sisältää tiedostojen avaamisen, rivien lukemisen, merkkijonojen jakamisen ja tarpeen mukaan datatyyppien muuntamisen.

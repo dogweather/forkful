@@ -12,9 +12,6 @@ title: Het huidige datum ophalen
 weight: 29
 ---
 
-## Wat & Waarom?
-Het verkrijgen van de huidige datum in je C++ programma kan handig zijn: denk aan loggen, tijdstempels of planningsfuncties. Het gaat erom relevant te blijven voor het nu - jouw software weet net zo goed wat vandaag is als jij.
-
 ## Hoe te:
 Hier is hoe je de huidige datum kunt ophalen met `<chrono>`—modern, schoon, zonder nonsens.
 

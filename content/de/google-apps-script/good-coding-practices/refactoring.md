@@ -13,12 +13,7 @@ title: Refactoring
 weight: 19
 ---
 
-## Was & Warum?
-
-Refactoring im Programmierlexikon bezieht sich auf den Prozess des Umstrukturierens bestehenden Computer-Codes – das Ändern der Faktorierung ohne Änderung seines externen Verhaltens – um nicht-funktionale Attribute zu verbessern. Es ist ein entscheidender Schritt für Programmierer, um die Lesbarkeit des Codes zu erhöhen, Komplexität zu reduzieren und potenziell verborgene Fehler aufzudecken, was eine einfachere Wartung und zukünftige Skalierbarkeit des Codes fördert.
-
 ## Wie:
-
 In Google Apps Script ist ein häufiges Szenario, das vom Refactoring profitiert, die Vereinfachung von umständlichen Skripten, die mit Google Sheets oder Docs interagieren. Anfangs könnten Skripte auf eine schnelle und schmutzige Weise geschrieben werden, um schnell Ergebnisse zu erzielen. Mit der Zeit, wenn das Skript wächst, wird es unhandlich. Lassen Sie uns ein Beispiel für Refactoring für bessere Lesbarkeit und Effizienz durchgehen.
 
 **Ursprüngliches Skript:**
@@ -57,7 +52,6 @@ Die Ausgabe im Logger sieht ungefähr so aus, vorausgesetzt, Ihr Google Sheets-D
 Das überarbeitete Skript erreicht dasselbe Ergebnis, ist aber sauberer und auf den ersten Blick leichter zu verstehen.
 
 ## Tiefere Einblicke
-
 Das Refactoring in Google Apps Script übernimmt teilweise seine Prinzipien aus der breiteren Softwareentwicklungspraxis. Es wurde Ende der 1990er Jahre durch Martin Fowlers wegweisendes Buch "Refactoring: Improving the Design of Existing Code" (1999) bekannter und strukturierter, das einen umfassenden Leitfaden zu verschiedenen Refactoring-Techniken bot. Obwohl die Spezifika des Refactorings je nach Programmiersprache aufgrund ihrer syntaktischen und funktionalen Unterschiede variieren können, bleibt das Hauptziel dasselbe: die Verbesserung des Codes ohne Änderung seines externen Verhaltens.
 
 Im Kontext von Google Apps Script ist ein wichtiger Aspekt, den man während des Refactorings berücksichtigen sollte, die von Google auferlegten Dienstquoten und Einschränkungen. Effizient überarbeiteter Code liest sich nicht nur besser, sondern läuft auch schneller und zuverlässiger innerhalb dieser Beschränkungen. Zum Beispiel können Stapeloperationen (`Range.setValues()` anstelle von Werten, die einzeln in Zellen gesetzt werden) die Ausführungszeit und den Quotenverbrauch erheblich reduzieren.

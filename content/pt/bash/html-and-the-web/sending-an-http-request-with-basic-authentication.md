@@ -12,12 +12,7 @@ title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---
 
-## O Que é & Porquê?
-
-Enviar uma requisição HTTP com autenticação básica é um método para acessar recursos protegidos na web usando nome de usuário e senha. Programadores usam isso para interagir com APIs ou serviços web que necessitam de credenciais para acesso.
-
 ## Como Fazer:
-
 Para um rápido giro pelo assunto, eis um exemplo usando o `curl`:
 
 ```Bash
@@ -49,7 +44,6 @@ curl -H "Authorization: Basic $credenciais" http://exemplo.com/recurso
 ```
 
 ## Aprofundando
-
 A autenticação básica em HTTP, uma das maneiras mais simples de controlar o acesso a recursos na web, existe desde os primórdios da internet. Usuários e senhas são codificados em base64 e enviados no cabeçalho da requisição. Embora simples, é considerada insegura se não usada com HTTPS, pois os dados podem ser facilmente decodificados se interceptados.
 
 Alternativas mais seguras incluem autenticação Digest, OAuth e tokens de acesso. Estes métodos oferecem mais segurança, mas são mais complexos para implementar.
@@ -57,7 +51,6 @@ Alternativas mais seguras incluem autenticação Digest, OAuth e tokens de acess
 Detalhes da implementação de autenticação básica em Bash geralmente giram em torno do `curl`, devido à sua simples sintaxe e vasta adoção. No entanto, scripts Bash podem também aproveitar outras ferramentas como `wget` ou utilizar recursos internos do próprio Bash para criar sockets e enviar requisições diretamente, embora seja bem mais complicado.
 
 ## Veja Também
-
 - Documentação oficial do `curl`: https://curl.se/docs/manpage.html
 - Guia de autenticação HTTP da Mozilla Developer Network (MDN): https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
 - Tutorial sobre segurança em APIs: https://auth0.com/blog/which-is-the-best-api-authentication-method/

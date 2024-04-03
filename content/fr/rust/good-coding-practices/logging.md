@@ -12,12 +12,7 @@ title: Journalisation
 weight: 17
 ---
 
-## Quoi & Pourquoi ?
-
-La journalisation est comme tenir un journal pour votre application ; c'est la pratique d'enregistrer des événements, des erreurs et d'autres données pertinentes pendant l'exécution. Les développeurs utilisent les journaux pour diagnostiquer des problèmes, surveiller le comportement du système et recueillir des informations qui entraînent des améliorations – c'est le pain et le beurre de l'intelligence opérationnelle.
-
 ## Comment faire :
-
 Mettre en place un scénario de journalisation de base en Rust en utilisant la crate `log`, qui fournit une façade de journalisation, et `env_logger`, une implémentation de journalisation pour la crate `log`. Tout d'abord, ajoutez-les à votre Cargo.toml :
 
 ```toml
@@ -49,7 +44,6 @@ WARN: Ceci est un message d'avertissement.
 Expérimentez avec la variable d'environnement `RUST_LOG` en la réglant sur `error`, `warn`, `info`, `debug`, ou `trace` pour contrôler la verbosité de vos journaux.
 
 ## Plongée Profonde
-
 Le concept de journalisation n'est pas nouveau ; il existe depuis les premiers jours de l'informatique. Avant que la journalisation ne soit commune dans les logiciels, les développeurs comptaient sur des méthodes primitives telles que les déclarations d'impression ou les outils de débogage pour tracer l'exécution des programmes. À mesure que les programmes devenaient plus complexes, le besoin d'approches structurées à la journalisation augmentait également.
 
 En Rust, la crate `log` abstrait les détails d'implémentation de la journalisation, permettant aux développeurs de brancher différents backends de journalisation. Bien que `env_logger` soit un choix courant, il existe des alternatives comme `fern`, `slog` ou `tracing`, chacune avec son propre ensemble de fonctionnalités et d'options de configuration.
@@ -67,7 +61,6 @@ Quelques considérations lors de la mise en œuvre de la journalisation comprenn
 5. **Configuration** : De nombreux cadres de journalisation prennent en charge la configuration par le biais de variables d'environnement, de fichiers de configuration et/ou de code. Cette flexibilité est clé pour peaufiner la sortie dans différents environnements (développement, mise en scène, production).
 
 ## Voir Aussi
-
 - La documentation de la crate `log` : https://docs.rs/log/
 - La documentation de la crate `env_logger` : https://docs.rs/env_logger/
 - La page de journalisation de Rust by Example : https://doc.rust-lang.org/rust-by-example/std_misc/log.html

@@ -11,9 +11,6 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## Hva & Hvorfor?
-Søk og erstatt i tekst betyr å finne spesifikke ord eller fraser og bytte dem ut med andre. Programmerere bruker dette til å oppdatere kode, rette feil eller behandle data effektivt.
-
 ## Slik gjør du:
 ```python
 # Enkle søk og erstatt med str.replace()

@@ -11,12 +11,7 @@ title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
 
-## What & Why? - Mitä & Miksi?
-
-PHP-koodauksessa debug-tulostus auttaa löytämään ja ymmärtämään ongelmia. Koodarit käyttävät sitä, koska näkee suoraan, mitä koodi tekee (tai ei tee).
-
 ## How to: - Kuinka:
-
 Debug-tulostusta voi tehdä `echo` ja `print_r` avulla. Tässä pari esimerkkiä:
 
 ```php
@@ -39,7 +34,6 @@ Array
 ```
 
 ## Deep Dive - Syväsukellus:
-
 Historiallisesti PHP on tarjonnut useita built-in funktioita debug-tulostusta varten. `print_r`, `var_dump` ja `var_export` ovat tyypillisiä työkaluja. Ne eroavat tiedon esittämisessä: `var_dump` näyttää tyypit ja pituudet, `var_export` taas palauttaa validin PHP-koodin.
 
 PHP:n error_log-funktio mahdollistaa virhetietojen kirjoittamisen lokiin, mikä on välttämätöntä tuotantoympäristössä. Xdebug-laajennus tuo kehittyneitä debuggausominaisuuksia, kuten stack trace.
@@ -47,7 +41,6 @@ PHP:n error_log-funktio mahdollistaa virhetietojen kirjoittamisen lokiin, mikä 
 Viimeisimpänä huomiona, debug-tulostusta ei pitäisi jättää tuotantokoodiin suorituskyvyn ja tietoturvan vuoksi.
 
 ## See Also - Katso Myös:
-
 - PHP:n virallinen dokumentaatio `print_r`: https://www.php.net/manual/en/function.print-r.php
 - PHP Documentation on `var_dump`: https://www.php.net/manual/en/function.var-dump.php
 - Xdebug, PHP debugger: https://xdebug.org/

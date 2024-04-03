@@ -10,9 +10,6 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## What & Why? (Mitä & Miksi?)
-Yhdistämme merkkijonoja luodaksemme uusia tekstejä. Tätä kutsutaan konkatenoinniksi. Ohjelmoijat tekevät tämän, jotta saadaan kokoonpannut viestit tai muodostettua dynaamista sisältöä.
-
 ## How to (Miten)
 ```Rust
 fn main() {

@@ -12,9 +12,6 @@ title: Analizando una fecha desde una cadena de texto
 weight: 30
 ---
 
-## Qué y Por Qué?
-Parsear una fecha de un string en Dart implica convertir la representación textual de fechas y horas en un objeto `DateTime`. Esta operación es esencial para aplicaciones que manejan programación, análisis de datos o cualquier característica que requiera manipulación de fechas, asegurando que los datos relacionados con fechas sean correctamente entendidos y procesados por el programa.
-
 ## Cómo hacerlo:
 La biblioteca central de Dart simplifica el análisis de fechas mediante la clase `DateTime`. Para casos sencillos donde conoces el formato del string de la fecha, puedes usar el método `DateTime.parse()`. Sin embargo, para escenarios más complejos o cuando se trata de múltiples formatos, el paquete `intl`, específicamente la clase `DateFormat`, se vuelve invaluable.
 

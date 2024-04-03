@@ -15,12 +15,7 @@ title: Trabalhando com YAML
 weight: 41
 ---
 
-## O quê e Por quê?
-
-YAML, abreviação de YAML Ain't Markup Language, é um padrão de serialização de dados legível por humanos comumente usado para arquivos de configuração e troca de dados entre linguagens com diferentes estruturas de dados. Programadores o utilizam devido à sua simplicidade e capacidade de representar facilmente dados hierárquicos complexos.
-
 ## Como fazer:
-
 Elixir não inclui suporte embutido para YAML. No entanto, você pode usar bibliotecas de terceiros, como `yamerl` ou `yaml_elixir`, para trabalhar com YAML. Aqui, vamos nos concentrar em `yaml_elixir` pela sua facilidade de uso e recursos abrangentes.
 
 Primeiro, adicione `yaml_elixir` às suas dependências em mix.exs:
@@ -36,7 +31,6 @@ end
 Depois, execute `mix deps.get` para buscar a nova dependência.
 
 ### Lendo YAML
-
 Dado um simples arquivo YAML, `config.yaml`, que se parece com isto:
 
 ```yaml
@@ -69,7 +63,6 @@ Config.read()
 ```
 
 ### Escrevendo YAML
-
 Para escrever um mapa de volta para um arquivo YAML:
 
 ```elixir

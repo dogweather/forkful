@@ -14,11 +14,8 @@ title: Den aktuellen Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-
-Das Abrufen des aktuellen Datums in Rust ist eine gängige Aufgabe für Dinge wie das Logging, zeitbasierte Operationen oder einfach nur, um das Datum anzuzeigen. Im Gegensatz zu einigen Sprachen, die Datum- und Zeitfunktionalitäten in ihrer Standardbibliothek enthalten, ermutigt Rust zur Nutzung einer robusten Drittanbieterbibliothek, chrono, für umfassende Datum- und Zeitmanipulationen aufgrund ihrer überlegenen Funktionalität und Benutzerfreundlichkeit.
-
 ## Wie geht das:
+
 
 ### Verwendung von Rusts Standardbibliothek
 Rusts Standardbibliothek bietet eine begrenzte, aber schnelle Möglichkeit, die aktuelle Zeit zu ermitteln, allerdings nicht direkt das aktuelle Datum im Kalenderformat. So machen Sie es:

@@ -11,9 +11,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---
 
-## What & Why?
-Enviar uma requisição HTTP é o processo de solicitar dados ou ação de outro servidor através da internet. Programadores fazem isso para interagir com APIs, coletar informações, ou integrar sistemas distintos.
-
 ## How to:
 O Java oferece várias maneiras de enviar requisições HTTP. Desde o Java 11, a classe `HttpClient` tornou o processo mais simples e direto. Aqui está um exemplo rápido de como fazer uma requisição GET:
 

@@ -18,9 +18,6 @@ title: "YAML\uB85C \uC791\uC5C5\uD558\uAE30"
 weight: 41
 ---
 
-## 무엇 & 왜?
-YAML은 "YAML Ain't Markup Language"의 약자로, 사람이 읽을 수 있는 데이터 직렬화 형식입니다. 그 간단함과 가독성 때문에 프로그래머들은 설정 파일, 프로세스 간 메시지 전송, 데이터 저장 등에 XML이나 JSON 같은 다른 데이터 형식보다 YAML을 종종 사용합니다.
-
 ## 방법:
 C#은 YAML에 대한 내장 지원이 없지만, *YamlDotNet*과 같은 서드파티 라이브러리를 사용하여 쉽게 YAML을 다룰 수 있습니다. 먼저 YamlDotNet 패키지를 설치해야 합니다:
 

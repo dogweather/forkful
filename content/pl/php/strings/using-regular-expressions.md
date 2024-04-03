@@ -14,16 +14,10 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-
-Wyrażenia regularne (regex) w PHP to wzorce używane do dopasowywania kombinacji znaków w ciągach, co pozwala na zaawansowane operacje wyszukiwania i zamiany oraz walidację danych. Programiści wykorzystują regex ze względu na jego moc i elastyczność w analizowaniu tekstu, walidacji formularzy lub pozyskiwaniu danych z internetu, co czyni go niezbędnym narzędziem w arsenale dewelopera.
-
 ## Jak to zrobić:
-
 PHP obsługuje wyrażenia regularne za pośrednictwem biblioteki PCRE (Perl Compatible Regular Expressions), oferując bogaty zestaw funkcji. Oto jak ich używać:
 
 ### Dopasowywanie wzorca:
-
 Aby sprawdzić, czy wzorzec istnieje w ciągu, użyj `preg_match()`. Ta funkcja zwraca 1, jeśli wzorzec został znaleziony w ciągu, i 0, jeśli nie.
 
 ```php
@@ -36,7 +30,6 @@ if (preg_match("/\bweb\b/i", "PHP to język skryptowy do stron internetowych")) 
 ```
 
 ### Znajdowanie wszystkich dopasowań:
-
 `preg_match_all()` jest używane, gdy potrzebujesz znaleźć wszystkie wystąpienia wzorca w ciągu.
 
 ```php
@@ -48,7 +41,6 @@ print_r($matches[0]);
 ```
 
 ### Zastępowanie tekstu:
-
 Do zastępowania tekstu, który pasuje do wyrażenia regularnego, używane jest `preg_replace()`. Jest niezwykle potężne do formatowania i porządkowania danych.
 
 ```php
@@ -60,7 +52,6 @@ echo preg_replace($pattern, $replacement, $originalText);
 ```
 
 ### Dzielenie ciągów:
-
 Możesz podzielić ciąg na tablicę za pomocą `preg_split()`, określając wzorzec dla separatora.
 
 ```php

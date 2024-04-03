@@ -15,15 +15,10 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i dlaczego?
-Sprawdzanie, czy katalog istnieje w TypeScript, jest kluczowe dla zadań związanych z zarządzaniem plikami, takich jak odczytywanie z plików lub zapisywanie do nich danych, zapewniając, że operacje są wykonywane tylko na istniejących katalogach. Ta operacja jest istotna, aby unikać błędów wynikających z prób dostępu lub manipulacji nieistniejącymi katalogami.
-
 ## Jak to zrobić:
-
 TypeScript, uruchomiony w środowisku Node.js, umożliwia sprawdzenie, czy katalog istnieje, za pomocą modułu `fs`, który dostarcza funkcję `existsSync()` lub asynchroniczną funkcję `access()` połączoną z `constants.F_OK`.
 
 ### Używając `fs.existsSync()`:
-
 ```typescript
 import { existsSync } from 'fs';
 
@@ -37,7 +32,6 @@ if (existsSync(directoryPath)) {
 ```
 
 ### Używając `fs.access()` z `fs.constants.F_OK`:
-
 ```typescript
 import { access, constants } from 'fs';
 
@@ -63,7 +57,6 @@ Katalog nie istnieje.
 ```
 
 ### Używając biblioteki innej firmy - `fs-extra`:
-
 `fs-extra` to popularna biblioteka innej firmy, która ulepsza wbudowany moduł `fs` i dostarcza bardziej wygodne funkcje.
 
 ```typescript

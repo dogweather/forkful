@@ -12,9 +12,6 @@ title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---
 
-## ¿Qué y por qué?
-Los números complejos, aquellos con una parte real y una parte imaginaria (como 3 + 4i), son vitales en campos como la ingeniería, física y ciencia de datos. Los programadores los utilizan para simulaciones, procesamiento de señales y resolver tipos específicos de problemas matemáticos.
-
 ## Cómo hacerlo:
 PowerShell no tiene soporte incorporado para números complejos, así que o bien desarrollas tu propia solución o utilizas `System.Numerics.Complex` de .NET.
 

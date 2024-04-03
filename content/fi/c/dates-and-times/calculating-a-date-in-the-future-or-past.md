@@ -16,9 +16,6 @@ title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---
 
-## Mikä & Miksi?
-Tulevaisuuden tai menneisyyden päivämäärän laskeminen tarkoittaa tietyn päivämäärän määrittämistä lisäämällä tai vähentämällä tietty määrä päiviä, kuukausia tai vuosia annetusta päivämäärästä. Ohjelmoijat tekevät tätä tehtäviä varten, kuten tapahtumien aikatauluttaminen, muistutusten luominen tai viimeisten käyttöpäivien käsittely, mikä tekee siitä olennaisen toiminnallisuuden erilaisissa sovelluksissa, kalenterijärjestelmistä talousohjelmistoihin.
-
 ## Kuinka:
 Vaikka C-standardikirjasto ei tarjoa suoria funktioita päivämääräaritmetiikkaan, voit manipuloida päivämääriä käyttämällä `time.h` kirjastoa, työskentelemällä erityisesti `time_t` tietotyypin ja `struct tm` rakenteen kanssa. Tässä on yksinkertaistettu esimerkki, kuinka lisätä päiviä nykyiseen päivämäärään:
 

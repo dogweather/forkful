@@ -13,11 +13,7 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-Complexe getallen breiden ons getallenstelsel uit met de vierkantswortels van negatieve getallen, waarbij de 'imaginaire' eenheid i gelijk staat aan de vierkantswortel van -1. Programmeurs gebruiken ze in domeinen zoals techniek, natuurkunde en signaalverwerking, omdat ze geweldig zijn voor het modelleren van golven, oscillaties en alles dat roteert.
-
 ## Hoe te:
-
 Laten we een eenvoudige complexe getallenklasse in Kotlin definiëren:
 
 ```kotlin
@@ -43,13 +39,11 @@ fun main() {
 ```
 
 ## Diepgaande Duik
-
 Complexe getallen werden voor het eerst genoemd in de 16e eeuw, bij het oplossen van kubieke vergelijkingen die geen reële oplossingen hadden. Techniek en natuurkunde profiteren enorm van complexe getallen voor het analyseren van wisselstroomcircuits en golfvormen. Je zou ook een bibliotheek zoals Kotlin's `koma` of `ejml` kunnen gebruiken voor zwaar werk.
 
 Operaties op complexe getallen spiegelen die van reële getallen, maar met aandacht voor de imaginaire eenheid. Vermenigvuldiging volgt bijvoorbeeld de distributieve eigenschap, met de herinnering dat `i^2 = -1`. Deze imaginaire eenheid stelt ons in staat om multidimensionale getallen te vertegenwoordigen, cruciaal in verschillende wetenschappelijke berekeningen.
 
 ## Zie Ook
-
 Kotlin Wiskundige bibliotheken:
 
 - [koma](https://koma.kyonifer.com/): Een wetenschappelijke rekenbibliotheek voor Kotlin.

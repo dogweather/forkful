@@ -11,9 +11,6 @@ title: Koodin refaktorointi
 weight: 19
 ---
 
-## Mikä & Miksi?
-Uudelleenjärjestely on olemassa olevan tietokonekoodin rakenteen muuttamisen prosessi muuttamatta sen ulkoista käyttäytymistä. Se on elintärkeä käytäntö vähentämään monimutkaisuutta, parantamaan ylläpidettävyyttä ja pitämään koodikantasi terveenä ja helpommin ymmärrettävänä sekä nykyisille että tuleville kehittäjille.
-
 ## Miten:
 Katsotaanpa yksinkertaista Bash-skriptiä, joka kaipaa uudelleenjärjestelyä. Se on kömpelö, toistaa koodia ja sitä on vaikea seurata:
 

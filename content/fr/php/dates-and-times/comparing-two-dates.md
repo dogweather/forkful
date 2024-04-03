@@ -11,9 +11,6 @@ title: Comparer deux dates
 weight: 27
 ---
 
-## Quoi & Pourquoi ?
-Comparer deux dates, c'est voir si elles sont identiques, quelle est la plus récente, etc. En PHP, on fait ça souvent pour valider des événements, des périodes de promotions, des abonnements, et tout ce qui est lié au temps.
-
 ## Comment faire :
 Voici comment on compare des dates en PHP:
 
@@ -36,6 +33,7 @@ Sortie :
 ```
 La première date est antérieure à la deuxième.
 ```
+
 ## Exploration :
 Tout commence avec la classe DateTime introduite en PHP 5.2.0 - c'est puissant et flexible. Avant ça, on manipulait les dates avec les fonctions `strtotime()` et `date()`, mais c'était moins intuitif. Il y a aussi `DateTimeImmutable` pour des instances immuables. 
 

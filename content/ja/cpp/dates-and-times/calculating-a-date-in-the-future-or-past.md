@@ -21,12 +21,7 @@ title: "\u672A\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4ED8\u306E\u8A08
 weight: 26
 ---
 
-## What & Why? (何となぜ？)
-
-将来または過去の日付を計算することは、特定の日から数えて他の日を見つけるプロセスです。プログラマーは予約システム、リマインダー機能、データ分析などで日付演算をしばしば使用します。
-
 ## How to: (方法)
-
 ```C++
 #include <iostream>
 #include <chrono>
@@ -65,11 +60,9 @@ Sample Output:
 ```
 
 ## Deep Dive (深掘り)
-
 過去、日付の計算は自作関数やライブラリ依存だった。C++11以降、`<chrono>`ライブラリが導入され、時間の概念は大きく変わった。上記の例では`std::chrono`を使用し、タイムスタンプ加減算を行う`days`型を利用します。標準ライブラリはプラットフォーム間での一貫性を保証するが、時にはタイムゾーン計算や閏秒のような複雑なケースを扱うために外部ライブラリ（`Boost.Date_Time`など）の使用が推奨される場合もあります。
 
 ## See Also (参照)
-
 - C++ Reference: `<chrono>` documentation: https://en.cppreference.com/w/cpp/header/chrono
 - Boost Date_Time library: https://www.boost.org/doc/libs/release/libs/date_time/
 - Howard Hinnant's date library, which expands on the `<chrono>` facilities: https://github.com/HowardHinnant/date

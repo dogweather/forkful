@@ -15,9 +15,6 @@ title: Tworzenie tymczasowego pliku
 weight: 21
 ---
 
-## Co i dlaczego?
-Tworzenie tymczasowego pliku w Dart polega na generowaniu pliku przeznaczonego do krótkoterminowego użytku, przede wszystkim w scenariuszach takich jak przechowywanie danych w pamięci podręcznej, tymczasowe przechowanie danych podczas przetwarzania plików lub przechowywanie informacji, które są zbyt wrażliwe, aby zachować je na dłużej. Programiści robią to, aby zarządzać danymi, które nie wymagają stałego przechowywania, co z kolei zwiększa wydajność i pomaga w utrzymaniu higieny danych.
-
 ## Jak to zrobić:
 Biblioteka `dart:io` w języku Dart ułatwia tworzenie tymczasowych plików za pomocą klasy `Directory`. Oto prosty sposób na stworzenie tymczasowego pliku i zapisanie do niego pewnych treści:
 
@@ -41,7 +38,6 @@ Future<void> main() async {
 ```
 
 ### Użycie biblioteki innej firmy: `path_provider`
-
 W przypadku aplikacji (szczególnie aplikacji mobilnych z Flutter), możesz chcieć tworzyć pliki tymczasowe w bardziej ujednolicony i zarządzalny sposób. Pakiet `path_provider` może pomóc Ci znaleźć odpowiedni katalog tymczasowy na różnych platformach (iOS, Android, itp.).
 
 Najpierw dodaj `path_provider` do swojego `pubspec.yaml` w sekcji dependencies:

@@ -12,12 +12,7 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-
-Tests schrijven betekent code creëren die controleert of andere code correct werkt. Programmeurs doen dit om bugs vroegtijdig op te vangen, tijd te besparen en om ervoor te zorgen dat wijzigingen niets stuk maken.
-
 ## Hoe:
-
 Laten we een eenvoudige functie testen met Jest, een populair testraamwerk voor JavaScript en TypeScript.
 
 Installeer eerst Jest met TypeScript-ondersteuning:
@@ -67,7 +62,6 @@ PASS  ./math.test.ts
 ```
 
 ## Diepere Duik
-
 Testen in TypeScript bouwt voort op JavaScript-testpraktijken. Hier is wat het speciaal maakt:
 
 - Historische context: TypeScript kwam tot leven in 2012. Het was bedoeld om types toe te voegen aan JavaScript, om code makkelijker te onderhouden en te testen.
@@ -75,6 +69,5 @@ Testen in TypeScript bouwt voort op JavaScript-testpraktijken. Hier is wat het s
 - Implementatiedetails: Tests kunnen naast de code of apart leven. TypeScript-types helpen met automatische aanvulling en bieden extra vertrouwen in tests.
 
 ## Zie Ook
-
 - Jest: [Jest Documentatie](https://jestjs.io/docs/getting-started)
 - Vergelijking van JS Testraamwerken: [StateOfJS 2022 Enquête](https://2022.stateofjs.com/en-US/libraries/testing/)

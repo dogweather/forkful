@@ -11,12 +11,7 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## Qué y Por Qué?
-
-Redondear números significa aproximar un valor numérico a una precisión específica, típicamente para eliminar decimales no deseados. Los programadores redondean para gestionar la memoria, mejorar la legibilidad y cumplir con requisitos específicos del dominio como las restricciones de moneda.
-
 ## Cómo:
-
 Swift provee varias maneras de redondear números. Aquí tienes un adelanto:
 
 ```Swift
@@ -40,7 +35,6 @@ print("Estándar: \(standardRounded), Decimal: \(decimalRounded), Abajo: \(round
 Salida: `Estándar: 3.0, Decimal: 3.142, Abajo: 3.0, Arriba: 4.0`
 
 ## Profundizando
-
 Históricamente, el redondeo es un concepto matemático que precede a los ordenadores, esencial en el comercio y la ciencia. El marco de trabajo `Foundation` de Swift ofrece una funcionalidad de redondeo comprensiva:
 
 - `round(_: )` es el buen viejo redondeo hacia arriba.
@@ -50,5 +44,4 @@ Históricamente, el redondeo es un concepto matemático que precede a los ordena
 Ten en cuenta el tipo `Decimal` para cálculos financieros precisos, lo que evita errores de punto flotante. También, explora `NSDecimalNumber` para compatibilidad con Objective-C.
 
 ## Ver También
-
 - Estándar IEEE para la Aritmética de Punto Flotante (IEEE 754): [IEEE 754](https://ieeexplore.ieee.org/document/4610935)

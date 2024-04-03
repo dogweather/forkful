@@ -15,9 +15,6 @@ title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---
 
-## Gì & Tại sao?
-Nội suy chuỗi là phương pháp nhúng các biểu thức vào bên trong các chuỗi literan. Lập trình viên sử dụng nó để chèn động các giá trị vào chuỗi, làm cho mã lệnh trở nên dễ đọc và sạch sẽ hơn so với nối chuỗi truyền thống.
-
 ## Làm thế nào:
 Trong Python 3.6 trở lên, bạn có thể nội suy chuỗi sử dụng f-strings. Dưới đây là cách:
 

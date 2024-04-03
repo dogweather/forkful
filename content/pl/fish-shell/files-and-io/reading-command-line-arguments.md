@@ -11,9 +11,6 @@ title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---
 
-## What & Why? (Co i dlaczego?)
-Czytanie argumentów linii poleceń to sposób na podanie danych programowi, kiedy go uruchamiasz. Programiści korzystają z tego, aby uczynić swoje skrypty elastycznymi i bardziej użytecznymi.
-
 ## How to: (Jak to zrobić?)
 Podawanie argumentów i odczytywanie ich w Fish jest banalnie proste. Oto jak:
 

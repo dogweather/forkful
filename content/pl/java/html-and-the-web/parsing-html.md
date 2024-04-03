@@ -12,12 +12,7 @@ title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---
 
-## Co & Dlaczego?
-
-Parsowanie HTML oznacza przekopywanie się przez znaczniki w celu wydobycia danych takich jak tekst, linki czy inne elementy. Robimy to, aby interaktywnie obsługiwać lub pobierać zawartość z sieci web, automatyzować zadania przeglądania czy testować aplikacje internetowe.
-
 ## Jak to zrobić:
-
 Użyjmy Jsoup, przydatnej biblioteki do pracy z HTML-em z prawdziwego świata. Najpierw dodaj zależność:
 
 ```xml
@@ -64,7 +59,6 @@ for (Element link : linki) {
 ```
 
 ## Dogłębna analiza
-
 Dawniej HTML był okiełznywany przez wzorce regex, metodą zarówno podatną na błędy, jak i koszmarną dla skomplikowanych dokumentów. Wprowadzono Jsoup pod koniec lat 00., oferujący interfejs podobny do jQuery dla Javy do parsowania, przechodzenia i manipulowania HTML-em.
 
 Jsoup to nie jedyny wybór. Istnieje HtmlUnit do kompleksowego testowania aplikacji webowych z obsługą JavaScript, ale jest on cięższy i bardziej skomplikowany. Dla lekkich zadań świetnie nadaje się Apache Commons Validator, doskonały do wydobywania URL-i.
@@ -74,7 +68,6 @@ W swoim działaniu Jsoup używa parsera DOM, który modeluje cały dokument w pa
 Pamiętaj, podczas skrobania, zawsze sprawdź `robots.txt` strony i warunki świadczenia usług, aby uniknąć problemów prawnych lub zbanowania adresu IP.
 
 ## Zobacz również
-
 - Oficjalna dokumentacja Jsoup: https://jsoup.org/
 - HtmlUnit: http://htmlunit.sourceforge.net/
 - Apache Commons Validator: https://commons.apache.org/proper/commons-validator/

@@ -10,9 +10,6 @@ title: Journalisation
 weight: 17
 ---
 
-## Quoi & Pourquoi ?
-Le journalisation, c'est essentiellement consigner ce que fait votre application - un journal intime, si vous voulez, mais pour le code. Les programmeurs le font pour garder une trace des détails techniques, comme les changements d'état, les événements systèmes et les bugs agaçants, en s'assurant qu'aucun accroc ne passe inaperçu.
-
 ## Comment faire :
 Dans Fish, la journalisation peut être aussi simple que de rediriger les flux de sortie standard et d'erreur vers un fichier. Faisons une entrée de journal pour les heures de début et de fin de notre script.
 

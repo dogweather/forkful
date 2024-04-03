@@ -13,9 +13,6 @@ title: Commandoregelargumenten lezen
 weight: 23
 ---
 
-## Wat & Waarom?
-Het lezen van command line argumenten betekent het ophalen van de data die naar een programma wordt doorgegeven wanneer je het start vanuit een terminal of command prompt. Programmeurs gebruiken argumenten om het gedrag van een programma aan te passen zonder de code te wijzigen.
-
 ## Hoe:
 Arduino doet niet aan command line argumenten zoals traditionele programmeeromgevingen, omdat schetsen worden geüpload naar microcontrollers zonder een toegankelijke OS command line. Maar je kunt deze functie nabootsen door middel van seriële communicatie. Hier is hoe:
 

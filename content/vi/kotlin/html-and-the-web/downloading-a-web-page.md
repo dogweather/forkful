@@ -15,9 +15,6 @@ title: "T\u1EA3i trang web"
 weight: 42
 ---
 
-## Cái Gì & Tại Sao?
-Tải một trang web có nghĩa là lấy mã HTML từ một URL cụ thể để xem hoặc sử dụng một cách nội bộ. Lập trình viên làm điều này cho các công việc như web scraping, đọc offline, hoặc kiểm thử tự động.
-
 ## Làm Thế Nào:
 Hãy tiến hành với `HttpURLConnection` của Kotlin để nhanh chóng tải một trang web. Chúng ta cũng sẽ sử dụng coroutines cho các thao tác nền mượt mà. Dưới đây là bài học cơ bản:
 

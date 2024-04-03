@@ -11,9 +11,6 @@ title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## What & Why? (Co i Dlaczego?)
-Zmienianie stringów na małe litery to proces konwersji wszystkich znaków w łańcuchu tekstowym na ich małe odpowiedniki. Programiści to robią głównie, aby ujednolicić dane, ułatwić porównywanie i wyszukiwanie tekstu oraz robić case-insensitive matching.
-
 ## How to: (Jak to zrobić:)
 ```Ruby
 # Przykład konwersji stringa na małe litery w Ruby

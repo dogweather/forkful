@@ -11,9 +11,6 @@ title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---
 
-## Co i Dlaczego?
-Znalezienie długości łańcucha polega na ustaleniu, ile znaków zawiera dany tekst. Programiści robią to, by zarządzać danymi tekstowymi – sprawdzać poprawność inputu, porównywać wartości czy manipulować ciągami.
-
 ## Jak to zrobić:
 ```Bash
 # Użycie wbudowanego wyrażenia ${#string}

@@ -14,12 +14,7 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## Vad & Varför?
-
-Att skicka en HTTP-begäran i Visual Basic for Applications (VBA) innebär att man programmatiskt tillgår webbresurser eller webbtjänster genom att göra förfrågningar över HTTP. Programmerare gör detta för att hämta data, interagera med online-API:er eller skicka formulär programmatiskt från inom sina VBA-aktiverade applikationer som Excel, Access eller anpassade VBA-lösningar.
-
 ## Hur:
-
 Nyckeln till att skicka en HTTP-begäran i VBA är att använda `Microsoft XML, v6.0`-biblioteket (eller äldre versioner, beroende på ditt system). Se först till att denna referens är aktiverad i ditt projekt genom att gå till Verktyg > Referenser i VBA-redigeraren och kryssa för `Microsoft XML, v6.0`.
 
 Så här skickar du en enkel HTTP GET-begäran:
@@ -65,7 +60,6 @@ Exempelutdata för en lyckad begäran kan vara en JSON-sträng eller en HTML-sid
 ```
 
 ## Fördjupning
-
 Metoden som visas använder `MSXML2.XMLHTTP`-objektet, en del av Microsoft XML Core Services (MSXML). Det introducerades för att erbjuda VBA-utvecklare ett sätt att utföra XML-baserade operationer och blev med tiden ett vanligt verktyg för HTTP-begäran, även när man inte arbetar direkt med XML-data. Trots sin ålder förblir det ett pålitligt alternativ för enkla webbinteraktioner i VBA.
 
 Däremot saknar VBA och dess mekanismer för HTTP-begäran robustheten och flexibiliteten som finns i moderna programmeringsmiljöer. Till exempel är hantering av asynkrona begäran eller arbete inom applikationer som kräver avancerade HTTP-funktioner (som websockets eller server-sända händelser) utanför VBA:s räckvidd. När man arbetar med mer komplexa webbintegrationsprojekt använder utvecklarna ofta externa bibliotek eller verktyg, eller till och med automatiserar webbläsarbeteende genom webbskrapningstekniker, även om dessa är kringgående lösningar snarare än lösningar.

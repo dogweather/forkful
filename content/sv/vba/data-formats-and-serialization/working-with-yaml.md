@@ -13,12 +13,7 @@ title: Att Arbeta med YAML
 weight: 41
 ---
 
-## Vad & Varför?
-
-YAML, som står för "YAML Ain't Markup Language", är ett läsligt dataserialiseringspråk som ofta används för konfigurationsfiler. Programmerare använder det ofta på grund av dess enkelhet och läsbarhet över en mängd programmeringsmiljöer, inklusive i skriptmiljön för Visual Basic for Applications (VBA) för att förbättra interoperabilitet samt datalagring och utbyte.
-
 ## Hur man gör:
-
 Att arbeta med YAML i VBA kräver förståelse för hur man tolkar och konverterar YAML till ett format som VBA lätt kan hantera, vanligtvis dictionaries eller samlingar. Tyvärr stöder VBA inte naturligt YAML-tolkning eller serialisering. Du kan dock använda en kombination av JSON-konverteringsverktyg och dictionary-objekt för att arbeta med YAML-data, med tanke på YAML:s nära relation till JSON.
 
 Först, konvertera dina YAML-data till JSON med en onlinekonverterare eller ett YAML-till-JSON-konverteringsverktyg i din utvecklingsmiljö. När det är konverterat kan du använda följande exempel för att tolka JSON i VBA, notera att detta tillvägagångssätt indirekt låter dig arbeta med YAML:
@@ -49,7 +44,6 @@ End Function
 I detta exempel är `JsonParser`-funktionen en ersättare för där du skulle tolka JSON. Olika bibliotek finns tillgängliga för att hjälpa med JSON-tolkning, eftersom direkta YAML-tolkningsbibliotek för VBA är sällsynta.
 
 ## Djupdykning
-
 Avsaknaden av direkt hantering av YAML i VBA kan tillskrivas dess ålder och den miljö den byggdes för, vilket ursprungligen inte designades med moderna dataserialiseringsformat i åtanke. YAML självt framträdde som ett populärt format för konfiguration och serialisering i början av 2000-talet, i linje med framkomsten av applikationer som kräver mer människovänliga konfigurationsfiler.
 
 Programmerare brukar använda externa verktyg eller bibliotek för att överbrygga gapet mellan VBA och YAML. Detta innebär ofta att konvertera YAML till JSON, som visat, på grund av det stöd för JSON som finns tillgängligt genom olika bibliotek och likheten mellan JSON och YAML avseende struktur och syfte.
