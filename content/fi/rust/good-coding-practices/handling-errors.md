@@ -10,12 +10,7 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä & Miksi?
-
-Virheenkäsittely on toimien hallintaa, kun asiat eivät mene odotetusti. Ohjelmoijat tekevät sitä käsitelläkseen odottamattomia tilanteita, varmistaakseen, että heidän Rust-ohjelmansa ovat kestäviä eivätkä vain kaadu kohtaessaan pikkuongelman.
-
 ## Miten:
-
 Rust käsittelee virheitä kahdella pääasiallisella tavalla: palautettavissa olevat ja palautumattomat virheet. Katsoaanpa molempia.
 
 Palautettavissa olevat virheet käyttävät `Result<T, E>`:
@@ -54,7 +49,6 @@ fn main() {
 Aja se, ja näet paniikkiviestin. Ohjelmasi pysähtyy kuin seinään.
 
 ## Syväsukellus
-
 Historiallisesti virheenkäsittely ohjelmoinnissa on ollut sotkuista. Rust saa sen oikein selkeällä erolla palautettavissa olevien ja palautumattomien virheiden välillä.
 
 `Result` enum on tarkoitettu palautettavissa oleville virheille. Se on eksplisiittinen – käsittelet `Ok` tai `Err` variantin. Sinulla on myös metodeja kuten `unwrap()` ja `expect()`, mutta ne ovat nopeita ja likaisia oikoteitä, jotka voivat johtaa `panic!`-tilaan.
@@ -66,7 +60,6 @@ Virheenkäsittely `Result`-palautuksella on suositeltavaa, kun odotat käsittele
 Vaihtoehtoja? Toki, voisit käyttää muita virheenkäsittelyn kirjastoja saadaksesi lisää ominaisuuksia tai ergonomista käyttöä. Kuten `anyhow` yksinkertaiseen virheenkäsittelyyn tai `thiserror` kirjastokoodin virheisiin.
 
 ## Katso myös
-
 Kiinnostunut sukeltamaan syvemmälle? Tässä minne mennä:
 
 - [Rust-kirja virheenkäsittelystä](https://doc.rust-lang.org/book/ch09-00-error-handling.html) - Loistava paikka ymmärtää Rustin virheenkäsittelyn filosofia.

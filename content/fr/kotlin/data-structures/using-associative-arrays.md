@@ -13,12 +13,7 @@ title: Utilisation des tableaux associatifs
 weight: 15
 ---
 
-## Quoi & Pourquoi ?
-
-Les tableaux associatifs, ou maps, dans Kotlin sont des collections qui stockent des paires clé-valeur. Les programmeurs les utilisent pour organiser et récupérer efficacement des données basées sur des clés uniques, facilitant ainsi la gestion des informations.
-
 ## Comment faire :
-
 Créer et utiliser une map dans Kotlin est simple. Voici un guide rapide sur comment procéder :
 
 ```Kotlin
@@ -49,7 +44,6 @@ fun main() {
 ```
 
 ## Exploration approfondie
-
 Les maps de Kotlin proviennent directement de son interopérabilité avec Java, où les maps sont une partie essentielle des collections. Cependant, Kotlin améliore leur utilisabilité en fournissant des interfaces modifiables (`MutableMap`) et en lecture seule (`Map`), contrairement à l'interface `Map` unifiée de Java. Cette distinction clarifie si une collection est destinée à être modifiée ou non.
 
 Un détail important concernant l'implémentation des maps de Kotlin est la distinction explicite entre les maps modifiables et immuables, ce qui souligne l'accent mis par le langage sur l'immuabilité et la sécurité des threads.

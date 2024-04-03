@@ -14,12 +14,7 @@ title: Pobieranie aktualnej daty
 weight: 29
 ---
 
-## Co i dlaczego?
-
-Pobieranie bieżącej daty w Pythonie to podstawowa operacja dla wielu aplikacji, takich jak logowanie, analiza danych i podejmowanie decyzji opartych na czasie. Chodzi o uzyskanie bieżącej daty systemu, co jest kluczowe dla zadań zależnych od kontekstu czasowego.
-
 ## Jak to zrobić:
-
 **Korzystając z biblioteki standardowej `datetime`:**
 
 Moduł `datetime` w standardowej bibliotece Pythona dostarcza klasy do manipulowania datami i czasem. Aby uzyskać bieżącą datę, możesz użyć metody `date.today()`.

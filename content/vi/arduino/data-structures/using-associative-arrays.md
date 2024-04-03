@@ -15,9 +15,6 @@ title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---
 
-## Cái gì & Tại sao?
-Trong thế giới của Arduino, mảng kết hợp cho phép bạn ghép các key với các giá trị, kiểu như cách bạn ghép đôi tất với nhau. Chúng là lựa chọn tốt khi bạn cần lưu trữ và truy xuất dữ liệu sử dụng tên mô tả, giúp mã của bạn sạch sẽ và dễ hiểu hơn nhiều.
-
 ## Cách thực hiện:
 Nói một cách nghiêm ngặt, Arduino không hỗ trợ sẵn tính năng mảng kết hợp như bạn thấy trong các ngôn ngữ cấp cao. Nhưng, đừng lo. Chúng ta có thể trở nên sáng tạo sử dụng cấu trúc và mảng để mô phỏng chức năng này. Dưới đây là một ví dụ đơn giản để tạo một "mảng kết hợp" cơ bản để lưu trữ và truy cập nhiệt độ cho các thành phố khác nhau.
 

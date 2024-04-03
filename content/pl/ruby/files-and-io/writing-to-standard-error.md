@@ -14,9 +14,6 @@ title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---
 
-## Co i dlaczego?
-Pisanie do standardowego błędu (stderr) w Ruby polega na kierowaniu komunikatów o błędach lub informacji diagnostycznych do oddzielnego strumienia wyjściowego, różnego od standardowego wyjścia (stdout). Programiści robią to, aby odróżnić regularne wyjście programu od błędów i informacji debugujących, co ułatwia diagnozowanie problemów i analizę logów.
-
 ## Jak to zrobić:
 Standardowa biblioteka Ruby'ego zapewnia prosty sposób na zapis do stderr za pomocą `$stderr` lub `STDERR`. Nie potrzebujesz bibliotek stron trzecich do tej podstawowej operacji.
 

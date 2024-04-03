@@ -12,12 +12,7 @@ title: Code organiseren in functies
 weight: 18
 ---
 
-## Wat & Waarom?
-
-Het organiseren van code in functies in Go omvat het opsplitsen van code in herbruikbare, modulaire blokken die specifieke taken uitvoeren. Deze aanpak verbetert de leesbaarheid van de code, de onderhoudbaarheid en vergemakkelijkt team samenwerking door programmeurs in staat te stellen tegelijkertijd aan verschillende functies te werken.
-
 ## Hoe:
-
 In Go definieer je een functie met het `func` sleutelwoord, gevolgd door de naam van de functie, parameters (indien van toepassing), en het retourtype. Laten we dit illustreren met een eenvoudig voorbeeld:
 
 ```go
@@ -72,7 +67,6 @@ func main() {
 ```
 
 ## Diepere Duik
-
 Het concept van het organiseren van code in functies is niet bijzonder voor Go - het is een fundamenteel programmeerprincipe. Echter, Go introduceert bepaalde conventies en mogelijkheden die zijn functiebeheer onderscheiden. Bijvoorbeeld, de mogelijkheid om meerdere waarden uit functies te retourneren is relatief uniek en kan leiden tot schonere, meer begrijpelijke code, in het bijzonder wanneer men te maken heeft met operaties die traditioneel het gebruik van pointers of uitzonderingsbehandeling zouden vereisen.
 
 Bovendien versterkt Go's ondersteuning voor eersteklas functies - functies die als argumenten aan andere functies kunnen worden doorgegeven, als waarden uit functies kunnen worden geretourneerd en aan variabelen kunnen worden toegewezen - de ondersteuning van de taal voor functionele programmeerpatronen. Deze functie is met name nuttig bij het creëren van hogere-ordefuncties die andere functies manipuleren of combineren.

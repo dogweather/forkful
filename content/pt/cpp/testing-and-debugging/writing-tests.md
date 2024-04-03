@@ -13,14 +13,10 @@ title: Escrevendo testes
 weight: 36
 ---
 
-## O Que & Por Quê?
-
-Escrever testes em C++ envolve criar pequenos programas autossuficientes que verificam automaticamente o comportamento de seções do seu código. Os programadores fazem isso para garantir que o código funcione conforme esperado, para evitar regressões (ou seja, novas alterações que quebram a funcionalidade existente) e para facilitar a manutenção dos códigos ao longo do tempo.
-
 ## Como Fazer:
 
-### Usando o Framework de Testes do Google
 
+### Usando o Framework de Testes do Google
 Uma das bibliotecas de terceiros mais populares para escrever testes em C++ é o Google Test. Primeiramente, você precisará instalar o Google Test e vinculá-lo ao seu projeto. Uma vez configurado, você pode começar a escrever casos de teste.
 
 ```cpp
@@ -55,7 +51,6 @@ Salve o código em um arquivo e compile-o com o compilador g++, vinculando a bib
 ```
 
 ### Usando Catch2
-
 Outro framework de testes popular para C++ é o Catch2. Ele possui uma sintaxe mais simples e geralmente não requer vinculação com uma biblioteca (apenas cabeçalhos). Aqui está um exemplo de como escrever um teste simples com Catch2:
 
 ```cpp

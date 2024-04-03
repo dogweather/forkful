@@ -15,14 +15,10 @@ title: Scrivere un file di testo
 weight: 24
 ---
 
-## Cosa e perché?
-Scrivere in un file di testo in C++ comporta la creazione o l'apertura di un file e poi la scrittura di dati in esso, che è un compito fondamentale per le applicazioni che hanno bisogno di mantenere dati, come log, contenuti generati dall'utente o impostazioni di configurazione. I programmatori lo fanno per salvare i dati generati durante l'esecuzione di un programma o per esportare dati per l'uso da parte di altri programmi o utenti.
-
 ## Come fare:
 C++ offre diversi modi per scrivere su un file di testo, ma uno dei metodi più diretti è l'uso della libreria `<fstream>` che fornisce la classe `ofstream` (output file stream) progettata per operazioni di scrittura su file.
 
 ### Esempio usando `<fstream>`:
-
 ```cpp
 #include <fstream>
 #include <iostream>
@@ -49,7 +45,6 @@ Scrivere su un file in C++ è semplice.
 Quando si ha a che fare con dati più complessi o si ha bisogno di più controllo sul processo di scrittura, i programmatori potrebbero rivolgersi a librerie di terze parti come Boost Filesystem.
 
 ### Esempio usando Boost Filesystem:
-
 Per utilizzare Boost per le operazioni su file, dovrai prima installare le librerie Boost. L'esempio seguente dimostra la creazione e la scrittura su un file usando `boost::filesystem` e `boost::iostreams`.
 
 ```cpp

@@ -13,9 +13,6 @@ title: Arbeider med JSON
 weight: 38
 ---
 
-## Hva & Hvorfor?
-Å jobbe med JSON (JavaScript Object Notation) betyr å håndtere dette lette datautvekslingsformatet inne i Java-applikasjonene dine. Programmerere velger JSON for å serialisere og overføre strukturerte data over et nettverk og enkelt konfigurere og lagre data fordi det er menneskelesbart og språkuavhengig.
-
 ## Hvordan:
 La oss brette opp ermene og begynne å kode med JSON i Java.
 

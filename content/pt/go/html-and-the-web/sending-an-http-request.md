@@ -13,12 +13,7 @@ title: "Enviando uma solicita\xE7\xE3o HTTP"
 weight: 44
 ---
 
-## O quê & Por quê?
-
-Enviar uma requisição HTTP envolve iniciar uma chamada de sua aplicação Go para um servidor web, API ou qualquer outro serviço baseado em HTTP. Programadores fazem isso para interagir com recursos web, buscar dados, submeter formulários ou comunicar-se com outros serviços pela internet.
-
 ## Como fazer:
-
 Em Go, enviar uma requisição HTTP e lidar com a resposta envolve o uso do pacote `net/http`. Aqui está um exemplo passo a passo mostrando como enviar uma simples requisição GET e ler a resposta:
 
 ```go
@@ -100,7 +95,6 @@ func main() {
 ```
 
 ## Aprofundamento
-
 O pacote `net/http` em Go oferece uma forma poderosa e flexível de interagir com servidores HTTP. Seu design reflete a ênfase de Go em simplicidade, eficiência e robustez. Originalmente, funcionalidades como lidar com cargas JSON ou XML requeriam a elaboração manual do corpo da requisição e a configuração de cabeçalhos apropriados. Conforme Go evoluiu, a comunidade desenvolveu pacotes de nível mais alto que simplificam ainda mais essas tarefas, como `gorilla/mux` para roteamento e `gjson` para manipulação de JSON.
 
 Um aspecto notável do cliente HTTP de Go é seu uso de interfaces e structs, como `http.Client` e `http.Request`, que permitem uma personalização extensa e testes. Por exemplo, você pode modificar o `http.Client` para ter tempo limite nas requisições ou manter conexões ativas para desempenho.

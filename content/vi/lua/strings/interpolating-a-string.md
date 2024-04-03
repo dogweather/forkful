@@ -14,9 +14,6 @@ title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---
 
-## Gì và Tại sao?
-Nội suy chuỗi cho phép bạn chèn các biến trực tiếp vào chuỗi. Điều này được thực hiện để xây dựng động các chuỗi và giữ cho mã nguồn gọn gàng.
-
 ## Làm sao:
 Trong Lua, sử dụng `..` để nối chuỗi hoặc `string.format` cho nội suy. Ví dụ:
 ```Lua

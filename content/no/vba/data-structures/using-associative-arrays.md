@@ -12,12 +12,7 @@ title: Bruke assosiative tabeller
 weight: 15
 ---
 
-## Hva & Hvorfor?
-
-Assosiative tabeller, ofte kjent som ordbøker i Visual Basic for Applications (VBA), lar programmerere lage samlinger av nøkkel-verdi-par. Denne funksjonen er avgjørende for effektiv datalagring og gjenfinning, og tilbyr en mer fleksibel og intuitiv måte å håndtere data på enn tradisjonelle arrayindekser.
-
 ## Hvordan:
-
 I VBA tilbyr `Dictionary`-objektet funksjonalitet lik assosiative tabeller. Du må først legge til en referanse til Microsoft Scripting Runtime for å bruke den:
 
 1. I VBA-editoren, gå til Verktøy > Referanser...
@@ -53,7 +48,6 @@ Next Key
 ```
 
 ## Dypdykk
-
 `Dictionary`-objektet bak kulissene grensesnitt med komponenter i Windows Scripting Host. Som sådan er det et sent bundet COM-objekt, noe som var en vanlig måte å utvide VBA-funksjonaliteten på i fortiden. Bruken av det i VBA kan betydelig forbedre språkets evne til å manipulere komplekse datasett uten å håndheve en fast struktur, som sett i tradisjonelle tabeller eller Excel-områder.
 
 En begrensning å huske på er at tilgang til `Dictionary` krever at man setter en referanse til Microsoft Scripting Runtime, noe som kan komplisere distribusjonen av VBA-prosjektene dine. Alternativer som Collections eksisterer innen VBA, men mangler noen av `Dictionary`-ens nøkkelfunksjoner, som for eksempel evnen til enkelt å sjekke for eksistensen av en nøkkel uten å utløse en feil.

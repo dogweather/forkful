@@ -11,9 +11,6 @@ title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Å sammenkæde strenger (strings) betyr å sette dem sammen i én. Vi gjør det for å bygge tekstbasert data, som meldinger eller kode, på en dynamisk og fleksibel måte.
-
 ## How to: (Hvordan:)
 ```javascript
 // Bruker plusstegn (+) for å sammenkæde strenger
@@ -38,7 +35,7 @@ let del2 = 'dag';
 let fullSetning = del1.concat(' ', del2);
 console.log(fullSetning); // Output: "God dag"
 ```
-Performans: I store løkker er direkte konkatinering (+) kjent for å være mindre effektiv enn å bruke array `join()` metoden, grunnet måten JavaScript håndterer minnet for strenger. 
+Performans: I store løkker er direkte konkatinering (+) kjent for å være mindre effektiv enn å bruke array `join()` metoden, grunnet måten JavaScript håndterer minnet for strenger.
 
 ## See Also (Se Også)
 - MDN Web Docs for Strings: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String

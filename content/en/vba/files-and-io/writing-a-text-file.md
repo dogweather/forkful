@@ -11,12 +11,7 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-
-Writing a text file in Visual Basic for Applications (VBA) involves creating, modifying, or appending text data to files, a fundamental task for storing outputs, logging, or interacting with other applications. Programmers utilize this functionality to automate reporting, data exportation, or configuration file generation within the Microsoft Office ecosystem.
-
 ## How to:
-
 VBA offers several methods to write to a file, but one of the most straightforward ways is using the `FileSystemObject`. Here’s a step-by-step guide to create a simple text file and write data to it:
 
 1. **Reference Microsoft Scripting Runtime**: First, ensure your VBA editor has access to the `FileSystemObject`. Go to Tools > References in the VBA editor and check "Microsoft Scripting Runtime."
@@ -51,7 +46,6 @@ Hello, VBA!
 ```
 
 ## Deep Dive:
-
 The `FileSystemObject` (FSO), part of the Microsoft Scripting Runtime library, provides a rich set of properties and methods for file operations, broadening beyond what traditional VBA file handling offers (e.g., `Open`, `Print` #, `Write` #). Besides handling files, FSO can also manipulate folders and drives, making it a powerful tool for file system operations within VBA.
 
 It's worth noting, however, that while FSO presents a more modern approach to file operations in VBA, it may introduce overhead for simple tasks compared to VBA's native file handling statements. Furthermore, since FSO is part of an external library, portability and compatibility with other systems (e.g., earlier versions of Office, Mac Office) could be concerns.

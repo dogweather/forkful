@@ -10,9 +10,6 @@ title: Suchen und Ersetzen von Text
 weight: 10
 ---
 
-## Was & Warum?
-Suchen und Ersetzen von Text ist ein Vorgang, bei dem bestimmte Textmuster gefunden und durch andere ersetzt werden. Programmierer nutzen diese Technik, um Daten zu aktualisieren oder Code zu korrigieren.
-
 ## So geht's:
 ```elixir
 # Suchen und Ersetzen mit Regex in Elixir

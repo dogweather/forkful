@@ -14,9 +14,6 @@ title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---
 
-## Co i dlaczego?
-Parsowanie daty z ciągu znaków pozwala programistom konwertować tekstowe reprezentacje dat na obiekty `Date` w JavaScript, ułatwiając operacje manipulowania datą, porównywania i formatowania. Proces ten jest niezbędny do obsługi danych wprowadzanych przez użytkownika, przetwarzania danych z baz danych lub pracy z API, które komunikują daty w formatach tekstowych.
-
 ## Jak to zrobić:
 JavaScript natywnie oferuje metodę `Date.parse()` oraz konstruktor `Date` do parsowania ciągów dat. Jednak te podejścia mają ograniczenia i niespójności w różnych przeglądarkach, szczególnie przy niestandardowych formatach dat. Aby rozwiązać te problemy, popularne ze względu na swoją niezawodność i łatwość użycia są biblioteki stron trzecich, takie jak `Moment.js` i `date-fns`.
 

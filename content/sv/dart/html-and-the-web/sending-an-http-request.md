@@ -13,12 +13,7 @@ title: "Skicka en HTTP-beg\xE4ran"
 weight: 44
 ---
 
-## Vad & Varför?
-
-Att skicka en HTTP-förfrågan i Dart är processen att initiera kommunikation med en webbserver eller API från en Dart-applikation. Programmerare gör detta för att hämta data från webben, skicka in formulär och interagera med RESTful-tjänster, vilket gör det till en grundläggande operation för webb-, server- och mobilapplikationsutveckling i Dart.
-
 ## Hur man gör:
-
 Dart inkluderar `http`-paketet, ett kraftfullt och bekvämt sätt att arbeta med HTTP-resurser. Först inkluderar du det i din pubspec.yaml-fil:
 
 ```yaml

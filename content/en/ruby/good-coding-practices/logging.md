@@ -9,9 +9,6 @@ title: Logging
 weight: 17
 ---
 
-## What & Why? 
-Logging in programming is like keeping a diary for your application. It's the systematic recording of events, messages, and data points that give you insight into what your application is doing and how it's behaving. Coders log because it's crucial for debugging, monitoring application health, and getting clues about potential issues before they blow up into real problems.
-
 ## How to:
 Ruby comes with a built-in module for logging, `Logger`, that’s super easy to use. Here's a quick example to get you started:
 

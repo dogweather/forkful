@@ -12,12 +12,7 @@ title: Leggere un file di testo
 weight: 22
 ---
 
-## Che cosa & Perché?
-
-Leggere un file di testo in Go comporta l'accesso e il recupero del contenuto da un file memorizzato su disco per l'elaborazione o l'analisi. I programmatori eseguono frequentemente questa operazione per manipolare dati, configurare applicazioni o leggere input per l'esecuzione del programma, rendendola una competenza fondamentale nello sviluppo software.
-
 ## Come fare:
-
 Leggere un file di testo in Go può essere realizzato in diversi modi, ma uno dei metodi più diretti è utilizzare il pacchetto `ioutil`. Ecco un esempio basilare:
 
 ```go
@@ -78,7 +73,6 @@ func main() {
 Questo approccio non è solo più moderno ma supporta anche file più grandi, poiché legge il file riga per riga invece di caricare tutto il contenuto in memoria contemporaneamente.
 
 ## Approfondimento:
-
 La gestione delle operazioni sui file in Go, inclusa la lettura da file, riflette la filosofia del linguaggio incentrata sulla semplicità e l'efficienza. Inizialmente, il pacchetto `ioutil` offriva operazioni su file semplici. Tuttavia, con i miglioramenti nella libreria standard di Go e un movimento verso una gestione degli errori più esplicita e una gestione delle risorse, i pacchetti `os` e `io` sono diventati le alternative preferite per lavorare con i file.
 
 Questi cambiamenti enfatizzano l'impegno di Go verso prestazioni e sicurezza, particolarmente nel prevenire problemi di memoria che possono sorgere dal caricamento di file grandi nella loro interezza. Il metodo `bufio.Scanner` introdotto per leggere i file riga per riga sottolinea l'adattabilità del linguaggio e l'attenzione per le sfide informatiche moderne, come l'elaborazione di grandi dataset o lo streaming di dati.

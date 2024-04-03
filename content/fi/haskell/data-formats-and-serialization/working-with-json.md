@@ -14,9 +14,6 @@ title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---
 
-## Mikä & Miksi?
-JSONin (JavaScript Object Notation) käsittely Haskellissa sisältää JSON-datan jäsentämisen Haskell-tyypeiksi ja Haskell-tyyppien muuntamisen takaisin JSONiksi. Ohjelmoijat tekevät näin, jotta heidän Haskell-sovelluksensa voivat vaihtaa tietoja verkkopalveluiden tai API:en kanssa saumattomasti, mikä on nykyaikaisessa ohjelmistokehityksessä yleinen käytäntö alustojen välisessä datan vaihdossa.
-
 ## Miten:
 Haskellissa ei ole sisäänrakennettua tukea JSONille kuten JavaScriptissä, mutta kolmannen osapuolen kirjastojen, kuten **Aesonin**, avulla JSONin käsittely muuttuu suoraviivaiseksi. Aeson tarjoaa sekä korkean tason että matalan tason funktioita koodaukseen (Haskell-arvojen muuntaminen JSONiksi) ja dekoodaukseen (JSONin jäsentäminen Haskell-arvoiksi).
 

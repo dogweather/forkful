@@ -13,12 +13,7 @@ title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---
 
-## Co i dlaczego?
-
-W Elixirze, tablice asocjacyjne, zwane Mapami, to kolekcje par klucz-wartość, gdzie unikalny klucz wskazuje na wartość. Są niesamowicie przydatne do przechowywania i pobierania danych "w locie", czyniąc kod bardziej przejrzystym a życie łatwiejszym.
-
 ## Jak to zrobić:
-
 Utworzenie Mapy jest proste. Używasz składni `%{}`, tak jak tutaj:
 
 ```elixir
@@ -50,7 +45,6 @@ IO.inspect(trimmed_map)
 Wyjście: `%{"location" => "NY", "name" => "Alex"}`
 
 ## Pogłębiona analiza
-
 Mapy w Elixirze są ewolucją starszych typów przechowywania klucz-wartość, takich jak Hashe w Ruby czy Słowniki w Pythonie. Pozwalają na bardziej efekcyjne wyszukiwanie i wstawianie, czyniąc je głównym wyborem dla nowoczesnego programowania w Elixirze. Warto zauważyć, że przed Mapami, Elixir używał modułów HashDict i Dict, które są teraz przestarzałe.
 
 Jednakże, w scenariuszach wymagających uporządkowanych danych, można przyjrzeć się listom słów kluczowych w Elixirze. Są to listy krotek, efektywne dla mniejszych kolekcji, ale nie tak wydajne dla dużych zbiorów danych jak Mapy.

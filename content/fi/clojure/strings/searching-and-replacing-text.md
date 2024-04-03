@@ -11,9 +11,6 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## What & Why?
-Tekstin etsiminen ja korvaaminen on prosessi, jossa löydetään tietyt merkkijonot ja korvataan ne toisilla. Ohjelmoijat käyttävät tätä tekstin päivittämiseen, virheiden korjaamiseen tai datan muotoiluun.
-
 ## How to:
 Clojurissa käytetään `clojure.string/replace` funktiota tekstinkorjaukseen. Tässä pari esimerkkiä:
 

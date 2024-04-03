@@ -15,9 +15,6 @@ title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---
 
-## Cái gì & Tại sao?
-Việc trích xuất các chuỗi con đồng nghĩa với việc kéo một đoạn cụ thể ra khỏi một chuỗi. Các lập trình viên thực hiện điều này để cô lập, phân tích, hoặc thao tác với dữ liệu cụ thể trong một văn bản lớn hơn.
-
 ## Làm thế nào:
 Trong Lua, sử dụng hàm `string.sub`:
 

@@ -13,11 +13,7 @@ title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---
 
-## Mitä & Miksi?
-Säännölliset lausekkeet eli regex ovat tehokas mallin vastaavuuden etsimisen ja hakemisen työkalu ohjelmoinnissa. Ohjelmoijat käyttävät regexiä tehtäviin kuten käyttäjän syötteen validointiin, tekstin etsimiseen tai merkkijonojen manipulointiin, koska se on tehokasta ja monipuolista.
-
 ## Kuinka:
-
 Sukelletaan TypeScriptiin ja katsotaan, miten regexiä käytetään yleisiin tehtäviin.
 
 ```TypeScript
@@ -40,7 +36,6 @@ console.log(month, day, year); // Tuloste: "April" "10" "2021"
 ```
 
 ## Syväsukellus
-
 1950-luvulla matemaatikko Stephen Kleene kuvasi säännöllisiä lausekkeita mallina esittämään säännöllisiä kieliä, jotka myöhemmin tulivat oleellisiksi tietojenkäsittelytieteessä. Edetessä regex on kaikkialla ohjelmoinnissa tekstin käsittelyssä.
 
 Vaikka regex on kuin linkkuveitsi merkkijono-operaatioille, ei se ole ilman vaihtoehtoja. Tehtävän monimutkaisuudesta riippuen joskus merkkijonometodit kuten `includes()`, `startsWith()`, `endsWith()` tai jopa jäsentäminen kirjaston avulla voivat olla parempia. Esimerkiksi monimutkaisen JSON-merkkijonon jäsentäminen regexin avulla voi olla painajainen – käytä sen sijaan JSON-jäsentäjää.
@@ -48,7 +43,6 @@ Vaikka regex on kuin linkkuveitsi merkkijono-operaatioille, ei se ole ilman vaih
 Toteutukseen liittyen, regex JavaScriptissä ja TypeScriptissä perustuu ECMAScript-kielispesifikaatioon. Kulissien takana moottorit käyttävät tilakoneita tehokkaaseen mallien vastaavuuteen. On huomionarvoista, että regex-operaatiot voivat olla kalliita suorituskyvyn kannalta, erityisesti huonosti kirjoitettujen mallien kanssa – varo "katastrofaalista takaisinkytkentää".
 
 ## Katso Myös
-
 - MDN Web Docs säännöllisistä lausekkeista: [MDN Säännölliset Lausekkeet](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
 - Regex101: Työkalu testata ja debugata regex-malleja [Regex101](https://regex101.com/)
 - "Mastering Regular Expressions" -kirja syvälliseen ymmärrykseen: [O'Reilly](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)

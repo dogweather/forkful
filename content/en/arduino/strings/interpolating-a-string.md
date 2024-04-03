@@ -9,12 +9,7 @@ title: Interpolating a string
 weight: 8
 ---
 
-## What & Why?
-
-String interpolation is mixing variables with text. Programmers do it to build strings on-the-fly, making output dynamic and readable.
-
 ## How to:
-
 Arduino doesn't have built-in string interpolation, but you can get similar results with `sprintf()` or by concatenating strings and variables.
 
 ```Arduino
@@ -37,7 +32,6 @@ Serial.println(message);
 ```
 
 ## Deep Dive
-
 C and C++ (the core languages of Arduino sketches) traditionally don't have string interpolation like newer languages (e.g., Python or JavaScript). Instead, `sprintf()` has been the go-to way to compose strings with variables. It works, but it can be a bit clunky and error-prone due to buffer overflows if not managed carefully.
 
 Concatenation using the `String` class is more intuitive and safer from memory errors. The drawback? It can lead to memory fragmentation, especially in long-running programs on memory-constrained devices like Arduinos.
@@ -47,7 +41,6 @@ An alternative found in some newer or more specialized C++ libraries (not standa
 As for implementation details, when you concatenate with the `String` class, behind the scenes, the Arduino is creating new string objects and handling the memory for you. `sprintf()`, on the other hand, writes formatted text to a buffer you allocate, giving you more control at the cost of having to manage memory manually.
 
 ## See Also
-
 - Arduino `String` class reference: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
 - `sprintf()` function reference: http://www.cplusplus.com/reference/cstdio/sprintf/
 - Arduino Memory Optimization: https://www.arduino.cc/en/Tutorial/Foundations/Memory

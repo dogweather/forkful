@@ -11,9 +11,6 @@ title: Concatenando strings
 weight: 3
 ---
 
-## O Que & Por Quê?
-Concatenar strings é simplesmente juntar dois ou mais pedaços de texto em um só. Programadores fazem isso para montar mensagens, combinar dados e configurar valores dinâmicos de uma forma prática e eficiente.
-
 ## Como fazer:
 ```Javascript
 // Usando o operador de concatenação '+'

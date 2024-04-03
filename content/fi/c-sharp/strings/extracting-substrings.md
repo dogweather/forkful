@@ -9,9 +9,6 @@ title: Merkkijonojen osien poimiminen
 weight: 6
 ---
 
-## What & Why? (Mikä ja Miksi?)
-Substringit ovat jonoista poimittuja osia. Käyttämällä niitä, voidaan prosessoida, analysoida tai muokata tekstidataa tarpeen mukaan.
-
 ## How to: (Kuinka tehdä:)
 C# tarjoaa useita tapoja työstää substringeja. Tutkitaanpa muutama esimerkki.
 

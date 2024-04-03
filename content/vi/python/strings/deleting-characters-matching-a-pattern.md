@@ -16,9 +16,6 @@ title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---
 
-## Gì và Tại sao?
-Trong lập trình, việc xóa các ký tự khớp với một mẫu nghĩa là tìm các chuỗi ký tự phù hợp với một quy tắc cụ thể—một mẫu—và loại bỏ chúng khỏi chuỗi. Các lập trình viên thực hiện điều này cho các tác vụ như làm sạch đầu vào, xử lý văn bản, hoặc chỉ đơn giản là dọn dẹp dữ liệu trước khi lưu trữ hoặc hiển thị nó.
-
 ## Cách làm:
 ```Python
 import re

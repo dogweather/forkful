@@ -12,16 +12,10 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-
-Reguliere Expressies (regex) zijn patronen die worden gebruikt om combinaties van karakters in strings te matchen. Programmeurs benutten ze voor het zoeken, bewerken of manipuleren van tekst en data, waardoor ze onmisbaar zijn voor patroonherkenning en data-analyse taken.
-
 ## Hoe:
-
 Het gebruik van reguliere expressies in Google Apps Script is eenvoudig dankzij de syntax gebaseerd op JavaScript. Hier is hoe je regex kunt integreren in je scripts voor veelvoorkomende taken zoals zoeken en datavalidatie.
 
 ### Zoeken in Strings
-
 Stel je wilt vinden of een string een specifiek patroon bevat, zoals een e-mailadres. Hier is een simpel voorbeeld:
 
 ```javascript
@@ -40,7 +34,6 @@ findEmailInText("Neem contact met ons op via info@example.com.");
 ```
 
 ### Data Validatie
-
 Reguliere expressies schitteren in datavalidatie. Hieronder staat een functie die een invoerstring valideert om te controleren of deze voldoet aan een eenvoudig wachtwoordbeleid (minimaal één hoofdletter, één kleine letter, en minimaal 8 karakters).
 
 ```javascript
@@ -55,7 +48,6 @@ Logger.log(validatePassword("zwak"));       // Uitvoer: false
 ```
 
 ## Diepgaand
-
 Reguliere expressies in Google Apps Script zijn overgeërfd van JavaScript, voor het eerst gestandaardiseerd in de ECMAScript-taalspecificatie in juni 1997. Hoewel krachtig, kunnen ze soms leiden tot verwarrende en moeilijk te onderhouden code, vooral wanneer ze overmatig gebruikt worden of voor complexe patroonmatchingtaken die mogelijk efficiënter opgelost kunnen worden door andere parsingmethoden.
 
 Bijvoorbeeld, hoewel je regex kunt gebruiken voor HTML- of XML-parsing in een noodgeval, wordt dit over het algemeen afgeraden vanwege de geneste en ingewikkelde structuren van deze documenten. In plaats daarvan zijn tools die specifiek ontworpen zijn voor het parsen van dergelijke structuren, zoals DOM-parsers voor HTML, betrouwbaarder en leesbaarder.

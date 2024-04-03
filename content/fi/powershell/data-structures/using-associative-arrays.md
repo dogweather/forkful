@@ -14,12 +14,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mitä & Miksi?
-
-Assosiatiiviset taulukot, tunnetaan myös nimellä hajautustaulut tai sanakirjat PowerShellissä, mahdollistavat tietojen tallentamisen avain-arvo -pareina, mikä tekee tietojen hakemisesta suoraviivaista ja tehokasta. Ohjelmoijat käyttävät niitä liittyvien tietojen yhdessä säilyttämiseen tavalla, joka on helppo hakea avaimen perusteella.
-
 ## Kuinka:
-
 Assosiatiivisten taulukoiden luominen ja käyttäminen PowerShellissä on melko suoraviivaista. Tässä miten teet taian:
 
 **Assosiatiivisen taulukon luominen:**
@@ -77,7 +72,6 @@ location : New York
 ```
 
 ## Syväsukellus
-
 Assosiatiivisten taulukoiden konsepti on yleinen monissa ohjelmointikielissä, yleensä kutsutaan sanakirjaksi, kartaksi tai hajautustauluksi kielen mukaan. PowerShellissä, assosiatiiviset taulukot toteutetaan hajautustauluina, jotka ovat melko tehokkaita avaimien hakemisessa, tietojen tallentamisessa ja yksilöllisten avainten kokoelman ylläpitämisessä.
 
 Historiallisesti assosiatiiviset taulukot tarjoavat keinon hallita objektikokoelmia, joista jokainen nimike voidaan nopeasti hakea ilman kokoelman läpikäymistä, käyttäen sen avainta. Tietojen hakemisen ja muokkaamisen tehokkuus assosiatiivisissa taulukoissa tekee niistä suositun valinnan monenlaisiin tehtäviin. Niillä on kuitenkin rajoituksia, kuten järjestyksen ylläpitäminen, jossa järjestetyt sanakirjat tai mukautetut objektit voivat olla parempi vaihtoehto.

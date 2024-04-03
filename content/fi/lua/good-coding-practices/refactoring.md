@@ -12,9 +12,6 @@ title: Koodin refaktorointi
 weight: 19
 ---
 
-## Mikä & Miksi?
-Koodin uudelleenjärjestely on taidetta, jossa olemassa olevaa koodia muokataan parantamaan sen rakennetta, luettavuutta ja tehokkuutta muuttamatta sen ulkoista käyttäytymistä. Ohjelmoijat tekevät tämän tehdäkseen koodistaan helpommin ylläpidettävää, vähentääkseen monimutkaisuutta ja usein esivalmisteluna ennen uusien ominaisuuksien lisäämistä tai virheiden korjaamista.
-
 ## Miten:
 Katsotaanpa yksinkertaista Luassa kirjoitettua funktiota ja uudelleenjärjestellään sitä. Aloitemme funktiolla, joka laskee numeroiden summan listassa mutta on kirjoitettu tehokkuutta ja selkeyttä paljoa ajattelematta:
 

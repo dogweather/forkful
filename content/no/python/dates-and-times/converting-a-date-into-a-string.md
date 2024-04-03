@@ -11,9 +11,6 @@ title: Konvertere en dato til en streng
 weight: 28
 ---
 
-## Hva & Hvorfor?
-Konvertering av dato til streng handler om å endre et datoobjekt til en tekstrepresentasjon. Dette er nyttig for å vise datoer lesevennlig for brukere eller lagre i databaser som ikke støtter datoobjekter.
-
 ## Hvordan gjøre det:
 ```Python
 from datetime import datetime

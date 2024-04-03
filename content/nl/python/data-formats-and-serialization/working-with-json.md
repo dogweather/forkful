@@ -12,9 +12,6 @@ title: Werken met JSON
 weight: 38
 ---
 
-## Wat & Waarom?
-JSON (JavaScript Object Notation) is een alomtegenwoordig data-uitwisselingsformaat op het web. Programmeurs gebruiken JSON om gemakkelijk gegevens tussen servers en webclients door te geven vanwege de eenvoud en het feit dat het van nature begrepen wordt door JavaScript en dus door webbrowsers.
-
 ## Hoe te:
 Werken met JSON in Python vereist de `json` module. Hier is een snelle doorloop:
 
@@ -49,9 +46,17 @@ persoon_json = json.dumps(persoon_dict)
 print(persoon_json)
 ```
 
-### Voorbeelduitvoer:
+### Genereren van JSON (`json.dumps`):
 ```Python
-'{"naam": "Alice", "leeftijd": 30, "stad": "Wonderland"}'
+import json
+
+# Python woordenboek
+persoon_dict = {'naam': 'Alice', 'leeftijd': 30, 'stad': 'Wonderland'}
+
+# Converteer het woordenboek naar een JSON-geformatteerde string
+persoon_json = json.dumps(persoon_dict)
+
+print(persoon_json)
 ```
 
 ## Diepere Duik

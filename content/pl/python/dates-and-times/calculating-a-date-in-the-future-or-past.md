@@ -11,9 +11,6 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-## Co i Dlaczego?
-Obliczanie daty w przyszłości lub przeszłości to ustalenie, jaka data będzie za kilka dni, miesięcy, lat albo jaka była. Programiści to robią, by zarządzać wydarzeniami, terminami, harmonogramami.
-
 ## Jak to zrobić:
 ```Python
 from datetime import datetime, timedelta

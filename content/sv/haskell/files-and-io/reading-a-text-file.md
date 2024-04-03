@@ -11,9 +11,6 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## Vad & Varför?
-Läsa en textfil i Haskell är att inhämta data från en fil på din enhet. Vi gör det för att tillgodose program med information som konfigurationer, användardata, eller helt enkelt för att hantera in- och utdata.
-
 ## Hur gör man:
 ```Haskell
 import System.IO

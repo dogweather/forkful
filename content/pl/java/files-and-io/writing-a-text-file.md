@@ -14,14 +14,10 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i dlaczego?
-
-Zapisywanie pliku tekstowego w Javie dotyczy wykorzystywania możliwości języka do tworzenia plików i zapisywania w nich treści na systemie plików. Programiści robią to z różnych powodów, takich jak logowanie, eksportowanie danych lub zapisywanie stanu aplikacji do późniejszego odzyskania.
-
 ## Jak to zrobić:
 
-### Używając `java.nio.file` (Biblioteka standardowa)
 
+### Używając `java.nio.file` (Biblioteka standardowa)
 Pakiet New I/O (NIO) Javy (`java.nio.file`) oferuje bardziej wszechstronne podejście do pracy z plikami. Oto uproszczony sposób na zapis do pliku przy użyciu `Files.write()`:
 
 ```java
@@ -50,7 +46,6 @@ Plik zapisany pomyślnie!
 ```
 
 ### Używając `java.io` (Biblioteka standardowa)
-
 Dla bardziej tradycyjnego podejścia, `java.io.FileWriter` jest dobrym wyborem do prostego zapisywania plików tekstowych:
 
 ```java
@@ -77,7 +72,6 @@ Plik zapisany pomyślnie!
 ```
 
 ### Używając Apache Commons IO
-
 Biblioteka Apache Commons IO upraszcza wiele operacji, w tym zapis do pliku. Oto jak zapisać do pliku przy użyciu `FileUtils.writeStringToFile()`:
 
 Najpierw dodaj zależność do swojego projektu. Jeśli używasz Maven, dołącz:

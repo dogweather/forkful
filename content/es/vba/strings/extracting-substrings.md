@@ -12,12 +12,7 @@ title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---
 
-## Qué y Por Qué?
-
-Extraer subcadenas en Visual Basic para Aplicaciones (VBA) implica aislar partes específicas de una cadena basadas en criterios dados. Los programadores hacen esto para tareas como el análisis de datos, validación y formateo, donde manipular y extraer información de datos textuales es crucial.
-
 ## Cómo hacerlo:
-
 En VBA, principalmente usas las funciones `Mid`, `Left` y `Right` para extraer subcadenas. A continuación, exploramos estas funciones con ejemplos:
 
 1. **Mid**: Extrae una subcadena de una cadena comenzando en una posición especificada.
@@ -50,7 +45,6 @@ En VBA, principalmente usas las funciones `Mid`, `Left` y `Right` para extraer s
 Estas funciones fundamentales forman la base de la extracción de subcadenas en VBA, proporcionando enfoques robustos y sencillos para la manipulación de cadenas.
 
 ## Análisis Profundo:
-
 Históricamente, la capacidad de manipular cadenas en la programación ha sido esencial, siendo BASIC (el progenitor de VBA) uno de los primeros en democratizar esta capacidad en los primeros días de la informática personal. Las funciones `Mid`, `Left` y `Right` en VBA heredan este legado, ofreciendo una interfaz simplificada para programadores modernos.
 
 Aunque estas funciones son bastante efectivas para muchas tareas, la aparición de Expresiones Regulares en lenguajes más nuevos ha proporcionado una manera más poderosa y flexible de trabajar con texto. A pesar de esto, la simplicidad inmediata y disponibilidad de las funciones tradicionales de subcadena de VBA las hacen perfectamente adecuadas para tareas rápidas y para aquellos nuevos en la programación.

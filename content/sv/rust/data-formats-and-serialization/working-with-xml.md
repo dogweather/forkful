@@ -11,9 +11,6 @@ title: Att arbeta med XML
 weight: 40
 ---
 
-## Vad & Varför?
-XML, som står för eXtensible Markup Language, är som JSON:s ordrika kusin. Du kommer att brottas med XML när du hanterar legacysystem, företagsprogramvara eller API:er som hoppade över JSON-vagnen. Det är avgörande för datautbyte där XML står stadigt.
-
 ## Hur man gör:
 I Rust kan du hantera XML med crates som `xml-rs`. Installera genom att lägga till `xml-rs = "0.8"` i din `Cargo.toml`. Så här tolkar du enkel XML:
 

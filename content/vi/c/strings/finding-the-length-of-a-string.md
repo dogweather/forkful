@@ -15,9 +15,6 @@ title: "T\xECm ki\u1EBFm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i"
 weight: 7
 ---
 
-## Gì và Tại sao?
-Việc tìm độ dài của một chuỗi trong C bao gồm việc xác định số lượng ký tự trước ký tự kết thúc chuỗi NULL `\0`. Các lập trình viên thực hiện việc này để có thể xử lý chuỗi dữ liệu một cách chính xác mà không gặp phải lỗi như tràn bộ đệm, có thể dẫn đến những lỗ hổng bảo mật hoặc sự cố sập chương trình.
-
 ## Làm thế nào:
 Trong C, hàm thư viện chuẩn `strlen()` thường được sử dụng để tìm độ dài của một chuỗi. Dưới đây là một ví dụ nhanh:
 

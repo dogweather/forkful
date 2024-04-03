@@ -12,9 +12,6 @@ title: Gestion des erreurs
 weight: 16
 ---
 
-## Quoi et pourquoi ?
-La gestion des erreurs en PHP consiste à gérer et répondre à des conditions qui perturbent le déroulement normal d’un programme, telles que des fichiers manquants ou des entrées de données incorrectes. Les programmeurs traitent les erreurs pour éviter les plantages et offrir une expérience plus fluide aux utilisateurs.
-
 ## Comment faire :
 En PHP, vous pouvez gérer les erreurs à l'aide de blocs `try-catch`, et vous pouvez personnaliser le processus avec des gestionnaires d'erreur personnalisés et des exceptions.
 

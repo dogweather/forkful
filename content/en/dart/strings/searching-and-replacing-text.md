@@ -10,16 +10,10 @@ title: Searching and replacing text
 weight: 10
 ---
 
-## What & Why?
-
-Searching and replacing text in Dart involves examining strings to find certain patterns or sequences of characters and substituting them with new content. This operation is fundamental for tasks like data validation, formatting output, parsing user input, or even manipulating URLs and file paths, making applications more dynamic and responsive to user needs.
-
 ## How to:
-
 Dart provides robust methods for searching and replacing text directly through its `String` class, without the need for external libraries. Here's how you can do it:
 
 ### Basic Searching and Replacing
-
 To search for a substring and replace it with another string, you can use `replaceAll`:
 
 ```dart
@@ -29,7 +23,6 @@ print(modifiedText); // Output: Hello, Flutter! Flutter is great.
 ```
 
 ### Using Regular Expressions
-
 For more complex searching and replacing needs, Dart utilizes regular expressions via the `RegExp` class. This allows for pattern matching and replacement in strings:
 
 ```dart
@@ -41,7 +34,6 @@ print(modifiedText); // Output: Dart 2024, Flutter 2024
 This example finds all instances of one or more digits (`\d+`) in the string and replaces them with "2024".
 
 ### Case-Insensitive Searching
-
 To perform a case-insensitive search, you can modify the `RegExp` constructor to ignore the case:
 
 ```dart
@@ -51,7 +43,6 @@ print(modifiedText); // Output: Welcome to Flutter, the programming language.
 ```
 
 ### Replacing with a Function
-
 For dynamic replacements based on the match itself, Dart allows passing a function to `replaceAllMapped`. This function can perform operations or calculations on the matched sequences:
 
 ```dart

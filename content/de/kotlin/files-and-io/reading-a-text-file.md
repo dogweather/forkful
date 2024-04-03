@@ -11,9 +11,6 @@ title: Textdatei einlesen
 weight: 22
 ---
 
-## Was & Warum?
-Textdateien lesen heißt, Daten aus einer Datei mit Textinhalt in dein Programm zu laden. Programmierer machen das häufig, um Konfigurationen auszulesen, Benutzerdaten zu verarbeiten oder einfach Informationen zu speichern und wiederzuverwenden.
-
 ## How to:
 So liest du eine Textdatei in Kotlin – einfach und schmerzlos:
 

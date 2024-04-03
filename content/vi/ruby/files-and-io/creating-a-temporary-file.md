@@ -15,9 +15,6 @@ title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Cái gì và Tại sao?
-Trong Ruby, việc tạo một tệp tạm giúp bảo vệ dữ liệu nhạy cảm và quản lý nhu cầu lưu trữ thoáng qua. Các lập trình viên sử dụng nó cho việc xử lý tệp ngắn hạn an toàn mà không làm bừa bãi hệ thống tệp.
-
 ## Làm thế nào:
 Thư viện chuẩn của Ruby cung cấp `Tempfile` để tạo tệp tạm. Hãy cùng tìm hiểu:
 

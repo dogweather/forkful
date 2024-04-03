@@ -13,9 +13,6 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä & Miksi?
-Tekstitiedoston kirjoittaminen Arduinolla tarkoittaa datan tallentamista tiedostoon SD-kortilla tai vastaavalla tallennusmoduulilla, usein datan loggauksen tarpeisiin. Ohjelmoijat tekevät näin tallentaakseen sensorilukemia, tallentaakseen konfiguraatioita tai loggatakseen sovellustapahtumia ajan myötä, mikä on olennaista projekteille, jotka vaativat data-analyysia tai seurantaa.
-
 ## Kuinka:
 Kirjoittaaksesi tekstitiedostoon SD-kortilla käyttäen Arduinoa, sinun täytyy ensin sisällyttää `SD.h` kirjasto, joka tarjoaa tarvittavat toiminnot vuorovaikutuksessa SD-korttien kanssa. Varmista, että Arduino-lautasi on yhdistetty SD-korttimoduuliin.
 

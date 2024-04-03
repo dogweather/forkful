@@ -11,9 +11,6 @@ title: Att arbeta med XML
 weight: 40
 ---
 
-## Vad och varför?
-XML är ett märkspråk som används för att lagra och transportera data. Programmerare arbetar med XML för att möjliggöra interoperabilitet mellan applikationer och system - tänk datautbyte och konfigurationsinställningar.
-
 ## Hur man gör:
 Läsa XML med SimpleXML:
 

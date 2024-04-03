@@ -12,9 +12,6 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co i dlaczego?
-Usuwanie cudzysłowów z ciągu znaków oznacza usunięcie tych dodatkowych podwójnych lub pojedynczych znaków cytatu, które faktycznie nie są potrzebne w przetwarzanym tekście. Programiści robią to, aby sanować dane wejściowe, przygotować dane do przechowywania lub uczynić wyjście bardziej czytelnym dla człowieka, kiedy cytaty nie są konieczne w danym kontekście.
-
 ## Jak to zrobić:
 W Elm, można użyć funkcji `String`, aby manipulować ciągami znaków, takimi jak usuwanie cudzysłowów. Oto prosty sposób, aby to zrobić:
 

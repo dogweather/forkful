@@ -13,12 +13,7 @@ title: "Skapa en tillf\xE4llig fil"
 weight: 21
 ---
 
-## Vad & varför?
-
-Att skapa en tillfällig fil i Google Apps Script innebär att generera en fil avsedd för kortvarigt bruk, vanligtvis för mellanliggande databehandling, felsökning eller cachingändamål. Programmerare gör detta för att hantera data tillfälligt utan att belasta det permanenta lagringsutrymmet eller när datans varaktighet är onödig utanför omfattningen av den aktuella processen.
-
 ## Hur man gör:
-
 I Google Apps Script kan en tillfällig fil skapas genom att använda DriveApp-tjänsten, som erbjuder en enkel metod för att skapa, läsa och ta bort filer i Google Drive. Så här kan du skapa en tillfällig textfil, skriva lite data till den och sedan ta bort den efter användning:
 
 ```javascript
@@ -53,7 +48,6 @@ Tillfällig fil borttagen
 Det här exempelskriptet visar skapandet av en tillfällig fil, utförandet av en operation för att läsa dess innehåll och slutligen, borttagning av filen för att städa upp.
 
 ## Fördjupning
-
 Konceptet att skapa tillfälliga filer i programvaruutveckling är lika gammalt som konceptet för filhantering självt. I traditionella filsystem skapas tillfälliga filer ofta i utvalda temp-kataloger och är avgörande för olika mellanliggande processer, som att sortera stora dataset, hålla sessionsdata för webbapplikationer eller lagra dataklumpar under filkonverteringsprocesser.
 
 I Google Apps Script utnyttjas Google Drives infrastruktur för processen att skapa tillfälliga filer, vilket erbjuder en intressant blandning av molnbaserad filhantering med traditionella programmeringskoncept. Dock är denna metod för att skapa tillfälliga filer i Google Drive inte utan begränsningar och kostnader, med tanke på kvotbegränsningarna som Google Drive pålägger. Likaså kan latensen i att komma åt Google Drive över nätverket jämfört med ett lokalt filsystem vara en kritisk faktor för högpresterande applikationer.

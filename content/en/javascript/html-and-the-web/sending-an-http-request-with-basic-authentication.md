@@ -11,12 +11,7 @@ title: Sending an HTTP request with basic authentication
 weight: 45
 ---
 
-## What & Why?
-
-Sending an HTTP request with basic authentication involves including a username and password encoded in base64 within the request header. Programmers do this to access resources that need some form of simple validation to ensure some level of security.
-
 ## How to:
-
 Here's a quick example using JavaScript's Fetch API:
 
 ```javascript
@@ -46,7 +41,6 @@ Sample output (printed to the console):
 ```
 
 ## Deep Dive
-
 Before diving in, let's get a bit of context. Basic authentication is one of the simplest forms of web service security, sending credentials in headers with every request.
 
 Historical Context:
@@ -64,7 +58,6 @@ Implementation Details:
 - Modern development favors tokens and session cookies for authentication, as they're more secure and versatile.
 
 ## See Also
-
 - [Mozilla Developer Network - Authorization](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)
 - [RFC 7617 - HTTP Basic Auth](https://tools.ietf.org/html/rfc7617)
 - [Introduction to OAuth 2.0](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)

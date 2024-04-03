@@ -11,14 +11,10 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-
-Writing a text file in Swift allows you to persistently store string data on the filesystem, which is essential for tasks such as saving configuration settings, user data, or logs. Programmers often do this to maintain data between app launches, share data among different parts of an application, or export data to be used by other programs.
-
 ## How to:
 
-### Using Swift Standard Library
 
+### Using Swift Standard Library
 Swift's standard library includes all the tools needed to write text files. Here's a basic approach:
 
 ```swift
@@ -39,7 +35,6 @@ do {
 This code snippet writes a string to a file named `example.txt` in the documents directory. It handles potential errors using Swift's do-try-catch error handling.
 
 ### Using FileManager for More Control
-
 For more control over file attributes or to check if the file already exists, `FileManager` can be used:
 
 ```swift
@@ -65,7 +60,6 @@ if let documentDirectory = directories.first {
 ```
 
 ### Using Third-Party Libraries
-
 One popular third-party library for filesystem operations in Swift is `Files` by John Sundell:
 
 First, add Files to your project, usually via Swift Package Manager.

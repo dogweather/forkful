@@ -16,12 +16,7 @@ title: "G\u1EEDi y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n
 weight: 45
 ---
 
-## Gì và Tại sao?
-
-Gửi một yêu cầu HTTP với xác thực cơ bản trong Visual Basic for Applications (VBA) là truy cập vào các nguồn web được bảo vệ bởi tên người dùng và mật khẩu. Các lập trình viên thực hiện điều này để tương tác với các API hoặc dịch vụ web bảo mật trong ứng dụng VBA của họ, chẳng hạn như tự động hóa các tác vụ trong Excel hoặc Access với dữ liệu từ các điểm cuối được bảo mật.
-
 ## Cách thực hiện:
-
 Trong VBA, bạn có thể sử dụng thư viện `Microsoft XML, v6.0` (MSXML2) để gửi các yêu cầu HTTP với xác thực cơ bản. Điều này liên quan đến việc thiết lập tiêu đề `"Authorization"` của yêu cầu để bao gồm thông tin đăng nhập ở dạng mã hóa base64. Dưới đây là hướng dẫn từng bước:
 
 1. **Tham chiếu MSXML2**: Đầu tiên, đảm bảo dự án VBA của bạn tham chiếu thư viện `Microsoft XML, v6.0`. Trong trình chỉnh sửa VBA, đi đến Công cụ > Tham chiếu và kiểm tra `Microsoft XML, v6.0`.
@@ -65,7 +60,6 @@ Trong VBA, bạn có thể sử dụng thư viện `Microsoft XML, v6.0` (MSXML2
 Điều này sẽ gửi một yêu cầu GET đến `http://example.com/api/resource` với thông tin xác thực cơ bản đã chỉ định và in phản ứi ra.
 
 ## Sâu hơn
-
 Phương pháp sử dụng ở đây, mặc dù hiệu quả cho các trường hợp sử dụng đơn giản, dựa vào lược đồ xác thực cơ bản, gửi thông tin đăng nhập trong một định dạng dễ giải mã (mã hóa base64 không phải là mã hóa). Do tính dễ bị tổn thương, đặc biệt là trong các ngữ cảnh không phải HTTPS, xác thực cơ bản không được khuyến nghị để truyền dữ liệu nhạy cảm qua internet mà không có các lớp bảo mật bổ sung như SSL/TLS.
 
 Lịch sử, xác thực cơ bản là một trong những phương pháp đầu tiên được phát triển để kiểm soát quyền truy cập vào các nguồn web. Ngày nay, các tiêu chuẩn xác thực an toàn và linh hoạt hơn, chẳng hạn như OAuth 2.0, thường được ưu tiên cho các ứng dụng mới. Do giới hạn của VBA và các phụ thuộc bên ngoài cần thiết cho các phương pháp xác thực tiên tiến hơn, các lập trình viên thường sử dụng VBA trong môi trường nội bộ hoặc ít quan trọng về mặt bảo mật, hoặc sử dụng nó làm bước đệm để nhanh chóng mô phỏng ý tưởng.

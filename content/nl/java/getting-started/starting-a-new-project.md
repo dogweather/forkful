@@ -13,12 +13,7 @@ title: Een nieuw project starten
 weight: 1
 ---
 
-## Wat & Waarom?
-
-Een nieuw Java-project starten is alsof je een nieuw doek klaarzet voor je meesterwerk. Programmeurs zetten nieuwe projecten op om ideeën om te zetten in functionele software, en elke nieuwe start is een stap richting innovatie of het oplossen van een probleem.
-
 ## Hoe te:
-
 Laten we beginnen. We gaan een eenvoudig Java-project creëren met de opdrachtregel en een klassiek "Hallo, Wereld!" programma compileren en uitvoeren.
 
 Maak eerst een directory voor je project en navigeer ernaar:
@@ -53,7 +48,6 @@ Hallo, Wereld!
 ```
 
 ## Diepgaand:
-
 Ooit werden Java-projecten handmatig beheerd, een beetje als jongleren met bestanden in een circus. Tegenwoordig hebben we tools zoals Maven en Gradle om het alledaagse werk te automatiseren.
 
 Maven heeft bijvoorbeeld de standaard projectindeling gedefinieerd waarmee de meeste Java-ontwikkelaars vandaag de dag bekend zijn. Het regelt ook afhankelijkheden zodat je niet handmatig jars hoeft te downloaden en je geen nachtmerries over de classpath hoeft te hebben.
@@ -65,7 +59,6 @@ Alternatieven? Zeker, er is Ant met Ivy, maar dat is een beetje ouderwets, zoals
 Wanneer je een nieuw Java-project start, denk dan na over hoe groot en complex het zal worden. Voor leren of kleine projecten werkt handmatig beheer prima. Maar als je van plan bent iets substantieels te bouwen of in een team te werken, dan is een buildtool de weg te gaan.
 
 ## Zie Ook:
-
 Om een voorsprong te krijgen in het gebruik van buildtools, bekijk de volgende bronnen:
 
 - [Maven Getting Started Guide](https://maven.apache.org/guides/getting-started/index.html)

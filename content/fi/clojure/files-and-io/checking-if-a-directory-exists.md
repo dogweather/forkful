@@ -13,9 +13,6 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mikä ja miksi?
-Hakemiston olemassaolon tarkistaminen Clojuressa käsittää tiedostojärjestelmän hakemiston läsnäolon varmistamisen Clojure-sovelluksessasi. Tämä tehtävä on kriittinen tiedosto-operaatioille, jotta voidaan estää virheet lukiessasi tai kirjoittaessasi hakemistoihin, jotka eivät ehkä ole olemassa, varmistaen vankan ja virheettömän koodin suorituksen.
-
 ## Kuinka:
 Clojurena, ollessaan JVM-kieli, voi hyödyntää Javan `java.io.File` -luokkaa tähän tarkoitukseen. Et tarvitse mitään kolmannen osapuolen kirjastoa tällaiseen perustoimintoon. Tässä on, miten voit tehdä sen:
 

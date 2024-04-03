@@ -10,9 +10,6 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-Writing a text file in Kotlin involves creating a file and inputting text content into it, a common task for storing data, logging, or configuration settings. Programmers do it to save and manipulate data outside the volatile memory space, ensuring persistence across sessions.
-
 ## How to:
 Kotlin provides a straightforward approach for writing to files, leveraging the standard library without needing additional third-party libraries. Here is a simple example:
 

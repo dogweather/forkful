@@ -13,12 +13,7 @@ title: Een string kapitaliseren
 weight: 2
 ---
 
-## Wat & Waarom?
-
-Een string met hoofdletters schrijven in C houdt in dat je het eerste teken van elk woord in een gegeven string omzet naar een hoofdletter als het een kleine letter is. Programmeurs voeren deze bewerking vaak uit om gebruikersinvoer te standaardiseren voor zoekopdrachten, sorteerbewerkingen of weergavedoeleinden, om consistentie en leesbaarheid in tekstgegevens te waarborgen.
-
 ## Hoe te:
-
 Het met hoofdletters schrijven van een string in C vereist een basisbegrip van karaktermanipulatie en het doorlopen van strings. Aangezien C geen ingebouwde functie hiervoor heeft, zul je doorgaans elk teken controleren, en indien nodig de hoofdletter aanpassen. Hieronder staat een eenvoudige implementatie:
 
 ```c
@@ -55,7 +50,6 @@ String met hoofdletters: Hello World. Programming In C!
 Dit programma doorloopt de string `exampleString`, controleerend elk teken of het met een hoofdletter moet worden geschreven. De functie `islower` controleert of een teken een kleine letter is, terwijl `toupper` het omzet naar een hoofdletter. De vlag `capNext` bepaalt of de volgende letter die wordt aangetroffen omgezet dient te worden, deze wordt ingesteld na elke spatie (' ') die wordt gevonden, en aanvankelijk om het eerste teken van de string een hoofdletter te maken.
 
 ## Diepere Duik
-
 De getoonde techniek is eenvoudig maar mist efficiëntie voor zeer grote strings of wanneer ze herhaaldelijk wordt uitgevoerd in prestatie-kritieke toepassingen. In historische en implementatie-contexten omvat stringmanipulatie in C, inclusief kapitalisatie, vaak directe buffermanipulatie, wat de low-level benadering van C weerspiegelt en de programmeur volledige controle geeft over geheugen en prestatie-afwegingen.
 
 Er zijn alternatieve, meer geavanceerde methoden voor het met hoofdletters schrijven van strings, vooral wanneer rekening wordt gehouden met landinstellingen en unicode-tekens, waar kapitalisatieregels aanzienlijk kunnen verschillen van het eenvoudige ASCII-scenario. Bibliotheken zoals ICU (International Components for Unicode) bieden robuuste oplossingen voor deze gevallen, maar introduceren afhankelijkheden en overhead die mogelijk niet noodzakelijk zijn voor alle toepassingen.

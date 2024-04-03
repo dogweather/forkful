@@ -10,9 +10,6 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## ¿Qué y Por Qué?
-Buscar y reemplazar texto es el proceso de localizar cadenas específicas en un texto y sustituirlas por otras. Los programadores lo hacen para actualizar código, corregir errores o modificar datos de manera eficiente.
-
 ## Cómo hacerlo:
 Para buscar y reemplazar texto en Elm, puedes usar la función `String.replace`. Aquí tienes un ejemplo básico:
 

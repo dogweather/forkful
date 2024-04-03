@@ -16,9 +16,6 @@ title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
 weight: 27
 ---
 
-## What & Why? 什么和为什么？
-比较两个日期就是判断它们谁早谁晚或是否相同。程序员这么做是为了管理和排序事件，检查有效期，或者计算时间间隔。
-
 ## How to: 如何操作
 ```java
 import java.time.LocalDate;

@@ -13,9 +13,6 @@ title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---
 
-## Mikä ja miksi?
-Merkkijonon alkukirjaimen suurentaminen tarkoittaa jokaisen sanan ensimmäisen kirjaimen muuttamista suuraakkoseksi samalla varmistaen, että loput kirjaimet pysyvät pienaakkosina. Tämä yleinen merkkijonon käsittelytehtävä on hyödyllinen tekstien muotoiluun sovelluksissa, kuten käyttäjänimien tai otsikoiden valmistelussa näyttöä varten sopimuksen tai kieliopillisen oikeellisuuden mukaisesti.
-
 ## Kuinka:
 Javan vakio kirjasto ei tarjoa suoraa metodia koko merkkijonojen alkukirjaimen suurentamiseksi kerralla, mutta tämän voi saavuttaa yhdistämällä sisäänrakennettuja metodeja. Monimutkaisempiin tarpeisiin kolmannen osapuolen kirjastot, kuten Apache Commons Lang, tarjoavat suoraviivaisia ratkaisuja.
 
@@ -49,7 +46,6 @@ public class CapitalizeString {
 Tämä koodinpätkä muuntaa koko merkkijonon pienaakkosiksi, sitten se käy läpi jokaisen merkin, suurentaen kunkin sanan ensimmäisen kirjaimen. Se pitää välejä, pisteitä ja heittomerkkejä sananerottimina.
 
 ### Apache Commons Langin käyttäminen
-
 Apache Commons Lang -kirjasto tarjoaa tyylikkäämmän ratkaisun `WordUtils.capitalizeFully()` metodilla, joka käsittelee puolestasi erilaiset reunatapaukset ja erotinmerkit:
 
 ```java

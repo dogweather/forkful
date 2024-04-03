@@ -11,9 +11,6 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co i dlaczego?
-Obsługa błędów w Swift polega na przewidywaniu i reagowaniu na problemy, które pojawiają się podczas wykonywania Twojego kodu. Robimy to, aby kontrolować chaos – zapobiegamy awariom aplikacji i zapewniamy użytkownikowi płynne korzystanie z niej.
-
 ## Jak to zrobić:
 Swift wykorzystuje obsługę błędów za pomocą bloków `do`, `try` i `catch`. Spójrzmy na to:
 

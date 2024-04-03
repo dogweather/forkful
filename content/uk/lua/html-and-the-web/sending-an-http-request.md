@@ -10,12 +10,7 @@ title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437
 weight: 44
 ---
 
-## What & Why? / Що та Чому?
-
-Sending an HTTP request is a way to communicate with web servers. Programmers do this to fetch data, submit forms, or interact with APIs.
-
 ## How to: / Як це зробити:
-
 ```Lua
 -- Ensure you have the 'lua-socket' library
 local http = require("socket.http")
@@ -85,11 +80,9 @@ POST Success:
 ```
 
 ## Deep Dive / Глибоке Занурення:
-
 HTTP requests are the backbone of web communication, dating back to the 1990s. Choices for sending HTTP requests in Lua include libraries like `lua-socket` for simple interactions, and `lua-http` for more complex tasks. The `lua-socket` library's `http.request` function handles the basic request-and-response cycle. It uses sockets to send and receive data, which can be manipulated with Lua streams (implemented by the `ltn12` module). Both the request and the response can have headers to pass additional info (like content type). Error handling is essential; always check the status code (`code`) to make sure your request was successful.
 
 ## See Also / Дивіться також:
-
 - LuaSocket HTTP Documentation: http://w3.impa.br/~diego/software/luasocket/http.html
 - LuaSocket GitHub Repository: https://github.com/diegonehab/luasocket
 - HTTPBin for HTTP Request & Response Service Testing: https://httpbin.org/

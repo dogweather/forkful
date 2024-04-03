@@ -11,9 +11,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---
 
-## What & Why?
-Muuntaminen päivämäärästä merkkijonoksi tarkoittaa päivämäärä-arvon esittämistä tekstimuodossa. Ohjelmoijat tekevät tämän esittääkseen päivämäärän ymmärrettävästi ihmisille tai siirtääkseen dataa formaateissa, jotka vaativat tekstiesitystä.
-
 ## How to:
 ```Lua
 -- Oletusmuoto

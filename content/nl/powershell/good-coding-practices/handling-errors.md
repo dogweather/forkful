@@ -12,9 +12,6 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-Fouten afhandelen in PowerShell betekent het voorspellen van ongelukken en deze soepel beheren. Programmeurs doen dit om crashes te voorkomen en gebruikers van nuttige feedback te voorzien.
-
 ## Hoe te:
 ```PowerShell
 # Basis Try-Catch om uitzonderingen te behandelen
@@ -35,6 +32,7 @@ try {
 
 # De $Error variabele gebruiken om de laatste fout te inspecteren
 ```
+
 ## Diepere Duik
 PowerShell heeft een lange weg afgelegd sinds het begin als Monad. Foutafhandeling werd mettertijd robuuster en biedt nu mogelijkheden vergelijkbaar met andere programmeertalen. De `try-catch-finally` syntax is zo'n kruisbestuiving van talen zoals C#. Voordat dit beschikbaar was, verlieten scripters zich sterk op het controleren van voorwaarden en gebruikten de `$Error` automatische variabele.
 

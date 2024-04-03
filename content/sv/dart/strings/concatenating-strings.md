@@ -13,9 +13,6 @@ title: "Sammans\xE4ttning av str\xE4ngar"
 weight: 3
 ---
 
-## Vad & Varför?
-Att sammanfoga strängar i programmering innebär att kombinera två eller flera strängar till en. Programmerare gör detta för att enkelt manipulera textdata, konstruera meddelanden eller sammanställa delar av ett användargränssnitt dynamiskt.
-
 ## Hur man gör:
 Dart erbjuder flera raka vägar för att sammanfoga strängar. Nedan är de vanligaste metoderna:
 

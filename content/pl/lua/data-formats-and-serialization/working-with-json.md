@@ -15,9 +15,6 @@ title: Praca z JSON
 weight: 38
 ---
 
-## Co i dlaczego?
-Praca z JSON w Lua polega na parsowaniu łańcuchów znaków sformatowanych w JSON do tabel Lua i odwrotnie, co umożliwia łatwą wymianę danych między aplikacjami Lua a usługami sieciowymi lub zewnętrznymi API. Programiści robią to, aby wykorzystać lekki i łatwy do parsowania format JSON dla efektywnego przechowywania danych, konfiguracji lub komunikacji z API.
-
 ## Jak to zrobić:
 Lua nie zawiera wbudowanej biblioteki do przetwarzania JSON. Dlatego jedną z popularnych bibliotek firm trzecich jest `dkjson`, którą możesz łatwo użyć do kodowania i dekodowania JSON. Najpierw upewnij się, że zainstalowałeś `dkjson`, np. przez LuaRocks (`luarocks install dkjson`), a następnie postępuj zgodnie z poniższymi przykładami.
 

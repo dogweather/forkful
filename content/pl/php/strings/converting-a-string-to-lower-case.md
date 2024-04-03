@@ -11,9 +11,6 @@ title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## What & Why? / Co i dlaczego?
-Zamiana tekstu na małe litery to proces przekształcania wszystkich znaków w łańcuchu na ich odpowiedniki w dolnym rejestrowie. Programiści robią to dla ujednolicenia danych, ułatwienia porównywania stringów oraz obsługi wyszukiwania bez wielkości liter.
-
 ## How to: / Jak to zrobić:
 W PHP możemy to zrobić używając funkcji `strtolower()`. Oto jak to działa:
 

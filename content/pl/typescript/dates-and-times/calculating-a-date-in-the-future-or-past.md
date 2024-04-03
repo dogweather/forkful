@@ -11,9 +11,6 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-## What & Why?
-Co to jest obliczanie daty w przyszłości lub przeszłości? To po prostu sposób na ustalenie, jaka data będzie za kilka dni, miesięcy czy lat, lub jaka była. Programiści to robią, by obsługiwać rezerwacje, harmonogramy, przypomnienia – cokolwiek, co związane jest z czasem.
-
 ## How to:
 ```TypeScript
 const calculateDate = (startingDate: Date, daysDelta: number): Date => {

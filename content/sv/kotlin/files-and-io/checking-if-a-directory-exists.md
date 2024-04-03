@@ -13,9 +13,6 @@ title: Kontrollera om en katalog existerar
 weight: 20
 ---
 
-## Vad och varför?
-Att kontrollera om en katalog finns i Kotlin innebär att verifiera närvaron av en katalog på en angiven sökväg. Programmerare utför denna uppgift för att förhindra fel, som att försöka läsa från eller skriva till en katalog som inte finns, vilket säkerställer smidigare filhantering och datahantering inom applikationer.
-
 ## Hur man gör:
 Kotlin, som körs på JVM, använder Java File API för filoperationer, vilket gör kontroller av katalogexistens okomplicerade. Här är ett grundläggande exempel:
 

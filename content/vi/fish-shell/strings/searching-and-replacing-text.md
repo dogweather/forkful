@@ -15,9 +15,6 @@ title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---
 
-## Cái gì & Tại sao?
-Tìm kiếm và thay thế văn bản là việc tìm các chuỗi cụ thể và thay thế chúng bằng thứ khác. Lập trình viên thực hiện việc này để cập nhật mã, sửa lỗi, hoặc để định dạng lại dữ liệu — đây là cách tiết kiệm thời gian lớn.
-
 ## Cách thực hiện:
 Hãy thay đổi tất cả các trường hợp 'cat' thành 'dog' trong một chuỗi.
 

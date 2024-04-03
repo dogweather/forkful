@@ -15,12 +15,7 @@ title: Tworzenie tymczasowego pliku
 weight: 21
 ---
 
-## Co i dlaczego?
-
-Tworzenie tymczasowego pliku w Go pozwala na generowanie pliku nietrwałego przeznaczonego do użytku krótkoterminowego, głównie do zadań takich jak przechowywanie danych tymczasowych lub pomoc w zadaniach przetwarzania wsadowego. Programiści wykorzystują tę funkcję do bezpiecznego obsługiwania danych bez wpływu na trwały system plików lub potrzeby ręcznego czyszczenia.
-
 ## Jak to zrobić:
-
 W Go pakiet `ioutil` pierwotnie dostarczał narzędzi do tworzenia plików tymczasowych. Jednak Go 1.16 promowało użycie funkcji pakietów `os` i `io/ioutil` w bardziej uporządkowanych miejscach. Teraz preferowane są pakiety `os` i `io` do obsługi plików tymczasowych.
 
 Oto przewodnik krok po kroku, jak tworzyć, zapisywać i usuwać plik tymczasowy:
@@ -83,7 +78,6 @@ Przykładowe wyjście:
 ```
 
 ## Dogłębna analiza
-
 Mechanizm obsługi plików tymczasowych w Go ewoluował. Początkowo tworzenie plików tymczasowych było zarządzane głównie przez teraz wycofaną funkcję `ioutil.TempFile`, co odzwierciedla ogólniejsze trendy w rozwoju oprogramowania w kierunku bardziej bezpiecznych i wydajnych praktyk obsługi plików. Przejście do integracji tych funkcji w pakiety `os` i `io` z Go 1.16 sygnalizuje szersze dążenie do uproszczenia biblioteki standardowej języka i zachęcania do korzystania z bardziej ujednoliconych i spójnych API.
 
 Chociaż korzystanie z plików tymczasowych jest powszechną i często niezbędną praktyką w programowaniu, ważne jest, aby zauważyć, że zbyt duże poleganie na nich do przechowywania dużych ilości danych lub do długoterminowych zadań może prowadzić do problemów z wydajnością. Ponadto, gdy tworzenie plików tymczasowych nie jest ściśle kontrolowane lub gdy nie są one odpowiednio oczyszczane, może to prowadzić do wycieków zasobów, które mogą negatywnie wpłynąć na system plików. W scenariuszach wymagających trwałego przechowywania lub obsługi znacznych strumieni danych, alternatywy takie jak bazy danych czy magazyny danych w pamięci często oferują lepszą wydajność i niezawodność w porównaniu do plików tymczasowych.

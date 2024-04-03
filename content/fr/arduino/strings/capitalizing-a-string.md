@@ -14,9 +14,6 @@ title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---
 
-## Quoi et Pourquoi ?
-Mettre en majuscule une chaîne de caractères consiste à convertir le premier caractère de chaque mot en majuscule, tout en s'assurant que les autres restent en minuscule. Cette opération est courante dans la mise en forme des données et la normalisation des entrées utilisateur pour maintenir la cohérence et améliorer la lisibilité.
-
 ## Comment faire :
 Arduino, principalement connu pour son interaction avec le matériel, inclut également des capacités de manipulation de chaînes de caractères basiques via son objet `String`. Cependant, il n'a pas de fonctions `capitalize` directe comme on peut le voir dans les langages de plus haut niveau. Ainsi, nous implémentons la capitalisation en itérant sur une chaîne de caractères et en appliquant des transformations de casse.
 

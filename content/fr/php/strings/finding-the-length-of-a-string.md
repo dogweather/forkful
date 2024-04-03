@@ -11,9 +11,6 @@ title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---
 
-## Quoi & Pourquoi?
-Trouver la longueur d'une chaîne en PHP, c'est compter le nombre de caractères qu'elle contient. Les programmeurs en ont besoin pour valider des saisies, manipuler des textes ou pour tout simplement savoir où ils en sont.
-
 ## Comment faire :
 ```PHP
 <?php

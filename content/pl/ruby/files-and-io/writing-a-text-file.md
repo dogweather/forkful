@@ -14,9 +14,6 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i dlaczego?
-Zapisywanie do pliku tekstowego w Ruby jest podstawową operacją, która pozwala na trwałe przechowywanie wyjścia i danych, umożliwiając późniejszy dostęp do danych lub ich modyfikację. Programiści często wykonują to zadanie z różnych powodów, takich jak logowanie, zapisywanie konfiguracji czy eksport danych w formacie łatwym do odczytu dla człowieka.
-
 ## Jak to zrobić:
 Ruby sprawia, że operacje na plikach są proste. Aby zapisać do pliku, można użyć wbudowanej klasy `File` w Ruby. Poniższy przykład demonstruje, jak otworzyć plik do zapisu (tryb `"w"`) oraz do dodawania (tryb `"a"`), następnie zapisać do niego ciąg znaków i upewnić się, że plik zostanie zamknięty po zakończeniu:
 

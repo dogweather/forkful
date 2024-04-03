@@ -11,9 +11,6 @@ title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---
 
-## What & Why (O Que & Por quê?)
-Criar um arquivo temporário é o processo de criar um arquivo que é usado apenas durante a vida útil de um programa ou processo. Programadores fazem isso para manipular dados de forma temporária sem afetar o armazenamento permanente ou para evitar conflitos de nomeação entre diferentes instâncias de um programa.
-
 ## How to (Como fazer)
 ```C++
 #include <iostream>

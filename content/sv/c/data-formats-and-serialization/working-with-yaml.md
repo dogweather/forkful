@@ -14,12 +14,7 @@ title: Att arbeta med YAML
 weight: 41
 ---
 
-## Vad & Varför?
-
-YAML, som står för "YAML Ain't Markup Language", är en standard för serialisering av data som är läsbar för människor och kan användas för alla möjliga applikationer, från konfigurationsfiler till datalagring. Programmerare arbetar ofta med YAML när de behöver ett format som är lätt att läsa och skriva för konfigurationsfiler eller datadelning mellan språk och system.
-
 ## Hur:
-
 Att arbeta med YAML i C kräver ett bibliotek, eftersom det standardiserade C-biblioteket inte ger direkt stöd för tolkning eller serialisering av YAML. Ett av de mest populära YAML-biblioteken för C är `libyaml`, som erbjuder både låg- och högnivågränssnitt för att tolka och skapa YAML. Nedan är ett exempel på hur man tolkar en enkel YAML-fil med hjälp av `libyaml`:
 
 **Först**, du behöver installera `libyaml`-biblioteket. Om du är på ett Unix-liknande system kan du vanligtvis installera det via din pakethanterare. Till exempel, på Ubuntu:
@@ -91,7 +86,6 @@ Värde: false
 ```
 
 ## Fördjupning
-
 YAML släpptes för första gången 2001 och var designat för att vara mer läsbart och användarvänligt än andra data serialiseringsformat som XML eller JSON, och lånar från flera språk som C, Perl och Python för sin designfilosofi. Trots sina fördelar i läsbarhet och enkelhet för mänsklig modifiering, kan YAML vara komplext att tolka programmatiskt på grund av sitt beroende av indrag och dess omfattande funktionssätt, inklusive referenser och anpassade typer.
 
 Medan `libyaml` tillhandahåller robust, låg-nivå tillgång till tolkning och skapande av YAML i C, kan det vara besvärligt för enkla uppgifter på grund av dess ordrika API. Av dessa skäl föredrar vissa programmerare att använda högnivåbibliotek eller till och med andra data serialiseringsformat som JSON när de arbetar i C, särskilt när prestanda för tolkning med minimal kodöverhead är en prioritet. Dock förblir YAML ett populärt val för konfigurationsfiler och situationer där människans läsbarhet är av största vikt. Alternativ som TinyYAML eller inbäddning av en högnivåtolk (t.ex. inbäddning av Python eller Lua) skulle kunna erbjuda mer bekvämlighet för specifika applikationer, som balanserar mellan användarvänlighet och prestandabehov.

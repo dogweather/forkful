@@ -18,9 +18,6 @@ title: "HTML \u092A\u093E\u0930\u094D\u0938 \u0915\u0930\u0928\u093E"
 weight: 43
 ---
 
-## What & Why? (क्या और क्यों?)
-HTML parsing का मतलब है HTML documents से data extract करना। Programmers इसका इस्तेमाल web pages से information निकालने के लिए करते हैं, जैसे कि web scraping, content analysis, या data migration.
-
 ## How to: (कैसे करें:)
 आइए C# में HTML parsing करने के लिए `HtmlAgilityPack` library का उपयोग करते हैं।
 

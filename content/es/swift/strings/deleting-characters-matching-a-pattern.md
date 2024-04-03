@@ -10,12 +10,7 @@ title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---
 
-## Qué & Por Qué?
-
-Eliminar caracteres que coinciden con un patrón implica buscar secuencias específicas de texto y quitarlas de una cadena de caracteres. Los programadores lo hacen para limpiar datos, validar entradas o preparar texto para procedimientos específicos como almacenamiento o análisis.
-
 ## Cómo hacerlo:
-
 Veamos cómo puedes eliminar caracteres utilizando expresiones regulares en Swift.
 
 ```Swift
@@ -40,7 +35,6 @@ Hola Todo bien Aquí eliminaremos los signos de puntuación
 ```
 
 ## Análisis Detallado:
-
 Históricamente, el manejo de texto y expresiones regulares ha sido una parte fundamental de la programación. En Objective-C y ahora en Swift, este tipo de manipulación de cadenas se facilita mediante la clase `NSRegularExpression`.
 
 Existen alternativas al uso de expresiones regulares, como los métodos de instancia de String para reemplazar subcadenas o eliminar caracteres manualmente iterando sobre ellos. Sin embargo, las expresiones regulares ofrecen una herramienta poderosa y flexible para el manejo de patrones complejos de texto.
@@ -48,7 +42,6 @@ Existen alternativas al uso de expresiones regulares, como los métodos de insta
 En la implementación proporcionada, se utiliza `NSRegularExpression` para buscar el patrón definido en la función y se reemplaza por una cadena vacía, efectivamente eliminándolo de la cadena original. La clase `NSRange` se utiliza para definir el área de la cadena a la que se aplicará la expresión regular, cubriendo aquí toda la longitud de la cadena. Es importante manejar los errores que puedan surgir al crear el objeto `NSRegularExpression`, aunque en este ejemplo se utiliza `try!` para simplificar, ya que estamos seguros de que el patrón proporcionado es válido.
 
 ## Ver También:
-
 Puedes encontrar más información sobre expresiones regulares y su uso en Swift en los siguientes enlaces:
 
 - [NSRegularExpression | Apple Developer Documentation](https://developer.apple.com/documentation/foundation/nsregularexpression)

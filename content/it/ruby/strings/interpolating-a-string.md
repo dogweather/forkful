@@ -10,9 +10,6 @@ title: Interpolazione di una stringa
 weight: 8
 ---
 
-## What & Why? (Cosa e Perché?)
-L'interpolazione di stringhe in Ruby permette di inserire dinamicamente valori all'interno di una stringa. I programmatori la usano per costruire stringhe in modo flessibile e leggermente più pulito rispetto alla concatenazione.
-
 ## How to: (Come Fare)
 ```Ruby
 nome = "Luca"

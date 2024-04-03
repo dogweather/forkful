@@ -11,9 +11,6 @@ title: Komennoriviparametrien lukeminen
 weight: 23
 ---
 
-## What & Why? (Mitä ja Miksi?)
-Komennorivin argumentit ovat ohjelmalle annettuja syötteitä, jotka määritellään ohjelman käynnistyksen yhteydessä. Ohjelmoijat käyttävät niitä, jotta voivat räätälöidä ohjelman suoritusta lennossa ilman koodin muokkaamista.
-
 ## How to: (Kuinka Tehdään:)
 JavaScriptissä Node.js- ympäristössä komennorivin argumenttien lukeminen tapahtuu `process.argv`-objektilla. Perus käyttötapa näyttää tältä:
 

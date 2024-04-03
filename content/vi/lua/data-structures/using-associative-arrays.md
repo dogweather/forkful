@@ -18,12 +18,7 @@ title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---
 
-## Cái gì & Tại sao?
-
-Các mảng liên kết trong Lua giống như những cái bắt tay bí mật với dữ liệu—không chỉ là những con số xếp hàng ngăn nắp theo chỉ số, khóa của bạn có thể là bất cứ thứ gì bạn muốn, làm cho việc truy cập dữ liệu trở nên dễ dàng. Tại sao các lập trình viên lại sử dụng chúng? Bởi vì đôi khi, bạn cần phải gọi một mảnh dữ liệu bằng tên của nó, không phải là một số thứ tự.
-
 ## Làm thế nào:
-
 Trong Lua, việc tạo một mảng liên kết (hoặc một bảng, theo cách nói của Lua) là điều rất đơn giản. Bạn bỏ qua các chỉ số số học thông thường và chọn khóa của riêng bạn. Hãy xem cái này:
 
 ```Lua
@@ -62,7 +57,6 @@ favLang: Lua
 Phần thú vị? Bạn tương tác với dữ liệu sử dụng các khóa có ý nghĩa với bạn, làm cho mã dễ đọc và dễ bảo trì hơn.
 
 ## Tìm hiểu sâu hơn
-
 Khi Lua gia nhập cảnh, nó giới thiệu bảng như là một cấu trúc dữ liệu toàn năng, làm cách mạng hóa cách các nhà phát triển quản lý dữ liệu. Ao ước với một số ngôn ngữ nơi mà mảng liên kết và mảng là các thực thể riêng biệt, bảng của Lua đóng vai trò cả hai, đơn giản hóa cảnh quan cấu trúc dữ liệu.
 
 Điều làm cho bảng Lua đặc biệt mạnh mẽ là sự linh hoạt của chúng. Tuy nhiên, sự linh hoạt này đi kèm với chi phí của khả năng ảnh hưởng đến hiệu suất tiềm ẩn, đặc biệt là với các tập dữ liệu lớn nơi một cấu trúc dữ liệu chuyên biệt hơn có thể được ưu tiên vì hiệu quả.

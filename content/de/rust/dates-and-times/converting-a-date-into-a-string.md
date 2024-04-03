@@ -10,9 +10,6 @@ title: Datum in einen String umwandeln
 weight: 28
 ---
 
-## Was & Warum?
-Ein Datum in einen String umwandeln bedeutet, es in eine Zeichenkette umzuformen, die ein Mensch leicht lesen kann. Das ist nützlich für die Anzeige, Speicherung oder das Logging.
-
 ## Anleitung:
 ```Rust
 use chrono::{DateTime, Utc, Local};

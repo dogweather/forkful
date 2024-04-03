@@ -9,9 +9,6 @@ title: Deleting characters matching a pattern
 weight: 5
 ---
 
-## What & Why?
-Removing characters based on a pattern makes strings clean and uniform. Programmers do this for formatting, removing unwanted characters, or for simplification before processing.
-
 ## How to:
 Use `replace()` with a regular expression. The `g` flag replaces all matches, not just the first.
 

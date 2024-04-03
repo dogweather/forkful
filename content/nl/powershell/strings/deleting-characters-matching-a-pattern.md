@@ -14,9 +14,6 @@ title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---
 
-## Wat & Waarom?
-Het verwijderen van tekens die overeenkomen met een bepaald patroon gaat over het wegstrippen van ongewenste delen van je strings — denk aan het opschonen van gegevens of het parseren van tekstbestanden. Programmeurs doen dit om betekenisvolle informatie te extraheren, gegevensconsistentie te waarborgen, of gegevens voor te bereiden voor verwerking.
-
 ## Hoe:
 PowerShell gebruikt de `-replace` operator om tekens die overeenkomen met een patroon te verwijderen. Hier is wat actie voor het repareren van strings voor je:
 

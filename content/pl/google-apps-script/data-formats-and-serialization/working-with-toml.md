@@ -14,12 +14,7 @@ title: Praca z TOML
 weight: 39
 ---
 
-## Co i dlaczego?
-
-TOML, co oznacza Tom's Obvious, Minimal Language (Oczywisty, Minimalny Język Toma), to format pliku konfiguracyjnego, który jest łatwy do odczytania dzięki swojej jasnej semantyce. Programiści często używają go do plików konfiguracyjnych w aplikacjach, ponieważ jest prosty i czytelny dla człowieka, co ułatwia zarządzanie ustawieniami i konfiguracjami aplikacji w różnych środowiskach.
-
 ## Jak to zrobić:
-
 Ponieważ Google Apps Script to w zasadzie JavaScript z dostępem do zestawu aplikacji Google'a, praca z TOML bezpośrednio w Google Apps Script wymaga trochę pomysłowości. Google Apps Script nie obsługuje natywnie parsowania TOML, ale można wykorzystać biblioteki JavaScript lub napisać prosty parser do podstawowych potrzeb.
 
 Oto przykład parsowania prostej konfiguracji TOML jako przykład:
@@ -74,7 +69,6 @@ Przykładowy wynik `console.log` przypominałby obiekt JSON, co ułatwia dostęp
 ```
 
 ## Pogłębiona analiza
-
 TOML został stworzony przez Toma Preston-Wernera, jednego z założycieli GitHuba, aby był bardziej przyjazny dla człowieka niż JSON dla plików konfiguracyjnych, jednocześnie zachowując zdolność do jednoznacznego parsowania. Ma być tak prosty, jak to tylko możliwe, cel, który ładnie wpisuje się w etos wielu projektów programistycznych dążących do prostoty i czytelności w ich bazach kodu.
 
 W kontekście Google Apps Script, używanie TOML może wprowadzić pewne obciążenie, biorąc pod uwagę brak bezpośredniego wsparcia i konieczność ręcznego parsowania lub poprzez biblioteki stron trzecich. Dla mniejszych projektów lub tych niezbyt głęboko zintegrowanych z ekosystemem Google'a, alternatywy takie jak JSON lub nawet proste struktury par klucz-wartość w właściwościach skryptu mogą wystarczyć i być łatwiejsze do wdrożenia. Jednakże, dla aplikacji, które stawiają na przyjazne dla człowieka pliki konfiguracyjne i są już zaangażowane w TOML, integracja parsowania TOML przez niestandardowe skrypty dodaje użyteczną warstwę elastyczności i możliwość utrzymania bez odchodzenia od preferowanych paradygmatów konfiguracyjnych.

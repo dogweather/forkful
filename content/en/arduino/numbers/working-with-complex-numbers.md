@@ -10,9 +10,6 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-Complex numbers have a real part and an imaginary part, typically written as `a + bi`. They're vital for some math-heavy Arduino projects involving signal processing, electrical engineering, or any other domain where phenomena are best modeled in a plane.
-
 ## How to:
 ```Arduino
 #include <Complex.h>

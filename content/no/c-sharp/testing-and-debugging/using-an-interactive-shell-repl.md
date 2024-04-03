@@ -11,9 +11,6 @@ title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---
 
-## Hva & Hvorfor?
-En REPL, eller Read-Eval-Print Loop, lar deg skrive C#-kode og kjøre den interaktivt. Programmerere bruker det for raske eksperimenter, feilsøking, eller læring av C#, uten overheadet av å sette opp hele prosjekter.
-
 ## Hvordan:
 Start en REPL i ditt C#-miljø ved å bruke C# Interactive-vinduet eller kjør `dotnet-script` i terminalen din. Her er en smakebit på hvordan det brukes:
 

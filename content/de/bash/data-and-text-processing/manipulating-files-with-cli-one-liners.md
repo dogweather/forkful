@@ -12,12 +12,7 @@ title: Dateimanipulation mit CLI-One-Linern
 weight: 31
 ---
 
-## Was & Warum?
-
-Dateimanipulation mit CLI (Command Line Interface) One-Linern beinhaltet die Verwendung von Bash-Skripten oder -Befehlen, um Aktionen an Dateien wie Erstellen, Lesen, Aktualisieren oder Löschen direkt aus dem Terminal heraus durchzuführen. Programmierer tun dies aus Gründen der Effizienz, Automatisierung und weil es außergewöhnlich leistungsfähig ist, um Dateioperationen auf Linux-Servern oder -Systemen zu handhaben, wo grafische Oberflächen möglicherweise nicht verfügbar sind.
-
 ## Wie geht das:
-
 Hier sind ein paar wirkungsvolle One-Liner und was sie erreichen können:
 
 1. **Eine Datei erstellen und Text hineinschreiben:**
@@ -63,7 +58,6 @@ Diese Schleife geht durch jede `.txt` Datei im aktuellen Verzeichnis und benennt
 Diese CLI One-Liner nutzen die Kraft von Bash für schnelle und effektive Dateimanipulation, eine Fähigkeit, die jeder Programmierer als unverzichtbar betrachten wird.
 
 ## Tiefergehende Betrachtung
-
 Die Bash-Shell, ein fester Bestandteil der meisten UNIX-ähnlichen Systeme, hat sich aus der Bourne-Shell (sh) entwickelt, die 1979 in Version 7 Unix eingeführt wurde. Bash erweitert die Fähigkeiten ihres Vorgängers mit verbesserten Skriptfunktionen, die sie bei Systemadministratoren und Programmierern gleichermaßen beliebt gemacht haben.
 
 Obwohl Bash unglaublich leistungsfähig für die Dateimanipulation ist, hat es doch seine Nachteile. Da es textbasiert ist, können komplexe Operationen (wie solche, die binäre Daten betreffen) mühsam oder ineffizient sein im Vergleich zur Verwendung einer Programmiersprache, die für diese Fähigkeiten konzipiert wurde, wie Python.

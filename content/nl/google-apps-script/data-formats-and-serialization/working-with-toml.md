@@ -12,12 +12,7 @@ title: Werken met TOML
 weight: 39
 ---
 
-## Wat & Waarom?
-
-TOML, wat staat voor Tom's Obvious, Minimal Language, is een configuratiebestandsformat dat makkelijk te lezen is door zijn duidelijke semantiek. Programmeurs gebruiken het vaak voor configuratiebestanden in applicaties omdat het eenvoudig en menselijk leesbaar is, waardoor het beheer van applicatie-instellingen en configuraties naadloos verloopt over verschillende omgevingen.
-
 ## Hoe te:
-
 Aangezien Google Apps Script in wezen JavaScript is met toegang tot de suite van Google-apps, vereist werken met TOML direct binnen Google Apps Script een beetje vindingrijkheid. Google Apps Script ondersteunt geen TOML-parsing van nature, maar je kunt JavaScript-bibliotheken gebruiken of een eenvoudige parser schrijven voor basisbehoeften.
 
 Laten we als voorbeeld een eenvoudige TOML-configuratiestring parsen:
@@ -72,7 +67,6 @@ Een voorbeelduitvoer van de `console.log` zou lijken op een JSON-object, wat het
 ```
 
 ## Diepere Duik
-
 TOML is gecreëerd door Tom Preston-Werner, een van de oprichters van GitHub, om mensvriendelijker te zijn dan JSON voor configuratiebestanden, terwijl het nog steeds ondubbelzinnig te parsen is. Het streeft ernaar zo eenvoudig mogelijk te zijn, een doel dat mooi aansluit bij de ethos van veel ontwikkelingsprojecten die streven naar eenvoud en leesbaarheid in hun codebases.
 
 In de context van Google Apps Script, kan het gebruik van TOML wat overhead introduceren, gezien het gebrek aan directe ondersteuning en de noodzaak om het handmatig of via externe bibliotheken te parsen. Voor kleinere projecten of die niet diep geïntegreerd zijn in het ecosysteem van Google, kunnen alternatieven zoals JSON of zelfs eenvoudige sleutel-waardepaarstructuren in scripteigenschappen volstaan en eenvoudiger te implementeren zijn. Echter, voor applicaties die mensvriendelijke configuratiebestanden prioriteren en al gecommitteerd zijn aan TOML, voegt het integreren van TOML-parsing door aangepaste scripts een nuttige laag van flexibiliteit en onderhoudbaarheid toe zonder af te wijken van de voorkeursconfiguratieparadigma's.

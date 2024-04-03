@@ -11,9 +11,6 @@ title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---
 
-## O Que & Por Quê?
-Arredondar números é reduzir um número para uma precisão específica. Programadores fazem isso para controlar a saída numérica para leitura, fins de exibição ou quando uma precisão específica é necessária após operações que produzem resultados de ponto flutuante.
-
 ## Como fazer:
 O arredondamento em TypeScript pode ser feito usando vários métodos. Aqui está uma rápida explicação:
 

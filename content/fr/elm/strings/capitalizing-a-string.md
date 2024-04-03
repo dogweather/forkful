@@ -14,12 +14,7 @@ title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---
 
-## Quoi & Pourquoi ?
-
-Capitaliser une chaîne implique de transformer le caractère initial d'une chaîne donnée en majuscule tout en gardant le reste en minuscule, souvent pour des raisons de formatage standardisé ou de lisibilité. Les programmeurs effectuent fréquemment cette tâche pour s'assurer que les données sont présentées de manière cohérente, en particulier dans les interfaces utilisateur ou lors du traitement et de l'affichage des entrées utilisateur.
-
 ## Comment faire :
-
 Dans Elm, il n'y a pas de fonction intégrée spécifiquement pour capitaliser les chaînes. Cependant, vous pouvez facilement y parvenir en utilisant les fonctions du module `String` intégré comme `toUpper`, `toLower`, `left`, et `dropLeft`.
 
 ```elm

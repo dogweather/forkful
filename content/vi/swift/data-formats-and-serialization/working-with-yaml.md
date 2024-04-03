@@ -16,9 +16,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---
 
-## Lý do & Tại sao?
-YAML, viết tắt của "YAML Ain't Markup Language", là một chuẩn mã hóa dữ liệu dễ đọc cho con người, chúng ta có thể sử dụng để cấu hình tệp hoặc trao đổi dữ liệu. Các lập trình viên yêu thích YAML vì sự đơn giản và dễ đọc của nó, đặc biệt trong các cài đặt cấu hình, kịch bản CI/CD và hệ thống điều phối container.
-
 ## Cách thực hiện:
 Swift không có khả năng xử lý YAML một cách tự nhiên, vì vậy chúng ta cần sử dụng một thư viện bên thứ ba như Yams. Đầu tiên, thêm Yams vào `Package.swift` của bạn:
 

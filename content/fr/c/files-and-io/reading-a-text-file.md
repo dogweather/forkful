@@ -12,12 +12,7 @@ title: Lire un fichier texte
 weight: 22
 ---
 
-## Quoi & Pourquoi ?
-
-Lire un fichier texte en C implique d'ouvrir un fichier sur votre système pour extraire des informations et les manipuler ou les afficher selon le besoin. Les programmeurs font souvent cela pour traiter des fichiers de configuration, lire des entrées pour les traiter, ou analyser des données stockées dans des formats de fichier, permettant ainsi une flexibilité et une fonctionnalité accrue dans les applications.
-
 ## Comment faire :
-
 Pour commencer à lire un fichier texte en C, vous travaillez principalement avec les fonctions `fopen()`, `fgets()`, et `fclose()` de la bibliothèque standard d’entrée/sortie. Voici un exemple simple qui lit un fichier appelé `example.txt` et imprime son contenu sur la sortie standard :
 
 ```c
@@ -60,7 +55,6 @@ Welcome to C programming.
 ```
 
 ## Plongée Profonde
-
 La lecture de fichiers en C a une riche histoire, remontant aux premiers jours d'Unix quand la simplicité et l’élégance des flux de texte étaient fondamentales. Cela a conduit à l'adoption de fichiers texte pour une myriade de fins, y compris la configuration, la journalisation, et la communication inter-processus. La simplicité de la bibliothèque d’E/S de fichier du langage C, exemplifiée par des fonctions comme `fopen()`, `fgets()`, et `fclose()`, souligne sa philosophie de conception visant à fournir des outils de base que les programmeurs peuvent utiliser pour construire des systèmes complexes.
 
 Historiquement, alors que ces fonctions ont bien servi d'innombrables applications, les pratiques de programmation modernes ont mis en lumière certaines limitations, surtout concernant la gestion des erreurs, l’encodage des fichiers (par exemple, le support Unicode), et l'accès concurrent dans les applications multi-threadées. Des approches alternatives dans d'autres langages, ou même en C en utilisant des bibliothèques comme `libuv` ou `Boost.Asio` pour C++, offrent des solutions plus robustes en abordant directement ces préoccupations avec des capacités de gestion d’E/S plus sophistiquées, y compris des opérations d’E/S asynchrones qui peuvent grandement améliorer la performance des applications traitant d'opérations de lecture de fichiers étendues ou des tâches liées à l’E/S.

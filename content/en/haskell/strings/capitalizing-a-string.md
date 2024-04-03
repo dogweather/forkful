@@ -10,9 +10,6 @@ title: Capitalizing a string
 weight: 2
 ---
 
-## What & Why?
-Capitalizing a string involves transforming the first letter of a given string to uppercase while ensuring the rest of the letters remain lowercase. Programmers do this for formatting outputs, adhering to grammatical correctness in texts, or improving the readability of generated data.
-
 ## How to:
 In Haskell, you can capitalize a string using the standard library without needing any third-party libraries.
 

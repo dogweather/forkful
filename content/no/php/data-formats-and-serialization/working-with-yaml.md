@@ -12,16 +12,10 @@ title: Arbeider med YAML
 weight: 41
 ---
 
-## Hva & Hvorfor?
-
-YAML, som står for "YAML Ain't Markup Language", er et menneskelesbart data serialiseringsformat som vanligvis brukes for konfigurasjonsfiler. Programmerere velger å bruke YAML på grunn av dets enkelhet og lesbarhet, noe som gjør det til et utmerket valg for lagring av innstillinger, parametere, og til og med komplekse datastrukturer på en lett håndterbar måte.
-
 ## Hvordan:
-
 PHP, i sine nåværende iterasjoner, støtter ikke parsing av YAML som en del av sitt standardbibliotek. Den mest strake veien til å arbeide med YAML i PHP er ved å bruke Symfony YAML-komponenten eller `yaml` PECL-utvidelsen.
 
 ### Bruke Symfony YAML-komponenten
-
 Først, installer Symfony YAML-komponenten via Composer:
 
 ```bash
@@ -85,7 +79,6 @@ framework:
 ```
 
 ### Bruke `yaml` PECL-utvidelsen
-
 Om du foretrekker, eller om prosjektets krav tillater det, kan PECL-utvidelsen være en annen effektiv måte å arbeide med YAML på. Først, sørg for at utvidelsen er installert:
 
 ```bash

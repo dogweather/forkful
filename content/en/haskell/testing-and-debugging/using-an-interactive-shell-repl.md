@@ -10,9 +10,6 @@ title: Using an interactive shell (REPL)
 weight: 34
 ---
 
-## What & Why?
-An interactive shell, or REPL (Read-Eval-Print Loop), in Haskell lets you run code snippets live. It's a playground for quick feedback, testing functions, and learning the language.
-
 ## How to:
 To start the GHCi (Glasgow Haskell Compiler's interactive environment), simply type `ghci` in your terminal. Here's how to use it:
 

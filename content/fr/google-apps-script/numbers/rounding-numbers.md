@@ -14,12 +14,7 @@ title: Arrondissement des nombres
 weight: 13
 ---
 
-## Quoi et Pourquoi ?
-
-Arrondir les nombres, un concept fondamental en programmation informatique, consiste à ajuster un nombre à l'entier le plus proche ou à un nombre spécifié de décimales. Les programmeurs effectuent souvent des arrondis pour simplifier les nombres pour la lisibilité humaine ou pour répondre à des besoins de calcul spécifiques, assurant ainsi précision et réduisant la charge de calcul.
-
 ## Comment faire :
-
 Google Apps Script, étant un langage basé sur JavaScript, offre des méthodes standard pour arrondir les nombres. Voici un aperçu de trois techniques couramment utilisées :
 
 ### Math.round()
@@ -61,7 +56,6 @@ Logger.log(preciseRound); // Affiche : 2.57
 ```
 
 ## Approfondissement
-
 Arrondir les nombres dans Google Apps Script ne diffère pas beaucoup de la façon dont cela se fait dans d'autres environnements JavaScript. Cependant, comprendre les différences dans les méthodes d'arrondi et le potentiel de problèmes d'arithmétique à virgule flottante est crucial. Par exemple, en raison de la manière dont les ordinateurs représentent les nombres à virgule flottante, toutes les fractions décimales ne peuvent pas être représentées avec une précision parfaite, conduisant parfois à des résultats d'arrondi inattendus.
 
 Historiquement, JavaScript (et par extension, Google Apps Script) gère cela en se conformant à la norme IEEE 754, utilisée par de nombreux autres langages de programmation pour l'arithmétique à virgule flottante. Cette norme définit comment les nombres sont arrondis, assurant une cohérence entre diverses plateformes et langages.

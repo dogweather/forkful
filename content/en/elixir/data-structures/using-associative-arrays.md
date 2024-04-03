@@ -10,12 +10,7 @@ title: Using associative arrays
 weight: 15
 ---
 
-## What & Why?
-
-In Elixir, associative arrays, called Maps, are collections of key-value pairs where a unique key points to a value. They're super handy for storing and retrieving data on the fly, making your code cleaner and your life easier.
-
 ## How to:
-
 Creating a Map is straightforward. You use the `%{}` syntax, like so:
 
 ```elixir
@@ -47,7 +42,6 @@ IO.inspect(trimmed_map)
 Output: `%{"location" => "NY", "name" => "Alex"}`
 
 ## Deep Dive
-
 Maps in Elixir are an evolution of the older key-value storage types, like Hashes in Ruby or Dictionaries in Python. They allow for more efficient lookups and insertions, making them a go-to for modern Elixir programming. It's worth noting that before Maps, Elixir used HashDict and Dict modules, which are deprecated now.
 
 However, for scenarios requiring ordered data, you might look at keyword lists in Elixir. These are lists of tuples, efficient for smaller collections but not as performance-friendly for large datasets as Maps.

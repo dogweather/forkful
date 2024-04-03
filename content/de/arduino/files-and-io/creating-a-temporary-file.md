@@ -10,8 +10,6 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-# Arduino Programmierung: Temporäre Dateien nutzen
-
 ## Was & Warum?
 Temporäre Dateien dienen zum vorübergehenden Speichern von Daten. Sie werden verwendet, wenn man Daten während der Ausführung eines Programms kurzzeitig behalten, aber nicht dauerhaft speichern möchte.
 

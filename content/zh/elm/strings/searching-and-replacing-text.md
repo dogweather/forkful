@@ -16,9 +16,6 @@ title: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C"
 weight: 10
 ---
 
-## What & Why? 什么以及为什么?
-搜索与替换文本是指找到特定字符串，并用另一个字符串替换它。程序员这样做来快速修改代码或数据，效率高、错误少。
-
 ## How to: 怎么做
 Elm 中没有内置的搜索替换函数，但可以用正则表达式库如 `elm/regex`。先安装库：
 
@@ -53,7 +50,6 @@ main =
 在性能方面，如果要处理大量文本或频繁执行搜索替换，可能需要考虑使用 `String` 模块中的函数来优化。
 
 ## See Also 参见
-
 - Elm `Regex` documentation: [https://package.elm-lang.org/packages/elm/regex/latest](https://package.elm-lang.org/packages/elm/regex/latest)
 - Elm `String` functions: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
 - Regex tutorial: [https://regexone.com/](https://regexone.com/)

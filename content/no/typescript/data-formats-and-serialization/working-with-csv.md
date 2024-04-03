@@ -14,16 +14,10 @@ title: Arbeide med CSV
 weight: 37
 ---
 
-## Hva og hvorfor?
-
-Å jobbe med CSV (Comma-Separated Values) innebærer å lese fra og skrive til CSV-filer, et vanlig datautvekslingsformat som brukes på grunn av sin enkelhet og brede støtte på tvers av ulike plattformer og språk. Programmerere engasjerer seg med CSV-filer for å importere eller eksportere data fra applikasjoner, databaser og tjenester, noe som muliggjør enkel databehandling og deling.
-
 ## Hvordan:
-
 I TypeScript kan du jobbe med CSV-filer gjennom nativ kode eller ved å benytte tredjepartsbiblioteker som `csv-parser` for lesing og `csv-writer` for skriving av CSV-filer.
 
 ### Lese CSV med `csv-parser`
-
 Først, installer `csv-parser` via npm:
 
 ```
@@ -62,7 +56,6 @@ Vil utdata være:
 ```
 
 ### Skrive CSV med `csv-writer`
-
 For å skrive til en CSV-fil, installer først `csv-writer`:
 
 ```

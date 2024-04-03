@@ -24,12 +24,7 @@ title: "\u89E3\u6790HTML"
 weight: 43
 ---
 
-## 什么 & 为什么？
-
-在 Haskell 中解析 HTML 允许你提取数据、操作 HTML 内容或以编程方式与网页交互。这种操作对于网络爬虫、自动化测试网页应用、以及从网站挖掘数据等任务至关重要 - 利用 Haskell 强大的类型系统和函数式编程范例来确保代码的健壮性和简洁性。
-
 ## 如何进行：
-
 要在 Haskell 中解析 HTML，我们将使用 `tagsoup` 库，因其简单和灵活性而选用。首先，通过在项目的 cabal 文件中添加 `tagsoup` 或运行 `cabal install tagsoup` 来确保安装该库。
 
 ```haskell

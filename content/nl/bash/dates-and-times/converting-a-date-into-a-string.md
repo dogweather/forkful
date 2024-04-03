@@ -13,9 +13,6 @@ title: Een datum converteren naar een string
 weight: 28
 ---
 
-## Wat & Waarom?
-Een datum omzetten naar een string betekent dat je het omzet in tekst die de datum vertegenwoordigt. We doen dit om datums te formatteren voor mensen om te lezen of om ze voor te bereiden voor opslag in tekstformaten zoals CSV of JSON.
-
 ## Hoe:
 Hieronder staan voorbeelden van hoe je een datum naar een string kunt omzetten in Bash:
 

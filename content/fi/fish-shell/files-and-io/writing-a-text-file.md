@@ -14,12 +14,7 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä & Miksi?
-
-Tekstitiedostoon kirjoittaminen Fish Shellissä mahdollistaa datan pysyvän tallentamisen, mikä helpottaa tiedon noutamista tai manipulointia joko samalla Fish-skriptillä tai muilla ohjelmilla. Ohjelmoijat tekevät tämän lokitiedostojen kirjaamiseksi, asetusten tallentamiseksi tai datan viemiseksi edelleen käsiteltäväksi.
-
 ## Kuinka:
-
 Kirjoittaaksesi tekstitiedostoon Fishissä, voit käyttää `echo`-komentoa yhdessä uudelleenohjausoperaattoreiden kanssa. Fishille ei ole suosittuja kolmannen osapuolen kirjastoja tiedoston kirjoittamiseen, sillä shellin sisäänrakennetut komennot ovat suoraviivaisia ja tehokkaita tähän tarkoitukseen.
 
 ### Tekstin kirjoittaminen uuteen tiedostoon tai olemassa olevan tiedoston ylikirjoittaminen:

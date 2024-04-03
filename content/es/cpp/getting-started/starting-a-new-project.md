@@ -10,9 +10,6 @@ title: Iniciando un nuevo proyecto
 weight: 1
 ---
 
-## Qué & Por Qué?
-Iniciar un proyecto nuevo en C++ es establecer la base del código desde donde todo crece. Programadores lo hacen para transformar ideas en software funcional, solucionar problemas o explorar nuevas tecnologías.
-
 ## Cómo hacerlo:
 Para empezar un proyecto simple, necesitas al menos un archivo fuente. Aquí tienes un "Hola, mundo" en C++:
 

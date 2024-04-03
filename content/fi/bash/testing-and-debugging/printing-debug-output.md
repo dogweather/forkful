@@ -11,9 +11,6 @@ title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
 
-## What & Why? | Mikä & Miksi?
-Debug-tulosteiden tulostaminen on viestien näyttämistä konsolissa, joka auttaa koodin toiminnan ymmärtämisessä. Ohjelmoijat tekevät sitä, koska se on nopea tapa löytää ja ratkaista ongelmat koodissa.
-
 ## How to: | Kuinka:
 ```Bash
 # Yksinkertainen debug-viesti

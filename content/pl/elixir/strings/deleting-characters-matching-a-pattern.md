@@ -12,9 +12,6 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## Co i dlaczego?
-Usuwanie znaków pasujących do wzorca to proces filtracji tekstu - wybierasz, które znaki "przetrwają", a które zostaną usunięte. Programiści robią to, by oczyścić dane wejściowe, ujednolicić format lub przygotować tekst do dalszej obróbki.
-
 ## Jak zrobić:
 ```elixir
 # Załadowanie Elixir

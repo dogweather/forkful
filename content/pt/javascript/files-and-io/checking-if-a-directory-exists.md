@@ -14,9 +14,6 @@ title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---
 
-## O que & Por quê?
-Verificar se um diretório existe em JavaScript é essencial para tarefas de manipulação de arquivos, permitindo que scripts verifiquem a presença do diretório antes de ler ou escrever nele. Esta operação previne erros e assegura uma execução mais suave do programa, particularmente em aplicações que manipulam arquivos ou diretórios dinamicamente baseados em entrada do usuário ou fontes de dados externas.
-
 ## Como fazer:
 No Node.js, como o próprio JavaScript não tem acesso direto ao sistema de arquivos, o módulo `fs` é tipicamente usado para essas operações. Aqui está uma maneira simples de verificar se um diretório existe usando `fs.existsSync()`:
 

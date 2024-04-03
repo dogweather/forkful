@@ -12,9 +12,6 @@ title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---
 
-## ¿Qué y por qué?
-Analizar una fecha de un string implica convertir texto en un objeto Date. Esta operación es fundamental para aplicaciones que interactúan con fechas ingresadas por usuarios o procedentes de conjuntos de datos externos, permitiendo una manipulación y formateo fácil según las necesidades.
-
 ## Cómo hacerlo:
 Kotlin soporta el análisis de fechas a través del paquete `java.time`, introducido en Java 8. Aquí hay un enfoque simple usando `LocalDateTime` y un patrón específico:
 

@@ -10,9 +10,6 @@ title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---
 
-## What & Why? (Cosa e Perché?)
-Rimuovere i caratteri che corrispondono a un pattern significa selezionare e cancellare specifiche sequenze di caratteri da una stringa. I programmatori lo fanno per pulire i dati, per estrarre informazioni importanti o per rispettare un certo formato.
-
 ## How to (Come fare)
 In Elixir, possiamo utilizzare la funzione `String.replace/4` per rimuovere i caratteri che corrispondono a un dato pattern utilizzando le espressioni regolari.
 

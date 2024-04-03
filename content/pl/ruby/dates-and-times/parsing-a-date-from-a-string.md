@@ -14,9 +14,6 @@ title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---
 
-## Co i dlaczego?
-Przetwarzanie daty z ciągu znaków polega na konwersji tekstu, który reprezentuje datę, na obiekt `Date` lub `DateTime`, który jest zrozumiały dla Ruby. Programiści robią to, aby wykonywać operacje takie jak porównania, obliczenia czy formatowanie dat, co jest częstym zadaniem w aplikacjach zajmujących się planowaniem, analizą czy przetwarzaniem danych.
-
 ## Jak to zrobić:
 W Ruby standardowa biblioteka zapewnia bezpośrednie sposoby na przetwarzanie dat z ciągów znaków przy użyciu klas `Date` i `DateTime`. Oto jak to zrobić za pomocą wbudowanych metod Ruby:
 
@@ -47,7 +44,6 @@ puts parsed_date_custom
 ```
 
 ### Korzystanie z bibliotek stron trzecich:
-
 Chociaż wbudowane możliwości Ruby są potężne, czasami możesz preferować biblioteki stron trzecich dla dodatkowych funkcji lub prostszej składni. Popularnym wyborem jest gem `Chronic` do parsowania języka naturalnego:
 
 1. Najpierw dodaj Chronic do pliku Gemfile i uruchom `bundle install`:

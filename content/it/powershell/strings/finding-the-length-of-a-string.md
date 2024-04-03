@@ -10,9 +10,6 @@ title: Trovare la lunghezza di una stringa
 weight: 7
 ---
 
-## What & Why?
-Trova la lunghezza di una stringa significa contare i caratteri che la compongono. Programmatori lo fanno per validazioni, manipolazione di testo e per ottimizzare l’uso della memoria.
-
 ## How to:
 In PowerShell, usare la proprietà `.Length` per trovare il numero di caratteri in una stringa.
 

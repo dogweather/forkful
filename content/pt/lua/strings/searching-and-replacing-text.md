@@ -11,9 +11,6 @@ title: Pesquisando e substituindo texto
 weight: 10
 ---
 
-## O Que é & Por Que?
-Buscar e substituir texto é o processo de localizar sequências de caracteres dentro de uma string e alterá-las por outras. Programadores fazem isso para atualizar dados, corrigir erros, ou formatar informações de forma consistente.
-
 ## Como Fazer:
 ```Lua
 local texto_original = "Lua é uma linguagem incrível!"

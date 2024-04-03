@@ -11,9 +11,6 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## Cosa & Perché?
-In programmazione, cercare e sostituire del testo significa scovare una stringa specifica e rimpiazzarla con un'altra. Programmatori fanno questo per correggere errori, aggiornare dati o migliorare il codice rapidamente.
-
 ## Come fare:
 ```Arduino
 String testo = "Ciao, mondo! Ciao!";

@@ -17,9 +17,6 @@ title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uB
 weight: 45
 ---
 
-## What & Why? (무엇과 왜?)
-HTTP 요청은 웹 서버와 통신의 기본입니다. 기본 인증을 사용하여 보안 정보를 포함한 요청을 보낼 수 있습니다. 프로그래머는 이 방식을 종종 사용해 데이터를 안전하게 전송하고 API 서비스에 접근합니다.
-
 ## How to: (방법)
 ```PowerShell
 # 사용자 이름과 비밀번호를 정의합니다.

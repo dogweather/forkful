@@ -10,12 +10,7 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-
-Calculating a future or past date is about modifying a current date to see what day it'll be, say, 10 days from now, or what day it was 10 days ago. Programmers do this for features like expiration dates, scheduling events, or figuring out time differences.
-
 ## How to:
-
 ```TypeScript
 // Get current date
 const today: Date = new Date();
@@ -35,7 +30,6 @@ Ten days before was: Wed Apr 03 2023
 ```
 
 ## Deep Dive
-
 Historically, managing dates in JavaScript—and by extension TypeScript—has been tricky due to the quirks of the Date object and timezones. Alternative libraries like Moment.js and date-fns have offered abstractions to handle this complexity. With ES6, better support for internationalization arrived via the `Intl` API, which TypeScript can also use.
 
 When calculating dates, watch for daylight saving changes and leap seconds. These can throw off straightforward calculations like adding 24 hours to a date. Also, always consider the user's locale and timezone when displaying calculated dates.
@@ -52,7 +46,6 @@ console.log(result.toDateString());
 They also handle edge cases and timezone issues, taking a lot of the pain out of date arithmetic.
 
 ## See Also
-
 - [MDN Date Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 - [date-fns Library](https://date-fns.org/)
 - [Luxon Documentation](https://moment.github.io/luxon/#/)

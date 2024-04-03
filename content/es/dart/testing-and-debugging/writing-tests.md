@@ -13,12 +13,7 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## Qué y Por Qué?
-
-Escribir pruebas en Dart implica crear casos de prueba para verificar automáticamente que diferentes partes de tu programa funcionan como se espera. Los programadores hacen esto para asegurarse de que su código es confiable y libre de defectos, facilitando actualizaciones y refactorizaciones más fáciles, mientras se previenen regresiones.
-
 ## Cómo hacerlo:
-
 En Dart, el paquete `test` se utiliza comúnmente para escribir pruebas. Primero, añade el paquete `test` a tu `pubspec.yaml`:
 
 ```yaml
@@ -61,7 +56,6 @@ La salida de muestra podría parecerse a:
 ```
 
 ### Usando una biblioteca de terceros: Mockito para simular
-
 Para probar código que tiene dependencias complejas, podrías usar Mockito para crear objetos simulados. Primero, añade Mockito a tu `pubspec.yaml`:
 
 ```yaml

@@ -14,16 +14,10 @@ title: Analysering av HTML
 weight: 43
 ---
 
-## Hva & Hvorfor?
-
-Parsing av HTML i programmering innebærer å analysere strukturen til et HTML-dokument, noe som gjør det mulig for deg å trekke ut, manipulere og samhandle med innholdet programmatisk. Programmerere gjør dette for å automatisere webskraping, datautvinning, eller selv modifisere nettsider eller HTML-dokumenter dynamisk for ulike applikasjoner, noe som gjør det til en essensiell ferdighet innen webutvikling, dataanalyse og automatisert testing.
-
 ## Hvordan:
-
 Selv om .NET gir grunnleggende støtte for å arbeide med HTML, slik som `HttpClient` for å hente websider, mangler det en innebygd, omfattende HTML-parser. Derfor vender de fleste C#-utviklere seg til populære tredjeparts biblioteker som HtmlAgilityPack eller AngleSharp for robuste HTML-parsingkapasiteter. Begge bibliotekene tillater enkel spørring, manipulering, og traversering av HTML-DOMen.
 
 ### Bruk av HtmlAgilityPack
-
 1. **Installer HtmlAgilityPack**: Først, legg til HtmlAgilityPack-pakken i prosjektet ditt via NuGet.
    ```
    Install-Package HtmlAgilityPack
@@ -65,7 +59,6 @@ Selv om .NET gir grunnleggende støtte for å arbeide med HTML, slik som `HttpCl
    ```
 
 ### Bruk av AngleSharp
-
 1. **Installer AngleSharp**: Legg til AngleSharp-biblioteket i prosjektet ditt gjennom NuGet.
    ```
    Install-Package AngleSharp

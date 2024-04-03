@@ -14,12 +14,7 @@ title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---
 
-## Quoi & Pourquoi ?
-
-Les expressions régulières (regex) sont des séquences de caractères qui forment un motif de recherche, principalement utilisées pour la recherche et la manipulation de chaînes de caractères. Les programmeurs utilisent les regex dans PowerShell pour des tâches comme la validation de données, l'analyse et la transformation, en raison de leur efficacité et leur flexibilité dans la gestion des motifs complexes.
-
 ## Comment :
-
 Dans PowerShell, vous pouvez utiliser les opérateurs `-match`, `-replace` et `-split`, entre autres, pour effectuer des actions avec des expressions régulières. Explorons quelques exemples :
 
 ### Utilisation de `-match` pour vérifier si une chaîne correspond à un motif

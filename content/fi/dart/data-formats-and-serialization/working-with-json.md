@@ -14,12 +14,7 @@ title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---
 
-## Mitä & Miksi?
-
-Työskentely JSONin (JavaScript Object Notation) kanssa sisältää JSON-tietojen jäsentämisen merkkijonoista Dart-olioihin ja päinvastoin, mikä on yleinen tehtävä web- ja sovelluskehityksessä tiedonvaihtoon. Ohjelmoijat tekevät sen tehokkaasti käsitelläkseen tietoja API:sta, asetuksista tai sovellusten sisäisessä komponenttien välisessä kommunikoinnissa.
-
 ## Miten:
-
 Dart tarjoaa sisäänrakennetun tuen JSONille `dart:convert`-kirjaston avulla, mikä tekee JSONin koodaamisesta ja dekoodaamisesta suoraviivaista. Alla on esimerkkejä, jotka esittelevät perustoimintoja:
 
 **JSON-merkkijonon jäsentäminen Dart-olioksi:**

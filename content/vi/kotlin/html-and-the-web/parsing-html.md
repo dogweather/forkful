@@ -16,9 +16,6 @@ title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---
 
-## Gì và Tại sao?
-Phân tích cú pháp HTML có nghĩa là phân tích cú pháp đánh dấu của một trang web thành cái gì đó mà chương trình có thể hiểu và thao tác được. Lập trình viên phân tích cú pháp HTML để trích xuất dữ liệu, tự động hóa tương tác web hoặc chuyển giao nội dung giữa các hệ thống.
-
 ## Làm thế nào:
 Kotlin làm cho việc phân tích cú pháp HTML trở nên đơn giản với các thư viện như Jsoup. Dưới đây là cách bạn làm:
 

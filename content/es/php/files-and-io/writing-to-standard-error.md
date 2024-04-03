@@ -15,12 +15,7 @@ title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---
 
-## Qué y Por Qué?
-
-Escribir en el error estándar (stderr) en PHP se trata de dirigir mensajes de error o diagnósticos de forma separada de la salida estándar (stdout), permitiendo a los desarrolladores gestionar mejor sus flujos de salida para la depuración y el registro de actividades. Los programadores utilizan esta técnica para asegurarse de que los mensajes de error no interfieran con la salida del programa, facilitando el monitoreo y la resolución de problemas en las aplicaciones.
-
 ## Cómo hacerlo:
-
 En PHP, escribir en stderr se puede lograr utilizando la función `fwrite()` junto con la constante predefinida `STDERR`, que representa el flujo de salida de errores.
 
 ```php

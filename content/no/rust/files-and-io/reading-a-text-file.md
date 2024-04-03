@@ -11,9 +11,6 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## Hva & Hvorfor?
-Å lese en tekstfil betyr å hente tekstdata fra en fil lagret på disken. Programmører gjør dette for å laste innhold, konfigurasjoner, eller for å behandle data generert eksternt.
-
 ## Hvordan gjøre det:
 ```Rust
 use std::fs::File;

@@ -11,9 +11,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel med grunnleggende godkjenning betyr å tilgangsautorisere ved å inkludere brukernavn og passord. Programmerere gjør dette for å interagere sikkert med webtjenester som krever identifikasjon.
-
 ## Hvordan gjøre det:
 ```Fish Shell
 set brukernavn "mittBrukernavn"

@@ -15,14 +15,10 @@ title: Skriva tester
 weight: 36
 ---
 
-## Vad & Varför?
-
-Att skriva tester i JavaScript avser praktiken att skapa automatiserade skript som kör din kod för att säkerställa att den fungerar som förväntat, vilket kan förbättra tillförlitligheten och underhållet av dina applikationer avsevärt. Programmerare gör detta för att fånga buggar tidigt, underlätta kodrefaktorisering och säkerställa att nya funktioner inte bryter befintlig funktionalitet.
-
 ## Hur man gör:
 
-### Nativt tillvägagångssätt (med Jest)
 
+### Nativt tillvägagångssätt (med Jest)
 Jest är ett populärt testramverk som tillhandahåller ett användarvänligt API för att skriva enhetstester i JavaScript. Det kräver minimal konfiguration och kommer med funktioner som mockfunktioner, timers och snapshot-testning.
 
 1. **Installation**:
@@ -57,7 +53,6 @@ PASS  ./sum.test.js
 ```
 
 ### Testa Asynkron Kod
-
 Jest gör det enkelt att testa löften och syntax för async/await:
 
 ```javascript
@@ -74,7 +69,6 @@ test('asynkron addition fungerar', async () => {
 ```
 
 ### Använda Tredjepartsbibliotek (Mocha & Chai)
-
 Mocha är ett annat populärt testramverk, ofta använt med påståendebiblioteket Chai för mer uttrycksfulla tester.
 
 1. **Installation**:

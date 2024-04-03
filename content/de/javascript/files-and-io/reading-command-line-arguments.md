@@ -10,12 +10,7 @@ title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---
 
-## Was & Warum?
-
-Kommandozeilenargumente sind die Parameter, die du deinem Programm beim Start übergibst. Programmierer nutzen sie, um ihre Anwendungen flexibel zu steuern, ohne den Code jedes Mal anpassen zu müssen.
-
 ## So geht’s:
-
 ```javascript
 // myscript.js
 process.argv.forEach((val, index) => {
@@ -35,7 +30,6 @@ $ node myscript.js user123 passw0rd
 Nutze `process.argv` für den einfachen Zugriff. Aber Achtung: Die ersten beiden Argumente sind der Node-Befehl und der Skriptpfad.
 
 ## Tiefere Einblicke
-
 In alten Zeiten, als Node.js noch jung war, war `process.argv` typischerweise die erste Wahl zum Lesen von Kommandozeilenargumenten. Heute gibt's Libraries wie `yargs` oder `commander`, die mächtiger sind und mehr Komfort bieten. Beispielsweise erlauben sie die Definition von Optionen, Schaltern und sogar die Validierung von Eingaben.
 
 ### Implementierungsdetails
@@ -49,7 +43,6 @@ In alten Zeiten, als Node.js noch jung war, war `process.argv` typischerweise di
 Es ist eine lang gehegte Tradition in der Programmierung, Argumente über die Kommandozeile zu übergeben. Dies stammt aus den Tagen der Terminal- und Shell-Skripte. JavaScript auf dem Server (mittels Node.js) führte diese Möglichkeit weiter.
 
 ## Siehe Auch
-
 - Node.js Dokumentation zu `process.argv`: https://nodejs.org/docs/latest/api/process.html#process_process_argv
 - `yargs` GitHub Repository: https://github.com/yargs/yargs
 - `commander` GitHub Repository: https://github.com/tj/commander.js

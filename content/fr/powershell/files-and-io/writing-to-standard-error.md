@@ -13,12 +13,7 @@ title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire sur l'erreur standard (stderr) dans PowerShell implique d'envoyer des messages d'erreur ou des diagnostics directement sur le flux stderr, distinct du flux de sortie standard (stdout). Cette séparation permet un contrôle plus précis sur la sortie d'un script, permettant aux développeurs de diriger les messages normaux et les messages d'erreur vers des destinations différentes, ce qui est fondamental pour la gestion des erreurs et la journalisation.
-
 ## Comment faire :
-
 PowerShell simplifie le processus d'écriture sur stderr grâce à l'utilisation du cmdlet `Write-Error` ou en dirigeant la sortie vers la méthode `$host.ui.WriteErrorLine()`. Cependant, pour une redirection directe de stderr, vous pourriez préférer utiliser les méthodes .NET ou la redirection des descripteurs de fichiers proposée par PowerShell lui-même.
 
 **Exemple 1 :** Utilisation de `Write-Error` pour écrire un message d'erreur sur stderr.

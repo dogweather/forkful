@@ -11,12 +11,7 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-
-Tests schrijven controleert of code doet wat het moet doen. Testen vangt bugs op, helpt bij het onderhouden van code en zorgt ervoor dat wijzigingen niets breken.
-
 ## Hoe te:
-
 Haskell gebruikt HUnit voor basis unit tests, en QuickCheck voor property-based tests. Hier is een snel voorbeeld van HUnit:
 
 ```haskell
@@ -55,11 +50,9 @@ Voorbeelduitvoer zou kunnen lezen:
 ```
 
 ## Diepere Duik
-
 Testen begon met vroege programmering, maar werd serieus met de opkomst van TDD in de jaren '00. Haskell's pure functies maken het geweldig voor testen. Alternatieven voor HUnit/QuickCheck zijn doctest en Hedgehog. HUnit is vergelijkbaar met JUnit van Java. QuickCheck automatiseert het genereren van testcases, en controleert op eigenschappen die u definieert.
 
 ## Zie Ook
-
 - HUnit documentatie: [http://hackage.haskell.org/package/HUnit](http://hackage.haskell.org/package/HUnit)
 - QuickCheck op Hackage: [http://hackage.haskell.org/package/QuickCheck](http://hackage.haskell.org/package/QuickCheck)
 - Introductie tot Haskell Testen: [https://hspec.github.io/](https://hspec.github.io/)

@@ -11,9 +11,6 @@ title: Pesquisando e substituindo texto
 weight: 10
 ---
 
-## What & Why?
-Procurar e substituir texto é tipo fazer uma caça ao tesouro e trocar o que você encontrou. Programadores fazem isso para corrigir erros, atualizar dados ou simplificar código, sem perder tempo.
-
 ## How to:
 ```Ruby
 texto = "Eu amo programar em Ruby!"

@@ -12,9 +12,6 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mikä & Miksi?
-Testaaminen Rubylla tarkoittaa koodisi toiminnan varmistamista odotetulla tavalla erilaisissa olosuhteissa. Ohjelmoijat kirjoittavat testejä varmistaakseen oikeellisuuden, estääkseen regressiot ja helpottaakseen refaktorointia, tähdäten vankkoihin ja ylläpidettäviin sovelluksiin.
-
 ## Miten:
 Ruby sisältää valmiiksi `Test::Unit`-kirjaston yksikkötestien kirjoittamiseen, kapseloiden testikäytäntöjä yksinkertaisiin rakenteisiin. Kuitenkin Rubyn yhteisö kallistuu usein kolmannen osapuolen kirjastoihin, kuten RSpec ja Minitest, niiden paremman ilmaisukyvyn ja joustavuuden vuoksi.
 

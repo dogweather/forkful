@@ -13,14 +13,10 @@ title: Skriva tester
 weight: 36
 ---
 
-## Vad & Varför?
-Att skriva tester i Java handlar om att verifiera att din kod beter sig som förväntat under olika förhållanden. Programmerare skriver tester för att förhindra buggar, säkerställa att funktionaliteten förblir korrekt efter ändringar och främja goda principer för mjukvarudesign.
-
 ## Hur:
 Java-utvecklare använder främst två testramverk: JUnit och TestNG. Här kommer vi att fokusera på JUnit, det populärare valet för att skriva tester på grund av dess enkelhet och utbredda användning.
 
 ### JUnit-grunder
-
 För att använda JUnit i ditt Maven-projekt, lägg till följande beroende i din `pom.xml`:
 
 ```xml
@@ -51,7 +47,6 @@ public class CalculatorTest {
 Utförandet av detta test kommer antingen att passera, vilket indikerar att `add`-metoden fungerar som förväntat, eller misslyckas, vilket visar ett felmeddelande.
 
 ### Mocking med Mockito
-
 I verkliga scenarier är objekt ofta beroende av andra objekt. Mockito är ett populärt mockningsramverk som hjälper till att skapa mockobjekt i syfte att testa.
 
 Lägg till Mockito i ditt Maven-projekt:

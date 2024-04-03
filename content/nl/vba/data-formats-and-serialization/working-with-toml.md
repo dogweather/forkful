@@ -12,12 +12,7 @@ title: Werken met TOML
 weight: 39
 ---
 
-## Wat & Waarom?
-
-TOML, wat staat voor Tom's Obvious, Minimal Language, is een gegevensserialisatieformaat dat voornamelijk wordt gebruikt voor configuratiebestanden. Programmeurs gebruiken TOML vanwege de leesbaarheid en eenvoudige afbeelding op datastructuren, wat het rechtstreeks configureren van applicaties in verschillende programmeeromgevingen, inclusief Visual Basic for Applications (VBA), mogelijk maakt.
-
 ## Hoe te:
-
 Werken met TOML in VBA betreft het parsen van het TOML-bestand om configuraties of instellingen in je VBA-project te lezen. VBA heeft geen ingebouwde ondersteuning voor TOML, dus je gebruikt meestal een parser of converteert TOML-gegevens naar een formaat waarmee VBA gemakkelijk kan werken, zoals JSON of XML. Hier is hoe je handmatig een eenvoudig TOML-configuratiebestand parseert:
 
 1. **Voorbeeld van een TOML-bestand** (`config.toml`):
@@ -74,5 +69,4 @@ Database Server: 192.168.1.1
 ```
 
 ## Diepgaande Verkenning
-
 De praktische acceptatie van TOML in de ontwikkelaarsgemeenschap laat een trend zien richting eenvoudigere, beter leesbare configuratiebestanden, in contrast met het voorheen gangbare XML. De ontwerpfilosofie van TOML benadrukt heldere semantiek en streeft naar eenvoudig parsen met minimale overhead. In VBA houdt direct omgaan met TOML manueel parsen in of het gebruik van externe hulpmiddelen om TOML naar een meer VBA-vriendelijk formaat te converteren vanwege de afwezigheid van native ondersteuning. Hoewel deze handmatige parseermethode een fundamentele benadering laat zien, kunnen externe bibliotheken of tussenformaten zoals JSON robuustere en foutbestendigere parsingsstrategieën bieden. Gezien de uitgebreide integratie van VBA met Microsoft Office, kan het converteren van TOML naar JSON en het gebruik van de native JSON-parseermogelijkheden van VBA (waar van toepassing) of externe JSON-parsers een meer gestroomlijnde workflow bieden. Bovendien moeten programmeurs met de continue evolutie van gegevensserialisatieformaten ook YAML overwegen, dat net als TOML menselijke leesbaarheid benadrukt, maar verschillende afwegingen biedt wat betreft complexiteit en flexibiliteit.

@@ -12,12 +12,7 @@ title: Bruke associative tabeller
 weight: 15
 ---
 
-## Hva & Hvorfor?
-
-Assosiative tabeller, eller hashmaper, i Clojure lar deg lagre og hente data med nøkkel-verdi-par. De er et førstevalg for håndtering av strukturerte data, noe som gjør det raskere å få tilgang til spesifikke elementer uten å iterere gjennom en liste.
-
 ## Hvordan:
-
 I Clojure er det enkelt å opprette og manipulere assoiative tabeller (hashmaper). La oss dykke inn med eksempler.
 
 For å opprette en hashmap:
@@ -72,7 +67,6 @@ Og for betinget tilgang, `find` returnerer et nøkkel-verdi-par hvis nøkkelen e
 ```
 
 ## Dypdykk
-
 Assosiative tabeller i Clojure, også ofte referert til som hashmaper, er utrolig allsidige og effektive for håndtering av nøkkel-verdi-baserte data. De er en del av Clojures rike samling-bibliotek, dypt forankret i språkets filosofi om immutabilitet og funksjonell programmering. I motsetning til tabeller eller lister som krever O(n) tidskompleksitet for tilgang til elementer, tilbyr hashmaper nærmest konstant tidskompleksitet for tilgang, noe som gjør dem svært effektive for oppslagsoperasjoner.
 
 Noen kan argumentere for at vektorer i Clojure kunne tjene et lignende formål gjennom indeksert tilgang, men hashmaper utmerker seg når det gjelder å håndtere ikke-sekvensielle og merkede data, hvor nøkkelen gir en meningsfull beskriver heller enn et vilkårlig indeks.

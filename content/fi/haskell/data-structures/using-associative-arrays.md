@@ -13,12 +13,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mitä ja miksi?
-
-Assosiatiiviset taulukot tai sanakirjat Haskellissa ovat kaikki avainten mappauksesta arvoihin nopean haun ja tehokkaan datanhallinnan kannalta. Ohjelmoijat käyttävät niitä käsitelläkseen elementtien pareja, joissa elementin etsiminen on tuulahdus verrattuna listoihin.
-
 ## Kuinka:
-
 Haskell ei tarjoa assosiatiivisia taulukoita suoraan samalla tavalla kuin jotkut muut kielet, mutta se tarjoaa tehokkaan standardikirjaston nimeltä `Data.Map` avain-arvo -pareja varten. Kääräistään hihat ja katsotaan, kuinka niitä käytetään!
 
 Ensiksi, varmista että tuot sen käyttöön:
@@ -57,7 +52,6 @@ Map.elems languagesUpdated
 Nämä perustoiminnot kattavat suurimman osan käyttötarkoituksista, mutta `Data.Map`:ssa on paljon enemmän tutkittavaa!
 
 ## Syvä sukellus
-
 `Data.Map` -moduuli Haskellin standardikirjastossa on rakennettu tasapainotettujen binääripuiden päälle, erityisesti AVL-puiden. Tämä valinta varmistaa, että useimmat toiminnot kartalla, kuten lisäys, poisto ja haku, voidaan suorittaa O(log n) aikassa, missä n on elementtien määrä kartassa. Se on tehokas valinta monille käyttötarkoituksille, vaikka se ei olekaan absoluuttisesti nopein kaikissa skenaarioissa.
 
 Historiallinen vivahteena on myös: ennen kuin `Data.Map` tuli go-to ratkaisuksi, Haskell-ohjelmoijat käyttivät usein parien listoja matkiakseen assosiatiivisia taulukoita. Kuitenkin, tällaisten rakenteiden operaatiot ovat O(n) haussa, joten `Data.Map` on merkittävä parannus suorituskyvyn kannalta.

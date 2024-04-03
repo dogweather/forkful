@@ -10,11 +10,6 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## What & Why?
-"Co i dlaczego?"
-
-Szukanie i zamiana tekstu to podstawowe operacje pozwalające na lokalizowanie wzorców w tekście oraz ich modyfikację. Programiści używają tej techniki do refaktoryzacji, poprawiania błędów, czy też zmian masowych w kodzie.
-
 ## How to:
 "Jak to zrobić:"
 

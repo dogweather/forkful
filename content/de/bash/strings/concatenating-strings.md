@@ -10,12 +10,7 @@ title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---
 
-## Was & Warum?
-
-String-Konkatenation ist das Aneinanderhängen von Zeichenketten. Programmierer nutzen das, um Inhalte dynamisch zu generieren, Daten zu formatieren oder einfach Infos zusammenzubringen.
-
 ## How to:
-
 Hier siehst du, wie's gemacht wird – kurz und schmerzlos.
 
 ```Bash
@@ -49,7 +44,6 @@ HalloWelt
 ```
 
 ## Deep Dive
-
 Konkatenation ist alt wie die Programmierung selbst. Ursprünglich musste man oft langwierige Umwege nehmen. Heute? Ein Kinderspiel.
 
 Alternativen? Klar, da wären zum Beispiel `printf` oder Heredocs, aber für simples Zusammensetzen von Strings braucht's meist keine Geschütze.
@@ -57,7 +51,6 @@ Alternativen? Klar, da wären zum Beispiel `printf` oder Heredocs, aber für sim
 Was passiert unter der Haube? Nicht viel – der Interpreter legt die Strings einfach hintereinander im Speicher ab. Aber Achtung mit Sonderzeichen – ohne Anführungszeichen kann's unerwartete Ergebnisse geben.
 
 ## See Also
-
 Mehr Infos? Hier entlang:
 
 - Bash Reference Manual: https://www.gnu.org/software/bash/manual/bash.html#Shell-Expansions

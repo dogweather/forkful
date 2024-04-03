@@ -13,9 +13,6 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Che cosa & Perché?
-Ottenere la data corrente è un compito essenziale in quasi ogni impresa di programmazione, dal registrare le attività in un'applicazione al generare report con timbri di data. In Ruby, ciò può essere facilmente realizzato usando la libreria standard, semplificando le operazioni che coinvolgono le date.
-
 ## Come fare:
 La libreria standard di Ruby include le classi `Date` e `Time` per gestire date e orari. Ecco come ottenere la data corrente:
 

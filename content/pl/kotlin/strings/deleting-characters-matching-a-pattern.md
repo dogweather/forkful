@@ -11,9 +11,6 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## What & Why? (Co i Dlaczego?)
-Usuwanie znaków pasujących do wzorca to filtracja tekstów, usuwanie niechcianych znaków. Programiści robią to, aby wyczyścić dane, usunąć błędy lub przygotować tekst do dalszej obróbki.
-
 ## How to: (Jak to zrobić:)
 ```kotlin
 fun main() {

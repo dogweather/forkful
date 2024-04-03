@@ -10,12 +10,7 @@ title: Deleting characters matching a pattern
 weight: 5
 ---
 
-## What & Why?
-
-Deleting characters matching a pattern means removing specific sequences of characters from a string based on a defined pattern, like digits or punctuation. Programmers do it to sanitize inputs, clean data, or prep for processing where specific patterns aren't needed.
-
 ## How to:
-
 ```swift
 import Foundation
 
@@ -37,7 +32,6 @@ print(cleanString)  // Output: "H3lloWrld"
 ```
 
 ## Deep Dive
-
 Before Swift and modern programming, pattern matching was a realm of particular tools and languages like `sed`, `awk`, or Perl known for text processing capabilities. Swift, with its robust Foundation framework, simplifies these tasks within the language, making it more accessible to developers.
 
 One alternative to regular expressions is iterating through the string using Swift’s `filter` method coupled with a custom condition, which can also be time-consuming and less readable. Regular expressions offer a compact, albeit sometimes cryptic, way of describing the pattern we want to remove or manipulate.
@@ -45,7 +39,6 @@ One alternative to regular expressions is iterating through the string using Swi
 Under the hood, when you run `replacingOccurrences(of:with:options:)` with `.regularExpression` option, Swift uses ICU's (International Components for Unicode) regular expression engine to process the pattern. ICU is a mature, widely-used library for Unicode support, including pattern matching, that's built into many high-level programming languages.
 
 ## See Also
-
 - Swift String Documentation: https://developer.apple.com/documentation/swift/string
 - Swift Regular Expressions: https://developer.apple.com/documentation/foundation/nsregularexpression
 - ICU User Guide for Regular Expressions: https://unicode-org.github.io/icu/userguide/strings/regexp.html

@@ -11,16 +11,10 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-
-Complex numbers, consisting of a real and an imaginary part (usually denoted as a + bi), extend the concept of the dimensionless numbers to a two-dimensional space. Programmers work with complex numbers in fields such as electrical engineering, quantum computing, and fluid dynamics to model phenomena that cannot be represented along a single dimension of real numbers alone.
-
 ## How to:
-
 Dart itself does not include a built-in library for complex numbers, necessitating either the implementation of a custom complex number class or the use of a third-party library. A popular choice for scientific computing tasks, which includes support for complex numbers, is `package:scidart`.
 
 ### Implementing a Basic Complex Number Class
-
 For simple operations, you can easily define your own complex number class:
 
 ```dart
@@ -50,7 +44,6 @@ void main() {
 ```
 
 ### Using SciDart for Advanced Operations
-
 For more complex operations or when performance is critical, the `package:scidart` offers comprehensive support for complex numbers among other scientific computing functionalities. First, add SciDart to your pubspec.yaml:
 
 ```yaml

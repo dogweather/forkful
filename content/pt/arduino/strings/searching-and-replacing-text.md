@@ -11,9 +11,6 @@ title: Pesquisando e substituindo texto
 weight: 10
 ---
 
-## O Quê & Porquê?
-Procurar e substituir texto é um processo básico para trocar uma sequência de caracteres por outra num bloco de texto. Programadores fazem isso para corrigir erros, atualizar códigos ou alterar dados de forma eficiente.
-
 ## Como Fazer:
 ```Arduino
 String original = "Folha de Flandres";

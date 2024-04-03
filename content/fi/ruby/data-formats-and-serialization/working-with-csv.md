@@ -13,12 +13,7 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä ja miksi?
-
-CSV-tiedostojen käsittely Rubyssa tarjoaa yksinkertaisen tavan käsitellä taulukkomuotoista tietoa. Ohjelmoijat harjoittavat tätä käytäntöä usein datan jäsentämiseen, poimintaan, muuntamiseen ja tallentamiseen, mikä tekee siitä kriittisen taidon tehtävissä, jotka liittyvät datan manipulointiin tai analysointiin.
-
 ## Kuinka:
-
 Ruby sisältää oletuksena CSV-kirjaston, joka yksinkertaistaa lukemista ja kirjoittamista CSV-tiedostoihin. Tässä on, miten voit hyödyntää tätä yleisiin tehtäviin:
 
 ### CSV-tiedoston lukeminen

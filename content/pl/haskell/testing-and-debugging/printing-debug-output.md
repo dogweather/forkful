@@ -11,9 +11,6 @@ title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---
 
-## Co i Dlaczego?
-Wypisywanie informacji diagnostycznych (debug output) to sposób na śledzenie tego, co się dzieje w programie podczas jego działania. Programiści używają tego do łapania błędów i lepszego zrozumienia przepływu programu.
-
 ## Jak to zrobić:
 W Haskellu możemy używać funkcji `print` czy `putStrLn` do wypisywania danych na standardowe wyjście. Będzie wyglądało to tak:
 

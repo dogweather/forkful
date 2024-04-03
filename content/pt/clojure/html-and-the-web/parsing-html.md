@@ -12,16 +12,10 @@ title: Analisando HTML
 weight: 43
 ---
 
-## O Que & Por Quê?
-
-Analisar HTML em Clojure envolve extrair programaticamente informações de documentos HTML. Programadores fazem isso para acessar, manipular ou monitorar conteúdo web dinamicamente, automatizando tarefas ou alimentando dados em aplicações.
-
 ## Como fazer:
-
 Clojure não possui capacidades de análise de HTML internamente, mas você pode utilizar bibliotecas Java ou invólucros Clojure como `enlive` ou `hickory`. Aqui está como usar ambos:
 
 ### Usando Enlive:
-
 Enlive é uma escolha popular para análise de HTML e raspagem web. Primeiro, inclua-o nas dependências do seu projeto:
 
 ```clojure
@@ -46,7 +40,6 @@ A saída pode parecer com:
 ```
 
 ### Usando Hickory:
-
 Hickory oferece uma maneira de analisar HTML em um formato que é mais fácil de trabalhar em Clojure. Adicione Hickory às dependências do seu projeto:
 
 ```clojure

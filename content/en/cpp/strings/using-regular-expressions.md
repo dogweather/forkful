@@ -11,9 +11,6 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-Regular expressions in C++ are sequences of characters that define a search pattern, used for string matching or manipulation. Programmers use them for tasks such as validating input, searching for occurrences within strings, or breaking strings into tokens, making them an indispensable tool for efficient and effective text processing.
-
 ## How to:
 C++11 introduced support for regular expressions in the standard library, `<regex>`, offering a robust framework for string searching and manipulation. Here's a basic example of using regular expressions to search for a pattern within a string:
 

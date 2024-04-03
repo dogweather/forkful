@@ -11,9 +11,6 @@ title: Att organisera kod i funktioner
 weight: 18
 ---
 
-## Vad & Varför?
-Att dela upp kod i funktioner innebär att man karvar upp sin kod i mindre, återanvändbara bitar. Vi gör det för att undvika upprepning, göra vår kod läslig och förenkla felsökning och testning. Välorganiserade funktioner kan vara som att ha en låda med snyggt märkta verktyg, redo att användas och delas.
-
 ## Hur man gör:
 Låt oss ta en vanlig uppgift: att beräkna arean av en cirkel. Istället för att skriva samma formel varje gång, kapslar vi in den i en funktion.
 

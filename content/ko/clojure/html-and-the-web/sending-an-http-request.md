@@ -14,9 +14,6 @@ title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
 weight: 44
 ---
 
-## What & Why? (무엇이며 왜?)
-HTTP 요청은 웹 서버와 정보를 교환하기 위한 방법이다. 프로그래머는 데이터를 가져오거나 웹 서비스에 작업을 요청하기 위해 이를 사용한다.
-
 ## How to: (방법:)
 Clojure에서 `clj-http` 라이브러리를 사용하여 HTTP 요청을 보낸다.
 

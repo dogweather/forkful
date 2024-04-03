@@ -12,12 +12,7 @@ title: Verwendung von assoziativen Arrays
 weight: 15
 ---
 
-## Was & Warum?
-
-Assoziative Arrays sind wie aufgeladene Arrays, die es Ihnen erlauben, Strings als Indizes anstelle von nur Ganzzahlen zu verwenden. Programmierer nutzen sie für komplexere Datenstrukturen, was es einfacher macht, Daten zu handhaben, die nicht sauber in eine sequenzielle Liste passen.
-
 ## Wie:
-
 Zuerst deklarieren Sie ein assoziatives Array in Bash:
 
 ```Bash
@@ -65,7 +60,6 @@ unset my_array["Thema"]
 ```
 
 ## Tiefergehende Betrachtung
-
 Assoziative Arrays wurden in Bash-Version 4.0 eingeführt und sind somit eine relativ neue Ergänzung der Sprache. Vor ihrer Einführung war das Handhaben von Arrays mit Nicht-Ganzzahlen-Indizes umständlich, oft waren Umwege oder externe Werkzeuge wie `awk` oder `sed` erforderlich.
 
 Unter der Haube implementiert Bash assoziative Arrays mit Hash-Tabellen. Diese Implementierung erlaubt eine effiziente Schlüsselsuche, die unabhängig von der Größe des Arrays ziemlich konstant bleibt, ein kritisches Merkmal für die Leistung bei der Skriptausführung.

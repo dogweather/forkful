@@ -11,12 +11,7 @@ title: Manipulating files with CLI one-liners
 weight: 31
 ---
 
-## What & Why?
-
-In the realm of programming, especially when dealing with Linux or Unix environments, manipulating files directly from the command line interface (CLI) isn’t just a matter of convenience—it’s a power tool. Thanks to the Fish Shell, with its modern syntax and utilities, you can transform, relocate, or analyze your files with agility and precision. It's about doing more with less, streamlining processes, and embracing the command line's might for efficient file management.
-
 ## How to:
-
 Manipulating files in Fish Shell is both intuitive and potent. Here are some examples to showcase its capability:
 
 1. **Creating a file** is as straightforward as it gets. Use the `touch` command:
@@ -78,7 +73,6 @@ end
 ```
 
 ## Deep Dive
-
 Manipulating files from the CLI with Fish Shell single-liners is both a skill and an art. Historically, Unix and Linux systems have always provided a powerful suite of tools for file manipulation, treating everything as a file in its philosophy. This has paved the way for modern shells like Fish, which not only embrace but extend these philosophies with improved syntax and added utilities.
 
 While Fish provides an excellent user experience and scripting capabilities, it's worth mentioning that certain POSIX compliance issues may arise, especially when scripts are ported from more traditional shells like Bash or SH. This is because Fish does not aim to be POSIX-compliant by design, opting instead for a more user-friendly approach in both scripting and command-line usage. As such, programmers should be aware that while Fish excels in many areas, scripts requiring strict POSIX compliance might need adjustments or alternatives like `bash` or `zsh` for compatibility.

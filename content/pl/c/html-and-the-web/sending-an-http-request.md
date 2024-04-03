@@ -13,12 +13,7 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## Co i dlaczego?
-
-Wysyłanie żądania HTTP polega na tworzeniu i wysyłaniu żądania do serwera WWW w celu pobrania lub przesłania danych. Programiści robią to w języku C, aby współdziałać z interfejsami API stron internetowych, pobierać strony internetowe lub komunikować się z innymi usługami sieciowymi bezpośrednio z ich aplikacji.
-
 ## Jak to zrobić:
-
 Aby wysłać żądanie HTTP w języku C, zazwyczaj opierasz się na bibliotekach takich jak libcurl, ponieważ C nie ma wbudowanego wsparcia dla protokołów internetowych. Oto prosty przykład użycia libcurl do wykonania żądania typu GET:
 
 Najpierw upewnij się, że na twoim systemie zainstalowany jest libcurl. Następnie dołącz niezbędne nagłówki i zlinkuj z biblioteką libcurl w twoim pliku źródłowym:
@@ -55,11 +50,9 @@ int main(void) {
 Kompiluj to za pomocą czegoś w stylu `gcc -o http_request http_request.c -lcurl`, uruchomienie powinno wykonać proste żądanie GET do "http://example.com".
 
 ### Przykładowe wyjście
-
 Ponieważ przykład nie przetwarza odpowiedzi serwera, jego uruchomienie nie wygeneruje widocznych wyników poza potencjalnymi komunikatami o błędach. Integracja funkcji zwrotnej do przetwarzania otrzymanych danych jest kluczowa dla znaczącej interakcji.
 
 ## Dogłębna analiza
-
 Koncepcja wysyłania żądań HTTP z programu w języku C opiera się na potężnych możliwościach sieciowych tego języka, w połączeniu z zewnętrznymi bibliotekami, ponieważ sam C jest językiem niskopoziomowym bez wbudowanego wsparcia dla protokołów internetowych. Historycznie, programiści ręcznie używali programowania gniazd w języku C, złożonego i żmudnego procesu, do interakcji z serwerami internetowymi przed pojawieniem się dedykowanych bibliotek takich jak libcurl.
 
 Libcurl, zbudowany na bazie C, usprawnia ten proces, abstrahując od trudnych szczegółów programowania gniazd i specyfiki protokołów HTTP. Wspiera ona wiele protokołów poza HTTP/HTTPS, w tym FTP, SMTP i inne, czyniąc ją wszechstronnym narzędziem do programowania sieciowego w C.

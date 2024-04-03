@@ -11,12 +11,7 @@ title: Gestion des erreurs
 weight: 16
 ---
 
-## Quoi & Pourquoi ?
-
-La gestion des erreurs consiste à gérer les choses quand elles ne se déroulent pas comme prévu. Les programmeurs le font pour gérer l'inattendu, en s'assurant que leurs programmes Rust sont robustes et ne se contentent pas de planter lorsqu'ils rencontrent un hic.
-
 ## Comment faire :
-
 Rust gère les erreurs de deux manières principales : les erreurs récupérables et les erreurs irrécupérables. Examinons les deux.
 
 Pour les erreurs récupérables, utilisez `Result<T, E>` :
@@ -55,7 +50,6 @@ fn main() {
 Exécutez-le et vous verrez un message de panique. Votre programme s'arrête net.
 
 ## Plongée en profondeur
-
 Historiquement, la gestion des erreurs en programmation a été compliquée. Rust fait bien les choses avec une distinction claire entre les erreurs récupérables et irrécupérables.
 
 L'énumération `Result` est utilisée pour les erreurs récupérables. Elle est explicite - vous gérez la variante `Ok` ou `Err`. Vous avez aussi des méthodes comme `unwrap()` et `expect()`, mais ce sont des raccourcis rapides et risqués qui peuvent conduire à un `panic!`.
@@ -67,7 +61,6 @@ La gestion des erreurs en renvoyant `Result` est préférable lorsque vous vous 
 Des alternatives ? Bien sûr, vous pourriez utiliser d'autres crates de gestion des erreurs pour plus de fonctionnalités ou une utilisation plus ergonomique. Comme `anyhow` pour une gestion des erreurs simple, ou `thiserror` pour des erreurs dans le code de la bibliothèque.
 
 ## Voir aussi
-
 Intéressé par une plongée plus profonde ? Voici où aller :
 
 - [Le livre Rust sur la gestion des erreurs](https://doc.rust-lang.org/book/ch09-00-error-handling.html) - Un excellent endroit pour comprendre la philosophie de Rust en matière de gestion des erreurs.

@@ -10,11 +10,7 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-Calculating a date in the future or past involves determining a specific day before or after a given date. Programmers do this for functions like scheduling events, reminders, or calculating deadlines.
-
 ## How to:
-
 Arduino doesn't have built-in date and time functions, but you can use the "TimeLib.h" library to handle date calculations. Make sure you've installed the library before using the below examples.
 
 ```Arduino
@@ -57,7 +53,6 @@ Sample Output:
 ```
 
 ## Deep Dive
-
 Before RTC (real-time clock) modules and libraries like TimeLib, timekeeping on Arduino was rudimentary and usually manually implemented. There are various ways to compute future or past dates, but using a specialized library like TimeLib simplifies the process significantly.
 
 Alternatives to TimeLib include the more comprehensive "RTClib.h" for use with hardware RTCs, or the built-in `millis()` function for shorter time intervals (with manual date management). TimeLib handles leap years and time zones and provides utility functions for easy date manipulation.
@@ -65,7 +60,6 @@ Alternatives to TimeLib include the more comprehensive "RTClib.h" for use with h
 When calculating future or past dates, watch out for time zones and daylight saving changes if you're working with real-time clocks or external time sources. On Arduino, without an RTC or an Internet connection, you'll typically set the time manually or via an external signal (like GPS or radio time signals).
 
 ## See Also
-
 - Time Library Documentation:
   https://www.arduino.cc/reference/en/libraries/time/
 - RTClib, a popular library for working with real-time clocks:

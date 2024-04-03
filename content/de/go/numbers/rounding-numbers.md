@@ -12,16 +12,10 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-
-Das Runden von Zahlen geht darum, den Wert einer Zahl auf die nächste ganze Zahl oder auf eine bestimmte Anzahl von Dezimalstellen anzupassen. Programmierer tun dies aus Gründen wie der Verbesserung der Lesbarkeit, der Vereinfachung von Berechnungen oder der Erfüllung domänenspezifischer Präzisionsanforderungen.
-
 ## Wie geht das:
-
 In Go gibt es keine eingebaute Funktion, die Zahlen direkt auf eine bestimmte Anzahl von Dezimalstellen im Mathematikpaket rundet. Sie können jedoch das Runden durch eine Kombination von Funktionen für ganze Zahlen erreichen oder eine benutzerdefinierte Funktion für Dezimalstellen implementieren.
 
 ### Runden auf die nächste ganze Zahl:
-
 Um auf die nächste ganze Zahl zu runden, können Sie die Funktion `math.Floor()` mit einem zusätzlichen 0,5 für positive Zahlen und `math.Ceil()` minus 0,5 für negative Zahlen verwenden, abhängig von der Richtung, in die Sie abrunden möchten.
 
 ```go
@@ -39,7 +33,6 @@ func main() {
 ```
 
 ### Runden auf eine bestimmte Anzahl von Dezimalstellen:
-
 Für das Runden auf eine bestimmte Anzahl von Dezimalstellen kann eine benutzerdefinierte Funktion verwendet werden, bei der Sie die Zahl mit 10^n multiplizieren (wobei n die Anzahl der Dezimalstellen ist), sie wie zuvor auf die nächste ganze Zahl runden und dann durch 10^n teilen.
 
 ```go
@@ -62,7 +55,6 @@ func main() {
 ```
 
 ## Tiefere Einblicke
-
 Das Runden von Zahlen ist eine grundlegende Operation in der Computerprogrammierung, die mit der historischen Herausforderung verbunden ist, reelle Zahlen in einem Binärsystem darzustellen. Die Notwendigkeit des Rundens ergibt sich aus der Tatsache, dass viele reelle Zahlen nicht präzise in Binärform dargestellt werden können, was zu Approximationsfehlern führt.
 
 In Go ist der Ansatz zum Runden im Vergleich zu Sprachen, die eingebaute Rundungsfunktionen für bestimmte Dezimalstellen bieten, etwas manuell. Nichtsdestotrotz bietet das `math` Paket der Go-Standardbibliothek die grundlegenden Bausteine (wie `math.Floor` und `math.Ceil`), um jede vom Anwendungsfall erforderliche Rundungsmechanik zu konstruieren.

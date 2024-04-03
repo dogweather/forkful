@@ -14,12 +14,7 @@ title: Willekeurige getallen genereren
 weight: 12
 ---
 
-## Wat & Waarom?
-
-Het genereren van willekeurige getallen in Rust omvat het gebruik van bibliotheken om onvoorspelde numerieke waarden te produceren, wat onmisbaar is voor taken variërend van cryptografie en simulaties tot gaming en gerandomiseerde algoritmes.
-
 ## Hoe te:
-
 Rust is afhankelijk van externe crates voor het genereren van willekeurige getallen, waarbij `rand` het meest gebruikt wordt. Om te beginnen met het genereren van willekeurige getallen, moet je eerst `rand` toevoegen aan je `Cargo.toml` bestand:
 
 ```toml
@@ -55,7 +50,6 @@ Willekeurig Zwevendekommagetal: 0.9401077112175732
 Merk op dat het opnieuw uitvoeren van het programma verschillende waarden zal opleveren.
 
 ## Diepere Duik
-
 De generatie van willekeurige getallen in Rust, mogelijk gemaakt door `rand` en zijn afhankelijkheden zoals `getrandom`, vertegenwoordigt een brede abstractie over faciliteiten van het besturingssysteem en algoritmische generatoren. Historisch gezien is willekeurigheid in rekenen geëvolueerd van eenvoudige, voorspelbare algoritmes naar complexe, cryptografisch veilige methoden. Rusts benadering omvat deze evolutie door zijn inplugbare `Rng` trait, welke kan worden ondersteund door verschillende generatoren afhankelijk van de vereiste kwaliteit van willekeurigheid en prestatie.
 
 Voor de meeste toepassingen biedt vertrouwen op `rand` en de RNG van het systeem een goede balans tussen eenvoud en entropie. Echter, voor cryptografische toepassingen, verwijzen crates zoals `rand` naar `getrandom` voor seeding, welke op zichzelf vertrouwt op OS-specifieke mechanismen (bv. `/dev/urandom` op Unix-achtige systemen), wat cryptografisch veilige willekeurigheid verzekert.

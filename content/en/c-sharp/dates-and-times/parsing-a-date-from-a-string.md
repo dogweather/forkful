@@ -10,11 +10,7 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-Parsing a date from a string in C# involves converting textual representations of dates and times into a `DateTime` object. This is essential for applications that need to manipulate, store, or display dates and times in different formats, such as scheduling apps, log processors, or any system handling date input from users or external sources.
-
 ## How to:
-
 **Basic Parsing:**
 
 The `DateTime.Parse` and `DateTime.TryParse` methods are the go-to options for converting a string into a `DateTime`. Here's a quick example:

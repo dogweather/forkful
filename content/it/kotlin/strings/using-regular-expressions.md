@@ -13,11 +13,8 @@ title: Utilizzo delle espressioni regolari
 weight: 11
 ---
 
-## Cosa e Perché?
-
-Le espressioni regolari (regex) sono uno strumento potente per l'elaborazione del testo, che permette ai programmatori di cercare, corrispondere e manipolare le stringhe con tecniche avanzate di corrispondenza di modelli. In Kotlin, sfruttare le regex aiuta a eseguire in modo efficiente compiti complessi di elaborazione del testo come la validazione, l'analisi o la trasformazione, rendendolo indispensabile per compiti che vanno dalla semplice manipolazione di stringhe all'analisi di testo complessa.
-
 ## Come fare:
+
 
 ### Corrispondenza di base
 Per verificare se una stringa corrisponde a un modello specifico in Kotlin, puoi usare il metodo `matches` della classe `Regex`.

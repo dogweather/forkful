@@ -11,9 +11,6 @@ title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---
 
-## O Que é & Porquê?
-Baixar uma página da web é o ato de obter o conteúdo disponível em um endereço específico da internet. Programadores fazem isso para coletar dados, interagir com serviços online ou integrar funcionalidades externas em seus projetos de Arduino.
-
 ## How to:
 Para baixar uma página web, você precisa de um módulo de WiFi ou Ethernet para conectar seu Arduino à internet. Abaixo está um exemplo simplificado usando um módulo WiFi.
 

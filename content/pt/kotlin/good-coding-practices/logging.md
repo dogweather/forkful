@@ -11,12 +11,7 @@ title: Registro de Logs
 weight: 17
 ---
 
-## O Quê & Por Quê?
-
-O ato de registrar eventos e dados de uma aplicação de software em uma saída externa, como um arquivo ou console, é conhecido como logging. Programadores registram informações para rastrear o código, solucionar problemas e monitorar o comportamento de um aplicativo em uso, fornecendo insights críticos que não podem ser obtidos de forma tão eficaz de nenhuma outra maneira.
-
 ## Como fazer:
-
 Em Kotlin, o logging pode ser realizado usando a função integrada `println()` para casos simples, ou com bibliotecas mais sofisticadas como SLF4J com Logback ou Log4j para necessidades avançadas.
 
 Abaixo, um exemplo simples usando `println()`:
@@ -68,7 +63,6 @@ java.lang.Exception: Erro simulado
 ```
 
 ## Aprofundamento
-
 Historicamente, o registro de logs em softwares evoluiu juntamente com a crescente complexidade das aplicações e sistemas. Comandos simples de impressão eram suficientes nos primeiros dias, onde os programas eram frequentemente executados e depurados pelo próprio desenvolvedor. Mas à medida que os sistemas se conectavam em rede e rodavam em diferentes ambientes e usuários, um sistema de log robusto e persistente se tornou crucial.
 
 Antes do Kotlin se tornar popular, desenvolvedores Java adotaram amplamente bibliotecas como Log4j e, posteriormente, SLF4J. Estas inspiraram práticas semelhantes em Kotlin, aproveitando a interoperabilidade do Kotlin com bibliotecas Java. O SLF4J atua como uma camada de abstração, permitindo que a implementação real do registro de logs seja trocada—geralmente Logback ou Log4j2 são as escolhas preferenciais.
@@ -88,7 +82,6 @@ Outras características comuns de frameworks avançados de registro de logs incl
 Essas ferramentas e recursos são críticos para manter um sistema confiável e observável, especialmente em ambientes complexos, distribuídos ou altamente escaláveis.
 
 ## Veja Também
-
 Para mais aprendizado e informações sobre registro de logs em Kotlin, confira:
 
 - SLF4J (Simple Logging Facade for Java) [http://www.slf4j.org/](http://www.slf4j.org/)

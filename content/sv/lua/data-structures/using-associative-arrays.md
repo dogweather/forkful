@@ -14,12 +14,7 @@ title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---
 
-## Vad & Varför?
-
-Associerade arrayer är som hemliga handslag för data i Lua—istället för bara siffror som lydigt ställer upp efter index, kan dina nycklar vara vad du vill, vilket gör dataåterkallning till en barnlek. Varför använder programmerare dem? Därför att ibland behöver du kalla på en bit data med dess namn, inte en uppställningssiffra.
-
 ## Hur man gör:
-
 I Lua är det rakt på sak att skapa en associerad array (eller en tabell, på Lua-språk) . Du skippar de vanliga numeriska indexerna för nycklar som du själv väljer. Kolla in detta:
 
 ```Lua
@@ -58,7 +53,6 @@ favSpråk: Lua
 Det coola? Du interagerar med data med nycklar som är meningsfulla för dig, vilket gör koden mer läsbar och underhållbar.
 
 ## Djupdykning
-
 När Lua gjorde entré på scenen introducerade det tabeller som en allt-i-ett-datatyp, vilket revolutionerade hur utvecklare hanterar data. Till skillnad från i vissa språk där associerade arrayer och arrayer är distinkta enheter, fungerar Luas tabeller som både och, vilket förenklar datatypslanskapet.
 
 Det som gör Lua-tabeller särskilt kraftfulla är deras flexibilitet. Dock kommer denna flexibilitet med en potentiell prestandapåverkan, särskilt med stora dataset där en mer specialiserad datatyp kan vara att föredra för effektivitet.

@@ -10,9 +10,6 @@ title: Webseite herunterladen
 weight: 42
 ---
 
-## Was & Warum?
-Das Herunterladen einer Webseite bedeutet das Abrufen des Inhalts über das Internet auf deinen Computer. Programmierer tun dies, um Daten zu sammeln, Inhalte zu prüfen oder Webanwendungen zu testen.
-
 ## Wie geht das?
 Mit C# kannst du eine Webseite mit einigen Zeilen Code herunterladen. Hier ist ein einfaches Beispiel mit `HttpClient`, einer Klasse, die in der .NET-Standardbibliothek enthalten ist.
 

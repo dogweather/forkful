@@ -11,9 +11,6 @@ title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---
 
-## What & Why?
-L'interpolation de chaîne permet d'insérer des variables dans des textes. Les programmeurs l'utilisent pour créer des messages dynamiques et personnaliser l'affichage.
-
 ## How to:
 ```Rust
 fn main() {

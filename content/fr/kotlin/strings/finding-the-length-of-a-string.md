@@ -11,9 +11,6 @@ title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---
 
-## What & Why?
-Trouver la longueur d'une chaîne de caractères c’est découvrir le nombre de caractères qu'elle contient. Les programmeurs font cela pour valider des entrées, tronquer des textes, ou toute opération nécessitant la connaissance de la dimension de la chaîne.
-
 ## How to:
 En Kotlin, utilisez la propriété `length` pour obtenir la longueur d'une chaîne.
 

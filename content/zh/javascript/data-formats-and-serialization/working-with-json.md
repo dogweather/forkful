@@ -20,11 +20,8 @@ title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 weight: 38
 ---
 
-## 什么 & 为什么?
-
-JSON（JavaScript 对象表示法）是一种轻量级的数据交换格式，易于人阅读和编写，也便于机器解析和生成。程序员用它来存储和传输网络应用中的数据，使其成为现代 API 和网络服务通信的支柱。
-
 ## 如何操作:
+
 
 ### 解析 JSON
 要将 JSON 字符串转换为 JavaScript 对象，请使用 `JSON.parse()`。

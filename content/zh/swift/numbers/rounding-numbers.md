@@ -18,12 +18,7 @@ title: "\u6570\u5B57\u53D6\u6574"
 weight: 13
 ---
 
-## 什么 & 为什么？
-
-数字四舍五入意味着将一个数字值近似到特定的精度，通常是为了去除不需要的小数。程序员进行四舍五入以管理内存、提高可读性，以及满足特定领域的需求，如货币约束。
-
 ## 如何操作：
-
 Swift 提供了几种四舍五入数字的方法。以下是一些示例：
 
 ```Swift
@@ -47,7 +42,6 @@ print("标准: \(standardRounded), 小数: \(decimalRounded), 向下: \(roundedD
 输出：`标准: 3.0, 小数: 3.142, 向下: 3.0, 向上: 4.0`
 
 ## 深入探讨
-
 从历史上看，四舍五入是一种数学概念，早于计算机，对商业和科学至关重要。Swift 的 `Foundation` 框架提供了全面的四舍五入功能：
 
 - `round(_: )`是传统的四舍五入法。
@@ -57,5 +51,4 @@ print("标准: \(standardRounded), 小数: \(decimalRounded), 向下: \(roundedD
 请注意 `Decimal` 类型用于精确的财务计算，它避免了浮点错误。同时，也探索 `NSDecimalNumber` 以实现与 Objective-C 的兼容性。
 
 ## 另请参阅
-
 - 浮点运算的 IEEE 标准（IEEE 754）：[IEEE 754](https://ieeexplore.ieee.org/document/4610935)

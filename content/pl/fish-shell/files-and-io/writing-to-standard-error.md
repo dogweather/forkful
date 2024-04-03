@@ -14,12 +14,7 @@ title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---
 
-## Co i dlaczego?
-
-Pisanie do standardowego błędu (stderr) w Fish Shell polega na kierowaniu komunikatów o błędach lub diagnostyki osobno od standardowego wyjścia (stdout). Programiści robią to, aby zapewnić, że informacje o błędach mogą być łatwo identyfikowane, zarządzane lub przekierowywane, co ułatwia procesy debugowania i logowania.
-
 ## Jak to zrobić:
-
 W Fish Shell możesz pisać do stderr, przekierowując swoje wyjście za pomocą `>&2`. Oto podstawowy przykład:
 
 ```fish

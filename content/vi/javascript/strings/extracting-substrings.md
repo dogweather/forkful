@@ -14,10 +14,8 @@ title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---
 
-## Cái gì & Tại sao?
-Trích xuất chuỗi con có nghĩa là lấy một phần của chuỗi. Lập trình viên cắt và chia chuỗi để cô lập dữ liệu, nhập một số định dạng, hoặc chỉnh sửa văn bản trước khi xuất.
-
 ## Cách thực hiện:
+
 
 ### Sử dụng phương thức `substring`:
 ```javascript

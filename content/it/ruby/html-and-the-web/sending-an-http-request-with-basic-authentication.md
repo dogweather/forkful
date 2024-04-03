@@ -10,9 +10,6 @@ title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---
 
-## What & Why?
-Inviare una richiesta HTTP con autenticazione di base significa fornire username e password per accedere a risorse protette. Si fa questo per interagire con servizi web che richiedono un livello minimo di sicurezza.
-
 ## How to:
 Per fare una richiesta HTTP con autenticazione di base in Ruby, possiamo usare la gemma 'net/http'. Nota che dovresti usare le tue credenziali reali.
 

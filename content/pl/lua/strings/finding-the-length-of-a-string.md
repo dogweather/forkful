@@ -11,9 +11,6 @@ title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---
 
-## Co i dlaczego?
-Znalezienie długości łańcucha (stringa) to po prostu sprawdzenie, ile znaków zawiera. Programiści robią to, aby manipulować tekstami, walidować dane albo po prostu, aby wiedzieć, z czym mają do czynienia.
-
 ## Jak to zrobić:
 W Lua długość stringa dostaniesz błyskawicznie:
 

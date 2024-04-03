@@ -11,9 +11,6 @@ title: Rifattorizzazione
 weight: 19
 ---
 
-## Cosa e Perché?
-Il refactoring è il processo di ristrutturazione del codice informatico esistente senza modificarne il comportamento esterno, con l'obiettivo di migliorare gli attributi non funzionali del software. I programmatori ristrutturano il codice per renderlo più pulito, efficiente e facile da comprendere, il che facilita una manutenzione più semplice e miglioramenti futuri.
-
 ## Come fare:
 PowerShell non dispone di uno strumento dedicato al refactoring incorporato, ma è comunque possibile pulire il proprio codice per leggibilità e prestazioni. Prendi in considerazione una funzione che sta facendo troppo e come potremmo ristrutturarla per chiarezza:
 

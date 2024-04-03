@@ -11,9 +11,6 @@ title: "XML:n k\xE4sittely"
 weight: 40
 ---
 
-## Mikä & Miksi?
-XML:n käsittelyyn kuuluu XML-dokumenttien jäsentäminen, luominen ja manipulointi – merkintäkieli datan tallennukseen ja siirtoon. Ohjelmoijat tekevät tätä, koska monet järjestelmät vaihtavat edelleen tietoja XML-muodossa, ja sitä tarvitaan vanhojen järjestelmien tukemiseen ja olemassa olevien teknologioiden kanssa integroimiseen.
-
 ## Kuinka:
 Kotlin-kielessä voit käyttää sisäänrakennettua `javax.xml.parsers` -kirjastoa jäsentämiseen:
 

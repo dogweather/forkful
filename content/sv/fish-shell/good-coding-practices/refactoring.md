@@ -11,9 +11,6 @@ title: Refaktorisering
 weight: 19
 ---
 
-## Vad & Varför?
-Refaktorisering är processen att omstrukturera befintlig kod utan att ändra dess externa beteende för att förbättra icke-funktionella attribut. Programmerare gör detta för att göra koden mer läsbar, minska komplexitet, förbättra underhållbarheten och göra den lättare att skala eller modifiera längre fram.
-
 ## Hur man gör:
 Föreställ dig att du har ett skript som har vuxit en hel del över tiden. Det började enkelt, men nu är det ett odjur som kryllar av logiktentakler. Här är ett lättfattligt exempel på refaktorisering av en funktion för att göra den mer läslig och effektiv:
 

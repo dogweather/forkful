@@ -15,9 +15,6 @@ title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---
 
-## What & Why? 什么是HTTP请求以及为什么要用？
-发送HTTP请求就是让你的程序通过互联网与服务器交流。程序员这么做以获取资料、发送数据、操作远程服务。
-
 ## How to: 怎么做？
 在TypeScript中，常用`fetch`函数发送HTTP请求。下面是个例子，我们从一个JSON占位符服务中获取数据。
 

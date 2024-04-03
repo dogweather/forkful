@@ -12,9 +12,6 @@ title: HTML Parsen
 weight: 43
 ---
 
-## Wat & Waarom?
-HTML parsen betekent het afbreken van HTML-content om specifieke gegevens te extraheren. Programmeurs doen dit om webscraping, datamining te automatiseren, of om webinhoud te integreren in applicaties.
-
 ## Hoe:
 Laten we wat gegevens van een webpagina halen. We gebruiken Invoke-WebRequest en dan filteren we uit wat we nodig hebben.
 

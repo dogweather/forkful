@@ -12,9 +12,6 @@ title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---
 
-## Mitä & Miksi?
-Kun puhutaan merkkijonosta ja sen tietyllä mallilla vastaavien merkkien poistamisesta, tarkoitamme prosessia, jolla etsimme ja hävitämme tietyn mallin mukaiset merkit merkkijonosta. Ohjelmoijat tekevät tämän yleensä puhdistaakseen tietoja, erottaakseen olennaiset tiedot tai muodostaakseen uusia tietorakenteita.
-
 ## Miten:
 ```C#
 using System;

@@ -14,12 +14,7 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä & Miksi?
-
-CSV-tiedostojen (pilkuilla erotetut arvot) käsittely sisältää jäsentämisen, manipuloinnin ja datan tuottamisen taulukkomuodossa, jota laajasti käytetään datan vaihtoon sovellusten välillä. Ohjelmoijat suorittavat näitä toimintoja tehokkaasti käsitelläkseen ja analysoidakseen dataa, automatisoidakseen tehtäviä tai integroitavakseen muihin järjestelmiin.
-
 ## Kuinka:
-
 Fish Shellillä itsellään ei ole sisäänrakennettuja funktioita nimenomaan CSV-manipulointiin suunniteltuna. Voit kuitenkin hyödyntää Unix-työkaluja kuten `awk`, `sed` ja `cut` perustoimintoihin tai käyttää erikoistuneita työkaluja kuten `csvkit` monimutkaisempiin tehtäviin.
 
 ### CSV-tiedoston lukeminen ja ensimmäisen sarakkeen tulostaminen:

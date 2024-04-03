@@ -11,9 +11,6 @@ title: "H\xE4mta en webbsida"
 weight: 42
 ---
 
-## Vad & Varför?
-Att ladda ner en webbsida innebär att hämta dess innehåll över internet. Programmerare gör detta för att samla data, automatisera tester eller övervaka tillgänglighet.
-
 ## How to:
 I Clojure kan du använda `clj-http` biblioteket för att enkelt ladda ner innehållet på en webbsida. Här är ett exempel:
 

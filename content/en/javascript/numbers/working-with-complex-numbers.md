@@ -9,9 +9,6 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-Complex numbers are numbers with a real and an imaginary part (like 3 + 4i). They crop up in various programming problems, especially in signal processing, quantum computing, and solving polynomial equations. Programmers juggle them to crunch these kind of tasks effectively.
-
 ## How to:
 JavaScript doesn't have built-in complex number support, but you can roll your sleeves up and handle it with objects and math. Here's a quick take.
 

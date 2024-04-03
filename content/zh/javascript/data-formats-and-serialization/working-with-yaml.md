@@ -22,12 +22,7 @@ title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 weight: 41
 ---
 
-## 什么 & 为什么？
-
-YAML，即 "YAML Ain't Markup Language"（YAML 不是标记语言）的缩写，是一种人类可读的数据序列化格式。程序员经常使用它来处理配置文件和跨语言的数据交换，因为与 JSON 或 XML 相比，它的简单性和可读性更强。
-
 ## 如何操作：
-
 在 JavaScript 中，处理 YAML 通常涉及使用第三方库，因为该语言没有内置的 YAML 解析器。用于此目的最流行的库之一是 `js-yaml`。你可以使用 `js-yaml` 将 YAML 解析成 JavaScript 对象，反之亦然。
 
 首先，你需要安装 `js-yaml`：

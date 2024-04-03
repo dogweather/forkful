@@ -12,9 +12,6 @@ title: Loggning
 weight: 17
 ---
 
-## Vad & Varför?
-Loggning är i grund och botten processen att spela in händelser och datautgångar från en mjukvara när den körs, tänk på det som mjukvarans dagbok. Programmerare använder loggning för att hålla koll på vad som händer under huven - det är ovärderligt för att felsöka problem, övervaka systembeteende i realtid och analysera tidigare aktivitet för prestandaoptimeringar eller revisioner.
-
 ## Hur man gör:
 Elms arkitektur stöder inte sidoeffekter som loggning direkt ur lådan - du hanterar dem genom kommandon, som är en del av din applikations arkitektur. I utbildningssyfte, låt oss kontrollera hur du kan simulera loggning genom att skicka meddelanden till JavaScript genom portar.
 

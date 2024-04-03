@@ -10,9 +10,6 @@ title: Creazione di un file temporaneo
 weight: 21
 ---
 
-## What & Why?
-Creare un file temporaneo significa generare un file che è destinato a essere usato per un breve periodo di tempo. Lo si fa per scrivere dati che non necessitano di un archivio permanente o per evitare conflitti di accesso ai file in operazioni concorrenti.
-
 ## How to:
 PHP offre una funzione incorporata `tmpfile()` che crea un file temporaneo nel sistema. Ecco un esempio di utilizzo:
 

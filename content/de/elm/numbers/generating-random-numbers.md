@@ -16,9 +16,6 @@ title: Zufallszahlen generieren
 weight: 12
 ---
 
-## Was & Warum?
-Das Generieren von Zufallszahlen in Elm erfordert die Verwendung des `Random`-Moduls, um Pseudozufallszahlen zu erzeugen, die für eine Vielzahl von Aufgaben wie Spiele, Simulationen und sogar als Teil von Algorithmen, die stochastische Prozesse benötigen, nützlich sind. Diese Fähigkeit ermöglicht es Entwicklern, Unvorhersehbarkeit und Vielfalt in ihre Anwendungen zu bringen, was die Benutzererfahrung und Funktionalität verbessert.
-
 ## Wie geht das:
 Elms reine funktionale Natur bedeutet, dass du nicht direkt Zufallszahlen generieren kannst, wie du es vielleicht in imperativen Sprachen tun würdest. Stattdessen verwendest du das `Random`-Modul in Verbindung mit Befehlen. Hier ist ein einfaches Beispiel, das eine zufällige Ganzzahl zwischen 1 und 100 generiert.
 

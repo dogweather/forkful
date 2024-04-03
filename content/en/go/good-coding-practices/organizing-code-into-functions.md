@@ -10,12 +10,7 @@ title: Organizing code into functions
 weight: 18
 ---
 
-## What & Why?
-
-Organizing code into functions in Go involves breaking down code into reusable, modular blocks that perform specific tasks. This approach enhances code readability, maintainability, and facilitates team collaboration by enabling programmers to work on different functions simultaneously.
-
 ## How to:
-
 In Go, you define a function using the `func` keyword, followed by the function's name, parameters (if any), and the return type. Let's illustrate with a simple example:
 
 ```go
@@ -70,7 +65,6 @@ func main() {
 ```
 
 ## Deep Dive
-
 The concept of organizing code into functions isn't peculiar to Go—it's a fundamental programming principle. However, Go introduces certain conventions and capabilities that distinguish its function management. For instance, the ability to return multiple values from functions is relatively unique and can lead to cleaner, more understandable code, particularly when dealing with operations that might traditionally require the use of pointers or exception handling.
 
 Moreover, Go's support for first-class functions—functions that can be passed as arguments to other functions, returned as values from functions, and assigned to variables—enhances the language's support for functional programming patterns. This feature is particularly useful in creating high-order functions that manipulate or combine other functions.

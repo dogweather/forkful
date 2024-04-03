@@ -12,12 +12,7 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-
-Das Schreiben in eine Textdatei in Haskell dreht sich darum, Dateien mit textuellem Inhalt programmatisch zu erstellen oder zu aktualisieren. Programmierer tun dies, um Daten wie Logmeldungen, Ausgaben von Anwendungen oder von Benutzern generierte Inhalte zu speichern, was eine grundlegende Aufgabe für Anwendungen ist, die Datenspeicherung oder Protokollierung erfordern.
-
 ## Wie:
-
 Die Standard Prelude von Haskell bietet grundlegende Unterstützung für das Schreiben in Dateien mit den Funktionen `writeFile` und `appendFile` aus dem `System.IO`-Modul. Hier ist ein einfaches Beispiel dafür, wie man eine neue Datei erstellt (oder eine vorhandene überschreibt) und dann Text an eine Datei anhängt.
 
 ```haskell

@@ -10,9 +10,6 @@ title: Vergleich von zwei Daten
 weight: 27
 ---
 
-## What & Why? (Was und Warum?)
-Das Vergleichen zweier Daten ermittelt, welches früher oder später liegt oder ob sie identisch sind. Für Programmierer ist das wichtig, um Zeitdifferenzen zu berechnen, Zeitpunkte zu sortieren oder Zeitabhängigkeiten zu steuern.
-
 ## How to: (Wie geht das?)
 Bash-Skripte nutzen oft `date` und `test` Befehle für den Vergleich:
 

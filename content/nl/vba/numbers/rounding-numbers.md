@@ -12,12 +12,7 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-
-Afronden van getallen in programmeren gaat over het benaderen van een getal tot het dichtstbijzijnde gehele getal of tot een bepaald aantal decimalen. Programmeurs ronden getallen af om cijfers te vereenvoudigen, de leesbaarheid te verbeteren of om te voldoen aan specifieke numerieke criteria in berekeningen, vooral bij financiële berekeningen waar precisie belangrijk is.
-
 ## Hoe te:
-
 In Visual Basic for Applications (VBA) kan afronden worden bereikt met behulp van verschillende functies, elk geschikt voor specifieke scenario's. Hier zijn de meest gebruikte functies met voorbeelden:
 
 1. **Round-functie**:
@@ -53,7 +48,6 @@ In Visual Basic for Applications (VBA) kan afronden worden bereikt met behulp va
    ```
 
 ## Diepgaand
-
 De `Round`-functie in VBA verschilt inherent van afrondingsmethoden in andere talen door het gebruik van **Bankiersafronding**. Bankiersafronding rondt af naar het dichtstbijzijnde even getal wanneer precies halverwege tussen twee getallen, waardoor de bias in berekeningen over een grote dataset wordt verminderd en een statistisch significant resultaat wordt verkregen. Dit kan echter leiden tot onverwacht gedrag voor degenen die er niet bekend mee zijn, vooral wanneer integrale precisie in elk geval wordt verwacht.
 
 In tegenstelling tot veel programmeertalen en systemen gebruiken "arithmetisch afronden" of "half-omhoog afronden", waarbij een getal dat precies halverwege tussen twee mogelijke afgeronde waarden is, altijd wordt afgerond naar boven. Wanneer je code vertaalt of overzet van andere talen naar VBA, moeten programmeurs deze verschillen in gedachten houden om subtiele bugs of onnauwkeurigheden in financiële en statistische toepassingen te vermijden.

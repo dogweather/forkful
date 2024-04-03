@@ -11,9 +11,6 @@ title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mikä ja miksi?
-REPL, eli Read-Eval-Print Loop, on ohjelmointiympäristö, jossa Clojure-koodia voidaan testata dynaamisesti pala palalta. Ohjelmoijat käyttävät sitä välittömän palautteen saamiseen, iteratiiviseen kehittämiseen ja nopeaan kokeiluun ilman koko projektin ympäristön pystyttämisen tai koodin kääntämisen vaivaa.
-
 ## Kuinka:
 Aloita käynnistämällä REPL:
 

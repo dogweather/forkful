@@ -12,12 +12,7 @@ title: Removendo aspas de uma string
 weight: 9
 ---
 
-## O Que & Por Quê?
-
-Remover aspas de uma string em Go é sobre eliminar as aspas de abertura e fechamento (`"` ou `'`) de uma determinada string. Programadores frequentemente precisam realizar essa tarefa para higienizar a entrada do usuário, analisar dados de texto de maneira mais eficaz ou preparar strings para processamento adicional que exige conteúdo sem aspas.
-
 ## Como Fazer:
-
 Go oferece várias abordagens para remover aspas de uma string, mas um dos métodos mais diretos é usar as funções `Trim` e `TrimFunc` fornecidas pelo pacote `strings`. Eis como fazer isso:
 
 ```go
@@ -54,7 +49,6 @@ Usando strings.TrimFunc: Esta é uma string 'entre aspas'
 Ambos os métodos removem efetivamente as aspas de abertura e fechamento da string.
 
 ## Mergulho Profundo
-
 As funções `Trim` e `TrimFunc` do pacote `strings` fazem parte da extensa biblioteca padrão do Go, projetada para oferecer capacidades poderosas, porém simplificadas, de manipulação de strings sem a necessidade de pacotes de terceiros. Historicamente, a necessidade de manipular e processar strings de forma eficiente decorre do foco principal do Go em servidores de rede e analisadores de dados, onde o processamento de strings é uma tarefa comum.
 
 Um aspecto notável dessas funções é a sua implementação baseada em runes (representação do Go para um ponto de código Unicode). Esse design permite que elas lidem de forma transparente com strings contendo caracteres multibyte, tornando a abordagem do Go para manipulação de strings robusta e amigável ao Unicode.

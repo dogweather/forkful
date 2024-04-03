@@ -11,9 +11,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---
 
-## O Que & Porquê?
-Enviar uma requisição HTTP é o processo de pedir dados ou recursos de um servidor usando o protocolo HTTP. Programadores fazem isso para interagir com APIs, acessar conteúdos web, ou comunicar entre diferentes sistemas.
-
 ## Como Fazer:
 Vamos usar a biblioteca `cpr` que é uma abstração da `libcurl` em C++ para facilitar o envio de requisições HTTP.
 

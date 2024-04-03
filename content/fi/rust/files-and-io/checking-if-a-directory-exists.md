@@ -14,9 +14,6 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mikä & Miksi?
-Ohjelmistokehityksessä on usein tarpeen tarkistaa, olemassaoko hakemisto, välttääkseen virheitä yrittäessä päästä käsiksi, lukea tai kirjoittaa tiedostoja. Rust, ollessaan järjestelmäohjelmoinnin kieli, tarjoaa vankkoja menetelmiä tämän tehtävän suorittamiseen, varmistaen ohjelmasi voivan käsitellä tiedostoja ja hakemistoja turvallisesti ja tehokkaasti.
-
 ## Kuinka:
 Rustin standardikirjasto (`std`) sisältää toiminnallisuuden hakemiston olemassaolon tarkistamiseksi `std::path::Path` ja `std::fs` moduulien kautta. Tässä on yksinkertainen esimerkki käyttäen Rustin standardimenetelmää:
 

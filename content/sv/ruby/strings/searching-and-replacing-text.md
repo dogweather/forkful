@@ -11,9 +11,6 @@ title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---
 
-## What & Why? (Vad & Varför?)
-Söka och ersätta text är tekniken att hitta specifika textsträngar och byta ut dem med något annat. Programmerare gör detta för att snabbt uppdatera kod, korrigera fel eller manipulera data.
-
 ## How to: (Hur gör man:)
 ```Ruby
 # Exempel: Söka och byta ut med String#gsub

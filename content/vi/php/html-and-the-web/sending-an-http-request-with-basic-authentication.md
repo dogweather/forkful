@@ -17,12 +17,7 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1
 weight: 45
 ---
 
-## Gì và Tại sao?
-
-Gửi một yêu cầu HTTP với xác thực cơ bản bao gồm việc thêm tên đăng nhập và mật khẩu để truy cập vào một tài nguyên trên máy chủ. Các lập trình viên sử dụng phương pháp này bởi vì một số API và dịch vụ web yêu cầu xác thực để đảm bảo chỉ có người dùng được ủy quyền mới có thể truy cập dữ liệu của họ.
-
 ## Cách thực hiện:
-
 Dưới đây là cách đơn giản để gửi một yêu cầu HTTP với xác thực cơ bản sử dụng cURL trong PHP:
 
 ```PHP
@@ -53,7 +48,6 @@ Kết quả mẫu:
 ```
 
 ## Tìm hiểu kỹ
-
 Xác thực HTTP cơ bản đã được sử dụng từ những ngày đầu của web. Đây không phải là lựa chọn an ninh tốt nhất xung quanh (vì thông tin xác thực được gửi dưới dạng mã hóa base64, dễ dàng bị giải mã), nhưng nó dễ dàng thực hiện cho việc kiểm soát truy cập nhanh chóng.
 
 Giả sử an ninh là một vấn đề (và nó nên được), bạn sẽ chuyển sang các phương pháp mạnh mẽ hơn như OAuth, JWT hoặc khóa API. Tuy nhiên, xác thực cơ bản vẫn tồn tại một phần do các hệ thống di sản và một phần cho các hệ thống nội bộ nơi bạn kiểm soát truy cập một cách chặt chẽ.
@@ -77,7 +71,6 @@ echo $response;
 Việc chọn công cụ phù hợp phụ thuộc vào nhu cầu của dự án bạn và mức độ kiểm soát và chức năng bạn mong muốn.
 
 ## Xem thêm
-
 Để tìm hiểu sâu hơn và mở rộng kiến thức, hãy xem những tài liệu sau:
 
 - [Tài liệu cURL](https://www.php.net/manual/en/book.curl.php)

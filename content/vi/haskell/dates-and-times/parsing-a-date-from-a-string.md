@@ -15,12 +15,7 @@ title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---
 
-## Cái gì & Tại sao?
-
-Phân tích cú pháp một ngày tháng từ chuỗi nghĩa là biến đổi văn bản thành loại dữ liệu ngày tháng. Các lập trình viên thường cần chuyển đổi đầu vào của người dùng hoặc nội dung của tệp văn bản thành các ngày tháng có cấu trúc để xử lý và thao tác.
-
 ## Cách thực hiện:
-
 Haskell cung cấp nhiều cách để phân tích cú pháp ngày tháng, nhưng chúng ta hãy tập trung vào thư viện `time` và một ví dụ đơn giản sử dụng `parseTimeM`. Đảm bảo bạn đã cài đặt gói `time`.
 
 ```haskell
@@ -40,7 +35,6 @@ main = do
 ```
 
 ## Sâu hơn
-
 Trong lịch sử, việc phân tích cú pháp ngày tháng đã được xử lý khác nhau qua các ngôn ngữ và thư viện, với nhiều người sử dụng các biến thể của mẫu `strftime` từ C. Thư viện `time` của Haskell phản ánh cách tiếp cận này để giữ sự nhất quán. Các phương án thay thế cho `time` bao gồm việc sử dụng gói `old-time`, hiện đã bị khai tử, hoặc các thư viện của bên thứ ba như `thyme` hoặc `chronos`.
 
 Về mặt thực hiện, phân tích cú pháp trong Haskell là an toàn theo kiểu, do đó sử dụng `Maybe` trong ví dụ để xử lý các trường hợp phân tích cú pháp thất bại. Hàm `parseTimeM` sử dụng suy luận kiểu để xác định kiểu trả về, làm cho nó linh hoạt. Việc hiểu các chỉ định định dạng, như `%Y-%m-%d` cho năm-tháng-ngày, là rất quan trọng.
@@ -48,7 +42,6 @@ Về mặt thực hiện, phân tích cú pháp trong Haskell là an toàn theo 
 Hệ thống kiểu mạnh của Haskell đảm bảo rằng một khi ngày đã được phân tích cú pháp, thì rõ ràng và không thể nhầm lẫn kiểu của nó, giảm thiểu các lỗi thời gian chạy liên quan đến thao tác ngày tháng. Tuy nhiên, sự nghiêm ngặt này đồng nghĩa với việc bạn phải xử lý các trường hợp khi đầu vào không khớp với mẫu mong đợi, do đó là việc sử dụng kết hợp mẫu cho `Just` và `Nothing`.
 
 ## Xem Thêm
-
 - Tài liệu thư viện `time` của Haskell: [https://hackage.haskell.org/package/time](https://hackage.haskell.org/package/time)
 - Hướng dẫn "Learn You a Haskell" về ngày và giờ: [http://learnyouahaskell.com/](http://learnyouahaskell.com/) - (tìm trong phần "Data.Time")
 - Các chỉ định định dạng cho `Data.Time.Format`: [https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html#v:formatTime](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html#v:formatTime)

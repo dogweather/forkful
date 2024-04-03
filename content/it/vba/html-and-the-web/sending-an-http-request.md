@@ -12,12 +12,7 @@ title: Inviare una richiesta HTTP
 weight: 44
 ---
 
-## Cosa e Perché?
-
-Inviare una richiesta HTTP in Visual Basic for Applications (VBA) comporta l'accesso programmatico a risorse o servizi web effettuando richieste tramite HTTP. I programmatori lo fanno per ottenere dati, interagire con API online o inviare moduli in modo programmatico dalle loro applicazioni abilitate a VBA, come Excel, Access o soluzioni VBA personalizzate.
-
 ## Come fare:
-
 La chiave per inviare una richiesta HTTP in VBA è utilizzare la libreria `Microsoft XML, v6.0` (o versioni precedenti, a seconda del vostro sistema). Prima di tutto, assicuratevi che questo riferimento sia abilitato nel vostro progetto andando in Strumenti > Riferimenti nell'editor VBA e selezionando `Microsoft XML, v6.0`.
 
 Ecco come inviare una semplice richiesta HTTP GET:
@@ -63,7 +58,6 @@ Un esempio di output per una richiesta riuscita potrebbe essere una stringa JSON
 ```
 
 ## Approfondimento
-
 Il metodo presentato utilizza l'oggetto `MSXML2.XMLHTTP`, parte dei Servizi Core Microsoft XML (MSXML). È stato introdotto per offrire ai sviluppatori VBA un modo per eseguire operazioni basate su XML e, col tempo, è diventato un comune strumento per le richieste HTTP, anche quando non si lavora direttamente con dati XML. Nonostante la sua età, rimane un'opzione affidabile per semplici interazioni web in VBA.
 
 Tuttavia, VBA e i suoi meccanismi di richiesta HTTP mancano della robustezza e flessibilità riscontrabili nei moderni ambienti di programmazione. Per esempio, gestire richieste asincrone o lavorare all'interno di applicazioni che richiedono funzionalità HTTP avanzate (come websocket o eventi inviati dal server) è al di fuori delle possibilità di VBA. Quando si lavora su progetti di integrazione web più complessi, i sviluppatori spesso si affidano a librerie o strumenti esterni, o addirittura automatizzano il comportamento del browser tramite tecniche di web scraping, sebbene queste siano delle soluzioni alternative piuttosto che vere e proprie soluzioni.

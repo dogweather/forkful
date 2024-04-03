@@ -14,11 +14,7 @@ title: Generowanie liczb losowych
 weight: 12
 ---
 
-## Co i dlaczego?
-Generowanie losowych liczb w Dart polega na tworzeniu wartości numerycznych, które są nieprzewidywalne i różnią się przy każdym wykonaniu. Programiści wykorzystują tę funkcjonalność z różnych powodów, począwszy od symulowania scenariuszy świata rzeczywistego w środowiskach testowych, poprzez umożliwienie mechanik gier, aż po zapewnienie bezpieczeństwa poprzez losowość w operacjach kryptograficznych.
-
 ## Jak to zrobić:
-
 Biblioteka podstawowa Darta zapewnia wsparcie dla generowania losowych liczb za pomocą klasy `Random`, znajdującej się w `dart:math`. Oto podstawowy przykład:
 
 ```dart

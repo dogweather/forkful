@@ -12,9 +12,6 @@ title: Registro de Actividades
 weight: 17
 ---
 
-## ¿Qué y Por Qué?
-Registrar es básicamente dejar un rastro de migajas a través de tu código - es la forma de mantener un control de lo que está sucediendo cuando tu script se está ejecutando en la libertad. Los programadores registran para depurar, seguir el comportamiento de la aplicación, monitorear el rendimiento y vigilar cualquier travesura.
-
 ## Cómo hacerlo:
 Aquí tienes la esencia de cómo esparcir algo de registro básico en tus scripts:
 

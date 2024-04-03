@@ -11,9 +11,6 @@ title: Arrondir les nombres
 weight: 13
 ---
 
-## Quoi & Pourquoi ?
-Arrondir des nombres signifie les ajuster au nombre entier le plus proche ou à une fraction avec une certaine précision. Les programmeurs arrondissent les nombres pour simplifier les valeurs pour la lisibilité humaine, pour répondre aux exigences des spécifications, ou pour réduire la charge de calcul dans les opérations à virgule flottante.
-
 ## Comment faire :
 Rust rend l'arrondi très simple. Découvrez ces méthodes pour les types `f32` ou `f64` :
 

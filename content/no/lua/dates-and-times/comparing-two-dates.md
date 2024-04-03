@@ -11,9 +11,6 @@ title: Sammenlikning av to datoer
 weight: 27
 ---
 
-## Hva & Hvorfor?
-Sammenligning av to datoer betyr rett og slett å sjekke hvilken dato kommer før eller etter en annen. Programmerere gjør dette for å håndtere tidslinjer, frister, og tidssensitive funksjoner.
-
 ## Hvordan:
 ```Lua
 os.date("*t") -- Henter dagens dato som en tabell

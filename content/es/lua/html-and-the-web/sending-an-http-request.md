@@ -10,9 +10,6 @@ title: Enviando una solicitud http
 weight: 44
 ---
 
-## ¿Qué y Por Qué?
-Enviar una solicitud HTTP significa pedirle a un servidor web que comparta datos o que reciba los tuyos. Los programadores lo hacen para interactuar con APIs, servicios web y para automatizar tareas a través de internet.
-
 ## Cómo hacerlo:
 ```Lua
 -- Necesitas la librería de socket para HTTP

@@ -14,12 +14,7 @@ title: Komentorivin argumenttien lukeminen
 weight: 23
 ---
 
-## Mikä & Miksi?
-
-C-ohjelmoinnissa komentoriviparametrien lukeminen mahdollistaa syötteiden vastaanottamisen suoraan terminaalista, mikä lisää ohjelmien joustavuutta ja käytettävyyttä. Ohjelmoijat hyödyntävät tätä skriptien käyttäytymisen määrittämiseen koodia muokkaamatta, mikä tekee sovelluksista mukautuvia ja tehokkaita.
-
 ## Kuinka:
-
 C:ssä `main`-funktio voidaan suunnitella vastaanottamaan komentoriviparametrit parametreilla `int argc` ja `char *argv[]`. Tässä `argc` edustaa välitettyjen argumenttien määrää, ja `argv` on merkkiosoittimien taulukko, joka listaa kaikki argumentit. Tässä on nopea esimerkki havainnollistamaan:
 
 ```c
@@ -47,7 +42,6 @@ Argumentti 2: example
 Tämä osoittaa, kuinka komentoriviparametreja voidaan jäsentää ja hyödyntää C-ohjelmassa.
 
 ## Syväsukellus
-
 Argumenttien välittämisen perinne ohjelmille juontaa juurensa Unixin alkuaikoihin. Tässä perinteisessä lähestymistavassa `argc` ja `argv` tarjoavat yksinkertaisen, mutta voimakkaan käyttöliittymän komentorivivuorovaikutukseen, ilmentäen Unixin filosofiaa pienistä, modulaarisista apuvälineistä, jotka toimivat yhdessä. Vaikka modernit kielet usein esittelevät monimutkaisempia kirjastoja tai kehyksiä komentoriviparametrien jäsentämiseen, C:n metodin välittömyys tarjoaa vertaansa vailla olevan läpinäkyvyyden ja kontrollin.
 
 Viimeaikaisissa kehityksissä, kuten `getopt`-kirjastossa POSIX-järjestelmissä, on kehittynyt tukemaan monimutkaisempia jäsentämistarpeita, kuten pitkien valitsinnimien käsittelyä tai oletusarvoja puuttuville argumenteille. Silti perusmekanismi `argc` ja `argv` pysyy olennaisena ymmärtämään, kuinka ohjelmat vuorovaikuttavat suoritusaikaisessa ympäristössään C:ssä.

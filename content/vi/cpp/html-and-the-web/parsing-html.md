@@ -15,9 +15,6 @@ title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---
 
-## Điều gì & Tại sao?
-Phân tích cú pháp HTML có nghĩa là phá vỡ nội dung HTML thành cái gì đó mà chương trình có thể hiểu và thao tác được. Lập trình viên làm điều này để trích xuất dữ liệu, thao tác nội dung hoặc tích hợp việc quét web vào ứng dụng của họ.
-
 ## Cách thức:
 C++ không đi kèm với khả năng phân tích cú pháp HTML được tích hợp sẵn. Bạn thường sẽ sử dụng một thư viện như Gumbo-parser của Google, hoặc một cái gì đó tương tự. Dưới đây là một ví dụ nhanh sử dụng Gumbo-parser:
 

@@ -12,12 +12,7 @@ title: Een string interpoleren
 weight: 8
 ---
 
-## Wat & Waarom?
-
-Stringinterpolatie is een methode om strings te construeren die variabelen bevatten, waardoor dynamische stringcreatie mogelijk is. Programmeurs doen dit om berichten aan te passen, URL's te construeren, SQL-queries te maken en meer, wat zorgt voor code die leesbaarder en onderhoudbaarder is.
-
 ## Hoe te:
-
 In Go wordt stringinterpolatie vaak bereikt met behulp van het `fmt`-pakket, met name met de functie `Sprintf`, waarmee je variabelen in een string kunt injecteren door opmaakvervoegwoorden te specificeren. De vervoegwoorden zijn placeholders in de formatstring en worden vervangen door de waarden van de gegeven variabelen. Hier is hoe je het gebruikt:
 
 ```go
@@ -40,7 +35,6 @@ func main() {
 Merk op dat `%s` wordt gebruikt voor strings en `%d` voor gehele getallen. De documentatie van het `fmt`-pakket biedt een uitgebreide lijst van opmaakvervoegwoorden voor verschillende datatypen.
 
 ## Diepere Duik
-
 Het concept van stringinterpolatie bestaat in veel programmeertalen, zij het met verschillende syntaxis en mogelijkheden. In Go, terwijl de `Sprintf`-functie van het `fmt`-pakket de meest gebruikte benadering is, is dit mogelijk niet altijd de meest efficiënte, vooral niet voor eenvoudige concatenaties of wanneer gewerkt wordt binnen zeer prestatiegevoelige code.
 
 Het `fmt`-pakket gebruikt reflectie om dynamisch de typen van de variabelen op runtime te interpreteren, wat, hoewel flexibel, overhead met zich meebrengt. Voor scenario's waar prestatie cruciaal is, kunnen directe stringconcatenatie of het type `strings.Builder` betere alternatieven bieden. Directe concatenatie is eenvoudig, maar kan onhandelbaar worden met meerdere variabelen. `Strings.Builder`, aan de andere kant, biedt een meer prestatiegerichte en leesbare manier om complexe strings te bouwen in een lus of bij het omgaan met veel variabelen:

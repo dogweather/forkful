@@ -11,9 +11,6 @@ title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## What & Why? (Co i Dlaczego?)
-Zmiana napisów na małe litery oznacza przekształcenie wszystkich liter w ciągu znaków na ich małe odpowiedniki. Robimy to dla ujednolicenia danych, łatwiejszego porównywania stringów, czy też przygotowania tekstu do wyszukiwań czy sortowań niezależnych od wielkości liter.
-
 ## How to (Jak to zrobić):
 Chcąc zmienić napis na małe litery w C++, używamy standardowej biblioteki `<algorithm>` i funkcji `std::transform` wraz z `::tolower`.
 

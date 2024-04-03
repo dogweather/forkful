@@ -12,12 +12,7 @@ title: Scrivere sull'errore standard
 weight: 25
 ---
 
-## Cosa & Perché?
-
-Scrivere su standard error (stderr) in Elixir è un metodo per indirizzare messaggi di errore e diagnostica separatamente dall'output principale (stdout). I programmatori usano stderr per effettuare il debug e gestire gli errori senza ingombrare l'output principale del programma, rendendo più facile identificare e affrontare i problemi.
-
 ## Come fare:
-
 In Elixir, puoi utilizzare funzioni del modulo `IO` come `IO.puts/2` e `IO.warn/2` per scrivere messaggi su standard error:
 
 ```elixir

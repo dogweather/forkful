@@ -13,12 +13,7 @@ title: Analisi di una data da una stringa
 weight: 30
 ---
 
-## Cosa & Perché?
-
-L'analisi di una data da una stringa in Haskell consiste nel convertire le rappresentazioni testuali delle date in un formato strutturato che il programma può manipolare. Questo processo è fondamentale per le applicazioni che trattano dati calendari, consentendo funzioni come il calcolo delle durate, la pianificazione e la convalida dei dati.
-
 ## Come fare:
-
 Di base, Haskell offre strumenti semplici per l'analisi delle date, ma sfruttare librerie come `time` per la funzionalità di base e `date-parse` o `time-parse` per un'analisi più flessibile, può semplificare notevolmente il compito.
 
 Innanzitutto, assicurati di avere la libreria `time` disponibile; è spesso inclusa con GHC, ma se devi specificarla come dipendenza, aggiungi `time` al file cabal del tuo progetto o usa `cabal install time` per installarla manualmente.

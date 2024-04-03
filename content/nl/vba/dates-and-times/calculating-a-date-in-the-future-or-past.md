@@ -13,9 +13,6 @@ title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---
 
-## Wat & Waarom?
-Een datum in de toekomst of het verleden berekenen houdt in dat je een datum bepaalt die een gespecificeerd aantal dagen, maanden of jaren vanaf een gegeven datum verwijderd is. Programmeurs hebben deze functionaliteit vaak nodig om herinneringen, abonnementen, vervaldatums en planningstaken in verschillende toepassingen te automatiseren.
-
 ## Hoe:
 In Visual Basic for Applications (VBA) is de primaire functie die gebruikt wordt om toekomstige of verleden datums te berekenen `DateAdd()`. Deze functie voegt een gespecificeerd tijdsinterval toe aan een datum, en retourneert een nieuwe datum.
 

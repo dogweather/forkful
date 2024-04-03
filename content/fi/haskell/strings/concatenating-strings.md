@@ -11,9 +11,6 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## What & Why? | Mikä & Miksi?
-Yhdistelemme merkkijonoja (eli teemme konkatenointia) liittääksemme tekstinpätkiä yhteen. Se on peruskauraa kaikessa ohjelmoinnissa: loihdit viestejä, teet tulosteista luettavia tai kasaat dataa käsittelyä varten.
-
 ## How to: | Näin teet:
 Haskellissa on suoraan sanottuna nautinnollisen puhdasta koodata. Katsoppas näitä esimerkkejä:
 

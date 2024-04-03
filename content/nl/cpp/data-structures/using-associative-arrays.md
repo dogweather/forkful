@@ -14,16 +14,10 @@ title: Gebruik van associatieve arrays
 weight: 15
 ---
 
-## Wat & Waarom?
-
-Associatieve arrays, bekend als `std::map` of `std::unordered_map` in C++, overbruggen de kloof tussen array-indexen en gegevens uit de echte wereld door je in staat te stellen om betekenisvolle sleutels te gebruiken. Ze zijn de go-to wanneer je snelle opzoekingen, invoegingen en verwijderingen nodig hebt met behulp van sleutels in plaats van indexposities.
-
 ## Hoe te:
-
 In C++ komen associatieve arrays tot leven met de `<map>` en `<unordered_map>` headers. Laten we enkele voorbeelden doorlopen om beide in actie te zien.
 
 ### Gebruikmakend van `std::map`
-
 `std::map` houdt elementen gesorteerd op basis van de sleutel. Hier is hoe je begint:
 
 ```C++
@@ -51,7 +45,6 @@ int main() {
 ```
 
 ### Gebruikmakend van `std::unordered_map`
-
 Wanneer volgorde er niet toe doet, maar prestatie wel, is `std::unordered_map` je vriend, met een snellere gemiddelde complexiteit voor invoegingen, opzoekingen en verwijderingen.
 
 ```C++
@@ -79,7 +72,6 @@ int main() {
 ```
 
 ## Diepgaande Verkenning
-
 Associatieve arrays in C++, in het bijzonder `std::map` en `std::unordered_map`, gaan niet alleen over het opslaan van elementen. Ze bieden een fundament voor meer complex beheer van gegevens door operaties zoals zoeken, invoegen en verwijderen mogelijk te maken in efficiënte tijdcomplexiteiten (logaritmisch voor `std::map` en gemiddeld constante tijd voor `std::unordered_map`). Deze efficiëntie komt voort uit de onderliggende datastructuren: een gebalanceerde boom voor `std::map` en een hash-tabel voor `std::unordered_map`.
 
 Historisch gezien, voordat deze deel uitmaakten van de standaardbibliotheek, moesten programmeurs hun eigen versies implementeren of gebruikmaken van bibliotheken van derden, wat leidde tot inconsistenties en mogelijke inefficiënties. De inclusie van maps in C++'s standaardbibliotheek heeft niet alleen hun gebruik gestandaardiseerd maar ook geoptimaliseerd voor prestaties over verschillende compilers en platformen heen.

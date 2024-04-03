@@ -11,9 +11,6 @@ title: "Descargando una p\xE1gina web"
 weight: 42
 ---
 
-## Qué y Por Qué?
-Descargar una página web significa traer el contenido de una URL directa a tu programa. Los programadores lo hacen para procesar datos, automatizar tareas o monitorear cambios en sitios web.
-
 ## Cómo hacerlo:
 Usaremos `file_get_contents` para agarrar el contenido y `file_put_contents` para guardarlo. Aquí un ejemplo:
 

@@ -19,12 +19,7 @@ title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---
 
-## Cái gì & Tại sao?
-
-Việc tạo số ngẫu nhiên trong PHP là về việc sản xuất các giá trị không thể đoán trước trong một dải giá trị nhất định, điều này rất quan trọng cho các tác vụ như tạo ID người dùng độc nhất, sinh mật khẩu, hoặc được sử dụng trong các mô phỏng và trò chơi. Các lập trình viên dựa vào sự ngẫu nhiên để thêm sự không chắc chắn và biến đổi vào ứng dụng của họ, làm cho các quy trình như kiểm thử hay trải nghiệm người dùng trở nên mạnh mẽ và hấp dẫn hơn.
-
 ## Cách thực hiện:
-
 PHP cung cấp một số hàm để sinh số ngẫu nhiên, nhưng các hàm thường được sử dụng nhất là `rand()`, `mt_rand()`, và cho mục đích mật mã hóa, `random_int()`.
 
 Để tạo một số ngẫu nhiên đơn giản giữa 0 và getrandmax() (giá trị lớn nhất có thể trả về bởi `rand()`), bạn có thể sử dụng:
@@ -56,7 +51,6 @@ echo random_int(1, 100);
 Một lần nữa, kết quả là một số ngẫu nhiên giữa 1 và 100, như `84`, nhưng với một bảo đảm mạnh mẽ hơn về tính ngẫu nhiên.
 
 ## Sâu hơn
-
 Hàm `rand()` đã có mặt trong PHP từ những phiên bản đầu tiên, phục vụ như là cách tiếp cận ban đầu để sinh số ngẫu nhiên. Tuy nhiên, nó không phải là lựa chọn tốt nhất cho các ứng dụng cần một mức độ ngẫu nhiên cao do thuật toán tương đối dễ dự đoán của nó.
 
 `mt_rand()`, được giới thiệu trong PHP 4, dựa trên thuật toán Mersenne Twister - vượt trội về tốc độ và mức độ ngẫu nhiên có thể tạo ra so với `rand()`. Nó nhanh chóng trở thành lựa chọn ưa thích cho hầu hết nhu cầu không mật mã.

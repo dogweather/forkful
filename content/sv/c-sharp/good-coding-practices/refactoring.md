@@ -11,12 +11,7 @@ title: Refaktorisering
 weight: 19
 ---
 
-## Vad & Varför?
-
-Refaktorering är processen att omstrukturera befintlig datorprogramkod utan att ändra dess yttre beteende. Programmerare gör det för att rensa upp kod, förbättra läsbarheten, minska komplexiteten och förbättra underhållbarheten.
-
 ## Hur:
-
 Låt oss refaktorera en enkel C#-metod som beräknar och skriver ut summan av en array av nummer:
 
 Före refaktorering:
@@ -66,7 +61,6 @@ calculator.DisplaySum();
 Genom att refaktorera har vi separerat ansvarsområden, gjort `Calculator`-klassen mer flexibel genom att tillåta den ta emot vilken nummerarray som helst, och utnyttjat LINQ för att göra summaberäkningen mer koncis.
 
 ## Fördjupning
-
 Refaktorering har sina rötter i programmeringssamhället smalltalk och populariserades under 1990-talet genom Martin Fowlers bok "Refactoring: Improving the Design of Existing Code". Över åren har det blivit en grundläggande del av agila metoder och goda kodningspraxis.
 
 Det finns olika tillvägagångssätt för refaktorering, såsom Red-Green-Refactor inom Test-Driven Development (TDD). Det säkerställer att refaktoreringen inte introducerar buggar genom att starta med ett misslyckat test, få det att passera och sedan städa upp koden.
@@ -74,7 +68,6 @@ Det finns olika tillvägagångssätt för refaktorering, såsom Red-Green-Refact
 När man implementerar refaktorering, är det avgörande att ha en omfattande testsvit för att säkerställa att ingen funktionalitet går förlorad under processen. Automatiserade refaktoreringsverktyg, som ReSharper för C#, kan också hjälpa till i denna process genom att erbjuda säkra sätt att ändra kodstrukturer. Dock bör verktyg vara ett komplement till en djup förståelse av kodbasen och kodningsprinciper.
 
 ## Se också
-
 - Martin Fowlers grundläggande verk om refaktorering: [Refactoring: Improving the Design of Existing Code](https://martinfowler.com/books/refactoring.html)
 - Microsofts guide om refaktorering i Visual Studio: [Refaktorering (C#)](https://docs.microsoft.com/en-us/visualstudio/ide/refactoring-in-visual-studio?view=vs-2022)
 - En detaljerad titt på refaktoreringmönster med exempel: [SourceMaking Refactoring](https://sourcemaking.com/refactoring)

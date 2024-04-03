@@ -15,12 +15,7 @@ title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---
 
-## Quoi et pourquoi ?
-
-Vérifier si un répertoire existe en Visual Basic pour Applications (VBA) consiste à confirmer la présence d'un dossier dans le système de fichiers avant d'effectuer des opérations telles que la sauvegarde de fichiers ou la création de nouveaux répertoires. Les programmeurs le font pour éviter les erreurs d'exécution et s'assurer que leur code interagit avec le système de fichiers de manière efficace et correcte.
-
 ## Comment faire :
-
 En VBA, pour vérifier si un répertoire existe, vous utilisez typiquement la fonction `Dir` combinée à l'attribut `vbDirectory`. Cette approche vous permet de vérifier l'existence d'un dossier en spécifiant son chemin. Voici comment vous pouvez le faire :
 
 ```basic
@@ -47,7 +42,6 @@ Le répertoire existe.
 ```
 
 ## Plongée Profonde
-
 Vérifier si un répertoire existe est une tâche fondamentale dans de nombreux langages de programmation, pas seulement en VBA. La méthode décrite ci-dessus en utilisant `Dir` est simple et efficace pour la plupart des besoins en VBA. Cependant, il convient de noter que cette approche peut avoir des limitations, comme dans les cas de chemins réseau et la gestion des autorisations, qui pourraient parfois produire des négatifs ou positifs erronés.
 
 Historiquement, les méthodes d'accès aux systèmes de fichiers ont évolué à travers différents langages de programmation, les plus récents offrant des approches orientées objet. Par exemple, dans les langages .NET comme VB.NET, on pourrait utiliser `System.IO.Directory.Exists(path)` pour une manière de vérifier l'existence d'un répertoire plus simple et, pourrait-on dire, plus puissante, bénéficiant de la gestion des exceptions et d'informations de retour plus riches.

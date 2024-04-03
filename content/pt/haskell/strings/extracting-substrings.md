@@ -10,9 +10,6 @@ title: Extraindo substrings
 weight: 6
 ---
 
-## O Quê & Porquê?
-Extrair substrings significa pegar partes específicas de uma string. Programadores fazem isso para manipular, analisar ou transformar dados baseados em texto de maneira eficiente.
-
 ## Como Fazer:
 ```Haskell
 import Data.List (isPrefixOf)

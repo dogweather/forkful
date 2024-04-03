@@ -14,9 +14,6 @@ title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---
 
-## Co i dlaczego?
-Pisanie do standardowego błędu (stderr) w Bashu polega na kierowaniu komunikatów błędów lub wszelkich ważnych wyjść diagnostycznych oddzielnie od standardowego wyjścia (stdout). Programiści robią to, aby łatwo identyfikować, rejestrować lub nawet ignorować komunikaty o błędach, co pomaga w debugowaniu i procesach logowania.
-
 ## Jak to zrobić:
 W Bashu używasz `>&2` do przekierowania wyjścia do stderr. Oto podstawowy przykład:
 

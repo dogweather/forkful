@@ -10,9 +10,6 @@ title: Trovare la lunghezza di una stringa
 weight: 7
 ---
 
-## What & Why?
-Calcolare la lunghezza di una stringa significa scoprire quanti caratteri contiene. I programmatori fanno questo per manipolare testo, convalidare input, o semplicemente per sapere quando sono alla fine.
-
 ## How to:
 ```C++
 #include <iostream>

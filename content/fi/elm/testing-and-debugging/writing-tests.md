@@ -13,12 +13,7 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mikä ja miksi?
-
-Testien kirjoittaminen Elm-kielellä käsittää testitapausten laatimisen Elm-koodisi oikeellisuuden varmistamiseksi, jotta se toimii odotetusti. Ohjelmoijat tekevät näin löytääkseen virheitä aikaisin, helpottaakseen ylläpitoa ja parantaakseen sovellustensa laatua ja luotettavuutta.
-
 ## Kuinka:
-
 Elm käyttää `elm-explorations/test`-pakettia yksikkö- ja sumutestien kirjoittamiseen. Aloita lisäämällä paketti projektiisi:
 
 ```elm

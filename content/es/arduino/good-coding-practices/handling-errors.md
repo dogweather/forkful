@@ -11,12 +11,7 @@ title: Manejo de errores
 weight: 16
 ---
 
-## ¿Qué y Por Qué?
-
-El manejo de errores en tus programas detecta los problemas imprevistos que intentarán hacerte tropezar. Lo haces para evitar que tu Arduino tenga un colapso cuando ocurra lo inesperado.
-
 ## Cómo hacerlo:
-
 Digamos que tu Arduino está leyendo un sensor que ocasionalmente puede producir valores fuera del rango. Así es cómo podrías manejarlo:
 
 ```Arduino
@@ -38,7 +33,6 @@ Error: Valor del sensor fuera de rango.
 ```
 
 ## Análisis en Profundidad
-
 El manejo de errores no siempre ha sido tan sencillo. En los primeros días, los desarrolladores a menudo ignoraban los errores, lo que llevaba al temido "comportamiento indefinido". A medida que la programación evolucionó, también lo hicieron las herramientas — ahora tienes excepciones en muchos idiomas, pero todavía es un 'chequéalo-primero' a la vieja escuela en el mundo Arduino debido a las restricciones de hardware y raíces en C++.
 
 En la programación de Arduino, a menudo ves declaraciones `if-else` para el manejo de errores. Pero hay alternativas: usar la función `assert` para detener la ejecución si una condición falla o diseñar salvaguardas dentro de la configuración de tu hardware en sí.
@@ -46,7 +40,6 @@ En la programación de Arduino, a menudo ves declaraciones `if-else` para el man
 Al implementar el manejo de errores, considera el impacto de detener el programa frente a permitir que continúe con un estado predeterminado o seguro. Hay una compensación, y la elección correcta depende del daño potencial de las interrupciones versus la operación incorrecta.
 
 ## Ver También
-
 Profundiza en la detección y manejo de errores con estos:
 
 - Referencia del Lenguaje Arduino: https://www.arduino.cc/reference/en/

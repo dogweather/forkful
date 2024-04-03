@@ -16,9 +16,6 @@ title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
 weight: 44
 ---
 
-## What & Why? (무엇이며, 왜?)
-HTTP 요청 보내기는 서버에 정보를 요청하거나 데이터를 전송하는 통신 방식입니다. 프로그래머들은 API와 상호작용하거나 웹 서비스에 데이터를 가져오고 보내기 위해 이 방법을 사용합니다.
-
 ## How to: (방법)
 Kotlin에서 HTTP 요청을 보내는 기본적인 예제로, 여기에 `HttpURLConnection`을 사용한 코드가 있습니다.
 

@@ -24,12 +24,7 @@ title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 weight: 38
 ---
 
-## 什么 & 为什么？
-
-处理JSON包括将JSON格式的字符串解析成Elixir可以操作的数据结构，以及将Elixir数据结构序列化回JSON字符串。这对于Web开发、APIs和配置文件来说至关重要，因为JSON是一种轻量级的、基于文本的、与语言无关的数据交换格式，因其简单性和易读性而广泛使用。
-
 ## 如何操作：
-
 在Elixir中，你可以使用`Jason`库，这是一个用于JSON解析和生成的流行选择。首先，在`mix.exs`中将`Jason`添加到项目的依赖项中：
 
 ```elixir

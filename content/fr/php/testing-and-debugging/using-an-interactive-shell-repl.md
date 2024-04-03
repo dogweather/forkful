@@ -12,9 +12,6 @@ title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---
 
-## Quoi et Pourquoi ?
-Un shell interactif, ou REPL (Read-Eval-Print Loop, Boucle de Lire-Évaluer-Imprimer), vous permet d'écrire et d'exécuter du code PHP à la volée. C'est idéal pour l'expérimentation, le débogage, ou l'apprentissage, car vous pouvez tester des extraits de code sans le surcoût de créer un script complet.
-
 ## Comment faire :
 Lancez le REPL PHP en exécutant `php -a` dans votre terminal. Voici un aperçu de son fonctionnement :
 

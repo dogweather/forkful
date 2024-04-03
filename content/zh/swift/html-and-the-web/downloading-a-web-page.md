@@ -15,12 +15,10 @@ title: "\u4E0B\u8F7D\u7F51\u9875"
 weight: 42
 ---
 
-## What & Why? 什么以及为什么？
-下载网页是获取网站内容的过程。程序员通常这样做，因为他们需要访问和使用这些在线数据。
-
 ## How to: 怎样做？
-### 下载文本内容
 
+
+### 下载文本内容
 ```Swift
 import Foundation
 
@@ -38,7 +36,6 @@ task.resume()
 ```
 
 ### 示例输出
-
 ```
 <!doctype html>
 <html>

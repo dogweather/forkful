@@ -11,9 +11,6 @@ title: Odczytywanie pliku tekstowego
 weight: 22
 ---
 
-## What & Why?
-Czytanie pliku tekstowego to proces wydobywania danych z pliku zapisanego w formacie tekstowym. Programiści to robią, aby obsługiwać konfiguracje, wczytywać dane wejściowe, przetwarzać logi czy też po prostu odczytywać treść.
-
 ## How to:
 W Fish, użyj `read` dla interakcji i `cat` do prostej lektury:
 

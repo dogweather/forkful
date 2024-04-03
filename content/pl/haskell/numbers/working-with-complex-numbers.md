@@ -12,12 +12,7 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i Dlaczego?
-
-Liczby zespolone, składające się z części rzeczywistej i urojonej, są niezbędne w różnych dziedzinach obliczeniowych, takich jak inżynieria, fizyka i przetwarzanie sygnałów. Programiści używają ich do rozwiązywania równań, z którymi liczby rzeczywiste nie mogą sobie poradzić, jak znajdowanie pierwiastków z liczb ujemnych.
-
 ## Jak to zrobić:
-
 Haskell obsługuje liczby zespolone za pomocą modułu `Data.Complex`. Oto krótka wycieczka:
 
 ```haskell
@@ -57,7 +52,6 @@ Przykładowe wyjście po załadowaniu powyższego kodu w GHCi może być:
 ```
 
 ## Szczegółowa analiza
-
 Liczby zespolone sięgają XVI wieku, ale zostały powszechnie zaakceptowane znacznie później. Haskell, podobnie jak wiele języków, zapewnia natywną obsługę arytmetyki zespolonej, co ułatwia pracę z tymi liczbami bez implementowania podstawowych matematycznych założeń.
 
 Alternatywą jest budowanie własnego typu liczby zespolonej lub używanie bibliotek dla konkretnych domen, takich jak kwaterniony do grafiki 3D. Ale dla większości przypadków użycia moduł `Data.Complex` w Haskellu jest w zupełności wystarczający.
@@ -65,7 +59,6 @@ Alternatywą jest budowanie własnego typu liczby zespolonej lub używanie bibli
 Wewnątrz, `Data.Complex` to po prostu typ danych łączący dwie wartości `Float` lub `Double`, reprezentujące odpowiednio części rzeczywistą i urojoną. To prosta i efektywna metoda pracy z liczbami zespolonymi na platformie Haskell.
 
 ## Zobacz też
-
 Sprawdź te zasoby, aby dowiedzieć się więcej o liczbach zespolonych w Haskellu:
 
 - Oficjalna dokumentacja `Data.Complex` Haskell: [Hackage Data.Complex](https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-Complex.html)

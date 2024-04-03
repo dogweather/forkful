@@ -11,12 +11,7 @@ title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---
 
-## O Que & Porquê?
-
-Baixar uma página da web significa fazer o download do conteúdo HTML de um site para analisar ou processar de alguma forma. Programadores fazem isso para coletar dados, testar a disponibilidade de sites, ou integrar funcionalidades de terceiros em suas próprias aplicações.
-
 ## Como fazer:
-
 Para baixar uma página da web em Kotlin, você vai precisar de uma biblioteca de requisições HTTP, como a OkHttp. Vamos a um exemplo simples usando esta biblioteca:
 
 ```kotlin
@@ -42,7 +37,6 @@ fun main() {
 Esse código simplesmente imprime o HTML da página `https://exemplo.com` na saída padrão.
 
 ## Aprofundamento:
-
 Historicamente, a maneira mais simples de baixar o conteúdo de uma página da web era usando a classe `URLConnection` do Java. Com o passar do tempo, surgiram bibliotecas, como Apache HttpClient e depois OkHttp, que tornaram o processo mais eficiente e simplificado.
 
 Alternativamente, você poderia utilizar a biblioteca Java `Jsoup` que não apenas busca o conteúdo HTML, mas também facilita o parsing e manipulação do mesmo.
@@ -50,7 +44,6 @@ Alternativamente, você poderia utilizar a biblioteca Java `Jsoup` que não apen
 Numa implementação mais robusta, você deve considerar tratar exceções, configurar timeouts e talvez lidar com redirecionamentos, cookies, e cabeçalhos de requisição.
 
 ## Veja Também:
-
 - Documentação OkHttp: https://square.github.io/okhttp/
 - Guia Jsoup: https://jsoup.org/cookbook/
 - Tutorial `URLConnection`: https://www.baeldung.com/java-http-url-connection

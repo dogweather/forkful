@@ -11,12 +11,7 @@ title: Sending an HTTP request
 weight: 44
 ---
 
-## What & Why?
-
-Sending an HTTP request involves creating and dispatching a request to a web server to retrieve or submit data. Programmers do this in C to interact with web APIs, download web pages, or communicate with other networked services directly from their applications.
-
 ## How to:
-
 To send an HTTP request in C, you'll generally lean on libraries like libcurl, as C does not have built-in support for web protocols. Here's a simple example using libcurl to perform a GET request:
 
 First, ensure you have libcurl installed on your system. Then, include the necessary headers and link against the libcurl library in your source file:
@@ -53,11 +48,9 @@ int main(void) {
 Compile this with something akin to `gcc -o http_request http_request.c -lcurl`, running it should perform a simple GET request to "http://example.com".
 
 ### Sample Output
-
 Since the example doesn't process the server's response, running it won't produce a visible output beyond potential error messages. Integrating the callback function for processing received data is essential for meaningful interaction.
 
 ## Deep Dive
-
 The concept of sending HTTP requests from a C program hinges on the language's powerful networking capabilities, coupled with external libraries since C itself is a low-level language without built-in high-level internet protocol support. Historically, programmers would manually use socket programming in C, a complex and tedious process, to interact with web servers before the advent of dedicated libraries like libcurl.
 
 Libcurl, built on top of C, streamlines the process, abstracting away the gritty details of socket programming and HTTP protocol specifics. It supports a multitude of protocols beyond HTTP/HTTPS, including FTP, SMTP, and more, making it a versatile tool for network programming in C.

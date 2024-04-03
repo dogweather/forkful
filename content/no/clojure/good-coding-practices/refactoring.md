@@ -11,12 +11,7 @@ title: Refaktorering
 weight: 19
 ---
 
-## Hva & Hvorfor?
-
-Refaktorering er prosessen med å restrukturere eksisterende datakode uten å endre dens eksterne oppførsel, med mål om å forbedre ikke-funksjonelle attributter. Programmerere refaktorerer for å gjøre koden deres renere, mer effektiv og enklere å vedlikeholde, noe som effektivt forbedrer lesbarheten og reduserer kompleksiteten i programvaren deres.
-
 ## Hvordan:
-
 Refaktorering i Clojure—takket være dets rene syntaks og funksjonelle paradigme—kan være utrolig greit. La oss ta for oss et vanlig scenario: iterering over samlinger. Du kan starte med en `for`-løkke, slik som dette:
 
 ```clojure
@@ -39,7 +34,6 @@ Refaktorering i Clojure—takket være dets rene syntaks og funksjonelle paradig
 Denne refaktorerte `(new-way)`-funksjonen bruker gjennomstrømmingsmakroer for å sende området direkte til `reduce`, og trimmer unødvendig fett.
 
 ## Dykking Dypt
-
 Kunsten å refaktorere har sine røtter i de tidlige dagene av programvareutvikling, men fikk virkelig grep med Martin Fowlers banebrytende bok "Refaktorering: Forbedring av designet på eksisterende kode" utgitt i 1999. I Clojure lener refaktorering seg ofte på funksjonelle programmeringsprinsipper, og favoriserer rene funksjoner og uforanderlige datastrukturer.
 
 Alternativer til manuell refaktorering i Clojure kan inkludere bruk av verktøy som Cursive, en populær IntelliJ IDEA-plugin, som tilbyr automatiserte refaktoreringer spesifikt for Clojure. Det er også clj-refactor, en Emacs-pakke for Clojure, som gir en rekke refaktoriseringsfunksjoner.
@@ -47,7 +41,6 @@ Alternativer til manuell refaktorering i Clojure kan inkludere bruk av verktøy 
 En utfordring som er spesiell for refaktorering i Clojure, er å håndtere tilstand og sideeffekter i et prinsipielt uforanderlig og sideeffektfritt paradigme. Forsiktig bruk av atomer, referanser, agenter og forbigående er avgjørende for å opprettholde både ytelse og korrekthet under refaktoreringer.
 
 ## Se Også
-
 - Martin Fowlers "Refaktorering: Forbedring av designet på eksisterende kode" for de grunnleggende konseptene.
 - [Clojure Docs](https://clojuredocs.org/) for spesifikke eksempler på idiomatisk Clojure-kode.
 - [clj-refactor](https://github.com/clojure-emacs/clj-refactor.el) for automatisering av refaktorering i Emacs.

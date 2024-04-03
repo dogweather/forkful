@@ -14,12 +14,7 @@ title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---
 
-## Was & Warum?
-
-Das Überprüfen, ob ein Verzeichnis existiert, ist eine grundlegende Aufgabe in der PHP-Programmierung, da es Ihnen ermöglicht, die Präsenz eines Verzeichnisses zu verifizieren, bevor Sie Operationen wie das Lesen von oder das Schreiben in Dateien innerhalb dieses Verzeichnisses ausführen. Diese Operation hilft, Fehler zu verhindern, die durch den Versuch, auf nicht existierende Verzeichnisse zuzugreifen, entstehen könnten und ist essenziell für das dynamische Dateimanagement innerhalb Ihrer Anwendungen.
-
 ## Wie:
-
 Die native Methode, um zu überprüfen, ob ein Verzeichnis in PHP existiert, ist die Verwendung der `is_dir()` Funktion. Diese Funktion nimmt einen Dateipfad als Argument und gibt `true` zurück, wenn das Verzeichnis existiert und ein Verzeichnis ist, oder `false` andernfalls.
 
 ```php

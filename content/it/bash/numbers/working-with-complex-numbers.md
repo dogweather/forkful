@@ -9,9 +9,6 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-## Cosa & Perché?
-I numeri complessi sono costituiti da una parte reale e una immaginaria. I programmatori li utilizzano in campi come l'elaborazione dei segnali, la meccanica quantistica e ogni volta che il calcolo lo richiede, poiché i normali numeri reali semplicemente non sono sufficienti.
-
 ## Come fare:
 Bash non supporta nativamente i numeri complessi. Spesso si utilizza uno strumento esterno come `bc` con la sua opzione `-l`. Ecco come si elaborano i numeri complessi in bash:
 

@@ -9,9 +9,6 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## What & Why? (Mikä ja Miksi?)
-Muuttaa merkkijonon kaikki kirjaimet pieniksi. Teemme sen datan yhdenmukaistamiseen, vertailuihin ja haun yksinkertaistamiseen.
-
 ## How to: (Kuinka tehdään:)
 Clojure käyttää `clojure.string/lower-case` funktiota.
 

@@ -14,9 +14,6 @@ title: "R\xE9diger un fichier texte"
 weight: 24
 ---
 
-## Quoi & Pourquoi ?
-Écrire un fichier texte en PowerShell implique de créer et de manipuler des fichiers basés sur du texte, ce qui est une opération fondamentale pour la journalisation, le stockage de données et le script de configuration. Les programmeurs exploitent cela pour automatiser les tâches système, analyser les données et s'intégrer avec d'autres applications ou scripts.
-
 ## Comment :
 PowerShell fournit des cmdlets simples pour la gestion des fichiers. Le cmdlet `Out-File` et les opérateurs de redirection sont principalement utilisés à cet effet. Voici des exemples illustrant comment écrire du texte dans des fichiers dans différents scénarios :
 

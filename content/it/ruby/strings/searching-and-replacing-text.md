@@ -10,9 +10,6 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## What & Why?
-Ricercare e sostituire testo significa trovare specifiche stringhe in un testo e cambiarle con altre. I programmatori lo fanno per correggere errori, aggiornare codici o manipolare dati.
-
 ## How to:
 La ricerca e sostituzione in Ruby può essere semplice grazie all'uso di `gsub` e `sub`. 
 

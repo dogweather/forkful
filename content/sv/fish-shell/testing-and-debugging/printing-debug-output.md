@@ -11,9 +11,6 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## What & Why?
-Debugutskrifter är små meddelanden kodare infogar för att spåra vad ett program gör. De är superhjälpsamma för att förstå kodens flöde och fixa buggar.
-
 ## How to:
 I Fish använder du `echo` eller `printf` för att skriva ut debuginfo. Enkelt och rakt på sak. Här är exempel:
 

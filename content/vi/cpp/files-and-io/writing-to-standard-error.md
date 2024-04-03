@@ -16,9 +16,6 @@ title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---
 
-## Gì & Tại sao?
-Việc ghi vào lỗi chuẩn (`stderr`) có nghĩa là gửi các thông báo lỗi và thông tin chẩn đoán đến một luồng riêng biệt, tách biệt khỏi đầu ra thường (`stdout`). Các lập trình viên làm điều này để tách biệt rõ ràng đầu ra bình thường khỏi các lỗi, làm cho việc xử lý và gỡ lỗi chương trình dễ dàng hơn.
-
 ## Làm thế nào:
 C++ sử dụng `cerr` để ghi vào `stderr`. Dưới đây là cách sử dụng:
 

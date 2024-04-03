@@ -10,9 +10,6 @@ title: Tratamento de erros
 weight: 16
 ---
 
-## O Que & Por Quê?
-Tratar erros na codificação é esperar pelo inesperado. É a arte de se planejar para quando as coisas saírem do controle, para que você possa manter seu programa funcionando suavemente.
-
 ## Como Fazer:
 O Lua utiliza duas funções principais para tratamento de erros: `pcall` e `xpcall`. Veja como usá-las:
 

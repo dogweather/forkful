@@ -11,9 +11,6 @@ title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---
 
-## What & Why?
-Att jämföra två datum innebär att granska deras relativa position på tidslinjen. Programmerare gör detta för att avgöra tidsintervaller, händelseordning, eller utföra tidsspecifika uppgifter, som att filtrera eller sortera poster.
-
 ## How to:
 I Elixir använder vi `DateTime` modulen för att hantera och jämföra datum. Här är ett snabbt exempel:
 

@@ -16,9 +16,6 @@ title: Ghi log
 weight: 17
 ---
 
-## Gì và Tại sao?
-Logging là việc để lại dấu vết qua code của bạn - đó là cách bạn theo dõi những gì đang xảy ra khi script của bạn được thực thi tự do. Lập trình viên log để debug, theo dõi hành vi ứng dụng, giám sát hiệu suất và để ý đến bất kỳ điều gì nghịch ngợm.
-
 ## Cách thực hiện:
 Dưới đây là thông tin chi tiết về cách thêm một số logging cơ bản vào script của bạn:
 

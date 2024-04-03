@@ -14,9 +14,6 @@ title: Arbeider med JSON
 weight: 38
 ---
 
-## Hva & Hvorfor?
-Å jobbe med JSON i Lua innebærer å tolke JSON-formaterte strenger til Lua-tabeller og omvendt, noe som muliggjør enkel datautveksling mellom Lua-applikasjoner og webtjenester eller eksterne APIer. Programmerere gjør dette for å utnytte det lette og enkle-å-tolke formatet til JSON for effektiv datalagring, konfigurasjon eller API-kommunikasjon.
-
 ## Hvordan:
 Lua inkluderer ikke et innebygd bibliotek for JSON-behandling. Derfor er et av de populære tredjepartsbibliotekene `dkjson`, som du enkelt kan bruke for JSON-koding og dekoding. Først, sørg for å installere `dkjson`, f.eks., gjennom LuaRocks (`luarocks install dkjson`), og følg deretter eksemplene nedenfor.
 

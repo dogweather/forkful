@@ -13,12 +13,7 @@ title: Arbeiten mit YAML
 weight: 41
 ---
 
-## Was & Warum?
-
-YAML, die Abkürzung für "YAML Ain't Markup Language", ist ein benutzerfreundlicher Datenserialisierungsstandard, der für alle Programmiersprachen verwendet werden kann. Programmierer nutzen YAML oft in Konfigurationsdateien und beim Datenaustausch zwischen Sprachen wegen seiner Lesbarkeit und einfachen Struktur.
-
 ## Wie zu:
-
 Haskell hat keine integrierte Unterstützung für die Verarbeitung von YAML, aber Sie können Drittanbieter-Bibliotheken wie `yaml` und `aeson` für das Parsen und Generieren von YAML-Daten verwenden. Hier ist, wie Sie beginnen können:
 
 ### YAML lesen

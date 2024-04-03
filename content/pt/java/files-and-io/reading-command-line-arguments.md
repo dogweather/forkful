@@ -11,9 +11,6 @@ title: Lendo argumentos da linha de comando
 weight: 23
 ---
 
-## O Que & Porquê?
-Argumentos de linha de comando são informações que você passa para o seu programa Java ao iniciá-lo. Programadores usam isso para customizar a execução de um aplicativo sem mudar o código.
-
 ## Como Fazer:
 Aquela linha de comando clássica `public static void main(String[] args)`? Ela está te dizendo "Ei, me passa alguns argumentos!" Vamos ver isso em ação:
 

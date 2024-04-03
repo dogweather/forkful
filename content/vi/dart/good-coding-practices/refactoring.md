@@ -17,14 +17,10 @@ title: "T\xE1i c\u1EA5u tr\xFAc code"
 weight: 19
 ---
 
-## Cái gì & Tại sao?
-
-Tái cấu trúc trong Dart là quá trình cơ cấu lại code hiện tại mà không thay đổi hành vi bên ngoài của nó, nhằm mục đích cải thiện cấu trúc nội bộ, khả năng đọc và bảo trì của nó. Các lập trình viên thường tái cấu trúc để làm cho code sạch sẽ hơn, dễ hiểu hơn hoặc hiệu quả hơn, tạo điều kiện cho việc chỉnh sửa tương lai dễ dàng hơn và giảm khả năng xuất hiện lỗi.
-
 ## Làm thế nào:
 
-### Ví dụ 1: Đổi tên và Trích xuất Phương thức
 
+### Ví dụ 1: Đổi tên và Trích xuất Phương thức
 Trước khi tái cấu trúc, bạn có thể có một đoạn mã mà trộn lẫn nhiều cấp độ trừu tượng hoặc trách nhiệm, như tính một khoản giảm giá và sau đó áp dụng nó:
 
 ```dart
@@ -64,7 +60,6 @@ Giá cuối: 80.0
 Bằng cách trích xuất tính toán vào một phương thức, bạn bây giờ có một hoạt động được định nghĩa rõ ràng có thể được tái sử dụng, kiểm thử độc lập, và dễ dàng chỉnh sửa.
 
 ### Ví dụ 2: Làm Giản đơn Biểu thức Điều kiện
-
 Trước khi tái cấu trúc, các câu lệnh điều kiện có thể quá phức tạp hoặc khó đọc:
 
 ```dart
@@ -113,5 +108,4 @@ Giảm giá: 0.05
 Việc tái cấu trúc này không chỉ làm cho code ngắn gọn hơn mà còn kết nạp logic xác định giảm giá theo một cách dễ hiểu và dễ bảo trì hơn.
 
 ### Thư viện của Bên Thứ Ba cho Tái Cấu trúc
-
 Khi nói đến tái cấu trúc trong Dart, đặc biệt là trong các ứng dụng Flutter, bộ công cụ [Dart DevTools](https://dart.dev/tools/dart-devtools) là vô giá. Nó bao gồm các công cụ hiệu suất, trình kiểm tra widget, và debugger ở cấp mã nguồn. Mặc dù không phải là thư viện bên thứ ba, Dart DevTools thường được sử dụng cùng với các thư viện như `flutter_bloc` để quản lý trạng thái một cách sạch sẽ, thúc đẩy việc tái cấu trúc để cải thiện tính mô-đun và khả năng đọc. Thật không may, do phạm vi của bài viết này, các ví dụ mã sử dụng thư viện của bên thứ ba không được cung cấp ở đây, nhưng các nhà phát triển được khuyến khích khám phá các công cụ này để nâng cao quá trình tái cấu trúc trong các ứng dụng Dart/Flutter của mình.

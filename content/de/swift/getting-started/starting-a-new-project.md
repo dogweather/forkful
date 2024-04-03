@@ -10,9 +10,6 @@ title: Einen neuen Projekt starten
 weight: 1
 ---
 
-## What & Why? (Was & Warum?)
-Ein neues Projekt zu starten bedeutet, eine leere Leinwand in eine funktionierende App umzuwandeln. Entwickler machen das, um Ideen zum Leben zu erwecken und Probleme mit maßgeschneiderten Lösungen zu lösen.
-
 ## How to: (Wie geht das:)
 ```Swift
 // Erstellen eines neuen Xcode-Projekts

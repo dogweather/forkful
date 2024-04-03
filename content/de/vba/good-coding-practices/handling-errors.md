@@ -13,12 +13,7 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-
-Fehlerbehandlung in Visual Basic für Anwendungen (VBA) bezieht sich auf den Prozess der Vorwegnahme, Erkennung und Behebung von Programmier-, Anwendungs- oder Kommunikationsfehlern. Eine robuste Fehlerbehandlung zu implementieren, ist entscheidend für die Aufrechterhaltung der Integrität von Anwendungen und die Verbesserung der Benutzererfahrung, indem unerwartete Probleme geschickt verwaltet werden, ohne abrupte Abstürze oder Datenverlust zu verursachen.
-
 ## Wie:
-
 In VBA wird die Fehlerbehandlung typischerweise mit der Anweisung `On Error` implementiert, die VBA anweist, wie weiter verfahren wird, wenn ein Fehler auftritt. Die gängigsten Strategien für die Fehlerbehandlung beinhalten das `On Error GoTo`-Label, `On Error Resume Next` und `On Error GoTo 0`.
 
 **Beispiel 1: Verwendung von `On Error GoTo`**
@@ -63,7 +58,6 @@ End Sub
 In diesem Fall bricht das Programm bei einem Fehler nicht ab; es prüft, ob ein Fehler aufgetreten ist, behandelt ihn, falls ja, und löscht dann den Fehler.
 
 ## Vertiefung
-
 Historisch gesehen hat sich die Fehlerbehandlung in Programmiersprachen von einfachen Goto-Anweisungen zu ausgefeilteren Mechanismen wie Ausnahmen in Sprachen wie Java und C# entwickelt. Die Fehlerbehandlung in VBA ist zwar nicht so leistungsfähig oder flexibel wie moderne Ausnahmebehandlungen, erfüllt jedoch ihren Zweck im Kontext der Anwendung der Sprache zur Automatisierung von Aufgaben in Microsoft Office-Umgebungen.
 
 Die primäre Einschränkung der Fehlerbehandlung in VBA liegt in ihrem etwas umständlichen und manuellen Ansatz, der eine sorgfältige Platzierung des Fehlerbehandlungscodes und ein klares Verständnis des Ausführungsflusses erfordert. Moderne Programmiersprachen bieten in der Regel elegantere Lösungen, wie Try-Catch-Blöcke, die den Fluss automatisch zum Fehlerbehandlungscode lenken, ohne dass manuelle Prüfungen oder Sprünge in der Codeausführung erforderlich sind.

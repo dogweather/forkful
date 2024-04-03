@@ -10,9 +10,6 @@ title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---
 
-## Was & Warum?
-Das Umwandeln einer Zeichenfolge in Kleinbuchstaben bedeutet, alle Großbuchstaben darin in ihre entsprechenden Kleinbuchstaben zu konvertieren. Programmierer verwenden diese Methode oft, um die Benutzereingabe zu normalisieren oder Vergleiche ohne Berücksichtigung von Groß- und Kleinschreibung durchzuführen.
-
 ## So geht's:
 Mit C++ kannst du die Standardbibliothek `<algorithm>` und die Funktion `std::transform()` nutzen, um eine Zeichenfolge effektiv in Kleinbuchstaben umzuwandeln. Hier ist ein einfaches Beispiel, wie das funktioniert:
 

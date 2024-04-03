@@ -12,9 +12,6 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## What & Why? (Co i dlaczego?)
-Wysyłanie żądania HTTP to sposób, by twoja aplikacja PHP porozumiewała się z innymi serwerami – to jak wysłanie listu w cyfrowym świecie. Programiści robią to, by pobierać dane, wysyłać formularze, łączyć się z API i w zasadzie do wszelkiej komunikacji sieciowej.
-
 ## How to (Jak to zrobić):
 W PHP do wysyłania żądań HTTP używamy głównie funkcji `file_get_contents` lub rozszerzenia `cURL`. Oto przykłady obu:
 

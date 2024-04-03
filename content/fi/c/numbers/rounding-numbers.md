@@ -15,12 +15,7 @@ title: "Lukujen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä & Miksi?
-
-Numeroiden pyöristäminen on prosessi, jossa numeron numerot säädetään vähemmän tarkoiksi tietyin säännöin, joko lähimpään kokonaislukuun tai määritettyyn desimaalipaikkojen määrään. Ohjelmoijat tekevät tämän monista syistä, jotka vaihtelevat tarvittavan tallennustilan rajoittamisesta, käyttäjälle suunnatun tulosteen yksinkertaistamiseen tai tarkkojen matemaattisten toimintojen varmistamiseen, jotka ovat herkkiä hyvin pienille vaihteluille.
-
 ## Kuinka tehdään:
-
 Numeroiden pyöristäminen C-kielessä voidaan saavuttaa käyttämällä erilaisia funktioita, mutta yleisin lähestymistapa sisältää `floor()`, `ceil()` ja `round()` funktiot. Nämä funktiot ovat osa standardia matematiikkakirjastoa, joten sinun tulee sisällyttää `math.h` ohjelmaasi.
 
 ```c
@@ -59,7 +54,6 @@ Pyöristetään kahteen desimaalipaikkaan: 9.53
 ```
 
 ## Syväsukellus
-
 Numeroita pyöristävällä menetelmällä on syvät historialliset juuret matematiikassa ja laskennassa, ja se on olennainen osa sekä teoreettisia että sovellettuja näkökohtia. C-kielessä, vaikka `floor()`, `ceil()`, ja `round()` tarjoavat perustoiminnallisuuden, pyöristämisen ydin siinä, että liukuluvut pyöristetään kokonaisluvuiksi tai tiettyihin desimaalipaikkoihin, on monimutkaisempaa johtuen liukulukujen binääriesityksestä. Tämä esitystapa voi johtaa odottamattomiin tuloksiin, kun käsitellään lukuja, joita ei voida tarkasti esittää binäärinä (kuten 0.1).
 
 Nämä funktiot ovat osa C-standardikirjastoa, määritelty `<math.h>`:ssa. Pyöristettäessä numeroita, erityisesti rahoitus- tai tarkoissa insinöörilaskelmissa, on otettava huomioon binäärisiin liukulukuihin liittyvät seikat. Vaihtoehdot C:n sisäänrakennetuille funktioille erittäin tarkkaa tai desimaalikohtaista pyöristämistä varten saattavat sisältää mukautettujen pyöristysfunktioiden toteuttamisen tai tarkkaan aritmetiikkaan suunniteltujen kirjastojen, kuten GMP:n tai MPFR:n, käytön, vaikka nämä tuovatkin mukanaan lisää monimutkaisuutta ja riippuvuuksia.

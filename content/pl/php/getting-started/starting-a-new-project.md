@@ -11,9 +11,6 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## Co i dlaczego?
-Zaczynając nowy projekt, programiści tworzą grunt pod swój kod - to jak ułozenie fundamentów pod dom. Robią to, bo dobrze przygotowany start to klucz do elastycznego i efektywnego rozwoju aplikacji.
-
 ## Jak to zrobić:
 Załóżmy, że zaczynamy projekt w PHP. Oto jak możesz to zrobić:
 

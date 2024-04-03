@@ -10,9 +10,6 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## What & Why? (Mitä & Miksi?)
-Ladata web-sivu tarkoittaa, että haet sivun sisällön netistä. Ohjelmoijat tekevät tätä datan analysointiin, testaukseen tai automatisointiin.
-
 ## How to: (Kuinka tehdä:)
 ```Fish Shell
 set url 'https://example.com'

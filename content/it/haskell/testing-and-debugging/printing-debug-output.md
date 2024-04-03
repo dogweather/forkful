@@ -11,9 +11,6 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## Cosa & Perché?
-Stampare output di debug significa mostrare dati interni del programma durante l'esecuzione per capire cosa sta succedendo. I programmatori lo usano per scovare errori e monitorare il flusso di esecuzione del codice.
-
 ## How to:
 Per stampare output in Haskell, possiamo usare le funzioni `print`, `putStrLn` o `putStr`. Ecco alcuni esempi:
 

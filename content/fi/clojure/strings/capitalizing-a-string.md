@@ -12,9 +12,6 @@ title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---
 
-## Mikä & Miksi?
-Merkkijonon alkukirjaimen muuttaminen isoksi muuttaa merkkijonon niin, että sen ensimmäinen merkki on isolla ja loput merkkijonosta pysyvät muuttumattomina. Ohjelmoijat suorittavat usein merkkijonojen alkukirjaimen muuttamisen varmistaakseen tietojen johdonmukaisuuden, erityisesti nimien ja paikkojen osalta tai noudattaakseen kieliopillisia sääntöjä käyttöliittymissä.
-
 ## Kuinka:
 Clojure, ollessaan JVM-kieli, mahdollistaa Java String -metodien suoran käytön. Tässä on perusesimerkki kuinka muuttaa merkkijonon alkukirjaimen isoksi Clojurella:
 

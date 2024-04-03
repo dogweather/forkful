@@ -10,9 +10,6 @@ title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---
 
-## Cos'è & Perché?
-Utilizzare un shell interattivo, o un Loop di Lettura-Valutazione-Stampa (REPL), permette di programmare interattivamente. I programmatori lo utilizzano per testare rapidamente frammenti di codice Swift, per fare debug, o per imparare il linguaggio.
-
 ## Come fare:
 Invoca REPL aprendo un terminale e eseguendo `swift`. Digita direttamente il codice e premi Invio per eseguirlo. Eccoti un assaggio:
 

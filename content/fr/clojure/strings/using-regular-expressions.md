@@ -15,9 +15,6 @@ title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---
 
-## Quoi & Pourquoi ?
-Les expressions régulières, un outil puissant pour la correspondance de motifs et la manipulation de données, sont essentielles dans les tâches de traitement de texte telles que la validation d'entrée, la recherche et le remplacement de texte. Les programmeurs les utilisent largement pour gérer de manière efficace et succincte les tâches complexes d'analyse de chaînes et de validation de données.
-
 ## Comment faire :
 Clojure, restant fidèle à ses racines dans la famille Lisp, offre un riche ensemble de fonctions qui s'interface de manière transparente avec les capacités des expressions régulières de Java. Voici comment vous pouvez les utiliser :
 

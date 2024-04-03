@@ -11,9 +11,6 @@ title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---
 
-## What & Why?
-Transformer une chaîne de caractères en minuscules, c'est simplement changer tous les caractères majuscules en leur équivalent minuscule. Les programmeurs le font pour normaliser les entrées et permettre des comparaisons insensibles à la casse.
-
 ## How to:
 En Bash, on peut convertir une chaîne en minuscules avec des manipulations de variables ou des commandes externes.
 

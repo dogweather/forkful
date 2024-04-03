@@ -12,9 +12,6 @@ title: Analysering av HTML
 weight: 43
 ---
 
-## Hva & Hvorfor?
-Å parse HTML betyr å trekke ut data fra HTML-dokumenter. Programmerere gjør dette for å samhandle med eller manipulere webinnhold, automatisere dataekstraksjon, eller for web scraping-formål.
-
 ## Hvordan:
 La oss parse HTML ved hjelp av `DOMParser`-APIen i JavaScript.
 

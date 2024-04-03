@@ -11,9 +11,6 @@ title: Removing quotes from a string
 weight: 9
 ---
 
-## What & Why?
-Removing quotes from a string in C# means you're taking out those pesky double (`"`) or single (`'`) quote characters wrapping your text. Programmers do this to cleanse data, prep for database entry, or make strings safe for further processing so things don't go haywire when a stray quote shows up.
-
 ## How to:
 ```csharp
 string withQuotes = "\"Hello, World!\"";

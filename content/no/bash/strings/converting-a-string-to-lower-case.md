@@ -11,9 +11,6 @@ title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---
 
-## What & Why?
-Endre tekststrenger til små bokstaver, fordi det sikrer konsistent datahåndtering. Enten for å sammenligne tekster eller for estetikkens skyld, kommer du til å trenge det.
-
 ## How to:
 Bruk `tr`, `awk`, eller shell parameter expansion til å gjøre om store bokstaver til små. Her er noen eksempler:
 

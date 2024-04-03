@@ -11,9 +11,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel betyr å kommunisere med en webserver for å hente eller sende informasjon. Programmerere gjør dette for å integrere og samhandle med webtjenester eller APIer for å drive datainnhenting, oppdatering eller sletting av ressurser på nettet.
-
 ## Slik gjør du:
 For å sende en HTTP GET-forespørsel i PowerShell og vise svaret:
 

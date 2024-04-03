@@ -10,9 +10,6 @@ title: Lettura di un file di testo
 weight: 22
 ---
 
-## What & Why?
-Leggere un file di testo significa estrarre dati da un file sul tuo dispositivo o server. I programmatori lo fanno per recuperare e manipolare dati salvati, configurazioni, o per leggere dei dati d'input per un'app.
-
 ## How to:
 Per leggere un file di testo in Kotlin, possiamo utilizzare diverse funzioni disponibili. Ecco un esempio su come farlo con `readText`:
 

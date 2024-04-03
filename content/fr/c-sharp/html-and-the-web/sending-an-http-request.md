@@ -11,12 +11,7 @@ title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---
 
-## Quoi & Pourquoi ?
-
-Envoyer une requête HTTP, c'est demander des données à un serveur web. On le fait pour interagir avec des services web, récupérer des informations, ou communiquer entre applications.
-
 ## Comment Faire :
-
 Voici comment envoyer une requête GET simple en C# en utilisant `HttpClient` :
 
 ```C#
@@ -54,13 +49,11 @@ Sortie éventuelle :
 ```
 
 ## Plongée Profonde :
-
 Historiquement, on utilisait `WebRequest` en C#. Mais `HttpClient` est le choix moderne, optimisé pour les appels asynchrones et les connexions réutilisables. Pour choisir l'approche, considérez les performances, la simplicité, et si vous avez besoin de gérer des contextes d'appels complexes comme des cookies ou authentification.
 
 D'autres options ? Oui, on peut utiliser `RestSharp` ou `Flurl` pour des fonctionnalités supplémentaires. En termes d'implémentation, notons que `HttpClient` est implémenté pour travailler avec les cas async/await, ce qui est idéal pour les interfaces utilisateur réactives et les services backend non bloquants.
 
 ## À Voir Aussi :
-
 - [Documentation de `HttpClient`](https://docs.microsoft.com/fr-fr/dotnet/api/system.net.http.httpclient?view=net-6.0)
 - [Comparaison entre `HttpClient` et `WebRequest`](https://docs.microsoft.com/fr-fr/dotnet/api/system.net.httpwebrequest?view=net-6.0)
 - [Guide pour `RestSharp`](https://restsharp.dev/)

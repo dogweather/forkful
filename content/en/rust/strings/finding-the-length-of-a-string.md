@@ -10,9 +10,6 @@ title: Finding the length of a string
 weight: 7
 ---
 
-## What & Why?
-Finding the length of a string means counting the number of characters it contains. Programmers do this to validate, format, or process text data efficiently.
-
 ## How to:
 Rust gives you `len()` for straight-up length:
 

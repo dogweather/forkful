@@ -12,9 +12,6 @@ title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---
 
-## Mitä & Miksi?
-Laskemme tulevaisuuden tai menneisyyden päivämääriä kun sovelluksemme tarvitsevat aikaperusteisia toimintoja, kuten eräpäivien hallintaa tai aikajana-analyysiä. Se auttaa käyttäjiä suunnittelemaan ja ymmärtämään ajan kulumista.
-
 ## Miten tehdään:
 Laske tulevaisuuden päivämäärä:
 

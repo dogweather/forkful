@@ -9,9 +9,6 @@ title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---
 
-## Hva og hvorfor?
-Komplekse tall er tall med en reel og en imaginær del (som 3 + 4i). De dukker opp i ulike programmeringsproblemer, spesielt i signalbehandling, kvanteberegning og løsing av polynomligninger. Programmerere jonglerer dem for å effektivt løse denne typen oppgaver.
-
 ## Hvordan:
 JavaScript har ikke innebygd støtte for komplekse tall, men du kan ta saken i egne hender og håndtere det med objekter og matte. Her er en kjapp gjennomgang.
 

@@ -12,9 +12,6 @@ title: Lokitus
 weight: 17
 ---
 
-## Mikä & Miksi?
-Lokitus on lyhyesti sanottuna kuin päiväkirjan pitämistä sovelluksellesi - se tallentaa tapahtumia, virheitä ja muita merkittäviä toimia, jotka tapahtuvat ohjelmiston suorituksen aikana. Ohjelmoijat tekevät sitä ei ainoastaan ymmärtääkseen, mitä konepellin alla tapahtuu reaaliajassa, vaan myös historiatietojen saamiseksi, mikä on ratkaisevan tärkeää virheenkorjauksessa, auditoinnissa ja suorituskyvyn optimoinnissa.
-
 ## Kuinka:
 Valmiiksi pakattuna JavaScript tarjoaa yksinkertaisen tavan kirjata viestejä konsoliin:
 

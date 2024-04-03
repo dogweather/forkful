@@ -20,10 +20,8 @@ title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
 weight: 25
 ---
 
-## 什么和为什么？
-将错误信息和诊断信息写入标准错误（stderr）涉及到将这些信息输出到控制台或终端。程序员这样做是为了将错误信息与标准输出（stdout）分开，便于调试和日志分析。
-
 ## 如何操作：
+
 
 ### Java中的基本stderr输出
 Java提供了一个直接的方式来通过`System.err.print()`或`System.err.println()`写入stderr。以下是如何做到的：
@@ -52,7 +50,6 @@ public class StdErrExample {
 对于需要更复杂的错误处理和日志记录的应用程序，通常使用像SLF4J与Logback或Log4J2这样的日志库。这允许在管理错误输出方面提供更多的灵活性，包括文件重定向、过滤和格式化。
 
 #### 使用Logback的示例
-
 首先，将Logback的依赖项添加到`pom.xml`（Maven）或`build.gradle`（Gradle）文件。对于Maven：
 
 ```xml

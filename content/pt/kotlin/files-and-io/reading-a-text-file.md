@@ -11,9 +11,6 @@ title: Lendo um arquivo de texto
 weight: 22
 ---
 
-## O Que & Porquê?
-Ler um arquivo de texto significa extrair a informação dele para ser processada. Programadores fazem isso para manipular dados, configurar programas ou simplesmente exibir o conteúdo na tela.
-
 ## Como Fazer:
 ```kotlin
 import java.io.File

@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Cái gì và Tại sao?
-Số phức là một tập hợp các số có dạng `a + bi`, nơi `a` và `b` là các số thực, và `i` là đơn vị ảo (`i^2 = -1`). Trong lập trình, chúng ta sử dụng chúng để giải quyết các vấn đề trong nhiều lĩnh vực, như kỹ thuật điện, xử lý tín hiệu và tính toán lượng tử.
-
 ## Làm thế nào:
 Python hỗ trợ sẵn số phức. Dưới đây là cách bạn có thể thao tác với chúng:
 

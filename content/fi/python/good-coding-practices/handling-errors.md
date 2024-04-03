@@ -12,12 +12,7 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä & Miksi?
-
-Virheenkäsittely Pythonissa (tai missä tahansa ohjelmointikielessä) on odottamatonta odottamista – se on taitoa hallita tilanteita sulavasti, kun asiat menevät pieleen koodissasi. Teemme sitä estääksemme kaatumiset, opastaaksemme käyttäjiä ja tehdäksemme ohjelmistamme kestäviä ja luotettavia.
-
 ## Kuinka toimia:
-
 ``` Python
 # Perus try-except -lohko
 try:
@@ -56,7 +51,6 @@ Ei ole numero!
 ```
 
 ## Syväsukellus
-
 Ohjelmoinnin sarastuksesta lähtien virheenkäsittely on ollut keskeistä. Aikaisemmat lähestymistavat olivat alkeellisia, kuten ehtojen tarkistaminen ennen jokaista riskialtista toimintoa. Pythonin `try-except` -syntaksi on peräisin vanhempien kielten, kuten C++ ja Java, poikkeuksien käsittelyn perinnöstä, yksinkertaistaen prosessia.
 
 Kun yrität (`try`) suorittaa koodilohkoa, Python seuraa kaikkia poikkeuksia. Jos virhe ilmenee, `except` -lohko ottaa sen kiinni. Voit olla tarkka siitä, mitä poikkeuksia pyydystät tai pyydystää kaikki paljaalla `except`:lla. Kuitenkin, tarkka ensin -lähestymistapa on parempi – se on tarkka, ei "kaikki käy" -verkko.
@@ -66,7 +60,6 @@ Kun yrität (`try`) suorittaa koodilohkoa, Python seuraa kaikkia poikkeuksia. Jo
 Vaihtoehtoja? Niitä toki on. Jotkut kielet käyttävät paluukoodeja poikkeusten sijaan. Saatat myös kohdata `with`-lauseita resurssien käsittelyyn tai `assertioita`, jotka tarkistavat ehtoja kehityksen aikana. Mutta kun puhumme vankasta virheenkäsittelystrategiasta, try-catch -malli erottuu luettavuutensa ja rakenteensa ansiosta.
 
 ## Katso myös
-
 Tässä on joitakin hyviä lisäresursseja syvällisempään perehtymiseen:
 
 - Pythonin virallinen dokumentaatio virheistä ja poikkeuksista: [Python Docs – Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html)

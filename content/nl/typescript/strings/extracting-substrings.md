@@ -13,9 +13,6 @@ title: Substrings extraheren
 weight: 6
 ---
 
-## Wat & Waarom?
-Het extraheren van substrings betekent het uitkiezen van specifieke stukken van een string. Dit is handig voor taken zoals het parseren van gegevens, het valideren van invoer, of gewoon het opsplitsen van tekst in beter beheersbare brokken.
-
 ## Hoe doe je dat:
 In TypeScript snijd en hak je strings met methoden zoals `substring()`, `slice()`, en de ES6 `includes()` voor het vinden van tekst binnen strings.
 

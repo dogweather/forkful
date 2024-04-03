@@ -13,9 +13,6 @@ title: Journalisation
 weight: 17
 ---
 
-## Quoi & Pourquoi ?
-La journalisation en programmation consiste essentiellement à laisser une trace de miettes de pain sous forme d'événements ou de messages enregistrés, qui peuvent être utilisés pour suivre ce que fait votre application à tout moment. Les programmeurs le font pour déboguer des problèmes, surveiller la performance du système, et auditer le comportement pour des raisons de sécurité et de conformité.
-
 ## Comment faire :
 En Haskell, la journalisation peut être implémentée en utilisant des bibliothèques telles que `monad-logger` ou `hslogger`. Voici un exemple rapide en utilisant `monad-logger` :
 

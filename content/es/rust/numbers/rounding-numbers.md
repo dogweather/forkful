@@ -11,9 +11,6 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## ¿Qué & Por qué?
-Redondear números significa ajustarlos al número entero más cercano o a una fracción con cierta precisión. Los programadores redondean números para simplificar valores para la legibilidad humana, cumplir con los requisitos de especificaciones o reducir la sobrecarga computacional en operaciones de punto flotante.
-
 ## Cómo:
 Rust hace que redondear sea muy fácil. Mira estos métodos para los tipos `f32` o `f64`:
 

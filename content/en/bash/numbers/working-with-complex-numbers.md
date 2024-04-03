@@ -9,9 +9,6 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-Complex numbers consist of a real part and an imaginary part. Programmers use them in fields like signal processing, quantum mechanics, and whenever the calculation requires them, because normal real numbers just don't cut it.
-
 ## How to:
 Bash doesn't support complex numbers natively. You'll often use an external tool like `bc` with its `-l` option. Here's how you crunch complex numbers in bash:
 

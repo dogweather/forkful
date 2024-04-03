@@ -13,16 +13,10 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## ¿Qué y por qué?
-
-Escribir pruebas en el entorno de Arduino se refiere al proceso de crear pruebas automatizadas que validan la funcionalidad de tu código en dispositivos Arduino. Los programadores lo hacen para asegurarse de que su código funciona como se espera, reduce errores y mejora la calidad de sus proyectos, especialmente crucial en sistemas embebidos donde la depuración puede ser más desafiante.
-
 ## Cómo:
-
 Arduino no tiene un marco de pruebas integrado como algunos otros entornos de programación. Sin embargo, puedes usar bibliotecas de terceros como `AUnit` para la prueba unitaria del código Arduino. AUnit está inspirado en la biblioteca integrada de Arduino, `ArduinoUnit`, y el marco de pruebas de Google, `Google Test`.
 
 ### Ejemplo con AUnit:
-
 Primero, instala AUnit a través del Administrador de Bibliotecas en el IDE de Arduino: ve a Sketch > Incluir Biblioteca > Administrar Bibliotecas... > busca AUnit e instálalo.
 
 Luego, puedes escribir pruebas de la siguiente manera:

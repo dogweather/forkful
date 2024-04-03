@@ -16,9 +16,6 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Cái gì & Tại sao?
-Làm tròn số có nghĩa là cắt bỏ phần thập phân để đạt độ chính xác nhất định, thường là đến số nguyên. Các lập trình viên làm tròn để đơn giản hóa các phép tính, cải thiện hiệu suất, hoặc làm cho kết quả dễ dàng hiểu được với người dùng.
-
 ## Làm sao:
 PHP cung cấp một vài cách để làm tròn số: `round()`, `ceil()`, và `floor()`. Dưới đây là cách chúng hoạt động:
 

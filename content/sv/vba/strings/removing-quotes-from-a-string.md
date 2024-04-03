@@ -14,12 +14,7 @@ title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---
 
-## Vad & Varför?
-
-Att ta bort citationstecken från en sträng i VBA innebär att ta bort förekomster av enkla (`'`) eller dubbla (`"`) citationstecken som kan inkapsla eller vara inbäddade i strängen. Denna operation är viktig för datasanering, för att säkerställa att strängar är korrekt formaterade för databasfrågor, JSON-analys eller helt enkelt för estetiska eller konsistensskäl inom en applikations gränssnitt.
-
 ## Hur man gör:
-
 I VBA finns det flera tillvägagångssätt för att ta bort citationstecken från en sträng. Här är ett rakt på sak exempel som använder `Replace`-funktionen, som söker efter en specifik delsträng (i detta fall ett citattecken) inom en sträng och ersätter den med en annan delsträng (en tom sträng om man tar bort).
 
 ```basic
@@ -42,7 +37,6 @@ Notera att för dubbla citattecken använder vi `Chr(34)` eftersom ett dubbelcit
 För mer nyanserade scenarier där citattecken kan vara en del av nödvändig formatering (t.ex. inuti ett citerat ord), kan mer sofistikerad logik, kanske involverande Regex eller tolkning tecken för tecken, krävas.
 
 ## Djupdykning
-
 VBA, som är en grundpelare i automatiseringen av uppgifter inom Microsoft Office-sviten, erbjuder ett rikt utbud av strängmanipuleringsfunktioner, där `Replace` är en av de mest frekvent använda. Denna funktion skrapar dock bara på ytan av vad som kan uppnås med VBA när det gäller strängmanipulation.
 
 Historiskt har VBA från sina föregångare tagit över betoningen på enkelhet för kontorsautomatiseringsuppgifter, därav den raka implementeringen av funktioner som `Replace`. Dock, för moderna programmeringsuppgifter, särskilt de som involverar komplex strängmanipulation eller sanering, kan VBA visa sina begränsningar.

@@ -13,9 +13,6 @@ title: Het huidige datum ophalen
 weight: 29
 ---
 
-## Wat & Waarom?
-Het huidige datum in Ruby pakken is zo simpel als het klinkt: de datum van vandaag ophalen. Programmeurs hebben dit nodig voor taken variërend van loggen en tijdstempelen tot plannen en geldigheidscontroles.
-
 ## Hoe te:
 Ruby maakt het kinderlijk eenvoudig om de huidige datum te krijgen. Zo doe je dat:
 

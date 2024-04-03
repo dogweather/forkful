@@ -10,9 +10,6 @@ title: Calcolo di una data futura o passata
 weight: 26
 ---
 
-## What & Why?
-Calcolare una data nel futuro o nel passato significa semplicemente aggiungere o togliere giorni, mesi o anni dalla data corrente. Questo è fondamentale per impostare scadenze, ricordare eventi importanti e gestire la logistica.
-
 ## How to:
 Kotlin rende il calcolo delle date semplice con la libreria `java.time`.
 

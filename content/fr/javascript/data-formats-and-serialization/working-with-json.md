@@ -14,11 +14,8 @@ title: Travailler avec JSON
 weight: 38
 ---
 
-## Quoi & Pourquoi ?
-
-JSON (JavaScript Object Notation) est un format léger d'échange de données, facile à lire et à écrire pour les humains et à analyser et à générer pour les machines. Les programmeurs l'utilisent pour stocker et transporter des données dans des applications Web, ce qui en fait l'épine dorsale de la communication moderne des API et des services Web.
-
 ## Comment faire :
+
 
 ### Analyser du JSON
 Pour convertir une chaîne JSON en un objet JavaScript, utilisez `JSON.parse()`.

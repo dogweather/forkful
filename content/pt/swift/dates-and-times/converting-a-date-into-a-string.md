@@ -11,9 +11,6 @@ title: Convertendo uma data em uma string
 weight: 28
 ---
 
-## O Que & Porquê?
-Converter uma data em uma string permite exibir e manipular datas num formato legível para humanos. Programadores fazem isso para interagir com usuários, salvar datas em um banco de dados ou para facilitar operações de comparação e formatação.
-
 ## Como Fazer:
 ```swift
 import Foundation

@@ -11,9 +11,6 @@ title: Refactoring
 weight: 19
 ---
 
-## Was & Warum?
-Refactoring ist die Kunst, bestehenden Code so zu überarbeiten, dass seine Struktur, Lesbarkeit und Effizienz verbessert werden, ohne dass sich sein äußeres Verhalten ändert. Programmierer tun dies, um ihren Code wartbarer zu machen, Komplexität zu reduzieren und oft als vorbereitenden Schritt, bevor neue Funktionen hinzugefügt oder Fehler behoben werden.
-
 ## Wie:
 Nehmen wir eine einfache Lua-Funktion und refaktorisieren sie. Wir beginnen mit einer Funktion, die die Summe der Zahlen in einer Liste berechnet, die aber ohne viel Gedanken an Effizienz oder Klarheit geschrieben wurde:
 

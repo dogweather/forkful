@@ -16,9 +16,6 @@ title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---
 
-## Cái gì và Tại sao?
-Một shell tương tác Rust, hay REPL (Read-Eval-Print Loop), cho phép bạn chạy mã Rust tức thì, xem kết quả ngay lập tức, rất hoàn hảo cho việc thử nghiệm hoặc học hỏi. Lập trình viên sử dụng nó để kiểm tra đoạn mã, gỡ lỗi, hoặc chỉ đơn giản là chơi với các tính năng của ngôn ngữ mà không cần tốn công biên dịch một dự án đầy đủ.
-
 ## Làm thế nào:
 Cho đến nay, Rust chưa có REPL chính thức đi kèm với nó. Bạn có thể sử dụng các công cụ của bên thứ ba như `evcxr_repl`. Cài đặt nó bằng Cargo:
 

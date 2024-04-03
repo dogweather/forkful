@@ -9,9 +9,6 @@ title: Extracting substrings
 weight: 6
 ---
 
-## What & Why?
-Extracting substrings means pulling out specific parts from a string. We do it to manipulate or analyze text data, like grabbing usernames from email addresses or slicing dates to get the month.
-
 ## How to:
 In Kotlin, use `substring`, `take`, and `drop` functions.
 

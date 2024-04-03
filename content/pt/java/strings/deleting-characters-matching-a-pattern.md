@@ -11,9 +11,6 @@ title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---
 
-## What & Why?
-Deletar caracteres que correspondem a um padrão é basicamente tirar do texto tudo o que a gente não quer ou não precisa. Programadores fazem isso para limpar dados, validar inputs ou simplificar strings para processamento.
-
 ## How to:
 Em Java, podemos usar a classe `Pattern` e a classe `Matcher` para localizar e deletar os trechinhos específicos dentro de uma string. Vamos ver como isso funciona.
 

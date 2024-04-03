@@ -10,12 +10,7 @@ title: "\u0417\u0430\u0432\u0430\u043D\u0442\u0430\u0436\u0435\u043D\u043D\u044F
 weight: 42
 ---
 
-## What & Why? (Що та Чому?)
-
-Downloading a web page means fetching its contents over the Internet. Programmers do this to interact with web content, automate tasks, or extract information.
-
 ## How to (Як це зробити):
-
 To download a web page in TypeScript, you'll need `node-fetch`. Install it with `npm install node-fetch`. Here's how you use it:
 
 ```typescript
@@ -36,7 +31,6 @@ downloadPage('https://www.example.com').then(console.log);
 Sample output for a successful page load might be the HTML contents, and for an error, 'Error: TypeError: Failed to fetch'.
 
 ## Deep Dive (Поглиблене Вивчення):
-
 Historically, downloading a web page was often done with XMLHttpRequest in the browser, or with modules like `http` or `https` in Node.js. `fetch` API provides a cleaner, promise-based way to make web requests, and `node-fetch` is essentially node's implementation of what `fetch` does in the browser.
 
 Alternatives to `node-fetch` include `axios` or libraries like `got`. Each has its pros and cons in terms of features, syntax, and performance.
@@ -44,7 +38,6 @@ Alternatives to `node-fetch` include `axios` or libraries like `got`. Each has i
 Understanding HTTP status codes and headers is crucial. They tell you if your request was successful (`200` series), redirected (`300` series), had client errors (`400` series), or server errors (`500` series).
 
 ## See Also (Див. також):
-
 - MDN Web Docs on Fetch API: [https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 - Comparison of HTTP request libraries: [https://www.npmjs.com/package/node-fetch#fetch-vs-axios-vs-other-http-libraries](https://www.npmjs.com/package/node-fetch#fetch-vs-axios-vs-other-http-libraries)
 - HTTP Status Codes: [https://httpstatuses.com/](https://httpstatuses.com/)

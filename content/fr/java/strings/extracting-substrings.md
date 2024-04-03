@@ -11,9 +11,6 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Extraire des sous-chaînes, c'est découper des petits morceaux d'une chaîne de caractères. Les programmeurs le font pour isoler des données précises, valider des entrées ou tout simplement manipuler du texte selon leurs besoins.
-
 ## How to: (Comment faire :)
 ```java
 public class SubstringExample {

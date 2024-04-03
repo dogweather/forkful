@@ -10,11 +10,7 @@ title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-HTTP-Anfragen mit Basisauthentifizierung erlauben es einem Client, sich mit Benutzername und Passwort gegenüber einem Server zu authentifizieren. Programmierer nutzen dies, um sicheren Zugang zu Webressourcen zu gewährleisten.
-
 ## Anleitung:
-
 ```C#
 using System;
 using System.Net.Http;
@@ -66,7 +62,6 @@ Alternativen zur Basisauthentifizierung sind OAuth, Token-basierte Authentifizie
 Wichtig ist, dass bei jedem Request die Credentials mitgeschickt werden müssen, da HTTP ein zustandsloses Protokoll ist. Also macht man's leicht für die, die schnelle und simple Lösungen brauchen, aber es ist nicht ideal für Dienste, bei denen es auf erhöhte Sicherheit ankommt.
 
 ## Siehe Auch:
-
 - Microsoft Docs zur HttpClient-Klasse in .NET: [HttpClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
 - Eine Einführung in die verschiedenen Authentifizierungsstandards: [HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
 - Mehr zu HTTPS und seine Bedeutung für die Sicherheit: [HTTPS](https://en.wikipedia.org/wiki/HTTPS)

@@ -11,12 +11,7 @@ title: Refactoring
 weight: 19
 ---
 
-## What & Why?
-
-Refactoring in programming involves restructuring existing computer code—changing the factoring—without changing its external behavior. Programmers undertake this process to improve code readability, reduce complexity, and enhance maintainability, ultimately making the software easier to understand and modify.
-
 ## How to:
-
 In Go, refactoring can range from simple code tweaks to more complex changes. Let's start with a basic example: simplifying an initial Go function for better readability and efficiency.
 
 **Before Refactoring:**
@@ -119,7 +114,6 @@ func main() {
 Refactoring to use an interface (`Logger`) instead of a concrete type (`ConsoleLogger`) improves the function's flexibility and decouples the data processing from the specific logging implementation.
 
 ## Deep Dive
-
 Refactoring in Go must balance simplicity (one of Go's core philosophies) with the flexibility needed in large software projects. Given Go's minimalistic approach to features—without generics (until recently) and with a strong emphasis on readability—the language naturally guides developers towards simpler, more maintainable code structures. However, this doesn't mean Go code doesn't benefit from refactoring; it means refactoring must always prioritize clarity and simplicity.
 
 Historically, Go's lack of certain features (e.g., generics before Go 1.18) led to creative but sometimes convoluted solutions for code reuse and flexibility, making refactoring for abstraction a common practice. With the introduction of generics in Go 1.18, Go developers are now refactoring legacy code to leverage this feature for better type safety and code reuse, demonstrating the evolving nature of refactoring practices in Go.

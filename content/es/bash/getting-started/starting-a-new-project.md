@@ -11,9 +11,6 @@ title: Iniciando un nuevo proyecto
 weight: 1
 ---
 
-## ¿Qué & Por Qué?
-Iniciar un proyecto nuevo significa crear la base desde la que crecerá tu aplicación o script. Los programadores lo hacen para organizar sus ideas y asegurarse de que tienen todo lo necesario para empezar a trabajar eficientemente.
-
 ## Cómo hacerlo:
 Vamos a configurar un proyecto básico de Bash.
 
@@ -41,7 +38,7 @@ Para iniciar un proyecto en Bash, considera lo siguiente:
 2. Usa control de versiones como Git desde el principio.
 3. Asegúrate de que tu entorno de desarrollo tenga lo necesario.
 
-Al implementar tu proyecto, estructura el código en funciones para facilitar la lectura y mantenimiento. Documenta tu código con comentarios para explicar "el qué" y "el por qué" de tu código. 
+Al implementar tu proyecto, estructura el código en funciones para facilitar la lectura y mantenimiento. Documenta tu código con comentarios para explicar "el qué" y "el por qué" de tu código.
 
 ## Ver También:
 - [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/)

@@ -10,9 +10,6 @@ title: Suchen und Ersetzen von Text
 weight: 10
 ---
 
-## Was & Warum?
-Suchen und Ersetzen sind Kernfunktionen in der Textbearbeitung: Man findet spezifische Textmuster und ersetzt sie durch andere Inhalte. Programmierer nutzen dies, um Code zu korrigieren, Daten zu bereinigen oder automatische Anpassungen vorzunehmen.
-
 ## So geht's:
 Hier ist ein einfacher Lua-Code, der zeigt, wie man Text sucht und ersetzt. Die Funktion `string.gsub` ist dein Freund.
 

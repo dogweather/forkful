@@ -11,9 +11,6 @@ title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---
 
-## Qué y Por Qué?
-Convertir un texto a minúsculas es cambiar todas las letras de una cadena a su versión en minúscula. Lo hacemos para unificar el texto, facilitando la comparación y procesamiento de datos sin preocuparnos por las diferencias entre mayúsculas y minúsculas.
-
 ## Cómo Hacerlo:
 El siguiente código convierte un `String` en Arduino a minúsculas. Usamos la función `toLowerCase()`, así de simple.
 

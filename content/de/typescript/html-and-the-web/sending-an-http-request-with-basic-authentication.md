@@ -10,9 +10,6 @@ title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-HTTP-Anfragen mit Basisauthentifizierung schicken Nutzername und Passwort codiert im Header, um Zugriff auf geschützte Ressourcen zu erhalten. Programmierer nutzen das für einfache Authentifizierungsverfahren, wenn schneller Zugriff wichtiger ist als starke Sicherheit.
-
 ## So geht's:
 Verwenden Sie axios oder eine native fetch-Implementierung in TypeScript, um Basisauthentifizierung durchzuführen. Axios-Beispiel:
 

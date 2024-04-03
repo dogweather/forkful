@@ -14,9 +14,6 @@ title: "T\u1EA3i trang web"
 weight: 42
 ---
 
-## Cái gì & Tại sao?
-Tải một trang web nghĩa là lấy nội dung HTML từ internet thông qua URL của nó. Các lập trình viên làm điều này để phân tích nội dung web, tự động hóa các tác vụ, hoặc tích hợp dữ liệu vào ứng dụng của họ.
-
 ## Làm thế nào:
 Lua không được trang bị sẵn cho các tác vụ web, nhưng với thư viện `socket` và module `http`, việc này trở nên dễ dàng. Dưới đây là một ví dụ nhanh sử dụng LuaSocket:
 

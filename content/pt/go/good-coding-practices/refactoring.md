@@ -14,12 +14,7 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O Que & Porquê?
-
-Refatoração na programação envolve a reestruturação do código de computador existente — mudando a fatoração — sem alterar seu comportamento externo. Programadores empreendem esse processo para melhorar a legibilidade do código, reduzir a complexidade e aumentar a manutenibilidade, tornando o software mais fácil de entender e modificar.
-
 ## Como Fazer:
-
 Em Go, a refatoração pode variar de ajustes simples no código a mudanças mais complexas. Vamos começar com um exemplo básico: simplificar uma função inicial em Go para melhor legibilidade e eficiência.
 
 **Antes da Refatoração:**
@@ -122,7 +117,6 @@ func main() {
 Refatorar para usar uma interface (`Logger`) em vez de um tipo concreto (`ConsoleLogger`) melhora a flexibilidade da função e desacopla o processamento de dados da implementação específica de log.
 
 ## Aprofundamento
-
 Refatorar em Go deve equilibrar simplicidade (uma das filosofias centrais do Go) com a flexibilidade necessária em grandes projetos de software. Dado a abordagem minimalista do Go para recursos — sem genéricos (até recentemente) e com forte ênfase na legibilidade — a linguagem naturalmente guia os desenvolvedores para estruturas de código mais simples e mais mantentáveis. No entanto, isso não significa que o código Go não se beneficie da refatoração; significa que a refatoração deve sempre priorizar clareza e simplicidade.
 
 Historicamente, a falta de certos recursos no Go (por exemplo, genéricos antes do Go 1.18) levou a soluções criativas, mas às vezes complicadas, para reutilização de código e flexibilidade, tornando a refatoração para abstração uma prática comum. Com a introdução de genéricos no Go 1.18, os desenvolvedores de Go estão agora refatorando o código legado para aproveitar esse recurso para uma melhor segurança de tipos e reutilização de código, demonstrando a natureza evolutiva das práticas de refatoração em Go.

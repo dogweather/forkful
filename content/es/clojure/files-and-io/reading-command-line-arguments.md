@@ -11,9 +11,6 @@ title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---
 
-## ¿Qué y Por Qué?
-Leer argumentos de la línea de comandos permite que los programas reciban datos del usuario al iniciarse. Los programadores utilizan esta técnica para personalizar la ejecución de un programa sin la necesidad de una interfaz de usuario gráfica.
-
 ## Cómo Hacerlo:
 En Clojure, accedes a los argumentos de la línea de comandos con `*command-line-args*`. Aquí hay un ejemplo simple:
 

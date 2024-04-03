@@ -10,11 +10,6 @@ title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---
 
-## What & Why?
-**Hva & Hvorfor?**
-
-Printing debug output lar oss vise verdier eller meldinger mens programmet kjører. Det er som en live-titt inn i appens hjerne, nyttig for å finne og fikse feil.
-
 ## How to:
 **Slik gjør du:**
 
@@ -42,7 +37,7 @@ fun main() {
 
 // Output vil variere avhengig av logger-konfigurasjon. 
 ```
-  
+
 ## Deep Dive
 **Dypdykk**
 

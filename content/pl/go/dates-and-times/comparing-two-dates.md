@@ -13,12 +13,7 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## Co i dlaczego?
-
-Porównywanie dwóch dat w programowaniu to podstawowe zadanie, pozwalające programistom na ocenę chronologicznych relacji między datami. Takie porównania leżą u podstaw funkcji takich jak określanie czasu trwania, planowanie zadań i sprawdzanie zakresów dat, co czyni je kluczowym elementem dla aplikacji polegających na logice czasowej.
-
 ## Jak to zrobić:
-
 W Go daty obsługuje się głównie za pomocą typu `time.Time` z pakietu `time`. Aby porównać dwie daty, możemy użyć metod takich jak `Before()`, `After()` i `Equal()`, które są dostarczane przez typ `time.Time`. Zajrzyjmy do przykładów ilustrujących, jak porównać dwie daty:
 
 ```go
@@ -55,7 +50,6 @@ Kwiecień 1, 2023 jest przed Kwiecień 15, 2023
 Ten program demonstruje, jak przekształcić daty z ciągów tekstowych, co jest powszechnym wymogiem, a następnie porównać daty używając metod `Before()`, `After()` i `Equal()`. Metoda `time.Parse()` jest używana tutaj z ciągiem układu `"2006-01-02"`, który jest formatem daty referencyjnej w Go.
 
 ## Głębsze spojrzenie
-
 W języku programowania Go, projekt pakietu `time`, w tym typ `time.Time`, odzwierciedla filozofię dostarczania prostej, a jednak potężnej biblioteki standardowej. Metody porównywania `Before()`, `After()` i `Equal()` sprawiają, że porównywanie dat jest nie tylko proste, ale także czytelne, co odzwierciedla nacisk Go na klarowny i zwięzły kod.
 
 Historycznie, obsługa dat i czasu w językach programowania była pełna skomplikowań z powodu różnic w strefach czasowych, sekund przestępnych i systemach kalendarzowych. Pakiet `time` w Go jest próbą zaoferowania wszechstronnego rozwiązania, czerpiąc lekcje z pułapek i sukcesów implementacji daty i czasu w innych językach.

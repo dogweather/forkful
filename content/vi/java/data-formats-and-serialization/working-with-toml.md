@@ -13,9 +13,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---
 
-## Là gì & Tại sao?
-TOML là viết tắt của Tom's Obvious, Minimal Language. Đây là một định dạng chuỗi hóa dữ liệu được sử dụng cho các tệp cấu hình. Lập trình viên sử dụng nó bởi vì nó dễ đọc, dễ viết và dễ ánh xạ sang một bảng băm.
-
 ## Cách thực hiện:
 Bạn sẽ cần một thư viện phân tích cú pháp TOML. Tôi khuyến nghị sử dụng `toml4j`. Thêm nó vào dự án của bạn như sau:
 

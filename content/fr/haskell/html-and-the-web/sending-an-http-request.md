@@ -11,9 +11,6 @@ title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---
 
-## What & Why?
-En un clin d'oeil: une requête HTTP envoie de l'info vers ou en reçoit depuis un serveur web. Les programmeurs l'utilisent pour interagir avec des API, collecter des données, automatiser des tâches web. 
-
 ## How to:
 Haskell est élégant. Utilisons `http-client` pour envoyer une requête GET simple.
 

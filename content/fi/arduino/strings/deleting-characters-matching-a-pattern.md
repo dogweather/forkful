@@ -10,9 +10,6 @@ title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---
 
-## What & Why? - Mitä ja Miksi?
-Kun puhumme merkkien poistamisesta kuvioon pohjautuen, tarkoitamme tietynlaisen datan siivoamista syötteestä. Ohjelmoijat tekevät tätä datan puhdistamiseksi ja välttääkseen ei-toivottuja merkkejä, jotka voivat sotkea tulosteet tai aiheuttaa virheitä.
-
 ## How to: - Näin teet:
 ```Arduino
 String data = "H3l5l7o, W0o2rl4d!";

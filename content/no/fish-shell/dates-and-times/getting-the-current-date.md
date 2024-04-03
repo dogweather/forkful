@@ -13,9 +13,6 @@ title: "F\xE5 dagens dato"
 weight: 29
 ---
 
-## Hva & Hvorfor?
-Å hente den nåværende datoen i programmering er en grunnleggende oppgave som lar deg hente og manipulere systemets dato- og tidsdata. I scripting og automatiseringsoppgaver er det essensielt for å generere tidsstempler, planlegge oppgaver og opprette logger.
-
 ## Hvordan:
 Fish Shell bruker eksterne kommandoer som `date` for å få den nåværende datoen, noe som gir fleksibilitet til å formatere utdataen etter behov. Slik bruker du det:
 

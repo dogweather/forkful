@@ -12,9 +12,6 @@ title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---
 
-## O Que É & Porquê?
-Imprimir saída de depuração é o ato de exibir informações de diagnóstico para acompanhar o fluxo e o estado de um programa enquanto ele roda. Programadores fazem isso para rastrear bugs e garantir que tudo esteja funcionando como esperado.
-
 ## Como Fazer:
 ```C++
 #include <iostream>

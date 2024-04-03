@@ -13,9 +13,6 @@ title: "Merkkijonon pituuden m\xE4\xE4ritt\xE4minen"
 weight: 7
 ---
 
-## Mitä & Miksi?
-Merkkijonon pituuden määrittäminen C-kielessä tarkoittaa merkkien lukumäärän selvittämistä ennen nolla-terminaattoria `\0`. Ohjelmoijat tekevät tämän, jotta he voivat käsitellä merkkijonoja oikein ilman, että esiintyy virheitä, kuten puskurin ylivuotoja, jotka voivat johtaa turvallisuusaukkoihin tai ohjelman kaatumisiin.
-
 ## Kuinka:
 C:ssä standardikirjaston funktiota `strlen()` käytetään yleisesti merkkijonon pituuden löytämiseen. Tässä on nopea esimerkki:
 

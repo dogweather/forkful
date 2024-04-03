@@ -13,12 +13,7 @@ title: Ein Datum aus einem String interpretieren
 weight: 30
 ---
 
-## Was & Warum?
-
-Das Parsen eines Datums aus einem String in C involviert die Umwandlung von textuellen Datumsdarstellungen in ein Format, mit dem Programme effektiver umgehen und Analysen durchführen können. Dies ist entscheidend für Aufgaben wie Datumsarithmetik, Vergleiche und Formatierung für verschiedene Lokalitäten, da es Programmierern ermöglicht, Benutzereingaben oder Datensatzeinträge standardisiert zu behandeln.
-
 ## Wie:
-
 C bietet keine eingebaute Möglichkeit, direkt aus Strings Daten zu parsen, deshalb greifen wir oft auf die `strptime` Funktion zurück, die in der `<time.h>` Bibliothek für POSIX-Systeme verfügbar ist. Diese Funktion ermöglicht es uns, das erwartete Format des Eingabestrings zu spezifizieren und ihn in ein `struct tm` zu parsen, welches das Kalenderdatum und die Zeit in ihre Komponenten zerlegt darstellt.
 
 Hier ist ein einfaches Beispiel, wie man `strptime` nutzt, um ein Datum aus einem String zu parsen:
@@ -54,7 +49,6 @@ Geparstes Datum: Samstag, April 01, 2023
 Es ist essenziell, potenzielle Fehler zu behandeln, wie zum Beispiel, wenn `strptime` das Muster nicht abgleichen kann oder unerwartete Eingaben begegnet.
 
 ## Tiefer gehend
-
 Die `strptime` Funktion, obwohl mächtig, ist kein Teil der standard C-Bibliothek und findet sich hauptsächlich auf POSIX-konformen Systemen wie Linux und UNIX. Diese Einschränkung bedeutet, dass Programme, die auf `strptime` zum Parsen von Daten aus Strings angewiesen sind, möglicherweise nicht auf nicht-POSIX-Systeme wie Windows portierbar sind, ohne zusätzliche Kompatibilitätsschichten oder Bibliotheken.
 
 Historisch gesehen erforderte das Handhaben von Daten und Zeiten in C viel manuelle Manipulation und Sorgfalt, besonders unter Berücksichtigung verschiedener Lokalitäten und Zeitzonen. Moderne Alternativen und Erweiterungen zu C, wie die C++ `<chrono>` Bibliothek und Dritt-Bibliotheken wie Howard Hinnants Date-Bibliothek für C++, bieten robustere Lösungen für die Manipulation von Daten und Zeiten, inklusive Parsing. Diese Bibliotheken bieten typischerweise bessere Unterstützung für eine breitere Palette von Datumsformaten, Zeitzonen und Fehlerbehandlungsmechanismen, was sie für neue Projekte, die umfangreiche Fähigkeiten zur Manipulation von Datum und Zeit erfordern, vorzuziehen macht.

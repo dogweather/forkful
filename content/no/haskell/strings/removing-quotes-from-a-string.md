@@ -10,9 +10,6 @@ title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---
 
-## Hva & Hvorfor?
-Å fjerne anførselstegn fra en streng betyr å stripe ut eventuelle sitattegn—enten enkle (' ') eller doble (" ")—som er en del av strengdataene. Programmerere gjør dette for å rense inndata, forberede tekst for behandling, eller bli kvitt unødvendige tegn som kan forstyrre håndtering av data og operasjoner.
-
 ## Hvordan:
 I Haskell kan vi lage en funksjon som fjerner alle anførselstegn fra en gitt streng. Det er som å fortelle anførselstegnene å stikke av, og sørge for at de tar hintet.
 

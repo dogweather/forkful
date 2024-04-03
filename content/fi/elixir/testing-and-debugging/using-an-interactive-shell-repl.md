@@ -10,9 +10,6 @@ title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mikä & Miksi?
-Interaktiivinen komentotulkki eli REPL (Read-Eval-Print Loop, Lue-Arviointi-Tulosta Silmukka) mahdollistaa koodinpätkien kokeilemisen reaaliajassa. Elixir-ohjelmoijat käyttävät REPL:iä, joka tunnetaan nimellä IEx (Interactive Elixir), kokeiluun, vianetsintään ja kielen oppimiseen.
-
 ## Kuinka:
 IEx:n käynnistämiseksi avaa terminaali ja kirjoita `iex`. Tässä maistiainen:
 

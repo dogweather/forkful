@@ -13,12 +13,7 @@ title: Escribiendo un archivo de texto
 weight: 24
 ---
 
-## Qué y Por Qué?
-
-Escribir un archivo de texto en Google Apps Script permite a los desarrolladores almacenar datos de manera persistente, haciéndolos accesibles para uso futuro o análisis. Esta operación es una práctica común para registro (logging), guardar configuraciones o exportar información en un formato simple y legible.
-
 ## Cómo hacerlo:
-
 Crear y escribir en un archivo de texto en Google Apps Script se puede lograr a través del servicio Google DriveApp. A continuación, se presenta una guía paso a paso con ejemplos de código para comenzar:
 
 **Paso 1: Crear un Nuevo Archivo de Texto**
@@ -48,7 +43,6 @@ Este código recupera un archivo existente usando su ID único, luego añade "Nu
 No se muestra una salida explícita al ejecutar los fragmentos de código anteriores, pero si navegas a Google Drive donde se encuentra el archivo, verás "Example.txt" para el primer fragmento de código. Para el segundo fragmento, si abres el archivo especificado por ID, deberías ver los contenidos originales seguidos de la nueva línea "Nuevo contenido añadido."
 
 ## Análisis Profundo
-
 Escribir un archivo de texto en Google Apps Script aprovecha el servicio DriveApp, esencialmente aprovechando las capacidades de Google Drive para el almacenamiento y gestión de archivos. Este enfoque se remonta a la creación de Google Apps Script, que fue diseñado para automatizar fácilmente tareas a través de la suite de herramientas de productividad de Google, incluyendo Drive.
 
 Mientras que manipular archivos directamente a través de Google Apps Script es sencillo y está estrechamente integrado con Google Workspace, los desarrolladores que provienen de otros entornos (por ejemplo, Python, Node.js) podrían encontrarlo diferente de trabajar con un sistema de archivos local u otros servicios de almacenamiento en la nube como AWS S3. Estas plataformas a menudo ofrecen un conjunto más complejo de capacidades de manipulación de archivos pero requieren una configuración adicional para la autenticación y permisos.

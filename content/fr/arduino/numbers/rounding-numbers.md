@@ -11,9 +11,6 @@ title: Arrondir les nombres
 weight: 13
 ---
 
-## Quoi & Pourquoi ?
-Arrondir des nombres consiste à réduire un décimal à sa valeur entière la plus proche ou à un nombre défini de décimales. Les programmeurs arrondissent les nombres pour les rendre plus faciles à lire et à manipuler, en particulier lorsque la précision au-delà d'un certain point n'est pas nécessaire ou pourrait entraîner des erreurs.
-
 ## Comment faire :
 Avec Arduino, vous pouvez arrondir les nombres en utilisant des fonctions intégrées. Les principaux acteurs sont `round`, `ceil` et `floor`. Voici une démo rapide :
 

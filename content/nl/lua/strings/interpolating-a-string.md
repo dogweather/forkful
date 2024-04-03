@@ -13,9 +13,6 @@ title: Een string interpoleren
 weight: 8
 ---
 
-## Wat & Waarom?
-Stringinterpolatie stelt je in staat om variabelen direct in te voegen in strings. Dit wordt gedaan om dynamisch strings op te bouwen en de code schoon te houden.
-
 ## Hoe:
 In Lua, gebruik `..` voor concatenatie of `string.format` voor interpolatie. Voorbeeld:
 ```Lua

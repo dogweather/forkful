@@ -12,10 +12,8 @@ title: Capitalizzare una stringa
 weight: 2
 ---
 
-## Cosa e Perché?
-Capitalizzare una stringa significa convertire il primo carattere di una stringa in maiuscolo e il resto in minuscolo. Questa operazione è comunemente utilizzata nella lavorazione dei dati per normalizzare gli input o migliorare la leggibilità di titoli, nomi e simili.
-
 ## Come fare:
+
 
 ### Utilizzando il Metodo Incorporato di Python:
 Python ha un metodo incorporato `.capitalize()` per le stringhe per eseguire facilmente questo compito.

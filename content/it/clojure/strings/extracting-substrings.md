@@ -10,9 +10,6 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## Cos'è e Perché?
-Estrarre sottostringhe significa selezionare parti specifiche da una stringa di testo. I programmatori lo fanno per analisi, manipolazione dati o semplicemente per estrarre informazioni rilevanti.
-
 ## Come fare:
 ```Clojure
 ;; Estrarre una sottostringa con 'subs'

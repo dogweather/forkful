@@ -13,16 +13,10 @@ title: Analyse Syntaxique du HTML
 weight: 43
 ---
 
-## Quoi & Pourquoi ?
-
-L'analyse syntaxique du HTML en programmation implique l'analyse de la structure d'un document HTML, ce qui vous permet d'extraire, de manipuler et d'interagir programmatiquement avec son contenu. Les programmeurs font cela pour automatiser le web scraping, l'extraction de données, ou même modifier des pages web ou des documents HTML dynamiquement pour diverses applications, ce qui en fait une compétence essentielle dans le développement web, l'analyse de données et les scénarios de tests automatisés.
-
 ## Comment faire :
-
 Bien que .NET offre un support de base pour travailler avec le HTML, comme le `HttpClient` pour récupérer des pages web, il lui manque un analyseur HTML intégré et complet. Par conséquent, la plupart des développeurs C# se tournent vers des bibliothèques tierces populaires comme HtmlAgilityPack ou AngleSharp pour des capacités robustes d'analyse syntaxique du HTML. Ces deux bibliothèques permettent une interrogation, une manipulation et une traversée faciles du DOM HTML.
 
 ### Utilisation de HtmlAgilityPack
-
 1. **Installer HtmlAgilityPack** : D'abord, ajoutez le package HtmlAgilityPack à votre projet via NuGet.
    ```
    Install-Package HtmlAgilityPack
@@ -64,7 +58,6 @@ Bien que .NET offre un support de base pour travailler avec le HTML, comme le `H
    ```
 
 ### Utilisation de AngleSharp
-
 1. **Installer AngleSharp** : Ajoutez la bibliothèque AngleSharp à votre projet via NuGet.
    ```
    Install-Package AngleSharp

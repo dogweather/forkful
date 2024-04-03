@@ -14,16 +14,10 @@ title: Extrayendo subcadenas
 weight: 6
 ---
 
-## Qué y Por Qué?
-
-Extraer subcadenas en C implica crear una cadena más pequeña (subcadena) a partir de una cadena más grande basándose en criterios especificados, como la posición y la longitud. Los programadores a menudo realizan esta tarea para el análisis de texto, el procesamiento de datos o la validación de entradas, lo que lo convierte en una habilidad crucial en la manipulación y análisis eficiente de datos de texto.
-
 ## Cómo hacerlo:
-
 A diferencia de algunos lenguajes de alto nivel que proporcionan métodos integrados para la extracción de subcadenas, C requiere un enfoque más manual utilizando sus funciones de manipulación de cadenas. Aquí te mostramos cómo extraer una subcadena en C de manera efectiva:
 
 ### Ejemplo 1: Usando `strncpy`
-
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -43,7 +37,6 @@ int main() {
 ```
 
 ### Ejemplo 2: Crear una Función
-
 Para un uso repetido, una función dedicada a extraer subcadenas puede ser más eficiente:
 
 ```c
@@ -68,7 +61,6 @@ int main() {
 ```
 
 ## Análisis Profundo
-
 Extraer subcadenas en C se maneja principalmente a través de la manipulación de punteros y la gestión cuidadosa de la memoria, reflejando el enfoque de bajo nivel del lenguaje para manejar los datos. Este método se remonta a los primeros días de la programación en C, cuando la gestión eficiente de recursos era primordial debido al limitado poder de cómputo. Si bien la ausencia de una función integrada de subcadena podría parecer una omisión, ejemplifica la filosofía de C de dar a los programadores control completo sobre la gestión de memoria, lo que a menudo conduce a código optimizado pero más complejo.
 
 En el ámbito de la programación moderna, lenguajes como Python y JavaScript ofrecen métodos integrados para la extracción de subcadenas, como `slice()` o el corte de cadenas utilizando índices. Estos lenguajes de alto nivel manejan la gestión de memoria detrás de escena, sacrificando algún grado de control por facilidad de uso y legibilidad.

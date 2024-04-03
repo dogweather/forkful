@@ -11,9 +11,6 @@ title: Printing debug output
 weight: 33
 ---
 
-## What & Why?
-Printing debug output is chucking info onto your screen to see what's up with your code. Programmers do it to track down gremlins in the machine—bugs.
-
 ## How to:
 Here's the skinny on printing stuff in Lua:
 

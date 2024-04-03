@@ -15,12 +15,7 @@ title: Komentorivin argumenttien lukeminen
 weight: 23
 ---
 
-## Mikä & Miksi?
-
-Komentoriviargumenttien lukeminen Dartissa mahdollistaa ohjelmoijien syöttää tietoja suoraan konsoliin Dart-ohjelman suorittamisen aikana, parantaen sen interaktiivisuutta ja joustavuutta erilaisissa käyttötapauksissa, mukaan lukien automaatioskriptit, CLI-työkalut tai eränkäsittely. Tämä ominaisuus on keskeinen, kun luodaan sopeutuvia ja käyttäjäystävällisiä komentorivisovelluksia.
-
 ## Kuinka:
-
 Dart tarjoaa suoraviivaisen tavan päästä käsiksi komentoriviargumentteihin `List<String> args`:n kautta päämetodissa. Alla on yksinkertainen esimerkki, joka näyttää, kuinka lukea ja käyttää komentoriviargumentteja.
 
 ```dart
@@ -48,7 +43,6 @@ Komentoriviargumentit:
 ```
 
 ### Käyttäen Suosittua Kolmannen Osapuolen Kirjastoa: `args`
-
 Vaikka Dartin sisäänrakennetut valmiudet komentoriviargumenttien käsittelyyn ovatkin riittävät moniin sovelluksiin, `args`-paketti tarjoaa hienostuneen tavan määritellä ja jäsentää komentoriviargumentteja monimutkaisempiin tarpeisiin.
 
 Lisää ensin `args`-paketti `pubspec.yaml`-tiedostoosi:

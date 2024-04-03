@@ -14,14 +14,10 @@ title: Refaktorering
 weight: 19
 ---
 
-## Hva & Hvorfor?
-
-Refaktorering i Dart er prosessen med å restrukturere eksisterende kode uten å endre dens eksterne oppførsel, med mål om å forbedre dens interne struktur, lesbarhet og vedlikeholdbarhet. Programmerere refaktorerer ofte for å gjøre koden renere, lettere å forstå eller mer effektiv, noe som letter fremtidige modifikasjoner og reduserer sannsynligheten for feil.
-
 ## Hvordan:
 
-### Eksempel 1: Omdøping og Utdraging av Metoder
 
+### Eksempel 1: Omdøping og Utdraging av Metoder
 Før refaktorering, kan du ha et stykke kode som blander ulike nivåer av abstraksjon eller ansvar, som å beregne en rabatt og deretter anvende den:
 
 ```dart
@@ -61,7 +57,6 @@ Sluttpris: 80.0
 Ved å trekke beregningen ut i en metode, har du nå en klart definert operasjon som kan gjenbrukes, testes uavhengig og enkelt modifiseres.
 
 ### Eksempel 2: Forenkling av Betingede Uttrykk
-
 Før refaktorering kan betingede uttalelser være overdrevent komplekse eller vanskelige å lese:
 
 ```dart
@@ -110,5 +105,4 @@ Rabatt: 0.05
 Denne refaktoreringen gjør ikke bare koden mer konsis, men kapsler også logikken for å bestemme rabatter på en måte som er lettere å forstå og vedlikeholde.
 
 ### Tredjepartsbiblioteker for Refaktorering
-
 Når det kommer til refaktorering i Dart, spesielt innen Flutter-apper, er [Dart DevTools](https://dart.dev/tools/dart-devtools)-pakken uvurderlig. Den inkluderer ytelsesverktøy, en widget-inspektør og en kildekode-nivå debugger. Selv om det ikke er et tredjepartsbibliotek, blir Dart DevTools ofte brukt sammen med biblioteker som `flutter_bloc` for ryddig håndtering av tilstand på en måte som er gunstig for refaktorering for forbedret modularitet og lesbarhet. Dessverre, på grunn av omfanget av dette innlegget, vil spesifikke kodeeksempler som bruker tredjepartsbiblioteker ikke bli gitt her, men utviklere oppfordres til å utforske disse verktøyene for å forbedre refaktoreringsprosessen i sine Dart/Flutter-applikasjoner.

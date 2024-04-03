@@ -11,9 +11,6 @@ title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---
 
-## Vad & Varför?
-Skapa en temporär fil innebär att du tillfälligt lagrar data som behövs under programmets körning. Programmerare använder detta för att hantera mellanlagring, undvika datarförlust vid krascher och för att hantera stora datamängder diskret.
-
 ## Så här gör du:
 Använd `mktemp` för att skapa en säker temporär fil. Nedan är ett enkelt skript och exempelutdata:
 

@@ -11,9 +11,6 @@ title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---
 
-## Vad & Varför?
-Att hitta längden på en sträng innebär att räkna antalet tecken i den. Programmerare gör detta för validering, formatering eller andra beräkningar som kräver att veta storleken på indata.
-
 ## Så här gör du:
 Elixir använder `String.length/1` för att hitta längden på en sträng. Här är ett exempel:
 

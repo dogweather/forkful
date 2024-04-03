@@ -15,9 +15,6 @@ title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---
 
-## Gì và Tại sao?
-Tham số dòng lệnh cho phép người dùng cung cấp dữ liệu cho chương trình của họ khi họ khởi chạy nó. Các lập trình viên đọc các tham số này để điều chỉnh hành vi của chương trình mà không cần phải mã hóa cứng các giá trị.
-
 ## Cách thực hiện:
 Elm chạy trong trình duyệt, do đó nó không có quyền truy cập trực tiếp vào các tham số dòng lệnh như một ngôn ngữ phía máy chủ hoặc máy để bàn truyền thống. Tuy nhiên, để minh họa, giả sử bạn đang sử dụng Elm với một framework phía máy chủ như Node.js thông qua `elm server` hoặc một cài đặt tương tự cho phép truyền tham số. Mã của bạn sẽ không xử lý trực tiếp các tham số, nhưng chúng tôi sẽ mô phỏng mẫu:
 

@@ -11,11 +11,7 @@ title: Lese kommandolinjeargumenter
 weight: 23
 ---
 
-## Hva & Hvorfor?
-Kommandolinjeargumenter lar brukere gi inndata direkte til et program når de kjører det fra en terminal. Programmerere henter disse argumentene for å skape fleksible og tilpassbare skript.
-
 ## Hvordan:
-
 ```Python
 import sys
 

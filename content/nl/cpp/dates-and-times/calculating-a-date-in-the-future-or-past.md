@@ -13,9 +13,6 @@ title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---
 
-## Wat & Waarom?
-Een datum in de toekomst of het verleden berekenen betekent uitzoeken welke datum het zal zijn na of voor een bepaalde tijdsspanne. Het is nuttig voor het creëren van herinneringen, het instellen van vervaldatums, het plannen van evenementen of simpelweg het loggen van hoeveel tijd er is verstreken.
-
 ## Hoe:
 C++20 introduceerde de `<chrono>` bibliotheek upgrades, waardoor omgaan met tijd minder lastig is. Hier is een snel voorbeeld van het toevoegen van dagen aan de huidige datum:
 

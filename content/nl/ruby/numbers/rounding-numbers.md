@@ -12,11 +12,7 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-Het afronden van getallen betekent het aanpassen ervan naar het dichtstbijzijnde gehele getal of naar een gespecificeerde mate van precisie. Programmeurs ronden getallen af om te vereenvoudigen, om aan menselijke verwachtingen te voldoen, of om gegevens in specifieke formaten in te passen—denk aan financiële berekeningen, grafische weergaven, of het verminderen van de opslaggrootte.
-
 ## Hoe:
-
 ```Ruby
 # Basis afronding
 puts 3.14159.round      # => 3

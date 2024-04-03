@@ -15,9 +15,6 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i dlaczego?
-Sprawdzanie, czy katalog istnieje w Javie, to podstawowe zadanie polegające na weryfikacji obecności katalogu w systemie plików przed odczytem z niego, zapisem do niego lub wykonaniem jakichkolwiek operacji wymagających jego istnienia. Jest to kluczowe, aby uniknąć błędów lub wyjątków w programach interaktywnie działających z systemem plików, zapewniając płynniejsze wykonanie i lepsze doświadczenia użytkownika.
-
 ## Jak to zrobić:
 W Javie istnieje kilka sposobów na sprawdzenie, czy katalog istnieje, głównie za pomocą klas `java.nio.file.Files` i `java.io.File`.
 

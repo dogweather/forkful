@@ -11,12 +11,7 @@ title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---
 
-## O que é & Porquê?
-
-Criar um arquivo temporário é o processo de gerar um ficheiro que só é necessário durante a execução de um programa ou tarefa. Programadores fazem isso para armazenar dados temporários que não precisam ser preservados após o término do programa.
-
 ## Como fazer:
-
 No contexto do Arduino, criar um arquivo temporário geralmente envolve escrever em um cartão SD, pois o Arduino não tem um sistema de arquivos tradicional integrado. Aqui está um exemplo simples usando a biblioteca `SD`.
 
 ```Arduino
@@ -57,7 +52,6 @@ void loop() {
 A saída deve ser algo como "Arquivo temporário criado." no Monitor Serial, e você terá um arquivo no cartão SD com conteúdo de teste.
 
 ## Mergulho Profundo
-
 Na era do Arduino, criar arquivos temporários em cartões SD é uma conveniência para lidar com dados de forma não permanente. Históricamente, sistemas computacionais utilizam arquivos temporários para manipulação de dados em processos intermediários, ajudando a reduzir o uso de memória e permitindo a recuperação em casos de falhas. No contexto do Arduino, temos que trabalhar com armazenamentos externos como cartões SD ou similares, pois a placa em si tem capacidade limitada e não suporta um sistema de arquivos persistente.
 
 Existem alternativas, como usar uma memória EEPROM do Arduino para guardar dados mais permanentemente (embora seja um espaço limitado), ou conectar o Arduino a um computador ou a uma rede e enviar os dados temporários para lá, evitando o uso do cartão SD.
@@ -65,7 +59,6 @@ Existem alternativas, como usar uma memória EEPROM do Arduino para guardar dado
 Do ponto de vista da implementação, é crucial gerenciar bem o espaço limitado do cartão SD e garantir que os arquivos temporários sejam devidamente excluídos ou reescritos conforme a necessidade para evitar o preenchimento do cartão SD.
 
 ## Veja Também
-
 - Documentação da biblioteca SD para Arduino: [arduino.cc/en/Reference/SD](https://www.arduino.cc/en/Reference/SD)
 - Guia da memória EEPROM no Arduino: [arduino.cc/en/Reference/EEPROM](https://www.arduino.cc/en/Reference/EEPROM)
 - Tutorial sobre a comunicação serial com Arduino: [arduino.cc/en/Serial/Read](https://www.arduino.cc/en/Serial/Read)

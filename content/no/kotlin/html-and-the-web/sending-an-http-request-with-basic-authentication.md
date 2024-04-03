@@ -12,9 +12,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel med grunnleggende autentisering innebærer å inkludere brukernavn og passord for å få tilgang til en ressurs på en server. Vi gjør dette for å sikre at bare godkjente brukere kan hente eller manipulere data.
-
 ## Hvordan:
 For å sende en HTTP-forespørsel med Basisgodkjenning i Kotlin, bruk biblioteket `khttp`. Slik ser koden ut:
 

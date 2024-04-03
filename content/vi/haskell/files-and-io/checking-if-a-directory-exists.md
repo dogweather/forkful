@@ -16,9 +16,6 @@ title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---
 
-## Cái gì & Tại sao?
-Việc kiểm tra xem một thư mục có tồn tại không có nghĩa là xác nhận liệu thư mục đó có thực sự nằm ở vị trí bạn nghĩ trong hệ thống tệp hay không. Các lập trình viên làm điều này để tránh những lỗi như cố gắng đọc từ một thư mục không tồn tại hoặc vô tình tạo ra các thư mục trùng lặp.
-
 ## Làm thế nào:
 Haskell sử dụng gói `directory` cho các tương tác hệ thống tệp. Cài đặt nó bằng lệnh `cabal install directory` nếu bạn chưa cài đặt. Dưới đây là cách bạn kiểm tra một thư mục:
 

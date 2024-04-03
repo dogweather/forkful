@@ -13,9 +13,6 @@ title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---
 
-## Mikä & Miksi?
-Työskentely JSON:n (JavaScript Object Notation) parissa tarkoittaa tämän kevyen datanvaihtoformaatista hyödyntämistä Java-sovelluksissasi. Ohjelmoijat suosivat JSONia rakenneellisen datan sarjoittamiseen ja siirtämiseen verkon yli sekä datan helppoon konfigurointiin ja tallentamiseen, koska se on ihmisen luettavissa ja kielestä riippumaton.
-
 ## Kuinka:
 Kääritään hihat ja ryhdytään koodaamaan JSONin kanssa Javassa.
 

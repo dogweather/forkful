@@ -16,9 +16,6 @@ title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---
 
-## Cái gì & Tại sao?
-Tổ chức code thành các hàm nghĩa là phân rã một chương trình khổng lồ thành các phần nhỏ quản lý được, mỗi phần thực hiện một tác vụ rõ ràng. Lập trình viên làm điều này để code dễ đọc, dễ tái sử dụng và dễ bảo trì.
-
 ## Làm thế nào:
 Dưới đây là một ví dụ điển hình - một hàm để tính giai thừa của một số.
 

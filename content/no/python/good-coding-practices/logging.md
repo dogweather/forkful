@@ -12,9 +12,6 @@ title: "Loggf\xF8ring"
 weight: 17
 ---
 
-## Hva & Hvorfor?
-Loggføring er prosessen med å registrere hendelser i en applikasjon mens et program kjører, og gir en sporlogg for analyse etter hendelsen og overvåkning i sanntid. Utviklere gjør dette fordi det hjelper med feilsøking, overvåke ytelse, og spore brukerhandlinger for sikkerhet og analyse.
-
 ## Hvordan:
 Python kommer med en innebygd modul for loggføring. Her er en enkel oppsett:
 ```Python

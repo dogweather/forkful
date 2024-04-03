@@ -9,9 +9,6 @@ title: Einen HTTP-Request senden
 weight: 44
 ---
 
-## What & Why? (Was & Warum?)
-HTTP-Anfragen sind das Herzstück der Kommunikation im Web. Programmierer verwenden sie, um Daten von Servern zu holen oder an diese zu senden – essentiell, um lebendige, interaktive Applikationen zu erstellen.
-
 ## How to: (Wie geht das:)
 Kotlin bietet mehrere Möglichkeiten, HTTP-Anfragen zu senden. Hier verwenden wir die Bibliothek `khttp`, die einfache und direkte Aufrufe ermöglicht.
 

@@ -10,9 +10,6 @@ title: Concatenating strings
 weight: 3
 ---
 
-## What & Why?
-Concatenating strings is about joining two or more strings together to form a single piece of text. You might need to merge text for generating user messages, creating file paths, or for data serialization processes. It’s a fundamental operation in any programming language, including Elixir, enabling developers to construct dynamic strings with ease.
-
 ## How to:
 In Elixir, you can concatenate strings in a few straightforward ways. Let's explore the most common methods:
 

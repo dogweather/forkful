@@ -14,12 +14,7 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i dlaczego?
-
-Praca z liczbami zespolonymi w programowaniu polega na manipulowaniu liczbami, które mają zarówno część rzeczywistą, jak i urojoną, zwykle wyrażane jako `a + bi`. Programiści zajmują się liczbami zespolonymi w różnych dziedzinach, takich jak inżynieria, fizyka i analiza danych, aby rozwiązywać problemy związane z pierwiastkami kwadratowymi z liczb ujemnych, analizami przebiegów falowych i więcej.
-
 ## Jak to zrobić:
-
 W Go, liczby zespolone są obsługiwane za pomocą wbudowanych funkcji `complex`, `real` i `imag`, wraz z typami `complex64` i `complex128` (reprezentujące odpowiednio 64-bitowe i 128-bitowe liczby zespolone). Oto krótki przewodnik:
 
 ```go
@@ -55,7 +50,6 @@ func main() {
 Ten przykład pokrywa podstawy, ale jest znacznie więcej, co można zrobić z liczbami zespolonymi, w tym wykorzystywanie pakietu `math/cmplx` dla bardziej zaawansowanych operacji, tak jak znajdowanie modułu, fazy i wiele więcej.
 
 ## W głębi tematu
-
 Koncepcja liczb zespolonych sięga XVI wieku, ale szerokie rozpoznanie i rygorystyczna formalizacja nastąpiła dopiero w XIX wieku. W programowaniu komputerowym liczby zespolone są stałym elementem skomplikowanych obliczeń arytmetycznych w naukowych i inżynieryjnych kalkulacjach od wczesnych lat. Podejście Go do liczb zespolonych, poprzez uczynienie ich obywatelem pierwszej klasy z wbudowanym wsparciem i obszernym wsparciem standardowej biblioteki poprzez pakiet `math/cmplx`, wyróżnia się wśród języków programowania. Ta decyzja projektowa odzwierciedla nacisk Go na prostotę i wydajność.
 
 Niemniej jednak warto zauważyć, że praca z liczbami zespolonymi w Go, choć potężna, może nie zawsze być najlepszym podejściem dla wszystkich aplikacji, szczególnie tych wymagających matematyki symbolicznej lub arytmetyki wysokiej precyzji. Języki i środowiska specjalizujące się w obliczeniach naukowych, takie jak Python z bibliotekami takimi jak NumPy i SciPy, lub oprogramowanie takie jak MATLAB, mogą oferować większą elastyczność i szerszy zakres funkcjonalności dla konkretnych zastosowań.

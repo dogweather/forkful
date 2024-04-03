@@ -14,9 +14,6 @@ title: "Usando express\xF5es regulares"
 weight: 11
 ---
 
-## O que e Por quê?
-Expressões regulares (regex) são sequências de caracteres que definem padrões de pesquisa, usados principalmente para correspondência e manipulação de strings. Programadores utilizam regex em projetos Arduino para analisar entradas seriais, validar entradas de usuário ou extrair dados de strings, melhorando a eficiência e a flexibilidade do processamento de dados.
-
 ## Como fazer:
 O Arduino não tem suporte integrado para regex diretamente em sua biblioteca padrão. No entanto, você pode alcançar funcionalidade semelhante a regex para padrões simples usando funções básicas de string, ou para necessidades mais complexas, integrar uma biblioteca de terceiros como `regex`.
 

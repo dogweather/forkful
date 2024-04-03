@@ -13,9 +13,6 @@ title: Een HTTP-verzoek verzenden
 weight: 44
 ---
 
-## Wat & Waarom?
-Een HTTP-verzoek verzenden is hoe je programma een ander systeem vraagt om gegevens of diensten over het web. Programmeurs doen dit om te interageren met web-API's, bronnen op te halen of communicatie tussen diensten mogelijk te maken.
-
 ## Hoe?
 In Clojure kun je HTTP-verzoeken verzenden met de `clj-http` client.
 

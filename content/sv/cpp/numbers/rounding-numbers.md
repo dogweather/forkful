@@ -11,9 +11,6 @@ title: Avrundning av tal
 weight: 13
 ---
 
-## Vad & Varför?
-Att avrunda tal innebär att justera ett värde till närmaste heltal eller angiven precision. Utvecklare gör detta för att förenkla, anpassa sig till verkliga begränsningar eller förbättra prestanda genom att kasta bort överflödig precision.
-
 ## Hur man gör:
 C++ erbjuder flera sätt att avrunda tal, som `floor()`, `ceil()`, och `round()`:
 

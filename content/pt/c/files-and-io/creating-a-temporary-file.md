@@ -14,9 +14,6 @@ title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---
 
-## O Quê & Porquê?
-Criar um arquivo temporário em C envolve gerar um arquivo destinado a ser usado por curta duração, geralmente como espaço de rascunho para processamento ou armazenamento de dados. Programadores fazem isso para gerenciar dados temporários sem afetar o armazenamento permanente do programa ou para garantir que dados sensíveis sejam apagados após o uso.
-
 ## Como fazer:
 Criar um arquivo temporário na linguagem de programação C pode aproveitar funções como `tmpfile()` e `mkstemp()`.
 

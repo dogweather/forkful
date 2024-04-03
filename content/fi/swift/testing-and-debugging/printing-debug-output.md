@@ -11,9 +11,6 @@ title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
 
-## What & Why? (Mitä & Miksi?)
-Debug-tuloste auttaa näkemään, mitä ohjelmaasi tapahtuu ajon aikana. Ohjelmoijat käyttävät sitä virheiden etsimiseen ja ohjelman käyttäytymisen ymmärtämiseen.
-
 ## How to: (Miten:)
 Swiftissä tulostaminen konsoliin käy `print`-funktiolla. Katsotaan pari esimerkkiä.
 

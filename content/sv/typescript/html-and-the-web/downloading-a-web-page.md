@@ -10,9 +10,6 @@ title: "H\xE4mta en webbsida"
 weight: 42
 ---
 
-## Vad & Varför?
-Att ladda ner en webbsida innebär att hämta dess innehåll via internet. Programmerare gör det för att analysera webbinnehåll, samla data, eller för att integrera webbfunktionalitet i egna applikationer.
-
 ## Hur man gör:
 ```TypeScript
 import axios from 'axios';  // För HTTP-begäranden

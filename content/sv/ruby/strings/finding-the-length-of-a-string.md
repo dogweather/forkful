@@ -11,9 +11,6 @@ title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---
 
-## Vad & Varför?
-Att hitta längden på en sträng innebär att räkna antalet tecken den innehåller. Programmerare gör detta för att validera indata, formatera utdata eller utföra operationer som kräver kännedom om strängens storlek.
-
 ## Hur gör man:
 I Ruby, använd `.length` eller `.size` på en sträng för att få dess längd.
 

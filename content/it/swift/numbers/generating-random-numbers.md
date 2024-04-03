@@ -10,12 +10,7 @@ title: Generazione di numeri casuali
 weight: 12
 ---
 
-## Cosa e Perché?
-
-La generazione di numeri casuali nella programmazione riguarda la creazione di valori numerici non deterministici o imprevedibili. I programmatori utilizzano i numeri casuali per una varietà di motivi, come per simulare l'imprevedibilità nei giochi, selezionare campioni casuali da insiemi di dati o per scopi crittografici.
-
 ## Come fare:
-
 Swift offre un modo diretto per generare numeri casuali attraverso la sua libreria standard. Ecco come si fa per diversi tipi numerici:
 
 ```Swift
@@ -35,7 +30,6 @@ print(randomBool)
 L'output dei campioni potrebbe variare perché, dopotutto, stiamo trattando con la casualità. Eseguendo il codice più volte si otterranno numeri e valori booleani diversi.
 
 ## Approfondimento
-
 L'approccio di Swift alla generazione di numeri casuali si basa su un generatore di numeri pseudo-casuali (PRNG) robusto ed efficiente. Prima di Swift 4.2, gli sviluppatori si affidavano a librerie esterne o alle capacità della piattaforma sottostante, il che poteva portare a incongruenze tra diverse piattaforme e ambienti. Con l'introduzione di API native in Swift 4.2, generare numeri casuali è diventato più semplice e più consistente, indipendentemente dalla piattaforma sottostante.
 
 Tuttavia, è fondamentale comprendere che il generatore di numeri casuali standard in Swift non è adatto a scopi crittografici. Per la crittografia, gli sviluppatori dovrebbero utilizzare il framework `Security` sulle piattaforme Apple, che fornisce accesso a byte casuali sicuri dal punto di vista crittografico. Al momento del mio ultimo aggiornamento, Swift non include un generatore di numeri casuali crittografici cross-platform nella sua libreria standard, costringendo gli sviluppatori a cercare librerie di terze parti per tali necessità su piattaforme non-Apple.

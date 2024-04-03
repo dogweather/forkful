@@ -15,9 +15,6 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnianiem"
 weight: 45
 ---
 
-## Co i dlaczego?
-Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem w języku C polega na przygotowaniu żądania HTTP, które zawiera nagłówek Authorization z zakodowanymi w Base64 poświadczeniami użytkownika. Jest to powszechna metoda dodawania prostej warstwy uwierzytelniania do żądań HTTP, pozwalająca na programowe dostępowanie do zasobów ograniczonych.
-
 ## Jak to zrobić:
 Aby wysłać żądanie HTTP z podstawowym uwierzytelnieniem w języku C, będziemy potrzebować użyć biblioteki libcurl, popularnej, wszechstronnej i łatwej w użyciu biblioteki do transferu URL po stronie klienta. Obsługuje ona różne protokoły, w tym HTTP i HTTPS, co upraszcza nasze zadanie. Upewnij się, że libcurl jest zainstalowana w twoim systemie przed kontynuowaniem. Oto podstawowy przykład demonstrujący, jak wysłać żądanie GET z podstawowym uwierzytelnieniem:
 

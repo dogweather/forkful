@@ -16,9 +16,6 @@ title: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uAE30"
 weight: 28
 ---
 
-## What & Why? (무엇과 왜?)
-날짜를 문자열로 변환한다는 것은, Date 객체를 읽기 쉬운 텍스트 형식으로 바꾸는 행위입니다. 대개 날짜를 로그에 기록하거나 사용자 인터페이스에 보여주기 위해 변환합니다.
-
 ## How to: (방법)
 ```java
 import java.time.LocalDate;

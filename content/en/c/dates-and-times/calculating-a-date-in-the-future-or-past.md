@@ -12,9 +12,6 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-Calculating a date in the future or past involves determining a specific date by adding or subtracting a certain number of days, months, or years from a given date. Programmers do this for tasks such as scheduling events, generating reminders, or handling expiration dates, making it an essential functionality in various applications, from calendaring systems to financial software.
-
 ## How to:
 While the C standard library does not provide direct functions for date arithmetic, you can manipulate dates using the `time.h` library, specifically working with the `time_t` data type and `struct tm`. Here's a simplified example of how to add days to the current date:
 

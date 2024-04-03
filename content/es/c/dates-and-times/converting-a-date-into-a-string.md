@@ -13,12 +13,7 @@ title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---
 
-## Qué y Por Qué?
-
-Convertir una fecha en una cadena en C implica traducir una estructura de fecha o marcar una fecha en un formato legible por humanos. Los programadores a menudo realizan esta tarea para mostrar fechas en registros, interfaces de usuario o al almacenar fechas en un formato basado en texto como JSON o CSV.
-
 ## Cómo hacerlo:
-
 La función `strftime` de la biblioteca `<time.h>` es comúnmente utilizada para este propósito. Te permite formatear la fecha y hora de diversas maneras especificando especificadores de formato. Aquí hay un ejemplo rápido:
 
 ```c
@@ -47,7 +42,6 @@ Fecha y Hora Actuales: Wed Jun 30 21:49:08 2021
 Puedes personalizar el formato cambiando los especificadores de formato pasados a `strftime`. Por ejemplo, para obtener la fecha en el formato `AAAA-MM-DD`, usarías `"%Y-%m-%d"`.
 
 ## Profundización
-
 La función `strftime` y la biblioteca `<time.h>` son parte de la Biblioteca Estándar C, la cual se remonta al estándar original ANSI C (C89/C90). Aunque es directa y cuenta con soporte en muchas plataformas, este enfoque puede parecer de bajo nivel y engorroso en comparación con los lenguajes de programación modernos que ofrecen bibliotecas de fecha y hora más intuitivas.
 
 Se debe notar, aunque las funciones de tiempo de la biblioteca estándar de C tienen un amplio soporte y son relativamente simples de usar, carecen de algunas de las características más complejas de manipulación de zonas horarias e internacionalización que se encuentran en bibliotecas de lenguajes más nuevos o bibliotecas C de terceros como los Componentes Internacionales para Unicode (ICU).

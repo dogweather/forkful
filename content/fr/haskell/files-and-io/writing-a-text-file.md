@@ -13,12 +13,7 @@ title: "R\xE9diger un fichier texte"
 weight: 24
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire dans un fichier texte en Haskell consiste à créer ou mettre à jour des fichiers avec du contenu textuel de manière programmatique. Les programmeurs font cela pour persister des données telles que les messages de journalisation, la sortie d'applications ou pour stocker du contenu généré par l’utilisateur, ce qui en fait une tâche fondamentale pour les applications nécessitant la persistance des données ou la journalisation.
-
 ## Comment faire :
-
 Le Prelude standard d'Haskell fournit un support élémentaire pour l'écriture dans des fichiers en utilisant les fonctions `writeFile` et `appendFile` du module `System.IO`. Voici un exemple de base pour créer un nouveau fichier (ou écraser un existant) puis ajouter du texte à un fichier.
 
 ```haskell

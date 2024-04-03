@@ -13,12 +13,7 @@ title: Arbeiten mit TOML
 weight: 39
 ---
 
-## Was & Warum?
-
-TOML, was für Toms Offensichtliche, Minimale Sprache steht, ist ein Daten-Serialisierungsformat, das hauptsächlich für Konfigurationsdateien verwendet wird. Programmierer nutzen TOML wegen seiner Lesbarkeit und einfachen Zuordnung zu Datenstrukturen, was eine unkomplizierte Konfiguration von Anwendungen in verschiedenen Programmierumgebungen, einschließlich Visual Basic for Applications (VBA), ermöglicht.
-
 ## Wie:
-
 Die Arbeit mit TOML in VBA beinhaltet das Parsen der TOML-Datei, um Konfigurationen oder Einstellungen in Ihr VBA-Projekt zu lesen. VBA hat keine integrierte Unterstützung für TOML, daher verwenden Sie normalerweise einen Parser oder konvertieren TOML-Daten in ein Format, mit dem VBA leicht arbeiten kann, wie JSON oder XML. So parsen Sie manuell eine einfache TOML-Konfigurationsdatei:
 
 1. **Beispiel-TOML-Datei** (`config.toml`):
@@ -75,5 +70,4 @@ Datenbankserver: 192.168.1.1
 ```
 
 ## Vertiefende Betrachtung
-
 Die praktische Akzeptanz von TOML in der Entwicklergemeinschaft zeigt einen Trend zu einfacheren, menschenlesbareren Konfigurationsdateien auf, im Gegensatz zu den früher vorherrschenden XML. TOMLs Designphilosophie betont klare Semantik und zielt auf einfaches Parsen mit minimalem Overhead ab. In VBA erfordert der direkte Umgang mit TOML das manuelle Parsen oder den Einsatz externer Werkzeuge zur Konvertierung von TOML in ein VBA-freundlicheres Format aufgrund fehlender nativer Unterstützung. Obwohl diese manuelle Parsmethode einen grundlegenden Ansatz darstellt, könnten der Einsatz externer Bibliotheken oder Zwischenformate wie JSON robustere und fehlerresistentere Parsstrategien bieten. Angesichts der umfangreichen Integration von VBA mit Microsoft Office könnte die Umwandlung von TOML in JSON und die Verwendung der nativen JSON-Parsing-Fähigkeiten von VBA (wo anwendbar) oder von Drittanbieter-JSON-Parsen einen effizienteren Workflow bieten. Darüber hinaus sollten Programmierer mit der kontinuierlichen Entwicklung von Daten-Serialisierungsformaten auch YAML in Betracht ziehen, das wie TOML die Lesbarkeit für Menschen betont, aber verschiedene Kompromisse in Bezug auf Komplexität und Flexibilität bietet.

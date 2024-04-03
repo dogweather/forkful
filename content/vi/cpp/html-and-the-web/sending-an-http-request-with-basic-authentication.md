@@ -11,14 +11,10 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1
 weight: 45
 ---
 
-## Gửi một yêu cầu HTTP với xác thực cơ bản với C++
-
 ### Gì & Tại sao?
-
 Gửi một yêu cầu HTTP với xác thực cơ bản bao gồm việc đính kèm tên người dùng và mật khẩu vào một yêu cầu để kiểm soát quyền truy cập. Lập trình viên làm điều này cho các kế hoạch xác thực đơn giản để bảo vệ tài nguyên trên máy chủ.
 
 ### Làm thế nào:
-
 Đây là một ví dụ cơ bản sử dụng thư viện `CURL` trong C++. Trước khi bắt đầu, hãy chắc chắn rằng bạn đã cài đặt `libcurl`.
 
 ```C++
@@ -63,7 +59,6 @@ int main() {
 Bạn sẽ thấy phản hồi từ máy chủ được in ra console, giả sử không có lỗi xảy ra.
 
 ### Sâu hơn nữa
-
 Xác thực cơ bản là kiểu cũ, có từ những ngày đầu của HTTP. Giờ đây, ngành công nghiệp ưa chuộng các phương pháp an toàn hơn như OAuth và tokens. Mặc dù vậy, xác thực cơ bản vẫn được sử dụng, thường xuyên cho các hệ thống nội bộ hoặc đơn giản nơi mà các lớp bảo mật nặng nề là không cần thiết.
 
 Bên dưới, tên người dùng và mật khẩu của bạn được mã hóa base64 và gói gọn trong tiêu đề HTTP. Nó đơn giản nhưng không an toàn nếu không qua HTTPS vì base64 dễ dàng đảo ngược - làm cho HTTPS trở thành một yêu cầu bắt buộc.
@@ -71,7 +66,6 @@ Bên dưới, tên người dùng và mật khẩu của bạn được mã hóa
 Nếu `libcurl` không phù hợp với bạn, hãy xem xét các lựa chọn khác như thư viện `cpp-httplib`, hoặc bạn có thể sử dụng `Boost.Beast` cho một phương pháp tiếp cận thực hành hơn.
 
 ### Xem thêm
-
 - [libcurl](https://curl.se/libcurl/)
 - [Kho lưu trữ GitHub cpp-httplib](https://github.com/yhirose/cpp-httplib)
 - [Tài liệu Boost.Beast](https://www.boost.org/doc/libs/master/libs/beast/doc/html/index.html)

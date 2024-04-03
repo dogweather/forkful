@@ -11,9 +11,6 @@ title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---
 
-## What & Why? (Co i dlaczego?)
-Konwersja daty na ciąg znaków to sposób na zmianę formatu `DateTime` na tekst. Programiści robią to, by łatwo wyświetlać i przechowywać informacje o dacie w czytelnej formie.
-
 ## How to: (Jak to zrobić:)
 Wykorzystaj `ToString` z formatowaniem lub bez. Przykłady poniżej:
 

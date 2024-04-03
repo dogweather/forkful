@@ -15,9 +15,6 @@ title: Arbeiten mit CSV
 weight: 37
 ---
 
-## Was & Warum?
-CSV-Dateien (Comma-Separated Values), also durch Kommata getrennte Werte, sind ein übliches Datenformat für den Austausch, das tabellarische Daten in reinem Text darstellt, wobei Kommata verwendet werden, um einzelne Werte voneinander zu trennen. Programmierer arbeiten mit CSV-Dateien, um Daten einfach zu importieren, zu exportieren und zu manipulieren, und dies über verschiedene Anwendungen und Dienste hinweg, da es ein einfaches, weit verbreitetes Format ist, das mit Tabellenkalkulationsanwendungen, Datenbanken und Programmiersprachen kompatibel ist.
-
 ## Wie geht das:
 Die Arbeit mit CSV-Dateien in C# kann durch den `System.IO`-Namespace für grundlegende Operationen erreicht werden, und für komplexere Manipulationen oder um größere Dateien nahtlos zu handhaben, könnte man Drittanbieter-Bibliotheken wie `CsvHelper` in Betracht ziehen. Unten sind Beispiele, wie man CSV-Dateien liest und in sie schreibt, unter Verwendung beider Ansätze.
 

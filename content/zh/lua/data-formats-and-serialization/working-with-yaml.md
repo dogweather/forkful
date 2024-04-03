@@ -24,12 +24,7 @@ title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 weight: 41
 ---
 
-## 什么及为什么？
-
-YAML，"YAML Ain't Markup Language"的缩写，是一种易于人类阅读的数据序列化标准，通常用于配置文件和语言之间的数据交换。程序员之所以利用YAML，是因为它的简单性和可读性，使其成为设置、多样化应用配置或应该由非程序员编辑的内容的首选。
-
 ## 如何操作：
-
 Lua并不内置支持YAML，但你可以通过使用第三方库如`lyaml`来操作YAML文件。这个库允许用Lua编码和解码YAML数据。首先，你需要通过Lua的包管理器LuaRocks安装`lyaml`：
 
 ```bash
@@ -37,7 +32,6 @@ luarocks install lyaml
 ```
 
 ### 解码YAML：
-
 假设你有一个名为`config.yaml`的文件包含以下YAML内容：
 
 ```yaml
@@ -72,7 +66,6 @@ password: pass
 ```
 
 ### 编码YAML：
-
 要将Lua表编码成YAML格式，你使用`lyaml`提供的`dump`函数。考虑你想创建以下Lua表的YAML表示：
 
 ```lua

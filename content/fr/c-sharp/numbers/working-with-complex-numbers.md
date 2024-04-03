@@ -12,9 +12,6 @@ title: Manipulation des nombres complexes
 weight: 14
 ---
 
-## Quoi & Pourquoi ?
-Les nombres complexes élargissent notre système de nombres pour inclure les nombres imaginaires, nous permettant de résoudre des équations qui n'ont pas de solutions réelles. Les programmeurs travaillent avec eux dans des domaines comme l'ingénierie, la physique et le traitement des signaux où ces nombres sont essentiels pour la modélisation et la résolution de problèmes.
-
 ## Comment faire :
 C# dispose d'une structure intégrée `System.Numerics.Complex` pour traiter les nombres complexes. Voici un rapide tutoriel :
 

@@ -12,12 +12,7 @@ title: Refactoring
 weight: 19
 ---
 
-## Wat & Waarom?
-
-Refactoring is het proces van het herstructureren van bestaande computercodes zonder het externe gedrag ervan te wijzigen. Programmeurs doen dit om code op te schonen, leesbaarheid te verbeteren, complexiteit te verminderen en onderhoudbaarheid te verbeteren.
-
 ## Hoe te:
-
 Laten we een eenvoudige C# methode refactoren die de som van een reeks getallen berekent en afdrukt:
 
 Voor Refactoring:
@@ -67,7 +62,6 @@ calculator.DisplaySum();
 Door te refactoren hebben we de zorgen gescheiden, de `Calculator` klasse flexibeler gemaakt door het mogelijk te maken om elk willekeurig aantal reeksen te gebruiken, en hebben we LINQ gebruikt om de somberekening beknopter te maken.
 
 ## Diepere Duik
-
 Refactoring vindt zijn oorsprong in de Smalltalk-programmeercommunity en werd in de jaren '90 populair gemaakt door het boek van Martin Fowler "Refactoring: Improving the Design of Existing Code". Door de jaren heen is het een fundamenteel onderdeel geworden van agile methodologieën en goede programmeerpraktijken.
 
 Er zijn verschillende benaderingen van refactoring, zoals Red-Green-Refactor in Test-Driven Development (TDD). Dit zorgt ervoor dat refactoring geen bugs introduceert door te beginnen met een falende test, deze te laten slagen en vervolgens de code op te ruimen.
@@ -75,7 +69,6 @@ Er zijn verschillende benaderingen van refactoring, zoals Red-Green-Refactor in 
 Bij het implementeren van refactoring is het cruciaal om een uitgebreide testsuite te hebben om ervoor te zorgen dat er geen functionaliteit wordt gebroken tijdens het proces. Geautomatiseerde refactoringtools, zoals ReSharper voor C#, kunnen ook helpen in dit proces door veilige manieren te bieden om codestructuren te veranderen. Echter, tooling zou aanvullend moeten zijn op een diepgaand begrip van de codebasis en programmeerprincipes.
 
 ## Zie Ook
-
 - Het baanbrekende werk van Martin Fowler over Refactoring: [Refactoring: Improving the Design of Existing Code](https://martinfowler.com/books/refactoring.html)
 - De gids van Microsoft over Refactoring in Visual Studio: [Refactoring (C#)](https://docs.microsoft.com/nl-nl/visualstudio/ide/refactoring-in-visual-studio?view=vs-2022)
 - Een gedetailleerd kijkje in Refactoring patronen met voorbeelden: [SourceMaking Refactoring](https://sourcemaking.com/refactoring)

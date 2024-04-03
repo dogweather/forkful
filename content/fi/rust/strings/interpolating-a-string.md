@@ -9,9 +9,6 @@ title: Merkkijonon interpolointi
 weight: 8
 ---
 
-## Mikä & Miksi?
-String-interpolointi tarkoittaa muuttujien yhdistämistä merkkijonoon. Se tekee koodista luettavampaa ja dynaamista, koska voit muodostaa merkkijonon lennosta arvojen perusteella.
-
 ## Kuinka tehdä:
 ```Rust
 fn main() {

@@ -37,12 +37,7 @@ title: "\u0E01\u0E32\u0E23\u0E25\u0E1A\u0E15\u0E31\u0E27\u0E2D\u0E31\u0E01\u0E29
 weight: 5
 ---
 
-## อะไรและทำไม?
-
-การลบอักขระที่ตรงกับรูปแบบหนึ่งๆ หมายถึงการค้นหาอักขระชุดเฉพาะในสตริงและลบออก โปรแกรมเมอร์ทำการนี้เพื่อทำความสะอาดหรือเปลี่ยนแปลงข้อมูลข้อความ – คิดถึงการลบแท็ก HTML ออกจากสตริง หรือการลบเครื่องหมายวรรคตอนที่ไม่ต้องการ
-
 ## วิธีการ:
-
 ```TypeScript
 function deletePattern(text: string, pattern: string): string {
   // สร้าง RegExp จากสตริงรูปแบบ
@@ -57,15 +52,13 @@ console.log(newText);  // ผลลัพธ์: "Hello World This  is a test"
 ```
 
 ## ค้นลึกลงไป
-
 ตั้งแต่อดีต, การจัดการกับสตริงในการเขียนโปรแกรมสามารถย้อนกลับไปถึงต้นสมัยของการคอมพิวติ้ง ใน TypeScript, ซึ่งสร้างบนพื้นฐานของ JavaScript, การจัดการสตริงเป็นงานประจำวัน `replace()` ฟังก์ชั่นที่เราใช้นั้นถูกสืบทอดมาจากอาร์เซนอลการจัดการสตริงที่แข็งแกร่งของ JavaScript
 
 มีทางเลือกอื่นๆ สำหรับ RegExp สำหรับการจับคู่รูปแบบ - บางครั้งคุณอาจต้องการที่จะเดินทางผ่านแต่ละอักขระและตัดสินใจด้วยการใช้ switch หรือชุดของ if แต่นิพจน์ปรกติ (regular expressions) ให้วิธีที่กระชับและทรงพลังในการอธิบายรูปแบบที่ซับซ้อนสำหรับการจับคู่
 
 รายละเอียดในการดำเนินงานกลายเป็นที่น่าสนใจเมื่อคุณดำดิ่งลงไปในวิธีการที่รูปแบบ RegExp ถูกตีความในระยะเวลาการทำงาน 'g' ธงในตัวสร้าง RegExp บอกเครื่องให้ค้นหาทั่วทั้งสตริง หากไม่มี, มันจะแทนที่แค่การจับคู่เพียงครั้งเดียว นิพจน์ปรกติอาจเรียบง่ายหรือซับซ้อนมาก ขึ้นอยู่กับความต้องการของคุณ
 
-## ดูเพิ่มเติม  
-
+## ดูเพิ่มเติม
 - คู่มือ MDN Web Docs เกี่ยวกับ RegExp: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
 - คู่มือ TypeScript เกี่ยวกับการจัดการสตริง: [https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)
 - เครื่องมือทดสอบนิพจน์ปรกติเพื่อช่วยในการสร้างรูปแบบ: [https://regexr.com/](https://regexr.com/)

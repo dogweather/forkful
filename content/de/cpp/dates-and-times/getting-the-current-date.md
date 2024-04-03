@@ -13,9 +13,6 @@ title: Den aktuellen Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-Das Abrufen des aktuellen Datums in C++ ist eine grundlegende Aufgabe für Programme, die Daten verarbeiten oder anzeigen müssen, die auf der Systemuhr basieren. Es ist wesentlich für das Logging, Zeitstempeln, das Planen von Aufgaben und jede Funktionalität, die auf Daten und Zeit angewiesen ist.
-
 ## Wie:
 C++ bietet mehrere Möglichkeiten, das aktuelle Datum zu erhalten, einschließlich der C++-Standardbibliothek und Drittanbieter-Bibliotheken wie Boost. Die folgenden Beispiele zeigen, wie man diese Aufgabe bewältigen kann.
 

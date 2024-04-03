@@ -12,9 +12,6 @@ title: Logboekregistratie
 weight: 17
 ---
 
-## Wat & Waarom?
-Loggen is in essentie het opschrijven van wat je applicatie doet - een dagboek, als je wilt, maar dan voor code. Programmeurs doen dit om de fijne details, zoals statuswijzigingen, systeemevenementen en vervelende bugs bij te houden, om ervoor te zorgen dat geen enkele hik onopgemerkt voorbijgaat.
-
 ## Hoe te:
 In Fish kan loggen zo simpel zijn als het omleiden van standaard uitvoer- en foutstromen naar een bestand. Laten we een logboekvermelding maken voor de start- en eindtijden van ons script.
 

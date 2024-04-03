@@ -12,9 +12,6 @@ title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---
 
-## Quoi & Pourquoi ?
-Calculer une date dans le futur ou le passé c'est juste dire à un ordinateur de trouver une date qui est tant de jours avant ou après une autre date. Les programmeurs font ça pour planifier des événements, renouveler des abonnements, rappeler des deadlines, ou tout scénario où le temps est un facteur clé.
-
 ## Comment faire :
 ```Bash
 # Ajouter 10 jours à la date actuelle

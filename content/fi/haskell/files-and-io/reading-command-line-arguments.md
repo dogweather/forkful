@@ -11,9 +11,6 @@ title: Komennoriviparametrien lukeminen
 weight: 23
 ---
 
-## What & Why?
-Komennon rivin argumenttien lukeminen mahdollistaa parametrien antamisen ohjelmalle sen käynnistyessä. Ohjelmistokehittäjät käyttävät tätä toimintoa räätälöidäkseen ohjelman toimintaa helposti ja joustavasti.
-
 ## How to:
 Haskellissa komentorivin argumentit luetaan `System.Environment` kirjaston `getArgs` funktiolla:
 

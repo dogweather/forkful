@@ -11,9 +11,6 @@ title: "\xC5 jobbe med XML"
 weight: 40
 ---
 
-## Hva & Hvorfor?
-Å jobbe med XML betyr å håndtere data i et utbredt, strukturert format som brukes i konfigurasjoner, meldingsutveksling og mer. Programmerere manipulerer XML for å lese, skrive, oppdatere og spørre etter data – noe som er vitalt for samarbeidsevnen i tonnevis av apper og tjenester.
-
 ## Hvordan:
 Fish har ikke innebygd XML-tolk, så du vil stole på eksterne verktøy som `xmllint` eller `xmlstarlet`. Her er et kodestykke for å lese verdier:
 

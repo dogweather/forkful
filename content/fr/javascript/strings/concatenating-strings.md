@@ -11,9 +11,6 @@ title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---
 
-## What & Why?
-La concaténation de chaînes est le processus de raccordement de deux chaînes de texte ou plus en une seule. Les programmeurs le font pour construire des messages dynamiques, des requêtes SQL, ou toute structure de données nécessitant du texte combiné.
-
 ## How to:
 Pour concaténer des chaînes en JavaScript, on utilise souvent l'opérateur `+` ou la méthode `concat()`.
 

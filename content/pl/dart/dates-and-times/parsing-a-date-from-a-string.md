@@ -13,9 +13,6 @@ title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
 weight: 30
 ---
 
-## Co i dlaczego?
-Parsowanie daty z ciągu znaków w Dart polega na konwertowaniu tekstowego przedstawienia dat i czasów na obiekt `DateTime`. Operacja ta jest niezbędna dla aplikacji zajmujących się planowaniem, analizą danych lub jakąkolwiek funkcją wymagającą manipulacji datami, zapewniając, że dane związane z datami są poprawnie rozumiane i przetwarzane przez program.
-
 ## Jak to zrobić:
 Podstawowa biblioteka Dart ułatwia parsowanie dat za pomocą klasy `DateTime`. W prostych przypadkach, gdy znasz format ciągu daty, możesz użyć metody `DateTime.parse()`. Jednak w bardziej skomplikowanych scenariuszach lub przy obsłudze wielu formatów, pakiet `intl`, a konkretnie klasa `DateFormat`, staje się nieoceniony.
 

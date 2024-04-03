@@ -23,14 +23,10 @@ title: "\u05E9\u05D9\u05DE\u05D5\u05E9 \u05D1\u05D1\u05D9\u05D8\u05D5\u05D9\u05D
 weight: 11
 ---
 
-## מה ולמה?
-
-ביטויים רגולריים (regex) ב-JavaScript הם דפוסים המשמשים להתאמת שילובי תווים במחרוזות. מתכנתים משתמשים בהם לחיפוש, חילוץ ועיבוד טקסט, מה שמאפשר פעולות עיבוד מחרוזות חזקות עם קוד תמציתי.
-
 ## איך לעשות:
 
-### התאמה בסיסית
 
+### התאמה בסיסית
 כדי להתחיל, אפשר ליצור דפוס regex פשוט ולהשתמש בו למציאת התאמות במחרוזת. כאן, נמצא את המילה "code":
 
 ```javascript
@@ -41,7 +37,6 @@ console.log(result); // true
 ```
 
 ### שימוש ב-`String.prototype.match()`
-
 לאחזור על מערך של התאמות:
 
 ```javascript
@@ -51,7 +46,6 @@ console.log(matches.index); // 10
 ```
 
 ### חיפוש כללי
-
 כדי למצוא את כל ההתאמות, יש להשתמש בדגל `g`:
 
 ```javascript
@@ -60,7 +54,6 @@ console.log(globalMatches); // ["o", "o", "o"]
 ```
 
 ### התאמה ללא תלות ברישיות
-
 הדגל `i` מתעלם מהרישיות:
 
 ```javascript
@@ -69,7 +62,6 @@ console.log(caseInsensitiveMatch[0]); // "JavaScript"
 ```
 
 ### החלפת טקסט
-
 השתמשו ב-`String.prototype.replace()` להחלפת חלקים במחרוזת:
 
 ```javascript
@@ -78,7 +70,6 @@ console.log(newStr); // "JavaScript is awesome"
 ```
 
 ### שימוש בקבוצות
-
 קבוצות יכולות לתפוס חלקים מהדפוס:
 
 ```javascript
@@ -88,7 +79,6 @@ console.log(replaceWithGroups); // "fun is JavaScript"
 ```
 
 ### ספריות צד שלישי
-
 למרות שיכולות ה-regex המובנות ב-JavaScript חזקות, חלק מהמשימות יכולות להפשט עם ספריות כמו `XRegExp`. היא מציעה תחביר ודגלים נוספים, מה שהופך דפוסים מורכבים לקריאים יותר:
 
 ```javascript

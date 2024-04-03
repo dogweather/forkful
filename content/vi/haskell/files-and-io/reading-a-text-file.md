@@ -16,9 +16,6 @@ title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---
 
-## Cái gì & Tại sao?
-Đọc một tệp văn bản trong lập trình cho phép mã của bạn hấp thụ dữ liệu, giống như việc đổ cà phê vào não vào buổi sáng. Chúng ta làm điều này để cung cấp thông tin cho chương trình mà nó không có từ trước, như cài đặt, dữ liệu để xử lý, hoặc hướng dẫn để thực hiện.
-
 ## Cách thực hiện:
 Dưới đây là cách bạn khiến Haskell đọc tệp văn bản mà không cần phải vắt mồ hôi. Mở trình chỉnh sửa yêu thích của bạn, và hãy bắt đầu viết một số mã.
 
@@ -58,7 +55,6 @@ Hello, World!
 ```
 
 ## Đào Sâu
-
 Từ lâu, các chương trình được coi là những sinh vật không xã hội, chủ yếu xử lý dữ liệu do chính chúng tạo ra. Nhưng độ phức tạp tăng lên, và nhu cầu kéo thông tin từ bên ngoài cũng vậy, do đó việc đọc từ các tệp trở thành một nền tảng.
 
 Haskell cung cấp nhiều cách để đọc tệp. Chúng ta có thể làm điều đó theo cách cấp thấp với `openFile`, `hGetContents`, và `hClose` hoặc thực hiện một cách ngầu với `readFile`, mà gói gọn mọi thứ một cách ngăn nắp.
@@ -68,7 +64,6 @@ Haskell cung cấp nhiều cách để đọc tệp. Chúng ta có thể làm đ
 Các hành động `IO` chuẩn của Haskell xử lý tệp bằng cách sử dụng các cơ chế của hệ điều hành cơ bản. Các thư viện trừu tượng hóa những điều này thành các hoạt động thân thiện với người dùng hơn nhưng cuối cùng, chúng được xây dựng dựa trên monad `IO` của Haskell, đảm bảo các hành động diễn ra theo đúng thứ tự.
 
 ## Xem Thêm
-
 - Để xem tài liệu chính thức của Haskell, hãy kiểm tra [tài liệu nhập và xuất của Haskell](https://www.haskell.org/tutorial/io.html).
 - Nếu bạn khát khao học hỏi thêm, hãy thưởng thức một tách tri thức tại [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/input-and-output).
 - Làm sâu sắc hơn hiểu biết về quản lý tệp với [Real World Haskell's take on IO](http://book.realworldhaskell.org/read/io.html).

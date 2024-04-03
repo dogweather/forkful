@@ -10,9 +10,6 @@ title: Creating a temporary file
 weight: 21
 ---
 
-## What & Why?
-Creating a temporary file means making a file that you'll toss out after a short use. Programmers do this for temporary storage or when they want to avoid clogging up a hard drive with data that has a super-short shelf life.
-
 ## How to:
 In Elixir, you can create and use a temporary file with the `System.tmp_dir/1` function and `File` module. Here's a quick example:
 

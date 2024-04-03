@@ -11,12 +11,7 @@ title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---
 
-## O Que é & Porquê?
-
-Debugar é tipo um GPS para desenvolvedores: ajuda a encontrar onde as coisas dão errado. Imprimir saídas de debug é deixar migalhas de pão pelo código, facilitando entender o que acontece durante a execução.
-
 ## Como Fazer:
-
 Para mostrar mensagens de debug, usamos o `console.log()`. Simples, direto ao ponto.
 
 ```javascript
@@ -33,13 +28,11 @@ soma(10, 5); // Imprime: A soma é: 15
 ```
 
 ## Mergulho Profundo:
-
 Historicamente, `console.log()` é o canivete suíço dos debugs. Existem outras ferramentas: `console.info()`, `console.warn()`, `console.error()`, variando no grau de severidade da mensagem. Em termos de implementação, o `console` é um objeto global em JavaScript com métodos para saída de dados.
 
 Há também a opção de utilizar breakpoints e ferramentas de debug integradas ao navegador ou ao ambiente de desenvolvimento Node.js, mas isso é pós-graduação e foge ao `console.log()` 101.
 
 ## Veja também:
-
 Para expandir seu repertório:
 
 - [MDN Web Docs - Console](https://developer.mozilla.org/pt-BR/docs/Web/API/Console)

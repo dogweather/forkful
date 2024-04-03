@@ -13,10 +13,8 @@ title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---
 
-## Co i dlaczego?
-Zapis do standardowego błędu (stderr) polega na wyprowadzaniu komunikatów o błędach i diagnostyki na konsolę lub terminal. Programiści robią to, aby oddzielić informacje o błędach od standardowego wyjścia (stdout), ułatwiając debugowanie i analizę logów.
-
 ## Jak to zrobić:
+
 
 ### Podstawowy zapis do stderr w Javie
 Java oferuje prosty sposób na zapis do stderr za pomocą `System.err.print()` lub `System.err.println()`. Oto jak to zrobisz:
@@ -45,7 +43,6 @@ To bezpośrednio wydrukuje komunikat o błędzie do strumienia standardowego bł
 W aplikacjach wymagających bardziej zaawansowanego obsługiwania błędów i logowania, powszechne jest używanie biblioteki logowania jak SLF4J z Logbackiem lub Log4J2. Pozwala to na większą elastyczność w zarządzaniu wyjściem błędu, w tym przekierowanie do pliku, filtrowanie i formatowanie.
 
 #### Przykład z Logbackiem
-
 Najpierw, dodaj zależność do Logbacka do pliku `pom.xml` (Maven) lub `build.gradle` (Gradle). Dla Mavena:
 
 ```xml

@@ -13,12 +13,7 @@ title: Registro de Logs
 weight: 17
 ---
 
-## O Quê & Porquê?
-
-O registro de atividades (logging) é basicamente como manter um diário para o seu código; é o ato de gravar eventos, erros e outros pontos de dados significativos que acontecem quando sua aplicação está em execução. Os programadores fazem isso para acompanhar o que está acontecendo sob o capô, depurar problemas e manter um registro de auditoria para análises posteriores ou para fins de conformidade.
-
 ## Como Fazer:
-
 O PHP vem com uma função de registro de erros embutida que é fácil de usar. Basta inserir `error_log()` no seu código para enviar uma mensagem aos registros de servidor. Você também pode personalizá-la para escrever em um arquivo específico.
 
 ```php
@@ -51,7 +46,6 @@ $logger->error('This is an error log!');
 Isso fará a saída dos seus registros para o log do servidor ou para o seu arquivo especificado em formato de texto puro.
 
 ## Mergulho Profundo:
-
 Historicamente, desenvolvedores PHP confiavam na função `error_log()` ou nos registros do Apache/Nginx para capturar problemas, mas isso pode ser caótico com a necessidade de analisar arquivos de texto puro e sem uma maneira fácil de filtrá-los ou ordená-los. Entram bibliotecas de registro como o Monolog, que inauguraram a era do registro estruturado no PHP. Essas soluções oferecem um melhor controle ao disponibilizarem múltiplos canais de registro, níveis de severidade e saídas formatadas (como JSON, que é um sonho para a análise programática).
 
 Alternativas ao Monolog incluem Log4php, KLogger e o Log4php da Apache. Em termos de implementação, um registro robusto exige não apenas despejar dados em qualquer lugar, mas considerar coisas como a rotação de registros, estratégias de arquivamento e integração com ferramentas de monitoramento para realmente ser útil.
@@ -59,7 +53,6 @@ Alternativas ao Monolog incluem Log4php, KLogger e o Log4php da Apache. Em termo
 Você deve manter em mente a [Interface de Logger PSR-3](https://www.php-fig.org/psr/psr-3/), que delineia uma interface comum para bibliotecas de registro, garantindo interoperabilidade e uma maneira consistente de acessar mecanismos de registro.
 
 ## Veja Também:
-
 - [Repositório GitHub do Monolog](https://github.com/Seldaek/monolog)
 - [Especificação da Interface de Logger PSR-3](https://www.php-fig.org/psr/psr-3/)
 - [Documentação do Error Log do PHP](https://www.php.net/manual/en/function.error-log.php)

@@ -13,12 +13,7 @@ title: Gestione degli errori
 weight: 16
 ---
 
-## Cosa & Perché?
-
-La gestione degli errori in Visual Basic for Applications (VBA) si riferisce al processo di anticipazione, rilevazione e risoluzione di errori di programmazione, applicazione o comunicazione. Implementare una gestione degli errori robusta è fondamentale per mantenere l'integrità delle applicazioni e migliorare l'esperienza dell'utente gestendo con grazia problemi inaspettati senza causare arresti bruschi o perdita di dati.
-
 ## Come fare:
-
 In VBA, la gestione degli errori è tipicamente implementata usando l'istruzione `On Error` che istruisce VBA su come procedere quando si verifica un errore. Le strategie di gestione degli errori più comuni coinvolgono l'`On Error GoTo` etichetta, `On Error Resume Next` e `On Error GoTo 0`.
 
 **Esempio 1: Utilizzo di `On Error GoTo`**
@@ -63,7 +58,6 @@ End Sub
 In questo caso, il programma non si interrompe sull'errore; verifica se si è verificato un errore, lo gestisce se è così, e poi cancella l'errore.
 
 ## Approfondimento
-
 Storicamente, la gestione degli errori nei linguaggi di programmazione è evoluta da semplici istruzioni goto a meccanismi più sofisticati come le eccezioni in linguaggi come Java e C#. La gestione degli errori in VBA, pur non essendo potente o flessibile come la moderna gestione delle eccezioni, serve al suo scopo nel contesto dell'applicazione del linguaggio nell'automazione dei compiti negli ambienti di Microsoft Office.
 
 La limitazione principale della gestione degli errori in VBA risiede nel suo approccio alquanto ingombrante e manuale, richiedendo un'attenta collocazione del codice di gestione degli errori e una chiara comprensione del flusso di esecuzione. I linguaggi di programmazione moderni offrono tipicamente soluzioni più eleganti, come i blocchi try-catch, che gestiscono automaticamente il flusso al codice di gestione degli errori senza la necessità di controlli manuali o salti nell'esecuzione del codice.

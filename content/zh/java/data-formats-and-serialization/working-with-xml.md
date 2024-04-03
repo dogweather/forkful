@@ -16,9 +16,6 @@ title: "\u5904\u7406XML"
 weight: 40
 ---
 
-## 什么与为什么？
-使用Java处理XML涉及到解析、查询和操作XML文档。程序员之所以这样做，是为了数据交换、配置管理，以及许多遗留系统和API使用XML进行通信。
-
 ## 如何操作：
 Java提供了如DOM（文档对象模型）、SAX（简单API用于XML）和StAX（流API用于XML）等API来处理XML。这里有一个使用DOM来解析XML文件的示例：
 

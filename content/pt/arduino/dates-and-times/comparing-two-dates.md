@@ -10,12 +10,7 @@ title: Comparando duas datas
 weight: 27
 ---
 
-## O Que & Porquê?
-
-Comparar duas datas significa verificar se são iguais, ou determinar qual é anterior ou posterior. Programadores fazem isso para rastrear eventos, controlar prazos ou criar funções de agendamento.
-
 ## Como fazer:
-
 Aqui está um método simples usando a biblioteca `TimeLib.h` no Arduino:
 ```Arduino
 #include <TimeLib.h>
@@ -55,11 +50,9 @@ Data 1 é anterior à Data 2
 ```
 
 ## Mergulho Profundo
-
 Históricamente, a comparação de datas é um problema clássico em programação, com desafios como anos bissextos e fusos horários. Alternativamente, sem uma biblioteca, programadores teriam de converter manualmente as datas para um formato comum antes da comparação, um processo propenso a erros. Na implementação, ao usar Arduino, se gerencia a complexidade das datas com bibliotecas robustas como `TimeLib.h`, que manipula operações de tempo sem a necessidade de reinventar a roda.
 
 ## Veja Também
-
 - Documentação da biblioteca TimeLib: https://www.pjrc.com/teensy/td_libs_Time.html
 - Tutorial do Arduino sobre o gerenciamento de tempo e datas: https://www.arduino.cc/en/Tutorial/LibraryExamples/TimeSerial
 - Fórum Arduino para discussão de problemas relacionados a tempo e data: http://forum.arduino.cc/index.php?board=9.0

@@ -11,9 +11,6 @@ title: Att organisera kod i funktioner
 weight: 18
 ---
 
-## Vad och varför?
-Att organisera kod i funktioner handlar om att bryta upp ditt program i återanvändbara, modulära delar som identifieras med ett namn. Vi gör det för att göra vår kod renare, mer läsbar och lättare att felsöka. Det handlar om att inte upprepa oss själva och att förenkla uppdateringar.
-
 ## Hur man gör:
 Anta att du har kod som beräknar en cirkels area flera gånger. Istället för att upprepa formeln, så omsluter du den med en funktion.
 

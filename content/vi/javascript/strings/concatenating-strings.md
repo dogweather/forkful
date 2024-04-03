@@ -14,9 +14,6 @@ title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---
 
-## Gì và Tại sao?
-Nối chuỗi có nghĩa là ghép chúng lại với nhau từ đầu đến cuối. Chúng ta làm vậy để tạo ra các thông điệp, URL, hoặc bất kỳ văn bản nào với các phần từ nguồn khác nhau.
-
 ## Làm thế nào:
 Trong JavaScript, bạn có một vài cách để nối chuỗi. Kiểu cổ điển: `+`. Kiểu hiện đại: template literals. Dưới đây là cách chúng trông như thế nào.
 

@@ -10,9 +10,6 @@ title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---
 
-## Hva & Hvorfor?
-Starte et nytt prosjekt betyr å sette opp grunnlaget for en ny kodebase. Programmerere gjør det for å skape nye applikasjoner, løse problemer eller utforske ideer.
-
 ## How to:
 La oss starte et nytt JavaScript-prosjekt. Først, installer Node.js og npm (Node package manager). Deretter, opprett prosjektet:
 

@@ -11,12 +11,7 @@ title: Downloading a web page
 weight: 42
 ---
 
-## What & Why?
-
-Downloading a web page means grabbing the online content so you can use or analyze it offline. Programmers do it for web scraping, data analysis, or to interact with web content programmatically.
-
 ## How to:
-
 PHP makes web page downloading pretty straightforward. Here's a simple example using `file_get_contents()`:
 
 ```php
@@ -60,7 +55,6 @@ Page downloaded successfully.
 ```
 
 ## Deep Dive
-
 Downloading web pages is a practice as old as the web itself. Initially, to interact with web pages, you'd use command-line tools like `wget` or `curl`. However, as PHP evolved, functions made these tasks doable within scripts.
 
 Let's compare:
@@ -75,7 +69,6 @@ Behind the scenes, `file_get_contents()` sends a standard GET request. That mean
 Remember, some sites don't appreciate being scraped. Always respect `robots.txt` and terms of service.
 
 ## See Also
-
 - [PHP Manual on file_get_contents()](http://php.net/manual/en/function.file-get-contents.php)
 - [PHP Manual on cURL](http://php.net/manual/en/book.curl.php)
 - [robots.txt Specifications](https://developers.google.com/search/docs/advanced/robots/robots_txt)

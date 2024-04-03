@@ -13,12 +13,7 @@ title: Skriva till standardfel
 weight: 25
 ---
 
-## Vad & Varför?
-
-Att skriva till standardfel i Visual Basic for Applications (VBA) innebär att dirigera felmeddelanden eller diagnostik bort från standardutmatningen, vanligtvis till konsolen eller en loggfil. Programmerare gör detta för att separera det vanliga programmets utmatning från felmeddelanden, vilket gör det enklare att felsöka program eller varna användare om problem utan att överhopa huvudutmatningen.
-
 ## Hur man gör:
-
 I VBA, eftersom det inte finns någon direkt inbyggd funktion för att specifikt skriva till standardfel som i vissa andra programmeringsspråk, innebär en vanlig lösning att använda `Debug.Print` för utmatning av fel vid utveckling eller att skapa en anpassad loggningsfunktion som efterliknar detta beteende för produktionsapplikationer. Nedan är ett exempel på hur du kan implementera och använda en sådan funktion:
 
 ```vb
@@ -48,7 +43,6 @@ FEL: Ett fel inträffade vid bearbetning av din förfrågan.
 ```
 
 ## Fördjupning
-
 Visual Basic for Applications inkluderar inte i sig en dedikerad mekanism för att skriva till standardfel på grund av dess djupt integrerade natur med värdapplikationer som Excel, Word eller Access, vilka traditionellt sett förlitar sig på grafiska användargränssnitt snarare än konsolutmatning. Detta är en märkbar avvikelse från konsolbaserade applikationer som typiskt utvecklas i språk som C eller Python, där standardutmatning och standardfels utströmmar är grundläggande koncept.
 
 Historiskt sett har VBA alltid fokuserat mer på att interagera med dokumentmodeller av sina värdapplikationer och mindre på traditionella applikationsloggningmekanismer. Därför reser utvecklare ofta till att implementera anpassade loggningslösningar, som sett i exemplet, eller att använda Windows API-anrop för mer avancerade felhanterings- och loggningsbehov.

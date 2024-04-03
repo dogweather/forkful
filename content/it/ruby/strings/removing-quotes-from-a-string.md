@@ -10,9 +10,6 @@ title: Rimuovere le virgolette da una stringa
 weight: 9
 ---
 
-## Cos'è & Perché?
-Rimuovere le virgolette da una stringa significa togliere quei segni di virgolette doppie o singole che circondano i valori di testo. Gli sviluppatori spesso fanno ciò per ripulire l'input degli utenti, per garantire coerenza nel processing dei dati o per preparare i dati per sistemi che potrebbero essere confusi da quei caratteri extra.
-
 ## Come fare:
 Ruby ha alcuni trucchi interessanti per tagliare via quelle fastidiose virgolette. Puoi usare i metodi `gsub` o `delete` per svolgere il lavoro. Ecco un po' di codice su cui riflettere:
 

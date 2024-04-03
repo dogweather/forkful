@@ -11,9 +11,6 @@ title: Hantering av fel
 weight: 16
 ---
 
-## Vad & Varför?
-Att hantera fel i programmering handlar om att förvalta det oväntade—saker som kan gå fel. Programmerare gör detta för att säkerställa att deras program kan hantera dessa situationer smidigt, utan att krascha eller producera felaktiga resultat.
-
 ## Hur man gör:
 Haskell hanterar fel robust genom typer som `Maybe` och `Either`. Här är en snabbtitt:
 

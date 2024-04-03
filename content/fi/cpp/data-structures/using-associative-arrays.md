@@ -14,16 +14,10 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mikä & Miksi?
-
-Assosiatiiviset taulukot, tunnetaan myös nimellä `std::map` tai `std::unordered_map` C++:ssa, kuvaavat sillan taulukon indeksien ja todellisen datan välille, antaen sinun käyttää merkityksellisiä avaimia. Ne ovat ensisijainen valinta, kun tarvitset nopeita hakuja, lisäyksiä ja poistoja käyttäen avaimia indeksien sijasta.
-
 ## Kuinka:
-
 C++:ssa assosiatiiviset taulukot heräävät eloon `<map>` ja `<unordered_map>` otsikoiden kanssa. Katsotaan esimerkkejä näiden käytöstä.
 
 ### Käyttäen `std::map`
-
 `std::map` pitää elementit järjestettynä avaimen perusteella. Näin pääset alkuun:
 
 ```C++
@@ -51,7 +45,6 @@ int main() {
 ```
 
 ### Käyttäen `std::unordered_map`
-
 Kun järjestys ei ole tärkeä, mutta suorituskyky on, `std::unordered_map` on ystäväsi, tarjoten nopeamman keskimääräisen monimutkaisuuden lisäyksille, hauille ja poistoille.
 
 ```C++
@@ -79,7 +72,6 @@ int main() {
 ```
 
 ## Syväsukellus
-
 C++:n assosiatiiviset taulukot, erityisesti `std::map` ja `std::unordered_map`, eivät ole vain elementtien säilyttämistä varten. Ne tarjoavat perustan monimutkaisemmalle datan hallinnalle sallien operaatioita kuten haku, lisäys ja poisto tehokkaissa aikakompleksiteeteissa (logaritmisen `std::map`:lle ja keskimääräisen vakioajan `std::unordered_map`:lle). Tämä tehokkuus tulee niiden alla olevista tietorakenteista: tasapainotetusta puusta `std::map`:lle ja hajautustaulukosta `std::unordered_map`:lle.
 
 Historiallisesti, ennen kuin nämä olivat osa standardikirjastoa, ohjelmoijien täytyi toteuttaa omia versioitaan tai käyttää kolmansien osapuolien kirjastoja, johtaen epäjohdonmukaisuuksiin ja potentiaalisiin tehokkuushäviöihin. Map:ien sisällyttäminen C++:n standardikirjastoon ei ainoastaan standardisoinut niiden käyttöä, vaan myös optimoi ne suorituskyvyltään eri kääntäjillä ja alustoilla.

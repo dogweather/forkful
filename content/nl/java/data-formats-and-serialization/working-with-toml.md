@@ -11,9 +11,6 @@ title: Werken met TOML
 weight: 39
 ---
 
-## Wat & Waarom?
-TOML staat voor Tom's Obvious, Minimal Language. Het is een gegevensserialisatieformaat dat wordt gebruikt voor configuratiebestanden. Programmeurs gebruiken het omdat het gemakkelijk te lezen, te schrijven is en goed in kaart kan worden gebracht op een hashtabel.
-
 ## Hoe te:
 Je hebt een TOML-verwerkingsbibliotheek nodig. Ik raad `toml4j` aan. Voeg dit toe aan je project als volgt:
 

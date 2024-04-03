@@ -13,12 +13,7 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## Cos'è & Perché?
-
-Estrarre sottosequenze di stringhe implica prendere una porzione di una stringa - creando essenzialmente una nuova stringa a partire da una esistente. I programmatori fanno ciò per una miriade di ragioni, incluse l'analisi dei dati, la manipolazione di testo per interfacce utente o l'elaborazione dell'input per varie applicazioni, rendendo l'estrazione di sottosequenze uno strumento versatile in qualsiasi arsenale di scripting.
-
 ## Come fare:
-
 In Google Apps Script, che si basa su JavaScript moderno, l'estrazione di sottosequenze può essere raggiunta attraverso vari metodi, inclusi `substring()`, `substr()`, e `slice()`. Ognuno ha le sue sfumature, ma tutti servono allo scopo di estrarre caratteri specificati da una stringa.
 
 ```javascript
@@ -39,7 +34,6 @@ console.log(resultSlice); // Output: world!
 Ciascun metodo prende due argomenti: la posizione di inizio e, ad eccezione di `slice()` che può accettare indici negativi per iniziare dalla fine, la posizione finale o il numero di caratteri da estrarre. Vale la pena notare che la stringa originale rimane invariata dopo queste operazioni, poiché restituiscono nuovi valori di stringa.
 
 ## Approfondimento
-
 Storicamente, i metodi JavaScript per estrarre sottosequenze sono stati una fonte di confusione a causa dei loro nomi simili e funzionalità. Tuttavia, in Google Apps Script e nel JavaScript moderno, `substring()` e `slice()` sono i più usati, con `substr()` considerato deprecato. Questo è importante da notare per chi scrive codice a prova di futuro.
 
 La principale differenza tra `substring()` e `slice()` è in come gestiscono gli indici negativi; `substring()` tratta gli indici negativi come 0, mentre `slice()` può accettare un indice negativo per iniziare l'estrazione dalla fine della stringa. Ciò rende `slice()` particolarmente utile per casi in cui la lunghezza esatta della stringa potrebbe non essere nota o quando si necessita di estrarre dalla fine.

@@ -15,9 +15,6 @@ title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---
 
-## Quoi et Pourquoi ?
-Vérifier si un répertoire existe consiste à déterminer la présence d'un répertoire à un chemin spécifié avant de réaliser des opérations telles que lire ou écrire dans des fichiers à l'intérieur de celui-ci. Les programmeurs le font pour éviter les erreurs liées aux opérations de fichiers, assurant ainsi une exécution plus fluide et plus fiable des tâches de gestion des fichiers dans leurs applications.
-
 ## Comment faire :
 Dans le C++ moderne (C++17 et au-delà), vous pouvez utiliser la bibliothèque filesystem pour vérifier si un répertoire existe. Elle offre une manière simple et standardisée d’effectuer des opérations sur le système de fichiers, y compris la vérification de l'existence d'un répertoire.
 

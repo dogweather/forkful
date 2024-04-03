@@ -9,9 +9,6 @@ title: Calculando la longitud de una cadena
 weight: 7
 ---
 
-## Qué y Por Qué?
-Encontrar la longitud de una cadena es medir cuántos caracteres contiene. Los programadores lo hacen para validar entradas, gestionar bucles, o simplemente conocer el tamaño de la información que están manejando.
-
 ## Cómo hacerlo:
 Aquí tenemos un código en C# que muestra cómo encontrar la longitud de una cadena y un ejemplo de salida.
 

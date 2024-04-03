@@ -11,9 +11,6 @@ title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---
 
-## ¿Qué y Por Qué?
-La impresión de información de depuración es simplemente mostrar datos en la consola para entender qué está ocurriendo en el código. Los programadores la utilizan para seguir el flujo y el estado de la aplicación, facilitando la identificación y corrección de errores.
-
 ## Cómo Hacerlo:
 Elixir hace que imprimir mensajes de depuración sea un juego de niños. Puedes utilizar `IO.puts` para la salida estándar o `IO.inspect` que devuelve el valor inspeccionado, permitiendo encadenar llamadas.
 

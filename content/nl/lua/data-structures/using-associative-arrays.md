@@ -13,12 +13,7 @@ title: Gebruik van associatieve arrays
 weight: 15
 ---
 
-## Wat & Waarom?
-
-Associatieve arrays zijn als geheime handdrukken voor data in Lua— in plaats van alleen nummers die keurig op index in de rij staan, kunnen je sleutels zijn wat je maar wilt, waardoor gegevensophaling een fluitje van een cent wordt. Waarom gebruiken programmeurs ze? Omdat je soms een stuk data bij zijn naam moet noemen, niet bij een nummer in de rij.
-
 ## Hoe te:
-
 In Lua is het creëren van een associatieve array (of een tabel, in Lua-jargon) eenvoudig. Je laat de gebruikelijke numerieke indices vallen voor sleutels van je eigen keuze. Bekijk dit:
 
 ```Lua
@@ -57,7 +52,6 @@ favTaal: Lua
 Het coole deel? Je gaat om met de data met behulp van sleutels die betekenisvol voor je zijn, wat de code leesbaarder en onderhoudbaarder maakt.
 
 ## Diepgaand
-
 Toen Lua op de scène kwam, introduceerde het tabellen als een allesomvattende datastructuur, wat een revolutie teweegbracht in hoe ontwikkelaars gegevens beheren. In tegenstelling tot sommige talen waar associatieve arrays en arrays afzonderlijke entiteiten zijn, dienen Lua's tabellen als beide, waardoor het landschap van de datastructuur wordt vereenvoudigd.
 
 Wat Lua-tabellen met name krachtig maakt, is hun flexibiliteit. Deze flexibiliteit heeft echter de kosten van potentiële prestatie-implicaties, vooral bij grote datasets waar een meer gespecialiseerde datastructuur wellicht de voorkeur heeft voor efficiëntie.

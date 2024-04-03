@@ -9,9 +9,6 @@ title: Scaricare una pagina web
 weight: 42
 ---
 
-## Cosa e Perché?
-Scaricare una pagina web significa prelevare il suo contenuto via Internet. I programmatori lo fanno per accedere ai dati, analizzarli o monitorare cambiamenti.
-
 ## Come si fa:
 Utilizziamo `URL` e `HttpURLConnection` di Kotlin per scaricare il contenuto di una pagina web:
 

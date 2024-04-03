@@ -13,9 +13,6 @@ title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---
 
-## Co i dlaczego?
-Parsowanie HTML oznacza rozbieranie znaczników strony internetowej na coś, co program może zrozumieć i manipulować. Programiści parsują HTML w celu ekstrakcji danych, automatyzacji interakcji webowych lub migracji treści między systemami.
-
 ## Jak to zrobić:
 Kotlin ułatwia parsowanie HTML dzięki bibliotekom takim jak Jsoup. Oto jak to zrobić:
 

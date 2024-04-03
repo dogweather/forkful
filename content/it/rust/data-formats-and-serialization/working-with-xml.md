@@ -11,9 +11,6 @@ title: Lavorare con XML
 weight: 40
 ---
 
-## Cosa & Perché?
-XML, abbreviazione di eXtensible Markup Language, è come il cugino prolisso di JSON. Ti troverai a lottare con l'XML quando avrai a che fare con sistemi legacy, software enterprise o API che hanno saltato il carrozzone JSON. È essenziale per lo scambio di dati dove l'XML mantiene la sua posizione.
-
 ## Come fare:
 In Rust, puoi gestire XML con crate come `xml-rs`. Installa aggiungendo `xml-rs = "0.8"` al tuo `Cargo.toml`. Ecco come analizzare un semplice XML:
 

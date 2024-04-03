@@ -10,11 +10,7 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-Complex numbers expand our number system to include the square roots of negative numbers, where the 'imaginary' unit i equals the square root of -1. Programmers use them in fields like engineering, physics, and signal processing, because they're great at modelling waves, oscillations, and anything that rotates.
-
 ## How to:
-
 Let's define a basic complex number class in Kotlin:
 
 ```kotlin
@@ -40,13 +36,11 @@ fun main() {
 ```
 
 ## Deep Dive
-
 Complex numbers were first mentioned in the 16th century, solving cubic equations that lacked real solutions. Engineering and physics vastly benefit from complex numbers for analyzing AC circuits and waveforms. You could alternatively use a library like Kotlin's `koma` or `ejml` for heavy-duty work.
 
 Operations on complex numbers mirror real numbers, but with attention to the imaginary unit. Multiplication, for instance, follows the distributive property, remembering that `i^2 = -1`. This imaginary unit enables us to represent multi-dimensional numbers, crucial in various scientific computations.
 
 ## See Also
-
 Kotlin Math libraries:
 
 - [koma](https://koma.kyonifer.com/): A scientific computing library for Kotlin.

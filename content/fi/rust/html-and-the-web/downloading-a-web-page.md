@@ -11,9 +11,6 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## What & Why? (Mitä & Miksi?)
-Web-sivun lataaminen tarkoittaa sivun sisällön noutamista internetistä. Ohjelmoijat tekevät tätä esimerkiksi datan keräämiseen, sisällön analysointiin tai palveluiden automatisointiin.
-
 ## How to: (Kuinka tehdä:)
 Rustissa web-sivun lataaminen onnistuu usealla tavalla, mutta tässä käytämme `reqwest`-kirjastoa, joka on helppokäyttöinen ja tehokas.
 

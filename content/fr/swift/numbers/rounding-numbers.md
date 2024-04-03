@@ -12,12 +12,7 @@ title: Arrondir les nombres
 weight: 13
 ---
 
-## Quoi et pourquoi ?
-
-Arrondir des nombres signifie approximer une valeur numérique à une précision spécifique, typiquement pour éliminer les décimales indésirables. Les programmeurs arrondissent pour gérer la mémoire, améliorer la lisibilité et répondre aux contraintes spécifiques d'un domaine, comme les contraintes monétaires.
-
 ## Comment faire :
-
 Swift offre plusieurs manières d'arrondir les nombres. En voici un aperçu :
 
 ```Swift
@@ -41,7 +36,6 @@ print("Standard: \(standardRounded), Decimal: \(decimalRounded), Inférieur: \(r
 Sortie : `Standard: 3.0, Decimal: 3.142, Inférieur: 3.0, Supérieur: 4.0`
 
 ## Plongée profonde
-
 Historiquement, l'arrondissement est un concept mathématique antérieur aux ordinateurs, essentiel dans le commerce et la science. Le cadre `Foundation` de Swift offre des fonctionnalités d'arrondissement complètes :
 
 - `round(_: )` est le bon vieux arrondissement à la demi-supérieure.
@@ -51,5 +45,4 @@ Historiquement, l'arrondissement est un concept mathématique antérieur aux ord
 Soyez conscient du type `Decimal` pour des calculs financiers précis, qui évite les erreurs de point flottant. Explorez également `NSDecimalNumber` pour la compatibilité avec Objective-C.
 
 ## Voir aussi
-
 - Norme IEEE pour l'arithmétique à virgule flottante (IEEE 754) : [IEEE 754](https://ieeexplore.ieee.org/document/4610935)

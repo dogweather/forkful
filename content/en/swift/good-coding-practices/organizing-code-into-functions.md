@@ -9,9 +9,6 @@ title: Organizing code into functions
 weight: 18
 ---
 
-## What & Why?
-Grouping code into functions is breaking down tasks into reusable chunks. It makes the code clean, less error-prone, and easier to debug or refactor.
-
 ## How to:
 Imagine a task: calculate the average of an array. Without functions, you'd stick it all in main. With functions, you'd do this:
 
@@ -35,7 +32,7 @@ Average score is 87.6875
 ## Deep Dive
 Historically, as programming grew complex, functions became a keystone for managing complexity. Alternatives include inline coding and copy-pasting code (spaghetti code) – now largely considered bad practice. In Swift, functions are first-class citizens; they can be assigned to variables, passed as arguments, and returned from other functions, making code more modular and flexible.
 
-Implementation-wise, design your functions to do one thing well. Aim for functions with a clear purpose and a name that reflects it. Watch parameter counts—too many and you're probably doing too much. Error handling? Consider throwing functions and gracefully handle problems. Remember: Swift is all about readability and ease of maintenance. 
+Implementation-wise, design your functions to do one thing well. Aim for functions with a clear purpose and a name that reflects it. Watch parameter counts—too many and you're probably doing too much. Error handling? Consider throwing functions and gracefully handle problems. Remember: Swift is all about readability and ease of maintenance.
 
 ## See Also
 - [Swift Programming Language Guide - Functions](https://docs.swift.org/swift-book/LanguageGuide/Functions.html)

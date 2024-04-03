@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## What & Why? - Mikä ja Miksi?
-HTTP-pyyntöjen lähettäminen on tapa kommunikoida palvelimien kanssa verkossa. Koodaajat tekevät näin hakiakseen tietoa, lähettääkseen tietoja, tai vaikuttaakseen palvelimen resursseihin.
-
 ## How to: - Kuinka tehdä:
 ```TypeScript
 import axios from 'axios'; // HTTP-kirjastoa varten

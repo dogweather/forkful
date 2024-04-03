@@ -10,9 +10,6 @@ title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---
 
-## Hva & Hvorfor?
-Komplekse tall utvider de reelle tallene ved å legge til en imaginær enhet, representert som 'i', hvor i^2 = -1. Programmører bruker dem for simuleringer, signalbehandling og å løse matteproblemer som krever arbeid i to dimensjoner.
-
 ## Hvordan:
 C++ har et innebygd bibliotek `<complex>` som letter arbeidet med komplekse tall. Her er en rask titt:
 

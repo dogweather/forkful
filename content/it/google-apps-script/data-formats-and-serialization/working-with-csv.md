@@ -13,14 +13,10 @@ title: Lavorare con CSV
 weight: 37
 ---
 
-## Cosa & Perché?
-
-Lavorare con file CSV (Comma-Separated Values - Valori Separati da Virgola) in Google Apps Script comporta la lettura, modifica e scrittura di file di testo semplice dove ogni riga rappresenta un record di dati con valori separati da virgole. I programmatori fanno ciò per scambiare dati facilmente tra diverse applicazioni, database o linguaggi di programmazione data l'ampia adozione del CSV come formato di interscambio dati semplice e basato sul testo.
-
 ## Come fare:
 
-### Leggere dati CSV
 
+### Leggere dati CSV
 Per leggere dati CSV da un file memorizzato in Google Drive, è necessario prima ottenere il contenuto del file come stringa, poi analizzarlo. Google Apps Script rende semplice ottenere il contenuto del file con il servizio DriveApp.
 
 ```javascript
@@ -38,7 +34,6 @@ function readCSV() {
 ```
 
 ### Scrivere dati CSV
-
 Creare e scrivere un CSV comporta la costruzione di una stringa con valori separati da virgole e interruzioni di riga, poi salvarla o esportarla. Questo esempio dimostra come creare un nuovo file CSV in Google Drive.
 
 ```javascript
@@ -53,7 +48,6 @@ function writeCSV() {
 ```
 
 ### Esempio di Output
-
 Quando si registrano le celle delle righe leggendo un CSV:
 
 ```plaintext
@@ -70,7 +64,6 @@ Jane Smith,34,Designer
 ```
 
 ## Approfondimento
-
 Storicamente, i file CSV sono stati preferiti per la loro semplicità e leggibilità, rendendoli accessibili anche ai non programmatori e utili per compiti di ispezione dati rapidi. Tuttavia, Google Apps Script opera nell'ambito dell'ecosistema di Google, dove Google Fogli agisce come un'alternativa potente e user-friendly per la manipolazione di CSV. Fogli non solo fornisce una GUI per la modifica dei dati, ma supporta anche formule complesse, stili e molte altre funzionalità che i CSV grezzi non hanno.
 
 Nonostante i vantaggi offerti da Google Fogli, la manipolazione diretta dei CSV in Google Apps Script rimane importante per compiti automatizzati, soprattutto quando si tratta di sistemi esterni che generano o richiedono dati in formato CSV. Ad esempio, l'integrazione con sistemi legacy, l'esportazione di dati per l'uso in altre applicazioni, o il pre-processing prima dell'inserimento dei dati in Google Fogli.

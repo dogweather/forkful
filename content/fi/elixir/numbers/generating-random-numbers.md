@@ -12,12 +12,7 @@ title: Satunnaislukujen generointi
 weight: 12
 ---
 
-## Mitä & Miksi?
-
-Satunnaislukujen tuottaminen Elixir-kielessä on perustavaa laatua oleva ohjelmointitehtävä, elintärkeä sovelluksille, jotka tarvitsevat ennalta arvaamatonta tulosta, kuten turvatunnusten luomisessa, datan otannassa tai pelialgoritmeissa. Ohjelmoijat käyttävät sitä tuomaan tasolle satunnaisuutta ja vaihtelevuutta sovelluksiinsa, tehden niistä dynaamisempia ja vähemmän deterministisiä.
-
 ## Kuinka:
-
 Satunnaislukujen tuottamiseen Elixirissä käytetään pääasiassa `:rand`-moduulia, joka tarjoaa useita funktioita tähän tarkoitukseen. Tässä on nopea opas aloittamiseen:
 
 Aloita varmistamalla, että alustat satunnaislukugeneraattorin siemenellä, jotta saat sille uniikin lähtökohdan:
@@ -52,7 +47,6 @@ IO.puts(random_float_range)
 Muista, että nämä luvut ovat pseudosatunnaisia; ne määräytyvät siemenen ja algoritmin perusteella, mutta riittävät useimpiin sovelluksiin.
 
 ## Syväsukellus
-
 Elixirin satunnaislukujen tuottamiskyvyt perustuvat Erlangin `:rand`-moduuliin, heijastaen sen perintöä ja tiivistä suhdetta Erlangin kanssa. `:rand`-moduuli korvasi vanhemman `:random`-moduulin, tarjoten parannettuja algoritmeja satunnaislukujen tuottamiseen. Se tarjoaa erilaisia algoritmeja, oletuksena `exsplus`, mutta tukee myös muita, kuten `exs64`, `exsl` ja muita, joilla kullakin on omat kompromissinsa nopeuden ja satunnaisuuden laadun suhteen.
 
 Mielenkiintoinen näkökohta Elixirin (ja siten myös Erlangin) satunnaislukujen tuottamisessa on sen käsittely siemenille. Järjestelmä ylläpitää erillisiä siementiloja kullekin prosessille, varmistaen, että samanaikaiset prosessit eivät häiritse toistensa satunnaislukujonoja. Tämä on erityisen hyödyllistä samanaikaisissa sovelluksissa, varmistaen ennustettavuuden ja luotettavuuden hajautetuissa järjestelmissä.

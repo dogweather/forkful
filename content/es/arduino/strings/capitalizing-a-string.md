@@ -14,9 +14,6 @@ title: Capitalizando una cadena de texto
 weight: 2
 ---
 
-## Qué y Por Qué?
-Capitalizar una cadena implica convertir el primer carácter de cada palabra en una cadena a mayúsculas mientras se asegura de que el resto permanezcan en minúsculas. Esta operación es común en el formateo de datos y la normalización de entradas de usuarios para mantener la consistencia y mejorar la legibilidad.
-
 ## Cómo hacerlo:
 Arduino, principalmente conocido por interactuar con hardware, también incluye capacidades básicas de manipulación de cadenas a través de su objeto `String`. Sin embargo, carece de una función directa de `capitalize` vista en lenguajes de programación de alto nivel. Por lo tanto, implementamos la capitalización iterando sobre una cadena y aplicando transformaciones de mayúsculas y minúsculas.
 

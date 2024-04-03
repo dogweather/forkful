@@ -14,12 +14,7 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## Co i dlaczego?
-
-Konkatenacja łańcuchów znaków polega na połączeniu dwóch lub więcej łańcuchów znaków koniec-końcem, aby utworzyć nowy łańcuch. Programiści robią to, aby dynamicznie generować tekst, takie jak konstruowanie wiadomości, ścieżek lub złożonych zapytań, co sprawia, że programy są bardziej interaktywne i elastyczne.
-
 ## Jak to zrobić:
-
 W języku Go istnieje kilka sposobów na konkatenację łańcuchów znaków. Oto przykłady niektórych popularnych metod:
 
 ### Użycie operatora `+`:
@@ -63,7 +58,6 @@ fmt.Println(path) // path/to/file
 ```
 
 ## Zanurzenie się głębiej
-
 Konkatenacja łańcuchów znaków, mimo że wydaje się być operacją prostoliniową, dotyka głębszych aspektów tego, jak Go obsługuje łańcuchy znaków. W Go łańcuchy są niezmienne; oznacza to, że każda operacja konkatenacji tworzy nowy łańcuch. Może to prowadzić do problemów z wydajnością podczas łączenia dużej liczby łańcuchów lub robienia tego w ciasnych pętlach, ze względu na częste alokowanie i kopiowanie pamięci.
 
 Historycznie, języki programowania radziły sobie z niemiennością łańcuchów i wydajnością konkatenacji na różne sposoby, a podejście Go z `strings.Builder` i `strings.Join` dostarcza programistom narzędzi, które balansują pomiędzy łatwością użycia a wydajnością. Typ `strings.Builder`, wprowadzony w Go 1.10, jest szczególnie godny uwagi, ponieważ zapewnia wydajny sposób budowania łańcuchów bez ponoszenia nadmiernych kosztów alokacji wielu łańcuchów. Robi to poprzez alokowanie bufora, który rośnie w miarę potrzeb, do którego dołączane są łańcuchy.

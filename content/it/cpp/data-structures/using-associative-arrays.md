@@ -13,16 +13,10 @@ title: Utilizzo di array associativi
 weight: 15
 ---
 
-## Cosa e perché?
-
-Gli array associativi, noti come `std::map` o `std::unordered_map` in C++, colmano il divario tra gli indici degli array e i dati del mondo reale, consentendoti di usare chiavi significative. Sono la scelta prediletta quando hai bisogno di ricerche, inserimenti e cancellazioni rapide utilizzando chiavi piuttosto che posizioni di indice.
-
 ## Come fare:
-
 In C++, gli array associativi prendono vita con gli header `<map>` e `<unordered_map>`. Spezziamo in esempi per vedere entrambi in azione.
 
 ### Usare `std::map`
-
 `std::map` mantiene gli elementi ordinati in base alla chiave. Ecco come iniziare:
 
 ```C++
@@ -50,7 +44,6 @@ int main() {
 ```
 
 ### Usare `std::unordered_map`
-
 Quando l'ordine non è importante, ma lo è la performance, `std::unordered_map` è il tuo amico, offrendo una complessità media più rapida per inserimenti, ricerche e cancellazioni.
 
 ```C++
@@ -78,7 +71,6 @@ int main() {
 ```
 
 ## Approfondimento
-
 Gli array associativi in C++, in particolare `std::map` e `std::unordered_map`, non sono solo per l'archiviazione degli elementi. Forniscono una base per una gestione dei dati più complessa permettendo operazioni come ricerca, inserimento e rimozione in tempi di complessità efficienti (logaritmici per `std::map` e tempo medio costante per `std::unordered_map`). Questa efficienza deriva dalle strutture di dati sottostanti: un albero bilanciato per `std::map` e una tabella hash per `std::unordered_map`.
 
 Storicamente, prima che fossero parte della libreria standard, i programmatori dovevano implementare le proprie versioni o utilizzare librerie di terze parti, portando a inconsistenze e potenziali inefficienze. L'inclusione delle mappe nella libreria standard del C++ non solo ha standardizzato il loro uso, ma le ha anche ottimizzate per la performance attraverso diversi compilatori e piattaforme.

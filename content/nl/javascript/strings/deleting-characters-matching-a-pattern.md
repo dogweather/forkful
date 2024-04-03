@@ -12,9 +12,6 @@ title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---
 
-## Wat & Waarom?
-Het verwijderen van tekens op basis van een patroon maakt strings schoon en uniform. Programmeurs doen dit voor formattering, het verwijderen van ongewenste tekens, of voor vereenvoudiging vóór verwerking.
-
 ## Hoe te:
 Gebruik `replace()` met een reguliere expressie. De `g` vlag vervangt alle overeenkomsten, niet alleen de eerste.
 

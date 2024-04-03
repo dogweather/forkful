@@ -14,9 +14,6 @@ title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
 weight: 44
 ---
 
-## What & Why? (무엇이며 왜?)
-HTTP 요청은 서버에 정보를 요청하거나 보내는 방법입니다. 프로그래머들은 데이터 교환, API 통신, 웹 콘텐츠 검색 등을 위해 사용합니다.
-
 ## How to:
 Fish Shell에서 HTTP 요청을 보내는 것은 간단합니다. `curl` 명령어를 사용해보세요. 예시와 결과를 아래에서 확인할 수 있습니다.
 

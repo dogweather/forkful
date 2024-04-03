@@ -13,12 +13,7 @@ title: "Refactorizaci\xF3n"
 weight: 19
 ---
 
-## ¿Qué y por qué?
-
-Refactorizar en programación implica reestructurar el código existente sin cambiar su comportamiento externo, con el objetivo de mejorar atributos no funcionales como la legibilidad, reducir la complejidad y aumentar la mantenibilidad. Los programadores refactorizan para mantener la base de código limpia, minimizar la deuda técnica y facilitar y hacer más seguros los cambios futuros.
-
 ## Cómo hacerlo:
-
 La refactorización puede implicar una gama de tácticas desde renombrar variables para mayor claridad hasta alterar la estructura del código para una mejor modularización. Aquí hay un ejemplo simple que demuestra cómo refactorizar un fragmento de código en C para mejorar la claridad y eficiencia.
 
 Antes de la refactorización:
@@ -61,7 +56,6 @@ int main() {
 La salida permanece sin cambios, pero la funcionalidad para intercambiar valores se ha movido a una función separada (`swap`), mejorando la legibilidad y reusabilidad.
 
 ## Inmersión Profunda
-
 La práctica de refactorizar el código ha existido tanto tiempo como el desarrollo de software en sí, evolucionando junto con los paradigmas de programación y los lenguajes. En C, un lenguaje que es poderoso y lleno de oportunidades para ineficiencias y errores debido a su naturaleza de bajo nivel, la refactorización es especialmente crucial. Puede marcar la diferencia entre una base de código que es mantenible y otra que es una maraña de ineficiencias.
 
 Una consideración específica para C es el equilibrio entre micro-optimizaciones y legibilidad/mantenibilidad. Aunque es tentador ajustar manualmente el código en C para exprimir hasta la última onza de rendimiento, tales optimizaciones pueden hacer que el código sea más frágil y difícil de leer. Por lo tanto, generalmente es mejor priorizar un código limpio y legible y confiar en el optimizador del compilador para manejar las mejoras de rendimiento cuando sea posible.

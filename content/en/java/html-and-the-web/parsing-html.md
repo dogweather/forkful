@@ -10,12 +10,7 @@ title: Parsing HTML
 weight: 43
 ---
 
-## What & Why?
-
-Parsing HTML means digging through the markup to extract data like text, links, or other elements. We do it to interact with or scrape web content, automate browsing tasks, or test web apps.
-
 ## How to:
-
 Let's use Jsoup, a handy library for working with real-world HTML. First, add the dependency:
 
 ```xml
@@ -62,7 +57,6 @@ for (Element link : links) {
 ```
 
 ## Deep Dive
-
 Once upon a time, HTML was tamed by regex patterns, a method both error-prone and nightmarish for complex documents. Enter Jsoup in the late aughts, providing a jQuery-like interface for Java to parse, traverse, and manipulate HTML.
 
 Jsoup is not the only choice. There's HtmlUnit for full-fledged web app testing with JavaScript support, but it's heavier and more complex. For lightweight tasks, Apache Commons Validator is great just for extracting URLs.
@@ -72,7 +66,6 @@ Under the hood, Jsoup uses a DOM parser, which models the entire document in mem
 Remember, when scraping, always check a site's `robots.txt` and terms of service to avoid legal troubles or getting IP-banned.
 
 ## See Also
-
 - Jsoup Official Documentation: https://jsoup.org/
 - HtmlUnit: http://htmlunit.sourceforge.net/
 - Apache Commons Validator: https://commons.apache.org/proper/commons-validator/

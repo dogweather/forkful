@@ -11,9 +11,6 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## What & Why? - Mitä ja miksi?
-Yksinkertaistettuna, merkkijonojen yhdistäminen on tapa liittää tekstejä yhteen. Ohjelmoijat tekevät tätä, koska tarvitsevat usein luoda dynaamisia viestejä, polkuja tai komentoja.
-
 ## How to - Kuinka tehdään:
 ```Bash
 # Merkkijonojen yhdistäminen liittämisellä

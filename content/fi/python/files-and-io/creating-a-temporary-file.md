@@ -11,9 +11,6 @@ title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---
 
-## What & Why? - Mitä ja Miksi?
-Tilapäiset tiedostot ovat ohjelmoinnissa käytettäviä väliaikaisia tiedostoja, jotka yleensä poistetaan ohjelman suorituksen lopussa. Niitä käytetään datan väliaikaiseen säilytykseen, esimerkiksi kun pysyvien tiedostojen kirjoittaminen olisi liian hidasta tai kun halutaan välttää levyn käyttöä.
-
 ## How to: - Miten tehdään:
 Pythonissa tilapäisten tiedostojen käsittely sujuu `tempfile`-moduulin avulla. Tässä muutama esimerkki:
 

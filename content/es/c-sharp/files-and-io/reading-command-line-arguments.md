@@ -10,9 +10,6 @@ title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---
 
-## ¿Qué y Por Qué?
-Los argumentos de la línea de comandos son datos que pasas a tu aplicación al iniciarla. Los programadores los usan para personalizar la ejecución del programa sin cambiar el código fuente.
-
 ## Cómo hacerlo:
 ```C#
 using System;

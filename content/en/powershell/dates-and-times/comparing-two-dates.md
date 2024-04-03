@@ -10,12 +10,7 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-
-Comparing two dates in PowerShell means figuring out if one is earlier, the same, or later than the other. Programmers often do this to manage events, sort records, schedule tasks, or check data age.
-
 ## How to:
-
 ```PowerShell
 # Let's grab today's date
 $today = Get-Date
@@ -40,7 +35,6 @@ False
 ```
 
 ## Deep Dive
-
 Way back in the stone ages of computing—not really, but, you know, the early days—dates were messy. We've come a long way with standards and PowerShell simplifies it further.
 
 Here are the bits worth chewing on:
@@ -53,6 +47,5 @@ Here are the bits worth chewing on:
 At the assembly level, date comparison translates to ticks (100-nanosecond intervals since 1/1/0001). So you’re essentially comparing large integers, which is efficient.
 
 ## See Also
-
 - [DateTime Structure (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
 - [Working with Dates and Times in PowerShell (SS64.com)](https://ss64.com/ps/syntax-dateformats.html)

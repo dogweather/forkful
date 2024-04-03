@@ -13,12 +13,7 @@ title: Lokitiedostot
 weight: 17
 ---
 
-## Mikä & Miksi?
-
-Lokitus C:ssä tarkoittaa ohjelman kulun ja merkittävien tapahtumien tallentamista sen suorituksen aikana, tarjoten konkreettisen katsauksen sen käyttäytymiseen ja suorituskykyyn. Ohjelmoijat käyttävät lokitusta vianetsintätarkoituksissa, ohjelmiston terveyden seuraamisessa ja järjestelmän turvallisuuden varmistamisessa.
-
 ## Kuinka:
-
 C:ssä lokituksen voi saavuttaa perustiedostotoimintojen avulla tai käyttämällä monimutkaisempia kirjastoja. Aloittaaksemme yksinkertaisesti, aloitamme standardi I/O-kirjastosta. Seuraavat katkelmat esittelevät peruslokitusimplementaatioita.
 
 Yksinkertaisten viestien lokitukseen:
@@ -94,7 +89,6 @@ Tuloste `detailed.log`-tiedostossa:
 ```
 
 ## Syväluotaus
-
 Kuten osoitettu, lokitus C:ssä nojaa yksinkertaisiin tiedostotoimintoihin, mikä on tehokasta muttei yhtä voimakasta tai joustavaa kuin muiden kielten lokitusvälineet, kuten Pythonin `logging`-moduuli tai Javan `Log4j`. Lisäominaisuuksia vaativien lokituskykyjen saavuttamiseksi C:ssä kehittäjät kääntyvät usein kirjastojen, kuten Unix-tyylisten järjestelmien `syslog`, joka tarjoaa järjestelmänlaajuisen lokinhallinnan, tai kolmannen osapuolen kirjastojen kuten `log4c` puoleen.
 
 Historiallisesti lokitus on ollut olennainen osa ohjelmointia, jäljittäen juurensa aikaisiin ohjelmointikäytäntöihin, jolloin ohjelman kulun ja virheiden seuranta ja ymmärtäminen tehtiin pääasiassa fyysisillä tulosteilla. Kuten järjestelmät kehittyivät, lokitus tuli monimutkaisemmaksi, tukien nykyään eri vakavuustasoja, lokin kiertoa ja asynkronista lokitusta.

@@ -14,9 +14,6 @@ title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---
 
-## Co i dlaczego?
-Kapitalizacja ciągu polega na przekształceniu pierwszego znaku każdego słowa w ciągu na wielką literę, zapewniając jednocześnie, że pozostałe litery pozostaną małe. Operacja ta jest powszechna w formacie danych i normalizacji wprowadzania użytkownika, aby zachować spójność i poprawić czytelność.
-
 ## Jak to zrobić:
 Arduino, znane przede wszystkim z interakcji z sprzętem, zawiera także podstawowe możliwości manipulacji ciągami za pomocą obiektu `String`. Jednakże, brakuje mu bezpośredniej funkcji `capitalize`, jaką widzimy w językach wyższego poziomu. Dlatego implementujemy kapitalizację, iterując po ciągu znaków i stosując transformacje wielkości liter.
 

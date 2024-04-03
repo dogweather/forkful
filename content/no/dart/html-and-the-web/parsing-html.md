@@ -12,9 +12,6 @@ title: Analysering av HTML
 weight: 43
 ---
 
-## Hva & Hvorfor?
-Parsing av HTML i programmering innebærer å trekke ut data fra HTML-dokumenter. Programmerere gjør dette for å samhandle med eller skrape nettinnhold for informasjonsekstraksjon, testing eller automatiseringsformål, selv når offisielle API-er ikke er tilgjengelige.
-
 ## Hvordan gjøre det:
 Dart tilbyr ikke innebygd støtte for HTML-parsing i sine kjernelibraryer. Du kan imidlertid bruke en tredjepartspakke som `html` for å parse og manipulere HTML-dokumenter.
 

@@ -15,9 +15,6 @@ title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---
 
-## Cái gì & Tại sao?
-Các đối số dòng lệnh cho phép người dùng ảnh hưởng đến hành vi của một chương trình mà không cần thay đổi mã. Các chương trình sử dụng chúng để nhận các tham số đầu vào, đường dẫn tệp, hoặc chế độ hoạt động, giúp tiết kiệm thời gian và tăng tính linh hoạt.
-
 ## Làm thế nào:
 Trong C++, các đối số dòng lệnh được nhận trong `main()` như một mảng các con trỏ ký tự. Dưới đây là cách bạn có thể lấy chúng:
 

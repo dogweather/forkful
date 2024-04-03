@@ -8,9 +8,6 @@ title: "\u5904\u7406XML"
 weight: 40
 ---
 
-# 什么 & 为什么?
-在 Swift 中处理 XML 意味着解析和生成 XML 数据。程序员这么做是为了数据交换，特别是当与采用 XML 作为标准格式的系统集成时。
-
 # 如何操作:
 Swift 提供了 `XMLParser` 和 `XMLDocument` 来解析 XML 数据。这里是一个解析简单 XML 字符串的代码片段：
 

@@ -11,9 +11,6 @@ title: Conversione di una data in una stringa
 weight: 28
 ---
 
-## What & Why?
-Convertire una data in una stringa significa trasformare un oggetto `Date` di JavaScript in una sequenza di caratteri che rappresenta la data. Si fa per mostrare le date in un formato leggibile dall'utente o per prepararle per l'invio a un server o un database.
-
 ## How to:
 Ecco un esempio di conversione di una data in una stringa in TypeScript:
 

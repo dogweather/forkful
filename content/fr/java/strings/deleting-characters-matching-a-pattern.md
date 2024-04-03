@@ -12,12 +12,7 @@ title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---
 
-## Quoi et Pourquoi ?
-
-En Java, supprimer des caractères correspondant à un motif, c'est retirer de façon sélective certains caractères d'une chaîne en se basant sur des règles définies (le motif). Les programmeurs font cela pour nettoyer des données, extraire de l'information pertinente ou préparer des chaînes pour des traitements ultérieurs.
-
 ## Comment faire :
-
 Parlons code. Pour effacer des caractères selon un motif, on utilise souvent les expressions régulières avec la classe `Pattern` et `Matcher` ou plus simplement la méthode `replaceAll` des chaînes de caractères.
 
 ```java
@@ -43,7 +38,6 @@ public class DeletePatternCharacters {
 ```
 
 ## Pour aller plus loin :
-
 Historiquement, les expressions régulières viennent des concepts mathématiques de langage formel et ont été popularisées dans les utilitaires Unix pour manipuler du texte. En Java, `Pattern` et `Matcher` sont des classes robustes pour gérer les expressions régulières depuis Java 1.4.
 
 Comme alternatives, pour des besoins simples, on peut se passer des regex en utilisant des méthodes comme `replace` sur les chaînes. Pour des traitements plus complexes, il y a des bibliothèques comme Apache Commons Lang avec `StringUtils`, qui offrent des fonctions plus avancées.
@@ -51,7 +45,6 @@ Comme alternatives, pour des besoins simples, on peut se passer des regex en uti
 L'implémentation en Java utilise une machine d'états pour évaluer les expressions régulières, ce qui peut être gourmand en performances si mal utilisé. C'est pourquoi réfléchir au motif et tester son efficacité est important.
 
 ## À voir également :
-
 Pour creuser le sujet, voici quelques liens utiles :
 
 - [Documentation Oracle sur les expressions régulières en Java](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)

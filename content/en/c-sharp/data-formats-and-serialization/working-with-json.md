@@ -10,14 +10,10 @@ title: Working with JSON
 weight: 38
 ---
 
-## What & Why?
-
-Working with JSON (JavaScript Object Notation) involves parsing, generating, and querying JSON data, making it a critical skill for modern programming. This data-interchange format is exceedingly used in web services and APIs due to its easy readability and language independence, making it essential for C# programmers working on networked applications or interacting with web-based data.
-
 ## How to:
 
-### Parsing JSON String to an Object
 
+### Parsing JSON String to an Object
 C# provides the `System.Text.Json` namespace for efficient JSON processing. To parse a JSON string to a C# object, define a class that matches the JSON structure and use the `JsonSerializer.Deserialize` method.
 
 ```csharp
@@ -44,7 +40,6 @@ public class Program
 ```
 
 ### Generating JSON from an Object
-
 To convert a C# object back into a JSON string, use the `JsonSerializer.Serialize` method.
 
 ```csharp
@@ -69,7 +64,6 @@ public class Program
 ```
 
 ### Using Newtonsoft.Json
-
 `Newtonsoft.Json` (or Json.NET) is a popular third-party library that offers more flexibility and options for JSON serialization and deserialization.
 
 To use Json.NET, you must first install the `Newtonsoft.Json` package via NuGet. Then, you can deserialize a JSON string like so:

@@ -8,10 +8,6 @@ title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## What & Why?
-("## Quoi & Pourquoi ?")
-Convertir une date en chaîne de caractères permet de l'afficher dans un format lisible par l'homme. On le fait pour enregistrer des logs, générer des rapports ou interfacer avec des utilisateurs.
-
 ## How to:
 ("## Comment faire :")
 ```Bash

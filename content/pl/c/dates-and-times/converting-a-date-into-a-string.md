@@ -13,12 +13,7 @@ title: "Konwersja daty na ci\u0105g znak\xF3w"
 weight: 28
 ---
 
-## Co i dlaczego?
-
-Konwersja daty na ciąg znaków w języku C polega na przekształceniu struktury daty lub znacznika czasu na format czytelny dla człowieka. Programiści często wykonują to zadanie, aby wyświetlać daty w logach, interfejsach użytkownika lub przy zapisywaniu dat w tekstowym formacie, takim jak JSON lub CSV.
-
 ## Jak to zrobić:
-
 Do tego celu często używana jest funkcja `strftime` z biblioteki `<time.h>`. Pozwala ona na formatowanie daty i czasu w różnorodny sposób, poprzez określenie specyfikatorów formatu. Oto krótki przykład:
 
 ```c
@@ -47,7 +42,6 @@ Aktualna data i czas: Wed Jun 30 21:49:08 2021
 Można dostosować format, zmieniając specyfikatory formatów przekazywane do `strftime`. Na przykład, aby uzyskać datę w formacie `RRRR-MM-DD`, użyłbyś `"%Y-%m-%d"`.
 
 ## Pogłębienie tematu
-
 Funkcja `strftime` oraz biblioteka `<time.h>` są częścią Standardowej Biblioteki C, która sięga czasów oryginalnego standardu ANSI C (C89/C90). Choć ta metoda jest prosta i obsługiwana na wielu platformach, w porównaniu z nowoczesnymi językami programowania, które oferują bardziej intuicyjne biblioteki daty i czasu, może wydawać się niskopoziomowa i uciążliwa.
 
 Należy zauważyć, że choć funkcje czasu standardowej biblioteki C są szeroko obsługiwane i stosunkowo proste w użyciu, brakuje im niektórych bardziej złożonych funkcji manipulacji strefą czasową i internacjonalizacji, które można znaleźć w bibliotekach nowszych języków lub w bibliotekach stron trzecich dla C, takich jak Międzynarodowe Komponenty dla Unicode (ICU).

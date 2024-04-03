@@ -12,9 +12,6 @@ title: Tolka HTML
 weight: 43
 ---
 
-## Vad & Varför?
-Att tolka HTML innebär att extrahera data och information från HTML-dokument, vilket är avgörande för webskrapning, dataanalys och automatiseringsuppgifter. Programmerare utför detta för att samla, analysera eller manipulera webbinnehåll programmatiskt, vilket möjliggör automatisering av vad som annars skulle vara manuell extraktion av data från webbplatser.
-
 ## Hur man gör:
 Lua har inte ett inbyggt bibliotek för att tolka HTML, men du kan använda dig av tredjepartsbibliotek som `LuaHTML` eller utnyttja bindningar för `libxml2` genom `LuaXML`. En populär metod är att använda biblioteket `lua-gumbo` för att tolka HTML, vilket ger en enkel, HTML5-kompatibel tolkningsförmåga.
 

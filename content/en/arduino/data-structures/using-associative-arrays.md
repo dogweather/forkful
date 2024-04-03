@@ -10,9 +10,6 @@ title: Using associative arrays
 weight: 15
 ---
 
-## What & Why?
-In the world of Arduino, associative arrays let you pair keys with values, kinda like how you'd match socks with their pairs. They're a go-to when you need to store and retrieve data using descriptive names, making your code cleaner and way more understandable.
-
 ## How to:
 Arduino, strictly speaking, doesn't have built-in support for associative arrays as you'd find in higher-level languages. But, fear not. We can get crafty using structures and arrays to mimic this functionality. Here's a simple example to create a basic "associative array" for storing and accessing temperatures for different cities.
 

@@ -14,12 +14,7 @@ title: Bruke associative tabeller
 weight: 15
 ---
 
-## Hva & Hvorfor?
-
-Assosiative tabeller, også kjent som hashtabeller eller ordbøker i PowerShell, lar deg lagre data i nøkkel-verdipar, noe som gjør datahenting enkel og effektiv. Programmerere bruker dem til å lagre relaterte data sammen på en måte som er lett å tilgå ved hjelp av nøkkelen.
-
 ## Hvordan:
-
 Å opprette og bruke assosiative tabeller i PowerShell er ganske rett frem. Slik gjør du magien:
 
 **Opprette en assosiativ tabell:**
@@ -77,7 +72,6 @@ sted : New York
 ```
 
 ## Dypdykk
-
 Konseptet med assosiative tabeller er vanlig på tvers av mange programmeringsspråk, vanligvis kalt en ordbok, map, eller hashtabell avhengig av språket. I PowerShell implementeres assosiative tabeller som hashtabeller, som er ganske effektive for å slå opp nøkler, lagre data og vedlikeholde en samling av unike nøkler.
 
 Historisk sett gir assosiative tabeller et middel for å håndtere samlinger av objekter der hvert element kan hentes raskt uten å iterere gjennom hele samlingen, ved hjelp av nøkkelen dens. Effektiviteten av datahenting og modifikasjon i assosiative tabeller gjør dem til et foretrukket valg for forskjellige oppgaver. De har imidlertid begrensninger, som å opprettholde rekkefølge, der ordnede ordbøker eller egendefinerte objekter kan være et bedre alternativ.

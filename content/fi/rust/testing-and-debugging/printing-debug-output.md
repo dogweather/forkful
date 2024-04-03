@@ -9,9 +9,6 @@ title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
 
-## Mikä ja Miksi?
-Debug-tulostus auttaa näkemään mitä koodissasi tapahtuu. Käytämme sitä virheiden jäljittämiseen ja koodin toiminnan varmistamiseen.
-
 ## Miten:
 Rustissa debug-tulostus onnistuu `println!` makrolla:
 

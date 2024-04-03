@@ -11,9 +11,6 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## What & Why? (Co i Dlaczego?)
-Usuwanie znaków pasujących do wzorca to proces filtrowania tekstu tak, by usunąć specyficzne sekwencje znaków. Programiści robią to, aby czyścić dane, weryfikować format lub przygotować tekst do dalszej obróbki.
-
 ## How to: (Jak to zrobić:)
 W Elm, można użyć funkcji `String.filter` do usunięcia niepożądanych znaków. Oto przykładowy kod:
 

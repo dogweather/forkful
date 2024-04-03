@@ -13,9 +13,6 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i dlaczego?
-Pisanie testów w Bashu obejmuje tworzenie skryptów testowych w celu weryfikacji funkcjonalności twoich skryptów Bash. Programiści przeprowadzają testy, aby upewnić się, że ich skrypty działają zgodnie z oczekiwaniami w różnych warunkach, wyławiając błędy i usterki przed wdrożeniem.
-
 ## Jak to zrobić:
 Bash nie posiada wbudowanego frameworka do testowania, ale można pisać proste funkcje testowe. Dla bardziej zaawansowanego testowania popularne są narzędzia stron trzecich, takie jak `bats-core`.
 

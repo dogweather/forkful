@@ -14,9 +14,6 @@ title: Calculando uma data no futuro ou passado
 weight: 26
 ---
 
-## O que & Por quê?
-Calcular uma data no futuro ou no passado é uma tarefa comum para programadores, lidando com agendamentos, lembretes ou qualquer funcionalidade que dependa de cálculos de datas. Entender como manipular datas é crucial para sistemas de backend, interfaces de usuário e análise de dados, especialmente para aqueles que estão migrando para Dart e procuram implementar lógica temporal de forma eficiente.
-
 ## Como fazer:
 Dart oferece suporte robusto para manipulação de datas por meio de sua classe `DateTime`. Veja como você pode calcular datas futuras ou passadas usando Dart nativo, sem precisar de bibliotecas de terceiros.
 

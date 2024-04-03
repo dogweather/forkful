@@ -23,12 +23,7 @@ title: "\u65E5\u4ED8\u3092\u6BD4\u8F03\u3059\u308B"
 weight: 27
 ---
 
-## What & Why? (何となんで？)
-
-Javaで「2つの日付を比較する」とは、単純に2つの日付が同じか、どちらが先か後かを調べることです。プログラマーは有効期限のチェック、イベントのスケジュール調整、データソートなど様々な理由で日付を比較します。
-
 ## How to: (やり方)
-
 ```java
 import java.time.LocalDate;
 
@@ -54,7 +49,6 @@ date1 は date2 より前の日付です。
 ```
 
 ## Deep Dive (掘り下げ)
-
 日付の比較はJavaの初期バージョンから可能でしたが、Java 8で導入されたLocalDateクラスによってさらに簡単になりました。LocalDateは時刻情報を含まず、日付だけを扱うイミュータブルなクラスです。
 
 他の代替手段としては、CalendarクラスやDateクラスを使う方法がありますが、これらは使うのが面倒でエラーが発生しやすいため、現在はあまり推奨されていません。
@@ -62,7 +56,6 @@ date1 は date2 より前の日付です。
 実装の詳細としては、LocalDateはChronoLocalDateインターフェースを実装しており、比較にはComparableインターフェースのcompareToメソッドを利用します。この方法は内部で日付を数値化し比較するため、直感的かつ高速です。
 
 ## See Also (参照)
-
 - [LocalDate (Java Platform SE 8)](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
 - [Java Date and Time (Tutorialspoint)](https://www.tutorialspoint.com/java8/java8_datetime_api.htm)
 - [ChronoLocalDate (Java Platform SE 8)](https://docs.oracle.com/javase/8/docs/api/java/time/chrono/ChronoLocalDate.html)

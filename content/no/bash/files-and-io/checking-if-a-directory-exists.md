@@ -14,12 +14,7 @@ title: Sjekker om en mappe eksisterer
 weight: 20
 ---
 
-## Hva og hvorfor?
-
-I Bash-programmering er det å sjekke om en mappe eksisterer en essensiell kontrollmekanisme som brukes for å verifisere tilstedeværelsen av en mappe før man utfører filoperasjoner. Denne sjekken er avgjørende for å unngå feil som å forsøke å få tilgang til eller endre mapper som ikke eksisterer, og sikrer en jevnere og mer forutsigbar skriptkjøring.
-
 ## Hvordan:
-
 I sin kjerne tillater Bash deg å sjekke for eksistensen av en mappe ved å bruke betingede uttrykk og `-d`-operatøren. Nedenfor er et enkelt eksempel som demonstrerer hvordan du utfører denne sjekken.
 
 ```bash

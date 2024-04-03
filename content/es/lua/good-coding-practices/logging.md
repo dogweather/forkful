@@ -11,12 +11,7 @@ title: Registro de Actividades
 weight: 17
 ---
 
-## ¿Qué y por qué?
-
-El registro (logging) es la práctica de grabar eventos, errores y otros puntos de datos significativos que ocurren dentro del ciclo de vida de una aplicación de software. Los programadores utilizan los registros para ayudar en la depuración, monitorear la salud del sistema, analizar el comportamiento de los usuarios y mantener un rastro de auditoría para propósitos de seguridad y cumplimiento.
-
 ## Cómo hacerlo:
-
 Lua no cuenta con un marco de trabajo de registro incorporado, pero implementar una función de registro simple es sencillo. A continuación se muestra un ejemplo básico de tal función:
 
 ```lua
@@ -41,7 +36,6 @@ Cuando se ejecuta el código anterior, verás una salida como esta:
 Para requisitos de registro más sofisticados, se pueden incluir bibliotecas de terceros como LuaLogging para proporcionar funcionalidad adicional como niveles de registro, múltiples manejadores y especificaciones de formato.
 
 ## Análisis detallado
-
 Históricamente, el registro ha sido un aspecto esencial del diagnóstico de software, convirtiéndose en una práctica establecida desde los primeros días de la programación. La importancia del registro no puede ser subestimada, ya que sirve como la 'caja negra' en caso de fallo del sistema, proporcionando información sobre las causas raíz de los problemas.
 
 Mientras que el ejemplo anterior solo satisface las necesidades más rudimentarias, hay muchas alternativas con conjuntos de características más ricos. Algunas de estas incluyen:
@@ -55,7 +49,6 @@ Al profundizar en la implementación de un sistema de registro, los puntos de de
 Para el registro en sistemas distribuidos, es común usar soluciones de gestión de registros centralizadas como ELK (Elasticsearch, Logstash y Kibana) o Splunk, que pueden agregar registros de múltiples fuentes, proporcionar capacidades robustas de búsqueda y visualizar datos para depuración y análisis más fáciles.
 
 ## Ver también
-
 - Biblioteca LuaLogging en GitHub: https://github.com/lunarmodules/lualogging
 - Introducción a la pila ELK: https://www.elastic.co/es/what-is/elk-stack
 - El wiki de usuarios de Lua sobre Registro: http://lua-users.org/wiki/LoggingCategory

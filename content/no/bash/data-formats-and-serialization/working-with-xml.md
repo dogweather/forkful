@@ -11,9 +11,6 @@ title: "\xC5 jobbe med XML"
 weight: 40
 ---
 
-## Hva & Hvorfor?
-Å jobbe med XML innebærer parsing, ekstrahering og manipulering av data i Extensible Markup Language-formatet. Programmere sliter med XML siden det er et utbredt datautvekslingsformat for konfigurasjoner, APIer og mer.
-
 ## Hvordan:
 Her er hvordan du parser XML i Bash. Verktøy? xmllint og xmlstarlet. Løkke gjennom XML-elementer? Absolutt. Eksempel med eksempel på utdata:
 

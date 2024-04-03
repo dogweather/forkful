@@ -11,9 +11,6 @@ title: Organisering av kode i funksjoner
 weight: 18
 ---
 
-## Hva & Hvorfor?
-Å organisere kode i funksjoner handler om å pakke inn kodesnutter som utfører spesifikke oppgaver og gi dem et navn. Det gjøres for å gjøre koden gjenbrukbar, lesbar og vedlikeholdbar. I stedet for å skrive den samme koden på nytt, kaller du en funksjon. Vil du feilsøke eller oppgradere? Juster funksjonen uten å måtte sile gjennom hauger av skript.
-
 ## Hvordan:
 La oss skrive en funksjon for å beregne summen av to tall. Enkelt, men det illustrerer poenget.
 

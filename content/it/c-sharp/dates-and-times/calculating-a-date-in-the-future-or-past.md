@@ -10,9 +10,6 @@ title: Calcolo di una data futura o passata
 weight: 26
 ---
 
-## What & Why?
-Calcolare una data nel futuro o nel passato significa semplicemente determinare esattamente una data prima o dopo un certo punto temporale. I programmatori lo fanno per gestire scadenze, eventi pianificati, ricorrenze, e per manipolare dati temporali in generale.
-
 ## How to:
 C# rende il calcolo delle date piuttosto diretto con `DateTime` e `TimeSpan`. Ecco come farlo:
 

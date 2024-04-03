@@ -11,9 +11,6 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-Runden von Zahlen bedeutet, eine Zahl auf die nächste ganze Zahl oder auf eine bestimmte Dezimalgenauigkeit anzupassen. Wir runden Zahlen, um sie für die menschliche Lesbarkeit zu vereinfachen, die Rechenlast zu reduzieren oder spezifischen numerischen Anforderungen zu entsprechen.
-
 ## Wie:
 In Clojure verwenden wir hauptsächlich `Math/round`, `Math/floor` und `Math/ceil`:
 

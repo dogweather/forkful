@@ -12,12 +12,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mikä & Miksi?
-
-Assosiatiiviset taulukot ovat kuin tehostetut taulukot, jotka mahdollistavat merkkijonojen käyttämisen indekseinä pelkkien kokonaislukujen sijaan. Ohjelmoijat käyttävät niitä monimutkaisempien tietorakenteiden kanssa, mikä tekee tiedon käsittelystä helpompaa, kun se ei siististi sovi peräkkäiseen luetteloon.
-
 ## Kuinka:
-
 Aloita julistamalla Bashissa assosiatiivinen taulukko:
 
 ```Bash
@@ -65,7 +60,6 @@ unset my_array["topic"]
 ```
 
 ## Syväsukellus
-
 Assosiatiiviset taulukot otettiin käyttöön Bashin versiossa 4.0, mikä tekee niistä suhteellisen uuden lisäyksen kieleen. Ennen niiden käyttöönottoa ei-kokonaislukuindeksilla varustettujen taulukoiden käsittely oli hankalaa, usein vaatien kiertotapoja tai ulkoisia työkaluja kuten `awk` tai `sed`.
 
 Pinnan alla Bash toteuttaa assosiatiiviset taulukot hajautustauluja käyttäen. Tämä toteutus mahdollistaa tehokkaan avainhaun, joka pysyy melko vakiona riippumatta taulukon koosta, kriittinen ominaisuus käsikirjoituksen suorituskyvyssä.

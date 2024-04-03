@@ -11,9 +11,6 @@ title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---
 
-## Vad & Varför?
-Skapa en tillfällig fil innebär att generera en fil som bara finns under programmets körtid, vanligtvis för att hantera data temporärt. Programmerare gör detta för att hantera mellanlagrad data, testa funktioner utan att påverka produktionssystem eller hålla sensitiv information utanför varaktig lagring.
-
 ## Hur man gör:
 Elm, som körs i webbläsarmiljön, har inte direkt tillgång att skapa filer på filsystemet. Men, vi kan hantera temporär data i webbapplikationer. Här är ett exempel på hur man kan hantera temporär data i Elm:
 

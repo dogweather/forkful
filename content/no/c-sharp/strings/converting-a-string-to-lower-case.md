@@ -10,9 +10,6 @@ title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---
 
-## Hva & Hvorfor?
-Konvertering av en streng til små bokstaver endrer alle bokstavene i strengen til deres småbokstav motstykke. Dette gjøres for konsistens i sammenligninger og søk, hvor store og små bokstaver skal behandles likt.
-
 ## Hvordan gjøre det:
 C# har innebygget støtte for å endre store bokstaver til små bokstaver. Her er et raskt eksempel:
 

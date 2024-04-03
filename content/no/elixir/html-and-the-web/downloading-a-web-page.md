@@ -11,12 +11,7 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## Hva & Hvorfor?
-
-Å laste ned en nettside betyr å hente HTML-koden fra en webserver for å lagre eller behandle den lokalt. Programmerere gjør dette for å skrape data, teste webtjenester eller automatisere oppgaver som er avhengige av innholdet på en nettside.
-
 ## Hvordan:
-
 ```elixir
 defmodule PageDownloader do
   require HTTPoison
@@ -51,11 +46,9 @@ Eksempelutskrift:
 ```
 
 ## Dypdykk
-
 Å laste ned nettsider er ikke noe nytt; det har vært en del av web-programmering siden internettets barndom. I Elixir brukes ofte HTTP-klientbiblioteker som HTTPoison eller Tesla for å utføre oppgaven. Disse bibliotekene forenkler prosessen ved å håndtere HTTP-forespørsler for deg. Alternativt kan man bruke lavnivå biblioteker som Erlangs :httpc. Når du laster ned en nettside, er det viktig å respektere robots.txt-filer og eventuelle API-grenser for å unngå å overbelaste serverne eller bryte med tjenestevilkår.
 
 ## Se Også
-
 - HTTPoison GitHub-side: https://github.com/edgurgel/httpoison
 - Tesla GitHub-side: https://github.com/teamon/tesla
 - Elixir’s offisielle dokumentasjon: https://elixir-lang.org/docs.html

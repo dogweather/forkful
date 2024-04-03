@@ -12,14 +12,10 @@ title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---
 
-## Mikä & Miksi?
-
-JSON (JavaScript Object Notation) -tiedon käsittelyyn kuuluu JSON-tiedon jäsennys, tuottaminen ja kysely, mikä tekee siitä kriittisen taidon nykyohjelmoinnissa. Tämä datanvaihtoformaatti on erittäin käytetty web-palveluissa ja API:issa sen helpon luettavuuden ja kieliriippumattomuuden vuoksi, mikä tekee siitä olennaisen taidon C#-ohjelmoijille, jotka työskentelevät verkottuneissa sovelluksissa tai vuorovaikuttavat web-pohjaisen datan kanssa.
-
 ## Kuinka:
 
-### JSON-merkkijonon jäsennys olioksi
 
+### JSON-merkkijonon jäsennys olioksi
 C# tarjoaa `System.Text.Json` nimiavaruuden tehokkaaseen JSON-käsittelyyn. JSON-merkkijonon jäsentämiseksi C#-olioksi määritä luokka, joka vastaa JSON-rakennetta ja käytä `JsonSerializer.Deserialize`-metodia.
 
 ```csharp
@@ -46,7 +42,6 @@ public class Ohjelma
 ```
 
 ### JSON:n tuottaminen oliosta
-
 Jotta C#-olion voisi muuttaa takaisin JSON-merkkijonoksi, käytä `JsonSerializer.Serialize`-metodia.
 
 ```csharp
@@ -71,7 +66,6 @@ public class Ohjelma
 ```
 
 ### Newtonsoft.Json käyttäminen
-
 `Newtonsoft.Json` (tai Json.NET) on suosittu kolmannen osapuolen kirjasto, joka tarjoaa enemmän joustavuutta ja vaihtoehtoja JSON:n serialisointiin ja deserialisointiin.
 
 Json.NET:n käyttämiseen ensin täytyy asentaa `Newtonsoft.Json` paketti NuGetin kautta. Sen jälkeen voit deserialisoida JSON-merkkijonon näin:

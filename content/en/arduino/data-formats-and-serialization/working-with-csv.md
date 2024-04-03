@@ -11,9 +11,6 @@ title: Working with CSV
 weight: 37
 ---
 
-## What & Why?
-Working with CSV (Comma-Separated Values) files in Arduino involves reading from and writing to CSV files usually stored on an SD card, enabling data logging, configuration settings, and more. Programmers often handle CSVs for sensor data collection, configuration parameter storage, or interfacing with other systems, due to its simplicity and wide adoption across platforms.
-
 ## How to:
 Arduino doesn't have a built-in library specifically for handling CSV files, but you can use the `SD` and `SPI` libraries for accessing files on an SD card, and then parse or generate CSV data using basic string manipulation techniques. When dealing with more complex CSV manipulation, the third-party library `ArduinoCSV` can be utilized for easier parsing and writing.
 

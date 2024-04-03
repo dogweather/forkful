@@ -11,9 +11,6 @@ title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---
 
-## Vad & Varför?
-Extrahering av substrängar innebär att plocka ut specifika delar av en sträng. Programmerare gör detta för att bearbeta eller analysera text baserat på behov - såsom att dra ut användarnamn från e-postadresser eller hämta specifika data från en sträng med logginformation.
-
 ## Hur gör man:
 ```Kotlin
 fun main() {

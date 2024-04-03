@@ -16,9 +16,6 @@ title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---
 
-## Cái gì & Tại sao?
-Bắt đầu một dự án mới đồng nghĩa với việc lăn xã vào việc thiết lập môi trường ban đầu và các file cho cuộc phiêu lưu code của bạn. Các lập trình viên khởi động dự án mới để biến ý tưởng thành phần mềm hoạt động, giống như việc trồng một hạt giống cho một cây số hóa.
-
 ## Cách thực hiện:
 ```Swift
 import SwiftUI

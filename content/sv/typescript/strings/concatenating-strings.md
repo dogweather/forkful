@@ -11,9 +11,6 @@ title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---
 
-## What & Why (Vad & Varför)?
-Konkatenering av strängar i programmering innebär att du smälter samman två eller flera textvärden till ett enda strängvärde. Vi gör detta för att bygga upp dynamiska texter, som användargränssnittsmeddelanden eller unika databasfrågor.
-
 ## How to (Hur man gör):
 String concatenation in TypeScript can be done in a few ways. Here's a quick run-down with examples:
 

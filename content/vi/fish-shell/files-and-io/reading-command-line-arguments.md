@@ -16,11 +16,7 @@ title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---
 
-## Cái gì & Tại sao?
-Đọc các đối số dòng lệnh là việc lấy những phần thêm bạn gõ sau tên của script, giống như những cái bắt tay bí mật để tùy chỉnh hành vi của script. Lập trình viên làm điều này để làm cho script linh hoạt và tương tác mà không cần rắc rối.
-
 ## Làm thế nào:
-
 Giả sử `greet.fish` là script của bạn. Bạn muốn nó nhận một tên và phát ra lời chào.
 
 ```fish
@@ -87,7 +83,6 @@ VENUS
 ```
 
 ## Sâu hơn
-
 Fish Shell đã nắm rõ việc đọc các đối số dòng lệnh từ lâu, giống như các shells khác. Điều đặc biệt ở Fish là sự đơn giản trong thiết kế. Không có `$1, $2... $n` để nhớ; nó là một mảng `$argv`, một lãnh thổ quen thuộc nếu bạn thích thú với những ngôn ngữ lập trình khác.
 
 Có những lựa chọn thay thế, như bash, zsh, v.v., nhưng cú pháp script của Fish nhằm mục đích đọc và viết dễ dàng hơn. Thay vì sử dụng các lệnh `shift` truyền thống hoặc xử lý `$@` cho tất cả các đối số, Fish có `$argv` thân thiện đó và những cấu trúc script đáng yêu như vòng lặp `for` và điều kiện `if` ít về những biểu tượng khó hiểu mà nhiều về những từ ngữ rõ ràng.
@@ -95,7 +90,6 @@ Có những lựa chọn thay thế, như bash, zsh, v.v., nhưng cú pháp scri
 Khi thực hiện, điều quan trọng là cần xem xét cách script của bạn sẽ được sử dụng. Nó có cần giá trị mặc định không? Người dùng có biết phải nhập gì không? Đảm bảo rằng bạn xử lý các trường hợp mà người dùng quên không truyền đối số hoặc truyền chúng không đúng thứ tự.
 
 ## Xem Thêm
-
 - Tài liệu chính thức về đối số dòng lệnh của Fish: [fishshell.com/docs/current/#syntax-command-line](https://fishshell.com/docs/current/#syntax-command-line)
 - Đối với kịch bản nâng cao và tạo các hàm của riêng bạn trong Fish: [fishshell.com/docs/current/#defining-functions](https://fishshell.com/docs/current/#defining-functions)
 - Một giới thiệu về Fish cho người dùng có nền tảng về các shell khác: [fishshell.com/docs/current/tutorial.html](https://fishshell.com/docs/current/tutorial.html)

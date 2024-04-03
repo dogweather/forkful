@@ -12,12 +12,7 @@ title: Lokitus
 weight: 17
 ---
 
-## Mikä ja miksi?
-
-Lokitus on kuin päiväkirjan pitämistä sovelluksellesi; se on tapa tallentaa tapahtumat, virheet ja muut olennaiset tiedot ohjelman suorituksen aikana. Kehittäjät käyttävät lokeja ongelmien diagnosointiin, järjestelmän toiminnan seurantaan ja oivallusten keräämiseen, jotka ohjaavat parannuksiin – se on operatiivisen tiedustelun leipä ja voi.
-
 ## Miten:
-
 Aloitetaan peruslokitus skenaarion pystyttäminen Rustissa käyttäen `log`-kirstua, joka tarjoaa lokitusfasaadin, ja `env_logger`, lokitusimplementaation `log`-kirstulle. Aluksi, lisää ne Cargo.toml-tiedostoosi:
 
 ```toml
@@ -49,7 +44,6 @@ WARN: Tämä on varoitusviesti.
 Kokeile eri `RUST_LOG`-ympäristömuuttujan arvoja asettamalla se `error`, `warn`, `info`, `debug` tai `trace` säätääksesi lokisi yksityiskohtaisuutta.
 
 ## Syväsukellus
-
 Lokituksen konsepti ei ole mitään uutta; se on ollut olemassa tietokoneiden alkuaikojen jälkeen. Ennen kuin lokitus oli yleistä ohjelmistossa, kehittäjät turvaantuivat alkeellisiin menetelmiin kuten tulostuslauseisiin tai debuggerityökaluihin ohjelman suorituksen jäljittämiseen. Ohjelmien monimutkaistuessa monimutkaistui myös tarve jäsennellyille lokituslähestymistavoille.
 
 Rustissa `log`-kirstu abstrahoi lokitusyksityiskohdat, mahdollistaen kehittäjien liittää erilaisia lokitusbackendejä. Vaikka `env_logger` on yleinen valinta, on olemassa vaihtoehtoja kuten `fern`, `slog` tai `tracing`, joissa jokaisessa on oma ominaisuuksiensa ja konfiguraatiovaihtoehtojensa sarja.
@@ -67,7 +61,6 @@ Jotkin pohdittavat asiat lokituksen toteutuksessa sisältävät:
 5. **Konfiguraatio**: Monet lokituskehykset tukevat konfiguraatiota ympäristömuuttujien, konfiguraatiotiedostojen ja/tai koodin kautta. Tämä joustavuus on avainasemassa tulostuksen hienosäätöön erilaisissa ympäristöissä (kehitys, staging, tuotanto).
 
 ## Katso Myös
-
 - `log`-kirstun dokumentaatio: https://docs.rs/log/
 - `env_logger`-kirstun dokumentaatio: https://docs.rs/env_logger/
 - Rust by Example lokitus sivu: https://doc.rust-lang.org/rust-by-example/std_misc/log.html

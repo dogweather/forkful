@@ -13,9 +13,6 @@ title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---
 
-## Mikä & Miksi?
-Säännölliset lausekkeet (regex) ohjelmoinnissa ovat malleja, joita käytetään merkkiyhdistelmien vastaavuuden tarkistamiseen merkkijonoissa. Elm:ssä, kuten muissakin ohjelmointikielissä, ohjelmoijat käyttävät regexiä tehtäviin kuten syötteen validointi, etsintä ja tekstin korvaaminen merkkijonoissa niiden joustavuuden ja tehokkuuden vuoksi.
-
 ## Kuinka:
 Elm ei sisällä sisäänrakennettuja regex-funktioita sen ydinkirjastossa, joten näiden operaatioiden suorittamiseen tarvitaan kolmannen osapuolen kirjastoja. Yksi suosittu valinta regexin kanssa työskentelyyn on `elm/regex`. Voit lisätä sen projektiisi käyttäen `elm install elm/regex`.
 

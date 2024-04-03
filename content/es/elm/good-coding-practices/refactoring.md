@@ -12,9 +12,6 @@ title: "Refactorizaci\xF3n"
 weight: 19
 ---
 
-## ¿Qué y Por Qué?
-Refactorizar es básicamente hacer limpieza de primavera en tu base de código—se trata de reestructurar el código existente sin cambiar su comportamiento externo. Los programadores lo hacen para hacer el código más legible, reducir la complejidad, mejorar la mantenibilidad y facilitar su extensión.
-
 ## Cómo hacerlo:
 Considera que tienes una función en Elm que está haciendo demasiado, como mezclar la lógica de la interfaz de usuario con las actualizaciones de estado. Es un candidato perfecto para la refactorización. Originalmente:
 

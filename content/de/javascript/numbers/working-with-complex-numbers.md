@@ -11,9 +11,6 @@ title: Umgang mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-Komplexe Zahlen sind Zahlen mit einem Real- und einem Imaginärteil (wie 3 + 4i). Sie tauchen in verschiedenen Programmierproblemen auf, insbesondere in der Signalverarbeitung, Quantencomputing und bei der Lösung von Polynomgleichungen. Programmierer jonglieren mit ihnen, um diese Art von Aufgaben effektiv zu bewältigen.
-
 ## Wie geht das:
 JavaScript hat keine eingebaute Unterstützung für komplexe Zahlen, aber man kann die Ärmel hochkrempeln und es mit Objekten und Mathematik bewerkstelligen. Hier ist ein schneller Überblick.
 

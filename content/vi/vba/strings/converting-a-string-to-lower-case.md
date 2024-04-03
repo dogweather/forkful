@@ -16,12 +16,7 @@ title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---
 
-## Cái gì & Tại sao?
-
-Việc chuyển đổi một chuỗi thành chữ thường bao gồm việc biến đổi tất cả các ký tự in hoa trong chuỗi thành các ký tự chữ thường tương đương. Quá trình này rất cần thiết cho nhiều tác vụ lập trình, bao gồm chuẩn hóa dữ liệu, so sánh không phân biệt chữ hoa chữ thường, và cải thiện tính nhất quán của đầu vào từ người dùng.
-
 ## Cách thực hiện:
-
 Trong Visual Basic for Applications (VBA), việc chuyển đổi một chuỗi thành chữ thường rất đơn giản sử dụng hàm `LCase`. Hàm này nhận vào một chuỗi và trả về một chuỗi mới với tất cả các ký tự in hoa được chuyển thành chữ thường. Dưới đây là một ví dụ cơ bản để minh họa điều này:
 
 ```basic
@@ -45,7 +40,6 @@ End If
 Ví dụ thứ hai trình bày cách xử lý đầu vào từ người dùng một cách không phân biệt chữ hoa chữ thường bằng cách chuyển đổi đầu vào thành chữ thường trước khi so sánh.
 
 ## Sâu hơn nữa
-
 Hàm `LCase` là nền tảng cho việc thao tác chuỗi trong VBA và đã là tính năng cốt lõi kể từ khi ngôn ngữ được tạo ra. Nó đơn giản hóa các tác vụ chuyển đổi chữ thường, thường gặp trong việc phân tích dữ liệu và xử lý đầu vào từ người dùng. Mặc dù `LCase` hiệu quả đáp ứng nhu cầu chuyển đổi ký tự thành chữ thường trong các ứng dụng khác nhau, cũng quan trọng khi nhận biết các hạn chế và các lựa chọn thay thế của nó.
 
 Ví dụ, trong khi `LCase` hoạt động mượt mà cho bảng chữ cái tiếng Anh, việc xử lý ngôn ngữ có quy tắc chữ hoa phức tạp hơn có thể yêu cầu các xem xét bổ sung hoặc sử dụng hàm `StrConv` với các cài đặt địa phương phù hợp cho việc chuyển đổi chữ hoa.

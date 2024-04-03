@@ -14,12 +14,7 @@ title: "S\xE4nda en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering"
 weight: 45
 ---
 
-## Vad & Varför?
-
-Att skicka en HTTP-förfrågan med grundläggande autentisering innebär att bifoga ett användarnamn och lösenord till en förfrågan för att verifiera användarens identitet. Programmerare använder det för att få tillgång till resurser som kräver autentisering, vilket säkerställer säker kommunikation mellan klient och server.
-
 ## Hur gör man:
-
 I Dart kan du använda `http`-paketet för att skicka HTTP-förfrågningar med grundläggande autentisering. Först, lägg till `http`-paketet i din `pubspec.yaml`-fil:
 
 ```yaml

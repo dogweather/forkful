@@ -12,9 +12,6 @@ title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---
 
-## Was & Warum?
-In der Programmierung bedeutet das Löschen von Zeichen, die einem Muster entsprechen, dass wir bestimmte Zeichen aus einem Text entfernen - zum Beispiel alle Ziffern oder Leerzeichen. Das tun Programmierer oft, um Eingaben zu säubern, unnötigen Ballast zu entfernen oder Daten zu formatieren.
-
 ## How to:
 Betrachten wir ein paar Code-Beispiele. Hier verwenden wir Regex (Regular Expressions), um passende Zeichen zu finden und zu löschen:
 
@@ -49,7 +46,6 @@ Es gibt Alternativen zu Regex, zum Beispiel:
 Die Implementation von Regex in Kotlin nutzt die Java Klasse `Pattern` unter der Haube, was bedeutet, dass Performance und Verhalten eng mit der JVM (Java Virtual Machine) verknüpft sind.
 
 ## See Also
-
 - [Kotlin Dokumentation zur Regex Klasse](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
 - [Java Pattern Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
 - [RegExr: Ein praktisches Werkzeug zum Lernen und Testen von Regex](https://regexr.com/)

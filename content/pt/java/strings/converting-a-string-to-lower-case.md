@@ -11,9 +11,6 @@ title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---
 
-## O que & Por quê?
-Converter uma string para letras minúsculas significa transformar todas as letras maiúsculas da string em sua forma minúscula. Programadores fazem isso para padronizar dados, facilitar comparações insensíveis a maiúsculas ou estilizar textos na interface do usuário.
-
 ## Como fazer:
 ```java
 public class LowerCaseExample {

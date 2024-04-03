@@ -12,12 +12,7 @@ title: Utilizzo di array associativi
 weight: 15
 ---
 
-## Cosa & Perché?
-
-Gli array associativi, noti come dizionari in Swift, consentono di memorizzare e gestire dati sotto forma di coppie chiave-valore. I programmatori li utilizzano per organizzare i dati in modo efficiente, facilitando l'accesso e la manipolazione dei valori in base alle loro chiavi uniche.
-
 ## Come fare:
-
 Swift rende il lavoro con gli array associativi diretto. Ecco come puoi dichiarare, aggiungere, rimuovere e accedere agli elementi in un dizionario Swift:
 
 ```Swift
@@ -49,7 +44,6 @@ for (fruit, color) in fruitColors {
 I dizionari sono incredibilmente versatili, permettendoti di manipolare e accedere ai dati dinamicamente. La loro natura non ordinata non incide sulla velocità di recupero dei dati, il che rappresenta un vantaggio significativo quando si gestiscono grandi insiemi di dati.
 
 ## Approfondimento
-
 L'implementazione dei dizionari in Swift come array associativi deriva dalla loro potente capacità di mappare chiavi uniche a valori. Storicamente, i linguaggi di programmazione hanno implementato questo concetto sotto vari nomi come tabelle hash o mappe, alludendo alla loro funzionalità di creare una "mappa" tra chiavi e valori.
 
 In Swift, i dizionari sono ottimizzati per le prestazioni, sfruttando chiavi hashabili per un recupero efficiente dei dati. Questo significa che il tipo `Key` in un dizionario `[Key: Value]` deve conformarsi al protocollo `Hashable`, il che è vero per la maggior parte dei tipi standard di Swift come `Int`, `String` e `Double`.

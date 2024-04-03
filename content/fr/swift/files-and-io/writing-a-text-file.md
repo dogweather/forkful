@@ -15,14 +15,10 @@ title: "R\xE9diger un fichier texte"
 weight: 24
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire un fichier texte en Swift vous permet de stocker de manière persistante des données de chaîne de caractères dans le système de fichiers, ce qui est essentiel pour des tâches telles que la sauvegarde des paramètres de configuration, des données utilisateur ou des journaux. Les programmeurs font souvent cela pour maintenir les données entre les lancements d'applications, partager des données entre différentes parties d'une application, ou exporter des données pour être utilisées par d'autres programmes.
-
 ## Comment faire :
 
-### Utilisation de la bibliothèque standard Swift
 
+### Utilisation de la bibliothèque standard Swift
 La bibliothèque standard de Swift inclut tous les outils nécessaires pour écrire des fichiers texte. Voici une approche de base :
 
 ```swift
@@ -43,7 +39,6 @@ do {
 Ce morceau de code écrit une chaîne de caractères dans un fichier nommé `exemple.txt` dans le répertoire des documents. Il gère les erreurs potentielles en utilisant la gestion des erreurs do-try-catch de Swift.
 
 ### Utilisation de FileManager pour plus de contrôle
-
 Pour plus de contrôle sur les attributs des fichiers ou pour vérifier si le fichier existe déjà, `FileManager` peut être utilisé :
 
 ```swift
@@ -69,7 +64,6 @@ if let documentDirectory = directories.first {
 ```
 
 ### Utilisation de bibliothèques tierces
-
 Une bibliothèque tierce populaire pour les opérations sur les systèmes de fichiers en Swift est `Files` de John Sundell :
 
 D'abord, ajoutez Files à votre projet, généralement via le Swift Package Manager.

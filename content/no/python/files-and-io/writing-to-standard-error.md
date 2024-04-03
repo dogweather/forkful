@@ -10,9 +10,6 @@ title: Skrive til standardfeil
 weight: 25
 ---
 
-## What & Why?
-Skriving til standard error (stderr) er hvordan programmer rapporterer feil og advarsler uten å blande dette med hoveddatautstrømmen (stdout). Programmører gjør dette for å skille normal output fra feilmeldinger, noe som gjør det enklere å logge og diagnostisere problemer.
-
 ## How to:
 For å skrive til stderr i Python, bruk `sys.stderr`. Her er et enkelt eksempel:
 

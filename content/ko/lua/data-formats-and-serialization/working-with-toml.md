@@ -16,9 +16,6 @@ title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE3
 weight: 39
 ---
 
-## 무엇 & 왜?
-TOML을 사용하는 것은 Lua로 TOML(Tom's Obvious, Minimal Language) 데이터를 파싱하고 생성하는 것을 포함합니다. 프로그래머들은 데이터 구조로 쉽게 변환되는 읽기 쉽고 간단한 문법 때문에 구성 파일에 TOML을 사용합니다.
-
 ## 방법:
 먼저, Lua 환경에 TOML 파서가 있는지 확인하세요. 이 예시에서는 `lua-toml`을 사용하겠습니다.
 

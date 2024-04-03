@@ -12,9 +12,6 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-Tests schrijven is het creëren van code die controleert of je software werkt zoals gepland. Programmeurs testen om bugs vroeg te vangen, kwaliteit te waarborgen en het onderhoud te vereenvoudigen.
-
 ## Hoe:
 Swift gebruikt het XCTest-framework voor het testen. Hier is een eenvoudige test voor een functie `add(a:b:)`:
 

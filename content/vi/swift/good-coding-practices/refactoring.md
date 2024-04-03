@@ -15,9 +15,6 @@ title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---
 
-## Gì và Tại sao?
-Tái cấu trúc là quá trình cấu trúc lại mã máy tính hiện có mà không thay đổi hành vi bên ngoài của nó. Lập trình viên làm điều này để dọn dẹp cơ sở mã, cải thiện khả năng đọc, bảo trì và mở đường cho các tính năng tương lai với ít nợ kỹ thuật nhất có thể.
-
 ## Làm thế nào:
 Hãy bắt đầu với một ví dụ cơ bản trong Swift, nơi chúng ta có một số mã lặp lại:
 

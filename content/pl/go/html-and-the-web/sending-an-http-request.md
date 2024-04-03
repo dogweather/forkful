@@ -14,12 +14,7 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## Co i dlaczego?
-
-Wysyłanie żądania HTTP polega na inicjowaniu połączenia z aplikacji Go do serwera sieciowego, API lub innej usługi opartej na protokole HTTP. Programiści robią to, aby wchodzić w interakcję z zasobami sieciowymi, pobierać dane, wysyłać formularze lub komunikować się z innymi usługami w internecie.
-
 ## Jak to zrobić:
-
 W Go, wysłanie żądania HTTP i obsługa odpowiedzi wymaga użycia pakietu `net/http`. Oto przykładowy, krok po kroku sposób pokazujący, jak wysłać proste żądanie GET i odczytać odpowiedź:
 
 ```go
@@ -101,7 +96,6 @@ func main() {
 ```
 
 ## Szczegółowa analiza
-
 Pakiet `net/http` w Go oferuje potężny i elastyczny sposób na interakcję z serwerami HTTP. Jego projekt odzwierciedla nacisk Go na prostotę, efektywność i solidność. Początkowo, funkcje takie jak obsługa ładunków JSON czy XML wymagały ręcznego tworzenia ciała żądania i ustawiania odpowiednich nagłówków. W miarę rozwoju Go, społeczność rozwinęła bardziej zaawansowane pakiety, które jeszcze bardziej upraszczają te zadania, takie jak `gorilla/mux` do routingu i `gjson` do manipulacji JSON-em.
 
 Godny uwagi aspekt klienta HTTP w Go to jego użycie interfejsów i struktur, takich jak `http.Client` i `http.Request`, które pozwalają na szeroką personalizację i testowanie. Na przykład, możesz zmodyfikować `http.Client`, aby ustawić limit czasu na żądania lub utrzymywać połączenia przy życiu dla wydajności.

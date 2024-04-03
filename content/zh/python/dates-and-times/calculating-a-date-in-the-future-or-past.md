@@ -17,9 +17,6 @@ title: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F"
 weight: 26
 ---
 
-## 什么 & 为什么？
-计算将来或过去的日期是指找出在特定日期之前或之后的确切日期。程序员这么做是为了处理预定、期限、或者任何跟时间相关的功能。
-
 ## 如何做：
 ```Python
 from datetime import datetime, timedelta

@@ -14,9 +14,6 @@ title: Interpolando uma String
 weight: 8
 ---
 
-## O Quê & Porquê?
-A interpolação de strings em C# permite criar uma nova string incluindo expressões dentro de um literal de string, facilitando a formatação e a concatenação de strings. Os programadores utilizam esse recurso para melhorar a legibilidade e a manutenibilidade do código, especialmente ao lidar com conteúdo de string dinâmico.
-
 ## Como fazer:
 Em C#, a interpolação de string é indicada pelo sinal de dólar (`$`) seguido de um literal de string. Os nomes das variáveis ou expressões são delimitados por chaves (`{}`).
 

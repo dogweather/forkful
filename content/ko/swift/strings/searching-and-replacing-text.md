@@ -16,9 +16,6 @@ title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
 weight: 10
 ---
 
-## What & Why? (무엇과 왜?)
-텍스트 검색 및 교체는 문자열 안에서 특정 패턴을 찾아 다른 내용으로 바꾸는 작업입니다. 이 작업은 데이터를 정제하거나, 코드를 리팩토링 할 때 필수적입니다.
-
 ## How to (방법)
 Swift에서 문자열을 검색하고 교체하는 기본적인 방법은 `replacingOccurrences(of:with:)` 메소드를 사용하는 것입니다:
 

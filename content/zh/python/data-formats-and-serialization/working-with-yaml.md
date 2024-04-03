@@ -20,9 +20,6 @@ title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 weight: 41
 ---
 
-## 什么与为什么？
-YAML是指“YAML Ain't Markup Language”，是一种对人类可读的数据序列化格式。程序员使用YAML进行配置文件编写、进程间信息传递和数据存储，因为与XML或JSON等其他格式相比，YAML的语法简单，易读性强。
-
 ## 如何操作：
 在Python中读写YAML通常需要使用第三方库，`PyYAML`是最流行的选择。首先，你需要通过运行`pip install PyYAML`来安装PyYAML。
 

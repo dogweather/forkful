@@ -11,9 +11,6 @@ title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---
 
-## Quoi & Pourquoi ?
-Concaténer des chaînes, c'est coller ensemble des bouts de texte pour en faire un seul morceau. En programmation, ça sert souvent à assembler des données pour les afficher ou les enregistrer.
-
 ## Comment faire :
 ```Clojure
 ;; Utilisons `str` pour concaténer des chaînes

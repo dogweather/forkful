@@ -11,9 +11,6 @@ title: Converting a date into a string
 weight: 28
 ---
 
-## What & Why?
-Converting a date to a string in C++ turns a date object into a readable text format. It's key for displaying dates to users and for logging events in a human-friendly way.
-
 ## How to:
 In modern C++, `<chrono>` and `<iomanip>` libraries are your friends for date-time operations. Here's a quick method using `std::put_time`:
 

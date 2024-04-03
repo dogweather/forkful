@@ -11,9 +11,6 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i dlaczego?
-Liczby zespolone rozszerzają pomysł jednowymiarowej linii liczbowej o dwuwymiarową płaszczyznę zespoloną. Programiści używają ich w dziedzinach takich jak inżynieria, fizyka i grafika do obliczeń wymagających dwóch komponentów, takich jak sygnały czy rotacje.
-
 ## Jak to zrobić:
 W Fish obsługujemy liczby zespolone za pomocą `math` z częściami rzeczywistą i urojoną. Oto jak zacząć:
 

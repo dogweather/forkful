@@ -15,12 +15,7 @@ title: "N\u1ED9i suy m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---
 
-## Cái gì & Tại sao?
-
-Nội suy chuỗi, trong lập trình, bao gồm việc xây dựng chuỗi bằng cách nhúng biểu thức vào trong chuỗi ký tự literal. Các lập trình viên làm điều này để tạo ra các thông điệp thông tin, truy vấn động hay để xây dựng bất kỳ chuỗi nào có nội dung biến đổi một cách hiệu quả và sạch sẽ, thường dùng cho mục đích xuất ra người dùng hoặc ghi nhật ký.
-
 ## Làm thế nào:
-
 C, không giống như một số ngôn ngữ cấp cao, không hỗ trợ nội suy chuỗi một cách trực tiếp trong cú pháp của nó. Thay vào đó, việc xây dựng chuỗi với nội dung biến đổi thường được thực hiện sử dụng hàm `printf` hoặc các biến thể của nó cho việc xuất ra, và `sprintf` cho việc tạo chuỗi. Dưới đây là cách để xây dựng chuỗi động trong C:
 
 ```c
@@ -49,7 +44,6 @@ Tên: Jane Doe, Tuổi: 28
 Những đoạn mã này minh họa cách truyền thống để bao gồm dữ liệu biến đổi vào trong chuỗi trong C, cung cấp tính linh hoạt trong việc xây dựng chuỗi chi tiết.
 
 ## Sâu hơn nữa
-
 Trước khi xuất hiện các ngôn ngữ lập trình hiện đại hơn với các tính năng nội suy chuỗi tích hợp sẵn, các nhà phát triển C phải dựa vào các hàm như `sprintf()`, `snprintf()`, và các biến thể của chúng để soạn thảo chuỗi với nội dung biến đổi. Cách tiếp cận này, mặc dù hiệu quả, nhưng gây ra các rủi ro tiềm ẩn như tràn bộ đệm nếu không được quản lý cẩn thận, đặc biệt là với `sprintf()`.
 
 Xét đến các lựa chọn thay thế, các ngôn ngữ như Python và JavaScript đã giới thiệu các tính năng nội suy chuỗi trực quan hơn, như f-strings (ký tự chuỗi định dạng) và ký tự mẫu, tương ứng. Các tính năng này cho phép các nhà phát triển nhúng trực tiếp các biểu thức vào trong các chuỗi ký tự literal, làm cho mã trở nên dễ đọc và ngắn gọn hơn.

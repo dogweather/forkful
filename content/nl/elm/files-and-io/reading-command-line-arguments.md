@@ -13,9 +13,6 @@ title: Commandoregelargumenten lezen
 weight: 23
 ---
 
-## Wat & Waarom?
-Opdrachtregelargumenten stellen gebruikers in staat om data aan jouw programma te voeden wanneer ze het starten. Programmeurs lezen deze om het gedrag van het programma aan te passen zonder waarden hardcoded in te voeren.
-
 ## Hoe:
 Elm draait in de browser, dus het heeft geen directe toegang tot opdrachtregelargumenten zoals een traditionele server-side of desktop taal dat wel heeft. Echter, ter illustratie, laten we aannemen dat je Elm gebruikt met een server-side framework zoals Node.js via `elm server` of een vergelijkbare opstelling die het doorgeven van argumenten mogelijk maakt. Je code zal de argumenten niet direct afhandelen, maar we zullen het patroon nabootsen:
 

@@ -11,9 +11,6 @@ title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---
 
-## Vad & Varför?
-Sök och ersätt innebär att hitta specifik text och byta ut den mot något annat. Programmerare använder det för att snabbt ändra kod, data eller dokument, ofta för att förbättra, korrigera eller uppdatera innehåll.
-
 ## Hur man gör:
 Sök och ersätt i C++ kan göras med hjälp av standardbiblioteket `<algorithm>` och `<string>`. Här är ett exempel:
 

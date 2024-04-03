@@ -10,9 +10,6 @@ title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---
 
-## ¿Qué y Por Qué?
-Leer argumentos de la línea de comandos permite que tus programas de Swift acepten datos de entrada al ejecutarse, dándoles flexibilidad y adaptabilidad. Los programadores utilizan esto para personalizar la ejecución del programa basándose en las necesidades de los usuarios o en diferentes entornos de ejecución.
-
 ## Cómo Hacerlo:
 Swift ofrece el arreglo `CommandLine.arguments` para acceder a los argumentos de la línea de comandos. Vamos a ver cómo usarlo:
 

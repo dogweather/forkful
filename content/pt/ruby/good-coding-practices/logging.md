@@ -11,9 +11,6 @@ title: Registro de Logs
 weight: 17
 ---
 
-## O Que & Porquê?
-Registrar eventos em programação é como manter um diário para a sua aplicação. É o registro sistemático de eventos, mensagens e pontos de dados que lhe dão uma visão sobre o que sua aplicação está fazendo e como está se comportando. Os programadores registram eventos porque é crucial para depuração, monitoramento da saúde da aplicação e obtenção de pistas sobre problemas potenciais antes que eles se transformem em problemas reais.
-
 ## Como fazer:
 Ruby vem com um módulo embutido para registro de eventos, `Logger`, que é super fácil de usar. Aqui está um exemplo rápido para começar:
 

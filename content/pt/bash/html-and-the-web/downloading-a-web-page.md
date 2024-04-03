@@ -10,9 +10,6 @@ title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---
 
-## What & Why?
-Baixar uma página da web significa copiar o seu conteúdo da internet para o seu computador. Programadores fazem isso para analisar dados, testar disponibilidade de websites ou automatizar tarefas.
-
 ## How to:
 Para baixar uma página da web com o Bash, podemos usar o `curl` ou `wget`. Aqui estão os exemplos:
 

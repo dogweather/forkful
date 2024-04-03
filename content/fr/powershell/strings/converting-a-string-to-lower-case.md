@@ -11,9 +11,6 @@ title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---
 
-## What & Why? / Quoi et Pourquoi?
-Convertir une chaîne en minuscules, c'est passer tous ses caractères en minuscules. Les développeurs font ça pour uniformiser les données, faciliter les comparaisons et la recherche sans se soucier de la casse.
-
 ## How to: / Comment faire :
 ```PowerShell
 # Transformer une chaîne en minuscules

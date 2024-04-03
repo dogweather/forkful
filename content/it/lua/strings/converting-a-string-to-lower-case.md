@@ -10,9 +10,6 @@ title: Conversione di una stringa in minuscolo
 weight: 4
 ---
 
-## Cosa & Perché?
-Convertire una stringa in minuscolo significa trasformare tutti i caratteri di un testo da maiuscolo a minuscolo. Questo è spesso necessario per uniformare i dati, per esempio, per comparare stringhe in modo insensibile alle maiuscole.
-
 ## Come fare:
 ```Lua
 -- Stringa originale

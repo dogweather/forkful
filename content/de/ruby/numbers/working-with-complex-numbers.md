@@ -10,9 +10,6 @@ title: Umgang mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-Komplexe Zahlen, bestehend aus einem realen und einem imaginären Teil (wie 3+4i), sind ein Grundpfeiler in der Ingenieurwissenschaft und Physik. Programmierer arbeiten bei Simulationen, Signalverarbeitung und der Lösung von Gleichungen, die mit rein reellen Zahlen nicht gut funktionieren, mit ihnen.
-
 ## Wie geht das:
 Ruby macht den Umgang mit komplexen Zahlen kinderleicht. Man kann sie mit der Klasse Complex erstellen und manipulieren:
 

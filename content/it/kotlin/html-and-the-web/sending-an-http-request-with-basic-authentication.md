@@ -10,9 +10,6 @@ title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---
 
-## What & Why?
-Inviare una richiesta HTTP con autenticazione di base significa inserire username e password per accedere a risorse protette su un server. I programmatori usano questo metodo per interagire con API che richiedono un livello di sicurezza.
-
 ## How to:
 In Kotlin, possiamo utilizzare `HttpURLConnection` per inviare richieste HTTP con autenticazione di base.
 

@@ -13,12 +13,7 @@ title: Utilisation des tableaux associatifs
 weight: 15
 ---
 
-## Quoi et pourquoi ?
-
-Les tableaux associatifs, plus communément appelés hash en Ruby, permettent d'associer des clés uniques à des valeurs. Ils sont indispensables lorsque vous avez besoin de suivre des éléments à travers une référence spécifique, comme stocker les propriétés d'un objet ou accéder rapidement à des données par un identifiant unique.
-
 ## Comment faire :
-
 Créer et utiliser des hash en Ruby est simple. Vous pouvez initialiser un hash vide, le remplir avec des paires clé-valeur, accéder aux valeurs par leurs clés, et plus. Voici comment vous procédez :
 
 ```Ruby
@@ -55,7 +50,6 @@ puts symbol_hash[:name] # Sortie : Jane Doe
 ```
 
 ## Approfondissement :
-
 Le concept de tableaux associatifs n'est pas unique à Ruby ; de nombreux langages les implémentent sous différents noms, comme les dictionnaires en Python ou les objets en JavaScript (lorsqu'ils sont utilisés comme paires clé-valeur). Aux premiers stades de Ruby, les hash étaient quelque peu plus lents et pas aussi polyvalents. Cependant, avec le temps, l'implémentation des hash par Ruby est devenue très optimisée, surtout pour les clés symboles, les rendant extrêmement efficaces pour un accès et des mises à jour fréquents.
 
 Les hash de Ruby se distinguent par leur facilité d'utilisation syntaxique et leur flexibilité - vous pouvez utiliser presque n'importe quel type d'objet comme clé, bien que les symboles et les chaînes soient les plus courants. En interne, les hash Ruby sont implémentés à l'aide d'un algorithme de hachage qui équilibre la vitesse et l'efficacité de la mémoire, même lorsque le nombre d'éléments augmente.

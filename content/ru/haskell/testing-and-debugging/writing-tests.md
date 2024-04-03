@@ -24,12 +24,7 @@ title: "\u041D\u0430\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0442\u0435\u044
 weight: 36
 ---
 
-## Что и зачем?
-
-Написание тестов позволяет проверить, выполняет ли код свои функции. Тестирование выявляет ошибки, помогает поддерживать код в актуальном состоянии и гарантирует, что изменения не приведут к поломкам.
-
 ## Как это сделать:
-
 Haskell использует HUnit для базовых модульных тестов и QuickCheck для тестов, основанных на свойствах. Вот быстрый пример с использованием HUnit:
 
 ```haskell
@@ -68,11 +63,9 @@ main = quickCheck prop_RevRev
 ```
 
 ## Подробнее
-
 Тестирование началось с раннего программирования, но получило серьезное развитие с ростом популярности TDD в 2000-х. Чистые функции в Haskell делают его отличным выбором для тестирования. Альтернативы HUnit/QuickCheck включают doctest и Hedgehog. HUnit похож на JUnit из Java. QuickCheck автоматизирует генерацию тестовых случаев, проверяя свойства, которые вы определяете.
 
 ## См. также
-
 - Документация HUnit: [http://hackage.haskell.org/package/HUnit](http://hackage.haskell.org/package/HUnit)
 - QuickCheck на Hackage: [http://hackage.haskell.org/package/QuickCheck](http://hackage.haskell.org/package/QuickCheck)
 - Введение в тестирование на Haskell: [https://hspec.github.io/](https://hspec.github.io/)

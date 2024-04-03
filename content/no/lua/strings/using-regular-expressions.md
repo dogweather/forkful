@@ -12,16 +12,10 @@ title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---
 
-## Hva og hvorfor?
-
-Regulære uttrykk i programmering tillater samsvarssøking og manipulasjon av strenger basert på spesifikke mønstre. Programmerere bruker dem til oppgaver som validering, søking og tekstmanipulasjon på grunn av deres allsidighet og effektivitet i håndtering av komplekse strengoperasjoner.
-
 ## Hvordan:
-
 Lua støtter ikke regulære uttrykk på samme måte som språk som Perl eller Python. Isteden tilbyr det mønstersamsvarskapasiteter som dekker mange vanlige brukstilfeller av regulære uttrykk. For fullverdig støtte for regulære uttrykk, kan man bruke et tredjeparts bibliotek som `lrexlib`.
 
 ### Grunnleggende mønstersamsvar i Lua:
-
 Lua tilbyr et kraftig system for mønstersamsvar som du kan bruke for enkle substitusjoner og søk:
 
 ```lua
@@ -39,7 +33,6 @@ print(s)
 ```
 
 ### Fangst av delstrenger:
-
 Du kan fange deler av strengen som samsvarer med mønstre:
 
 ```lua
@@ -50,7 +43,6 @@ print("Dag:", d, "Måned:", m, "År:", y)
 ```
 
 ### Bruk av `lrexlib` for regulære uttrykk:
-
 For å bruke faktiske regulære uttrykk, kan du installere og bruke `lrexlib`. Forutsatt at du har installert det (`luarocks install lrexlib-pcre`), kan du gjøre mer komplekse mønstersamsvar:
 
 ```lua

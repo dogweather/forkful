@@ -12,14 +12,10 @@ title: "Redigering av filer p\xE5 stedet med CLI-enlinjerskommandoer"
 weight: 32
 ---
 
-## Hva & Hvorfor?
-
-Å redigere filer på stedet med CLI-enlinjers i PowerShell handler om å gjøre direkte endringer i filer fra kommandolinjen, uten behov for å åpne dem i en editor. Denne tilnærmingen sparer tid og kan være spesielt hendig for satsvis behandling eller automatisering av gjentagende redigeringsoppgaver på tvers av flere filer.
-
 ## Hvordan:
 
-### Erstatte tekst i en enkelt fil
 
+### Erstatte tekst i en enkelt fil
 La oss starte med en enkel oppgave: du ønsker å erstatte alle forekomster av "oldtext" med "newtext" i en fil som heter example.txt. Slik gjør du det:
 
 ```PowerShell
@@ -29,7 +25,6 @@ La oss starte med en enkel oppgave: du ønsker å erstatte alle forekomster av "
 Dette enlinjerskriptet leser innholdet, utfører erstatningen og skriver innholdet tilbake til den opprinnelige filen.
 
 ### Redigere flere filer
-
 Hva om du trenger å anvende samme endring på flere filer? Her er en tilnærming som bruker en løkke:
 
 ```PowerShell
@@ -41,7 +36,6 @@ Get-ChildItem *.txt | ForEach-Object {
 Dette kodeutdraget finner alle `.txt`-filer i den gjeldende mappen, og erstatter "oldtext" med "newtext" i hver av dem.
 
 ### Legge til innhold i begynnelsen eller slutten av filer
-
 Det å legge til eller foran innhold kan også forenkles:
 
 ```PowerShell
@@ -55,7 +49,6 @@ Det å legge til eller foran innhold kan også forenkles:
 Her, vi enkelt legger til det nye innholdet før eller etter det eksisterende innholdet og lagrer det tilbake.
 
 ## Dypdykk
-
 Historisk sett er redigering på stedet mer vanlig assosiert med Unix-verktøy som `sed` og `awk`. PowerShell, som er en nyere deltaker, inkluderer ikke en dedikert funksjon for redigering på stedet rett ut av boksen. Dette skyldes delvis dens designfilosofi, som fremhever viktigheten av objekter fremfor tekststrømmer, i motsetning til Unix-verktøy som behandler de fleste inndata som tekst.
 
 Alternativer til PowerShell for denne oppgaven inkluderer å bruke tradisjonelle Unix-verktøy tilgjengelige på Windows gjennom Cygwin eller Windows Subsystem for Linux (WSL). Disse verktøyene gir ofte en mer konsis syntaks for redigering på stedet på grunn av deres tekstsentriske design.

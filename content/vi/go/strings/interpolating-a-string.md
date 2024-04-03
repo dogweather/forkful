@@ -15,12 +15,7 @@ title: "N\u1ED9i suy m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---
 
-## Gì & Tại sao?
-
-Nội suy chuỗi là một phương pháp để xây dựng chuỗi có chứa biến, cho phép tạo chuỗi động. Lập trình viên làm điều này để tùy chỉnh thông điệp, xây dựng URL, tạo truy vấn SQL, và nhiều hơn nữa, giúp mã dễ đọc và bảo trì hơn.
-
 ## Làm thế nào:
-
 Trong Go, nội suy chuỗi thường được thực hiện bằng cách sử dụng gói `fmt`, đặc biệt là với hàm `Sprintf`, cho phép bạn chèn biến vào chuỗi bằng cách chỉ rõ các động từ định dạng. Các động từ là các trình giữ chỗ trong chuỗi định dạng và được thay thế bằng giá trị của các biến đã cho. Đây là cách bạn sử dụng nó:
 
 ```go
@@ -43,7 +38,6 @@ func main() {
 Lưu ý rằng `%s` được sử dụng cho chuỗi, và `%d` cho số nguyên. Tài liệu của gói `fmt` cung cấp một danh sách toàn diện về các động từ định dạng cho các loại dữ liệu khác nhau.
 
 ## Sâu hơn
-
 Khái niệm về nội suy chuỗi tồn tại trong nhiều ngôn ngữ lập trình, mặc dù với các cú pháp và khả năng khác nhau. Trong Go, mặc dù hàm `Sprintf` của gói `fmt` là phương pháp thường được sử dụng nhất, nó có thể không phải là phương pháp hiệu quả nhất, đặc biệt là đối với các nối chuỗi đơn giản hoặc khi làm việc trong mã với yêu cầu hiệu suất cao.
 
 Gói `fmt` sử dụng phản xạ để động giải thích các loại của biến tại thời gian chạy, có tính linh hoạt nhưng gây ra tải. Trong các tình huống mà hiệu suất là quan trọng, nối chuỗi trực tiếp hoặc kiểu `strings.Builder` có thể cung cấp các lựa chọn tốt hơn. Nối chuỗi trực tiếp thì đơn giản nhưng có thể trở nên khó quản lý với nhiều biến. `strings.Builder`, mặt khác, cung cấp một cách hiệu suất cao và dễ đọc hơn để xây dựng chuỗi phức tạp trong một vòng lặp hoặc khi xử lý nhiều biến:

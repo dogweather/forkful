@@ -11,12 +11,7 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O Que & Porquê?
-
-Refatoração é o processo de reestruturação de código de computador existente sem alterar seu comportamento externo. Programadores fazem isso para limpar o código, melhorar a legibilidade, reduzir a complexidade e aumentar a manutenibilidade.
-
 ## Como fazer:
-
 Vamos refatorar um simples método C# que calcula e imprime a soma de um array de números:
 
 Antes da Refatoração:
@@ -66,7 +61,6 @@ calculator.DisplaySum();
 Ao refatorarmos, separamos as preocupações, tornamos a classe `Calculator` mais flexível ao permitir que ela receba qualquer array de números, e aproveitamos o LINQ para tornar o cálculo da soma mais conciso.
 
 ## Aprofundamento
-
 A refatoração tem suas raízes na comunidade de programação Smalltalk e foi popularizada na década de 1990 pelo livro de Martin Fowler "Refatoração: Melhorando o Design do Código Existente". Ao longo dos anos, tornou-se uma parte fundamental das metodologias ágeis e das boas práticas de codificação.
 
 Há várias abordagens para a refatoração, como o Red-Green-Refactor no Desenvolvimento Guiado por Testes (TDD, na sigla em inglês). Isso garante que a refatoração não introduza bugs, começando com um teste falho, fazendo-o passar e então limpando o código.
@@ -74,7 +68,6 @@ Há várias abordagens para a refatoração, como o Red-Green-Refactor no Desenv
 Ao implementar a refatoração, é crucial ter uma suíte de testes abrangente para garantir que nenhuma funcionalidade seja quebrada durante o processo. Ferramentas de refatoração automatizadas, como o ReSharper para C#, também podem auxiliar neste processo ao fornecer maneiras seguras de alterar estruturas de código. No entanto, as ferramentas devem ser complementares a um profundo entendimento da base de código e dos princípios de codificação.
 
 ## Veja também
-
 - A obra seminal de Martin Fowler sobre Refatoração: [Refatoração: Melhorando o Design do Código Existente](https://martinfowler.com/books/refactoring.html)
 - Guia da Microsoft sobre Refatoração no Visual Studio: [Refatoração (C#)](https://docs.microsoft.com/en-us/visualstudio/ide/refactoring-in-visual-studio?view=vs-2022)
 - Um olhar detalhado sobre padrões de Refatoração com exemplos: [SourceMaking Refatoração](https://sourcemaking.com/refactoring)

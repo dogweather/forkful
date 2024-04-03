@@ -12,12 +12,7 @@ title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---
 
-## Wat & Waarom?
-
-Het berekenen van een toekomstige of verleden datum betekent uitzoeken wat de datum zal zijn, of was, na of voor een bepaalde tijdsperiode. Programmeurs doen dit voor functies zoals herinneringen, abonnementen, of historische gegevensanalyse.
-
 ## Hoe te:
-
 Ruby maakt het spelen met data kinderspel met behulp van de ingebouwde `Date` klasse en de `active_support` gem voor wat extra suiker. Zo wordt het gedaan:
 
 ```Ruby
@@ -52,7 +47,6 @@ Over 2 maanden zal het zijn: 2023-06-07
 ```
 
 ## Diep Duiken
-
 Voordat Ruby datumcalculatiefuncties in zijn standaard en aanvullende bibliotheken absorbeerde, moesten ontwikkelaars vaak handmatig data berekenen, rekening houdend met schrikkeljaren, verschillende maandlengtes en tijdzones - een behoorlijke hoofdpijn.
 
 De standaard `Date` klasse doet al veel uit de doos. Je kunt gemakkelijk dagen toevoegen (`+`) of aftrekken (`-`). Echter, voor meer intuïtieve tijdperiode manipulaties, zoals "over 2 maanden", vertrouwen we op `active_support`, onttrokken uit Ruby on Rails. Deze gem gebruikt uitbreidingen op standaard Ruby klassen, waardoor dergelijke berekeningen mensvriendelijk worden.
@@ -62,7 +56,6 @@ Wanneer je verleden of toekomstige datums berekent, overweeg dan tijdszones als 
 Er zijn alternatieven, zoals de gems `time-lord` en `ice_cube`, die respectievelijk meer syntactische suiker of gespecialiseerde functies (zoals terugkerende evenementen) bieden.
 
 ## Zie Ook
-
 - Omgaan met tijdzones in Ruby: [https://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html](https://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html)
 - 'time-lord' gem voor meer mensachtige uitdrukkingen: [https://github.com/krainboltgreene/time-lord](https://github.com/krainboltgreene/time-lord)
 - 'ice_cube' gem voor het omgaan met terugkerende evenementen: [https://github.com/seejohnrun/ice_cube](https://github.com/seejohnrun/ice_cube)

@@ -9,9 +9,6 @@ title: Concatenazione di stringhe
 weight: 3
 ---
 
-## What & Why?
-Concatenare le stringhe significa unire due o più testi in uno solo. Lo facciamo per creare messaggi dinamici o per lavorare con dati input-output.
-
 ## How to:
 Concatenare con l'operatore `+`:
 ```Kotlin

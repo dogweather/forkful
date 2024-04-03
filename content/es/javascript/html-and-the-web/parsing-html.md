@@ -12,9 +12,6 @@ title: "An\xE1lisis de HTML"
 weight: 43
 ---
 
-## ¿Qué y por qué?
-Analizar HTML significa extraer datos de documentos HTML. Los programadores lo hacen para interactuar con o manipular contenido web, automatizar la extracción de datos o para fines de web scraping.
-
 ## Cómo hacerlo:
 Vamos a analizar HTML usando la API `DOMParser` en JavaScript.
 

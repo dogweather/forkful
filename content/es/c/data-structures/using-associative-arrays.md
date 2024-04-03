@@ -14,12 +14,7 @@ title: Usando arrays asociativos
 weight: 15
 ---
 
-## Qué y Por Qué?
-
-Los arreglos asociativos, conocidos en otros lenguajes como mapas o diccionarios, son pares clave-valor utilizados para la búsqueda y manipulación eficiente de datos. A diferencia de los arreglos tradicionales que usan índices enteros, los arreglos asociativos utilizan claves, haciendo el acceso a los datos más intuitivo y flexible para los programadores.
-
 ## Cómo hacerlo:
-
 C no tiene soporte integrado para arreglos asociativos como algunos lenguajes de alto nivel, pero puedes simularlos utilizando estructuras y hashing. A continuación se muestra un ejemplo simplista utilizando una combinación de una estructura y una función de hashing simple para implementar un arreglo asociativo para almacenar y acceder a enteros por claves de cadena.
 
 Primero, define una estructura para representar un solo par clave-valor y otra para representar el propio arreglo asociativo:
@@ -96,7 +91,6 @@ int main() {
 Este ejemplo demuestra operaciones básicas: inicializar un arreglo asociativo, insertar pares clave-valor y encontrar valores por claves. Nota que este código carece de manejo de colisiones y está destinado a fines educativos.
 
 ## Análisis Profundo
-
 El concepto de arreglos asociativos precede a C, pero la naturaleza de bajo nivel del lenguaje no los soporta directamente como tipos integrados. Esto fomenta una comprensión más profunda de las estructuras de datos y algoritmos, incluyendo mecanismos de hashing para una mapeo clave-valor eficiente. Muchas bibliotecas y marcos de trabajo en C ofrecen enfoques más sofisticados para implementar arreglos asociativos, como `GHashTable` de GLib, que proporciona una implementación robusta completa con manejo de colisiones, redimensionamiento dinámico y soporte para tipos de clave y valor arbitrarios.
 
 Aunque la construcción manual de arreglos asociativos en C puede verse como engorrosa en comparación con lenguajes con soporte integrado, ofrece una visión invaluable sobre el funcionamiento interno de las estructuras de datos, agudizando las habilidades de un programador en resolución de problemas y optimización. Sin embargo, para código de producción o aplicaciones más complejas, aprovechar bibliotecas existentes como GLib es a menudo un enfoque más práctico y eficiente en tiempo.

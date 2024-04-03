@@ -12,9 +12,6 @@ title: Code organiseren in functies
 weight: 18
 ---
 
-## Wat & Waarom?
-Code organiseren in functies betekent dat gerelateerde operaties worden gegroepeerd in herbruikbare blokken. We doen dit om de leesbaarheid en het onderhoud te verbeteren, duplicatie te verminderen en het testen te vereenvoudigen.
-
 ## Hoe te:
 Laten we een eenvoudige Elixir-functie maken om woorden te kapitaliseren:
 

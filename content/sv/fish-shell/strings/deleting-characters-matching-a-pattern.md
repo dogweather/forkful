@@ -10,9 +10,6 @@ title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---
 
-## Vad & Varför?
-Att ta bort tecken som matchar ett mönster innebär att man systematiskt hittar specifika sekvenser av tecken i en textsträng och tar bort dem. Programmerare gör detta för att rensa data, manipulera text, eller forma output till ett önskat format.
-
 ## Så här gör du:
 Med Fish Shell kan du använda `string` kommandot för att hantera textsträngar. Här är några exempel:
 

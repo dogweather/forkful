@@ -14,12 +14,7 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mikä & Miksi?
-
-Koodin järjestäminen funktioihin tarkoittaa Google Apps Script -koodisi rakenteen järjestämistä erottamalla loogiset osat toisistaan selvästi erottuviksi lohkoiksi, joista jokainen suorittaa tietyn tehtävän. Ohjelmoijat tekevät näin parantaakseen koodin luettavuutta, ylläpidettävyyttä ja uudelleenkäytettävyyttä, varmistaen, että monimutkaiset skriptit ovat helpompia ymmärtää ja virheenkorjata.
-
 ## Kuinka:
-
 Google Apps Scriptissä, joka perustuu JavaScriptiin, funktiot määritellään käyttämällä `function`-avainsanaa, jonka jälkeen tulee uniikki funktion nimi, sulkumerkit `()` jotka voivat sisältää parametreja, ja aaltosulkeet `{}` jotka kapseloivat funktion koodilohkon. Tässä on perusesimerkki:
 
 ```javascript
@@ -68,7 +63,6 @@ populateSheet(salesData);
 Tässä esimerkissä `setupSheet` valmistelee lomakkeen, ja `populateSheet` ottaa vastaan myyntidatan taulukon ja täyttää lomakkeen sillä. Huolet erillisinä pitäminen tekee koodista siistimpää ja mukautuvampaa muutoksille.
 
 ## Syvä sukellus
-
 Koodin jakaminen funktioihin ei ole uusi tai ainutlaatuinen konsepti Google Apps Scriptille; se on perusoletus ohjelmoinnissa lähes kaikissa ohjelmointikielissä. Historiallisesti funktiot kehittyivät matemaattisesta konseptista, joka kartoitti syötteet tuotoksiin, ja tästä tuli perustavanlaatuinen osa rakenteellista ohjelmointia. Tämä lähestymistapa edistää modulaarisuutta ja koodin uudelleenkäytettävyyttä, tarjoten selkeät polut yksittäisten skriptiosien testaamiseen.
 
 Google Apps Script, ollessaan JavaScript-pohjainen, hyötyy merkittävästi JavaScriptin ensiluokkaisista funktioista, jotka mahdollistavat funktioiden välittämisen argumentteina, palauttamisen muista funktioista ja sijoittamisen muuttujiin. Tämä ominaisuus avaa kehittyneitä malleja kuten takaisinkutsut ja funktionaalinen ohjelmointi, vaikkakin nämä mallit voivat tuoda mukanaan monimutkaisuutta, joka voi olla tarpeetonta yksinkertaisissa automaatiotehtävissä Google Apps Scriptissä.

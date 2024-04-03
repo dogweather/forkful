@@ -11,12 +11,7 @@ title: Reading a text file
 weight: 22
 ---
 
-## What & Why?
-
-Reading a text file in Go involves accessing and retrieving content from a file stored on disk for processing or analysis. Programmers frequently perform this operation to manipulate data, configure applications, or read input for program execution, making it a foundational skill in software development.
-
 ## How to:
-
 Reading a text file in Go can be accomplished in several ways, but one of the most straightforward methods is using the `ioutil` package. Here's a basic example:
 
 ```go
@@ -77,7 +72,6 @@ func main() {
 This approach is not only more modern but also supports larger files, as it reads the file line by line instead of loading the entire content into memory at once.
 
 ## Deep Dive:
-
 Go's handling of file operations, including reading from files, reflects the language's philosophy of simplicity and efficiency. Initially, the `ioutil` package offered straightforward file operations. However, with improvements in Go's standard library and a shift towards more explicit error handling and resource management, the `os` and `io` packages have become the preferred alternatives for working with files.
 
 These changes emphasize Go's commitment to performance and safety, particularly in avoiding memory issues that can arise from loading large files in their entirety. The `bufio.Scanner` method introduced for reading files line by line underlines the language's adaptability and focus on modern computing challenges, such as processing large datasets or streaming data.

@@ -11,9 +11,6 @@ title: Konvertere en dato til en streng
 weight: 28
 ---
 
-## What & Why?
-Dato til streng-konvertering tar en dato og gjør den om til en tekstbasert representasjon. Dette gjør det enklere å vise datoen for mennesker eller å lagre den i et tekstformat for systemintegrasjoner.
-
 ## How to:
 Elixir håndterer datoer med en innebygd modul kalt `DateTime`. For å konvertere en dato til en streng, bruker vi `DateTime.to_string/1`:
 

@@ -10,9 +10,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---
 
-## O Que & Porquê?
-Enviar uma requisição HTTP com autenticação básica significa solicitar acesso a um recurso na web que é protegido por um username e password. Programadores fazem isso para interagir com APIs ou serviços protegidos que requiram credenciais para acesso.
-
 ## Como Fazer:
 ```Arduino
 #include <ESP8266WiFi.h>

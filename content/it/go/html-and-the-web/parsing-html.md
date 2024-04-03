@@ -12,12 +12,7 @@ title: Analisi del HTML
 weight: 43
 ---
 
-## Cosa e Perché?
-
-L'analisi dell'HTML in Go comporta l'analisi del contenuto dei file HTML per estrarre dati, manipolare la struttura o convertire l'HTML in altri formati. I programmatori fanno ciò per lo scraping web, la creazione di template e il data mining, sfruttando le forti caratteristiche di concorrenza di Go per l'elaborazione efficiente di grandi volumi di pagine web.
-
 ## Come fare:
-
 Per analizzare l'HTML in Go, si utilizza tipicamente il pacchetto `goquery` o il pacchetto della libreria standard `net/html`. Ecco un esempio base che utilizza `net/html` per estrarre tutti i link da una pagina web:
 
 ```go
@@ -74,7 +69,6 @@ http://www.iana.org/domains/reserved
 Questo codice richiede una pagina HTML, la analizza e attraversa ricorsivamente il DOM per trovare e stampare gli attributi `href` di tutti i tag `<a>`.
 
 ## Approfondimento
-
 Il pacchetto `net/html` fornisce le basi per l'analisi dell'HTML in Go, implementando direttamente gli algoritmi di tokenizzazione e costruzione dell'albero specificati dallo standard HTML5. Questo approccio di basso livello è potente ma può risultare verboso per compiti complessi.
 
 Al contrario, il pacchetto di terze parti `goquery`, ispirato a jQuery, offre un'interfaccia di livello superiore che semplifica la manipolazione e l'attraversamento del DOM. Consente agli sviluppatori di scrivere codice conciso ed espressivo per compiti come la selezione di elementi, l'estrazione di attributi e la manipolazione dei contenuti.

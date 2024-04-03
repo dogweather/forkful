@@ -15,9 +15,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---
 
-## Mikä & Miksi?
-Päivämäärän jäsentäminen merkkijonosta tarkoittaa päivämäärätiedon erottelua merkkijonoista ja sen muuntamista rakenteelliseen muotoon, jonka ohjelmointiympäristöt voivat tunnistaa ja käsitellä. Ohjelmoijat tekevät tämän mahdollistaakseen toimenpiteitä, kuten päivämäärien vertailun, aritmetiikan, muotoilun ja lokalisoinnin, jotka ovat olennaisia aikataulujen, aikaleimojen ja historiallisen datan tehokkaalle käsittelylle ohjelmistoissa.
-
 ## Kuinka:
 Fish Shellissä ei ole sisäänrakennettuja komentoja erityisesti merkkijonoista päivämäärien jäsentämiseksi suunniteltuina. Sen sijaan tukeudutaan ulkoisiin työkaluihin, kuten `date` (saatavilla Linuxissa ja macOS:ssa) tai hyödynnetään suosittuja kolmannen osapuolen työkaluja, kuten `GNU date` monimutkaisempiin jäsentämisiin. Näin se tehdään:
 

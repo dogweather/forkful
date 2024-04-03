@@ -11,12 +11,7 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## What & Why? (Quoi & Pourquoi ?)
-
-Créer un fichier temporaire, c'est comme faire une note rapide pour ne pas oublier quelque chose. Les programmeurs les utilisent pour stocker des données de manière éphémère, par exemple, pendant le traitement d'un script.
-
 ## How to (Comment faire) :
-
 Voici deux façons simples de créer un fichier temporaire en Bash :
 
 ```Bash
@@ -38,7 +33,6 @@ echo "Ceci est un fichier temporaire" > /tmp/monfichier.$$
 ```
 
 ## Deep Dive (Plongée en profondeur) :
-
 Historiquement, la création de fichiers temporaires était gérée manuellement, ce qui posait des problèmes de sécurité et de concurrence. `mktemp` a été introduit pour créer de manière sécurisée des fichiers temporaires uniques. Il garantit qu'aucun autre processus ne crée un fichier avec le même nom, évitant les collisions.
 
 Il y a d'autres alternatives comme `tempfile` (déprécié) ou la création manuelle d'un fichier temporaire en utilisant le PID (Process ID) du script avec `$$` pour l'unicité.
@@ -55,7 +49,6 @@ trap "rm -f $tempfile" EXIT
 ```
 
 ## See Also (Voir aussi) :
-
 - La man page de mktemp pour Linux : [mktemp(1) - Linux man page](https://linux.die.net/man/1/mktemp)
 - La documentation sur les signaux et les pièges en Bash : [Bash Trap Command](https://www.linuxjournal.com/content/bash-trap-command)
 - Une discussion sur Stack Overflow sur la gestion des fichiers temporaires : [How do I create a temporary file in a secure manner?](https://stackoverflow.com/questions/2794016/how-do-i-create-a-temporary-file-in-a-secure-manner)

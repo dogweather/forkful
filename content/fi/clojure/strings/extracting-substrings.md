@@ -9,9 +9,6 @@ title: Merkkijonojen osien poimiminen
 weight: 6
 ---
 
-## What & Why?
-Merkkijonojen poimiminen tarkoittaa osan ottamista isommasta merkkijonosta. Ohjelmoijat tekevät näin datan muokkaamiseksi tai hyödyllisen informaation irrottamiseksi.
-
 ## How to:
 Clojuren `subs` funktio tekee tämän homman mutkattomasti.
 

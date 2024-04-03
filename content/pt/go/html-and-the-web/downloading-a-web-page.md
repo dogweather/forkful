@@ -13,12 +13,7 @@ title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---
 
-## O Que & Por Quê?
-
-Baixar uma página da web consiste em buscar o conteúdo HTML de uma página da web via protocolo HTTP/HTTPS. Programadores frequentemente fazem isso para fazer raspagem de dados (web scraping), análise de dados, ou simplesmente para interagir programaticamente com sites para automatizar tarefas.
-
 ## Como:
-
 Em Go, a biblioteca padrão oferece ferramentas poderosas para requisições web, notavelmente o pacote `net/http`. Para baixar uma página da web, usamos principalmente o método `http.Get`. Aqui está um exemplo básico:
 
 ```go
@@ -65,7 +60,6 @@ Este programa simples faz uma requisição HTTP GET para a URL especificada, dep
 Nota: Na programação Go contemporânea, `ioutil.ReadAll` é considerado obsoleto desde o Go 1.16 em favor de `io.ReadAll`.
 
 ## Aprofundando
-
 A linguagem Go possui uma filosofia de design que enfatiza simplicidade, eficiência e manuseio confiável de erros. Quando se trata de programação de rede, e especificamente baixando páginas da web, a biblioteca padrão do Go, notadamente `net/http`, é eficientemente projetada para lidar com operações de solicitação e resposta HTTP.
 
 A abordagem para requisições de rede em Go remonta às origens da linguagem, emprestando conceitos de predecessores, mas melhorando significativamente em eficiência e simplicidade. Para baixar conteúdo, o modelo de concorrência de Go usando goroutines o torna uma ferramenta excepcionalmente poderosa para fazer requisições HTTP assíncronas, lidando com milhares de solicitações em paralelo com facilidade.

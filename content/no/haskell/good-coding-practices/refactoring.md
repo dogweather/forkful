@@ -11,9 +11,6 @@ title: Refaktorering
 weight: 19
 ---
 
-## Hva & Hvorfor?
-Refaktorering er prosessen med å tweake koden din uten å endre dens eksterne oppførsel. Det handler alt om å rydde opp og organisere din handling for å gjøre koden enklere å lese, vedlikeholde og utvide. Det kan også bidra til å knuse bugs og forbedre ytelsen.
-
 ## Hvordan:
 La oss si at du har en klump med Haskell-kode som gjentar seg selv mer enn din favorittsang. Her er en rask titt på hvordan du kan refaktorere det ved å bruke funksjoner.
 

@@ -14,9 +14,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---
 
-## Mikä & Miksi?
-Merkkijonosta päivämäärän jäsentäminen tarkoittaa päivämäärien ja aikojen tekstiesitysten muuntamista muotoon, jota ohjelma voi käsitellä ja analysoida. Tämä on yleinen tehtävä ohjelmoinnissa, koska se mahdollistaa käyttäjän syötteen käsittelyn, aikaleimattujen tietojen tallennuksen ja API-rajapintojen kanssa toimimisen, mikä tuottaa toiminnallisempia ja käyttäjäystävällisempiä sovelluksia.
-
 ## Kuinka:
 TypeScript, ollessaan JavaScriptin yliluokka, nojaa Date-objektiin merkkijonoista päivämäärien jäsentämiseksi. Kuitenkin päivämäärien käsittely JS/TS:ssä voi muuttua monisanaiseksi tai epätarkaksi johtuen Date-objektin omituisuuksista. Tässä on perusesimerkki, minkä jälkeen tulee lähestymistapa käyttäen suosittua kirjastoa, `date-fns`, kestävämpiin ratkaisuihin.
 

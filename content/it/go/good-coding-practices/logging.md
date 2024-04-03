@@ -13,12 +13,7 @@ title: Registro degli Eventi
 weight: 17
 ---
 
-## Cosa e Perché?
-
-Il logging nello sviluppo software è il processo di registrazione di informazioni sull'esecuzione di un programma, progettato per tracciare il suo comportamento e diagnosticare problemi. I programmatori implementano il logging per monitorare le prestazioni del software, correggere errori e garantire la sicurezza del sistema e la conformità, rendendolo uno strumento indispensabile per la manutenzione e l'analisi delle applicazioni.
-
 ## Come fare:
-
 In Go, il logging può essere implementato utilizzando il pacchetto della libreria standard `log`. Questo pacchetto fornisce capacità di logging semplici, come la scrittura su output standard o su file. Cominciamo con un esempio basico di logging su output standard:
 
 ```go
@@ -84,7 +79,6 @@ LOG PERSONALIZZATO: 2009/11/10 23:00:00 main.go:11: Questo è un messaggio di lo
 Questo esempio prefissa ogni messaggio di log con "LOG PERSONALIZZATO: " e include la data, l'ora e la posizione del file sorgente.
 
 ## Approfondimento
-
 Il pacchetto `log` della libreria standard di Go è semplice e sufficiente per molte applicazioni, ma manca di alcune delle funzionalità più sofisticate trovate nelle librerie di logging di terze parti, come il logging strutturato, la rotazione dei log e il logging basato sui livelli. Pacchetti come `zap` e `logrus` offrono queste funzionalità avanzate e sono ben considerati nella comunità di Go per la loro performance e flessibilità.
 
 Il logging strutturato, ad esempio, ti permette di registrare dati in un formato strutturato (come JSON), che è particolarmente utile per le applicazioni moderne basate sul cloud dove i log potrebbero essere analizzati da vari strumenti o servizi. `zap`, in particolare, è noto per la sua alta performance e il basso sovraccarico di allocazione, rendendolo adatto per applicazioni dove velocità ed efficienza sono critiche.

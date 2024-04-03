@@ -10,9 +10,6 @@ title: Trovare la lunghezza di una stringa
 weight: 7
 ---
 
-## What & Why?
-Calcolare la lunghezza di una stringa significa scoprire quanti caratteri contiene. I programmatori lo fanno per validare l'input, troncare il testo, navigare tra dati o ottimizzare le prestazioni.
-
 ## How to:
 Per trovare la lunghezza di una stringa in Kotlin, usa la proprietà `length`. Ecco un esempio:
 

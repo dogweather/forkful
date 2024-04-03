@@ -11,9 +11,6 @@ title: Arrondir les nombres
 weight: 13
 ---
 
-## Quoi & Pourquoi ?
-Arrondir des nombres signifie supprimer les décimales pour obtenir une précision définie, souvent jusqu'aux nombres entiers. Les programmeurs arrondissent pour simplifier les calculs, améliorer les performances ou rendre les sorties plus conviviales pour l'utilisateur.
-
 ## Comment faire :
 PHP propose quelques méthodes pour arrondir les nombres : `round()`, `ceil()` et `floor()`. Voici comment elles fonctionnent :
 

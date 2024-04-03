@@ -11,9 +11,6 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O Que & Porquê?
-Refatoração é o processo de reestruturar código existente sem alterar seu comportamento externo para melhorar atributos não funcionais. Programadores fazem isso para tornar o código mais legível, reduzir complexidade, melhorar a manutenibilidade e facilitar o escalonamento ou modificação futuramente.
-
 ## Como fazer:
 Imagine que você possui um script que cresceu bastante com o tempo. Começou simples, mas agora é uma fera repleta de tentáculos lógicos. Aqui está um exemplo simples de refatoração de uma função para torná-la mais legível e eficiente:
 

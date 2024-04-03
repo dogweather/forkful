@@ -13,11 +13,7 @@ title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---
 
-## Mikä ja miksi?
-Merkkijonon alkukirjaimen muuttaminen isoksi Bashissa tarkoittaa merkkijonon ensimmäisen merkin muuttamista isoksi kirjaimeksi, samalla kun loput merkkijonosta jätetään muuttumattomiksi. Tätä tekniikkaa käytetään yleisesti tulosteiden muotoiluun tai koodauskonventioiden noudattamiseen, jotka edellyttävät tiettyjen merkkijonojen alkavan isolla alkukirjaimella luettavuuden tai tyylillisten mieltymysten vuoksi.
-
 ## Kuinka:
-
 Bash ei sisällä erityistä sisäänrakennettua toimintoa merkkijonojen alkukirjaimen muuttamiseen isoksi, mutta tämän tehtävän voi suorittaa käyttämällä parametrilaajennusta tai ulkoisia työkaluja, kuten `awk`. Tässä on muutama tapa muuttaa merkkijonon ensimmäinen kirjain isoksi Bashissa:
 
 **Käyttämällä parametrilaajennusta:**

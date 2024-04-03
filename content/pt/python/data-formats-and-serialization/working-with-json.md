@@ -12,16 +12,10 @@ title: Trabalhando com JSON
 weight: 38
 ---
 
-## O quê & Por quê?
-
-Trabalhar com JSON (JavaScript Object Notation) envolve analisar strings formatadas em JSON para objetos Python e vice-versa. Isso é crucial para o desenvolvimento web e de API, pois o JSON é a língua franca para a troca de dados entre servidores e clientes.
-
 ## Como fazer:
-
 A biblioteca integrada `json` do Python simplifica o processo de codificação (converter objetos Python para JSON) e decodificação (converter JSON para objetos Python). Veja como você pode usá-la:
 
 ### Codificando objetos Python para JSON:
-
 ```python
 import json
 
@@ -60,7 +54,6 @@ print(json_string)
 ```
 
 ### Decodificando JSON para objetos Python:
-
 ```python
 json_string = '''
 {
@@ -99,11 +92,9 @@ print(dados)
 ```
 
 ### Trabalhando com bibliotecas de terceiros:
-
 Para lidar com JSON de forma mais complexa, como validação de esquema ou análise de arquivos JSON diretamente de URLs, bibliotecas como `requests` para solicitações HTTP e `jsonschema` para validação podem ser úteis.
 
 #### Exemplo com `requests` para analisar JSON de uma URL:
-
 ```python
 import requests
 
@@ -116,7 +107,6 @@ print(dados)
 Este trecho busca dados JSON de uma URL dada e os converte diretamente em um objeto Python.
 
 #### Usando `jsonschema` para validar JSON:
-
 Primeiro, instale a biblioteca via pip:
 
 ```bash

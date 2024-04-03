@@ -11,9 +11,6 @@ title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---
 
-## Vad & Varför?
-Att skapa en temporär fil innebär att generera en fil som endast är avsedd för tillfällig användning. Programmerare gör detta för att hantera data som inte behöver bevaras på lång sikt, som mellanresultat eller för att minska minnesanvändningen.
-
 ## Så här gör du:
 Skapa en temporär fil i PowerShell:
 

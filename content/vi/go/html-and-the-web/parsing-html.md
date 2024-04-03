@@ -16,12 +16,7 @@ title: "Ph\xE2n T\xEDch HTML"
 weight: 43
 ---
 
-## Cái gì và Tại sao?
-
-Phân tích cú pháp HTML trong Go bao gồm việc phân tích nội dung của các tập tin HTML để trích xuất dữ liệu, thao tác cấu trúc, hoặc chuyển đổi HTML sang các định dạng khác. Lập trình viên thực hiện điều này cho việc web scraping, tạo mẫu, và khai thác dữ liệu, tận dụng các tính năng đồng thời mạnh mẽ của Go để xử lý hiệu quả lượng lớn trang web.
-
 ## Làm thế nào:
-
 Để phân tích cú pháp HTML trong Go, bạn thường sử dụng gói `goquery` hoặc gói `net/html` của thư viện chuẩn. Dưới đây là một ví dụ cơ bản sử dụng `net/html` để trích xuất tất cả các liên kết từ một trang web:
 
 ```go
@@ -78,7 +73,6 @@ http://www.iana.org/domains/reserved
 Mã này yêu cầu một trang HTML, phân tích cú pháp nó, và duyệt qua DOM một cách đệ quy để tìm và in các thuộc tính `href` của tất cả các thẻ `<a>`.
 
 ## Tìm hiểu sâu
-
 Gói `net/html` cung cấp các cơ bản để phân tích cú pháp HTML trong Go, trực tiếp thực thi các thuật toán token hóa và xây dựng cây được quy định bởi tiêu chuẩn HTML5. Cách tiếp cận cấp thấp này mạnh mẽ nhưng có thể rườm rà cho các nhiệm vụ phức tạp.
 
 Ngược lại, gói `goquery` của bên thứ ba, được lấy cảm hứng từ jQuery, cung cấp một giao diện cấp cao hơn đơn giản hóa việc thao tác và duyệt qua DOM. Nó cho phép các nhà phát triển viết mã ngắn gọn và biểu cảm cho các nhiệm vụ như chọn phần tử, trích xuất thuộc tính, và thao tác nội dung.

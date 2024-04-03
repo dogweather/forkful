@@ -10,12 +10,7 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-
-Parsing a date from a string in PHP involves converting text that represents a date and/or time into a PHP `DateTime` object or other date/time formats. This is crucial for data validation, manipulation, storage, and presentation purposes, especially when working with user input or data from external sources.
-
 ## How to:
-
 PHP's built-in `DateTime` class provides a powerful set of functions for parsing and working with dates. You can create a `DateTime` instance from a date string using the constructor, and then format it as needed. Here's how:
 
 ```php

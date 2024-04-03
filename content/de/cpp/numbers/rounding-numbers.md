@@ -11,9 +11,6 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-Zahlen runden bedeutet, einen Wert auf die nächste ganze Zahl oder eine angegebene Genauigkeit anzupassen. Entwickler tun dies, um zu vereinfachen, sich an reale Beschränkungen anzupassen oder die Leistung durch Verwerfen überschüssiger Genauigkeit zu verbessern.
-
 ## Wie geht das:
 C++ bietet mehrere Möglichkeiten, Zahlen zu runden, wie `floor()`, `ceil()` und `round()`:
 

@@ -10,12 +10,7 @@ title: "Tiedostojen muokkaaminen paikan p\xE4\xE4ll\xE4 komentorivin yhden rivin
 weight: 32
 ---
 
-## Mikä & Miksi?
-
-Tiedostojen suoraan muokkaaminen CLI-yksirivikomennoin tarkoittaa muutosten tekemistä suoraan tiedostoihin komentoriviltä, ilman niiden avaamista tekstieditorissa. Ohjelmoijat tekevät näin säästääkseen aikaa ja automatisoidakseen toistuvia muokkaustehtäviä, tehden työnkulustaan sujuvamman ja tehokkaamman.
-
 ## Kuinka:
-
 Fish Shell, tunnettu käyttäjäystävällisistä ominaisuuksistaan ja tehokkaista skriptausmahdollisuuksista, tarjoaa useita tapoja muokata tiedostoja suoraan. Toisin kuin jotkut muut shellit, Fishillä ei kuitenkaan ole sisäänrakennettua mekanismia suoraan muokkaamiseen (`sed -i` Bashissa esimerkiksi). Mutta älä pelkää, voit silti saavuttaa tämän pienellä luovuudella ja apua ulkoisilta työkaluilta kuten `sed` ja `awk`.
 
 ### `sed`-komennon käyttö yksinkertaisiin korvauksiin
@@ -40,7 +35,6 @@ awk '{print $1 * 2}' file.txt > temp && mv temp file.txt
 Muista, että näitä työkaluja käytettäessä Fishissä, virheiden kaappaaminen ja niiden viestien ymmärtäminen on olennaisen tärkeää. Käytä Fishin vankkaa virheenkäsittelyä tehdäksesi skriptisi luotettavammiksi.
 
 ## Syväsukellus
-
 Historiallisesti suoraan tiedoston muokkaaminen on ollut Unixin ja Linuxin ohjelmoinnin kulmakivi, tarjoten tehokkaan tavan suorittaa nopeita muokkauksia manuaalisesti avaamatta tiedostoja. Työkalut kuten `sed` ja `awk` ovat arvostettuja apuohjelmia, jotka ovat olleet olemassa Unixin alkupäivistä lähtien, tullen välttämättömiksi tekstinkäsittelytehtävissä.
 
 Fish Shell, ollessaan modernimpi ja tarjoten parannuksia käytettävyydessä ja skriptauksessa, puuttuu sisäänrakennettu suora muokkaus pääasiassa suunnittelufilosofiansa vuoksi, joka keskittyy vuorovaikutteisuuteen ja käyttäjäystävällisyyteen. Fishissä ei ole omaa suoraan muokkauskomentoa, mikä korostaa ulkoisten työkalujen tärkeyttä Unix-kaltaisissa ekosysteemeissä.

@@ -23,12 +23,7 @@ title: "\u092A\u093E\u0920 \u0916\u094B\u091C\u0928\u093E \u0914\u0930 \u092C\u0
 weight: 10
 ---
 
-## What & Why? (क्या और क्यों?)
-
-Searching and replacing text in PHP मतलब है दिए गए टेक्स्ट को ढूँढना और बदलना। Programmers इसे करते हैं डेटा को फॉर्मेट या अपडेट करने के लिए, जैसे किसी document में कोई शब्द बदलना।
-
 ## How to: (कैसे करें:)
-
 PHP में text search और replace के लिए `str_replace` function का इस्तेमाल करते हैं:
 
 ```PHP
@@ -56,11 +51,9 @@ echo $newText;  // Output: The quick black cat jumps over the lazy dog
 ```
 
 ## Deep Dive (गहराई में जानकारी):
-
 Search और replace functionality PHP में बहुत पहले से है। `str_replace` simple strings के लिए है, जबकि `preg_replace` complex patterns (regular expressions) के लिए है। Alternatives में string functions जैसे के `strpos`, और `substr_replace` शामिल हैं। Performance-wise, `str_replace` `preg_replace` से तेज़ होता है जब patterns simple हों, क्योंकि regular expressions CPU को ज्यादा use करते हैं।
 
 ## See Also (देखें भी):
-
 - PHP official documentation on `str_replace`: [php.net/manual/en/function.str-replace.php](https://www.php.net/manual/en/function.str-replace.php)
 - PHP official documentation on `preg_replace`: [php.net/manual/en/function.preg-replace.php](https://www.php.net/manual/en/function.preg-replace.php)
 - Regular Expressions Basic Syntax: [regular-expressions.info](https://www.regular-expressions.info/)

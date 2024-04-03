@@ -12,12 +12,7 @@ title: Gebruik van associatieve arrays
 weight: 15
 ---
 
-## Wat & Waarom?
-
-Associatieve arrays, of hashmap's, in Clojure stellen je in staat om data op te slaan en op te halen met sleutel-waardeparen. Ze zijn een voor de hand liggende keuze voor het beheren van gestructureerde data, waardoor je sneller specifieke elementen kunt benaderen zonder door een lijst te hoeven itereren.
-
 ## Hoe:
-
 In Clojure is het aanmaken en manipuleren van associatieve arrays (hashmap's) eenvoudig. Laten we beginnen met wat voorbeelden.
 
 Om een hashmap te maken:
@@ -72,7 +67,6 @@ En voor voorwaardelijke toegang, `find` geeft een sleutel-waardepaar terug als d
 ```
 
 ## Diepgaande duik
-
 Associatieve arrays in Clojure, ook vaak aangeduid als hashmap's, zijn ongelooflijk veelzijdig en efficiënt voor het beheer van data op basis van sleutel-waarden. Ze maken deel uit van de rijke collectiebibliotheek van Clojure, diep geworteld in de filosofie van de taal van onveranderlijkheid en functioneel programmeren. In tegenstelling tot arrays of lijsten die O(n) tijdscomplexiteit vereisen voor toegang tot elementen, bieden hashmap's bijna constante tijdscomplexiteit voor toegang, waardoor ze zeer efficiënt zijn voor opzoekoperaties.
 
 Men zou kunnen betogen dat vectoren in Clojure een soortgelijk doel zouden kunnen dienen via geïndexeerde toegang, maar hashmap's blinken uit bij het omgaan met niet-opeenvolgende en gelabelde data, waar de sleutel een betekenisvolle descriptor biedt in plaats van een willekeurige index.

@@ -14,11 +14,7 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## Co i dlaczego?
-Pobieranie strony internetowej w Google Apps Script polega na pobieraniu treści strony internetowej za pomocą HTML do różnych celów, takich jak web scraping, ekstrakcja danych lub monitorowanie zmian. Programiści optują za tą operację, aby automatyzować zadania związane z gromadzeniem danych lub integracją, minimalizując wysiłek manualny i zapewniając przetwarzanie danych w czasie rzeczywistym.
-
 ## Jak to zrobić:
-
 W Google Apps Script, usługa `UrlFetchApp` jest kluczowa do pobierania treści internetowych. Poniżej znajduje się przewodnik krok po kroku oraz prosty przykład demonstrujący, jak pobrać i zalogować treść HTML strony internetowej:
 
 1. **Podstawowa operacja pobierania:**
@@ -56,7 +52,6 @@ function downloadSecureWebPage() {
 Miej na uwadze limity Google Apps Script; intensywne użycie może wymagać obsługi błędów dla limitów szybkości.
 
 ## Wgłębienie się
-
 Historycznie, pobieranie i manipulacja treścią internetową zaczęły się od prostych żądań HTTP, ewoluując znacząco z nadejściem języków skryptowych. Google Apps Script umożliwia proste wykonanie takich zadań w ekosystemie G Suite, wykorzystując solidną infrastrukturę Google. Usługa `UrlFetchApp` jest kluczowym elementem tej funkcjonalności, zakapsułowującym złożone żądania HTTP/S w prostszy interfejs na poziomie aplikacji.
 
 Pomimo swojej wygody, Google Apps Script może nie zawsze być najlepszym narzędziem do intensywnego web scrapingu lub gdy wymagane jest złożone post-processing pobranych danych ze względu na limity czasu wykonania i kwoty nałożone przez Google. W takich przypadkach, dedykowane ramy do web scrapingu lub języki zaprojektowane do operacji I/O asynchronicznych, takie jak Node.js z bibliotekami typu Puppeteer czy Cheerio, mogą oferować większą elastyczność i moc.

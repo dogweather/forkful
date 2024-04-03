@@ -11,9 +11,6 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## What & Why? (Co i Dlaczego?)
-Łączenie łańcuchów znaków, czyli stringów, to po prostu proces ich zestawiania w jeden ciągły tekst. Dzięki temu możemy tworzyć wiadomości, które mają sens, generować dynamiczne treści czy też manipulować danymi dla formatowania wyjścia.
-
 ## How to? (Jak to zrobić?)
 Łączenie stringów w Javie to pestka. Możesz użyć operatora plus (+), metody `concat()` lub klasy `StringBuilder`. Oto przykłady:
 

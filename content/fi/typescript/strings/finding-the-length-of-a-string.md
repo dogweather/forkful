@@ -11,9 +11,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## What & Why? (Mitä & Miksi?)
-Merkkijonon pituuden selvittäminen tarkoittaa sen merkkimäärän laskemista. Ohjelmoijat tarvitsevat tätä tietoa validointiin, rajauksiin ja tiedon käsittelyn ohjaamiseen.
-
 ## How to: (Kuinka tehdä:)
 ```TypeScript
 let greeting: string = "Hei maailma!";

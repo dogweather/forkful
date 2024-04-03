@@ -14,12 +14,7 @@ title: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Cái Gì & Tại Sao?
-
-Tạo một tệp tạm thời có nghĩa là làm một tệp cho việc sử dụng ngắn hạn. Các lập trình viên làm điều này để lưu trữ dữ liệu chỉ cần thiết trong quá trình thực thi chương trình, như kết quả trung gian hoặc để đảm bảo một trạng thái sạch sẽ mà không làm lộn xộn bộ nhớ lưu trữ vĩnh viễn.
-
 ## Làm Như Thế Nào:
-
 Trong Fish Shell, bạn có thể tạo một tệp tạm thời bằng cách sử dụng `mktemp`. Đây là một ví dụ nhanh:
 
 ```fish
@@ -38,7 +33,6 @@ Hello, temporary world!
 Điều này tạo một tệp tạm thời, viết một dòng vào nó, hiển thị nội dung, và sau đó xóa tệp.
 
 ## Đào Sâu Hơn
-
 Ngày xưa, các tệp tạm thời thường được tạo một cách thủ công, dẫn đến tiềm năng xung đột tên và vấn đề an ninh. `mktemp` đến để giải cứu! Lệnh này tạo một tệp với một tên duy nhất, giảm nguy cơ va chạm tệp.
 
 Các phương pháp khác bao gồm viết vào `/dev/shm` trên Linux hoặc sử dụng các hệ thống tệp dựa trên bộ nhớ. Tuy nhiên, các phương pháp này không linh hoạt bằng `mktemp`.
@@ -46,7 +40,6 @@ Các phương pháp khác bao gồm viết vào `/dev/shm` trên Linux hoặc s�
 Về thời hạn tồn tại của các tệp tạm thời, điều quan trọng cần nhớ là chúng nên được xóa bởi chương trình tạo ra chúng. Điều này đảm bảo không để lại các tệp gây lãng phí không gian hệ thống. Trong một số hệ thống, thư mục `/tmp` được dọn sạch khi khởi động lại, nhưng bạn không nên dựa vào hành vi này để dọn dẹp.
 
 ## Xem Thêm
-
 - Tài liệu Fish Shell: [https://fishshell.com/docs/current/](https://fishshell.com/docs/current/)
 - Hướng dẫn `mktemp`: [https://www.gnu.org/software/autogen/mktemp.html](https://www.gnu.org/software/autogen/mktemp.html)
 - Chuẩn Hệ Thống Phân Lớp Tệp: [https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html](https://refspecs.linuxfoundation.org/FHS_3.0/fhs/index.html)

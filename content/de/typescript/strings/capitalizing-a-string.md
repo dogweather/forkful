@@ -13,11 +13,7 @@ title: "Einen String gro\xDFschreiben"
 weight: 2
 ---
 
-## Was & Warum?
-Das Kapitalisieren eines Strings bedeutet, den ersten Buchstaben eines gegebenen Strings in Großbuchstaben umzuwandeln, falls er in Kleinbuchstaben vorliegt, und oft den Rest des Strings unverändert zu lassen. Diese Operation wird typischerweise verwendet, um sicherzustellen, dass Eigennamen oder der Anfang von Sätzen in der Textverarbeitung den Grammatikregeln entsprechen, wodurch die Ausgaben professionell und lesbar erscheinen.
-
 ## Wie:
-
 TypeScript, als eine Obermenge von JavaScript, ermöglicht verschiedene Methoden zum Kapitalisieren von Strings, die von reinen JavaScript-Ansätzen bis zur Nutzung von Drittanbieterbibliotheken für komplexere oder spezifische Anwendungsfälle reichen.
 
 **Reiner JavaScript-Ansatz:**

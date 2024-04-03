@@ -11,9 +11,6 @@ title: Datum in einen String umwandeln
 weight: 28
 ---
 
-## Was & Warum?
-Das Umwandeln eines Datums in einen String ist der Prozess, bei dem ein Datum als lesbare Zeichenkette dargestellt wird. Programmierer nutzen dies, um Daten benutzerfreundlich anzuzeigen oder in einem bestimmten Format zu speichern.
-
 ## Vorgehensweise:
 ```TypeScript
 const date: Date = new Date("2023-03-15T12:00:00Z");

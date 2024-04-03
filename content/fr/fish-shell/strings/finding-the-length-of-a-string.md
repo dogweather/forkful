@@ -10,9 +10,6 @@ title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Trouver la longueur d'une chaîne signifie compter le nombre de caractères qu'elle contient. C'est essentiel pour valider des données, trancher des algorithmes ou optimiser des performances.
-
 ## How to (Comment faire ?)
 Avec Fish, c'est simple comme bonjour. Utilisez `string length`. Voici un exemple :
 

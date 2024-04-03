@@ -13,12 +13,7 @@ title: Logboekregistratie
 weight: 17
 ---
 
-## Wat & Waarom?
-
-Loggen is het proces van het vastleggen van gebeurtenissen, fouten en andere significante informatie tijdens de uitvoering van een programma naar een externe drager, vaak bestanden of databases. Programmeurs gebruiken logboeken om softwaregedrag te monitoren, problemen te debuggen en systeemactiviteiten te volgen voor veiligheids- en prestatieanalyse.
-
 ## Hoe te:
-
 In TypeScript kun je gemakkelijk basislogboekregistratie implementeren met consolemethoden of meer geavanceerde logboekregistratie integreren met bibliotheken zoals `winston` of `pino`. Hier is een basisvoorbeeld met `console.log` en een geavanceerder voorbeeld met `winston`.
 
 ```TypeScript
@@ -59,7 +54,6 @@ logger.error('Kan geen verbinding maken met database.');
 ```
 
 ## Diepgaand:
-
 Het concept van logboekregistratie binnen de context van computergebruik gaat terug tot de vroege dagen van programmeren, waar de term zelf is afgeleid van het "logboek", een maritiem recordhoudsysteem. Historisch gezien werden programmagebeurtenissen vaak gelogd naar fysieke afdrukken of terminaluitvoer, vooral tijdens het mainframe-tijdperk.
 
 Fast forward naar vandaag, en je hebt een overvloed aan tools en bibliotheken tot je beschikking die voldoen aan verschillende logboekregistratiebehoeften, van eenvoudige tekstbestanden tot complexe logboekbeheersystemen. Alternatieven voor `winston` zijn onder andere `pino`, dat een hoge prestatie belooft, en `Bunyan`, dat is gebaseerd op JSON. Wanneer je werkt met Node.js, bieden logboekbibliotheken vaak streammechanismen om logboeken naar verschillende bestemmingen te leiden, ondersteuning voor logrotatie, en aanpasbare formatters.
@@ -67,7 +61,6 @@ Fast forward naar vandaag, en je hebt een overvloed aan tools en bibliotheken to
 Wat betreft implementatie bevatten logboodschappen typisch een tijdstempel, een ernstniveau (zoals info, waarschuwing, fout) en de eigenlijke boodschap. Goede logboekpraktijken raden aan om logniveaus correct te categoriseren, gevoelige gegevens in logboeken te vermijden en rekening te houden met prestatie-implicaties in toepassingen met hoge doorvoer.
 
 ## Zie Ook:
-
 - [Winston - Een logger voor vrijwel alles](https://www.npmjs.com/package/winston)
 - [Pino - Zeer lage overhead Node.js logger](https://www.npmjs.com/package/pino)
 - [Beste praktijken voor Node.js logboekregistratie](https://thisdavej.com/using-winston-a-versatile-logging-library-for-node-js/)

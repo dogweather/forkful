@@ -12,9 +12,6 @@ title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---
 
-## Hva og hvorfor?
-Å fjerne anførselstegn fra en streng betyr å stripe bort de ekstra doble eller enkle anførselstegnene som du faktisk ikke trenger i den bearbeidede teksten. Programmerere gjør dette for å rense inndata, forberede data for lagring, eller gjøre utdata mer lesbart for mennesker når anførselstegn ikke er nødvendig i den gitte konteksten.
-
 ## Hvordan:
 I Elm kan du bruke `String`-funksjonene for å manipulere strenger, som for eksempel å fjerne anførselstegn. Her er en grei måte å gjøre det på:
 

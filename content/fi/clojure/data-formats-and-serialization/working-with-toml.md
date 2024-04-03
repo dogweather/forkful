@@ -11,9 +11,6 @@ title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---
 
-## Mikä & Miksi?
-Työskentely TOML:n kanssa tarkoittaa, että käsittelet dataa Minimaalisessa "Tom's Obvious, Minimal Language" -formaatissa, mikä on suosittua konfiguraatiotiedostoissa sen helpon luettavuuden vuoksi. Ohjelmoijat käyttävät sitä suoraviivaiseen konfiguraationhallintaan, joka toimii heti laatikosta otettuna ihmisläheisellä syntaksilla.
-
 ## Kuinka:
 Tehdäksesi töitä TOML:n kanssa Clojuressa tarvitset kirjaston, kuten `clj-toml`. Lisää se ensin `deps.edn`-tiedostoosi:
 

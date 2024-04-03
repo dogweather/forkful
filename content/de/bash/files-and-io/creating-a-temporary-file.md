@@ -10,9 +10,6 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-## Was & Warum?
-Temporäre Dateien sind kurzlebige Dateien, die während der Laufzeit eines Programms erstellt werden. Programmierer nutzen sie für Datenverarbeitung, Zwischenspeicherung und um auf Festplatte basierte Locks zu implementieren. 
-
 ## Anleitung:
 Erstellen einer temporären Datei mit `mktemp`:
 

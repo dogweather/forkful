@@ -14,12 +14,7 @@ title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---
 
-## Co i dlaczego?
-
-Pisanie do standardowego błędu (stderr) w Dart polega na wysyłaniu komunikatów o błędach i diagnostyk do oddzielnego strumienia, różnego od standardowego wyjścia (stdout). Programiści robią to, aby odróżnić normalne wyjście programu od błędów lub komunikatów ostrzegawczych, co pozwala na łatwiejsze debugowanie i rejestrowanie.
-
 ## Jak to zrobić:
-
 W Dart, pisanie do stderr jest proste za pomocą obiektu `stderr` dostępnego w `dart:io`. Oto podstawowy przykład:
 
 ```dart

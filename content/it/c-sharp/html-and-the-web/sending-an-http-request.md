@@ -10,9 +10,6 @@ title: Inviare una richiesta http
 weight: 44
 ---
 
-## What & Why? (Cosa e perché?)
-Mandare una richiesta HTTP significa chiedere dati o servizi a un server web. Programmatori lo fanno per interagire con API, scaricare contenuti o inviare form online.
-
 ## How to: (Come fare:)
 ```C#
 using System;

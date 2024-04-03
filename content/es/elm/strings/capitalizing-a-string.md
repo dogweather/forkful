@@ -14,12 +14,7 @@ title: Capitalizando una cadena de texto
 weight: 2
 ---
 
-## ¿Qué y por qué?
-
-Capitalizar una cadena implica transformar el carácter inicial de una cadena dada a mayúsculas mientras se mantienen el resto en minúsculas, a menudo por motivos de formato estandarizado o legibilidad. Los programadores realizan frecuentemente esta tarea para asegurar que los datos se presenten de manera consistente, especialmente en interfaces de usuario o cuando se procesa y muestra la entrada del usuario.
-
 ## Cómo hacerlo:
-
 En Elm, no hay una función integrada específicamente para capitalizar cadenas. Sin embargo, puedes lograr esto fácilmente utilizando funciones del módulo `String` incluido, como `toUpper`, `toLower`, `left` y `dropLeft`.
 
 ```elm

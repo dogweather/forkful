@@ -10,9 +10,6 @@ title: Conversione di una stringa in minuscolo
 weight: 4
 ---
 
-## What & Why?
-Convertire una stringa in minuscolo significa trasformare tutti i caratteri al suo interno in lettere minuscole. I programmatori lo fanno per uniformare i dati, facilitare confronti insensibili alle maiuscole e migliorare la consistenza dell'input utente.
-
 ## How to:
 Java usa il metodo `toLowerCase()` per convertire una stringa in minuscolo. Vediamo un esempio pratico:
 

@@ -13,12 +13,7 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä & Miksi?
-
-Tekstitiedoston kirjoittaminen C-kielessä sisältää tiedoston luomisen tai avaamisen kirjoitustilassa ja sen jälkeen C:n tiedosto I/O -funktioiden käyttämisen tekstitiedon tallentamiseen. Ohjelmoijat tekevät tämän tallentaakseen dataa, kuten lokitapahtumia, konfiguraatioasetuksia tai käyttäjän luomaa sisältöä, mahdollistaen sovellusten tilan, asetusten, tai käyttäjän etenemisen ylläpidon istuntojen välillä.
-
 ## Kuinka:
-
 Tekstin kirjoittaminen tiedostoon C-kielessä vaatii pääasiassa `fopen()`, `fprintf()`, `fputs()`, ja `fclose()` funktioiden tuntemista. Alla on yksinkertainen esimerkki, joka esittää tiedoston luomisen ja siihen kirjoittamisen:
 
 ```c
@@ -54,7 +49,6 @@ Tiedosto kirjoitettu onnistuneesti
 Tämän ohjelman suorittamisen jälkeen löydät tiedoston nimeltä `esimerkki.txt` samasta hakemistosta, sisältäen tekstiä, jonka kirjoitit `fprintf()` ja `fputs()` avulla.
 
 ## Syväsukellus
-
 Tiedostojen ja tiedostojärjestelmien käsite on ollut keskeinen tietokonejärjestelmille, ja niiden hallinta on käyttöjärjestelmien kriittinen osa-alue. C-kielessä tiedostojen käsittelyä suoritetaan käyttämällä vakio I/O -kirjaston funktioita, jotka perustuvat käsitykseen tiedostoista tavavirtoina. Tämä abstraktio mahdollistaa suoraviivaisen ja tehokkaan tavan lukea ja kirjoittaa tiedostoihin, vaikka se saattaa vaikuttaa matalan tason menetelmältä verrattuna nykyaikaisiin lähestymistapoihin korkean tason kielissä, kuten Pythonissa tai Rubyssa.
 
 Historiallisesti nämä C-kielen tiedosto-I/O-toiminnot ovat luoneet perustan tiedostojen käsittelylle monissa ohjelmointikielissä, tarjoten lähellä rautaa olevan rajapinnan käyttöjärjestelmän tiedostonhallintajärjestelmiin. Tämä tarjoaa paitsi yksityiskohtaista hallintaa tiedosto-ominaisuuksien ja I/O-toimintojen yli, myös asettaa ansoja varomattomille ohjelmoijille, kuten tarpeen hallita resursseja manuaalisesti (eli aina sulkea tiedostot) ja puskurointiongelmat.

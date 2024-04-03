@@ -11,9 +11,6 @@ title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---
 
-## Quoi et Pourquoi ?
-Calculer une date dans le futur ou le passé, c'est changer une date de base d'un certain intervalle. On le fait pour des rappels, des échéances, des plannings, etc.
-
 ## Comment faire :
 ```C++
 #include <iostream>

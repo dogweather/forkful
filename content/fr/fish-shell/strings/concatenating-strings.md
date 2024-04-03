@@ -10,9 +10,6 @@ title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---
 
-## What & Why?
-Concaténer des chaînes, c'est coller des bouts de texte ensemble. On le fait pour construire des messages, des chemins de fichiers, ou tout autre texte dynamique en programmation.
-
 ## How to:
 Concaténer des chaînes en Fish est intuitif. Voilà quelques exemples :
 

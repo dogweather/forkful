@@ -11,9 +11,6 @@ title: Logging
 weight: 17
 ---
 
-## What & Why?
-Logging, in a nutshell, is like keeping a diary for your application—it records events, errors, and other significant actions that occur while the software runs. Programmers do it not just to understand what's happening under the hood in real-time, but also to have a historical record that's crucial for debugging, auditing, and optimizing performance.
-
 ## How to:
 Out of the box, JavaScript offers a simple way to log messages to the console:
 

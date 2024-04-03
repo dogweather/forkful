@@ -20,9 +20,6 @@ title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u0940 \u0932\u09
 weight: 7
 ---
 
-## What & Why? (क्या और क्यों?)
-String की length जानने से पता चलता है कि उसमें कितने characters हैं। Programmers इसे ज्यादातर data validation, processing text, या loops के सही execution के लिए करते हैं।
-
 ## How to: (कैसे करें:)
 ```Lua
 -- एक simple string

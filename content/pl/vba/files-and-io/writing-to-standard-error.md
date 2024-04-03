@@ -14,12 +14,7 @@ title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---
 
-## Co i dlaczego?
-
-Pisanie do standardowego błędu w Visual Basic for Applications (VBA) oznacza kierowanie komunikatów o błędach lub diagnostyki niezależnie od standardowego wyjścia, zazwyczaj do konsoli lub pliku dziennika. Programiści robią to, aby oddzielić regularne wyjście programu od komunikatów o błędach, co ułatwia debugowanie programów lub informowanie użytkowników o problemach bez zaśmiecania głównego wyjścia.
-
 ## Jak to zrobić:
-
 W VBA, ponieważ nie ma bezpośredniej wbudowanej funkcji do zapisywania specyficznie do standardowego błędu, jak w niektórych innych językach programowania, powszechnym obejściem jest używanie `Debug.Print` do wyprowadzania błędów podczas rozwoju lub tworzenie własnej funkcji logowania, która naśladuje to zachowanie dla aplikacji produkcyjnych. Poniżej przedstawiono przykład, jak można zaimplementować i użyć takiej funkcji:
 
 ```vb
@@ -49,7 +44,6 @@ ERROR: Wystąpił błąd podczas przetwarzania twojego żądania.
 ```
 
 ## Pogłębione spojrzenie
-
 Visual Basic for Applications nie zawiera inherentnie dedykowanego mechanizmu do zapisu do standardowego błędu ze względu na jego głęboką integrację z aplikacjami gospodarzami, takimi jak Excel, Word czy Access, które tradycyjnie polegają na interfejsach graficznych użytkownika, a nie na wyjściu konsolowym. Jest to znaczące odstępstwo od aplikacji konsolowych, zwykle rozwijanych w językach takich jak C czy Python, gdzie standardowe wyjście i strumienie błędów są podstawowymi koncepcjami.
 
 Historycznie rzecz biorąc, VBA zawsze był bardziej skoncentrowany na interakcji z modelami dokumentów swoich aplikacji gospodarzy, a mniej na tradycyjnych mechanizmach logowania aplikacji. Dlatego deweloperzy często uciekają się do implementowania własnych rozwiązań logowania, jak w przykładzie, lub wykorzystywania wywołań API Windows do bardziej zaawansowanych potrzeb obsługi błędów i logowania.

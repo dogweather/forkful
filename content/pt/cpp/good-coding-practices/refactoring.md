@@ -11,12 +11,7 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O que & Por quê?
-
-Refatoração é o processo de alterar a estrutura interna de um programa de computador sem alterar seu comportamento externo. Os programadores fazem isso para limpar seu código, tornando-o mais fácil de entender, manter e estender.
-
 ## Como fazer:
-
 Imagine que você tem uma função que está fazendo um pouco demais, como este método pesado que inicializa um objeto e também realiza registros:
 
 ```C++
@@ -71,7 +66,6 @@ w.logInitialization();
 Essa mudança não alterou o que o programa faz, mas torna a classe `Widget` mais modular e seu uso mais claro.
 
 ## Aprofundamento
-
 O conceito de refatoração, como o conhecemos hoje, tem suas raízes nas comunidades de programação Smalltalk da década de 1980 e foi fortemente popularizado pelo livro de Martin Fowler "Refatoração: Aperfeiçoando o Design do Código Existente" de 1999. Hoje, a refatoração é uma parte essencial do desenvolvimento de software moderno, integrada a várias metodologias de desenvolvimento, como Agile e TDD (Desenvolvimento Orientado a Testes).
 
 Quando falamos sobre alternativas à refatoração, entramos no terreno da reescrita ou do redesenho. A refatoração é estratégica e incremental, enquanto uma reescrita pode descartar o código existente em favor de uma nova solução. O redesenho, por outro lado, pode envolver mudanças mais significativas, incluindo alterar a funcionalidade, o que é um não-objetivo para a refatoração pura.
@@ -81,7 +75,6 @@ Os detalhes de implementação da refatoração podem se tornar bastante granula
 Além disso, a refatoração requer um conjunto sólido de testes para garantir que a funcionalidade permaneça inalterada. Sem testes, você está essencialmente voando às cegas e arriscando regressões.
 
 ## Veja também
-
 Para um entendimento mais profundo da refatoração e para ver mais exemplos, você pode querer conferir:
 
 - O texto clássico de Martin Fowler "Refatoração: Aperfeiçoando o Design do Código Existente" para ideias e estratégias fundamentais.

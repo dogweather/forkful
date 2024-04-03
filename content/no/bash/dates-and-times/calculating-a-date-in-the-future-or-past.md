@@ -11,9 +11,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## Hva & Hvorfor?
-Dato-beregning er å finne en fremtidig eller tidligere dato basert på en gitt dato. Programmerere gjør dette for å håndtere frister, planlegge hendelser og automatisere påminnelser.
-
 ## Hvordan gjør man det:
 ```Bash
 # Kalkuler en dato 10 dager frem i tid

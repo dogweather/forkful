@@ -16,9 +16,6 @@ title: "Eine tempor\xE4re Datei erstellen"
 weight: 21
 ---
 
-## Was & Warum?
-Die Erstellung einer temporären Datei in Dart beinhaltet das Generieren einer Datei, die für die kurzfristige Nutzung vorgesehen ist, hauptsächlich für Szenarien wie das Zwischenspeichern von Daten, temporäre Speicherung zur Dateiverarbeitung oder das Halten von Informationen, die zu sensibel sind, um sie lange zu behalten. Programmierer tun dies, um Daten zu verwalten, die keine dauerhafte Speicherung benötigen, wodurch die Leistung verbessert und die Datenhygiene aufrechterhalten wird.
-
 ## Wie:
 Die `dart:io` Bibliothek von Dart erleichtert die Erstellung von temporären Dateien durch die `Directory` Klasse. Hier ist eine unkomplizierte Möglichkeit, eine temporäre Datei zu erstellen und einige Inhalte darin zu speichern:
 
@@ -42,7 +39,6 @@ Future<void> main() async {
 ```
 
 ### Verwendung einer Drittanbieter-Bibliothek: `path_provider`
-
 Für Anwendungen (insbesondere Mobile-Apps mit Flutter) möchten Sie vielleicht temporäre Dateien auf eine einheitlichere und handhabbarere Weise erstellen. Das Paket `path_provider` kann Ihnen helfen, das richtige temporäre Verzeichnis über verschiedene Plattformen hinweg (iOS, Android usw.) zu finden.
 
 Zuerst fügen Sie `path_provider` unter dependencies in Ihre `pubspec.yaml` hinzu:

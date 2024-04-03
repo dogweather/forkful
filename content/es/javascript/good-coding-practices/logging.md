@@ -12,9 +12,6 @@ title: Registro de Actividades
 weight: 17
 ---
 
-## Qué y Por Qué?
-El registro (logging), en pocas palabras, es como mantener un diario para tu aplicación: registra eventos, errores y otras acciones significativas que ocurren mientras se ejecuta el software. Los programadores lo hacen no solo para entender qué está sucediendo bajo el capó en tiempo real, sino también para contar con un registro histórico que es crucial para la depuración, auditoría y optimización del rendimiento.
-
 ## Cómo hacerlo:
 De manera predeterminada, JavaScript ofrece una forma sencilla de registrar mensajes en la consola:
 

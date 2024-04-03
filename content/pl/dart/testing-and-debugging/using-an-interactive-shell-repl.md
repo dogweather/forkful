@@ -14,12 +14,7 @@ title: "Korzystanie z interaktywnej pow\u0142oki (REPL)"
 weight: 34
 ---
 
-## Co i dlaczego?
-
-Interaktywna powłoka (REPL - Read-Evaluate-Print Loop) dla Dart umożliwia programistom dynamiczne wpisywanie i wykonywanie linijka po linijce kodu Dart bez konieczności kompilowania całych skryptów. To narzędzie jest nieocenione do nauki składni Dart, eksperymentowania z fragmentami kodu lub debugowania poprzez oferowanie natychmiastowego feedbacku i ułatwianie iteracyjnego testowania.
-
 ## Jak to zrobić:
-
 Dart nie posiada wbudowanego REPL. Jednak można osiągnąć funkcjonalność podobną do REPL, używając DartPad (online) lub korzystając z narzędzi stron trzecich, takich jak `dart_repl`.
 
 **Korzystanie z DartPad:**

@@ -11,9 +11,6 @@ title: Konvertere en dato til en streng
 weight: 28
 ---
 
-## Hva & Hvorfor?
-Å konvertere en dato til en streng betyr å endre datotypen fra et datorepresentasjonsformat til en tekststreng. Dette er nyttig for å vise datoer til brukere, lagring i tekstformater som JSON, eller for interoperabilitet med systemer som krever tekstinput.
-
 ## Slik gjør du:
 ```Rust
 use chrono::{NaiveDate, Datelike, Local};

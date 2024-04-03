@@ -10,9 +10,6 @@ title: Iniciando un nuevo proyecto
 weight: 1
 ---
 
-## ¿Qué y Por Qué?
-Iniciar un proyecto nuevo en Rust significa crear una estructura básica de archivos y código; es el punto de partida para toda aplicación. Los programadores lo hacen para organizar y preparar su ambiente de trabajo para el desarrollo eficiente del software.
-
 ## Cómo Hacerlo:
 Para empezar un nuevo proyecto en Rust, primero necesitas tener Cargo, el sistema de gestión de paquetes y proyectos de Rust. Aquí están los pasos básicos:
 

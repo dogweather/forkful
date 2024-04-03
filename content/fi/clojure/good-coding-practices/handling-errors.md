@@ -11,9 +11,6 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä & Miksi?
-Virheenkäsittely on ohjelmien odottamattomien tilanteiden hallintaa—kuin järjestyksenvalvoja, joka kohtaa häiriköitä. Ohjelmoijat pitävät sujuvuudesta; virheenkäsittely auttaa pitämään ongelmat kurissa ja varmistaa, että koodi ei kompastu ja kaadu kohdatessaan odottamatonta.
-
 ## Miten:
 Clojure, kuten sen Lisp-esivanhemmat, nojaa poikkeusten varaan virheiden käsittelyssä. Tässä on miten näytät mihin olet kykeneväinen, kun asiat menevät pieleen.
 

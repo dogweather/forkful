@@ -16,12 +16,7 @@ title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---
 
-## Gì và Tại Sao?
-
-Việc gửi các thông báo lỗi tới standard error (stderr) có nghĩa là bạn đang chuyển thông điệp lỗi của mình ra khỏi đầu ra thông thường (stdout). Các lập trình viên làm điều này để phân tách dữ liệu bình thường ra khỏi thông tin lỗi, điều này giúp trong việc ghi lại và gỡ lỗi.
-
 ## Làm thế nào:
-
 Trong C#, viết vào stderr bằng cách sử dụng `Console.Error.WriteLine()`. Nó tương tự như `Console.WriteLine()`, chỉ là nhắm vào luồng lỗi.
 
 ```C#
@@ -53,12 +48,10 @@ Thông điệp Lỗi!
 Thông điệp lỗi xuất hiện trong bảng điều khiển hoặc có thể được chuyển hướng sang một tệp.
 
 ## Đào Sâu
-
 Về mặt lịch sử, việc phân tách stdout và stderr bắt nguồn từ các hệ thống Unix, nơi nó cho phép xử lý dữ liệu sạch sẽ và xử lý lỗi. Trong C# (và .NET nói chung), `Console.Out` đại diện cho stdout, trong khi `Console.Error` đại diện cho stderr.
 
 Bạn có thể chuyển hướng cả hai bằng cách sử dụng `Console.SetOut()` và `Console.SetError()`. Các luồng như `FileStream` hoặc `StringWriter` có thể bắt lại đầu ra cho việc ghi lại. Điều này rất quan trọng trong các tình huống mà thông điệp lỗi không nên lẫn lộn với dữ liệu bình thường, chẳng hạn, khi stdout được ống sang một chương trình khác.
 
 ## Xem Thêm
-
 - [Thuộc tính Console.Error - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.console.error)
 - [Lớp Stream .NET - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.io.stream)

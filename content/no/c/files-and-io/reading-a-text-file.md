@@ -13,12 +13,7 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## Hva & Hvorfor?
-
-Å lese en tekstfil i C innebærer å åpne en fil på systemet ditt for å hente informasjon, samt manipulere eller vise den som nødvendig. Programmerere gjør ofte dette for å behandle konfigurasjonsfiler, lese inndata for behandling eller analysere data lagret i filformat, noe som gir fleksibilitet og økt funksjonalitet i applikasjoner.
-
 ## Hvordan:
-
 For å starte lesingen av en tekstfil i C, jobber du hovedsakelig med funksjonene `fopen()`, `fgets()`, og `fclose()` fra standard I/O-biblioteket. Her er et enkelt eksempel som leser en fil kalt `example.txt` og skriver ut innholdet til standard output:
 
 ```c
@@ -61,7 +56,6 @@ Velkommen til C programmering.
 ```
 
 ## Dypdykk
-
 Lesing av filer i C har en rik historie, som går tilbake til de tidlige dagene av Unix da enkelheten og elegansen av tekststrømmer var grunnleggende. Dette førte til adopsjonen av tekstfiler for en myriad av formål, inkludert konfigurasjon, logging og mellomprosesskommunikasjon. Enkelheten til C-språkets fil I/O-bibliotek, eksemplifisert ved funksjoner som `fopen()`, `fgets()`, og `fclose()`, understreker dets designfilosofi om å tilby grunnleggende verktøy som programmerere kan bruke til å bygge komplekse systemer.
 
 Historisk sett, mens disse funksjonene har tjent utallige applikasjoner godt, har moderne programmeringspraksis belyst noen begrensninger, spesielt med hensyn til feilhåndtering, filkoding (f.eks. støtte for Unicode), og samtidig tilgang i flertrådede applikasjoner. Alternative tilnærminger i andre språk, eller til og med innen C ved bruk av biblioteker som `libuv` eller `Boost.Asio` for C++, tilbyr mer robuste løsninger ved direkte å adressere disse bekymringene med mer sofistikerte I/O-forvaltningsmuligheter, inkludert asynkrone I/O-operasjoner som kan sterkt forbedre ytelsen til applikasjoner som håndterer omfattende fillesningsoperasjoner eller I/O-bundne oppgaver.

@@ -13,12 +13,7 @@ title: Tekstitiedoston lukeminen
 weight: 22
 ---
 
-## Mitä & Miksi?
-
-Tekstitiedoston lukeminen Dartilla tarkoittaa tiedostojen tietojen käyttämistä ja hakemista tiedostojärjestelmästä. Ohjelmoijat tekevät tämän käsitelläkseen syötetietoja, konfiguraatioasetuksia tai lukeakseen datasettejä, mikä tekee siitä perustoiminnon monille sovelluksille, yksinkertaisista skripteistä monimutkaisiin appeihin.
-
 ## Kuinka:
-
 Dartin ydinkirjasto, `dart:io`, tarjoaa tarvittavat toiminnot tekstitiedostojen lukemiseen synkronisesti tai asynkronisesti. Tässä on, miten molempia lähestytään.
 
 **Synkronisesti:**

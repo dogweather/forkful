@@ -10,9 +10,6 @@ title: Descobrindo o comprimento de uma string
 weight: 7
 ---
 
-## O Que e Por Que?
-Encontrar o comprimento de uma string significa descobrir quantos caracteres ela possui. Programadores fazem isso para validar entradas, manipular texto e limitar a quantidade de dados processados.
-
 ## Como Fazer:
 ```Clojure
 ;; Para descobrir o comprimento de uma string, use a função count:

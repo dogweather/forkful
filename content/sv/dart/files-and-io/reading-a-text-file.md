@@ -13,12 +13,7 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## Vad & Varför?
-
-Att läsa en textfil i Dart innebär att man får tillgång till och hämtar data från filer som är lagrade på filsystemet. Programmerare gör detta för att hantera indata, konfigurationsinställningar eller läsa datamängder, vilket gör det till en grundläggande operation för många applikationer som sträcker sig från enkla skript till komplexa appar.
-
 ## Hur man gör:
-
 Darts kärnbibliotek, `dart:io`, erbjuder de nödvändiga funktionerna för att läsa textfiler synkront eller asynkront. Så här kan du gå tillväga på båda sätten.
 
 **Synkront:**

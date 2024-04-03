@@ -11,12 +11,7 @@ title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---
 
-## Qué y Por Qué?
-
-Comparar dos fechas permite determinar cuál es anterior o posterior, o si son iguales. Los programadores lo hacen para validaciones, cálculos de períodos de tiempo y para ordenar eventos cronológicamente.
-
 ## Cómo:
-
 Java ofrece varias maneras de comparar fechas, aquí van algunos ejemplos utilizando `LocalDate` de la librería `java.time`, la cual está diseñada para ser inmutable y thread-safe:
 
 ```Java
@@ -56,7 +51,6 @@ Las fechas son distintas.
 ```
 
 ## Deep Dive
-
 Antes de `java.time`, introducida en Java 8, `java.util.Date` y `java.util.Calendar` eran las clases que usábamos para tratar con fechas, pero tenían varios problemas de diseño. Por ejemplo, no eran thread-safe, lo que podía causar problemas en aplicaciones multi-hilo.
 
 En Java 8, `java.time` fue la solución. Inspirado en `Joda-Time`, provee una API más limpia y objetiva. Para comparar dos fechas, `LocalDate` tiene métodos como `isBefore()`, `isAfter()` y `isEqual()`. Si trabajas con tiempo exacto, puedes usar `LocalDateTime` o `ZonedDateTime`.
@@ -67,7 +61,6 @@ Alternativas para comparar fechas incluyen:
 2. Usar librerías de terceros como Joda-Time, aunque con `java.time` esto se vuelve menos necesario.
 
 ## See Also
-
 Aquí hay algunos recursos para seguir aprendiendo:
 
 - [Documentación oficial de LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)

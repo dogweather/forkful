@@ -18,9 +18,6 @@ title: "T\xECm \u0111\u1ED9 d\xE0i c\u1EE7a chu\u1ED7i"
 weight: 7
 ---
 
-## Cái gì và Tại sao?
-Việc tìm độ dài của một Chuỗi trong Dart là việc xác định số đơn vị mã hóa (thực chất là số lượng ký tự nếu suy nghĩ một cách đơn giản) trong một Chuỗi đã cho. Các lập trình viên thực hiện điều này để có thể thao tác chuỗi một cách chính xác hơn, chẳng hạn như xác thực đầu vào, cắt bớt văn bản hiển thị, hoặc xử lý các định dạng dữ liệu mà ở đó độ dài có ý nghĩa (ví dụ, các giao thức với thông điệp có tiền tố độ dài).
-
 ## Nên làm thế nào:
 Dart làm cho việc lấy độ dài của một chuỗi trở nên rất đơn giản bằng cách sử dụng thuộc tính `length`. Dưới đây là một ví dụ cơ bản:
 

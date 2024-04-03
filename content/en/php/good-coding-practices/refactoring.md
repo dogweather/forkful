@@ -10,9 +10,6 @@ title: Refactoring
 weight: 19
 ---
 
-## What & Why?
-Refactoring is the process of restructuring existing computer code without changing its external behavior. Programmers refactor to improve nonfunctional attributes of the software, making the code cleaner, more efficient, and easier to maintain.
-
 ## How to:
 Let's take a classic PHP snippet and apply some refactoring magic to it. 
 

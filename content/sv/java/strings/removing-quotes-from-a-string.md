@@ -12,9 +12,6 @@ title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---
 
-## Vad & Varför?
-Att ta bort citationstecken från en sträng innebär att strippa bort alla citattecken—enkla (' '), dubbla (" ") eller båda—från textdata. Programmerare gör det för att sanera inmatningar, förbereda data för lagring eller förenkla tolkningsuppgifter där citattecken är onödiga och potentiellt problematiska.
-
 ## Hur man gör:
 Låt oss rycka bort dessa irriterande citationstecken från vår text. Vi kommer att använda `replace()`-metoden för de snabba åtgärderna och regex för de tuffa nötterna att knäcka.
 

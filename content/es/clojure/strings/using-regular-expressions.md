@@ -13,9 +13,6 @@ title: Usando expresiones regulares
 weight: 11
 ---
 
-## Qué y Por Qué?
-Las expresiones regulares, una herramienta poderosa para el emparejamiento de patrones y la manipulación de datos, son esenciales en tareas de procesamiento de texto como validar entradas, buscar y reemplazar texto. Los programadores las utilizan extensamente para manejar tareas de análisis y validación de datos complejos de manera eficiente y sucinta.
-
 ## Cómo hacerlo:
 Clojure, manteniéndose fiel a sus raíces en la familia Lisp, ofrece un rico conjunto de funciones que se interfazan sin problemas con las capacidades de expresiones regulares de Java. Aquí te mostramos cómo puedes aprovecharlas:
 

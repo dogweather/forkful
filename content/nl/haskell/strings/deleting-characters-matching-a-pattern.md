@@ -12,12 +12,7 @@ title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---
 
-## Wat & Waarom?
-
-Karakters verwijderen die overeenkomen met een specifiek patroon gaat over het doorzoeken van tekst en het verwijderen van delen die je niet nodig hebt. Programmeurs doen dit om gegevens te zuiveren, strings te vereenvoudigen, of gegevens voor te bereiden op iets belangrijkers verderop, zoals parsing of analyse.
-
 ## Hoe te:
-
 ```haskell
 import Data.List (isInfixOf)
 import Data.Char (isSpace)
@@ -43,7 +38,6 @@ main = do
 ```
 
 ## Diepgaande Duik
-
 Haskell's rijke set aan bibliotheken, zoals 'Data.List', biedt verschillende hulpmiddelen om lijsten te manipuleren, waarvan strings in essentie een speciaal geval zijn. Historisch gezien is het patroonherkenningconcept van Haskell geleend van oudere functionele talen zoals ML.
 
 Er zijn verschillende manieren van patroonherkenning in Haskell. Onze eenvoudige `removePattern` maakt gebruik van `isInfixOf` om het patroon te controleren. Er zijn ook regex-bibliotheken voor complexe patronen, maar deze voegen afhankelijkheden toe en maken soms dingen overbodig ingewikkeld.
@@ -53,7 +47,6 @@ Wat betreft afhankelijkheden, voor het trimmen van witruimtes, zou je een biblio
 Ten slotte, wat betreft prestaties, wees altijd voorzichtig met recursieve functies in Haskell; ze kunnen inefficiënt zijn als ze niet goed geoptimaliseerd zijn door de compiler. Thunks kunnen zich opstapelen, wat kan leiden tot geheugenlekken. Voor betere prestaties zou je Haskell's `Text` module kunnen verkennen voor de manipulatie van grote of talrijke strings.
 
 ## Zie Ook
-
 - Echt Wereld Haskell: http://book.realworldhaskell.org/
 - Haskell `Data.List` documentatie: https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-List.html
 - Haskell Wiki over Prestaties: https://wiki.haskell.org/Performance

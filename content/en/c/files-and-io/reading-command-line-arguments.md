@@ -10,12 +10,7 @@ title: Reading command line arguments
 weight: 23
 ---
 
-## What & Why?
-
-In C programming, reading command line arguments allows programs to accept inputs right from the terminal, enhancing flexibility and usability. Programmers leverage this for configuring script behaviors without modifying code, making applications adaptable and efficient.
-
 ## How to:
-
 In C, the `main` function can be designed to accept command line arguments using the parameters `int argc` and `char *argv[]`. Here, `argc` represents the number of arguments passed, and `argv` is an array of character pointers listing all the arguments. Here's a quick example to illustrate:
 
 ```c
@@ -43,7 +38,6 @@ Argument 2: example
 This demonstrates how command line arguments can be parsed and utilized in a C program.
 
 ## Deep Dive
-
 The convention of passing arguments to programs dates back to the earliest days of Unix. In this traditional approach, `argc` and `argv` provide a simple yet powerful interface for command line interaction, embodying Unix's philosophy of small, modular utilities that work together. While modern languages often introduce more sophisticated libraries or frameworks for parsing command-line arguments, the directness of C's method offers unmatched transparency and control.
 
 In recent developments, libraries such as `getopt` in POSIX systems have evolved to support more complex parsing needs, like handling long option names or default values for missing arguments. Yet, the basic mechanism of `argc` and `argv` remains essential for understanding how programs interact with their run-time environment in C.

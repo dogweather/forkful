@@ -13,9 +13,6 @@ title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---
 
-## Was & Warum?
-Das Überprüfen, ob ein Verzeichnis in Clojure existiert, umfasst die Verifizierung der Existenz eines Dateisystemverzeichnisses von innerhalb Ihrer Clojure-Anwendung. Diese Aufgabe ist entscheidend für Dateioperationen, um Fehler beim Lesen von oder Schreiben in Verzeichnisse, die möglicherweise nicht vorhanden sind, zu verhindern, was eine robuste und fehlerfreie Codeausführung gewährleistet.
-
 ## Wie man es macht:
 Da Clojure eine JVM-Sprache ist, kann es für diesen Zweck die `java.io.File` Klasse von Java nutzen. Für eine solch grundlegende Operation benötigen Sie keine Drittanbieter-Bibliothek. So können Sie es machen:
 

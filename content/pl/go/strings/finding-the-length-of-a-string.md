@@ -13,9 +13,6 @@ title: "Znajdowanie d\u0142ugo\u015Bci \u0142a\u0144cucha"
 weight: 7
 ---
 
-## Co i dlaczego?
-Znalezienie długości ciągu znaków w Go polega na określeniu liczby znaków, które zawiera. Programiści regularnie wykonują tę operację, aby efektywnie manipulować ciągami znaków, czy to dla celów weryfikacji, ekstrakcji podciągów, czy po prostu do egzekwowania ograniczeń w danych wejściowych użytkownika.
-
 ## Jak to zrobić:
 W Go, ciągi znaków traktowane są jako niezmienne sekwencje bajtów. Długość ciągu znaków można znaleźć za pomocą wbudowanej funkcji `len()`, która zwraca liczbę bajtów, a niekoniecznie liczbę znaków. Oto jak jej użyć:
 

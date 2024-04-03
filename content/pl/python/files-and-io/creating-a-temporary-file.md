@@ -11,12 +11,7 @@ title: Tworzenie pliku tymczasowego
 weight: 21
 ---
 
-## Co i dlaczego?
-
-Tworzenie tymczasowych plików to kwestia zapisywania danych, które nie muszą pozostać w systemie na stałe. Programiści wykorzystują je, aby przechowywać informacje między cyklami wykonywania programu, testować aplikacje albo jako bufor do danych generowanych dynamicznie.
-
 ## Jak to zrobić:
-
 ```Python
 import tempfile
 
@@ -38,10 +33,8 @@ Witaj, tymczasowy świecie!
 ```
 
 ## Szczegółowe spojrzenie:
-
 Tymczasowe pliki były używane od początków programowania. W dawnych czasach, gdy pamięć była na wagę złota, umożliwiały przechowywanie danych przekraczających jej rozmiar. Alternatywą dla tworzenia tymczasowych plików jest wykorzystywanie pamięci podręcznej, co działa szybciej, ale jest ograniczone wielkością pamięci RAM. Szczegółowość implementacji w Pythonie opiera się o moduł `tempfile`, który zapewnia bezpieczeństwo (unikanie konfliktów nazw plików) i automatyzację (usuwanie plików po zakończeniu pracy).
 
 ## Zobacz też:
-
 - Dokumentacja modułu `tempfile`: https://docs.python.org/3/library/tempfile.html
 - Stack Overflow — dyskusje o tymczasowych plikach i najlepsze praktyki: https://stackoverflow.com/questions/tagged/temporary-files

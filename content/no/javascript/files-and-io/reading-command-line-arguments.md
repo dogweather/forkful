@@ -11,9 +11,6 @@ title: Lese kommandolinjeargumenter
 weight: 23
 ---
 
-## What & Why?
-Kommandolinjeargumenter lar oss gi input direkte til et JavaScript-program i kjøretid, slik at oppførselen kan endres dynamisk. Programmerere bruker dette for å gjøre skriptene mer fleksible og for å kunne håndtere ulike scenarier uten å røre koden.
-
 ## How to:
 For å lese kommandolinjeargumenter i JavaScript, bruker vi ofte `process.argv`, som er en array i Node.js. Her er et enkelt eksempel:
 

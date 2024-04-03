@@ -11,9 +11,6 @@ title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---
 
-## Qué y Por Qué?
-Extraer subcadenas significa seleccionar partes específicas de una cadena de texto. Programadores lo hacen para manipular, analizar o transformar datos basados en texto, como extraer nombres de usuario de emails o valores de una URL.
-
 ## Cómo:
 ```TypeScript
 let texto: string = "Hola, mundo maravilloso!";

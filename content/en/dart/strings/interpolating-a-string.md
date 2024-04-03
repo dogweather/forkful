@@ -10,12 +10,7 @@ title: Interpolating a string
 weight: 8
 ---
 
-## What & Why?
-
-String interpolation is the process of injecting variable values directly into strings, often for creating meaningful messages without cumbersome concatenations. Programmers do it for cleaner, more readable code and to prevent errors prone to happen in complex string concatenations.
-
 ## How to:
-
 In Dart, string interpolation is straightforward, utilizing the `$` symbol to interpolate expressions directly within string literals:
 
 ```dart

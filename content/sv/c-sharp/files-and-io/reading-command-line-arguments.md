@@ -11,9 +11,6 @@ title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---
 
-## Vad & Varför?
-Att läsa kommandoradsargument innebär att man hämtar de värden som användaren har angett när de startar programmet. Programmerare använder det för att tillåta användarinteraktion och för att göra program flexibla genom att ta emot input som styr programmets beteende direkt från start.
-
 ## Så här gör du:
 Använd `args` i din `Main` metod för att ta emot argument. Här är ett exempel på hur det kan se ut:
 

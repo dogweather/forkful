@@ -14,9 +14,6 @@ title: Quotes verwijderen uit een string
 weight: 9
 ---
 
-## Wat & Waarom?
-Het verwijderen van aanhalingstekens uit een tekenreeks betekent het wegstrepen van eventuele enkele (' ') of dubbele (" ") aanhalingstekens die deel uitmaken van de stringgegevens. Programmeurs doen dit om inputs te ontsmetten, tekst voor te bereiden op verwerking, of om onnodige tekens die de gegevensverwerking en -operaties kunnen verstoren, kwijt te raken.
-
 ## Hoe te:
 In Haskell kunnen we een functie opstellen die alle aanhalingstekens uit een gegeven string verwijdert. Het is alsof je de aanhalingstekens de wacht aanzegt, en ervoor zorgt dat ze de hint begrijpen.
 

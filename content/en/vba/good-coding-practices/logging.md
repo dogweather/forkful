@@ -10,12 +10,7 @@ title: Logging
 weight: 17
 ---
 
-## What & Why?
-
-Logging in Visual Basic for Applications (VBA) involves recording information about a program's runtime behavior to a file, console, or database. Programmers use logging to monitor their applications, diagnose issues, and understand performance characteristics.
-
 ## How to:
-
 In VBA, there isn’t a built-in logging framework as found in some other languages. However, implementing a simple logging mechanism is straightforward. Below is an example of how to create a basic file logger.
 
 1. **Writing to a Log File**: This example function, `LogMessage`, writes messages to a text file with a timestamp.
@@ -74,5 +69,4 @@ End Sub
 ```
 
 ## Deep Dive
-
 Logging in VBA, due to its lack of a native logging framework, is usually implemented through basic file operations or by harnessing the power of external COM objects for more advanced needs, such as logging to a database or interacting with Windows Event Log. Historically, logging in VBA has been a way to circumvent the limitations posed by its simplistic error handling and debugging tools. Although effective, direct file manipulation for logging is rudimentary and can be inefficient with large volumes of data or under high concurrency. For more sophisticated logging capabilities, programmers often turn to external libraries or integrate with systems specifically designed for logging, such as the ELK stack (Elasticsearch, Logstash, Kibana) or Splunk, through web service calls or intermediary databases. While VBA does not offer the modern conveniences found in newer programming languages, understanding its capabilities and limitations allows programmers to effectively utilize logging as a powerful tool for application monitoring and diagnostics.

@@ -11,9 +11,6 @@ title: Debug-Ausgaben drucken
 weight: 33
 ---
 
-## What & Why?
-Debug-Ausgaben zu drucken ist das Anzeigen von Informationen zur Laufzeit, um den Zustand einer Anwendung zu überprüfen. Programmierer nutzen dies, um Fehler schneller zu finden und zu verstehen, was im Code vor sich geht.
-
 ## How to:
 Mit Elixir kannst du einfach debuggen. Nutze die `IO.inspect/2` Funktion, um Werte während des Programmablaufs zu überprüfen.
 

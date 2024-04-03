@@ -10,9 +10,6 @@ title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---
 
-## Was & Warum?
-Das Löschen von Zeichen, die einem Muster entsprechen, dient dazu, Strings von nicht benötigten oder unerwünschten Zeichen zu bereinigen. Programmierer verwenden diese Technik, um Eingabedaten zu validieren, Datenformate anzupassen oder einfach die Lesbarkeit zu erhöhen.
-
 ## Anleitung:
 Um in C# Zeichen zu löschen, die einem Muster entsprechen, benutzen wir Regex. Hier ein schnelles Beispiel:
 

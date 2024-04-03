@@ -17,12 +17,7 @@ title: "\u5339\u914D\u6A21\u5F0F\u5220\u9664\u5B57\u7B26"
 weight: 5
 ---
 
-## What & Why? (什么和为什么？)
-
-删除匹配模式的字符，就是去掉字符串中符合特定规则的字符。程序员这么做为了数据清洗、格式统一，或减少不必要的信息。
-
 ## How to: (如何操作：)
-
 ```Arduino
 // 示例：删除字符串中的数字
 String removeDigits(String str) {
@@ -56,7 +51,6 @@ Without digits: ABCD
 ```
 
 ## Deep Dive (深入探究：)
-
 从早期编程开始，处理文本就是常见任务。在 Arduino 平台上，资源受限，没有正则表达式库来简化模式匹配，所以要手动检查每个字符。
 
 替代方案包括使用现成的函数库（如果有足够的空间），例如 `String` 类自带的 `replace()` 函数，但这不太适用于模式匹配，只能替换特定字符串。
@@ -64,7 +58,6 @@ Without digits: ABCD
 实现细节里，上述代码示例采用最基础的方法，也是最稳定的方法，在没有复杂库支持时仍然适用。
 
 ## See Also (另见：)
-
 - Arduino String 类参考: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
 - C++ 标准模板库（STL） string 类参考, 适用于较复杂应用: http://www.cplusplus.com/reference/string/string/
 - 关于 Arduino 文本处理的社区讨论: https://forum.arduino.cc/index.php?board=7.0

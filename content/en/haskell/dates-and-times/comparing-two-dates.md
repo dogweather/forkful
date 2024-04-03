@@ -10,12 +10,7 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-
-Comparing two dates means judging which one's earlier, later, or if they're the same moment in time. Programmers do it to sort events, figure out durations, and manage time-dependent logic.
-
 ## How to:
-
 Haskell, quietly known for its purity, needs you to talk date-talk with the right libraries. Let's use `Data.Time`.
 
 ```haskell
@@ -42,7 +37,6 @@ main = do
 Straightforward, right? `LT` for less than, `GT` for greater than, and `EQ` for equal.
 
 ## Deep Dive
-
 Back in the day, Haskell's time handling wasn't as slick. We owe our current comforts to the `Data.Time` library progression over the years. It gives us `UTCTime`, a happily unambiguous point in time.
 
 Alternatives? Sure. You might find `Data.Time.Calendar` and `Data.Time.Clock` useful for specific scenarios. There's also the old `time` library for those feeling nostalgic or stuck with legacy code.
@@ -50,7 +44,6 @@ Alternatives? Sure. You might find `Data.Time.Calendar` and `Data.Time.Clock` us
 Now, the nitty-gritty: Comparing dates in Haskell hinges on `UTCTime` which pairs a day (`Day`) and a time (`DiffTime` or `NominalDiffTime`). It's the `compare` function doing the heavy lifting, a neat member of the `Ord` class, letting us use `>, <, ==` and more. Just remember Haskell loves its type safety. Ensure you're always comparing apples with apples, or in our case, `UTCTime` with `UTCTime`.
 
 ## See Also
-
 Dive deeper or find help with these:
 - [`Data.Time` package on Hackage](https://hackage.haskell.org/package/time-1.11/docs/Data-Time.html)
 - [Learn You a Haskell for Great Good! – For a gentle introduction](http://learnyouahaskell.com/)

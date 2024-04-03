@@ -11,10 +11,9 @@ title: Writing to standard error
 weight: 25
 ---
 
-## What & Why?
-Writing to standard error in Python is about directing your program's error messages or diagnostics to the error stream (`stderr`), separate from the standard output (`stdout`). Programmers do this to differentiate normal program outputs from error messages, facilitating debugging and log analysis.
-
 ## How to:
+
+
 ### Using `sys.stderr`
 Python's built-in `sys` module allows explicit writing to `stderr`. This approach is straightforward for simple error messages or diagnostics.
 

@@ -11,9 +11,6 @@ title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---
 
-## Quoi & Pourquoi ?
-Calculer une date dans le futur ou le passé consiste à déterminer une date relative à un point de référence. Les programmeurs le font souvent pour des rappels, des échéances ou pour suivre des événements.
-
 ## Comment faire :
 ```php
 <?php

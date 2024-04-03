@@ -13,12 +13,7 @@ title: Twee datums vergelijken
 weight: 27
 ---
 
-## Wat & Waarom?
-
-Het vergelijken van twee datums betekent controleren hoe ze zich tot elkaar verhouden—is de ene eerder, later of op het exacte zelfde moment als de andere. Programmeurs doen dit om planningen te beheren, leeftijdsverificatie, het triggeren van gebeurtenissen, en meer—basisch altijd wanneer we tijdverschillen moeten meten of gebeurtenissen in volgorde moeten zetten.
-
 ## Hoe te:
-
 Laten we duiken in C# voor het vergelijken van datums. Stel we hebben twee `DateTime` objecten, `date1` en `date2`. We vergelijken ze met behulp van `DateTime.Compare(date1, date2)`, `date1.CompareTo(date2)`, of door eigenschappen rechtstreeks te vergelijken:
 
 ```C#
@@ -57,7 +52,6 @@ else
 Uitvoer zal tonen dat `date1` eerder is dan `date2` in alle vergelijkingen—je stelt het voor de hand liggende vast, maar dat is waar logs voor zijn.
 
 ## Diep Duiken
-
 DateTime vergelijkingen zijn een onderdeel van C# sinds de introductie ervan, cruciaal voor het omgaan met het ooit belangrijke concept van tijd. Intern representeren `DateTime` waarden tikken sinds middernacht, 1 januari 0001, binnen de Common Language Runtime.
 
 Snak je naar alternatieven? Je zou `TimeSpan` kunnen gebruiken voor verschillen, of het een niveau hoger tillen met NodaTime, een bibliotheek van Jon Skeet voor meer complexe behandeling van data en tijd.
@@ -65,7 +59,6 @@ Snak je naar alternatieven? Je zou `TimeSpan` kunnen gebruiken voor verschillen,
 Hier is een technisch leuk feitje: `DateTime`-typen in .NET kunnen `Unspecified`, `Utc`, of `Local` zijn. Een UTC-tijd vergelijken met een lokale tijd? Dat vraagt om problemen. Zorg altijd dat de typen overeenkomen om scheve logica te voorkomen!
 
 ## Zie Ook
-
 Duik dieper of verduidelijk dingen met deze:
 
 - Microsoft's DateTime documentatie: https://docs.microsoft.com/nl-nl/dotnet/api/system.datetime

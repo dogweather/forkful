@@ -11,9 +11,6 @@ title: Opprette en midlertidig fil
 weight: 21
 ---
 
-## What & Why?
-Å lage en midlertidig fil er en måte å lagre data midlertidig under kjøring av et program. Programmerere gjør dette for å behandle data uten å påvirke permanente filer eller for å minimere bruk av minne.
-
 ## How to:
 TypeScript har ikke innebygd støtte for å lage midlertidige filer, men vi kan bruke Node.js-biblioteker som `fs` og `tmp`.
 

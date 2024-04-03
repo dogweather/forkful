@@ -14,14 +14,10 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä & Miksi?
-
-Tekstitiedoston kirjoittaminen Clojuren avulla tarkoittaa tiedostojen luomista tai muokkaamista tietojen tallentamiseksi sovelluksen ulkopuolelle, mahdollistaen tietojen säilymisen, konfiguraation, lokituksen tai prosessien välisen viestinnän. Ohjelmoijat suorittavat tämän tehtävän ulkoistaakseen sovelluksen tilan, asetukset tai jakamiseksi tietoa ohjelman eri osien tai kokonaan eri ohjelmien välillä.
-
 ## Kuinka:
 
-### Tekstin kirjoittaminen tiedostoon Clojuren sisäänrakennettujen funktioiden avulla
 
+### Tekstin kirjoittaminen tiedostoon Clojuren sisäänrakennettujen funktioiden avulla
 `spit` funktio on yksinkertaisin tapa kirjoittaa tekstiä tiedostoon Clojuressa. Se ottaa kaksi argumenttia: tiedostopolun ja kirjoitettavan merkkijonon. Jos tiedostoa ei ole olemassa, `spit` luo sen. Jos se on, `spit` ylikirjoittaa sen.
 
 ```clojure
@@ -42,7 +38,6 @@ Lisätään tämä uusi rivi.
 ```
 
 ### Kolmannen osapuolen kirjastojen käyttö
-
 Vaikka Clojuren sisäänrakennetut toiminnot ovat usein riittäviä, yhteisö on kehittänyt vankkoja kirjastoja monimutkaisempia tai spesifisempiä tehtäviä varten. Tiedosto I/O:tä varten suosittu kirjasto on `clojure.java.io`, joka tarjoaa enemmän Java-tyylisen lähestymistavan tiedostojen käsittelyyn.
 
 `clojure.java.io` kirjaston käyttämiseen tiedoston kirjoittamiseen, sinun tulee ensin tuoda se:

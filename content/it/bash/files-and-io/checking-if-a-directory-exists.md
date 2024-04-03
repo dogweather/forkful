@@ -13,12 +13,7 @@ title: Verifica se una directory esiste
 weight: 20
 ---
 
-## Cos'è & Perché?
-
-Nella programmazione Bash, verificare se una directory esiste è un meccanismo di controllo essenziale usato per verificare la presenza di una directory prima di eseguire operazioni sui file. Questo controllo è cruciale per evitare errori come tentare di accedere o modificare directory che non esistono, garantendo un'esecuzione dello script più fluida e prevedibile.
-
 ## Come fare:
-
 Nel suo nucleo, Bash ti permette di controllare l'esistenza di una directory utilizzando dichiarazioni condizionali e l'operatore `-d`. Di seguito è presente un esempio semplice che dimostra come effettuare questo controllo.
 
 ```bash

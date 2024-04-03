@@ -12,12 +12,7 @@ title: Debug-output afdrukken
 weight: 33
 ---
 
-## Wat & Waarom?
-
-Debug output afdrukken gaat allemaal om het naar de console echoën van data om te checken wat er gaande is in je script. Programmeurs doen dit om variabelen te volgen, de logica stroom te volgen en die vervelende bugs te spotten.
-
 ## Hoe te:
-
 ```Bash
 #!/bin/bash
 
@@ -50,7 +45,6 @@ Debug: Lusiteratie 3
 ```
 
 ## Diepgaande duik
-
 Oorspronkelijk betekende debuggen het verwijderen van fysieke bugs die vroege computers verstoorden. Tegenwoordig gaat het om het verpletteren van code bugs. Debug outputs zijn het vergrootglas van de programmeur.
 
 Alternatieven voor `echo` in bash-scripts zijn onder andere `printf` voor meer formatteringsopties of schrijven naar een bestand met omleiding `>` voor blijvende logs.
@@ -58,7 +52,6 @@ Alternatieven voor `echo` in bash-scripts zijn onder andere `printf` voor meer f
 Bash ondersteunt ook conditionele debug output met de ingebouwde `set -x` om commando's en hun argumenten te traceren zoals ze worden uitgevoerd. `set -x` is geweldig voor volledige script debugging.
 
 ## Zie ook
-
 - De `man` pagina van Bash: `man bash`
 - Geavanceerde scriptgids: [Bash Guide for Beginners door Machtelt Garrels](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
 - Stack Overflow voor probleemoplossing: [stackoverflow.com](https://stackoverflow.com/questions/tagged/bash)

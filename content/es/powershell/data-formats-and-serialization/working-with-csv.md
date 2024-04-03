@@ -13,14 +13,10 @@ title: Trabajando con CSV
 weight: 37
 ---
 
-## ¿Qué & Por qué?
-
-Trabajar con archivos CSV (Valores Separados por Comas) es una tarea común para administrar y manipular datos de una forma estructurada y tabulada. Los programadores a menudo realizan esta operación para importar, exportar o manipular datos de manera eficiente para varias aplicaciones, tales como análisis de datos, informes o incluso para potenciar aplicaciones web.
-
 ## Cómo:
 
-### Leer un Archivo CSV
 
+### Leer un Archivo CSV
 Para leer desde un archivo CSV, utiliza el cmdlet `Import-Csv`. Este cmdlet lee el archivo y lo convierte en objetos personalizados de PowerShell para cada fila.
 
 ```powershell
@@ -40,7 +36,6 @@ Doe     29     Los Ángeles
 ```
 
 ### Escribir en un Archivo CSV
-
 Por el contrario, para escribir datos en un archivo CSV, se utiliza el cmdlet `Export-Csv`. Este cmdlet toma objetos de entrada y los convierte en un formato CSV.
 
 ```powershell
@@ -57,7 +52,6 @@ $users | Export-Csv -Path "C:\Data\new_users.csv" -NoTypeInformation
 Después de ejecutar, se crea un archivo llamado `new_users.csv` con los datos proporcionados.
 
 ### Filtrar y Manipular el Contenido de un CSV
-
 Para filtrar o manipular los datos de un archivo CSV, utiliza las capacidades de manipulación de objetos de PowerShell. Por ejemplo, para seleccionar solo los usuarios mayores de cierta edad y de una ciudad específica:
 
 ```powershell
@@ -79,5 +73,4 @@ Doe     29     Los Ángeles
 ```
 
 ### Utilizar Bibliotecas de Terceros
-
 Aunque los cmdlets nativos de PowerShell suelen ser suficientes para tareas comunes, operaciones más complejas podrían beneficiarse de bibliotecas o herramientas de terceros. Sin embargo, para la manipulación estándar de CSV, como leer, escribir, filtrar o ordenar, los cmdlets integrados de PowerShell como `Import-Csv` y `Export-Csv` suelen ofrecer una funcionalidad robusta sin necesidad de bibliotecas adicionales.

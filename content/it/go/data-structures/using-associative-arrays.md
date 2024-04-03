@@ -12,12 +12,7 @@ title: Utilizzo di array associativi
 weight: 15
 ---
 
-## Cosa & Perché?
-
-Gli array associativi, noti come mappe in Go, ti permettono di memorizzare coppie chiave-valore dove ogni chiave unica è mappata a un valore. I programmatori utilizzano le mappe per il recupero efficiente dei dati, la modifica e per mantenere una collezione di elementi che possono essere rapidamente accessibili utilizzando chiavi uniche.
-
 ## Come fare:
-
 Creare e inizializzare una mappa in Go può essere fatto in vari modi. Ecco un esempio basilare per iniziare:
 
 ```go
@@ -72,7 +67,6 @@ for color, hex := range colors {
 Ricorda, le mappe in Go non sono ordinate. L'ordine di iterazione non è garantito.
 
 ## Approfondimento
-
 In Go, le mappe sono implementate come tabelle hash. Ogni entrata nella mappa consiste di due elementi: una chiave e un valore. La chiave è hashata per memorizzare l'entrata, il che permette operazioni in tempo costante per un piccolo insieme di dati e complessità temporale media di O(1) con un hashing adeguato, che può degradare a O(n) nel caso peggiore con molte collisioni hash.
 
 Un'annotazione significativa per i nuovi programmatori di Go è che i tipi mappa sono tipi di riferimento. Questo significa che quando passi una mappa a una funzione, qualsiasi modifica apportata alla mappa all'interno di quella funzione è visibile al chiamante. Questo è diverso, per esempio, dal passare una struct a una funzione, dove la struct viene copiata a meno che non venga passata tramite un puntatore.

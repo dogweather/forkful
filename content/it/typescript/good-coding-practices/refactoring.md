@@ -11,9 +11,6 @@ title: Rifattorizzazione
 weight: 19
 ---
 
-## Cosa e Perché?
-Il Refactoring è il processo di ristrutturazione del codice informatico esistente senza modificarne il comportamento esterno. I programmatori lo fanno per rendere il codice più pulito, più manutenibile e per ridurne la complessità, il che lo rende più facile da comprendere per chi si avvicina da fresco.
-
 ## Come fare:
 Considera una funzione TypeScript che ha visto giorni migliori - è un po' un disastro e potrebbe usare un po' di cura amorevole:
 

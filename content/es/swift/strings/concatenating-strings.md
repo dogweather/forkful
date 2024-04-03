@@ -10,9 +10,6 @@ title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---
 
-## What & Why? (¿Qué y Por Qué?)
-Concatenar cadenas significa unir dos o más strings en uno solo. Hacemos esto para construir mensajes, combinar datos o simplemente para formatear la salida de un modo más legible.
-
 ## How to: (Cómo hacerlo:)
 Swift simplifica la concatenación de cadenas. Aquí tienes diferentes formas de hacerlo:
 

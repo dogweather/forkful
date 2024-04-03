@@ -12,12 +12,7 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mikä & Miksi?
-
-Virheiden kirjoittaminen (stderr) Fish Shellissä tarkoittaa virheilmoitusten tai diagnostiikkatietojen ohjaamista erillään tavallisesta tulosteesta (stdout). Ohjelmoijat tekevät näin varmistaakseen, että virhetietoja voidaan helposti tunnistaa, hallita tai ohjata uudelleen, mikä helpottaa sujuvampaa vianetsintää ja lokien käsittelyä.
-
 ## Miten:
-
 Fish Shellissä voit kirjoittaa stderr-näkymään ohjaamalla tulosteesi käyttäen `>&2`. Tässä on perusesimerkki:
 
 ```fish

@@ -13,12 +13,7 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-
-Afronden van getallen, een fundamenteel concept in computerprogrammering, betreft het aanpassen van een getal naar het dichtstbijzijnde gehele getal of naar een gespecificeerd aantal decimalen. Programmeurs voeren vaak afrondingen uit om getallen te vereenvoudigen voor de leesbaarheid voor mensen of om aan specifieke berekeningsbehoeften te voldoen, waarmee precisie verzekerd wordt en de rekenlast vermindert.
-
 ## Hoe:
-
 Google Apps Script, als een op JavaScript gebaseerde taal, biedt standaardmethodes om getallen af te ronden. Hier volgt een uitleg van drie veelgebruikte technieken:
 
 ### Math.round()
@@ -60,7 +55,6 @@ Logger.log(preciseRound); // Geeft uit: 2.57
 ```
 
 ## Diepgaand
-
 Afronden van getallen in Google Apps Script wijkt niet veel af van hoe het wordt gedaan in andere JavaScript-omgevingen. Het begrijpen van de verschillen in afrondingsmethoden en het potentieel voor problemen met drijvende-kommagetallen is echter cruciaal. Bijvoorbeeld, vanwege de manier waarop computers floats voorstellen, kunnen niet alle decimale breuken met perfecte nauwkeurigheid worden weergegeven, wat soms tot onverwachte afrondingsresultaten leidt.
 
 Historisch gezien gaat JavaScript (en bij uitbreiding Google Apps Script) hiermee om door zich te conformeren aan de IEEE 754-standaard, gebruikt door veel andere programmeertalen voor berekeningen met drijvende komma. Deze standaard definieert hoe getallen worden afgerond, waardoor consistentie over verschillende platforms en talen heen wordt verzekerd.

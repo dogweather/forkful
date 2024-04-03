@@ -11,12 +11,7 @@ title: Tratamento de Erros
 weight: 16
 ---
 
-## O Que & Porquê?
-
-O tratamento de erros em seus programas captura as coisas imprevistas que tentarão te atrapalhar. Você faz isso para evitar que seu Arduino entre em colapso quando o inesperado ocorrer.
-
 ## Como Fazer:
-
 Digamos que seu Arduino esteja lendo um sensor que pode ocasionalmente produzir valores fora do intervalo. Aqui está como você pode lidar com isso:
 
 ```Arduino
@@ -38,7 +33,6 @@ Erro: Valor do sensor fora do intervalo.
 ```
 
 ## Aprofundamento
-
 O tratamento de erros nem sempre foi tão direto. Nos primórdios, os desenvolvedores muitas vezes ignoravam os erros, levando ao temido "comportamento indefinido". Conforme a programação evoluiu, as ferramentas também — agora você tem exceções em muitas linguagens, mas elas ainda são uma boa e velha 'verificação prévia' no mundo Arduino devido às limitações de hardware e às raízes do C++.
 
 Na programação Arduino, é comum ver instruções `if-else` para tratamento de erros. Mas existem alternativas: usar a função `assert` para interromper a execução se uma condição falhar ou projetar dispositivos de segurança dentro da própria configuração de hardware.
@@ -46,7 +40,6 @@ Na programação Arduino, é comum ver instruções `if-else` para tratamento de
 Ao implementar o tratamento de erros, considere o impacto de parar o programa versus permitir que ele continue com um estado padrão ou seguro. Há uma troca, e a escolha certa depende do potencial dano de interrupções versus operação incorreta.
 
 ## Veja Também
-
 Aprimore-se na detecção e tratamento de erros com estes recursos:
 
 - Referência da Linguagem Arduino: https://www.arduino.cc/reference/en/

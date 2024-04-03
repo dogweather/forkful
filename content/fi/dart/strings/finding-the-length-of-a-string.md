@@ -14,9 +14,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## Mikä ja miksi?
-Merkkijonon pituuden selvittäminen Dartissa tarkoittaa annetun merkkijonon koodiyksiköiden (käytännössä merkkien määrä yksinkertaistettuna) määrän määrittämistä. Ohjelmoijat tekevät tämän manipuloidakseen merkkijonoja tarkemmin, esimerkiksi validoidakseen syötettä, katkaistakseen näytettävää tekstiä tai käsitellessään datamuotoja, joissa pituus on tärkeä (esim. protokollat, joissa viestit on etuliitetty pituudella).
-
 ## Kuinka:
 Dart tekee merkkijonon pituuden saamisesta suoraviivaista käyttäen `length` -ominaisuutta. Tässä on perusesimerkki:
 

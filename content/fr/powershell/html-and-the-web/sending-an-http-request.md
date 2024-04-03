@@ -11,9 +11,6 @@ title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---
 
-## What & Why?
-Envoyer une requête HTTP, c'est demander des infos ou passer une action sur un serveur web à distance. Les programmeurs le font pour interagir avec des API, des services web, et pour obtenir ou envoyer des données.
-
 ## How to:
 Faire une requête HTTP simple en PowerShell ? C'est assez direct. Utilisez `Invoke-RestMethod` ou `Invoke-WebRequest`. Voilà deux exemples:
 

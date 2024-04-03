@@ -14,12 +14,7 @@ title: "Interpolation d'une cha\xEEne de caract\xE8res"
 weight: 8
 ---
 
-## Quoi & Pourquoi ?
-
-L'interpolation de chaînes est le processus d'injecter directement des valeurs de variables dans des chaînes de caractères, souvent pour créer des messages significatifs sans concaténations fastidieuses. Les programmeurs le font pour un code plus propre, plus lisible et pour éviter les erreurs susceptibles de survenir dans des concaténations de chaînes complexes.
-
 ## Comment faire :
-
 En Dart, l'interpolation de chaînes est simple, en utilisant le symbole `$` pour interpoler directement les expressions au sein des littéraux de chaîne :
 
 ```dart

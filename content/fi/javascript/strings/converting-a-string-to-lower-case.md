@@ -11,9 +11,6 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## What & Why? - Mitä ja Miksi?
-Kun muunnetaan merkkijono pieniksi kirjaimiksi, tekstiin sovelletaan yhtenäistä muotoilua, joka on kaikki pienillä kirjaimilla. Koodarit tekevät tätä helpottaakseen vertailua ja prosessointia, sekä poistaakseen kirjainkokoon liittyvä ongelmat, kuten käyttäjäsyötteen johdonmukaisuuden.
-
 ## How to: - Näin teet:
 JavaScript tarjoaa muutaman suoranaisen keinon tehdä merkkijonon muunnoksen. `toLowerCase()` on suosituin.
 

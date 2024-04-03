@@ -10,9 +10,6 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## What & Why?
-Nedlasting av en nettside betyr å hente ned HTML-innholdet så det kan analyseres eller manipuleres lokalt. Programmerere gjør dette for datainnsamling, testing eller for å integrere informasjon i sine applikasjoner.
-
 ## How to:
 I Clojure kan vi bruke `clj-http` biblioteket for å laste ned nettsider. Her er et kort eksempel:
 

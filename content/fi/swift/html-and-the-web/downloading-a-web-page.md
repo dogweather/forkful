@@ -9,9 +9,6 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## What & Why? (Mikä & Miksi?)
-Ladataan nettisivua ohjelmassa, eli haetaan sen sisältöä koodilla. Se on hyödyllistä, kun tarvitaan automaattista tiedonkeruuta tai halutaan interaktiivisia toimintoja.
-
 ## How to: (Kuinka tehdään:)
 Swiftissä ladataan nettisivuja URLSession-entiteetin avulla. Tässä simppeleitä esimerkkejä:
 

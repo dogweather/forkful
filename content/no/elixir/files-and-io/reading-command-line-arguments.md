@@ -11,9 +11,6 @@ title: Lese kommandolinjeargumenter
 weight: 23
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Å lese kommandolinjeargumenter handler om å hente data som brukeren gir når de kjører programmet ditt. Vi gjør det for å gjøre programmer fleksible – slik at de kan utføre forskjellige oppgaver basert på hva brukeren ønsker.
-
 ## How To (Hvordan)
 ```Elixir
 defmodule Greeter do

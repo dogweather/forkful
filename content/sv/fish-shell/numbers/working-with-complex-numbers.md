@@ -11,9 +11,6 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad & Varför?
-Komplexa tal utvidgar idén om en endimensionell nummerlinje till ett tvådimensionellt komplext plan. Programmerare använder dem inom områden som ingenjörsvetenskap, fysik och grafik för beräkningar som kräver två komponenter, som signaler eller rotationer.
-
 ## Hur man gör:
 I Fish hanterar vi komplexa tal med `math` med verkliga och imaginära delar. Här är en start:
 

@@ -11,10 +11,7 @@ title: Lancement d'un nouveau projet
 weight: 1
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Commencer un nouveau projet PHP, c'est partir sur une feuille blanche, coder quelque chose d'unique. Les programmeurs le font pour résoudre des problèmes, explorer des idées, ou construire des produits innovants.
-
-## How to: (Comment faire :) 
+## How to: (Comment faire :)
 Pour démarrer un projet PHP, vous devez installer PHP et un serveur web comme Apache ou Nginx. Utilisez Composer pour gérer les dépendances. Voilà un exemple de structure basique :
 
 ```php

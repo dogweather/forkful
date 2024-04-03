@@ -11,9 +11,6 @@ title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---
 
-## What & Why? - Mikä ja Miksi?
-Väliaikaistiedoston luominen on prosessi, jossa tiedosto luodaan tilapäistä käyttöä varten. Koodarit käyttävät väliaikaistiedostoja datan tilapäiseen tallentamiseen, testaukseen tai välimuistina toimimiseen.
-
 ## How to: - Näin teet sen:
 Arduino-ympäristössä väliaikaistiedostoja ei tyypillisesti käytetä samoin kuin työpöytäjärjestelmissä, koska mikrokontrollereilla on rajoitettu muisti ja ne käsittelevät tiedostoja eri tavalla. Käytämme alla SD-kirjastoa väliaikaisten tiedostojen käsittelyyn SD-kortilla.
 

@@ -16,12 +16,7 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Cái gì và Tại sao?
-
-Việc xử lý lỗi trong C bao gồm việc phát hiện và phản ứng với các điều kiện bất thường phát sinh trong quá trình thực thi chương trình. Lập trình viên làm điều này để ngăn chặn lỗi, sự cố, và hành vi không dự đoán được, đảm bảo phần mềm hoạt động đáng tin cậy và hiệu quả dưới các kịch bản khác nhau.
-
 ## Cách thức:
-
 C không có hỗ trợ tích hợp sẵn cho ngoại lệ như một số ngôn ngữ khác. Thay vào đó, nó dựa vào một vài chiến lược xử lý lỗi thông thường, như trả về các giá trị đặc biệt từ các hàm và thiết lập các biến toàn cục như `errno`.
 
 **Trả Về Các Giá Trị Đặc Biệt**
@@ -82,7 +77,6 @@ Lỗi mở file: Không tìm thấy file hoặc thư mục
 ```
 
 ## Sâu Hơn
-
 Lịch sử, ngôn ngữ lập trình C với thiết kế tối giản đã loại trừ một cơ chế xử lý ngoại lệ tích hợp sẵn, phản ánh nguồn gốc lập trình hệ thống cấp thấp của nó, nơi hiệu suất tối đa và kiểm soát sát sao tới phần cứng là quan trọng. Thay vào đó, C áp dụng một cách tiếp cận xử lý lỗi thủ công phù hợp với triết lý cung cấp cho lập trình viên càng nhiều quyền kiểm soát càng tốt, ngay cả với chi phí của sự tiện lợi.
 
 Mặc dù cách tiếp cận này phù hợp với mục tiêu thiết kế của C, nhưng cũng có thể dẫn đến mã kiểm tra lỗi dài dòng và khả năng bỏ lỡ kiểm tra lỗi, điều mà các ngôn ngữ hiện đại giải quyết với cơ chế xử lý ngoại lệ có cấu trúc. Ví dụ, các ngoại lệ trong ngôn ngữ như Java hay C# cho phép xử lý lỗi tập trung, làm cho mã sạch sẽ hơn và quản lý lỗi dễ dàng hơn. Tuy nhiên, các ngoại lệ giới thiệu chi phí và phức tạp của chúng, có thể không lý tưởng cho lập trình cấp hệ thống nơi C tỏa sáng.

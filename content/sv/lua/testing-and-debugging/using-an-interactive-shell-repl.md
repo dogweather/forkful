@@ -11,9 +11,6 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-REPL står för Read-Eval-Print Loop, en interaktiv miljö där du snabbt kan testa kod. Programmerare använder den för att experimentera, felsöka och lära sig ett språks egenheter.
-
 ## Hur gör man:
 För att hoppa in i Lua's REPL, skriv bara `lua` i din terminal. Här är ett exempel på en session:
 

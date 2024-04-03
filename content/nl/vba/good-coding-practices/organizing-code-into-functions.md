@@ -13,12 +13,7 @@ title: Code organiseren in functies
 weight: 18
 ---
 
-## Wat & Waarom?
-
-Het organiseren van code in functies in Visual Basic for Applications (VBA) houdt in dat een programma opgedeeld wordt in kleinere, beheersbare stukjes, bekend als functies. Programmeurs doen dit om de leesbaarheid van de code te verbeteren, code efficiënt te hergebruiken en het debuggen en onderhoudsprocessen te vereenvoudigen.
-
 ## Hoe:
-
 In VBA worden functies gedefinieerd met de `Function` en `End Function` instructies. Hier is een eenvoudig voorbeeld van hoe je een functie creëert die het oppervlakte van een rechthoek berekent:
 
 ```basic
@@ -40,7 +35,6 @@ End Sub
 Wanneer uitgevoerd, toont deze code een berichtvenster dat zegt: `De oppervlakte is 50`.
 
 ### Variabelen Doorsturen ByRef en ByVal
-
 VBA staat je toe om variabelen naar functies door te sturen ofwel bij referentie (`ByRef`) ofwel bij waarde (`ByVal`). Het eerste betekent dat de originele variabele gewijzigd kan worden door de functie, terwijl het laatste een kopie doorstuurt, de originele variabele beschermend tegen veranderingen.
 
 ```basic
@@ -55,7 +49,6 @@ End Function
 ```
 
 ## Diepere Duik
-
 VBA, als een event-gedreven programmeertaal, legt aanzienlijke nadruk op functies en subroutines om diverse taken te behandelen. In tegenstelling tot veel moderne talen, heeft VBA een unieke eigenschap waar het `Function` sleutelwoord niet alleen een blok herbruikbare code verklaart, maar ook een impliciete retourwaarde toelaat die direct toegewezen wordt aan de naam van de functie.
 
 Historisch gezien is het ontwerp van VBA-functies beïnvloed door eerdere programmeerparadigma's waar inkapseling en modulariteit geleidelijk werden erkend om hun belang in softwareontwikkeling. Deze historische achtergrond heeft VBA ertoe geleid een enigszins behoudende maar functionele benadering te adopteren voor het organiseren van code.

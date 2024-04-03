@@ -13,12 +13,7 @@ title: "Manipulando archivos con comandos de l\xEDnea de una sola l\xEDnea"
 weight: 31
 ---
 
-## Qué y Por Qué?
-
-En el ámbito de la programación, especialmente cuando se trata de entornos Linux o Unix, manipular archivos directamente desde la interfaz de línea de comandos (CLI) no es solo una cuestión de conveniencia—es una herramienta de poder. Gracias a Fish Shell, con su sintaxis moderna y utilidades, puedes transformar, reubicar o analizar tus archivos con agilidad y precisión. Se trata de hacer más con menos, optimizando procesos y adoptando el poder de la línea de comandos para una gestión eficiente de archivos.
-
 ## Cómo hacerlo:
-
 Manipular archivos en Fish Shell es tanto intuitivo como potente. Aquí hay algunos ejemplos para mostrar su capacidad:
 
 1. **Crear un archivo** es tan sencillo como parece. Usa el comando `touch`:
@@ -80,7 +75,6 @@ end
 ```
 
 ## Estudio Detallado
-
 Manipular archivos desde la CLI con líneas únicas de Fish Shell es tanto una habilidad como un arte. Históricamente, los sistemas Unix y Linux siempre han proporcionado un poderoso conjunto de herramientas para la manipulación de archivos, tratando todo como un archivo en su filosofía. Esto ha allanado el camino para shells modernos como Fish, que no solo adoptan sino que extienden estas filosofías con una sintaxis mejorada y utilidades añadidas.
 
 Mientras que Fish proporciona una excelente experiencia de usuario y capacidades de scripting, vale la pena mencionar que pueden surgir ciertos problemas de cumplimiento de POSIX, especialmente cuando los scripts se portan de shells más tradicionales como Bash o SH. Esto es porque Fish no busca ser compatible con POSIX por diseño, optando en cambio por un enfoque más amigable para el usuario tanto en scripting como en uso de la línea de comandos. Como tal, los programadores deben ser conscientes de que, aunque Fish sobresale en muchas áreas, los scripts que requieren estricto cumplimiento de POSIX podrían necesitar ajustes o alternativas como `bash` o `zsh` para la compatibilidad.

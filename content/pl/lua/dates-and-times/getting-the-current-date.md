@@ -14,12 +14,7 @@ title: Pobieranie aktualnej daty
 weight: 29
 ---
 
-## Co i dlaczego?
-
-Pobieranie aktualnej daty w programowaniu jest kluczowym zadaniem dla wielu aplikacji, w tym zapisywania logów, znakowania czasu zdarzeń czy planowania zadań. W języku Lua, ta funkcjonalność pozwala programistom na bezproblemowe zarządzanie operacjami związanymi z datą i czasem w swoich aplikacjach, zapewniając skuteczną interakcję ich oprogramowania z danymi w czasie rzeczywistym.
-
 ## Jak to zrobić:
-
 Lua udostępnia funkcję `os.date` do pobierania aktualnej daty i czasu. Funkcję można użyć bez argumentów, aby otrzymać sformatowany ciąg znaków, lub z określonymi specyfikatorami formatu, aby dostosować wyjście. Oto jak jej używać:
 
 ```lua

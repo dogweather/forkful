@@ -10,12 +10,7 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## Qué y Por Qué?
-
-Buscar y reemplazar texto es simplemente encontrar una cadena de caracteres en un texto y cambiarla por otra diferente. Los programadores lo hacen todo el tiempo para corregir errores, actualizar datos o refactorizar código de manera eficiente.
-
 ## Cómo Hacerlo:
-
 ```Python
 # Ejemplo básico de búsqueda y reemplazo en Python
 
@@ -43,7 +38,6 @@ Contacto: soporte@example.org
 ```
 
 ## Profundizando
-
 El proceso de buscar y reemplazar texto en programación no es nuevo. Nace de la necesidad de manejar y manipular texto de forma automatizada que ha existido desde los primeros días de la informática. En Python, el módulo `re` (expresiones regulares) permite realizar búsquedas y reemplazos complejos y es parte del lenguaje desde sus versiones iniciales.
 
 Alternativas al método `replace` y al módulo `re` incluyen librerías de terceros como `regex`, que ofrece más características y mejor rendimiento. En el contexto de un editor de texto o IDE, comandos integrados permiten realizar estas operaciones rápidamente en múltiples archivos.
@@ -51,7 +45,6 @@ Alternativas al método `replace` y al módulo `re` incluyen librerías de terce
 En cuanto a implementación, buscar y reemplazar texto puede ser simple o involucrar algoritmos complejos, dependiendo de la naturaleza y tamaño del texto, así como de la expresividad del patrón de búsqueda.
 
 ## Ver También
-
 - Documentación oficial de Python para el módulo `re`: https://docs.python.org/3/library/re.html
 - Python String `replace()` Method: https://docs.python.org/3/library/stdtypes.html#str.replace
 - Expresiones regulares en Python: https://docs.python.org/3/howto/regex.html

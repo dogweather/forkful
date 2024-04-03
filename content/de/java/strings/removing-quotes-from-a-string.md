@@ -12,9 +12,6 @@ title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---
 
-## Was & Warum?
-Das Entfernen von Anführungszeichen aus einem String bedeutet, alle Anführungszeichen – ob einfach (' '), doppelt (" ") oder beides – aus den Textdaten zu entfernen. Programmierer tun dies, um Eingaben zu bereinigen, Daten für die Speicherung vorzubereiten oder Parsing-Aufgaben zu vereinfachen, bei denen Anführungszeichen unnötig und potenziell problematisch sind.
-
 ## Wie:
 Lassen Sie uns diese lästigen Anführungszeichen aus unserem Text entfernen. Wir verwenden die `replace()` Methode für die schnellen Korrekturen und regex für die harten Nüsse.
 

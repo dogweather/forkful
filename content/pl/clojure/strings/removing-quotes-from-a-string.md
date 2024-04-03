@@ -12,9 +12,6 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co i dlaczego?
-Usuwanie cudzysłowów ze łańcucha znaków oznacza pozbycie się tych uporczywych znaków podwójnych lub pojedynczych cudzysłowów, które otaczają twój tekst. Programiści robią to, aby oczyścić dane, zapewnić jednolitość lub przygotować łańcuchy znaków do przetwarzania, gdzie cudzysłowy są niepożądane lub mogą powodować błędy.
-
 ## Jak to zrobić:
 W Clojure łańcuchy znaków są niezmienne, więc kiedy mówimy o "usuwanie cudzysłowów", naprawdę mówimy o tworzeniu nowego łańcucha znaków bez cudzysłowów. Oto sposób użycia `clojure.string/replace`:
 

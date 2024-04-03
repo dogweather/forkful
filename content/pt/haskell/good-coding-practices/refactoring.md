@@ -11,9 +11,6 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O Que & Por Que?
-Refatoração é o processo de ajustar seu código sem alterar seu comportamento externo. É tudo sobre limpar e organizar sua abordagem para tornar o código mais fácil de ler, manter e estender. Isso também pode ajudar a eliminar bugs e melhorar o desempenho.
-
 ## Como fazer:
 Vamos supor que você tenha um bloco de código Haskell que está se repetindo mais do que sua música favorita. Aqui está uma rápida olhada em como você pode refatorar isso usando funções.
 

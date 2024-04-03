@@ -11,9 +11,6 @@ title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---
 
-## Vad & Varför?
-Att konvertera ett datum till en sträng innebär att omvandla datatypen `Date` till en läsbar textform. Programmerare gör detta för att presentera datum till användare eller för att sammanställa och spara datum i textfiler eller databaser.
-
 ## Hur gör man:
 ```Haskell
 import Data.Time

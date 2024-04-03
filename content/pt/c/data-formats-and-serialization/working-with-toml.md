@@ -13,12 +13,7 @@ title: Trabalhando com TOML
 weight: 39
 ---
 
-## O Que & Por Que?
-
-TOML (Tom's Obvious, Minimal Language) é um formato de arquivo de configuração fácil de ler devido à sua clareza semântica. Programadores o utilizam em arquivos de configuração de aplicações porque sua simplicidade e legibilidade humana o tornam uma escolha excelente sobre formatos como XML ou JSON em certos contextos.
-
 ## Como Fazer:
-
 Para trabalhar com TOML em C, você primeiro precisa de uma biblioteca capaz de analisar arquivos TOML, já que a biblioteca padrão do C não inclui essa funcionalidade. Uma escolha popular é `tomlc99`, um analisador TOML leve para C99. Aqui está um guia rápido para ler um simples arquivo de configuração TOML:
 
 Primeiro, certifique-se de ter instalado e devidamente vinculado o `tomlc99` no seu projeto.
@@ -82,7 +77,6 @@ Porta 2: 8002
 ```
 
 ## Aprofundamento
-
 O TOML foi criado por Tom Preston-Werner, co-fundador do GitHub, como resposta às limitações que percebeu em outros formatos de arquivo de configuração. Seu objetivo é ser direto e inequívoco, tanto para humanos quanto para computadores, ao ler e escrever sem precisar de regras de análise complexas. No ecossistema C, TOML não é um cidadão de primeira classe como pode ser em linguagens de alto nível, como Rust com seu `serde_toml` ou Python com `toml`, que possuem bibliotecas com suporte nativo. Em vez disso, desenvolvedores C precisam contar com bibliotecas externas como `tomlc99`, mas isso é típico dada a ênfase do C em minimalismo e desempenho.
 
 Embora o TOML seja elogiado por sua clareza, ao escolher um formato de arquivo de configuração, é vital considerar as necessidades do projeto. Em cenários que exigem estruturas mais complexas ou interatividade com APIs da web, JSON ou mesmo YAML podem oferecer um melhor ajuste apesar de sua complexidade aumentada. TOML brilha em configurações onde a legibilidade e simplicidade são primordiais, não necessariamente onde as estruturas de dados mais avançadas são necessárias.

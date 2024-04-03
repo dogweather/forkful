@@ -11,9 +11,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## Hva & Hvorfor?
-Å beregne en dato i fremtiden eller fortiden handler om å finne datoen før eller etter et gitt tidsintervall. Programmerere gjør dette for å håndtere oppgaver som frister, planlegging, eller tidsbaserte funksjoner.
-
 ## Slik gjør du:
 PowerShell gjør det lett å jobbe med datoer. Her ser du hvordan du legger til og trekker fra dager på dagens dato:
 

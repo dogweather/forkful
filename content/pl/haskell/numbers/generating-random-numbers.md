@@ -11,18 +11,12 @@ title: Generowanie liczb losowych
 weight: 12
 ---
 
-## Co i dlaczego?
-
-Generowanie liczb losowych w Haskellu polega na tworzeniu liczb, które są nieprzewidywalne według ludzkich standardów. Jest to kluczowe w scenariuszach sięgających od aplikacji kryptograficznych po symulacje, gdzie element przypadku jest wymagany do dokładnego modelowania zjawisk świata rzeczywistego.
-
 ## Jak to zrobić:
-
 Aby generować liczby losowe w Haskellu, zwykle używa się pakietu `random`, który jest częścią platformy Haskell. Oto przewodnik krok po kroku:
 
 Na początku upewnij się, że masz zainstalowany pakiet `random`. Jeśli nie, możesz go zdobyć przez Cabal lub Stack.
 
 ### Generowanie losowej liczby
-
 Aby wygenerować prostą losową liczbę, możesz użyć funkcji `randomRIO`, która produkuje losową wartość w określonym zakresie.
 
 ```Haskell
@@ -35,7 +29,6 @@ main = do
 ```
 
 ### Generowanie listy liczb losowych
-
 Generowanie listy liczb losowych jest nieco bardziej zaawansowane, ale nadal proste:
 
 ```Haskell
@@ -57,7 +50,6 @@ main = do
 Ten fragment kodu tworzy funkcję `randomList`, która generuje listę losowych liczb całkowitych. Zamień `(1, 100)` na żądany zakres.
 
 ## Wnikliwe spojrzenie
-
 Pakiet `random` w Haskellu zapewnia generator liczb pseudolosowych (PRNG), co oznacza, że wygenerowane liczby nie są prawdziwie losowe, ale mogą wydawać się losowe dla wielu zastosowań. Rdzeń możliwości generowania liczb losowych w Haskellu leży w klasie typów `RandomGen`, która abstrahuje różne metody generowania liczb losowych, oraz w klasie typów `Random`, która zawiera typy, które mogą być generowane losowo.
 
 Historycznie podejście Haskella do generowania liczb losowych podkreślało czystość i reprodukowalność. Dlatego operacje związane z losowością są wyraźnie obsługiwane w monadzie `IO` lub wymagają ręcznego przekazywania i aktualizowania stanów generatora — aby zachować przezroczystość odniesienia.

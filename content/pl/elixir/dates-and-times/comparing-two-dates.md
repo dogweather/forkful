@@ -11,9 +11,6 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## What & Why?
-Porównywanie dwóch dat to ustalanie, która z nich jest wcześniejsza, późniejsza lub czy są identyczne. Programiści robią to, by zarządzać terminami, porządkować wydarzenia czy sprawdzać ważność danych.
-
 ## How to:
 W Elixirze porównujemy daty używając modułu `DateTime`. Spójrz:
 

@@ -9,9 +9,6 @@ title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---
 
-## What & Why?
-"Concatenation" betyr å sette sammen tekster. Programmerere bruker det for å bygge komplekse strenger fra mindre biter, som kan endre seg dynamisk.
-
 ## How to:
 ```PowerShell
 # Plus operator

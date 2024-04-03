@@ -10,9 +10,6 @@ title: Calcolo di una data futura o passata
 weight: 26
 ---
 
-## Che cosa e perché?
-Calcolare una data nel futuro o nel passato significa computare una data specifica aggiungendo o sottraendo giorni, mesi, anni, eccetera. I programmatori lo fanno per gestire prenotazioni, scadenze, ricorrenze e altre funzioni legate al tempo nelle applicazioni.
-
 ## Come fare:
 Ecco un esempio su come aggiungere giorni a una data o sottrarli usando le funzionalità della libreria `<chrono>` di C++20:
 

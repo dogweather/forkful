@@ -11,12 +11,7 @@ title: Using associative arrays
 weight: 15
 ---
 
-## What & Why?
-
-Associative arrays, often known as dictionaries in Visual Basic for Applications (VBA), allow programmers to create collections of key-value pairs. This feature is pivotal for efficient data storage and retrieval, offering a more flexible and intuitive way to manage data than traditional array indices.
-
 ## How to:
-
 In VBA, the `Dictionary` object provides functionality similar to associative arrays. You must first add a reference to the Microsoft Scripting Runtime to use it:
 
 1. In the VBA editor, go to Tools > References...
@@ -52,7 +47,6 @@ Next Key
 ```
 
 ## Deep Dive
-
 The `Dictionary` object under the hood interfaces with components of the Windows Scripting Host. As such, it's a late-bound COM object, which was a common way to extend VBA's functionality in the past. Its usage in VBA can significantly enhance the language's ability to manipulate complex datasets without enforcing a rigid structure, as seen in traditional arrays or Excel ranges.
 
 One limitation to bear in mind is accessing the `Dictionary` requires setting a reference to the Microsoft Scripting Runtime, which can complicate distribution of your VBA projects. Alternatives like Collections exist within VBA but lack some of the `Dictionary`'s key features, such as the ability to easily check for the existence of a key without triggering an error. 

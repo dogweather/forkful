@@ -10,9 +10,6 @@ title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---
 
-## Was & Warum?
-Lesen von Kommandozeilenargumenten ermöglicht es Programmen, beim Start spezifische Optionen und Daten zu erhalten. Programmierer nutzen dies, um Applikationen flexibel und benutzerzentriert zu gestalten.
-
 ## How to:
 Hier ist die einfache Art, wie man in Clojure Kommandozeilenargumenten liest:
 

@@ -15,14 +15,10 @@ title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---
 
-## Co i dlaczego?
-Kapitalizacja łańcucha polega na zamianie pierwszego znaku każdego słowa w ciągu na wielką literę, jeśli jest ona pisana małą literą, zachowując przy tym niezmienione pozostałe znaki. Programiści często wykonują to zadanie w celu formatowania wyjść, wprowadzeń użytkownika lub przetwarzania danych, aby zapewnić spójność w sposobie prezentacji lub przetwarzania tekstu, szczególnie w interfejsach użytkownika czy zadaniach normalizacji danych.
-
 ## Jak to zrobić:
 W C++ można kapitalizować łańcuch za pomocą biblioteki standardowej, bez potrzeby korzystania z bibliotek stron trzecich. Jednak dla bardziej skomplikowanych lub specyficznych zachowań kapitalizacji, biblioteki takie jak Boost mogą być bardzo pomocne. Poniżej znajdują się przykłady ilustrujące oba podejścia.
 
 ### Korzystając z biblioteki standardowej C++:
-
 ```cpp
 #include <iostream>
 #include <cctype> // dla std::tolower i std::toupper
@@ -53,7 +49,6 @@ int main() {
 ```
 
 ### Korzystając z biblioteki Boost:
-
 Dla bardziej zaawansowanej manipulacji łańcuchami, w tym kapitalizacji z uwzględnieniem ustawień regionalnych, warto skorzystać z biblioteki Boost String Algo.
 
 Najpierw upewnij się, że masz zainstalowaną i skonfigurowaną bibliotekę Boost w swoim projekcie. Następnie możesz dołączyć niezbędne nagłówki i używać jej funkcji, jak pokazano poniżej.

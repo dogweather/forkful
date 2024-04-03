@@ -13,12 +13,7 @@ title: Starter et nytt prosjekt
 weight: 1
 ---
 
-## Hva & Hvorfor?
-
-Å starte et nytt prosjekt i Go innebærer å sette opp et arbeidsområde og initialisere det med de nødvendige Go-modulene. Programmerere gjør dette for å organisere kode, effektivt håndtere avhengigheter og lette byggeprosessene. Det er grunnleggende for å skape skalerbar og vedlikeholdbar programvare i Go.
-
 ## Hvordan:
-
 Først, sørg for at du har Go installert ved å kjøre `go version` i terminalen din. Du bør se versjonen av Go du har installert som utdata. Deretter, la oss starte et nytt prosjekt. Naviger til ditt arbeidsområde og kjør:
 
 ```shell
@@ -73,7 +68,6 @@ Hello, World!
 Gratulerer! Du har nettopp startet et nytt Go-prosjekt og kjørt ditt første Go-program.
 
 ## Dypdykk
-
 Initiativet til å innføre moduler som standarden for avhengighetsstyring i Go var et betydelig skifte i Go-økosystemet, offisielt vedtatt i Go 1.11. Før moduler, stolte Go-utviklere på GOPATH-miljøvariabelen for å håndtere avhengigheter, noe som var mindre intuitivt og ofte ledet til den beryktede "avhengighetshelvete."
 
 Moduler tilbyr en innesluttet måte å håndtere prosjektavhengigheter, versjonering på, og er et skritt mot å gjøre Go-prosjekter mer selvforsynte og bærbare. Hver modul spesifiserer sine avhengigheter som Go sporer i `go.mod`-filen, noe som forenkler håndteringen av avhengigheter på tvers av ulike miljøer og utviklingsstadier.

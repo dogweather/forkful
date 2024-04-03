@@ -15,12 +15,7 @@ title: "\u5C06\u5B57\u7B26\u4E32\u8F6C\u6362\u4E3A\u5C0F\u5199"
 weight: 4
 ---
 
-## What & Why? (是什么？为什么？)
-
-把字符串转换成小写意味着将所有字符改为小写格式。程序员这么做通常是为了实现大小写不敏感的比较或搜索。
-
 ## How to: (如何操作：)
-
 ```Rust
 fn main() {
     let greeting = "Hello, World!";
@@ -38,7 +33,6 @@ Lowercase: hello, world!
 ```
 
 ## Deep Dive (深入探索)
-
 在 Rust 中，`.to_lowercase()` 方法是基于 Unicode 标准实现的。它不仅仅是将 ASCII 字符转换，还能处理其他语言的字符。
 
 早期编程语言对字符串的操作较为基础，但随着 Unicode 的出现，现代语言如 Rust 提供了更全面的文本处理方式。
@@ -48,7 +42,6 @@ Lowercase: hello, world!
 注意，有些语言的大小写转换不是一对一的，所以在某些情况下， `.to_lowercase()` 之后的字符串可能比原来更长。
 
 ## See Also (另见)
-
 - Rust 文档中的 [`to_lowercase` 方法](https://doc.rust-lang.org/std/primitive.str.html#method.to_lowercase)
 - Unicode 标准说明: [Unicode Case Folding](https://www.unicode.org/reports/tr44/#CaseFolding)
 - 相关函数: [`.to_uppercase()`](https://doc.rust-lang.org/std/primitive.str.html#method.to_uppercase)

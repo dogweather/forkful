@@ -13,12 +13,7 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-
-Das Runden von Zahlen ist der Prozess der Anpassung der Ziffern einer Zahl, um deren Genauigkeit nach bestimmten Regeln zu verringern, entweder in Richtung der nächsten ganzen Zahl oder einer spezifizierten Anzahl von Dezimalstellen. Programmierer tun dies aus Gründen, die von der Begrenzung des benötigten Speicherplatzes bis hin zur Vereinfachung der Ausgabe für den Benutzer reichen, oder um genaue mathematische Operationen zu gewährleisten, die für sehr kleine Variationen empfindlich sind.
-
 ## Wie:
-
 Das Runden von Zahlen in C kann mit verschiedenen Funktionen erreicht werden, der gebräuchlichste Ansatz beinhaltet jedoch die Funktionen `floor()`, `ceil()` und `round()`. Diese Funktionen sind Teil der Standard-Mathematikbibliothek, daher müssen Sie `math.h` in Ihrem Programm einbinden.
 
 ```c
@@ -57,7 +52,6 @@ Runden auf zwei Dezimalstellen: 9.53
 ```
 
 ## Vertiefung
-
 Das Runden von Zahlen hat tiefe historische Wurzeln in Mathematik und Berechnung, integral sowohl für theoretische als auch angewandte Aspekte. In C bieten zwar `floor()`, `ceil()` und `round()` grundlegende Funktionalität, aber das Wesen des Rundens von Fließkommazahlen zu Ganzzahlen oder spezifischen Dezimalstellen ist aufgrund der binären Darstellung von Fließkommazahlen nuancierter. Diese Darstellung kann zu unerwarteten Ergebnissen führen, da Zahlen, die nicht genau in Binär dargestellt werden können (wie 0.1), gehandhabt werden.
 
 Diese Funktionen sind Teil der C-Standardbibliothek, definiert in `<math.h>`. Beim Runden von Zahlen, insbesondere für finanzielle oder präzise Ingenieurberechnungen, muss man die Implikationen der Verwendung binärer Fließkommazahlen berücksichtigen. Alternativen zu den eingebauten C-Funktionen für hochgenaues oder dezimalspezifisches Runden könnten das Implementieren benutzerdefinierter Rundungsfunktionen oder die Verwendung von Bibliotheken für die Berechnung mit beliebiger Präzision, wie GMP oder MPFR, umfassen, obwohl diese zusätzliche Komplexität und Abhängigkeiten einführen.

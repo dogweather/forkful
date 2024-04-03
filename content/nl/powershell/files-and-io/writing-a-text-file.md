@@ -11,9 +11,6 @@ title: Een tekstbestand schrijven
 weight: 24
 ---
 
-## Wat & Waarom?
-Een tekstbestand schrijven is gegevens opslaan als platte tekst op schijf. Programmeurs doen dit voor logboekregistratie, configuratie of het opslaan van gebruikersgegevens. Het is basis maar cruciaal voor de meeste applicaties.
-
 ## Hoe te:
 Hier is hoe je naar een tekstbestand schrijft in PowerShell; het is supergemakkelijk!
 

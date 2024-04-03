@@ -14,14 +14,10 @@ title: Scrivere test
 weight: 36
 ---
 
-## Cosa e Perché?
-
-Scrivere test in JavaScript si riferisce alla pratica di creare script automatizzati che eseguono il tuo codice per assicurarsi che si comporti come previsto, il che può migliorare significativamente l'affidabilità e la manutenibilità delle tue applicazioni. I programmatori fanno ciò per individuare precocemente i bug, facilitare il refactoring del codice e garantire che le nuove funzionalità non compromettano la funzionalità esistente.
-
 ## Come fare:
 
-### Approccio Nativo (usando Jest)
 
+### Approccio Nativo (usando Jest)
 Jest è un framework di test popolare che fornisce un'API amichevole per scrivere test unitari in JavaScript. Richiede una configurazione minima e viene fornito con funzionalità come funzioni mock, timer e test degli snapshot.
 
 1. **Installazione**:
@@ -56,7 +52,6 @@ PASS  ./sum.test.js
 ```
 
 ### Testare Codice Asincrono
-
 Jest semplifica il test di promesse e della sintassi async/await:
 
 ```javascript
@@ -73,7 +68,6 @@ test('l'addizione asincrona funziona', async () => {
 ```
 
 ### Utilizzare Librerie di Terze Parti (Mocha & Chai)
-
 Mocha è un altro framework di test popolare, spesso utilizzato con la libreria di asserzioni Chai per test più espressivi.
 
 1. **Installazione**:

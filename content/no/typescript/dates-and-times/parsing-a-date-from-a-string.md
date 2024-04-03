@@ -14,9 +14,6 @@ title: Analysering av en dato fra en streng
 weight: 30
 ---
 
-## Hva & Hvorfor?
-Å analysere en dato fra en tekststreng innebærer å konvertere tekstlige representasjoner av datoer og tider til et format som kan manipuleres og analyseres av programmet. Dette er en vanlig oppgave i programmering, da det tillater håndtering av brukerinndata, lagring av tidsstemplet data og interaksjoner med API-er, noe som gir mer funksjonelle og brukervennlige applikasjoner.
-
 ## Hvordan:
 TypeScript, som er en utvidelse av JavaScript, er avhengig av Date-objektet for å analysere datoer fra strenger. Imidlertid kan arbeid med datoer i JS/TS bli omstendelig eller upresist på grunn av særegenhetene til Date-objektet. Her er et grunnleggende eksempel etterfulgt av en tilnærming som bruker et populært bibliotek, `date-fns`, for mer robuste løsninger.
 

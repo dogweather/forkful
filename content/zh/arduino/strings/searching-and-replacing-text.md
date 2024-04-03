@@ -17,9 +17,6 @@ title: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C"
 weight: 10
 ---
 
-## What & Why? (是什么与为什么?)
-搜索和替换文本就是在字符串中找特定的字符或词汇，并把它们换成别的。程序员这样做是为了快速更新代码、修改配置文件或者改进数据格式。
-
 ## How to: (如何操作：)
 ```Arduino
 String originalText = "I like apples.";

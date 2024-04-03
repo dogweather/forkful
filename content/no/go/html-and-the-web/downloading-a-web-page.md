@@ -13,12 +13,7 @@ title: Laste ned en nettside
 weight: 42
 ---
 
-## Hva & Hvorfor?
-
-Å laste ned en nettside handler om å hente HTML-innholdet på en nettside via HTTP/HTTPS-protokollen. Programmerere gjør ofte dette for web scraping, dataanalyse, eller rett og slett for å programmert interagere med nettsteder for å automatisere oppgaver.
-
 ## Hvordan:
-
 I Go gir standardbiblioteket kraftige verktøy for webforespørsler, spesielt `net/http`-pakken. For å laste ned en nettside, bruker vi primært `http.Get`-metoden. Her er et grunnleggende eksempel:
 
 ```go
@@ -65,7 +60,6 @@ Dette enkle programmet gjør en HTTP GET-forespørsel til den angitte URL-en, de
 Merk: I moderne Go-programmering anses `ioutil.ReadAll` for å være utdatert siden Go 1.16 til fordel for `io.ReadAll`.
 
 ## Dypdykk
-
 Go-språket har et designfilosofi som vektlegger enkelhet, effektivitet og pålitelig feilhåndtering. Når det kommer til nettverksprogrammering, og spesielt nedlasting av nettsider, er Go's standardbibliotek, spesielt `net/http`, effektivt designet for å håndtere HTTP-forespørsel og responsoperasjoner.
 
 Tilnærmingen til nettverksforespørsler i Go går tilbake til språkets opprinnelse, låner konsepter fra forgjengere, men forbedrer betydelig på effektivitet og enkelhet. For nedlasting av innhold gjør Go's samtidighetsmodell ved bruk av gorutiner det til et eksepsjonelt kraftig verktøy for å gjøre asynkrone HTTP-forespørsler, og håndterer tusenvis av forespørsler parallelt med letthet.

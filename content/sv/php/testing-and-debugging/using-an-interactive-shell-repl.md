@@ -11,9 +11,6 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-En interaktiv skal, eller REPL (Read-Eval-Print Loop), låter dig skriva och köra PHP-kod på flygande fot. Det är idealiskt för experiment, felsökning eller lärande, eftersom du kan testa kodsnuttar utan overhead för att skapa ett helt skript.
-
 ## Hur man gör:
 Starta PHP REPL genom att köra `php -a` i din terminal. Här är ett smakprov på hur det fungerar:
 

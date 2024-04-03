@@ -13,16 +13,10 @@ title: Utdrag av delstrenger
 weight: 6
 ---
 
-## Hva & hvorfor?
-
-Å trekke ut delstrenger i C innebærer å skape en mindre streng (delstreng) fra en større etter angitte kriterier, som posisjon og lengde. Programmerere utfører ofte denne oppgaven for tolking av tekst, databehandling eller inputvalidering, noe som gjør det til en viktig ferdighet i manipulering og effektiv analyse av tekstdata.
-
 ## Hvordan:
-
 I motsetning til noen høyere nivå språk som tilbyr innebygde metoder for delstrenguttrekking, krever C en mer manuell tilnærming ved bruk av dens strengmanipuleringsfunksjoner. Slik kan du effektivt trekke ut en delstreng i C:
 
 ### Eksempel 1: Bruke `strncpy`
-
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -42,7 +36,6 @@ int main() {
 ```
 
 ### Eksempel 2: Lage en Funksjon
-
 For gjentatt bruk kan en dedikert funksjon for å trekke ut delstrenger være mer effektivt:
 
 ```c
@@ -67,7 +60,6 @@ int main() {
 ```
 
 ## Dypdykk
-
 Uttrekking av delstrenger i C håndteres hovedsakelig gjennom peker manipulasjon og nøye minnehåndtering, som reflekterer språkets lavnivå tilnærming til databehandling. Denne metoden stammer fra de tidlige dagene av C-programmering da effektiv ressursforvaltning var av største viktighet på grunn av den begrensede databehandlingskraften. Selv om fraværet av en innebygd delstrengfunksjon kan virke som et oversett, er det et eksempel på Cs filosofi om å gi programmerere fullstendig kontroll over minnehåndtering, ofte som fører til optimalisert, men mer kompleks kode.
 
 I moderne programmering tilbyr språk som Python og JavaScript innebygde metoder for delstrenguttak, som `slice()` eller strengskjæring ved bruk av indekser. Disse høyere nivå språkene håndterer minnehåndtering bak kulissene, og gir avkall på en viss grad av kontroll for enkelhet og lesbarhet.

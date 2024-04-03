@@ -17,12 +17,7 @@ title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---
 
-## Cái gì & Tại sao?
-
-Nội suy chuỗi là quá trình chèn trực tiếp giá trị biến vào trong chuỗi, thường được dùng để tạo ra các thông điệp ý nghĩa mà không cần đến sự nối chuỗi rườm rà. Lập trình viên thực hiện điều này để làm cho mã nguồn sạch hơn, dễ đọc hơn và ngăn chặn các lỗi có khả năng xảy ra trong quá trình nối chuỗi phức tạp.
-
 ## Làm thế nào:
-
 Trong Dart, nội suy chuỗi khá đơn giản, sử dụng ký tự `$` để nội suy các biểu thức trực tiếp trong các chuỗi ký tự:
 
 ```dart

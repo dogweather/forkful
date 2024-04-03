@@ -11,9 +11,6 @@ title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---
 
-## ¿Qué & Por Qué?
-Interpolar una cadena es insertar variables directamente dentro de una cadena de texto. Los programadores lo hacen para simplificar la concatenación, mejorar la legibilidad del código y aumentar la eficiencia al construir cadenas dinámicas.
-
 ## Cómo Hacerlo:
 ```PHP
 $nombre = "Mundo";

@@ -10,9 +10,6 @@ title: Lettura di un file di testo
 weight: 22
 ---
 
-## What & Why?
-Leggere un file di testo consiste nell'acquisire dati da un file salvato sul tuo disco. I programmatori lo fanno per elaborare o analizzare contenuti, configurazioni, log e più.
-
 ## How to:
 Clojure rende la lettura di file di testo semplice con poche righe di codice. Usiamo la funzione `slurp` per leggere tutto il contenuto del file o `line-seq` se vogliamo procedere riga per riga.
 

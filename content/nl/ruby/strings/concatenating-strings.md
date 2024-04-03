@@ -12,9 +12,6 @@ title: Samenvoegen van strings
 weight: 3
 ---
 
-## Wat & Waarom?
-Strings aan elkaar plakken is gewoon een chique manier om te zeggen 'ze achter elkaar plakken'. Programmeurs doen dit om woorden en zinnen te combineren, om berichten op te bouwen, of om dynamisch waarden in tekst in te voegen.
-
 ## Hoe:
 In Ruby kun je strings aan elkaar koppelen met de `+` operator of de `<<` methode, die de string ter plaatse wijzigt. Hier is hoe je de punten - of beter gezegd, de woorden - met elkaar verbindt:
 

@@ -10,9 +10,6 @@ title: Reading a text file
 weight: 22
 ---
 
-## What & Why?
-Reading a text file in programming lets your code absorb data, like pouring coffee into your brain in the morning. We do it to feed programs information they wouldn't have otherwise, like settings, data to process, or instructions to act upon.
-
 ## How to:
 Here's how you get Haskell to read text files without breaking a sweat. Crack open your favorite editor, and let's write some code.
 
@@ -52,7 +49,6 @@ Hello, World!
 ```
 
 ## Deep Dive
-
 Long ago, programs were asocial creatures, mostly processing data they generated themselves. But complexity grew, and so did the need to pull in outside info, thus reading from files became a staple.
 
 Haskell provides various ways to read files. We can do it the low-level way with `openFile`, `hGetContents`, and `hClose` or play it cool with `readFile`, which bundles everything neatly. 
@@ -62,7 +58,6 @@ Haskell provides various ways to read files. We can do it the low-level way with
 Haskell's standard `IO` actions handle files using the underlying OS mechanisms. The libraries abstract these into more user-friendly operations but at the end of the day, they're built atop Haskell's `IO` monad, which ensures actions happen in the right order.
 
 ## See Also
-
 - For official Haskell documentation, check out [Haskell's input and output documentation](https://www.haskell.org/tutorial/io.html).
 - If you're thirsty for more, savor a cup of knowledge at [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/input-and-output).
 - Deepen your understanding of file management with [Real World Haskell's take on IO](http://book.realworldhaskell.org/read/io.html).

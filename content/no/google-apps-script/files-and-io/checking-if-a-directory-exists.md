@@ -13,12 +13,7 @@ title: Sjekke om en katalog eksisterer
 weight: 20
 ---
 
-## Hva & Hvorfor?
-
-Å sjekke om en mappe eksisterer i Google Apps Script innebærer å bekrefte tilstedeværelsen av en mappe inne i Google Drive. Programmerere utfører ofte dette sjekket for å unngå feil eller unødvendig oppretting av mapper når de håndterer filer og kataloger programmert.
-
 ## Hvordan gjøre det:
-
 Google Apps Script tilbyr ikke en direkte "eksisterer" metode for mapper. I stedet bruker vi Google Drives søkefunksjoner for å sjekke om en mappe med et spesifikt navn eksisterer. Her er et trinn-for-trinn eksempel:
 
 ```javascript
@@ -54,7 +49,6 @@ Mappen eksisterer ikke.
 Dette skriptet benytter seg av metoden `getFoldersByName` som henter alle mapper i brukerens Drive som samsvarer med det spesifiserte navnet. Siden navn ikke er unike i Drive, returnerer denne metoden en `FolderIterator`. Tilstedeværelsen av et neste element (`hasNext()`) i denne iteratoren indikerer at mappen eksisterer.
 
 ## Dypdykk
-
 Historisk sett har filhåndtering i nett- og skymiljøer utviklet seg betydelig. Google Apps Script, som tilbyr et omfattende API for Google Drive, tillater avanserte operasjoner for håndtering av filer og mapper, inkludert søke- og sjekkmekanismene som er demonstrert. Imidlertid er et bemerkelsesverdig aspekt mangelen på en direkte eksistenssjekk, sannsynligvis på grunn av Google Drives tillatelse for flere mapper med samme navn, noe som er i kontrast til mange filsystemer som håndhever unike navn innenfor samme katalog.
 
 I denne konteksten er bruk av metoden `getFoldersByName` en effektiv omvei, men kan potensielt introdusere ineffektiviteter i et scenario hvor det eksisterer et stort antall mapper med duplikatnavn. Et alternativt tilnærming kunne innebære å opprettholde en applikasjonsspesifikk indeksering eller navngivningskonvensjon for å sikre raskere sjekker, spesielt når ytelsen blir en kritisk bekymring.

@@ -13,9 +13,6 @@ title: "F\xE5 det aktuella datumet"
 weight: 29
 ---
 
-## Vad & Varför?
-Att hämta det aktuella datumet i Haskell innebär att få systemets nuvarande tid och omvandla den till ett läsbart datumformat. Programmerare gör detta för att utföra operationer baserade på datumet, såsom loggning, schemaläggning av uppgifter eller tidstämpling av händelser i applikationer.
-
 ## Hur man gör:
 Haskells standardbibliotek, `base`, tillhandahåller `Data.Time`-modulen som erbjuder funktionalitet för att arbeta med datum och tider. Så här använder du den för att få det aktuella datumet:
 

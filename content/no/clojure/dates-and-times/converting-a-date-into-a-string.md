@@ -11,9 +11,6 @@ title: Konvertere en dato til en streng
 weight: 28
 ---
 
-## What & Why?
-Konvertering av dato til streng betyr å transformere et datoobjekt til en lesbar tekstform. Programmerere gjør dette fordi datoer ofte må vises til brukere eller lagres i tekstformat.
-
 ## How to:
 ```Clojure
 ;; Importer java.time.format for formateringsklasser

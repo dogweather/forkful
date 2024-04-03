@@ -22,12 +22,7 @@ title: "\uB514\uBC84\uADF8 \uCD9C\uB825 \uCD9C\uB825\uD558\uAE30"
 weight: 33
 ---
 
-## 무엇 & 왜?
-
-디버그 출력을 출력하는 것은 코드에 전략적으로 로그 문을 배치하여 런타임 동안 변수 값, 실행 흐름 또는 메시지 오류를 표시하는 것을 포함합니다. 프로그래머들은 그들의 스크립트의 동작을 추적하고 진단하여, 그들의 Google Apps Script 애플리케이션의 정확성과 효율성을 보장하기 위해 이를 광범위하게 활용합니다.
-
 ## 방법:
-
 Google Apps Script는 기본 디버깅에 `Logger` 클래스를 제공하고, 더 고급 필요에는 V8 런타임에서 소개된 `console` 클래스를 제공합니다.
 
 **Logger 사용하기:**
@@ -64,7 +59,6 @@ Current status: active, Count: 150
 ```
 
 ## 심층 분석
-
 최초에, `Logger.log`는 Google Apps Script에서 디버깅을 위한 주요 도구였으며, 검사를 위해 출력을 인쇄하는 간단하고 직선적인 방법을 제공했습니다. 그러나 스크립트가 더 복잡해지고 Google Cloud Platform 서비스와 통합됨에 따라, 더 강력한 로깅 솔루션이 필요하다는 것이 분명해졌습니다.
 
 V8 런타임이 도입되면서, `console.log`가 추가되었습니다. 이는 Google Apps Script를 표준 JavaScript 문법과 일치시켜, JavaScript에 익숙한 개발자들에게 언어를 더 접근하기 쉽게 만들뿐만 아니라, Google Cloud의 강력한 로깅 인프라를 활용합니다. `console.log`의 도입과 그것의 Google Cloud Platform과의 통합은 Google Apps Script 내에서 디버깅 기능의 중요한 진화를 표시하며, 개발자들에게 스크립트를 모니터링하고 문제를 해결하는 데 있어 더욱 동적이고 확장 가능한 접근 방식을 제공합니다.

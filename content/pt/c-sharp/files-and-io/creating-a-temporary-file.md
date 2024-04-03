@@ -11,9 +11,6 @@ title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---
 
-## O Que & Por Quê?
-Criar um arquivo temporário é a prática de gerar um arquivo destinado a armazenar dados temporariamente durante a execução de um programa. Programadores fazem isso para manusear dados que não precisam de persistência após o término do programa ou para garantir que sejam processados rapidamente e sem demora em disco rígido.
-
 ## Como Fazer:
 ```C#
 using System;

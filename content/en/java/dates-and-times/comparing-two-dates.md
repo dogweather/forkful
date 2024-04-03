@@ -10,9 +10,6 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-Comparing two dates means finding out if one date comes before, after, or is the same as another. Programmers do this to handle scheduling, deadlines, chronological sorting, and more.
-
 ## How to:
 Java makes life pretty easy when comparing dates. Use `LocalDate` and `compareTo`, `isBefore`, or `isAfter` methods. Here's the skinny:
 

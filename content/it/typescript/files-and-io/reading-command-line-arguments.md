@@ -10,9 +10,6 @@ title: Lettura degli argomenti della riga di comando
 weight: 23
 ---
 
-## What & Why?
-Leggere gli argomenti della riga di comando significa estrarre le informazioni inserite dagli utenti quando lanciano un programma da terminale. I programmatori usano questa funzionalità per personalizzare l'esecuzione dell'applicazione basandosi sui dati forniti.
-
 ## How to:
 Per leggere gli argomenti della riga di comando in TypeScript, usiamo `process.argv`. Ecco un esempio:
 

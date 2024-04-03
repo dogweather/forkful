@@ -10,9 +10,6 @@ title: "\u05D4\u05D5\u05E8\u05D3\u05EA \u05D3\u05E3 \u05D0\u05D9\u05E0\u05D8\u05
 weight: 42
 ---
 
-## מה ולמה?
-Downloading a web page means grabbing the HTML content from a URL. Programmers do this to process, analyze or display the content in a different context.
-
 ## איך לעשות:
 ```php
 <?php

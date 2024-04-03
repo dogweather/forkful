@@ -13,9 +13,6 @@ title: Analysering av HTML
 weight: 43
 ---
 
-## Hva & Hvorfor?
-Å parse HTML betyr å dissekere en nettsides oppmerking til noe et program kan forstå og manipulere. Programutviklere parser HTML for å ekstrahere data, automatisere webinteraksjoner eller migrere innhold mellom systemer.
-
 ## Hvordan:
 Kotlin gjør det enkelt å parse HTML med biblioteker som Jsoup. Slik gjør du det:
 

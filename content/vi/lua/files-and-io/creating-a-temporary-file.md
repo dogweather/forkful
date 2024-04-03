@@ -17,9 +17,6 @@ title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Cái gì & Tại sao?
-Tạo một tệp tạm thời là quá trình tạo ra một tệp có thờ lượng sống ngắn để lưu trữ dữ liệu chỉ cần thiết trong quá trình thực thi của chương trình. Các lập trình viên thực hiện việc này để tránh làm lộn xộn hệ thống tệp với dữ liệu không cần thiết và để xử lý thông tin nhạy cảm không nên tồn tại lâu dài.
-
 ## Cách thực hiện:
 Lua không có chức năng tích hợp sẵn cho tệp tạm thời, nhưng bạn có thể tự triển khai giải pháp của mình bằng cách sử dụng các thư viện `os` và `io`.
 

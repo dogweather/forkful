@@ -10,9 +10,6 @@ title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---
 
-## Was & Warum?
-Das Löschen von Zeichen, die einem Muster entsprechen, ist oft notwendig, um Eingabedaten zu bereinigen oder bestimmte Zeichen aus Text zu entfernen. Entwickler machen das, um Datensätze zu standardisieren oder unerwünschte Zeichen zu filtern.
-
 ## How to:
 Im folgenden TypeScript-Beispiel entfernen wir alle Ziffern aus einem String:
 

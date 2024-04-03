@@ -29,12 +29,7 @@ title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u0940 \u0932\u09
 weight: 7
 ---
 
-## क्या और क्यों? (What & Why?)
-
-स्ट्रिंग की लंबाई जानना मतलब है पता करना कि स्ट्रिंग में कितने कैरेक्टर्स (characters) हैं। प्रोग्रामर्स इसे इसलिए करते हैं कि यह टेक्स्ट प्रोसेसिंग, वैलिडेशन और UI डिज़ाइनिंग में अहम है।
-
 ## कैसे करें: (How to:)
-
 Swift में स्ट्रिंग की लंबाई निकालना सरल है। डेमो के तौर पर देखिए:
 
 ```Swift
@@ -50,13 +45,11 @@ print("स्ट्रिंग की लंबाई है: \(length)")
 ```
 
 ## गहराई से जानकारी (Deep Dive)
-
 जब Swift पहली बार आया था, NSString का उपयोग करके लंबाई पाई जाती थी, जो कि Objective-C का हिस्सा था। लेकिन Swift में, `.count` प्रॉपर्टी के जरिये हाई लेवल और सहज तरीके से स्ट्रिंग की लंबाई मिलती है। एक विकल्प `.characters.count` था पर अब वह अनावश्यक है।
 
 Unicode के कारण, स्ट्रिंग का `.count` इस्तेमाल करना सही रहता है क्योंकि यह सभी यूनिकोड कैरेक्टर्स को सही से गिनता है जबकि बाइट्स या UTF-16 कोड से नहीं। Swift का स्ट्रिंग हैंडलिंग डिज़ाइन Unicode से पूरा बना है।
 
 ## और देखें (See Also)
-
 - Swift Standard Library Reference: [String](https://developer.apple.com/documentation/swift/string)
 - Unicode.org's Unicode Standard: [https://www.unicode.org/standard/standard.html](https://www.unicode.org/standard/standard.html)
 - Swift Book - Strings and Characters: [https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

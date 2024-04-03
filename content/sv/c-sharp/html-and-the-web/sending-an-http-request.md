@@ -11,9 +11,6 @@ title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## What & Why?
-HTTP-request är hur dina appar pratar med omvärlden – de skickar och tar emot data via internet. Programmerare använder dem för att interagera med webb-tjänster, API:er och att hämta resurser på distans.
-
 ## How to:
 C# gör det enkelt att skicka HTTP-requests. Med `HttpClient` kan vi hämta en webbsida med bara några rader kod.
 

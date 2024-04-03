@@ -12,9 +12,6 @@ title: Lendo argumentos da linha de comando
 weight: 23
 ---
 
-## What & Why?
-Ler argumentos da linha de comando permite que programas em Elixir recebam dados externos quando são iniciados, tornando-os customizáveis e flexíveis. Programadores usam esses argumentos para modificar o comportamento do programa sem mudar o código.
-
 ## How to:
 Comece com um projeto Elixir. Aqui está o que você precisa:
 

@@ -10,9 +10,6 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## Qué y Por Qué?
-Buscar y reemplazar texto implica localizar ciertas cadenas de caracteres y sustituirlas por otras diferentes. Los programadores lo hacen constantemente para actualizar código, datos o simplemente corregir errores de forma rápida y eficaz.
-
 ## Cómo hacerlo:
 En Haskell, podemos usar la librería `Data.Text` para estas tareas. Aquí hay un ejemplo rápido:
 

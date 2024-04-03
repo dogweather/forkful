@@ -11,12 +11,7 @@ title: Working with YAML
 weight: 41
 ---
 
-## What & Why?
-
-YAML, which stands for "YAML Ain't Markup Language," is a human-readable data serialization standard that is commonly used for configuration files and data exchange between languages with varying data structures. Programmers often work with YAML for its simplicity and readability, especially in projects requiring extensive configuration or when transferring structured data between different systems.
-
 ## How to:
-
 While Google Apps Script (GAS) doesn't natively support YAML parsing or serialization, you can manipulate YAML data by using JavaScript libraries or writing custom parsing functions. For demonstration, let's consider how to parse a YAML string using a custom function, since external libraries cannot be directly imported into GAS.
 
 Assume you have a simple YAML configuration:
@@ -74,7 +69,6 @@ When `testYamlParsing()` is executed, it outputs:
 This custom parsing approach is quite basic and may need adjustments to accommodate complex YAML files.
 
 ## Deep Dive
-
 YAML, initially released in 2001, aimed to be more human-readable than its predecessors like XML or JSON. While its simplicity and ease of use are widely appreciated, handling YAML in Google Apps Script presents challenges due to the lack of direct support. Consequently, programmers often rely on JavaScript's versatility to parse and generate YAML data. However, for complex use cases, especially those involving deep nesting and advanced data structures, this method can get cumbersome and error-prone.
 
 JSON, by contrast, is natively supported in Google Apps Script and most other programming environments, offering a more straightforward approach for data serialization and deserialization without additional parsing overhead. JSON's syntax is less verbose than YAML's, making it more suitable for data interchange in web applications. Nonetheless, YAML remains popular for configuration files and situations where human readability is paramount.

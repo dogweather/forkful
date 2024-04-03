@@ -10,9 +10,6 @@ title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---
 
-## Was & Warum?
-Die Berechnung eines Datums in der Zukunft oder Vergangenheit bezieht sich darauf, von einem gegebenen Datum ausgehend ein neues Datum zu ermitteln. Programmierer nutzen dies für Features wie Erinnerungen, Buchungen und Prognosen.
-
 ## So geht's:
 ```C++
 #include <iostream>

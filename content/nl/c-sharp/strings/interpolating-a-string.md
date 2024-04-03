@@ -13,9 +13,6 @@ title: Een string interpoleren
 weight: 8
 ---
 
-## Wat & Waarom?
-Stringinterpolatie in C# stelt je in staat om een nieuwe string te creëren door expressies binnen een stringliteral op te nemen, waardoor het gemakkelijker wordt om strings te formatteren en te concatenaten. Programmeurs gebruiken deze functie om de leesbaarheid en het onderhoud van de code te verbeteren, met name wanneer ze te maken hebben met dynamische stringinhoud.
-
 ## Hoe te:
 In C# wordt stringinterpolatie aangeduid met een dollarteken (`$`) gevolgd door een stringliteral. De variabelenamen of expressies worden tussen accolades (`{}`) geplaatst.
 

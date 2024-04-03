@@ -10,9 +10,6 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-## Was & Warum?
-Temporäre Dateien sind kurzlebige Speicherbestandteile, die während der Laufzeit eines Programms für Datenverarbeitung genutzt werden. Programmierer erstellen solche Dateien, um Daten temporär zu halten, was hilft, den Speicherverbrauch zu optimieren und möglichen Datenverlust zu vermeiden.
-
 ## How to:
 In Ruby kannst du unkompliziert temporäre Dateien erstellen und verwenden. Hier ist, wie's geht:
 

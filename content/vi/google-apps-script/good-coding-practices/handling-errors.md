@@ -15,12 +15,7 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Cái gì & Tại sao?
-
-Xử lý lỗi trong Google Apps Script là việc dự đoán, bắt và phản hồi trước các ngoại lệ hoặc lỗi xảy ra trong quá trình thực thi script. Các lập trình viên thực hiện xử lý lỗi để bảo vệ script khỏi các sự cố không mong muốn, đảm bảo ứng dụng hoạt động mượt mà, thân thiện với người dùng có thể quản lý hoặc ghi lại lỗi một cách nhẹ nhàng mà không bị sập đột ngột.
-
 ## Làm thế nào:
-
 Google Apps Script, dựa trên JavaScript, cho phép chúng ta sử dụng câu lệnh `try-catch` truyền thống để xử lý lỗi, kèm theo `finally` nếu cần dọn dẹp bất kể thành công hay lỗi.
 
 ```javascript
@@ -58,7 +53,6 @@ Chức năng đã hoàn thành.
 Google Apps Script cũng hỗ trợ việc ném các lỗi tùy chỉnh bằng đối tượng `Error` và bắt các loại lỗi cụ thể nếu cần. Tuy nhiên, sự thiếu vắng của việc phân loại lỗi nâng cao khiến việc dựa vào thông điệp lỗi để xác định cụ thể trở nên cần thiết.
 
 ## Sâu hơn
-
 Trong lịch sử, xử lý lỗi trong các ngôn ngữ kịch bản như JavaScript (và theo đó là Google Apps Script) đã kém phức tạp hơn so với một số ngôn ngữ biên dịch, có các tính năng như hệ thống phân loại ngoại lệ chi tiết và công cụ gỡ lỗi toàn diện. Mô hình của Google Apps Script tương đối đơn giản, tận dụng mô hình `try-catch-finally` của JavaScript. Sự đơn giản này phù hợp với thiết kế ngôn ngữ để phát triển và triển khai nhanh chóng các ứng dụng quy mô nhỏ đến trung bình trong hệ sinh thái của Google, nhưng nó đôi khi có thể hạn chế các lập trình viên xử lý các tình huống lỗi phức tạp.
 
 Trong các ứng dụng phức tạp hơn, lập trình viên thường bổ sung xử lý lỗi địa phương của Google Apps Script bằng cách tùy chỉnh ghi và báo cáo lỗi. Điều này có thể bao gồm viết lỗi vào một Google Sheet cho mục đích kiểm toán hoặc sử dụng dịch vụ ghi nhận bên thứ ba thông qua Dịch vụ URL Fetch của Google Apps Script để gửi chi tiết lỗi ra khỏi môi trường script.

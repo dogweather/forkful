@@ -17,9 +17,6 @@ title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---
 
-## Cái Gì & Tại Sao?
-Việc viết hoa có nghĩa là thay đổi chữ cái đầu tiên của từ thành chữ in hoa; trong chuỗi ký tự, thường liên quan đến việc định dạng hoặc làm cho văn bản thân thiện với người dùng hơn. Các lập trình viên viết hoa chuỗi ký tự để tăng tính dễ đọc, tuân thủ quy tắc ngữ pháp, hoặc phù hợp với hướng dẫn về phong cách.
-
 ## Làm Thế Nào:
 Swift làm cho việc viết hoa chuỗi ký tự trở nên trực tiếp. Dưới đây là một hướng dẫn nhanh:
 

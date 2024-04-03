@@ -15,11 +15,7 @@ title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---
 
-## Cái gì & Tại sao?
-So sánh hai ngày nghĩa là xác định xem ngày nào diễn ra trước hoặc xem có bao nhiêu thời gian giữa chúng. Lập trình viên thực hiện điều này để xử lý như hạn chót, lịch trình, hoặc các tính năng dựa trên thời gian.
-
 ## Cách làm:
-
 Elm làm cho việc so sánh ngày trở nên đơn giản. Giả sử bạn có hai ngày. Đây là cách bạn kiểm tra xem ngày nào xảy ra trước:
 
 ```Elm

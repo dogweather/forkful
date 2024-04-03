@@ -11,9 +11,6 @@ title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---
 
-## What & Why? (Mitä & Miksi?)
-Luodaan väliaikainen tiedosto – se on tiedosto, joka poistuu automaattisesti, kun sitä ei enää tarvita. Ohjelmoijat tekevät näin tilapäisen tallennustilan tarpeessa ja turvallisuussyistä, kuten salasanojen käsittelyssä.
-
 ## How to: (Kuinka tehdään:)
 ```java
 import java.io.File;

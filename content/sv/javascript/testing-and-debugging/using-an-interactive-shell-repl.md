@@ -11,9 +11,6 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-Interaktiva skal, eller REPL (Read-Eval-Print Loop), låter dig köra kod på flyget, testa funktioner, algoritmer eller pilla med idéer. De är kodningens klotterplank, snabba och smutsiga, utan att behöva sätta upp en hel utvecklingsmiljö.
-
 ## Hur man gör:
 Node.js levereras med ett REPL som är tillgängligt via terminalen. Poppa upp det, och du är redo att börja. Här är en smakprov:
 

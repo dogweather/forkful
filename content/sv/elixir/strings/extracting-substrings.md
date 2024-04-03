@@ -11,9 +11,6 @@ title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---
 
-## Vad & Varför?
-Att extrahera delsträngar innebär att man plockar ut specifika delar av en sträng. Programmerare gör detta för att bearbeta eller analysera specifika bitar av information.
-
 ## Hur man gör:
 ```elixir
 # Starta med en grundsträng

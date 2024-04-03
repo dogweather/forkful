@@ -14,12 +14,7 @@ title: Interpolando uma String
 weight: 8
 ---
 
-## O Que & Por Quê?
-
-A interpolação de strings, na programação, envolve a construção de strings através da incorporação de expressões dentro de strings literais. Programadores fazem isso para criar mensagens informativas, consultas dinâmicas, ou para construir qualquer string com conteúdo variável de maneira eficiente e limpa, muitas vezes para saída de usuário ou fins de registro.
-
 ## Como fazer:
-
 C, diferentemente de algumas linguagens de alto nível, não suporta interpolação de strings diretamente em sua sintaxe. Em vez disso, a construção de strings com conteúdo variável é tipicamente alcançada usando a função `printf` ou suas variantes para saída, e `sprintf` para a criação de strings. Veja aqui como construir dinamicamente strings em C:
 
 ```c
@@ -48,7 +43,6 @@ Nome: Jane Doe, Idade: 28
 Esses trechos demonstram a maneira tradicional de incorporar dados variáveis em strings em C, proporcionando flexibilidade na construção de strings detalhadas.
 
 ## Mergulho Profundo
-
 Antes do advento de linguagens de programação mais modernas com recursos de interpolação de strings integrados, desenvolvedores de C tinham que contar com funções como `sprintf()`, `snprintf()`, e suas variantes para compor strings com conteúdo variável. Essa abordagem, embora eficaz, introduz riscos potenciais como estouro de buffer se não for cuidadosamente gerenciada, especialmente com `sprintf()`.
 
 Considerando alternativas, linguagens como Python e JavaScript introduziram recursos de interpolação de strings mais intuitivos, como f-strings (literais de string formatados) e literais de modelo, respectivamente. Esses recursos permitem que os desenvolvedores incorporem expressões diretamente nas literais de string, tornando o código mais legível e conciso.

@@ -15,9 +15,6 @@ title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---
 
-## What & Why? 什么和为什么？
-发送HTTP请求是网页与服务器间传信息的过程。程序员发送请求来获取数据、登陆账户、提交表单等。
-
 ## How to: 如何实现：
 ```Elm
 import Http

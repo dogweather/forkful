@@ -14,12 +14,7 @@ title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---
 
-## O Que & Por Quê?
-
-Escrever no erro padrão (stderr) é sobre redirecionar mensagens de erro e diagnósticos separadamente da saída principal do programa, que vai para a saída padrão (stdout). Programadores fazem isso para tornar o tratamento de erro e o registro mais gerenciáveis, especialmente em ambientes onde a distinção de saída é crucial para depuração e monitoramento.
-
 ## Como fazer:
-
 O Elm é voltado principalmente para o desenvolvimento web, onde o conceito de escrever diretamente para o stderr não se aplica da mesma forma que em ambientes de linha de comando tradicionais. No entanto, para programas Elm rodando no Node.js ou ambientes similares, a interoperação com JavaScript usando portas é a abordagem chave para alcançar uma funcionalidade similar. Aqui está como você pode configurar isso:
 
 Código Elm (`Main.elm`):

@@ -12,12 +12,7 @@ title: Gebruik van associatieve arrays
 weight: 15
 ---
 
-## Wat & Waarom?
-
-Associatieve arrays, ofwel maps, in Kotlin zijn collecties die sleutel-waardeparen opslaan. Programmeurs gebruiken ze voor het efficiënt organiseren en ophalen van gegevens op basis van unieke sleutels, waardoor het gemakkelijker wordt om informatie te beheren.
-
 ## Hoe te:
-
 Een map maken en gebruiken in Kotlin is eenvoudig. Hier is een snelle handleiding over hoe je dit doet:
 
 ```Kotlin
@@ -48,7 +43,6 @@ fun main() {
 ```
 
 ## Diepgaand
-
 Kotlin's maps komen rechtstreeks van zijn interoperabiliteit met Java, waar maps een essentieel onderdeel van collecties zijn. Echter, Kotlin verbetert hun bruikbaarheid door zowel veranderlijke (`MutableMap`) als alleen-lezen (`Map`) interfaces te bieden, in tegenstelling tot Java's uniforme `Map` interface. Dit onderscheid maakt duidelijk of een collectie bedoeld is voor modificatie of niet.
 
 Een belangrijk detail over Kotlin's map implementatie is het expliciete onderscheid tussen veranderlijke en onveranderlijke maps, wat de focus van de taal op onveranderlijkheid en thread veiligheid benadrukt.

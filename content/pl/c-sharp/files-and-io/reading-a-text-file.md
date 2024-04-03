@@ -11,9 +11,6 @@ title: Odczytywanie pliku tekstowego
 weight: 22
 ---
 
-## What & Why? (Co i dlaczego?)
-Czytanie pliku tekstowego to ładowanie jego zawartości do pamięci programu. Programiści robią to, by przetworzyć dane, wczytać konfiguracje, lub po prostu wyświetlić tekst użytkownikowi.
-
 ## How to: (Jak to zrobić:)
 ```C#
 using System;

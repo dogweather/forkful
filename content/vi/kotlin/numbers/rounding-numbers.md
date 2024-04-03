@@ -16,12 +16,7 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Cái gì & Tại sao?
-
-Làm tròn số có nghĩa là điều chỉnh chúng đến số nguyên gần nhất hoặc đến một mức độ chính xác nhất định. Lập trình viên thực hiện việc này để cải thiện khả năng đọc, giảm yêu cầu về bộ nhớ, hoặc bởi vì giá trị chính xác không quan trọng cho các phép toán tiếp theo.
-
 ## Làm thế nào:
-
 Trong Kotlin, làm tròn có thể được thực hiện bằng cách sử dụng một số hàm như `roundToInt()`, `roundToDouble()`, và sử dụng `BigDecimal` để có thêm kiểm soát:
 
 ```kotlin
@@ -41,7 +36,6 @@ fun main() {
 ```
 
 ## Tìm hiểu kỹ hơn
-
 Trong lịch sử, làm tròn số đã là một khái niệm cơ bản trong cả toán học và tính toán, được thiết kế để xử lý hạn chế về độ chính xác số học. Trong thời gian đầu của ngành tính toán, làm tròn rất quan trọng do chi phí của bộ nhớ cao.
 
 Trong Kotlin, làm tròn được xây dựng dựa trên các thư viện Java tiêu chuẩn. Các tùy chọn để làm tròn bao gồm `Math.round()`, làm tròn đến số nguyên gần nhất, và `BigDecimal` cho việc làm tròn có thể tùy chỉnh, nơi bạn có thể chỉ định một tỷ lệ và một `RoundingMode`.
@@ -49,7 +43,6 @@ Trong Kotlin, làm tròn được xây dựng dựa trên các thư viện Java 
 Mỗi `RoundingMode` có các chính sách khác nhau để xử lý hòa (khi chữ số nằm chính giữa các lựa chọn cho việc làm tròn). Ví dụ, `RoundingMode.HALF_UP` làm tròn đến láng giềng gần nhất, trừ khi cả hai láng giềng đều cách đều nhau, trường hợp đó nó sẽ làm tròn lên.
 
 ## Xem thêm
-
 - Tài liệu Kotlin về [`BigDecimal`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/java.math.-big-decimal/index.html)
 - Tài liệu Java của Oracle về [`RoundingMode`](https://docs.oracle.com/javase/8/docs/api/java/math/RoundingMode.html)
 - Tiêu chuẩn IEEE cho Số học Floating-Point (IEEE 754) [Tiêu chuẩn IEEE 754](https://ieeexplore.ieee.org/document/4610935)

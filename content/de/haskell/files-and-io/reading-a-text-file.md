@@ -10,9 +10,6 @@ title: Textdatei einlesen
 weight: 22
 ---
 
-## Was & Warum?
-Das Einlesen einer Textdatei bedeutet, Daten vom Datenträger in den Arbeitsspeicher zu laden, um sie mit einem Programm zu verarbeiten. Programmierer machen das, um Informationen zu nutzen, zu analysieren oder zu manipulieren, die nicht hart in den Quellcode kodiert sind.
-
 ## So geht's:
 Um eine Textdatei in Haskell zu lesen, nutzen wir die Standardbibliothek. Hier ein kurzes Beispiel:
 

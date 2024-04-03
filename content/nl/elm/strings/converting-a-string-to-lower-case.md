@@ -12,12 +12,7 @@ title: Een string omzetten naar kleine letters
 weight: 4
 ---
 
-## Wat & Waarom?
-
-Een string converteren naar kleine letters betekent dat alle alfabetische tekens worden omgezet naar hun kleine lettervorm. Programmeurs doen dit vaak voor hoofdletterongevoelige vergelijkingen of voor de normalisatie van tekstgegevens voor opslag en verwerking.
-
 ## Hoe te:
-
 Elm gebruikt de `String.toLower` functie om tekst te converteren:
 
 ```elm
@@ -36,7 +31,6 @@ result =
 ```
 
 ## Diepere Duik
-
 Elm's `String.toLower` komt uit Elm's kern `String` bibliotheek, met internationalisering in gedachten. Historisch gezien is de conversie van hoofdletters geëvolueerd van basis ASCII naar volledige Unicode-ondersteuning vanwege de behoefte aan internationale tekstverwerking.
 
 In sommige talen, zoals JavaScript, zijn er alternatieven zoals `toLowerCase()` en `toLocaleLowerCase()`, waarbij de laatste rekening houdt met locatiespecifieke regels. In Elm zou `String.toLower` in de meeste gevallen moeten volstaan, tenzij men te maken heeft met locatiegevoelige bewerkingen, die mogelijk een aangepaste implementatie vereisen.
@@ -44,7 +38,6 @@ In sommige talen, zoals JavaScript, zijn er alternatieven zoals `toLowerCase()` 
 Een detail om te onthouden is dat de omzetting van hoofdletters niet altijd één-op-één is; sommige tekens hebben mogelijk geen kleine letter equivalent, en andere kunnen van grootte veranderen (bijv., het converteren van "ß" in het Duits).
 
 ## Zie Ook
-
 - Elm String documentatie: [https://package.elm-lang.org/packages/elm/core/latest/String#toLower](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
 - Unicode Case Folding: [https://www.w3.org/International/wiki/Case_folding](https://www.w3.org/International/wiki/Case_folding)
 - Taalspecifieke kwesties met hoofdletteromzetting: [https://stackoverflow.com/questions/234591/upper-vs-lower-case](https://stackoverflow.com/questions/234591/upper-vs-lower-case)

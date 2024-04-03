@@ -14,14 +14,10 @@ title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---
 
-## Mikä & Miksi?
-
-PowerShellin integraatio JSONiin (JavaScript Object Notation) liittyy JSON-tietojen jäsentämiseen (lukeminen) ja tuottamiseen (kirjoittaminen), mikä on yleinen muoto tietojen vaihtoon verkossa. Ohjelmoijat työskentelevät JSONin kanssa ollakseen vuorovaikutuksessa verkon API:en kanssa, konfiguraatiotiedostojen kanssa tai helpottaakseen tietojen vaihtoa eri kielten ja alustojen välillä sen kevytrakenteisen ja kieli-riippumattoman luonteen vuoksi.
-
 ## Kuinka:
 
-### JSONin jäsentäminen
 
+### JSONin jäsentäminen
 JSONin lukemiseksi tai jäsentämiseksi PowerShellissa voit käyttää `ConvertFrom-Json` cmdletiä. Annetulle JSON-merkkijonolle tämä cmdlet muuntaa sen PowerShell-objektiksi.
 
 ```powershell
@@ -39,7 +35,6 @@ John Doe
 Tämä esimerkki havainnollistaa, kuinka jäsentää yksinkertainen JSON-merkkijono ja päästä käsiksi tuloksen ominaisuuksiin.
 
 ### JSONin tuottaminen
-
 JSONin tuottamiseksi PowerShell-objektista voit käyttää `ConvertTo-Json` cmdletiä. Tämä on kätevää valmisteltaessa tietoja lähetettäväksi verkkopalveluun tai tallennettavaksi konfiguraatiotiedostoon.
 
 ```powershell

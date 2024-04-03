@@ -12,12 +12,7 @@ title: Generowanie liczb losowych
 weight: 12
 ---
 
-## Co i dlaczego?
-
-Generowanie losowych liczb w Rust polega na korzystaniu z bibliotek do produkcji nieprzewidywalnych wartości liczbowych, co jest niezbędne do zadań z zakresu kryptografii i symulacji, do gier i algorytmów losowych.
-
 ## Jak to zrobić:
-
 Rust polega na zewnętrznych crate'ach do generowania losowych liczb, przy czym najczęściej używanym jest `rand`. Aby zacząć generować losowe liczby, musisz najpierw dodać `rand` do swojego pliku `Cargo.toml`:
 
 ```toml
@@ -53,7 +48,6 @@ Losowa liczba zmiennoprzecinkowa: 0.9401077112175732
 Należy zauważyć, że ponowne uruchomienie programu wyprodukuje inne wartości.
 
 ## Pogłębiona analiza
-
 Generowanie losowych liczb w Rust, ułatwiane przez `rand` i jego zależności takie jak `getrandom`, stanowi szeroką abstrakcję nad funkcjami systemu operacyjnego i generatorami algorytmicznymi. Historycznie, losowość w informatyce ewoluowała od prostych, przewidywalnych algorytmów do skomplikowanych, kryptograficznie bezpiecznych metod. Podejście Rusta ujęte jest przez jego „pluggable” cechę `Rng`, która może być wspierana przez różne generatory zgodnie z wymaganą jakością losowości i wydajnością.
 
 Dla większości aplikacji, poleganie na `rand` i RNG systemu zapewnia dobrą równowagę między prostotą a entropią. Jednakże, dla aplikacji kryptograficznych, crate'y takie jak `rand` przekazują generowanie ziaren do `getrandom`, który z kolei polega na mechanizmach specyficznych dla systemu operacyjnego (np. `/dev/urandom` w systemach podobnych do Unix), zapewniając kryptograficznie bezpieczną losowość. 

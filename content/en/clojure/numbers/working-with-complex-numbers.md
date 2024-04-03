@@ -10,9 +10,6 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-Complex numbers extend the real numbers with an additional part, the imaginary unit 'i'. Programmers use them in various domains, including signal processing, electromagnetic theory, and fractals, where calculations involving the square root of a negative number are routine.
-
 ## How to:
 Clojure provides built-in support for complex numbers through the `clojure.lang.Numbers` utility class. Use `complex` to create complex numbers and perform arithmetic.
 

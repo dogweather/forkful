@@ -11,12 +11,7 @@ title: Tratamento de erros
 weight: 16
 ---
 
-## O Quê & Porquê?
-
-O tratamento de erros é como você gerencia quando as coisas não saem como esperado no seu código. É crucial porque ajuda seus programas a falharem de maneira controlada e instrui os usuários de forma clara, em vez de apenas travarem e falharem.
-
 ## Como fazer:
-
 Aqui está o clássico bloco `try-catch`:
 
 ```javascript
@@ -56,7 +51,6 @@ fetchData();
 ```
 
 ## Aprofundando
-
 O tratamento de erros em JavaScript evoluiu. Lá atrás (ES3, cerca de 1999), tínhamos apenas o bloco `try-catch`. Não era super flexível, mas fazia o trabalho.
 
 ES6 (2015) introduziu Promessas e nos deu `.then()` e `.catch()`, permitindo-nos tratar erros assíncronos de forma mais elegante.
@@ -72,7 +66,6 @@ Quanto aos detalhes de implementação, quando um erro é lançado, os motores J
 Alternativas? Você poderia ignorar o tratamento de erros (má ideia), usar callbacks com parâmetros que priorizam erros (olá, estilo Node.js), ou ser mais sofisticado com bibliotecas e frameworks que oferecem suas próprias soluções.
 
 ## Veja Também
-
 Para mais informações sobre tratamento de erros:
 
 - MDN sobre try-catch: [MDN try...catch](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Statements/try...catch)

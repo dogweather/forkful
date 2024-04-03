@@ -12,9 +12,6 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co i dlaczego?
-Usuwanie cudzysłowów ze stringa oznacza wyeliminowanie otaczających pojedynczych (`'`) lub podwójnych (`"`) znaków cudzysłowu, które definiują literały stringów w kodzie. Programiści robią to z kilku powodów, takich jak formatowanie wyników, oczyszczanie danych wejściowych użytkownika, lub przygotowanie stringów do parsowania lub przechowywania, gdzie cudzysłowy są niepotrzebne lub mogłyby spowodować błędy.
-
 ## Jak to zrobić:
 Oto Twój bezpośredni przewodnik, jak uwolnić Twoje stringi od tych irytujących znaków cudzysłowu w TypeScript.
 

@@ -10,9 +10,6 @@ title: Deleting characters matching a pattern
 weight: 5
 ---
 
-## What & Why?
-Deleting characters matching a pattern is about finding specific sequences of characters in a string and getting rid of them. Programmers do it to clean up data, strip out unnecessary info, or format strings to match a required pattern.
-
 ## How to:
 In Java, we often use the `String.replaceAll()` method with a regex pattern to delete characters. Here's a quick example:
 

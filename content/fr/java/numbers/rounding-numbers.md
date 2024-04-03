@@ -11,9 +11,6 @@ title: Arrondir les nombres
 weight: 13
 ---
 
-## Quoi et Pourquoi ?
-Arrondir les nombres signifie les ajuster à un degré de précision spécifié. Les programmeurs le font pour simplifier les nombres pour une meilleure lisibilité, pour répondre à certaines spécifications, ou pour s'assurer que les calculs restent dans certaines limites, comme éviter les erreurs de précision dans les opérations en virgule flottante.
-
 ## Comment faire :
 Java offre plusieurs manières d’arrondir les nombres. Voici une démo rapide avec `Math.round()`, `BigDecimal` et `DecimalFormat`.
 

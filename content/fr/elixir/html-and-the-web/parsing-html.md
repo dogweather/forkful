@@ -12,12 +12,7 @@ title: Analyse Syntaxique du HTML
 weight: 43
 ---
 
-## Quoi et Pourquoi ?
-
-L'analyse de HTML en Elixir consiste à extraire des informations des documents HTML. Les programmeurs font cela pour interagir de manière programmatique avec les pages web, récupérer des données, ou automatiser des interactions web, permettant ainsi aux applications de comprendre et d'utiliser le contenu web de manière dynamique.
-
 ## Comment faire :
-
 Elixir, avec son modèle robuste de concurrence et son paradigme de programmation fonctionnelle, n'inclut pas de capacités d'analyse HTML intégrées. Cependant, vous pouvez utiliser des bibliothèques tierces populaires comme `Floki` à cet effet. Floki rend l'analyse de HTML intuitive et efficace, en tirant parti des fonctionnalités de correspondance de motifs et de mise en pipeline d'Elixir.
 
 Tout d'abord, ajoutez Floki à vos dépendances dans mix.exs :

@@ -13,9 +13,6 @@ title: Generera slumptal
 weight: 12
 ---
 
-## Vad & Varför?
-Att generera slumpmässiga nummer i Bash erbjuder ett sätt att introducera oförutsägbarhet i skript, vilket är väsentligt för uppgifter som att generera säkra lösenord, simulera data eller för att programmera spel. Programmerare utnyttjar denna möjlighet för att lägga till variabilitet i deras skript eller för att testa deras program under en mängd slumpmässigt genererade förhållanden.
-
 ## Hur man gör:
 I Bash är variabeln `$RANDOM` det givna valet för att generera slumpmässiga nummer. Varje gång du refererar till den ger Bash ett pseudoslumpmässigt heltal mellan 0 och 32767. Låt oss utforska några praktiska exempel:
 

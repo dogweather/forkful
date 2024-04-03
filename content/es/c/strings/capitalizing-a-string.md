@@ -13,12 +13,7 @@ title: Capitalizando una cadena de caracteres
 weight: 2
 ---
 
-## Qué y Por Qué?
-
-Capitalizar una cadena en C implica convertir el primer carácter de cada palabra en una cadena dada a mayúsculas si es una letra minúscula. Los programadores a menudo realizan esta operación para estandarizar la entrada del usuario para búsquedas, operaciones de ordenación o fines de visualización, asegurando consistencia y legibilidad en los datos de texto.
-
 ## Cómo hacerlo:
-
 Capitalizar una cadena en C requiere un conocimiento básico de manipulación de caracteres y recorrido de cadenas. Dado que C no tiene una función integrada para esto, típicamente se verifica cada carácter, ajustando su caso según sea necesario. A continuación, se presenta una implementación simple:
 
 ```c
@@ -55,7 +50,6 @@ Cadena capitalizada: Hello World. Programming In C!
 Este programa recorre la cadena `exampleString`, comprobando cada carácter para determinar si debe ser capitalizado. La función `islower` verifica si un carácter es una letra minúscula, mientras que `toupper` lo convierte en mayúsculas. El indicador `capNext` determina si la próxima letra encontrada debe ser convertida, estableciéndose después de que se encuentra cada espacio (' ') y, inicialmente, para capitalizar el primer carácter de la cadena.
 
 ## Análisis Profundo
-
 La técnica demostrada es sencilla pero carece de eficiencia para cadenas muy largas o cuando se ejecuta repetidamente en aplicaciones críticas en términos de rendimiento. En contextos históricos y de implementación, la manipulación de cadenas en C, incluida la capitalización, a menudo implica la manipulación directa de búferes, reflejando el enfoque de bajo nivel de C y otorgándole al programador control total sobre los compromisos de memoria y rendimiento.
 
 Existen métodos alternativos, más sofisticados para capitalizar cadenas, especialmente al considerar locales y caracteres unicode, donde las reglas de capitalización pueden diferir significativamente del escenario ASCII simple. Bibliotecas como ICU (Componentes Internacionales para Unicode) proporcionan soluciones robustas para estos casos, pero introducen dependencias y sobrecargas que pueden no ser necesarias para todas las aplicaciones.

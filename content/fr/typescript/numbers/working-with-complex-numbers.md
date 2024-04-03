@@ -12,9 +12,6 @@ title: Manipulation des nombres complexes
 weight: 14
 ---
 
-## Quoi et pourquoi ?
-Les nombres complexes, composés d'une partie réelle et d'une partie imaginaire (généralement écrits sous la forme a + bi), rendent possibles des calculs impraticables ou impossibles avec de simples nombres réels. Les programmeurs les utilisent dans des domaines tels que le traitement du signal, l'informatique quantique et les mathématiques appliquées, où les représentations numériques bidimensionnelles sont essentielles.
-
 ## Comment :
 Manipuler des nombres complexes en TypeScript nécessite une classe dédiée. Créons-en une et travaillons sur l'addition et la multiplication.
 

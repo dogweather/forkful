@@ -11,9 +11,6 @@ title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mikä & Miksi?
-Käyttämällä interaktiivista kuorta eli Read-Eval-Print-Loopia (REPL) voit koodata vuorovaikutteisesti. Ohjelmoijat käyttävät sitä Swift-koodinpätkien nopeaan testaamiseen, vianetsintään tai kielen opiskeluun.
-
 ## Kuinka:
 Kutsu REPL käyttöön avaamalla terminaali ja suorittamalla komento `swift`. Kirjoita koodia suoraan ja paina Enter suorittaaksesi sen. Tässä maistiainen:
 

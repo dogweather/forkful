@@ -10,16 +10,10 @@ title: Generazione di numeri casuali
 weight: 12
 ---
 
-## Cosa e Perché?
-
-Generare numeri casuali nella programmazione riguarda la creazione di numeri che non presentano alcun schema prevedibile. I programmatori lo fanno per vari motivi, inclusi simulazioni, testing di algoritmi, giochi e applicazioni di sicurezza, dove l'imprevedibilità è la chiave per raggiungere risultati realistici o sicuri.
-
 ## Come fare:
-
 Kotlin offre un modo semplice per generare numeri casuali attraverso la sua libreria standard. Ecco come puoi generare diversi tipi di valori casuali:
 
 ### Generare un Intero Casuale
-
 Per generare un intero casuale all'interno di un intervallo specifico:
 
 ```kotlin
@@ -32,7 +26,6 @@ fun main() {
 ```
 
 ### Generare un Double Casuale
-
 Allo stesso modo, per generare un double casuale:
 
 ```kotlin
@@ -45,7 +38,6 @@ fun main() {
 ```
 
 ### Generare un Booleano Casuale
-
 Per generare un valore booleano casuale:
 
 ```kotlin
@@ -58,7 +50,6 @@ fun main() {
 ```
 
 ### Seeding per Risultati Riproducibili
-
 Nei casi in cui hai bisogno di sequenze riproducibili di numeri casuali (ad esempio, nei test), puoi impostare il seed del generatore di numeri casuali:
 
 ```kotlin
@@ -73,7 +64,6 @@ fun main() {
 ```
 
 ## Approfondimento
-
 L'approccio della libreria standard di Kotlin alla generazione di numeri casuali sfrutta sotto il cofano `java.util.Random` di Java, garantendo un equilibrio tra facilità d'uso e performance. Tuttavia, è fondamentale notare che questi metodi generano numeri pseudo-casuali, il che significa che i numeri appaiono casuali ma sono generati utilizzando un processo deterministico.
 
 Per la maggior parte delle applicazioni, la casualità fornita dalla classe `Random` di Kotlin è sufficiente. Tuttavia, per applicazioni più sensibili alla sicurezza, come la crittografia, dove la qualità della casualità è di primaria importanza, si dovrebbe considerare l'uso di `java.security.SecureRandom` invece. SecureRandom è specificamente progettato per operazioni crittografiche, fornendo una qualità di casualità superiore, sebbene con un potenziale compromesso sulle performance.

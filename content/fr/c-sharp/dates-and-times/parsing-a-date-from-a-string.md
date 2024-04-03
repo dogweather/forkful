@@ -13,11 +13,7 @@ title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---
 
-## Quoi & Pourquoi ?
-Analyser une date à partir d'une chaîne en C# consiste à convertir des représentations textuelles de dates et d'heures en un objet `DateTime`. Cela est essentiel pour les applications qui doivent manipuler, stocker ou afficher des dates et des heures dans différents formats, comme les applications de planification, les processeurs de journaux ou tout système gérant des entrées de dates provenant d'utilisateurs ou de sources externes.
-
 ## Comment faire :
-
 **Analyse Basique :**
 
 Les méthodes `DateTime.Parse` et `DateTime.TryParse` sont les options privilégiées pour convertir une chaîne en `DateTime`. Voici un exemple rapide :

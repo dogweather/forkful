@@ -13,9 +13,6 @@ title: Lavorare con i CSV
 weight: 37
 ---
 
-## Cosa & Perché?
-I file CSV (Comma-Separated Values, Valori Separati da Virgola) sono un formato comune di scambio dati che rappresenta dati tabellari in testo semplice, utilizzando virgole per separare i valori individuali. I programmatori lavorano con i file CSV per importare, esportare e manipolare dati con facilità attraverso varie applicazioni e servizi, dato che è un formato semplice, ampiamente supportato e compatibile con applicazioni di fogli di calcolo, database e linguaggi di programmazione.
-
 ## Come fare:
 Lavorare con i file CSV in C# può essere realizzato attraverso lo spazio dei nomi `System.IO` per operazioni di base, e per manipolazioni più complesse o per gestire file di grandi dimensioni senza interruzioni, si potrebbe considerare l'utilizzo di librerie di terze parti come `CsvHelper`. Di seguito sono riportati esempi di come leggere e scrivere file CSV utilizzando entrambi gli approcci.
 

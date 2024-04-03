@@ -14,16 +14,10 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-
-Wyrażenia regularne w programowaniu umożliwiają dopasowywanie wzorców i manipulowanie ciągami znaków na podstawie określonych wzorów. Programiści używają ich do zadań takich jak walidacja, wyszukiwanie i manipulacja tekstem ze względu na ich wszechstronność i skuteczność w obsłudze skomplikowanych operacji na ciągach znaków.
-
 ## Jak to zrobić:
-
 Lua nie obsługuje natywnie wyrażeń regularnych w ten sam sposób co języki takie jak Perl czy Python. Zamiast tego oferuje możliwości dopasowywania wzorców, które pokrywają wiele powszechnych przypadków użycia wyrażeń regularnych. Jednakże, w przypadku potrzeby pełnoprawnego wsparcia wyrażeń regularnych, można użyć biblioteki firm trzecich, takiej jak `lrexlib`.
 
 ### Podstawowe dopasowywanie wzorców w Lua:
-
 Lua zapewnia potężny system dopasowywania wzorców, którego możesz użyć do prostych zamienników i wyszukiwań:
 
 ```lua
@@ -41,7 +35,6 @@ print(s)
 ```
 
 ### Przechwytywanie podciągów:
-
 Możesz przechwycić części ciągu, które pasują do wzorców:
 
 ```lua
@@ -52,7 +45,6 @@ print("Dzień:", d, "Miesiąc:", m, "Rok:", y)
 ```
 
 ### Użycie `lrexlib` do wyrażeń regularnych:
-
 Aby użyć rzeczywistych wyrażeń regularnych, możesz zainstalować i użyć `lrexlib`. Zakładając, że masz to zainstalowane (`luarocks install lrexlib-pcre`), możesz wykonać bardziej złożone dopasowywanie wzorców:
 
 ```lua

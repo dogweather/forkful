@@ -11,9 +11,6 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## What & Why? (Co i dlaczego?)
-Szukanie i zamiana tekstu to podstawa edycji - chodzi o zmianę jednego ciągu znaków na inny. Programiści robią to, by szybko poprawiać błędy, aktualizować dane lub zmieniać kod.
-
 ## How to (Jak to zrobić):
 Python makes text manipulation easy. Here are simple examples using the `replace()` method and regular expressions.
 

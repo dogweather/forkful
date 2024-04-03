@@ -11,12 +11,7 @@ title: Generating random numbers
 weight: 12
 ---
 
-## What & Why?
-
-Generating random numbers in Rust involves utilizing libraries to produce unpredicted numerical values, which is indispensable for tasks ranging from cryptography and simulations to gaming and randomized algorithms.
-
 ## How to:
-
 Rust relies on external crates for random number generation, with `rand` being the most commonly used. To start generating random numbers, you'll first need to add `rand` to your `Cargo.toml` file:
 
 ```toml
@@ -52,7 +47,6 @@ Random Float: 0.9401077112175732
 Note that re-running the program will produce different values.
 
 ## Deep Dive
-
 Random number generation in Rust, facilitated through `rand` and its dependencies like `getrandom`, represents a broad abstraction over operating system facilities and algorithmic generators. Historically, randomness in computing has evolved from simple, predictable algorithms to complex, cryptographically secure methods. Rust's approach encapsulates this evolution through its pluggable `Rng` trait, which can be backed by various generators according to the required randomness quality and performance.
 
 For most applications, relying on `rand` and the system's RNG provides a good balance between simplicity and entropy. However, for cryptographic applications, crates like `rand` defer to `getrandom` for seeding, which itself relies on OS-specific mechanisms (e.g., `/dev/urandom` on Unix-like systems), ensuring cryptographically secure randomness. 

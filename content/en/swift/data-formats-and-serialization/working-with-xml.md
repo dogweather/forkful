@@ -9,9 +9,6 @@ title: Working with XML
 weight: 40
 ---
 
-## What & Why?
-Working with XML means parsing and generating XML data in Swift. Programmers do this for data interchange, especially when integrating with systems where XML is the standard format.
-
 ## How to:
 Swift provides `XMLParser` and `XMLDocument` for parsing XML data. Here's a snippet to parse a simple XML string:
 

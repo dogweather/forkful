@@ -10,9 +10,6 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## ¿Qué y Por Qué?
-Buscar y reemplazar texto es una operación común que intercambia un fragmento de texto por otro. Los programadores lo hacen para corregir errores, actualizar datos o modificar código de forma masiva, lo cual ahorra tiempo y evita errores manuales.
-
 ## Cómo:
 Aquí tienes un ejemplo básico en C#. Vamos a buscar y reemplazar texto en una cadena.
 

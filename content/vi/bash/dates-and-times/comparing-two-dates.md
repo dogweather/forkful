@@ -15,9 +15,6 @@ title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---
 
-## Lý do và Ý nghĩa
-So sánh hai ngày cho phép bạn xác định ngày nào sớm hơn, muộn hơn, hoặc nếu chúng là cùng một thời điểm. Các lập trình viên làm điều này để sắp xếp sự kiện, kích hoạt các hành động theo thời gian, hoặc chỉ đơn giản là theo dõi thời gian đã qua.
-
 ## Cách thực hiện:
 Dưới đây là một cách nhanh chóng để so sánh hai ngày trong Bash:
 

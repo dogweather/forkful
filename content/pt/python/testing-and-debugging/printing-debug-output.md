@@ -12,12 +12,7 @@ title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---
 
-## O Que & Porquê?
-
-A impressão de saídas de depuração permite que programadores rastreiem e entendam o que está acontecendo dentro de seu código ao executá-lo. Fazemos isso para identificar e corrigir bugs, otimizar o desempenho e assegurar que a lógica do programa está correta.
-
 ## Como fazer:
-
 Para imprimir uma saída simples no Python, utilizamos a função `print()`. Aqui está um exemplo de como usá-la para depurar:
 
 ```Python
@@ -52,7 +47,6 @@ DEBUG:root:Isto é uma mensagem de debug.
 ```
 
 ## Aprofundando:
-
 Vamos nos aprofundar um pouco na história e detalhes de implementação. Originalmente, a impressão de saídas de depuração era feita com chamadas simples à função `print()`, que enviavam o texto ao stdout (saída padrão). Com o tempo, ferramentas mais avançadas como o módulo `logging` foram criadas, oferecendo níveis de depuração (DEBUG, INFO, WARNING, ERROR, CRITICAL) que possibilitam um controle mais refinado sobre o que é registrado.
 
 Além disso, em ambientes de produção, o `logging` permite que mensagens de depuração sejam escritas em arquivos de log ao invés da saída padrão, o que facilita a análise posterior de incidentes.
@@ -60,7 +54,6 @@ Além disso, em ambientes de produção, o `logging` permite que mensagens de de
 Quanto à implementação, o uso do `logging` é preferível ao `print()` por ser mais flexível e poderoso. Vale ressaltar que mensagens excessivas de depuração podem impactar a performance do programa e devem ser usadas com cautela em um ambiente de produção.
 
 ## Veja Também:
-
 - Documentação oficial do Python sobre logging: https://docs.python.org/3/library/logging.html
 - Tutorial interativo de Python: https://www.learnpython.org/ 
 - Perguntas e respostas sobre Python (Stack Overflow em português): https://pt.stackoverflow.com/questions/tagged/python

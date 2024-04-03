@@ -14,12 +14,7 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä ja miksi?
-
-CSV-tiedostojen (pilkuilla erotetut arvot) käsittely sisältää tiedostojen jäsentämisen ja luomisen, jotka tallentavat taulukkomuotoista dataa yksinkertaisessa, tekstipohjaisessa muodossa. Ohjelmoijat osallistuvat usein tähän tehtävään tehokkaasti tuodakseen tai viedäkseen dataa laskentataulukoista, tietokannoista, tai helpottaakseen datan vaihtoa eri ohjelmien välillä.
-
 ## Miten:
-
 Haskellissa CSV-tiedostojen käsittelyn voi saavuttaa käyttämällä `cassava`-kirjastoa, joka on yksi suosituimmista kolmannen osapuolen kirjastoista tähän tarkoitukseen. Alla on esimerkkejä, jotka esittelevät, kuinka lukea ja kirjoittaa CSV-tiedostoihin käyttäen `cassava`a.
 
 **1. CSV-tiedoston lukeminen:**

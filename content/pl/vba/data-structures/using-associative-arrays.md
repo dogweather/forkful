@@ -14,12 +14,7 @@ title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---
 
-## Co i dlaczego?
-
-Tablice asocjacyjne, często nazywane słownikami w Visual Basic dla Aplikacji (VBA), pozwalają programistom na tworzenie kolekcji par klucz-wartość. Ta funkcja jest kluczowa dla efektywnego przechowywania i odzyskiwania danych, oferując bardziej elastyczny i intuicyjny sposób zarządzania danymi niż tradycyjne indeksy tablic.
-
 ## Jak używać:
-
 W VBA obiekt `Dictionary` zapewnia funkcjonalność podobną do tablic asocjacyjnych. Musisz najpierw dodać odniesienie do Microsoft Scripting Runtime, aby go użyć:
 
 1. W edytorze VBA przejdź do Narzędzia > Odniesienia...
@@ -55,7 +50,6 @@ Next Key
 ```
 
 ## Głębsze spojrzenie
-
 Obiekt `Dictionary` pod spodem łączy się ze składnikami Windows Scripting Host. Jako taki, jest późnozwiązanym obiektem COM, który był w przeszłości powszechnym sposobem rozszerzania funkcjonalności VBA. Jego użycie w VBA może znacząco zwiększyć zdolność języka do manipulowania złożonymi zestawami danych bez narzucania sztywnej struktury, jak w przypadku tradycyjnych tablic lub zakresów Excela.
 
 Jednym z ograniczeń do zapamiętania jest to, że dostęp do `Dictionary` wymaga ustawienia odniesienia do Microsoft Scripting Runtime, co może komplikować dystrybucję projektów VBA. Alternatywy takie jak kolekcje istnieją wewnątrz VBA, ale brakuje im niektórych kluczowych cech `Dictionary`, takich jak łatwość sprawdzania istnienia klucza bez wywoływania błędu.

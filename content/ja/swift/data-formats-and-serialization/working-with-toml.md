@@ -22,9 +22,6 @@ title: "TOML\u3092\u6271\u3046\u65B9\u6CD5"
 weight: 39
 ---
 
-## はじめに
-TOML（Tom's Obvious, Minimal Language）は、その明快なセマンティクスのおかげで読みやすいデータシリアライゼーションフォーマットです。プログラマーは、人間による可読性と機械による簡単な解析が鍵となる設定ファイルにTOMLを使用します。
-
 ## 方法
 まず、TOMLパーサーが必要です。Swiftには組み込みのものがないため、`TOMLDecoder`を使用しましょう。Swift Package Managerを通じてインストールし、その後簡単にTOMLをシリアライズおよびデシリアライズします。
 

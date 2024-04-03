@@ -13,35 +13,26 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## Qué y Por Qué?
-
-Redondear números es el proceso de ajustar un número a su número entero más cercano o a un número especificado de decimales. Los programadores a menudo redondean números para simplificar cálculos, mejorar la legibilidad o preparar datos para su visualización, asegurando consistencia y claridad en las salidas numéricas.
-
 ## Cómo hacerlo:
-
 Dart proporciona métodos nativos en su tipo central `num` para operaciones de redondeo. Aquí, exploraremos métodos como `round()`, `floor()`, `ceil()`, y cómo redondear a un número específico de decimales.
 
 ### Redondeando al entero más cercano:
-
 ```dart
 var number = 3.56;
 print(number.round()); // Salida: 4
 ```
 
 ### Redondeando hacia abajo:
-
 ```dart
 print(number.floor()); // Salida: 3
 ```
 
 ### Redondeando hacia arriba:
-
 ```dart
 print(number.ceil()); // Salida: 4
 ```
 
 ### Redondeando a un número específico de decimales:
-
 Para redondear a un número específico de decimales, podemos usar el método `toStringAsFixed()`, que devuelve una cadena, o usar una combinación de `pow` de `dart:math` para obtener un resultado numérico.
 
 ```dart

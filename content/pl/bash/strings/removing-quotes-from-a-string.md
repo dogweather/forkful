@@ -11,9 +11,6 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co i dlaczego?
-Usunięcie cudzysłowów z ciągu polega na usunięciu znaków cudzysłowu, które otaczają ciąg znaków. Programiści często chcą to robić, aby oczyścić dane wejściowe, przygotować dane do celów porównawczych lub przestrzegać określonego formatu danych podczas interfejsowania z innymi programami lub systemami.
-
 ## Jak to zrobić:
 Bash oferuje kilka sposobów na usunięcie cudzysłowów z ciągów znaków. Oto kilka szybkich przykładów:
 

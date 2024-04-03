@@ -23,12 +23,7 @@ title: "\u65B0\u3057\u3044\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u59CB\u3081
 weight: 1
 ---
 
-## What & Why? (何となぜ？)
-
-新しいプロジェクトを始めるとは、新しいアプリやライブラリをゼロから開発することです。プログラマーは新しいアイデアを実現するため、または新しい技術スキルを磨くためにプロジェクトをスタートさせます。
-
 ## How to: (方法)
-
 ```TypeScript
 // TypeScriptの新しいプロジェクトを始める
 // 1. プロジェクトフォルダを作成
@@ -58,7 +53,6 @@ Hello TypeScript!
 ```
 
 ## Deep Dive (掘り下げる)
-
 TypeScriptのプロジェクトを始める前にJSとTSの違いを理解しておくことが重要です。TypeScriptはJavaScriptに型情報を加えたもので、大規模なアプリケーションに適しています。
 
 JavaScriptに比べると、TypeScriptはコードを安全にし、開発者間のコミュニケーションを助けるためのツールです。スタティックタイプチェックにより、コンパイル時にエラーを発見しやすくなります。
@@ -68,7 +62,6 @@ JavaScriptに比べると、TypeScriptはコードを安全にし、開発者間
 他のオプションとして、`deno`というTypeScriptを第一級の言語としてサポートするランタイムもあります。Node.jsとは異なり、Denoはセキュリティに焦点を当て、スクリプトが実行する前に明示的な許可を必要とするコンセプトを採用しています。
 
 ## See Also (関連情報)
-
 - [TypeScript公式ドキュメント](https://www.typescriptlang.org/docs/)
 - [npm公式ドキュメント](https://docs.npmjs.com/)
 - [Deno公式サイト](https://deno.land/)

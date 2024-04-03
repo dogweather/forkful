@@ -18,9 +18,6 @@ title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 weight: 38
 ---
 
-## 무엇 & 왜?
-Clojure에서 JSON(JavaScript Object Notation)을 다루는 것은 JSON 문자열을 Clojure 데이터 구조체(맵, 벡터)로 파싱하고 그 반대로 변환하는 작업을 포함합니다. 이 작업은 웹 서비스, API, 그리고 구조화된 텍스트 기반 포맷으로 데이터를 소통해야 하는 애플리케이션에 있어 기본적인 것이다. 왜냐하면 JSON은 다양한 프로그래밍 환경에 걸쳐 보편적으로 인식되고 지원되기 때문입니다.
-
 ## 방법:
 Clojure는 JSON을 다루기 위한 내장 함수를 포함하고 있지 않으므로, 일반적으로 제3자 라이브러리를 사용합니다. `cheshire`와 `jsonista`는 사용하기 쉽고 성능이 좋아 인기있는 선택입니다.
 

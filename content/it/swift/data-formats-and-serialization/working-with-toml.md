@@ -10,9 +10,6 @@ title: Lavorare con TOML
 weight: 39
 ---
 
-## Cos'è & Perché?
-TOML (Tom's Obvious, Minimal Language) è un formato di serializzazione dei dati che è facile da leggere grazie alla sua chiara semantica. I programmatori utilizzano TOML per file di configurazione dove la leggibilità da parte degli umani e l'elaborazione semplice da parte delle macchine sono fondamentali.
-
 ## Come fare:
 Per iniziare, hai bisogno di un analizzatore TOML. Swift non ne ha uno incorporato, quindi usiamo `TOMLDecoder`. Installalo tramite Swift Package Manager e poi serializza e deserializza TOML con facilità.
 

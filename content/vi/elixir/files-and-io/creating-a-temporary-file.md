@@ -15,9 +15,6 @@ title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Cái gì & Tại sao?
-Tạo một tệp tạm thời có nghĩa là tạo một tệp bạn sẽ loại bỏ sau một thời gian sử dụng ngắn. Các lập trình viên thực hiện điều này cho việc lưu trữ tạm thời hoặc khi họ muốn tránh làm đầy ổ cứng với dữ liệu có tuổi thọ rất ngắn.
-
 ## Cách thực hiện:
 Trong Elixir, bạn có thể tạo và sử dụng một tệp tạm thời với hàm `System.tmp_dir/1` và module `File`. Dưới đây là một ví dụ nhanh:
 

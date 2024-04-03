@@ -11,12 +11,7 @@ title: Capitalizing a string
 weight: 2
 ---
 
-## What & Why?
-
-Capitalizing a string involves modifying the input so that the first character is uppercase while the rest remain lowercase, commonly used for formatting names or titles. Programmers do this to ensure data consistency and improve readability within user interfaces or documents.
-
 ## How to:
-
 Google Apps Script, being based on JavaScript, allows several methods to capitalize a string, albeit without a built-in function. Here are a couple of succinct examples:
 
 **Method 1: Using charAt() and slice()**
@@ -49,7 +44,6 @@ console.log(result);  // Output: Hello, world
 Both methods ensure the first character of the string is capitalized, and the rest are lowercase, suitable for a variety of applications including but not limited to Google Sheets manipulation or document editing via Apps Script.
 
 ## Deep Dive
-
 Capitalizing strings in Google Apps Script is straightforward, leveraging JavaScript's powerful string manipulation capabilities. Historically, languages like Python offer built-in methods such as `.capitalize()` to achieve this, placing a slight extra step for JavaScript and Apps Script programmers. However, the absence of a built-in function in JavaScript/Google Apps Script encourages flexibility and a deeper understanding of string manipulation techniques. 
 
 For complex scenarios, such as capitalizing each word in a string (Title Case), programmers might combine regex methods with `split()` and `map()` functions to process each word individually. Though Google Apps Script does not provide a direct method for string capitalization, the use of existing JavaScript string manipulation methods offers ample flexibility, allowing developers to handle strings efficiently according to their specific needs. 

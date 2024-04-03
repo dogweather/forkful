@@ -11,9 +11,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---
 
-## O Que & Porquê?
-Enviar uma requisição HTTP é basicamente pedir para um servidor web enviar dados para a sua aplicação. Fazemos isso para interagir com APIs, acessar recursos da web, ou qualquer outra tarefa que requer a comunicação com serviços na internet.
-
 ## Como Fazer?
 No C#, uma das formas mais comuns de enviar uma requisição HTTP é usando a classe `HttpClient`. Aqui está um exemplo simples:
 

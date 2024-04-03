@@ -17,9 +17,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Làm thế nào & Tại sao?
-Số phức, bao gồm một phần thực và một phần ảo (thường được viết dưới dạng a + bi), mở ra khả năng tính toán không thực tế hoặc không thể thực hiện chỉ với số thực. Các lập trình viên sử dụng chúng trong các lĩnh vực như xử lý tín hiệu, tính toán lượng tử và toán ứng dụng, nơi mà biểu diễn số hai chiều là cần thiết.
-
 ## Cách thực hiện:
 Xử lý số phức trong TypeScript đòi hỏi một lớp dédicac. Hãy tạo một lớp và làm việc qua phép cộng và nhân.
 

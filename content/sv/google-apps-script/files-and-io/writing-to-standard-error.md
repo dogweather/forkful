@@ -14,16 +14,10 @@ title: Skriva till standardfel
 weight: 25
 ---
 
-## Vad & Varför?
-
-Att skriva till standardfel (stderr) i programmeringsspråk handlar om att dirigera felmeddelanden och diagnostik till en separat ström, skild från den standardmässiga utmatningen (stdout). Programmerare gör detta för att särskilja normal programutmatning från felmeddelanden, vilket gör felsökning och logganalys mer rakt på sak.
-
 ## Hur:
-
 Google Apps Script, som är ett skriptspråk för lättviktsapplikationsutveckling på Google Apps-plattformen, erbjuder inte en direkt inbyggd funktion som `console.error()` för skrivning till stderr, som man kanske hittar i Node.js eller Python. Dock kan du simulera detta beteende genom att använda Google Apps Scripts loggtjänster eller anpassad felhantering för att hantera och separera felutmatningar.
 
 ### Exempel: Användning av `Logger` för felmeddelanden
-
 ```javascript
 function logError() {
   try {
@@ -40,7 +34,6 @@ function logError() {
 När du kör `logError()`, kommer detta att skriva felmeddelandet till Google Apps Scripts logg, vilken du kan se genom `Visa > Loggar`. Detta är inte exakt stderr, men det tjänar ett liknande syfte att separera felloggar från standardutmatningar.
 
 ### Avancerad diagnostisk loggning
-
 För mer avancerad felsökning och felloggning kan du använda Stackdriver Logging, nu känd som Google Cloud's Operations Suite.
 
 ```javascript
@@ -58,7 +51,6 @@ function advancedErrorLogging() {
 Detta kommer att rikta felmeddelandet till Stackdriver Logging, där det hanteras som en logg på felnivå. Notera att integrationen av Stackdriver/Google Cloud's Operations Suite erbjuder en mer detaljerad och sökbar logglösning jämfört med `Logger`.
 
 ## Fördjupning
-
 Avsaknaden av en dedikerad `stderr`-ström i Google Apps Script speglar dess natur och ursprung som ett molnbaserat skriptspråk, där traditionella konsol- eller terminalbaserade utmatningar (som stdout och stderr) är mindre relevanta. Historiskt var Google Apps Script utformat för att förbättra funktionaliteten i Google Apps med enkla skript, med fokus på användarvänlighet snarare än omfattande funktioner tillgängliga i mer komplexa programmeringsmiljöer.
 
 Detta sagt, evolutionen av Google Apps Script mot mer avancerad applikationsutveckling har föranlett utvecklare att anta kreativa tillvägagångssätt för felhantering och loggning, genom att utnyttja tillgängliga tjänster som Logger och integrera med Google Cloud’s Operations Suite. Dessa metoder, även om de inte är direkta stderr-implementeringar, erbjuder robusta alternativ för felhantering och diagnostisk loggning i en molncentrisk miljö.

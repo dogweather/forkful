@@ -10,9 +10,6 @@ title: Removendo aspas de uma string
 weight: 9
 ---
 
-## O Que & Por Quê?
-Remover aspas de uma string significa descartar aquelas embalagens extras para obter o texto limpo por dentro. Os programadores fazem isso para higienizar a entrada, evitar erros e preparar dados para o processamento onde as aspas são empecilhos, não recursos.
-
 ## Como Fazer:
 Elixir não possui uma função embutida para 'remover aspas', mas é muito fácil criar a sua própria função utilizando correspondência de padrões ou funções `String`. Veja estes trechos de código:
 

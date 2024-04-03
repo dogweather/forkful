@@ -10,9 +10,6 @@ title: Opprette en midlertidig fil
 weight: 21
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Midlertidige filer er kortlivet dataoppbevaring på disk. Vi lager dem for sikker og flyktig datahåndtering, ofte ved håndtering av store datamengder eller for å redusere minnebruk.
-
 ## How to (Slik gjør du det)
 C# tilbyr flere måter å opprette midlertidige filer. Her er et enkelt eksempel med `Path.GetTempFileName()`:
 

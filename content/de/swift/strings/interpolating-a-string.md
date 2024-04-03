@@ -10,9 +10,6 @@ title: Zeichenketten interpolieren
 weight: 8
 ---
 
-## Was & Warum?
-String-Interpolation ermöglicht es, Variablen, Konstanten und Ausdrücke in Strings einzubetten, indem man ihren Wert in eine Zeichenkette einbettet. Programmierer nutzen dies, um dynamische und leicht zu lesende Strings zu erzeugen, ohne sie manuell zusammensetzen zu müssen.
-
 ## So geht's:
 ```Swift
 let name = "Anna"

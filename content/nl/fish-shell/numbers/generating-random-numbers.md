@@ -13,12 +13,7 @@ title: Willekeurige getallen genereren
 weight: 12
 ---
 
-## Wat & Waarom?
-
-Het genereren van willekeurige getallen is een fundamentele taak in programmeren, gebruikt voor alles van gegevenssampling tot spelontwikkeling. In Fish Shell maakt het gebruik van systeemtools en ingebouwde functies voor dit doel het voor programmeurs mogelijk om willekeur en variabiliteit effectief in scripts en applicaties te incorporeren.
-
 ## Hoe:
-
 Het genereren van een willekeurig getal in Fish kan eenvoudig zijn, door het combineren van systeemhulpprogramma's en shell-mogelijkheden. Hieronder zijn enkele voorbeelden die demonstreren hoe willekeurige getallen binnen gespecificeerde bereiken te genereren.
 
 **Genereer een willekeurig nummer tussen 0 en 100:**
@@ -70,7 +65,6 @@ B
 Houd er rekening mee dat de uitvoer elke keer dat je deze commando's uitvoert, zal variëren vanwege de aard van willekeur.
 
 ## Diepgaande Duik
-
 De `random` functie van Fish Shell biedt een gebruiksvriendelijke interface voor het genereren van pseudo-willekeurige getallen. Intern maakt het gebruik van systeemniveau willekeurige getallengeneratie-hulpmiddelen en biedt het een draagbare manier om willekeur in je scripts te introduceren. Het is echter essentieel om te onthouden dat de willekeur die door `random` wordt geboden voldoende is voor de meeste scripttaken, maar misschien niet voldoet aan de cryptografische beveiligingseisen voor applicaties die een hogere mate van onvoorspelbaarheid nodig hebben.
 
 Voor contexten met hoge beveiligingseisen, overweeg het gebruik van speciale tools of programmeerbibliotheken die ontworpen zijn voor cryptografische doeleinden, die sterkere garanties voor willekeur bieden. Desalniettemin, voor algemene scripts en applicaties waar de hoogste beveiligingsnormen voor willekeur geen vereiste zijn, biedt de `random` functie van Fish Shell een handige en effectieve oplossing.

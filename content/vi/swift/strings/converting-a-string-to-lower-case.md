@@ -16,12 +16,7 @@ title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---
 
-## Cái gì & Tại sao?
-
-Chuyển đổi một chuỗi thành chữ thường có nghĩa là thay đổi bất kỳ chữ cái viết hoa nào thành các chữ cái viết thường tương ứng. Lập trình viên thực hiện việc này để đạt được tính nhất quán, thường xuyên dùng cho việc so sánh không phân biệt chữ hoa chữ thường hoặc chuẩn hóa nhập liệu văn bản.
-
 ## Cách làm:
-
 Swift làm điều này trở nên dễ dàng với một thuộc tính gọi là `lowercased`. Dưới đây là cách bạn sử dụng nó:
 
 ```Swift
@@ -36,7 +31,6 @@ hello, world!
 ```
 
 ## Đào sâu:
-
 Trong lịch sử, việc đảm bảo sự nhất quán của chữ cái trong chuỗi luôn rất quan trọng trong lập trình, chủ yếu vì máy tính đầu tiên rất nhạy cảm với việc phân biệt chữ hoa chữ thường. Trong Swift, `lowercased()` là một phương thức có sẵn trên các thể hiện của kiểu `String`. Bằng cách gọi nó, bạn chuyển đổi tất cả các ký tự trong chuỗi có các biến thể viết thường thành hình thức viết thường của chúng.
 
 Các phương án thay thế cho `lowercased()` có thể là duyệt qua chuỗi một cách thủ công và thay thế mỗi ký tự bằng tương đương viết thường của nó bằng cách sử dụng một hàm ánh xạ. Nhưng, thực sự, đó là việc tái tạo bánh xe.
@@ -52,7 +46,6 @@ print(lowercasedTurkishString) // "i̇stanbul", chính xác theo Unicode, nhưng
 Việc thực hiện của `lowercased()` ẩn dưới lớp vỏ tận dụng chuẩn Unicode, bao gồm các quy tắc ánh xạ phức tạp cho các ký tự trong nhiều bộ ký hiệu, không phải tất cả đều là chuyện đơn giản của việc thay 'A' bằng 'a'.
 
 ## Xem thêm:
-
 Để khám phá thêm về chuỗi và chuyển đổi ký tự trong Swift, hãy tham khảo các nguồn tài nguyên sau:
 
 - Tài liệu về Chuỗi và Ký tự Swift: [Swift.org](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

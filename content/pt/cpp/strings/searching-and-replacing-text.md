@@ -11,9 +11,6 @@ title: Pesquisando e substituindo texto
 weight: 10
 ---
 
-## O Quê & Por Quê?
-Procurar e substituir texto é a arte de achar certas palavras ou frases e trocá-las por outras. Programadores fazem isso para corrigir erros, atualizar código ou dados, e tornar o conteúdo consistente sem perder tempo.
-
 ## Como Fazer:
 ```C++
 #include <iostream>

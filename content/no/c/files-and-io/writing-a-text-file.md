@@ -14,12 +14,7 @@ title: Skrive en tekstfil
 weight: 24
 ---
 
-## Hva & Hvorfor?
-
-Å skrive en tekstfil i C innebærer å opprette eller åpne en fil i skrivemodus og deretter bruke Cs fil-I/O-funksjoner for å lagre tekstdata i den. Programmerere gjør dette for å bevare data, som logghendelser, konfigurasjonsinnstillinger eller brukergenerert innhold, slik at applikasjoner kan opprettholde tilstand, preferanser eller brukerfremgang over økter.
-
 ## Hvordan:
-
 For å skrive tekst til en fil i C, må du i hovedsak være kjent med funksjonene `fopen()`, `fprintf()`, `fputs()`, og `fclose()`. Nedenfor følger et enkelt eksempel som demonstrerer oppretting og skriving til en fil:
 
 ```c
@@ -55,7 +50,6 @@ Filen ble skrevet suksessfullt
 Etter å ha kjørt dette programmet, finner du en fil med navnet `example.txt` i samme mappe, som inneholder teksten du skrev via `fprintf()` og `fputs()`.
 
 ## Dybde
-
 Konseptet med filer og filsystemer har vært grunnleggende for datasystemer, med deres håndtering som et kritisk aspekt ved operativsystemer. I C utføres håndtering av filer ved hjelp av et sett med standard I/O-bibliotekfunksjoner, forankret i filosofien om å behandle filer som sekvenser av bytes. Denne abstraksjonen muliggjør en grei og effektiv metode for å lese fra og skrive til filer, selv om den kan virke lavnivå sammenlignet med mer moderne tilnærminger tilgjengelige i høynivåspråk som Python eller Ruby.
 
 Historisk sett har disse fil-I/O-operasjonene i C lagt grunnlaget for filmanipulasjon i mange programmeringsspråk, og tilbyr et nær-maskinvaregrensesnitt med operativsystemets filhåndteringssystemer. Dette gir ikke bare granulær kontroll over filattributter og I/O-operasjoner, men også potensielle utfordringer for uvitende programmerere, som behovet for manuelt å håndtere ressurser (dvs. alltid lukke filer) og bufferingproblemer.

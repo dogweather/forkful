@@ -11,9 +11,6 @@ title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---
 
-## Hva & Hvorfor?
-I Python er string-sammenføyning prosessen å sette sammen to eller flere tekststrenger. Det gjøres for å bygge setninger, kombinere brukerinput, eller generere dynamisk innhold.
-
 ## Hvordan:
 I eksemplene nedenfor, bruker vi ulike måter å slå sammen strenger. Merk at output kommer rett etter koden.
 

@@ -12,9 +12,6 @@ title: Werken met XML
 weight: 40
 ---
 
-## Wat & Waarom?
-Werken met XML omvat het parsen, creëren en manipuleren van XML-documenten - een opmaaktaal voor gegevensopslag en -overdracht. Programmeurs doen dit omdat veel systemen nog steeds gegevens uitwisselen in XML-formaat, en dit is nodig voor legacy-ondersteuning en integratie met bestaande technologieën.
-
 ## Hoe te:
 In Kotlin kun je de ingebouwde `javax.xml.parsers` gebruiken voor het parsen:
 

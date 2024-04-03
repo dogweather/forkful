@@ -11,9 +11,6 @@ title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Envoyer une requête HTTP, c’est demander des données à un serveur web. Les programmeurs le font pour récupérer des données extérieures, comme des infos météo ou des posts de blog.
-
 ## How to: (Comment faire :)
 ```Elm
 import Http

@@ -11,9 +11,6 @@ title: Webseite herunterladen
 weight: 42
 ---
 
-## Was & Warum?
-Das Herunterladen einer Webseite bedeutet, ihren Inhalt über das Internet zu beziehen. Programmierer machen das, um Daten zu sammeln, inhaltliche Analysen durchzuführen oder Dienste zu integrieren.
-
 ## So geht's:
 Um eine Webseite herunterzuladen, nutzen wir `HttpURLConnection` oder Bibliotheken wie `Ktor`. Hier ein einfaches Beispiel mit `HttpURLConnection`:
 

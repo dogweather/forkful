@@ -16,12 +16,7 @@ title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---
 
-## Gì và Tại Sao?
-
-Phân tích cú pháp HTML là hành động lấy một chuỗi HTML và phân tách nó thành một cấu trúc dữ liệu mà chương trình của bạn có thể hiểu và thao tác. Lập trình viên làm điều này để tương tác với nội dung web, trích xuất thông tin và tự động hóa các nhiệm vụ liên quan đến web.
-
 ## Làm Thế Nào:
-
 Để phân tích cú pháp HTML trong Rust, bạn sẽ muốn sử dụng một crate như `scraper` hoặc `select`. Sau đây là một ví dụ nhanh sử dụng `scraper`:
 
 ```Rust
@@ -57,7 +52,6 @@ Xin chào, thế giới!
 ```
 
 ## Sâu Hơn
-
 Trước kia, việc phân tích cú pháp HTML là một việc rối rắm. Thư viện thay đổi, tiêu chuẩn không ổn định, và ngôn ngữ có cách tiếp cận khác nhau. Ngày nay, hệ sinh thái của Rust cung cấp các crates vững chắc cho việc phân tích cú pháp, như `scraper` được hỗ trợ bởi các thư viện `html5ever` và `selectors`. `html5ever` đặc biệt thú vị; nó dựa trên thuật toán phân tích cú pháp HTML được quy định bởi WHATWG, khiến nó ngang hàng với cách các trình duyệt hiện đại phân tích HTML.
 
 Các phương án thay thế cho `scraper` bao gồm `select`, mang lại chức năng tương tự nhưng có tính ergonomic khác. Phân tích cú pháp cấp thấp là khả thi với chính `html5ever` nếu bạn cần nhiều kiểm soát hơn.
@@ -67,7 +61,6 @@ Thường xuyên, phân tích cú pháp HTML là một phần của việc web s
 Về mặt triển khai, luôn nhớ rằng phân tích cú pháp chỉ là điểm khởi đầu. Sự sàng lọc và xác thực là chìa khóa để tránh các vấn đề an ninh như tấn công XSS (Cross-Site Scripting), đặc biệt nếu bạn dự định hiển thị hoặc lưu trữ dữ liệu phân tích.
 
 ## Xem Thêm
-
 - Crate `scraper`: https://crates.io/crates/scraper
 - Crate `select`: https://crates.io/crates/select
 - GitHub repo của `html5ever`: https://github.com/servo/html5ever

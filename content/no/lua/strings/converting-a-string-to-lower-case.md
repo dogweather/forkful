@@ -11,9 +11,6 @@ title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---
 
-## Hva & Hvorfor?
-Å konvertere en streng til små bokstaver betyr å endre alle store bokstaver i strengen til sine små bokstav-ekvivalenter. Programmerere gjør dette for å standardisere tekstdata, for eksempel i søkefunksjoner eller når man sammenligner strenger uavhengig av brukerens input-casing.
-
 ## Hvordan gjøre det:
 ```Lua
 -- Enkel strengkonvertering til små bokstaver

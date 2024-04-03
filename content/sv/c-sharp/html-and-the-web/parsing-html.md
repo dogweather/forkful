@@ -14,16 +14,10 @@ title: Tolka HTML
 weight: 43
 ---
 
-## Vad & Varför?
-
-Att tolka HTML i programmering innebär att analysera en HTML-dokuments struktur, vilket möjliggör för dig att extrahera, manipulera och interagera med dess innehåll programmatiskt. Programmerare gör detta för att automatisera webbskrapning, dataextraktion eller till och med modifiera webbsidor eller HTML-dokument dynamiskt för olika applikationer, vilket gör det till en viktig färdighet inom webbutveckling, dataanalys och automatiska testningsscenarier.
-
 ## Hur:
-
 Medan .NET tillhandahåller grundläggande stöd för att arbeta med HTML, som `HttpClient` för att hämta webbsidor, saknar det en inbyggd, omfattande HTML-tolk. Därför vänder sig de flesta C#-utvecklare till populära tredjepartsbibliotek som HtmlAgilityPack eller AngleSharp för robusta funktioner för HTML-tolkning. Båda biblioteken tillåter lätt frågeställning, manipulation och traversal av HTML DOM.
 
 ### Använda HtmlAgilityPack
-
 1. **Installera HtmlAgilityPack**: Lägg först till HtmlAgilityPack-paketet i ditt projekt via NuGet.
    ```
    Install-Package HtmlAgilityPack
@@ -65,7 +59,6 @@ Medan .NET tillhandahåller grundläggande stöd för att arbeta med HTML, som `
    ```
 
 ### Använda AngleSharp
-
 1. **Installera AngleSharp**: Lägg till AngleSharp-biblioteket i ditt projekt via NuGet.
    ```
    Install-Package AngleSharp

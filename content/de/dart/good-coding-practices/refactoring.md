@@ -13,14 +13,10 @@ title: Refaktorisierung
 weight: 19
 ---
 
-## Was & Warum?
-
-Refactoring in Dart ist der Prozess des Umstrukturierens bestehenden Codes, ohne dessen externes Verhalten zu ändern, mit dem Ziel, seine interne Struktur, Lesbarkeit und Wartbarkeit zu verbessern. Programmierer führen oft ein Refactoring durch, um den Code sauberer, leichter verständlich oder effizienter zu machen, wodurch zukünftige Änderungen erleichtert und die Wahrscheinlichkeit von Fehlern verringert wird.
-
 ## Wie geht das:
 
-### Beispiel 1: Umbenennen und Extrahieren von Methoden
 
+### Beispiel 1: Umbenennen und Extrahieren von Methoden
 Vor dem Refactoring haben Sie möglicherweise einen Codeabschnitt, der verschiedene Abstraktionsebenen oder Verantwortlichkeiten mischt, wie zum Beispiel das Berechnen eines Rabatts und dann dessen Anwendung:
 
 ```dart
@@ -60,7 +56,6 @@ Endpreis: 80.0
 Indem Sie die Berechnung in eine Methode extrahieren, haben Sie jetzt eine klar definierte Operation, die wiederverwendet, unabhängig getestet und leicht modifiziert werden kann.
 
 ### Beispiel 2: Vereinfachung von Bedingten Ausdrücken
-
 Vor dem Refactoring könnten bedingte Anweisungen übermäßig komplex oder schwer zu lesen sein:
 
 ```dart
@@ -109,5 +104,4 @@ Rabatt: 0.05
 Dieses Refactoring macht den Code nicht nur prägnanter, sondern kapselt auch die Logik zur Bestimmung von Rabatten auf eine Weise ein, die leichter zu verstehen und zu warten ist.
 
 ### Drittanbieter-Bibliotheken für Refactoring
-
 Wenn es um Refactoring in Dart geht, besonders innerhalb von Flutter-Apps, ist die [Dart DevTools](https://dart.dev/tools/dart-devtools)-Suite unschätzbar. Sie umfasst Leistungswerkzeuge, einen Widget-Inspektor und einen Quellcode-Debugger. Obwohl es sich nicht um eine Drittanbieter-Bibliothek handelt, werden Dart DevTools oft zusammen mit Bibliotheken wie `flutter_bloc` verwendet, um den Zustand auf eine Weise zu verwalten, die ein Refactoring zur Verbesserung der Modularität und Lesbarkeit fördert. Aufgrund des Umfangs dieses Eintrags werden hier keine spezifischen Codebeispiele mit Drittanbieter-Bibliotheken bereitgestellt, aber Entwickler werden ermutigt, diese Werkzeuge zu erkunden, um den Refactoring-Prozess in ihren Dart/Flutter-Anwendungen zu verbessern.

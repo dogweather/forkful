@@ -10,9 +10,6 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-Writing tests in Clojure, much like in other programming languages, involves creating dedicated code to verify that your main codebase works as expected. It helps in ensuring correctness, facilitating refactoring, and enhancing code stability.
-
 ## How to:
 Clojure, leveraging the JVM, supports various testing frameworks. However, a commonly used built-in library is `clojure.test`. Here's a simple example:
 

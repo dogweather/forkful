@@ -13,12 +13,7 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O Que & Por Quê?
-
-Refatoração em programação envolve modificar a estrutura do código sem alterar seu comportamento, para melhorar aspectos como legibilidade, manutenibilidade ou desempenho. Programadores refatoram para tornar o código mais eficiente, fácil de entender, fácil de modificar no futuro e para reduzir a probabilidade de bugs.
-
 ## Como fazer:
-
 Considere um exemplo básico em Visual Basic for Applications (VBA) onde temos uma sub-rotina que imprime detalhes de um funcionário. Inicialmente, o código está confuso, difícil de manter ou estender.
 
 ```vb
@@ -79,7 +74,6 @@ End Sub
 Esses passos transformam o código confuso em um código modular, estruturado, melhorando significativamente a legibilidade e a manutenibilidade.
 
 ## Aprofundamento
-
 O conceito de refatoração é tão antigo quanto a própria programação, mas foi o livro de Martin Fowler, "Refactoring: Improving the Design of Existing Code", que o trouxe para o mainstream, enfatizando sua importância no processo de desenvolvimento de software. Em Visual Basic for Applications, a refatoração pode ser um pouco mais desafiadora devido à falta de ferramentas integradas encontradas em ambientes de desenvolvimento integrados (IDEs) mais modernos que suportam refatoração automatizada.
 
 No entanto, isso não diminui sua importância. Mesmo no VBA, a aplicação manual de técnicas básicas de refatoração pode melhorar bastante a base de código, tornando-a mais limpa e eficiente. Embora o VBA não tenha as mesmas conveniências modernas, os princípios de um bom design de código permanecem universais. Desenvolvedores vindos de outras linguagens podem achar o processo manual tedioso, mas sem dúvida apreciarão os benefícios de investir tempo na melhoria da qualidade do código desde o início.

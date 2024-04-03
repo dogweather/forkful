@@ -11,9 +11,6 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## Cosa & Perché?
-Stampare output di debug significa mostrare informazioni temporanee di log mentre un programma è in esecuzione. Programmatori lo fanno per capire cosa sta succedendo "sotto il cofano", per risolvere i bug o per monitorare lo stato del programma.
-
 ## Come fare:
 Per stampare semplicemente un messaggio nel terminale, si usa `System.out.println()` o `System.out.print()`:
 ```java

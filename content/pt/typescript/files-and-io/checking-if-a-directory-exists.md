@@ -14,15 +14,10 @@ title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---
 
-## O Que & Por Que?
-Verificar se um diretório existe em TypeScript é essencial para tarefas de gerenciamento de arquivos, como ler ou escrever dados em arquivos, garantindo que operações sejam realizadas apenas em diretórios válidos. Esta operação é crucial para evitar erros que surgem ao tentar acessar ou manipular diretórios inexistentes.
-
 ## Como Fazer:
-
 TypeScript, quando executado em um ambiente Node.js, permite verificar se um diretório existe usando o módulo `fs`, que fornece a função `existsSync()` ou a função assíncrona `access()` combinada com `constants.F_OK`.
 
 ### Usando `fs.existsSync()`:
-
 ```typescript
 import { existsSync } from 'fs';
 
@@ -36,7 +31,6 @@ if (existsSync(directoryPath)) {
 ```
 
 ### Usando `fs.access()` com `fs.constants.F_OK`:
-
 ```typescript
 import { access, constants } from 'fs';
 
@@ -62,7 +56,6 @@ O diretório não existe.
 ```
 
 ### Usando uma Biblioteca de Terceiros - `fs-extra`:
-
 `fs-extra` é uma biblioteca de terceiros popular que aprimora o módulo `fs` embutido e oferece funções mais convenientes.
 
 ```typescript

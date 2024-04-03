@@ -12,12 +12,7 @@ title: Controleren of een directory bestaat
 weight: 20
 ---
 
-## Wat & Waarom?
-
-Controleren of een map bestaat in Elixir zorgt ervoor dat je interactie hebt met een geldig bestandspad. Programmeurs doen dit om fouten te vermijden, zoals proberen te lezen van of schrijven naar een niet-bestaande locatie, wat hun app kan laten crashen of een proces kan onderbreken.
-
 ## Hoe te:
-
 Elixir's `File` module is je beste vriend voor mapcontroles. Gebruik `File.dir?/1` om een boolean terug te geven die aangeeft of de map bestaat.
 
 ```elixir
@@ -40,7 +35,6 @@ Zulke map bestaat niet.
 ```
 
 ## Diepere Duik
-
 Historisch gezien hebben bestandssysteemoperaties in programmering een belang gedragen vanwege de behoefte aan het lezen/schrijven van gegevens. In Elixir heeft de `File` module deze operaties netjes geabstraheerd. Het draait allemaal om betrouwbaarheid met deze controles; daardoor is `File.dir?/1` een basis voor het verifiëren van paden.
 
 Alternatieven voor `File.dir?/1` kunnen zijn het gebruiken van `File.stat/2` en controleren of het resultaat `:ok` is, wat aangeeft dat de map bestaat. Een andere benadering kan zijn het gebruik van `:filelib.is_dir/1` uit de standaardbibliotheek van Erlang, die Elixir kan benutten vanwege zijn interoperabiliteit met Erlang.
@@ -48,7 +42,6 @@ Alternatieven voor `File.dir?/1` kunnen zijn het gebruiken van `File.stat/2` en 
 Elixir's implementatie van het controleren of een map bestaat, bouwt voort op Erlang's robuuste bestandshandeling. Dit ontwerp maakt gebruik van het BEAM's vermogen voor fouttolerante systemen, waarin Elixir-toepassingen doorgaans draaien.
 
 ## Zie Ook
-
 - Documentatie van Elixir's `File` module: [https://hexdocs.pm/elixir/File.html](https://hexdocs.pm/elixir/File.html)
 - Documentatie van Erlang's `filelib` module voor meer bestandssysteemfuncties: [http://erlang.org/doc/man/filelib.html](http://erlang.org/doc/man/filelib.html)
 - Robuuste bestandshandeling in Elixir: [https://elixir-lang.org/getting-started/io-and-the-file-system.html](https://elixir-lang.org/getting-started/io-and-the-file-system.html)

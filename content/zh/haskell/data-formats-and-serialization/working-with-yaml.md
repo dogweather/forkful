@@ -22,12 +22,7 @@ title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 weight: 41
 ---
 
-## 什么和为什么？
-
-YAML，全称为“YAML Ain't Markup Language”（YAML不是标记语言），是一种对人类友好的数据序列化标准，可用于所有编程语言。程序员通常在配置文件和语言间的数据交换中使用YAML，因为它的可读性好和结构简单。
-
 ## 如何操作：
-
 Haskell 没有内置对 YAML 处理的支持，但你可以使用第三方库，如 `yaml` 和 `aeson`，来解析和生成 YAML 数据。以下是你可以开始的方法：
 
 ### 读取 YAML

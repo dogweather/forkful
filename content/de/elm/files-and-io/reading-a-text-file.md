@@ -10,9 +10,6 @@ title: Textdatei einlesen
 weight: 22
 ---
 
-## Was & Warum?
-Das Einlesen einer Textdatei ermöglicht es Programmen, Textinformationen zu verarbeiten – vom simplen Konfigurationsfile bis zur großen Datenanalyse. Programmierer nutzen das Einlesen von Textdaten, um interaktive Anwendungen zu gestalten, die auf Benutzereingaben oder Persistenz setzen.
-
 ## How to:
 Elm macht direktes Einlesen von Dateien etwas anders – es verwendet hauptsächlich Ports und Subscriptions, um Dateien über JavaScript zu verarbeiten. Hier ist ein kleines Beispiel mit einem Port:
 

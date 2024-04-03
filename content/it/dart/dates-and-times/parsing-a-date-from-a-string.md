@@ -12,9 +12,6 @@ title: Analisi di una data da una stringa
 weight: 30
 ---
 
-## Cosa & Perché?
-L'analisi di una data da una stringa in Dart comporta la conversione della rappresentazione testuale di date e orari in un oggetto `DateTime`. Questa operazione è essenziale per le applicazioni che si occupano di pianificazione, analisi dei dati o qualsiasi funzionalità che richieda la manipolazione delle date, garantendo che i dati relativi alle date siano correttamente compresi ed elaborati dal programma.
-
 ## Come:
 La libreria core di Dart semplifica l'analisi delle date attraverso la classe `DateTime`. Per casi semplici in cui si conosce il formato della stringa di data, è possibile utilizzare il metodo `DateTime.parse()`. Tuttavia, per scenari più complessi o quando si ha a che fare con formati multipli, il pacchetto `intl`, specificamente la classe `DateFormat`, diventa inestimabile.
 

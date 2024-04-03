@@ -10,9 +10,6 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## What & Why?
-Stringinterpolasjon lar deg sette variabler rett inn i strenger. Det forenkler kombinasjonen av statisk tekst og variabler, noe som gjør koden mer leselig og vedlikeholdbar.
-
 ## How to:
 ```Swift
 let name = "Ola"

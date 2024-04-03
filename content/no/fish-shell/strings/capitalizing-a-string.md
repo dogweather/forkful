@@ -13,12 +13,7 @@ title: Sette stor bokstav i en streng
 weight: 2
 ---
 
-## Hva & Hvorfor?
-
-Å sette stor forbokstav i en streng betyr å endre den slik at den første bokstaven er stor, og resten av strengen er med små bokstaver. Dette er en vanlig oppgave i tekstbehandling, normalisering av brukerinndata, og dataformatering for å sikre konsistens eller for å møte spesifikke formateringskriterier.
-
 ## Hvordan:
-
 I Fish Shell kan strenger manipuleres direkte med innebygde funksjoner, uten behov for eksterne verktøy eller biblioteker. For å sette stor forbokstav i en streng, kan du kombinere `string`-kommandoen med underkommandoer.
 
 ```fish

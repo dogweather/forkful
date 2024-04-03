@@ -13,12 +13,7 @@ title: Travailler avec CSV
 weight: 37
 ---
 
-## Quoi & Pourquoi ?
-
-Travailler avec des fichiers CSV en Ruby offre une approche simple pour gérer les données tabulaires. Les programmeurs se livrent souvent à cette pratique pour le parsing de données, l'extraction, la transformation et le stockage, ce qui en fait une compétence essentielle pour les tâches impliquant la manipulation ou l'analyse de données.
-
 ## Comment faire :
-
 Ruby inclut par défaut la bibliothèque CSV, ce qui simplifie la lecture et l'écriture de fichiers CSV. Voici comment vous pouvez tirer parti de cela pour des tâches courantes :
 
 ### Lire un fichier CSV

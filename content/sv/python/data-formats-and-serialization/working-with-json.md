@@ -13,16 +13,10 @@ title: Arbeta med JSON
 weight: 38
 ---
 
-## Vad & Varför?
-
-Att arbeta med JSON (JavaScript Object Notation) innebär att tolka JSON-formaterade strängar till Python-objekt och tvärtom. Detta är avgörande för webb- och API-utveckling eftersom JSON är det gemensamma språket för utbyte av data mellan servrar och klienter.
-
 ## Hur man gör:
-
 Pythons inbyggda `json`-bibliotek förenklar processen att koda (konvertera Python-objekt till JSON) och avkoda (konvertera JSON till Python-objekt). Så här kan du använda det:
 
 ### Koda Python-objekt till JSON:
-
 ```python
 import json
 
@@ -61,7 +55,6 @@ print(json_string)
 ```
 
 ### Avkoda JSON till Python-objekt:
-
 ```python
 json_string = '''
 {
@@ -100,11 +93,9 @@ print(data)
 ```
 
 ### Arbeta med tredjepartsbibliotek:
-
 För komplex hantering av JSON, såsom schemavalidation eller tolkning av JSON-filer direkt från URL:er, kan bibliotek som `requests` för HTTP-förfrågningar och `jsonschema` för validation vara till hjälp.
 
 #### Exempel med `requests` för att tolka JSON från en URL:
-
 ```python
 import requests
 
@@ -117,7 +108,6 @@ print(data)
 Detta kodsnutt hämtar JSON-data från en given URL och konverterar det direkt till ett Python-objekt.
 
 #### Använda `jsonschema` för att validera JSON:
-
 Först, installera biblioteket via pip:
 
 ```bash

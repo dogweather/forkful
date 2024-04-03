@@ -16,9 +16,6 @@ title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---
 
-## Cái gì và Tại sao?
-Tìm kiếm và thay thế văn bản là việc đổi các từ hoặc cụm từ cụ thể thành các lựa chọn khác trong một chuỗi. Các lập trình viên thực hiện điều này để cập nhật dữ liệu, sửa lỗi, hoặc thay đổi định dạng - nó giữ cho mọi thứ chính xác và ngăn nắp.
-
 ## Cách thực hiện:
 Ruby làm cho điều này trở nên dễ dàng. Sử dụng `gsub` để thay thế toàn cầu, hoặc `sub` cho một trường hợp duy nhất. Dưới đây là một cái nhìn nhanh:
 

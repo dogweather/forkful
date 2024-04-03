@@ -10,9 +10,6 @@ title: Finding the length of a string
 weight: 7
 ---
 
-## What & Why?
-Finding a string's length means figuring out how many characters it contains. Programmers often do this to validate input, loop through characters, or align text.
-
 ## How to:
 Java strings have a `length()` method. Call it, and you get the character count. Easy.
 

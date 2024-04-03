@@ -11,9 +11,6 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-REPL, eller Read-Eval-Print Loop, är en programmeringsmiljö för att dynamiskt testa Clojure-kod stycke för stycke. Programmerare använder den för omedelbar återkoppling, iterativ utveckling och snabb experimentell utan överhuvudet av att kompilera eller sätta upp en komplett projekt miljö.
-
 ## Hur man gör:
 Börja med att starta REPL:
 

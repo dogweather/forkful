@@ -14,9 +14,6 @@ title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---
 
-## Cái gì & Tại sao?
-Nội suy chuỗi cho phép bạn nhúng trực tiếp các biến vào trong chuỗi. Điều này rất tiện lợi cho việc tạo ra văn bản động, dễ đọc mà không cần đến sự ghép nối cồng kềnh.
-
 ## Cách thực hiện:
 ```kotlin
 fun main() {

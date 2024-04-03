@@ -14,16 +14,10 @@ title: "Lukujen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä & Miksi?
-
-Pyöristäminen tarkoittaa numeron arvon säätämistä lähimpään kokonaislukuun tai tiettyyn desimaalipaikkojen määrään. Ohjelmoijat tekevät näin syistä, kuten luettavuuden parantaminen, laskelmien yksinkertaistaminen tai alakohtaisten tarkkuusvaatimusten täyttäminen.
-
 ## Miten:
-
 Go:ssa ei ole sisäänrakennettua funktiota, joka suoraan pyöristäisi numerot tiettyyn desimaalipaikkojen määrään math-paketissa. Voit kuitenkin saavuttaa pyöristämisen yhdistämällä funktioita kokonaislukuja varten tai toteuttamalla mukautetun funktion desimaalipaikkoja varten.
 
 ### Pyöristäminen lähimpään kokonaislukuun:
-
 Pyöristääksesi lähimpään kokonaislukuun, voit käyttää `math.Floor()`-funktiota lisäämällä 0.5 positiivisille luvuille, ja `math.Ceil()` miinus 0.5 negatiivisille luvuille, riippuen siitä, mihin suuntaan haluat pyöristää.
 
 ```go
@@ -41,7 +35,6 @@ func main() {
 ```
 
 ### Pyöristäminen tiettyyn desimaalipaikkojen määrään:
-
 Tiettyyn desimaalipaikkojen määrään pyöristämiseksi voidaan käyttää mukautettua funktiota, jossa kerrot luvun 10^n:llä (missä n on desimaalipaikkojen määrä), pyöristät sen lähimpään kokonaislukuun kuten aiemmin, ja sitten jaat 10^n:llä.
 
 ```go
@@ -64,7 +57,6 @@ func main() {
 ```
 
 ## Syvempi sukellus
-
 Numeroiden pyöristäminen on olennainen operaatio tietokoneohjelmoinnissa, joka liittyy historialliseen haasteeseen esittää reaalilukuja binäärijärjestelmässä. Pyöristämisen tarve johtuu siitä, että monia reaalilukuja ei voi esittää tarkasti binäärinä, mikä johtaa likimääräisyysvirheisiin.
 
 Go:ssa pyöristämiseen suhtaudutaan jossain määrin manuaalisesti verrattuna kieliin, jotka tarjoavat sisäänrakennettuja pyöristysfunktioita tiettyihin desimaalipaikkoihin. Silti Go:n vakio-kirjaston `math`-paketti tarjoaa peruspalikat (kuten `math.Floor` ja `math.Ceil`), joilla voidaan rakentaa sovelluksen vaatima pyöristysmekanismi.

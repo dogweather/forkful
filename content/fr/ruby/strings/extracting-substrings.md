@@ -12,12 +12,7 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-
-Extraire des sous-chaînes en Ruby, c'est comme prendre un morceau de votre baguette préférée : vous isolez une part de quelque chose de plus grand. On le fait pour analyser, manipuler ou simplement afficher des bouts spécifiques de texte.
-
 ## How to: (Comment faire :)
-
 ```Ruby
 # Exemple 1: Extraire avec des indices
 chaine = "Bonjour le monde!"
@@ -35,7 +30,6 @@ puts match # Affiche "beurre"
 ```
 
 ## Deep Dive (Plongeon en profondeur)
-
 Historiquement, l'extraction de sous-chaînes est un concept hérité du traitement de texte en programmation. En Ruby, c'est intuitive et flexible, avec plusieurs méthodes possibles : les indices directement sur les chaînes, la méthode `slice`, ou des expressions régulières (`Regexp`).
 
 Une alternative, c'est la méthode `split`, qui découpe une chaîne en un tableau selon un séparateur donné. En Ruby, `slice` et `split` sont souvent interchangeables, mais ils répondent à des besoins différents : `slice` pour un morceau précis et `split` pour découper en beaucoup de morceaux.
@@ -43,6 +37,5 @@ Une alternative, c'est la méthode `split`, qui découpe une chaîne en un table
 Concernant l'implémentation, Ruby gère les chaînes de caractères en encodage UTF-8 par défaut, ce qui signifie que l'extraction de sous-chaînes fonctionne bien avec des caractères accentués ou spéciaux en français, contrairement à de plus anciens langages où le codage était plus limité.
 
 ## See Also (Voir aussi)
-
 - La documentation Ruby sur les chaînes de caractères : [String class](https://ruby-doc.org/core-2.7.0/String.html)
 - Un tutoriel sur les expressions régulières en Ruby : [Ruby Regexp](https://www.rubyguides.com/2015/06/ruby-regex/)

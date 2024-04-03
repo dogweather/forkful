@@ -13,9 +13,6 @@ title: "F\xE5 dagens dato"
 weight: 29
 ---
 
-## Hva & Hvorfor?
-Å hente gjeldende dato i Haskell innebærer å få tak i systemets nåværende tid og omdanne den til et lesbart datoformat. Programmerere gjør dette for å utføre operasjoner basert på datoen, som logging, planlegging av oppgaver, eller tidsstempling av hendelser i applikasjoner.
-
 ## Hvordan:
 Haskells standardbibliotek, `base`, tilbyr `Data.Time`-modulen som gir funksjonalitet for å arbeide med datoer og tider. Her er hvordan du bruker den for å få gjeldende dato:
 

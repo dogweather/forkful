@@ -12,9 +12,6 @@ title: Een tijdelijk bestand aanmaken
 weight: 21
 ---
 
-## Wat & Waarom?
-Het maken van een tijdelijk bestand betekent het creëren van een bestand voor kortdurend gebruik, vaak om gegevens tijdens een sessie op te slaan. Programmeurs doen dit om het systeem niet te belasten en om gegevens te verwerken die niet persistent hoeven te zijn.
-
 ## Hoe:
 Om in PowerShell een tijdelijk bestand te maken, gebruik je `New-TemporaryFile`. Deze cmdlet maakt een tijdelijk bestand in je temp-map. Hier is de toverspreuk:
 

@@ -17,9 +17,6 @@ title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---
 
-## Cái gì & Tại sao?
-REPL, viết tắt của Read-Eval-Print Loop (Vòng lặp Đọc-Tính toán-In), là một môi trường lập trình lấy đầu vào đơn lẻ từ người dùng, thực thi chúng và trả lại kết quả cho người dùng. Lập trình viên sử dụng nó để thử nghiệm nhanh, học tập, gỡ lỗi, hoặc thực hiện các phép tính tức thời.
-
 ## Làm thế nào:
 Bắt đầu ngay với REPL của Python bằng cách gõ `python` trong dòng lệnh của bạn. Một khi đã vào, hãy thử các thao tác đơn giản hoặc mã nhiều dòng:
 

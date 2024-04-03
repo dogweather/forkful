@@ -13,9 +13,6 @@ title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---
 
-## Co i dlaczego?
-Wysyłanie żądania HTTP z autoryzacją podstawową to proces, w którym przesyłamy nasze dane uwierzytelniające (login i hasło) w nagłówku żądania HTTP, aby uzyskać dostęp do zasobów wymagających autoryzacji. Programiści stosują to do bezpiecznej komunikacji z API, które wymaga uwierzytelniania.
-
 ## Jak to zrobić:
 ```javascript
 const axios = require('axios');

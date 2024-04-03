@@ -12,12 +12,7 @@ title: Schreiben auf Standardfehler
 weight: 25
 ---
 
-## Was & Warum?
-
-Das Schreiben auf den Standardfehler (stderr) in der Fish Shell bedeutet, Fehlermeldungen oder Diagnosen getrennt von der Standardausgabe (stdout) zu leiten. Programmierer tun dies, um sicherzustellen, dass Fehlerinformationen leicht identifiziert, verwaltet oder umgeleitet werden können, was den Debugging- und Logging-Prozess erleichtert.
-
 ## Wie geht das:
-
 In der Fish Shell können Sie auf stderr schreiben, indem Sie Ihre Ausgabe mit `>&2` umleiten. Hier ist ein einfaches Beispiel:
 
 ```fish

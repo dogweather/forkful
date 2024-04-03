@@ -12,12 +12,7 @@ title: Een tijdelijk bestand aanmaken
 weight: 21
 ---
 
-## Wat & Waarom?
-
-Het maken van een tijdelijk bestand betekent het creëren van een bestand dat slechts voor korte tijd nodig is en daarna wordt verwijderd. Programmeurs doen dit voor tijdelijke opslag, zoals wanneer je gegevens moet bewaren tussen stappen in een proces of gevoelige informatie uit de langetermijnopslag moet houden.
-
 ## Hoe:
-
 In Java is het `java.nio.file` pakket je vriend voor tijdelijke bestanden. Bekijk dit fragment:
 
 ```java
@@ -59,7 +54,6 @@ Tijdelijk bestand verwijderd.
 Netjes, toch?
 
 ## Diepgaande Bespreking
-
 Tijdelijke bestanden maken al eeuwen deel uit van onze toolkit, helemaal terug tot de dageraad van het computergebruik. Ze zijn je beste keuze als je gegevens moet afhandelen die geen zaken hebben om te blijven hangen.
 
 Java staat aan je zijde met de `Files` klasse sinds Java 7, wat de afhandeling van tijdelijke bestanden super eenvoudig maakt. Voordien moest je `File` objecten jongleren en hopen op het beste (maar ga niet terug naar die donkere dagen, omarm de nieuwe API).
@@ -69,7 +63,6 @@ Het coole aan de `createTempFile` methode is dat je de map en een bestandsnaam v
 Alternatieven? Zeker, je zou op de ouderwetse manier elke bestandsbewerking handmatig kunnen afhandelen, of een specifieke methode van het besturingssysteem gebruiken. Echter, de Java-weg is veiliger en meer overdraagbaar over platforms.
 
 ## Zie Ook
-
 - [Java Path Klasse Documentatie](https://docs.oracle.com/javase/10/docs/api/java/nio/file/Path.html)
 - [Java Files Klasse Documentatie](https://docs.oracle.com/javase/10/docs/api/java/nio/file/Files.html)
 - [Oracle's Tutorial over Bestand I/O](https://docs.oracle.com/javase/tutorial/essential/io/file.html)

@@ -12,12 +12,7 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-
-Complexe getallen breiden de reële getallenlijn uit door de toevoeging van een imaginair eenheid, `i`, waarbij `i^2 = -1`. Ze zijn cruciaal in velden zoals techniek, natuurkunde en geavanceerde wiskunde, waar ze verschijnselen modelleren die niet met reële getallen kunnen worden afgehandeld, zoals elektrische stromen en signaalverwerking.
-
 ## Hoe te:
-
 Java heeft geen ingebouwde ondersteuning voor complexe getallen, maar we kunnen onze eigen klasse bouwen of een bibliotheek gebruiken. Hier is een snel voorbeeld van hoe je een eenvoudige `ComplexNumber` klasse kunt maken en gebruiken:
 
 ```java
@@ -57,7 +52,6 @@ Som: 3.0 + 7.0i
 ```
 
 ## Diepere Duik
-
 Voordat hoogtalen zoals Java bestonden, werkten programmeurs rechtstreeks met wiskundige bibliotheken in talen zoals Fortran of C om complexe operaties te beheren. Het concept gaat terug tot de 16e eeuw, toegeschreven aan wiskundigen zoals Gerolamo Cardano en Rafael Bombelli.
 
 In Java is `java.lang.Math` de plek voor essentiële zaken, maar slaat compleze getallen over, waarschijnlijk omdat niet elke programmeur ze gebruikt. Alternatieven? Gebruik bibliotheken. Apache Commons Math biedt een `Complex` klasse verpakt met methoden voor manipulatie. Hier is echter waarom het zelf bouwen netjes is: Lichtgewicht, op maat gemaakt voor je exacte behoeften, en geen bibliotheek overhead.
@@ -65,7 +59,6 @@ In Java is `java.lang.Math` de plek voor essentiële zaken, maar slaat compleze 
 Eén belangrijk detail: let op drijvende komma precisie. Computers kunnen sommige getallen niet exact voorstellen, wat leidt tot afrondingsfouten. Bij het uitvoeren van herhaalde complexe bewerkingen kunnen deze fouten zich opstapelen!
 
 ## Zie Ook
-
 Voor diepere duiken en meer complexe handelingen, zie:
 
 - [Apache Commons Math](https://commons.apache.org/proper/commons-math/)

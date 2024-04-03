@@ -12,9 +12,6 @@ title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---
 
-## Was & Warum?
-Das Berechnen eines zukünftigen oder vergangenen Datums ermöglicht es uns, Zeitintervalle zu bestimmen und automatische Erinnerungen oder Fristen in Skripten zu setzen. Programmierer nutzen diese Funktion für Features wie Ablaufüberwachungen, Terminplanungen und Zeitreisen in Datenbanken.
-
 ## So geht's:
 Ein Beispiel für die Berechnung eines Datums in 7 Tagen und eines Datums vor 7 Tagen:
 

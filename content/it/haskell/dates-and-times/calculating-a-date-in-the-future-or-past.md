@@ -11,9 +11,6 @@ title: Calcolo di una data futura o passata
 weight: 26
 ---
 
-## What & Why?
-Calcolare una data nel futuro o nel passato è una pratica comune in programmazione, utile per gestire eventi, scadenze e funzionalità legate al tempo. I programmatori lo fanno per tracciare periodi di tempo, programmare compiti futuri o analizzare dati storici.
-
 ## How to:
 In Haskell, si può usare la libreria `time` per maneggiare date. Ecco un esempio per calcolare una data 10 giorni nel futuro dalla data corrente:
 

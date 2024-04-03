@@ -12,9 +12,6 @@ title: Registrazione Eventi (Logging)
 weight: 17
 ---
 
-## Cosa e Perché?
-Il logging è essenzialmente l'equivalente software di un registro di bordo di una nave; è un modo per registrare gli eventi che si verificano mentre un'applicazione è in esecuzione. I programmatori lo fanno per tenere traccia di questi eventi per il debug, le tracce di audit o per ottenere intuizioni sul comportamento di un sistema in produzione.
-
 ## Come fare:
 Clojure si appoggia alle funzionalità di logging di Java, ma è possibile accedervi in un modo più idiomatico per Clojure. Vediamo come potresti utilizzare `clojure.tools.logging`, che fornisce una semplice astrazione su vari framework di logging:
 

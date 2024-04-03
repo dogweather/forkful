@@ -10,9 +10,6 @@ title: Extracting substrings
 weight: 6
 ---
 
-## What & Why?
-Extracting substrings means pulling out specific pieces of a string. It's handy for tasks like parsing data, validating input, or just breaking down text into more manageable chunks.
-
 ## How to:
 In TypeScript, you slice and dice strings with methods like `substring()`, `slice()`, and the ES6 `includes()` for finding text within strings.
 

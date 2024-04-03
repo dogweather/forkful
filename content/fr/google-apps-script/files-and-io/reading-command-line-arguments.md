@@ -13,12 +13,7 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## Quoi & Pourquoi ?
-
-Lire les arguments de ligne de commande dans Google Apps Script est un peu un abus de langage, car contrairement aux interfaces de ligne de commande traditionnelles dans des langages de programmation tels que Python ou Node.js, Google Apps Script ne prend pas en charge nativement l'exécution en ligne de commande ou l'analyse des arguments. Au lieu de cela, les codeurs simulent souvent ce processus grâce à des fonctions personnalisées et des paramètres d'URL lors de l'exécution d'applications Web ou de tâches automatisées, permettant une interaction dynamique avec les fonctionnalités du script basée sur des entrées d'utilisateurs ou des paramètres prédéfinis.
-
 ## Comment faire :
-
 Pour imiter le processus de lecture des arguments de ligne de commande dans Google Apps Script, en particulier pour les applications Web, vous pouvez utiliser les paramètres de chaîne de requête. Lorsqu'un utilisateur accède à l'URL de l'application Web, vous pouvez ajouter des arguments tels que `?name=John&age=30` et les analyser au sein de votre code Apps Script. Voici comment vous pourriez configurer cela :
 
 ```javascript
@@ -44,7 +39,6 @@ Nom : John, Âge : 30
 Cette approche est essentielle pour créer des interactions personnalisées dans les applications Web ou pour contrôler de manière programmatique l'exécution des scripts.
 
 ## Approfondissement
-
 Les arguments de ligne de commande, tels que compris dans le contexte des langages de programmation traditionnels, apportent les capacités pour les scripts et les applications de traiter les paramètres d'exécution, permettant ainsi des exécutions de code flexibles et dynamiques basées sur l'entrée des utilisateurs ou sur des processus automatisés. Google Apps Script, étant un langage de script basé sur le cloud pour le développement d'applications légères dans l'écosystème Google Workspace, n'opère pas nativement via une interface de ligne de commande. Au lieu de cela, son exécution est largement événementielle ou manuellement déclenchée à travers l'UI de Apps Script et Google Workspace, ou via des applications Web qui peuvent analyser les paramètres d'URL en tant qu'arguments de ligne de commande pseudo.
 
 Étant donné cette différence architecturale, les programmeurs venant d'un contexte de langages riches en CLI pourraient avoir besoin d'ajuster leur approche lors de l'automatisation des tâches ou du développement d'applications dans Google Apps Script. Au lieu d'analyser les arguments de ligne de commande traditionnels, tirer parti de la fonctionnalité d'application Web de Google Apps Script ou même des fonctions personnalisées de Google Sheets pour le traitement interactif des données peut servir des fins similaires. Bien que cela puisse sembler être une limitation au premier abord, cela encourage le développement d'interfaces plus conviviales et d'applications Web accessibles, s'alignant sur l'objectif de Google Apps Script d'intégration et d'extension transparentes des applications Google Workspace.

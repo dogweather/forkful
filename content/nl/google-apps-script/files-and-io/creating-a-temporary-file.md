@@ -14,12 +14,7 @@ title: Een tijdelijk bestand aanmaken
 weight: 21
 ---
 
-## Wat & Waarom?
-
-Het creëren van een tijdelijk bestand in Google Apps Script houdt in dat je een bestand genereert dat bedoeld is voor kortstondig gebruik, doorgaans voor tussentijdse gegevensverwerking, debugging of cache-doeleinden. Programmeurs doen dit om gegevens tijdelijk te beheren zonder de permanente opslagruimte te vervuilen of wanneer het permanent maken van de gegevens niet nodig is buiten de reikwijdte van het huidige proces.
-
 ## Hoe:
-
 In Google Apps Script kan het creëren van een tijdelijk bestand worden bereikt met behulp van de DriveApp-service, die een eenvoudige methode biedt om bestanden in Google Drive te creëren, te lezen en te verwijderen. Hier is hoe je een tijdelijk tekstbestand kunt maken, er gegevens naar kunt schrijven en het daarna kunt verwijderen na gebruik:
 
 ```javascript
@@ -54,7 +49,6 @@ Tijdelijk bestand verwijderd
 Dit voorbeeldscript laat de creatie van een tijdelijk bestand zien, het uitvoeren van een operatie om de inhoud ervan te lezen en ten slotte, het verwijderen van het bestand om op te ruimen.
 
 ## Diepgaande Duik
-
 Het concept van het creëren van tijdelijke bestanden in softwareontwikkeling is zo oud als het concept van bestandsbeheer zelf. In traditionele bestandssystemen worden tijdelijke bestanden vaak gemaakt in aangewezen tijdelijke mappen en zijn cruciaal voor verschillende tussenliggende processen, zoals het sorteren van grote datasets, het vasthouden van sessiegegevens voor webapplicaties of het opslaan van gegevenschunks tijdens bestandsconversieprocessen.
 
 In Google Apps Script maakt het proces van het creëren van tijdelijke bestanden gebruik van de infrastructuur van Google Drive, wat een interessante mix biedt van cloudgebaseerd bestandsbeheer met traditionele programmeerconcepten. Deze methode om tijdelijke bestanden in Google Drive te creëren is echter niet zonder beperkingen en kosten, gezien de quotabeperkingen die Google Drive oplegt. Ook kan de latentie bij het openen van Google Drive via het netwerk vergeleken met een lokaal bestandssysteem een kritieke factor zijn voor hoogpresterende applicaties.

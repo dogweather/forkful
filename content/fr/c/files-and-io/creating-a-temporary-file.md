@@ -15,9 +15,6 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## Quoi & Pourquoi ?
-Créer un fichier temporaire en C consiste à générer un fichier destiné à être utilisé pendant une courte durée, généralement comme espace de travail temporaire pour le traitement ou le stockage de données. Les programmeurs le font pour gérer des données temporaires sans affecter le stockage permanent du programme ou pour garantir que les données sensibles soient effacées après utilisation.
-
 ## Comment :
 La création d’un fichier temporaire dans le langage de programmation C peut tirer parti de fonctions telles que `tmpfile()` et `mkstemp()`.
 

@@ -16,9 +16,6 @@ title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---
 
-## Cái gì và Tại sao?
-Refactoring là quá trình tái cấu trúc mã lệnh hiện tại mà không thay đổi hành vi bên ngoài của nó nhằm cải thiện các thuộc tính phi chức năng. Lập trình viên thực hiện việc này nhằm làm cho mã lệnh dễ đọc hơn, giảm độ phức tạp, cải thiện khả năng bảo trì, và làm cho nó dễ dàng mở rộng hoặc chỉnh sửa sau này.
-
 ## Làm thế nào:
 Hãy tưởng tượng bạn có một script đã phát triển khá nhiều theo thời gian. Nó bắt đầu một cách đơn giản, nhưng bây giờ nó trở thành một quái vật rộng lớn với những xúc tu lôgic. Đây là một ví dụ nhỏ về việc tái cấu trúc một hàm để nó trở nên dễ đọc và hiệu quả hơn:
 

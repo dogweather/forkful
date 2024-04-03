@@ -14,12 +14,7 @@ title: Protokollierung
 weight: 17
 ---
 
-## Was & Warum?
-
-Das Protokollieren in C beinhaltet die Aufzeichnung des Ablaufs und bemerkenswerter Ereignisse eines Programms während seiner Laufzeit und bietet eine greifbare Überprüfung seines Verhaltens und seiner Leistung. Programmierer nutzen die Protokollierung für Debugging-Zwecke, Überwachung der Softwaregesundheit und Gewährleistung der Systemsicherheit.
-
 ## Wie:
-
 In C kann die Protokollierung mit grundlegenden Dateioperationen oder mithilfe anspruchsvollerer Bibliotheken erreicht werden. Für den Einfachheit halber beginnen wir mit der Standard-E/A-Bibliothek. Die folgenden Snippets zeigen grundlegende Implementierungen der Protokollierung.
 
 Um einfache Nachrichten zu protokollieren:
@@ -95,7 +90,6 @@ Ausgabe in `detailed.log`:
 ```
 
 ## Vertiefung
-
 Wie gezeigt, beruht das Protokollieren in C auf einfachen Dateioperationen, was zwar effektiv, aber nicht so leistungsfähig oder flexibel ist wie Protokollierungseinrichtungen in anderen Sprachen, wie dem `logging` Modul in Python oder `Log4j` in Java. Für fortgeschrittenere Protokollierungsfähigkeiten in C wenden sich Entwickler oft an Bibliotheken wie `syslog` auf Unix-ähnlichen Systemen, die systemweite Protokollverwaltung bieten, oder an Drittanbieterbibliotheken wie `log4c`.
 
 Historisch gesehen war die Protokollierung ein integraler Bestandteil der Programmierung, der auf frühe Programmierpraktiken zurückgeht, bei denen das Nachverfolgen und Verstehen des Programmablaufs und von Fehlern hauptsächlich durch physische Ausdrucke erfolgte. Da sich Systeme weiterentwickelten, wurde die Protokollierung anspruchsvoller und unterstützt jetzt verschiedene Schweregrade von Protokollen, Protokollrotation und asynchrone Protokollierung.

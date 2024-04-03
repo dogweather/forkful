@@ -11,9 +11,6 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mitä & Miksi?
-Koodin jakaminen funktioihin tarkoittaa sen pilkkomista pienemmiksi, uudelleenkäytettäviksi osiksi. Sen tavoitteena on toiston välttäminen, koodin luettavuuden parantaminen sekä vianetsinnän ja testauksen yksinkertaistaminen. Hyvin järjestellyt funktiot voivat olla kuin laatikollinen siististi merkittyjä työkaluja, valmiina käytettäväksi ja jaettavaksi.
-
 ## Kuinka tehdään:
 Otetaan esimerkki yleisestä tehtävästä: ympyrän pinta-alan laskemisesta. Sen sijaan, että kirjoittaisimme saman kaavan joka kerta, kapseloimme sen funktioon.
 

@@ -10,12 +10,7 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-
-Calculating a future or past date means finding out what the date will be, or was, after or before a specified time interval. Programmers do this for features like reminders, subscriptions, or historical data analysis.
-
 ## How to:
-
 Ruby makes playing with dates a breeze using its built-in `Date` class and the `active_support` gem for some extra sugar. Here's how it's done:
 
 ```Ruby
@@ -50,7 +45,6 @@ In 2 months, it will be: 2023-06-07
 ```
 
 ## Deep Dive
-
 Before Ruby absorbed date calculation functionalities into its standard and additional libraries, developers often had to manually calculate dates, considering leap years, different month lengths, and time zones—quite the headache.
 
 The standard `Date` class does a lot out of the box. You can add (`+`) or subtract (`-`) days easily. However, for more intuitive time period manipulations, like "2 months from now", we rely on `active_support`, extracted from Ruby on Rails. This gem uses extensions to standard Ruby classes, making such calculations human-friendly.
@@ -60,7 +54,6 @@ When calculating past or future dates, consider time zones if you're also factor
 Alternatives exist, like the `time-lord` and `ice_cube` gems, offering more syntactic sugar or specialized features (like recurring events), respectively.
 
 ## See Also
-
 - Dealing with time zones in Ruby: [https://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html](https://api.rubyonrails.org/classes/ActiveSupport/TimeZone.html)
 - 'time-lord' gem for more human-like expressions: [https://github.com/krainboltgreene/time-lord](https://github.com/krainboltgreene/time-lord)
 - 'ice_cube' gem for handling recurring events: [https://github.com/seejohnrun/ice_cube](https://github.com/seejohnrun/ice_cube)

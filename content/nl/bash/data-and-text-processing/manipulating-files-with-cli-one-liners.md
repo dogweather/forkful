@@ -14,12 +14,7 @@ title: Bestanden manipuleren met CLI one-liners
 weight: 31
 ---
 
-## Wat & Waarom?
-
-Bestanden manipuleren met CLI (Command Line Interface) one-liners houdt in dat Bash-scripts of -opdrachten worden gebruikt om acties op bestanden uit te voeren, zoals ze maken, lezen, updaten of verwijderen, allemaal vanuit de terminal. Programmeurs doen dit voor efficiëntie, automatisering, en omdat het uitzonderlijk krachtig is voor het afhandelen van bestandsbewerkingen op Linux-servers of -systemen, waar grafische interfaces misschien niet beschikbaar zijn.
-
 ## Hoe:
-
 Hier zijn een paar krachtige one-liners en wat ze kunnen bereiken:
 
 1. **Een bestand maken en tekst erin schrijven:**
@@ -65,7 +60,6 @@ Deze lus gaat door elk `.txt` bestand in de huidige directory en hernoemt het na
 Deze CLI one-liners benutten de kracht van Bash voor snelle en effectieve bestandsmanipulatie, een vaardigheid die elke programmeur onmisbaar zal vinden.
 
 ## Diepere Duik
-
 De Bash-shell, een vaste waarde op de meeste UNIX-achtige systemen, is ontstaan uit de Bourne Shell (sh), geïntroduceerd in Version 7 Unix in 1979. Bash breidt de mogelijkheden van zijn voorganger uit met verbeterde scriptfuncties die het populair hebben gemaakt onder systeembeheerders en programmeurs.
 
 Hoewel Bash ongelooflijk krachtig is voor bestandsmanipulatie, heeft het ook zijn nadelen. Omdat het op tekst gebaseerd is, kunnen complexe bewerkingen (zoals die met binaire gegevens) omslachtig of inefficiënt zijn in vergelijking met het gebruik van een programmeertaal die met deze mogelijkheden in gedachten is ontworpen, zoals Python.

@@ -18,12 +18,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Cái gì & Tại sao?
-
-Việc làm việc với XML trong Dart bao gồm việc phân tích cú pháp, truy vấn và chỉnh sửa các tài liệu XML, một quá trình rất quan trọng đối với các ứng dụng tương tác với các dịch vụ web, các tệp cấu hình hoặc các hệ thống cũ. Lập trình viên làm điều này để kích hoạt trao đổi dữ liệu, cấu hình, hoặc thậm chí là các lời gọi thủ tục từ xa trong một định dạng có cấu trúc, phân cấp, dễ đọc cho con người và có thể phân tích cú pháp bởi máy.
-
 ## Làm thế nào:
-
 Dart không bao gồm hỗ trợ sẵn có cho việc xử lý XML trong thư viện chuẩn của nó, yêu cầu sử dụng các gói phần mềm của bên thứ ba. Một gói phổ biến là `xml`. Để sử dụng, bạn trước tiên cần thêm nó vào `pubspec.yaml` của mình:
 
 ```yaml

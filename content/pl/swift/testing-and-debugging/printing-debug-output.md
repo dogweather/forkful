@@ -11,9 +11,6 @@ title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---
 
-## Co i dlaczego?
-Wypisywanie danych debugowych to jak rozmowa z komputerem – wysyłasz mu pytanie i czekasz na odpowiedź. Programiści to robią, aby zrozumieć, co dzieje się w aplikacji podczas działania i znaleźć błędy.
-
 ## Jak to zrobić:
 W Swift, wykorzystuje się funkcję `print()` do wypisywania danych debugowych w konsoli. Prosty przykład:
 

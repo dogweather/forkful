@@ -13,12 +13,7 @@ title: Controleren of een directory bestaat
 weight: 20
 ---
 
-## Wat & Waarom?
-
-Controleren of een directory bestaat in C betekent het opvragen van het bestandssysteem om te verifiëren of een specifiek pad naar een directory leidt. Programmeurs voeren deze bewerking vaak uit om te zorgen dat bestandsbewerkingen (zoals lezen van of schrijven naar bestanden) worden gericht naar geldige paden, om fouten te voorkomen en de betrouwbaarheid van de software te verhogen.
-
 ## Hoe:
-
 In C kan de aanwezigheid van een directory worden gecontroleerd met de `stat` functie, die informatie ophaalt over het bestand of de directory op een gespecificeerd pad. De `S_ISDIR` macro uit `sys/stat.h` wordt vervolgens gebruikt om te evalueren of de opgehaalde informatie overeenkomt met een directory.
 
 Hier is hoe je `stat` en `S_ISDIR` kunt gebruiken om te controleren of een directory bestaat:
@@ -58,7 +53,6 @@ De directory bestaat niet.
 ```
 
 ## Diepere Duik:
-
 De `stat` structuur en functie maken al decennia deel uit van de programmeertaal C, afkomstig van Unix. Ze bieden een gestandaardiseerde manier om informatie van het bestandssysteem op te halen, wat ondanks het relatief lage niveau, veel gebruikt wordt vanwege de eenvoud en directe toegang tot de metadata van het bestandssysteem.
 
 Historisch gezien is het controleren van het bestaan en de eigenschappen van bestanden en directories met `stat` en zijn derivaten (zoals `fstat` en `lstat`) een gangbare aanpak geweest. Echter, deze functies interacteren direct met de OS-kernel, wat overhead en potentiele fouten kan introduceren als ze niet correct worden afgehandeld.

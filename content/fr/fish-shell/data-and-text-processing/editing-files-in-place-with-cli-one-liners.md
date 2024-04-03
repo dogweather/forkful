@@ -13,12 +13,7 @@ title: "Modification de fichiers sur place avec des lignes de commande en une se
 weight: 32
 ---
 
-## Quoi & Pourquoi ?
-
-Modifier des fichiers sur place avec des lignes de commande est une pratique qui consiste à apporter des modifications directement aux fichiers depuis la ligne de commande, sans les ouvrir dans un éditeur de texte. Les programmeurs font cela pour gagner du temps et automatiser les tâches d'édition répétitives, rendant leur flux de travail plus fluide et plus efficace.
-
 ## Comment faire :
-
 Fish Shell, connu pour ses fonctionnalités conviviales et ses puissantes capacités de script, offre plusieurs manières de modifier des fichiers sur place. Cependant, contrairement à certains autres shells, Fish n'a pas de mécanisme intégré pour la modification sur place (`sed -i` dans Bash, par exemple). Mais ne vous inquiétez pas, vous pouvez tout de même y parvenir avec un peu de créativité et quelques outils externes comme `sed` et `awk`.
 
 ### Utiliser `sed` pour des remplacements simples
@@ -43,7 +38,6 @@ awk '{print $1 * 2}' file.txt > temp && mv temp file.txt
 Rappelez-vous, lors de l'utilisation de ces outils depuis Fish, capturer les erreurs et comprendre leurs messages est crucial. Utilisez le robuste traitement des erreurs de Fish pour rendre vos scripts plus fiables.
 
 ## Plongée profonde
-
 Historiquement, la modification de fichiers sur place a été un pilier de la programmation Unix et Linux, offrant un moyen efficace d'effectuer des modifications rapides sans ouvrir manuellement les fichiers. Des outils comme `sed` et `awk` sont des utilitaires vénérables qui existent depuis les premiers jours d'Unix, devenant indispensables pour les tâches de traitement de texte.
 
 Fish Shell, bien plus moderne et offrant des améliorations en termes d'utilisabilité et de script, manque de modification sur place intégrée principalement en raison de sa philosophie de conception axée sur l'interactivité et la convivialité. L'absence d'une commande de modification sur place native dans Fish souligne l'importance des outils externes dans les écosystèmes de type Unix.

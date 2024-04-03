@@ -15,9 +15,6 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Gì và Tại sao?
-Xử lý lỗi cho phép kịch bản của bạn giải quyết những tình huống không mong đợi một cách nhẹ nhàng. Chúng ta làm điều này để quản lý sự cố mà không làm người dùng của chúng ta phải nhức đầu.
-
 ## Cách thực hiện:
 Để bắt lỗi trong Fish, hãy dựa vào lệnh `status` và các điều kiện. Giả sử `ping` thất bại; đây là cách để phát hiện điều đó:
 

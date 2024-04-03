@@ -12,12 +12,7 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-
-Handling errors in Python (or any programming language) is about expecting the unexpected – it’s the art of gracefully managing when things go south in your code. We do it to prevent crashes, guide users, and make our programs robust and reliable.
-
 ## How to:
-
 ``` Python
 # Basic try-except block
 try:
@@ -56,7 +51,6 @@ That's not a number!
 ```
 
 ## Deep Dive
-
 Since the dawn of programming, error handling has been crucial. Early approaches were rudimentary, like checking conditions before every risky operation. Python’s `try-except` syntax came from a heritage of exception handling in older languages like C++ and Java, simplifying the process.
 
 When you `try` a block of code, Python watches for any exceptions. If an error pops up, the `except` block catches it. You can get specific about the exceptions you catch or catch ‘em all with a bare `except`. However, specifics first is the better approach – it’s precise, not a catch-all net.
@@ -66,7 +60,6 @@ When you `try` a block of code, Python watches for any exceptions. If an error p
 Alternatives? There sure are. Some languages use return codes instead of exceptions. You might also encounter `with` statements for handling resources or `assertions` that check conditions while developing. But when we talk about solid error-handling strategies, the try-catch model stands out for its readability and structure.
 
 ## See Also
-
 Here are some good additional resources for diving even deeper:
 
 - Python's official documentation on errors and exceptions: [Python Docs – Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html)

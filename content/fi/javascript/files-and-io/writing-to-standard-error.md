@@ -14,9 +14,6 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mikä & Miksi?
-Standardivirheeseen (stderr) kirjoittaminen JavaScriptillä tarkoittaa virheilmoitusten tai minkä tahansa kriittisen tiedon ohjaamista tiettyyn, erilliseen virtaan, mikä on erityisen hyödyllistä Unix-tyyppisissä ympäristöissä lokiin kirjaamisen ja virheenkorjauksen kannalta. Ohjelmoijat tekevät näin erottaakseen normaalin ohjelman tulosteen virheilmoituksista, mahdollistaen selkeämmän tulostuksen hallinnan ja helpomman virheiden seurannan.
-
 ## Miten:
 Node.js:ssä stderriin kirjoittaminen voidaan saavuttaa käyttämällä `console.error()`-metodia tai kirjoittamalla suoraan `process.stderr`iin. Tässä esimerkit molemmista lähestymistavoista:
 

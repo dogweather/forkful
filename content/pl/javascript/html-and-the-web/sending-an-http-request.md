@@ -12,12 +12,7 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## Co i dlaczego?
-
-Wysyłanie zapytania HTTP to sposób, w jaki nasz kod komunikuje się z serwerami internetowymi - pobiera dane, wysyła informacje, aktualizuje zawartość. Programiści robią to, by ich aplikacje mogły interakcyjnie współdziałać z zewnętrznymi systemami i usługami.
-
 ## Jak to zrobić:
-
 Aby wysłać zapytanie HTTP w JavaScript, możemy użyć wbudowanego interfejsu `fetch` albo starszego `XMLHttpRequest`. Oto przykład użycia fetch:
 
 ```javascript
@@ -52,7 +47,6 @@ Error: ... informacje o błędzie ...
 ```
 
 ## Deep Dive
-
 Wczesne metody AJAX, jak `XMLHttpRequest`, były standardem przez lata, ale miały swoje wady - brak obietnic (promises), skomplikowany API. `fetch` pojawił się w języku JavaScript, by to ułatwić, oferuje prostszy sposób na asynchroniczne żądania HTTP i obsługuje obietnice.
 
 Alternatywnie, w Node.js i niektórych aplikacjach klienckich możemy użyć biblioteki `axios`. Jest ona oparta na `promises` i często uważana za bardziej czytelną:
@@ -69,7 +63,6 @@ axios.get('https://api.example.com/data')
 Warto wiedzieć, że każdy z tych sposobów radzi sobie z różnymi aspektami bezpieczeństwa, jak polityka CORS, różnią się także w obsłudze przerywania zapytań i streamingu.
 
 ## Zobacz także
-
 - Dokumentacja MDN dla `fetch`: [MDN - Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 - Dokumentacja dla `axios`: [Axios on GitHub](https://github.com/axios/axios)
 - Przewodnik po CORS: [MDN - CORS](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)

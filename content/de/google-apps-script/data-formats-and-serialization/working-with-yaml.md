@@ -15,12 +15,7 @@ title: Arbeiten mit YAML
 weight: 41
 ---
 
-## Was & Warum?
-
-YAML, das für "YAML Ain't Markup Language" steht, ist ein für Menschen lesbarer Daten-Serialisierungsstandard, der häufig für Konfigurationsdateien und den Datenaustausch zwischen Sprachen mit unterschiedlichen Datenstrukturen verwendet wird. Programmierer arbeiten oft mit YAML wegen seiner Einfachheit und Lesbarkeit, insbesondere bei Projekten, die umfangreiche Konfigurationen erfordern oder wenn strukturierte Daten zwischen verschiedenen Systemen übertragen werden.
-
 ## Wie:
-
 Obwohl Google Apps Script (GAS) nicht nativ das Parsen oder Serialisieren von YAML unterstützt, können Sie YAML-Daten manipulieren, indem Sie JavaScript-Bibliotheken verwenden oder eigene Parsing-Funktionen schreiben. Zur Demonstration betrachten wir, wie ein YAML-String mithilfe einer benutzerdefinierten Funktion geparst wird, da externe Bibliotheken nicht direkt in GAS importiert werden können.
 
 Nehmen Sie an, Sie haben eine einfache YAML-Konfiguration:
@@ -78,7 +73,6 @@ Wenn `testYamlParsing()` ausgeführt wird, gibt es aus:
 Dieser benutzerdefinierte Parsingsansatz ist recht grundlegend und muss möglicherweise angepasst werden, um komplexe YAML-Dateien zu handhaben.
 
 ## Vertiefung
-
 YAML, erstmals veröffentlicht im Jahr 2001, zielte darauf ab, lesbaren als seine Vorgänger wie XML oder JSON zu sein. Während seine Einfachheit und Benutzerfreundlichkeit weit verbreitet geschätzt werden, stellt die Handhabung von YAML in Google Apps Script Herausforderungen dar, aufgrund der fehlenden direkten Unterstützung. Daher verlassen sich Programmierer oft auf die Vielseitigkeit von JavaScript, um YAML-Daten zu parsen und zu generieren. Für komplexe Anwendungsfälle, insbesondere solche mit tiefer Verschachtelung und fortgeschrittenen Datenstrukturen, kann diese Methode jedoch mühsam und fehleranfällig werden.
 
 JSON wird im Gegensatz dazu in Google Apps Script und den meisten anderen Programmierumgebungen nativ unterstützt und bietet einen direkteren Ansatz für Daten-Serialisierung und -Deserialisierung ohne zusätzlichen Parsing-Aufwand. Die Syntax von JSON ist weniger umfangreich als die von YAML, was es für den Datenaustausch in Webanwendungen geeigneter macht. Dennoch bleibt YAML für Konfigurationsdateien und Situationen, in denen die Lesbarkeit für Menschen im Vordergrund steht, beliebt.

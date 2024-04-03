@@ -12,9 +12,6 @@ title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---
 
-## Co i dlaczego?
-REPL, czyli Read-Eval-Print Loop (Pętla Czytaj-Wykonaj-Wydrukuj), to interaktywne środowisko programistyczne, które przyjmuje pojedyncze wejścia użytkownika, wykonuje je i zwraca wynik. Programiści używają go do uzyskiwania natychmiastowego informacji zwrotnej, debugowania oraz dynamicznego eksperymentowania z koncepcjami kodowania bez konieczności kompilowania i uruchamiania pełnego programu.
-
 ## Jak to zrobić:
 W Fish, interaktywna powłoka jest domyślnym trybem, gdy ją uruchamiasz. Oto jak to wygląda w akcji:
 

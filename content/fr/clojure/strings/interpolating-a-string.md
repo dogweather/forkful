@@ -11,12 +11,7 @@ title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---
 
-## Qu'est-ce que c'est et pourquoi ?
-
-L'interpolation de chaînes permet d'insérer facilement des variables ou des expressions dans une chaîne de caractères. Les programmeurs l'utilisent pour construire des textes dynamiquement sans concaténer péniblement des morceaux de chaînes.
-
 ## Comment faire :
-
 ```Clojure
 ;; Utiliser `str` pour concaténer des chaînes et des variables
 (def name "Mundo")
@@ -28,7 +23,6 @@ L'interpolation de chaînes permet d'insérer facilement des variables ou des ex
 ```
 
 ## Plongée en profondeur
-
 Historiquement, Clojure, tout comme sa famille Lisp, n'a pas eu une fonction d'interpolation de chaînes intégrée comme dans d'autres langages modernes. Pour combler ce vide, on utilise souvent `str` ou `format`. `str` est plus simple, alors que `format` offre un contrôle de formatage semblable à `printf` en C.
 
 Il existe des alternatives via des bibliothèques tierces comme `clojure.string/interpolate` ou des utilitaires personnalisés, qui peuvent rendre l'interpolation plus directe et élégante.
@@ -36,7 +30,6 @@ Il existe des alternatives via des bibliothèques tierces comme `clojure.string/
 Du point de vue de l'implémentation, l'interpolation consiste à évaluer des expressions ou des variables et à les transformer en chaînes avant de les assembler. Cela doit être fait de manière sûre pour éviter les injections de code malveillantes.
 
 ## Voir également
-
 - ClojureDocs on `str`: https://clojuredocs.org/clojure.core/str
 - ClojureDocs on `format`: https://clojuredocs.org/clojure.core/format
 - Un article sur l'interpolation de chaînes dans Clojure : https://clojurebyexample.com/examples/string-interpolation

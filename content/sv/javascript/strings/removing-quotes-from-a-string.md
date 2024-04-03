@@ -12,9 +12,6 @@ title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---
 
-## Vad & Varför?
-Att ta bort citattecken från en sträng innebär att bli av med de där irriterande citattecknen som kan ställa till med problem i din kod, särskilt när du tolkar data eller bygger JSON-objekt. Programmerare gör det för att sanera inmatningar, undvika syntaxfel och få strängar att fungera bra med andra delar av deras kod.
-
 ## Hur gör man:
 Tänk dig att du har en sträng som är omsluten av dubbla citattecken, som `"\"Hej, världen!\""` och du vill ha texten ren, utan citattecken. Här är ett snabbt JavaScript-utdrag för att befria din sträng från dessa citatteckensbojor:
 

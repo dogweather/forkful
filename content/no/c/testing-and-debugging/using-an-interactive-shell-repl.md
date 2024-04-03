@@ -14,12 +14,7 @@ title: Bruk av interaktiv shell (REPL)
 weight: 34
 ---
 
-## Hva & Hvorfor?
-
-Et interaktivt skall, også kjent som en Les-Evaluer-Skriv Løkke (REPL), lar programmerere taste inn uttrykk eller kode og umiddelbart se resultater, noe som forbedrer læring og feilsøkingsprosesser. Til tross for at C tradisjonelt ikke støtter REPL-miljøer innebygd, broer moderne verktøy denne gapet og tilbyr dynamisk utforsking av C-programmer.
-
 ## Hvordan:
-
 Å engasjere seg med en C REPL, kan du kanskje ikke finne en like enkel vei som i språk som Python eller JavaScript. Men, verktøy som `Cling`, en C/C++ tolker basert på Clang og LLVM teknologi, gjør det mulig. Her er hvordan du kommer i gang:
 
 1. **Installer Cling**: Avhengig av operativsystemet ditt, kan du finne Cling i pakkebehandleren din eller trenge å bygge fra kilde. For eksempel, på Ubuntu, kan det være så enkelt som `sudo apt-get install cling`.
@@ -56,7 +51,6 @@ Kvadratroten av 4.000000 er 2.000000
 ```
 
 ## Dypdykk:
-
 Utviklingen av REPL-miljøer går tilbake til Lisp på 1960-tallet, designet for å støtte interaktiv kodeevaluering. Men, den statiske og kompilerte naturen til C utgjorde utfordringer for å realisere lignende umiddelbarhet i justeringer av kodeutførelse. Utviklingen av Cling og andre C/C++ tolkere markerer betydelige fremskritt mot å integrere dynamisk evaluering i statisk typede språk.
 
 Fremhevet er det at ved bruk av en tolker som Cling, kan det hende at det ikke helt etterligner oppførselen til kompilert C-kode på grunn av forskjeller i optimalisering og utførelse. Også, selv om det er svært verdifullt for utdanning, rask prototyping, og feilsøking, kan REPL-er for C noen ganger være tregere og mindre praktiske for utvikling av kode på produksjonsnivå sammenlignet med tradisjonelle kompilere-kjøre-feilsøke sykluser.

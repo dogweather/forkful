@@ -12,9 +12,6 @@ title: Protokollierung
 weight: 17
 ---
 
-## Was & Warum?
-Das Loggen ist der Vorgang des Aufzeichnens von Anwendungsverhalten, Fehlern und anderen wichtigen Informationen auf ein beständiges Medium, wie eine Datei oder Datenbank. Programmierer tun dies, um die Gesundheit und Leistung ihrer Apps zu verfolgen, um Probleme zu debuggen und um ein Auge darauf zu haben, was unter der Haube in Produktivumgebungen passiert.
-
 ## Wie geht das:
 In Swift können Sie Logs mit `print`-Anweisungen oder der flexibleren `os.log`-API in die Konsole schreiben, welche sich in das Unified Logging System auf Apple-Plattformen einklinkt.
 

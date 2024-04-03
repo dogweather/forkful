@@ -11,9 +11,6 @@ title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---
 
-## Vad & Varför?
-Att starta ett nytt projekt innebär att sätta upp en grundläggande struktur för din kod så att du kan börja bygga din applikation. Programmerare gör det för att skapa en solid grund att stå på, vilket gör framtida utveckling smidigare.
-
 ## Hur man gör:
 För att kickstarta ett TypeScript-projekt, använd följande kommandon:
 

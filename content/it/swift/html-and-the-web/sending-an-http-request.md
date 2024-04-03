@@ -10,9 +10,6 @@ title: Inviare una richiesta http
 weight: 44
 ---
 
-## Cosa & Perché?
-Inviare una richiesta HTTP significa chiedere dati a un server web. I programmatori lo fanno per interagire con servizi web, come recuperare dati o inviare informazioni da una app.
-
 ## Come fare:
 In Swift, possiamo utilizzare `URLSession` per gestire richieste HTTP. Ecco un esempio.
 

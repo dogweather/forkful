@@ -12,9 +12,6 @@ title: Refactoring
 weight: 19
 ---
 
-## Wat & Waarom?
-Refactoring is het proces van het herstructureren van bestaande computercode zonder het externe gedrag ervan te veranderen. Programmeurs doen dit om de code schoner, onderhoudbaarder te maken en de complexiteit te verminderen, wat het gemakkelijker maakt om te begrijpen voor iemand die nieuw is.
-
 ## Hoe te:
 Beschouw een TypeScript-functie die betere tijden heeft gekend - het is een beetje een rommeltje en kan wat liefde en zorg gebruiken:
 

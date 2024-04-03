@@ -12,9 +12,6 @@ title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---
 
-## Quoi & Pourquoi ?
-Supprimer les guillemets d'une chaîne signifie éliminer tout marque de citation—simple (' '), double (" "), ou les deux—des données textuelles. Les programmeurs font cela pour assainir les entrées, préparer les données pour le stockage, ou simplifier les tâches d'analyse syntaxique où les guillemets sont inutiles et potentiellement problématiques.
-
 ## Comment faire :
 Retirons ces guillemets ennuyeux de notre texte. Nous utiliserons la méthode `replace()` pour les corrections rapides et les expressions régulières (regex) pour les cas plus coriaces.
 

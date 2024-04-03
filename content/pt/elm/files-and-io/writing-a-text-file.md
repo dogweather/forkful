@@ -9,9 +9,6 @@ title: Escrevendo um arquivo de texto
 weight: 24
 ---
 
-## What & Why?
-Escrever um arquivo de texto permite salvar dados de forma persistente. Programadores fazem isso para manter registros, configurações ou compartilhar informações entre sistemas.
-
 ## How to:
 Elm é uma linguagem para criar aplicativos web e, por si só, não tem capacidade para escrever arquivos diretamente devido a restrições do navegador. No entanto, podemos gerar arquivos pra download. Veja como criar um arquivo de texto e disponibilizar pra download:
 

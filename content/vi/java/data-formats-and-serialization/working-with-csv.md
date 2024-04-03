@@ -18,12 +18,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---
 
-## Cái gì & Tại sao?
-
-Làm việc với CSV, viết tắt của Comma-Separated Values (Giá trị Phân cách bằng Dấu phẩy), có nghĩa là xử lý dữ liệu dưới dạng văn bản thuần túy, trong đó mỗi dòng là một bản ghi dữ liệu với các trường được phân cách bởi dấu phẩy. Lập trình viên đào sâu vào CSV vì chúng đơn giản để sử dụng, được hỗ trợ rộng rãi, và hoàn hảo cho việc trao đổi dữ liệu giữa các ứng dụng khác nhau.
-
 ## Cách thức:
-
 Hãy đọc và viết các tệp CSV trong Java sử dụng thư viện `OpenCSV` thường được sử dụng. Đầu tiên, thêm dependency vào `pom.xml` nếu bạn sử dụng Maven.
 
 ```xml
@@ -35,7 +30,6 @@ Hãy đọc và viết các tệp CSV trong Java sử dụng thư viện `OpenCS
 ```
 
 ### Viết một tệp CSV
-
 ```java
 import com.opencsv.CSVWriter;
 import java.io.FileWriter;
@@ -59,7 +53,6 @@ public class CSVWritingExample {
 ```
 
 ### Đọc một tệp CSV
-
 ```java
 import com.opencsv.CSVReader;
 import java.io.FileReader;
@@ -88,11 +81,9 @@ Bob, 19, Canada
 ```
 
 ## Sâu hơn nữa
-
 Có lịch sử, CSV đã được sử dụng từ những ngày đầu của việc tính toán cá nhân, khiến chúng trở thành một loại lingua franca cho trao đổi dữ liệu. Các lựa chọn khác như JSON, XML, hoặc thậm chí định dạng Excel có thể cung cấp các tính năng tiên tiến hơn, nhưng sự đơn giản của CSV đảm bảo sự lâu dài của nó. Khi làm việc với Java, trong khi `OpenCSV` là một lựa chọn phổ biến, bạn cũng có thể sử dụng `java.util.Scanner` hoặc `java.io.BufferedReader` cho các nhiệm vụ cơ bản, tuy nhiên bạn sẽ tự xử lý phần phân tích cú pháp. `Apache Commons CSV` là một thư viện mạnh mẽ khác có sẵn cho các nhiệm vụ tương tự.
 
 ## Xem thêm
-
 - Trang chủ OpenCSV cho tài liệu và hướng dẫn: http://opencsv.sourceforge.net/
 - Apache Commons CSV cho một phương pháp tiếp cận khác: https://commons.apache.org/proper/commons-csv/
 - Hướng dẫn chính thức của Oracle về các thao tác I/O trong Java: https://docs.oracle.com/javase/tutorial/essential/io/

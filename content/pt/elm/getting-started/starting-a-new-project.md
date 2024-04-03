@@ -10,9 +10,6 @@ title: Iniciando um novo projeto
 weight: 1
 ---
 
-## O Que & Porquê?
-Começar um novo projeto em Elm é inicializar um ambiente de desenvolvimento do zero, configurando tudo o que você precisa para escrever seu código Elm. Programadores fazem isso para criar aplicações web confiáveis e manuteníveis com uma linguagem que privilegia a simplicidade e a qualidade do código.
-
 ## Como Fazer:
 Para iniciar um novo projeto Elm, você precisa ter o Elm instalado. Se ainda não tem, visite [elm-lang.org](https://elm-lang.org/) para instruções de instalação. Agora, vamos criar um projeto simples:
 

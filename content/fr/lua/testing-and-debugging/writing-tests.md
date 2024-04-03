@@ -14,16 +14,10 @@ title: "R\xE9daction de tests"
 weight: 36
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire des tests en programmation implique de créer de petits morceaux de code séparés pour vérifier automatiquement que différentes parties de votre application fonctionnent comme prévu. Pour les programmeurs Lua, les tests garantissent la fiabilité et aident à maintenir la qualité du code, accélérant le processus de débogage et rendant les modifications de la base de code plus sûres.
-
 ## Comment faire :
-
 Lua, étant un langage de script léger mais puissant, n'inclut pas de framework de test intégré. Cependant, des bibliothèques tierces comme Busted et LuaUnit rendent les tests relativement simples. Ici, nous examinerons des exemples utilisant les deux.
 
 ### Utiliser Busted
-
 Busted est un framework de test Lua populaire qui offre une manière flexible d'écrire des tests. Tout d'abord, installez Busted via LuaRocks (le gestionnaire de paquets de Lua) avec `luarocks install busted`. Une fois installé, vous pouvez écrire vos tests. Voici un test simple pour une fonction `add` qui additionne deux nombres :
 
 ```lua
@@ -54,7 +48,6 @@ Pour exécuter les tests, tapez `busted` dans votre terminal. Un exemple de sort
 ```
 
 ### Utiliser LuaUnit
-
 LuaUnit est un autre framework de test qui suit les conventions xUnit et est facile à configurer. Installez LuaUnit via LuaRocks en utilisant `luarocks install luaunit`. Voici comment vous pourriez écrire un test similaire à celui ci-dessus avec LuaUnit :
 
 ```lua

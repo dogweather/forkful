@@ -14,9 +14,6 @@ title: "T\u1EA3i trang web"
 weight: 42
 ---
 
-## Cái gì & Tại sao?
-Tải xuống một trang web có nghĩa là lấy nội dung của nó qua mạng. Các lập trình viên làm điều này để thu thập dữ liệu web, xem ngoại tuyến, hoặc tự động hóa các tương tác với trang web.
-
 ## Cách thực hiện:
 Dưới đây là bùa phép ma thuật để tải một trang web sử dụng PowerShell. Chúng ta sẽ sử dụng `Invoke-WebRequest`.
 

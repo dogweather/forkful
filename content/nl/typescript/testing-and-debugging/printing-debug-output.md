@@ -12,9 +12,6 @@ title: Debug-output afdrukken
 weight: 33
 ---
 
-## Wat & Waarom?
-Debugoutput is je zaklamp in een donker code steegje; het helpt je fouten te spotten door je een kijkje te geven in wat je code doet tijdens de uitvoering. Programmeurs doen het omdat we, nou ja, menselijk zijn en onze code is niet altijd perfect bij de eerste poging.
-
 ## Hoe te:
 Wil je debugoutput afdrukken in TypeScript? Consolemethoden zijn je beste keuze. Zie `console.log`, `console.error` en vrienden in actie:
 

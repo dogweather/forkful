@@ -17,12 +17,7 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Làm thế nào và Tại sao?
-
-Làm tròn số có nghĩa là cắt bỏ phần thập phân để sinh ra một giá trị đơn giản hơn phù hợp với ngữ cảnh cụ thể. Các lập trình viên làm tròn số để đơn giản hóa kết quả, tiết kiệm không gian hoặc bởi vì giá trị chính xác không quan trọng—như khi bạn ước lượng sử dụng CPU hoặc dung lượng đĩa, và phần thập phân không làm thay đổi ngày của bạn.
-
 ## Cách thực hiện:
-
 Dưới đây là thông tin chi tiết về làm tròn trong Bash:
 
 ```Bash
@@ -49,7 +44,6 @@ Kết quả mẫu—trực tiếp từ terminal:
 ```
 
 ## Sâu hơn nữa
-
 Ngày xưa, không có `bc` hoặc `printf` trong kịch bản Bash để thực hiện phép toán diệu kỳ. Người dùng cổ điển phải dựa vào công cụ bên ngoài hoặc tìm tòi giải pháp sáng tạo. Bây giờ, `bc` cho phép bạn thực hiện toán học chính xác. Hãy lưu ý, `bc` không làm tròn theo mặc định—nó làm tròn xuống. Phần scale đặt hành động cho điểm thập phân.
 
 Có cách thay thế? Bạn có thể sử dụng `awk` để làm tròn mà không cần chuyển qua `bc` hoặc đấu tranh với `perl` cho nhu cầu toán học nặng nề hơn. Dành cho những người quá khích, hãy đi với Bash thuần túy, chẳng hạn, thao tác chuỗi lặp lại – nhưng tại sao?
@@ -57,7 +51,6 @@ Có cách thay thế? Bạn có thể sử dụng `awk` để làm tròn mà kh�
 Về chi tiết, `bc` không chỉ làm tròn, nó thực hiện rất nhiều thứ toán học—tính tỉ lệ, hàm sin, căn bậc hai, bạn tên nó. Với `printf`, đó là nhiều hơn về định dạng văn bản, nhưng này, nó cũng làm tròn số, vì vậy chúng tôi không phàn nàn.
 
 ## Xem thêm
-
 Dành cho những ai muốn tìm hiểu thêm:
 
 - Hướng dẫn sử dụng GNU `bc`: https://www.gnu.org/software/bc/manual/html_mono/bc.html

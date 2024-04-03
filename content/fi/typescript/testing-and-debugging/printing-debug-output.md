@@ -11,9 +11,6 @@ title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
 
-## What & Why? (Mitä & Miksi?)
-Kehittäessä pääsee joskus pälkähästä tulostamalla debug-tietoa, joka valottaa ohjelman tilaa reaaliajassa. Se auttaa bongaamaan virheet ja ymmärtämään koodin käytöstä.
-
 ## How to: (Kuinka tehdä:)
 TypeScriptissa voit tulostaa debug-tietoja käyttäen `console.log()`, `console.error()` ja muita `console`-objektin metodeja. Tässä pari esimerkkiä:
 

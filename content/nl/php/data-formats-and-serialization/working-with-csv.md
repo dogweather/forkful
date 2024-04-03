@@ -12,10 +12,8 @@ title: Werken met CSV
 weight: 37
 ---
 
-## Wat & Waarom?
-CSV, de afkorting voor Comma-Separated Values (komma-gescheiden waarden), is een alomtegenwoordig bestandsformaat voor het opslaan van tabelgegevens. Programmeurs gebruiken het omdat het eenvoudig is, breed ondersteund wordt, en gemakkelijk te lezen en te schrijven is door zowel computers als mensen.
-
 ## Hoe te:
+
 
 ### Een CSV-bestand lezen
 ```php

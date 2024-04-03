@@ -11,9 +11,6 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## What & Why? (Co i Dlaczego?)
-Zaczynanie nowego projektu to jak otwieranie pustej książki, na której stronach możesz napisać dowolny kod. Programiści rozpoczynają nowe projekty, aby tworzyć aplikacje od podstaw, eksperymentować z nowymi technologiami lub po prostu uczą się przez praktykę.
-
 ## How to: (Jak to zrobić:)
 ```TypeScript
 // Instalacja TypeScript globalnie

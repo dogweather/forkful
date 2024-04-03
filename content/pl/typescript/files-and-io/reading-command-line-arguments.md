@@ -11,9 +11,6 @@ title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---
 
-## What & Why? (Co i Dlaczego?)
-Czytanie argumentów linii poleceń to sposób na wprowadzanie danych do programu bezpośrednio z terminala. Programiści to robią, by sterować zachowaniem programu w trakcie jego startu.
-
 ## How to (Jak to zrobić):
 ```TypeScript
 // Instalujemy Node.js i TypeScript, a potem tworzymy plik index.ts

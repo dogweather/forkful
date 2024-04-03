@@ -13,9 +13,6 @@ title: Skrive tester
 weight: 36
 ---
 
-## Hva & Hvorfor?
-Å skrive tester i TypeScript innebærer å lage automatiserte skript for å verifisere funksjonaliteten og riktigheten av koden din. Programmerere gjør dette for å sikre pålitelighet, raskt oppdage feil og legge til rette for vedlikeholdbar kodevekst, siden TypeScript sin statiske typografi legger til et nivå av forutsigbarhet til JavaScript-testing.
-
 ## Hvordan:
 TypeScript fungerer harmonisk med de fleste JavaScript-testingrammeverk. For demonstrasjonsformål vil vi bruke Jest, et populært testingrammeverk, på grunn av dets nullkonfigurasjonsoppsett for TypeScript-prosjekter.
 

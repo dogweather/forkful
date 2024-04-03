@@ -12,12 +12,7 @@ title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä ja miksi?
-
-Numeroiden pyöristäminen tarkoittaa numeerisen arvon likimääräistämistä tiettyyn tarkkuuteen, tyypillisesti ei-toivottujen desimaalien poistamiseksi. Ohjelmoijat pyöristävät muistin hallinnan, luettavuuden parantamisen ja toimialakohtaisten vaatimusten, kuten valuuttarajoitusten, täyttämiseksi.
-
 ## Kuinka:
-
 Swift tarjoaa useita tapoja numeroiden pyöristämiseen. Tässä maistiainen:
 
 ```Swift
@@ -41,7 +36,6 @@ print("Standardi: \(tavallisestiPyoristetty), Desimaali: \(desimaaliPyoristetty)
 Tuloste: `Standardi: 3.0, Desimaali: 3.142, Alas: 3.0, Ylös: 4.0`
 
 ## Syväsukellus
-
 Historiallisesti pyöristäminen on matemaattinen käsite, joka on ollut olemassa ennen tietokoneita, olennaista kaupassa ja tieteessä. Swiftin `Foundation`-kehys tarjoaa kattavia pyöristystoiminnallisuuksia:
 
 - `round(_: )` on vanha kunnon puoliväliin pyöristäminen.
@@ -51,5 +45,4 @@ Historiallisesti pyöristäminen on matemaattinen käsite, joka on ollut olemass
 Ole tietoinen `Decimal`-tyypistä tarkkoihin rahoituslaskelmiin, mikä välttää liukulukuvirheet. Tutustu myös `NSDecimalNumber`-luokkaan Objective-C-yhteensopivuuden vuoksi.
 
 ## Katso myös
-
 - IEEE-standardi liukulukuaritmetiikalle (IEEE 754): [IEEE 754](https://ieeexplore.ieee.org/document/4610935)

@@ -13,12 +13,7 @@ title: "Einen String gro\xDFschreiben"
 weight: 2
 ---
 
-## Was & Warum?
-
-Das Kapitalisieren eines Strings beinhaltet die Umwandlung des Anfangsbuchstabens eines gegebenen Strings in Großbuchstaben, während der Rest in Kleinbuchstaben gehalten wird. Dies geschieht oft aus Gründen der standardisierten Formatierung oder Lesbarkeit. Programmierer führen diese Aufgabe häufig durch, um sicherzustellen, dass Daten konsistent präsentiert werden, insbesondere in Benutzeroberflächen oder beim Verarbeiten und Anzeigen von Benutzereingaben.
-
 ## Wie geht das:
-
 In Elm gibt es keine integrierte Funktion speziell zum Kapitalisieren von Strings. Jedoch können Sie dies leicht erreichen, indem Sie die eingebauten Funktionen des `String`-Moduls wie `toUpper`, `toLower`, `left` und `dropLeft` verwenden.
 
 ```elm

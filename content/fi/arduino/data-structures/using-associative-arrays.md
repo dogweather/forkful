@@ -13,9 +13,6 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mikä & Miksi?
-Arduinon maailmassa assosiatiiviset taulukot mahdollistavat avainten yhdistämisen arvoihin, melkein kuin yhdistäisit sukkia pareiksi. Ne ovat hyödyllisiä, kun tarvitset tallentaa ja hakea tietoa käyttäen kuvaavia nimiä, tehden koodistasi siistimpää ja paljon ymmärrettävämpää.
-
 ## Kuinka:
 Arduino, tiukasti ottaen, ei tue assosiatiivisia taulukoita samalla tavalla kuin korkeamman tason kielissä. Mutta, älä pelkää. Voimme olla nokkelia käyttämällä rakenteita ja taulukoita jäljitelläksemme tätä toiminnallisuutta. Tässä on yksinkertainen esimerkki perustason "assosiatiivisen taulukon" luomisesta eri kaupunkien lämpötilojen tallentamiseen ja hakemiseen.
 

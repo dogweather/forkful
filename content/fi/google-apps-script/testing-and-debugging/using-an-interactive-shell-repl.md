@@ -15,12 +15,7 @@ title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mikä & Miksi?
-
-Interaktiivinen kuori, eli Read-Eval-Print Loop (REPL), on yksinkertainen interaktiivinen ohjelmointiympäristö, joka ottaa vastaan yksittäisiä käyttäjän syötteitä (lausekkeita), arvioi ne ja palauttaa tuloksen käyttäjälle. Ohjelmoijat käyttävät REPL:iä nopeaan prototyyppien tekoon, vianetsintään ja ohjelmointikielen syntaksin sekä toimintalogiikan interaktiiviseen oppimiseen.
-
 ## Miten:
-
 Google Apps Script, pilvipohjainen skriptikieli Google-tuotteiden tehtävien automatisointiin, ei sisällä sisäänrakennettua REPL-työkalua, kuten esimerkiksi kielissä Python tai JavaScriptin Node.js. Voit kuitenkin jäljitellä samanlaista kokemusta käyttämällä Apps Script Editorin lokitus- ja vianetsintäominaisuuksia tai perustamalla ulkoisen ympäristön. Tässä keskitymme luomaan väliaikaisen REPL:n suoraan Apps Script -editorissa.
 
 1. **Väliaikaisen REPL-toiminnon luominen**:
@@ -62,7 +57,6 @@ Suoritettuasi `myREPL()`-funktion, tarkista Lokit (Näkymä > Lokit) tulosteelle
 Monimutkaisemman vianetsinnän yhteydessä voit lisätä `Logger.log(muuttuja);` koodiisi muuttujan tilojen tulostamiseksi, mikä auttaa ymmärtämään skriptisi kulun ja välitilat.
 
 ## Syväsukellus
-
 REPL:n konsepti on syvällä tietojenkäsittelyn historiassa, juontaen juurensa 1960-luvun aikajakojärjestelmiin, jotka mahdollistivat interaktiiviset istunnot. Kielet, kuten Lisp, kukoistivat tässä ympäristössä, sillä REPL oli kriittinen niiden iteratiivisessa kehitysprosessissa. Toisin kuin Google Apps Script, joka on kehitetty paljon myöhemmin ja pääasiassa webiä varten, keskittyen Google-sarjan tehtävien automatisointiin iteratiivisen, konsolipohjaisen ohjelmoinnin sijaan.
 
 Google Apps Script ei perinteisesti tue reaaliaikaisia, interaktiivisia koodaussessioita suoraan laatikosta johtuen sen pilvipohjaisesta luonteesta ja web-sovellusten käyttöönottoon keskittyvästä fokuksesta. Sen suoritusmalli pyörii funktioiden ympärillä, joita laukaistaan web-tapahtumista, aikaan sidotuista laukaisijoista tai manuaalisesta käynnistyksestä ympäristössä, eikä välittömistä palautesilmukoista, joita REPL tarjoaa.

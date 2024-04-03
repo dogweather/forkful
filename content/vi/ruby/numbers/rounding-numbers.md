@@ -17,11 +17,7 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Làm thế nào & Tại sao?
-Làm tròn số có nghĩa là điều chỉnh chúng về số nguyên gần nhất hoặc đến một mức độ chính xác được chỉ định. Các lập trình viên làm tròn số để đơn giản hóa, để phù hợp với kỳ vọng của con người, hoặc để đưa dữ liệu vào các định dạng cụ thể—hãy nghĩ đến các tính toán tài chính, hiển thị đồ họa, hoặc giảm kích thước lưu trữ.
-
 ## Cách thực hiện:
-
 ```Ruby
 # Làm tròn cơ bản
 puts 3.14159.round      # => 3

@@ -10,9 +10,6 @@ title: Lendo um arquivo de texto
 weight: 22
 ---
 
-## O Que & Por Que?
-Ler um arquivo de texto é simplesmente acessar o conteúdo armazenado em um arquivo no formato de texto em seu programa. Programadores fazem isso para carregar dados, configurações ou qualquer tipo de informação que possa ser armazenada de forma estruturada e acessível.
-
 ## Como Fazer:
 Elm é um pouco peculiar quando se trata de lidar com arquivos devido à sua arquitetura. Vamos precisar interagir com JavaScript através de Ports para ler arquivos. Vou mostrar um exemplo básico:
 

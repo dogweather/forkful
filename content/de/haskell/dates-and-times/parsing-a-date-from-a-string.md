@@ -13,12 +13,7 @@ title: Einen Datum aus einem String analysieren
 weight: 30
 ---
 
-## Was & Warum?
-
-Das Parsen eines Datums aus einem String in Haskell beinhaltet die Umwandlung von textuellen Darstellungen von Daten in ein strukturiertes Format, das das Programm manipulieren kann. Dieser Prozess ist grundlegend für Anwendungen, die sich mit kalendarischen Daten befassen, und ermöglicht Funktionen wie das Berechnen von Zeitspannen, Planung und Datenvalidierung.
-
 ## Wie:
-
 Out of the Box bietet Haskell grundlegende Werkzeuge für das Parsen von Daten an, aber das Nutzen von Bibliotheken wie `time` für die Kernfunktionalität und `date-parse` oder `time-parse` für flexibleres Parsen kann die Aufgabe erheblich vereinfachen.
 
 Stellen Sie zunächst sicher, dass Sie die `time`-Bibliothek zur Verfügung haben; sie ist oft bei GHC enthalten, aber wenn Sie sie als Abhängigkeit angeben müssen, fügen Sie `time` zur cabal-Datei Ihres Projekts hinzu oder verwenden Sie `cabal install time`, um sie manuell zu installieren.

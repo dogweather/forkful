@@ -14,9 +14,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---
 
-## Mikä ja miksi?
-Päivämäärän jäsentäminen merkkijonosta Clojuressa on tekstuaalisten päivämäärä- ja aikailmaisujen muuntamista käyttökelpoisempaan muotoon (esim. Clojuren DateTime-objekti). Tämä prosessi on olennainen datakäsittelylle, lokitiedostoille tai mille tahansa sovellukselle, joka käsittelee ajallista dataa, mahdollistaen ohjelmoijien suorittaa operaatioita, vertailuja tai manipulaatioita päivämäärillä tehokkaasti.
-
 ## Kuinka:
 Clojure, ollessaan JVM-kieli, mahdollistaa Javan päivämäärä- ja aikalukkastojen suoran käytön. Aloittakaamme sisäänrakennetulla Java-yhteistyöllä ja tutkikaamme sitten, kuinka hyödyntää suosittua kolmannen osapuolen kirjastoa, clj-timea, idiomaattisempien Clojure-ratkaisujen saavuttamiseksi.
 

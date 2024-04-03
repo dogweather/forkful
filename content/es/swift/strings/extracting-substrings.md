@@ -11,9 +11,6 @@ title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---
 
-## Qué y Por Qué?
-Extraer subcadenas es como recortar una parte de una cadena para usarla en tu código. Los programadores lo hacen para manipular y trabajar con datos de texto de manera más eficaz, como validar entradas, buscar patrones o simplemente mostrar partes específicas al usuario.
-
 ## Cómo hacerlo:
 ```Swift
 let frase = "Hola, programadores del mundo!"

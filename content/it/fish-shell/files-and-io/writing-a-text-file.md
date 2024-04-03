@@ -13,12 +13,7 @@ title: Scrivere un file di testo
 weight: 24
 ---
 
-## Cosa & Perché?
-
-Scrivere su un file di testo in Fish Shell consente di memorizzare dati in modo persistente, facilitando il recupero o la manipolazione dei dati sia dallo stesso script Fish che da altri programmi. I programmatori fanno ciò per registrare log, salvare impostazioni di configurazione o esportare dati per ulteriori elaborazioni.
-
 ## Come fare:
-
 Per scrivere su un file di testo in Fish, puoi usare il comando `echo` combinato con gli operatori di ridirezione. Non ci sono librerie di terze parti particolarmente popolari specifiche per la scrittura su file in Fish, in quanto i comandi integrati nella shell sono semplici ed efficienti per questo scopo.
 
 ### Scrivere testo su un nuovo file o sovrascrivere un file esistente:

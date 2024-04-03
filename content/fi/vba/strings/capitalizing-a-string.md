@@ -14,12 +14,7 @@ title: Merkkijonon alkukirjaimen suurentaminen
 weight: 2
 ---
 
-## Mitä & Miksi?
-
-Merkkijonon alkukirjaimen suurentaminen Visual Basic for Applications (VBA) -kielellä tarkoittaa merkkijonon jokaisen sanan ensimmäisen merkin muuttamista isoksi kirjaimeksi samalla kun varmistetaan, että loput ovat pieniä kirjaimia. Ohjelmoijat tekevät näin datan normalisoinnin, luettavuuden parantamisen ja tekstuaalisten tietojen syötteiden tai näyttöjen johdonmukaisuuden varmistamisen vuoksi.
-
 ## Kuinka:
-
 VBA:ssa ei ole sisäänrakennettua funktiota nimenomaan jokaisen sanan alkukirjaimen suurentamiseen merkkijonossa, toisin kuin joissakin muissa ohjelmointikielissä. Voit kuitenkin saavuttaa tämän yhdistämällä muutaman menetelmän ja funktion kuten `UCase`, `LCase` ja `Mid`.
 
 Tässä on suoraviivainen esimerkki siitä, kuinka kirjainkoon voi muuttaa:
@@ -46,7 +41,6 @@ End Sub
 `CapitalizeString`-funktio jakaa syötteen sanoihin, suurentaa jokaisen sanan ensimmäisen kirjaimen ja yhdistää ne lopulta takaisin oikein kirjoitetuksi merkkijonoksi.
 
 ## Syväsukellus
-
 Visual Basic for Applications, joka tuli esiin 90-luvun alussa Microsoft Officen makrokielenä, suunniteltiin tarjoamaan helppopääsyinen ohjelmointimalli. Sen merkkijonon käsittelyominaisuudet ovat kattavat, mutta joitakin korkeamman tason abstraktioita, joita löytyy uudemmista kielistä, puuttuu. Monet modernit ohjelmointiympäristöt tarjoavat omistetun menetelmän merkkijonojen kirjainkokojen muuttamiselle, usein termeillä kuten otsikkotyyli tai vastaava. Python esimerkiksi sisältää `.title()`-metodin merkkijonoille.
 
 Verrattaessa, yhden sisäänrakennetun funktion puuttuminen VBA:ssa merkkijonon sanojen kirjainkokojen muuttamiseksi voi tuntua haittapuolelta. Tämä tarjoaa kuitenkin ohjelmoijille syvemmän ymmärryksen ja kontrollin tekstinkäsittelyn tavoista ja mahdollistaa erityistilanteiden, kuten akronyymien tai otsikoissa esiintyvien pienten sanojen, paremman mukauttamisen VBA:ssa eksplisiittisten funktioiden avulla.

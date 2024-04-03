@@ -14,12 +14,7 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä ja miksi?
-
-Rust-ohjelmoinnissa YAML:n (YAML Ain't Markup Language) kanssa työskentely on YAML-muodossa olevan datan jäsentämisen ja tuottamisen käsittelemistä. YAML on ihmisen luettava tietojen sarjallistamisstandardi. Ohjelmoijat integroivat YAML-käsittelyn Rustiin sovellusten konfigurointia, asetusten hallintaa tai monimutkaisten tietorakenteiden käsittelyä varten selkeässä ja luettavassa muodossa, hyödyntäen sen yksinkertaisuutta JSON:n tai XML:n yli konfiguraatiotiedostoissa ja datan vaihdossa.
-
 ## Kuinka:
-
 Rust ei tue YAML:ää sen vakio kirjastossa, joten yleensä käytämme kolmannen osapuolen crateja kuten `serde` (datan serialisointiin ja deserialisointiin) yhdessä `serde_yaml`:n kanssa.
 
 Lisää ensin riippuvuudet `Cargo.toml`-tiedostoosi:
@@ -33,7 +28,6 @@ serde_yaml = "0.8"
 Katsotaan nyt, miten YAML-merkkijono deserialisoidaan Rust-rakenteeseen ja miten Rust-rakenne serialisoidaan takaisin YAML-merkkijonoksi.
 
 ### YAML:n Deserialisointi Rust-Rakenteisiin
-
 Määritä Rust-rakenne, joka peilaa odottamaasi dataa YAML:ssa. Käytä Serde-attribuutteja mukauttamisen tarvittaessa.
 
 ```rust
@@ -74,7 +68,6 @@ Config { name: "Kilpi", durability: 300, owner: Owner { name: "Steve", age: 25 }
 ```
 
 ### Rust-Rakenteiden Serialisointi YAML:ksi
-
 Tämä esimerkki ottaa edellisessä osassa `Config`-rakenteen ja serialisoi sen takaisin YAML-muotoon.
 
 ```rust

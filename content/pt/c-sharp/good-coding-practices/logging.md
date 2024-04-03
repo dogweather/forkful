@@ -11,9 +11,6 @@ title: Registro de Logs
 weight: 17
 ---
 
-## O Que & Porquê?
-Logging (registro de logs) é o processo de gravar os eventos da aplicação e a saída de dados durante a execução. Programadores realizam registros de logs para diagnosticar erros, monitorar o desempenho do software, acompanhar ações dos usuários e manter a conformidade com padrões de segurança e negócios.
-
 ## Como fazer:
 Em C#, você pode usar o espaço de nome integrado `System.Diagnostics` ou bibliotecas de terceiros como NLog ou log4net. Aqui está um exemplo rápido usando a interface `ILogger` disponível no .NET Core:
 

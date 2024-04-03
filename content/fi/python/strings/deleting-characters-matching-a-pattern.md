@@ -11,9 +11,6 @@ title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---
 
-## What & Why? (Mikä & Miksi?)
-Kun puhumme merkkien poistamisesta kuvion mukaan, tarkoitamme tiettyjä merkkejä sisältävien osien paikantamista ja poistamista merkkijonosta. Tämä toiminto on hyödyllinen, koska se auttaa siistimään ja muokkaamaan tekstidataa - esimerkiksi käyttäjäsyötteiden puhdistamisessa tai ennalta määrättyjen mallien, kuten puhelinnumeroiden, poistamisessa.
-
 ## How to (Kuinka tehdä):
 ```Python
 import re

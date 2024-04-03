@@ -10,9 +10,6 @@ title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---
 
-## What & Why? (Vad & Varför?)
-Sammanfogning av strängar handlar om att klistra ihop textstycken i JavaScript. Vi gör det för att dynamiskt bygga text, som användarnamn eller meddelanden.
-
 ## How to: (Hur man gör:)
 ```javascript
 // Använd '+' för att konkatenera

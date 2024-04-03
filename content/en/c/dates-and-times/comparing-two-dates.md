@@ -10,12 +10,7 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-
-Comparing two dates in C involves determining the chronological relationship between them -- whether one date precedes the other or if they are the same. This capability is crucial in applications that deal with scheduling, deadlines, or record-keeping, as it allows for the organization and manipulation of time-sensitive data.
-
 ## How to:
-
 C doesn't have a built-in type for dates, necessitating the use of the `time.h` library to work with date and time structures. The `tm` structure and `difftime()` function are commonly used to compare dates. Below is an example showing how to compare two dates:
 
 ```c
@@ -65,7 +60,6 @@ First date comes before the second date.
 This program initializes two `tm` structures with specific dates, converts them to `time_t` format using `mktime()`, and finally compares them using `difftime()`, which returns the difference in seconds (as a `double`) between the two times.
 
 ## Deep Dive
-
 In the early days of C, date and time operations required manual calculations, often taking into account leap years, the varying number of days in months, and even leap seconds. The introduction of `time.h` in the ANSI C standard brought standardization to time handling in C, simplifying date and time operations.
 
 Using `time.h` for date comparison is straightforward but has limitations. The `tm` structure does not account for time zones or daylight saving time, and `difftime()` only provides the difference in seconds, lacking finer granularity for certain applications.

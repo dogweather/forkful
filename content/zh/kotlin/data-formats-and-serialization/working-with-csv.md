@@ -22,16 +22,10 @@ title: "\u5904\u7406CSV\u6587\u4EF6"
 weight: 37
 ---
 
-## 什么 & 为什么？
-
-处理 CSV（逗号分隔值）涉及从 CSV 文件读取和写入数据，这是一种常见的以纯文本形式存储表格数据的格式。程序员操作 CSV 文件是为了方便地在不同应用程序、数据库之间交换数据，或者便于进行数据处理和分析任务。
-
 ## 如何操作：
-
 Kotlin 是一种在 JVM 上运行的静态类型编程语言，并没有内置用于处理 CSV 文件的库。然而，你可以使用 Java 的 `BufferedReader` 和 `FileWriter` 类进行基本操作，或者利用流行的第三方库如 `kotlinx.serialization` 和 `opencsv` 来实现更高级的功能。
 
 ### 使用 BufferedReader 读取 CSV 文件：
-
 ```kotlin
 import java.io.BufferedReader
 import java.io.FileReader
@@ -57,7 +51,6 @@ _示例输出：_
 ```
 
 ### 使用 FileWriter 写入 CSV 文件：
-
 ```kotlin
 import java.io.FileWriter
 
@@ -79,7 +72,6 @@ fun main() {
 这将创建或覆盖 `output.csv` 并用提供的数据填充。
 
 ### 使用 kotlinx.serialization 进行 CSV 序列化：
-
 首先，在你的 `build.gradle.kts` 中添加依赖项：
 
 ```kotlin
@@ -118,7 +110,6 @@ Jane Smith,25,London
 ```
 
 ### 使用 OpenCSV 进行高级操作：
-
 将 OpenCSV 添加到项目的依赖项中：
 
 ```kotlin

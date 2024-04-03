@@ -16,9 +16,6 @@ title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---
 
-## Gì và Tại Sao?
-Việc in ra đầu ra để gỡ lỗi giống như việc để lại những mẩu bánh mì trong mã lệnh của bạn: nó hiển thị lộ trình của dữ liệu và luồng lôgic trong quá trình thực thi. Lập trình viên sử dụng nó để truy tìm những lỗi khó chịu và để hiểu liệu mã của họ có đang hoạt động như mong đợi hay không.
-
 ## Làm Thế Nào:
 Trong Clojure, bạn thường xuyên in ra đầu ra để gỡ lỗi sử dụng `println`, `printf`, `pr`, hoặc `prn`. Dưới đây là cách bạn rải rác một số in để gỡ lỗi:
 

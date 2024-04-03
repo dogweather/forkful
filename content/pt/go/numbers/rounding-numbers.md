@@ -13,16 +13,10 @@ title: "Arredondando n\xFAmeros"
 weight: 13
 ---
 
-## O Que & Porquê?
-
-Arredondar números é ajustar o valor de um número para o inteiro mais próximo ou para um número específico de casas decimais. Programadores fazem isso por razões como melhorar a legibilidade, simplificar cálculos ou atender a requisitos de precisão específicos do domínio.
-
 ## Como fazer:
-
 Em Go, não há uma função integrada que arredonde números diretamente para um número específico de casas decimais no pacote math. No entanto, você pode alcançar o arredondamento por meio de uma combinação de funções para números inteiros ou implementar uma função personalizada para casas decimais.
 
 ### Arredondando para o inteiro mais próximo:
-
 Para arredondar para o inteiro mais próximo, você pode usar a função `math.Floor()` adicionada de 0.5 para números positivos, e `math.Ceil()` menos 0.5 para números negativos, dependendo da direção para a qual você quer arredondar.
 
 ```go
@@ -40,7 +34,6 @@ func main() {
 ```
 
 ### Arredondando para um número específico de casas decimais:
-
 Para arredondar para um número específico de casas decimais, pode-se usar uma função personalizada onde você multiplica o número por 10^n (onde n é o número de casas decimais), arredonda para o inteiro mais próximo como antes, e então divide por 10^n.
 
 ```go
@@ -63,7 +56,6 @@ func main() {
 ```
 
 ## Aprofundamento
-
 Arredondar números é uma operação fundamental na programação de computadores, ligada ao desafio histórico de representar números reais em um sistema binário. A necessidade de arredondamento surge porque muitos números reais não podem ser representados com precisão em binário, levando a erros de aproximação.
 
 Em Go, a abordagem para o arredondamento é um tanto manual comparada com linguagens que oferecem funções integradas de arredondamento para casas decimais específicas. No entanto, o pacote `math` da biblioteca padrão do Go fornece os blocos de construção básicos (como `math.Floor` e `math.Ceil`) para construir qualquer mecanismo de arredondamento necessário pela aplicação.

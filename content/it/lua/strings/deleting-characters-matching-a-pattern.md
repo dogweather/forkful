@@ -10,9 +10,6 @@ title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---
 
-## What & Why? 
-Cancellare caratteri corrispondenti a un pattern significa rimuovere sequenze specifiche di testo da una stringa. Lo facciamo per pulire i dati, validare input o semplificarli per elaborazioni successive.
-
 ## How to:
 In Lua, puoi usare la funzione `string.gsub` per eliminare caratteri o pattern. Ecco un esempio pratico:
 

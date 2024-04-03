@@ -11,9 +11,6 @@ title: Odczytywanie pliku tekstowego
 weight: 22
 ---
 
-## What & Why? (Co i dlaczego?)
-Czytanie pliku tekstowego to proces pobierania danych z pliku zapisanego na karcie SD lub pamięci systemu. Programiści robią to, by załadować konfiguracje, dane wejściowe lub po prostu wyświetlić informacje na ekran.
-
 ## How to: (Jak to zrobić:)
 ```Arduino
 #include <SPI.h>

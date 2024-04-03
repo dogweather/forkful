@@ -15,9 +15,6 @@ title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---
 
-## Cái Gì & Tại Sao?
-So sánh hai ngày có nghĩa là kiểm tra xem chúng có giống nhau không, hoặc xác định ngày nào đến trước hoặc sau. Các lập trình viên làm điều này để xử lý sự kiện, lên lịch công việc, xác nhận đầu vào, hoặc theo dõi khoảng thời gian.
-
 ## Làm Thế Nào:
 Elixir làm cho việc so sánh ngày trở nên dễ dàng. Dưới đây là ví dụ so sánh ngày hôm nay với ngày mai:
 

@@ -10,9 +10,6 @@ title: Calculando la longitud de una cadena
 weight: 7
 ---
 
-## ¿Qué y Por Qué?
-Encontrar la longitud de una cadena significa contar cuántos caracteres tiene. Los programadores lo hacen para validar entradas, limitar texto, o simplemente por curiosidad al trabajar con datos.
-
 ## Cómo hacerlo:
 ```Bash
 cadena="Hola, ¿cómo estás?"
@@ -39,6 +36,8 @@ Carlos tiene 6 caracteres.
 ```
 
 ## Profundización
+
+
 #### Contexto Histórico
 En los primeros días de la informática, la gestión eficiente del texto era crucial debido a la memoria limitada. Encontrar la longitud de una cadena era (y sigue siendo) una operación fundamental.
 

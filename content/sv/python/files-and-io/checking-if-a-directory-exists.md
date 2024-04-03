@@ -14,9 +14,6 @@ title: Kontrollera om en katalog existerar
 weight: 20
 ---
 
-## Vad & Varför?
-Att kontrollera om en mapp finns i Python handlar om att verifiera närvaron av en mapp i filsystemet innan man utför operationer som att läsa eller skriva filer. Programmerare gör detta för att undvika fel såsom `FileNotFoundError`, vilket säkerställer att applikationen beter sig pålitligt och inte kraschar när den försöker interagera med mappar.
-
 ## Hur gör man:
 Python tillhandahåller inbyggda sätt att kontrollera om en mapp existerar genom att använda modulerna `os` och `pathlib`. Här är exempel för båda:
 

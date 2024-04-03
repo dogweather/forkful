@@ -16,12 +16,7 @@ title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---
 
-## Cái gì và Tại sao?
-
-Xóa ký tự khớp với một mẫu nghĩa là loại bỏ các chuỗi ký tự cụ thể khỏi chuỗi - hãy nghĩ về việc làm sạch dữ liệu hoặc đầu vào. Các lập trình viên làm điều này để chuẩn hóa, đơn giản hóa, hoặc xác nhận thông tin trước khi xử lý.
-
 ## Cách thực hiện:
-
 Giả sử chúng ta muốn loại bỏ tất cả các chữ số số học khỏi chuỗi của chúng ta. Chúng ta có một chuỗi với một số chữ số ngẫu nhiên, và chúng ta đang hướng tới kết quả chỉ gồm chữ cái.
 
 ```Arduino
@@ -55,7 +50,6 @@ Arduino is awesome!
 ```
 
 ## Sâu hơn nữa
-
 Việc loại bỏ ký tự khớp với một mẫu cụ thể không phải là một khái niệm mới. Các ngôn ngữ lập trình sớm đã có các hàm để xử lý và thao tác chuỗi. Trong Arduino, mặc dù không tồn tại một hàm cấp cao cho việc xóa mẫu một cách tự nhiên, chúng ta có thể tạo ra lô-gic tùy chỉnh của mình, như trong hàm `deletePattern` ở trên.
 
 Có những lựa chọn thay thế trong các ngôn ngữ khác, như regex (biểu thức chính quy) trong Python hoặc JavaScript, nhưng môi trường lập trình của Arduino cơ bản hơn. Nó không bao gồm các hàm regex ngay từ đầu, chủ yếu do sức mạnh xử lý và bộ nhớ giới hạn của nó.
@@ -63,7 +57,6 @@ Có những lựa chọn thay thế trong các ngôn ngữ khác, như regex (bi
 Bên dưới lớp vỏ, hàm `deletePattern` của chúng ta lặp qua chuỗi mẫu của chúng ta, sử dụng phương thức `String.replace()` để tìm kiếm ký tự hiện tại, và thay thế nó bằng một chuỗi trống, do đó "xóa" nó khỏi chuỗi gốc của chúng ta.
 
 ## Xem thêm
-
 - Thao tác chuỗi với Arduino: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/
 - Tham khảo String Arduino: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
 - Thêm về thay thế chuỗi: http://www.cplusplus.com/reference/string/string/replace/

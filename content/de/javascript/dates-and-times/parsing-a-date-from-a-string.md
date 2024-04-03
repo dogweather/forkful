@@ -12,9 +12,6 @@ title: Einen Datum aus einem String analysieren
 weight: 30
 ---
 
-## Was & Warum?
-Das Parsen eines Datums aus einem String ermöglicht es Programmierern, textuelle Datumsdarstellungen in JavaScript `Date`-Objekte umzuwandeln. Dies erleichtert Manipulationen, Vergleiche und Formatierungen von Daten. Dieser Prozess ist essentiell für die Verarbeitung von Benutzereingaben, die Bearbeitung von Daten aus Datenbanken oder die Arbeit mit APIs, die Daten in Stringformaten übermitteln.
-
 ## Wie geht das?
 JavaScript bietet nativ die Methode `Date.parse()` und den `Date`-Konstruktor zum Parsen von Datumsstrings an. Jedoch haben diese Ansätze ihre Grenzen und Inkonsistenzen über verschiedene Browser hinweg, besonders bei nicht-standardisierten Datumsformaten. Um diese Probleme zu adressieren, sind Third-Party-Bibliotheken wie `Moment.js` und `date-fns` aufgrund ihrer Robustheit und Benutzerfreundlichkeit beliebt.
 

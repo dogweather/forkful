@@ -11,9 +11,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---
 
-## What & Why?
-Muuntaminen päivämäärästä merkkijonoksi on prosessi, jossa `Date`-objekti muutetaan luettavaan tekstiformaattiin. Tämä on hyödyllistä, koska näin päivämäärät voidaan esittää ymmärrettävässä muodossa käyttöliittymissä tai tallentaa tietokantoihin.
-
 ## How to:
 ```Javascript
 // Luodaan nykyhetken kuvaava Date-objekti

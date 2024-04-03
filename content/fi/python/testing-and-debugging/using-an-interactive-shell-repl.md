@@ -12,9 +12,6 @@ title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mikä & Miksi?
-REPL, eli Read-Eval-Print -silmukka, on ohjelmointiympäristö, joka ottaa vastaan yksittäisiä käyttäjän syötteitä, suorittaa ne ja palauttaa tuloksen käyttäjälle. Ohjelmoijat käyttävät sitä nopeisiin testeihin, oppimiseen, vianetsintään tai laskelmien tekemiseen lennossa.
-
 ## Kuinka:
 Siirry suoraan Pythonin REPL-iin kirjoittamalla `python` komentoriville. Siellä voit testata yksinkertaisia toimintoja tai monirivikoodia:
 

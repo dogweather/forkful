@@ -11,12 +11,7 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## Mitä & Miksi?
-
-Tekstin etsiminen ja korvaaminen on tapa löytää merkkijono ja korvata se toisella. Ohjelmoijat käyttävät sitä päästäkseen eroon vanhentuneesta koodista, päivittääkseen tietoja tai tehdäkseen massamuutoksia nopeasti.
-
 ## Miten:
-
 Java tarjoaa `String`-luokan, jossa on metodit `replace()` ja `replaceAll()` tekstinkäsittelyyn. `replace()` toimii merkeille ja merkkijonoille, `replaceAll()` säännöllisille lausekkeille.
 
 ```java
@@ -40,11 +35,9 @@ Ohjelmointi on turhauttavaa, kunnes turhauttavaa.
 ```
 
 ## Syväsukellus:
-
 Historiallisesti tekstin korvaaminen tiedostoissa tehtiin komentorivillä käyttäen työkaluja kuten `sed` tai `awk` Unix-pohjaisissa järjestelmissä. Java-toteutus on osa korkean tason API:a, joka tekee käsittelystä yksinkertaista. `replaceAll()` käyttää säännöllisiä lausekkeita, jotka ovat voimakas mutta monimutkainen työkalu tekstinkäsittelyyn. Tämä on nopeampaa ja joustavampaa kuin manuaalisesti kirjoitetut ratkaisut.
 
 ## Katso Myös:
-
 - Java String Documentation: https://docs.oracle.com/javase/10/docs/api/java/lang/String.html
 - RegExr, säännöllisten lausekkeiden harjoitteluun: https://regexr.com/
 - `Pattern` ja `Matcher` luokat: https://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html

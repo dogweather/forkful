@@ -12,9 +12,6 @@ title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mikä ja miksi?
-Rustin interaktiivinen kuori eli REPL (Lue-Arvo-Tulosta-Silmukka) mahdollistaa Rust-koodin suorittamisen lennossa, tarjoten välittömiä tuloksia, mikä on täydellistä kokeiluun tai oppimiseen. Ohjelmoijat käyttävät sitä koodinpätkien testaamiseen, vianetsintään tai vain kielen ominaisuuksien tutkimiseen ilman koko projektin kääntämisen vaivaa.
-
 ## Miten:
 Tällä hetkellä Rust ei toimita virallista REPLiä. Voit käyttää kolmannen osapuolen työkaluja, kuten `evcxr_repl`. Asenna se Cargo:n avulla:
 

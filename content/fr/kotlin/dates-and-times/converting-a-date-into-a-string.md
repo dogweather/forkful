@@ -11,9 +11,6 @@ title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## What & Why?
-Convertir une date en chaîne de caractères permet de la formater pour l'affichage. Les programmeurs le font pour rendre les dates lisibles par les humains ou pour les préparer pour le stockage et le traitement.
-
 ## How to:
 En Kotlin, on utilise la classe `SimpleDateFormat` pour transformer une date en chaîne de caractères. Voici comment faire :
 

@@ -11,12 +11,7 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-
-Foutafhandeling gaat over omgaan met dingen wanneer ze mis gaan. Programmeren doen we om het onverwachte aan te kunnen, door ervoor te zorgen dat hun Rust-programma's robuust zijn en niet zomaar crashen wanneer ze een hiccup tegenkomen.
-
 ## Hoe te:
-
 Rust gaat op twee belangrijke manieren om met fouten: herstelbare en onherstelbare fouten. Laten we beide bekijken.
 
 Herstelbare fouten gebruiken `Result<T, E>`:
@@ -55,7 +50,6 @@ fn main() {
 Voer het uit, en je ziet een paniekbericht. Je programma stopt direct.
 
 ## Diepgaand
-
 Historisch gezien is foutafhandeling in programmering een rommeltje geweest. Rust krijgt het juist met een duidelijk onderscheid tussen herstelbare en onherstelbare fouten.
 
 De `Result` enum is voor herstelbare fouten. Het is expliciet - je handelt de `Ok` of `Err` variant af. Je hebt methoden zoals `unwrap()` en `expect()` ook, maar dat zijn snelle en vuile snelkoppelingen die kunnen leiden tot een `panic!`.
@@ -67,7 +61,6 @@ Foutafhandeling door het teruggeven van `Result` wordt voorkeur gegeven wanneer 
 Alternatieven? Zeker, je zou andere foutafhandelingscrates kunnen gebruiken voor meer functies of ergonomisch gebruik. Zoals `anyhow` voor eenvoudige foutafhandeling, of `thiserror` voor fouten in bibliotheekcode.
 
 ## Zie Ook
-
 Geïnteresseerd in dieper duiken? Hier is waar te gaan:
 
 - [Rust Boek over Foutafhandeling](https://doc.rust-lang.org/book/ch09-00-error-handling.html) - Een geweldige plek om de filosofie van Rust over foutafhandeling te begrijpen.

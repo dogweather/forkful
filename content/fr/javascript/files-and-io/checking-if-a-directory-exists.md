@@ -14,9 +14,6 @@ title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---
 
-## Quoi & Pourquoi ?
-Vérifier si un répertoire existe en JavaScript est essentiel pour les tâches de manipulation de fichiers, permettant aux scripts de vérifier la présence du répertoire avant de le lire ou d'y écrire. Cette opération prévient les erreurs et assure une exécution plus fluide du programme, en particulier dans les applications qui gèrent dynamiquement les fichiers ou les répertoires en fonction des entrées des utilisateurs ou des sources de données externes.
-
 ## Comment :
 En Node.js, puisque JavaScript n'a pas directement accès au système de fichiers, le module `fs` est généralement utilisé pour de telles opérations. Voici une manière simple de vérifier si un répertoire existe en utilisant `fs.existsSync()` :
 

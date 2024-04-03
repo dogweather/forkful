@@ -12,9 +12,6 @@ title: Een tekstbestand lezen
 weight: 22
 ---
 
-## Wat & Waarom?
-Een tekstbestand lezen betekent de gegevens binnen een bestand ophalen voor verwerking. Programmeurs doen dit om informatie te extraheren, apps te configureren, logs te parsen, of gewoon data in een script te voeden.
-
 ## Hoe:
 Hier is de scoop van Fish Shell over het openen van die tekstbestanden:
 

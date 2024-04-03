@@ -10,9 +10,6 @@ title: Usando una shell interactiva (REPL)
 weight: 34
 ---
 
-## Qué y Por Qué?
-REPL significa Bucle de Leer-Evaluar-Imprimir, un entorno de programación de computadoras simple e interactivo. Los programadores lo utilizan para escribir y probar código rápidamente, experimentar con la sintaxis y aprender conceptos de programación sin la sobrecarga de crear y ejecutar aplicaciones completas.
-
 ## Cómo hacerlo:
 En Bash, tu terminal es esencialmente un REPL. Escribes un comando; lo lee, lo evalúa, imprime el resultado y vuelve al bucle esperando tu siguiente comando. Aquí tienes un ejemplo de cómo usar Bash como un REPL:
 

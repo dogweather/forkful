@@ -11,9 +11,6 @@ title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---
 
-## Hva & Hvorfor?
-En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg skrive og kjøre PHP-kode på stedet. Det er ideelt for eksperimentering, feilsøking eller læring, da du kan teste utdrag uten overheaden av å lage et fullt skript.
-
 ## Hvordan:
 Start PHP REPL ved å kjøre `php -a` i terminalen din. Her er en smakebit på hvordan det fungerer:
 

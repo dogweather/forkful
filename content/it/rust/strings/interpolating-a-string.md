@@ -10,9 +10,6 @@ title: Interpolazione di una stringa
 weight: 8
 ---
 
-## Cosa & Perché?
-L'interpolazione di stringhe permette di iniettare dei valori direttamente all'interno di una stringa. I programmatori la usano per concatenare variabili, espressioni ed eseguire formattazioni in modo più leggibile e conciso.
-
 ## Come fare:
 ```Rust
 fn main() {

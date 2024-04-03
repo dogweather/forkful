@@ -12,11 +12,7 @@ title: Een string interpoleren
 weight: 8
 ---
 
-## Wat & Waarom?
-Stringinterpolatie laat je variabelen direct in strings inbedden. Het wordt gedaan voor gemak en leesbaarheid—geen plus tekens of functieaanroepen nodig om je bericht te construeren.
-
 ## Hoe te:
-
 In Haskell is stringinterpolatie niet standaard ingebouwd, maar met het `interpolate` pakket kun je er vrij dichtbij komen. Zorg eerst dat je het pakket hebt:
 
 ```bash
@@ -44,7 +40,6 @@ Hallo, wereld!
 ```
 
 ## Diepgaande Duik
-
 Historisch gezien kwam Haskell niet standaard met stringinterpolatie uit de doos. Het is een functie die vaker voorkomt in scripttalen. Interpolatie in Haskell werd soepeler met de ontwikkeling van quasiquoters, die je toestaan om je eigen aangepaste syntax te definiëren—zoals onze `i` voor het interpoleren van strings.
 
 Alternatieven? Zeker, gebruik `printf` van `Text.Printf`, of voeg strings en variabelen samen met `++`. Maar deze missen de elegantie en eenvoudigheid van interpolatie.
@@ -52,7 +47,6 @@ Alternatieven? Zeker, gebruik `printf` van `Text.Printf`, of voeg strings en var
 Wat de implementatie betreft, transformeert `interpolate` je geïnterpoleerde strings in reguliere Haskell strings op compilatietijd met behulp van Template Haskell, dus er is geen prestatievermindering bij het uitvoeren van je code. Het is slim en netjes, net als Haskell.
 
 ## Zie Ook
-
 - [Hackage - interpolate pakket](https://hackage.haskell.org/package/interpolate)
 - [Hackage - Text.Printf module](https://hackage.haskell.org/package/base/docs/Text-Printf.html)
 - [Haskell Wiki - Quasiquotation](https://wiki.haskell.org/Quasiquotation)

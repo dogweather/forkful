@@ -11,9 +11,6 @@ title: Sammenlikning av to datoer
 weight: 27
 ---
 
-## Hva & Hvorfor?
-Å sammenligne to datoer betyr å se forskjeller eller likheter—som hvilken som er tidligst eller om de er samme dag. Programmerere gjør dette for å håndtere frister, historikk, eventer og mer.
-
 ## Hvordan:
 ```Clojure
 ;; Importer nødvendige biblioteker først

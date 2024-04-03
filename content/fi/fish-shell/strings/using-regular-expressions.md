@@ -14,12 +14,7 @@ title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---
 
-## Mikä & Miksi?
-
-Säännölliset lausekkeet (regex) Fish Shellissä mahdollistavat merkkijonojen etsimisen, vastaavuuksien löytämisen ja manipuloinnin tiettyjen mallien perusteella. Ohjelmoijat käyttävät regexiä tehtäviin kuten syötteen validointi, jäsentäminen ja tekstin käsittely, koska se tarjoaa tiiviin ja tehokkaan tavan määritellä monimutkaisia tekstimalleja.
-
 ## Miten:
-
 Vaikka Fish Shellissä ei ole sisäänrakennettua komentoa regexille, se käyttää tehokkaasti ulkoisia komentoja kuten `grep`, `sed` ja `awk`, jotka tukevat regexiä, sallien sinun sisällyttää regex-operaatioita skripteihisi.
 
 ### Peruskuvioiden Vastaavuus `grep`-käytössä

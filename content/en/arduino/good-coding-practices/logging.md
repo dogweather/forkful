@@ -10,9 +10,6 @@ title: Logging
 weight: 17
 ---
 
-## What & Why?
-"Logging" is keeping a record of events, transactions, or activities that happen over time in a system. Programmers use it to debug, monitor system health, gather statistics, or even audit usage, making it an indispensable practice for maintaining and understanding the behavior of their code under various conditions.
-
 ## How to:
 Arduino doesn't come with a built-in logging library like some other environments, but you can implement basic logging to the Serial console with minimal fuss. Here's a quick example to get you started:
 

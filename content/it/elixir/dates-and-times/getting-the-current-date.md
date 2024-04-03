@@ -14,9 +14,6 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Cosa e perché?
-Ottenere la data corrente in Elixir implica l'accesso alle informazioni di data e ora del sistema, un compito comune per log, marcature di dati o qualsiasi funzionalità che richieda la conoscenza della data corrente. Questa operazione è essenziale per creare applicazioni sensibili al tempo e per compiti come la generazione di rapporti o timestamp in un'applicazione web.
-
 ## Come fare:
 La libreria standard di Elixir, tramite il modulo `DateTime`, consente di recuperare la data e l'ora correnti. Poiché Elixir è eseguito sulla VM di Erlang (BEAM), sfrutta le funzionalità sottostanti di Erlang per le operazioni temporali.
 

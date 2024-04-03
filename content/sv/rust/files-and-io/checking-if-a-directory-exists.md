@@ -14,9 +14,6 @@ title: Kontrollera om en katalog existerar
 weight: 20
 ---
 
-## Vad & Varför?
-I programutveckling är det ofta nödvändigt att kontrollera om en katalog existerar för att undvika fel när man försöker få tillgång till, läsa eller skriva filer. Rust, som är ett systemprogrammeringsspråk, erbjuder robusta metoder för att utföra denna uppgift, vilket säkerställer att ditt program kan hantera filer och kataloger på ett säkert och effektivt sätt.
-
 ## Hur:
 Rusts standardbibliotek (`std`) inkluderar funktionalitet för att kontrollera existensen av en katalog genom modulerna `std::path::Path` och `std::fs`. Här är ett enkelt exempel som använder Rusts standardansats:
 

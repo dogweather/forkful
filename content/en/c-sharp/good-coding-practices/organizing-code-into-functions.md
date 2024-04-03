@@ -10,9 +10,6 @@ title: Organizing code into functions
 weight: 18
 ---
 
-## What & Why?
-Chunking code into functions is like sorting LEGO bricks into bins—it makes finding and using them easier. We do this to avoid repetition, to simplify understanding, and to make maintenance less of a headache.
-
 ## How to:
 Imagine you've got code that prints a greeting several times. Without functions, it's a mess. With functions, it's neat.
 

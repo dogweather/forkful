@@ -10,9 +10,6 @@ title: Lavorare con TOML
 weight: 39
 ---
 
-## Cosa & Perché?
-TOML sta per Tom's Obvious, Minimal Language (Linguaggio Minimo e Ovvio di Tom). È un formato di serializzazione dei dati utilizzato per i file di configurazione. I programmatori lo usano perché è facile da leggere, scrivere e si mappa efficacemente su una tabella hash.
-
 ## Come fare:
 Avrai bisogno di una libreria di parsing TOML. Io consiglio `toml4j`. Aggiungilo al tuo progetto così:
 

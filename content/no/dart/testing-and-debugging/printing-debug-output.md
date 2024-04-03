@@ -15,12 +15,7 @@ title: "Utskrift av feils\xF8kingsresultat"
 weight: 33
 ---
 
-## Hva og hvorfor?
-
-Å skrive ut debug-output i Dart handler om å vise informasjon til konsollen under kjøretiden, noe som gjør det mulig for utviklere å spore utførelsesflyten, undersøke tilstanden til variabler eller identifisere kilden til feil. Programmerere bruker det ofte til feilsøking og for å verifisere at koden deres oppfører seg som forventet, noe som letter en jevnere og mer effektiv utviklingsprosess.
-
 ## Hvordan:
-
 I Dart kan du skrive ut debug-output ved å bruke `print()`-funksjonen. Slik skriver du ut enkle meldinger og variabelverdier:
 
 ```dart

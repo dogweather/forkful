@@ -17,9 +17,6 @@ title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
 weight: 27
 ---
 
-## What & Why? 什么以及为什么?
-比较两个日期是判断它们相对先后的过程。程序员需要进行日期比较来执行如定时任务、数据有效性检查或时间间隔计算等操作。
-
 ## How to: 如何操作
 ```Swift
 import Foundation

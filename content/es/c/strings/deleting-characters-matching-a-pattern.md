@@ -14,12 +14,7 @@ title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---
 
-## ¿Qué y Por Qué?
-
-Eliminar caracteres que coinciden con un patrón específico de cadenas en C se trata de remover todas las instancias de ciertos caracteres que cumplen con criterios predefinidos. Los programadores realizan esta tarea para sanear las entradas, preparar datos para su procesamiento o simplemente limpiar cadenas para su salida o manipulación adicional, asegurando que los datos manejados sean exactamente como se necesitan para un contexto o algoritmo dado.
-
 ## Cómo hacerlo:
-
 C no viene con una función integrada para eliminar directamente caracteres de una cadena basado en un patrón, a diferencia de algunos lenguajes de alto nivel. Sin embargo, puedes lograr fácilmente esta tarea iterando manualmente sobre la cadena y construyendo una nueva que excluye los caracteres no deseados. Por ejemplo, supongamos que quieres remover todos los dígitos de una cadena. Puedes hacerlo de la siguiente manera:
 
 ```c
@@ -53,7 +48,6 @@ Resultado: C Programming : The Basics!
 Este ejemplo utiliza `isdigit` de `ctype.h` para identificar dígitos, desplazando caracteres que no son dígitos hacia el principio de la cadena y terminando la cadena una vez que todos los caracteres han sido evaluados.
 
 ## Análisis Profundo
-
 La solución presentada utiliza un enfoque de dos punteros dentro del mismo arreglo para filtrar efectivamente los caracteres no deseados, una técnica emblemática de la filosofía de gestión de memoria directa de C. Este método es eficiente porque opera en el sitio, evitando la necesidad de asignación de memoria adicional y minimizando así el sobrecabezal.
 
 Históricamente, la ausencia de funciones de manipulación de cadenas de alto nivel en C ha obligado a los programadores a desarrollar una comprensión profunda del manejo de cadenas a nivel de memoria, lo que lleva a enfoques innovadores como el anterior. Si bien esto tiene la ventaja de un mayor control y eficiencia, viene con un mayor riesgo de errores, como desbordamientos de búfer y errores de off-by-one.

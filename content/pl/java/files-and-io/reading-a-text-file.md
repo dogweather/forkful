@@ -10,9 +10,6 @@ title: Odczytywanie pliku tekstowego
 weight: 22
 ---
 
-## Co i dlaczego?
-Czytanie pliku tekstowego to proces pozyskiwania danych z zapisanego tekstu. Programiści robią to, by obsłużyć informacje – konfigurować aplikacje, analizować dane lub po prostu wczytywać instrukcje.
-
 ## Jak to zrobić:
 Do wczytywania plików tekstowych w Javie wykorzystujemy klasę `Files` z pakietu `java.nio.file`, która oferuje metodę `readAllLines`. Poniżej prosty przykład:
 

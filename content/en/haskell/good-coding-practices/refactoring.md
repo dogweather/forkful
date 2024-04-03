@@ -11,9 +11,6 @@ title: Refactoring
 weight: 19
 ---
 
-## What & Why?
-Refactoring is the process of tweaking your code without changing its external behavior. It's all about cleaning up and organizing your act to make the code easier to read, maintain, and extend. It can also help squash bugs and improve performance.
-
 ## How to:
 Let's say you've got a chunk of Haskell code that's repeating itself more than your favorite song. Here's a quick look at how you might refactor that using functions.
 

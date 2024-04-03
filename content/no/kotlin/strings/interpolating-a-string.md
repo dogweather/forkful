@@ -11,9 +11,6 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## Hva & Hvorfor?
-Strenginterpolasjon lar deg bake variabler og uttrykk rett inn i strenger, noe som gjør koden mer lesbar og skrivbar. Programmerere bruker det for å slå sammen data og tekst på en enkel og feilfri måte.
-
 ## Hvordan gjøre det:
 ```kotlin
 fun main() {

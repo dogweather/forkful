@@ -13,12 +13,7 @@ title: Organiser le code en fonctions
 weight: 18
 ---
 
-## Quoi et Pourquoi ?
-
-Organiser le code en fonctions consiste à structurer votre code Google Apps Script en séparant les segments logiques en blocs distincts, chacun effectuant une tâche spécifique. Les programmeurs font cela pour améliorer la lisibilité, la maintenabilité et la réutilisabilité du code, garantissant que les scripts complexes sont plus faciles à comprendre et à déboguer.
-
 ## Comment faire :
-
 Dans Google Apps Script, qui est basé sur JavaScript, vous définissez des fonctions en utilisant le mot-clé `function`, suivi d'un nom de fonction unique, de parenthèses `()` qui peuvent contenir des paramètres, et d'accolades `{}` qui encapsulent le bloc de code de la fonction. Voici un exemple basique :
 
 ```javascript
@@ -67,7 +62,6 @@ populateSheet(salesData);
 Dans cet exemple, `setupSheet` prépare la feuille et `populateSheet` prend un tableau de données de vente pour remplir la feuille. Séparer ces préoccupations rend le code plus propre et plus adaptable aux changements.
 
 ## Approfondissement
-
 Le concept de division du code en fonctions n'est pas nouveau ou unique à Google Apps Script ; c'est une pratique de programmation fondamentale préconisée dans presque tous les langages de programmation. Historiquement, les fonctions ont évolué à partir du concept mathématique de mappage des entrées aux sorties, qui est devenu une pierre angulaire de la programmation structurée. Cette approche favorise la modularité et la réutilisation du code, offrant des voies claires pour tester les parties individuelles du script.
 
 Google Apps Script, étant basé sur JavaScript, bénéficie grandement des fonctions de première classe de JavaScript, permettant aux fonctions d'être passées en tant qu'arguments, retournées d'autres fonctions et attribuées à des variables. Cette fonctionnalité ouvre des modèles avancés comme les callbacks et la programmation fonctionnelle, bien que ces modèles puissent introduire une complexité qui pourrait être inutile pour des tâches d'automatisation simples dans Google Apps Script.

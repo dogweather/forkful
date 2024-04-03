@@ -12,12 +12,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mitä & Miksi?
-
-Assosiatiiviset taulukot, tai sanakirjat C#:ssa, antavat sinun tallentaa ja hallita avain-arvo -pareja. Ne ovat sinun valintasi, kun tarvitset nopeasti noutaa arvoja perustuen yksilölliseen tunnisteeseen, mikä tekee tiedonhallinnasta vaivatonta monimutkaisissa sovelluksissa.
-
 ## Miten:
-
 C#:ssa työskentelet assosiatiivisten taulukoiden kanssa käyttämällä `Dictionary<TKey, TValue>` -luokkaa. Tässä on nopea esimerkki, jolla pääset alkuun:
 
 ```C#
@@ -63,7 +58,6 @@ Omenat: 7
 Tämä esimerkki esittelee sanakirjan luomista, elementtien lisäämistä, käyttöä, päivittämistä, poistamista ja niiden yli iterointia.
 
 ## Syväsukellus
-
 Assosiatiivisten taulukoiden konsepti palaa niiden käyttöön käsikirjoitusskripteissä, kuten Perl ja PHP, missä ne tarjoavat joustavuutta datan kokoelmien hallinnoinnissa. C#:ssa `Dictionary<TKey, TValue>` on de facto toteutus, joka esiteltiin .NET Framework 2.0:ssa. Se tallentaa tiedot hajautustaulukkoon, varmistaen tehokkaat hakutoiminnot, lisäykset ja poistot.
 
 On kuitenkin huomionarvoista, että vaikka sanakirjat ovat erittäin monipuolisia, ne eivät aina välttämättä ole paras valintasi. Järjestettyjen kokoelmien ylläpitämiseksi saatat tutkia `SortedDictionary<TKey, TValue>` tai `SortedList<TKey, TValue>`, jotka tarjoavat järjestettyä järjestystä hitaamman lisäys- ja poisto-operaatioiden kustannuksella. Skenaarioissa, jotka vaativat säieturvallisuutta, `ConcurrentDictionary<TKey, TValue>` lisää ylikuormaa, mutta varmistaa turvallisen käytön useista säikeistä ilman manuaalista lukitusta.

@@ -15,9 +15,6 @@ title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---
 
-## Cái gì & Tại sao?
-Biểu thức chính quy, hoặc regex, là những mẫu được sử dụng để tìm kết hợp các ký tự trong chuỗi. Các lập trình viên sử dụng chúng để tìm kiếm, chỉnh sửa, hoặc kiểm tra văn bản, làm cho các nhiệm vụ liên quan đến thao tác chuỗi trở nên hiệu quả hơn và ít lỗi hơn.
-
 ## Làm thế nào:
 Trong Swift, bạn sử dụng lớp `NSRegularExpression` để xử lý regex. Bạn xác định một mẫu, tạo một đối tượng regex, và sau đó sử dụng nó để tìm kiếm hoặc thay thế văn bản. Dưới đây là một ví dụ cơ bản:
 

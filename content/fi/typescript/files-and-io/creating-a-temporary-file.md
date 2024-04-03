@@ -10,9 +10,6 @@ title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---
 
-## What & Why? - Mikä & Miksi?
-Tilapäistiedosto on väliaikainen tallennuspaikka dataa varten. Ohjelmoijat käyttävät niitä, kun haluavat käsitellä tietoa, joka ei vaadi pysyvää tallennusta, tai kun halutaan välttää törmäykset toistuvasti käytettäessä samoja tiedostonimiä.
-
 ## How to: - Näin tehdään:
 TypeScriptissä voit käyttää sisäänrakennettua `fs`-moduulia tai kolmansien osapuolien kirjastoja, kuten `tmp`. Tässä on esimerkki `tmp`-kirjaston käytöstä:
 

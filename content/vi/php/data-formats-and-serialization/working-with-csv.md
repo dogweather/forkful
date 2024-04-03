@@ -16,10 +16,8 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---
 
-## Cái gì & Tại sao?
-CSV, viết tắt của Comma-Separated Values (Giá trị được phân tách bởi dấu phẩy), là một định dạng tệp phổ biến để lưu trữ dữ liệu bảng. Lập trình viên sử dụng nó bởi vì nó đơn giản, được hỗ trợ rộng rãi, và có thể dễ dàng đọc và viết bởi cả máy tính và con người.
-
 ## Cách thực hiện:
+
 
 ### Đọc một tệp CSV
 ```php

@@ -38,12 +38,7 @@ title: "\u0E01\u0E32\u0E23\u0E04\u0E49\u0E19\u0E2B\u0E32\u0E41\u0E25\u0E30\u0E41
 weight: 10
 ---
 
-## อะไร & ทำไม?
-
-การค้นหาและแทนที่ข้อความในการเขียนโปรแกรมคือสิ่งที่ฟังดูเหมือนว่า: การสแกนสตริงสำหรับรูปแบบบางอย่างและการสลับออกเป็นอย่างอื่น โปรแกรมเมอร์ทำเช่นนี้บ่อยมาก - สำหรับการทำความสะอาดข้อมูล, อัปเดตหน้าจอผู้ใช้, หรือการเตรียมสตริงสำหรับการประมวลผล
-
 ## วิธีการ:
-
 ```Swift
 var greetings = "Hello, old friend!"
 
@@ -69,13 +64,11 @@ print(regexResult) // "Hello, best friend!"
 ```
 
 ## ลงลึก
-
 เราได้ทำการสลับข้อความในสตริงมาตั้งแต่ยุคแรกๆ ของการคอมพิวต์ เดิมที, มันเกิดขึ้นกับเครื่องมือ Command-line ง่ายๆ เช่น `sed` ใน Swift, `replacingOccurrences(of:with:)` ทำหน้าที่หนัก, และคุณได้รับการควบคุมมากขึ้นด้วยตัวเลือกเช่น `.caseInsensitive` หรือ `.regularExpression`
 
 ทางเลือกอื่นๆ ใน Swift ได้แก่การใช้ `NSRegularExpression` สำหรับรูปแบบที่ซับซ้อนและ `NSMutableString` สำหรับการดำเนินการสตริงที่เปลี่ยนแปลงได้ ในขั้นต้น, วิธีการแทนที่ข้อความของ Swift ทำงานร่วมกับเคาน์เตอร์พาร์ท Objective-C ที่มีประสิทธิภาพ, ให้ความเร็วและความหลากหลาย
 
 ## ดูเพิ่มเติม
-
 - [เอกสาร Swift String](https://developer.apple.com/documentation/swift/string/)
 - [Regular Expressions ใน Swift](https://nshipster.com/swift-regular-expressions/)
 - [Swift.org - การทำงานกับ Strings](https://swift.org/documentation/api-design-guidelines/#strive-for-fluent-usage)

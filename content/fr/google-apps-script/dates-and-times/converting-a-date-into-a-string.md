@@ -14,12 +14,7 @@ title: "Convertir une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## C'est quoi & pourquoi ?
-
-Convertir des dates en chaînes de caractères est une tâche fondamentale qui permet aux programmeurs de manipuler et d’afficher des informations de date dans un format lisible par l’homme. Ceci est crucial pour créer des interfaces utilisateur, générer des rapports ou enregistrer des informations dans des applications développées avec Google Apps Script.
-
 ## Comment faire :
-
 Google Apps Script, basé sur JavaScript, permet plusieurs méthodes pour réaliser la conversion des dates en chaînes. Voici quelques exemples illustrant différentes approches :
 
 ### En utilisant la méthode `toString()` :
@@ -53,7 +48,6 @@ Logger.log(formattedDate); // Sortie: "2023-04-05"
 Cette méthode est particulièrement puissante pour générer des dates dans des formats qui sont spécifiques à une région ou adaptés aux besoins spécifiques d'une application.
 
 ## Plongée en profondeur
-
 La nécessité de convertir des dates en chaînes n'est pas unique à Google Apps Script ; elle est répandue dans tous les langages de programmation. Cependant, l'approche de Google Apps Script, héritée de JavaScript, offre un ensemble flexible d'options orientées vers le script sur le web. `Utilities.formatDate()` se distingue en reconnaissant les complexités de travail avec les fuseaux horaires – un défi souvent négligé.
 
 Historiquement, la gestion des dates et des heures a été une source de bogues et de complexité dans le développement logiciel, principalement en raison des différences de fuseaux horaires et de formats. L'introduction de `Utilities.formatDate()` dans Google Apps Script est un signe vers la standardisation des manipulations de date-heure, surtout dans le contexte des produits de suite Google qui sont utilisés mondialement.

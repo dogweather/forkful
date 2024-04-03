@@ -14,9 +14,6 @@ title: Werken met YAML
 weight: 41
 ---
 
-## Wat & Waarom?
-YAML, een afkorting voor "YAML Ain't Markup Language", is een voor mensen leesbare gegevensserialisatiestandaard die we kunnen gebruiken om bestanden te configureren of gegevensuitwisseling te doen. Programmeurs zijn dol op YAML vanwege de eenvoud en leesbaarheid, vooral in configuratie-instellingen, CI/CD-scripts en containers orchestratiesystemen.
-
 ## Hoe:
 Swift kan standaard geen YAML verwerken, dus we moeten een externe bibliotheek zoals Yams gebruiken. Voeg eerst Yams toe aan je `Package.swift`:
 

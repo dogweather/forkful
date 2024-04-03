@@ -11,9 +11,6 @@ title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---
 
-## Was & Warum?
-Das Umwandeln eines Strings in Kleinbuchstaben bedeutet einfach, alle Großbuchstaben in eine Zeichenkette in ihre kleinen Pendants zu überführen. Programmierer nutzen dies oft für die Normalisierung der Daten, zum Beispiel beim Vergleich von Eingabetext, unabhängig von der Groß- und Kleinschreibung.
-
 ## How to:
 Haskell bietet eine einfache Funktion namens `toLower` im Modul `Data.Char`, die genau für diesen Zweck gedacht ist. Hier ist ein schnelles Beispiel, wie man es verwendet:
 

@@ -15,9 +15,6 @@ title: Analizando HTML
 weight: 43
 ---
 
-## ¿Qué y Por Qué?
-Parsear HTML implica analizar el código HTML de una página web para extraer información o elementos específicos, una tarea común para el web scraping, la minería de datos o la automatización de interacciones con sitios web. Los programadores lo hacen para interactuar programáticamente con sitios web o extraer datos de ellos, automatizar tareas o probar aplicaciones web.
-
 ## Cómo hacerlo:
 Python ofrece bibliotecas potentes como BeautifulSoup y requests para el web scraping y el análisis de HTML. Para comenzar, necesitas instalar estas bibliotecas si aún no lo has hecho:
 

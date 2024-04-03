@@ -10,9 +10,6 @@ title: Conversione di una data in una stringa
 weight: 28
 ---
 
-## What & Why? (Che Cosa & Perché?)
-Convertire una data in una stringa significa trasformare l'oggetto Data in una sequenza di caratteri leggibile. I programmatori lo fanno per rendere le date comprensibili per gli utenti e per formattarle in modo da poterle memorizzare o confrontare facilmente.
-
 ## How to: (Come Fare:)
 ```Kotlin
 import java.text.SimpleDateFormat

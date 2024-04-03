@@ -13,12 +13,7 @@ title: Creazione di un file temporaneo
 weight: 21
 ---
 
-## Cosa & Perché?
-
-Creare un file temporaneo in Google Apps Script implica la generazione di un file destinato a un uso a breve termine, tipicamente per l'elaborazione intermedia dei dati, il debug, o scopi di cache. I programmatori fanno ciò per gestire dati temporaneamente senza intasare lo spazio di archiviazione permanente o quando la permanenza dei dati non è necessaria oltre l'ambito del processo corrente.
-
 ## Come fare:
-
 In Google Apps Script, la creazione di un file temporaneo può essere realizzata utilizzando il servizio DriveApp, che fornisce un metodo semplice per creare, leggere ed eliminare file in Google Drive. Ecco come si può creare un file di testo temporaneo, scrivere alcuni dati su di esso e poi rimuoverlo dopo l'uso:
 
 ```javascript
@@ -53,7 +48,6 @@ File temporaneo eliminato
 Questo script di esempio mostra la creazione di un file temporaneo, eseguendo un'operazione per leggerne il contenuto e, infine, rimuovendo il file per pulire.
 
 ## Approfondimento
-
 Il concetto di creare file temporanei nello sviluppo software è vecchio quanto il concetto stesso di gestione dei file. Nei sistemi di file tradizionali, i file temporanei vengono spesso creati in directory temp designate e sono cruciali per vari processi intermedi, come l'ordinamento di grandi insiemi di dati, il mantenimento dei dati di sessione per le applicazioni web o l'archiviazione di frammenti di dati durante i processi di conversione dei file.
 
 In Google Apps Script, il processo di creazione di file temporanei sfrutta l'infrastruttura di Google Drive, che offre un interessante mix di gestione dei file basata su cloud con concetti di programmazione tradizionali. Tuttavia, questo metodo di creare file temporanei in Google Drive non è privo di limitazioni e costi, considerando i limiti di quota imposti da Google Drive. Inoltre, la latenza nell'accesso a Google Drive rispetto a un filesystem locale può essere un fattore critico per applicazioni ad alte prestazioni.

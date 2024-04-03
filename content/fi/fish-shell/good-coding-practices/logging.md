@@ -11,9 +11,6 @@ title: Lokitus
 weight: 17
 ---
 
-## Mikä ja miksi?
-Lokitus on olennaisesti sitä, että kirjaat ylös, mitä sovelluksesi tekee – voisi sanoa, että se on päiväkirja, mutta koodille. Ohjelmoijat tekevät niin seuratakseen yksityiskohtia, kuten tilan muutoksia, järjestelmätapahtumia ja ärsyttäviä vikoja, varmistaakseen, ettei mikään ongelma jää huomaamatta.
-
 ## Miten:
 Fishissä lokitus voi olla yksinkertaista kuin standarditulosteiden ja -virheiden ohjaaminen tiedostoon. Tehdään lokimerkintä skriptimme aloitus- ja lopetusaikoihin.
 

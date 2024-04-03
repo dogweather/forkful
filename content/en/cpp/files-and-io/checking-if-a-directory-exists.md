@@ -12,9 +12,6 @@ title: Checking if a directory exists
 weight: 20
 ---
 
-## What & Why?
-Checking if a directory exists is about determining the presence of a directory at a specified path before performing operations like reading from or writing to files within it. Programmers do it to avoid errors related to file operations, ensuring a smoother and more reliable execution of file handling tasks in their applications.
-
 ## How to:
 In modern C++ (C++17 and beyond), you can use the filesystem library to check if a directory exists. It provides a straightforward and standardized way to perform filesystem operations, including checking for the existence of a directory.
 

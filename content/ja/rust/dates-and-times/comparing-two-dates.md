@@ -21,12 +21,7 @@ title: "\u65E5\u4ED8\u3092\u6BD4\u8F03\u3059\u308B"
 weight: 27
 ---
 
-## What & Why? (何となぜ？)
-
-日付を比較するっていうのは、単純に異なる二つの日付の前後関係を確かめることだ。プログラマーは、有効期限のチェックやイベントのスケジュール調整など、色々な場面で日付比較を行う。
-
 ## How to: (方法)
-
 ```Rust
 use chrono::{DateTime, Utc};
 
@@ -51,7 +46,6 @@ date1 is earlier than date2
 ```
 
 ## Deep Dive (深掘り)
-
 比較する前に、`chrono`クレートが必要だ。`chrono`はRustの日付と時間を扱うためのライブラリで、高い柔軟性と正確さを兼ね備えている。さらに、タイムゾーンに基づいた比較も可能になる。
 
 過去、Rust標準の`std::time`モジュールが日付操作を提供していたが、機能が限られており、多くの場合、`chrono`クレートが代わりに用いられる。
@@ -59,6 +53,5 @@ date1 is earlier than date2
 `DateTime<Utc>`を使用し、二つの日付をUTCで取り扱っている。時差に影響されない厳密な比較が可能。`parse()`メソッドを使って文字列から日付をパースし、`Utc::now()`で現在の日付と時間を取得する。そして、比較演算子`<`を使ってどちらが前かをチェックする。
 
 ## See Also (参照)
-
 - [chrono crate documentation](https://docs.rs/chrono/)
 - [Rust `std::time` module documentation](https://doc.rust-lang.org/std/time/)

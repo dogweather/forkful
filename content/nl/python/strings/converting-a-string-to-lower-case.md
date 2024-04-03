@@ -12,9 +12,6 @@ title: Een string omzetten naar kleine letters
 weight: 4
 ---
 
-## Wat & Waarom?
-Een tekenreeks converteren naar kleine letters betekent het veranderen van alle hoofdletters in de tekst naar hun kleine letter equivalenten. Programmeurs doen dit vaak voor consistentie, vergelijking, of zoekdoeleinden, omdat 'A' niet hetzelfde is als 'a' in de wereld van computers.
-
 ## Hoe:
 Een tekenreeks naar kleine letters omzetten in Python is eenvoudig met de `.lower()` methode.
 ```Python

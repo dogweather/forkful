@@ -11,9 +11,6 @@ title: "Interpolera en str\xE4ng"
 weight: 8
 ---
 
-## Vad & Varför?
-Stringinterpolering låter dig sätta in variabler eller Ruby-kod inne i en sträng. Det är ett snabbt och läsarvänligt sätt att bygga dynamiska strängar.
-
 ## Hur man gör:
 Interpolering görs med `#{}` inuti en "dubbelciterad" sträng. Här är några exempel:
 

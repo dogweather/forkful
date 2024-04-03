@@ -14,12 +14,7 @@ title: "Korzystanie z interaktywnej pow\u0142oki (REPL)"
 weight: 34
 ---
 
-## Co i dlaczego?
-
-Interaktywna powłoka, czyli pętla czytaj-wykonaj-wypisz (REPL), pozwala eksperymentować z kodem Go w czasie rzeczywistym, wykonując komendy i otrzymując natychmiastową informację zwrotną. To podejście jest szeroko stosowane do nauki, debugowania i tworzenia prototypów, ponieważ omija tradycyjny cykl edycja-kompilacja-uruchomienie, co czyni proces rozwoju szybszym i bardziej intuicyjnym.
-
 ## Jak to zrobić:
-
 Mimo że Go nie zawiera wbudowanego REPL, społeczność stworzyła narzędzia takie jak `gore`, aby wypełnić tę lukę. Najpierw zainstaluj `gore`, uruchamiając:
 
 ```
@@ -62,7 +57,6 @@ Pole koła o promieniu 4: 50.26548245743669
 ```
 
 ## Dogłębna analiza:
-
 Koncepcja REPL jest starożytna, sięgająca maszyn Lisp z lat 60., zapewniających interaktywne doświadczenie programistyczne. W przeciwieństwie do języków takich jak Python czy JavaScript, Go zostało zaprojektowane bez REPL, skupiając się zamiast tego na skompilowanych plikach wykonywalnych dla wydajności i prostoty. Odzwierciedla to filozofię prostoty Go oraz jego projektowanie dla skalowalnego i łatwego w utrzymaniu oprogramowania.
 
 Jednakże, narzędzia takie jak `gore` czy `goplay` pokazują pomysłowość społeczności Go w zamykaniu tej luki. Te narzędzia dynamicznie analizują kod Go i używają pakietu `go/eval` lub podobnych mechanizmów do jego wykonania w czasie rzeczywistym, choć z pewnymi ograniczeniami w porównaniu do natywnego środowiska REPL. Te ograniczenia wynikają z systemu typów Go i modelu kompilacji, które mogą utrudniać ocenę w locie.

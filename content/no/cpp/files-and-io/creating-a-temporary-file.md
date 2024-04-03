@@ -11,9 +11,6 @@ title: Opprette en midlertidig fil
 weight: 21
 ---
 
-## What & Why?
-Opprette en midlertidig fil betyr å skape en fil som er ment for kortvarig bruk og ofte slettet etter bruk. Programmerere gjør dette for å lagre data midlertidig uten å påvirke det permanente lagringssystemet.
-
 ## How to:
 I C++, kan du bruke `<filesystem>` biblioteket for å håndtere midlertidige filer. Her er et eksempel:
 

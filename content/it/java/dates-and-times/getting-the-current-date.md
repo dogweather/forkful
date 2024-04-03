@@ -14,9 +14,6 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Cosa e Perché?
-Ottenere la data corrente in Java è un'operazione fondamentale che consente ai programmatori di manipolare gli oggetti data per operazioni quali il logging, il calcolo delle date e le condizioni basate sul tempo. È vitale nelle applicazioni in cui il tracciamento, la pianificazione e l'analisi dei dati temporali sono cruciali.
-
 ## Come fare:
 Java offre diversi modi per ottenere la data corrente, utilizzando sia la vecchia classe `java.util.Date` che il più recente pacchetto `java.time` (introdotto in Java 8), che è più versatile e intuitivo.
 
@@ -31,6 +28,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### Utilizzando `java.time.LocalDateTime`
 ```java
 import java.time.LocalDateTime;
@@ -42,6 +40,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### Utilizzando `java.util.Date` (Legacy)
 ```java
 import java.util.Date;
@@ -53,6 +52,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### Utilizzando una Libreria di Terze Parti: Joda-Time
 Prima di Java 8, Joda-Time era lo standard de-facto per la data e l'ora in Java. Se stai lavorando su sistemi legacy o hai una preferenza per Joda-Time, ecco come puoi usarlo per ottenere la data corrente:
 ```java

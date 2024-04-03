@@ -13,12 +13,7 @@ title: Removendo aspas de uma string
 weight: 9
 ---
 
-## O Que & Por Que?
-
-Remover aspas de uma string no Google Apps Script é sobre eliminar aspas desnecessárias que podem circundar seus dados de string, geralmente provenientes de objetos JSON analisados, entrada de usuário ou extração de dados. Programadores enfrentam isso para limpar ou padronizar dados antes de processá-los ou armazená-los, garantindo precisão e consistência em operações como comparações, avaliações e entradas no banco de dados.
-
 ## Como fazer:
-
 Google Apps Script não diverge muito das práticas padrão de JavaScript quando se trata de manipular strings e suas manipulações. Para remover aspas de uma string, pode-se utilizar o método `replace()`, que permite substituir partes da string usando expressões regulares. Aqui está um exemplo rápido:
 
 ```javascript
@@ -45,7 +40,6 @@ function removeSingleQuotes() {
 Estes métodos funcionam bem para tarefas simples e cotidianas de remoção de aspas, mas podem exigir refinamento para strings mais complexas ou diferentes tipos de caracteres encapsuladores.
 
 ## Aprofundamento
-
 A técnica de remover aspas de strings usando expressões regulares existe desde os primeiros dias da programação, adaptando-se à medida que as linguagens evoluem. No Google Apps Script, ao aproveitar as robustas capacidades de manipulação de strings do JavaScript, incluindo expressões regulares, proporciona um conjunto de ferramentas poderoso para os desenvolvedores. No entanto, é essencial notar as limitações e potenciais armadilhas: principalmente, que esta abordagem assume que as aspas estão apenas no início e no fim da string. Aspas embutidas ou aspas destinadas a ser parte dos dados da string podem ser removidas inadvertidamente se não forem tratadas corretamente.
 
 Para cenários mais complexos, como aspas aninhadas ou a remoção seletiva de aspas apenas quando elas encapsulam a string, uma abordagem mais matizada ou parser pode ser justificado. Bibliotecas ou funções integradas em outras linguagens, como o método `strip()` do Python, oferecem essas funcionalidades prontas, demonstrando um compromisso entre a simplicidade do Google Apps Script e as funcionalidades ricas e especializadas de outros ambientes de programação.

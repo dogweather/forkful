@@ -18,9 +18,6 @@ title: "\u4F7F\u7528TOML"
 weight: 39
 ---
 
-## 什么 & 为什么？
-TOML，即Tom's Obvious, Minimal Language（汤姆明了、简约的语言），是一种数据序列化格式。程序员因其简单易读而喜爱它；它非常适合配置文件，有点像YAML的感觉，但对于人类来说比JSON更不那么繁琐。
-
 ## 如何操作：
 首先，安装 `toml-cli` 以在Bash中使用TOML。对于即时读取或编辑TOML文件很方便。
 

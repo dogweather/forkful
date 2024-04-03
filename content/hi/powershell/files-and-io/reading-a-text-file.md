@@ -29,12 +29,7 @@ title: "\u091F\u0947\u0915\u094D\u0938\u094D\u091F \u092B\u093C\u093E\u0907\u093
 weight: 22
 ---
 
-## What & Why? (क्या और क्यों?)
-
-पाठ फाइल पढ़ना मतलब फाइल से डेटा निकालना होता है। प्रोग्रामर्स इसे इसलिए करते हैं क्योंकि कई बार जानकारी को संग्रहित करने या साझा करने के लिए टेक्स्ट फाइलें सबसे आसान तरीका होती हैं।
-
 ## How to (कैसे करें):
-
 ```PowerShell
 # टेक्स्ट फाइल पढ़ने का सीधा तरीका
 $textContent = Get-Content 'C:\path\to\your\file.txt'
@@ -65,10 +60,8 @@ finally {
 ```
 
 ## Deep Dive (गहराई से जानकारी):
-
 पाठ फाइल पढ़ने का काम `Get-Content` cmdlet के साथ आसानी से हो जाता है, जो PowerShell में शुरुआत से ही शामिल है। पाठ फ़ाइल को पढ़ने के विकल्पों में `[System.IO.File]` नेमस्पेस के तहत .NET क्लासेस का इस्तेमाल शामिल है। यह आपको बड़ी फाइलों को अधिक कुशलता से पढ़ने और उन पर काम करने में मदद करता है। स्ट्रीमिंग तब उपयुक्त होती है जब आपको मेमोरी का ख्याल रखना हो।
 
 ## See Also (और देखें):
-
 - PowerShell `[System.IO.File]` क्लास: https://docs.microsoft.com/en-us/dotnet/api/system.io.file
 - `Get-Content` Cmdlet डॉक्यूमेंटेशन: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content

@@ -11,9 +11,6 @@ title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---
 
-## Co i Dlaczego?
-Logowanie to w zasadzie proces rejestrowania zdarzeń, które mają miejsce w aplikacji programowej. Programiści logują te zdarzenia, aby zbierać informacje o czasie wykonania, diagnozować problemy, monitorować zachowanie systemu oraz tworzyć ślad audytowy dla celów bezpieczeństwa i zgodności z przepisami.
-
 ## Jak to zrobić:
 Oto prosty sposób na rozpoczęcie logowania w Javie przy użyciu wbudowanego pakietu `java.util.logging`.
 

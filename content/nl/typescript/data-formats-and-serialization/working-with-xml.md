@@ -12,9 +12,6 @@ title: Werken met XML
 weight: 40
 ---
 
-## Wat & Waarom?
-Werken met XML betekent het parseren, manipuleren en schrijven van XML-gegevens met behulp van programmeren. Programmeurs gaan om met XML om data uit te wisselen tussen verschillende systemen, voor configuratiebestanden of wanneer zij werken met standaarden zoals SOAP die op XML vertrouwen.
-
 ## Hoe:
 ```TypeScript
 import { parseString } from 'xml2js';

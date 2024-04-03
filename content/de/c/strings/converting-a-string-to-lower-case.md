@@ -13,12 +13,7 @@ title: Konvertierung eines Strings in Kleinbuchstaben
 weight: 4
 ---
 
-## Was & Warum?
-
-Die Umwandlung eines Strings in Kleinbuchstaben in C bedeutet, alle Großbuchstaben in einem gegebenen String in ihre entsprechenden Kleinbuchstaben zu transformieren. Programmierer führen diese Operation oft durch, um Texteingaben für Vergleiche, Suchoperationen oder einfach für eine ästhetische Konsistenz in der Ausgabe zu standardisieren.
-
 ## Wie:
-
 C hat keine eingebaute Funktion für die direkte Umwandlung von Strings in Kleinbuchstaben, anders als einige Hochsprachen. Jedoch kann der Prozess einfach unter Verwendung der Funktionen der C-Standardbibliothek implementiert werden. Unten findet sich eine Schritt-für-Schritt-Anleitung und ein Beispiel, das illustriert, wie man einen String in Kleinbuchstaben umwandelt.
 
 ```c
@@ -53,7 +48,6 @@ Lowercase: hello, world!
 In diesem Beispiel iteriert die Funktion `toLowerCase` durch jedes Zeichen des Eingabestrings und wandelt es mit der Funktion `tolower` aus `ctype.h` in das entsprechende Kleinbuchstabenäquivalent um. Die Modifikation erfolgt direkt, wodurch der ursprüngliche String geändert wird.
 
 ## Tiefergehend
-
 Die Funktion `tolower`, die im obigen Beispiel verwendet wird, ist Teil der C-Standardbibliothek, spezifisch innerhalb der Header-Datei `ctype.h`. Sie operiert basierend auf dem aktuellen Gebietsschema, aber für das Standard-"C" Lokale, behandelt sie den ASCII-Zeichensatz, wobei 'A' bis 'Z' zu 'a' bis 'z' konvertiert werden.
 
 Historisch gesehen war die Handhabung der Zeichenkodierung und Fallumwandlung in C eng mit dem ASCII-Zeichensatz gekoppelt, was deren Nützlichkeit in internationalen oder lokalisierten Anwendungen einschränkte, bei denen Zeichen außerhalb des ASCII-Satzes häufig vorkommen. Moderne Programmiersprachen bieten möglicherweise eingebaute Stringmethoden, um Fallumwandlungen unter Berücksichtigung des Gebietsschemas und Unicode-Zeichen durchzuführen, was C nativ fehlt.

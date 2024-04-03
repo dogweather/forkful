@@ -24,16 +24,10 @@ title: "\u7F16\u5199\u6D4B\u8BD5"
 weight: 36
 ---
 
-## 什么 & 为什么？
-
-在 Arduino 环境中编写测试是指创建自动化测试的过程，这些测试验证您的代码在 Arduino 设备上的功能是否符合预期。程序员这样做是为了确保他们的代码按预期工作，减少错误，并提高他们项目的质量，这在调试可能更具挑战性的嵌入式系统中尤其重要。
-
 ## 如何操作：
-
 Arduino 没有像一些其他编程环境那样内置的测试框架。但是，您可以使用第三方库，例如 `AUnit`，来对 Arduino 代码进行单元测试。AUnit 受 Arduino 内置库 `ArduinoUnit` 和 Google 的测试框架 `Google Test` 的启发。
 
 ### 使用 AUnit 的示例：
-
 首先，通过 Arduino IDE 中的库管理器安装 AUnit：前往 Sketch > Include Library > Manage Libraries... > 搜索 AUnit 并安装它。
 
 然后，您可以像这样编写测试：

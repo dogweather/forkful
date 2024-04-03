@@ -10,9 +10,6 @@ title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---
 
-## Qué y Por Qué?
-Convertir una fecha en una cadena de texto permite manejar fechas como texto para almacenarlas o mostrarlas. Los programadores hacen esto para facilitar la internacionalización, la persistencia de datos o simplemente para mostrar fechas en un formato legible por humanos.
-
 ## Cómo hacerlo:
 Clojure, por ser un dialecto de Lisp y correr en la JVM, utiliza las clases de Java para manejar fechas. Aquí hay un ejemplo de cómo convertir una fecha a una cadena:
 

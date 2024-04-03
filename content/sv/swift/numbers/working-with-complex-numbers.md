@@ -9,9 +9,6 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad & Varför?
-Komplexa tal har en reell del och en imaginär del (som 3 + 4i). Programmerare använder dem i Swift för uppgifter som signalbehandling, att lösa vissa matematiska problem och att simulera fysik.
-
 ## Hur man gör:
 Swift har inte inbyggt stöd för komplexa tal, men vi kan skapa vårt eget:
 

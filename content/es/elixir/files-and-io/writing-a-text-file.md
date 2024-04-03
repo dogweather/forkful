@@ -14,12 +14,7 @@ title: Escribiendo un archivo de texto
 weight: 24
 ---
 
-## Qué y Por Qué?
-
-Escribir en un archivo de texto en Elixir es una habilidad esencial para los desarrolladores, permitiendo la persistencia de datos, registro o exportación de contenido legible por humanos. Los programadores logran esto para guardar el estado de la aplicación, información para depurar, configuraciones o cualquier intercambio de datos entre sistemas que prefieren un formato ubicuo como el texto.
-
 ## Cómo hacerlo:
-
 Elixir facilita el manejo de archivos con módulos incorporados. La forma principal de escribir en un archivo es usando las funciones `File.write/2` o `File.write!/2`, donde la primera devuelve una tupla `:ok` o `:error` y la segunda genera un error en caso de fallo.
 
 He aquí un ejemplo simple:

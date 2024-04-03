@@ -11,9 +11,6 @@ title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---
 
-## What & Why? (Vad & Varför?)
-Att hitta längden på en sträng innebär att räkna antalet tecken i den. Programmerare gör det för att validera indata, begränsa innehåll, loopa korrekt och mycket annat.
-
 ## How to: (Hur man gör:)
 Java gör det enkelt. Använd `length()` metod på en sträng objekt och du har svaret. Så här:
 

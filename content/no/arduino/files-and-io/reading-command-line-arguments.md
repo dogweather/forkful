@@ -11,9 +11,6 @@ title: Lese kommandolinjeargumenter
 weight: 23
 ---
 
-## Hva & Hvorfor?
-Å lese kommandolinjeargumenter handler om å hente inn data gitt direkte til programmet ditt ved oppstart. Vi gjør dette for å tilpasse programoppførselen uten å endre koden.
-
 ## Slik gjør du:
 Arduino-plattformen er tradisjonelt ikke linjeorientert – den har ikke et vanlig kommandolinjegrensesnitt i likhet med enkelte operativsystemer. Derfor simulerer vi argumenter via Serial-kommunikasjon.
 

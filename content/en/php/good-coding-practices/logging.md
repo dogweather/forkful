@@ -12,12 +12,7 @@ title: Logging
 weight: 17
 ---
 
-## What & Why?
-
-Logging is basically akin to keeping a diary for your code; it's the act of recording events, errors, and other significant data points that happen when your application runs. Programmers do it to keep track of what's happening under the hood, debug problems, and maintain an audit trail for later analysis or compliance purposes.
-
 ## How to:
-
 PHP comes with a built-in error logging function that's easy to use. Just pop `error_log()` into your code to send a message to your server logs. You can also customize it to write to a specific file.
 
 ```php
@@ -50,7 +45,6 @@ $logger->error('This is an error log!');
 This will output your logs to either the server log or your specified file in plain text format.
 
 ## Deep Dive:
-
 Historically, PHP developers relied on `error_log()` function or the Apache/Nginx logs to catch issues, but that can be chaotic with the need to parse plain text files and no easy way to filter or sort them. Enter logging libraries like Monolog, which ushered in the era of structured logging in PHP. These solutions give you better control by offering multiple logging channels, severity levels, and formatted output (like JSON, which is a dream for parsing programmatically).
 
 Alternatives to Monolog include Log4php, KLogger, and Apache's Log4php. Implementation-wise, robust logging requires not just dumping data wherever, but considering things like log rotation, archival strategies, and integration with monitoring tools to truly be useful.
@@ -58,7 +52,6 @@ Alternatives to Monolog include Log4php, KLogger, and Apache's Log4php. Implemen
 You should keep the [PSR-3 Logger Interface](https://www.php-fig.org/psr/psr-3/) in mind, which outlines a common interface for logging libraries, ensuring interoperability and a consistent way to access logging mechanisms.
 
 ## See Also:
-
 - [Monolog GitHub Repository](https://github.com/Seldaek/monolog)
 - [PSR-3 Logger Interface Specification](https://www.php-fig.org/psr/psr-3/)
 - [PHP Error Log Documentation](https://www.php.net/manual/en/function.error-log.php)

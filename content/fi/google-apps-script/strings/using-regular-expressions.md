@@ -13,16 +13,10 @@ title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---
 
-## Mikä ja miksi?
-
-Säännölliset lausekkeet (regex) ovat malleja, joita käytetään merkkiyhdistelmien etsimiseen merkkijonoista. Ohjelmoijat hyödyntävät niitä tekstin ja datan etsimiseen, muokkaamiseen tai manipulointiin, mikä tekee niistä korvaamattomia mallien tunnistamisessa ja datan jäsentämisessä.
-
 ## Miten:
-
 Säännöllisten lausekkeiden käyttö Google Apps Scriptissä on suoraviivaista JavaScript-pohjaisen syntaksin ansiosta. Näin voit sisällyttää regexiä skripteihisi yleisiin tehtäviin kuten etsintään ja datan validointiin.
 
 ### Merkkijonojen etsintä
-
 Oletetaan, että haluat löytää, sisältääkö merkkijono tietyn mallin, kuten sähköpostiosoitteen. Tässä on yksinkertainen esimerkki:
 
 ```javascript
@@ -41,7 +35,6 @@ findEmailInText("Ota yhteyttä osoitteeseen info@example.com.");
 ```
 
 ### Datan validointi
-
 Säännölliset lausekkeet loistavat datan validoinnissa. Alla on funktio, joka validoi syötemerkkijonon tarkistaen, noudattaako se yksinkertaista salasanapolitiikkaa (vähintään yksi iso kirjain, yksi pieni kirjain ja vähintään 8 merkkiä).
 
 ```javascript
@@ -56,7 +49,6 @@ Logger.log(validatePassword("heikko"));      // Tulostaa: false
 ```
 
 ## Syväsukellus
-
 Google Apps Scriptissä käytettävät säännölliset lausekkeet periytyvät JavaScriptistä, joka standardoitiin ensimmäisen kerran ECMAScript-kielispesifikaatiossa kesäkuussa 1997. Vaikka ne ovat voimakkaita, ne voivat joskus johtaa hämmentävään ja vaikeasti ylläpidettävään koodiin, erityisesti kun niitä käytetään liikaa tai monimutkaisiin mallien tunnistamistehtäviin, jotka voidaan ratkaista tehokkaammin käyttämällä muita jäsentämismenetelmiä.
 
 Esimerkiksi, vaikka regexiä voidaan käyttää HTML- tai XML-jäsentämiseen tiukassa paikassa, sen käyttöä yleensä vältetään näiden dokumenttien sisäkkäisten ja monimutkaisten rakenteiden takia. Sen sijaan erityisesti tällaisten rakenteiden jäsentämiseen suunnitellut työkalut, kuten HTML:lle suunnitellut DOM-jäsentimet, ovat luotettavampia ja luettavampia.

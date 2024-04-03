@@ -13,9 +13,6 @@ title: Gebruik van associatieve arrays
 weight: 15
 ---
 
-## Wat & Waarom?
-In de wereld van Arduino laten associatieve arrays je sleutels koppelen aan waarden, een beetje zoals je sokken zou matchen met hun paren. Ze zijn een go-to wanneer je data moet opslaan en ophalen met behulp van beschrijvende namen, waardoor je code schoner en veel begrijpelijker wordt.
-
 ## Hoe:
 Arduino heeft strikt genomen geen ingebouwde ondersteuning voor associatieve arrays zoals je die zou vinden in meer high-level talen. Maar, vrees niet. We kunnen creatief worden met behulp van structuren en arrays om deze functionaliteit na te bootsen. Hier is een eenvoudig voorbeeld om een basis "associatieve array" te creëren voor het opslaan en openen van temperaturen voor verschillende steden.
 

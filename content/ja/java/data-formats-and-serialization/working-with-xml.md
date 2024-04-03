@@ -22,9 +22,6 @@ title: "XML\u306E\u6271\u3044\u65B9"
 weight: 40
 ---
 
-## 何となぜ？
-JavaでのXMLの取り扱いには、XMLドキュメントのパース(解析)、クエリ、および操作が含まれます。プログラマーは、データ交換、設定管理、および多くのレガシーシステムやAPIがXMLを使用して通信するためにこれを行います。
-
 ## 方法:
 Javaには、XMLを操作するためにDOM（Document Object Model）、SAX（Simple API for XML）、およびStAX（Streaming API for XML）のようなAPIが提供されています。次は、XMLファイルをパースするためのDOMの例です:
 

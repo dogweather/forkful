@@ -11,9 +11,6 @@ title: "H\xE4mta en webbsida"
 weight: 42
 ---
 
-## Vad & Varför?
-Att ladda ner en webbsida innebär att hämta dess innehåll över internet, typiskt HTML, CSS och ibland JavaScript. Programmerare gör detta för att bearbeta informationen, skrapa data eller testa sidors tillgänglighet.
-
 ## How to:
 För att ladda ner en webbsida i Lua använder vi biblioteket `socket.http`. Här är ett enkelt exempel:
 

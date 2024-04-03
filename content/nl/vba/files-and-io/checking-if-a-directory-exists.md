@@ -14,12 +14,7 @@ title: Controleren of een directory bestaat
 weight: 20
 ---
 
-## Wat & Waarom?
-
-Controleren of een map bestaat in Visual Basic for Applications (VBA) gaat over het verifiëren van de aanwezigheid van een map binnen het bestandssysteem voordat men operaties uitvoert zoals het opslaan van bestanden of het aanmaken van nieuwe mappen. Programmeurs doen dit om runtime-fouten te vermijden en te zorgen dat hun code efficiënt en correct met het bestandssysteem omgaat.
-
 ## Hoe te:
-
 In VBA, om te controleren of een map bestaat, gebruik je typisch de `Dir` functie gecombineerd met het `vbDirectory` attribuut. Deze benadering stelt je in staat om de aanwezigheid van een map te controleren door zijn pad op te geven. Hier is hoe je dit kunt doen:
 
 ```basic
@@ -46,7 +41,6 @@ Directory bestaat.
 ```
 
 ## Diepgaand
-
 Controleren of een map bestaat is een fundamentele taak in veel programmeertalen, niet alleen in VBA. De hierboven beschreven methode met `Dir` is simpel en effectief voor de meeste doeleinden in VBA. Het is echter de moeite waard om op te merken dat deze benadering beperkingen kan hebben, zoals in gevallen van netwerkpaden en het omgaan met toestemmingen, wat soms valse negatieven of positieven kan opleveren.
 
 Historisch gezien zijn de methoden voor toegang tot het bestandssysteem geëvolueerd over verschillende programmeertalen, met meer recente die objectgeoriënteerde benaderingen bieden. Bijvoorbeeld, in .NET-talen zoals VB.NET, zou men `System.IO.Directory.Exists(path)` kunnen gebruiken voor een meer ongecompliceerde en mogelijk krachtigere manier om de existentie van mappen te controleren, profiterend van uitzonderingsbehandeling en rijkere retourinformatie.

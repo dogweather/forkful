@@ -12,12 +12,7 @@ title: "Edycja plik\xF3w w miejscu przy u\u017Cyciu jednolinijkowc\xF3w CLI"
 weight: 32
 ---
 
-## Co i dlaczego?
-
-Edycja plików bezpośrednio z linii poleceń za pomocą jednolinijkowców CLI polega na dokonywaniu zmian bezpośrednio w plikach, bez otwierania ich w edytorze tekstu. Programiści robią to, aby zaoszczędzić czas i zautomatyzować powtarzalne zadania edycyjne, czyniąc swój przepływ pracy płynniejszym i bardziej efektywnym.
-
 ## Jak to zrobić:
-
 Fish Shell, znany ze swoich przyjaznych dla użytkownika funkcji i potężnych możliwości skryptowania, oferuje kilka sposobów na edycję plików bezpośrednio. Jednakże, w przeciwieństwie do niektórych innych powłok, Fish nie posiada wbudowanego mechanizmu do edycji w miejscu (`sed -i` w Bash, na przykład). Ale bez obaw, można to nadal osiągnąć z odrobiną kreatywności i pomocy zewnętrznych narzędzi jak `sed` i `awk`.
 
 ### Używanie `sed` do prostych zamian
@@ -42,7 +37,6 @@ awk '{print $1 * 2}' file.txt > temp && mv temp file.txt
 Pamiętaj, że przy korzystaniu z tych narzędzi z Fish, przechwytywanie błędów i zrozumienie ich komunikatów jest kluczowe. Użyj solidnej obsługi błędów Fish, aby uczynić swoje skrypty bardziej niezawodnymi.
 
 ## Pogłębiona analiza
-
 Historycznie, edycja plików w miejscu była podstawą programowania w Unix i Linux, oferując efektywny sposób na szybkie edycje bez manualnego otwierania plików. Narzędzia takie jak `sed` i `awk` to szanowane narzędzia, które istnieją od wczesnych dni Unix, stając się niezbędne do zadań przetwarzania tekstu.
 
 Fish Shell, będący bardziej nowoczesny i oferujący ulepszenia w użyteczności i skryptowaniu, brakuje wbudowanej edycji w miejscu głównie z powodu jego filozofii projektowania, skoncentrowanej na interaktywności i przyjazności dla użytkownika. Brak natywnego polecenia do edycji w miejscu w Fish podkreśla znaczenie zewnętrznych narzędzi w ekosystemach podobnych do Unix.

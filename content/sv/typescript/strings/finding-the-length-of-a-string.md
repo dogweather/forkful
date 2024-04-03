@@ -10,9 +10,6 @@ title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---
 
-## Vad & Varför?
-Längden på en sträng är antalet tecken den innehåller. Programmerare måste ofta veta detta för att validera inmatning, skapa substrängar eller jämföra strängarnas storlekar.
-
 ## Hur man gör:
 ```typescript
 let greeting: string = 'Hej världen!';

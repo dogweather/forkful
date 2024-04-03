@@ -9,9 +9,6 @@ title: Calculando la longitud de una cadena
 weight: 7
 ---
 
-## ¿Qué y Por Qué?
-Medir la longitud de una cadena significa contar cuántos caracteres contiene. Los programadores lo hacen para validar entradas, recortar textos, o simplemente para saber las dimensiones de la información con la que están trabajando.
-
 ## Cómo hacerlo:
 Para encontrar la longitud de una cadena en PowerShell, utiliza la propiedad `.Length`. Aquí tienes un ejemplo sencillo:
 

@@ -12,9 +12,6 @@ title: Hantering av fel
 weight: 16
 ---
 
-## Vad & Varför?
-Felhantering i PHP handlar om att hantera och svara på tillstånd som stör det normala programflödet, som till exempel saknade filer eller felaktig datainmatning. Programmerare hanterar fel för att förhindra krascher och för att ge användarna en smidigare upplevelse.
-
 ## Hur gör man:
 I PHP kan du hantera fel med hjälp av `try-catch`-block, och du kan anpassa processen med egna felhanterare och undantag.
 

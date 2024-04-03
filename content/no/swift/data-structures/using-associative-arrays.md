@@ -13,12 +13,7 @@ title: Bruke associative tabeller
 weight: 15
 ---
 
-## Hva & Hvorfor?
-
-Assosiative tabeller, kjent som ordbøker i Swift, lar deg lagre og håndtere data som nøkkel-verdi-par. Programmerere bruker dem til å organisere data effektivt, noe som gjør det lettere å få tilgang til og manipulere verdier basert på deres unike nøkler.
-
 ## Hvordan:
-
 Swift gjør det enkelt å jobbe med assosiative tabeller. Her er hvordan du kan erklære, legge til, fjerne og få tilgang til elementer i en Swift-ordbok:
 
 ```Swift
@@ -50,7 +45,6 @@ for (fruit, color) in fruitColors {
 Ordbøker er utrolig allsidige og lar deg manipulere og få tilgang til data dynamisk. Deres uordnede natur påvirker ikke hastigheten på datahenting, noe som er en vesentlig fordel ved håndtering av store datasett.
 
 ## Dypdykk
-
 Swifts implementering av ordbøker som en assosiativ tabell stammer fra deres kraftige evne til å kartlegge unike nøkler til verdier. Historisk sett har programmeringsspråk implementert dette konseptet under forskjellige navn som hashtabeller eller kart, noe som antyder deres funksjonalitet til å lage et "kart" mellom nøkler og verdier.
 
 I Swift er ordbøker optimalisert for ytelse ved å utnytte hashable nøkler for effektiv datahenting. Dette betyr at `Key`-typen i en `[Key: Value]`-ordbok må følge `Hashable`-protokollen, noe som er tilfellet for de fleste Swift-standarde typer som `Int`, `String`, og `Double`.

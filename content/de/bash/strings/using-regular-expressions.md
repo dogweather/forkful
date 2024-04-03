@@ -13,11 +13,8 @@ title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---
 
-## Was & Warum?
-
-Reguläre Ausdrücke (regex) in Bash ermöglichen es Ihnen, nach bestimmten Mustern in Zeichenketten und Dateien zu suchen, diese zu manipulieren und zu verarbeiten. Programmierer nutzen regex für Aufgaben wie Eingabevalidierung, das Parsen von Log-Dateien und das Extrahieren von Daten, weil es eine flexible und leistungsfähige Möglichkeit bietet, Muster für komplexe Textverarbeitungsbedürfnisse zu spezifizieren.
-
 ## Wie geht das:
+
 
 ### Grundlegende Musterabgleiche
 Um zu finden, ob eine Zeichenkette einem Muster entspricht, können Sie `grep` verwenden, ein Befehlszeilenprogramm zur Suche in reinen Textdatensätzen nach Zeilen, die mit einem regulären Ausdruck übereinstimmen:

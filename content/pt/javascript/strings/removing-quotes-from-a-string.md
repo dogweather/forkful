@@ -12,9 +12,6 @@ title: Removendo aspas de uma string
 weight: 9
 ---
 
-## O Que & Porquê?
-Remover aspas de uma string significa se livrar dessas incômodas marcas de cotação que podem bagunçar seu código, especialmente quando você está analisando dados ou construindo objetos JSON. Programadores fazem isso para higienizar entradas, evitar erros de sintaxe e fazer com que strings se integrem bem com outras partes do seu código.
-
 ## Como Fazer:
 Imagine que você tem uma string envolvida em aspas duplas, como `"\"Olá, Mundo!\""` e você quer o texto puro, sem as aspas. Aqui está um rápido trecho de código JavaScript para libertar sua string das algemas das aspas:
 

@@ -12,9 +12,6 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-Complexe getallen breiden ons getallensysteem uit met imaginaire getallen, waardoor we vergelijkingen kunnen oplossen die geen reële oplossingen hebben. Programmeurs werken ermee in vakgebieden zoals engineering, natuurkunde en signaalverwerking waar deze getallen essentieel zijn voor modellering en probleemoplossing.
-
 ## Hoe te:
 C# heeft een ingebouwde `System.Numerics.Complex` structuur voor het verwerken van complexe getallen. Hier volgt een snelle doorloop:
 

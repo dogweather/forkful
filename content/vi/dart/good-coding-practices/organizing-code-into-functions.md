@@ -17,10 +17,9 @@ title: "S\u1EAFp x\u1EBFp m\xE3 l\u1EADp tr\xECnh v\xE0o h\xE0m s\u1ED1"
 weight: 18
 ---
 
-## Cái gì & Tại sao?
-Việc tổ chức code thành các hàm trong Dart là về việc định nghĩa các khối code có thể tái sử dụng thực hiện các tác vụ cụ thể, thường nhận đầu vào, xử lý dữ liệu và có thể trả về đầu ra. Lập trình viên làm điều này để tăng cường khả năng đọc code, giảm bớt sự trùng lặp và tạo thuận lợi cho việc bảo trì, cuối cùng dẫn đến việc có được các cơ sở mã dễ quản lý và mô-đun hơn.
-
 ## Làm thế nào:
+
+
 ### Hàm Cơ Bản
 Trong Dart, bạn định nghĩa một hàm sử dụng từ khóa `void` nếu nó không trả về giá trị, hoặc xác định kiểu giá trị mà nó trả về nếu có. Dưới đây là một hàm đơn giản in ra một thông điệp chào hỏi:
 

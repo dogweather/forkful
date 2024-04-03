@@ -13,10 +13,9 @@ title: Organisation von Code in Funktionen
 weight: 18
 ---
 
-## Was & Warum?
-Code in Funktionen in Dart zu organisieren bedeutet, wiederverwendbare Codeblöcke zu definieren, die spezifische Aufgaben ausführen, typischerweise Eingaben erhalten, Daten verarbeiten und möglicherweise Ausgaben zurückgeben. Programmierer tun dies, um die Lesbarkeit des Codes zu verbessern, Duplikation zu reduzieren und die Wartung zu erleichtern, was letztendlich zu modulareren und handhabbareren Codebasen führt.
-
 ## Wie geht das:
+
+
 ### Grundlegende Funktion
 In Dart definierst du eine Funktion mit dem Schlüsselwort `void`, wenn sie keinen Wert zurückgibt, oder gibst andernfalls den Typ des zurückgegebenen Werts an. Hier ist eine einfache Funktion, die eine Begrüßungsnachricht ausgibt:
 
@@ -61,7 +60,6 @@ void main() {
 ```
 
 ### Pfeilsyntax für Ein-Ausdruck-Funktionen
-
 Für Funktionen, die nur einen einzigen Ausdruck enthalten, bietet Dart eine prägnante Syntax mit der "Pfeil"-Notation (`=>`). Dies ist besonders nützlich für kurze Funktionen oder das Übergeben von Funktionen als Argumente:
 
 ```dart

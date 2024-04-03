@@ -14,12 +14,7 @@ title: Interpolando una cadena de texto
 weight: 8
 ---
 
-## Qué y por qué?
-
-La interpolación de cadenas en Google Apps Script permite la incrustación dinámica de expresiones dentro de las cadenas, facilitando la creación de código más legible y mantenible. Los programadores utilizan esta técnica para incorporar sin problemas variables y expresiones en las cadenas sin la engorrosa sintaxis de concatenación.
-
 ## Cómo hacerlo:
-
 En Google Apps Script, la interpolación de cadenas se logra a través de literales de plantilla. Estos son literales de cadena que permiten expresiones incrustadas, denotados por acentos graves (\`) en lugar de las comunes comillas. Así es como puedes usarlos:
 
 ```javascript
@@ -56,7 +51,6 @@ ejemploCadenaMultilinea();
 Estos ejemplos ilustran el uso básico, la incrustación de expresiones y la creación de cadenas de varias líneas con valores interpolados.
 
 ## Análisis Profundo
-
 Los literales de plantilla, incluida la interpolación de cadenas, fueron introducidos en ECMAScript 2015 (ES6) y posteriormente adoptados en Google Apps Script. Antes de esto, los programadores tenían que depender puramente de la concatenación de cadenas, lo cual podía volverse engorroso para cadenas complejas o al integrar muchos valores de variables.
 
 ```javascript

@@ -12,9 +12,6 @@ title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---
 
-## Was & Warum?
-Das Entfernen von Anführungszeichen aus einem String bedeutet, diese zusätzlichen doppelten oder einfachen Anführungszeichen wegzunehmen, die Sie im verarbeiteten Text tatsächlich nicht benötigen. Programmierer tun dies, um Eingaben zu bereinigen, Daten zur Speicherung vorzubereiten oder die Ausgabe lesbarer zu machen, wenn Anführungszeichen im gegebenen Kontext nicht notwendig sind.
-
 ## Wie geht das:
 In Elm können Sie die `String` Funktionen verwenden, um Strings zu manipulieren, wie zum Beispiel das Entfernen von Anführungszeichen. Hier ist eine einfache Möglichkeit, dies zu tun:
 

@@ -9,9 +9,6 @@ title: Converting a date into a string
 weight: 28
 ---
 
-## What & Why?
-Converting a date to a string in Swift lets you format dates for humans. It's key for UI display, logging, or whenever you need dates to make sense to people, not just code.
-
 ## How to:
 Swift uses `DateFormatter` to turn `Date` objects into readable strings. Here's how:
 

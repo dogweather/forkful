@@ -20,16 +20,10 @@ title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 weight: 38
 ---
 
-## 什么 & 为什么？
-
-使用 JSON (JavaScript 对象表示法) 涉及到将 JSON 格式的字符串解析成 Python 对象，反之亦然。这对于 web 和 API 开发至关重要，因为 JSON 是服务器与客户端交换数据的通用语言。
-
 ## 如何操作：
-
 Python 内置的 `json` 库简化了编码（将 Python 对象转换为 JSON）和解码（将 JSON 转换为 Python 对象）的过程。以下是您如何使用它的方法：
 
 ### 将 Python 对象编码为 JSON：
-
 ```python
 import json
 
@@ -68,7 +62,6 @@ print(json_string)
 ```
 
 ### 将 JSON 解码为 Python 对象：
-
 ```python
 json_string = '''
 {
@@ -107,11 +100,9 @@ print(data)
 ```
 
 ### 使用第三方库：
-
 对于复杂的 JSON 处理，比如架构验证或直接从URL解析JSON文件，例如使用 `requests` 库进行HTTP请求和使用 `jsonschema` 库进行验证，可能会很有帮助。
 
 #### 使用 `requests` 从 URL 解析 JSON 的示例：
-
 ```python
 import requests
 
@@ -124,7 +115,6 @@ print(data)
 这段代码从给定的 URL 获取 JSON 数据并直接将其转换为 Python 对象。
 
 #### 使用 `jsonschema` 验证 JSON：
-
 首先，通过 pip 安装库：
 
 ```bash

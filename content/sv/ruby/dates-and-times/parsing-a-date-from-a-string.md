@@ -14,9 +14,6 @@ title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---
 
-## Vad & Varför?
-Att tolka ett datum från en sträng handlar om att konvertera text som representerar ett datum till ett `Date` eller `DateTime` objekt som Ruby förstår. Programmerare gör detta för att utföra operationer som jämförelser, beräkningar eller formatering på datum, vilket är vanliga uppgifter i applikationer som hanterar schemaläggning, analys eller databehandling.
-
 ## Hur gör man:
 I Ruby erbjuder standardbiblioteket direkta sätt att tolka datum från strängar genom att använda `Date` och `DateTime` klasserna. Så här gör du det med Rubys inbyggda metoder:
 
@@ -47,7 +44,6 @@ puts parsed_date_custom
 ```
 
 ### Använda tredjepartsbibliotek:
-
 Även om Rubys inbyggda funktioner är kraftfulla, ibland kan du föredra tredjepartsbibliotek för ytterligare funktioner eller enklare syntax. Ett populärt val är `Chronic`-gemet för naturlig språktolkning:
 
 1. Först, lägg till Chronic i din Gemfile och kör `bundle install`:

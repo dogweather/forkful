@@ -11,9 +11,6 @@ title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---
 
-## Hva & Hvorfor?
-Å fjerne anførselstegn fra en streng innebærer å strippe bort anførselstegnene som omslutter strengen. Programmerere ønsker ofte å gjøre dette for å rense inngangsdata, forberede data for sammenligningsformål eller overholde et spesifikt dataformat når de samhandler med andre programmer eller systemer.
-
 ## Hvordan:
 Bash har flere måter å fjerne anførselstegn fra strenger på. Her er noen raske eksempler:
 

@@ -11,9 +11,6 @@ title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---
 
-## What & Why?
-Criar um arquivo temporário é uma maneira de gerar um arquivo que só precisa existir durante a execução do seu programa. Programadores fazem isso para guardar dados que não precisam ser mantidos a longo prazo ou para manipular informações sem afetar o estado permanente do sistema.
-
 ## How to:
 Em Elixir, um arquivo temporário pode ser criado usando a biblioteca padrão `File`. Aqui está um exemplo básico:
 

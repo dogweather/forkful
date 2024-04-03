@@ -14,11 +14,7 @@ title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---
 
-## Co i dlaczego?
-Kapitalizacja łańcucha znaków polega na zmodyfikowaniu pierwszego znaku danego ciągu na dużą literę, jeśli jest on w małej literze, często pozostawiając resztę ciągu bez zmian. Operacja ta jest zwykle używana, aby zapewnić, że nazwy własne lub początki zdań przestrzegają reguł gramatycznych w przetwarzaniu tekstu, co sprawia, że wyniki wyglądają profesjonalnie i są czytelne.
-
 ## Jak to zrobić:
-
 TypeScript, będąc nadzbiorem JavaScript, umożliwia różne metody kapitalizacji łańcuchów, od czystych podejść w JavaScript po wykorzystanie bibliotek stron trzecich do bardziej złożonych lub specyficznych przypadków użycia.
 
 **Podejście czystego JavaScript:**

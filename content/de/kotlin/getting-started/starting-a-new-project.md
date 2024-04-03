@@ -11,9 +11,6 @@ title: Einen neuen Projekt starten
 weight: 1
 ---
 
-## Was & Warum?
-Ein neues Projekt zu starten bedeutet, von Grund auf einen frischen Codebase zu erstellen. Programmierer machen das, um neue Ideen umzusetzen, Probleme zu lösen oder einfach, um mit einer Technologie zu experimentieren.
-
 ## How to:
 Ein neues Kotlin-Projekt kannst du schnell mit IntelliJ IDEA oder einer anderen IDE wie Eclipse oder Android Studio starten. Hier ist ein kleiner Einblick:
 

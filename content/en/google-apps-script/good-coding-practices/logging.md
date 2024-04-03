@@ -10,12 +10,7 @@ title: Logging
 weight: 17
 ---
 
-## What & Why?
-
-Logging in programming involves recording events, errors, or notable occurrences during runtime. Programmers do it to debug issues, monitor performance, and keep a record of operational data, making it pivotal for maintaining and understanding the behavior of software in production.
-
 ## How to:
-
 In Google Apps Script, logging can be performed using various methods, such as the `Logger` class and `console.log()`. The Logger class is the traditional way, suited for simple debugging and development purposes. As of recent updates, `console.log()` offers more flexibility and integration with Stackdriver Logging, providing a more robust solution for monitoring your Apps Scripts in Google Cloud Platform.
 
 **Using Logger:**
@@ -62,7 +57,6 @@ Logging an object: {name: "Jane", role: "Developer"}
 By transitioning to `console.log()` for complex applications, developers can efficiently parse and analyze logs using the powerful filters and tools provided by GCP, which is not as straightforward with the traditional Logger class.
 
 ## Deep Dive:
-
 Logging in Google Apps Script has evolved significantly. Initially, the `Logger` class was the primary method for developers to debug their scripts. It's simple and sufficient for basic scripts, but it lacks the capabilities needed for modern cloud applications, such as searching logs or analyzing log trends over time.
 
 The introduction of `console.log()` bridged this gap by integrating Google Apps Script logging with Google Cloud's Stackdriver Logging (now called Operations Suite), providing a centralized platform for logging, monitoring, and debugging applications. This not only allowed logging at scale but also opened up advanced log management features like log-based metrics, real-time log analysis, and integration with other Google Cloud services.

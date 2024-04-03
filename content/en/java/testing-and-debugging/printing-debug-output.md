@@ -10,9 +10,6 @@ title: Printing debug output
 weight: 33
 ---
 
-## What & Why?
-Printing debug output is tossing little bread crumbs of information into the console to track down bugs. It's quick, dirty, and effective for understanding what's happening inside your code when it's running wild.
-
 ## How to:
 Let’s get some code on the screen:
 

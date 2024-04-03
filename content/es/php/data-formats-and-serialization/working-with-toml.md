@@ -12,9 +12,6 @@ title: Trabajando con TOML
 weight: 39
 ---
 
-## ¿Qué y Por Qué?
-TOML, abreviatura de "Tom's Obvious, Minimal Language" (Lenguaje Mínimo y Obvio de Tom), es un formato de datos similar a JSON o YAML, pero más fácil de leer para los humanos. Los programadores lo utilizan para archivos de configuración porque es sencillo y se traduce bien a estructuras de datos.
-
 ## Cómo hacerlo:
 Primero, asegúrate de tener instalada una biblioteca analizadora de TOML, como `yosymfony/toml`. Vamos a analizar un archivo TOML:
 
@@ -60,6 +57,7 @@ Array
 
 )
 ```
+
 ## Análisis Profundo
 TOML surgió en 2013, creado por el cofundador de GitHub, Tom Preston-Werner, como una alternativa más amigable para el usuario a XML y JSON para archivos de configuración. Aunque JSON es sencillo para las máquinas, la estructura de TOML facilita su lectura a los humanos, sin la complejidad de YAML.
 

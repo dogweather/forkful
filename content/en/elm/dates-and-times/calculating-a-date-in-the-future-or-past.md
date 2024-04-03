@@ -11,9 +11,6 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-Calculating a future or past date is just tweaking a given date by a set amount of time. Programmers do it to handle deadlines, events, reminders—anything date-related.
-
 ## How to:
 Elm's `Time` module and the `justinmimbs/time-extra` package let us mess with dates easily.
 

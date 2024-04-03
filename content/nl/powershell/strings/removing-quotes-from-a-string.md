@@ -12,9 +12,6 @@ title: Quotes verwijderen uit een string
 weight: 9
 ---
 
-## Wat & Waarom?
-Aanhalingstekens uit een tekenreeks verwijderen in PowerShell haalt enkele (`'`) of dubbele (`"`) aanhalingstekens weg die rondom je tekst staan. Programmeurs moeten vaak tekenreeksen opschonen voor verwerking, vergelijking of uitvoerdoeleinden, vooral bij het omgaan met gebruikersinvoer of het analyseren van bestanden.
-
 ## Hoe te:
 Je kunt de `-replace` operator gebruiken om aanhalingstekens uit een tekenreeks te verwijderen. Zo doe je dat:
 

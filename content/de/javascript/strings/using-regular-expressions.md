@@ -12,14 +12,10 @@ title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---
 
-## Was & Warum?
-
-Reguläre Ausdrücke (regex) in JavaScript sind Muster, die verwendet werden, um Zeichenkombinationen in Zeichenketten abzugleichen. Programmierer nutzen sie, um Text zu suchen, zu extrahieren und zu manipulieren, wodurch mächtige Operationen zur Stringverarbeitung mit knappem Code ermöglicht werden.
-
 ## Wie geht das:
 
-### Einfache Übereinstimmung
 
+### Einfache Übereinstimmung
 Zum Start können Sie ein einfaches Regex-Muster erstellen und verwenden, um Übereinstimmungen in einem String zu finden. Hier werden wir das Wort "code" finden:
 
 ```javascript
@@ -30,7 +26,6 @@ console.log(result); // true
 ```
 
 ### Verwendung von `String.prototype.match()`
-
 Um ein Array von Übereinstimmungen zu erhalten:
 
 ```javascript
@@ -40,7 +35,6 @@ console.log(matches.index); // 10
 ```
 
 ### Globale Suche
-
 Um alle Übereinstimmungen zu finden, nutzen Sie das `g` Flag:
 
 ```javascript
@@ -49,7 +43,6 @@ console.log(globalMatches); // ["o", "o", "o"]
 ```
 
 ### Groß- und Kleinschreibung ignorierte Übereinstimmung
-
 Das `i` Flag ignoriert die Groß- und Kleinschreibung:
 
 ```javascript
@@ -58,7 +51,6 @@ console.log(caseInsensitiveMatch[0]); // "JavaScript"
 ```
 
 ### Text ersetzen
-
 Verwenden Sie `String.prototype.replace()`, um Teile des Strings zu ersetzen:
 
 ```javascript
@@ -67,7 +59,6 @@ console.log(newStr); // "JavaScript is awesome"
 ```
 
 ### Verwendung von Gruppen
-
 Gruppen können Teile des Musters erfassen:
 
 ```javascript
@@ -77,7 +68,6 @@ console.log(replaceWithGroups); // "fun is JavaScript"
 ```
 
 ### Drittanbieter-Bibliotheken
-
 Obwohl die integrierten Regex-Fähigkeiten von JavaScript leistungsfähig sind, könnten einige Aufgaben mit Bibliotheken wie `XRegExp` vereinfacht werden. Es bietet zusätzliche Syntax und Flags, die komplexe Muster lesbarer machen:
 
 ```javascript

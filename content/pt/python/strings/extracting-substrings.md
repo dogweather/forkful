@@ -11,9 +11,6 @@ title: Extraindo substrings
 weight: 6
 ---
 
-## O Que & Porquê?
-Extrair substrings é o ato de selecionar partes específicas de uma string. Programadores fazem isso para manipular, analisar, ou verificar dados dentro de textos maiores.
-
 ## Como Fazer:
 Extraímos substrings usando indexação e fatiamento em Python. Aqui estão exemplos:
 

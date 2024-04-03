@@ -13,12 +13,7 @@ title: Iniciando un nuevo proyecto
 weight: 1
 ---
 
-## ¿Qué y Por Qué?
-
-Iniciar un nuevo proyecto en Google Apps Script (GAS) implica inicializar un archivo de script dentro del ecosistema de Google (Google Drive, Docs, Hojas de cálculo, etc.) para automatizar tareas o ampliar las funcionalidades de las Aplicaciones de Google. Los programadores a menudo se embarcan en este viaje para optimizar flujos de trabajo, manipular servicios de Google programáticamente o crear complementos personalizados, ahorrando tiempo y aprovechando el poder de la infraestructura de Google.
-
 ## Cómo hacerlo:
-
 Para comenzar un nuevo proyecto en Google Apps Script, tienes un par de puntos de entrada, pero vamos a centrarnos en el método más directo: crear un script desde Google Drive.
 
 1. **Crear un proyecto en Google Drive**
@@ -44,7 +39,6 @@ function helloWorld() {
 ¡Felicidades, acabas de empezar con éxito un nuevo proyecto en Google Apps Script y ejecutado una función simple!
 
 ## Análisis Profundo
-
 La creación de Google Apps Script alrededor de 2009 proporcionó una plataforma potente pero accesible tanto para desarrolladores como para no desarrolladores para automatizar, ampliar y construir sobre la amplia gama de servicios de Google. A diferencia de los entornos de programación tradicionales, GAS ofrece una mezcla única de simplicidad e integración, directamente dentro del ecosistema de Google, sin necesidad de servidores externos o configuración. Este modelo de ejecución sin servidor simplifica enormemente la implementación y gestión de proyectos.
 
 Históricamente, GAS estaba algo limitado por su entorno de ejecución y versión del lenguaje, a menudo rezagado con respecto a los estándares actuales de JavaScript. Sin embargo, las actualizaciones recientes han traído la sintaxis moderna de JavaScript (ECMAScript 2015+) a GAS, haciéndolo más atractivo para los desarrolladores acostumbrados a las prácticas de desarrollo contemporáneas.

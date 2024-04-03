@@ -11,9 +11,6 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-Writing to a text file in Ruby is a fundamental operation that allows you to store output and data persistently, enabling data to be accessed or modified later. Programmers often perform this task for reasons such as logging, saving configurations, or exporting data in a human-readable format.
-
 ## How to:
 Ruby makes file operations straightforward. To write to a file, you can use Ruby's built-in `File` class. The following example demonstrates how to open a file for writing (`"w"` mode) and append (`"a"` mode), then write a string to it, and ensure the file is closed afterwards:
 

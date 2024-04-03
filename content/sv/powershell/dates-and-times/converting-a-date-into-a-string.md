@@ -11,9 +11,6 @@ title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---
 
-## Vad & Varför?
-Konvertering av datum till sträng gör ett datum läsbart, anpassat för både människor och olika system. Programmerare gör detta för att forma datumen för rapporter, gränssnitt, och databaslagring.
-
 ## Såhär gör du:
 Konvertera ett datum till en sträng:
 

@@ -11,9 +11,6 @@ title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---
 
-## What & Why? (O Quê & Porquê?)
-Imprimir saída de debug é expor o que está acontecendo no programa durante a execução. Programadores fazem isso para entender e resolver problemas – basicamente, é como ligar o GPS para não se perder no código.
-
 ## How to: (Como Fazer:)
 ```c#
 using System;

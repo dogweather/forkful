@@ -11,9 +11,6 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-Fouten verwerken betekent plannen maken voor wanneer dingen verkeerd gaan. Het is essentieel omdat het helpt crashes te voorkomen en je software robuust en gebruiksvriendelijk maakt.
-
 ## Hoe te:
 Hier is een basis try-catch blok om een uitzondering te verwerken:
 

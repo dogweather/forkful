@@ -13,12 +13,7 @@ title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---
 
-## Quoi & Pourquoi ?
-
-La génération de nombres aléatoires consiste à créer des nombres qui ne peuvent pas être prédits de manière raisonnable autrement que par hasard, ce qui est essentiel pour le développement de simulations, de jeux et d'algorithmes de sécurité. Les programmeurs font cela pour introduire de l'imprévisibilité ou pour simuler des phénomènes du monde réel dans leurs applications.
-
 ## Comment faire :
-
 Python fournit le module `random` qui aide à générer des nombres aléatoires pour divers usages. Voici comment commencer :
 
 1. **Importer le module**
@@ -66,7 +61,6 @@ Python fournit le module `random` qui aide à générer des nombres aléatoires 
     Exemple de sortie : `[2, 5, 0, 4, 9, 8, 1, 7, 6, 3]`
 
 ## Exploration en profondeur
-
 Le module `random` de Python utilise un générateur de nombres pseudo-aléatoires (PRNG), spécifiquement l'algorithme Mersenne Twister, qui est bon pour les applications à usage général mais pas adapté à des fins cryptographiques en raison de sa prévisibilité si suffisamment de sorties sont observées. Le module `secrets`, introduit dans Python 3.6, offre une meilleure alternative pour générer des nombres aléatoires cryptographiquement forts, particulièrement utile dans les applications sensibles à la sécurité. Par exemple, générer un jeton aléatoire sécurisé pour un lien de réinitialisation de mot de passe :
 
 ```Python

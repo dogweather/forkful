@@ -11,9 +11,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---
 
-## O que é & Porquê?
-Enviar uma requisição HTTP é o processo de solicitar dados ou ações de um servidor usando o protocolo HTTP. Programadores fazem isso para interagir com APIs web, obter conteúdo do servidor para os usuários ou enviar dados para serem processados.
-
 ## Como fazer:
 Para enviar uma requisição HTTP em Lua, você vai precisar de uma biblioteca externa, pois as funcionalidades padrões não oferecem suporte direto para isso. O exemplo a seguir usa a biblioteca `socket.http` para fazer uma requisição GET simples:
 

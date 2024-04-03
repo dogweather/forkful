@@ -11,9 +11,6 @@ title: Merkkijonon interpolointi
 weight: 8
 ---
 
-## What & Why? (Mitä & Miksi?)
-String-interpolaatio sallii muuttujien arvojen sisällyttämisen merkkijonoihin suoraan. Koodarit käyttävät sitä dynaamisen tekstin luomiseen ilman tarvetta monimutkaisille konkatenoinneille.
-
 ## How to (Kuinka tehdä):
 ```Kotlin
 fun main() {

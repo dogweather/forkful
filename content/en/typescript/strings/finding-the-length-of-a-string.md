@@ -9,12 +9,7 @@ title: Finding the length of a string
 weight: 7
 ---
 
-## What & Why?
-
-Finding the length of a string means measuring how many characters it contains. Programmers do it to validate inputs, loop through characters, or limit text display, among other reasons.
-
 ## How to:
-
 In TypeScript, you get a string's length using the `.length` property. Here's a quick example:
 
 ```typescript
@@ -25,7 +20,6 @@ console.log(greeting.length); // Output: 18
 This code declares a string variable named `greeting` and then logs its length to the console.
 
 ## Deep Dive
-
 The `.length` property is a holdover from JavaScript, TypeScript's ancestor. It's a straightforward and universally supported way to get a string's size.
 
 There are alternatives, but they usually complicate things. For example, you could convert the string to an array and count the elements:
@@ -53,7 +47,6 @@ console.log(countCodePoints(fancyGreeting)); // Output: 9
 This function deals with the intricacies of string encoding to ensure each character, regardless of whether it's a single or double code unit, is counted properly.
 
 ## See Also
-
 - The TypeScript Handbook on Strings: [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#strings)
 - MDN Web Docs on the String length property: [String.prototype.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
 - Unicode and JavaScript: [JavaScript has a Unicode problem - Mathias Bynens](https://mathiasbynens.be/notes/javascript-unicode)

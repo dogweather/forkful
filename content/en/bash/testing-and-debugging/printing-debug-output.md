@@ -10,12 +10,7 @@ title: Printing debug output
 weight: 33
 ---
 
-## What & Why?
-
-Printing debug output is all about echoing data to the console to check what's going on in your script. Programmers do it to track variables, follow logic flow, and spot the pesky bugs.
-
 ## How to:
-
 ```Bash
 #!/bin/bash
 
@@ -48,7 +43,6 @@ Debug: Loop iteration 3
 ```
 
 ## Deep Dive
-
 Originally, debugging meant removing physical bugs that disrupted early computers. Nowadays, it's about squashing code bugs. Debug outputs are the programmer's magnifying glass. 
 
 Alternatives to `echo` in bash scripts include `printf` for more formatting options or writing to a file with redirection `>` for persistent logs.
@@ -56,7 +50,6 @@ Alternatives to `echo` in bash scripts include `printf` for more formatting opti
 Bash also supports conditional debug output with the built-in `set -x` to trace commands and their arguments as they’re executed. `set -x` is great for full-script debugging.
 
 ## See Also
-
 - Bash's `man` page: `man bash`
 - Advanced scripting guide: [Bash Guide for Beginners by Machtelt Garrels](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
 - Stack Overflow for troubleshooting: [stackoverflow.com](https://stackoverflow.com/questions/tagged/bash)

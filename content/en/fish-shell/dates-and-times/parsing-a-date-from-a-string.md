@@ -11,9 +11,6 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-Parsing a date from a string involves extracting date information encoded within strings and converting it into a structured format that programming environments can recognize and manipulate. Programmers do this to enable operations such as date comparison, arithmetic, formatting, and localization, which are essential for handling scheduling, timestamps, and historical data efficiently in software.
-
 ## How to:
 In Fish Shell, you don't have built-in commands specifically designed for parsing dates from strings. Instead, you rely on external utilities like `date` (available in Linux and macOS) or leverage popular third-party tools such as `GNU date` for more complex parsing. Here's how to approach it:
 

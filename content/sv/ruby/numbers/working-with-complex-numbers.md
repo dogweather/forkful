@@ -11,9 +11,6 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad & Varför?
-Komplexa tal, som består av en reell och en imaginär del (som 3+4i), är grundläggande inom ingenjörsvetenskap och fysik. Programmerare arbetar med dem i simuleringar, signalbehandling och för att lösa ekvationer som inte fungerar bra enbart med reella tal.
-
 ## Hur man gör:
 Ruby gör hanteringen av komplexa tal mycket enkel. Du kan skapa och manipulera dem med hjälp av klassen Complex:
 

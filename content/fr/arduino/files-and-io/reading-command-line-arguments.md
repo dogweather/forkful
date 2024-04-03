@@ -11,9 +11,6 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## Quoi et Pourquoi ?
-Lire des arguments de ligne de commande permet à un programme Arduino de saisir des données externe dès son démarrage. C'est utile pour personnaliser le comportement du programme sans le modifier.
-
 ## Comment faire :
 Arduino ne traite pas les arguments de ligne de commande de la même manière que des langages plus traditionnels sur des systèmes d'exploitation comme Windows, Linux ou macOS. Cependant, vous pouvez lire des données envoyées via le port série au démarrage.
 

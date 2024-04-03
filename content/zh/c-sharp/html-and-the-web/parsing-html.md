@@ -26,16 +26,10 @@ title: "\u89E3\u6790HTML"
 weight: 43
 ---
 
-## 何为“解析HTML”以及为何需要？
-
-在编程中解析HTML涉及到分析HTML文档的结构，允许您以编程方式提取、操作和与其内容交互。程序员这样做是为了自动化网页抓取、数据提取，甚至动态修改网页或HTML文档以适应各种应用程序，这使得它成为网站开发、数据分析和自动化测试场景中的一个基本技能。
-
 ## 如何操作：
-
 虽然.NET为操作HTML提供了基本支持，比如用于获取网页的`HttpClient`，但它缺乏内置的、全面的HTML解析器。因此，大多数C#开发者转向像HtmlAgilityPack或AngleSharp这样的流行第三方库，以获得强大的HTML解析能力。这两个库都允许轻松地查询、操作和遍历HTML DOM。
 
 ### 使用HtmlAgilityPack
-
 1. **安装HtmlAgilityPack**：首先，通过NuGet将HtmlAgilityPack包添加到您的项目中。
    ```
    Install-Package HtmlAgilityPack
@@ -77,7 +71,6 @@ weight: 43
    ```
 
 ### 使用AngleSharp
-
 1. **安装AngleSharp**：通过NuGet将AngleSharp库添加到您的项目中。
    ```
    Install-Package AngleSharp

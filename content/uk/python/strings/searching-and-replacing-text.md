@@ -11,9 +11,6 @@ title: "\u041F\u043E\u0448\u0443\u043A \u0442\u0430 \u0437\u0430\u043C\u0456\u04
 weight: 10
 ---
 
-## What & Why? (Що та Чому?)
-Searching and replacing text means finding specific strings in data and swapping them out for something else. Programmers do it to update data, correct errors, or process text dynamically.
-
 ## How to: (Як це зробити:)
 ```python
 # Let's dive into code

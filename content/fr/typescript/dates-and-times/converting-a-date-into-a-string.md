@@ -11,9 +11,6 @@ title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## What & Why?
-En TypeScript, convertir une date en chaîne de caractères permet de la formater pour l'affichage. Les programmeurs font cela pour améliorer la lisibilité des dates ou les préparer pour une sauvegarde dans une base de données.
-
 ## How to:
 TypeScript utilise les méthodes JavaScript pour manipuler les dates. Voici comment transformer une date en string :
 

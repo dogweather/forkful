@@ -18,16 +18,10 @@ title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---
 
-## Lý do và Mục đích?
-
-Chuyển đổi một ngày thành chuỗi trong Dart là nhiệm vụ phổ biến khi bạn cần hiển thị thông tin ngày và giờ dưới dạng có thể đọc được bởi con người, hoặc khi bạn dự định tuần tự hóa (serialize) dữ liệu để lưu trữ hoặc truyền dẫn. Quá trình này cho phép dễ dàng biểu diễn và thao tác với giá trị ngày-giờ trong một định dạng vừa dễ hiểu vừa có thể tùy chỉnh tùy thuộc vào trường hợp sử dụng.
-
 ## Cách thực hiện:
-
 Dart cung cấp lớp `DateTime` để xử lý ngày và giờ, và gói `intl` để định dạng. Đầu tiên, hãy đảm bảo bạn có gói `intl` bằng cách thêm `intl: ^0.17.0` (hoặc phiên bản mới nhất) vào tệp `pubspec.yaml` của bạn.
 
 ### Sử dụng Thư Viện Cơ Bản của Dart
-
 ```dart
 DateTime now = DateTime.now();
 String formattedDate = "${now.year}-${now.month}-${now.day}";
@@ -37,7 +31,6 @@ print(formattedDate); // Đầu ra: 2023-4-12 (ví dụ, điều này tùy thu�
 Ví dụ này trực tiếp tạo một chuỗi từ các thuộc tính của `DateTime`.
 
 ### Sử dụng gói `intl`
-
 Đầu tiên, nhập gói:
 
 ```dart

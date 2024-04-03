@@ -11,9 +11,6 @@ title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---
 
-## Vad & Varför?
-Att konvertera en sträng till gemener betyder att alla stora bokstäver i texten omvandlas till små bokstäver. Programmörer gör detta för att standardisera data, till exempel när man jämför strängar och det är oviktigt med versaler.
-
 ## How to:
 ```Arduino
 void setup() {

@@ -13,9 +13,6 @@ title: Sjekker om en mappe eksisterer
 weight: 20
 ---
 
-## Hva og hvorfor?
-Å sjekke om en mappe finnes i JavaScript er essensielt for oppgaver som involverer manipulasjon av filer, slik at skript kan verifisere mappens tilstedeværelse før man leser fra eller skriver til den. Denne operasjonen forhindrer feil og sikrer en jevnere kjøring av programmet, spesielt i applikasjoner som dynamisk håndterer filer eller mapper basert på brukerinndata eller eksterne datakilder.
-
 ## Hvordan:
 I Node.js, siden JavaScript i seg selv ikke har direkte tilgang til filsystemet, brukes `fs`-modulen typisk for slike operasjoner. Her er en enkel måte å sjekke om en mappe finnes ved bruk av `fs.existsSync()`:
 

@@ -11,11 +11,7 @@ title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---
 
-## What & Why? (Mitä ja Miksi?)
-Vertailemme kahta päivämäärää selvittääksemme niiden välisen suhteen. Koodarit tekevät tätä esimerkiksi aikarajojen tarkistamiseen, päivämäärälaskentaan tai aikasarjojen analysointiin.
-
 ## How to: (Kuinka:)
-
 ```Python
 from datetime import datetime
 
@@ -43,7 +39,6 @@ Esimerkkiajoitus tuottaisi tulosteen:
 ```
 
 ## Deep Dive (Syväsukellus):
-
 Päivämäärien vertailu Pythonissa käy aiempina vuosina esitellyn `datetime`-moduulin avulla. Tämä moduuli toimitetaan osana Pythonin vakiokirjastoa, ja se mahdollistaa päivämäärien ja ajan käsittelyn.
 
 Aiemmin vertailuun saatettiin käyttää pelkästään aikaleimoja tai kolmannen osapuolen kirjastoja kuten `dateutil`. Tämä on kuitenkin muuttunut `datetime`:n myötä, joka tarjoaa vahvan ja natiivin tavan työskennellä päivämäärien kanssa.
@@ -51,7 +46,6 @@ Aiemmin vertailuun saatettiin käyttää pelkästään aikaleimoja tai kolmannen
 Vertailussa `datetime`-objekteja hyödynnetään usein suoraan, sillä ne ymmärtävät järjestysoperaattoreita (`<`, `>`, `==` jne.). Nämä operaattorit vertailevat päivämäärien ja aikojen arvoja, mikä tekee koodista selkeämpää ja vähemmän altista virheille.
 
 ## See Also (Katso Myös):
-
 - Pythonin virallinen dokumentaatio `datetime`:sta: https://docs.python.org/3/library/datetime.html
 - Vertailu `dateutil`-kirjaston avulla: https://dateutil.readthedocs.io/en/stable/
 - ISO 8601 -standardi päivämäärien formaatille: https://www.iso.org/iso-8601-date-and-time-format.html

@@ -11,12 +11,7 @@ title: Sending an HTTP request with basic authentication
 weight: 45
 ---
 
-## What & Why?
-
-Sending an HTTP request with basic authentication involves adding a username and password to a request for restricted resources. Programmers do it to access APIs or web services that need some level of security.
-
 ## How to:
-
 In Clojure, you'll typically use the `clj-http` library for HTTP requests, including those with basic auth. Let's start with adding the dependency (`[clj-http "3.12.3"]` as of my last update) to your `project.clj`.
 
 Next, here's how you craft a GET request with basic authentication:
@@ -39,7 +34,6 @@ Body: {JSON data or something else here}
 ```
 
 ## Deep Dive
-
 HTTP Basic Authentication has roots in early web protocols. It passes the username and password in an HTTP header encoded using Base64. While it's simple, it's not the most secure since the credentials can be easily decoded if intercepted.
 
 Alternatives:
@@ -52,7 +46,6 @@ Under the hood in `clj-http`, specifying `:basic-auth` in the options hashmap tr
 Keep in mind that for secure transmission, HTTPS should be used to prevent others from intercepting your credentials.
 
 ## See Also
-
 - clj-http GitHub repo: https://github.com/dakrone/clj-http
 - Clojure Official Documentation: https://clojure.org/
 - HTTP Authentication on MDN: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication 

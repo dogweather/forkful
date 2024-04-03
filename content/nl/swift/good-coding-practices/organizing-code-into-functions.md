@@ -11,9 +11,6 @@ title: Code organiseren in functies
 weight: 18
 ---
 
-## Wat & Waarom?
-Code groeperen in functies is het opsplitsen van taken in herbruikbare blokken. Hierdoor wordt de code overzichtelijk, minder foutgevoelig en makkelijker te debuggen of te refactoren.
-
 ## Hoe:
 Stel je een taak voor: het berekenen van het gemiddelde van een array. Zonder functies zou je alles in main stoppen. Met functies doe je dit:
 

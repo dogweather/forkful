@@ -11,9 +11,6 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## Che cosa e perché?
-La stampa dei messaggi di debug è un modo per tracciare cosa sta succedendo nel tuo script. I programmatori la usano per capire il comportamento del codice e scovare gli errori.
-
 ## Come fare:
 In PowerShell, usa `Write-Host`, `Write-Output`, o `Write-Debug` per mostrare i messaggi. Ecco degli esempi:
 

@@ -12,12 +12,7 @@ title: Een webpagina downloaden
 weight: 42
 ---
 
-## Wat & Waarom?
-
-Een webpagina downloaden betekent het ophalen van de HTML-inhoud van de URL waar je naar kijkt. Programmeurs doen dit om gegevens te trekken, hun gadgets te updaten, of simpelweg om het internet te gebruiken voor meer dan alleen kattenvideo's.
-
 ## Hoe:
-
 Hier is de kern van de zaak: laat je Arduino surfen op het web en pak wat je nodig hebt.
 
 ```Arduino
@@ -60,7 +55,6 @@ void loop() {
 Schakel het in, en je zou de HTML van de webpagina in de Seriële Monitor moeten zien. Onthoud, je hebt het ESP8266 Wi-Fi module en een verbinding nodig.
 
 ## Diepgaand
-
 Er was eens, toen waren Arduinos eenvoudige offline wezens. Toen kwamen er shields en modules die ze verbonden met het grote boze web. ESP8266 is een dergelijk magisch apparaatje, dat je Arduino verandert in een internet surfer.
 
 Alternatieven? Zeker. Er zijn de ESP32, Ethernet Shield, en anderen voor dezelfde klus.
@@ -68,7 +62,6 @@ Alternatieven? Zeker. Er zijn de ESP32, Ethernet Shield, en anderen voor dezelfd
 De kwaliteit van je internetverbinding, robuustheid van je stroomvoorziening, en zelfs het tijdstip van de dag kunnen de balans bepalen hoe goed je Arduino die pagina downloadt. We houden echt rekening met meer factoren dan alleen het schrijven van strakke code.
 
 ## Zie Ook
-
 Wil je meer ontdekken? Bekijk deze dan:
 
 - [Arduino Netwerken](https://www.arduino.cc/en/Guide/ArduinoEthernetShield)

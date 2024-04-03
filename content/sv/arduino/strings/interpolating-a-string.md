@@ -9,9 +9,6 @@ title: "Interpolera en str\xE4ng"
 weight: 8
 ---
 
-## Vad & Varför?
-Interpolera en sträng betyder att du mixar variabler med text. Programmerare gör det för att skapa dynamiska meddelanden.
-
 ## Hur Gör Man:
 ```Arduino
 char temperature[8];

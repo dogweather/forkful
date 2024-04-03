@@ -10,9 +10,6 @@ title: Creating a temporary file
 weight: 21
 ---
 
-## What & Why?
-Creating a temporary file in Bash means making a file that your scripts can use to store data briefly. Programmers do this to stash bits of info while running complex tasks, avoid cluttering up the hard drive, and to minimize conflicts between different processes trying to use the same file.
-
 ## How to:
 Bash has a built-in command called `mktemp` to make temporary files easily:
 

@@ -11,9 +11,6 @@ title: Generating random numbers
 weight: 12
 ---
 
-## What & Why?
-Generating random numbers in Bash provides a way to introduce unpredictability in scripts, which is essential for tasks like generating secure passwords, simulating data, or for programming games. Programmers leverage this capability to add variability to their scripts or to test their programs under a variety of randomly generated conditions.
-
 ## How to:
 In Bash, the `$RANDOM` variable is the go-to for generating random numbers. Each time you reference it, Bash provides a pseudorandom integer between 0 and 32767. Let’s explore some practical examples:
 

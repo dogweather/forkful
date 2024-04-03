@@ -15,12 +15,7 @@ title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---
 
-## Cái gì & Tại sao?
-
-Các mảng kết hợp, hoặc đối tượng trong TypeScript, cho phép bạn sử dụng chuỗi (hoặc khóa) để truy cập các cặp giá trị. Các lập trình viên sử dụng chúng cho các mô hình truy cập dữ liệu động hơn so với các mảng truyền thống, cung cấp một cách linh hoạt để cấu trúc và truy cập dữ liệu mà không bị ràng buộc bởi chỉ số số.
-
 ## Làm thế nào:
-
 Việc tạo và sử dụng mảng kết hợp trong TypeScript là trực tiếp. Dưới đây là một hướng dẫn cơ bản:
 
 ```TypeScript
@@ -72,7 +67,6 @@ Kết quả:
 ```
 
 ## Đi Sâu Hơn
-
 Trong TypeScript, những gì chúng ta gọi là mảng kết hợp thực chất là các đối tượng. Trong lịch sử, trong các ngôn ngữ như PHP, mảng kết hợp là một kiểu cơ bản, nhưng JavaScript (và do đó, TypeScript) sử dụng đối tượng cho mục đích này. Cách tiếp cận này vừa là một điểm mạnh vừa là một hạn chế. Đối tượng cung cấp một cấu trúc động cao cho việc kết hợp chuỗi với giá trị, nhưng chúng không được dự định sử dụng như 'mảng' theo nghĩa truyền thống. Ví dụ, bạn không thể sử dụng trực tiếp các phương thức mảng như `push` hay `pop` trên những đối tượng này.
 
 Trong trường hợp bạn cần các bộ sưu tập có thứ tự của các cặp khóa-giá trị với các hoạt động giống mảng, TypeScript (và JavaScript hiện đại) cung cấp đối tượng `Map`:

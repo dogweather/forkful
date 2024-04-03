@@ -11,12 +11,7 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i dlaczego?
-
-Zaokrąglanie liczb oznacza dostosowywanie ich do najbliższej liczby całkowitej lub do określonego stopnia precyzji. Programiści robią to, aby poprawić czytelność, zmniejszyć wymagania dotyczące miejsca przechowywania lub ponieważ dokładna wartość nie jest krytyczna dla kolejnych obliczeń.
-
 ## Jak to zrobić:
-
 W Kotlinie, zaokrąglanie można wykonać za pomocą kilku funkcji, takich jak `roundToInt()`, `roundToDouble()`, oraz używając `BigDecimal` dla większej kontroli:
 
 ```kotlin
@@ -36,7 +31,6 @@ fun main() {
 ```
 
 ## Dogłębna analiza
-
 Historycznie, zaokrąglanie liczb było fundamentalnym pojęciem zarówno w matematyce, jak i w obliczeniach, zaprojektowanym do radzenia sobie z ograniczeniami precyzji numerycznej. We wczesnych czasach informatyki, zaokrąglanie było kluczowe z powodu wysokich kosztów pamięci.
 
 W Kotlinie, zaokrąglanie opiera się na standardowych bibliotekach Java. Opcje zaokrąglenia obejmują `Math.round()`, które zaokrągla do najbliższej liczby całkowitej, oraz `BigDecimal` do niestandardowego zaokrąglania, gdzie można określić skalę i `RoundingMode`.
@@ -44,7 +38,6 @@ W Kotlinie, zaokrąglanie opiera się na standardowych bibliotekach Java. Opcje 
 Każdy `RoundingMode` ma różne zasady postępowania z remisami (kiedy cyfra jest dokładnie pomiędzy opcjami zaokrąglenia). Na przykład, `RoundingMode.HALF_UP` zaokrągla do najbliższego sąsiada, chyba że obaj sąsiedzi są równo oddaleni, w takim przypadku zaokrągla w górę.
 
 ## Zobacz również
-
 - Dokumentacja Kotlin na temat [`BigDecimal`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/java.math.-big-decimal/index.html)
 - Dokumentacja Javy Oracle dla [`RoundingMode`](https://docs.oracle.com/javase/8/docs/api/java/math/RoundingMode.html)
 - Standard IEEE dla arytmetyki zmiennoprzecinkowej (IEEE 754) [IEEE Standard 754](https://ieeexplore.ieee.org/document/4610935)

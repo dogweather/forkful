@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Gì & Tại Sao?
-"Làm việc với XML" chỉ quá trình đọc, tạo và sửa đổi các tệp XML (eXtensible Markup Language) bằng cách sử dụng lập trình. Các lập trình viên thực hiện điều này bởi vì XML được sử dụng rộng rãi cho trao đổi dữ liệu do bản chất không phụ thuộc vào nền tảng và định dạng tự mô tả của nó.
-
 ## Làm Thế Nào:
 Mô-đun `xml.etree.ElementTree` của Python cung cấp công cụ để làm việc với XML.
 

@@ -10,8 +10,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---
 
-## Làm việc với TOML trong C++
-
 ### Gì & Tại sao?
 TOML (Tom's Obvious, Minimal Language - Ngôn ngữ Rõ ràng, Tối giản của Tom) là định dạng hóa dữ liệu dễ đọc nhờ vào ngữ nghĩa rõ ràng của nó. Lập trình viên sử dụng TOML cho các tệp cấu hình bởi vì nó cân bằng giữa khả năng đọc của con người và khả năng phân tích của máy.
 

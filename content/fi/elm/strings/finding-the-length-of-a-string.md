@@ -11,9 +11,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## What & Why? (Mitä & Miksi?)
-Stringin pituuden selvittäminen tarkoittaa merkkijonossa olevien merkkien lukumäärän laskemista. Ohjelmoijat tekevät tätä, jotta saavat tietää tietorakenteiden koot, validoi syötteen tai manipuloi tekstiä esimerkiksi näytölle sopivaksi.
-
 ## How to: (Kuinka tehdä:)
 Elm tarjoaa `String.length` funktion, joka ottaa merkkijonon (`String`) ja palauttaa pituuden (`Int`):
 

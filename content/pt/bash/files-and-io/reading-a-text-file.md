@@ -10,12 +10,7 @@ title: Lendo um arquivo de texto
 weight: 22
 ---
 
-## O Que & Porquê?
-
-Ler um arquivo de texto significa acessar e manipular o conteúdo armazenado num arquivo no seu sistema. Programadores fazem isso para obter dados, configurar comportamentos de programas ou simplesmente para processar informações armazenadas.
-
 ## Como Fazer:
-
 Para ler um arquivo linha por linha:
 
 ```Bash
@@ -48,7 +43,6 @@ E assim por diante...
 ```
 
 ## Mergulho Profundo
-
 Historicamente, a manipulação de arquivos é um dos pilares da programação em sistemas Unix-like, e o Bash, como um shell do Unix, herdou essa característica. Além dos métodos mostrados, outros comandos como `cat`, `awk`, `sed` também são utilizados para ler e manipular arquivos de texto.
 
 Alternativas ao Bash incluem linguagens de programação como Python ou Perl, que oferecem mais ferramentas e uma sintaxe que pode ser mais fácil para operações complexas.
@@ -56,7 +50,6 @@ Alternativas ao Bash incluem linguagens de programação como Python ou Perl, qu
 Detalhes de implementação cruciais incluem a gestão de fim de arquivo (EOF), a forma como linhas são delimitadas e os caracteres de codificação (ex.: UTF-8). O Bash lê arquivos de texto de maneira sequencial, e é essencial entender como o loop funciona para evitar erros comuns como perda do último caractere ou inclusão de caracteres indesejados.
 
 ## Veja Também
-
 - [Guia Avançado de Scripting do Bash](https://tldp.org/LDP/abs/html/)
 - [Bash Scripting Cheatsheet](https://devhints.io/bash)
 - [GNU Bash manual](https://www.gnu.org/software/bash/manual/bash.html)

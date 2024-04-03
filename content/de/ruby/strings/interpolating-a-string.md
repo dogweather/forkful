@@ -10,9 +10,6 @@ title: Zeichenketten interpolieren
 weight: 8
 ---
 
-## What & Why? (Was & Warum?)
-String-Interpolation in Ruby ermöglicht es, Variablenwerte innerhalb eines Strings einzusetzen. Es macht den Code lesbarer und schafft dynamische Textausgaben mit weniger Aufwand.
-
 ## How to: (Wie geht das:)
 ```Ruby
 name = "Welt"

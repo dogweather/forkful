@@ -12,9 +12,6 @@ title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---
 
-## What & Why? (Co i Dlaczego?)
-Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem to metoda, gdzie login i hasło są dodawane do nagłówków żądania w celu dostępu do zabezpieczonych zasobów. Programiści używają tego, by umożliwić aplikacjom komunikację z serwerami wymagającymi autoryzacji.
-
 ## How to (Jak to zrobić):
 W Elm, by wysłać żądanie HTTP z podstawowym uwierzytelnianiem, używamy modułu `Http` i dodajemy nagłówek `Authorization` z zakodowanymi danymi logowania. Oto przykład:
 

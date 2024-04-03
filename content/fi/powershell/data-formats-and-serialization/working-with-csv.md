@@ -12,14 +12,10 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä & Miksi?
-
-CSV-tiedostojen (pilkulla erotetut arvot) käsittely on yleinen tehtävä datan hallitsemiseksi ja manipuloimiseksi rakenteellisessa, taulukkomuodossa. Ohjelmoijat suorittavat usein tätä operaatiota tuodakseen, viedäkseen tai käsitelläkseen dataa tehokkaasti erilaisissa sovelluksissa, kuten datan analysointi, raportointi tai jopa web-sovellusten tehostaminen.
-
 ## Kuinka:
 
-### CSV-tiedoston lukeminen
 
+### CSV-tiedoston lukeminen
 CSV-tiedostosta lukemiseksi käytä `Import-Csv` cmdlet-komentoa. Tämä cmdlet lukee tiedoston ja muuntaa sen mukautetuiksi PowerShell-objekteiksi jokaista riviä varten.
 
 ```powershell
@@ -39,7 +35,6 @@ Doe     29     Los Angeles
 ```
 
 ### Kirjoittaminen CSV-tiedostoon
-
 Vastaavasti, kun halutaan kirjoittaa dataa CSV-tiedostoon, käytetään `Export-Csv` cmdlet-komentoa. Tämä cmdlet ottaa syötteeksi objekteja ja muuntaa ne CSV-muotoon.
 
 ```powershell
@@ -56,7 +51,6 @@ $users | Export-Csv -Path "C:\Data\new_users.csv" -NoTypeInformation
 Suorituksen jälkeen luodaan tiedosto nimeltä `new_users.csv` annetuilla tiedoilla.
 
 ### CSV-sisällön suodattaminen ja muokkaaminen
-
 CSV-tiedoston datan suodattamiseksi tai muokkaamiseksi käytä PowerShellin objektien käsittelykykyjä. Esimerkiksi, valitaksesi vain käyttäjät, jotka ovat tietyn iän yläpuolella ja tietystä kaupungista:
 
 ```powershell
@@ -78,5 +72,4 @@ Doe     29     Los Angeles
 ```
 
 ### Kolmannen osapuolen kirjastojen käyttäminen
-
 Vaikka PowerShellin natiivit cmdlet-komennot yleensä riittävät yleisiin tehtäviin, monimutkaisemmat operaatiot saattavat hyötyä kolmannen osapuolen kirjastoista tai työkaluista. Kuitenkin, tavallisille CSV-käsittelyille, kuten lukemiselle, kirjoittamiselle, suodattamiselle tai lajittelulle, PowerShellin sisäänrakennetut cmdlet-komennot, kuten `Import-Csv` ja `Export-Csv`, tarjoavat yleensä vankan toiminnallisuuden ilman tarvetta ylimääräisille kirjastoille.

@@ -16,12 +16,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---
 
-## Cái gì & Tại sao?
-
-TOML, viết tắt của Tom's Obvious, Minimal Language, là định dạng file cấu hình được thiết kế để dễ đọc do ngữ nghĩa rõ ràng của nó. Các lập trình viên sử dụng nó để cấu hình các ứng dụng phần mềm vì nó dễ phân tích cú pháp và tạo ra ít nhầm lẫn hoặc lỗi.
-
 ## Làm thế nào:
-
 Dart không bao gồm hỗ trợ sẵn cho TOML, nhưng bạn có thể làm việc với các file TOML sử dụng các gói bên thứ ba như `toml`. Đầu tiên, thêm `toml` vào `pubspec.yaml` của bạn:
 
 ```yaml
@@ -30,7 +25,6 @@ dependencies:
 ```
 
 ### Đọc TOML
-
 Để đọc một file TOML, giả sử bạn có một file cấu hình đơn giản `config.toml`:
 
 ```toml
@@ -63,7 +57,6 @@ Kết quả in ra sẽ là:
 ```
 
 ### Viết TOML
-
 Để tạo nội dung TOML, sử dụng `TomlBuilder` được cung cấp bởi gói `toml`:
 
 ```dart

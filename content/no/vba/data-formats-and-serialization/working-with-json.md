@@ -14,12 +14,7 @@ title: "\xC5 Arbeide med JSON"
 weight: 38
 ---
 
-## Hva & Hvorfor?
-
-JSON (JavaScript Object Notation) er et lettvekts datautvekslingsformat som er lett for mennesker å lese og skrive, og for maskiner å analysere og generere. Programmerere bruker JSON til å overføre data mellom en server og en webapplikasjon eller til å lagre informasjon på en strukturert, tilgjengelig måte innenfor en rekke programmeringsmiljøer, inkludert Visual Basic for Applications (VBA).
-
 ## Hvordan:
-
 VBA støtter ikke JSON-analyse eller generering som standard, så vi vil bruke et skriptspråk som JScript (via ScriptControl-objektet) for å analysere JSON-strenger og bygge JSON-objekter. Slik kan du analysere en JSON-streng i VBA:
 
 ```basic
@@ -59,7 +54,6 @@ End Sub
 ```
 
 ## Dypdykk
-
 Tilnærmingene som vises utnytter ScriptControl for å håndtere JSON, som i bunn og grunn setter ut arbeidet til en JavaScript-motor. Dette er en kreativ omgåelse, men ikke nødvendigvis den mest effektive eller moderne måten å arbeide med JSON i en VBA-kontekst. I mer komplekse applikasjoner kan denne metoden bli tungvint og introdusere ytelsesoverhead eller sikkerhetsproblemer, siden ScriptControl utfører i et miljø som har full tilgang til vertsmaskinen.
 
 Andre programmeringsmiljøer, som Python eller JavaScript, tilbyr innebygd støtte for JSON, noe som gjør dem mer egnet for applikasjoner som krever omfattende JSON-manipulasjon. Disse språkene gir omfattende biblioteker som letter ikke bare analyse og generering, men også spørring og formatering av JSON-data.

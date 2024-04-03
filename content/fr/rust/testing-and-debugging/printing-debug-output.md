@@ -11,9 +11,6 @@ title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---
 
-## What & Why? (Quoi et pourquoi ?)
-En Rust, afficher des informations de débogage, c'est montrer l'état d'une variable ou ce qui se passe dans un programme. Ça aide les développeurs à comprendre et à réparer les bugs rapidement.
-
 ## How to: (Comment faire :)
 Rust fournit la macro `println!` pour afficher du texte et `dbg!` pour déboguer:
 

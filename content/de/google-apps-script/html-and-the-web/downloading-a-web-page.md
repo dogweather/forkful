@@ -14,12 +14,7 @@ title: Herunterladen einer Webseite
 weight: 42
 ---
 
-## Was & Warum?
-
-Das Herunterladen einer Webseite in Google Apps Script beinhaltet das Abrufen des Inhalts einer Webseite über HTML für verschiedene Zwecke, wie zum Beispiel Web Scraping, Datenextraktion oder die Überwachung von Änderungen. Programmierer wählen diesen Vorgang, um Datensammel- oder Integrationstätigkeiten zu automatisieren, manuellen Aufwand zu minimieren und eine Echtzeit-Datenverarbeitung sicherzustellen.
-
 ## Wie:
-
 In Google Apps Script ist der `UrlFetchApp`-Dienst zentral für das Herunterladen von Webinhalten. Unten finden Sie eine Schritt-für-Schritt-Anleitung und ein einfaches Beispiel, das zeigt, wie man den HTML-Inhalt einer Webseite abruft und protokolliert:
 
 1. **Grundlegende Abrufoperation:**
@@ -57,7 +52,6 @@ function downloadSecureWebPage() {
 Achten Sie auf die Kontingente von Google Apps Script; eine intensive Nutzung erfordert möglicherweise eine Fehlerbehandlung für Ratenbeschränkungen.
 
 ## Vertiefung
-
 Historisch gesehen begann der Download und die Manipulation von Webinhalten mit einfachen HTTP-Anfragen, die sich erheblich mit dem Aufkommen von Skriptsprachen weiterentwickelten. Google Apps Script ermöglicht die einfache Ausführung solcher Aufgaben innerhalb des G Suite-Ökosystems und nutzt dabei Googles robuste Infrastruktur. Der `UrlFetchApp`-Dienst ist ein Kernbestandteil dieser Funktionalität und fasst komplexe HTTP/S-Anfragen in eine einfachere, anwendungsspezifische Schnittstelle zusammen.
 
 Trotz seiner Bequemlichkeit ist Google Apps Script möglicherweise nicht immer das beste Werkzeug für intensives Web Scraping oder wenn eine komplexe Nachbearbeitung der abgerufenen Daten aufgrund von Ausführungszeitbeschränkungen und Kontingenten, die von Google auferlegt sind, erforderlich ist. In solchen Fällen könnten spezielle Web-Scraping-Frameworks oder für asynchrone I/O-Operationen konzipierte Sprachen wie Node.js mit Bibliotheken wie Puppeteer oder Cheerio mehr Flexibilität und Leistung bieten.

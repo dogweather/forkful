@@ -12,9 +12,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## What & Why?
-Mittaamme merkkijonojen pituutta, koska haluamme selvittää, kuinka monta merkkiä ne sisältävät tai validoida niiden sisältöä. Tämä auttaa mm. löytämään virheitä tai rajoittamaan syötteen kokoa.
-
 ## How to:
 Clojure-kielessä merkkijonon pituuden saa selville `count`-funktiolla:
 ```Clojure

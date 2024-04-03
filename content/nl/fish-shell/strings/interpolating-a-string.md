@@ -11,12 +11,7 @@ title: Een string interpoleren
 weight: 8
 ---
 
-## Wat & Waarom?
-
-Een string interpoleren betekent variabelen of expressies in een string invoegen. Het bespaart tijd en verbetert de leesbaarheid door dynamische inhoud mogelijk te maken zonder de gymnastiek van stringconcatenatie.
-
 ## Hoe doe je dat:
-
 In Fish gebruik je dubbele aanhalingstekens en plaats je de variabele of het commando dat je wilt interpoleren met een dollarteken `$` rechtstreeks in de string.
 
 ```fish
@@ -43,7 +38,6 @@ Ik heb 9 bestanden in deze map.
 Variabelen en commando's worden beoordeeld en netjes op hun plaats gezet.
 
 ## Diepere duik
-
 Vóór Fish en andere moderne shells zou je vaak een onhandige combinatie van aanhalingstekens en concatenatie gebruiken—of vertrouwen op externe tools—om variabelen in strings te krijgen.
 
 In bash zou het er bijvoorbeeld zo uitzien:
@@ -74,7 +68,6 @@ In dit geval is `%s` een plaatsvervanger voor de stringvariabele `$animal` die d
 Wat de implementatie betreft, wanneer Fish de commandoregel verwerkt, analyseert het de dubbele aanhalingstekens strings en vervangt het de variabelen door hun waarden on the fly. Het is elegant en bootst de variabele interpolatie na die te vinden is in hogere programmeertalen zoals Ruby of PHP.
 
 ## Zie ook
-
 Voor meer over Fish stringmanipulatie en scripting, check deze:
 
 - [Fish Shell Documentatie: Quotes](https://fishshell.com/docs/current/index.html#quotes)

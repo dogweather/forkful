@@ -11,12 +11,7 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-
-Die Fehlerbehandlung in C# dient dazu, das Unerwartete zu bewältigen – so wie über eigene Schnürsenkel zu stolpern. Programme können über schlechte Daten oder wackelige Verbindungen stolpern. Wir handhaben Fehler, um zu verhindern, dass unsere Software auf die Nase fällt und stattdessen elegant wieder auf die Beine kommt.
-
 ## Wie man das macht:
-
 Beginnen wir mit einem Try-Catch-Block. Es ist so, als würde man unter einem Seiltänzer ein Sicherheitsnetz spannen. Wenn sie ausrutschen, stürzen sie nicht ab – sie werden gefangen.
 
 ```C#
@@ -53,7 +48,6 @@ try {
 ```
 
 ## Tiefgang
-
 Die Fehlerbehandlung ist in C# seit seiner Geburt vorhanden. Im Laufe der Zeit hat sie sich entwickelt. Früher verließen sich Programmierer auf Rückgabecodes oder globale Flags, um Probleme zu signalisieren – umständlich und fehleranfällig.
 
 C# verwendet Ausnahmen, einen moderneren Ansatz. Eine Ausnahme wird ausgelöst, wenn das Unerwartete eintritt, genau wie wenn im Fußball ein Flagge auf das Spiel geworfen wird. Strukturierte Ausnahmebehandlung mit Try, Catch und Finally-Blöcken macht das Verwalten dieser Momente klarer und sauberer als die altmodische Fehlerprüfung.
@@ -63,6 +57,5 @@ Alternativen? Sicher. Es gibt den `UnhandledExceptionEventHandler` für Ausnahme
 Implementierungsdetails – vergleichbar mit dem Kleingedruckten – sind wichtig. Ausnahmen können kostspielig sein und die Leistung beeinträchtigen, wenn sie wahllos geworfen werden. Daher verwenden wir sie für außergewöhnliche Fälle und nicht für alltägliche Logiksteuerung.
 
 ## Siehe auch
-
 - [Offizielle Dokumentation zu Ausnahmen in C#](https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/exceptions/exception-handling)
 - [Best Practices für die Ausnahmebehandlung in C#](https://docs.microsoft.com/en-us/dotnet/standard/exceptions/best-practices-for-exceptions)

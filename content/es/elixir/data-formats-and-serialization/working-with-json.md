@@ -13,12 +13,7 @@ title: Trabajando con JSON
 weight: 38
 ---
 
-## Qué y Por Qué?
-
-Trabajar con JSON implica analizar cadenas con formato JSON en estructuras de datos que Elixir puede manipular y serializar estructuras de datos de Elixir de nuevo en cadenas JSON. Esto es esencial para el desarrollo web, las API y los archivos de configuración, ya que JSON es un formato de intercambio de datos ligero, basado en texto, independiente del lenguaje y ampliamente utilizado por su simplicidad y legibilidad humana.
-
 ## Cómo hacerlo:
-
 En Elixir, puedes usar la biblioteca `Jason`, una elección popular para el análisis y generación de JSON. Primero, añade `Jason` a las dependencias de tu proyecto en `mix.exs`:
 
 ```elixir

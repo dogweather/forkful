@@ -10,9 +10,6 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## Was & Warum?
-Das Extrahieren von Teilstrings ermöglicht es dir, bestimmte Textabschnitte aus längeren Strings herauszulösen. Das ist nützlich, wenn du Daten bearbeiten oder spezifische Informationen analysieren möchtest.
-
 ## Wie geht das?
 Mit Bash kannst du mit Substring-Expansion arbeiten. Schau dir die Beispiele an:
 

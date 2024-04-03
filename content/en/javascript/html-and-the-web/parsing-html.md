@@ -12,9 +12,6 @@ title: Parsing HTML
 weight: 43
 ---
 
-## What & Why?
-Parsing HTML means extracting data from HTML documents. Programmers do it to interact with or manipulate web content, automate data extraction, or for web scraping purposes.
-
 ## How to:
 Let's parse HTML using the `DOMParser` API in JavaScript. 
 

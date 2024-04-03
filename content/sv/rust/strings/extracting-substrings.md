@@ -11,9 +11,6 @@ title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---
 
-## Vad & Varför?
-Extrahering av delsträngar innebär att plocka ut specifika segment från en sträng. Programmerare gör detta för att manipulera eller analysera innehållet på ett mer detaljerat sätt.
-
 ## Hur man gör:
 ```Rust
 fn main() {

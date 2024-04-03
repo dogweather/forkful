@@ -24,12 +24,7 @@ title: "\u5C06\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4ED8\u3092\u8A08
 weight: 26
 ---
 
-## What & Why? (何となぜ？)
-
-将来または過去の日付を計算するとは、特定の日から日数を加えたり引いたりして、新しい日付を得ることです。プログラマーは、イベントのスケジューリング、期限の追跡、または過去のデータ分析のためにこれを行います。
-
 ## How to: (やり方)
-
 Fish Shellでは`date`コマンドを使って、未来または過去の日付を計算します。以下に例を示します。
 
 ```fish
@@ -47,7 +42,6 @@ echo $past_date
 ```
 
 ## Deep Dive (深掘り)
-
 過去には、日付を計算するために独自のスクリプトやアルゴリズムを書くことが一般的でした。しかし、UNIX系のオペレーティングシステムでは`date`コマンドがその役割を担ってきました。Fish Shellでは、他のシェルスクリプト同様にこのコマンドを使って作業を行いますが、構文が簡単で読みやすいことが特徴です。
 
 代替手段としては、GNU `date`の代わりに`datetime`モジュールを使用するPythonスクリプトなどが挙げられます。これにはより高度な計算やタイムゾーンのサポートが含まれています。
@@ -55,7 +49,6 @@ echo $past_date
 実装の詳細では、`date`コマンドは、現在のシステム時刻を基に加減算された秒数によって日付を計算します。加えたい日数や時間を指定する際の`+`や`-`は、それぞれ未来や過去への相対時間を意味します。
 
 ## See Also (関連情報)
-
 - Fish Shellの公式ドキュメント: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
 - GNU `date`コマンドのマニュアル: [https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
 - Python datetimeモジュール: [https://docs.python.org/3/library/datetime.html](https://docs.python.org/3/library/datetime.html)

@@ -11,16 +11,10 @@ title: Satunnaislukujen generointi
 weight: 12
 ---
 
-## Mikä & Miksi?
-
-Satunnaislukujen tuottaminen TypeScriptillä tarkoittaa ennalta arvaamattomien numeeristen arvojen luomista määritetyllä välillä. Ohjelmoijat hyödyntävät näitä satunnaislukuja monenlaisiin tarkoituksiin, kuten uniikkien tunnisteiden generointiin, datan simulointiin testaustarkoituksissa tai lisäämään arvaamattomuutta peleihin ja simulaatioihin.
-
 ## Kuinka:
-
 TypeScriptissä voit luoda satunnaislukuja globaalin `Math`-objektin avulla. Alla on joitakin käytännön esimerkkejä, jotka osoittavat, kuinka tuottaa satunnaislukuja eri tarpeisiin.
 
 ### Perussatunnaisluvun tuottaminen
-
 Perussatunnaisen desimaaliluvun tuottamiseksi välillä 0 (mukaan lukien) ja 1 (ei mukaan lukien) käytetään `Math.random()`-metodia. Tämä ei vaadi lisäkäsittelyä:
 
 ```TypeScript
@@ -31,7 +25,6 @@ console.log(randomNumber);
 Tämä saattaa tulostaa arvon kuten `0.8995452185604771`.
 
 ### Satunnaisen kokonaisluvun tuottaminen kahden arvon välillä
-
 Kun tarvitset kokonaislukua kahden tietyn arvon välillä, yhdistät `Math.random()`-metodin ja jonkin verran aritmetiikkaa:
 
 ```TypeScript
@@ -48,7 +41,6 @@ console.log(randomInt);
 Tämä saattaa tulostaa kokonaisluku arvon 1 ja 10 välillä, kuten `7`.
 
 ### Uniikin tunnisteen luominen
-
 Satunnaislukuja voidaan yhdistää muihin menetelmiin uniikkien tunnisteiden luomiseksi, esimerkiksi yksinkertainen UUID-generaattorin koodinpätkä:
 
 ```TypeScript
@@ -66,7 +58,6 @@ console.log(uuid);
 Tämä luo merkkijonon, joka muistuttaa UUID:tä, kuten `110e8400-e29b-41d4-a716-446655440000`.
 
 ## Syväsukellus
-
 Päämenetelmä satunnaislukujen generointiin JavaScriptissä ja näin ollen TypeScriptissä, `Math.random()`, nojaa pseudo-satunnaislukugeneraattoriin (PRNG). On tärkeää huomata, että vaikka tulokset saattavat vaikuttaa satunnaisilta, ne generoidaan deterministisellä algoritmilla perustuen alkuperäiseen siemenarvoon. Siksi `Math.random()`-metodilla tuotetut luvut eivät ole todella satunnaisia ja niitä ei tulisi käyttää kryptografisiin tarkoituksiin.
 
 Kryptografisesti turvatut satunnaisluvut, Web Crypto API tarjoaa `crypto.getRandomValues()`-metodin, joka on saatavilla Web Crypto -standardia tukevissa ympäristöissä, mukaan lukien modernit selaimet ja Node.js (käyttäen `crypto`-moduulia). Tässä on nopea esimerkki sen käytöstä TypeScriptissä turvallisen satunnaisluvun generointiin tietyllä välillä:

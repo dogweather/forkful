@@ -10,9 +10,6 @@ title: Avvio di un nuovo progetto
 weight: 1
 ---
 
-## What & Why? (Cos'è & Perché?)
-Iniziare un nuovo progetto Arduino significa scrivere codice per far interagire hardware e software. I programmatori lo fanno per creare prototipi, imparare e divertirsi.
-
 ## How to: (Come fare:)
 ```Arduino
 void setup() {

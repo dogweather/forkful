@@ -11,9 +11,6 @@ title: Komennoriviparametrien lukeminen
 weight: 23
 ---
 
-## What & Why? (Mitä ja Miksi?)
-Komennon riviargumentit mahdollistavat erilaisten arvojen syöttämisen ohjelmallesi sen käynnistyessä. Tämä auttaa tekemään ohjelmasta joustavamman, sillä voit muokata ohjelman toimintaa ilman koodin muuttamista.
-
 ## How to: (Kuinka tehdään:)
 Arduino-ympäristössä ei käytetä perinteisiä komentoriviargumentteja kuten tietokoneen ohjelmissa, koska Arduino koodi ladataan mikrokontrollerille, ja se ei käynnisty komentoriviltä. Voit kuitenkin lukea syötteitä sarjaportin kautta, mikä toimii samankaltaisena ratkaisuna.
 

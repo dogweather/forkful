@@ -13,14 +13,10 @@ title: Att skriva en textfil
 weight: 24
 ---
 
-## Vad och varför?
-
-Att skriva en textfil i Java handlar om att använda språkets möjligheter för att skapa och skriva innehåll till filer på filsystemet. Programmerare gör detta av olika skäl, såsom loggning, export av data eller sparande av applikationstillstånd för senare återhämtning.
-
 ## Hur man gör:
 
-### Använda `java.nio.file` (Standardbiblioteket)
 
+### Använda `java.nio.file` (Standardbiblioteket)
 Javas New I/O (NIO)-paket (`java.nio.file`) erbjuder en mer mångsidig metod för att hantera filer. Här är ett förenklat sätt att skriva till en fil med `Files.write()`:
 
 ```java
@@ -49,7 +45,6 @@ Filen skrevs framgångsrikt!
 ```
 
 ### Använda `java.io` (Standardbiblioteket)
-
 För en mer traditionell metod är `java.io.FileWriter` ett bra val för att enkelt skriva textfiler:
 
 ```java
@@ -76,7 +71,6 @@ Filen skrevs framgångsrikt!
 ```
 
 ### Använda Apache Commons IO
-
 Apache Commons IO-biblioteket förenklar många operationer, inklusive filskrivning. Så här skriver du till en fil med `FileUtils.writeStringToFile()`:
 
 Först, lägg till beroendet till ditt projekt. Om du använder Maven, inkludera:

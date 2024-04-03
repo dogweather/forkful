@@ -12,9 +12,6 @@ title: Tratamento de erros
 weight: 16
 ---
 
-## O Que & Por Quê?
-O tratamento de erros em PHP é sobre gerenciar e responder a condições que interrompem o fluxo normal de um programa, como arquivos ausentes ou entrada de dados incorreta. Os programadores lidam com erros para evitar falhas e proporcionar uma experiência mais suave para os usuários.
-
 ## Como fazer:
 No PHP, você pode gerenciar erros usando blocos `try-catch` e pode personalizar o processo com manipuladores de erro e exceções personalizados.
 

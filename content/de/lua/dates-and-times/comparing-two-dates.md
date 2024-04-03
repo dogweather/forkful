@@ -10,9 +10,6 @@ title: Vergleich von zwei Daten
 weight: 27
 ---
 
-## Was & Warum?
-Datumvergleich bedeutet, zwei Zeitpunkte hinsichtlich ihrer chronologischen Reihenfolge zu vergleichen. Programmierer nutzen dies, um Zeitabläufe zu steuern, Dauer zu berechnen oder Ereignisse zu terminieren.
-
 ## Anleitung:
 ```Lua
 os = require("os")

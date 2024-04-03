@@ -12,12 +12,7 @@ title: Werken met JSON
 weight: 38
 ---
 
-## Wat & Waarom?
-
-JSON (JavaScript Object Notation) is een tekstgebaseerd gegevensformaat voor het opslaan en transporteren van data. Programmeurs gebruiken het omdat het lichtgewicht is, makkelijk te lezen/schrijven, en taalonafhankelijk.
-
 ## Hoe te:
-
 In Haskell, gaan we om met JSON gebruikmakend van de `aeson` bibliotheek. Om te beginnen, importeer deze en definieer een type dat overeenkomt met je verwachte JSON-structuur.
 
 ```Haskell
@@ -52,13 +47,11 @@ Persoon {naam = "John", leeftijd = 30}
 ```
 
 ## Diepduiken
-
 - **Geschiedenis**: Het ontwerp van JSON werd beïnvloed door een subset van de JavaScript-syntax, en het won aan populariteit als een eenvoudig alternatief voor XML.
 - **Alternatieven**: Hoewel JSON koning is voor web-API's, kunnen alternatieven zoals XML, YAML of zelfs Protocol Buffers worden gekozen op basis van context en vereisten.
 - **Implementatiedetails**: `aeson` gebruikt het typesysteem van Haskell om JSON-structuren te matchen met Haskell-typen. Parsen wordt gedaan via typeklassen zoals `FromJSON`, en codering door `ToJSON`.
 
 ## Zie Ook
-
 - `aeson` pakketdocumentatie: [https://hackage.haskell.org/package/aeson](https://hackage.haskell.org/package/aeson)
 - Echte JSON-API's om mee te oefenen: [https://jsonplaceholder.typicode.com/](https://jsonplaceholder.typicode.com/)
 - JSON-specificatie: [https://www.json.org/json-en.html](https://www.json.org/json-en.html)

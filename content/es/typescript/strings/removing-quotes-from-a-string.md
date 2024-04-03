@@ -11,9 +11,6 @@ title: Eliminando comillas de una cadena
 weight: 9
 ---
 
-## ¿Qué y Por Qué?
-Eliminar comillas de una cadena significa quitar los caracteres de comillas simples (`'`) o dobles (`"`) que rodean y definen literales de cadena en el código. Los programadores hacen esto por varias razones, como formatear salida, sanear la entrada del usuario, o preparar cadenas para análisis o almacenamiento donde las comillas son innecesarias o podrían causar errores.
-
 ## Cómo hacerlo:
 Aquí tienes tu guía directa para liberar esas molestas marcas de comillas de tus cadenas en TypeScript.
 

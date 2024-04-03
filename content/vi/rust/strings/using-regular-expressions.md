@@ -15,9 +15,6 @@ title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---
 
-## Cái gì & Tại sao?
-Biểu thức chính quy, hay còn gọi tắt là regex, là chuỗi các ký tự tạo thành mẫu tìm kiếm. Lập trình viên sử dụng regex để tìm kiếm, chỉnh sửa hoặc thao tác văn bản bằng cách khớp các mẫu phức tạp, thường được sử dụng cho mục đích xác minh hoặc phân tích cú pháp.
-
 ## Làm thế nào:
 Rust sử dụng crate `regex` cho các thao tác regex. Đầu tiên, thêm nó vào `Cargo.toml` của bạn:
 

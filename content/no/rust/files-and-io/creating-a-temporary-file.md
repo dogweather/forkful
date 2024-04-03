@@ -11,9 +11,6 @@ title: Opprette en midlertidig fil
 weight: 21
 ---
 
-## Hva & Hvorfor?
-Å lage en midlertidig fil er prosessen med å opprette en fil som er ment for kortvarig bruk. Programmerere gjør dette for å lagre data temporært uten å påvirke det permanente filsystemet, ofte for å håndtere store datamengder eller for å garantere at data blir borte etter bruk.
-
 ## Slik gjør du det:
 ```rust
 use std::fs::File;

@@ -11,9 +11,6 @@ title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---
 
-## Co i dlaczego?
-REPL (Read-Eval-Print Loop - Pętla Czytaj-Wykonaj-Wypisz) to proste, interaktywne środowisko programistyczne. Programiści używają go do szybkich prób kodowania, testowania fragmentów kodu lub nauki składni języka bez tworzenia pełnej aplikacji.
-
 ## Jak to zrobić:
 Uruchomienie REPL Kotlin jest bardzo proste. Otwórz terminal i wpisz `kotlinc`. Trafić powinieneś do powłoki Kotlin. Spróbujmy zdefiniować zmienną i wydrukować jej wartość:
 

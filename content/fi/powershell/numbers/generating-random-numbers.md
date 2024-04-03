@@ -11,9 +11,6 @@ title: Satunnaislukujen generointi
 weight: 12
 ---
 
-## Mikä ja miksi?
-Satunnaislukujen tuottaminen PowerShellissä tarkoittaa ennalta-arvaamattomien numeeristen arvojen luontia määritellyllä välillä. Ohjelmoijat käyttävät tätä ominaisuutta monista syistä, mukaan lukien testaus, simulointi ja turvallisuustarkoitukset, joissa ennalta-arvaamattomuus tai todellisen maailman satunnaisuuden jäljitteleminen on elintärkeää.
-
 ## Kuinka:
 PowerShell tarjoaa suoraviivaisen lähestymistavan satunnaislukujen tuottamiseen käyttämällä `Get-Random`-cmdlet-komentoa. Tämä cmdlet voi tuottaa satunnaislukuja joko oletusalueella tai määritellyllä välillä.
 

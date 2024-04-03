@@ -14,9 +14,6 @@ title: Logboekregistratie
 weight: 17
 ---
 
-## Wat & Waarom?
-Loggen in softwareontwikkeling is de techniek van het vastleggen van gebeurtenissen die plaatsvinden terwijl een programma wordt uitgevoerd, meestal naar een bestand of extern systeem. Programmeurs doen dit om inzicht te krijgen in het gedrag van de software, problemen op te lossen en een operationele geschiedenis bij te houden die cruciaal is voor het debuggen en monitoren van de gezondheid van applicaties.
-
 ## Hoe te:
 In Elixir is de primaire manier om informatie te loggen via de ingebouwde `Logger` module. Zo kun je het gebruiken:
 

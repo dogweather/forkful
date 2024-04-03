@@ -11,12 +11,7 @@ title: Pesquisando e substituindo texto
 weight: 10
 ---
 
-## O Que é e Por Que?
-
-Procurar e substituir texto é como uma operação de busca e troca, onde um trecho de texto é localizado e trocado por outro. Programadores fazem isso para atualizar dados, corrigir erros, ou manipular informações de forma eficaz.
-
 ## Como Fazer:
-
 Vamos ver como JavaScript lida com isso usando o método `replace` de strings.
 
 ```javascript
@@ -38,7 +33,6 @@ console.log(novoTexto);  // "AS RAPOSAS SÃO ASTUTAS E AS CORUJAS, SÁBIAS."
 ```
 
 ## Imersão:
-
 A busca e substituição de texto é uma técnica antiga no mundo da programação, essencial desde os primeiros editores de texto. No JavaScript, antes do ECMAScript 5, usávamos expressões regulares e métodos como `indexOf` e `substring` para manipular strings - era funcional, mas nada elegante.
 
 Alternativas modernas como `replaceAll` vieram para simplificar o processo, oferecendo um jeito mais direto para substituir todas as ocorrências sem usar regex. Mas lembre-se, regex oferece poder e flexibilidade para padrões complexos que não podem ser ignorados.
@@ -46,7 +40,6 @@ Alternativas modernas como `replaceAll` vieram para simplificar o processo, ofer
 Quanto à implementação, a função de `replace` trabalha internamente copiando a string original e realizando as substituições onde os padrões são encontrados, resultando numa nova string.
 
 ## Veja Também:
-
 - MDN Web Docs para `replace()`: [developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replace](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
 - Expressões Regulares (Regex) em JavaScript: [developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)
 - Documentação sobre `replaceAll()`: [developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replaceAll)

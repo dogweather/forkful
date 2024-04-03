@@ -11,12 +11,7 @@ title: Generating random numbers
 weight: 12
 ---
 
-## What & Why?
-
-Generating random numbers in PHP is about producing unpredictable values within a specified range, which is essential for tasks like creating unique user IDs, generating passwords, or for use in simulations and games. Programmers rely on randomness to add unpredictability and variability into their applications, making processes like testing or user experiences more robust and engaging.
-
 ## How to:
-
 PHP offers several functions for generating random numbers, but the most commonly used are `rand()`, `mt_rand()`, and for cryptographic purposes, `random_int()`.
 
 To generate a simple random number between 0 and getrandmax() (the largest possible value returned by `rand()`), you can use:
@@ -48,7 +43,6 @@ echo random_int(1, 100);
 Again, the output is a random number between 1 and 100, like `84`, but with a stronger guarantee of randomness.
 
 ## Deep Dive
-
 The `rand()` function has been present in PHP since its early versions, serving as the initial approach for generating random numbers. However, it's not the best choice for applications requiring a high degree of randomness due to its relatively predictable algorithm.
 
 `mt_rand()`, introduced in PHP 4, is based on the Mersenne Twister algorithm - far superior in terms of speed and the randomness it can generate compared to `rand()`. It quickly became the preferred option for most non-cryptographic needs.

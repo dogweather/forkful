@@ -11,9 +11,6 @@ title: Extraindo substrings
 weight: 6
 ---
 
-## O Que é & Por Que?
-Extrair substrings significa selecionar partes específicas de uma string de texto. Programadores recorrem a esta técnica para manipular e analisar dados, validar inputs, e trabalhar com informações de maneira mais eficiente.
-
 ## Como Fazer:
 ```PowerShell
 # Exemplo de substring pelo indice e comprimento

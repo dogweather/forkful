@@ -11,9 +11,6 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## What & Why?
-Wyszukiwanie i zamiana tekstu to podstawa edycji: zmieniasz jedno przez drugie, proste. Programiści to robią, by szybko poprawiać kody i aktualizować dane.
-
 ## How to:
 ```Haskell
 import Data.List (isInfixOf, intercalate)

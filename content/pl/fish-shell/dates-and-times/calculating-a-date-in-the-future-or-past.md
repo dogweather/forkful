@@ -12,9 +12,6 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-## Co i dlaczego?
-Obliczenie daty w przyszłości lub przeszłości to po prostu wyznaczenie dat różniących się o ustaloną liczbę dni od dziś. Programiści robią to, by zarządzać terminami, harmonogramami, czy też do obsługi historii zmian.
-
 ## Jak to zrobić:
 W fish można użyć polecenia `date` z odpowiednimi opcjami. Poniżej znajduje się kilka przykładów:
 

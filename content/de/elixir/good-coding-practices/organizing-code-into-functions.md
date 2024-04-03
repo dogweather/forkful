@@ -10,9 +10,6 @@ title: Code in Funktionen organisieren
 weight: 18
 ---
 
-## Was & Warum?
-Code in Funktionen zu organisieren bedeutet, verwandte Operationen in wiederverwendbare Blöcke zu gliedern. Wir tun dies, um die Lesbarkeit und Wartbarkeit zu erhöhen, Duplikationen zu reduzieren und das Testen zu vereinfachen.
-
 ## Wie geht das:
 Lassen Sie uns eine einfache Elixir-Funktion erstellen, um Wörter zu kapitalisieren:
 

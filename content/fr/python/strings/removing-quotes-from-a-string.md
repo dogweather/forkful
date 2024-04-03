@@ -11,9 +11,6 @@ title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---
 
-## Quoi & Pourquoi ?
-Supprimer les guillemets d'une chaîne signifie généralement se débarrasser des guillemets doubles (") ou simples (') superflus. Les programmeurs font cela pour assainir les entrées ou lorsque les guillemets ne sont pas nécessaires pour un traitement ultérieur — comme lors de l'enregistrement de texte dans une base de données ou sa préparation pour l'affichage.
-
 ## Comment faire :
 Python offre plusieurs moyens de se débarrasser des guillemets indésirables dans les chaînes de caractères. Passons en revue quelques exemples :
 

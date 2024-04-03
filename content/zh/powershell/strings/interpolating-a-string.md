@@ -15,9 +15,6 @@ title: "\u5B57\u7B26\u4E32\u63D2\u503C"
 weight: 8
 ---
 
-## What & Why? 什么与为什么？
-字符串插值是把变量或表达式的值嵌入到字符串中的过程。程序员这么做是为了动态构建字符串和提升代码的可读性。
-
 ## How to: 如何操作：
 ```PowerShell
 # Define a variable

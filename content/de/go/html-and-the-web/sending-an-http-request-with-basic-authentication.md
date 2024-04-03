@@ -13,12 +13,7 @@ title: Eine HTTP-Anfrage mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-
-Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in Go beinhaltet das Hinzufügen eines Autorisierungs-Headers zu Ihrer Anfrage, der einen Benutzernamen und ein Passwort in Form eines base64-codierten Strings enthält. Programmierer verwenden diese Methode, um auf Ressourcen zuzugreifen, die eine Benutzerverifizierung erfordern, und sicherzustellen, dass ihre Anwendungen sicher mit Diensten über das Web interagieren können.
-
 ## Wie geht das:
-
 Um eine HTTP-Anfrage mit Basisauthentifizierung in Go zu stellen, müssen Sie Ihre Anfrage-Header so gestalten, dass sie das Feld `Authorization` enthalten, gefüllt mit Ihren Anmeldeinformationen im richtigen Format. Unten finden Sie ein Beispiel, das zeigt, wie Sie eine GET-Anfrage an einen API-Endpunkt senden, der eine Basisauthentifizierung erfordert:
 
 ```go
@@ -61,7 +56,6 @@ Antwortstatus: 200 OK
 ```
 
 ## Tiefergehende Betrachtung
-
 Basisauthentifizierung bei HTTP-Anfragen ist eine weit unterstützte Methode zur Durchsetzung von Zugriffskontrollen auf Webressourcen. Sie sendet einfach einen Benutzernamen und ein Passwort mit jeder Anfrage, was sie einfach zu implementieren macht, aber nicht die sicherste verfügbare Methode ist. Ein großer Nachteil ist, dass die Anmeldeinformationen im Klartext gesendet werden (da Base64 leicht decodiert werden kann), es sei denn, sie wird in Verbindung mit SSL/TLS verwendet. Dies kann potenziell sensible Informationen Man-in-the-Middle-Angriffen aussetzen.
 
 In Go involviert das Senden dieser Anfragen die direkte Manipulation des `Authorization`-Headers. Während Golangs Standardbibliothek (`net/http`) leistungsstarke Primitiven für den Umgang mit HTTP(s)-Kommunikation zur Verfügung stellt, ist sie vergleichsweise niedrigstufig, was bedeutet, dass Entwickler verschiedene Aspekte der HTTP-Anfrage-/Antwortbehandlung manuell handhaben müssen. Das gibt Programmierern viel Flexibilität, bedeutet aber auch, dass man die Sicherheitsimplikationen, Codierung und korrekte Headerverwaltung genauer beachten muss.

@@ -12,9 +12,6 @@ title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---
 
-## Hva & Hvorfor?
-Å fjerne anførselstegn fra en streng innebærer å strippe vekk eventuelle forekomster av enkle (`'`) eller doble (`"`) anførselstegn som omslutter teksten. Programmerere gjør ofte dette for å rense inndata, forberede strenger for sammenligning, eller behandle tekstdata som ved et uhell kan inkludere anførselstegn som en del av strenginnholdet.
-
 ## Hvordan:
 For å fjerne anførselstegn fra en streng i Arduino, kan du løkke over tegnene og bygge opp strengen på nytt uten anførselstegnene. For eksempel:
 

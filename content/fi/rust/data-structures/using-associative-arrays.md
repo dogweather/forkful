@@ -13,12 +13,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mikä & Miksi?
-
-Assosiatiiviset taulukot, tai kuten Rustin käyttäjät niitä kutsuvat, "hajautustaulukot", ovat kokoelmia, jotka tallentavat dataa avain-arvo -pareina. Ohjelmoijat käyttävät niitä nopeaan datan etsintään, mikä mahdollistaa tehokkaan datan käsittelyn ainutlaatuisten avainten perusteella.
-
 ## Miten:
-
 Rustissa `HashMap`-tyyppi `std::collections`-moduulista tarjoaa assosiatiivisten taulukoiden toiminnallisuuden. Näin voit työskennellä niiden kanssa:
 
 ```Rust
@@ -49,5 +44,4 @@ fn main() {
 ```
 
 ## Syväsukellus
-
 Rustin `HashMap` käyttää hajautusfunktiota avainten yhdistämiseen arvoihin, mikä mahdollistaa nopean datan noudon. Tämä tehokkuus tulee kuitenkin kustannuksella: hajautustaulukot eivät säilytä elementtiensä järjestystä. Tämä eroaa muiden assosiatiivisten taulukoiden toteutuksista, kuten Pythonin (`dict`) tai Rubyn, jotka viimeisimmissä versioissa säilyttävät lisäysjärjestyksen ominaisuutena. Käyttötarkoituksiin, joissa avain-arvo -parien järjestys on merkittävä, Rustin kehittäjät saattavat harkita `BTreeMap`-käytön `std::collections`-moduulista, joka säilyttää järjestyksen mutta saattaa tarjota hitaamman lisäyksen ja noudon verrattuna `HashMap`iin. Lopulta valinta `HashMap`in ja `BTreeMap`in välillä riippuu tiettyjen vaatimusten mukaan järjestyksen ja suorituskyvyn suhteen.

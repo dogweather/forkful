@@ -28,12 +28,7 @@ title: "\u091F\u0947\u0915\u094D\u0938\u094D\u091F \u092B\u093C\u093E\u0907\u093
 weight: 22
 ---
 
-## What & Why? (क्या और क्यों?)
-
-पाठ फाइल को पढ़ना मतलब उसके अंदर का डेटा निकालना। प्रोग्रामर्स इसे इसलिए करते हैं क्योंकि कई बार कॉन्फ़िगरेशन, डेटा इनपुट या लॉग फाइलों में स्टोर किए जाते हैं।
-
 ## How to (कैसे करें):
-
 ```Kotlin
 import java.io.File
 
@@ -49,10 +44,8 @@ fun main() {
 ```
 
 ## Deep Dive (गहराई से जानकारी):
-
 पाठ फाइलें पढ़ना जावा में `java.io` और `java.nio` पैकेज के जरिए पहले से ही आसान था। कोटलिन में भी, यह `java.io.File` क्लास के एक्सटेंशन फंक्शन का इस्तेमाल करके सरल बन गया है। अलग-अलग तरीके हैं फाइल पढ़ने के जैसे `readLines()`, `forEachLine` जो अलग-अलग सिचुएशन में उपयोगी हैं, जैसे हर लाइन को इंडिविजुअली प्रोसेस करना। `InputStream` और `BufferedReader` यह भी ऑप्शन हैं जब आपको बड़ी फाइल्स को इफिशिएंटली हैंडल करना हो।
 
 ## See Also (और भी देखें):
-
 - कोटलिन डॉक्यूमेंटेशन: [https://kotlinlang.org/docs/home.html](https://kotlinlang.org/docs/home.html)
 - `java.io.File` क्लास रेफरेंस: [https://docs.oracle.com/javase/7/docs/api/java/io/File.html](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)

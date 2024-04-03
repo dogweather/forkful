@@ -13,9 +13,6 @@ title: Een string met hoofdletters maken
 weight: 2
 ---
 
-## Wat & Waarom?
-Een string met hoofdletters schrijven betekent alle karakters omzetten naar hoofdletters. Programmeurs doen dit voor consistentie, leesbaarheid, of om aan bepaalde coderingsnormen te voldoen.
-
 ## Hoe:
 In Fish zet je een string om naar hoofdletters met het `string upper` commando. Zo doe je dat:
 

@@ -12,12 +12,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mikä & Miksi?
-
-Javassa assosiatiiviset taulukot eli mapit mahdollistavat avain-arvo -parien tallentamisen tehokasta datan hakua ja manipulaatiota varten. Ohjelmoijat käyttävät niitä tehtäviin kuten esiintymien laskentaan tai käyttäjien oikeuksien mappaamiseen, koska ne tarjoavat nopean pääsyn ja päivitykset.
-
 ## Kuinka:
-
 Java ei sisällä valmiiksi assosiatiivisia taulukoita, kuten jotkin kielet tekevät, mutta se tarjoaa `Map`-rajapinnan ja luokkia, kuten `HashMap` ja `TreeMap`, täyttämään tämän roolin. Tässä on, miten käytetään `HashMap`ia:
 
 ```Java
@@ -61,7 +56,6 @@ Charlie on 28 vuotta vanha.
 `HashMap` on vain yksi toteutus. Jos avaimet ovat uniikkeja ja tarvitset ne järjestettyinä, harkitse `TreeMap`ia. Mapille, joka säilyttää lisäysjärjestyksen, `LinkedHashMap` on ystäväsi.
 
 ## Syväsukellus
-
 Mapit Javassa ovat osa Collections Frameworkia, joka otettiin käyttöön JDK 1.2:ssa, mutta niitä on paranneltu vuosien varrella merkittävästi. Tähän kuuluu esimerkiksi `forEach`-metodin esittely Java 8:ssa, joka mahdollistaa helpomman iteraation alkioiden yli. Mappien toteutus (`HashMap`, `LinkedHashMap`, `TreeMap`) tulisi määritellä tarpeidesi perusteella järjestyksen ja suorituskyvyn suhteen. Esimerkiksi `HashMap` tarjoaa O(1) aikasuorituskyvyn perusoperaatioille (get ja put), olettaen, että hajautusfunktio jakaa elementit sopivasti ämpäreiden kesken. Kuitenkin, jos tarvitset järjestämistä luonnollisen järjestyksen tai mukautettujen vertailijoiden perusteella, `TreeMap` on valintasi, tarjoten O(log n) ajan lisäykselle ja haulle.
 
 Ennen `Map`in esittelyä assosiatiiviset taulukot toteutettiin yleensä kahdella rinnakkaisella taulukolla (yksi avaimille, toinen arvoille) tai mukautetuilla tietorakenteilla, jotka olivat vähemmän tehokkaita. Nykyiset vaihtoehdot `Map`ille ja sen toteutuksille voivat sisältää kolmannen osapuolen kirjastoja, jotka tarjoavat erikoistuneita mappeja, kuten kaksisuuntaiset mapit (BiMap Googlen Guava-kirjastossa) tapauksissa, joissa tarvitset tehokkaan keinon löytää avaimen arvonsa perusteella. Kuitenkin useimmissa käyttötapauksissa Javassa, standardikirjaston mapit ovat riittävän vankkoja ja joustavia tehtävän hoitamiseen.

@@ -14,12 +14,7 @@ title: Tests schreiben
 weight: 36
 ---
 
-## Was & Warum?
-
-Das Schreiben von Tests in Dart umfasst das Erstellen von Testfällen, um automatisch zu überprüfen, ob verschiedene Teile Ihres Programms wie erwartet funktionieren. Programmierer tun dies, um sicherzustellen, dass ihr Code zuverlässig ist und frei von Fehlern, was einfachere Updates und Refaktorisierungen erleichtert, während Regressionen verhindert werden.
-
 ## Wie:
-
 In Dart wird üblicherweise das `test`-Paket zum Schreiben von Tests verwendet. Fügen Sie zunächst das `test`-Paket zu Ihrer `pubspec.yaml` hinzu:
 
 ```yaml
@@ -62,7 +57,6 @@ Die Ausgabe könnte folgendermaßen aussehen:
 ```
 
 ### Verwendung einer Drittanbieter-Bibliothek: Mockito für das Mocking
-
 Für das Testen von Code mit komplexen Abhängigkeiten könnten Sie Mockito verwenden, um Mock-Objekte zu erstellen. Fügen Sie zuerst Mockito zu Ihrer `pubspec.yaml` hinzu:
 
 ```yaml

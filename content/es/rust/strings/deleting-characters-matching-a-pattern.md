@@ -11,9 +11,6 @@ title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---
 
-## ¿Qué y Por Qué?
-Eliminar caracteres que coinciden con un patrón es quitar ciertos caracteres de una cadena de texto que cumplen con una condición especificada. Lo hacemos para limpiar datos, simplificar el contenido o preparar texto para un procesamiento posterior.
-
 ## Cómo hacerlo:
 ```Rust
 fn main() {

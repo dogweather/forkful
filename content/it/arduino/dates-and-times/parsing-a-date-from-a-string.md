@@ -15,12 +15,7 @@ title: Analisi di una data da una stringa
 weight: 30
 ---
 
-## Cosa e Perché?
-
-Effettuare il parsing di una data da una stringa in Arduino comporta l'estrazione e la conversione delle componenti della data (anno, mese, giorno) da una rappresentazione testuale a un formato che può essere utilizzato per la gestione del tempo, confronti o manipolazioni all'interno degli sketch. I programmatori eseguono frequentemente questo compito per interfacciarsi con componenti come orologi in tempo reale, registratori, o per elaborare input da API web e interfacce utente dove le date potrebbero essere presentate in un formato leggibile.
-
 ## Come fare:
-
 Approccio diretto senza una libreria di terze parti:
 
 ```cpp

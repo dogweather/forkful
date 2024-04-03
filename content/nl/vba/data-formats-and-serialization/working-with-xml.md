@@ -12,12 +12,7 @@ title: Werken met XML
 weight: 40
 ---
 
-## Wat & Waarom?
-
-Werken met XML in Visual Basic for Applications (VBA) houdt in het parsen, creëren en wijzigen van XML-documenten binnen de context van Microsoft Office-applicaties. Programmeurs wenden zich tot deze mogelijkheid voor de integratie van Office-applicaties met webservices of andere gegevensbronnen die XML uitsturen, wat de uitwisseling van gegevens en rapportagefunctionaliteiten vergemakkelijkt.
-
 ## Hoe:
-
 Om te beginnen met het interageren met XML, gebruikt men meestal het `MSXML2.DOMDocument` object. Deze interface stelt u in staat om XML-documenten te laden, te parsen en te navigeren. Hieronder staat een simpel voorbeeld dat demonstreert hoe je een XML-bestand laadt, door de structuur navigeert en attributen en tekstinhoud leest.
 
 ```basic
@@ -41,7 +36,6 @@ End If
 In de bovenstaande voorbeeldcode creëren we een instantie van `MSXML2.DOMDocument60`, laden we een XML-bestand en controleren we op fouten. Als er geen fouten gevonden zijn, navigeren we naar een specifieke node met behulp van XPath en tonen we de tekstinhoud ervan.
 
 ## Diepere Duik:
-
 De integratie van XML-mogelijkheden in VBA gaat terug tot de vroege jaren 2000, toen de behoefte begon te groeien voor Office-applicaties om te interageren met webgegevens en -services. De `MSXML`-bibliotheek, of Microsoft XML Core Services, is in de loop der jaren geëvolueerd, met `MSXML2.DOMDocument60` als een van de laatste aanbevolen versies voor gebruik vanwege de verbeterde prestaties en veiligheidskenmerken.
 
 Hoewel krachtig, worden de XML-behandelingsmogelijkheden van VBA als minder efficiënt en omslachtiger beschouwd in vergelijking met moderne programmeeromgevingen zoals Python's XML.etree of C#'s LINQ to XML. De inherente langdradigheid van VBA en de vereiste om handmatig referenties toe te voegen en te beheren, kunnen snelle ontwikkeling afschrikken. Verder, met de komst van JSON als een lichter data-uitwisselingsformaat, verschuiven veel programmeurs en applicaties weg van XML, tenzij interoperabiliteit met oudere systemen of specifieke bedrijfsservices het gebruik ervan noodzakelijk maakt.

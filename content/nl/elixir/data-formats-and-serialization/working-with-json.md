@@ -13,11 +13,7 @@ title: Werken met JSON
 weight: 38
 ---
 
-## Wat & Waarom?
-JSON (JavaScript Object Notatie) is een lichtgewicht data-uitwisselingsformaat dat gemakkelijk te lezen en schrijven is voor mensen en gemakkelijk te ontleden en genereren is voor machines. Programmeurs werken met JSON om gegevens uit te wisselen tussen servers en webapplicaties, configuratie op te slaan, of data te serialiseren voor netwerkcommunicatie.
-
 ## Hoe:
-
 Om met JSON in Elixir om te gaan, gebruiken we bibliotheken zoals `Jason` of `Poison`. Hier is een snelle handleiding met `Jason`:
 
 ```elixir
@@ -53,7 +49,6 @@ Uitvoer:
 ```
 
 ## Diepe Duik
-
 JSON werd voorgesteld door Douglas Crockford in het begin van de jaren 2000. Het kreeg snel adoptie vanwege zijn eenvoud ten opzichte van XML.
 
 Alternatieven? Zeker—XML, YAML, of Protocol Buffers, maar JSON heerst vanwege de eenvoud en native ondersteuning in JavaScript.
@@ -61,7 +56,6 @@ Alternatieven? Zeker—XML, YAML, of Protocol Buffers, maar JSON heerst vanwege 
 Onder de motorkap converteren JSON-bibliotheken Elixir-datatypes naar JSON-strings en vice versa. Elixir's patroon matching en robuuste standaard bibliotheek maken het coderings- en decoderingsproces soepel.
 
 ## Zie Ook
-
 - Jason GitHub: https://github.com/michalmuskala/jason
 - Poison GitHub: https://github.com/devinus/poison
 - Elixir School JSON lessen: https://elixirschool.com/en/lessons/specifics/jason/

@@ -10,9 +10,6 @@ title: Removing quotes from a string
 weight: 9
 ---
 
-## What & Why?
-Stripping quotes from a string means peeling away those double or single quote marks that wrap around text values. Programmers often do this to clean up user input, to ensure consistency in data processing, or to prep data for systems that might get confused by those extra characters.
-
 ## How to:
 Ruby's got some neat tricks up its sleeve for snipping out those pesky quotation marks. You can use `gsub` or `delete` methods to get the job done. Here's some code to chew on:
 

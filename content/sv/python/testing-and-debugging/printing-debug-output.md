@@ -11,9 +11,6 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## Vad & Varför?
-Att skriva ut debuginformation innebär att visa vad som händer i din kod under körningen. Programmerare gör detta för att förstå flödet, hitta buggar och optimera prestandan.
-
 ## How to:
 Du kan använda `print()` för enklast möjliga debug:
 

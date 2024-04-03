@@ -11,9 +11,6 @@ title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## What & Why? (Co i dlaczego?)
-Konwersja łańcucha znaków na małe litery oznacza zmianę wszystkich wielkich liter w tekście na ich małe odpowiedniki. Robimy to, by ujednolicić dane przed ich porównaniem lub przetworzeniem, zwłaszcza gdy wielkość liter nie ma znaczenia.
-
 ## How to: (Jak to zrobić:)
 ```Arduino
 void setup() {

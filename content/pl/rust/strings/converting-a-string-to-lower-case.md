@@ -12,9 +12,6 @@ title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## What & Why? (Co i Dlaczego?)
-Zmiana łańcucha znaków na małe litery oznacza przekształcenie wszystkich wielkich liter w danym ciągu na ich odpowiedniki w dolnym rejestrowie. Programiści robią to dla jednolitości danych, łatwiejszego porównywania tekstów i spełnienia specyficznych wymagań aplikacji.
-
 ## How to: (Jak to zrobić:)
 ```Rust
 fn main() {
@@ -29,6 +26,7 @@ Output:
 Oryginał: Witaj Świecie!
 Małe litery: witaj świecie!
 ```
+
 ## Deep Dive (Dogłębna analiza)
 W Rust, metoda `.to_lowercase()` powstała z potrzeby uniwersalnego konwertera tekstu. Umożliwia precyzyjną zmianę na małe litery, nawet w przypadku skomplikowanych przypadków z Unicode. Alternatywą jest własnoręczne iterowanie po znakach i używanie metody `.to_ascii_lowercase()`, którą jednak warto stosować tylko gdy pracujemy z ASCII.
 

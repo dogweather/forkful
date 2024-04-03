@@ -11,9 +11,6 @@ title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---
 
-## What & Why? (Co i Dlaczego?)
-Konwersja daty na łańcuch znaków pozwala na łatwą prezentację i archiwizację danych czasowych. Programiści robią to, aby ułatwić ludziom czytanie i interpretację dat, jak również umożliwić ich przetwarzanie przez inne systemy.
-
 ## How to (Jak to zrobić):
 ```Elixir
 # Przykład konwersji daty na łańcuch znaków w Elixirie

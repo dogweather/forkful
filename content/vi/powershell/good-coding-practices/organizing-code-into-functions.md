@@ -16,9 +16,6 @@ title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---
 
-## Cái gì và Tại sao?
-Tổ chức mã thành các hàm là việc đóng gói các khối mã thực hiện các nhiệm vụ cụ thể và đặt cho chúng một tên. Việc này được thực hiện để làm cho mã có thể tái sử dụng, dễ đọc và dễ bảo trì. Thay vì viết lại cùng một mã, hãy gọi một hàm. Muốn khắc phục sự cố hoặc nâng cấp? Chỉ cần điều chỉnh hàm mà không cần lục lọi qua đống kịch bản.
-
 ## Làm thế nào:
 Hãy viết một hàm để tính tổng của hai số. Đơn giản, nhưng nó minh họa được ý.
 

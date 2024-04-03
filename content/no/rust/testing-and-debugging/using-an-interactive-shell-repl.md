@@ -11,9 +11,6 @@ title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---
 
-## Hva & Hvorfor?
-Et Rust-interaktivt skall, eller REPL (Read-Eval-Print Loop), lar deg kjøre Rust-kode på sparket, og se umiddelbare resultater, perfekt for eksperimentering eller læring. Programmerere bruker det til å teste kodebiter, feilsøke, eller bare leke med språkfunksjoner uten overhead av å kompilere et helt prosjekt.
-
 ## Hvordan:
 Per nå har ikke Rust en offisiell REPL inkludert. Du kan bruke tredjepartsverktøy som `evcxr_repl`. Installer det med Cargo:
 

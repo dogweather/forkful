@@ -28,12 +28,7 @@ title: "\u092A\u093E\u0920 \u0916\u094B\u091C\u0928\u093E \u0914\u0930 \u092C\u0
 weight: 10
 ---
 
-## क्या और क्यों? (What & Why?)
-
-टेक्स्ट खोजना और बदलना (search and replace) कंप्यूटर में शब्दों या वाक्यों की तलाश करके उन्हें नए से बदलने की प्रक्रिया है। प्रोग्रामर्स इसे बग्स ठीक करने, कोड अपडेट करने या डेटा संशोधन के लिए करते हैं।
-
 ## कैसे करें? (How to:)
-
 Fish Shell में टेक्स्ट खोजने और बदलने के लिए `string` कमांड का इस्तेमाल होता है:
 
 ```Fish Shell
@@ -54,11 +49,9 @@ string replace -a "Fish" "हिंदी Fish" < example.txt > temp.txt; and mv
 ```
 
 ## गहरी जानकारी (Deep Dive)
-
 Fish Shell की `string` कमांड 2015 में रिलीज Fish 2.3.0 में आई थी। पहले, टेक्स्ट खोजने/बदलने के लिए `sed` और `awk` जैसे यूनिक्स उपकरणों पर निर्भर थे। `string` इस्तेमाल करने का फायदा इसकी सादगी और स्पष्टता में है। इसमें नियमित अभिव्यक्तियों (regexes) का समर्थन भी है जो कि जटिल पैटर्न के साथ भी खोजने/बदलने को सक्षम बनाता है।
 
 ## संबंधित स्रोत (See Also)
-
 - Fish Shell डॉक्यूमेंटेशन: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
 - RegEx testing: [https://regex101.com/](https://regex101.com/)
 - स्ट्रिंग ऑपरेशंस ट्यूटोरियल: [https://fishshell.com/docs/current/commands.html#string](https://fishshell.com/docs/current/commands.html#string)

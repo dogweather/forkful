@@ -10,10 +10,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---
 
-## What & Why?
-"Mitä ja Miksi?"
-Muuttaminen päivämäärät merkkijonoksi tarkoittaa päivämäärän esittämistä luettavassa muodossa. Ohjelmoijat tekevät tämän, jotta päivämäärät olisivat ihmisille ymmärrettäviä ja ne voisi esittää käyttöliittymissä.
-
 ## How to:
 "Näin Tehdään:"
 ```Elm

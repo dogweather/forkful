@@ -12,9 +12,6 @@ title: Enviando una solicitud http
 weight: 44
 ---
 
-## ¿Qué y por qué?
-Enviar una solicitud HTTP permite a tu programa hablar con otros sistemas a través de la web; es como enviar un mensaje que pide datos o que ejecute una acción. Los programadores lo hacen para interactuar con servicios web, APIs o para comunicarse entre distintas partes de una aplicación distribuida.
-
 ## Cómo hacerlo:
 PowerShell facilita el envío de solicitudes HTTP con los cmdlets `Invoke-WebRequest` e `Invoke-RestMethod`. Aquí te muestro cómo usarlos.
 

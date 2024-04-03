@@ -14,9 +14,6 @@ title: Obteniendo la fecha actual
 weight: 29
 ---
 
-## Qué y Por qué
-Obtener la fecha actual en proyectos de Arduino implica la adquisición de información en tiempo real que puede ser crucial para el registro, estampado de tiempo o programación de tareas. Los programadores a menudo necesitan esta capacidad para mejorar la funcionalidad, asegurar la relevancia de los datos y facilitar operaciones sensibles al tiempo en sus proyectos de IoT y sistemas embebidos.
-
 ## Cómo hacerlo:
 Arduino por sí mismo no tiene un método incorporado para obtener directamente la fecha actual, ya que carece de un reloj en tiempo real (RTC por sus siglas en inglés). Sin embargo, esto se puede lograr utilizando módulos externos de RTC como el DS3231 y bibliotecas como `RTClib`, desarrollada por Adafruit, lo que facilita la interfaz con estos módulos.
 

@@ -13,12 +13,7 @@ title: Een nieuw project starten
 weight: 1
 ---
 
-## Wat & Waarom?
-
-Een nieuw project opstarten in Go houdt in dat je een werkruimte opzet en deze initialiseert met de benodigde Go modules. Programmeurs doen dit om code te organiseren, afhankelijkheden effectief te beheren en bouwprocessen te vergemakkelijken. Het is fundamenteel voor het creëren van schaalbare en onderhoudbare software in Go.
-
 ## Hoe:
-
 Zorg er eerst voor dat je Go geïnstalleerd hebt door `go version` in je terminal te draaien. Je zou de geïnstalleerde versie van Go als output moeten zien. Ga nu naar je werkruimte om een nieuw project te starten en voer uit:
 
 ```shell
@@ -73,7 +68,6 @@ Hallo, Wereld!
 Gefeliciteerd! Je hebt zojuist een nieuw Go project opgestart en je eerste Go programma uitgevoerd.
 
 ## Diepere Duik
-
 Het initiatief om modules als de standaard voor afhankelijkhedenbeheer in Go te introduceren was een significante verschuiving in het Go ecosysteem, officieel aangenomen in Go 1.11. Voor modules vertrouwden Go ontwikkelaars op de GOPATH-omgevingsvariabele om afhankelijkheden te beheren, wat minder intuïtief was en vaak leidde tot de beruchte "afhankelijkheidshel."
 
 Modules bieden een ingekapselde manier om projectafhankelijkheden te beheren, versiebeheer uit te voeren, en zijn een stap richting het maken van meer zelfstandige en draagbare Go projecten. Elke module specificeert zijn afhankelijkheden die Go bijhoudt in het `go.mod` bestand, waardoor het beheer van afhankelijkheden in verschillende omgevingen en ontwikkelingsstadia wordt vereenvoudigd.

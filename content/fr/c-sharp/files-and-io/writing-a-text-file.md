@@ -15,9 +15,6 @@ title: "R\xE9diger un fichier texte"
 weight: 24
 ---
 
-## Quoi et pourquoi ?
-Écrire un fichier texte en C# implique de créer ou de modifier programmiquement des fichiers textes sur le système de fichiers - une tâche fondamentale pour de nombreuses applications, telles que la journalisation, l'exportation de données, ou la gestion de configuration. Les programmeurs réalisent cette opération pour persister les données entre les sessions, partager des informations à travers les systèmes, ou stocker des sorties lisibles par l'homme.
-
 ## Comment faire :
 C# simplifie les opérations sur les fichiers avec son espace de noms `System.IO`, fournissant des méthodes directes pour écrire des fichiers textes. Voici comment écrire un fichier texte de base et ajouter du texte à un fichier existant.
 

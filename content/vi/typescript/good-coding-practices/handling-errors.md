@@ -16,9 +16,6 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Cái gì & Tại sao?
-Xử lý lỗi là việc dự đoán những điều bất ngờ; đó là cách chúng ta quản lý khi có điều gì đó không đúng trong code của mình. Chúng ta làm vậy để tránh crash và để người dùng có trải nghiệm mượt mà, ngay cả khi điều bất ngờ xảy ra.
-
 ## Làm thế nào:
 Trong TypeScript, xử lý lỗi thường liên quan đến các khối `try`, `catch`, và `finally`.
 

@@ -11,9 +11,6 @@ title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## Vad & Varför?
-HTTP-begäran skickar data till server för att hämta eller ändra resurser. Programmerare skickar dessa för att interagera med webbtjänster och API:er.
-
 ## Hur man gör:
 ```Arduino
 #include <ESP8266WiFi.h>

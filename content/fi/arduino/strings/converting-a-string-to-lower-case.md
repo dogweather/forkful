@@ -9,9 +9,6 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## Mikä & Miksi?
-Muuttaminen merkkijonosta pieniksi kirjaimiksi muuntaa kaikki kirjaimet pieniksi. Tämä auttaa vertailemaan ja käsittelemään merkkijonoja tapausriippumattomasti.
-
 ## Kuinka tehdä:
 Arduino-koodissa merkkijonon muuttaminen pieniksi kirjaimiksi on suoraviivaista. `String`-luokalla on `toLowerCase()`-metodi. Tässä on esimerkki:
 

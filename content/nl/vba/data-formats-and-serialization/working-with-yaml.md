@@ -12,12 +12,7 @@ title: Werken met YAML
 weight: 41
 ---
 
-## Wat & Waarom?
-
-YAML, wat staat voor "YAML Ain't Markup Language", is een voor mensen leesbare gegevensserialisatietaal die vaak wordt gebruikt voor configuratiebestanden. Programmeurs gebruiken het vaak vanwege de eenvoud en leesbaarheid in een verscheidenheid aan programmeeromgevingen, inclusief in het scriptingdomein van Visual Basic for Applications (VBA) om de interoperabiliteit, en gegevensopslag en -uitwisseling te verbeteren.
-
 ## Hoe te:
-
 Werken met YAML in VBA vereist begrip van hoe YAML geparseerd en geconverteerd kan worden naar een formaat dat VBA gemakkelijk kan manipuleren, meestal woordenboeken of collecties. Helaas ondersteunt VBA YAML-parsing of serialisatie niet van nature. Echter, je kunt een combinatie van JSON-conversiehulpmiddelen en dictionary-objecten gebruiken om met YAML-gegevens te werken, rekening houdend met de nauwe relatie tussen YAML en JSON.
 
 Converteer eerst je YAML-gegevens naar JSON met behulp van een online converter of een YAML-naar-JSON-conversiehulpmiddel binnen je ontwikkelomgeving. Eenmaal geconverteerd, kun je het volgende voorbeeld gebruiken om JSON in VBA te parsen, erop wijzend dat deze aanpak je indirect toestaat om met YAML te werken:
@@ -48,7 +43,6 @@ End Function
 In dit voorbeeld is de `JsonParser` functie een stand-in voor waar je de JSON zou parsen. Verschillende bibliotheken zijn beschikbaar om te helpen met JSON-parsing, aangezien directe YAML-parsingbibliotheken voor VBA schaars zijn.
 
 ## Diep Duiken
-
 De afwezigheid van directe YAML-handeling in VBA kan worden toegeschreven aan de leeftijd ervan en de omgeving waarvoor het is gebouwd, die oorspronkelijk niet was ontworpen met moderne gegevensserialisatieformaten in gedachten. YAML zelf kwam naar voren als een populair configuratie- en serialisatieformaat in de vroege jaren 2000, samenvallend met de opkomst van applicaties die meer mensvriendelijke configuratiebestanden vereisen.
 
 Programmeurs maken doorgaans gebruik van externe hulpmiddelen of bibliotheken om de kloof tussen VBA en YAML te overbruggen. Dit houdt vaak in dat YAML naar JSON wordt geconverteerd, zoals getoond, vanwege de beschikbare JSON-ondersteuning via verschillende bibliotheken en de overeenkomst tussen JSON en YAML qua structuur en doel.

@@ -9,9 +9,6 @@ title: Einen neuen Projekt starten
 weight: 1
 ---
 
-## Was & Warum?
-Ein neues Projekt zu beginnen bedeutet, etwas von Grund auf neu zu erstellen. Programmierer starten neue Projekte, um Ideen umzusetzen, Probleme zu lösen oder einfach um Neues zu lernen.
-
 ## How to:
 ```Lua
 -- Ein einfaches Hello World Programm in Lua

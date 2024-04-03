@@ -14,12 +14,7 @@ title: Capitalizando una cadena de caracteres
 weight: 2
 ---
 
-## ¿Qué y por qué?
-
-Capitalizar una cadena implica transformar el primer carácter de una cadena dada a mayúsculas si está en minúsculas, asegurando que la cadena destaque o se adhiera a normas gramaticales específicas. Los programadores realizan frecuentemente esta operación para formatear las entradas de usuarios, mostrar nombres propios o asegurar la consistencia de los datos a través de las aplicaciones de software.
-
 ## Cómo hacerlo:
-
 En Go, el paquete `strings` no proporciona una función directa para capitalizar solo la primera letra de una cadena. Por lo tanto, combinamos la función `strings.ToUpper()`, que convierte una cadena a mayúsculas, con el uso de segmentación (slicing) para lograr nuestro objetivo. Aquí está cómo hacerlo:
 
 ```go
@@ -54,7 +49,6 @@ func main() {
 Esta función verifica si la cadena está vacía o si el primer carácter ya está en mayúsculas. Usa el paquete `unicode/utf8` para manejar correctamente los caracteres Unicode, asegurando que nuestra función funcione con una amplia gama de entradas más allá del ASCII básico.
 
 ## Estudio detallado
-
 La necesidad de capitalizar cadenas en Go sin una función incorporada podría parecer una limitación, especialmente para los programadores que vienen de lenguajes donde las funciones de manipulación de cadenas son más completas. Esta restricción fomenta la comprensión del manejo de cadenas y la importancia del Unicode en el desarrollo de software moderno.
 
 Históricamente, los lenguajes de programación han evolucionado en su tratamiento de cadenas, y los lenguajes más antiguos a menudo pasaban por alto la internacionalización. El enfoque de Go, aunque requiere un poco más de código para tareas aparentemente simples, asegura que los desarrolladores sean conscientes de los usuarios globales desde el principio.

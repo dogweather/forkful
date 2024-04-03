@@ -14,12 +14,7 @@ title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---
 
-## Cái gì & Tại sao?
-
-Nối chuỗi có nghĩa là ghép chúng lại với nhau - "hello" + "world" trở thành "helloworld". Lập trình viên làm điều này để xây dựng văn bản, như là URL, thông điệp, hoặc kết quả dựa trên nhập liệu của người dùng hoặc dữ liệu chương trình.
-
 ## Làm thế nào:
-
 Clojure làm cho việc nối chuỗi trở nên dễ dàng với hàm `str`. Hãy cùng khám phá ngay:
 
 ```clojure
@@ -43,7 +38,6 @@ Clojure làm cho việc nối chuỗi trở nên dễ dàng với hàm `str`. H�
 Tuyệt, vậy là bạn đã thấy nó hoạt động. Chỉ cần nhớ rằng hàm `str` làm việc với bất kỳ giá trị nào bằng cách gọi `toString` trên nó. Nếu nó là nil, bạn sẽ nhận được chuỗi "nil".
 
 ## Khám phá Sâu hơn
-
 Lịch sử, việc nối chuỗi đã tồn tại kể từ khi chúng ta cần xử lý văn bản một cách lập trình, và mỗi ngôn ngữ đều cung cấp những phương pháp của riêng mình. Trong Clojure, `str` là một phần của thư viện cốt lõi, được giới thiệu vì sự đơn giản và tính đồng nhất.
 
 Có phương pháp thay thế cho `str` không? Có! `StringBuilder` có thể hiệu quả hơn đối với việc nối nhiều chuỗi, đặc biệt trong các vòng lặp. Clojure có thể gọi các phương thức Java, vì vậy bạn cũng có thể sử dụng `StringBuilder` như sau:
@@ -63,7 +57,6 @@ Tại sao không luôn sử dụng `StringBuilder`? Đối với hầu hết cá
 Về mặt triển khai, vì Clojure được hosting trên JVM, nó hưởng lợi từ khả năng xử lý chuỗi của Java. Tuy nhiên, giống như trong các `String` của Java, mỗi lần gọi `str` tạo ra một `String` mới, điều này có thể là một yếu tố cần cân nhắc về bộ nhớ.
 
 ## Xem Thêm
-
 - Tài liệu hàm `str` của Clojure: [Clojure Strings](https://clojuredocs.org/clojure.core/str)
 - `StringBuilder` của Java: [Tài liệu StringBuilder](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuilder.html)
 - Hướng dẫn Clojure thực tế về `str` và nhiều hơn: [Clojure for the Brave and True](https://www.braveclojure.com/clojure-for-the-brave-and-true/)

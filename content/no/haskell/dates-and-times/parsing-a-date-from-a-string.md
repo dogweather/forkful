@@ -14,12 +14,7 @@ title: Analysering av en dato fra en streng
 weight: 30
 ---
 
-## Hva & Hvorfor?
-
-Å analysere en dato fra en streng i Haskell innebærer å konvertere tekstuelle representasjoner av datoer til et strukturert format som programmet kan manipulere. Denne prosessen er grunnleggende for applikasjoner som håndterer kalenderdata, noe som muliggjør funksjoner som å beregne varigheter, planlegging og datavalidering.
-
 ## Hvordan:
-
 Rett ut av boksen tilbyr Haskell grunnleggende verktøy for å analysere datoer, men å dra nytte av biblioteker som `time` for kjernens funksjonalitet og `date-parse` eller `time-parse` for mer fleksibel parsing kan betydelig forenkle oppgaven.
 
 Først, sørg for at du har `time` biblioteket tilgjengelig; det er ofte inkludert med GHC, men hvis du trenger å spesifisere det som en avhengighet, legg `time` til ditt prosjekts cabal-fil eller bruk `cabal install time` for å manuelt installere det.

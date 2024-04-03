@@ -12,12 +12,7 @@ title: Werken met CSV
 weight: 37
 ---
 
-## Wat & Waarom?
-
-Werken met CSV (Comma-Separated Values), oftewel komma-gescheiden waarden, betekent het verwerken van tabelgegevens opgeslagen in een platte-tekstformaat. Programmeurs doen dit omdat het omgaan met CSV een veel voorkomende behoefte is voor gegevensuitwisseling en snelle opslag, aangezien het leesbaar, eenvoudig en ondersteund wordt door talrijke tools.
-
 ## Hoe?
-
 Laten we onze mouwen opstropen en een CSV-bestand parsen in Clojure.
 
 ```Clojure
@@ -51,11 +46,9 @@ Om gegevens naar een CSV-bestand te schrijven:
 Dit schrijft de gegeven rijen naar `output.csv`.
 
 ## Diepere Duik
-
 De omgang met CSV in Clojure is vrij eenvoudig vergeleken met andere talen - geen extra franje. Historisch gezien maakte de eenvoud van CSV het wijdverspreid voor gegevensuitwisseling, en dateert het van voor vele gegevensformaten. Alternatieven zijn onder andere JSON, XML, of YAML, maar CSV wint waar eenvoud of compatibiliteit met spreadsheets sleutel is. De `clojure.data.csv` bibliotheek biedt het gereedschap voor CSV-parsing en -schrijven, gebouwd op de efficiënte I/O-stromen van Java voor goede prestaties.
 
 ## Zie Ook
-
 1. De CSV-bibliotheek van Clojure: [https://github.com/clojure/data.csv](https://github.com/clojure/data.csv)
 2. Lees meer over CSV: [https://tools.ietf.org/html/rfc4180](https://tools.ietf.org/html/rfc4180)
 3. Voor een duik in Clojure: [https://clojure.org/](https://clojure.org/)

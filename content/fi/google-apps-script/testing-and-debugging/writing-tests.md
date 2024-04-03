@@ -13,12 +13,7 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mikä & Miksi?
-
-Testien kirjoittaminen Google Apps Scriptillä (GAS) tarkoittaa automatisoitujen skriptien luomista koodisi käyttäytymisen varmistamiseksi, jotta ne toimivat odotetulla tavalla eri olosuhteissa. Ohjelmoijat tekevät näin varhaisvaiheessa esiintyvien virheiden havaitsemiseksi, koodin laadun parantamiseksi ja päivitysten sekä ylläpidon helpottamiseksi.
-
 ## Miten:
-
 Vaikka Google Apps Scriptillä ei ole sisäänrakennettua testausympäristöä kuten joissakin muissa ohjelmointiympäristöissä, voit silti kirjoittaa ja suorittaa testejä hyödyntämällä yksinkertaisia GAS-funktioita tai integroimalla ulkoisia testikirjastoja, kuten `QUnit`. Tässä on perusesimerkki, joka käyttää yksinkertaista GAS-funktiota toisen skriptisi funktion testaamiseen:
 
 ```javascript
@@ -56,7 +51,6 @@ QUnit.test("Testataan add-funktiota", function (assert) {
 Nähdäksesi tulokset, avaa HTML-tiedosto GAS-komentosarjaeditorissa tai julkaise se web-sovelluksena.
 
 ## Syväsukellus
-
 Historiallisesti Google Apps Scriptin testaaminen on jäänyt jokseenkin sivuun, luultavasti alustan alkuperän ja pääkäyttötapauksien keskittymisen nopeisiin, pienimuotoisiin automaatiotehtäviin eikä suuriin sovelluksiin vuoksi. GAS ei siis tarjoa samoja vankkoja testauskehyksiä ja -työkaluja kuin perinteisemmissä ohjelmointiympäristöissä. Kuitenkin yhteisö on sopeutunut sisällyttämällä avoimen lähdekoodin kirjastoja ja hyödyntämällä luovasti Googlen olemassa olevia työkaluja.
 
 Kirjastojen, kuten QUnitin, käyttö edustaa merkittävää askelta eteenpäin, mutta tuo mukanaan omat haasteensa, kuten sopivan testausympäristön pystyttämisen ja lisäsyntaksin opettelun. Kuitenkin niille, jotka ovat sitoutuneita kehittämään monimutkaisempia ja luotettavampia sovelluksia GAS:lla, ponnistelut ovat sen arvoisia.

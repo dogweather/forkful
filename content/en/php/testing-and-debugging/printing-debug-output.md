@@ -11,9 +11,6 @@ title: Printing debug output
 weight: 33
 ---
 
-## What & Why?
-Printing debug output is about slapping your code's internal data onto the screen to figure out what's going on. Programmers do it for a sanity check, to spot where the bugs are hiding or just to see if the code is doing what it's supposed to.
-
 ## How to:
 ```PHP
 <?php

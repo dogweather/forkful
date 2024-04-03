@@ -10,9 +10,6 @@ title: Starting a new project
 weight: 1
 ---
 
-## What & Why?
-Starting a new project means you're setting up the groundwork for your brilliant idea. Programmers kick things off to transform concepts into code that practically does something useful.
-
 ## How to:
 ```Lua
 -- Let's get cooking with a new Lua project

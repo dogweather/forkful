@@ -21,12 +21,7 @@ title: "\u4E00\u6642\u30D5\u30A1\u30A4\u30EB\u306E\u4F5C\u6210"
 weight: 21
 ---
 
-## What & Why? (何となぜ？)
-
-一時ファイルはデータを一時的に保存するために作成されるファイルです。プログラマーはデータの処理中にディスク上で安全に操作したい時や、大量のデータを一時的に扱うためにこれを使います。
-
 ## How to: (やり方)
-
 ```Clojure
 (require '[clojure.java.io :as io])
 
@@ -41,7 +36,6 @@ weight: 21
 ```
 
 ## Deep Dive (深く掘り下げて)
-
 一時ファイルの概念は、システムが不安定になりがちな初期のコンピューティング時代に起源を持ちます。データ保護とシステムの安定性を高めるために導入されました。
 
 Clojureでは`clojure.java.io`ライブラリの`create-temp-file`関数を使って一時ファイルを簡単に作成できます。これはJavaの`File.createTempFile`メソッドをラップしているため、Javaプラットフォームでの実績ある方法です。
@@ -49,7 +43,6 @@ Clojureでは`clojure.java.io`ライブラリの`create-temp-file`関数を使�
 代替方法として、特定のディレクトリに自分で一時ファイルを管理することもできますが、`create-temp-file`は名前の衝突を避け、システムのテンポラリフォルダを自動で使うため、通常のベストプラクティスです。
 
 ## See Also (関連情報)
-
 - [Clojure Docs - clojure.java.io library](https://clojuredocs.org/clojure.java.io)
 - [Java Platform SE - Class File](https://docs.oracle.com/javase/7/docs/api/java/io/File.html#createTempFile(java.lang.String,%20java.lang.String))
 - [Clojure from the ground up - I/O](https://aphyr.com/posts/309-clojure-from-the-ground-up-io)

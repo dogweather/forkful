@@ -12,9 +12,6 @@ title: Lokitus
 weight: 17
 ---
 
-## Mikä & Miksi?
-Ohjelmoinnissa lokitus tarkoittaa käytännössä murusten jättämistä jälkeensa tapahtumien tai viestien muodossa, jotka auttavat seuraamaan, mitä sovelluksessasi tapahtuu milloinkin. Ohjelmoijat tekevät sitä vikojen jäljitykseen, järjestelmän suorituskyvyn valvontaan sekä turvallisuuden ja vaatimustenmukaisuuden seurantaan.
-
 ## Kuinka:
 Haskellissa lokituksen voi toteuttaa käyttämällä kirjastoja kuten `monad-logger` tai `hslogger`. Tässä pikainen esimerkki käyttäen `monad-logger`-kirjastoa:
 

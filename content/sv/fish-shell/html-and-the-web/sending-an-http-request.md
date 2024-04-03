@@ -11,9 +11,6 @@ title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-förfrågan innebär att be en webbserver om data eller tjänster. Programmerare gör detta för att interagera med webbapplikationer, hämta information eller använda APIs.
-
 ## How to:
 I Fish Shell kan du använda `curl` eller `wget` för att skicka HTTP-förfrågningar. Här är två snabba exempel:
 

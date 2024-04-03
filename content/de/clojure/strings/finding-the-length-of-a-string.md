@@ -10,9 +10,6 @@ title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---
 
-## Was & Warum?
-Die Länge eines Strings zu ermitteln, bedeutet, die Anzahl der Zeichen in diesem String zu zählen. Programmierer tun das, um Textverarbeitungsaufgaben durchzuführen, wie Datenvalidierung oder um Speicheranforderungen abzuschätzen.
-
 ## So geht's:
 Clojure bietet eine einfache Funktion, `count`, um die Länge eines Strings zu bekommen:
 

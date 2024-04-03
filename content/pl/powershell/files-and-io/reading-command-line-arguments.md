@@ -11,9 +11,6 @@ title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---
 
-## Co i dlaczego?
-W PowerShellu argumenty wiersza poleceń to dane przekazywane do skryptu przy jego wywoływaniu. Programiści używają ich, by dostosować działanie skryptu bez modyfikowania jego kodu - to szybkie i elastyczne rozwiązanie.
-
 ## Jak to zrobić:
 ```PowerShell
 # Przykład skryptu 'hello.ps1', który przyjmuje argumenty

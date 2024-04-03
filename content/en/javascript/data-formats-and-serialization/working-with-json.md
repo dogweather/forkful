@@ -10,11 +10,8 @@ title: Working with JSON
 weight: 38
 ---
 
-## What & Why?
-
-JSON (JavaScript Object Notation) is a lightweight data-interchange format, easy for humans to read and write and for machines to parse and generate. Programmers use it for storing and transporting data in web applications, making it the backbone of modern API and web services communication.
-
 ## How to:
+
 
 ### Parsing JSON
 To convert a JSON string into a JavaScript object, use `JSON.parse()`.

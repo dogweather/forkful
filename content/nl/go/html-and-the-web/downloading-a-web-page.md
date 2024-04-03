@@ -12,12 +12,7 @@ title: Een webpagina downloaden
 weight: 42
 ---
 
-## Wat & Waarom?
-
-Het downloaden van een webpagina gaat over het ophalen van de HTML-inhoud van een webpagina via het HTTP/HTTPS-protocol. Programmeurs doen dit vaak voor webscraping, data-analyse, of simpelweg om programmatisch met websites te interageren om taken te automatiseren.
-
 ## Hoe:
-
 In Go biedt de standaardbibliotheek krachtige hulpmiddelen voor webverzoeken, met name het `net/http` pakket. Om een webpagina te downloaden, gebruiken we voornamelijk de `http.Get` methode. Hier is een basisvoorbeeld:
 
 ```go
@@ -64,7 +59,6 @@ Dit eenvoudige programma maakt een HTTP GET-verzoek naar de opgegeven URL, leest
 Opmerking: In hedendaagse Go-programmering wordt `ioutil.ReadAll` beschouwd als afgekeurd sinds Go 1.16 ten gunste van `io.ReadAll`.
 
 ## Diepgaande Duik
-
 De Go-taal heeft een ontwerpfilosofie die eenvoud, efficiëntie en betrouwbare foutafhandeling benadrukt. Als het gaat om netwerkprogrammering, en specifiek het downloaden van webpagina's, is Go's standaardbibliotheek, met name `net/http`, efficiënt ontworpen om HTTP-verzoek- en responsoperaties te behandelen.
 
 De benadering van netwerkverzoeken in Go gaat terug naar de oorsprong van de taal, waarbij concepten van voorgangers worden geleend maar aanzienlijk worden verbeterd qua efficiëntie en eenvoud. Voor het downloaden van inhoud maakt Go's concurrency-model met behulp van goroutines het een uitzonderlijk krachtig hulpmiddel voor het maken van asynchrone HTTP-verzoeken, waarmee gemakkelijk duizenden verzoeken parallel worden afgehandeld.

@@ -17,9 +17,6 @@ title: "\u5339\u914D\u6A21\u5F0F\u5220\u9664\u5B57\u7B26"
 weight: 5
 ---
 
-## What & Why? (是什么以及为什么？)
-在编程中，删除字符意味着根据特定模式移除字符串中的一些元素。这通常用于数据清洗，比如去除无用的空格、换行符或者非法字符。
-
 ## How to: (如何操作：)
 Elixir provides the `String` module which contains functions to handle string manipulations. Here's a simple example of deleting characters:
 

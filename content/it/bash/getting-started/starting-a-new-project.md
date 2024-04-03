@@ -10,9 +10,6 @@ title: Avvio di un nuovo progetto
 weight: 1
 ---
 
-## What & Why? (Cosa & Perché?)
-Iniziare un nuovo progetto significa creare una base da cui partire a programmare. I programmatori lo fanno per organizzare e strutturare il codice da zero in modo efficiente e logicamente coerente.
-
 ## How to: (Come fare:)
 Iniziamo creando una cartella per il progetto e poi generiamo un file script Bash di base.
 

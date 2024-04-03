@@ -11,9 +11,6 @@ title: Trovare la lunghezza di una stringa
 weight: 7
 ---
 
-## What & Why?
-Misurare la lunghezza di una stringa significa contare i caratteri che la compongono. I programmatori lo fanno per validare l’input, troncare il testo o semplicemente per analisi.
-
 ## How to:
 PHP ti offre `strlen()` per contare i caratteri. Vediamo come:
 

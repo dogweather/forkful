@@ -13,12 +13,7 @@ title: Usando arrays associativos
 weight: 15
 ---
 
-## O Que & Por Que?
-
-Arrays associativos são como arrays superpotentes que permitem o uso de strings como índices, ao invés de apenas inteiros. Programadores os utilizam para estruturas de dados mais complexas, facilitando o manejo de dados que não se encaixam de forma ordenada em uma lista sequencial.
-
 ## Como Fazer:
-
 Primeiro, declare um array associativo no Bash:
 
 ```Bash
@@ -66,7 +61,6 @@ unset my_array["tema"]
 ```
 
 ## Aprofundamento
-
 Arrays associativos foram introduzidos na versão 4.0 do Bash, tornando-os uma adição relativamente recente à linguagem. Antes de sua introdução, lidar com arrays de índices não inteiros era complicado, muitas vezes requerendo soluções alternativas ou ferramentas externas como `awk` ou `sed`.
 
 Por trás dos panos, o Bash implementa arrays associativos usando tabelas de hash. Essa implementação permite uma busca por chave eficiente, que permanece bastante constante independente do tamanho do array, uma característica crítica para o desempenho na execução de scripts.

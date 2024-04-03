@@ -13,9 +13,6 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## Vad & Varför?
-Att skriva ut felsökning i Visual Basic for Applications (VBA) innebär att man strategiskt placerar utskriftsuttryck inom sin kod för att visa variabelvärden, exekveringsflöde eller anpassade felsökningsmeddelanden. Denna teknik är avgörande för felsökning, eftersom den möjliggör för programmerare att förstå sin kods beteende vid körning och identifiera oväntat beteende eller buggar.
-
 ## Hur man gör:
 I VBA är `Debug.Print`-uttrycket arbetshästen för att skriva ut felsökningsinformation till det Omedelbara Fönstret i Visual Basic Editorn (VBE). För att använda denna funktion effektivt måste du ha det Omedelbara Fönstret synligt (Visa > Omedelbart Fönster eller tryck `Ctrl+G` i VBE).
 

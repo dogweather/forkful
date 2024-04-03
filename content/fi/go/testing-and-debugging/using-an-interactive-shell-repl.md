@@ -14,12 +14,7 @@ title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xE4minen"
 weight: 34
 ---
 
-## Mikä & Miksi?
-
-Interaktiivinen komentotulkki, eli Read-Eval-Print Loop (REPL), mahdollistaa Go-koodin kokeilun reaaliajassa, komentojen suorittamisen ja välittömän palautteen saamisen. Tätä lähestymistapaa käytetään laajalti oppimiseen, vianetsintään ja prototyyppien luontiin, sillä se ohittaa perinteisen muokkaa-käännä-suorita -syklin, tehden kehitysprosessista nopeamman ja intuitiivisemman.
-
 ## Kuinka:
-
 Vaikka Go ei sisälläkään sisäänrakennettua REPL:iä, yhteisö on luonut työkaluja kuten `gore` täyttämään tämän aukon. Asenna `gore` suorittamalla ensin:
 
 ```
@@ -62,7 +57,6 @@ Ympyrän pinta-ala säteellä 4: 50.26548245743669
 ```
 
 ## Syväsukellus:
-
 REPL:n konsepti on ikivanha, jäljittäen juurensa 1960-luvun Lisp-koneisiin, tarjoten interaktiivisen ohjelmointikokemuksen. Toisin kuin kielet kuten Python tai JavaScript, Go suunniteltiin ilman REPL:iä, keskittyen sen sijaan käännetyihin binääreihin suorituskyvyn ja yksinkertaisuuden vuoksi. Tämä heijastaa Gon filosofiaa yksinkertaisuudesta ja sen suunnittelua skaalautuvaa ja ylläpidettävää ohjelmistoa varten.
 
 Kuitenkin, työkalut kuten `gore` tai `goplay` esittelevät Go-yhteisön kekseliäisyyttä tämän aukon ylittämisessä. Nämä työkalut jäsentävät Go-koodia dynaamisesti ja käyttävät `go/eval` -pakettia tai vastaavia mekanismeja suorittaakseen sen reaaliajassa, joskin joitakin rajoituksia verrattuna natiiviin REPL-ympäristöön. Nämä rajoitukset johtuvat Gon tyyppijärjestelmästä ja käännösmallista, jotka voivat tehdä lennossa tapahtuvan arvioinnin haastavaksi.

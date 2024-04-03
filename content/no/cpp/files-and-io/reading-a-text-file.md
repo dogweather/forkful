@@ -11,9 +11,6 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## Hva & Hvorfor?
-Å lese en tekstfil i C++ handler om å få innholdet fra en fil på harddisken inn i programmet ditt. Vi gjør dette for å behandle data, lagre konfigurasjoner, eller laste inn ressurser.
-
 ## Slik gjør du:
 ```C++
 #include <fstream>
@@ -42,7 +39,7 @@ Tredje linje i tekstfilen
 ```
 
 ## Dypdykk
-Å lese filer i C++ går langt tilbake og har endret seg lite med årene. Alternativer til `std::ifstream` inkluderer `FILE` fra C standardbiblioteket og biblioteker som Boost. Implementasjonsdetaljer inkluderer håndtering av ulike filmoduser (som binær eller tekst), og feilsøking med medlemsfunksjonen `std::ios::fail()`. 
+Å lese filer i C++ går langt tilbake og har endret seg lite med årene. Alternativer til `std::ifstream` inkluderer `FILE` fra C standardbiblioteket og biblioteker som Boost. Implementasjonsdetaljer inkluderer håndtering av ulike filmoduser (som binær eller tekst), og feilsøking med medlemsfunksjonen `std::ios::fail()`.
 
 ## Se også
 - C++ fil IO-dokumentasjon: https://en.cppreference.com/w/cpp/io

@@ -10,9 +10,6 @@ title: Einen neuen Projekt starten
 weight: 1
 ---
 
-## Was & Warum?
-Ein neues Projekt anzufangen bedeutet, von Grund auf mit einer frischen Codebasis zu beginnen. Programmierer starten neue Projekte, um Ideen umzusetzen, Probleme zu lösen oder um mit neuen Technologien zu experimentieren.
-
 ## Anleitung:
 Um ein neues Rust-Projekt zu starten, brauchst du `cargo`, den Rust-Paketmanager. Hier ist eine einfache Anleitung, um loszulegen.
 

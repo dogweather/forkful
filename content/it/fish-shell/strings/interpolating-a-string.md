@@ -10,9 +10,6 @@ title: Interpolazione di una stringa
 weight: 8
 ---
 
-## What & Why? (Cosa & Perché?)
-L'interpolazione di stringhe permette di inserire variabili o espressioni all'interno di una stringa di testo. Lo facciamo per costruire dinamicamente stringhe, facilitando l'output personalizzato e la manipolazione dei dati.
-
 ## How to: (Come fare:)
 Ecco come interpolare una stringa in Fish Shell.
 

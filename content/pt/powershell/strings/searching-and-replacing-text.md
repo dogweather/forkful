@@ -11,9 +11,6 @@ title: Pesquisando e substituindo texto
 weight: 10
 ---
 
-## O Quê & Porquê?
-Pesquisar e substituir texto é um processo para encontrar sequências de caracteres e trocá-las por outras. Programadores fazem isso para corrigir erros, atualizar dados ou alterar código de forma eficiente.
-
 ## Como Fazer:
 ```PowerShell
 # Pesquisar e substituir texto em uma string

@@ -10,9 +10,6 @@ title: Einen neuen Projekt starten
 weight: 1
 ---
 
-## Was & Warum?
-Ein neues Projekt zu starten bedeutet, eine frische Codebasis zu initialisieren, in der wir unsere Ideen umsetzen können. Programmierer beginnen neue Projekte, um Lösungen für Probleme zu schaffen, neue Tools zu entwickeln oder einfach, um neue Technologien zu erlernen.
-
 ## How to:
 Zum Starten eines neuen Elixir-Projekts nutzen wir Mix, Elixirs Build-Tool. Hier ein Beispiel:
 

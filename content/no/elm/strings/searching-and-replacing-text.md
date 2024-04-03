@@ -11,9 +11,6 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## What & Why?
-Søk og erstatt er metoden for å finne tekststrenger og bytte dem ut med ny tekst. Programmerere bruker dette for å oppdatere kode, rette feil eller bearbeide data.
-
 ## How to:
 I Elm kan du bruke `String` modulen for å implementere søk og erstatning. Her er et enkelt eksempel:
 

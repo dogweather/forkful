@@ -13,12 +13,7 @@ title: Analisando HTML
 weight: 43
 ---
 
-## O Quê & Porquê?
-
-Analisar HTML em Haskell permite extrair dados, manipular conteúdo HTML ou interagir com páginas web programaticamente. Essa operação é essencial para tarefas como raspagem de web, testes automatizados de aplicações web e mineração de dados a partir de websites - aproveitando o sistema de tipos forte de Haskell e os paradigmas de programação funcional para garantir um código robusto e conciso.
-
 ## Como Fazer:
-
 Para analisar HTML em Haskell, utilizaremos a biblioteca `tagsoup` pela sua simplicidade e flexibilidade. Primeiro, certifique-se de instalar a biblioteca adicionando `tagsoup` ao arquivo cabal do seu projeto ou executando `cabal install tagsoup`.
 
 ```haskell

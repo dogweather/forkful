@@ -11,9 +11,6 @@ title: Protokollierung
 weight: 17
 ---
 
-## Was & Warum?
-Logging in der Softwareentwicklung ist die Technik, Ereignisse aufzuzeichnen, die während des Betriebs eines Programms auftreten, typischerweise in einer Datei oder in einem externen System. Programmierer machen das, um Einblicke in das Verhalten der Software zu gewinnen, Probleme zu diagnostizieren und einen Betriebsverlauf zu dokumentieren, der für das Debugging und die Überwachung der Anwendungsgesundheit entscheidend ist.
-
 ## Wie geht das:
 In Elixir ist der primäre Weg, Informationen zu loggen, durch das eingebaute `Logger`-Modul. So können Sie es verwenden:
 

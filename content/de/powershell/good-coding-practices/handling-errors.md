@@ -10,9 +10,6 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-Fehler in PowerShell zu behandeln bedeutet, Missgeschicke zu antizipieren und sie reibungslos zu verwalten. Programmierer machen dies, um Abstürze zu verhindern und den Nutzern hilfreiches Feedback zu geben.
-
 ## Wie geht das:
 ```PowerShell
 # Grundlegender Try-Catch, um Ausnahmen zu behandeln
@@ -33,6 +30,7 @@ try {
 
 # Verwenden der $Error-Variable, um den letzten Fehler zu untersuchen
 ```
+
 ## Vertiefung
 PowerShell hat seit seiner Einführung als Monad einen langen Weg zurückgelegt. Die Fehlerbehandlung wurde im Laufe der Zeit robuster und bot Funktionen, die ähnlich wie in anderen Programmiersprachen sind. Die `try-catch-finally`-Syntax ist eine solche Übernahme aus Sprachen wie C#. Davor waren Skriptersteller stark darauf angewiesen, Bedingungen zu prüfen und die `$Error`-Automatikvariable zu verwenden.
 

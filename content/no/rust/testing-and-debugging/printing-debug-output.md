@@ -11,9 +11,6 @@ title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---
 
-## Hva & Hvorfor?
-Utskriving av feilsøkingsdata i Rust lar deg se hva som foregår under panseret i koden din. Programmere gjør dette for å spore flyten og oppdage bugs.
-
 ## Hvordan:
 ```Rust
 fn main() {

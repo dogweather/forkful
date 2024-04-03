@@ -12,9 +12,6 @@ title: Scrivere un file di testo
 weight: 24
 ---
 
-## Cosa e Perché?
-Scrivere un file di testo in TypeScript è un'abilità critica per la persistenza dei dati, le configurazioni o la generazione di log. I programmatori spesso eseguono questo compito per memorizzare e manipolare dati al di fuori della memoria dell'applicazione per motivi come l'analisi dei dati, la generazione di report o semplicemente per salvare le impostazioni utente tra le sessioni.
-
 ## Come fare:
 TypeScript di per sé non gestisce direttamente le operazioni sui file poiché viene compilato in JavaScript, che tradizionalmente viene eseguito nel browser con accesso limitato al sistema di file. Tuttavia, quando utilizzato in un ambiente Node.js, il modulo `fs` (File System) offre funzionalità per scrivere file.
 

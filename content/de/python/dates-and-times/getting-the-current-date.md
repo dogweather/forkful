@@ -12,12 +12,7 @@ title: Den aktuellen Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-
-Das Abrufen des aktuellen Datums in Python ist eine Grundoperation für viele Anwendungen, wie Protokollierung, Datenanalyse und zeitbasierte Entscheidungsfindung. Es geht darum, das aktuelle Datum des Systems zu ermitteln, was für Aufgaben, die vom zeitlichen Kontext abhängen, entscheidend ist.
-
 ## Wie geht das:
-
 **Verwendung der Standardbibliothek `datetime`:**
 
 Das `datetime` Modul in Pythons Standardbibliothek bietet Klassen für die Manipulation von Daten und Zeiten. Um das aktuelle Datum zu erhalten, können Sie die Methode `date.today()` verwenden.

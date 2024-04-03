@@ -11,11 +11,7 @@ title: Organizacja kodu w funkcje
 weight: 18
 ---
 
-## Co i dlaczego?
-Organizowanie kodu w funkcje dzieli zadania na wielokrotnie użyteczne części, co sprawia, że kod jest czystszy i łatwiejszy w utrzymaniu. Robimy to, aby zredukować redundancję, ułatwić testowanie i poprawić czytelność.
-
 ## Jak to zrobić:
-
 ```javascript
 // Zdefiniowanie funkcji do obliczenia powierzchni prostokąta
 function calculateArea(width, height) {

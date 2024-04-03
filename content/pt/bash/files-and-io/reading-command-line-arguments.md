@@ -11,9 +11,6 @@ title: Lendo argumentos da linha de comando
 weight: 23
 ---
 
-## O que é e por quê?
-Ler argumentos da linha de comando permite aos scripts em Bash pegar dados externos sem serem estáticos. Os programadores utilizam essas informações para condicionar a execução e adaptar o comportamento dos scripts conforme a necessidade.
-
 ## Como fazer:
 ```Bash
 #!/bin/bash

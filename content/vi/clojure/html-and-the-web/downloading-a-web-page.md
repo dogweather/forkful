@@ -16,9 +16,6 @@ title: "T\u1EA3i trang web"
 weight: 42
 ---
 
-## Cái gì & Tại sao?
-Tải một trang web tức là lấy mã HTML từ một URL để chương trình của bạn có thể tương tác với nó. Các lập trình viên làm điều này để cào dữ liệu, tự động hóa tương tác web hoặc kiểm tra trạng thái trang web.
-
 ## Làm thế nào:
 Trong Clojure, bạn có thể sử dụng `clj-http` để nhanh chóng tải một trang web. Dưới đây là một ví dụ cơ bản:
 

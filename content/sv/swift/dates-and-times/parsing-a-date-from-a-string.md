@@ -13,10 +13,8 @@ title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---
 
-## Vad & Varför?
-Att tolka ett datum från en sträng innebär att konvertera textuella datum- och tidsrepresentationer till ett `Date`-objekt. Denna process är avgörande i applikationer där datum kommuniceras som strängar, till exempel i API-svar eller användarinmatningar, vilket möjliggör enklare hantering och formatering av datum.
-
 ## Hur man gör:
+
 
 ### Använda Foundations `DateFormatter`
 Swifts standardbibliotek, Foundation, tillhandahåller `DateFormatter` för att konvertera strängar till `Date`-objekt och vice versa. För att tolka ett datum från en sträng specificerar du det datumformat som matchar strängen, sedan använder du formateraren för att tolka den.

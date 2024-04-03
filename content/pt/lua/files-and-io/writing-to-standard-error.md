@@ -14,9 +14,6 @@ title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---
 
-## O Que & Por Quê?
-Escrever no erro padrão (stderr) trata de direcionar mensagens de erro e saídas de diagnóstico para um canal separado, distinto da saída padrão (stdout). Programadores fazem isso para diferenciar resultados regulares do programa de informações de erro, otimizando processos de depuração e registro.
-
 ## Como fazer:
 Em Lua, escrever no stderr pode ser alcançado utilizando a função `io.stderr:write()`. Aqui está como você pode escrever uma simples mensagem de erro para o erro padrão:
 

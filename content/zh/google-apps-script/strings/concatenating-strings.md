@@ -18,16 +18,10 @@ title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
 weight: 3
 ---
 
-## 什么和为什么？
-
-字符串连接涉及将两个或多个字符串合并成一个字符串。程序员这样做是为了动态地构建消息、URL或任何需要静态和可变内容混合的文本形式。
-
 ## 如何操作：
-
 在基于JavaScript的Google Apps脚本中，有几种连接字符串的方法。这里有一些常见的方法：
 
 ### 使用加号运算符（`+`）:
-
 ```javascript
 var firstName = "John";
 var lastName = "Doe";
@@ -36,7 +30,6 @@ Logger.log(fullName); // 输出：John Doe
 ```
 
 ### 使用 `concat()` 方法:
-
 ```javascript
 var string1 = "Hello";
 var string2 = "World";
@@ -45,7 +38,6 @@ Logger.log(combinedString); // 输出：Hello World
 ```
 
 ### 使用模板字面量（反引号）:
-
 这是一种现代且灵活的字符串连接方式，允许您轻松地在字符串中嵌入表达式。
 
 ```javascript
@@ -57,7 +49,6 @@ Logger.log(message); // 输出：学习Google Apps脚本很有趣！
 这些方法每一种都有其用途，选择它们之间通常取决于可读性要求以及被连接字符串的复杂性。
 
 ## 深入探讨
-
 字符串连接是Google Apps脚本以及许多编程语言的一个基本方面。历史上，连接字符串通常是使用加号运算符或像`concat()`这样的专门函数/方法来执行的。然而，随着ECMAScript 2015 (ES6)中模板字面量的引入，Google Apps脚本支持，开发者获得了一种更强大且直观的处理字符串的方式。
 
 模板字面量不仅简化了在字符串内嵌入表达式的语法，而且还支持多行字符串而无需显式换行字符。这减少了错误的可能性并提高了代码的可读性，特别是在处理复杂字符串或在文本模板中替换多个变量时。

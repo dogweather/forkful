@@ -10,9 +10,6 @@ title: Suchen und Ersetzen von Text
 weight: 10
 ---
 
-## Was & Warum?
-Textsuche und -ersatz ermöglicht uns, Muster oder spezifische Zeichenketten in einem Text zu finden und durch andere zu ersetzen. Programmierer nutzen diese Funktion, um Daten zu bearbeiten, Fehler zu korrigieren oder Inhalte zu aktualisieren.
-
 ## So geht's:
 Hier ist ein einfaches Beispiel, wie du in TypeScript Text suchen und ersetzen kannst:
 
@@ -45,7 +42,6 @@ console.log(tweet);
 Die Ausgabe wäre ein String mit HTML-Links zu den Hashtags.
 
 ## Siehe auch:
-
 - TypeScript-Dokumentation zur `replace`-Methode: [MDN - String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
 - Regex-Tester und Debugger: [RegExr](https://regexr.com/)
 - Einführung in RegEx in JavaScript: [RegEx Guide](https://www.rexegg.com/regex-quickstart.html)

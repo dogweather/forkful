@@ -14,9 +14,6 @@ title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---
 
-## O quê & Por quê?
-No PowerShell, verificar se um diretório existe é uma tarefa comum que ajuda os scripts a tomarem decisões baseadas na estrutura do sistema de arquivos—como evitar erros ao confirmar que um diretório-alvo está no lugar antes de tentar ler ou escrever nele. É essencial para garantir que seu script se comporte de maneira confiável em ambientes diversos.
-
 ## Como fazer:
 O PowerShell oferece uma maneira direta de verificar a presença de um diretório usando o cmdlet `Test-Path`. Esse cmdlet retorna um valor Booleano indicando se o caminho especificado existe. Veja como você pode usá-lo:
 

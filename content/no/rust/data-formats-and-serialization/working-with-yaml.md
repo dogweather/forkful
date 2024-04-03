@@ -13,12 +13,7 @@ title: Arbeider med YAML
 weight: 41
 ---
 
-## Hva & Hvorfor?
-
-I Rust-programmering handler det å arbeide med YAML (YAML Ain't Markup Language) om å analysere og generere data i YAML-format, en menneskevennlig standard for dataserielisering. Programmerere integrerer YAML-håndtering i Rust for å konfigurere applikasjoner, håndtere innstillinger, eller behandle komplekse datastrukturer i et klart og lesbart format, og utnytter dets enkelhet over JSON eller XML for konfigurasjonsfiler og datautveksling.
-
 ## Hvordan:
-
 Rust støtter ikke YAML i sitt standardbibliotek, så vi bruker vanligvis tredjepartsbiblioteker som `serde` (for serialisering og deserialisering av data) i kombinasjon med `serde_yaml`.
 
 Først, legg til avhengigheter i din `Cargo.toml`:
@@ -32,7 +27,6 @@ serde_yaml = "0.8"
 Nå, la oss se på hvordan man deserialiserer en YAML-streng til en Rust-struktur og serialiserer en Rust-struktur tilbake til en YAML-streng.
 
 ### Deserialisere YAML til Rust-strukturer
-
 Definer en Rust-struktur som speiler dataene du forventer i YAML. Bruk Serde-attributter for tilpasning om nødvendig.
 
 ```rust
@@ -73,7 +67,6 @@ Config { name: "Shield", durability: 300, owner: Owner { name: "Steve", age: 25 
 ```
 
 ### Serialisere Rust-strukturer til YAML
-
 Dette eksemplet tar `Config`-strukturen fra forrige seksjon og serialiserer den tilbake til YAML-format.
 
 ```rust

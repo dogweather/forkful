@@ -17,9 +17,6 @@ title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE3
 weight: 39
 ---
 
-## 무엇 & 왜?
-TOML은 Tom's Obvious, Minimal Language의 약자로, JSON이나 YAML과 유사한 데이터 직렬화 형식이지만 간결함과 가독성을 목표로 합니다. 프로그래머들은 TOML을 구성 파일로 사용하는데, 이는 작성하기 쉽고 이해하기 쉬우며, 파이썬과 같은 프로그래밍 언어에서의 데이터 구조로 깔끔하게 매핑되기 때문입니다.
-
 ## 방법:
 시작하기 전에, `pip install toml`을 사용하여 `toml` 패키지를 설치합시다. TOML 파일을 파싱해 봅시다:
 

@@ -18,9 +18,6 @@ title: "\u30C7\u30D0\u30C3\u30B0\u51FA\u529B\u3092\u8868\u793A\u3059\u308B"
 weight: 33
 ---
 
-## What & Why? (何となぜ？)
-デバッグ出力はバグの原因を見つけるためにプログラムの実行中の変数や状態を表示します。コードの動きを理解し、問題を解決するのに役立ちます。
-
 ## How to: (方法)
 ```TypeScript
 // Basic console.log usage

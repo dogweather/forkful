@@ -12,12 +12,7 @@ title: Tolka HTML
 weight: 43
 ---
 
-## Vad & Varför?
-
-Att tolka (parse:a) HTML handlar om att extrahera data eller information från HTML-innehåll, en vanlig uppgift när man arbetar med webbdata. Programmerare gör detta för att automatisera extraktionen av information från webbplatser, för uppgifter som webbskrapning, datautvinning eller automatiserade tester.
-
 ## Hur:
-
 Fish shell är huvudsakligen inte designat för att direkt parse:a HTML. Däremot är det utmärkt på att sammanfoga Unix-verktyg som `curl`, `grep`, `sed`, `awk`, eller att använda specialiserade verktyg som `pup` eller `beautifulsoup` i ett Python-skript. Nedan följer exempel som visar hur du kan utnyttja dessa verktyg inom Fish shell för att parse:a HTML.
 
 ### Använda `curl` och `grep`:
@@ -35,7 +30,6 @@ Utdata:
 ```
 
 ### Använda `pup` (ett kommandoradsverktyg för att tolka HTML):
-
 Först, se till att `pup` är installerat. Sedan kan du använda det för att extrahera element med deras taggar, id:n, klasser, osv.
 
 ```fish
@@ -45,7 +39,6 @@ curl -s https://example.com | pup 'a attr{href}'
 Utdata, liknande `grep`-exemplet, skulle lista href-attributen för `<a>`-taggar.
 
 ### Med ett Python-skript och `beautifulsoup`:
-
 Medan Fish i sig inte kan parse:a HTML på ett infött sätt, integreras det sömlöst med Python-skript. Nedan är ett koncist exempel som använder Python med `BeautifulSoup` för att parse:a och extrahera titlar från HTML. Se till att du har `beautifulsoup4` och `requests` installerat i din Python-miljö.
 
 **parse_html.fish**

@@ -13,9 +13,6 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## Co i dlaczego?
-Konkatenacja łańcuchów w programowaniu polega na połączeniu dwóch lub więcej łańcuchów w jeden. Programiści robią to, aby łatwiej manipulować danymi tekstowymi, konstruować wiadomości lub dynamicznie składać części interfejsu użytkownika.
-
 ## Jak to zrobić:
 Dart oferuje kilka prostych sposobów na konkatenację łańcuchów. Poniżej znajdują się najczęstsze metody:
 

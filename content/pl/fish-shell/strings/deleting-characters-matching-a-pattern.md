@@ -11,9 +11,6 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## Co i dlaczego?
-Usuwanie znaków pasujących do wzorca to sposób na pozbycie się niechcianych fragmentów tekstu — szybkie cięcie w danych. Programiści robią to, gdy chcą oczyścić dane wejściowe, uszczuplić logi lub szykować dane do dalszego przetwarzania.
-
 ## Jak to zrobić:
 ```
 Fish Shell
@@ -31,7 +28,7 @@ echo "important text to remove" | string match -r -- ".*?(t.*)"
 ```
 
 ## Wnikliwe spojrzenie:
-Fish Shell, który zadebiutował w 2005 roku, jest wygodnym interpreterem z automatycznym uzupełnianiem i kolorowym wyświetlaniem, skupiającym się na użyteczności. Alternatywą jest użycie tradycyjnego Bash czy Zsh z `sed` lub `awk`, ale Fish z jego `string` jest prostrzy w obsłudze. Podczas usuwania znaków, `string replace` oferuje elastyczność dzięki użyciu regexów. 
+Fish Shell, który zadebiutował w 2005 roku, jest wygodnym interpreterem z automatycznym uzupełnianiem i kolorowym wyświetlaniem, skupiającym się na użyteczności. Alternatywą jest użycie tradycyjnego Bash czy Zsh z `sed` lub `awk`, ale Fish z jego `string` jest prostrzy w obsłudze. Podczas usuwania znaków, `string replace` oferuje elastyczność dzięki użyciu regexów.
 
 ## Zobacz również:
 - Oficjalna dokumentacja `string`: https://fishshell.com/docs/current/cmds/string.html

@@ -14,14 +14,10 @@ title: Praca z formatem CSV
 weight: 37
 ---
 
-## Co i dlaczego?
-
-Praca z plikami CSV (Comma-Separated Values, wartości rozdzielone przecinkami) w Google Apps Script polega na odczytywaniu, modyfikowaniu i zapisywaniu plików tekstowych, gdzie każda linia reprezentuje jeden rekord danych z wartościami rozdzielonymi przecinkami. Programiści robią to, aby łatwo wymieniać dane między różnymi aplikacjami, bazami danych lub językami programowania, ze względu na powszechnie przyjętą prostotę CSV jako tekstowego formatu wymiany danych.
-
 ## Jak to zrobić:
 
-### Odczytywanie danych CSV
 
+### Odczytywanie danych CSV
 Aby odczytać dane CSV z pliku przechowywanego w Google Drive, najpierw musisz pobrać zawartość pliku jako ciąg znaków, a następnie ją przeanalizować. Google Apps Script ułatwia pobieranie zawartości pliku dzięki usłudze DriveApp.
 
 ```javascript
@@ -39,7 +35,6 @@ function readCSV() {
 ```
 
 ### Zapisywanie danych CSV
-
 Tworzenie i zapisywanie do pliku CSV wymaga skonstruowania ciągu znaków z wartościami rozdzielonymi przecinkami i nowymi liniami, a następnie zapisania lub wyeksportowania go. Ten przykład demonstruje tworzenie nowego pliku CSV w Google Drive.
 
 ```javascript
@@ -54,7 +49,6 @@ function writeCSV() {
 ```
 
 ### Przykładowe wyniki
-
 Podczas rejestrowania komórek wierszy podczas odczytywania CSV:
 
 ```plaintext
@@ -71,7 +65,6 @@ Jane Smith,34,Designer
 ```
 
 ## Wnikliwe spojrzenie
-
 Historycznie, pliki CSV były cenione za ich prostotę i czytelność dla człowieka, co czyniło je dostępnymi dla nieprogramistów i użytecznymi do szybkiego przeglądania danych. Jednakże Google Apps Script działa w ramach ekosystemu Google, gdzie Google Sheets działa jako potężna, przyjazna dla użytkownika alternatywa dla manipulacji plikami CSV. Arkusze nie tylko zapewniają GUI do edytowania danych, ale także obsługują skomplikowane formuły, style i wiele innych funkcji, których brak w surowych plikach CSV.
 
 Pomimo zalet oferowanych przez Google Sheets, bezpośrednia manipulacja plikami CSV w Google Apps Script pozostaje ważna dla zautomatyzowanych zadań, szczególnie przy pracy z zewnętrznymi systemami generującymi lub wymagającymi danych w formacie CSV. Na przykład, przy integracji z systemami starszego typu, eksportowaniu danych do użytku w innych aplikacjach lub przetwarzaniu wstępnym przed wprowadzeniem danych do Google Sheets.

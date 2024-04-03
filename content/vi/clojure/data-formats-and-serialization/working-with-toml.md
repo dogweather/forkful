@@ -17,9 +17,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---
 
-## Cái gì và Tại sao?
-Làm việc với TOML có nghĩa là bạn đang xử lý dữ liệu theo định dạng "Ngôn ngữ Tối thiểu Hiển nhiên của Tom" (Tom's Obvious, Minimal Language), phổ biến cho các tập tin cấu hình do dễ đọc. Lập trình viên sử dụng nó cho việc quản lý cấu hình đơn giản, hoạt động ngay sau khi được cài đặt với cú pháp thân thiện với con người.
-
 ## Làm thế nào:
 Để làm việc với TOML trong Clojure, bạn cần một thư viện như `clj-toml`. Đầu tiên, thêm nó vào `deps.edn` của bạn:
 

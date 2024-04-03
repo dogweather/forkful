@@ -14,9 +14,6 @@ title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---
 
-## Cái gì & Tại sao?
-Việc lấy ngày hiện tại trong Ruby cực kỳ đơn giản: lấy ngày của hôm nay. Các lập trình viên cần nó cho nhiều tác vụ khác nhau từ ghi log và đánh dấu thời gian cho tới lập lịch và kiểm tra tính hợp lệ.
-
 ## Làm thế nào:
 Ruby giúp việc lấy ngày hiện tại trở nên rất dễ dàng. Dưới đây là cách làm:
 

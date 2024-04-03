@@ -14,9 +14,6 @@ title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---
 
-## ¿Qué y Por Qué?
-Analizar una fecha de una cadena implica convertir representaciones textuales de fechas y horas en un formato que se pueda manipular, almacenar o comparar fácilmente dentro de un programa Lua. Los programadores realizan esta tarea para facilitar operaciones como la programación, el registro o cualquier cálculo temporal y para cerrar la brecha entre los formatos de fecha legibles por humanos y los tipos de datos estructurados que una computadora puede procesar eficientemente.
-
 ## Cómo hacerlo:
 Lua no tiene soporte integrado para la manipulación de fecha y hora más allá de la funcionalidad limitada proporcionada por las funciones `os.date` y `os.time`. Sin embargo, estas pueden aprovecharse para el análisis básico, y para requisitos más complejos, se puede utilizar la biblioteca `luadate`, una biblioteca externa.
 

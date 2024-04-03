@@ -16,9 +16,6 @@ title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---
 
-## Cái gì & Tại sao?
-Tái cấu trúc là quá trình cấu trúc lại mã máy tính hiện có—thay đổi cách phân loại—mà không thay đổi hành vi bên ngoài của nó. Lập trình viên làm điều này để cải thiện các thuộc tính phi chức năng của phần mềm, tăng cường khả năng đọc, giảm phức tạp và làm cho mã dễ bảo trì hơn cho các dự án tương lai.
-
 ## Làm thế nào:
 Hãy xem một lớp Java đơn giản đang cần được tái cấu trúc do tổ chức kém và thiếu rõ ràng.
 

@@ -9,9 +9,6 @@ title: Odczytywanie pliku tekstowego
 weight: 22
 ---
 
-## What & Why? (Co i Dlaczego?)
-JavaScript (JS) often reads text files to process data. Programmers do it to pull in configurations, fetch content, or parse external data.
-
 ## How to: (Jak to zrobić:)
 Reading text files in JS depends on the environment: browser or Node.js. Here are both:
 

@@ -10,9 +10,6 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## What & Why?
-La ricerca e la sostituzione di testo consentono di trovare specifiche stringhe e modificarle con altre. I programmatori lo fanno per aggiornare dati, correggere errori e manipolare grandi quantità di informazioni in modo efficiente.
-
 ## How to:
 Swift offre metodi semplici per ricercare e sostituire testo. Ecco un esempio base:
 

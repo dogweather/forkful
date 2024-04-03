@@ -12,11 +12,8 @@ title: Lavorare con XML
 weight: 40
 ---
 
-## Cosa & Perché?
-
-Lavorare con XML in Go comporta l'analisi (lettura) e la generazione (scrittura) di documenti XML, un formato standard per lo scambio di dati strutturati. I programmatori lo fanno per l'archiviazione dei dati, le impostazioni di configurazione, o lo scambio di dati tra sistemi, specialmente in ambienti dove XML è il formato di dati preferito o legacy.
-
 ## Come fare:
+
 
 ### Analizzare XML in Go
 Per analizzare XML in Go, si utilizza il pacchetto `encoding/xml`. Questo pacchetto fornisce gli strumenti necessari per destrutturare (analizzare) XML in struct di Go. Considera, ad esempio, i seguenti dati XML che rappresentano un libro:
@@ -114,7 +111,6 @@ Output:
 ```
 
 ## Approfondimento
-
 La verbosità e la complessità di XML hanno portato a JSON e altri formati a diventare più popolari per molte applicazioni. Tuttavia, la capacità di XML di rappresentare dati gerarchici complessi e il suo ampio utilizzo in sistemi legacy e domini specifici (ad es., servizi SOAP) ne assicurano la rilevanza.
 
 Il pacchetto `encoding/xml` in Go offre meccanismi potenti per lavorare con XML, ma vale la pena notare le sue limitazioni. Ad esempio, la gestione degli spazi dei nomi XML può essere laboriosa e potrebbe richiedere una comprensione più dettagliata delle specifiche XML rispetto a casi d'uso più semplici. Inoltre, mentre la tipizzazione statica di Go e le capacità di marshaling e unmarshaling del pacchetto `encoding/xml` sono generalmente efficienti, gli sviluppatori potrebbero incontrare sfide con strutture profondamente annidate o quando si tratta di documenti XML che non si mappano ordinatamente sul sistema di tipi di Go.

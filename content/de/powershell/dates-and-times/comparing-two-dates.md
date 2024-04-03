@@ -9,9 +9,6 @@ title: Vergleich von zwei Daten
 weight: 27
 ---
 
-## What & Why?
-Datum-Vergleiche erlauben uns, zwei Zeitpunkte zu vergleichen. Sie sind wichtig, um Zeitabschnitte zu überwachen, Abläufe zu steuern und Deadlines einzuhalten.
-
 ## How to:
 In PowerShell kannst du zwei Datumsobjekte ganz einfach mit Vergleichsoperatoren vergleichen. Hier sind einige Beispiele:
 

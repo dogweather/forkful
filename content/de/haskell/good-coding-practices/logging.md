@@ -12,9 +12,6 @@ title: Protokollierung
 weight: 17
 ---
 
-## Was & Warum?
-Protokollierung in der Programmierung bedeutet im Grunde, eine Spur von Brotkrumen in Form von aufgezeichneten Ereignissen oder Nachrichten zu hinterlassen, die verwendet werden können, um zu verfolgen, was Ihre Anwendung zu jedem gegebenen Zeitpunkt tut. Programmierer machen dies, um Probleme zu debuggen, die Systemleistung zu überwachen und das Verhalten aus Sicherheitsgründen und zur Einhaltung von Compliance zu prüfen.
-
 ## Wie geht das:
 In Haskell kann die Protokollierung unter Verwendung von Bibliotheken wie `monad-logger` oder `hslogger` implementiert werden. Hier ist ein schnelles Beispiel mit `monad-logger`:
 

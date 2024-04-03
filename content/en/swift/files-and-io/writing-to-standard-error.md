@@ -11,12 +11,7 @@ title: Writing to standard error
 weight: 25
 ---
 
-## What & Why?
-
-Writing to standard error (stderr) is about directing your program's error messages or diagnostics output to a separate stream, distinct from the standard output (stdout). This is crucial for debugging and logging errors without cluttering the standard output, facilitating both developers' and users' understanding of the program's state and issues.
-
 ## How to:
-
 In Swift, writing to standard error can be done using the `FileHandle` class for direct stderr access. Here's a simple example:
 
 ```swift

@@ -11,9 +11,6 @@ title: Working with XML
 weight: 40
 ---
 
-## What & Why?
-XML is a markup language for encoding documents in a way that is both human- and machine-readable. It's key in web services, configuration files, and data interchange because it carries data in a structured, hierarchical format.
-
 ## How to:
 Clojure offers the `clojure.data.xml` library for XML parsing and emitting. First, let's parse some XML:
 

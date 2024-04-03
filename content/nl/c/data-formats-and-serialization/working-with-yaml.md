@@ -13,12 +13,7 @@ title: Werken met YAML
 weight: 41
 ---
 
-## Wat & Waarom?
-
-YAML, wat staat voor "YAML Ain't Markup Language", is een voor mensen leesbare standaard voor gegevensserialisatie die voor allerlei toepassingen kan worden gebruikt, van configuratiebestanden tot gegevensopslag. Programmeurs werken vaak met YAML wanneer ze een makkelijk te lezen en te schrijven formaat nodig hebben voor configuratiebestanden of gegevensuitwisseling tussen talen en systemen.
-
 ## Hoe te:
-
 Werken met YAML in C vereist een bibliotheek, aangezien de standaard C-bibliotheek geen directe ondersteuning biedt voor YAML-parsing of -serialisatie. Een van de meest populaire YAML-bibliotheken voor C is `libyaml`, die zowel low-level als high-level interfaces biedt voor het parsen en uitzenden van YAML. Hieronder staat een voorbeeld van hoe je een eenvoudig YAML-bestand kunt parsen met `libyaml`:
 
 **Ten eerste**, moet je de `libyaml`-bibliotheek installeren. Als je op een op Unix lijkend systeem zit, kun je het meestal via je pakketbeheerder installeren. Bijvoorbeeld, op Ubuntu:
@@ -90,7 +85,6 @@ Waarde: false
 ```
 
 ## Diepere Duik
-
 YAML werd voor het eerst uitgebracht in 2001 en is ontworpen om leesbaarder en gebruiksvriendelijker te zijn dan andere gegevensserialisatieformaten zoals XML of JSON, waarbij het leent van verschillende talen zoals C, Perl en Python voor zijn ontwerpfilosofie. Ondanks de voordelen in leesbaarheid en gemak van menselijke aanpassing, kan YAML complex zijn om programmatisch te parsen vanwege het beroep op inspringing en de uitgebreide functionaliteit, inclusief verwijzingen en aangepaste typen.
 
 Hoewel `libyaml` robuuste, low-level toegang biedt tot het parsen en uitzenden van YAML in C, kan het omslachtig zijn voor eenvoudige taken vanwege de uitgebreide API. Om deze redenen geven sommige programmeurs de voorkeur aan het gebruik van hogere-niveau bibliotheken of zelfs andere gegevensserialisatieformaten zoals JSON, wanneer ze in C werken, vooral wanneer performante parsing met minimale code overhead een prioriteit is. Echter, YAML blijft een populaire keuze voor configuratiebestanden en situaties waar menselijke leesbaarheid van het grootste belang is. Alternatieven zoals TinyYAML of het inbedden van een high-level interpreter (bijv. het embedden van Python of Lua) kunnen meer gemak bieden voor specifieke toepassingen, een evenwicht zoekend tussen gebruiksgemak en prestatiebehoeften.

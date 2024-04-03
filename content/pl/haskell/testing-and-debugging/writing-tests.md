@@ -13,16 +13,10 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co & Dlaczego?
-
-Pisanie testów w Haskellu polega na zapewnieniu, że twoje funkcje działają zgodnie z oczekiwaniami poprzez automatyczne kontrole. Programiści robią to, aby wczesne wykrywać błędy, ułatwiać refaktoryzację i dokumentować zachowanie, co czyni bazę kodu bardziej utrzymywalną i skalowalną.
-
 ## Jak to zrobić:
-
 Haskell obsługuje różne frameworki do testowania, ale dwa popularne to `Hspec` i `QuickCheck`. Hspec pozwala definiować ludzko czytelne specyfikacje dla twojego kodu, podczas gdy QuickCheck pozwala automatycznie generować testy, opisując właściwości, które twój kod powinien spełniać.
 
 ### Korzystanie z Hspec
-
 Najpierw dodaj `hspec` do konfiguracji narzędzia budującego (np. `stack.yaml` lub plik `cabal`). Następnie zaimportuj `Test.Hspec` i napisz testy jako specyfikacje:
 
 ```haskell
@@ -51,7 +45,6 @@ Zakończono w 0.0001 sekundy
 ```
 
 ### Korzystanie z QuickCheck
-
 Z QuickCheck wyrażasz właściwości, które twoje funkcje powinny spełniać. Dodaj `QuickCheck` do konfiguracji projektu, a następnie zaimportuj go:
 
 ```haskell

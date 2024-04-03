@@ -14,12 +14,7 @@ title: Arbeiten mit CSV
 weight: 37
 ---
 
-## Was & Warum?
-
-Die Arbeit mit CSV-Dateien (Comma-Separated Values, Werte getrennt durch Kommas) beinhaltet das Parsen und Generieren strukturierter Daten aus Textdateien, bei denen jede Zeile einen Datensatz repräsentiert und jeder Datensatz aus durch Kommas getrennten Feldern besteht. Programmierer beschäftigen sich oft mit dieser Tätigkeit, um tabellarische Daten leicht zu importieren, exportieren und zu manipulieren, da das Format aufgrund seiner Einfachheit und Lesbarkeit plattform- und sprachenübergreifend breit unterstützt wird.
-
 ## Wie:
-
 In Swift gibt es keine native Unterstützung für das direkte Parsen von CSV-Dateien, aber man kann CSV-Daten verarbeiten, indem man die `String`-Methoden zum Teilen der Inhalte verwendet oder auf Drittanbieter-Bibliotheken wie SwiftCSV für einen einfacheren Ansatz zurückgreift. Hier sind beide Methoden:
 
 ### Manuelles Parsen ohne externe Bibliotheken

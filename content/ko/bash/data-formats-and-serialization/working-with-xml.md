@@ -17,9 +17,6 @@ title: "XML \uB2E4\uB8E8\uAE30"
 weight: 40
 ---
 
-## 무엇과 왜?
-XML을 다룬다는 것은 Extensible Markup Language 형식의 데이터를 파싱하고, 추출하며, 조작하는 것을 의미합니다. 프로그래머들은 설정, API 등을 위한 광범위한 데이터 교환 형식으로 사용되기 때문에 XML과 씨름합니다.
-
 ## 방법:
 Bash에서 XML을 파싱하는 방법입니다. 도구? xmllint와 xmlstarlet입니다. XML 요소를 반복하기? 당연합니다. 샘플 출력과 함께 예시:
 

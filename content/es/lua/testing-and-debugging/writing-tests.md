@@ -14,16 +14,10 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## ¿Qué y Por Qué?
-
-Escribir pruebas en programación implica crear pequeñas piezas de código separadas para verificar automáticamente que diferentes partes de tu aplicación funcionen como se espera. Para los programadores de Lua, las pruebas aseguran la fiabilidad y ayudan a mantener la calidad del código, acelerando el proceso de depuración y haciendo que las modificaciones en la base de código sean más seguras.
-
 ## Cómo:
-
 Lua, al ser un lenguaje de scripting ligero pero poderoso, no incluye un marco de pruebas incorporado. Sin embargo, bibliotecas de terceros como Busted y LuaUnit hacen que las pruebas sean relativamente sencillas. Aquí, veremos ejemplos usando ambos.
 
 ### Usando Busted
-
 Busted es un marco de pruebas para Lua muy popular que ofrece una forma flexible de escribir pruebas. Primero, instala Busted a través de LuaRocks (el gestor de paquetes de Lua) con `luarocks install busted`. Una vez instalado, puedes escribir tus pruebas. Aquí hay una prueba simple para una función `add` que suma dos números:
 
 ```lua
@@ -54,7 +48,6 @@ Para ejecutar las pruebas, ejecuta `busted` en tu terminal. La salida de muestra
 ```
 
 ### Usando LuaUnit
-
 LuaUnit es otro marco de pruebas que sigue las convenciones de xUnit y es fácil de configurar. Instala LuaUnit a través de LuaRocks usando `luarocks install luaunit`. Aquí te mostramos cómo podrías escribir una prueba similar a la anterior con LuaUnit:
 
 ```lua

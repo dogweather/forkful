@@ -14,12 +14,7 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mikä ja Miksi?
-
-Bash-ohjelmoinnissa tarkistus, onko hakemisto olemassa, on olennainen valvontamekanismi, jota käytetään varmistamaan hakemiston olemassaolo ennen tiedosto-operaatioiden suorittamista. Tämä tarkistus on ratkaiseva välttääkseen virheet, kuten yrittämisen päästä käsiksi tai muokata olemattomia hakemistoja, mikä varmistaa sujuvamman ja ennakoitavamman skriptin suorituksen.
-
 ## Kuinka:
-
 Perustasolla Bash mahdollistaa hakemiston olemassaolon tarkistamisen käyttämällä ehtolauseita ja `-d` operaattoria. Alla on suoraviivainen esimerkki, joka osoittaa, miten tämä tarkistus suoritetaan.
 
 ```bash

@@ -13,12 +13,7 @@ title: Analisando uma data a partir de uma string
 weight: 30
 ---
 
-## O Que & Por Que?
-
-Analisar uma data a partir de uma string em Visual Basic for Applications (VBA) é sobre converter texto que representa uma data em um tipo de dados de data. Os programadores fazem isso para manipular datas de forma mais eficaz em suas aplicações, como para comparações, cálculos ou propósitos de formatação.
-
 ## Como Fazer:
-
 VBA oferece uma maneira direta de analisar uma string em data usando a função `CDate` ou a função `DateValue`. No entanto, é crucial que a string esteja em um formato de data reconhecível.
 
 Aqui está um exemplo básico usando `CDate`:
@@ -64,7 +59,6 @@ Data Analisada usando DateValue: 1/4/2023
 Tenha em mente que o sucesso da análise depende do formato de data da string corresponder às configurações do sistema ou aplicativo.
 
 ## Aprofundamento
-
 Internamente, quando VBA analisa uma string para uma data, ele usa as configurações regionais do sistema operacional Windows para interpretar o formato da data. Isso é crucial para entender porque uma string de data que analisa perfeitamente em um sistema pode causar um erro em outro se eles usarem configurações de data/hora diferentes.
 
 Historicamente, o manuseio de datas tem sido uma fonte comum de bugs em aplicações, particularmente aquelas que são usadas internacionalmente. Essa dependência das configurações regionais no VBA é o motivo pelo qual alguns podem considerar alternativas como o formato ISO 8601 (por exemplo, "AAAA-MM-DD") para representação e análise de data inambígua em diferentes sistemas. Infelizmente, o VBA não oferece suporte nativo ao ISO 8601, e uma análise manual seria necessária para conformidade estrita.

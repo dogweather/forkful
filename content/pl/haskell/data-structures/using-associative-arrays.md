@@ -15,12 +15,7 @@ title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---
 
-## Co i dlaczego?
-
-Tablice asocjacyjne, czyli słowniki, w Haskellu służą do mapowania kluczy na wartości w celu szybkiego wyszukiwania i efektywnego zarządzania danymi. Programiści używają ich do obsługi kolekcji sparowanych elementów, gdzie wyszukiwanie elementu jest dziecinnie proste, w porównaniu z listami.
-
 ## Jak to zrobić:
-
 Haskell nie posiada wbudowanych tablic asocjacyjnych w taki sam sposób jak niektóre inne języki, ale oferuje potężną bibliotekę standardową o nazwie `Data.Map` do pracy z parami klucz-wartość. Zwinmy rękawy i zobaczmy, jak ich używać!
 
 Najpierw upewnij się, że zaimportowałeś ją:
@@ -59,7 +54,6 @@ Map.elems languagesUpdated
 Te podstawowe operacje powinny pokryć większość zastosowań, ale jest jeszcze wiele do odkrycia w `Data.Map`!
 
 ## Pogłębiona analiza
-
 Moduł `Data.Map` w standardowej bibliotece Haskell jest zbudowany na podstawie zrównoważonych drzew binarnych, konkretnie na drzewach AVL. Ten wybór zapewnia, że większość operacji na mapie, takich jak wstawianie, usuwanie i wyszukiwanie, może być wykonywana w czasie O(log n), gdzie n to liczba elementów w mapie. Jest to efektywny wybór dla wielu przypadków użycia, chociaż nie zawsze najszybszy we wszystkich scenariuszach.
 
 Jest też pewien historyczny niuans: zanim `Data.Map` stał się narzędziem wyboru, programiści Haskell często używali list par do symulowania tablic asocjacyjnych. Jednak operacje na takich strukturach są O(n) dla wyszukiwania, co czyni `Data.Map` znaczącą poprawę pod względem wydajności.

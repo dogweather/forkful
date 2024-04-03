@@ -12,9 +12,6 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-förfrågan med grundläggande autentisering innebär att du inkluderar användarnamn och lösenord i förfrågningen för att få tillgång till skyddad data. Programmerare gör detta för att interagera med API:er som kräver enkel men säker användarverifiering.
-
 ## Hur man gör:
 Här är ett exempel i Haskell med `http-client` och `base64-bytestring` för att skicka en HTTP GET-förfrågan med grundläggande autentisering:
 

@@ -12,9 +12,6 @@ title: Refaktoryzacja
 weight: 19
 ---
 
-## Co i dlaczego?
-Refaktoryzacja to w zasadzie wiosenne sprzątanie w Twojej bazie kodu - chodzi o restrukturyzację istniejącego kodu bez zmiany jego zewnętrznego zachowania. Programiści robią to, aby kod był czytelniejszy, zredukować złożoność, poprawić możliwości utrzymania oraz aby łatwiej go było rozszerzać.
-
 ## Jak to zrobić:
 Załóżmy, że masz funkcję Elm, która robi za dużo, jak mieszanie logiki UI z aktualizacjami stanu. To idealny kandydat do refaktoryzacji. Oryginalnie:
 

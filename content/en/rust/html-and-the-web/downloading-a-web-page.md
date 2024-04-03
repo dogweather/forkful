@@ -9,12 +9,7 @@ title: Downloading a web page
 weight: 42
 ---
 
-## What & Why?
-
-Downloading a web page means grabbing the data it contains. Programmers do this to get information, automate tests, scrape data, or check site availability.
-
 ## How to:
-
 Let's download a web page using Rust's `reqwest` crate, which provides a simple, asynchronous API for making HTTP requests.
 
 First, add `reqwest` and `tokio` to your `Cargo.toml`:
@@ -57,7 +52,6 @@ Body:
 ```
 
 ## Deep Dive
-
 The `reqwest` crate is one of the most straightforward ways to download web content in Rust. It's evolved from earlier HTTP libraries, providing both synchronous and asynchronous interfaces.
 
 Alternatives include lower-level libraries like `hyper` (which `reqwest` itself uses under the hood), or using `curl` bindings for Rust.
@@ -65,7 +59,6 @@ Alternatives include lower-level libraries like `hyper` (which `reqwest` itself 
 Key implementation steps for downloading a page include making an HTTP GET request and processing the response. Asynchronous programming with `tokio` means your app stays responsive while the network operation completes.
 
 ## See Also:
-
 - [`reqwest` documentation](https://docs.rs/reqwest/)
 - [`tokio` documentation](https://docs.rs/tokio/)
 - [Rust `async`/`await` book](https://rust-lang.github.io/async-book/)

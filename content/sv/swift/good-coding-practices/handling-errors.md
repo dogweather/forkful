@@ -11,9 +11,6 @@ title: Hantering av fel
 weight: 16
 ---
 
-## Vad och Varför?
-Att hantera fel i Swift innebär att förutse och svara på problem som dyker upp när din kod körs. Vi gör det för att kontrollera kaoset – för att förhindra att appar kraschar och för att ge användaren en smidig upplevelse.
-
 ## Hur gör man:
 Swift använder felhantering med `do`, `try`, och `catch`-block. Låt oss ta en titt:
 

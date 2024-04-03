@@ -10,12 +10,7 @@ title: Generazione di numeri casuali
 weight: 12
 ---
 
-## Cosa & Perché?
-
-Generare numeri casuali nella programmazione riguarda la creazione di valori che non possono essere previsti logicamente in anticipo. I programmatori fanno ciò per vari motivi, inclusa la generazione di identificatori unici, la simulazione di scenari nello sviluppo di giochi o la selezione di campioni casuali dai dati per l'analisi.
-
 ## Come fare:
-
 In Clojure, la generazione di numeri casuali è semplice e ci sono un paio di funzioni incorporate che possono essere utilizzate immediatamente.
 
 Per generare un numero a virgola mobile casuale tra 0 (incluso) e 1 (escluso), puoi usare la funzione `rand`:
@@ -49,7 +44,6 @@ Questa funzione `rand-range` restituirà un numero a virgola mobile casuale tra 
 Per scenari che richiedono distribuzioni più complesse o sequenze di numeri casuali dove è necessaria la ripetibilità (usando i semi), potrebbe essere necessario esplorare libreria aggiuntive che vanno oltre quanto incorporato.
 
 ## Approfondimento
-
 Il meccanismo sottostante per la generazione di numeri casuali nella maggior parte dei linguaggi di programmazione, incluso Clojure, si basa tipicamente su un generatore di numeri pseudo-casuali (PRNG). Un PRNG utilizza un algoritmo per produrre una sequenza di numeri che approssima le proprietà dei numeri casuali. È importante notare che, poiché questi sono generati algoritmicamente, non sono veramente casuali, ma possono essere sufficienti per la maggior parte degli scopi pratici.
 
 Nei primi giorni dell'informatica, generare numeri casuali di alta qualità era una sfida significativa, portando allo sviluppo di vari algoritmi per migliorare la casualità e la distribuzione. Per Clojure, le funzioni incorporate, come `rand` e `rand-int`, sono comode per l'uso quotidiano e coprono un ampio spettro di casi d'uso comuni.

@@ -11,12 +11,7 @@ title: Iniciando un nuevo proyecto
 weight: 1
 ---
 
-## ¿Qué y Por Qué?
-
-Crear un nuevo proyecto en C# es como iniciar la construcción de un edificio: configuras la base y decides la estructura. Programadores lo hacen para transformar ideas en realidad con código organizado, manejar dependencias y usar herramientas que les ayudan a mantener el control de la versión y la colaboración.
-
 ## Cómo Hacerlo:
-
 Para iniciar un nuevo proyecto de C#, usualmente necesitarás utilizar el SDK de .NET. Aquí tienes un ejemplo usando la línea de comandos:
 
 ```C#
@@ -37,7 +32,6 @@ Hola, mundo!
 ```
 
 ## Inmersión Profunda:
-
 Históricamente, iniciar un proyecto de C# significaba cargar Visual Studio, pasar por un asistente de configuración y esperar mientras se configuraba todo. Ahora, con el .NET SDK y la interfaz de línea de comandos (CLI), es mucho más rápido y flexible.
 
 Tienes alternativas para diferentes tipos de proyectos como aplicaciones web, servicios, y más. Por ejemplo, para una aplicación web, usarías `dotnet new webapp`. Además, existen plantillas de terceros que puedes instalar para ampliar tus posibilidades.
@@ -45,7 +39,6 @@ Tienes alternativas para diferentes tipos de proyectos como aplicaciones web, se
 En cuestión de detalles de implementación, al ejecutar `dotnet new`, se genera una estructura de proyecto estándar que incluye archivos de código fuente iniciales y archivos de configuración de proyecto, como `.csproj`, que controlan cómo se construye y ejecuta tu aplicación.
 
 ## Ver También:
-
 - Documentación oficial de .NET CLI: https://docs.microsoft.com/es-es/dotnet/core/tools/
 - Plantillas de proyectos de .NET disponibles: https://docs.microsoft.com/es-es/dotnet/core/tools/dotnet-new-sdk-templates
 - Tutoriales interactivos para aprender C#: https://dotnet.microsoft.com/learn/csharp

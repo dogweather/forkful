@@ -9,9 +9,6 @@ title: Reading a text file
 weight: 22
 ---
 
-## What & Why?
-Reading a text file is grabbing text content from a .txt file on your disk. Programmers do it to handle data like configuration, user input, or to process bulk text.
-
 ## How to:
 Rust's standard library makes it straightforward to read files.
 

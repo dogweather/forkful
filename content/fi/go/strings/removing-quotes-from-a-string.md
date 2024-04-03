@@ -12,12 +12,7 @@ title: Lainausmerkkien poistaminen merkkijonosta
 weight: 9
 ---
 
-## Mikä & Miksi?
-
-Merkkijonosta lainausmerkkien poistaminen Go:ssa tarkoittaa annetun merkkijonon alussa ja lopussa olevien lainausmerkkien (`"` tai `'`) eliminointia. Ohjelmoijien on usein tarpeen suorittaa tämä tehtävä puhdistaakseen käyttäjän syötteen, jäsentääkseen tekstidataa tehokkaammin tai valmistellakseen merkkijonoja edelleen käsiteltäviksi siten, että niissä ei ole lainausmerkkejä.
-
 ## Kuinka:
-
 Go tarjoaa useita lähestymistapoja lainausmerkkien poistamiseen merkkijonosta, mutta yksi suoraviivaisimmista menetelmistä on käyttää `strings`-paketin tarjoamia `Trim`- ja `TrimFunc`-funktioita. Näin se tehdään:
 
 ```go
@@ -54,7 +49,6 @@ Käyttäen strings.TrimFunc: Tämä on 'lainattu' merkkijono
 Molemmat menetelmät poistavat tehokkaasti merkkijonon alussa ja lopussa olevat lainausmerkit.
 
 ## Syväsukellus
-
 Funktiot `Trim` ja `TrimFunc` `strings`-paketista ovat osa Go:n laajaa standardikirjastoa, joka on suunniteltu tarjoamaan tehokkaita, mutta suoraviivaisia merkkijonojen käsittelyominaisuuksia ilman kolmannen osapuolen paketteja. Tarve käsitellä ja manipuloida merkkijonoja tehokkaasti juontaa juurensa Go:n keskittymisestä verkkopalvelimiin ja datan jäsentimiin, joissa merkkijonojen käsittely on yleinen tehtävä.
 
 Yksi näiden toimintojen huomattava piirre on niiden toteutus runojen perusteella (Go:n esitys Unicode-koodipisteestä). Tämä suunnittelu mahdollistaa niiden saumattoman käsittelyn sisältäen monitavuisia merkkejä, mikä tekee Go:n lähestymistavasta merkkijonojen käsittelyn sekä vankkaa että Unicode-ystävällistä.

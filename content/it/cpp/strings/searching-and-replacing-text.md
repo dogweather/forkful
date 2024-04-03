@@ -10,9 +10,6 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## What & Why?
-La ricerca e la sostituzione di testo in C++ permette di trovare stringhe all'interno di una serie di dati e sostituirle con altre stringhe. I programmatori lo fanno per aggiornare, correggere o manipolare i dati, o per automatizzare l'editing di codice.
-
 ## How to:
 Ecco un semplice esempio di come cercare e sostituire del testo usando la libreria standard di C++.
 

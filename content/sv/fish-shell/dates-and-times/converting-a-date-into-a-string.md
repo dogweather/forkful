@@ -10,9 +10,6 @@ title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---
 
-## Vad & Varför?
-Att konvertera ett datum till en sträng innebär att omvandla datumdata till textformat. Programmerare gör detta för utskrift, lagring eller användargränssnitt.
-
 ## Hur till:
 ```
 # Omvandla dagens datum till sträng

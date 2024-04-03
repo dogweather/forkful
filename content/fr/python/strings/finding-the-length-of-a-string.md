@@ -10,9 +10,6 @@ title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---
 
-## What & Why?
-La longueur d'une chaîne, c'est combien de caractères elle contient. Les programmeurs la mesurent pour valider des saisies, pour trancher des trucs, ou pour savoir où ils en sont.
-
 ## How to:
 Utilisez `len()` pour trouver la longueur d'une chaîne. C'est simple comme bonjour :
 

@@ -15,18 +15,12 @@ title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---
 
-## Cái gì & Tại sao?
-
-Việc sinh số ngẫu nhiên trong Haskell bao gồm việc tạo ra những con số không thể dự đoán theo tiêu chuẩn con người. Điều này cực kỳ quan trọng trong các tình huống từ ứng dụng mật mã học cho đến các mô phỏng nơi yếu tố may rủi được yêu cầu để mô hình hóa các hiện tượng thế giới thực một cách chính xác.
-
 ## Làm thế nào:
-
 Để sinh số ngẫu nhiên trong Haskell, người ta thường sử dụng gói `random`, là một phần của Haskell Platform. Dưới đây là hướng dẫn từng bước:
 
 Đầu tiên, hãy chắc chắn rằng bạn đã cài đặt gói `random`. Nếu chưa, bạn có thể lấy nó qua Cabal hoặc Stack.
 
 ### Sinh một Số Ngẫu Nhiên
-
 Để sinh một số ngẫu nhiên đơn giản, bạn có thể sử dụng hàm `randomRIO`, sản xuất một giá trị ngẫu nhiên trong một phạm vi xác định.
 
 ```Haskell
@@ -39,7 +33,6 @@ main = do
 ```
 
 ### Sinh một Danh Sách Số Ngẫu Nhiên
-
 Việc sinh một danh sách các số ngẫu nhiên hơi phức tạp hơn nhưng vẫn dễ dàng:
 
 ```Haskell
@@ -61,7 +54,6 @@ main = do
 Đoạn mã này tạo ra một hàm `randomList` mà sinh ra một danh sách các số nguyên ngẫu nhiên. Thay thế `(1, 100)` bằng phạm vi bạn mong muốn.
 
 ## Đi sâu hơn
-
 Gói `random` của Haskell cung cấp một bộ sinh số ngẫu nhiên giả (PRNG), có nghĩa là các số được sinh ra không hoàn toàn ngẫu nhiên nhưng có thể xuất hiện ngẫu nhiên cho nhiều ứng dụng. Cốt lõi của khả năng sinh số ngẫu nhiên của Haskell nằm trong lớp kiểu `RandomGen`, mô phỏng các phương thức khác nhau để sinh số ngẫu nhiên, và lớp kiểu `Random`, bao gồm các kiểu có thể được sinh ra một cách ngẫu nhiên.
 
 Lịch sử, cách tiếp cận của Haskell đối với việc sinh số ngẫu nhiên đã nhấn mạnh vào sự tinh khiết và khả năng tái sản xuất. Đây là lý do tại sao các hoạt động liên quan đến sự ngẫu nhiên được xử lý rõ ràng trong monad `IO` hoặc yêu cầu việc truyền và cập nhật trạng thái bộ sinh số một cách thủ công – để duy trì tính minh bạch tham chiếu.

@@ -11,9 +11,6 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O Que & Por Que?
-Refatoração é o processo de reestruturar código de computador existente—mudando a fatoração—sem alterar seu comportamento externo. Programadores fazem isso para limpar o código, melhorar a legibilidade e facilitar a manutenção e extensão, tudo isso sem adicionar novas funcionalidades.
-
 ## Como fazer:
 Suponha que você tenha um trecho de código que calcula e imprime a área e o perímetro de um retângulo dado seu comprimento e largura. Ele cumpre a tarefa, mas é repetitivo e um pouco bagunçado.
 

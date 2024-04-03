@@ -11,9 +11,6 @@ title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---
 
-## Vad & Varför?
-Omvandling av datum till sträng innebär att ta ett datumobjekt och göra om det till läsbar text. Detta görs för att visa datum för användare eller för att spara det i en mer hanterbar form.
-
 ## Hur gör man:
 ```Swift
 import Foundation

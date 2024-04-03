@@ -31,12 +31,7 @@ title: "\u092D\u0935\u093F\u0937\u094D\u092F \u092F\u093E \u0905\u0924\u0940\u09
 weight: 26
 ---
 
-## क्या और क्यों?
-
-तारीख का हिसाब करना मतलब, भविष्य या अतीत में किसी दिन का पता लगाना है। प्रोग्रामर्स इसका उपयोग ईवेंट्स की तारीखें सेट करने, डेडलाइंस की गणना करने और टाइम-सेंसिटिव डेटा प्रोसेसिंग के लिए करते हैं। 
-
 ## कैसे करें:
-
 ```java
 import java.time.LocalDate;
 import java.time.Period;
@@ -64,7 +59,6 @@ public class DateCalculation {
 ```
 
 ## गहराई से समझें:
-
 तारीख की गणना करना, कैलेंडर की खोज के समय से महत्वपूर्ण रहा है। Java में, `java.util.Date` और `java.util.Calendar` जैसे पुराने क्लासेस का प्रयोग होता था, लेकिन वे असुविधाजनक और गलतियों से भरे हुए थे। Java 8 के साथ आने वाले `java.time` package ने काम आसान और सही बना दिया। `LocalDate`, `LocalTime`, और `LocalDateTime` वगैरह समय और तिथि संबंधी कार्यों के लिए आधुनिक सोल्यूशंस प्रदान करते हैं। 
 
 भविष्य या अतीत की तारीख की गणना करते समय, लीप इयर्स और टाइम जोन्स जैसी चीजें भी महत्वपूर्ण होती हैं, और `java.time` इन्हें ध्यान में रखता है।
@@ -72,7 +66,6 @@ public class DateCalculation {
 वैकल्पिक तरीकों में, थर्ड-पार्टी लाइब्रेरीज जैसे कि Joda-Time पहले काफी प्रचलित थी, लेकिन Java 8 से `java.time` का प्रयोग ज्यादा सामान्य है।
 
 ## और जानकारी के लिए:
-
 - [LocalDate JavaDoc](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
 - [java.time package overview](https://docs.oracle.com/javase/tutorial/datetime/overview/)
 - [Oracle's Date Time tutorials](https://docs.oracle.com/javase/tutorial/datetime/index.html)

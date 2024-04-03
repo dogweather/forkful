@@ -11,9 +11,6 @@ title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---
 
-## Vad & Varför?
-Jämför två datum innebär att avgöra tidsordningen mellan dem - vilket är tidigare, senare eller om de är identiska. Programmerare gör detta för att hantera händelser, logga, giltighetsperioder, och tidsbaserade funktioner.
-
 ## Så här gör du:
 PHP använder `DateTime` objekt för att representera datum och tider. Här är ett enkelt sätt att jämföra två datum:
 

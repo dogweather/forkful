@@ -11,11 +11,7 @@ title: "Refactorizaci\xF3n"
 weight: 19
 ---
 
-## Qué y Por Qué
-Refactorizar es el proceso de reorganizar tu código para mejorar su estructura y legibilidad sin alterar el comportamiento externo o la funcionalidad. Los programadores refactorizan para hacer su código más limpio, fácil de entender y más mantenible, lo que a largo plazo hace que depurar y añadir nuevas características sea mucho menos problemático.
-
 ## Cómo hacerlo:
-
 Supongamos que tienes una función en tu Arduino que está haciendo demasiado, como esta:
 
 ```Arduino

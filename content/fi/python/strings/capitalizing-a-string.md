@@ -13,10 +13,8 @@ title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---
 
-## Mikä ja miksi?
-Merkkijonon alkukirjaimen suurentaminen tarkoittaa merkkijonon ensimmäisen merkin muuttamista isoksi kirjaimeksi ja lopun pieniksi kirjaimiksi. Tätä toimintoa käytetään yleisesti datan käsittelyssä syötteiden normalisointiin tai otsikoiden, nimien yms. luettavuuden parantamiseen.
-
 ## Kuinka:
+
 
 ### Käyttäen Pythonin sisäänrakennettua metodia:
 Pythonissa on merkkijonoille sisäänrakennettu metodi `.capitalize()`, jolla tämä tehtävä on helppo suorittaa.

@@ -10,9 +10,6 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-## Cosa & Perché?
-I numeri complessi hanno una parte reale e una immaginaria e sono fondamentali in vari campi come ingegneria, fisica e grafica computerizzata. Gli sviluppatori li usano per risolvere equazioni che i normali numeri reali non possono gestire.
-
 ## Come fare:
 Rust non ha supporto nativo per i numeri complessi, ma crate come `num-complex` vi coprono le spalle. Ecco come usarlo:
 

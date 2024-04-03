@@ -10,9 +10,6 @@ title: Working with XML
 weight: 40
 ---
 
-## What & Why?
-Working with XML in Elixir means parsing, creating, and manipulating XML data. Programmers tackle XML because it's widespread in web services, config files, and legacy systems.
-
 ## How to:
 Elixir doesn't include XML parsing in its standard library. SweetXML is a popular choice. Here's how to use it:
 

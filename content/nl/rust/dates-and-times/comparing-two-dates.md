@@ -12,9 +12,6 @@ title: Twee datums vergelijken
 weight: 27
 ---
 
-## Wat & Waarom?
-Het vergelijken van twee datums betekent controleren of ze gelijk zijn, of dat de ene voor of na de andere komt. Programmeurs gebruiken dit voor het sorteren van gebeurtenissen, het valideren van invoer, het afhandelen van verloopdata en het bijhouden van tijdsduren.
-
 ## Hoe te:
 Rust gebruikt `chrono` om eenvoudig met datums om te gaan. Eerst moet `cargo.toml` `chrono = "0.4"` bevatten. Daarna kun je datums als volgt vergelijken:
 

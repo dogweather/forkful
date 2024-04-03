@@ -13,12 +13,7 @@ title: Scaricare una pagina web
 weight: 42
 ---
 
-## Cosa & Perché?
-
-Scaricare una pagina web in C comporta l'accesso programmato al contenuto di una pagina web tramite internet e il suo salvataggio localmente per l'elaborazione o l'uso offline. I programmatori spesso si impegnano in questo per consumare servizi web, raschiare contenuti web o interagire direttamente con risorse online dalle loro applicazioni.
-
 ## Come fare:
-
 Per scaricare una pagina web in C, un approccio popolare è l'utilizzo della libreria libcurl, una libreria di trasferimento URL lato client efficiente e portabile. Assicurati di avere libcurl installato e collegato nel tuo progetto. Ecco un esempio che dimostra come utilizzare libcurl per scaricare il contenuto di una pagina web:
 
 ```c
@@ -60,7 +55,6 @@ int main(void) {
 Risultato dell'esempio (nessun output visibile nella console): Questo codice scarica il contenuto all'URL specificato e lo salva in un file denominato `downloaded_page.html`. Verifica la directory del tuo programma per questo file per vedere il contenuto scaricato.
 
 ## Approfondimento:
-
 Storicamente, scaricare contenuti web in C era più laborioso, richiedendo la programmazione manuale dei socket e la gestione del protocollo HTTP. Libcurl astrae queste complessità, offrendo una API robusta e di alto livello per il trasferimento di dati tramite il web.
 
 Sebbene libcurl semplifichi le richieste HTTP in C, linguaggi di programmazione moderni come Python con la loro libreria `requests` o JavaScript (Node.js) con varie librerie client HTTP possono offrire una sintassi più intuitiva e supporto incorporato per JSON e altri formati di dati comunemente utilizzati nella comunicazione web. Tuttavia, C e libcurl forniscono una soluzione ad alte prestazioni e stabile per sistemi dove l'efficienza, il controllo dettagliato o l'integrazione in codebase C esistenti sono critici. Vale anche la pena notare che C, combinato con libcurl, può essere utilizzato per molto più che semplicemente scaricare pagine web: è capace di gestire FTP, SMTP e molto altro, rendendolo uno strumento versatile nel kit di un programmatore.

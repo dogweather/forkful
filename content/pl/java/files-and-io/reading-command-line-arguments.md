@@ -11,9 +11,6 @@ title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---
 
-## Co i dlaczego?
-Czytanie argumentów linii poleceń to sposób na przekazywanie danych do programu przy jego starcie. Robimy to, by elastycznie manipulować działaniem aplikacji bez potrzeby zmiany kodu źródłowego.
-
 ## Jak to zrobić:
 ```java
 public class CommandLineReader {

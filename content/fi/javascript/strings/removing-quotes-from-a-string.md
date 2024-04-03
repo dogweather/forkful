@@ -12,9 +12,6 @@ title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---
 
-## Mikä & Miksi?
-Lainausmerkkien poistaminen merkkijonosta tarkoittaa näiden kiusallisten lainausmerkkien hävittämistä, jotka voivat sotkea koodiasi, erityisesti kun olet jäsentämässä dataa tai muodostamassa JSON-objekteja. Ohjelmoijat tekevät sen puhdistaakseen syötteitä, välttääkseen syntaksivirheitä ja saadakseen merkkijonot toimimaan paremmin muiden koodinsa osien kanssa.
-
 ## Miten:
 Kuvittele, että sinulla on merkkijono, joka on kiedottu lainausmerkkeihin, kuten `"\"Hello, World!\""` ja haluat puhtaan, lainaamattoman tekstin. Tässä on nopea JavaScript-katkelma vapauttamaan merkkijonosi näistä lainausmerkki kahleista:
 

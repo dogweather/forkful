@@ -12,9 +12,6 @@ title: Encontrando o comprimento de uma string
 weight: 7
 ---
 
-## O Que & Por Quê?
-Encontrar o comprimento de uma string em C envolve determinar o número de caracteres antes do terminador nulo `\0`. Os programadores fazem isso para manipular strings corretamente sem se deparar com erros, como estouros de buffer, que podem levar a vulnerabilidades de segurança ou falhas no programa.
-
 ## Como Fazer:
 Em C, a função da biblioteca padrão `strlen()` é comumente usada para encontrar o comprimento de uma string. Aqui está um exemplo rápido:
 

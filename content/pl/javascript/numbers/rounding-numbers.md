@@ -11,9 +11,6 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i dlaczego?
-Zaokrąglanie polega na odcięciu nadmiaru po określonym miejscu w liczbie. Programiści zaokrąglają w celu kontrolowania dokładności, zarządzania pamięcią lub uczynienia wyjścia przyjaznym dla użytkownika - jak zmienienie 2.998 w czyste 3.
-
 ## Jak to zrobić:
 Oto jak zaokrąglasz liczby w JavaScript za pomocą `Math.round()`, `Math.ceil()` oraz `Math.floor()`: 
 

@@ -15,9 +15,6 @@ title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---
 
-## Gì & Tại sao?
-So sánh hai ngày nghĩa là kiểm tra chúng có mối quan hệ như thế nào—một cái có trước, sau, hay chính xác như nhau so với cái kia? Các lập trình viên thực hiện điều này để xử lý hạn chót, lên lịch sự kiện, và theo dõi dữ liệu liên quan đến thời gian.
-
 ## Làm thế nào:
 Clojure sử dụng khả năng tương tác Java để xử lý ngày tháng. Hãy trải tay áo lên và nhảy vào:
 

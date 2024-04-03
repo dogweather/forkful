@@ -12,9 +12,6 @@ title: Substrings extraheren
 weight: 6
 ---
 
-## Wat & Waarom?
-Het extraheren van substrings betekent het trekken van specifieke delen uit een string. Programmeurs doen dit om gegevens te verwerken of te manipuleren, zoals het ophalen van een gebruikersnaam uit een e-mailadres of een bestandsextensie uit een bestandsnaam.
-
 ## Hoe:
 PHP biedt verschillende functies om substrings te extraheren. Laten we `substr`, `mb_substr` en `strstr` bekijken.
 

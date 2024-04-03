@@ -17,9 +17,6 @@ title: Ghi log
 weight: 17
 ---
 
-## Gì và Tại Sao?
-Ghi nhật ký, nói một cách ngắn gọn, giống như việc giữ một cuốn nhật ký cho ứng dụng của bạn—nó ghi lại các sự kiện, lỗi, và các hành động đáng chú ý khác xảy ra trong khi phần mềm đang chạy. Lập trình viên thực hiện việc này không chỉ để hiểu được điều gì đang xảy ra bên dưới góc độ kỹ thuật một cách thực tiễn, mà còn để có một bản ghi lịch sử quan trọng cho việc gỡ rối, kiểm toán, và tối ưu hóa hiệu suất.
-
 ## Làm Thế Nào:
 Ngay từ cơ bản, JavaScript cung cấp một cách đơn giản để ghi những thông điệp vào bảng điều khiển:
 

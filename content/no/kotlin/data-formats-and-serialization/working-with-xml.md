@@ -11,9 +11,6 @@ title: "\xC5 jobbe med XML"
 weight: 40
 ---
 
-## Hva & Hvorfor?
-Å jobbe med XML innebærer parsing, oppretting og manipulering av XML-dokumenter – et markup-språk for datalagring og -overføring. Programmerere gjør dette fordi mange systemer fortsatt utveksler data i XML-format, og det er nødvendig for å opprettholde støtten til eldre systemer og for integrering med eksisterende teknologier.
-
 ## Hvordan:
 I Kotlin kan du bruke den innebygde `javax.xml.parsers` for parsing:
 

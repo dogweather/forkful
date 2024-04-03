@@ -14,9 +14,6 @@ title: Escrevendo um arquivo de texto
 weight: 24
 ---
 
-## O Quê & Porquê?
-Escrever um arquivo de texto em Kotlin envolve criar um arquivo e inserir conteúdo de texto nele, uma tarefa comum para armazenar dados, registrar logs ou configurar definições. Programadores fazem isso para salvar e manipular dados fora do espaço de memória volátil, garantindo persistência através das sessões.
-
 ## Como fazer:
 Kotlin oferece uma abordagem direta para escrever em arquivos, aproveitando a biblioteca padrão sem a necessidade de bibliotecas de terceiros adicionais. Aqui está um exemplo simples:
 

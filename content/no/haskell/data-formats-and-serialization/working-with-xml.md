@@ -11,12 +11,7 @@ title: "\xC5 jobbe med XML"
 weight: 40
 ---
 
-## Hva & Hvorfor?
-
-Å arbeide med XML i Haskell innebærer parsing, manipulering og generering av XML-strukturer. Programmerere håndterer XML for å samhandle med tallrike applikasjoner og protokoller som bruker XML som sitt dataformat, slik som webtjenester og konfigurasjonsfiler.
-
 ## Hvordan:
-
 Haskell tilbyr biblioteker som `xml-conduit` for å håndtere XML. Følgende eksempel demonstrerer parsing av en XML-streng og forespørsler av elementer:
 
 ```haskell
@@ -43,7 +38,6 @@ Eksempelutdata:
 ```
 
 ## Dypdykk
-
 XML, forkortelse for eXtensible Markup Language, har lenge vært en grunnstein i dataserialisering langt før JSONs oppstigning. Det er ordrikt, men stivt og standardisert, noe som gjør det passende for strenge bedriftsmiljøer, arvesystemer, og industrier som finans og helsevesen.
 
 Haskell har flere biblioteker for XML; men `xml-conduit` er blant de kraftigste og mest brukte på grunn av sine effektive streaming- og parsingsegenskaper, del av `conduit`-familien for håndtering av datastrømmer.
@@ -53,7 +47,6 @@ Alternativer inkluderer `HXT` (Haskell XML Toolbox) som bruker piler for parsing
 Når du implementerer XML-behandling i Haskell, må du bry deg om koding, ettersom Haskell-strenger er Unicode og XML-data kanskje ikke er det. I tillegg kan XML-navnerom legge til ekstra kompleksitet i parsingen.
 
 ## Se også:
-
 - `xml-conduit` pakkedokumentasjon: https://hackage.haskell.org/package/xml-conduit
 - The Haskell XML Toolbox (HXT): http://hackage.haskell.org/package/hxt
 - Boken "Real World Haskell", Kapittel 16, for håndtering av XML: http://book.realworldhaskell.org/read/xml.html

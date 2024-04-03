@@ -12,12 +12,7 @@ title: Een datum ontleden uit een string
 weight: 30
 ---
 
-## Wat & Waarom?
-
-Een datum parsen uit een string in Visual Basic for Applications (VBA) gaat over het omzetten van tekst die een datum voorstelt naar een datum gegevenstype. Programmeurs doen dit om data effectiever te manipuleren in hun toepassingen, zoals voor vergelijkingen, berekeningen of formatteerdoeleinden.
-
 ## Hoe:
-
 VBA biedt een eenvoudige manier om een string naar een datum te parsen met behulp van de `CDate`-functie of de `DateValue`-functie. Het is echter cruciaal dat de string een herkenbaar datumformaat heeft.
 
 Hier is een basisvoorbeeld met `CDate`:
@@ -63,7 +58,6 @@ Geparseerde Datum met DateValue: 4/1/2023
 Houd er rekening mee dat het succes van het parsen afhangt van het feit of het datumformaat van de string overeenkomt met systeem- of applicatie-instellingen.
 
 ## Diep Duiken
-
 Intern, wanneer VBA een string naar een datum parseert, gebruikt het de regionale instellingen van het Windows-besturingssysteem om het datumformaat te interpreteren. Dit is cruciaal om te begrijpen, omdat een datumstring die perfect parseert op het ene systeem, een fout kan veroorzaken op een ander als ze verschillende datum-/tijdinstellingen gebruiken.
 
 Historisch gezien is het omgaan met data een veelvoorkomende bron van bugs in toepassingen geweest, vooral die internationaal gebruikt worden. Deze afhankelijkheid van regionale instellingen in VBA is waarom sommigen alternatieven zoals het ISO 8601-formaat (bijv. "YYYY-MM-DD") zouden overwegen voor een ondubbelzinnige vertegenwoordiging en parsing van data over verschillende systemen heen. Helaas ondersteunt VBA ISO 8601 niet van nature, en handmatig parsen zou nodig zijn voor strikte naleving.

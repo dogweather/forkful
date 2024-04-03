@@ -13,12 +13,7 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## Mitä & Miksi?
-
-Tekstin etsiminen ja korvaaminen C-kielessä tarkoittaa tiettyjen alimerkkijonojen tunnistamista suuremmasta merkkijonosta ja niiden korvaamista eri alimerkkijonoilla. Ohjelmoijat suorittavat näitä toimenpiteitä tekstitiedon käsittelyyn - tehtävissä, jotka vaihtelevat datan sanitoinnista ja muotoilusta dynaamisen sisällön generointiin.
-
 ## Kuinka:
-
 C ei tule sisäänrakennettujen funktioiden kanssa, jotka suorittaisivat etsimisen ja korvaamisen merkkijonoissa suoraan. Voit kuitenkin saavuttaa tämän yhdistelemällä erilaisia merkkijonokäsittelytoimintoja, jotka ovat saatavilla `<string.h>` kirjastossa yhdessä jonkin omatekoisen logiikan kanssa. Alla on perusesimerkki siitä, miten etsiä alimerkkijonoa merkkijonosta ja korvata se. Yksinkertaisuuden vuoksi tässä esimerkissä oletetaan riittävä puskurikoko eikä käsitellä muistiallokaatioon liittyviä ongelmia, jotka sinun tulisi ottaa huomioon tuotantokoodissa.
 
 ```c
@@ -76,7 +71,6 @@ Muokattu merkkijono: Hello, this is a sample. This sample is simple.
 Tämä koodi havainnollistaa yksinkertaista lähestymistapaa etsiä kaikki alimerkkijonon (`sub`) esiintymät lähtömerkkijonosta ja korvata ne toisella alimerkkijonolla (`newSub`), käyttäen `strstr` funktiota kunkin ottelun aloituspisteen löytämiseen. Se on erittäin perustason esimerkki, joka ei käsittele monimutkaisia skenaarioita, kuten päällekkäisiä alimerkkijonoja.
 
 ## Syväluotaus
-
 Käytetty lähestymistapa "Kuinka" osiossa on perustavaa laatuaan, havainnollistaen kuinka saavuttaa tekstin etsiminen ja korvaaminen C-kielessä ilman kolmannen osapuolen kirjastoja. Historiallisesti, koska C:n painotus on alhaisen tason muistinhallinnassa ja suorituskyvyssä, sen standardikirjasto ei kapseloi korkean tason merkkijonomanipulaation toiminnallisuuksia, kuten mitä löytyy kielistä kuten Python tai JavaScript. Ohjelmoijien on manuaalisesti hallittava muistia ja yhdisteltävä erilaisia merkkijono-operaatioita tavoitellun lopputuloksen saavuttamiseksi, mikä lisää monimutkaisuutta mutta tarjoaa enemmän kontrollia ja tehokkuutta.
 
 On tärkeää huomata, että tämä manuaalinen lähestymistapa voi olla virhealtis, erityisesti kun hallitaan muistiallokaatioita ja puskurikokoja. Virheellinen käsittely voi johtaa puskurin ylivuotoihin ja muistin korruptoitumiseen, mikä tekee koodista alttiin turvallisuusriskeille.

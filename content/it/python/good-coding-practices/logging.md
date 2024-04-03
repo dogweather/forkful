@@ -11,9 +11,6 @@ title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---
 
-## Cosa e Perché?
-Il logging è il processo di registrazione degli eventi di un'applicazione mentre questa è in esecuzione, fornendo una traccia di briciole per analisi post-mortem e monitoraggio in tempo reale. I programmatori lo fanno perché aiuta a risolvere problemi, monitorare le prestazioni, e tracciare le azioni degli utenti per la sicurezza e fini analitici.
-
 ## Come fare:
 Python include un modulo integrato per il logging. Ecco una configurazione di base:
 ```Python

@@ -13,9 +13,6 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## ¿Qué y Por Qué?
-Escribir pruebas en Elixir implica crear scripts automatizados para validar el comportamiento de tu código. Los programadores hacen esto para asegurar la calidad, prevenir regresiones y facilitar la refactorización del código, haciendo el proceso de desarrollo más confiable y eficiente.
-
 ## Cómo:
 Elixir utiliza ExUnit como su marco de pruebas integrado, el cual es extremadamente poderoso y fácil de usar. Aquí hay un ejemplo básico:
 

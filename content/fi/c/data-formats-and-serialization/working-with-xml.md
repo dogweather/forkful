@@ -13,12 +13,7 @@ title: "Ty\xF6skentely XML:n kanssa"
 weight: 40
 ---
 
-## Mitä ja miksi?
-
-XML:n käsittely C-kielessä sisältää XML-dokumenttien jäsentämisen, kyselyiden teon ja manipuloinnin käyttäen erilaisia kirjastoja. Ohjelmoijat käyttävät XML:ää sen laajan käytön vuoksi web-palveluissa, konfiguraatiotiedostoissa ja eri järjestelmien välisessä datan vaihdossa, mikä edellyttää taitoja käsitellä XML:ää tehokkaasti vankkaa sovelluskehitystä varten.
-
 ## Kuinka:
-
 C ei sisällä sisäänrakennettua tukea XML:lle, joten sinun täytyy käyttää ulkoisia kirjastoja. Yksi suosittu vaihtoehto on `libxml2`, joka on vakaa ja ominaisuuksiltaan rikas kirjasto. Näin voit lukea ja jäsentää XML-tiedoston käyttäen `libxml2`:ta.
 
 Ensinnäkin, varmista että sinulla on `libxml2` asennettuna järjestelmääsi. Saatat tarvita sen asentamisen paketinhallintajärjestelmäsi kautta (esim. `apt-get install libxml2-dev` Debian-järjestelmissä).
@@ -81,7 +76,6 @@ gcc -o xml_esimerkki xml_esimerkki.c $(xml2-config --cflags --libs)
 Olettaen, että sinulla on XML-tiedosto nimeltä `your_file.xml`, käännetyn ohjelman ajaminen tulisi tulostaa sen ensimmäisen tason elementtien nimet.
 
 ## Syväsukellus
-
 Vuorovaikutus C:n ja XML:n välillä on kertomus kahden erittäin erilaisen maailman yhteen tuomisesta: rakenteellisen, tavutasoisen, proseduraalisen paradigman C ja hierarkisen, sanarikkaan ja dokumenttikeskeisen mallin XML. Integroidessaan XML-käsittelykyvykkyyksiä C-ohjelmiin, kehittäjät hyödyntävät C:n vahvuuksia - kuten nopeus ja matalan tason muistipääsy - tehokkaasti jäsentääkseen ja manipuloidakseen XML-dokumentteja.
 
 `libxml2`, kehitetty osana GNOME-projektia, nousi de facto standardiksi XML-käsittelyyn C:ssä sen kattavan tuen ansiosta XML-standardeille ja sen suorituskyvyn vuoksi. Se heijastaa vuosien kehitystyötä ja yhteisön panosta, tehden siitä vankan ja tehokkaan useimpiin XML-tehtäviin.

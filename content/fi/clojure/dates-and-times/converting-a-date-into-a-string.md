@@ -10,9 +10,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---
 
-## What & Why?
-Muuttaminen päivämäärästä merkkijonoksi tarkoittaa `java.util.Date` objektin esittämistä luettavassa muodossa. Ohjelmoijat tekevät tämän jakamiseen, tallentamiseen tai näytölle tulostamiseen.
-
 ## How to:
 Clojure käyttää Java-kirjastoja päivämäärien käsittelyyn ja formaattiin. Tässä on esimerkki:
 

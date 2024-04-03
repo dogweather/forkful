@@ -12,12 +12,7 @@ title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---
 
-## ¿Qué y Por Qué?
-
-Eliminar caracteres que coinciden con un patrón es filtrar un string para quitarle ciertas cosas según reglas definidas, como letras o números en particular. Los programadores lo hacen para limpiar datos, como retirar caracteres especiales o validar entradas de usuario.
-
 ## Cómo hacerlo:
-
 Veamos cómo eliminar cifras de un string en PHP:
 
 ```PHP
@@ -45,7 +40,6 @@ echo $resultadoLimpio; // "Hola esto es un texto Con puntos y comas"
 ```
 
 ## Inmersión Profunda:
-
 Historia breve: PHP utiliza expresiones regulares (regex) desde sus primeras versiones, basándose en las de Perl, una de las herramientas más potentes para manejo de strings. 
 
 Hay métodos alternativos, como `str_replace()` para casos más sencillos sin patrones complejos. para sustituir cadenas específicas.
@@ -53,7 +47,6 @@ Hay métodos alternativos, como `str_replace()` para casos más sencillos sin pa
 Detalles de implementación: `preg_replace()` puede ser más costoso en términos de rendimiento debido a que usa regex, así que es mejor utilizarlo cuando realmente se necesite la flexibilidad que ofrece. Cada patrón regex lleva delimitadores (como `/` en los ejemplos) y puede contener caracteres especiales que definen el patrón a buscar.
 
 ## Ver También:
-
 - [PHP manual on preg_replace()](https://www.php.net/manual/en/function.preg-replace.php)
 - [Regex tutorial](https://www.regular-expressions.info/tutorial.html)
 - [PHP manual on str_replace()](https://www.php.net/manual/en/function.str-replace.php)

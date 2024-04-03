@@ -9,9 +9,6 @@ title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---
 
-## What & Why?
-Å finne lengden av en streng betyr å telle antall tegn i den. Programmerere gjør dette for validering, løkkekontroll og tekstmanipulering.
-
 ## How to:
 Her er noen enkle måter å finne lengden på en streng i PowerShell:
 

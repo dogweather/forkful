@@ -10,9 +10,6 @@ title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---
 
-## Co i dlaczego?
-Logowanie w programowaniu jest jak prowadzenie dziennika dla Twojej aplikacji. Jest to systematyczne rejestrowanie zdarzeń, komunikatów i punktów danych, które dają ci wgląd w to, co robi twoja aplikacja i jak się zachowuje. Programiści logują, ponieważ jest to kluczowe dla debugowania, monitorowania stanu aplikacji i zdobywania wskazówek o potencjalnych problemach, zanim te zamienią się w rzeczywiste kłopoty.
-
 ## Jak to zrobić:
 Ruby ma wbudowany moduł do logowania, `Logger`, który jest bardzo łatwy w użyciu. Oto krótki przykład, który pomoże Ci zacząć:
 

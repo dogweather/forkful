@@ -13,12 +13,7 @@ title: Een tekstbestand schrijven
 weight: 24
 ---
 
-## Wat & Waarom?
-
-Het schrijven van een tekstbestand omvat het creëren of wijzigen van tekstgegevens en deze opslaan in een bestand op uw opslagmedium. Programmeurs doen dit voor datalogging, configuratie-instellingen of het exporteren van menselijk leesbare rapporten.
-
 ## Hoe te:
-
 In Clojure gebruik je de `spit` functie om gegevens naar een tekstbestand te schrijven. Het is eenvoudig:
 
 ```clojure
@@ -39,10 +34,8 @@ Laten we deze nieuwe regel toevoegen.
 ```
 
 ## Diepere Duik
-
 Clojure's `spit` functie komt uit zijn "I/O" bibliotheek - een opvolger van Lisp's nalatenschap van bondige bestandsbewerkingen. Alternatieven in Clojure omvatten `clojure.java.io/writer` voor gebufferd schrijven en bibliotheken zoals `slurp` voor het lezen van bestanden. Wanneer je `spit` gebruikt, onthoud dan dat het niet bedoeld is voor grote stromen gegevens vanwege potentiële geheugenproblemen - gebruik in plaats daarvan `writer` en loop over de gegevens.
 
 ## Zie Ook
-
 - Clojure Docs voor `spit`: [https://clojuredocs.org/clojure.core/spit](https://clojuredocs.org/clojure.core/spit)
 - Clojure `java.io` wrapper: [https://clojure.github.io/clojure/clojure.java.io-api.html](https://clojure.github.io/clojure/clojure.java.io-api.html)

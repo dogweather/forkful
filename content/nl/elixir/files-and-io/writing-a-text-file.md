@@ -12,12 +12,7 @@ title: Een tekstbestand schrijven
 weight: 24
 ---
 
-## Wat & Waarom?
-
-Het schrijven van een tekstbestand houdt in dat gegevens worden opgeslagen in een bestand in een door mensen leesbaar formaat. Programmeurs doen dit om informatie zoals logs, instellingen en data-output te bewaren.
-
 ## Hoe te:
-
 Elixir maakt het schrijven van tekstbestanden eenvoudig. Hier is een simpel voorbeeld van het schrijven naar een bestand genaamd "hello.txt".
 
 ```elixir
@@ -42,11 +37,9 @@ Nog een regel!
 ```
 
 ## Diepere Duik
-
 Elixir's benadering van het schrijven van bestanden weerspiegelt zijn Erlang-erfgoed, met een focus op betrouwbaarheid en gelijktijdigheid. Alternatieven omvatten het gebruik van streams voor grotere gegevens. Intern gebruikt Elixir Erlang's :file module die interageert met het onderliggende besturingssysteem.
 
 ## Zie Ook
-
 - Elixir `File` module documentatie: https://hexdocs.pm/elixir/File.html
 - Erlang `:file` module documentatie: https://erlang.org/doc/man/file.html
 - Leer over Elixir's Stream module voor het omgaan met grote data: https://hexdocs.pm/elixir/Stream.html

@@ -11,9 +11,6 @@ title: Att arbeta med XML
 weight: 40
 ---
 
-## Vad & Varför?
-Att arbeta med XML innebär att tolka, omvandla och generera XML-dokument i Elm. Det görs för att interagera med många webbtjänster och äldre system som använder XML som sitt dataformat.
-
 ## Hur man gör:
 I Elm hanterar du XML med paketet `elm/xml`. Här är en snabb titt på hur man tolkar ett XML-utdrag:
 

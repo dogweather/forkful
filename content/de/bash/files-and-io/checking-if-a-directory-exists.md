@@ -15,12 +15,7 @@ title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---
 
-## Was & Warum?
-
-In der Bash-Programmierung ist die Überprüfung, ob ein Verzeichnis existiert, ein wesentlicher Kontrollmechanismus, der dazu dient, die Existenz eines Verzeichnisses zu bestätigen, bevor Dateioperationen durchgeführt werden. Diese Überprüfung ist entscheidend, um Fehler zu vermeiden, wie zum Beispiel den Versuch, auf Verzeichnisse zuzugreifen oder diese zu ändern, die nicht existieren, und sorgt so für eine reibungslosere und vorhersehbarere Skriptausführung.
-
 ## Wie:
-
 Im Kern ermöglicht es Bash, mit bedingten Anweisungen und dem Operator `-d` zu überprüfen, ob ein Verzeichnis existiert. Im Folgenden ist ein einfaches Beispiel, das zeigt, wie diese Überprüfung durchgeführt wird.
 
 ```bash

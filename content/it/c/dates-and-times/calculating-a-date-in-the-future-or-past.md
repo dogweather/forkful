@@ -14,9 +14,6 @@ title: Calcolo di una data futura o passata
 weight: 26
 ---
 
-## Cosa & Perché?
-Calcolare una data nel futuro o nel passato comporta la determinazione di una data specifica aggiungendo o sottraendo un certo numero di giorni, mesi o anni da una data data. I programmatori lo fanno per compiti come la programmazione di eventi, la generazione di promemoria o la gestione delle date di scadenza, rendendola una funzionalità essenziale in varie applicazioni, dai sistemi di calendario al software finanziario.
-
 ## Come fare:
 Sebbene la libreria standard C non fornisca funzioni dirette per l'aritmetica delle date, è possibile manipolare le date utilizzando la libreria `time.h`, lavorando specificamente con il tipo di dati `time_t` e `struct tm`. Ecco un esempio semplificato di come aggiungere giorni alla data corrente:
 

@@ -11,9 +11,6 @@ title: Comparer deux dates
 weight: 27
 ---
 
-## What & Why?
-Comparer deux dates, c'est mettre côte à côte deux moments distincts pour voir lequel vient avant ou après, ou s'ils sont identiques. En programmation, on fait cela pour gérer des échéances, trier des événements, ou pour la logique de flux de temps.
-
 ## Comment faire :
 ```Lua
 os.date("*t") -- Récupère la date et l'heure actuelles.

@@ -12,9 +12,6 @@ title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---
 
-## Was & Warum?
-Das Entfernen von Anführungszeichen aus einem String in C# bedeutet, dass Sie diese lästigen doppelten (`"`) oder einfachen (`'`) Anführungszeichen, die Ihren Text umschließen, herausnehmen. Programmierer tun dies, um Daten zu säubern, sie für die Eingabe in Datenbanken vorzubereiten oder Strings für die weitere Verarbeitung sicher zu machen, damit nichts schiefgeht, wenn ein verirrtes Anführungszeichen auftaucht.
-
 ## Wie zu:
 ```csharp
 string withQuotes = "\"Hallo, Welt!\"";

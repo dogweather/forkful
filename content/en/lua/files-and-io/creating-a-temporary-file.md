@@ -11,9 +11,6 @@ title: Creating a temporary file
 weight: 21
 ---
 
-## What & Why?
-Creating a temporary file is the process of making a short-lived file to store data that's only needed during the execution of a program. Programmers do it to avoid cluttering the file system with unnecessary data and to handle sensitive information that shouldn't stick around.
-
 ## How to:
 Lua doesn't have built-in functionality for temporary files, but you can roll out your own solution using the `os` and `io` libraries.
 

@@ -13,9 +13,6 @@ title: Einen Datum aus einem String analysieren
 weight: 30
 ---
 
-## Was & Warum?
-Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von Text in ein Date-Objekt. Diese Operation ist grundlegend für Anwendungen, die mit von Nutzern eingegebenen oder aus externen Datensätzen bezogenen Daten interagieren, da sie eine einfache Manipulation und Formatierung nach Bedarf ermöglicht.
-
 ## Wie geht das:
 Kotlin unterstützt das Parsen von Daten durch das `java.time`-Paket, das in Java 8 eingeführt wurde. Hier ist ein einfacher Ansatz unter Verwendung von `LocalDateTime` und einem spezifischen Muster:
 

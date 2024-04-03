@@ -15,12 +15,7 @@ title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---
 
-## Gì và Tại sao?
-
-Biểu thức chính quy là các mẫu được sử dụng để khớp các tổ hợp ký tự trong văn bản. Lập trình viên sử dụng chúng cho các tác vụ như xác thực, tìm kiếm và thao tác văn bản do sự mạnh mẽ và linh hoạt của chúng.
-
 ## Làm thế nào:
-
 Để sử dụng biểu thức chính quy trong C++, bạn cần bao gồm thư viện `<regex>`. Dưới đây là cách bạn khớp, tìm kiếm và thay thế văn bản:
 
 ```cpp
@@ -60,7 +55,6 @@ Sau khi thay thế: Hello Universe. This is a regex test.
 ```
 
 ## Sâu hơn
-
 Biểu thức chính quy đã là một phần của khoa học máy tính từ những năm 1950, được phổ biến bởi các tiện ích như grep trong Unix. C++ đã tiếp nhận chúng muộn hơn, với std::regex trong C++11. Sự hỗ trợ bản địa thay đổi theo trình biên dịch; một số có thể lạc hậu trong hỗ trợ đầy đủ tính năng regex.
 
 Các lựa chọn thay thế cho `std::regex` bao gồm các thư viện như Boost.Regex hay PCRE (Perl Compatible Regular Expressions). Boost.Regex, ví dụ, thường vượt trội hơn `std::regex` và có một bộ tính năng phong phú hơn.
@@ -68,7 +62,6 @@ Các lựa chọn thay thế cho `std::regex` bao gồm các thư viện như Bo
 Về mặt triển khai, `std::regex` có thể chậm hơn một số thuật toán phân tích cú pháp tùy chỉnh, đặc biệt là cho các mẫu đơn giản. Hiểu biết sự cân nhắc giữa sự tiện lợi của regex và các vấn đề về hiệu suất tiềm ẩn là chìa khóa.
 
 ## Xem thêm
-
 - Tài liệu tham khảo C++ về `<regex>`: https://en.cppreference.com/w/cpp/regex
 - Tài liệu Boost.Regex: https://www.boost.org/doc/libs/release/libs/regex/
 - Trang chính thức của PCRE: https://www.pcre.org/

@@ -11,9 +11,6 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## Hva & Hvorfor?
-Å laste ned en nettside betyr å hente HTML-koden til siden slik at vi kan jobbe med den lokalt. Programmerere gjør dette for å analysere innhold, hente data, eller sjekke tilgjengelighet.
-
 ## Slik gjør du:
 ```Lua
 -- Last ned en nettside med Lua

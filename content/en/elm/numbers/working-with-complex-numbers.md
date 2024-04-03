@@ -11,9 +11,6 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-Complex numbers are a combo of real and imaginary numbers, like `a + bi` where `i` is the square root of -1. They're key in fields like engineering and physics to solve problems regular numbers can't touch.
-
 ## How to:
 Elm doesn't have built-in complex number support, so you'll create your own type and functions. Here's a quick setup:
 

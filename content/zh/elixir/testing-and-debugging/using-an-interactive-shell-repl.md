@@ -16,9 +16,6 @@ title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uF
 weight: 34
 ---
 
-## 什么以及为什么？
-交互式shell，或称REPL (读取-求值-输出 循环)，允许你实时尝试代码片段。Elixir程序员使用名为IEx（交互式Elixir）的REPL进行实验、调试以及学习该语言。
-
 ## 如何操作：
 要启动IEx，打开你的终端并输入`iex`。这里是一个示例：
 

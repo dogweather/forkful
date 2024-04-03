@@ -16,9 +16,6 @@ title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---
 
-## Cái gì & Tại sao?
-Tìm kiếm và thay thế văn bản trong chuỗi giúp bạn cập nhật dữ liệu mà không cần chỉnh sửa thủ công. Lập trình viên cần điều này để xử lý sửa đổi đầu vào của người dùng, định dạng dữ liệu, hoặc cập nhật hàng loạt một cách hiệu quả.
-
 ## Làm thế nào:
 C# làm cho việc thao tác văn bản trở nên khá đơn giản. Dưới đây, hãy xem phương thức `string.Replace` để hoán đổi từ.
 

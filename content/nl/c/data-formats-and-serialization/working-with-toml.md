@@ -12,12 +12,7 @@ title: Werken met TOML
 weight: 39
 ---
 
-## Wat & Waarom?
-
-TOML (Tom's Obvious, Minimal Language) is een configuratiebestandsformaat dat makkelijk te lezen is door zijn duidelijke semantiek. Programmeurs gebruiken het voor configuratiebestanden in applicaties omdat de eenvoud en leesbaarheid door mensen het een uitstekende keuze maken over formaten zoals XML of JSON in bepaalde contexten.
-
 ## Hoe te:
-
 Om met TOML in C te werken, heb je eerst een bibliotheek nodig die in staat is om TOML-bestanden te parseren, aangezien de C-standaardbibliotheek deze functionaliteit niet bevat. Een populaire keuze is `tomlc99`, een lichtgewicht TOML-parser voor C99. Hier is een snelle gids om een eenvoudig TOML-configuratiebestand te lezen:
 
 Eerst, zorg ervoor dat je `tomlc99` hebt geïnstalleerd en correct gelinkt in je project.
@@ -81,7 +76,6 @@ Poort 2: 8002
 ```
 
 ## Diepgaande duik
-
 TOML is gecreëerd door Tom Preston-Werner, mede-oprichter van GitHub, als een reactie op de beperkingen die hij waarnam in andere configuratiebestandsformaten. Het doel is om rechttoe rechtaan en ondubbelzinnig te zijn, zowel voor mensen als computers, om te lezen en te schrijven zonder complexe parsingregels nodig te hebben. In het C-ecosysteem is TOML geen eerste klas burger zoals het misschien in hogere programmeertalen zoals Rust met zijn `serde_toml` of Python met `toml` is, die bibliotheken hebben met native ondersteuning. Echter, C-ontwikkelaars moeten vertrouwen op externe bibliotheken zoals `tomlc99`, maar dit is typerend gezien de nadruk van C op minimalisme en prestatie.
 
 Hoewel TOML wordt geprezen voor zijn duidelijkheid, is het bij het kiezen van een configuratiebestandsformaat essentieel om de behoeften van het project te overwegen. In scenario's die complexere structuren vereisen of interactiviteit met web-API's, kunnen JSON of zelfs YAML ondanks hun verhoogde complexiteit een betere pasvorm bieden. TOML schittert in configuraties waar leesbaarheid en eenvoud vooropstaan, niet noodzakelijkerwijs waar de meest geavanceerde gegevensstructuren nodig zijn.

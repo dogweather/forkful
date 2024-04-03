@@ -11,9 +11,6 @@ title: Code in Funktionen organisieren
 weight: 18
 ---
 
-## Was & Warum?
-Code in Funktionen zu organisieren ist, wie LEGO-Steine in Behälter zu sortieren – es macht das Finden und Verwenden einfacher. Wir tun dies, um Wiederholungen zu vermeiden, das Verständnis zu vereinfachen und die Wartung weniger kopfschmerzhaft zu machen.
-
 ## Wie man es macht:
 Stellen Sie sich vor, Sie haben Code, der mehrmals einen Gruß ausdruckt. Ohne Funktionen ist es ein Durcheinander. Mit Funktionen ist es ordentlich.
 

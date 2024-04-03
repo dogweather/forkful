@@ -10,9 +10,6 @@ title: Descobrindo o comprimento de uma string
 weight: 7
 ---
 
-## O Que & Porquê?
-Encontrar o comprimento de uma string significa determinar quantos caracteres ela possui. Programadores fazem isso para validar entradas, delimitar processamentos ou simplesmente manipular texto de forma precisa.
-
 ## Como Fazer:
 ```Bash
 # Usando a variável built-in ${#string}

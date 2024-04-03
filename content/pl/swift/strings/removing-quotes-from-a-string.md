@@ -11,12 +11,7 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co i dlaczego?
-
-Usuwanie cudzysłowów z ciągu znaków oznacza wycięcie wszystkich znaków cudzysłowu, które otaczają treść. Robimy to, aby oczyścić dane wejściowe, przygotować dane do przechowywania lub pozbyć się niepotrzebnego formatowania tekstu, które może zakłócać przetwarzanie danych.
-
 ## Jak to zrobić:
-
 Swift pozwala w dość wygodny sposób poradzić sobie z zadaniem usuwania cudzysłowów. Oto szybki przykład użycia `replacingOccurrences(of:with:)`, który robi dokładnie to, na co wygląda – zamienia fragmenty tekstu na coś innego lub nic.
 
 ```swift
@@ -33,7 +28,6 @@ print(singleQuoteRemoved) // Oto inny przykład.
 Wynikiem będą ciągi znaków bez cudzysłowów, gotowe na cokolwiek masz zaplanowane dalej.
 
 ## Dogłębna analiza
-
 "Oczyszczamy" ciągi znaków w ten sposób od zarania programowania. W dawnych czasach chodziło bardziej o oszczędzanie cennej pamięci i unikanie błędów składni przy przetwarzaniu danych wejściowych. Przesuwając się do dzisiaj, chodzi o dobre zarządzanie danymi – szczególnie przy pracy z JSON-em lub przygotowywaniu ciągów znaków do pracy z bazą danych. Zgubiony cudzysłów może zepsuć zapytania SQL szybciej, niż można powiedzieć "błąd składni".
 
 Alternatywy? Cóż, jeśli uważasz, że `replacingOccurrences(of:with:)` jest zbyt proste, możesz zagłębić się w wyrażenia regularne dla bardziej skomplikowanych wzorców lub gdy chcesz usuwać cudzysłowy tylko w określonych miejscach. Klasa `NSRegularExpression` w Swifcie jest tutaj Twoim przyjacielem. Ale pamiętaj, że regex to miecz obosieczny – potężny, ale czasami nadmierny.
@@ -41,7 +35,6 @@ Alternatywy? Cóż, jeśli uważasz, że `replacingOccurrences(of:with:)` jest z
 Pod względem implementacji, `replacingOccurrences(of:with:)` to metoda dostarczana przez `String` w Swifcie, która wewnętrznie wywołuje bardziej skomplikowane funkcje manipulacji ciągami znaków, radzące sobie z Unicode i innymi zawiłościami nowoczesnego przetwarzania tekstu. To jedna z tych spraw "prosta na powierzchni, skomplikowana w środku", z którą Swift radzi sobie, abyś Ty nie musiał.
 
 ## Zobacz również
-
 Aby dowiedzieć się więcej o manipulacji ciągami znaków w Swift:
 
 - Język programowania Swift (Ciągi znaków i znaki): [Dokumentacja Swift.org](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

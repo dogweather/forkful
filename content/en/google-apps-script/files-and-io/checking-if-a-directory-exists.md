@@ -10,12 +10,7 @@ title: Checking if a directory exists
 weight: 20
 ---
 
-## What & Why?
-
-Checking if a directory exists in Google Apps Script involves verifying the presence of a folder within Google Drive. Programmers often perform this check to avoid errors or redundant folder creation when managing files and directories programmatically.
-
 ## How to:
-
 Google Apps Script doesn't offer a direct "exists" method for folders. Instead, we use Google Drive's search capabilities to check if a folder with a specific name exists. Here's a step-by-step example:
 
 ```javascript
@@ -51,7 +46,6 @@ Directory does not exist.
 This script leverages the `getFoldersByName` method which retrieves all folders in the user's Drive that match the specified name. Since names aren’t unique in Drive, this method returns a `FolderIterator`. The presence of a next item (`hasNext()`) in this iterator indicates the directory exists.
 
 ## Deep Dive
-
 Historically, file management in web and cloud environments has evolved significantly. Google Apps Script, providing an extensive API for Google Drive, allows for sophisticated file and folder management operations, including the search and check mechanisms demonstrated. However, a notable aspect is the lack of a direct existence check, likely due to Google Drive's allowance for multiple folders of the same name, which contrasts with many file systems that enforce unique names within the same directory.
 
 In this context, using the `getFoldersByName` method is an effective workaround but could potentially introduce inefficiencies in a scenario where vast numbers of folders with duplicate names exist. An alternative approach might involve maintaining an application-specific indexing or naming convention to ensure quicker checks, especially when performance becomes a critical concern.

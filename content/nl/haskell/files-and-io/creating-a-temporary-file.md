@@ -14,9 +14,6 @@ title: Een tijdelijk bestand aanmaken
 weight: 21
 ---
 
-## Wat & Waarom?
-Een tijdelijk bestand creëren betekent het maken van een bestand voor kortstondig gebruik, vaak voor het beheren van gegevens tijdens de uitvoering van een programma. Programmeurs doen dit om te voorkomen dat de harde schijf vol raakt met vluchtige gegevens en om veilig met bestanden te werken zonder het risico op conflicten of het lekken van gegevens.
-
 ## Hoe:
 Haskell biedt het `temporary` pakket, dat handige functies bevat voor tijdelijke bestandsoperaties. Hier is een snelle demonstratie:
 

@@ -11,9 +11,6 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## Co i Dlaczego?
-Zaczynanie nowego projektu to tworzenie podstaw pod twoją przyszłą aplikację lub skrypt. Robimy to, aby uporządkować nasze pomysły i zapewnić im solidne fundamenty od samego początku.
-
 ## Jak to zrobić:
 ```Bash
 # Utworzenie nowego katalogu dla projektu

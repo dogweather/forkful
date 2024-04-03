@@ -12,9 +12,6 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mitä ja miksi?
-Koodin jakaminen funktioihin tarkoittaa skriptien pilkkomista pienempiin, uudelleenkäytettäviin lohkoihin, jotka suorittavat tiettyjä tehtäviä. Se tekee koodista selkeämmän, ymmärrettävämmän ja helpomman virheenjäljityksen kannalta.
-
 ## Miten:
 Luo yksinkertainen funktio Bashissa:
 

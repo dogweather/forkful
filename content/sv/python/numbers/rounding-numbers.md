@@ -11,9 +11,6 @@ title: Avrundning av tal
 weight: 13
 ---
 
-## Vad & Varför?
-Att avrunda tal innebär att justera dem för att vara närmare ett enklare eller mer signifikant värde. Programmerare avrundar tal för att förenkla resultat, begränsa antalet decimaler för visning, eller för vissa matematiska ändamål.
-
 ## Hur man gör:
 Här är det grundläggande om att avrunda tal i Python:
 

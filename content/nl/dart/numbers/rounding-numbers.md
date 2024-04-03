@@ -12,35 +12,26 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-
-Getallen afronden is het proces van het aanpassen van een getal naar het dichtstbijzijnde hele getal of naar een gespecificeerd aantal decimalen. Programmeurs ronden vaak getallen af om berekeningen te vereenvoudigen, de leesbaarheid te verbeteren of data voor te bereiden voor weergave, wat zorgt voor consistentie en duidelijkheid in numerieke uitvoer.
-
 ## Hoe te:
-
 Dart biedt inheemse methoden in zijn kern `num` type voor afrondingsbewerkingen. Hier zullen we methoden zoals `round()`, `floor()`, `ceil()`, en hoe af te ronden naar een specifiek aantal decimalen verkennen.
 
 ### Afronden naar het dichtstbijzijnde hele getal:
-
 ```dart
 var number = 3.56;
 print(number.round()); // Uitvoer: 4
 ```
 
 ### Naar beneden afronden:
-
 ```dart
 print(number.floor()); // Uitvoer: 3
 ```
 
 ### Naar boven afronden:
-
 ```dart
 print(number.ceil()); // Uitvoer: 4
 ```
 
 ### Afronden naar een specifiek aantal decimalen:
-
 Om af te ronden naar een specifiek aantal decimalen, kunnen we de methode `toStringAsFixed()` gebruiken, die een string retourneert, of een combinatie van `pow` uit `dart:math` voor een numeriek resultaat.
 
 ```dart

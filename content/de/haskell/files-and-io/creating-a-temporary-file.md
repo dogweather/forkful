@@ -12,9 +12,6 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-## Was & Warum?
-Temporäre Dateien sind kurzlebige Dateien für Daten, die während der Laufzeit eines Programms benötigt, aber nicht dauerhaft gespeichert werden sollen. Programmierer nutzen sie, um Speicherplatz zu sparen, die Sicherheit zu erhöhen und Race Conditions zu vermeiden.
-
 ## So geht's:
 Mit der Haskell-Bibliothek `temporary` kann man leicht temporäre Dateien erstellen und verwalten. Hier ein Beispiel:
 

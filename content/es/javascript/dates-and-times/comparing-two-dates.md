@@ -10,9 +10,6 @@ title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---
 
-## ¿Qué y Por Qué?
-Comparar dos fechas significa verificar si una es anterior, posterior o igual a la otra. Programadores lo hacen para validar eventos, calcular diferencias o programar tareas.
-
 ## Cómo hacerlo:
 ```javascript
 // Obtener fechas actuales

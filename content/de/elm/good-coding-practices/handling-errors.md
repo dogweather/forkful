@@ -10,9 +10,6 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-Fehlerbehandlung bedeutet, Code zu schreiben, der vorhersehen und mit Problemen umgehen kann, wenn etwas schief geht. Programmierer machen das, um Abstürze zu verhindern, die Datenintegrität zu schützen und den Benutzern anmutige Ausweichlösungen zu bieten.
-
 ## Wie geht das:
 Die Kernphilosophie von Elm ist Keine Laufzeit-Ausnahmen. Daher nutzt Elm sein Typsystem mit Typen wie `Maybe` und `Result`, um Fehler zu behandeln.
 

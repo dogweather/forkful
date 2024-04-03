@@ -14,12 +14,7 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## Vad & Varför?
-
-Att skriva ut felsökningsutdata i Dart handlar om att visa information i konsolen under körning, vilket tillåter utvecklare att följa exekveringsflödet, undersöka variablernas tillstånd eller identifiera källan till fel. Programmerare använder det vanligtvis för felsökning och för att verifiera att deras kod beter sig som förväntat, vilket underlättar en smidigare och mer effektiv utvecklingsprocess.
-
 ## Hur man gör:
-
 I Dart kan du skriva ut felsökningsutdata med `print()`-funktionen. Så här skriver du ut enkla meddelanden och variabelvärden:
 
 ```dart

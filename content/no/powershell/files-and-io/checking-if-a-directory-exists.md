@@ -15,9 +15,6 @@ title: Sjekker om en mappe eksisterer
 weight: 20
 ---
 
-## Hva & Hvorfor?
-I PowerShell er det å sjekke om en mappe finnes en vanlig oppgave som hjelper skript å ta beslutninger basert på filsystemets struktur—som å unngå feil ved å bekrefte at en målmappe er på plass før man forsøker å lese fra eller skrive til den. Det er essensielt for å sikre at skriptet ditt oppfører seg pålitelig i ulike miljøer.
-
 ## Hvordan:
 PowerShell tilbyr en enkel måte å sjekke for tilstedeværelsen av en mappe ved bruk av `Test-Path` cmdleten. Denne cmdleten returnerer en Boolean-verdi som indikerer om den spesifiserte stien finnes. Her er hvordan du kan bruke den:
 

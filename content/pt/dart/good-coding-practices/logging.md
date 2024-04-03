@@ -13,12 +13,7 @@ title: Registro
 weight: 17
 ---
 
-## O Que & Por Quê?
-
-Registrar (logging) em Dart refere-se ao processo de gravação de vários níveis de informações durante a execução de um programa. Programadores fazem isso para monitorar o comportamento do software, depurar problemas e analisar o desempenho, facilitando a manutenção e a melhoria do aplicativo ao longo do tempo.
-
 ## Como fazer:
-
 Dart inclui um mecanismo de registro simples através da biblioteca `dart:developer`. Para necessidades de registro mais sofisticadas, programadores costumam recorrer a bibliotecas de terceiros como `logger` e `log4dart`.
 
 ### Usando `dart:developer`

@@ -11,9 +11,6 @@ title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-begäran innebär att be en webbserver om data eller att utföra en åtgärd. Programmerare gör detta för att interagera med webb-API:er, hämta information, skicka formulärdata eller automatisera webbprocesser.
-
 ## Hur man gör:
 ```PowerShell
 # Skicka en GET-begäran för att hämta innehåll från en webbsida

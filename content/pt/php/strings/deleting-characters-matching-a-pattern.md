@@ -11,9 +11,6 @@ title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---
 
-## O Que é & Porquê?
-Deletar caracteres que correspondem a um padrão é basicamente filtrar sua string com base em regras específicas. Programadores fazem isso para limpar dados, remover caracteres indesejados ou validar entradas.
-
 ## Como Fazer:
 Imagine que você quer tirar todos os dígitos de uma string. Você pode usar a função `preg_replace` do PHP:
 

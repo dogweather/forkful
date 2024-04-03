@@ -12,12 +12,7 @@ title: Das aktuelle Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-
-Das Abrufen des aktuellen Datums in C erfordert den Zugriff auf die Standard-C-Bibliothek, um das aktuelle Datum und die aktuelle Zeit des Systems abzurufen und zu formatieren. Programmierer benötigen diese Funktionalität oft zum Protokollieren, Zeitstempeln oder für Planungsfunktionen innerhalb ihrer Anwendungen.
-
 ## Wie:
-
 In C bietet der Header `<time.h>` die notwendigen Funktionen und Typen, um mit Daten und Zeiten zu arbeiten. Die Funktion `time()` ruft die aktuelle Zeit ab, während `localtime()` diese Zeit in die lokale Zeitzone umrechnet. Um das Datum anzuzeigen, verwenden wir `strftime()`, um es als Zeichenkette zu formatieren.
 
 Hier ist ein einfaches Beispiel:
@@ -51,7 +46,6 @@ Das heutige Datum ist 2023-04-12
 ```
 
 ## Tiefgang
-
 Die Zeitverwaltung in C, wie sie durch `<time.h>` ermöglicht wird, reicht zurück bis in die frühesten Tage der Sprache und der UNIX-Systeme. Sie basiert auf dem Datentyp `time_t`, der die aktuelle Zeit als Anzahl der Sekunden seit der Unix-Epoche (1. Januar 1970) darstellt. Obwohl dies effizient und universell kompatibel ist, bedeutet dies auch, dass die Zeitfunktionen der Standard-C-Bibliothek von dem Bereich und der Auflösung von `time_t` inhärent begrenzt sind.
 
 Moderne Anwendungen, insbesondere solche, die hochauflösende Zeitstempel benötigen oder mit Daten weit in der Zukunft oder Vergangenheit umgehen müssen, können diese Einschränkungen als herausfordernd empfinden. Das Jahr-2038-Problem ist beispielsweise eine bekannte Illustration, bei der Systeme, die einen 32-Bit-`time_t` verwenden, überlaufen werden.

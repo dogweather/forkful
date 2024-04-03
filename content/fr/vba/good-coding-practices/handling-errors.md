@@ -14,12 +14,7 @@ title: Gestion des erreurs
 weight: 16
 ---
 
-## Quoi & Pourquoi ?
-
-La gestion des erreurs dans Visual Basic pour Applications (VBA) fait référence au processus d'anticipation, de détection et de résolution des erreurs de programmation, d'application ou de communication. La mise en œuvre d'une gestion robuste des erreurs est cruciale pour maintenir l'intégrité des applications et améliorer l'expérience utilisateur en gérant élégamment les problèmes inattendus sans provoquer de plantages brusques ou de pertes de données.
-
 ## Comment faire :
-
 Dans VBA, la gestion des erreurs est typiquement mise en œuvre à l'aide de l'instruction `On Error` qui instruit VBA sur la marche à suivre lorsqu'une erreur se produit. Les stratégies de gestion des erreurs les plus courantes impliquent l’utilisation de `On Error GoTo` étiquette, `On Error Resume Next`, et `On Error GoTo 0`.
 
 **Exemple 1 : Utilisation de `On Error GoTo`**
@@ -64,7 +59,6 @@ End Sub
 Dans ce cas, le programme ne s'arrête pas sur l'erreur ; il vérifie si une erreur s'est produite, la gère si c'est le cas, puis efface l'erreur.
 
 ## Approfondissement
-
 Historiquement, la gestion des erreurs dans les langages de programmation a évolué de simples instructions goto à des mécanismes plus sophistiqués comme les exceptions dans des langages tels que Java et C#. Bien que la gestion des erreurs de VBA ne soit pas aussi puissante ou flexible que la gestion moderne des exceptions, elle remplit sa fonction dans le contexte de l'application du langage à l'automatisation des tâches dans les environnements Microsoft Office.
 
 La principale limitation de la gestion des erreurs de VBA réside dans son approche quelque peu encombrante et manuelle, nécessitant un placement soigneux du code de gestion des erreurs et une compréhension claire du flux d'exécution. Les langages de programmation modernes offrent généralement des solutions plus élégantes, comme les blocs try-catch, qui gèrent automatiquement le flux vers le code de gestion des erreurs sans nécessiter de vérifications manuelles ou de sauts dans l'exécution du code.

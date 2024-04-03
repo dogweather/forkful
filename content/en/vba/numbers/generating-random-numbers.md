@@ -11,12 +11,7 @@ title: Generating random numbers
 weight: 12
 ---
 
-## What & Why?
-
-Generating random numbers in Visual Basic for Applications (VBA) allows programs to simulate processes with elements of chance or variability, such as dice rolls or sampling data. Programmers use these techniques to develop models, games, or simulations where predictable outcomes would be unrealistic or less useful.
-
 ## How to:
-
 In VBA, the `Rnd` function is used to generate random numbers. By default, `Rnd` generates a single-precision floating-point number greater than or equal to 0 and less than 1. Here are a few steps and examples to harness random numbers effectively:
 
 1. **Simple Random Number:**
@@ -58,7 +53,6 @@ In VBA, the `Rnd` function is used to generate random numbers. By default, `Rnd`
 After running `RandomNumberInRange`, you might see a message box displaying a number like `45`.
 
 ## Deep Dive:
-
 The `Rnd` function in VBA, while easy to use, actually generates pseudo-random numbers based on a deterministic algorithm. This means the sequences of numbers it produces are not truly random but can often suffice for common tasks needing stochastic processes.
 
 Historically, the random number generation capability in VBA dates back to early versions of Basic, adapting over time to include features like `Randomize` to improve the randomness by seeding the algorithm with a starting point. However, for applications requiring high levels of randomness such as secure cryptographic operations, VBA’s `Rnd` might not be the best tool. Alternatives in more robust programming environments or languages designed with cryptography in mind, like Python's `secrets` module or Java's `SecureRandom`, should be considered. 

@@ -13,12 +13,7 @@ title: "Edytowanie plik\xF3w w miejscu za pomoc\u0105 jednolinijkowc\xF3w CLI"
 weight: 32
 ---
 
-## Co i dlaczego?
-
-Edycja plików na miejscu z użyciem jednolinijkowych poleceń CLI (Command Line Interface) w Ruby pozwala na modyfikowanie plików bezpośrednio z terminala, bez potrzeby otwierania ich w edytorze, wprowadzania zmian i zapisywania z powrotem. Ta technika jest niezwykle użyteczna do szybkich modyfikacji, aktualizacji zbiorczych czy automatyzacji powtarzalnych zadań, co pozwala zaoszczędzić zarówno czas, jak i wysiłek.
-
 ## Jak to zrobić:
-
 Ruby oferuje prosty sposób na edycję plików na miejscu bezpośrednio z linii poleceń. Za pomocą przełącznika `-i` Ruby można kazać Ruby'emu działać bezpośrednio na podanym(ych) pliku(ach). Przyjrzyjmy się kilku przykładom, aby zobaczyć, jak to działa w praktyce. Wyobraź sobie, że masz plik `greetings.txt` z następującą zawartością:
 
 ```
@@ -50,7 +45,6 @@ ruby -i.bak -pe "gsub(/Hello/, 'Bye')" greetings.txt
 Teraz, wraz z edytowanym `greetings.txt`, znajdziesz w tym samym katalogu `greetings.txt.bak` z oryginalną treścią.
 
 ## Głębsze zanurzenie
-
 Magia edycji plików na miejscu w Ruby wynika z jej połączenia podobnych do Perla możliwości przetwarzania tekstu i własnej elegancji składni Ruby. Historycznie, Perl był językiem pierwszego wyboru dla szybkiego skryptowania jednolinijkowego, zwłaszcza dla manipulacji tekstem. Ruby przyjął ten paradygmat, oferując potężne możliwości skryptowania z linii poleceń.
 
 Alternatywy dla edycji na miejscu istnieją w innych językach, takich jak sam Perl i sed, edytor strumieniowy w systemach Unix. Każdy ma swoje mocne strony – Perl jest znany ze swojej potęgi w przetwarzaniu tekstu, podczas gdy sed jest niezrównany w swojej prostocie dla zadań edycji strumieniowej. Jednak Ruby oferuje równowagę, zapewniając solidną manipulację tekstem z bardziej czytelną i przyjazną dla użytkownika składnią, szczególnie dla osób już zaznajomionych z Ruby.

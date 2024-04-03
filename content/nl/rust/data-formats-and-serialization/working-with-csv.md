@@ -12,12 +12,7 @@ title: Werken met CSV
 weight: 37
 ---
 
-## Wat & Waarom?
-
-CSV, de afkorting voor Comma-Separated Values (komma-gescheiden waarden), is een bestandsformaat dat wordt gebruikt om tabelgegevens op te slaan. Programmeurs houden van CSV vanwege de eenvoud en de brede ondersteuning in tools en programmeertalen voor gegevensmanipulatie, import en export.
-
 ## Hoe te:
-
 Voeg eerst de benodigde crate toe aan `Cargo.toml`:
 
 ```toml
@@ -63,7 +58,6 @@ StringRecord(["Jane", "New York", "30"])
 ```
 
 ## Diepgaande duik
-
 CSV bestaat al sinds de vroege dagen van persoonlijke computers en werd gebruikt voor het uitwisselen van gegevens tussen programma's en systemen. Terwijl JSON en XML meer structuur bieden, blijft CSV populair vanwege zijn lichte gewicht en gebruiksgemak.
 
 Alternatieven voor de csv crate in Rust zijn onder andere `serde_csv`, dat handige serialisatie en deserialisatie biedt, en `papercut`, dat zich richt op veilige en ergonomische CSV-analyse.
@@ -71,7 +65,6 @@ Alternatieven voor de csv crate in Rust zijn onder andere `serde_csv`, dat handi
 CSV-analyse in Rust is I/O-gebonden. Efficiënte afhandeling betreft het gebruik van iterators en de robuuste foutafhandeling van Rust om slecht gevormde gegevens te beheren.
 
 ## Zie ook
-
 - Rust CSV crate documentatie: https://docs.rs/csv/
 - Het Rust Programmeringstaal boek: https://doc.rust-lang.org/book/
 - Serde: https://serde.rs/ - een framework voor het serialiseren en deserialiseren van Rust-gegevensstructuren.

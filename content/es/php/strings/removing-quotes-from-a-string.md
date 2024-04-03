@@ -12,9 +12,6 @@ title: Eliminando comillas de una cadena
 weight: 9
 ---
 
-## Qué y Por Qué?
-Eliminar comillas de una cadena en PHP significa quitar esos molestos caracteres de comillas dobles (`"`) o simples (`'`) que pueden interferir con la lógica de tu código o consultas de bases de datos. Los programadores lo hacen para limpiar o sanear datos de entrada, asegurando que las cadenas se usen o almacenen de forma segura.
-
 ## Cómo hacerlo:
 Aquí tienes un ejemplo sencillo utilizando las funciones integradas de PHP:
 

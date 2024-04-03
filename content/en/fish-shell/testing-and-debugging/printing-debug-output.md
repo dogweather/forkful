@@ -10,9 +10,6 @@ title: Printing debug output
 weight: 33
 ---
 
-## What & Why?
-Printing debug output means spitting out extra info to help you understand what your code's doing. Programmers do it to detect and fix bugs more easily.
-
 ## How to:
 Get cozy with `echo` - the Swiss Army knife for output in Fish. Here's how to sprinkle some debug prints into your shell scripts.
 

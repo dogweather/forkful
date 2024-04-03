@@ -12,9 +12,6 @@ title: Commandoregelargumenten lezen
 weight: 23
 ---
 
-## Wat & Waarom?
-Commandoregelargumenten lezen stelt een C# programma in staat om gebruikersinvoer te verwerken die bij het starten wordt gegeven. Programmeurs gebruiken dit om app-gedrag aan te passen zonder de code te wijzigen.
-
 ## Hoe:
 Zo verslind je die commandoregelargumenten:
 

@@ -12,9 +12,6 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-Tests schrijven in C betreft het creëren van kleinere, hulpprogramma's of functies die automatisch de functionaliteit van je code verifiëren. Programmeurs doen dit om te zorgen dat hun software werkt zoals verwacht, om fouten vroegtijdig op te sporen, en om toekomstige code wijzigingen te vergemakkelijken zonder onbedoelde bijeffecten.
-
 ## Hoe:
 Hoewel C geen ingebouwd testframework heeft zoals sommige andere talen, kun je nog steeds effectieve tests schrijven met `assert.h` voor eenvoudige beweringen of door derde partij frameworks zoals CUnit of Unity te integreren voor meer gestructureerd testen. Hier is een basisvoorbeeld met `assert.h` om een functie te testen die twee integers optelt:
 

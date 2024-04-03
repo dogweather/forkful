@@ -12,14 +12,10 @@ title: "Editando archivos directamente con l\xEDneas de comandos"
 weight: 32
 ---
 
-## Qué y Por Qué?
-
-Editar archivos en el lugar con líneas de comando (CLI) de una sola línea en PowerShell se trata de hacer modificaciones directas a los archivos desde la línea de comandos, sin necesidad de abrirlos en un editor. Este enfoque ahorra tiempo y puede ser particularmente útil para el procesamiento por lotes o para automatizar tareas de edición repetitivas en múltiples archivos.
-
 ## Cómo hacerlo:
 
-### Reemplazando Texto en un Solo Archivo
 
+### Reemplazando Texto en un Solo Archivo
 Empecemos con una tarea sencilla: quieres reemplazar todas las instancias de "oldtext" con "newtext" en un archivo llamado example.txt. Así es cómo lo harías:
 
 ```PowerShell
@@ -29,7 +25,6 @@ Empecemos con una tarea sencilla: quieres reemplazar todas las instancias de "ol
 Este comando de una sola línea lee el contenido, realiza el reemplazo y escribe el contenido de vuelta al archivo original.
 
 ### Editando Múltiples Archivos
-
 ¿Qué pasa si necesitas aplicar el mismo cambio en múltiples archivos? Aquí hay un enfoque utilizando un bucle:
 
 ```PowerShell
@@ -41,7 +36,6 @@ Get-ChildItem *.txt | ForEach-Object {
 Este fragmento encuentra todos los archivos `.txt` en el directorio actual, reemplazando "oldtext" con "newtext" en cada uno de ellos.
 
 ### Agregar Contenido al Principio o al Final de los Archivos
-
 También se puede simplificar el añadir o anteponer contenido:
 
 ```PowerShell
@@ -55,7 +49,6 @@ También se puede simplificar el añadir o anteponer contenido:
 Aquí, simplemente concatenamos el nuevo contenido antes o después del contenido existente y lo guardamos de nuevo.
 
 ## Estudio Detallado
-
 Históricamente, la edición en el lugar está más comúnmente asociada con herramientas Unix como `sed` y `awk`. PowerShell, siendo un nuevo participante, no incluye una característica dedicada de edición en el lugar de forma predeterminada. Esto se debe en parte a su filosofía de diseño, destacando la importancia de los objetos sobre los flujos de texto, a diferencia de las herramientas Unix que tratan la mayoría de las entradas como texto.
 
 Las alternativas a PowerShell para esta tarea incluyen el uso de herramientas Unix tradicionales disponibles en Windows a través de Cygwin o el Subsistema de Windows para Linux (WSL). Estas herramientas a menudo proporcionan una sintaxis más concisa para la edición en el lugar debido a su diseño centrado en el texto.

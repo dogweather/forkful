@@ -16,12 +16,7 @@ title: "S\u1EAFp x\u1EBFp m\xE3 l\u1EADp tr\xECnh v\xE0o trong h\xE0m"
 weight: 18
 ---
 
-## Gì và Tại Sao?
-
-Việc tổ chức mã lệnh thành các hàm trong ngôn ngữ C đề cập đến việc chia nhỏ các tác vụ phức tạp thành các khối mã lệnh nhỏ hơn, có thể tái sử dụng. Thực hành này giúp tăng cường tính dễ đọc, đơn giản hóa việc gỡ lỗi, và thúc đẩy việc tái sử dụng mã, khiến cho các ứng dụng trở nên linh hoạt và dễ bảo trì hơn.
-
 ## Làm Thế Nào:
-
 Trong C, một hàm được khai báo với kiểu trả về, tên, và các tham số (nếu có), theo sau là một khối mã lệnh. Hãy bắt đầu với một ví dụ đơn giản: một hàm cộng hai số nguyên.
 
 ```c
@@ -77,7 +72,6 @@ Diện tích hình chữ nhật là: 50
 ```
 
 ## Sâu Hơn
-
 Khái niệm về hàm trong C, thừa hưởng từ những thực hành lập trình trước đó, là cơ bản cho lập trình có cấu trúc. Hàm cho phép các lập trình viên tách rời chi tiết, quản lý độ phức tạp, và tổ chức mã lệnh của họ một cách logic. Kể từ khi ra đời, hàm đã trở thành một cấu trúc cốt lõi trong C, ảnh hưởng đến nhiều ngôn ngữ khác.
 
 Tuy nhiên, khi các mô hình lập trình tiến hóa, các cách tiếp cận khác như lập trình hướng đối tượng (OOP) trong các ngôn ngữ như C++ và Java, đã mở rộng khái niệm của hàm với các phương thức liên quan đến đối tượng. Mặc dù C không hỗ trợ OOP ngay từ đầu, nhưng có khả năng mô phỏng thiết kế hướng đối tượng bằng cách cấu trúc hàm và dữ liệu một cách cẩn thận.

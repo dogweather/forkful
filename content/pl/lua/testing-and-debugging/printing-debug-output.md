@@ -11,9 +11,6 @@ title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---
 
-## What & Why? (Co i dlaczego?)
-Drukowanie komunikatów debugowania to wyświetlanie informacji o działaniu programu podczas jego wykonania. Programiści to robią, by łatwiej zrozumieć błędy i śledzić działanie aplikacji.
-
 ## How to: (Jak to zrobić?)
 Aby wyświetlić debug, użyj standardowej funkcji `print()`. Oto przykład:
 

@@ -15,12 +15,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---
 
-## Cái gì & Tại sao?
-
-YAML, "YAML Ain't Markup Language," là một tiêu chuẩn hóa dữ liệu thân thiện với con người dành cho tất cả ngôn ngữ lập trình. Các lập trình viên sử dụng YAML cho các tệp cấu hình và trao đổi dữ liệu nơi mà tính dễ đọc là quan trọng.
-
 ## Làm thế nào:
-
 Clojure không bao gồm hỗ trợ tích hợp sẵn cho YAML. Bạn sẽ cần sử dụng một thư viện như `clj-yaml`. Đầu tiên, thêm nó vào phần phụ thuộc của bạn:
 
 ```clojure
@@ -47,11 +42,9 @@ Bây giờ, hãy phân tích một chuỗi YAML thành một bản đồ Clojure
 ```
 
 ## Sâu hơn
-
 YAML được phát hành lần đầu vào năm 2001, với mục tiêu là dễ đọc hơn XML trong khi cung cấp cấu trúc dữ liệu phong phú hơn JSON. `clj-yaml` được xây dựng trên SnakeYAML, một thư viện Java, cho phép tương tác với các ngôn ngữ JVM. Các lựa chọn thay thế bao gồm việc sử dụng trực tiếp `org.yaml.snakeyaml` hoặc `cheshire` cho việc chuyển đổi JSON, vì JSON là một tập con của YAML.
 
 ## Xem thêm
-
 Khám phá sâu hơn với những tài nguyên này:
 
 - Trang chính thức của YAML: [https://yaml.org](https://yaml.org)

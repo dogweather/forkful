@@ -22,12 +22,7 @@ title: "\u0412\u0438\u0434\u0456\u043B\u0435\u043D\u043D\u044F \u043F\u0456\u043
 weight: 6
 ---
 
-## Що це таке та навіщо?
-
-Витягування підрядків у Java - це спосіб отримання частини з рядка. Програмісти роблять це, щоб обробити або використовувати конкретні дані з більшого тексту.
-
 ## Як це зробити:
-
 ```java
 public class SubstringExample {
     public static void main(String[] args) {
@@ -48,7 +43,6 @@ public class SubstringExample {
 Використовуйте метод `.substring()` для отримання частини рядка. Передайте індекс початку і кінця, щоб обмежити витягування.
 
 ## Поглиблений огляд:
-
 В Java витягнення підрядків стало зазвичай завдяки `String` класу. З часів Java 1, ця можливість допомагає оптимізувати обробку текстів. Останні версії Java управляють рядками ефективніше, що зменшує пам'ять та прискорює доступ.
 
 Альтернативами є методи `split()` або регулярні вирази (`Pattern` і `Matcher` класи), кожен із своїм використанням. Застосування `substring()` краще для простого і точного витягування певних сегментів тексту.
@@ -56,7 +50,6 @@ public class SubstringExample {
 Реалізаційно, до Java 7, `substring()` створював новий рядок зі спільним масивом символів - економія пам'яті. Але з Java 7, `substring()` створює новий масив символів для кожного нового рядка, ліквідуючи залежність від оригінального рядка та потенційні витоки пам'яті.
 
 ## Дивіться також:
-
 - [String (Java Platform SE 8)](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
 - [Class Pattern (Java Platform SE 8)](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
 - [Class Matcher (Java Platform SE 8)](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html)

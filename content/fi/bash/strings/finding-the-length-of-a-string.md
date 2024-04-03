@@ -11,9 +11,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## Mikä & Miksi?
-Merkkijonon pituuden selvittäminen tarkoittaa merkkien lukumäärän laskemista. Ohjelmoijat tarvitsevat tätä esimerkiksi syötteiden validointiin ja tietojen käsittelyn ohjaamiseen.
-
 ## Kuinka:
 ```Bash
 # Merkkijonon pituuden määritys käyttämällä ${#string} syntaksia
@@ -25,6 +22,7 @@ Output:
 ```
 Merkkijonon pituus on: 10
 ```
+
 ## Syväsukellus
 Merkkijonon pituuden selvittämisen tarve on vanha kuin ohjelmointi itse. Komentotulkin alkuajoista lähtien on tarvittu keinoja, joilla merkkijonoja voidaan käsitellä ja analysoida. Bashissa `${#string}` syntaksi on standardi tapa saada merkkijonon pituus. Eri ohjelmointikielissä on omat vastaavat käytäntönsä. Vaihtoehtoiset menetelmät, kuten `expr length "$merkkijono"` tai `echo $merkkijono | wc -m`, ovat vanhempaa perua ja niitä voi kohdata vanhemmissa skripteissä.
 

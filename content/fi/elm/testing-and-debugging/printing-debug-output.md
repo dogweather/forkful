@@ -10,11 +10,6 @@ title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
 
-## What & Why?
-Mikä & Miksi?
-
-Debug-tulostus auttaa ohjelmoijia näkemään, mitä ohjelmassa tapahtuu. Se on välttämätön, koska se valottaa ohjelman suorituksen tilaa ja auttaa virheiden jäljittämisessä.
-
 ## How to:
 Miten:
 

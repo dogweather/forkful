@@ -10,9 +10,6 @@ title: Refactoring
 weight: 19
 ---
 
-## What & Why?
-Refactoring is the process of restructuring existing computer code without changing its external behavior. Programmers do it to make code cleaner, more maintainable, and to reduce the complexity, which makes it easier to understand for someone diving in fresh.
-
 ## How to:
 Consider a TypeScript function that's seen better days - it's a bit of a mess, and could use some tender love and care:
 

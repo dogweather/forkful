@@ -11,9 +11,6 @@ title: "Interpolera en str\xE4ng"
 weight: 8
 ---
 
-## Vad & Varför?
-Interpolering av en sträng innebär att du dynamiskt stoppar in data i en sträng. Programmerare gör detta för att skräddarsy meddelanden, skapa dynamiska kommandon eller hantera data mer flexibelt.
-
 ## How to:
 ```Fish Shell
 set name "Världsmedborgare"

@@ -12,12 +12,7 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-
-Writing tests in programming involves creating specific procedures to validate the functionality and performance of your code segments, ensuring they work as expected under various conditions. Programmers do it to catch bugs early, improve code quality, and facilitate future code maintenance and enhancements.
-
 ## How to:
-
 While Visual Basic for Applications (VBA) doesn't come with a built-in testing framework akin to those available in languages like Python or JavaScript, you can still implement simple test procedures to check the integrity of your code. Here's an example to illustrate:
 
 Suppose you have a function in VBA that adds two numbers:
@@ -45,7 +40,6 @@ End Sub
 Running `TestAddNumbers` will display a message box indicating whether the test passed or failed based on the function's output. While this is a simplified scenario, you can build more complex tests by incorporating loops, different input values, and testing for multiple functions.
 
 ## Deep Dive
-
 The approach to writing tests in VBA shown here is manual and lacks the features of more sophisticated testing frameworks available in other programming environments, such as automated test runs, setup/teardown procedures, and integrated reporting of test results. Before the broader adoption of unit testing frameworks and test-driven development (TDD), manual testing procedures similar to the one described were common. While this method is simple and can be effective for small projects or learning purposes, it's not scalable or efficient for larger projects or teams.
 
 In environments that support richer development toolsets, programmers often turn to frameworks like NUnit for .NET applications or JUnit for Java applications, which provide comprehensive tools for writing and running tests systematically. These frameworks offer advanced features such as asserting test outcomes, setting up mock objects, and measuring code coverage.

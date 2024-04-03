@@ -11,9 +11,6 @@ title: "H\xE4mta en webbsida"
 weight: 42
 ---
 
-## What & Why?
-Att ladda ner en webbsida innebär att hämta HTML-koden från en server. Programmerare gör detta för att analysera innehållet, skrapa data eller testa sidans tillgänglighet.
-
 ## How to:
 Vi använder `requests` för att ladda ner en webbsida enkelt. Så här:
 

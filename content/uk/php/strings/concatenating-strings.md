@@ -10,9 +10,6 @@ title: "\u041E\u0431'\u0454\u0434\u043D\u0430\u043D\u043D\u044F \u0440\u044F\u04
 weight: 3
 ---
 
-## What & Why? (Що та Навіщо?)
-Concatenating strings means sticking them together end-to-end. Programmers do this to combine words and variables to create sentences or messages in their code.
-
 ## How to: (Як це зробити:)
 Here's the lowdown on joining strings together in PHP:
 

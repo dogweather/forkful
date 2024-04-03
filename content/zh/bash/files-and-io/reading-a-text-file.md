@@ -16,9 +16,6 @@ title: "\u9605\u8BFB\u6587\u672C\u6587\u4EF6"
 weight: 22
 ---
 
-## What & Why? (是什么 & 为什么？)
-读取文本文件就是把存储在文件中的文本信息加载到程序中。程序员这么做是为了处理数据、配置程序或者读取来源信息。
-
 ## How to: (如何操作：)
 ```Bash
 # Reading a whole file with 'cat'

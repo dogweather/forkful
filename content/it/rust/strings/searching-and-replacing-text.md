@@ -11,9 +11,6 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## What & Why? (Cosa e Perché?)
-Cercare e sostituire del testo è l'atto di trovare specifiche stringhe in un dato testo e scambiarle con altre. I programmatori lo fanno per correzioni in massa, refactoring del codice, o per manipolare dati.
-
 ## How to (Come fare):
 In Rust, puoi usare il metodo `replace` per stringhe. Ecco un esempio:
 

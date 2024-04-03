@@ -11,9 +11,6 @@ title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---
 
-## What & Why?
-W interpolacji stringów chodzi o wstawianie wartości zmiennych w środek łańcucha tekstowego. Robimy to, by łatwiej budować dynamiczne wiadomości i szablony.
-
 ## How to:
 **W JavaScript można interpolować stringi przy użyciu template literals, oto jak:**
 

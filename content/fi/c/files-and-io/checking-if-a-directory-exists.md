@@ -12,12 +12,7 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mikä & Miksi?
-
-Hakemiston olemassaolon tarkistaminen C:ssä tarkoittaa tiedostojärjestelmän kyselyä erityisen polun johtamisesta hakemistoon. Ohjelmoijat suorittavat usein tämän toimenpiteen varmistaakseen, että tiedostotoiminnot (kuten tiedostoista lukeminen tai niihin kirjoittaminen) suuntautuvat kelvollisiin polkuihin, mikä estää virheitä ja parantaa ohjelmiston luotettavuutta.
-
 ## Kuinka:
-
 C:ssä hakemiston olemassaolon voi tarkistaa käyttämällä `stat`-funktiota, joka hakee tietoja tiedostosta tai hakemistosta tietyssä polussa. Sen jälkeen `S_ISDIR`-makroa `sys/stat.h`-tiedostosta käytetään arvioimaan, vastaako haetut tiedot hakemistoa.
 
 Tässä on miten voit käyttää `stat`- ja `S_ISDIR`-toimintoja tarkistaaksesi, onko hakemisto olemassa:
@@ -57,7 +52,6 @@ Hakemistoa ei ole olemassa.
 ```
 
 ## Syvemmälle:
-
 `stat`-rakenne ja -funktio ovat olleet osa C-ohjelmointikieltä vuosikymmeniä, polveutuen Unixista. Ne tarjoavat standardoidun tavan hakea tietoa tiedostojärjestelmästä, joka, vaikkakin on suhteellisen matalan tason, on laajasti käytössä sen yksinkertaisuuden ja suoran pääsyn tiedostojärjestelmän metatietoihin vuoksi.
 
 Historiallisesti tiedostojen ja hakemistojen olemassaolon ja ominaisuuksien tarkistaminen `stat`-funktiolla ja sen johdannaisilla (kuten `fstat` ja `lstat`) on ollut yleinen lähestymistapa. Kuitenkin nämä funktiot suoraan vuorovaikuttavat käyttöjärjestelmän ytimen kanssa, mikä saattaa tuoda mukanaan ylimääräistä kuormitusta ja potentiaalisia virheitä, jos niitä ei käsitellä oikein.

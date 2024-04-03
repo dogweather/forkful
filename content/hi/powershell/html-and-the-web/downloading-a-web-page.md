@@ -28,11 +28,8 @@ title: "\u0935\u0947\u092C \u092A\u0947\u091C \u0921\u093E\u0909\u0928\u0932\u09
 weight: 42
 ---
 
-## क्या और क्यों?
-
-वेब पेज को डाउनलोड करना इसकी सामग्री को इंटरनेट से आपके सिस्टम पर सहेजना है। प्रोग्रामर्स इसे डेटा एकत्र करने, वेबसाइट स्थिति की निगरानी, और ऑटोमेशन के लिए करते हैं।
-
 ## कैसे करें:
+
 
 ### सामान्य वेब पेज को डाउनलोड करना:
 ```PowerShell
@@ -54,11 +51,9 @@ Mode                LastWriteTime         Length Name
 ```
 
 ## गहराई से जानकारी:
-
 वेब पेज को डाउनलोड करने का काम पहले ज्यादातर `wget` और `curl` जैसे टूल्स से होता था। PowerShell में `Invoke-WebRequest` और `Invoke-RestMethod` cmdlets ने इस काम को सरल बनाया है। इसके अल्टरनेटिव के रूप में .NET क्लासेज `WebClient` और `HttpClient` हैं, लेकिन PowerShell Cmdlets अधिक सहज हैं। डाउनलोड किए गए पेज में स्क्रिप्ट और डायनामिक कंटेंट नहीं चलेगा, क्योंकि वे ब्राउज़र के जावास्क्रिप्ट इंजन द्वारा संचालित होते हैं।
 
 ## संबंधित सूत्र:
-
 - Microsoft PowerShell Documentation: [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Invoke-WebRequest)
 - .NET API Documentation: [HttpClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
 

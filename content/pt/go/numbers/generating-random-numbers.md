@@ -14,16 +14,10 @@ title: "Gerando n\xFAmeros aleat\xF3rios"
 weight: 12
 ---
 
-## O Que & Por Quê?
-
-Gerar números aleatórios na programação trata de criar uma sequência de números que não possa ser prevista de maneira razoável melhor do que por acaso. Programadores fazem isso por uma miríade de razões, incluindo simulações, jogos e aplicações de segurança, onde a imprevisibilidade é chave para a funcionalidade ou secretismo.
-
 ## Como fazer:
-
 Em Go, números aleatórios são gerados usando o pacote `math/rand` para números pseudo-aleatórios ou `crypto/rand` para números pseudo-aleatórios criptograficamente seguros. Vamos explorar ambos.
 
 ### Usando `math/rand` para Números Pseudo-Aleatórios
-
 Primeiro, importe o pacote `math/rand` e o pacote `time` para semear o gerador. Semear garante que você obtenha uma sequência diferente de números a cada execução.
 
 ```go
@@ -44,7 +38,6 @@ func main() {
 Saída de exemplo: `Um número aleatório: 42`
 
 ### Usando `crypto/rand` para Números Pseudo-Aleatórios Criptograficamente Seguros
-
 Para aplicações mais sensíveis à segurança, o pacote `crypto/rand` é adequado, pois gera números aleatórios que são difíceis de prever, tornando-os adequados para operações criptográficas.
 
 ```go
@@ -65,7 +58,6 @@ func main() {
 Saída de exemplo: `Um número aleatório seguro: 81`
 
 ## Aprofundando
-
 A diferença principal entre os pacotes `math/rand` e `crypto/rand` em Go vem da sua fonte de entropia e dos casos de uso pretendidos. `math/rand` gera números pseudo-aleatórios baseados numa semente inicial; assim, a sequência é determinística e pode ser prevista se a semente for conhecida. Isso é adequado para cenários onde o desempenho alto e não a imprevisibilidade absoluta é a principal preocupação, como em simulações ou jogos.
 
 Por outro lado, `crypto/rand` deriva aleatoriedade do sistema operacional subjacente, tornando-o adequado para usos criptográficos onde a imprevisibilidade é crucial. No entanto, isso vem com o custo de desempenho e complexidade no manuseio dos números que ele gera (como lidar com o tipo `*big.Int` para inteiros).

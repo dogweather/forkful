@@ -12,12 +12,7 @@ title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---
 
-## Co i dlaczego?
-
-Logowanie, w swojej istocie, jest praktyką rejestrowania zdarzeń i danych z aplikacji oprogramowania do zewnętrznego wyjścia, takiego jak plik lub konsola. Programiści logują informacje, aby śledzić przepływ kodu, diagnozować problemy i obserwować zachowanie aplikacji w rzeczywistym świecie, dostarczając krytycznych wglądów, których nie można uzyskać tak efektywnie w żaden inny sposób.
-
 ## Jak to zrobić:
-
 W Kotlinie logowanie może być wykonywane za pomocą wbudowanej funkcji `println()` w prostych przypadkach lub za pomocą bardziej zaawansowanych bibliotek takich jak SLF4J z Logbackiem czy Log4j dla zaawansowanych potrzeb.
 
 Poniżej znajduje się podstawowy przykład użycia `println()`:
@@ -69,7 +64,6 @@ java.lang.Exception: Symulowany błąd
 ```
 
 ## Szczegółowa analiza
-
 Historycznie rzecz biorąc, logowanie w oprogramowaniu rozwijało się wraz ze wzrastającą złożonością aplikacji i systemów. Proste instrukcje drukowania były wystarczające na wczesnym etapie, gdzie programy często były uruchamiane i debugowane przez samego developera. Ale w miarę jak systemy były sieciowane i działały w różnych środowiskach oraz dla różnych użytkowników, niezawodny i trwały system logowania stał się kluczowy.
 
 Zanim Kotlin stał się popularny, programiści Java szeroko adoptowali biblioteki takie jak Log4j, a później SLF4J. Zainspirowały one podobne praktyki w Kotlinie, wykorzystując interoperacyjność Kotlina z bibliotekami Javy. SLF4J działa jako warstwa abstrakcji, pozwalająca na wymianę rzeczywistej implementacji logowania – zwykle wybór pada na Logback lub Log4j2.
@@ -89,7 +83,6 @@ Inne powszechne funkcje zaawansowanych ram logowania obejmują:
 Te narzędzia i funkcje są kluczowe dla utrzymania niezawodnego i obserwowalnego systemu, szczególnie w skomplikowanych, rozproszonych lub wysoko skalowalnych środowiskach.
 
 ## Zobacz również
-
 Aby dowiedzieć się więcej i uzyskać wgląd w logowanie w Kotlinie, sprawdź:
 
 - SLF4J (Prosta Fasada Logowania dla Javy) [http://www.slf4j.org/](http://www.slf4j.org/)

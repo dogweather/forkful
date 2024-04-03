@@ -11,9 +11,6 @@ title: Extraindo substrings
 weight: 6
 ---
 
-## O Que É & Porquê?
-Extrair substrings é uma maneira de pegar pedaços de uma string — como pegar só o nome de alguém numa frase de boas-vindas. Programadores fazem isso quando querem manipular ou analisar apenas uma parte específica de um texto.
-
 ## Como Fazer:
 Com Clojure, extraímos substrings com a função `subs`. A função requer a string original e o índice inicial (incluído). Um índice final (não incluído) é opcional. Veja só:
 

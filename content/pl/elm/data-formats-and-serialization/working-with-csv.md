@@ -12,16 +12,10 @@ title: Praca z plikami CSV
 weight: 37
 ---
 
-## Co i dlaczego?
-
-Praca z CSV (ang. Comma Separated Values - wartości oddzielone przecinkami) obejmuje analizowanie i generowanie plików, które przechowują dane tabelaryczne w prostej, tekstowej formie. Jest to powszechna praktyka wśród programistów, umożliwiająca łatwą wymianę danych między różnymi aplikacjami lub efektywne przetwarzanie dużych zbiorów danych w bezpieczny sposób typów w Elm.
-
 ## Jak to zrobić:
-
 Elm nie ma wbudowanego wsparcia dla analizowania ani generowania CSV; zamiast tego często wykorzystywane są pakiety stron trzecich, takie jak `panosoft/elm-csv`. Poniższe przykłady podkreślają podstawowe wykorzystanie tej biblioteki do analizowania i generowania plików CSV.
 
 ### Analizowanie CSV
-
 Najpierw musisz dodać pakiet CSV do swojego projektu Elm:
 
 ```bash
@@ -45,7 +39,6 @@ parseResult =
 ```
 
 ### Generowanie CSV
-
 Aby wygenerować łańcuch CSV z danych Elm, użyj funkcji `Csv.encode`:
 
 ```elm

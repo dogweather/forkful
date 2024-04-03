@@ -13,14 +13,10 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-
-Das Schreiben einer Textdatei in Swift ermöglicht es Ihnen, Zeichenketten-Daten dauerhaft auf dem Dateisystem zu speichern, was für Aufgaben wie das Speichern von Konfigurationseinstellungen, Benutzerdaten oder Protokollen wesentlich ist. Programmierer tun dies oft, um Daten zwischen App-Starts zu erhalten, Daten zwischen verschiedenen Teilen einer Anwendung zu teilen oder Daten zu exportieren, die von anderen Programmen verwendet werden sollen.
-
 ## Wie zu:
 
-### Verwendung der Swift Standardbibliothek
 
+### Verwendung der Swift Standardbibliothek
 Die Standardbibliothek von Swift umfasst alle notwendigen Werkzeuge zum Schreiben von Textdateien. Hier ist ein grundlegender Ansatz:
 
 ```swift
@@ -41,7 +37,6 @@ do {
 Dieser Codeausschnitt schreibt eine Zeichenkette in eine Datei namens `beispiel.txt` im Dokumentenverzeichnis. Er behandelt mögliche Fehler mit Swifts Fehlerbehandlung do-try-catch.
 
 ### Verwendung von FileManager für mehr Kontrolle
-
 Für mehr Kontrolle über Dateiattribute oder um zu überprüfen, ob die Datei bereits existiert, kann `FileManager` verwendet werden:
 
 ```swift
@@ -67,7 +62,6 @@ if let documentDirectory = directories.first {
 ```
 
 ### Verwendung von Drittanbieter-Bibliotheken
-
 Eine beliebte Drittanbieter-Bibliothek für Dateisystemoperationen in Swift ist `Files` von John Sundell:
 
 Fügen Sie zunächst Files Ihrem Projekt hinzu, üblicherweise über den Swift Package Manager.

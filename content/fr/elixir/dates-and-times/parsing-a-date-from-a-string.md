@@ -15,12 +15,7 @@ title: "Analyser une date \xE0 partir d'une cha\xEEne de caract\xE8res"
 weight: 30
 ---
 
-## Quoi & Pourquoi ?
-
-Analyser une date à partir d'une chaîne de caractères consiste à prendre un texte, comme "2023-04-05", et à le convertir en un format de date que votre programme peut comprendre et manipuler. Les programmeurs font cela parce que les dates viennent dans de nombreux formats, et ils ont besoin de cohérence pour les comparer, les trier ou les stocker correctement.
-
 ## Comment faire :
-
 En Elixir, vous pouvez analyser les dates en utilisant le module `Date`. Voici comment transformer une chaîne de caractères en date :
 
 ```elixir
@@ -49,7 +44,6 @@ Exemple de sortie :
 ```
 
 ## Plongée Profonde
-
 La fonction `Date.from_iso8601/1` fait partie de la bibliothèque standard d'Elixir, introduite pour garantir une analyse facile du standard de date ISO8601 - un format de date courant. Mais la vie n'est pas si simple ; les dates viennent dans des tonnes de formats. C'est là que `Timex`, une bibliothèque Elixir tierce, entre en jeu. Elle est plus riche que les fonctions de date intégrées à Elixir et aide à gérer une grande variété de formats de date.
 
 Elixir lui-même est immuable, ce qui signifie que les dates analysées ne font pas exception ; elles ne peuvent pas être changées une fois créées. Cette caractéristique se rattache aux racines de la programmation fonctionnelle d'Elixir, garantissant la prévisibilité et facilitant le débogage.
@@ -57,7 +51,6 @@ Elixir lui-même est immuable, ce qui signifie que les dates analysées ne font 
 Historiquement, l'analyse des dates a été difficile en raison de différents standards. Pourtant, avec des bibliothèques comme `Timex` et des fonctionnalités de langage en Elixir, la complexité est abstraite, rendant la vie des développeurs un peu plus simple.
 
 ## Voir Aussi
-
 - [Elixir Date](https://hexdocs.pm/elixir/Date.html) (Documentation Elixir Date)
 - [Timex Documentation](https://hexdocs.pm/timex/Timex.html) (Documentation Timex)
 - [Norme ISO8601](https://www.iso.org/iso-8601-date-and-time-format.html)

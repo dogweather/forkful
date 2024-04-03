@@ -12,9 +12,6 @@ title: Een datum converteren naar een string
 weight: 28
 ---
 
-## Wat & Waarom?
-Een datum omzetten naar een string betekent het transformeren van een datumobject naar leesbare tekst voor mensen. Programmeurs doen dit om data in begrijpelijke formaten weer te geven of om ze te serialiseren voor opslag en verzending.
-
 ## Hoe te:
 In Clojure gebruiken we de Java interop-mogelijkheden om datums te formatteren. Hier is een snelle gids:
 

@@ -14,12 +14,7 @@ title: Analysering av en dato fra en streng
 weight: 30
 ---
 
-## Hva & Hvorfor?
-
-Å analysere en dato fra en tekststreng i PHP innebærer å konvertere tekst som representerer en dato og/eller tid til et PHP `DateTime`-objekt eller andre dato-/tidsformater. Dette er avgjørende for datavalidering, manipulering, lagring og presentasjon, spesielt når man jobber med brukerinndata eller data fra eksterne kilder.
-
 ## Hvordan:
-
 PHPs innebygde `DateTime`-klasse tilbyr et kraftfullt sett med funksjoner for å analysere og jobbe med datoer. Du kan opprette en `DateTime`-instans fra en dato-streng ved hjelp av konstruktøren, og deretter formatere den som nødvendig. Her er hvordan:
 
 ```php

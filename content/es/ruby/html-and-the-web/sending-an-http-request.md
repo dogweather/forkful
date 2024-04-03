@@ -10,9 +10,6 @@ title: Enviando una solicitud http
 weight: 44
 ---
 
-## Qué y Por Qué?
-Enviar una solicitud HTTP es el proceso de solicitar datos o enviar datos a un servidor utilizando el protocolo HTTP. Los programadores lo hacen para interactuar con APIs, servicios web o para automatizar tareas que dependen de la web.
-
 ## Cómo hacerlo:
 En Ruby, puedes utilizar la gema 'net/http' para enviar solicitudes HTTP. Aquí hay un ejemplo simple de cómo realizar una solicitud GET:
 

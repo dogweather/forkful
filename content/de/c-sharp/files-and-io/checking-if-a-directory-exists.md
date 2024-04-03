@@ -13,14 +13,10 @@ title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---
 
-## Was & Warum?
-
-Das Überprüfen, ob ein Verzeichnis in C# existiert, involviert die Verifizierung der Präsenz eines Ordners in einem spezifizierten Pfad im Dateisystem. Programmierer tun dies, um Fehler zu vermeiden, wie zum Beispiel den Versucht, aus einem nicht existierenden Verzeichnis zu lesen oder in dieses zu schreiben, was eine flüssigere Manipulation von Dateien und Verzeichnissen gewährleistet.
-
 ## Wie zu:
 
-### Unter Verwendung von System.IO
 
+### Unter Verwendung von System.IO
 C# stellt den `System.IO` Namespace bereit, der die `Directory` Klasse enthält und somit eine direkte Möglichkeit bietet, die Existenz eines Verzeichnisses über die `Exists` Methode zu prüfen.
 
 ```csharp
@@ -51,7 +47,6 @@ Verzeichnis existiert: False
 Falls das Verzeichnis unter dem Pfad `C:\ExampleDirectory` tatsächlich existiert, würde die Ausgabe `True` sein.
 
 ### Verwendung von System.IO.Abstractions für Unit-Tests
-
 Wenn es darum geht, Ihren Code unit-testbar zu machen, besonders wenn er mit dem Dateisystem interagiert, ist das `System.IO.Abstractions` Paket eine beliebte Wahl. Es ermöglicht Ihnen, Dateisystemoperationen in Ihren Tests zu abstrahieren und zu mocken. Hier sehen Sie, wie Sie auf diese Weise die Existenz eines Verzeichnisses überprüfen können:
 
 Zuerst sollten Sie sicherstellen, dass Sie das Paket installiert haben:

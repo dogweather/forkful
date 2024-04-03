@@ -11,9 +11,6 @@ title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---
 
-## What & Why?
-Skapa en temporär fil är som att hugga ut en tillfällig hylla i det digitala utrymmet att ställa saker på medan du håller på med dem. Programmerare gör detta för att handskas med data som behövs tillfälligt utan att kladda ner den permanenta lagringen.
-
 ## How to:
 ```C#
 using System;

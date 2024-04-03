@@ -11,9 +11,6 @@ title: Downloading a web page
 weight: 42
 ---
 
-## What & Why?
-Downloading a web page means grabbing the HTML from a URL so your program can work with it. Programmers do it to scrape data, automate web interactions or check site status.
-
 ## How to:
 In Clojure, you can use `clj-http` to quickly download a web page. Here's a barebones example:
 

@@ -16,11 +16,7 @@ title: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570"
 weight: 18
 ---
 
-## 何为之与为何？
-将代码组织为函数可以将任务划分为可重复使用的片段，使代码更加清晰且易于维护。通过这样做可以减少冗余、简化测试并提高可读性。
-
 ## 如何操作：
-
 ```javascript
 // 定义一个计算矩形面积的函数
 function calculateArea(width, height) {

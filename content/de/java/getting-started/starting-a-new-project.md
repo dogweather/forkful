@@ -10,9 +10,6 @@ title: Einen neuen Projekt starten
 weight: 1
 ---
 
-## Was & Warum?
-Ein neues Projekt zu starten bedeutet, eine frische Code-Basis anzulegen, die als Grundlage für eine Softwareanwendung dient. Programmierer starten Projekte, um neue Ideen umzusetzen, Probleme zu lösen oder einfach, um mit neuen Technologien zu experimentieren.
-
 ## So geht's:
 Um ein Java-Projekt zu beginnen, legen wir zuerst ein neues Verzeichnis an und initialisieren es mit notwendigen Dateien wie `pom.xml` für Maven oder `build.gradle` für Gradle. Hier ist ein einfaches Beispiel für ein Maven-Projekt:
 

@@ -10,9 +10,6 @@ title: Konvertere en dato til en streng
 weight: 28
 ---
 
-## Hva & Hvorfor?
-Konvertering av dato til streng gjør datoen menneskeleselig. Programmerere trenger dette for å vise datoer i apper og logger som folk faktisk forstår.
-
 ## Hvordan:
 I Swift bruker vi `DateFormatter` for å gjøre om datoer til streng. Her er et eksempel:
 

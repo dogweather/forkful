@@ -11,9 +11,6 @@ title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---
 
-## Vad & Varför?
-Att konvertera en sträng till gemener innebär att alla versaler (stora bokstäver) i en text omvandlas till gemener (små bokstäver). Programmerare gör detta för att standardisera textdata, exempelvis för att göra sökningar oberoende av bokstävsstorlek.
-
 ## Hur gör man:
 I Haskell, använder du `Data.Text` för att jobba med textsträngar på ett effektivt sätt. I `Data.Text` finns en funktion `toLower` som konverterar varje tecken i en sträng till gemener. Här är ett enkelt exempel:
 

@@ -12,9 +12,6 @@ title: Refaktoryzacja
 weight: 19
 ---
 
-## Co i dlaczego?
-Refaktoryzacja to proces restrukturyzacji istniejącego kodu komputerowego bez zmiany jego zewnętrznych zachowań, mający na celu poprawę atrybutów niefunkcjonalnych oprogramowania. Programiści refaktoryzują kod, aby był on bardziej przejrzysty, wydajniejszy i łatwiejszy do zrozumienia, co ułatwia łatwiejsze utrzymanie i przyszłe ulepszenia.
-
 ## Jak to zrobić:
 PowerShell nie ma wbudowanego, dedykowanego narzędzia do refaktoryzacji, ale nadal możesz oczyścić swój kod pod kątem czytelności i wydajności. Rozważ funkcję, która robi za dużo i jak możemy ją zrefaktoryzować dla większej jasności:
 

@@ -12,9 +12,6 @@ title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---
 
-## Quoi & Pourquoi ?
-Retirer les guillemets d'une chaîne de caractères signifie se débarrasser de ces marques de citation ennuyeuses qui peuvent perturber votre code, surtout lorsque vous analysez des données ou construisez des objets JSON. Les programmeurs le font pour assainir les entrées, éviter les erreurs de syntaxe, et faire en sorte que les chaînes s'intègrent bien avec d'autres parties de leur code.
-
 ## Comment faire :
 Imaginez que vous avez une chaîne entourée de guillemets doubles, comme `"\"Bonjour, le monde !\""` et que vous voulez le texte pur, sans citation. Voici un petit extrait de code JavaScript pour libérer votre chaîne de ces chaînes de guillemets :
 

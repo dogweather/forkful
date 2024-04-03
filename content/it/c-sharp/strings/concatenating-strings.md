@@ -9,9 +9,6 @@ title: Concatenazione di stringhe
 weight: 3
 ---
 
-## What & Why? (Cosa e Perché?)
-Concatenare le stringhe significa unirle in una sola. I programmatori lo fanno per costruire testo dinamicamente, come combinare nome e cognome o generare messaggi informativi.
-
 ## How to (Come Fare)
 Ecco alcuni modi per concatenare stringhe in C#:
 

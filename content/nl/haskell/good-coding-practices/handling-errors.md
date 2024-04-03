@@ -12,9 +12,6 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-Foutenafhandeling in programmeren gaat over het beheren van het onverwachte—zaken die mis kunnen gaan. Programmeurs doen dit om ervoor te zorgen dat hun programma’s deze situaties op een elegante manier kunnen afhandelen, zonder te crashen of verkeerde resultaten te produceren.
-
 ## Hoe:
 Haskell handelt fouten robuust af door middel van typen zoals `Maybe` en `Either`. Hier is een snelle blik:
 

@@ -12,9 +12,6 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-Das Schreiben in eine Textdatei mit Ruby ist eine grundlegende Operation, die es Ihnen ermöglicht, Ausgaben und Daten dauerhaft zu speichern. Dadurch können Daten später abgerufen oder geändert werden. Programmierer führen diese Aufgabe oft aus Gründen wie Protokollierung, Speichern von Konfigurationen oder Exportieren von Daten in einem für Menschen lesbaren Format durch.
-
 ## Wie geht das:
 Ruby macht Dateioperationen unkompliziert. Um in eine Datei zu schreiben, können Sie Rubys eingebaute `File`-Klasse verwenden. Das folgende Beispiel demonstriert, wie eine Datei zum Schreiben (`"w"`-Modus) und zum Anhängen (`"a"`-Modus) geöffnet wird, dann wie ein String hineingeschrieben wird und sicherstellt, dass die Datei danach geschlossen wird:
 

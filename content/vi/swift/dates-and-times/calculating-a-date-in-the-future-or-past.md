@@ -14,9 +14,6 @@ title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1
 weight: 26
 ---
 
-## Cái gì và Tại sao?
-Bạn đã bao giờ cần tìm một ngày trong quá khứ hoặc tương lai chưa? Về mặt lập trình, chúng ta thường tính toán ngày cho các hạn chót, nhắc nhở, hoặc sự kiện. Biết cách làm giúp loại bỏ sự đoán mò và cho phép ứng dụng của bạn xử lý các nhiệm vụ nhạy cảm với thời gian một cách chính xác.
-
 ## Làm thế nào:
 Swift làm cho việc tính toán ngày trở nên đơn giản với `Calendar` và `DateComponents`. Dưới đây là bản chất:
 

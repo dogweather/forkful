@@ -29,12 +29,7 @@ title: "\u0905\u0938\u094D\u0925\u093E\u092F\u0940 \u092B\u093E\u0907\u0932 \u09
 weight: 21
 ---
 
-## What & Why? (क्या और क्यों?)
-
-अस्थायी फ़ाइल बनाना एक ऐसी प्रक्रिया है जिससे आप डेटा को अस्थायी तौर पर स्टोर करते हैं। प्रोग्रामर्स इसका उपयोग डेटा प्रोसेसिंग, टेम्परेरी बैकअप, और डेटा एक्सचेंज करते समय करते हैं।
-
 ## How to (कैसे करें):
-
 C# में अस्थायी फ़ाइल बनाना बहुत सरल है। नीचे एक साधारण उदाहरण दिया गया है:
 
 ```csharp
@@ -71,7 +66,6 @@ Temporary File Deleted.
 ```
 
 ## Deep Dive (गहराई में जानकारी):
-
 इतिहास में, प्रोग्रामर्स हमेशा अस्थायी फ़ाइलों का उपयोग करते रहे हैं क्योंकि इससे कार्यक्षमता और प्रोग्राम की दक्षता बढ़ती है। C# `Path.GetTempFileName()` मेथड सिस्टम के अस्थायी फोल्डर में एक यूनिक फ़ाइल नाम बनाता है। फाइल पथ और नाम सुरक्षित रूप से उत्पन्न होते हैं, जिससे यह सुनिश्चित होता है कि फाइल नाम की टकराव न हो।
 
 एक वैकल्पिक तरीका है अस्थायी स्ट्रीम्स का उपयोग, `Path.GetRandomFileName()` या `Guid.NewGuid()` उपयोग करके एक यूनिक फ़ाइल नाम उत्पन्न कर सकते हैं, और इसे टेम्प डायरेक्टरी में मैन्युअली जोड़ सकते हैं। हालांकि, `GetTempFileName()` सबसे सरल और सीधा तरीका है।
@@ -79,7 +73,6 @@ Temporary File Deleted.
 हमेशा ध्यान रखें कि अस्थायी फ़ाइलों को उपयोग के बाद डिलीट कर देना चाहिए, नहीं तो वह सिस्टम पर अनावश्यक जगह घेर सकती हैं।
 
 ## See Also (अन्य देखें):
-
 - Microsoft Docs पर [`Path.GetTempFileName()`](https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename)
 - Microsoft Docs पर [`File.WriteAllText`](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.writealltext)
 - Microsoft Docs पर [`File.ReadAllText`](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.readalltext)

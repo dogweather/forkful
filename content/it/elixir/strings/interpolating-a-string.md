@@ -10,9 +10,6 @@ title: Interpolazione di una stringa
 weight: 8
 ---
 
-## What & Why?
-L'interpolazione di stringhe permette di inserire valori variabili all'interno di una stringa. I programmatori la utilizzano per rendere il codice più leggibile e per comporre messaggi dinamicamente.
-
 ## How to:
 Elixir rende l'interpolazione di stringhe semplice. Usi il carattere `#` seguito da `{}` per includere valori. Ecco come si fa:
 

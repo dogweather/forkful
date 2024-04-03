@@ -9,9 +9,6 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## What & Why?
-Estrarre sottostringhe significa prendere parti specifiche di una stringa. I programmatori lo fanno per analizzare, manipolare o trasformare i dati secondo le necessità.
-
 ## How to:
 Ecco alcuni modi per estrarre sottostringhe in JavaScript:
 

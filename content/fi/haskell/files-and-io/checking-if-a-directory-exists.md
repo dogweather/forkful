@@ -13,9 +13,6 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mikä & Miksi?
-Hakemiston olemassaolon tarkistaminen on perustoiminto monissa ohjelmointitehtävissä, mikä mahdollistaa ehdolliset toimenpiteet hakemistorakenteiden läsnäolon tai puuttumisen perusteella. Se on elintärkeää tiedostojen käsittelyssä, automatisoiduissa skripteissä ja ohjelmiston alustavassa asetuksessa varmistettaessa, että tarvittavat hakemistot ovat paikoillaan, tai vältettäessä hakemistojen kaksoiskappaleiden luomista.
-
 ## Kuinka:
 Haskell tarjoaa peruskirjastonsa kautta suoraviivaisia tapoja tarkistaa hakemiston olemassaolo, pääasiassa käyttämällä `System.Directory` -moduulia. Katsotaanpa yksinkertaista esimerkkiä:
 

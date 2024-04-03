@@ -11,9 +11,6 @@ title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---
 
-## Quoi & Pourquoi ?
-Un REPL, ou Boucle Lire-Évaluer-Afficher, vous permet de taper du code C# et de l'exécuter interactivement. Les programmeurs l'utilisent pour des expériences rapides, le débogage ou apprendre C#, sans le fardeau de configurer des projets complets.
-
 ## Comment faire :
 Démarrez un REPL dans votre environnement C# en utilisant la fenêtre C# Interactive ou exécutez `dotnet-script` dans votre terminal. Voici un avant-goût de son utilisation :
 

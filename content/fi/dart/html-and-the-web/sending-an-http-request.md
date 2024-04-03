@@ -13,12 +13,7 @@ title: "L\xE4hett\xE4m\xE4ss\xE4 HTTP-pyynt\xF6"
 weight: 44
 ---
 
-## Mikä & Miksi?
-
-HTTP-pyynnön lähettäminen Dartissa tarkoittaa kommunikoinnin aloittamista web-palvelimen tai API:n kanssa Dart-sovelluksesta. Ohjelmoijat tekevät sen hakeakseen tietoa verkosta, lähettääkseen lomakkeita ja kommunikoidakseen RESTful-palveluiden kanssa, mikä tekee siitä perusoperaation web-, palvelinpuolen- ja mobiilisovelluskehityksessä Dartissa.
-
 ## Miten:
-
 Dart sisältää `http`-paketin, tehokkaan ja kätevän tavan työskennellä HTTP-resurssien kanssa. Ensin, sisällytä se pubspec.yaml-tiedostoosi:
 
 ```yaml

@@ -14,14 +14,10 @@ title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---
 
-## Quoi et pourquoi ?
-
-Les expressions régulières (regex) en JavaScript sont des motifs utilisés pour correspondre à des combinaisons de caractères dans des chaînes de caractères. Les programmeurs les utilisent pour rechercher, extraire et manipuler du texte, permettant ainsi de puissantes opérations de traitement de chaînes avec du code concis.
-
 ## Comment faire :
 
-### Correspondance de base
 
+### Correspondance de base
 Pour commencer, vous pouvez créer un motif regex simple et l'utiliser pour trouver des correspondances dans une chaîne de caractères. Ici, nous trouverons le mot "code" :
 
 ```javascript
@@ -32,7 +28,6 @@ console.log(result); // true
 ```
 
 ### Utiliser `String.prototype.match()`
-
 Pour récupérer un tableau de correspondances :
 
 ```javascript
@@ -42,7 +37,6 @@ console.log(matches.index); // 10
 ```
 
 ### Recherche globale
-
 Pour trouver toutes les correspondances, utilisez le drapeau `g` :
 
 ```javascript
@@ -51,7 +45,6 @@ console.log(globalMatches); // ["o", "o", "o"]
 ```
 
 ### Correspondance sans tenir compte de la casse
-
 Le drapeau `i` ignore la casse :
 
 ```javascript
@@ -60,7 +53,6 @@ console.log(caseInsensitiveMatch[0]); // "JavaScript"
 ```
 
 ### Remplacer du texte
-
 Utilisez `String.prototype.replace()` pour remplacer des parties de la chaîne :
 
 ```javascript
@@ -69,7 +61,6 @@ console.log(newStr); // "JavaScript is awesome"
 ```
 
 ### Utilisation de groupes
-
 Les groupes peuvent capturer des parties du motif :
 
 ```javascript
@@ -79,7 +70,6 @@ console.log(replaceWithGroups); // "fun is JavaScript"
 ```
 
 ### Bibliothèques tierces
-
 Bien que les capacités regex intégrées de JavaScript soient puissantes, certaines tâches pourraient être simplifiées avec des bibliothèques comme `XRegExp`. Elle offre une syntaxe et des drapeaux supplémentaires, rendant les motifs complexes plus lisibles :
 
 ```javascript

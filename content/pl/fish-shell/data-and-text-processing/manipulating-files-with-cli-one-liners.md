@@ -12,12 +12,7 @@ title: "Manipulowanie plikami za pomoc\u0105 jednolinijkowc\xF3w CLI"
 weight: 31
 ---
 
-## Co i dlaczego?
-
-W świecie programowania, szczególnie podczas pracy z systemami Linux lub Unix, manipulacja plikami bezpośrednio z poziomu interfejsu linii komend (CLI) nie jest tylko kwestią wygody - to narzędzie mocy. Dzięki Fish Shell, z jego nowoczesną składnią i narzędziami, możesz transformować, przenosić lub analizować swoje pliki z zwinnością i precyzją. Chodzi o robienie więcej za pomocą mniej, usprawnianie procesów i wykorzystanie mocy linii komend do efektywnego zarządzania plikami.
-
 ## Jak to zrobić:
-
 Manipulacja plikami w Fish Shell jest zarówno intuicyjna, jak i potężna. Oto kilka przykładów, które pokazują jego możliwości:
 
 1. **Tworzenie pliku** jest tak proste, jak to tylko możliwe. Użyj polecenia `touch`:
@@ -79,7 +74,6 @@ end
 ```
 
 ## Dogłębna analiza
-
 Manipulowanie plikami z CLI przy użyciu jednolinijkowców Fish Shell to zarówno umiejętność, jak i sztuka. Historycznie, systemy Unix i Linux zawsze dostarczały potężny zestaw narzędzi do manipulacji plikami, traktując wszystko jako plik w swojej filozofii. Utorowało to drogę dla nowoczesnych powłok takich jak Fish, które nie tylko przyjmują, ale rozszerzają te filozofie dzięki ulepszonej składni i dodatkowym narzędziom.
 
 Chociaż Fish zapewnia doskonałe doświadczenie użytkownika i możliwości skryptowania, warto wspomnieć, że mogą pojawić się pewne problemy z zgodnością POSIX, zwłaszcza gdy skrypty są portowane z bardziej tradycyjnych powłok takich jak Bash czy SH. Jest to spowodowane tym, że Fish nie ma na celu zgodności z POSIX przez projekt, wybierając raczej bardziej przyjazne podejście zarówno do skryptów, jak i użycia linii komend. W związku z tym programiści powinni być świadomi, że choć Fish w wielu obszarach się sprawdza, skrypty wymagające ścisłej zgodności z POSIX mogą wymagać dostosowań lub alternatyw takich jak `bash` lub `zsh` dla kompatybilności.

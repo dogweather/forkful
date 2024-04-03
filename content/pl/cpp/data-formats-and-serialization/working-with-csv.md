@@ -14,14 +14,10 @@ title: Praca z plikami CSV
 weight: 37
 ---
 
-## Co i dlaczego?
-
-Praca z plikami CSV (Comma Separated Values - Wartości Oddzielone Przecinkami) dotyczy przetwarzania i manipulowania danymi przechowywanymi w prostym formacie tekstowym, gdzie każda linia tekstu reprezentuje wiersz w tabeli, a poszczególne kolumny są oddzielone przecinkami. Programiści wykorzystują to do importowania, eksportowania i zarządzania danymi między różnymi systemami ze względu na szerokie akceptowanie CSV jako lekkiego, czytelnego dla człowieka formatu wymiany danych.
-
 ## Jak to zrobić:
 
-### Czytanie pliku CSV za pomocą Standardowej Biblioteki C++:
 
+### Czytanie pliku CSV za pomocą Standardowej Biblioteki C++:
 ```cpp
 #include <fstream>
 #include <iostream>
@@ -53,7 +49,6 @@ int main() {
 ```
 
 ### Pisanie do pliku CSV:
-
 ```cpp
 #include <fstream>
 #include <vector>
@@ -79,7 +74,6 @@ int main() {
 ```
 
 ### Używanie biblioteki zewnętrznej: `csv2`:
-
 Chociaż Standardowa Biblioteka C++ dostarcza podstawowych narzędzi do pracy z plikami i łańcuchami znaków, wykorzystanie bibliotek zewnętrznych może upraszczać przetwarzanie CSV. Jedną z takich bibliotek jest `csv2`, znana z łatwości użytkowania i wydajności.
 
 - Instalacja: Zwykle instalowana za pomocą menedżerów pakietów takich jak Conan lub bezpośrednio z jej repozytorium na GitHubie.

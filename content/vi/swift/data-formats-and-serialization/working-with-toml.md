@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---
 
-## Cái gì và Tại sao?
-TOML (Tom's Obvious, Minimal Language) là một định dạng tuần tự hóa dữ liệu dễ đọc do ngữ nghĩa rõ ràng của nó. Lập trình viên sử dụng TOML cho các tệp cấu hình nơi khả năng đọc bởi con người và dễ dàng phân tích bởi máy tính là chìa khóa.
-
 ## Làm thế nào:
 Để bắt đầu, bạn cần một bộ phân tích TOML. Swift không có sẵn một bộ phân tích, vậy nên chúng ta sẽ sử dụng `TOMLDecoder`. Cài đặt nó qua Swift Package Manager và sau đó tuần tự hóa và bỏ tuần tự TOML một cách dễ dàng.
 

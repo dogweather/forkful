@@ -12,9 +12,6 @@ title: Code organiseren in functies
 weight: 18
 ---
 
-## Wat & Waarom?
-Je code organiseren in functies splitst je script in herbruikbare delen. Het gaat allemaal om het schoon, beheersbaar en minder foutgevoelig maken van je code. Modulaire code is geweldig omdat het je tijd bespaart, je geestelijke gezondheid behoudt en het debuggen en unit testen vereenvoudigt.
-
 ## Hoe te:
 Stel je voor dat je een snel script schrijft om gebruikers te begroeten:
 

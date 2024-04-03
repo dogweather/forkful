@@ -14,12 +14,7 @@ title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---
 
-## Vad & Varför?
-
-Att jämföra två datum i C innebär att fastställa den kronologiska relationen mellan dem – om ett datum föregår det andra eller om de är samma. Denna förmåga är avgörande i applikationer som hanterar schemaläggning, deadline eller dokumentförvaring, eftersom det möjliggör organisation och manipulation av tidskänslig data.
-
 ## Hur:
-
 C saknar en inbyggd typ för datum, vilket nödvändiggör användningen av `time.h`-biblioteket för att arbeta med datum- och tidsstrukturer. Strukturen `tm` och funktionen `difftime()` används ofta för att jämföra datum. Nedan är ett exempel som visar hur man jämför två datum:
 
 ```c
@@ -69,7 +64,6 @@ Första datumet kommer före det andra datumet.
 Det här programmet initierar två `tm`-strukturer med specifika datum, konverterar dem till `time_t`-format med `mktime()` och jämför dem slutligen med `difftime()`, som returnerar skillnaden i sekunder (som en `double`) mellan de två tidpunkterna.
 
 ## Fördjupning
-
 I C:s tidiga dagar krävde datum- och tidsoperationer manuella beräkningar, ofta med hänsyn till skottår, den varierande antalet dagar i månaderna, och till och med skottsekunder. Introduktionen av `time.h` i ANSI C-standarden medförde standardisering till tidsbehandling i C, vilket förenklade datum- och tidsoperationer.
 
 Att använda `time.h` för datumjämförelse är enkelt men har begränsningar. Strukturen `tm` tar inte hänsyn till tidszoner eller sommartid, och `difftime()` ger endast skillnaden i sekunder, och saknar finare granularitet för vissa applikationer.

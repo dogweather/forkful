@@ -13,9 +13,6 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä & Miksi?
-Tekstitiedoston kirjoittaminen PHP:ssä sisältää tiedoston luomisen tai avaamisen ja sisällön lisäämisen siihen. Ohjelmoijat tekevät näin tallentaakseen dataa, kuten käyttäjän tuottamaa sisältöä tai lokitietoja, ohjelman elinkaaren yli.
-
 ## Kuinka:
 PHP tukee natiivisti tiedostonkirjoitusta funktioilla kuten `file_put_contents`, `fopen` yhdessä `fwrite`:n kanssa, ja `fclose`. Näin niitä käytetään:
 

@@ -11,9 +11,6 @@ title: Lecture d'un fichier texte
 weight: 22
 ---
 
-## What & Why?
-Lire un fichier texte, c'est récupérer son contenu pour l'utiliser ou le manipuler. Les programmeurs font ça pour traiter des données, configurer des applications ou analyser des logs.
-
 ## How to:
 Voici comment lire un fichier texte en PowerShell. Simple et rapide.
 

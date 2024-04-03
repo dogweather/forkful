@@ -14,12 +14,7 @@ title: HTML Parsen
 weight: 43
 ---
 
-## Wat & Waarom?
-
-Het parsen van HTML in C omvat het analyseren van HTML-documenten om gegevens, structuur of specifieke onderdelen efficiënt te extraheren, vaak als voorloper van datamining of webscraping. Programmeurs doen dit om de automatische extractie van informatie mogelijk te maken, waardoor webinhoud programmatisch verwerkt of hergebruikt kan worden.
-
 ## Hoe:
-
 HTML parsen kan ontmoedigend lijken door de complexiteit van HTML en de frequente afwijkingen van schone, goed gevormde structuren. Echter, het gebruik van een bibliotheek zoals `libxml2`, specifiek zijn HTML-parsingmodule, vereenvoudigt het proces. Dit voorbeeld demonstreert hoe je `libxml2` kunt gebruiken om HTML te parsen en informatie te extraheren.
 
 Zorg eerst dat `libxml2` is geïnstalleerd in je omgeving. In veel Linux-distributies kun je het via de pakketbeheerder installeren. Bijvoorbeeld, op Ubuntu:
@@ -64,7 +59,6 @@ Gevonden paragraaf: Hallo, wereld!
 Dit voorbeeld richt zich op het extraheren van tekst binnen paragraaftags, maar `libxml2` biedt robuuste ondersteuning voor het navigeren door en opvragen van verschillende delen van een HTML-document.
 
 ## Diepere Duik
-
 Het parsen van HTML in C gaat terug tot de vroege dagen van webontwikkeling. Aanvankelijk moesten ontwikkelaars vertrouwen op aangepaste, vaak rudimentaire parsoplossingen, vanwege het gebrek aan gestandaardiseerde bibliotheken en de chaotische staat van HTML op het web. De introductie van bibliotheken zoals `libxml2` markeerde een significante vooruitgang, en bood meer gestandaardiseerde, efficiënte en veerkrachtige benaderingen voor het parsen van HTML.
 
 Ondanks de ongeëvenaarde snelheid en controle van C, is het vermeldenswaard dat C niet altijd het beste gereedschap is voor het parsen van HTML, vooral voor taken die snelle ontwikkelingscycli vereisen of te maken hebben met uitzonderlijk slecht gevormde HTML. Talen met high-level HTML-parsingbibliotheken, zoals Python met Beautiful Soup, bieden meer abstracte, gebruiksvriendelijke interfaces ten koste van een beetje prestatie.

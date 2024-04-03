@@ -23,12 +23,7 @@ title: "\u05D9\u05E6\u05D9\u05E8\u05EA \u05E7\u05D5\u05D1\u05E5 \u05D6\u05DE\u05
 weight: 21
 ---
 
-## מה ולמה?
-
-יוצרים קובץ זמני כאשר אנחנו צריכים מקום זמני לשמור נתונים במהלך ריצת התוכנית. זה נעשה למטרות שונות, כמו לדוגמה ניהול מאגר נתונים, קיבוץ פרטים בינלאומיים, או לשמירת המצב באפליקצייה.
-
 ## איך לעשות:
-
 בSwift, אנו יכולים ליצור קבצים זמניים בעזרת מנהל הקבצים FileManager. הנה כיצד לעשות זאת:
 
 ```Swift
@@ -57,13 +52,11 @@ if let temporaryFileURL = createTemporaryFile() {
 בדוגמא לעיל, יצרנו פונקציה שמייצרת קובץ זמני וכותבת נתונים אליו. היא מחזירה את כתובת הURL של הקובץ או nil במקרה של שגיאה.
 
 ## ניתוח מעמיק:
-
 ליצירת קובץ זמני יש היסטורייה ארוכה בתכנות ומערכות הפעלה. היא מאפשרת בדיקות, הפעלות, וטיפול בנתונים הדורשים חייוורון לאחר שימוש. בנוסף, קבצים זמניים מסייעים במניעת זיהום ההארד דיסק עם נתונים לא רצויים. בSwift, ניצולו של FileManager הוא הדרך הסטנדרטית לנהל קבצים.
 
 עם זאת יש גם אלטרנטיבות. במערכות יוניקס, ניתן לנצל את מערכת הקבצים /tmp שמיועדת לקבצים זמניים. בSwift ישנה גם האפשרות לבחירת הדרך בה נוצר הקובץ על ידי השגת בית מערכת אחר לאחסון (לדוגמא, באמצעות המתודה url(for:in:appropriateFor:create:)).
 
 ## ראה גם:
-
 - [אתר רשמי של Swift](https://swift.org/documentation/)
 - [מדריך לFileManager בSwift](https://developer.apple.com/documentation/foundation/filemanager)
 - [מדריך Apple לעבודה עם קבצים ונתונים](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/Introduction/Introduction.html)

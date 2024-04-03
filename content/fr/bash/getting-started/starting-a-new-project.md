@@ -11,9 +11,6 @@ title: Lancement d'un nouveau projet
 weight: 1
 ---
 
-## C'est quoi & Pourquoi?
-Commencer un nouveau projet, c'est comme planter une graine digitale – on ne sait jamais quel arbre ça va devenir. Les programmeurs lancent des projets pour créer, expérimenter ou résoudre des problèmes spécifiques. On cherche à transformer des idées en code.
-
 ## Comment faire :
 ```Bash
 # Créer un nouveau dossier pour votre projet

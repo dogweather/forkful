@@ -11,9 +11,6 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-Zahlen runden bedeutet, sie auf die nächste ganze Zahl oder einen Bruchteil mit einer bestimmten Genauigkeit anzupassen. Programmierer runden Zahlen, um Werte für die menschliche Lesbarkeit zu vereinfachen, um Spezifikationsanforderungen zu erfüllen oder um den Rechenaufwand bei Fließkommazahl-Operationen zu reduzieren.
-
 ## Wie:
 Rust macht das Runden zum Kinderspiel. Schauen Sie sich diese Methoden für die Typen `f32` oder `f64` an:
 

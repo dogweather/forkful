@@ -10,12 +10,7 @@ title: Writing to standard error
 weight: 25
 ---
 
-## What & Why?
-
-Writing to standard error (`stderr`) in C++ involves outputting error messages or diagnostics that are separate from the main program output. Programmers do this to direct errors to a different stream, allowing for easier debugging and error handling by distinguishing normal output from error messages.
-
 ## How to:
-
 In C++, writing to standard error can be achieved using the `cerr` stream, which is part of the standard library. Here's a basic example:
 
 ```cpp

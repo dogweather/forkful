@@ -11,9 +11,6 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## Co i dlaczego?
-Konkatenacja to fancy termin na łączenie stringów, tworzenie z nich dłuższego ciągu znaków. Programiści to robią, gdy potrzebują zbudować wartości, takie jak unikalne wiadomości, adresy URL, czy też po prostu wyświetlić coś ładnie dla użytkownika.
-
 ## Jak to zrobić:
 Łączenie stringów w Fish można zrobić na kilka sposobów, oto najprostszy:
 

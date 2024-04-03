@@ -16,12 +16,7 @@ title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---
 
-## Cái gì & Tại sao?
-
-Việc viết một tệp văn bản trong PHP là để lưu dữ liệu vào một tệp trên máy chủ. Các lập trình viên thường làm điều này để ghi nhật ký dữ liệu, cài đặt cấu hình, hoặc xuất dữ liệu dành cho việc đọc bởi con người hoặc các hệ thống khác.
-
 ## Làm thế nào:
-
 Việc viết vào một tệp trong PHP có thể đơn giản như sử dụng hàm `file_put_contents()`, đòi hỏi tên tệp và một chuỗi dữ liệu. Dưới đây là một ví dụ nhanh:
 
 ```php
@@ -47,13 +42,11 @@ fclose($file);
 Cả hai đoạn mã đều tạo ra cùng một kết quả trong "example.txt".
 
 ## Tìm hiểu sâu hơn
-
 Trong lịch sử, PHP's `fopen()`, `fwrite()`, và `fclose()` cung cấp kiểm soát chi tiết cho các hoạt động viết tệp, như thêm vào cuối hoặc khóa tệp. `file_put_contents()` được giới thiệu trong PHP 5 cho một cách tiếp cận đơn giản hơn.
 
 Các lựa chọn khác bao gồm sử dụng `fputcsv()` để tạo tệp CSV hoặc lớp `SplFileObject` cho các hoạt động tệp theo hướng đối tượng. Các chi tiết thực hiện bao gồm xử lý quyền tệp và đảm bảo xử lý ngoại lệ hoặc kiểm tra lỗi với `or die()` hoặc khối `try-catch`.
 
 ## Xem thêm
-
 - [PHP file_put_contents()](https://www.php.net/manual/en/function.file-put-contents.php)
 - [PHP fopen()](https://www.php.net/manual/en/function.fopen.php)
 - [PHP fwrite()](https://www.php.net/manual/en/function.fwrite.php)

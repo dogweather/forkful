@@ -10,9 +10,6 @@ title: Logging
 weight: 17
 ---
 
-## What & Why?
-Logging is the process of recording application behaviors, errors, and other important info to a persisting medium, like a file or database. Programmers do it to track the health and performance of their apps, to debug issues, and to keep an eye on what's going down under the hood in production environments.
-
 ## How to:
 In Swift, you can write logs to the console with print statements or the more flexible `os.log` API, which hooks into the Unified Logging System on Apple platforms.
 

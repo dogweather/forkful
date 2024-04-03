@@ -10,9 +10,6 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-## Cosa e perché?
-I numeri complessi hanno una parte reale e una parte immaginaria, solitamente scritti come `a + bi`. Sono fondamentali in matematica avanzata, fisica, ingegneria e alcuni algoritmi informatici. I programmatori lavorano con essi per gestire calcoli che coinvolgono radici quadrate di numeri negativi e funzioni oscillanti.
-
 ## Come fare:
 PHP fornisce supporto integrato per i numeri complessi utilizzando l'estensione `ext-intl` con la classe `NumberFormatter`. Ecco un esempio:
 

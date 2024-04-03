@@ -14,9 +14,6 @@ title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---
 
-## Cái gì & Tại sao?
-Trích xuất chuỗi con có nghĩa là lấy ra các phần cụ thể từ một chuỗi. Lập trình viên làm điều này để thao tác và phân tích dữ liệu văn bản, hoặc đơn giản chỉ để hiển thị các phần thông tin có liên quan tới người dùng.
-
 ## Làm thế nào:
 Trong Elixir, bạn có thể trích xuất chuỗi con sử dụng mô-đun `String`. Dưới đây là cách làm:
 

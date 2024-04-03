@@ -17,12 +17,7 @@ title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1
 weight: 26
 ---
 
-## Cái gì & Tại sao?
-
-Việc tính toán ngày trong tương lai hoặc quá khứ bao gồm việc thao tác với ngày để tìm ra chúng sẽ trở nên như thế nào sau một khoảng thời gian nhất định hoặc chúng đã là như thế nào. Lập trình viên thực hiện điều này cho các mục đích như lên lịch sự kiện, nhắc nhở, hoặc xác định ngày hết hạn.
-
 ## Cách làm:
-
 Trong Clojure, bạn chủ yếu sử dụng thư viện `clj-time` cho các thao tác với ngày. Dưới đây là một ví dụ nhanh:
 
 ```clojure
@@ -48,7 +43,6 @@ Kết quả mẫu:
 ```
 
 ## Tìm hiểu sâu
-
 Trong những ngày đầu, các lập trình viên sử dụng các lớp `Date` và `Calendar` của Java. Nhưng, phải thừa nhận, chúng khá là phiền phức—dài dòng và dễ mắc lỗi. Thư viện `clj-time` đã mang lại sự thoải mái, bao bọc API thân thiện hơn với nhà phát triển của Joda-Time.
 
 Có lựa chọn nào khác không? Java 8 đã giới thiệu `java.time` (JSR-310), được đánh giá khá tốt, nhưng trong lĩnh vực của Clojure, chúng ta vẫn còn ấm áp với `clj-time`.
@@ -56,6 +50,5 @@ Có lựa chọn nào khác không? Java 8 đã giới thiệu `java.time` (JSR-
 Khi tính toán ngày, bạn sử dụng các khoảng thời gian cho các khái niệm như "ngày" và "tháng" và thời lượng cho số lượng mili giây chính xác. Hãy lưu ý về múi giờ—ngày và giờ có thể thay đổi đáng kể tùy thuộc vào luật múi giờ, và giờ tiết kiệm ánh sáng ban ngày (DST) có thể làm gián đoạn công việc của bạn.
 
 ## Xem thêm
-
 - Kho GitHub của `clj-time`: [https://github.com/clj-time/clj-time](https://github.com/clj-time/clj-time)
 - `java-time` của Clojure: [https://github.com/dm3/clojure.java-time](https://github.com/dm3/clojure.java-time)

@@ -10,16 +10,10 @@ title: Working with CSV
 weight: 37
 ---
 
-## What & Why?
-
-Working with CSV (Comma Separated Values) involves parsing and generating files that store tabular data in a simple, plaintext format. This is commonly practiced by programmers to enable easy data exchange between different applications or to process large datasets efficiently in a type-safe manner within Elm.
-
 ## How to:
-
 Elm does not have built-in support for CSV parsing or generation; instead, third-party packages such as `panosoft/elm-csv` are often utilized. Below examples highlight the basic usage of this library for CSV parsing and generation.
 
 ### Parsing CSV
-
 First, you need to add the CSV package to your Elm project:
 
 ```bash
@@ -43,7 +37,6 @@ parseResult =
 ```
 
 ### Generating CSV
-
 To generate a CSV string from Elm data, use the `Csv.encode` function:
 
 ```elm

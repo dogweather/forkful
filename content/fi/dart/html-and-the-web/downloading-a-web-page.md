@@ -13,12 +13,7 @@ title: Web-sivun lataaminen
 weight: 42
 ---
 
-## Mikä ja miksi?
-
-Web-sivun lataaminen tarkoittaa web-sivun sisällön noutamista sen URL-osoitteen kautta käsittelyä tai tallennusta varten. Ohjelmoijat tekevät tämän tiedon poimimiseksi, muutosten seuraamiseksi tai sisällön arkistoimiseksi, mikä tekee siitä vakiomenetelmän web-kaapinnassa, data-louhinnassa ja automatisoiduissa testaustehtävissä.
-
 ## Kuinka:
-
 Dart tarjoaa `http`-paketin, joka on suosittu kolmannen osapuolen kirjasto HTTP-pyyntöjen tekemiseen. Tässä on perusesimerkki siitä, kuinka sitä käytetään web-sivun lataamiseen:
 
 Lisää ensin `http`-paketti `pubspec.yaml`-tiedostoosi:

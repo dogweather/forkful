@@ -12,12 +12,7 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-
-Complexe getallen bestaan uit een reëel deel en een imaginair deel, voorgesteld als `a + bi` waarbij `i` de vierkantswortel van `-1` is. Programmeurs werken met complexe getallen in verschillende velden zoals elektrotechniek, kwantumcomputing, en vloeistofdynamica, waarbij ze hun unieke eigenschappen benutten voor simulaties, signaalverwerking, en het oplossen van specifieke soorten wiskundige vergelijkingen.
-
 ## Hoe:
-
 In C worden complexe getallen ondersteund door de Standaard Bibliotheek, specifiek `<complex.h>`. Om ze te gebruiken, verklaar je variabelen met het type `double complex` (of `float complex` voor enkele precisie). Hier is hoe je basisoperaties uitvoert:
 
 ```c
@@ -54,5 +49,4 @@ int main() {
 Merk op dat `I` een constante is die de imaginaire eenheid in `<complex.h>` vertegenwoordigt. Functies zoals `creal()` en `cimag()` extraheren respectievelijk de reële en imaginaire delen, terwijl `conj()` het complex toegevoegde berekent. Voor de magnitude en fase (argument) van complexe getallen worden `cabs()` en `carg()` gebruikt.
 
 ## Diepgaand
-
 De ondersteuning voor complexe getallen in C is relatief recent, omdat het gestandaardiseerd werd in C99. Voor deze tijd was rekenen met complexe getallen in C omslachtig, waarbij vaak aangepaste gegevensstructuren en functies nodig waren. De opname van `<complex.h>` en de complexe datatypes leverde een aanzienlijke verbetering op voor de mogelijkheden van de taal voor wetenschappelijke en technische toepassingen. Het is echter vermeldenswaard dat sommige talen, zoals Python, intuitievere ondersteuning bieden voor complexe getallen door ingebouwde datatypes en een rijkere set bibliotheekfuncties. Ondanks dit blijft de prestatie en controle die C biedt een voorkeurskeuze voor taken op het gebied van high-performance computing, zelfs als dat betekent omgaan met een iets uitgebreidere syntax voor complexe rekenkunde.

@@ -14,12 +14,7 @@ title: Escribiendo un archivo de texto
 weight: 24
 ---
 
-## ¿Qué y por qué?
-
-Escribir en un archivo de texto en Fish Shell te permite almacenar datos de manera persistente, facilitando la recuperación o manipulación fácil de datos ya sea por el mismo script de Fish o por otros programas. Los programadores hacen esto para registrar, guardar configuraciones o exportar datos para su posterior procesamiento.
-
 ## Cómo:
-
 Para escribir en un archivo de texto en Fish, puedes usar el comando `echo` combinado con operadores de redirección. No hay bibliotecas de terceros populares específicamente para escribir archivos en Fish, ya que los comandos integrados del shell son sencillos y eficientes para este propósito.
 
 ### Escribiendo texto en un archivo nuevo o sobrescribiendo un archivo existente:

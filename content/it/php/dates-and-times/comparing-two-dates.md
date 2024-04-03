@@ -9,9 +9,6 @@ title: Confronto tra due date
 weight: 27
 ---
 
-## What & Why? (Cosa e Perché?)
-Confrontare due date in PHP significa stabilire quale viene prima o se coincidono. I programmatori fanno questo per gestire eventi, scadenze, e verificare periodi di tempo in applicazioni web e sistemi.
-
 ## How to: (Come Fare:)
 ```PHP
 <?php

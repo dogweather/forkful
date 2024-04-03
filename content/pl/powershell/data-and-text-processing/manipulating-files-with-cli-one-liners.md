@@ -12,11 +12,8 @@ title: "Manipulowanie plikami za pomoc\u0105 jednolinijkowc\xF3w CLI"
 weight: 31
 ---
 
-## Co i dlaczego?
-
-Manipulowanie plikami przy użyciu jednolinijkowców CLI w PowerShell to sprawa szybkiej zmiany, przenoszenia lub uzyskiwania danych pliku bezpośrednio z linii poleceń. Programiści robią to dla efektywności; jest to szybsze niż przeglądanie GUI czy pisanie długich skryptów dla prostych zadań.
-
 ## Jak:
+
 
 ### Czytanie pliku
 Aby szybko wyświetlić zawartość pliku, użyj polecenia `Get-Content`:
@@ -61,7 +58,6 @@ Get-ChildItem -Path .\*.log | Copy-Item -Destination C:\Logs
 ```
 
 ## Wgłębienie
-
 Historycznie, PowerShell został wprowadzony jako bardziej potężna alternatywa dla tradycyjnego wiersza poleceń w Windows, oferując bezprecedensowy dostęp do wnętrza systemu i jego składowych danych. Łączy szybkość linii poleceń z elastycznością skryptowania, czyniąc go nieocenionym narzędziem dla administratorów systemów i programistów opierających się na Windows.
 
 Alternatywy dla PowerShell do manipulowania plikami obejmują narzędzia oparte na Unixie, takie jak `sed`, `awk`, `grep` i skrypty `bash` dla użytkowników Linuxa i MacOS. Chociaż te narzędzia są niezwykle potężne i mają swoje zalety, PowerShell oferuje głęboką integrację ze środowiskami Windows.

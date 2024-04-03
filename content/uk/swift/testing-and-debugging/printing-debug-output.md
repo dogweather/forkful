@@ -12,9 +12,6 @@ title: "\u0412\u0438\u0432\u0435\u0434\u0435\u043D\u043D\u044F \u043D\u0430\u043
 weight: 33
 ---
 
-## What & Why? (Що і Чому?)
-Printing debug output is displaying temporary messages in the console to check if the code works right. Programmers do it to track variables, understand the flow, and catch bugs.
-
 ## How to: (Як це зробити:)
 ```Swift
 // Basic output

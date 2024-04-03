@@ -13,12 +13,7 @@ title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---
 
-## Quoi & Pourquoi ?
-
-Télécharger une page web consiste à récupérer le contenu HTML d'une page web via le protocole HTTP/HTTPS. Les programmeurs font souvent cela pour le scraping web, l'analyse de données, ou simplement pour interagir programmatiquement avec des sites web afin d'automatiser des tâches.
-
 ## Comment faire :
-
 En Go, la bibliothèque standard fournit des outils puissants pour les requêtes web, notamment le paquet `net/http`. Pour télécharger une page web, nous utilisons principalement la méthode `http.Get`. Voici un exemple basique :
 
 ```go
@@ -62,10 +57,9 @@ Un exemple de sortie pourrait être le contenu HTML de `http://example.com`, qui
 
 Ce programme simple fait une requête HTTP GET à l'URL spécifiée, puis lit et affiche le corps de la réponse.
 
-Note : Dans la programmation Go contemporaine, `ioutil.ReadAll` est considéré comme obsolète depuis Go 1.16 au profit de `io.ReadAll`. 
+Note : Dans la programmation Go contemporaine, `ioutil.ReadAll` est considéré comme obsolète depuis Go 1.16 au profit de `io.ReadAll`.
 
 ## Approfondissement
-
 Le langage Go a une philosophie de conception qui met l'accent sur la simplicité, l'efficacité et une gestion des erreurs fiable. En ce qui concerne la programmation réseau, et spécifiquement le téléchargement de pages web, la bibliothèque standard de Go, notamment `net/http`, est conçue efficacement pour gérer les opérations de requête et de réponse HTTP.
 
 L'approche des requêtes réseau en Go remonte aux origines du langage, empruntant des concepts à ses prédécesseurs mais en améliorant considérablement l'efficacité et la simplicité. Pour le téléchargement de contenu, le modèle de concurrence de Go utilisant des goroutines en fait un outil exceptionnellement puissant pour effectuer des requêtes HTTP asynchrones, gérant des milliers de requêtes en parallèle avec facilité.

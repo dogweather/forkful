@@ -11,9 +11,6 @@ title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Afficher des sorties de débogage, c'est comme laisser des petites notes dans votre code pour vous dire ce qui se passe. Les développeurs font ça pour suivre le flot d’exécution et débusquer les bugs plus facilement.
-
 ## How to: (Comment faire :)
 ```C#
 using System;

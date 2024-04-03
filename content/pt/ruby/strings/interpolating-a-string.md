@@ -11,9 +11,6 @@ title: Interpolando uma string
 weight: 8
 ---
 
-## O Que & Porquê?
-A interpolação de strings permite misturar trechos de texto com código Ruby, para criar uma string única de forma dinâmica. Programadores usam essa técnica para construir mensagens personalizadas, acessar variáveis ou chamar métodos diretamente dentro de strings.
-
 ## Como Fazer:
 ```Ruby
 nome = "João"

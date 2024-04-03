@@ -18,12 +18,7 @@ title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---
 
-## Cái gì & Tại sao?
-
-Việc viết hoa một chuỗi trong C đề cập đến việc chuyển đổi ký tự đầu tiên của mỗi từ trong một chuỗi cho trước thành chữ hoa nếu nó là một chữ cái thường. Lập trình viên thường thực hiện thao tác này để chuẩn hoá đầu vào của người dùng cho các hoạt động tìm kiếm, sắp xếp, hoặc mục đích hiển thị, đảm bảo sự nhất quán và dễ đọc trên dữ liệu văn bản.
-
 ## Làm thế nào:
-
 Việc viết hoa một chuỗi trong C đòi hỏi sự hiểu biết cơ bản về việc thao tác ký tự và duyệt chuỗi. Do C không có hàm tích hợp sẵn cho việc này, bạn thường phải kiểm tra từng ký tự, điều chỉnh trường hợp của nó khi cần thiết. Dưới đây là một cách triển khai đơn giản:
 
 ```c
@@ -60,7 +55,6 @@ Chuỗi đã viết hoa: Hello World. Programming In C!
 Chương trình này duyệt qua chuỗi `exampleString`, kiểm tra từng ký tự xem nó có nên được viết hoa hay không. Hàm `islower` kiểm tra xem một ký tự có phải là chữ cái thường không, trong khi `toupper` chuyển đổi nó thành chữ hoa. Cờ `capNext` xác định liệu ký tự tiếp theo gặp phải có nên được chuyển đổi, được thiết lập sau khi tìm thấy mỗi khoảng trống (' ') và ban đầu để viết hoa ký tự đầu tiên của chuỗi.
 
 ## Tìm hiểu sâu
-
 Kỹ thuật được trình bày là đơn giản nhưng thiếu hiệu quả cho các chuỗi rất lớn hoặc khi thực hiện liên tục trong các ứng dụng đòi hỏi hiệu suất cao. Trong bối cảnh lịch sử và triển khai, việc thao tác chuỗi trong C, bao gồm cả viết hoa, thường liên quan đến việc thao tác trực tiếp bộ đệm, phản ánh cách tiếp cận cấp thấp của C và cho phép lập trình viên kiểm soát hoàn toàn về bộ nhớ và các cân nhắc hiệu suất.
 
 Có các phương pháp thay thế, tinh vi hơn cho việc viết hoa chuỗi, đặc biệt khi xem xét đến địa phương và các ký tự unicode, nơi quy tắc viết hoa có thể khác biệt đáng kể so với kịch bản ASCII đơn giản. Các thư viện như ICU (International Components for Unicode) cung cấp giải pháp mạnh mẽ cho các trường hợp này nhưng đưa vào sự phụ thuộc và gánh nặng không cần thiết cho tất cả các ứng dụng.

@@ -11,9 +11,6 @@ title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---
 
-## ¿Qué y Por Qué?
-Comparar dos fechas es ver si son iguales, cuál viene antes o después. Programadores lo hacen para eventos, estadísticas, funciones de recordatorio y todo lo que necesita un orden temporal.
-
 ## Cómo:
 ```Lua
 os.date("*t")  -- Crear una tabla con la fecha y hora actual.

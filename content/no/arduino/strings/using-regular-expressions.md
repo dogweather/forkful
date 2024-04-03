@@ -13,9 +13,6 @@ title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---
 
-## Hva & Hvorfor?
-Regulære uttrykk (regex) er sekvenser av tegn som definerer søkemønstre, primært brukt for strengsammenligning og manipulering. Programmerere utnytter regex i Arduino-prosjekter for å analysere serielle innganger, validere brukerinndata, eller ekstrahere data fra strenger, noe som øker effektiviteten og fleksibiliteten i databehandlingen.
-
 ## Hvordan:
 Arduino har ikke innebygd støtte for regex direkte i sitt standardbibliotek. Imidlertid kan du oppnå regex-lignende funksjonalitet for enkle mønstre ved å bruke grunnleggende strengfunksjoner, eller for mer komplekse behov, integrere et tredjeparts bibliotek som `regex`.
 

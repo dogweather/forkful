@@ -11,12 +11,7 @@ title: Interpolando uma string
 weight: 8
 ---
 
-## O Que é & Por Que?
-
-Interpolação de strings é o jeito de injetar valores dentro de uma cadeia de caracteres. Programadores fazem isso para construir strings dinâmicas de maneira fácil e legível.
-
 ## Como Fazer:
-
 ```Swift
 let nome = "João"
 let idade = 28
@@ -26,12 +21,10 @@ print(mensagem)
 ```
 
 ## Mergulho Profundo:
-
 A interpolação de string não é novidade. Existia em linguagens mais antigas, mas o Swift a tornou mais simples e segura. Antes, concatenar strings e variáveis era fácil de errar e às vezes inseguro, levando a bugs ou falhas de segurança. Alternativas como o `String(format:)` ainda existem, mas interpolação é geralmente mais direta e breve. 
 
 Sob o capô, o Swift converte o que está dentro dos parênteses e barras invertidas `\(valor)` numa representação textual, aplicando o protocolo `CustomStringConvertible` se disponível, para personalizar a conversão.
 
 ## Ver Também:
-
 - Documentação oficial da Swift sobre Strings: [Swift Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
 - Protocolo Swift `CustomStringConvertible`: [CustomStringConvertible](https://developer.apple.com/documentation/swift/customstringconvertible)

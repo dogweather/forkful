@@ -11,9 +11,6 @@ title: Removing quotes from a string
 weight: 9
 ---
 
-## What & Why?
-Stripping quotes from a string means peeling away those pesky double or single characters that encase our text (' or "). Programmers often do this to sanitize input, store text in a database, or prep strings for further processing without the clutter of quotation marks.
-
 ## How to:
 Here's a straightforward way to kick those quotes to the curb in C++:
 

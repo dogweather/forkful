@@ -11,9 +11,6 @@ title: Komennoriviparametrien lukeminen
 weight: 23
 ---
 
-## What & Why?
-Komennoriviparametrien lukeminen on tapa vastaanottaa käyttäjältä tietoja ohjelman suorituksen yhteydessä. Ohjelmoijat käyttävät tätä toimintoa mukauttamaan ohjelman käytöstä ilman, että koodia tarvitsee muuttaa.
-
 ## How to:
 Elixirissä komennoriviparametrit saa napattua talteen `System.argv/0` -funktiolla. Tarkastellaan esimerkkiä:
 

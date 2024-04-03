@@ -13,9 +13,6 @@ title: Arbeider med YAML
 weight: 41
 ---
 
-## Hva og hvorfor?
-YAML, som står for YAML Ain't Markup Language, er et menneskelesbart data serialiseringsformat. Programmerere bruker YAML for konfigurasjonsfiler, inter-prosessmeldinger og datalagring på grunn av dens enkle syntaks og lettlesthed sammenlignet med andre formater som XML eller JSON.
-
 ## Hvordan:
 Å lese og skrive YAML i Python innebærer vanligvis bruk av et tredjeparts bibliotek, med `PyYAML` som det mest populære. For å komme i gang, må du installere PyYAML ved å kjøre `pip install PyYAML`.
 

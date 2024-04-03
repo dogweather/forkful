@@ -13,12 +13,7 @@ title: Generowanie liczb losowych
 weight: 12
 ---
 
-## Co i dlaczego?
-
-Generowanie losowych liczb w PHP dotyczy produkcji nieprzewidywalnych wartości w określonym zakresie, co jest niezbędne do zadań takich jak tworzenie unikalnych identyfikatorów użytkowników, generowanie haseł czy do użytku w symulacjach i grach. Programiści polegają na losowości, aby dodać nieprzewidywalność i zmienność do swoich aplikacji, czyniąc procesy takie jak testowanie czy doświadczenia użytkownika bardziej solidnymi i angażującymi.
-
 ## Jak to zrobić:
-
 PHP oferuje kilka funkcji do generowania losowych liczb, ale najczęściej używane to `rand()`, `mt_rand()` i, do celów kryptograficznych, `random_int()`.
 
 Aby wygenerować prostą losową liczbę między 0 a getrandmax() (największa możliwa wartość zwracana przez `rand()`), możesz użyć:
@@ -50,7 +45,6 @@ echo random_int(1, 100);
 Ponownie, wynik to losowa liczba między 1 a 100, jak `84`, ale z silniejszą gwarancją losowości.
 
 ## Wgłębienie się
-
 Funkcja `rand()` była obecna w PHP od jego wczesnych wersji, służąc jako początkowe podejście do generowania losowych liczb. Jednak nie jest najlepszym wyborem dla aplikacji wymagających wysokiego stopnia losowości ze względu na jej stosunkowo przewidywalny algorytm.
 
 `mt_rand()`, wprowadzony w PHP 4, opiera się na algorytmie Mersenne Twister - znacznie lepszy pod względem szybkości i generowanej losowości w porównaniu do `rand()`. Szybko stał się preferowaną opcją dla większości potrzeb niekryptograficznych.

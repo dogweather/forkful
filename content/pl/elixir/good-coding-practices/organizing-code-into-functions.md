@@ -11,9 +11,6 @@ title: Organizacja kodu w funkcje
 weight: 18
 ---
 
-## Co i dlaczego?
-Organizowanie kodu w funkcje oznacza grupowanie powiązanych operacji w bloki możliwe do ponownego użycia. Robimy to, aby poprawić czytelność i możliwość utrzymania kodu, zmniejszyć duplikację oraz ułatwić testowanie.
-
 ## Jak to zrobić:
 Stwórzmy prostą funkcję w Elixirze do kapitalizacji słów:
 

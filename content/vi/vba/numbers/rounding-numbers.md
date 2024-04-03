@@ -17,12 +17,7 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Làm gì & Tại sao?
-
-Làm tròn số trong lập trình là việc ước lượng một số về số nguyên gần nhất hoặc đến một số lượng chữ số thập phân nhất định. Các lập trình viên làm tròn số để đơn giản hóa các con số, cải thiện khả năng đọc hoặc đáp ứng các tiêu chí số học cụ thể trong các phép tính, đặc biệt là trong các phép toán tài chính nơi mà độ chính xác là quan trọng.
-
 ## Làm thế nào:
-
 Trong Visual Basic cho Ứng dụng (VBA), việc làm tròn có thể đạt được bằng cách sử dụng một số hàm, mỗi hàm phù hợp với các tình huống cụ thể. Dưới đây là một số hàm được sử dụng phổ biến nhất với các ví dụ:
 
 1. **Hàm Round**:
@@ -58,7 +53,6 @@ Trong Visual Basic cho Ứng dụng (VBA), việc làm tròn có thể đạt đ
    ```
 
 ## Đi sâu hơn
-
 Hàm `Round` trong VBA có sự khác biệt cơ bản so với phương pháp làm tròn trong các ngôn ngữ khác do sử dụng **Làm tròn của Ngân hàng**. Làm tròn của Ngân hàng làm tròn đến số chẵn gần nhất khi chính xác ở giữa hai số, giảm thiên vị trong các phép tính trên một tập dữ liệu lớn và cung cấp kết quả có ý nghĩa thống kê cao hơn. Tuy nhiên, điều này có thể dẫn đến hành vi không mong muốn cho những người không quen với nó, đặc biệt là khi mong đợi độ chính xác nguyên số trong mọi trường hợp.
 
 Trái lại, nhiều ngôn ngữ lập trình và hệ thống sử dụng "làm tròn toán học" hoặc "làm tròn nửa lên", nơi mà một số chính xác ở giữa hai giá trị có thể được làm tròn luôn luôn được làm tròn lên. Khi chuyển đổi hoặc chuyển mã từ các ngôn ngữ khác sang VBA, các lập trình viên phải nhớ những khác biệt này để tránh các lỗi tinh tế hoặc không chính xác trong các ứng dụng tài chính và thống kê.

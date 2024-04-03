@@ -10,9 +10,6 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## What & Why? (Cosa & Perché?)
-Estrarre sottostringhe significa prendere pezzetti di testo da una stringa più grande. Lo facciamo per analizzare, manipolare o validare dati e rendere dinamiche le nostre applicazioni PHP.
-
 ## How to: (Come fare:)
 ```PHP
 <?php

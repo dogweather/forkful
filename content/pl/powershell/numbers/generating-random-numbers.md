@@ -11,9 +11,6 @@ title: Generowanie liczb losowych
 weight: 12
 ---
 
-## Co i dlaczego?
-Generowanie losowych liczb w PowerShellu polega na tworzeniu nieprzewidywalnych wartości liczbowych w określonym zakresie. Programiści wykorzystują tę możliwość z wielu powodów, w tym do testowania, symulacji i celów związanych z bezpieczeństwem, gdzie nieprzewidywalność lub naśladowanie rzeczywistej losowości jest kluczowe.
-
 ## Jak:
 PowerShell oferuje prostą metodę generowania losowych liczb za pomocą cmdletu `Get-Random`. Ten cmdlet może produkować losowe liczby w domyślnym zakresie lub określonym zakresie.
 

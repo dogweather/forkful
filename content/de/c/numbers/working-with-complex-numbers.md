@@ -12,12 +12,7 @@ title: Arbeiten mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-
-Komplexe Zahlen bestehen aus einem Realteil und einem Imaginärteil, dargestellt als `a + bi`, wobei `i` die Quadratwurzel von `-1` ist. Programmierer arbeiten in verschiedenen Bereichen wie der Elektrotechnik, der Quanteninformatik und der Strömungsdynamik mit komplexen Zahlen, um ihre einzigartigen Eigenschaften für Simulationen, Signalverarbeitung und zur Lösung spezifischer Arten mathematischer Gleichungen zu nutzen.
-
 ## Wie:
-
 In C werden komplexe Zahlen durch die Standardbibliothek unterstützt, insbesondere durch `<complex.h>`. Um sie zu nutzen, deklarieren Sie Variablen mit dem Typ `double complex` (oder `float complex` für einfache Genauigkeit). Hier ist, wie man grundlegende Operationen durchführt:
 
 ```c
@@ -54,5 +49,4 @@ int main() {
 Beachten Sie, dass `I` eine Konstante ist, die die imaginäre Einheit in `<complex.h>` darstellt. Funktionen wie `creal()` und `cimag()` extrahieren den Real- bzw. Imaginärteil, während `conj()` das komplexe Konjugat berechnet. Für den Betrag und die Phase (Argument) von komplexen Zahlen werden `cabs()` und `carg()` verwendet.
 
 ## Tiefergehend
-
 Die Unterstützung für komplexe Zahlen in C ist relativ neu und wurde in C99 standardisiert. Vor dieser Zeit war die Arithmetik mit komplexen Zahlen in C umständlich, was oft eigene Datenstrukturen und Funktionen erforderte. Die Aufnahme von `<complex.h>` und die komplexen Datentypen stellten einen signifikanten Schub für die Fähigkeiten der Sprache für wissenschaftliche und ingenieurtechnische Anwendungen dar. Es ist jedoch zu beachten, dass einige Sprachen, wie Python, intuitivere Unterstützung für komplexe Zahlen durch eingebaute Datentypen und ein reichhaltigeres Set an Bibliotheksfunktionen bieten. Trotzdem bleibt C aufgrund der Leistung und Kontrolle, die es bietet, eine bevorzugte Wahl für Aufgaben mit hoher Rechenleistung, auch wenn dies bedeutet, sich mit einer etwas umständlicheren Syntax für komplexe Arithmetik auseinanderzusetzen.

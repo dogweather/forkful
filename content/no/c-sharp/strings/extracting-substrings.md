@@ -11,9 +11,6 @@ title: Uthenting av delstrenger
 weight: 6
 ---
 
-## What & Why? (Hva & Hvorfor?)
-I C# er uttrekk av delstrenger det å hente ut en spesifikk del av en tekststreng. Vi gjør det for å bearbeide eller analysere visse seksjoner av data, som når vi filtrerer brukerinput eller henter ut databiter for behandling.
-
 ## How to: (Slik gjør du)
 ```C#
 string fullText = "Hallo, Norge!";

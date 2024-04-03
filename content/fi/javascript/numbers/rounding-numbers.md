@@ -11,9 +11,6 @@ title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä & Miksi?
-Pyöristäminen on ylimääräisen desimaalikohinan poistoa luvusta tietyn pisteen jälkeen. Ohjelmoijat pyöristävät hallitakseen tarkkuutta, hallinnoidakseen muistia tai tehdäkseen tulosteesta käyttäjäystävällisen – esimerkiksi muuttamalla 2.998 puhtaaksi 3:ksi.
-
 ## Miten:
 Tässä on, miten voit pyöristää numeroita JavaScriptissä käyttämällä `Math.round()`, `Math.ceil()`, ja `Math.floor()`:
 

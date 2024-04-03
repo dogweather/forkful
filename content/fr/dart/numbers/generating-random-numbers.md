@@ -14,11 +14,7 @@ title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---
 
-## Quoi & Pourquoi ?
-La génération de nombres aléatoires en Dart consiste à créer des valeurs numériques imprévisibles et différentes à chaque exécution. Les programmeurs exploitent cette fonctionnalité pour diverses raisons, allant de la simulation de scénarios réels dans des environnements de test à l'activation de mécanismes de jeu et à l'assurance de la sécurité par le biais de l'aléatoire dans les opérations cryptographiques.
-
 ## Comment :
-
 La bibliothèque principale de Dart inclut un support pour la génération de nombres aléatoires avec la classe `Random` trouvée dans `dart:math`. Voici un exemple basique :
 
 ```dart

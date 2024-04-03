@@ -10,16 +10,10 @@ title: Satunnaislukujen generointi
 weight: 12
 ---
 
-## Mikä & Miksi?
-
-Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa sellaisten lukujen luomista, joilla ei ole ennustettavaa kaavaa. Ohjelmoijat tekevät näin monista syistä, mukaan lukien simulaatiot, algoritmien testaaminen, pelit ja turvallisuussovellukset, joissa arvaamattomuus on avain realististen tai turvallisten tulosten saavuttamiseen.
-
 ## Kuinka:
-
 Kotlin tarjoaa suoraviivaisen tavan satunnaislukujen tuottamiseen sen vakio kirjaston kautta. Näin voit tuottaa erityyppisiä satunnaisia arvoja:
 
 ### Satunnaisen kokonaisluvun tuottaminen
-
 Satunnaisen kokonaisluvun tuottaminen tietyllä välillä:
 
 ```kotlin
@@ -32,7 +26,6 @@ fun main() {
 ```
 
 ### Satunnaisen liukuluvun tuottaminen
-
 Samoin satunnaisen liukuluvun tuottaminen:
 
 ```kotlin
@@ -45,7 +38,6 @@ fun main() {
 ```
 
 ### Satunnaisen totuusarvon tuottaminen
-
 Satunnaisen totuusarvon tuottamiseksi:
 
 ```kotlin
@@ -58,7 +50,6 @@ fun main() {
 ```
 
 ### Kylvöarvo toistettavien tulosten saamiseksi
-
 Tapauksissa, joissa tarvitset toistettavia satunnaislukujen sekvenssejä (esimerkiksi testauksessa), voit kylvää satunnaislukugeneraattorin:
 
 ```kotlin
@@ -73,7 +64,6 @@ fun main() {
 ```
 
 ## Syväsukellus
-
 Kotlinin vakio kirjaston lähestymistapa satunnaislukujen tuottamiseen hyödyntää Java'n `java.util.Random`ia taustalla, varmistaen käyttöhelppouden ja suorituskyvyn sekoituksen. On kuitenkin tärkeää huomata, että nämä menetelmät tuottavat pseudosatunnaislukuja, mikä tarkoittaa, että luvut vaikuttavat satunnaisilta, mutta ne on tuotettu deterministisellä prosessilla.
 
 Useimmissa sovelluksissa Kotlinin `Random` luokan tarjoama satunnaisuus on riittävä. Kuitenkin, turvallisuus-herkillä sovelluksilla, kuten kryptografiassa, jossa satunnaisuuden laatu on ensiarvoisen tärkeää, tulisi harkita `java.security.SecureRandom` käyttämistä sen sijaan. SecureRandom on erityisesti suunniteltu kryptografisiin toimenpiteisiin, tarjoten korkeamman laadun satunnaisuutta, vaikkakin mahdollisesti suorituskyvyn kompromissilla.

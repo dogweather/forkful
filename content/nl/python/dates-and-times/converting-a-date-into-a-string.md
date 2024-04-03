@@ -11,9 +11,6 @@ title: Een datum converteren naar een string
 weight: 28
 ---
 
-## Wat & Waarom?
-Datums omzetten naar strings verandert een datumobject in een tekstformaat. Programmeurs doen dit om datums op een gebruikersvriendelijke manier weer te geven of om ze voor te bereiden voor opslag in op tekst gebaseerde formaten zoals CSV of JSON.
-
 ## Hoe:
 Python maakt het eenvoudig om datums naar strings om te zetten. Gebruik de `strftime` methode die beschikbaar is op datumobjecten. Zo werkt het:
 

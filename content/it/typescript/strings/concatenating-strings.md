@@ -10,9 +10,6 @@ title: Concatenazione di stringhe
 weight: 3
 ---
 
-## Cosa e Perché?
-Concatenare stringhe significa unire due o più sequenze di caratteri in una sola. I programmatori lo fanno per costruire messaggi dinamici, combinare input dall'utente, o semplicemente per organizzare i dati testuali in modo più efficiente.
-
 ## Come fare:
 ```TypeScript
 let saluto = "Ciao";

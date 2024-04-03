@@ -17,12 +17,7 @@ title: "\uC5D0\uB7EC \uCC98\uB9AC\uD558\uAE30"
 weight: 16
 ---
 
-## 무엇인가 & 왜 중요한가?
-
-에러 처리(Error handling)란 코드가 예상치 못한 방향으로 흘러갔을 때 이를 관리하는 방법입니다. 프로그램이 우아하게 실패(fail gracefully)하도록 돕고 사용자에게 명확한 지시사항을 제공하기 때문에 중요합니다. 그냥 충돌하고 불타는 대신 말이죠.
-
 ## 어떻게 할까:
-
 아래는 클래식한 `try-catch` 블록입니다:
 
 ```javascript
@@ -62,7 +57,6 @@ fetchData();
 ```
 
 ## 깊이 알아보기
-
 자바스크립트에서의 에러 처리는 진화해왔습니다. 과거에는 (ES3, 1999년 경) `try-catch` 블록만 있었습니다. 그다지 융통성이 높지는 않았지만 일단은 그 일을 해냈습니다.
 
 ES6(2015)는 프로미스(Promises)를 도입해 `.then()`과 `.catch()`를 제공하면서 비동기 에러를 더 우아하게 처리할 수 있게 되었습니다.
@@ -78,7 +72,6 @@ fetch('https://api.example.com/data')
 대안들? 에러 처리를 무시하기(나쁜 아이디어), 에러-첫 번째 파라미터를 사용하는 콜백(callbacks)을 활용하기(Node.js 스타일이라 하죠), 또는 더 세련된 라이브러리와 프레임워크를 사용하여 그들만의 방식을 제공하는 것들이 있습니다.
 
 ## 또한 보기
-
 에러 처리에 대해 더 알아보려면:
 
 - try-catch에 관한 MDN: [MDN try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)

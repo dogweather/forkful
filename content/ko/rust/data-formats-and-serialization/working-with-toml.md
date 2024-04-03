@@ -15,9 +15,6 @@ title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE3
 weight: 39
 ---
 
-## 무엇 & 왜?
-TOML은 종종 설정 파일에 사용되는 인간이 읽을 수 있는 데이터 직렬화 언어입니다. 프로그래머들은 TOML의 단순성과 명확성 때문에 그것을 사용하며, 러스트에서 해시 맵으로 쉽게 변환됩니다.
-
 ## 방법:
 ```Rust
 // 1. Cargo.toml에 'toml' 크레이트 포함

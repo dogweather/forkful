@@ -12,9 +12,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## Hva & Hvorfor?
-Å beregne en dato i fremtiden eller fortiden innebærer å bestemme en dato som er et spesifikt antall dager, måneder eller år fra en gitt dato. Programmerere trenger ofte denne funksjonaliteten for å automatisere påminnelser, abonnementer, utløpsdatoer og planleggingsoppgaver i ulike applikasjoner.
-
 ## Hvordan:
 I Visual Basic for Applications (VBA) er den primære funksjonen som brukes til å beregne fremtidige eller fortidige datoer `DateAdd()`. Denne funksjonen legger til et spesifisert tidsintervall til en dato, og returnerer en ny dato.
 

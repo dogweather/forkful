@@ -15,9 +15,6 @@ title: "F\xE5 dagens dato"
 weight: 29
 ---
 
-## Hva & Hvorfor?
-Å få den gjeldende datoen i Elixir involverer å få tilgang til systemets dato- og tidsinformasjon, en vanlig oppgave for logging, datostempling, eller enhver funksjonalitet som krever kunnskap om den nåværende datoen. Denne operasjonen er essensiell for å skape tidsbevisste applikasjoner og for oppgaver som å generere rapporter eller tidsstempler i en webapplikasjon.
-
 ## Hvordan:
 Elixirs standardbibliotek, gjennom `DateTime`-modulen, tillater henting av gjeldende dato og tid. Siden Elixir kjører på Erlang VM (BEAM), utnytter den de underliggende Erlang-funksjonalitetene for tidsoperasjoner.
 

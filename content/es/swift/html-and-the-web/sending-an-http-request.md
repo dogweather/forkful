@@ -11,12 +11,7 @@ title: Enviando una solicitud http
 weight: 44
 ---
 
-## Qué y Por Qué?
-
-Cuando enviamos una solicitud HTTP, estamos comunicándonos con un servidor web para obtener, enviar o modificar datos. Lo hacemos todo el tiempo para interactuar con APIs web, obtener datos en tiempo real o enviar información desde nuestras apps.
-
 ## Cómo hacerlo:
-
 Swift facilita el trabajo con solicitudes HTTP. Aquí tienes un ejemplo usando `URLSession` para hacer una solicitud GET simple.
 
 ```Swift
@@ -53,7 +48,6 @@ if let url = URL(string: "https://api.example.com/data") {
 ```
 
 ## Deep Dive:
-
 Enviar solicitudes HTTP es esencial para casi todas las aplicaciones conectadas a internet. Antes de `URLSession` en Swift, los desarrolladores usaban `NSURLConnection` pero hoy `URLSession` es la opción estándar debido a su amplia gama de funcionalidades y su mayor eficiencia.
 
 Si necesitamos más control o dependemos de comportamientos específicos, podemos usar librerías de terceros como Alamofire. Cuando trabajamos a bajo nivel, podríamos lidiar con `CFNetwork` API en iOS, que brinda una granularidad aún más detallada.
@@ -61,7 +55,6 @@ Si necesitamos más control o dependemos de comportamientos específicos, podemo
 Detrás de cada solicitud HTTP hay una serie de pasos: DNS lookup, TCP handshake, envío de la solicitud HTTP y la espera de la respuesta del servidor, que también puede ser analizado para manejar códigos de respuesta, cabeceras y cookies.
 
 ## Ver También:
-
 - Documentación oficial de URLSession: https://developer.apple.com/documentation/foundation/urlsession
 - Alamofire, una librería HTTP de networking para Swift: https://github.com/Alamofire/Alamofire
 - Guía de red para desarrolladores iOS: https://developer.apple.com/library/archive/documentation/NetworkingInternetWeb/Conceptual/NetworkingOverview/Introduction/Introduction.html

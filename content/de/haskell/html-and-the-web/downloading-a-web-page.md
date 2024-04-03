@@ -10,9 +10,6 @@ title: Webseite herunterladen
 weight: 42
 ---
 
-## Was & Warum?
-Das Herunterladen einer Webseite bedeutet, den Inhalt der Seite über das Internet zu beziehen, um ihn lokal zu verarbeiten oder zu analysieren. Programmierer tun dies für Aufgaben wie Datenscraping, Automatisierungstests oder um Inhalte offline verfügbar zu machen.
-
 ## So geht's:
 Installiere die `http-conduit` Bibliothek mit Cabal oder Stack. Dann kannst du mit wenigen Zeilen Code eine Webseite herunterladen. Beispiel:
 

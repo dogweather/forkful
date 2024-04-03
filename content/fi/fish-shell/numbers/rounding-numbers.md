@@ -10,9 +10,6 @@ title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mitä & Miksi?
-Numeroiden pyöristäminen on desimaalipaikkojen karsimista, jotta tiedot olisivat yksinkertaisempia tai sopisivat tiettyihin formaatteihin. Ohjelmoijat tekevät näin käyttäjäystävällisemmän näytön, tehokkaamman tallennuksen tai kun desimaalitarkkuus ei ole ongelma.
-
 ## Kuinka:
 Fishissä numeroiden pyöristäminen perustuu `math`-komentoon. Käytä `math -s0` pyöristääksesi lähimpään kokonaislukuun.
 

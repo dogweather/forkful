@@ -14,12 +14,7 @@ title: Obtenir la date actuelle
 weight: 29
 ---
 
-## Quoi et Pourquoi ?
-
-Récupérer la date actuelle en programmation est une tâche cruciale pour de nombreuses applications, y compris la journalisation, le marquage temporel des événements ou la planification des tâches. En Lua, cette fonctionnalité permet aux programmeurs de gérer les opérations de date et d'heure de manière transparente au sein de leurs applications, garantissant que leur logiciel peut interagir efficacement avec les données en temps réel.
-
 ## Comment faire :
-
 Lua fournit la fonction `os.date` pour obtenir la date et l'heure actuelles. La fonction peut être utilisée sans arguments pour obtenir une chaîne formatée ou avec des spécificateurs de format pour personnaliser la sortie. Voici comment l'utiliser :
 
 ```lua

@@ -9,9 +9,6 @@ title: Downloading a web page
 weight: 42
 ---
 
-## What & Why?
-Downloading a webpage pulls its content from the web to your local machine. Programmers do it for automation, data scraping, offline access, or testing.
-
 ## How to:
 Here's the quick and dirty way to download a web page using Fish Shell with the `curl` command:
 
@@ -53,7 +50,6 @@ Fish Shell itself doesn't download web pages; it's just the interface. But pair 
 Some folks might bring up using more modern tools like `httpie` or browser-based automation with tools like Selenium for more complex tasks like dealing with Javascript-heavy pages. However, for the quick and straightforward download, `curl` still holds the fort.
 
 ## See Also
-
 - curl project website for more details: [https://curl.se/](https://curl.se/)
 - For a deeper dive into HTTP operations with `curl`, see the man page: `man curl`
 - httpie as a user-friendly HTTP client alternative: [https://httpie.org/](https://httpie.org/)

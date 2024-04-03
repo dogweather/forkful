@@ -11,9 +11,6 @@ title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---
 
-## Vad & Varför?
-Att jämföra två datum innebär att avgöra vilket som kommer först eller om de är samma. Programmerare gör detta för att hantera bokningar, uppgiftsfrister, tidslinjer eller varje gång tidpunkten är viktig.
-
 ## Hur gör man?
 ```Java
 import java.time.LocalDate;
@@ -35,6 +32,7 @@ public class DatumJämförelse {
     }
 }
 ```
+
 ### Exempelutskrift:
 ```
 Datum1 är före Datum2.

@@ -12,9 +12,6 @@ title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---
 
-## Mikä & Miksi?
-TOML on lyhenne sanoista Tom's Obvious, Minimal Language, eli selkeä ja minimalistinen konfiguraatiotiedostomuoto, joka on helppo lukea sen selkeän semantiikan ansiosta. Ohjelmoijat käyttävät sitä konfiguraatiotiedostoissa, yksinkertaistaakseen tietojenvaihtoa järjestelmien välillä, sekä siksi, että se löytää tasapainon ihmisen luettavuuden ja koneen jäsentämisen välillä.
-
 ## Kuinka:
 Asenna ensin TOML-jäsentäjä kuten `Tomlyn`. Käytä paketinhallintaasi:
 

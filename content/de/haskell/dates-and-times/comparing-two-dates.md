@@ -11,9 +11,6 @@ title: Vergleich von zwei Daten
 weight: 27
 ---
 
-## Was & Warum?
-Vergleichen von zwei Daten bedeutet, zu prüfen, ob ein Datum vor, gleich oder nach einem anderen liegt. Programmierer benötigen das, um zeitliche Abläufe zu organisieren, Fristen zu überwachen oder historische Daten auszuwerten.
-
 ## Anleitung:
 In Haskell vergleichen wir Daten mit den üblichen Vergleichsoperatoren, nachdem wir sie mit `parseTimeM` geparst haben. Hier ein kurzes Beispiel:
 

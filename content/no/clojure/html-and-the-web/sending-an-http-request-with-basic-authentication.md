@@ -11,9 +11,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---
 
-## Hva & Hvorfor?
-HTTP-forespørsler med grunnleggende autentisering innebærer å sende brukernavn og passord i en header for tilgang. Programmerere bruker dette for å sikre endepunkter og begrense tilgangen til autoriserte brukere.
-
 ## Hvordan gjøre det:
 For å sende en HTTP-forespørsel med grunnleggende autentisering i Clojure, kan vi bruke `clj-http` biblioteket. Her er et eksempel:
 
@@ -41,7 +38,6 @@ Alternativer til grunnleggende autentisering inkluderer OAuth, API-nøkler og JW
 Implementeringsdetaljer i Clojure kan kreve ekstra oppsett for HTTPS og håndtering av ulike autentiseringsflyter, basert på hvilke sikkerhetstiltak som er på plass på serveren du kommuniserer med.
 
 ## Se også
-
 - `clj-http` dokumentasjon: [https://github.com/dakrone/clj-http](https://github.com/dakrone/clj-http)
 - ClojureDocs, en Clojure-samfunnsdrevet dokumentasjonsressurs: [https://clojuredocs.org/](https://clojuredocs.org/)
 - IETF HTTP Basic Authentication standard: [https://tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)

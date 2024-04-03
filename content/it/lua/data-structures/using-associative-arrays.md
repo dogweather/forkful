@@ -15,12 +15,7 @@ title: Utilizzo di array associativi
 weight: 15
 ---
 
-## Cosa & Perché?
-
-Gli array associativi in Lua sono come strette di mano segrete per i dati — invece di avere solo numeri che si allineano diligentemente per indice, le tue chiavi possono essere ciò che vuoi, rendendo il recupero dei dati un gioco da ragazzi. Perché i programmatori li usano? Perché a volte, hai bisogno di chiamare un pezzo di dato con il suo nome, non con un numero in una fila.
-
 ## Come fare:
-
 In Lua, creare un array associativo (o una tabella, in termini Lua) è semplice. Si abbandonano gli indici numerici usuali per chiavi di propria scelta. Guarda qui:
 
 ```Lua
@@ -59,7 +54,6 @@ favLang: Lua
 La parte interessante? Interagisci con i dati usando chiavi significative per te, rendendo il codice più leggibile e mantenibile.
 
 ## Approfondimento
-
 Quando Lua è entrato in scena, ha introdotto le tabelle come una struttura dati universale, rivoluzionando il modo in cui gli sviluppatori gestiscono i dati. A differenza di alcuni linguaggi in cui gli array associativi e gli array sono entità distinte, le tabelle di Lua fungono sia da uno che dall'altro, semplificando il panorama delle strutture dati.
 
 Ciò che rende le tabelle Lua particolarmente potenti è la loro flessibilità. Tuttavia, questa flessibilità comporta potenziali implicazioni sulla performance, specialmente con grandi dataset dove una struttura dati più specializzata potrebbe essere preferibile per l'efficienza.

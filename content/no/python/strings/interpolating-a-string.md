@@ -12,9 +12,6 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## Hva & Hvorfor?
-Strenginterpolasjon er metoden for å bygge inn uttrykk i strenglitteraler. Programmerere bruker det for å dynamisk sette inn verdier i strenger, noe som gjør koden mer lesbar og ryddigere enn tradisjonell strengkonkatenering.
-
 ## Hvordan:
 I Python 3.6 og nyere, kan du interpolere strenger ved å bruke f-strenger. Slik gjør du:
 

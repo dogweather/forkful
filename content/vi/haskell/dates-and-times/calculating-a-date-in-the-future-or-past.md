@@ -16,12 +16,7 @@ title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1
 weight: 26
 ---
 
-## Cái gì & Tại sao?
-
-Tính toán một ngày trong tương lai hoặc quá khứ có nghĩa là tìm ra một ngày trước hoặc sau một số ngày, tháng, hoặc năm nhất định từ một điểm xuất phát cụ thể. Lập trình viên thực hiện việc này cho các tình huống như ngày hết hạn, lên lịch, hoặc xác định thời gian đã trôi qua giữa các sự kiện.
-
 ## Cách thực hiện:
-
 Haskell sử dụng các thư viện như `time` để xử lý với ngày tháng. Dưới đây là cách để thêm ngày hoặc tháng vào một ngày, hoặc trừ chúng để tìm một ngày trong quá khứ.
 
 ```Haskell
@@ -60,7 +55,6 @@ printFormattedDate date = putStrLn $ formatTime defaultTimeLocale "%F" date
 ```
 
 ## Sâu hơn
-
 Trong Haskell, chúng ta thường tới thư viện `time` cho các tính toán ngày tháng. Thư viện này cung cấp các kiểu và hàm cho phép tính Toán thời gian, phân tích cú pháp, và định dạng. Truyền thống, mọi người sẽ điều chỉnh ngày tháng bằng tay, nhưng các thư viện như `time` giải quyết những khúc mắc của lịch (như năm nhuận).
 
 Các phương án thay thế cho `time` bao gồm `Data.Time.Calendar.OrdinalDate` và `Data.Time.Clock.POSIX` cho các nhu cầu khác nhau, như làm việc với số tuần hoặc dấu thời gian.
@@ -68,7 +62,6 @@ Các phương án thay thế cho `time` bao gồm `Data.Time.Calendar.OrdinalDat
 Về mặt triển khai, việc tính toán ngày tháng là tương đối phức tạp. Ngay cả với `time`, các hàm như `addGregorianMonthsClip` đảm bảo ngày kết quả là hợp lệ. Ví dụ, thêm một tháng vào ngày 31 tháng Giêng sẽ "clip" đến ngày cuối cùng của tháng Hai (hoặc ngày 28 hoặc 29), không phải ngày 3 tháng Ba.
 
 ## Xem thêm
-
 - Thư viện `time` của Haskell: http://hackage.haskell.org/package/time
 - Hướng dẫn Ngày và Giờ từ Trường Haskell: https://school.haskellforall.com/#date-and-time
 - Giải thích về ZonedTime và UTC: https://www.47deg.com/blog/dealing-with-time-in-haskell/

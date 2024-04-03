@@ -13,12 +13,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mikä ja miksi?
-
-Assosiatiiviset taulukot, jotka tunnetaan Google Apps Scriptissä (JavaScriptin muunnelma) objekteina, mahdollistavat ohjelmoijille avain-arvo -parien kokoelmien luomisen. Tämä toiminnallisuus on keskeistä tietojen tallentamiselle ja käsittelylle tehokkaasti, erityisesti kun työskennellään dynaamisesti nimettyjen ominaisuuksien kanssa tai kun perinteisen taulukon lineaarinen tallennus- ja käyttömalli on riittämätön.
-
 ## Kuinka:
-
 Google Apps Scriptissä assosiatiivisia taulukoita (objekteja) luodaan ja käsitellään käyttämällä aaltosulkeita `{}`, määrittelemällä avain-arvo -pareja sisällä. Avaimet ovat uniikkeja tunnisteita, ja arvot voivat olla mitä tahansa merkkijonoista ja numeroista monimutkaisempiin objekteihin tai funktioihin. Tässä on perusesimerkki:
 
 ```javascript
@@ -58,7 +53,6 @@ country: USA
 Huomaa, kuinka voit käyttää sekä pistenotaatiota että hakasulkenotaatiota ominaisuuksien käyttämiseen ja asettamiseen. Hakasulkenotaatio on erityisen hyödyllinen työskenneltäessä dynaamisesti määräytyvien avainten kanssa tai avaimien kanssa, jotka sisältävät tunnisteissa sallimattomia merkkejä.
 
 ## Syväsukellus
-
 Objekteina toimivat assosiatiiviset taulukot ovat olleet JavaScriptin, ja laajennettuna Google Apps Scriptin, kulmakivi, heijastellen sen prototyyppiperusteista perintämekanismia. Toisin kuin perinteiset assosiatiiviset taulukot tai sanakirjat tarjoavat kielet (esim. Pythonin dict), Google Apps Script -objektit tarjoavat joustavan ja tehokkaan tavan rakentaa tietoja, hyötyen JavaScriptin dynaamisesta luonteesta.
 
 On kuitenkin tärkeää huomata, että ECMAScript 2015 -määrittely toi mukanaan `Map`- ja `Set`-objektit, jotka tarjoavat suoraviivaisemman assosiatiivisen kokoelmien käsittelyn tietyin etuin objekteihin verrattuna, kuten säilyttäen lisäysjärjestyksen ja paremman suorituskyvyn suurille tietomäärille. Vaikka Google Apps Script tukee näitä myös, valinta objektien tai uudempien `Map`/`Set`-rakenteiden välillä riippuu erityisistä tarpeista ja suorituskykyharkinnoista. Useimmille assosiatiivista taulukkoa koskeville tehtäville perinteiset objektipohjaiset toteutukset tarjoavat tutun ja monipuolisen lähestymistavan, mutta uudempien vaihtoehtojen tutkiminen on suositeltavaa käsikirjoituksesi monimutkaisuuden kasvaessa.

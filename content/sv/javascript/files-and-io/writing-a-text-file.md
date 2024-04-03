@@ -14,9 +14,6 @@ title: Att skriva en textfil
 weight: 24
 ---
 
-## Vad & Varför?
-Att skriva en textfil i JavaScript handlar ofta om att skapa och spara data i ett enkelt, läsbart format för loggning, export av användarinmatning eller konfigurationsändamål. Denna funktionalitet är avgörande för applikationer som behöver bevara data utöver applikationsprocessens livstid, genom att erbjuda ett sätt att lagra och senare hämta eller dela information.
-
 ## Hur man gör:
 I en Node.js-miljö kan du använda den inbyggda `fs` (File System)-modulen för att skriva textfiler. Detta exempel demonstrerar hur man skriver text till en fil asynkront:
 

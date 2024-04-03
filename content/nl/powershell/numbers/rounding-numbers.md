@@ -12,9 +12,6 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-Afronden van getallen gaat over het aanpassen van een waarde naar het dichtstbijzijnde geheel getal of opgegeven decimale plaats. Programmeurs ronden getallen af om gegevens te vereenvoudigen, leesbaarheid te verbeteren of aan bepaalde wiskundige eisen te voldoen tijdens berekeningen.
-
 ## Hoe:
 Je hebt een paar handige cmdlets en methoden in PowerShell voor het afronden:
 

@@ -10,9 +10,6 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-Das Runden von Zahlen bedeutet, sie zu einem nahegelegenen Wert zu justieren, um sie zu vereinfachen oder eine bestimmte Genauigkeit zu erreichen. Das ist nützlich, um die Lesbarkeit zu verbessern, Speicherplatz zu reduzieren oder domänenspezifischen Anforderungen zu entsprechen, wie bei Geldberechnungen, wo man auf den nächsten Cent runden möchte.
-
 ## Wie:
 In Elixir können Sie `Float.round/2` verwenden, um eine Fließkommazahl zu runden. Sie können die Anzahl der Dezimalstellen angeben, die Sie beibehalten möchten. So funktioniert es:
 

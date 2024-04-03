@@ -13,9 +13,6 @@ title: Verifica se una directory esiste
 weight: 20
 ---
 
-## Cosa & Perché?
-Verificare se una directory esiste in Clojure comporta la verifica della presenza di una directory del sistema di file all'interno della tua applicazione Clojure. Questa operazione è fondamentale per le operazioni sui file, per prevenire errori durante la lettura o la scrittura in directory che potrebbero non essere presenti, garantendo un'esecuzione del codice robusta e senza errori.
-
 ## Come fare:
 Clojure, essendo un linguaggio JVM, può utilizzare la classe `java.io.File` di Java per questo scopo. Non hai bisogno di alcuna libreria di terze parti per un'operazione così basilare. Ecco come puoi farlo:
 

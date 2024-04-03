@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---
 
-## Điều gì & Tại sao?
-Làm việc với TOML có nghĩa là phân tích và tạo dữ liệu TOML (Tom's Obvious, Minimal Language - Ngôn ngữ Tối giản, Hiển nhiên của Tom) bằng Elixir. Lập trình viên sử dụng nó để xử lý các tệp cấu hình vì TOML dễ đọc, dễ phân tích và ánh xạ tốt với cấu trúc dữ liệu hash.
-
 ## Làm thế nào:
 Đầu tiên, thêm một bộ phân tích TOML vào các phụ thuộc mix của bạn. Ví dụ này sử dụng `toml-elixir`:
 

@@ -11,9 +11,6 @@ title: Att organisera kod i funktioner
 weight: 18
 ---
 
-## Vad & Varför?
-Att organisera kod i funktioner handlar om att dela upp din kod i återanvändbara block med definierade syften. Vi gör det för att hålla saker och ting ordnade, förhindra redundans och göra felsökning till en barnlek.
-
 ## Hur man gör:
 Föreställ dig att vi har upprepande kod för att hälsa på användare. Istället kommer vi att kapsla in den i en funktion som `greet_user`:
 

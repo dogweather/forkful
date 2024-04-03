@@ -12,12 +12,7 @@ title: "Trabalhando com N\xFAmeros Complexos"
 weight: 14
 ---
 
-## O Que & Por Quê?
-
-Números complexos consistem em uma parte real e uma parte imaginária, representados como `a + bi`, onde `i` é a raiz quadrada de `-1`. Programadores trabalham com números complexos em diversos campos, como engenharia elétrica, computação quântica e dinâmica de fluidos, explorando suas propriedades únicas para simulações, processamento de sinais e resolução de tipos específicos de equações matemáticas.
-
 ## Como Fazer:
-
 Em C, os números complexos são suportados pela Biblioteca Padrão, especificamente `<complex.h>`. Para utilizá-los, declare variáveis com o tipo `double complex` (ou `float complex` para precisão simples). Veja como realizar operações básicas:
 
 ```c
@@ -54,5 +49,4 @@ int main() {
 Note que `I` é uma constante representando a unidade imaginária em `<complex.h>`. Funções como `creal()` e `cimag()` extraem as partes real e imaginária, respectivamente, enquanto `conj()` calcula o conjugado complexo. Para a magnitude e fase (argumento) de números complexos, `cabs()` e `carg()` são usadas.
 
 ## Aprofundamento
-
 O suporte para números complexos em C é relativamente recente, tendo sido padronizado no C99. Antes disso, a aritmética de números complexos em C era trabalhosa, muitas vezes requerendo estruturas de dados e funções personalizadas. A inclusão de `<complex.h>` e os tipos de dados complexos proporcionaram um significativo impulso às capacidades da linguagem para aplicações científicas e de engenharia. No entanto, vale ressaltar que algumas linguagens, como Python, oferecem suporte mais intuitivo para números complexos por meio de tipos de dados embutidos e um conjunto mais rico de funções de biblioteca. Apesar disso, o desempenho e controle oferecidos por C o tornam uma escolha preferencial para tarefas de computação de alto desempenho, mesmo que isso signifique lidar com uma sintaxe um pouco mais verbosa para a aritmética complexa.

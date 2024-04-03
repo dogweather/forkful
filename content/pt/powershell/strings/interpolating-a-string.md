@@ -11,9 +11,6 @@ title: Interpolando uma string
 weight: 8
 ---
 
-## O Que é e Por Que?
-Interpolação de string permite injetar valores em uma cadeia de caracteres, tornando seu código mais limpo e legível. Programadores fazem isso para construir strings dinamicamente e evitar a concatenação manual de dados e texto.
-
 ## Como Fazer:
 ```PowerShell
 # Definindo uma variável

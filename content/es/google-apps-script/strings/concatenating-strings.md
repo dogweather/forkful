@@ -12,16 +12,10 @@ title: Concatenando cadenas de texto
 weight: 3
 ---
 
-## Qué y Por Qué?
-
-Concatenar cadenas implica combinar dos o más cadenas en una sola. Los programadores hacen esto para construir dinámicamente mensajes, URLs o cualquier forma de texto que requiere una mezcla de contenido estático y variable.
-
 ## Cómo hacerlo:
-
 En Google Apps Script, que se basa en JavaScript, hay varias formas de concatenar cadenas. Aquí hay algunos métodos comunes:
 
 ### Usando el operador más (`+`):
-
 ```javascript
 var firstName = "John";
 var lastName = "Doe";
@@ -30,7 +24,6 @@ Logger.log(fullName); // Salida: John Doe
 ```
 
 ### Usando el método `concat()`:
-
 ```javascript
 var string1 = "Hello";
 var string2 = "World";
@@ -39,7 +32,6 @@ Logger.log(combinedString); // Salida: Hello World
 ```
 
 ### Usando literales de plantilla (acentos graves):
-
 Esta es una forma moderna y flexible de concatenar cadenas, que permite incrustar expresiones dentro de cadenas fácilmente.
 
 ```javascript
@@ -51,7 +43,6 @@ Logger.log(message); // Salida: Aprender Google Apps Script es divertido!
 Cada uno de estos métodos tiene sus casos de uso, y la elección entre ellos típicamente depende de los requisitos de legibilidad y la complejidad de las cadenas que se están concatenando.
 
 ## Profundización
-
 La concatenación de cadenas es un aspecto fundamental no solo de Google Apps Script sino de muchos lenguajes de programación. Históricamente, la concatenación de cadenas a menudo se realizaba utilizando el operador más o funciones/métodos especializados como `concat()`. Sin embargo, con la introducción de literales de plantilla en ECMAScript 2015 (ES6), que Google Apps Script soporta, los desarrolladores han ganado una forma más poderosa e intuitiva de manejar cadenas.
 
 Los literales de plantilla no solo simplifican la sintaxis para incrustar expresiones dentro de cadenas sino que también soportan cadenas multilíneas sin la necesidad de caracteres de nueva línea explícitos. Esto reduce el potencial de errores y mejora la legibilidad del código, especialmente cuando se trabaja con cadenas complejas o cuando se sustituyen múltiples variables en una plantilla de texto.

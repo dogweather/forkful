@@ -11,9 +11,6 @@ title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---
 
-## What & Why?
-Czasami potrzebujemy reprezentować datę tekstowo - do wyświetlenia, logowania czy zapisywania. Robimy to, przekształcając obiekty daty (`Date`) w JavaScript na ciągi znaków (stringi), aby były czytelne dla ludzi i kompatybilne z innymi systemami.
-
 ## How to:
 Konwersja daty na string w JS jest prosta. Spójrzmy:
 

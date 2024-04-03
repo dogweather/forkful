@@ -10,9 +10,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## What & Why? (Mitä & Miksi?)
-Lähetämme HTTP-pyyntöjä kommunikoidaksemme web-palvelimien kanssa. Koodarit tekevät sen hakeakseen tietoa, lähettääkseen dataa ja interaktoidakseen verkkopalveluiden kanssa.
-
 ## How to: (Kuinka tehdä:)
 ```Python
 # Tarvittavat kirjastot

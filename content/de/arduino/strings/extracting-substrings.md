@@ -11,9 +11,6 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## Was & Warum?
-Das Herausfiltern von Teilstrings, also Substrings, ist der Prozess des Isolierens eines bestimmten Teils eines Strings. Programmierer nutzen das, um spezifische Daten aus größeren Textmengen zu extrahieren oder um Datenformate anzupassen.
-
 ## How to:
 ```Arduino
 String text = "Hallo Welt, hier Arduino!";

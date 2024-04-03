@@ -11,9 +11,6 @@ title: Recherche et remplacement de texte
 weight: 10
 ---
 
-## What & Why? (Quoi et Pourquoi?)
-Chercher et remplacer du texte, c'est modifier des bouts de chaînes par d'autres. Les développeurs l'utilisent pour corriger des données, formatter ou manipuler des strings rapidement.
-
 ## How to: (Comment faire:)
 Voici quelques exemples pour fouiller et substituer des textes en C# :
 
@@ -45,6 +42,7 @@ Sortie :
 Bonjour, l'univers!
 Bonjour, la monde!
 ```
+
 ## Deep Dive (Plongée en profondeur)
 Historiquement, la recherche et le remplacement de texte ont leurs racines dans les éditeurs de texte des premiers jours de l'informatique. En C#, `String.Replace()` et les expressions régulières (Regex) sont les deux moyens principaux. `String.Replace()` est simple et rapide. Regex, lui, offre plus de souplesse grâce à la possibilité de motifs complexes. Concernant l'implémentation, `System.Text.RegularExpressions.Regex` est compilé en IL (Intermediate Language) et optimisé par le CLR (Common Language Runtime) pour le performance.
 

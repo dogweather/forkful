@@ -15,10 +15,6 @@ title: Ghi log
 weight: 17
 ---
 
-## Ghi chép với Arduino: Là gì & Tại sao?
-
-"Ghi chép" là việc lưu lại các sự kiện, giao dịch, hoặc hoạt động xảy ra theo thời gian trong một hệ thống. Lập trình viên sử dụng nó để gỡ lỗi, giám sát sức khỏe hệ thống, thu thập thống kê, hoặc thậm chí kiểm toán việc sử dụng, làm cho nó trở thành một thực hành không thể thiếu để duy trì và hiểu rõ hành vi của mã của họ dưới các điều kiện khác nhau.
-
 ## Cách thực hiện:
 Arduino không đi kèm với một thư viện ghi chép sẵn có như một số môi trường khác, nhưng bạn có thể thực hiện việc ghi chép cơ bản vào bảng điều khiển Serial với rất ít rắc rối. Dưới đây là một ví dụ nhanh để bạn bắt đầu:
 

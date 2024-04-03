@@ -13,9 +13,6 @@ title: Interpolando una cadena de caracteres
 weight: 8
 ---
 
-## Qué y Por Qué?
-La interpolación de cadenas es el método de incrustar expresiones dentro de literales de cadena. Los programadores lo utilizan para insertar valores dinámicamente en las cadenas, lo que hace que el código sea más legible y limpio que la concatenación de cadenas tradicional.
-
 ## Cómo hacerlo:
 En Python 3.6 y versiones superiores, puedes interpolar cadenas utilizando f-strings. Así es como se hace:
 

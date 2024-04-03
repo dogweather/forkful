@@ -14,12 +14,7 @@ title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---
 
-## Quoi & Pourquoi ?
-
-La capitalisation d'une chaîne de caractères implique de convertir la première lettre de la chaîne en majuscule tout en s'assurant que le reste des lettres est en minuscules. Cette action est couramment nécessaire pour le formatage de l'entrée utilisateur ou l'affichage de texte dans les interfaces utilisateur, où la cohérence et la lisibilité sont importantes.
-
 ## Comment faire :
-
 Elixir fournit une manière simple de capitaliser les chaînes de caractères en utilisant ses fonctions intégrées sans nécessiter de bibliothèques tierces. Voici un exemple simple :
 
 ```elixir

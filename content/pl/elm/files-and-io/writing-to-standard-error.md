@@ -14,12 +14,7 @@ title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---
 
-## Co i dlaczego?
-
-Pisanie do standardowego błędu (stderr) polega na przekierowywaniu komunikatów o błędach i diagnozy odseparowane od głównego wyjścia programu, które trafia do standardowego wyjścia (stdout). Programiści robią to, aby obsługa błędów i logowanie stały się bardziej zarządzalne, szczególnie w środowiskach, gdzie rozróżnienie wyjścia jest kluczowe dla debugowania i monitorowania.
-
 ## Jak to zrobić:
-
 Elm jest przede wszystkim ukierunkowany na rozwój aplikacji internetowych, gdzie koncepcja bezpośredniego pisania do stderr nie ma zastosowania w taki sposób, jak ma to miejsce w tradycyjnych środowiskach linii poleceń. Jednakże, dla programów Elm działających w Node.js lub podobnych środowiskach, współdziałanie z JavaScriptem za pomocą portów jest kluczowym podejściem do osiągnięcia podobnej funkcjonalności. Oto jak można to ustawić:
 
 Kod Elm (`Main.elm`):

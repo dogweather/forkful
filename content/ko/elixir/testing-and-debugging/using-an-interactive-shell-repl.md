@@ -15,9 +15,6 @@ title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
 weight: 34
 ---
 
-## 무엇인가 & 왜인가?
-대화형 쉘 또는 REPL(Read-Eval-Print Loop)은 실시간으로 코드 스니펫을 시도해 볼 수 있게 해 줍니다. 엘릭서 프로그래머들은 IEx(Interactive Elixir)라고 불리는 REPL을 실험, 디버깅 및 언어 학습을 위해 사용합니다.
-
 ## 어떻게 사용하는가:
 IEx를 실행하려면 터미널을 열고 `iex`를 입력하십시오. 맛보기입니다:
 

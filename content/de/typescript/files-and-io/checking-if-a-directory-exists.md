@@ -15,15 +15,10 @@ title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---
 
-## Was & Warum?
-Das Überprüfen, ob ein Verzeichnis in TypeScript existiert, ist für Dateiverwaltungsaufgaben essentiell, wie zum Beispiel das Lesen aus oder das Schreiben von Daten in Dateien, um sicherzustellen, dass Operationen nur auf gültigen Verzeichnissen ausgeführt werden. Diese Operation ist entscheidend, um Fehler zu vermeiden, die durch den Versuch, auf nicht vorhandene Verzeichnisse zuzugreifen oder diese zu manipulieren, entstehen können.
-
 ## Wie geht das:
-
 TypeScript, ausgeführt in einer Node.js-Umgebung, ermöglicht es Ihnen zu überprüfen, ob ein Verzeichnis existiert, indem Sie das `fs` Modul verwenden, welches die Funktion `existsSync()` oder die asynchrone Funktion `access()` in Verbindung mit `constants.F_OK` bereitstellt.
 
 ### Verwendung von `fs.existsSync()`:
-
 ```typescript
 import { existsSync } from 'fs';
 
@@ -37,7 +32,6 @@ if (existsSync(directoryPath)) {
 ```
 
 ### Verwendung von `fs.access()` mit `fs.constants.F_OK`:
-
 ```typescript
 import { access, constants } from 'fs';
 
@@ -63,7 +57,6 @@ Verzeichnis existiert nicht.
 ```
 
 ### Verwendung einer Drittanbieterbibliothek - `fs-extra`:
-
 `fs-extra` ist eine beliebte Drittanbieterbibliothek, die das eingebaute `fs` Modul erweitert und bequemere Funktionen bereitstellt.
 
 ```typescript

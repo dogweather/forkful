@@ -13,9 +13,6 @@ title: Een string met hoofdletters maken
 weight: 2
 ---
 
-## Wat & Waarom?
-Het kapitaliseren van een string betekent het veranderen van de eerste letter van elk woord naar een hoofdletter. Programmeurs kapitaliseren strings voor visuele consistentie, branding of ontwerp van de gebruikerservaring.
-
 ## Hoe te:
 In PHP kapitaliseren we strings met de functie `ucwords()` voor volledige titels of `ucfirst()` voor enkele regels of zinnen.
 

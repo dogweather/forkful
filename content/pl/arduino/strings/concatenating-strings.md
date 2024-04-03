@@ -12,9 +12,6 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## Co i dlaczego?
-Łączenie łańcuchów znaków, czyli konkatenacja, to proces tworzenia jednego łańcucha z dwóch lub więcej istniejących. Programiści robią to, by składać wiadomości, generować dane wyjściowe lub pracować z tekstami w programach.
-
 ## Jak to zrobić:
 ```Arduino
 String greeting = "Cześć ";

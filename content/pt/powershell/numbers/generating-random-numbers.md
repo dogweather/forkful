@@ -11,9 +11,6 @@ title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---
 
-## O Que & Por Quê?
-Gerar números aleatórios no PowerShell é sobre criar valores numéricos imprevisíveis dentro de uma faixa especificada. Programadores utilizam essa capacidade por uma miríade de razões, incluindo testes, simulação e propósitos de segurança, onde a imprevisibilidade ou a imitação de aleatoriedade do mundo real é crucial.
-
 ## Como fazer:
 O PowerShell oferece uma abordagem direta para gerar números aleatórios usando o cmdlet `Get-Random`. Este cmdlet pode produzir números aleatórios dentro de uma faixa padrão ou uma faixa especificada.
 

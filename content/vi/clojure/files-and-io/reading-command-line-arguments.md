@@ -15,12 +15,7 @@ title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---
 
-## Cái gì và Tại sao?
-
-Đọc các tham số dòng lệnh cho phép một chương trình thu thập thông tin trực tiếp từ lệnh terminal của người dùng. Lập trình viên làm điều này để tùy chỉnh hành vi của chương trình mà không cần thay đổi mã nguồn.
-
 ## Làm thế nào:
-
 Trong Clojure, bạn lấy các tham số dòng lệnh với `*command-line-args*`. Dưới đây là một ví dụ đơn giản:
 
 ```clojure
@@ -55,7 +50,6 @@ Chữ hoa: ["HELLO" "WORLD"]
 ```
 
 ## Nghiên Cứu Sâu
-
 `*command-line-args*` là một biến trong Clojure, được thiết lập thành một chuỗi các tham số được truyền cho script. Nó đã tồn tại từ những ngày đầu của Clojure, cho thấy Clojure coi các tham số dòng lệnh như là công dân hạng nhất.
 
 Có lựa chọn khác không? Cách thức Java để lấy các tham số dòng lệnh cũng hoạt động trong Clojure, nhờ vào khả năng tương tác giữa các ngôn ngữ. Nhưng điều đó cồng kềnh hơn.
@@ -63,7 +57,6 @@ Có lựa chọn khác không? Cách thức Java để lấy các tham số dòn
 Xét về chi tiết triển khai, khi Clojure khởi động, nó phân tích các tham số và lưu trữ chúng trong `*command-line-args*`. Script của bạn sau đó có thể làm bất cứ điều gì với chúng—phân tích, bỏ qua, chuyển đổi, bạn tên lên.
 
 ## Xem Thêm
-
 - Công cụ CLI chính thức của Clojure: https://clojure.org/guides/deps_and_cli
 - Clojure từ cơ bản đến nâng cao: Lập trình dòng lệnh: https://aphyr.com/posts/305-clojure-from-the-ground-up-command-line
 - ClojureDocs về *command-line-args*: https://clojuredocs.org/clojure.core/*command-line-args*

@@ -12,9 +12,6 @@ title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---
 
-## Co i dlaczego?
-Debugowanie to jak detektywowanie w kodzie – szukamy błędów, używając wydruków, żeby zobaczyć, co się dzieje w trakcie działania programu. Drukujemy różne informacje, by zrozumieć przyczyny problemów i je naprawić.
-
 ## Jak to zrobić:
 ```elixir
 # Prosty przykład wydruku

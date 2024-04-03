@@ -14,12 +14,7 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## ¿Qué y por qué?
-
-Escribir pruebas en PowerShell implica crear scripts que validen automáticamente la funcionalidad de tu código de PowerShell, asegurándose de que se comporte como se espera. Los programadores hacen esto para detectar errores temprano, simplificar el mantenimiento del código y asegurar que las modificaciones al código no rompan inadvertidamente la funcionalidad existente.
-
 ## Cómo hacerlo:
-
 PowerShell no tiene un marco de pruebas incorporado, pero Pester, un módulo de terceros muy popular, es ampliamente utilizado para escribir y ejecutar pruebas. Así es como comenzar con Pester para probar tus funciones de PowerShell.
 
 Primero, instala Pester si aún no lo has hecho:

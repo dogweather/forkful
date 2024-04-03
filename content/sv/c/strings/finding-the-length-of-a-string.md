@@ -13,9 +13,6 @@ title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---
 
-## Vad & Varför?
-Att hitta längden på en sträng i C innebär att bestämma antalet tecken före det nollterminerande tecknet `\0`. Programmerare gör detta för att korrekt kunna manipulera strängar utan att stöta på fel som buffertöverskridningar, vilket kan leda till säkerhetsbrister eller programkrascher.
-
 ## Hur:
 I C används standardbiblioteksfunktionen `strlen()` vanligtvis för att hitta längden på en sträng. Här är ett snabbt exempel:
 

@@ -10,9 +10,6 @@ title: Einen HTTP-Request senden
 weight: 44
 ---
 
-## Was & Warum?
-HTTP-Anfragen ermöglichen die Kommunikation zwischen deiner Software und Webdiensten. Programmierer senden diese Anfragen, um Daten zu holen oder zu senden, APIs zu nutzen und auf Webressourcen zuzugreifen.
-
 ## How to:
 Hier ein Beispiel, wie man in C# eine einfache GET-Anfrage sendet und die Antwort ausliest:
 
@@ -53,7 +50,6 @@ Alternativen zum `HttpClient` in C# sind die Klassen `WebClient` und `HttpWebReq
 Im Zusammenhang mit `HttpClient` sollten auch `HttpRequestMessage` und `HttpResponseMessage` erwähnt werden, die detailliertere Kontrolle über Anfragen und Antworten ermöglichen. Außerdem sollten Entwickler mit Konzepten wie asynchroner Programmierung und dem Umgang mit HTTP-Statuscodes vertraut sein, um effektiv mit HTTP-Anfragen umgehen zu können.
 
 ## See Also
-
 - [HttpClient Class Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-6.0)
 - [Asynchronous programming with async and await](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/async/)
 - [HTTP Status Codes](https://developer.mozilla.org/de/docs/Web/HTTP/Status)

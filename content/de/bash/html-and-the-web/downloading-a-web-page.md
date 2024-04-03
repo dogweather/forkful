@@ -10,9 +10,6 @@ title: Webseite herunterladen
 weight: 42
 ---
 
-## Was & Warum?
-Das Herunterladen einer Webseite bedeutet, ihren Inhalt auf deinen Rechner zu ziehen. Programmierer machen das, um Daten zu analysieren, Backups zu erstellen oder um Inhalte offline verfügbar zu machen.
-
 ## How to:
 ```Bash
 # Mit curl eine Webseite herunterladen

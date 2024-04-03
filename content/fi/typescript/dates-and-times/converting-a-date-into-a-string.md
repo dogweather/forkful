@@ -10,10 +10,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---
 
-## What & Why?
-"Mikä ja Miksi?"  
-Muunnamme päivämäärän merkkijonoksi hallitaksemme sen esitysmuotoa. Tämä tekee päivämäärien kanssa työskentelystä helpompaa, kuten aikavyöhykkeiden käsittely tai käyttäjäystävällisen formaatin näyttäminen.
-
 ## How to:
 "Kuinka tehdä se:"
 

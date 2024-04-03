@@ -14,9 +14,6 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i Dlaczego?
-Sprawdzanie, czy katalog istnieje w Ruby, pozwala programistom na weryfikację obecności katalogu przed wykonaniem operacji takich jak odczytywanie plików czy tworzenie nowych katalogów. Jest to kluczowe dla uniknięcia błędów w obsłudze plików i zapewnienia niezawodności manipulacji systemem plików.
-
 ## Jak to zrobić:
 Standardowa biblioteka Ruby oferuje proste metody do sprawdzania, czy katalog istnieje. Oto jak to zrobić czystym Ruby, bez potrzeby korzystania z bibliotek stron trzecich:
 

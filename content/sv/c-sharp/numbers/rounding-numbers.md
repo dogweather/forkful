@@ -11,9 +11,6 @@ title: Avrundning av tal
 weight: 13
 ---
 
-## Vad & Varför?
-Att avrunda tal innebär att justera dem till det närmaste angivna platsvärdet—tänk dig att du förenklar dem. Programmerare avrundar för att kontrollera precision, förbättra prestanda eller när de visar användarvänliga resultat—som priser som inte behöver tre decimaler.
-
 ## Hur man gör:
 Här är en returbiljett för att avrunda tal i C#:
 

@@ -12,11 +12,7 @@ title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---
 
-## ¿Qué y Por Qué?
-La impresión de información de depuración en Swift te permite ver valores y mensajes directamente en la consola, lo cual es vital para entender qué está pasando en tu código. Programadores lo hacen para diagnosticar y arreglar fallos más rápidamente.
-
 ## Cómo Hacerlo:
-
 ```swift
 // Simples ejemplos de cómo imprimir en la consola
 
@@ -46,7 +42,6 @@ Usuario(nombre: "Juan", edad: 30)
 ```
 
 ## Análisis Profundo
-
 La función `print()` de Swift es heredada de lenguajes como C donde la función `printf()` se usó ampliamente. Hoy en día, a pesar de alternativas como los sistemas de logging y las herramientas de depuración avanzadas (por ejemplo, LLDB en Xcode), `print()` sigue siendo popular por su simplicidad y conveniencia.
 
 Los detalles de implementación importantes incluyen:
@@ -59,6 +54,5 @@ Alternativas para considerar:
 - **Logger**: En iOS 14 y posterior, Apple introdujo un sistema de registro unificado que permite diferentes niveles de verbosidad y es más adecuado para la producción.
 
 ## Ver También
-
 - Documentación de Swift sobre `print()`: [Swift Standard Library - print(_:separator:terminator:)](https://developer.apple.com/documentation/swift/1541053-print)
 - Manual para usar LLDB en la línea de comandos: [LLDB Command Line Use](https://lldb.llvm.org/use/map.html)

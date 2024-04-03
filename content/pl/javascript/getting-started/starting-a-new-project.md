@@ -10,12 +10,7 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## What & Why?
-
-Zaczynanie nowego projektu to stawianie pierwszych kroków w kodzie. Robimy to, by rozwiązać problem, nauczyć się czegoś nowego lub stworzyć coś wartościowego.
-
 ## How to:
-
 ```Javascript
 // Step 1: Initialize npm (Node Package Manager)
 // Type in the terminal inside your project's folder
@@ -50,7 +45,6 @@ node app.js
 ```
 
 ## Deep Dive:
-
 Zaczynanie projektu nie zawsze było takie proste. W przeszłości, bez narzędzi takich jak npm, konfiguracja środowiska mogła zająć godziny. Dziś, npm i inne menedżery pakietów jak Yarn upraszczają ten proces.
 
 Alternatywą do npm może być Yarn, który działa podobnie, ale jest szybszy i oferuje lepsze zarządzanie wersjami pakietów. Przy nowym projekcie warto rozważyć też TypeScript dla lepszej typizacji, czy frameworki jak Angular, React czy Vue.js - zależnie od zastosowania.
@@ -58,7 +52,6 @@ Alternatywą do npm może być Yarn, który działa podobnie, ale jest szybszy i
 Kluczowym aspektem jest jednak nie tylko wybranie narzędzi, ale zrozumienie, jak i dlaczego działają, co ułatwia debugowanie i rozwój projektu.
 
 ## See Also:
-
 - [npm documentation](https://docs.npmjs.com/)
 - [Node.js official site](https://nodejs.org/en/)
 - [Express.js guide](https://expressjs.com/en/starter/installing.html)

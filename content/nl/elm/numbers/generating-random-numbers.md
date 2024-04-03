@@ -16,9 +16,6 @@ title: Genereren van willekeurige getallen
 weight: 12
 ---
 
-## Wat & Waarom?
-Het genereren van willekeurige getallen in Elm houdt het gebruik van de `Random` module in om pseudo-willekeurige getallen te produceren, die handig zijn voor een verscheidenheid aan taken zoals spellen, simulaties, en zelfs als onderdeel van algoritmen die stochastische processen vereisen. Deze mogelijkheid stelt ontwikkelaars in staat onvoorspelbaarheid en variëteit aan hun applicaties toe te voegen, wat de gebruikerservaring en functionaliteit verbetert.
-
 ## Hoe:
 De pure functionele aard van Elm betekent dat je niet direct willekeurige getallen kunt genereren zoals je misschien zou doen in imperatieve talen. In plaats daarvan gebruik je de `Random` module in combinatie met commando's. Hier is een basisvoorbeeld dat een willekeurig geheel getal tussen 1 en 100 genereert.
 

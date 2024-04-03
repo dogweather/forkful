@@ -15,9 +15,6 @@ title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---
 
-## Gì và Tại sao?
-Xóa bỏ các ký tự dựa trên một mẫu làm cho chuỗi trở nên sạch sẽ và đồng nhất. Các lập trình viên thực hiện điều này để định dạng, loại bỏ các ký tự không mong muốn, hoặc đơn giản hóa trước khi xử lý.
-
 ## Cách thực hiện:
 Sử dụng `replace()` với biểu thức chính quy. Cờ `g` thay thế tất cả các phần trùng khớp, không chỉ phần đầu tiên.
 

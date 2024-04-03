@@ -14,12 +14,7 @@ title: Arbeider med JSON
 weight: 38
 ---
 
-## Hva & Hvorfor?
-
-Å jobbe med JSON innebærer å analysere JSON-formaterte strenger til datastrukturer som Elixir kan manipulere, og serialisere Elixir-datastrukturer tilbake til JSON-strenger. Dette er essensielt for webutvikling, API-er og konfigurasjonsfiler, siden JSON er et lettvekts, tekstbasert, språkuavhengig datautvekslingsformat som er mye brukt for sin enkelhet og menneskelesbarhet.
-
 ## Hvordan:
-
 I Elixir kan du bruke `Jason`-biblioteket, et populært valg for JSON-analysering og generering. Først, legg til `Jason` i prosjektets avhengigheter i `mix.exs`:
 
 ```elixir

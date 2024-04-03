@@ -11,12 +11,7 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## Co i Dlaczego?
-
-Porównywanie dat oznacza ustalanie, która data jest wcześniejsza, późniejsza lub czy są identyczne. Programiści robią to, gdy muszą realizować logikę zależną od czasu, na przykład w rejestratorach czasu pracy, systemach rezerwacji lub dziennikach zdarzeń.
-
 ## Jak to zrobić?
-
 ```java
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -53,7 +48,6 @@ Czy dateTime1 jest późniejsza niż dateTime2? false
 ```
 
 ## Deep Dive
-
 Porównywanie dat sięga początków informatyki. W Javie do Java 8 korzystano głównie z `java.util.Date` i `java.util.Calendar`, ale były skomplikowane w użyciu i niewystarczająco dokładne. Teraz `java.time` (z którym pracujemy powyżej) jest standardem, szeroko akceptowanym ze względu na przejrzystość i funkcjonalność.
 
 Inne sposoby to porównywanie timestampów (w milisekundach) lub wykorzystanie bibliotek zewnętrznych, jak Joda-Time (choć od Java 8 mniej popularnych).
@@ -61,7 +55,6 @@ Inne sposoby to porównywanie timestampów (w milisekundach) lub wykorzystanie b
 Detal implementacyjny: `LocalDate` i `LocalDateTime` są niemutowalne i wątkowo bezpieczne, co oznacza, że możesz używać ich bez obaw o spójność danych w aplikacjach wielowątkowych.
 
 ## Zobacz również
-
 - Dokumentacja klasy `LocalDate`: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDate.html
 - Dokumentacja klasy `LocalDateTime`: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDateTime.html
 - Porównanie `java.time` z Joda-Time: https://www.baeldung.com/joda-time

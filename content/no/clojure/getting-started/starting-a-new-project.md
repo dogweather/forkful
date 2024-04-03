@@ -10,9 +10,6 @@ title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---
 
-## What & Why?
-Noen ganger trenger vi bare et blankt lerret. Å starte et nytt prosjekt i Clojure gir oss den freshe starten – for å utforske, eksperimentere, eller bygge noe nytt.
-
 ## How to:
 For å kickstarte et nytt Clojure-prosjekt, får leiningen deg raskt i gang. Her er stegene:
 

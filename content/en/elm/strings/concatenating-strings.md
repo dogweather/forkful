@@ -9,9 +9,6 @@ title: Concatenating strings
 weight: 3
 ---
 
-## What & Why?
-Concatenating strings means sticking two or more pieces of text together. It's as basic and essential as using duct tape, allowing you to create new strings on the fly for displaying messages, creating templates, and more.
-
 ## How to:
 Elm's got a neat operator `(++)` to save the day:
 

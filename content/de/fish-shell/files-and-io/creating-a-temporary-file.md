@@ -11,9 +11,6 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-## What & Why? (Was & Warum?)
-Das Erstellen einer temporären Datei ermöglicht es, kurzlebige Daten zu speichern, ohne sich um manuelles Aufräumen kümmern zu müssen. Programmierer nutzen dies für Daten, die nur während der Laufzeit eines Programms benötigt werden und danach irrelevant sind.
-
 ## How to: (Wie geht das:)
 In Fish Shell kannst du schnell und sicher eine temporäre Datei erzeugen. Hier sind praktische Beispiele:
 

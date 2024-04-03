@@ -11,12 +11,7 @@ title: Satunnaislukujen generointi
 weight: 12
 ---
 
-## Mikä & Miksi?
-
-Satunnaislukujen tuottaminen C#-kielellä käsittää ennalta-arvaamattomien numeeristen arvojen luomisen määritellyllä välillä. Ohjelmoijat käyttävät näitä menetelmiä toteuttaakseen ominaisuuksia, kuten kryptografia, simulaatiot ja pelit, joissa vaaditaan ennustamattomuutta tai todellisen maailman satunnaisuuden simulointia.
-
 ## Kuinka:
-
 Yleisin tapa tuottaa satunnaislukuja C#-kielellä on käyttämällä `System.Random`-luokkaa. Tässä on yksinkertainen esimerkki sen käytöstä:
 
 ```C#
@@ -68,7 +63,6 @@ public class SecureRandomExample
 ```
 
 ## Syväsukellus
-
 Satunnaislukujen tuottaminen C#-kielellä on kehittynyt vuosien varrella. Alun perin `System.Random`-luokka oli se menetelmä, joka oli valittu pseudosatunnaislukujen generointiin. Se on pseudosatunnainen, koska tietyllä siemenarvolla se tuottaa saman numerosarjan, mikä voi olla hyödyllistä virheenkorjauksessa tai testien toistettavuudessa.
 
 Vaikka se riittää perustarpeisiin, `System.Random` ei ole säieturvallinen ja voi tuottaa ennakoitavia tuloksia, mikä ei sovellu turvallisuudesta riippuvaisiin sovelluksiin. Tämä rajoitus johti `RNGCryptoServiceProvider`-luokan esittelyyn kryptografista satunnaisuutta varten, joka on turvallisempi mutta myös resurssi-intensiivisempi.

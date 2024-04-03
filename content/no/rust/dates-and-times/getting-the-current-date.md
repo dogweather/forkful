@@ -13,11 +13,8 @@ title: "F\xE5 dagens dato"
 weight: 29
 ---
 
-## Hva & Hvorfor?
-
-Å hente den gjeldende datoen i Rust er en vanlig oppgave for oppgaver som logging, tidsbaserte operasjoner, eller rett og slett for å vise datoen. I motsetning til noen språk som inkluderer dato- og tidsfunksjonalitet i sitt standardbibliotek, oppmuntrer Rust til bruk av et robust tredjepartsbibliotek, chrono, for omfattende manipulering av dato og tid på grunn av dets overlegne funksjonalitet og brukervennlighet.
-
 ## Hvordan:
+
 
 ### Bruke Rusts Standardbibliotek
 Rusts standardbibliotek tilbyr en begrenset, men rask måte å få tak i gjeldende tid på, om ikke direkte den gjeldende datoen i et kalenderformat. Slik gjør du det:

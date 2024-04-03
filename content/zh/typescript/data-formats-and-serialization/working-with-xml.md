@@ -16,9 +16,6 @@ title: "\u5904\u7406XML"
 weight: 40
 ---
 
-## 什么 & 为什么?
-使用XML意味着通过编程解析、处理和编写XML数据。程序员处理XML是为了跨不同系统交换数据，用于配置文件，或者处理依赖XML的标准，如SOAP。
-
 ## 如何操作:
 ```TypeScript
 import { parseString } from 'xml2js';

@@ -11,8 +11,6 @@ title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---
 
-# HTTP-Anfrage mit Basisauthentifizierung: Clojure-Anleitung
-
 ## Was & Warum?
 HTTP-Anfragen mit Basisauthentifizierung fügen Zugangsdaten im Header hinzu, um geschützte Ressourcen zu erreichen. Programmierer nutzen dies, um sich bei Webdiensten sicher zu authentifizieren.
 

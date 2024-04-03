@@ -14,12 +14,7 @@ title: Trabalhando com JSON
 weight: 38
 ---
 
-## O Quê e Por Quê?
-
-JSON, ou Notação de Objeto JavaScript, é um formato leve para armazenar e transportar dados, ideal para comunicação de servidor para cliente e arquivos de configuração. Programadores aproveitam-no no Google Apps Script para troca de dados sem problemas entre os serviços do Google (como Sheets, Docs, Drive) e fontes externas, devido à sua estrutura legível por humanos e fácil integração em ambientes baseados em JavaScript.
-
 ## Como fazer:
-
 No Google Apps Script, manipular JSON é um processo direto, em grande parte devido ao suporte nativo que o JavaScript oferece para análise (parsing) e serialização (stringification) de JSON. Aqui estão algumas operações comuns:
 
 **1. Análise de JSON**: Suponha que recuperamos uma string JSON de um serviço web; analisá-la para um objeto JavaScript é essencial para a manipulação de dados.
@@ -54,7 +49,6 @@ Logger.log(jsonString); // Saída: '[{"name":"Project 1","version":"1.0"},{"name
 ```
 
 ## Aprofundamento
-
 A ubiquidade do JSON em aplicações web modernas não pode ser subestimada, enraizada em sua simplicidade e como se integra perfeitamente com JavaScript, a linguagem da web. Seu design, inspirado em literais de objeto JavaScript, embora mais estrito, facilita sua adoção rápida. No início dos anos 2000, JSON ganhou popularidade como uma alternativa ao XML para aplicações web impulsionadas por AJAX, oferecendo um formato de intercâmbio de dados mais leve e menos verboso. Dada a integração profunda do Google Apps Script com várias APIs do Google e serviços externos, JSON serve como um formato crucial para estruturar, transportar e manipular dados nessas plataformas.
 
 Enquanto JSON reina supremo para aplicações web, formatos de dados alternativos como YAML para arquivos de configuração ou Protobuf para serialização binária mais eficiente em ambientes de alta performance existem. No entanto, o equilíbrio do JSON de legibilidade, facilidade de uso e amplo suporte em linguagens de programação e ferramentas consolida sua posição como escolha padrão para muitos desenvolvedores aventurando-se no Google Apps Script e além.

@@ -20,12 +20,7 @@ title: "\u05E9\u05E8\u05D1\u05D5\u05D1 \u05DE\u05D7\u05E8\u05D5\u05D6\u05EA"
 weight: 8
 ---
 
-## What & Why? מה ולמה?
-
-מילוי תבנית עם מחרוזות הוא שיטה להכניס משתנים לתוך מחרוזת טקסט. תכנתי עושים את זה כדי לעשות קוד גמיש יותר ולייצר מידע דינמי למשתמש.
-
 ## How to: איך לעשות:
-
 ```Arduino
 char name[] = "דני";
 int age = 30;
@@ -44,10 +39,8 @@ Serial.println(buffer);
 זכרו להתחיל תקשורת סיריאלית לפני הדפסה למסוף.
 
 ## Deep Dive צלילה עמוקה:
-
 מילוי תבנית מתמצאת בשפות רבות ונולדה מצורך לערבב טקסטים ומשתנים בצורה נוחה. ב-Arduino, `sprintf` היא הפונקציה המאפשרת זאת. חלופות כוללות שימוש במחלקת `String` עם אופרטורים כמו `+` לחיבור מחרוזות, אבל זו גישה יקרה יותר בזיכרון. `sprintf` אמנם יציבה, אבל דורשת זהירות כדי למנוע חריגה מגבולות המערך.
 
 ## See Also ראה גם:
-
 - מדריך לפונקציית `sprintf`: [CPlusPlus.com](http://www.cplusplus.com/reference/cstdio/sprintf/)
 - מידע נוסף על מחלקת `String` ב-Arduino: [Arduino Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)

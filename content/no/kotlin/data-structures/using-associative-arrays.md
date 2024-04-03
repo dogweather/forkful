@@ -13,12 +13,7 @@ title: Bruke associative tabeller
 weight: 15
 ---
 
-## Hva & Hvorfor?
-
-Assosiative tabeller, eller maps, i Kotlin er samlinger som lagrer nøkkel-verdi par. Programmerere bruker dem til effektivt å organisere og hente data basert på unike nøkler, noe som gjør det lettere å håndtere informasjon.
-
 ## Hvordan:
-
 Å lage og bruke et kart i Kotlin er enkelt. Her er en rask guide på hvordan du gjør det:
 
 ```Kotlin
@@ -49,7 +44,6 @@ fun main() {
 ```
 
 ## Dypdykk
-
 Kotlin sine kart kommer direkte fra dens interoperabilitet med Java, der kart er en essensiell del av samlinger. Imidlertid forbedrer Kotlin deres brukervennlighet ved å tilby både mutable (`MutableMap`) og skrivebeskyttede (`Map`) grensesnitt, i motsetning til Javas forente `Map` grensesnitt. Denne distinksjonen gjør det klart om en samling er ment for modifikasjon eller ikke.
 
 En betydelig detalj om Koltins kartimplementasjon er den eksplisitte forskjellen mellom mutable og umutable kart, som understreker språkets fokus på immutabilitet og trådsikkerhet.

@@ -14,12 +14,7 @@ title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---
 
-## Mikä & Miksi?
-
-HTML:n jäsentäminen C-kielellä käsittää HTML-dokumenttien analysoimisen tehokkaasti datan, rakenteen tai tiettyjen osien poimimiseksi, usein datan louhimisen tai verkon kaapimisen esivaiheena. Ohjelmoijat tekevät tämän automatisoidakseen tiedon poiminnan, mahdollistaen web-sisällön käsittelyn tai uudelleenkäytön ohjelmallisesti.
-
 ## Kuinka:
-
 HTML:n jäsentäminen voi vaikuttaa pelottavalta HTML:n monimutkaisuuden ja usein siististä, hyvin muodostetuista rakenteista poikkeavien kohtien vuoksi. Kuitenkin, kirjaston, kuten `libxml2`, erityisesti sen HTML-jäsentämismoduulin, käyttäminen yksinkertaistaa prosessia. Tämä esimerkki havainnollistaa, kuinka käyttää `libxml2`:ta HTML:n jäsentämiseen ja tiedon poimimiseen.
 
 Varmista ensin, että `libxml2` on asennettu ympäristöösi. Monissa Linux-jakeluissa sen voi asentaa paketinhallinnan kautta. Esimerkiksi Ubuntussa:
@@ -64,7 +59,6 @@ Löydetty kappale: Hei, maailma!
 Tämä esimerkki keskittyy tekstiin kappale-tagien sisällä, mutta `libxml2` tarjoaa vankkaa tukea eri HTML-dokumentin osien selaamiseen ja kyselyyn.
 
 ## Syväsukellus
-
 HTML:n jäsentäminen C-kielellä ulottuu verkkokehityksen alkuaikoihin. Aluksi kehittäjien oli luotettava räätälöityihin, usein alkeellisiin jäsentämisen ratkaisuihin, standardoitujen kirjastojen puutteen ja verkon HTML:n kaoottisen tilan vuoksi. Kirjastojen, kuten `libxml2`, esittely merkitsi merkittävää edistystä, tarjoten standardoidumpia, tehokkaampia ja vastustuskykyisempiä menetelmiä HTML:n jäsentämiseen.
 
 Vaikka C:n vertaansa vailla oleva nopeus ja hallinta ovatkin huomionarvoisia, on huomionarvoista, että C ei välttämättä aina ole paras työkalu HTML:n jäsentämiseen, erityisesti tehtävissä, jotka vaativat nopeita kehityssyklejä tai käsittelevät poikkeuksellisen virheellisesti muotoiltua HTML:ää. Korkean tason HTML-jäsentämiskirjastoja tarjoavat kielet, kuten Python kaunokirjoituksineen (Beautiful Soup), tarjoavat abstraktoidumpia, käyttäjäystävällisiä rajapintoja jonkin suorituskyvyn kustannuksella.

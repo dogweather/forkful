@@ -16,12 +16,7 @@ title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---
 
-## Cái gì & Tại sao?
-
-Việc làm cho chữ cái đầu của chuỗi viết hoa, và phần còn lại viết thường được gọi là việc viết hoa chuỗi. Các lập trình viên thực hiện điều này để đảm bảo tính nhất quán, dễ đọc và đáp ứng các tiêu chuẩn định dạng dữ liệu.
-
 ## Làm thế nào:
-
 Để viết hoa các chuỗi trong Haskell, ngôn ngữ này không có hàm `capitalize` được xây dựng sẵn. Vì vậy, chúng ta sẽ tự tạo một hàm sử dụng các hàm `toUpper` và `toLower` từ mô-đun `Data.Char`.
 
 ```Haskell
@@ -40,7 +35,6 @@ main = do
 ```
 
 ## Tìm hiểu sâu
-
 Haskell, một ngôn ngữ lập trình hàm, không bao gồm chức năng viết hoa chuỗi đơn giản trong thư viện tiêu chuẩn của mình, có thể là vì việc thực hiện nó quá đơn giản và không phải là một nhu cầu thường xuyên trong loại lập trình mà nó được thiết kế.
 
 Các phương án thay thế cho hàm `capitalize` có thể sử dụng `Data.Text` có thể mang lại lợi ích về hiệu suất cho các văn bản lớn do cách biểu diễn nội bộ hiệu quả hơn. Hoặc tìm hiểu các thư viện như `text-icu` cho việc viết hoa nhạy cảm với ngữ cảnh địa phương một cách mạnh mẽ.
@@ -48,7 +42,6 @@ Các phương án thay thế cho hàm `capitalize` có thể sử dụng `Data.T
 Về mặt thực hiện, đáng lưu ý là hàm `capitalize` của chúng ta không xử lý các kí tự không phải ASCII. Nếu bạn cần hỗ trợ Unicode đầy đủ, bạn sẽ phải tìm giải pháp thư viện hoặc xử lý các trường hợp phức tạp của việc viết hoa Unicode nơi mà việc chuyển đổi từng kí tự đơn giản không đáp ứng được.
 
 ## Xem thêm
-
 - Mô-đun `Data.Char` của Haskell: http://hackage.haskell.org/package/base-4.16.0.0/docs/Data-Char.html
 - `Data.Text` cho việc thao tác văn bản hiệu quả: http://hackage.haskell.org/package/text
 - Giới thiệu về xử lý văn bản trong Haskell: https://wiki.haskell.org/Text_Processing

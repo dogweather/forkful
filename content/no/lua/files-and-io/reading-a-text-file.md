@@ -11,9 +11,6 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## Hva & Hvorfor?
-Å lese en tekstfil i Lua betyr å hente og bruke data lagret på disk. Programmerere gjør dette fordi det ofte er behov for å behandle informasjon som ikke er hardkodet i selve programmet.
-
 ## Slik gjør du:
 For å lese en tekstfil i Lua, bruk `io.open` for å åpne filen og `io.read` for å lese fra den. Her er et enkelt eksempel:
 

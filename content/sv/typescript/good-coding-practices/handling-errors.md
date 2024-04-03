@@ -11,9 +11,6 @@ title: Hantering av fel
 weight: 16
 ---
 
-## Vad & Varför?
-Att hantera fel handlar om att förvänta sig det oväntade; det är hur vi hanterar när saker går fel i vår kod. Vi gör det för att undvika krascher och för att ge användarna en smidig upplevelse, även när det oväntade inträffar.
-
 ## Hur man gör:
 I TypeScript involverar hantering av fel ofta `try`, `catch` och `finally` block.
 

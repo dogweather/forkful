@@ -12,11 +12,7 @@ title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---
 
-## Mikä & Miksi?
-Kompleksiluvut laajentavat lukujärjestelmäämme sisältämään negatiivisten lukujen neliöjuuret, missä 'imaginaariyksikkö' i on -1:n neliöjuuri. Ohjelmoijat käyttävät niitä aloilla kuten insinööritiede, fysiikka ja signaalinkäsittely, koska ne ovat erinomaisia aaltojen, värähtelyiden ja kaiken pyörivän mallintamisessa.
-
 ## Miten:
-
 Määritellään perus kompleksilukuluokka Kotlinissa:
 
 ```kotlin
@@ -42,13 +38,11 @@ fun main() {
 ```
 
 ## Syväsukellus
-
 Kompleksiluvuista mainittiin ensimmäisen kerran 1500-luvulla, ratkaisten kuutiollisia yhtälöitä, joilla ei ollut reaaliluku ratkaisuja. Insinööritiede ja fysiikka hyötyvät suuresti kompleksiluvuista analysoidessaan vaihtovirtapiirejä ja aaltomuotoja. Raskaampaan työhön voi vaihtoehtoisesti käyttää kirjastoa kuten Kotlinin `koma` tai `ejml`.
 
 Kompleksilukujen operaatiot peilaavat reaalilukuja, mutta huomioiden imaginaariyksikön. Kertolasku esimerkiksi noudattaa distribuutiolakia, muistaen että `i^2 = -1`. Tämä imaginaariyksikkö mahdollistaa meidän edustavan moniulotteisia lukuja, mikä on kriittistä erilaisissa tieteellisissä laskelmissa.
 
 ## Katso Myös
-
 Kotlin Matematiikkakirjastot:
 
 - [koma](https://koma.kyonifer.com/): Tieteellinen laskentakirjasto Kotlinille.

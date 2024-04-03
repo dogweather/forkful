@@ -13,12 +13,7 @@ title: Scrivere sull'errore standard
 weight: 25
 ---
 
-## Cosa e Perché?
-
-Scrivere sull'errore standard (stderr) consiste nel dirigere i messaggi di errore o l'output di diagnostica del tuo programma su un flusso separato, distinto dall'output standard (stdout). Questo è fondamentale per il debug e la registrazione degli errori senza ingombrare l'output standard, facilitando la comprensione dello stato e dei problemi del programma sia da parte degli sviluppatori che degli utenti.
-
 ## Come fare:
-
 In Swift, scrivere sull'errore standard può essere fatto utilizzando la classe `FileHandle` per un accesso diretto a stderr. Ecco un semplice esempio:
 
 ```swift

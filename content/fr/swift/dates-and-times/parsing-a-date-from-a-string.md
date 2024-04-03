@@ -14,10 +14,8 @@ title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---
 
-## Quoi et pourquoi ?
-Analyser une date à partir d'une chaîne de caractères consiste à convertir des représentations textuelles de date et d'heure en un objet `Date`. Ce processus est essentiel dans les applications où les dates sont communiquées sous forme de chaînes de caractères, comme dans les réponses d'API ou les saisies d'utilisateurs, permettant ainsi une manipulation et un formatage des dates plus aisés.
-
 ## Comment faire :
+
 
 ### Utiliser `DateFormatter` de Foundation
 La bibliothèque standard de Swift, Foundation, fournit `DateFormatter` pour convertir des chaînes en objets `Date` et vice versa. Pour analyser une date à partir d'une chaîne, vous spécifiez le format de date qui correspond à la chaîne, puis utilisez le formateur pour l'analyser.

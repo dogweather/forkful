@@ -17,12 +17,7 @@ title: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Gì và Tại sao?
-
-Việc tạo một tệp tạm thời trong Google Apps Script bao gồm việc sinh ra một tệp dự định cho việc sử dụng trong ngắn hạn, thường là cho việc xử lý dữ liệu trung gian, gỡ lỗi, hoặc mục đích cache. Các nhà phát triển thực hiện điều này để quản lý dữ liệu một cách tạm thời mà không làm rối tung không gian lưu trữ vĩnh viễn hoặc khi tính vĩnh viễn của dữ liệu không cần thiết ngoài phạm vi của quá trình hiện tại.
-
 ## Cách thực hiện:
-
 Trong Google Apps Script, việc tạo một tệp tạm thời có thể được thực hiện sử dụng dịch vụ DriveApp, nó cung cấp một phương pháp trực tiếp để tạo, đọc và xóa tệp trong Google Drive. Dưới đây là cách bạn có thể tạo một tệp văn bản tạm thời, ghi một số dữ liệu vào đó, sau đó remove nó sau khi sử dụng:
 
 ```javascript
@@ -57,7 +52,6 @@ Tệp tạm thời đã được xóa
 Script ví dụ này trình bày việc tạo một tệp tạm thời, thực hiện một thao tác để đọc nội dung của nó và cuối cùng, remove tệp để dọn dẹp.
 
 ## Sâu hơn nữa
-
 Khái niệm tạo tệp tạm thời trong phát triển phần mềm cũ như khái niệm quản lý tệp. Trong hệ thống tệp truyền thống, tệp tạm thời thường được tạo trong các thư mục temp được chỉ định và quan trọng cho nhiều quá trình trung gian, như sắp xếp các tập dữ liệu lớn, giữ dữ liệu phiên cho ứng dụng web, hoặc lưu trữ đoạn dữ liệu trong quá trình chuyển đổi tệp.
 
 Trong Google Apps Script, quá trình tạo tệp tạm thời tận dụng cơ sở hạ tầng của Google Drive, đem lại sự kết hợp thú vị của quản lý tệp dựa trên đám mây với các khái niệm lập trình truyền thống. Tuy nhiên, phương pháp này để tạo tệp tạm thời trong Google Drive không phải không có hạn chế và chi phí, xem xét các giới hạn băng thông mà Google Drive áp đặt. Ngoài ra, độ trễ khi truy cập Google Drive qua mạng so với hệ thống tệp cục bộ có thể là yếu tố quan trọng đối với các ứng dụng cần hiệu suất cao.

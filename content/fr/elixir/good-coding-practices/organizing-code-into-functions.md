@@ -11,9 +11,6 @@ title: Organisation du code en fonctions
 weight: 18
 ---
 
-## Quoi & Pourquoi ?
-Organiser le code en fonctions consiste à regrouper les opérations liées en blocs réutilisables. Nous le faisons pour améliorer la lisibilité et la maintenabilité, réduire la duplication et simplifier les tests.
-
 ## Comment faire :
 Créons une fonction Elixir simple pour mettre en majuscule les mots :
 

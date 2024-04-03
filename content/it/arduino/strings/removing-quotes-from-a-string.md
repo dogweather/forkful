@@ -11,9 +11,6 @@ title: Rimuovere le virgolette da una stringa
 weight: 9
 ---
 
-## Cos'è & Perché?
-Rimuovere le virgolette da una stringa significa eliminare qualsiasi istanza di caratteri di virgolette singole (`'`) o doppie (`"`) che racchiudono il testo. I programmatori spesso fanno questo per sanificare l'input, preparare stringhe per il confronto o elaborare dati di testo che potrebbero accidentalmente includere virgolette come parte del contenuto della stringa.
-
 ## Come fare:
 Per rimuovere le virgolette da una stringa in Arduino, è possibile ciclare sui caratteri e ricostruire la stringa senza i caratteri di virgoletta. Ad esempio:
 

@@ -10,9 +10,6 @@ title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---
 
-## Qué y Por Qué?
-Eliminar caracteres que coinciden con un patrón implica reconocer secuencias específicas y removerlas de un texto. Lo hacemos para limpiar datos, formatear entradas o simplificar información antes de procesarla.
-
 ## Cómo Hacerlo:
 Elm utiliza expresiones regulares a través del paquete `elm/regex`. Veamos cómo eliminar caracteres no deseados:
 

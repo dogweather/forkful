@@ -14,12 +14,7 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-
-Wyrażenia regularne (regex) w Visual Basic for Applications (VBA) stanowią potężne narzędzie do wyszukiwania, dopasowywania i manipulowania ciągami znaków. Programiści używają ich do zadań takich jak walidacja danych, parsowanie i transformacja ze względu na ich elastyczność i wydajność w obsłudze skomplikowanych wzorców ciągów.
-
 ## Jak używać:
-
 Aby użyć wyrażeń regularnych w VBA, najpierw musisz włączyć bibliotekę Microsoft VBScript Regular Expressions. W edytorze VBA przejdź do `Narzędzia` -> `Odniesienia`, a następnie zaznacz `Microsoft VBScript Regular Expressions 5.5`.
 
 Oto podstawowy przykład, jak znaleźć, czy wzorzec istnieje w ciągu znaków:
@@ -65,7 +60,6 @@ End Sub
 ```
 
 ## Wnikliwe spojrzenie
-
 Włączenie wyrażeń regularnych do języków programowania często sięga narzędzi Unix z lat 70. VBA zintegrowało regex przez bibliotekę VBScript Regular Expressions, podkreślając jego znaczenie w zadaniach przetwarzania tekstu, nawet w aplikacjach niezwiązanych typowo z intensywną manipulacją tekstem, takich jak Excel czy Access.
 
 Pomimo ich mocy, regex w VBA może czasami być mniej intuicyjny lub wydajny w porównaniu z nowocześniejszymi implementacjami w językach takich jak Python czy JavaScript. Na przykład, moduł `re` w Pythonie oferuje obszerne wsparcie dla nazwanych grup i bardziej zaawansowanych funkcji dopasowywania wzorców, zapewniając czystsze i potencjalnie bardziej czytelne podejście. Jednakże, pracując w ekosystemie VBA, wyrażenia regularne pozostają nieocenionym narzędziem do zadań wymagających dopasowywania wzorców lub manipulowania tekstem. Kompromis wydajnościowy jest często znikomy w świetle wygody i możliwości, jakie regex przynosi do obsługi ciągów w aplikacjach Office.

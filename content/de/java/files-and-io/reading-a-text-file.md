@@ -10,9 +10,6 @@ title: Textdatei einlesen
 weight: 22
 ---
 
-## Was & Warum?
-Das Lesen einer Textdatei bedeutet, ihren Inhalt in dein Programm zu laden. Programmierer tun dies, um Daten zu verarbeiten, Konfigurationen zu laden oder Informationen zu speichern.
-
 ## How to:
 Java bietet verschiedene Wege, um Textdateien zu lesen. Hier ist ein einfacher Ansatz mit `java.nio.file.Files`:
 

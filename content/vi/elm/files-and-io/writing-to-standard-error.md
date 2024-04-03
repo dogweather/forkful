@@ -15,9 +15,6 @@ title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---
 
-## Gì & Tại sao?
-Viết lỗi chuẩn (stderr) là xuất thông báo lỗi và chẩn đoán riêng biệt khỏi đầu ra thông thường. Các lập trình viên thực hiện điều này để gỡ lỗi và theo dõi ứng dụng mà không trộn lẫn thông điệp lỗi với đầu ra chuẩn (stdout).
-
 ## Làm như thế nào:
 Elm chạy trên web, và trình duyệt không phân biệt giữa stdout và stderr như giao diện dòng lệnh. Tuy nhiên, bạn có thể mô phỏng stderr sử dụng giao tiếp JavaScript thông qua cổng (ports). Đây là cách thiết lập:
 

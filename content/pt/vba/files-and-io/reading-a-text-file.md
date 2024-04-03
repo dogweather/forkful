@@ -14,12 +14,7 @@ title: Lendo um arquivo de texto
 weight: 22
 ---
 
-## O Que & Por Que?
-
-Ler um arquivo de texto em Visual Basic para Aplicações (VBA) envolve acessar e extrair programaticamente o conteúdo de um arquivo de texto de dentro de uma aplicação do Office. Programadores frequentemente realizam essa tarefa para importar ou processar dados armazenados em arquivos planos, facilitando a automação e a manipulação de dados diretamente dentro do ecossistema do Office.
-
 ## Como Fazer:
-
 A maneira mais simples de ler um arquivo de texto no VBA é usando a instrução `Open` em combinação com as funções `Input` ou `Line Input`. Veja como você pode fazer isso:
 
 1. **Abrir o arquivo para leitura** - Primeiro, você precisa abrir o arquivo. Garanta que o caminho do arquivo esteja acessível para a aplicação.
@@ -67,7 +62,6 @@ Aproveite a leitura!
 A saída na Janela Imediata seria o texto inteiro ou linha por linha, baseado no método que você escolher.
 
 ## Aprofundando
-
 Ler arquivos de texto no VBA tem sido um ponto fundamental nas tarefas de automação de escritório por décadas. Os métodos ilustrados, embora eficientes dentro do ecossistema VBA, podem parecer arcaicos comparados às práticas de programação modernas, que frequentemente empregam abstrações de alto nível ou bibliotecas para operações de arquivo. Por exemplo, Python usa a função `open()` dentro de uma instrução `with`, fornecendo uma sintaxe mais limpa e capacidades automáticas de manipulação de arquivo.
 
 Dito isso, ao trabalhar dentro dos limites do ambiente Microsoft Office, o VBA fornece um método direto e nativo para manipular arquivos, o que pode ser crucial para aplicações que requerem interoperabilidade com produtos do Office. A simplicidade de abrir um arquivo de texto, ler e processar seu conteúdo linha por linha ou em sua totalidade, sem a necessidade de bibliotecas externas ou configurações complexas, faz do VBA uma ferramenta valiosa no kit de ferramentas do desenvolvedor de Office.

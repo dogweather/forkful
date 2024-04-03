@@ -12,9 +12,6 @@ title: Deleting characters matching a pattern
 weight: 5
 ---
 
-## What & Why?
-Deleting characters that match a certain pattern is about stripping away unwanted bits from your strings — think cleaning up data or parsing text files. Programmers do this to extract meaningful info, ensure data consistency, or prepare data for processing.
-
 ## How to:
 PowerShell uses the `-replace` operator to delete characters that match a pattern. Here's some string-fixing action for you:
 

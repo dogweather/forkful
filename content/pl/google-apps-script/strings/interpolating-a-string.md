@@ -14,12 +14,7 @@ title: "Interpolacja ci\u0105gu znak\xF3w"
 weight: 8
 ---
 
-## Co i dlaczego?
-
-Interpolacja ciągów w Google Apps Script umożliwia dynamiczne osadzanie wyrażeń w ciągach, ułatwiając tworzenie bardziej czytelnego i łatwiejszego do utrzymania kodu. Programiści używają tej techniki, aby bezproblemowo włączać zmienne i wyrażenia do ciągów bez skomplikowanej składni konkatenacji.
-
 ## Jak to zrobić:
-
 W Google Apps Script interpolacja ciągów jest realizowana za pomocą literałów szablonowych. Są to literały ciągów umożliwiające osadzanie wyrażeń, oznaczone za pomocą cudzysłowów zwróconych (\`) zamiast zwykłych cudzysłowów. Oto jak możesz ich używać:
 
 ```javascript
@@ -56,7 +51,6 @@ multiLineStringExample();
 Te przykłady ilustrują podstawowe użycie, osadzanie wyrażeń i tworzenie wieloliniowych ciągów z interpolowanymi wartościami.
 
 ## Pogłębiona analiza
-
 Literały szablonowe, w tym interpolacja ciągów, zostały wprowadzone w ECMAScript 2015 (ES6) i następnie przyjęte w Google Apps Script. Przed tym programiści musieli polegać wyłącznie na konkatenacji ciągów, co mogło być uciążliwe dla skomplikowanych ciągów lub przy integrowaniu wielu wartości zmiennych.
 
 ```javascript

@@ -10,12 +10,7 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-
-Comparing two dates means checking if they are the same or determining which comes before or after. Programmers often need this for deadlines, event scheduling, or just tracking time.
-
 ## How to:
-
 JavaScript's `Date` objects come in handy. When you compare them, they convert into milliseconds since January 1, 1970, UTC.
 
 ```javascript
@@ -36,7 +31,6 @@ false
 ```
 
 ## Deep Dive
-
 Under the hood, `Date` objects are just milliseconds. Historically, programmers had to manage date operations manually, calculating the time elapsed from a datum-point, often risking errors. Comparing `Date` objects makes life easier, though yet not error-proof, especially with time zones and daylight saving time.
 
 Alternatives? Sure. Libraries like `moment.js` or `date-fns` help handle complex scenarios and provide additional conveniences for date manipulation.
@@ -44,7 +38,6 @@ Alternatives? Sure. Libraries like `moment.js` or `date-fns` help handle complex
 Implementation wise, it's key to remember that directly comparing `Date` objects (with `==`) compares references, not values. Use `getTime()` for an accurate value comparison. And watch out for time zones when parsing dates; it's easy to get tripped up if you're not careful.
 
 ## See Also
-
 - MDN web docs on Date: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 - Moment.js Library: https://momentjs.com/
 - date-fns Library: https://date-fns.org/

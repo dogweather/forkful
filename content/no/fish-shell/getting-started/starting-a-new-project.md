@@ -11,9 +11,6 @@ title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---
 
-## Hva & Hvorfor?
-Å starte et nytt prosjekt er å sette opp alt du trenger for å bygge noe nytt fra bunnen av. Programmerere gjør det for å bringe ideer til liv, løse problemer eller utforske nye teknologier.
-
 ## Slik gjør du:
 ```Fish Shell
 # Sett opp en mappe for prosjektet

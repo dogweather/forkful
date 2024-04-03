@@ -13,9 +13,6 @@ title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---
 
-## Was & Warum?
-Reguläre Ausdrücke, ein mächtiges Werkzeug zur Mustervergleichung und Datenmanipulation, sind unverzichtbar bei Textverarbeitungsaufgaben wie Validierung der Eingabe, Suche und Ersetzung von Text. Programmierer nutzen sie umfangreich für komplexe String-Parsing- und Datenvalidierungsaufgaben auf effiziente und prägnante Weise.
-
 ## Wie geht das:
 Clojure, seiner Wurzeln in der Lisp-Familie treu bleibend, bietet einen reichen Satz an Funktionen, die nahtlos mit den Fähigkeiten von Java in Bezug auf reguläre Ausdrücke interagieren. Hier ist, wie Sie diese nutzen können:
 

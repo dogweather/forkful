@@ -10,9 +10,6 @@ title: Arbeiten mit CSV-Dateien
 weight: 37
 ---
 
-## Was & Warum?
-CSV (Comma-Separated Values) sind einfache Textdateien, die tabellarische Daten speichern. Programmierer nutzen CSV, weil es ein weit verbreitetes, leicht verständliches Format ist, das mit vielen Systemen und Sprachen kompatibel ist.
-
 ## How to:
 Um CSV-Dateien in Haskell zu verarbeiten, nutzen wir die Bibliothek `cassava`. Installiere `cassava` mit `cabal install cassava` oder `stack add cassava`. Hier ein einfaches Beispiel:
 

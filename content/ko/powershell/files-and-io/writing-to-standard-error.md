@@ -21,12 +21,7 @@ title: "\uD45C\uC900 \uC5D0\uB7EC\uC5D0 \uC4F0\uAE30"
 weight: 25
 ---
 
-## 무엇이며 왜인가?
-
-PowerShell에서 표준 오류(stderr)에 쓰기는 오류 메시지나 진단을 표준 출력(stdout) 스트림과 구별되는 stderr 스트림에 직접 보내는 것을 포함합니다. 이 분리는 스크립트의 출력을 더 정확하게 제어할 수 있게 해주어 개발자가 정상 메시지와 오류 메시지를 다른 목적지로 직접 보낼 수 있도록 합니다. 이것은 오류 처리와 로깅에 있어 기본적인 것입니다.
-
 ## 어떻게:
-
 PowerShell은 `Write-Error` cmdlet 사용이나 `$host.ui.WriteErrorLine()` 메소드로 출력을 지시하는 것을 통해 stderr에 쓰기 과정을 단순화합니다. 그러나 직접적인 stderr 리디렉션을 위해서는 .NET 메소드나 PowerShell 자체가 제공하는 파일 설명자 리디렉션을 선호할 수 있습니다.
 
 **예제 1:** `Write-Error`를 사용하여 stderr에 오류 메시지를 쓰기.

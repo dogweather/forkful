@@ -11,9 +11,6 @@ title: Suchen und Ersetzen von Text
 weight: 10
 ---
 
-## Was & Warum?
-Textsuche und -ersatz ist ein Vorgang, bei dem spezifische Textfragmente gefunden und durch andere ersetzt werden. Programmierer nutzen diese Funktion, um Daten zu aktualisieren, Fehler zu korrigieren oder Informationen zu reorganisieren.
-
 ## So geht's:
 ```Clojure
 ;; Text ersetzen mit `clojure.string/replace`

@@ -12,9 +12,6 @@ title: Journalisation
 weight: 17
 ---
 
-## Quoi & Pourquoi ?
-La journalisation, en résumé, c'est comme tenir un journal pour votre application — elle enregistre les événements, les erreurs et d'autres actions significatives qui se produisent pendant que le logiciel fonctionne. Les programmeurs le font non seulement pour comprendre ce qui se passe sous le capot en temps réel, mais aussi pour avoir un historique qui est crucial pour le débogage, l'audit et l'optimisation des performances.
-
 ## Comment faire :
 D'emblée, JavaScript offre un moyen simple de consigner des messages dans la console :
 

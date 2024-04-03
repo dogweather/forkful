@@ -12,9 +12,6 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O Que & Por Quê?
-Refatoração é o processo de reestruturar o código de computador existente sem alterar seu comportamento externo, visando melhorar atributos não funcionais do software. Programadores refatoram código para torná-lo mais limpo, mais eficiente e mais fácil de entender, o que facilita a manutenção e aprimoramentos futuros.
-
 ## Como:
 O PowerShell não tem uma ferramenta dedicada à refatoração incorporada, mas você ainda pode limpar seu código para melhorar a legibilidade e o desempenho. Considere uma função que está fazendo demais e como poderíamos refatorá-la para clareza:
 

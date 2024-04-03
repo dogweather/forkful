@@ -11,9 +11,6 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-Read-Eval-Print Loppen (REPL) är en enkel, interaktiv programmeringsmiljö som tar emot enskilda användarinput, utvärderar dem och returnerar resultatet till användaren. Elm-programmerare använder REPL för snabba experiment, felsökning eller att lära sig språket.
-
 ## Hur man gör:
 Elm levereras inte med en integrerad REPL. Du kan dock använda `elm repl` från din kommandorad för att starta en Elm-session efter att ha installerat Elm.
 

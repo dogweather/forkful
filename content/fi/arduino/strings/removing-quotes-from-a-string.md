@@ -12,9 +12,6 @@ title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---
 
-## Mitä & Miksi?
-Lainausmerkkien poistaminen merkkijonosta tarkoittaa yksittäisten (`'`) tai kaksinkertaisten (`"`) lainausmerkkien poistamista tekstin ympäriltä. Ohjelmoijat tekevät tätä usein syötteen puhdistamiseksi, merkkijonojen vertailua varten tai tekstidataa käsiteltäessä, joka saattaa vahingossa sisältää lainausmerkkejä osana merkkijonoa.
-
 ## Miten:
 Voit poistaa lainausmerkit merkkijonosta Arduinolla käymällä merkkijonon merkit läpi ja rakentamalla merkkijonon uudelleen ilman lainausmerkkejä. Esimerkiksi:
 

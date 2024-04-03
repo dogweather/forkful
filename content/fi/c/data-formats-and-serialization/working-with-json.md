@@ -13,12 +13,7 @@ title: "Ty\xF6skentely JSONin kanssa"
 weight: 38
 ---
 
-## Mikä ja miksi?
-
-JSON:n (JavaScript Object Notation) käsittely C-kielessä sisältää JSON-tietorakenteiden jäsentämisen, luomisen ja manipuloinnin. Ohjelmoijat tekevät näin mahdollistaakseen viestinnän verkkopalveluiden kanssa, tietojen tallennuksen tai konfiguraatiotiedostojen käytön kevyessä ja ihmislukuisessa muodossa.
-
 ## Kuinka:
-
 JSON:n käsittelyyn C:ssä käytetään tyypillisesti kirjastoa kuten `jansson` tai `json-c`, koska C ei tarjoa sisäänrakennettua tukea JSON:lle. Tässä keskitymme `janssoniin` sen helppokäyttöisyyden ja aktiivisen ylläpidon vuoksi. Asenna ensin kirjasto (esim. käyttäen paketinhallintajärjestelmää kuten `apt` Ubuntussa: `sudo apt-get install libjansson-dev`).
 
 Aloitetaan JSON-merkkijonon jäsentämisestä ja sen sisällön käsittelemisestä:
@@ -82,7 +77,6 @@ Esimerkkitulo:
 Nämä esimerkit osoittavat perusteet JSON-merkkijonon lataamisesta, sen arvojen purkamisesta, uuden JSON-objektin luomisesta ja sitten sen tulostamisesta merkkijonona.
 
 ## Syväsukellus
-
 Tarve käsitellä JSON:ia C:ssä juontaa juurensa verkon omaksumisesta JSON:ia ensisijaiseksi formaatiksi tietojenvaihdossa. JSON:n yksinkertaisuus ja tehokkuus saivat sen nopeasti syrjäyttämään XML:n, huolimatta C:n alunperin puuttuvasta suorasta tuesta JSON-manipulaatiolle. Varhaiset ratkaisut sisälsivät manuaalista merkkijonojen käsittelyä - virhealtista ja tehotonta. Kirjastot kuten `jansson` ja `json-c` tulivat täyttämään tämän aukon, tarjoten robustit API:t JSON:n jäsentämiseen, rakentamiseen ja sarjoittamiseen.
 
 Vaikka `jansson` tarjoaa yksinkertaisuuden ja helppokäyttöisyyden, `json-c` voi houkutella niitä, jotka etsivät laajempaa ominaisuusjoukkoa. Siitä huolimatta, vaihtoehdot kuten jäsentämiskirjastot C++:ssa tarjoavat monimutkaisempia abstraktioita, kiitos tämän kielen monimutkaisempien tietorakenteiden ja standardikirjaston tuen. Kuitenkin, kun työskennellään ympäristöissä, joissa C on suositeltu tai vaadittu kieli - kuten sulautetuissa järjestelmissä tai käytettäessä olemassa olevia C-kirjastoja - `janssonin` tai `json-c`:n käyttö muuttuu välttämättömäksi.

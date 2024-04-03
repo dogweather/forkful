@@ -14,12 +14,7 @@ title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---
 
-## Quoi & Pourquoi ?
-
-Les expressions régulières (regex) en Java vous permettent de définir des motifs spécifiques pour rechercher, manipuler ou valider des chaînes de caractères dans votre code. Les programmateurs les utilisent pour des tâches telles que l'analyse de fichiers journaux, la validation des entrées utilisateur, ou la recherche de motifs spécifiques dans un texte, permettant un traitement sophistiqué des chaînes avec un effort minimal.
-
 ## Comment :
-
 Le support intégré de Java pour les regex se fait principalement à travers les classes `Pattern` et `Matcher` dans le package `java.util.regex`. Voici un exemple simple pour trouver et imprimer toutes les occurrences d'un mot dans une chaîne, sans tenir compte de la casse :
 
 ```java

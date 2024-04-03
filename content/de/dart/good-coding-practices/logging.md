@@ -12,12 +12,7 @@ title: Protokollierung
 weight: 17
 ---
 
-## Was & Warum?
-
-Das Protokollieren in Dart bezieht sich auf den Prozess der Aufzeichnung verschiedener Informationsniveaus während der Ausführung eines Programms. Programmierer tun dies, um das Verhalten der Software zu überwachen, Probleme zu debuggen und die Leistung zu analysieren, was es einfacher macht, die Anwendung im Laufe der Zeit zu warten und zu verbessern.
-
 ## Wie geht das:
-
 Dart umfasst einen einfachen Protokollierungsmechanismus durch die `dart:developer`-Bibliothek. Für anspruchsvollere Protokollierungsbedürfnisse wenden sich Programmierer oft an Drittanbieter-Bibliotheken wie `logger` und `log4dart`.
 
 ### Verwendung von `dart:developer`

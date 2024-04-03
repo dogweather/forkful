@@ -12,12 +12,7 @@ title: "\u0905\u0938\u094D\u0925\u093E\u092F\u0940 \u092B\u093E\u0907\u0932 \u09
 weight: 21
 ---
 
-## What & Why? (क्या और क्यों?)
-
-Temporary file, yaani asthayi file, ek aisi file hai jo aapko data ke short-term storage ke liye chahiye hoti hai. Programmers ise test data, caching, ya complex computations ke dauran intermediary results ko temporarily save karne ke liye use karte hain.
-
 ## How to: (कैसे करें:)
-
 Python mein temporary file create karna bahut aasan hai. `tempfile` module ka use karke, aaiye dekhte hain:
 
 ```python
@@ -40,7 +35,6 @@ with tempfile.TemporaryFile(mode='w+t') as tf:
 Yeh code ek temporary file banaega, usme kuch data write karega, phir data ko read karega, aur finally, file automatically delete ho jaayegi jaise hi `with` block khatm hoga.
 
 ## Deep Dive (गहराई में जानकारी):
-
 Pehele ke zamaane mein, developers manually files create karte the aur use manage karte the, jo errors ka karan ban sakta tha. `tempfile` module Python mein aaya taaki secure aur asaan temporary file handling provide ki ja sake.
 
 Alternatives mein `mkstemp()` aur `NamedTemporaryFile()` shamil hain, jo apko direct control dete hain, par safety aur suvidha ke maamle mein `TemporaryFile()` behtar hai.
@@ -48,7 +42,6 @@ Alternatives mein `mkstemp()` aur `NamedTemporaryFile()` shamil hain, jo apko di
 Implementation ke baare mein, `tempfile` module OS-dependent functions ka istemaal karta hai taaki security aur performance ko ensure kiya ja sake. Python 'garbage collection' aur context managers jaise features ke saath work karta hai taki resources ka automatic management ho.
 
 ## See Also (और भी जानिए):
-
 Yadi aap aur janna chahte hain to Python ki official documentation aur neeche diye hue resources ko dekhein:
 
 - Python official tempfile documentation: https://docs.python.org/3/library/tempfile.html

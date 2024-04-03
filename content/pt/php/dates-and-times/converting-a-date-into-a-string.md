@@ -11,9 +11,6 @@ title: Convertendo uma data em uma string
 weight: 28
 ---
 
-## What & Why?
-Converter uma data para uma string significa transformá-la de um formato de data, como UNIX Timestamp ou DateTime, para uma sequência de caracteres legíveis. Os programadores fazem isso para exibir datas de maneira mais amigável ao usuário ou para armazenar datas em um banco de dados em um formato específico.
-
 ## How to:
 Vamos direto ao ponto: você precisa exibir ou salvar uma data em um formato personalizado em PHP? Use a classe `DateTime` e o método `format`. Aqui está como.
 

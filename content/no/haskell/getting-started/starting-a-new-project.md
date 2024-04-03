@@ -11,9 +11,6 @@ title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---
 
-## Hva & Hvorfor?
-Å starte et nytt prosjekt handler om å skape en ren skifer for å utvikle programvare. Programmerere gjør dette for å realisere nye ideer, løse problemer, eller teste ut nye teknologier.
-
 ## Slik gjør du:
 For å sparke i gang et Haskell-prosjekt, starter vi med Stack, et bygge- og prosjektverktøy som gjør livet lettere. 
 

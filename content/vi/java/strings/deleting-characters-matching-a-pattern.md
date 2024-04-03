@@ -16,9 +16,6 @@ title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---
 
-## Gì và Tại sao?
-Xóa các ký tự khớp với một mẫu đề cập đến việc tìm các chuỗi ký tự cụ thể trong một chuỗi và loại bỏ chúng. Các lập trình viên làm điều này để dọn dẹp dữ liệu, loại bỏ thông tin không cần thiết, hoặc định dạng chuỗi để phù hợp với một mẫu yêu cầu.
-
 ## Cách thực hiện:
 Trong Java, chúng ta thường sử dụng phương thức `String.replaceAll()` với một mẫu regex để xóa ký tự. Dưới đây là một ví dụ nhanh:
 

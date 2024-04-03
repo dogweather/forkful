@@ -16,9 +16,6 @@ title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uF
 weight: 34
 ---
 
-## 什么是REPL以及为什么使用它？
-REPL代表读取-求值-打印循环（Read-Eval-Print Loop），这是一个交互式环境，可让你快速测试代码。程序员使用它来进行实验，调试和学习语言的特性。
-
 ## 如何操作：
 要进入Lua的REPL，只需在终端输入`lua`。以下是一个示例会话：
 

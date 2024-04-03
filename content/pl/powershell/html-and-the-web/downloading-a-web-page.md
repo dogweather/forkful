@@ -10,10 +10,6 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## What & Why?
-"Co to jest i po co?"
-Pobieranie strony internetowej to zapisanie jej zawartości na dysk. Programiści robią to, aby przetworzyć dane, pobrać ważne informacje lub zarchiwizować zawartość.
-
 ## How to:
 "Jak to zrobić:"
 Uruchom poniższy skrypt, aby pobrać zawartość strony:

@@ -13,12 +13,7 @@ title: "F\xE5 det aktuella datumet"
 weight: 29
 ---
 
-## Vad & Varför?
-
-Att hämta det aktuella datumet i PowerShell handlar om att hämta systemets aktuella datum och tid. Denna operation är grundläggande för uppgifter som loggning, tidtagning av operationer eller att fatta beslut baserat på datum. Programmerare använder denna förmåga för att spåra händelser, schemalägga uppgifter och hantera datumspecifik logik i skript och applikationer.
-
 ## Hur:
-
 PowerShell erbjuder enkla cmdlets för att få datum och tid. Cmdleten `Get-Date` är det främsta verktyget för detta ändamål. Den kan returnera hela datumet och tiden, som du sedan kan formatera eller manipulera enligt dina behov.
 
 ```powershell
@@ -57,7 +52,6 @@ Get-Date -Format "HH:mm:ss"
 ```
 
 ### Använda .NET-klassen
-
 PowerShell tillåter direkt åtkomst till .NET-klasser, vilket erbjuder ett alternativt sätt att arbeta med datum och tider.
 
 ```powershell

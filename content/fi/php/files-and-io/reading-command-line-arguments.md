@@ -8,11 +8,6 @@ title: Komennoriviparametrien lukeminen
 weight: 23
 ---
 
-## What & Why?
-`## Mitä & Miksi?`
-
-Komennonriviparametrien lukeminen tarkoittaa käyttäjän antamien argumenttien vastaanottamista suoraan ohjelmaan. Tätä tehdään, koska se on nopea tapa personalisoida ohjelman toimintaa ilman GUI:n käyttöä.
-
 ## How to:
 `## Kuinka:`
 

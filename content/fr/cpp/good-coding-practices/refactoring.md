@@ -10,12 +10,7 @@ title: Refactoring
 weight: 19
 ---
 
-## Quoi et pourquoi ?
-
-Le refactoring est le processus de changement de la structure interne d'un programme informatique sans altérer son comportement externe. Les programmeurs le font pour nettoyer leur code, le rendant plus facile à comprendre, maintenir et étendre.
-
 ## Comment faire :
-
 Imaginez que vous ayez une fonction qui fait un peu trop de choses, comme cette méthode encombrante qui initialise un objet et effectue également des logs :
 
 ```C++
@@ -70,7 +65,6 @@ w.logInitialization();
 Ce changement n'a pas altéré ce que fait le programme mais rend la classe `Widget` plus modulaire et son utilisation plus claire.
 
 ## Plongée profonde
-
 Le concept de refactoring tel que nous le connaissons aujourd'hui trouve ses racines dans les communautés de programmation Smalltalk des années 1980 et a été fortement popularisé par le livre de Martin Fowler "Refactoring : Améliorer la conception du code existant" de 1999. Aujourd'hui, le refactoring est une partie intégrante du développement logiciel moderne, intégré dans diverses méthodologies de développement telles que Agile et TDD (Développement piloté par les tests).
 
 Lorsque nous parlons d'alternatives au refactoring, nous nous aventurons sur le terrain de la réécriture ou de la refonte. Le refactoring est stratégique et incrémental, tandis qu'une réécriture peut écarter le code existant en faveur d'une nouvelle solution. La refonte, quant à elle, peut impliquer des changements plus significatifs, y compris la modification de la fonctionnalité, ce qui n'est pas un objectif pour le refactoring pur.
@@ -80,7 +74,6 @@ Les détails de mise en œuvre sur le refactoring peuvent devenir assez détaill
 De plus, le refactoring nécessite une solide suite de tests pour garantir que la fonctionnalité reste inchangée. Sans tests, vous volez essentiellement à l'aveugle et risquez des régressions.
 
 ## Voir aussi
-
 Pour une compréhension plus approfondie du refactoring et pour voir plus d'exemples, vous pourriez consulter :
 
 - Le texte classique de Martin Fowler "Refactoring : Améliorer la conception du code existant" pour des idées et stratégies de base.

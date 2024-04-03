@@ -10,10 +10,6 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## What & Why?
-("Hva & Hvorfor?")
-Tekstsøk og -erstattning lar oss finne og bytte ut spesifikke ord eller fraser i en streng. Programmerere bruker dette til å endre kode, manipulere data, og automatisere redigering.
-
 ## How to:
 ("Slik gjør du:")
 Ruby gjør det enkelt med `gsub` metoden. `gsub` står for "global substitution" og bytter alle treff.

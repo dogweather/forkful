@@ -13,9 +13,6 @@ title: Escrevendo testes
 weight: 36
 ---
 
-## O Que & Por Que?
-Escrever testes em Swift envolve criar e executar código que verifica a correção de outras unidades de código na sua aplicação. Programadores fazem isso para assegurar a confiabilidade, detectar bugs cedo no ciclo de desenvolvimento, e facilitar o refatoramento de código futuro sem consequências não intencionais.
-
 ## Como fazer:
 Swift suporta testes por meio de seu framework XCTest, que é integrado ao Xcode. Você pode escrever testes de unidade para verificar partes individuais do seu código, por exemplo, uma função que calcula a soma de dois números.
 

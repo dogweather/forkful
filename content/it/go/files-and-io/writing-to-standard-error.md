@@ -13,12 +13,7 @@ title: Scrittura su errore standard
 weight: 25
 ---
 
-## Cosa & Perché?
-
-Scrivere su standard error (stderr) in Go comporta l'indirizzare messaggi di errore o diagnostica che non sono destinati al flusso di output principale. I programmatori utilizzano questa funzionalità per separare l'output regolare dalle informazioni di errore, rendendo il debug e l'analisi dei log più semplici.
-
 ## Come fare:
-
 In Go, il pacchetto `os` fornisce il valore `Stderr`, che rappresenta il file di errore standard. Puoi utilizzarlo con le funzioni `fmt.Fprint`, `fmt.Fprintf`, o `fmt.Fprintln` per scrivere su stderr. Ecco un esempio semplice:
 
 ```go
@@ -54,7 +49,6 @@ Processo completato con 4 errori.
 Ricorda, questi messaggi non appariranno nell'output regolare (stdout) ma nel flusso di errore, che può essere reindirizzato separatamente nella maggior parte dei sistemi operativi.
 
 ## Approfondimento
-
 Il concetto di errore standard ha radici profonde nella filosofia Unix, che distingue chiaramente tra output normale e messaggi di errore per un elaborazione e una gestione dei dati più efficienti. In Go, questa convenzione è adottata attraverso il pacchetto `os`, che fornisce accesso diretto ai descrittori di file stdin, stdout e stderr.
 
 Sebbene scrivere direttamente su `os.Stderr` sia adatto per molte applicazioni, Go offre anche pacchetti di logging più sofisticati come `log`, che offrono funzionalità aggiuntive come la marcatura temporale e configurazioni di output più flessibili (ad esempio, scrivere su file). Utilizzare il pacchetto `log`, specialmente per applicazioni più grandi o dove sono necessarie funzionalità di logging più complete, può essere un'alternativa migliore. È anche degno di nota che l'approccio di Go alla gestione degli errori, che incoraggia a restituire errori dalle funzioni, complementa la pratica di scrivere messaggi di errore su stderr, permettendo un controllo più granulare della gestione e della segnalazione degli errori.

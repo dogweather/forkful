@@ -9,9 +9,6 @@ title: Interpolating a string
 weight: 8
 ---
 
-## What & Why?
-String interpolation lets you inject variables directly into strings. It makes code cleaner and easier to read by avoiding clunky string concatenation.
-
 ## How to:
 Java introduced `String.format()` for interpolation:
 

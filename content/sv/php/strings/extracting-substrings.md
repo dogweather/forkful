@@ -11,9 +11,6 @@ title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---
 
-## What & Why?
-Att extrahera substrängar innebär att plocka ut specifika delar från en sträng. Programmerare gör detta för att manipulera text, validera input, eller dela upp data.
-
 ## How to:
 PHP erbjuder olika funktioner för att hantera substrängar. `substr()` är mest använd:
 

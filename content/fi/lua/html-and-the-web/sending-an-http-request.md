@@ -8,9 +8,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-# What & Why? - Mitä ja Miksi?
-HTTP-pyynnön lähettäminen on tapa siirtää tietoja palvelimen ja asiakkaan välillä verkossa. Ohjelmoijat lähettävät niitä tietojen noutamiseen tai lähettämiseen, kuten verkkosivun sisällön päivittämiseen tai datan hakemiseen API:sta.
-
 # How to: - Näin teet:
 ```Lua
 -- Lataa HTTP-moduuli

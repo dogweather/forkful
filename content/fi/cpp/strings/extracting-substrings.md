@@ -11,9 +11,6 @@ title: Merkkijonojen osien poimiminen
 weight: 6
 ---
 
-## What & Why? - Mitä & Miksi?
-Haemme tekstin osia, eli substringejä, kun tarvitsemme erityistä tietoa merkkijonosta. Ohjelmoijat tekevät niin, jotta voivat käsitellä, verrata tai analysoida tekstin osia.
-
 ## How to - Miten tehdään
 ```C++
 #include <iostream>
@@ -28,6 +25,7 @@ int main() {
     return 0;
 }
 ```
+
 ## Deep Dive - Syväsukellus
 Substringit ovat osa C++:n standardikirjastoa `std::string` luokan sisällä. Historiallisesti, C:n kielestä periytyvä C++ toi monia string-käsittelyn funktioita, mutta C++ ehdotti `std::string` ja metodeja, kuten `substr`, tarjoten objektiivisen otteen tekstinkäsittelyyn. Vaihtoehtoisesti voit käyttää C-tyylistä merkkijonojen käsittelyä funktioilla kuten `strncpy`, mutta siirtymät `std::string`-luokan käyttöön tuovat vähemmän virheriskejä ja käytön helppoutta. `substr`-metodi luo uuden string-olion alkuperäisen merkkijonon osasta, alkaen annetusta indeksistä ja annetun pituuden verran. Jos pituus jätetään antamatta, loppu merkkijono kopioidaan.
 

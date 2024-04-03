@@ -10,9 +10,6 @@ title: Uthenting av delstrenger
 weight: 6
 ---
 
-## Hva & Hvorfor?
-Å trekke ut delstrenger betyr at vi henter spesifikke deler fra en tekststreng. Det gjør vi for å bearbeide, analysere eller vise frem informasjon på en mer målrettet måte.
-
 ## Hvordan:
 ```Elm
 import String exposing (slice)

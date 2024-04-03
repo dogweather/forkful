@@ -11,9 +11,6 @@ title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---
 
-## Qué y Por Qué?
-Comparar dos fechas es chequear cómo se relacionan en el tiempo: si una es anterior, posterior o si son la misma. Los programadores lo hacen para tareas como validar fechas, programar eventos o medir períodos de tiempo.
-
 ## Cómo Hacerlo:
 Swift facilita la comparación de fechas con operadores estándar como `==`, `>`, `<`, `>=`, y `<=`. Aquí tienes cómo:
 

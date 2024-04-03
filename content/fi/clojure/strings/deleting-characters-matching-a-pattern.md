@@ -10,9 +10,6 @@ title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---
 
-## What & Why?
-Mikä ja miksi? Ohjelmoinnissa merkkien poistaminen kuvioon sopivasti on datan siistimistä. Tehdään nätimpää, helpommin käsiteltävää.
-
 ## How to:
 ```Clojure
 ;; Esimerkki: Poista kaikki numerot stringistä

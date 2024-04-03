@@ -10,9 +10,6 @@ title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---
 
-## Quoi & Pourquoi ?
-Un REPL (Read-Eval-Print Loop, soit Boucle de Lire-Évaluer-Imprimer) est un environnement de programmation informatique simple et interactif. Les programmeurs l'utilisent pour des essais de codage rapides, tester des bouts de code ou apprendre la syntaxe d'un langage sans créer une application complète.
-
 ## Comment faire :
 Lancer le REPL de Kotlin est un jeu d'enfant. Ouvrez votre terminal et tapez `kotlinc`. Vous arriverez dans le shell Kotlin. Essayons de définir une variable et d'imprimer sa valeur :
 

@@ -13,12 +13,7 @@ title: Verwendung von assoziativen Arrays
 weight: 15
 ---
 
-## Was & Warum?
-
-Assoziative Arrays oder Objekte in TypeScript ermöglichen es Ihnen, mit Strings (oder Schlüsseln) auf Wertpaare zuzugreifen. Programmierer nutzen sie für dynamischere Datenzugriffsmuster im Vergleich zu traditionellen Arrays und bieten eine flexible Art, Daten zu strukturieren und darauf zuzugreifen, ohne an numerische Indizes gebunden zu sein.
-
 ## Wie man es macht:
-
 Das Erstellen und Verwenden von assoziativen Arrays in TypeScript ist unkompliziert. Hier eine grundlegende Anleitung:
 
 ```TypeScript
@@ -70,7 +65,6 @@ Ausgabe:
 ```
 
 ## Tiefergehend
-
 In TypeScript sind das, was wir als assoziative Arrays bezeichnen, im Wesentlichen Objekte. Historisch gesehen sind in Sprachen wie PHP assoziative Arrays ein fundamentaler Typ, aber JavaScript (und damit auch TypeScript) verwendet für diesen Zweck Objekte. Dieser Ansatz ist sowohl eine Stärke als auch eine Einschränkung. Objekte bieten eine hochdynamische Struktur für die Zuordnung von Strings zu Werten, sind jedoch nicht dazu gedacht, im traditionellen Sinn als 'Arrays' verwendet zu werden. Beispielsweise können Sie Array-Methoden wie `push` oder `pop` nicht direkt auf diesen Objekten anwenden.
 
 Für Fälle, in denen Sie geordnete Sammlungen von Schlüssel-Wert-Paaren mit array-ähnlichen Operationen benötigen, bietet TypeScript (und modernes JavaScript) das `Map`-Objekt:

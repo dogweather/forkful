@@ -11,9 +11,6 @@ title: Praca z XML
 weight: 40
 ---
 
-## Co i dlaczego?
-Praca z XML oznacza parsowanie, manipulację i zapisywanie danych XML za pomocą programowania. Programiści obsługują XML, aby wymieniać dane między różnymi systemami, dla plików konfiguracyjnych, lub gdy pracują ze standardami takimi jak SOAP, które opierają się na XML.
-
 ## Jak to zrobić:
 ```TypeScript
 import { parseString } from 'xml2js';

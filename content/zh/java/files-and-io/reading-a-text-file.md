@@ -15,9 +15,6 @@ title: "\u9605\u8BFB\u6587\u672C\u6587\u4EF6"
 weight: 22
 ---
 
-## What & Why? (是什么 & 为什么?)
-阅读文本文件就是让程序从中抓取数据。程序员这么做是为了从存储资料、配置到输入数据的一系列应用需求。
-
 ## How to: (如何操作)
 ```Java
 import java.io.IOException;

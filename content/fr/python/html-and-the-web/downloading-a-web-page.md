@@ -11,9 +11,6 @@ title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Télécharger une page Web, c'est récupérer son contenu via le réseau. Les programmeurs font ça pour analyser des données, tester des sites, ou automatiser des tâches Web.
-
 ## How to: (Comment faire : )
 Voici un exemple simple avec `requests` :
 

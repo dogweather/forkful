@@ -10,9 +10,6 @@ title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---
 
-## ¿Qué y Por Qué?
-Extraer subcadenas significa obtener partes específicas de una cadena de texto. Los programadores lo hacen para filtrar datos, manejar entradas del usuario, o simplemente porque necesitan usar solo una porción de información.
-
 ## Cómo hacerlo:
 Extraer subcadenas es simple. Bash utiliza índices para obtener los fragmentos que necesitas. Aquí hay un par de ejemplos:
 

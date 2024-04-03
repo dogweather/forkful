@@ -11,9 +11,6 @@ title: "XML:n k\xE4sittely"
 weight: 40
 ---
 
-## Mikä ja miksi?
-XML:n kanssa työskentely käsittää XML-dokumenttien jäsentämisen, kyselyiden tekemisen ja manipuloinnin Java-kielellä. Ohjelmoijat tekevät tätä tiedonvaihdon, konfiguraationhallinnan sekä siksi, että monet vanhat järjestelmät ja rajapinnat kommunikoivat XML:n avulla.
-
 ## Kuinka:
 Java tarjoaa API:ja kuten DOM (Document Object Model), SAX (Simple API for XML) ja StAX (Streaming API for XML) XML:n käsittelyyn. Tässä on DOM-esimerkki XML-tiedoston jäsentämiseksi:
 

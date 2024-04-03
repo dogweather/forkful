@@ -12,12 +12,7 @@ title: Tekst zoeken en vervangen
 weight: 10
 ---
 
-## Wat & Waarom?
-
-Tekst zoeken en vervangen is hoe je specifieke stringen in inhoud vindt en ze omwisselt voor iets anders. Programmeurs doen dit om gegevens bij te werken, fouten te herstellen of tekst en masse te wijzigen zonder handmatige bewerkingen.
-
 ## Hoe:
-
 Hier is een snelle manier om 'kat' door 'hond' te vervangen in een zin met PHP:
 
 ```PHP
@@ -53,7 +48,6 @@ Hondapulten zijn HONDegorisch geweldig!
 ```
 
 ## Diepere duik:
-
 Zoek- en vervangfuncties bestaan al sinds de vroege dagen van het computergebruik — denk aan `sed` in Unix. In PHP zijn `str_replace` en `str_ireplace` je beste opties voor een simpele zoek en vervang. `str_replace` is hoofdlettergevoelig, terwijl `str_ireplace` dat niet is.
 
 Hoe werken ze? Onder de motorkap controleren beide functies elk deel van de string, zoeken naar overeenkomsten en vervangen deze. Ze kunnen ook omgaan met arrays, dus je kunt meerdere patronen in één keer zoeken en vervangen.
@@ -78,7 +72,6 @@ De snelle bruine vos springt over de luie hond 7 keer.
 Dit vervangt 'kat' door 'hond', negeert hoofdlettergebruik (`/i` modifier), en komt overeen met hele woorden alleen (`\b` woordgrens).
 
 ## Zie ook:
-
 - Officiële PHP Documentatie over str_replace: https://www.php.net/manual/nl/function.str-replace.php
 - Officiële PHP Documentatie over str_ireplace: https://www.php.net/manual/nl/function.str-ireplace.php
 - Officiële PHP Documentatie over preg_replace: https://www.php.net/manual/nl/function.preg-replace.php

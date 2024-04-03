@@ -12,12 +12,7 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-
-Tests schrijven in programmeren is code maken om te controleren of andere code correct werkt. Programmeurs doen dit om vroegtijdig fouten te vinden, te bevestigen dat nieuwe functies de oude niet breken, en beter te slapen wetende dat hun code solide is.
-
 ## Hoe:
-
 In Elixir gebruik je ExUnit om tests te schrijven. Het is een ingebouwd framework dat vriendelijk en eenvoudig te beginnen is. Hier is een snel voorbeeld:
 
 ```elixir
@@ -44,11 +39,9 @@ Klaar in 0,03 seconden
 Goed! Je hebt een test geschreven die bevestigt dat wiskunde niet is veranderd.
 
 ## Diepe Duik
-
 Tests zijn een groot punt in Elixir sinds José Valim de taal leven inblies, geïnspireerd door Ruby's testcultuur. Alternatieven? Niet veel binnen de wereld van Elixir – ExUnit is de go-to. Je zou echter eigenschap-gebaseerd testen met StreamData kunnen verkennen of duiken in het mocken met Mox voor meer complexe scenario's. Tests gaan helemaal over het bevestigen van verwachte uitkomsten—wat je hebt gezien met `assert`—maar er is ook `refute` voor het specificeren van wat niet zou moeten gebeuren.
 
 ## Zie Ook
-
 Om je vaardigheden in het schrijven van tests te verbeteren, bekijk deze:
 
 - Elixir's testgidsen: https://hexdocs.pm/ex_unit/ExUnit.html

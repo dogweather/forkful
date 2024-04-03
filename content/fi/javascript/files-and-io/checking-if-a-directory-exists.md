@@ -14,9 +14,6 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mikä ja miksi?
-Tiedoston olemassaolon tarkistaminen JavaScriptillä on olennainen osa tiedostojen käsittelytehtäviä, mikä mahdollistaa skriptien varmistaa kansion olemassaolon ennen siitä lukemista tai siihen kirjoittamista. Tämä toiminto estää virheitä ja varmistaa ohjelman sujuvamman suorituksen, erityisesti sovelluksissa, jotka käsittelevät tiedostoja tai kansioita dynaamisesti käyttäjän syötteen tai ulkoisten tietolähteiden perusteella.
-
 ## Kuinka:
 Node.js:ssä, koska JavaScriptillä itsellään ei ole suoraa pääsyä tiedostojärjestelmään, yleensä käytetään `fs`-moduulia tällaisiin operaatioihin. Tässä on yksinkertainen tapa tarkistaa, onko kansio olemassa käyttäen `fs.existsSync()`:
 

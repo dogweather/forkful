@@ -8,12 +8,7 @@ title: Creating a temporary file
 weight: 21
 ---
 
-# What & Why?
-
-Creating a temporary file means making a file designed for short-term use. Programmers do this for reasons like safeguarding sensitive data or managing interim results during a process.
-
 # How to:
-
 Elm runs in browsers, so it doesn't have direct filesystem access. Therefore, you can't create traditional temporary files. But, if you need a similar feature, we use Elm ports to interact with JavaScript, which can handle temporary file creation.
 
 ```elm
@@ -47,7 +42,6 @@ blob:null/2135a9b7-1aad-4e7a-8bce-19c4f3f6d7ff
 ```
 
 # Deep Dive
-
 Elm is designed to be safe and reliable, so direct file system access isn't in the cards. Instead, Elm uses ports to communicate with JavaScript, allowing for operations like creating temporary files. Historically, we handle file-based tasks in the browser through JavaScript APIs, using Elm for type-safe, high-level logic.
 
 Alternatives like WebAssembly may allow more direct filesystem interactions in the future, but for now, interop with JavaScript is the standard practice.
@@ -55,7 +49,6 @@ Alternatives like WebAssembly may allow more direct filesystem interactions in t
 Implementation-wise, creating temporary files in the browser context does not mean an actual file on the filesystem, but rather an in-memory representation (blob) that you can work with and save as needed.
 
 # See Also
-
 - [Elm Ports](https://guide.elm-lang.org/interop/ports.html)
 - [MDN - Web APIs - File](https://developer.mozilla.org/en-US/docs/Web/API/File)
 - [MDN - Web APIs - Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob)

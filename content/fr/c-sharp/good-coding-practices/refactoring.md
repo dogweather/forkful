@@ -10,12 +10,7 @@ title: Refactoring
 weight: 19
 ---
 
-## Quoi & Pourquoi ?
-
-Le remaniement est le processus de restructuration du code informatique existant sans changer son comportement externe. Les programmeurs le font pour nettoyer le code, améliorer la lisibilité, réduire la complexité et améliorer la maintenabilité.
-
 ## Comment faire :
-
 Refactorisons une méthode C# simple qui calcule et imprime la somme d'un tableau de nombres :
 
 Avant le Remaniement :
@@ -65,7 +60,6 @@ calculator.DisplaySum();
 En remaniant, nous avons séparé les préoccupations, rendu la classe `Calculator` plus flexible en lui permettant de prendre n'importe quel tableau de nombres, et avons utilisé LINQ pour rendre le calcul de la somme plus concis.
 
 ## Approfondissement
-
 Le remaniement trouve ses racines dans la communauté de programmation Smalltalk et a été popularisé dans les années 1990 par le livre de Martin Fowler "Refactoring: Improving the Design of Existing Code". Au fil des ans, il est devenu une partie fondamentale des méthodologies agiles et des bonnes pratiques de codage.
 
 Il existe diverses approches du remaniement, telles que Red-Green-Refactor dans le Développement Piloté par les Tests (TDD). Cela garantit que le remaniement n'introduit pas de bugs en commençant par un test échoué, en le faisant réussir, puis en nettoyant le code.
@@ -73,7 +67,6 @@ Il existe diverses approches du remaniement, telles que Red-Green-Refactor dans 
 Lors de la mise en œuvre du remaniement, il est crucial d'avoir une suite de tests complète pour garantir qu'aucune fonctionnalité ne soit rompue pendant le processus. Les outils de remaniement automatique, comme ReSharper pour C#, peuvent également aider dans ce processus en fournissant des moyens sûrs de modifier les structures de code. Cependant, les outils doivent être supplémentaires à une compréhension approfondie de la base de code et des principes de codage.
 
 ## Voir Aussi
-
 - L'œuvre séminal de Martin Fowler sur le Remaniement : [Refactoring: Improving the Design of Existing Code](https://martinfowler.com/books/refactoring.html)
 - Le guide de Microsoft sur le Remaniement dans Visual Studio : [Remaniement (C#)](https://docs.microsoft.com/fr-fr/visualstudio/ide/refactoring-in-visual-studio?view=vs-2022)
 - Un regard détaillé sur les motifs de remaniement avec des exemples : [SourceMaking Refactoring](https://sourcemaking.com/refactoring)

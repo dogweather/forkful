@@ -10,9 +10,6 @@ title: Interpolazione di una stringa
 weight: 8
 ---
 
-## What & Why? (Cosa e Perché?)
-L'interpolazione di stringhe consente di incastrare variabili direttamente dentro una stringa. Facilita la lettura e la scrittura del codice, rendendolo più pulito e semplificando la concatenazione delle stringhe.
-
 ## How to: (Come fare)
 ```PHP
 <?php

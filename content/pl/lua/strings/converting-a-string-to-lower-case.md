@@ -12,9 +12,6 @@ title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## What & Why? (Co i dlaczego?)
-Zamiana łańcucha na małe litery oznacza, że każda duża litera w tekście zostaje przekształcona na swoją małą wersję. Programiści robią to, aby ułatwić porównywanie tekstu, gdzie wielkość liter nie ma znaczenia, jak podczas logowania czy wyszukiwania.
-
 ## How to: (Jak to zrobić:)
 ```Lua
 local tekst = "Witaj Świecie!"

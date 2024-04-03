@@ -12,12 +12,7 @@ title: Convertire una stringa in minuscolo
 weight: 4
 ---
 
-## Cosa e perché?
-
-Convertire una stringa in minuscolo in C comporta la trasformazione di tutte le lettere maiuscole presenti in una stringa data nelle loro equivalenti minuscole. I programmatori spesso eseguono questa operazione per standardizzare l'input di testo per confronto, operazioni di ricerca, o semplicemente per una coerenza estetica nell'output.
-
 ## Come fare:
-
 C non ha una funzione integrata per la conversione diretta di stringhe in minuscolo, a differenza di alcuni linguaggi di alto livello. Tuttavia, il processo può essere facilmente implementato utilizzando le funzioni della biblioteca standard di C. Di seguito è presente una guida passo dopo passo e un esempio che illustra come convertire una stringa in minuscolo.
 
 ```c
@@ -52,7 +47,6 @@ Minuscolo: hello, world!
 In questo esempio, la funzione `toLowerCase` scorre ogni carattere della stringa di input, convertendolo nel suo equivalente minuscolo usando la funzione `tolower` da `ctype.h`. La modifica viene effettuata sul posto, alterando la stringa originale.
 
 ## Approfondimento
-
 La funzione `tolower` utilizzata nell'esempio sopra fa parte della libreria standard di C, specificatamente all'interno del file di intestazione `ctype.h`. Opera in base alla località corrente, ma per la località standard "C", gestisce il set di caratteri ASCII dove da 'A' a 'Z' vengono convertite in 'a' a 'z'.
 
 Storicamente, la gestione della codifica dei caratteri e della conversione in minuscolo in C era strettamente collegata al set di caratteri ASCII, limitando la sua utilità in applicazioni internazionali o localizzate dove i caratteri al di fuori del set ASCII sono comuni. I linguaggi di programmazione moderni potrebbero offrire metodi di stringa integrati per eseguire la conversione del caso considerando la località e i caratteri Unicode, cosa che C manca nativamente.

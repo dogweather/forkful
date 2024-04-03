@@ -11,12 +11,7 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co i dlaczego?
-
-Obsługa błędów to sposób zarządzania sytuacjami, gdy w kodzie pojawiają się problemy. Jest kluczowa, ponieważ pozwala programom na łagodne awarie i dostarcza użytkownikom klarowne instrukcje, zamiast po prostu zawieść i zakończyć działanie.
-
 ## Jak to zrobić:
-
 Oto klasyczny blok `try-catch`:
 
 ```javascript
@@ -56,7 +51,6 @@ fetchData();
 ```
 
 ## Wgłębienie się
-
 Obsługa błędów w JavaScript przeszła ewolucję. Dawniej (ES3, około 1999 roku), mieliśmy tylko blok `try-catch`. Nie był super elastyczny, ale dawał sobie radę.
 
 ES6 (2015) wprowadziło Promisy i dostarczyło nam `.then()` i `.catch()`, pozwalając na bardziej eleganckie radzenie sobie z błędami asynchronicznymi.
@@ -72,7 +66,6 @@ Jeśli chodzi o szczegóły implementacji, kiedy błąd jest rzucany, silniki Ja
 Alternatywy? Można ignorować obsługę błędów (zły pomysł), używać funkcji zwrotnych z pierwszym parametrem błędu (witaj, styl Node.js) lub zafascynować się bibliotekami i frameworkami, które oferują własne podejścia.
 
 ## Zobacz również
-
 Więcej o obsłudze błędów:
 
 - MDN o try-catch: [MDN try...catch](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Statements/try...catch)

@@ -14,9 +14,6 @@ title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---
 
-## Quoi & Pourquoi ?
-Mettre une chaîne en capitale implique de transformer la première lettre d'une chaîne donnée en majuscule tout en s'assurant que les autres lettres restent en minuscule. Les programmeurs font cela pour formater les sorties, adhérer à la correction grammaticale dans les textes, ou améliorer la lisibilité des données générées.
-
 ## Comment faire :
 En Haskell, vous pouvez mettre une chaîne en capitale en utilisant la bibliothèque standard sans avoir besoin de bibliothèques tierces.
 

@@ -11,12 +11,7 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-
-De lengte van een string vinden betekent meten hoeveel tekens deze bevat. Programmeurs doen dit om invoer te valideren, door karakters te loopen of textweergave te beperken, onder andere redenen.
-
 ## Hoe te:
-
 In TypeScript krijg je de lengte van een string met behulp van de `.length` eigenschap. Hier is een snel voorbeeld:
 
 ```typescript
@@ -27,7 +22,6 @@ console.log(begroeting.length); // Uitvoer: 18
 Deze code verklaart een string variabele genaamd `begroeting` en logt vervolgens de lengte ervan in de console.
 
 ## Diepgaand
-
 De `.length` eigenschap is een overblijfsel uit JavaScript, de voorouder van TypeScript. Het is een eenvoudige en universeel ondersteunde manier om de grootte van een string te krijgen.
 
 Er zijn alternatieven, maar die compliceren de zaken meestal. Je zou bijvoorbeeld de string naar een array kunnen converteren en de elementen tellen:
@@ -55,7 +49,6 @@ console.log(telCodePunten(fancyBegroeting)); // Uitvoer: 9
 Deze functie houdt rekening met de intriciteiten van stringencoding om ervoor te zorgen dat elk karakter, ongeacht of het een enkele of dubbele code-eenheid is, correct wordt geteld.
 
 ## Zie Ook
-
 - De TypeScript Handleiding over Strings: [TypeScript Handleiding](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#strings)
 - MDN Web Docs over de String length eigenschap: [String.prototype.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
 - Unicode en JavaScript: [JavaScript heeft een Unicode probleem - Mathias Bynens](https://mathiasbynens.be/notes/javascript-unicode)

@@ -14,9 +14,6 @@ title: Een datum in de toekomst of verleden berekenen
 weight: 26
 ---
 
-## Wat & Waarom?
-Het berekenen van een datum in de toekomst of het verleden omvat het bepalen van een specifieke datum door een bepaald aantal dagen, maanden of jaren bij een gegeven datum op te tellen of af te trekken. Programmeurs doen dit voor taken zoals het plannen van evenementen, het genereren van herinneringen of het afhandelen van vervaldata, waardoor het een essentiële functionaliteit is in verschillende toepassingen, van kalendersystemen tot financiële software.
-
 ## Hoe:
 Hoewel de standaardbibliotheek van C geen directe functies biedt voor datumrekenkunde, kunt u datums manipuleren met behulp van de `time.h` bibliotheek, specifiek werkend met het `time_t` gegevenstype en `struct tm`. Hier is een vereenvoudigd voorbeeld van hoe je dagen aan de huidige datum kunt toevoegen:
 

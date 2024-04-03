@@ -13,9 +13,6 @@ title: Capitalizando una cadena de texto
 weight: 2
 ---
 
-## ¿Qué y por qué?
-Capitalizar una cadena implica transformar la primera letra de una cadena dada a mayúscula mientras se asegura de que el resto de las letras permanezcan en minúscula. Los programadores hacen esto para formatear las salidas, adherirse a la corrección gramatical en los textos o mejorar la legibilidad de los datos generados.
-
 ## Cómo hacerlo:
 En Haskell, puedes capitalizar una cadena usando la biblioteca estándar sin necesidad de bibliotecas de terceros.
 

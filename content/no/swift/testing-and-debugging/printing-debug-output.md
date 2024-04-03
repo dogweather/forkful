@@ -12,9 +12,6 @@ title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Å skrive ut debug-informasjon innebærer å vise verdier og meldinger under kjøring av programmet, for å forstå hva som skjer "under hetta". Vi gjør dette for å finne og fikse feil mer effektivt.
-
 ## How to: (Hvordan:)
 Vi bruker `print()`-funksjonen i Swift til å skrive ut verdier til konsollen. La oss sjekke det ut:
 

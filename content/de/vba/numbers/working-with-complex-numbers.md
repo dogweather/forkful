@@ -14,12 +14,7 @@ title: Arbeiten mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-
-Die Arbeit mit komplexen Zahlen umfasst das Ausführen mathematischer Operationen mit Zahlen, die sowohl einen Realteil als auch einen Imaginärteil haben. Programmierer beschäftigen sich oft mit komplexen Zahlen in Bereichen wie Ingenieurwesen, Physik und überall dort, wo es darum geht, Gleichungen zu lösen, die mit reinen reellen Zahlen nicht möglich sind.
-
 ## Wie geht das:
-
 In Visual Basic for Applications (VBA) ist der Umgang mit komplexen Zahlen im Vergleich zu Sprachen mit nativer Unterstützung für diese etwas weniger direkt. Jedoch können Sie komplexe Operationen durch Erstellen von Funktionen oder Verwenden vorhandener Bibliotheksfunktionen bewältigen. Lassen Sie uns ein grundlegendes Beispiel für Addition, Subtraktion, Multiplikation und Division von komplexen Zahlen erkunden:
 
 ```vb
@@ -49,7 +44,6 @@ End Sub
 Während dies die Addition demonstriert, können ähnliche Ansätze für Subtraktion, Multiplikation und Division angepasst werden. Für komplexe Operationen über die Grundrechenarten hinaus könnte es sich lohnen, externe Bibliotheken zu erkunden oder andere Lösungen zu integrieren, die Operationen mit komplexen Zahlen nativer unterstützen.
 
 ## Tiefergehende Betrachtung:
-
 VBA enthält keine integrierte Unterstützung für komplexe Zahlen, ein Bereich, in dem es hinter Sprachen wie Python zurückbleibt, das über eine komplexe Zahlenklasse (`complex`) verfügt, oder C++ mit seiner Standard Template Library (`std::complex`). Historisch gesehen ist die Notwendigkeit, direkt in VBA komplexe Zahlen zu manipulieren, relativ selten, da es oft für Automatisierung, die Manipulation von Office-Anwendungen und Aufgaben verwendet wird, die traditionell keine komplexen mathematischen Berechnungen erfordern. Als VBA konzipiert und entwickelt wurde, konzentrierten sich die Anwendungsfälle hauptsächlich auf geschäftliche Anwendungen anstatt auf wissenschaftliches Rechnen, was das Fehlen erklären könnte.
 
 Für Aufgaben, die umfangreiche Manipulationen komplexer Zahlen erfordern, könnten Programmierer die Verwendung einer mathematisch orientierteren Sprache als vorteilhaft empfinden. Jedoch, für diejenigen, die sich auf die Verwendung von VBA festgelegt haben oder darauf beschränkt sind, sind das Schreiben benutzerdefinierter Funktionen (wie dargestellt) oder die Integration mit Software, die diese Fähigkeiten besitzt (wie z.B. MATLAB oder bis zu einem gewissen Grad Excel selbst), gangbare Wege. Trotz seiner Einschränkungen können kreative Lösungen und externe Integrationen die Nützlichkeit von VBA in Bereiche erweitern, für die es ursprünglich nicht konzipiert war, einschließlich der Arbeit mit komplexen Zahlen.

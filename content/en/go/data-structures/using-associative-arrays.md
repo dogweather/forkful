@@ -10,12 +10,7 @@ title: Using associative arrays
 weight: 15
 ---
 
-## What & Why?
-
-Associative arrays, known as maps in Go, enable you to store key-value pairs where each unique key maps to a value. Programmers use maps for efficient data retrieval, modification, and to maintain a collection of elements that can be quickly accessed using unique keys.
-
 ## How to:
-
 Creating and initializing a map in Go can be done in various ways. Here's a basic example to get you started:
 
 ```go
@@ -70,7 +65,6 @@ for color, hex := range colors {
 Remember, maps in Go are unordered. The order of iteration is not guaranteed.
 
 ## Deep Dive
-
 In Go, maps are implemented as hash tables. Each entry in the map consists of two items: a key and a value. The key is hashed to store the entry, which allows for constant time operations for a small set of data and average time complexity of O(1) with proper hashing, which can degrade to O(n) in the worst case with many hash collisions.
 
 A significant note for new Go programmers is that map types are reference types. This means when you pass a map to a function, any changes made to the map within that function are visible to the caller. This is different from, say, passing a struct to a function, where the struct is copied unless passed by a pointer.

@@ -14,16 +14,10 @@ title: Capitalizando una cadena de texto
 weight: 2
 ---
 
-## Qué y Por Qué?
-
-Capitalizar una cadena en Rust implica modificar la cadena para que su primer carácter esté en mayúscula si es una letra, mientras que el resto de la cadena permanece sin cambios. Los programadores a menudo realizan esta operación por motivos de formato, como preparar palabras para títulos o asegurar consistencia en la entrada de usuario.
-
 ## Cómo hacerlo:
-
 Para capitalizar una cadena en Rust, tienes dos rutas principales: usar las funcionalidades de la biblioteca estándar o emplear crates de terceros para necesidades más complejas o específicas. Aquí te mostramos cómo hacer ambas.
 
 ### Usando la Biblioteca Estándar de Rust
-
 La biblioteca estándar de Rust no proporciona un método directo para capitalizar cadenas, pero puedes lograrlo manipulando los caracteres de la cadena.
 
 ```rust
@@ -42,7 +36,6 @@ fn main() {
 ```
 
 ### Usando el Crate `heck`
-
 Para un enfoque más directo, especialmente cuando se trabaja dentro de un contexto de procesamiento de texto más amplio, podrías preferir usar bibliotecas de terceros como `heck`. El crate `heck` ofrece varias funcionalidades de conversión de casos, incluyendo una manera simple de capitalizar cadenas.
 
 Primero, agrega `heck` a tu `Cargo.toml`:

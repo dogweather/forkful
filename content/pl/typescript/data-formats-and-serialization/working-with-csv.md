@@ -16,16 +16,10 @@ title: Praca z plikami CSV
 weight: 37
 ---
 
-## Co i dlaczego?
-
-Praca z CSV (Comma-Separated Values, czyli wartościami oddzielonymi przecinkami) obejmuje odczytywanie z plików CSV oraz zapisywanie do nich, co jest powszechnym formatem wymiany danych używanym ze względu na jego prostotę i szerokie wsparcie na różnych platformach i w różnych językach. Programiści zajmują się plikami CSV, aby importować lub eksportować dane z aplikacji, baz danych i usług, umożliwiając łatwą manipulację danymi i ich udostępnianie.
-
 ## Jak to zrobić:
-
 W TypeScript możesz pracować z plikami CSV za pomocą kodu natywnego lub wykorzystując biblioteki stron trzecich, takie jak `csv-parser` do odczytu i `csv-writer` do zapisu plików CSV.
 
 ### Odczyt CSV z `csv-parser`
-
 Najpierw zainstaluj `csv-parser` za pomocą npm:
 
 ```
@@ -64,7 +58,6 @@ Wynik będzie następujący:
 ```
 
 ### Zapis do CSV z `csv-writer`
-
 Aby zapisać do pliku CSV, najpierw zainstaluj `csv-writer`:
 
 ```

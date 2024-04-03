@@ -9,9 +9,6 @@ title: Downloading a web page
 weight: 42
 ---
 
-## What & Why?
-Downloading a web page means grabbing the HTML content from the internet. Programmers do it to parse the data, scrape information, or monitor changes programmatically.
-
 ## How to:
 Ruby makes downloading a web page straightforward with libraries like `net/http` and gems like `open-uri`. Here's how to do it using `net/http`:
 

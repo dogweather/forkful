@@ -14,12 +14,7 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i dlaczego?
-
-Sprawdzanie, czy katalog istnieje w języku C, polega na zapytaniu systemu plików, aby zweryfikować, czy określona ścieżka prowadzi do katalogu. Programiści często wykonują tę operację, aby upewnić się, że operacje na plikach (takie jak czytanie z plików lub zapisywanie do nich) są kierowane do prawidłowych ścieżek, zapobiegając błędom i zwiększając niezawodność oprogramowania.
-
 ## Jak to zrobić:
-
 W C, istnienie katalogu można sprawdzić za pomocą funkcji `stat`, która pobiera informacje o pliku lub katalogu znajdującym się pod określoną ścieżką. Następnie używa się makra `S_ISDIR` z `sys/stat.h` do oceny, czy uzyskane informacje odpowiadają katalogowi.
 
 Oto jak można użyć `stat` i `S_ISDIR`, aby sprawdzić, czy katalog istnieje:
@@ -59,7 +54,6 @@ Katalog nie istnieje.
 ```
 
 ## Wgłębienie się:
-
 Struktura i funkcja `stat` są częścią języka programowania C od dziesięcioleci, pochodząc z Unix. Zapewniają one ustandaryzowany sposób na pobieranie informacji o systemie plików, który, mimo że jest stosunkowo niskopoziomowy, jest szeroko używany ze względu na swoją prostotę i bezpośredni dostęp do metadanych systemu plików.
 
 Historycznie rzecz biorąc, sprawdzanie istnienia i właściwości plików oraz katalogów za pomocą `stat` i jego pochodnych (takich jak `fstat` i `lstat`) było powszechnym podejściem. Jednak te funkcje bezpośrednio wchodzą w interakcje z jądrem OS, co może wprowadzać dodatkowe obciążenie i potencjalne błędy, jeśli nie są prawidłowo obsługiwane.

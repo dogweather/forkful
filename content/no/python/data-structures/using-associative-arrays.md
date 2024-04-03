@@ -14,12 +14,7 @@ title: Bruke associative tabeller
 weight: 15
 ---
 
-## Hva & Hvorfor?
-
-Assosiative tabeller, kjent i Python som ordbøker, kartlegger nøkler til verdier, noe som gjør det enkelt å hente, endre eller spore data via en unik identifikator. Programmerere bruker dem for deres effektivitet i å få tilgang til elementer og deres fleksibilitet i å representere komplekse datastrukturer.
-
 ## Hvordan:
-
 Å lage en ordbok i Python er enkelt. Du omslutter nøkkel-verdipar i krøllparenteser `{}`, med nøkler og verdier skilt av et kolon:
 
 ```Python
@@ -77,7 +72,6 @@ email: john@example.com
 ```
 
 ## Dypdykk
-
 Assosiative tabeller i Python, eller ordbøker, ble introdusert for å tilby en datastruktur for effektiv tilgang og manipulering av data. I motsetning til sekvenser, som er indeksert med en rekke tall, er ordbøker indeksert med nøkler, som kan være av en hvilken som helst uforanderlig type. Dette designvalget gjør ordbøker ideelt egnet for raske oppslagstabeller hvor nøkler kartlegger til unike verdier.
 
 Historisk sett har Python-ordbøker vært implementert ved hjelp av en hashtabell, noe som sikrer at gjennomsnittlig tidskompleksitet for oppslags-, innsettings- og sletteoperasjoner er O(1). I Python 3.6 og senere opprettholder ordbøker også innsettingsrekkefølgen av elementer, noe som kombinerer fordelene med hashtabeller med forutsigbarheten av innsettingsrekkefølge sett i ordnede datastrukturer.

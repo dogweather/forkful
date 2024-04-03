@@ -14,12 +14,7 @@ title: Merkkijonon interpolaatio
 weight: 8
 ---
 
-## Mikä ja miksi?
-
-Merkkijonojen väliintäyttö Google Apps Scriptissä mahdollistaa lausekkeiden dynaamisen upottamisen merkkijonoihin, mikä helpottaa luettavamman ja ylläpidettävämmän koodin luomista. Ohjelmoijat käyttävät tätä tekniikkaa saumattomasti sisällyttääkseen muuttujia ja lausekkeita merkkijonoihin ilman hankalaa yhdistämisen syntaksia.
-
 ## Kuinka:
-
 Google Apps Scriptissä merkkijonojen väliintäytön saavutetaan käyttämällä mallipohjaisia literaaleja. Nämä ovat merkkijonoliteraaleja, jotka sallivat lausekkeiden upottamisen, ja ne on merkitty takakorostusmerkein (\`) tavallisten lainausmerkkien sijaan. Näin voit käyttää niitä:
 
 ```javascript
@@ -56,7 +51,6 @@ multiLineStringExample();
 Nämä esimerkit havainnollistavat peruskäyttöä, lausekkeiden upottamista ja monirivisten merkkijonojen luomista väliintäytettyjen arvojen kanssa.
 
 ## Syväsukellus
-
 Mallipohjaiset literaalit, mukaan lukien merkkijonojen väliintäyttö, esiteltiin ECMAScript 2015:ssa (ES6) ja myöhemmin omaksuttiin Google Apps Scriptissä. Tätä ennen ohjelmoijien piti turvautua pelkästään merkkijonojen yhdistämiseen, mikä saattoi olla hankalaa monimutkaisten merkkijonojen tai monien muuttujien arvojen yhdistämisessä.
 
 ```javascript

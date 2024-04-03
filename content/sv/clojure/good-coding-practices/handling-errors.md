@@ -11,9 +11,6 @@ title: Hantering av fel
 weight: 16
 ---
 
-## Vad & Varför?
-Felhantering handlar om att hantera det oväntade i program - som en ordningsvakt som hanterar bråkstakar. Programmerare föredrar när allt flyter på; felhantering hjälper till att hålla problemen i schack, så att deras kod inte snubblar och faller när det oväntade inträffar.
-
 ## Hur man gör:
 Clojure, i likhet med sina Lisp-förfäder, förlitar sig på undantag (exceptions) för att hantera fel. Så här visar du vad du går för när saker och ting går åt skogen.
 

@@ -10,9 +10,6 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-Complex numbers expand our number system to include imaginary numbers, allowing us to solve equations that don't have real solutions. Programmers work with them in fields like engineering, physics, and signal processing where these numbers are essential for modeling and problem-solving.
-
 ## How to:
 C# has a built in `System.Numerics.Complex` structure for processing complex numbers. Here's a quick run-through:
 

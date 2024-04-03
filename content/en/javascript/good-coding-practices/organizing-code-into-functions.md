@@ -10,11 +10,7 @@ title: Organizing code into functions
 weight: 18
 ---
 
-## What & Why?
-Organizing code into functions chunks out tasks into reusable pieces, making code cleaner and more maintainable. We do this to reduce redundancy, make testing easier, and improve readability.
-
 ## How to:
-
 ```javascript
 // Define a function to calculate the area of a rectangle
 function calculateArea(width, height) {

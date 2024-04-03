@@ -15,9 +15,6 @@ title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---
 
-## Cái gì và Tại sao?
-REPL (Read-Eval-Print-Loop - Vòng Đọc-Đánh Giá-In) là một môi trường lập trình tương tác đơn giản. Lập trình viên sử dụng nó cho việc thử nghiệm ngôn ngữ theo thời gian thực, các tác vụ nhanh chóng, hoặc để hiểu mới các khái niệm mà không cần đến việc tạo ra các ứng dụng đầy đủ.
-
 ## Làm thế nào:
 C++ không đi kèm với một REPL tích hợp sẵn, nhưng các công cụ như Cling cung cấp khả năng đó. Dưới đây là cách sử dụng Cling để tính tổng của hai số:
 ```C++

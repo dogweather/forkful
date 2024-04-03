@@ -11,9 +11,6 @@ title: Usando um shell interativo (REPL)
 weight: 34
 ---
 
-## O Quê & Por Quê?
-Um REPL (Read-Eval-Print-Loop - Ler-Avaliar-Imprimir-Loop) é um ambiente de programação simples e interativo. Programadores o utilizam para experimentação da linguagem em tempo real, tarefas rápidas, ou para entender novos conceitos sem a sobrecarga de criar aplicações completas.
-
 ## Como Fazer:
 C++ não vem com um REPL integrado, mas ferramentas como Cling oferecem essa capacidade. Aqui está como usar o Cling para calcular a soma de dois números:
 

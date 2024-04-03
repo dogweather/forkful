@@ -12,9 +12,6 @@ title: Werken met XML
 weight: 40
 ---
 
-## Wat & Waarom?
-"Werken met XML" verwijst naar het proces van het lezen, creëren en wijzigen van XML (eXtensible Markup Language)-bestanden met behulp van programmering. Programmeurs doen dit omdat XML veel gebruikt wordt voor gegevensuitwisseling vanwege zijn platformonafhankelijke aard en zelfbeschrijvend formaat.
-
 ## Hoe:
 Pythons `xml.etree.ElementTree` module biedt hulpmiddelen om met XML te werken.
 

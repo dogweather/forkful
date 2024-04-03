@@ -11,9 +11,6 @@ title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---
 
-## Mitä & Miksi?
-Lainausmerkkien poistaminen merkkijonosta tarkoittaa ylimääräisten "kuorien" riisumista saadakseen puhtaan tekstin esiin. Ohjelmoijat tekevät tämän puhdistaakseen syötteen, välttääkseen virheitä ja valmistellessaan dataa käsittelyyn, jossa lainausmerkit ovat haittoja, eivät hyödykkeitä.
-
 ## Kuinka:
 Elixirissä ei ole sisäänrakennettua 'lainausmerkkien poisto' -toimintoa, mutta on helppoa luoda oma ratkaisu käyttämällä mallin sopivuutta tai `String`-funktioita. Katso nämä pätkät:
 

@@ -10,9 +10,6 @@ title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---
 
-## Hva & Hvorfor?
-Komplekse tall utvider ideen om den éndimensjonale tallinjen til det todimensjonale planet ved å inkludere en vinkelrett imaginær akse. Programmerere arbeider med dem i felt som signalbehandling, fluiddynamikk og elektroteknikk, der de er essensielle for å representere svingninger og andre fenomener.
-
 ## Hvordan:
 I Lua kan du representere komplekse tall med tabeller. De grunnleggende operasjonene involverer å legge til, trekke fra, multiplisere og dele disse tabellene. Slik gjør du det:
 

@@ -10,9 +10,6 @@ title: Scaricare una pagina web
 weight: 42
 ---
 
-## What & Why?
-Scaricare una pagina web significa copiare il suo contenuto HTML localmente attraverso internet. I programmatori lo fanno per analisi dati, testare siti, o automatizzare compiti web.
-
 ## How to:
 Per scaricare una pagina web in Fish, puoi usare `curl` o `wget`. Ecco gli esempi:
 

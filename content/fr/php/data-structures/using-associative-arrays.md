@@ -14,12 +14,7 @@ title: Utilisation des tableaux associatifs
 weight: 15
 ---
 
-## Quoi & Pourquoi ?
-
-Les tableaux associatifs en PHP sont comme des listes surpuissantes où chaque élément peut être accédé en utilisant une clé lisible par l'humain au lieu de simples numéros. Les programmeurs les utilisent pour stocker et manipuler des données de manière plus intuitive, permettant ainsi un code plus facile à lire et plus maintenable.
-
 ## Comment faire :
-
 En PHP, créer et utiliser des tableaux associatifs est simple. Voici un rapide aperçu :
 
 ```PHP
@@ -65,7 +60,6 @@ foreach ($person as $key => $value) {
 Remarquez comment les clés peuvent être n'importe quelle chaîne, vous permettant d'accéder aux éléments en utilisant ces clés plutôt que des indices numériques, qui peuvent être moins significatifs et plus difficiles à se rappeler.
 
 ## Plongée profonde
-
 Les tableaux associatifs en PHP sont implémentés en interne à l'aide de tables de hachage qui fournissent un accès très rapide aux éléments par clé, les rendant hautement efficaces pour de nombreuses tâches. Cette efficacité, combinée à leur facilité d'utilisation, fait des tableaux associatifs une pierre angulaire de la programmation PHP.
 
 Historiquement, les tableaux de PHP (à la fois indexés et associatifs) ont été incroyablement flexibles, leur permettant de servir de listes, piles, files d'attente, et plus encore. Cependant, cette flexibilité peut parfois conduire à un code moins efficace si elle n'est pas utilisée avec prudence.

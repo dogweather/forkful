@@ -12,9 +12,6 @@ title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---
 
-## What & Why?
-Menneisyyden tai tulevaisuuden päivämäärän laskeminen tarkoittaa tietyn ajanjakson lisäämistä tai vähentämistä nykyisestä päivästä. Ohjelmoijat käyttävät tätä esimerkiksi vanhentumispäivien, määräaikojen ja aikavälien hallintaan.
-
 ## How to:
 Clojure käyttää Javan `java.time` kirjastoa päivämäärien käsittelyyn. Tässä yksinkertainen esimerkki:
 

@@ -10,9 +10,6 @@ title: Conversione di una stringa in minuscolo
 weight: 4
 ---
 
-## What & Why?
-Convertire una stringa in minuscolo significa trasformare tutti i caratteri alfabeticianche quelli accentati, nella loro forma minuscola. I programmatori lo fanno per uniformare i dati inseriti dagli utenti, per comparare stringhe in modo non case-sensitive, o semplicemente per adeguarsi alle regole di stile di un testo.
-
 ## How to:
 Utilizza `strtolower()` per convertire una stringa intera in minuscolo:
 

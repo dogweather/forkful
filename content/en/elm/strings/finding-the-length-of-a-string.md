@@ -9,9 +9,6 @@ title: Finding the length of a string
 weight: 7
 ---
 
-## What & Why?
-Finding the length of a string means counting its characters. Programmers do it to validate inputs, manipulate text, or simply to size up data.
-
 ## How to:
 In Elm, you use `String.length` to find out how many characters a string contains. Witness:
 

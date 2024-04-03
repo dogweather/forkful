@@ -26,9 +26,6 @@ title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 weight: 41
 ---
 
-## 什么与为什么?
-YAML，全称为 YAML Ain't Markup Language（YAML不是标记语言），是一种人类可读的数据序列化语言。程序员通常使用它来处理配置文件以及实现不同编程语言之间的数据传输。它的简洁性和可读性使其特别适用于需要设置环境、应用程序或服务的任务，这些配置必须是关键的、易于理解和编辑的。
-
 ## 如何操作:
 PowerShell默认情况下没有内置用于解析YAML的cmdlet，但是当你利用`powershell-yaml`模块或者使用`ConvertFrom-Json`结合像`yq`这样的工具将YAML转换成PowerShell对象时，它能够无缝工作。
 

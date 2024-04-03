@@ -11,9 +11,6 @@ title: Interpolando uma string
 weight: 8
 ---
 
-## O Que & Por Quê?
-Interpolação de strings é a substituição de variáveis ou expressões dentro de uma string por seus valores. Programadores fazem isso para montar strings dinâmicas de forma prática e legível.
-
 ## Como Fazer:
 ```Kotlin
 fun main() {

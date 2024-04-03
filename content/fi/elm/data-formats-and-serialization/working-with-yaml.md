@@ -14,9 +14,6 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä ja miksi?
-Elm ei tarjoa sisäänrakennettua tukea YAML:lle, joka on datan serialisointiformaatti ja jota käytetään usein konfiguraatiotiedostoissa tai datan jakamisessa, koska se painottaa vahvasti tyypin turvallisuutta ja ennustettavia tuloksia. Ohjelmoijat kohtaavat kuitenkin usein YAML:ää käsitellessään API:ja tai konfiguraatioita web-kehityksessä, mikä edellyttää luotettavia menetelmiä YAML-datan jäsentämiseksi Elmin tiukan tyypitettyyn ekosysteemiin saumattoman integraation ja manipuloinnin mahdollistamiseksi.
-
 ## Kuinka:
 Käsitelläksesi YAML:ää Elm:ssä, sinun tarvitsee yleensä muuntaa YAML JSON:ksi Elm:n ulkopuolella ja sitten käyttää Elmin sisäänrakennettua JSON-purausfunktionaalisuutta datan käsittelyyn. Vaikka tämä lähestymistapa vaatii ylimääräisen muunnosvaiheen, se hyödyntää Elmin vahvaa tyypitysjärjestelmää datan eheyden varmistamiseen. Suosittuja työkaluja YAML:sta JSON:ksi muuntamiseen sisältävät online-muuntimet tai taustapalvelut. Kun sinulla on JSON, voit käyttää Elmin `Json.Decode` moduulia datan käsittelyyn.
 

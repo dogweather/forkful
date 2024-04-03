@@ -11,9 +11,6 @@ title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Transformer une chaîne en minuscules, c'est passer tous ses caractères en minuscules. Les développeurs le font pour standardiser les entrées et faciliter les comparaisons de texte insensibles à la casse.
-
 ## How to: (Comment faire :)
 En C#, convertir une chaîne en minuscules est simple avec la méthode `ToLower()`:
 

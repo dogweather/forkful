@@ -14,9 +14,6 @@ title: Logboekregistratie
 weight: 17
 ---
 
-## Wat & Waarom?
-Loggen is in een notendop als het bijhouden van een dagboek voor je applicatie - het registreert gebeurtenissen, fouten en andere belangrijke acties die plaatsvinden terwijl de software draait. Programmeurs doen dit niet alleen om te begrijpen wat er onder de motorkap gebeurt in real-time, maar ook om een historisch register te hebben dat cruciaal is voor debugging, auditing en het optimaliseren van prestaties.
-
 ## Hoe te:
 Uit de doos biedt JavaScript een eenvoudige manier om berichten naar de console te loggen:
 

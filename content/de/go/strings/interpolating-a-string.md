@@ -12,12 +12,7 @@ title: Interpolation eines Strings
 weight: 8
 ---
 
-## Was & Warum?
-
-String-Interpolation ist eine Methode, um Strings zu konstruieren, die Variablen einbetten, was die dynamische Erstellung von Strings ermöglicht. Programmierer tun dies, um Nachrichten anzupassen, URLs zu konstruieren, SQL-Abfragen zu erstellen und mehr, was zu einem besser lesbaren und wartbaren Code führt.
-
 ## Wie geht das:
-
 In Go wird die String-Interpolation üblicherweise mit dem `fmt`-Paket erreicht, insbesondere mit der Funktion `Sprintf`, die es Ihnen ermöglicht, Variablen in einen String einzufügen, indem Formatierungsverben angegeben werden. Die Verben sind Platzhalter im Formatierungsstring und werden durch die Werte der gegebenen Variablen ersetzt. So verwenden Sie es:
 
 ```go
@@ -40,7 +35,6 @@ func main() {
 Beachten Sie, dass `%s` für Strings und `%d` für Ganzzahlen verwendet wird. Die Dokumentation des `fmt`-Pakets bietet eine umfassende Liste von Formatierungsverben für verschiedene Datentypen.
 
 ## Tiefere Einblicke
-
 Das Konzept der String-Interpolation existiert in vielen Programmiersprachen, allerdings mit unterschiedlichen Syntaxen und Fähigkeiten. In Go, obwohl die Funktion `Sprintf` des `fmt`-Pakets der am häufigsten verwendete Ansatz ist, ist es möglicherweise nicht immer der effizienteste, besonders für einfache Verkettungen oder wenn in hochleistungssensitivem Code gearbeitet wird.
 
 Das `fmt`-Paket verwendet Reflexion, um die Typen der Variablen zur Laufzeit dynamisch zu interpretieren, was, obwohl flexibel, Overhead verursacht. Für Szenarien, in denen Leistung kritisch ist, können direkte String-Verkettung oder der Typ `strings.Builder` bessere Alternativen bieten. Direkte Verkettung ist unkompliziert, kann aber bei mehreren Variablen unhandlich werden. `strings.Builder` bietet andererseits eine leistungsstärkere und lesbarere Möglichkeit, komplexe Strings in einer Schleife oder beim Umgang mit vielen Variablen zu erstellen:

@@ -21,15 +21,10 @@ title: "HTML\u306E\u89E3\u6790"
 weight: 43
 ---
 
-## 何となぜ？
-PowerShellでのHTMLパースとは、特定のデータを抽出するため、またはウェブ関連タスクを自動化するためにHTMLコンテンツを解析することです。プログラマーは、ウェブページと対話したり、ウェブコンテンツをスクレイピングしたり、フォームの送信や他のウェブインタラクションをウェブブラウザー無しで自動化したりするためにこれを行います。
-
 ## 方法：
-
 PowerShellには専用のHTMLパーサーはネイティブにはありませんが、`Invoke-WebRequest` コマンドレットを使用してHTMLコンテンツにアクセスし、パースすることができます。より複雑なパースや操作には、人気のある.NETライブラリであるHtmlAgilityPackを使用することができます。
 
 ### `Invoke-WebRequest` の使用方法：
-
 ```powershell
 # ウェブページからタイトルを取得する単純な例
 $response = Invoke-WebRequest -Uri 'http://example.com'
@@ -45,7 +40,6 @@ Example Domain
 ```
 
 ### HtmlAgilityPackの使用方法：
-
 まず、HtmlAgilityPackをインストールする必要があります。これはNuGetパッケージマネージャーを通じて行うことができます：
 
 ```powershell

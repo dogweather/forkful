@@ -16,9 +16,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---
 
-## Lý do và Mục đích:
-Chuyển đổi một ngày thành chuỗi trong C++ biến đối tượng ngày thành định dạng văn bản dễ đọc. Điều này rất quan trọng để hiển thị ngày cho người dùng và ghi nhận các sự kiện một cách thân thiện với người dùng.
-
 ## Cách thực hiện:
 Trong C++ hiện đại, thư viện `<chrono>` và `<iomanip>` là người bạn đồng hành của bạn cho các thao tác ngày-giờ. Dưới đây là một phương pháp nhanh chóng sử dụng `std::put_time`:
 

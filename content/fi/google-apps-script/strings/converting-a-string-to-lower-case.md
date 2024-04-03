@@ -13,12 +13,7 @@ title: Merkkijonon muuttaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## Mikä & Miksi?
-
-Merkkijonon muuttaminen pieniksi kirjaimiksi Google Apps Scriptillä, pilvipohjaisella skriptauskielellä Google-tuotteiden automatisointiin, on perustehtävä, joka tähtää tekstitiedon standardisointiin. Ohjelmoijat suorittavat usein tämän toiminnon varmistaakseen johdonmukaisuuden käyttäjän syötteessä, datan käsittelyssä tai merkkijonoja vertailtaessa, koska se poistaa ongelmat, jotka liittyvät kirjainkoon herkkyyteen.
-
 ## Kuinka:
-
 Merkkijonon muuttaminen pieniksi kirjaimiksi Google Apps Scriptillä on yksinkertaista, kiitos skriptausympäristön sisällä saatavilla olevien sisäänrakennettujen JavaScript-metodien. `toLowerCase()`-metodia käytät enimmäkseen. Näin voit toteuttaa sen:
 
 ```javascript
@@ -48,7 +43,6 @@ function convertArrayItemsToLower() {
 Tämä esimerkki korostaa `toLowerCase()`-metodin monipuolisuutta käsiteltäessä useita merkkijonodataa, varmistaen yhtenäisyyden koko datasetissäsi.
 
 ## Syväsukellus
-
 `toLowerCase()`-metodi, peritty JavaScriptista ja käytössä Google Apps Scriptissä, on ollut olennainen osa merkkijonokäsittelyä JavaScriptin alkuaikoina. Sen päätarkoitus on avustaa kirjainkoon suhteen herkkien tekstidatain käsittelyssä, tarve, joka nousi esiin dynaamisten, käyttäjävuorovaikutteisten web-sovellusten myötä. Sen yksinkertaisuudesta huolimatta mekanismilla on keskeinen rooli datan validoinnissa, lajittelussa ja hakualgoritmeissä vähentämällä monimutkaisuutta, jonka kirjainkoon herkkyys tuo.
 
 Suorituskyvyn osalta muunnosprosessi on erittäin optimoitu nykyaikaisissa JavaScript-moottoreissa; sen käyttöä tulisi silti harkita tarkkaan suurten datatoimintojen yhteydessä välttääkseen tarpeetonta käsittelykuormitusta.

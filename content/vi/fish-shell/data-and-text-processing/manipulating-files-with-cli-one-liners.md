@@ -18,12 +18,7 @@ title: "Thao t\xE1c v\u1EDBi c\xE1c t\u1EC7p tin b\u1EB1ng c\xE1c l\u1EC7nh CLI 
 weight: 31
 ---
 
-## Gì & Tại sao?
-
-Trong lĩnh vực lập trình, đặc biệt là khi làm việc với môi trường Linux hoặc Unix, việc thao tác tệp tin trực tiếp từ giao diện dòng lệnh (CLI) không chỉ là vấn đề tiện lợi - đó là công cụ mạnh mẽ. Nhờ vào Fish Shell, với cú pháp hiện đại và các tiện ích của nó, bạn có thể biến đổi, di chuyển, hoặc phân tích tệp tin của mình với sự nhanh nhẹn và chính xác. Đó là về việc làm nhiều hơn với ít hơn, tổ chức quy trình một cách gọn nhẹ và tận dụng sức mạnh của dòng lệnh cho quản lý tệp tin hiệu quả.
-
 ## Cách thực hiện:
-
 Thao tác tệp tin trong Fish Shell vừa trực quan vừa mạnh mẽ. Dưới đây là một số ví dụ để thể hiện khả năng của nó:
 
 1. **Tạo tệp tin** đơn giản như bạn mong đợi. Sử dụng lệnh `touch`:
@@ -85,7 +80,6 @@ end
 ```
 
 ## Sâu hơn
-
 Thao tác tệp tin từ CLI với các lệnh một dòng trong Fish Shell vừa là một kỹ năng vừa là một nghệ thuật. Về mặt lịch sử, các hệ thống Unix và Linux luôn cung cấp một bộ công cụ mạnh mẽ cho việc thao tác tệp tin, coi mọi thứ như một tệp tin theo triết lý của nó. Điều này đã mở đường cho các shell hiện đại như Fish, không chỉ chấp nhận mà còn mở rộng những triết lý này với cú pháp được cải thiện và các tiện ích được thêm vào.
 
 Mặc dù Fish cung cấp một trải nghiệm người dùng xuất sắc và khả năng viết kịch bản, đáng chú ý là một số vấn đề về tuân thủ POSIX có thể xảy ra, đặc biệt là khi các kịch bản được chuyển từ các shell truyền thống như Bash hoặc SH. Điều này là do Fish không nhằm mục đích tuân thủ POSIX theo thiết kế, thay vào đó chọn một cách tiếp cận thân thiện hơn với người dùng cả trong viết kịch bản và sử dụng dòng lệnh. Do đó, các lập trình viên nên biết rằng mặc dù Fish xuất sắc ở nhiều lĩnh vực, các kịch bản yêu cầu tuân thủ POSIX chặt chẽ có thể cần được điều chỉnh hoặc cần có các giải pháp thay thế như `bash` hoặc `zsh` để tương thích.

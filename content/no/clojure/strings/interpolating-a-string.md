@@ -11,9 +11,6 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## Hva & Hvorfor?
-Interpolering av en streng lar deg putte variabler eller uttrykk direkte inn i en streng. Programmerere gjør dette for å dynamisk bygge strenger, som gjør koden mer leselig og hendig.
-
 ## Hvordan gjøre det:
 ```Clojure
 ;; Bruke format for enkel strenginterpolering

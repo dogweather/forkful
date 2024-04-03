@@ -11,12 +11,7 @@ title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---
 
-## O Que & Por Quê?
-
-Gerar números aleatórios na programação é sobre criar valores que não podem ser previstos logicamente antes do tempo. Programadores fazem isso por uma variedade de razões, incluindo a geração de identificadores únicos, simulação de cenários no desenvolvimento de jogos, ou seleção de amostras aleatórias de dados para análise.
-
 ## Como fazer:
-
 Em Clojure, a geração de números aleatórios é direta, e existem algumas funções integradas que podem ser usadas imediatamente.
 
 Para gerar um número de ponto flutuante aleatório entre 0 (inclusivo) e 1 (exclusivo), você pode usar a função `rand`:
@@ -50,7 +45,6 @@ Esta função `rand-range` retornará um número de ponto flutuante aleatório e
 Para cenários que exigem distribuições mais complexas ou sequências de números aleatórios onde a repetibilidade é necessária (usando sementes), pode ser necessário olhar para bibliotecas adicionais que vão além do que é integrado.
 
 ## Aprofundamento
-
 O mecanismo subjacente para gerar números aleatórios na maioria das linguagens de programação, incluindo Clojure, tipicamente depende de um gerador de números pseudoaleatórios (PRNG). Um PRNG usa um algoritmo para produzir uma sequência de números que aproxima as propriedades de números aleatórios. Vale notar que, como eles são gerados algoritmicamente, não são verdadeiramente aleatórios, mas podem ser suficientes para a maioria dos propósitos práticos.
 
 Nos primórdios da computação, gerar números aleatórios de alta qualidade era um desafio significante, levando ao desenvolvimento de vários algoritmos para melhorar a aleatoriedade e distribuição. Para Clojure, as funções integradas, como `rand` e `rand-int`, são convenientes para o uso diário e cobrem um amplo espectro de casos de uso comuns.

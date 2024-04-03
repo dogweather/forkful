@@ -14,12 +14,7 @@ title: "Utskrift av feils\xF8kingsdata"
 weight: 33
 ---
 
-## Hva & Hvorfor?
-
-Å skrive ut feilsøkingsutdata innebærer strategisk plassering av loggutsagn i koden din for å vise variabelverdier, utførelsesflyt eller meldingsfeil under kjøretid. Programmerere bruker det i stor grad for å spore og diagnostisere oppførselen til skriptene sine, og sikre korrekthet og effektivitet i deres Google Apps Script-applikasjoner.
-
 ## Hvordan:
-
 Google Apps Script tilbyr `Logger`-klassen for grunnleggende feilsøking, og for mer avanserte behov, `console`-klassen introdusert i V8 kjøretidsmiljøet.
 
 **Bruke Logger:**
@@ -56,7 +51,6 @@ Nåværende status: aktiv, Antall: 150
 ```
 
 ## Dypdykk
-
 Opprinnelig var `Logger.log` det primære verktøyet for feilsøking i Google Apps Script, som tilbød en enkel, grei måte å skrive ut utdata for inspeksjon. Imidlertid, etter hvert som skript blir mer komplekse og integrerte med Google Cloud Platform-tjenester, ble behovet for en mer robust loggløsning tydelig.
 
 Enter V8 kjøretidsmiljøet, som bringer `console.log` inn i bildet. Dette ikke bare justerer Google Apps Script med standard JavaScript-syntaks, noe som gjør språket mer tilgjengelig for utviklere kjent med JavaScript men også utnytter den kraftige infrastrukturen til Google Clouds loggfunksjoner. Introduksjonen av `console.log` og dets integrasjon med Google Cloud Platform markerer en betydelig utvikling i feilsøkingsmuligheter innen Google Apps Script, og gir utviklere en mer dynamisk og skalerbar tilnærming til overvåking og feilsøking av skriptene deres.

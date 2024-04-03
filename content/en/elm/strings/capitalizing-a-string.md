@@ -11,12 +11,7 @@ title: Capitalizing a string
 weight: 2
 ---
 
-## What & Why?
-
-Capitalizing a string involves transforming the initial character of a given string to uppercase while keeping the rest in lowercase, often for standardized formatting or readability purposes. Programmers frequently perform this task to ensure data is presented consistently, especially in user interfaces or when processing and displaying user input.
-
 ## How to:
-
 In Elm, there isn't a built-in function specifically for capitalizing strings. However, you can achieve this easily by using the built-in `String` module functions like `toUpper`, `toLower`, `left`, and `dropLeft`.
 
 ```elm

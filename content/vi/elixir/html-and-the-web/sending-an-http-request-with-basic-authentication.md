@@ -17,12 +17,7 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1
 weight: 45
 ---
 
-## Gì và Tại sao?
-
-Gửi một yêu cầu HTTP với xác thực cơ bản bao gồm việc thêm tên người dùng và mật khẩu vào yêu cầu của bạn để truy cập vào một tài nguyên được bảo vệ. Các lập trình viên làm điều này để đảm bảo truy cập và chuyển giao dữ liệu một cách an toàn, ngăn chặn người dùng không được phép.
-
 ## Cách thực hiện:
-
 Để gửi một yêu cầu HTTP với xác thực cơ bản trong Elixir, bạn có thể sử dụng thư viện `HTTPoison`:
 
 ```elixir
@@ -61,7 +56,6 @@ IO.inspect(response.status_code)  # Nếu xác thực thành công, bạn sẽ n
 Nếu xác thực cơ bản thành công, bạn sẽ nhận được một mã trạng thái `200`. Xác thực thất bại thường dẫn đến `401`.
 
 ## Đào sâu
-
 Xác thực cơ bản là một phần của HTTP được định nghĩa trong RFC 7617, có từ những ngày đầu của web. Nó đơn giản nhưng kém an toàn hơn so với các phương pháp hiện đại, gửi thông tin xác thực trong mỗi yêu cầu (mã hoá base64 không phải mã hoá).
 
 Các phương án thay thế bao gồm:
@@ -77,7 +71,6 @@ Về mặt triển khai, khi sử dụng `HTTPoison`, chúng ta:
 Nhớ lại, xác thực cơ bản là dạng văn bản rõ và có thể được giải mã một cách dễ dàng. Nó chỉ an toàn qua HTTPS.
 
 ## Xem thêm
-
 - Tài liệu HTTPoison: https://hexdocs.pm/httpoison
 - Sơ đồ xác thực cơ bản (RFC 7617): https://tools.ietf.org/html/rfc7617
 - Tài liệu mô-đun `Base` của Elixir: https://hexdocs.pm/elixir/Base.html

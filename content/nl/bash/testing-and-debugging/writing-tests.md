@@ -11,12 +11,7 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-
-Het schrijven van tests verifieert dat code zich gedraagt zoals verwacht. Programmeurs testen om bugs vroegtijdig te ontdekken, betrouwbaarheid te garanderen en updates veilig te faciliteren.
-
 ## Hoe:
-
 Bash heeft geen ingebouwd testframework, maar je kunt eenvoudige testcommando's en beweringen gebruiken. Laten we een functie schrijven en deze testen met `test` of `[ ]`.
 
 Bash-functie om te testen:
@@ -43,11 +38,9 @@ Fail: abc is geen nummer
 ```
 
 ## Diepgaande duik
-
 Bash-testen is geëvolueerd. Aanvankelijk zou men handmatig scriptuitvoer controleren. Toen kwam het `test` commando in de jaren 70, waardoor scripts zelf voorwaarden konden controleren. Alternatieven zoals `Bats`, een daadwerkelijk Bash-testframework, bieden meer functies maar vereisen een externe installatie. Het combineren van `Bats` met Continuous Integration (CI) tools zoals Jenkins of GitHub Actions leidt tot robuustere testpijplijnen. Terwijl je implementeert, onthoud dat Bash minder gedetailleerd is dan de testframeworks van andere talen; gebruik `-eq` voor het vergelijken van getallen, `-z` om te controleren of een string leeg is, en `[[ ]]` voor geavanceerde functies zoals patroonmatching.
 
 ## Zie ook
-
 - [Bats: Bash Automated Testing System](https://github.com/bats-core/bats-core)
 - [Geavanceerde Bash-scriptinghandleiding: Testen en vertakken](https://tldp.org/LDP/abs/html/testbranch.html)
 - [ShellCheck: Een statische analysetool voor shellscripts](https://www.shellcheck.net/)

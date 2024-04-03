@@ -11,9 +11,6 @@ title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---
 
-## Quoi & Pourquoi ?
-Calculer une date dans le futur ou dans le passé, c'est juste des maths avec des jours, des mois, des années. Les devs manipulent des dates pour planifier des événements, des rappels, ou juste pour voir combien de temps s'est écoulé.
-
 ## Comment faire :
 ```TypeScript
 // Calculer une date 10 jours dans le futur

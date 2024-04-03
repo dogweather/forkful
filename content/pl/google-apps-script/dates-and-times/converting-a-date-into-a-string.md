@@ -14,12 +14,7 @@ title: "Konwersja daty na ci\u0105g znak\xF3w"
 weight: 28
 ---
 
-## Co i dlaczego?
-
-Konwersja dat na ciągi znaków to podstawowe zadanie, które umożliwia programistom manipulowanie informacjami o dacie i wyświetlanie ich w formacie czytelnym dla człowieka. Jest to kluczowe dla tworzenia interfejsów użytkownika, generowania raportów lub rejestrowania informacji w aplikacjach opracowanych za pomocą Google Apps Script.
-
 ## Jak to zrobić:
-
 Google Apps Script, oparty na JavaScript, pozwala na wiele metod osiągnięcia konwersji dat na ciągi znaków. Poniżej znajdują się przykłady ilustrujące różne podejścia:
 
 ### Korzystając z metody `toString()`:
@@ -53,7 +48,6 @@ Logger.log(formattedDate); // Wyjście: "2023-04-05"
 Ta metoda jest szczególnie potężna do generowania dat w formatach specyficznych dla danej lokalizacji lub dopasowanych do konkretnych wymagań aplikacji.
 
 ## Dogłębna analiza
-
 Potrzeba konwersji dat na ciągi znaków nie jest wyjątkowa dla Google Apps Script; jest powszechna we wszystkich językach programowania. Jednak podejście Google Apps Script, dziedziczone z JavaScript, oferuje elastyczny zestaw opcji dostosowany do skryptowania opartego na przeglądarkach. `Utilities.formatDate()` wyróżnia się uznaniem złożoności pracy ze strefami czasowymi – wyzwania często pomijanego.
 
 Historycznie rzecz biorąc, obsługa dat i czasu była źródłem błędów i złożoności w rozwoju oprogramowania, głównie z powodu różnic w strefach czasowych i formatach. Wprowadzenie `Utilities.formatDate()` w Google Apps Script jest ukłonem w stronę standaryzacji manipulacji datą-czasem, szczególnie w kontekście globalnego wykorzystania pakietu produktów Google.

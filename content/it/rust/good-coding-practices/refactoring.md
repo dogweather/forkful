@@ -11,12 +11,7 @@ title: Rifattorizzazione
 weight: 19
 ---
 
-## Cosa & Perché?
-
-Il **Refactoring** è il processo di ristrutturazione del codice informatico esistente—modificando la fattorizzazione—senza alterarne il comportamento esterno. I programmatori lo fanno per migliorare attributi non funzionali del software, come la leggibilità, la riduzione della complessità, migliorare la manutenibilità e creare un'architettura interna o un modello di oggetto più espressivo per migliorare l'estensibilità.
-
 ## Come fare:
-
 Rifacciamo il refactoring di un semplice pezzo di codice Rust per renderlo più idiomatico e manutenibile. Iniziamo con una funzione che calcola la somma di un vettore di interi:
 
 ```rust
@@ -55,7 +50,6 @@ fn main() {
 Nessun cambiamento nell'output—è ancora `15`—ma la versione refactorizzata è più pulita e sfrutta i punti di forza di Rust come il prestito e i metodi degli iteratori.
 
 ## Approfondimento
-
 Il Refactoring ha le sue radici nella comunità di Smalltalk ed è stato reso popolare nel mondo Java dal libro di Martin Fowler "Refactoring: Improving the Design of Existing Code". I suoi principi sono universali e si applicano anche a Rust, dove la sicurezza e la concorrenza sono di fondamentale importanza. Rust incoraggia la scrittura di codice robusto intercettando i problemi al momento della compilazione, quindi durante il refactoring, il compilatore di Rust agisce come una rete di sicurezza.
 
 Alternative al refactoring manuale includono l'uso di strumenti automatizzati, come 'rustfmt' per la formattazione del codice e 'clippy' per il linting, che possono suggerire modi più idiomatici di scrivere codice. Tuttavia, il refactoring approfondito spesso richiede una comprensione riflessiva del design del codice, che questi strumenti non possono automatizzare completamente.
@@ -63,7 +57,6 @@ Alternative al refactoring manuale includono l'uso di strumenti automatizzati, c
 In Rust, il refactoring potrebbe ruotare attorno al miglioramento dell'uso dei tipi, sfruttando efficacemente i lifetimes, riducendo le allocazioni non necessarie o impiegando modelli di concorrenza come l'uso di `Arc<Mutex<T>>` quando necessario. È anche comune passare da `unwrap()` a una gestione degli errori più espressiva con `Result<T, E>`.
 
 ## Vedi Anche
-
 Per approfondire il refactoring in Rust:
 
 - Il libro di Rust: https://doc.rust-lang.org/book/

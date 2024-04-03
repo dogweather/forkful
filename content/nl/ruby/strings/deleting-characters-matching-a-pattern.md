@@ -13,9 +13,6 @@ title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---
 
-## Wat & Waarom?
-Het verwijderen van tekens die overeenkomen met een patroon in strings gaat over het nauwkeurig verwijderen van delen die je niet nodig hebt, zoals het strippen van hashtags uit tweets. Programmeurs doen dit om gegevens op te schonen, consistent te formatteren of ze voor te bereiden op verdere verwerking.
-
 ## Hoe te:
 ```Ruby
 # Eenvoudige verwijdering met String#gsub

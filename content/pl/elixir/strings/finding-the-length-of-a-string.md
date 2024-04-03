@@ -11,9 +11,6 @@ title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---
 
-## Co i Dlaczego?
-Znalezienie długości łańcucha znaków oznacza ustalenie, ile znaków zawiera dany tekst. Programiści robią to do walidacji, formatowania, oraz by kontrolować przepływ danych.
-
 ## Jak to zrobić:
 Elixir używa funkcji `String.length/1` do znalezienia długości stringa. Oto jak to działa:
 

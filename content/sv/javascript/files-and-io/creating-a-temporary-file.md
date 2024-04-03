@@ -11,9 +11,6 @@ title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---
 
-## What & Why?
-Skapa en temporär fil är som att lägga upp en temporär hylla för data. Vi gör det för att hantera information som behöver existera under en kort period, utan att kladda ner vår permanenta lagring.
-
 ## How to:
 JavaScript har inte inbyggt stöd för att direkt skapa temporära filer. Men vi kan använda Node.js med `fs`-modulen kombinerat med `tmp`-paketet för att enkelt hantera temporära filer.
 

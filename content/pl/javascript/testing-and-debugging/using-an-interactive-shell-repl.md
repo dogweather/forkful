@@ -12,9 +12,6 @@ title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---
 
-## Co i Dlaczego?
-Interaktywne powłoki, czyli REPL-y (Read-Eval-Print Loops - Pętle Czytaj-Wykonaj-Wypisz), pozwalają na bieżąco uruchamiać kod, testować funkcje, algorytmy lub bawić się pomysłami. Są jak kartki do szybkich notatek w programowaniu, szybkie i brudne, bez konieczności ustawiania pełnego środowiska deweloperskiego.
-
 ## Jak to zrobić:
 Node.js jest dostarczany z REPL dostępnym poprzez terminal. Otwórz go, a będziesz gotowy do działania. Oto mała próbka:
 

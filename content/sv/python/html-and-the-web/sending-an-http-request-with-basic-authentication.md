@@ -11,9 +11,6 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---
 
-## Vad & Varför?
-HTTP-begäran med grundläggande autentisering används för att säkert skicka användarnamn och lösenord över nätet. Programmerare gör detta för att kontrollera användarens behörighet innan de tillåter åtkomst till skyddade resurser.
-
 ## Hur man gör:
 Sätta upp och göra en HTTP-begäran i Python med basic auth är enkelt. Använd `requests`-biblioteket för effektivitet.
 

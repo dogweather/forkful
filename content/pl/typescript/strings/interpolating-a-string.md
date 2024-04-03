@@ -11,9 +11,6 @@ title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---
 
-## What & Why?
-Interpolacja to wplecenie zmiennej w ciąg tekstowy, co ułatwia tworzenie dynamicznego tekstu. Programiści używają interpolacji, aby łatwo łączyć stałe fragmenty tekstu z zmiennymi danymi, co czyni kod bardziej czytelnym i elastycznym.
-
 ## How to:
 ```TypeScript
 let user = 'Jan Kowalski';

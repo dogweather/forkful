@@ -11,12 +11,7 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-
-Writing tests in C# involves creating automated scripts to validate the functionality of your code, ensuring it behaves as expected. Programmers do it to catch bugs early, facilitate code refactoring, and ensure new changes don't break existing functions, thereby boosting software quality and reliability.
-
 ## How to:
-
 C# developers primarily use the NUnit or xUnit frameworks for writing tests due to their flexibility and extensive feature set. Here’s a basic example using NUnit to test a simple addition function:
 
 1. **Install NUnit and NUnit3TestAdapter** via NuGet Package Manager or the .NET CLI:
@@ -70,7 +65,6 @@ dotnet test
 ```
 
 ### Sample Output:
-
 Assuming your test passes, you should see output similar to this:
 ```
 Test Run Successful.
@@ -80,7 +74,6 @@ Total tests: 1
 ```
 
 ### Using xUnit:
-
 If you prefer xUnit, the setup is similar to NUnit. Here's how you'd rewrite the test example for the `Calculator` class using xUnit:
 
 1. **Install xUnit and xUnit.runner.visualstudio**:

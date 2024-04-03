@@ -14,9 +14,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---
 
-## Làm thế nào & Tại sao?
-TOML, viết tắt của Tom's Obvious, Minimal Language, định nghĩa cách cấu trúc các tệp cấu hình. Lập trình viên sử dụng TOML bởi vì nó dễ đọc, dễ viết và ánh xạ tốt với bảng băm, làm cho nó trở thành sự lựa chọn hàng đầu cho cấu hình.
-
 ## Cách thực hiện:
 Để làm việc với TOML trong JavaScript, bạn sẽ cần một bộ phân tích cú pháp như `@iarna/toml`. Đầu tiên, cài đặt nó: `npm install @iarna/toml`. Sau đó, phân tích một chuỗi TOML thành đối tượng JavaScript hoặc chuyển đổi một đối tượng JavaScript thành định dạng TOML.
 

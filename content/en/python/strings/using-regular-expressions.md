@@ -10,9 +10,6 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-Regular expressions (regex) are patterns used to match character combinations in strings. Programmers utilize them for searching, editing, or manipulating text based on defined patterns, making them indispensable for tasks like data validation, parsing, or transformation.
-
 ## How to:
 Using regex in Python involves the `re` module, which provides a set of functions to process text using regular expressions.
 

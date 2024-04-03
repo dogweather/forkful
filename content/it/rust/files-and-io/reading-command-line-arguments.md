@@ -10,9 +10,6 @@ title: Lettura degli argomenti della riga di comando
 weight: 23
 ---
 
-## What & Why?
-Leggere gli argomenti della riga di comando significa raccogliere input dall'esterno quando il programma viene eseguito. I programmatori lo fanno per personalizzare l'esecuzione del programma senza modificare il codice.
-
 ## How to:
 Ecco come leggere gli argomenti della riga di comando in Rust:
 

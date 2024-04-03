@@ -12,12 +12,7 @@ title: Een webpagina downloaden
 weight: 42
 ---
 
-## Wat & Waarom?
-
-Een webpagina downloaden betekent het binnenhalen van de HTML, CSS en mogelijk andere bronnen van de URL die je bezoekt. Programmeurs doen dit om inhoud te verwerken, gegevens te schrapen, te controleren op updates of om websites te cachen voor offline gebruik.
-
 ## Hoe:
-
 Je kunt een webpagina downloaden in TypeScript met behulp van Node.js en de `node-fetch` bibliotheek. Zo doe je dat:
 
 ```TypeScript
@@ -48,7 +43,6 @@ Voorbeelduitvoer (afgekapt):
 ```
 
 ## Diepgaand
-
 Historisch gezien werd webinhoud gedownload via tools zoals `wget` of `curl` in command-line omgevingen. In moderne programmering hebben we echter bibliotheken zoals `node-fetch`, `axios`, of `request` (verouderd maar nog steeds in gebruik) die meer functionaliteit bieden en gemakkelijker te integreren zijn in onze JavaScript/TypeScript applicaties.
 
 Bij het downloaden van een webpagina komt meer kijken dan alleen de HTML. CSS, JavaScript, afbeeldingen en andere activa maken deel uit van de deal. Meestal wordt eerst alleen de HTML binnengehaald, en dan wordt eventuele aanvullende verwerking of downloaden bepaald door wat je van de pagina nodig hebt.
@@ -58,7 +52,6 @@ Wat implementatie betreft, is `node-fetch` in wezen de window.fetch API voor Nod
 Houd er rekening mee dat rechten voor webscraping worden bepaald door het `robots.txt` bestand en de gebruiksvoorwaarden van een website. Controleer altijd of je een site mag scrapen en respecteer snelheidslimieten om juridische problemen of het krijgen van een IP-verbod te voorkomen.
 
 ## Zie Ook
-
 - [`node-fetch` documentatie](https://github.com/node-fetch/node-fetch)
 - [MDN Web Docs over Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 - [`axios` bibliotheek](https://github.com/axios/axios)

@@ -13,9 +13,6 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co i dlaczego?
-Usuwanie cudzysłowów z łańcuchów znaków w PHP oznacza pozbywanie się tych irytujących podwójnych (`"`) lub pojedynczych (`'`) znaków cudzysłowu, które mogą zakłócać logikę twojego kodu lub zapytania do bazy danych. Programiści robią to, aby oczyścić lub zabezpieczyć dane wejściowe, zapewniając bezpieczne używanie lub przechowywanie łańcuchów znaków.
-
 ## Jak to zrobić:
 Oto prosty przykład z wykorzystaniem wbudowanych funkcji PHP:
 

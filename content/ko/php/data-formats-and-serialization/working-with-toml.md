@@ -17,9 +17,6 @@ title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE3
 weight: 39
 ---
 
-## 무엇 & 왜?
-TOML은 Tom's Obvious, Minimal Language의 줄임말로, JSON이나 YAML과 유사한 데이터 형식이지만, 인간이 읽기 쉽도록 설계되었습니다. 프로그래머들은 데이터 구조로 잘 변환되고 직관적이기 때문에 설정 파일용으로 사용합니다.
-
 ## 방법:
 먼저, `yosymfony/toml`과 같은 TOML 파서 라이브러리가 설치되어 있는지 확인하세요. TOML 파일을 파싱해 봅시다:
 
@@ -65,6 +62,7 @@ Array
 
 )
 ```
+
 ## 심층 분석
 TOML은 2013년에 GitHub 공동 창립자인 Tom Preston-Werner에 의해 제작되었으며, XML과 JSON에 대한 사용자 친화적인 대안으로 구성 파일을 위해 고안되었습니다. JSON이 기계에게 단순하지만, TOML의 구조는 복잡한 YAML 없이 인간의 눈에 쉽습니다.
 

@@ -11,9 +11,6 @@ title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---
 
-## O Quê e Por Quê?
-Converter uma string para minúsculas é o processo de transformar todos os caracteres alfabéticos de uma string para sua forma minúscula. Programadores fazem isso para padronizar dados, facilitar comparações e para atender a requisitos de sistemas que são case-sensitive.
-
 ## Como Fazer:
 ```elixir
 # Usando String.downcase para converter uma string para minúsculas

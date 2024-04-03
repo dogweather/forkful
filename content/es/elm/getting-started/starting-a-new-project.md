@@ -11,9 +11,6 @@ title: Iniciando un nuevo proyecto
 weight: 1
 ---
 
-## What & Why? (¿Qué y Por Qué?)
-Iniciar un proyecto nuevo significa configurar el entorno base para escribir y ejecutar código. Lo hacemos para proveer una estructura sólida y un punto de partida claro para nuestros programas en Elm.
-
 ## How to: (Cómo Hacerlo:)
 Crear un proyecto en Elm es sencillo. Utiliza `elm init` en tu terminal para generar la estructura básica, que incluye "elm.json" para la configuración del proyecto.
 

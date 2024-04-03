@@ -13,12 +13,7 @@ title: Een HTTP-verzoek verzenden
 weight: 44
 ---
 
-## Wat & Waarom?
-
-Het verzenden van een HTTP-verzoek houdt in dat er vanuit je Go-applicatie een oproep wordt gedaan naar een webserver, API of een andere op HTTP-gebaseerde dienst. Programmeurs doen dit om te communiceren met webbronnen, gegevens op te halen, formulieren in te dienen of te communiceren met andere services op het internet.
-
 ## Hoe te:
-
 In Go, het verzenden van een HTTP-verzoek en het afhandelen van de response, betekent gebruik maken van het `net/http` pakket. Hier is een stap-voor-stap voorbeeld dat laat zien hoe je een eenvoudige GET-aanvraag stuurt en de response leest:
 
 ```go
@@ -100,7 +95,6 @@ func main() {
 ```
 
 ## Diepgaande duik
-
 Het `net/http` pakket in Go biedt een krachtige en flexibele manier om te interageren met HTTP-servers. Het ontwerp weerspiegelt de nadruk van Go op eenvoud, efficiëntie en robuustheid. Oorspronkelijk vereisten functionaliteiten zoals het afhandelen van JSON of XML payloads het handmatig samenstellen van het request body en het instellen van geschikte headers. Naarmate Go zich ontwikkelde, heeft de community hoger-niveau pakketten ontwikkeld die deze taken verder vereenvoudigen, zoals `gorilla/mux` voor routing en `gjson` voor JSON-manipulatie.
 
 Een opmerkelijk aspect van de HTTP-client van Go is het gebruik van interfaces en structs, zoals `http.Client` en `http.Request`, die uitgebreide aanpassing en testen mogelijk maken. Je kunt bijvoorbeeld de `http.Client` wijzigen om verzoeken te laten verlopen of verbindingen levend te houden voor de prestatie.

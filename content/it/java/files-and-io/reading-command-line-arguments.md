@@ -10,9 +10,6 @@ title: Lettura degli argomenti della riga di comando
 weight: 23
 ---
 
-## Cosa & Perché?
-Leggere gli argomenti della riga di comando significa accedere ai parametri passati al tuo programma quando viene avviato da una shell. I programmatori lo fanno per personalizzare l’esecuzione del programma o per specificarne la configurazione senza dover cambiare il codice.
-
 ## Come fare:
 Ecco un esempio su come accogliere gli argomenti della riga di comando in Java:
 

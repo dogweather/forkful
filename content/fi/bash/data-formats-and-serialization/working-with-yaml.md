@@ -14,16 +14,10 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä & Miksi?
-
-YAML, joka tarkoittaa YAML Ain't Markup Languagea, on ihmisluettava tiedon serialisointistandardi, jota voidaan käyttää asetustiedostoissa sekä sovelluksissa, joissa dataa tallennetaan tai välitetään. Ohjelmoijat suosivat YAMLia sen selkeyden ja yksinkertaisuuden vuoksi, erityisesti projekteissa, jotka sisältävät monimutkaisia kokoonpanoja tai tarvitsevat helposti muokattavia tietorakenteita.
-
 ## Miten:
-
 Suoraan YAML:n kanssa työskentely Bashissa vaatii hieman kekseliäisyyttä, koska Bash ei sisällä valmiiksi tukia YAML:n jäsentämiseen. Voit kuitenkin käyttää ulkoisia työkaluja, kuten `yq`:ta (kevyt ja siirrettävä komentorivin YAML-prosessori), interaktiivisesti työskennelläksesi YAML-tiedostojen kanssa tehokkaasti. Käydään läpi joitakin yleisiä toimenpiteitä:
 
 ### `yq`:n asentaminen:
-
 Ennen esimerkkien käsittelyä, varmista että sinulla on `yq` asennettuna. Sen voi yleensä asentaa paketinhallintasi kautta, esimerkiksi Ubuntussa:
 
 ```bash
@@ -33,7 +27,6 @@ sudo apt-get install yq
 Tai voit ladata sen suoraan sen GitHub-repositoriosta.
 
 ### Arvon lukeminen:
-
 Oletetaan, että sinulla on tiedosto nimeltä `config.yaml`, jossa on seuraava sisältö:
 
 ```yaml
@@ -58,7 +51,6 @@ localhost
 ```
 
 ### Arvon päivittäminen:
-
 Käyttäjän nimen päivittämiseen `config.yaml`:ssa, käytä `yq eval` komentoa `-i` (paikallaan) valitsimen kanssa:
 
 ```bash
@@ -78,7 +70,6 @@ newadmin
 ```
 
 ### Uuden elementin lisääminen:
-
 Lisätäksesi uuden elementin tietokanta-osioon, kuten uusi kenttä `timeout`:
 
 ```bash
@@ -88,7 +79,6 @@ yq e '.database.timeout = 30' -i config.yaml
 Tiedoston sisällön tarkistaminen vahvistaa lisäyksen.
 
 ### Elementin poistaminen:
-
 Poistaaksesi salasanan käyttäjän alta:
 
 ```bash

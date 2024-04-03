@@ -11,9 +11,6 @@ title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---
 
-## Vad & Varför?
-Att konvertera ett datum till en sträng innebär att omvandla datumdata till en textrepresentation. Programmerare gör detta för att underlätta visning och lagring i textbaserade format som JSON eller CSV.
-
 ## Så här gör du:
 ```rust
 use chrono::{DateTime, Utc, TimeZone};

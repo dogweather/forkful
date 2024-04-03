@@ -12,9 +12,6 @@ title: Twee datums vergelijken
 weight: 27
 ---
 
-## Wat & Waarom?
-Twee datums vergelijken betekent uitzoeken of de ene datum vóór, na, of hetzelfde is als een andere. Programmeurs doen dit om planning, deadlines, chronologische sortering, en meer te beheren.
-
 ## Hoe:
 Java maakt het vrij eenvoudig om datums te vergelijken. Gebruik `LocalDate` en de methoden `compareTo`, `isBefore`, of `isAfter`. Hier is de kern:
 

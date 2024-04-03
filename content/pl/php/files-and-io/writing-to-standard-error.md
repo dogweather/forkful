@@ -15,12 +15,7 @@ title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---
 
-## Co i dlaczego?
-
-Pisanie do standardowego błędu (stderr) w PHP polega na kierowaniu komunikatów błędów lub diagnozy oddzielnie od standardowego wyjścia (stdout), co pozwala programistom lepiej zarządzać swoimi strumieniami wyjściowymi dla celów debugowania i logowania. Programiści wykorzystują tę technikę, aby zapewnić, że komunikaty o błędach nie zakłócają wyjścia programu, ułatwiając monitorowanie i rozwiązywanie problemów z aplikacjami.
-
 ## Jak to zrobić:
-
 W PHP, pisanie do stderr można osiągnąć za pomocą funkcji `fwrite()` wraz z predefiniowaną stałą `STDERR`, która reprezentuje strumień wyjścia błędów.
 
 ```php

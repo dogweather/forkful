@@ -11,9 +11,6 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## Co i dlaczego?
-Łączenie stringów to po prostu sklejanie ich końców, tworząc jeden dłuższy tekst. Programiści robią to, żeby skonstruować wiadomości, dynamiczne URL-e czy po prostu połączyć dane w czytelną całość.
-
 ## Jak to zrobić:
 W Clojure, łączenie stringów jest proste jak śniadanie. Użyj `str`, żeby połączyć kawałki tekstu razem. Oto przykłady:
 

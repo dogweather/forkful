@@ -22,16 +22,10 @@ title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
 weight: 10
 ---
 
-## 무엇이며 왜 사용하나?
-
-Google Apps Script를 사용한 텍스트 검색 및 교체는 문서, 스프레드시트 또는 기타 Google 앱스 콘텐츠에서 특정 문자열을 프로그래밍 방식으로 식별하고 다른 텍스트 값으로 대체하는 것을 포함합니다. 프로그래머는 대량의 콘텐츠 편집을 자동화하고, 일반적인 오류를 수정하고, 문서 전체에 걸쳐 용어를 표준화하거나, 템플릿에 동적 데이터를 삽입하기 위해 이 기능을 활용합니다.
-
 ## 방법:
-
 Google Apps Script는 특히 Google Docs와 Sheets 내에서 텍스트를 검색하고 교체하는 간단한 방법을 제공합니다. 아래는 두 가지 예시입니다.
 
 ### Google Docs:
-
 Google 문서에서 텍스트를 검색하고 교체하려면 주로 `DocumentApp` 클래스와 상호 작용합니다.
 
 ```javascript
@@ -52,7 +46,6 @@ searchReplaceInDoc();
 이 코드 스니펫은 활성 Google 문서에서 `'searchText'`의 모든 발생을 `'replacementText'`로 교체합니다.
 
 ### Google Sheets:
-
 마찬가지로 Google Sheets에서는 `SpreadsheetApp`을 사용하여 검색 및 교체 작업을 수행할 수 있습니다:
 
 ```javascript
@@ -71,7 +64,6 @@ searchReplaceInSheet();
 이 예에서 `createTextFinder('searchText')`는 활성 시트에서 'searchText'를 검색하고, `replaceAllWith('replacementText')`는 모든 발생을 'replacementText'로 교체합니다.
 
 ## 심층 분석
-
 Google Apps Script의 검색 및 교체 기능은 웹 기반의 특성에 크게 영향을 받아 스크립트가 다양한 Google 앱스에서 문제없이 텍스트를 조작할 수 있게 합니다. 역사적으로, 이 기능은 Perl 및 Python과 같은 언어에서 정규 표현식 및 문자열 함수를 사용한 프로그래밍에서 텍스트 처리 및 조작의 넓은 맥락에서 비롯되었습니다.
 
 Google Apps Script의 검색 및 교체 기능은 간단한 대체 작업에 대해서는 강력하나, 일부 다른 언어에서 찾을 수 있는 전체 정규 표현식 기능은 부족합니다. 예를 들어, Google Sheets에서 `createTextFinder`에서 기본 정규 표현식을 사용할 수 있지만, Perl이나 Python에 비해 복잡한 패턴 매칭 및 조작 옵션이 제한적입니다.

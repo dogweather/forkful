@@ -11,9 +11,6 @@ title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---
 
-## What & Why?
-Eliminar caracteres que coinciden con un patrón nos permite limpiar y manipular strings según nuestras necesidades, como quitar espacios o caracteres especiales. Los programadores lo hacen para validar input, preparar datos para almacenamiento o simplificar el análisis de texto.
-
 ## How to:
 ```java
 import java.util.regex.Pattern;

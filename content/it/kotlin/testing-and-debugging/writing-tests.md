@@ -13,12 +13,7 @@ title: Scrivere test
 weight: 36
 ---
 
-## Cosa & Perché?
-
-Scrivere test in Kotlin implica la creazione di frammenti di codice che validano automaticamente la correttezza funzionale dei moduli software, assicurando che funzionino come previsto. I programmatori lo fanno per individuare precocemente i bug, facilitare il refactoring del codice e fornire documentazione su come si intendono lavorare i componenti software.
-
 ## Come fare:
-
 Kotlin supporta lo sviluppo guidato dai test con vari framework, i più popolari sono JUnit, Kotest e MockK per il mocking. Ecco un semplice esempio utilizzando JUnit:
 
 ```kotlin

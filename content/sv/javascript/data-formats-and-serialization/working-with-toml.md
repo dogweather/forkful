@@ -11,9 +11,6 @@ title: Att arbeta med TOML
 weight: 39
 ---
 
-## Vad & Varför?
-TOML, som står för Tom's Obvious, Minimal Language, definierar hur konfigurationsfiler ska struktureras. Programmerare arbetar med TOML eftersom det är lätt att läsa, skriva och mappar fint till en hashtabell, vilket gör det till ett givet val för konfigurationer.
-
 ## Hur man gör:
 För att arbeta med TOML i JavaScript behöver du en parser som `@iarna/toml`. Först, installera den: `npm install @iarna/toml`. Sedan, tolka en TOML-sträng till ett JavaScript-objekt eller konvertera ett JavaScript-objekt till TOML-format.
 

@@ -15,9 +15,6 @@ title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---
 
-## What & Why? (什么及为什么？)
-发送HTTP请求，就是向网络服务器发信息，等回应。程序员这么做，主要是为了和网上服务交换数据。
-
 ## How to: (如何操作：)
 在Fish Shell中，发送HTTP请求可以用`curl`命令。下面是代码示例：
 

@@ -14,12 +14,7 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## Co i dlaczego?
-
-Porównywanie dwóch dat w języku C polega na ustaleniu, która z nich jest wcześniejsza, a która późniejsza, lub czy są takie same. Możliwość ta jest kluczowa w aplikacjach zajmujących się planowaniem, terminami czy prowadzeniem ewidencji, ponieważ pozwala na organizowanie i manipulowanie danymi wrażliwymi na czas.
-
 ## Jak to zrobić:
-
 C nie posiada wbudowanego typu dla dat, co wymusza użycie biblioteki `time.h` do pracy ze strukturami daty i czasu. Struktura `tm` oraz funkcja `difftime()` są powszechnie używane do porównywania dat. Poniżej znajduje się przykład pokazujący, jak porównać dwie daty:
 
 ```c
@@ -69,7 +64,6 @@ Pierwsza data jest wcześniejsza niż druga.
 Ten program inicjuje dwie struktury `tm` określonymi datami, konwertuje je do formatu `time_t` za pomocą `mktime()` i finalnie porównuje je przy użyciu `difftime()`, który zwraca różnicę w sekundach (jako `double`) między dwoma czasami.
 
 ## Wnikliwa analiza
-
 W początkowych dniach języka C, operacje na datach i czasie wymagały ręcznych obliczeń, często uwzględniających lata przestępne, zmienne liczby dni w miesiącach, a nawet sekundy przestępne. Wprowadzenie `time.h` do standardu ANSI C wprowadziło standaryzację obsługi czasu w C, upraszczając operacje na datach i czasie.
 
 Użycie `time.h` do porównywania dat jest proste, ale ma swoje ograniczenia. Struktura `tm` nie uwzględnia stref czasowych ani czasu letniego, a `difftime()` dostarcza różnicę tylko w sekundach, brakując drobniejszego ziarnistości dla niektórych aplikacji.

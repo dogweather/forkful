@@ -11,9 +11,6 @@ title: Manejo de errores
 weight: 16
 ---
 
-## ¿Qué y Por Qué?
-El manejo de errores trata sobre cómo gestionar lo inesperado en los programas, como un portero que lidiar con los alborotadores. A los programadores les gusta que todo sea fluido; el manejo de errores ayuda a mantener los problemas en línea, asegurándose de que su código no tropiece y caiga cuando se enfrenta con lo inesperado.
-
 ## Cómo hacerlo:
 Clojure, al igual que sus ancestros Lisp, se basa en las excepciones para tratar los errores. Aquí te mostramos cómo demostrar de qué estás hecho cuando las cosas se ponen difíciles.
 

@@ -13,12 +13,7 @@ title: Loggning
 weight: 17
 ---
 
-## Vad & Varför?
-
-Loggning i Dart avser processen att spela in olika nivåer av information under körningen av ett program. Programmerare gör detta för att övervaka mjukvarans beteende, felsöka problem och analysera prestanda, vilket gör det enklare att underhålla och förbättra applikationen över tid.
-
 ## Hur man gör:
-
 Dart inkluderar en enkel loggningsmekanism genom biblioteket `dart:developer`. För mer sofistikerade loggningsbehov vänder sig programmerare ofta till tredjepartsbibliotek som `logger` och `log4dart`.
 
 ### Att använda `dart:developer`

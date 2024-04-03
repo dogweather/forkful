@@ -12,12 +12,7 @@ title: Een tekstbestand schrijven
 weight: 24
 ---
 
-## Wat & Waarom?
-
-Een tekstbestand schrijven in PHP gaat over het opslaan van gegevens naar een bestand op de server. Programmeurs doen dit vaak voor datalogging, configuratie-instellingen, of het exporteren van gegevens die bedoeld zijn om gelezen te worden door mensen of andere systemen.
-
 ## Hoe:
-
 Schrijven naar een bestand in PHP kan zo simpel zijn als het gebruiken van de `file_put_contents()` functie, die een bestandsnaam en een reeks gegevens neemt. Hier is een snel voorbeeld:
 
 ```php
@@ -43,13 +38,11 @@ fclose($file);
 Beide scripts resulteren in dezelfde uitvoer in "voorbeeld.txt".
 
 ## Diepgaand
-
 Historisch gezien boden PHP's `fopen()`, `fwrite()`, en `fclose()` gedetailleerde controle voor bestandschrijfbewerkingen, zoals toevoegen of vergrendelen. `file_put_contents()` werd geïntroduceerd in PHP 5 voor een vereenvoudigde benadering.
 
 Alternatieven omvatten het gebruik van `fputcsv()` voor het genereren van CSV-bestanden of de `SplFileObject` klasse voor object-georiënteerde bestandsbewerkingen. Implementatiedetails omvatten het afhandelen van bestandsrechten en het zorgen voor uitzonderingsafhandeling of foutcontrole met `or die()` of `try-catch` blokken.
 
 ## Zie Ook
-
 - [PHP file_put_contents()](https://www.php.net/manual/en/function.file-put-contents.php)
 - [PHP fopen()](https://www.php.net/manual/en/function.fopen.php)
 - [PHP fwrite()](https://www.php.net/manual/en/function.fwrite.php)

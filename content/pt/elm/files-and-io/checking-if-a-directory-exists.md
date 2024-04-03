@@ -11,9 +11,6 @@ title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---
 
-## O Que é & Porquê?
-Checar se um diretório existe é o processo de verificar se um caminho específico refere-se a um diretório no sistema de arquivos. Programadores fazem isso para evitar erros ao tentar acessar, ler ou escrever em um diretório que pode não estar presente.
-
 ## Como Fazer:
 Elm é uma linguagem para aplicações web e, portanto, não tem acesso direto ao sistema de arquivos do servidor ou do cliente, então você não pode verificar diretamente se um diretório existe como faria em outras linguagens como Node.js ou Python. Mas você pode fazer requisições para um servidor e manejar respostas para inferir se um diretório ou recurso está disponível. Abaixo está um exemplo simplificado usando `Http` para checar se um recurso existe:
 

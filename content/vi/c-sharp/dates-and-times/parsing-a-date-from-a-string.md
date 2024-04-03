@@ -15,9 +15,6 @@ title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---
 
-## Cái Gì & Tại Sao?
-Phân tích cú pháp một ngày từ một chuỗi nghĩa là chuyển đổi văn bản mô tả một ngày thành một đối tượng `DateTime`. Điều này rất quan trọng để lưu và diễn giải các ngày từ nhiều định dạng khác nhau như là những ngày thực sự trong mã của bạn.
-
 ## Cách Thực Hiện:
 ```C#
 using System;

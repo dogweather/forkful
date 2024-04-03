@@ -11,9 +11,6 @@ title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---
 
-## What & Why?
-Att extrahera delsträngar handlar om att plocka ut specifika delar av strängar. Programmerare gör detta för att bearbeta, analysera eller manipulera textdata effektivt.
-
 ## How to:
 Extrahera en delsträng i TypeScript? Använd `substring`, `slice` eller `substr`. Så här:
 

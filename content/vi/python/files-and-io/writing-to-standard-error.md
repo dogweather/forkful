@@ -17,9 +17,6 @@ title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---
 
-## Gì và Tại sao?
-Lỗi chuẩn, thường được gọi là stderr, là một luồng tập tin được định nghĩa trước để ghi nhật ký các thông báo lỗi. Lập trình viên sử dụng nó để phân biệt đầu ra chương trình thường xuyên với các thông báo lỗi, giúp việc gỡ lỗi trở nên dễ dàng hơn.
-
 ## Làm thế nào:
 Để viết vào stderr trong Python:
 

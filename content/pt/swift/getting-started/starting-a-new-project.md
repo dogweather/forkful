@@ -11,9 +11,6 @@ title: Iniciando um novo projeto
 weight: 1
 ---
 
-## O Que & Porquê?
-Iniciar um novo projeto em Swift é como abrir um livro em branco: você começa a construir algo do zero. Programadores fazem isso para transformar ideias em apps funcionais, seja para solucionar problemas, explorar novas tecnologias ou simplesmente por diversão.
-
 ## Como Fazer:
 Abrir o Xcode, escolher "File" > "New" > "Project", e então:
 

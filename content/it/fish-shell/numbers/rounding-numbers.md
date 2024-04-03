@@ -10,9 +10,6 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Cos'è & Perché?
-Arrotondare i numeri consiste nel tagliare le cifre decimali per semplificare i dati o adattarli a formati specifici. I programmatori lo fanno per visualizzare i dati in modo user-friendly, per un'archiviazione efficiente, o quando la precisione decimale non è rilevante.
-
 ## Come fare:
 In Fish, l'arrotondamento dei numeri si basa sul comando `math`. Usare `math -s0` per arrotondare all'intero più vicino.
 

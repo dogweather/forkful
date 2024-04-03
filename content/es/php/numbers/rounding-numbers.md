@@ -10,9 +10,6 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## ¿Qué y por qué?
-Redondear números significa eliminar los decimales hasta una precisión determinada, a menudo hasta números enteros. Los programadores redondean para simplificar cálculos, mejorar el rendimiento o hacer que las salidas sean amigables para el usuario.
-
 ## Cómo hacerlo:
 PHP ofrece varias maneras de redondear números: `round()`, `ceil()` y `floor()`. Así es como funcionan:
 

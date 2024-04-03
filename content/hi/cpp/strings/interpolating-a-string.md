@@ -22,9 +22,6 @@ title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0907\u0902\u091F\u093
 weight: 8
 ---
 
-## What & Why? (क्या और क्यों?)
-String interpolation में हम variables और expressions को straightway strings के अंदर mix करते हैं, जिससे कोड read करना और write करना दोनों आसान हो जाता है। Programmers इसे use करते हैं क्योंकि यह कोड को और भी clean और maintainable बनाता है।
-
 ## How to: (कैसे करें:)
 ```cpp
 #include <iostream>

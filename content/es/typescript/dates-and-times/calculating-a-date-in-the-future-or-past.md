@@ -11,9 +11,6 @@ title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---
 
-## ¿Qué & Por Qué?
-Calcular fechas futuras o pasadas significa determinar un día y hora específicos antes o después de una fecha dada. Los programadores lo hacen para manejar eventos, suscripciones, recordatorios, y cualquier cosa que necesite seguimiento temporal.
-
 ## Cómo Hacerlo:
 ```TypeScript
 // Sumar días a la fecha actual

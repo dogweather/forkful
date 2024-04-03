@@ -15,9 +15,6 @@ title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---
 
-## Điều gì & Tại sao?
-Tìm độ dài của một chuỗi nghĩa là đếm số lượng ký tự trong đó. Các lập trình viên thực hiện điều này để xác thực đầu vào, kích cỡ buffer, hoặc lặp qua các ký tự.
-
 ## Cách thực hiện:
 Dưới đây là cách để lấy độ dài của một chuỗi trong Fish:
 

@@ -11,9 +11,6 @@ title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---
 
-## Vad & Varför?
-Att skapa en temporär fil innebär att förse ett program med en fil som bara existerar under dess körtid, och som oftast raderas automatiskt. Programmerare gör det för att hantera data temporärt utan att riskera användarens data eller kladda ner filsystemet.
-
 ## Hur man gör:
 ```java
 import java.io.File;

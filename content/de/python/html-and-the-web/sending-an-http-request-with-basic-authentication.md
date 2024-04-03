@@ -10,9 +10,6 @@ title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-HTTP-Anfragen mit Basisauthentifizierung senden bedeutet, Benutzername und Passwort sicher mitzuschicken, um Zugang zu geschützten Ressourcen zu bekommen. Programmierer nutzen dies, um APIs oder Web-Dienste zu authentifizieren, die einfache Anmeldeinformationen erfordern.
-
 ## So geht's:
 Hier ist ein Beispiel, wie man eine HTTP-Anfrage mit Basisauthentifizierung in Python verschickt:
 

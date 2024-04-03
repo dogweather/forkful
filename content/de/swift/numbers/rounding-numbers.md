@@ -11,12 +11,7 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-
-Das Runden von Zahlen bedeutet, einen numerischen Wert auf eine spezifische Genauigkeit zu approximieren, typischerweise, um unerwünschte Dezimalstellen zu entfernen. Programmierer runden, um Speicher zu managen, die Lesbarkeit zu verbessern und domänenspezifischen Anforderungen zu entsprechen, wie etwa Währungsbeschränkungen.
-
 ## Wie zu:
-
 Swift bietet mehrere Möglichkeiten, Zahlen zu runden. Hier ein Vorgeschmack:
 
 ```Swift
@@ -40,7 +35,6 @@ print("Standard: \(standardRounded), Dezimal: \(decimalRounded), Unten: \(rounde
 Ausgabe: `Standard: 3.0, Dezimal: 3.142, Unten: 3.0, Oben: 4.0`
 
 ## Vertiefung
-
 Historisch gesehen ist das Runden ein mathematisches Konzept, das es schon vor Computern gab, unerlässlich im Handel und in der Wissenschaft. Swifts `Foundation` Framework bietet umfassende Rundungsfunktionalität:
 
 - `round(_: )` ist das gute alte Aufrunden zur nächsten halben Zahl.
@@ -50,5 +44,4 @@ Historisch gesehen ist das Runden ein mathematisches Konzept, das es schon vor C
 Seien Sie sich des `Decimal` Typs für präzise finanzielle Berechnungen bewusst, der Gleitkommafehler vermeidet. Erkunden Sie auch `NSDecimalNumber` für die Kompatibilität mit Objective-C.
 
 ## Siehe auch
-
 - IEEE-Standard für Gleitkommaarithmetik (IEEE 754): [IEEE 754](https://ieeexplore.ieee.org/document/4610935)

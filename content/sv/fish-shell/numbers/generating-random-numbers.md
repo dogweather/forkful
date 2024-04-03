@@ -11,12 +11,7 @@ title: Generera slumptal
 weight: 12
 ---
 
-## Vad & Varför?
-
-Att generera slumpmässiga tal är en grundläggande uppgift i programmering, använd för allt från dataurval till spelutveckling. I Fish Shell möjliggör användningen av systemverktyg och inbyggda funktioner för detta syfte att programmerare effektivt kan inkorporera slumpmässighet och variabilitet i skript och applikationer.
-
 ## Hur man gör:
-
 Att generera ett slumpmässigt tal i Fish kan vara enkelt, med hjälp av kombinationen av systemverktyg och skal-funktioner. Nedan följer några exempel som visar hur man genererar slumpmässiga tal inom angivna intervall.
 
 **Generera ett slumpmässigt tal mellan 0 och 100:**
@@ -68,7 +63,6 @@ B
 Observera att utdatan kommer att variera varje gång du kör dessa kommandon på grund av slumpmässighetens natur.
 
 ## Djupdykning
-
 Fish Shells `random`-funktion erbjuder ett lättanvänt gränssnitt för att generera pseudo-slumpmässiga tal. Internt, omsluter den systemnivås slumpmässiga nummergenereringsverktyg, vilket erbjuder ett portabelt sätt att introducera slumpmässighet i dina skript. Dock är det viktigt att komma ihåg att slumpmässigheten som `random` tillhandahåller är tillräcklig för de flesta skriptuppgifter men kanske inte uppfyller de kryptografiska säkerhetskraven för applikationer som behöver en högre grad av oförutsägbarhet.
 
 För höginsatta säkerhetssammanhang, överväg att använda dedikerade verktyg eller programmeringsbibliotek designade för kryptografiska ändamål, vilka tillhandahåller starkare garantier för slumpmässighet. Dock, för allmänna skript och applikationer där de högsta säkerhetsstandarderna för slumpmässighet inte är ett krav, erbjuder Fish Shells `random`-funktion en bekväm och effektiv lösning.

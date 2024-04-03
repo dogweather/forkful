@@ -9,9 +9,6 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-Fehlerbehandlung bedeutet, für den Fall zu planen, dass etwas schiefgeht. Sie ist wichtig, weil sie Abstürze verhindert und Ihre Software robust und benutzerfreundlich macht.
-
 ## Wie geht das:
 Hier ist ein grundlegender try-catch-Block, um eine Ausnahme zu behandeln:
 

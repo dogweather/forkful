@@ -11,9 +11,6 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i dlaczego?
-Liczby zespolone składają się z części rzeczywistej i części urojonej. Programiści używają ich w dziedzinach takich jak przetwarzanie sygnałów, mechanika kwantowa oraz wszędzie tam, gdzie wymagane są obliczenia ponad zwykłe liczby rzeczywiste, ponieważ normalne liczby rzeczywiste po prostu nie wystarczają.
-
 ## Jak to zrobić:
 Bash domyślnie nie obsługuje liczb zespolonych. Często używa się zewnętrznych narzędzi takich jak `bc` z opcją `-l`. Oto jak przetwarzasz liczby zespolone w bashu:
 

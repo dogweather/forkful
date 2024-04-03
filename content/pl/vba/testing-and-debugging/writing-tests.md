@@ -14,12 +14,7 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i dlaczego?
-
-Pisanie testów w programowaniu polega na tworzeniu konkretnych procedur w celu walidacji funkcjonalności i wydajności fragmentów kodu, zapewniając ich prawidłowe działanie w różnych warunkach. Programiści robią to, by wcześnie wykrywać błędy, poprawiać jakość kodu oraz ułatwiać przyszłe prace konserwacyjne i rozbudowę kodu.
-
 ## Jak to zrobić:
-
 Choć Visual Basic for Applications (VBA) nie jest wyposażony w wbudowany framework do testowania, podobnie do tych dostępnych w językach takich jak Python czy JavaScript, wciąż możesz implementować proste procedury testowe do sprawdzania integralności swojego kodu. Oto przykład ilustrujący tę ideę:
 
 Załóżmy, że masz w VBA funkcję, która dodaje dwie liczby:
@@ -47,7 +42,6 @@ End Sub
 Uruchomienie `TestAddNumbers` wyświetli okno wiadomości wskazujące, czy test zakończył się sukcesem, czy porażką, w oparciu o wynik działania funkcji. Choć jest to scenariusz uproszczony, możesz budować bardziej złożone testy, włączając do nich pętle, różne wartości wejściowe, i testowanie wielu funkcji.
 
 ## Bardziej szczegółowo
-
 Prezentowana tutaj metoda pisania testów w VBA jest manualna i pozbawiona funkcji bardziej zaawansowanych frameworków do testowania dostępnych w innych środowiskach programistycznych, takich jak automatyczne uruchamianie testów, procedury przygotowania i zakończenia oraz zintegrowane raportowanie wyników testów. Przed szerszym przyjęciem frameworków do testowania jednostkowego i rozwojem sterowanym testami (TDD), manualne procedury testowe, podobne do opisanej, były powszechne. Chociaż ta metoda jest prosta i może być skuteczna dla małych projektów czy celów edukacyjnych, nie jest skalowalna ani efektywna dla większych projektów lub zespołów.
 
 W środowiskach, które wspierają bogatsze zestawy narzędzi deweloperskich, programiści często zwracają się ku frameworkom jak NUnit dla aplikacji .NET czy JUnit dla aplikacji Java, które dostarczają kompleksowych narzędzi do systematycznego pisania i uruchamiania testów. Te frameworki oferują zaawansowane funkcje, takie jak asercje wyników testów, tworzenie obiektów atrap i mierzenie pokrycia kodu.

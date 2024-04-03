@@ -11,9 +11,6 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-Fehlerbehandlung in Swift bedeutet, auf Probleme zu reagieren, die auftreten, wenn Ihr Code ausgeführt wird. Wir tun dies, um das Chaos zu kontrollieren – um zu verhindern, dass Apps abstürzen und um dem Benutzer eine reibungslose Erfahrung zu bieten.
-
 ## Wie geht das:
 Swift verwendet Fehlerbehandlung mit `do`, `try` und `catch` Blöcken. Schauen wir uns das an:
 

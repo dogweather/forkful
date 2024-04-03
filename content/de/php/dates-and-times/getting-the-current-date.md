@@ -12,10 +12,9 @@ title: Den aktuellen Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-Das Abrufen des aktuellen Datums in PHP ist eine grundlegende Aufgabe, die es Ihnen ermöglicht, das Systemdatum und die Systemzeit abzurufen und zu manipulieren. Dies ist entscheidend für Funktionen wie das Protokollieren, Zeitstempeln von Beiträgen, Planen von Ereignissen oder Ausführen von zeitkritischen Operationen in Ihren Anwendungen.
-
 ## Wie geht das:
+
+
 ### Native PHP
 Die integrierte `date()`-Funktion von PHP ist der direkteste Weg, um das aktuelle Datum zu erhalten. Sie können das Datum auf verschiedene Weise formatieren, indem Sie den Formatparameter angeben.
 

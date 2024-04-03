@@ -14,12 +14,7 @@ title: Werken met JSON
 weight: 38
 ---
 
-## Wat & Waarom?
-
-JSON, of JavaScript Object Notation, is een lichtgewicht formaat voor het opslaan en transporteren van gegevens, ideaal voor communicatie van server naar client en configuratiebestanden. Programmeurs maken er gebruik van in Google Apps Script voor naadloze gegevensuitwisseling tussen Google-diensten (zoals Sheets, Docs, Drive) en externe bronnen, vanwege de leesbare structuur en eenvoudige integratie binnen op JavaScript gebaseerde omgevingen.
-
 ## Hoe te:
-
 In Google Apps Script is het manipuleren van JSON een eenvoudig proces, grotendeels dankzij de native ondersteuning die JavaScript biedt voor het parseren en stringificeren van JSON. Hier zijn enkele veelvoorkomende bewerkingen:
 
 **1. JSON Parseren**: Stel dat we een JSON-tekenreeks ophalen van een webservice; het parseren naar een JavaScript-object is essentieel voor gegevensmanipulatie.
@@ -54,7 +49,6 @@ Logger.log(jsonString); // Output: '[{"name":"Project 1","version":"1.0"},{"name
 ```
 
 ## Diep Duiken
-
 De alomtegenwoordigheid van JSON in moderne webapplicaties kan niet worden onderschat, geworteld in zijn eenvoud en hoe naadloos het integreert met JavaScript, de taal van het web. Het ontwerp, geïnspireerd door JavaScript-objectliteralen, zij het strikter, vergemakkelijkt de snelle adoptie ervan. In het begin van de jaren 2000 won JSON aan populariteit als een alternatief voor XML voor op AJAX gebaseerde webapplicaties, en bood een lichter en minder omslachtig gegevensuitwisselformaat. Gezien de diepe integratie van Google Apps Script met diverse Google API's en externe diensten, fungeert JSON als een cruciaal formaat voor het structureren, transporteren en manipuleren van gegevens over deze platforms.
 
 Terwijl JSON de boventoon voert voor webapplicaties, bestaan er alternatieve gegevensformaten zoals YAML voor configuratiebestanden of Protobuf voor efficiëntere binaire serialisatie in prestatie-intensieve omgevingen. Echter, de balans van JSON tussen leesbaarheid, gebruiksgemak en brede ondersteuning in programmeertalen en tools verstevigt zijn positie als de standaardkeuze voor veel ontwikkelaars die zich in Google Apps Script en daarbuiten wagen.

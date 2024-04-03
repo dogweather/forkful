@@ -12,11 +12,8 @@ title: Trabajando con JSON
 weight: 38
 ---
 
-## Qué y Por Qué?
-
-Trabajar con JSON (JavaScript Object Notation) implica analizar datos JSON para convertirlos de y hacia un formato utilizable en TypeScript. Los programadores hacen esto para manipular, almacenar o transmitir datos estructurados fácilmente, dado que JSON es liviano, basado en texto y fácilmente legible tanto por humanos como por máquinas.
-
 ## Cómo:
+
 
 ### Analizando JSON a un Objeto TypeScript
 Para convertir una cadena JSON a un objeto TypeScript, utilizas el método `JSON.parse()`. Esto es útil al recibir datos JSON de un servidor web o al leer un archivo JSON.

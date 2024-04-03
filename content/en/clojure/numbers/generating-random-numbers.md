@@ -11,12 +11,7 @@ title: Generating random numbers
 weight: 12
 ---
 
-## What & Why?
-
-Generating random numbers in programming is about creating values that cannot be predicted logically ahead of time. Programmers do this for a variety of reasons, including generating unique identifiers, simulating scenarios in game development, or selecting random samples from data for analysis.
-
 ## How to:
-
 In Clojure, random number generation is straightforward, and there are a couple of built-in functions that can be used right away.
 
 To generate a random floating-point number between 0 (inclusive) and 1 (exclusive), you can use the `rand` function:
@@ -50,7 +45,6 @@ This function `rand-range` will return a random floating-point number between th
 For scenarios requiring more complex distributions or sequences of random numbers where repeatability is necessary (using seeds), you might need to look into additional libraries that extend beyond what's built-in.
 
 ## Deep Dive
-
 The underlying mechanism for generating random numbers in most programming languages, including Clojure, typically relies on a pseudo-random number generator (PRNG). A PRNG uses an algorithm to produce a sequence of numbers that approximates the properties of random numbers. It's worth noting that because these are algorithmically generated, they are not truly random but can be sufficient for most practical purposes.
 
 In the early days of computing, generating high-quality random numbers was a significant challenge, leading to the development of various algorithms to improve randomness and distribution. For Clojure, the built-in functions, such as `rand` and `rand-int`, are convenient for everyday use and cover a broad spectrum of common use cases.

@@ -15,11 +15,7 @@ title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---
 
-## Cái gì & Tại sao?
-Tạo số ngẫu nhiên trong Dart liên quan đến việc tạo các giá trị số mà không thể dự đoán trước và khác nhau mỗi khi thực thi. Lập trình viên tận dụng chức năng này cho nhiều mục đích, từ mô phỏng các tình huống thế giới thực trong môi trường kiểm tra đến việc kích hoạt cơ chế trò chơi và đảm bảo an ninh thông qua sự ngẫu nhiên trong các hoạt động mã hóa.
-
 ## Làm thế nào:
-
 Thư viện cốt lõi của Dart bao gồm hỗ trợ để tạo số ngẫu nhiên với lớp `Random` được tìm thấy trong `dart:math`. Dưới đây là một ví dụ cơ bản:
 
 ```dart

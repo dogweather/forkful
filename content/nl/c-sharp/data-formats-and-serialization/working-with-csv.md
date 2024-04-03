@@ -13,11 +13,8 @@ title: Werken met CSV
 weight: 37
 ---
 
-## Wat & Waarom?
-
-Werken met CSV (Comma-Separated Values) betekent het lezen en schrijven van gegevens in een eenvoudig, op tekst gebaseerd formaat — een formaat dat universeel en spreadsheet-vriendelijk is. Programmeurs gebruiken CSV vanwege zijn eenvoud en interoperabiliteit bij het uitwisselen van tabelgegevens tussen systemen.
-
 ## Hoe te
+
 
 ### CSV-bestanden lezen
 ```C#
@@ -83,13 +80,11 @@ Gegevens geschreven naar output.csv
 ```
 
 ## Diepere Duik
-
 CSV bestaat al sinds de vroege dagen van het rekenen en overbrugt de kloof tussen diverse systemen. Het is niet perfect — mist standaardcodering voor karakters en ondersteunt meerdere regelvelden niet goed zonder een robuuste parser. Dat is waar formaten zoals JSON en XML binnenkomen, die meer complexiteit bieden, maar betere structuur voor hiërarchische gegevens.
 
 Onder de motorkap ben je meestal strings aan het manipuleren, ofwel ingebouwde `string` methodes of bibliotheken zoals `CsvHelper` kunnen extra kracht toevoegen aan je CSV-behandeling, met meer functies en het sierlijk afhandelen van randgevallen. Onthoud, er is geen native CSV-behandeling in .NET, dus je bent op jezelf aangewezen met stringmanipulatie of je kunt kiezen voor een externe bibliotheek.
 
 ## Zie Ook
-
 Voor meer diepgaande CSV-manipulatie in C#:
 - [CsvHelper Bibliotheek](https://joshclose.github.io/CsvHelper/)
 - [Microsoft's documentatie over `StreamReader`](https://docs.microsoft.com/nl-nl/dotnet/api/system.io.streamreader)

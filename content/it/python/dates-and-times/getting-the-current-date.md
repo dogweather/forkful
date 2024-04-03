@@ -14,12 +14,7 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Cosa & Perché?
-
-Ottenere la data corrente in Python è un'operazione fondamentale per molte applicazioni, come la registrazione degli eventi (logging), l'analisi dei dati e la presa di decisioni basate sul tempo. Si tratta di recuperare la data corrente del sistema, che è cruciale per compiti che dipendono dal contesto temporale.
-
 ## Come fare:
-
 **Utilizzando la libreria standard `datetime`:**
 
 Il modulo `datetime` nella libreria standard di Python fornisce classi per manipolare date e orari. Per ottenere la data corrente, si può utilizzare il metodo `date.today()`.

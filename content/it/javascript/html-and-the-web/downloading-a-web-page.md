@@ -10,9 +10,6 @@ title: Scaricare una pagina web
 weight: 42
 ---
 
-## What & Why? (Cosa e perché?)
-Scaricare una pagina web significa prelevare il suo contenuto HTML, CSS e JavaScript dal server a locale. Si fa per elaborare dati, fare test o archiviare informazioni.
-
 ## How to: (Come fare)
 Usiamo `fetch()` per prendere il contenuto di una pagina web. Guarda qui:
 

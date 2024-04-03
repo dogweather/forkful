@@ -10,9 +10,6 @@ title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---
 
-## What & Why?
-L'autenticazione base HTTP serve per accedere a risorse protette via web usando username e password. I programmatori la usano per una semplice e diretta protezione delle comunicazioni fra client e server.
-
 ## How to:
 Ecco un esempio rapido di come inviare una richiesta HTTP con autenticazione base in TypeScript usando `fetch`.
 

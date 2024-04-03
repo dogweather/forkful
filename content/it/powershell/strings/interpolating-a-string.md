@@ -10,9 +10,6 @@ title: Interpolazione di una stringa
 weight: 8
 ---
 
-## What & Why?
-L'interpolazione di una stringa consente di inserire variabili o espressioni direttamente all'interno di una stringa di testo. I programmatori la usano per costruire stringhe in modo dinamico e leggibile, fondamentale per l'output personalizzato e la formattazione dei dati.
-
 ## How to:
 Interpolare una stringa in PowerShell è semplice: usate il doppio apice `" "` e inserite variabili con il simbolo del dollaro `$` seguito dal nome della variabile. Per esempio:
 

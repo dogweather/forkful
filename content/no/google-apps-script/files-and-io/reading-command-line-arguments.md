@@ -14,12 +14,7 @@ title: Lese kommandolinje-argumenter
 weight: 23
 ---
 
-## Hva & Hvorfor?
-
-Å lese kommandolinjeargumenter i Google Apps Script er litt av en misvisende betegnelse fordi, i motsetning til tradisjonelle kommandolinjegrensesnitt i programmeringsspråk som Python eller Node.js, støtter ikke Google Apps Script iboende kommandolinjeutførelse eller argumenttolkning. I stedet simulerer kodere ofte denne prosessen gjennom tilpassede funksjoner og URL-parametere når de kjører webapper eller automatiserte oppgaver, noe som muliggjør dynamisk interaksjon med skriptfunksjonaliteter basert på brukerinndata eller forhåndsdefinerte parametere.
-
 ## Hvordan:
-
 For å etterligne prosessen med å lese kommandolinjeargumenter i Google Apps Script, spesielt for webapplikasjoner, kan du bruke spørringsstrengparametere. Når en bruker får tilgang til webappens URL, kan du legge til argumenter som `?name=John&age=30` og tolke disse innenfor din Apps Script-kode. Slik kan du sette dette opp:
 
 ```javascript
@@ -45,7 +40,6 @@ Navn: John, Alder: 30
 Denne tilnærmingen er nyttig for å skape personlige interaksjoner i webapper eller programmestyre skriptutførelser.
 
 ## Dypdykk
-
 Kommandolinjeargumenter, som forstått i sammenheng med tradisjonelle programmeringsspråk, frembringer evnen for skript og applikasjoner til å behandle kjøretidsparametere, og muliggjør dermed fleksible og dynamiske kodeutførelser basert på brukerinndata eller automatiserte prosesser. Google Apps Script, som er et skybasert skriptspråk for lettvekts applikasjonsutvikling i Google Workspace-økosystemet, opererer ikke opprinnelig via et kommandolinjegrensesnitt. I stedet er dets utførelse i stor grad hendelsesdrevet eller manuelt utløst gjennom Apps Script og Google Workspace UI, eller via webapper som kan tolke URL-parametere som pseudo kommandolinjeargumenter.
 
 Gitt denne arkitektoniske forskjellen, må programmerere som kommer fra en bakgrunn med CLI-tunge språk, kanskje justere tilnærmingen sin når de automatiserer oppgaver eller utvikler applikasjoner i Google Apps Script. I stedet for tradisjonell kommandolinjeargumenttolkning, kan utnyttelsen av Google Apps Scripts webapp-funksjonalitet eller til og med Google Sheets tilpassede funksjoner for interaktiv databehandling tjene lignende formål. Selv om dette kanskje virker som en begrensning i begynnelsen, oppmuntrer det til utviklingen av mer brukervennlige grensesnitt og tilgjengelige webapplikasjoner, i tråd med Google Apps Scripts fokus på sømløs integrasjon og utvidelse av Google Workspace-applikasjoner.

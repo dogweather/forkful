@@ -10,9 +10,6 @@ title: Conversione di una stringa in minuscolo
 weight: 4
 ---
 
-## What & Why? (Cosa & Perché?)
-Convertire una stringa in minuscolo significa trasformare tutti i caratteri alfabetiche di quella stringa in lettere minuscole. I programmatori fanno questo per uniformare i dati testuali, facilitando la comparazione e la ricerca all'interno di testi, ignorando le differenze tra maiuscole e minuscole.
-
 ## How to: (Come fare:)
 In C#, per convertire una stringa in minuscolo, usiamo il metodo `.ToLower()` o `.ToLowerInvariant()`. Ecco come funziona:
 

@@ -11,9 +11,6 @@ title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mikä & Miksi?
-Interaktiivinen kuori, tai REPL (Read-Eval-Print Loop, lue-arvioi-tulosta -silmukka), mahdollistaa koodin testaamisen reaaliajassa. Ohjelmoijat käyttävät sitä kokeiluihin, virheenkorjaukseen ja Rubyn hienouksien oppimiseen ilman kokonaisten skriptien luomista.
-
 ## Kuinka:
 Rubyn REPL on nimeltään IRB (Interactive Ruby). Hyppää sisään ja kokeile Rubyä suoraan terminaalistasi:
 

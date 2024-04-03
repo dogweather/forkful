@@ -12,9 +12,6 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-## Co i dlaczego?
-Obliczanie daty w przyszłości czy przeszłości to ustalenie daty, która pojawi się lub wystąpiła po określonej liczbie dni, miesięcy, czy lat od konkretnej daty wyjściowej. Programiści robią to, by przewidywać terminy, zarządzać wydarzeniami czy określać terminy ważności.
-
 ## Jak to zrobić:
 ```Elm
 import Time

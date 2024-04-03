@@ -12,9 +12,6 @@ title: Registro de Logs
 weight: 17
 ---
 
-## O Que & Por Quê?
-O logging é o processo de registrar eventos da aplicação enquanto um programa está em execução, fornecendo um rastro de migalhas para análise post-mortem e monitoramento em tempo real. Os programadores fazem isso porque ajuda a depurar problemas, monitorar o desempenho e rastrear ações dos usuários para segurança e análise.
-
 ## Como Fazer:
 O Python vem com um módulo embutido para logging. Aqui está uma configuração básica:
 ```Python

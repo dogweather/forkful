@@ -14,11 +14,8 @@ title: "D\xE9marrer un nouveau projet"
 weight: 1
 ---
 
-## Quoi & Pourquoi ?
-
-Commencer un nouveau projet en Python, c'est mettre en place dès le départ une structure organisée et maintenable. Les programmeurs font cela pour s'assurer que leur code est facile à lire, à déboguer et à collaborer, surtout à mesure que le projet et l'équipe qui travaille dessus grandissent avec le temps.
-
 ## Comment faire :
+
 
 ### Créer un Environnement Virtuel
 Un environnement virtuel est un répertoire autonome qui contient tous les exécutables nécessaires pour utiliser les paquets dont un projet Python aurait besoin. Il est conseillé de créer un environnement virtuel pour chaque projet afin d'éviter les conflits entre les dépendances des projets. Utilisez le module `venv`, qui fait partie de la bibliothèque standard de Python.

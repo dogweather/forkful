@@ -11,9 +11,6 @@ title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## What & Why?
-Convertir une date en chaîne de caractères consiste à transformer une représentation de date (typiquement numérique) en texte lisible. Les programmeurs font cela pour enregistrer, afficher ou communiquer des dates de façon compréhensible pour les humains.
-
 ## How to:
 Utiliser `sprintf` pour formater une date en chaîne de caractères (la date ici est le 5 avril 2023) :
 

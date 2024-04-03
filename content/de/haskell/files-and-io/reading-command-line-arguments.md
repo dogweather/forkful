@@ -10,9 +10,6 @@ title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---
 
-## Was & Warum?
-Beim Lesen von Kommandozeilenargumenten nimmt ein Programm Parameter von außen auf, um sein Verhalten zu steuern oder Daten zu verarbeiten. Programmierer nutzen dies, um ihre Programme flexibler und interaktiver zu gestalten.
-
 ## How to:
 ```Haskell
 import System.Environment (getArgs)

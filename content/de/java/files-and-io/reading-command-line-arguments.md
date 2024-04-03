@@ -10,9 +10,6 @@ title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---
 
-## What & Why?
-Kommandozeilenargumente ermöglichen es Benutzern, Werte oder Verhaltensweisen einer Java-Anwendung beim Start zu steuern. Programmierer nutzen sie, um flexible und interaktive Anwendungen zu schaffen.
-
 ## How to:
 ```java
 public class CommandLineReader {

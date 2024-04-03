@@ -12,12 +12,7 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-
-Foutafhandeling in Bash-scripting gaat over het anticiperen op momenten waarop dingen mis kunnen gaan en hier sierlijk mee omgaan. Waarom? Nou, het houdt je script robuust en bespaart gebruikers hoofdbrekens wanneer dingen niet werken zoals verwacht.
-
 ## Hoe te:
-
 ```Bash
 #!/bin/bash
 
@@ -50,7 +45,6 @@ cat: temp_bestand.txt: Bestand of map bestaat niet
 ```
 
 ## Diepgaand
-
 Foutafhandeling in Bash-scripting gaat terug tot de oorsprong van de Unix-shell, waar robuuste en betrouwbare scripts (en nog steeds) vitaal zijn voor systeembeheer en automatisering. Traditioneel worden fouten in Bash afgehandeld door de exitstatus van een commando te controleren, die volgens conventie 0 teruggeeft voor succes en een niet-nulwaarde voor falen.
 
 Bash introduceerde het commando `trap` als een ingebouwde functie, waarmee gebruikers commando's kunnen specificeren die uitgevoerd moeten worden op verschillende signalen of bij het verlaten van scripts. Dit is handig voor opruimtaken of een laatste redmiddel foutafhandelingsmechanisme.
@@ -62,7 +56,6 @@ Alternatieven voor ingebouwde foutafhandeling in Bash omvatten expliciet control
 Hoewel grondige foutafhandeling soms overbodig lijkt voor kleine scripts, is het een praktijk die veel tijd kan besparen bij het debuggen en onverwacht gedrag kan voorkomen voor zowel jou als de gebruikers.
 
 ## Zie Ook
-
 - Bash-handleiding over Shell-parameters: https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameters
 - Geavanceerde Bash-Scriptinggidssectie over Foutafhandeling: https://www.tldp.org/LDP/abs/html/exit-status.html
 - Een diepgaande gids voor `trap`: https://mywiki.wooledge.org/SignalTrap

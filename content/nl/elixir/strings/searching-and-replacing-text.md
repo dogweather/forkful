@@ -12,12 +12,7 @@ title: Tekst zoeken en vervangen
 weight: 10
 ---
 
-## Wat & Waarom?
-
-Zoeken en vervangen van tekst zijn basisvaardigheden voor programmeren; het gaat in essentie om het vinden van strings en deze omwisselen. Programmeurs doen dit constant voor zaken zoals het updaten van codebases, het verwerken van tekstgegevens of gewoon simpele bewerkingstaken.
-
 ## Hoe te:
-
 In Elixir kun je de `String` module gebruiken voor snelle zoek-en-vervang-operaties. Hier is hoe je dat doet:
 
 ```elixir
@@ -37,7 +32,6 @@ IO.puts hoofdletterongevoelig_vervangen  # Uitvoer: I heart ❤️!
 ```
 
 ## Diepere Duik
-
 Zoeken en vervangen van tekst bestaat al sinds de dageraad van de informatica; denk aan 'zoek en vervang' in een Word-document, maar dan voor code. In Elixir draait het allemaal om patroonmatching en effectief werken met strings.
 
 De functie `String.replace/4` maakt gebruik van de patroonmatchingmogelijkheden van Elixir, waardoor je niet alleen statische strings maar ook regex-patronen kunt matchen, wat aanzienlijke flexibiliteit biedt. Achter de schermen gebruikt Elixir de krachtige stringafhandeling van Erlang, die robuust en efficiënt is voor tekstverwerkingstaken.
@@ -47,7 +41,6 @@ Alternatieven voor de ingebouwde `String` module zijn het schrijven van je eigen
 Als een onveranderlijke taal, onthoud dat elke vervangfunctie een nieuwe string retourneert - de originele blijft ongewijzigd. Dit is anders dan in sommige andere talen waar je misschien de string ter plaatse wijzigt.
 
 ## Zie Ook
-
 - De docs van Elixir's `String` module: [https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)
 - Regex in Elixir: [https://hexdocs.pm/elixir/Regex.html](https://hexdocs.pm/elixir/Regex.html)
 - Leer meer over patroonmatching in Elixir: [https://elixir-lang.org/getting-started/pattern-matching.html](https://elixir-lang.org/getting-started/pattern-matching.html)

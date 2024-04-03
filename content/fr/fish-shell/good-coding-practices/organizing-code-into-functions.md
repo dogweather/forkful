@@ -14,9 +14,6 @@ title: Organiser le code en fonctions
 weight: 18
 ---
 
-## Quoi et Pourquoi ?
-Organiser le code en fonctions consiste à regrouper des morceaux de script pour réaliser des tâches spécifiques. Nous le faisons parce que cela rend le code plus facile à lire, à tester et à réutiliser - personne ne veut se perdre dans un marécage de codes spaghetti.
-
 ## Comment faire :
 Dans Fish, vous écrivez une fonction avec le mot-clé `function`, vous lui donnez un nom, et vous terminez par `end`. Voici un exemple simple :
 
@@ -59,11 +56,9 @@ Certains shells, comme Bash, utilisent `function` ou juste des accolades. Fish r
 Vous n'aurez pas besoin d'une valeur de retour car Fish n'accorde pas beaucoup d'importance à cela ; la sortie de votre fonction est son retour. Et si vous voulez des fonctions persistantes disponibles pour les sessions futures, n'oubliez pas `funcsave`.
 
 ## Voir Aussi
-
 - Le tutoriel fish sur les fonctions : [https://fishshell.com/docs/current/tutorial.html#tut_functions](https://fishshell.com/docs/current/tutorial.html#tut_functions)
 
 ### Commandes de fonction
-
 - [function](https://fishshell.com/docs/current/cmds/function.html) — Créer une fonction
 - [functions](https://fishshell.com/docs/current/cmds/functions.html) — Afficher ou effacer des fonctions
 - [funcsave](https://fishshell.com/docs/current/cmds/funcsave.html) — Enregistrer la définition d'une fonction dans le répertoire de chargement automatique de l'utilisateur

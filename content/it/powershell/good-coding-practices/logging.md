@@ -12,9 +12,6 @@ title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---
 
-## Cosa & Perché?
-Il logging è sostanzialmente lasciare una traccia all'interno del proprio codice - è il modo in cui si tiene traccia di ciò che sta accadendo quando lo script è in esecuzione in un ambiente reale. I programmatori effettuano il logging per fare il debug, per monitorare il comportamento dell'applicazione, per controllare le prestazioni, e per tenere d'occhio qualsiasi scorrettezza.
-
 ## Come fare:
 Ecco le informazioni di base per aggiungere un po' di logging semplice nei tuoi script:
 

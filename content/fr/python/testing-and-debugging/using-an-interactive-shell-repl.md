@@ -11,9 +11,6 @@ title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---
 
-## Quoi & Pourquoi ?
-Un REPL, ou Boucle Lire-Évaluer-Afficher (Read-Eval-Print Loop), est un environnement de programmation qui prend des entrées utilisateur individuelles, les exécute et retourne le résultat à l'utilisateur. Les programmeurs l'utilisent pour des tests rapides, apprendre, déboguer ou effectuer des calculs à la volée.
-
 ## Comment faire :
 Plongez directement dans le REPL de Python en tapant `python` dans votre ligne de commande. Une fois là, testez des opérations simples ou du code sur plusieurs lignes :
 

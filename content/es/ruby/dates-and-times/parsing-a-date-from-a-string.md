@@ -12,9 +12,6 @@ title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---
 
-## Qué y Por Qué?
-Interpretar una fecha de un string se trata de convertir texto que representa una fecha en un objeto `Date` o `DateTime` que Ruby entiende. Los programadores hacen esto para realizar operaciones como comparaciones, cálculos o formatos en fechas, que son tareas comunes en aplicaciones que manejan programación de eventos, análisis o procesamiento de datos.
-
 ## Cómo hacerlo:
 En Ruby, la biblioteca estándar proporciona maneras directas de interpretar fechas de strings usando las clases `Date` y `DateTime`. Así es como lo haces usando los métodos integrados de Ruby:
 
@@ -45,7 +42,6 @@ puts parsed_date_custom
 ```
 
 ### Usando bibliotecas de terceros:
-
 Aunque las capacidades incorporadas de Ruby son poderosas, a veces podrías preferir bibliotecas de terceros por funciones adicionales o una sintaxis más simple. Una elección popular es la gema `Chronic` para la interpretación de lenguaje natural:
 
 1. Primero, agrega Chronic a tu Gemfile y ejecuta `bundle install`:

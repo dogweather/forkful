@@ -15,9 +15,6 @@ title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---
 
-## Vad & Varför?
-Att ta bort citattecken från en sträng i Dart innebär att man tar bort de dubbla (") eller enkla (') citattecknen från början och slutet av en sträng, vilket är användbart för att rensa data eller förbereda strängar för vidare bearbetning. Programmerare gör detta för att normalisera dataingångar, säkerställa enhetlighet i datalagring eller när de gränssnittar med API:er som kan returnera data i citatformat.
-
 ## Hur man gör:
 Dart erbjuder enkla sätt att ta bort citattecken från en sträng med hjälp av inbyggda strängmetoder utan behov av tredjepartsbibliotek.
 

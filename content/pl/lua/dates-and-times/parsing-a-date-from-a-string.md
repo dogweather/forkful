@@ -14,9 +14,6 @@ title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---
 
-## Co i dlaczego?
-Przetwarzanie daty z ciągu znaków polega na konwertowaniu tekstowych reprezentacji dat i czasu na format, który można łatwo manipulować, przechowywać lub porównywać w programie Lua. Programiści wykonują to zadanie, aby ułatwić operacje takie jak planowanie, logowanie lub jakiekolwiek obliczenia czasowe oraz aby zniwelować różnicę między czytelnymi dla człowieka formatami dat a strukturalnymi typami danych, które komputer może efektywnie przetwarzać.
-
 ## Jak to zrobić:
 Lua nie ma wbudowanego wsparcia dla manipulacji datą i czasem poza ograniczoną funkcjonalnością, jaką zapewniają funkcje `os.date` i `os.time`. Jednakże mogą one być wykorzystane do podstawowego parsowania, a dla bardziej złożonych wymagań można użyć biblioteki zewnętrznej `luadate`.
 

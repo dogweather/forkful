@@ -10,9 +10,6 @@ title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---
 
-## Mikä & Miksi?
-Kompleksiluvuilla on reaaliosa ja imaginaariosa, jotka yleensä kirjoitetaan muodossa `a + bi`. Ne ovat keskeisiä edistyneessä matematiikassa, fysiikassa, insinööritieteissä ja tietyissä tietokonealgoritmeissa. Ohjelmoijat käsittelevät niitä suoriakseen laskelmia, jotka sisältävät negatiivisten lukujen neliöjuuria ja oskilloivia funktioita.
-
 ## Kuinka:
 PHP tarjoaa sisäänrakennetun tuen kompleksiluvuille käyttäen `ext-intl`-laajennosta `NumberFormatter`-luokan avulla. Tässä on esimerkki:
 

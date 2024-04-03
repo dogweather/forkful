@@ -14,12 +14,7 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Cosa e perché?
-
-Arrotondare i numeri, un concetto fondamentale nella programmazione informatica, implica l'aggiustamento di un numero al suo intero più vicino o a un numero specificato di cifre decimali. I programmatori eseguono spesso l'arrotondamento per semplificare i numeri per la leggibilità umana o per soddisfare specifiche esigenze di calcolo, garantendo precisione e riducendo il carico computazionale.
-
 ## Come fare:
-
 Google Apps Script, essendo un linguaggio basato su JavaScript, offre metodi standard per arrotondare i numeri. Ecco una ripartizione di tre tecniche comunemente utilizzate:
 
 ### Math.round()
@@ -61,7 +56,6 @@ Logger.log(preciseRound); // Mostra: 2.57
 ```
 
 ## Approfondimento
-
 Arrotondare i numeri in Google Apps Script non si discosta molto da come si fa in altri ambienti JavaScript. Tuttavia, comprendere le differenze nei metodi di arrotondamento e il potenziale per questioni di aritmetica a virgola mobile è cruciale. Ad esempio, a causa del modo in cui i computer rappresentano i numeri in virgola mobile, non tutte le frazioni decimali possono essere rappresentate con perfetta precisione, portando a volte a risultati di arrotondamento inaspettati.
 
 Storicamente, JavaScript (e per estensione, Google Apps Script) gestisce questo conformandosi allo standard IEEE 754, utilizzato da molti altri linguaggi di programmazione per l'aritmetica a virgola mobile. Questo standard definisce come i numeri sono arrotondati, garantendo coerenza attraverso varie piattaforme e linguaggi.

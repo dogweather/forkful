@@ -13,16 +13,10 @@ title: "Wydobywanie podci\u0105g\xF3w"
 weight: 6
 ---
 
-## Co i dlaczego?
-
-Wyodrębnianie podciągów polega na pobieraniu określonych fragmentów ciągu na podstawie ich pozycji. Programiści często wykonują tę operację, aby efektywnie przetwarzać lub manipulować danymi tekstowymi, takimi jak parsowanie danych wejściowych, walidacja formatów czy przygotowywanie danych wyjściowych.
-
 ## Jak to zrobić:
-
 W Go typ `string` jest tylko do odczytu wycinkiem (slice) bajtów. Aby wyodrębnić podciągi, głównie używa się składni `slice` wraz z wbudowaną funkcją `len()` do sprawdzania długości oraz pakietu `strings` dla bardziej złożonych operacji. Oto jak możesz to osiągnąć:
 
 ### Podstawowe wycinanie
-
 ```go
 package main
 
@@ -40,7 +34,6 @@ func main() {
 ```
 
 ### Użycie pakietu `strings`
-
 Dla bardziej zaawansowanego wyodrębniania podciągów, takiego jak ekstrakcja ciągów po lub przed określonym podciągiem, możesz użyć pakietu `strings`.
 
 ```go
@@ -63,7 +56,6 @@ func main() {
 Należy zauważyć, że ciągi Go są kodowane w UTF-8 i bezpośredni wycinek bajtów nie zawsze może dać prawidłowe ciągi, jeśli zawierają znaki wielobajtowe. Dla wsparcia Unicode, rozważ użycie `range` lub pakietu `utf8`.
 
 ### Obsługa znaków Unicode
-
 ```go
 package main
 
@@ -83,7 +75,6 @@ func main() {
 ```
 
 ## Dogłębna analiza
-
 Wyodrębnianie podciągów w Go jest proste dzięki jego składni wycinania i obszernej bibliotece standardowej. Historycznie, wcześniejsze języki programowania oferowały bardziej bezpośrednie funkcje lub metody do obsługi takich manipulacji tekstem. Jednak podejście Go kładzie nacisk na bezpieczeństwo i wydajność, szczególnie ze względu na jego niezmienne ciągi i jawne obsługiwanie znaków Unicode przez runy.
 
 Chociaż proste wycinanie ma zalety w postaci wydajności, dziedziczy ono złożoności związane z bezpośrednim obsługiwaniem znaków UTF-8. Wprowadzenie typu `rune` pozwala programom w Go na bezpieczne obsługiwanie tekstu Unicode, czyniąc go potężną alternatywą dla aplikacji międzynarodowych.

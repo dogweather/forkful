@@ -10,9 +10,6 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## What & Why?
-Stampare l'output di debug è mostrare valori e messaggi nel terminale per tracciare cosa succede nel tuo codice. I programmatori lo fanno per capire meglio i flussi logici e individuare errori (bugs).
-
 ## How to:
 ```TypeScript
 function somma(a: number, b: number): number {

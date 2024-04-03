@@ -12,9 +12,6 @@ title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---
 
-## Wat & Waarom?
-Een REPL, of Read-Eval-Print Loop, is een programmeeromgeving die individuele gebruikersinvoer neemt, deze uitvoert, en het resultaat aan de gebruiker teruggeeft. Programmeurs gebruiken het voor snelle tests, leren, debuggen of het doen van berekeningen ter plekke.
-
 ## Hoe:
 Duik direct in Python's REPL door `python` in je commandoregel te typen. Eenmaal daar, test eenvoudige operaties of meerdere regels code:
 

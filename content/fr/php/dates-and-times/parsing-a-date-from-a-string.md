@@ -14,12 +14,7 @@ title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---
 
-## Quoi & Pourquoi ?
-
-Analyser une date à partir d'une chaîne en PHP implique de convertir un texte représentant une date et/ou une heure en un objet `DateTime` de PHP ou en d'autres formats de date/heure. Ceci est crucial pour la validation, la manipulation, le stockage et la présentation des données, surtout lorsqu'on travaille avec des entrées utilisateur ou des données issues de sources externes.
-
 ## Comment faire :
-
 La classe intégrée `DateTime` de PHP offre un ensemble puissant de fonctions pour analyser et travailler avec les dates. Vous pouvez créer une instance `DateTime` à partir d'une chaîne de date en utilisant le constructeur, puis la formater selon les besoins. Voici comment :
 
 ```php

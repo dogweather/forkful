@@ -11,9 +11,6 @@ title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---
 
-## What & Why? 
-Sammanfogning av strängar handlar om att smälla ihop textbitar till en enda längre text. Programmerare gör det för att bygga upp meddelanden, kommandon eller för att hantera data dynamiskt.
-
 ## How to:
 Så här smäller du ihop strängar i Bash:
 

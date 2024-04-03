@@ -13,10 +13,9 @@ title: Schreiben auf Standardfehler
 weight: 25
 ---
 
-## Was & Warum?
-Das Schreiben auf Standardfehler in Python bedeutet, die Fehlermeldungen oder Diagnosen Ihres Programms auf den Fehlerstrom (`stderr`) zu lenken, getrennt von der Standardausgabe (`stdout`). Programmierer tun dies, um normale Programmausgaben von Fehlermeldungen zu unterscheiden, was das Debuggen und die Log-Analyse erleichtert.
-
 ## Wie geht das:
+
+
 ### Verwendung von `sys.stderr`
 Das in Python integrierte `sys`-Modul ermöglicht ein explizites Schreiben auf `stderr`. Dieser Ansatz ist unkompliziert für einfache Fehlermeldungen oder Diagnosen.
 

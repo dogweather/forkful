@@ -12,9 +12,6 @@ title: "Refactorizaci\xF3n"
 weight: 19
 ---
 
-## ¿Qué y por qué?
-La refactorización es el proceso de reestructuración del código informático existente—cambiando la facturación—sin alterar su comportamiento externo. Los programadores lo hacen para mejorar los atributos no funcionales del software, mejorando la legibilidad, reduciendo la complejidad y haciendo el código más mantenible para futuros proyectos.
-
 ## Cómo hacerlo:
 Tomemos una clase Java simple que está gritando por una refactorización debido a su pobre organización y falta de claridad.
 

@@ -12,9 +12,6 @@ title: Capitalizzare una stringa
 weight: 2
 ---
 
-## Cos'è & Perché?
-Capitalizzare una stringa comporta modificare la stringa in modo che il suo primo carattere sia in maiuscolo, mentre il resto della stringa rimane invariato. I programmatori spesso eseguono la capitalizzazione delle stringhe per garantire la coerenza dei dati, specialmente per nomi e luoghi, o per conformarsi alle regole grammaticali nelle interfacce utente.
-
 ## Come fare:
 Clojure, essendo un linguaggio JVM, ti permette di utilizzare direttamente i metodi String di Java. Ecco un esempio base di come capitalizzare una stringa in Clojure:
 

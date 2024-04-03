@@ -12,12 +12,7 @@ title: Werken met CSV
 weight: 37
 ---
 
-## Wat & Waarom?
-
-Werken met CSV (Comma-Separated Values) betekent het omgaan met platte tekstbestanden die tabelgegevens opslaan. Programmeurs gebruiken CSV omdat het eenvoudig is en compatibel over verschillende systemen, perfect voor het uitwisselen van gegevens tussen verschillende software.
-
 ## Hoe te:
-
 Hier is een stuk code dat een CSV-bestand leest en de inhoud ervan afdrukt.
 
 ```C++
@@ -59,11 +54,9 @@ Jane 28
 ```
 
 ## Diepgaand
-
 CSV bestaat sinds het begin van de jaren 70. Het is het standaardformaat voor eenvoudige data-export en -import, maar is niet geweldig voor complexe hiërarchische gegevens, die door XML en JSON beter worden afgehandeld. C++ heeft geen ingebouwde ondersteuning voor CSV, maar het omgaan met bestanden en strings is eenvoudig. Je houdt je bezig met standaard I/O en stringmanipulatie, terwijl je uitkijkt voor speciale gevallen zoals aanhalingstekens en komma's binnen cellen. Bibliotheken zoals `libcsv` en `Boost.Tokenizer` kunnen taken vereenvoudigen als je met meer complexe CSV-bestanden te maken hebt.
 
 ## Zie Ook
-
 - [RFC 4180](https://tools.ietf.org/html/rfc4180), het gemeenschappelijke formaat en MIME-type voor CSV-bestanden.
 - [C++ referentie voor I/O](http://www.cplusplus.com/reference/fstream/)
 - [De Boost C++ Bibliotheken](https://www.boost.org/)

@@ -11,12 +11,7 @@ title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---
 
-## Vad & Varför?
-
-Att läsa kommandoradsargument är att fånga upp de textbitar du anger när du kör ett program i terminalen. Programmers gör det för att låta användare interagera med programmet och ange inställningar, filvägar eller data på ett flexibelt sätt.
-
 ## Hur gör man:
-
 I Haskell, använd modulen `System.Environment` som ger dig funktioner för att hantera kommandoradsargument. Här är ett enkelt exempel:
 
 ```Haskell
@@ -41,11 +36,9 @@ Hej! Du gav mig följande argument: glad att träffa dig
 ```
 
 ## Djupdykning
-
 Historiskt har kommandoradsargument varit ett sätt att interagera med många tidiga program och script. I Haskell kan du också använda paket som `optparse-applicative` för att skapa mer avancerade argumentparsrar med hjälp av monadiska mönster, vilket ger en kraftfull, komponerbar gränssnitt för kommandotolkbaserade applikationer. Implementationen av kommandoradsargument i Haskell är rakt på sak: `getArgs` hämtar en lista med `String` från det underliggande systemskalet, medan `getProgName` kan användas för att få programnamnet som används.
 
 ## Se också
-
 - [Haskell Documentation for System.Environment](https://hackage.haskell.org/package/base/docs/System-Environment.html)
 - [optparse-applicative on Hackage](https://hackage.haskell.org/package/optparse-applicative)
 - [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/chapters) - En bra resurs för nya Haskell-programmerare.

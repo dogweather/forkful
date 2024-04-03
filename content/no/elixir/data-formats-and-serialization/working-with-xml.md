@@ -10,9 +10,6 @@ title: "\xC5 jobbe med XML"
 weight: 40
 ---
 
-## Hva & Hvorfor?
-Å jobbe med XML i Elixir innebærer å analysere, opprette og manipulere XML-data. Programmerere tar for seg XML fordi det er utbredt i webtjenester, konfigurasjonsfiler og arvede systemer.
-
 ## Hvordan:
 Elixir inkluderer ikke XML-analyse i sitt standardbibliotek. SweetXML er et populært valg. Her er hvordan du bruker det:
 

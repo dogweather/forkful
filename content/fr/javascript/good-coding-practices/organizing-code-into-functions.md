@@ -11,11 +11,7 @@ title: Organisation du code en fonctions
 weight: 18
 ---
 
-## Quoi & Pourquoi ?
-Organiser le code en fonctions divise les tâches en morceaux réutilisables, rendant le code plus propre et plus facile à maintenir. Nous faisons cela pour réduire la redondance, faciliter les tests et améliorer la lisibilité.
-
 ## Comment faire :
-
 ```javascript
 // Définir une fonction pour calculer l'aire d'un rectangle
 function calculateArea(largeur, hauteur) {

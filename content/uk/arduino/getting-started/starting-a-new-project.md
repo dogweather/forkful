@@ -12,9 +12,6 @@ title: "\u041F\u043E\u0447\u0438\u043D\u0430\u0454\u043C\u043E \u043D\u043E\u043
 weight: 1
 ---
 
-## What & Why? (Що та Чому?)
-Starting a new Arduino project means initializing a fresh sketch to build your unique idea. Programmers kick off new projects to solve problems, learn, or just for fun.
-
 ## How to: (Як це зробити:)
 ```Arduino
 void setup() {

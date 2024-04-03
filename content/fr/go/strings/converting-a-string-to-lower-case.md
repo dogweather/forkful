@@ -15,12 +15,7 @@ title: "Convertir une cha\xEEne en minuscules"
 weight: 4
 ---
 
-## Quoi & Pourquoi ?
-
-Convertir une chaîne en minuscules est une opération fondamentale qui permet l'uniformité et la cohérence dans le traitement du texte, essentielle pour des tâches telles que les comparaisons insensibles à la casse ou la normalisation du texte. Les programmeurs effectuent souvent cette opération pour préparer les données pour un traitement ultérieur ou pour garantir la compatibilité entre différents systèmes et paramètres régionaux.
-
 ## Comment faire :
-
 En Go, convertir une chaîne en minuscules peut être facilement réalisé en utilisant le paquet `strings`, spécifiquement la fonction `ToLower()`. Cette fonction prend une chaîne en entrée et retourne une nouvelle chaîne avec tous les caractères en majuscules convertis en minuscules. Voici un exemple rapide :
 ```go
 package main
@@ -45,7 +40,6 @@ Minuscule : hello, world!
 Cet exemple démontre l'approche directe pour convertir n'importe quelle chaîne donnée en minuscules en Go. C'est simple, le travail difficile étant effectué par la méthode `ToLower()`, abstrayant les complexités des encodages de caractères variés et des règles de cas spécifiques aux paramètres régionaux.
 
 ## Plongée profonde
-
 L'implémentation de `strings.ToLower()` dans la bibliothèque standard de Go est efficace et consciente de l'Unicode, ce qui signifie qu'elle gère correctement les caractères au-delà de l'ensemble de base ASCII, y compris les lettres d'alphabets non latins. Cela est particulièrement important dans un contexte mondial où le logiciel peut traiter du texte de diverses langues et ensembles de caractères.
 
 Historiquement, la gestion de la conversion des cas dans les langages de programmation a évolué de manière significative. Les premiers langages manquaient souvent de support natif pour de telles opérations, ou leurs implémentations étaient limitées à l'ensemble de caractères ASCII, conduisant à un comportement incorrect avec d'autres alphabets. Go a été conçu avec le support de l'Unicode dès le départ, reflétant une approche moderne de la manipulation des chaînes.

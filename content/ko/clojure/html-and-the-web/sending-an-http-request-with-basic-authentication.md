@@ -20,9 +20,6 @@ title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uB
 weight: 45
 ---
 
-## What & Why? (무엇이며 왜?)
-HTTP 요청을 기본 인증과 함께 보내기는 사용자 이름과 비밀번호로 보호된 리소스에 접근할 때 사용합니다. 프로그래머들은 개인 정보를 안전하게 전송하고 검증된 사용자만이 접근할 수 있도록 하기 위해 이 방법을 사용합니다.
-
 ## How to: (어떻게 하나요?)
 ```Clojure
 (require '[clj-http.client :as client])

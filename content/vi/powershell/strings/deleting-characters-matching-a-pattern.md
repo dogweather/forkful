@@ -17,9 +17,6 @@ title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---
 
-## Cái gì & Tại sao?
-Xóa các ký tự khớp với một mẫu nhất định nghĩa là loại bỏ những phần không mong muốn khỏi chuỗi của bạn - hãy nghĩ đến việc làm sạch dữ liệu hoặc phân tích các tệp văn bản. Các lập trình viên làm điều này để trích xuất thông tin có ý nghĩa, đảm bảo tính nhất quán của dữ liệu, hoặc chuẩn bị dữ liệu cho quá trình xử lý.
-
 ## Làm thế nào:
 PowerShell sử dụng toán tử `-replace` để xóa các ký tự khớp với một mẫu. Dưới đây là một số hành động sửa chuỗi cho bạn:
 

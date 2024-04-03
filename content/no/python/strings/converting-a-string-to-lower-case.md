@@ -11,9 +11,6 @@ title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Å konvertere en streng til små bokstaver betyr å endre alle alfabetske tegn i strengen til sin minuskulære (små) form. Programmører gjør dette for konsistens, for å forenkle søk og sammenligninger, eller for å implementere casesensitivitetsregler.
-
 ## How to (Slik gjør du det):
 I Python er prosessen enkel og rett fram. Her er hvordan du gjør det:
 

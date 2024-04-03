@@ -15,12 +15,7 @@ title: "Analiza sk\u0142adniowa daty z ci\u0105gu znak\xF3w"
 weight: 30
 ---
 
-## Co i dlaczego?
-
-Parsowanie daty z ciągu znaków polega na przekształceniu tekstu, takiego jak "2023-04-05", na format daty, który Twój program może zrozumieć i z którym może pracować. Programiści robią to, ponieważ daty występują w wielu formatach i potrzebują spójności, aby móc je porównywać, sortować lub prawidłowo przechowywać.
-
 ## Jak to zrobić:
-
 W Elixirze możesz parsować daty przy pomocy modułu `Date`. Oto jak zamienić ciąg znaków na datę:
 
 ```elixir
@@ -49,7 +44,6 @@ Przykładowy wynik:
 ```
 
 ## Dogłębna analiza
-
 Funkcja `Date.from_iso8601/1` jest częścią standardowej biblioteki Elixir, wprowadzoną w celu ułatwienia parsowania daty zgodnej ze standardem ISO8601 - powszechnego formatu daty. Ale życie nie jest takie proste; daty występują w mnóstwie formatów. Tu z pomocą przychodzi `Timex`, biblioteka stron trzecich dla Elixir, która jest bogatsza niż wbudowane funkcje daty w Elixirze i pomaga obsłużyć szeroką gamę formatów dat.
 
 Elixir jest niezmienny, co oznacza, że sparsowane daty nie są wyjątkiem; nie mogą być zmieniane po utworzeniu. Ta cecha wiąże się z korzeniami programowania funkcjonalnego Elixir, gwarantując przewidywalność i łatwiejsze debugowanie.
@@ -57,7 +51,6 @@ Elixir jest niezmienny, co oznacza, że sparsowane daty nie są wyjątkiem; nie 
 Historycznie rzecz biorąc, parsowanie dat było trudne ze względu na różnorodne standardy. Jednak dzięki bibliotekom takim jak `Timex` i funkcjom języka w Elixir, złożoność ta jest abstrahowana, czyniąc życie programisty odrobinę prostszym.
 
 ## Zobacz również
-
 - [Elixir Date](https://hexdocs.pm/elixir/Date.html)
 - [Dokumentacja Timex](https://hexdocs.pm/timex/Timex.html)
 - [Standard ISO8601](https://www.iso.org/iso-8601-date-and-time-format.html)

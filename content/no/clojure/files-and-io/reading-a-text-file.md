@@ -11,9 +11,6 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## What & Why?
-Å lese en tekstfil betyr å hente data fra en fil lagret på disken for å bruke den i et program. Programmerere gjør dette fordi filer ofte inneholder nyttig data som konfigurasjon, brukerdata eller annen tekst som skal behandles.
-
 ## How to:
 Les en enkel tekstfil:
 ```Clojure

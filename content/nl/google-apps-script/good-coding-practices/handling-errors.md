@@ -12,12 +12,7 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-
-Foutafhandeling in Google Apps Script is het voorspellen, vangen en reageren op uitzonderingen of fouten die optreden tijdens de uitvoering van een script. Programmeurs implementeren dit om scripts te beschermen tegen onverwachte storingen, waardoor soepelere, gebruiksvriendelijke applicaties ontstaan die fouten gracieus kunnen beheren of loggen zonder abrupte crashes.
-
 ## Hoe:
-
 Google Apps Script, gebaseerd op JavaScript, stelt ons in staat om de traditionele `try-catch` verklaring voor foutafhandeling te gebruiken, samen met `finally` als opruiming vereist is, ongeacht succes of fout.
 
 ```javascript
@@ -55,7 +50,6 @@ Functie voltooid.
 Google Apps Script ondersteunt ook het gooien van aangepaste fouten met behulp van het `Error` object en het vangen van specifieke fouttypes indien nodig. Echter, de afwezigheid van geavanceerde foutcategorisatie maakt het essentieel om te vertrouwen op foutberichten voor specificiteit.
 
 ## Diepgaande Duik
-
 Historisch gezien is foutafhandeling in scripttalen zoals JavaScript (en bij uitbreiding, Google Apps Script) minder geavanceerd geweest dan in sommige gecompileerde talen, die functies bieden zoals gedetailleerde uitzonderingshiërarchieën en uitgebreide debuggingtools. Het model van Google Apps Script is relatief eenvoudig, waarbij het `try-catch-finally` paradigma van JavaScript wordt benut. Deze eenvoud valt samen met het ontwerp van de taal om snel kleine tot middelgrote toepassingen binnen het ecosysteem van Google te ontwikkelen en te implementeren, maar het kan soms ontwikkelaars beperken die te maken hebben met complexe foutscenario's.
 
 In meer complexe applicaties vullen programmeurs vaak de native foutafhandeling van Google Apps Script aan met aangepaste log- en foutrapportagemechanismen. Dit kan het schrijven van fouten naar een Google Sheet voor audit omvatten of het gebruik van externe logservices via Google Apps Script's URL Fetch Services om foutdetails uit de scriptomgeving te sturen.

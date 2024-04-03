@@ -14,12 +14,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mikä & Miksi?
-
-Assosiatiiviset taulukot, tunnetaan muissa kieliä karttoina tai sanakirjoina, ovat avain-arvo-pareja, joita käytetään tehokkaaseen datan etsintään ja käsittelyyn. Toisin kuin perinteiset taulukot, jotka käyttävät kokonaislukujen indeksejä, assosiatiiviset taulukot käyttävät avaimia, mikä tekee datan käytöstä intuitiivisempaa ja joustavampaa ohjelmoijille.
-
 ## Kuinka:
-
 C ei tarjoa sisäänrakennettua tukea assosiatiivisille taulukoille kuten jotkut korkeamman tason kielet, mutta voit simuloida niitä käyttämällä rakenteita ja hajautusta. Alla on yksinkertaistettu esimerkki käyttäen yhdistelmää rakenteesta ja yksinkertaisesta hajautusfunktiosta toteuttamaan assosiatiivisen taulukon, joka varastoi ja käyttää kokonaislukuja merkkijonoavaimilla.
 
 Määrittele ensin rakenne, joka edustaa yhtä avain-arvo-paria ja toinen, joka edustaa itse assosiatiivista taulukkoa:
@@ -96,7 +91,6 @@ int main() {
 Tämä esimerkki osoittaa perusoperaatiot: assosiatiivisen taulukon alustamisen, avain-arvo-parien lisäämisen ja arvojen etsimisen avaimilla. Huomaa, että tämä koodi puuttuu törmäysten käsittelyn ja on tarkoitettu opetustarkoituksiin.
 
 ## Syvä sukellus
-
 Assosiatiivisten taulukoiden konsepti on vanhempi kuin C, mutta kielen matalan tason luonne ei suoraan tue niitä sisäänrakennettuina tyyppinä. Tämä rohkaisee syvälliseen ymmärrykseen tietorakenteista ja algoritmeista, mukaan lukien hajautusmekanismien ymmärtäminen tehokkaaseen avain-arvo-kartoitukseen. Monet C-kirjastot ja kehykset tarjoavat kehittyneempiä lähestymistapoja assosiatiivisten taulukoiden toteuttamiseen, kuten GLibin `GHashTable`, joka tarjoaa kestävän toteutuksen täydellä törmäysten käsittelyllä, dynaamisella uudelleenkooltaamisella ja tuella mielivaltaisille avain- ja arvotyypeille.
 
 Vaikka assosiatiivisten taulukoiden manuaalinen rakentaminen C:ssä voi tuntua työläältä verrattuna kieliin, joissa on sisäänrakennettu tuki, se tarjoaa arvokkaita näkemyksiä tietorakenteiden toiminnasta, teroittaen ohjelmoijan taitoja ongelmanratkaisussa ja optimoinnissa. Kuitenkin, tuotantokoodille tai monimutkaisemmille sovelluksille, olemassa olevien kirjastojen kuten GLibin käyttäminen on usein käytännöllisempi ja aikatehokkaampi lähestymistapa.

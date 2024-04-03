@@ -16,9 +16,6 @@ title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---
 
-## Cái gì và Tại sao?
-Nối chuỗi có nghĩa là ghép chúng lại với nhau từ đầu đến cuối để tạo thành một chuỗi mới. Nó giống như Lego chuỗi. Chúng ta làm điều này để xây dựng văn bản; hãy nghĩ về tên người dùng, thông báo lỗi, và nội dung động.
-
 ## Cách thực hiện:
 Hãy ghép một số chuỗi lại với nhau.
 

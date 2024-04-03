@@ -11,9 +11,6 @@ title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-begäran innebär att din applikation kommunicerar med en webbserver, vanligtvis för att hämta eller skicka data. Programmerare gör det för att interagera med webbtjänster, hantera API:er och så klart, för att internet skulle vara ganska värdelöst utan den här funktionaliteten.
-
 ## How to:
 C++20 introducerade `<chrono>` och `<format>` biblioteken som ger en modern touch till hantering av tid och strängformatering.
 

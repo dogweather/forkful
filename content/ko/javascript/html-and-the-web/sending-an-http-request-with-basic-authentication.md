@@ -17,9 +17,6 @@ title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uB
 weight: 45
 ---
 
-## What & Why? (무엇과 왜?)
-HTTP 요청 시 기본 인증은 사용자 이름과 패스워드를 서버에 보내 로그인하는 방법입니다. 서버 리소스에 안전하게 접근할 수 있어 개발자들이 자주 사용합니다.
-
 ## How to (어떻게):
 ```javascript
 // Node.js 환경에서 axios 라이브러리를 사용한 예제입니다.

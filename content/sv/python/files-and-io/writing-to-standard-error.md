@@ -14,10 +14,9 @@ title: Skriva till standardfel
 weight: 25
 ---
 
-## Vad & Varför?
-Att skriva till standardfel i Python handlar om att rikta ditt programs felmeddelanden eller diagnostik till felströmmen (`stderr`), separat från standardutmatningen (`stdout`). Programmerare gör detta för att skilja normala programutskrifter från felmeddelanden, vilket underlättar felsökning och logganalys.
-
 ## Hur gör man:
+
+
 ### Använda `sys.stderr`
 Pythons inbyggda `sys`-modul tillåter explicit skrivning till `stderr`. Detta tillvägagångssätt är okomplicerat för enkla felmeddelanden eller diagnostik.
 

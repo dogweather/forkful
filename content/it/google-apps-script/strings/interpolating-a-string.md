@@ -13,12 +13,7 @@ title: Interpolazione di una stringa
 weight: 8
 ---
 
-## Cosa & Perché?
-
-L'interpolazione di stringhe in Google Apps Script consente l'incorporamento dinamico di espressioni all'interno delle stringhe, facilitando la creazione di codice più leggibile e manutenibile. I programmatori utilizzano questa tecnica per incorporare senza soluzione di continuità variabili ed espressioni nelle stringhe senza la sintassi di concatenazione ingombrante.
-
 ## Come fare:
-
 In Google Apps Script, l'interpolazione di stringhe si ottiene attraverso i letterali template. Questi sono letterali di stringa che consentono espressioni incorporate, denotati da backticks (\`) invece delle solite virgolette. Ecco come puoi utilizzarli:
 
 ```javascript
@@ -55,7 +50,6 @@ esempioDiStringaMultiLinea();
 Questi esempi illustrano l'uso di base, l'incorporamento di espressioni e la creazione di stringhe su più linee con valori interpolati.
 
 ## Approfondimento
-
 I letterali template, compresa l'interpolazione di stringhe, sono stati introdotti in ECMAScript 2015 (ES6) e successivamente adottati in Google Apps Script. Prima di questo, i programmatori dovevano affidarsi puramente alla concatenazione di stringhe, che poteva diventare ingombrante per stringhe complesse o quando si integravano molti valori di variabili.
 
 ```javascript

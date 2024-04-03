@@ -12,9 +12,6 @@ title: Logboekregistratie
 weight: 17
 ---
 
-## Wat & Waarom?
-Loggen in de context van programmeren is het proces van het vastleggen van gebeurtenissen, toestanden en informatie in een bestand of een ander uitvoermedium. Programmeurs loggen om bij te houden wat er in hun applicaties gebeurt, om problemen te debuggen en om prestaties te monitoren voor toekomstige analyse en optimalisatie.
-
 ## Hoe:
 Stel je voor dat je aan een Linux box werkt en je wilt je logs in een bestand gooien met goed 'ol C++. Je wilt de bibliotheken `<iostream>` en `<fstream>` includeren om bestandsoperaties te doen. Hier is een snel voorbeeld:
 

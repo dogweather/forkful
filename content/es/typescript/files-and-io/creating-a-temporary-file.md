@@ -11,9 +11,6 @@ title: Creando un archivo temporal
 weight: 21
 ---
 
-## ¿Qué y por qué?
-Crear un archivo temporal significa generar un fichero que pretendemos usar solo durante un breve periodo de tiempo o mientras dura una operación específica. Los programadores los utilizan para almacenar datos de forma transitoria, probar funcionalidades o evitar la pérdida de información en caso de fallos inesperados.
-
 ## Cómo hacerlo:
 En TypeScript, vamos directo al grano con `fs` y `tmp` para crear un archivo temporal.
 

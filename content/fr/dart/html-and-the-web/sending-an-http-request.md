@@ -12,12 +12,7 @@ title: "Envoyer une requ\xEAte HTTP"
 weight: 44
 ---
 
-## Quoi & Pourquoi ?
-
-Envoyer une requête HTTP en Dart est le processus qui initie la communication avec un serveur web ou une API depuis une application Dart. Les programmeurs réalisent cela pour récupérer des données du web, soumettre des formulaires et interagir avec des services RESTful, ce qui en fait une opération fondamentale pour le développement d'applications web, côté serveur et mobiles en Dart.
-
 ## Comment faire :
-
 Dart inclut le paquet `http`, une manière puissante et pratique de travailler avec des ressources HTTP. Pour commencer, incluez-le dans votre fichier pubspec.yaml :
 
 ```yaml

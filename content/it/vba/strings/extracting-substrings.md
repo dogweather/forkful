@@ -13,12 +13,7 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## Cosa & Perché?
-
-L'estrazione di sottostringhe in Visual Basic for Applications (VBA) implica l'isolamento di parti specifiche di una stringa in base a criteri dati. I programmatori fanno ciò per compiti come l'analisi dei dati, la validazione e la formattazione, dove è cruciale manipolare ed estrarre informazioni dai dati testuali.
-
 ## Come fare:
-
 In VBA, si usano principalmente le funzioni `Mid`, `Left` e `Right` per estrarre sottostringhe. Di seguito, esploriamo queste funzioni con esempi:
 
 1. **Mid**: Estrae una sottostringa da una stringa a partire da una posizione specificata.
@@ -51,7 +46,6 @@ In VBA, si usano principalmente le funzioni `Mid`, `Left` e `Right` per estrarre
 Queste funzioni fondamentali costituiscono il fondamento dell'estrazione di sottostringhe in VBA, offrendo approcci robusti e semplici alla manipolazione delle stringhe.
 
 ## Approfondimento:
-
 Storicamente, la capacità di manipolare le stringhe nella programmazione è stata essenziale, con BASIC (il progenitore di VBA) tra i primi a democratizzare questa capacità nei primi giorni del personal computing. Le funzioni `Mid`, `Left` e `Right` in VBA ereditano questo retaggio, offrendo un'interfaccia semplificata per i programmatori moderni.
 
 Sebbene queste funzioni siano abbastanza efficaci per molti compiti, l'emergere delle Espressioni Regolari nei linguaggi più recenti ha fornito un modo più potente e flessibile per lavorare con il testo. Nonostante ciò, la semplicità immediata e la disponibilità delle funzioni tradizionali di sottostringa di VBA le rendono perfettamente adatte per compiti rapidi e per chi è nuovo alla programmazione.

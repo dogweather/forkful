@@ -21,9 +21,6 @@ title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u0940 \u0932\u09
 weight: 7
 ---
 
-## What & Why? (क्या और क्यों?)
-String की लंबाई (length) पता लगाना मतलब है जानना कि string में कितने characters हैं। Programmers इसलिए लंबाई नापते हैं, ताकि वे data validation, UI display या फिर text processing को सही से कर सकें।
-
 ## How to: (कैसे करें:)
 Elixir में String की लंबाई जानने के लिए `String.length/1` फंक्शन का इस्तेमाल करें।
 

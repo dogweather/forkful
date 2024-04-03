@@ -16,9 +16,6 @@ title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0907\u0902\u091F\u093
 weight: 8
 ---
 
-## What & Why? (क्या और क्यों?)
-String interpolation एक method है जिससे हम variables और expressions को strings में directly इन्सर्ट कर सकते हैं. ये programmers को repetitive string concatenation से बचाता है और code को अधिक readable और maintainable बनाता है.
-
 ## How to (कैसे करें):
 String interpolation करने के लिए, JavaScript में template literals का use करें. ये backticks (`` ` ``) के साथ लिखे जाते हैं और `${}` के अंदर expressions रखे जाते हैं:
 

@@ -13,16 +13,10 @@ title: Scrivere test
 weight: 36
 ---
 
-## Cosa & Perché?
-
-Scrivere test in Fish Shell comporta la creazione di script che eseguono automaticamente il tuo codice per validarne il comportamento rispetto ai risultati attesi. Questa pratica è fondamentale in quanto assicura che i tuoi script di shell funzionino come previsto, individuando gli errori in anticipo e semplificando la manutenzione.
-
 ## Come fare:
-
 Fish non dispone di un framework di testing integrato come alcuni altri ambienti di programmazione. Tuttavia, puoi scrivere semplici script di test che utilizzano affermazioni per verificare il comportamento delle tue funzioni. Inoltre, puoi sfruttare strumenti di terze parti come `fishtape` per una suite di testing più completa.
 
 ### Esempio 1: Script di Test Base
-
 Cominciamo con una funzione base in Fish che calcola la somma di due numeri:
 
 ```fish
@@ -54,7 +48,6 @@ test_add passed
 ```
 
 ### Esempio 2: Utilizzo di Fishtape
-
 Per una soluzione di test più robusta, puoi utilizzare `fishtape`, un test runner per Fish che produce output TAP.
 
 Prima, installa `fishtape` se non lo hai già fatto:

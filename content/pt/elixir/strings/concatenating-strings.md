@@ -11,9 +11,6 @@ title: Concatenando strings
 weight: 3
 ---
 
-## O Que & Por Que?
-Concatenar strings é sobre juntar duas ou mais cadeias de caracteres para formar um único texto. Você pode precisar mesclar textos para gerar mensagens de usuário, criar caminhos de arquivo ou para processos de serialização de dados. É uma operação fundamental em qualquer linguagem de programação, incluindo Elixir, permitindo que desenvolvedores construam strings dinâmicas com facilidade.
-
 ## Como fazer:
 No Elixir, você pode concatenar strings de algumas maneiras diretas. Vamos explorar os métodos mais comuns:
 

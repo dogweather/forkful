@@ -10,9 +10,6 @@ title: Trovare la lunghezza di una stringa
 weight: 7
 ---
 
-## What & Why?
-Trovare la lunghezza di una stringa significa contare il numero di caratteri che contiene. I programmatori lo fanno per convalidare l'input, troncare il testo, fare confronti e per molteplici altri motivi.
-
 ## How to:
 Usare la funzione `count` per ottenere la lunghezza di una stringa:
 

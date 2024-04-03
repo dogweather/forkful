@@ -13,12 +13,7 @@ title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---
 
-## O Que & Porquê?
-
-Escrever para o erro padrão (stderr) no Fish Shell é sobre direcionar mensagens de erro ou diagnósticos separadamente da saída padrão (stdout). Os programadores fazem isso para garantir que as informações de erro possam ser facilmente identificadas, gerenciadas ou redirecionadas, facilitando processos mais suaves de depuração e registro.
-
 ## Como Fazer:
-
 No Fish Shell, você pode escrever para stderr redirecionando sua saída usando `>&2`. Aqui está um exemplo básico:
 
 ```fish

@@ -14,9 +14,6 @@ title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---
 
-## O Que & Por Que?
-Verificar se um diretório existe é uma operação fundamental em muitas tarefas de programação, permitindo ações condicionais com base na presença ou ausência de estruturas de diretório. É crucial para a manipulação de arquivos, scripts automatizados e durante a configuração inicial de software para garantir que os diretórios necessários estejam no lugar, ou para evitar a duplicação de diretórios.
-
 ## Como fazer:
 Haskell, através de sua biblioteca base, oferece maneiras diretas de verificar a existência de diretórios, principalmente usando o módulo `System.Directory`. Vamos olhar para um exemplo básico:
 

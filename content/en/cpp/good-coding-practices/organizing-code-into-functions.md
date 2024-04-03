@@ -10,9 +10,6 @@ title: Organizing code into functions
 weight: 18
 ---
 
-## What & Why?
-Splitting code into functions means carving your code into smaller, reusable chunks. We do it to avoid repetition, make our code readable, and simplify debugging and testing. Well-organized functions can be like having a box of neatly labeled tools, ready to use and share.
-
 ## How to:
 Let's take a common task: calculating the area of a circle. Instead of writing the same formula every time, we encapsulate it into a function.
 

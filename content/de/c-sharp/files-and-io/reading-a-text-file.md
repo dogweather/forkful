@@ -10,9 +10,6 @@ title: Textdatei einlesen
 weight: 22
 ---
 
-## Was & Warum?
-Dateien lesen bedeutet, Daten aus einer Textdatei in den Speicher zu laden, damit Code sie verarbeiten kann. Programmierer machen das, um Inhalte zu verarbeiten, Konfigurationen zu laden oder Daten zu speichern.
-
 ## How to:
 Bist du bereit, eine Textdatei in C# zu lesen? Hier sind ein paar schlanke Beispiele:
 

@@ -9,9 +9,6 @@ title: Uthenting av delstrenger
 weight: 6
 ---
 
-## Hva & Hvorfor?
-Å trekke ut substrings betyr å hente en spesiell del av en tekststreng. Programmerere gjør dette for å behandle eller analysere spesifikke datapartier innen en større tekst.
-
 ## Hvordan:
 ```Arduino
 String fullTekst = "Heisann Sveisann!";

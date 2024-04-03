@@ -14,12 +14,7 @@ title: Obtendo a data atual
 weight: 29
 ---
 
-## O Que & Por Que?
-
-No Visual Basic for Applications (VBA), recuperar a data atual é uma tarefa comum que permite aos programadores trabalhar dinamicamente com datas em suas macros ou aplicações. Essa funcionalidade é crucial para operações como registrar logs, marcar transações com timestamps ou realizar cálculos baseados em datas.
-
 ## Como fazer:
-
 Recuperar a data atual no VBA é direto, utilizando a função `Date`, enquanto a função `Now` fornece tanto a data quanto a hora atuais. Veja como você pode trabalhar com ambos:
 
 ```vb
@@ -46,7 +41,6 @@ Data e Hora Atuais: 12/04/2023 15:45:22
 Lembre-se de que o formato da data pode variar com base nas configurações do sistema do computador do usuário.
 
 ## Aprofundamento
-
 As funções `Date` e `Now` encapsulam a complexidade de lidar com data e hora no Visual Basic for Applications, fornecendo uma abstração em nível de aplicação que torna o trabalho com datas simples e intuitivo. Historicamente, lidar com data e hora na programação tem sido repleto de desafios, incluindo o manejo de diferentes fusos horários, mudanças no horário de verão e diversos formatos de data.
 
 No VBA, essas funções dependem da data e hora do sistema subjacente, o que significa que são influenciadas pela localidade e configurações do sistema do usuário. É uma espada de dois gumes que garante consistência com o ambiente do usuário, mas também exige um tratamento cuidadoso da localização e ajustes de fuso horário em aplicações globais.

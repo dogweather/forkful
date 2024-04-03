@@ -12,9 +12,6 @@ title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---
 
-## Wat & Waarom?
-Een toekomstige of verleden datum berekenen is gewoon een gegeven datum aanpassen met een bepaalde hoeveelheid tijd. Programmeurs doen dit om deadlines, evenementen, herinneringen—alles wat met data te maken heeft—te hanteren.
-
 ## Hoe:
 De `Time` module van Elm en het `justinmimbs/time-extra` pakket laten ons gemakkelijk met datums knoeien.
 

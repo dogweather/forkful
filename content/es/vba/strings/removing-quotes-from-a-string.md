@@ -14,12 +14,7 @@ title: Eliminando comillas de una cadena
 weight: 9
 ---
 
-## ¿Qué & Por qué?
-
-Eliminar comillas de una cadena en VBA implica quitar instancias de comillas simples (`'`) o dobles (`"`) que pueden encapsular o estar incrustadas dentro de la cadena. Esta operación es esencial para la sanidad de datos, asegurando que las cadenas estén correctamente formateadas para consultas de base de datos, análisis de JSON, o simplemente por razones estéticas o de consistencia dentro de la interfaz de una aplicación.
-
 ## Cómo:
-
 En VBA, hay múltiples enfoques para eliminar comillas de una cadena. Aquí hay un ejemplo sencillo usando la función `Replace`, la cual busca una subcadena específica (en este caso, una comilla) dentro de una cadena y la reemplaza con otra subcadena (una cadena vacía si se eliminan).
 
 ```basic
@@ -42,7 +37,6 @@ Nota que para las comillas dobles, usamos `Chr(34)` porque una comilla doble es 
 Para escenarios más matizados donde las comillas puedan ser parte del formato necesario (por ejemplo, dentro de una palabra citada), podría requerirse una lógica más sofisticada, tal vez involucrando Regex o análisis carácter por carácter.
 
 ## Análisis profundo
-
 VBA, siendo un pilar en la automatización de tareas dentro de la suite de Microsoft Office, ofrece un rico conjunto de funciones de manipulación de cadenas, siendo `Replace` una de las más utilizadas. Sin embargo, esta función solo rasca la superficie de lo que se puede lograr con VBA en términos de manipulación de cadenas.
 
 Históricamente, VBA adoptó de sus predecesores un énfasis en la simplicidad para tareas de automatización de oficina, de ahí la implementación directa de funciones como `Replace`. Sin embargo, para tareas de programación modernas, especialmente aquellas que involucran manipulaciones o saneamientos de cadenas complejas, VBA podría mostrar sus limitaciones.

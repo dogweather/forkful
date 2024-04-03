@@ -12,14 +12,10 @@ title: "Edycja plik\xF3w w miejscu przy u\u017Cyciu jednolinijkowc\xF3w CLI"
 weight: 32
 ---
 
-## Co i Dlaczego?
-
-Edycja plików w miejscu za pomocą jednolinijkowych poleceń CLI w PowerShellu polega na dokonywaniu bezpośrednich modyfikacji plików z linii poleceń, bez potrzeby otwierania ich w edytorze. To podejście pozwala zaoszczędzić czas i może być szczególnie przydatne do przetwarzania wsadowego lub automatyzacji powtarzalnych zadań edycyjnych w wielu plikach.
-
 ## Jak to zrobić:
 
-### Zastępowanie tekstu w pojedynczym pliku
 
+### Zastępowanie tekstu w pojedynczym pliku
 Zacznijmy od prostego zadania: chcesz zastąpić wszystkie wystąpienia "oldtext" na "newtext" w pliku o nazwie example.txt. Oto jak to zrobisz:
 
 ```PowerShell
@@ -29,7 +25,6 @@ Zacznijmy od prostego zadania: chcesz zastąpić wszystkie wystąpienia "oldtext
 Ta jednolinijkowa komenda odczytuje zawartość, wykonuje zamianę i zapisuje zawartość z powrotem do oryginalnego pliku.
 
 ### Edycja wielu plików
-
 Co jeśli potrzebujesz zastosować tę samą zmianę w wielu plikach? Oto podejście z użyciem pętli:
 
 ```PowerShell
@@ -41,7 +36,6 @@ Get-ChildItem *.txt | ForEach-Object {
 Ten fragment kodu znajduje wszystkie pliki `.txt` w bieżącym katalogu i zastępuje w każdym z nich "oldtext" na "newtext".
 
 ### Dodawanie zawartości na początku lub końcu plików
-
 Dodawanie lub dopisywanie zawartości również może być zautomatyzowane:
 
 ```PowerShell
@@ -55,7 +49,6 @@ Dodawanie lub dopisywanie zawartości również może być zautomatyzowane:
 W tym przypadku po prostu konkatenujemy nową zawartość przed lub po istniejącej zawartości i zapisujemy ją z powrotem.
 
 ## Dogłębna analiza
-
 Historycznie, edycja w miejscu jest bardziej kojarzona z narzędziami Unixowymi takimi jak `sed` i `awk`. PowerShell, jako stosunkowo nowy nabytek, nie zawiera wbudowanej funkcji edycji w miejscu jako takiej. Wynika to częściowo z jego filozofii projektowej, podkreślającej znaczenie obiektów nad strumieniami tekstowymi, w przeciwieństwie do narzędzi Unixowych, które traktują większość danych wejściowych jako tekst.
 
 Alternatywy dla PowerShella do tego zadania obejmują korzystanie z tradycyjnych narzędzi Unixowych dostępnych na Windows przez Cygwin lub podsystem Windows dla systemu Linux (WSL). Te narzędzia często oferują bardziej zwięzłą składnię do edycji w miejscu ze względu na ich tekstocentryczny projekt.

@@ -11,9 +11,6 @@ title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---
 
-## What & Why? (Co i Dlaczego?)
-Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem to sposób na dostęp do zabezpieczonych zasobów sieciowych. Programiści używają tego, by komunikować się z serwerami wymagającymi prostej autoryzacji - wpisujesz login i hasło, masz dostęp.
-
 ## How to: (Jak to zrobić:)
 ```Clojure
 (require '[clj-http.client :as client])

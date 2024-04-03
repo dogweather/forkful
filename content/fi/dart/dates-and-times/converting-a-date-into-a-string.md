@@ -15,16 +15,10 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuttaminen merkkijonoksi"
 weight: 28
 ---
 
-## Mikä ja miksi?
-
-Päivämäärän muuntaminen merkkijonoksi Dart-kielessä on yleinen tehtävä, kun tarvitsee näyttää päivämäärä- ja aikatietoja ihmisluettavassa muodossa tai kun aikoo sarjoittaa tietoja tallennusta tai siirtoa varten. Tämä prosessi mahdollistaa päivämäärä-aika-arvojen helpon esittämisen ja käsittelyn muodossa, joka on sekä ymmärrettävä että mukautettavissa käyttötarkoituksen mukaan.
-
 ## Kuinka:
-
 Dart tarjoaa `DateTime`-luokan päivämäärien ja aikojen käsittelyyn sekä `intl`-paketin muotoiluun. Varmista ensin, että sinulla on `intl`-paketti lisäämällä `intl: ^0.17.0` (tai uusin versio) `pubspec.yaml`-tiedostoosi.
 
 ### Käyttäen Dart:n ydinkirjastoa
-
 ```dart
 DateTime now = DateTime.now();
 String formattedDate = "${now.year}-${now.month}-${now.day}";
@@ -34,7 +28,6 @@ print(formattedDate); // Tuloste: 2023-4-12 (esimerkiksi, tämä riippuu nykyise
 Tässä esimerkissä muodostetaan suoraan merkkijono `DateTime`-olion ominaisuuksista.
 
 ### Käyttäen `intl`-pakettia
-
 Tuo ensin paketti:
 
 ```dart

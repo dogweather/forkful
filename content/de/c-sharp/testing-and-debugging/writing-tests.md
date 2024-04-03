@@ -13,12 +13,7 @@ title: Tests Schreiben
 weight: 36
 ---
 
-## Was & Warum?
-
-Das Schreiben von Tests in C# beinhaltet das Erstellen von automatisierten Skripten, um die Funktionalität Ihres Codes zu validieren und sicherzustellen, dass er sich wie erwartet verhält. Programmierer tun dies, um frühzeitig Fehler zu erkennen, die Code-Refaktorisierung zu erleichtern und sicherzustellen, dass neue Änderungen bestehende Funktionen nicht unterbrechen, wodurch die Softwarequalität und -zuverlässigkeit gesteigert wird.
-
 ## Wie:
-
 C#-Entwickler verwenden hauptsächlich die Frameworks NUnit oder xUnit zum Schreiben von Tests aufgrund ihrer Flexibilität und des umfangreichen Funktionsumfangs. Hier ist ein einfaches Beispiel, das NUnit verwendet, um eine einfache Additionsfunktion zu testen:
 
 1. **Installieren Sie NUnit und NUnit3TestAdapter** über den NuGet-Paketmanager oder die .NET CLI:
@@ -72,7 +67,6 @@ dotnet test
 ```
 
 ### Beispiel-Ausgabe:
-
 Wenn Ihr Test erfolgreich ist, sollten Sie eine Ausgabe ähnlich dieser sehen:
 ```
 Testlauf erfolgreich.
@@ -82,7 +76,6 @@ Gesamttests: 1
 ```
 
 ### Verwendung von xUnit:
-
 Wenn Sie xUnit bevorzugen, ähnelt das Setup dem von NUnit. So würden Sie das Testbeispiel für die Klasse `Calculator` mit xUnit umschreiben:
 
 1. **Installieren Sie xUnit und xUnit.runner.visualstudio**:

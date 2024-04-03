@@ -10,9 +10,6 @@ title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---
 
-## What & Why? (Mitä & Miksi?)
-Lasketaan tulevaisuuden tai menneisyyden päivämäärä. Tarvitaan esimerkiksi määrittämään eräpäiviä tai ajastamaan tapahtumia.
-
 ## How to: (Kuinka tehdä:)
 ```C++
 #include <iostream>

@@ -10,12 +10,7 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-
-Die Fehlerbehandlung in Ihren Programmen fängt die unvorhergesehenen Dinge auf, die versuchen, Ihnen ein Bein zu stellen. Sie tun dies, um zu verhindern, dass Ihr Arduino abschmiert, wenn das Unerwartete passiert.
-
 ## Wie geht das:
-
 Nehmen wir an, Ihr Arduino liest einen Sensor, der gelegentlich Werte außerhalb des Bereichs produzieren kann. So könnten Sie das handhaben:
 
 ```Arduino
@@ -37,7 +32,6 @@ Fehler: Sensorwert außerhalb des Bereichs.
 ```
 
 ## Vertiefung
-
 Die Fehlerbehandlung war nicht immer so geradlinig. In den frühen Tagen ignorierten Entwickler oft Fehler, was zum gefürchteten "undefinierten Verhalten“ führte. Mit der Evolution der Programmierung entwickelten sich auch die Werkzeuge - in vielen Sprachen gibt es jetzt Ausnahmen, aber in der Arduino-Welt bleibt es aufgrund von Hardwarebeschränkungen und C++-Wurzeln immer noch beim alten 'erst-überprüfen'.
 
 In der Arduino-Programmierung sieht man oft `if-else`-Anweisungen für die Fehlerbehandlung. Es gibt jedoch Alternativen: die Verwendung der `assert`-Funktion, um die Ausführung zu stoppen, wenn eine Bedingung fehlschlägt, oder das Design von Ausfallsicherungen innerhalb Ihrer Hardwarekonfiguration.
@@ -45,7 +39,6 @@ In der Arduino-Programmierung sieht man oft `if-else`-Anweisungen für die Fehle
 Wenn Sie eine Fehlerbehandlung implementieren, sollten Sie die Auswirkungen des Anhaltens des Programms im Vergleich zum Fortfahren mit einem standardmäßigen oder sicheren Zustand abwägen. Es gibt einen Kompromiss, und die richtige Wahl hängt von dem potenziellen Schaden von Unterbrechungen im Vergleich zu einem falschen Betrieb ab.
 
 ## Siehe auch
-
 Vertiefen Sie Ihre Kenntnisse in Fehlererkennung und -behandlung mit diesen Ressourcen:
 
 - Referenz der Arduino-Sprache: https://www.arduino.cc/reference/en/

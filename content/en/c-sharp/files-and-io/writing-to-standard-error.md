@@ -11,9 +11,6 @@ title: Writing to standard error
 weight: 25
 ---
 
-## What & Why?
-Writing to standard error (stderr) in C# involves directing error messages and diagnostics separately from regular output (stdout) to help users and developers distinguish between normal program output and error notifications. Programmers do this to make debugging and logging more efficient, allowing smoother operation and maintenance of applications.
-
 ## How to:
 In C#, writing to standard error can be achieved using the `Console.Error` stream. This stream is used specifically for error messages and diagnostics. Here's a basic example:
 

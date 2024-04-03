@@ -15,12 +15,7 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## Mitä & Miksi?
-
-Merkkijonon muuntaminen pieniksi kirjaimiksi on perustoiminto, joka mahdollistaa yhtenäisyyden ja johdonmukaisuuden tekstinkäsittelyssä, mikä on olennaista esimerkiksi kirjainkoosta riippumattomia vertailuja tai tekstin normalisointia varten. Ohjelmoijat suorittavat usein tämän toiminnon valmistellakseen dataa edelleen käsiteltäväksi tai varmistaakseen yhteensopivuuden eri järjestelmien ja lokaalien kesken.
-
 ## Kuinka:
-
 Gossa merkkijonon muuntaminen pieniksi kirjaimiksi onnistuu helposti käyttämällä `strings`-pakettia, erityisesti `ToLower()`-funktiota. Tämä funktio ottaa syötteenä merkkijonon ja palauttaa uuden merkkijonon, jossa kaikki suurkirjaimet on muunnettu pieniksi kirjaimiksi. Tässä nopea esimerkki:
 ```go
 package main
@@ -45,7 +40,6 @@ Lowercase: hello, world!
 Tämä esimerkki havainnollistaa suoraviivaista lähestymistapaa muuntaa mikä tahansa merkkijono pieniksi kirjaimiksi Gossa. Se on yksinkertainen, ja raskaan työn tekee `ToLower()`-metodi, joka abstrahoi pois merkistökohtaiset ja lokaalisidonnaiset kirjainsäännöt.
 
 ## Syväsukellus
-
 `strings.ToLower()`-toteutus Gon standardikirjastossa on tehokas ja Unicode-tietoinen, mikä tarkoittaa, että se käsittelee oikein perus-ASCII-sarjan ulkopuolisia merkkejä, mukaan lukien ei-latinalaisen aakkoston kirjaimia. Tämä on erityisen tärkeää globaalissa kontekstissa, jossa ohjelmisto saattaa käsitellä tekstiä moninaisista kielistä ja merkistöistä.
 
 Aikaisemmin ohjelmointikielet eivät usein natiivisti tukeneet tällaisia toimintoja, tai niiden toteutukset rajoittuivat ASCII-merkistöön, mikä johti virheelliseen käyttäytymiseen muiden aakkostojen kanssa. Go on suunniteltu Unicode-tuen pohjalta alusta lähtien, heijastaen nykyaikaista lähestymistapaa merkkijonojen käsittelyyn.

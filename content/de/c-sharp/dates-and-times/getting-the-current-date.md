@@ -12,9 +12,6 @@ title: Den aktuellen Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-Das Abrufen des aktuellen Datums in C# beinhaltet das Abrufen der aktuellen Datums- und Uhrzeitangaben vom System. Programmierer müssen oft auf diese Informationen zugreifen, um Vorgänge zu protokollieren, Aktionen zu zeitstempeln oder Aufgaben innerhalb von Anwendungen zu planen, um sicherzustellen, dass Handlungen genau getimt und Daten mit präzisen Zeitstempeln versehen werden.
-
 ## Wie:
 C# bietet eine unkomplizierte Methode, um das aktuelle Datum mittels der `DateTime` Klasse zu erhalten, die Teil des System-Namensraums des .NET-Frameworks ist. Das folgende Beispiel demonstriert, wie man das aktuelle Datum und optional die Uhrzeit erhält.
 

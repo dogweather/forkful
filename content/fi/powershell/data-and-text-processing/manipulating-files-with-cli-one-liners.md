@@ -11,11 +11,8 @@ title: "Tiedostojen k\xE4sittely yhden rivin komentorivikomennoilla"
 weight: 31
 ---
 
-## Mikä & Miksi?
-
-Tiedostojen käsittely CLI-yksirivikomennoin PowerShellissä tarkoittaa tiedostojen nopeaa muuttamista, siirtämistä tai tiedon saamista suoraan komentoriviltä. Ohjelmoijat tekevät sen tehokkuuden vuoksi; se on nopeampaa kuin GUI:den navigointi tai yksinkertaisten tehtävien varten pitkien skriptien kirjoittaminen.
-
 ## Miten tehdään:
+
 
 ### Tiedoston lukeminen
 Tiedoston sisällön nopeaan näyttämiseen käytä komentoa `Get-Content`:
@@ -60,7 +57,6 @@ Get-ChildItem -Path .\*.log | Copy-Item -Destination C:\Logs
 ```
 
 ## Syventävä katsaus
-
 Historiallisesti PowerShell esiteltiin voimakkaampana vaihtoehtona perinteiselle komentokehotteelle Windowsissa, tarjoten ennen näkemättömän pääsyn järjestelmän sisäosiin ja tietovarastoihin. Se yhdistää komentorivin nopeuden skriptauksen joustavuuteen, tehden siitä korvaamattoman työkalun Windows-pohjaisten järjestelmänvalvojien ja kehittäjien käyttöön.
 
 Vaihtoehdot PowerShellille tiedostojen käsittelyssä sisältävät Unix-pohjaisia työkaluja kuten `sed`, `awk`, `grep`, ja `bash`-skriptaus Linux- ja MacOS-käyttäjille. Vaikka nämä työkalut ovat erittäin voimakkaita ja omaavat omat ansionsa, PowerShell tarjoaa syvällisen integraation Windows-ympäristöihin.

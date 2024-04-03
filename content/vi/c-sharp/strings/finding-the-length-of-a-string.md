@@ -16,12 +16,7 @@ title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---
 
-## Lý do và Mục đích
-
-Việc tìm độ dài của chuỗi đề cập đến việc đếm số lượng ký tự của nó. Chúng ta thực hiện điều này để xác nhận đầu vào, lặp qua các ký tự, phân bổ tài nguyên, hoặc chỉ đơn giản là tò mò – biết kích thước là quan trọng.
-
 ## Cách thực hiện:
-
 Trong C#, thuộc tính `string.Length` cung cấp số lượng ký tự có trong một chuỗi. Dưới đây là cách sử dụng nó:
 
 ```C#
@@ -40,7 +35,6 @@ class Program
 Dễ dàng, phải không? Nhưng hãy nhớ, nó đếm *ký tự*, không phải byte. Với các emoji hoặc ký tự đặc biệt, mọi thứ có thể trở nên phức tạp hơn. Chúng ta sẽ nói thêm về điều này sau.
 
 ## Sâu hơn nữa
-
 Theo lịch sử, việc tìm độ dài của một chuỗi đã gắn liền với quản lý và thao tác bộ nhớ trong lập trình. Do C# là một ngôn ngữ cấp cao, nó đã trừu tượng hóa công việc cấp thấp đó đi. Tuy nhiên, biết được điều gì đang diễn ra bên dưới cũng rất tốt.
 
 Có phương pháp khác không? Chắc chắn rồi! Bạn có thể thấy `example.ToCharArray().Length` được sử dụng ngoài kia, nhưng nó chỉ thực hiện công việc nặng nhọc để đạt được kết quả giống nhau.
@@ -68,7 +62,6 @@ class Program
 Bạn đã hiểu sự khác biệt chưa? Đây không chỉ là lý thuyết; nó có thể ảnh hưởng đến xử lý văn bản một cách có ý nghĩa.
 
 ## Xem thêm
-
 Khám phá thêm với các nguồn này:
 
 - [Tài liệu chính thức của Microsoft về chuỗi](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)

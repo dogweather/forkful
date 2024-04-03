@@ -11,9 +11,6 @@ title: Lancement d'un nouveau projet
 weight: 1
 ---
 
-## What & Why? - Quoi et Pourquoi ?
-Démarrer un nouveau projet, c'est partir de zéro pour créer quelque chose de fonctionnel. Pourquoi ? Pour résoudre un problème, apprendre ou simplement pour le plaisir de créer.
-
 ## How to - Comment faire :
 ```Fish Shell
 # Créer un nouveau répertoire pour le projet

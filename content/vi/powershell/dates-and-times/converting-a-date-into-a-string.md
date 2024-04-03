@@ -15,12 +15,7 @@ title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---
 
-## Cái gì & Tại sao?
-
-Việc chuyển đổi một ngày thành chuỗi trong PowerShell có nghĩa là thay đổi đối tượng `DateTime` thành định dạng văn bản. Lập trình viên thực hiện điều này để định dạng ngày cho việc hiển thị, nhật ký, tên file, hoặc để tuần tự hóa thông tin cho việc lưu trữ và chuyển giao dữ liệu.
-
 ## Làm thế nào:
-
 Để chuyển một ngày thành chuỗi, chúng ta sử dụng phương thức `ToString` hoặc toán tử định dạng `-f`. Dưới đây là cách thức:
 
 ```PowerShell
@@ -49,7 +44,6 @@ Ví dụ đầu ra:
 ```
 
 ## Sâu hơn
-
 PowerShell, lấy cảm hứng từ các shell Unix và Windows Script Host, đã giới thiệu `Get-Date` trong giai đoạn phát triển đầu tiên vào khoảng năm 2006. Đây trở thành lệnh chính cho các thao tác ngày-giờ. Phương thức `ToString` trên các đối tượng `DateTime` và toán tử định dạng `-f` là những khái niệm được mượn từ .NET, mang lại hương vị hướng đối tượng cho PowerShell.
 
 Nếu `ToString()` không được chỉ định với một định dạng, nó sẽ trả về ngày và giờ đầy đủ theo định dạng của văn hóa hiện tại. Nhưng khi bạn cần một bố cục cụ thể, như ISO 8601 hoặc chỉ ngày và tháng, các chuỗi định dạng ngày và giờ tùy chỉnh của .NET trở thành bạn đồng hành.
@@ -63,7 +57,6 @@ Các phương án khác bao gồm việc nối cơ bản các thành phần ngà
 Bạn có thể đi sâu hơn vào các chỉ dẫn định dạng trong tài liệu chính thức của Microsoft hoặc khám phá các blog do cộng đồng viết, thường chia sẻ các cách sáng tạo để thao tác với ngày và giờ trong PowerShell.
 
 ## Xem thêm
-
 - Tài liệu chính thức của PowerShell về cmdlet [Get-Date](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-date), cung cấp cách sử dụng và ví dụ.
 - Hướng dẫn về chuỗi định dạng tiêu chuẩn và tùy chỉnh của .NET [format strings guide](https://docs.microsoft.com/dotnet/standard/base-types/standard-date-and-time-format-strings) cho chi tiết định dạng sâu hơn.
 - Các blog cộng đồng như diễn đàn [PowerShell.org](https://powershell.org/forums/) hoặc [Stack Overflow](https://stackoverflow.com/questions/tagged/powershell+datetime) để xem các ví dụ thực tế và thảo luận giải quyết vấn đề.

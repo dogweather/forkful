@@ -10,9 +10,6 @@ title: Finding the length of a string
 weight: 7
 ---
 
-## What & Why?
-In PowerShell, finding the length of a string means to count the number of characters it contains. Programmers do it to validate input, manipulate text data, and ensure data fits certain criteria or formats.
-
 ## How to:
 PowerShell makes getting the string length straightforward. Just toss a string at the `.Length` property, like this:
 

@@ -15,12 +15,7 @@ title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---
 
-## Cái gì & Tại sao?
-
-Tìm kiếm và thay thế văn bản là cơ bản của lập trình; chúng chủ yếu là tìm các chuỗi và thay thế chúng. Lập trình viên thực hiện việc này mọi lúc cho các công việc như cập nhật cơ sở mã, xử lý dữ liệu văn bản, hoặc chỉ đơn giản là các tác vụ chỉnh sửa.
-
 ## Làm thế nào:
-
 Trong Elixir, bạn có thể sử dụng mô-đun `String` để thực hiện nhanh chóng các thao tác tìm và thay thế. Đây là cách bạn thực hiện:
 
 ```elixir
@@ -40,7 +35,6 @@ IO.puts insensitive_replace  # Đầu ra: I heart ❤️!
 ```
 
 ## Sâu hơn
-
 Việc tìm kiếm và thay thế văn bản đã tồn tại từ thuở sơ khai của máy tính; nghĩ đến 'tìm và thay thế' trong một tài liệu Word, nhưng dành cho mã. Trong Elixir, nó liên quan đến việc phù hợp mẫu và làm việc hiệu quả với chuỗi. 
 
 Hàm `String.replace/4` tận dụng khả năng phù hợp mẫu của Elixir, cho phép bạn không chỉ phù hợp với các chuỗi tĩnh mà còn cả các mẫu regex, cung cấp sự linh hoạt đáng kể. Đằng sau hậu trường, Elixir sử dụng khả năng xử lý chuỗi mạnh mẽ của Erlang, đó là mạnh mẽ và hiệu quả cho các tác vụ xử lý văn bản.
@@ -50,7 +44,6 @@ Các lựa chọn thay thế cho mô-đun `String` built-in bao gồm viết cá
 Với tư cách là một ngôn ngữ bất biến, hãy nhớ rằng mỗi hàm thay thế trả về một chuỗi mới - chuỗi gốc không thay đổi. Điều này khác với một số ngôn ngữ khác khi bạn có thể thay đổi chuỗi tại chỗ.
 
 ## Xem thêm
-
 - Tài liệu mô-đun `String` của Elixir: [https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)
 - Regex trong Elixir: [https://hexdocs.pm/elixir/Regex.html](https://hexdocs.pm/elixir/Regex.html)
 - Tìm hiểu thêm về phù hợp mẫu trong Elixir: [https://elixir-lang.org/getting-started/pattern-matching.html](https://elixir-lang.org/getting-started/pattern-matching.html)

@@ -14,12 +14,7 @@ title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---
 
-## Vad & Varför?
-
-Reguljära uttryck (regex) är sekvenser av tecken som bildar ett sökmönster, primärt använda för sökning och manipulation av strängar. Programmerare utnyttjar regex i PowerShell för uppgifter som datavalidering, tolkning och transformation på grund av dess effektivitet och flexibilitet vid hantering av komplexa mönster.
-
 ## Hur man gör:
-
 I PowerShell kan du använda operatorerna `-match`, `-replace` och `-split`, bland andra, för att utföra åtgärder med reguljära uttryck. Låt oss utforska några exempel:
 
 ### Använda `-match` för att kontrollera om en sträng matchar ett mönster

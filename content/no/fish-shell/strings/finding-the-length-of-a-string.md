@@ -10,9 +10,6 @@ title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---
 
-## Hva & Hvorfor?
-Å finne lengden på en streng betyr å telle antall tegn den inneholder. Programmerere gjør dette for å validere inndata, skjære strenger eller for å manipulere tekstbasert data effektivt.
-
 ## Slik gjør du:
 I Fish Shell, bruk `string length` for å få lengden på en streng.
 

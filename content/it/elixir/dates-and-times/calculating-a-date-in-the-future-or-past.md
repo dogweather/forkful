@@ -11,9 +11,6 @@ title: Calcolo di una data futura o passata
 weight: 26
 ---
 
-## Cosa e Perché?
-Calcolare una data futura o passata significa semplicemente trovare una data che è un certo numero di giorni, mesi o anni distante dalla data odierna. I programmatori lo fanno per gestire eventi futuri, scadenze, o per tracciare periodi nel passato.
-
 ## Come fare:
 Usiamo la libreria Elixir DateTime per manipolare le date. Aggiungere o sottrarre giorni è semplice.
 

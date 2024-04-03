@@ -15,9 +15,6 @@ title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---
 
-## Cái gì & Tại sao?
-Tái cấu trúc là quá trình cấu trúc lại mã máy tính hiện có mà không thay đổi hành vi bên ngoài của nó. Lập trình viên thực hiện điều này để làm cho mã sạch hơn, dễ bảo trì hơn và giảm độ phức tạp, giúp mã dễ hiểu hơn đối với những người mới bắt đầu tìm hiểu.
-
 ## Làm thế nào:
 Xem xét một hàm TypeScript đã qua thời hoàng kim - nó hơi bừa bộn và cần được chăm sóc một cách tỉ mỉ:
 

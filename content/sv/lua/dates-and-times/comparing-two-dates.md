@@ -11,9 +11,6 @@ title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---
 
-## Vad & Varför?
-Att jämföra två datum innebär att fastställa vilket av dem som kommer först på tidslinjen. Programmerare gör detta för att hantera tidsbaserade händelser, som utgångsdatum eller schemaläggning.
-
 ## Hur gör man?:
 ```Lua
 -- Ladda in os-biblioteket

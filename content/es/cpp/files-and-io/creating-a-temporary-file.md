@@ -11,9 +11,6 @@ title: Creando un archivo temporal
 weight: 21
 ---
 
-## What & Why?
-Crear un archivo temporal es hacer un fichero que sólo necesitas durante el tiempo de ejecución de tu programa. Los programadores lo hacen para almacenar datos temporalmente sin afectar el sistema de archivos permanente.
-
 ## How to:
 En C++, usamos la cabecera `<filesystem>` para crear y manejar archivos temporales. Aquí tienes un ejemplo sencillo:
 

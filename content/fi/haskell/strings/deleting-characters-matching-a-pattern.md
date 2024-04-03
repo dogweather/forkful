@@ -10,11 +10,7 @@ title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---
 
-## What & Why? - Mitä & Miksi?
-Haskellissa merkkien poistaminen kuvion mukaisesti tarkoittaa ei-toivottujen merkkien suodattamista syötteestä. Ohjelmoijat tekevät tämän datan puhdistamiseksi ja käsiteltävyyden parantamiseksi.
-
 ## How to: - Kuinka tehdä:
-
 ```Haskell
 -- Ladataan tarvittavat kirjastot
 import Data.Char (isSpace)
@@ -45,7 +41,6 @@ main = putStrLn $ removeDigits "H4sk3ll 0n k1v4!"
 Haskellissa voimme poistaa merkkejä merkkijonosta käyttämällä `filter`-funktiota yhdessä ehtojen kanssa, jotka määrittelevät, mitkä merkit halutaan jättää pois.
 
 ## Deep Dive - Syväsukellus:
-
 Haskellissa merkkien suodattaminen on funktio-ohjelmointikonsepti, joka perustuu listojen käsittelyyn. Historiallisesti Haskell on periytynyt ML:n ja Lispin kehittämistä ideoista, ja sen suodatusmekanismit heijastavat funktionaalisen ohjelmoinnin deklaratiivista luonnetta. Vaihtoehtoisesti, voimme käyttää `Data.Text`-moduulia, joka on tehokkaampi suurille teksteille.
 
 Koodin ymmärtämisen kannalta on tärkeä tietää, että `filter` työskentelee korkeamman asteen funktiona, joka ottaa toisen funktion (ehtofunktion) ja listan, ja palauttaa listan, joka sisältää vain alkioita, jotka täyttävät ehtofunktion.
@@ -53,7 +48,6 @@ Koodin ymmärtämisen kannalta on tärkeä tietää, että `filter` työskentele
 Toteutuksen yksityiskohdissa `filter` on usein osa laajempaa koodirunkoa. Esimerkiksi tiedostojen käsittelyssä tai verkkoliikenteeseen liittyvissä toiminnoissa voidaan käyttää suodatusta hyödyksi poistamalla ei-toivotut merkit ennen datan tallentamista tai sen lähettämistä.
 
 ## See Also - Katso myös:
-
 - Haskellin dokumentaatio suodatustoiminnalle: [Haskell filter](http://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:filter)
 - `Data.Text` moduuli: [Data.Text documentation](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html)
 - Johdatus funktionaaliseen ohjelmointiin: [Learn You a Haskell](http://learnyouahaskell.com/)

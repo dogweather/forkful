@@ -13,9 +13,6 @@ title: Interpolation eines Strings
 weight: 8
 ---
 
-## Was & Warum?
-Die Zeichenketteninterpolation in C# ermöglicht es Ihnen, einen neuen String zu erstellen, indem Ausdrücke innerhalb eines Zeichenketten-Literals eingefügt werden. Dies erleichtert das Formatieren und Verketten von Strings. Programmierer nutzen dieses Feature, um die Lesbarkeit und Wartbarkeit des Codes zu verbessern, insbesondere wenn sie mit dynamischen Zeichenketteninhalten arbeiten.
-
 ## Wie geht das:
 In C# wird die Zeichenketteninterpolation durch ein Dollarzeichen (`$`) angezeigt, gefolgt von einem Zeichenketten-Literal. Die Variablennamen oder Ausdrücke werden in geschweifte Klammern (`{}`) eingeschlossen.
 

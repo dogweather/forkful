@@ -14,12 +14,7 @@ title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---
 
-## O Quê & Porquê?
-
-Escrever para o erro padrão (stderr) em Dart consiste em enviar mensagens de erro e diagnósticos para um fluxo separado, distinto da saída padrão (stdout). Programadores fazem isso para diferenciar entre a saída normal do programa e os erros ou mensagens de aviso, permitindo um depuração e registro de logs mais fácil.
-
 ## Como Fazer:
-
 Em Dart, escrever para o stderr é direto usando o objeto `stderr` disponível em `dart:io`. Aqui está um exemplo básico:
 
 ```dart

@@ -12,9 +12,6 @@ title: Loggning
 weight: 17
 ---
 
-## Vad & Varför?
-Loggning inom mjukvaruutveckling är tekniken att registrera händelser som inträffar när ett program körs, vanligtvis till en fil eller externt system. Programmerare gör detta för att få insikter i mjukvarans beteende, felsöka problem och bibehålla en historik av operativ historik som är avgörande för felsökning och övervakning av applikationernas hälsa.
-
 ## Hur man gör:
 I Elixir är det primära sättet att logga information genom den inbyggda `Logger`-modulen. Så här kan du använda den:
 

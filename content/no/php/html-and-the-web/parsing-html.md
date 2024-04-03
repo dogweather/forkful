@@ -13,9 +13,6 @@ title: Analysering av HTML
 weight: 43
 ---
 
-## Hva & Hvorfor?
-Parsing av HTML i PHP involverer å trekke ut spesifikk informasjon fra HTML-dokumenter. Utviklere utfører denne oppgaven for å automatisere datautvinning, webskraping, eller for å integrere innhold fra ulike nettsider i sine applikasjoner, noe som forbedrer funksjonaliteten uten manuell inngripen.
-
 ## Hvordan:
 For å parse HTML, kan PHP-utviklere utnytte innebygde funksjoner eller støtte seg på robuste biblioteker som Simple HTML DOM Parser. Her vil vi utforske eksempler ved å bruke både PHPs `DOMDocument` og Simple HTML DOM Parser.
 

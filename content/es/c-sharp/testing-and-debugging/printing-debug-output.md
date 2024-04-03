@@ -11,9 +11,6 @@ title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---
 
-## Qué y Por Qué?
-La impresión de salida de depuración es mostrar mensajes en la consola para entender qué está pasando en el programa. Los programadores lo hacen para seguir el flujo del código y detectar errores.
-
 ## Cómo:
 ```C#
 using System;

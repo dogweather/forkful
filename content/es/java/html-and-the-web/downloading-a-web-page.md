@@ -11,12 +11,7 @@ title: "Descargando una p\xE1gina web"
 weight: 42
 ---
 
-## Qué y Por Qué?
-
-Descargar una página web significa obtener su contenido, normalmente en forma de HTML, a través de Internet. Los programadores lo hacen para análisis de datos, monitoreo de cambios, o para alimentar aplicaciones con contenido dinámico.
-
 ## Cómo hacerlo:
-
 Para descargar una página web en Java, podemos usar la clase `HttpClient` que facilita realizar peticiones HTTP. Aquí hay un ejemplo simple:
 
 ```java
@@ -54,11 +49,9 @@ Output de ejemplo (será diferente según el contenido de `http://ejemplo.com`):
 ```
 
 ## Buceo Profundo
-
 Históricamente, las descargas de páginas web en Java se manejaban con la clase `URLConnection` o bibliotecas de terceros como Apache HttpClient. Desde Java 11, se incluye `HttpClient` que es más moderno y versátil. Al descargar páginas, es importante manejar los códigos de estado HTTP y asegurarse de que no estamos haciendo demasiadas peticiones para evitar ser bloqueados por el servidor. Otras bibliotecas como JSoup o HtmlUnit pueden ser útiles no solo para descargar, sino también para parsear y manejar el HTML de forma más eficiente.
 
 ## Ver También
-
 - Documentación oficial de `HttpClient`: https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html
 - Tutorial de JSoup para parseo de HTML: https://jsoup.org/cookbook/
 - HtmlUnit para pruebas de aplicaciones web: http://htmlunit.sourceforge.net/

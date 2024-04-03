@@ -10,9 +10,6 @@ title: "Tulevaisuuden tai menneisyyden p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---
 
-## What & Why?
-Menneiden tai tulevien päivien laskenta on päivämäärien manipulointia. Sitä käytetään esimerkiksi vanhentumispäivien, tapahtumien ajoitusten tai aikavälien selvittämiseen.
-
 ## How to:
 Elixirissä päivämäärien kanssa työskentely onnistuu `Date`-moduulin avulla. Katsotaan esimerkkiä:
 

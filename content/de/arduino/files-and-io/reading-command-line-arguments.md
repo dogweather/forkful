@@ -11,9 +11,6 @@ title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---
 
-## Was & Warum?
-Beim Lesen von Befehlszeilenargumenten geht es darum, Parameter an ein Programm zu übergeben, wenn es gestartet wird. Programmierer nutzen das, um die Flexibilität ihrer Sketche zu erhöhen und Benutzereingaben zu ermöglichen, ohne den Code zu ändern.
-
 ## So geht's:
 Arduino-Plattformen haben normalerweise keine traditionelle Kommandozeile, wie man sie von Desktop-Betriebssystemen kennt. Stattdessen kannst du Parameter über die serielle Schnittstelle mit `Serial.read()` oder `Serial.parseInt()` einlesen. Hier ein einfaches Beispiel:
 

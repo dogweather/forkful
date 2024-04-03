@@ -14,16 +14,10 @@ title: Suchen und Ersetzen von Text
 weight: 10
 ---
 
-## Was & Warum?
-
-Das Suchen und Ersetzen von Text in Dart beinhaltet die Untersuchung von Zeichenketten, um bestimmte Muster oder Zeichenfolgen zu finden und diese durch neue Inhalte zu ersetzen. Diese Operation ist grundlegend für Aufgaben wie Datenvalidierung, Formatierung von Ausgaben, Parsen von Benutzereingaben oder sogar die Manipulation von URLs und Dateipfaden, wodurch Anwendungen dynamischer und reaktiver auf die Bedürfnisse der Benutzer gemacht werden.
-
 ## Wie:
-
 Dart bietet robuste Methoden zum Suchen und Ersetzen von Text direkt über seine `String`-Klasse, ohne die Notwendigkeit externer Bibliotheken. Hier ist, wie Sie es machen können:
 
 ### Grundlegendes Suchen und Ersetzen
-
 Um nach einer Teilzeichenkette zu suchen und sie durch eine andere Zeichenkette zu ersetzen, können Sie `replaceAll` verwenden:
 
 ```dart
@@ -33,7 +27,6 @@ print(geaenderterText); // Ausgabe: Hallo, Flutter! Flutter ist großartig.
 ```
 
 ### Verwendung von Regulären Ausdrücken
-
 Für komplexere Such- und Ersetzungsbedürfnisse nutzt Dart reguläre Ausdrücke über die `RegExp`-Klasse. Dies ermöglicht die Mustererkennung und den Ersatz in Zeichenketten:
 
 ```dart
@@ -45,7 +38,6 @@ print(geaenderterText); // Ausgabe: Dart 2024, Flutter 2024
 In diesem Beispiel werden alle Instanzen von einer oder mehreren Ziffern (`\d+`) im String gefunden und durch "2024" ersetzt.
 
 ### Groß- und Kleinschreibung Unberücksichtigt Lassen
-
 Um eine Groß- und Kleinschreibung ignorierende Suche durchzuführen, können Sie den `RegExp`-Konstruktor so modifizieren, dass die Groß-/Kleinschreibung ignoriert wird:
 
 ```dart
@@ -55,7 +47,6 @@ print(geaenderterText); // Ausgabe: Willkommen bei Flutter, der Programmiersprac
 ```
 
 ### Ersetzen mit einer Funktion
-
 Für dynamische Ersetzungen, basierend auf dem eigentlichen Treffer, erlaubt Dart die Übergabe einer Funktion an `replaceAllMapped`. Diese Funktion kann Operationen oder Berechnungen auf den gefundenen Sequenzen ausführen:
 
 ```dart

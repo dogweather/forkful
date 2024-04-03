@@ -34,12 +34,7 @@ title: "\u0E41\u0E1B\u0E25\u0E07\u0E2A\u0E15\u0E23\u0E34\u0E07\u0E40\u0E1B\u0E47
 weight: 4
 ---
 
-## อะไร & ทำไม?
-
-การแปลงสตริงเป็นอักขระตัวเล็กหมายถึงการเปลี่ยนแปลงอักขระทางอักษรทั้งหมดให้เป็นรูปแบบตัวพิมพ์เล็ก โปรแกรมเมอร์มักทำเช่นนี้สำหรับการเปรียบเทียบที่ไม่ขึ้นกับตัวพิมพ์หรือการปรับปรุงข้อมูลข้อความเพื่อการเก็บข้อมูลและการประมวลผล
-
 ## วิธีการ:
-
 Elm ใช้ฟังก์ชัน `String.toLower` เพื่อแปลงข้อความ:
 
 ```elm
@@ -58,7 +53,6 @@ result =
 ```
 
 ## ลงลึก
-
 `String.toLower` ของ Elm มาจากไลบรารีเริ่มต้น `String` ของ Elm โดยคำนึงถึงการรองรับสากล Internationalization ประวัติของการเปลี่ยนการเขียนอักษรจาก ASCII เบื้องต้นไปยังการรองรับ Unicode อย่างเต็มรูปแบบเนื่องจากความต้องการในการจัดการข้อความระหว่างประเทศ 
 
 ในบางภาษาเช่น Javascript มีทางเลือกเช่น `toLowerCase()` และ `toLocaleLowerCase()` ที่รองรับกฎเฉพาะสำหรับ locale ใน Elm, `String.toLower` ควรจะเพียงพอสำหรับกรณีส่วนใหญ่ ยกเว้นกรณีที่ต้องการการดำเนินการที่เกี่ยวข้องกับ locale ซึ่งอาจต้องการการทำงานที่กำหนดเอง
@@ -66,7 +60,6 @@ result =
 รายละเอียดที่ควรจำคือการแปลงตัวพิมพ์อาจไม่เสมอไปเป็น one-to-one; บางอักขระอาจไม่มีรูปแบบตัวพิมพ์เล็ก และบางอักขระอาจเปลี่ยนขนาด (เช่น การแปลง "ß" ในภาษาเยอรมัน)
 
 ## ดูเพิ่มเติม
-
 - เอกสารช่วยเหลือของ Elm String: [https://package.elm-lang.org/packages/elm/core/latest/String#toLower](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
 - การพับคดเคี้ยวของ Unicode: [https://www.w3.org/International/wiki/Case_folding](https://www.w3.org/International/wiki/Case_folding)
 - ปัญหาการแปลงตัวพิมพ์ตามภาษา: [https://stackoverflow.com/questions/234591/upper-vs-lower-case](https://stackoverflow.com/questions/234591/upper-vs-lower-case)

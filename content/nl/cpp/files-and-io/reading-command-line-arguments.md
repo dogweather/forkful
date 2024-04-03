@@ -13,9 +13,6 @@ title: Commandoregelargumenten lezen
 weight: 23
 ---
 
-## Wat & Waarom?
-Commandoregelargumenten stellen gebruikers in staat het gedrag van een programma te beïnvloeden zonder de code te wijzigen. Programma's gebruiken ze om invoerparameters, bestandspaden of bedieningsmodi te krijgen, wat tijd bespaart en flexibiliteit biedt.
-
 ## Hoe:
 In C++ worden commandoregelargumenten ontvangen in `main()` als een array van karakterwijzers. Hier is hoe je ze ophaalt:
 

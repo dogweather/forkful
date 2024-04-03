@@ -11,9 +11,6 @@ title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---
 
-## Hva & Hvorfor?
-Å slette tegn som matcher et mønster innebærer å finne og fjerne spesifikke tegnsekvenser fra en streng. Programmerere gjør dette for å rense data, forenkle tekst eller forberede strenger for videre prosessering.
-
 ## Hvordan gjøre det:
 For å slette tegn som matcher et mønster i Clojure, kan du bruke `clojure.string/replace` funksjonen med et regulært uttrykk.
 

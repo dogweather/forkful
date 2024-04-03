@@ -14,12 +14,7 @@ title: Pobieranie aktualnej daty
 weight: 29
 ---
 
-## Co i dlaczego?
-
-Pobieranie bieżącej daty w Google Apps Script dotyczy uzyskania aktualnej daty i godziny, co jest powszechnym zadaniem przy automatyzacji zadań, rejestrowaniu i znakowaniu czasu w aplikacjach związanych z ekosystemem Google. Programiści używają tego do generowania dynamicznych treści, śledzenia terminów i planowania w Google Docs, Arkuszach i innych usługach Google.
-
 ## Jak to zrobić:
-
 Google Apps Script, który bazuje na JavaScript, oferuje proste metody na uzyskanie bieżącej daty. Możesz użyć konstruktora `new Date()` do stworzenia nowego obiektu daty, reprezentującego bieżącą datę i godzinę. Oto jak można manipulować i wyświetlać to w różnych formatach.
 
 ```javascript
@@ -46,7 +41,6 @@ function showCurrentDate() {
 Te fragmenty kodu demonstrują, jak przechwycić i sformatować bieżącą datę i godzinę, pokazując wszechstronność dla różnych potrzeb programistycznych w Google Apps Script.
 
 ## Dogłębna analiza
-
 Zanim JavaScript ustalił obiekt `Date`, programiści musieli ręcznie śledzić czas i datę przez mniej standardowe i bardziej uciążliwe sposoby. Obejmowało to używanie liczb całkowitych znacznika czasu i własnych funkcji daty, które różniły się w zależności od środowiska programistycznego, prowadząc do niespójności i problemów z kompatybilnością.
 
 Wprowadzenie obiektu `new Date()` w JavaScript, a przez to w Google Apps Script, ustandaryzowało operacje związane z datą i czasem, czyniąc je bardziej intuicyjnymi i redukując ilość kodu potrzebnego do operacji związanych z datą. Warto zauważyć, że choć implementacja w Google Apps Script jest wygodna i wystarczająca dla wielu aplikacji w zestawie produktów Google, może nie zaspokajać wszystkich scenariuszy, szczególnie tych wymagających skomplikowanego obsługiwania stref czasowych lub precyzyjnego rejestrowania znaczników czasu w środowiskach o szybkim tempie.

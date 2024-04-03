@@ -11,12 +11,7 @@ title: Iniciando um novo projeto
 weight: 1
 ---
 
-## O Que & Porquê?
-
-Iniciar um novo projeto em Rust é como desenhar o molde para uma nova invenção. Programadores fazem isso para transformar ideias em código, criando a base para aplicações robustas e seguras.
-
 ## Como fazer:
-
 Para começar um projeto novo em Rust, você vai utilizar o `cargo`, o sistema de construção e gerenciador de pacotes do Rust. Aqui está o caminho:
 
 ```Rust
@@ -59,7 +54,6 @@ Hello, world!
 ```
 
 ## Aprofundamento
-
 Rust surgiu em 2010 pela mão de Graydon Hoare e cresceu com a ajuda da Mozilla. Diferentemente de C++ e outras linguagens de baixo nível, Rust enfatiza a segurança de memória e concorrência sem sacrificar a performance.
 
 Alternativas existem, como criar projetos manualmente, mas são mais suscetíveis a erros e menos práticos. `Cargo` automatiza e padroniza esse processo. Quando você usa `cargo new`, o Rust configura tudo para o manejo correto de dependências, builds e testes, estabelecendo um ambiente pronto para a programação.
@@ -71,7 +65,6 @@ Detalhes a reter:
 - O sistema de módulos do Rust ajuda a organizar código à medida que seu projeto cresce.
 
 ## Veja Também
-
 - [The Rust Programming Language Book](https://doc.rust-lang.org/book/)
 - [`cargo` documentation](https://doc.rust-lang.org/cargo/)
 - [Rust and WebAssembly](https://rustwasm.github.io/docs.html)

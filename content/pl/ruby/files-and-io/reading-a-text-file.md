@@ -11,9 +11,6 @@ title: Odczytywanie pliku tekstowego
 weight: 22
 ---
 
-## What & Why? (Co i Dlaczego?)
-Czytanie pliku tekstowego to pobieranie danych zapisanych w pliku zapisanego na dysku. Programiści robią to, by przetwarzać, analizować dane, konfigurować aplikacje, czy ładować zasoby.
-
 ## How to: (Jak to zrobić:)
 ```ruby
 # Prosty przykład czytania całego pliku

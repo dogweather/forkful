@@ -11,9 +11,6 @@ title: Tratamento de erros
 weight: 16
 ---
 
-## O Que & Porquê?
-Tratar erros é a forma como o seu código lida com problemas que surgem durante a execução—como lidar com uma bola curva sem deixá-la cair. Os programadores fazem isso para evitar falhas e proporcionar aos usuários uma experiência suave.
-
 ## Como fazer:
 Kotlin fornece `try`, `catch`, `finally`, e `throw` para gerenciar erros. Veja como usá-los:
 

@@ -10,9 +10,6 @@ title: Lendo argumentos da linha de comando
 weight: 23
 ---
 
-## O Que & Porquê?
-Ler argumentos da linha de comando permite que programas em Rust recebam inputs externos ao serem executados. Programadores utilizam essa técnica para tornar os seus programas mais flexíveis e interativos, adaptando o comportamento baseado nos inputs do usuário.
-
 ## Como Fazer:
 ```Rust
 use std::env;

@@ -11,9 +11,6 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## Vad & Varför?
-Att skriva ut felsökningsdata innebär att visa temporär information för att förstå vad koden gör. Programmerare gör detta för att snabbt hitta och åtgärda bugger eller för att övervaka programmets flöde.
-
 ## Så här gör du:
 Använd `Write-Host` för enkel utskrift. För mer kontroll, använd `Write-Debug` eller `Write-Verbose` samt deras motsvarande inställningar.
 

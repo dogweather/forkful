@@ -16,9 +16,6 @@ title: "F\xE5 det aktuella datumet"
 weight: 29
 ---
 
-## Vad & Varför?
-Att få det aktuella datumet i Elixir innebär att man får tillgång till systemets datum- och tidsinformation, en vanlig uppgift för loggning, datummärkning eller vilken funktionalitet som helst som kräver kunskap om det aktuella datumet. Denna operation är avgörande för att skapa tidsmedvetna applikationer och för uppgifter som att generera rapporter eller tidsstämplar i en webbapplikation.
-
 ## Hur:
 Elixirs standardbibliotek, genom `DateTime`-modulen, tillåter hämtning av det aktuella datumet och tiden. Eftersom Elixir körs på Erlang VM (BEAM), utnyttjar det de underliggande Erlang-funktionaliteterna för tidsoperationer.
 

@@ -14,12 +14,7 @@ title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---
 
-## Vad & Varför?
-
-Att söka och ersätta text i C innebär att identifiera specifika delsträngar inom en större sträng och byta ut dem mot olika delsträngar. Programmerare utför dessa operationer för att manipulera textdata - för uppgifter som sträcker sig från datasanering och formatering till dynamisk innehållsgenerering.
-
 ## Hur man gör:
-
 C kommer inte med inbyggda funktioner för att direkt utföra sökning och ersättning på strängar. Du kan dock uppnå detta genom att kombinera olika stränghanteringsfunktioner som finns tillgängliga i `<string.h>`-biblioteket tillsammans med egen logik. Nedan är ett grundläggande exempel på hur man söker efter en delsträng inom en sträng och ersätter den. För enkelhetens skull antar detta exempel tillräcklig buffertstorlek och hanterar inte minnesallokeringsproblem som du bör överväga i produktionskod.
 
 ```c
@@ -77,7 +72,6 @@ Modifierad sträng: Hej, detta är ett exempel. Detta exempel är enkelt.
 Denna kod demonstrerar ett enkelt sätt att söka efter alla instanser av en delsträng (`sub`) i en källsträng och ersätta dem med en annan delsträng (`newSub`), med hjälp av `strstr`-funktionen för att hitta startpunkten för varje matchning. Det är ett mycket grundläggande exempel som inte hanterar komplexa scenarier som överlappande delsträngar.
 
 ## Fördjupning
-
 Metoden som används i avsnittet "Hur man gör" är grundläggande och illustrerar hur man kan uppnå textsökning och ersättning i C utan tredjepartsbibliotek. Historiskt, på grund av Cs fokus på lågnivåminneshantering och prestanda, inkluderar inte dess standardbibliotek högnivåsträngmanipuleringsfunktioner som de som finns i språk som Python eller JavaScript. Programmerare måste manuellt hantera minne och kombinera olika strängoperationer för att uppnå önskade resultat, vilket ökar komplexiteten men erbjuder mer kontroll och effektivitet.
 
 Det är viktigt att notera att denna manuella ansats kan vara felbenägen, särskilt när det gäller hantering av minnesallokeringar och buffertstorlekar. Felaktig hantering kan leda till buffertöverskridningar och minneskorruption, vilket gör koden sårbar för säkerhetsrisker.

@@ -14,12 +14,7 @@ title: Utilisation des tableaux associatifs
 weight: 15
 ---
 
-## Quoi & Pourquoi ?
-
-Les tableaux associatifs sont comme des tableaux surpuissants qui vous permettent d'utiliser des chaînes de caractères comme indices, au lieu de se limiter aux entiers. Les programmeurs les utilisent pour des structures de données plus complexes, facilitant la gestion de données qui ne s'insèrent pas facilement dans une liste séquentielle.
-
 ## Comment faire :
-
 D'abord, déclarez un tableau associatif en Bash :
 
 ```Bash
@@ -67,7 +62,6 @@ unset my_array["topic"]
 ```
 
 ## Plongée en profondeur
-
 Les tableaux associatifs ont été introduits dans la version 4.0 de Bash, ce qui en fait une addition relativement récente au langage. Avant leur introduction, la gestion des tableaux à index non entier était laborieuse, nécessitant souvent des solutions de contournement ou des outils externes comme `awk` ou `sed`.
 
 Sous le capot, Bash implémente les tableaux associatifs en utilisant des tables de hachage. Cette implémentation permet une recherche de clé efficace, qui reste relativement constante quelle que soit la taille du tableau, une caractéristique cruciale pour la performance lors de l'exécution de scripts.

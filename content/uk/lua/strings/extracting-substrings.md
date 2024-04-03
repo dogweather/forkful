@@ -11,12 +11,7 @@ title: "\u0412\u0438\u0434\u0456\u043B\u0435\u043D\u043D\u044F \u043F\u0456\u043
 weight: 6
 ---
 
-## What & Why? (Що та Чому?)
-
-Extracting substrings means pulling out specific parts of a string based on their position. Programmers do it to analyze, manipulate, or validate pieces of data within a larger string.
-
 ## How to: (Як це зробити:)
-
 In Lua, you can extract substrings using the `string.sub` function.
 
 ```Lua
@@ -44,7 +39,6 @@ Sample output:
 ```
 
 ## Deep Dive (Поглиблений Аналіз)
-
 Lua supports various string manipulation functions; `string.sub` is one among them and has been a part of the language from its early versions. It's a straightforward and efficient way to interact with strings.
 
 Alternatives include using `string.match` with patterns. This method offers more flexibility for complex substring extractions.
@@ -58,6 +52,5 @@ print(part)  -- Outputs: як
 Implementation-wise, Lua strings are immutable, meaning once created, they can't be changed. When you extract a substring, Lua creates a new string rather than altering the original.
 
 ## See Also (Додатково)
-
 - Lua `string` library reference: [Programming in Lua](https://www.lua.org/pil/20.1.html)
 - Lua patterns guide: [Lua 5.4 Reference Manual](https://www.lua.org/manual/5.4/manual.html#6.4.1)

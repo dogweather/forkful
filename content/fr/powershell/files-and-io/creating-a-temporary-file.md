@@ -10,10 +10,7 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Créer un fichier temporaire, c'est faire un fichier qu'on utilisera juste un court moment. Les programmeurs le font pour stocker des données provisoires sans encombrer le système.
-
-## How to: (Comment faire :) 
+## How to: (Comment faire :)
 ```PowerShell
 # Créer un fichier temporaire
 $tempFile = [System.IO.Path]::GetTempFileName()

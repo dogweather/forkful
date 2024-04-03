@@ -11,9 +11,6 @@ title: Lancement d'un nouveau projet
 weight: 1
 ---
 
-## Quoi & Pourquoi?
-Commencer un nouveau projet en Haskell, c'est partir de zéro pour créer un programme. Les programmeurs se lancent dans cette aventure pour concrétiser une idée, résoudre un problème précis ou par simple curiosité pour explorer un nouveau concept de programmation.
-
 ## Comment faire:
 Pour démarrer, installez Stack, un gestionnaire de projets et de paquets Haskell. Une fois Stack installé, créez un nouveau projet : 
 

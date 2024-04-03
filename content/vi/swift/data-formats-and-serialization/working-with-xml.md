@@ -14,9 +14,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Làm gì & Tại sao?
-Làm việc với XML có nghĩa là phân tích cú pháp và tạo ra dữ liệu XML trong Swift. Các lập trình viên thực hiện điều này cho việc trao đổi dữ liệu, đặc biệt là khi tích hợp với các hệ thống mà XML là định dạng chuẩn.
-
 ## Cách thực hiện:
 Swift cung cấp `XMLParser` và `XMLDocument` để phân tích cú pháp dữ liệu XML. Dưới đây là một đoạn mã để phân tích một chuỗi XML đơn giản:
 

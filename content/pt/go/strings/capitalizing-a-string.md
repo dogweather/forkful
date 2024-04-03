@@ -14,12 +14,7 @@ title: Capitalizando uma string
 weight: 2
 ---
 
-## O Que & Por Quê?
-
-Capitalizar uma string envolve transformar o primeiro caractere de uma string dada em maiúscula, se ele estiver em minúscula, garantindo que a string se destaque ou adira a normas gramaticais específicas. Programadores frequentemente realizam esta operação para formatar entradas de usuários, exibir nomes próprios ou garantir a consistência dos dados em aplicações de software.
-
 ## Como fazer:
-
 Em Go, o pacote `strings` não fornece uma função direta para capitalizar apenas a primeira letra de uma string. Portanto, combinamos a função `strings.ToUpper()`, que converte uma string para maiúscula, com fatiamento para alcançar nosso objetivo. Veja como fazer:
 
 ```go
@@ -54,7 +49,6 @@ func main() {
 Esta função verifica se a string está vazia ou se o primeiro caractere já está em maiúscula. Ela usa o pacote `unicode/utf8` para lidar corretamente com caracteres Unicode, garantindo que nossa função funcione com uma ampla gama de entradas, além do ASCII básico.
 
 ## Aprofundamento
-
 A necessidade de capitalizar strings em Go sem uma função integrada pode parecer uma limitação, especialmente para programadores vindos de linguagens onde as funções de manipulação de strings são mais abrangentes. Esta restrição encoraja o entendimento do manejo de strings e a importância do Unicode no desenvolvimento de software moderno.
 
 Historicamente, as linguagens de programação evoluíram em seu tratamento de strings, com as primeiras linguagens muitas vezes ignorando a internacionalização. A abordagem do Go, embora exija um pouco mais de código para tarefas aparentemente simples, garante que os desenvolvedores tenham em mente os usuários globais desde o início.

@@ -18,9 +18,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Cái gì và Tại sao?
-Số phức, được biểu diễn như là sự kết hợp của phần thực và phần ảo (ví dụ, 3 + 4i), là cơ bản trong nhiều vấn đề tính toán, đặc biệt trong kỹ thuật, vật lý và toán ứng dụng. Học cách thao tác với những số này trong Google Apps Script cho phép lập trình viên mở rộng khả năng của họ vào tính toán khoa học, xử lý tín hiệu, và hơn thế nữa.
-
 ## Làm thế nào:
 Google Apps Script không hỗ trợ sẵn cho số phức, buộc phải triển khai chức năng tùy chỉnh. Dưới đây là cấu trúc cơ bản để xử lý số phức, bao gồm cộng, trừ và nhân.
 

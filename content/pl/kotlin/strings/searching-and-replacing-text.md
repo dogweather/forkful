@@ -11,12 +11,7 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## Co i Dlaczego?
-
-Wyszukiwanie i zamiana tekstu to proces znajdowania ciągów znaków i ich podmieniania na inne. Programiści to robią, by szybko aktualizować kod, dane czy ulepszać programy.
-
 ## Jak to zrobić:
-
 ```kotlin
 fun main() {
     val text = "Kotlin to super język!"
@@ -29,7 +24,6 @@ fun main() {
 ```
 
 ## W głębi tematu
-
 Historia wyszukiwania i zamiany tekstu sięga pierwszych edytorów tekstu. Pojawiła się konieczność szybkiego poprawiania tekstów, co doprowadziło do powstania komendy `find and replace`. W Kotlinie, podobnie jak w innych współczesnych językach, operacje te są banalne, a funkcje wbudowane ułatwiają pracę.
 
 Alternatywy dla `replace()` to regex (wyrażenia regularne), które pozwalają na bardziej złożone wyszukiwanie. Możesz użyć `Regex` w Kotlinie, by sprawdzić pasowanie wzorca, jak poniżej:
@@ -47,7 +41,6 @@ fun main() {
 Na poziomie implementacji, należy pamiętać o wydajności przy obsłudze dużych zbiorów danych – tutaj już `replace()` może nie wystarczyć i lepiej sięgnąć po biblioteki lub algorytmy dedykowane przeszukiwaniu tekstu, jak KMP (Knuth-Morris-Pratt).
 
 ## Zobacz także
-
 - [Dokumentacja Kotlin - replace](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
 - [Przewodnik po wyrażeniach regularnych](https://www.regular-expressions.info/)
 - [Algorytm KMP](https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm)

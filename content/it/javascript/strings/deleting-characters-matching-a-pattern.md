@@ -10,9 +10,6 @@ title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---
 
-## What & Why?
-In JavaScript, eliminare caratteri che corrispondono a un pattern significa usare espressioni regolari per togliere specifici gruppi di caratteri da una stringa. Lo facciamo per ripulire i dati, validare l'input, o manipolare testo per varie necessità di programmazione.
-
 ## How to:
 Ecco come usare `replace()` con una regex per eliminare dei caratteri:
 

@@ -13,12 +13,7 @@ title: Merkkijonon interpolaatio
 weight: 8
 ---
 
-## Mikä & Miksi?
-
-Merkkijonojen interpolaatio on prosessi, jossa muuttujien arvot lisätään suoraan merkkijonoihin, usein merkityksellisten viestien luomiseksi ilman hankalia yhdistelyjä. Ohjelmoijat tekevät sen saadakseen siistimpää, luettavampaa koodia ja välttääkseen virheitä, jotka ovat tyypillisiä monimutkaisissa merkkijonojen yhdistelyissä.
-
 ## Kuinka:
-
 Dartissa merkkijonojen interpolaatio on suoraviivaista, käyttäen `$`-symbolia expressioiden interpolaatioon suoraan merkkijonoliteraaleissa:
 
 ```dart

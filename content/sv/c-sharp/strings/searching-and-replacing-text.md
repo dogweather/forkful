@@ -11,9 +11,6 @@ title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---
 
-## Vad & Varför?
-Att söka och ersätta text är grundläggande: du letar efter specifika teckensträngar och byter ut dem mot något annat. Programmerare gör det för att snabbt uppdatera kod, fixa fel eller ändra datan.
-
 ## Hur gör man:
 Låt oss dyka rakt in. Här är en snabb genomgång av hur man kan söka och ersätta text i C#:
 

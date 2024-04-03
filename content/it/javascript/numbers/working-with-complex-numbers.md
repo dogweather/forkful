@@ -10,9 +10,6 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-## Cosa e Perché?
-I numeri complessi sono numeri con una parte reale e una immaginaria (come 3 + 4i). Emergono in vari problemi di programmazione, specialmente nel processamento dei segnali, nella computazione quantistica e nella risoluzione delle equazioni polinomiali. I programmatori li maneggiano per affrontare efficacemente questo tipo di compiti.
-
 ## Come fare:
 JavaScript non offre un supporto nativo per i numeri complessi, ma puoi rimboccarti le maniche e gestirli con oggetti e matematica. Ecco una rapida visione.
 

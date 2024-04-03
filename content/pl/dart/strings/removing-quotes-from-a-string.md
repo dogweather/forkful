@@ -15,9 +15,6 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co i dlaczego?
-Usuwanie cudzysłowów z ciągu znaków w Dart polega na usunięciu podwójnych (") lub pojedynczych (') cudzysłowów z początku i końca ciągu znaków, co jest przydatne do oczyszczania danych lub przygotowywania ciągu znaków do dalszej obróbki. Programiści robią to, aby normalizować dane wejściowe, zapewnić jednolitość w przechowywaniu danych lub gdy interfejsują się z API, które mogą zwracać dane w formatach z cudzysłowami.
-
 ## Jak to zrobić:
 Dart oferuje proste sposoby na usunięcie cudzysłowów z ciągu znaków przy użyciu wbudowanych metod ciągu znaków, bez potrzeby korzystania z bibliotek firm trzecich.
 

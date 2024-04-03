@@ -10,9 +10,6 @@ title: Analyse syntaxique de HTML
 weight: 43
 ---
 
-## What & Why?
-Le parsing HTML, c'est lire et convertir du code HTML en quelque chose qu'une application peut comprendre et manipuler. Les programmeurs le font pour extraire des données, manipuler le contenu et intégrer des fonctionnalités web dans leurs applications.
-
 ## How to:
 Pour parser du HTML en Swift, une librairie populaire est `SwiftSoup`. D'abord, installez-le avec CocoaPods, Carthage ou Swift Package Manager. Voici un exemple simple:
 

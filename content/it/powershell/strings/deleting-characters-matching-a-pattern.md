@@ -11,9 +11,6 @@ title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---
 
-## What & Why?
-Cancellare caratteri seguendo un pattern è semplicemente filtrare il testo per rimuovere caratteri indesiderati. Questo serve a pulire i dati o a preparare stringhe per l'elaborazione o l'analisi successiva.
-
 ## How to:
 Esempio 1: Rimuovere tutti i numeri da una stringa.
 
@@ -42,7 +39,7 @@ Benvenuti al CaféSunrise
 ```
 
 ## Deep Dive
-La cancellazione di caratteri seguendo un pattern è una funzionalità essenziale nei linguaggi di scripting come PowerShell, introdotta con le espressioni regolari (regex) nei primi linguaggi di programmazione. Usando `-replace`, PowerShell modernizza questa pratica antica. Un'alternativa in PowerShell è `[regex]::Replace()`, ma `-replace` è spesso più rapido per casi semplici. I dettagli di implementazione si affidano al motore regex .NET, che è potente e flessibile. 
+La cancellazione di caratteri seguendo un pattern è una funzionalità essenziale nei linguaggi di scripting come PowerShell, introdotta con le espressioni regolari (regex) nei primi linguaggi di programmazione. Usando `-replace`, PowerShell modernizza questa pratica antica. Un'alternativa in PowerShell è `[regex]::Replace()`, ma `-replace` è spesso più rapido per casi semplici. I dettagli di implementazione si affidano al motore regex .NET, che è potente e flessibile.
 
 ## See Also
 - Dettagli sulle espressioni regolari in .NET: [Microsoft Docs - Regular Expressions .NET](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions)

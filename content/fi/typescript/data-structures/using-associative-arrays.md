@@ -13,12 +13,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mikä ja miksi?
-
-Assosiatiiviset taulukot eli oliot TypeScriptissä mahdollistavat merkkijonojen (avainten) käytön arvoparien käsittelyssä. Ohjelmoijat käyttävät niitä dynaamisempiin tietojen käsittelymalleihin verrattuna perinteisiin taulukoihin, tarjoten joustavan tavan rakentaa ja käsitellä tietoja olematta sidoksissa numeerisiin indekseihin.
-
 ## Kuinka:
-
 Assosiatiivisten taulukoiden luominen ja käyttäminen TypeScriptissä on suoraviivaista. Tässä perusohjeet:
 
 ```TypeScript
@@ -70,7 +65,6 @@ Tuloste:
 ```
 
 ## Syväsukellus
-
 TypeScriptissä meidän viittaamat assosiatiiviset taulukot ovat käytännössä olioita. Historiallisesti kielissä kuten PHP:ssä assosiatiiviset taulukot ovat olleet perustyyppi, mutta JavaScript (ja sen laajennus, TypeScript) käyttää tähän tarkoitukseen olioita. Tämä lähestymistapa on sekä vahvuus että rajoitus. Oliot tarjoavat dynaamisen rakenteen merkkijonojen yhdistämiseen arvoihin, mutta niitä ei ole tarkoitettu käytettäväksi 'taulukoina' perinteisessä mielessä. Esimerkiksi et voi suoraan käyttää taulukkometodeja kuten `push` tai `pop` näissä olioissa.
 
 Tapauksissa, joissa tarvitset järjestettyjä avain-arvo-parikokoelmia taulukkomaisilla toiminnoilla, TypeScript (ja moderni JavaScript) tarjoaa `Map`-objektin:

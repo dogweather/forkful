@@ -11,9 +11,6 @@ title: Arrondir les nombres
 weight: 13
 ---
 
-## Quoi & Pourquoi ?
-Arrondir les nombres consiste à ajuster un nombre au plus proche entier ou à une certaine précision décimale. Nous arrondissons les nombres pour les simplifier pour la lisibilité humaine, réduire la charge de calcul ou répondre à des exigences numériques spécifiques.
-
 ## Comment faire :
 En Clojure, nous utilisons principalement `Math/round`, `Math/floor`, et `Math/ceil` :
 

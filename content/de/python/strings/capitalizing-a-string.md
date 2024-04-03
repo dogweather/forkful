@@ -13,10 +13,8 @@ title: "Einen String gro\xDFschreiben"
 weight: 2
 ---
 
-## Was & Warum?
-Das Großschreiben eines Strings bedeutet, das erste Zeichen eines Strings in Großbuchstaben umzuwandeln und den Rest in Kleinbuchstaben. Diese Operation wird häufig in der Datenverarbeitung verwendet, um Eingaben zu normalisieren oder die Lesbarkeit für Titel, Namen und dergleichen zu verbessern.
-
 ## Wie geht das:
+
 
 ### Verwendung der in Python eingebauten Methode:
 Python verfügt über eine eingebaute Methode `.capitalize()` für Strings, um diese Aufgabe leicht zu bewältigen.

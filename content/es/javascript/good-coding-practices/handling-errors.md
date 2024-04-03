@@ -11,12 +11,7 @@ title: Manejo de errores
 weight: 16
 ---
 
-## ¿Qué y Por Qué?
-
-El manejo de errores es cómo gestionas cuando las cosas no van bien en tu código. Es clave porque ayuda a que tus programas fallen de manera controlada e instruye a los usuarios claramente, en lugar de simplemente colapsar y quemarse.
-
 ## Cómo hacerlo:
-
 Aquí está el clásico bloque `try-catch`:
 
 ```javascript
@@ -56,7 +51,6 @@ fetchData();
 ```
 
 ## Inmersión Profunda
-
 El manejo de errores en JavaScript ha evolucionado. En los viejos tiempos (ES3, circa 1999), solo teníamos el bloque `try-catch`. No era súper flexible, pero hacía el trabajo.
 
 ES6 (2015) introdujo Promesas y nos dio `.then()` y `.catch()`, permitiéndonos manejar errores asíncronos de una manera más elegante.
@@ -72,7 +66,6 @@ En cuanto a los detalles de implementación, cuando se lanza un error, los motor
 ¿Alternativas? Podrías ignorar el manejo de errores (mala idea), usar callbacks con parámetros que primero indican el error (hola, estilo Node.js), o ponerte más sofisticado con bibliotecas y frameworks que ofrecen sus propias soluciones.
 
 ## Ver También
-
 Para más sobre manejo de errores:
 
 - MDN sobre try-catch: [MDN try...catch](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/try...catch)

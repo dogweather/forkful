@@ -12,9 +12,6 @@ title: Een nieuw project starten
 weight: 1
 ---
 
-## Wat & Waarom?
-Een nieuw Elixir-project starten betekent het opzetten van een frisse Mix-projectstructuur. Programmeurs doen dit om te beginnen met georganiseerde code en geautomatiseerde hulpmiddelen, die helpen bij het efficiënt bouwen en testen van hun Elixir-applicaties.
-
 ## Hoe:
 Om een nieuw project te creëren, gebruik je het `mix new` commando:
 

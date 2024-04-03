@@ -10,9 +10,6 @@ title: Printing debug output
 weight: 33
 ---
 
-## What & Why?
-Printing debug output is like having a conversation with your code; you pepper in print statements to check on its health and what it's thinking. Programmers do this to track down bugs or to ensure everything's running smoothly—like giving your code a quick check-up.
-
 ## How to:
 Here's a snippet showing you how to print a simple debug message to the console.
 

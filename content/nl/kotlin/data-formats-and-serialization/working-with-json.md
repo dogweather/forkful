@@ -12,12 +12,7 @@ title: Werken met JSON
 weight: 38
 ---
 
-## Wat & Waarom?
-
-JSON (JavaScript Object Notation) is een formaat voor het structureren van gegevens, gebruikt voor opslag en overdracht. Programmeurs gebruiken het omdat het lichtgewicht, leesbaar en gemakkelijk te ontleden is door veel talen, inclusief Kotlin.
-
 ## Hoe:
-
 Om met JSON in Kotlin te werken, kun je de `kotlinx.serialization` bibliotheek gebruiken. Hier is een eenvoudig voorbeeld van het serialiseren en deserialiseren van een dataklasse.
 
 ```Kotlin
@@ -54,10 +49,8 @@ User(name=John Doe, age=30)
 ```
 
 ## Dieper duiken
-
 De eenvoudige syntaxis van JSON vindt zijn oorsprong in JavaScript, maar het is nu taalonafhankelijk. Alternatieven zoals XML zijn meer uitgebreid. Wanneer je met JSON werkt in Kotlin, neemt de `kotlinx.serialization` bibliotheek het zware werk uit handen, door automatisch Kotlin-objecten naar en van JSON te converteren met annotaties. Het ondersteunt complexe gegevenstypes en pakt randgevallen aan, maar handmatig ontleden van JSON is ook een optie als je strakkere controle nodig hebt.
 
 ## Zie ook
-
 - Kotlin Serialisatiegids: [https://kotlinlang.org/docs/serialization.html](https://kotlinlang.org/docs/serialization.html)
 - Inleiding tot JSON: [https://www.json.org/json-en.html](https://www.json.org/json-en.html)

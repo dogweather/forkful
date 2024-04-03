@@ -19,9 +19,6 @@ title: "\u6587\u5B57\u5217\u306E\u88DC\u9593"
 weight: 8
 ---
 
-## What & Why? (何となぜ？)
-文字列補間とは、定義済みの変数を文字列の中に埋め込むことです。これにより、動的なコンテンツ生成やデータの整形が容易になるため、プログラマーはよく使用します。
-
 ## How to: (方法)
 ```java
 public class StringInterpolationExample {

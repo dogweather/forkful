@@ -11,9 +11,6 @@ title: Travailler avec XML
 weight: 40
 ---
 
-## Quoi & Pourquoi ?
-XML est un langage de balisage pour encoder des documents d'une manière qui est à la fois lisible par l'homme et par la machine. Il est clé dans les services web, les fichiers de configuration et l'échange de données car il transporte des données dans un format structuré et hiérarchique.
-
 ## Comment faire :
 Clojure propose la bibliothèque `clojure.data.xml` pour l'analyse et l'émission de XML. Tout d'abord, analysons un peu de XML :
 

@@ -12,9 +12,6 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-begäran med grundläggande autentisering innebär att du överför inloggningsuppgifter (användarnamn och lösenord) i klartext, kodat med base64, i en HTTP-header. Programmerare gör detta för att enkelt bekräfta användaridentitet vid enkel API-åtkomst eller webbtjänster.
-
 ## Hur gör man:
 ```Fish Shell
 # Skapa ett kodat värde för autentisering

@@ -9,9 +9,6 @@ title: Konvertere en dato til en streng
 weight: 28
 ---
 
-## What & Why?
-Omforming fra dato til streng lar oss vise datoer som lesbare tekststrenger. Dette er essensielt for brukergrensesnitt og datalagring i et forståelig format.
-
 ## How to:
 I Haskell, bruk `Data.Time`-biblioteket for å håndtere datoer og `formatTime` for å konvertere dem.
 

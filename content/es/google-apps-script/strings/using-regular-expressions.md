@@ -12,16 +12,10 @@ title: Usando expresiones regulares
 weight: 11
 ---
 
-## Qué y Por Qué?
-
-Las expresiones regulares (regex) son patrones utilizados para hacer coincidir combinaciones de caracteres en cadenas de texto. Los programadores las utilizan para buscar, editar o manipular texto y datos, haciéndolas indispensables para tareas de coincidencia de patrones y análisis de datos.
-
 ## Cómo:
-
 Usar expresiones regulares en Google Apps Script es sencillo gracias a la sintaxis basada en JavaScript. Aquí te mostramos cómo puedes incorporar regex en tus scripts para tareas comunes como búsqueda y validación de datos.
 
 ### Buscando en Cadenas
-
 Supongamos que quieres encontrar si una cadena contiene un patrón específico, como una dirección de correo electrónico. Aquí hay un ejemplo simple:
 
 ```javascript
@@ -40,7 +34,6 @@ findEmailInText("Contáctanos en info@example.com.");
 ```
 
 ### Validación de Datos
-
 Las expresiones regulares brillan en la validación de datos. A continuación, una función que valida una cadena de entrada para verificar si se adhiere a una política de contraseña simple (al menos una letra mayúscula, una letra minúscula y un mínimo de 8 caracteres).
 
 ```javascript
@@ -55,7 +48,6 @@ Logger.log(validatePassword("weak"));       // Salida: false
 ```
 
 ## Inmersión Profunda
-
 Las expresiones regulares en Google Apps Script se heredan de JavaScript, estandarizadas por primera vez en la especificación del lenguaje ECMAScript en junio de 1997. Aunque poderosas, a veces pueden llevar a código confuso y difícil de mantener, especialmente cuando se usan en exceso o para tareas complejas de coincidencia de patrones que podrían resolverse de manera más eficiente a través de otros métodos de análisis.
 
 Por ejemplo, aunque puedes usar regex para el análisis de HTML o XML en un apuro, hacerlo generalmente no se recomienda debido a las estructuras anidadas y complejas de estos documentos. En su lugar, las herramientas diseñadas específicamente para analizar tales estructuras, como los analizadores DOM para HTML, son más fiables y legibles.

@@ -17,12 +17,7 @@ title: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32"
 weight: 6
 ---
 
-## What & Why? 什么以及为什么？
-
-提取子串就是从一个字符串中获取部分内容。程序员这么做是因为有时我们只需要信息的一小部分，比如用户名、文件扩展名或是关键词。
-
 ## How to 如何操作：
-
 ```Lua
 -- 基本用法
 local text = "Hello, Lua!"
@@ -39,11 +34,9 @@ print(end_substring) -- 输出 "Lua!"
 ```
 
 ## Deep Dive 深入剖析：
-
 提取子串功能从Lua 1.0就存在了，使用`string.sub`函数。在Lua中，字符串索引从1开始，这和一些其他语言（如C或Java）不同。我们也可以使用负数索引，它表示倒数第几个字符。除此之外，我们可以使用模式匹配来提取复杂条件下的子串——使用`string.match`。要注意，子串操作在Lua中是安全的，即使索引超出范围也不会出错，但会返回空字符串或原字符串。
 
 ## See Also 相关链接：
-
 - Lua官方文档关于字符串： https://www.lua.org/manual/5.4/manual.html#6.4
 - Lua用户维基对字符串操作的讨论： http://lua-users.org/wiki/StringLibraryTutorial
 

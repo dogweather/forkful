@@ -12,12 +12,7 @@ title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---
 
-## Wat & Waarom?
-
-Het verzenden van een HTTP-verzoek met basisauthenticatie omvat het toevoegen van een gebruikersnaam en wachtwoord aan een verzoek voor beperkte bronnen. Programmeurs doen dit om toegang te krijgen tot API's of webservices die enig niveau van beveiliging vereisen.
-
 ## Hoe te:
-
 In Clojure gebruik je doorgaans de `clj-http` bibliotheek voor HTTP-verzoeken, inclusief die met basisauthenticatie. Laten we beginnen met het toevoegen van de afhankelijkheid (`[clj-http "3.12.3"]` bij mijn laatste update) aan je `project.clj`.
 
 Vervolgens is hier hoe je een GET-verzoek met basisauthenticatie opstelt:
@@ -40,7 +35,6 @@ Body: {JSON data of iets anders hier}
 ```
 
 ## Diepgaande Duik
-
 HTTP-basisauthenticatie heeft zijn wortels in vroege webprotocollen. Het stuurt de gebruikersnaam en het wachtwoord in een HTTP-header gecodeerd met behulp van Base64. Hoewel het eenvoudig is, is het niet het veiligste, aangezien de referenties gemakkelijk kunnen worden gedecodeerd als ze worden onderschept.
 
 Alternatieven:
@@ -53,7 +47,6 @@ Onder de motorkap in `clj-http`, het specificeren van `:basic-auth` in de opties
 Houd er rekening mee dat voor veilige verzending, HTTPS gebruikt moet worden om te voorkomen dat anderen je referenties onderscheppen.
 
 ## Zie Ook
-
 - clj-http GitHub-repo: https://github.com/dakrone/clj-http
 - Officiële Documentatie van Clojure: https://clojure.org/
 - HTTP Authenticatie op MDN: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication 

@@ -14,9 +14,6 @@ title: Tests schreiben
 weight: 36
 ---
 
-## Was & Warum?
-Tests in C zu schreiben, bedeutet, kleinere Hilfsprogramme oder Funktionen zu erstellen, die automatisch die Funktionalität Ihres Codes überprüfen. Programmierer tun dies, um sicherzustellen, dass ihre Software wie erwartet funktioniert, um Fehler frühzeitig zu erkennen und um zukünftige Code-Modifikationen ohne unerwünschte Nebenwirkungen zu erleichtern.
-
 ## Wie:
 Obwohl C nicht über ein integriertes Test-Framework wie einige andere Sprachen verfügt, können Sie dennoch effektive Tests schreiben, indem Sie assert.h für einfache Behauptungen verwenden oder Drittanbieter-Frameworks wie CUnit oder Unity für strukturiertere Tests integrieren. Hier ist ein grundlegendes Beispiel mit assert.h, um eine Funktion zu testen, die zwei Ganzzahlen addiert:
 

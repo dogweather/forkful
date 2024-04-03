@@ -12,12 +12,7 @@ title: Schreiben auf Standardfehler
 weight: 25
 ---
 
-## Was & Warum?
-
-Das Schreiben auf Standardfehler in C beinhaltet die Weiterleitung von Fehlermeldungen und diagnostischen Informationen an einen separaten Stream vom Hauptprogrammausgang. Programmierer tun dies, um Fehlermeldungen von der Standardausgabe zu trennen, wodurch beides einfacher separat zu lesen und zu verarbeiten ist, besonders beim Debuggen oder Protokollieren der Programmausführung.
-
 ## Wie geht das:
-
 In C wird der `stderr` Stream verwendet, um Fehlermeldungen zu schreiben. Anders als bei der Ausgabe auf die Standardausgabe mit `printf`, kann das Schreiben auf `stderr` mit `fprintf` oder `fputs` erfolgen. So können Sie es tun:
 
 ```c
@@ -47,7 +42,6 @@ $ ./your_program > output.txt
 Dieser Befehl leitet nur die Standardausgabe auf `output.txt` um, während Fehlermeldungen weiterhin auf dem Bildschirm erscheinen.
 
 ## Tiefergehend
-
 Die Unterscheidung zwischen `stdout` und `stderr` in Unix-basierten Systemen geht zurück auf die Anfangstage von C und Unix. Diese Trennung ermöglicht eine robustere Fehlerbehandlung und Protokollierung, da sie es Programmierern ermöglicht, Fehlermeldungen unabhängig von der Standardprogrammausgabe umzuleiten. Während `stderr` standardmäßig nicht gepuffert ist, um eine sofortige Ausgabe von Fehlermeldungen zu gewährleisten, was beim Debuggen von Abstürzen und anderen kritischen Problemen hilft, ist `stdout` in der Regel gepuffert, was bedeutet, dass seine Ausgabe verzögert sein könnte, bis der Puffer geleert wird (z. B. bei Programmende oder manuellem Leeren).
 
 In modernen Anwendungen ist das Schreiben auf `stderr` immer noch relevant, besonders bei Kommandozeilen-Tools und Server-Anwendungen, wo die Unterscheidung zwischen regulären Protokollnachrichten und Fehlern entscheidend ist. Jedoch, für komplexere Fehlerbehandlungen, besonders bei GUI-Anwendungen oder wo ausgefeiltere Protokollierungsmechanismen benötigt werden, könnten Programmierer dedizierte Protokollierungsbibliotheken verwenden, die mehr Kontrolle über Nachrichtenformatierung, Ziele (z. B. Dateien, Netzwerk) und Schweregradniveaus (Info, Warnung, Fehler usw.) bieten.

@@ -10,9 +10,6 @@ title: Registrazione Eventi (Logging)
 weight: 17
 ---
 
-## Cosa & Perché?
-Il logging è il processo di registrazione degli eventi dell'applicazione e dei dati in output durante l'esecuzione. I programmatori effettuano il logging per diagnosticare bug, monitorare le prestazioni del software, tracciare le azioni degli utenti e mantenere la conformità con gli standard di sicurezza e aziendali.
-
 ## Come fare:
 In C#, puoi usare il namespace integrato `System.Diagnostics` o librerie di terze parti come NLog o log4net. Ecco un esempio rapido che utilizza l'interfaccia `ILogger` disponibile in .NET Core:
 

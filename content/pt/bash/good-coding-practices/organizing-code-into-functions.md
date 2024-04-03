@@ -11,9 +11,6 @@ title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---
 
-## O Quê & Porquê?
-Dividir código em funções significa decompor scripts em blocos menores e reutilizáveis que realizam tarefas específicas. Isso torna o código mais limpo, mais compreensível e mais fácil de depurar.
-
 ## Como fazer:
 Crie uma função simples em Bash:
 

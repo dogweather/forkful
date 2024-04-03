@@ -13,9 +13,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---
 
-## Làm thế nào và Tại sao?
-YAML không phải là ngôn ngữ đánh dấu. Nó là một tiêu chuẩn tuần tự hóa dữ liệu thân thiện với con người cho tất cả các ngôn ngữ lập trình. Các lập trình viên sử dụng nó cho các tập tin cấu hình, trao đổi dữ liệu giữa các ngôn ngữ, và nó dễ hiểu so với XML hoặc JSON.
-
 ## Cách thực hiện:
 Arduino không hỗ trợ YAML ngay từ đầu. Để làm việc với nó, bạn sử dụng thư viện bên ngoài. Ví dụ:
 

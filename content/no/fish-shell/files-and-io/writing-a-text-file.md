@@ -13,12 +13,7 @@ title: Skrive en tekstfil
 weight: 24
 ---
 
-## Hva & hvorfor?
-
-Å skrive til en tekstfil i Fish Shell lar deg lagre data vedvarende, noe som gjør det enkelt å hente eller manipulere data enten av samme Fish-script eller andre programmer. Programmerere gjør dette for logging, lagring av konfigurasjonsinnstillinger eller eksportering av data for videre behandling.
-
 ## Hvordan:
-
 For å skrive til en tekstfil i Fish, kan du bruke `echo`-kommandoen kombinert med omdirigeringsoperatorer. Det finnes ikke populære tredjepartsbiblioteker spesifikt for filskriving i Fish, ettersom skallets innebygde kommandoer er greie og effektive for dette formålet.
 
 ### Skrive tekst til en ny fil eller overskrive en eksisterende fil:

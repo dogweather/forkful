@@ -11,12 +11,7 @@ title: Avrundning av tal
 weight: 13
 ---
 
-## Vad & Varför?
-
-Att avrunda tal innebär att justera dem till närmaste hela tal eller till en specifik precision. Programmerare gör det för att förbättra läsbarheten, minska lagringskrav eller eftersom det exakta värdet inte är kritiskt för efterföljande beräkningar.
-
 ## Hur man gör:
-
 I Kotlin kan avrundning göras med flera funktioner som `roundToInt()`, `roundToDouble()`, och med `BigDecimal` för mer kontroll:
 
 ```kotlin
@@ -36,7 +31,6 @@ fun main() {
 ```
 
 ## Fördjupning
-
 Historiskt sett har avrundning av tal varit ett grundläggande koncept i både matematik och datavetenskap, utformad för att hantera begränsningar i numerisk precision. I tidig datorberäkning var avrundning avgörande på grund av det höga priset på minne.
 
 I Kotlin bygger avrundning på standard Java-bibliotek. Alternativ för avrundning inkluderar `Math.round()`, som avrundar till närmaste hela tal, och `BigDecimal` för anpassningsbar avrundning, där du kan ange en skalning och ett `RoundingMode`.
@@ -44,7 +38,6 @@ I Kotlin bygger avrundning på standard Java-bibliotek. Alternativ för avrundni
 Varje `RoundingMode` har olika policyer för att hantera oavgjorda situationer (när siffran är exakt i mitten av alternativen för avrundning). Till exempel rundar `RoundingMode.HALF_UP` till den närmaste grannen, såvida inte båda grannarna är lika avstånd från varandra, i vilket fall det avrundar uppåt.
 
 ## Se också
-
 - Kotlin Dokumentation om [`BigDecimal`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/java.math.-big-decimal/index.html)
 - Oracles Java Dokumentation för [`RoundingMode`](https://docs.oracle.com/javase/8/docs/api/java/math/RoundingMode.html)
 - IEEE-standarden för flyttalsaritmetik (IEEE 754) [IEEE Standard 754](https://ieeexplore.ieee.org/document/4610935)

@@ -10,9 +10,6 @@ title: Extraindo substrings
 weight: 6
 ---
 
-## O Que & Porquê?
-Extrair substrings é pegar pedaços de uma string. Programadores fazem isso para analisar, manipular ou validar dados de texto, como processar uma entrada do usuário ou analisar um arquivo de configuração.
-
 ## Como Fazer:
 ```C++
 #include <iostream>

@@ -10,12 +10,7 @@ title: Obtendo a data atual
 weight: 29
 ---
 
-## O que & Porquê?
-
-Conseguir a data atual significa acessar o momento exato em que o código está sendo executado. Programadores fazem isso para marcar eventos, gerenciar prazos ou qualquer lógica temporal no app.
-
 ## Como fazer:
-
 Elm torna um pouco mais envolvente pegar a data, já que funciona com imutabilidade e efeitos gerenciados. Primeiro, vamos pedir a data e depois reagir quando a conseguirmos.
 
 ```Elm
@@ -64,11 +59,9 @@ subscriptions model =
 Saída de exemplo (formato timestamp Unix): "1619372789534".
 
 ## Aprofundamento
-
 Elm preza pelo controle de efeitos colaterais, por isso, obter a data atual é um efeito e deve ser tratado como uma tarefa. Historicamente, Elm sempre buscou ter um modelo simples e previsível de programação, diferentemente de JavaScript que pode ser mais direto mas imprevisível em comportamento. Alternativas incluem usar flags ou portas para passar a hora do servidor para Elm, mas Time.now é a maneira canônica standard.
 
 ## Veja também
-
 - [Elm Time documentation](https://package.elm-lang.org/packages/elm/time/latest/)
 - [Elm Architecture Tutorial](https://guide.elm-lang.org/architecture/)
 - [Elm Lang Discuss](https://discourse.elm-lang.org/)

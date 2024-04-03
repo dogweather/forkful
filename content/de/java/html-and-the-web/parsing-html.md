@@ -12,12 +12,7 @@ title: HTML parsen
 weight: 43
 ---
 
-## Was & Warum?
-
-HTML zu parsen bedeutet, sich durch die Auszeichnung zu arbeiten, um Daten wie Text, Links oder andere Elemente zu extrahieren. Wir tun dies, um mit Webinhalten zu interagieren oder sie zu scrapen, Browsing-Aufgaben zu automatisieren oder Webanwendungen zu testen.
-
 ## Wie:
-
 Lassen Sie uns Jsoup verwenden, eine praktische Bibliothek für den Umgang mit HTML aus der realen Welt. Fügen Sie zunächst die Abhängigkeit hinzu:
 
 ```xml
@@ -64,7 +59,6 @@ for (Element link : links) {
 ```
 
 ## Tiefere Einblicke
-
 Einst wurde HTML durch Regex-Muster gezähmt, eine Methode, die sowohl fehleranfällig als auch für komplexe Dokumente alptraumhaft war. Dann kam Jsoup in den späten Nullerjahren, das eine jQuery-ähnliche Schnittstelle für Java bot, um HTML zu parsen, zu durchqueren und zu manipulieren.
 
 Jsoup ist nicht die einzige Wahl. Es gibt HtmlUnit für umfassende Tests von Webanwendungen mit JavaScript-Unterstützung, aber es ist schwerfälliger und komplexer. Für leichte Aufgaben ist der Apache Commons Validator großartig, nur für das Extrahieren von URLs.
@@ -74,7 +68,6 @@ Unter der Haube verwendet Jsoup einen DOM-Parser, der das gesamte Dokument im Sp
 Denken Sie daran, beim Scrapen immer die `robots.txt` und die Nutzungsbedingungen einer Website zu überprüfen, um rechtliche Probleme oder ein IP-Verbot zu vermeiden.
 
 ## Siehe auch
-
 - Jsoup Offizielle Dokumentation: https://jsoup.org/
 - HtmlUnit: http://htmlunit.sourceforge.net/
 - Apache Commons Validator: https://commons.apache.org/proper/commons-validator/

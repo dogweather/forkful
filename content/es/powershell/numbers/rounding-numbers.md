@@ -10,9 +10,6 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## Qué y Por Qué
-Redondear números se trata de ajustar un valor al entero más cercano o al lugar decimal especificado. Los programadores redondean números para simplificar datos, mejorar la legibilidad o cumplir ciertos requisitos matemáticos durante los cálculos.
-
 ## Cómo hacerlo:
 Tienes a tu disposición algunos cmdlets y métodos útiles en PowerShell para redondear:
 

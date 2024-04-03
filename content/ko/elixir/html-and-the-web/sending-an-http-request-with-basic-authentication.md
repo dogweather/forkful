@@ -15,9 +15,6 @@ title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uB
 weight: 45
 ---
 
-## What & Why? (무엇인가요? 왜 사용하나요?)
-HTTP 요청에 기본 인증(Basic Authentication)을 추가하여 서버에 보냅니다. 보안이 필요한 데이터에 접근할 때 인증 정보를 전달하기 위해 사용합니다.
-
 ## How to: (어떻게 하나요?)
 Elixir에서 HTTP 요청을 보내려면 `HTTPoison` 같은 라이브러리가 유용합니다. 기본 인증을 사용하는 예시를 보여 드리겠습니다.
 

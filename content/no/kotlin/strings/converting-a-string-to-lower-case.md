@@ -11,9 +11,6 @@ title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---
 
-## What & Why?
-Omgjøring av tekst til små bokstaver betyr å konvertere alle bokstavene i en streng til deres små bokstaver. Programmerere gjør dette for å standardisere data, for eksempel når man sammenligner brukerinput selv om det er skrevet med stor eller liten bokstav.
-
 ## How to:
 Kotlin har en integrert funksjon `toLowerCase()` for å gjøre om tekst til små bokstaver.
 

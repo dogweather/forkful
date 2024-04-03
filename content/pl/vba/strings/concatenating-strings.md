@@ -14,12 +14,7 @@ title: "Konkatenacja ci\u0105g\xF3w znak\xF3w"
 weight: 3
 ---
 
-## Co i dlaczego?
-
-Konkatenacja w Visual Basic for Applications (VBA) polega na łączeniu dwóch lub więcej ciągów znaków w jedną jednostkę. Jest to podstawowe zadanie w programowaniu, niezbędne do generowania komunikatów użytkownika, tworzenia zapytań SQL i wielu innych, ponieważ umożliwia dynamiczne tworzenie i manipulowanie danymi typu string.
-
 ## Jak to zrobić:
-
 VBA oferuje prostą metodę łączenia ciągów znaków za pomocą operatora `&` lub funkcji `Concatenate`. Przyjrzyjmy się obu metodom na przykładach:
 
 1. **Używając operatora `&`:**
@@ -55,7 +50,6 @@ Debug.Print message 'Wyjście: Hello John!
 Wybór między operatorem `&` a funkcją `Concatenate` zależy od osobistych preferencji i specyficznych wymagań projektu.
 
 ## W głębi tematu
-
 Konkatenacja ciągów znaków to podstawowa, a zarazem potężna funkcja w VBA, sięgająca korzeniami wczesnych języków programowania. Preferencja operatora `&` w VBA do łączenia ciągów znaków nad operatorem `+`, powszechnie używanym w wielu innych językach, podkreśla skupienie VBA na jasnym obsługiwaniu ciągów znaków, unikając niezamierzonych niezgodności typów danych i błędów.
 
 Chociaż operator `&` jest wydajny i szeroko przyjęty, funkcja `Concatenate` sprawdza się w scenariuszach wymagających większej przejrzystości lub podczas obsługi specjalnych przypadków konkatenacji, takich jak obchodzenie się z tablicami. Ważne jest jednak zauważenie, że nowoczesne wersje Excela wprowadziły funkcję `TEXTJOIN`, która może być bardziej wydajna do łączenia tablic ciągów znaków z delimitatorem, chociaż nie jest to bezpośrednio część VBA. 

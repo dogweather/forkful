@@ -9,9 +9,6 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## What & Why? - Mitä ja Miksi?
-Muuttaa merkkijono pieniksi kirjaimiksi. Tehdään johdonmukaisuuden ja vertailun helpottamiseksi.
-
 ## How to - Kuinka tehdään
 ```TypeScript
 let greeting: string = "Hei Maailma!";

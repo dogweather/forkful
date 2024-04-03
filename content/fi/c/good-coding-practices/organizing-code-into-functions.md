@@ -13,12 +13,7 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mikä & Miksi?
-
-Koodin järjestäminen funktioihin C-kielessä tarkoittaa monimutkaisten tehtävien pilkkomista pienempiin, uudelleenkäytettäviin koodilohkoihin. Tämä käytäntö parantaa luettavuutta, helpottaa virheenkorjausta ja edistää koodin uudelleenkäyttöä, tehden sovelluksista modulaarisempia ja ylläpidettävämpiä.
-
 ## Miten:
-
 C-kielessä funktio ilmaistaan paluutyypillä, nimellä ja parametreilla (jos niitä on), jonka jälkeen seuraa koodilohko. Aloittakaamme yksinkertaisella esimerkillä: funktiolla, joka lisää kaksi kokonaislukua.
 
 ```c
@@ -74,7 +69,6 @@ Suorakulmion pinta-ala on: 50
 ```
 
 ## Syväsukellus
-
 Funktioiden käsite C-kielessä, peritty aikaisemmista ohjelmointikäytänteistä, on olennainen rakenteellisessa ohjelmoinnissa. Funktiot mahdollistavat yksityiskohtien abstrahoinnin, monimutkaisuuden hallinnan ja koodin loogisen järjestämisen. Sen alusta lähtien, funktio on ollut keskeinen rakennuspalikka C-kielessä, vaikuttaen lukuisiin muihin kieliin.
 
 Ohjelmointiparadigmojen kehittymisen myötä, vaihtoehtoiset lähestymistavat kuten olio-ohjelmointi (OOP) kielissä kuten C++ ja Java, ovat laajentaneet funktioiden käsitettä objekteihin liittyvillä metodeilla. Vaikka C ei suoraan tue OOP:tä, on mahdollista matkia olio-ohjelmointimalleja huolellisesti rakennettujen funktioiden ja datan avulla.

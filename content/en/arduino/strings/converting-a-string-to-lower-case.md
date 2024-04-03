@@ -10,9 +10,6 @@ title: Converting a string to lower case
 weight: 4
 ---
 
-## What & Why?
-Converting a string to lower case changes all uppercase letters in the text to their lowercase counterparts. Programmers do this for consistency, especially when comparing strings or standardizing input data.
-
 ## How to:
 Arduino's `String` object has a handy `toLowerCase()` method. Call it on your string, and just like that, it's in lowercase.
 

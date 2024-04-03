@@ -10,9 +10,6 @@ title: Refaktoryzacja
 weight: 19
 ---
 
-## Co i dlaczego?
-Refaktoryzacja to proces restrukturyzacji istniejącego kodu bez zmieniania jego zewnętrznego zachowania w celu poprawy atrybutów niefunkcjonalnych. Programiści wykonują ją, aby kod stał się bardziej czytelny, zmniejszyć jego złożoność, poprawić możliwości utrzymania i ułatwić skalowanie lub modyfikację w przyszłości.
-
 ## Jak to zrobić:
 Wyobraź sobie, że masz skrypt, który z czasem mocno urośl. Zaczynał prosto, ale teraz jest to bestia rozprzestrzeniająca macki logiki. Oto przykład refaktoryzacji funkcji, aby była bardziej zrozumiała i wydajna:
 

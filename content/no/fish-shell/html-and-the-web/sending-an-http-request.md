@@ -11,12 +11,7 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## What & Why?
-
-Å sende en HTTP-forespørsel betyr å be om data eller å utløse en handling på en webserver. Programmerere gjør dette for å hente innhold, oppdatere data, eller kommunisere med webtjenester.
-
 ## How to:
-
 Fish Shell har ikke innebygd HTTP-funksjonalitet, men du kan bruke curl eller httpie.
 
 ```fish
@@ -39,13 +34,11 @@ curl -X POST https://api.example.com/update \
 ```
 
 ## Deep Dive
-
 Historisk sett har UNIX/Linux-systemer brukt verktøy som curl for nettverksinteraksjoner. Curl og libcurl, utgitt første gang i 1997, er standardverktøyet for å sende HTTP-forespørsler fra kommandolinjen. Httpie, som er nyere, tilbyr enklere syntaks og mer lesbare responser. 
 
 I Fish Shell bruker vi disse verktøyene fordi Shell'en fokuserer på interaktiv bruk og tar ikke sikte på å erstatte dedikert programvare for nettverkshåndtering. Riktig bruk av flagg og parametre er avgjørende for å oppnå ønsket oppførsel fra disse verktøyene.
 
 ## See Also
-
 - Curl offisielle dokumentasjon: https://curl.se/docs/
 - Httpie GitHub og dokumentasjon: https://github.com/httpie/httpie
 - Fish Shell offisiell dokumentasjon: https://fishshell.com/docs/current/index.html

@@ -14,12 +14,7 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## Mikä & Miksi?
-
-Uuden projektin aloittaminen Google Apps Scriptissä (GAS) tarkoittaa komentosarjatiedoston alustamista Google-ekosysteemissä (Google Drive, Docs, Sheets jne.) tehtävien automatisoimiseksi tai Google Apps -toimintojen laajentamiseksi. Ohjelmoijat usein lähtevät tälle matkalle työnkulun tehostamiseksi, Google-palveluiden ohjelmalliseksi manipuloinniksi tai mukautettujen lisäosien luomiseksi, mikä säästää aikaa ja hyödyntää Googlen infrastruktuurin voimaa.
-
 ## Kuinka:
-
 Aloittaaksesi uuden projektin Google Apps Scriptissä, sinulla on muutama aloituskohta, mutta keskitytään suorimpaan menetelmään: skriptin luominen Google Drivessä.
 
 1. **Projektin luominen Google Drivessä**
@@ -45,7 +40,6 @@ function helloWorld() {
 Onnittelut, olet juuri onnistuneesti aloittanut uuden projektin Google Apps Scriptissä ja suorittanut yksinkertaisen funktion!
 
 ## Syväsukellus
-
 Google Apps Scriptin perustaminen vuonna 2009 tarjosi tehokkaan, mutta lähestyttävän alustan sekä kehittäjille että ei-kehittäjille Google-palveluiden automatisointiin, laajentamiseen ja rakentamiseen. Toisin kuin perinteiset ohjelmointiympäristöt, GAS tarjoaa yksinkertaisuuden ja integraation ainutlaatuisen sekoituksen suoraan Google-ekosysteemissä, ilman tarvetta ulkoisille palvelimille tai asetuksille. Tämä palvelinton suoritusmalli yksinkertaistaa suuresti projektien käyttöönottoa ja hallintaa.
 
 Historiallisesti GAS oli jossain määrin rajoittunut suoritusympäristönsä ja kielen version suhteen, usein jäljessä nykyisistä JavaScript-standardeista. Kuitenkin, viimeaikaiset päivitykset ovat tuoneet modernin JavaScript-syntaksin (ECMAScript 2015+) GAS:iin, tehden siitä mieluisamman kehittäjille, jotka ovat tottuneet nykyaikaisiin kehityskäytäntöihin.

@@ -11,9 +11,6 @@ title: Umgang mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-Komplexe Zahlen erweitern die reellen Zahlen durch Hinzufügen einer imaginären Einheit, dargestellt als 'i', wobei i^2 = -1. Programmierer verwenden sie für Simulationen, Signalverarbeitung und die Lösung mathematischer Probleme, die ein Arbeiten in zwei Dimensionen erfordern.
-
 ## Wie zu:
 C++ verfügt über eine eingebaute Bibliothek `<complex>`, die das Arbeiten mit komplexen Zahlen erleichtert. Hier ein schneller Überblick:
 

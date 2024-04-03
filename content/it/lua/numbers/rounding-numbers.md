@@ -11,9 +11,6 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Cosa & Perché?
-Arrotondare i numeri significa aggiustarli all'intero più vicino o a un punto decimale specificato. È un elemento fondamentale nella programmazione per ridurre la complessità, migliorare le prestazioni e per i momenti in cui la precisione oltre un certo punto non aggiunge valore.
-
 ## Come fare:
 ```lua
 -- L'arrotondamento base in Lua non è incorporato, ma puoi definire una funzione:

@@ -17,12 +17,7 @@ title: "Ph\xE2n t\xEDch ng\xE0y th\xE1ng t\u1EEB m\u1ED9t chu\u1ED7i"
 weight: 30
 ---
 
-## Cái gì & Tại sao?
-
-Phân tích cú pháp ngày từ chuỗi trong C liên quan đến việc chuyển đổi các biểu diễn văn bản của ngày thành định dạng mà chương trình có thể thao tác và phân tích hiệu quả hơn. Điều này rất quan trọng cho các tác vụ như toán học ngày, so sánh và định dạng cho các địa phương khác nhau, vì nó cho phép lập trình viên xử lý đầu vào từ người dùng hoặc các mục nhập dữ liệu trong một cách thức chuẩn hóa.
-
 ## Làm thế nào:
-
 C không cung cấp một cách tích hợp sẵn để phân tích cú pháp ngày từ chuỗi một cách trực tiếp, vì vậy chúng ta thường phải sử dụng hàm `strptime` có trong thư viện `<time.h>` cho các hệ thống POSIX. Hàm này cho phép chúng ta chỉ định định dạng mong đợi của chuỗi đầu vào và phân tích cú pháp nó thành `struct tm`, đại diện cho ngày và giờ lịch dựa vào các thành phần của chúng.
 
 Dưới đây là một ví dụ đơn giản về cách sử dụng `strptime` để phân tích cú pháp một ngày từ chuỗi:
@@ -58,7 +53,6 @@ Ngày đã phân tích: Thứ Bảy, Tháng Tư 01, 2023
 Rất cần thiết phải xử lý các lỗi tiềm ẩn, chẳng hạn như `strptime` không khớp mẫu hoặc gặp đầu vào không mong đợi.
 
 ## Đi sâu vào vấn đề
-
 Hàm `strptime`, dù mạnh mẽ, không phải là một phần của thư viện chuẩn C và chủ yếu được tìm thấy trên các hệ thống tuân thủ POSIX như Linux và UNIX. Hạn chế này có nghĩa là các chương trình dựa vào `strptime` để phân tích cú pháp ngày từ chuỗi có thể không di động sang các hệ thống không phải POSIX như Windows mà không cần thêm các lớp tương thích hoặc thư viện phụ trợ.
 
 Truyền thống, việc xử lý ngày và giờ trong C yêu cầu nhiều thao tác thủ công và sự chú ý đặc biệt, đặc biệt là xem xét các địa phương và múi giờ khác nhau. Các lựa chọn và mở rộng hiện đại cho C, như thư viện `<chrono>` của C++ và các thư viện bên thứ ba như thư viện ngày của Howard Hinnant cho C++, cung cấp các giải pháp mạnh mẽ hơn cho việc thao tác ngày và giờ, bao gồm cả phân tích cú pháp. Các thư viện này thường cung cấp hỗ trợ tốt hơn cho một loạt định dạng ngày, múi giờ và cơ chế xử lý lỗi, khiến chúng trở nên ưu tiên hơn cho các dự án mới yêu cầu khả năng thao tác ngày và giờ mở rộng.

@@ -9,9 +9,6 @@ title: Scaricare una pagina web
 weight: 42
 ---
 
-## What & Why?
-Scaricare una pagina web significa acquisire i dati da un URL. I programmatori lo fanno per recuperare informazioni, consumare servizi web o per integrare contenuti esterni nelle loro app.
-
 ## How to:
 In Swift, usiamo `URLSession` per scaricare contenuti web. Ecco un esempio semplice:
 

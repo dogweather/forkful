@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---
 
-## What & Why? (Mitä & Miksi?)
-HTTP-pyyntö perusautentikaatiolla tarkoittaa verkkoresurssiin pääsyä käyttäjätunnuksen ja salasanan avulla. Ohjelmoijat käyttävät sitä turvatakseen yksinkertainen pääsyt tietyille verkkoresursseille.
-
 ## How to: (Kuinka tehdä:)
 ```java
 import java.io.IOException;

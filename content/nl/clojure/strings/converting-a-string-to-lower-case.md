@@ -13,9 +13,6 @@ title: Een string omzetten naar kleine letters
 weight: 4
 ---
 
-## Wat & Waarom?
-Een string omzetten naar kleine letters betekent het transformeren van alle karakters in de tekst naar hun varianten in kleine letters, zoals het veranderen van "Hello, World!" in "hello, world!". Programmeurs doen dit voor consistentie, vooral bij taken zoals het vergelijken van gebruikersinvoer waarbij de hoofdlettergevoeligheid er niet toe zou moeten doen.
-
 ## Hoe:
 In Clojure, om een string naar kleine letters om te zetten, gebruik je de `clojure.string/lower-case` functie. Kijk hoe eenvoudig het is:
 

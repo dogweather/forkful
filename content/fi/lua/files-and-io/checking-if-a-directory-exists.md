@@ -12,12 +12,7 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mikä ja miksi?
-
-Hakemiston olemassaolon tarkistaminen on perusoperaatio, kun kirjoitetaan skriptejä, jotka vuorovaikuttavat tiedostojärjestelmän kanssa. Se varmistaa, että ohjelmasi toimii kelvollisilla poluilla ja estää virheet, jotka liittyvät olemattomiin hakemistoihin. Tämä tehtävä on ratkaisevan tärkeä, kun luodaan uusia tiedostoja hakemistoihin, luetaan niitä tai suoritetaan hakemistokohtaisia toimenpiteitä turvallisesti.
-
 ## Miten:
-
 Luassa ei ole sisäänrakennettua funktiota suoraan tarkistaa, onko hakemisto olemassa, joten usein nojaudutaan Lua File System (lfs) -kirjastoon, joka on suosittu kolmannen osapuolen kirjasto tiedosto-operaatioihin.
 
 Varmista ensin, että sinulla on Lua File System asennettu. Jos ei, sen voi yleensä asentaa käyttämällä LuaRocksia:

@@ -17,12 +17,7 @@ title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---
 
-## Cái gì và Tại sao?
-
-Việc tạo số ngẫu nhiên trong lập trình liên quan đến việc tạo ra những giá trị số không định trước hoặc không dự đoán được. Lập trình viên sử dụng số ngẫu nhiên cho nhiều lý do, như mô phỏng sự không dự đoán được trong trò chơi, chọn mẫu ngẫu nhiên từ các bộ dữ liệu, hoặc cho mục đích mã hóa.
-
 ## Làm thế nào:
-
 Swift cung cấp một cách đơn giản để tạo số ngẫu nhiên thông qua thư viện tiêu chuẩn của nó. Dưới đây là cách bạn thực hiện cho các loại số khác nhau:
 
 ```Swift
@@ -42,7 +37,6 @@ print(randomBool)
 Kết quả mẫu có thể biến đổi vì, cuối cùng, chúng ta đang xử lý sự ngẫu nhiên. Chạy mã nhiều lần sẽ cho ra các số và giá trị boolean khác nhau.
 
 ## Đào sâu
-
 Cách tiếp cận của Swift đối với việc tạo số ngẫu nhiên được xây dựng dựa trên một bộ sinh số ngẫu nhiên giả (PRNG) vững chắc và hiệu quả. Trước Swift 4.2, các nhà phát triển phụ thuộc vào thư viện bên ngoài hoặc khả năng của nền tảng cơ bản, có thể dẫn đến sự không nhất quán trên các nền tảng và môi trường khác nhau. Với sự giới thiệu về API bản địa trong Swift 4.2, việc tạo số ngẫu nhiên trở nên đơn giản hơn và nhất quán hơn, bất kể nền tảng cơ bản là gì.
 
 Tuy nhiên, điều quan trọng là phải hiểu rằng bộ sinh số ngẫu nhiên tiêu chuẩn trong Swift không phù hợp cho mục đích mã hóa. Đối với mục đích mã hóa, các nhà phát triển nên sử dụng khung `Security` trên các nền tảng của Apple, cung cấp quyền truy cập vào các byte ngẫu nhiên an toàn từ góc độ mã hóa. Tính đến lần cập nhật cuối cùng của tôi, Swift không bao gồm một bộ sinh số ngẫu nhiên mã hóa đa nền tảng trong thư viện tiêu chuẩn của mình, buộc các nhà phát triển tìm đến các thư viện bên thứ ba cho những nhu cầu như vậy trên các nền tảng không phải Apple.

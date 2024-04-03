@@ -10,12 +10,7 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-
-Calculating a future or past date involves figuring out what the date was, or will be, after or before a specific time interval. Programmers often need this to schedule events, handle expiration dates, or record time-sensitive data.
-
 ## How to:
-
 Calculating future dates: 
 
 ```C#
@@ -65,7 +60,6 @@ Ten days ago was: <date ten days before the current date>
 ```
 
 ## Deep Dive
-
 In C#, `DateTime` and `TimeSpan` are the bread and butter for date and time operations. `DateTime` represents an instant in time, typically expressed as a date and time of day. `TimeSpan` represents a time interval.
 
 Historically, date and time calculations were prone to errors due to manual handling of days, months, and leap years. `DateTime` abstracts these complexities, letting the framework handle the tricky bits.
@@ -75,7 +69,6 @@ Alternatives to `DateTime` and `TimeSpan` in .NET include `DateTimeOffset`, whic
 Implementation-wise, when you add a `TimeSpan` to a `DateTime`, under the hood, it's manipulating ticks, the fundamental unit of time in .NET (`1 tick = 100 nanoseconds`). For past dates, a negative `TimeSpan` does the trick.
 
 ## See Also
-
 - .NET API documentation for [`DateTime`](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)
 - Introduction to [`TimeSpan`](https://docs.microsoft.com/en-us/dotnet/api/system.timespan)
 - Microsoft's best practices for [`DateTime` and `DateTimeOffset`](https://docs.microsoft.com/en-us/dotnet/standard/datetime/choosing-between-datetime)

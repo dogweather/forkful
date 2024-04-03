@@ -11,9 +11,6 @@ title: Gestione degli errori
 weight: 16
 ---
 
-## Cosa e Perché?
-Gestire gli errori in Swift significa anticipare e rispondere ai problemi che emergono quando il codice è in esecuzione. Lo facciamo per controllare il caos—impedendo alle app di bloccarsi e fornendo all'utente un'esperienza fluida.
-
 ## Come fare:
 Swift utilizza la gestione degli errori con i blocchi `do`, `try` e `catch`. Diamo un'occhiata:
 

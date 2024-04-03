@@ -14,13 +14,11 @@ title: Praca z plikami CSV
 weight: 37
 ---
 
-## Co i dlaczego?
-Praca z plikami CSV (Comma-Separated Values), czyli z wartościami rozdzielanymi przecinkami, polega na odczycie z plików CSV oraz zapisywaniu do nich danych, co jest powszechnym formatem przechowywania danych tabelarycznych. Programiści robią to, aby łatwo wymieniać i przechowywać dane w prostym formacie tekstowym, który jest szeroko obsługiwany na różnych platformach i językach.
-
 ## Jak to robić:
 Python oferuje wbudowany moduł `csv`, który pozwala na obsługę plików CSV, co sprawia, że odczyt z nich i zapisywanie do nich jest prostsze. Dla bardziej zaawansowanych i złożonych manipulacji danymi, popularna jest biblioteka zewnętrzna `pandas`.
 
 ### Korzystanie z modułu `csv`
+
 
 #### Odczyt pliku CSV
 ```python

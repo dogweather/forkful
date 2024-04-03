@@ -15,12 +15,7 @@ title: Usando uma shell interativa (REPL)
 weight: 34
 ---
 
-## O Que & Por Que?
-
-Um shell interativo, ou Loop de Leitura-Avaliação-Impressão (REPL, do inglês), é um ambiente de programação simples e interativo que recebe entradas individuais do usuário (expressões), as avalia e retorna o resultado para o usuário. Os programadores usam REPLs para prototipagem rápida, depuração e para aprender a sintaxe e o comportamento de uma linguagem de programação interativamente.
-
 ## Como:
-
 O Google Apps Script, uma linguagem de script baseada na nuvem para automatizar tarefas em produtos do Google, não possui uma ferramenta REPL integrada similar às encontradas em linguagens como Python ou o Node.js do JavaScript. No entanto, você pode simular uma experiência semelhante usando os recursos de registro e depuração do Editor do Apps Script ou configurando um ambiente externo. Aqui, focamos na criação de um REPL improvisado dentro do editor do Apps Script.
 
 1. **Criando uma função REPL improvisada**:
@@ -62,7 +57,6 @@ Após executar `myREPL()`, verifique os Logs (Ver > Logs) para a saída, que dev
 Para uma depuração mais complexa, intercale `Logger.log(variável);` dentro do seu código para imprimir estados de variáveis, ajudando você a entender o fluxo e estados intermediários dos seus scripts.
 
 ## Aprofundamento
-
 O conceito de um REPL é profundamente enraizado na história da computação, originando-se dos sistemas de tempo compartilhado dos anos 1960, que permitiam sessões interativas. Linguagens como Lisp prosperaram nesse ambiente, pois o REPL era crítico para seu processo de desenvolvimento iterativo. Em contraste, o Google Apps Script, surgindo muito mais tarde, é projetado principalmente para a web, focando em automatizar tarefas dentro do conjunto do Google em vez de programação baseada em console iterativo.
 
 O Google Apps Script tradicionalmente não suporta sessões de codificação interativas em tempo real logo de cara devido à sua natureza baseada na nuvem e foco no desenvolvimento de aplicativos web. Seu modelo de execução gira em torno de funções acionadas por eventos da web, gatilhos baseados em tempo ou invocação manual dentro do ambiente, ao invés de loops de feedback instantâneo fornecidos por um REPL.

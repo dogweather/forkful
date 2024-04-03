@@ -11,9 +11,6 @@ title: Vergleich von zwei Daten
 weight: 27
 ---
 
-## Was & Warum?
-Das Vergleichen zweier Daten bedeutet, die zeitliche Reihenfolge zu bestimmen oder zu prüfen, ob sie gleich sind. Programmierer machen das, um Termine zu planen, Fristen zu überwachen oder Zeitabläufe zu analysieren.
-
 ## So geht's:
 ```Clojure
 ;; Importiere das java.util.Date

@@ -11,9 +11,6 @@ title: Organizacja kodu w funkcje
 weight: 18
 ---
 
-## Co i dlaczego?
-Organizowanie kodu w funkcje polega na dzieleniu go na ponownie używalne bloki o określonych celach. Robimy to, aby utrzymać porządek, zapobiegać redundancji i ułatwić debugowanie.
-
 ## Jak to zrobić:
 Wyobraź sobie, że mamy powtarzający się kod pozdrawiający użytkowników. Zamiast tego opakujemy go w funkcję o nazwie `greet_user`:
 

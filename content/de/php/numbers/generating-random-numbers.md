@@ -12,12 +12,7 @@ title: Generierung von Zufallszahlen
 weight: 12
 ---
 
-## Was & Warum?
-
-Das Generieren von Zufallszahlen in PHP bedeutet, unvorhersehbare Werte innerhalb eines festgelegten Bereichs zu erzeugen, was für Aufgaben wie das Erstellen einzigartiger Benutzer-IDs, das Generieren von Passwörtern oder für den Einsatz in Simulationen und Spielen wesentlich ist. Programmierer verlassen sich auf Zufälligkeit, um Unvorhersehbarkeit und Variabilität in ihre Anwendungen zu bringen, was Prozesse wie Tests oder Benutzererfahrungen robuster und ansprechender macht.
-
 ## Wie:
-
 PHP bietet mehrere Funktionen zum Generieren von Zufallszahlen, aber die am häufigsten verwendeten sind `rand()`, `mt_rand()` und für kryptografische Zwecke `random_int()`.
 
 Um eine einfache Zufallszahl zwischen 0 und getrandmax() (dem größtmöglichen von `rand()` zurückgegebenen Wert) zu generieren, können Sie verwenden:
@@ -49,7 +44,6 @@ echo random_int(1, 100);
 Auch hier ist die Ausgabe eine zufällige Zahl zwischen 1 und 100, wie `84`, aber mit einer stärkeren Garantie für Zufälligkeit.
 
 ## Vertiefung
-
 Die Funktion `rand()` ist seit den frühen Versionen von PHP vorhanden und diente als der ursprüngliche Ansatz zur Generierung von Zufallszahlen. Sie ist jedoch nicht die beste Wahl für Anwendungen, die einen hohen Grad an Zufälligkeit erfordern, aufgrund ihres relativ vorhersehbaren Algorithmus.
 
 `mt_rand()`, eingeführt in PHP 4, basiert auf dem Mersenne-Twister-Algorithmus - weitaus überlegen in Bezug auf Geschwindigkeit und die Zufälligkeit, die es im Vergleich zu `rand()` generieren kann. Es wurde schnell zur bevorzugten Option für die meisten nicht-kryptografischen Bedürfnisse.

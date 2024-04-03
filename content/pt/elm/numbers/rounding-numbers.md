@@ -11,12 +11,7 @@ title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---
 
-## O Quê & Por Quê?
-
-Arredondar números é ajustar um decimal para o seu valor inteiro mais próximo ou para um número específico de casas decimais. Os programadores arredondam para reduzir a complexidade, melhorar a legibilidade ou atender aos requisitos de precisão.
-
 ## Como fazer:
-
 O módulo `Basics` do Elm fornece funções práticas para arredondamento: `round`, `floor` e `ceiling`. Veja como usá-las.
 
 ```elm
@@ -46,7 +41,6 @@ toLocaleString 2 3.14159 --> "3.14"
 ```
 
 ## Aprofundando
-
 Elm é uma linguagem funcional fortemente tipada que relega efeitos colaterais às "bordas" da arquitetura. Isso significa que funções como arredondamento devem ser puras e previsíveis. Historicamente, o arredondamento é uma operação comum em muitas linguagens de programação que lidam com a imprecisão da aritmética de ponto flutuante.
 
 A abordagem do Elm para o arredondamento é direta - as funções são puras e aderem às definições matemáticas para round, floor e ceiling. Elm antecipa as necessidades comuns fornecendo funções integradas, pois a gestão da precisão é um requisito frequente, especialmente em finanças e gráficos.
@@ -56,7 +50,6 @@ Alternativas às funções integradas do Elm poderiam incluir implementações p
 Na versão atual, o Elm utiliza a matemática de ponto flutuante subjacente do JavaScript para essas operações, mantendo-se assim consistente com o padrão IEEE 754, o que é algo a se lembrar ao considerar a precisão e possíveis erros de ponto flutuante.
 
 ## Veja Também
-
 - Documentação oficial do módulo `Basics` do Elm: https://package.elm-lang.org/packages/elm/core/latest/Basics
 - Um olhar detalhado sobre como funcionam os números de ponto flutuante na computação: https://floating-point-gui.de/
 - Módulo `Float` do Elm para mais operações de ponto flutuante: https://package.elm-lang.org/packages/elm/core/latest/Float

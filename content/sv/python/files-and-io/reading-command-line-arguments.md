@@ -11,9 +11,6 @@ title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---
 
-## What & Why? (Vad & Varför?)
-Kommandoradsargument låter användare ge input direkt när de kör ett Python-program. Det är viktigt för att skapa flexibla program som kan anpassas vid varje körning utan att ändra koden.
-
 ## How to (Hur gör man):
 ```python
 import sys

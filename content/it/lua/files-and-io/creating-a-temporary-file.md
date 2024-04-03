@@ -10,9 +10,6 @@ title: Creazione di un file temporaneo
 weight: 21
 ---
 
-## What & Why?
-Creare un file temporaneo significa realizzare un file destinato alla cancellazione dopo il suo uso. Programmatori fanno ciò per manipolare dati temporanei senza intaccare la persistenza o l'integrità dei dati principali.
-
 ## How to:
 In Lua, possiamo usare `os.tmpname()` per ottenere un nome univoco di file temporaneo, poi aprire e operare su di esso con le funzioni standard `io`:
 

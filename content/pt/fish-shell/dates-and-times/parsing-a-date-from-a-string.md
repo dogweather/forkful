@@ -14,9 +14,6 @@ title: Analisando uma data a partir de uma string
 weight: 30
 ---
 
-## O que & Por quê?
-Analisar uma data a partir de uma string envolve extrair informações de data codificadas dentro de strings e convertê-las em um formato estruturado que ambientes de programação podem reconhecer e manipular. Programadores fazem isso para habilitar operações como comparação de datas, aritmética, formatação e localização, que são essenciais para o manuseio eficiente de agendamentos, timestamps e dados históricos em software.
-
 ## Como fazer:
 No Fish Shell, você não possui comandos integrados especificamente projetados para a análise de datas de strings. Em vez disso, você depende de utilitários externos como `date` (disponível no Linux e macOS) ou aproveita ferramentas de terceiros populares como o `GNU date` para uma análise mais complexa. Aqui está como abordá-lo:
 

@@ -13,12 +13,7 @@ title: "Sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## Hva & Hvorfor?
-
-Å sende en HTTP-forespørsel i Dart er prosessen med å starte kommunikasjon med en webserver eller API fra en Dart-applikasjon. Programmerere gjør dette for å hente data fra nettet, sende inn skjemaer og samhandle med RESTful-tjenester, noe som gjør det til en grunnleggende operasjon for utvikling av web-, server-side- og mobilapplikasjoner i Dart.
-
 ## Hvordan:
-
 Dart inkluderer `http`-pakken, en kraftig og praktisk måte å arbeide med HTTP-ressurser. Først inkluderer du den i din pubspec.yaml-fil:
 
 ```yaml

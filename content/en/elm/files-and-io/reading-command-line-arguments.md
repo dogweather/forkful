@@ -10,9 +10,6 @@ title: Reading command line arguments
 weight: 23
 ---
 
-## What & Why?
-Command line arguments let users feed data to your program when they launch it. Programmers read these to tailor program behavior without hard-coding values.
-
 ## How to:
 Elm runs in the browser, so it doesn't have direct access to command line arguments like a traditional server-side or desktop language does. However, for illustration, let's assume you're using Elm with a server-side framework like Node.js through `elm server` or a similar setup that allows passing arguments. Your code won't handle the arguments directly, but we'll mimic the pattern:
 

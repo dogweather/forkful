@@ -11,9 +11,6 @@ title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---
 
-## Wat & Waarom?
-REPL staat voor Read-Eval-Print Loop, een eenvoudige, interactieve computerprogrammeeromgeving. Programmeurs gebruiken het om snel code te schrijven en te testen, te experimenteren met syntaxis en programmeerconcepten te leren zonder de overhead van het creëren en uitvoeren van volledige applicaties.
-
 ## Hoe te:
 In Bash is je terminal in wezen een REPL. Je typt een commando; het leest het, evalueert het, drukt het resultaat af en gaat terug in afwachting van je volgende commando. Hier is een voorbeeld van het gebruik van Bash als een REPL:
 

@@ -13,12 +13,7 @@ title: Sjekke om en mappe eksisterer
 weight: 20
 ---
 
-## Hva & Hvorfor?
-
-Å sjekke om en mappe eksisterer i C innebærer å forespørre filsystemet for å verifisere om en spesifikk bane leder til en mappe. Programmerere utfører ofte denne operasjonen for å sikre at filoperasjoner (som å lese fra eller skrive til filer) er rettet mot gyldige baner, for å forhindre feil og forbedre programvarens pålitelighet.
-
 ## Hvordan:
-
 I C kan eksistensen av en mappe sjekkes ved å bruke `stat`-funksjonen, som henter informasjon om filen eller mappen på en spesifisert bane. Makroen `S_ISDIR` fra `sys/stat.h` brukes deretter for å vurdere om den hentede informasjonen tilsvarer en mappe.
 
 Slik kan du bruke `stat` og `S_ISDIR` for å sjekke om en mappe eksisterer:
@@ -58,7 +53,6 @@ Mappen eksisterer ikke.
 ```
 
 ## Dypdykk:
-
 `stat`-strukturen og -funksjonen har vært en del av C programmeringsspråket i flere tiår, og stammer fra Unix. De tilbyr en standardisert måte å hente filsysteminformasjon på, som, til tross for å være relativt lavnivå, er mye brukt på grunn av sin enkelhet og direkte tilgang til filsystemets metadata.
 
 Historisk sett har sjekking av eksistensen og egenskapene til filer og mapper med `stat` og dets derivater (som `fstat` og `lstat`) vært en vanlig tilnærming. Men disse funksjonene kommuniserer direkte med OS-kjernen, noe som kan introdusere overhead og potensielle feil hvis de ikke håndteres riktig.

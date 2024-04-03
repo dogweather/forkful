@@ -13,11 +13,7 @@ title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---
 
-## Was & Warum?
-Es ist unerlässlich zu überprüfen, ob ein Verzeichnis im Dateisystem existiert, um Dateistrukturen innerhalb Ihrer Swift-Anwendungen zu verwalten. Diese Aufgabe ermöglicht es Entwicklern, die Präsenz von Verzeichnissen zu überprüfen, bevor sie versuchen, aus diesen zu lesen oder in diese zu schreiben, und somit mögliche Laufzeitfehler zu vermeiden.
-
 ## Wie geht das:
-
 Das Foundation-Framework von Swift stellt die `FileManager`-Klasse bereit, die Methoden zur Verwaltung des Dateisystems bietet. Sie können `FileManager` verwenden, um zu überprüfen, ob ein Verzeichnis existiert. Hier ist ein Code-Snippet, wie man das macht:
 
 ```swift
@@ -50,7 +46,6 @@ if fileManager.fileExists(atPath: path, isDirectory: &isDirectory), isDirectory.
 ```
 
 ### Verwendung einer Drittanbieter-Bibliothek
-
 Bis jetzt erfordert die Überprüfung der Existenz eines Verzeichnisses in Swift normalerweise keine Drittanbieter-Bibliotheken aufgrund der Robustheit der `FileManager`-Klasse. Für komplexere Dateimanipulationen und Überprüfungen bieten Bibliotheken wie **Files** von John Sundell jedoch eine Swift-freundlichere API.
 
 So könnten Sie es verwenden:

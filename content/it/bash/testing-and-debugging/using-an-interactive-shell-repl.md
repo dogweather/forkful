@@ -10,9 +10,6 @@ title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---
 
-## Che cosa & Perché?
-REPL sta per Read-Eval-Print Loop (Ciclo di Lettura-Valutazione-Stampa), un ambiente di programmazione computerizzato semplice e interattivo. I programmatori lo usano per scrivere e testare codice rapidamente, sperimentare con la sintassi e apprendere concetti di programmazione senza l'onere di creare ed eseguire intere applicazioni.
-
 ## Come fare:
 In Bash, il tuo terminale è essenzialmente un REPL. Digiti un comando; lo legge, lo valuta, stampa il risultato e torna in attesa del tuo prossimo comando. Ecco un esempio di utilizzo di Bash come REPL:
 

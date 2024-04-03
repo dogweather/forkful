@@ -10,9 +10,6 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## What & Why? (Mitä & Miksi?)
-Tekstin etsiminen ja korvaaminen tarkoittaa merkkijonojen vaihtamista toisiksi. Ohjelmoijat tekevät sitä, koska se on nopea keino muuttaa dataa, korjata virheitä tai parantaa koodin luettavuutta.
-
 ## How to: (Kuinka tehdä:)
 Elixirissä tekstin etsiminen ja korvaaminen onnistuu `String`-moduulin avulla. Alapuolella pari esimerkkiä:
 

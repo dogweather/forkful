@@ -12,9 +12,6 @@ title: Werken met XML
 weight: 40
 ---
 
-## Wat & Waarom?
-XML (eXtensible Markup Language) gaat over het structureren van data in een leesbaar formaat. Programmeurs werken met XML voor configuratie, gegevensuitwisseling tussen apps, en waar specificaties erom vragen—denk aan SOAP of web-API's.
-
 ## Hoe:
 ```C#
 using System;

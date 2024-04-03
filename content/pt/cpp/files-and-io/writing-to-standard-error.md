@@ -13,12 +13,7 @@ title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---
 
-## O Que & Por Quê?
-
-Escrever para o erro padrão (`stderr`) em C++ envolve a saída de mensagens de erro ou diagnósticos que são separados da saída principal do programa. Os programadores fazem isso para direcionar os erros para um fluxo diferente, permitindo uma depuração e um tratamento de erros mais fáceis, distinguindo a saída normal das mensagens de erro.
-
 ## Como fazer:
-
 Em C++, escrever para o erro padrão pode ser alcançado usando o fluxo `cerr`, que faz parte da biblioteca padrão. Aqui está um exemplo básico:
 
 ```cpp

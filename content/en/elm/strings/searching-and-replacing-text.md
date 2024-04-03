@@ -11,9 +11,6 @@ title: Searching and replacing text
 weight: 10
 ---
 
-## What & Why?
-Searching and replacing text lets you find specific strings and swap them out for something else. Programmers use it for everything from fixing typos to refactoring code efficiently.
-
 ## How to:
 In Elm, you can use the `String` module to replace parts of a string. Let's see it in action:
 

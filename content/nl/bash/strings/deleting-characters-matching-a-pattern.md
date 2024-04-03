@@ -14,10 +14,9 @@ title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---
 
-## Wat & Waarom?
-Karakters verwijderen die overeenkomen met een patroon in Bash laat je toe om strings te manipuleren naar je behoefte—zoals ongewenste tekens strippen of input sanitizen. Het is cruciaal voor het opschonen van data en het voorbereiden ervan voor verwerking.
-
 ## Hoe te:
+
+
 ### Leidende/afsluitende witruimte verwijderen:
 ```Bash
 tekst="   Hallo, Wereld!   "

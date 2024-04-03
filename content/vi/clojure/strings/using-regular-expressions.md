@@ -14,11 +14,7 @@ title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---
 
-## Cái gì & Tại sao?
-Biểu thức chính quy (regex) tìm kiếm, khớp và thao tác chuỗi. Chúng được sử dụng vì tính linh hoạt và hiệu quả trong nhiệm vụ xử lý văn bản.
-
 ## Cách thực hiện:
-
 ```clojure
 (require '[clojure.string :as str])
 

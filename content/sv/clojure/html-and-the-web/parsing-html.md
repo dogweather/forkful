@@ -13,16 +13,10 @@ title: Tolka HTML
 weight: 43
 ---
 
-## Vad & Varför?
-
-Att tolka HTML i Clojure innebär att man programmatiskt extraherar information från HTML-dokument. Programmerare gör detta för att få åtkomst till, manipulera eller övervaka webbinnehåll dynamiskt, vilket automatiserar uppgifter eller matar data till applikationer.
-
 ## Hur man gör:
-
 Clojure har inte inbyggd förmåga att tolka HTML, men du kan utnyttja Java-bibliotek eller Clojure-wrapper som `enlive` eller `hickory`. Så här använder du båda:
 
 ### Använda Enlive:
-
 Enlive är ett populärt val för HTML-tolkning och webbskrapning. Först inkluderar du det i ditt projekts beroenden:
 
 ```clojure
@@ -47,7 +41,6 @@ Utdata kan se ut som:
 ```
 
 ### Använda Hickory:
-
 Hickory tillhandahåller ett sätt att tolka HTML till ett format som är lättare att arbeta med i Clojure. Lägg till Hickory i dina projekts beroenden:
 
 ```clojure

@@ -10,9 +10,6 @@ title: Logging
 weight: 17
 ---
 
-## What & Why?
-Logging is basically leaving a breadcrumb trail through your code - it's how you keep tabs on what's happening when your script's running in the wild. Programmers log to debug, to track app behavior, to monitor performance, and to keep an eye out for any mischief.
-
 ## How to:
 Here's the lowdown on sprinkling some basic logging into your scripts:
 

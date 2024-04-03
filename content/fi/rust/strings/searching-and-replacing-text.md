@@ -11,9 +11,6 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## What & Why?
-Tekstin hakeminen ja korvaaminen on perustoiminto, jossa etsitään tekstikatkelmia ja korvataan ne toisilla. Ohjelmoijat käyttävät tätä automatisoidakseen tietojen muokkausta ja merkkijonojen käsittelyä.
-
 ## How to:
 ```Rust
 fn main() {

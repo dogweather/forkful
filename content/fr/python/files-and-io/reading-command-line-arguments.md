@@ -11,9 +11,6 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## What & Why? (Quoi & Pourquoi ?)
-Lire les arguments de ligne de commande permet à vos scripts Python de prendre des données directement depuis le terminal. Les programmeurs utilisent cela pour rendre les scripts plus flexibles et interactifs.
-
 ## How to (Comment faire)
 Python utilise le module 'sys' pour accéder aux arguments de ligne de commande.
 

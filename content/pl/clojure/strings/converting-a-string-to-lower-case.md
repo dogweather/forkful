@@ -11,9 +11,6 @@ title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## What & Why?
-Konwertowanie ciągu znaków na małe litery oznacza zmianę wszystkich liter w tekście na ich małe odpowiedniki. W programowaniu robimy to dla jednolitości danych, łatwiejszego porównywania stringów i spełniania wymagań specyficznych interfejsów użytkownika.
-
 ## How to:
 W Clojure, użyj `clojure.string/lower-case` do konwertowania stringów na małe litery. Proste jak paszczaka ciastko:
 

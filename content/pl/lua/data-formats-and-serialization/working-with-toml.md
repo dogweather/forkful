@@ -11,9 +11,6 @@ title: Praca z TOML
 weight: 39
 ---
 
-## Co i dlaczego?
-Praca z TOML polega na analizowaniu i generowaniu danych TOML (Tom's Obvious, Minimal Language - Oczywisty, Minimalny Język Toma) za pomocą Lua. Programiści wykorzystują TOML do plików konfiguracyjnych ze względu na jego czytelność i prostą składnię, która łatwo przekłada się na strukturę danych.
-
 ## Jak to zrobić:
 Po pierwsze, upewnij się, że Twoje środowisko Lua ma parser TOML. Użyjemy w tym przykładzie `lua-toml`.
 

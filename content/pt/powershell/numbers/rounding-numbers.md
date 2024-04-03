@@ -11,9 +11,6 @@ title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---
 
-## O Que & Por Que?
-Arredondar números consiste em ajustar um valor para o inteiro mais próximo ou para um ponto decimal especificado. Programadores arredondam números para simplificar dados, melhorar a legibilidade ou atender determinados requisitos matemáticos durante cálculos.
-
 ## Como fazer:
 Você tem à disposição alguns cmdlets e métodos úteis no PowerShell para arredondamento:
 

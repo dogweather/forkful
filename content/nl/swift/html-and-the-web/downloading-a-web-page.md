@@ -12,9 +12,6 @@ title: Een webpagina downloaden
 weight: 42
 ---
 
-## Wat & Waarom?
-Het downloaden van een webpagina betekent het verkrijgen van gegevens van het web en deze in je app brengen. Programmeurs doen dit om inhoud op te halen, met online diensten te interageren of gegevens te scrapen.
-
 ## Hoe:
 Laten we `URLSession` gebruiken om de klus te klaren. Swift maakt het recht door zee.
 

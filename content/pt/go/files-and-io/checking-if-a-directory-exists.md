@@ -14,12 +14,7 @@ title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---
 
-## O Quê & Por Quê?
-
-Verificar se um diretório existe em Go é crítico para aplicações que interagem com o sistema de arquivos, para evitar erros ao tentar acessar ou modificar diretórios. Esta operação é vital para tarefas como garantir pré-requisitos para operações de arquivo, gerenciamento de configuração e implantação de software que depende de estruturas de diretórios específicas.
-
 ## Como fazer:
-
 Em Go, o pacote `os` fornece funcionalidades para interagir com o sistema operacional, incluindo a verificação da existência de um diretório. Veja como você pode fazer isso:
 
 ```go
@@ -64,7 +59,6 @@ O diretório /tmp/exampleDir não existe.
 Dependendo de se `/tmp/exampleDir` existe.
 
 ## Aprofundando
-
 A função `os.Stat` retorna uma interface `FileInfo` e um erro. Se o erro for do tipo `os.ErrNotExist`, significa que o diretório não existe. Se não houver erro, verificamos mais se o caminho realmente referencia um diretório através do método `IsDir()` da interface `FileInfo`.
 
 Esse método se destaca pela sua simplicidade e eficácia, mas é importante notar que a verificação da existência de um diretório antes de realizar operações como criar ou escrever poderia levar a condições de corrida em ambientes concorrentes. Para muitos cenários, especialmente em aplicações concorrentes, pode ser mais seguro tentar a operação (por exemplo, criação de arquivo) e tratar os erros posteriormente, em vez de verificar primeiro.

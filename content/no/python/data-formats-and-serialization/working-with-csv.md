@@ -13,13 +13,11 @@ title: Arbeide med CSV
 weight: 37
 ---
 
-## Hva & Hvorfor?
-Å jobbe med CSV (kommaseparerte verdier) innebærer lesing fra og skriving til CSV-filer, et vanlig format for lagring av tabulære data. Programmerere gjør dette for å enkelt utveksle og lagre data i et enkelt, tekstbasert format som er bredt støttet på tvers av forskjellige plattformer og språk.
-
 ## Hvordan:
 Python tilbyr den innebygde `csv`-modulen for å håndtere CSV-filer, noe som gjør det enkelt å lese fra og skrive til dem. For mer robuste og komplekse datahåndteringer er tredjepartsbiblioteket `pandas` svært populært.
 
 ### Bruke `csv`-modulen
+
 
 #### Lese en CSV-fil
 ```python

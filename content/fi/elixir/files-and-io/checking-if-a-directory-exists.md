@@ -14,9 +14,6 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mikä ja miksi?
-Hakemiston olemassaolon tarkistaminen Elixirissä on hakemiston läsnäolon varmistamista määritetyssä polussa tiedostojärjestelmässä. Ohjelmoijat tekevät tämän varmistaakseen, että he voivat turvallisesti lukea, kirjoittaa tai suorittaa toimenpiteitä hakemistossa kohtaamatta virheitä sen puuttumisen vuoksi.
-
 ## Kuinka:
 Elixiring vakiokirjasto tarjoaa suoraviivaisen tavan tarkistaa hakemiston olemassaolo `File`-moduulin kautta. Näin voit käyttää sitä:
 

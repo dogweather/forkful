@@ -11,9 +11,6 @@ title: Lendo um arquivo de texto
 weight: 22
 ---
 
-## O Que & Porquê?
-Ler um arquivo de texto é o processo de carregar o conteúdo de um arquivo em texto puro na memória do seu programa. Programadores fazem isso para processar ou analisar dados, configurar programas, ou até para importar e exportar informações.
-
 ## Como Fazer:
 ```Python
 # Abrindo e lendo todo o conteúdo do arquivo de uma vez

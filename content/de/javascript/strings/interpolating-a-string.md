@@ -11,9 +11,6 @@ title: Zeichenketten interpolieren
 weight: 8
 ---
 
-## Was & Warum?
-String-Interpolation ermöglicht es, Variablenwerte direkt in einen String einzufügen. Sie erleichtert das Erstellen von dynamischen Strings und verbessert die Lesbarkeit des Codes.
-
 ## How to:
 ```javascript
 // Template Literals nutzen

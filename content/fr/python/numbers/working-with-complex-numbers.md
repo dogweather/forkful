@@ -12,9 +12,6 @@ title: Manipulation des nombres complexes
 weight: 14
 ---
 
-## Quoi & Pourquoi ?
-Les nombres complexes sont un ensemble de nombres de la forme `a + bi`, où `a` et `b` sont des nombres réels, et `i` est l'unité imaginaire (`i^2 = -1`). En programmation, nous les utilisons pour résoudre des problèmes dans divers domaines, comme le génie électrique, le traitement des signaux et l'informatique quantique.
-
 ## Comment faire :
 Python prend en charge les nombres complexes de manière intégrée. Voici comment vous pouvez les manipuler :
 

@@ -11,9 +11,6 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## Hva & Hvorfor?
-Lasting av nettsider gjør at din Arduino kan hente data fra internett; det kan være alt fra værdata til aksjepriser. Programmerere gjør dette for å gi enheter tilgang til oppdateringer og interaktivitet med nettet.
-
 ## Hvordan gjør man det:
 ```Arduino
 #include <WiFi.h>

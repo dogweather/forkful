@@ -15,12 +15,7 @@ title: "Convertendo uma string para letras min\xFAsculas"
 weight: 4
 ---
 
-## O Que & Por Quê?
-
-Converter uma string para minúsculas é uma operação fundamental que possibilita uniformidade e consistência no processamento de texto, essencial para tarefas como comparações sem distinção de caixa ou normalização de texto. Os programadores frequentemente realizam essa operação para preparar dados para processamento adicional ou para garantir compatibilidade entre diferentes sistemas e localidades.
-
 ## Como fazer:
-
 Em Go, converter uma string para minúsculas pode ser facilmente alcançado usando o pacote `strings`, especificamente a função `ToLower()`. Essa função recebe uma string como entrada e retorna uma nova string com todos os caracteres em maiúsculo convertidos para minúsculo. Aqui está um exemplo rápido:
 ```go
 package main
@@ -45,7 +40,6 @@ Minúscula: hello, world!
 Este exemplo demonstra a abordagem direta para converter qualquer string dada para minúscula em Go. É simples, com o trabalho pesado feito pelo método `ToLower()`, abstraindo as complexidades das variadas codificações de caracteres e regras de caixa específicas de localidade.
 
 ## Aprofundamento
-
 A implementação de `strings.ToLower()` na biblioteca padrão de Go é eficiente e consciente do Unicode, significando que ela lida corretamente com caracteres além do conjunto básico ASCII, incluindo letras de alfabetos não latinos. Isso é particularmente importante em um contexto global onde o software pode processar texto de diversas línguas e conjuntos de caracteres.
 
 Historicamente, o tratamento da conversão de caixas em linguagens de programação evoluiu significativamente. Linguagens antigas frequentemente não possuíam suporte nativo para tais operações, ou suas implementações eram limitadas ao conjunto de caracteres ASCII, levando a comportamentos incorretos com outros alfabetos. Go foi projetado com suporte ao Unicode desde o início, refletindo uma abordagem moderna à manipulação de strings.

@@ -11,12 +11,7 @@ title: Gestion des erreurs
 weight: 16
 ---
 
-## Quoi et Pourquoi ?
-
-La gestion des erreurs consiste à gérer les situations où votre code ne se comporte pas comme prévu. C'est crucial car cela permet à vos programmes de se terminer en douceur et indique clairement aux utilisateurs ce qui se passe, au lieu de simplement planter.
-
 ## Comment faire :
-
 Voici le classique bloc `try-catch` :
 
 ```javascript
@@ -56,7 +51,6 @@ fetchData();
 ```
 
 ## Plongée en Profondeur
-
 La gestion des erreurs en JavaScript a évolué. Dans le temps (ES3, vers 1999), nous avions tout juste le bloc `try-catch`. Pas super flexible, mais il faisait l'affaire.
 
 ES6 (2015) a introduit les Promesses et nous a donné `.then()` et `.catch()`, nous permettant de gérer les erreurs asynchrones plus élégamment.
@@ -72,7 +66,6 @@ En ce qui concerne les détails de l'implémentation, lorsque une erreur est gé
 Des alternatives ? Vous pourriez ignorer la gestion des erreurs (mauvaise idée), utiliser des callbacks avec des paramètres priorisant les erreurs (bonjour le style Node.js), ou vous sophisticquer avec des bibliothèques et des frameworks qui proposent leur propre gestion des erreurs.
 
 ## Voir Aussi
-
 Pour en savoir plus sur la gestion des erreurs :
 
 - MDN sur try-catch : [MDN try...catch](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Statements/try...catch)

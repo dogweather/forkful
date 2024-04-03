@@ -13,9 +13,6 @@ title: "F\xE5 dagens dato"
 weight: 29
 ---
 
-## Hva & Hvorfor?
-Å hente den nåværende datoen i Swift innebærer å bruke `Date`-klassen for å få tilgang til datoen og tiden appen blir kjørt. Programmerere trenger å hente den nåværende datoen av mange grunner, som strekker seg fra å tidsstemple hendelser, utføre datoberegninger, til å vise datoer og tider i et brukergrensesnitt.
-
 ## Hvordan:
 Swifts `Foundation`-rammeverk tilbyr `Date`-klassen, noe som gjør det enkelt å få den nåværende datoen og tiden. Her er et grunnleggende eksempel på hvordan du får den nåværende datoen:
 

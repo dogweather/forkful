@@ -14,11 +14,8 @@ title: "Usando express\xF5es regulares"
 weight: 11
 ---
 
-## O Que e Por Que?
-
-Expressões regulares (regex) são uma ferramenta poderosa para o processamento de texto, permitindo que programadores busquem, correspondam e manipulem strings com técnicas avançadas de correspondência de padrões. Em Kotlin, utilizar regex ajuda a executar de forma eficiente tarefas complexas de processamento de texto como validação, análise sintática ou transformação, tornando-se indispensável para tarefas que vão desde a simples manipulação de strings até a análise de texto complexa.
-
 ## Como Fazer:
+
 
 ### Correspondência Básica
 Para verificar se uma string corresponde a um padrão específico em Kotlin, você pode usar o método `matches` da classe `Regex`.

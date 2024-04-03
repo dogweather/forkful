@@ -14,9 +14,6 @@ title: Ghi log
 weight: 17
 ---
 
-## Gì & Tại Sao?
-Ghi nhật ký là quá trình ghi lại các sự kiện xảy ra bên trong ứng dụng phần mềm. Các lập trình viên ghi lại những sự kiện này để nắm bắt thông tin thời gian chạy, gỡ lỗi, theo dõi hành vi hệ thống, và tạo ra một bản ghi kiểm toán cho mục đích bảo mật và tuân thủ.
-
 ## Cách thực hiện:
 Dưới đây là cách đơn giản để bắt đầu với việc ghi nhật ký trong Java sử dụng gói `java.util.logging` có sẵn.
 

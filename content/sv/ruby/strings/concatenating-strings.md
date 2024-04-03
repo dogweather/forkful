@@ -11,9 +11,6 @@ title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---
 
-## Vad & Varför?
-Att konkatenera strängar innebär att sammanfoga två eller flera textstycken till en. Programmerare gör detta för att bygga dynamiska texter eller sammansätta data på ett smidigt sätt.
-
 ## Hur man gör:
 ```Ruby
 # Exempel på konkatenering med '+'

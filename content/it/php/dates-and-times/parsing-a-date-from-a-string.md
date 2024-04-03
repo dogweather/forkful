@@ -14,12 +14,7 @@ title: Analisi di una data da una stringa
 weight: 30
 ---
 
-## Cosa & Perché?
-
-L'analisi di una data da una stringa in PHP implica la conversione di testo che rappresenta una data e/o un orario in un oggetto PHP `DateTime` o in altri formati di data/ora. Questo è fondamentale per scopi di validazione, manipolazione, memorizzazione e presentazione dei dati, specialmente quando si lavora con input dell'utente o dati da fonti esterne.
-
 ## Come fare:
-
 La classe `DateTime` integrata in PHP offre un potente insieme di funzioni per l'analisi e la gestione delle date. Puoi creare un'istanza di `DateTime` da una stringa di data utilizzando il costruttore e poi formattarla come necessario. Ecco come:
 
 ```php

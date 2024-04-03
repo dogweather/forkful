@@ -11,9 +11,6 @@ title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---
 
-## Was & Warum?
-Das Löschen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte Teile eines Strings zu entfernen, basierend auf Regeln oder "Mustern". Programmer tun dies für Datensäuberung, Formatierung oder wenn nur bestimmte Dateninhalte benötigt werden.
-
 ## Vorgehensweise:
 ```Swift
 var myString = "Hallo Welt! 123"

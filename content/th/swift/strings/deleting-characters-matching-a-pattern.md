@@ -36,12 +36,7 @@ title: "\u0E01\u0E32\u0E23\u0E25\u0E1A\u0E15\u0E31\u0E27\u0E2D\u0E31\u0E01\u0E29
 weight: 5
 ---
 
-## อะไร & ทำไม?
-
-การลบอักขระที่ตรงกับรูปแบบหมายถึงการนำอักขระชุดเฉพาะออกจากสตริงตามรูปแบบที่กำหนดไว้ เช่น ตัวเลขหรือเครื่องหมายวรรคตอน โปรแกรมเมอร์ทำเช่นนี้เพื่อสะอาดข้อมูลนำเข้า, ทำความสะอาดข้อมูล, หรือเตรียมข้อมูลสำหรับการประมวลผลที่ไม่ต้องการรูปแบบเฉพาะ
-
 ## วิธีการ:
-
 ```swift
 import Foundation
 
@@ -63,7 +58,6 @@ print(cleanString)  // ผลลัพธ์: "H3lloWrld"
 ```
 
 ## ศึกษาเพิ่มเติม
-
 ก่อน Swift และการโปรแกรมแบบทันสมัย, การจับคู่รูปแบบเป็นเรื่องของเครื่องมือพิเศษและภาษาเช่น `sed`, `awk`, หรือ Perl ที่รู้จักกันดีสำหรับความสามารถในการประมวลผลข้อความ Swift, ด้วยกรอบการทำงาน Foundation ที่แข็งแกร่ง, ทำให้งานเหล่านี้ง่ายขึ้นในภาษา, ทำให้มากขึ้นสำหรับนักพัฒนา
 
 หนึ่งทางเลือกที่ไม่ใช้ regular expressions คือการทำซ้ำผ่านสตริงโดยใช้วิธี `filter` ของ Swift ร่วมกับเงื่อนไขที่กำหนดเองซึ่งก็อาจใช้เวลานานและมีการอ่านที่ยากขึ้น Regular expressions เสนอวิธีที่กระชับ แม้ว่าบางครั้งอาจดูซับซ้อนในการอธิบายรูปแบบที่เราต้องการลบหรือจัดการ
@@ -71,7 +65,6 @@ print(cleanString)  // ผลลัพธ์: "H3lloWrld"
 ในเบื้องหลัง, เมื่อคุณใช้งาน `replacingOccurrences(of:with:options:)` กับตัวเลือก `.regularExpression`, Swift ใช้เครื่องยนต์ regular expression จาก ICU (International Components for Unicode) เพื่อประมวลผลรูปแบบ ICU เป็นไลบรารีที่เข้มแข็งและใช้กันอย่างแพร่หลายสำหรับการสนับสนุน Unicode, รวมถึงการจับคู่รูปแบบ, ซึ่งถูกนำไปใช้ในภาษาการโปรแกรมระดับสูงหลายภาษา
 
 ## ดูเพิ่มเติม
-
 - Swift String Documentation: https://developer.apple.com/documentation/swift/string
 - Swift Regular Expressions: https://developer.apple.com/documentation/foundation/nsregularexpression
 - ICU User Guide for Regular Expressions: https://unicode-org.github.io/icu/userguide/strings/regexp.html

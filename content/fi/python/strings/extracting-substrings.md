@@ -10,9 +10,6 @@ title: Merkkijonojen osien poimiminen
 weight: 6
 ---
 
-## What & Why? (Mitä & Miksi?)
-Substring extraction is about pulling specific parts from a string. Programmers do it to process or analyze text data - like extracting usernames from email addresses.
-
 ## How to: (Kuinka tehdä:)
 ```Python
 # Basic substring extraction with slice notation

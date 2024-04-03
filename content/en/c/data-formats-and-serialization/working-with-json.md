@@ -10,12 +10,7 @@ title: Working with JSON
 weight: 38
 ---
 
-## What & Why?
-
-Working with JSON (JavaScript Object Notation) in C involves parsing, generating, and manipulating JSON data structures. Programmers do this to enable communication with web services, data storage, or configuration files in a lightweight and human-readable format.
-
 ## How to:
-
 To work with JSON in C, you'll typically use a library like `jansson` or `json-c` due to C's lack of built-in support for JSON. Here, we'll focus on `jansson` for its ease of use and active maintenance. First, install the library (e.g., using a package manager like `apt` on Ubuntu: `sudo apt-get install libjansson-dev`).
 
 Let's start by parsing a JSON string and accessing its contents:
@@ -79,7 +74,6 @@ Sample Output:
 These examples demonstrate the basics of loading a JSON string, unpacking its values, creating a new JSON object, and then outputting it as a string.
 
 ## Deep Dive
-
 The need to work with JSON in C springs from the web's adoption of JSON as a primary format for data interchange. JSON's simplicity and efficiency made it quickly outpace XML, despite C's initial absence in direct support for JSON manipulation. Early solutions involved manual string manipulation - error-prone and inefficient. Libraries like `jansson` and `json-c` emerged to fill this gap, providing robust APIs for JSON parsing, construction, and serialization.
 
 While `jansson` offers simplicity and ease of use, `json-c` might appeal to those looking for a broader feature set. Nevertheless, alternatives like parsing libraries in C++ offer more sophisticated abstractions, thanks to that language's more complex data structures and standard library support. However, when working in environments where C is the preferred or required language - such as embedded systems or when interfacing with existing C libraries - using `jansson` or `json-c` becomes indispensable.

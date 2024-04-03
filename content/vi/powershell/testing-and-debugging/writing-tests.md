@@ -15,9 +15,6 @@ title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---
 
-## Gì & Tại Sao?
-Viết thử nghiệm trong lập trình nghĩa là tạo ra các kịch bản kiểm tra xem mã của bạn có chạy đúng không. Các lập trình viên làm việc này để phát hiện lỗi sớm, đảm bảo tính ổn định, và ngăn chặn những thay đổi tương lai làm hỏng các tính năng hiện tại.
-
 ## Cách thực hiện:
 Dưới đây là một bài test nhanh cho hàm cộng số sử dụng Pester, bộ khung kiểm thử của PowerShell. Bạn thường lưu kịch bản này với tên `Add.Tests.ps1`.
 

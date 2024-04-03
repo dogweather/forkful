@@ -11,9 +11,6 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## Hva & Hvorfor?
-Å lese en tekstfil betyr å hente og bruke informasjon lagret i en fil på datamaskinen. Programmere gjør dette for å behandle data, konfigurere programmer, eller for å lagre resultater til videre bruk.
-
 ## Hvordan:
 ```Haskell
 import System.IO

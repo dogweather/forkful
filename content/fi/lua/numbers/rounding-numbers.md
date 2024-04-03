@@ -11,9 +11,6 @@ title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä ja miksi?
-Numeroiden pyöristäminen tarkoittaa niiden säätämistä lähimpään kokonaislukuun tai määriteltyyn desimaalipaikkaan. Se on ohjelmoinnissa peruskauraa monimutkaisuuden vähentämiseksi, suorituskyvyn parantamiseksi ja silloin, kun tarkkuus tietyn pisteen jälkeen ei lisää arvoa.
-
 ## Miten:
 ```lua
 -- Perus pyöristäminen Luassa ei tule valmiina, mutta voit määritellä funktion:

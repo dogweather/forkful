@@ -12,9 +12,6 @@ title: Samenvoegen van strings
 weight: 3
 ---
 
-## Wat & Waarom?
-Het aaneenschakelen van strings betekent dat je ze eind-aan-eind samenvoegt om een nieuwe te maken. Programmeurs doen dit om berichten samen te voegen, commando's te bouwen, of gewoon om informatie netjes weer te geven.
-
 ## Hoe:
 Laten we wat strings samenvoegen! Alles binnen de setup omdat we alleen snel willen kijken—geen herhalingslus nodig.
 

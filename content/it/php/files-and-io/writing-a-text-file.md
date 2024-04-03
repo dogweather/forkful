@@ -13,9 +13,6 @@ title: Scrivere un file di testo
 weight: 24
 ---
 
-## Cosa e Perché?
-Scrivere un file di testo in PHP comporta la creazione o l'apertura di un file e l'inserimento di contenuto al suo interno. I programmatori fanno ciò per persistere dati, come contenuti generati dagli utenti o log, oltre il ciclo di vita del programma.
-
 ## Come fare:
 PHP supporta nativamente la scrittura su file tramite funzioni come `file_put_contents`, `fopen` insieme a `fwrite` e `fclose`. Ecco come utilizzarle:
 

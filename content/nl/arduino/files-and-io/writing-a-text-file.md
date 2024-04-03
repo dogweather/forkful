@@ -12,9 +12,6 @@ title: Een tekstbestand schrijven
 weight: 24
 ---
 
-## Wat & Waarom?
-Een tekstbestand schrijven op Arduino betekent het opslaan van gegevens als tekst in een bestand, meestal op een SD-kaart. Programmeurs doen dit om gegevens zoals sensoraflezingen op te slaan voor latere analyse of om gebeurtenissen over tijd te loggen.
-
 ## Hoe:
 Verbind eerst een SD-kaartlezer met je Arduino. Dan heb je de SD-bibliotheek nodig. Hier is een snel script:
 

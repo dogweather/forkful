@@ -11,9 +11,6 @@ title: Lectura de un archivo de texto
 weight: 22
 ---
 
-## Qué y Por Qué?
-Leer un archivo de texto significa acceder y obtener el contenido almacenado en él. Programadores realizamos esto para procesar datos, configuraciones, o simplemente importar y exportar información.
-
 ## Cómo Hacerlo:
 Leer un archivo de texto en Elixir es sencillo. Utiliza `File.read/1` para leer el contenido completo o `File.stream!/3` para manejar archivos grandes línea por línea.
 

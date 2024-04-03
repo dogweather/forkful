@@ -11,9 +11,6 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## What & Why?
-Buscar y reemplazar texto es el proceso de localizar cadenas específicas en un texto y sustituirlas con otras diferentes. Los programadores lo hacen para actualizar datos, corregir errores, o refactorizar código de forma eficiente.
-
 ## How to:
 Java hace que buscar y reemplazar sea pan comido con la clase `String` y sus métodos `replace` y `replaceAll`. Aquí van unos ejemplos:
 

@@ -14,12 +14,7 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---
 
-## Hva & Hvorfor?
-
-Å sende en HTTP-forespørsel med grunnleggende autentisering i Visual Basic for Applications (VBA) dreier seg om å få tilgang til webressurser som er beskyttet av brukernavn- og passordopplysninger. Programmerere gjør dette for å samhandle med sikre API-er eller webtjenester innenfor deres VBA-drevne applikasjoner, som å automatisere oppgaver i Excel eller Access med data fra sikrede endepunkter.
-
 ## Hvordan:
-
 I VBA kan du bruke biblioteket `Microsoft XML, v6.0` (MSXML2) for å sende HTTP-forespørsler med grunnleggende autentisering. Dette innebærer å sette `"Authorization"`-headeren i forespørselen for å inkludere legitimasjonen i et base64-kodet format. Her er en steg-for-steg veiledning:
 
 1. **Referer til MSXML2**: Først, sørg for at VBA-prosjektet ditt refererer til `Microsoft XML, v6.0`-biblioteket. I VBA-redigereren, gå til Verktøy > Referanser og sjekk `Microsoft XML, v6.0`.
@@ -63,7 +58,6 @@ I VBA kan du bruke biblioteket `Microsoft XML, v6.0` (MSXML2) for å sende HTTP-
 Dette vil sende en GET-forespørsel til `http://example.com/api/resource` med de spesifiserte grunnleggende autentiseringslegitimasjonene og skrive ut responsen.
 
 ## Dypdykk
-
 Tilnærmingen som brukes her, mens den er effektiv for enkle bruksmåter, er avhengig av grunnleggende autentiseringsskjema, som sender legitimasjon i et lett dekodet format (base64-koding er ikke kryptering). På grunn av sårbarheten, spesielt i ikke-HTTPS-kontekster, anbefales ikke grunnleggende autentisering for å overføre sensitiv data over internett uten ytterligere sikkerhetslag som SSL/TLS.
 
 Historisk sett var grunnleggende autentisering en av de første metodene som ble utviklet for å kontrollere tilgang til webressurser. I dag foretrekkes sikrere og mer fleksible autentiseringsstandarder, som OAuth 2.0, generelt for nye applikasjoner. Gitt VBAs begrensninger og de eksterne avhengighetene som kreves for mer avanserte autentiseringsmetoder, bruker utviklere ofte VBA i interne eller mindre sikkerhetskritiske miljøer eller bruker det som et trinn for å raskt prototypere ideer.

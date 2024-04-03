@@ -12,9 +12,6 @@ title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---
 
-## Wat & Waarom?
-Een interactieve shell, of REPL (Read-Eval-Print Loop), stelt je in staat om in real-time code te testen. Programmeurs gebruiken het om te experimenteren, fouten op te sporen, en de nuances van Ruby te leren zonder volledige scripts te hoeven maken.
-
 ## Hoe:
 Ruby's REPL heet IRB (Interactive Ruby). Spring erin en probeer Ruby direct vanuit je terminal:
 

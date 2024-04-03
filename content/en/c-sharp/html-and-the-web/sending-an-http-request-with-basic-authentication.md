@@ -11,9 +11,6 @@ title: Sending an HTTP request with basic authentication
 weight: 45
 ---
 
-## What & Why?
-We send an HTTP request with basic authentication to access protected resources by including user credentials in the request header. Programmers use it for simple auth systems, mainly where a quick and straightforward solution is suitable.
-
 ## How to:
 Let's jump straight in with some code. Below is a minimal example using C# to send an HTTP request with basic authentication:
 

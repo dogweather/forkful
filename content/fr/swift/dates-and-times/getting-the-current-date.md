@@ -14,9 +14,6 @@ title: Obtenir la date actuelle
 weight: 29
 ---
 
-## Quoi & Pourquoi ?
-Obtenir la date actuelle en Swift implique l'utilisation de la classe `Date` pour accéder à la date et à l'heure auxquelles l'application est exécutée. Les programmeurs doivent récupérer la date actuelle pour de nombreuses raisons allant du marquage temporel des événements, à la réalisation de calculs sur les dates, jusqu'à l'affichage des dates et heures dans une interface utilisateur.
-
 ## Comment faire :
 Le framework `Foundation` de Swift fournit la classe `Date`, rendant simple l'obtention de la date et de l'heure actuelles. Voici un exemple de base de comment obtenir la date actuelle :
 

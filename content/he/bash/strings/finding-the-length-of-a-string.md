@@ -18,9 +18,6 @@ title: "\u05DE\u05E6\u05D9\u05D0\u05EA \u05D0\u05D5\u05E8\u05DA \u05DE\u05D7\u05
 weight: 7
 ---
 
-## מה ולמה?
-מציאת אורך של מחרוזת זה פשוט למדוד כמה תווים יש בה. מתכנתים עושים את זה כדי לוודא קלט, תקשורת בין סקריפטים, ועוד.
-
 ## איך עושים את זה:
 מצא את האורך על ידי שימוש ב-`${#string}`.
 ```Bash
@@ -56,7 +53,6 @@ echo $length
 - Bash אינו בהכרח טוב בטיפול במחרוזות Unicode, לכן לעיתים פעולות על מחרוזות מורכבות ידרשו כלים חיצוניים או תוספות בשפה.
 
 ## ראה גם
-
 - [Bash Advanced Scripting Guide](https://tldp.org/LDP/abs/html/)
 - [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
 - [מדריך לגבי שימוש במחרוזות ב-Bash](https://mywiki.wooledge.org/BashGuide/Parameters#Strings)

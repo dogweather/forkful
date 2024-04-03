@@ -11,9 +11,6 @@ title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Convertir une date en chaîne de caractères permet de l'afficher selon un format lisible pour un humain. Les programmeurs font ça pour enregistrer ou communiquer des informations de date de façon standardisée ou pour répondre à des besoins spécifiques d’internationalisation.
-
 ## How to: (Comment Faire ?)
 ```Python
 from datetime import datetime

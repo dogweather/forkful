@@ -23,12 +23,7 @@ title: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B"
 weight: 28
 ---
 
-## What & Why? (何となぜ？)
-
-日付を文字列に変換することは、日付データを読みやすく表示するプロセスです。プログラマーは通常、ユーザーインターフェースで日付を表示するためや、ファイル名、ログ、または通信プロトコルで日付を使うためにこれを行います。
-
 ## How to: (方法)
-
 ```C++
 #include <iostream>
 #include <iomanip>
@@ -56,11 +51,9 @@ int main() {
 ```
 
 ## Deep Dive (掘り下げ)
-
 日付と時刻の操作はC++以前からある複雑なトピックです。初期のCでは`<ctime>`ライブラリが使われていました。しかし、C++11以降、`<chrono>`ライブラリがモダンなアプローチを提供し、より安全で使いやすくなっています。代替手段としては、`strftime`関数やカスタムフォーマット関数を使うことも可能ですが、`<chrono>`と`std::put_time`の組み合わせは強力です。実装の詳細ではタイムゾーンやロケール（地域設定）への対応も重要になります。
 
 ## See Also (関連リンク)
-
 - C++ `chrono` library: https://en.cppreference.com/w/cpp/chrono
 - C++ `<iomanip>` library: https://en.cppreference.com/w/cpp/io/manip
 - C++ Time formatting with `std::put_time`: https://en.cppreference.com/w/cpp/io/manip/put_time

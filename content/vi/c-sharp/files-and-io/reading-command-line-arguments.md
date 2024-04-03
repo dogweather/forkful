@@ -17,9 +17,6 @@ title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---
 
-## Cái gì và Tại sao?
-Đọc các đối số dòng lệnh cho phép một chương trình C# xử lý các đầu vào của người dùng được cung cấp khi khởi chạy. Các lập trình viên sử dụng điều này để tùy chỉnh hành vi ứng dụng mà không cần chỉnh sửa mã.
-
 ## Làm thế nào:
 Dưới đây là cách "nuốt chửng" những đối số dòng lệnh:
 

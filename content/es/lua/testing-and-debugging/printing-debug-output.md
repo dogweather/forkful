@@ -11,11 +11,7 @@ title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---
 
-## ¿Qué y Por Qué?
-Imprimir salida de depuración es mostrar información útil para entender qué está pasando en tu programa. Los programadores lo hacen para rastrear errores más fácilmente y saber cómo fluyen los datos.
-
 ## Cómo Hacerlo:
-
 Cuando necesites ver qué está pasando dentro de tu código, usa `print()` para enviar mensajes a la consola. Aquí tienes un ejemplo simple:
 
 ```Lua
@@ -43,7 +39,6 @@ El resultado es: 8
 ```
 
 ## Análisis Detallado:
-
 La función `print()` tiene una larga historia; viene de los días cuando compartir resultados significaba usar impresoras. Con el tiempo, escribir a la consola se convirtió en una herramienta de depuración fundamental.
 
 Sin embargo, `print()` no es la única manera de depurar en Lua. Podrías usar `io.write()` para tener más control, como evitar saltos de línea automáticos. Además, algunos entornos de desarrollo incorporan depuradores más sofisticados.
@@ -51,5 +46,4 @@ Sin embargo, `print()` no es la única manera de depurar en Lua. Podrías usar `
 Detalles de implementación son simples: `print()` en Lua convierte todos sus argumentos a cadena, los concatena con un espacio y termina con un salto de línea. Estos mensajes de depuración no aparecen en la aplicación final; es buena práctica removerlos antes de la entrega del código.
 
 ## Véase También:
-
 - [Referencia Oficial de Lua del `print()`](https://www.lua.org/manual/5.4/manual.html#pdf-print)

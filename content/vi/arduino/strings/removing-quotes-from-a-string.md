@@ -16,9 +16,6 @@ title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---
 
-## Mục đích & Lý do?
-Xóa dấu ngoặc khỏi một chuỗi nghĩa là loại bỏ bất kỳ ký tự dấu ngoặc đơn (`'`) hoặc dấu ngoặc kép (`"`) nào bao quanh văn bản. Các lập trình viên thường làm điều này để làm sạch đầu vào, chuẩn bị chuỗi cho việc so sánh, hoặc xử lý dữ liệu văn bản có thể vô tình bao gồm dấu ngoặc như một phần của nội dung chuỗi.
-
 ## Cách thực hiện:
 Để xóa dấu ngoặc khỏi một chuỗi trong Arduino, bạn có thể lặp qua các ký tự và xây dựng lại chuỗi mà không có ký tự dấu ngoặc. Ví dụ:
 

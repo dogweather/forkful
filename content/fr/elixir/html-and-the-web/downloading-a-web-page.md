@@ -11,9 +11,6 @@ title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---
 
-## What & Why? (Quoi & Pourquoi ?)
-Télécharger une page web, c'est récupérer son contenu via le web. Les programmeurs le font pour analyser des données, tester des sites, ou agréger du contenu.
-
 ## How to: (Comment faire : )
 Elixir, avec ses librairies comme HTTPoison, rend ça simple. Voici un exemple pour télécharger le contenu d'une page :
 

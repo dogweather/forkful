@@ -13,12 +13,7 @@ title: Een tijdelijk bestand aanmaken
 weight: 21
 ---
 
-## Wat & Waarom?
-
-Het aanmaken van een tijdelijk bestand in Go maakt de creatie van een niet-persistent bestand mogelijk dat ontworpen is voor kortetermijngebruik, voornamelijk voor taken zoals het opslaan van tussenliggende data of het assisteren bij batchverwerkingsjobs. Programmeurs gebruiken deze functie om veilig met gegevens om te gaan zonder het permanente bestandssysteem te beïnvloeden of handmatige opruiming nodig te hebben.
-
 ## Hoe te:
-
 In Go bood het `ioutil`-pakket oorspronkelijk hulpprogramma's voor het aanmaken van tijdelijke bestanden. Echter, Go 1.16 bevorderde het gebruik van de functies van het `os` en `io/ioutil` pakket naar meer georganiseerde plekken. Nu worden de `os`- en `io`-pakketten de voorkeur gegeven voor het omgaan met tijdelijke bestanden.
 
 Hier is een stap-voor-stap handleiding voor het creëren, schrijven naar, en verwijderen van een tijdelijk bestand:
@@ -81,7 +76,6 @@ Voorbeelduitvoer:
 ```
 
 ## Diepgaande duik
-
 Het mechanisme achter de omgang van Go met tijdelijke bestanden is geëvolueerd. Aanvankelijk werd het aanmaken van tijdelijke bestanden vooral beheerd door de nu afgeschafte `ioutil.TempFile`-functie, dit weerspiegelt bredere trends in softwareontwikkeling richting veiligere en efficiëntere bestandshandeling praktijken. De stap om deze functionaliteiten te integreren in de `os`- en `io`-pakketten met Go 1.16 signaleert een bredere push naar het stroomlijnen van de standaardbibliotheek van de taal en het aanmoedigen van het gebruik van meer verenigde en samenhangende API's.
 
 Hoewel het gebruik van tijdelijke bestanden een veelvoorkomende en vaak essentiële praktijk is in programmeren, is het belangrijk op te merken dat te zwaar vertrouwen op hen voor het opslaan van grote hoeveelheden gegevens of voor langetermijntaken kan leiden tot prestatieproblemen. Bovendien, wanneer het aanmaken van tijdelijke bestanden niet strak wordt gecontroleerd of wanneer ze niet adequaat worden opgeruimd, kan dit leiden tot resource-lekken die negatief kunnen uitwerken op het bestandssysteem. In scenario's die permanente opslag vereisen of het omgaan met substantiële gegevensstromen behoeven, bieden alternatieven zoals databases of in-memory datastores vaak betere prestaties en betrouwbaarheid in vergelijking met tijdelijke bestanden.

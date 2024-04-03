@@ -11,9 +11,6 @@ title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---
 
-## What & Why? (Mitä ja Miksi?)
-Väliaikaistiedosto on hetkellisesti käytettävä tiedosto, johon ohjelmat voivat tallentaa dataa turvallisesti. Ohjelmoijat luovat niitä datan väliaikaiseen säilömiseen, törmäysten estämiseen tai herkän tiedon käsittelyyn, jotta sitä ei tallenneta pysyvästi.
-
 ## How to: (Kuinka tehdä:)
 Kotlinissa voit luoda väliaikaisia tiedostoja `createTempFile`-funktiolla. 
 

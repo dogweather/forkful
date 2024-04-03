@@ -11,9 +11,6 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Lire les arguments de la ligne de commande, c'est récupérer des valeurs fournies lors de l'exécution d'un programme en console. Les programmeurs utilisent ces arguments pour configurer ou influencer le comportement du programme sans changer le code.
-
 ## How to (Comment faire) :
 Swift rend la lecture des arguments de la ligne de commande presque trop facile. Voici comment on fait :
 

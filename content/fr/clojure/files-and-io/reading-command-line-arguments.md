@@ -11,9 +11,6 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## What & Why?
-Lire les arguments de la ligne de commande, c'est récupérer des infos directement de l'utilisateur quand il exécute votre script. On fait ça pour rendre nos programmes flexibles et interactifs.
-
 ## How to:
 En Clojure, on utilise la variable globale `*command-line-args*` pour accéder aux arguments. Regardez comment on fait :
 
@@ -57,7 +54,7 @@ Avant, en Clojure, on utilisait `*command-line-args*` directement, mais c'est un
 
 `*command-line-args*` est un vestige des premiers jours de Clojure, mais c’est toujours là, simple et pur. Si besoin est, on utilise des packages spécialisés qui s'occupent des drapeaux et des options (comme `tools.cli`, qui est un choix solide).
 
-Pourquoi pas utiliser `*command-line-args*` pour tout ? Parce que dès que les choses se corsent (options complexes, besoin de validation, etc.), tu vas vouloir quelque chose de plus costaud. 
+Pourquoi pas utiliser `*command-line-args*` pour tout ? Parce que dès que les choses se corsent (options complexes, besoin de validation, etc.), tu vas vouloir quelque chose de plus costaud.
 
 ## See Also
 Pour approfondir, voici quelques liens :

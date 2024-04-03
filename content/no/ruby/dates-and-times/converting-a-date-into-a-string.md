@@ -11,9 +11,6 @@ title: Konvertere en dato til en streng
 weight: 28
 ---
 
-## Hva & Hvorfor?
-Å konvertere en dato til en streng betyr å gjøre en dato om til tekstformat. Programmerere gjør dette for å vise datoen i brukervennlige formater eller for datautveksling.
-
 ## Hvordan:
 ```Ruby
 require 'date'

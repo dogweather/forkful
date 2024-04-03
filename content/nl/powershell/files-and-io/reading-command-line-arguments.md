@@ -13,12 +13,7 @@ title: Commandoregelargumenten lezen
 weight: 23
 ---
 
-## Wat & Waarom?
-
-Het lezen van command line argumenten stelt scripts in staat om zich anders te gedragen op basis van invoer van buiten de code. Programmeurs gebruiken ze omdat ze scripts flexibel maken, bruikbaar in veel scenario's zonder de code zelf te bewerken.
-
 ## Hoe
-
 PowerShell leest command line argumenten met de `$args` array of parameters. `$args` is snel voor eenmalige scripts; parameters zijn beter voor robuuste tools.
 
 ### Gebruikmakend van `$args`
@@ -48,7 +43,6 @@ Hallo, Sarah! Je bent 32 jaar oud.
 ```
 
 ## Diepgaand
-
 De moderne benadering van PowerShell voor command line argumenten is vergelijkbaar met een nalatenschap van zijn voorgangers zoals cmd en Bash. Echter, het versterkt de flexibiliteit en precisie.
 
 ### Historische Context
@@ -61,6 +55,5 @@ Er zijn alternatieven, zoals het parseren van ruwe invoer met `Read-Host` of het
 `$args` is een eenvoudige array, goed voor willekeurige invoer. Parameters, met hun attributen en typen, kunnen invoer valideren en zelfs de gebruiker om informatie vragen, waardoor scripts zelfdocumenterend worden en minder vatbaar voor fouten.
 
 ## Zie ook
-
 - [Over Parameters](https://docs.microsoft.com/nl-nl/powershell/scripting/developer/cmdlet/cmdlet-parameter-sets?view=powershell-7)
 - [Automatische Variabelen in PowerShell](https://docs.microsoft.com/nl-nl/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7&viewFallbackFrom=powershell-6)

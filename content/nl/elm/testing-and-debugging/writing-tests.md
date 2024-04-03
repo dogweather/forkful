@@ -12,9 +12,6 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-Tests schrijven betekent het creëren van code die controleert of je hoofdcode werkt zoals verwacht. Programmeurs testen om bugs vroeg op te sporen, functionaliteit te garanderen en toekomstige aanpassingen minder riskant te maken.
-
 ## Hoe te:
 Elm gebruikt `elm-test` voor het schrijven van tests. Hier is een kleine test voor een functie `add` die twee getallen optelt:
 

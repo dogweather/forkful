@@ -12,9 +12,6 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-Foutafhandeling is het verwachten van het onverwachte; het is hoe we omgaan met problemen in onze code. We doen het om crashes te voorkomen en om gebruikers een soepele ervaring te bieden, zelfs wanneer het onverwachte gebeurt.
-
 ## Hoe te:
 In TypeScript omvat foutafhandeling vaak `try`, `catch` en `finally` blokken.
 

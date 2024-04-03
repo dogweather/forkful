@@ -14,12 +14,7 @@ title: "F\xE5 den gjeldende datoen"
 weight: 29
 ---
 
-## Hva & Hvorfor?
-
-Å få tak i dagens dato i Google Apps Script handler om å hente den levende datoen og tiden, en vanlig oppgave for automatisering, logging og tidsstempling i apper knyttet til Googles økosystem. Programmerere bruker dette til generering av dynamisk innhold, fristovervåking og planlegging innen Google Docs, Sheets og andre Google-tjenester.
-
 ## Hvordan:
-
 Google Apps Script, som er basert på JavaScript, tilbyr enkle metoder for å få tak i dagens dato. Du kan bruke `new Date()`-konstruktøren for å lage et nytt datoombjekt som representerer dagens dato og tid. Her er hvordan du kan manipulere og vise dette i forskjellige formater.
 
 ```javascript
@@ -46,7 +41,6 @@ function visDagensDato() {
 Disse bitene demonstrerer hvordan man kan fange og formatere gjeldende dato og tid, og viser allsidigheten for forskjellige programmeringsbehov innen Google Apps Script.
 
 ## Dypdykk
-
 Før JavaScript fastsatte `Date`-objektet, måtte programmerere manuelt holde styr på tid og dato gjennom mindre standardiserte og mer byrdefulle midler. Dette inkluderte bruk av tidsstempel heltall og hjemmelagde datofunksjoner, som varierte fra ett programmeringsmiljø til et annet, noe som førte til inkonsekvens og kompatibilitetsproblemer.
 
 Introduksjonen av `new Date()`-objektet i JavaScript, og ved utvidelse Google Apps Script, standardiserte dato- og tidsoperasjoner, gjorde dem mer intuitive og reduserte mengden av kode nødvendig for dato-relaterte operasjoner. Det er verdt å merke seg at mens Google Apps Scripts implementering er praktisk og tilstrekkelig for mange applikasjoner innenfor Googles produktsuite, kan det hende at det ikke dekker alle scenarioer, spesielt de som krever kompleks tidssonehåndtering eller presis tidsstempellogging i raske miljøer.

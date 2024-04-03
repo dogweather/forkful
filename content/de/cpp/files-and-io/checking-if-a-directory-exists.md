@@ -15,9 +15,6 @@ title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---
 
-## Was & Warum?
-Das Überprüfen, ob ein Verzeichnis existiert, bedeutet zu bestimmen, ob ein Verzeichnis unter einem angegebenen Pfad vorhanden ist, bevor Operationen wie das Lesen von oder das Schreiben in Dateien innerhalb dieses Verzeichnisses ausgeführt werden. Programmierer tun dies, um Fehler im Zusammenhang mit Dateioperationen zu vermeiden, und sorgen so für eine reibungslosere und zuverlässigere Ausführung von Dateiverarbeitungsaufgaben in ihren Anwendungen.
-
 ## Wie geht das:
 In modernem C++ (C++17 und darüber hinaus) können Sie die Dateisystembibliothek verwenden, um zu überprüfen, ob ein Verzeichnis existiert. Sie bietet eine unkomplizierte und standardisierte Möglichkeit, Dateisystemoperationen durchzuführen, einschließlich der Überprüfung der Existenz eines Verzeichnisses.
 

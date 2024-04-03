@@ -12,9 +12,6 @@ title: Removendo aspas de uma string
 weight: 9
 ---
 
-## O Que & Por Quê?
-Remover aspas de uma string em PHP significa eliminar aqueles caracteres incômodos de aspas duplas (`"`) ou simples (`'`) que podem atrapalhar a lógica do seu código ou consultas ao banco de dados. Os programadores fazem isso para limpar ou higienizar dados de entrada, garantindo que as strings sejam usadas ou armazenadas com segurança.
-
 ## Como fazer:
 Aqui está um exemplo simples usando funções integradas do PHP:
 

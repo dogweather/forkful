@@ -15,12 +15,7 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O Quê & Por Quê?
-
-Refatoração, no léxico de programação, refere-se ao processo de reestruturar código de computador já existente — mudando a fatoração sem alterar seu comportamento externo — para melhorar atributos não funcionais. É um passo vital para os programadores aprimorarem a legibilidade do código, reduzirem a complexidade e, potencialmente, descobrirem bugs latentes, fomentando uma manutenção mais fácil e escalabilidade de código futuro.
-
 ## Como Fazer:
-
 No Google Apps Script, um cenário comum que se beneficia da refatoração é a simplificação de scripts pesados que interagem com o Google Sheets ou Docs. Inicialmente, os scripts podem ser escritos de maneira rápida e improvisada para obter resultados rapidamente. Com o tempo, à medida que o script cresce, ele se torna difícil de manejar. Vamos acompanhar um exemplo de refatoração para melhor legibilidade e eficiência.
 
 **Script Original:**
@@ -59,7 +54,6 @@ A saída no Logger parecerá algo assim, assumindo que seu documento do Google S
 O script refatorado alcança o mesmo resultado, mas é mais limpo e fácil de entender à primeira vista.
 
 ## Aprofundamento
-
 A refatoração no Google Apps Script herda parcialmente seus princípios da prática mais ampla de engenharia de software. Tornou-se mais reconhecida e estruturada como um conceito no final dos anos 1990, notavelmente devido ao livro seminal de Martin Fowler "Refatoração: Aperfeiçoando o Projeto de Códigos Existentes" (1999), que forneceu um guia abrangente para várias técnicas de refatoração. Embora os detalhes da refatoração possam variar entre linguagens de programação devido às suas diferenças sintáticas e funcionais, o objetivo central permanece o mesmo: melhorar o código sem alterar seu comportamento externo.
 
 No contexto do Google Apps Script, um aspecto importante a considerar durante a refatoração são as cotas de serviços e limitações impostas pelo Google. Código refatorado eficientemente não só é mais legível, mas também executa mais rápido e de maneira mais confiável dentro dessas restrições. Por exemplo, operações em lote (`Range.setValues()` em vez de definir valores uma célula de cada vez) podem reduzir significativamente o tempo de execução e o consumo de cota.

@@ -10,9 +10,6 @@ title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---
 
-## Cosa & Perché?
-Le richieste HTTP con autenticazione di base sono una modalità standard per accedere a risorse protette da username e password. I programmatori le usano per comunicare in maniera sicura con server che richiedono credenziali di accesso.
-
 ## Come fare:
 Ecco un modo semplice per inviare una richiesta HTTP con autenticazione di base in Swift:
 

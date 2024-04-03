@@ -12,9 +12,6 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä & Miksi?
-Virheiden käsittely PHP:ssä tarkoittaa olosuhteiden hallintaa ja niihin reagointia, jotka häiritsevät ohjelman normaalia toimintaa, kuten puuttuvia tiedostoja tai virheellistä datan syöttöä. Ohjelmoijat käsittelevät virheitä välttääkseen kaatumisia ja tarjotakseen käyttäjille sujuvamman kokemuksen.
-
 ## Miten:
 PHP:ssä voit hallita virheitä käyttämällä `try-catch`-lohkoja, ja voit mukauttaa prosessia omien virhekäsittelijöiden ja poikkeusten avulla.
 

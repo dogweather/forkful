@@ -11,9 +11,6 @@ title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---
 
-## What & Why? (Mitä & Miksi?)
-Laskemme tulevaisuuden tai menneisyyden päivämääriä ohjelmoinnissa usein. Syyt voivat olla käyttäjän muistuttaminen, ajan kulumisen seuranta, tai päivämäärien vertailu.
-
 ## How to: (Kuinka tehdä:)
 ```Swift
 import Foundation

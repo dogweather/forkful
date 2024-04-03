@@ -16,12 +16,7 @@ title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---
 
-## Cái gì & Tại sao?
-
-Việc viết một tệp văn bản trong JavaScript thường nghĩa là tạo và lưu dữ liệu vào một tệp ở định dạng dễ đọc cho con người. Lập trình viên thực hiện điều này để lưu giữ dữ liệu, như cài đặt, nhật ký, hoặc đầu ra người dùng.
-
 ## Làm thế nào:
-
 JavaScript trong trình duyệt không có quyền truy cập trực tiếp vào hệ thống tệp vì lý do an ninh. Nhưng bạn có thể tạo một tệp văn bản và nhắc người dùng lưu nó:
 
 ```javascript
@@ -55,7 +50,6 @@ fs.writeFile('example.txt', 'Xin chào, thế giới!', (err) => {
 ```
 
 ## Đi sâu hơn
-
 Trước đây, JavaScript bị giới hạn trong trình duyệt mà không có quyền truy cập vào hệ thống tệp. Node.js đã thay đổi cục diện này bằng cách hé lộ khả năng phía máy chủ.
 
 Các lựa chọn thay thế cho `fs.writeFile` bao gồm `fs.writeFileSync` cho các hoạt động đồng bộ và `fs.promises.writeFile` cho kiểm soát không đồng bộ dựa trên promise.
@@ -63,7 +57,6 @@ Các lựa chọn thay thế cho `fs.writeFile` bao gồm `fs.writeFileSync` cho
 Các phương thức `fs` của Node xử lý bộ đệm và luồng - các công cụ giải quyết vấn đề xử lý tệp lớn và giao tiếp mạng.
 
 ## Xem thêm
-
 - Tài liệu Hệ thống Tệp Node.js: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
 - MDN - Blob: [https://developer.mozilla.org/en-US/docs/Web/API/Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob)
 - Hướng dẫn JavaScript trên MDN: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)

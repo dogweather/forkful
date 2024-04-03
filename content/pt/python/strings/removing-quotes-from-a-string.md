@@ -11,9 +11,6 @@ title: Removendo aspas de uma string
 weight: 9
 ---
 
-## O Que & Por Quê?
-Remover aspas de uma string geralmente significa descartar marcas de aspas duplas (") ou simples (') desnecessárias. Os programadores fazem isso para higienizar a entrada ou quando as aspas não são necessárias para processamento futuro—como ao salvar texto em um banco de dados ou prepará-lo para exibição.
-
 ## Como fazer:
 O Python oferece várias maneiras de se livrar de aspas indesejadas em strings. Vamos passar por alguns exemplos:
 

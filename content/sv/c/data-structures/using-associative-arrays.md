@@ -14,12 +14,7 @@ title: "Anv\xE4nda associativa arrayer"
 weight: 15
 ---
 
-## Vad & Varför?
-
-Associativa arrayer, kända i andra språk som kartor eller ordböcker, är nyckel-värde-par som används för effektiv datauppslagning och manipulation. Till skillnad från traditionella arrayer som använder heltalsindex, använder associativa arrayer nycklar, vilket gör dataåtkomst mer intuitiv och flexibel för programmerare.
-
 ## Hur man gör:
-
 C har inte inbyggt stöd för associativa arrayer som vissa högnivåspråk, men du kan simulera dem med hjälp av strukturer och hashtabeller. Nedan följer ett förenklat exempel som använder en kombination av en struktur och en enkel hashfunktion för att implementera en associativ array för att lagra och komma åt heltal med strängnycklar.
 
 Först, definiera en struktur för att representera ett enskilt nyckel-värde-par och en annan för att representera den associativa arrayen i sig:
@@ -96,7 +91,6 @@ int main() {
 Detta exempel demonstrerar grundläggande operationer: initialisera en associativ array, infoga nyckel-värde-par och hitta värden med nycklar. Observera att den här koden saknar hantering av kollisioner och är menad för utbildningsändamål.
 
 ## Djupdykning
-
 Konceptet med associativa arrayer föregår C, men språkets lågnivånatur stöder inte dem direkt som inbyggda typer. Detta uppmuntrar till en djupare förståelse för datastrukturer och algoritmer, inklusive hashningsmekanismer för effektiv nyckel-värde-mappning. Många C-bibliotek och ramverk erbjuder mer sofistikerade tillvägagångssätt för att implementera associativa arrayer, som GLib:s `GHashTable`, som ger en robust implementering komplett med hantering av kollisioner, dynamisk omstorlekning och stöd för godtyckliga nyckel- och värde typer.
 
 Även om manuell konstruktion av associativa arrayer i C kan ses som besvärlig jämfört med språk med inbyggt stöd, erbjuder det ovärderliga insikter i datastrukturens inre arbete, vilket skärper en programmerares färdigheter i problemlösning och optimering. Dock, för produktionskod eller mer komplexa applikationer, är det ofta ett mer praktiskt och tidsbesparande tillvägagångssätt att utnyttja befintliga bibliotek som GLib.

@@ -10,12 +10,7 @@ title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-
-Beim Senden einer HTTP-Anfrage mit Basic Authentication werden Benutzername und Passwort kodiert und als Teil der Anfrage übermittelt. Programmierer nutzen dies, um sichere Zugänge zu Webdiensten zu schaffen, die eine einfache Authentifizierung erfordern.
-
 ## So geht's:
-
 ```Bash
 # Anfrage mit curl und Basic Authentication
 USER='benutzername'
@@ -36,13 +31,11 @@ Beispieloutput:
 ```
 
 ## Tiefgang
-
 Basic Authentication wird bereits seit den Anfängen des Webs für einfache Authentifizierungsprozesse verwendet. Zwar gilt diese Art der Authentifizierung heute nicht als die sicherste Methode, da die Anmeldedaten unverschlüsselt über das Netz versendet werden können, sie ermöglicht jedoch einen schnellen Einstieg und wird oft in internen Netzwerken oder Prototypen verwendet. Alternativen wie OAuth oder Token-Based Authentication bieten zusätzliche Sicherheitsfeatures, sind aber auch komplexer in der Umsetzung.
 
 Die Base64-Kodierung dient nicht der Verschlüsselung, sondern lediglich der Kodierung für die Übertragung über HTTP. Wichtig ist hierbei, dass die HTTPS verwendet wird, um die Daten auf dem Transportweg zu verschlüsseln.
 
 ## Siehe auch:
-
 - cURL Dokumentation zu HTTP-Authentifizierung: https://curl.se/docs/http-auth.html
 - RFC 7617, The 'Basic' HTTP Authentication Scheme: https://tools.ietf.org/html/rfc7617
 - Einführung in sichere Authentifizierungsmethoden: https://www.owasp.org/index.php/Authentication_Cheat_Sheet

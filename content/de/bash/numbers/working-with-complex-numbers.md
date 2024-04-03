@@ -10,9 +10,6 @@ title: Umgang mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-Komplexe Zahlen bestehen aus einem Realteil und einem Imaginärteil. Programmierer nutzen sie in Bereichen wie Signalverarbeitung, Quantenmechanik und immer dann, wenn Berechnungen sie erfordern, weil normale reelle Zahlen einfach nicht ausreichen.
-
 ## Wie:
 Bash unterstützt komplexe Zahlen nicht nativ. Man verwendet oft ein externes Werkzeug wie `bc` mit seiner `-l`-Option. So berechnen Sie komplexe Zahlen in Bash:
 

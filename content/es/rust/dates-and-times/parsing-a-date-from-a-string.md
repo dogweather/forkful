@@ -14,11 +14,8 @@ title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---
 
-## Qué y Por Qué?
-
-Analizar una fecha desde una cadena es una tarea común al tratar con entradas de usuario o al leer datos de archivos, lo cual implica convertir datos en cadena a un formato de fecha reconocido por el lenguaje de programación. En Rust, esto es esencial para operaciones con fechas, como comparaciones, aritmética o formateo, y mejora la validación y la integridad de los datos en las aplicaciones.
-
 ## Cómo hacerlo:
+
 
 ### Usando la Biblioteca Estándar de Rust (`chrono` Crate)
 La biblioteca estándar de Rust no incluye directamente el análisis de fechas, pero el crate `chrono`, ampliamente utilizado, es una solución robusta para la manipulación de fechas y horas. Primero, añade `chrono` a tu `Cargo.toml`:

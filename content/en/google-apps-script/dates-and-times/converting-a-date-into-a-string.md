@@ -10,12 +10,7 @@ title: Converting a date into a string
 weight: 28
 ---
 
-## What & Why?
-
-Converting dates into strings is a fundamental task that enables programmers to manipulate and display date information in a human-readable format. This is crucial for creating user interfaces, generating reports, or logging information in applications developed with Google Apps Script.
-
 ## How to:
-
 Google Apps Script, being based on JavaScript, allows for multiple methods to achieve the conversion of dates to strings. Below are some examples illustrating different approaches:
 
 ### Using `toString()` Method:
@@ -49,7 +44,6 @@ Logger.log(formattedDate); // Output: "2023-04-05"
 This method is particularly powerful for generating dates in formats that are locale-specific or suited to specific application requirements.
 
 ## Deep Dive
-
 The necessity to convert dates into strings is not unique to Google Apps Script; it's prevalent across all programming languages. However, Google Apps Script's approach, inherited from JavaScript, offers a flexible set of options catered towards web-based scripting. `Utilities.formatDate()` stands out by acknowledging the complexities of working with time zones – a challenge often overlooked. 
 
 Historically, handling dates and times has been a source of bugs and complexity in software development, primarily due to differences in time zones and formats. The introduction of `Utilities.formatDate()` in Google Apps Script is a nod towards standardizing date-time manipulations, especially in the context of Google's suite of products which are used globally.

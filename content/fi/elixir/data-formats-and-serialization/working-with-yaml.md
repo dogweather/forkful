@@ -13,12 +13,7 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä & Miksi?
-
-YAML, lyhenne sanoista YAML Ain't Markup Language, on ihmisen luettavissa oleva datan sarjallistamisstandardi, jota käytetään yleisesti konfiguraatiotiedostoissa ja datan vaihdossa eri kielten välillä, joilla on erilaiset datarakenteet. Ohjelmoijat käyttävät sitä sen yksinkertaisuuden ja kyvyn helposti esittää monimutkaisia hierarkisia tietoja takia.
-
 ## Miten:
-
 Elixir ei sisällä sisäänrakennettua tukea YAML:lle. Voit kuitenkin käyttää kolmannen osapuolen kirjastoja, kuten `yamerl` tai `yaml_elixir`, työskennelläksesi YAML:n kanssa. Tässä keskitymme `yaml_elixir`-kirjastoon sen käytön helppouden ja kattavien ominaisuuksien vuoksi.
 
 Lisää ensin `yaml_elixir` mix.exs-riippuvuuksiisi:
@@ -34,7 +29,6 @@ end
 Suorita sitten `mix deps.get` hakeaksesi uuden riippuvuuden.
 
 ### YAML:n lukeminen
-
 Oletetaan, että sinulla on yksinkertainen YAML-tiedosto, `config.yaml`, joka näyttää tältä:
 
 ```yaml
@@ -67,7 +61,6 @@ Config.read()
 ```
 
 ### YAML:n kirjoittaminen
-
 Mapin kirjoittaminen takaisin YAML-tiedostoon:
 
 ```elixir

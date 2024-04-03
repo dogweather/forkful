@@ -11,9 +11,6 @@ title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---
 
-## ¿Qué y Por Qué?
-Imprimir mensajes de depuración es como dejar migajas de pan para seguir tu camino en el código. Los programadores lo hacemos para entender qué está pasando y por qué, especialmente cuando las cosas se ponen raras.
-
 ## Cómo Hacerlo:
 Con Elm, usamos `Debug.log` para imprimir en la consola del navegador. Aquí te dejo un ejemplo:
 

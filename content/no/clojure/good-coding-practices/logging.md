@@ -11,9 +11,6 @@ title: "Loggf\xF8ring"
 weight: 17
 ---
 
-## Hva & hvorfor?
-Logging er i prinsippet programvareekvivalenten til en skipslogg; det er en måte å registrere hendelser som skjer mens en applikasjon kjører. Utviklere gjør det for å holde oversikt over disse hendelsene for feilsøking, revisjonsspor, eller for å få innsikt i atferden til et system i produksjon.
-
 ## Hvordan:
 Clojure støtter seg på Javas loggingsfasiliteter, men du kan utnytte dem på en mer idiomatisk Clojure-måte. La oss se på hvordan du kan bruke `clojure.tools.logging`, som gir en enkel abstraksjon over flere loggingrammeverk:
 

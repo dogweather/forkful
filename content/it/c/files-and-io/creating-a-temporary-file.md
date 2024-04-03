@@ -13,9 +13,6 @@ title: Creazione di un file temporaneo
 weight: 21
 ---
 
-## Cos'è e perché?
-Creare un file temporaneo in C comporta la generazione di un file destinato a essere utilizzato per una breve durata, solitamente come spazio temporaneo per l'elaborazione o la memorizzazione dei dati. I programmatori lo fanno per gestire i dati temporanei senza influire sulla memoria permanente del programma o per assicurarsi che i dati sensibili vengano cancellati dopo l'uso.
-
 ## Come fare:
 Creare un file temporaneo nel linguaggio di programmazione C può sfruttare funzioni come `tmpfile()` e `mkstemp()`.
 

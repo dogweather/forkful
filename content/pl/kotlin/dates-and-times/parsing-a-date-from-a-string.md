@@ -13,9 +13,6 @@ title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---
 
-## Co i dlaczego?
-Parsowanie daty z ciągu znaków polega na przekształceniu tekstu na obiekt Daty. Operacja ta jest podstawowa dla aplikacji, które wchodzą w interakcje z datami wprowadzonymi przez użytkowników lub pochodzącymi z zewnętrznych zestawów danych, umożliwiając łatwą manipulację i formatowanie zgodnie z potrzebami.
-
 ## Jak to zrobić:
 Kotlin wspiera parsowanie dat za pomocą pakietu `java.time`, wprowadzonego w Java 8. Oto prosty sposób użycia `LocalDateTime` i konkretnego wzorca:
 

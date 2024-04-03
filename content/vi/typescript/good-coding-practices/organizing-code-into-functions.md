@@ -15,9 +15,6 @@ title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---
 
-## Lý do và Mục đích
-Tổ chức code thành các hàm có nghĩa là chia nhỏ code của bạn thành các khối có thể tái sử dụng, linh hoạt. Chúng ta làm điều này để giữ cho mọi thứ không bị lặp lại (Don't Repeat Yourself - DRY), làm cho code sạch sẽ hơn, dễ đọc hơn và dễ gỡ lỗi hơn.
-
 ## Cách thực hiện:
 Hãy tưởng tượng bạn đang tạo một máy tính cơ bản. Thay vì viết logic cộng ở mọi nơi bạn cần, hãy tạo một hàm `add`:
 

@@ -12,12 +12,7 @@ title: HTML Parsen
 weight: 43
 ---
 
-## Wat & Waarom?
-
-HTML parsen betekent graven door de opmaak om gegevens zoals tekst, links of andere elementen te extraheren. We doen dit om te interageren met of webinhoud te schrapen, browsertaken te automatiseren of webapps te testen.
-
 ## Hoe:
-
 Laten we Jsoup gebruiken, een handige bibliotheek voor het werken met echte HTML. Voeg eerst de afhankelijkheid toe:
 
 ```xml
@@ -64,7 +59,6 @@ for (Element link : links) {
 ```
 
 ## Diepgaande duik
-
 Ooit werd HTML getemd door regex patronen, een methode zowel foutgevoelig als nachtmerrieachtig voor complexe documenten. Toen kwam Jsoup in de late jaren nul, die een jQuery-achtige interface voor Java biedt om HTML te parsen, te doorlopen en te manipuleren.
 
 Jsoup is niet de enige keuze. Er is HtmlUnit voor volwaardige webapptesten met JavaScript-ondersteuning, maar het is zwaarder en complexer. Voor lichtgewicht taken is Apache Commons Validator geweldig, alleen al voor het extraheren van URL's.
@@ -74,7 +68,6 @@ Onder de motorkap gebruikt Jsoup een DOM-parser, die het hele document in het ge
 Onthoud, bij het scrapen, altijd de `robots.txt` van een site controleren en de gebruiksvoorwaarden om juridische problemen of een IP-ban te vermijden.
 
 ## Zie ook
-
 - Jsoup Officiële Documentatie: https://jsoup.org/
 - HtmlUnit: http://htmlunit.sourceforge.net/
 - Apache Commons Validator: https://commons.apache.org/proper/commons-validator/

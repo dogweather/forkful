@@ -10,11 +10,7 @@ title: Zeichenketten interpolieren
 weight: 8
 ---
 
-## What & Why?
-String-Interpolation ermöglicht das Einfügen von Variablenwerten in einen String. Das macht den Code lesbarer und die String-Manipulation effizienter.
-
 ## How to:
-
 In TypeScript kannst du mit Template Literals arbeiten, um Interpolation zu nutzen. Sie werden mit Backticks (`) gekennzeichnet und können Platzhalter, die `${expression}` Struktur nutzen, enthalten.
 
 ```typescript
@@ -42,7 +38,6 @@ Guten Einkauf!
 ```
 
 ## Deep Dive
-
 String-Interpolation in TypeScript bedient sich der Template Literals, die mit ES6 eingeführt wurden. Vor ES6 waren Konkatenation mit dem `+` Operator Standard, oft unübersichtlich bei mehreren Variablen.
 
 Alternativ zur Interpolation können auch Template-Funktionen genutzt werden, meist für komplexere Szenarien oder Lokalisierung. Sie nehmen einen Template String und geben eine Funktion zurück, die die Daten interpoliert:
@@ -65,7 +60,6 @@ console.log(template("Mona", 5));  // "Hallo Mona, du hast 5 neue Nachrichten."
 Durch die Verwendung von Template-Funktionen können auch komplexe Logiken bei der Interpolation stattfinden, was durch einfache Template Literals nicht möglich wäre.
 
 ## See Also
-
 - TypeScript Dokumentation zu Literal Types: [https://www.typescriptlang.org/docs/handbook/literal-types.html](https://www.typescriptlang.org/docs/handbook/literal-types.html)
 - MDN-Dokumentation zu Template Literals: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 - Weitere Infos zu Tagged Template Literals: [https://www.typescriptlang.org/docs/handbook/advanced-types.html#tagged-template-literals](https://www.typescriptlang.org/docs/handbook/advanced-types.html#tagged-template-literals)

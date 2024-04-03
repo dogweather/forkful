@@ -10,9 +10,6 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-Retrieving the current date in Bash involves using built-in commands to display the date and time in various formats. Programmers use this functionality for tasks such as timestamping logs, scheduling tasks, or just as part of their system information scripts to track when actions were performed.
-
 ## How to:
 In Bash, the `date` command is your primary tool for getting the current date and time. Here are a few examples of how to use it:
 

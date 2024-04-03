@@ -11,9 +11,6 @@ title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---
 
-## What & Why? (¿Qué y Por Qué?)
-Imprimir salidas de depuración es escupir mensajes desde tu código para ver qué está pasando. Programadores lo hacen para entender y arreglar errores, casi como una radiografía de tu código en ejecución.
-
 ## How to: (Cómo hacerlo:)
 ```TypeScript
 function sumar(a: number, b: number): number {

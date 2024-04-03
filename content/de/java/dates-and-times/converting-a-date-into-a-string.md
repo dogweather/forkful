@@ -11,9 +11,6 @@ title: Datum in einen String umwandeln
 weight: 28
 ---
 
-## Was & Warum?
-Datum in String umzuwandeln bedeutet, ein Datumsobjekt in einen Text umzuformen, der menschenlesbar ist. Programmierer machen das, weil Daten oft in einer für Menschen verständlichen Form angezeigt oder gespeichert werden müssen.
-
 ## So geht's:
 ```java
 import java.time.LocalDateTime;

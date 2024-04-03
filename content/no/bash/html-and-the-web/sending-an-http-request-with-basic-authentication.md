@@ -12,9 +12,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel med grunnleggende autentisering involverer å legge til brukernavn og passord i forespørselen for å få tilgang til beskyttede ressurser. Programmerere gjør dette for å sikre at kun autoriserte brukere kan hente eller endre data.
-
 ## Slik gjør du:
 Å sende en HTTP-forespørsel med grunnleggende autentisering i Bash kan gjøres enkelt med `curl`. Her er et eksempel:
 

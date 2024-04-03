@@ -13,12 +13,7 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## Hva & Hvorfor?
-
-Strenginterpolering, i programmering, innebærer konstruksjonen av strenger ved å bygge inn uttrykk innenfor litterale strenger. Programmører gjør dette for å lage informative meldinger, dynamiske spørringer, eller for å konstruere enhver streng med variabelt innhold på en effektiv og ren måte, ofte for brukerutskrift eller loggføringsformål.
-
 ## Hvordan:
-
 C, i motsetning til noen høynivåspråk, støtter ikke strenginterpolering direkte i sin syntaks. I stedet oppnås strengkonstruksjon med variabelt innhold typisk ved bruk av `printf`-funksjonen eller dets varianter for utskrift, og `sprintf` for strengskaping. Her er en titt på hvordan man dynamisk kan konstruere strenger i C:
 
 ```c
@@ -47,7 +42,6 @@ Navn: Jane Doe, Alder: 28
 Disse kodestykkene demonstrerer den tradisjonelle måten å inkludere variabel data i strenger på i C, noe som gir fleksibilitet i konstruksjonen av detaljerte strenger.
 
 ## Fordypning
-
 Før ankomsten av mer moderne programmeringsspråk med innebygd strenginterpoleringsfunksjonalitet, måtte C-utviklere stole på funksjoner som `sprintf()`, `snprintf()`, og deres varianter for å komponere strenger med variabelt innhold. Denne tilnærmingen, selv om den er effektiv, introduserer potensielle risikoer som bufferoverflyt hvis den ikke håndteres nøye, spesielt med `sprintf()`.
 
 Med tanke på alternativer, introduksert språk som Python og JavaScript mer intuitive strenginterpoleringsfunksjoner, som f-strenger (formateringsstrenglitteraler) og malstrenger, henholdsvis. Disse funksjonene tillater utviklere å bygge inn uttrykk direkte innenfor strenglitteralene, og gjør koden mer lesbar og kortfattet.

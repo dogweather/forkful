@@ -17,16 +17,10 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Gì và Tại sao?
-
-Làm tròn số là việc điều chỉnh giá trị của một số đến số nguyên gần nhất hoặc đến một số lượng chữ số thập phân cụ thể. Lập trình viên thực hiện điều này vì nhiều lý do như cải thiện khả năng đọc, đơn giản hóa các phép tính, hoặc đáp ứng các yêu cầu về độ chính xác cụ thể của lĩnh vực.
-
 ## Làm thế nào:
-
 Trong Go, không có hàm đã xây dựng sẵn nào để làm tròn số đến một số lượng chữ số thập phân cụ thể trong gói math. Tuy nhiên, bạn có thể đạt được việc làm tròn thông qua sự kết hợp của các hàm cho số nguyên hoặc triển khai một hàm tùy chỉnh cho số thập phân.
 
 ### Làm tròn đến số nguyên gần nhất:
-
 Để làm tròn đến số nguyên gần nhất, bạn có thể sử dụng hàm `math.Floor()` với việc cộng thêm 0.5 cho số dương, và `math.Ceil()` trừ đi 0.5 cho số âm, tùy thuộc vào hướng bạn muốn làm tròn.
 
 ```go
@@ -44,7 +38,6 @@ func main() {
 ```
 
 ### Làm tròn đến một số chữ số thập phân cụ thể:
-
 Để làm tròn đến số chữ số thập phân cụ thể, một hàm tùy chỉnh có thể được sử dụng, nơi bạn nhân số đó với 10^n (nơi n là số chữ số thập phân), làm tròn đến số nguyên gần nhất như trước, và sau đó chia cho 10^n.
 
 ```go
@@ -67,7 +60,6 @@ func main() {
 ```
 
 ## Sâu xa hơn
-
 Làm tròn số là một thao tác cơ bản trong lập trình máy tính, liên quan đến thách thức lịch sử về việc biểu diễn số thực trong hệ nhị phân. Nhu cầu làm tròn phát sinh do nhiều số thực không thể được biểu diễn một cách chính xác trong nhị phân, dẫn đến lỗi xấp xỉ.
 
 Trong Go, cách tiếp cận để làm tròn phần nào là thủ công so với những ngôn ngữ cung cấp hàm làm tròn được xây dựng sẵn đến chữ số thập phân cụ thể. Tuy nhiên, gói `math` của thư viện chuẩn Go cung cấp các khối xây dựng cơ bản (như `math.Floor` và `math.Ceil`) để xây dựng bất kỳ cơ chế làm tròn nào cần thiết cho ứng dụng.

@@ -13,9 +13,6 @@ title: Generierung von Zufallszahlen
 weight: 12
 ---
 
-## Was & Warum?
-Das Generieren von Zufallszahlen in Bash bietet eine Möglichkeit, Unvorhersehbarkeit in Skripten einzuführen, was für Aufgaben wie das Generieren von sicheren Passwörtern, die Simulation von Daten oder für die Programmierung von Spielen unerlässlich ist. Programmierer nutzen diese Fähigkeit, um ihren Skripten Variabilität hinzuzufügen oder ihre Programme unter einer Vielzahl zufällig generierter Bedingungen zu testen.
-
 ## Wie:
 In Bash ist die Variable `$RANDOM` die erste Anlaufstelle für die Generierung von Zufallszahlen. Jedes Mal, wenn Sie darauf Bezug nehmen, stellt Bash eine Pseudozufallszahl zwischen 0 und 32767 bereit. Lassen Sie uns einige praktische Beispiele erkunden:
 

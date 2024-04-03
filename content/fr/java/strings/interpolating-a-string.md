@@ -10,11 +10,6 @@ title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---
 
-## What & Why?
-(L'interpolation de chaînes : Quoi et Pourquoi ?)
-
-L'interpolation de chaînes permet d'insérer des valeurs variables dans des textes fixes. C'est pratique pour assembler des messages ou des formats personnalisés sans s'embrouiller avec la concaténation.
-
 ## How to:
 (Comment faire :)
 

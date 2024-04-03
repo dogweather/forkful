@@ -11,9 +11,6 @@ title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---
 
-## What & Why?
-Calculer une date dans le futur ou le passé, c'est simplement ajouter ou soustraire du temps à une date donnée. Les devs s'en servent pour des tâches telles que des rappels, des échéanciers ou des historiques d'événements.
-
 ## How to:
 Elm utilise le paquet `elm/time` pour gérer les dates. Voici comment on calcule une date dans une semaine:
 

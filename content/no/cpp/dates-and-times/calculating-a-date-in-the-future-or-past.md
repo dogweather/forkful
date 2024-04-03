@@ -11,9 +11,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## What & Why?
-Å beregne en dato i fremtiden eller fortiden betyr å finne ut nøyaktig hvilken dato det vil være etter eller før et visst tidsintervall. Programmerere gjør dette for å håndtere funksjoner relatert til tidsfrister, hendelser og planlegging i applikasjonene sine.
-
 ## How to:
 Med C++20 kan vi bruke `<chrono>` biblioteket for å regne ut datoer enkelt. Her er hvordan:
 

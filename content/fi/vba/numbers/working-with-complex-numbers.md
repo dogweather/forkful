@@ -13,12 +13,7 @@ title: "Ty\xF6skentely kompleksilukujen kanssa"
 weight: 14
 ---
 
-## Mikä ja miksi?
-
-Kompleksilukujen käsittelyyn sisältyy matemaattisten toimenpiteiden suorittaminen lukuihin, joilla on sekä reaaliosa että imaginääriosa. Ohjelmoijat työskentelevät usein kompleksilukujen parissa aloilla, kuten insinööritieteet, fysiikka ja kaikkialla, missä ratkotaan yhtälöitä, jotka eivät ole mahdollisia pelkillä reaaliluvuilla.
-
 ## Kuinka:
-
 Visual Basic for Applications (VBA) -ohjelmoinnissa kompleksilukujen käsittely voi olla hieman vähemmän suoraviivaista verrattuna kieliin, joissa on natiivi tuki niille. Voit kuitenkin hallita kompleksisia toimintoja luomalla funktioita tai käyttämällä olemassa olevia kirjastofunktioita. Tutkitaan perusesimerkkiä kompleksilukujen yhteenlaskusta, vähennyksestä, kertolaskusta ja jakolaskusta:
 
 ```vb
@@ -48,7 +43,6 @@ End Sub
 Vaikka tämä osoittaa yhteenlaskun, vastaavia lähestymistapoja voidaan mukauttaa vähennyslaskuun, kertolaskuun ja jakolaskuun. Kompleksisten toimintojen osalta perusaritmetiikan ylittävissä tapauksissa kannattaa ehkä tutkia ulkoisia kirjastoja tai integroida muita ratkaisuja, jotka tukevat kompleksilukutoimintoja luontaisemmin.
 
 ## Syväsukellus:
-
 VBA ei sisällä sisäänrakennettua tukea kompleksiluvuille, mikä on osa-alue, jossa se jää jälkeen kielistä, kuten Python, jossa on kompleksilukuluokka (`complex`), tai C++, jolla on Standard Template Library (`std::complex`). Historiallisesti VBA:ssa tarve käsitellä suoraan kompleksilukuja on verrattain harvinaista, koska sitä käytetään usein automatisointiin, Office-sovellusten manipulointiin ja tehtäviin, jotka perinteisesti eivät vaadi monimutkaisia matemaattisia laskutoimituksia. Kun VBA suunniteltiin ja kehitettiin, sen käyttötapaukset kohdistuivat pääasiassa liiketoiminnan sovelluksiin eikä tieteelliseen laskentaan, mikä saattaa selittää tämän puutteen.
 
 Tehtäviin, jotka vaativat laajaa kompleksilukujen manipulointia, ohjelmoijat saattavat hyötyä enemmän matemaattisesti suuntautuneen kielen käytöstä. Kuitenkin niille, jotka ovat sitoutuneet tai rajoitetut VBA:n käyttöön, oman funktion kirjoittaminen (kuten esiteltiin) tai integroituminen ohjelmistoihin, joilla on nämä kyvyt (kuten MATLAB tai jossain määrin Excel itse), ovat toteuttamiskelpoisia polkuja eteenpäin. Huolimatta sen rajoituksista, luovat ratkaisut ja ulkoiset integraatiot voivat laajentaa VBA:n käyttöaluetta alueille, joille sitä ei alun perin suunniteltu, mukaan lukien kompleksilukujen käsittely.

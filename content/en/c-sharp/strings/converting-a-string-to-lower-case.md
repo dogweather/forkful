@@ -10,9 +10,6 @@ title: Converting a string to lower case
 weight: 4
 ---
 
-## What & Why?
-Converting a string to lowercase means transforming all uppercase characters in the text to their lowercase equivalents. Programmers do it for consistency, especially for case-insensitive comparisons, searching, or to standardize data inputs before processing.
-
 ## How to:
 In C#, you can convert a string to lowercase using the `ToLower()` or `ToLowerInvariant()` methods. Here's how:
 

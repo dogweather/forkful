@@ -10,9 +10,6 @@ title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---
 
-## Qué y Por Qué?
-La concatenación de cadenas es unir dos o más cadenas de texto en una sola. Los programadores la utilizan para combinar mensajes, construir datos dinámicamente o simplemente organizar información de forma legible.
-
 ## How to:
 La concatenación en Ruby es pan comido. Aquí van unos ejemplos:
 

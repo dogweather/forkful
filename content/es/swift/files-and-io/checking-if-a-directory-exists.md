@@ -12,11 +12,7 @@ title: Comprobando si un directorio existe
 weight: 20
 ---
 
-## Qué y Por Qué?
-Comprobar si un directorio existe en el sistema de archivos es esencial para gestionar estructuras de archivos desde tus aplicaciones Swift. Esta tarea permite a los desarrolladores verificar la presencia de directorios antes de intentar leerlos o escribir en ellos, evitando así posibles errores en tiempo de ejecución.
-
 ## Cómo hacerlo:
-
 El framework Foundation de Swift proporciona la clase `FileManager`, que tiene métodos para gestionar el sistema de archivos. Puedes usar `FileManager` para comprobar si un directorio existe. Aquí tienes un fragmento sobre cómo hacer esto:
 
 ```swift
@@ -49,7 +45,6 @@ if fileManager.fileExists(atPath: path, isDirectory: &isDirectory), isDirectory.
 ```
 
 ### Usando una Biblioteca de Terceros
-
 Hasta ahora, comprobar la existencia de un directorio en Swift generalmente no requiere bibliotecas de terceros debido a la robustez de la clase `FileManager`. Sin embargo, para manipulaciones y comprobaciones de archivos más complejas, bibliotecas como **Files** de John Sundell proporcionan una API más amigable para Swift.
 
 Así es como podrías usarlo:

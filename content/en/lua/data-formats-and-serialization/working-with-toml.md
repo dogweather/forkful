@@ -11,9 +11,6 @@ title: Working with TOML
 weight: 39
 ---
 
-## What & Why?
-Working with TOML involves parsing and generating TOML (Tom's Obvious, Minimal Language) data with Lua. Programmers utilize TOML for config files due to its readability and simple syntax that easily translates to a data structure.
-
 ## How to:
 First, make sure your Lua environment has a TOML parser. We'll use `lua-toml` for this example.
 

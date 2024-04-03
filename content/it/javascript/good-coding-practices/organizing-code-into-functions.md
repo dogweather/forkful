@@ -12,11 +12,7 @@ title: Organizzazione del codice in funzioni
 weight: 18
 ---
 
-## Cosa & Perché?
-Organizzare il codice in funzioni permette di suddividere le attività in parti riutilizzabili, rendendo il codice più ordinato e più facile da mantenere. Lo facciamo per ridurre la ridondanza, semplificare i test e migliorare la leggibilità.
-
 ## Come fare:
-
 ```javascript
 // Definire una funzione per calcolare l'area di un rettangolo
 function calculateArea(larghezza, altezza) {

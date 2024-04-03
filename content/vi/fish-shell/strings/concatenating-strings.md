@@ -15,9 +15,6 @@ title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---
 
-## Cái gì & Tại sao?
-Nối chuỗi có nghĩa là ghép chúng lại với nhau từ đầu đến cuối. Lập trình viên thực hiện điều này để kết hợp văn bản, như xây dựng một câu hoàn chỉnh từ các từ hoặc tạo đường dẫn tệp.
-
 ## Cách thực hiện:
 Trong Fish, ghép các chuỗi lại với nhau bằng khoảng trắng hoặc sử dụng `string join`.
 

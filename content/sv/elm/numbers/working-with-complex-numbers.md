@@ -11,9 +11,6 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad och varför?
-Komplexa tal är en kombination av reella och imaginära tal, som `a + bi` där `i` är kvadratroten av -1. De är avgörande inom områden som ingenjörsvetenskap och fysik för att lösa problem som vanliga tal inte kan hantera.
-
 ## Hur man gör:
 Elm har inte inbyggt stöd för komplexa tal, så du kommer att skapa din egen typ och funktioner. Här är en snabb uppsättning:
 

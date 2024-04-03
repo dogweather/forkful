@@ -11,9 +11,6 @@ title: Generering av tilfeldige tall
 weight: 12
 ---
 
-## Hva & Hvorfor?
-Det å generere tilfeldige tall i PowerShell handler om å skape uforutsigbare numeriske verdier innenfor et spesifisert område. Programmerere bruker denne funksjonen av mange grunner, inkludert testing, simulering og sikkerhetsformål, der uforutsigbarhet eller etterligning av virkelighetens tilfeldighet er avgjørende.
-
 ## Hvordan:
 PowerShell tilbyr en enkel tilnærming for å generere tilfeldige tall ved bruk av `Get-Random` cmdleten. Denne cmdleten kan produsere tilfeldige tall innenfor et standardområde eller et spesifisert område.
 

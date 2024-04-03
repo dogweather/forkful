@@ -15,9 +15,6 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mikä & Miksi?
-Nykyisen päivämäärän hankkiminen Javassa on perustoiminto, jonka avulla ohjelmoijat voivat käsitellä päivämääräobjekteja toiminnoissa, kuten lokitukset, päivämäärälaskelmat ja aikaan perustuvat ehdot. Se on elintärkeää sovelluksissa, joissa seuranta, aikataulutus ja ajallinen datan analyysi ovat olennaisia.
-
 ## Miten:
 Java tarjoaa useita tapoja hankkia nykyinen päivämäärä käyttäen sekä vanhaa `java.util.Date` -luokkaa että uudempaa `java.time` -pakettia (julkaistu Javassa 8), joka on monipuolisempi ja intuitiivisempi.
 
@@ -32,6 +29,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### Käyttäen `java.time.LocalDateTime`
 ```java
 import java.time.LocalDateTime;
@@ -43,6 +41,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### Käyttäen `java.util.Date` (Vanha)
 ```java
 import java.util.Date;
@@ -54,6 +53,7 @@ public class CurrentDateExample {
     }
 }
 ```
+
 ### Kolmannen osapuolen kirjaston käyttäminen: Joda-Time
 Ennen Java 8:aa Joda-Time oli de facto -standardi Java-datassa ja -ajassa. Jos työskentelet vanhojen järjestelmien parissa tai sinulla on mieltymys Joda-Timeen, tässä on miten voit käyttää sitä nykyisen päivämäärän hankkimiseen:
 ```java

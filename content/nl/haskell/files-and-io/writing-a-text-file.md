@@ -12,9 +12,6 @@ title: Een tekstbestand schrijven
 weight: 24
 ---
 
-## Wat & Waarom?
-In Haskell is het schrijven naar een tekstbestand alles over het opslaan van data in een bestand. Programmeurs doen dit om data tussen sessies te bewaren, informatie te delen, of de uitvoer van het programma te loggen.
-
 ## Hoe:
 Tekstbestanden schrijven in Haskell is vrij eenvoudig. Hier is de kern met het gebruik van `writeFile`:
 

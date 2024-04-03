@@ -13,12 +13,7 @@ title: Czytanie pliku tekstowego
 weight: 22
 ---
 
-## Co i dlaczego?
-
-Odczytywanie pliku tekstowego w Dart polega na dostępie i pobieraniu danych z plików zapisanych w systemie plików. Programiści robią to, aby obsługiwać dane wejściowe, ustawienia konfiguracyjne lub czytać zbiory danych, co czyni to podstawową operacją dla wielu aplikacji, od prostych skryptów po złożone aplikacje.
-
 ## Jak to zrobić:
-
 Podstawowa biblioteka Darta, `dart:io`, zapewnia niezbędne funkcjonalności do synchronicznego lub asynchronicznego odczytu plików tekstowych. Oto jak podejść do obu metod.
 
 **Synchronicznie:**

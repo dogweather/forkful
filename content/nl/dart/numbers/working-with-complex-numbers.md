@@ -14,16 +14,10 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-
-Complexe getallen, bestaande uit een reëel en een imaginair deel (gewoonlijk aangeduid als a + bi), breiden het concept van de dimensieloze getallen uit naar een tweedimensionale ruimte. Programmeurs werken met complexe getallen in vakgebieden zoals elektrotechniek, kwantumcomputing en vloeistofdynamica om verschijnselen te modelleren die niet kunnen worden weergegeven langs een enkele dimensie van alleen reële getallen.
-
 ## Hoe:
-
 Dart zelf bevat geen ingebouwde bibliotheek voor complexe getallen, wat noodzaakt tot het implementeren van een aangepaste klasse voor complexe getallen of het gebruik van een bibliotheek van derden. Een populaire keuze voor wetenschappelijke berekeningstaken, die ondersteuning biedt voor complexe getallen, is `package:scidart`.
 
 ### Een Basis Complex Getal Klasse Implementeren
-
 Voor eenvoudige bewerkingen kun je gemakkelijk je eigen klasse voor complexe getallen definiëren:
 
 ```dart
@@ -53,7 +47,6 @@ void main() {
 ```
 
 ### SciDart Gebruiken voor Geavanceerde Bewerkingen
-
 Voor meer complexe bewerkingen of wanneer prestaties cruciaal zijn, biedt de `package:scidart` uitgebreide ondersteuning voor complexe getallen onder andere wetenschappelijke rekenfunctionaliteiten. Voeg eerst SciDart toe aan je pubspec.yaml:
 
 ```yaml

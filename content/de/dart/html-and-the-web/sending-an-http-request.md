@@ -12,12 +12,7 @@ title: Eine HTTP-Anfrage senden
 weight: 44
 ---
 
-## Was & Warum?
-
-Das Senden einer HTTP-Anfrage in Dart ist der Prozess der Initiierung von Kommunikation mit einem Webserver oder einer API aus einer Dart-Anwendung heraus. Programmierer tun dies, um Daten aus dem Web abzurufen, Formulare zu übermitteln und mit RESTful-Diensten zu interagieren, was es zu einer grundlegenden Operation für die Entwicklung von Web-, Server- und mobilen Anwendungen in Dart macht.
-
 ## Wie geht das:
-
 Dart beinhaltet das `http` Paket, eine leistungsstarke und bequeme Möglichkeit, mit HTTP-Ressourcen zu arbeiten. Zuerst inkludiere es in deiner pubspec.yaml-Datei:
 
 ```yaml

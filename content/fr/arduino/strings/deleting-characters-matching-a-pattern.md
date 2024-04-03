@@ -11,9 +11,6 @@ title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---
 
-## Quoi & Pourquoi?
-Supprimer des caractères selon un motif, c'est retirer des éléments de vos chaînes de texte qui correspondent à un critère précis. On le fait pour nettoyer des données, simplifier le traitement de texte, et améliorer l'efficacité du code.
-
 ## Comment faire :
 ```Arduino
 void setup() {

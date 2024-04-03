@@ -10,9 +10,6 @@ title: Lettura degli argomenti della riga di comando
 weight: 23
 ---
 
-## Cosa & Perché?
-Leggere gli argomenti da riga di comando significa estrarre le informazioni passate al tuo programma quando viene eseguito da terminale. È cruciale per personalizzare l'esecuzione del software senza cambiare il codice.
-
 ## Come Fare:
 Con Haskell, utilizziamo il modulo `System.Environment` per afferrare questi argomenti. Ecco un esempio semplice:
 

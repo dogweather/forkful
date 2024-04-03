@@ -12,9 +12,6 @@ title: Obtendo a data atual
 weight: 29
 ---
 
-## O Que & Por Que?
-Recuperar a data atual no Bash envolve o uso de comandos internos para exibir a data e a hora em vários formatos. Programadores utilizam essa funcionalidade para tarefas como marcar logs com timestamps, agendar tarefas ou apenas como parte de seus scripts de informação do sistema para rastrear quando as ações foram realizadas.
-
 ## Como fazer:
 No Bash, o comando `date` é sua principal ferramenta para obter a data e a hora atual. Aqui estão alguns exemplos de como usá-lo:
 

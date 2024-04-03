@@ -18,9 +18,6 @@ title: "\u5C06\u6765\u307E\u305F\u306F\u904E\u53BB\u306E\u65E5\u4ED8\u3092\u8A08
 weight: 26
 ---
 
-## What & Why? (何となぜ？)
-日付計算は、未来または過去の特定の日にちを算出することです。期間の計画、イベント管理、リマインダー機能実装などに欠かせません。
-
 ## How to (方法):
 ```Swift
 import Foundation

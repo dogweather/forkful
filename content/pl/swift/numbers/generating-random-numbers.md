@@ -11,12 +11,7 @@ title: Generowanie liczb losowych
 weight: 12
 ---
 
-## Co i dlaczego?
-
-Generowanie losowych liczb w programowaniu dotyczy tworzenia wartości numerycznych nieterministycznych lub nieprzewidywalnych. Programiści używają liczb losowych z różnych przyczyn, takich jak symulowanie nieprzewidywalności w grach, wybieranie losowych próbek z zestawów danych czy w celach kryptograficznych.
-
 ## Jak to zrobić:
-
 Swift oferuje prosty sposób na generowanie losowych liczb za pośrednictwem swojej biblioteki standardowej. Oto, jak to zrobić dla różnych typów numerycznych:
 
 ```Swift
@@ -36,7 +31,6 @@ print(randomBool)
 Przykładowe wyjście może się różnić, ponieważ przecież mamy do czynienia z losowością. Uruchomienie kodu wiele razy da różne liczby i wartości logiczne.
 
 ## Głębsze spojrzenie
-
 Podejście Swifta do generowania liczb losowych opiera się na wydajnym i solidnym generatorze pseudolosowym (PRNG). Przed Swift 4.2, programiści polegali na zewnętrznych bibliotekach lub możliwościach leżących u podstaw platformy, co mogło prowadzić do niespójności w różnych platformach i środowiskach. Z wprowadzeniem rodzimych interfejsów API w Swift 4.2, generowanie liczb losowych stało się zarówno prostsze, jak i bardziej spójne, niezależnie od leżącej u podstawy platformy.
 
 Jednakże, krytyczne jest zrozumienie, że standardowy generator liczb losowych w Swift nie nadaje się do celów kryptograficznych. W przypadku kryptografii, programiści powinni używać ramki `Security` na platformach Apple, która zapewnia dostęp do kryptograficznie bezpiecznych losowych bajtów. Według mojej ostatniej aktualizacji, Swift nie zawiera w swojej bibliotece standardowej generatora losowych liczb kryptograficznych dostępnego na różnych platformach, skłaniając programistów do poszukiwania bibliotek innych firm dla takich potrzeb na platformach innych niż Apple.

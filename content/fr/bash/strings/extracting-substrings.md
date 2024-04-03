@@ -11,10 +11,7 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Extraire des sous-chaînes, c'est récupérer des morceaux d'une chaîne de caractères. Pourquoi ? Pour analyser ou transformer des données, automatiser des tâches, ou tout simplement parce que vous avez besoin d'une partie spécifique d'une info.
-
-## How to: (Comment faire :) 
+## How to: (Comment faire :)
 Extraire avec des indices et des longueurs:
 
 ```Bash
@@ -29,6 +26,7 @@ Utiliser l'expression régulière avec `grep`:
 echo "Facture: 12345" | grep -o -E '[0-9]+'
 # sortie: 12345
 ```
+
 ## Deep Dive (Plongée Profonde)
 Historiquement, l'extraction de sous-chaînes est essentielle pour transformer et transférer les données depuis l'ère du télétype. Bash permet cela avec la syntaxe `${chaine:index:longueur}`. C'est une approche simple qui marche bien pour des scripts courts et des tâches rapides. Vous pourriez aussi envisager des outils comme `awk`, `sed`, ou des langages de programmation avec des fonctions de manipulation de chaînes plus élaborées pour des besoins complexes.
 

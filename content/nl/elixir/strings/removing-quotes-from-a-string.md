@@ -12,9 +12,6 @@ title: Quotes verwijderen uit een string
 weight: 9
 ---
 
-## Wat & Waarom?
-Citaten uit een string verwijderen betekent die extra verpakkingen wegnemen om de schone tekst binnenin te krijgen. Programmeurs doen dit om invoer te zuiveren, fouten te vermijden en data voor te bereiden voor verwerking waar citaten hinderlijk zijn, geen functies.
-
 ## Hoe:
 Elixir heeft geen ingebouwde 'verwijder citaten'-functie, maar het is kinderspel om er zelf een te maken met patroonmatching of `String`-functies. Zie deze snippets:
 

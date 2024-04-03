@@ -11,9 +11,6 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-Writing tests in C involves creating smaller, auxiliary programs or functions that automatically verify the functionality of your code. Programmers do it to ensure their software works as expected, to catch bugs early, and to facilitate future code modifications without unintended side effects.
-
 ## How to:
 While C doesn't have a built-in testing framework like some other languages, you can still write effective tests using assert.h for simple assertions or integrate third-party frameworks like CUnit or Unity for more structured testing. Here's a basic example using assert.h to test a function that adds two integers:
 

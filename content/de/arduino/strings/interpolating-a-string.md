@@ -10,9 +10,6 @@ title: Zeichenketten interpolieren
 weight: 8
 ---
 
-## Was & Warum?
-String-Interpolation ermöglicht es, Variablenwerte in einen String "einzubetten". Das erleichtert die dynamische Erzeugung von Text und die Datenanzeige während des Programmablaufes.
-
 ## How to:
 ```Arduino
 char temperaturMsg[50];

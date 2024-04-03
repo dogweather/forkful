@@ -11,9 +11,6 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## What & Why?
-Yhdistäminen ("string concatenation") on useiden merkkijonojen liittämistä yhteen. Koodarit tarvitsevat tätä toimintoa muodostaakseen yksittäisistä palasista tarpeellisia viestejä tai dataa.
-
 ## How to:
 Clojuren merkkijonojen yhdistäminen voi tapahtua useilla tavoilla. Tässä muutamia esimerkkejä:
 

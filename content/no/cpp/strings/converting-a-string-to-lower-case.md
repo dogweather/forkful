@@ -11,9 +11,6 @@ title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---
 
-## What & Why?
-Omforming av strenger til små bokstaver betyr å konvertere alle tegn i en streng til deres tilsvarende små bokstavform. Programmerere gjør dette for data-normalisering, å forenkle sammenligninger og søk, eller å oppfylle brukerkrav.
-
 ## How to:
 Her er den kjappe metoden for å endre store bokstaver til små i C++:
 

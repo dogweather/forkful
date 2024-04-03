@@ -14,12 +14,7 @@ title: Comprobando si un directorio existe
 weight: 20
 ---
 
-## Qué y Por Qué?
-
-Verificar si un directorio existe es una operación fundamental al escribir scripts que interactúan con el sistema de archivos, asegurando que tu programa opere en rutas válidas y prevenga errores relacionados con directorios inexistentes. Esta tarea es crucial para crear nuevos archivos en directorios, leerlos o realizar operaciones específicas de directorios de manera segura.
-
 ## Cómo hacerlo:
-
 En Lua, no tienes una función incorporada para verificar directamente si un directorio existe, por lo que a menudo dependes de la biblioteca Lua File System (lfs), una biblioteca de terceros popular para operaciones de archivos.
 
 Primero, asegúrate de tener Lua File System instalado. Si no, generalmente puedes instalarlo usando LuaRocks:

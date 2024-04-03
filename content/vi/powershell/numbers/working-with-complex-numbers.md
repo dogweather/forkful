@@ -16,9 +16,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Điều gì & Tại sao?
-Số phức, những số có một phần thực và một phần ảo (như 3 + 4i), rất quan trọng trong các lĩnh vực như kỹ thuật, vật lý, và khoa học dữ liệu. Các lập trình viên sử dụng chúng cho mô phỏng, xử lý tín hiệu, và giải quyết các loại bài toán toán học cụ thể.
-
 ## Làm thế nào:
 PowerShell không hỗ trợ số phức một cách tích hợp, vì vậy bạn có thể tự tạo giải pháp của mình hoặc sử dụng `System.Numerics.Complex` của .NET.
 

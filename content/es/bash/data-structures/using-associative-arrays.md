@@ -13,12 +13,7 @@ title: Uso de matrices asociativas
 weight: 15
 ---
 
-## Qué y Por Qué?
-
-Los arreglos asociativos son como arreglos súper cargados que te permiten usar cadenas como índices en lugar de solo enteros. Los programadores los utilizan para estructuras de datos más complejas, facilitando el manejo de datos que no encajan ordenadamente en una lista secuencial.
-
 ## Cómo hacerlo:
-
 Primero, declare un arreglo asociativo en Bash:
 
 ```Bash
@@ -66,7 +61,6 @@ unset my_array["topic"]
 ```
 
 ## Análisis Profundo
-
 Los arreglos asociativos fueron introducidos en la versión 4.0 de Bash, lo que los hace una adición relativamente reciente al lenguaje. Antes de su introducción, manejar arreglos con índices no enteros era engorroso, a menudo requiriendo soluciones alternativas o herramientas externas como `awk` o `sed`.
 
 Por debajo, Bash implementa los arreglos asociativos usando tablas hash. Esta implementación permite una búsqueda de clave eficiente, que permanece bastante constante independientemente del tamaño del arreglo, una característica crítica para el rendimiento en la ejecución de scripts.

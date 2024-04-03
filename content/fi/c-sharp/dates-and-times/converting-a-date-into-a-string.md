@@ -11,9 +11,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---
 
-## What & Why? (Mitä & Miksi?)
-Päivämäärän muuttaminen merkkijonoksi tarkoittaa `DateTime`-olioiden esittämistä luettavassa muodossa. Koodaajat tekevät tämän, jotta päivämäärätietoja voidaan esittää ihmisille ymmärrettävästi ja niitä voi käyttää eri formaateissa.
-
 ## How to: (Kuinka tehdä:)
 ```C#
 using System;

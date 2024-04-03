@@ -13,9 +13,6 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-Eine Textdatei in TypeScript zu schreiben, ist eine entscheidende Fähigkeit für das Persistieren von Daten, Konfigurationen oder das Generieren von Protokollen. Programmierer führen diese Aufgabe oft durch, um Daten außerhalb des Anwendungsspeichers zu speichern und zu manipulieren, beispielsweise für Datenanalysen, Berichterstattung oder einfach zum Speichern von Benutzereinstellungen über Sitzungen hinweg.
-
 ## Wie geht das:
 TypeScript selbst behandelt Dateioperationen nicht direkt, da es zu JavaScript kompiliert wird, das traditionell im Browser mit begrenztem Zugriff auf das Dateisystem ausgeführt wird. Wenn es jedoch in einer Node.js-Umgebung verwendet wird, bietet das `fs`-Modul (File System) Funktionalitäten zum Schreiben von Dateien.
 

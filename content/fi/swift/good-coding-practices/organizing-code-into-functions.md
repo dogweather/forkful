@@ -11,9 +11,6 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mikä ja miksi?
-Koodin järjestäminen funktioihin on tehtävien pilkkominen uudelleenkäytettäviksi osiksi. Tämä tekee koodista siistimmän, vähemmän virhealttiin ja helpommin vianetsittävän tai uudelleenmuotoiltavan.
-
 ## Kuinka:
 Kuvittele tehtävä: laske taulukon keskiarvo. Ilman funktioita, liittäisit kaiken pääohjelmaan. Funktioiden avulla tekisit näin:
 

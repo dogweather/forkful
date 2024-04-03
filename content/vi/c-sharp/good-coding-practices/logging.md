@@ -15,9 +15,6 @@ title: Ghi log
 weight: 17
 ---
 
-## Gì và Tại sao?
-Logging là quá trình ghi chép các sự kiện và dữ liệu đầu ra của ứng dụng trong quá trình chạy. Lập trình viên thực hiện logging để chẩn đoán lỗi, theo dõi hiệu suất phần mềm, theo dõi hành động của người dùng, và duy trì tuân thủ với các tiêu chuẩn bảo mật và kinh doanh.
-
 ## Làm thế nào:
 Trong C#, bạn có thể sử dụng không gian tên `System.Diagnostics` có sẵn hoặc các thư viện bên thứ ba như NLog hoặc log4net. Dưới đây là một ví dụ nhanh sử dụng giao diện `ILogger` có sẵn trong .NET Core:
 

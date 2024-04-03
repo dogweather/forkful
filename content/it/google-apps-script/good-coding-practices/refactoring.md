@@ -14,12 +14,7 @@ title: Rifattorizzazione
 weight: 19
 ---
 
-## Cosa & Perché?
-
-Il refactoring nel lessico della programmazione si riferisce al processo di ristrutturazione del codice informatico esistente—modificando la fattorizzazione senza cambiare il suo comportamento esterno—per migliorare attributi non funzionali. È un passo vitale per i programmatori per potenziare la leggibilità del codice, ridurre la complessità e potenzialmente scoprire bug latenti, favorendo una manutenzione più semplice e una futura scalabilità del codice.
-
 ## Come Fare:
-
 In Google Apps Script, uno scenario comune che beneficia del refactoring è la semplificazione di script ingombranti che interagiscono con Google Sheets o Docs. Inizialmente, gli script potrebbero essere scritti in modo rapido e sommario per ottenere risultati velocemente. Con il tempo, man mano che lo script cresce, diventa ingombrante. Vediamo un esempio di refactoring per una migliore leggibilità ed efficienza.
 
 **Script Originale:**
@@ -58,7 +53,6 @@ L'output in Logger assomiglierà a qualcosa del genere, assumendo che il tuo doc
 Lo script ristrutturato ottiene lo stesso risultato ma è più pulito e facile da capire a colpo d'occhio.
 
 ## Approfondimento
-
 Il refactoring in Google Apps Script eredita in parte i suoi principi dalla pratica più ampia di ingegneria del software. È diventato più riconosciuto e strutturato come concetto alla fine degli anni '90, in particolare grazie al libro fondamentale di Martin Fowler "Refactoring: Improving the Design of Existing Code" (1999), che ha fornito una guida completa a varie tecniche di refactoring. Mentre le specifiche del refactoring possono variare tra i linguaggi di programmazione a causa delle loro differenze sintattiche e funzionali, l'obiettivo principale rimane lo stesso: migliorare il codice senza alterarne il comportamento esterno.
 
 Nel contesto di Google Apps Script, un aspetto chiave da considerare durante il refactoring sono le quote di servizio e le limitazioni imposte da Google. Un codice efficientemente ristrutturato non solo è più leggibile, ma funziona anche più rapidamente e affidabilmente all'interno di questi vincoli. Per esempio, le operazioni batch (`Range.setValues()` invece di impostare i valori una cella alla volta) possono ridurre significativamente il tempo di esecuzione e il consumo di quote.

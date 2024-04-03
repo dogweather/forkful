@@ -14,9 +14,6 @@ title: Analysering av en dato fra en streng
 weight: 30
 ---
 
-## Hva & Hvorfor?
-Parsing av en dato fra en streng innebærer å konvertere tekstuelle representasjoner av datoer og tider til et format som kan enkelt manipuleres, lagres eller sammenlignes innenfor et Lua-program. Programmerere utfører denne oppgaven for å lette operasjoner som planlegging, logging eller alle tidsberegninger og for å bygge bro mellom menneskelesbare datoformater og strukturerte datatyper som en datamaskin kan behandle effektivt.
-
 ## Hvordan:
 Lua har ikke innebygget støtte for dato- og tidsmanipulering utover den begrensede funksjonaliteten som tilbys av `os.date` og `os.time`-funksjonene. Imidlertid kan disse benyttes for grunnleggende parsing, og for mer komplekse krav, kan `luadate`-biblioteket, et eksternt bibliotek, benyttes.
 

@@ -10,12 +10,7 @@ title: Logging
 weight: 17
 ---
 
-## What & Why?
-
-Logging in Dart refers to the process of recording various levels of information during the execution of a program. Programmers do it to monitor the software's behavior, debug issues, and analyze performance, making it easier to maintain and improve the application over time.
-
 ## How to:
-
 Dart includes a simple logging mechanism through the `dart:developer` library. For more sophisticated logging needs, programmers often turn to third-party libraries like `logger` and `log4dart`.
 
 ### Using `dart:developer`

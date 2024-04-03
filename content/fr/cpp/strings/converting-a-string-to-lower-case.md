@@ -10,9 +10,6 @@ title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Convertir une chaîne en minuscules, c'est transformer tous ses caractères en leur équivalent minuscule. On le fait pour unifier les données avant comparaison ou traitement, évitant les différences dues à la casse.
-
 ## How to (Comment faire) :
 En C++, vous pouvez transformer une chaîne en minuscules en utilisant la bibliothèque standard :
 

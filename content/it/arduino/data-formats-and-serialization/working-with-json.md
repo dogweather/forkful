@@ -13,12 +13,7 @@ title: Lavorare con JSON
 weight: 38
 ---
 
-## Cosa & Perché?
-
-JSON, o JavaScript Object Notation, è un formato leggero di interscambio di dati, rendendolo perfetto per l'archiviazione di dati o file di configurazione nei progetti Arduino. I programmatori lo utilizzano per la sua semplicità e leggibilità in vari ambienti di programmazione, inclusa Arduino, permettendo un interscambio di dati senza interruzioni con le API web o altri sistemi.
-
 ## Come fare:
-
 Per lavorare con JSON in Arduino, la libreria `ArduinoJson` è una scelta popolare grazie alla sua facilità d'uso e efficienza. Permette di analizzare le stringhe JSON, modificarle e serializzare gli oggetti di nuovo in stringhe JSON. Ecco come usarla:
 
 1. **Installa la libreria ArduinoJson**: Usa il Gestore delle Librerie nell'IDE di Arduino e installa "ArduinoJson".

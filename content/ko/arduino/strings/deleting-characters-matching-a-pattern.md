@@ -18,9 +18,6 @@ title: "\uD328\uD134\uC5D0 \uC77C\uCE58\uD558\uB294 \uBB38\uC790 \uC0AD\uC81C"
 weight: 5
 ---
 
-## What & Why? (무엇과 왜?)
-문자 패턴에 맞는 문자를 삭제하는 것은 특정한 형식이나 불필요한 데이터를 제거해 원하는 정보만 남기기 위함입니다. 프로그래머는 데이터를 깔끔하게 처리하거나 분석을 용이하게 하기 위해 이 작업을 수행합니다.
-
 ## How to: (방법)
 ```Arduino
 String removePattern(String str, String pattern) {

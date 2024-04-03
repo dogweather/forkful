@@ -14,10 +14,8 @@ title: "F\xE5 det aktuella datumet"
 weight: 29
 ---
 
-## Vad & Varför?
-I programmering är att få fram dagens datum en grundläggande uppgift som möjliggör för utvecklare att få tillgång till, visa eller manipulera det aktuella datumet inom sina applikationer. Denna funktion är avgörande för allt från loggning och tidsstämpling av händelser till beräkningar baserade på datum.
-
 ## Hur man gör:
+
 
 ### Använda Standard Kotlin
 Kotlin har inte sitt eget API för datum och tid, utan förlitar sig på Java Standardbiblioteket för denna funktionalitet. Så här kan du få fram dagens datum:

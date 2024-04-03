@@ -10,9 +10,6 @@ title: Organizing code into functions
 weight: 18
 ---
 
-## What & Why?
-Organizing code into functions is about breaking down your scripting into bite-size chunks—think functional LEGO blocks. We do it for clarity, reusability, and sanity. It makes our code neat, readable, and maintainable.
-
 ## How to:
 ```Lua
 -- Define a simple function to greet

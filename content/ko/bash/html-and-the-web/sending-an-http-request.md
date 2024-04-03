@@ -16,12 +16,7 @@ title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
 weight: 44
 ---
 
-## What & Why? (무엇과 왜?)
-
-HTTP 요청은 웹 서버에 정보를 요청하거나 전송하는 방법입니다. 프로그래머는 데이터를 검색하고, 웹 API와 상호 작용하며, 다양한 서비스와 연동하기 위해 이를 사용합니다.
-
 ## How to: (방법)
-
 Bash에서는 `curl`이라는 명령어로 HTTP 요청을 보냅니다. 간단한 GET 요청부터 시작해보겠습니다:
 
 ```Bash
@@ -51,7 +46,6 @@ curl -H "Content-Type: application/json" -d '{"key1":"value1", "key2":"value2"}'
 ```
 
 ## Deep Dive (심층 탐구)
-
 과거에는 웹 서버에 요청을 보내기 위해 복잡한 소켓 프로그래밍이 필요했습니다. `curl`은 1997년 Daniel Stenberg에 의해 개발되었으며, 커맨드 라인에서 간단하게 웹 통신를 가능하게 했습니다.
 
 대안으로는 `wget`이 있지만, 주로 파일을 다운로드하는데 쓰입니다. `curl`은 좀 더 다양한 프로토콜과 요청 타입을 지원합니다.
@@ -61,7 +55,6 @@ HTTPRequest하는 방법으로 패키지 관리 시스템이나, 가상 환경 �
 쉘 스크립트에서 HTTP 요청을 보낼 때에는 응답 체크, 에러 핸들링, 응답 데이터 파싱 등 추가적인 구현이 필요할 수 있습니다.
 
 ## See Also (추가 정보)
-
 - `curl` 공식 문서: [https://curl.se/docs/](https://curl.se/docs/)
 - HTTP 요청에 대한 자세한 설명: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
 - `wget` vs `curl`: [https://daniel.haxx.se/docs/curl-vs-wget.html](https://daniel.haxx.se/docs/curl-vs-wget.html)

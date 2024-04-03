@@ -12,9 +12,6 @@ title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---
 
-## Was & Warum?
-Das Zusammenfügen von Zeichenketten, auch "String Concatenation" genannt, ist ziemlich grundlegend: Es geht darum, zwei oder mehrere Strings zu einem einzigen zu kombinieren. Wir machen dies ständig, um dynamische Texte zu erzeugen, Pfade zu bauen, Mitteilungen für Benutzer zu generieren und so weiter.
-
 ## So geht's:
 Hier sind ein paar einfache Beispiele, wie man in C# Strings zusammenfügt:
 

@@ -14,9 +14,6 @@ title: "Interpolacja \u0142a\u0144cucha znak\xF3w"
 weight: 8
 ---
 
-## Co i Dlaczego?
-Interpolacja ciągów znaków to metoda osadzania wyrażeń wewnątrz literałów napisów. Programiści używają jej do dynamicznego wstawiania wartości do ciągów znaków, co sprawia, że kod jest bardziej czytelny i czystszy niż tradycyjna konkatenacja ciągów znaków.
-
 ## Jak to zrobić:
 W Pythonie 3.6 i nowszych można interpolować ciągi znaków używając f-stringów. Oto jak:
 

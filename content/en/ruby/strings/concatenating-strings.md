@@ -10,9 +10,6 @@ title: Concatenating strings
 weight: 3
 ---
 
-## What & Why?
-Concatenating strings is just a fancy way of saying 'sticking them together end-to-end'. Programmers do it to combine words and sentences, to build messages, or to dynamically insert values into text.
-
 ## How to:
 In Ruby, you can concatenate strings with the `+` operator or the `<<` method, which modifies the string in place. Here's how to connect the dots—or rather, the words:
 

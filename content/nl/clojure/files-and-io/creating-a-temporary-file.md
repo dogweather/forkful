@@ -13,9 +13,6 @@ title: Een tijdelijk bestand aanmaken
 weight: 21
 ---
 
-## Wat & Waarom?
-Een tijdelijk bestand maken is het proces van het creëren van een kortstondig bestand voor tussentijdse gegevensopslag. Programmeurs gebruiken ze voor dingen zoals caching, gegevensverwerking, of wanneer het beter is om de permanente opslag niet te belasten.
-
 ## Hoe:
 Clojure maakt het simpel. De `clojure.java.io` bibliotheek staat voor je klaar.
 

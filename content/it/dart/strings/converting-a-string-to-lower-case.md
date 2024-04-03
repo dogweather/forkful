@@ -13,12 +13,7 @@ title: Convertire una stringa in minuscolo
 weight: 4
 ---
 
-## Cosa & Perché?
-
-Convertire una stringa in minuscolo è un'operazione fondamentale che consiste nel trasformare tutti i caratteri di una stringa data nei loro equivalenti minuscoli. I programmatori eseguono tipicamente questa operazione per realizzare confronti che non tengano conto del maiuscolo/minuscolo o per standardizzare l'input di testo per ulteriori elaborazioni, rendendo le applicazioni più user-friendly e i dati più coerenti.
-
 ## Come fare:
-
 In Dart, puoi convertire una stringa in minuscolo utilizzando il metodo `toLowerCase()` fornito dalla classe `String`. Questo metodo restituisce una nuova stringa con tutti i caratteri maiuscoli convertiti in minuscoli. Vediamo come funziona con un semplice esempio:
 
 ```dart

@@ -11,9 +11,6 @@ title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---
 
-## Hva & Hvorfor?
-Å finne lengden på en streng betyr ganske enkelt å telle antall tegn i den. Vi gjør dette for å validere input, begrense tekst, og jobbe effektivt med data.
-
 ## Slik gjør du:
 Haskell gjør det enkelt å finne en strengs lengde med `length`-funksjonen. Her er et eksempel:
 

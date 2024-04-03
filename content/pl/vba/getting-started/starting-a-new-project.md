@@ -15,12 +15,7 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## Co i dlaczego?
-
-Rozpoczęcie nowego projektu w Visual Basic for Applications (VBA) wiąże się z konfiguracją środowiska w aplikacji hosta, takiej jak Excel, aby automatyzować zadania lub rozszerzać funkcjonalność. Programiści wkraczają na ten teren, aby wykorzystać moc VBA w dostosowywaniu i automatyzacji aplikacji Microsoft Office, tym samym usprawniając przepływy pracy i zwiększając produktywność.
-
 ## Jak to zrobić:
-
 Gdy będziesz gotowy, aby rozpocząć nowy projekt VBA, punktem wyjścia zazwyczaj jest dostęp do edytora VBA i inicjalizacja ram projektu. Przejdźmy przez kroki, korzystając z Excela jako aplikacji hosta:
 
 1. **Otwórz edytor VBA**: W Excelu naciśnij `Alt + F11`, aby uzyskać dostęp do edytora VBA.
@@ -44,7 +39,6 @@ Okno komunikatu z napisem "Hello, World!".
 5. **Zapisz swój projekt**: Przed wyjściem upewnij się, że zapisałeś swoją pracę. Jeśli twój skoroszyt Excela był wcześniej niezapisany, zostaniesz poproszony o zapisanie jako skoroszyt z włączoną obsługą makr (format pliku `.xlsm`).
 
 ## Pogłębiona analiza
-
 Visual Basic for Applications jest kamieniem węgielnym w strategiach automatyzacji Microsoftu od momentu jego wprowadzenia w 1993 roku. Pochodzący jako ewolucja swojego poprzednika, MacroBasic, VBA dostarczył bardziej solidne rozwiązanie z lepszą integracją w całym pakiecie Office. Przejście na VBA było kluczowe, oznaczając zmianę w kierunku bardziej złożonych możliwości skryptowania, które wykorzystywały moc pełnoprawnych języków programowania.
 
 Pomimo swojego wieku, VBA pozostaje rozpowszechniony we współczesnych środowiskach biurowych, głównie dzięki jego głębokiej integracji z produktami Office i obszernej bazie kodu starszego typu w wielu organizacjach. Jednak ważne jest, aby zauważyć, że dla nowszych aplikacji opartych na technologii webowej lub dla zadań wymagających większej skalowalności i integracji z aplikacjami spoza pakietu Office, języki i frameworki takie jak Python, ze swoim bogatym ekosystemem bibliotek, czy JavaScript dla skryptów Office oferują bardziej nowoczesne i wszechstronne podejście. Te alternatywy, chociaż wymagają ostrzejszej krzywej uczenia się i konfiguracji, zapewniają szerszą możliwość zastosowania oraz wsparcie dla współczesnych praktyk programistycznych, takich jak kontrola wersji i łańcuchy deweloperskie.

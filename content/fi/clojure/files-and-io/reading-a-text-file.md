@@ -10,9 +10,6 @@ title: Tekstitiedoston lukeminen
 weight: 22
 ---
 
-## What & Why?
-"Mikä ja Miksi?" Tekstitiedoston lukeminen tarkoittaa tiedon hakemista levyltä ohjelmaan. Ohjelmoijat tekevät sen datan käsittelyyn, analysointiin tai tulosten näyttämiseen.
-
 ## How to:
 "Näin teet:"
 

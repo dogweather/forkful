@@ -10,12 +10,7 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-
-Writing to a text file in Elixir is an essential skill for developers, allowing for data persistence, logging, or exporting human-readable content. Programmers accomplish this to save application state, debug information, configurations, or any data exchange between systems that prefer a ubiquitous format like text.
-
 ## How to:
-
 Elixir makes file handling straightforward with built-in modules. The primary way to write to a file is using the `File.write/2` or `File.write!/2` functions, where the former returns an `:ok` or `:error` tuple and the latter raises an error on failure. 
 
 Here's a simple example:

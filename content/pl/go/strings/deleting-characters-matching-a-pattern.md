@@ -15,12 +15,7 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## Co i dlaczego?
-
-Usuwanie znaków pasujących do określonego wzorca polega na usunięciu pewnych znaków lub sekwencji znaków ze łańcuchów tekstowych, na podstawie reguł określonych przez wzorzec (zazwyczaj za pomocą wyrażeń regularnych). Programiści często muszą wykonywać to zadanie do czyszczenia danych, przetwarzania wstępnego dla analiz, formatowania wyjścia lub po prostu manipulowania łańcuchami znaków, aby spełnić wymagania aplikacji.
-
 ## Jak to zrobić:
-
 W Go, usuwanie znaków pasujących do wzorca można efektywnie wykonać za pomocą pakietu `regexp`. Tutaj pokażemy, jak usunąć wszystkie cyfry, a następnie wszystkie znaki niealfanumeryczne z łańcucha znaków jako przykłady.
 
 1. **Usuwanie wszystkich cyfr:**
@@ -78,7 +73,6 @@ func main() {
 ```
 
 ## Dogłębna analiza
-
 Pakiet `regexp` w Go zapewnia potężny interfejs do dopasowywania wzorców i manipulacji za pomocą wyrażeń regularnych. Jego implementacja pochodzi od RE2, biblioteki wyrażeń regularnych zaprojektowanej, aby gwarantować wykonanie w czasie liniowym, unikając możliwości problemów z "katastroficznym cofaniem się" obecnych w niektórych innych silnikach regex. To czyni regex w Go stosunkowo bezpiecznym i efektywnym dla szerokiej gamy aplikacji.
 
 Chociaż pakiet `regexp` jest wszechstronnym rozwiązaniem do radzenia sobie ze wzorcami, warto zauważyć, że dla prostszych lub bardzo specyficznych manipulacji łańcuchami znaków, inne funkcje łańcucha znaków takie jak `strings.Replace()`, `strings.Trim()`, lub cięcie mogą oferować bardziej wydajne alternatywy. Wyrażenia regularne są potężnym narzędziem, ale ich względny koszt obliczeniowy oznacza, że dla operacji, które można określić bez ich użycia, eksplorowanie alternatyw biblioteki standardowej może czasami prowadzić do prostszego i bardziej wydajnego kodu.

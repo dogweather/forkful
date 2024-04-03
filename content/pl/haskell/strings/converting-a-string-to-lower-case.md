@@ -11,9 +11,6 @@ title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## What & Why? (Co i Dlaczego?)
-Konwersja ciągu znaków na małe litery to zamiana wszystkich dużych liter w tekście na ich małe odpowiedniki. Programiści robią to aby ujednolicić dane, na przykład w celach porównywania tekstu czy obsługi haseł.
-
 ## How to: (Jak to zrobić?)
 W Haskellu możesz użyć funkcji `toLower` z modułu `Data.Char`, aby przekształcić pojedynczy znak na małą literę. Aby przekształcić cały ciąg znaków, wykorzystaj funkcję `map`.
 

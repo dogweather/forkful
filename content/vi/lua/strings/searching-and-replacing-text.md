@@ -10,8 +10,6 @@ title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---
 
-## Tìm kiếm và thay thế văn bản với Lua
-
 ### Điều gì & Tại sao?
 Tìm kiếm và thay thế văn bản có nghĩa là hoán đổi các chuỗi cụ thể trong một khối văn bản với những chuỗi khác. Lập trình viên thực hiện điều này cho các nhiệm vụ như sửa lỗi, cập nhật thông tin, hoặc định dạng dữ liệu.
 

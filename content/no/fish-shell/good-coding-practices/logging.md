@@ -11,9 +11,6 @@ title: "Loggf\xF8ring"
 weight: 17
 ---
 
-## Hva og hvorfor?
-Logging er i grunn å notere ned hva applikasjonen din gjør—en slags dagbok, hvis du vil, men for kode. Programmerere gjør dette for å holde styr på de små detaljene, som statusendringer, systemhendelser og irriterende feil, og sikre at ingen ujevnheter går ubemerket forbi.
-
 ## Hvordan gjøre det:
 I Fish kan logging være så enkelt som å omdirigere standard ut- og feilstrømmer til en fil. La oss lage en loggpost for vår skripts start- og slutttider.
 

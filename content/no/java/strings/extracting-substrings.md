@@ -10,9 +10,6 @@ title: Uthenting av delstrenger
 weight: 6
 ---
 
-## Hva & Hvorfor?
-Å trekke ut substrings betyr simpelthen å hente deler av en streng. Programmerere gjør dette for å manipulere og behandle spesifikke data fra større tekstblokker.
-
 ## Hvordan:
 Her er et grunt dykk inn i substrings i Java:
 

@@ -12,12 +12,7 @@ title: Iniziare un nuovo progetto
 weight: 1
 ---
 
-## Cosa e Perché?
-
-Avviare un nuovo progetto in Dart comporta l'impostazione di un ambiente favorevole allo sviluppo efficiente, al testing e al deployment. I programmatori avviano nuovi progetti Dart per sfruttare le ottimali prestazioni di Dart e il suo robusto ecosistema, in particolare per lo sviluppo di applicazioni web e mobile con framework come Flutter.
-
 ## Come fare:
-
 1. **Installa Dart**:
    Verifica che Dart sia installato sul tuo sistema. In caso contrario, puoi scaricarlo da [https://dart.dev/get-dart](https://dart.dev/get-dart). Verifica l'installazione con:
 

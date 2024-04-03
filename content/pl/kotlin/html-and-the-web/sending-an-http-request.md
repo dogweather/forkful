@@ -11,9 +11,6 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## What & Why? (Co i dlaczego?)
-Wysyłanie żądania HTTP to proces komunikacji z serwerem – pytasz, serwer odpowiada. Programiści robią to, aby pobierać dane, wysyłać informacje lub korzystać z usług sieciowych.
-
 ## How to: (Jak to zrobić:)
 W Kotlinie najlepiej użyć biblioteki `khttp` do prostych żądań HTTP. Dajmy na to tak:
 

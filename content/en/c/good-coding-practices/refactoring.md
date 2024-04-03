@@ -12,12 +12,7 @@ title: Refactoring
 weight: 19
 ---
 
-## What & Why?
-
-Refactoring in programming involves restructuring existing code without changing its external behavior, aiming to improve nonfunctional attributes such as readability, reduce complexity, and enhance maintainability. Programmers refactor to keep the codebase clean, minimize technical debt, and make future changes easier and safer to implement.
-
 ## How to:
-
 Refactoring can involve a range of tactics from renaming variables for clarity to altering the structure of code for better modularization. Here's a simple example demonstrating how to refactor a piece of C code for better clarity and efficiency.
 
 Before Refactoring:
@@ -60,7 +55,6 @@ int main() {
 Output remains unchanged, but the functionality for swapping values has been moved to a separate function (`swap`), improving readability and reusability.
 
 ## Deep Dive
-
 The practice of refactoring code has been around as long as software development itself, evolving alongside programming paradigms and languages. In C, a language that's both powerful and fraught with opportunities for inefficiency and error due to its low-level nature, refactoring is especially crucial. It can make the difference between a codebase that's maintainable and one that's a tangled web of inefficiencies.
 
 A consideration specific to C is the balance between micro-optimizations and readability/maintainability. While it's tempting to hand-tweak C code for every last ounce of performance, such optimizations can make the code more brittle and harder to read. Therefore, it's usually better to prioritize clean, readable code and rely on the compiler's optimizer to handle performance improvements where possible.

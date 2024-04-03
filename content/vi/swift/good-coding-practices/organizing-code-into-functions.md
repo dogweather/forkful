@@ -15,9 +15,6 @@ title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---
 
-## Gì và Tại sao?
-Nhóm mã lệnh thành các hàm là việc chia nhỏ các nhiệm vụ thành các đoạn có thể tái sử dụng. Điều này làm cho mã lệnh trở nên gọn gàng, ít lỗi và dễ debug hoặc cải tiến hơn.
-
 ## Cách thực hiện:
 Hãy tưởng tượng một nhiệm vụ: tính trung bình của một mảng. Không dùng hàm, bạn sẽ đưa tất cả vào main. Dùng hàm, bạn làm như sau:
 

@@ -14,11 +14,8 @@ title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---
 
-## Co i dlaczego?
-
-Parsowanie daty z ciągu znaków to częste zadanie podczas pracy z danymi wprowadzanymi przez użytkownika lub odczytywaniem danych z plików. Polega to na konwersji danych w ciągu znaków na format daty rozpoznawany przez język programowania. W Rust, jest to kluczowe dla operacji na datach, takich jak porównania, arytmetyka czy formatowanie, i zwiększa walidację oraz integralność danych w aplikacjach.
-
 ## Jak to zrobić:
+
 
 ### Używając standardowej biblioteki Rusta (`chrono` Crate)
 Standardowa biblioteka Rusta bezpośrednio nie obejmuje parsowania daty, ale szeroko używany `chrono` crate jest solidnym rozwiązaniem do manipulacji datą i czasem. Najpierw dodaj `chrono` do swojego `Cargo.toml`:

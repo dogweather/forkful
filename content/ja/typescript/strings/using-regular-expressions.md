@@ -26,11 +26,7 @@ title: "\u6B63\u898F\u8868\u73FE\u306E\u4F7F\u7528"
 weight: 11
 ---
 
-## 何となぜ？
-正規表現、またはregexは、プログラミングにおける強力なパターンマッチング及び検索ツールです。プログラマーは、ユーザー入力の検証、テキストの検索、または文字列の操作などのタスクにregexを使用します。なぜなら、それは効率的で多様性に富んでいるからです。
-
 ## どのようにして：
-
 TypeScriptに入ってみて、一般的なタスクに対してregexがどのように使用されているか見てみましょう。
 
 ```TypeScript
@@ -53,7 +49,6 @@ console.log(month, day, year); // 出力: "April" "10" "2021"
 ```
 
 ## 深掘り
-
 1950年代に、数学者のスティーブン・クリーネは正規言語を表すモデルとして正規表現を記述しました。それは後にコンピュータサイエンスにおいて必須のものとなりました。時は流れ、現在ではテキストを扱うプログラミングにおいてregexは無くてはならないものです。
 
 regexは文字列操作のためのスイスアーミーナイフですが、それに代わるものもあります。タスクの複雑さに応じて、`includes()`、`startsWith()`、`endsWith()`といった文字列メソッドや、ライブラリによる解析がより良いこともあります。例えば、複雑なJSON文字列をregexで解析するのは悪夢です。代わりにJSONパーサーを使いましょう。
@@ -61,7 +56,6 @@ regexは文字列操作のためのスイスアーミーナイフですが、そ
 実装に関しては、JavaScriptとTypeScriptのregexはECMAScript言語仕様に基づいています。内部では、エンジンはパターンを効率的にマッチさせるために状態機械を使用しています。regex操作は特に貧弱なパターンでの使用はパフォーマンスにおいてコストがかかることがあり、"災害的バックトラッキング"に注意することが重要です。
 
 ## 参照
-
 - 正規表現についてのMDN Web Docs: [MDN Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
 - 正規表現のパターンのテストとデバッグのためのツールRegex101: [Regex101](https://regex101.com/)
 - 深い理解のための"Mastering Regular Expressions"という本: [O'Reilly](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/)

@@ -11,9 +11,6 @@ title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---
 
-## What & Why? (Co i Dlaczego?)
-Wysyłanie żądania HTTP z podstawową autentykacją to proces, gdzie serwer oczekuje loginu i hasła do wykonania akcji. Programiści robią to dla zabezpieczenia dostępu do zasobów.
-
 ## How to: (Jak to zrobić:)
 W PHP możesz użyć cURL lub context stream. Przykład z cURL:
 

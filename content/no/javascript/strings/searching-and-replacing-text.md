@@ -11,9 +11,6 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## What & Why?
-Søking og erstatting av tekst lar oss finne spesifikke ord eller mønstre og bytte dem ut med noe annet. Det sparer tid, unngår feil og automatiserer endel kjedelig jobb.
-
 ## How to:
 ```Javascript
 let tekst = "Katter er flinke, katter er søte.";

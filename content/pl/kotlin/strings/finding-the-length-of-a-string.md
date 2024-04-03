@@ -11,9 +11,6 @@ title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---
 
-## Co i dlaczego?
-Długość ciągu znaków to liczba znaków w danym tekście. Programiści muszą to wiedzieć, aby np. weryfikować czy dane wprowadzone przez użytkownika pasują do oczekiwanych formatów lub obsługiwać teksty zmiennej długości.
-
 ## Jak to zrobić:
 W Kotlinie, uzyskanie długości stringa jest banalnie proste. Oto przykłady:
 

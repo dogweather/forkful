@@ -11,9 +11,6 @@ title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---
 
-## Hva & Hvorfor?
-Utskrift av feilsøkingsdata hjelper utviklere med å forstå hva som skjer i koden deres. Det er en enkel metode for å spore variabler og applikasjonsflyt uten komplekse verktøy.
-
 ## Slik gjør du:
 ```C++
 #include <iostream>

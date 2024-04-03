@@ -10,9 +10,6 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## Hva & Hvorfor?
-Å lese en tekstfil betyr å hente den lagrede tekstdataen fra en fil. Programmerere gjør dette for å behandle, vise eller manipulere innhold som konfigurasjoner eller brukerdata.
-
 ## Hvordan:
 Elm har ikke innebygd støtte for å lese filer direkte fra filsystemet, da det primært kjøres i nettlesere og fokuserer på sikkerhet. Men, du kan bruke en filopplastningsinput for å be brukere velge en tekstfil, og så lese innholdet med fil-API-et i JavaScript. Her er en enkel måte å gjøre det på:
 

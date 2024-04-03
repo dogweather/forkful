@@ -10,11 +10,8 @@ title: Manipulering av filer med CLI-enkeltkommandoer
 weight: 31
 ---
 
-## Hva & Hvorfor?
-
-Å manipulere filer med CLI én-linjers kommandoer i PowerShell handler om å raskt endre, flytte eller hente fildata direkte fra kommandolinjen. Programmerere gjør dette for effektivitet; det er raskere enn å navigere i GUI-er eller skrive lange skript for enkle oppgaver.
-
 ## Hvordan:
+
 
 ### Lese en fil
 For å raskt vise innholdet av en fil, bruk `Get-Content`-kommandoen:
@@ -59,7 +56,6 @@ Get-ChildItem -Path .\*.log | Copy-Item -Destination C:\Logs
 ```
 
 ## Dypdykk
-
 Historisk sett ble PowerShell introdusert som et kraftigere alternativ til den tradisjonelle kommandoprompten i Windows, og tilbød uovertruffen tilgang til systemets indre og databaser. Det kombinerer kommandolinjens hastighet med fleksibiliteten til skripting, noe som gjør det til et uvurderlig verktøy for Windows-baserte systemadministratorer og utviklere.
 
 Alternativer til PowerShell for filmanipulering inkluderer Unix-baserte verktøy som `sed`, `awk`, `grep`, og `bash`-skripting for Linux og MacOS-brukere. Selv om disse verktøyene er ekstremt kraftige og har sine egne fordeler, tilbyr PowerShell dyp integrasjon med Windows-miljøer.

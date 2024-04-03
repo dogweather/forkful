@@ -10,9 +10,6 @@ title: Converting a date into a string
 weight: 28
 ---
 
-## What & Why?
-Converting a date to a string means turning it into text that represents the date. We do this to format dates for humans to read or to prepare them for storage in text formats like CSV or JSON.
-
 ## How to:
 Below are examples of how to convert a date to a string in Bash:
 

@@ -14,12 +14,7 @@ title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---
 
-## O que & Por quê?
-
-Arredondar números, um conceito fundamental na programação de computadores, envolve ajustar um número para o inteiro mais próximo ou para um número específico de casas decimais. Os programadores frequentemente realizam arredondamentos para simplificar números para a legibilidade humana ou para atender a necessidades específicas de cálculo, garantindo precisão e reduzindo a carga computacional.
-
 ## Como fazer:
-
 O Google Apps Script, sendo uma linguagem baseada em JavaScript, oferece métodos padrão para arredondar números. Aqui está uma explicação de três técnicas comumente usadas:
 
 ### Math.round()
@@ -61,7 +56,6 @@ Logger.log(preciseRound); // Resultado: 2.57
 ```
 
 ## Aprofundamento
-
 Arredondar números no Google Apps Script não desvia muito de como é feito em outros ambientes JavaScript. No entanto, compreender as diferenças nos métodos de arredondamento e o potencial para problemas aritméticos de ponto flutuante é crucial. Por exemplo, devido à forma como os computadores representam floats, nem todas as frações decimais podem ser representadas com precisão perfeita, levando a resultados de arredondamento às vezes inesperados.
 
 Historicamente, o JavaScript (e, por extensão, o Google Apps Script) lida com isso, conformando-se ao padrão IEEE 754, utilizado por muitas outras linguagens de programação para aritmética de ponto flutuante. Este padrão define como os números são arredondados, garantindo consistência em várias plataformas e idiomas.

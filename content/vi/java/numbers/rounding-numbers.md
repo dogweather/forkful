@@ -16,9 +16,6 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Điều gì & Tại sao?
-Làm tròn số có nghĩa là điều chỉnh chúng để đạt một độ chính xác chỉ định. Lập trình viên thực hiện việc này để đơn giản hóa số liệu cho dễ đọc, để đáp ứng các thông số kỹ thuật nhất định, hoặc để đảm bảo các phép tính nằm trong các giới hạn nhất định, như tránh lỗi chính xác trong tính toán số thực dấu phẩy động.
-
 ## Cách thực hiện:
 Java cung cấp nhiều cách để làm tròn số. Dưới đây là một ví dụ nhanh với `Math.round()`, `BigDecimal`, và `DecimalFormat`.
 

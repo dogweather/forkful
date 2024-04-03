@@ -11,12 +11,7 @@ title: Sending an HTTP request with basic authentication
 weight: 45
 ---
 
-## What & Why?
-
-Sending an HTTP request with basic authentication involves attaching a username and password to a request for gated web content. Programmers do this to access APIs or resources that are restricted to authorized users.
-
 ## How to:
-
 Here's how to send an HTTP request with basic auth in Swift:
 
 ```Swift
@@ -54,7 +49,6 @@ dataTask.resume()
 Output should be the data returned from the API, or an error message if something goes wrong.
 
 ## Deep Dive
-
 Back in the early web days, basic authentication was a quick way to secure resources. Its simplicity made it widely adopted despite being less secure than modern alternatives like OAuth because credentials are not encrypted, just encoded.
 
 Aside from basic auth, alternatives include digest authentication, API keys, OAuth, or JWT (JSON Web Tokens). Each comes with pros and cons around security, ease of use, and the level of protection offered.
@@ -62,7 +56,6 @@ Aside from basic auth, alternatives include digest authentication, API keys, OAu
 When sending an HTTP request with basic auth, it's best practice to ensure you're using HTTPS, so your encoded credentials are securely transmitted. Also, avoid hardcoding credentials; instead, use environment variables or secure vaults.
 
 ## See Also
-
 - [Apple's URLSession](https://developer.apple.com/documentation/foundation/urlsession)
 - [HTTP Basic Auth RFC](https://tools.ietf.org/html/rfc7617)
 - [OAuth 2.0](https://oauth.net/2/)

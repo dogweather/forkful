@@ -15,9 +15,6 @@ title: "\u4E0B\u8F7D\u7F51\u9875"
 weight: 42
 ---
 
-## What & Why? (什么 & 为什么？)
-下载网页即是从互联网获取网页内容的过程。程序员这么做通常是为了数据抓取、内容分析或自动备份。
-
 ## How to: (如何操作：)
 在Kotlin中，最直接的方式是使用`URL`和`HttpURLConnection`。
 

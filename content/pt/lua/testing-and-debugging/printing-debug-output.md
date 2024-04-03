@@ -11,9 +11,6 @@ title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---
 
-## O Que é & Por Que?
-Debug print é a prática de exibir informações no console para entender o que está acontecendo no código. Programadores usam isso para rastrear bugs ou verificar o estado das variáveis em diferentes pontos da execução do programa.
-
 ## Como Fazer:
 Aqui está um exemplo simples de como imprimir algo na tela usando Lua. A função `print` é a sua amiga para saídas rápidas de debug.
 

@@ -12,12 +12,7 @@ title: Strings samenvoegen
 weight: 3
 ---
 
-## Wat & Waarom?
-
-Stringconcatenatie in C omvat het samenvoegen van twee of meer strings achter elkaar om een nieuwe string te vormen. Programmeurs voeren deze bewerking uit om dynamisch strings te construeren tijdens runtime, essentieel voor het creëren van betekenisvolle berichten, bestandspaden, of enige data samengesteld uit verschillende stringbronnen.
-
 ## Hoe doe je dat:
-
 In C zijn strings arrays van karakters die eindigen met een null-karakter (`\0`). In tegenstelling tot in hogere programmeertalen, biedt C geen ingebouwde functie voor stringconcatenatie. In plaats daarvan gebruik je de `strcat()` of `strncat()` functies uit de `<string.h>` bibliotheek.
 
 Hier is een eenvoudig voorbeeld met `strcat()`:
@@ -60,7 +55,6 @@ int main() {
 Dit beperkt de concatenatie tot de eerste `num` karakters van de bronstring, wat helpt bufferoverlopen te voorkomen.
 
 ## Diepgaande Duik
-
 De functies `strcat()` en `strncat()` maken deel uit van de standaard C bibliotheek sinds haar oprichting, wat de laag-niveau aard van de taal weerspiegelt die handmatig beheer van strings en geheugen vereist. In tegenstelling tot veel moderne programmeertalen die strings behandelen als eersterangsobjecten met ingebouwde concatenatieoperators (zoals `+` of `.concat()`), vereist de aanpak van C een diepgaander begrip van pointers, geheugentoewijzing en potentiële valkuilen zoals bufferoverlopen.
 
 Hoewel `strcat()` en `strncat()` veel gebruikt worden, worden ze vaak bekritiseerd vanwege hun potentieel om beveiligingskwetsbaarheden te creëren als ze niet zorgvuldig worden gebruikt. Bufferoverlopen, waarbij gegevens het toegewezen geheugen overschrijden, kunnen leiden tot crashes of worden uitgebuit voor willekeurige code-uitvoering. Als gevolg hiervan richten programmeurs zich steeds meer op veiligere alternatieven, zoals `snprintf()`, dat door het beperken van het aantal karakters geschreven naar de bestemmingsstring op basis van de grootte, voorspelbaarder gedrag biedt:

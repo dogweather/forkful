@@ -11,9 +11,6 @@ title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---
 
-## What & Why?
-L'impression du débogage, c'est afficher des infos pour comprendre ce qui se passe dans le code. On le fait parce que ça aide à repérer les bugs rapidement.
-
 ## How to:
 Imaginons que vous vouliez suivre la valeur de `x` dans une boucle. Voici comment vous pourriez faire :
 

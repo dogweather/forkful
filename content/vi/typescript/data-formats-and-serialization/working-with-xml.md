@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Cái gì & Tại sao?
-Làm việc với XML có nghĩa là phân tích cú pháp, thao tác và viết dữ liệu XML bằng cách sử dụng lập trình. Các lập trình viên xử lý XML để trao đổi dữ liệu giữa các hệ thống khác nhau, cho các tệp cấu hình, hoặc khi làm việc với các tiêu chuẩn như SOAP phụ thuộc vào XML.
-
 ## Cách thực hiện:
 ```TypeScript
 import { parseString } from 'xml2js';

@@ -11,9 +11,6 @@ title: Tworzenie pliku tymczasowego
 weight: 21
 ---
 
-## What & Why? (Co i dlaczego?)
-Tworzenie pliku tymczasowego pozwala na przechowywanie danych, których nie potrzebujemy długo. Programiści używają ich do przechowywania danych tymczasowych, pisania logów czy cache'owania, a także w testach - by pracować na plikach bez ryzyka uszkodzenia prawdziwych danych.
-
 ## How to: (Jak to zrobić?)
 Użyjemy modułu `fs` w Node.js do pracy z plikami, a `os` do uzyskania ścieżki tymczasowego folderu.
 

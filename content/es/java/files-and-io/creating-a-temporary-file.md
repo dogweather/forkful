@@ -11,12 +11,7 @@ title: Creando un archivo temporal
 weight: 21
 ---
 
-## Qué y Por Qué?
-
-Crear un archivo temporal significa generar un fichero que solo se usa durante la ejecución de un programa. Los programadores lo hacen para manejar datos de forma segura y efímera, como cuando pruebas algo o manejas información que no necesitas a largo plazo.
-
 ## Cómo hacerlo:
-
 Crear un archivo temporal en Java es sencillo gracias a la clase `Files`. Aquí tienes un ejemplo:
 
 ```java
@@ -57,7 +52,6 @@ Archivo temporal borrado.
 Recuerda que los nombres y rutas del archivo varían cada vez que ejecutas el código.
 
 ## Análisis Detallado
-
 La creación de archivos temporales no es cosa nueva. En el pasado, funcionaban como una manera de evitar el desbordamiento de memoria. Hoy, con la clase `Files` de Java NIO (New Input/Output), crear archivos temporales se ha simplificado y es bastante seguro.
 
 Alternativas antigüas incluían el uso de `File.createTempFile`, parte del paquete `java.io`, pero el paquete `java.nio.file` ha probado ser una mejora significantiva en cuanto a flexibilidad y funcionalidad.
@@ -65,7 +59,6 @@ Alternativas antigüas incluían el uso de `File.createTempFile`, parte del paqu
 Una nota importante: aunque el archivo se crea de manera temporal, es tu responsabilidad eliminarlo cuando ya no es necesario para evitar la acumulación de basura en el sistema de archivos.
 
 ## Ver También
-
 Para ampliar tus conocimientos y ver más ejemplos, visita:
 
 - [Javadoc de Files](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Files.html)

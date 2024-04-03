@@ -16,9 +16,6 @@ title: Ghi log
 weight: 17
 ---
 
-## Gì & Tại Sao?
-Ghi log là quá trình ghi lại hành vi, lỗi và các thông tin quan trọng khác của ứng dụng vào một phương tiện lưu trữ lâu dài, như tệp tin hoặc cơ sở dữ liệu. Lập trình viên thực hiện điều này để theo dõi tình hình và hiệu suất của ứng dụng, để gỡ lỗi và để giữ mắt trên những gì đang diễn ra bên dưới hạ tầng trong môi trường sản xuất.
-
 ## Làm Thế Nào:
 Trong Swift, bạn có thể viết log ra bảng điều khiển với các câu lệnh in hoặc API `os.log` linh hoạt hơn, nó kết nối vào Hệ thống Ghi log Thống nhất trên các nền tảng của Apple.
 

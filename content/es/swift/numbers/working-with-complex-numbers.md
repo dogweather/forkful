@@ -11,9 +11,6 @@ title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---
 
-## Qué y Por Qué
-Los números complejos tienen una parte real y una parte imaginaria (como 3 + 4i). Los programadores los usan en Swift para tareas como el procesamiento de señales, la solución de ciertos problemas matemáticos y la simulación de la física.
-
 ## Cómo hacerlo:
 Swift no tiene soporte integrado para números complejos, pero podemos crear el nuestro:
 

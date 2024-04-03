@@ -15,9 +15,6 @@ title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---
 
-## Gì và Tại sao?
-Một shell tương tác, hay REPL (Read-Eval-Print Loop), cho phép bạn thử nghiệm mã lệnh theo thời gian thực. Các lập trình viên sử dụng nó để thí nghiệm, gỡ lỗi và học những điều tinh tế của Ruby mà không cần tạo ra các kịch bản đầy đủ.
-
 ## Làm thế nào:
 REPL của Ruby được gọi là IRB (Interactive Ruby). Hãy nhảy vào và thử Ruby ngay từ terminal của bạn:
 

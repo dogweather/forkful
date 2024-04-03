@@ -10,9 +10,6 @@ title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---
 
-## Was & Warum?
-Das Berechnen eines Datums in der Zukunft oder Vergangenheit bedeutet, zu einem gegebenen Datum eine bestimmte Zeitdauer hinzuzufügen oder abzuziehen. Programmierer nutzen das für Features wie Erinnerungen, Ablaufdaten oder Zeitplanungen.
-
 ## Anleitung:
 ```Rust
 use chrono::{Duration, Utc};

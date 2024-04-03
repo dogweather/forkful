@@ -15,14 +15,10 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## Qué y Por Qué?
-
-Escribir pruebas en JavaScript se refiere a la práctica de crear scripts automatizados que ejecutan tu código para asegurarse de que se comporte como se espera, lo que puede mejorar significativamente la fiabilidad y mantenibilidad de tus aplicaciones. Los programadores hacen esto para detectar errores temprano, facilitar la refactorización del código y asegurar que las nuevas características no rompan la funcionalidad existente.
-
 ## Cómo hacerlo:
 
-### Enfoque Nativo (usando Jest)
 
+### Enfoque Nativo (usando Jest)
 Jest es un marco de prueba popular que proporciona una API amigable para escribir pruebas unitarias en JavaScript. Requiere una configuración mínima y viene con características como funciones simuladas, temporizadores y pruebas de instantáneas.
 
 1. **Instalación**:
@@ -57,7 +53,6 @@ PASS  ./sum.test.js
 ```
 
 ### Probando Código Asíncrono
-
 Jest facilita la prueba de promesas y la sintaxis async/await:
 
 ```javascript
@@ -74,7 +69,6 @@ test('la suma asíncrona funciona', async () => {
 ```
 
 ### Usando Bibliotecas de Terceros (Mocha & Chai)
-
 Mocha es otro marco de prueba popular, a menudo utilizado con la biblioteca de aserciones Chai para pruebas más expresivas.
 
 1. **Instalación**:

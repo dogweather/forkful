@@ -11,9 +11,6 @@ title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## Quoi & Pourquoi ?
-Convertir une date en chaîne de caractères, c'est transformer une représentation de date en texte lisible. Les programmeurs le font généralement pour afficher des dates aux utilisateurs ou pour les enregistrer dans un format standardisé.
-
 ## Comment faire :
 ```Rust
 use chrono::{DateTime, Utc, Local, NaiveDateTime};

@@ -11,9 +11,6 @@ title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---
 
-## ¿Qué y por qué?
-Agrupar código en funciones consiste en descomponer tareas en bloques reutilizables. Esto hace que el código sea limpio, menos propenso a errores y más fácil de depurar o refactorizar.
-
 ## Cómo hacerlo:
 Imagina una tarea: calcular el promedio de un arreglo. Sin funciones, lo pondrías todo en el main. Con funciones, harías esto:
 

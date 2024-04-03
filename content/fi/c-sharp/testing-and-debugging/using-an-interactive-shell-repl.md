@@ -11,9 +11,6 @@ title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mitä ja miksi?
-REPL eli Lue-Arvo-Tulosta Silmukka antaa sinun kirjoittaa C#-koodia ja suorittaa sitä vuorovaikutteisesti. Ohjelmoijat käyttävät sitä nopeisiin kokeiluihin, virheenkorjaukseen tai C#:n opiskeluun ilman täydellisten projektien pystyttämisen vaivaa.
-
 ## Kuinka:
 Käynnistä REPL C#-ympäristössäsi käyttämällä C# Interactive -ikkunaa tai suorita `dotnet-script` terminaalissasi. Tässä maistiainen sen käytöstä:
 

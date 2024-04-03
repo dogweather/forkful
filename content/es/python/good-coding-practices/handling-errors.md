@@ -12,12 +12,7 @@ title: Manejo de errores
 weight: 16
 ---
 
-## ¿Qué y por qué?
-
-Manejar errores en Python (o cualquier lenguaje de programación) es esperar lo inesperado: es el arte de manejar con gracia cuando las cosas no van bien en tu código. Lo hacemos para prevenir fallos, guiar a los usuarios y hacer nuestros programas robustos y confiables.
-
 ## Cómo hacerlo:
-
 ``` Python
 # Bloque básico try-except
 try:
@@ -56,7 +51,6 @@ Ingresa un número: hola
 ```
 
 ## Inmersión Profunda
-
 Desde los albores de la programación, el manejo de errores ha sido crucial. Los enfoques tempranos eran rudimentarios, como verificar condiciones antes de cada operación riesgosa. La sintaxis `try-except` de Python proviene de un legado de manejo de excepciones en lenguajes más antiguos como C++ y Java, simplificando el proceso.
 
 Cuando intentas (`try`) un bloque de código, Python está atento a cualquier excepción. Si aparece un error, el bloque `except` lo captura. Puedes especificar sobre las excepciones que capturas o capturarlas todas con un `except` desnudo. Sin embargo, la especificación primero es el mejor enfoque: es preciso, no una red para todo.
@@ -66,7 +60,6 @@ Cuando intentas (`try`) un bloque de código, Python está atento a cualquier ex
 ¿Alternativas? Claro que las hay. Algunos lenguajes utilizan códigos de retorno en lugar de excepciones. También podrías encontrar sentencias `with` para el manejo de recursos o `assertions` que verifican condiciones mientras se desarrolla. Pero cuando hablamos de estrategias de manejo de errores sólidas, el modelo try-catch destaca por su legibilidad y estructura.
 
 ## Ver También
-
 Aquí hay algunos buenos recursos adicionales para profundizar aún más:
 
 - Documentación oficial de Python sobre errores y excepciones: [Python Docs – Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html)

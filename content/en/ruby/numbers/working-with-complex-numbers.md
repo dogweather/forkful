@@ -10,9 +10,6 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-Complex numbers, comprised of a real and an imaginary part (like 3+4i), are a staple in engineering and physics. Programmers work with them in simulations, signal processing, and solving equations that don't play nice with just real numbers.
-
 ## How to:
 Ruby makes handling complex numbers a breeze. You can create and manipulate them using the Complex class:
 

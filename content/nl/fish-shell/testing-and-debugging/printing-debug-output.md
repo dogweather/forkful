@@ -13,9 +13,6 @@ title: Debug-output afdrukken
 weight: 33
 ---
 
-## Wat & Waarom?
-Debug-output afdrukken betekent extra informatie uitspugen om je te helpen begrijpen wat je code doet. Programmeurs doen dit om bugs gemakkelijker te detecteren en op te lossen.
-
 ## Hoe te:
 Maak jezelf vertrouwd met `echo` - het Zwitserse zakmes voor output in Fish. Hier is hoe je wat debug-prints kunt toevoegen aan je shellscripts.
 

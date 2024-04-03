@@ -10,10 +10,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## What & Why? 
-"Mikä & Miksi?"
-Stringin pituuden selvittäminen tarkoittaa merkkien määrän laskemista siinä. Koodarit tekevät tämän validoidakseen syötteen, rajatakseen tekstikenttiä, tai missä tahansa, missä on tarve tietää, minkä verran dataa käsitellään.
-
 ## How to:
 "Näin tehdään:"
 Swiftissä voit selvittää stringin pituuden käyttämällä `count` ominaisuutta. Kataotaanpa esimerkki:

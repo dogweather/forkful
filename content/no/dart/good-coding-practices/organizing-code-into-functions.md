@@ -14,10 +14,9 @@ title: Organisering av kode i funksjoner
 weight: 18
 ---
 
-## Hva & hvorfor?
-Å organisere kode i funksjoner i Dart handler om å definere gjenbrukbare kodeblokker som utfører spesifikke oppgaver, typisk ved å motta inndata, behandle data og muligens returnere utdata. Programmerere gjør dette for å forbedre kodelesbarheten, redusere duplisering og lette vedlikehold, noe som til slutt fører til mer modulære og håndterbare kodebaser.
-
 ## Hvordan:
+
+
 ### Grunnleggende funksjon
 I Dart definerer du en funksjon ved å bruke `void`-nøkkelordet hvis den ikke returnerer en verdi, eller spesifiserer typen verdi den returnerer ellers. Her er en enkel funksjon som skriver ut en hilsenmelding:
 

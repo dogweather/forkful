@@ -17,11 +17,8 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---
 
-## Cái gì & Tại sao?
-
-Làm việc với CSV (Comma-Separated Values) có nghĩa là đọc và viết dữ liệu trong một định dạng văn bản đơn giản — một định dạng phổ biến và thân thiện với bảng tính. Lập trình viên sử dụng CSV vì sự đơn giản và khả năng tương thích khi trao đổi dữ liệu dạng bảng giữa các hệ thống.
-
 ## Làm thế nào
+
 
 ### Đọc File CSV
 ```C#
@@ -87,13 +84,11 @@ Dữ liệu đã được viết vào output.csv
 ```
 
 ## Tìm hiểu sâu hơn
-
 CSV đã xuất hiện từ những ngày đầu của ngành công nghiệp máy tính, tạo cầu nối giữa các hệ thống đa dạng. Nó không hoàn hảo — thiếu chuẩn mã hóa ký tự và không hỗ trợ tốt các trường nhiều dòng mà không có một trình phân tích cú pháp mạnh mẽ. Đó là nơi các định dạng như JSON và XML bước vào, cung cấp nhiều phức tạp hơn nhưng cấu trúc tốt hơn cho dữ liệu phân cấp.
 
 Ở dưới cùng, bạn thường xử lý chuỗi, hoặc sử dụng các phương thức `string` có sẵn hoặc thư viện như `CsvHelper` có thể thêm sức mạnh vào việc xử lý CSV của bạn, cung cấp nhiều tính năng hơn và xử lý tình huống ngoại lệ một cách nhẹ nhàng. Nhớ lại, không có việc xử lý CSV bản địa trong .NET, vì vậy bạn tự mình xử lý chuỗi hoặc bạn có thể chọn một thư viện bên thứ ba.
 
 ## Xem thêm
-
 Để tìm hiểu sâu hơn về việc thao tác CSV trong C#:
 - [Thư viện CsvHelper](https://joshclose.github.io/CsvHelper/)
 - [Tài liệu của Microsoft về `StreamReader`](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader)

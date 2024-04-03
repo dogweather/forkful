@@ -12,9 +12,6 @@ title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-Das Senden einer HTTP-Anfrage mit Basisauthentifizierung bedeutet, einem Server deine Identität zu bestätigen, indem du Benutzername und Passwort kodiert im Kopf der Anfrage mitschickst. Programmierer nutzen dies, um geschützte Ressourcen auf einer Website oder API abzurufen.
-
 ## Wie geht das?
 Um eine HTTP-Anfrage mit Basisauthentifizierung in Haskell zu senden, kann man die `http-client` und `base64-bytestring` Bibliotheken verwenden. Hier ist ein einfaches Beispiel, wie das aussehen könnte:
 

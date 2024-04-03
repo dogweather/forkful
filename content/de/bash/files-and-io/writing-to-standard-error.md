@@ -13,9 +13,6 @@ title: Schreiben auf Standardfehler
 weight: 25
 ---
 
-## Was & Warum?
-Das Schreiben auf den Standardfehler (stderr) in Bash bedeutet, Fehlermeldungen oder jede wichtige diagnostische Ausgabe getrennt von der Standardausgabe (stdout) zu leiten. Programmierer tun dies, um sicherzustellen, dass Fehlermeldungen leicht identifiziert, protokolliert oder sogar ignoriert werden können, was bei der Fehlersuche und den Protokollierungsprozessen hilft.
-
 ## Wie:
 In Bash verwenden Sie `>&2`, um die Ausgabe auf stderr umzuleiten. Hier ein einfaches Beispiel:
 

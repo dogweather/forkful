@@ -10,9 +10,6 @@ title: Trovare la lunghezza di una stringa
 weight: 7
 ---
 
-## What & Why?
-Determinare la lunghezza di una stringa significa scoprire quanti caratteri contiene. Lo facciamo per vari motivi: validazione del testo, iterazioni o semplicemente per soddisfare alcune logiche di business.
-
 ## How to:
 Ecco come farlo in Java. Usiamo il metodo `.length()` di un oggetto `String`:
 

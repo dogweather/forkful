@@ -17,12 +17,7 @@ title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---
 
-## Cái gì & Tại sao?
-
-Việc kiểm tra xem một thư mục có tồn tại trong Go là rất quan trọng đối với các ứng dụng tương tác với hệ thống tập tin, nhằm tránh lỗi khi cố gắng truy cập hoặc chỉnh sửa thư mục. Thao tác này rất cần thiết cho các nhiệm vụ như đảm bảo các điều kiện tiên quyết cho các hoạt động tập tin, quản lý cấu hình, và triển khai phần mềm dựa trên các cấu trúc thư mục cụ thể.
-
 ## Làm thế nào:
-
 Trong Go, gói `os` cung cấp các chức năng để tương tác với hệ điều hành, bao gồm kiểm tra nếu một thư mục tồn tại. Dưới đây là cách bạn có thể làm điều đó:
 
 ```go
@@ -66,7 +61,6 @@ Thư mục /tmp/exampleDir không tồn tại.
 Tùy thuộc vào việc `/tmp/exampleDir` có tồn tại hay không.
 
 ## Đào sâu
-
 Hàm `os.Stat` trả về một giao diện `FileInfo` và một lỗi. Nếu lỗi là loại `os.ErrNotExist`, nó có nghĩa là thư mục không tồn tại. Nếu không có lỗi, chúng ta tiếp tục kiểm tra nếu đường dẫn thực sự ám chỉ một thư mục thông qua phương thức `IsDir()` từ giao diện `FileInfo`.
 
 Phương pháp này nổi bật vì sự đơn giản và hiệu quả của nó, nhưng quan trọng là phải lưu ý rằng việc kiểm tra sự tồn tại của thư mục trước khi thực hiện các hoạt động như tạo hoặc viết có thể dẫn đến các điều kiện chạy song song trong môi trường đồng thời. Đối với nhiều trường hợp, đặc biệt trong các ứng dụng đồng thời, có thể an toàn hơn khi thử thực hiện hoạt động (ví dụ, tạo tập tin) và xử lý lỗi sau đó, thay vì kiểm tra trước.

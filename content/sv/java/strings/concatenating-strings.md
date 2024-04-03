@@ -10,9 +10,6 @@ title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---
 
-## What & Why? (Vad & Varför?)
-Att konkateniera strängar innebär att du sammanfogar dem till en. Programmerare gör detta för att skapa meddelanden, användargränssnittstexter eller bygga komplex data från små delar.
-
 ## How to (Hur man gör)
 ```java
 public class StringConcatExample {

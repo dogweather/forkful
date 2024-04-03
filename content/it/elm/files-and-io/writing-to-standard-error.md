@@ -14,12 +14,7 @@ title: Scrivere sull'errore standard
 weight: 25
 ---
 
-## Cosa & Perché?
-
-Scrivere su standard error (stderr) riguarda il reindirizzamento di messaggi di errore e diagnostica separati dall'output principale del programma, che va allo standard output (stdout). I programmatori lo fanno per rendere la gestione degli errori e la registrazione più gestibili, specialmente negli ambienti in cui la distinzione dell'output è cruciale per il debugging e il monitoraggio.
-
 ## Come fare:
-
 Elm è principalmente orientato allo sviluppo web, dove il concetto di scrivere direttamente su stderr non si applica nello stesso modo in cui lo fa negli ambienti tradizionali a riga di comando. Tuttavia, per i programmi Elm in esecuzione in Node.js o ambienti simili, l'interoperabilità con JavaScript tramite porte è l'approccio chiave per ottenere una funzionalità simile. Ecco come potresti impostarlo:
 
 Codice Elm (`Main.elm`):

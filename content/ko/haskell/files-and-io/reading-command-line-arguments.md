@@ -18,9 +18,6 @@ title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
 weight: 23
 ---
 
-## What & Why? (무엇과 왜?)
-명령줄 인수 읽기(Command line arguments reading)는 사용자가 프로그램을 시작할 때 명령줄을 통해 프로그램에 데이터를 전달하는 방법입니다. 프로그래머들은 사용자의 입력을 받아 커스터마이즈된 행동을 하기 위해 이를 사용합니다.
-
 ## How to: (방법)
 Haskell에서 명령줄 인수를 읽는 것은 `System.Environment` 모듈을 사용합니다. 간단한 예제를 보겠습니다.
 

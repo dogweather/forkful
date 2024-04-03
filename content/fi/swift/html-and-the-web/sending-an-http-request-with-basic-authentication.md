@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---
 
-## What & Why? (Mikä ja Miksi?)
-HTTP-pyyntö perusautentikaatiolla on tapa lähettää käyttäjänimi ja salasana verkon yli turvallisesti. Ohjelmoijat käyttävät tätä tapaa, kun heidän täytyy varmistaa käyttäjän oikeudet palvelimiin tai API:hin pääsyssä.
-
 ## How to: (Kuinka tehdä:)
 Swiftissä perusautentikaatio tapahtuu lisäämällä base64-koodattu "Authorization" header HTTP-pyyntöön. Tässä yksinkertainen esimerkki.
 

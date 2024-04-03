@@ -11,9 +11,6 @@ title: Calcolo di una data futura o passata
 weight: 26
 ---
 
-## What & Why?
-Calcolare una data futura o passata significa semplicemente determinare una data aggiungendo o sottraendo giorni, mesi o anni da una data di partenza. I programmatori lo fanno per gestire eventi pianificati, scadenze, rinnovi e funzionalità legate al tempo nelle applicazioni.
-
 ## How to:
 Calcolare una data futura:
 

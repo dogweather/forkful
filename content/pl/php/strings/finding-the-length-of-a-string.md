@@ -11,9 +11,6 @@ title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---
 
-## Co i dlaczego?
-Długość łańcucha znaków to po prostu liczba znaków w nim zawartych. Programiści sprawdzają tę długość by weryfikować dane wejściowe, ograniczać tekst do określonej długości czy po prostu manipulować treścią.
-
 ## Jak to zrobić:
 W PHP używamy funkcji `strlen()` do uzyskania długości łańcucha znaków. Łatwo i szybko:
 

@@ -11,9 +11,6 @@ title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---
 
-## What & Why?
-Envoyer une requête HTTP permet à votre programme d'obtenir ou d'envoyer des données sur le web. C'est essentiel pour interagir avec des API, des services web ou tout simplement pour récupérer du contenu en ligne.
-
 ## How to:
 Utiliser Python pour envoyer des requêtes HTTP est simple avec la bibliothèque `requests`. D'abord, installez-le si ce n'est pas déjà fait :
 

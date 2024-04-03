@@ -10,12 +10,7 @@ title: Generierung von Zufallszahlen
 weight: 12
 ---
 
-## Was & Warum?
-
-Die Erzeugung von Zufallszahlen in der Programmierung geht darum, nicht deterministische oder unvorhersehbare numerische Werte zu kreieren. Programmierer nutzen Zufallszahlen aus verschiedenen Gründen, beispielsweise um Unvorhersehbarkeit in Spielen zu simulieren, zufällige Stichproben aus Datensätzen auszuwählen oder für kryptografische Zwecke.
-
 ## Wie man es macht:
-
 Swift bietet eine unkomplizierte Weise, Zufallszahlen durch seine Standardbibliothek zu generieren. Hier ist, wie man es für unterschiedliche numerische Typen macht:
 
 ```Swift
@@ -35,7 +30,6 @@ print(randomBool)
 Die Beispiel-Ausgabe könnte variieren, denn schließlich haben wir es mit Zufälligkeit zu tun. Das mehrmalige Ausführen des Codes wird unterschiedliche Zahlen und Boolesche Werte liefern.
 
 ## Vertiefung
-
 Swifts Ansatz zur Zufallszahlengenerierung baut auf einem robusten und effizienten Pseudozufallszahlengenerator (PRNG) auf. Vor Swift 4.2 waren Entwickler auf externe Bibliotheken oder die Fähigkeiten der zugrundeliegenden Plattform angewiesen, was zu Inkonsistenzen über verschiedene Plattformen und Umgebungen führen konnte. Mit der Einführung von nativen APIs in Swift 4.2 wurde die Generierung von Zufallszahlen sowohl einfacher als auch konsistenter, unabhängig von der zugrundeliegenden Plattform.
 
 Es ist jedoch kritisch zu verstehen, dass der standardmäßige Zufallszahlengenerator in Swift nicht für kryptografische Zwecke geeignet ist. Für die Kryptografie sollten Entwickler das `Security` Framework auf Apple-Plattformen verwenden, das Zugang zu kryptografisch sicheren Zufallsbytes bietet. Nach meinem letzten Stand umfasst Swift keinen plattformübergreifenden kryptografischen Zufallszahlengenerator in seiner Standardbibliothek, was Entwickler auf Nicht-Apple-Plattformen dazu veranlasst, nach Drittanbieterbibliotheken für solche Bedürfnisse zu suchen.

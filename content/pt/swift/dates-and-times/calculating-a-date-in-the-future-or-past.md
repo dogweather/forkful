@@ -11,9 +11,6 @@ title: Calculando uma data no futuro ou passado
 weight: 26
 ---
 
-## O Que & Porquê?
-Calcular uma data no futuro ou no passado é simplesmente determinar um dia específico antes ou depois de uma data conhecida. Programadores fazem isso para funções como agendar eventos, calcular prazos ou verificar a validade de cupons e ofertas.
-
 ## Como Fazer:
 ```Swift
 import Foundation

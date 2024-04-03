@@ -10,9 +10,6 @@ title: Removendo aspas de uma string
 weight: 9
 ---
 
-## O Que & Por Que?
-Remover aspas de uma string significa se livrar daqueles caracteres de aspas duplas ou simples que englobam seu texto. Programadores fazem isso para limpar dados, garantir uniformidade, ou preparar strings para processamento onde as aspas são indesejadas ou podem causar erros.
-
 ## Como fazer:
 Em Clojure, strings são imutáveis, então quando falamos sobre "remover aspas", estamos realmente falando sobre criar uma nova string sem aspas. Aqui está a essência usando `clojure.string/replace`:
 

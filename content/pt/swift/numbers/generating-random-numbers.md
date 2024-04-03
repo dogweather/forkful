@@ -11,12 +11,7 @@ title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---
 
-## O Que & Porquê?
-
-Gerar números aleatórios na programação é sobre criar valores numéricos não determinísticos ou imprevisíveis. Programadores usam números aleatórios por uma variedade de motivos, como simular imprevisibilidade em jogos, selecionar amostras aleatórias de conjuntos de dados ou para fins criptográficos.
-
 ## Como fazer:
-
 Swift oferece uma maneira simples de gerar números aleatórios através de sua biblioteca padrão. Aqui está como você faz isso para diferentes tipos numéricos:
 
 ```Swift
@@ -36,7 +31,6 @@ print(randomBool)
 A saída do exemplo pode variar porque, bem, estamos lidando com aleatoriedade afinal. Executar o código várias vezes produzirá números e valores booleanos diferentes.
 
 ## Aprofundando
-
 A abordagem de Swift para a geração de números aleatórios é construída em cima de um gerador de números pseudoaleatórios (PRNG) robusto e eficiente. Antes do Swift 4.2, os desenvolvedores dependiam de bibliotecas externas ou das capacidades da plataforma subjacente, o que poderia levar a inconsistências entre diferentes plataformas e ambientes. Com a introdução de APIs nativas no Swift 4.2, gerar números aleatórios tornou-se tanto mais simples quanto mais consistente, independentemente da plataforma subjacente.
 
 No entanto, é crucial entender que o gerador de números aleatórios padrão do Swift não é adequado para fins criptográficos. Para criptografia, os desenvolvedores devem usar o framework `Security` em plataformas da Apple, que fornece acesso a bytes aleatórios de forma criptograficamente segura. Até a minha última atualização, o Swift não inclui um gerador de números aleatórios criptográficos multiplataforma em sua biblioteca padrão, levando os desenvolvedores a procurarem bibliotecas de terceiros para essas necessidades em plataformas não Apple.

@@ -11,9 +11,6 @@ title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---
 
-## Qué y Por Qué?
-Eliminar caracteres siguiendo un patrón implica usar filtros para quitar ciertos caracteres de strings de texto. Los programadores lo hacen para limpiar datos, formatear salida o para cumplir con requisitos específicos de procesamiento de texto.
-
 ## Cómo hacerlo:
 Aquí algunos ejemplos de cómo eliminar caracteres con patrones usando Bash. Asume que estás utilizando la versión más reciente.
 

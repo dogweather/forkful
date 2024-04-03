@@ -14,16 +14,10 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i dlaczego?
-
-Zaokrąglanie liczb polega na dostosowaniu wartości liczby do jej najbliższej liczby całkowitej lub do określonej liczby miejsc po przecinku. Programiści robią to z różnych powodów, takich jak poprawa czytelności, uproszczenie obliczeń, czy spełnienie specyficznych dla danej dziedziny wymagań dotyczących precyzji.
-
 ## Jak to zrobić:
-
 W języku Go nie ma wbudowanej funkcji, która bezpośrednio zaokrąglałaby liczby do określonej liczby miejsc po przecinku w pakiecie matematycznym. Jednak można osiągnąć zaokrąglenie za pomocą kombinacji funkcji dla liczb całkowitych lub zaimplementować własną funkcję dla miejsc dziesiętnych.
 
 ### Zaokrąglanie do najbliższej liczby całkowitej:
-
 Aby zaokrąglić do najbliższej liczby całkowitej, możesz użyć funkcji `math.Floor()` z dodanym 0,5 dla liczb dodatnich, i `math.Ceil()` minus 0,5 dla liczb ujemnych, w zależności od kierunku, w którym chcesz zaokrąglić.
 
 ```go
@@ -41,7 +35,6 @@ func main() {
 ```
 
 ### Zaokrąglanie do określonej liczby miejsc po przecinku:
-
 Aby zaokrąglić do określonej liczby miejsc po przecinku, można użyć własnej funkcji, w której mnożysz liczbę przez 10^n (gdzie n to liczba miejsc po przecinku), zaokrąglasz do najbliższej liczby całkowitej jak wcześniej, a następnie dzielisz przez 10^n.
 
 ```go
@@ -64,7 +57,6 @@ func main() {
 ```
 
 ## Szczegółowa analiza
-
 Zaokrąglanie liczb jest podstawową operacją w programowaniu komputerowym, związaną z historycznym wyzwaniem reprezentowania liczb rzeczywistych w systemie binarnym. Potrzeba zaokrąglania wynika z faktu, że wiele liczb rzeczywistych nie może być dokładnie reprezentowanych w binarnie, prowadząc do błędów przybliżenia.
 
 W Go podejście do zaokrąglania jest nieco manualne w porównaniu z językami, które oferują wbudowane funkcje zaokrąglania do określonych miejsc po przecinku. Mimo to, standardowa biblioteka `math` w Go dostarcza podstawowe narzędzia (takie jak `math.Floor` i `math.Ceil`), aby skonstruować dowolny mechanizm zaokrąglania wymagany przez aplikację.

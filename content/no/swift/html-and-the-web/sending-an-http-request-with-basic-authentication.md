@@ -10,9 +10,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---
 
-## Hva & Hvorfor?
-HTTP-forespørsler med grunnleggende autentisering lar klienter bevise sin identitet til serveren ved hjelp av brukernavn og passord. Programmerere bruker dette for å sikre trygg kommunikasjon når de aksesserer beskyttede ressurser.
-
 ## Hvordan:
 ```Swift
 import Foundation

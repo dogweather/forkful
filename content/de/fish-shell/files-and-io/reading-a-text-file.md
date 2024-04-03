@@ -10,9 +10,6 @@ title: Textdatei einlesen
 weight: 22
 ---
 
-## What & Why? (Was und Warum?)
-Dateien zu lesen bedeutet, den Inhalt von Textdateien zu erfassen und zu verarbeiten. Programmierer machen das, um Daten zu analysieren, Konfigurationen zu laden oder Software Outputs zu verarbeiten.
-
 ## How to: (Wie geht das?)
 Mit Fish Shell könnt ihr Textdateien mit ein paar einfachen Befehlen lesen:
 

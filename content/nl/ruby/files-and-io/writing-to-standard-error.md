@@ -14,9 +14,6 @@ title: Schrijven naar standaardfout
 weight: 25
 ---
 
-## Wat & Waarom?
-Standaardfout (`stderr`) is een stroom die los staat van standaarduitvoer (`stdout`) en wordt voornamelijk gebruikt voor het uitgeven van foutmeldingen of diagnostiek. Programmeurs gebruiken het om te voorkomen dat foutmeldingen zich mengen met reguliere programma-uitvoer, wat helpt bij zowel debugging als outputverwerking.
-
 ## Hoe doe je dat:
 In Ruby kunt je naar standaardfout schrijven met `$stderr.puts` of de verkorte vorm `STDERR.puts`. Hier is een snel voorbeeld:
 

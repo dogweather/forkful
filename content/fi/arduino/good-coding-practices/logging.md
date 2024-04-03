@@ -11,9 +11,6 @@ title: Lokitus
 weight: 17
 ---
 
-## Mikä & Miksi?
-"Lokin pitäminen" tarkoittaa tapahtumien, transaktioiden tai toimintojen kirjaamista, jotka tapahtuvat ajan kuluessa järjestelmässä. Ohjelmoijat käyttävät sitä vianetsintään, järjestelmän terveyden seurantaan, tilastojen keräämiseen tai jopa käytön valvomiseen, mikä tekee siitä välttämättömän käytännön ylläpitämään ja ymmärtämään koodin käyttäytymistä erilaisissa olosuhteissa.
-
 ## Kuinka:
 Arduino ei sisällä sisäänrakennettua lokikirjaston toimintoa, kuten jotkin muut ympäristöt, mutta voit toteuttaa peruslokin Serial-konsoliin vähällä vaivalla. Tässä on nopea esimerkki, jolla pääset alkuun:
 

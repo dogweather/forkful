@@ -12,9 +12,6 @@ title: Werken met TOML
 weight: 39
 ---
 
-## Wat & Waarom?
-Werken met TOML houdt het parsen en genereren van TOML (Tom's Obvious, Minimal Language) gegevens met Lua in. Programmeurs gebruiken TOML voor configuratiebestanden vanwege de leesbaarheid en eenvoudige syntax die makkelijk vertaalt naar een datastructuur.
-
 ## Hoe te:
 Zorg eerst dat je Lua-omgeving een TOML-parser heeft. We gebruiken `lua-toml` voor dit voorbeeld.
 

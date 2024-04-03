@@ -11,11 +11,7 @@ title: Analyse syntaxique de HTML
 weight: 43
 ---
 
-## What & Why?
-L'analyse (parsing) du HTML permet de lire et de manipuler le contenu d'une page web. Les programmeurs le font pour extraire des données, automatiser des tâches ou tester des applications.
-
 ## Comment faire :
-
 ```clojure
 (require '[enlive.core :as enlive])
 
@@ -37,7 +33,6 @@ Sortie prévue :
 ```
 
 ## Plongée profonde
-
 Historiquement, l'analyse HTML était ardue. La variabilité et la complexité du HTML rendaient les parseurs classiques insuffisants. EnLive, la bibliothèque utilisée dans notre exemple Clojure, utilise des sélecteurs à la CSS pour identifier les éléments, simplifiant ainsi le processus.
 
 Alternatives :
@@ -48,7 +43,6 @@ Détails d'implémentation :
 EnLive navigue dans le DOM (Document Object Model) pour récupérer et manipuler des éléments. L'approche consistant à utiliser des sélecteurs CSS pour identifier les zones d’intérêt rend l'outil à la fois puissant et accessible.
 
 ## Voir Aussi
-
 - Documentation de EnLive : [https://github.com/cgrand/enlive](https://github.com/cgrand/enlive)
 - Tutoriel jsoup pour les débutants : [https://jsoup.org/cookbook/](https://jsoup.org/cookbook/)
 - La documentation de Hickory : [https://github.com/davidsantiago/hickory](https://github.com/davidsantiago/hickory)

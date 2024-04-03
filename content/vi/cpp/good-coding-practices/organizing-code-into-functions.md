@@ -15,9 +15,6 @@ title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---
 
-## Cái Gì & Tại Sao?
-Chia code thành các hàm nghĩa là tách code của bạn thành các phần nhỏ hơn, có thể tái sử dụng. Chúng ta làm như vậy để tránh lặp lại, làm cho code của mình dễ đọc hơn, và đơn giản hóa việc gỡ lỗi và kiểm thử. Các hàm được sắp xếp tốt có thể giống như việc có một hộp công cụ được ghi nhãn gọn gàng, sẵn sàng sử dụng và chia sẻ.
-
 ## Làm Thế Nào:
 Hãy lấy một nhiệm vụ phổ biến: tính diện tích của một hình tròn. Thay vì viết cùng một công thức mỗi lần, chúng ta gói gọn nó vào một hàm.
 

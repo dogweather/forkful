@@ -11,9 +11,6 @@ title: Refaktoryzacja
 weight: 19
 ---
 
-## Co i dlaczego?
-Refaktoryzacja to proces restrukturyzacji istniejącego kodu komputerowego bez zmiany jego zewnętrznego zachowania. Programiści robią to, aby oczyścić bazę kodu, poprawić czytelność, możliwość utrzymania oraz przygotować podłoże pod przyszłe funkcje z minimalnym długiem technicznym.
-
 ## Jak to zrobić:
 Zacznijmy od podstawowego przykładu w Swift, gdzie mamy pewien powtarzalny kod:
 

@@ -10,9 +10,6 @@ title: Verifica dell'esistenza di una directory
 weight: 20
 ---
 
-## What & Why?
-Controllare l'esistenza di una directory significa verificare se una specifica cartella esiste nel file system. I programmatori lo fanno per evitare errori in operazioni come la lettura di file che presuppongono l'esistenza di quella directory.
-
 ## How to:
 Elm è un linguaggio orientato al front-end che non fornisce direttamente funzioni per interagire con il file system. Tuttavia, puoi comunicare con un server tramite HTTP o usare interop Javascript con `ports` per fare questo tipo di verifica. Ecco un esempio di come fare una richiesta HTTP a un server che può controllare l'esistenza di una directory:
 

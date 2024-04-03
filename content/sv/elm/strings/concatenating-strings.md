@@ -11,9 +11,6 @@ title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---
 
-## Vad & Varför?
-Konkatenering av strängar innebär att sätta ihop två eller flera textstycken till en enda sträng. Programmerare gör detta för att bygga textdata dynamiskt, exempelvis för att visa meddelanden eller kombinera användarinput.
-
 ## How to:
 ```Elm
 -- String concatenation using the (++) operator

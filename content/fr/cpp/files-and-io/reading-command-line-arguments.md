@@ -10,9 +10,6 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Lire les arguments de ligne de commande permet à vos programmes C++ d’agir sur des infos fournies au lancement. On le fait pour rendre les applis flexibles et adaptatives sans les modifier.
-
 ## How to (Comment faire)
 ```C++
 #include <iostream>

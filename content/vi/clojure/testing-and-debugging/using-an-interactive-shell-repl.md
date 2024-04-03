@@ -16,9 +16,6 @@ title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---
 
-## Là gì & Tại sao?
-REPL, hay Vòng lặp Đọc-Đánh giá-In, là một môi trường lập trình cho phép thử nghiệm động từng đoạn mã Clojure một cách đơn lẻ. Lập trình viên sử dụng nó để nhận phản hồi ngay lập tức, phát triển tuần tự và thử nghiệm nhanh chóng mà không cần đến quá trình biên dịch hay thiết lập một môi trường dự án hoàn chỉnh.
-
 ## Cách thực hiện:
 Bắt đầu bằng cách khởi chạy REPL:
 

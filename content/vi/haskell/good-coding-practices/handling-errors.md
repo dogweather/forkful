@@ -16,9 +16,6 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Cái gì và Tại sao?
-Xử lý lỗi trong lập trình là về việc quản lý những điều không mong đợi—những điều có thể đi sai. Lập trình viên làm điều này để đảm bảo rằng chương trình của họ có thể đối phó với những tình huống này một cách duyên dáng, không bị sụp đổ hoặc sản xuất kết quả sai.
-
 ## Làm thế nào:
 Haskell xử lý lỗi một cách mạnh mẽ thông qua các kiểu như `Maybe` và `Either`. Dưới đây là một cái nhìn nhanh:
 

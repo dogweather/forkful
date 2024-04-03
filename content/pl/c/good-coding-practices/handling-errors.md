@@ -13,12 +13,7 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co i dlaczego?
-
-Obsługa błędów w C polega na wykrywaniu i reagowaniu na nietypowe warunki, które pojawiają się podczas wykonania programu. Programiści robią to, aby zapobiegać błędom, awariom i nieprzewidywalnym zachowaniom, zapewniając niezawodne i wydajne funkcjonowanie oprogramowania w różnych scenariuszach.
-
 ## Jak to zrobić:
-
 C nie posiada wbudowanego wsparcia dla wyjątków, jak niektóre inne języki. Zamiast tego, opiera się na kilku konwencjonalnych strategiach obsługi błędów, takich jak zwracanie specjalnych wartości przez funkcje oraz ustawianie globalnych zmiennych, takich jak `errno`.
 
 **Zwracanie specjalnych wartości**
@@ -79,7 +74,6 @@ Błąd otwarcia pliku: Nie ma takiego pliku lub katalogu
 ```
 
 ## Dogłębna analiza
-
 Historycznie, minimalistyczna konstrukcja języka programowania C wykluczała wbudowany mechanizm obsługi wyjątków, co odzwierciedla jego pochodzenie z programowania systemowego na niskim poziomie, gdzie kluczowe są maksymalna wydajność i kontrola na poziomie sprzętowym. Zamiast tego, C przyjmuje bardziej manualne podejście do obsługi błędów, które pasuje do jego filozofii dawania programistom jak największej kontroli, nawet kosztem wygody.
 
 Chociaż to podejście jest zgodne z celami projektowymi C, może również prowadzić do zwięzłego kodu sprawdzającego błędy i potencjalnego pominięcia kontroli błędów, co nowoczesne języki adresują za pomocą strukturalnych mechanizmów obsługi wyjątków. Na przykład, wyjątki w językach takich jak Java czy C# pozwalają na scentralizowane przetwarzanie błędów, czyniąc kod czyściejszym i zarządzanie błędami bardziej bezpośrednie. Jednakże, wyjątki wprowadzają własne obciążenie i złożoność, które mogą nie być idealne dla programowania na poziomie systemowym, gdzie C błyszczy.

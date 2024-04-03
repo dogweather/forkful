@@ -9,12 +9,7 @@ title: Creating a temporary file
 weight: 21
 ---
 
-## What & Why?
-
-Creating a temporary file lets your app stash data it doesn't need forever. It's handy for when you're dealing with large data processing, caching, or when you need a scratch space that gets cleaned up automatically.
-
 ## How to:
-
 In JavaScript, most temporary file operations lean on external libraries. Here's a quick example using the `tmp` library, which you can install with `npm install tmp`.
 
 ```javascript
@@ -39,7 +34,6 @@ File path: /tmp/tmp-9Xp2nVn6hB5W.tmp
 ```
 
 ## Deep Dive
-
 Creating temporary files has a long history in computing, dating back to times when system memory was limited, and intermediate data needed a place to live. In Node.js, the `fs` module could be used to create temporary files, but it lacks built-in tmp file generation tools.
 
 Using libraries like `tmp` or `tempfile` is quite common. They create unique file names, reducing the risk of name clashes and usually handle cleanup themselves. `fs.mkdtemp` can also be useful for creating a temporary directory for placing multiple tmp files.
@@ -49,7 +43,6 @@ Regarding the internals, these libraries typically use the OS's native mechanism
 When dealing with temporary files, remember that while they're "temporary," improper handling can lead to security vulnerabilities or leftover files cluttering the system.
 
 ## See Also
-
 - [Node.js fs module](https://nodejs.org/api/fs.html) - for manual file operations.
 - [`tmp` package on npm](https://www.npmjs.com/package/tmp) - a utility for temporary files and directories.
 - [`tempfile` package on npm](https://www.npmjs.com/package/tempfile) - for creating a random temp file path.

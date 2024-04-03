@@ -10,9 +10,6 @@ title: Organizing code into functions
 weight: 18
 ---
 
-## What & Why?
-Splitting code into functions means breaking down scripts into smaller, reusable blocks that do specific tasks. It makes the code cleaner, more understandable, and easier to debug.
-
 ## How to:
 Create a simple function in Bash:
 

@@ -10,12 +10,7 @@ title: Capitalizing a string
 weight: 2
 ---
 
-## What & Why?
-
-Capitalizing a string means modifying it so the first letter is uppercase and the remainder of the string is lowercase. This is a common task in text processing, user input normalization, and data formatting to ensure consistency or to meet specific formatting criteria.
-
 ## How to:
-
 In Fish Shell, strings can be manipulated directly with built-in functions, without the need for external tools or libraries. To capitalize a string, you can combine the `string` command with subcommands.
 
 ```fish

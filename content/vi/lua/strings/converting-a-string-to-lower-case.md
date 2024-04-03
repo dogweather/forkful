@@ -16,9 +16,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---
 
-## Lý do & Tại sao?
-Chuyển đổi một chuỗi thành dạng in thường có nghĩa là thay thế tất cả các chữ cái in hoa trong chuỗi bằng các chữ cái in thường tương ứng. Lập trình viên thực hiện điều này để đảm bảo tính nhất quán, đặc biệt khi so sánh hoặc xử lý dữ liệu văn bản nơi mà trường hợp chữ không quan trọng, như đầu vào của người dùng hoặc truy vấn tìm kiếm.
-
 ## Cách thực hiện:
 Trong Lua, bạn có thể giảm bớt gánh nặng với `string.lower()`. Cho nó một chuỗi, ra là phiên bản chữ thường. Quan sát:
 

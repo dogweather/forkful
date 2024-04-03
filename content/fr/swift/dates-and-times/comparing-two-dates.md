@@ -11,12 +11,7 @@ title: Comparer deux dates
 weight: 27
 ---
 
-## What & Why? (Quoi et Pourquoi?)
-
-Comparer deux dates, c'est décider si une date est plus tôt, plus tard ou la même qu'une autre. Les programmeurs le font pour gérer les événements, les dates limites et suivre la durée.
-
 ## How to: (Comment faire : )
-
 ```Swift
 import Foundation
 
@@ -67,7 +62,6 @@ La première date est plus tôt que la deuxième.
 ```
 
 ## Deep Dive (Plongée en Profondeur)
-
 Historiquement, Swift a hérité de la gestion de la date et de l'heure de Cocoa et Objective-C, où `NSDate` était omniprésent. Dans Swift, `NSDate` est devenu `Date` et a été amélioré avec des fonctionnalités de comparaison intuitives. 
 
 Outre `Date`, le framework Foundation offre `Calendar` pour des comparaisons plus complexes, par exemple, trouver la différence entre deux dates avec des composants comme les mois ou les jours. Il y a aussi la classe `DateComponents`, qui permet de travailler avec des parties spécifiques d'une date.
@@ -75,5 +69,4 @@ Outre `Date`, le framework Foundation offre `Calendar` pour des comparaisons plu
 En considérant les détails d'implémentation, il faut être prudent avec les fuseaux horaires et les calendriers lors de la comparaison des dates, car cela peut affecter le résultat.
 
 ## See Also (Voir Aussi)
-
 - [Apple Documentation on Date](https://developer.apple.com/documentation/foundation/date)

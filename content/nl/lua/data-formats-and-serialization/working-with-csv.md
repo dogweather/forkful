@@ -13,12 +13,7 @@ title: Werken met CSV
 weight: 37
 ---
 
-## Wat & Waarom?
-
-Werken met CSV (Comma-Separated Values, ofwel door komma's gescheiden waarden) betekent het parseren en genereren van tekstgegevens die door komma's zijn begrensd. Programmeurs doen dit vanwege de eenvoud en interoperabiliteit - bijna elk systeem en elke taal ondersteunt CSV, waardoor het een voor de hand liggende keuze is voor gegevensuitwisseling.
-
 ## Hoe:
-
 Laten we CSV-bestanden lezen en schrijven met Lua. We gaan een basisvoorbeeld behandelen zonder externe bibliotheken.
 
 **Een CSV-bestand lezen:**
@@ -75,11 +70,9 @@ write_csv("output.csv", data)
 ```
 
 ## Diepere Duik
-
 De geschiedenis van CSV gaat terug tot de vroege dagen van de informatica, waar eenvoud koning was. Terwijl JSON en XML nu rijkere gegevensstructuren bieden, blijft CSV populair vanwege de leesbaarheid en het gemak waarmee het kan worden bewerkt met spreadsheetsoftware. Let op bij de implementatie voor velden met komma's, nieuwe regels of aanhalingstekens - deze moeten correct worden geciteerd en/of geëscaped.
 
 ## Zie Ook
-
 - De officiële Lua 5.4 referentiehandleiding: https://www.lua.org/manual/5.4/
 - RFC 4180, Common Format and MIME Type for Comma-Separated Values (CSV) Files: https://tools.ietf.org/html/rfc4180
 - Penlight Lua Libraries (voor geavanceerdere CSV-behandeling): https://github.com/lunarmodules/Penlight

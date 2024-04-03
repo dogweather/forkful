@@ -10,9 +10,6 @@ title: Concatenating strings
 weight: 3
 ---
 
-## What & Why?
-Concatenating strings means squishing them together end-to-end to make a new one. Programmers do it to merge messages, build commands, or just to display info neatly.
-
 ## How to:
 Let's do some string-joining! All within setup because we just want a quick look—no need for a repeat loop.
 

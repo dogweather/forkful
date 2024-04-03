@@ -11,9 +11,6 @@ title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---
 
-## O Quê e Por Quê?
-Deletar caracteres que correspondem a um padrão é basicamente filtrar texto, removendo partes específicas dele. Programadores fazem isso para limpeza de dados, validação de entrada ou simples manipulação de strings quando os dados precisam de um formato específico.
-
 ## Como fazer:
 ```lua
 local texto = "O rato roeu a roupa do rei de Roma 123."

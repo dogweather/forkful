@@ -10,9 +10,6 @@ title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---
 
-## What & Why?
-Strenglengde handler om å telle antall tegn i en tekst. Vi gjør dette for å validere inndata, bearbeide tekst, og for å limitere lengden på en output.
-
 ## How to:
 I PHP bruker vi `strlen` til å finne lengden av en streng. La oss prøve noen eksempler:
 

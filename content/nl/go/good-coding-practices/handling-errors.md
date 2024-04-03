@@ -12,12 +12,7 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-
-Foutafhandeling in Go houdt in het herkennen en reageren op foutcondities in je programma. Programmeurs doen aan foutafhandeling om ervoor te zorgen dat hun applicaties zich sierlijk kunnen herstellen van onverwachte situaties, wat leidt tot robuustere en betrouwbaardere software.
-
 ## Hoe:
-
 In Go wordt foutafhandeling expliciet beheerd met behulp van het `error` type. Functies die kunnen falen, geven een fout terug als hun laatste retourwaarde. Controleren of deze foutwaarde `nil` is, zal je vertellen of er een fout is opgetreden.
 
 ```go
@@ -62,7 +57,6 @@ Resultaat: 100
 In dit voorbeeld geeft de `Compute` functie ofwel een berekende waarde ofwel een fout terug. De aanroeper handelt de fout af door te controleren of `err` niet `nil` is.
 
 ## Diepere Duik
-
 De aanpak van Go voor foutafhandeling is bewust eenvoudig en type-veilig, en vereist expliciete controle op fouten. Dit concept staat in contrast met op uitzonderingen gebaseerde foutafhandeling, zoals gezien in talen zoals Java en Python, waar fouten worden doorgegeven langs de oproepstack tenzij gevangen door een uitzonderingshandler. Het Go-team betoogt dat het expliciet afhandelen van fouten leidt tot duidelijkere en betrouwbaardere code, omdat het programmeurs dwingt om fouten direct aan te pakken waar ze voorkomen.
 
 Echter, sommige kritieken vermelden dat dit patroon kan leiden tot uitgebreide code, vooral in complexe functies met veel foutgevoelige bewerkingen. Als reactie hierop hebben nieuwere versies van Go geavanceerdere foutafhandelingsfuncties geïntroduceerd, zoals foutomwikkeling, waardoor het gemakkelijker wordt om context aan een fout te bieden zonder de oorspronkelijke foutinformatie te verliezen. De gemeenschap heeft ook voorstellen gezien voor nieuwe foutafhandelingsmechanismen, zoals check/handle, hoewel deze tot op mijn laatste update nog onder discussie zijn.

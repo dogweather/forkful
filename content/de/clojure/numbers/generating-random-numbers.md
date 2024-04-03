@@ -10,12 +10,7 @@ title: Generierung von Zufallszahlen
 weight: 12
 ---
 
-## Was & Warum?
-
-Die Generierung von Zufallszahlen in der Programmierung dreht sich darum, Werte zu erstellen, die im Voraus logisch nicht vorhergesagt werden können. Programmierer tun dies aus verschiedenen Gründen, einschließlich der Generierung einzigartiger Identifikatoren, der Simulation von Szenarien in der Spielentwicklung oder der Auswahl zufälliger Stichproben aus Daten zur Analyse.
-
 ## Wie:
-
 In Clojure ist die Generierung von Zufallszahlen unkompliziert, und es gibt ein paar integrierte Funktionen, die sofort verwendet werden können.
 
 Um eine zufällige Gleitkommazahl zwischen 0 (einschließlich) und 1 (ausschließlich) zu generieren, kann die Funktion `rand` verwendet werden:
@@ -49,7 +44,6 @@ Diese Funktion `rand-range` gibt eine zufällige Gleitkommazahl zwischen den von
 Für Szenarien, die komplexere Verteilungen oder Folgen von Zufallszahlen benötigen, bei denen Wiederholbarkeit notwendig ist (unter Verwendung von Seeds), könnte es sein, dass Sie sich zusätzliche Bibliotheken ansehen müssen, die über das Integrierte hinausgehen.
 
 ## Tiefergehend
-
 Der zugrunde liegende Mechanismus zur Generierung von Zufallszahlen in den meisten Programmiersprachen, einschließlich Clojure, stützt sich typischerweise auf einen Pseudo-Zufallszahlengenerator (PRNG). Ein PRNG verwendet einen Algorithmus, um eine Folge von Zahlen zu produzieren, die die Eigenschaften von Zufallszahlen annähernd darstellt. Es ist erwähnenswert, dass diese, da sie algorithmisch erzeugt werden, nicht wirklich zufällig sind, aber für die meisten praktischen Zwecke ausreichend sein können.
 
 In den frühen Tagen der Informatik war die Erzeugung hochwertiger Zufallszahlen eine bedeutende Herausforderung, was zur Entwicklung verschiedener Algorithmen führte, um Zufälligkeit und Verteilung zu verbessern. Für Clojure sind die integrierten Funktionen wie `rand` und `rand-int` praktisch für den alltäglichen Gebrauch und decken ein breites Spektrum an häufigen Anwendungsfällen ab.

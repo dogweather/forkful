@@ -11,9 +11,6 @@ title: Travailler avec XML
 weight: 40
 ---
 
-## Quoi & Pourquoi ?
-Travailler avec le XML signifie analyser, créer et manipuler des données XML (eXtensible Markup Language). Les programmeurs gèrent le XML pour traiter l'échange de données structurées, la configuration et plus encore, en raison de sa nature neutre sur la plateforme.
-
 ## Comment faire :
 Voici une manière simple d'analyser le XML en utilisant la bibliothèque TinyXML-2 :
 

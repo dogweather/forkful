@@ -11,9 +11,6 @@ title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---
 
-## What & Why?
-Tilapäiset tiedostot ovat väliaikaisia tiedostoja, joita käytetään dataa käsitellessä tai tallennettaessa. Ne ovat hyödyllisiä, kun tarvitaan nopeaa, yksinkertaista tallennustilaa testaukseen tai väliaikaistietojen käsittelyyn poisheitettävästi.
-
 ## How to:
 Luodaan tilapäinen tiedosto PowerShellissa ja kirjoitetaan siihen jotain dataa.
 

@@ -14,12 +14,7 @@ title: "\xC9crire un fichier texte"
 weight: 24
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire un fichier texte en C implique de créer ou d'ouvrir un fichier en mode écriture, puis d'utiliser les fonctions d'E/S de fichier de C pour enregistrer des données textuelles. Les programmateurs font cela pour persister des données, comme des événements de journalisation, des paramètres de configuration ou du contenu généré par l'utilisateur, permettant aux applications de maintenir l'état, les préférences ou la progression de l'utilisateur à travers les sessions.
-
 ## Comment :
-
 Pour écrire du texte dans un fichier en C, vous devez principalement être familiarisé avec les fonctions `fopen()`, `fprintf()`, `fputs()` et `fclose()`. Voici un exemple simple qui démontre la création et l'écriture dans un fichier :
 
 ```c
@@ -55,7 +50,6 @@ Fichier écrit avec succès
 Après avoir exécuté ce programme, vous trouverez un fichier nommé `example.txt` dans le même répertoire, contenant le texte que vous avez écrit via `fprintf()` et `fputs()`.
 
 ## Exploration Approfondie
-
 Le concept de fichiers et de systèmes de fichiers a été fondamental pour les systèmes informatiques, leur gestion étant un aspect critique des systèmes d'exploitation. En C, la manipulation des fichiers est réalisée à l'aide d'un ensemble de fonctions de bibliothèque d'E/S standard, basées sur la philosophie de traiter les fichiers comme des flux d'octets. Cette abstraction permet une méthode simple et efficace de lecture et d'écriture dans les fichiers, bien qu'elle puisse sembler de bas niveau par rapport aux approches plus modernes disponibles dans des langues de haut niveau comme Python ou Ruby.
 
 Historiquement, ces opérations d'E/S de fichier en C ont posé les bases de la manipulation de fichiers dans de nombreux langages de programmation, offrant une interface proche du système d'exploitation avec les systèmes de gestion de fichiers. Cela offre non seulement un contrôle granulaire sur les attributs des fichiers et les opérations d'E/S, mais présente également des pièges pour les programmateurs imprudents, tels que la nécessité de gérer manuellement les ressources (c'est-à-dire, toujours fermer les fichiers) et les problèmes de tamponnage.

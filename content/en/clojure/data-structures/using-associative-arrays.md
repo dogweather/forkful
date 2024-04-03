@@ -10,12 +10,7 @@ title: Using associative arrays
 weight: 15
 ---
 
-## What & Why?
-
-Associative arrays, or hash maps, in Clojure allow you to store and retrieve data with key-value pairs. They are a go-to for managing structured data, making it quicker to access specific elements without iterating through a list.
-
 ## How to:
-
 In Clojure, creating and manipulating associative arrays (hash maps) is straightforward. Let's dive in with examples.
 
 To create a hash map:
@@ -70,7 +65,6 @@ And for conditional access, `find` returns a key-value pair if the key exists:
 ```
 
 ## Deep Dive
-
 Associative arrays in Clojure, also commonly referred to as hash maps, are incredibly versatile and efficient for managing key-value based data. They are part of Clojure's rich collection library, deeply rooted in the language's philosophy of immutability and functional programming. Unlike arrays or lists that require O(n) time complexity for accessing elements, hash maps provide near-constant time complexity for access, making them highly efficient for look-up operations.
 
 One might argue that vectors in Clojure could serve a similar purpose through indexed access, but hash maps shine when it comes to dealing with non-sequential and labeled data, where the key provides a meaningful descriptor rather than an arbitrary index.

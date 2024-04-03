@@ -13,12 +13,7 @@ title: Utilisation des tableaux associatifs
 weight: 15
 ---
 
-## Quoi & Pourquoi ?
-
-Les tableaux associatifs, ou ce que les Rustacés appellent "hash maps", sont des collections qui stockent des données en paires clé-valeur. Les programmeurs les utilisent pour une recherche rapide de données, permettant une manipulation efficace des données basée sur des clés uniques.
-
 ## Comment faire :
-
 En Rust, le type `HashMap` du module `std::collections` fournit la fonctionnalité des tableaux associatifs. Voici comment vous pouvez travailler avec eux :
 
 ```Rust
@@ -49,5 +44,4 @@ fn main() {
 ```
 
 ## Approfondissement
-
 Le `HashMap` en Rust utilise une fonction de hachage pour mapper les clés aux valeurs, ce qui permet une récupération rapide des données. Cependant, cette efficacité a un coût : les hash maps ne maintiennent pas l'ordre de leurs éléments. Cela contraste avec d'autres implémentations de tableaux associatifs, comme ceux en Python (`dict`) ou en Ruby, qui, dans les versions récentes, maintiennent l'ordre d'insertion comme une fonctionnalité. Pour les cas d'utilisation où l'ordre des paires clé-valeur est significatif, les développeurs Rust pourraient envisager d'utiliser le `BTreeMap` du module `std::collections`, qui maintient l'ordre mais peut offrir une insertion et une récupération plus lentes par rapport à `HashMap`. En fin de compte, le choix entre `HashMap` et `BTreeMap` dépend des exigences spécifiques concernant l'ordre et la performance.

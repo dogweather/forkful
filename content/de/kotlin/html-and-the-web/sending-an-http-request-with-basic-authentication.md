@@ -11,9 +11,6 @@ title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-HTTP-Anfragen mit Basic Authentication senden Nutzernamen und Passwort im Base64-codierten Format im `Authorization`-Header, um sich gegenüber einem Service zu authentifizieren. Programmierer nutzen das, um geschützte Ressourcen über eine API abzurufen oder zu manipulieren.
-
 ## So geht's:
 ```kotlin
 import java.net.HttpURLConnection

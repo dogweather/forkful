@@ -15,9 +15,6 @@ title: Aanhalingstekens uit een tekenreeks verwijderen
 weight: 9
 ---
 
-## Wat & Waarom?
-Het verwijderen van aanhalingstekens uit een string in Dart houdt in dat je de dubbele (") of enkele (') aanhalingstekens aan het begin en einde van een string wegneemt, wat nuttig is voor gegevensopruiming of het voorbereiden van strings voor verdere verwerking. Programmeurs doen dit om data-inputs te normaliseren, uniformiteit in gegevensopslag te verzekeren, of wanneer ze interface met API's die gegevens in geciteerde formaten kunnen teruggeven.
-
 ## Hoe te:
 Dart biedt eenvoudige manieren om aanhalingstekens uit een string te verwijderen met behulp van ingebouwde stringmethoden, zonder de noodzaak van externe bibliotheken.
 

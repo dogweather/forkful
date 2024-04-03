@@ -11,9 +11,6 @@ title: Sending an HTTP request with basic authentication
 weight: 45
 ---
 
-## What & Why?
-Sending an HTTP request with basic authentication in C involves crafting an HTTP request that includes an Authorization header with user credentials encoded in Base64. This is a common method for adding a simple authentication layer to HTTP requests, allowing restricted resources to be accessed programmatically.
-
 ## How to:
 To send an HTTP request with basic authentication in C, we'll need to use the libcurl library, a popular, versatile, and easy-to-use client-side URL transfer library. It handles various protocols, including HTTP and HTTPS, making our task simpler. Ensure libcurl is installed in your system before proceeding. Here's a basic example that demonstrates how to send a GET request with basic auth:
 

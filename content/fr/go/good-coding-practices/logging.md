@@ -14,12 +14,7 @@ title: Journalisation
 weight: 17
 ---
 
-## Quoi & Pourquoi ?
-
-Le journalisation dans le développement logiciel est le processus d'enregistrement d'informations sur l'exécution d'un programme, conçu pour suivre son comportement et diagnostiquer les problèmes. Les programmeurs mettent en œuvre la journalisation pour surveiller les performances du logiciel, déboguer les erreurs et garantir la sécurité et la conformité du système, en faisant un outil indispensable pour la maintenance et l'analyse des applications.
-
 ## Comment :
-
 En Go, la journalisation peut être mise en œuvre en utilisant le package de la bibliothèque standard `log`. Ce package fournit des capacités de journalisation simples, telles que l'écriture sur la sortie standard ou dans des fichiers. Commençons par un exemple de base de journalisation sur la sortie standard :
 
 ```go
@@ -85,7 +80,6 @@ JOURNAL PERSONNALISÉ : 2009/11/10 23:00:00 main.go:11: Ceci est un message de j
 Cet exemple préfixe chaque message de journal avec "JOURNAL PERSONNALISÉ : " et inclut la date, l'heure et l'emplacement du fichier source.
 
 ## Approfondissement
-
 Le package `log` de la bibliothèque standard de Go est simple et suffisant pour de nombreuses applications, mais il manque certaines des fonctionnalités plus sophistiquées trouvées dans les bibliothèques de journalisation tierces, telles que la journalisation structurée, la rotation des journaux et la journalisation basée sur le niveau. Des packages comme `zap` et `logrus` offrent ces fonctionnalités avancées et sont bien considérés dans la communauté Go pour leur performance et leur flexibilité.
 
 La journalisation structurée, par exemple, vous permet de consigner des données dans un format structuré (comme le JSON), ce qui est particulièrement utile pour les applications modernes basées sur le cloud où les journaux peuvent être analysés par divers outils ou services. `zap`, en particulier, est connu pour sa haute performance et sa faible surcharge d'allocation, le rendant adapté aux applications où la vitesse et l'efficacité sont critiques.

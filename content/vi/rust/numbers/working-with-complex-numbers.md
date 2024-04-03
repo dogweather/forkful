@@ -16,9 +16,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Cái gì & Tại sao?
-Số phức có một phần thực và một phần ảo, đóng vai trò quan trọng trong nhiều lĩnh vực như kỹ thuật, vật lý và đồ họa máy tính. Lập trình viên sử dụng chúng để giải các phương trình mà số thực thông thường không xử lý được.
-
 ## Làm thế nào:
 Rust không có hỗ trợ số phức sẵn có, nhưng các crate như `num-complex` sẽ giúp bạn. Dưới đây là cách sử dụng nó:
 

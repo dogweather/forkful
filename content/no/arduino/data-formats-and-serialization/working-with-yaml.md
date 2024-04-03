@@ -13,12 +13,7 @@ title: Arbeider med YAML
 weight: 41
 ---
 
-## Hva & Hvorfor?
-
-YAML (YAML Ain't Markup Language) er en menneskelesbar standard for serialisering av data som kan brukes for konfigurasjonsfiler, kommunikasjon mellom programmer og datalagring. Programmerere vender seg til YAML for Arduino-prosjekter for å strømlinjeforme konfigurasjonsprosessen til applikasjonene sine, for å gjøre det enklere å endre parametere uten å dykke dypt inn i koden, forbedre lesbarheten, og gjøre deling av konfigurasjon enklere.
-
 ## Hvordan:
-
 Å jobbe direkte med YAML på Arduino er ikke så rett frem som i programmeringsmiljøer på høyere nivå på grunn av begrensninger i minnet og fraværet av innebygde YAML-behandlingsbiblioteker. Imidlertid, for prosjekter som krever YAML-tolkning eller generering, innebærer en typisk tilnærming å bruke en ledsagerdatamaskin (som en Raspberry Pi) eller å konvertere YAML-filer til et mer Arduino-vennlig format (som JSON) ved hjelp av eksterne skript. For demonstrasjonsformål, la oss fokusere på den siste tilnærmingen ved hjelp av et populært bibliotek: ArduinoJson.
 
 **Steg 1:** Konverter din YAML-konfigurasjon til JSON. Du kan bruke nettbaserte verktøy eller kommandolinje-verktøy som `yq`.

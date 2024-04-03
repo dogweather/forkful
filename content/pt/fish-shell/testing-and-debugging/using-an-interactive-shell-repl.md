@@ -12,9 +12,6 @@ title: Usando um shell interativo (REPL)
 weight: 34
 ---
 
-## O Quê & Por Quê?
-REPL, ou Loop de Ler-Avaliar-Imprimir, é um ambiente de programação interativo que recebe entradas únicas do usuário, executa-as e retorna o resultado. Programadores o utilizam para obter feedback imediato, depuração e experimentação rápida com conceitos de codificação sem o excesso de compilar e executar um programa completo.
-
 ## Como fazer:
 No Fish, o shell interativo é o modo padrão quando você o inicia. Veja como ele funciona na prática:
 

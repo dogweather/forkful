@@ -11,12 +11,7 @@ title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---
 
-## Was & Warum?
-
-Beim Verketten von Strings geht es darum, sie aneinanderzureihen, um einen längeren String zu bilden. Programmierer machen das, um dynamische Texte zu erzeugen, Eingaben zu formatieren oder einfach Informationen zusammenzuführen.
-
 ## So geht’s:
-
 Im Fish Shell fügt man Strings mit einfachem Nebeneinanderstellen zusammen:
 
 ```Fish Shell
@@ -47,7 +42,6 @@ string join '' $greeting$user
 Ausgabe: `Herzlich Willkommen, Tobias`
 
 ## Deep Dive
-
 Historisch gesehen ist das Verketten von Strings eine Standardfunktion in den meisten Programmiersprachen und Shell-Skripts. Im Gegensatz zu manchen anderen Shells, die Operatoren wie `+` oder `.`, oder Funktionen wie `concat()` benötigen, macht Fish es sehr intuitiv – durch einfaches Aneinanderreihen der Strings.
 
 Alternativen im Fish Shell sind die direkte Verwendung der `echo`- oder `printf`-Befehle zum Zusammenführen der Strings:
@@ -60,7 +54,6 @@ printf "%s%s\n" "Hallo" "Welt" # printf für formatierte Ausgabe
 Hinsichtlich der Implementierung, durch den Wegfall von Konkatenierungsoperatoren, vermeidet Fish potenzielle Fehlerquellen und erhöht die Lesbarkeit des Codes.
 
 ## Siehe auch
-
 - Die offizielle Fish-Shell-Dokumentation: [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
 - Fish Shell Tutorial für Anfänger: [Fish Shell für Anfänger](https://fishshell.com/docs/current/tutorial.html)
 - Ein umfassender Leitfaden zu `string` Befehlen in Fish: [Fish Shell String Commands](https://fishshell.com/docs/current/cmds/string.html)

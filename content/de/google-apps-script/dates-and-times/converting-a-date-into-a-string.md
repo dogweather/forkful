@@ -13,12 +13,7 @@ title: Ein Datum in einen String umwandeln
 weight: 28
 ---
 
-## Was & Warum?
-
-Die Umwandlung von Daten in Zeichenketten ist eine grundlegende Aufgabe, die es Programmierern ermöglicht, Datumsinformationen in einem für Menschen lesbaren Format zu manipulieren und anzuzeigen. Dies ist entscheidend für die Erstellung von Benutzeroberflächen, die Generierung von Berichten oder das Protokollieren von Informationen in mit Google Apps Script entwickelten Anwendungen.
-
 ## Wie:
-
 Google Apps Script, basierend auf JavaScript, ermöglicht mehrere Methoden, um die Umwandlung von Daten in Zeichenketten zu erreichen. Unten sind einige Beispiele, die verschiedene Ansätze veranschaulichen:
 
 ### Verwendung der `toString()` Methode:
@@ -52,7 +47,6 @@ Logger.log(formattedDate); // Ausgabe: "2023-04-05"
 Diese Methode ist besonders leistungsfähig für die Erstellung von Daten in Formaten, die lokal spezifisch sind oder für spezifische Anwendungsanforderungen geeignet sind.
 
 ## Vertiefung
-
 Die Notwendigkeit, Daten in Zeichenketten umzuwandeln, ist nicht einzigartig für Google Apps Script; sie ist in allen Programmiersprachen verbreitet. Jedoch bietet der Ansatz von Google Apps Script, der von JavaScript geerbt wurde, eine flexible Menge an Optionen, die auf webbasiertes Scripting ausgerichtet sind. `Utilities.formatDate()` sticht hervor, indem es die Komplexitäten der Arbeit mit Zeitzonen anerkennt – eine Herausforderung, die oft übersehen wird.
 
 Historisch gesehen war die Handhabung von Daten und Zeiten eine Quelle von Fehlern und Komplexität in der Softwareentwicklung, hauptsächlich aufgrund von Unterschieden in Zeitzonen und Formaten. Die Einführung von `Utilities.formatDate()` in Google Apps Script ist ein Hinweis auf die Standardisierung von Datum-Zeit-Manipulationen, insbesondere im Kontext der weltweit genutzten Produktreihe von Google.

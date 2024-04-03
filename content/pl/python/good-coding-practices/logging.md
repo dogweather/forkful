@@ -12,9 +12,6 @@ title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---
 
-## Co i dlaczego?
-Logowanie to proces rejestrowania zdarzeń aplikacji, podczas działania programu, dostarczając ślad okruszków do analizy post mortem oraz monitorowania w czasie rzeczywistym. Programiści robią to, ponieważ pomaga to w debugowaniu problemów, monitorowaniu wydajności oraz śledzeniu działań użytkowników dla celów bezpieczeństwa i analizy.
-
 ## Jak to zrobić:
 Python posiada wbudowany moduł do logowania. Oto podstawowa konfiguracja:
 ```Python

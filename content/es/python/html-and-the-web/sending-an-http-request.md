@@ -9,9 +9,6 @@ title: Enviando una solicitud http
 weight: 44
 ---
 
-## What & Why? (Qué y Por Qué?)
-Enviar una solicitud HTTP significa pedirle algo a un servidor web. Programadores hacen esto para interactuar con APIs, descargar archivos o comunicarse con otros servicios web.
-
 ## How to: (Cómo hacerlo:)
 ```Python
 import requests
@@ -34,6 +31,7 @@ Output:
   'body': 'quia et suscipit\nsuscipit recusandae consequuntur expedita et cum... [truncated output]'
 }
 ```
+
 ## Deep Dive (Buceo Profundo)
 El concepto de enviar solicitudes HTTP comenzó poco después de la creación de la web. Alternativas a `requests` incluyen las bibliotecas `http.client` en la biblioteca estándar de Python o `aiohttp` para asincronía. `Requests` maneja muchos detalles del proceso de la solicitud, como codificación de parámetros, manejo de cookies, y más, facilitando la vida a los desarrolladores.
 

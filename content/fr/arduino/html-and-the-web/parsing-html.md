@@ -12,12 +12,7 @@ title: Analyse Syntaxique du HTML
 weight: 43
 ---
 
-## Quoi & Pourquoi ?
-
-L'analyse du HTML dans les projets Arduino consiste à extraire des informations des pages Web. Les programmeurs font cela pour permettre à leurs dispositifs Arduino d'interagir avec Internet, collectant des données depuis des sites web pour des objectifs allant de l'automatisation domestique à la surveillance environnementale.
-
 ## Comment faire :
-
 L'analyse du HTML sur Arduino exige généralement des bibliothèques à empreinte minimale en raison des ressources limitées de l'appareil. Un choix populaire pour le web scraping et l'analyse est l'utilisation des bibliothèques `ESP8266HTTPClient` et `ESP8266WiFi` pour ESP8266, ou leurs équivalents ESP32, compte tenu de leur support natif pour les capacités Wi-Fi et les protocoles HTTP. Voici un exemple de base pour récupérer et analyser le HTML, en supposant que vous travaillez avec un ESP8266 ou ESP32 :
 
 D'abord, incluez les bibliothèques nécessaires :

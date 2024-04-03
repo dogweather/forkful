@@ -12,12 +12,7 @@ title: Gestione degli errori
 weight: 16
 ---
 
-## Cosa e perché?
-
-Gestire gli errori in Python (o in qualsiasi linguaggio di programmazione) significa aspettarsi l'inaspettato – è l'arte di gestire con eleganza quando le cose vanno storte nel tuo codice. Lo facciamo per prevenire i crash, guidare gli utenti e rendere i nostri programmi robusti e affidabili.
-
 ## Come fare:
-
 ``` Python
 # Blocco try-except di base
 try:
@@ -56,7 +51,6 @@ Questo non è un numero!
 ```
 
 ## Approfondimento
-
 Dall'alba della programmazione, la gestione degli errori è stata cruciale. I primi approcci erano rudimentali, come verificare le condizioni prima di ogni operazione a rischio. La sintassi `try-except` di Python deriva da una tradizione di gestione delle eccezioni in linguaggi più vecchi come C++ e Java, semplificando il processo.
 
 Quando provi un blocco di codice con `try`, Python è in cerca di eventuali eccezioni. Se compare un errore, il blocco `except` lo intercetta. Puoi essere specifico sulle eccezioni che catturi o catturarle tutte con un `except` generico. Tuttavia, essere specifici fin dall'inizio è il metodo migliore – è preciso, non una rete a strascico.
@@ -66,7 +60,6 @@ Quando provi un blocco di codice con `try`, Python è in cerca di eventuali ecce
 Alternative? Certo che ci sono. Alcuni linguaggi utilizzano codici di ritorno invece delle eccezioni. Potresti anche imbatterti in istruzioni `with` per la gestione delle risorse o `assertions` che verificano le condizioni durante lo sviluppo. Ma quando parliamo di strategie solide per la gestione degli errori, il modello try-catch si distingue per la sua leggibilità e struttura.
 
 ## Vedi anche
-
 Ecco alcune buone risorse aggiuntive per approfondire ulteriormente:
 
 - Documentazione ufficiale di Python sugli errori e le eccezioni: [Python Docs – Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html)

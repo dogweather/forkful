@@ -10,10 +10,9 @@ title: Debug-Ausgaben drucken
 weight: 33
 ---
 
-## Was & Warum?
-Drucken von Debug-Informationen bedeutet, Zwischenergebnisse oder Hinweise während der Programmlaufzeit auszugeben. Entwickler nutzen das, um Fehler zu finden und den Programmfluss zu verstehen.
-
 ## Anleitung:
+
+
 ### Einfache Ausgabe mit `println`:
 ```Clojure
 (println "Das ist ein Debug-Wert:" (+ 2 2))

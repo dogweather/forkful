@@ -12,12 +12,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mitä & Miksi?
-
-Assosiatiiviset taulukot, tunnetaan Go:ssa nimellä mapit, mahdollistavat avain-arvo parien tallentamisen, missä jokainen uniikki avain mappautuu arvoon. Ohjelmoijat käyttävät mappeja tehokkaaseen datan hakemiseen, muokkaamiseen ja elementtikokoelman ylläpitämiseen, joka voidaan nopeasti hakea käyttäen uniikkeja avaimia.
-
 ## Kuinka:
-
 Mapin luominen ja alustaminen Go:ssa voidaan tehdä monilla eri tavoilla. Tässä on perusesimerkki, jolla pääset alkuun:
 
 ```go
@@ -72,7 +67,6 @@ for color, hex := range colors {
 Muista, Go:n mapit ovat järjestämättömiä. Iteraation järjestystä ei taata.
 
 ## Syväsukellus
-
 Go:ssa mapit on toteutettu hajautustauluina. Jokainen merkintä mapissa koostuu kahdesta osasta: avaimesta ja arvosta. Avain hajautetaan tallentaakseen merkinnän, mikä mahdollistaa vakioaikaiset operaatiot pienelle datamäärälle ja keskimääräisen aikavaativuuden O(1) asianmukaisella hajautuksella, joka voi heikentyä O(n):ksi pahimmassa tapauksessa monien hajautusyhteentörmäysten kanssa.
 
 Merkittävä huomio uusille Go-ohjelmoijille on, että map-tyypit ovat viitetyyppejä. Tämä tarkoittaa, kun passaat mapin funktioon, kaikki funktiossa tehdyt muutokset mapissa ovat näkyvissä kutsujalle. Tämä on erilaista esimerkiksi structin passaamisesta funktioon, missä struct kopioidaan, ellei sitä passata pointerin avulla.

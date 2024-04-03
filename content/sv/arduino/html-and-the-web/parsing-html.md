@@ -13,12 +13,7 @@ title: Tolka HTML
 weight: 43
 ---
 
-## Vad & Varför?
-
-Att tolka HTML i Arduino-projekt handlar om att extrahera information från webbsidor. Programmerare gör detta för att möjliggöra för deras Arduino-enheter att interagera med internet, samla in data från webbplatser för ändamål som sträcker sig från hemautomation till miljöövervakning.
-
 ## Hur man gör:
-
 Att tolka HTML på Arduino kräver vanligtvis bibliotek med minimalt fotavtryck på grund av begränsade enhetsresurser. Ett populärt val för webbskrapning och tolkning är att använda `ESP8266HTTPClient` och `ESP8266WiFi` biblioteken för ESP8266, eller deras motsvarigheter för ESP32, med tanke på deras inbyggda stöd för Wi-Fi-förmågor och HTTP-protokoll. Här är ett grundläggande exempel på att hämta och tolka HTML, med antagandet att du arbetar med en ESP8266 eller ESP32:
 
 Först, inkludera de nödvändiga biblioteken:

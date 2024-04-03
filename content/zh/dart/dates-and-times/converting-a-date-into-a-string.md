@@ -24,16 +24,10 @@ title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
 weight: 28
 ---
 
-## 什么及为什么？
-
-在Dart中，将日期转换为字符串是一个常见任务，当您需要以易于阅读的格式显示日期和时间信息，或者打算序列化数据以便存储或传输时，此操作就显得尤为重要。这个过程允许以一种易于理解且可根据用例定制的格式，轻松表示和操作日期时间值。
-
 ## 如何操作：
-
 Dart提供了用于处理日期和时间的`DateTime`类，以及用于格式化的`intl`包。首先，确保通过在`pubspec.yaml`文件中添加`intl: ^0.17.0`（或最新版本）来包含`intl`包。
 
 ### 使用Dart的核心库
-
 ```dart
 DateTime now = DateTime.now();
 String formattedDate = "${now.year}-${now.month}-${now.day}";
@@ -43,7 +37,6 @@ print(formattedDate); // 输出：2023-4-12（例如，这取决于当前日期�
 此示例直接从`DateTime`的属性构造字符串。
 
 ### 使用`intl`包
-
 首先，导入包：
 
 ```dart

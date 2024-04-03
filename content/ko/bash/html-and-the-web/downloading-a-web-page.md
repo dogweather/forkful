@@ -18,10 +18,9 @@ title: "\uC6F9 \uD398\uC774\uC9C0 \uB2E4\uC6B4\uB85C\uB4DC\uD558\uAE30"
 weight: 42
 ---
 
-## What & Why? (무엇이며 왜?)
-웹 페이지를 다운로드한다는 건 해당 페이지의 내용을 인터넷에서 당신의 컴퓨터로 가져오는 것입니다. 프로그래머는 자동화된 데이터 수집, 콘텐츠 백업, 또는 웹 애플리케이션 테스팅을 위해 이 작업을 수행합니다.
-
 ## How to (어떻게):
+
+
 ### curl을 사용하는 방법:
 ```Bash
 curl http://example.com -o example.html

@@ -10,12 +10,7 @@ title: Working with TOML
 weight: 39
 ---
 
-## What & Why?
-
-TOML, which stands for Tom's Obvious, Minimal Language, is a configuration file format that's easy to read due to its clear semantics. Programmers often use it for configuration files in applications because it's straightforward and human-readable, making the management of application settings and configurations seamless across different environments.
-
 ## How to:
-
 Since Google Apps Script is essentially JavaScript with access to Google's suite of apps, working with TOML directly within Google Apps Script requires a bit of ingenuity. Google Apps Script doesn't natively support TOML parsing, but you can leverage JavaScript libraries or write a simple parser for basic needs.
 
 Let's parse a simple TOML configuration string as an example:
@@ -70,7 +65,6 @@ Sample output from the `console.log` would resemble a JSON object, making it eas
 ```
 
 ## Deep Dive
-
 TOML was created by Tom Preston-Werner, one of the founders of GitHub, to be more human-friendly than JSON for configuration files while retaining the ability to be unambiguously parsed. It aims to be as simple as possible, a goal that aligns nicely with the ethos of many development projects striving for simplicity and readability in their codebases.
 
 In the context of Google Apps Script, using TOML can introduce some overhead, given the lack of direct support and the necessity to parse it manually or through third-party libraries. For smaller projects or those not deeply integrated into Google's ecosystem, alternatives such as JSON or even simple key-value pair structures in script properties could suffice and be more straightforward to implement. However, for applications that prioritize human-friendly configuration files and are already committed to TOML, integrating TOML parsing through custom scripts adds a useful layer of flexibility and maintainability without departing from the preferred configuration paradigms.

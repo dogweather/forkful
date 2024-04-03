@@ -12,9 +12,6 @@ title: Den aktuellen Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-Das Abrufen des aktuellen Datums in Bash erfordert die Verwendung von integrierten Befehlen, um das Datum und die Uhrzeit in verschiedenen Formaten anzuzeigen. Programmierer nutzen diese Funktionalität für Aufgaben wie das Zeitstempeln von Logs, das Planen von Aufgaben oder einfach als Teil ihrer Systeminformations-Skripte, um nachzuverfolgen, wann Aktionen durchgeführt wurden.
-
 ## Wie geht das:
 In Bash ist der Befehl `date` Ihr primäres Werkzeug, um das aktuelle Datum und die Uhrzeit zu erhalten. Hier sind einige Beispiele, wie man ihn verwendet:
 

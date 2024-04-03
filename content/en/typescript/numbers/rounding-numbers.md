@@ -9,9 +9,6 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-Rounding numbers is trimming a number to a specific precision. Programmers do it to control numerical output for readability, display purposes, or when specific precision is required after operations that yield floating-point results.
-
 ## How to:
 Rounding in TypeScript can be done using several methods. Here's a quick run-through:
 

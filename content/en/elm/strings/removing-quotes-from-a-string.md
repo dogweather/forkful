@@ -10,9 +10,6 @@ title: Removing quotes from a string
 weight: 9
 ---
 
-## What & Why?
-Removing quotes from a string means stripping away those extra double or single quotation marks that you don't actually need in the processed text. Programmers do this to sanitize input, prepare data for storage, or make the output more human-readable when quotes are not necessary for the given context.
-
 ## How to:
 In Elm, you can use the `String` functions to manipulate strings, such as removing quotes. Here's a straightforward way to do it:
 

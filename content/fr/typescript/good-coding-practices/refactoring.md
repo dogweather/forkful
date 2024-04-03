@@ -10,9 +10,6 @@ title: Remaniement de code
 weight: 19
 ---
 
-## Quoi et Pourquoi ?
-Le refactoring est le processus de restructuration du code informatique existant sans en changer le comportement externe. Les programmeurs le font pour rendre le code plus propre, plus maintenable, et pour réduire la complexité, ce qui le rend plus facile à comprendre pour quelqu'un qui se plonge dedans pour la première fois.
-
 ## Comment faire :
 Considérez une fonction TypeScript qui a connu des jours meilleurs - elle est un peu en désordre et pourrait bénéficier d'un peu d'attention et de soins :
 

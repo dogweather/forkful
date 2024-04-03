@@ -12,12 +12,7 @@ title: Skrive en tekstfil
 weight: 24
 ---
 
-## Hva & Hvorfor?
-
-Å skrive til en tekstfil i Elixir er en essensiell ferdighet for utviklere, som tillater dataoppbevaring, logging, eller eksportering av menneskelesbart innhold. Programmerere oppnår dette for å lagre applikasjonstilstand, feilsøkingsinformasjon, konfigurasjoner, eller enhver datautveksling mellom systemer som foretrekker et allestedsnærværende format som tekst.
-
 ## Hvordan:
-
 Elixir gjør filhåndtering enkelt med innebygde moduler. Den primære måten å skrive til en fil på er ved å bruke funksjonene `File.write/2` eller `File.write!/2`, hvor den første returnerer en `:ok` eller `:error` tuple og den andre utløser en feil ved mislykket forsøk.
 
 Her er et enkelt eksempel:

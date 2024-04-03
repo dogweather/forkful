@@ -16,9 +16,6 @@ title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---
 
-## Điều gì và Tại sao?
-Bắt đầu một dự án PHP mới có nghĩa là thiết lập một nền móng để xây dựng ứng dụng web hoặc script của bạn. Chúng ta làm điều này để bắt đầu từ đầu, cấu trúc hóa ý tưởng của chúng ta vào mã lệnh và giải quyết vấn đề mới.
-
 ## Cách thực hiện:
 Khởi động dự án của bạn bằng cách chọn một cấu trúc. Composer là bạn của bạn ở đây. Chạy lệnh này:
 

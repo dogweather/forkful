@@ -11,9 +11,6 @@ title: Tekstitiedoston lukeminen
 weight: 22
 ---
 
-## Mitä & Miksi?
-Rustissa tekstitiedoston lukeminen tarkoittaa tiedoston sisällön saattamista ohjelman käyttöön. Ohjelmoijat lukevat tiedostoja, koska niistä saadaan tärkeää dataa, kuten asetuksia, käyttäjätietoja tai resursseja.
-
 ## Miten:
 ```Rust
 use std::fs::File;

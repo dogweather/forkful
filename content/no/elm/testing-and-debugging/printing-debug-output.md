@@ -11,9 +11,6 @@ title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---
 
-## Hva & Hvorfor?
-Debug-utskrift er å kaste ut data til konsollen for å spore hva programmet ditt gjør. Programmerere gjør dette for å forstå feil og forbedre kodeflyten.
-
 ## Hvordan:
 I Elm, bruk `Debug.log` for å skrive ut vid debug-info i konsollen. Pass på, den er ment for lokalt arbeid – ikke for produksjon!
 

@@ -12,12 +12,7 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## What & Why? - Co i dlaczego?
-
-Porównywanie dwóch dat pozwala zrozumieć, która z nich wystąpiła wcześniej, czy są identyczne, albo ile czasu minęło między nimi. Programiści robią to do zarządzania harmonogramami, kontroli zależności czasowych lub po prostu do logowania i monitorowania zdarzeń.
-
 ## How to: - Jak to zrobić:
-
 ```Bash
 # Porównanie dwóch dat
 date1="2023-04-01"
@@ -47,7 +42,6 @@ Różnica między datami to 9 dni.
 ```
 
 ## Deep Dive - W głąb tematu:
-
 Historia poleceń związanych z datą w systemach uniksowych sięga lat 70. Unix używał "czasu epoki", zaczynając liczyć od 1 stycznia 1970 roku. Bash, jako powłoka, przyjął tę konwencję. Alternatywnie, możemy użyć `dateutils` lub `GNU coreutils` dla zaawansowanych operacji z datami w Bashu.
 
 Dla większej precyzji, możemy operować na sekundach, minutach, godzinach. Ważne jest też, że różne systemy mogą używać różnych stref czasowych, a porównywanie dat może się skomplikować, gdy musimy je uwzględnić.
@@ -55,7 +49,6 @@ Dla większej precyzji, możemy operować na sekundach, minutach, godzinach. Wa�
 Warto również zwrócić uwagę, że składnia `date` się różni między systemami (np. MacOS a Linux) - na MacOS zamiast `-d` należy użyć `'-v'`.
 
 ## See Also - Zobacz również:
-
 - `man date` – manual dla komendy date
 - [Bash Date Command](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html) – dokumentacja komendy date GNU
 - [Advanced Bash-Scripting Guide](http://www.tldp.org/LDP/abs/html/dates.html) – poradnik skryptowania w Bashu z rozdziałem o datach

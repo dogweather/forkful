@@ -9,9 +9,6 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## Hva & Hvorfor?
-Nedlasting av en nettside betyr at du henter ned HTML innholdet fra en nettadresse. Programmerere gjør dette for å bearbeide data, skrape informasjon, eller sjekke nettsidens tilgjengelighet.
-
 ## Hvordan:
 For å laste ned en nettside i C#, kan du bruke `HttpClient`. Her er en kjapp og skitten måte å gjøre det på:
 

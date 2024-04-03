@@ -10,9 +10,6 @@ title: Datum in einen String umwandeln
 weight: 28
 ---
 
-## What & Why?
-Das Umwandeln eines Datums in einen String ermöglicht es uns, Datumsangaben in einem lesbaren Format zu repräsentieren. Wir machen das für die Benutzerfreundlichkeit, Archivierung und Datenverarbeitung.
-
 ## How to:
 Clojure bietet `clj-time`, eine mächtige Bibliothek zur Datums- und Zeitmanipulation. Hier ist ein einfaches Beispiel, wie man ein Datum in einen String konvertiert:
 

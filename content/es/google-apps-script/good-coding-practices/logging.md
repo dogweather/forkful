@@ -13,12 +13,7 @@ title: "Registro de Informaci\xF3n"
 weight: 17
 ---
 
-## ¿Qué y por qué?
-
-El registro (logging) en programación implica grabar eventos, errores u ocurrencias notables durante el tiempo de ejecución. Los programadores lo hacen para depurar problemas, monitorear el rendimiento y mantener un registro de los datos operativos, lo que es fundamental para mantener y comprender el comportamiento del software en producción.
-
 ## Cómo hacerlo:
-
 En Google Apps Script, el registro se puede realizar utilizando varios métodos, como la clase `Logger` y `console.log()`. La clase Logger es la forma tradicional, adecuada para la depuración simple y fines de desarrollo. Con las actualizaciones recientes, `console.log()` ofrece más flexibilidad e integración con Stackdriver Logging, proporcionando una solución más robusta para monitorear tus Apps Scripts en Google Cloud Platform.
 
 **Usando Logger:**
@@ -65,7 +60,6 @@ Registrando un objeto: {name: "Jane", role: "Desarrollador"}
 Al pasar a `console.log()` para aplicaciones complejas, los desarrolladores pueden analizar y parsear registros de manera eficiente usando los poderosos filtros y herramientas proporcionados por GCP, lo cual no es tan directo con la clase Logger tradicional.
 
 ## Análisis profundo:
-
 El registro en Google Apps Script ha evolucionado significativamente. Inicialmente, la clase `Logger` era el método principal para que los desarrolladores depuraran sus scripts. Es simple y suficiente para scripts básicos, pero carece de las capacidades necesarias para aplicaciones modernas en la nube, como buscar registros o analizar tendencias de registros a lo largo del tiempo.
 
 La introducción de `console.log()` cerró esta brecha al integrar el registro de Google Apps Script con Stackdriver Logging de Google Cloud (ahora llamado Suite de Operaciones), proporcionando una plataforma centralizada para el registro, monitoreo y depuración de aplicaciones. Esto no solo permitió el registro a gran escala, sino que también abrió características avanzadas de gestión de registros como métricas basadas en registros, análisis de registros en tiempo real e integración con otros servicios de Google Cloud.

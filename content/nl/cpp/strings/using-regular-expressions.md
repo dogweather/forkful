@@ -12,12 +12,7 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-
-Reguliere expressies zijn patronen die worden gebruikt om karaktercombinaties in tekst te matchen. Programmeurs gebruiken ze voor taken zoals validatie, zoeken en tekstmanipulatie vanwege hun kracht en flexibiliteit.
-
 ## Hoe te:
-
 Om reguliere expressies in C++ te gebruiken, moet je de `<regex>` bibliotheek includeren. Hier is hoe je tekst matcht, zoekt en vervangt:
 
 ```cpp
@@ -57,7 +52,6 @@ Na vervanging: Hallo Universum. Dit is een regex test.
 ```
 
 ## Diepgaande Duik
-
 Reguliere expressies zijn sinds de jaren 1950 een onderdeel van de informatica, gepopulariseerd door hulpprogramma's zoals grep in Unix. C++ heeft ze veel later aangenomen, met std::regex in C++11. Native ondersteuning varieert per compiler; sommige kunnen achterblijven in volledige regex-functieondersteuning.
 
 Alternatieven voor `std::regex` omvatten bibliotheken zoals Boost.Regex of PCRE (Perl Compatible Regular Expressions). Boost.Regex presteert bijvoorbeeld vaak beter dan `std::regex` en heeft een rijker functieset.
@@ -65,7 +59,6 @@ Alternatieven voor `std::regex` omvatten bibliotheken zoals Boost.Regex of PCRE 
 Vanuit implementatie-oogpunt kan `std::regex` trager zijn dan sommige aangepaste parseralgoritmes, vooral voor eenvoudige patronen. Het begrijpen van de afweging tussen regex-gemak en potentiële prestatieproblemen is cruciaal.
 
 ## Zie Ook
-
 - C++ referentie op `<regex>`: https://en.cppreference.com/w/cpp/regex
 - Documentatie van Boost.Regex: https://www.boost.org/doc/libs/release/libs/regex/
 - De officiële site van PCRE: https://www.pcre.org/

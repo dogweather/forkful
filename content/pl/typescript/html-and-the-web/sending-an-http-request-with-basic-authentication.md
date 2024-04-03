@@ -11,9 +11,6 @@ title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---
 
-## What & Why? (Co i Dlaczego?)
-Wysyłamy zapytanie HTTP z podstawowym uwierzytelnieniem, by uzyskać dostęp do zasobów wymagających prostej autoryzacji. Programiści robią to, aby zintegrować się z zabezpieczonymi API, które akceptują tę metodę uwierzytelniania.
-
 ## How to: (Jak to zrobić:)
 ```TypeScript
 import axios from 'axios';

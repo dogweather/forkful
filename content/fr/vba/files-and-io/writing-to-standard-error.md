@@ -14,12 +14,7 @@ title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---
 
-## Quoi et Pourquoi ?
-
-Écrire sur l'erreur standard en Visual Basic pour Applications (VBA) consiste à diriger les messages d'erreur ou les diagnostics à part de la sortie standard, habituellement vers la console ou un fichier journal. Les programmeurs font cela afin de séparer la sortie normale du programme des messages d'erreur, facilitant ainsi le débogage des programmes ou alertant les utilisateurs des problèmes sans encombrer la sortie principale.
-
 ## Comment faire :
-
 En VBA, puisqu'il n'y a pas de fonction intégrée directe pour écrire spécifiquement sur l'erreur standard comme dans certains autres langages de programmation, une solution courante consiste à utiliser `Debug.Print` pour la sortie des erreurs de développement ou à créer une fonction de journalisation personnalisée qui imite ce comportement pour les applications de production. Voici un exemple de comment vous pourriez implémenter et utiliser une telle fonction :
 
 ```vb
@@ -49,7 +44,6 @@ ERROR: Une erreur s'est produite lors du traitement de votre demande.
 ```
 
 ## Analyse approfondie
-
 Visual Basic pour Applications n'inclut pas intrinsèquement un mécanisme dédié à l'écriture sur l'erreur standard en raison de sa nature profondément intégrée avec des applications hôtes comme Excel, Word, ou Access, qui s'appuient traditionnellement sur des interfaces utilisateur graphiques plutôt que sur une sortie console. Cela représente une divergence notable par rapport aux applications basées sur console typiquement développées dans des langages comme C ou Python, où les flux de sortie standard et d'erreur standard sont des concepts fondamentaux.
 
 Historiquement, l'accent de VBA a toujours été davantage mis sur l'interaction avec les modèles de document de ses applications hôtes et moins sur les mécanismes de journalisation d'application traditionnels. Par conséquent, les développeurs ont souvent recours à la mise en œuvre de solutions de journalisation personnalisées, comme vu dans l'exemple, ou à l'utilisation des appels API Windows pour des besoins plus avancés en matière de gestion des erreurs et de journalisation.

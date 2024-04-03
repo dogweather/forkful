@@ -11,9 +11,6 @@ title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---
 
-## Hva & Hvorfor?
-Å starte et nytt prosjekt i C# er å opprette en struktur av koder og filer for å bygge en applikasjon eller et bibliotek. Programmerere gjør dette for å omsette ideer til virkelighet, løse problemer, eller teste konsepter.
-
 ## Slik gjør du:
 For å starte et nytt prosjekt, kan du bruke .NET CLI (Command Line Interface) eller Visual Studio. La oss kjøre gjennom CLI:
 

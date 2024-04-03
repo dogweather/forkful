@@ -11,9 +11,6 @@ title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---
 
-## O Que & Por Que?
-Agrupar código em funções é decompor tarefas em pedaços reutilizáveis. Isso torna o código limpo, menos propenso a erros e mais fácil de depurar ou refatorar.
-
 ## Como fazer:
 Imagine uma tarefa: calcular a média de um array. Sem funções, você colocaria tudo no main. Com funções, você faria assim:
 

@@ -13,9 +13,6 @@ title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
 weight: 8
 ---
 
-## What & Why? (무엇과 왜?)
-String interpolation은 문자열에 변수나 계산 결과를 삽입하는 것입니다. 코드를 간결하게 만들고 가독성을 높이기 위해 사용합니다.
-
 ## How to: (어떻게:)
 ```javascript
 // 변수를 사용한 보간법 (String Interpolation)

@@ -12,12 +12,7 @@ title: Generering av tilfeldige tall
 weight: 12
 ---
 
-## Hva & Hvorfor?
-
-Å generere tilfeldige tall i Rust innebærer å bruke biblioteker for å produsere uforutsette numeriske verdier, noe som er uunnværlig for oppgaver som spenner fra kryptografi og simuleringer til spill og tilfeldige algoritmer.
-
 ## Hvordan:
-
 Rust er avhengig av eksterne crates for generering av tilfeldige tall, der `rand` er det mest brukte. For å begynne å generere tilfeldige tall, må du først legge til `rand` i din `Cargo.toml`-fil:
 
 ```toml
@@ -53,7 +48,6 @@ Tilfeldig flyttall: 0.9401077112175732
 Merk at å kjøre programmet på nytt vil produsere forskjellige verdier.
 
 ## Dyp Dykk
-
 Generering av tilfeldige tall i Rust, tilrettelagt gjennom `rand` og dets avhengigheter som `getrandom`, representerer en bred abstraksjon over operativsystemets fasiliteter og algoritmiske generatorer. Historisk sett har tilfeldighet i databehandling utviklet seg fra enkle, forutsigbare algoritmer til komplekse, kryptografisk sikre metoder. Rusts tilnærming inkapsulerer denne utviklingen gjennom sitt pluggbare `Rng` trait, som kan understøttes av ulike generatorer avhengig av kvaliteten på tilfeldigheten og ytelsen som kreves.
 
 For de fleste applikasjoner gir å stole på `rand` og systemets RNG en god balanse mellom enkelhet og entropi. Imidlertid, for kryptografiske applikasjoner, vender crates som `rand` seg til `getrandom` for seeding, som igjen er avhengig av OS-spesifikke mekanismer (for eksempel `/dev/urandom` på Unix-lignende systemer), noe som sikrer kryptografisk sikker tilfeldighet.

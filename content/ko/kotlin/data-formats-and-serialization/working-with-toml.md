@@ -15,9 +15,6 @@ title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE3
 weight: 39
 ---
 
-## 무엇 & 왜?
-TOML은 Tom's Obvious, Minimal Language의 약자입니다. 사람이 읽고 쓰기 쉬우면서도 기계가 파싱하기 쉬워 설정 파일에 사용됩니다. 개발자들은 설정을 처리할 때 XML의 복잡함과 JSON의 까다로움을 피하기 위해 TOML을 사용합니다.
-
 ## 사용 방법:
 Kotlin에서 TOML을 다루려면 `ktoml`과 같은 라이브러리를 사용할 수 있습니다. 우선, `build.gradle.kts`에 의존성을 추가합시다:
 

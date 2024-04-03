@@ -12,12 +12,7 @@ title: Writing to standard error
 weight: 25
 ---
 
-## What & Why?
-
-Writing to standard error (stderr) is about outputting error messages and diagnostics to a separate stream, distinct from standard output (stdout), which allows for better error handling and log parsing. Programmers do this to facilitate debugging and to ensure that error messages can be easily identified and redirected if necessary, maintaining clean output logs or user messages.
-
 ## How to:
-
 In Kotlin, writing to stderr can be achieved using `System.err.println()`. This method is similar to `System.out.println()` but directs the output to the standard error stream rather than the standard output stream.
 
 ```kotlin

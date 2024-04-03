@@ -14,9 +14,6 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mikä & Miksi?
-Nykyisen päivämäärän hakeminen C++:lla on perustehtävä ohjelmille, jotka tarvitsevat käsitellä tai näyttää päivämääriä järjestelmän kellon mukaan. Se on olennaista lokitiedostoille, aikaleimoille, tehtävien aikataulutukselle ja kaikelle toiminnallisuudelle, joka perustuu päivämääriin ja aikaan.
-
 ## Miten:
 C++ tarjoaa useita tapoja saada nykyinen päivämäärä, mukaan lukien C++ standardikirjasto ja kolmannen osapuolen kirjastot kuten Boost. Seuraavat esimerkit osoittavat, miten tämä tehtävä suoritetaan.
 

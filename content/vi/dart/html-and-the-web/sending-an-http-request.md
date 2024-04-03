@@ -15,12 +15,7 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---
 
-## Gì & Tại Sao?
-
-Việc gửi một yêu cầu HTTP trong Dart là quy trình khởi tạo giao tiếp với máy chủ web hoặc API từ một ứng dụng Dart. Lập trình viên thực hiện điều này để lấy dữ liệu từ web, gửi biểu mẫu, và tương tác với các dịch vụ RESTful, khiến nó trở thành một thao tác cơ bản cho phát triển ứng dụng web, phía máy chủ, và ứng dụng di động trong Dart.
-
 ## Cách thực hiện:
-
 Dart bao gồm gói `http`, một cách mạnh mẽ và thuận tiện để làm việc với các tài nguyên HTTP. Đầu tiên, bao gồm nó trong tệp pubspec.yaml của bạn:
 
 ```yaml

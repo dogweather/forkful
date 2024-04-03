@@ -11,12 +11,7 @@ title: Generating random numbers
 weight: 12
 ---
 
-## What & Why?
-
-Generating random numbers is about producing unpredictable sequences or single values within a defined range. Programmers use this technique for a variety of reasons, including simulations, games, security applications, and sampling methods to test algorithms under different conditions.
-
 ## How to:
-
 In Java, generating random numbers can be achieved using the `Random` class from the `java.util` package, or the `ThreadLocalRandom` and `SecureRandom` classes for specific use cases. The following examples illustrate how to use these classes.
 
 ### Using the `Random` class
@@ -79,7 +74,6 @@ public class SecureRandomExample {
 ```
 
 ## Deep Dive
-
 Random number generation has evolved significantly since the early days of computing. Java's `Random` class uses a linear congruential formula to generate pseudo-random numbers, which are deterministic and not suitable for high-security applications. This led to the introduction of `SecureRandom`, which uses more sophisticated algorithms (e.g., SHA1PRNG) to produce cryptographically strong random numbers.
 
 However, `Random` and `SecureRandom` have their shortcomings, such as performance degradation in multithreaded environments. The `ThreadLocalRandom` class was introduced in Java 7 to address this issue by providing thread-local random number generators, significantly improving performance in concurrent applications.

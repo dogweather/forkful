@@ -14,16 +14,10 @@ title: Suchen und Ersetzen von Text
 weight: 10
 ---
 
-## Was & Warum?
-
-Das Suchen und Ersetzen von Text in Google Apps Script beinhaltet das programmatische Identifizieren spezifischer Zeichenketten in einem Dokument, einer Tabelle oder einem anderen Typ von Google-Apps-Inhalten und das Austauschen dieser mit anderen Textwerten. Programmierer nutzen diese Funktionalität, um das Bearbeiten großer Mengen von Inhalten zu automatisieren, gängige Fehler zu korrigieren, Terminologie in Dokumenten zu standardisieren oder dynamische Daten in Vorlagen einzufügen.
-
 ## Wie geht das:
-
 Google Apps Script bietet eine unkomplizierte Möglichkeit, Text zu suchen und zu ersetzen, insbesondere in Google Docs und Sheets. Im Folgenden sind Beispiele für beide.
 
 ### Google Docs:
-
 Um Text in einem Google-Dokument zu suchen und zu ersetzen, interagierst du hauptsächlich mit der `DocumentApp`-Klasse.
 
 ```javascript
@@ -44,7 +38,6 @@ searchReplaceInDoc();
 Dieser Codeausschnitt sucht nach allen Vorkommen von `'searchText'` im aktiven Google-Dokument und ersetzt diese durch `'replacementText'`.
 
 ### Google Sheets:
-
 Ähnlich kannst du in Google Sheets `SpreadsheetApp` verwenden, um Such- und Ersetzungsoperationen durchzuführen:
 
 ```javascript
@@ -63,7 +56,6 @@ searchReplaceInSheet();
 In diesem Beispiel sucht `createTextFinder('searchText')` im aktiven Blatt nach 'searchText', und `replaceAllWith('replacementText')` ersetzt alle Vorkommen durch 'replacementText'.
 
 ## Tiefergehend
-
 Die Such- und Ersetzungsfunktionalität in Google Apps Script wird stark von seiner webbasierten Natur beeinflusst und ermöglicht es Skripten, Texte nahtlos in verschiedenen Google-Apps zu manipulieren. Historisch gesehen stammt diese Fähigkeit aus dem breiteren Kontext der Textverarbeitung und -manipulation in der Programmierung, wo reguläre Ausdrücke und String-Funktionen in Sprachen wie Perl und Python einen hohen Standard an Flexibilität und Leistung setzten.
 
 Obwohl die Such- und Ersetzungsfunktionalität in Google Apps Script für einfache Substitutionen leistungsfähig ist, fehlt es ihr an den vollen Fähigkeiten regulärer Ausdrücke, die in einigen anderen Sprachen gefunden werden können. Zum Beispiel, während du in `createTextFinder` in Google Sheets grundlegende reguläre Ausdrücke verwenden kannst, sind die Optionen für komplexe Musterabgleichung und -manipulation im Vergleich zu Perl oder Python eingeschränkt.

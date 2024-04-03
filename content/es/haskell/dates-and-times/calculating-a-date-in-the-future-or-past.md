@@ -11,9 +11,6 @@ title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---
 
-## ¿Qué & Por qué?
-Calcular una fecha en el futuro o pasado es determinar qué día será o fue después o antes de un período específico de tiempo. Los programadores hacen esto para manejar eventos, recordatorios, o simplemente para calcular intervalos de tiempo para aplicaciones logísticas, financieras o de cualquier naturaleza temporal.
-
 ## Cómo hacerlo:
 Para calcular fechas en Haskell, podemos utilizar la librería `time`. Aquí tienes un ejemplo básico:
 

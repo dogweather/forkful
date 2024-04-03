@@ -11,9 +11,6 @@ title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---
 
-## Qué & Por Qué?
-Leer argumentos de línea de comandos es cómo tu script de Bash agarra y usa los datos que el usuario pasa cuando ejecuta el programa. Esto es crucial porque permite personalizar la ejecución del script sin cambiar el código.
-
 ## Cómo hacerlo:
 Para probar, guarda el siguiente código en un archivo llamado `lectura_args.sh`.
 

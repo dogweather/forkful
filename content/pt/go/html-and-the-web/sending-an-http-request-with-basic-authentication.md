@@ -15,12 +15,7 @@ title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---
 
-## O Que & Por Que?
-
-Enviar uma requisição HTTP com autenticação básica em Go envolve adicionar um cabeçalho de autorização à sua requisição, que inclui um nome de usuário e senha na forma de uma string codificada em Base64. Programadores usam este método para acessar recursos que exigem verificação do usuário, garantindo que suas aplicações possam interagir de forma segura com serviços pela web.
-
 ## Como fazer:
-
 Para fazer uma requisição HTTP com autenticação básica em Go, você precisa preparar os cabeçalhos de sua requisição para incluir o campo `Authorization`, preenchido com suas credenciais no formato correto. Abaixo está um exemplo que demonstra como realizar uma solicitação GET para um endpoint de API que requer autenticação básica:
 
 ```go
@@ -63,7 +58,6 @@ Status da resposta: 200 OK
 ```
 
 ## Aprofundamento
-
 A Autenticação Básica em requisições HTTP é um método amplamente suportado para aplicar controles de acesso a recursos da web. Ele simplesmente envia um nome de usuário e senha com cada requisição, tornando-o fácil de implementar mas não o método mais seguro disponível. Um grande inconveniente é que, a menos que usado em conjunto com SSL/TLS, as credenciais são enviadas em texto claro (já que Base64 é facilmente decodificado). Isso pode potencialmente expor informações sensíveis a ataques man-in-the-middle.
 
 Em Go, enviar essas requisições envolve manipular diretamente o cabeçalho `Authorization`. Enquanto a biblioteca padrão de Go (`net/http`) fornece primitivas poderosas para lidar com comunicações HTTP(s), ela é relativamente de baixo nível, exigindo que os desenvolvedores lidem manualmente com vários aspectos do manuseio de requisições/respostas HTTP. Isso dá aos programadores muita flexibilidade, mas também significa que deve-se prestar mais atenção às implicações de segurança, codificação, e gerenciamento correto de cabeçalhos.

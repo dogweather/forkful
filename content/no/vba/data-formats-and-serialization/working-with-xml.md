@@ -13,12 +13,7 @@ title: Arbeide med XML
 weight: 40
 ---
 
-## Hva & Hvorfor?
-
-Å arbeide med XML i Visual Basic for Applications (VBA) involverer parsing, oppretting og modifisering av XML-dokumenter innenfor konteksten av Microsoft Office-applikasjoner. Programmerere vender seg til denne kapabiliteten for å integrere Office-applikasjoner med webtjenester eller andre datakilder som utsteder XML, noe som letter datautveksling og rapporteringsfunksjonalitet.
-
 ## Hvordan:
-
 For å begynne å samhandle med XML, bruker man vanligvis `MSXML2.DOMDocument`-objektet. Dette grensesnittet lar deg laste, parse og navigere XML-dokumenter. Nedenfor er et enkelt eksempel som demonstrerer hvordan å laste en XML-fil, navigere dens struktur, og lese attributter og tekstinnhold.
 
 ```basic
@@ -42,7 +37,6 @@ End If
 I eksempelkoden ovenfor oppretter vi en instans av `MSXML2.DOMDocument60`, laster en XML-fil, og sjekker deretter for feil. Hvis ingen feil er funnet, navigerer vi til en spesifikk node ved bruk av XPath og viser dens tekstinnhold.
 
 ## Dypdykk:
-
 Integrasjonen av XML-kapasiteter i VBA går tilbake til tidlig på 2000-tallet når behovet for at Office-applikasjoner skulle interagere med webdata og tjenester begynte å vokse. `MSXML`-biblioteket, eller Microsoft XML Core Services, har utviklet seg over årene, med `MSXML2.DOMDocument60` som en av de siste versjonene anbefalt for bruk på grunn av forbedret ytelse og sikkerhetsfunksjoner.
 
 Selv om de er kraftfulle, anses XML-håndteringskapasiteten til VBA som mindre effektivt og mer tungvint sammenlignet med moderne programmeringsmiljøer som Python's XML.etree eller C#'s LINQ to XML. Den iboende ordrikdommen til VBA og kravet til å legge til og håndtere referanser manuelt kan avskrekke rask utvikling. Videre, med fremveksten av JSON som et lettere datautvekslingsformat, flytter mange programmerere og applikasjoner bort fra XML, med mindre interoperabilitet med arvesystemer eller spesifikke bedriftstjenester nødvendiggjør bruken.

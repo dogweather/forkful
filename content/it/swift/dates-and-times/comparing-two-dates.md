@@ -10,9 +10,6 @@ title: Confronto tra due date
 weight: 27
 ---
 
-## Cosa & Perché?
-Confrontare due date significa verificare se una data è precedente, successiva o uguale a un'altra. I programmatori fanno questo per gestire eventi, scadenze, o per tracciare intervalli di tempo nelle app.
-
 ## Come si fa:
 ```Swift
 import Foundation

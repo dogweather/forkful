@@ -10,9 +10,6 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-Das Runden von Zahlen ist das Kürzen einer Zahl auf eine spezifische Genauigkeit. Programmierer tun dies, um die numerische Ausgabe für Lesbarkeit, Anzeigezwecke oder wenn eine spezifische Präzision nach Operationen, die Fließkommazahlen ergeben, erforderlich ist, zu kontrollieren.
-
 ## Wie:
 Das Runden in TypeScript kann mit mehreren Methoden durchgeführt werden. Hier ist eine schnelle Durchführung:
 

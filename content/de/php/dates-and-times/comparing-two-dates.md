@@ -12,10 +12,6 @@ title: Vergleich von zwei Daten
 weight: 27
 ---
 
-## What & Why?
-(Das Was und das Warum)
-Datumvergleiche? Das ist einfach das Gegenüberstellen zweier Zeitpunkte. Wir nutzen das, um Zeiträume zu überprüfen, Deadlines einzuhalten oder Inhalte zu sortieren.
-
 ## How to:
 (Wie geht das?)
 Angenommen, wir haben zwei Daten und wollen wissen, ob eines vor oder nach dem anderen liegt. Hier ein schnörkelloser PHP-Schnipsel:

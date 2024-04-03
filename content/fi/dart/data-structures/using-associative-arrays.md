@@ -12,12 +12,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mikä ja Miksi?
-
-Associatiiviset taulukot Dartissa, tunnetaan yleisesti nimellä Mapit, ovat tietorakenteita, jotka tallentavat tietoja avain-arvo -pareina. Ne mahdollistavat ohjelmoijille elementtien käytön indeksien sijaan avaimilla, mikä tekee datan hausta intuitiivista ja tehokasta, erityisesti kun työskennellään rakenteellisen datan kanssa, jossa jokaisella elementillä on uniikki tunniste.
-
 ## Miten:
-
 Dart tarjoaa suoraviivaisen syntaksin Map-tietorakenteiden luomiseen ja käsittelyyn. Alla on esimerkkejä perustoiminnoista, kuten luomisesta, elementtien lisäämisestä ja arvojen hakemisesta.
 
 ```dart

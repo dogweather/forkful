@@ -10,9 +10,6 @@ title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---
 
-## Qué y Por Qué?
-La interpolación de cadenas permite insertar variables, constantes y expresiones dentro de una cadena de texto. Los programadores la usan para crear mensajes dinámicos y fáciles de mantener.
-
 ## Cómo hacerlo:
 Vamos a verlo con código. Añade variables en una cadena usando `\(variable)`. Aquí tienes algunos ejemplos:
 

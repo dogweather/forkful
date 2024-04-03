@@ -11,9 +11,6 @@ title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Concaténer des chaînes de caractères, c'est les assembler bout à bout. On le fait pour créer des messages dynamiques, manipuler des données textuelles, ou structurer des sorties pour l'utilisateur.
-
 ## How to (Comment Faire)
 Concaténer avec l'opérateur `+` :
 

@@ -11,9 +11,6 @@ title: Sammenlikning av to datoer
 weight: 27
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Sammenligning av to datoer handler om å finne ut hvilken som kommer før eller etter, eller om de er like. Programmerere gjør det for å håndtere tidsavhengige funksjoner som utløpsdatoer, tidslinjer eller å sortere hendelser.
-
 ## How to: (Hvordan:)
 ```TypeScript
 // Lag to datoobjekter

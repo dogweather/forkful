@@ -10,9 +10,6 @@ title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---
 
-## Qué y por qué?
-La interpolación de cadenas permite insertar valores de variables dentro de una cadena de texto. Los programadores lo hacen para construir mensajes dinámicamente, facilitar la localización y mejorar la legibilidad del código.
-
 ## Cómo hacerlo:
 Con la versión más reciente de C++, puedes utilizar `std::format` para la interpolación de cadenas de forma sencilla:
 
@@ -45,7 +42,6 @@ Alternativas a `std::format` son la concatenación manual y el uso de librerías
 Detalles de implementación: `std::format` usa internamente un sistema de análisis de formato de texto para reemplazar las llaves `{}` con el valor de las variables proporcionadas, manejando tipos y conversiones automáticamente.
 
 ## Ver también
-
 - Documentación de `std::format` en cppreference: [cppreference.com/w/cpp/utility/format](https://en.cppreference.com/w/cpp/utility/format)
 - Historia de la formateo de cadenas en C++: [cppreference.com/w/cpp/io/c/fprintf](https://en.cppreference.com/w/cpp/io/c/fprintf)
 - Alternativas de Boost.Format: [boost.org/doc/libs/release/libs/format/](https://www.boost.org/doc/libs/release/libs/format/)

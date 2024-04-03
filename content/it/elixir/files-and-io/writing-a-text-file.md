@@ -13,12 +13,7 @@ title: Scrivere un file di testo
 weight: 24
 ---
 
-## Cosa & Perché?
-
-Scrivere su un file di testo in Elixir è una competenza essenziale per gli sviluppatori, che permette la persistenza dei dati, il logging o l'esportazione di contenuti in formato leggibile dall'uomo. I programmatori realizzano ciò per salvare lo stato dell'applicazione, le informazioni per il debug, le configurazioni o qualsiasi scambio di dati tra sistemi che preferiscano un formato ubiquo come il testo.
-
 ## Come fare:
-
 Elixir rende la gestione dei file semplice con moduli incorporati. Il modo principale per scrivere su un file è utilizzando le funzioni `File.write/2` o `File.write!/2`, dove il primo restituisce una tupla `:ok` o `:error` e il secondo genera un errore in caso di fallimento.
 
 Ecco un esempio semplice:

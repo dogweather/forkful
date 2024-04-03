@@ -11,9 +11,6 @@ title: Opprette en midlertidig fil
 weight: 21
 ---
 
-## Hva & Hvorfor?
-Midlertidige filer lar oss lagre data midlertidig under kjøring av et program. Programmerere bruker dem for å håndtere store datastrømmer, redusere minnebruk eller lagre tilstand under lengre prosesser.
-
 ## Hvordan:
 ```PHP
 <?php

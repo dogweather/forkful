@@ -10,9 +10,6 @@ title: Einen HTTP-Request senden
 weight: 44
 ---
 
-## Was & Warum?
-HTTP-Anfragen senden bedeutet, dass Daten über das Internet von einem Client zu einem Server übermittelt werden. Programmierer nutzen dies, um Informationen abzurufen, Daten zu senden oder Dienste von APIs zu nutzen.
-
 ## So geht's:
 Installiere HTTPoison mit `mix deps.get`:
 
@@ -53,6 +50,7 @@ body = Jason.encode!(%{title: "Elixir", body: "Rocks!", userId: 1})
 
 HTTPoison.post("https://jsonplaceholder.typicode.com/posts", body, headers)
 ```
+
 ## Tiefgang
 HTTP-Anfragen sind der Dreh- und Angelpunkt moderner Web-Anwendungen. Mit dem Aufkommen von REST-APIs und Microservices, spielt HTTP-Kommunikation eine größere Rolle. `HTTPoison` basiert auf `hackney`, einem erprobten HTTP-Client in Erlang.
 

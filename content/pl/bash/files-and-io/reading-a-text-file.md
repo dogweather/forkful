@@ -11,9 +11,6 @@ title: Odczytywanie pliku tekstowego
 weight: 22
 ---
 
-## Co i dlaczego?
-Przeczytanie pliku tekstowego w Bashu to po prostu wyświetlenie jego zawartości w terminalu. Programiści robią to do analizy danych, debugowania i automatyzacji zadań.
-
 ## Jak to zrobić:
 ```Bash
 # Wyświetlenie całego pliku używając komendy 'cat':

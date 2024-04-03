@@ -11,9 +11,6 @@ title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---
 
-## What & Why?
-Verrataan kahta päivämäärää, ymmärtääksemme kummanko ajanhetki sijoittuu ennen toista. Ohjelmoijille se on tärkeää ajoitukseen, tapahtumien käsittelyyn ja logiikkaan.
-
 ## How to:
 Clojuren `clj-time` kirjasto on kätevä päivämäärävertailuihin: 
 

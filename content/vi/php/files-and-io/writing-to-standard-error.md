@@ -15,12 +15,7 @@ title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---
 
-## Cái gì & Tại sao?
-
-Việc ghi vào lỗi chuẩn (`stderr`) có nghĩa là xuất thông điệp lỗi và chẩn đoán riêng biệt với đầu ra chuẩn (`stdout`). Các lập trình viên thực hiện điều này để gỡ lỗi và cung cấp thông tin lỗi mà không lẫn lộn với đầu ra chương trình thông thường.
-
 ## Làm thế nào:
-
 Bạn có thể ghi vào `stderr` trong PHP với `fwrite()` hoặc bộ điều khiển luồng. Dưới đây là cách làm:
 
 ```PHP
@@ -40,11 +35,9 @@ file_put_contents('php://stderr', "Đây là một thông điệp lỗi khác.\n
 ```
 
 ## Sâu hơn nữa
-
 Lịch sử, việc tách biệt `stdout` và `stderr` xuất phát từ cách Unix xử lý luồng vào/ra. Các ngôn ngữ khác như C cũng có quy ước tương tự. Các phương án thay thế trong PHP có thể bao gồm các thư viện log hoặc trình xử lý lỗi tùy chỉnh, nhưng việc viết trực tiếp vào `stderr` là phương pháp đơn giản cho các ứng dụng console. Đằng sau hậu trường, `stderr` là một luồng đầu ra không được đệm, có nghĩa là các thông điệp được xả ngay lập tức mà không chờ đợi.
 
 ## Xem thêm
-
 - Hướng dẫn PHP về Hằng Số Định Nghĩa Sẵn (STDERR): https://www.php.net/manual/en/features.commandline.io-streams.php
 - Hướng dẫn PHP về các chức năng xử lý lỗi: https://www.php.net/manual/en/book.errorfunc.php
 - Wikipedia về Luồng chuẩn: https://en.wikipedia.org/wiki/Standard_streams

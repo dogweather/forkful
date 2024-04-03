@@ -10,9 +10,6 @@ title: Comparer deux dates
 weight: 27
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Comparer deux dates en Ruby permet de déterminer laquelle est antérieure ou postérieure, ou bien si elles sont identiques. C'est crucial pour des fonctionnalités comme la validation de la période de garantie, l'organisation d'événements, ou la gestion de réservations.
-
 ## How to: (Comment faire:)
 ```Ruby
 require 'date'

@@ -11,9 +11,6 @@ title: Zeichenketten verketten
 weight: 3
 ---
 
-## Was & Warum?
-Das Verketten von Zeichenketten bedeutet, zwei oder mehr Strings zu einem einzigen Textstück zusammenzuführen. Du möchtest eventuell Texte zusammenführen, um Benutzernachrichten zu generieren, Dateipfade zu erstellen oder für Prozesse der Datenserialisierung. Es handelt sich um eine grundlegende Operation in jeder Programmiersprache, einschließlich Elixir, die es Entwicklern ermöglicht, dynamische Strings mit Leichtigkeit zu konstruieren.
-
 ## Wie geht das:
 In Elixir kannst du auf einige unkomplizierte Weisen Zeichenketten verketten. Lass uns die gängigsten Methoden erkunden:
 

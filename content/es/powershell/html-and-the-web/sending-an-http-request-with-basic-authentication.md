@@ -12,9 +12,6 @@ title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---
 
-## Qué y Por Qué?
-Enviar una petición HTTP con autenticación básica es el proceso de realizar una solicitud a un servicio web requiriendo usuario y contraseña codificados en base64. Los programadores lo hacen para interactuar con APIs o servicios web que requieren seguridad mínima para acceder a recursos protegidos.
-
 ## Cómo Hacerlo:
 Para enviar una petición con autenticación básica en PowerShell, primero construye las credenciales en base64 y luego úsalas en la cabecera de la petición. Este es un ejemplo sencillo:
 

@@ -15,9 +15,6 @@ title: "XML \uB2E4\uB8E8\uAE30"
 weight: 40
 ---
 
-## 무엇 & 왜?
-XML을 다루는 것은 XML(eXtensible Markup Language) 데이터를 파싱, 생성, 조작하는 것을 의미합니다. 프로그래머들은 플랫폼 중립적인 특성 때문에 구조화된 데이터 교환, 구성 등을 관리하기 위해 XML을 다룹니다.
-
 ## 어떻게:
 다음은 TinyXML-2 라이브러리를 사용하여 XML을 파싱하는 간단한 방법입니다:
 

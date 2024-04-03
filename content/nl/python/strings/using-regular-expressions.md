@@ -12,9 +12,6 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-Reguliere expressies (regex) zijn patronen die gebruikt worden om combinaties van karakters in strings te vinden. Programmeurs gebruiken regex voor het zoeken, bewerken of manipuleren van tekst omdat het krachtig en efficiënt is.
-
 ## Hoe:
 Hieronder staan Python voorbeelden die het `re` module gebruiken voor gangbare regex operaties:
 

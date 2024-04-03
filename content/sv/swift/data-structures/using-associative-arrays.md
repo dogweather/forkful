@@ -13,12 +13,7 @@ title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---
 
-## Vad & Varför?
-
-Associativa arrayer, kända som ordböcker i Swift, låter dig lagra och hantera data som nyckel-värdepar. Programmerare använder dem för att organisera data effektivt, vilket gör det enklare att komma åt och manipulera värden baserat på deras unika nycklar.
-
 ## Hur man:
-
 Swift gör det enkelt att arbeta med associativa arrayer. Så här kan du deklarera, lägga till, ta bort och komma åt objekt i en Swift-ordbok:
 
 ```Swift
@@ -50,7 +45,6 @@ for (fruit, color) in fruitColors {
 Ordböcker är otroligt mångsidiga, vilket låter dig manipulera och komma åt data dynamiskt. Deras oordnade natur påverkar inte hastigheten för datahämtning, vilket är en betydande fördel när man hanterar stora datamängder.
 
 ## Djupdykning
-
 Swifts implementering av ordböcker som en associativ array härstammar från deras kraftfulla förmåga att mappa unika nycklar till värden. Historiskt sett har programmeringsspråk implementerat detta koncept under olika namn som hash-tabeller eller kartor, vilket antyder deras funktion av att skapa en "karta" mellan nycklar och värden.
 
 I Swift är ordböcker optimerade för prestanda, genom att utnyttja hashbara nycklar för effektiv datahämtning. Detta innebär att `Key`-typen i en `[Key: Value]`-ordbok måste följa protokollet `Hashable`, vilket är fallet för de flesta Swifts standardtyper som `Int`, `String` och `Double`.

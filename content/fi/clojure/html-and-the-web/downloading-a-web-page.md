@@ -9,9 +9,6 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## What & Why? - Mitä & Miksi?
-Ladataan nettisivu tarkoittaa sivun sisällön tallentamista paikallisesti. Ohjelmoijat tekevät sitä datan analysointia, skrapausta tai varmuuskopiointia varten.
-
 ## How to: - Näin teet sen:
 Clojuren avulla voit ladata webbisivun sisällön käyttämällä `clj-http`-kirjastoa. Tässä yksinkertainen esimerkki:
 

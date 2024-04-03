@@ -15,12 +15,7 @@ title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---
 
-## What & Why? (是什么？为什么？)
-
-HTTP请求让应用可以和服务器交流数据。程序员用它来获取信息、发送数据更新或者进行远程服务调用。
-
 ## How to: (怎么做：)
-
 Swift发送HTTP请求很简单，用`URLSession`来完成基本的GET请求：
 
 ```Swift
@@ -46,12 +41,10 @@ task.resume()
 响应数据：{"name":"张三","age":30}
 ```
 
-## Deep Dive (深潜) 
-
+## Deep Dive (深潜)
 HTTP请求是Web发展关键技术。最初，HTTP是用于HTML页面获取，现在，它在RESTful API中占主要地位，这使得各种客户端技术如Swift都能访问服务数据。还有其他方案：比如GraphQL，它可以令请求更精确、高效。实现HTTP请求时，Swift使用`URLSession`API，它提供了同步和异步请求处理能力，并可进行请求定制。
 
 ## See Also (另请参阅)
-
 - Apple的`URLSession`文档: [URLSession](https://developer.apple.com/documentation/foundation/urlsession)
 - 更多RESTful API信息: [RESTful API](https://restfulapi.net/)
 - GraphQL 官方网站: [GraphQL](https://graphql.org/)

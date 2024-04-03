@@ -13,16 +13,10 @@ title: Utilisation des tableaux associatifs
 weight: 15
 ---
 
-## Quoi et pourquoi ?
-
-Les tableaux associatifs, connus sous le nom de `std::map` ou `std::unordered_map` en C++, comblent le fossé entre les indices de tableau et les données du monde réel, vous permettant d'utiliser des clés significatives. Ils sont la solution privilégiée lorsque vous avez besoin de recherches, d'insertions et de suppressions rapides en utilisant des clés plutôt que des positions d'index.
-
 ## Comment faire :
-
 En C++, les tableaux associatifs prennent vie avec les en-têtes `<map>` et `<unordered_map>`. Voyons des exemples pour observer les deux en action.
 
 ### Utilisation de `std::map`
-
 `std::map` maintient les éléments triés en fonction de la clé. Voici comment vous commencez :
 
 ```C++
@@ -50,7 +44,6 @@ int main() {
 ```
 
 ### Utilisation de `std::unordered_map`
-
 Quand l'ordre n'a pas d'importance, mais que la performance compte, `std::unordered_map` est votre allié, offrant une complexité moyenne plus rapide pour les insertions, les recherches et les suppressions.
 
 ```C++
@@ -78,7 +71,6 @@ int main() {
 ```
 
 ## Plongée profonde
-
 Les tableaux associatifs en C++, en particulier `std::map` et `std::unordered_map`, ne concernent pas seulement le stockage d'éléments. Ils fournissent une base pour une gestion de données plus complexe en permettant des opérations comme la recherche, l'insertion et la suppression dans des complexités temporelles efficaces (logarithmique pour `std::map` et en temps moyen constant pour `std::unordered_map`). Cette efficacité provient des structures de données sous-jacentes : un arbre équilibré pour `std::map` et une table de hachage pour `std::unordered_map`.
 
 Historiquement, avant qu'ils ne fassent partie de la bibliothèque standard, les programmeurs devaient implémenter leurs propres versions ou utiliser des bibliothèques tierces, conduisant à des incohérences et des inefficacités potentielles. L'inclusion des maps dans la bibliothèque standard du C++ a non seulement standardisé leur utilisation mais aussi optimisé leur performance à travers différents compilateurs et plateformes.

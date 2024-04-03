@@ -13,12 +13,7 @@ title: Einen Datum aus einem String analysieren
 weight: 30
 ---
 
-## Was & Warum?
-
-Das Parsen eines Datums aus einem String in PHP beinhaltet das Umwandeln von Text, der ein Datum und/oder eine Zeit repräsentiert, in ein PHP `DateTime` -Objekt oder andere Datums-/Zeitformate. Dies ist entscheidend für die Validierung, Manipulation, Speicherung und Darstellung von Daten, insbesondere wenn man mit Benutzereingaben oder Daten aus externen Quellen arbeitet.
-
 ## Wie geht's:
-
 Die eingebaute `DateTime`-Klasse von PHP bietet einen leistungsstarken Satz von Funktionen zum Parsen und Arbeiten mit Daten. Sie können eine `DateTime`-Instanz aus einem Datumstring mithilfe des Konstruktors erstellen und dann nach Bedarf formatieren. So geht's:
 
 ```php

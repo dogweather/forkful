@@ -14,16 +14,10 @@ title: Skrive tester
 weight: 36
 ---
 
-## Hva & Hvorfor?
-
-Å skrive tester i programmering innebærer å lage små, separate deler av kode for automatisk å verifisere at ulike deler av applikasjonen din fungerer som forventet. For Lua-programmerere sikrer testing pålitelighet og hjelper til med å opprettholde kodekvalitet, det fremskynder feilsøkingsprosessen og gjør endringer i kodebasen sikrere.
-
 ## Hvordan:
-
 Lua, som er et lettvekts, men kraftfullt skriptspråk, inkluderer ikke et innebygd testrammeverk. Imidlertid gjør tredjepartsbiblioteker som Busted og LuaUnit testingen relativt grei. Her vil vi se på eksempler ved bruk av begge.
 
 ### Bruker Busted
-
 Busted er et populært Lua-testrammeverk som tilbyr en fleksibel måte å skrive tester på. Først installerer du Busted gjennom LuaRocks (Luas pakkebehandler) med `luarocks install busted`. Når installert, kan du skrive testene dine. Her er en enkel test for en funksjon `add` som summerer to tall:
 
 ```lua
@@ -54,7 +48,6 @@ For å kjøre testene, eksekverer du `busted` i terminalen din. Eksempelutdata f
 ```
 
 ### Bruker LuaUnit
-
 LuaUnit er et annet testrammeverk som følger xUnit-konvensjoner og er enkelt å sette opp. Installer LuaUnit via LuaRocks ved å bruke `luarocks install luaunit`. Her er hvordan du kan skrive en lignende test som ovenfor med LuaUnit:
 
 ```lua

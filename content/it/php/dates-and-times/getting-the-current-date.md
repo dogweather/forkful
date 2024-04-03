@@ -13,10 +13,9 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Cosa e Perché?
-Ottenere la data corrente in PHP è un'attività fondamentale che permette di recuperare e manipolare la data e l'ora del sistema. Questo è cruciale per funzioni come il logging, l'impostazione di timestamp nei post, la programmazione di eventi o l'esecuzione di operazioni sensibili al tempo nelle tue applicazioni.
-
 ## Come fare:
+
+
 ### PHP Nativo
 La funzione integrata `date()` di PHP è il modo più diretto per ottenere la data corrente. Puoi formattare la data in vari modi specificando il parametro di formato.
 

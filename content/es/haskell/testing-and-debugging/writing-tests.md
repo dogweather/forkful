@@ -12,16 +12,10 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## ¿Qué y por qué?
-
-Escribir pruebas en Haskell se trata de asegurar que tus funciones funcionen como se espera mediante controles automatizados. Los programadores lo hacen para capturar errores temprano, facilitar la refactorización y documentar el comportamiento, haciendo que la base de código sea más mantenible y escalable.
-
 ## Cómo hacerlo:
-
 Haskell soporta varios marcos de pruebas, pero dos populares son `Hspec` y `QuickCheck`. Hspec te permite definir especificaciones legibles por humanos para tu código, mientras que QuickCheck te permite generar pruebas automáticamente describiendo propiedades que tu código debería satisfacer.
 
 ### Usando Hspec
-
 Primero, añade `hspec` a la configuración de tu herramienta de construcción (por ejemplo, `stack.yaml` o archivo `cabal`). Luego, importa `Test.Hspec` y escribe pruebas como especificaciones:
 
 ```haskell
@@ -50,7 +44,6 @@ Terminado en 0.0001 segundos
 ```
 
 ### Usando QuickCheck
-
 Con QuickCheck, expresas propiedades que tus funciones deberían satisfacer. Añade `QuickCheck` a la configuración de tu proyecto, luego impórtalo:
 
 ```haskell

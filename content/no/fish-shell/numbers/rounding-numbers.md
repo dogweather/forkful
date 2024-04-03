@@ -10,9 +10,6 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva & Hvorfor?
-Å avrunde tall handler om å kutte av desimalplasser for å forenkle dataene dine eller passe spesifikke formater. Programmerere gjør det for brukervennlig visning, effektiv lagring, eller når desimalpresisjon ikke er et tema.
-
 ## Hvordan:
 I Fish avhenger avrunding av tall av `math`-kommandoen. Bruk `math -s0` for å avrunde til nærmeste heltall.
 

@@ -15,12 +15,7 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co i Dlaczego?
-
-Usuwanie cudzysłowów ze stringa w VBA polega na eliminacji wystąpień pojedynczych (`'`) lub podwójnych (`"`) znaków cudzysłowu, które mogą znajdować się wewnątrz ciągu znaków lub otaczać go. Operacja ta jest istotna dla sanacji danych, zapewniając, że ciągi znaków są poprawnie formatowane do zapytań bazy danych, parsowania JSON lub po prostu dla estetyki lub spójności w interfejsie aplikacji.
-
 ## Jak to zrobić:
-
 W VBA istnieje wiele podejść do usuwania cudzysłowów z ciągu znaków. Oto prosty przykład użycia funkcji `Replace`, która wyszukuje określony podciąg (w tym przypadku cudzysłów) w ciągu znaków i zastępuje go innym podciągiem (pustym ciągiem, jeśli ma miejsce usuwanie).
 
 ```basic
@@ -43,7 +38,6 @@ Zwróć uwagę, że dla podwójnych cudzysłowów używamy `Chr(34)`, ponieważ 
 W bardziej zniuansowanych scenariuszach, gdzie cudzysłowy mogą być częścią niezbędnego formatowania (np. wewnątrz słowa w cudzysłowie), może być wymagana bardziej zaawansowana logika, być może z użyciem Regex lub przetwarzania znak po znaku.
 
 ## Głębsze spojrzenie
-
 VBA, będąc kluczowym elementem automatyzacji zadań w pakiecie Microsoft Office, oferuje bogaty zestaw funkcji manipulacji ciągami znaków, z funkcją `Replace` jako jedną z najczęściej używanych. Ta funkcja jednak tylko zaznajamia z tym, co można osiągnąć za pomocą VBA w zakresie manipulacji ciągami znaków.
 
 Historycznie, VBA przyjął z poprzedników nacisk na prostotę w zadaniach automatyzacji biurowych, stąd prosta implementacja funkcji takich jak `Replace`. Jednakże, dla nowoczesnych zadań programistycznych, zwłaszcza tych wymagających skomplikowanych manipulacji ciągami znaków lub sanacji, VBA może pokazać swoje ograniczenia.

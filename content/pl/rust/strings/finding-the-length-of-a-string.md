@@ -10,9 +10,6 @@ title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---
 
-## What & Why?
-Co i dlaczego? Sprawdzanie długości łańcucha znaków, to po prostu sposób, by wiedzieć ile znaków zawiera. Programiści robią to, by np. walidować dane wejściowe, ustawiać format wyświetlania, czy zarządzać pamięcią.
-
 ## How to:
 Jak to zrobić:
 

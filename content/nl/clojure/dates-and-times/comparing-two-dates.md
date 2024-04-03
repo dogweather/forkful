@@ -12,9 +12,6 @@ title: Twee datums vergelijken
 weight: 27
 ---
 
-## Wat & Waarom?
-Het vergelijken van twee datums betekent controleren hoe ze zich tot elkaar verhouden—is de ene eerder, later, of exact hetzelfde als de andere? Programmeurs doen dit om deadlines te beheren, evenementen te plannen en tijdgerelateerde gegevens bij te houden.
-
 ## Hoe:
 Clojure maakt gebruik van de Java interop-mogelijkheden om met datums om te gaan. Laten we onze mouwen opstropen en duiken erin:
 

@@ -11,11 +11,7 @@ title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---
 
-## O Que & Por Quê?
-Arredondar números significa ajustá-los ao número inteiro mais próximo ou a um grau de precisão especificado. Programadores arredondam números para simplificar, para corresponder às expectativas humanas, ou para adaptar dados a formatos específicos — pense em cálculos financeiros, displays gráficos ou redução do tamanho de armazenamento.
-
 ## Como Fazer:
-
 ```Ruby
 # Arredondamento básico
 puts 3.14159.round      # => 3

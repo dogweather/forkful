@@ -14,12 +14,7 @@ title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---
 
-## Was & Warum?
-
-Reguläre Ausdrücke (regex) in Java ermöglichen es Ihnen, spezifische Muster zu definieren, um Strings in Ihrem Code zu suchen, zu manipulieren oder zu validieren. Programmierer nutzen sie für Aufgaben wie das Parsen von Logdateien, das Validieren von Benutzereingaben oder die Suche nach spezifischen Mustern in Texten, was eine ausgefeilte Stringverarbeitung mit minimalem Aufwand ermöglicht.
-
 ## Wie geht das:
-
 Die integrierte Unterstützung für regex in Java erfolgt hauptsächlich durch die Klassen `Pattern` und `Matcher` im Paket `java.util.regex`. Hier ist ein einfaches Beispiel, um alle Vorkommen eines Wortes in einem String zu finden und auszudrucken, unabhängig von Groß- und Kleinschreibung:
 
 ```java

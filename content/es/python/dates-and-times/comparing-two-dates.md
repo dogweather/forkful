@@ -11,12 +11,7 @@ title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---
 
-## ¿Qué & Por Qué?
-
-Comparar dos fechas en Python significa revisar la diferencia de tiempo entre ellas. Los programadores lo hacen para manejar eventos, validar periodos, o simplemente para llevar la traza de cuánto tiempo ha pasado.
-
 ## Cómo hacerlo:
-
 Python nos facilita comparar fechas con el módulo `datetime`. Aquí van unos ejemplos claros:
 
 ```Python
@@ -47,13 +42,11 @@ La diferencia es de 8 días.
 ```
 
 ## Profundizando:
-
 En el pasado, comparar fechas en programación era más tedioso ya que requería el manejo manual de calendarios y formatos. Ahora, con el módulo `datetime` de Python, es más sencillo.
 
 Alternativas a `datetime` podrían incluir el uso de terceros como `dateutil`, que ofrece funciones extendidas. Respecto a la implementación, al comparar fechas, Python las convierte a una representación interna de tiempo, usualmente segundos desde una época (Epoch), lo que hace posible las comparaciones con operadores estándar.
 
 ## Ver también:
-
 - Documentación oficial de `datetime`: https://docs.python.org/3/library/datetime.html
 - PyPI de `dateutil`: https://pypi.org/project/python-dateutil/
 - Artículo de la "Epoch" en Unix: https://en.wikipedia.org/wiki/Unix_time

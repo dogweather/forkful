@@ -10,9 +10,6 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## Was & Warum?
-Das Extrahieren von Teilstrings bedeutet, spezifische Abschnitte aus einem längeren String herauszuziehen. Programmierer nutzen dies, um Daten zu manipulieren, zu validieren oder um spezifische Informationen zu verarbeiten.
-
 ## Anleitung:
 Java macht es einfach, Teilstrings zu gewinnen. Hier ein paar Beispiele, wie man das bewerkstelligt:
 

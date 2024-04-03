@@ -14,12 +14,7 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---
 
-## Cái gì & Tại sao?
-
-Việc gửi một yêu cầu HTTP là cách mã JavaScript của bạn giao tiếp với máy chủ. Việc này được thực hiện để trao đổi dữ liệu, tải nguồn, hoặc gửi dữ liệu lên máy chủ để xử lý.
-
 ## Cách thực hiện:
-
 JavaScript sử dụng API `fetch` để gửi các yêu cầu. Dưới đây là cách thực hiện một yêu cầu GET đơn giản:
 
 ```javascript
@@ -53,7 +48,6 @@ fetch('https://jsonplaceholder.typicode.com/posts', {
 Điều này gửi dữ liệu mới và xuất ra phản hồi của máy chủ.
 
 ## Tìm hiểu sâu hơn
-
 Yêu cầu HTTP đã tồn tại từ khi web ra đời—nghĩ về các biểu mẫu HTML. XMLHttpRequest (XHR) từng là phương pháp được ưa chuộng để gửi yêu cầu trong JavaScript, nhưng nó không tiện lợi.
 
 Nhập `fetch`, một cách tiếp cận hiện đại dựa trên promise, làm cho nó trở nên sạch sẽ và mạnh mẽ hơn. Không giống như XHR, `fetch` xử lý cả yêu cầu và phản hồi trong một API thống nhất và được tích hợp sẵn vào ngôn ngữ, không cần thư viện.
@@ -63,7 +57,6 @@ Có phương án khác? Chắc chắn. Thư viện như Axios hoặc Ajax của 
 Chi tiết triển khai? Nhớ xử lý lỗi, làm việc với các loại phản hồi khác nhau, và ý thức về quy tắc chia sẻ tài nguyên giữa nguồn gốc (CORS).
 
 ## Xem thêm
-
 - Tài liệu MDN về API `fetch`: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 - Sử dụng promises trong JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_promises
 - Tìm hiểu về CORS: https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS

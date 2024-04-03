@@ -13,9 +13,6 @@ title: HTML Parsen
 weight: 43
 ---
 
-## Wat & Waarom?
-HTML parsen betekent het verwerken en analyseren van de structuur en inhoud van HTML-code. Programmeurs doen dit om websites te schrapen, gegevens te manipuleren of te extraheren, automatisch testen uit te voeren, of webinhoud in applicaties te integreren.
-
 ## Hoe:
 PHP heeft een aantal ingebouwde bibliotheken om HTML te parsen, zoals DOMDocument. Hier is een eenvoudig gebruiksvoorbeeld:
 

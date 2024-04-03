@@ -26,16 +26,10 @@ title: "\u30C6\u30AD\u30B9\u30C8\u306E\u691C\u7D22\u3068\u7F6E\u63DB"
 weight: 10
 ---
 
-## 何となぜ？
-
-Google Apps Scriptでのテキスト検索と置換は、ドキュメント、スプレッドシート、またはその他のタイプのGoogle Appsコンテンツで特定の文字列をプログラムで特定し、それらを他のテキスト値に置き換えることを含みます。プログラマーは、大量のコンテンツの編集を自動化したり、一般的なエラーを修正したり、ドキュメント間で用語を標準化したり、テンプレートに動的データを挿入したりするために、この機能を利用します。
-
 ## 方法：
-
 Google Apps Scriptは、特にGoogle DocsとSheets内で、テキストを検索して置換する簡単な方法を提供します。以下に、両方の例を示します。
 
 ### Google Docs：
-
 Googleドキュメント内のテキストを検索して置換するには、主に`DocumentApp`クラスと対話します。
 
 ```javascript
@@ -56,7 +50,6 @@ searchReplaceInDoc();
 このコードスニペットは、アクティブなGoogleドキュメント内の`'searchText'`のすべての出現を`'replacementText'`に置き換えます。
 
 ### Google Sheets：
-
 同様に、Google Sheetsでは、`SpreadsheetApp`を使用して検索および置換操作を実行できます：
 
 ```javascript
@@ -75,7 +68,6 @@ searchReplaceInSheet();
 この例では、`createTextFinder('searchText')`はアクティブなシートで'searchText'を検索し、`replaceAllWith('replacementText')`はすべての出現を'replacementText'に置き換えます。
 
 ## 深堀り
-
 Google Apps Scriptの検索および置換機能は、そのWebベースの性質に大きく影響を受けており、スクリプトがさまざまなGoogle Appsでテキストをシームレスに操作できるようにしています。歴史的に、この機能は、PerlやPythonなどの言語での正規表現や文字列関数によって確立された柔軟性とパワーという、プログラミングにおけるテキスト処理と操作のより広い文脈から生じています。
 
 Google Apps Scriptの検索および置換機能は、直接的な置換には強力ですが、他の言語で見られる完全な正規表現機能を欠いています。例えば、Google Sheetsの`createTextFinder`で基本的な正規表現を使用できますが、PerlやPythonに比べて、複雑なパターンマッチングおよび操作のオプションは限られています。

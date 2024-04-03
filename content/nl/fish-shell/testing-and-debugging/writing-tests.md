@@ -13,9 +13,6 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-Tests schrijven is kleine controles creëren om ervoor te zorgen dat je code zich gedraagt zoals verwacht. Programmeurs schrijven tests om bugs vroeg te vangen, tijd te besparen en code betrouwbaar te houden terwijl deze verandert.
-
 ## Hoe:
 Fish heeft geen ingebouwd testframework, maar je kunt `fisher` gebruiken om er een te installeren zoals `Fishtape`. Hier is een eenvoudige test met `Fishtape`:
 

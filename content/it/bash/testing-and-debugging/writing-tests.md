@@ -12,9 +12,6 @@ title: Scrivere test
 weight: 36
 ---
 
-## Cosa e perché?
-Scrivere test in Bash comporta la creazione di script per casi di test al fine di convalidare la funzionalità dei vostri script Bash. I programmatori conducono test per assicurarsi che i loro script funzionino come previsto in varie condizioni, intercettando errori e bug prima del rilascio.
-
 ## Come fare:
 Bash non ha un framework di test integrato, ma è possibile scrivere semplici funzioni di test. Per test più sofisticati, strumenti di terze parti come `bats-core` sono popolari.
 

@@ -11,9 +11,6 @@ title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---
 
-## Vad & Varför?
-Att konvertera en sträng till gemener innebär att alla stora bokstäver i strängen omvandlas till små bokstäver. Programmerare gör detta för att standardisera inmatningsdata, underlätta jämförelser och sökningar utan att behöva oroa sig för stora och små bokstäver.
-
 ## Så här gör du:
 ```Swift
 let originalString = "Hej Världen!"

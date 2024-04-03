@@ -11,9 +11,6 @@ title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---
 
-## Mikä & Miksi?
-TOML:n kanssa työskentely tarkoittaa TOML-datam (Tom's Obvious, Minimal Language) jäsentämistä ja generointia käyttäen Elixiria. Ohjelmoijat käyttävät sitä asetustiedostojen käsittelyyn, koska TOML on luettavaa, helppo jäsentää ja kuvautuu hyvin hajautustietorakenteeseen.
-
 ## Miten:
 Lisää ensin TOML-jäsentäjä mix-riippuvuuksiisi. Tässä esimerkissä käytetään `toml-elixir`:
 

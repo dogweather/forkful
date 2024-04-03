@@ -16,9 +16,6 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i dlaczego?
-W PowerShellu sprawdzanie, czy katalog istnieje, jest częstym zadaniem, które pomaga skryptom podejmować decyzje na podstawie struktury systemu plików - na przykład unikając błędów przez potwierdzenie, że docelowy katalog jest na miejscu przed próbą czytania z niego lub zapisywania do niego. Jest to niezbędne, aby zapewnić niezawodne działanie skryptu w różnorodnych środowiskach.
-
 ## Jak to zrobić:
 PowerShell oferuje prosty sposób na sprawdzenie obecności katalogu za pomocą polecenia `Test-Path`. To polecenie zwraca wartość logiczną wskazującą, czy określona ścieżka istnieje. Oto jak możesz tego użyć:
 

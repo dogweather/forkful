@@ -12,12 +12,7 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co i dlaczego?
-
-Obsługa błędów w skryptach Bash polega na przewidywaniu, gdzie mogą pojawić się problemy i radzenie sobie z nimi w elegancki sposób. Dlaczego? Ponieważ zapewnia to niezawodność skryptu i oszczędza użytkownikom drapania się po głowie, kiedy rzeczy nie działają tak, jak się tego oczekuje.
-
 ## Jak to zrobić:
-
 ```Bash
 #!/bin/bash
 
@@ -50,7 +45,6 @@ cat: temp_file.txt: Nie ma takiego pliku ani katalogu
 ```
 
 ## Szczegółowa analiza
-
 Obsługa błędów w skryptach Bash sięga początków powłoki Unix, gdzie niezawodne i solidne skrypty były (i są) istotne dla administracji systemem i automatyzacji. Tradycyjnie błędy w Bashu są obsługiwane poprzez sprawdzanie statusu wyjścia komendy, która przez konwencję zwraca 0 w przypadku sukcesu i wartość niezerową w przypadku porażki.
 
 Bash wprowadził polecenie `trap` jako wbudowaną funkcję, pozwalając użytkownikom określać komendy wykonywane na różnych sygnałach lub przy wyjściu ze skryptu. Jest to przydatne do zadań porządkowych lub jako ostateczny mechanizm obsługi błędów.
@@ -62,7 +56,6 @@ Alternatywy dla wbudowanej obsługi błędów Basha obejmują jawne sprawdzanie 
 Chociaż rygorystyczna obsługa błędów może czasem wydawać się przesadną dla małych skryptów, jest to praktyka, która może zaoszczędzić dużo czasu na debugowaniu i zapobiegać nieoczekiwanemu zachowaniu zarówno dla Ciebie, jak i użytkowników.
 
 ## Zobacz również
-
 - Podręcznik Basha o parametrach powłoki: https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameters
 - Sekcja o obsłudze błędów w Przewodniku Zaawansowanego Skryptowania w Bashu: https://www.tldp.org/LDP/abs/html/exit-status.html
 - Wyczerpujący przewodnik na temat `trap`: https://mywiki.wooledge.org/SignalTrap

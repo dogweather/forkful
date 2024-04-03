@@ -11,9 +11,6 @@ title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---
 
-## What & Why? (O Que & Por Quê?)
-Deletar caracteres que combinam com um padrão é basicamente filtrar a nossa string, tirando tudo que não queremos. Programadores fazem isso pra limpar dados, validar inputs ou simplificar processamento de texto.
-
 ## How to: (Como Fazer:)
 Vamos lá! No Arduino, não temos uma função pronta pra isso, então vamos criar uma. Olha só este exemplo, que remove todos os dígitos de uma string:
 

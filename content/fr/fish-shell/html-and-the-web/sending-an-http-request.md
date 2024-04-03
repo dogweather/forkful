@@ -11,9 +11,6 @@ title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---
 
-## Quoi & Pourquoi ?
-Envoyer une requête HTTP, c'est demander à un serveur web de nous envoyer des données ou d'effectuer une action. Les programmeurs le font pour interagir avec des API web, récupérer des informations ou tester la connectivité et les performances des sites internet.
-
 ## Comment faire :
 ```Fish Shell
 # Utilisation de la commande `curl` pour envoyer une requête GET simple

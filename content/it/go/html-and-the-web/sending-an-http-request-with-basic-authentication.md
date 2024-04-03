@@ -14,12 +14,7 @@ title: Inviare una richiesta HTTP con autenticazione di base
 weight: 45
 ---
 
-## Cos'è & Perché?
-
-Inviare una richiesta HTTP con autenticazione di base in Go comporta l'aggiunta di un'intestazione di autorizzazione alla tua richiesta che include un nome utente e una password sotto forma di stringa codificata in Base64. I programmatori utilizzano questo metodo per accedere a risorse che richiedono la verifica dell'utente, garantendo che le loro applicazioni possano interagire in modo sicuro con i servizi sul web.
-
 ## Come fare:
-
 Per effettuare una richiesta HTTP con autenticazione di base in Go, è necessario creare le intestazioni della tua richiesta per includere il campo `Authorization`, popolato con le tue credenziali nel formato corretto. Di seguito è riportato un esempio che dimostra come eseguire una richiesta GET a un endpoint API che richiede l'autenticazione di base:
 
 ```go
@@ -62,7 +57,6 @@ Stato della risposta: 200 OK
 ```
 
 ## Approfondimento
-
 L'Autenticazione di Base nelle richieste HTTP è un metodo ampiamente supportato per imporre controlli di accesso alle risorse web. Invia semplicemente un nome utente e una password con ogni richiesta, rendendolo facile da implementare ma non il metodo più sicuro disponibile. Uno dei principali svantaggi è che, a meno che non sia utilizzato in combinazione con SSL/TLS, le credenziali vengono inviate in chiaro (poiché Base64 è facilmente decodificato). Ciò può potenzialmente esporre informazioni sensibili agli attacchi man-in-the-middle.
 
 In Go, l'invio di queste richieste comporta la manipolazione diretta dell'intestazione `Authorization`. Sebbene la libreria standard di Go (`net/http`) fornisca primitive potenti per occuparsi delle comunicazioni HTTP(s), è relativamente di basso livello, richiedendo agli sviluppatori di gestire manualmente vari aspetti della gestione delle richieste/risposte HTTP. Ciò offre ai programmatori molta flessibilità, ma significa anche che è necessario prestare maggiore attenzione alle implicazioni per la sicurezza, alla codifica e alla corretta gestione delle intestazioni.

@@ -11,9 +11,6 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## What & Why? (Cosa e Perché?)
-Stampare output di debug significa mostrare informazioni temporanee che aiutano i programmatori a capire cosa sta succedendo nel codice. Lo fanno per individuare e risolvere problemi durante lo sviluppo del software.
-
 ## How to: (Come fare:)
 ```C++
 #include <iostream>

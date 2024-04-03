@@ -12,9 +12,6 @@ title: Skriving til standardfeil
 weight: 25
 ---
 
-## Hva & hvorfor?
-Å skrive til standard feil (stderr) i Rust handler om å dirigere feilmeldinger og diagnostikk til konsollen separat fra standard utdata (stdout). Programmerere gjør dette for å skille normalt programutdata fra feilmeldinger, noe som gjør det lettere å håndtere feil på en passende måte eller omdirigere dem til logger eller filer under utførelse.
-
 ## Hvordan gjøre det:
 Rust gir en enkel måte å skrive til stderr på ved bruk av `eprintln!`-makroen, likt som hvordan `println!` brukes for stdout. Her er et grunnleggende eksempel:
 

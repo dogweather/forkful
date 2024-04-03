@@ -9,9 +9,6 @@ title: Einen HTTP-Request senden
 weight: 44
 ---
 
-## Was & Warum?
-HTTP-Anfragen sind der Weg, über den Programme im Internet kommunizieren. Programmierer senden sie, um Daten zu holen, zu senden, zu ändern oder zu löschen - die Grundbausteine der Interaktion mit Webdiensten.
-
 ## So geht's:
 Hier ist ein einfaches Beispiel, wie man eine GET-Anfrage in Java sendet, um den Inhalt einer Webseite zu holen:
 

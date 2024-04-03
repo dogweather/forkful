@@ -13,12 +13,7 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## Hva & Hvorfor?
-
-Å lese en tekstfil i Dart innebærer å få tilgang til og hente data fra filer lagret på filsystemet. Programmerere gjør dette for å håndtere inndata, konfigurasjonsinnstillinger eller lese datasett, noe som gjør det til en grunnleggende operasjon for mange applikasjoner som strekker seg fra enkle skript til komplekse apper.
-
 ## Hvordan:
-
 Darts kjernebibliotek, `dart:io`, gir de nødvendige funksjonene for å lese tekstfiler synkront eller asynkront. Her er hvordan man kan nærme seg begge.
 
 **Synkront:**

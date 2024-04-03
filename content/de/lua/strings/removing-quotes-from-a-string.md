@@ -10,9 +10,6 @@ title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---
 
-## Was & Warum?
-Anführungszeichen aus einem String zu entfernen bedeutet, diese doppelten oder einfachen Anführungszeichen, die deinen Text umarmen, wegzuschälen. Programmierer machen das, um Eingaben zu bereinigen, das Parsen zu erleichtern oder Daten zu harmonisieren, die möglicherweise inkonsistent zitiert sind.
-
 ## Wie:
 So wirst du die Anführungszeichen in Lua los:
 

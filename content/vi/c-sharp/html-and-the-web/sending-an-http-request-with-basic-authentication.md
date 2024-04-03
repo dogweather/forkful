@@ -18,9 +18,6 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1
 weight: 45
 ---
 
-## Gì và Tại sao?
-Chúng ta gửi một yêu cầu HTTP với xác thực cơ bản để truy cập vào các tài nguyên được bảo vệ bằng cách bao gồm thông tin đăng nhập của người dùng trong tiêu đề yêu cầu. Các lập trình viên sử dụng nó cho các hệ thống xác thực đơn giản, chủ yếu là nơi một giải pháp nhanh chóng và đơn giản phù hợp.
-
 ## Cách thực hiện:
 Chúng ta hãy bắt đầu ngay với một số mã. Dưới đây là một ví dụ tối thiểu sử dụng C# để gửi một yêu cầu HTTP với xác thực cơ bản:
 

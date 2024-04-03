@@ -13,12 +13,7 @@ title: Skriving til standardfeil
 weight: 25
 ---
 
-## Hva & Hvorfor?
-
-Skriving til standardfeil (stderr) handler om å lede programmets feilmeldinger eller diagnostiske utdata til en separat strøm, forskjellig fra standardutdata (stdout). Dette er avgjørende for feilsøking og logging av feil uten å rote til standardutdata, noe som letter både utvikleres og brukeres forståelse av programmets tilstand og problemer.
-
 ## Hvordan:
-
 I Swift kan skriving til standardfeil gjøres ved å bruke `FileHandle`-klassen for direkte tilgang til stderr. Her er et enkelt eksempel:
 
 ```swift

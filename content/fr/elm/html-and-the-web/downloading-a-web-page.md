@@ -11,9 +11,6 @@ title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Télécharger une page web, c'est récupérer son contenu via le réseau. Les programmeurs font ça pour accéder et utiliser des données, souvent dynamiques, depuis leurs applications.
-
 ## How to: (Comment faire :)
 En Elm, on utilise le package `Http` pour les requêtes web. Voilà un exemple basique :
 

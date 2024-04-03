@@ -13,12 +13,7 @@ title: Interpolation einer Zeichenkette
 weight: 8
 ---
 
-## Was & Warum?
-
-Die Zeichenketteninterpolation in Google Apps Script ermöglicht das dynamische Einbetten von Ausdrücken in Zeichenketten und erleichtert die Erstellung von lesbarem und wartbarem Code. Programmierer verwenden diese Technik, um Variablen und Ausdrücke nahtlos in Zeichenketten einzufügen, ohne die umständliche Syntax für die Konkatenation zu verwenden.
-
 ## Wie:
-
 In Google Apps Script wird die Zeichenketteninterpolation durch Template-Literale erreicht. Dabei handelt es sich um Zeichenkettenliterale, die eingebettete Ausdrücke erlauben und durch Rückstriche (\`) anstatt der üblichen Anführungszeichen gekennzeichnet sind. So können Sie sie verwenden:
 
 ```javascript
@@ -55,7 +50,6 @@ multiLineStringExample();
 Diese Beispiele veranschaulichen die grundlegende Verwendung, das Einbetten von Ausdrücken und das Erstellen von mehrzeiligen Zeichenketten mit interpolierten Werten.
 
 ## Vertiefung
-
 Template-Literale, einschließlich der Zeichenketteninterpolation, wurden in ECMAScript 2015 (ES6) eingeführt und anschließend in Google Apps Script übernommen. Davor mussten sich Programmierer ausschließlich auf die Zeichenkettenkonkatenation verlassen, was bei komplexen Zeichenketten oder bei der Integration vieler Variablenwerte umständlich werden konnte.
 
 ```javascript

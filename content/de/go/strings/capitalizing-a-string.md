@@ -13,12 +13,7 @@ title: "Einen String gro\xDFschreiben"
 weight: 2
 ---
 
-## Was & Warum?
-
-Das Kapitalisieren eines Strings (Zeichenkette) beinhaltet, den ersten Buchstaben eines gegebenen Strings in Großbuchstaben umzuwandeln, falls dieser klein geschrieben ist. Dadurch sticht der String hervor oder entspricht bestimmten grammatischen Normen. Programmierer führen diese Operation häufig durch, um Benutzereingaben zu formatieren, Eigennamen korrekt darzustellen oder um Datenkonsistenz über Softwareanwendungen hinweg sicherzustellen.
-
 ## Wie:
-
 In Go bietet das `strings`-Paket keine direkte Funktion, um nur den ersten Buchstaben eines Strings zu kapitalisieren. Daher kombinieren wir die Funktion `strings.ToUpper()`, die einen String in Großbuchstaben umwandelt, mit dem Slicen, um unser Ziel zu erreichen. So geht's:
 
 ```go
@@ -53,7 +48,6 @@ func main() {
 Diese Funktion überprüft, ob der String leer ist oder ob der erste Buchstabe bereits ein Großbuchstabe ist. Sie nutzt das `unicode/utf8`-Paket, um Unicode-Zeichen korrekt zu behandeln, und stellt sicher, dass unsere Funktion mit einer breiten Palette von Eingaben über das grundlegende ASCII hinaus funktioniert.
 
 ## Tiefergehend
-
 Die Notwendigkeit, Strings in Go zu kapitalisieren, ohne dass eine integrierte Funktion vorhanden ist, könnte insbesondere für Programmierer, die aus Sprachen kommen, in denen String-Manipulationsfunktionen umfangreicher sind, wie eine Einschränkung erscheinen. Diese Beschränkung fördert das Verständnis für die Handhabung von Strings und die Bedeutung von Unicode in der modernen Softwareentwicklung.
 
 Historisch gesehen haben sich Programmiersprachen in ihrer Behandlung von Strings weiterentwickelt, wobei frühe Sprachen die Internationalisierung oft übersehen haben. Go’s Ansatz, der für scheinbar einfache Aufgaben etwas mehr Code erfordert, stellt sicher, dass Entwickler von Anfang an achtsam gegenüber globalen Nutzern sind.

@@ -12,9 +12,6 @@ title: Eliminando comillas de una cadena
 weight: 9
 ---
 
-## ¿Qué y por qué?
-Eliminar las comillas de una cadena significa deshacerse de esas molestas comillas que pueden interferir con tu código, especialmente cuando estás analizando datos o construyendo objetos JSON. Los programadores lo hacen para sanear entradas, evitar errores de sintaxis y hacer que las cadenas se lleven bien con otras partes de su código.
-
 ## Cómo hacerlo:
 Imagina que tienes una cadena envuelta en comillas dobles, como `"\"¡Hola, Mundo!\""` y quieres el texto puro, sin comillas. Aquí tienes un fragmento rápido de JavaScript para liberar tu cadena de esas ataduras de comillas:
 

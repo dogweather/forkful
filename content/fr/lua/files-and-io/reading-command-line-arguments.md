@@ -11,9 +11,6 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Lire les arguments de ligne de commande en Lua, c'est récupérer les infos tapées par l'utilisateur quand il lance votre script. Les programmeurs font ça pour personnaliser le comportement du script selon les besoins de l'utilisateur sans changer le code.
-
 ## How to: (Comment faire ?)
 ```Lua
 -- Exemple de base pour lire les arguments de ligne de commande en Lua

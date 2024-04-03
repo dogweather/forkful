@@ -22,12 +22,7 @@ title: "XML\u306E\u6271\u3044\u65B9"
 weight: 40
 ---
 
-## はじめに: 何となぜ？
-
-HaskellでのXMLの取り扱いは、XML構造の解析、操作、生成を含みます。プログラマは、Webサービスや設定ファイルなど、XMLをデータフォーマットとして使用する多数のアプリケーションやプロトコルと対話するためにXMLを扱います。
-
 ## 方法:
-
 Haskellでは、`xml-conduit`のようなライブラリを使用してXMLを扱います。以下の例は、XML文字列の解析と要素のクエリについて示しています：
 
 ```haskell
@@ -54,7 +49,6 @@ main = do
 ```
 
 ## 深掘り:
-
 XMLは、eXtensible Markup Languageの略で、JSONが台頭するずっと前からデータシリアライゼーションにおいて重要な地位を占めています。それは冗長ですが、厳格で標準化されており、金融や医療などの業界、レガシーシステム、厳格な企業環境に適しています。
 
 HaskellにはXML用の複数のライブラリがありますが、効率的なストリーミングと解析能力を備えた`xml-conduit`が、`conduit`ファミリーのデータストリーム処理の一部として、最も強力で広く使用されています。
@@ -64,7 +58,6 @@ HaskellにはXML用の複数のライブラリがありますが、効率的な�
 HaskellでXML処理を実装するときは、Haskellの文字列がUnicodeであり、XMLデータがそうでない可能性があるため、エンコーディングに注意を払う必要があります。さらに、XMLの名前空間は解析を複雑にする追加の要素かもしれません。
 
 ## 参照:
-
 - `xml-conduit`パッケージのドキュメンテーション: https://hackage.haskell.org/package/xml-conduit
 - Haskell XMLツールボックス（HXT）: http://hackage.haskell.org/package/hxt
 - 「実際の世界のHaskell」の本、第16章、XMLの取り扱い: http://book.realworldhaskell.org/read/xml.html

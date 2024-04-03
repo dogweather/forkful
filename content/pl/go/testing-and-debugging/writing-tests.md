@@ -14,12 +14,7 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i dlaczego?
-
-Pisanie testów w Go polega na tworzeniu małych, zarządzalnych fragmentów kodu, które weryfikują funkcjonalność i zachowanie aplikacji. Programiści piszą testy, aby upewnić się, że ich kod działa zgodnie z oczekiwaniami w różnych warunkach, ułatwić refaktoryzację oraz pomóc zapobiegać regresji.
-
 ## Jak to zrobić:
-
 W Go testy są zazwyczaj pisane w tym samym pakiecie co kod, który testują. Pliki zawierające testy nazwane są z sufiksem `_test.go`. Testy to funkcje, które przyjmują wskaźnik do obiektu testing.T (z pakietu `testing`) jako argument i sygnalizują niepowodzenie, wywołując metody takie jak `t.Fail()`, `t.Errorf()` itp.
 
 Przykład prostego testu dla funkcji `Add` zdefiniowanej w `math.go`:
@@ -81,7 +76,6 @@ func TestAddTableDriven(t *testing.T) {
 ```
 
 ## Dogłębna analiza
-
 Framework testowy Go, wprowadzony w Go 1 razem z samym językiem, został zaprojektowany w celu bezproblemowej integracji z narzędziowiem Go, odzwierciedlając nacisk Go na prostotę i efektywność w rozwoju oprogramowania. W przeciwieństwie do niektórych frameworków testowych w innych językach, które polegają na zewnętrznych bibliotekach lub skomplikowanych konfiguracjach, wbudowany pakiet `testing` Go zapewnia prosty sposób na pisanie i uruchamianie testów.
 
 Interesującym aspektem podejścia Go do testowania jest zasada konwencji ponad konfiguracją, którą przyjmuje, tak jak wzorzec nazewnictwa plików (`_test.go`) i używanie funkcjonalności biblioteki standardowej zamiast zewnętrznych zależności. To minimalizujące podejście zachęca programistów do pisania testów, ponieważ bariery wejścia są niskie.

@@ -10,9 +10,6 @@ title: Rimuovere le virgolette da una stringa
 weight: 9
 ---
 
-## Cosa e Perché?
-Rimuovere le virgolette da una stringa significa liberarsi di quei fastidiosi caratteri doppi o singoli che racchiudono il nostro testo (' o "). I programmatori spesso fanno ciò per sanificare l'input, memorizzare testo in un database o preparare le stringhe per ulteriori elaborazioni senza l'ingombro delle virgolette.
-
 ## Come fare:
 Ecco un modo diretto per eliminare quelle virgolette in C++:
 

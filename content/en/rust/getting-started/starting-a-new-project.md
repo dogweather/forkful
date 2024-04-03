@@ -10,12 +10,7 @@ title: Starting a new project
 weight: 1
 ---
 
-## What & Why?
-
-Starting a new project in Rust means setting up a basic structure so your code has a place to live. Programmers kick off new projects to solve problems, learn, or develop software from scratch.
-
 ## How to:
-
 To start a new Rust project, you need Cargo—the Rust package manager. Install Rust and Cargo through the official installer, rustup.
 
 ```sh
@@ -59,7 +54,6 @@ Hello, world!
 ```
 
 ## Deep Dive
-
 Rust has had its own package manager and build system, Cargo, from the early days. Created around 2013, it's Rust's way of managing projects, dependencies, and builds.
 
 Why is Cargo so great for starting new projects?
@@ -73,7 +67,6 @@ Other languages use different tools—Node.js has npm, Ruby has Bundler, and Pyt
 Alternatives to starting projects in Rust? Well, you could craft everything by hand or use IDEs, but why reinvent the wheel when Cargo does the heavy lifting?
 
 ## See Also
-
 - The Rust Programming Language Book: https://doc.rust-lang.org/book/
 - Rust and Cargo installation guide: https://www.rust-lang.org/tools/install
 - Cargo documentation: https://doc.rust-lang.org/cargo/

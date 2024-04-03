@@ -10,9 +10,6 @@ title: Descobrindo o comprimento de uma string
 weight: 7
 ---
 
-## What & Why?
-Descobrir o tamanho de uma string é basicamente contar quantos caracteres ela tem. Programadores fazem isso para validar entradas, manipular textos ou simplesmente para saber a quantidade de dados a serem processados.
-
 ## How to:
 Usar `length` em JavaScript é moleza. Olha só:
 

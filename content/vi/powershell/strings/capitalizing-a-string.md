@@ -16,9 +16,6 @@ title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---
 
-## Cái gì & Tại sao?
-Việc viết hoa một chuỗi nghĩa là làm cho từng chữ cái bắt đầu bằng một chữ cái in hoa, thường được sử dụng cho tiêu đề hoặc để nhấn mạnh danh từ riêng. Lập trình viên sử dụng nó để định dạng đầu ra hoặc chuẩn bị dữ liệu cho sự nhất quán trong hiển thị.
-
 ## Làm thế nào:
 Hãy làm cho một số văn bản trở nên sinh động hơn. Trong PowerShell, sử dụng `.ToTitleCase` từ `System.Globalization` cho việc viết hoa tiêu đề, hoặc các phương thức đơn giản như `.ToUpper()` hoặc `.ToLower()` để thay đổi trường hợp.
 

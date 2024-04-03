@@ -17,9 +17,6 @@ title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---
 
-## Lý do và Tại sao?
-Kiểm tra xem một thư mục có tồn tại không là để đảm bảo rằng folder thực sự có mặt trước khi bạn đọc từ nó hoặc ghi vào nó. Lập trình viên làm điều này để tránh lỗi, như là cố gắng lưu một tệp vào một nơi không tồn tại - đó chắc chắn là điều không được chấp nhận.
-
 ## Cách thực hiện:
 Trong TypeScript, bạn thường sử dụng module `fs` của Node.js để kiểm tra một thư mục. Đây là cách nhanh để làm điều đó:
 

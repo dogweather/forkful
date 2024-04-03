@@ -12,9 +12,6 @@ title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---
 
-## Quoi et Pourquoi ?
-Convertir une chaîne de caractères en minuscules, ça veut dire transformer tous les caractères majuscules en leur équivalents en bas de casse. On le fait pour uniformiser les données, par exemple pour comparer des entrées utilisateurs sans se soucier de la casse.
-
 ## Comment faire :
 ```Rust
 fn main() {

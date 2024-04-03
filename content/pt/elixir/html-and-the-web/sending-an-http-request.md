@@ -11,9 +11,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---
 
-## O Que é & Porquê?
-Enviar uma requisição HTTP significa pedir informação ou enviar dados para um servidor web usando o protocolo HTTP. Programadores fazem isso para interagir com APIs web, acessar serviços remotos e trocar informações com outras aplicações.
-
 ## Como Fazer:
 Para enviar requisições HTTP em Elixir, você pode usar a biblioteca HTTPoison. Primeiro, adicione ao seu `mix.exs`:
 

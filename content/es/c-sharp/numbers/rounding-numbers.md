@@ -10,9 +10,6 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## ¿Qué y Por Qué?
-Redondear números significa ajustarlos al lugar de valor especificado más cercano—piensa en simplificarlos a una forma más simple. Los programadores redondean para controlar la precisión, mejorar el rendimiento o cuando muestran resultados amigables al usuario—como precios que no necesitan tres lugares decimales.
-
 ## Cómo:
 Aquí está el boleto de ida y vuelta para redondear números en C#:
 

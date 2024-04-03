@@ -10,9 +10,6 @@ title: Searching and replacing text
 weight: 10
 ---
 
-## What & Why?
-Searching and replacing text in files: it's swapping out words or phrases for others. Programmers use it to update code, fix errors, or alter data across multiple files quickly without manually combing through each one.
-
 ## How to:
 PowerShell makes search and replace pretty straightforward. Check out `-replace` for strings, and `Get-Content` with `Set-Content` for files.
 

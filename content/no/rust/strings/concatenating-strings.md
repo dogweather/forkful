@@ -11,9 +11,6 @@ title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---
 
-## Hva & Hvorfor?
-I programmering betyr strengkonkatenering å sette sammen to eller flere tekststykker til ett. Vi gjør det for å bygge setninger, lage dynamiske meldinger, eller kombinere data på en meningsfull måte.
-
 ## Hvordan:
 I Rust brukes `+`-operatoren eller `format!`-makroen for å slå sammen strenger. Her er noen eksempler:
 

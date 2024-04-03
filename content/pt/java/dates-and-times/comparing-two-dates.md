@@ -10,12 +10,7 @@ title: Comparando duas datas
 weight: 27
 ---
 
-## O Que & Porquê?
-
-Comparar duas datas significa verificar se são iguais, ou determinar qual vem antes ou depois no tempo. Programadores fazem isso frequentemente para validações, agendamentos, ou para controlar períodos em aplicações.
-
 ## Como fazer:
-
 ```java
 import java.time.LocalDate;
 import java.time.Month;
@@ -46,12 +41,10 @@ public class ComparacaoDeDatas {
 ```
 
 ## Visão Detalhada
-
 Antigamente, comparar datas em Java era mais complicado e impreciso, usando `java.util.Date` e `SimpleDateFormat`. Essas classes podiam ter problemas com threads e usavam índices base 0 para meses, o que confundia. Desde o Java 8, a API `java.time` (Joda-Time inspirou) simplificou essa tarefa com `LocalDate`, `LocalTime`, e `LocalDateTime`.
 
 Existem alternativas como a `Calendar` (da velha API), mas a nova API é mais intuitiva e segura em relação a threads. Detalhes de implementação da nova API incluem imutabilidade (objetos não mudam, você cria novos) e clareza de métodos (`isBefore`, `isAfter`, `isEqual`).
 
 ## Veja Também
-
 - Documentação oficial da Oracle sobre a API java.time: [https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
 - Tutorial da API de data e hora do Java: [https://www.baeldung.com/java-8-date-time-intro](https://www.baeldung.com/java-8-date-time-intro)

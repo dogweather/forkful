@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Gì và Tại sao?
-Làm việc với XML bao gồm việc phân tích cú pháp, biến đổi, và tạo ra các tài liệu XML trong Elm. Việc này được thực hiện để tương tác với nhiều dịch vụ web và hệ thống cũ dùng XML làm định dạng dữ liệu của họ.
-
 ## Làm thế nào:
 Trong Elm, bạn xử lý XML sử dụng gói `elm/xml`. Dưới đây là cái nhìn nhanh về cách phân tích cú pháp một đoạn XML:
 

@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## What & Why? (Mikä ja Miksi?)
-Lähettämällä HTTP-pyynnön, ohjelmat voivat pyytää tietoa tai lähettää dataa web-palvelimelle. Ohjelmoijat tekevät sen, koska se on netin kanssakäymisen ydin - ilman pyyntöjä, ei keskustelua palvelimien kanssa.
-
 ## How to: (Kuinka tehdä:)
 Java tarjoaa `java.net.http`-paketin HTTP-pyyntöjen lähettämiseen, joka sisältää `HttpClient`, `HttpRequest` ja `HttpResponse` -luokat.
 

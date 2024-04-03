@@ -13,9 +13,6 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i dlaczego?
-Pisanie testów w Pythonie polega na tworzeniu automatycznych skryptów, mających na celu zweryfikowanie poprawności działania kodu. Programiści robią to, aby upewnić się, że ich funkcje lub klasy działają zgodnie z oczekiwaniami w różnych warunkach, co pomaga wcześnie wyłapać błędy oraz ułatwia późniejsze konserwowanie i refaktoryzowanie kodu.
-
 ## Jak to zrobić:
 Python posiada wbudowany moduł do pisania testów, nazwany `unittest`. Oto, jak możesz go użyć do przetestowania prostej funkcji:
 

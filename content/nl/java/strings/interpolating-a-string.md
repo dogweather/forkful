@@ -12,9 +12,6 @@ title: Een string interpoleren
 weight: 8
 ---
 
-## Wat & Waarom?
-String interpolatie stelt je in staat om variabelen direct in strings in te voegen. Het maakt code schoner en gemakkelijker te lezen door onhandige stringconcatenatie te vermijden.
-
 ## Hoe te gebruiken:
 Java introduceerde `String.format()` voor interpolatie:
 

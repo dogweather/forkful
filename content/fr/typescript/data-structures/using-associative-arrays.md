@@ -13,12 +13,7 @@ title: Utilisation des tableaux associatifs
 weight: 15
 ---
 
-## Quoi & Pourquoi ?
-
-Les tableaux associatifs, ou objets en TypeScript, vous permettent d'utiliser des chaînes de caractères (ou clés) pour accéder aux paires de valeurs. Les programmeurs les utilisent pour des motifs d'accès aux données plus dynamiques par rapport aux tableaux traditionnels, offrant une manière flexible de structurer et d'accéder aux données sans être lié à des indices numériques.
-
 ## Comment faire :
-
 Créer et utiliser des tableaux associatifs en TypeScript est simple. Voici un exemple de base :
 
 ```TypeScript
@@ -70,7 +65,6 @@ Sortie :
 ```
 
 ## Approfondissement
-
 En TypeScript, ce que nous appelons des tableaux associatifs sont essentiellement des objets. Historiquement, dans des langues comme PHP, les tableaux associatifs sont un type fondamental, mais JavaScript (et par extension, TypeScript) utilise des objets à cette fin. Cette approche est à la fois une force et une limitation. Les objets fournissent une structure hautement dynamique pour associer des chaînes aux valeurs, mais ils ne sont pas destinés à être utilisés comme des 'tableaux' dans le sens traditionnel. Par exemple, vous ne pouvez pas utiliser directement sur ces objets des méthodes de tableau comme `push` ou `pop`.
 
 Pour les cas où vous avez besoin de collections ordonnées de paires clé-valeur avec des opérations semblables à celles des tableaux, TypeScript (et le JavaScript moderne) offre l'objet `Map` :

@@ -10,9 +10,6 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## What & Why? (Co i Dlaczego?)
-Pobieranie strony internetowej to proces ściągania jej danych. Programiści robią to, aby przetworzyć, przeszukać lub wyszukać konkretną treść.
-
 ## How to: (Jak to zrobić:)
 Do pobierania stron internetowych w TypeScript użyjemy biblioteki `axios`. Oto przykład:
 

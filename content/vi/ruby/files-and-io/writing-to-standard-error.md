@@ -16,9 +16,6 @@ title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---
 
-## Gì & Tại sao?
-Lỗi chuẩn (`stderr`) là một luồng tách biệt khỏi đầu ra chuẩn (`stdout`) được sử dụng chủ yếu để xuất thông báo lỗi hoặc chẩn đoán. Lập trình viên sử dụng nó để ngăn thông báo lỗi trộn lẫn với đầu ra chương trình thông thường, giúp việc gỡ lỗi và xử lý đầu ra dễ dàng hơn.
-
 ## Làm thế nào:
 Trong Ruby, bạn có thể ghi vào lỗi chuẩn sử dụng `$stderr.puts` hoặc phiên bản viết tắt `STDERR.puts`. Dưới đây là một ví dụ nhanh:
 

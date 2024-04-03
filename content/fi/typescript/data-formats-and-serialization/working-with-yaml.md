@@ -14,9 +14,6 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä & Miksi?
-YAML, ihmisläheisesti suunniteltu tietojen serialisointikieli, on usein käytössä konfiguraatiotiedostoissa, prosessien välisessä viestinnässä ja tietojen tallennuksessa. Ohjelmoijat suosivat YAMLia sen luettavuuden ja helppokäyttöisyyden vuoksi, erityisesti käsiteltäessä monimutkaista rakenteistettua tietoa, mikä tekee siitä erinomaisen valinnan TypeScriptillä kehitettyihin sovelluksiin.
-
 ## Kuinka:
 YAMLin käsittely TypeScriptissä sisältää tyypillisesti YAML-sisällön jäsentämisen JavaScript-objekteiksi ja mahdollisesti JavaScript-objektien muuntamisen takaisin YAMLiksi. Tämä vaatii jäsentimen; yksi suosittu vaihtoehto on `js-yaml`, kirjasto, joka voidaan helposti integroida TypeScript-projekteihin.
 

@@ -10,9 +10,6 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## Co i dlaczego?
-Zastępowanie tekstu to podmiana jednego ciągu znaków innym. Programiści robią to, by szybko modyfikować dane czy kod - poprawiają błędy, aktualizują informacje, dostosowują do nowych wymagań.
-
 ## Jak to zrobić:
 ```C++
 #include <iostream>

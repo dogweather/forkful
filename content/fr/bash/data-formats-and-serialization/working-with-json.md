@@ -12,9 +12,6 @@ title: Travailler avec JSON
 weight: 38
 ---
 
-## Quoi et Pourquoi ?
-Travailler avec JSON en programmation Bash implique d'analyser, d'extraire et de manipuler des données JSON directement depuis la ligne de commande. Les programmeurs font souvent cela pour intégrer de manière transparente les scripts shell avec les API web et les formats modernes d'échange de données, rendant le script Bash plus puissant et pertinent dans un écosystème riche en JSON.
-
 ## Comment faire :
 Bash lui-même manque de capacités intégrées d'analyse JSON, mais `jq` est un processeur JSON en ligne de commande puissant qui comble cette lacune. Voici comment l'utiliser :
 

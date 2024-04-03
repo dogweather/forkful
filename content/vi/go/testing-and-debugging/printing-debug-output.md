@@ -17,12 +17,7 @@ title: "In \u0111\u1EA7u ra debug"
 weight: 33
 ---
 
-## Gì & Tại Sao?
-
-Trong lập trình máy tính, "In thông điệp gỡ lỗi" bao gồm việc sản xuất các thông điệp thông tin chi tiết giúp các nhà phát triển hiểu được luồng thực hiện của chương trình hoặc xác định các vấn đề. Lập trình viên làm điều này để chẩn đoán và giải quyết các vấn đề một cách hiệu quả hơn, làm cho nó trở thành một kỹ năng thiết yếu trong bộ công cụ lập trình, bao gồm cả Go.
-
 ## Cách thực hiện:
-
 Trong Go, bạn có thể sử dụng gói `fmt` chuẩn để in thông điệp gỡ lỗi ra bảng điều khiển. Gói `fmt` cung cấp một loạt các hàm, như `Println`, `Printf`, và `Print`, phục vụ cho các nhu cầu định dạng khác nhau.
 
 ```go
@@ -84,7 +79,6 @@ Thông điệp trong `debug.log` sẽ trông như thế này:
 ```
 
 ## Sâu hơn
-
 Việc in thông điệp gỡ lỗi đã là một phương thức lâu đời trong lập trình máy tính, với cách thực hiện thay đổi qua các ngôn ngữ khác nhau. Trong Go, các gói 'fmt' và 'log' của thư viện chuẩn cung cấp các lựa chọn đơn giản và đa dụng. Mặc dù gói 'fmt' đủ cho nhu cầu gỡ lỗi cơ bản, gói 'log' cung cấp chức năng nâng cao hơn như cấp độ nhật ký và đầu ra cấu hình linh hoạt.
 
 Hơn nữa, khi ứng dụng trở nên phức tạp hơn, các framework nhật ký như 'zap' và 'logrus' có thể cung cấp các tính năng nâng cao hơn như nhật ký có cấu trúc và hiệu năng tốt hơn. Các gói của bên thứ ba này cho phép các nhà phát triển tùy chỉnh chiến lược nhật ký của họ theo nhu cầu cụ thể.

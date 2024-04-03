@@ -16,11 +16,7 @@ title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---
 
-## Gì và Tại sao?
-Đọc các đối số dòng lệnh có nghĩa là lấy dữ liệu được truyền tới chương trình của bạn khi nó khởi động. Các lập trình viên cần điều này để cho phép người dùng tùy chỉnh hành vi của chương trình mà không cần thay đổi mã.
-
 ## Làm thế nào:
-
 ```kotlin
 fun main(args: Array<String>) {
     if (args.isNotEmpty()) {

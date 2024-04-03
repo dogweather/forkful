@@ -18,9 +18,6 @@ title: "Chuy\u1EC3n ch\u1EEF c\xE1i \u0111\u1EA7u ti\xEAn c\u1EE7a chu\u1ED7i th
 weight: 2
 ---
 
-## Cái Gì và Tại Sao?
-Việc viết hoa một chuỗi thường có nghĩa là chuyển ký tự đầu tiên của chuỗi thành chữ in hoa và phần còn lại thành chữ thường. Nhưng đôi khi, nó có thể chỉ đơn giản là đảm bảo ký tự đầu tiên là chữ in hoa trong khi để phần còn lại của chuỗi không thay đổi. Thành thật mà nói, theo ý kiến của tôi, đây là một thuật ngữ khá mơ hồ.
-
 ## Làm thế nào:
 Ruby cung cấp [các phương thức đơn giản cho việc thao tác chuỗi](https://docs.ruby-lang.org/en/3.3/String.html), bao gồm cả việc viết hoa:
 

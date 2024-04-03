@@ -14,9 +14,6 @@ title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---
 
-## Co i dlaczego?
-Pisanie do standardowego błędu (stderr) w Rust oznacza kierowanie komunikatów o błędach i diagnostyki na konsolę oddzielnie od standardowego wyjścia (stdout). Programiści robią to, aby odróżnić normalne wyjście programu od komunikatów o błędach, co ułatwia odpowiednie obsługiwane błędów lub przekierowywanie ich do dzienników lub plików podczas wykonania.
-
 ## Jak to zrobić:
 Rust oferuje prosty sposób na pisanie do stderr za pomocą makra `eprintln!`, podobnie jak `println!` jest używane dla stdout. Oto podstawowy przykład:
 

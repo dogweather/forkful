@@ -16,12 +16,7 @@ title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---
 
-## Cái gì & Tại sao?
-
-Khởi đầu một dự án mới với Dart bao gồm việc thiết lập một môi trường thuận lợi cho việc phát triển, kiểm thử và triển khai hiệu quả. Các lập trình viên bắt đầu các dự án Dart mới để tận dụng hiệu suất tối ưu và hệ sinh thái mạnh mẽ của Dart, đặc biệt là cho việc phát triển ứng dụng web và di động với các framework như Flutter.
-
 ## Cách thức:
-
 1. **Cài đặt Dart**:
    Đảm bảo Dart đã được cài đặt trên hệ thống của bạn. Nếu không, bạn có thể tải về từ [https://dart.dev/get-dart](https://dart.dev/get-dart). Xác minh việc cài đặt với:
 

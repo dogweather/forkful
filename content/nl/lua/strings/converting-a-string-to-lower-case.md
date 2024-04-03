@@ -12,9 +12,6 @@ title: Een string omzetten naar kleine letters
 weight: 4
 ---
 
-## Wat & Waarom?
-Een string omzetten naar kleine letters betekent het wisselen van alle hoofdletters in de string naar hun kleine letter tegenhangers. Programmeurs doen dit voor consistentie, vooral bij het vergelijken of verwerken van tekstgegevens waarbij hoofdletters er niet toe zouden moeten doen, zoals gebruikersinvoer of zoekopdrachten.
-
 ## Hoe te:
 In Lua verlicht je je last met `string.lower()`. Voer het een string in, en er komt een kleine letter versie uit. Kijk maar:
 

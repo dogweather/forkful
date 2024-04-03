@@ -15,12 +15,7 @@ title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---
 
-## Cái gì & Tại sao?
-
-Tái cấu trúc là quá trình cấu trúc lại mã máy tính hiện có mà không thay đổi hành vi bên ngoài của nó. Các lập trình viên thực hiện điều này để dọn dẹp mã, cải thiện độ rõ ràng, giảm độ phức tạp và cải thiện khả năng bảo trì.
-
 ## Làm thế nào:
-
 Hãy tái cấu trúc một phương thức C# đơn giản tính và in tổng của một mảng số:
 
 Trước khi tái cấu trúc:
@@ -70,7 +65,6 @@ calculator.DisplaySum();
 Bằng cách tái cấu trúc, chúng tôi đã phân chia các mối quan tâm, làm cho lớp `Calculator` linh hoạt hơn bằng cách cho phép nó nhận bất kỳ mảng số nào, và sử dụng LINQ để làm cho việc tính toán tổng trở nên gọn gàng hơn.
 
 ## Sâu hơn nữa
-
 Tái cấu trúc có nguồn gốc từ cộng đồng lập trình smalltalk và được phổ biến vào những năm 1990 bởi cuốn sách "Refactoring: Improving the Design of Existing Code" của Martin Fowler. Trải qua nhiều năm, đó đã trở thành một phần cơ bản của các phương pháp linh hoạt và thực hành lập trình tốt.
 
 Có các phương pháp tiếp cận tái cấu trúc khác nhau, như Red-Green-Refactor trong Phát triển Dựa Trên Kiểm Thử (TDD). Nó đảm bảo rằng việc tái cấu trúc không giới thiệu lỗi bằng cách bắt đầu với một bài kiểm tra thất bại, làm cho nó thành công và sau đó là dọn dẹp mã.
@@ -78,7 +72,6 @@ Có các phương pháp tiếp cận tái cấu trúc khác nhau, như Red-Green
 Khi thực hiện tái cấu trúc, rất quan trọng phải có một bộ kiểm tra toàn diện để đảm bảo rằng không có chức năng nào bị hỏng trong quá trình. Công cụ tái cấu trúc tự động, như ReSharper cho C#, cũng có thể hỗ trợ trong quá trình này bằng cách cung cấp các cách an toàn để thay đổi các cấu trúc mã. Tuy nhiên, công cụ nên được bổ sung cho một sự hiểu biết sâu sắc về cơ sở mã và nguyên tắc lập trình.
 
 ## Xem thêm
-
 - Công trình nền tảng về Tái cấu trúc của Martin Fowler: [Refactoring: Improving the Design of Existing Code](https://martinfowler.com/books/refactoring.html)
 - Hướng dẫn của Microsoft về Tái cấu trúc trong Visual Studio: [Tái cấu trúc (C#)](https://docs.microsoft.com/en-us/visualstudio/ide/refactoring-in-visual-studio?view=vs-2022)
 - Một cái nhìn chi tiết vào các mẫu tái cấu trúc với ví dụ: [SourceMaking Tái cấu trúc](https://sourcemaking.com/refactoring)

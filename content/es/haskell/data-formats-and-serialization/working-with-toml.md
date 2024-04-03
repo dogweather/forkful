@@ -10,9 +10,6 @@ title: Trabajando con TOML
 weight: 39
 ---
 
-## ¿Qué y Por Qué?
-Trabajar con TOML implica analizar y generar datos TOML (Tom's Obvious, Minimal Language) con Haskell. Los programadores lo hacen para administrar fácilmente archivos de configuración o intercambio de datos con garantías de tipo fuerte y mínima complicación sintáctica.
-
 ## Cómo:
 Primero, asegúrate de tener una biblioteca de análisis de TOML. Para Haskell, `htoml` es una elección popular. Necesitarás agregarla a las dependencias de tu proyecto.
 

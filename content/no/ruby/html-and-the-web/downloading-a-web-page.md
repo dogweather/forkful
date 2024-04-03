@@ -11,9 +11,6 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## Hva & Hvorfor?
-Å laste ned en webside betyr å hente HTML-innholdet fra en URL og lagre det på din egen datamaskin. Programmerere gjør dette for å analysere innholdet, lage backups eller jobbe med data uten nettforbindelse.
-
 ## Slik gjør du:
 Ruby gjør det enkelt å laste ned en nettside. Her er et kort eksempel ved bruk av `net/http`-biblioteket:
 

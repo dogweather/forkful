@@ -11,9 +11,6 @@ title: Pesquisando e substituindo texto
 weight: 10
 ---
 
-## O Que & Porquê?
-Procurar e substituir texto é uma tarefa comum na programação: significa encontrar sequências de caracteres e trocá-las por outras. Fazemos isso para corrigir erros, atualizar dados ou modificar código de maneira eficiente.
-
 ## Como Fazer:
 ```Haskell
 import Data.Text as T

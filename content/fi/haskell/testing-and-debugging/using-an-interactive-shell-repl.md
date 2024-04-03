@@ -11,9 +11,6 @@ title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mikä ja miksi?
-Interaktiivinen kuori eli REPL (Read-Eval-Print Loop) Haskellissa antaa sinun suorittaa koodinpätkiä reaaliajassa. Se on leikkikenttä nopeaa palautetta, funktioiden testausta ja kielen oppimista varten.
-
 ## Kuinka:
 Aloittaaksesi GHCi:n (Glasgow Haskell Compilerin interaktiivisen ympäristön), kirjoita yksinkertaisesti `ghci` terminaaliisi. Näin sitä käytetään:
 

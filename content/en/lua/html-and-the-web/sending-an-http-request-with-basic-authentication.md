@@ -11,12 +11,7 @@ title: Sending an HTTP request with basic authentication
 weight: 45
 ---
 
-## What & Why?
-
-Sending an HTTP request with basic authentication is when you make a call to a web server, including a username and password for access. Programmers do it to interact with web services that require user verification before providing data or services.
-
 ## How to:
-
 Lua doesn't have built-in HTTP support, so you'll need an external library like `socket.http` from LuaSocket or `http.request` from the `http` library if you're using Lua 5.3+. For basic auth, encode credentials and add them in the request header.
 
 ```Lua
@@ -49,7 +44,6 @@ end
 ```
 
 ## Deep Dive
-
 HTTP Basic Authentication is a method for an HTTP user agent to provide a user name and password when making a request. Invented early in the web's history, it's widely supported but not very secure; credentials are only base64-encoded, not encrypted.
 
 Alternatives include Digest Authentication, OAuth, and API keys – all of which provide stronger security. Basic auth is commonly used for scripting quick tests, internal tools, or where the transport is secured via HTTPS.
@@ -59,7 +53,6 @@ To implement basic authentication in Lua, you typically build a string combining
 Lua's flexible nature means you have choices on libraries to handle HTTP and base64 encoding. LuaSocket has been the go-to for network operations for a long time, though newer versions of Lua introduce alternatives like the `http` library or `CURL` bindings for more complex tasks.
 
 ## See Also
-
 - LuaSocket Documentation: http://w3.impa.br/~diego/software/luasocket/http.html
 - LuaSec for HTTPS support: https://github.com/brunoos/luasec/wiki
 - An intro to HTTP Authentication: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication

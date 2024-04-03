@@ -17,12 +17,7 @@ title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i k\xFD 
 weight: 9
 ---
 
-## Cái gì & Tại sao?
-
-Việc loại bỏ dấu ngoặc từ một chuỗi trong VBA bao gồm việc gỡ bỏ các thể hiện của dấu ngoặc đơn (`'`) hoặc dấu ngoặc kép (`"`) có thể bao bọc hoặc được nhúng trong chuỗi. Thao tác này là cần thiết để tiến hành làm sạch dữ liệu, đảm bảo chuỗi được định dạng đúng cách cho các truy vấn cơ sở dữ liệu, phân tích JSON, hoặc chỉ đơn giản là vì mục đích thẩm mỹ hoặc nhất quán trong giao diện của ứng dụng.
-
 ## Cách thức:
-
 Trong VBA, có nhiều cách tiếp cận để loại bỏ dấu ngoặc từ một chuỗi. Dưới đây là một ví dụ đơn giản sử dụng hàm `Replace`, hàm này tìm kiếm một chuỗi con cụ thể (trong trường hợp này, một dấu ngoặc) trong một chuỗi và thay thế nó bằng một chuỗi con khác (một chuỗi trống nếu loại bỏ).
 
 ```basic
@@ -45,7 +40,6 @@ Chú ý rằng đối với dấu ngoặc kép, chúng ta sử dụng `Chr(34)` 
 Đối với các tình huống tinh vi hơn nơi mà dấu ngoặc có thể là một phần của định dạng cần thiết (ví dụ, bên trong một từ được trích dẫn), có thể cần đến lôgic phức tạp hơn, có lẽ liên quan đến Regex hoặc phân tích từng ký tự một.
 
 ## Đi sâu vào
-
 VBA, với tư cách là công cụ không thể thiếu trong tự động hóa các tác vụ trong bộ Microsoft Office, cung cấp một bộ đầy đủ các hàm thao tác chuỗi, với `Replace` là một trong những hàm thường được sử dụng nhất. Tuy nhiên, hàm này chỉ là bước khởi đầu của những gì có thể đạt được bằng VBA về thao tác chuỗi.
 
 Trong lịch sử, VBA kế thừa từ các phiên bản trước đó một sự nhấn mạnh vào sự đơn giản cho các tác vụ tự động hóa văn phòng, do đó là sự triển khai đơn giản của các hàm như `Replace`. Tuy nhiên, đối với các tác vụ lập trình hiện đại, đặc biệt là những tác vụ liên quan đến thao tác chuỗi phức tạp hoặc làm sạch, VBA có thể thể hiện sự hạn chế.

@@ -13,12 +13,7 @@ title: Skriva till standardfel
 weight: 25
 ---
 
-## Vad & Varför?
-
-Att skriva till standardfelet (`stderr`) i C++ innebär att skicka ut felmeddelanden eller diagnostik som är separata från huvudprogrammets utdata. Programmerare gör detta för att dirigera fel till en annan ström, vilket möjliggör enklare felsökning och felhantering genom att särskilja normal utdata från felmeddelanden.
-
 ## Hur man gör:
-
 I C++ kan skrivning till standardfel uppnås genom att använda strömmen `cerr`, som är en del av standardbiblioteket. Här är ett grundläggande exempel:
 
 ```cpp

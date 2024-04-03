@@ -11,9 +11,6 @@ title: "Refactorizaci\xF3n"
 weight: 19
 ---
 
-## ¿Qué y Por Qué?
-Refactoring es el proceso de ajustar código existente para mejorar su estructura, legibilidad, y rendimiento sin cambiar su comportamiento externo. Los programadores hacen refactoring para hacer el código más mantenible, para simplificar la adición de nuevas características y para localizar y arreglar errores más fácilmente.
-
 ## Cómo:
 Aquí tienes un fragmento en Kotlin que muestra un olor común del código y su versión refactorizada. Comenzamos con un bloque de código que está haciendo demasiado:
 

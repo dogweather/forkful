@@ -13,16 +13,10 @@ title: Arrondissement des nombres
 weight: 13
 ---
 
-## Quoi & Pourquoi ?
-
-Arrondir les nombres consiste à ajuster la valeur d’un nombre à son nombre entier le plus proche ou à un nombre spécifique de décimales. Les programmeurs font cela pour des raisons telles que l'amélioration de la lisibilité, la simplification des calculs ou la satisfaction des exigences de précision spécifiques au domaine.
-
 ## Comment faire :
-
 En Go, il n'y a pas de fonction intégrée qui arrondit directement les nombres à un nombre spécifique de décimales dans le package math. Cependant, vous pouvez réaliser l'arrondi grâce à une combinaison de fonctions pour les nombres entiers ou implémenter une fonction personnalisée pour les décimales.
 
 ### Arrondir au nombre entier le plus proche :
-
 Pour arrondir au nombre entier le plus proche, vous pouvez utiliser la fonction `math.Floor()` avec un ajout de 0,5 pour les nombres positifs, et `math.Ceil()` moins 0,5 pour les nombres négatifs, selon la direction vers laquelle vous souhaitez arrondir.
 
 ```go
@@ -40,7 +34,6 @@ func main() {
 ```
 
 ### Arrondir à un nombre spécifique de décimales :
-
 Pour arrondir à un nombre spécifique de décimales, une fonction personnalisée peut être utilisée où vous multipliez le nombre par 10^n (où n est le nombre de décimales), l'arrondissez au nombre entier le plus proche comme précédemment, puis divisez par 10^n.
 
 ```go
@@ -63,7 +56,6 @@ func main() {
 ```
 
 ## Approfondissement
-
 Arrondir les nombres est une opération fondamentale en programmation informatique, liée au défi historique de représenter les nombres réels dans un système binaire. Le besoin d'arrondissement découle du fait que de nombreux nombres réels ne peuvent pas être représentés précisément en binaire, conduisant à des erreurs d'approximation.
 
 En Go, l'approche de l'arrondissement est quelque peu manuelle par rapport aux langues qui offrent des fonctions d'arrondissement intégrées à des décimales spécifiques. Néanmoins, le package `math` de la bibliothèque standard de Go fournit les briques de base (comme `math.Floor` et `math.Ceil`) pour construire tout mécanisme d'arrondissement requis par l'application.

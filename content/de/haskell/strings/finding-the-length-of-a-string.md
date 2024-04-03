@@ -11,9 +11,6 @@ title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---
 
-## Was & Warum?
-Die Länge eines Strings zu finden, bedeutet zu ermitteln, wie viele Zeichen er enthält. Programmierer tun das, um Textdaten zu verarbeiten, zu validieren oder Formatierungen anzupassen.
-
 ## How to:
 ```Haskell
 main :: IO ()

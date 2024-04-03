@@ -14,12 +14,7 @@ title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---
 
-## ¿Qué y Por Qué?
-
-Imprimir salida de depuración en Dart es acerca de mostrar información en la consola durante el tiempo de ejecución, permitiendo a los desarrolladores rastrear el flujo de ejecución, investigar el estado de las variables, o identificar la fuente de errores. Los programadores comúnmente lo usan para la resolución de problemas y verificar que su código se comporte como se espera, facilitando un proceso de desarrollo más suave y eficiente.
-
 ## Cómo hacerlo:
-
 En Dart, puedes imprimir la salida de depuración usando la función `print()`. Aquí te mostramos cómo sacar mensajes simples y valores de variables:
 
 ```dart

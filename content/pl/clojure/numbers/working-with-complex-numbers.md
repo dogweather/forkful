@@ -11,9 +11,6 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i Dlaczego?
-Liczby zespolone rozszerzają liczby rzeczywiste o dodatkową część, jednostkę urojoną 'i'. Programiści używają ich w różnych dziedzinach, w tym w przetwarzaniu sygnałów, teorii elektromagnetyzmu i fraktalach, gdzie obliczenia związane z pierwiastkiem kwadratowym z liczby ujemnej są rutyną.
-
 ## Jak to zrobić:
 Clojure oferuje wbudowane wsparcie dla liczb zespolonych poprzez klasę narzędziową `clojure.lang.Numbers`. Użyj `complex`, aby tworzyć liczby zespolone i wykonywać działania arytmetyczne.
 

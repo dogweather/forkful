@@ -11,9 +11,6 @@ title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---
 
-## What & Why?
-Omformningen av ett datum till en textsträng möjliggör smidig presentation och lagring. Programmerare gör detta för att förbättra användarupplevelse eller för att datumformatet ska passa olika systemkrav.
-
 ## How to:
 PHP använder `date()`-funktionen för att omvandla datum till textsträngar. Här är exempel på hur du använder den:
 

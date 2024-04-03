@@ -11,9 +11,6 @@ title: Creando un archivo temporal
 weight: 21
 ---
 
-## ¿Qué y Por Qué?
-Crear un archivo temporal es generar un archivo que se usa durante una sesión de programa y normalmente se borra automáticamente. Los programadores lo hacen para almacenar datos transitorios sin afectar la permanencia y el orden de los archivos del sistema.
-
 ## Cómo Hacerlo:
 Elm es un lenguaje diseñado para crear aplicaciones web y no tiene manera directa de crear archivos temporales en el sistema de archivos, como lo haría un lenguaje de programación de back-end. Los desarrolladores usualmente manejan la persistencia de datos en Elm a través de APIs o servicios del lado del servidor.
 

@@ -11,9 +11,6 @@ title: Lendo argumentos da linha de comando
 weight: 23
 ---
 
-## O Que & Porquê?
-Argumentos de linha de comando são informações que você passa para o seu script quando o executa. Programadores usam isso para tornar os scripts mais flexíveis e adaptáveis dependendo da entrada do usuário ou de outros programas.
-
 ## Como Fazer:
 ```PowerShell
 # Exemplo de script.ps1 que lê argumentos de linha de comando

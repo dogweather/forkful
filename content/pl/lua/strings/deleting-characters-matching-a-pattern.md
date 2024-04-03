@@ -11,9 +11,6 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## What & Why? - Co i Dlaczego?
-Usuwanie znaków pasujących do wzorca to proces wyciągania specyficznych sekwencji z łańcucha tekstowego. Programiści robią to, by oczyścić dane, usunąć niepożądany szum lub przygotować tekst do dalszej obróbki.
-
 ## How to: - Jak to zrobić:
 ```Lua
 local text = "Kodowanie w Lua jest łatwe i przyjemne!"

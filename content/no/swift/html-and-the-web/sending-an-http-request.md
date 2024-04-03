@@ -11,9 +11,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel innebærer å be om data fra, eller sende data til en server over internett. Programmerere gjør dette for å hente eller sende informasjon til netttjenester og API-er for å bygge interaktive og nettverksbaserte applikasjoner.
-
 ## Hvordan:
 ```Swift
 import Foundation

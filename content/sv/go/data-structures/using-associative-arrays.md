@@ -14,12 +14,7 @@ title: "Anv\xE4nda associativa arrayer"
 weight: 15
 ---
 
-## Vad & Varför?
-
-Associerade arrayer, kända som maps i Go, gör det möjligt för dig att lagra nyckel-värdepar där varje unik nyckel mappas till ett värde. Programmerare använder maps för effektiv datahämtning, modifiering och för att underhålla en samling av element som snabbt kan nås med unika nycklar.
-
 ## Hur:
-
 Att skapa och initiera en map i Go kan göras på olika sätt. Här är ett grundläggande exempel för att komma igång:
 
 ```go
@@ -74,7 +69,6 @@ for color, hex := range colors {
 Kom ihåg, maps i Go är oordnade. Ordningen på iterationen är inte garanterad.
 
 ## Djupdykning
-
 I Go är maps implementerade som hashtabeller. Varje post i mappen består av två delar: en nyckel och ett värde. Nyckeln hashas för att lagra posten, vilket möjliggör operationer i konstant tid för en liten uppsättning data och genomsnittlig tidskomplexitet O(1) med korrekt hashing, som kan förvärras till O(n) i värsta fall med många hash-kollisioner.
 
 En viktig not för nya Go-programmerare är att map-typer är referenstyper. Detta innebär att när du passerar en map till en funktion, är alla ändringar som görs på mappen inom den funktionen synliga för anroparen. Detta skiljer sig från, säg, att passera en struktur till en funktion, där strukturen kopieras om den inte överförs genom en pekare.

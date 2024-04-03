@@ -16,12 +16,7 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Cái gì & Tại sao?
-
-Xử lý lỗi trong các chương trình của bạn bắt lấy những điều không lường trước sẽ cố gắng làm bạn vấp ngã. Bạn làm điều đó để giữ cho Arduino của bạn không bị hỏng khi điều không mong đợi xảy ra.
-
 ## Làm thế nào:
-
 Giả sử Arduino của bạn đang đọc một cảm biến có thể thỉnh thoảng sản xuất ra các giá trị ngoài phạm vi. Dưới đây là cách bạn có thể xử lý điều đó:
 
 ```Arduino
@@ -43,7 +38,6 @@ Lỗi: Giá trị cảm biến nằm ngoài phạm vi.
 ```
 
 ## Đào sâu
-
 Xử lý lỗi không luôn luôn đơn giản như vậy. Trong những ngày đầu, các nhà phát triển thường bỏ qua lỗi, dẫn đến "hành vi không xác định" đáng sợ. Khi lập trình tiến hóa, các công cụ cũng vậy — bạn bây giờ có ngoại lệ trong nhiều ngôn ngữ, nhưng chúng vẫn là cách 'kiểm tra trước' kiểu cũ trong thế giới Arduino do ràng buộc phần cứng và nguồn gốc C++.
 
 Trong lập trình Arduino, bạn thường thấy câu lệnh `if-else` được dùng cho việc xử lý lỗi. Nhưng còn có các lựa chọn khác: sử dụng hàm `assert` để dừng thực thi nếu một điều kiện không đạt được hoặc thiết kế các hệ thống an toàn trong chính cấu hình phần cứng của bạn.
@@ -51,7 +45,6 @@ Trong lập trình Arduino, bạn thường thấy câu lệnh `if-else` đượ
 Khi thực hiện xử lý lỗi, hãy xem xét ảnh hưởng của việc dừng chương trình so với việc cho phép nó tiếp tục với một trạng thái mặc định hoặc an toàn. Có sự đánh đổi, và lựa chọn đúng phụ thuộc vào tác hại tiềm ẩn của việc gián đoạn so với hoạt động không chính xác.
 
 ## Xem thêm
-
 Nâng cao kiến thức về phát hiện và xử lý lỗi với những nguồn sau:
 
 - Tham khảo Ngôn ngữ Arduino: https://www.arduino.cc/reference/en/

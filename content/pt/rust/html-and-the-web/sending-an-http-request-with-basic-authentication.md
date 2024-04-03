@@ -12,9 +12,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---
 
-## O Que & Por Quê?
-Enviar uma solicitação HTTP com autenticação básica significa incluir credenciais de usuário e senha em um cabeçalho para acessar um recurso protegido. Programadores fazem isso para interagir com APIs que exigem autenticação simples para fornecer segurança básica.
-
 ## Como Fazer:
 ```Rust
 use reqwest::{blocking::Client, header};

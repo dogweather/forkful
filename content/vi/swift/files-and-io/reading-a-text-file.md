@@ -16,9 +16,6 @@ title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---
 
-## Gì và Tại sao?
-Đọc một tệp văn bản trong Swift có nghĩa là lấy nội dung từ một tệp lưu trữ trên đĩa. Các lập trình viên làm điều này để làm việc với dữ liệu đã lưu như cấu hình, nhật ký, hoặc nội dung do người dùng tạo.
-
 ## Cách thức:
 Để đọc văn bản từ một tệp trong Swift, sử dụng các phương thức tiện ích của lớp `String`. Dưới đây là một ví dụ nhỏ:
 

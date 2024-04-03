@@ -12,11 +12,8 @@ title: "Manipulando archivos con comandos de l\xEDnea de una sola l\xEDnea"
 weight: 31
 ---
 
-## ¿Qué y Por Qué?
-
-Manipular archivos con líneas de comando únicas en PowerShell se trata de alterar, mover u obtener datos de archivos directamente desde la línea de comando de manera rápida. Los programadores lo hacen por eficiencia; es más rápido que navegar por interfaces de usuario gráficas o escribir scripts largos para tareas simples.
-
 ## Cómo hacerlo:
+
 
 ### Leer un Archivo
 Para mostrar rápidamente el contenido de un archivo, usa el comando `Get-Content`:
@@ -61,7 +58,6 @@ Get-ChildItem -Path .\*.log | Copy-Item -Destination C:\Logs
 ```
 
 ## Profundización
-
 Históricamente, PowerShell fue introducido como una alternativa más poderosa al tradicional símbolo del sistema en Windows, ofreciendo un acceso sin precedentes a los internos del sistema y almacenes de datos. Combina la velocidad de la línea de comandos con la flexibilidad de la creación de scripts, haciéndolo una herramienta invaluable para los administradores de sistemas y desarrolladores basados en Windows.
 
 Alternativas a PowerShell para la manipulación de archivos incluyen herramientas basadas en Unix como `sed`, `awk`, `grep`, y scripting en `bash` para usuarios de Linux y MacOS. Aunque estas herramientas son extremadamente poderosas y tienen sus propios méritos, PowerShell ofrece una integración profunda con los entornos Windows.

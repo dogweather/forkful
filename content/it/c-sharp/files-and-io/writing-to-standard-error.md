@@ -14,9 +14,6 @@ title: Scrivere sull'errore standard
 weight: 25
 ---
 
-## Cosa & Perché?
-Scrivere su standard error (stderr) in C# implica dirigere i messaggi di errore e le diagnostiche separatamente dall'output regolare (stdout) per aiutare utenti e sviluppatori a distinguere tra l'output normale del programma e le notifiche di errore. I programmatori fanno ciò per rendere il debug e la registrazione più efficienti, consentendo un'operazione e manutenzione delle applicazioni più scorrevoli.
-
 ## Come fare:
 In C#, scrivere su standard error può essere ottenuto utilizzando il flusso `Console.Error`. Questo flusso è usato specificamente per messaggi di errore e diagnostiche. Ecco un esempio base:
 

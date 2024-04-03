@@ -10,9 +10,6 @@ title: Webseite herunterladen
 weight: 42
 ---
 
-## Was & Warum?
-Herunterladen einer Webseite bedeutet, deren Inhalte über das Internet auf dein Gerät zu laden. Programmierer tun das, um Daten zu sammeln oder Webdienste zu nutzen.
-
 ## Vorgehensweise:
 Hier ein einfaches Beispiel, mit dem Arduino eine Webseite herunterlädt. Nutze dafür das `ESP8266WiFi`-Modul:
 ```Arduino

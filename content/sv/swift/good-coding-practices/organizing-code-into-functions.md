@@ -11,9 +11,6 @@ title: Organisera kod i funktioner
 weight: 18
 ---
 
-## Vad & Varför?
-Att gruppera kod i funktioner innebär att bryta ner uppgifter i återanvändbara delar. Det gör koden ren, mindre felbenägen och enklare att felsöka eller refaktorisera.
-
 ## Hur man gör:
 Tänk dig en uppgift: beräkna genomsnittet av en array. Utan funktioner skulle du klumpa ihop allt i main. Med funktioner gör du så här:
 

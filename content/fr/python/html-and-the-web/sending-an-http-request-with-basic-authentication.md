@@ -12,9 +12,6 @@ title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---
 
-## Quoi & Pourquoi ?
-Envoyer une requête HTTP avec authentification de base, c'est transmettre un nom d'utilisateur et un mot de passe pour accéder à des ressources protégées sur le web. Les programmeurs font cela pour interagir avec les API sécurisées qui nécessitent que l'utilisateur soit identifié.
-
 ## Comment faire :
 ```Python
 import requests

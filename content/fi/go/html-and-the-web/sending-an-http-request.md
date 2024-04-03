@@ -12,12 +12,7 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## Mikä ja miksi?
-
-HTTP-pyynnön lähettäminen merkitsee puhelun aloittamista Go-sovelluksestasi web-palvelimeen, API:in tai mihin tahansa muuhun HTTP-pohjaiseen palveluun. Ohjelmoijat tekevät tämän vuorovaikuttaakseen web-resurssien kanssa, noutaakseen tietoja, lähettääkseen lomakkeita tai kommunikoidakseen muiden palveluiden kanssa internetissä.
-
 ## Kuinka:
-
 Go:ssa HTTP-pyynnön lähettäminen ja vastauksen käsittely vaatii `net/http` -paketin käyttöä. Tässä on askel askeleelta esimerkki, joka näyttää, kuinka lähetetään yksinkertainen GET-pyyntö ja luetaan vastaus:
 
 ```go
@@ -99,7 +94,6 @@ func main() {
 ```
 
 ## Syväsukellus
-
 `net/http` -paketti Go:ssa tarjoaa tehokkaan ja joustavan tavan vuorovaikuttaa HTTP-palvelimien kanssa. Sen suunnittelu heijastaa Go:n painotusta yksinkertaisuuteen, tehokkuuteen ja luotettavuuteen. Alun perin toiminnot, kuten JSON- tai XML-kuormien käsittely, vaativat käsin tehtyjen pyyntöjen rungon luomisen ja asianmukaisten otsikoiden asettamisen. Go:n kehittyessä yhteisö on kehittänyt korkeamman tason paketteja, jotka yksinkertaistavat näitä tehtäviä entisestään, kuten `gorilla/mux` reititykseen ja `gjson` JSON-käsittelyyn.
 
 Yksi Go:n HTTP-asiakkaan huomattava piirre on rajapintojen ja rakenteiden, kuten `http.Client` ja `http.Request`, käyttö, jotka mahdollistavat laajan mukauttamisen ja testaamisen. Esimerkiksi voit muuttaa `http.Client` -asiakasta asettamaan aikakatkaisut pyynnöille tai pitämään yhteydet elossa suorituskyvyn parantamiseksi.

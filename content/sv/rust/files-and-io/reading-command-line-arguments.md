@@ -11,9 +11,6 @@ title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---
 
-## What & Why?
-Läsning av kommandoradsargument låter programmet hantera indata den får vid start. Programmerare gör detta för att tillåta flexibilitet och användarspecifika inställningar utan att ändra koden.
-
 ## How to:
 Rusts standardbibliotek har det du behöver. Vi använder `std::env::args` som ger oss tillgång till kommandoradsargumenten.
 

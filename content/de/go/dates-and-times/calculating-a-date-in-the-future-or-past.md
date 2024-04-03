@@ -13,12 +13,7 @@ title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---
 
-## Was & Warum?
-
-Das Berechnen eines Datums in der Zukunft oder Vergangenheit in Go beinhaltet das Manipulieren von Datums- und Zeitwerten, um einen spezifischen Zeitpunkt relativ zu einem gegebenen Datum zu bestimmen. Programmierer führen diese Aufgabe häufig für Anwendungen durch, die Planung, Fristen, Erinnerungen oder jede Funktionalität benötigen, bei der Zeitfortschritt oder -rückgang wesentlich ist.
-
 ## Wie:
-
 Go stellt das `time` Paket zur Verfügung, um Datums- und Zeitoperationen zu handhaben und bietet einfache Mechanismen zum Hinzufügen oder Subtrahieren von Zeit. Hier ein Blick darauf, wie das `time` Paket genutzt wird, um zukünftige oder vergangene Daten zu berechnen:
 
 ```go
@@ -58,7 +53,6 @@ Zukünftige Zeit (5 Stunden und 30 Minuten später):  2023-04-01 20:34:05.123456
 Beachten Sie, wie die Methode `AddDate` für die Datumsmanipulation nach Jahren, Monaten und Tagen verwendet wird, während die Methode `Add` für präzisere Zeitdeltas wie Stunden, Minuten und Sekunden verwendet wird.
 
 ## Vertiefung
-
 Das `time` Paket der Go-Programmiersprache erleichtert die Zeitmanipulation mit starker Typsicherheit und klarer Syntax, Eigenschaften, für die Go sehr geschätzt wird. Seine Implementierung stützt sich auf die Zeitmanipulationsfunktionalitäten des zugrunde liegenden Betriebssystems und gewährleistet Effizienz und Genauigkeit. Historisch gesehen war die Handhabung von Datum und Zeit in der Programmierung aufgrund von Variationen in Zeitbereichen, Schaltjahren und Änderungen der Sommerzeit mit Komplexität behaftet. Das `time` Paket von Go abstrahiert einen Großteil dieser Komplexität und bietet Entwicklern ein robustes Toolkit für die Zeitmanipulation.
 
 Während das native `time` Paket von Go ein breites Spektrum an Zeitmanipulationsbedürfnissen abdeckt, bieten alternative Bibliotheken wie `github.com/jinzhu/now` zusätzliche Annehmlichkeiten und Funktionalitäten für spezifischere Anwendungsfälle. Diese Alternativen können besonders nützlich sein für komplexere Datum- und Zeitmanipulationsbedürfnisse, die nicht direkt vom nativen `time` Paket unterstützt werden.

@@ -11,9 +11,6 @@ title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---
 
-## O Quê & Porquê?
-Fazer download de uma página web é o processo de puxar os dados brutos de um site para ver ou processar localmente. Programadores fazem isso para coletar dados, testar aplicativos ou automatizar tarefas.
-
 ## Como Fazer:
 Instale a biblioteca `http-conduit` com `cabal install http-conduit` e use o seguinte exemplo:
 

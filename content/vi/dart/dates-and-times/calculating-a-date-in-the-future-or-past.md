@@ -18,9 +18,6 @@ title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1
 weight: 26
 ---
 
-## Cái gì & Tại sao?
-Việc tính toán một ngày trong tương lai hoặc quá khứ là một nhiệm vụ phổ biến đối với các lập trình viên, đối phó với việc lập lịch, nhắc nhở, hoặc bất kỳ tính năng nào phụ thuộc vào việc tính toán ngày tháng. Hiểu cách thao tác với ngày tháng là điều quan trọng đối với hệ thống backend, giao diện người dùng và phân tích dữ liệu, đặc biệt là đối với những người chuyển sang Dart và muốn thực hiện logic thời gian một cách hiệu quả.
-
 ## Làm thế nào:
 Dart cung cấp sự hỗ trợ mạnh mẽ cho việc thao tác với ngày tháng thông qua lớp `DateTime` của mình. Dưới đây là cách bạn có thể tính toán ngày trong tương lai hoặc quá khứ bằng Dart gốc, không cần đến thư viện bên thứ ba.
 

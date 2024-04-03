@@ -11,9 +11,6 @@ title: Refaktorering
 weight: 19
 ---
 
-## Hva & Hvorfor?
-Refaktorering er prosessen med å justere eksisterende kode for å forbedre dens struktur, lesbarhet og ytelse uten å endre dens eksterne oppførsel. Programmerere refaktorerer for å gjøre kode mer vedlikeholdbar, for å forenkle tillegg av nye funksjoner, og for å oppdage og fikse feil lettere.
-
 ## Hvordan:
 Her er et Kotlin-utdrag som viser et vanlig kodeproblem og den refaktorerte versjonen. Vi starter med en kodebit som gjør for mye:
 

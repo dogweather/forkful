@@ -10,10 +10,6 @@ title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---
 
-## What & Why?
-"Miten & Miksi?"
-Tietojen vertailu on ydintoiminto ohjelmoinnissa. Kaksi päivämäärää vertaamalla selvitetään niiden välinen suhde, esimerkiksi tapahtumien ajoitus tai aikarajojen noudattaminen.
-
 ## How to:
 "Kuinka tehdä:"
 ```Rust

@@ -12,9 +12,6 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mitä & Miksi?
-Kirjoittaminen vakiovirheeseen (stderr) tarkoittaa virheviestien ja diagnostiikkatietojen ohjaamista stderr-virtaan, erotettuna vakiotulosteesta (stdout). Ohjelmoijat tekevät näin erottaakseen tavallisen ohjelman tulosteen virheviesteistä, mikä mahdollistaa tehokkaamman debuggauksen ja lokituksen.
-
 ## Kuinka:
 Clojuressa voit kirjoittaa stderr-virtaan käyttämällä `*err*`-virtaa. Tässä on perusesimerkki:
 

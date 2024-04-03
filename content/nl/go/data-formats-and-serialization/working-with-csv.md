@@ -13,16 +13,10 @@ title: Werken met CSV
 weight: 37
 ---
 
-## Wat & Waarom?
-
-Het CSV-formaat (Comma-Separated Values) is alomtegenwoordig voor gegevensuitwisseling vanwege zijn eenvoud en gemak van integratie met de meeste programmeertalen, inclusief Go. Programmeurs werken vaak met CSV-bestanden voor gegevensmigratie, rapportagegeneratie of gegevensanalyse, waardoor een begrip van CSV-manipulatie essentieel is in een softwareontwikkelingsgereedschapskist.
-
 ## Hoe:
-
 Werken met CSV-bestanden in Go is eenvoudig, dankzij de standaardbibliotheek, `encoding/csv`. Hieronder volgt een inleiding over het lezen en schrijven van CSV-bestanden.
 
 ### Een CSV-bestand lezen
-
 Om een CSV-bestand te lezen, open je eerst het bestand met `os.Open`, en vervolgens maak je een nieuwe CSV-lezer aan met `csv.NewReader`.
 
 ```go
@@ -56,7 +50,6 @@ func main() {
 Deze codefragment zal alle records uit `data.csv` lezen en ze afdrukken. Elk record is een reeks velden.
 
 ### Naar een CSV-bestand schrijven
-
 Voor het schrijven gebruik je `csv.NewWriter` en `writer.WriteAll` of `writer.Write` voor respectievelijk het schrijven van meerdere of een enkel CSV-record.
 
 ```go
@@ -92,7 +85,6 @@ func main() {
 Dit zal een bestand met de naam `output.csv` creëren met de opgegeven records. Vergeet niet om de writer te flushen om ervoor te zorgen dat alle gebufferde gegevens naar het bestand worden geschreven.
 
 ## Diepgaand
-
 Het Go `encoding/csv` pakket biedt robuuste ondersteuning voor het lezen en schrijven van CSV-bestanden, maar het is ontworpen met eenvoud in gedachten, wat betekent dat het niet automatisch omgaat met meer complexe scenario's zoals het autodetecteren van scheidingstekens, omgaan met aanhalingstekens of ingesloten regelonderbrekingen in velden zonder handmatige afhandeling.
 
 Historisch gezien is het omgaan met CSV in programmeertalen vaak omslachtig geweest vanwege deze complexiteiten, maar de standaardbibliotheek van Go abstraheert veel van deze problemen, waardoor ontwikkelaars met relatief gemak met CSV-gegevens kunnen werken. Voor meer complexe CSV-manipulatie kunnen echter bibliotheken van derden zoals `gocsv` nodig zijn of de parsing handmatig behandeld worden.

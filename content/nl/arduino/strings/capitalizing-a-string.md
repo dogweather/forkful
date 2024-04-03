@@ -11,12 +11,7 @@ title: Een string met hoofdletters maken
 weight: 2
 ---
 
-## Wat & Waarom?
-
-Een string kapitaliseren betekent elk karakter veranderen in een hoofdletter. Programmeurs doen dit voor consistentie, met name in gebruikersinterfaces of bij het voorbereiden van gegevens voor opslag of vergelijking.
-
 ## Hoe te:
-
 In de Arduino-omgeving is er geen ingebouwde functie om een hele string te kapitaliseren, dus we zullen een eenvoudige functie schrijven om dit te doen:
 
 ```Arduino
@@ -44,7 +39,6 @@ HALLO, WERELD!
 ```
 
 ## Diepduiken
-
 Historisch gezien vereist het manipuleren van strings in low-level talen zoals C het werken met individuele karakters vanwege de afwezigheid van high-level stringmanipulatiefuncties. Deze traditie zet zich voort in Arduino's C++ derivaten.
 
 Alternatieven omvatten het gebruik van `String` objecten beschikbaar in Arduino's C++ en het aanroepen van de `.toUpperCase()` methode. Dit verbruikt echter meer geheugen. Voor geheugenbeperkte omgevingen zoals microcontrollers is het vaak beter om te werken met C-stijl karakterrijen (strings) en deze ter plaatse te manipuleren.
@@ -55,7 +49,6 @@ Implementatiedetails om te onthouden bij het kapitaliseren van een string in Ard
 - Stringmanipulatie kan leiden tot geheugenproblemen zoals bufferoverloop indien niet zorgvuldig behandeld.
 
 ## Zie Ook
-
 - Arduino Referentie voor String `.toUpperCase()` methode: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/
 - Cplusplus.com `toupper` referentie: http://www.cplusplus.com/reference/cctype/toupper/ 
 - Arduino String manipulatie voorbeelden: https://www.arduino.cc/en/Tutorial/BuiltInExamples/StringAdditionOperator

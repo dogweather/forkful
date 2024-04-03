@@ -11,9 +11,6 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-## Was & Warum?
-Ein temporäres File ist eine kurzlebige Datei, die während der Ausführung eines Programms erstellt wird. Programmierer nutzen temporäre Dateien für kurzfristige Speicherung, z.B. zum sicheren Umgang mit großen Datenmengen oder zum Zwischenspeichern von Daten während langer Berechnungen.
-
 ## Vorgehensweise:
 Elixir hat keine eingebaute Funktion für temporäre Dateien wie in einigen anderen Sprachen. Stattdessen verwendet man oft das Betriebssystem direkt. Hier ein Beispiel:
 

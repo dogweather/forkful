@@ -10,9 +10,6 @@ title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---
 
-## Was & Warum?
-Die Länge eines Strings herauszufinden bedeutet, die Anzahl der enthaltenen Zeichen zu zählen. Programmierer tun dies, um Eingaben zu validieren, Schleifenbedingungen zu setzen oder einfach um Daten zu manipulieren.
-
 ## So geht's:
 ```python
 text = "Hallo, Welt!"

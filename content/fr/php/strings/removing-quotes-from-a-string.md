@@ -11,9 +11,6 @@ title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---
 
-## Quoi & Pourquoi ?
-Enlever les guillemets d'une chaîne en PHP signifie retirer ces caractères de guillemets doubles (`"`) ou simples (`'`) qui peuvent perturber la logique de votre code ou vos requêtes de base de données. Les programmeurs le font pour nettoyer ou assainir les données d'entrée, garantissant que les chaînes sont utilisées ou stockées en toute sécurité.
-
 ## Comment faire :
 Voici un exemple simple utilisant les fonctions intégrées de PHP :
 

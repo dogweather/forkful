@@ -14,12 +14,7 @@ title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---
 
-## Co i dlaczego?
-
-Tablice asocjacyjne, znane w Pythonie jako słowniki, mapują klucze na wartości, co ułatwia pobieranie, modyfikowanie lub śledzenie danych za pomocą unikalnego identyfikatora. Programiści używają ich ze względu na ich efektywność w dostępie do elementów oraz elastyczność w reprezentowaniu skomplikowanych struktur danych.
-
 ## Jak to zrobić:
-
 Tworzenie słownika w Pythonie jest proste. Otaczasz pary klucz-wartość nawiasami klamrowymi `{}`, klucze i wartości oddzielone są dwukropkiem:
 
 ```Python
@@ -77,7 +72,6 @@ email: jan@example.com
 ```
 
 ## Zagłębienie się
-
 Tablice asocjacyjne w Pythonie, czyli słowniki, zostały wprowadzone, aby zapewnić strukturę danych dla efektywnego dostępu do danych i ich manipulacji. W przeciwieństwie do sekwencji, które są indeksowane za pomocą zakresu liczb, słowniki są indeksowane za pomocą kluczy, które mogą być dowolnym typem niezmienialnym. Ten wybór projektowy sprawia, że słowniki są idealnie przystosowane do szybkich tabel wyszukiwań, gdzie klucze mapują na unikalne wartości.
 
 Historycznie słowniki Pythona były implementowane przy użyciu tablicy haszującej, zapewniając, że średnia złożoność czasowa dla operacji wyszukiwania, wstawiania i usuwania to O(1). W Pythonie 3.6 i nowszych, słowniki utrzymują także kolejność wstawiania elementów, łącząc zalety tablicy haszującej z przewidywalnością kolejności wstawiania, widoczną w uporządkowanych strukturach danych.

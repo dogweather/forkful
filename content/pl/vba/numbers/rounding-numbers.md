@@ -14,12 +14,7 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i dlaczego?
-
-Zaokrąglanie liczb w programowaniu polega na przybliżeniu liczby do najbliższej liczby całkowitej lub do określonej liczby miejsc dziesiętnych. Programiści zaokrąglają liczby w celu uproszczenia figur, poprawy czytelności lub spełnienia określonych kryteriów numerycznych w obliczeniach, szczególnie w obliczeniach finansowych, gdzie precyzja ma znaczenie.
-
 ## Jak to zrobić:
-
 W Visual Basic for Applications (VBA) zaokrąglenie można osiągnąć za pomocą kilku funkcji, z których każda jest odpowiednia do konkretnych scenariuszy. Oto najczęściej używane funkcje z przykładami:
 
 1. **Funkcja Round**:
@@ -55,7 +50,6 @@ W Visual Basic for Applications (VBA) zaokrąglenie można osiągnąć za pomoc�
    ```
 
 ## Wnikliwe spojrzenie
-
 Funkcja `Round` w VBA jest zasadniczo różna od metod zaokrąglania w innych językach z powodu stosowania **zaokrąglania bankowego**. Zaokrąglenie bankowe zaokrągla do najbliższej parzystej liczby, gdy jest dokładnie pomiędzy dwiema liczbami, redukując stronniczość w obliczeniach na dużym zbiorze danych i zapewniając bardziej statystycznie znaczący wynik. Jednak może to prowadzić do nieoczekiwanego zachowania dla osób nieznających tego, szczególnie gdy oczekuje się dokładności w każdym przypadku.
 
 W przeciwieństwie do wielu języków i systemów programowania, które używają "zaokrąglania arytmetycznego" lub "zaokrąglania do najbliższej większej", gdzie liczba dokładnie pomiędzy dwoma możliwymi wartościami zaokrąglanymi jest zawsze zaokrąglana w górę. Przy tłumaczeniu lub przenoszeniu kodu z innych języków do VBA, programiści muszą pamiętać o tych różnicach, aby uniknąć subtelnych błędów lub niedokładności w aplikacjach finansowych i statystycznych.

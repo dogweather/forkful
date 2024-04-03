@@ -11,9 +11,6 @@ title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u043
 weight: 27
 ---
 
-## Що і чому?
-Comparing two dates means checking which one comes first or if they're the same. Programmers do this to manage events, sort records, or check durations.
-
 ## Як це робити:
 ```PowerShell
 # Визначаємо дві дати

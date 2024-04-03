@@ -12,9 +12,6 @@ title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---
 
-## Vad & Varför?
-Att tolka ett datum från en sträng i Clojure handlar om att konvertera textuella representationer av datum och tider till en mer användbar form (t.ex. Clojures DateTime-objekt). Denna process är grundläggande för databehandling, loggning eller alla applikationer som manipulerar tidsdata, vilket möjliggör för programmerare att utföra operationer, jämförelser eller manipulationer med datum effektivt.
-
 ## Hur:
 Clojure, som är ett JVM-språk, tillåter dig att använda Java's datum- och tidsbibliotek direkt. Låt oss börja med den inbyggda Java-interoperabiliteten och sedan utforska hur man använder ett populärt tredjepartsbibliotek, clj-time, för mer idiomatiska Clojure-lösningar.
 

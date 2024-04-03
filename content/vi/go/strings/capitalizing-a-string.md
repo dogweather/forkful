@@ -17,12 +17,7 @@ title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---
 
-## Gì và Tại sao?
-
-Việc viết hoa một chuỗi bao gồm biến đổi ký tự đầu tiên của một chuỗi cho trước thành chữ cái in hoa nếu nó ở dạng chữ cái thường, đảm bảo chuỗi nổi bật hoặc tuân theo các quy tắc ngữ pháp cụ thể. Các lập trình viên thường xuyên thực hiện thao tác này để định dạng đầu vào của người dùng, hiển thị tên riêng một cách chính xác, hoặc đảm bảo sự nhất quán dữ liệu trên các ứng dụng phần mềm.
-
 ## Làm thế nào:
-
 Trong Go, gói `strings` không cung cấp một hàm trực tiếp để chỉ viết hoa chữ cái đầu tiên của một chuỗi. Do đó, chúng ta kết hợp hàm `strings.ToUpper()`, chuyển đổi một chuỗi sang dạng in hoa, với việc cắt chuỗi để đạt được mục tiêu của mình. Dưới đây là cách thực hiện:
 
 ```go
@@ -57,7 +52,6 @@ func main() {
 Hàm này kiểm tra nếu chuỗi trống hoặc nếu ký tự đầu tiên đã là chữ cái in hoa. Nó sử dụng gói `unicode/utf8` để xử lý chính xác các ký tự Unicode, đảm bảo hàm của chúng ta làm việc với nhiều đầu vào hơn ngoài ASCII cơ bản.
 
 ## Sâu hơn
-
 Việc cần phải viết hoa chuỗi trong Go mà không có hàm được xây dựng sẵn có thể trông giống như một hạn chế, đặc biệt là đối với các lập trình viên đến từ các ngôn ngữ mà các hàm thao tác chuỗi được cung cấp đầy đủ hơn. Hạn chế này khuyến khích hiểu biết về xử lý chuỗi và tầm quan trọng của Unicode trong phát triển phần mềm hiện đại.
 
 Có tiến bộ, các ngôn ngữ lập trình đã phát triển trong cách xử lý chuỗi, với ngôn ngữ sớm thường bỏ qua quốc tế hóa. Cách tiếp cận của Go, mặc dù yêu cầu một chút mã lệnh hơn cho các tác vụ có vẻ đơn giản, đảm bảo các nhà phát triển luôn có ý thức về người dùng toàn cầu ngay từ đầu.

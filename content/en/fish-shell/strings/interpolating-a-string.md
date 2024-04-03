@@ -9,12 +9,7 @@ title: Interpolating a string
 weight: 8
 ---
 
-## What & Why?
-
-Interpolating a string means blending variables or expressions within a string. It saves time and enhances readability by allowing dynamic content without string concatenation gymnastics.
-
 ## How to:
-
 In Fish, you use double quotes and place the variable or command you want to interpolate with a dollar sign `$` straight in the string.
 
 ```fish
@@ -41,7 +36,6 @@ I have 9 files in this directory.
 Variables and commands get evaluated and neatly tucked into the place you put them.
 
 ## Deep Dive
-
 Before Fish and other modern shells, you'd often use a more clunky combo of quotes and concatenation—or rely on external tools—to get variables into strings.
 
 In bash, for example, it'd look like this:
@@ -72,7 +66,6 @@ In this case, `%s` is a placeholder for the string variable `$animal` that gets 
 In terms of implementation, when Fish processes the command line, it parses the double-quoted strings and swaps the variables with their values on the fly. It's elegant and mimics the variable interpolation found in higher-level languages like Ruby or PHP.
 
 ## See Also
-
 For more on Fish string manipulation and scripting, check these out:
 
 - [Fish Shell Documentation: Quotes](https://fishshell.com/docs/current/index.html#quotes)

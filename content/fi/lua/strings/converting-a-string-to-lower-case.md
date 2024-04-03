@@ -10,10 +10,6 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## What & Why?
-"Mitä ja miksi?"
-Muuttaa merkkijonon isot kirjaimet pieniksi. Tämä on hyödyllistä kun halutaan vertailla tekstejä välittämättä kirjainkoosta, kuten käyttäjän syötteiden standardisoinnissa.
-
 ## How to:
 "Kuinka tehdään:"
 ```Lua
@@ -21,6 +17,7 @@ local teksti = "Hei Maailma!"
 local pieniksi = teksti:lower()
 print(pieniksi)  -- tulostaa "hei maailma!"
 ```
+
 ## Deep Dive
 "Sukellus syvälle"
 Lua:ssa merkkijonon muuttaminen pieniksi kirjaimiksi käyttää `string.lower`-funktiota. Historiallisesti, tämä on peräisin C:n kirjastofunktioista. Vaihtoehtoina, voit käyttää myös UTF-8 kirjastoja, jos tarvitset laajempaa tukea erikoismerkeille.

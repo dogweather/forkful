@@ -10,9 +10,6 @@ title: Zeichenketten interpolieren
 weight: 8
 ---
 
-## Was & Warum?
-String-Interpolation ermöglicht es, Variablenwerte direkt in Strings einzufügen. Das macht den Code übersichtlicher und erleichtert die Erstellung dynamischer Textausgaben.
-
 ## How to:
 In Haskell gibt es keine eingebaute String-Interpolation wie in manch anderen Sprachen. Stattdessen nutzen wir die `printf`-Funktion aus dem `Text.Printf`-Modul oder die Template-Strings aus dem `interpolate`-Paket. Hier sind zwei Methoden:
 

@@ -10,9 +10,6 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## What & Why?
-Cercare e sostituire testo in JavaScript è fondamentale. Serve per modifica dati dinamici, pulire input, e manipolare stringhe. E' utile in ogni scenario dove il testo deve mutare in modo preciso e veloce.
-
 ## How to:
 Ecco qualche sapore di JavaScript per la ricerca e la sostituzione di testo:
 

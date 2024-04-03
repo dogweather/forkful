@@ -22,12 +22,7 @@ title: "\u30D1\u30BF\u30FC\u30F3\u306B\u4E00\u81F4\u3059\u308B\u6587\u5B57\u3092
 weight: 5
 ---
 
-## What & Why? (何となぜ？)
-
-文字のパターンにマッチするものを削除するとは、特定の条件に合う文字を文字列から取り除くことです。これによりデータの整理やユーザー入力のバリデーションなど、様々な目的で使われます。
-
 ## How to: (方法)
-
 ```C++
 #include <iostream>
 #include <string>
@@ -47,11 +42,9 @@ int main() {
 ```
 
 ## Deep Dive (深い潜入)
-
 最初はメモリーや容量が限られていたため、不要な文字を削除することで効率を上げていました。現在では、C++では `<algorithm>` ヘッダの `std::remove_if` や `std::erase` を使ったり、`std::regex_replace` で正規表現を使用してパターンマッチングする方法が一般的です。これらは、それぞれ削除したい文字に最適なアプローチを提供します。
 
 ## See Also (関連項目)
-
 - C++ Reference: https://en.cppreference.com/w/
 - Regular Expressions in C++: https://www.cplusplus.com/reference/regex/
 - Algorithm Library: https://en.cppreference.com/w/cpp/header/algorithm

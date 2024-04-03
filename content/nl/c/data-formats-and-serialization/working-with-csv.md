@@ -14,11 +14,8 @@ title: Werken met CSV
 weight: 37
 ---
 
-## Wat & Waarom?
-
-In de wereld van het programmeren omvat het werken met CSV (Comma-Separated Values) bestanden het lezen van en schrijven naar tekstbestanden die zijn georganiseerd in rijen, waarbij elke rij een record vertegenwoordigt en de velden van elk record zijn gescheiden door komma's. Programmeurs manipuleren CSV-bestanden vanwege het gemak van gegevensimport/export tussen verschillende systemen, vanwege hun wijdverspreide ondersteuning en eenvoud voor het opslaan van tabelgegevens.
-
 ## Hoe:
+
 
 ### CSV-bestanden lezen
 Om een CSV-bestand in C te lezen, gebruiken we standaardbestands-I/O-functies samen met tekenreeksmanipulatiefuncties om elke regel te ontleden. Hieronder staat een basisvoorbeeld van het lezen van een CSV-bestand en het afdrukken van de velden van elke rij naar de console.
@@ -94,7 +91,6 @@ Jane Doe,27,Datawetenschapper
 ```
 
 ## Diepere duik
-
 Het CSV-formaat, hoewel schijnbaar eenvoudig, kent zijn nuances, zoals het omgaan met komma's binnen velden en het omsluiten van velden met aanhalingstekens. De rudimentaire voorbeelden getoond houden geen rekening met dergelijke complexiteiten, noch behandelen ze potentiële fouten op een robuuste manier.
 
 Historisch gezien is de omgang met CSV in C grotendeels handmatig geweest vanwege de low-level aard van de taal en het gebrek aan ingebouwde high-level abstracties voor dergelijke taken. Dit handmatige beheer omvat het openen van bestanden, het lezen van regels, het splitsen van tekenreeksen, en het converteren van de datatypes indien nodig.

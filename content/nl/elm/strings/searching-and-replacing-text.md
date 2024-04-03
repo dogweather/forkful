@@ -13,9 +13,6 @@ title: Tekst zoeken en vervangen
 weight: 10
 ---
 
-## Wat & Waarom?
-Tekst zoeken en vervangen stelt je in staat om specifieke reeksen te vinden en ze te ruilen voor iets anders. Programmeurs gebruiken dit voor alles, van het corrigeren van typfouten tot efficiënt refactoren van code.
-
 ## Hoe:
 In Elm kun je de `String`-module gebruiken om delen van een string te vervangen. Laten we het in actie zien:
 

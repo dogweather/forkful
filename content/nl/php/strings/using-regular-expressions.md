@@ -12,9 +12,6 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-Reguliere expressies (regex) zijn zoekpatronen die worden gebruikt om combinaties van karakters in strings te matchen. Programmeurs gebruiken ze voor taken zoals validatie, zoeken en tekstverwerking, omdat ze krachtig zijn en tijd besparen.
-
 ## Hoe te gebruiken:
 Om regex in PHP te gebruiken, gebruik je typisch `preg_match` voor het vinden van een match, of `preg_replace` voor zoek-en-vervang. Hier is een snelle blik:
 

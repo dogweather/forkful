@@ -11,9 +11,6 @@ title: Travailler avec XML
 weight: 40
 ---
 
-## Quoi et pourquoi ?
-Travailler avec XML signifie analyser, manipuler et écrire des données XML en utilisant la programmation. Les programmeurs gèrent l'XML pour échanger des données entre différents systèmes, pour les fichiers de configuration, ou lorsqu'ils travaillent avec des normes comme SOAP qui reposent sur XML.
-
 ## Comment faire :
 ```TypeScript
 import { parseString } from 'xml2js';

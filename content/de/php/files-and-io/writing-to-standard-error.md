@@ -14,12 +14,7 @@ title: Schreiben auf Standardfehler
 weight: 25
 ---
 
-## Was & Warum?
-
-Das Schreiben auf den Standardfehler (stderr) in PHP bedeutet, Fehlermeldungen oder Diagnosen getrennt von der Standardausgabe (stdout) zu leiten, was Entwicklern hilft, ihre Ausgabeströme für das Debugging und Protokollieren besser zu verwalten. Programmierer nutzen diese Technik, um sicherzustellen, dass Fehlermeldungen nicht mit der Ausgabe des Programms interferieren, was die Überwachung und Fehlersuche in Anwendungen erleichtert.
-
 ## Wie geht das:
-
 In PHP kann das Schreiben auf stderr mit der Funktion `fwrite()` in Verbindung mit der vordefinierten Konstante `STDERR`, die den Fehlerausgabestrom repräsentiert, erreicht werden.
 
 ```php

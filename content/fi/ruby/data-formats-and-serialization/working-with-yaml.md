@@ -13,9 +13,6 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä ja miksi?
-YAML, joka tarkoittaa YAML Ain't Markup Language, on laajalti käytössä Rubyn konfiguraatiotiedostoissa ja datan sarjallistamisessa sen ihmislukuisan muodon vuoksi. Ohjelmoijat suosivat YAMLia, kun heidän tarvitsee tallentaa tai siirtää dataobjekteja lukuisassa mutta rakenteellisesti jäsennellyssä muodossa, mikä yksinkertaistaa tehtäviä kuten konfiguraation hallinta, datan tallennus ja kielten välisen datan jakaminen.
-
 ## Kuinka:
 Ruby sisältää sisäänrakennetun kirjaston nimeltä Psych YAMLin jäsennystä ja tuottamista varten. Käyttääksesi sitä, sinun täytyy ensin vaatia YAML-standardikirjastoa. Tässä on yksinkertainen esimerkki aloittamiseen:
 
@@ -57,7 +54,6 @@ puts loaded_person
 ```
 
 ### Kolmannen osapuolen kirjastojen käyttö:
-
 Vaikka standardikirjasto riittää perustehtäviin, monimutkaisiin tarpeisiin saattaisit haluta tutkia kolmannen osapuolen jalokiviä kuten 'safe_yaml'. Käyttääksesi tällaisia kirjastoja, sinun täytyy ensin asentaa jalokivi:
 
 ```bash

@@ -10,9 +10,6 @@ title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---
 
-## What & Why? (Quoi & Pourquoi ?)
-Télécharger une page web, c'est récupérer son contenu via Internet. Les programmeurs le font pour extraire des données, tester la disponibilité ou automatiquement interagir avec des sites.
-
 ## How to: (Comment faire :)
 ```Lua
 -- Vous aurez besoin de 'luasocket'

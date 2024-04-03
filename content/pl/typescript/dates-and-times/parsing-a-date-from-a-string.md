@@ -14,9 +14,6 @@ title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---
 
-## Co i dlaczego?
-Parsowanie daty z ciągu znaków polega na konwertowaniu tekstowych reprezentacji dat i czasów na format, który może być przetwarzany i analizowany przez program. Jest to częste zadanie w programowaniu, ponieważ pozwala na obsługę danych wejściowych od użytkownika, przechowywanie danych z czasem oraz interakcje z API, co prowadzi do tworzenia bardziej funkcjonalnych i przyjaznych dla użytkownika aplikacji.
-
 ## Jak to zrobić:
 TypeScript, będąc nadzbiorem JavaScript, polega na obiekcie Date do parsowania dat z ciągów znaków. Jednak praca z datami w JS/TS może stać się rozwlekła lub nieprecyzyjna z powodu dziwactw obiektu Date. Oto podstawowy przykład, po którym następuje podejście z użyciem popularnej biblioteki, `date-fns`, dla bardziej solidnych rozwiązań.
 

@@ -10,9 +10,6 @@ title: "Refactorizaci\xF3n"
 weight: 19
 ---
 
-## ¿Qué y Por Qué?
-La refactorización es el proceso de reestructurar el código de un ordenador existente sin cambiar su comportamiento externo. Los programadores refactorizan para mejorar atributos no funcionales del software, haciendo el código más limpio, más eficiente y más fácil de mantener.
-
 ## Cómo hacerlo:
 Tomemos un fragmento clásico de PHP y apliquemos un poco de magia de refactorización.
 

@@ -17,9 +17,6 @@ title: "\u6587\u5B57\u5217\u306E\u88DC\u9593"
 weight: 8
 ---
 
-## What & Why? (何となぜ？)
-文字列補間は、変数や式の値を文字列中に埋め込むこと。プログラマーは、動的に内容を変更するメッセージやデータを簡単に生成するために使う。
-
 ## How to: (方法)
 ```Haskell
 {-# LANGUAGE OverloadedStrings #-}

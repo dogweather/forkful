@@ -12,12 +12,7 @@ title: Een HTTP-verzoek verzenden
 weight: 44
 ---
 
-## Wat & Waarom?
-
-Een HTTP-verzoek verzenden is als een webserver vragen om iets te doen of je iets te geven. Programmeurs doen dit om te interacteren met webservices, gegevens op te halen, formulieren in te dienen of te communiceren met API's.
-
 ## Hoe:
-
 Kotlin maakt HTTP-verzoeken eenvoudig. Hier is een basisvoorbeeld met `khttp`, een gebruiksvriendelijke bibliotheek:
 
 ```Kotlin
@@ -53,7 +48,6 @@ suspend fun main() {
 Uitvoer vergelijkbaar met het eerste voorbeeld.
 
 ## Diepere Duik
-
 De `khttp` bibliotheek is een handig hulpmiddel, gemodelleerd naar Python's `requests`. Het is geweldig voor snelle scripts, maar is niet actief onderhouden. `ktor` is een nieuwer, actief project van JetBrains, ontworpen met coroutines voor asynchrone operaties. Het is bedoeld voor schaalbare apps. Beide handelen HTTP-verzoeken af, maar dienen verschillende gebruikssituaties.
 
 Historisch gezien werden HTTP-verzoeken in Kotlin gedaan met Java-bibliotheken zoals `HttpURLConnection` of Apache's `HttpClient`. Deze zijn nog steeds geldig, maar zijn uitgebreider en missen de taalfeatures van Kotlin.
@@ -61,7 +55,6 @@ Historisch gezien werden HTTP-verzoeken in Kotlin gedaan met Java-bibliotheken z
 Wat implementatie betreft, vergeet niet om veelvoorkomende HTTP-fouten te behandelen en de responscode te lezen. Je zult ook `try-catch` willen gebruiken voor netwerkuitzonderingen en moet mogelijk werken met headers en queryparameters.
 
 ## Zie Ook
-
 - Ktor Documentatie: https://ktor.io/
 - khttp GitHub Repository: https://github.com/jkcclemens/khttp (Let op de onderhoudsstatus)
 - Kotlin HTTP-oproepen met HttpURLConnection: https://kotlinlang.org/api/latest/jvm/stdlib/java.net/-http-u-r-l-connection/

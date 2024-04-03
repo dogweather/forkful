@@ -14,12 +14,7 @@ title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---
 
-## Mikä ja miksi?
-
-JSONin (JavaScript Object Notation) käsittely Rustissa tarkoittaa JSON-datan jäsentämistä Rustin datarakenteisiin ja Rustin datarakenteiden sarjoittamista takaisin JSONiksi. Ohjelmoijat tekevät tämän vuorovaikuttaakseen web-APIen, konfiguraatiotiedostojen tai minkä tahansa datanvaihtoformaatin kanssa, jossa JSONia käytetään sen keveyden ja ihmisen luettavissa olevan muodon vuoksi.
-
 ## Kuinka:
-
 JSONin käsittelyyn Rustissa käytetään laajalti `serde`-pakettia yhdessä `serde_json`in kanssa sarjoittamiseen ja jäsentämiseen. Ensin, varmista että sisällytät nämä `Cargo.toml`-tiedostoosi:
 
 ```toml
@@ -29,7 +24,6 @@ serde_json = "1.0"
 ```
 
 ### Esimerkki 1: Jäsenetään JSON Rust-rakenteeksi
-
 Määrittele Rust-rakenne ja käytä johdannaisia makroja `Deserialize`lle ja `Serialize`lle:
 
 ```rust
@@ -68,7 +62,6 @@ Käyttäjän sähköposti: jane.doe@example.com
 ```
 
 ### Esimerkki 2: Sarjoitetaan Rust-rakenne JSONiksi
-
 Käyttäen samaa `User`-rakennetta:
 
 ```rust

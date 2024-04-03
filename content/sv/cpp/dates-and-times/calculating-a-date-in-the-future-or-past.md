@@ -12,9 +12,6 @@ title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet"
 weight: 26
 ---
 
-## Vad & Varför?
-Räkna ut ett framtida eller förflutet datum handlar om att bestämma ett specifikt datum utifrån ett annat genom att addera eller subtrahera dagar, månader eller år. Programmerare gör detta för att hantera deadlines, boka händelser, beräkna åldrar, eller för planeringsalgoritmer.
-
 ## How to:
 I C++ kan du använda `<chrono>` biblioteket som ett kraftfullt verktyg för datumhantering. Här nedan följer ett exempel på att addera en vecka till dagens datum:
 

@@ -16,9 +16,6 @@ title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---
 
-## Cái gì & Tại sao?
-Tái cấu trúc mã essentially là việc dọn dẹp mã nguồn như làm sạch mùa xuân - nó là về việc cấu trúc lại mã hiện có mà không thay đổi hành vi bên ngoài của nó. Lập trình viên thực hiện việc này để làm cho mã dễ đọc hơn, giảm độ phức tạp, cải thiện khả năng bảo trì, và làm cho nó dễ mở rộng hơn.
-
 ## Làm thế nào:
 Giả sử bạn có một hàm Elm đang làm quá nhiều thứ, như là mỗi lẫn logic UI với cập nhật trạng thái. Đó là ứng cử viên hoàn hảo cho việc tái cấu trúc. Ban đầu:
 

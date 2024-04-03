@@ -10,9 +10,6 @@ title: Conversione di una data in una stringa
 weight: 28
 ---
 
-## What & Why?
-Convertire una data in una stringa significa rappresentare la data come testo. Lo facciamo perché è più facile da leggere per gli umani e perché è un formato comune per memorizzare o trasmettere dati.
-
 ## How to:
 Per convertire una data in una stringa in Rust, possiamo usare le funzionalità di chrono, una crate esterna:
 

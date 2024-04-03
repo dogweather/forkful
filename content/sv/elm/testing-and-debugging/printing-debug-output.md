@@ -11,9 +11,6 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## What & Why? - Vad & Varför?
-Skriva ut felsökningsdata gör det lättare att se vad ditt program egentligen gör. Programmerare använder det för att hitta buggar och förstå programflödet.
-
 ## How to: - Hur gör man:
 I Elm använder vi `Debug.log` för att skriva ut värden i konsolen:
 

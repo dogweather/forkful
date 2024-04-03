@@ -20,12 +20,7 @@ title: "TOML\u3092\u6271\u3046\u65B9\u6CD5"
 weight: 39
 ---
 
-## 何となぜ？
-
-TOMLは、Tom's Obvious, Minimal Languageの略で、明快な意味論のために読みやすいデータシリアライゼーション形式です。プログラマーは、人間にも機械にも優しいバランスを提供するため、設定ファイルにこれを使用します。
-
 ## 方法：
-
 PowerShellでは、TOMLを解析するためのネイティブなcmdletはありません。`toml-to-json`のようなツールを使ってTOMLをJSONに変換するか、モジュールを使用することが一般的です。以下は、架空のモジュール`PowerShellTOML`を使う方法です：
 
 ```PowerShell
@@ -49,13 +44,11 @@ Write-Output $config.database.server
 ```
 
 ## 深堀り
-
 TOMLは、設定ファイル用のXMLやYAMLのより単純な代替として、GitHubの共同創業者であるTom Preston-Wernerによって作られました。その最初のバージョンは2013年に登場しました。TOMLはJSONと比較可能ですが、人間にとってよりフレンドリーに設計されており、人々によって維持される設定に適した選択肢です。代替には、YAML、JSON、XMLなどがあります。
 
 実装の面では、TOMLのPowerShellモジュールは通常、C#のようなよりパフォーマンス指向の言語で書かれたTOMLライブラリのラッパーになります。PowerShellにはTOMLの組み込みサポートがないため、TOML形式を便利に扱うためにそのようなモジュールが必要です。
 
 ## 参照
-
 - TOML標準：https://toml.io/en/
 - `toml` PowerShellモジュールのGitHubリポジトリ（読む時点で存在する場合）：https://github.com/powershell/PowerShellTOML
 - TOMLについての紹介：https://github.com/toml-lang/toml

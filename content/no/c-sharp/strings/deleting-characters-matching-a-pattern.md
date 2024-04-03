@@ -11,9 +11,6 @@ title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---
 
-## Hva & Hvorfor?
-Slette tegn som matcher et mønster betyr å finne bestemte sekvenser av tegn i en tekststreng og fjerne dem. Programmerere gjør dette for å rense data, forenkle tekstbehandling eller forberede strenger for spesifikke operasjoner, som databasemigreringer eller nettverksoverføringer.
-
 ## Hvordan:
 La oss se hvordan dette kan gjøres i C#. Her er et lite script som bruker `Regex`-klassen til å slette alle tall i en tekststreng.
 

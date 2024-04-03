@@ -11,9 +11,6 @@ title: Usando um shell interativo (REPL)
 weight: 34
 ---
 
-## O Que & Por Quê?
-Um shell interativo, ou REPL (Read-Eval-Print Loop, Ciclo de Leitura-Avaliação-Impressão), permite escrever e executar código PHP em tempo real. É ideal para experimentação, depuração ou aprendizado, pois você pode testar trechos de código sem o trabalho de criar um script completo.
-
 ## Como:
 Inicie o REPL PHP executando `php -a` no seu terminal. Aqui está uma amostra de como ele funciona:
 

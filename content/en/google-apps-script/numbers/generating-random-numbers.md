@@ -10,16 +10,10 @@ title: Generating random numbers
 weight: 12
 ---
 
-## What & Why?
-
-Generating random numbers is a fundamental task in programming that’s used for a myriad of applications, such as simulations, games, and security systems. Programmers employ this technique in Google Apps Script to introduce variability, test scenarios, and add unpredictability to their applications within the Google ecosystem, including Sheets, Docs, and Forms.
-
 ## How to:
-
 In Google Apps Script, you can generate random numbers using the `Math.random()` function, similar to JavaScript. This function returns a floating-point, pseudo-random number in the range 0 (inclusive) to 1 (exclusive). To tailor these numbers for various use cases, such as generating integers within a specific range, you may need to perform additional calculations.
 
 ### Generating a Basic Random Number
-
 To generate a simple random number and log it to the console:
 
 ```javascript
@@ -31,7 +25,6 @@ function generateRandomNumber() {
 *Sample output:* `0.1234567890123456`
 
 ### Generating an Integer within a Specific Range
-
 To generate a random integer between two values (`min` and `max`), inclusive:
 
 ```javascript
@@ -51,7 +44,6 @@ getRandomInt(1, 10);
 Remember, the `Math.ceil()` function is used to round the minimum value up, and `Math.floor()` is used to round the maximum value down, ensuring the random number is within the specified range.
 
 ## Deep Dive
-
 The mechanism for generating random numbers in Google Apps Script, and indeed in most programming languages, utilizes a pseudo-random number generator (PRNG). This technique is deterministic and relies on an initial value, known as the seed, to produce a sequence of numbers that appears random. While sufficient for many applications, it's important to note that pseudo-random numbers may not be appropriate where high security or true randomness is required, such as in cryptographic applications.
 
 True randomness can be achieved through hardware random number generators or services that generate randomness from natural phenomena. However, for most day-to-day scripting needs in Google Apps Script, `Math.random()` suffices.

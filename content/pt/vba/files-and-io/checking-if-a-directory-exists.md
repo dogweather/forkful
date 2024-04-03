@@ -14,12 +14,7 @@ title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---
 
-## O Que & Por Que?
-
-Verificar se um diretório existe no Visual Basic for Applications (VBA) trata de confirmar a presença de uma pasta dentro do sistema de arquivos antes de realizar operações como salvar arquivos ou criar novos diretórios. Os programadores fazem isso para evitar erros de execução e garantir que seu código interaja com o sistema de arquivos de maneira eficiente e correta.
-
 ## Como fazer:
-
 No VBA, para verificar se um diretório existe, normalmente utiliza-se a função `Dir` combinada com o atributo `vbDirectory`. Essa abordagem permite verificar a existência de uma pasta especificando seu caminho. Veja como você pode fazer isso:
 
 ```basic
@@ -46,7 +41,6 @@ Diretório existe.
 ```
 
 ## Aprofundamento
-
 Verificar se um diretório existe é uma tarefa fundamental em muitas linguagens de programação, não apenas no VBA. O método descrito acima usando `Dir` é simples e eficaz para a maioria dos propósitos no VBA. No entanto, vale ressaltar que essa abordagem pode ter limitações, como em casos de caminhos de rede e tratamento de permissões, que às vezes podem gerar falsos negativos ou positivos.
 
 Historicamente, os métodos de acesso ao sistema de arquivos evoluíram entre diferentes linguagens de programação, com as mais recentes oferecendo abordagens orientadas a objetos. Por exemplo, em linguagens .NET como VB.NET, poderia-se usar `System.IO.Directory.Exists(path)` para uma maneira mais direta e possivelmente mais poderosa de verificar a existência de diretórios, beneficiando-se do tratamento de exceções e informações de retorno mais ricas.

@@ -28,15 +28,10 @@ title: "\u05D1\u05D3\u05D9\u05E7\u05D4 \u05D0\u05DD \u05E1\u05E4\u05E8\u05D9\u05
 weight: 20
 ---
 
-## מה ולמה?
-בדיקה האם ספרייה קיימת ב-TypeScript היא חיונית למשימות ניהול קבצים, כגון קריאה מקבצים או כתיבה אליהם, ומבטיחה שהפעולות מתבצעות רק על ספריות חוקיות. פעולה זו קריטית כדי למנוע שגיאות הנובעות מניסיונות לגשת לספריות שאינן קיימות או לשנות אותן.
-
 ## איך לעשות:
-
 TypeScript, כשהוא רץ בסביבת Node.js, מאפשר לבדוק אם ספרייה קיימת באמצעות המודול `fs`, המספק את הפונקציה `existsSync()` או את הפונקציה הא-סינכרונית `access()` בשילוב עם `constants.F_OK`.
 
 ### שימוש ב-`fs.existsSync()`:
-
 ```typescript
 import { existsSync } from 'fs';
 
@@ -50,7 +45,6 @@ if (existsSync(directoryPath)) {
 ```
 
 ### שימוש ב-`fs.access()` עם `fs.constants.F_OK`:
-
 ```typescript
 import { access, constants } from 'fs';
 
@@ -76,7 +70,6 @@ access(directoryPath, constants.F_OK, (err) => {
 ```
 
 ### שימוש בספרייה חיצונית - `fs-extra`:
-
 `fs-extra` היא ספרייה חיצונית פופולרית שמעשירה את המודול `fs` הקיים ומספקת פונקציות נוחות יותר.
 
 ```typescript

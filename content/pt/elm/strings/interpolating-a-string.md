@@ -11,12 +11,7 @@ title: Interpolando uma string
 weight: 8
 ---
 
-## O Que & Porquê?
-
-Interpolar uma string significa enfiar valores de variáveis dentro de uma string, criando assim uma nova string 'personalizada'. Programadores fazem isso para construir mensagens dinâmicas ou para simplificar a concatenação de strings e valores.
-
 ## Como Fazer:
-
 Vamos lá, em Elm não temos a tradicional interpolação presente em outras linguagens. Em vez disso, usamos o bom e velho `++` para juntar pedaços de texto. Veja só:
 
 ```Elm
@@ -36,7 +31,6 @@ mensagem = "Eu tenho " ++ String.fromInt(idade) ++ " anos."
 ```
 
 ## Mergulho Profundo:
-
 Antigamente, interpolar strings era um negócio bem manual, como você vê por aqui. Com o passar do tempo, linguagens como JavaScript e Python simplificaram o processo com template strings ou f-strings. Mas Elm gosta de manter as coisas simples e seguras, então continuamos usando a boa concatenação.
 
 Algumas alternativas modernas em Elm são as funções de alto nível como `String.concat` ou combinadores de bibliotecas comunitárias que proporcionam uma sintaxe um pouco mais próxima à interpolação verdadeira.
@@ -44,7 +38,6 @@ Algumas alternativas modernas em Elm são as funções de alto nível como `Stri
 Sobre a implementação, a concatenação em Elm é eficiente pois a linguagem é otimizada para operações com strings, embora não seja tão chamativa quanto outras formas de interpolação. Mas lembre: em Elm, priorizamos clareza e simplicidade sobre açúcar sintático.
 
 ## Veja Também:
-
 Para dar uma aprofundada, confira estes links:
 
 - [Documentação Oficial do Elm sobre Strings](https://package.elm-lang.org/packages/elm/core/latest/String)

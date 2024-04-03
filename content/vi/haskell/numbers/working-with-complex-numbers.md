@@ -16,12 +16,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Cái gì & Tại sao?
-
-Số phức, bao gồm một phần thực và một phần ảo, là cần thiết trong các lĩnh vực tính toán khác nhau như kỹ thuật, vật lý, và xử lý tín hiệu. Lập trình viên sử dụng chúng để giải quyết các phương trình mà số thực không thể, như tìm căn bậc hai của số âm.
-
 ## Làm thế nào:
-
 Haskell xử lý số phức với module `Data.Complex`. Dưới đây là một hướng dẫn nhanh:
 
 ```haskell
@@ -61,7 +56,6 @@ Kết quả mẫu sau khi tải mã trên trong GHCi có thể là:
 ```
 
 ## Sâu hơn
-
 Số phức có từ thế kỷ 16 nhưng được chấp nhận rộng rãi nhiều sau đó. Haskell, giống như nhiều ngôn ngữ khác, cung cấp hỗ trợ bản địa cho các phép toán số phức, làm cho việc làm việc với những số này không cần phải thực hiện các phép toán cơ bản.
 
 Các lựa chọn thay thế bao gồm việc tạo kiểu số phức tùy chỉnh của riêng bạn hoặc sử dụng thư viện cho các miền cụ thể như quaternion cho đồ họa 3D. Nhưng cho hầu hết các trường hợp sử dụng, `Data.Complex` của Haskell là đủ.
@@ -69,7 +63,6 @@ Các lựa chọn thay thế bao gồm việc tạo kiểu số phức tùy ch�
 Bên dưới `Data.Complex` chỉ là kiểu dữ liệu ghép đôi hai giá trị `Float` hoặc `Double`, đại diện cho phần thực và phần ảo, tương ứng. Đây là một cách đơn giản và hiệu quả để làm việc với số phức trên nền tảng Haskell.
 
 ## Xem thêm
-
 Xem những tài nguyên sau để biết thêm về số phức trong Haskell:
 
 - Tài liệu chính thức của Haskell `Data.Complex`: [Hackage Data.Complex](https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-Complex.html)

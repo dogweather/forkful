@@ -14,12 +14,7 @@ title: "Slette tegn som samsvarer med et m\xF8nster"
 weight: 5
 ---
 
-## Hva & Hvorfor?
-
-Å slette tegn som samsvarer med et spesifikt mønster i strenger er avgjørende for datakontroll, sanitering eller når man forbereder tekst til videre behandling. Programmerere utfører denne oppgaven for å sikre dataintegritet, forbedre lesbarhet og håndheve et konsistent format på tvers av tekstinnmatinger.
-
 ## Hvordan:
-
 Dart gjør det enkelt å fjerne tegn som matcher et forhåndsdefinert mønster ved bruk av regulære uttrykk og metoden `replaceAll`. Ingen tredjepartsbiblioteker er nødvendig for grunnleggende bruk, noe som gjør denne tilnærmingen veldig tilgjengelig.
 
 Her er et enkelt eksempel som demonstrerer hvordan du fjerner sifre fra en streng:

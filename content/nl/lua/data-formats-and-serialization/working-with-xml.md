@@ -13,9 +13,6 @@ title: Werken met XML
 weight: 40
 ---
 
-## Wat & Waarom?
-Werken met XML omvat het parseren en manipuleren van XML-documenten met behulp van code. Programmeurs doen dit om gegevens te lezen, schrijven en wijzigen in een gestructureerd, draagbaar formaat dat veel gebruikt wordt voor gegevensuitwisseling en -opslag.
-
 ## Hoe:
 Lua bevat geen native XML-parser, maar er zijn bibliotheken zoals LuaXML en xml2lua die het werk gedaan krijgen. Hier is een snelle blik op het parseren van XML met xml2lua:
 

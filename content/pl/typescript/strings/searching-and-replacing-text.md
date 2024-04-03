@@ -11,9 +11,6 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## What & Why? (Co i dlaczego?)
-Wyszukiwanie i zamiana tekstu to podstawa przetwarzania ciągów znaków, umożliwiająca podmianę określonych fragmentów na nowe. Programiści korzystają z tych operacji, by modyfikować dane, automatyzować refaktoryzację kodu i usprawniać pracę z tekstami.
-
 ## How to: (Jak to zrobić?)
 ```TypeScript
 // Podstawowe wyszukiwanie i zamiana tekstu

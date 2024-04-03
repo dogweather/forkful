@@ -14,10 +14,9 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-Wyrażenia regularne (regex) w Ruby to wzorce używane do dopasowywania kombinacji znaków w ciągach tekstowych, co umożliwia programistom efektywne wyszukiwanie, dopasowywanie i manipulowanie tekstem. Programiści wykorzystują regex do zadań takich jak walidacja, parsowanie i manipulowanie ciągami znaków, co czyni go niezbędnym narzędziem do przetwarzania tekstu.
-
 ## Jak to zrobić:
+
+
 ### Podstawowe dopasowywanie
 Aby dopasować ciąg znaków do prostego wzorca, możesz użyć metody `match`. Poniżej sprawdzamy, czy słowo "Ruby" występuje w danym ciągu.
 

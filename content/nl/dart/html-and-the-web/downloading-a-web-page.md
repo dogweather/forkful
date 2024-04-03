@@ -12,12 +12,7 @@ title: Een webpagina downloaden
 weight: 42
 ---
 
-## Wat & Waarom?
-
-Een webpagina downloaden houdt in dat de inhoud van een webpagina via de URL wordt opgehaald voor verwerking of opslag. Programmeurs doen dit om informatie te extraheren, wijzigingen te monitoren of inhoud te archiveren, wat het een basis maakt voor web scraping, datamining en geautomatiseerde testtaken.
-
 ## Hoe te:
-
 Dart biedt het `http`-pakket, een populaire externe bibliotheek voor het maken van HTTP-verzoeken. Hier is een basisvoorbeeld van hoe je het kunt gebruiken om een webpagina te downloaden:
 
 Voeg eerst het `http`-pakket toe aan je `pubspec.yaml`:

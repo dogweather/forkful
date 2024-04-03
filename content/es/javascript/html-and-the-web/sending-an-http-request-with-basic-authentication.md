@@ -11,12 +11,7 @@ title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---
 
-## ¿Qué y Por Qué?
-
-Enviar una solicitud HTTP con autenticación básica significa agregar tu usuario y contraseña en una petición a un servidor web. Los programadores lo hacen para acceder a recursos protegidos, asegurando que solo usuarios autorizados puedan hacer ciertas operaciones.
-
 ## Cómo hacerlo:
-
 ```Javascript
 const axios = require('axios');
 const base64 = require('base-64');
@@ -50,13 +45,11 @@ Respuesta recibida: { "data": "Aquí va el contenido protegido que solicitaste..
 ```
 
 ## Análisis Profundo:
-
 Históricamente, la autenticación básica ha sido un método sencillo para controlar el acceso a recursos web. Aunque simple, no es el más seguro por sí solo, ya que las credenciales van codificadas en Base64, que es fácilmente decodificable. Hoy en día, se prefiere usar HTTPS para encriptar toda la comunicación. 
 
 Hay alternativas como la autenticación de token, OAuth y otros, que ofrecen mayor seguridad y flexibilidad. En el caso de la autenticación básica, es vital implementarla sobre una conexión segura (HTTPS) para evitar exposiciones innecesarias de credenciales.
 
 ## Ver También:
-
 - Documentación de Axios: https://github.com/axios/axios
 - Cómo manejar Base64 en Node.js: https://nodejs.org/api/buffer.html
 - Información sobre HTTPS: https://developer.mozilla.org/es/docs/Web/HTTP/Overview

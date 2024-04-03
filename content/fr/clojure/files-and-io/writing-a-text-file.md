@@ -13,14 +13,10 @@ title: "R\xE9diger un fichier texte"
 weight: 24
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire un fichier texte en Clojure implique de créer ou de modifier des fichiers pour sauvegarder des données en dehors de votre application, permettant la persistance, la configuration, la journalisation ou la communication inter-processus. Les programmeurs effectuent cette tâche pour externaliser l'état de l'application, les configurations ou partager des informations entre différentes parties d'un programme ou différents programmes au total.
-
 ## Comment faire :
 
-### Écrire du texte dans un fichier en utilisant les fonctions intégrées de Clojure
 
+### Écrire du texte dans un fichier en utilisant les fonctions intégrées de Clojure
 La fonction `spit` est le moyen le plus simple d'écrire du texte dans un fichier en Clojure. Elle prend deux arguments : le chemin du fichier et la chaîne à écrire. Si le fichier n'existe pas, `spit` le créera. S'il existe, `spit` l'écrasera.
 
 ```clojure
@@ -41,7 +37,6 @@ Ajoutons cette nouvelle ligne.
 ```
 
 ### Utiliser des bibliothèques tierces
-
 Bien que les capacités intégrées de Clojure soient souvent suffisantes, la communauté a développé des bibliothèques robustes pour des tâches plus complexes ou spécifiques. Pour les entrées/sorties de fichiers, une bibliothèque populaire est `clojure.java.io`, qui propose une approche plus proche de Java pour la gestion des fichiers.
 
 Pour utiliser `clojure.java.io` pour écrire dans un fichier, vous devez d'abord l'importer :

@@ -10,12 +10,7 @@ title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---
 
-## Hva & Hvorfor?
-
-Komplekse tall, som består av en reell og en imaginær del, er essensielle i ulike beregningsfelt som ingeniørvitenskap, fysikk og signalbehandling. Programmerere bruker dem til å løse ligninger som reelle tall ikke kan, som å finne røttene til negative tall.
-
 ## Hvordan:
-
 Haskell håndterer komplekse tall med modulen `Data.Complex`. Her er en rask gjennomgang:
 
 ```haskell
@@ -55,7 +50,6 @@ Eksempel på utdata etter å ha lastet inn koden ovenfor i GHCi kan være:
 ```
 
 ## Dypdykk
-
 Komplekse tall går tilbake til det 16. århundret, men ble bredt akseptert mye senere. Haskell, som mange andre språk, tilbyr innebygd støtte for kompleks aritmetikk, noe som gjør det enkelt å jobbe med disse tallene uten å måtte implementere den underliggende matematikken.
 
 Alternativer inkluderer å bygge din egen kompleks talltype eller å bruke biblioteker for spesifikke domener som for eksempel kvaternioner for 3D-grafikk. Men for de fleste bruksområder er Haskell's `Data.Complex` nok.
@@ -63,7 +57,6 @@ Alternativer inkluderer å bygge din egen kompleks talltype eller å bruke bibli
 Under hetten er `Data.Complex` bare en datatype som parer to `Float` eller `Double` verdier, som representerer henholdsvis den reelle og den imaginære delen. Det er en enkel og effektiv måte å jobbe med komplekse tall på Haskell-plattformen.
 
 ## Se Også
-
 Sjekk ut disse ressursene for mer om komplekse tall i Haskell:
 
 - Den offisielle Haskell `Data.Complex` dokumentasjonen: [Hackage Data.Complex](https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-Complex.html)

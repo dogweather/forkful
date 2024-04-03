@@ -11,9 +11,6 @@ title: Lectura de un archivo de texto
 weight: 22
 ---
 
-## ¿Qué y Por Qué?
-Leer un archivo de texto en JavaScript es simplemente acceder al contenido almacenado en un archivo de texto (.txt) y trabajar con él en tu programa. Los programadores lo hacen para manipular datos, configuraciones, o importar información externa sin necesidad de meter todo a mano en el código.
-
 ## Cómo hacerlo:
 JavaScript, especialmente en Node.js, hace que leer archivos de texto sea un juego de niños. Aquí hay un ejemplo sencillo usando `fs`, el módulo de sistema de archivos incorporado en Node.js:
 

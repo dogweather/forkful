@@ -12,9 +12,6 @@ title: Generowanie liczb losowych
 weight: 12
 ---
 
-## Co i dlaczego?
-Generowanie losowych liczb w projektach Arduino polega na tworzeniu wartości, które z założenia są nieprzewidywalne, co jest kluczowe dla aplikacji takich jak gry, symulacje i systemy bezpieczeństwa. Programiści wykorzystują tę technikę do wprowadzania zmienności lub podejmowania decyzji, które nie powinny być deterministyczne.
-
 ## Jak to zrobić:
 Arduino oferuje proste funkcje do generowania losowych liczb: `randomSeed()` i `random()`. Na początek zainicjuj generator liczb losowych, aby zapewnić różne sekwencje liczb za każdym uruchomieniem programu. Często stosowanym podejściem jest zasianie za pomocą odczytu analogowego z niepodłączonego pinu.
 

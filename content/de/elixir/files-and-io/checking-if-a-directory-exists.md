@@ -14,9 +14,6 @@ title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---
 
-## Was & Warum?
-Das Überprüfen, ob ein Verzeichnis in Elixir existiert, bezieht sich darauf, die Anwesenheit eines Verzeichnisses an einem bestimmten Pfad im Dateisystem zu verifizieren. Programmierer tun dies, um sicherzustellen, dass sie sicher aus dem Verzeichnis lesen, in es schreiben oder Operationen darauf ausführen können, ohne auf Fehler wegen seiner Abwesenheit zu stoßen.
-
 ## Wie:
 Die Standardbibliothek von Elixir bietet eine unkomplizierte Möglichkeit, die Existenz eines Verzeichnisses über das `File` Modul zu überprüfen. Hier ist, wie Sie es nutzen können:
 

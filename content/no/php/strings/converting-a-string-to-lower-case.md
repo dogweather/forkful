@@ -11,12 +11,7 @@ title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---
 
-## Hva & Hvorfor?
-
-Å konvertere en streng til små bokstaver betyr å endre alle store bokstaver i en tekststreng til tilsvarende små bokstaver. Programmerere gjør dette for konsistens i datalagring og -søk, slik at sammenligning av strenger ikke påvirkes av bokstavstørrelse.
-
 ## Hvordan:
-
 Med PHP kan du bruke `strtolower()` funksjonen for å konvertere en streng til små bokstaver. Slik gjør du det:
 
 ```php
@@ -48,7 +43,6 @@ bær og søtt
 ```
 
 ## Dykket Dypt:
-
 Før `strtolower()` og `mb_strtolower()`, hadde utviklere ikke innebygd funksjonalitet for å enkelt endre bokstavstørrelse, og måtte kanskje implementere egne løsninger. `mb_strtolower()` ble lagt til for å støtte multibyte-tegnsett, som er viktig for ikke-engelske språk.
 
 Alternativer til `strtolower()` kan inkludere `strtoupper()` for motsatt effekt, eller RegExp-baserte løsninger for mer spesifikke eller komplekse case-transformasjoner. En `ucfirst()` funksjon er også tilgjengelig for å gjøre første bokstav i en streng stor.
@@ -56,7 +50,6 @@ Alternativer til `strtolower()` kan inkludere `strtoupper()` for motsatt effekt,
 Når det gjelder implementasjon, bruker `strtolower()` PHPs interne tegnkart, mens `mb_strtolower()` tillater definisjon av et spesifikt tegnsett, som ofte er nødvendig for å håndtere spesielle bokstaver riktig.
 
 ## Se også:
-
 - PHPs offisielle dokumentasjon for `strtolower()`: https://www.php.net/manual/en/function.strtolower.php
 - PHPs offisielle dokumentasjon for `mb_strtolower()`: https://www.php.net/manual/en/function.mb-strtolower.php
 - PHPs offisielle dokumentasjon for tegnbearbeiding: https://www.php.net/manual/en/book.mbstring.php

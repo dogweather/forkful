@@ -13,9 +13,6 @@ title: Einen Datum aus einem String analysieren
 weight: 30
 ---
 
-## Was & Warum?
-Das Parsen eines Datums aus einem String beinhaltet die Umwandlung von textuellen Darstellungen von Daten und Zeiten in ein Format, das innerhalb eines Lua-Programms leicht manipuliert, gespeichert oder verglichen werden kann. Programmierer führen diese Aufgabe durch, um Operationen wie Planung, Protokollierung oder jegliche zeitliche Berechnungen zu erleichtern und die Lücke zwischen für Menschen lesbaren Datumsformaten und strukturierten Datentypen, die ein Computer effizient verarbeiten kann, zu überbrücken.
-
 ## Wie:
 Lua bietet keine eingebaute Unterstützung für die Manipulation von Datum und Zeit über die begrenzte Funktionalität der Funktionen `os.date` und `os.time` hinaus. Diese können jedoch für einfaches Parsen genutzt werden, und für komplexere Anforderungen kann die `luadate` Bibliothek, eine externe Bibliothek, verwendet werden.
 

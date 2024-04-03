@@ -14,9 +14,6 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## Hva og hvorfor?
-Strenginterpolering i C# lar deg opprette en ny streng ved å inkludere uttrykk inni en strengbokstavelig, noe som gjør det enklere å formatere og konkatere strenger. Programmerere bruker denne funksjonen for å forbedre kodelesbarheten og vedlikeholdbarheten, spesielt når de håndterer dynamisk strenginnhold.
-
 ## Hvordan:
 I C#, indikeres strenginterpolering med et dollartegn (`$`) etterfulgt av en strengbokstavelig. Variabelnavnene eller uttrykkene er omsluttet med krøllparenteser (`{}`).
 

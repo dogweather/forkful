@@ -10,9 +10,6 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Cosa e Perché?
-Arrotondare i numeri significa aggiustare un valore alla sua interezza più vicina o alla precisione specificata. Gli sviluppatori lo fanno per semplificare, conformarsi alle restrizioni del mondo reale o migliorare le prestazioni eliminando la precisione in eccesso.
-
 ## Come fare:
 C++ offre diverse modalità per arrotondare i numeri, come `floor()`, `ceil()`, e `round()`:
 

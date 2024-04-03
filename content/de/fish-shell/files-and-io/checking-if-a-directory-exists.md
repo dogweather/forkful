@@ -13,9 +13,6 @@ title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---
 
-## Was & Warum?
-Das Überprüfen, ob ein Verzeichnis in Fish Shell existiert, ermöglicht es Skripten, Entscheidungen basierend auf der An- oder Abwesenheit von Verzeichnisstrukturen zu treffen. Dies ermöglicht Aufgaben wie bedingte Dateioperationen, Protokollierung oder das Einrichten von Umgebungen. Diese Technik ist entscheidend für das Schreiben von robusten Skripten, die auf vorhersehbare Weise mit dem Dateisystem interagieren.
-
 ## Wie geht das:
 Fish Shell verwendet den `test` Befehl, um Dateitypen und -eigenschaften zu überprüfen, einschließlich, ob ein Ziel ein Verzeichnis ist. Hier ist ein grundlegendes Muster, um zu überprüfen, ob ein Verzeichnis existiert:
 

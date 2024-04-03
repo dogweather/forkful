@@ -14,12 +14,7 @@ title: Utilizzo di array associativi
 weight: 15
 ---
 
-## Cosa e Perché?
-
-Gli array associativi in PHP sono come liste super-potenziati dove ogni elemento può essere accesso utilizzando una chiave leggibile dall'uomo invece che semplici numeri. I programmatori li usano per memorizzare e manipolare dati in modo più intuitivo, permettendo così di avere codice più facile da leggere e manutenere.
-
 ## Come fare:
-
 In PHP, creare e utilizzare array associativi è semplice. Ecco una breve panoramica:
 
 ```PHP
@@ -65,7 +60,6 @@ foreach ($persona as $chiave => $valore) {
 Si noti come le chiavi possano essere qualsiasi stringa, permettendoti di accedere agli elementi utilizzando queste chiavi piuttosto che indici numerici, che possono essere meno significativi e più difficili da ricordare.
 
 ## Approfondimento
-
 Gli array associativi in PHP sono implementati internamente tramite tabelle hash che forniscono un accesso molto rapido agli elementi per chiave, rendendoli molto efficienti per molti compiti. Questa efficienza, unita alla loro facilità di uso, rende gli array associativi una pietra miliare della programmazione PHP.
 
 Storicamente, gli array di PHP (sia indicizzati che associativi) sono stati incredibilmente flessibili, permettendo loro di fungere da liste, pile, code e altro. Tuttavia, questa flessibilità può talvolta portare a codice meno efficiente se non utilizzata con attenzione.

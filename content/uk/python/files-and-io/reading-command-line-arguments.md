@@ -10,14 +10,13 @@ title: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0430\u0440\u0433\u0443\u043
 weight: 23
 ---
 
-## What & Why?
 ## Що це таке та навіщо?
-
 Reading command line arguments means grabbing the extra info you pass to your script when you run it. Programmers do this to make scripts interact with the user, customize their behavior, or handle different tasks without changing the code.
 
 ## How to:
-## Як це зробити:
 
+
+## Як це зробити:
 ```python
 import sys
 
@@ -44,13 +43,15 @@ Argument 3: 123
 ```
 
 ## Deep Dive
-## Поглиблений огляд
 
+
+## Поглиблений огляд
 Historically, command line arguments come from the time before GUIs were common. They've stuck around because they're a simple and effective way to input data. Alternatives include using input from within the script, config files, or environment variables, but each has its use case. Python's `sys.argv` fetches arguments as a list, with the script name as the first element. Libraries like `argparse` offer more control, with parsing options, custom help messages, and more.
 
 ## See Also
-## Див. також
 
+
+## Див. також
 - Python's `argparse` module: [docs.python.org/3/library/argparse.html](https://docs.python.org/3/library/argparse.html)
 - An in-depth guide to command line arguments: [realpython.com/command-line-interfaces-python-argparse/](https://realpython.com/command-line-interfaces-python-argparse/)
 - Using environment variables in Python: [12factor.net/config](https://12factor.net/config)

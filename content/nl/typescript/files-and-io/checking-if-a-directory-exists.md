@@ -12,9 +12,6 @@ title: Controleren of een directory bestaat
 weight: 20
 ---
 
-## Wat & Waarom?
-Controleren of een directory bestaat gaat over zorgen dat een map daadwerkelijk aanwezig is voordat je eruit leest of ernaar schrijft. Programmeurs doen dit om fouten te voorkomen, zoals proberen een bestand op te slaan op een niet-bestaande plaats - dat is absoluut not done.
-
 ## Hoe te:
 In TypeScript gebruik je meestal Node.js's `fs` module om te controleren op een directory. Hier is de snelle manier om het te doen:
 

@@ -13,9 +13,6 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Cosa & Perché?
-Ottenere la data corrente nei progetti Arduino coinvolge l'acquisizione di informazioni in tempo reale che possono essere cruciali per la registrazione, l'apposizione di timestamp o la programmazione di attività. I programmatori spesso necessitano di questa capacità per migliorare la funzionalità, garantire la rilevanza dei dati e facilitare le operazioni sensibili al tempo nei loro progetti IoT e embedded.
-
 ## Come fare:
 Di per sé, Arduino non dispone di un metodo integrato per recuperare direttamente la data corrente, in quanto manca di un orologio in tempo reale (RTC). Tuttavia, ciò può essere ottenuto utilizzando moduli RTC esterni come il DS3231 e librerie come `RTClib`, sviluppata da Adafruit, che rende semplice l'interfacciamento con questi moduli.
 

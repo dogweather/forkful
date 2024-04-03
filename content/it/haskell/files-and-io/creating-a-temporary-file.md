@@ -12,9 +12,6 @@ title: Creazione di un file temporaneo
 weight: 21
 ---
 
-## What & Why?
-Creare un file temporaneo significa generare un file per uso temporaneo, di solito destinato a contenere dati che servono solo durante l'esecuzione di un processo. I programmatori li usano per non intasare il file system con dati superflui o per gestire informazioni sensibili che non devono restare permanentemente su disco.
-
 ## How to:
 In Haskell, possiamo usare il modulo `System.IO.Temp` per gestire i file temporanei. È intuitivo e sicuro. Ecco un esempio:
 

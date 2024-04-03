@@ -14,9 +14,6 @@ title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---
 
-## Gì và Tại sao?
-Phân tích ngày từ một chuỗi nghĩa là chuyển đổi văn bản thành kiểu dữ liệu ngày. Lập trình viên làm điều này để xử lý logic liên quan đến ngày một cách tiêu chuẩn, không phụ thuộc vào địa phương, thường dùng cho các nhiệm vụ như xác thực đầu vào, sắp xếp và lưu trữ.
-
 ## Cách làm:
 Sử dụng `<chrono>` và `<sstream>` để phân tích một ngày trong C++. Dưới đây là một ví dụ nhanh:
 

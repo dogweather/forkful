@@ -12,9 +12,6 @@ title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---
 
-## Quoi et pourquoi ?
-Envoyer une requête HTTP avec authentification basique, c'est transmettre vos identifiants (username/password) en sécurisé pour accéder à une ressource. On le fait pour interagir avec des APIs ou des serveurs qui exigent une identification pour confirmer vos droits d'accès.
-
 ## Comment faire :
 ```PHP
 <?php
@@ -49,6 +46,7 @@ Sortie:
 Succès :
 {"data":"informations confidentielles"}
 ```
+
 ## Plongée profonde :
 Avant `cURL`, on utilisait `fsockopen()` ou des fonctions similaires pour créer des connexions réseau bas niveau. Aujourd'hui, `cURL` est répandu car il simplifie les requêtes HTTP.
 

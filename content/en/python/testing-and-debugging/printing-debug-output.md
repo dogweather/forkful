@@ -10,9 +10,6 @@ title: Printing debug output
 weight: 33
 ---
 
-## What & Why?
-Printing debug output is like having a conversation with your code to figure out what it's thinking. Programmers do it to track down gremlins causing mischief in their programs.
-
 ## How to:
 Plain and simple, you print stuff to see what's going on. Here's the classic:
 

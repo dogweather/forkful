@@ -14,12 +14,7 @@ title: "H\xE4mta aktuellt datum"
 weight: 29
 ---
 
-## Vad & Varför?
-
-Att få det aktuella datumet i C innebär att man utnyttjar det standardiserade C-biblioteket för att hämta och formatera systemets nuvarande datum och tid. Programmerare behöver ofta denna funktionalitet för loggning, tidsstämpling eller schemaläggningsfunktioner inom sina applikationer.
-
 ## Hur man gör:
-
 I C tillhandahåller header-filen `<time.h>` nödvändiga funktioner och typer för att arbeta med datum och tider. Funktionen `time()` hämtar den aktuella tiden, medan `localtime()` konverterar denna tid till den lokala tidszonen. För att visa datumet använder vi `strftime()` för att formatera det som en sträng.
 
 Här är ett grundläggande exempel:
@@ -53,7 +48,6 @@ Dagens datum är 2023-04-12
 ```
 
 ## Fördjupning
-
 Tidshantering i C, som underlättas av `<time.h>`, går tillbaka till språkets och UNIX-systemens tidigaste dagar. Det bygger kring datatypen `time_t`, som representerar den aktuella tiden som antalet sekunder sedan Unix-epoken (1 januari 1970). Även om detta är effektivt och universellt kompatibelt innebär det också att standardbibliotekets tidsfunktioner i C är inneboende begränsade av `time_t`'s räckvidd och upplösning.
 
 Moderna applikationer, särskilt de som kräver tidsstämplar med hög upplösning eller handlar om datum långt in i framtiden eller förflutet, kan finna dessa begränsningar utmanande. Till exempel är problemet med år 2038 en känd illustration där system som använder ett 32-bitars `time_t` kommer att överflöda.

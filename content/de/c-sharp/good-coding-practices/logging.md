@@ -11,9 +11,6 @@ title: Protokollierung
 weight: 17
 ---
 
-## Was & Warum?
-Logging ist der Vorgang des Aufzeichnens von Anwendungsereignissen und Datenausgaben während der Laufzeit. Programmierer verwenden Logging, um Fehler zu diagnostizieren, die Softwareleistung zu überwachen, Benutzeraktionen zu verfolgen und die Einhaltung von Sicherheits- und Geschäftsstandards zu gewährleisten.
-
 ## Wie geht das:
 In C# kann man den eingebauten Namensraum `System.Diagnostics` oder Drittanbieter-Bibliotheken wie NLog oder log4net verwenden. Hier ist ein schnelles Beispiel, das die in .NET Core verfügbare `ILogger` Schnittstelle verwendet:
 

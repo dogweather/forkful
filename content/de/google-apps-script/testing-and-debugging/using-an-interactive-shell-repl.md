@@ -13,12 +13,7 @@ title: Verwendung einer interaktiven Shell (REPL)
 weight: 34
 ---
 
-## Was & Warum?
-
-Eine interaktive Shell oder Read-Eval-Print Loop (REPL) ist eine einfache, interaktive Programmierumgebung, die einzelne Benutzereingaben (Ausdrücke) entgegennimmt, diese auswertet und das Ergebnis an den Benutzer zurückgibt. Programmierer nutzen REPLs für schnelles Prototyping, Debugging und um die Syntax und das Verhalten einer Programmiersprache interaktiv zu erlernen.
-
 ## Wie:
-
 Google Apps Script, eine cloud-basierte Skriptsprache zum Automatisieren von Aufgaben über Google-Produkte hinweg, verfügt über kein eingebautes REPL-Tool ähnlich denen in Sprachen wie Python oder JavaScripts Node.js. Jedoch können Sie eine ähnliche Erfahrung simulieren, indem Sie die Protokollierungs- und Debugging-Funktionen des Apps Script Editors nutzen oder eine externe Umgebung einrichten. Hier konzentrieren wir uns darauf, ein provisorisches REPL innerhalb des Apps Script Editors zu erstellen.
 
 1. **Erstellen einer provisorischen REPL-Funktion**:
@@ -60,7 +55,6 @@ Nach dem Ausführen von `myREPL()`, überprüfen Sie die Protokolle (Ansicht > P
 Für komplexeres Debugging fügen Sie `Logger.log(variable);` in Ihren Code ein, um den Zustand von Variablen zu drucken. Dies hilft Ihnen, den Fluss und die Zwischenzustände Ihrer Skripte zu verstehen.
 
 ## Tiefere Einblicke
-
 Das Konzept eines REPL ist tief in der Geschichte der Computerwissenschaft verankert und stammt aus den Time-Sharing-Systemen der 1960er Jahre, die interaktive Sitzungen ermöglichten. Sprachen wie Lisp gediehen in dieser Umgebung, da das REPL für ihren iterativen Entwicklungsprozess entscheidend war. Im Gegensatz dazu, ist Google Apps Script, das wesentlich später entstanden ist, hauptsächlich für das Web konzipiert und konzentriert sich auf die Automatisierung von Aufgaben innerhalb der Google-Suite anstatt auf iterative, konsolenbasierte Programmierung.
 
 Google Apps Script unterstützt traditionell keine Echtzeit-, interaktiven Codierungssitzungen sofort aus der Box aufgrund seiner Cloud-Natur und dem Fokus auf Web-App-Bereitstellung. Sein Ausführungsmodell dreht sich um Funktionen, die durch Web-Events, zeitgesteuerte Trigger oder manuelle Aufrufe innerhalb der Umgebung ausgelöst werden, und nicht um sofortige Feedback-Schleifen, die ein REPL bietet.

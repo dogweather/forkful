@@ -12,9 +12,6 @@ title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---
 
-## Co i dlaczego?
-REPL, czyli Pętla Czytaj-Wykonaj-Drukuj, to środowisko programistyczne, które przyjmuje pojedyncze wejścia od użytkownika, wykonuje je i zwraca wynik użytkownikowi. Programiści używają go do szybkich testów, nauki, debugowania, czy wykonania obliczeń "na bieżąco".
-
 ## Jak to zrobić:
 Wejdź od razu do REPL Pythona, wpisując `python` w wierszu poleceń. Gdy tam będziesz, przetestuj proste operacje lub kod wieloliniowy:
 

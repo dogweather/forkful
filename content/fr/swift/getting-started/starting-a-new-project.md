@@ -11,12 +11,7 @@ title: Lancement d'un nouveau projet
 weight: 1
 ---
 
-## Quoi et pourquoi ?
-
-Démarrer un nouveau projet, c'est créer une base vierge pour traduire des idées en code. C'est essentiel pour structurer ses pensées, tester des concepts, et construire une application étape par étape.
-
 ## Comment faire :
-
 Pour commencer un nouveau projet en Swift, ouvrez Xcode et suivez ces étapes:
 
 ```Swift
@@ -29,7 +24,6 @@ Pour commencer un nouveau projet en Swift, ouvrez Xcode et suivez ces étapes:
 Après ces étapes, vous aurez la structure de base de votre projet avec un fichier `AppDelegate.swift`, `SceneDelegate.swift` (si vous utilisez une version d'iOS qui supporte SceneDelegate), et un fichier `ViewController.swift`, ainsi qu'une interface utilisateur de base dans `Main.storyboard`.
 
 ## Plongée profonde :
-
 Historiquement, Swift est arrivé après Objective-C, cherchant à simplifier le codage pour les nouveaux venus et à augmenter la sûreté des programmes. Démarrer un projet en Swift signifie donc opter pour la modernité et la sécurité. On peut aussi créer des projets dans d'autres langages comme Objective-C, mais Swift est privilégié pour sa simplicité et son efficience.
 
 Quand on parle de création de projet, il y a aussi des alternatives aux IDE classiques, comme l’utilisation de Swift Package Manager (SPM) pour gérer des paquets. Cela peut être plus léger pour des projets centrés sur la logique plutôt que sur l'interface utilisateur.
@@ -37,7 +31,6 @@ Quand on parle de création de projet, il y a aussi des alternatives aux IDE cla
 L'implémentation de votre nouveau projet Swift dépendra de l'architecture que vous choisissez: MVC, MVVM, MVP, etc. Chaque modèle a ses avantages et influence la structure de votre projet.
 
 ## Voir aussi :
-
 Pour plus d'informations, consultez les ressources suivantes:
 
 - [Documentation Xcode officielle Apple](https://developer.apple.com/documentation/xcode)

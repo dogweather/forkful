@@ -11,11 +11,7 @@ title: Een HTTP-verzoek verzenden
 weight: 44
 ---
 
-## Wat & Waarom?
-Het versturen van een HTTP-verzoek haalt gegevens op van een webserver. Programmeurs doen dit om te interageren met webservices, informatie te verzamelen of te communiceren tussen systemen.
-
 ## Hoe:
-
 ```C++
 #include <iostream>
 #include <cpr/cpr.h> // Zorg ervoor dat je eerst de CPR-bibliotheek installeert
@@ -49,7 +45,6 @@ CPR, wat staat voor C++ Requests, is een eenvoudige te gebruiken wrapper, geïns
 Een duik onder de motorkap nemen, betekent dat het versturen van een HTTP-verzoek het opzetten van een TCP-verbinding inhoudt, het formatteren van een verzoek in overeenstemming met het HTTP-protocol, en vervolgens het parseren van het antwoord. Dit goed krijgen vanaf nul is niet triviaal vanwege foutafhandeling, complexiteiten met HTTP-versies en beveiligingsoverwegingen.
 
 ## Zie Ook
-
 - CPR Github Repository: https://github.com/libcpr/cpr
 - `libcurl`-documentatie voor geavanceerder gebruik: https://curl.se/libcurl/
 - Officiële Boost.Beast-documentatie: https://www.boost.org/doc/libs/release/libs/beast/

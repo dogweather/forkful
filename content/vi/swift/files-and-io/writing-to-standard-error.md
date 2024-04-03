@@ -16,9 +16,6 @@ title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---
 
-## Gì & Tại Sao?
-Việc ghi vào kênh lỗi chuẩn (`stderr`) chuyển các thông điệp quan trọng đến một luồng xuất ra đặc biệt được dành riêng cho lỗi, tách biệt khỏi luồng xuất chính (`stdout`). Các lập trình viên sử dụng nó để ghi lại lỗi và thông điệp chẩn đoán để chúng không lẫn vào dữ liệu chương trình bình thường và có thể dễ dàng được theo dõi hoặc chuyển hướng.
-
 ## Làm thế nào:
 Swift giúp việc ghi vào `stderr` trở nên đơn giản. Xem ví dụ dưới đây:
 

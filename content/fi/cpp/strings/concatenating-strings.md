@@ -11,9 +11,6 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## What & Why? (Mitä ja Miksi?)
-Stringien yhdistäminen tarkoittaa yksinkertaisesti kahden tai useamman merkkijonon liittämistä yhteen. Ohjelmoijat tekevät tätä esimerkiksi muodostaakseen käyttäjälle näytettäviä viestejä tai käsitelläkseen dynaamisia datakokonaisuuksia.
-
 ## How to: (Kuinka tehdä:)
 ```cpp
 #include <iostream>

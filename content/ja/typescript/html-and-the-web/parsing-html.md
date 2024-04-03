@@ -22,12 +22,7 @@ title: "HTML\u306E\u89E3\u6790"
 weight: 43
 ---
 
-## 何となぜ？
-
-HTMLを解析するとは、HTMLコードを細かく調べて情報を探し、抽出または操作することを意味します。プログラマーは、データをスクレイピングしたり、ブラウザを自動操作したりするためにこれを行います。
-
 ## 方法：
-
 始めるには、`node-html-parser`のようなライブラリをインストールします。こちらがターミナルコマンドです：
 
 ```bash
@@ -56,7 +51,6 @@ console.log(bananas);  // "Banana"
 ```
 
 ## 深掘り
-
 HTMLの解析は新しいものではありません。それはウェブの初期の日々からありました。最初は開発者が正規表現を使用していたかもしれませんが、それはすぐに混乱しました。DOMパーサーの出現：安定していますが、ブラウザに縛られています。
 
 `node-html-parser`のようなライブラリは苦痛を抽象化します。これらは、jQueryで行うようにHTMLをクエリすることを可能にしますが、Node.jsでサーバーサイドで行います。それは速く、不適切なHTMLに対して寛容で、DOMに優しいです。
@@ -66,7 +60,6 @@ HTMLの解析は新しいものではありません。それはウェブの初�
 Cheerioを忘れてはなりません。それは、速度と小さなフットプリントとjQueryのような構文を融合させ、二つの間に幸せに位置しています。
 
 ## 参照
-
 もっと知りたい場合は、これらに飛び込んでみてください：
 - [DOM Parsing and Serialization W3C Specification](https://www.w3.org/TR/DOM-Parsing/)
 - [node-html-parser on GitHub](https://github.com/taoqf/node-html-parser)

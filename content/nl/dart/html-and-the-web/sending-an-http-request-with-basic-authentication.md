@@ -14,12 +14,7 @@ title: Een HTTP-verzoek sturen met basisauthenticatie
 weight: 45
 ---
 
-## Wat & Waarom?
-
-Een HTTP-verzoek versturen met basale authenticatie houdt in dat een gebruikersnaam en wachtwoord aan een verzoek worden toegevoegd om de identiteit van de gebruiker te verifiëren. Programmeurs gebruiken dit om toegang te krijgen tot bronnen die authenticatie vereisen, om veilige communicatie tussen de client en de server te waarborgen.
-
 ## Hoe:
-
 In Dart kun je het `http` pakket gebruiken om HTTP-verzoeken met basale authenticatie te verzenden. Voeg eerst het `http` pakket toe aan je `pubspec.yaml` bestand:
 
 ```yaml

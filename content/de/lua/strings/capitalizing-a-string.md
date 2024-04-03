@@ -13,9 +13,6 @@ title: "Einen String gro\xDFschreiben"
 weight: 2
 ---
 
-## Was & Warum?
-Das Kapitalisieren eines Strings beinhaltet die Modifikation des ersten Buchstabens jedes Wortes in einem Satz zu einem Großbuchstaben, während sichergestellt wird, dass die restlichen Buchstaben klein geschrieben werden. Diese Technik wird üblicherweise verwendet, um Texte professioneller oder lesbarer zu gestalten, beispielsweise bei der Vorbereitung von Titeln oder Benutzereingaben zur Anzeige.
-
 ## Wie geht das:
 Lua verfügt nicht über eine integrierte Funktion zum Kapitalisieren von Strings, aber Sie können diese Aufgabe mithilfe von grundlegenden String-Manipulationsfunktionen leicht bewältigen. Hier ist eine einfache Funktion, um den ersten Buchstaben eines einzelnen Wortes zu kapitalisieren:
 

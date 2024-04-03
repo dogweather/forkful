@@ -11,9 +11,6 @@ title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---
 
-## Hva & Hvorfor?
-Å konvertere en streng til små bokstaver betyr å endre alle bokstavene til sine minuskulære motstykker. Programmere gjør dette for å få konsistente data, som forenkler søk og sammenligninger.
-
 ## Slik gjør du:
 Hvis du har en streng, og du vil gjøre hele greia smått, er det sånn du gjør det i Rust:
 

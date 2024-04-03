@@ -10,9 +10,6 @@ title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---
 
-## Hva & Hvorfor?
-Å fjerne anførselstegn fra en streng betyr å strippe ut eventuelle anførselstegn—enten enkle (' '), doble (" "), eller begge—fra tekstdatatene. Programmerere gjør dette for å sanere inndata, forberede data for lagring, eller forenkle parsingoppgaver der anførselstegn er unødvendige og potensielt problematiske.
-
 ## Hvordan:
 La oss rive disse irriterende anførselstegnene ut av teksten vår. Vi vil bruke `replace()`-metoden for de raske fiksene og regex for de tøffe nøttene å knekke.
 

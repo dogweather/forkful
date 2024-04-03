@@ -11,9 +11,6 @@ title: Organisering av kode i funksjoner
 weight: 18
 ---
 
-## Hva & Hvorfor?
-Å organisere kode i funksjoner er som å sortere LEGO-klosser i bokser – det gjør det enklere å finne og bruke dem. Vi gjør dette for å unngå gjentakelse, for å forenkle forståelsen og for å gjøre vedlikeholdet mindre hodebry.
-
 ## Hvordan:
 Forestil deg at du har kode som skriver ut en hilsen flere ganger. Uten funksjoner blir det rot. Med funksjoner blir det ryddig.
 

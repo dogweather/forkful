@@ -14,9 +14,6 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i dlaczego?
-Tworzenie pliku tekstowego w PowerShell polega na tworzeniu i manipulowaniu plikami opartymi na tekście, co jest fundamentalną operacją dla logowania, przechowywania danych i pisania skryptów konfiguracji. Programiści wykorzystują to do automatyzacji zadań systemowych, analizy danych oraz integracji z innymi aplikacjami lub skryptami.
-
 ## Jak:
 PowerShell zapewnia proste polecenia cmdlet do obsługi plików. Głównie używa się cmdletu `Out-File` oraz operatorów przekierowania do tego celu. Oto przykłady ilustrujące jak zapisać tekst do plików w różnych scenariuszach:
 

@@ -13,9 +13,6 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-Foutafhandeling betekent het schrijven van code die kan anticiperen op en omgaan met dingen die misgaan. Programmeurs doen dit om crashes te voorkomen, de integriteit van gegevens te beschermen en gebruikers te voorzien van gracieuze terugvalopties.
-
 ## Hoe:
 Elm's kernfilosofie is Geen Runtime Uitzonderingen. Daarom maakt Elm gebruik van zijn typesysteem met typen zoals `Maybe` en `Result` om fouten te behandelen.
 

@@ -10,12 +10,7 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-
-Regular expressions (regex) in Fish Shell allow you to search, match, and manipulate strings based on specific patterns. Programmers utilize regex for tasks like input validation, parsing, and text processing because it offers a compact and powerful way to specify complex text patterns.
-
 ## How to:
-
 While Fish Shell itself does not have a built-in command for regex, it effectively uses external commands like `grep`, `sed`, and `awk` that support regex, allowing you to incorporate regex operations in your scripts.
 
 ### Basic Pattern Matching with `grep`

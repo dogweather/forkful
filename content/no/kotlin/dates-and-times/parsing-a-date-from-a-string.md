@@ -9,9 +9,6 @@ title: Tolke en dato fra en streng
 weight: 30
 ---
 
-## What & Why?
-Dato-parsing fra en streng betyr å konvertere tekst til et `Date`-objekt. Programmerere gjør dette for å håndtere datoer og tider på en standardisert, manipulerbar måte i apps og systemer.
-
 ## How to:
 I Kotlin parser vi datoer ved hjelp av `java.time`-biblioteket. Her er et eksempel:
 

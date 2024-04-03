@@ -11,9 +11,6 @@ title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---
 
-## What & Why?
-Når du konverterer en streng til små bokstaver, endrer du alle bokstavene til deres miniatyr versjoner. Programmerere gjør dette for å forenkle sammenligninger og søk, siden store og små bokstaver da betraktes likt.
-
 ## How to:
 Swift gjør det lett å håndtere strenger. Her er hvordan du konverterer:
 

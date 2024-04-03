@@ -11,9 +11,6 @@ title: "\xC5 jobbe med XML"
 weight: 40
 ---
 
-## Hva og hvorfor?
-Å jobbe med XML betyr å analysere, manipulere og skrive XML-data ved hjelp av programmering. Programmerere håndterer XML for å utveksle data på tvers av forskjellige systemer, for konfigurasjonsfiler, eller når de jobber med standarder som SOAP som er avhengige av XML.
-
 ## Hvordan:
 ```TypeScript
 import { parseString } from 'xml2js';

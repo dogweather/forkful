@@ -10,9 +10,6 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-Regular expressions (regex) are sequences of characters that define search patterns, primarily used for string matching and manipulation. Programmers leverage regex in Arduino projects for parsing serial inputs, validating user input, or extracting data from strings, enhancing data processing efficiency and flexibility.
-
 ## How to:
 Arduino does not have built-in support for regex directly in its standard library. However, you can achieve regex-like functionality for simple patterns using basic string functions, or for more complex needs, integrate a third-party library such as `regex`.
 

@@ -14,12 +14,7 @@ title: Registro
 weight: 17
 ---
 
-## Qué y Por Qué?
-
-El registro (logging) en el desarrollo de software es el proceso de grabar información sobre la ejecución de un programa, diseñado para rastrear su comportamiento y diagnosticar problemas. Los programadores implementan registros para monitorear el rendimiento del software, depurar errores y asegurar la seguridad y cumplimiento del sistema, haciéndolo una herramienta indispensable para el mantenimiento y análisis de aplicaciones.
-
 ## Cómo hacerlo:
-
 En Go, el registro puede ser implementado usando el paquete de la biblioteca estándar `log`. Este paquete proporciona capacidades de registro sencillas, como escribir en la salida estándar o en archivos. Comencemos con un ejemplo básico de registro en la salida estándar:
 
 ```go
@@ -85,7 +80,6 @@ REGISTRO PERSONALIZADO: 2009/11/10 23:00:00 main.go:11: Este es un mensaje de re
 Este ejemplo prefija cada mensaje de registro con "REGISTRO PERSONALIZADO: " e incluye la fecha, hora y ubicación del archivo fuente.
 
 ## Análisis Detallado
-
 El paquete `log` de la biblioteca estándar de Go es sencillo y suficiente para muchas aplicaciones, pero le faltan algunas de las características más sofisticadas encontradas en bibliotecas de registro de terceros, como registro estructurado, rotación de registros y registro basado en niveles. Paquetes como `zap` y `logrus` ofrecen estas características avanzadas y son bien considerados en la comunidad de Go por su rendimiento y flexibilidad.
 
 El registro estructurado, por ejemplo, te permite registrar datos en un formato estructurado (como JSON), lo cual es especialmente útil para aplicaciones modernas basadas en la nube donde los registros pueden ser analizados por varias herramientas o servicios. `zap`, en particular, es conocido por su alto rendimiento y bajo overhead de asignación, lo que lo hace adecuado para aplicaciones donde la velocidad y eficiencia son críticas.

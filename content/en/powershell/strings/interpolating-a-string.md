@@ -10,9 +10,6 @@ title: Interpolating a string
 weight: 8
 ---
 
-## What & Why?
-String interpolation slides values into a string template like pieces of a puzzle, making strings dynamic and code cleaner. Programmers use it to insert variables, expressions, and formatting directly within strings, cutting down on concatenation clutter.
-
 ## How to:
 In PowerShell, you interpolate with double-quoted strings and the `$` symbol before the variable name. Wrap expressions in `$()` to evaluate them right inside the string.
 

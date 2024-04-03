@@ -11,9 +11,6 @@ title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---
 
-## Hva & Hvorfor?
-Å skrive ut feilsøkingsdata, eller "debug output", lar utviklere se hva som skjer i koden under kjøring. Vi gjør det for å forstå feil, optimalisere ytelsen og bekrefte at alt fungerer som det skal.
-
 ## Hvordan:
 Bruk `console.log()` for å skrive ut verdier til konsollen. Her er et eksempel:
 

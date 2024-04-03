@@ -11,9 +11,6 @@ title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---
 
-## What & Why?
-I Ruby kan du rensa strängar från oönskade tecken genom att matcha dem mot ett mönster. Programmerare gör detta för att städa data, validera input eller bearbeta text på ett specifikt sätt.
-
 ## How to:
 I Ruby använder du `String#gsub` och `String#delete` för att ta bort tecken som matchar ett mönster. Här är några exempel:
 

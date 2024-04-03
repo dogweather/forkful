@@ -13,12 +13,7 @@ title: Een string interpoleren
 weight: 8
 ---
 
-## Wat & Waarom?
-
-String interpolatie stelt je in staat om variabelen en expressies in strings in te voegen. Dit houdt je code leesbaar en flexibel - geen plus tekens, geen gedoe.
-
 ## Hoe te:
-
 Om een string te interpoleren in TypeScript, gebruik je backticks `` ` `` en `${expressie}` syntax:
 
 ```TypeScript
@@ -32,7 +27,6 @@ console.log(groet);  // Uitvoer: Hi, ik ben Charlie en ik ben 27 jaar oud.
 ```
 
 ## Diepere Duik:
-
 String interpolatie is niet uniek voor TypeScript; het zit ook in JavaScript sinds ES6 en vele andere talen. Voorheen concateneerden we strings met behulp van de `+` operator, wat er zo uitzag:
 
 ```TypeScript
@@ -46,7 +40,6 @@ Wat gebeurt er onder de motorkap? Geïnterpoleerde strings zijn "syntactische su
 Een alternatief voor interpolatie zou het gebruik van sjabloonfuncties of bibliotheken kunnen zijn, maar voor de meeste gevallen is interpolatie met backticks het handigste gereedschap voor de klus.
 
 ## Zie ook:
-
 - [Mozilla Developer Network over Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 - [TypeScript Documentatie](https://www.typescriptlang.org/docs/)
 - [ES6 Functies en Syntax](http://es6-features.org/#StringInterpolation)

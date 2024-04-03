@@ -16,11 +16,7 @@ title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---
 
-## Cái gì và Tại sao?
-Lấy ngày hiện tại trên Arduino có nghĩa là truy vấn một đồng hồ thời gian thực (RTC) hoặc dịch vụ thời gian dựa trên internet để biết ngày hiện tại. Tại sao lại làm điều này? Ghi lại các sự kiện, đánh dấu thời gian dữ liệu, hoặc lập lịch cho các hành động—việc biết ngày có thể rất quan trọng cho những công việc này.
-
 ## Làm thế nào:
-
 Hãy khiến Arduino của chúng ta thông minh về ngày tháng. Chúng ta sẽ sử dụng một mô-đun RTC, như DS3231, có độ chính xác cao và có pin dự phòng.
 
 ```arduino

@@ -13,9 +13,6 @@ title: "Merkkijonon pituuden m\xE4\xE4ritt\xE4minen"
 weight: 7
 ---
 
-## Mikä & Miksi?
-Merkkijonon pituuden selvittäminen Go:ssa tarkoittaa sen sisältämien merkkien lukumäärän määrittämistä. Ohjelmoijat suorittavat tätä toimintoa säännöllisesti hallitakseen merkkijonoja tehokkaasti, olipa kyse sitten validoinnista, alimerkkijonojen poiminnasta tai yksinkertaisesti käyttäjän syötteiden rajoitusten asettamisesta.
-
 ## Miten:
 Go:ssa merkkijonoja kohdellaan muuttumattomina tavujonoina. Voit selvittää merkkijonon pituuden käyttämällä sisäänrakennettua `len()`-funktiota, joka palauttaa tavujen lukumäärän, ei välttämättä merkkien lukumäärää. Näin sitä käytetään:
 

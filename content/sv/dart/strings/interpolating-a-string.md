@@ -14,12 +14,7 @@ title: "Interpolera en str\xE4ng"
 weight: 8
 ---
 
-## Vad & Varför?
-
-Stränginterpolation är processen att injicera variabelvärden direkt i strängar, ofta för att skapa meningsfulla meddelanden utan omständiga konkateneringar. Programmerare gör det för renare, mer läsbar kod och för att undvika fel som lätt kan uppstå i komplexa strängkonkateneringar.
-
 ## Hur man gör:
-
 I Dart är stränginterpolation enkel, och utnyttjar `$`-symbolen för att interpolera uttryck direkt inom strängliteraler:
 
 ```dart

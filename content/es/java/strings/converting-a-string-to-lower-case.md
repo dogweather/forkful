@@ -10,9 +10,6 @@ title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---
 
-## Qué y Por Qué?
-Convertir una cadena de texto a minúsculas en Java significa transformar todos los caracteres en letra pequeña. Esto se hace por consistencia, busquedas insensibles a mayúsculas y minúsculas y al almacenar o comparar datos.
-
 ## Cómo Hacerlo:
 ```java
 public class StringToLower {

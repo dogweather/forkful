@@ -11,9 +11,6 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-Fetching the current date is an essential task in almost any programming endeavor, from logging activities in an application to generating reports with date stamps. In Ruby, this can be easily accomplished using the standard library, simplifying operations that involve dates.
-
 ## How to:
 Ruby's standard library includes the `Date` and `Time` classes for handling dates and time. Here's how to get the current date:
 

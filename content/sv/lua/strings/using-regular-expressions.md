@@ -13,16 +13,10 @@ title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---
 
-## Vad & Varför?
-
-Reguljära uttryck i programmering möjliggör mönstermatchning och manipulation av strängar baserat på specifika mönster. Programmerare använder dem för uppgifter som validering, sökning och textmanipulation på grund av deras mångsidighet och effektivitet i hantering av komplexa strängoperationer.
-
 ## Hur man gör:
-
 Lua stöder inte reguljära uttryck inbyggt på samma sätt som språk som Perl eller Python. Istället erbjuder det möjligheter till mönstermatchning som täcker många vanliga användningsfall för reguljära uttryck. Dock, för fullständigt stöd för reguljära uttryck, kan man använda ett tredjepartsbibliotek såsom `lrexlib`.
 
 ### Grundläggande Mönstermatchning i Lua:
-
 Lua tillhandahåller ett kraftfullt system för mönstermatchning som du kan använda för enkla substitutioner och sökningar:
 
 ```lua
@@ -40,7 +34,6 @@ print(s)
 ```
 
 ### Fånga Delsträngar:
-
 Du kan fånga delar av strängen som matchar mönster:
 
 ```lua
@@ -51,7 +44,6 @@ print("Dag:", d, "Månad:", m, "År:", å)
 ```
 
 ### Använda `lrexlib` för Reguljära Uttryck:
-
 För att använda riktiga reguljära uttryck kan du installera och använda `lrexlib`. Antag att du har installerat det (`luarocks install lrexlib-pcre`), du kan då göra mer komplex mönstermatchning:
 
 ```lua

@@ -11,9 +11,6 @@ title: Trabalhando com TOML
 weight: 39
 ---
 
-## O Que & Por Quê?
-TOML, abreviação de Tom's Obvious, Minimal Language (Linguagem Mínima e Óbvia do Tom), é uma linguagem de serialização de dados. Programadores Elm a usam para gerenciar dados de configuração porque ela é legível por humanos e mapeia de maneira ordenada para pares de chave-valor necessários em aplicações.
-
 ## Como Fazer:
 Elm não possui um analisador de TOML embutido, mas você pode interagir com JavaScript ou usar um pacote da comunidade. Aqui está como você poderia analisar TOML usando um pacote hipotético `elm-toml`:
 

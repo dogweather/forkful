@@ -10,9 +10,6 @@ title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---
 
-## Cosa & Perché?
-Eliminare caratteri corrispondenti a un modello (pattern) significa togliere da una stringa tutti i caratteri che coincidono con un criterio specifico. Programmatori lo fanno per pulire i dati, facilitare il parsing o per mettere a punto il formato del testo.
-
 ## Come Fare:
 ```Ruby
 # Rimuovere tutti i numeri da una stringa

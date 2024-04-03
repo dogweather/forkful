@@ -13,9 +13,6 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä ja Miksi?
-Virheiden käsittely Dartissa tarkoittaa ohjelman suorituksen aikana ilmenevien poikkeusten ennakointia ja hallintaa luotettavuuden ja käytettävyyden parantamiseksi. Ohjelmoijat toteuttavat virheidenhallintaa estääkseen sovelluksen kaatumisen ja tarjotakseen käyttäjille merkityksellistä palautetta, varmistaen sujuvamman ja turvallisemman sovelluskokemuksen.
-
 ## Kuinka:
 Dart tukee kahta virhetyyppiä: *käännösaikaiset* virheet ja *suoritusaikaiset* virheet. Käännösaikaiset virheet havaitsee Dart-analysaattori ennen koodin suoritusta, kun taas suoritusaikaiset virheet eli poikkeukset ilmenevät suorituksen aikana. Tässä on, miten käsitellä poikkeuksia Dartissa:
 

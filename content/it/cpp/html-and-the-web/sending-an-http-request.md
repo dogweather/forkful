@@ -10,9 +10,6 @@ title: Inviare una richiesta http
 weight: 44
 ---
 
-## What & Why? (Cosa e Perché?)
-Inviare una richiesta HTTP significa chiedere dati a un server web. I programmatori lo fanno per interagire con API, scaricare contenuti o comunicare con altri servizi.
-
 ## How to: (Come Fare:)
 Ecco un esempio usando `C++` e la libreria `C++ Requests` (cpr), che semplifica il processo:
 

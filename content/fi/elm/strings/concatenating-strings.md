@@ -11,9 +11,6 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## What & Why? - Mikä & Miksi?
-Yhdistää tekstejä (stringejä) tarkoittaa niiden liittämistä peräkkäin. Koodarit yhdistävät tekstejä, koska tarvitsevat luoda dynaamisia viestejä, rakentaa URL-osoitteita tai yksinkertaisesti yhdistellä käyttäjän syötteitä.
-
 ## How to: - Kuinka:
 ```Elm
 module ConcatExample exposing (..)

@@ -11,9 +11,6 @@ title: Webseite herunterladen
 weight: 42
 ---
 
-## Was & Warum?
-Das Herunterladen einer Webseite lädt deren Inhalt programmatisch herunter, um Daten zu sammeln oder Dienste zu integrieren. Entwickler tun dies, um Webinhalte in Apps zu nutzen oder um Informationen für Datenanalyse und -verarbeitung zu extrahieren.
-
 ## So geht's:
 ```Swift
 import Foundation

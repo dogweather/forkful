@@ -11,9 +11,6 @@ title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---
 
-## Vad & Varför?
-Att ta bort citattecken från en sträng innebär att man avlägsnar de citationstecken som omsluter strängen. Programmerare vill ofta göra detta för att sanera indata, förbereda data för jämförelser eller följa ett specifikt dataformat när de interagerar med andra program eller system.
-
 ## Hur man gör:
 Bash har flera sätt att ta bort citattecken från strängar. Här är några snabba exempel:
 

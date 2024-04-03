@@ -14,9 +14,6 @@ title: Kontrollera om en katalog existerar
 weight: 20
 ---
 
-## Vad & Varför?
-I sammanhanget av Arduino-programmering är det viktigt att kontrollera om en mapp finns på ett SD-kort eller liknande lagringsmodul för att kunna läsa eller skriva filer utan fel. Denna operation är avgörande för datalogging, konfigurationshantering eller någon uppgift som kräver strukturerad filförvaring, vilket garanterar tillförlitlighet och smidig prestanda i dina applikationer.
-
 ## Hur man gör:
 Arduino stöder inte komplext filsystemshantering direkt ur lådan. Men, med hjälp av SD-biblioteket, som är en del av standard Arduino IDE, kan du enkelt arbeta med filer och mappar. För att kontrollera om en mapp finns, måste du först initiera SD-kortet och sedan använda `exists()`-metoden från SD-biblioteket.
 

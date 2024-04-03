@@ -13,9 +13,6 @@ title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---
 
-## Qué & Por qué?
-Analizar una fecha de una cadena se trata de reconocer y convertir fechas escritas en forma de texto a un tipo de datos de fecha que PowerShell pueda entender y con el que pueda trabajar. Los programadores hacen esto para manipular, formatear, comparar o calcular fechas, tareas comunes en scripts que manejan archivos de registro, entrada de usuarios o procesamiento de datos.
-
 ## Cómo hacerlo:
 PowerShell hace que el análisis de fechas desde cadenas sea directo con su cmdlet `Get-Date` y el acelerador de tipo `[datetime]`, que funcionan bien para formatos de fecha estándar. Para cadenas de fecha más complejas o no estándar, se puede utilizar el método `[datetime]::ParseExact` para especificar el formato exacto.
 

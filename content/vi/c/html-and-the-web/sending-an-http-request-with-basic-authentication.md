@@ -17,9 +17,6 @@ title: "G\u1EEDi y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n
 weight: 45
 ---
 
-## Là gì và Tại sao?
-Gửi một yêu cầu HTTP với xác thực cơ bản trong C đòi hỏi việc tạo ra một yêu cầu HTTP bao gồm một tiêu đề Ủy quyền với thông tin đăng nhập của người dùng được mã hóa trong Base64. Đây là một phương pháp phổ biến để thêm một lớp xác thực đơn giản vào các yêu cầu HTTP, cho phép truy cập vào những tài nguyên bị hạn chế một cách lập trình.
-
 ## Làm thế nào:
 Để gửi một yêu cầu HTTP với xác thực cơ bản trong C, chúng ta sẽ cần sử dụng thư viện libcurl, một thư viện truyền tải URL phía client phổ biến, linh hoạt và dễ sử dụng. Nó xử lý các giao thức khác nhau, bao gồm HTTP và HTTPS, làm cho nhiệm vụ của chúng ta trở nên đơn giản hơn. Hãy đảm bảo libcurl đã được cài đặt trong hệ thống của bạn trước khi tiếp tục. Dưới đây là một ví dụ cơ bản cho thấy cách gửi một yêu cầu GET với xác thực cơ bản:
 

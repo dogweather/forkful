@@ -10,12 +10,7 @@ title: Gestione degli errori
 weight: 16
 ---
 
-## Cosa & Perché?
-
-Gestire gli errori in C# significa gestire l'inaspettato—come inciampare sui propri lacci delle scarpe. I programmi possono inciampare su dati errati o connessioni difettose. Gestiamo gli errori per evitare che il nostro software cada di faccia, permettendogli di riprendersi agilmente.
-
 ## Come fare:
-
 Cominciamo con un blocco try-catch. È come mettere una rete di sicurezza sotto un funambolo. Se scivola, non precipita—viene catturato.
 
 ```C#
@@ -52,7 +47,6 @@ try {
 ```
 
 ## Approfondimento
-
 La gestione degli errori è presente in C# fin dalla sua nascita. Col tempo, si è evoluta. In passato, i programmatori si affidavano a codici di ritorno o flag globali per segnalare problemi—ingombranti e soggetti ad errori.
 
 C# utilizza le eccezioni, un approccio più moderno. Un'eccezione viene lanciata quando succede l'inaspettato, proprio come lanciare una bandierina in una partita di football. La gestione strutturata delle eccezioni con blocchi try, catch e finally rende la gestione di questi momenti più chiara e pulita rispetto ai vecchi metodi di controllo degli errori.
@@ -62,6 +56,5 @@ Alternative? Certo. C'è `UnhandledExceptionEventHandler` per le eccezioni che s
 I dettagli dell'implementazione—paragonabili al carattere piccolo—contano. Le eccezioni possono essere costose, riducendo le prestazioni se lanciate all'impazzata. Quindi, le utilizziamo solo per casi eccezionali, non per il controllo logico di tutti i giorni.
 
 ## Vedi Anche
-
 - [Documentazione ufficiale sulle Eccezioni in C#](https://docs.microsoft.com/it-it/dotnet/csharp/fundamentals/exceptions/exception-handling)
 - [Migliori pratiche nella gestione delle eccezioni in C#](https://docs.microsoft.com/it-it/dotnet/standard/exceptions/best-practices-for-exceptions)

@@ -14,9 +14,6 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i dlaczego?
-Pisanie testów w C polega na tworzeniu mniejszych, pomocniczych programów lub funkcji, które automatycznie weryfikują funkcjonalność Twojego kodu. Programiści robią to, aby upewnić się, że ich oprogramowanie działa zgodnie z oczekiwaniami, wykrywać błędy na wczesnym etapie oraz ułatwić przyszłe modyfikacje kodu bez niezamierzonych efektów ubocznych.
-
 ## Jak to zrobić:
 Chociaż C nie ma wbudowanego frameworka do testowania takiego jak niektóre inne języki, nadal możesz pisać skuteczne testy, używając assert.h do prostych asercji lub integracji z frameworkami stron trzecich takimi jak CUnit czy Unity dla bardziej strukturalnego testowania. Oto podstawowy przykład użycia assert.h do testowania funkcji, która dodaje dwie liczby całkowite:
 

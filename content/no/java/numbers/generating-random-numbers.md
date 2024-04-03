@@ -11,12 +11,7 @@ title: Generering av tilfeldige tall
 weight: 12
 ---
 
-## Hva & Hvorfor?
-
-Å generere tilfeldige tall handler om å produsere uforutsigbare sekvenser eller enkeltverdier innenfor et definert område. Programmerere bruker denne teknikken av en rekke grunner, inkludert simuleringer, spill, sikkerhetsapplikasjoner og prøvetakingsmetoder for å teste algoritmer under forskjellige forhold.
-
 ## Hvordan:
-
 I Java kan generering av tilfeldige tall oppnås ved å bruke `Random`-klassen fra `java.util`-pakken, eller `ThreadLocalRandom`- og `SecureRandom`-klassene for spesifikke bruksområder. De følgende eksemplene illustrerer hvordan man bruker disse klassene.
 
 ### Bruker `Random`-klassen
@@ -79,7 +74,6 @@ public class SecureRandomExample {
 ```
 
 ## Dypdykk
-
 Generering av tilfeldige tall har utviklet seg betydelig siden begynnelsen av databehandling. Javas `Random`-klasse bruker en lineær kongruentformel for å generere pseudo-tilfeldige tall, som er deterministiske og ikke egnet for høy-sikkerhetsapplikasjoner. Dette førte til introduksjonen av `SecureRandom`, som bruker mer sofistikerte algoritmer (f.eks. SHA1PRNG) for å produsere kryptografisk sterke tilfeldige tall.
 
 Imidlertid har `Random` og `SecureRandom` sine mangler, som forringelse av ytelsen i flertrådede miljøer. `ThreadLocalRandom`-klassen ble introdusert i Java 7 for å håndtere dette problemet ved å tilby trådslokale tilfeldige tallgeneratorer, noe som betydelig forbedrer ytelsen i samtidige applikasjoner.

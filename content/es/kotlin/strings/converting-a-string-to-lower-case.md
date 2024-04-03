@@ -11,9 +11,6 @@ title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---
 
-## What & Why?
-Convertir una cadena a minúsculas transforma todos los caracteres alfabéticos en su equivalente en minúsculas. Esto es útil para uniformizar datos, realizar comparaciones insensibles a mayúsculas y simplificar la entrada de texto del usuario.
-
 ## How to:
 En Kotlin, puedes convertir una cadena a minúsculas con el método `toLowerCase()`. Veamos cómo usarlo:
 

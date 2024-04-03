@@ -15,11 +15,8 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-
-Wyrażenia regularne (regex) są potężnym narzędziem do przetwarzania tekstu, pozwalając programistom na wyszukiwanie, dopasowywanie i manipulowanie ciągami znaków za pomocą zaawansowanych technik dopasowywania wzorców. W Kotlinie, wykorzystanie regex pomaga efektywnie wykonywać złożone zadania przetwarzania tekstu, takie jak walidacja, parsowanie czy transformacja, czyniąc to narzędzie niezbędnym do zadań począwszy od prostych manipulacji na ciągach znaków, a kończąc na złożonej analizie tekstu.
-
 ## Jak to zrobić:
+
 
 ### Podstawowe Dopasowywanie
 Aby sprawdzić, czy ciąg znaków pasuje do określonego wzorca w Kotlinie, można użyć metody `matches` klasy `Regex`.

@@ -14,11 +14,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---
 
-## Gì & Tại sao?
-YAML là định dạng hóa dữ liệu dễ đọc và viết cho con người. Lập trình viên sử dụng nó cho các file cấu hình, trao đổi dữ liệu giữa các ngôn ngữ, và lưu trữ dữ liệu có cấu trúc.
-
 ## Cách thực hiện:
-
 Lua không hỗ trợ YAML nguyên bản, nhưng bạn có thể sử dụng một thư viện như `lyaml`. Cài đặt nó bằng cách sử dụng `luarocks install lyaml`. Dưới đây là cách phân tích YAML:
 
 ```Lua
@@ -73,11 +69,9 @@ Kết quả YAML mẫu:
 ```
 
 ## Sâu hơn
-
 YAML, viết tắt của "YAML Ain't Markup Language", xuất hiện vào đầu những năm 2000 như một tiêu chuẩn hóa dữ liệu thân thiện với người dùng. Nó ít rườm rà hơn XML và JSON, điều này làm cho nó trở nên phổ biến cho các file cấu hình. Các lựa chọn khác bao gồm JSON, XML, và TOML. Việc thực thi Lua chủ yếu dựa vào các thư viện bên ngoài như `lyaml`, sử dụng libYAML bên dưới cho việc phân tích và phát sinh YAML. Khi sử dụng YAML với Lua, hãy nhớ rằng bảng không có thứ tự nội bộ, vì vậy danh sách trong YAML trở thành mảng, nhưng từ điển (cặp khóa-giá trị) có thể không giữ nguyên thứ tự.
 
 ## Tham khảo thêm
-
 - Trang web chính thức của YAML: https://yaml.org
 - Thư viện `lyaml` trên GitHub: https://github.com/gvvaughan/lyaml
 - Gói LuaRocks cho `lyaml`: https://luarocks.org/modules/gvvaughan/lyaml

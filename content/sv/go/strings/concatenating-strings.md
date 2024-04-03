@@ -13,12 +13,7 @@ title: "Sammanfoga str\xE4ngar"
 weight: 3
 ---
 
-## Vad & Varför?
-
-Att sammanfoga strängar innebär att man sammanfogar två eller flera strängar från slut till slut för att bilda en ny sträng. Programmerare gör detta för att dynamiskt generera text, såsom att konstruera meddelanden, sökvägar eller komplexa frågor, vilket gör program mer interaktiva och responsiva.
-
 ## Hur man gör:
-
 I Go finns det flera sätt att sammanfoga strängar. Här är en titt på några vanliga metoder med exempel:
 
 ### Använda `+`-operatorn:
@@ -62,7 +57,6 @@ fmt.Println(path) // sökväg/till/fil
 ```
 
 ## Djupdykning
-
 Sammanfogning av strängar, även om det vid första anblicken verkar vara en enkel operation, berör djupare aspekter av hur Go hanterar strängar. I Go är strängar oföränderliga; vilket betyder att varje sammanfogningsoperation skapar en ny sträng. Detta kan leda till prestandaproblem när man sammanfogar ett stort antal strängar eller när man gör det i snäva loopar, på grund av den frekventa allokeringen och kopieringen av minne.
 
 Historiskt sett har språk hanterat strängarnas oföränderlighet och effektiviteten i sammanfogningen på olika sätt, och Gos tillvägagångssätt med `strings.Builder` och `strings.Join` ger programmerare verktyg som balanserar användarvänlighet med prestanda. Typen `strings.Builder`, introducerad i Go 1.10, är särskilt anmärkningsvärd eftersom den ger ett effektivt sätt att bygga strängar utan att ådra sig overhead för flera strängallokeringar. Detta görs genom att allokera en buffert som växer vid behov, och i vilken strängar läggs till.

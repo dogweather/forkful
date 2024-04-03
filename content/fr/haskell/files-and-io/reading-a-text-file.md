@@ -11,9 +11,6 @@ title: Lecture d'un fichier texte
 weight: 22
 ---
 
-## What & Why? (Quoi & Pourquoi ?)
-Lire un fichier texte, c'est récupérer son contenu pour l'utiliser dans notre programme. Les programmeurs le font pour manipuler des données, configurer des systèmes ou charger des ressources.
-
 ## How to: (Comment faire :)
 Haskell rend la lecture de fichiers texte simple avec quelques fonctions clés. Voici le standard :
 

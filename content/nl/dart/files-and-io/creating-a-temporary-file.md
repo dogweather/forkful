@@ -14,9 +14,6 @@ title: Een tijdelijk bestand aanmaken
 weight: 21
 ---
 
-## Wat & Waarom?
-Het maken van een tijdelijk bestand in Dart houdt in dat je een bestand genereert dat bedoeld is voor kortstondig gebruik, voornamelijk voor scenario's zoals het cachen van gegevens, tijdelijke opslag voor bestandsverwerking, of het bewaren van informatie die te gevoelig is om lang te bewaren. Programmeurs doen dit om gegevens te beheren die geen permanente opslag nodig hebben, waardoor de prestaties worden verbeterd en de gegevenshygiëne wordt onderhouden.
-
 ## Hoe te:
 De `dart:io` bibliotheek van Dart faciliteert het aanmaken van tijdelijke bestanden via de `Directory` klasse. Hier is een eenvoudige manier om een tijdelijk bestand te maken en er wat inhoud naar te schrijven:
 
@@ -40,7 +37,6 @@ Future<void> main() async {
 ```
 
 ### Gebruik van een Bibliotheek van Derden: `path_provider`
-
 Voor applicaties (vooral mobiele apps met Flutter) wil je misschien op een meer uniforme en beheersbare manier tijdelijke bestanden aanmaken. Het `path_provider` pakket kan je helpen bij het vinden van de juiste tijdelijke map over verschillende platforms (iOS, Android, enz.) heen.
 
 Voeg eerst `path_provider` toe aan je `pubspec.yaml` onder dependencies:

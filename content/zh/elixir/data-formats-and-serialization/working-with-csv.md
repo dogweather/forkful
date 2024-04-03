@@ -26,16 +26,10 @@ title: "\u5904\u7406CSV\u6587\u4EF6"
 weight: 37
 ---
 
-## 什么和为什么？
-
-与 CSV（逗号分隔值）文件的工作包括从这些文件读取和向这些文件写入数据，这是数据导入/导出或简单存储解决方案需要的常见任务。程序员利用这种功能进行系统间的数据交换、快速数据编辑，或在轻量级且易于操作的数据格式有优势的情况下使用。
-
 ## 如何操作：
-
 Elixir 凭借其强大的模式匹配和管道支持功能，即使在没有第三方库的情况下也可以高效处理 CSV 文件。然而，对于更高级的需求，`nimble_csv` 库是一个快速且直接的选择。
 
 ### 不使用外部库读取 CSV 文件
-
 您可以使用 Elixir 的内置函数读取和解析 CSV 文件：
 
 ```elixir
@@ -54,7 +48,6 @@ CSVReader.read_file("data.csv")
 ```
 
 ### 写入 CSV 文件
-
 同样，向 CSV 文件写入数据：
 
 ```elixir
@@ -75,7 +68,6 @@ CSVWriter.write_to_file("output.csv", data)
 ```
 
 ### 使用 `nimble_csv`
-
 对于更复杂的 CSV 处理，`nimble_csv` 提供了一个强大且灵活的方式来处理 CSV 数据。首先，将 `nimble_csv` 添加到 `mix.exs` 中的依赖项并运行 `mix deps.get`：
 
 ```elixir

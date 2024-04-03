@@ -10,9 +10,6 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## What & Why? (Co i dlaczego?)
-Wyszukiwanie i zamiana tekstu to podstawy manipulacji ciągami. Programiści używają tych technik do edycji danych, automatyzacji poprawek i przetwarzania wprowadzania.
-
 ## How to: (Jak to zrobić:)
 ```Lua
 local text = "Hello, world!"

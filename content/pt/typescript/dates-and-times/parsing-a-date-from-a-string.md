@@ -13,9 +13,6 @@ title: Analisando uma data a partir de uma string
 weight: 30
 ---
 
-## O Que & Por Que?
-Analisar uma data a partir de uma string envolve converter representações textuais de datas e horas em um formato que possa ser manipulado e analisado pelo programa. Esta é uma tarefa comum em programação, pois permite o tratamento de entrada de usuário, armazenamento de dados com carimbo de data/hora e interações com APIs, resultando em aplicações mais funcionais e amigáveis ao usuário.
-
 ## Como Fazer:
 O TypeScript, sendo um superconjunto do JavaScript, depende do objeto Date para analisar datas de strings. No entanto, trabalhar com datas em JS/TS pode se tornar verboso ou impreciso devido às peculiaridades do objeto Date. Aqui está um exemplo básico seguido por uma abordagem utilizando uma biblioteca popular, `date-fns`, para soluções mais robustas.
 

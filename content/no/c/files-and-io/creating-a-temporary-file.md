@@ -14,9 +14,6 @@ title: Oppretting av en midlertidig fil
 weight: 21
 ---
 
-## Hva & Hvorfor?
-Å opprette en midlertidig fil i C innebærer å generere en fil som er ment å bli brukt over en kort varighet, vanligvis som rableplass for databehandling eller lagring. Programmerere gjør dette for å håndtere midlertidige data uten å påvirke programmets permanente lagring eller for å sikre at sensitiv informasjon slettes etter bruk.
-
 ## Hvordan:
 Å skape en midlertidig fil i programmeringsspråket C kan dra nytte av funksjoner som `tmpfile()` og `mkstemp()`.
 

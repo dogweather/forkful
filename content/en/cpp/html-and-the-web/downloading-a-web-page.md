@@ -11,9 +11,6 @@ title: Downloading a web page
 weight: 42
 ---
 
-## What & Why?
-Downloading a web page simply means fetching its content, usually in HTML format, to either view or process locally. Programmers download web pages to scrape data, monitor changes, or integrate with web services.
-
 ## How to:
 In the current C++ version, you can use the `CURL` library to download web content. Here's a basic example:
 

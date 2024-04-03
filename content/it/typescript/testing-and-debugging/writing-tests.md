@@ -12,9 +12,6 @@ title: Scrivere test
 weight: 36
 ---
 
-## Cosa & Perché?
-Scrivere test in TypeScript comporta la creazione di script automatizzati per verificare la funzionalità e la correttezza del proprio codice. I programmatori lo fanno per garantire affidabilità, individuare rapidamente i bug e facilitare la crescita del codice mantenibile, poiché la digitazione statica di TypeScript aggiunge un livello di prevedibilità ai test JavaScript.
-
 ## Come fare:
 TypeScript funziona in armonia con la maggior parte dei framework di test JavaScript. A scopo dimostrativo, useremo Jest, un framework di test popolare, grazie alla sua configurazione zero per i progetti TypeScript.
 

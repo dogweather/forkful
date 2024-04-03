@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---
 
-## What & Why? - Mikä & Miksi?
-Lähettämällä HTTP-pyynnön perusautentikoinnilla, ohjelmoija voi turvata pääsyn tiettyihin web-resursseihin. Tätä käytetään yleisesti API:en suojattuun yhteyteen, kun halutaan varmistaa että käyttäjällä on oikea käyttäjätunnus ja salasana.
-
 ## How to: - Kuinka tehdä:
 PHP tarjoaa `curl`-toiminnon HTTP-pyyntöjen käsittelyyn perusautentikoinnin kanssa. Tässä nopea esimerkki:
 

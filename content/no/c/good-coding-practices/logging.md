@@ -14,12 +14,7 @@ title: Logging
 weight: 17
 ---
 
-## Hva & Hvorfor?
-
-Logging i C innebærer å registrere flyten og merkbare hendelser av et program under kjøretiden, som gir en konkret gjennomgang av dets oppførsel og ytelse. Programmerere bruker logging til feilsøkingsformål, overvåking av programvarens helse og sikring av systemets sikkerhet.
-
 ## Hvordan:
-
 I C kan logging oppnås med grunnleggende filoperasjoner eller ved å bruke mer sofistikerte biblioteker. For enkelhets skyld, starter vi med standard I/U-biblioteket. Følgende kodeeksempler viser grunnleggende implementeringer av logging.
 
 For å logge enkle meldinger:
@@ -95,7 +90,6 @@ Utdata i `detailed.log`:
 ```
 
 ## Dypdykk
-
 Logging i C, som demonstrert, er avhengig av enkle filoperasjoner, noe som er effektivt, men ikke like kraftig eller fleksibelt som loggingfasiliteter i andre språk, som Pythons `logging`-modul eller Javas `Log4j`. For mer avanserte loggeegenskaper i C, vender utviklere seg ofte til biblioteker som `syslog` på Unix-lignende systemer, som gir systemomfattende logghåndtering, eller tredjepartsbiblioteker som `log4c`.
 
 Historisk sett har logging vært en integrert del av programmering, som går tilbake til tidlige programmeringspraksiser der sporing og forståelse av programflyt og feil for det meste ble gjort gjennom fysiske utskrifter. Ettersom systemene utviklet seg, ble logging mer sofistikert, og støtter nå ulike alvorlighetsnivåer, loggrotasjon og asynkron logging.

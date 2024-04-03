@@ -11,9 +11,6 @@ title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---
 
-## Quoi & Pourquoi ?
-Un REPL (Read-Eval-Print-Loop, ou Boucle de Lecture, Évaluation et Impression en Français) est un environnement de programmation simple et interactif. Les programmeurs l'utilisent pour des expérimentations en temps réel avec le langage, des tâches rapides, ou pour comprendre de nouveaux concepts sans la charge de créer des applications complètes.
-
 ## Comment faire :
 C++ ne vient pas avec un REPL intégré, mais des outils comme Cling offrent cette capacité. Voici comment utiliser Cling pour calculer la somme de deux nombres :
 

@@ -12,18 +12,12 @@ title: Willekeurige getallen genereren
 weight: 12
 ---
 
-## Wat & Waarom?
-
-Het genereren van willekeurige getallen in Haskell houdt in dat er getallen worden gecreëerd die onvoorspelbaar zijn volgens menselijke normen. Dit is cruciaal in scenario's variërend van cryptografische toepassingen tot simulaties waarbij het element van kans nodig is om real-world fenomenen nauwkeurig te modelleren.
-
 ## Hoe:
-
 Om willekeurige getallen te genereren in Haskell, gebruikt men typisch het `random` pakket, dat deel uitmaakt van het Haskell Platform. Hier is een stap-voor-stap handleiding:
 
 Zorg eerst dat je het `random` pakket geïnstalleerd hebt. Zo niet, dan kun je het via Cabal of Stack krijgen.
 
 ### Een Willekeurig Getal Genereren
-
 Om een eenvoudig willekeurig getal te genereren, kun je de `randomRIO` functie gebruiken, die een willekeurige waarde produceert binnen een opgegeven reikwijdte.
 
 ```Haskell
@@ -36,7 +30,6 @@ main = do
 ```
 
 ### Een Lijst van Willekeurige Getallen Genereren
-
 Het genereren van een lijst van willekeurige getallen is iets complexer maar nog steeds eenvoudig:
 
 ```Haskell
@@ -58,7 +51,6 @@ main = do
 Dit codefragment creëert een functie `randomList` die een lijst van willekeurige gehele getallen genereert. Vervang `(1, 100)` met je gewenste bereik.
 
 ## Diepgaand Onderzoek
-
 Het Haskell `random` pakket biedt een pseudo-willekeurige getallengenerator (PRNG), wat betekent dat de gegenereerde getallen niet echt willekeurig zijn maar wel willekeurig kunnen lijken voor veel toepassingen. De kern van Haskell's vermogen om willekeurige getallen te genereren ligt in de `RandomGen` typeklasse, die verschillende methoden van willekeurige getalgeneratie abstraheert, en de `Random` typeklasse, die typen bevat die willekeurig gegenereerd kunnen worden.
 
 Historisch gezien heeft de benadering van Haskell tot willekeurige getalgeneratie de nadruk gelegd op zuiverheid en reproduceerbaarheid. Dit is waarom operaties die willekeurigheid betreffen expliciet worden afgehandeld in de `IO` monade of vereisen dat generatorstaten handmatig worden doorgegeven en bijgewerkt — om referentiële transparantie te handhaven.

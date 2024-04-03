@@ -10,12 +10,7 @@ title: Gestione degli errori
 weight: 16
 ---
 
-## Cosa & Perché?
-
-Gestire gli errori significa scrivere codice che può affrontare situazioni impreviste. I programmatori lo fanno per prevenire crash e per assicurarsi che i loro programmi possano riprendersi elegantemente quando la legge di Murphy colpisce.
-
 ## Come fare:
-
 In Elixir, si usa spesso il pattern matching e l'istruzione `case` per gestire diversi esiti, inclusi gli errori.
 
 ```elixir
@@ -46,7 +41,6 @@ Errore: Impossibile dividere per zero.
 Quando esegui questo codice Elixir, otterrai o una divisione riuscita o un messaggio di errore, a seconda del tuo input. Niente crash qui!
 
 ## Approfondimento
-
 Tempo fa, la gestione degli errori era spesso legata al controllo dei valori di ritorno. Con le radici funzionali di Elixir, però, abbiamo il pattern matching e le tuple etichettate, come `{:ok, value}` o `{:error, reason}`, che sono più eleganti.
 
 Ci sono altri modi per gestire gli errori in Elixir:
@@ -57,7 +51,6 @@ Ci sono altri modi per gestire gli errori in Elixir:
 In termini di implementazione, Elixir si basa sulla robustezza di Erlang. Tratta gli errori come un altro tipo di messaggio da gestire con tutto il pattern matching e la bontà funzionale.
 
 ## Vedi Anche
-
 Per ulteriori letture sulla gestione degli errori in Elixir, consulta:
 
 - La guida ufficiale di Elixir sulla [gestione degli errori](https://elixir-lang.org/getting-started/try-catch-and-rescue.html).

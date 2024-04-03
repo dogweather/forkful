@@ -10,9 +10,6 @@ title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---
 
-## What & Why?
-La longueur d'une chaîne, c'est combien de caractères elle contient. On mesure ça pour tout, des mots de passe aux tweets : c'est essentiel pour valider, stocker ou manipuler le texte.
-
 ## How to:
 En C#, c'est simple. Utilisez la propriété `.Length` sur une chaîne pour obtenir sa longueur. Voici comment :
 

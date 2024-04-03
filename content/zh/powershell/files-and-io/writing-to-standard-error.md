@@ -24,12 +24,7 @@ title: "\u5199\u5165\u6807\u51C6\u9519\u8BEF"
 weight: 25
 ---
 
-## 什么和为什么？
-
-在 PowerShell 中写入标准错误（stderr）涉及将错误信息或诊断信息直接发送到 stderr 流，与标准输出（stdout）流明确区分。这种分离允许对脚本的输出进行更精确的控制，使开发人员能够将正常和错误消息定向到不同的目的地，这对于错误处理和日志记录至关重要。
-
 ## 如何操作：
-
 PowerShell 通过使用 `Write-Error` cmdlet 或将输出定向到 `$host.ui.WriteErrorLine()` 方法来简化写入 stderr 的过程。然而，对于直接的 stderr 重定向，你可能更倾向于使用 .NET 方法或 PowerShell 本身提供的文件描述符重定向。
 
 **示例 1:** 使用 `Write-Error` 将错误消息写入 stderr。

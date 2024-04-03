@@ -13,9 +13,6 @@ title: Analisando HTML
 weight: 43
 ---
 
-## O Que & Por Quê?
-Analisar (ou "parsear") HTML na programação envolve extrair dados de documentos HTML. Os programadores fazem isso para interagir com ou raspar conteúdo da web para extração de informações, testes ou propósitos de automação, mesmo quando APIs oficiais não estão disponíveis.
-
 ## Como fazer:
 Dart não oferece suporte integrado para análise de HTML em suas bibliotecas principais. No entanto, você pode usar um pacote de terceiros como `html` para analisar e manipular documentos HTML.
 

@@ -11,9 +11,6 @@ title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---
 
-## ¿Qué y Por Qué?
-Calcular una fecha en el futuro o en el pasado significa encontrar una fecha determinada antes o después de una fecha de referencia. Los programadores lo hacen para gestionar eventos, plazos o simplemente para manipular información relacionada con el tiempo.
-
 ## Cómo Hacerlo:
 En Java, podemos usar `LocalDate` para calcular fechas. Un ejemplo simple sería:
 
@@ -65,7 +62,7 @@ public class CalculoConCalendar {
 
 No obstante, `LocalDate` y su API `java.time` superior son la elección moderna y menos propensa a errores.
 
-En cuanto a detalles de implementación, `plus` y `minus` son métodos inmutables que no cambian la instancia original de `LocalDate`; crean una nueva. Por eso, trabajar con fechas en Java ahora es más seguro y predecible. 
+En cuanto a detalles de implementación, `plus` y `minus` son métodos inmutables que no cambian la instancia original de `LocalDate`; crean una nueva. Por eso, trabajar con fechas en Java ahora es más seguro y predecible.
 
 ## Ver También:
 Para profundizar más, puede visitar:

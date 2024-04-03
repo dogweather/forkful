@@ -13,9 +13,6 @@ title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---
 
-## Was & Warum?
-Reguläre Ausdrücke (Regex) sind Muster, die verwendet werden, um Kombinationen von Zeichen in Zeichenketten zu finden. Programmierer nutzen sie für die Suche, Bearbeitung oder Manipulation von Text basierend auf definierten Mustern, was sie für Aufgaben wie Datenvalidierung, Parsen oder Transformation unverzichtbar macht.
-
 ## Wie geht das:
 Die Verwendung von Regex in Python erfolgt über das Modul `re`, das eine Reihe von Funktionen zur Verarbeitung von Text mit regulären Ausdrücken bereitstellt.
 

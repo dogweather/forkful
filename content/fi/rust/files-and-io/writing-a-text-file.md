@@ -13,9 +13,6 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä ja miksi?
-Tekstitiedoston kirjoittaminen Rustissa käsittää tiedoston luonnin, siihen kirjoittamisen ja mahdollisesti datan lisäämisen tiedostoon tiedostojärjestelmässä. Ohjelmoijat suorittavat tämän toiminnon tallentaakseen dataa, kuten sovelluslokkeja, konfiguraatiota tai käyttäjän luomaa sisältöä, varmistaen datan kestävyyden ohjelman suorituksen ulkopuolella.
-
 ## Kuinka:
 Rustin vakio kirjasto tarjoaa vankkoja työkaluja tiedostojen käsittelyyn, jotka on ensisijaisesti kapseloitu `std::fs` ja `std::io` moduuleihin. Tässä on perusesimerkki tekstitiedoston luomisesta ja siihen kirjoittamisesta:
 

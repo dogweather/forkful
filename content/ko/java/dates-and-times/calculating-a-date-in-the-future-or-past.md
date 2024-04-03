@@ -18,9 +18,6 @@ title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uA
 weight: 26
 ---
 
-## What & Why? (무엇과 왜?)
-미래나 과거의 날짜를 계산하는 것은 특정 기간 후의 시간을 알거나 이벤트가 언제 일어났는지를 찾는 과정입니다. 프로그래머는 마감일 관리, 예약 시스템, 기념일 추적 등의 기능을 구현하기 위해 이를 사용합니다.
-
 ## How to: (방법)
 Java에서는 `LocalDate`, `LocalTime`, `LocalDateTime`, `Period`, `Duration` 클래스로 날짜 계산을 쉽게 할 수 있습니다. 코드 예시를 살펴보세요.
 

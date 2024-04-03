@@ -13,9 +13,6 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-Reguliere expressies, of regex, zijn patronen die worden gebruikt om combinaties van karakters in tekst te matchen. Programmeurs gebruiken ze voor zoeken, bewerken en manipuleren van strings omdat ze krachtig en efficiënt zijn.
-
 ## Hoe te:
 Lua biedt basis ondersteuning voor patronen (zijn versie van regex) die je kunt gebruiken met string-matchfuncties. Hier is een snelle kennismaking:
 

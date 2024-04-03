@@ -13,12 +13,7 @@ title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---
 
-## Vad & Varför?
-
-Associativa arrayer är som superladdade arrayer som låter dig använda strängar som index istället för enbart heltal. Programmerare använder dem för mer komplexa datastrukturer, vilket gör det enklare att hantera data som inte passar snyggt in i en sekventiell lista.
-
 ## Hur gör man:
-
 Börja med att deklarera en associativ array i Bash:
 
 ```Bash
@@ -66,7 +61,6 @@ unset my_array["ämne"]
 ```
 
 ## Djupdykning
-
 Associativa arrayer introducerades i Bash version 4.0, vilket gör dem till en relativt ny tillägg till språket. Innan deras introduktion var hanteringen av arrayer med icke-heltalsindex besvärlig, ofta krävande kringgående lösningar eller externa verktyg som `awk` eller `sed`.
 
 Bakom kulisserna implementerar Bash associativa arrayer med hjälp av hashtabeller. Denna implementering möjliggör effektiv nyckelsökning, som förblir ganska konstant oavsett storleken på arrayen, en kritisk egenskap för prestanda i skriptexekvering.

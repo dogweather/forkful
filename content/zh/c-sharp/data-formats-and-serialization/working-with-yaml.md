@@ -22,9 +22,6 @@ title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 weight: 41
 ---
 
-## 什么 & 为什么?
-YAML，代表“YAML Ain't Markup Language”（YAML不是标记语言），是一种人类可读的数据序列化格式。程序员经常使用它来处理配置文件、进程间消息传递和数据存储，因为与XML或JSON等其他数据格式相比，它的简单性和可读性。
-
 ## 如何操作:
 C# 没有内置对 YAML 的支持，但你可以通过使用第三方库如 *YamlDotNet* 来轻松地处理 YAML。首先，你需要安装 YamlDotNet 包：
 

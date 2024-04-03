@@ -16,12 +16,7 @@ title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---
 
-## Gì và Tại sao?
-
-In thông tin gỡ lỗi trong Elm là việc hiển thị các giá trị trên bảng điều khiển để hiểu điều gì đang xảy ra trong mã của bạn. Chúng tôi làm điều này để bắt lỗi và đảm bảo luồng lôgic hoạt động như ý muốn.
-
 ## Cách thực hiện:
-
 Elm không có hàm `print` sẵn có như một số ngôn ngữ khác, nhưng bạn có thể sử dụng mô-đun `Debug` cho đầu ra bảng điều khiển:
 
 ```Elm
@@ -45,7 +40,6 @@ model sau khi cập nhật: { ... một số dữ liệu mô hình đã cập nh
 Nhớ rằng, hàm `Debug.log` rất hữu ích, nhưng đừng vận chuyển mã code của bạn với nó. Elm sẽ nhắc bạn loại bỏ các câu lệnh gỡ lỗi trước khi bạn có thể tạo bản build sản xuất.
 
 ## Sâu hơn
-
 `Debug.log` là một phần của mô-đun `Debug` của Elm, được thiết kế chỉ dành cho trợ giúp thời gian phát triển. Lịch sử, Elm đã nhấn mạnh vào việc tập trung vào bảo trì và xử lý lỗi, giữ cho mô-đun `Debug` cố ý đơn giản. Sự đơn giản đảm bảo rằng các nhà phát triển tập trung vào đầu ra có ý nghĩa thay vì lạc vào một bộ gỡ lỗi phức tạp.
 
 Hàm `Debug.log` của Elm nhận hai đối số: một thẻ chuỗi và dữ liệu để log ra. Đầu ra sau đó được in ra bảng điều khiển của trình duyệt. Các phương án thay thế cho cách tiếp cận này bao gồm:
@@ -56,7 +50,6 @@ Hàm `Debug.log` của Elm nhận hai đối số: một thẻ chuỗi và dữ 
 Về mặt triển khai, hàm `Debug.log` bao bọc dữ liệu của bạn với một thẻ định danh. Điều này có ích để phân biệt các điểm dữ liệu khác nhau. Trong sản xuất, trình biên dịch Elm sẽ đánh dấu bất kỳ việc sử dụng nào của `Debug.log`, đảm bảo bạn giữ mã sản xuất của mình sạch sẽ khỏi các tác phẩm gỡ lỗi.
 
 ## Xem Thêm
-
 - Hướng dẫn chính thức về gỡ lỗi của Elm: https://guide.elm-lang.org/debugging/
 - Giới thiệu về Bộ Gỡ lỗi Dừng Thời gian: https://elm-lang.org/news/the-perfect-bug-report
 - Tài liệu mô-đun Debug của Elm: https://package.elm-lang.org/packages/elm/core/latest/Debug

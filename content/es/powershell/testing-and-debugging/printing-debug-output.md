@@ -11,9 +11,6 @@ title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---
 
-## Qué y Por Qué?
-Imprimir mensajes de depuración es mostrar info temporal en la consola para entender qué está pasando en el código. Los programadores lo hacen para rastrear errores fácilmente y ver el flujo de su programa.
-
 ## How to:
 Para imprimir mensajes de depuración en PowerShell, se usa el cmdlet `Write-Debug`. Por defecto, estos mensajes no se muestran. Para activarlos, usa `$DebugPreference`.
 

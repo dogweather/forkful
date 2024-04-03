@@ -13,14 +13,10 @@ title: Arbeide med CSV
 weight: 37
 ---
 
-## Hva & Hvorfor?
-
-Arbeid med CSV (Comma Separated Values)-filer handler om å behandle og manipulere data lagret i et enkelt tekstformat, der hver linje i teksten representerer en rad i en tabell, og kommaer skiller individuelle kolonner. Programmerere utnytter dette for å importere, eksportere og håndtere data på tvers av forskjellige systemer på grunn av CSVs brede aksept som et lettvekts, menneskelesbart datautvekslingsformat.
-
 ## Hvordan:
 
-### Lese en CSV-fil ved hjelp av C++ Standardbiblioteket:
 
+### Lese en CSV-fil ved hjelp av C++ Standardbiblioteket:
 ```cpp
 #include <fstream>
 #include <iostream>
@@ -52,7 +48,6 @@ int main() {
 ```
 
 ### Skrive til en CSV-fil:
-
 ```cpp
 #include <fstream>
 #include <vector>
@@ -78,7 +73,6 @@ int main() {
 ```
 
 ### Bruk av et tredjepartsbibliotek: `csv2`:
-
 Mens C++ Standardbiblioteket gir grunnleggende verktøy for arbeid med filer og strenger, kan bruk av tredjepartsbiblioteker forenkle CSV-behandling. Et slikt bibliotek er `csv2`, kjent for sin brukervennlighet og effektivitet.
 
 - Installasjon: Vanligvis installert via pakkehåndterere som Conan eller direkte fra GitHub-repositoriet.

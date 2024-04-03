@@ -12,9 +12,6 @@ title: Generering av tilfeldige tall
 weight: 12
 ---
 
-## Hva og hvorfor?
-Å generere tilfeldige tall i Bash gir en måte å innføre uforutsigbarhet i skript på, noe som er essensielt for oppgaver som å generere sikre passord, simulere data eller for programmering av spill. Programmerere utnytter denne muligheten til å legge til variabilitet i skriptene sine eller for å teste programmene sine under en rekke tilfeldig genererte forhold.
-
 ## Hvordan gjøre det:
 I Bash er `$RANDOM`-variabelen veien å gå for å generere tilfeldige tall. Hver gang du refererer til den, gir Bash et pseudotilfeldig heltall mellom 0 og 32767. La oss utforske noen praktiske eksempler:
 

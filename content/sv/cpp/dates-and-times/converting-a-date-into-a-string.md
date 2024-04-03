@@ -11,9 +11,6 @@ title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---
 
-## What & Why? (Vad & Varför?)
-Konvertering av datum till sträng innebär att omforma ett datumobjekt till en textrepresentation. Programmerare gör detta för att datumen ska vara lättlästa för användare eller kompatibla med textbaserade format som JSON.
-
 ## How to: (Hur man gör:)
 ```C++
 #include <iostream>

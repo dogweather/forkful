@@ -11,12 +11,7 @@ title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---
 
-## Mikä & Miksi?
-
-Merkkijonosta lainausmerkkien poistaminen tarkoittaa näiden kiusallisten yksittäisten (' ') tai kaksinkertaisten (" ") lainausmerkkien poistamista tekstidatastasi. Ohjelmoijat tekevät tämän usein syötteen puhdistamiseksi tai datan valmistamiseksi edelleen käsiteltäväksi ilman lainausmerkkien sekasortoa.
-
 ## Miten:
-
 Fishissä on sisäänrakennettua magiaa tällaiseen tehtävään. Käytä `string`-funktiota hikoilematta. Tutustu näihin loitsuihin:
 
 ```fish
@@ -32,7 +27,6 @@ echo $unquoted # Tuloste: Hello, Universe!
 ```
 
 ## Syväsukellus
-
 Komentorivin kivikaudella joutuisit painimaan `sed`- tai `awk`-komennon kanssa lainausmerkkien poistamiseksi; todellinen takkujen ja kryptisten lippujen sotku. Fishin `string`-funktio on uudemmalta ajalta, tekee koodista puhtaampaa ja intuitiivisempaa.
 
 Muiden kuorien vaihtoehdot saattavat edelleen luottaa näihin vanhoihin työkaluihin tai saattavat käyttää omia sisäänrakennettuja metodejaan, kuten bashin parametrilaajennus tai zsh:n muokkaimet.
@@ -40,7 +34,6 @@ Muiden kuorien vaihtoehdot saattavat edelleen luottaa näihin vanhoihin työkalu
 `String`-funktio menee lainausmerkkien karsimista pidemmälle. Se on Sveitsin armeijan linkkuveitsi merkkijonojen operaatioihin Fishissä. `String`-avulla voit viipaloida, kuutioida, jakaa, yhdistää tai jopa regex-vastata merkkijonoja suoraan terminaalissasi.
 
 ## Katso Myös
-
 Sukella syvemmälle `string`-funktion maailmaan virallisen dokumentaation avulla:
 - [Fish Shell String Dokumentaatio](https://fishshell.com/docs/current/commands.html#string)
 

@@ -14,10 +14,8 @@ title: Obtenir la date actuelle
 weight: 29
 ---
 
-## Quoi & Pourquoi ?
-En programmation, obtenir la date actuelle est une tâche fondamentale qui permet aux développeurs d'accéder, d'afficher ou de manipuler la date actuelle au sein de leurs applications. Cette capacité est cruciale pour tout, du journalisation et du marquage temporel des événements aux calculs basés sur les dates.
-
 ## Comment faire :
+
 
 ### En utilisant Kotlin Standard
 Kotlin n'a pas sa propre API de date et d'heure, mais s'appuie sur la bibliothèque standard Java pour cette fonctionnalité. Voici comment vous pouvez obtenir la date actuelle :

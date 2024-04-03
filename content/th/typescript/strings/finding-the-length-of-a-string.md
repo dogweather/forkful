@@ -32,12 +32,7 @@ title: "\u0E04\u0E49\u0E19\u0E2B\u0E32\u0E04\u0E27\u0E32\u0E21\u0E22\u0E32\u0E27
 weight: 7
 ---
 
-## อะไรและทำไม?
-
-การหาความยาวของสตริงหมายถึงการวัดดูว่ามีอักขระกี่ตัวในสตริงนั้น โปรแกรมเมอร์ทำการนี้เพื่อตรวจสอบข้อมูลที่ป้อนเข้ามา, วนลูปผ่านตัวอักขระ, หรือจำกัดการแสดงผลข้อความ เป็นต้น
-
 ## วิธีทำ:
-
 ใน TypeScript, คุณสามารถหาความยาวของสตริงได้โดยใช้คุณสมบัติ `.length` นี่คือตัวอย่าง:
 
 ```typescript
@@ -48,7 +43,6 @@ console.log(greeting.length); // ผลลัพธ์: 18
 รหัสนี้ประกาศตัวแปรสตริงที่ชื่อว่า `greeting` แล้วจากนั้นจะแสดงความยาวของมันออกทางคอนโซล
 
 ## การดำดิ่งลึก
-
 คุณสมบัติ `.length` เป็นการสืบทอดมาจาก JavaScript, ซึ่งเป็นภาษาแม่ของ TypeScript เป็นวิธีที่ตรงไปตรงมาและได้รับการสนับสนุนอย่างทั่วถึงในการเอาขนาดของสตริง
 
 มีวิธีอื่นๆ แต่มักจะทำให้สิ่งต่างๆ ซับซ้อนขึ้น เช่น คุณอาจจะแปลงสตริงเป็นอาร์เรย์และนับสมาชิก:
@@ -76,7 +70,6 @@ console.log(countCodePoints(fancyGreeting)); // ผลลัพธ์: 9
 ฟังก์ชันนี้จัดการกับความซับซ้อนของการเข้ารหัสสตริงเพื่อให้แน่ใจว่าแต่ละตัวอักขระ ไม่ว่าจะเป็นคู่ที่เป็นหน่วยโค้ดเดียวหรือสองหน่วยโค้ด, ถูกนับอย่างถูกต้อง
 
 ## ดูเพิ่มเติม
-
 - คู่มือ TypeScript เกี่ยวกับสตริง: [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#strings)
 - MDN Web Docs เกี่ยวกับคุณสมบัติความยาวของสตริง: [String.prototype.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
 - Unicode และ JavaScript: [JavaScript has a Unicode problem - Mathias Bynens](https://mathiasbynens.be/notes/javascript-unicode)

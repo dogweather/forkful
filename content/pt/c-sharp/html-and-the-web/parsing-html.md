@@ -14,16 +14,10 @@ title: Analisando HTML
 weight: 43
 ---
 
-## O Que & Por Quê?
-
-Analisar HTML na programação envolve analisar a estrutura de um documento HTML, permitindo extrair, manipular e interagir com seu conteúdo de forma programática. Os programadores fazem isso para automatizar a raspagem da web, extração de dados, ou até mesmo modificar páginas da web ou documentos HTML dinamicamente para várias aplicações, tornando-se uma habilidade essencial no desenvolvimento web, análise de dados e cenários de testes automatizados.
-
 ## Como Fazer:
-
 Embora o .NET forneça suporte básico para trabalhar com HTML, como o `HttpClient` para buscar páginas web, ele carece de um analisador HTML abrangente e integrado. Portanto, a maioria dos desenvolvedores C# recorre a bibliotecas de terceiros populares como HtmlAgilityPack ou AngleSharp para capacidades robustas de análise HTML. Ambas as bibliotecas permitem fácil consulta, manipulação e travessia do DOM HTML.
 
 ### Usando HtmlAgilityPack
-
 1. **Instale o HtmlAgilityPack**: Primeiro, adicione o pacote HtmlAgilityPack ao seu projeto via NuGet.
    ```
    Install-Package HtmlAgilityPack
@@ -65,7 +59,6 @@ Embora o .NET forneça suporte básico para trabalhar com HTML, como o `HttpClie
    ```
 
 ### Usando AngleSharp
-
 1. **Instale o AngleSharp**: Adicione a biblioteca AngleSharp ao seu projeto via NuGet.
    ```
    Install-Package AngleSharp

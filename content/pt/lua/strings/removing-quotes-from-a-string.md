@@ -10,9 +10,6 @@ title: Removendo aspas de uma string
 weight: 9
 ---
 
-## O Quê e Porquê?
-Remover aspas de uma string significa desfazer-se dos caracteres de aspas duplas ou simples que envolvem seu texto. Os programadores fazem isso para higienizar entradas, facilitar o parsing ou harmonizar dados que podem estar citados de forma inconsistente.
-
 ## Como fazer:
 Aqui está como expulsar essas aspas para longe em Lua:
 

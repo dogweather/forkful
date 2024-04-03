@@ -11,9 +11,6 @@ title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---
 
-## Quoi et Pourquoi ?
-Calculer une date dans le futur ou le passé, c'est ajuster une date donnée en y ajoutant ou soustrayant des jours, des mois, etc. Les programmeurs le font pour gérer des échéances, des périodes d'abonnement, des rappels, et d'autres fonctionnalités liées au temps.
-
 ## Comment faire :
 ```elixir
 # Ajouter 5 jours à la date actuelle

@@ -11,9 +11,6 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i dlaczego?
-Zaokrąglanie liczb oznacza dostosowanie ich do bliskiej wartości dla uproszczenia lub aby dopasować je do określonej precyzji. Jest to przydatne do poprawy czytelności, zmniejszenia zajmowanego miejsca w pamięci lub zaspokojenia specyficznych potrzeb domenowych, takich jak obliczenia pieniężne, gdzie chcesz zaokrąglić do najbliższego centa.
-
 ## Jak to zrobić:
 W Elixirze możesz użyć `Float.round/2`, aby zaokrąglić liczbę zmiennoprzecinkową. Możesz określić liczbę cyfr po przecinku, które chcesz zachować. Oto jak to działa:
 

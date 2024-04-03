@@ -11,9 +11,6 @@ title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## What & Why?
-Convertir une date en chaîne de caractères permet de la manipuler comme texte, simplifiant l’affichage et le stockage. Les programmeurs font cette conversion pour l'interopérabilité et la lisibilité humaine.
-
 ## How to:
 Utilisons `os.date` pour formater une date :
 

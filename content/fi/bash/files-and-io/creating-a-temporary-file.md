@@ -12,9 +12,6 @@ title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---
 
-## What & Why? (Mikä ja Miksi?)
-Luodaan tilapäisiä tiedostoja väliaikaisen datan säilyttämiseen ja sen varmistamiseen, että sovelluksen käyttämä ympäristö pysyy siistinä. Ohjelmoijat käyttävät niitä prosessien välisessä datan välityksessä ja tilapäisenä työtilana, joka voidaan turvallisesti poistaa käytön jälkeen.
-
 ## How to: (Kuinka tehdään:)
 ```Bash
 # Luo tilapäinen tiedosto käyttämällä mktemp-komentoa

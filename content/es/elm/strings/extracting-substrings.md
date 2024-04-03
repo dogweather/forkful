@@ -10,12 +10,7 @@ title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---
 
-## ¿Qué y Por Qué?
-
-Extraer subcadenas significa seleccionar partes específicas de una cadena de texto. Los programadores hacen esto para manipular y utilizar solo los fragmentos necesarios de la información.
-
 ## ¿Cómo?
-
 ```Elm
 import String exposing (slice)
 
@@ -46,7 +41,6 @@ in
 ```
 
 ## Profundización
-
 Históricamente, la extracción de subcadenas ha sido una operación fundamental en la manipulación de texto en muchos lenguajes de programación. En Elm, el enfoque funcional para trabajar con cadenas promueve la inmutabilidad y la claridad del código.
 
 Alternativas para extraer subcadenas en otros lenguajes pueden incluir el uso de expresiones regulares o métodos incorporados más especializados. En Elm, funciones como `slice`, `left`, y `right` de `String` son claras y directas para este propósito.
@@ -56,7 +50,6 @@ En cuanto a detalles de implementación, `slice` acepta dos índices, donde el p
 La utilización de funciones específicas de extracción de subcadenas asegura que el código sea más fácil de leer y mantener. Además, previene errores comunes que pueden surgir al tratar con índices directamente o al mutar cadenas.
 
 ## Véase También
-
 - Documentación oficial de Elm sobre el módulo `String`: https://package.elm-lang.org/packages/elm/core/latest/String
 - Elm guide en español, que incluye secciones sobre manejo de strings: https://guide.elm-lang.org/es/
 - Libro "Aprendiendo Elm" ("Learning Elm" en inglés) que puede proporcionar un contexto adicional sobre el lenguaje en general: https://elmprogramming.com/

@@ -13,12 +13,7 @@ title: Gebruik van associatieve arrays
 weight: 15
 ---
 
-## Wat & Waarom?
-
-Associatieve arrays, in Python bekend als woordenboeken, koppelen sleutels aan waarden, waardoor het gemakkelijk is om data op te halen, te wijzigen of te volgen aan de hand van een unieke identificatie. Programmeurs gebruiken ze vanwege hun efficiëntie in het toegang krijgen tot elementen en hun flexibiliteit in het representeren van complexe datastructuren.
-
 ## Hoe te:
-
 Een woordenboek in Python maken is eenvoudig. Je sluit sleutel-waardeparen in met accolades `{}`, met sleutels en waarden gescheiden door een dubbele punt:
 
 ```Python
@@ -76,7 +71,6 @@ email: john@voorbeeld.com
 ```
 
 ## Diepere Duik
-
 Associatieve arrays in Python, of woordenboeken, zijn geïntroduceerd om een datastructuur te bieden voor efficiënte data-toegang en -manipulatie. In tegenstelling tot sequenties, die geïndexeerd zijn door een reeks nummers, worden woordenboeken geïndexeerd door sleutels, wat elk onveranderlijk type kan zijn. Deze ontwerpkeuze maakt woordenboeken ideaal geschikt voor snelle opzoektabels waar sleutels naar unieke waarden leiden.
 
 Historisch gezien zijn Python woordenboeken geïmplementeerd met behulp van een hash-tabel, wat zorgt dat de gemiddelde tijdscomplexiteit voor opzoek-, invoeg- en verwijderoperaties O(1) is. In Python 3.6 en later behouden woordenboeken ook de invoegvolgorde van items, wat de voordelen van hash-tabellen combineert met de voorspelbaarheid van invoegvolgorde gezien in geordende datastructuren.

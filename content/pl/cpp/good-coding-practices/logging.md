@@ -11,9 +11,6 @@ title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---
 
-## Co i Dlaczego?
-Logowanie w kontekście programowania to proces zapisywania zdarzeń, stanów i informacji do pliku lub innego medium wyjściowego. Programiści logują, aby śledzić, co się dzieje w ich aplikacjach, do debugowania problemów oraz monitorowania wydajności do przyszłej analizy i optymalizacji.
-
 ## Jak to zrobić:
 Załóżmy, że pracujesz na systemie Linux i chcesz wrzucać swoje logi do pliku, korzystając z dobrego, starego C++. Będziesz chciał dołączyć biblioteki `<iostream>` i `<fstream>` do operacji na plikach. Oto szybki przykład:
 

@@ -10,9 +10,6 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## What & Why?
-Cosa è e perché si usa il debug? Stampare output per il debug significa visualizzare messaggi interni al programma durante l'esecuzione per capire cosa sta succedendo. Si fa per individuare e risolvere problemi nel codice, come un chirurgo che monitora i segnali vitali durante un'operazione.
-
 ## How to:
 Con C#, ci sono vari modi per stampare messaggi di debug. Ecco gli strumenti basilari:
 

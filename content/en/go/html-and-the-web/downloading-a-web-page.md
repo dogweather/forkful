@@ -10,12 +10,7 @@ title: Downloading a web page
 weight: 42
 ---
 
-## What & Why?
-
-Downloading a web page is about fetching the HTML content of a web page via HTTP/HTTPS protocol. Programmers often do this for web scraping, data analysis, or simply to programmatically interact with websites to automate tasks.
-
 ## How to:
-
 In Go, the standard library provides powerful tools for web requests, notably the `net/http` package. To download a web page, we primarily use `http.Get` method. Here is a basic example:
 
 ```go
@@ -59,10 +54,9 @@ Sample output could be the HTML content of `http://example.com`, which is a basi
 
 This simple program makes an HTTP GET request to the specified URL, then reads and prints the body of the response.
 
-Note: In contemporary Go programming, `ioutil.ReadAll` is considered deprecated since Go 1.16 in favor of `io.ReadAll`. 
+Note: In contemporary Go programming, `ioutil.ReadAll` is considered deprecated since Go 1.16 in favor of `io.ReadAll`.
 
 ## Deep Dive
-
 The Go language has a design philosophy that emphasizes simplicity, efficiency, and reliable error handling. When it comes to network programming, and specifically downloading web pages, Go's standard library, notably `net/http`, is efficiently designed to handle HTTP request and response operations.
 
 The approach to network requests in Go dates back to the language's origins, borrowing concepts from predecessors but significantly improving on efficiency and simplicity. For downloading content, Go's concurrency model using goroutines makes it an exceptionally powerful tool for making asynchronous HTTP requests, handling thousands of requests in parallel with ease.

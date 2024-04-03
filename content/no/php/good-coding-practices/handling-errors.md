@@ -12,9 +12,6 @@ title: "Feilh\xE5ndtering"
 weight: 16
 ---
 
-## Hva & Hvorfor?
-Feilhåndtering i PHP dreier seg om å håndtere og respondere på tilstander som forstyrrer det normale programflytet, som manglende filer eller dårlig datainnskriving. Programmerere håndterer feil for å forhindre krasj og for å gi brukerne en jevnere opplevelse.
-
 ## Hvordan:
 I PHP kan du håndtere feil ved å bruke `try-catch`-blokker, og du kan tilpasse prosessen med egendefinerte feilhåndterere og unntak.
 

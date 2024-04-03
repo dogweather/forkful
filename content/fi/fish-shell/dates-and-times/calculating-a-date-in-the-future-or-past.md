@@ -11,9 +11,6 @@ title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---
 
-## What & Why? (Mitä ja miksi?)
-Lasketaan päivämäärä tulevaisuudessa tai menneisyydessä. Se on hyödyllistä, kun halutaan aikatauluttaa tapahtumia, muistuttaa deadlineista tai seurata aikavälitapahtumia.
-
 ## How to: (Miten tehdä:)
 ```Fish Shell
 # Tuleva päivämäärä 10 päivän kuluttua

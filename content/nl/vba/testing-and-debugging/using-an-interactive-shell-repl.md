@@ -13,12 +13,7 @@ title: Gebruik van een interactieve shell (REPL)
 weight: 34
 ---
 
-## Wat & Waarom?
-
-Een interactieve shell, of Read-Eval-Print Loop (REPL), stelt gebruikers in staat om commando's in te voeren, uit te voeren en de resultaten in real-time te zien. Programmeurs gebruiken REPLs voor snelle prototyping, het testen van codefragmenten of debuggen in een meer interactieve en iteratieve omgeving, wat de productiviteit en het begrip van de code verbetert.
-
 ## Hoe te:
-
 Visual Basic for Applications (VBA) ondersteunt vanuit zichzelf niet native een interactieve shell of REPL-ervaring zoals gezien in talen zoals Python of JavaScript. Je kunt echter deze ervaring tot op zekere hoogte simuleren met behulp van het Directe Venster in de VBA IDE (Integrated Development Environment).
 
 **Toegang tot het Directe Venster:**
@@ -58,7 +53,6 @@ Call SayHello
 **Opmerking:** Het Directe Venster heeft zijn beperkingen. Het is uitstekend voor snelle tests en directe functieaanroepen, maar ondersteunt niet het direct definiëren van functies of subroutines binnenin. Complexe debug- en programmeertaken kunnen volledige moduleontwikkeling vereisen.
 
 ## Diepe Duik
-
 Het Directe Venster in VBA fungeert als de dichtstbijzijnde tegenhanger van interactieve shells gevonden in andere programmeeromgevingen, ondanks de beperkingen. Historisch gezien is VBA gericht geweest op het uitbreiden van de mogelijkheden van Microsoft Office-toepassingen door middel van scripts en macro's in plaats van zelfstandige softwareontwikkeling, wat het gebrek aan een volwaardige REPL zou kunnen verklaren.
 
 Voor taken die uitgebreide interactieve tests of complexe logica-ontwikkeling vereisen, kunnen andere programmeeromgevingen die zijn uitgerust met native REPL-ondersteuning, zoals Python met zijn IDLE, of JavaScript met Node.js, betere alternatieven bieden. Deze omgevingen bieden niet alleen interactieve shells, maar ook meer robuuste programmeer-, debug- en testfaciliteiten.

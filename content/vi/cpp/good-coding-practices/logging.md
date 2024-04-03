@@ -16,9 +16,6 @@ title: Ghi log
 weight: 17
 ---
 
-## Gì và Tại Sao?
-Trong bối cảnh lập trình, việc ghi log là quá trình ghi lại các sự kiện, trạng thái và thông tin vào một tập tin hoặc một phương tiện xuất khác. Lập trình viên ghi log để theo dõi những gì đang xảy ra trong ứng dụng của họ, để gỡ lỗi và để theo dõi hiệu năng cho phân tích và tối ưu hóa trong tương lai.
-
 ## Làm Thế Nào:
 Giả sử bạn đang làm việc trên một hệ thống Linux và bạn muốn đưa các file log của mình vào một tập tin bằng cách sử dụng C++ cổ điển. Bạn sẽ muốn bao gồm thư viện `<iostream>` và `<fstream>` để thực hiện các thao tác với tập tin. Dưới đây là một ví dụ nhanh:
 

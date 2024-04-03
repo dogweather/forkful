@@ -11,9 +11,6 @@ title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---
 
-## Hva & Hvorfor?
-Når du begynner et nytt prosjekt, starter du med en blank slate for å kode noe fra bunnen av. Programmerere gjør dette for å løse et nytt problem, utforske en ide, eller bygge en løsning som ikke finnes enda.
-
 ## Hvordan:
 ```java
 // Opprette en ny klasse

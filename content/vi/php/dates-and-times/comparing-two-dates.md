@@ -15,9 +15,6 @@ title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---
 
-## Cái gì & Tại sao?
-So sánh hai ngày nghĩa là kiểm tra xem chúng có giống nhau không, hoặc tìm ra cái nào sớm hơn hoặc muộn hơn. Lập trình viên làm việc này để xử lý lịch trình, sắp xếp sự kiện, hoặc các hoạt động phụ thuộc vào thời gian như hết phiên làm việc hoặc hết hạn đăng ký.
-
 ## Làm thế nào:
 Đối tượng `DateTime` và các toán tử so sánh của PHP làm cho việc này trở nên đơn giản. Dưới đây là một ví dụ đơn giản:
 

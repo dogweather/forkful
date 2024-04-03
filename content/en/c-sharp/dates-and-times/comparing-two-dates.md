@@ -10,12 +10,7 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-
-Comparing two dates means checking how they relate—is one earlier, later, or the exact same moment as the other. Programmers do this to handle scheduling, age verification, events triggering, and more—basically any time we need to measure time differences or sequence events.
-
 ## How to:
-
 Let’s dive into C# for date comparisons. Say we’ve got two `DateTime` objects, `date1` and `date2`. We compare using `DateTime.Compare(date1, date2)`, `date1.CompareTo(date2)`, or comparing properties directly:
 
 ```C#
@@ -54,7 +49,6 @@ else
 Output will show that `date1` is earlier than `date2` in all comparisons—you’re stating the obvious, but that’s what logs are for.
 
 ## Deep Dive
-
 DateTime comparisons have been a part of C# since its inception, crucial for dealing with the ever-important concept of time. Internally, `DateTime` values represent ticks since midnight, January 1, 0001, within the Common Language Runtime.
 
 Craving alternatives? You could use `TimeSpan` for differences, or kick it up a notch with NodaTime, a library by Jon Skeet for more complex date and time handling.
@@ -62,7 +56,6 @@ Craving alternatives? You could use `TimeSpan` for differences, or kick it up a 
 Here’s a technical fun fact: `DateTime` types in .NET can be either `Unspecified`, `Utc`, or `Local`. Comparing a UTC time with a Local time? That's asking for trouble. Always ensure kinds match to avoid skewed logic!
 
 ## See Also
-
 Dive deeper or clarify things with these:
 
 - Microsoft's DateTime docs: https://docs.microsoft.com/en-us/dotnet/api/system.datetime

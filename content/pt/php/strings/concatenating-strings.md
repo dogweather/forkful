@@ -10,12 +10,7 @@ title: Concatenando strings
 weight: 3
 ---
 
-## O que é & Por quê?
-
-Concatenar strings é basicamente juntá-las para formar uma nova. Programadores fazem isso para montar mensagens, caminhos de arquivos, consultas SQL, dentre outras necessidades de mesclar textos de maneira dinâmica.
-
 ## Como Faz:
-
 ```php
 <?php
 $primeiroNome = "João";
@@ -34,7 +29,6 @@ echo $saudacao; // Saída: Olá, João!
 ```
 
 ## Mergulho Profundo:
-
 Historicamente, a concatenação de strings em PHP sempre foi feita com o operador ponto (.), sem muitas complicações. Existem alternativas, como a função `sprintf` ou interpolação com aspas duplas, mas para unir partes simples, o ponto é rei. 
 
 A partir do PHP 8.0, há também a função `str_concat()`, oferecendo uma nova maneira de concatenar strings, embora o operador ponto ainda seja mais comum.
@@ -55,7 +49,6 @@ $nomeCompleto = str_concat($primeiroNome, " ", $sobrenome);
 Lembrando que, antes de PHP 8.0, não existia a função `str_concat()`, e a concatenação era exclusivamente pelo operador ponto.
 
 ## Veja Também:
-
 - A documentação oficial do PHP sobre strings para entender melhor todos os aspectos das strings em PHP: [https://www.php.net/manual/pt_BR/language.types.string.php](https://www.php.net/manual/pt_BR/language.types.string.php)
 - Você pode ler mais sobre a função `sprintf` aqui: [https://www.php.net/manual/pt_BR/function.sprintf.php](https://www.php.net/manual/pt_BR/function.sprintf.php)
 - E se estiver curioso(a) sobre as novidades do PHP 8, incluindo a `str_concat()`: [https://www.php.net/releases/8.0/en.php](https://www.php.net/releases/8.0/en.php)

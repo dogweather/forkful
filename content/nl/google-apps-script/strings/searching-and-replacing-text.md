@@ -13,16 +13,10 @@ title: Zoeken en vervangen van tekst
 weight: 10
 ---
 
-## Wat & Waarom?
-
-Zoeken en vervangen van tekst in Google Apps Script houdt in het programmatisch identificeren van specifieke strings in een document, spreadsheet of elk ander type Google Apps-content, en deze te vervangen door andere tekstwaarden. Programmeurs gebruiken deze functionaliteit om het bewerken van grote hoeveelheden content te automatiseren, veelvoorkomende fouten te corrigeren, terminologie over documenten heen te standaardiseren of dynamische gegevens in sjablonen in te voegen.
-
 ## Hoe te:
-
 Google Apps Script biedt een eenvoudige manier om tekst te zoeken en te vervangen, vooral binnen Google Documenten en Spreadsheets. Hieronder staan voorbeelden voor beide.
 
 ### Google Documenten:
-
 Om tekst te zoeken en te vervangen in een Google Document, zul je voornamelijk interacteren met de `DocumentApp` klasse.
 
 ```javascript
@@ -43,7 +37,6 @@ searchReplaceInDoc();
 Deze code zoekt naar alle voorkomens van `'searchText'` in het actieve Google Document en vervangt ze door `'replacementText'`.
 
 ### Google Spreadsheets:
-
 Op een vergelijkbare manier kun je in Google Spreadsheets `SpreadsheetApp` gebruiken om zoek- en vervangbewerkingen uit te voeren:
 
 ```javascript
@@ -62,7 +55,6 @@ searchReplaceInSheet();
 In dit voorbeeld zoekt `createTextFinder('searchText')` het actieve blad voor 'searchText', en `replaceAllWith('replacementText')` vervangt alle voorkomens met 'replacementText'.
 
 ## Diepgaand
-
 De zoek- en vervangfunctionaliteit in Google Apps Script is sterk beïnvloed door zijn webgebaseerde aard, waardoor scripts tekst over verschillende Google Apps naadloos kunnen manipuleren. Historisch gezien komt deze mogelijkheid voort uit de bredere context van tekstverwerking en -manipulatie in programmering, waar reguliere expressies en stringfuncties in talen zoals Perl en Python een hoge standaard zetten voor flexibiliteit en kracht.
 
 Hoewel de zoek- en vervangfunctionaliteit van Google Apps Script krachtig is voor eenvoudige substituties, mist het de volledige reguliere expressiemogelijkheden die in sommige andere talen worden gevonden. Je kunt bijvoorbeeld basis reguliere expressies gebruiken in `createTextFinder` in Google Spreadsheets, maar de opties voor complexe patroonmatching en -manipulatie zijn beperkt in vergelijking met Perl of Python.

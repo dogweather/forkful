@@ -14,9 +14,6 @@ title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---
 
-## Mikä ja miksi?
-Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa jokaisen lauseen sanan ensimmäisen merkin muuttamista isoksi kirjaimeksi, samalla varmistaen, että loput merkit ovat pieniä kirjaimia. Tätä tekniikkaa käytetään yleisesti tekstin muotoiluun ammattimaisemman tai luettavamman tulosteen saavuttamiseksi, kuten otsikoiden valmistelussa tai käyttäjän syötteen näyttämisessä.
-
 ## Kuinka:
 Lua ei sisällä valmista funktiota merkkijonojen alkukirjaimen muuttamiseksi isoksi, mutta voit helposti saavuttaa tämän tehtävän käyttämällä perus merkkijonon käsittelyn funktioita. Tässä on yksinkertainen funktio yhden sanan ensimmäisen kirjaimen muuttamiseksi isoksi:
 

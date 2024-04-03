@@ -11,9 +11,6 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## What & Why? (Co i Dlaczego?)
-Rozpoczynanie nowego projektu to jak stawianie pierwszych cegiełek – wymaga jasnego planu i narzędzi. Programiści tworzą nowe projekty, aby rozwiązywać problemy, uczyć się czy też testować pomysły.
-
 ## How to (Jak to zrobić):
 Aby rozpocząć nowy projekt w Java, potrzebujesz narzędzi jak JDK i środowiska programistycznego, np. IntelliJ IDEA czy Eclipse. Po ich zainstalowaniu, tworzysz nowy projekt i piszesz swój kod. Spójrz na poniższy przykład:
 

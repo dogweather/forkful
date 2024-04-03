@@ -14,12 +14,7 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## Mikä & Miksi?
-
-Uuden projektin aloittaminen C-kielellä sisältää perustavanlaatuisen koodirakenteen ja ympäristön pystyttämisen, jotta kehitystehtävät voidaan hallita tehokkaasti. Ohjelmoijat tekevät näin virtaviivaistaakseen rakennusprosessia, ylläpitääkseen johdonmukaisuutta sekä helpottaakseen ohjelmiston ylläpitoa ja skaalautuvuutta ajan myötä.
-
 ## Kuinka:
-
 Minkä tahansa C-projektin ytimessä on lähdekoodi. Tyypillinen aloituspiste sisältää `main.c` -nimisen pääfileen luomisen, joka toimii ohjelman aloituspisteenä. Lisäksi `Makefile` on olennainen osa käännösten hallintaa projektin rakentamisen virtaviivaistamiseksi.
 
 Tässä on minimaalinen esimerkki:
@@ -55,5 +50,4 @@ Hello, world!
 ```
 
 ## Syväsukellus
-
 Projektin aloittaminen C-kielessä ei ole vain koodin kirjoittamista; se on vankka perusta projektinhallinnalle. Tämä käytäntö on kehittynyt ohjelmoinnin alkuaikojen tarpeesta järjestää ja virtaviivaistaa suurten, monimutkaisten järjestelmien kokoamisprosessia UNIX-maailmasta. GNU Make -järjestelmän esittely 80-luvulla mullisti tämän automatisoimalla rakennusprosessin, mikä teki siitä kriittisen työkalun moderneissa C-projekteissa. Kuitenkin integroitujen kehitysympäristöjen (IDE) ja muiden korkean tason ohjelmointikielten nousu esitteli erilaisia projekti-initalisointikäytäntöjä, jotka saattavat sisältää automatisoidumpia rakennusjärjestelmiä, riippuvuuksien hallintaa ja versionhallinnan integrointia alusta alkaen. Näistä edistysaskeleista huolimatta Makefilen ja hyvin järjestetyn lähdekoodihakemiston tarjoama yksinkertaisuus ja kontrolli ovat edelleen arvokkaita, erityisesti järjestelmätason ohjelmoinnissa, missä tehokkuus ja resurssien hallinta ovat ensiarvoisen tärkeitä. Siitä huolimatta suuremmissa projekteissa työkalut kuten CMake tai Meson ovat tulossa suositummiksi niiden kyvyn hallita monimutkaisia rakennuksia ja poikittaisalusta-yhteensopivuutta, mikä viittaa suuntaukseen kohti monimutkaisempia projektin aloitustyökaluja C-ekosysteemissä.

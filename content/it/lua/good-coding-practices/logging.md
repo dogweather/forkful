@@ -11,12 +11,7 @@ title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---
 
-## Cosa & Perché?
-
-Il logging è la pratica di registrare eventi, errori e altri punti dati significativi che si verificano all'interno del ciclo di vita di un'applicazione software. I programmatori utilizzano i log per aiutare nel debugging, monitorare lo stato del sistema, analizzare il comportamento degli utenti e mantenere una traccia di controllo per motivi di sicurezza e conformità.
-
 ## Come fare:
-
 Lua non ha un framework di logging incorporato, ma implementare una funzione di logging semplice è abbastanza diretto. Di seguito è riportato un esempio di base di tale funzione:
 
 ```lua
@@ -41,7 +36,6 @@ Quando si esegue il codice sopra, vedrai un output simile a questo:
 Per esigenze di logging più sofisticate, è possibile includere librerie di terze parti come LuaLogging per fornire funzionalità aggiuntive come livelli di log, gestori multipli e specifiche di formato.
 
 ## Approfondimenti
-
 Storicamente, il logging è stato un aspetto essenziale della diagnostica del software, diventando una pratica consolidata fin dai primi giorni della programmazione. L'importanza del logging non può essere sopravvalutata, in quanto funge da 'black box' in caso di guasto del sistema, fornendo informazioni sulle cause principali dei problemi.
 
 Sebbene l'esempio sopra soddisfi solo le esigenze più rudimentali, ci sono molte alternative con set di funzionalità più ricche. Alcune di queste includono:
@@ -55,7 +49,6 @@ Quando ci si addentra nell'implementazione di un sistema di logging, i punti dec
 Per il logging nei sistemi distribuiti, è comune utilizzare soluzioni centralizzate di gestione dei log come ELK (Elasticsearch, Logstash e Kibana) o Splunk, che possono aggregare i log da più fonti, fornire capacità di ricerca robuste e visualizzare i dati per semplificare il debugging e l'analisi.
 
 ## Vedi Anche
-
 - Libreria LuaLogging su GitHub: https://github.com/lunarmodules/lualogging
 - Introduzione a ELK Stack: https://www.elastic.co/what-is/elk-stack
 - La wiki degli utenti di Lua sul Logging: http://lua-users.org/wiki/LoggingCategory

@@ -11,9 +11,6 @@ title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---
 
-## Qué es y por qué?
-La interpolación de cadenas permite incrustar valores de variables directamente en una cadena de texto. Los programadores lo usan para hacer el código más legible y evitar la tediosa concatenación de cadenas.
-
 ## Cómo hacerlo:
 ```kotlin
 fun main() {

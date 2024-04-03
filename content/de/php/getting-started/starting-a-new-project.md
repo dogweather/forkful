@@ -9,9 +9,6 @@ title: Einen neuen Projekt starten
 weight: 1
 ---
 
-## Was & Warum?
-Ein neues Projekt starten bedeutet, eine frische Codebasis aufzubauen. Programmierer machen das, um Ideen in funktionierende Software umzusetzen und Probleme zu lösen.
-
 ## How to:
 ```PHP
 <?php
@@ -46,6 +43,7 @@ Ausgabe:
 ```
 Hallo Welt!
 ```
+
 ## Deep Dive
 Anfänge mit PHP reichen zurück in das Jahr 1995; heute ist PHP 8.x die aktuelle Version. Composer ist der De-facto-Standard für das Management von Abhängigkeiten in PHP-Projekten. Früher mussten Bibliotheken manuell eingebunden werden, was aufwendig und fehleranfällig war. Composer nutzt `composer.json`, wo Abhängigkeiten festgehalten sind, lädt sie herunter und stellt einen Autoloader bereit.
 

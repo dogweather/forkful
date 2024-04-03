@@ -15,12 +15,7 @@ title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---
 
-## Cái gì & Tại sao?
-
-So sánh hai ngày nghĩa là kiểm tra xem một ngày có sớm hơn, giống hệt, hay muộn hơn ngày kia hay không. Lập trình viên thực hiện việc này để tổ chức sự kiện, xác nhận đầu vào, và quản lý dữ liệu nhạy cảm với thời gian.
-
 ## Làm thế nào:
-
 Với Fish Shell, chúng ta có thể so sánh hai ngày sử dụng lệnh `date`. Dưới đây là các ví dụ.
 
 ```fish
@@ -45,7 +40,6 @@ Ngày cụ thể sớm hơn ngày hiện tại.
 ```
 
 ## Sâu hơn nữa
-
 Trong lịch sử, so sánh các ngày trong lập trình đã gặp một chút rắc rối do nhiều định dạng ngày và múi giờ khác nhau. Fish Shell đơn giản hóa nhiệm vụ này với hàm `date` đã tích hợp sẵn, chuyển đổi ngày thành giây kể từ kỷ nguyên Unix (1 tháng 1 năm 1970). Điều này cung cấp cho chúng ta một điểm tham chiếu vũ trụ để so sánh.
 
 Các phương án thay thế cho Fish Shell để so sánh ngày bao gồm ngôn ngữ kịch bản như Python hoặc sử dụng công cụ thao tác `date` có sẵn trong hệ thống dựa trên Unix, như `dateutil` trong GNU core utilities (coreutils). Về cách thực hiện, khi chúng ta sử dụng `date +%s`, Fish nội bộ gọi lệnh `date` của hệ thống, đó là lý do tại sao nó hiệu quả trên các nền tảng.
@@ -53,7 +47,6 @@ Các phương án thay thế cho Fish Shell để so sánh ngày bao gồm ngôn
 So sánh ngày cũng quan trọng cho công việc cron, kịch bản sao lưu và kiểm soát truy cập dựa trên thời gian. Thành thạo so sánh ngày mang lại sự tự động hóa trơn tru hơn và ít lỗi thời gian hơn.
 
 ## Xem thêm
-
 - [Tài liệu Fish Shell](https://fishshell.com/docs/current/index.html)
 - [GNU Coreutils: Date](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
 - [Thời gian Kỷ nguyên Unix](https://en.wikipedia.org/wiki/Unix_time)

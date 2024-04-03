@@ -15,9 +15,6 @@ title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---
 
-## Cái gì & Tại sao?
-Refactoring là quá trình cấu trúc lại mã máy tính hiện có mà không thay đổi hành vi bên ngoài của nó. Lập trình viên refactor để cải thiện các thuộc tính phi chức năng của phần mềm, làm cho mã sạch hơn, hiệu quả hơn và dễ dàng bảo trì hơn.
-
 ## Làm thế nào:
 Hãy lấy một đoạn PHP điển hình và áp dụng một số phép màu refactoring vào nó.
 

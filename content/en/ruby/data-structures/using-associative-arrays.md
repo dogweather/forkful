@@ -10,12 +10,7 @@ title: Using associative arrays
 weight: 15
 ---
 
-## What & Why?
-
-Associative arrays, more commonly known as hashes in Ruby, allow pairing unique keys to values. They're indispensable when you need to keep track of elements through a specific reference, like storing the properties of an object or quickly accessing data by a unique identifier.
-
 ## How to:
-
 Creating and using hashes in Ruby is straightforward. You can initialize an empty hash, fill it with key-value pairs, access values by their keys, and more. Here's how you do it:
 
 ```Ruby
@@ -52,7 +47,6 @@ puts symbol_hash[:name] # Output: Jane Doe
 ```
 
 ## Deep Dive:
-
 The concept of associative arrays isn't unique to Ruby; many languages implement them under various names, like dictionaries in Python or objects in JavaScript (when used as key-value pairs). In the early stages of Ruby, hashes were somewhat slower and not as versatile. However, over time, Ruby’s implementation of hashes has become highly optimized, especially for symbol keys, making them extremely efficient for frequent access and updates.
 
 Ruby's hashes stand out for their syntactic ease of use and flexibility - you can use nearly any object type as a key, though symbols and strings are most common. Internally, Ruby hashes are implemented using a hashing algorithm that balances speed and memory efficiency, even as the number of elements scales up.

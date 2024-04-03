@@ -12,11 +12,8 @@ title: Manipulando arquivos com one-liners de CLI
 weight: 31
 ---
 
-## O que & Por quê?
-
-Manipular arquivos com comandos de uma linha no PowerShell é sobre alterar, mover, ou obter dados de arquivos diretamente da linha de comando de forma rápida. Programadores fazem isso por eficiência; é mais rápido do que navegar por interfaces gráficas ou escrever grandes scripts para tarefas simples.
-
 ## Como fazer:
+
 
 ### Lendo um Arquivo
 Para exibir rapidamente o conteúdo de um arquivo, use o comando `Get-Content`:
@@ -61,7 +58,6 @@ Get-ChildItem -Path .\*.log | Copy-Item -Destination C:\Logs
 ```
 
 ## Mergulho Profundo
-
 Historicamente, o PowerShell foi introduzido como uma alternativa mais poderosa ao prompt de comando tradicional no Windows, oferecendo acesso sem precedentes aos internos do sistema e armazéns de dados. Ele combina a velocidade da linha de comando com a flexibilidade da scriptagem, tornando-se uma ferramenta inestimável para administradores de sistemas baseados em Windows e desenvolvedores.
 
 Alternativas ao PowerShell para manipulação de arquivos incluem ferramentas baseadas em Unix como `sed`, `awk`, `grep`, e scriptagem `bash` para usuários de Linux e MacOS. Enquanto essas ferramentas são extremamente poderosas e têm seus próprios méritos, o PowerShell oferece uma integração profunda com ambientes Windows.

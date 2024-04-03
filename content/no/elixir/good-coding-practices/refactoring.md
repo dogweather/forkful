@@ -12,9 +12,6 @@ title: Refaktorering
 weight: 19
 ---
 
-## Hva & Hvorfor?
-Refaktorering er prosessen med å restrukturere eksisterende kode uten å endre dens eksterne oppførsel, med mål om å forbedre ikke-funksjonelle attributter som lesbarhet og vedlikeholdbarhet. Programmerere gjør dette for å gjøre koden renere, lettere å forstå og mer effektiv, noe som letter fremtidige oppdateringer og reduserer risikoen for feil.
-
 ## Hvordan:
 La oss rydde opp i et vanlig Elixir-mønster. Vi vil refaktorere en funksjon `calculate_stats` som gjør mer enn den burde ved å bryte den ned i mindre, gjenbrukbare deler.
 

@@ -13,9 +13,6 @@ title: Skrive en tekstfil
 weight: 24
 ---
 
-## Hva & Hvorfor?
-Å skrive en tekstfil i PHP innebærer å opprette eller åpne en fil og sette inn innhold i den. Programmerere gjør dette for å bevare data, som brukergenerert innhold eller logger, utover programmets livssyklus.
-
 ## Hvordan:
 PHP støtter nativt filskriving gjennom funksjoner som `file_put_contents`, `fopen` sammen med `fwrite`, og `fclose`. Slik bruker du dem:
 

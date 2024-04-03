@@ -10,9 +10,6 @@ title: Lettura degli argomenti della riga di comando
 weight: 23
 ---
 
-## What & Why?
-Leggere gli argomenti della riga di comando permette al tuo programma C++ di accettare input quando è avviato dal terminale o da una shell. I programmatori fanno ciò per rendere le applicazioni flessibili e configurabili senza dover modificare il codice.
-
 ## How to:
 Usare gli argomenti della riga di comando è semplice. Ecco un esempio:
 

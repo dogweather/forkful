@@ -10,9 +10,6 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-Calculating a date in the future or past is a common task for programmers, dealing with scheduling, reminders, or any feature that depends on date calculations. Understanding how to manipulate dates is crucial for backend systems, user interfaces, and data analysis, especially for those transitioning to Dart and looking to implement temporal logic efficiently.
-
 ## How to:
 Dart provides robust support for date manipulation through its `DateTime` class. Here's how you can calculate future or past dates using native Dart, without needing third-party libraries.
 

@@ -11,9 +11,6 @@ title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---
 
-## Vad & Varför?
-Att beräkna ett datum i framtiden eller förflutet innebär att man adderar eller subtraherar tid från ett specifikt datum. Programmerare gör detta för att hantera bokningar, deadlines, påminnelser och tidsbaserade funktioner i appar och system.
-
 ## Hur gör man:
 ```elixir
 # Lägger till dagar till dagens datum

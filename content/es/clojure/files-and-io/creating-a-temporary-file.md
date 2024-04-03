@@ -10,9 +10,6 @@ title: Creando un archivo temporal
 weight: 21
 ---
 
-## ¿Qué & Por Qué?
-Crear un archivo temporal significa fabricar un fichero diseñado para ser usado brevemente, usualmente como espacio de trabajo temporal. Los programadores los usan para almacenar datos transitorios, como intercambio de información entre procesos o para evitar el consumo de memoria cuando se manejan grandes volúmenes de datos.
-
 ## How to:
 ```Clojure
 ; Importar la biblioteca para trabajar con archivos

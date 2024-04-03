@@ -11,9 +11,6 @@ title: Vergleich von zwei Daten
 weight: 27
 ---
 
-## What & Why? (Was & Warum?)
-Das Vergleichen von zwei Daten zeigt uns, welches Datum früher oder später ist. Programmierer nutzen dies für Funktionalitäten wie Gültigkeitsprüfungen, Zeitachsenberechnungen und Erinnerungsfeatures.
-
 ## How To: (Wie geht's?)
 ```Ruby
 require 'date'

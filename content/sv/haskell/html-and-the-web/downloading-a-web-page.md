@@ -11,9 +11,6 @@ title: "H\xE4mta en webbsida"
 weight: 42
 ---
 
-## Vad & Varför?
-Att ladda ner en webbsida innebär att hämta dess HTML-kod från servern till din dator. Programmerare gör detta för att analysera innehållet, testa servrar eller automatisera datainsamling.
-
 ## Hur man gör:
 För att ladda ner en webbsida i Haskell kan vi använda `http-conduit`-paketen. Se till att du har GHC installerad och att du har konfigurerat ett nytt stack-projekt. Lägg till `http-conduit` i dina `build-depends` i `package.yaml` eller ditt `.cabal`-fil.
 

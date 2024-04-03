@@ -13,12 +13,7 @@ title: Eine Textdatei lesen
 weight: 22
 ---
 
-## Was & Warum?
-
-Das Lesen einer Textdatei in Google Apps Script (GAS) umfasst den Zugriff auf und das Extrahieren von Textdaten aus in Google Drive oder anderem zugänglichen Cloud-basierten Speicher gespeicherten Dateien. Programmierer müssen oft diese Dateien lesen, um Textdaten direkt in ihren GAS-Projekten zu importieren, zu manipulieren oder zu analysieren, was Automation und Integration mit Googles Produktpalette ermöglicht.
-
 ## Wie:
-
 Um mit dem Lesen einer Textdatei mit Google Apps Script zu beginnen, muss man im Allgemeinen die Google Drive API verwenden. Hier ein einfaches Beispiel, das zeigt, wie man eine Datei von Google Drive liest:
 
 ```javascript
@@ -44,7 +39,6 @@ Hallo, Welt! Dies ist eine Testtextdatei.
 In diesem Beispiel ist `fileId` der eindeutige Bezeichner der Datei, die Sie lesen möchten. Der `DriveApp`-Dienst holt die Datei, und `getDataAsString()` liest deren Inhalte als Zeichenkette. Sie können diesen Text dann nach Bedarf manipulieren oder verwenden.
 
 ## Tiefergehend
-
 Historisch gesehen stellte das Lesen von Textdateien in webbasierten Anwendungen, wie solchen, die mit Google Apps Script gebaut wurden, Herausforderungen dar aufgrund von Browser-Sicherheitseinschränkungen und der asynchronen Natur von JavaScript. Google Apps Script vereinfacht dies mit seinen abstrahierten Diensten wie `DriveApp`, die eine hochrangige API zur Interaktion mit Google Drive-Dateien bereitstellt.
 
 Allerdings ist eine wichtige Überlegung die Leistung und Ausführungszeitbeschränkungen, die durch Google Apps Script auferlegt werden, besonders beim Lesen großer Dateien oder bei der Durchführung komplexer Operationen mit den Daten. In einigen Fällen könnte es effizienter sein, Google Cloud-Dienste direkt von einem leistungsfähigeren Backend aus zu verwenden oder Dateien in handhabbarere Stücke vorzuverarbeiten.

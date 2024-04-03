@@ -14,12 +14,7 @@ title: Obtenir la date actuelle
 weight: 29
 ---
 
-## Quoi & Pourquoi ?
-
-Obtenir la date actuelle en C nécessite de se connecter à la bibliothèque standard C pour récupérer et formater la date et l'heure actuelles du système. Les programmeurs ont souvent besoin de cette fonctionnalité pour la journalisation, le horodatage ou les fonctionnalités de planification au sein de leurs applications.
-
 ## Comment faire :
-
 En C, l'en-tête `<time.h>` fournit les fonctions et types nécessaires pour travailler avec les dates et les heures. La fonction `time()` récupère l'heure actuelle, tandis que `localtime()` convertit cette heure en heure locale. Pour afficher la date, nous utilisons `strftime()` pour la formater en tant que chaîne de caractères.
 
 Voici un exemple de base :
@@ -53,7 +48,6 @@ La date d'aujourd'hui est 2023-04-12
 ```
 
 ## Exploration approfondie
-
 La gestion du temps en C, telle que facilitée par `<time.h>`, remonte aux premiers jours du langage et des systèmes UNIX. Elle est construite autour du type de données `time_t`, qui représente le temps actuel en nombre de secondes depuis l'Epoch Unix (1er janvier 1970). Bien que cela soit efficace et universellement compatible, cela signifie également que les fonctions de temps de la bibliothèque standard C sont intrinsèquement limitées par la plage et la résolution de `time_t`.
 
 Les applications modernes, en particulier celles nécessitant des horodatages de haute résolution ou traitant des dates loin dans le futur ou dans le passé, peuvent trouver ces limitations difficiles. Par exemple, le problème de l'année 2038 est une illustration célèbre où les systèmes utilisant un `time_t` de 32 bits vont déborder.

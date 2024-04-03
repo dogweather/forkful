@@ -13,9 +13,6 @@ title: Samenvoegen van strings
 weight: 3
 ---
 
-## Wat & Waarom?
-Stringconcatenatie is het aan elkaar rijgen van twee of meer strings achter elkaar. Programmeurs doen dit om zinnen te bouwen, berichten te creëren of invoergegevens te combineren voor verwerking of weergave.
-
 ## Hoe te:
 In C++ hebben we een paar manieren om strings aan elkaar te plakken. Hier is een voorbeeld met `std::string` en de plus (`+`) operator:
 

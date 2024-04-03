@@ -23,14 +23,10 @@ title: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B"
 weight: 28
 ---
 
-## What & Why? (何となぜ？)
-
-日付を文字列に変換するというのは、`Date` オブジェクトをテキスト形式に変えるプロセスです。プログラマーはユーザーに親しみやすい形で日付データを表示するため、または日付を文字列形式で保存・通信するために行います。
-
 ## How to: (方法)
 
-### 日付を文字列に変換する
 
+### 日付を文字列に変換する
 ```swift
 import Foundation
 
@@ -58,6 +54,7 @@ print(customDateString)
 
 ## Deep Dive (掘り下げ)
 
+
 ### 歴史的背景
 Swiftの前身であるObjective-C時代から、開発者たちは`NSDateFormatter`を用いて日付と文字列の変換を行ってきました。Swiftではこれが`DateFormatter`クラスに進化しました。
 
@@ -68,6 +65,5 @@ Swiftには`DateFormatter`の他にISO8601DateFormatterや相対日付表示の�
 フォーマッタの`locale`プロパティを変更することで、特定のロケール（言語・地域）に応じた日付表示が可能。また、`timeZone`プロパティを使って、異なるタイムゾーンに対応することもできます。
 
 ## See Also (参照)
-
 - [DateFormatter - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/dateformatter)
 - [Working with Dates and Times in Swift – Ray Wenderlich](https://www.raywenderlich.com/5539282-working-with-dates-and-times-in-swift)

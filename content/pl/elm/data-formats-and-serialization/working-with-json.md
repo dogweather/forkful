@@ -13,11 +13,7 @@ title: Praca z JSON
 weight: 38
 ---
 
-## Co i dlaczego?
-Praca z JSON w Elm polega na dekodowaniu danych JSON do typów Elm i kodowaniu wartości Elm z powrotem na JSON. Proces ten jest kluczowy dla aplikacji internetowych do interakcji z API i zewnętrznymi źródłami danych, umożliwiając płynną wymianę danych między klientem (Elm) a serwerami lub innymi usługami.
-
 ## Jak to zrobić:
-
 Elm traktuje obsługę JSON z wyraźnością i bezpieczeństwem, głównie za pomocą modułów `Json.Decode` i `Json.Encode`. Aby rozpocząć pracę z JSON, musisz najpierw zdefiniować dekoder dla swojego typu danych. Załóżmy, że mamy do czynienia z prostym obiektem profilu użytkownika.
 
 Po pierwsze, zdefiniuj swój typ Elm:
@@ -31,7 +27,6 @@ type alias UserProfile =
 ```
 
 ### Dekodowanie JSON do Elm
-
 Aby zdekodować łańcuch JSON do typu `UserProfile`, utwórz dekoder:
 
 ```elm
@@ -64,7 +59,6 @@ Result.Ok { id = 1, name = "John Doe", email = "john@example.com" }
 ```
 
 ### Kodowanie Elm do JSON
-
 Aby zakodować wartość Elm z powrotem do JSON, skorzystaj z modułu `Json.Encode`.
 
 ```elm
@@ -89,7 +83,6 @@ Przykładowe wyjście:
 ```
 
 ### Biblioteki stron trzecich
-
 Pakiety Elm, takie jak `elm-json-decode-pipeline`, mogą upraszczać tworzenie dekoderów, używając stylu pipeline, co jest szczególnie przydatne przy dekodowaniu złożonych obiektów.
 
 Najpierw dodaj bibliotekę do swojego projektu:

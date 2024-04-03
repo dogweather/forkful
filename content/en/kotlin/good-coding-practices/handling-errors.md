@@ -11,9 +11,6 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-Handling errors is how your code deals with problems that pop up during execution—like handling a curveball without dropping it. Programmers do it to prevent crashes and give users a smooth experience.
-
 ## How to:
 Kotlin provides `try`, `catch`, `finally`, and `throw` to manage errors. Here's how you use them:
 

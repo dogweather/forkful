@@ -11,9 +11,6 @@ title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---
 
-## Vad & Varför?
-Beräkna ett datum i framtiden eller förflutet innebär att man ändrar ett specifikt datum med ett visst antal dagar, månader eller år. Programmerare gör det för att hantera deadlines, händelseplanering, eller att spåra tidsskillnader.
-
 ## Så här gör du:
 I Lua använder du `os.date` för läsbarhet och `os.time` för aritmetik med tidsstämplar. Här är några enkla exempel:
 

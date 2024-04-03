@@ -10,9 +10,6 @@ title: Lendo argumentos da linha de comando
 weight: 23
 ---
 
-## O Que & Por Quê?
-Ler argumentos de linha de comando é pegar entrada diretamente de quem executou o programa. Fazemos isso para personalizar a execução ou passar informações específicas, sem complicações.
-
 ## Como Fazer:
 ```Clojure
 ; Guarda os argumentos em uma variável

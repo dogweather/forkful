@@ -11,9 +11,6 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## What & Why? (Co i dlaczego?)
-Usuwanie znaków pasujących do wzorca to odfiltrowywanie określonych znaków z tekstu. Programiści robią to, żeby oczyścić dane, poprawiać format lub przygotować tekst do przetwarzania.
-
 ## How to: (Jak to zrobić:)
 ```Arduino
 String deleteMatchingChars(String str, String pattern) {

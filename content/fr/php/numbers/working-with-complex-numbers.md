@@ -11,9 +11,6 @@ title: Manipulation des nombres complexes
 weight: 14
 ---
 
-## Quoi & Pourquoi ?
-Les nombres complexes ont une partie réelle et une partie imaginaire, généralement écrits sous la forme `a + bi`. Ils sont cruciaux dans les mathématiques avancées, la physique, l'ingénierie et certains algorithmes informatiques. Les programmeurs travaillent avec eux pour gérer les calculs impliquant des racines carrées de nombres négatifs et des fonctions oscillantes.
-
 ## Comment:
 PHP fournit un support intégré pour les nombres complexes en utilisant l'extension `ext-intl` avec la classe `NumberFormatter`. Voici un exemple :
 

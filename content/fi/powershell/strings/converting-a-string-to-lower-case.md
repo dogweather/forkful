@@ -12,9 +12,6 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## What & Why? | Mikä & Miksi?
-Muuttamalla merkkijonon pieniksi kirjaimiksi varmistetaan, että tiedon vertailu ja käsittely on yhdenmukaista, tapahtuipa se sitten käyttöliittymässä tai tietokannassa. Ohjelmoijat tekevät tämän esimerkiksi poistaakseen syötteiden kirjainkokoriippuvuuden, mikä vähentää virheitä ja parantaa käyttäjäkokemusta.
-
 ## How to: | Kuinka:
 PowerShellissa merkkijonon muuttaminen pieniksi kirjaimiksi on yksinkertaista. Käytä `.ToLower()` -metodia tai `ToLowerInvariant()` -metodia, jos haluat varmistaa kielen alueellisten asetusten huomiotta jättämisen. 
 

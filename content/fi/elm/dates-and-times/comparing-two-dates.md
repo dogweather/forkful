@@ -11,9 +11,6 @@ title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---
 
-## Mikä & Miksi?
-Vertailemme kahta päivämäärää selvittääksemme niiden välisen eron tai kumpi on aikaisempi. Ohjelmoijana tämä auttaa aikajärjestysten käsittelyssä ja ajastettujen tehtävien hallinnassa.
-
 ## Kuinka:
 ```Elm
 import Time exposing (Posix)
@@ -43,7 +40,7 @@ compareExample =
 ```
 
 ## Syväsukellus
-Elmissä päivämäärien vertailu ei ole yhtä suoraviivaista kuin joissain muissa kielissä, johtuen kielisuunnittelusta, joka suosii puhtautta ja turvallisuutta. Date-moduuli esimerkiksi palauttaa `Result`-tyypin, joka pakottaa käsittelyyn virhetilanteet. Historiallisesti Elm on kehittynyt sellaiseksi, jossa "time-travel debugger" on ollut ainutlaatuinen ominaisuus, mikä vaikutti siihen, miten aikaa ja päivämääriä käsitellään. Vaihtoehtoja sisäänrakennetulle Date-moduulille löytyy yhteisön tekemistä paketeista, kuten elm-time ja justinmimbs/date, jotka tarjoavat lisätoiminnallisuuksia. 
+Elmissä päivämäärien vertailu ei ole yhtä suoraviivaista kuin joissain muissa kielissä, johtuen kielisuunnittelusta, joka suosii puhtautta ja turvallisuutta. Date-moduuli esimerkiksi palauttaa `Result`-tyypin, joka pakottaa käsittelyyn virhetilanteet. Historiallisesti Elm on kehittynyt sellaiseksi, jossa "time-travel debugger" on ollut ainutlaatuinen ominaisuus, mikä vaikutti siihen, miten aikaa ja päivämääriä käsitellään. Vaihtoehtoja sisäänrakennetulle Date-moduulille löytyy yhteisön tekemistä paketeista, kuten elm-time ja justinmimbs/date, jotka tarjoavat lisätoiminnallisuuksia.
 
 ## Katso Myös
 - Elm Date moduulin dokumentaatio: https://package.elm-lang.org/packages/elm-lang/core/latest/Date

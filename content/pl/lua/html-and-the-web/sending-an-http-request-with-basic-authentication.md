@@ -12,9 +12,6 @@ title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---
 
-## What & Why? (Co i dlaczego?)
-Wysyłanie żądania HTTP z uwierzytelnianiem podstawowym to sposób na zapewnienie dostępu do zasobów wymagających potwierdzenia tożsamości. Programiści wykorzystują to do komunikacji z zabezpieczonymi API, pozwalając aplikacjom na operacje wymagające autoryzacji.
-
 ## How to: (Jak to zrobić:)
 ```Lua
 local http = require("socket.http")

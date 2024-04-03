@@ -11,11 +11,7 @@ title: Werken met JSON
 weight: 38
 ---
 
-## Wat & Waarom?
-JSON (JavaScript Object Notation) is een tekstformaat voor gegevensuitwisseling. Programmeurs gebruiken het vanwege de eenvoud en interoperabiliteit tussen talen, waardoor het delen van gegevens tussen diensten en applicaties naadloos verloopt.
-
 ## Hoe te:
-
 In Rust zijn de `serde` en `serde_json` crates de go-to bibliotheken voor werk met JSON. Hier is hoe je ze gebruikt:
 
 Voeg eerst afhankelijkheden toe in `Cargo.toml`:
@@ -59,11 +55,9 @@ fn main() {
 ```
 
 ## Diepgang:
-
 Het `serde` bibliotheeksysteem is sinds de release in 2015 de de facto oplossing van Rust voor serialisatie. Het ondersteunt veel formaten naast JSON. Afwisselend kun je `json-rust` of `simd-json` tegenkomen, die verschillende prestatieafwegingen bieden. Een cruciaal implementatiedetail om te begrijpen is dat `serde` deserialisatie vereist dat gegevensstructuren bekend zijn op compileertijd, wat niet het geval is bij meer dynamische talen zoals JavaScript.
 
 ## Zie Ook:
-
 - Serde's officiële documentatie biedt een uitgebreide handleiding: [Serde Documentatie](https://serde.rs)
 - De onderliggende details van de `serde_json` crate: [serde_json Crate](https://docs.rs/serde_json)
 - Meer over JSON zelf: [Introductie van JSON](https://www.json.org/json-en.html)

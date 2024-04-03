@@ -10,12 +10,7 @@ title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---
 
-## Hva & Hvorfor?
-
-Komplekse tall utvider den reelle tallinjen gjennom tillegg av en imaginær enhet, `i`, der `i^2 = -1`. De er avgjørende i felter som ingeniørvitenskap, fysikk og avansert matematikk, hvor de modellerer fenomener som reelle tall ikke kan håndtere, som elektriske strømmer og signalbehandling.
-
 ## Hvordan:
-
 Java har ikke innebygd støtte for komplekse tall, men vi kan lage vår egen klasse eller bruke et bibliotek. Her er et raskt eksempel på hvordan du oppretter en enkel `ComplexNumber` klasse og bruker den:
 
 ```java
@@ -55,7 +50,6 @@ Sum: 3.0 + 7.0i
 ```
 
 ## Dypdykk
-
 Før høynivåspråk som Java, jobbet programmerere direkte med matematikkbiblioteker i språk som Fortran eller C for å håndtere komplekse operasjoner. Konseptet sporer tilbake til det 16. århundret, kreditert matematikere som Gerolamo Cardano og Rafael Bombelli.
 
 I Java er `java.lang.Math` et sted å gå for det essensielle, men hopper over komplekse tall, sannsynligvis fordi ikke hver programmerer bruker dem. Alternativer? Bruk biblioteker. Apache Commons Math tilbyr en `Complex` klasse pakket med metoder for manipulasjon. Her er hvorfor det er stilig å rulle din egen: Lettvektig, skreddersydd til dine eksakte behov, og ingen biblioteksoverhod.
@@ -63,7 +57,6 @@ I Java er `java.lang.Math` et sted å gå for det essensielle, men hopper over k
 En viktig detalj: pass på presisjonen til flyttall. Datamaskiner kan ikke representere noen tall nøyaktig, noe som fører til avrundingsfeil. Når du utfører repeterende komplekse operasjoner, kan disse feilene akkumuleres!
 
 ## Se Også
-
 For dypere dykk og mer komplekse operasjoner, sjekk:
 
 - [Apache Commons Math](https://commons.apache.org/proper/commons-math/)

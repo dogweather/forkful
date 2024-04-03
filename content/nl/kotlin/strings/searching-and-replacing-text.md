@@ -12,9 +12,6 @@ title: Tekst zoeken en vervangen
 weight: 10
 ---
 
-## Wat & Waarom?
-Tekst zoeken en vervangen is als verstoppertje spelen met strings, om vervolgens de verstopper te ruilen met iemand anders. Het is een veelvoorkomende programmeertaak, essentieel voor taken zoals bulkbewerking, gegevenssanering en het automatiseren van saaie klusjes.
-
 ## Hoe:
 Kotlin vereenvoudigt tekstmanipulatie door middel van zijn standaardbibliotheek. Hieronder zie je hoe je `replace` gebruikt om woorden te wisselen.
 

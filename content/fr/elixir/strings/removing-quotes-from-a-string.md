@@ -12,9 +12,6 @@ title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---
 
-## Quoi & Pourquoi ?
-Enlever les guillemets d'une chaîne de caractères signifie se défaire de ces enveloppes supplémentaires pour obtenir le texte pur à l'intérieur. Les programmeurs font cela pour assainir l'entrée, éviter les erreurs, et préparer les données pour le traitement où les guillemets sont des nuisances, pas des fonctionnalités.
-
 ## Comment faire :
 Elixir n'a pas de fonction intégrée pour 'enlever les guillemets', mais c'est un jeu d'enfant de créer la vôtre avec la correspondance de motifs ou les fonctions `String`. Voyez ces extraits :
 

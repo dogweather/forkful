@@ -11,9 +11,6 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-En REPL (Read-Eval-Print Loop) är en enkel, interaktiv programmeringsmiljö. Programmerare använder den för snabba kodförsök, testa kodsnuttar, eller att lära sig ett språks syntax utan att skapa en fullständig applikation.
-
 ## Hur man gör:
 Att starta Kotlin's REPL är enkelt. Öppna din terminal och skriv `kotlinc`. Du landar då i Kotlin-skalen. Låt oss försöka definiera en variabel och skriva ut dess värde:
 

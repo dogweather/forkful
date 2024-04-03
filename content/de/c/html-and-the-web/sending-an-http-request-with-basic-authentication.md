@@ -13,9 +13,6 @@ title: Eine HTTP-Anfrage mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-Das Senden einer HTTP-Anfrage mit Basisauthentifizierung in C erfordert das Erstellen einer HTTP-Anfrage, die einen Autorisierungsheader mit in Base64 kodierten Benutzerdaten enthält. Dies ist eine gängige Methode, um HTTP-Anfragen eine einfache Authentifizierungsschicht hinzuzufügen, die es ermöglicht, programmatisch auf beschränkte Ressourcen zuzugreifen.
-
 ## Wie man es macht:
 Um eine HTTP-Anfrage mit Basisauthentifizierung in C zu senden, müssen wir die libcurl-Bibliothek verwenden, eine beliebte, vielseitige und einfach zu bedienende Client-seitige URL-Übertragungsbibliothek. Sie unterstützt verschiedene Protokolle, einschließlich HTTP und HTTPS, was unsere Aufgabe vereinfacht. Stellen Sie sicher, dass libcurl auf Ihrem System installiert ist, bevor Sie fortfahren. Hier ist ein einfaches Beispiel, das zeigt, wie man eine GET-Anfrage mit Basisauthentifizierung sendet:
 

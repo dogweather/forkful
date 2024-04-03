@@ -18,9 +18,6 @@ title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
 weight: 45
 ---
 
-## 什么 & 为什么？
-在Python中发送带有基本认证的HTTP请求允许你安全地访问需要用户名和密码的网络资源。程序员这么做是因为一些网站的API要求使用基本认证来验证用户身份。
-
 ## 如何：
 ```python
 import requests

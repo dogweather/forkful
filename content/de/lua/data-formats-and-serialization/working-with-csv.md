@@ -15,12 +15,7 @@ title: Arbeiten mit CSV
 weight: 37
 ---
 
-## Was & Warum?
-
-Die Arbeit mit CSV-Dateien (Comma-Separated Values, auf Deutsch „durch Kommas getrennte Werte“) umfasst das Parsen und Generieren von Textdaten, die in Reihen und Spalten organisiert sind, wobei Kommas verwendet werden, um einzelne Werte zu trennen. Programmierer beschäftigen sich oft mit diesem Prozess, um den Datenaustausch zwischen verschiedenen Anwendungen, Datenbanken oder für Aufgaben der Datenverarbeitung und -analyse zu erleichtern, aufgrund der weit verbreiteten Unterstützung und Einfachheit von CSV.
-
 ## Wie geht das:
-
 In Lua kann die Arbeit mit CSV-Dateien durch grundlegende Datei-IO-Operationen, die von der Sprache bereitgestellt werden, ohne die Notwendigkeit externer Bibliotheken für einfache Aufgaben, angegangen werden. Für komplexere Operationen, wie z.B. die Behandlung von Sonderfällen (z.B. Kommas innerhalb von Werten), könnte es vorteilhaft sein, Drittanbieter-Bibliotheken wie `lua-csv` zu verwenden.
 
 ### Eine CSV-Datei lesen

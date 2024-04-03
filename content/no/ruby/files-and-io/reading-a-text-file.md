@@ -11,9 +11,6 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## What & Why?
-Lese en tekstfil i Ruby betyr å hente data fra en fil som er lagret på disken. Programmerere gjør dette for å behandle informasjon som er bevart over tid, utenfor et program.
-
 ## How to:
 ```Ruby
 # Enkel lesing av en hel fil

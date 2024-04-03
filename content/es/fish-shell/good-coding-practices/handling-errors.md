@@ -10,9 +10,6 @@ title: Manejo de errores
 weight: 16
 ---
 
-## ¿Qué y Por Qué?
-El manejo de errores permite que tu script trate lo inesperado de manera elegante. Lo hacemos para gestionar fallos sin hacer que el pelo de nuestros usuarios se vuelva gris.
-
 ## Cómo hacerlo:
 Para atrapar errores en Fish, apóyate en el comando `status` y las condicionales. Supongamos que `ping` falla; aquí te mostramos cómo detectarlo:
 

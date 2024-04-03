@@ -13,12 +13,7 @@ title: Scrivere sull'errore standard
 weight: 25
 ---
 
-## Cosa e perché?
-
-Scrivere sull'errore standard in Visual Basic for Applications (VBA) comporta l'indirizzare messaggi di errore o diagnosi separati dall'uscita standard, solitamente verso la console o un file di log. I programmatori fanno ciò per separare l'output regolare del programma dai messaggi di errore, rendendo così più facile il debug dei programmi o l'allerta degli utenti sui problemi senza ingombrare l'uscita principale.
-
 ## Come fare:
-
 In VBA, non essendoci una funzione incorporata diretta per scrivere specificamente sull'errore standard come in alcuni altri linguaggi di programmazione, un'alternativa comune consiste nell'utilizzare `Debug.Print` per l'output degli errori durante lo sviluppo o creare una funzione di logging personalizzata che imita questo comportamento per le applicazioni in produzione. Di seguito è riportato un esempio di come si potrebbe implementare e utilizzare tale funzione:
 
 ```vb
@@ -48,7 +43,6 @@ ERROR: Si è verificato un errore durante l'elaborazione della tua richiesta.
 ```
 
 ## Approfondimento
-
 Visual Basic for Applications non include intrinsecamente un meccanismo dedicato alla scrittura sull'errore standard a causa della sua natura profondamente integrata con applicazioni ospiti come Excel, Word o Access, che tradizionalmente si affidano a interfacce utente grafiche piuttosto che all'output della console. Questa è una divergenza notevole dalle applicazioni basate su console tipicamente sviluppate in linguaggi come C o Python, dove i flussi di output standard ed errore standard sono concetti fondamentali.
 
 Storicamente, il focus di VBA è sempre stato più sull'interazione con i modelli di documento delle sue applicazioni ospiti e meno sui meccanismi tradizionali di logging delle applicazioni. Pertanto, gli sviluppatori spesso ricorrono all'implementazione di soluzioni di logging personalizzate, come visto nell'esempio, o all'utilizzo di chiamate API di Windows per esigenze più avanzate di gestione degli errori e di logging.

@@ -10,9 +10,6 @@ title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---
 
-## Was & Warum?
-Das Lesen von Kommandozeilenargumenten ermöglicht es deinen Swift-Programmen, beim Start Input zu erhalten – praktisch für flexible Tools und Automatisierung. Programmierer nutzen das, um ihre Anwendungen an verschiedene Szenarien anzupassen, ohne den Code zu ändern.
-
 ## So geht's:
 Swift macht das Einlesen von Kommandozeilenargumenten einfach. `CommandLine.arguments` enthält alle Argumente als `[String]`, direkt loslegen:
 

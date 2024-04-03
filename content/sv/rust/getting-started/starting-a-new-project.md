@@ -10,9 +10,6 @@ title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---
 
-## Vad & Varför?
-Att börja ett nytt projekt innebär att skapa en grund för din kodstruktur. Programmerare tar detta steg för att organisera sina idéer och bygga en hållbar bas för applikationsutveckling.
-
 ## How to:
 För att kickstarta ett nytt Rust-projekt använder vi `cargo`, Rusts inbyggda paketmanager och byggverktyg. Här är grunderna:
 

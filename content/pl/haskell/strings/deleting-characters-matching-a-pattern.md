@@ -11,9 +11,6 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## Co i dlaczego?
-Usuwanie znaków pasujących do wzorca to proces filtrowania ciągu, by pozbyć się niechcianych znaków. Programiści robią to dla czystości danych, bezpieczeństwa aplikacji lub odpowiedniego formatowania tekstów.
-
 ## Jak to zrobić:
 ```Haskell
 import Data.List (isInfixOf)

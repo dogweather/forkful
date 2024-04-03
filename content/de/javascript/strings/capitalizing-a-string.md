@@ -14,9 +14,6 @@ title: "Einen String gro\xDFschreiben"
 weight: 2
 ---
 
-## Was & Warum?
-Das Kapitalisieren eines Strings bedeutet, das erste Zeichen des Strings in einen Großbuchstaben umzuwandeln, während die restlichen Zeichen unverändert bleiben. Diese Operation wird in JavaScript häufig durchgeführt, um Benutzereingaben zu formatieren, Namen oder Titel anzuzeigen und Konsistenz in den Texten der Benutzeroberfläche zu gewährleisten.
-
 ## Wie geht das:
 In JavaScript gibt es keine integrierte Methode, um Strings direkt zu kapitalisieren, aber es ist einfach, dies mit grundlegenden String-Manipulationsmethoden zu implementieren.
 

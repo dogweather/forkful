@@ -14,12 +14,7 @@ title: "D\xE9marrer un nouveau projet"
 weight: 1
 ---
 
-## Quoi & Pourquoi ?
-
-Commencer un nouveau projet en C nécessite la mise en place d'une structure de code de base et d'un environnement pour gérer efficacement les tâches de développement. Les programmeurs font cela pour rationaliser le processus de construction, garantir la cohérence, et faciliter la maintenance et la scalabilité du logiciel au fil du temps.
-
 ## Comment faire :
-
 Au cœur de tout projet C se trouve le code source. Un point de départ typique implique de créer un fichier principal, souvent nommé `main.c`, qui abrite le point d'entrée d'un programme. De plus, un `Makefile` est essentiel pour gérer la compilation afin de rationaliser les constructions de projet.
 
 Voici un exemple minimal :
@@ -55,5 +50,4 @@ Bonjour, monde !
 ```
 
 ## Plongée Profonde
-
 Initier un projet en C ne concerne pas seulement l'écriture du code ; il s'agit de mettre en place une base solide pour la gestion de projet. Cette pratique a évolué dès les premiers jours de la programmation, découlant du besoin d'organiser et de rationaliser le processus de compilation de systèmes larges et complexes issus du monde UNIX. Le système GNU Make, introduit dans les années 80, a révolutionné cela en automatisant le processus de construction, le rendant un outil essentiel dans les projets C modernes. Cependant, l'essor des environnements de développement intégrés (IDE) et d'autres langages de programmation de haut niveau a introduit différentes pratiques d'initialisation de projets qui pourraient inclure des systèmes de construction automatisés, la gestion des dépendances et l'intégration du contrôle de version dès le départ. Malgré ces avancées, la simplicité et le contrôle offerts par un Makefile et un répertoire de code source bien organisé restent inestimables, en particulier pour la programmation au niveau système où l'efficacité et la gestion des ressources sont primordiales. Néanmoins, pour les projets plus importants, des outils comme CMake ou Meson deviennent préférables pour leur capacité à gérer des constructions complexes et la compatibilité multiplateforme, suggérant une tendance vers des outils d'initiation de projet plus sophistiqués dans l'écosystème C.

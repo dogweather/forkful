@@ -12,16 +12,10 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## Qué y Por Qué?
-
-Buscar y reemplazar texto en Dart implica examinar cadenas para encontrar ciertos patrones o secuencias de caracteres y sustituirlos con nuevo contenido. Esta operación es fundamental para tareas como la validación de datos, formateo de salida, análisis de entradas de usuarios, o incluso manipulación de URLs y rutas de archivos, haciendo las aplicaciones más dinámicas y responsivas a las necesidades de los usuarios.
-
 ## Cómo hacerlo:
-
 Dart ofrece métodos robustos para buscar y reemplazar texto directamente a través de su clase `String`, sin necesidad de bibliotecas externas. Así es como puedes hacerlo:
 
 ### Búsqueda y Reemplazo Básicos
-
 Para buscar una subcadena y reemplazarla con otra cadena, puedes usar `replaceAll`:
 
 ```dart
@@ -31,7 +25,6 @@ print(textoModificado); // Salida: Hola, Flutter! Flutter es genial.
 ```
 
 ### Uso de Expresiones Regulares
-
 Para necesidades de búsqueda y reemplazo más complejas, Dart utiliza expresiones regulares a través de la clase `RegExp`. Esto permite el emparejamiento de patrones y reemplazo en cadenas:
 
 ```dart
@@ -43,7 +36,6 @@ print(textoModificado); // Salida: Dart 2024, Flutter 2024
 Este ejemplo encuentra todas las instancias de uno o más dígitos (`\d+`) en la cadena y las reemplaza con "2024".
 
 ### Búsqueda Insensible a Mayúsculas y Minúsculas
-
 Para realizar una búsqueda que no distinga entre mayúsculas y minúsculas, puedes modificar el constructor `RegExp` para ignorar el caso:
 
 ```dart
@@ -53,7 +45,6 @@ print(textoModificado); // Salida: Bienvenido a Flutter, el lenguaje de programa
 ```
 
 ### Reemplazando con una Función
-
 Para reemplazos dinámicos basados en la coincidencia misma, Dart permite pasar una función a `replaceAllMapped`. Esta función puede realizar operaciones o cálculos sobre las secuencias coincidentes:
 
 ```dart

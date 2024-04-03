@@ -9,10 +9,9 @@ title: Reading a text file
 weight: 22
 ---
 
-## What & Why?
-Reading a text file in PHP means pulling content from a file into your script. Programmers do this to handle data storage, configuration, or to process large datasets without cluttering their code.
-
 ## How to:
+
+
 ### Using `file_get_contents`:
 ```PHP
 $content = file_get_contents("example.txt");

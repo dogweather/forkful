@@ -13,12 +13,7 @@ title: Quotes uit een string verwijderen
 weight: 9
 ---
 
-## Wat & Waarom?
-
-Het verwijderen van aanhalingstekens uit een string in Go gaat over het elimineren van de leidende en sluitende aanhalingstekens (`"` of `'`) van een gegeven string. Programmeurs moeten deze taak vaak uitvoeren om gebruikersinvoer te schonen, tekstgegevens effectiever te parsen of strings voor te bereiden voor verdere verwerking die content zonder aanhalingstekens vereist.
-
 ## Hoe te:
-
 Go biedt verschillende benaderingen om aanhalingstekens uit een string te verwijderen, maar een van de meest eenvoudige methoden is het gebruik van de functies `Trim` en `TrimFunc` die door het `strings`-pakket worden aangeboden. Hier is hoe je het doet:
 
 ```go
@@ -55,7 +50,6 @@ Met strings.TrimFunc: Dit is een 'gequote' string
 Beide methoden verwijderen effectief de leidende en sluitende aanhalingstekens uit de string.
 
 ## Diepgaande duik
-
 De functies `Trim` en `TrimFunc` uit het `strings`-pakket maken deel uit van Go's uitgebreide standaardbibliotheek, ontworpen om krachtige, maar toch eenvoudige stringmanipulatiemogelijkheden te bieden zonder de noodzaak voor pakketten van derden. Historisch gezien komt de noodzaak om strings efficiënt te kunnen hanteren en manipuleren voort uit Go's primaire focus op netwerkservers en dataparsers, waarbij tekstverwerking een veelvoorkomende taak is.
 
 Een opvallend aspect van deze functies is hun implementatie op basis van runes (Go's representatie van een Unicode-codepunt). Dit ontwerp stelt hen in staat om naadloos strings te hanteren die multibytekarakters bevatten, waardoor Go's benadering van stringmanipulatie zowel robuust als Unicode-vriendelijk is.

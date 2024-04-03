@@ -11,9 +11,6 @@ title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---
 
-## Vad & Varför?
-Beräkning av ett datum i framtiden eller förflutet handlar om att ta ett givet datum och addera eller subtrahera tid från det. Programmerare gör detta för att hantera tidsbaserade händelser, t.ex. för att beräkna slutdatum för uppgifter eller avgöra tidskillnader.
-
 ## Hur gör man:
 För att hantera datum och tid i Rust använder vi `chrono`-biblioteket. Här är en enkel guide:
 

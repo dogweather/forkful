@@ -11,9 +11,6 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-## What & Why?
-Obliczanie daty w przyszłości lub przeszłości to sposób na ustalenie wartości daty przed lub po określonym czasie. Programiści robią to m.in. do śledzenia terminów, harmonogramowania zadań, czy wyznaczania dat ważności.
-
 ## How to:
 W Clojure do obliczania dat można wykorzystać bibliotekę `clj-time`, bazującą na Joda-Time. Poniżej przykłady użycia.
 

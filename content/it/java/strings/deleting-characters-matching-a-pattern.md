@@ -11,9 +11,6 @@ title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---
 
-## Che cosa & Perché?
-In Java, cancellare caratteri che corrispondono a un modello significa usare espressioni regolari per identificare e rimuovere sequenze specifiche di caratteri da una stringa. Lo facciamo per validare l'input, pulire i dati, o manipolare testo per varie necessità del codice.
-
 ## Come fare:
 ```java
 public class RimozioneCaratteri {

@@ -14,12 +14,7 @@ title: Att Arbeta med YAML
 weight: 41
 ---
 
-## Vad & Varför?
-
-YAML, ett rekursivt akronym för "YAML Ain't Markup Language", är ett människoläsbart data-serialiseringsformat som används för konfigurationsfiler och datautbyte mellan språk med olika datastrukturer. Programmerare använder YAML på grund av dess enkelhet och läslighet, vilket gör det till ett idealiskt val för att konfigurera applikationer och underlätta datautbyte i polyglotta programmeringsmiljöer.
-
 ## Hur man:
-
 Clojure inkluderar inte inbyggt stöd för YAML, men du kan använda tredjepartsbibliotek som `clj-yaml` för att tolka och generera YAML-data. Först, lägg till biblioteket i dina projektberoenden:
 
 ```clojure
@@ -30,7 +25,6 @@ Clojure inkluderar inte inbyggt stöd för YAML, men du kan använda tredjeparts
 Så här kan du använda `clj-yaml` för att tolka YAML och konvertera Clojure-mapar till YAML.
 
 ### Tolka YAML:
-
 ```clojure
 (require '[clj-yaml.core :as yaml])
 
@@ -42,7 +36,6 @@ Så här kan du använda `clj-yaml` för att tolka YAML och konvertera Clojure-m
 ```
 
 ### Generera YAML från Clojure:
-
 ```clojure
 (require '[clj-yaml.core :as yaml])
 

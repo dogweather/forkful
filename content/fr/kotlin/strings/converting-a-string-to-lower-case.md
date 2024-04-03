@@ -11,9 +11,6 @@ title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---
 
-## What & Why?
-Convertir une chaîne en minuscules, c'est transformer tous les caractères d'une chaîne de texte en leur équivalent minuscule. Les programmeurs font cela pour uniformiser les données, facilitant ainsi les comparaisons et recherches de texte.
-
 ## How to:
 Kotlin rend la conversion en minuscules facile avec la fonction `.toLowerCase()`. Voici comment l'utiliser :
 

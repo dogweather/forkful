@@ -11,9 +11,6 @@ title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---
 
-## What & Why?
-Wyciąganie podłańcuchów to proces pozyskiwania krótszych ciągów znaków z większego tekstu. Programiści używają tej techniki, by manipulować danymi tekstowymi, uzyskiwać wartościowe informacje lub przygotowywać tekst do wyświetlenia użytkownikowi.
-
 ## How to:
 TypeScript daje kilka metod do łatwego wydobywania podłańcuchów. Przyjrzyjmy się przykładom:
 

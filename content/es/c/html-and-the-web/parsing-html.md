@@ -14,12 +14,7 @@ title: Analizando HTML
 weight: 43
 ---
 
-## Qué y Por Qué?
-
-Analizar HTML en C implica examinar documentos HTML para extraer datos, estructura o partes específicas de forma eficiente, a menudo como precursor de la minería de datos o el web scraping. Los programadores lo hacen para automatizar la extracción de información, permitiendo procesar o reutilizar el contenido web programáticamente.
-
 ## Cómo hacerlo:
-
 Parecería desalentador analizar HTML debido a la complejidad del HTML y sus frecuentes desviaciones de estructuras limpias y bien formadas. Sin embargo, utilizar una biblioteca como `libxml2`, específicamente su módulo de análisis de HTML, simplifica el proceso. Este ejemplo demuestra cómo usar `libxml2` para analizar HTML y extraer información.
 
 Primero, asegúrate de que `libxml2` esté instalado en tu entorno. En muchas distribuciones de Linux, puedes instalarlo a través del gestor de paquetes. Por ejemplo, en Ubuntu:
@@ -64,7 +59,6 @@ Se encontró párrafo: Hola, mundo!
 Este ejemplo se enfoca en extraer texto dentro de las etiquetas de párrafo, pero `libxml2` ofrece un sólido soporte para navegar y consultar diversas partes de un documento HTML.
 
 ## Profundización
-
 Analizar HTML en C se remonta a los primeros días del desarrollo web. Inicialmente, los desarrolladores tenían que depender de soluciones de análisis personalizadas, a menudo rudimentarias, debido a la falta de bibliotecas estandarizadas y el estado caótico del HTML en la web. La introducción de bibliotecas como `libxml2` marcó un progreso significativo, ofreciendo enfoques más estandarizados, eficientes y resilientes para analizar HTML.
 
 A pesar de la velocidad y el control inigualables de C, vale la pena señalar que C no siempre puede ser la mejor herramienta para analizar HTML, especialmente para tareas que requieren ciclos de desarrollo rápidos o que tratan con HTML excepcionalmente mal formado. Los lenguajes con bibliotecas de análisis de HTML de alto nivel, como Python con Beautiful Soup, proporcionan interfaces más abstractas y amigables para el usuario a costa de algo de rendimiento.

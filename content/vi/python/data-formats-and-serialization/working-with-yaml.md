@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi YAML"
 weight: 41
 ---
 
-## Gì và Tại sao?
-Làm việc với YAML có nghĩa là phân tích và tạo ra các tài liệu YAML (Yet Another Markup Language - Ngôn Ngữ Đánh Dấu Khác) trong Python. Lập trình viên thực hiện điều này để quản lý các tệp cấu hình, cài đặt ứng dụng, hoặc việc chuỗi hóa dữ liệu dễ đọc và viết cho con người.
-
 ## Làm thế nào:
 Để làm việc với YAML trong Python, bạn cần `pyyaml`. Cài đặt nó sử dụng:
 

@@ -14,9 +14,6 @@ title: "Calculer une date dans le futur ou le pass\xE9"
 weight: 26
 ---
 
-## Quoi & Pourquoi ?
-Calculer une date dans le futur ou le passé consiste à déterminer une date spécifique en ajoutant ou en soustrayant un certain nombre de jours, de mois ou d'années à une date donnée. Les programmeurs font cela pour des tâches telles que la planification d'événements, la génération de rappels ou la gestion des dates d'expiration, ce qui en fait une fonctionnalité essentielle dans diverses applications, allant des systèmes de calendrier au logiciel financier.
-
 ## Comment faire :
 Bien que la bibliothèque standard du C ne fournisse pas de fonctions directes pour l'arithmétique des dates, vous pouvez manipuler les dates en utilisant la bibliothèque `time.h`, en travaillant spécifiquement avec le type de données `time_t` et `struct tm`. Voici un exemple simplifié de comment ajouter des jours à la date actuelle :
 

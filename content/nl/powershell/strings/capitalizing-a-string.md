@@ -12,9 +12,6 @@ title: Een string met hoofdletters maken
 weight: 2
 ---
 
-## Wat & Waarom?
-Een tekenreeks kapitaliseren betekent dat elke letter met een hoofdletter begint, doorgaans gebruikt voor titels of om eigennamen te benadrukken. Programmeurs gebruiken het om de output te formatteren of gegevens voor te bereiden voor consistentie in de weergave.
-
 ## Hoe:
 Laten we wat tekst opvrolijken. In PowerShell, gebruik `.ToTitleCase` van `System.Globalization` voor kapitalisatie zoals bij titels, of eenvoudige methodes zoals `.ToUpper()` of `.ToLower()` om de hoofdlettergebruik te veranderen.
 

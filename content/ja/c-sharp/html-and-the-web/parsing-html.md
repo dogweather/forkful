@@ -23,16 +23,10 @@ title: "HTML\u306E\u89E3\u6790"
 weight: 43
 ---
 
-## 何となく理由？
-
-プログラミングにおけるHTMLの解析とは、HTMLドキュメントの構造を分析し、その内容をプログラムで抽出、操作、かつ対話することを可能にします。プログラマーは、ウェブスクレイピング、データの抽出、あるいはさまざまなアプリケーション用にウェブページやHTMLドキュメントを動的に変更するためにこれを行います。これはウェブ開発、データ分析、自動化テストシナリオにおいて重要なスキルとなります。
-
 ## 方法：
-
 .NETは`HttpClient`でウェブページをフェッチするなど、HTML作業のための基本的なサポートを提供しますが、組み込みの総合的なHTMLパーサーを欠いています。そのため、ほとんどのC#開発者は、HtmlAgilityPackやAngleSharpのような人気の第三者ライブラリに頼ります。これらのライブラリはHTMLDOMの簡単なクエリ、操作、およびトラバーサルを可能にします。
 
 ### HtmlAgilityPackを使用する
-
 1. **HtmlAgilityPackのインストール**: まず、NuGetを通じてプロジェクトにHtmlAgilityPackパッケージを追加します。
    ```
    Install-Package HtmlAgilityPack
@@ -74,7 +68,6 @@ weight: 43
    ```
 
 ### AngleSharpの使用
-
 1. **AngleSharpのインストール**: NuGetを通じてプロジェクトにAngleSharpライブラリを追加します。
    ```
    Install-Package AngleSharp

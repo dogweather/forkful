@@ -16,9 +16,6 @@ title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
 weight: 6
 ---
 
-## What & Why? (무엇인가 & 왜 사용하는가?)
-문자열에서 부분 문자열을 추출한다는 건 주어진 문자열의 일부를 뽑아내는 작업입니다. 데이터 처리나 패턴 매칭 때문에 프로그래머들이 자주 사용합니다.
-
 ## How to: (방법)
 ```Haskell
 import Data.List (isPrefixOf)

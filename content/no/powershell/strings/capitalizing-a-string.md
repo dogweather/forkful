@@ -14,9 +14,6 @@ title: Sette stor bokstav i en streng
 weight: 2
 ---
 
-## Hva og hvorfor?
-Å sette stor forbokstav i en streng i PowerShell innebærer å transformere det første tegnet i en gitt streng til stor bokstav mens resten av strengen forblir uendret. Programmerere utfører ofte denne oppgaven for formateringsformål, slik som å forberede tekst for visning i brukergrensesnitt eller å følge grammatikalske regler i genererte dokumenter.
-
 ## Hvordan:
 PowerShell, som er et allsidig verktøy, lar deg sette stor forbokstav i en streng ved hjelp av enkle metoder uten behov for tredjepartsbiblioteker. Slik kan du gjøre det:
 

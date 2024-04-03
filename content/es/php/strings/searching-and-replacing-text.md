@@ -10,12 +10,7 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## Qué y Por Qué?
-
-Buscar y reemplazar texto es básicamente cuando encuentras una cadena de texto y la cambias por otra. Los programadores lo hacen para actualizar datos, corregir errores, o modificar múltiples partes de un código rápidamente.
-
 ## Cómo:
-
 Para buscar y reemplazar en PHP, utilizas `str_replace`. Aquí va un ejemplo simple:
 
 ```PHP
@@ -37,13 +32,11 @@ echo $textoReemplazado; // "PHP es increíble en 2023, muy genial!"
 ```
 
 ## Deep Dive
-
 Historicamente PHP ha ofrecido funciones para manejar textos y con el paso del tiempo, han mejorado en eficiencia y funcionalidad. Mientras `str_replace` es para reemplazos simples y directos, `preg_replace` permite patrones complejos mediante expresiones regulares, lo que da mucho poder si sabes cómo usarlas.
 
 Alternativas como `strtr` o funciones para trabajar con arrays como `array_walk` también pueden utilizarse para manipular textos en ciertos contextos. En cuanto a implementación, recuerda que `preg_replace` puede ser más lento que `str_replace` debido a la complejidad de las expresiones regulares.
 
 ## See Also
-
 Aquí algunos enlaces útiles para ampliar tu conocimiento:
 
 - PHP Manual on `str_replace`: https://www.php.net/manual/es/function.str-replace.php

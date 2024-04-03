@@ -12,12 +12,7 @@ title: Manipolazione di file con one-liner da CLI
 weight: 31
 ---
 
-## Cosa & Perché?
-
-Nel mondo della programmazione, specialmente quando si ha a che fare con ambienti Linux o Unix, manipolare i file direttamente dalla riga di comando (CLI) non è solo una questione di comodità, ma uno strumento potente. Grazie a Fish Shell, con la sua sintassi moderna e utility, puoi trasformare, spostare o analizzare i tuoi file con agilità e precisione. Si tratta di fare di più con meno, semplificare i processi e abbracciare la potenza della linea di comando per una gestione efficiente dei file.
-
 ## Come fare:
-
 Manipolare i file in Fish Shell è sia intuitivo che potente. Ecco alcuni esempi per mostrare le sue capacità:
 
 1. **Creare un file** è semplice quanto basta. Usare il comando `touch`:
@@ -79,7 +74,6 @@ end
 ```
 
 ## Approfondimento
-
 Manipolare i file dalla CLI con singole righe di comando in Fish Shell è sia una competenza che un'arte. Storicamente, i sistemi Unix e Linux hanno sempre fornito un potente insieme di strumenti per la manipolazione dei file, trattando tutto come un file nella loro filosofia. Ciò ha aperto la strada a shell moderne come Fish, che non solo abbracciano ma estendono queste filosofie con una sintassi migliorata e utility aggiuntive.
 
 Sebbene Fish offra un'ottima esperienza utente e capacità di scripting, vale la pena menzionare che potrebbero insorgere alcuni problemi di conformità POSIX, specialmente quando gli script vengono portati da shell più tradizionali come Bash o SH. Ciò perché Fish non mira ad essere conforme a POSIX per progettazione, scegliendo invece un approccio più user-friendly sia nello scripting che nell'uso della riga di comando. Di conseguenza, i programmatori dovrebbero essere consapevoli che, sebbene Fish eccella in molte aree, gli script che richiedono una stretta conformità POSIX potrebbero necessitare di adeguamenti o alternative come `bash` o `zsh` per la compatibilità.

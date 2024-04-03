@@ -12,12 +12,7 @@ title: Een tekstbestand lezen
 weight: 22
 ---
 
-## Wat & Waarom?
-
-Een tekstbestand lezen betekent dat je programma inhoud uit een bestand opslokt als een string. Programmeurs doen dit om gegevens te verwerken of te analyseren die zich bevinden in bestanden op hun schijf. Het is de basis voor taken zoals configuratie, data-analyse, of zelfs om gewoon je to-do lijst uit te halen.
-
 ## Hoe:
-
 Een bestand lezen is een fluitje van een cent in Java, vooral met `java.nio.file`. Hier is een snel voorbeeld:
 
 ```java
@@ -46,7 +41,6 @@ Hallo, bestandlezers!
 ```
 
 ## Diepgaand
-
 Java is geëvolueerd. Vroeger moest je zelf streams en readers beheren - veel boilerplate. Het `java.io` pakket was helemaal in, met `FileReader` en `BufferedReader` vaak gezien in het wild. Toen kwam `java.nio`, met kanalen en buffers voor meer controle.
 
 Nu is `java.nio.file` nog hoger niveau. `Files` en `Paths` vereenvoudigen de klus. Het bovenstaande voorbeeld gebruikt `Files.lines`, dat lijnen lui streamed, geweldig voor grote bestanden. Je krijgt ook try-with-resources, dat automatisch streams sluit om lekken te voorkomen.
@@ -56,7 +50,6 @@ Alternatieven? `Scanner` is handig voor het parsen. Apache Commons IO en Google'
 Wat betreft de implementatie, bestandscodering doet ertoe. `Files.lines` gaat standaard uit van UTF-8, maar je kunt een andere specificeren. Aan de andere kant moet je bij `BufferedReader` de `Charset` vooraf instellen als het niet de standaard is.
 
 ## Zie ook
-
 Voor meer pit, kijk eens naar deze:
 
 - De [`Files`](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/nio/file/Files.html) klasse in Java's officiële documentatie.

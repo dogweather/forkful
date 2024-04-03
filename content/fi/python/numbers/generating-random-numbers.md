@@ -12,12 +12,7 @@ title: Satunnaislukujen generointi
 weight: 12
 ---
 
-## Mikä & Miksi?
-
-Satunnaislukujen tuottaminen tarkoittaa sellaisten lukujen luomista, joita ei voida kohtuullisesti ennakoida paremmin kuin sattuman kautta, mikä on oleellista simulaatioiden, pelien ja turva-algoritmien kehittämisessä. Ohjelmoijat tekevät tämän tuodakseen ennalta-arvaamattomuutta tai simuloidakseen todellisia ilmiöitä sovelluksissaan.
-
 ## Kuinka:
-
 Python tarjoaa `random`-moduulin, joka auttaa luomaan satunnaislukuja eri käyttötarkoituksiin. Näin pääset alkuun:
 
 1. **Moduulin tuonti**
@@ -65,7 +60,6 @@ Python tarjoaa `random`-moduulin, joka auttaa luomaan satunnaislukuja eri käytt
     Esimerkkituloste: `[2, 5, 0, 4, 9, 8, 1, 7, 6, 3]`
 
 ## Syväsukellus
-
 Pythonin `random`-moduuli käyttää pseudosatunnaislukugeneraattoria (PRNG), tarkemmin Mersenne Twister -algoritmia, joka soveltuu yleiskäyttöön mutta ei kryptografisiin tarkoituksiin sen ennustettavuuden vuoksi, jos tarpeeksi monia tulosteita havainnoidaan. Python 3.6:ssa esitelty `secrets`-moduuli tarjoaa paremman vaihtoehdon kryptografisesti vahvojen satunnaislukujen tuottamiseen, mikä on erityisen hyödyllistä turvallisuusherkissä sovelluksissa. Esimerkiksi turvallisen, satunnaisen tokenin tuottaminen salasanan resetointilinkkiä varten:
 
 ```Python

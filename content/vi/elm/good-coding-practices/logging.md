@@ -16,9 +16,6 @@ title: Ghi log
 weight: 17
 ---
 
-## Gì & Tại Sao?
-Ghi lại (Logging) cơ bản là quá trình ghi lại các sự kiện và dữ liệu đầu ra từ một phần mềm khi nó đang chạy, coi nó như nhật ký của phần mềm. Lập trình viên sử dụng ghi lại để theo dõi những gì đang xảy ra bên dưới lớp vỏ - nó cực kỳ quý giá cho việc gỡ lỗi, theo dõi hành vi hệ thống theo thời gian thực và phân tích hoạt động trong quá khứ để tối ưu hóa hiệu suất hoặc kiểm toán.
-
 ## Cách thực hiện:
 Kiến trúc Elm không hỗ trợ các tác dụng phụ như việc ghi lịch sử ngay từ đầu - bạn xử lý chúng qua các lệnh, là một phần của kiến trúc ứng dụng của bạn. Với mục đích giáo dục, hãy xem bạn có thể mô phỏng việc ghi lịch sử bằng cách gửi thông điệp tới JavaScript qua cổng giao tiếp (ports) như thế nào.
 

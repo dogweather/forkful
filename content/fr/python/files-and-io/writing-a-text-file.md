@@ -14,10 +14,9 @@ title: "R\xE9diger un fichier texte"
 weight: 24
 ---
 
-## Quoi et pourquoi ?
-Écrire dans un fichier texte avec Python est une tâche fondamentale qui implique de créer ou d'ouvrir un fichier, puis d'y ajouter du texte ou de le remplacer. Cette fonctionnalité est cruciale pour l'enregistrement de données, la gestion de configuration, et le stockage des résultats générés par des programmes, ce qui en fait un outil de base mais essentiel dans l'arsenal d'un programmeur.
-
 ## Comment faire :
+
+
 ### Utiliser la fonction intégrée `open()`
 La fonction intégrée `open()` de Python est le moyen le plus courant d'écrire dans des fichiers. La fonction permet de spécifier le mode dans lequel le fichier est ouvert - 'w' pour écrire (en remplacement), 'a' pour ajouter, et 'w+' pour écrire+lire.
 
@@ -39,6 +38,7 @@ with open('exemple.txt', 'r') as fichier:
 Bonjour, le monde !
 Ajout de plus de texte.
 ```
+
 ### Utiliser `pathlib.Path`
 Pour une approche plus orientée objet, la classe `Path` du module `pathlib` offre une méthode pour écrire dans des fichiers. C'est une méthode populaire pour les bases de code Python plus récentes.
 

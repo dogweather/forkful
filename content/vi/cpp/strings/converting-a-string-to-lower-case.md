@@ -17,9 +17,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---
 
-## Cái gì & Tại sao?
-Chuyển đổi một chuỗi thành chữ thường có nghĩa là biến đổi tất cả các chữ cái in hoa thành các tương đương in thường của chúng. Lập trình viên thực hiện điều này để đảm bảo tính nhất quán trong nhập liệu của người dùng, xử lý dữ liệu và để đơn giản hóa việc so sánh văn bản.
-
 ## Cách thức:
 Dưới đây là cách bạn loại bỏ sự khác biệt về chữ hoa chữ thường trong C++, các chữ cái in hoa chào thua trước các chữ nhỏ:
 

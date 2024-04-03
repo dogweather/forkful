@@ -12,12 +12,7 @@ title: Eine HTTP-Anfrage senden
 weight: 44
 ---
 
-## Was & Warum?
-
-Das Senden einer HTTP-Anfrage in Google Apps Script bedeutet, programmgesteuert eine Anfrage an einen externen Webserver oder eine API zu stellen. Programmierer tun dies, um Daten von Webdiensten abzurufen oder an sie zu senden, und integrieren so ein weites Reich von Webressourcen und Funktionalitäten direkt in ihre Google Apps Script-Projekte.
-
 ## Wie:
-
 In Google Apps Script ist die primäre Methode zum Senden einer HTTP-Anfrage die Verwendung des `UrlFetchApp`-Dienstes. Dieser Dienst bietet Methoden, um HTTP-GET- und POST-Anfragen zu machen. Hier ist ein einfaches Beispiel für das Ausführen einer GET-Anfrage, um JSON-Daten abzurufen:
 
 ```javascript
@@ -56,7 +51,6 @@ function postExample() {
 Diese Snippets zeigen grundlegende Implementierungen von GET- und POST-Anfragen. Die Ausgabe hängt von der API-Antwort ab und kann im Logger von Google Apps Script angesehen werden.
 
 ## Tiefer eintauchen
-
 Der `UrlFetchApp`-Dienst von Google Apps Script hat sich seit seiner Einführung erheblich weiterentwickelt und bietet eine nuanciertere Kontrolle über HTTP-Anfragen mit Funktionen wie dem Setzen von Headern, dem Payload und der Handhabung von multipart/form-data für Dateiuploads. Obwohl er ein geradliniges Mittel bietet, externe Webdienste zu integrieren, finden Entwickler, die aus robusteren Backend-Sprachen kommen, seine Funktionalität möglicherweise im Vergleich zu Bibliotheken wie Pythons `requests` oder JavaScripts `fetch` API in Node.js etwas begrenzt.
 
 Eine bemerkenswerte Einschränkung ist das Ausführungszeitlimit für Google Apps Script, das sich auf lang andauernde Anfragen auswirkt. Zudem deckt `UrlFetchApp` zwar eine breite Palette von Anwendungsfällen ab, komplexere Szenarien, die OAuth-Authentifizierung oder die Handhabung sehr großer Payloads beinhalten, erfordern möglicherweise kreative Lösungen oder die Nutzung zusätzlicher Google-Cloud-Ressourcen.

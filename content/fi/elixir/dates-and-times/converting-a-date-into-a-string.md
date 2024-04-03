@@ -11,9 +11,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---
 
-## What & Why?
-Muuntaminen päivämäärästä merkkijonoksi tarkoittaa päivämäärä-datan esittämistä luettavassa muodossa. Kehittäjät tekevät tätä, koska ihmiset ymmärtävät paremmin "1. maaliskuuta 2023" kuin puhdasta aikaleimadataa.
-
 ## How to:
 ```elixir
 # Luodaan Päivämäärä

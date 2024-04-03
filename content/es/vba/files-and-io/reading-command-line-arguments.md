@@ -13,12 +13,7 @@ title: "Leyendo argumentos de la l\xEDnea de comandos"
 weight: 23
 ---
 
-## ¿Qué y por qué?
-
-Leer los argumentos de la línea de comandos en Visual Basic para Aplicaciones (VBA) implica acceder a los parámetros pasados a tu programa al ejecutarse. Esta técnica se usa a menudo para influir en el comportamiento o salida de un programa sin necesidad de interacción del usuario, haciendo que las tareas de automatización y scripting sean considerablemente más sencillas y versátiles.
-
 ## Cómo hacerlo:
-
 A diferencia de entornos de programación más directos, VBA no tiene una función integrada para leer directamente los argumentos de la línea de comandos en un sentido convencional porque está diseñado principalmente para incrustarse dentro de aplicaciones de Microsoft Office. Sin embargo, con un poco de creatividad, podemos utilizar el Host de Script de Windows (WSH) o llamar a APIs externas para lograr una funcionalidad similar. Aquí hay una solución práctica utilizando WSH:
 
 1. **Crear un VBScript para Pasar Argumentos a VBA:**
@@ -53,7 +48,6 @@ cscript yourScript.vbs "Hola" "Mundo"
    Esto debería resultar en la ejecución de tu macro VBA con los argumentos "Hola" y "Mundo", mostrándolos en un cuadro de mensaje.
 
 ## Análisis profundo:
-
 En el contexto histórico, VBA fue concebido para extender las capacidades de las aplicaciones de Microsoft Office, no como un entorno de programación independiente. Como tal, la interacción directa con la línea de comandos está fuera de su alcance principal, lo que explica la falta de soporte integrado para leer argumentos de la línea de comandos.
 
 El método descrito anteriormente, aunque efectivo, es más una solución alternativa que una solución nativa, aprovechando el scripting externo para cerrar la brecha. Este enfoque puede introducir complejidad y preocupaciones de seguridad potenciales, ya que requiere habilitar macros y potencialmente bajar la configuración de seguridad para ejecutar.

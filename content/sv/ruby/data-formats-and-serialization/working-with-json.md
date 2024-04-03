@@ -14,16 +14,10 @@ title: Arbeta med JSON
 weight: 38
 ---
 
-## Vad & Varför?
-
-JSON (JavaScript Object Notation) är ett lättviktigt datautbytesformat, som är utbrett i webbapplikationer för dataväxling mellan klienter och servrar. Programmerare arbetar med JSON i Ruby för att tolka data som mottagits från externa källor eller för att formatera data för API-svar, och utnyttjar dess lättlästa struktur för enkel datamanipulation och lagring.
-
 ## Hur:
-
 Ruby, med sitt standardbibliotek, erbjuder sömlösa sätt att tolka och generera JSON. Den primära modulen för dessa operationer är `json`, som enkelt kan integreras i vilken Ruby-applikation som helst.
 
 ### Tolka JSON:
-
 För att konvertera en JSON-sträng till en Ruby-hash kan du använda metoden `JSON.parse`.
 
 ```ruby
@@ -37,7 +31,6 @@ puts ruby_hash
 ```
 
 ### Generera JSON:
-
 Tvärtemot, för att omvandla en Ruby-hash till en JSON-sträng, använder du metoden `JSON.generate` eller metoden `to_json` som är tillgänglig på Ruby-objekt när `json`-biblioteket är inkluderat.
 
 ```ruby
@@ -51,11 +44,9 @@ puts json_strang
 ```
 
 ### Tredjepartsbibliotek:
-
 Även om Rubys standardbibliotek täcker grundläggande hantering av JSON, förlitar sig många projekt på tredjepartsbibliotek för förbättrad funktionalitet och prestanda. Ett populärt val är `Oj` (Optimized JSON).
 
 #### Tolka med Oj:
-
 ```ruby
 require 'oj'
 
@@ -67,7 +58,6 @@ puts ruby_hash
 ```
 
 #### Generera med Oj:
-
 Oj erbjuder också ett snabbt sätt att generera JSON från Ruby-objekt:
 
 ```ruby

@@ -11,9 +11,6 @@ title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---
 
-## ¿Qué y Por Qué?
-Los números complejos son una combinación de números reales y números imaginarios, como `a + bi` donde `i` es la raíz cuadrada de -1. Son clave en campos como la ingeniería y la física para resolver problemas que los números regulares no pueden abordar.
-
 ## Cómo hacerlo:
 Elm no tiene soporte incorporado para números complejos, así que crearás tu propio tipo y funciones. Aquí hay una configuración rápida:
 

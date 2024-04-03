@@ -14,12 +14,7 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i dlaczego?
-
-Tworzenie pliku tekstowego w Visual Basic for Applications (VBA) polega na tworzeniu, modyfikowaniu lub dodawaniu danych tekstowych do plików, co jest podstawowym zadaniem do przechowywania wyników, logowania lub interakcji z innymi aplikacjami. Programiści wykorzystują tę funkcjonalność do automatyzacji raportowania, eksportowania danych lub generowania plików konfiguracyjnych w ekosystemie Microsoft Office.
-
 ## Jak to zrobić:
-
 VBA oferuje kilka metod na zapis do pliku, ale jedną z najprostszych dróg jest użycie `FileSystemObject`. Oto krok po kroku, jak stworzyć prosty plik tekstowy i zapisać do niego dane:
 
 1. **Dodaj odniesienie do Microsoft Scripting Runtime**: Najpierw upewnij się, że twój edytor VBA ma dostęp do `FileSystemObject`. Przejdź do Narzędzia > Odniesienia w edytorze VBA i zaznacz "Microsoft Scripting Runtime".
@@ -54,7 +49,6 @@ Cześć, VBA!
 ```
 
 ## Pogłębienie:
-
 `FileSystemObject` (FSO), część biblioteki Microsoft Scripting Runtime, oferuje bogaty zestaw właściwości i metod do operacji na plikach, idąc dalej niż tradycyjne operacje na plikach oferowane przez VBA (np. `Open`, `Print`#, `Write`#). Oprócz obsługi plików FSO może również manipulować folderami i dyskami, co czyni go potężnym narzędziem do operacji na systemie plików w VBA.
 
 Warto jednak zauważyć, że choć FSO prezentuje bardziej nowoczesne podejście do operacji na plikach w VBA, może wprowadzić dodatkowe obciążenie dla prostych zadań w porównaniu z natywnymi instrukcjami obsługi plików VBA. Ponadto, ponieważ FSO jest częścią zewnętrznej biblioteki, przenośność i kompatybilność z innymi systemami (np. wcześniejszymi wersjami Office, Office na Mac) mogą stanowić problem.

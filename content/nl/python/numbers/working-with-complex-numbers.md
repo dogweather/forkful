@@ -13,9 +13,6 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-Complexe getallen zijn een set van getallen in de vorm `a + bi`, waar `a` en `b` reële getallen zijn, en `i` de imaginaire eenheid is (`i^2 = -1`). In programmeren gebruiken we ze om problemen in verschillende domeinen op te lossen, zoals elektrotechniek, signaalverwerking en kwantumcomputing.
-
 ## Hoe te:
 Python heeft ingebouwde ondersteuning voor complexe getallen. Hier is hoe je ermee kunt spelen:
 

@@ -13,10 +13,8 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mikä & Miksi?
-Standardivirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien ja diagnostiikkatietojen tulostamista konsoliin tai terminaaliin. Ohjelmoijat tekevät sen erotellakseen virhetiedot tavallisesta tulosteesta (stdout), mikä helpottaa debuggausta ja lokianalyysia.
-
 ## Kuinka:
+
 
 ### Perus stderr-tulostus Javassa
 Java tarjoaa suoraviivaisen tavan kirjoittaa stderr:iin käyttäen `System.err.print()` tai `System.err.println()`. Näin se tehdään:
@@ -45,7 +43,6 @@ Tämä tulostaa virheviestin suoraan standardivirheen virtaan.
 Sovelluksille, jotka tarvitsevat kehittyneempää virheenkäsittelyä ja lokitusta, on yleistä käyttää lokituskirjastoa, kuten SLF4J yhdessä Logbackin tai Log4J2:n kanssa. Tämä mahdollistaa joustavamman virhetulosteiden hallinnan, mukaan lukien tiedostoon ohjaus, suodatus ja muotoilu.
 
 #### Esimerkki Logbackin kanssa
-
 Ensiksi, lisää riippuvuus Logbackille `pom.xml` (Maven) tai `build.gradle` (Gradle) tiedostoosi. Mavenille:
 
 ```xml

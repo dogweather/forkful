@@ -14,9 +14,6 @@ title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---
 
-## Cái gì & Tại sao?
-Rút trích chuỗi con có nghĩa là lấy ra các phần cụ thể của một chuỗi. Lập trình viên thực hiện điều này để cô lập dữ liệu, làm sạch đầu vào, hoặc phân tích thông tin cho quá trình xử lý tiếp theo.
-
 ## Cách thực hiện:
 Trong Fish, bạn sử dụng lệnh `string` để thao tác với chuỗi. Dưới đây là cách làm:
 

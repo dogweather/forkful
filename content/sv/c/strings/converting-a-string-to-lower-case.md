@@ -13,12 +13,7 @@ title: "Omvandla en str\xE4ng till gemener"
 weight: 4
 ---
 
-## Vad & Varför?
-
-Att konvertera en sträng till gemener i C innebär att omvandla alla versaler i en given sträng till motsvarande gemener. Programmerare utför ofta denna operation för att standardisera textinmatning för jämförelse, sökoperationer eller helt enkelt för estetisk konsekvens i utmatningen.
-
 ## Hur gör man:
-
 C har inte en inbyggd funktion för direkt konvertering av strängar till gemener, till skillnad från vissa högnivåspråk. Processen kan dock enkelt implementeras med hjälp av C-standardbibliotekets funktioner. Nedan följer en steg-för-steg-guide och ett exempel som illustrerar hur man konverterar en sträng till gemener.
 ```c
 #include <stdio.h>
@@ -52,7 +47,6 @@ Lowercase: hello, world!
 I detta exempel itererar `toLowerCase`-funktionen igenom varje tecken i indatasträngen och konverterar det till motsvarande gemener med hjälp av `tolower`-funktionen från `ctype.h`. Modifieringen görs på plats, vilket ändrar den ursprungliga strängen.
 
 ## Fördjupning
-
 Funktionen `tolower`, som används i exemplet ovan, är en del av C-standardbiblioteket, specifikt inom headerfilen `ctype.h`. Den fungerar baserat på den aktuella lokalanpassningen, men för den standard "C" lokalanpassningen, hanterar den ASCII-teckenuppsättningen där 'A' till 'Z' konverteras till 'a' till 'z'.
 
 Historiskt sett var hanteringen av teckenkodning och gemener/kapitälerkonvertering i C tätt kopplad till ASCII-teckenuppsättningen, vilket begränsade dess användbarhet i internationella eller lokaliserade applikationer där tecken utanför ASCII-uppsättningen är vanliga. Moderna programmeringsspråk kan erbjuda inbyggda strängmetoder för att utföra gemener/kapitälerkonvertering med tanke på lokalanpassning och Unicode-tecken, vilket C saknar inbyggt.

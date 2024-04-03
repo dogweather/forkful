@@ -20,9 +20,6 @@ title: "\u89E3\u6790HTML"
 weight: 43
 ---
 
-## 什么 & 为什么？
-在PHP中解析HTML涉及从HTML文档中提取特定信息。程序员执行此任务以自动化数据提取、网络抓取，或者在他们的应用程序中集成来自各种网页的内容，无需手动干预即可增强功能。
-
 ## 如何操作：
 对于解析HTML，PHP程序员可以利用内置函数或依赖强大的库，如Simple HTML DOM Parser。这里，我们将探讨使用PHP的`DOMDocument`和Simple HTML DOM Parser的示例。
 

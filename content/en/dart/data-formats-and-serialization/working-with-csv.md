@@ -10,16 +10,10 @@ title: Working with CSV
 weight: 37
 ---
 
-## What & Why?
-
-Working with CSV (Comma Separated Values) files involves parsing and generating text files where each line holds values separated by commas. Programmers do this to enable data exchange between different applications or to facilitate data storage in a lightweight, human-readable format.
-
 ## How to:
-
 To handle CSV files in Dart, you typically either manually process the text or use third-party libraries to simplify the task. Here, we'll look at both approaches.
 
 ### Manually Parsing CSV
-
 If your needs are simple, you might opt to manually parse a CSV string. This can be achieved using Dart's core string manipulation functions:
 
 ```dart
@@ -52,7 +46,6 @@ void main() {
 ```
 
 ### Using a Third-Party Library: `csv`
-
 For more complex scenarios or to simplify your code, you can use a popular third-party library like `csv`. First, add it to your project by including `csv: ^5.0.0` (or the latest version) in your `pubspec.yaml` file under `dependencies`. Then use it as follows:
 
 ```dart

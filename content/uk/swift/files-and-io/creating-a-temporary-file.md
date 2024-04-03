@@ -12,9 +12,6 @@ title: "\u0421\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u0442\u0438\u043
 weight: 21
 ---
 
-## What & Why? (Що і Чому?)
-Creating a temporary file means making a file that you'll use briefly and then toss out, like a scratch pad. Programmers do it for safe storage away from the main file system, often for data processing, caching, or as a workspace during computation.
-
 ## How to: (Як зробити:)
 Swift has the `FileManager` class to help out. Here's a quick example:
 

@@ -15,9 +15,6 @@ title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---
 
-## Gì và Tại sao?
-Sử dụng một shell tương tác, hay vòng lặp Đọc-Đánh giá-In (REPL), cho phép bạn lập trình một cách tương tác. Lập trình viên sử dụng nó để nhanh chóng kiểm tra đoạn mã Swift, gỡ lỗi, hoặc học ngôn ngữ.
-
 ## Làm thế nào:
 Kích hoạt REPL bằng cách mở một terminal và chạy `swift`. Gõ mã trực tiếp và nhấn Enter để chạy nó. Dưới đây là một ví dụ:
 

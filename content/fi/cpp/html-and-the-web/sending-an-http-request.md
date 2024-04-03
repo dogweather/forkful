@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## What & Why? - Mitä ja miksi?
-HTTP-pyynnön lähettäminen tarkoittaa pyynnön esittämistä verkkopalvelimelle. Ohjelmoijat tekevät tämän hankkiakseen tietoa tai toimittaakseen dataa.
-
 ## How to: - Kuinka tehdä:
 C++ ei suoraan tue HTTP-pyyntöjä standardikirjastossaan, mutta kirjastoja kuten `libcurl` tai `cpp-httplib` voidaan käyttää.
 

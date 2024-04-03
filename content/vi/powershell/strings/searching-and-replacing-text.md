@@ -16,9 +16,6 @@ title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---
 
-## Cái gì & Tại sao?
-Tìm kiếm và thay thế văn bản trong các tệp: nó là hoán đổi từ hoặc cụm từ này bằng từ hoặc cụm từ khác. Lập trình viên sử dụng nó để cập nhật mã, sửa lỗi, hoặc thay đổi dữ liệu trên nhiều tệp một cách nhanh chóng mà không cần phải thủ công kiểm tra từng tệp.
-
 ## Làm thế nào:
 PowerShell làm cho việc tìm kiếm và thay thế trở nên khá đơn giản. Hãy xem `-replace` cho chuỗi, và `Get-Content` cùng với `Set-Content` cho tệp.
 

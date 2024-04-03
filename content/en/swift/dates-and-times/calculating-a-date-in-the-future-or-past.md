@@ -10,9 +10,6 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-Ever needed to find a date in the past or future? Programmatically, we often calculate dates for deadlines, reminders, or events. Knowing how takes the guesswork out and lets your app handle time-sensitive tasks accurately.
-
 ## How to:
 Swift makes date math straightforward with `Calendar` and `DateComponents`. Here's the gist:
 

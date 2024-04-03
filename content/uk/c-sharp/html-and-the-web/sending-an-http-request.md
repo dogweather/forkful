@@ -11,9 +11,6 @@ title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437
 weight: 44
 ---
 
-## What & Why? (Що і Чому?)
-Sending an HTTP request means asking another system for data or a response over the web. Programmers do it to interact with APIs, fetch web content, or communicate between services. 
-
 ## How to: (Як зробити:)
 ```C#
 using System;

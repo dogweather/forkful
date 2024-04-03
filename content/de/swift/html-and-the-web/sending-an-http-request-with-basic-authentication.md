@@ -10,9 +10,6 @@ title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-Beim Senden einer HTTP-Anfrage mit Basisauthentifizierung fügen wir Anmeldeinformationen in den Request-Header ein, um uns beim Server zu authentifizieren. Programmierer nutzen dies, um sicherzustellen, dass nur autorisierte Benutzer auf geschützte Ressourcen zugreifen können.
-
 ## How to:
 Mit Swift eine HTTP-Anfrage mit Basisauthentifizierung senden:
 

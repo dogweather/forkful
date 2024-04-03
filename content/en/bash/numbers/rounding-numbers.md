@@ -11,12 +11,7 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-
-Rounding numbers means chopping off the decimals to a simpler value that's good enough for a given context. Programmers round numbers to simplify results, save space, or because the exact value isn't vital—like when you're eyeballing CPU usage or disk space, and decimals won't make or break your day.
-
 ## How to:
-
 Here's the lowdown on rounding in Bash:
 
 ```Bash
@@ -43,7 +38,6 @@ Sample outputs—straight from terminal's mouth:
 ```
 
 ## Deep Dive
-
 Back in the day, there was no `bc` or `printf` in Bash scripts to do the math magic. Old-schoolers had to rely on external tools or crafty workarounds. Now, `bc` lets you do precision math. Keep in mind, `bc` doesn't round by default—it floors. The scale part sets the decimal point action.
 
 Alternatives? You could use `awk` for rounding without swapping to `bc` or wrangle with `perl` for heftier math needs. For the masochistic, go pure Bash with, let's say, iterative string manipulation – but why?
@@ -51,7 +45,6 @@ Alternatives? You could use `awk` for rounding without swapping to `bc` or wrang
 As for details, `bc` doesn't just round, it does loads of math stuff—scale it, sine it, sqrt it, you name it. With `printf`, it’s more about formatting text, but hey, it rounds numbers, so we're not complaining.
 
 ## See Also
-
 For those hungry for more:
 
 - GNU `bc` manual: https://www.gnu.org/software/bc/manual/html_mono/bc.html

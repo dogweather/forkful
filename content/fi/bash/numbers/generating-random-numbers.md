@@ -11,9 +11,6 @@ title: Satunnaislukujen generointi
 weight: 12
 ---
 
-## Mikä ja miksi?
-Satunnaislukujen tuottaminen Bashissa tarjoaa keinon tuoda epävarmuutta skripteihin, mikä on olennaista tehtävissä kuten turvallisten salasanojen generointi, datan simulointi tai pelien ohjelmointi. Ohjelmoijat hyödyntävät tätä kykyä lisätäkseen vaihtelua skripteihinsä tai testatakseen ohjelmiaan monenlaisissa satunnaisesti generoiduissa olosuhteissa.
-
 ## Kuinka:
 Bashissa `$RANDOM`-muuttuja on se mihin turvaudutaan satunnaislukujen tuottamisessa. Joka kerta kun viittaat siihen, Bash tarjoaa pseudosatunnaisen kokonaisluvun väliltä 0 - 32767. Tutkitaan joitakin käytännön esimerkkejä:
 

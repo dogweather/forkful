@@ -10,9 +10,6 @@ title: Calculando la longitud de una cadena
 weight: 7
 ---
 
-## ¿Qué & Por Qué?
-Encontrar la longitud de una cadena significa descubrir cuántos caracteres contiene. Programadores lo hacen para validar entradas, limitar textos o simplemente manipular datos de manera efectiva.
-
 ## Cómo Hacerlo:
 Para obtener la longitud de una cadena en Fish, emplea la función `string length`. Aquí tienes un par de ejemplos:
 

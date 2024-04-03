@@ -11,9 +11,6 @@ title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---
 
-## What & Why? ("Hva & Hvorfor?")
-Å konvertere en streng til små bokstaver betyr at alle store bokstaver i strengen gjøres om til små bokstaver. Programmere gjør dette for å standardisere tekstdata, forenkle sammenligninger, og øke dataens konsekventhet.
-
 ## How to ("Slik gjør du det")
 TypeScript gjør det lett å konvertere tekst til små bokstaver med den innebygde metoden `.toLowerCase()`. Her er et eksempel:
 

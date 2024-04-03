@@ -12,14 +12,10 @@ title: Capitalizzazione di una stringa
 weight: 2
 ---
 
-## Cosa & Perché?
-
-Capitalizzare una stringa implica modificare la prima lettera di una parola o di un'intera frase in maiuscolo, mantenendo inalterati tutti gli altri caratteri. I programmatori spesso utilizzano questa tecnica per formattare gli input degli utenti o per visualizzare testo al fine di garantire coerenza o aderire alle regole grammaticali nelle interfacce utente.
-
 ## Come fare:
 
-### Utilizzando i Metodi Incorporati di Dart
 
+### Utilizzando i Metodi Incorporati di Dart
 Dart fornisce metodi semplici e diretti per la manipolazione delle stringhe. Per capitalizzare una parola o una frase, di solito si prende il primo carattere, lo si converte in maiuscolo, e poi lo si concatena con il resto della stringa. Ecco come si potrebbe implementare:
 
 ```dart
@@ -35,7 +31,6 @@ void main() {
 ```
 
 ### Capitalizzare Ogni Parola
-
 Per capitalizzare la prima lettera di ogni parola in una stringa, potresti dividere la stringa in parole, capitalizzare ciascuna di esse e poi unirle di nuovo:
 
 ```dart
@@ -50,7 +45,6 @@ void main() {
 ```
 
 ### Utilizzando Librerie di Terze Parti
-
 Anche se la libreria standard di Dart copre le necessità di base, certi compiti potrebbero essere svolti più comodamente utilizzando pacchetti di terze parti. Una scelta popolare per capacità avanzate di manipolazione delle stringhe, inclusa la capitalizzazione, è il pacchetto [`recase`](https://pub.dev/packages/recase). Dopo averlo aggiunto al `pubspec.yaml` del tuo progetto, puoi facilmente capitalizzare stringhe tra le altre funzionalità:
 
 ```dart

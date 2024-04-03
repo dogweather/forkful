@@ -11,9 +11,6 @@ title: Odczytywanie pliku tekstowego
 weight: 22
 ---
 
-## What & Why?
-Czytanie pliku tekstowego to po prostu wczytywanie zawartości pliku do pamięci komputera. Programiści robią to, by manipulować danymi, dokonywać analiz czy też wdrażać logikę konfiguracyjną aplikacji.
-
 ## How to:
 Łapcie krótki przykład użycia `fs` i `readFile` z `promises` (do uniknięcia callback hell).
 

@@ -16,9 +16,6 @@ title: Generere tilfeldige tall
 weight: 12
 ---
 
-## Hva & hvorfor?
-Å generere tilfeldige tall i Elm innebærer å bruke `Random`-modulen for å produsere pseudo-tilfeldige tall, som er hendige for en rekke oppgaver som spill, simuleringer og selv som en del av algoritmer som krever stokastiske prosesser. Denne muligheten lar utviklere legge til uforutsigbarhet og variasjon i applikasjonene deres, noe som forbedrer brukeropplevelse og funksjonalitet.
-
 ## Hvordan:
 Elms rene funksjonelle natur betyr at du ikke kan generere tilfeldige tall direkte som du kanskje ville gjort i imperativ språk. I stedet bruker du `Random`-modulen i samspill med kommandoer. Her er et grunnleggende eksempel som genererer et tilfeldig heltall mellom 1 og 100.
 

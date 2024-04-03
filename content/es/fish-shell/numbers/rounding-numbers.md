@@ -10,9 +10,6 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## Qué y Por Qué?
-Redondear números consiste en eliminar los decimales para simplificar tus datos o ajustarlos a formatos específicos. Los programadores lo hacen para mostrar datos de manera amigable al usuario, para un almacenamiento eficiente, o cuando la precisión decimal no es relevante.
-
 ## Cómo hacerlo:
 En Fish, redondear números depende del comando `math`. Usa `math -s0` para redondear al entero más cercano.
 

@@ -14,12 +14,7 @@ title: Registro
 weight: 17
 ---
 
-## O que & Por quê?
-
-Registrar em Visual Basic para Aplicações (VBA) envolve gravar informações sobre o comportamento em tempo de execução de um programa em um arquivo, console ou banco de dados. Programadores usam o registro para monitorar suas aplicações, diagnosticar problemas e entender características de desempenho.
-
 ## Como fazer:
-
 No VBA, não existe uma estrutura de registro integrada como encontrada em algumas outras linguagens. No entanto, implementar um mecanismo de registro simples é direto. Abaixo está um exemplo de como criar um registrador de arquivo básico.
 
 1. **Escrevendo em um Arquivo de Log**: Este exemplo de função, `LogMessage`, escreve mensagens em um arquivo de texto com um carimbo de data/hora.
@@ -78,5 +73,4 @@ End Sub
 ```
 
 ## Aprofundamento
-
 Registrar em VBA, devido à sua falta de uma estrutura de registro nativa, geralmente é implementado através de operações de arquivo básicas ou aproveitando o poder de objetos COM externos para necessidades mais avançadas, como registrar em um banco de dados ou interagir com o Log de Eventos do Windows. Historicamente, registrar em VBA tem sido uma maneira de contornar as limitações impostas por suas ferramentas de manipulação de erros e depuração simplistas. Embora eficaz, a manipulação direta de arquivos para registro é rudimentar e pode ser ineficiente com grandes volumes de dados ou sob alta concorrência. Para capacidades de registro mais sofisticadas, programadores costumam recorrer a bibliotecas externas ou integrar com sistemas especificamente projetados para registro, como a pilha ELK (Elasticsearch, Logstash, Kibana) ou Splunk, através de chamadas de serviço da web ou bancos de dados intermediários. Embora o VBA não ofereça as conveniências modernas encontradas em linguagens de programação mais novas, entender suas capacidades e limitações permite que os programadores utilizem efetivamente o registro como uma ferramenta poderosa para monitoramento e diagnósticos de aplicativos.

@@ -11,9 +11,6 @@ title: Organizacja kodu w funkcje
 weight: 18
 ---
 
-## Co i dlaczego?
-Podzielenie kodu na funkcje polega na rozkładaniu skryptów na mniejsze, wielokrotnie używalne bloki, które realizują określone zadania. Sprawia to, że kod jest czytelniejszy, łatwiejszy do zrozumienia i debugowania.
-
 ## Jak to zrobić:
 Utwórz prostą funkcję w Bashu:
 

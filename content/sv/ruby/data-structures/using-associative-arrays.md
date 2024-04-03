@@ -13,12 +13,7 @@ title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---
 
-## Vad & Varför?
-
-Associativa arrayer, som oftare kallas hashar i Ruby, gör det möjligt att para ihop unika nycklar med värden. De är oumbärliga när du behöver hålla reda på element genom en specifik referens, som att lagra egenskaperna hos ett objekt eller snabbt få tillgång till data via en unik identifierare.
-
 ## Hur man gör:
-
 Att skapa och använda hashar i Ruby är enkelt. Du kan initialisera en tom hash, fylla den med nyckel-värdepar, komma åt värden via deras nycklar och mer. Så här gör du det:
 
 ```Ruby
@@ -55,7 +50,6 @@ puts symbol_hash[:name] # Utdata: Jane Doe
 ```
 
 ## Fördjupning:
-
 Konceptet med associativa arrayer är inte unikt för Ruby; många språk implementerar dem under olika namn, som dictionaries i Python eller objekt i JavaScript (när de används som nyckel-värdepar). I början av Rubys historia var hashar något långsammare och inte lika mångsidiga. Men över tid har Rubys implementering av hashar blivit mycket optimerad, särskilt för symbolnycklar, vilket gör dem extremt effektiva för frekvent tillgång och uppdateringar.
 
 Ruby-hashar utmärker sig för sin syntaktiska enkelhet och flexibilitet - du kan använda nästan vilken objekttyp som helst som en nyckel, även om symboler och strängar är vanligast. Internt implementeras Ruby-hashar med hjälp av en hashningsalgoritm som balanserar hastighet och minneseffektivitet, även när antalet element ökar.

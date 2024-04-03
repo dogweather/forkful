@@ -17,9 +17,6 @@ title: "\u8BA1\u7B97\u672A\u6765\u6216\u8FC7\u53BB\u7684\u65E5\u671F"
 weight: 26
 ---
 
-## What & Why? (是什么以及为什么？)
-在Ruby中计算未来或过去的日期是指找出从某个特定日期开始加上或减去天数后的日期。程序员这样做是为了处理截止日期、预订系统或时间轴功能等任务。
-
 ## How to: (如何操作：)
 Ruby makes playing with dates quite friendly. Here's how you can do it:
 

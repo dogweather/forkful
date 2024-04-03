@@ -14,12 +14,7 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i dlaczego?
-
-W programowaniu Bash sprawdzanie, czy katalog istnieje, jest kluczowym mechanizmem kontrolnym wykorzystywanym do weryfikacji obecności katalogu przed wykonaniem operacji na plikach. Ta kontrola jest kluczowa, aby uniknąć błędów takich jak próba dostępu lub modyfikacji katalogów, które nie istnieją, zapewniając sprawniejsze i bardziej przewidywalne wykonanie skryptu.
-
 ## Jak to zrobić:
-
 W swojej istocie Bash pozwala na sprawdzenie istnienia katalogu za pomocą instrukcji warunkowych i operatora `-d`. Poniżej znajduje się prosty przykład demonstrujący, jak wykonać to sprawdzenie.
 
 ```bash

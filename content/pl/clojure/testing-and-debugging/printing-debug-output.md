@@ -11,11 +11,7 @@ title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---
 
-## What & Why? | Co i dlaczego?
-W debugowaniu wypisywanie komunikatów to jak zostawianie sobie notatek po drodze - żeby wiedzieć, co się dzieje. Programiści używają tego, aby zobaczyć wewnętrzne działanie programu i znaleźć błędy.
-
 ## How to: | Jak to zrobić:
-
 Clojure używa funkcji `println` do wypisania na standardowe wyjście. Możesz też użyć `prn` dla danych w formacie czytelnym dla Clojure, czy `printf` dla formatowania stringów.
 
 ```Clojure
@@ -38,7 +34,6 @@ Clojure używa funkcji `println` do wypisania na standardowe wyjście. Możesz t
 ```
 
 ## Deep Dive | W głębię tematu
-
 W latach 90. w Lispie, jednym z przodków Clojure, wypisywanie debugowe było już praktyką. Clojure, funkcjonalny dialekt Lispa, idzie w jego ślady. Zamiast `println`, możesz używać narzędzi jak `tap>` i `add-tap` wprowadzone w Clojure 1.10, które oferują bardziej elastyczne podejście do debugowania.
 
 Logowanie jest alternatywą do wypisywania debugowego. Zapisuje informacje do pliku, nie zaśmiecając terminala. Można używać np. biblioteki `timbre`.
@@ -46,7 +41,6 @@ Logowanie jest alternatywą do wypisywania debugowego. Zapisuje informacje do pl
 W Clojure, w przeciwieństwie do niektórych innych języków, nie ma wbudowanego systemu do zarządzania poziomami logowania. Zamiast tego, zazwyczaj wybiera się zewnętrzne biblioteki jak wspomniane `timbre`.
 
 ## See Also | Zobacz też
-
 - Oficjalna dokumentacja `println`: https://clojuredocs.org/clojure.core/println
 - `tap>` i `add-tap` wprowadzenie: https://clojure.org/news/2018/12/21/tap
 - Biblioteka `timbre` dla logowania: https://github.com/ptaoussanis/timbre

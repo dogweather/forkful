@@ -11,9 +11,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---
 
-## What & Why?
-Enviar uma requisição HTTP significa pedir informações a um servidor web. Programadores fazem isso para interagir com APIs, buscar dados e comunicar-se com outros serviços pela internet.
-
 ## How to:
 Vamos usar o comando `Invoke-RestMethod` para enviar uma requisição GET simples:
 

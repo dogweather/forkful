@@ -19,12 +19,7 @@ title: "\u4E00\u6642\u30D5\u30A1\u30A4\u30EB\u306E\u4F5C\u6210"
 weight: 21
 ---
 
-## What & Why? (何となぜ？)
-
-一時ファイルの作成は、データを短期間保存するために使われます。プログラムが実行中のみ必要なファイルを作成、使用し、終わったら消去したい時に使うんです。
-
 ## How to: (方法)
-
 Pythonでは`tempfile`モジュールを使用して一時ファイルを簡単に作成できます。以下は一時ファイルを作成し、使う例です。
 
 ```Python
@@ -45,10 +40,8 @@ Pythonで一時ファイル作成
 ```
 
 ## Deep Dive (深掘り)
-
 `tempfile`モジュールはPythonの標準ライブラリに含まれています。1999年にPython 1.5.2で追加されました。一時ファイルは、プログラムが終了すると自動で削除されるため、ディスクをクリーンに保つのに役立ちます。`NamedTemporaryFile`はファイル名が必要な場合に使い、`TemporaryFile`はファイル名なしで構いません。他言語にも似た機能を提供するライブラリがありますが、Pythonの`tempfile`は使いやすさで優れています。
 
 ## See Also (関連情報)
-
 - [tempfile — Generate temporary files and directories](https://docs.python.org/3/library/tempfile.html) ：Python公式ドキュメント
 - [Pythonの標準ライブラリ](https://docs.python.org/3/library/index.html) ：一時ファイル以外の様々なモジュール探索

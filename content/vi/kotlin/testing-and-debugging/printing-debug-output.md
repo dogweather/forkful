@@ -16,9 +16,6 @@ title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---
 
-## Cái gì & Tại sao?
-In thông tin gỡ lỗi ra màn hình cơ bản là cách mà lập trình viên "lén lút" nhìn vào những gì đang diễn ra bên trong mã của họ theo thời gian thực. Điều này rất quan trọng để theo dõi các lỗi và hiểu luồng mã mà không cần thiết lập các công cụ hoặc phiên gỡ lỗi chính thức.
-
 ## Cách thức:
 Hãy in các thông tin ra màn hình console:
 

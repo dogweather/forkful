@@ -11,9 +11,6 @@ title: Loggning
 weight: 17
 ---
 
-## Vad & Varför?
-Loggning är i grunden processen att spela in händelser som inträffar inuti en programapplikation. Programmerare loggar dessa händelser för att fånga information i körtid, felsöka problem, övervaka systemets beteende och skapa en revisionsslinga för säkerhet och efterlevnad.
-
 ## Hur man gör:
 Här är ett enkelt sätt att komma igång med loggning i Java med hjälp av det inbyggda paketet `java.util.logging`.
 

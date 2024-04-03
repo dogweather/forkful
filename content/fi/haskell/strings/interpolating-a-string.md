@@ -11,9 +11,6 @@ title: Merkkijonon interpolointi
 weight: 8
 ---
 
-## What & Why? - Mikä ja Miksi?
-Merkkijonon interpolointi tarkoittaa muuttujien tai lausekkeiden sisällyttämistä osaksi merkkijonoa. Ohjelmoijat käyttävät sitä dynaamisen sisällön muodostamiseen selkeällä ja ylläpidettävällä tavalla.
-
 ## How to: - Miten tehdä:
 Haskellissa merkkijonon interpolointi ei ole yhtä suoraviivaista kuin joissakin muissa kielissä, mutta se onnistuu kirjastoja hyödyntäen. Tässä esimerkki `text`-kirjaston kanssa:
 

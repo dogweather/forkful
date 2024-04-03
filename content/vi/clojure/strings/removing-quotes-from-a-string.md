@@ -16,9 +16,6 @@ title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---
 
-## Điều gì & Tại sao?
-Loại bỏ dấu ngoặc kép ra khỏi một chuỗi có nghĩa là loại bỏ những ký tự dấu ngoặc kép hoặc dấu ngoặc đơn gây phiền phức bao quanh văn bản của bạn. Lập trình viên làm điều này để làm sạch dữ liệu, đảm bảo tính nhất quán, hoặc chuẩn bị chuỗi cho quá trình xử lý nơi mà dấu ngoặc không mong muốn hoặc có thể gây ra lỗi.
-
 ## Cách thực hiện:
 Trong Clojure, chuỗi là bất biến, vì vậy khi chúng ta nói về "loại bỏ dấu ngoặc", chúng ta thực sự đang nói về việc tạo ra một chuỗi mới không có dấu ngoặc. Dưới đây là cách thực hiện sử dụng `clojure.string/replace`:
 

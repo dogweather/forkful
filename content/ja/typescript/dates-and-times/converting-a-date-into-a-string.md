@@ -9,11 +9,12 @@ title: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B"
 weight: 28
 ---
 
-## What & Why?
 ## 何となぜ？
 日付を文字列に変換することは、日付データを読みやすい形式にするプロセスです。ログ記録、ユーザーインターフェース表示、または日付のフォーマットを標準化するためにプログラマーはこれを行います。
 
 ## How to:
+
+
 ## どうやって：
 ```TypeScript
 // 日付を作成
@@ -29,6 +30,8 @@ console.log(isoStr); // 出力例: "2023-04-01T03:00:00.000Z"
 ```
 
 ## Deep Dive:
+
+
 ## 詳細情報：
 JavaScriptが1995年に登場して以来、日付と時刻の扱いは重要な要素でした。TypeScriptはJavaScriptのスーパーセットなので、日付を扱う方法も似ています。`Date` オブジェクトは多くのメソッドを提供していますが、`.toLocaleString()`, `.toString()`, `.toUTCString()`, `.toISOString()` などがあります。これらのメソッドは、それぞれ異なるケースに適用されます。例えば、`.toLocaleString()` はロケールに応じた形式で、`.toISOString()`はISO 8601形式で日付や時刻を表現します。
 
@@ -37,6 +40,8 @@ JavaScriptが1995年に登場して以来、日付と時刻の扱いは重要な
 代替手段としては、ライブラリを使用する方法があります。Moment.jsが長らくスタンダードでしたが、今日ではDay.jsやdate-fnsのような軽量でモダンなライブラリが推奨されます。
 
 ## See Also:
+
+
 ## 関連情報：
 - MDN Web DocsにおけるDateオブジェクト: https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date
 - Day.js: https://day.js.org/

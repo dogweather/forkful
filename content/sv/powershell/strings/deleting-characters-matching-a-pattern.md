@@ -11,9 +11,6 @@ title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---
 
-## Vad & Varför?
-Att ta bort tecken som matchar ett mönster är ett sätt att filtrera text genom att eliminera oönskade tecken eller textsträngar. Programmerare gör detta för att rensa data, för att forma om informationen på önskat sätt eller för att förbereda strängar för vidare bearbetning.
-
 ## Hur man gör:
 Exempel på PowerShell-kod och utdata:
 

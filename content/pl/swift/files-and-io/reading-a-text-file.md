@@ -11,9 +11,6 @@ title: Odczytywanie pliku tekstowego
 weight: 22
 ---
 
-## What & Why? (Co i Dlaczego?)
-Czytanie pliku tekstowego to operacja pobierania danych zapisanych w pliku na dysku. Programiści robią to, aby wczytywać konfiguracje, analizować dane lub odczytywać treści stworzone przez użytkowników.
-
 ## How to: (Jak to zrobić:)
 ```Swift
 import Foundation // Import required for file handling

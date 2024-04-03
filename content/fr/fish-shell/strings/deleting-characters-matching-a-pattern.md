@@ -11,9 +11,6 @@ title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---
 
-## What & Why?
-Supprimer des caractères selon un motif, c'est retirer de notre texte des bouts spécifiques qui suivent une règle précise. Les programmeurs y recourent pour nettoyer des données, transformer des chaînes de caractères, simplifier du contenu, ou pour toute autre tâche nécessitant de la précision textuelle.
-
 ## How to:
 ```Fish Shell
 # Pour supprimer toutes les instances de "abc" dans un texte

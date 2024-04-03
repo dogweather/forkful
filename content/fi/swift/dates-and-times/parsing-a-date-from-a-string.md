@@ -13,10 +13,8 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---
 
-## Mikä & Miksi?
-Päivämäärän jäsentäminen merkkijonosta käsittää tekstuaalisten päivämäärä- ja aikamuotojen muuntamisen `Date`-olioksi. Tämä prosessi on olennainen sovelluksissa, joissa päivämääriä kommunikoidaan merkkijonoina, kuten API-vastausten tai käyttäjäsyötteiden yhteydessä, mahdollistaen helpomman päivämäärän käsittelyn ja muotoilun.
-
 ## Kuinka:
+
 
 ### Käyttäen Foundationin `DateFormatter`ia
 Swiftin vakio kirjasto, Foundation, tarjoaa `DateFormatter`in merkkijonojen muuntamiseen `Date`-olioiksi ja päinvastoin. Päivämäärän jäsentämiseksi merkkijonosta määrität merkkijonoon sopivan päivämäärämuodon ja käytät sitten muotoilijaa sen jäsentämiseen.

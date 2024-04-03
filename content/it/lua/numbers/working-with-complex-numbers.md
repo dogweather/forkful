@@ -10,9 +10,6 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-## Cosa & Perché?
-I numeri complessi estendono l'idea della linea numerica unidimensionale al piano bidimensionale includendo un asse immaginario perpendicolare. I programmatori lavorano con essi in campi come l'elaborazione di segnali, la dinamica dei fluidi e l'ingegneria elettrica, dove sono essenziali per rappresentare oscillazioni e altri fenomeni.
-
 ## Come fare:
 In Lua, puoi rappresentare i numeri complessi con le tabelle. Le operazioni di base coinvolgono l'aggiunta, la sottrazione, la moltiplicazione e la divisione di queste tabelle. Ecco come:
 

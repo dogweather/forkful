@@ -10,9 +10,6 @@ title: Convertendo uma data em uma string
 weight: 28
 ---
 
-## O Quê e Por Quê?
-Converter datas em strings permite mostrar datas de forma legível e formatada. Programadores fazem isso para facilitar a interação com usuários, armazenar datas de forma padronizada ou para integração com APIs.
-
 ## Como Fazer:
 ```Elm
 import Time

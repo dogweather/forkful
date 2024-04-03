@@ -11,9 +11,6 @@ title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---
 
-## Hva & Hvorfor?
-I PHP kan vi slette tegn som passer til et mønster for å rense data eller forenkle behandlingen av tekststrenger. Programmerere gjør dette for å fjerne uønskede tegn, formatere data på et ensartet vis, eller forberede strenger for databaselagring og -spørringer.
-
 ## Slik gjør du:
 For å slette tegn som matcher et mønster i PHP, brukes ofte `preg_replace` funksjonen med et regulært uttrykk. 
 

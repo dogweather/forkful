@@ -13,9 +13,6 @@ title: Scrivere un file di testo
 weight: 24
 ---
 
-## Cosa & Perché?
-Scrivere su un file di testo in Ruby è un'operazione fondamentale che consente di conservare output e dati in modo persistente, rendendo possibili l'accesso o la modifica dei dati in seguito. I programmatori spesso eseguono questa attività per motivi come la registrazione (logging), il salvataggio delle configurazioni o l'esportazione dei dati in un formato leggibile dall'uomo.
-
 ## Come fare:
 Ruby rende le operazioni sui file semplici. Per scrivere su un file, puoi utilizzare la classe incorporata `File` di Ruby. L'esempio seguente dimostra come aprire un file per la scrittura (modalità `"w"`) e per l'append (modalità `"a"`), poi scrivere una stringa al suo interno e assicurarsi che il file venga chiuso in seguito:
 

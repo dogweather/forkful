@@ -14,12 +14,7 @@ title: "Lukujen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä & Miksi?
-
-Numeroiden pyöristäminen ohjelmoinnissa tarkoittaa numeron likimääräistä pyöristämistä lähimpään kokonaislukuun tai tiettyyn desimaalipaikkojen määrään. Ohjelmoijat pyöristävät numeroita yksinkertaistaakseen lukuja, parantaakseen luettavuutta tai täyttääkseen tietyt numeeriset kriteerit laskelmissa, erityisesti taloudellisissa laskelmissa, joissa tarkkuus on tärkeää.
-
 ## Kuinka tehdä:
-
 Visual Basic for Applications (VBA) -ohjelmoinnissa pyöristäminen voidaan saavuttaa käyttämällä useita funktioita, joista jokainen sopii tiettyihin tilanteisiin. Tässä ovat yleisimmin käytetyt funktiot esimerkein:
 
 1. **Round-funktio**:
@@ -55,7 +50,6 @@ Visual Basic for Applications (VBA) -ohjelmoinnissa pyöristäminen voidaan saav
    ```
 
 ## Syväsukellus
-
 VBA:n `Round`-funktio eroaa muiden kielten pyöristysmenetelmistä sen käyttämän **Banker's Rounding** -pyöristystavan vuoksi. Bankerin pyöristys pyöristää lähimpään parilliseen numeroon silloin, kun ollaan täsmälleen kahden numeron välissä, mikä vähentää harhautumista laskelmissa suuren tietoaineiston yli ja tarjoaa tilastollisesti merkittävämmän tuloksen. Tämä voi kuitenkin johtaa odottamattomaan käytökseen niille, jotka eivät ole tottuneet siihen, erityisesti kun jokaisessa tapauksessa odotetaan tarkan tarkkuuden saavuttamista.
 
 Toisin kuin monet ohjelmointikielet ja -järjestelmät, jotka käyttävät "aritmeettista pyöristystä" tai "half-up pyöristystä", jossa numero, joka on täsmälleen kahden mahdollisen pyöristetyn arvon välissä, pyöristetään aina ylöspäin. Koodia kääntäessä tai siirtäessä muista kielistä VBA:han, ohjelmoijien on pidettävä mielessä nämä erot välttääkseen hienovaraisia virheitä tai epätarkkuuksia taloudellisissa ja tilastollisissa sovelluksissa.

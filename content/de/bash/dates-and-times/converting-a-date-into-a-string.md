@@ -11,9 +11,6 @@ title: Datum in einen String umwandeln
 weight: 28
 ---
 
-## Was & Warum?
-Das Umwandeln eines Datums in einen String bedeutet, ein Datum in Textform auszudrücken. Programmierer nutzen dies für eine bessere Lesbarkeit und um Daten in Log-Dateien, Berichten oder Benutzeroberflächen anzuzeigen.
-
 ## Vorgehensweise:
 Bash bietet `date`, ein mächtiges Tool für Datum und Zeit. Hier ist, wie man es verwendet:
 

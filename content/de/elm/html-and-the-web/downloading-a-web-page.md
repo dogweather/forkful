@@ -10,9 +10,6 @@ title: Webseite herunterladen
 weight: 42
 ---
 
-## What & Why?
-Webseiten herunterzuladen bedeutet, Anfragen an einen Server zu senden, um eine HTML-Seite zu erhalten. Programmierer machen das, um Daten zu sammeln, Inhalte offline zu nutzen oder Webservices zu integrieren.
-
 ## How to:
 Elm verwendet `Http`-Pakete für Webanfragen. Hier ist ein einfaches Beispiel, um eine Webseite herunterzuladen:
 

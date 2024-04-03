@@ -11,9 +11,6 @@ title: "Loggf\xF8ring"
 weight: 17
 ---
 
-## Hva & Hvorfor?
-Logging er prosessen med å registrere applikasjonshendelser og datautskrift under kjøretid. Programmerere logger for å diagnostisere feil, overvåke programvarens ytelse, spore brukerhandlinger og opprettholde samsvar med sikkerhets- og forretningsstandarder.
-
 ## Hvordan:
 I C# kan du bruke det innebygde `System.Diagnostics` navneområdet eller tredjepartsbiblioteker som NLog eller log4net. Her er et raskt eksempel som bruker `ILogger` grensesnittet tilgjengelig i .NET Core:
 

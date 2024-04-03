@@ -13,11 +13,7 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä ja miksi?
-CSV-tiedostojen (pilkuin erotetut arvot) käsittely Bashissa koskee tekstimuodossa tallennettujen taulukkomuotoisten tietojen käsittelyä ja manipulointia. Tämä on olennaista ohjelmoijille, koska se mahdollistaa datan muuntamisen, analysoinnin ja integroinnin tehtävien automatisoinnin suoraan komentoriviltä, ilman tarvetta raskaammille työkaluille tai ohjelmointiympäristöille.
-
 ## Kuinka:
-
 **CSV-tiedoston lukeminen rivi riviltä**
 
 ```bash

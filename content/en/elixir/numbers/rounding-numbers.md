@@ -10,9 +10,6 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-Rounding numbers means adjusting them to a nearby value for simplicity or to match a certain precision. It's useful for improving readability, reducing storage space, or meeting domain-specific needs, like money calculations where you want to round to the nearest cent.
-
 ## How to:
 In Elixir, you can use `Float.round/2` to round a floating-point number. You can specify the number of decimal digits you want to keep. Here's how it works:
 

@@ -14,16 +14,10 @@ title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---
 
-## Co i dlaczego?
-
-Tablice asocjacyjne, znane w C++ jako `std::map` lub `std::unordered_map`, wypełniają lukę między indeksami tablic a danymi z realnego świata, pozwalając używać znaczących kluczy. Są one rozwiązaniem z wyboru, kiedy potrzebne są szybkie wyszukiwania, wstawiania i usuwania przy użyciu kluczy zamiast pozycji indeksu.
-
 ## Jak to zrobić:
-
 W C++, tablice asocjacyjne ożywają dzięki nagłówkom `<map>` i `<unordered_map>`. Przyjrzyjmy się przykładom, aby zobaczyć oba w akcji.
 
 ### Używanie `std::map`
-
 `std::map` przechowuje elementy posortowane na podstawie klucza. Oto jak zacząć:
 
 ```C++
@@ -51,7 +45,6 @@ int main() {
 ```
 
 ### Używanie `std::unordered_map`
-
 Kiedy kolejność nie ma znaczenia, ale ma znaczenie wydajność, `std::unordered_map` jest twoim przyjacielem, oferując szybszą średnią złożoność dla wstawień, wyszukiwań i usunięć.
 
 ```C++
@@ -79,7 +72,6 @@ int main() {
 ```
 
 ## Pogłębienie wiedzy
-
 Tablice asocjacyjne w C++, zwłaszcza `std::map` i `std::unordered_map`, to nie tylko przechowywanie elementów. Zapewniają one podstawę do bardziej skomplikowanego zarządzania danymi, pozwalając na operacje takie jak wyszukiwanie, wstawianie i usuwanie w efektywnych złożonościach czasowych (logarytmiczna dla `std::map` i średnio stała dla `std::unordered_map`). Ta efektywność wynika z leżących u ich podstaw struktur danych: zrównoważonego drzewa dla `std::map` i tablicy mieszającej dla `std::unordered_map`.
 
 Historycznie, zanim te stały się częścią standardowej biblioteki, programiści musieli implementować własne wersje lub używać bibliotek stron trzecich, prowadząc do niespójności i potencjalnych nieefektywności. Włączenie map do standardowej biblioteki C++ nie tylko ujednoliciło ich użycie, ale także zoptymalizowało je pod kątem wydajności na różnych kompilatorach i platformach.

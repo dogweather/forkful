@@ -10,10 +10,6 @@ title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---
 
-## What & Why?
-(Mitä & Miksi?)
-HTML:n jäsentäminen tarkoittaa HTML-koodin rakenteen lukemista ja sen sisällön muuntamista käsiteltäväksi tietorakenteeksi. Ohjelmoijat tekevät tätä sisällön automaattiseksi käsittelyksi, tiedon kaivamiseksi tai web-sivujen manipulointia varten.
-
 ## How to:
 (Miten tehdään:)
 ```Clojure

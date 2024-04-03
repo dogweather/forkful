@@ -10,12 +10,7 @@ title: Sending an HTTP request with basic authentication
 weight: 45
 ---
 
-## What & Why?
-
-Sending an HTTP request with basic authentication involves transmitting a username and password over the web to access protected resources. Programmers use this for simplicity when interacting with APIs or services requiring login creds.
-
 ## How to:
-
 In Fish Shell, use `curl` to make an HTTP request with basic auth. Replace `username`, `password`, and `the_url`:
 
 ```Fish Shell
@@ -40,7 +35,6 @@ Content-Type: application/json
 ```
 
 ## Deep Dive
-
 Basic authentication is part of HTTP's protocol, existing since the early 90s. While easy to implement, it's less secure due to credentials being only base64 encoded, not encrypted. HTTPS helps, but it's not foolproof.
 
 Alternatives include OAuth, which uses tokens instead of credentials, adding security layers. For added security, consider using API keys or JWT (JSON Web Tokens).
@@ -48,7 +42,6 @@ Alternatives include OAuth, which uses tokens instead of credentials, adding sec
 With Fish Shell, we're interfacing with `curl`, a powerful tool that supports various protocols and authentication methods. The `-u` flag is convenient, but avoid hardcoding creds; instead, use environment variables or config files with proper permissions.
 
 ## See Also:
-
 - cURL Documentation: https://curl.se/docs/httpscripting.html
 - HTTP Basic Auth RFC: https://tools.ietf.org/html/rfc7617
 - Fish Shell Documentation: https://fishshell.com/docs/current/index.html

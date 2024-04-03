@@ -14,12 +14,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mikä & Miksi?
-
-Assosiatiiviset taulukot, jotka Visual Basic for Applications (VBA) -ympäristössä tunnetaan usein sanakirjoina, mahdollistavat ohjelmoijien luoda avain-arvo -pareja sisältäviä kokoelmia. Tämä ominaisuus on keskeinen tehokkaassa datan tallennuksessa ja haussa, tarjoten joustavamman ja intuitiivisemman tavan hallita dataa kuin perinteiset taulukkojen indeksit.
-
 ## Kuinka:
-
 VBA:ssa `Dictionary`-objekti tarjoaa toiminnallisuutta, joka on samankaltaista kuin assosiatiiviset taulukot. Sinun on ensin lisättävä viittaus Microsoft Scripting Runtimeen sen käyttämiseksi:
 
 1. VBA-editorissa, siirry Työkalut > Viitteet...
@@ -55,7 +50,6 @@ Next Key
 ```
 
 ## Syväsukellus
-
 `Dictionary`-objekti toimii yhteistyössä Windows Scripting Hostin komponenttien kanssa. Näin ollen, se on myöhäisesti sidottu COM-objekti, mikä oli yleinen tapa laajentaa VBA:n toiminnallisuutta menneisyydessä. Sen käyttö VBA:ssa voi merkittävästi parantaa kielen kykyä käsitellä monimutkaisia datasettejä pakottamatta jäykkään rakenteeseen, kuten perinteisissä taulukoissa tai Excel-alueissa.
 
 Yksi rajoitus, joka tulee pitää mielessä, on että `Dictionary`n käyttö vaatii viittauksen asettamisen Microsoft Scripting Runtimeen, mikä voi vaikeuttaa VBA-projektiesi jakelua. VBA:ssa on olemassa vaihtoehtoja, kuten Collections, mutta ne puuttuvat joitakin `Dictionary`n keskeisiä ominaisuuksia, kuten kykyä helposti tarkistaa avaimen olemassaoloa laukaisematta virhettä.

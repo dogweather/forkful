@@ -12,9 +12,6 @@ title: Rimuovere le virgolette da una stringa
 weight: 9
 ---
 
-## Che cosa e perché?
-Rimuovere le virgolette da una stringa significa togliere i caratteri di virgoletta singola (`'`) o doppia (`"`) che definiscono le stringhe letterali nel codice. I programmatori lo fanno per diverse ragioni, come formattare l'output, sanificare l'input dell'utente o preparare le stringhe per l'analisi o l'archiviazione dove le virgolette sono inutili o potrebbero causare errori.
-
 ## Come fare:
 Ecco una guida diretta per liberare le tue stringhe da quei fastidiosi segni di virgoletta in TypeScript.
 

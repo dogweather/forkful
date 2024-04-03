@@ -11,9 +11,6 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## What & Why? (Co i Dlaczego?)
-Porównywanie dwóch dat to sprawdzanie, która data jest wcześniejsza, późniejsza lub czy są identyczne. Programiści robią to, aby obsłużyć terminy, wydarzenia i logikę związaną z czasem w aplikacjach.
-
 ## How to: (Jak to zrobić:)
 ```Ruby
 require 'date'

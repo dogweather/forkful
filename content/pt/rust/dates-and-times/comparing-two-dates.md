@@ -11,12 +11,7 @@ title: Comparando duas datas
 weight: 27
 ---
 
-## O Que & Porquê?
-
-Comparar duas datas é o ato de verificar se são iguais, se uma é anterior à outra ou se é mais recente. Programadores fazem isso para manipular e validar informações temporais, como prazos, eventos e históricos de transações.
-
 ## Como Fazer:
-
 ```Rust
 use chrono::{DateTime, Utc};
 
@@ -40,7 +35,6 @@ A data inicial é antes da data final.
 ```
 
 ## Mergulho Profundo
-
 Historicamente, comparar datas foi um desafio por conta das diversas maneiras de representação do tempo. O Rust usa a biblioteca `chrono` para práticas modernas de tratamento de data e hora, que segue a Convenção ISO 8601 para a formatação de datas.
 
 Alternativas para a `chrono` incluem o módulo `std::time`, mas este tem funcionalidades limitadas e não lida tão diretamente com datas. A atenção à implementação envolve tratar fusos horários, questões de bissexto e precisão de tempo (mili, micro e nanossegundos).
@@ -48,7 +42,6 @@ Alternativas para a `chrono` incluem o módulo `std::time`, mas este tem funcion
 Comparar duas datas parece simples, mas requer compreensão de contextos como fuso horário e calendário. Uma data é armazenada como um ponto específico no tempo. Quando comparamos, estamos basicamente subtraindo um ponto do outro para ver qual vem primeiro.
 
 ## Veja Também
-
 - Documentação oficial da `chrono`: https://docs.rs/chrono/
 - The Rust Programming Language Book: https://doc.rust-lang.org/book/
 - Um guia para tratar do tempo em Rust: https://blog.hendrikschneider.de/2021/03/03/rust-times-and-dates/ 

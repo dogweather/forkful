@@ -17,9 +17,6 @@ title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---
 
-## What & Why? 什么与为什么？
-发送HTTP请求是Web编程中的一项基本操作，它允许你从服务器获取或发送数据。程序员这么做主要是为了与远程服务交互，获取所需信息或触发特定操作。
-
 ## How to: 怎样做？
 在Haskell中，你可以使用`http-client`和`http-conduit`库简单地发送HTTP请求。这里有一个小例子：
 

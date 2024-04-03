@@ -14,12 +14,7 @@ title: Travailler avec des nombres complexes
 weight: 14
 ---
 
-## Quoi et Pourquoi ?
-
-Les nombres complexes se composent d'une partie réelle et d'une partie imaginaire, représentées comme `a + bi` où `i` est la racine carrée de `-1`. Les programmeurs travaillent avec des nombres complexes dans divers domaines tels que le génie électrique, l'informatique quantique et la dynamique des fluides, exploitant leurs propriétés uniques pour les simulations, le traitement du signal et la résolution de types spécifiques d'équations mathématiques.
-
 ## Comment faire :
-
 En C, les nombres complexes sont pris en charge par la bibliothèque standard, spécifiquement `<complex.h>`. Pour les utiliser, déclarez des variables avec le type `double complex` (ou `float complex` pour une précision simple). Voici comment effectuer les opérations de base :
 
 ```c
@@ -56,5 +51,4 @@ int main() {
 Notez que `I` est une constante représentant l'unité imaginaire dans `<complex.h>`. Des fonctions comme `creal()` et `cimag()` extraient les parties réelle et imaginaire respectivement, tandis que `conj()` calcule le conjugué complexe. Pour la magnitude et la phase (argument) des nombres complexes, `cabs()` et `carg()` sont utilisés.
 
 ## Approfondissement
-
 Le support des nombres complexes en C est relativement récent, ayant été normalisé dans C99. Avant cela, l'arithmétique des nombres complexes en C était laborieuse, nécessitant souvent des structures de données personnalisées et des fonctions. L'inclusion de `<complex.h>` et des types de données complexes a fourni un important coup de pouce aux capacités du langage pour les applications scientifiques et d'ingénierie. Cependant, il convient de noter que certains langages, comme Python, offrent un support plus intuitif pour les nombres complexes à travers des types de données intégrés et un ensemble plus riche de fonctions de bibliothèque. Malgré cela, la performance et le contrôle offerts par le C en font un choix privilégié pour les tâches de calcul haute performance, même s'il faut faire face à une syntaxe légèrement plus verbeuse pour l'arithmétique complexe.

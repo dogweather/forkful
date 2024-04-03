@@ -14,12 +14,7 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Cosa e Perché?
-
-Ottenere la data corrente in Google Apps Script riguarda il recupero della data e dell'ora attuali, un compito comune per l'automazione di compiti, la registrazione e la marcatura temporale nelle app legate all'ecosistema di Google. I programmatori utilizzano questa funzionalità per la generazione di contenuti dinamici, il monitoraggio delle scadenze e la pianificazione all'interno di Google Docs, Fogli e altri servizi Google.
-
 ## Come fare:
-
 Google Apps Script, che si basa su JavaScript, offre metodi semplici per ottenere la data corrente. Puoi usare il costruttore `new Date()` per creare un nuovo oggetto data che rappresenta la data e l'ora correnti. Ecco come puoi manipolare e visualizzare questo in vari formati.
 
 ```javascript
@@ -46,7 +41,6 @@ function showCurrentDate() {
 Questi frammenti dimostrano come catturare e formattare la data e l'ora corrente, mostrando la versatilità per vari bisogni di programmazione all'interno di Google Apps Script.
 
 ## Approfondimento
-
 Prima che JavaScript si stabilizzasse sull'oggetto `Date`, i programmatori dovevano manualmente tenere traccia del tempo e della data attraverso mezzi meno standard e più ingombranti. Ciò includeva l'uso di interi timestamp e funzioni di data fatte in casa, che variavano da un ambiente di programmazione all'altro, portando a incongruenze e problemi di compatibilità.
 
 L'introduzione dell'oggetto `new Date()` in JavaScript, e per estensione in Google Apps Script, ha standardizzato le operazioni di data e ora, rendendole più intuitive e riducendo la quantità di codice necessario per le operazioni legate alla data. È degno di nota che, sebbene l'implementazione di Google Apps Script sia conveniente e sufficiente per molte applicazioni all'interno della suite di prodotti Google, potrebbe non soddisfare tutti gli scenari, in particolare quelli che richiedono una gestione complessa dei fusi orari o una registrazione precisa dei timestamp in ambienti frenetici.

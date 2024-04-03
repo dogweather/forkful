@@ -11,9 +11,6 @@ title: Extraindo substrings
 weight: 6
 ---
 
-## O Que & Porquê?
-Extrair substrings é o processo de pegar pedaços de uma string - como cortar um pedaço de torta para provar. Programadores fazem isso para manipular e usar partes específicas de textos, como dados de entrada, configurações ou até mesmo para análise de dados.
-
 ## Como Fazer:
 ```Elm
 import String exposing (slice)

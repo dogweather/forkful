@@ -10,11 +10,7 @@ title: Interpolando uma string
 weight: 8
 ---
 
-## O Que & Porquê?
-Interpolar uma string em Elixir significa inserir valores de variáveis ou expressões diretamente dentro dela. Programadores fazem isso para compor mensagens dinâmicas ou construir strings complexas de maneira legível e eficiente.
-
 ## Como Fazer:
-
 ```elixir
 nome = "João"
 idade = 29
@@ -41,7 +37,6 @@ IO.puts(mensagem_area)
 ```
 
 ## Aprofundamento
-
 Antes de Elixir, outras linguagens como Ruby e Perl já suportavam interpolação de strings. A interpolação em Elixir é feita em tempo de compilação, o que significa que é transformada em código executável juntamente com o restante do programa. Isso traz eficiência, já que não há processamento extra em tempo de execução.
 
 Alternativas à interpolação incluem concatenação manual de strings com o operador `<>`, mas isso pode tornar o código mais difícil de ler e manter.
@@ -57,6 +52,5 @@ No entanto, a interpolação só pode ser usada dentro de strings delimitadas po
 Elixir também oferece a capacidade de transformar qualquer tipo de dado em uma string dentro do bloco de interpolação, chamando automaticamente a função `to_string` se necessário, o que facilita a integração de diferentes tipos de dados.
 
 ## Veja Também
-
 - Documentação oficial do Elixir sobre Strings: [https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
 - Um tutorial mais profundo sobre manipulação de Strings em Elixir: [https://elixirschool.com/en/lessons/basics/strings/](https://elixirschool.com/en/lessons/basics/strings/)

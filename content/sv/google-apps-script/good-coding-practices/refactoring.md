@@ -14,12 +14,7 @@ title: Refaktorering
 weight: 19
 ---
 
-## Vad & Varför?
-
-Refaktorisering i programmeringslexikonet refererar till processen att omstrukturera befintlig kod—ändra faktoriseringen utan att ändra dess externa beteende—för att förbättra icke-funktionella attribut. Det är ett väsentligt steg för programmerare att förbättra koden läsbarhet, minska komplexiteten och potentiellt upptäcka dolda buggar, vilket underlättar underhåll och framtida kodskalbarhet.
-
 ## Hur man gör:
-
 I Google Apps Script är ett vanligt scenario som gynnar av refaktorisering förenklingen av besvärliga skript som interagerar med Google Kalkylark eller Dokument. Inledningsvis kan skript vara skrivna på ett snabbt och smutsigt sätt för att få resultat snabbt. Över tid, när skriptet växer, blir det otympligt. Låt oss gå igenom ett exempel på refaktorisering för bättre läsbarhet och effektivitet.
 
 **Originalskript:**
@@ -58,7 +53,6 @@ Utdata i Logger kommer att se ut ungefär så här, med antagandet att ditt Goog
 Det refaktoriserade skriptet uppnår samma resultat men är renare och enklare att förstå vid en första anblick.
 
 ## Djupdykning
-
 Refaktorisering i Google Apps Script ärver delvis sina principer från den bredare programvaruutvecklingspraxis. Det blev mer erkänt och strukturerat som ett koncept i slutet av 1990-talet, framför allt tack vare Martin Fowlers banbrytande bok "Refaktorisering: Förbättring av befintlig kod" (1999), som gav en omfattande guide till olika refaktoreringstekniker. Även om specifikationen för refaktorisering kan variera mellan programmeringsspråk på grund av deras syntaktiska och funktionella skillnader, kvarstår det grundläggande målet detsamma: att förbättra koden utan att ändra dess externa beteende.
 
 I kontexten av Google Apps Script är ett viktigt aspekt att beakta under refaktorisering tjänstekvoterna och begränsningarna som Google pålägger. Effektivt refaktoriserad kod inte bara läses bättre utan kör också snabbare och mer tillförlitligt inom dessa begränsningar. Till exempel kan batchoperationer (`Range.setValues()` istället för att sätta värden en cell i taget) avsevärt minska exekveringstiden och kvotförbrukningen.

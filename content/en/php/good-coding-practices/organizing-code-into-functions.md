@@ -10,9 +10,6 @@ title: Organizing code into functions
 weight: 18
 ---
 
-## What & Why?
-Organizing code into functions is about breaking down your code into reusable blocks with defined purposes. We do it to keep things tidy, prevent redundancy, and make debugging a breeze.
-
 ## How to:
 Imagine we've got repetitive code for greeting users. Instead, we'll wrap it in a function like `greet_user`:
 

@@ -9,9 +9,6 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## What & Why? (Was & Warum?)
-Substring-Extraktion bedeutet, gezielt Teile eines Strings herauszuschneiden. Programmierer nutzen das, um Daten zu manipulieren, Inhalte zu analysieren oder einfach String-Daten aufzubereiten.
-
 ## How to (Wie geht das?)
 In PHP gibt es verschiedene Funktionen, um Substrings zu extrahieren. Hier ein paar Beispiele:
 

@@ -24,9 +24,6 @@ title: "\u30B3\u30DE\u30F3\u30C9\u30E9\u30A4\u30F3\u5F15\u6570\u306E\u8AAD\u307F
 weight: 23
 ---
 
-## What & Why? (何となぜ？)
-コマンドライン引数を読むとは、プログラムが起動する時に外部から与えられるパラメータを受け取ることです。プログラマはそれを使って、プログラムの振る舞いを動的に変えたり、ユーザの入力を処理したりします。
-
 ## How to: (方法)
 ```haskell
 import System.Environment (getArgs)

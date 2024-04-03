@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---
 
-## Làm Thế Nào và Tại Sao?
-Làm việc với TOML bao gồm việc phân tích cú pháp và tạo dữ liệu TOML (Tom's Obvious, Minimal Language) bằng Lua. Lập trình viên sử dụng TOML cho các tệp cấu hình do tính dễ đọc và cú pháp đơn giản của nó, dễ dàng chuyển đổi thành cấu trúc dữ liệu.
-
 ## Làm cách nào:
 Đầu tiên, đảm bảo môi trường Lua của bạn có trình phân tích cú pháp TOML. Trong ví dụ này, chúng ta sẽ sử dụng `lua-toml`.
 

@@ -11,9 +11,6 @@ title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---
 
-## Vad & Varför?
-Datumberäkningar är typ bestämning av framtida eller förgångna datum från en given punkt. Programmerare gör det för att hantera bokningar, påminnelser, historiska data och tidsbaserade algoritmer.
-
 ## Hur gör man:
 Python har inbyggda verktyg för datumhantering. `datetime` är stjärnan. Här är hur man gör:
 

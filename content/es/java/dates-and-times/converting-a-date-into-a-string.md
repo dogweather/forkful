@@ -10,11 +10,6 @@ title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---
 
-## What & Why?
-(¿Qué y Por Qué?)
-
-Convertir una fecha en una cadena de texto significa transformar un objeto `Date` a una representación legible para humanos. Los programadores lo hacen para mostrar fechas en interfaces de usuario o para formatearlas antes de guardarlas en bases de datos.
-
 ## How to:
 (Cómo hacerlo:)
 

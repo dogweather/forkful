@@ -10,9 +10,6 @@ title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---
 
-## ¿Qué y Por Qué?
-Extraer substrings (subcadenas) significa tomar un pedazo específico de una cadena de texto. Los programadores lo hacen para aislar datos, limpiar entradas o simplemente para trabajar con un fragmento de información relevante.
-
 ## Cómo Hacerlo:
 ```PowerShell
 # Usando Substring

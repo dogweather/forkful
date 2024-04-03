@@ -10,10 +10,6 @@ title: Tekstitiedoston lukeminen
 weight: 22
 ---
 
-## What & Why?
-"Mikä ja Miksi?"
-Tekstitiedoston lukeminen tarkoittaa tiedon hakemista tekstimuotoisista tiedostoista. Ohjelmoijat tekevät tätä datan käsittelyn, konfiguraation ja tulosten tallennuksen takia.
-
 ## How to:
 "Näin teet:"
 ```C++

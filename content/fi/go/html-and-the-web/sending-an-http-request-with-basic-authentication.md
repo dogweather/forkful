@@ -14,12 +14,7 @@ title: "L\xE4hett\xE4minen HTTP-pyynt\xF6 perustodennuksella"
 weight: 45
 ---
 
-## Mikä & Miksi?
-
-HTTP-pyynnön lähettäminen perusautentikoinnilla Go-kielellä sisältää valtuutusotsikon lisäämisen pyyntöösi, joka sisältää käyttäjänimen ja salasanan Base64-koodattuna merkkijonona. Ohjelmoijat käyttävät tätä menetelmää käyttääkseen resursseja, jotka vaativat käyttäjän vahvistusta, varmistaen, että heidän sovelluksensa voivat turvallisesti olla vuorovaikutuksessa palveluiden kanssa verkossa.
-
 ## Kuinka:
-
 HTTP-pyynnön tekemiseksi perusautentikoinnilla Go-kielellä tarvitset muokata pyyntöotsikoitasi sisältämään `Authorization`-kentän, joka on täytetty tunnustiedoillasi oikeassa muodossa. Alla on esimerkki, joka näyttää, kuinka suorittaa GET-pyyntö API-endpointtiin, joka vaatii perusautentikointia:
 
 ```go
@@ -62,7 +57,6 @@ Vastauksen tila: 200 OK
 ```
 
 ## Syväsukellus
-
 Perusautentikointi HTTP-pyynnöissä on laajalti tuettu menetelmä pääsyn hallintaan verkkoresursseihin. Se lähettää käyttäjänimen ja salasanan jokaisen pyynnön mukana, mikä tekee siitä helpon toteuttaa, mutta ei turvallisimman mahdollisen menetelmän. Yksi suuri haittapuoli on, että ellei sitä käytetä yhdessä SSL/TLS:n kanssa, tunnustiedot lähetetään selkokielisenä (koska Base64 on helposti purettavissa). Tämä voi mahdollisesti altistaa arkaluontoiset tiedot "man-in-the-middle" -hyökkäyksille.
 
 Go-kielessä näiden pyyntöjen lähettäminen sisältää `Authorization`-otsikon suoran manipuloinnin. Vaikka Go:n standardikirjasto (`net/http`) tarjoaa tehokkaita alkeita HTTP(s)-viestinnän käsittelyyn, se on suhteellisen matalan tason, vaatien kehittäjiltä eri HTTP-pyyntö/vastaus-käsittelyn näkökohtien manuaalista hallintaa. Tämä antaa ohjelmoijille paljon joustavuutta, mutta se myös tarkoittaa, että turvallisuusseikoihin, koodaukseen ja oikeaan otsikon hallintaan on kiinnitettävä enemmän huomiota.

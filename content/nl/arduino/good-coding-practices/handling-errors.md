@@ -12,12 +12,7 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-
-Foutafhandeling in je programma's vangt de onvoorziene dingen op die je proberen te laten struikelen. Je doet het om te voorkomen dat je Arduino een meltdown krijgt wanneer het onverwachte gebeurt.
-
 ## Hoe:
-
 Stel je voor dat je Arduino een sensor leest die mogelijk af en toe waarden buiten het bereik produceert. Hier is hoe je dat zou kunnen aanpakken:
 
 ```Arduino
@@ -39,7 +34,6 @@ Fout: Sensorwaarde buiten bereik.
 ```
 
 ## Diepgaand
-
 Foutafhandeling is niet altijd zo eenvoudig geweest. In de vroege dagen negeerden ontwikkelaars vaak fouten, wat leidde tot het gevreesde "onbepaald gedrag". Naarmate programmeren zich ontwikkelde, deden de hulpmiddelen dat ook - je hebt nu uitzonderingen in veel talen, maar door hardwarebeperkingen en C++-wortels is het in de Arduino-wereld nog steeds een ouderwetse 'controleer-het-eerst'.
 
 Bij Arduino-programmering zie je vaak `if-else`-verklaringen voor foutafhandeling. Maar er zijn alternatieven: het gebruik van de `assert`-functie om de uitvoering te stoppen als een voorwaarde faalt of het ontwerpen van noodmaatregelen binnen je hardware-opstelling zelf.
@@ -47,7 +41,6 @@ Bij Arduino-programmering zie je vaak `if-else`-verklaringen voor foutafhandelin
 Bij het implementeren van foutafhandeling, overweeg de impact van het stoppen van het programma versus het toestaan om door te gaan met een standaard of veilige status. Er is een afweging, en de juiste keuze hangt af van de potentiële schade van onderbrekingen versus incorrecte werking.
 
 ## Zie Ook
-
 Verdiep je in foutdetectie en afhandeling met deze bronnen:
 
 - Arduino Taalreferentie: https://www.arduino.cc/reference/en/

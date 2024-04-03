@@ -10,9 +10,6 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## What & Why? (Co i dlaczego?)
-Wysyłamy zapytanie HTTP, by porozumieć się z serwisami internetowymi. Programiści robią to, aby pobierać dane, wysyłać informacje, autoryzować użytkowników, i więcej.
-
 ## How to: (Jak to zrobić?)
 Wysłanie prostej prośby GET do serwisu:
 

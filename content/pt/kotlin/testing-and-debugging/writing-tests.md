@@ -14,12 +14,7 @@ title: Escrevendo testes
 weight: 36
 ---
 
-## O Que & Por Quê?
-
-Escrever testes em Kotlin envolve a criação de trechos de código que validam automaticamente a correção funcional dos seus módulos de software, garantindo que eles funcionem conforme esperado. Os programadores fazem isso para detectar bugs precocemente, facilitar a refatoração do código e fornecer documentação sobre como os componentes de software devem funcionar.
-
 ## Como Fazer:
-
 O Kotlin suporta o desenvolvimento guiado por testes com vários frameworks, sendo os mais populares o JUnit, o Kotest e o MockK para mock (simulação). Aqui está um exemplo simples usando JUnit:
 
 ```kotlin

@@ -11,9 +11,6 @@ title: Tekstitiedoston lukeminen
 weight: 22
 ---
 
-## What & Why? (Mitä & Miksi?)
-Tiedostosta tekstin lukeminen tarkoittaa tiedon ottamista tavallisesta tekstimuodossa olevalta tiedostoltasi. Ohjelmoijat lukevat tiedostoja, koska se on tapa käsitellä ja käyttää ulkoista dataa, kuten asetuksia, käyttäjätietoja tai sovelluslogiikkaa.
-
 ## How to: (Kuinka tehdä:)
 ```Javascript
 // Node.js ympäristössä

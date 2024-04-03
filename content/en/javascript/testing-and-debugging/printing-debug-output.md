@@ -10,12 +10,7 @@ title: Printing debug output
 weight: 33
 ---
 
-## What & Why?
-
-Printing debug output in JavaScript is about showing variables, errors, or any other info that helps figure out what your code is doing at a glance. Programmers do it to catch bugs, understand the execution flow, and make sure the code is doing what it's supposed to do.
-
 ## How to:
-
 Javascript makes it super easy to print debug output using `console.log()`. Here's how:
 
 ```javascript
@@ -43,7 +38,6 @@ Result: 7
 ```
 
 ## Deep Dive
-
 The `console.log()` method comes from the Console API, which has been a debugging friend in browsers and Node.js environments for ages. But there's more than just `log`; you've got `console.warn()`, `console.error()`, and `console.info()`, all spitting out messages with different levels of severity.
 
 Long ago, developers would use `alert()` for debugging, but that quickly became tedious—it blocks user interaction by popping up a dialog box.
@@ -55,7 +49,6 @@ For those loving a good, clean output, `console.table()` displays data in a neat
 The exact way `console` methods are implemented can vary between JavaScript environments, but the essence remains the same: they help developers make sense of what's going under the hood quickly and with minimal fuss.
 
 ## See Also
-
 - MDN Web Docs on Console API: https://developer.mozilla.org/en-US/docs/Web/API/Console
 - Node.js `console` documentation: https://nodejs.org/api/console.html
 - A guide to console commands: https://getfirebug.com/wiki/index.php/Console_API

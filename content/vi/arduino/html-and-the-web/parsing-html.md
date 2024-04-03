@@ -16,9 +16,6 @@ title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---
 
-## Điều gì và Tại sao?
-Phân tích cú pháp HTML có nghĩa là lọc qua mã HTML để trích xuất các phần hữu ích - giống như tìm số điện thoại trên một trang liên hệ. Tại sao lại làm điều này? Để tự động hóa việc thu thập dữ liệu hoặc tương tác với các trang web từ dự án Arduino của bạn.
-
 ## Cách thực hiện:
 Arduino không tự nhiên thuần thục về web, nhưng với các module bên ngoài (như ESP8266), bạn có thể kết nối và lấy nội dung web. Ở đây chúng ta sẽ kéo HTML và tìm kiếm một thẻ cụ thể:
 

@@ -11,9 +11,6 @@ title: Zeichenketten interpolieren
 weight: 8
 ---
 
-## Was & Warum?
-String-Interpolation erleichtert das Zusammensetzen von Strings, indem Variablen oder Ausdrücke direkt in String-Literale eingebettet werden. Es macht den Code lesbarer und die String-Konstruktion effizienter.
-
 ## How to:
 C++ hat keine eingebaute String-Interpolation wie einige andere Sprachen, aber wir können ähnliche Funktionalitäten mit `std::ostringstream` oder fmt-Bibliothek (C++20) erreichen:
 

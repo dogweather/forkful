@@ -11,12 +11,7 @@ title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---
 
-## Qué y Por Qué?
-
-Generar números aleatorios en PHP se trata de producir valores impredecibles dentro de un rango especificado, lo cual es esencial para tareas como crear ID de usuarios únicos, generar contraseñas o para usar en simulaciones y juegos. Los programadores dependen de la aleatoriedad para añadir imprevisibilidad y variabilidad en sus aplicaciones, haciendo procesos como pruebas o experiencias de usuario más robustas y atractivas.
-
 ## Cómo hacerlo:
-
 PHP ofrece varias funciones para generar números aleatorios, pero las más utilizadas son `rand()`, `mt_rand()`, y para propósitos criptográficos, `random_int()`.
 
 Para generar un número aleatorio simple entre 0 y getrandmax() (el valor más grande posible devuelto por `rand()`), puedes usar:
@@ -48,7 +43,6 @@ echo random_int(1, 100);
 Nuevamente, el resultado es un número aleatorio entre 1 y 100, como `84`, pero con una garantía más fuerte de aleatoriedad.
 
 ## Análisis Profundo
-
 La función `rand()` ha estado presente en PHP desde sus primeras versiones, sirviendo como el enfoque inicial para generar números aleatorios. Sin embargo, no es la mejor opción para aplicaciones que requieren un alto grado de aleatoriedad debido a su algoritmo relativamente predecible.
 
 `mt_rand()`, introducido en PHP 4, se basa en el algoritmo Mersenne Twister - muy superior en términos de velocidad y la aleatoriedad que puede generar en comparación con `rand()`. Rápidamente se convirtió en la opción preferida para la mayoría de las necesidades no criptográficas.

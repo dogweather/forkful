@@ -15,9 +15,6 @@ title: "Vi\u1EBFt ki\u1EC3m th\u1EED"
 weight: 36
 ---
 
-## Gì và Tại sao?
-Viết kiểm thử nghĩa là tạo ra mã nguồn kiểm tra xem mã chính của bạn hoạt động như mong đợi hay không. Lập trình viên kiểm thử để bắt lỗi sớm, đảm bảo chức năng, và làm cho những thay đổi trong tương lai ít rủi ro hơn.
-
 ## Làm thế nào:
 Elm sử dụng `elm-test` để viết kiểm thử. Dưới đây là một kiểm thử nhỏ cho hàm `add` tổng hợp hai số:
 

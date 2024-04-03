@@ -13,16 +13,10 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## ¿Qué & Por qué?
-
-Redondear números consiste en ajustar el valor de un número al entero más cercano o a un número específico de decimales. Los programadores hacen esto por razones tales como mejorar la legibilidad, simplificar cálculos o cumplir con requisitos de precisión específicos del dominio.
-
 ## Cómo hacerlo:
-
 En Go, no hay una función integrada que redondee directamente los números a un número específico de decimales en el paquete de matemáticas. Sin embargo, puedes lograr el redondeo a través de una combinación de funciones para números enteros o implementar una función personalizada para decimales.
 
 ### Redondeando al entero más cercano:
-
 Para redondear al entero más cercano, puedes utilizar la función `math.Floor()` con un 0.5 agregado para números positivos, y `math.Ceil()` menos 0.5 para números negativos, dependiendo de la dirección al que desees redondear.
 
 ```go
@@ -40,7 +34,6 @@ func main() {
 ```
 
 ### Redondeando a un número específico de decimales:
-
 Para redondear a un número específico de decimales, se puede utilizar una función personalizada donde multiplicas el número por 10^n (donde n es el número de decimales), lo redondeas al entero más cercano como antes, y luego lo divides por 10^n.
 
 ```go
@@ -63,7 +56,6 @@ func main() {
 ```
 
 ## Estudio en profundidad
-
 Redondear números es una operación fundamental en la programación de computadoras, vinculada al desafío histórico de representar números reales en un sistema binario. La necesidad de redondear surge del hecho de que muchos números reales no pueden ser representados precisamente en binario, lo que lleva a errores de aproximación.
 
 En Go, el enfoque para el redondeo es algo manual en comparación con los lenguajes que ofrecen funciones de redondeo incorporadas a decimales específicos. Sin embargo, el paquete `math` de la biblioteca estándar de Go proporciona los bloques de construcción básicos (como `math.Floor` y `math.Ceil`) para construir cualquier mecanismo de redondeo requerido por la aplicación.

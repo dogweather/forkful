@@ -13,9 +13,6 @@ title: Code organiseren in functies
 weight: 18
 ---
 
-## Wat & Waarom?
-Het organiseren van code in functies gaat over het opsplitsen van je scriptwerk in hapklare brokken—denk aan functionele LEGO-blokken. We doen dit voor duidelijkheid, herbruikbaarheid en geestelijke gezondheid. Het maakt onze code netjes, leesbaar en onderhoudbaar.
-
 ## Hoe:
 ```Lua
 -- Definieer een eenvoudige functie om te groeten

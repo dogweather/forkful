@@ -11,9 +11,6 @@ title: Trabajando con TOML
 weight: 39
 ---
 
-## ¿Qué y Por Qué?
-TOML (Lenguaje Mínimo y Obvio de Tom) es un formato de serialización de datos fácil de leer debido a su semántica clara. Los programadores utilizan TOML para archivos de configuración porque ofrece un equilibrio entre legibilidad humana y analizabilidad por máquinas.
-
 ## Cómo hacerlo:
 Para trabajar con TOML en C++, necesitarás una biblioteca como `toml++`. Aquí tienes una guía rápida:
 

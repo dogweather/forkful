@@ -14,12 +14,7 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-
-Het schrijven van tests in Dart omvat het creëren van testgevallen om automatisch te verifiëren dat verschillende delen van je programma werken zoals verwacht. Programmeurs doen dit om ervoor te zorgen dat hun code betrouwbaar is en vrij van defecten, wat gemakkelijker updates en refactoring mogelijk maakt en regressies voorkomt.
-
 ## Hoe:
-
 In Dart wordt het `test` pakket vaak gebruikt voor het schrijven van tests. Voeg eerst het `test` pakket toe aan je `pubspec.yaml`:
 
 ```yaml
@@ -62,7 +57,6 @@ Voorbeelduitvoer zou kunnen lijken op:
 ```
 
 ### Gebruik maken van een externe bibliotheek: Mockito voor mocking
-
 Voor het testen van code die complexe afhankelijkheden heeft, kun je Mockito gebruiken om mock-objecten te creëren. Voeg eerst Mockito toe aan je `pubspec.yaml`:
 
 ```yaml

@@ -11,9 +11,6 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Extraire des sous-chaînes, c'est prendre des morceaux spécifiques d'une chaîne de caractères. Pourquoi ? Pour analyser des données, valider des entrées, ou simplement manipuler du texte.
-
 ## How to: (Comment faire : )
 ```elixir
 # Extraire une sous-chaîne avec String.slice/3

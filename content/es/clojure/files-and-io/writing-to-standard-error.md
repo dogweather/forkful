@@ -13,9 +13,6 @@ title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---
 
-## Qué y Por Qué?
-Escribir en el error estándar (stderr) se trata de dirigir mensajes de error y diagnósticos al flujo stderr, separado de la salida estándar (stdout). Los programadores hacen esto para diferenciar la salida regular del programa de los mensajes de error, permitiendo una depuración y registro más efectivos.
-
 ## Cómo hacerlo:
 En Clojure, puedes escribir en stderr utilizando el flujo `*err*`. Aquí tienes un ejemplo básico:
 

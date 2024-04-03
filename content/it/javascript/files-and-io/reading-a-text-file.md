@@ -10,9 +10,6 @@ title: Lettura di un file di testo
 weight: 22
 ---
 
-## What & Why?
-Leggere un file di testo significa estrarre dati da un documento salvato sul tuo dispositivo o server. Programmatore lo fanno per manipolare, visualizzare, oppure analizzare quel contenuto all'interno delle loro applicazioni.
-
 ## How to:
 In Node.js, leggere un file di testo è semplice. Usa il modulo `fs` e la sua funzione `readFile()`:
 

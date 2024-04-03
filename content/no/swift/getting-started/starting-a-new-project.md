@@ -11,9 +11,6 @@ title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Å starte et nytt prosjekt i Swift handler om å skape en ren skifer for koden din. Vi gjør det for å realisere nye ideer, løse problemer eller lære noe nytt.
-
 ## How to: (Hvordan:)
 Opprette et nytt prosjekt i Xcode:
 

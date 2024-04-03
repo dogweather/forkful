@@ -11,9 +11,6 @@ title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---
 
-## Quoi & Pourquoi ?
-La concaténation de chaînes c'est, simplement, la fusion de deux textes en un seul. On le fait souvent pour construire des messages ou combiner des données textuelles.
-
 ## Comment faire :
 ```Rust
 fn main() {

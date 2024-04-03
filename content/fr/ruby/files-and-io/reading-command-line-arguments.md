@@ -11,9 +11,6 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## Quoi et Pourquoi ?
-Lire les arguments de la ligne de commande, c'est récupérer des données directement du terminal lors de l'exécution d'un script. Les programmeurs le font pour personnaliser l'exécution sans modifier le code.
-
 ## Comment faire :
 ```Ruby
 # script.rb

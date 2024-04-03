@@ -11,9 +11,6 @@ title: "Interpolera en str\xE4ng"
 weight: 8
 ---
 
-## What & Why? (Vad & Varför?)
-Interpolering av strängar tillåter dig att infoga variabler eller uttryck i en sträng. Programmerare använder det för att skapa dynamiska meddelanden och för att förenkla sammanfogning av text och data.
-
 ## How to: (Så här gör du:)
 ```Bash
 name="Världen"

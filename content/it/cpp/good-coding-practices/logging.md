@@ -10,9 +10,6 @@ title: Registrazione Eventi (Logging)
 weight: 17
 ---
 
-## Cosa e Perché?
-Nel contesto della programmazione, il logging è il processo di registrazione di eventi, stati e informazioni in un file o in un altro mezzo di output. I programmatori effettuano il logging per tenere traccia di ciò che sta succedendo nelle loro applicazioni, per debuggare problemi e per monitorare le prestazioni in vista di future analisi e ottimizzazioni.
-
 ## Come fare:
 Diciamo che stai lavorando su una macchina Linux e vuoi lanciare i tuoi log in un file con il buon vecchio C++. Vorrai includere le librerie `<iostream>` e `<fstream>` per effettuare operazioni su file. Ecco un esempio rapido:
 

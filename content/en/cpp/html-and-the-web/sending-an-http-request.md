@@ -9,11 +9,7 @@ title: Sending an HTTP request
 weight: 44
 ---
 
-## What & Why?
-Sending an HTTP request fetches data from a web server. Programmers do this to interact with web services, gather info, or communicate between systems.
-
 ## How to:
-
 ```C++
 #include <iostream>
 #include <cpr/cpr.h> // Make sure to install the CPR library first
@@ -47,7 +43,6 @@ CPR, which stands for C++ Requests, is a simple-to-use wrapper inspired by Pytho
 Diving under the hood, sending an HTTP request involves setting up a TCP connection, formatting a request compliant with the HTTP protocol, then parsing the response. Getting this right from scratch is non-trivial due to error handling, HTTP version complexities, and security considerations.
 
 ## See Also
-
 - CPR Github Repository: https://github.com/libcpr/cpr
 - `libcurl` documentation for more advanced usage: https://curl.se/libcurl/
 - Official Boost.Beast documentation: https://www.boost.org/doc/libs/release/libs/beast/

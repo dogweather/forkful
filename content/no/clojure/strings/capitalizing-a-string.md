@@ -13,9 +13,6 @@ title: Sette stor bokstav i en streng
 weight: 2
 ---
 
-## Hva & Hvorfor?
-Å sette stor bokstav i en streng innebærer å endre strengen slik at dens første tegn er en stor bokstav, mens resten av strengen forblir uendret. Programmerere utfører ofte stor bokstavsetting av strenger for å sikre datakonsistens, spesielt for navn og steder, eller for å overholde grammatiske regler i brukergrensesnitt.
-
 ## Hvordan:
 Clojure, som er et JVM-språk, lar deg bruke Java String-metoder direkte. Her er et grunnleggende eksempel på hvordan du setter stor bokstav i en streng i Clojure:
 

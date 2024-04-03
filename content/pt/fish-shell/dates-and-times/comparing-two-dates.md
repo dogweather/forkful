@@ -12,9 +12,6 @@ title: Comparando duas datas
 weight: 27
 ---
 
-## O Que & Porquê?
-Comparar duas datas significa verificar a diferença ou a relação temporal entre elas, como qual vem antes ou quanto tempo se passou entre uma e outra. Programadores fazem isso para, por exemplo, validar prazos, ordenar eventos ou calcular períodos de tempo em aplicações.
-
 ## Como Fazer:
 ```Fish Shell
 # Defina as datas em formato AAAA-MM-DD

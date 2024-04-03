@@ -11,9 +11,6 @@ title: Conversione di una data in una stringa
 weight: 28
 ---
 
-## What & Why?
-Trasformare una data in stringa significa convertire il formato data in testo leggibile. I programmatori lo fanno per mostrare date in formati diversi o per salvare su database non supportanti il tipo data.
-
 ## How to:
 In Elm, usiamo il modulo `Date` per gestire le date e `elm/time` per la formattazione. Ecco un esempio:
 

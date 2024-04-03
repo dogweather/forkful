@@ -13,9 +13,6 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Cosa & Perché?
-Ottenere la data corrente in Haskell comporta il recupero del tempo corrente del sistema e la sua trasformazione in un formato di data leggibile. I programmatori fanno ciò per eseguire operazioni basate sulla data, come il logging, la pianificazione di compiti, o il timestamping di eventi nelle applicazioni.
-
 ## Come fare:
 La libreria standard di Haskell, `base`, fornisce il modulo `Data.Time` che offre funzionalità per lavorare con date e orari. Ecco come usarlo per ottenere la data corrente:
 

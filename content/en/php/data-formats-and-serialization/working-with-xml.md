@@ -9,9 +9,6 @@ title: Working with XML
 weight: 40
 ---
 
-## What & Why?
-XML is a markup language used for storing and transporting data. Programmers work with XML to enable interoperability between applications and systems - think data exchange and configuration settings.
-
 ## How to:
 Reading XML with SimpleXML:
 

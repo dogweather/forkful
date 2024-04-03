@@ -14,16 +14,10 @@ title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---
 
-## Quoi & Pourquoi ?
-
-Les expressions régulières (regex) sont des motifs utilisés pour rechercher des combinaisons de caractères dans des chaînes de caractères. Les programmeurs les utilisent pour rechercher, éditer ou manipuler du texte et des données, ce qui les rend indispensables pour les tâches de correspondance de motifs et d'analyse de données.
-
 ## Comment :
-
 Utiliser des expressions régulières dans Google Apps Script est simple grâce à la syntaxe basée sur JavaScript. Voici comment vous pouvez intégrer regex dans vos scripts pour des tâches courantes telles que la recherche et la validation des données.
 
 ### Recherche dans les chaînes de caractères
-
 Supposons que vous voulez trouver si une chaîne contient un motif spécifique, tel qu'une adresse e-mail. Voici un exemple simple :
 
 ```javascript
@@ -42,7 +36,6 @@ findEmailInText("Contactez-nous à info@example.com.");
 ```
 
 ### Validation des données
-
 Les expressions régulières brillent dans la validation des données. Ci-dessous se trouve une fonction qui valide une chaîne de caractères pour vérifier si elle respecte une politique de mot de passe simple (au moins une lettre majuscule, une lettre minuscule et un minimum de 8 caractères).
 
 ```javascript
@@ -57,7 +50,6 @@ Logger.log(validatePassword("faible"));     // Renvoie : faux
 ```
 
 ## Plongée profonde
-
 Les expressions régulières dans Google Apps Script sont héritées de JavaScript, standardisées pour la première fois dans la spécification du langage ECMAScript en juin 1997. Bien qu'elles soient puissantes, elles peuvent parfois conduire à un code déroutant et difficile à maintenir, surtout lorsqu'elles sont surutilisées ou utilisées pour des tâches de correspondance de motifs complexes qui pourraient être résolues plus efficacement par d'autres méthodes d'analyse.
 
 Par exemple, bien que vous puissiez utiliser regex pour l'analyse de HTML ou de XML en dépannage, cela est généralement déconseillé en raison des structures imbriquées et complexes de ces documents. Au lieu de cela, des outils spécifiquement conçus pour analyser de telles structures, comme les analyseurs DOM pour HTML, sont plus fiables et lisibles.

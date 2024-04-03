@@ -13,12 +13,7 @@ title: "F\xE5 dagens dato"
 weight: 29
 ---
 
-## Hva og hvorfor?
-
-Å hente dagens dato i PowerShell handler om å hente systemets nåværende dato og tid. Denne operasjonen er fundamental for oppgaver som logging, tidsoperasjoner, eller å ta avgjørelser basert på datoer. Programmerere bruker denne muligheten til å spore hendelser, planlegge oppgaver og håndtere dato-spesifikk logikk i skript og applikasjoner.
-
 ## Hvordan:
-
 PowerShell tilbyr enkle cmdleter for å få tak i dato og klokkeslett. Cmdleten `Get-Date` er hovedverktøyet for dette formålet. Den kan returnere fullstendig dato og tid, som du kan formatere eller manipulere etter dine behov.
 
 ```powershell
@@ -57,7 +52,6 @@ Get-Date -Format "HH:mm:ss"
 ```
 
 ### Bruke .NET-klasse
-
 PowerShell tillater direkte tilgang til .NET-klasser, som tilbyr en alternativ måte å jobbe med datoer og klokkeslett på.
 
 ```powershell

@@ -12,9 +12,6 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-Tests schrijven in programmeren betekent het creëren van mini-programma's om te controleren of je code werkt zoals verwacht. Programmeurs doen dit om bugs te vinden, kwaliteit te waarborgen, en tijd te besparen bij het later oplossen van problemen.
-
 ## Hoe:
 Laten we duiken in wat C# code met NUnit, een populair testraamwerk:
 

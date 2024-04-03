@@ -10,12 +10,7 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-
-Fetching the current date in Python is a staple operation for many applications, such as logging, data analysis, and time-based decision-making. It's about retrieving the system's current date, which is crucial for tasks that depend on temporal context.
-
 ## How to:
-
 **Using the standard library `datetime`:**
 
 The `datetime` module in Python's standard library provides classes for manipulating dates and times. To get the current date, you can use the `date.today()` method.

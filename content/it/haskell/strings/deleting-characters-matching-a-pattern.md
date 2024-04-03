@@ -10,9 +10,6 @@ title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---
 
-## What & Why?
-In Haskell, eliminare caratteri che corrispondono a un pattern significa rimuovere specifici elementi da una stringa, basandosi su regole definite. I programmatori lo fanno per pulire i dati, formattare l'output, o preparare stringhe per ulteriori elaborazioni.
-
 ## How to:
 Haskell non ha una standard library per regex come altri linguaggi, ma possiamo usare funzioni come `filter` e list comprehension per ottenere risultati simili.
 

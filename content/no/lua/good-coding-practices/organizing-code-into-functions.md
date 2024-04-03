@@ -11,9 +11,6 @@ title: Organisering av kode i funksjoner
 weight: 18
 ---
 
-## Hva & Hvorfor?
-Å organisere kode i funksjoner handler om å bryte ned scripting til håndterbare deler—tenk funksjonelle LEGO-blokker. Vi gjør det for klarhet, gjenbrukbarhet og fornuft. Det gjør koden vår ryddig, lesbar og vedlikeholdbar.
-
 ## Hvordan:
 ```Lua
 -- Definer en enkel funksjon for å hilse

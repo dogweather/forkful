@@ -11,9 +11,6 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-Writing a text file in JavaScript often pertains to creating and saving data in a simple, readable format for logging, exporting user input, or configuration purposes. This functionality is crucial for applications that need to persist data beyond the lifetime of the application process, providing a way to store and later retrieve or share information.
-
 ## How to:
 In a Node.js environment, you can use the built-in `fs` (File System) module to write text files. This example demonstrates writing text to a file asynchronously:
 

@@ -14,9 +14,6 @@ title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---
 
-## Co i dlaczego?
-W TypeScript piszemy do standardowego błędu (stderr) w celu wysyłania komunikatów błędów lub rejestracji bezpośrednio do strumienia wyjściowego błędów środowiska (np. konsoli w node.js lub przeglądarce internetowej). Jest to niezbędne do diagnozowania problemów bez ingerencji w standardowe wyjście (stdout), które jest zwykle używane dla danych programu, zapewniając, że obsługa błędów oraz rejestrowanie są zarządzane w sposób efektywny i spójny.
-
 ## Jak to zrobić:
 TypeScript, będąc nadzbiorem JavaScript, opiera się na bazowym środowisku wykonawczym JS (jak Node.js) do pisania na stderr. Oto jak można to zrobić bezpośrednio:
 

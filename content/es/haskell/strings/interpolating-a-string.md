@@ -12,9 +12,6 @@ title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---
 
-## ¿Qué & Por Qué?
-La interpolación de cadenas permite insertar valores dentro de una cadena de texto, y los programadores la usan para construir strings dinámicamente y mejorar la legibilidad del código.
-
 ## Cómo Hacerlo:
 En Haskell, puedes usar la librería `text-format` o `Printf` para la interpolación de cadenas. Aquí tienes algunos ejemplos:
 

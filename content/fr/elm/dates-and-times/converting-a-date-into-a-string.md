@@ -11,9 +11,6 @@ title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## What & Why? / Quoi & Pourquoi ?
-Convertir une date en chaîne de caractères, c'est transformer la représentation temporelle en texte lisible. Les programmeurs font ça pour afficher les dates aux utilisateurs ou les stocker dans un format standard.
-
 ## How to: / Comment faire :
 En Elm, on utilise souvent `elm/time` pour manipuler les dates. Voici comment convertir une date en chaîne de caractère :
 

@@ -11,9 +11,6 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## Hva & Hvorfor?
-Å laste ned en nettside betyr å hente ned innholdet fra en URL til din lokale enhet. Programmerere gjør det for å analysere innholdet, automatisere datainnsamling eller sjekke tilgjengelighet.
-
 ## Slik gjør du:
 PHP gjør nedlasting av nettsider enkelt med `file_get_contents()` og cURL-biblioteket. Her er grunnleggende eksempler:
 

@@ -11,9 +11,6 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i dlaczego?
-Liczby zespolone, składające się z części rzeczywistej i urojonej (jak 3+4i), są podstawą w inżynierii i fizyce. Programiści pracują z nimi przy symulacjach, przetwarzaniu sygnałów i rozwiązywaniu równań, które nie współgrają tylko z liczbami rzeczywistymi.
-
 ## Jak to zrobić:
 Ruby umożliwia łatwą pracę z liczbami zespolonymi. Możesz tworzyć je i manipulować nimi za pomocą klasy Complex:
 

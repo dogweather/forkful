@@ -13,12 +13,7 @@ title: Tolka HTML
 weight: 43
 ---
 
-## Vad & Varför?
-
-Att parsa HTML innebär att gå igenom strukturen och innehållet i en HTML-fil för att extrahera information. Programmerare gör det för att komma åt data, manipulera innehåll eller skrapa webbplatser.
-
-## Hur man gör: 
-
+## Hur man gör:
 Bash är inte förstahandsvalet för att parsa HTML, men det kan göras med verktyg som `grep`, `awk`, `sed`, eller externa verktyg som `lynx`. För att vara robusta kommer vi att använda `xmllint` från `libxml2`-paketet.
 
 ```bash
@@ -54,7 +49,6 @@ Styckets innehåll är: Bash kan läsa mig.
 ```
 
 ## Fördjupning
-
 Förr i tiden använde programmerare regex-baserade verktyg som `grep` för att skanna HTML, men det var klumpigt. HTML är inte reguljärt – det är kontextuellt. Traditionella verktyg missar detta och kan vara felbenägna.
 
 Alternativ? Massor. Python med Beautiful Soup, PHP med DOMDocument, JavaScript med DOM-parsrar – språk med bibliotek designade för att förstå HTML:s struktur.
@@ -62,7 +56,6 @@ Alternativ? Massor. Python med Beautiful Soup, PHP med DOMDocument, JavaScript m
 Att använda `xmllint` i bash-skript är solid för enkla uppgifter. Det förstår XML och därmed även XHTML. Vanlig HTML kan vara oförutsägbar, dock. Den följer inte alltid XML:s strikta regler. `xmllint` tvingar HTML in i en XML-modell vilket fungerar bra för välformulerad HTML men kan snubbla på röriga saker.
 
 ## Se också
-
 - [W3Schools - HTML DOM Parsare](https://www.w3schools.com/xml/dom_intro.asp): Avmystifierar HTML DOM.
 - [MDN Web Docs - Att parsa och serialisera XML](https://developer.mozilla.org/en-US/docs/Web/Guide/Parsing_and_serializing_XML): För XML-parsningsprinciper som gäller XHTML.
 - [Beautiful Soup Dokumentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/): Ett Python-bibliotek för HTML-parsning.

@@ -11,9 +11,6 @@ title: Arbeta med csv
 weight: 37
 ---
 
-## Vad & Varför?
-CSV, "Comma-Separated Values", är textfiler där data separeras med kommatecken. Programmerare använder CSV för enkelheten att lagra och utbyta data mellan olika system.
-
 ## How to:
 För att jobba med CSV-filer i Swift kan man använda `String`-metoder för att dela upp innehållet. Nedan ser du hur man kan läsa och skriva CSV-data.
 

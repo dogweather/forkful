@@ -13,12 +13,7 @@ title: Schrijven naar standaardfout
 weight: 25
 ---
 
-## Wat & Waarom?
-
-Schrijven naar standaardfout (stderr) betekent het versturen van je foutmeldingen, gescheiden van de normale uitvoer (stdout). Programmeurs doen dit om normale gegevens te scheiden van foutinformatie, wat helpt bij het loggen en debuggen.
-
 ## Hoe te:
-
 In C#, schrijf naar stderr met behulp van `Console.Error.WriteLine()`. Het lijkt op `Console.WriteLine()`, alleen gericht op de foutstroom.
 
 ```C#
@@ -50,12 +45,10 @@ Foutbericht!
 Het foutbericht verschijnt in de console of kan worden omgeleid naar een bestand.
 
 ## Diepgaande Duik
-
 Historisch gezien dateert het scheiden van stdout en stderr terug naar Unix-systemen, waar het schone gegevensverwerking en foutafhandeling mogelijk maakte. In C# (en .NET in het algemeen) vertegenwoordigt `Console.Out` stdout, terwijl `Console.Error` stderr vertegenwoordigt.
 
 Je kunt beide omleiden met behulp van `Console.SetOut()` en `Console.SetError()`. Streams zoals `FileStream` of `StringWriter` kunnen de uitvoer vangen voor logging. Het is cruciaal in scenario's waar foutmeldingen niet mogen mengen met reguliere gegevens, zeg, wanneer stdout wordt gepijpt naar een ander programma.
 
 ## Zie Ook
-
 - [Console.Error Eigenschap - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.console.error)
 - [.NET Stream Klasse - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.io.stream)

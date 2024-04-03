@@ -12,12 +12,7 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co & Dlaczego?
-
-Obsługa błędów w Pythonie (lub w dowolnym języku programowania) wiąże się z oczekiwaniem na nieoczekiwane – to sztuka eleganckiego radzenia sobie, gdy w kodzie pojawią się problemy. Robimy to, aby zapobiegać awariom, prowadzić użytkowników oraz sprawiać, że nasze programy są solidne i niezawodne.
-
 ## Jak to zrobić:
-
 ``` Python
 # Podstawowy blok try-except
 try:
@@ -56,7 +51,6 @@ To nie jest liczba!
 ```
 
 ## Szczegółowa analiza
-
 Od zarania programowania obsługa błędów była kluczowa. Wczesne podejścia były prymitywne, na przykład sprawdzanie warunków przed każdą ryzykowną operacją. Składnia `try-except` Pythona wywodzi się z dziedzictwa obsługi wyjątków w starszych językach takich jak C++ i Java, upraszczając proces.
 
 Gdy użyjesz `try` na bloku kodu, Python wypatruje wyjątków. Jeśli pojawi się błąd, blok `except` go przechwytuje. Można być specyficznym co do przechwytywanych wyjątków lub złapać je wszystkie za pomocą gołego `except`. Jednak precyzyjne określanie wyjątków jest lepszą metodą – jest dokładne, nie stanowi siatki dla wszystkiego.
@@ -66,7 +60,6 @@ Gdy użyjesz `try` na bloku kodu, Python wypatruje wyjątków. Jeśli pojawi si�
 Alternatywy? Oczywiście, że są. Niektóre języki używają kodów powrotu zamiast wyjątków. Możesz także napotkać instrukcje `with` do obsługi zasobów lub `assertions`, które sprawdzają warunki podczas programowania. Ale kiedy mówimy o solidnych strategiach obsługi błędów, model try-catch wyróżnia się czytelnością i strukturą.
 
 ## Zobacz również
-
 Oto kilka dobrych dodatkowych zasobów do jeszcze głębszego zanurzenia się:
 
 - Oficjalna dokumentacja Pythona na temat błędów i wyjątków: [Python Docs – Błędy i wyjątki](https://docs.python.org/3/tutorial/errors.html)

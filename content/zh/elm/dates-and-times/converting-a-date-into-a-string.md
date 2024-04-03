@@ -15,9 +15,6 @@ title: "\u5C06\u65E5\u671F\u8F6C\u6362\u4E3A\u5B57\u7B26\u4E32"
 weight: 28
 ---
 
-## What & Why? (是什么 & 为什么?)
-日期转换成字符串是把日期数据转化为可读文本格式的过程。编程时这样做方便显示和存储。
-
 ## How to: (如何操作)
 ```Elm
 import Time exposing (Posix)

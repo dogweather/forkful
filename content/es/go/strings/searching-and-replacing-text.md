@@ -14,12 +14,7 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## Qué y por qué?
-
-Buscar y reemplazar texto en programación facilita la modificación y gestión de cadenas, que es una tarea fundamental en la manipulación de datos y el desarrollo de software. Los programadores realizan estas operaciones para actualizar, limpiar o transformar datos textuales de manera eficiente.
-
 ## Cómo hacerlo:
-
 En Go, el paquete `strings` ofrece varias funciones para buscar y reemplazar texto dentro de las cadenas. Exploraremos un par de métodos comunes.
 
 **Usando `strings.Contains` para buscar texto:**
@@ -78,7 +73,6 @@ func main() {
 ```
 
 ## Estudio profundo
-
 En Go, la manipulación de texto, incluyendo operaciones de búsqueda y reemplazo, está diseñada para ser directa y eficiente, aprovechando la amplia biblioteca estándar de Go. El paquete `strings` proporciona funcionalidades básicas, adecuadas para la mayoría de los casos de uso comunes, mientras que el paquete `regexp` atiende a patrones más complejos que requieren de expresiones regulares.
 
 Históricamente, el enfoque de Go para manejar cadenas y la manipulación de texto ha enfatizado la simplicidad y el rendimiento. La decisión de incluir paquetes poderosos como `strings` y `regexp` como parte de la biblioteca estándar fue impulsada por el deseo de hacer de Go una opción práctica para el desarrollo web y aplicaciones de procesamiento de texto, donde tales operaciones son frecuentes.

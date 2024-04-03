@@ -10,9 +10,6 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## What & Why? (Hva & Hvorfor?)
-I PHP søker og erstatter vi tekst for å oppdatere data eller formatere output. Dette sparer tid og automatiserer kjedelige oppgaver.
-
 ## How to (Slik gjør du det):
 PHP tilbyr flere funksjoner for dette, slik som `str_replace()` og `preg_replace()`. Se eksemplene nedenfor:
 

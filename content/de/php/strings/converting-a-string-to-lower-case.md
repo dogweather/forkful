@@ -10,9 +10,6 @@ title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---
 
-## Was & Warum?
-Ein String zu Kleinbuchstaben umwandeln bedeutet, alle Großbuchstaben in einem Text in ihre entsprechenden kleineren Gegenstücke zu verändern. Programmierer nutzen das, um die Konsistenz zu erhöhen, bei der Suche und beim Vergleichen von Text zu helfen und um nutzererzeugte Eingaben zu standardisieren.
-
 ## So geht's:
 ```PHP
 <?php

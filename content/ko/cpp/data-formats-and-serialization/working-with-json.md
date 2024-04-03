@@ -21,18 +21,12 @@ title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 weight: 38
 ---
 
-## 무엇이며 왜 사용하는가?
-
-JSON(JavaScript Object Notation)은 데이터를 저장하고 전송하기 위한 경량 포맷으로, 서버와 웹 애플리케이션 간의 데이터 교환을 위한 훌륭한 매체입니다. 프로그래머들은 JSON을 사용하는데, 이는 인간에게 쉽게 읽히고, 기계가 분석하기에 직관적이기 때문입니다. 특히 인터넷을 통한 데이터 교환 또는 구성 설정이 필요한 애플리케이션을 작업할 때 그렇습니다.
-
 ## 사용 방법:
-
 C++에서는 JSON을 기본적으로 지원하지 않지만, nlohmann/json과 같은 서드파티 라이브러리를 사용하면 간단합니다. 기본 작업을 위해 사용하는 방법은 다음과 같습니다:
 
 우선, 라이브러리가 설치되어 있는지 확인하세요. vcpkg나 Conan과 같은 패키지 관리자를 사용한다면, 프로젝트에 `nlohmann/json`을 쉽게 추가할 수 있습니다.
 
 ### 문자열에서 JSON 파싱하기
-
 ```cpp
 #include <iostream>
 #include <nlohmann/json.hpp>
@@ -62,7 +56,6 @@ City: New York
 ```
 
 ### JSON 생성하기
-
 JSON 데이터를 생성하는 것도 마찬가지로 간단합니다; 단지 `nlohmann::json` 객체에 값을 할당하면 됩니다.
 
 ```cpp

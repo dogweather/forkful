@@ -14,9 +14,6 @@ title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---
 
-## Quoi & Pourquoi ?
-Les expressions régulières (regex) sont des séquences de caractères qui définissent des modèles de recherche, principalement utilisées pour la correspondance et la manipulation de chaînes de caractères. Les programmeurs utilisent les regex dans les projets Arduino pour analyser les entrées sérielles, valider les entrées utilisateur ou extraire des données des chaînes, améliorant ainsi l'efficacité et la flexibilité du traitement des données.
-
 ## Comment :
 Arduino n’a pas de support intégré pour les regex directement dans sa bibliothèque standard. Cependant, vous pouvez obtenir une fonctionnalité similaire aux regex pour des motifs simples en utilisant des fonctions de chaînes de base, ou, pour des besoins plus complexes, intégrer une bibliothèque tierce telle que `regex`.
 

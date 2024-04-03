@@ -10,9 +10,6 @@ title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---
 
-## Vad & Varför?
-Att radera tecken som matchar ett mönster innebär att man filtrerar bort specifika karaktärer från en sträng baserat på definierade kriterier. Programmerare gör detta för att rensa data, validera input eller förbereda text för bearbetning.
-
 ## Hur gör man:
 Vi använder Pythons `re`-modul för att matcha och ta bort tecken med reguljära uttryck.
 

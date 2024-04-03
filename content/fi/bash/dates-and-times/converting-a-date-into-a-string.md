@@ -11,9 +11,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---
 
-## What & Why?
-Muunnetaan päivämäärä merkkijonoksi, koska jäsennellyt formaatit on helpompi jakaa ja käsitellä. Joskus tarvitaan tarkkaa muotoilua, esimerkiksi lokitiedostoissa tai rajapintavastauksissa.
-
 ## How to:
 ```Bash
 # Tämänhetkinen päivä standardimuodossa

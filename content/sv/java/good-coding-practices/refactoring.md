@@ -11,9 +11,6 @@ title: Refaktorisering
 weight: 19
 ---
 
-## Vad & Varför?
-Refaktorisering är processen att omstrukturera befintlig datorkod—ändra faktoriseringen—utan att ändra dess externa beteende. Programmerare gör detta för att förbättra den icke-funktionella attributen hos mjukvaran, förbättra läsbarheten, minska komplexiteten och göra koden mer underhållbar för framtida projekt.
-
 ## Hur man gör:
 Låt oss ta en enkel Java-klass som skriker efter refaktorisering på grund av dess dåliga organisation och brist på klarhet.
 

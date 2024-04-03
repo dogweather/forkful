@@ -17,12 +17,7 @@ title: "\u5B57\u7B26\u4E32\u62FC\u63A5"
 weight: 3
 ---
 
-## What & Why? (什么和为什么？)
-
-字符串拼接就是将两个或多个字符串合并成一个新的字符串。程序员这样做是为了动态地创建数据展示，或者是为了在代码中构建具体的信息。
-
 ## How to: (如何操作：)
-
 ```Swift
 let greeting = "你好, "
 let name = "小明!"
@@ -47,7 +42,6 @@ print(weatherMessage) // 输出："今天的气温是22°C。"
 ```
 
 ## Deep Dive (深入探索：)
-
 历史上，不同的编程语言有不同的字符串拼接方式。早期的语言可能需要调用特定的函数，但在 Swift 中，通过 `+` 运算符和字符串插值两种方式简化了字符串的拼接。
 
 除了 `+` 和字符串插值，`NSString` 类中的 `appending()` 方法也可以用来拼接字符串，特别是当涉及到复杂的字符串处理时。
@@ -55,7 +49,6 @@ print(weatherMessage) // 输出："今天的气温是22°C。"
 性能方面，当拼接很长的字符串或者在循环中重复拼接时，应考虑使用 `String` 的 `append()` 方法或可变字符串 `NSMutableString`，以避免不必要的性能开销。
 
 ## See Also (参考链接：)
-
 - Apple官方文档有关字符串拼接：[String and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
 - `NSString` 类文档：[NSString](https://developer.apple.com/documentation/foundation/nsstring)
 - Swift字符串性能优化：[Optimizing Swift build performance](https://developer.apple.com/swift/blog/?id=37)

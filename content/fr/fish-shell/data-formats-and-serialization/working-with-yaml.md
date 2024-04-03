@@ -14,9 +14,6 @@ title: Travailler avec YAML
 weight: 41
 ---
 
-## Quoi & Pourquoi ?
-Travailler avec YAML implique l'analyse et la manipulation de fichiers YAML (YAML Ain't Markup Language), un format de sérialisation de données utilisé pour les fichiers de configuration, dans Fish Shell. Les programmeurs font cela pour automatiser et configurer des applications ou des services de manière efficace dans le contexte des environnements shell, facilitant des tâches comme la gestion des configurations et le provisioning des ressources.
-
 ## Comment faire :
 Fish Shell ne dispose pas de support intégré pour l'analyse de YAML, mais vous pouvez utiliser des outils tiers comme `yq` (un processeur YAML léger et portable en ligne de commande) pour manipuler les données YAML.
 

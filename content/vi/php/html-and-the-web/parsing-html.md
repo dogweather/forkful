@@ -14,9 +14,6 @@ title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---
 
-## Gì & Tại Sao?
-Phân tích cú pháp HTML có nghĩa là xử lý và phân tích cấu trúc và nội dung của mã HTML. Lập trình viên làm điều này để lấy dữ liệu từ trang web, thao tác hoặc trích xuất dữ liệu, tự động hóa việc kiểm thử, hoặc tích hợp nội dung web vào các ứng dụng.
-
 ## Cách thực hiện:
 PHP có một số thư viện có sẵn để phân tích cú pháp HTML, như DOMDocument. Dưới đây là một ví dụ sử dụng đơn giản:
 

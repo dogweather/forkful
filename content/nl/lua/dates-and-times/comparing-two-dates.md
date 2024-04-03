@@ -12,12 +12,7 @@ title: Twee datums vergelijken
 weight: 27
 ---
 
-## Wat & Waarom?
-
-Twee datums vergelijken betekent uitvogelen of een datum eerder, later of hetzelfde is als een andere. Programmeurs doen dit om gebeurtenissen te volgen, taken te plannen, records te sorteren, en meer.
-
 ## Hoe te:
-
 Lua heeft geen ingebouwde functies voor datumvergelijking, maar we kunnen de functie `os.time()` gebruiken om datums om te zetten naar een numeriek formaat (epochtijd) en ze dan vergelijken. Eitje.
 
 ```Lua
@@ -42,7 +37,6 @@ Date1 is eerder dan Date2.
 ```
 
 ## Diepere duik
-
 Vroeger had Lua geen datumtype. Programmeurs vertrouwden op de `os.time()` functie voor datum-tijd operaties, die nog steeds wordt gebruikt. `os.time()` retourneert de tijd in seconden sinds het epoch (ook bekend als Unix-tijd, die begon op 1 januari 1970). Dit is handig omdat het datums omzet naar getallen, wat vergelijkingen vereenvoudigt.
 
 Wat betreft alternatieven, je zou een aangepaste comparator voor datumtabellen kunnen schrijven, elk veld (jaar, maand, dag) handmatig kunnen vergelijken, of een externe datumlibrary zoals `LuaDate` kunnen gebruiken.
@@ -50,7 +44,6 @@ Wat betreft alternatieven, je zou een aangepaste comparator voor datumtabellen k
 Wees bewust van tijdzones en de veranderingen van zomertijd wanneer je `os.time()` gebruikt. De functie gaat ervan uit dat je lokale tijd geeft, tenzij je anders aangeeft.
 
 ## Zie ook
-
 - Lua 5.4 Referentiehandleiding: https://www.lua.org/manual/5.4/
 - LuaDate, een datum- en tijdsmodule: https://github.com/Tieske/date
 - Het begrijpen van Unix-timestamp: https://en.wikipedia.org/wiki/Unix_time

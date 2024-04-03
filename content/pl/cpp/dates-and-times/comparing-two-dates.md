@@ -11,9 +11,6 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## What & Why? (Co i dlaczego?)
-Porównywanie dwóch dat to sprawdzenie, która jest wcześniejsza, czy późniejsza, albo czy są identyczne. Programiści robią to, aby zarządzać terminami, sortować wydarzenia, czy też kontrolować czas trwania operacji.
-
 ## How to (Jak to zrobić)
 ```cpp
 #include <iostream>
@@ -41,6 +38,7 @@ int main() {
     return 0;
 }
 ```
+
 ### Przykładowe wyjście:
 ```
 Data1 jest wcześniejsza niż Data2.

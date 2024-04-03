@@ -10,9 +10,6 @@ title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---
 
-## Qué y Por Qué?
-Calcular una fecha en el futuro o pasado es simplemente determinar una nueva fecha sumando o restando días, meses, o años a una fecha dada. Los programadores lo hacen para manejar reservaciones, recordatorios, o cualquier función donde las fechas límite son clave.
-
 ## Cómo Hacerlo:
 Elm actualmente no incluye una biblioteca de manejo de tiempo en su núcleo, por lo que necesitarás una librería externa como `justinmimbs/date` para manejar fechas de manera efectiva. Aquí te muestro cómo:
 

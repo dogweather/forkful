@@ -13,12 +13,7 @@ title: Teilzeichenketten extrahieren
 weight: 6
 ---
 
-## Was & Warum?
-
-Das Extrahieren von Teilzeichenketten in Visual Basic für Applikationen (VBA) umfasst das Isolieren spezifischer Teile einer Zeichenkette basierend auf gegebenen Kriterien. Programmierer machen dies für Aufgaben wie Daten-Parsing, Validierung und Formatierung, bei denen das Manipulieren und Extrahieren von Informationen aus textuellen Daten entscheidend ist.
-
 ## Wie zu:
-
 In VBA verwenden Sie hauptsächlich die Funktionen `Mid`, `Left` und `Right`, um Teilzeichenketten zu extrahieren. Unten erkunden wir diese Funktionen mit Beispielen:
 
 1. **Mid**: Extrahiert eine Teilzeichenkette aus einer Zeichenkette, beginnend an einer angegebenen Position.
@@ -51,7 +46,6 @@ In VBA verwenden Sie hauptsächlich die Funktionen `Mid`, `Left` und `Right`, um
 Diese grundlegenden Funktionen bilden das Fundament des Teilzeichenkettenextrahierens in VBA und bieten robuste und unkomplizierte Ansätze für die Zeichenkettenmanipulation.
 
 ## Vertiefung:
-
 Historisch gesehen war die Fähigkeit zur Zeichenkettenmanipulation in der Programmierung essentiell, wobei BASIC (der Vorgänger von VBA) unter den ersten war, diese Fähigkeit in den frühen Tagen der Heimcomputer zu demokratisieren. Die Funktionen `Mid`, `Left` und `Right` in VBA erben dieses Erbe und bieten eine vereinfachte Schnittstelle für moderne Programmierer.
 
 Während diese Funktionen für viele Aufgaben recht effektiv sind, hat das Aufkommen von Regulären Ausdrücken in neueren Sprachen eine leistungsfähigere und flexiblere Möglichkeit geboten, mit Text zu arbeiten. Trotzdem machen die unmittelbare Einfachheit und Verfügbarkeit der traditionellen VBA-Teilzeichenkettenfunktionen sie perfekt geeignet für schnelle Aufgaben und diejenigen, die neu in der Programmierung sind.

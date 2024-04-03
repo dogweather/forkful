@@ -14,16 +14,10 @@ title: Trabalhando com CSV
 weight: 37
 ---
 
-## O Que & Por Quê?
-
-Trabalhar com CSV (Valores Separados por Vírgula) envolve a leitura e escrita de arquivos CSV, um formato comum de troca de dados usado devido à sua simplicidade e ampla compatibilidade entre diversas plataformas e linguagens. Programadores lidam com arquivos CSV para importar ou exportar dados de aplicações, bancos de dados e serviços, possibilitando a fácil manipulação e compartilhamento de dados.
-
 ## Como fazer:
-
 Em TypeScript, você pode trabalhar com arquivos CSV por meio de código nativo ou utilizando bibliotecas de terceiros como `csv-parser` para leitura e `csv-writer` para escrita de arquivos CSV.
 
 ### Lendo CSV com `csv-parser`
-
 Primeiro, instale o `csv-parser` via npm:
 
 ```
@@ -62,7 +56,6 @@ A saída será:
 ```
 
 ### Escrevendo CSV com `csv-writer`
-
 Para escrever em um arquivo CSV, primeiro instale o `csv-writer`:
 
 ```

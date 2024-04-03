@@ -11,9 +11,6 @@ title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---
 
-## What & Why? (Vad & Varför?)
-Att extrahera delsträngar är processen att plocka ut specificerade delar från en sträng. Programmerare gör detta för att bearbeta, analysera eller modifiera textdata på ett flexibelt sätt.
-
 ## How to (Hur man gör)
 Exempel på C++ med standardbiblioteket `<string>`:
 

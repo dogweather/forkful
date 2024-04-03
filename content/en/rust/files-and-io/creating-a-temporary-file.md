@@ -10,12 +10,7 @@ title: Creating a temporary file
 weight: 21
 ---
 
-## What & Why?
-
-Creating a temporary file means making a short-lived file for intermediate processing. Programmers do it to stash data without cluttering the user's file space and to ensure sensitive info is wiped after use. 
-
 ## How to:
-
 In Rust, the `tempfile` crate is a good friend for temp file shenanigans. Add it to your `Cargo.toml`:
 
 ```toml
@@ -45,15 +40,13 @@ fn main() -> std::io::Result<()> {
 Run the code. Magic happens. A file appears, then poof—gone when you're done.
 
 ## Deep Dive
-
 Historically, temporary files are as old as hills in computing. They've always been a simple but effective way to handle data that doesn't need long-term storage. In Rust's world, `tempfile` crate smoothes out the temp file process, automatically cleaning files up when they're no longer needed, avoiding the old headache of manual cleanup. 
 
 Alternatives? Sure, you could roll your own solution with `std::fs` and manual cleanup, but why reinvent the wheel? 
 
-What about details? `tempfile` creates files in the operating system's designated temp directory, and file names are scrambled to prevent collisions and enhance security. 
+What about details? `tempfile` creates files in the operating system's designated temp directory, and file names are scrambled to prevent collisions and enhance security.
 
 ## See Also
-
 - Rust `tempfile` documentation: [https://docs.rs/tempfile/](https://docs.rs/tempfile/)
 - Rust standard library I/O: [https://doc.rust-lang.org/std/io/](https://doc.rust-lang.org/std/io/)
 - General temp file concept: [https://en.wikipedia.org/wiki/Temporary_file](https://en.wikipedia.org/wiki/Temporary_file)

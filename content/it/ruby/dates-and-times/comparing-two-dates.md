@@ -10,9 +10,6 @@ title: Confronto tra due date
 weight: 27
 ---
 
-## Cosa e Perché?
-Comparare due date significa verificare se sono uguali, quale precede l'altra o quanto tempo passa tra loro. Questo è fondamentale per gestire prenotazioni, scadenze e storici dati.
-
 ## Come Fare:
 ```Ruby
 require 'date'

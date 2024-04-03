@@ -13,9 +13,6 @@ title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---
 
-## Was & Warum?
-Überprüfen, ob ein Verzeichnis existiert, bedeutet zu bestätigen, ob ein spezifischer Ordnerpfad im Dateisystem vorhanden ist. Programmierer machen dies, um Fehler beim Zugriff, Lesen oder Schreiben von Dateien zu vermeiden.
-
 ## Wie:
 Elm ist eine Frontend-Webprogrammiersprache und hat daher keinen direkten Zugriff auf das Dateisystem. Üblicherweise würde man einen Befehl an einen Backend-Service in JavaScript senden. So könnten Sie eine solche Interaktion mit Elm strukturieren:
 

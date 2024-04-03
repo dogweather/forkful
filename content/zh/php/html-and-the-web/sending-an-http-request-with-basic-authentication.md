@@ -17,9 +17,6 @@ title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
 weight: 45
 ---
 
-## What & Why? 什么与为什么?
-在PHP中发送带有基本认证的HTTP请求，就是客户端提供用户名和密码以获取资源。这种方法常用于数据的简单保护、API的使用，或者需要验证权限的场景。
-
 ## How To: 怎么做
 ```PHP
 <?php

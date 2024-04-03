@@ -12,9 +12,6 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-De lengte van een string bepalen in Go gaat over het vaststellen van het aantal karakters dat het bevat. Programmeurs voeren deze bewerking routinematig uit om strings effectief te manipuleren, of het nu gaat om validatie, het extraheren van subteksten, of simpelweg om beperkingen op te leggen aan gebruikersinvoer.
-
 ## Hoe te:
 In Go worden strings behandeld als onveranderlijke bytesequenties. Je kunt de lengte van een string vinden met behulp van de ingebouwde `len()` functie die het aantal bytes teruggeeft, niet noodzakelijkerwijs het aantal karakters. Hier is hoe je het gebruikt:
 

@@ -11,9 +11,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---
 
-## What & Why?
-Muuntaminen päivämäärästä merkkijonoksi on tapa esittää päivämäärä helposti luettavassa formaatissa. Ohjelmoijat tekevät tämän, jotta voidaan tallentaa, näyttää käyttäjälle tai lähettää päivämäärätietoja.
-
 ## How to:
 ```Arduino
 #include <RTClib.h>

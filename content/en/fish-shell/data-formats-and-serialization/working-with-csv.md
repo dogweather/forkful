@@ -11,12 +11,7 @@ title: Working with CSV
 weight: 37
 ---
 
-## What & Why?
-
-Working with CSV (Comma Separated Values) files involves parsing, manipulating, and generating data in a tabular format that is widely used for data exchange between applications. Programmers perform these operations to efficiently process and analyze data, automate tasks, or integrate with other systems.
-
 ## How to:
-
 Fish Shell, by itself, doesn't have built-in functions specifically designed for CSV manipulation. However, you can leverage Unix utilities like `awk`, `sed`, and `cut` for basic operations or use specialized tools like `csvkit` for more advanced tasks.
 
 ### Reading a CSV file and printing the first column:

@@ -11,9 +11,6 @@ title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---
 
-## Qué y Por Qué?
-Los números complejos, compuestos por una parte real y una imaginaria (como 3+4i), son fundamentales en ingeniería y física. Los programadores trabajan con ellos en simulaciones, procesamiento de señales y solución de ecuaciones que no se llevan bien solo con los números reales.
-
 ## Cómo hacerlo:
 Ruby facilita el manejo de los números complejos. Puedes crearlos y manipularlos usando la clase Complex:
 

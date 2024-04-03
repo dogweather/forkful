@@ -10,9 +10,6 @@ title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---
 
-## What & Why? (Was & Warum?)
-String-Konkatenation bedeutet, zwei oder mehr Strings zu einem zusammenzufügen. Programmierer machen das, um dynamische Textausgaben zu erzeugen oder Daten zu formatieren.
-
 ## How to: (Wie macht man das:)
 ```kotlin
 fun main() {

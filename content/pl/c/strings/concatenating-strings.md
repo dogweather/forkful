@@ -15,12 +15,7 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## Co i dlaczego?
-
-Konkatenacja łańcuchów znaków w C polega na łączeniu dwóch lub więcej łańcuchów znaków koniec-końcem, aby utworzyć nowy łańcuch. Programiści wykonują tę operację, aby dynamicznie konstruować łańcuchy znaków w czasie wykonania, co jest niezbędne do tworzenia znaczących wiadomości, ścieżek plików czy jakichkolwiek danych zgromadzonych z różnych źródeł łańcuchów znaków.
-
 ## Jak to zrobić:
-
 W C, łańcuchy znaków są tablicami znaków kończącymi się znakiem null (`\0`). W przeciwieństwie do języków wyższego poziomu, C nie zapewnia wbudowanej funkcji do konkatenacji łańcuchów. Zamiast tego używa się funkcji `strcat()` lub `strncat()` z biblioteki `<string.h>`.
 
 Oto prosty przykład użycia `strcat()`:
@@ -63,7 +58,6 @@ int main() {
 To ogranicza konkatenację do pierwszych `num` znaków łańcucha źródłowego, pomagając zapobiec przekroczeniom bufora.
 
 ## Dogłębna analiza
-
 Funkcje `strcat()` i `strncat()` są częścią standardowej biblioteki C od jej powstania, odzwierciedlając niskopoziomową naturę języka, która wymaga ręcznego zarządzania łańcuchami znaków i pamięcią. W przeciwieństwie do wielu nowoczesnych języków programowania, które traktują łańcuchy znaków jako obiekty pierwszej klasy z wbudowanymi operatorami konkatenacji (takimi jak `+` czy `.concat()`), podejście C wymaga bardziej dogłębnego zrozumienia wskaźników, alokacji pamięci i potencjalnych pułapek, takich jak przekroczenia bufora.
 
 Chociaż `strcat()` oraz `strncat()` są szeroko stosowane, często krytykuje się je za potencjalne tworzenie luk bezpieczeństwa, jeśli nie są używane ostrożnie. Przekroczenia bufora, kiedy dane przekraczają przydzieloną pamięć, mogą prowadzić do awarii lub być wykorzystywane do wykonania dowolnego kodu. W rezultacie programiści coraz częściej zwracają się ku bezpieczniejszym alternatywom, takim jak `snprintf()`, które zapewniają bardziej przewidywalne zachowanie, ograniczając liczbę znaków zapisanych do łańcucha docelowego w oparciu o jego rozmiar:

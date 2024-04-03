@@ -10,9 +10,6 @@ title: Merkkijonojen osien poimiminen
 weight: 6
 ---
 
-## What & Why?
-Subjektit ovat osajonoja alkuperäisestä tekstijonosta. Ohjelmoijat käyttävät niitä tiedon rajaamiseen ja käsittelyyn pienemmissä pätkissä.
-
 ## How to:
 ```Arduino
 String alkuperainen = "Moikka Suomi";

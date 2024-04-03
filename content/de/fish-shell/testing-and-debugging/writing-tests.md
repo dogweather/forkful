@@ -13,16 +13,10 @@ title: Tests Schreiben
 weight: 36
 ---
 
-## Was & Warum?
-
-Das Schreiben von Tests in Fish Shell beinhaltet das Erstellen von Skripten, die automatisch Ihren Code ausführen, um sein Verhalten gegenüber erwarteten Ergebnissen zu validieren. Diese Praxis ist entscheidend, da sie sicherstellt, dass Ihre Shell-Skripte wie beabsichtigt funktionieren, wodurch Fehler früh erkannt und die Wartung vereinfacht wird.
-
 ## Wie:
-
 Fish hat kein eingebautes Test-Framework wie einige andere Programmierumgebungen. Sie können jedoch einfache Testskripte schreiben, die Behauptungen (Assertions) nutzen, um das Verhalten Ihrer Funktionen zu überprüfen. Zusätzlich können Sie Drittanbieter-Tools wie `fishtape` für eine umfassendere Testumgebung nutzen.
 
 ### Beispiel 1: Einfaches Testskript
-
 Beginnen wir mit einer einfachen Funktion in Fish, die die Summe zweier Zahlen berechnet:
 
 ```fish
@@ -54,7 +48,6 @@ test_add bestanden
 ```
 
 ### Beispiel 2: Verwendung von Fishtape
-
 Für eine robustere Testlösung können Sie `fishtape`, einen TAP-produzierenden Testrunner für Fish, verwenden.
 
 Installieren Sie zunächst `fishtape`, falls Sie dies noch nicht getan haben:

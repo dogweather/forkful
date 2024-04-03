@@ -14,12 +14,7 @@ title: Rimuovere le virgolette da una stringa
 weight: 9
 ---
 
-## Cosa e perché?
-
-Rimuovere le virgolette da una stringa in VBA comporta l'eliminazione delle istanze di virgolette singole (`'`) o doppie (`"`) che possono incapsulare o essere incorporate nella stringa. Questa operazione è essenziale per la sanificazione dei dati, assicurando che le stringhe siano formattate correttamente per query al database, l'elaborazione JSON, o semplicemente per ragioni estetiche o di coerenza all'interno dell'interfaccia di un'applicazione.
-
 ## Come fare:
-
 In VBA, ci sono diversi approcci per rimuovere le virgolette da una stringa. Ecco un esempio semplice che utilizza la funzione `Replace`, la quale cerca una specifica sottostringa (in questo caso, una virgoletta) all'interno di una stringa e la sostituisce con un'altra sottostringa (una stringa vuota, se si trattasse di rimuovere).
 
 ```basic
@@ -42,7 +37,6 @@ Si noti che per le virgolette doppie, utilizziamo `Chr(34)` perché una virgolet
 Per scenari più sfumati in cui le virgolette potrebbero essere parte del formato necessario (ad esempio, all'interno di una parola quotata), potrebbe essere richiesta una logica più sofisticata, che forse coinvolge Regex o l'analisi carattere per carattere.
 
 ## Approfondimento
-
 VBA, essendo un pilastro nell'automatizzazione delle attività all'interno della suite Microsoft Office, offre un ricco insieme di funzioni per la manipolazione delle stringhe, con `Replace` che è una delle più frequentemente utilizzate. Tuttavia, questa funzione rappresenta solo la punta dell'iceberg di ciò che si può ottenere con VBA in termini di manipolazione delle stringhe.
 
 Storicamente, VBA ha adottato dai suoi predecessori un'enfasi sulla semplicità per le attività di automazione d'ufficio, da qui l'implementazione diretta di funzioni come `Replace`. Tuttavia, per le attività di programmazione moderne, specialmente quelle che coinvolgono manipolazioni o sanificazioni di stringhe complesse, VBA potrebbe mostrare i suoi limiti.

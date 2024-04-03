@@ -11,9 +11,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel handler om å be internett-tjenester om informasjon eller utføre en handling. Programmerere gjør dette for å samhandle med web-APIer, hente data, sende skjemaer, og mer.
-
 ## Slik gjør du:
 For å sende en HTTP-forespørsel i Elixir, kan du bruke det innebygde `HTTPPoison`-biblioteket. Her er et eksempel:
 

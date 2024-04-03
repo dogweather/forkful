@@ -11,9 +11,6 @@ title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---
 
-## ¿Qué y Por Qué?
-Enviar una solicitud HTTP con autenticación básica es incluir tus credenciales en una solicitud web para acceder a recursos protegidos. Los programadores lo hacen para interactuar con APIs o servicios web que requieren autenticización.
-
 ## Cómo Hacerlo:
 Usaremos el módulo `socket.http` para realizar la solicitud y `mime` para codificar las credenciales.
 
@@ -54,7 +51,7 @@ end
 
 El código anterior realiza una solicitud GET a una API, incluyendo las credenciales codificadas en Base64 en la cabecera de autorización.
 
-## Profundizando 
+## Profundizando
 La autenticación básica (Basic Auth) se ha utilizado desde los primeros días de la web. No es la más segura porque las credenciales son relativamente fáciles de descifrar. Hoy existen métodos más protegidos como OAuth. En Lua, la implementación es directa: codifica las credenciales, añade la cabecera, envía la solicitud. Lua no incluye nativamente soporte para HTTP o codificación Base64, por eso usamos los módulos externos `socket.http` y `mime`, respectivamente.
 
 ## Ver También

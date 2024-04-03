@@ -14,12 +14,7 @@ title: Usando arrays associativos
 weight: 15
 ---
 
-## O Que & Por Quê?
-
-Arrays associativos, frequentemente conhecidos como dicionários no Visual Basic para Aplicações (VBA), permitem que programadores criem coleções de pares chave-valor. Esta funcionalidade é crucial para o armazenamento e recuperação eficiente de dados, oferecendo uma maneira mais flexível e intuitiva de gerenciar dados do que os índices de arrays tradicionais.
-
 ## Como:
-
 No VBA, o objeto `Dictionary` oferece funcionalidade similar a arrays associativos. Primeiro, você deve adicionar uma referência ao Tempo de Execução de Script da Microsoft para usá-lo:
 
 1. No editor do VBA, vá para Ferramentas > Referências...
@@ -55,7 +50,6 @@ Next Key
 ```
 
 ## Aprofundamento
-
 O objeto `Dictionary` opera por baixo dos panos com componentes do Windows Scripting Host. Assim sendo, é um objeto COM de vínculo tardio, que era uma maneira comum de estender a funcionalidade do VBA no passado. Seu uso no VBA pode aumentar significativamente a capacidade da linguagem de manipular conjuntos de dados complexos sem impor uma estrutura rígida, como visto em arrays tradicionais ou intervalos do Excel.
 
 Uma limitação a ter em mente é que acessar o `Dictionary` requer a configuração de uma referência ao Tempo de Execução de Script da Microsoft, o que pode complicar a distribuição de seus projetos VBA. Alternativas como Collections existem dentro do VBA, mas carecem de algumas das principais funcionalidades do `Dictionary`, como a capacidade de verificar facilmente a existência de uma chave sem disparar um erro.

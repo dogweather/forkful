@@ -11,9 +11,6 @@ title: Einen neuen Projekt starten
 weight: 1
 ---
 
-## Was & Warum?
-Ein neues C++ Projekt beginnen heißt, die Struktur für frischen Code aufzubauen. Programmierer starten neue Projekte, um Ideen umzusetzen, Probleme zu lösen oder Tools zu erschaffen.
-
 ## How to:
 Wir erstellen ein einfaches "Hello, World!" Beispiel. Das ist traditionell der Startpunkt für ein neues Projekt.
 

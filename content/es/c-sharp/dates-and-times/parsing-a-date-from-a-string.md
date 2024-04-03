@@ -12,12 +12,7 @@ title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---
 
-## Qué y Por Qué?
-
-Analizar una fecha de una cadena en C# implica convertir las representaciones textuales de fechas y horas en un objeto `DateTime`. Esto es esencial para aplicaciones que necesitan manipular, almacenar o mostrar fechas y horas en diferentes formatos, como aplicaciones de programación, procesadores de registros o cualquier sistema que maneje la entrada de fechas por parte de usuarios o fuentes externas.
-
 ## Cómo hacerlo:
-
 **Análisis Básico:**
 
 Los métodos `DateTime.Parse` y `DateTime.TryParse` son las opciones predilectas para convertir una cadena en `DateTime`. Aquí hay un ejemplo rápido:

@@ -19,9 +19,6 @@ title: "\u5904\u7406XML"
 weight: 40
 ---
 
-## 什么 & 为什么？
-XML，即可扩展标记语言（eXtensible Markup Language），就像是JSON那个冗长的堂兄。当处理遗留系统、企业软件或未跟随JSON潮流的API时，你将不得不与XML打交道。在需要数据交换的地方，XML依然稳固地站着。
-
 ## 如何操作：
 在Rust中，你可以使用像`xml-rs`这样的crate来处理XML。通过将`xml-rs = "0.8"`添加到你的`Cargo.toml`来安装。下面是解析一个简单XML的方法：
 

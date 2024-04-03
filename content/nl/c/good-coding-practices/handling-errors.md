@@ -12,12 +12,7 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-
-Fouten afhandelen in C houdt in dat je afwijkende omstandigheden detecteert en daarop reageert tijdens de uitvoering van het programma. Programmeurs doen dit om bugs, crashes en onvoorspelbaar gedrag te voorkomen, zodat de software betrouwbaar en efficiënt functioneert onder diverse scenario's.
-
 ## Hoe te:
-
 C heeft geen ingebouwde ondersteuning voor uitzonderingen zoals sommige andere talen. In plaats daarvan vertrouwt het op enkele conventionele foutafhandelingsstrategieën, zoals het teruggeven van speciale waarden uit functies en het instellen van globale variabelen zoals `errno`.
 
 **Speciale Waarden Teruggeven**
@@ -78,7 +73,6 @@ Fout bij het openen van bestand: Bestand of map bestaat niet
 ```
 
 ## Diepgaande Verkenning
-
 Historisch gezien heeft het minimalistische ontwerp van de C-programmeertaal uitgesloten dat er een ingebouwd mechanisme voor uitzonderingsafhandeling is, wat een weerspiegeling is van zijn oorsprong in systeemprogrammering waar maximale prestatie en controle dichtbij de machine cruciaal zijn. In plaats daarvan adopteert C een meer handmatige benadering van foutafhandeling die past bij zijn filosofie van het geven van zoveel mogelijk controle aan programmeurs, zelfs ten koste van het gemak.
 
 Hoewel deze aanpak goed aansluit bij de ontwerpdoelen van C, kan het ook leiden tot uitgebreide foutcontrolecode en de mogelijkheid tot gemiste foutcontroles, die moderne talen aanpakken met gestructureerde uitzonderingsafhandelingsmechanismen. Uitzonderingen in talen zoals Java of C# maken centrale foutverwerking mogelijk, waardoor code schoner wordt en foutbeheer eenvoudiger. Echter, uitzonderingen brengen hun eigen overhead en complexiteit met zich mee, wat mogelijk niet ideaal is voor systeemniveau-programmering waar C uitblinkt.

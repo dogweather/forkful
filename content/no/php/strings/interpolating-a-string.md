@@ -11,9 +11,6 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## Hva & Hvorfor?
-Stringinterpolasjon i PHP betyr å plassere variabler direkte i en streng for å bygge den. Vi gjør det fordi det er raskt og leselig når vi vil bytte ut deler av en streng dynamisk.
-
 ## Hvordan gjøre det:
 Du kan bruke dobbelt anførselstegn eller heredoc-syntaks for å interpolere variabler i PHP. Se eksemplene under:
 

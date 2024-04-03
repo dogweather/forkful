@@ -12,9 +12,6 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i dlaczego?
-Liczby złożone składają się z części rzeczywistej i urojonej i są niezbędne w różnych dziedzinach, takich jak inżynieria, fizyka i grafika komputerowa. Programiści używają ich do rozwiązywania równań, z którymi zwykłe liczby rzeczywiste nie mogą sobie poradzić.
-
 ## Jak to zrobić:
 Rust nie posiada wbudowanego wsparcia dla liczb złożonych, ale takie pakiety jak `num-complex` przychodzą z pomocą. Oto jak z nich korzystać:
 

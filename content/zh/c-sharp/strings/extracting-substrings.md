@@ -17,9 +17,6 @@ title: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32"
 weight: 6
 ---
 
-## What & Why? (是什么？为什么？)
-在编程里，提取子串就是从一个字符串中拿出一部分内容。我们这么做通常是因为我们只需要那部分数据，比如说用户的名字或文件的扩展名。
-
 ## How to: (怎么做：)
 ```C#
 string fullText = "Hello, World! Welcome to the universe of C#.";

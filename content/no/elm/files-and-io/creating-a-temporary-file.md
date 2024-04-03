@@ -11,9 +11,6 @@ title: Opprette en midlertidig fil
 weight: 21
 ---
 
-## Hva & Hvorfor?
-Å lage en midlertidig fil er å skape en fil som er ment for kortvarig bruk. Programmerere gjør dette for å håndtere data som ikke trenger å være varig eller for å unngå konflikter med andre filoperasjoner under kjøring av programmet.
-
 ## How to:
 Elm kjører i nettleseren og har ikke direkte tilgang til filsystemet, så eksemplene vi vanligvis snakker om for å lage midlertidige filer er ikke relevant. Men vi kan se på hvordan du kan håndtere midlertidige data i Elm ved hjelp av `Web Storage API`emulering:
 

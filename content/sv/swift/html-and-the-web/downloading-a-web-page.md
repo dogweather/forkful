@@ -11,8 +11,6 @@ title: "H\xE4mta en webbsida"
 weight: 42
 ---
 
-# Hämta en webbsida med Swift
-
 ## Vad & Varför?
 Hämtning av en webbsida innebär att ladda ner dess HTML-innehåll. Programmörer gör detta för att läsa eller bearbeta information från webben.
 

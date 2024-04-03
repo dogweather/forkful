@@ -11,15 +11,10 @@ title: Checking if a directory exists
 weight: 20
 ---
 
-## What & Why?
-Checking if a directory exists in TypeScript is essential for file management tasks, such as reading from or writing data to files, ensuring that operations are performed only on valid directories. This operation is crucial for avoiding errors that arise from attempting to access or manipulate non-existent directories.
-
 ## How to:
-
 TypeScript, when run in a Node.js environment, allows you to check if a directory exists by using the `fs` module, which provides the `existsSync()` function or the asynchronous `access()` function combined with `constants.F_OK`.
 
 ### Using `fs.existsSync()`:
-
 ```typescript
 import { existsSync } from 'fs';
 
@@ -33,7 +28,6 @@ if (existsSync(directoryPath)) {
 ```
 
 ### Using `fs.access()` with `fs.constants.F_OK`:
-
 ```typescript
 import { access, constants } from 'fs';
 
@@ -59,7 +53,6 @@ Directory does not exist.
 ```
 
 ### Using a Third-Party Library - `fs-extra`:
-
 `fs-extra` is a popular third-party library that enhances the built-in `fs` module and provides more convenient functions.
 
 ```typescript

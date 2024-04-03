@@ -19,12 +19,7 @@ title: "\u0110\u1ECDc c\xE1c tham s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---
 
-## Điều gì & Tại sao?
-
-Việc đọc các đối số dòng lệnh trong Dart cho phép lập trình viên nhập dữ liệu trực tiếp vào console khi thực thi một chương trình Dart, nâng cao tính tương tác và linh hoạt cho nhiều trường hợp sử dụng, bao gồm các kịch bản tự động hóa, công cụ CLI, hoặc xử lý loạt. Tính năng này là trọng tâm để tạo ra các ứng dụng dòng lệnh thân thiện và linh hoạt với người dùng.
-
 ## Làm thế nào:
-
 Dart cung cấp một cách tiếp cận đơn giản để truy cập vào các đối số dòng lệnh thông qua `List<String> args` trong phương thức main. Dưới đây là một ví dụ đơn giản minh họa cách đọc và sử dụng các đối số dòng lệnh.
 
 ```dart
@@ -52,7 +47,6 @@ Kết quả mong đợi:
 ```
 
 ### Sử dụng Một Thư Viện Bên Thứ Ba Phổ Biến: `args`
-
 Mặc dù các khả năng tích hợp sẵn của Dart trong việc xử lý các đối số dòng lệnh là đủ mạnh mẽ cho nhiều ứng dụng, gói `args` cung cấp một cách tinh tế hơn để định nghĩa và phân tích các đối số dòng lệnh cho những nhu cầu phức tạp hơn.
 
 Đầu tiên, thêm gói `args` vào `pubspec.yaml` của bạn:

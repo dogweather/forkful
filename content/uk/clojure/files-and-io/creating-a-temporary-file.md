@@ -24,12 +24,7 @@ title: "\u0421\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F \u0442\u0438\u043
 weight: 21
 ---
 
-## What & Why? / Що і Чому?
-
-Створення тимчасового файла допомагає зберігати дані, які потрібні лише короткий час. Програмісти використовують їх для тестування, безпечного вміщення чутливих даних, та уникнення засмічення системи постійними файлами.
-
 ## How to: / Як зробити:
-
 Clojure використовує Java Interop для створення тимчасових файлів. Ось як це працює:
 
 ```Clojure
@@ -46,11 +41,9 @@ Clojure використовує Java Interop для створення тимч
 Запуск цього коду дасть вам унікальний шлях до новоствореного тимчасового файла в вашій тимчасовій директорії.
 
 ## Deep Dive / Глибоке занурення:
-
 Тимчасові файли не нові; вони були частиною програмування з самого початку, як спосіб обійти обмеження пам’яті. У Clojure, ми часто покладаємося на Java Interop для таких речей, через пов'язаність з JVM. Альтернативно, можна використати бібліотеки, такі як `clojure.java.io`, але для тимчасових файлів Java API просте та випробуване. Тимчасові файли, створені через `Files/createTempFile`, будуть автоматично видалені при виході з JVM, якщо ви не вкажете інакше.
 
 ## See Also / Дивіться також:
-
 - JavaDoc для [Files.createTempFile](https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html#createTempFile(java.nio.file.Path,%20java.lang.String,%20java.lang.String,%20java.nio.file.attribute.FileAttribute...))
 - Офіційне керівництво Clojure по Java Interop: [Clojure Java Interop](https://clojure.org/reference/java_interop)
 - Бібліотека для роботи з файлами у Clojure: [clojure.java.io](https://clojuredocs.org/clojure.java.io)

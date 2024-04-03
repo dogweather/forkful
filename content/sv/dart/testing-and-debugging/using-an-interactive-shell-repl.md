@@ -14,12 +14,7 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-
-En interaktiv skal (REPL - Read-Evaluate-Print Loop) för Dart gör det möjligt för programmerare att dynamiskt skriva och exekvera Dart-kod rad för rad utan att behöva kompilera hela skript. Detta verktyg är ovärderligt för att lära sig Darts syntax, experimentera med kodsnuttar eller felsöka genom att erbjuda omedelbar feedback och underlätta iterativa tester.
-
 ## Hur:
-
 Dart kommer inte med en inbyggd REPL. Dock kan du uppnå REPL-liknande funktionalitet genom att använda DartPad (online) eller genom att utnyttja verktyg från tredje part som `dart_repl`.
 
 **Använda DartPad:**

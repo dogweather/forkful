@@ -12,9 +12,6 @@ title: Loggning
 weight: 17
 ---
 
-## Vad & Varför?
-Loggning är i ett nötskal som att hålla en dagbok för din applikation – den registrerar händelser, fel och andra signifikanta åtgärder som sker medan programvaran körs. Programmerare gör detta inte bara för att förstå vad som pågår under huven i realtid, men även för att ha en historisk journal som är avgörande för felsökning, revision och optimering av prestanda.
-
 ## Hur man gör:
 Rät ur lådan erbjuder JavaScript ett enkelt sätt att logga meddelanden till konsolen:
 

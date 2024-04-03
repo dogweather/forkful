@@ -14,9 +14,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---
 
-## Mikä & Miksi?
-Päivämäärän jäsentäminen merkkijonosta tarkoittaa tekstin, joka esittää päivämäärää, muuntamista `Date`- tai `DateTime`-objektiksi, jonka Ruby ymmärtää. Ohjelmoijat tekevät tämän suorittaakseen toimenpiteitä, kuten vertailuja, laskelmia tai muotoiluja päivämäärille, jotka ovat yleisiä tehtäviä sovelluksissa, jotka käsittelevät aikataulutusta, analytiikkaa tai datan käsittelyä.
-
 ## Kuinka:
 Rubyn vakiokirjasto tarjoaa suorat tavat jäsentää päivämäärät merkkijonoista käyttämällä `Date`- ja `DateTime`-luokkia. Tässä on miten teet sen käyttäen Rubyn sisäänrakennettuja metodeja:
 
@@ -47,7 +44,6 @@ puts parsed_date_custom
 ```
 
 ### Kolmannen osapuolen kirjastojen käyttö:
-
 Vaikka Rubyn sisäänrakennetut mahdollisuudet ovat tehokkaita, joskus saatat mieluummin käyttää kolmannen osapuolen kirjastoja lisäominaisuuksien tai yksinkertaisemman syntaksin takia. Yksi suosittu valinta on `Chronic`-gem luonnollisen kielen jäsentämiseen:
 
 1. Lisää ensin Chronic Gemfileesi ja suorita `bundle install`:

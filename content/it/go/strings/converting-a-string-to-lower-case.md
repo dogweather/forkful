@@ -14,12 +14,7 @@ title: Convertire una stringa in minuscolo
 weight: 4
 ---
 
-## Cosa e perché?
-
-Convertire una stringa in minuscolo è un'operazione fondamentale che permette uniformità e coerenza nel trattamento del testo, essenziale per compiti come comparazioni non sensibili alle maiuscole o la normalizzazione del testo. I programmatori spesso eseguono questa operazione per preparare i dati per un ulteriore processo o per garantire la compatibilità tra diversi sistemi e localizzazioni.
-
 ## Come:
-
 In Go, convertire una stringa in minuscolo può essere facilmente realizzato utilizzando il pacchetto `strings`, in particolare la funzione `ToLower()`. Questa funzione prende una stringa in input e restituisce una nuova stringa con tutti i caratteri maiuscoli convertiti in minuscolo. Ecco un esempio rapido:
 ```go
 package main
@@ -44,7 +39,6 @@ Minuscolo: hello, world!
 Questo esempio dimostra l'approccio diretto alla conversione di qualsiasi stringa in minuscolo in Go. È semplice, con il lavoro complesso svolto dal metodo `ToLower()`, che astrae le complessità derivanti dalle varie codifiche dei caratteri e dalle regole specifiche per la localizzazione.
 
 ## Approfondimento
-
 L'implementazione di `strings.ToLower()` nella libreria standard di Go è efficiente e consapevole dell'Unicode, il che significa che gestisce correttamente i caratteri oltre il set di base ASCII, inclusi i caratteri degli alfabeti non latini. Questo è particolarmente importante in un contesto globale in cui il software può elaborare testi di lingue e insiemi di caratteri diversi.
 
 Storicamente, la gestione della conversione di maiuscole e minuscole nei linguaggi di programmazione è evoluta significativamente. Le prime lingue spesso mancavano di supporto nativo per tali operazioni, o le loro implementazioni erano limitate al set di caratteri ASCII, portando a comportamenti errati con altri alfabeti. Go è stato progettato con il supporto Unicode sin dalle sue fondamenta, riflettendo un approccio moderno alla manipolazione delle stringhe.

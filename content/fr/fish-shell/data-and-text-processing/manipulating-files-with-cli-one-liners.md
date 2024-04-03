@@ -12,12 +12,7 @@ title: Manipulation de fichiers avec des commandes en une ligne en CLI
 weight: 31
 ---
 
-## Quoi & Pourquoi ?
-
-Dans le domaine de la programmation, surtout lorsqu'on travaille avec des environnements Linux ou Unix, manipuler des fichiers directement depuis l'interface de ligne de commande (CLI) n'est pas seulement une question de commodité, c'est un outil de pouvoir. Grâce au Fish Shell, avec sa syntaxe moderne et ses utilitaires, vous pouvez transformer, déplacer ou analyser vos fichiers avec agilité et précision. Il s'agit de faire plus avec moins, de rationaliser les processus et d'embrasser la puissance de la ligne de commande pour une gestion efficace des fichiers.
-
 ## Comment faire :
-
 Manipuler des fichiers dans Fish Shell est à la fois intuitif et puissant. Voici quelques exemples pour démontrer sa capacité :
 
 1. **Créer un fichier** est aussi simple que possible. Utilisez la commande `touch` :
@@ -79,7 +74,6 @@ end
 ```
 
 ## Approfondissement
-
 Manipuler des fichiers depuis la CLI avec des lignes de commande uniques Fish Shell est à la fois une compétence et un art. Historiquement, les systèmes Unix et Linux ont toujours fourni un puissant ensemble d'outils pour la manipulation de fichiers, en traitant tout comme un fichier dans sa philosophie. Cela a ouvert la voie à des shells modernes comme Fish, qui non seulement embrassent, mais étendent ces philosophies avec une syntaxe améliorée et des utilitaires ajoutés.
 
 Bien que Fish offre une excellente expérience utilisateur et des capacités de script, il convient de mentionner que certains problèmes de conformité POSIX peuvent survenir, surtout lorsque des scripts sont portés depuis des shells plus traditionnels comme Bash ou SH. C'est parce que Fish ne vise pas à être conforme à POSIX par conception, optant plutôt pour une approche plus conviviale dans l'utilisation des scripts et de la ligne de commande. Ainsi, les programmeurs devraient être conscients que, bien que Fish excelle dans de nombreux domaines, les scripts nécessitant une stricte conformité POSIX pourraient nécessiter des ajustements ou des alternatives comme `bash` ou `zsh` pour la compatibilité.

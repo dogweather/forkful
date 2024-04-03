@@ -11,9 +11,6 @@ title: Interpolando uma string
 weight: 8
 ---
 
-## O Que & Por Quê?
-Interpolação de string é o processo de inserir valores de variáveis dentro de uma string. Programadores fazem isso para construir strings dinâmicas que incluem dados variáveis, como nomes de usuários, pontuações em jogos ou resultados de cálculos.
-
 ## Como Fazer:
 Em Rust, interpolação de string é comumente feita com a macro `format!` ou com a macro `println!` para imprimir diretamente no console. Veja os exemplos:
 

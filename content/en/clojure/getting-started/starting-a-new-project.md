@@ -10,12 +10,7 @@ title: Starting a new project
 weight: 1
 ---
 
-## What & Why?
-
-Starting a new project means setting up a fresh programming environment for your code. Programmers do it to kick off development with a clean slate and organize thoughts into tangible code.
-
 ## How to:
-
 To bootstrap a Clojure project, we'll use Leiningen, a popular build tool for Clojure:
 
 ``` Clojure
@@ -57,7 +52,6 @@ lein repl
 ```
 
 ## Deep Dive
-
 Clojure projects often start with Leiningen or Boot for managing dependencies, building, and automating tasks. Leiningen has been around since 2010 and has become the default choice for most Clojurists. 
 
 Alternative tools do exist, like `deps.edn` and Clojure CLI tools, which were introduced by Clojure/core to provide more straightforward dependency management and project configuration.
@@ -73,7 +67,6 @@ Projects typically adhere to a standard directory structure:
 A good practice is to keep things minimal at the start. Add dependencies as you go, keeping your project light and manageable.
 
 ## See Also
-
 - [Leiningen's Getting Started Guide](https://leiningen.org/#getting-started)
 - [Clojure Docs](https://clojuredocs.org/)
 - [Clojure Style Guide](https://guide.clojure.style/)

@@ -10,11 +10,12 @@ title: "\u0412\u0438\u0434\u0430\u043B\u0435\u043D\u043D\u044F \u0441\u0438\u043
 weight: 5
 ---
 
-## What & Why?
 ## Що і чому?
 Pattern deletion removes specific characters from strings—like cleaning your text from unwanted symbols. Programmers use it to format data, scrub user input, or prepare text for processing.
 
 ## How to:
+
+
 ## Як це зробити:
 Let's delete vowels from a string. The `string` command does the heavy lifting.
 
@@ -43,6 +44,8 @@ report_.txt
 ```
 
 ## Deep Dive
+
+
 ## Занурення у деталі
 Fish Shell debuted in 2005, focused on usability and scripting ease. Pattern deletion is built-in via `string match`, `string replace` commands, unlike POSIX shells that lean on `grep`, `sed`, or `awk`.
 
@@ -51,6 +54,8 @@ Alternatives? Sure. PowerShell’s `-replace`, Python’s `.replace()`, or good 
 As for Fish, it's all about simplicity. No need to pipe `echo` output to `sed` when `string replace` can edit in-place or work with variables directly.
 
 ## See Also
+
+
 ## Дивіться також
 - Fish documentation on string manipulation: [fishshell.com/docs/current/cmds/string.html](https://fishshell.com/docs/current/cmds/string.html)
 - A guide to regular expressions: [regular-expressions.info](https://www.regular-expressions.info/)

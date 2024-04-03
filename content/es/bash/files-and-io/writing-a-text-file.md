@@ -12,12 +12,7 @@ title: Escribiendo un archivo de texto
 weight: 24
 ---
 
-## Qué y Por Qué?
-
-Escribir un archivo de texto en Bash te permite automatizar el almacenamiento de datos, el registro, la configuración de ajustes, y más. Es una habilidad fundamental para el script de shell, que permite a los programadores guardar la salida de comandos, ejecuciones de script, o la entrada del usuario para reportes, procesamiento, o ejecuciones futuras.
-
 ## Cómo hacerlo:
-
 Bash proporciona métodos sencillos para escribir en un archivo. Los más comunes son utilizando operadores de redirección (`>`, `>>`) y el comando `tee`. Aquí tienes una mirada rápida a ambas técnicas.
 
 Usando la redirección, puedes escribir la salida directamente a un archivo. El operador `>` escribe contenido en un archivo, reemplazándolo si ya existe, mientras que `>>` añade al contenido de un archivo existente sin borrar su contenido.

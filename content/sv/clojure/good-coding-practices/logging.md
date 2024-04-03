@@ -12,9 +12,6 @@ title: Loggning
 weight: 17
 ---
 
-## Vad & Varför?
-Loggning är i grunden mjukvarans motsvarighet till ett skeppsloggbok; det är ett sätt att registrera händelser som inträffar medan en applikation körs. Programmerare gör detta för att hålla reda på dessa händelser för felsökning, revisionsspår, eller för att få insikter om hur ett system beter sig i produktion.
-
 ## Hur man gör:
 Clojure lutar sig mot Javas loggningsfaciliteter, men du kan använda dem på ett mer idiomatiskt Clojure-sätt. Låt oss titta på hur du kanske använder `clojure.tools.logging`, som tillhandahåller en enkel abstraktion över flera loggningsramverk:
 

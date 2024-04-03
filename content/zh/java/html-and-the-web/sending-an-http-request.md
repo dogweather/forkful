@@ -17,9 +17,6 @@ title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---
 
-## What & Why? 什么以及为什么？
-发送HTTP请求就是让程序通过网络向服务器请求数据或发送数据。程序员这么做是因为这样可以从Web服务获取信息，执行操作，或与其他系统进行交互。
-
 ## How to: 怎么做？
 ```java
 import java.net.URI;

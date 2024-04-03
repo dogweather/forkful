@@ -11,16 +11,10 @@ title: Working with CSV
 weight: 37
 ---
 
-## What & Why?
-
-Comma-Separated Values (CSV) format is ubiquitous for data exchange due to its simplicity and ease of integration with most programming languages, including Go. Programmers often work with CSV files for data migration, report generation, or data analysis, making understanding CSV manipulation critical in a software development toolkit.
-
 ## How to:
-
 Working with CSV files in Go is straightforward, thanks to its standard library, `encoding/csv`. Below is a primer on reading and writing CSV files.
 
 ### Reading a CSV File
-
 To read from a CSV file, you first open the file using `os.Open`, then create a new CSV reader with `csv.NewReader`.
 
 ```go
@@ -54,7 +48,6 @@ func main() {
 This code snippet will read all records from `data.csv` and print them. Each record is a slice of fields.
 
 ### Writing to a CSV File
-
 For writing, you use `csv.NewWriter` and `writer.WriteAll` or `writer.Write` for writing multiple or single CSV records, respectively.
 
 ```go
@@ -90,7 +83,6 @@ func main() {
 This will create a file named `output.csv` with the provided records. Always remember to flush the writer to ensure all buffered data is written to the file.
 
 ## Deep Dive
-
 The Go `encoding/csv` package provides robust support for reading and writing CSV files but it's designed with simplicity in mind, which means it doesn't handle more complex scenarios such as auto-detection of delimiters, dealing with quotes or embedded line breaks in fields without manual handling.
 
 Historically, CSV handling in programming languages has often been cumbersome due to these complexities, but Go's standard library abstracts many of these issues, allowing developers to work with CSV data with relative ease. However, for more complex CSV manipulation, third-party libraries like `gocsv` or handling the parsing manually may be necessary.

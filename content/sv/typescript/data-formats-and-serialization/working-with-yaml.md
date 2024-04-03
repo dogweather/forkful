@@ -14,9 +14,6 @@ title: Att Arbeta med YAML
 weight: 41
 ---
 
-## Vad & Varför?
-YAML, ett dataserialiseringsspråk designat för att vara användarvänligt, används ofta för konfigurationsfiler, mellanprocessmeddelanden och datalagring. Programmerare lutar sig mot YAML för dess läsbarhet och användarvänlighet, särskilt när man hanterar komplex strukturerad data, vilket gör det till ett utmärkt val för applikationer utvecklade i TypeScript.
-
 ## Hur man gör:
 Att arbeta med YAML i TypeScript innebär vanligtvis att tolka YAML-innehåll till JavaScript-objekt och möjligen konvertera JavaScript-objekt tillbaka till YAML. Detta kräver en tolk; ett populärt val är `js-yaml`, ett bibliotek som enkelt kan integreras i TypeScript-projekt.
 

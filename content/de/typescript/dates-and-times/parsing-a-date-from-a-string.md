@@ -13,9 +13,6 @@ title: Einen Datum aus einem String analysieren
 weight: 30
 ---
 
-## Was & Warum?
-Das Parsen eines Datums aus einem String beinhaltet das Umwandeln von textuellen Darstellungen von Daten und Zeiten in ein Format, das vom Programm manipuliert und analysiert werden kann. Dies ist eine gängige Aufgabe in der Programmierung, da sie die Bearbeitung von Benutzereingaben, die Speicherung von zeitgestempelten Daten und Interaktionen mit APIs ermöglicht, was zu funktionaleren und benutzerfreundlicheren Anwendungen führt.
-
 ## Wie:
 TypeScript, als Obermenge von JavaScript, stützt sich auf das Date-Objekt zum Parsen von Daten aus Strings. Allerdings kann das Arbeiten mit Daten in JS/TS aufgrund der Eigenarten des Date-Objekts umständlich oder ungenau werden. Hier ist ein einfaches Beispiel gefolgt von einem Ansatz unter Verwendung der beliebten Bibliothek `date-fns`, für robustere Lösungen.
 

@@ -10,12 +10,7 @@ title: Generazione di numeri casuali
 weight: 12
 ---
 
-## Cosa & Perché?
-
-La generazione di numeri casuali in C# comporta la creazione di valori numerici imprevedibili entro un intervallo specificato. I programmatori utilizzano questi metodi per implementare funzionalità come la crittografia, le simulazioni e i giochi dove è richiesta imprevedibilità o la simulazione di casualità nel mondo reale.
-
 ## Come fare:
-
 Il modo più comune per generare numeri casuali in C# è utilizzare la classe `System.Random`. Ecco un esempio semplice che ne dimostra l'utilizzo:
 
 ```C#
@@ -67,7 +62,6 @@ public class SecureRandomExample
 ```
 
 ## Approfondimento
-
 La generazione di numeri casuali in C# è evoluta nel corso degli anni. Inizialmente, la classe `System.Random` era la soluzione predefinita per generare numeri pseudo-casuali. È pseudo-casuale perché, dato un valore iniziale specifico, produrrà la stessa sequenza di numeri, il che può essere utile per il debug o la ripetibilità dei test.
 
 Anche se sufficiente per le esigenze basilari, `System.Random` non è thread-safe e può produrre risultati prevedibili, il che non è adatto per applicazioni dipendenti dalla sicurezza. Questa limitazione ha portato all'introduzione del `RNGCryptoServiceProvider` per la casualità crittografica, che è più sicuro ma anche più impegnativo in termini di risorse.

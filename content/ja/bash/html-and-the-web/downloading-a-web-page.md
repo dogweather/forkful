@@ -19,12 +19,7 @@ title: "\u30A6\u30A7\u30D6\u30DA\u30FC\u30B8\u306E\u30C0\u30A6\u30F3\u30ED\u30FC
 weight: 42
 ---
 
-## What & Why? / 何となぜ？
-
-Webページのダウンロードは、ページの内容をローカルマシンに保存するプロセスです。プログラマーは自動化、データ収集、またはオフラインでの閲覧のためにこれを行います。
-
 ## How to / 方法
-
 Bashでwebページをダウンロードする簡単な方法は`curl`や`wget`を使うことです。以下は具体的な例です。
 
 ```Bash
@@ -57,7 +52,6 @@ Saving to: ‘index.html’
 ```
 
 ## Deep Dive / 徹底解析
-
 最初、UNIX環境でウェブコンテンツをダウンロードするためにはFTPや独自のプロトコルを使ってファイルを手動で取り込む必要がありました。しかし、90年代半ばになると`curl`と`wget`が登場し、HTTPプロトコル経由でのダウンロードが一般化しました。
 
 `curl`は多くのプロトコルをサポートし、データ送信にも使えるなどより複雑な操作が可能です。一方、`wget`は再帰的ダウンロードやオフライン閲覧のためのウェブサイトのミラーリングに特化しています。
@@ -65,7 +59,6 @@ Saving to: ‘index.html’
 また、プログラミング言語固有のライブラリやツールも存在します。たとえば、Pythonの`requests`ライブラリや、Node.jsの`axios`などがあります。これらは一般的にはアプリケーション内で組み込んで使用します。
 
 ## See Also / 関連情報
-
 - `curl`の公式ドキュメント: https://curl.se/docs/
 - `wget`のマニュアル: https://www.gnu.org/software/wget/manual/wget.html
 - `requests`ライブラリ（Python): https://docs.python-requests.org/

@@ -11,9 +11,6 @@ title: Trabajando con XML
 weight: 40
 ---
 
-## ¿Qué y por qué?
-Trabajar con XML significa analizar, generar y manipular documentos XML (eXtensible Markup Language) utilizando código. Los programadores lo hacen para interactuar con muchos servicios web, archivos de configuración e intercambios de datos donde XML es la lengua franca.
-
 ## Cómo hacerlo:
 Usaremos REXML, incluido con Ruby, para analizar un fragmento de XML:
 ```Ruby

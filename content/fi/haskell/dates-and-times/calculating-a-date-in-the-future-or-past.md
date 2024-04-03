@@ -11,9 +11,6 @@ title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---
 
-## What & Why?
-Menneisyyden tai tulevaisuuden päivämäärän laskeminen tarkoittaa päivämäärän siirtämistä taakse- tai eteenpäin kalenterissa. Ohjelmoijat tekevät tätä mm. vanhentumispäivien, muistutusten tai aikataulutusten automatisoimiseksi.
-
 ## How to:
 ```Haskell
 import Data.Time

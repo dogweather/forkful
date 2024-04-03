@@ -13,16 +13,10 @@ title: Arbeide med komplekse tall
 weight: 14
 ---
 
-## Hva & Hvorfor?
-
-Komplekse tall, som består av en reell og en imaginær del (vanligvis betegnet som a + bi), utvider konseptet av dimensjonsløse tall til et todimensjonalt rom. Programmerere arbeider med komplekse tall innenfor felt som elektroteknikk, kvantedatamaskiner og fluidmekanikk for å modellere fenomener som ikke kan representeres langs en enkel dimensjon av reelle tall alene.
-
 ## Hvordan:
-
 Dart selv inkluderer ikke et innebygd bibliotek for komplekse tall, noe som nødvendiggjør enten implementeringen av en egen klasse for komplekse tall eller bruk av et tredjepartsbibliotek. Et populært valg for vitenskapelig databehandlingsoppgaver, som inkluderer støtte for komplekse tall, er `package:scidart`.
 
 ### Implementering av en Grunnleggende Klasse for Komplekse Tall
-
 For enkle operasjoner kan du enkelt definere din egen klasse for komplekse tall:
 
 ```dart
@@ -52,7 +46,6 @@ void main() {
 ```
 
 ### Bruk av SciDart for Avanserte Operasjoner
-
 For mer komplekse operasjoner eller når ytelse er kritisk, tilbyr `package:scidart` omfattende støtte for komplekse tall blant annet vitenskapelig databehandlingsfunksjonaliteter. Først, legg til SciDart i din pubspec.yaml:
 
 ```yaml

@@ -10,9 +10,6 @@ title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-HTTP-Requests mit Basisauthentifizierung schicken Daten sicher über das Netz. Entwickler nutzen das, um vertrauliche Daten wie Benutzernamen und Passwörter zu schützen.
-
 ## How to:
 ```Javascript
 const axios = require('axios');

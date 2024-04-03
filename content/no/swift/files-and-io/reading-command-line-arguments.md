@@ -11,9 +11,6 @@ title: Lese kommandolinjeargumenter
 weight: 23
 ---
 
-## Hva & Hvorfor?
-Lesing av kommandolinjeargumenter lar programmer reagere på input de får når de startes fra terminalen. Programmerere bruker dette til å tilpasse kjøringen av programmet uten å hardkode verdier.
-
 ## Slik gjør du:
 I Swift er kommandolinjeargumentene tilgjengelige via `CommandLine.arguments`-arrayet. Her er et enkelt eksempel:
 

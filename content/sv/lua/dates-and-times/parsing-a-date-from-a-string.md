@@ -13,9 +13,6 @@ title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---
 
-## Vad & Varför?
-Att tolka ett datum från en sträng innebär att konvertera textuella representationer av datum och tider till ett format som kan hanteras, lagras eller jämföras enkelt inom ett Lua-program. Programmerare utför denna uppgift för att underlätta operationer såsom schemaläggning, loggning eller alla typer av tidsberäkningar och för att överbrygga klyftan mellan datumformat som är läsbara för människor och strukturerade datatyper som en dator kan bearbeta effektivt.
-
 ## Hur:
 Lua har inte inbyggt stöd för hantering av datum och tid utöver den begränsade funktionaliteten som tillhandahålls av funktionerna `os.date`och `os.time`. Dessa kan dock utnyttjas för grundläggande tolkning, och för mer komplexa krav kan `luadate`-biblioteket, ett externt bibliotek, användas.
 

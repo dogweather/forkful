@@ -11,9 +11,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel betyr å be en webserver om data eller handlinger. Utviklere gjør dette for å hente, oppdatere eller slette data på nettet.
-
 ## Hvordan:
 Elm-koden under viser hvordan du sender en HTTP GET-forespørsel og håndterer svaret:
 

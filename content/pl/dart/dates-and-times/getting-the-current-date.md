@@ -13,9 +13,6 @@ title: "Pobieranie bie\u017C\u0105cej daty"
 weight: 29
 ---
 
-## Co i dlaczego?
-Pobieranie aktualnej daty w Darciu wiąże się z zapytaniem systemu o aktualną datę i czas. Ta funkcjonalność jest powszechnie używana w aplikacjach do funkcji takich jak znakowanie czasem zdarzeń, pokazywanie aktualnej daty użytkownikom czy obliczanie okresów czasu. Wiedza o tym, jak efektywnie pobierać i manipulować aktualną datą jest podstawą dla planowania, logowania i funkcji wrażliwych na czas.
-
 ## Jak to zrobić:
 Podstawowa biblioteka Darta zapewnia prosty dostęp do aktualnej daty i czasu poprzez klasę `DateTime`. Oto podstawowy przykład, jak pobrać aktualną datę:
 

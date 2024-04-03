@@ -10,9 +10,6 @@ title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---
 
-## Was & Warum?
-Anführungszeichen aus einem String zu entfernen bedeutet, diese zusätzlichen Verpackungen abzulegen, um den sauberen Text im Inneren zu erhalten. Programmierer tun dies, um Eingaben zu bereinigen, Fehler zu vermeiden und Daten für die Verarbeitung vorzubereiten, bei der Anführungszeichen eher Störfaktoren als Funktionen sind.
-
 ## Wie geht das:
 Elixir hat keine eingebaute Funktion zum Entfernen von Anführungszeichen, aber es ist ein Kinderspiel, Ihre eigene Funktion mit Musterabgleich oder `String`-Funktionen zu erstellen. Sehen Sie sich diese Snippets an:
 

@@ -10,12 +10,7 @@ title: Reading command line arguments
 weight: 23
 ---
 
-## What & Why?
-
-Reading command line arguments means grabbing the extra bits you type after your script’s name in the console. Programmers do this to tweak a program's behavior without changing the code, like choosing a file to open or setting the verbosity of output.
-
 ## How to:
-
 Here's the skinny on grabbing those arguments in Lua:
 
 ```Lua
@@ -39,7 +34,6 @@ Hello, stranger!
 ```
 
 ## Deep Dive
-
 Lua keeps it straightforward with the global `arg` table. Historically, folks have been reading command line arguments in programming since the dawn of time (well, since the birth of UNIX, at least). It's a staple of customization. 
 
 In Lua, `arg` is an array with all the command-line goodies. `arg[0]` is the script name, and `arg[1]` onwards are the actual arguments. You can scoop them all up with a loop if you're feeling fancy:
@@ -55,7 +49,6 @@ Alternatives? Sure, there are libraries out there for sophisticated argument par
 As for implementation details, remember Lua's arrays are 1-based (they start counting at 1), not 0 like many other languages. That's why `arg[1]` is the first argument and not `arg[0]`.
 
 ## See Also
-
 For those hungry for more, here's some extra chow:
 
 - Lua 5.4 Reference Manual on the `arg` table: https://www.lua.org/manual/5.4/manual.html#6.1

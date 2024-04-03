@@ -14,9 +14,6 @@ title: Sjekker om en mappe eksisterer
 weight: 20
 ---
 
-## Hva & Hvorfor?
-Å sjekke om en mappe eksisterer i Ruby gjør det mulig for programmerere å bekrefte tilstedeværelsen av en mappe før de utfører operasjoner som å lese filer eller opprette nye mapper. Dette er avgjørende for å unngå feil i filhåndtering og sikre påliteligheten av filsystemmanipulasjoner.
-
 ## Hvordan:
 Rubys standardbibliotek tilbyr enkle metoder for å sjekke en mappe sitt eksistens. Slik gjør du det med ren Ruby, uten å trenge noen tredjeparts biblioteker:
 

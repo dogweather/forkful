@@ -12,12 +12,7 @@ title: Skrive til standard feil
 weight: 25
 ---
 
-## Hva & Hvorfor?
-
-Å skrive til standardfeil (stderr) i Go involverer omdirigering av feilmeldinger eller diagnostikk som ikke er ment for hovedutstrømmen. Programmerere bruker dette for å skille vanlig utdata fra feilinformasjon, noe som gjør feilsøking og loggtolkning mer rettfram.
-
 ## Hvordan:
-
 I Go gir `os`-pakken verdien `Stderr`, som representerer filen for standardfeil. Du kan bruke den med `fmt.Fprint`, `fmt.Fprintf`, eller `fmt.Fprintln`-funksjonene for å skrive til stderr. Her er et enkelt eksempel:
 
 ```go
@@ -53,7 +48,6 @@ Prosessen ble fullført med 4 feil.
 Husk, disse meldingene vil ikke vises i den vanlige utdataen (stdout), men i feilstrømmen, som kan omdirigeres separat i de fleste operativsystemer.
 
 ## Dypdykk
-
 Konseptet med standardfeil er dypt forankret i Unix-filosofien, som tydelig skiller mellom normal utdata og feilmeldinger for mer effektiv databehandling og håndtering. I Go blir denne konvensjonen omfavnet gjennom `os`-pakken, som gir direkte tilgang til fildeskriptorene for stdin, stdout og stderr.
 
 Selv om det å skrive direkte til `os.Stderr` passer for mange applikasjoner, tilbyr Go også mer sofistikerte loggepakker som `log`, som tilbyr ytterligere funksjoner som tidsstempling og mer fleksible utdatakonfigurasjoner (for eksempel skriving til filer). Å bruke `log`-pakken, spesielt for større applikasjoner eller der mer omfattende loggefunksjoner trengs, kan være et bedre alternativ. Det er også verdt å merke seg at Gos tilnærming til feilhåndtering, som oppmuntrer til å returnere feil fra funksjoner, komplementerer praksisen med å skrive feilmeldinger til stderr, noe som tillater mer finstemt kontroll over feilhåndtering og rapportering.

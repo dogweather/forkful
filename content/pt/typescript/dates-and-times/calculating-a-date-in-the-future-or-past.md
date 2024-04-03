@@ -11,9 +11,6 @@ title: Calculando uma data no futuro ou passado
 weight: 26
 ---
 
-## O Que & Por Que?
-Calcular datas futuras ou passadas é um jeito de lidar com intervalos de tempo em programação. Programadores fazem isso para agendar eventos, fazer relatórios ou verificar a validade de alguma informação com base no tempo.
-
 ## Como Fazer:
 ```TypeScript
 const hoje: Date = new Date();

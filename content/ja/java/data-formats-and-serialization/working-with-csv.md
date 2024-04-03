@@ -21,14 +21,10 @@ title: "CSV\u3068\u306E\u4F5C\u696D"
 weight: 37
 ---
 
-## 何となぜ？
-
-CSVファイルの扱いは、コンマ区切り値（CSV）ファイルからの読み取りとデータの書き込みを含みます。これはデータ交換において人気のある形式です。それはシンプルで広くサポートされているためです。プログラマーは、データのインポート/エクスポート、データ分析、異なるシステム間の情報共有などのタスクのためにCSVファイルを操作します。
-
 ## 方法:
 
-### 標準Javaライブラリを使用してCSVファイルを読み込む
 
+### 標準Javaライブラリを使用してCSVファイルを読み込む
 Javaはその標準ライブラリでCSVを組み込みでサポートしていませんが、`java.io`クラスを使用して簡単にCSVファイルを読み込むことができます。
 
 ```java
@@ -57,7 +53,6 @@ public class ReadCSVExample {
 ```
 
 ### 標準Javaライブラリを使用してCSVファイルに書き込む
-
 CSVファイルにデータを書き込むためには、`FileWriter`や`BufferedWriter`などの`java.io`クラスを使用できます。
 
 ```java
@@ -86,7 +81,6 @@ public class WriteCSVExample {
 ```
 
 ### サードパーティライブラリを使用する：Apache Commons CSV
-
 Apache Commons CSVは、JavaでCSVファイルを扱うための人気のあるライブラリです。これは、CSVファイルの読み書きを大幅に簡素化します。
 
 プロジェクトに依存関係を追加する：
@@ -102,7 +96,6 @@ Mavenの場合：
 ```
 
 #### CSVファイルを読み込む：
-
 ```java
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -131,7 +124,6 @@ public class ApacheReadCSVExample {
 ```
 
 #### CSVファイルに書き込む：
-
 ```java
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;

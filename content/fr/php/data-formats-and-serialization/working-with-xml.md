@@ -10,9 +10,6 @@ title: Travailler avec XML
 weight: 40
 ---
 
-## Quoi & Pourquoi ?
-XML est un langage de balisage utilisé pour le stockage et le transport des données. Les programmeurs travaillent avec XML pour permettre l’interopérabilité entre applications et systèmes - pensez à l’échange de données et aux paramètres de configuration.
-
 ## Comment faire :
 Lire du XML avec SimpleXML :
 

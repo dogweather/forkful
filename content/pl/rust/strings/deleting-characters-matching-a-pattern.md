@@ -11,9 +11,6 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## What & Why? (Co i Dlaczego?)
-Usuwanie znaków pasujących do wzorca to operacja, która filtruje nasz ciąg znaków (string), usuwając określone elementy. Programiści wykonują tę operację, aby oczyścić dane, usunąć niepożądane elementy lub przygotować tekst do przetwarzania.
-
 ## How to (Jak to zrobić):
 W Rust używamy biblioteki standardowej lub zewnętrznych crate’ów (pakietów) do manipulacji ciągami znaków. Oto przykład, jak możemy usunąć wszystkie wystąpienia litery "a" z ciągu znaków:
 

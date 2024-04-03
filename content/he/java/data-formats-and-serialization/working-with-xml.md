@@ -19,9 +19,6 @@ title: "\u05E2\u05D1\u05D5\u05D3\u05D4 \u05E2\u05DD XML"
 weight: 40
 ---
 
-## מה ולמה?
-עבודה עם XML כוללת פענוח, שאילתות והתעסקות במסמכי XML באמצעות Java. מתכנתים עושים זאת לשם חליפין של נתונים, ניהול תצורה, ומכיוון שמערכות ישנות רבות ו-APIs מתקשרות באמצעות XML.
-
 ## איך לעשות:
 Java מספקת APIs כמו DOM (Document Object Model), SAX (Simple API for XML), ו-StAX (Streaming API for XML) לעבודה עם XML. הנה דוגמה של DOM לפענוח קובץ XML:
 

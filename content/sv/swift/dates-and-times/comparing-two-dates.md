@@ -11,9 +11,6 @@ title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---
 
-## Vad & Varför?
-Jämförelse av två datum är processen att se vilket datum som kommer först eller om de är samma. Programmerare gör detta för att hantera deadlines, tidslinjer eller helt enkelt för att sortera eller filtrera datumdata.
-
 ## How to:
 För att jämföra två datum i Swift använder du `Date` objekt och jämför med inbyggda funktioner. Här är några exempel:
 

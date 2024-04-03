@@ -11,9 +11,6 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad & Varför?
-Komplexa tal har en realdel och en imaginärdel, vanligtvis skrivna som `a + bi`. De är avgörande inom avancerad matematik, fysik, ingenjörsvetenskap och vissa datavetenskapliga algoritmer. Programmerare arbetar med dem för att hantera beräkningar som involverar kvadratrötter av negativa tal och oscillerande funktioner.
-
 ## Hur:
 PHP erbjuder inbyggt stöd för komplexa tal genom att använda `ext-intl`-tillägget med klassen `NumberFormatter`. Här är ett exempel:
 

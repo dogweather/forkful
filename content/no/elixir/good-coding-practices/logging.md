@@ -11,9 +11,6 @@ title: "Loggf\xF8ring"
 weight: 17
 ---
 
-## Hva & Hvorfor?
-Logging i programvareutvikling er teknikken for å registrere hendelser som finner sted mens et program kjører, vanligvis til en fil eller et eksternt system. Programmerere gjør dette for å få innsikt i programvarens oppførsel, feilsøke problemer, og vedlikeholde en historikk over operasjonsloggen som er kritisk for feilsøking og overvåkning av applikasjonenes helse.
-
 ## Hvordan:
 I Elixir er den primære måten å logge informasjon på gjennom det innebygde `Logger`-modulen. Slik kan du bruke den:
 

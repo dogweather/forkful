@@ -11,11 +11,7 @@ title: "Refactorizaci\xF3n"
 weight: 19
 ---
 
-## Qué y Por Qué?
-Refactorizar es el proceso de reestructurar el código informático existente sin cambiar su comportamiento externo. Los programadores lo hacen para mejorar los atributos no funcionales del software, lo que hace que el código sea más limpio y eficiente, lo que a su vez simplifica el mantenimiento y facilita la adición de futuras características.
-
 ## Cómo hacerlo:
-
 Veamos un ejemplo simple donde la refactorización puede hacer que tu código sea más conciso y legible. Aquí, refactorizamos una función que calcula la suma de un arreglo de números.
 
 Antes:
@@ -43,7 +39,6 @@ console.log(calculateSum([1, 2, 3, 4])); // Salida: 10
 ¿Ves cómo el método `reduce` reduce el tamaño de la función mientras mantiene la funcionalidad intacta? Eso es la refactorización para ti.
 
 ## Profundización
-
 La refactorización no emergió como una práctica formal hasta la publicación del libro de Martin Fowler "Refactorización: Mejorando el diseño del código existente" en 1999. Este libro, junto con el auge del desarrollo de software ágil, ayudó a impulsar la refactorización hacia la corriente principal.
 
 Describir la refactorización como un aspecto del desarrollo de software es como explicar por qué ordenarías un taller: lo haces para que la próxima vez que tengas que arreglar algo (en este caso, código), pasarás menos tiempo lidiando con el desorden y más en el problema real.
@@ -57,7 +52,6 @@ Todo se trata de un código limpio, expresivo y mantenible. Algoritmos sofistica
 La refactorización debe hacerse con cuidado; es esencial tener un conjunto robusto de pruebas para asegurar que tus cambios no hayan alterado el comportamiento del software de manera inesperada, otra razón por la cual el Desarrollo Guiado por Pruebas (TDD) encaja bien con la refactorización, ya que proporciona esa red de seguridad por defecto.
 
 ## Ver También
-
 - Libro de Refactorización de Martin Fowler: [Refactorización - Mejorando el Diseño del Código Existente](https://martinfowler.com/books/refactoring.html)
 - Marcos de Pruebas de JavaScript (para asegurar que la refactorización no rompa la funcionalidad):
   - Jest: [Jest - Pruebas de JavaScript Deliciosas](https://jestjs.io/)

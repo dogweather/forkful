@@ -11,9 +11,6 @@ title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---
 
-## What & Why? (Co i Dlaczego?)
-Drukowanie informacji debugowych w PHP to wyświetlanie danych, które pomagają nam zrozumieć, co się dzieje w naszym skrypcie. Robimy to, żeby szybko znaleźć i rozwiązać problemy, czyli debugować.
-
 ## How to: (Jak to zrobić:)
 ```PHP
 <?php

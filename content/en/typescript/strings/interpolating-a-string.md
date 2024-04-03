@@ -9,12 +9,7 @@ title: Interpolating a string
 weight: 8
 ---
 
-## What & Why?
-
-String interpolation lets you embed variables and expressions into strings. It keeps your code readable and flexible - no plus signs, no muss, no fuss.
-
 ## How to:
-
 To interpolate a string in TypeScript, you use backticks `` ` `` and `${expression}` syntax:
 
 ```TypeScript
@@ -28,7 +23,6 @@ console.log(greeting);  // Output: Hi, I'm Charlie and I'm 27 years old.
 ```
 
 ## Deep Dive:
-
 String interpolation isn't unique to TypeScript; it's also in JavaScript since ES6 and many other languages. Before this, we concatenated strings using the `+` operator, which looked like this:
 
 ```TypeScript
@@ -42,7 +36,6 @@ What's happening under the hood? Interpolated strings are "syntactic sugar"—a 
 An alternative to interpolation would be using template functions or libraries, but for most cases, interpolation with backticks is the handiest tool for the job.
 
 ## See Also:
-
 - [Mozilla Developer Network on Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 - [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 - [ES6 Features and Syntax](http://es6-features.org/#StringInterpolation)

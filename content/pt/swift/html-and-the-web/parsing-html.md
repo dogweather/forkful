@@ -11,9 +11,6 @@ title: "An\xE1lise de HTML"
 weight: 43
 ---
 
-## What & Why?
-Parsear HTML é o ato de transformar texto HTML em algo que seu programa entenda e possa manipular. Programadores fazem isso para extrair informações, automatizar interações com páginas web ou migrar conteúdo para diferentes formatos.
-
 ## How to:
 Swift não tem suporte nativo para parsear HTML, então vamos usar uma biblioteca chamada SwiftSoup. Instale adicionando `SwiftSoup` ao seu arquivo `Podfile` ou `Package.swift`.
 

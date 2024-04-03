@@ -9,9 +9,6 @@ title: Einen HTTP-Request senden
 weight: 44
 ---
 
-## Was & Warum?
-HTTP-Anfragen sind der Weg, wie deine Anwendung mit dem Web spricht. Programmierer nutzen sie, um Daten zu holen, zu sendeln, und mit APIs zu interagieren.
-
 ## How to:
 Clojure macht HTTP-Anfragen einfach mit der `clj-http`bibliothek. Installation: Leinigen `project.clj`:
 

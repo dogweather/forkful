@@ -14,11 +14,8 @@ title: Trabajando con CSV
 weight: 37
 ---
 
-## Qué y Por Qué?
-
-En el ámbito de la programación, trabajar con archivos CSV (Valores Separados por Comas) implica leer y escribir datos en archivos de texto organizados por filas, donde cada fila representa un registro y los campos de cada registro están separados por comas. Los programadores manipulan archivos CSV por la facilidad de importación/exportación de datos a través de varios sistemas, debido a su amplio soporte y simplicidad para almacenar datos tabulares.
-
 ## Cómo hacerlo:
+
 
 ### Leyendo Archivos CSV
 Para leer un archivo CSV en C, utilizamos funciones estándar de E/S de archivos junto con funciones de manipulación de cadenas para analizar cada línea. A continuación, se muestra un ejemplo básico de lectura de un archivo CSV e impresión de los campos de cada fila en la consola.
@@ -94,7 +91,6 @@ Jane Doe,27,Científica de Datos
 ```
 
 ## Análisis Profundo
-
 El formato CSV, aunque aparentemente sencillo, viene con sus matices, como el manejo de comas dentro de los campos y la encapsulación de campos con comillas. Los ejemplos rudimentarios mostrados no tienen en cuenta tales complejidades, ni manejan los errores potenciales de manera robusta.
 
 Históricamente, el manejo de CSV en C ha sido principalmente manual debido a la naturaleza de bajo nivel del lenguaje y la falta de abstracciones de alto nivel incorporadas para tales tareas. Esta gestión manual incluye abrir archivos, leer líneas, dividir cadenas y convertir tipos de datos según sea necesario.

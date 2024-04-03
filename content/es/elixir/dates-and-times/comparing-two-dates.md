@@ -11,9 +11,6 @@ title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---
 
-## Qué y Por Qué?
-Comparar dos fechas significa verificar si son iguales, cuál es anterior o posterior. Los programadores lo hacen para manejar eventos, programar tareas, y lidiar con duraciones y periodos de tiempo.
-
 ## Cómo hacerlo:
 ```elixir
 # Asegúrate de tener Elixir instalado e inicia IEx, el shell interactivo

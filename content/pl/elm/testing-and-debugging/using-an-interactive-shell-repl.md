@@ -12,9 +12,6 @@ title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---
 
-## Co i dlaczego?
-Pętla Czytaj-Ewaluuj-Wypisz (REPL) to proste, interaktywne środowisko programistyczne, które pobiera pojedyncze dane wejściowe od użytkownika, ocenia je i zwraca wynik użytkownikowi. Programiści Elm wykorzystują REPL do szybkich eksperymentów, debugowania czy nauki języka.
-
 ## Jak?
 Elm nie posiada zintegrowanego REPL. Jednakże, możesz użyć `elm repl` z linii poleceń, aby uruchomić sesję Elm po zainstalowaniu Elm.
 

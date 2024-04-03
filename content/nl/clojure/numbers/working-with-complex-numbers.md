@@ -12,9 +12,6 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-Complexe getallen breiden de reële getallen uit met een extra deel, de imaginaire eenheid 'i'. Programmeurs gebruiken ze in verschillende domeinen, waaronder signaalverwerking, elektromagnetische theorie en fractals, waar berekeningen met de wortel van een negatief getal routine zijn.
-
 ## Hoe:
 Clojure biedt ingebouwde ondersteuning voor complexe getallen via de utility-klasse `clojure.lang.Numbers`. Gebruik `complex` om complexe getallen te creëren en om rekenkundige bewerkingen uit te voeren.
 

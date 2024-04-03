@@ -11,9 +11,6 @@ title: Convertendo uma data em uma string
 weight: 28
 ---
 
-## O Que & Porquê?
-Converter uma data em uma string significa transformar um objeto de data em uma sequência de caracteres legíveis. Programadores fazem isso para formatar datas de modo a serem apresentadas aos usuários ou para interagir com APIs e bancos de dados que exigem datas em formato de texto.
-
 ## Como fazer:
 ```javascript
 // Criando um objeto de data

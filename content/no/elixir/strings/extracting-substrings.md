@@ -11,9 +11,6 @@ title: Uthenting av delstrenger
 weight: 6
 ---
 
-## What & Why?
-I Elixir kan uttrekking av delstrenger hjelpe deg å få ut spesifikk info fra tekststrømmer. Du gjør det fordi du kanskje trenger å bearbeide eller analysere tekstdeler individuelt.
-
 ## How to:
 Elixir lar deg enkelt hente ut delstrenger med slicing. Her er et kjapt eksempel:
 

@@ -12,9 +12,6 @@ title: HTML parsen
 weight: 43
 ---
 
-## Was & Warum?
-HTML in PHP zu parsen, bedeutet, spezifische Informationen aus HTML-Dokumenten zu extrahieren. Programmierer führen diese Aufgabe aus, um die Datenerfassung zu automatisieren, Web-Scraping durchzuführen oder Inhalte verschiedener Webseiten in ihren Anwendungen zu integrieren, um die Funktionalität ohne manuelles Eingreifen zu erweitern.
-
 ## Wie geht das:
 Zum Parsen von HTML können PHP-Programmierer eingebaute Funktionen nutzen oder sich auf robuste Bibliotheken wie Simple HTML DOM Parser stützen. Hier werden wir Beispiele anhand von PHPs `DOMDocument` und dem Simple HTML DOM Parser erläutern.
 

@@ -10,12 +10,7 @@ title: Generierung von Zufallszahlen
 weight: 12
 ---
 
-## Was & Warum?
-
-Das Generieren von Zufallszahlen ist eine grundlegende Aufgabe beim Programmieren, die für alles von der Datenstichprobe bis zur Spielentwicklung verwendet wird. In Fish Shell ermöglicht die Nutzung von Systemwerkzeugen und integrierten Funktionen zu diesem Zweck es Programmierern, Zufälligkeit und Variabilität effektiv in Skripte und Anwendungen zu integrieren.
-
 ## Wie:
-
 Das Generieren einer Zufallszahl in Fish kann unkompliziert sein, indem man eine Kombination aus Systemwerkzeugen und Shell-Fähigkeiten verwendet. Unten sind einige Beispiele, die zeigen, wie man Zufallszahlen in bestimmten Bereichen generiert.
 
 **Generieren einer Zufallszahl zwischen 0 und 100:**
@@ -67,7 +62,6 @@ B
 Bitte beachten Sie, dass die Ausgabe jedes Mal, wenn Sie diese Befehle ausführen, aufgrund der Natur der Zufälligkeit variieren wird.
 
 ## Tiefgang
-
 Die `random` Funktion in Fish Shell bietet eine benutzerfreundliche Schnittstelle für die Generierung von Pseudozufallszahlen. Intern nutzt es systemebene Zufallszahlengenerierungswerkzeuge, was eine portable Möglichkeit bietet, Zufälligkeit in Ihre Skripte einzuführen. Es ist jedoch wichtig zu bedenken, dass die von `random` bereitgestellte Zufälligkeit für die meisten Skriptaufgaben ausreichend ist, aber möglicherweise nicht den kryptografischen Sicherheitsanforderungen für Anwendungen genügt, die einen höheren Grad an Unvorhersehbarkeit benötigen.
 
 Für hochsichere Kontexte erwägen Sie die Verwendung von speziellen Werkzeugen oder Programmierbibliotheken, die für kryptografische Zwecke entwickelt wurden und stärkere Zufälligkeitsgarantien bieten. Dennoch bietet die `random` Funktion von Fish Shell für allgemeines Skripting und Anwendungen, bei denen die höchsten Sicherheitsstandards für Zufälligkeit keine Anforderung sind, eine bequeme und effektive Lösung.

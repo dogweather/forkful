@@ -23,12 +23,7 @@ title: "\u65B0\u3057\u3044\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u59CB\u3081
 weight: 1
 ---
 
-## What & Why? (何となぜ？)
-
-新しいプロジェクトを始めるとは、ゼロからアプリケーションを作り出すプロセスです。プログラマーは新しいアイデアを実現し、問題を解決するため、またはスキルを向上させるためにプロジェクトを開始します。
-
 ## How to: (やり方)
-
 新しいElixirプロジェクトを立ち上げるためには、`mix` コマンドを使用します。ここで基本的な手順を見てみましょう。
 
 ```elixir
@@ -59,7 +54,6 @@ my_project/
 ```
 
 ## Deep Dive (深掘り)
-
 Elixirは、高可用性を必要とするシステムのために設計された言語です。Erlang のVM（BEAM）の上で構築されており、並行性と障害耐性が強みです。`mix` コマンドは、Elixirのプロジェクト管理ツールです。これによりプロジェクトの作成、タスクの実行、テスト、そして依存関係の管理が行われます。
 
 古い言語では、プロジェクトの構造が手作業で作成されることがありましたが、現在のツールの進歩により、一貫性と簡単さが提供されています。Elixirを使用する代わりに、他の言語でプロジェクトを始めるときも似たようなコマンドラインツールがあります。例えば、Rubyには`bundler`、Node.jsには`npm init`または`yarn init`などがあります。
@@ -67,7 +61,6 @@ Elixirは、高可用性を必要とするシステムのために設計され�
 `mix new`には、いくつかの便利なオプションもあります。たとえば、`--sup`を使用して監視機能を持つアプリケーションを作成したり、`--umbrella`で複数のアプリケーションを含む傘プロジェクトを生成することができます。
 
 ## See Also (関連情報)
-
 - [Elixirの公式ガイド](https://elixir-lang.org/getting-started/introduction.html)
 - [MixとOTPのガイド](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html)
 - [Elixir School（英語）](https://elixirschool.com/en/)

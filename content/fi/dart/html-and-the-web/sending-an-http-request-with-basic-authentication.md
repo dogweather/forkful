@@ -14,12 +14,7 @@ title: "L\xE4hett\xE4minen HTTP-pyynt\xF6 perustodennuksella"
 weight: 45
 ---
 
-## Mikä ja miksi?
-
-HTTP-pyynnön lähettäminen perusautentikoinnilla sisältää käyttäjänimen ja salasanan liittämisen pyyntöön käyttäjän henkilöllisyyden varmistamiseksi. Ohjelmoijat käyttävät sitä resurssien käyttämiseen, jotka vaativat autentikointia, varmistaen turvallisen viestinnän asiakkaan ja palvelimen välillä.
-
 ## Kuinka:
-
 Dartissa voit käyttää `http`-pakettia lähettääksesi HTTP-pyyntöjä perusautentikoinnilla. Lisää ensin `http`-paketti `pubspec.yaml`-tiedostoosi:
 
 ```yaml

@@ -13,9 +13,6 @@ title: Analyse Syntaxique du HTML
 weight: 43
 ---
 
-## Quoi & Pourquoi ?
-L'analyse (parsing) HTML consiste à extraire des données des documents HTML. Les programmeurs le font pour interagir avec ou manipuler le contenu web, automatiser l'extraction de données, ou pour des fins de scraping web.
-
 ## Comment faire :
 Analysons le HTML en utilisant l'API `DOMParser` en JavaScript.
 

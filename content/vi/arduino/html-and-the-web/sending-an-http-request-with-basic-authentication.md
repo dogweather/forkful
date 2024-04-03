@@ -11,8 +11,6 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1
 weight: 45
 ---
 
-## Gửi một yêu cầu HTTP với xác thực cơ bản với Arduino
-
 ## Lý do là gì?
 Gửi một yêu cầu HTTP với xác thực cơ bản thêm một tầng bảo mật bằng cách yêu cầu tên người dùng và mật khẩu. Lập trình viên sử dụng nó để truy cập các API hoặc dịch vụ web chỉ dành cho người dùng được ủy quyền.
 
@@ -59,7 +57,6 @@ void loop() {
 Khi chạy, Arduino sẽ kết nối với máy chủ chỉ định với thông tin đăng nhập và lấy nội dung được bảo vệ.
 
 ## Đi sâu hơn
-
 Xác thực HTTP cơ bản đã có từ những ngày đầu của web, được định nghĩa vào năm 1996 bởi RFC 2617. Nó đơn giản: mã hóa tên người dùng và mật khẩu trong base64 và đặt nó vào một tiêu đề HTTP. Đây không phải là phương pháp bảo mật nhất (vì base64 dễ dàng đảo ngược), nhưng nó đơn giản cho các công cụ ít rủi ro hoặc nội bộ.
 
 Có các phương pháp thay thế, như Xác thực Truy cập Digest hoặc OAuth, là an toàn hơn, nhưng chúng cũng tốn nhiều tài nguyên hơn - điều này cần được xem xét trên một Arduino nhỏ.

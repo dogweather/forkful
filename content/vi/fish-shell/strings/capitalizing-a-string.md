@@ -15,9 +15,6 @@ title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---
 
-## Gì & Tại Sao?
-Việc viết hoa một chuỗi có nghĩa là chuyển tất cả các ký tự thành chữ hoa. Lập trình viên thực hiện việc này để đảm bảo tính nhất quán, dễ đọc hoặc để đáp ứng một số tiêu chuẩn viết mã nào đó.
-
 ## Làm thế nào:
 Trong Fish, bạn viết hoa một chuỗi bằng lệnh `string upper`. Dưới đây là cách bạn thực hiện:
 

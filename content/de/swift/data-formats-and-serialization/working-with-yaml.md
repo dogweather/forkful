@@ -12,9 +12,6 @@ title: Arbeiten mit YAML
 weight: 41
 ---
 
-## Was & Warum?
-YAML, das für "YAML Ain't Markup Language" steht, ist ein menschenlesbarer Daten-Serialisierungsstandard für alle Programmiersprachen. Programmierer verwenden es für Konfigurationsdateien, interprozessuale Nachrichtenübermittlung und Datenspeicherung, weil seine Lesbarkeit im Vergleich zu anderen Datenformaten wie XML oder JSON viel näher an gewöhnlichem Englisch liegt, was es einfacher zu verstehen und zu schreiben macht.
-
 ## Wie geht das:
 Swift bietet keine integrierte Unterstützung für YAML-Parsing und -Serialisierung, was die Verwendung von Drittanbieter-Bibliotheken erforderlich macht. Eine beliebte Wahl ist `Yams`, eine Bibliothek zum Arbeiten mit YAML in Swift.
 

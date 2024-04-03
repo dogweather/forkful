@@ -13,14 +13,10 @@ title: Praca z plikami CSV
 weight: 37
 ---
 
-## Co i dlaczego?
-
-Praca z plikami CSV obejmuje odczytywanie z nich danych oraz zapisywanie danych do plików o wartościach oddzielonych przecinkami (CSV), popularnego formatu wymiany danych ze względu na jego prostotę i szerokie wsparcie. Programiści manipulują plikami CSV w celu realizacji zadań takich jak import/eksport danych, analiza danych oraz wymiana informacji pomiędzy różnymi systemami.
-
 ## Jak to zrobić:
 
-### Odczytywanie pliku CSV przy użyciu standardowej biblioteki Java
 
+### Odczytywanie pliku CSV przy użyciu standardowej biblioteki Java
 Java nie ma wbudowanego wsparcia dla CSV w swojej standardowej bibliotece, ale można łatwo odczytać plik CSV, używając klas z `java.io`.
 
 ```java
@@ -49,7 +45,6 @@ public class ReadCSVExample {
 ```
 
 ### Zapisywanie do pliku CSV przy użyciu standardowej biblioteki Java
-
 Aby zapisać dane do pliku CSV, można użyć klas z `java.io`, takich jak `FileWriter` i `BufferedWriter`.
 
 ```java
@@ -78,7 +73,6 @@ public class WriteCSVExample {
 ```
 
 ### Używanie biblioteki innej firmy: Apache Commons CSV
-
 Apache Commons CSV jest popularną biblioteką do obsługi plików CSV w Javie. Znacznie upraszcza odczytywanie i zapisywanie plików CSV.
 
 Dodaj zależność do swojego projektu:
@@ -94,7 +88,6 @@ Dla Maven:
 ```
 
 #### Odczytywanie pliku CSV:
-
 ```java
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -123,7 +116,6 @@ public class ApacheReadCSVExample {
 ```
 
 #### Zapisywanie do pliku CSV:
-
 ```java
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;

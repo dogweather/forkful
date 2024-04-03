@@ -11,9 +11,6 @@ title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---
 
-## Qué y Por Qué?
-La impresión de salidas de depuración (debug output) es un método para mostrar información de un programa mientras se ejecuta. Los programadores lo usan para entender qué está pasando por "debajo del capó" y para solucionar problemas rápidamente.
-
 ## Cómo:
 Con Clojure, puedes imprimir mensajes usando `println`, `print`, o `prn`. Te dejamos unos ejemplos rápida y concisos:
 

@@ -18,9 +18,6 @@ title: "\u4F7F\u7528TOML"
 weight: 39
 ---
 
-## 什么 & 为什么？
-TOML，即Tom's Obvious, Minimal Language的缩写，是一种类似于JSON或YAML的数据序列化格式。程序员之所以使用它，是因为它具有人类可读性和直接映射到数据类型的特点，使其成为配置文件和数据交换的首选。
-
 ## 如何操作：
 首先，你需要一个TOML解析器。`@iarna/toml`是一个流行的选择。使用npm安装它：`npm install @iarna/toml --save`。以下是如何读取TOML文件并将其解析为JavaScript对象的方法：
 

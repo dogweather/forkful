@@ -11,9 +11,6 @@ title: Lavorare con YAML
 weight: 41
 ---
 
-## What & Why?
-Lavorare con YAML significa manipolare un linguaggio di serializzazione dati che punta sulla leggibilità umana. I programmatori lo usano perché è comodo per configurazioni, file di dati e l'interscambio di messaggi tra servizi.
-
 ## How to:
 Per iniziare, installa la libreria `yaml-cpp` usando il gestore di pacchetti che preferisci. Ecco un esempio di lettura e scrittura:
 

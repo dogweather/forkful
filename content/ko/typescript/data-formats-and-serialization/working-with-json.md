@@ -18,11 +18,8 @@ title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 weight: 38
 ---
 
-## 무엇이며 왜?
-
-JSON(JavaScript Object Notation) 처리는 JSON 데이터를 TypeScript에서 사용 가능한 형식으로 파싱하는 것을 포함합니다. 프로그래머는 이를 통해 구조화된 데이터를 쉽게 조작하고, 저장하고, 전송합니다. JSON은 경량이며, 텍스트 기반, 그리고 인간과 기계 모두에게 읽기 쉽기 때문입니다.
-
 ## 어떻게 하나:
+
 
 ### JSON을 TypeScript 객체로 파싱하기
 JSON 문자열을 TypeScript 객체로 변환하려면 `JSON.parse()` 메서드를 사용합니다. 이는 웹 서버에서 JSON 데이터를 받거나 JSON 파일을 읽을 때 유용합니다.

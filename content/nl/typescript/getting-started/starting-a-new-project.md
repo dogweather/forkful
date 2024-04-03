@@ -12,9 +12,6 @@ title: Een nieuw project starten
 weight: 1
 ---
 
-## Wat & Waarom?
-Het starten van een nieuw project in TypeScript draait allemaal om het opzetten van een solide basis om op te coderen. Programmeurs starten nieuwe projecten om verse ideeën om te zetten in werkende software, concepten uit te testen of nieuwe dingen te leren.
-
 ## Hoe:
 ```TypeScript
 // Stap 1: Installeer TypeScript globaal (indien nog niet geïnstalleerd)

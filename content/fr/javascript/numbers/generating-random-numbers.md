@@ -13,14 +13,10 @@ title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---
 
-## Quoi et pourquoi ?
-
-La génération de nombres aléatoires en JavaScript est une technique utilisée pour créer de l'imprévisibilité dans les applications, depuis les jeux qui nécessitent un comportement ennemi aléatoire jusqu'aux algorithmes de sécurité nécessitant une aléatoire cryptographique. Cette capacité est cruciale pour développer des expériences utilisateur dynamiques et des applications sécurisées.
-
 ## Comment faire :
 
-### Génération Basique de Nombres Aléatoires
 
+### Génération Basique de Nombres Aléatoires
 La manière la plus simple de générer un nombre aléatoire en JavaScript est d'utiliser `Math.random()`. Cette fonction retourne un nombre à virgule flottante, pseudo-aléatoire dans l'intervalle 0 (inclusif) à 1 (exclusif).
 
 ```javascript
@@ -29,7 +25,6 @@ console.log(randomNumber);
 ```
 
 ### Générer un Nombre Aléatoire dans un Intervalle
-
 Souvent, vous voudrez un entier aléatoire dans un intervalle spécifique. Cela peut être réalisé en mettant à l'échelle et en arrondissant la sortie de `Math.random()`.
 
 ```javascript
@@ -43,7 +38,6 @@ console.log(getRandomInt(1, 100));
 ```
 
 ### Nombres Aléatoires Cryptographiquement Sécurisés
-
 Pour les applications nécessitant un degré de hasard plus élevé (par exemple, les opérations cryptographiques), la méthode `crypto.getRandomValues()` peut être utilisée. Cela fournit une aléatoire cryptographique, contrairement aux nombres pseudo-aléatoires générés par `Math.random()`.
 
 ```javascript
@@ -55,7 +49,6 @@ Pour les applications nécessitant un degré de hasard plus élevé (par exemple
 ```
 
 ## Plongée en Profondeur
-
 Historiquement, la génération de nombres aléatoires en JavaScript dépendait uniquement de la fonction `Math.random()`. Bien que pratique pour la plupart des cas d'usage occasionnels, son algorithme, typiquement une variante d'un générateur de nombres pseudo-aléatoires (PRNG) comme Mersenne Twister, ne fournissait pas de sécurité cryptographique.
 
 L'introduction de l'API de Cryptographie Web a apporté la méthode `crypto.getRandomValues()`, offrant une manière de générer des nombres bien moins prévisibles et convenant aux applications sensibles à la sécurité. Cette méthode exploite les sources de hasard du système d'exploitation sous-jacent, telles que `/dev/random` sur Unix/Linux, qui sont plus robustes et appropriées pour les opérations cryptographiques.

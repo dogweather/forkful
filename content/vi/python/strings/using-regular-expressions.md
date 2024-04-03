@@ -15,9 +15,6 @@ title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---
 
-## Cái gì & Tại sao?
-Biểu thức chính quy (regex) là những mẫu được sử dụng để khớp các kết hợp ký tự trong chuỗi. Lập trình viên sử dụng regex để tìm kiếm, chỉnh sửa hoặc thao tác với văn bản vì nó mạnh mẽ và hiệu quả.
-
 ## Làm thế nào:
 Dưới đây là các ví dụ Python sử dụng mô-đun `re` cho các hoạt động regex phổ biến:
 

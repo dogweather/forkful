@@ -11,11 +11,7 @@ title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---
 
-## Qué es y por qué?
-Comparar dos fechas es verificar si una es anterior, posterior o la misma que la otra. Los programadores lo hacen para gestionar eventos, expiraciones o cronogramas en sus aplicaciones.
-
 ## Cómo hacerlo:
-
 ```rust
 use chrono::{DateTime, Utc};
 

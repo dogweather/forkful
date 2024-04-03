@@ -11,9 +11,6 @@ title: "Refactorizaci\xF3n"
 weight: 19
 ---
 
-## Qué y Por Qué?
-La refactorización es el proceso de reestructurar código de computadora existente sin cambiar su comportamiento externo, con el objetivo de mejorar los atributos no funcionales del software. Los programadores refactorizan el código para hacerlo más limpio, eficiente y fácil de entender, lo que facilita un mantenimiento más sencillo y mejoras futuras.
-
 ## Cómo hacerlo:
 PowerShell no tiene una herramienta de refactorización dedicada integrada, pero aún así puedes limpiar tu código para mejorar la legibilidad y el rendimiento. Considera una función que está haciendo demasiado y cómo podríamos refactorizarla para mayor claridad:
 

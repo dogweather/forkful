@@ -21,16 +21,10 @@ title: "CSV\u3068\u306E\u4F5C\u696D"
 weight: 37
 ---
 
-## 何となぜ？
-
-CSV（カンマ区切り値）の操作とは、プレーンテキストで表形式のデータを保存する一般的なフォーマットであるCSVファイルからの読み取りと、それにデータを書き込むことを含みます。プログラマーは、異なるアプリケーション、データベース間でデータを簡単に交換したり、データ処理や分析作業を容易にするために、CSVファイルを操作します。
-
 ## 方法:
-
 Kotlinは静的型付けプログラミング言語であり、JVM上で実行されますが、CSVファイルを扱うための組み込みライブラリを含んでいません。しかし、基本的な操作のためにJavaの`BufferedReader`と`FileWriter`クラスを使用することができます。また、より高度な機能には、`kotlinx.serialization`や`opencsv`のような人気のあるサードパーティライブラリを活用できます。
 
 ### BufferedReaderを使用したCSVファイルの読み取り:
-
 ```kotlin
 import java.io.BufferedReader
 import java.io.FileReader
@@ -56,7 +50,6 @@ _サンプル出力:_
 ```
 
 ### FileWriterを使用したCSVファイルへの書き込み:
-
 ```kotlin
 import java.io.FileWriter
 
@@ -78,7 +71,6 @@ fun main() {
 これにより、提供されたデータで`output.csv`が作成または上書きされます。
 
 ### kotlinx.serializationを使用したCSVシリアライゼーション:
-
 まず、`build.gradle.kts`に依存関係を追加します:
 
 ```kotlin
@@ -117,7 +109,6 @@ Jane Smith,25,London
 ```
 
 ### OpenCSVを使用した高度な操作:
-
 プロジェクトの依存関係にOpenCSVを追加します:
 
 ```kotlin

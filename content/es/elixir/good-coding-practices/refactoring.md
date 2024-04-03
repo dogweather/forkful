@@ -11,9 +11,6 @@ title: "Refactorizaci\xF3n"
 weight: 19
 ---
 
-## ¿Qué y Por Qué?
-Refactorizar es el proceso de reestructurar el código existente sin cambiar su comportamiento externo, con el objetivo de mejorar atributos no funcionales como la legibilidad y la mantenibilidad. Los programadores lo hacen para que el código sea más limpio, fácil de entender y más eficiente, facilitando las actualizaciones futuras y reduciendo el riesgo de errores.
-
 ## Cómo hacerlo:
 Vamos a organizar un patrón común de Elixir. Vamos a refactorizar una función `calculate_stats` que hace más de lo que debería dividiéndola en piezas más pequeñas y reutilizables.
 

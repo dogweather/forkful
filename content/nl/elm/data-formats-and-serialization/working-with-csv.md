@@ -13,12 +13,7 @@ title: Werken met CSV
 weight: 37
 ---
 
-## Wat & Waarom?
-
-Werken met CSV (Comma-Separated Values) betekent het lezen en schrijven van gegevens in een tekstformaat waarbij elke regel waarden heeft die door komma's worden gescheiden. Programmeurs gebruiken CSV omdat het een eenvoudig formaat is dat door veel tools en systemen wordt ondersteund, wat het geweldig maakt voor gegevensuitwisseling.
-
 ## Hoe te:
-
 Elm heeft geen ingebouwde CSV-parser, maar je kunt er gemakkelijk een toevoegen met een pakket zoals `elm-csv`. Hier is een snel voorbeeld van het parseren van CSV-gegevens:
 
 ```Elm
@@ -50,9 +45,7 @@ naam,leeftijd
 ```
 
 ## Diepere Duik
-
 CSV bestaat al sinds de vroege jaren 1970; het is zo eenvoudig dat het daadwerkelijke standaarden voorafgaat. Alternatieven zijn onder meer JSON en XML, maar CSV wordt nog steeds de voorkeur gegeven bij het omgaan met tabelgegevens die zwaar op cijfers leunen en kort zijn op structuur. In Elm, aangezien het een front-end taal is, zul je werken door ofwel CSV te ontvangen van een backend of een lokaal bestand te verwerken dat door de gebruiker is geüpload. Dit implementeren vereist kennis van Elm's ports voor JS-interop of file package voor uploads.
 
 ## Zie Ook
-
 - Elm-gids over interop met JavaScript: [Elm Ports](https://guide.elm-lang.org/interop/ports.html)

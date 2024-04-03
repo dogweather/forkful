@@ -13,11 +13,7 @@ title: Sjekker om en mappe eksisterer
 weight: 20
 ---
 
-## Hva & hvorfor?
-Å sjekke om en katalog eksisterer i filsystemet er essensielt for å håndtere filstrukturer fra dine Swift-applikasjoner. Denne oppgaven gjør det mulig for utviklere å verifisere tilstedeværelsen av kataloger før de forsøker å lese fra eller skrive til dem, og dermed unngå mulige kjøretidsfeil.
-
 ## Hvordan:
-
 Swifts Foundation-rammeverk tilbyr `FileManager`-klassen, som har metoder for å håndtere filsystemet. Du kan bruke `FileManager` for å sjekke om en katalog eksisterer. Her er et kodeutdrag om hvordan du gjør dette:
 
 ```swift
@@ -50,7 +46,6 @@ if fileManager.fileExists(atPath: path, isDirectory: &isDirectory), isDirectory.
 ```
 
 ### Bruke et tredjepartsbibliotek
-
 Per nå krever vanligvis ikke sjekking for eksistensen av en katalog i Swift tredjepartsbiblioteker på grunn av robustheten til `FileManager`-klassen. Men, for mer kompleks filmanipulasjon og sjekking, tilbyr biblioteker som **Files** av John Sundell en mer Swift-vennlig API.
 
 Slik kan du bruke det:

@@ -10,10 +10,6 @@ title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---
 
-## What & Why?
-"Co i dlaczego?"
-Zamiana daty na ciąg znaków w Elm to proces przekształcenia wartości daty (którą komputer rozumie) na tekst, który jest czytelny dla człowieka. Programiści robią to, aby wyświetlić daty w aplikacjach w zrozumiałej formie dla użytkowników.
-
 ## How to:
 "Jak to zrobić:"
 ```Elm

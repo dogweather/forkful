@@ -11,9 +11,6 @@ title: Extraindo substrings
 weight: 6
 ---
 
-## O Que & Porquê?
-Extrair substrings é o processo de selecionar partes específicas de uma string. Programadores fazem isso para manipular, analisar ou validar informações de acordo com a necessidade.
-
 ## Como Fazer:
 No PHP, a função `substr()` te deixa pegar um pedaço da string. Aqui está um exemplo rápido:
 

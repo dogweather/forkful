@@ -14,14 +14,10 @@ title: Arbeide med CSV
 weight: 37
 ---
 
-## Hva & Hvorfor?
-
-Å jobbe med CSV-filer involverer lesing fra og skriving av data til komma-separerte verdier (CSV)-filer, et populært format for datautveksling fordi det er enkelt og bredt støttet. Programmerere manipulerer CSV-filer for oppgaver som dataimport/eksport, dataanalyse, og informasjonsdeling mellom ulike systemer.
-
 ## Hvordan:
 
-### Lese en CSV-fil ved bruk av standard Java-bibliotek
 
+### Lese en CSV-fil ved bruk av standard Java-bibliotek
 Java har ikke innebygd støtte for CSV i sitt standardbibliotek, men du kan enkelt lese en CSV-fil ved å bruke `java.io`-klasser.
 
 ```java
@@ -50,7 +46,6 @@ public class ReadCSVExample {
 ```
 
 ### Skrive til en CSV-fil ved bruk av standard Java-bibliotek
-
 For å skrive data til en CSV-fil, kan du bruke `java.io`-klasser som `FileWriter` og `BufferedWriter`.
 
 ```java
@@ -79,7 +74,6 @@ public class WriteCSVExample {
 ```
 
 ### Bruke et tredjepartsbibliotek: Apache Commons CSV
-
 Apache Commons CSV er et populært bibliotek for håndtering av CSV-filer i Java. Det forenkler betydelig lesing og skriving av CSV-filer.
 
 Legg til avhengigheten i prosjektet ditt:
@@ -95,7 +89,6 @@ For Maven:
 ```
 
 #### Lese en CSV-fil:
-
 ```java
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -124,7 +117,6 @@ public class ApacheReadCSVExample {
 ```
 
 #### Skrive til en CSV-fil:
-
 ```java
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;

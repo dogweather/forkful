@@ -11,9 +11,6 @@ title: Vergleich von zwei Daten
 weight: 27
 ---
 
-## Was & Warum?
-Das Vergleichen von zwei Daten entscheidet, welches Datum früher oder später ist oder ob sie gleich sind. Programmierer nutzen das, um Zeitabläufe zu sortieren, Ereignisse zu terminieren oder Zeitdifferenzen zu berechnen.
-
 ## Anleitung:
 Elm macht das Vergleichen von Daten ziemlich schlicht. Hier ein paar Code-Beispiele:
 

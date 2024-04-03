@@ -12,9 +12,6 @@ title: Att arbeta med TOML
 weight: 39
 ---
 
-## Vad & Varför?
-TOML är en förkortning för Toms Obvious, Minimal Language, ett konfigurationsfilsformat som är lätt att läsa på grund av dess tydliga semantik. Programmerare använder det för konfigurationsfiler, för att förenkla datautbyte mellan system, och eftersom det uppnår en balans mellan mänsklig läsbarhet och maskinell tolkningsbarhet.
-
 ## Hur man gör:
 Först, installera en TOML-tolk, som `Tomlyn`. Använd din pakethanterare:
 

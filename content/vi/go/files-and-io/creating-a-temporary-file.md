@@ -18,12 +18,7 @@ title: "T\u1EA1o m\u1ED9t t\u1EC7p t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Cái gì & Tại sao?
-
-Việc tạo một tệp tạm thời trong Go cho phép tạo ra một tệp không lưu trữ lâu dài, được thiết kế để sử dụng trong thời gian ngắn, chủ yếu là cho các nhiệm vụ như lưu trữ dữ liệu trung gian hoặc hỗ trợ trong các công việc xử lý hàng loạt. Lập trình viên sử dụng tính năng này để an toàn xử lý dữ liệu mà không ảnh hưởng đến hệ thống tệp vĩnh viễn hoặc cần dọn dẹp thủ công.
-
 ## Làm thế nào:
-
 Trong Go, gói `ioutil` ban đầu cung cấp các tiện ích cho việc tạo tệp tạm thời. Tuy nhiên, Go 1.16 đã thúc đẩy việc sử dụng các chức năng của gói `os` và `io/ioutil` vào những vị trí được tổ chức tốt hơn. Bây giờ, gói `os` và `io` được ưu tiên sử dụng để xử lý tệp tạm thời.
 
 Dưới đây là hướng dẫn từng bước để tạo, viết vào và xóa một tệp tạm thời:
@@ -86,7 +81,6 @@ Mặc dù câu lệnh `defer os.Remove(tmpFile.Name())` tại giai đoạn tạo
 ```
 
 ## Sâu hơn nữa
-
 Cơ chế đằng sau việc Go xử lý tệp tạm thời đã phát triển. Ban đầu, việc tạo tệp tạm thời chủ yếu được quản lý bởi hàm `ioutil.TempFile` hiện đã lỗi thời, phản ánh xu hướng rộng lớn trong phát triển phần mềm hướng tới việc xử lý tệp một cách an toàn và hiệu quả hơn. Việc chuyển các chức năng này vào gói `os` và `io` với Go 1.16 biểu thị một sự thúc đẩy rộng rãi hơn nhằm tinh gọn thư viện chuẩn của ngôn ngữ và khuyến khích sử dụng các API thống nhất và đồng bộ hơn.
 
 Mặc dù việc sử dụng tệp tạm thời là một thực hành phổ biến và thường là cần thiết trong lập trình, nhưng quan trọng là phải lưu ý rằng việc dựa quá nhiều vào chúng để lưu trữ lượng lớn dữ liệu hoặc cho các tác vụ dài hạn có thể dẫn đến vấn đề về hiệu suất. Hơn nữa, khi việc tạo tệp tạm thời không được kiểm soát chặt chẽ hoặc khi chúng không được dọn dẹp đầy đủ, có thể dẫn đến rò rỉ tài nguyên có thể ảnh hưởng tiêu cực đến hệ thống tệp. Trong các kịch bản đòi hỏi lưu trữ vĩnh viễn hoặc cần xử lý dòng dữ liệu lớn, các lựa chọn khác như cơ sở dữ liệu hoặc cửa hàng dữ liệu trong bộ nhớ thường cung cấp hiệu suất và độ tin cậy tốt hơn so với tệp tạm thời.

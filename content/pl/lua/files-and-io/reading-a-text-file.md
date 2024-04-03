@@ -11,9 +11,6 @@ title: Odczytywanie pliku tekstowego
 weight: 22
 ---
 
-## Co & Dlaczego?
-Czytanie pliku tekstowego to proces wyciągania danych z pliku znajdującego się na dysku. Programiści robią to, żeby obsłużyć zawartość – wyświetlić ją, zmodyfikować, albo przetworzyć w jakiś użyteczny sposób.
-
 ## Jak to zrobić:
 ```Lua
 -- Otworzenie pliku do odczytu:

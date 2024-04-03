@@ -10,12 +10,7 @@ title: Gestione degli errori
 weight: 16
 ---
 
-## Cosa & Perché?
-
-La gestione degli errori riguarda il come affrontare le situazioni quando le cose non vanno come previsto. I programmatori lo fanno per gestire l'inaspettato, assicurandosi che i loro programmi in Rust siano robusti e non si blocchino semplicemente di fronte a un intoppo.
-
 ## Come fare:
-
 Rust gestisce gli errori in due modi principali: errori recuperabili e non recuperabili. Vediamoli entrambi.
 
 Gli errori recuperabili utilizzano `Result<T, E>`:
@@ -54,7 +49,6 @@ fn main() {
 Eseguilo, e vedrai un messaggio di panic. Il tuo programma si ferma all'istante.
 
 ## Approfondimento
-
 Storicamente, la gestione degli errori nella programmazione è stata complicata. Rust la rende chiara con una distinzione netta tra errori recuperabili e non recuperabili.
 
 L'enum `Result` è per gli errori recuperabili. È esplicito - gestisci la variante `Ok` o `Err`. Hai anche metodi come `unwrap()` ed `expect()`, ma sono scorciatoie veloci e sporche che possono portare a un `panic!`.
@@ -66,7 +60,6 @@ La gestione degli errori tramite il ritorno di `Result` è preferita quando ci s
 Alternative? Certo, potresti usare altri crate di gestione degli errori per più funzionalità o uso ergonomico. Come `anyhow` per una gestione degli errori semplice, o `thiserror` per gli errori nel codice di librerie.
 
 ## Vedi Anche
-
 Interessato ad approfondire? Ecco dove andare:
 
 - [Il Libro di Rust sulla Gestione degli Errori](https://doc.rust-lang.org/book/ch09-00-error-handling.html) - Un ottimo punto di partenza per comprendere la filosofia di Rust nella gestione degli errori.

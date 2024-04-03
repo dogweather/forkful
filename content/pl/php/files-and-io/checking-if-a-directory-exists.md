@@ -13,12 +13,7 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i dlaczego?
-
-Sprawdzanie, czy katalog istnieje, jest podstawowym zadaniem w programowaniu PHP, ponieważ pozwala na weryfikację obecności katalogu przed wykonaniem operacji takich jak odczyt z plików w nim zawartych lub zapis do nich. Ta operacja pomaga zapobiegać błędom, które mogłyby wyniknąć z próby dostępu do nieistniejących katalogów i jest niezbędna dla dynamicznego zarządzania plikami w twoich aplikacjach.
-
 ## Jak to zrobić:
-
 Natywnym sposobem na sprawdzenie, czy katalog istnieje w PHP, jest użycie funkcji `is_dir()`. Funkcja ta przyjmuje ścieżkę do katalogu jako argument i zwraca `true`, jeśli katalog istnieje i jest katalogiem, lub `false` w przeciwnym razie.
 
 ```php

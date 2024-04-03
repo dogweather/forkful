@@ -13,9 +13,6 @@ title: Tests Schreiben
 weight: 36
 ---
 
-## Was & Warum?
-Tests in Clojure zu schreiben, ähnlich wie in anderen Programmiersprachen, umfasst das Erstellen von dediziertem Code, um zu verifizieren, dass Ihre Hauptcodebasis wie erwartet funktioniert. Es hilft dabei, die Korrektheit zu gewährleisten, das Refactoring zu erleichtern und die Code-Stabilität zu verbessern.
-
 ## Wie:
 Clojure nutzt die JVM und unterstützt verschiedene Test-Frameworks. Ein häufig verwendetes eingebautes Bibliothek ist jedoch `clojure.test`. Hier ist ein einfaches Beispiel:
 

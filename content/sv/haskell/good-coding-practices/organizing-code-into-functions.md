@@ -11,9 +11,6 @@ title: Att organisera kod i funktioner
 weight: 18
 ---
 
-## Vad & Varför?
-Att organisera kod i funktioner i Haskell innebär att bryta ner din kod i återanvändbara, namngivna block. Varför? Det håller din kod DRY (Don't Repeat Yourself), gör den läslig, och enklare att felsöka.
-
 ## Hur man gör:
 Så här kan du skriva och använda funktioner i Haskell:
 

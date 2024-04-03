@@ -11,9 +11,6 @@ title: Protokollierung
 weight: 17
 ---
 
-## Was & Warum?
-Logging ist im Grunde der Prozess der Aufzeichnung von Ereignissen, die innerhalb einer Softwareanwendung auftreten. Programmierer protokollieren diese Ereignisse, um Laufzeitinformationen zu erfassen, Probleme zu debuggen, das Systemverhalten zu überwachen und eine Audit-Trail für Sicherheits- und Compliance-Zwecke zu erstellen.
-
 ## Wie geht das:
 Hier ist eine einfache Art, mit dem Logging in Java unter Verwendung des eingebauten `java.util.logging`-Pakets zu beginnen.
 

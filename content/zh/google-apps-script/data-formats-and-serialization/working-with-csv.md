@@ -28,14 +28,10 @@ title: "\u5904\u7406CSV\u6587\u4EF6"
 weight: 37
 ---
 
-## 什么 & 为什么？
-
-在Google Apps Script中处理CSV（逗号分隔值）文件涉及读取、修改和写入纯文本文件，其中每行代表一个数据记录，值之间通过逗号分隔。程序员之所以这样做，是因为便于在不同的应用程序、数据库或编程语言之间轻松交换数据，由于CSV作为一种简单的基于文本的数据交换格式，已被广泛采用。
-
 ## 如何操作：
 
-### 读取CSV数据
 
+### 读取CSV数据
 要从存储在Google Drive中的文件读取CSV数据，您首先需要将文件的内容作为字符串获取，然后解析它。Google Apps Script通过DriveApp服务使获取文件内容变得简单。
 
 ```javascript
@@ -53,7 +49,6 @@ function readCSV() {
 ```
 
 ### 写入CSV数据
-
 创建并写入CSV包括构建一个带有逗号分隔值和换行符的字符串，然后保存或导出它。这个例子展示了在Google Drive中创建一个新的CSV文件。
 
 ```javascript
@@ -68,7 +63,6 @@ function writeCSV() {
 ```
 
 ### 样本输出
-
 当从读取CSV记录行单元格时：
 
 ```plaintext
@@ -85,7 +79,6 @@ Jane Smith,34,Designer
 ```
 
 ## 深入了解
-
 历史上，由于其简单性和人类可读性，CSV文件一直受到青睐，使它们对非程序员友好且对快速数据检查任务有用。然而，Google Apps Script操作在Google的生态系统内，其中Google Sheets充当了一个强大且用户友好的CSV操作替代品。Sheets不仅提供了一个GUI用于编辑数据，还支持复杂的公式、样式和许多原生CSV所缺乏的更多功能。
 
 尽管Google Sheets提供了优势，但在Google Apps Script中直接操作CSV对于自动化任务仍然重要，特别是在处理生成或需要CSV格式数据的外部系统时。例如，与遗留系统集成、将数据导出以用于其他应用程序，或在将数据输入Google Sheets之前进行预处理。

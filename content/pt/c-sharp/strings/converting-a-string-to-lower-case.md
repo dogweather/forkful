@@ -12,9 +12,6 @@ title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---
 
-## What & Why? (O Que & Porquê?)
-Converter uma string para letras minúsculas é o processo de transformar todos os caracteres alfabéticos de uma cadeia de texto em suas equivalentes em caixa baixa. Programadores fazem isso para padronizar dados, facilitar comparações de strings insensíveis a maiúsculas e minúsculas e melhorar a consistência do texto.
-
 ## How to (Como Fazer):
 Em C#, você pode converter uma string para minúsculas usando o método `.ToLower()` ou `.ToLowerInvariant()`. O primeiro respeita as configurações de cultura local, enquanto o segundo aplica a cultura invariante.
 

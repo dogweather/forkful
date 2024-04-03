@@ -14,12 +14,7 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---
 
-## Mikä & Miksi?
-
-Päivämäärän jäsentäminen merkkijonosta PHP:ssä tarkoittaa tekstin, joka edustaa päivämäärää ja/tai aikaa, muuntamista PHP:n `DateTime`-objektiksi tai muihin päiväys-/aikamuotoihin. Tämä on ratkaisevan tärkeää datan validoinnin, manipuloinnin, tallennuksen ja esittämisen kannalta, erityisesti kun työskennellään käyttäjän syötteen tai ulkoisten tietolähteiden kanssa.
-
 ## Kuinka:
-
 PHP:n sisäänrakennettu `DateTime`-luokka tarjoaa tehokkaan joukon funktioita päivämäärien jäsentämiseksi ja käsittelyksi. Voit luoda `DateTime`-instanssin päivämäärämerkkijonosta käyttämällä konstruktoria ja sitten muotoilla sen tarpeen mukaan. Näin se tehdään:
 
 ```php

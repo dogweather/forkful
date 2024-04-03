@@ -9,9 +9,6 @@ title: Inviare una richiesta http
 weight: 44
 ---
 
-## What & Why?
-Inviare una richiesta HTTP significa chiedere dati da un server. I programmatori lo fanno per recuperare informazioni, come dati utente o aggiornamenti dal web.
-
 ## How to:
 Segui questo esempio per mandare una richiesta GET in Elm:
 ```Elm

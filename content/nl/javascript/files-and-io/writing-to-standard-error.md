@@ -13,11 +13,7 @@ title: Schrijven naar standaardfout
 weight: 25
 ---
 
-## Wat & Waarom?
-Schrijven naar de standaardfout (stderr) betekent tekst uitsturen naar de foutenstroom. Het scheidt normale uitvoer (stdout) van fouten, wat debugging en loganalyse gemakkelijker maakt.
-
 ## Hoe:
-
 ```javascript
 // Een eenvoudige foutmelding naar stderr schrijven
 console.error('Error: Er is iets misgegaan');

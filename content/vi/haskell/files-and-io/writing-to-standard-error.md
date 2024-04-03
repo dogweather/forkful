@@ -15,11 +15,7 @@ title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---
 
-## Gì & Tại sao?
-Việc viết ra lỗi chuẩn (stderr) trong Haskell cho phép bạn báo cáo lỗi và thông tin gỡ lỗi một cách riêng biệt so với đầu ra chuẩn (stdout). Việc này được thực hiện để giữ cho các luồng đầu ra được tổ chức, làm cho việc xử lý chỉ những gì cần thiết trở nên dễ dàng hơn — như đường ống đầu ra hoặc ghi lỗi.
-
 ## Cách thực hiện:
-
 Sử dụng System.IO để viết ra stderr. Dưới đây là một ví dụ đơn giản:
 
 ```Haskell
@@ -46,12 +42,10 @@ runhaskell your_program.hs 2> error.log
 `error.log` giờ đây chứa "Điều này sẽ đi vào stderr".
 
 ## Sâu hơn
-
 Hệ thống IO của Haskell phân biệt giữa stdout và stderr, duy trì các quy ước của Unix. Trước Haskell, các ngôn ngữ như C đã đặt tiền lệ về việc tách các luồng — stdout cho kết quả, stderr cho lỗi và nhật ký.
 
 Những cách khác để xuất ra bao gồm sử dụng các thư viện như `System.Log.Logger` cho việc ghi nhật ký phức tạp hơn. Về cài đặt, stderr trong Haskell là một `Handle`, giống như một tay cầm tệp, nhưng đã được định sẵn để tham chiếu đến đầu ra lỗi của hệ thống.
 
 ## Xem thêm
-
 - [Thư viện Haskell System.IO](https://hackage.haskell.org/package/base-4.16.0.0/docs/System-IO.html): Tài liệu chi tiết về System.IO.
 - [Learn You a Haskell for Great Good!](http://learnyouahaskell.com/): Một cuốn sách giới thiệu về Haskell bao gồm I/O.

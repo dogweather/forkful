@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---
 
-## Cái gì và Tại sao?
-TOML, viết tắt của Tom's Obvious, Minimal Language, là một định dạng hóa dữ liệu giống như JSON hoặc YAML. Lập trình viên sử dụng nó vì tính dễ đọc và ánh xạ trực tiếp đến các loại dữ liệu, làm cho nó trở thành lựa chọn hàng đầu cho các tệp cấu hình và trao đổi dữ liệu.
-
 ## Cách thực hiện:
 Đầu tiên, bạn cần một bộ phân tích cú pháp TOML. `@iarna/toml` là một lựa chọn phổ biến. Cài đặt nó với npm: `npm install @iarna/toml --save`. Dưới đây là cách bạn đọc và phân tích cú pháp một tệp TOML thành một đối tượng JavaScript:
 

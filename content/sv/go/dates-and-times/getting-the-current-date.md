@@ -13,12 +13,7 @@ title: "H\xE4mta aktuellt datum"
 weight: 29
 ---
 
-## Vad & Varför?
-
-Att få det aktuella datumet i Go är en grundläggande uppgift för programmerare, lika vanlig som "Hello, World!" i sin allmänhet. Det är avgörande för uppgifter som sträcker sig från att logga och tidstämpla händelser till att beräkna varaktigheter och schemalägga framtida händelser.
-
 ## Hur man gör:
-
 I Go är `time`-paketet din port till att arbeta med datum och tider. Funktionen `time.Now()` ger dig det aktuella datumet och tiden, medan andra funktioner och metoder låter dig formatera eller manipulera dessa data. Så här får du det aktuella datumet och dess olika representationer:
 
 ```go
@@ -57,7 +52,6 @@ Veckodag: Tisdag
 Notera hur `Format` använder ett specifikt datum (2006-01-02) som layoutsträng. Det är Go:s valda referensdatum, som tjänar som ett minnesmönster för formatering av datum.
 
 ## Fördjupning
-
 Beslutet att använda `time`-paketet för datum- och tidsmanipulation i Go återspeglar språkets engagemang för robusta och intuitiva standardbibliotek. Till skillnad från vissa språk som kan ha flera konkurrerande bibliotek eller metoder för datummanipulation, prioriterar Go att ha ett enda, väl dokumenterat standard.
 
 Det udda valet av referensdatum (`Mon Jan 2 15:04:05 MST 2006`) i Go:s tidsformatering, även om det initialt kan vara förvirrande, är faktiskt ett genidrag när det gäller användbarhet. Det låter programmerare representera datum- och tidsformat med ett exempelbaserat tillvägagångssätt, i motsats till att memorera tokens eller symboler som andra språk kan använda.

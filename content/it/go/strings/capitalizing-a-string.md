@@ -14,12 +14,7 @@ title: Capitalizzare una stringa
 weight: 2
 ---
 
-## Cosa & Perché?
-
-Capitalizzare una stringa comporta trasformare il primo carattere di una data stringa in maiuscolo se è in minuscolo, assicurando così che la stringa si distingua o aderisca a specifiche norme grammaticali. I programmatori eseguono frequentemente questa operazione per formattare gli input degli utenti, visualizzare nomi propri o garantire la coerenza dei dati attraverso le applicazioni software.
-
 ## Come fare:
-
 In Go, il pacchetto `strings` non fornisce una funzione diretta per capitalizzare solo la prima lettera di una stringa. Pertanto, combiniamo la funzione `strings.ToUpper()`, che converte una stringa in maiuscolo, con lo slicing per raggiungere il nostro obiettivo. Ecco come fare:
 
 ```go
@@ -54,7 +49,6 @@ func main() {
 Questa funzione verifica se la stringa è vuota o se il primo carattere è già maiuscolo. Usa il pacchetto `unicode/utf8` per gestire correttamente i caratteri Unicode, garantendo che la nostra funzione funzioni con un'ampia gamma di input oltre all'ASCII di base.
 
 ## Approfondimento
-
 La necessità di capitalizzare le stringhe in Go senza una funzione integrata potrebbe sembrare una limitazione, specialmente per i programmatori provenienti da linguaggi dove le funzioni di manipolazione delle stringhe sono più complete. Questo vincolo incoraggia a comprendere la gestione delle stringhe e l'importanza dell'Unicode nello sviluppo software moderno.
 
 Storicamente, i linguaggi di programmazione si sono evoluti nel loro trattamento delle stringhe, spesso trascurando l'internazionalizzazione. L'approccio di Go, sebbene richieda un po' più di codice per compiti apparentemente semplici, assicura che gli sviluppatori tengano in considerazione gli utenti globali fin dall'inizio.

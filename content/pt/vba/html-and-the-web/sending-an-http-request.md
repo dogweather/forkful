@@ -14,12 +14,7 @@ title: "Enviando uma solicita\xE7\xE3o HTTP"
 weight: 44
 ---
 
-## O Que & Por Que?
-
-Enviar uma solicitação HTTP em Visual Basic for Applications (VBA) envolve acessar programaticamente recursos ou serviços web fazendo solicitações via HTTP. Programadores fazem isso para buscar dados, interagir com APIs online ou submeter formulários programaticamente a partir de suas aplicações habilitadas para VBA, como Excel, Access ou soluções customizadas em VBA.
-
 ## Como Fazer:
-
 A chave para enviar uma solicitação HTTP em VBA é utilizando a biblioteca `Microsoft XML, v6.0` (ou versões anteriores, dependendo do seu sistema). Primeiro, garanta que esta referência está habilitada em seu projeto indo até Ferramentas > Referências no editor VBA e marcando `Microsoft XML, v6.0`.
 
 Aqui está como enviar uma simples solicitação HTTP GET:
@@ -65,7 +60,6 @@ A saída de uma solicitação bem-sucedida pode ser uma string JSON ou uma pági
 ```
 
 ## Aprofundamento
-
 O método destacado utiliza o objeto `MSXML2.XMLHTTP`, parte dos Serviços Core XML da Microsoft (MSXML). Ele foi introduzido para oferecer aos desenvolvedores de VBA uma maneira de realizar operações baseadas em XML e, com o tempo, tornou-se uma ferramenta comum para solicitações HTTP, mesmo quando não trabalhando diretamente com dados XML. Apesar de sua idade, permanece uma opção confiável para interações web simples em VBA.
 
 No entanto, o VBA e seus mecanismos de solicitação HTTP carecem da robustez e flexibilidade encontradas em ambientes de programação modernos. Por exemplo, lidar com solicitações assíncronas ou trabalhar dentro de aplicações que requerem recursos HTTP avançados (como websockets ou eventos enviados pelo servidor) está fora do escopo do VBA. Ao trabalhar em projetos de integração web mais complexos, desenvolvedores frequentemente recorrem a bibliotecas ou ferramentas externas, ou até automatizam comportamentos de navegador via técnicas de raspagem web, embora essas sejam soluções alternativas e não definitivas.

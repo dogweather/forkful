@@ -16,12 +16,7 @@ title: "Ghi nh\u1EADt k\xFD"
 weight: 17
 ---
 
-## Gì & Tại sao?
-
-Ghi log trong C bao gồm việc ghi lại dòng chảy và các sự kiện đáng chú ý của một chương trình trong quá trình thực thi, cung cấp một cái nhìn cụ thể về hành vi và hiệu suất của nó. Lập trình viên sử dụng ghi log cho mục đích gỡ lỗi, giám sát sức khỏe phần mềm và đảm bảo an ninh hệ thống.
-
 ## Làm thế nào:
-
 Trong C, ghi log có thể được thực hiện với các thao tác tệp cơ bản hoặc sử dụng các thư viện phức tạp hơn. Để đơn giản, chúng ta sẽ bắt đầu với thư viện I/O tiêu chuẩn. Các đoạn mã sau đây trình bày cách triển khai ghi log cơ bản.
 
 Để ghi các thông điệp đơn giản:
@@ -97,7 +92,6 @@ Kết quả trong `detailed.log`:
 ```
 
 ## Tìm hiểu sâu hơn
-
 Ghi log trong C, như đã trình bày, dựa vào các thao tác tệp đơn giản, đây là cách làm hiệu quả nhưng không mạnh mẽ hay linh hoạt như các tiện ích ghi log trong các ngôn ngữ khác, như module `logging` của Python hay `Log4j` của Java. Để có khả năng ghi log nâng cao hơn trong C, lập trình viên thường chuyển sang sử dụng các thư viện như `syslog` trên các hệ thống giống Unix, cung cấp quản lý log toàn hệ thống, hoặc các thư viện bên thứ ba như `log4c`.
 
 Lịch sử, ghi log là một phần không thể tách rời của lập trình, xuất phát từ những thực hành lập trình đầu tiên khi việc theo dõi và hiểu dòng chảy và lỗi của chương trình chủ yếu được thực hiện thông qua in ấn vật lý. Khi hệ thống phát triển, ghi log trở nên tinh vi hơn, hiện hỗ trợ nhiều mức độ nghiêm trọng khác nhau, quay vòng log và ghi log không đồng bộ.

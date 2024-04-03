@@ -20,9 +20,6 @@ title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 weight: 38
 ---
 
-## 무엇이며 왜인가?
-JSON 또는 JavaScript Object Notation은 사람이 읽고 쓰기 쉽고, 기계가 파싱하고 생성하기 쉬운 경량의 데이터 교환 형식입니다. 프로그래머들은 그 간결함과 언어 독립성으로 인해 서버와 웹 애플리케이션 간 데이터를 교환하기 위해 종종 JSON을 사용하며, 이는 현대 웹 개발과 API에서 핵심적인 역할을 합니다.
-
 ## 어떻게 하는가:
 PHP에서 JSON을 다루는 것은 내장 함수인 `json_encode()` 및 `json_decode()` 덕분에 간단합니다. 아래 예제는 PHP 배열을 JSON 문자열로 변환하는 방법과 그 반대의 방법을 보여줍니다:
 

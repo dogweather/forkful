@@ -20,9 +20,6 @@ title: "\u05E4\u05D9\u05E2\u05E0\u05D5\u05D7 HTML"
 weight: 43
 ---
 
-## מה ולמה?
-פרסור HTML הוא סינון דרך מבנה ותוכן של קובץ HTML כדי לחלץ מידע. תוכניתנים עושים זאת כדי לגשת לנתונים, לשנות תוכן או לשרוט אתרים.
-
 ## איך לעשות:
 Bash אינו הבחירה הראשונה לפרסור HTML, אך ניתן לבצע זאת בעזרת כלים כמו `grep`, `awk`, `sed`, או כלים חיצוניים כמו `lynx`. למען העמידות, נשתמש בכלי `xmllint` מהחבילה `libxml2`.
 
@@ -59,7 +56,6 @@ echo "תוכן הפסקה הוא: $para"
 ```
 
 ## צלילה עמוקה
-
 בעבר, תוכניתנים השתמשו בכלים מבוססי ביטויים רגולריים כמו `grep` לסריקה של HTML, אך זה היה מגושם. HTML אינו רגולרי - הוא קונטקסטואלי. כלים מסורתיים מפספסים זאת ועלולים להיות תועים.
 
 אלטרנטיבות? לרוב. Python עם Beautiful Soup, PHP עם DOMDocument, JavaScript עם פרסרים של DOM - שפות עם ספריות שתוכננו להבין את מבנה ה-HTML.
@@ -67,7 +63,6 @@ echo "תוכן הפסקה הוא: $para"
 השימוש ב-`xmllint` בתסריטי bash הוא מוצק למשימות פשוטות. הוא מבין XML, ובהארכה, XHTML. HTML רגיל יכול להיות לא צפוי, עם זאת. הוא לא תמיד עוקב אחרי כללי ה-XLM המחמירים. `xmllint` כופה על HTML להתאמץ למודל של XML, דבר שעובד היטב עבור HTML מסודר היטב, אך עלול להיתקל בבעיות עם קוד לא מסודר.
 
 ## ראה גם
-
 - [W3Schools - HTML DOM Parser](https://www.w3schools.com/xml/dom_intro.asp): מפשט את HTML DOM.
 - [MDN Web Docs - ניתוח ושרשור XML](https://developer.mozilla.org/en-US/docs/Web/Guide/Parsing_and_serializing_XML): לעקרונות ניתוח של XML החלים גם על XHTML.
 - [מסמכי Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/): ספרייה של Python לניתוח HTML.

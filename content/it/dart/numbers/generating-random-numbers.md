@@ -12,11 +12,7 @@ title: Generare numeri casuali
 weight: 12
 ---
 
-## Cosa & Perché?
-Generare numeri casuali in Dart comporta la creazione di valori numerici imprevedibili e diversi ad ogni esecuzione. I programmatori sfruttano questa funzionalità per vari motivi, dalla simulazione di scenari del mondo reale in ambienti di test, all'abilitazione di meccaniche di gioco e alla garanzia della sicurezza attraverso la casualità nelle operazioni crittografiche.
-
 ## Come fare:
-
 La libreria core di Dart include il supporto per la generazione di numeri casuali con la classe `Random` trovata in `dart:math`. Ecco un esempio base:
 
 ```dart

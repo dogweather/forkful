@@ -11,9 +11,6 @@ title: Sammenlikning av to datoer
 weight: 27
 ---
 
-## Hva & Hvorfor?
-Å sammenligne to datoer betyr enkelt og greit å finne ut hvilken som er tidligst, senest eller om de er like. Det gjør programmerere for å kontrollere tidsfrister, beregne varighet, og håndtere hendelser.
-
 ## Hvordan:
 ```Javascript
 const date1 = new Date('2023-03-01');

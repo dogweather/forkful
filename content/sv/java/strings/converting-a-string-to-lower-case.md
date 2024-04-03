@@ -11,9 +11,6 @@ title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---
 
-## Vad och Varför?
-Att konvertera en sträng till gemener betyder att omvandla alla stora bokstäver i texten till små bokstäver. Programmerare gör detta för att standardisera textdata, exempelvis vid jämförelser eller sökningar, där skillnader i versalisering inte ska påverka resultatet.
-
 ## Hur man gör:
 ```java
 public class LowerCaseExample {
@@ -31,6 +28,7 @@ public class LowerCaseExample {
 Original: Hej Världen!
 LowerCase: hej världen!
 ```
+
 ## Fördjupning
 Historiskt har olika språk och kulturer haft olika regler för versalisering. I Java hanteras konverteringen till gemener genom `String`-klassens metoden `toLowerCase()`, vilken använder systemets standardlokaliseringsinställningar om inte annat anges. Alternativt kan `toLowerCase(Locale locale)`-metoden användas för att specificera en lokaliseringsinställning, vilket är viktigt för språk med andra versaliseringar än engelska. För att försäkra sig om ett korrekt beteende över olika system bör man lämpligen använda `Locale.ENGLISH` för engelsk text.
 

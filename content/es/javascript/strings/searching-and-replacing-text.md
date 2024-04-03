@@ -10,9 +10,6 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## Qué y Por Qué?
-Buscar y reemplazar texto implica hallar ciertos caracteres o cadenas dentro de un texto y sustituirlos por otros. Los programadores lo hacen para actualizar datos, corregir errores, o cambiar código de forma masiva, entre otras tareas.
-
 ## Cómo Hacerlo:
 Buscar y reemplazar texto en JavaScript puede hacerse fácilmente con `String.replace()` o expresiones regulares. Mira estos ejemplos básicos:
 

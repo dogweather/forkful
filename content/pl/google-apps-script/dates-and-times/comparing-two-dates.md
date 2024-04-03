@@ -15,9 +15,6 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## Co i dlaczego?
-Porównywanie dwóch dat w Google Apps Script, pochodnej JavaScriptu dostosowanej do zestawu aplikacji Google'a, jest kluczowym zadaniem dla programistów zajmujących się planowaniem, harmonogramami lub jakimikolwiek danymi związanymi z datami. Zrozumienie, jak dokładnie porównać daty, umożliwia programistom efektywną implementację funkcji takich jak terminy, planowanie wydarzeń czy harmonogramowanie treści.
-
 ## Jak to zrobić:
 W Google Apps Script daty porównuje się za pomocą obiektów Date JavaScript, co umożliwia korzystanie z standardowych metod do oceny, która z dwóch dat jest wcześniejsza, późniejsza lub czy są takie same. Oto podstawowe podejście:
 

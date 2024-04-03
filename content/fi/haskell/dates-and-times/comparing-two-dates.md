@@ -11,9 +11,6 @@ title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---
 
-## What & Why?
-Vertaillaan kahta päivämäärää selvittääksemme niiden järjestyksen tai aikaeron. Ohjelmoijat tekevät tätä ajanhallinnassa, tapahtumien ajoituksessa ja vanhentumislogiikoissa.
-
 ## How to:
 ```Haskell
 import Data.Time

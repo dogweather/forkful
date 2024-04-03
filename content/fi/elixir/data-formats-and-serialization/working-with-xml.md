@@ -11,9 +11,6 @@ title: "XML:n k\xE4sittely"
 weight: 40
 ---
 
-## Mitä & Miksi?
-XML:n käsittely Elixirissä tarkoittaa XML-tietojen jäsentämistä, luomista ja manipulointia. Ohjelmoijat käsittelevät XML:ää, koska se on laajalti käytössä web-palveluissa, konfiguraatiotiedostoissa ja vanhoissa järjestelmissä.
-
 ## Kuinka:
 Elixir ei sisällä XML-jäsentämistä vakio kirjastossaan. SweetXML on suosittu valinta. Näin sitä käytetään:
 

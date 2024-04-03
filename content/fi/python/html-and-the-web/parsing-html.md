@@ -14,9 +14,6 @@ title: "HTML:n j\xE4sennys"
 weight: 43
 ---
 
-## Mikä ja miksi?
-HTML:n jäsennys tarkoittaa verkkosivun HTML-koodin analysointia tiettyjen tietojen tai elementtien erottamiseksi, mikä on yleinen tehtävä verkkosivujen kaapimisessa, datan louhinnassa tai automatisoiduissa vuorovaikutuksissa verkkosivustojen kanssa. Ohjelmoijat tekevät sen ohjelmallisesti vuorovaikuttaakseen verkkosivujen kanssa tai noutaakseen niistä tietoja, automatisoimaan tehtäviä tai testaamaan web-sovelluksia.
-
 ## Miten:
 Python tarjoaa tehokkaita kirjastoja, kuten BeautifulSoup ja requests, verkkosivujen kaapimiseen ja HTML:n jäsennykseen. Aloittaaksesi sinun täytyy asentaa nämä kirjastot, jos et ole jo tehnyt niin:
 

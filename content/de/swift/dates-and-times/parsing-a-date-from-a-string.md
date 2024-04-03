@@ -12,10 +12,8 @@ title: Einen Datum aus einem String analysieren
 weight: 30
 ---
 
-## Was & Warum?
-Das Parsen eines Datums aus einem String umfasst die Umwandlung von textuellen Datums- und Zeitangaben in ein `Date`-Objekt. Dieser Prozess ist essenziell in Anwendungen, in denen Daten als Strings kommuniziert werden, wie bei API-Antworten oder Benutzereingaben. Dadurch wird die Manipulation und Formatierung von Daten erleichtert.
-
 ## Wie geht das:
+
 
 ### Verwendung von Foundations `DateFormatter`
 Die Standardbibliothek von Swift, Foundation, bietet `DateFormatter` für die Umwandlung von Strings in `Date`-Objekte und umgekehrt. Um ein Datum aus einem String zu parsen, gibt man das Datumsformat an, das dem String entspricht, und verwendet dann den Formatter für das Parsen.

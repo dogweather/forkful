@@ -10,9 +10,6 @@ title: Zeichenketten interpolieren
 weight: 8
 ---
 
-## Was & Warum?
-String-Interpolation ermöglicht es uns, Variablen nahtlos in Zeichenketten einzufügen. Programmierer nutzen das, um dynamisch Inhalte zu generieren, ohne ständig Strings zusammenzufügen.
-
 ## How to:
 Interpolieren in PHP ist ein Kinderspiel. Fügen Sie einfach eine Variable in einen doppelten Anführungszeichen-String oder Heredoc ein:
 

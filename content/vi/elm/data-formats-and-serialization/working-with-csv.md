@@ -17,12 +17,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---
 
-## Cái gì & Tại sao?
-
-Làm việc với CSV (Comma-Separated Values - Giá trị tách biệt bằng dấu phẩy) có nghĩa là đọc và viết dữ liệu trong định dạng văn bản mà mỗi dòng có các giá trị được tách biệt bằng dấu phẩy. Lập trình viên sử dụng CSV bởi vì đó là một định dạng đơn giản được nhiều công cụ và hệ thống hỗ trợ, làm cho nó trở nên tuyệt vời cho việc trao đổi dữ liệu.
-
 ## Cách thức:
-
 Elm không có trình phân tích CSV (parser) tích hợp sẵn, nhưng bạn có thể dễ dàng thêm một trình phân tích bằng cách sử dụng một gói như `elm-csv`. Dưới đây là một ví dụ nhanh về việc phân tích dữ liệu CSV:
 
 ```Elm
@@ -54,9 +49,7 @@ name,age
 ```
 
 ## Sâu hơn
-
 CSV đã tồn tại từ đầu những năm 1970; nó đơn giản đến mức trước cả các tiêu chuẩn thực sự. Các lựa chọn khác bao gồm JSON và XML, nhưng CSV vẫn được ưu tiên khi xử lý dữ liệu dạng bảng nặng về số và ít cấu trúc. Trong Elm, bởi vì đó là một ngôn ngữ ở phía front-end, bạn sẽ làm việc bằng cách nhận CSV từ một backend hoặc xử lý một tệp cục bộ được người dùng tải lên. Thực hiện điều này đòi hỏi kiến thức về cổng Elm để tương tác JS hoặc gói tệp để tải lên.
 
 ## Xem thêm
-
 - Hướng dẫn Elm về tương tác với JavaScript: [Cổng Elm](https://guide.elm-lang.org/interop/ports.html)

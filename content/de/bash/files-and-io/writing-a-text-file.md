@@ -12,12 +12,7 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-
-Das Schreiben einer Textdatei in Bash erlaubt es, die Datenspeicherung, das Logging, Konfigurationseinstellungen und mehr zu automatisieren. Es ist eine grundlegende Fähigkeit für die Shell-Programmierung, die Programmierern ermöglicht, Ausgaben von Befehlen, Skriptausführungen oder Benutzereingaben zum Berichten, Verarbeiten oder für zukünftige Ausführungen zu speichern.
-
 ## Wie geht das:
-
 Bash stellt unkomplizierte Methoden zum Schreiben in eine Datei bereit. Die gebräuchlichsten sind die Verwendung von Umleitungsoperatoren (`>`, `>>`) und des `tee`-Befehls. Hier ist ein schneller Blick auf beide Techniken.
 
 Mit der Umleitung können Sie Ausgaben direkt in eine Datei schreiben. Der `>`-Operator schreibt Inhalte in eine Datei und ersetzt sie, falls sie bereits existiert, während `>>` an eine bestehende Datei anhängt, ohne deren Inhalt zu löschen.

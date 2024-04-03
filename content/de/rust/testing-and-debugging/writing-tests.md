@@ -12,16 +12,10 @@ title: Tests Schreiben
 weight: 36
 ---
 
-## Was & Warum?
-
-Das Schreiben von Tests in Rust umfasst das Erstellen automatisierter Überprüfungen, um sicherzustellen, dass Ihr Code wie erwartet funktioniert. Programmierer machen dies, um frühzeitig Fehler zu erkennen, Refactoring zu erleichtern und die Codequalität über die Zeit hinweg zu erhalten.
-
 ## Wie man:
-
 Rusts integriertes Test-Framework unterstützt Einheits-, Integrations- und Dokumentationstests ohne die Notwendigkeit externer Bibliotheken. Tests werden mit `#[test]` annotiert, und jede so annotierte Funktion wird als Test kompiliert.
 
 ### Schreiben eines Einheitstests:
-
 Platzieren Sie Einheitstests im Modul, das sie testen, indem Sie ein `tests` Untermodul verwenden, das mit `#[cfg(test)]` markiert ist, um sicherzustellen, dass sie nur beim Testen kompiliert werden.
 
 ```rust
@@ -59,7 +53,6 @@ Testergebnis: ok. 1 bestanden; 0 fehlgeschlagen; 0 ignoriert; 0 gemessen; 0 ausg
 ```
 
 ### Schreiben von Integrationstests:
-
 Integrationstests gehören in ein Tests-Verzeichnis auf der obersten Ebene Ihres Projekts, neben `src`. Jede `.rs` Datei in `tests` wird als eigene separate Crate kompiliert.
 
 ```rust
@@ -73,7 +66,6 @@ fn it_adds_two() {
 ```
 
 ### Testen mit beliebten Drittanbieter-Bibliotheken:
-
 Für umfangreichere Testmöglichkeiten kann die Bibliothek `proptest` eine breite Palette von Eingaben erzeugen, um Funktionen zu testen.
 
 Fügen Sie `proptest` als Entwicklungsabhängigkeit in `Cargo.toml` hinzu:

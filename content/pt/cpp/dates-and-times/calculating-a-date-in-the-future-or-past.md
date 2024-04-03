@@ -11,9 +11,6 @@ title: Calculando uma data no futuro ou passado
 weight: 26
 ---
 
-## O Que & Porquê?
-Calcular uma data no futuro ou passado significa manipular datas para encontrar dias específicos antes ou depois de um ponto no tempo. Programadores fazem isso para agendar eventos, calcular prazos ou simplesmente registrar quando algo aconteceu ou acontecerá.
-
 ## Como Fazer:
 ```C++
 #include <iostream>
@@ -52,7 +49,6 @@ Além disso, várias bibliotecas de terceiros, como a Boost.Date_Time, oferecem 
 Detalhes de implementação normalmente envolvem lidar com o formato de data e hora (struct tm), normalização de tempo (usando `mktime()` para ajustar struct tm) ou calcular diferenças de tempo.
 
 ## Veja Também
-
 - Documentação da biblioteca `<ctime>`: https://en.cppreference.com/w/cpp/header/ctime
 - Documentação da biblioteca `<chrono>`: https://en.cppreference.com/w/cpp/header/chrono
 - Biblioteca Boost.Date_Time: https://www.boost.org/doc/libs/release/libs/date_time/

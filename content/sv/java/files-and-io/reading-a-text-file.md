@@ -11,9 +11,6 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## Vad & Varför?
-Att läsa en textfil innebär att man hämtar data från en fil som finns lagrad på din dator eller server. Programmerare gör detta för att kunna arbeta med innehåll, konfigurationer eller data, som inte ska eller behöver vara inbakade direkt i koden.
-
 ## Hur gör man:
 Läs en enkel textfil i Java:
 

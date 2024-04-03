@@ -10,9 +10,6 @@ title: Sending an HTTP request
 weight: 44
 ---
 
-## What & Why?
-Sending an HTTP request is how your program asks another system for data or services over the web. Programmers do it to interact with web APIs, fetch resources, or communicate between services.
-
 ## How to:
 In Clojure, you can send HTTP requests using the `clj-http` client.
 

@@ -11,12 +11,7 @@ title: "Feilh\xE5ndtering"
 weight: 16
 ---
 
-## Hva & Hvorfor?
-
-Håndtering av feil i Bash-skripting handler om å forutse hvor ting kan gå galt og håndtere det på en god måte. Hvorfor? Vel, det holder skriptet ditt robust og sparer brukere for hodebry når ting ikke fungerer som forventet.
-
 ## Hvordan gjøre:
-
 ```Bash
 #!/bin/bash
 
@@ -49,7 +44,6 @@ cat: temp_fil.txt: Ingen slik fil eller katalog
 ```
 
 ## Dypdykk
-
 Feilhåndtering i Bash-skripting går tilbake til opprinnelsen til Unix-skallet, hvor robuste og pålitelige skript var (og er) avgjørende for systemadministrasjon og automatisering. Tradisjonelt er feil i Bash håndtert ved å sjekke utgangsstatus for en kommando, som etter konvensjon returnerer 0 for suksess og en ikke-null verdi for feil.
 
 Bash introduserte kommandoen `trap` som en innebygd funksjon, som gir brukerne mulighet til å spesifisere kommandoer som skal kjøres ved forskjellige signaler eller skriptavslutninger. Dette er nyttig for opprydningsoppgaver eller som en siste utvei for feilhåndteringsmekanisme.
@@ -61,7 +55,6 @@ Alternativer til Bash sin innebygde feilhåndtering inkluderer eksplisitt sjekk 
 Selv om streng feilhåndtering noen ganger kan føles overflødig for små skript, er det en praksis som kan spare mye tid på feilsøking og forhindre uventet oppførsel både for deg og brukerne.
 
 ## Se Også
-
 - Bash-manualen om skallparametere: https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameters
 - Avansert Bash-skriptingguide seksjon om feilhåndtering: https://www.tldp.org/LDP/abs/html/exit-status.html
 - En grundig guide til `trap`: https://mywiki.wooledge.org/SignalTrap

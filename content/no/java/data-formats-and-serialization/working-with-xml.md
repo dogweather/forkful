@@ -10,9 +10,6 @@ title: "\xC5 jobbe med XML"
 weight: 40
 ---
 
-## Hva & Hvorfor?
-Å jobbe med XML innebærer parsing, spørring og manipulering av XML-dokumenter med Java. Programmerere gjør dette for datautveksling, konfigurasjonsstyring og fordi mange eldre systemer og API-er kommuniserer ved hjelp av XML.
-
 ## Hvordan:
 Java tilbyr API-er som DOM (Document Object Model), SAX (Simple API for XML) og StAX (Streaming API for XML) for å jobbe med XML. Her er et DOM-eksempel for å parse en XML-fil:
 

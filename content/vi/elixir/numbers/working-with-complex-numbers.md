@@ -14,9 +14,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Cái gì & Tại sao?
-Số phức có một phần thực và một phần ảo (như `3 + 4i`). Chúng được sử dụng trong kỹ thuật, vật lý, và một số vấn đề tính toán nhất định. Lập trình viên làm việc với chúng cho các mô phỏng, xử lý tín hiệu và giải quyết một số loại bài toán toán học một cách hiệu quả.
-
 ## Làm thế nào:
 Elixir không có số phức tích hợp, vì vậy chúng ta tự viết hoặc sử dụng một thư viện, như `ComplexNum`. Dưới đây là một ví dụ nhanh với một thư viện:
 

@@ -17,12 +17,7 @@ title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---
 
-## Cái gì & Tại sao?
-
-Trích xuất các chuỗi con có nghĩa là chỉ lấy một phần của chuỗi—giống như cắt một dải ruy băng với độ dài bạn cần. Các lập trình viên làm điều này để tách biệt, phân tích, hoặc xử lý các phần văn bản cụ thể, như đầu vào của người dùng, tên tệp tin, hoặc xử lý văn bản.
-
 ## Làm thế nào:
-
 Swift làm cho việc làm việc với các chuỗi con khá đơn giản. Hãy nhảy vào ngay với một số ví dụ.
 
 ```swift
@@ -58,7 +53,6 @@ Swift
 ```
 
 ## Đào sâu
-
 Việc trích xuất chuỗi con trong Swift đòi hỏi phải hiểu cách Swift xử lý chuỗi, khác biệt một chút so với các ngôn ngữ như Python hay C#. Trong Swift, chuỗi là các bộ sưu tập của các ký tự không sử dụng chỉ số nguyên. Điều này xuất phát từ việc Swift hỗ trợ ký tự tuân thủ Unicode, khiến các chuỗi không cố định chiều dài, mà thay vào đó là một bộ sưu tập của các cụm grapheme (những gì người dùng cảm nhận như một ký tự đơn).
 
 Thiết kế này có nghĩa là không thể trực tiếp sử dụng chỉ số nguyên với chuỗi Swift; bạn cần làm việc với `String.Index`. Mặc dù không ngay lập tức trực quan như sử dụng số nguyên, nhưng nó xử lý các kịch bản văn bản và emoji một cách nhất quán.
@@ -68,7 +62,6 @@ Các phương án khác bao gồm việc sử dụng `NSString` từ Objective-C
 Các chi tiết thực hiện là rất quan trọng—việc trích xuất chuỗi con ngây thơ có thể dẫn đến tổn thất về hiệu suất do mỗi lời gọi đến `index(_: offsetBy:)` có thể là O(n) khi xử lý với chuỗi tuân thủ Unicode. Thêm vào đó, khi bạn tạo một chuỗi con trong Swift, nó chia sẻ bộ nhớ của chuỗi gốc, làm cho hiệu suất được cải thiện, nhưng đây là điều cần lưu ý nếu bạn muốn thay đổi chuỗi gốc sau này.
 
 ## Xem thêm
-
 Để biết thêm về chủ đề này, hãy tham khảo tài liệu chính thức:
 
 - Swift String và Characters: [https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

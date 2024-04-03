@@ -10,10 +10,6 @@ title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---
 
-## What & Why?
-Mitä & Miksi?
-Lua:ssa merkkien poistaminen kuvion mukaan on tapa siivota merkkijonoja – otetaan pois mitä ei tarvita. Koodarit käyttävät tätä esimerkiksi käyttäjän syötteen puhdistamiseen tai datan muotoiluun.
-
 ## How to:
 Miten:
 ```Lua

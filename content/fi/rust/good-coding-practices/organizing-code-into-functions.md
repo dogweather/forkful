@@ -11,9 +11,6 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mikä ja miksi?
-Koodin järjestäminen funktioihin tarkoittaa ohjelmasi jakamista uudelleenkäytettäviin, modulaarisiin palasiin, joita kutsutaan nimellä. Teemme sen tehdäksemme koodistamme puhtaampaa, luettavampaa ja helpommin debugattavaa. Kyse on siitä, ettemme toista itseämme ja teemme päivityksistä sujuvampia.
-
 ## Kuinka:
 Kuvittele, että sinulla on koodia, joka laskee ympyrän alan useita kertoja. Sen sijaan, että toistaisit kaavan, kääriydyt sen funktioon.
 

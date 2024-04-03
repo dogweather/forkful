@@ -11,9 +11,6 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## Co i dlaczego?
-Pobieranie strony internetowej to proces ściągania jej zawartości do użycia po stronie klienta - programu lub aplikacji. Programiści robią to, aby przetwarzać dane, wyświetlać treści offline lub integrować usługi webowe z aplikacjami.
-
 ## Jak to zrobić:
 Aby pobrać stronę internetową w Swift, użyjemy URLSession, który jest częścią standardowej biblioteki Foundation. Poniżej znajdziesz przykładowy kod:
 

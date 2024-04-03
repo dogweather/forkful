@@ -15,12 +15,7 @@ title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---
 
-## Làm gì & Tại sao?
-
-Viết vào lỗi chuẩn (stderr) cho phép chương trình của bạn báo cáo về lỗi mà không làm lộn xộn đầu ra chuẩn (stdout). Đây là một tín hiệu rõ ràng cho người dùng và các chương trình khác biết rằng có điều gì đó cần được chú ý.
-
 ## Cách thực hiện:
-
 Lua giao tiếp với stderr thông qua `io.stderr`. Dưới đây là cách in một thông báo lỗi đơn giản:
 
 ```lua
@@ -42,7 +37,6 @@ end
 ```
 
 ## Sâu hơn
-
 Từ lâu, máy tính có hai dòng đầu ra tách biệt—stdout cho dữ liệu chính, stderr cho những sự cố. Lua giữ nguyên quy ước Unix này. Đôi khi, mọi người chuyển hướng stdout (như sang một tệp) nhưng vẫn muốn lỗi xuất hiện trên màn hình. Đó là lúc stderr được sử dụng.
 
 Có phương án thay thế không? Một số người ghi vào một tệp nhật ký, sử dụng thư viện ghi nhật ký, hoặc gửi qua mạng. Nhưng stderr thấp cản trở cho những việc đơn giản.
@@ -50,7 +44,6 @@ Có phương án thay thế không? Một số người ghi vào một tệp nh�
 Về mặt triển khai, `io.stderr` của Lua là một tay cầm tệp. Nó giống như `io.stdout` hay `io.stdin`, sẵn sàng hoạt động mà không cần rắc rối. Phía sau hậu trường, không quan trọng nó là một tệp văn bản hay một terminal, Lua không lo lắng—`io.stderr` xử lý nó.
 
 ## Xem thêm
-
 Khám phá sâu hơn hoặc hiểu rõ hơn:
 
 - Sổ tay tham chiếu Lua 5.4: http://www.lua.org/manual/5.4/

@@ -11,9 +11,6 @@ title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---
 
-## Hva & Hvorfor?
-En REPL (Read-Eval-Print Loop) er et enkelt, interaktivt programmeringsmiljø. Programmerere bruker det for raske kodingstester, teste kodebiter eller lære en programmeringsspråks syntaks uten å lage en fullstendig applikasjon.
-
 ## Hvordan:
 Å starte Kotlin sin REPL er en lek. Åpne terminalen din og skriv `kotlinc`. Du vil havne i Kotlin-skallet. La oss prøve å definere en variabel og skrive ut verdien dens:
 

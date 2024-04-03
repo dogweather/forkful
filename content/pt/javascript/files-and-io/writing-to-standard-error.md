@@ -15,9 +15,6 @@ title: "Escrevendo para o erro padr\xE3o"
 weight: 25
 ---
 
-## O Que & Por Que?
-Escrever para o erro padrão (stderr) em JavaScript trata de direcionar mensagens de erro ou qualquer informação crítica para um fluxo específico e separado, o que é especialmente útil em ambientes semelhantes ao Unix para fins de registro e depuração. Programadores fazem isso para diferenciar a saída normal do programa das mensagens de erro, permitindo uma gestão mais limpa da saída e monitoramento de erros mais fácil.
-
 ## Como fazer:
 No Node.js, escrever para stderr pode ser realizado usando o método `console.error()` ou escrevendo diretamente em `process.stderr`. Aqui estão exemplos demonstrando ambas as abordagens:
 

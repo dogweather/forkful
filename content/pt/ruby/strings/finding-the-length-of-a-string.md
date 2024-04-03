@@ -11,9 +11,6 @@ title: Descobrindo o comprimento de uma string
 weight: 7
 ---
 
-## O Que & Porquê?
-Encontrar o comprimento de uma string significa descobrir quantos caracteres ela contém. Programadores fazem isso para validar entradas, limitar texto, ou simplesmente para manipulação geral de dados.
-
 ## Como Fazer:
 ```Ruby
 # Exemplo básico para encontrar o comprimento de uma string
@@ -25,6 +22,7 @@ puts comprimento  # Saída será 12
 tamanho = frase.size
 puts tamanho      # Saída também será 12
 ```
+
 ## Mergulho Profundo
 Historicamente, o método `length` existe desde as primeiras versões do Ruby, oferecendo um jeito intuitivo de se obter a extensão de uma string. Uma alternativa é o método `size`, que é exatamente igual ao `length`. Ambos retornam o número de caracteres `UTF-8` da string, o que é um detalhe importante: em Ruby, caracteres com acento ou emojis contam como um só caractere, graças à sua boa suporte à codificação `UTF-8`.
 

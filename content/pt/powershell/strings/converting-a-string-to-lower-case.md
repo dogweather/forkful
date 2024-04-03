@@ -12,9 +12,6 @@ title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---
 
-## O Que é & Porquê?
-Converter uma string para minúsculas é o processo de transformar todos os caracteres alfabéticos numa string de forma a que todos eles sejam minúsculos. Programadores fazem isso para padronizar dados, facilitar comparações de texto e garantir consistência em operações que são sensíveis a maiúsculas e minúsculas.
-
 ## Como Fazer:
 Para converter uma string para minúsculas no PowerShell, você pode usar o método `.ToLower()`. Veja como é simples:
 

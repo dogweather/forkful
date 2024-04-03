@@ -11,9 +11,6 @@ title: Suchen und Ersetzen von Text
 weight: 10
 ---
 
-## Was & Warum?
-Text suchen und ersetzen bedeutet, bestimmte Zeichenfolgen in einem Text zu finden und sie durch andere zu ersetzen. Programmierer nutzen es, um Fehler zu beheben, Daten zu aktualisieren oder Code schnell anzupassen.
-
 ## How to:
 Hier ist ein einfacher Code, der zeigt, wie man Text auf einem Arduino sucht und ersetzt. Wir nehmen an, dass `inputString` der Text ist, den wir bearbeiten wollen und `oldWord` das Wort, das wir ersetzen möchten.
 

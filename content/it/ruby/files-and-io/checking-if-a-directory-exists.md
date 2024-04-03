@@ -13,9 +13,6 @@ title: Verifica se una directory esiste
 weight: 20
 ---
 
-## Cosa e Perché?
-Verificare se una directory esiste in Ruby permette ai programmatori di verificare la presenza di una directory prima di eseguire operazioni come la lettura di file o la creazione di nuove directory. Questo è fondamentale per evitare errori nella gestione dei file e garantire l'affidabilità delle manipolazioni del sistema dei file.
-
 ## Come fare:
 La libreria standard di Ruby fornisce metodi semplici per controllare l'esistenza di una directory. Ecco come si fa con puro Ruby, senza bisogno di librerie di terze parti:
 

@@ -11,10 +11,9 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-Regular expressions (regex) in Ruby are patterns used to match character combinations in strings, enabling developers to search for, match, and manipulate text efficiently. Programmers utilize regex for tasks such as validation, parsing, and string manipulation, making it an indispensable tool for text processing.
-
 ## How to:
+
+
 ### Basic Matching
 To match a string against a simple pattern, you can use the `match` method. Below, we're checking if the word "Ruby" exists in a given string.
 

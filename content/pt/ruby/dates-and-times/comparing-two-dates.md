@@ -11,9 +11,6 @@ title: Comparando duas datas
 weight: 27
 ---
 
-## O Que & Porquê?
-Comparar duas datas significa verificar a diferença entre elas ou qual vem antes/depois. Programadores fazem isso para manipular períodos de tempo, agendar tarefas, validar prazos, ou simplesmente organizar dados cronologicamente.
-
 ## Como fazer:
 ```Ruby
 require 'date'

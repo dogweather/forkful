@@ -12,9 +12,6 @@ title: Generazione di numeri casuali
 weight: 12
 ---
 
-## Cosa e Perché?
-Generare numeri casuali nei progetti Arduino implica la produzione di valori che sono imprevedibili per progettazione, fondamentale per applicazioni come giochi, simulazioni e sistemi di sicurezza. I programmatori utilizzano questa tecnica per introdurre variabilità o prendere decisioni che non dovrebbero essere deterministiche.
-
 ## Come fare:
 Arduino fornisce funzioni semplici per generare numeri casuali: `randomSeed()` e `random()`. Per iniziare, inizializza il generatore di numeri casuali per assicurare diverse sequenze di numeri ogni volta che il tuo programma viene eseguito. Un approccio spesso utilizzato è quello di inizializzare con una lettura analogica da un pin non connesso.
 

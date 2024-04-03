@@ -11,9 +11,6 @@ title: Zeichenketten interpolieren
 weight: 8
 ---
 
-## Was & Warum?
-String-Interpolation ermöglicht es, Variablen innerhalb eines Strings einzufügen, um dynamische Nachrichten zu erstellen. Programmierer benutzen das, um Code lesbarer zu machen und um die Verwaltung von dynamischem Text zu erleichtern.
-
 ## Anleitung:
 In Lua gibt es keine eingebaute Interpolationsfunktion, daher nutzen wir oft die `string.format`-Methode oder die String-Konkatenation. Hier sind beide Methoden dargestellt:
 

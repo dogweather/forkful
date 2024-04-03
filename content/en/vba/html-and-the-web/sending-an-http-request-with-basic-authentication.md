@@ -11,12 +11,7 @@ title: Sending an HTTP request with basic authentication
 weight: 45
 ---
 
-## What & Why?
-
-Sending an HTTP request with basic authentication in Visual Basic for Applications (VBA) is about accessing web resources that are protected by username and password credentials. Programmers do this to interact with secure APIs or web services within their VBA-powered applications, such as automating tasks in Excel or Access with data from secured endpoints.
-
 ## How to:
-
 In VBA, you can use the `Microsoft XML, v6.0` (MSXML2) library to send HTTP requests with basic authentication. This involves setting the `"Authorization"` header of the request to include the credentials in a base64-encoded format. Here is a step-by-step guide:
 
 1. **Reference MSXML2**: First, ensure your VBA project references the `Microsoft XML, v6.0` library. In the VBA editor, go to Tools > References and check `Microsoft XML, v6.0`.
@@ -60,7 +55,6 @@ In VBA, you can use the `Microsoft XML, v6.0` (MSXML2) library to send HTTP requ
 This will send a GET request to `http://example.com/api/resource` with the specified basic authentication credentials, and print the response.
 
 ## Deep Dive
-
 The approach used here, while effective for simple use cases, hinges on the Basic Authentication scheme, which sends credentials in an easily decodable format (base64 encoding is not encryption). Due to its vulnerability, especially in non-HTTPS contexts, Basic Authentication is not recommended for transmitting sensitive data over the internet without additional security layers like SSL/TLS.
 
 Historically, Basic Authentication was one of the first methods developed for controlling access to web resources. Today, safer and more flexible authentication standards, such as OAuth 2.0, are generally preferred for new applications. Given VBA's limitations and the external dependencies required for more advanced authentication methods, developers often employ VBA in internal or less security-critical environments or use it as a stepping stone to prototype ideas quickly.

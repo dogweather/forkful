@@ -12,12 +12,7 @@ title: "Loggf\xF8ring"
 weight: 17
 ---
 
-## Hva & Hvorfor?
-
-Logging, eller loggføring, er i sin kjerne praksisen med å registrere hendelser og data fra en programvareapplikasjon til en ekstern utgang, som en fil eller konsoll. Programmerere logger informasjon for å spore gjennom kode, feilsøke problemer og holde et øye med en apps oppførsel i praksis, noe som gir kritisk innsikt som ikke kan fås på en like effektiv måte på noen annen måte.
-
 ## Hvordan:
-
 I Kotlin kan loggføring gjøres ved hjelp av den innebygde funksjonen `println()` for enkle tilfeller, eller med mer sofistikerte biblioteker som SLF4J med Logback eller Log4j for avanserte behov.
 
 Under ser du et grunnleggende eksempel ved bruk av `println()`:
@@ -69,7 +64,6 @@ java.lang.Exception: Simulert feil
 ```
 
 ## Dypdykk
-
 Historisk har loggføring i programvare utviklet seg sammen med økende kompleksitet i applikasjoner og systemer. Enkle print-uttalelser var nok i de tidlige dagene, der programmer ofte ble kjørt og feilsøkt av utvikleren selv. Men ettersom systemer ble nettverkskoplet og kjørt i forskjellige miljøer på tvers av forskjellige brukere, ble et robust og vedvarende loggføringssystem avgjørende.
 
 Før Kotlin ble populært, adopterte Java-utviklere mye brukt biblioteker som Log4j og senere SLF4J. Disse har inspirert lignende praksis i Kotlin, ved å utnytte samspillet mellom Kotlin og Java-biblioteker. SLF4J fungerer som et abstraksjonslag, slik at den faktiske loggføringsimplementasjonen kan byttes ut – vanligvis er Logback eller Log4j2 de foretrukne valgene.
@@ -89,7 +83,6 @@ Andre vanlige funksjoner i avanserte loggføringsrammeverk inkluderer:
 Disse verktøyene og funksjonene er avgjørende for å opprettholde et pålitelig, observerbart system, spesielt i komplekse, distribuerte eller høyt skalerte miljøer.
 
 ## Se også
-
 For videre læring og innsikt i Kotlin-loggføring, sjekk ut:
 
 - SLF4J (Simple Logging Facade for Java) [http://www.slf4j.org/](http://www.slf4j.org/)

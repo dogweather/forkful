@@ -10,9 +10,6 @@ title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u0940 \u0932\u09
 weight: 7
 ---
 
-## What & Why? (क्या और क्यों?)
-String ki length jaanna matlab ye hai ki us string me kitne characters hain. Programmers isliye string ki length jaan'na chahte hain taki wo data ko validate kar sakein, loops chala sakein, ya fir substring kaam karne ke liye.
-
 ## How to: (कैसे करें:)
 Bash me string ki length pata karna simple hai. Neeche di gai code me dekho:
 

@@ -9,9 +9,6 @@ title: Trabajando con XML
 weight: 40
 ---
 
-## ¿Qué y Por Qué?
-Trabajar con XML significa analizar y generar datos XML en Swift. Los programadores hacen esto para el intercambio de datos, especialmente cuando se integran con sistemas donde el formato estándar es XML.
-
 ## Cómo hacerlo:
 Swift proporciona `XMLParser` y `XMLDocument` para analizar datos XML. Aquí hay un fragmento para analizar una simple cadena XML:
 

@@ -10,14 +10,13 @@ title: "\u041F\u0435\u0440\u0435\u0442\u0432\u043E\u0440\u0435\u043D\u043D\u044F
 weight: 4
 ---
 
-## What & Why?
 ## Що це таке та навіщо?
-
 Converting a string to lower case means changing all letters in the string to their lower case form. Programmers do this for consistency, such as when comparing user inputs that should be case-insensitive.
 
 ## How to:
-## Як це зробити:
 
+
+## Як це зробити:
 ```TypeScript
 let greeting: string = "Привіт, Світе!";
 let lowerCaseGreeting: string = greeting.toLowerCase();
@@ -25,8 +24,9 @@ console.log(lowerCaseGreeting); // "привіт, світе!"
 ```
 
 ## Deep Dive
-## Поглиблений огляд:
 
+
+## Поглиблений огляд:
 Historically, case conversion has been used to make text processing uniform, regardless of the case used when the text was inputted. In TypeScript, the `toLowerCase()` method streamlines this process for strings.
 
 Alternatives include manually iterating over each character and transforming it, but that's unnecessary and error-prone when `toLowerCase()` is available. 
@@ -34,8 +34,9 @@ Alternatives include manually iterating over each character and transforming it,
 Implementation-wise, `toLowerCase()` handles Unicode characters as well, respecting the locality (though, for specific locale rules, `toLocaleLowerCase()` may be used instead).
 
 ## See Also
-## Додаткова інформація:
 
+
+## Додаткова інформація:
 - MDN Documentation on `toLowerCase()`: [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
 - TypeScript Official Documentation: [TypeScript Language](https://www.typescriptlang.org/docs/)
 - Unicode standard for case mapping: [Unicode Case Mapping](https://unicode.org/reports/tr21/tr21-5.html)

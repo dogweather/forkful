@@ -22,14 +22,10 @@ title: "JSON\u3092\u6D3B\u7528\u3059\u308B"
 weight: 38
 ---
 
-## はじめに: 何となぜ?
-
-JSON（JavaScript Object Notation）を扱うとは、JSONデータの解析、生成、およびクエリを行うことを意味し、現代のプログラミングにおいて重要なスキルとなります。このデータ交換フォーマットは、その読みやすさと言語の独立性のため、WebサービスやAPIで広く使用されています。これは、ネットワーク化されたアプリケーションを開発するか、Webベースのデータと対話するC#プログラマーにとって必須です。
-
 ## 方法:
 
-### JSON文字列をオブジェクトに解析する
 
+### JSON文字列をオブジェクトに解析する
 C#は`System.Text.Json`名前空間を提供し、効率的なJSON処理を実現します。JSON文字列をC#オブジェクトに解析するには、JSON構造に一致するクラスを定義し、`JsonSerializer.Deserialize`メソッドを使用します。
 
 ```csharp
@@ -56,7 +52,6 @@ public class Program
 ```
 
 ### オブジェクトからJSONへ変換する
-
 C#オブジェクトをJSON文字列に戻すためには、`JsonSerializer.Serialize`メソッドを使用します。
 
 ```csharp
@@ -81,7 +76,6 @@ public class Program
 ```
 
 ### Newtonsoft.Jsonの使用
-
 `Newtonsoft.Json`（またはJson.NET）は、JSONのシリアライズおよびデシリアライズに関してより柔軟性とオプションを提供する、人気のあるサードパーティ製ライブラリです。
 
 Json.NETを使うには、最初にNuGet経由で`Newtonsoft.Json`パッケージをインストールする必要があります。その後、次のようにJSON文字列のデシリアライズができます：

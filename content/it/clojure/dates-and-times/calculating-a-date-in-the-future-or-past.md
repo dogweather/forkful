@@ -10,9 +10,6 @@ title: Calcolo di una data futura o passata
 weight: 26
 ---
 
-## Cos'è e perché?
-Calcolare una data futura o passata significa semplicemente determinare quale giorno sarà o è stato dopo o prima di un certo lasso di tempo. I programmatori lo fanno per gestire eventi, scadenze, ricorrenze e per pianificare attività.
-
 ## Come fare:
 Utilizziamo la libreria clj-time, basata su Joda-Time, per manipolare e calcolare date in Clojure. Installala aggiungendo `[clj-time "0.15.2"]` al tuo file project.clj.
 

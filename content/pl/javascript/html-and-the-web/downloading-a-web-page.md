@@ -12,9 +12,6 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## What & Why? (Co i Dlaczego?)
-Pobieranie strony internetowej to proces ściągania jej treści, by móc z nią interaktywnie pracować poza przeglądarką. Programiści robią to, aby analizować dane, testować wydajność lub archiwizować zawartość.
-
 ## How to: (Jak to zrobić:)
 JavaScript pozwala na pobieranie stron internetowych za pomocą Fetch API, które jest obecnie standardem. Poniżej znajduje się prosty przykład użycia:
 

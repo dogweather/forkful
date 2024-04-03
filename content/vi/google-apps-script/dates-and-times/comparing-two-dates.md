@@ -18,9 +18,6 @@ title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---
 
-## Cái gì & Tại sao?
-So sánh hai ngày trong Google Apps Script, một phiên bản được tùy chỉnh của JavaScript dành cho bộ ứng dụng của Google, là một nhiệm vụ quan trọng đối với các nhà phát triển khi xử lý lịch trình, dòng thời gian, hoặc bất kỳ dữ liệu nào liên quan đến ngày tháng. Hiểu cách so sánh các ngày một cách chính xác giúp lập trình viên thực hiện các tính năng như hạn chót, lên kế hoạch sự kiện, hoặc lên lịch nội dung một cách hiệu quả.
-
 ## Làm thế nào:
 Trong Google Apps Script, các ngày được so sánh sử dụng các đối tượng Date của JavaScript, cho phép sử dụng các phương pháp tiêu chuẩn để đánh giá xem ngày nào trước, ngày nào sau, hoặc nếu chúng giống nhau. Dưới đây là một cách tiếp cận cơ bản:
 

@@ -11,9 +11,6 @@ title: "XML:n k\xE4sittely"
 weight: 40
 ---
 
-## Mikä & Miksi?
-XML:n kanssa työskentelyn yhteydessä käsitellään XML-dokumentteja koodin avulla. Ohjelmoijat tekevät tämän lukeakseen, kirjoittaakseen ja muokatakseen dataa rakenteellisessa, siirrettävässä muodossa, jota käytetään laajalti datan vaihdossa ja tallennuksessa.
-
 ## Kuinka:
 Lua ei sisällä natiivia XML-jäsennystä, mutta on olemassa kirjastoja, kuten LuaXML ja xml2lua, jotka suorittavat tehtävän. Tässä on nopea katsaus XML:n jäsentämiseen xml2lua:lla:
 

@@ -13,11 +13,7 @@ title: Een HTTP-verzoek verzenden met basisauthenticatie
 weight: 45
 ---
 
-## Wat & Waarom?
-Het versturen van een HTTP-verzoek met basisauthenticatie betekent dat er een gebruikersnaam en wachtwoord in de aanvraagheader worden gestopt om te bewijzen dat je toegang moet krijgen. We doen dit wanneer diensten er zeker van willen zijn dat jij het bent, en niet zomaar een Jan Modaal, die probeert toegang te krijgen tot spullen.
-
 ## Hoe:
-
 Voeg eerst de benodigde crate toe aan je `Cargo.toml`:
 
 ```toml
@@ -59,7 +55,6 @@ async fn main() -> Result<(), Box<dyn Error>> {
 Als het correct is, zal het de geheimen afdrukken. Je begrijpt het wel.
 
 ## Diepgaande Duik
-
 Voor `reqwest` zag je mensen worstelen met `curl` in Rust. Het is alsof je een handzaag verkiest boven een kettingzaag. Basisauth, hoewel eenvoudig, is geen Fort Knox. Het is gewoon Base64 van "gebruikersnaam:wachtwoord" – geen encryptie, dus HTTPS is een must.
 
 Alternatieven? OAuth 2.0 danst rondjes om Basis, door tokens aan te bieden in plaats van tastbare referenties. Toch is het complex. Dan is er nog Bearer-authenticatie, die tokens vasthoudt als een geheime handdruk.
@@ -67,7 +62,6 @@ Alternatieven? OAuth 2.0 danst rondjes om Basis, door tokens aan te bieden in pl
 Onder de motorkap is `reqwest` een high-level HTTP-client die goed samenspeelt met Rust's async-functies. De structuur 'Basic' creëert de header, 'Authorization' plaatst hem, en voilà, je klopt aan de deur van de server met een geheime fluistering.
 
 ## Zie Ook
-
 Voor meer lore en tovenarij:
 
 - reqwest documentatie: [https://docs.rs/reqwest](https://docs.rs/reqwest)

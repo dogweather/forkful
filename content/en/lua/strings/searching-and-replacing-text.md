@@ -10,9 +10,6 @@ title: Searching and replacing text
 weight: 10
 ---
 
-## What & Why?
-Searching and replacing text means swapping out specific strings in a block of text with others. Programmers do this for tasks like fixing errors, updating information, or formatting data.
-
 ## How to:
 Lua's `string.gsub` function is your go-to for search and replace. It works like this:
 

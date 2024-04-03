@@ -11,9 +11,6 @@ title: Organisering av kode i funksjoner
 weight: 18
 ---
 
-## Hva & Hvorfor?
-Å organisere koden i funksjoner betyr å dele opp koden din i gjenbrukbare biter, hvor hver bit utfører en spesifikk jobb. Programmerere gjør dette for å gjøre koden enklere å lese, feilsøke og gjenbruke. Det er som å sortere Lego i bokser - det sparer deg fra å rote gjennom en kaotisk haug hver gang du vil bygge noe.
-
 ## Hvordan:
 Tenk at du vil få en LED til å blinke. Uten funksjoner, er `loop`-en din en rotete klump. Med funksjoner, er den ryddig. Her er hvordan:
 

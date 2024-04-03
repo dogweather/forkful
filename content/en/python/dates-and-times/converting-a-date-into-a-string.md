@@ -10,9 +10,6 @@ title: Converting a date into a string
 weight: 28
 ---
 
-## What & Why?
-Converting dates into strings changes a date object to a text format. Programmers do this to display dates in a user-friendly way or to prepare them for storage in text-based formats like CSV or JSON.
-
 ## How to:
 Python makes it easy to convert dates to strings. Use the `strftime` method available on date objects. Here's how:
 

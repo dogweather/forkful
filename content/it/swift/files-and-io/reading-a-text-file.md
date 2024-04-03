@@ -11,9 +11,6 @@ title: Lettura di un file di testo
 weight: 22
 ---
 
-## What & Why?
-Leggere un file di testo significa accedere e manipolare le informazioni che sono memorizzate in un file sul tuo computer. I programmatori lo fanno perché spesso hanno bisogno di processare o analizzare dati salvati in forma di testo.
-
 ## How to:
 In Swift, puoi leggere il contenuto di un file di testo in pochi passi. Ecco un esempio:
 

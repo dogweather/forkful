@@ -16,9 +16,6 @@ title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---
 
-## Cái gì & Tại sao?
-Refactoring là quá trình cấu trúc lại mã máy tính hiện có mà không thay đổi hành vi bên ngoài của nó, nhằm mục đích cải thiện các thuộc tính không chức năng của phần mềm. Các lập trình viên refactor mã để làm cho nó sạch hơn, hiệu quả hơn và dễ hiểu hơn, giúp việc bảo trì và nâng cấp trong tương lai dễ dàng hơn.
-
 ## Làm thế nào:
 PowerShell không có công cụ refactoring chuyên dụng tích hợp sẵn, nhưng bạn vẫn có thể dọn dẹp mã của mình cho tính dễ đọc và hiệu suất. Xem xét một hàm đang làm quá nhiều việc và làm thế nào chúng ta có thể refactor nó cho sự rõ ràng:
 

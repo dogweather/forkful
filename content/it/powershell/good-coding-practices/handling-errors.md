@@ -11,9 +11,6 @@ title: Gestione degli errori
 weight: 16
 ---
 
-## Cosa & Perché?
-Gestire gli errori in PowerShell significa prevedere gli imprevisti e gestirli in modo fluido. I programmatori lo fanno per prevenire crash e fornire agli utenti un feedback utile.
-
 ## Come fare:
 ```PowerShell
 # Try-Catch di base per gestire le eccezioni
@@ -34,6 +31,7 @@ try {
 
 # Utilizzo della variabile $Error per ispezionare l'ultimo errore
 ```
+
 ## Approfondimento
 PowerShell ha fatto molta strada dalla sua nascita come Monad. La gestione degli errori è diventata più robusta nel tempo, offrendo caratteristiche simili ad altri linguaggi di programmazione. La sintassi `try-catch-finally` è uno di questi elementi portati da linguaggi come C#. Prima, gli scripter si affidavano molto sul controllo delle condizioni e sull'uso della variabile automatica `$Error`.
 

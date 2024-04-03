@@ -13,9 +13,6 @@ title: "HTML:n j\xE4sennys"
 weight: 43
 ---
 
-## Mikä ja miksi?
-HTML:n jäsentäminen Elm-kielessä tarkoittaa tietojen poimimista HTML-dokumenteista. Ohjelmoijat tekevät näin, jotta he voivat käyttää web-sisältöä tai käyttöliittymiä, jotka palauttavat HTML-muotoista tietoa. Tämä mahdollistaa interaktiivisempien ja dynaamisempien web-sovellusten luomisen.
-
 ## Kuinka tehdään:
 Elmissä ei ole suoraan HTML:n jäsentämiseen sisäänrakennettua kirjastoa samalla tavalla kuin JavaScriptissä tai Pythonissa, johtuen sen korostuksesta tyypiturvallisuudesta ja ajonaikaisten virheiden välttämisestä. Voit kuitenkin käyttää `Http`-pyyntöjä sisällön noutamiseen ja sitten käyttää säännöllisiä lausekkeita tai palvelinpuolen käsittelyä tarvittavien tietojen poimimiseen. Monimutkaisempaan HTML:n jäsentämiseen yleinen lähestymistapa on käyttää omistettua taustapalvelua HTML:n jäsentämiseen ja datan palauttamiseen muodossa, jonka Elm voi suoraan käsitellä, kuten JSON.
 

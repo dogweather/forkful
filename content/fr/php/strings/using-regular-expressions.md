@@ -15,16 +15,10 @@ title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---
 
-## Quoi & Pourquoi ?
-
-Les expressions régulières (regex) en PHP sont des motifs utilisés pour rechercher des combinaisons de caractères dans des chaînes de texte, permettant des opérations de recherche et de remplacement sophistiquées ainsi que la validation de données. Les programmeurs utilisent les regex pour leur puissance et leur flexibilité lors de l'analyse de texte, la validation de formulaires ou le scraping de données web, ce qui en fait un outil indispensable dans l'arsenal d'un développeur.
-
 ## Comment utiliser :
-
 PHP prend en charge les expressions régulières via la bibliothèque PCRE (Perl Compatible Regular Expressions), offrant un riche ensemble de fonctions. Voici comment les utiliser :
 
 ### Correspondance à un motif :
-
 Pour vérifier si un motif existe dans une chaîne, utilisez `preg_match()`. Cette fonction retourne 1 si le motif a été trouvé dans la chaîne et 0 sinon.
 
 ```php
@@ -37,7 +31,6 @@ if (preg_match("/\bweb\b/i", "PHP est un langage de script web")) {
 ```
 
 ### Trouver toutes les correspondances :
-
 `preg_match_all()` est utilisé lorsque vous avez besoin de trouver toutes les occurrences d'un motif dans une chaîne.
 
 ```php
@@ -49,7 +42,6 @@ print_r($matches[0]);
 ```
 
 ### Remplacer du texte :
-
 Pour remplacer du texte qui correspond à une expression régulière, `preg_replace()` est utilisé. Il est incroyablement puissant pour formater et nettoyer des données.
 
 ```php
@@ -61,7 +53,6 @@ echo preg_replace($pattern, $replacement, $originalText);
 ```
 
 ### Fractionner des chaînes :
-
 Vous pouvez diviser une chaîne en un tableau en utilisant `preg_split()`, en spécifiant un motif pour le délimiteur.
 
 ```php

@@ -13,12 +13,7 @@ title: "L\xE4sa kommandoradsargument"
 weight: 23
 ---
 
-## Vad & Varför?
-
-Att läsa kommandoradsargument i Visual Basic for Applications (VBA) innebär att man tillgår parametrar som passerats till ditt program vid körning. Denna teknik används ofta för att påverka beteendet eller utdata från ett program utan behov av användarinteraktion, vilket gör automatisering och scriptuppgifter avsevärt enklare och mer mångsidiga.
-
 ## Hur man gör:
-
 Till skillnad från mer raka programmeringsmiljöer, har VBA inte en inbyggd funktion för att direkt läsa kommandoradsargument i konventionell bemärkelse eftersom det främst är designat för inbäddning inom Microsoft Office-applikationer. Dock kan vi med lite kreativitet använda Windows Script Host (WSH) eller anropa externa API:er för att uppnå liknande funktionalitet. Här är en praktisk lösning med hjälp av WSH:
 
 1. **Skapa ett VBScript för att skicka argument till VBA:**
@@ -53,7 +48,6 @@ cscript yourScript.vbs "Hello" "World"
    Detta bör resultera i att ditt VBA-makro körs med argumenten "Hello" och "World", och visar dem i en meddelanderuta.
 
 ## Fördjupning:
-
 I historiskt perspektiv utformades VBA för att utöka kapaciteterna hos Microsoft Office-applikationer, inte som en fristående programmeringsmiljö. Som sådan ligger direkt interaktion med kommandoraden utanför dess primära omfattning, vilket förklarar bristen på inbyggt stöd för att läsa kommandoradsargument.
 
 Metoden som beskrivits ovan är mer av en lösning på omvägar än en infödd lösning, vilken utnyttjar externa script för att överbrygga gapet. Detta tillvägagångssätt kan införa komplexitet och potentiella säkerhetsproblem eftersom det kräver att makron är aktiverade och potentiellt sänker säkerhetsinställningarna för att köra.

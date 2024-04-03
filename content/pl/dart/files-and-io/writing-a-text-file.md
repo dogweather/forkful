@@ -13,9 +13,6 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i dlaczego?
-Zapisywanie pliku tekstowego w Dart polega na tworzeniu lub modyfikowaniu plików na dysku w celu przechowywania danych w formacie czytelnym. Programiści robią to, aby zapisać dane aplikacji, konfiguracje, logi lub jakiekolwiek informacje, które powinny pozostać między uruchomieniami aplikacji lub udostępnić dane innym aplikacjom lub użytkownikom.
-
 ## Jak to zrobić:
 Biblioteka podstawowa Darta oferuje pakiet `dart:io` do obsługi plików, co pozwala na pisanie plików tekstowych bez potrzeby korzystania z bibliotek stron trzecich. Oto prosty przykład zapisywania pliku tekstowego:
 

@@ -11,9 +11,6 @@ title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---
 
-## Co i Dlaczego?
-Czytanie argumentów linii poleceń to pobieranie danych wejściowych od użytkownika podczas wykonywania skryptu PHP w terminalu. Programiści wykorzystują tę technikę, gdy chcą, aby ich skrypt był elastyczny i mógł być łatwo uruchamiany z różnymi parametrami.
-
 ## Jak to zrobić:
 Aby odczytać argumenty linii poleceń w PHP, korzystamy ze zmiennej globalnej `$argv`, która zawiera tablicę argumentów przekazanych do skryptu. Oto prosty przykład:
 

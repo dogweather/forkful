@@ -10,9 +10,6 @@ title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---
 
-## Qué y Por Qué?
-Leer argumentos de línea de comandos significa obtener datos directamente cuando ejecutas un programa. Los programadores hacen esto para personalizar la ejecución del programa sin cambiar el código.
-
 ## Cómo:
 Elm está diseñado para aplicaciones web, por lo tanto, no lee directamente los argumentos de la línea de comandos como lo hacen otros lenguajes. Pero si necesitas trabajar con Elm y usar datos al inicio, tendrás que pasarlos a través de flags cuando inicialices tu programa Elm desde JavaScript.
 

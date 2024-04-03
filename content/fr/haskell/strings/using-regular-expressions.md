@@ -14,9 +14,6 @@ title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---
 
-## Quoi & Pourquoi ?
-Les expressions régulières en programmation sont des séquences de caractères qui définissent un motif de recherche, généralement employé pour la recherche et la manipulation de chaînes de caractères. Les programmeurs Haskell utilisent les expressions régulières pour des tâches allant de la simple correspondance de chaînes à des traitements de texte complexes, profitant de leur efficacité et de leur polyvalence dans le traitement des données textuelles.
-
 ## Comment :
 En Haskell, les fonctionnalités regex ne font pas partie de la bibliothèque standard, nécessitant l'utilisation de paquets tiers comme `regex-base` accompagné d'un backend compatible tel que `regex-posix` (pour le support des regex POSIX), `regex-pcre` (pour les regex compatibles Perl), etc. Voici comment vous pouvez utiliser ces paquets pour travailler avec les expressions régulières.
 
@@ -31,7 +28,6 @@ cabal install regex-pcre
 ```
 
 ### Utilisation de `regex-posix` :
-
 ```haskell
 import Text.Regex.Posix ((=~))
 
@@ -52,7 +48,6 @@ main = do
 ```
 
 ### Utilisation de `regex-pcre` :
-
 ```haskell
 import Text.Regex.PCRE ((=~))
 

@@ -11,9 +11,6 @@ title: Usando una shell interactiva (REPL)
 weight: 34
 ---
 
-## Qué & Por qué?
-Las terminales interactivas, o REPLs (Read-Eval-Print Loops, Bucles de Leer-Evaluar-Imprimir), te permiten ejecutar código sobre la marcha, probando funciones, algoritmos o jugueteando con ideas. Son los blocs de notas del código, rápidos y sucios, sin necesidad de configurar un entorno de desarrollo completo.
-
 ## Cómo hacerlo:
 Node.js viene con un REPL accesible a través de la terminal. Ábrelo, y estás listo para comenzar. Aquí un adelanto:
 

@@ -16,9 +16,6 @@ title: "\uBB38\uC790\uC5F4 \uBCF4\uAC04\uD558\uAE30"
 weight: 8
 ---
 
-## What & Why? (무엇인가요? 왜 사용하나요?)
-문자열 보간(string interpolation)은 문자열 내에 변수나 표현식의 값을 직접 삽입하는 방법입니다. 이것은 코드를 더 읽기 쉽고 유지 관리하기 편하게 만들기 위해 프로그래머들이 사용합니다.
-
 ## How to: (어떻게 사용하나요?)
 ```PowerShell
 $name = "Jae"

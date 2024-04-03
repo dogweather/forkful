@@ -14,9 +14,6 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-Wyrażenia regularne to potężne narzędzie do dopasowywania wzorców i manipulowania danymi, niezbędne w zadaniach przetwarzania tekstu, takich jak walidacja danych wejściowych, wyszukiwanie i zamiana tekstu. Programiści używają ich intensywnie do efektywnego i zwięzłego obsługiwania złożonych zadań związanych z analizą ciągów znaków i walidacją danych.
-
 ## Jak to zrobić:
 Clojure, pozostając wiernym swoim korzeniom z rodziny Lisp, oferuje bogaty zestaw funkcji, które bezproblemowo współpracują z możliwościami wyrażeń regularnych Javy. Oto jak możesz z nich korzystać:
 

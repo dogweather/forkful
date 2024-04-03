@@ -13,16 +13,10 @@ title: Avrundning av nummer
 weight: 13
 ---
 
-## Vad & Varför?
-
-Avrundning av tal handlar om att justera värdet av ett tal till det närmaste hela talet eller till ett specifikt antal decimaler. Programmerare gör detta av skäl som att förbättra läsbarheten, förenkla beräkningar, eller möta domänspecifika precisionkrav.
-
 ## Hur man gör:
-
 I Go finns det inte en inbyggd funktion som direkt avrundar tal till ett specifikt antal decimaler i matematikpaketet. Du kan dock uppnå avrundning genom en kombination av funktioner för hela tal eller implementera en anpassad funktion för decimaler.
 
 ### Avrunda till det närmaste hela talet:
-
 För att avrunda till det närmaste hela talet kan du använda funktionen `math.Floor()` med ett tillagt 0,5 för positiva tal, och `math.Ceil()` minus 0,5 för negativa tal, beroende på vilken riktning du vill avrunda till.
 
 ```go
@@ -40,7 +34,6 @@ func main() {
 ```
 
 ### Avrunda till ett specifikt antal decimaler:
-
 För att avrunda till ett specifikt antal decimaler kan en anpassad funktion användas där du multiplicerar talet med 10^n (där n är antalet decimaler), avrundar det till närmaste hela tal som tidigare och sedan dividerar med 10^n.
 
 ```go
@@ -63,7 +56,6 @@ func main() {
 ```
 
 ## Djupdykning
-
 Avrundning av tal är en grundläggande operation i datorprogrammering, kopplad till den historiska utmaningen med att representera reella tal i ett binärt system. Behovet av avrundning uppstår från det faktum att många reella tal inte kan representeras exakt i binärt, vilket leder till approximationsfel.
 
 I Go är tillvägagångssättet för avrundning något manuellt jämfört med språk som erbjuder inbyggda avrundningsfunktioner för specifika decimalplatser. Icke desto mindre tillhandahåller Go-standardbibliotekets `math` paket grundläggande byggstenar (som `math.Floor` och `math.Ceil`) för att konstruera alla avrundningsmekanismer som krävs av applikationen.

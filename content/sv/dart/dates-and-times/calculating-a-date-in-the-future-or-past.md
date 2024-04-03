@@ -14,9 +14,6 @@ title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutna"
 weight: 26
 ---
 
-## Vad & Varför?
-Att beräkna ett datum i framtiden eller förflutet är en vanlig uppgift för programmerare som hanterar schemaläggning, påminnelser eller någon funktion som beror på datumberäkningar. Att förstå hur man manipulerar datum är avgörande för backend-system, användargränssnitt och dataanalys, särskilt för dem som övergår till Dart och vill implementera tidslogik effektivt.
-
 ## Hur man gör:
 Dart erbjuder robust stöd för datummanipulation genom sin `DateTime`-klass. Så här kan du beräkna framtida eller förflutna datum med hjälp av native Dart, utan att behöva tredjepartsbibliotek.
 

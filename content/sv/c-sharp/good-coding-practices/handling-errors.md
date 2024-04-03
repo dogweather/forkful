@@ -11,12 +11,7 @@ title: Hantering av fel
 weight: 16
 ---
 
-## Vad & Varför?
-
-Att hantera fel i C# handlar om att hantera det oväntade—som att snubbla på sina egna skosnören. Program kan snubbla på dåliga data eller ostadiga anslutningar. Vi hanterar fel för att förhindra att vår mjukvara "ansiktet först" i marken, och låter den återhämta sig anständigt.
-
 ## Hur gör man:
-
 Låt oss börja med en try-catch-block. Det är som att sätta ett säkerhetsnät under en lindansare. Om de halkar faller de inte pladask—de fångas upp.
 
 ```C#
@@ -53,7 +48,6 @@ try {
 ```
 
 ## Djupdykning
-
 Felhantering har funnits i C# sedan dess födelse. Över tid har det utvecklats. På den gamla goda tiden förlitade sig programmerare på returkoder eller globala flaggor för att signalera problem—klumpigt och felbenäget.
 
 C# använder undantag, en mer modern metod. Ett undantag kastas när något oväntat händer, precis som att kasta en flagga på spelplanen i amerikansk fotboll. Strukturerad undantagshantering med try, catch och finally-block gör hantering av dessa ögonblick klarare och renare än gammaldags felkontroll.
@@ -63,6 +57,5 @@ Alternativ? Visst. Det finns `UnhandledExceptionEventHandler` för undantag som 
 Implementeringsdetaljer—liknande det finstilta—är viktigt. Undantag kan vara kostsamma, och dra ner prestandan om de kastas hej vilt. Så, vi använder dem för exceptionella fall, inte för daglig logikkontroll.
 
 ## Se även
-
 - [Officiell dokumentation om undantag i C#](https://docs.microsoft.com/sv-se/dotnet/csharp/fundamentals/exceptions/exception-handling)
 - [Bästa praxis för felhantering i C#](https://docs.microsoft.com/sv-se/dotnet/standard/exceptions/best-practices-for-exceptions)

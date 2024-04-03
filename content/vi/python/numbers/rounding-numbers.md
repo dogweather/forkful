@@ -15,9 +15,6 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Gì và Tại Sao?
-Làm tròn số có nghĩa là điều chỉnh chúng để chúng gần với một giá trị đơn giản hoặc quan trọng hơn. Các lập trình viên làm tròn số để đơn giản hóa kết quả, giới hạn số chữ số thập phân để hiển thị hoặc vì một số mục đích toán học nhất định.
-
 ## Cách thực hiện:
 Dưới đây là thông tin cơ bản về việc làm tròn số trong Python:
 

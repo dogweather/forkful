@@ -9,14 +9,13 @@ title: "\u041F\u043E\u0447\u0438\u043D\u0430\u0454\u043C\u043E \u043D\u043E\u043
 weight: 1
 ---
 
-## What & Why?
 ## Що та Чому?
-
 Starting a new project in Elm is about laying the foundation. Developers do this to transform ideas into working software that's reliable and maintainable.
 
 ## How to:
-## Як це зробити:
 
+
+## Як це зробити:
 First things first, you'll need Elm installed. Then, kick things off with:
 
 ```Elm
@@ -45,8 +44,9 @@ elm make src/Main.elm --output=main.html
 Open `main.html` in a browser. Voilà, "Привіт, світе!" on your screen.
 
 ## Deep Dive:
-## Занурення в глибину:
 
+
+## Занурення в глибину:
 Elm came around in 2012, dealing a fresh hand to web development. It's a functional language that compiles to JavaScript, aiming for no runtime exceptions. 
 
 Alternatives? Sure - you've got React with JavaScript or TypeScript, or even PureScript. But Elm's strong typing and simplicity win many hearts.
@@ -54,8 +54,9 @@ Alternatives? Sure - you've got React with JavaScript or TypeScript, or even Pur
 Implementation details? Elm's architecture enforces a model-view-update pattern. This structure keeps things predictable and debuggable—an ally for large-scale apps.
 
 ## See Also:
-## Дивись також:
 
+
+## Дивись також:
 - Official Elm Guide: [guide.elm-lang.org](https://guide.elm-lang.org/)
 - Elm Packages: [package.elm-lang.org](https://package.elm-lang.org/)
 

@@ -11,9 +11,6 @@ title: Koodin refaktorointi
 weight: 19
 ---
 
-## Mikä & Miksi?
-Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia uudelleenrakennetaan muuttamatta sen ulkoista käyttäytymistä. Ohjelmoijat tekevät sitä siistiäkseen koodikantaa, parantaakseen luettavuutta, ylläpidettävyyttä ja valmistaakseen tietä tuleville ominaisuuksille mahdollisimman vähäisellä teknisellä velalla.
-
 ## Kuinka:
 Aloitetaan perus Swift-esimerkillä, jossa meillä on toistuvaa koodia:
 

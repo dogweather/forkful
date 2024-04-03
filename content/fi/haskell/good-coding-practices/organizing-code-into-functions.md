@@ -11,9 +11,6 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mikä & Miksi?
-Koodin järjestäminen funktioihin Haskellissa tarkoittaa koodin pilkkomista uudelleenkäytettäviin, nimettyihin lohkoihin. Miksi? Se pitää koodisi DRY:nä (Don't Repeat Yourself, Älä toista itseäsi), tekee siitä luettavampaa ja helpommin debugattavaa.
-
 ## Miten:
 Tässä on, miten voit kirjoittaa ja käyttää funktioita Haskellissa:
 

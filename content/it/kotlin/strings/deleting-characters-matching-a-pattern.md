@@ -11,9 +11,6 @@ title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---
 
-## What & Why? (Cosa e Perché?)
-Rimuovere caratteri che corrispondono a un modello è il processo di eliminare sequenze specifiche di caratteri da una stringa. I programmatori lo fanno per pulire dati, manipolare testi o preparare input per altri sistemi.
-
 ## How to: (Come fare)
 In Kotlin puoi usare la funzione `replace` con una regex (Regular Expression) per cancellare tutti i caratteri che matchano un certo pattern. Guarda l'esempio:
 

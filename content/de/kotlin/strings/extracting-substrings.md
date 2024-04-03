@@ -11,9 +11,6 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## Was & Warum?
-Das Extrahieren von Teil-Strings ermöglicht es, spezifische Segmente aus einem größeren String herauszuschneiden. Programmierer nutzen dies, um Daten zu verarbeiten, Texte zu analysieren oder Formatierungen anzupassen.
-
 ## So geht's:
 ```kotlin
 fun main() {

@@ -11,12 +11,7 @@ title: "Feilh\xE5ndtering"
 weight: 16
 ---
 
-## Hva og hvorfor?
-
-Feilhåndtering går ut på å forvente det uventede i koden - å håndtere feil og problemer på en smidig måte uten å krasje. Programmerere gjør dette for å kontrollere flyten når ting går galt, og for å holde brukeropplevelsen jevn.
-
 ## Hvordan gjøre det:
-
 Ruby bruker `begin`, `rescue`, `ensure` og `end` for å håndtere feil. Du omslutter risikofylt kode med `begin` og `end`. Hvis en feil oppstår, trer `rescue` i kraft.
 
 ```Ruby
@@ -37,7 +32,6 @@ Dette kjører alltid, uansett feil eller ikke.
 ```
 
 ## Dypdykk
-
 Historisk har feilhåndtering i programmeringsspråk utviklet seg betydelig, med tidlige språk som ofte hadde primitive eller ikke-eksisterende mekanismer. Rubys unntakshåndtering er inspirert av språk som Python og Smalltalk.
 
 Alternativer til `begin-rescue` i Ruby inkluderer bruk av `rescue` i metodedefinisjoner eller å bruke `throw` og `catch` for ikke-standard flytkontroll, selv om de ikke brukes for typisk feilhåndtering.
@@ -45,6 +39,5 @@ Alternativer til `begin-rescue` i Ruby inkluderer bruk av `rescue` i metodedefin
 En interessant detalj: Unntak i Ruby er objekter (instanser av `Exception`-klassen og dens etterkommere), så du kan definere egendefinerte feilklasser og gjøre mer enn bare å logge feil – du kan bære med deg rik tilstand rundt programmet for mer robust feilhåndtering.
 
 ## Se også
-
 - Ruby-dokumentasjonen om unntak og feilhåndtering: [ruby-doc.org](https://ruby-doc.org/core-3.1.0/doc/syntax/exceptions_rdoc.html)
 - En detaljert veiledning om beste praksiser for feilhåndtering i Ruby: [thoughtbot.com](https://thoughtbot.com/blog/rescue-standarderror-not-exception)

@@ -11,9 +11,6 @@ title: Lokitus
 weight: 17
 ---
 
-## Mikä ja miksi?
-Lokit ovat käytännössä murupolkuja koodisi läpi - ne kertovat, mitä skriptillesi tapahtuu, kun se on "villissä luonnossa" suorituksessa. Ohjelmoijat lokittavat vianetsintää, sovelluskäyttäytymisen seuraamista, suorituskyvyn monitorointia ja mahdollisten ongelmien tarkkailua varten.
-
 ## Kuinka:
 Tässä vinkkejä peruslokituksen sisällyttämiseksi skripteihisi:
 

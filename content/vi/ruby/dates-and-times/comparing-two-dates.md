@@ -15,12 +15,7 @@ title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---
 
-## Cái gì & Tại sao?
-
-So sánh hai ngày tức là kiểm tra xem chúng có bằng nhau không, hoặc tìm hiểu xem cái nào đến trước hoặc sau cái kia. Lập trình viên làm điều này để theo dõi sự kiện, xử lý đặt chỗ, sắp xếp dòng thời gian, và bất kỳ nhiệm vụ nào mà thứ tự thời gian có ý nghĩa.
-
 ## Cách thực hiện:
-
 Ruby làm cho cuộc sống của chúng ta trở nên đơn giản hơn với lớp Date. Hãy xem nó hoạt động như thế nào.
 
 ```ruby
@@ -38,7 +33,6 @@ puts date1 >= Date.today # Đầu ra: tùy thuộc vào ngày hôm nay
 ```
 
 ## Sâu hơn
-
 So sánh ngày không phải là điều mới. Nó cơ bản như so sánh số nguyên, nhưng khó hơn vì ngày có các phần—ngày, tháng, năm. Trong Ruby, lớp Date (từ thư viện chuẩn) gánh vác, xử lý với tháng, năm nhuận, v.v.
 
 Bạn đã thấy các so sánh cơ bản: `==`, `!=`, `<`, `>`, `<=`, `>=`. Nhưng Ruby còn nhiều điều hơn nữa ẩn bên dưới.
@@ -59,7 +53,6 @@ Các phương án thay thế cho lớp Date bao gồm:
 So sánh trở nên phức tạp nhanh chóng. Nếu bạn đang lên lịch và cần so sánh các phạm vi ngày, hoặc xử lý các sự kiện định kỳ? Các trừu tượng hóa cấp cao hơn được xây dựng trên Date và Time của Ruby thường là cần thiết. Phương thức `between?` của ActiveRecord hoặc các gem như 'IceCube' cho các sự kiện định kỳ có thể tiết kiệm rất nhiều thời gian và tránh được nhức đầu.
 
 ## Xem thêm
-
 - Mở rộng của ActiveSupport: [Active Support Core Extensions](https://edgeguides.rubyonrails.org/active_support_core_extensions.html)
 - Gem 'IceCube' cho các sự kiện định kỳ: [IceCube](https://github.com/seejohnrun/ice_cube)
 - Hướng dẫn toàn diện về múi giờ trong Ruby: [Hướng dẫn về múi giờ](https://thoughtbot.com/blog/its-about-time-zones)

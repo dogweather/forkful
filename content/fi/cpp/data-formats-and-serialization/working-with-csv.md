@@ -13,14 +13,10 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä & Miksi?
-
-CSV-tiedostojen (pilkuilla erotetut arvot) käsittely liittyy datan käsittelyyn ja muokkaamiseen yksinkertaisessa tekstiformaatissa, jossa jokainen tekstirivi edustaa taulukon riviä ja pilkut erottavat yksittäiset sarakkeet. Ohjelmoijat hyödyntävät tätä tuodakseen, viedäkseen ja hallinnoidakseen dataa eri järjestelmien välillä, koska CSV:n laaja hyväksyntä kevyenä, ihmisen luettavana datanvaihtoformaatina.
-
 ## Kuinka tehdä:
 
-### CSV-tiedoston lukeminen käyttäen C++ Standard Libraryä:
 
+### CSV-tiedoston lukeminen käyttäen C++ Standard Libraryä:
 ```cpp
 #include <fstream>
 #include <iostream>
@@ -52,7 +48,6 @@ int main() {
 ```
 
 ### Kirjoittaminen CSV-tiedostoon:
-
 ```cpp
 #include <fstream>
 #include <vector>
@@ -78,7 +73,6 @@ int main() {
 ```
 
 ### Kolmannen osapuolen kirjaston käyttö: `csv2`:
-
 Vaikka C++ Standard Library tarjoaa perustyökalut tiedostojen ja merkkijonojen käsittelyyn, kolmannen osapuolen kirjastojen hyödyntäminen voi yksinkertaistaa CSV-käsittelyä. Yksi tällainen kirjasto on `csv2`, joka tunnetaan sen helppokäyttöisyydestä ja tehokkuudesta.
 
 - Asennus: Tyypillisesti asennettu paketinhallintajärjestelmien kuten Conan kautta tai suoraan sen GitHub-repositoriosta.

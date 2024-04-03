@@ -11,9 +11,6 @@ title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---
 
-## Co i Dlaczego?
-Zamiana daty na napis (string) pozwala na łatwe wyświetlenie i zapisanie daty w czytelnej formie tekstowej. Programiści korzystają z tej konwersji, by manipulować datami i łatwo je przedstawiać użytkownikom.
-
 ## Jak to zrobić:
 ```python
 from datetime import datetime
@@ -36,7 +33,6 @@ Konwersja daty na napis ma długa historię, gdzie tradycyjnie używano funkcji 
 Formatowanie daty implementowane jest przez obiekty typu datetime. Zawierają one metody, jak `strftime`, która przyjmuje łańcuch formatujący składający się z dyrektyw rozpoczynających się od znaku `%`, na przykład `%Y` dla pełnego roku, `%m` dla miesiąca i `%d` dla dnia.
 
 ## Zobacz także
-
 - Dokumentacja metody `strftime`: https://docs.python.org/3/library/datetime.html#datetime.date.strftime
 - Biblioteka `arrow`: https://arrow.readthedocs.io/
 - Biblioteka `dateutil`: https://dateutil.readthedocs.io/

@@ -16,9 +16,6 @@ title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---
 
-## Cái gì & Tại sao?
-Chia code thành các hàm giống như việc sắp xếp các viên LEGO vào trong các hộp — làm cho việc tìm kiếm và sử dụng chúng trở nên dễ dàng hơn. Chúng ta làm điều này để tránh lặp lại, đơn giản hóa việc hiểu và làm cho việc bảo trì ít đau đầu hơn.
-
 ## Làm thế nào:
 Hãy tưởng tượng bạn có đoạn code in lời chào nhiều lần. Không có hàm, nó sẽ là một mớ hỗn độn. Có hàm, mọi thứ sẽ gọn gàng.
 

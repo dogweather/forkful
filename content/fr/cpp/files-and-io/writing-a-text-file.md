@@ -16,14 +16,10 @@ title: "R\xE9diger un fichier texte"
 weight: 24
 ---
 
-## Quoi et Pourquoi ?
-Écrire dans un fichier texte en C++ implique de créer ou d'ouvrir un fichier, puis d'y écrire des données, ce qui est une tâche fondamentale pour les applications nécessitant de conserver des données, telles que des journaux, du contenu généré par les utilisateurs ou des paramètres de configuration. Les programmeurs font cela pour sauvegarder les données générées pendant l'exécution d'un programme ou pour exporter des données à utiliser par d'autres programmes ou utilisateurs.
-
 ## Comment faire :
 C++ offre plusieurs moyens d'écrire dans un fichier texte, mais l'une des méthodes les plus directes est d'utiliser la bibliothèque `<fstream>` qui fournit la classe `ofstream` (flux de fichier de sortie) conçue pour les opérations d'écriture de fichiers.
 
 ### Exemple utilisant `<fstream>` :
-
 ```cpp
 #include <fstream>
 #include <iostream>
@@ -50,7 +46,6 @@ Bonjour, monde !
 Lorsque les données sont plus complexes ou qu'un contrôle plus poussé du processus d'écriture est nécessaire, les programmeurs peuvent se tourner vers des bibliothèques tierces telles que Boost Filesystem.
 
 ### Exemple utilisant Boost Filesystem :
-
 Pour utiliser Boost pour les opérations sur fichier, vous devez d'abord installer les bibliothèques Boost. L'exemple suivant montre comment créer et écrire dans un fichier en utilisant `boost::filesystem` et `boost::iostreams`.
 
 ```cpp

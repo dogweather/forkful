@@ -11,9 +11,6 @@ title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---
 
-## Was & Warum?
-String-Konkatenation ist das Zusammenfügen von zwei oder mehreren Zeichenketten (Strings). Programmierer nutzen das, um dynamische Texte zu erzeugen oder Daten sinnvoll zu formatieren.
-
 ## How to:
 Lua macht's einfach. Nehmen wir an, du hast zwei Strings und willst sie zusammenfügen. Hier ist, wie das geht:
 

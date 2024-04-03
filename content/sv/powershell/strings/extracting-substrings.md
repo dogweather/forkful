@@ -11,9 +11,6 @@ title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---
 
-## Vad & Varför?
-Att extrahera delsträngar innebär att plocka ut specifika delar ur en längre textsträng. Programmerare gör det för att isolera relevant data, som användarnamn eller datum, från större textmassor.
-
 ## Hur gör man:
 Låt oss dra några snabba exempel:
 

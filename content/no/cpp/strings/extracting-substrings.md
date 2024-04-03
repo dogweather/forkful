@@ -10,9 +10,6 @@ title: Uthenting av delstrenger
 weight: 6
 ---
 
-## What & Why? (Hva og Hvorfor?)
-Å trekke ut understrenger innebærer å hente en del av en tekststreng. Dette brukes for å bearbeide eller analysere spesifikke datasegmenter fra en større tekstmasse.
-
 ## How to: (Hvordan:)
 ```C++
 #include <iostream>

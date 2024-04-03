@@ -11,9 +11,6 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-Parsing a date from a string is about converting text representing a date into a `Date` or `DateTime` object that Ruby understands. Programmers do this to perform operations like comparisons, calculations, or formatting on dates, which are common tasks in applications dealing with scheduling, analytics, or data processing.
-
 ## How to:
 In Ruby, the standard library provides direct ways to parse dates from strings using the `Date` and `DateTime` classes. Here’s how you do it using Ruby's built-in methods:
 
@@ -44,7 +41,6 @@ puts parsed_date_custom
 ```
 
 ### Using third-party libraries:
-
 While Ruby's built-in capabilities are powerful, sometimes you might prefer third-party libraries for additional features or simpler syntax. One popular choice is the `Chronic` gem for natural language parsing:
 
 1. First, add Chronic to your Gemfile and run `bundle install`:

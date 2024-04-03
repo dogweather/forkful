@@ -16,12 +16,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---
 
-## Cái gì & Tại sao?
-
-JSON (JavaScript Object Notation) là một định dạng trao đổi dữ liệu nhẹ, dễ đọc và viết đối với con người, dễ phân tích và tạo ra bởi máy. Các lập trình viên sử dụng JSON để truyền dữ liệu giữa máy chủ và ứng dụng web hoặc để lưu trữ thông tin một cách có cấu trúc, có thể truy cập trong nhiều môi trường lập trình, bao gồm Visual Basic for Applications (VBA).
-
 ## Cách thực hiện:
-
 VBA không hỗ trợ phân tích cú pháp JSON một cách tự nhiên, vì vậy chúng ta sẽ sử dụng ngôn ngữ kịch bản như JScript (thông qua đối tượng ScriptControl) để phân tích cú pháp chuỗi JSON và xây dựng đối tượng JSON. Dưới đây là cách bạn có thể phân tích cú pháp một chuỗi JSON trong VBA:
 
 ```basic
@@ -61,7 +56,6 @@ End Sub
 ```
 
 ## Sâu hơn
-
 Các phương pháp được trình bày tận dụng ScriptControl để xử lý JSON, cơ bản là ủy thác công việc cho một động cơ JavaScript. Đây là một giải pháp sáng tạo nhưng không nhất thiết là cách hiệu quả hoặc hiện đại nhất để làm việc với JSON trong bối cảnh VBA. Trong các ứng dụng phức tạp hơn, phương pháp này có thể trở nên cồng kềnh và mang lại gánh nặng về hiệu suất hoặc những lo ngại về bảo mật, vì ScriptControl thực thi trong một môi trường có quyền truy cập đầy đủ vào máy tính chủ.
 
 Các môi trường lập trình khác, như Python hoặc JavaScript, cung cấp hỗ trợ sẵn có cho JSON, làm cho chúng phù hợp hơn cho các ứng dụng cần thao tác JSON một cách rộng rãi. Những ngôn ngữ này cung cấp thư viện toàn diện hỗ trợ không chỉ phân tích cú pháp và tạo ra mà còn truy vấn và định dạng dữ liệu JSON.

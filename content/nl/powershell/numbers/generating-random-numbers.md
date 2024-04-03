@@ -12,9 +12,6 @@ title: Willekeurige getallen genereren
 weight: 12
 ---
 
-## Wat & Waarom?
-Het genereren van willekeurige getallen in PowerShell gaat over het creëren van onvoorspelbare numerieke waarden binnen een gespecificeerd bereik. Programmeurs gebruiken deze mogelijkheid om uiteenlopende redenen, waaronder testen, simulatie en beveiligingsdoeleinden, waar onvoorspelbaarheid of het nabootsen van real-world willekeur cruciaal is.
-
 ## Hoe te:
 PowerShell biedt een eenvoudige aanpak om willekeurige getallen te genereren met behulp van de `Get-Random` cmdlet. Deze cmdlet kan willekeurige getallen produceren binnen een standaardbereik of een gespecificeerd bereik.
 

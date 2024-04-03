@@ -11,9 +11,6 @@ title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---
 
-## Mikä & Miksi?
-Kompleksiluvut laajentavat ajatusta yksiulotteisista numeroviivoista kaksiulotteiseen kompleksitasoon. Ohjelmoijat käyttävät niitä aloilla kuten insinööritiede, fysiikka ja grafiikka laskelmissa, jotka vaativat kahta komponenttia, kuten signaaleja tai kiertoliikkeitä.
-
 ## Kuinka:
 Fishissä käsittelemme kompleksilukuja käyttämällä `math`-komentoa reaaliosille ja imaginaariosille. Tässä alkuun:
 

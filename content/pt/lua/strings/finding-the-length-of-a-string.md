@@ -10,9 +10,6 @@ title: Descobrindo o comprimento de uma string
 weight: 7
 ---
 
-## O Que & Porquê?
-Descobrir o comprimento de uma string é basicamente saber quantos caracteres ela possui. Programadores fazem isso para validar entradas, delimitar processos ou manipular textos.
-
 ## Como Fazer:
 O Lua facilita a vida nesse aspecto. Aqui está como você pega esse número:
 

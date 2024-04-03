@@ -16,9 +16,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---
 
-## Cái gì và Tại sao?
-Chuyển đổi một ngày thành một chuỗi có nghĩa là biểu diễn một khoảnh khắc cụ thể trong định dạng dễ đọc cho con người. Lập trình viên thực hiện điều này để hiển thị ngày cho người dùng hoặc để chuẩn hóa chúng cho việc lưu trữ và truyền dữ liệu.
-
 ## Làm thế nào:
 Trong Kotlin, bạn có thể chuyển đổi một `Date` thành `String` sử dụng lớp `SimpleDateFormat`. Hãy cùng viết một ít mã:
 

@@ -14,12 +14,7 @@ title: Sjekke om en katalog eksisterer
 weight: 20
 ---
 
-## Hva & hvorfor?
-
-Å sjekke om en mappe eksisterer i Visual Basic for Applications (VBA) handler om å verifisere tilstedeværelsen av en mappe i filsystemet før man utfører operasjoner som å lagre filer eller opprette nye mapper. Programmerere gjør dette for å unngå kjøretidsfeil og sikre at koden deres samhandler med filsystemet effektivt og korrekt.
-
 ## Hvordan:
-
 I VBA, for å sjekke om en mappe eksisterer, bruker du vanligvis `Dir`-funksjonen kombinert med `vbDirectory`-attributtet. Denne tilnærmingen lar deg sjekke for eksistensen av en mappe ved å spesifisere stien til den. Slik kan du gjøre det:
 
 ```basic
@@ -46,7 +41,6 @@ Mappen eksisterer.
 ```
 
 ## Dypdykk
-
 Å sjekke om en mappe eksisterer er en grunnleggende oppgave i mange programmeringsspråk, ikke bare i VBA. Metoden beskrevet ovenfor ved hjelp av `Dir` er enkel og effektiv for de fleste formål i VBA. Det er imidlertid verdt å merke seg at denne tilnærmingen kan ha begrensninger, som i tilfeller av nettverksstier og håndtering av tillatelser, noe som av og til kan gi falske negative eller positive resultater.
 
 Historisk sett har metoder for tilgang til filsystemer utviklet seg på tvers av forskjellige programmeringsspråk, med nyere som tilbyr objektorienterte tilnærminger. For eksempel, i .NET-språk som VB.NET, kunne man bruke `System.IO.Directory.Exists(path)` for en mer grei og muligens kraftigere måte å sjekke eksistensen av mapper, som drar nytte av unntakshåndtering og rikere returinformasjon.

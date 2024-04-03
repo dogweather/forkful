@@ -10,9 +10,6 @@ title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---
 
-## What & Why?
-Inviare una richiesta HTTP con autenticazione di base significa inserire credenziali utente in una richiesta per accedere a risorse protette. I programmatori lo fanno per interagire con API o servizi web che richiedono sicurezza.
-
 ## How to:
 ```PowerShell
 # Definisci le credenziali

@@ -16,9 +16,6 @@ title: "\u5728\u7F16\u7A0B\u4E2D\u4F7F\u7528\u4EA4\u4E92\u5F0FShell\uFF08REPL\uF
 weight: 34
 ---
 
-## 什么以及为什么？
-Haskell中的交互式shell，或者称为REPL（读取-求值-打印循环），让你能够实时运行代码片段。它是一个用于快速反馈、测试函数和学习语言的游乐场。
-
 ## 如何操作：
 要启动GHCi（Glasgow Haskell Compiler的交互式环境），只需在终端中输入`ghci`。以下是如何使用它的方法：
 

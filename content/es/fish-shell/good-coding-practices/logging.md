@@ -11,9 +11,6 @@ title: "Registro de Actividades en Programaci\xF3n"
 weight: 17
 ---
 
-## ¿Qué y por qué?
-Registrar es esencialmente anotar lo que tu aplicación está haciendo: un diario, por así decirlo, pero para el código. Los programadores lo hacen para llevar un seguimiento de los detalles, como los cambios de estado, eventos del sistema y errores molestos, asegurándose de que ningún contratiempo pase desapercibido.
-
 ## Cómo hacerlo:
 En Fish, registrar puede ser tan simple como redirigir las salidas estándar y de error a un archivo. Vamos a hacer una entrada en el registro para los tiempos de inicio y finalización de nuestro script.
 

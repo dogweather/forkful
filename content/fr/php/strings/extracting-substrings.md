@@ -12,9 +12,6 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## What & Why?
-Extraire des sous-chaînes, c'est comme sculpter un petit bout de bois d'un gros tronc; en PHP, cela signifie prendre une partie d'une chaîne de caractères. Les développeurs font ça pour analyser des données, valider des entrées ou simplement afficher quelque chose de spécifique à un utilisateur.
-
 ## How to:
 PHP utilise la fonction `substr()` pour extraire des sous-chaînes. Simple, droit au but. Voici comment ça fonctionne :
 

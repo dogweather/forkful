@@ -12,9 +12,6 @@ title: Debug-output afdrukken
 weight: 33
 ---
 
-## Wat & Waarom?
-Debug output afdrukken is alsof je een gesprek met je code voert; je strooit printopdrachten in om te controleren hoe het gaat en wat het 'denkt'. Programmeurs doen dit om fouten op te sporen of om ervoor te zorgen dat alles soepel verloopt—net alsof je je code een snelle controle geeft.
-
 ## Hoe:
 Hier is een fragment dat je laat zien hoe je een eenvoudige debugboodschap naar de console afdrukt.
 

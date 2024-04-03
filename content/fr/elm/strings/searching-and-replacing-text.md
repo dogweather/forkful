@@ -11,9 +11,6 @@ title: Recherche et remplacement de texte
 weight: 10
 ---
 
-## What & Why? 
-Chercher et remplacer du texte, c'est juste modifier une chaîne par une autre dans un bloc de texte. Les programmeurs font ça souvent pour corriger des erreurs, mettre à jour des informations ou manipuler des données.
-
 ## How to:
 Elm utilise des fonctions comme `String.replace` pour chercher et remplacer du texte. Voici un petit exemple :
 

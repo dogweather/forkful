@@ -10,9 +10,6 @@ title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---
 
-## Cos'è & Perché?
-REPL sta per Read-Eval-Print Loop (Ciclo Leggi-Valuta-Stampa), un ambiente interattivo dove si può testare rapidamente del codice. I programmatori lo utilizzano per sperimentare, fare debug e apprendere le peculiarità di un linguaggio.
-
 ## Come fare:
 Per accedere al REPL di Lua, basta inserire `lua` nel proprio terminale. Ecco un esempio di sessione:
 

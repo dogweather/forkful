@@ -11,12 +11,7 @@ title: Organizacja kodu w funkcje
 weight: 18
 ---
 
-## Co i dlaczego?
-
-Organizowanie kodu w funkcje polega na grupowaniu fragmentów kodu, które wykonują określone zadania i nadawaniu im nazwy. Robi się to, aby kod był wielokrotnego użytku, czytelny i łatwy w utrzymaniu. Zamiast przepisywać ten sam kod, wywołaj funkcję. Chcesz dokonać rozwiązywania problemów lub ulepszyć? Zmodyfikuj funkcję bez przekopywania się przez stosy skryptów.
-
 ## Jak to zrobić:
-
 Napiszmy funkcję do obliczania sumy dwóch liczb. Proste, ale ilustruje to, o co chodzi.
 
 ```PowerShell
@@ -40,7 +35,6 @@ Suma wynosi 15
 ```
 
 ## Dogłębna analiza
-
 Funkcje w PowerShellu, jak w większości języków, nie są nowością. Kod kompartmentalizujemy od czasów Fortranu. Chodzi o 'nie wynalezanie koła na nowo'. Alternatywy? Pewnie, skrypty lub polecenia cmdlet. Ale brakuje im schludności i kontekstowej czułości funkcji w skryptach.
 
 Implementacja? Funkcje mogą być podstawowe jak w naszym przykładzie lub złożone ze zmiennymi zasięgami, wejściem potokowym i więcej. Weźmy na przykład 'Zaawansowane funkcje'. Naśladują cmdlety z parametrami mającymi atrybuty, takie jak `[Parameter(Mandatory=$true)]`. To tylko przykład elastyczności PowerShellu.

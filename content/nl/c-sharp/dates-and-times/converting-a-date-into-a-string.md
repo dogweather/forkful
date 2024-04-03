@@ -12,12 +12,7 @@ title: Een datum converteren naar een string
 weight: 28
 ---
 
-## Wat & Waarom?
-
-Het omzetten van een datum naar een tekenreeks in C# houdt in dat het formaat van een DateTime-object wordt veranderd naar een tekstweergave. Programmeurs doen dit om data weer te geven in een gebruiksvriendelijk formaat of om de gegevens te serialiseren voor opslag en overdracht.
-
 ## Hoe te:
-
 In C# heb je het `DateTime`-object en een heleboel manieren om het om te zetten in een tekenreeks. Hier zijn er een paar:
 
 ```csharp
@@ -32,7 +27,6 @@ Console.WriteLine(withCulture); // Uitvoer: "4/1/2023"
 ```
 
 ## Diepgaand
-
 Vroeger was het manipuleren van data en tekenreeksen lastiger. Vandaag de dag biedt C#'s `DateTime` `.ToString()` met overloads voor cultuur en formaat. De `IFormatProvider` interface, zoals `CultureInfo`, regelt cultuurspecifieke opmaak.
 
 Alternatieven? Zeker! `String.Format` en interpolatie (`$"{now:yyyy-MM-dd}"`) zijn opties voor het invoegen van datums in tekenreeksen met context. `DateTimeOffset` is handig voor tijdzonespecificaties.
@@ -40,7 +34,6 @@ Alternatieven? Zeker! `String.Format` en interpolatie (`$"{now:yyyy-MM-dd}"`) zi
 Wat betreft de implementatie, onthoud dat `DateTime` een struct is, dus een waarde type. Het omzetten ervan verandert het origineel niet: onveranderlijkheid voor de winst. Kies je tekenreeksformaat verstandig, afhankelijk van je publiek (eindgebruikers) en het systeem waarmee je interfaceert (databases, API's).
 
 ## Zie Ook
-
 - [DateTime.ToString Methode](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring)
 - [Aangepaste datum- en tijdformaattekenreeksen](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
 - [CultureInfo Klasse](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo)

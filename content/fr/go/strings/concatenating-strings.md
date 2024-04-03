@@ -13,12 +13,7 @@ title: "Concat\xE9nation de cha\xEEnes"
 weight: 3
 ---
 
-## Quoi & Pourquoi ?
-
-La concaténation de chaînes implique de joindre deux chaînes ou plus bout à bout pour former une nouvelle chaîne. Les programmeurs font cela pour générer du texte dynamiquement, comme construire des messages, des chemins ou des requêtes complexes, rendant les programmes plus interactifs et réactifs.
-
 ## Comment faire :
-
 En Go, il existe plusieurs façons de concaténer des chaînes. Voici un aperçu de certaines méthodes courantes avec des exemples :
 
 ### En utilisant l'opérateur `+` :
@@ -62,7 +57,6 @@ fmt.Println(path) // path/to/file
 ```
 
 ## Plongée en profondeur
-
 La concaténation de chaînes, bien qu'opération apparemment simple, touche à des aspects plus profonds de la manière dont Go gère les chaînes. En Go, les chaînes sont immuables ; cela signifie que chaque opération de concaténation crée une nouvelle chaîne. Cela peut entraîner des problèmes de performance lors de la concaténation d'un grand nombre de chaînes ou lorsqu'elle est effectuée dans des boucles serrées, en raison de l'allocation et de la copie fréquentes de la mémoire.
 
 Historiquement, les langages ont abordé l'immuabilité des chaînes et l'efficacité de la concaténation de différentes manières, et l'approche de Go avec `strings.Builder` et `strings.Join` offre aux programmeurs des outils qui équilibrent la facilité d'utilisation et la performance. Le type `strings.Builder`, introduit dans Go 1.10, est particulièrement remarquable car il offre un moyen efficace de construire des chaînes sans encourir le coût de multiples allocations de chaînes. Il le fait en allouant un tampon qui grandit selon les besoins, dans lequel les chaînes sont ajoutées.

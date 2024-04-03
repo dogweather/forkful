@@ -16,9 +16,6 @@ title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE3
 weight: 39
 ---
 
-## 무엇 & 왜?
-TOML은 Tom's Obvious, Minimal Language의 약자로 JSON이나 YAML과 같은 데이터 직렬화 포맷입니다. 프로그래머들은 그것의 인간이 읽기 쉬움과 데이터 타입으로의 직관적인 매핑 때문에 설정 파일과 데이터 교환을 위한 주요 선택지로 사용합니다.
-
 ## 방법:
 먼저, TOML 파서가 필요합니다. `@iarna/toml`은 인기 있는 선택입니다. npm을 통해 설치하세요: `npm install @iarna/toml --save`. 다음은 TOML 파일을 읽고 JavaScript 객체로 파싱하는 방법입니다:
 

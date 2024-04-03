@@ -11,9 +11,6 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## Vad & Varför?
-Läsning av textfiler handlar om att få tillgång till information sparad på servern. Programmerare gör det för att hantera data, konfigurera system eller helt enkelt läsa innehåll dynamiskt.
-
 ## Hur man gör:
 PHP erbjuder flera funktioner för att läsa textfiler. Här är ett enkelt exempel med `file_get_contents` och `fopen`:
 

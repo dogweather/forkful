@@ -27,12 +27,7 @@ title: "\u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u0442\u0435\u043A\u044
 weight: 24
 ---
 
-## Что и Зачем?
-
-Запись текстового файла на JavaScript обычно означает создание и сохранение данных в файле в формате, удобном для чтения человеком. Программисты делают это для сохранения данных, таких как настройки, логи или вывод пользователей.
-
 ## Как:
-
 JavaScript в браузере не имеет прямого доступа к файловой системе по соображениям безопасности. Но вы можете создать текстовый файл и предложить пользователю сохранить его:
 
 ```javascript
@@ -66,7 +61,6 @@ fs.writeFile('example.txt', 'Привет, мир!', (err) => {
 ```
 
 ## Погружение
-
 Исторически JavaScript был ограничен браузером без доступа к файловой системе. Node.js изменил это, предоставив возможности на стороне сервера.
 
 Альтернативы `fs.writeFile` включают `fs.writeFileSync` для синхронных операций и `fs.promises.writeFile` для асинхронного контроля на основе промисов.
@@ -74,7 +68,6 @@ fs.writeFile('example.txt', 'Привет, мир!', (err) => {
 Методы `fs` в Node обрабатывают буферы и потоки — инструменты для работы с большими файлами и сетевым общением.
 
 ## См. также
-
 - Документация по файловой системе Node.js: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
 - MDN - Blob: [https://developer.mozilla.org/en-US/docs/Web/API/Blob](https://developer.mozilla.org/en-US/docs/Web/API/Blob)
 - Руководство по JavaScript на MDN: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)

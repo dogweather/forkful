@@ -11,9 +11,6 @@ title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---
 
-## O Quê & Porquê?
-Apagar caracteres que correspondem a um padrão é filtrar o que não queremos em uma string. Programadores fazem isso para limpar dados, validar entradas ou preparar textos para processamentos específicos.
-
 ## Como Fazer:
 Para deletar caracteres indesejados em Swift, podemos usar `String` e `CharacterSet`. Veja como:
 

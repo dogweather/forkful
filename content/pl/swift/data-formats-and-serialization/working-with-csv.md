@@ -15,12 +15,7 @@ title: Praca z plikami CSV
 weight: 37
 ---
 
-## Co i dlaczego?
-
-Praca z plikami CSV (wartości oddzielone przecinkami) polega na parsowaniu i generowaniu strukturalnych danych z plików tekstowych, gdzie każda linia reprezentuje rekord, a każdy rekord składa się z pól rozdzielonych przecinkami. Programiści często angażują się w tę czynność, aby łatwo importować, eksportować i manipulować danymi tabelarycznymi, korzystając z formatu, który jest szeroko obsługiwany na różnych platformach i językach programowania, ze względu na jego prostotę i czytelność dla człowieka.
-
 ## Jak to zrobić:
-
 W języku Swift nie ma natywnej obsługi bezpośredniego parsowania plików CSV, ale możesz obsługiwać dane CSV, używając metod `String`, aby rozdzielić zawartość, lub korzystając z bibliotek stron trzecich, takich jak SwiftCSV, dla bardziej uproszczonego podejścia. Oto obie metody:
 
 ### Ręczne parsowanie bez zewnętrznych bibliotek

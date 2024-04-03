@@ -11,9 +11,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## Mikä & Miksi?
-Stringin pituuden selvittäminen tarkoittaa merkkijonon merkkien lukumäärän laskemista. Ohjelmoijat tekevät tämän, kun heidän täytyy käsitellä tekstin pituutta tai leikata ja vertailla merkkijonoja.
-
 ## Kuinka:
 ```kotlin
 fun main() {

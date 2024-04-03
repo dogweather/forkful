@@ -10,12 +10,7 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-
-Writing a text file in Bash allows you to automate data storage, logging, configuration settings, and more. It's a fundamental skill for shell scripting, enabling programmers to save the output of commands, script executions, or user input for reporting, processing, or future execution.
-
 ## How to:
-
 Bash provides straightforward methods for writing to a file. The most common are using redirection operators (`>`, `>>`) and the `tee` command. Here's a quick look at both techniques.
 
 Using redirection, you can write output directly to a file. The `>` operator writes content to a file, replacing it if it already exists, while `>>` appends to an existing file without deleting its content.

@@ -9,9 +9,6 @@ title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---
 
-## Hva & Hvorfor?
-Komplekse tall består av en reell del og en imaginær del. Programmerere bruker dem innen felter som signalbehandling, kvantemekanikk, og når som helst beregningen krever det, fordi vanlige reelle tall bare ikke strekker til.
-
 ## Hvordan:
 Bash støtter ikke komplekse tall naturlig. Du vil ofte bruke et eksternt verktøy som `bc` med dens `-l`-alternativ. Slik knuser du komplekse tall i bash:
 

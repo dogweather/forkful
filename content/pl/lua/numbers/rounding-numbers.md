@@ -11,9 +11,6 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i Dlaczego?
-Zaokrąglanie liczb oznacza dostosowywanie ich do najbliższej liczby całkowitej lub określonego miejsca po przecinku. Jest to podstawowy element w programowaniu służący redukcji złożoności, zwiększaniu wydajności oraz na potrzeby sytuacji, gdy precyzja poza pewnym punktem nie dodaje wartości.
-
 ## Jak to zrobić:
 ```lua
 -- Podstawowe zaokrąglanie w Lua nie jest dostępne od razu, ale można zdefiniować funkcję:

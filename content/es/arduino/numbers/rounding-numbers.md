@@ -11,9 +11,6 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## Qué y Por Qué?
-Redondear números es recortar un decimal a su valor entero más cercano o a un número establecido de decimales. Los programadores redondean los números para hacerlos más fáciles de leer y manejar, especialmente cuando la precisión más allá de cierto punto es innecesaria o podría llevar a errores.
-
 ## Cómo hacerlo:
 En Arduino, puedes redondear números usando funciones incorporadas. Los jugadores clave son `round`, `ceil`, y `floor`. Aquí hay una demostración rápida:
 

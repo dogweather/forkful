@@ -13,9 +13,6 @@ title: Een datum converteren naar een string
 weight: 28
 ---
 
-## Wat & Waarom?
-Een datum naar een string converteren betekent dat je een specifiek moment representeert in een voor mensen leesbaar formaat. Programmeurs doen dit om datums aan gebruikers te tonen of om ze te serialiseren voor opslag en gegevensoverdracht.
-
 ## Hoe te:
 In Kotlin kun je een `Date` naar een `String` converteren met behulp van de `SimpleDateFormat` klasse. Laten we wat code schrijven:
 

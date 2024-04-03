@@ -12,12 +12,7 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Cosa & Perché?
-
-Ottenere la data corrente in C comporta l'accesso alla libreria standard C per recuperare e formattare la data e l'ora correnti del sistema. I programmatori spesso necessitano di questa funzionalità per funzioni di registrazione, marcatura temporale o pianificazione all'interno delle loro applicazioni.
-
 ## Come fare:
-
 In C, l'header `<time.h>` fornisce le funzioni e i tipi necessari per lavorare con date e orari. La funzione `time()` recupera l'ora corrente, mentre `localtime()` converte quest'ora nel fuso orario locale. Per visualizzare la data, utilizziamo `strftime()` per formattarla come una stringa.
 
 Ecco un esempio basilare:
@@ -51,7 +46,6 @@ La data di oggi è 2023-04-12
 ```
 
 ## Approfondimento
-
 La gestione del tempo in C, come facilitata da `<time.h>`, si rifà ai primissimi giorni della lingua e dei sistemi UNIX. È costruita attorno al tipo di dato `time_t`, che rappresenta il tempo corrente come il numero di secondi dall'Epoch Unix (1 gennaio 1970). Sebbene ciò sia efficiente e universalmente compatibile, significa anche che le funzioni temporali della libreria standard C sono intrinsecamente limitate dall'intervallo e dalla risoluzione di `time_t`.
 
 Le applicazioni moderne, specialmente quelle che richiedono timestamp ad alta risoluzione o che trattano date molto lontane nel futuro o nel passato, possono trovare queste limitazioni impegnative. Ad esempio, il problema dell'Anno 2038 è una famosa illustrazione in cui i sistemi che utilizzano un `time_t` a 32-bit andranno in overflow.

@@ -11,12 +11,7 @@ title: Starting a new project
 weight: 1
 ---
 
-## What & Why?
-
-Starting a new project means setting up the initial structure and vital files you’ll need for your application. Programmers initiate new projects to kick off development with a clean slate, tailored to their goals and technologies they plan to use.
-
 ## How to:
-
 Let's get rolling with a Kotlin project using IntelliJ IDEA – a popular IDE for Kotlin.
 
 1. Open IntelliJ IDEA.
@@ -52,7 +47,6 @@ Ready, set, go Kotlin!
 ```
 
 ## Deep Dive
-
 Kotlin is a modern language that runs on the JVM (Java Virtual Machine), designed to be concise and safe. It was created by JetBrains and has been gaining traction, especially for Android app development, since announcing official support by Google in 2017.
 
 Before jumping into a new Kotlin project, understand why you're choosing Kotlin:
@@ -68,7 +62,6 @@ Alternatives to starting a new Kotlin project with IntelliJ IDEA:
 When you start a new project in IntelliJ IDEA, it sets up the necessary Gradle configuration automatically. Gradle is a build automation system that manages dependencies, builds, and tests for your project. This setup allows you to import libraries, define module dependencies, and facilitate builds with ease.
 
 ## See Also
-
 Want to go beyond the basics? Here's where to head next:
 
 - Official Kotlin documentation: [Kotlin Docs](https://kotlinlang.org/docs/home.html)

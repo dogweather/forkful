@@ -12,9 +12,6 @@ title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---
 
-## Wat & Waarom?
-Een interactieve Rust-shell, of REPL (Read-Eval-Print Loop), laat je Rust-code direct uitvoeren, met onmiddellijke resultaten, perfect voor experimenteren of leren. Programmeurs gebruiken het om codefragmenten te testen, te debuggen of gewoon met taalfuncties te spelen zonder de overhead van het compileren van een volledig project.
-
 ## Hoe te gebruiken:
 Momenteel heeft Rust geen officiële REPL die ermee wordt geleverd. Je kunt externe tools gebruiken zoals `evcxr_repl`. Installeer het met Cargo:
 

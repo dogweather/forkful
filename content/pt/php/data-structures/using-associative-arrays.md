@@ -13,12 +13,7 @@ title: Usando arrays associativos
 weight: 15
 ---
 
-## O Que & Por Quê?
-
-Arrays associativos em PHP são como listas superpoderosas onde cada elemento pode ser acessado usando uma chave legível por humanos em vez de apenas números. Os programadores os utilizam para armazenar e manipular dados de maneira mais intuitiva, permitindo um código mais fácil de ler e mais fácil de manter.
-
 ## Como fazer:
-
 No PHP, criar e usar arrays associativos é direto. Aqui está um rápido resumo:
 
 ```PHP
@@ -64,7 +59,6 @@ foreach ($person as $key => $value) {
 Note como as chaves podem ser qualquer string, permitindo que você acesse elementos usando essas chaves em vez de índices numéricos, que podem ser menos significativos e mais difíceis de lembrar.
 
 ## Aprofundando
-
 Arrays associativos no PHP são implementados internamente usando tabelas de hash, que fornecem um acesso muito rápido aos elementos por chave, tornando-os altamente eficientes para muitas tarefas. Essa eficiência, combinada com a facilidade de uso, faz dos arrays associativos uma pedra angular da programação PHP.
 
 Historicamente, os arrays do PHP (tanto indexados quanto associativos) têm sido incrivelmente flexíveis, permitindo que eles sirvam como listas, pilhas, filas e mais. No entanto, essa flexibilidade pode às vezes levar a um código menos eficiente se não utilizado com cuidado.

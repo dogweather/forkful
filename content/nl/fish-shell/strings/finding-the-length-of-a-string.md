@@ -12,9 +12,6 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-De lengte van een reeks vinden betekent het tellen van het aantal karakters erin. Programmeurs doen dit om invoer te valideren, buffers te dimensioneren of door karakters te loopen.
-
 ## Hoe te:
 Hier is hoe je de lengte van een reeks krijgt in Fish:
 

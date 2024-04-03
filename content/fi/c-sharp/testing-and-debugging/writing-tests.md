@@ -14,12 +14,7 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mikä ja miksi?
-
-Testien kirjoittaminen C#:ssa tarkoittaa automatisoitujen skriptien luomista koodisi toiminnallisuuden varmistamiseksi, jotta se käyttäytyy odotetulla tavalla. Ohjelmoijat tekevät sen löytääkseen bugit aikaisin, helpottaakseen koodin uudelleenjärjestelyä ja varmistaakseen, että uudet muutokset eivät riko olemassa olevia toimintoja, mikä lisää ohjelmiston laatua ja luotettavuutta.
-
 ## Miten:
-
 C#-kehittäjät käyttävät pääasiassa NUnit- tai xUnit-kehyksiä testien kirjoittamiseen niiden joustavuuden ja laajan ominaisuusjoukon vuoksi. Tässä on perusesimerkki, jossa NUnitia käytetään yksinkertaisen yhteenlaskufunktion testaamiseen:
 
 1. **Asenna NUnit ja NUnit3TestAdapter** NuGet Package Managerin tai .NET CLI:n kautta:
@@ -73,7 +68,6 @@ dotnet test
 ```
 
 ### Esimerkkituloste:
-
 Olettaen, että testisi läpäisee, sinun pitäisi nähdä tuloste, joka muistuttaa tätä:
 ```
 Test Run Successful.
@@ -83,7 +77,6 @@ Total tests: 1
 ```
 
 ### Käyttäen xUnitia:
-
 Jos mieluummin käytät xUnitia, asennus on samankaltainen kuin NUnitilla. Näin kirjoitat testiesimerkin `Calculator`-luokalle käyttäen xUnitia:
 
 1. **Asenna xUnit ja xUnit.runner.visualstudio**:

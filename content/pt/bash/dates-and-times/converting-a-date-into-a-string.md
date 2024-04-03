@@ -12,9 +12,6 @@ title: Convertendo uma data em uma string
 weight: 28
 ---
 
-## O Que é e Por Que?
-Converter datas em strings é uma maneira de formatar as informações de data e hora em um texto legível ou em um padrão específico para armazenamento e exibição. Programadores fazem isso para facilitar a apresentação de datas ao usuário, para comparação ou armazenagem em banco de dados.
-
 ## Como Fazer:
 Para converter uma data em string, você pode usar o comando `date` no Bash. Abaixo alguns exemplos com diferentes formatos.
 

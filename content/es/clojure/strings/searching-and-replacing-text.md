@@ -11,9 +11,6 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## Qué y Por Qué?
-Buscar y reemplazar texto es una tarea común en programación: consiste en localizar cadenas específicas y sustituirlas por otras. Los programadores lo hacen para modificar código, datos o simplemente para corregir errores de manera eficiente.
-
 ## Cómo Hacerlo:
 ```Clojure
 ;; Ejemplo de búsqueda y reemplazo simple

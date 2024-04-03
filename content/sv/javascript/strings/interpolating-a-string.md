@@ -11,9 +11,6 @@ title: "Interpolera en str\xE4ng"
 weight: 8
 ---
 
-## Vad & Varför?
-Interpolering av strängar låter dig infoga variabler eller uttryck direkt i en sträng. Det förenklar och gör koden mer läsbar när du behöver bygga strängar dynamiskt.
-
 ## Hur gör man:
 ```javascript
 // Exempel med template literals (ES6 och framåt)

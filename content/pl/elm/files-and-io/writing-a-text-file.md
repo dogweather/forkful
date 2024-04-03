@@ -13,12 +13,7 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i dlaczego?
-
-Tworzenie pliku tekstowego w Elm polega na tworzeniu i zapisywaniu danych tekstowych do pliku z aplikacji Elm. Programiści często muszą generować raporty, logi lub eksportować dane w strukturalnym formacie tekstowym (np. JSON, CSV) do wykorzystania w innych aplikacjach lub dla celów ewidencyjnych. Jednak ze względu na architekturę Elma, która skupia się na czystości i bezpieczeństwie, bezpośrednie zapisywanie do pliku - podobnie jak wiele innych efektów ubocznych - jest obsługiwane poprzez komendy do otaczającego środowiska JavaScript.
-
 ## Jak to zrobić:
-
 Ponieważ Elm działa w przeglądarce i jest zaprojektowany jako język programowania bez efektów ubocznych, nie ma bezpośredniego dostępu do systemu plików. Dlatego zapisywanie do pliku zwykle wiąże się z wysłaniem danych do JavaScript przez porty. Oto jak możesz to skonfigurować:
 
 1. **Zdefiniuj moduł portu do wysyłania tekstu do JavaScriptu:**

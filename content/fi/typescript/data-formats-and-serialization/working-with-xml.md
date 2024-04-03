@@ -11,9 +11,6 @@ title: "XML:n k\xE4sittely"
 weight: 40
 ---
 
-## Mikä & Miksi?
-Työskentely XML:n parissa tarkoittaa XML-tiedon jäsentämistä, manipulointia ja kirjoittamista ohjelmoinnin avulla. Ohjelmoijat käsittelevät XML:ää vaihtaakseen tietoja eri järjestelmien välillä, käyttöön konfiguraatiotiedostoissa tai kun työskentelevät standardien, kuten SOAP, parissa, jotka nojaavat XML:ään.
-
 ## Kuinka:
 ```TypeScript
 import { parseString } from 'xml2js';

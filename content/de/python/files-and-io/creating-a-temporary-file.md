@@ -12,9 +12,6 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-## Was & Warum?
-Temporäre Dateien sind kurzlebige Datenbehälter, die während der Laufzeit eines Programms für Datentransfer, Zwischenspeicherungen oder Sicherheitszwecke genutzt werden. Programmierer verwenden sie, um den Arbeitsspeicher zu entlasten, Datenkonflikte zu vermeiden und um sensible Informationen nicht dauerhaft zu speichern.
-
 ## So geht's:
 ```Python
 import tempfile

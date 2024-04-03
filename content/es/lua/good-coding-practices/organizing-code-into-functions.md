@@ -11,9 +11,6 @@ title: "Organizando c\xF3digo en funciones"
 weight: 18
 ---
 
-## ¿Qué y Por Qué?
-Organizar el código en funciones se trata de descomponer tu scripting en pedazos pequeños—piensa en bloques de LEGO funcionales. Lo hacemos para obtener claridad, reusabilidad y cordura. Hace que nuestro código sea ordenado, legible y mantenible.
-
 ## Cómo hacerlo:
 ```Lua
 -- Definir una función simple para saludar

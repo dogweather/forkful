@@ -11,9 +11,6 @@ title: "Convertendo uma string para min\xFAsculas"
 weight: 4
 ---
 
-## O Que é & Porquê?
-Converter uma string para minúsculas significa transformar todos os caracteres alfabéticos da string de maiúsculas para minúsculas. Programadores realizam isso para padronizar dados, simplificar comparações e buscas de texto.
-
 ## Como Fazer:
 ```Arduino
 String mensagem = "Olá, MUNDO!";

@@ -10,9 +10,6 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-Calculating a date in the future or past involves determining a date that is a specified number of days, months, or years away from a given date. Programmers often need this functionality to automate reminders, subscriptions, expiry dates, and scheduling tasks in various applications.
-
 ## How to:
 In Visual Basic for Applications (VBA), the primary function used to calculate future or past dates is `DateAdd()`. This function adds a specified time interval to a date, returning a new date.
 

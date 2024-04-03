@@ -10,9 +10,6 @@ title: Interpolazione di una stringa
 weight: 8
 ---
 
-## What & Why? - Cosa & Perché?
-L'interpolazione di stringhe è l'atto di inserire valori di variabili all'interno di stringhe di testo. I programmatori la usano per costruire messaggi dinamici senza ricorrere a operazioni di concatenazione complicate.
-
 ## How to: - Come fare:
 ```Swift
 let nome = "Mondo"

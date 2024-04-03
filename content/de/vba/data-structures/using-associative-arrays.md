@@ -14,12 +14,7 @@ title: Verwendung von assoziativen Arrays
 weight: 15
 ---
 
-## Was & Warum?
-
-Assoziative Arrays, oft auch als Wörterbücher in Visual Basic für Anwendungen (VBA) bekannt, ermöglichen es Programmierern, Sammlungen von Schlüssel-Wert-Paaren zu erstellen. Diese Funktion ist entscheidend für effiziente Datenspeicherung und -abruf und bietet eine flexiblere und intuitivere Möglichkeit, Daten zu verwalten, als dies mit traditionellen Array-Indizes der Fall ist.
-
 ## Wie geht das:
-
 In VBA bietet das `Dictionary`-Objekt eine Funktionalität, die assoziativen Arrays ähnelt. Um es nutzen zu können, müssen Sie zunächst eine Referenz auf die Microsoft Scripting Runtime hinzufügen:
 
 1. Gehen Sie im VBA-Editor zu Extras > Verweise...
@@ -55,7 +50,6 @@ Next Key
 ```
 
 ## Vertiefung
-
 Das `Dictionary`-Objekt interagiert im Hintergrund mit Komponenten des Windows Scripting Hosts. Daher ist es ein spätgebundenes COM-Objekt, eine in der Vergangenheit gängige Methode, um die Funktionalität von VBA zu erweitern. Seine Verwendung in VBA kann die Fähigkeit der Sprache, komplexe Datensätze zu manipulieren, erheblich verbessern, ohne eine starre Struktur zu erzwingen, wie es bei traditionellen Arrays oder Excel-Bereichen der Fall ist.
 
 Eine Einschränkung, die zu beachten ist, ist der Zugriff auf das `Dictionary`, der das Setzen einer Referenz auf die Microsoft Scripting Runtime erfordert, was die Verteilung Ihrer VBA-Projekte erschweren kann. Alternativen wie Collections sind innerhalb von VBA vorhanden, aber sie verfügen nicht über einige der Schlüsseleigenschaften des `Dictionary`s, wie z.B. die Möglichkeit, leicht zu überprüfen, ob ein Schlüssel existiert, ohne einen Fehler auszulösen.

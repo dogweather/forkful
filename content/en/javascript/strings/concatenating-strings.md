@@ -9,9 +9,6 @@ title: Concatenating strings
 weight: 3
 ---
 
-## What & Why?
-Concatenating strings means sticking them together end-to-end. We do it to create messages, URLs, or any text with bits & pieces from different sources.
-
 ## How to:
 In JavaScript, you've got a few ways to concat strings. Old school: `+`. Modern: template literals. Here’s how they look.
 

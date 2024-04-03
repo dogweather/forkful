@@ -14,16 +14,10 @@ title: Trabalhando com CSV
 weight: 37
 ---
 
-## O Que & Por Quê?
-
-Trabalhar com arquivos CSV (Valores Separados por Vírgula) envolve analisar e gerar arquivos de texto onde cada linha contém valores separados por vírgulas. Os programadores fazem isso para possibilitar a troca de dados entre diferentes aplicativos ou para facilitar o armazenamento de dados em um formato leve e legível por humanos.
-
 ## Como Fazer:
-
 Para manipular arquivos CSV em Dart, você geralmente processa o texto manualmente ou usa bibliotecas de terceiros para simplificar a tarefa. Aqui, vamos olhar para ambas as abordagens.
 
 ### Analisando CSV Manualmente
-
 Se suas necessidades são simples, você pode optar por analisar uma string CSV manualmente. Isso pode ser alcançado usando as funções de manipulação de string do próprio Dart:
 
 ```dart
@@ -56,7 +50,6 @@ void main() {
 ```
 
 ### Usando uma Biblioteca de Terceiros: `csv`
-
 Para cenários mais complexos ou para simplificar seu código, você pode usar uma biblioteca de terceiros popular como `csv`. Primeiro, adicione-a ao seu projeto incluindo `csv: ^5.0.0` (ou a versão mais recente) no seu arquivo `pubspec.yaml` sob `dependencies`. Em seguida, use-a da seguinte maneira:
 
 ```dart

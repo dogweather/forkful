@@ -14,11 +14,8 @@ title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---
 
-## Vad & Varför?
-
-Reguljära uttryck (regex) är ett kraftfullt verktyg för textbearbetning, som möjliggör för programmerare att söka, matcha och manipulera textsträngar med avancerade mönstersökningsmetoder. I Kotlin hjälper användningen av regex till att effektivt utföra komplex textbehandling som validering, tolkning eller transformation, vilket gör det oumbärligt för uppgifter som sträcker sig från enkel strängmanipulation till komplex textanalys.
-
 ## Hur man gör:
+
 
 ### Grundläggande Matchning
 För att kontrollera om en sträng matchar ett specifikt mönster i Kotlin kan du använda metoden `matches` i `Regex`-klassen.

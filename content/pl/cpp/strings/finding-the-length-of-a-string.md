@@ -11,9 +11,6 @@ title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---
 
-## What & Why? (Co i Dlaczego?)
-Znalezienie długości łańcucha znaków to sposób na określenie, ile znaków zawiera dany tekst. Programiści robią to, aby manipulować tekstami, walidować dane wejściowe lub po prostu określić potrzebne zasoby.
-
 ## How to: (Jak to zrobić:)
 W C++ długość łańcucha znaków możesz znaleźć używając funkcji `length()` lub `size()` na obiekcie `std::string`, jak poniżej:
 

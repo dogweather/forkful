@@ -12,12 +12,7 @@ title: Convertendo uma data em uma string
 weight: 28
 ---
 
-## O Que & Porquê?
-
-Converter uma data em uma string significa transformar um objeto de data, que o Ruby entende e manipula, em texto simples, que pode ser lido e usado por humanos ou outros sistemas. Fazemos isso para exibir datas de maneira compreensível em interfaces, armazenar em arquivos de texto ou integrar com sistemas que esperam datas em formato de texto.
-
 ## Como Fazer:
-
 ```Ruby
 require 'date'
 
@@ -43,7 +38,6 @@ puts data.strftime('%A, %d de %B de %Y')  # Dia da semana, dia, mês e ano por e
 ```
 
 ## Mergulho Profundo:
-
 Converter datas em strings não é uma invenção moderna; é uma necessidade desde os primórdios da programação. Em Ruby, isso é alcançado com métodos como `to_s` e `strftime`, presentes desde as primeiras versões. O método `strftime` tem uma flexibilidade enorme permitindo uma variedade de formatos, a partir dos códigos de formatação específicos, que podem ser consultados na documentação do Ruby.
 
 Alternativas ao `strftime` incluem o uso de gemas como o `time_format` ou bibliotecas de internacionalização como o `I18n` que ajudam na formatação de strings de datas com suporte a localização, algo especialmente útil em contextos multilíngues.
@@ -51,6 +45,5 @@ Alternativas ao `strftime` incluem o uso de gemas como o `time_format` ou biblio
 Quanto aos detalhes de implementação, cada chamada ao `strftime` efetivamente constrói a string de acordo com os tokens especificados, analisando as diferentes partes do objeto de data (como dia, mês, ano) e substituindo esses tokens pelos valores correspondentes formatados.
 
 ## Veja Também:
-
 - [Listagem completa dos códigos de formatação do strftime](https://apidock.com/ruby/DateTime/strftime)
 - [Guia para internacionalização I18n no Ruby on Rails](https://guides.rubyonrails.org/i18n.html)

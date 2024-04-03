@@ -15,12 +15,7 @@ title: Lendo argumentos de linha de comando
 weight: 23
 ---
 
-## O Que & Por Que?
-
-Ler argumentos de linha de comando em Dart permite que programadores insiram dados diretamente no console ao executar um programa Dart, aumentando sua interatividade e flexibilidade para vários casos de uso, incluindo scripts de automação, ferramentas CLI ou processamento em lote. Essa característica é fundamental para criar aplicativos de linha de comando adaptáveis e amigáveis ao usuário.
-
 ## Como fazer:
-
 Dart oferece uma abordagem direta para acessar argumentos de linha de comando via a `List<String> args` no método main. Abaixo está um exemplo simples que demonstra como ler e utilizar argumentos de linha de comando.
 
 ```dart
@@ -48,7 +43,6 @@ Argumentos de Linha de Comando:
 ```
 
 ### Usando uma Biblioteca Terceirizada Popular: `args`
-
 Embora as capacidades internas do Dart para lidar com argumentos de linha de comando sejam robustas para muitas aplicações, o pacote `args` oferece uma forma refinada de definir e analisar argumentos de linha de comando para necessidades mais complexas.
 
 Primeiro, adicione o pacote `args` ao seu `pubspec.yaml`:

@@ -11,9 +11,6 @@ title: Att organisera kod i funktioner
 weight: 18
 ---
 
-## Vad & Varför?
-Att dela upp kod i funktioner är som att sortera LEGO-bitar i lådor – det gör det lättare att hitta och använda dem. Vi gör detta för att undvika upprepning, för att förenkla förståelsen, och för att underhållet ska bli mindre av en huvudvärk.
-
 ## Hur man gör:
 Tänk dig att du har kod som skriver ut en hälsning flera gånger. Utan funktioner är det rörigt. Med funktioner är det prydligt.
 

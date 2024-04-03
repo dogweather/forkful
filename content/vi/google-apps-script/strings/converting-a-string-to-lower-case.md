@@ -18,12 +18,7 @@ title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---
 
-## Cái gì & Tại sao?
-
-Chuyển đổi một chuỗi thành chữ thường trong Google Apps Script, một ngôn ngữ lập trình dựa trên đám mây để tự động hóa các tác vụ trên các sản phẩm của Google, là một nhiệm vụ cơ bản nhằm chuẩn hóa dữ liệu văn bản. Các lập trình viên thường thực hiện hành động này để đảm bảo tính nhất quán trong nhập liệu của người dùng, xử lý dữ liệu, hoặc khi so sánh các chuỗi, vì nó loại bỏ vấn đề về phân biệt chữ hoa chữ thường.
-
 ## Làm thế nào:
-
 Việc chuyển đổi một chuỗi thành chữ thường trong Google Apps Script khá đơn giản, nhờ vào các phương thức JavaScript tích hợp sẵn trong môi trường lập trình. Phương thức `toLowerCase()` là cái bạn sẽ sử dụng nhiều nhất. Dưới đây là cách bạn có thể triển khai nó:
 
 ```javascript
@@ -53,7 +48,6 @@ function convertArrayItemsToLower() {
 Ví dụ này nhấn mạnh sự linh hoạt của `toLowerCase()` khi xử lý nhiều dữ liệu chuỗi, đảm bảo sự đồng nhất trên toàn bộ tập dữ liệu của bạn.
 
 ## Sâu hơn nữa
-
 Phương thức `toLowerCase()`, kế thừa từ JavaScript và được sử dụng trong Google Apps Script, đã là một phần không thể thiếu của việc thao tác chuỗi kể từ các phiên bản đầu của JavaScript. Mục đích chính của nó là hỗ trợ xử lý dữ liệu văn bản không phân biệt chữ hoa chữ thường, một nhu cầu phát sinh với sự xuất hiện của các ứng dụng web tương tác người dùng động. Dù đơn giản, cơ chế này đóng một vai trò quan trọng trong việc xác nhận dữ liệu, sắp xếp, và các thuật toán tìm kiếm bằng cách giảm bớt sự phức tạp do phân biệt chữ hoa chữ thường đem lại.
 
 Về mặt hiệu suất, quá trình chuyển đổi được tối ưu hóa cao trong các trình xử lý JavaScript hiện đại; tuy nhiên, việc áp dụng của nó vẫn nên được xem xét cẩn thận trong các hoạt động dữ liệu quy mô lớn để tránh tạo ra gánh nặng xử lý không cần thiết.

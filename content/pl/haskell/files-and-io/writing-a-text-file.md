@@ -10,11 +10,6 @@ title: Zapisywanie pliku tekstowego
 weight: 24
 ---
 
-## What & Why?
-("Co i Dlaczego?")
-
-Zapisywanie pliku tekstowego to sposób trwałego przechowywania danych. Programiści robią to, by zapisywać ustawienia, dane użytkownika, logi czy po prostu wyniki pracy programów.
-
 ## How to:
 ("Jak to zrobić:")
 

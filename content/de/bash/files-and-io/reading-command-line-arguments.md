@@ -10,9 +10,6 @@ title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---
 
-## Was & Warum?
-Kommandozeilenargumente sind Parameter, die einem Bash-Skript übergeben werden, um sein Verhalten dynamisch anzupassen. Programmierer nutzen dies, um Skripte flexibler und wiederverwendbar zu machen – ganz ohne manuelle Änderungen im Skript selbst.
-
 ## Wie geht das?
 ```
 #!/bin/bash

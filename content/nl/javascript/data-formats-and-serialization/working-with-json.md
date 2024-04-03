@@ -12,9 +12,6 @@ title: Werken met JSON
 weight: 38
 ---
 
-## Wat en Waarom?
-JSON, of JavaScript Object Notation, is een lichtgewicht gegevensformaat voor het opslaan en transporteren van gegevens. Programmeurs gebruiken het omdat het gemakkelijk te lezen/schrijven is voor mensen, en machines kunnen het snel parseren en genereren.
-
 ## Hoe te:
 JSON parseren in JavaScript:
 ```javascript

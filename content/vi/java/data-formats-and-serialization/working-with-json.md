@@ -10,8 +10,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---
 
-## Làm việc với JSON trong Java
-
 ### Điều gì & Tại sao?
 Làm việc với JSON (JavaScript Object Notation) có nghĩa là bạn đang xử lý định dạng trao đổi dữ liệu nhẹ này trong các ứng dụng Java của mình. Lập trình viên chọn JSON để tuần tự hóa và truyền tải dữ liệu có cấu trúc qua mạng cũng như dễ dàng cấu hình và lưu trữ dữ liệu vì nó dễ đọc và độc lập với ngôn ngữ.
 

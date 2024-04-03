@@ -11,9 +11,6 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## Qué y Por Qué?
-Redondear números implica ajustar un número a una precisión específica. Los programadores lo hacen para controlar la salida numérica para mejorar la legibilidad, fines de visualización o cuando se requiere una precisión específica después de operaciones que generan resultados de punto flotante.
-
 ## Cómo hacerlo:
 El redondeo en TypeScript se puede hacer utilizando varios métodos. Aquí hay un rápido repaso:
 

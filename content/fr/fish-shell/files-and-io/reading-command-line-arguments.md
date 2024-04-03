@@ -11,9 +11,6 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## What & Why?
-Lire les arguments de la ligne de commande, ça consiste à récupérer ce que l'utilisateur tape après le nom de ton script. On fait ça pour rendre nos scripts flexibles et interactifs.
-
 ## How to:
 ```Fish Shell
 # Script: greet.fish

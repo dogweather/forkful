@@ -11,9 +11,6 @@ title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---
 
-## What & Why?
-Tilapäistiedosto on väliaikainen säilö tietoja varten, kuin kertakäyttöastia koodille. Ohjelmoijat käyttävät niitä turvallisen testiympäristön luomiseen, välimuistina tai kun haluavat varmistaa, ettei sensitiivistä dataa tallennu pysyvästi.
-
 ## How to:
 Swiftissä voit luoda tilapäistiedoston FileManagerin avulla. Tässä on lyhyt esimerkki:
 

@@ -18,9 +18,6 @@ title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---
 
-## Cái gì & Tại sao?
-Việc tạo ra số ngẫu nhiên trong các dự án Arduino liên quan đến việc sản xuất các giá trị không thể dự đoán trước được theo thiết kế, rất quan trọng cho các ứng dụng như trò chơi, mô phỏng, và hệ thống bảo mật. Lập trình viên sử dụng kỹ thuật này để giới thiệu sự biến đổi hoặc đưa ra các quyết định không nên là quyết định xác định.
-
 ## Làm thế nào:
 Arduino cung cấp các hàm đơn giản để tạo số ngẫu nhiên: `randomSeed()` và `random()`. Để bắt đầu, hãy khởi tạo bộ sinh số ngẫu nhiên để đảm bảo các dãy số khác nhau mỗi lần chương trình của bạn thực thi. Một phương pháp thường được sử dụng là khởi tạo với một đọc analog từ một chân không kết nối.
 

@@ -13,12 +13,7 @@ title: Verwendung von assoziativen Arrays
 weight: 15
 ---
 
-## Was & Warum?
-
-Assoziative Arrays, oder wie sie in JavaScript genauer bekannt sind, Objekte, ermöglichen es Ihnen, Schlüssel mit Werten zu verbinden. Das ist besonders nützlich, wenn Sie eine Sammlung von Elementen benötigen, auf die Sie über spezifische Namen (Schlüssel) statt numerischer Indizes zugreifen möchten, was Ihren Code lesbarer und flexibler macht.
-
 ## Wie geht das:
-
 Das Erstellen und Verwenden von assoziativen Arrays (Objekten) in JavaScript ist unkompliziert. Sie definieren ein Objekt mit geschweiften Klammern `{}`, und innerhalb dieser können Sie eine Reihe von Schlüssel-Wert-Paaren definieren. Schlüssel sind immer Zeichenketten, und Werte können alles sein: Zeichenketten, Zahlen, Arrays, sogar andere Objekte.
 
 ```javascript
@@ -64,7 +59,6 @@ console.log(userInfo);
 Wie Sie sehen können, ist der Zugriff, das Hinzufügen oder Löschen von Elementen in einem assoziativen Array ziemlich direkt und intuitiv.
 
 ## Tiefergehend
-
 In der JavaScript-Welt, obwohl wir oft den Begriff "assoziatives Array" hören, ist es technisch gesehen ein falscher Name, denn JavaScript verfügt nicht über echte assoziative Arrays wie andere Sprachen (z.B. PHP). Was JavaScript hat, sind Objekte, die einem ähnlichen Zweck dienen, aber eine leistungsfähigere und flexiblere Konstruktion sind.
 
 Historisch gesehen wurden Arrays in Programmiersprachen entwickelt, um eine Sammlung von Elementen zu halten, auf die durch ihren numerischen Index zugegriffen wurde. Doch mit der Entwicklung der Softwareentwicklung entstand die Notwendigkeit für flexiblere Datenstrukturen. Assoziative Arrays oder Wörterbücher in anderen Sprachen waren eine Antwort und ermöglichten den Zugriff auf Elemente durch beliebige Schlüssel.

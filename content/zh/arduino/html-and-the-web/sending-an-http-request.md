@@ -15,12 +15,7 @@ title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---
 
-## What & Why? 什么 & 为什么?
-
-发送HTTP请求是向服务器发数据或获取数据的方式；程序员这么做来交换网络上的信息，比如天气更新，社交媒体交云。
-
 ## How to: 怎么做
-
 ```Arduino
 #include <ESP8266WiFi.h>
 
@@ -71,8 +66,8 @@ HTTP/1.1 200 OK
 }
 ...
 ```
-## Deep Dive: 深入探究
 
+## Deep Dive: 深入探究
 发送HTTP请求开始于90年代早期的Web。从那时起，HTTP成了Internet交流的基础。此方法比如GET和POST，现在用于各种应用。
 
 使用Arduino发送HTTP请求时，得注意：
@@ -83,6 +78,5 @@ HTTP/1.1 200 OK
 ESP8266/ESP32这样的WiFi模块让Arduino联网。选择模块时，考虑项目需求、成本、功率消耗。
 
 ## See Also: 相关资料
-
 - [Arduino - WiFi](https://www.arduino.cc/en/Reference/WiFi)
 - [HTTP Made Really Easy (James Marshall's Guide)](http://www.jmarshall.com/easy/http/)

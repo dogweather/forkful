@@ -14,9 +14,6 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mikä ja miksi?
-Nykyisen päivämäärän hakeminen Bashissa käsittää sisäänrakennettujen komentojen käyttämisen päivämäärän ja ajan näyttämiseen eri muodoissa. Ohjelmoijat käyttävät tätä toiminnallisuutta tehtäviin, kuten lokitiedostojen aikaleimojen lisäämiseen, tehtävien aikatauluttamiseen tai vain osana järjestelmätietoskriptejään toimintojen suorittamisen ajankohdan seurantaan.
-
 ## Kuinka:
 Bashissa `date`-komento on ensisijainen työkalusi nykyisen päivämäärän ja ajan saamiseksi. Tässä on muutamia esimerkkejä sen käytöstä:
 

@@ -14,10 +14,9 @@ title: "R\xE9daction de tests"
 weight: 36
 ---
 
-## Quoi & Pourquoi ?
-Écrire des tests en programmation implique de créer et d'exécuter des scripts qui vérifient que le code se comporte comme prévu dans diverses conditions. Les programmeurs le font pour assurer la qualité, prévenir les régressions et faciliter le refactoring sûr, ce qui est crucial pour maintenir une base de code saine, évolutive et sans bugs.
-
 ## Comment faire :
+
+
 ### PHP Natif – PHPUnit
 Un outil largement utilisé pour les tests en PHP est PHPUnit. Installez-le via Composer :
 ```bash

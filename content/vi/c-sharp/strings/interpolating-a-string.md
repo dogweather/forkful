@@ -16,9 +16,6 @@ title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---
 
-## Cái gì và Tại sao?
-Nội suy chuỗi trong C# cho phép bạn tạo một chuỗi mới bằng cách bao gồm các biểu thức bên trong một chuỗi ký tự, làm cho việc định dạng và nối chuỗi trở nên dễ dàng hơn. Các lập trình viên sử dụng tính năng này để cải thiện tính đọc và bảo trì của mã, đặc biệt là khi xử lý nội dung chuỗi động.
-
 ## Làm thế nào:
 Trong C#, nội suy chuỗi được ký hiệu bằng dấu đô la (`$`) theo sau là một chuỗi ký tự. Tên biến hoặc biểu thức được đặt trong dấu ngoặc nhọn (`{}`).
 

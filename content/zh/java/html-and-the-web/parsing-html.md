@@ -18,12 +18,7 @@ title: "\u89E3\u6790HTML"
 weight: 43
 ---
 
-## 什么与为什么？
-
-解析HTML意味着深入标记(markup)以提取数据，如文本、链接或其他元素。我们这样做是为了与网页内容互动或抓取、自动化浏览任务，或测试网络应用。
-
 ## 如何操作：
-
 让我们使用Jsoup，一个用于处理现实世界HTML的便捷库。首先，添加依赖项：
 
 ```xml
@@ -70,7 +65,6 @@ for (Element link : links) {
 ```
 
 ## 深入探讨
-
 曾几何时，HTML被正则表达式模式所驯服，这是一种对复杂文档既容易出错又是噩梦般的方法。随着Jsoup在二零零年代末的出现，为Java提供了类似jQuery的界面来解析、遍历和操作HTML。
 
 Jsoup并非唯一选择。还有HtmlUnit适用于支持JavaScript的完整网络应用测试，但它更加笨重和复杂。对于轻量级任务，Apache Commons Validator非常适合仅提取URLs。
@@ -80,7 +74,6 @@ Jsoup并非唯一选择。还有HtmlUnit适用于支持JavaScript的完整网络
 记住，当进行抓取时，始终检查网站的`robots.txt`和服务条款，以避免法律麻烦或被IP封禁。
 
 ## 另见
-
 - Jsoup 官方文档：https://jsoup.org/
 - HtmlUnit：http://htmlunit.sourceforge.net/
 - Apache Commons Validator：https://commons.apache.org/proper/commons-validator/

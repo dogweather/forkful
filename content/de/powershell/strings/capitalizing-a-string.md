@@ -14,9 +14,6 @@ title: "Einen String gro\xDFschreiben"
 weight: 2
 ---
 
-## Was & Warum?
-Das Großschreiben eines Strings in PowerShell beinhaltet die Umwandlung des ersten Zeichens eines gegebenen Strings in Großbuchstaben, während der Rest des Strings unverändert bleibt. Programmierer führen diese Aufgabe oft für Formatierungszwecke durch, wie zum Beispiel die Vorbereitung von Texten für die Anzeige in Benutzeroberflächen oder das Befolgen von grammatikalischen Regeln in generierten Dokumenten.
-
 ## Wie:
 PowerShell, als vielseitiges Werkzeug, ermöglicht es Ihnen, einen String auf einfache Weise zu großzuschreiben, ohne dass Drittanbieterbibliotheken benötigt werden. So können Sie es machen:
 

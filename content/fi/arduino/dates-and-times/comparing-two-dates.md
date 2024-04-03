@@ -11,9 +11,6 @@ title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---
 
-## What & Why? (Mikä ja Miksi?)
-Vertaillaan kahta päivämäärää selvittämään niiden järjestys tai aikaero. Tarpeen esimerkiksi ajanhallinnassa ja tapahtumien seurannassa.
-
 ## How to: (Miten toimia:)
 ```Arduino
 #include <RTClib.h>

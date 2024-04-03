@@ -10,9 +10,6 @@ title: Extraindo substrings
 weight: 6
 ---
 
-## What & Why?
-Extrair substrings significa pegar pedaços específicos de uma string. Programadores fazem isso para manipular, analisar ou validar partes de texto dentro de um código.
-
 ## How to:
 No C#, você pode usar o método `Substring()` da classe `String` para pegar partes de uma string. Aqui estão alguns exemplos:
 

@@ -12,11 +12,7 @@ title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---
 
-## Mikä & Miksi?
-JSON:n käsittely Elm:ssä tarkoittaa JSON-datan dekoodaamista Elm-tyypeiksi ja Elm-arvojen enkoodaamista takaisin JSON:ksi. Tämä prosessi on ratkaisevan tärkeä web-sovelluksille vuorovaikutuksessa API:en ja ulkoisten tietolähteiden kanssa, mahdollistaen saumattoman datan vaihdon asiakkaan (Elm) ja palvelimien tai muiden palveluiden välillä.
-
 ## Kuinka:
-
 Elm käsittelee JSON:ia selkeästi ja turvallisesti, pääasiassa käyttäen `Json.Decode`- ja `Json.Encode`-moduleita. Aloittaaksesi JSON:n käsittelyn, sinun täytyy ensin määritellä dekooderi datatyypillesi. Oletetaan, että käsittelemme yksinkertaista käyttäjäprofiilin objektia.
 
 Määrittele ensin Elm-tyyppisi:
@@ -30,7 +26,6 @@ type alias UserProfile =
 ```
 
 ### JSON:n dekoodaus Elm:ksi
-
 Dekoodataksesi JSON merkkijonon `UserProfile`-tyypiksi, luo dekooderi:
 
 ```elm
@@ -63,7 +58,6 @@ Result.Ok { id = 1, name = "John Doe", email = "john@example.com" }
 ```
 
 ### Elm:n enkoodaus JSON:ksi
-
 Enkoodataksesi Elm-arvon takaisin JSON:ksi, hyödynnä `Json.Encode`-moduulia.
 
 ```elm
@@ -88,7 +82,6 @@ Näyte tuloste:
 ```
 
 ### Kolmannen osapuolen kirjastot
-
 Elm-paketit kuten `elm-json-decode-pipeline` voivat yksinkertaistaa dekooderien luomista käyttämällä putkityyliä, mikä on erityisen kätevää monimutkaisten objektien dekoodauksessa.
 
 Lisää ensin kirjasto projektiisi:

@@ -14,12 +14,7 @@ title: Trabalhando com JSON
 weight: 38
 ---
 
-## O que & Por quê?
-
-Trabalhar com JSON em Lua envolve a análise de strings formatadas em JSON para tabelas Lua e vice-versa, possibilitando uma fácil troca de dados entre aplicações Lua e serviços web ou APIs externas. Programadores fazem isso para aproveitar o formato leve e fácil de analisar do JSON para armazenamento eficiente de dados, configuração ou comunicação com APIs.
-
 ## Como fazer:
-
 Lua não inclui uma biblioteca interna para processamento de JSON. Portanto, uma das bibliotecas de terceiros populares é a `dkjson`, que você pode usar facilmente para codificação e decodificação de JSON. Primeiro, certifique-se de instalar o `dkjson`, por exemplo, através do LuaRocks (`luarocks install dkjson`), e então siga os exemplos abaixo.
 
 ### Decodificando JSON para Tabela Lua

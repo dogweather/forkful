@@ -14,16 +14,10 @@ title: Generazione di numeri casuali
 weight: 12
 ---
 
-## Cosa & Perché?
-
-Generare numeri casuali nella programmazione riguarda la creazione di una sequenza di numeri che non può essere prevista ragionevolmente meglio che a caso. I programmatori lo fanno per una miriade di motivi, inclusi simulazioni, giochi e applicazioni di sicurezza, dove l'imprevedibilità è chiave per la funzionalità o il segreto.
-
 ## Come fare:
-
 In Go, i numeri casuali sono generati utilizzando il pacchetto `math/rand` per numeri pseudo-casuali o `crypto/rand` per numeri pseudo-casuali criptograficamente sicuri. Esploriamo entrambi.
 
 ### Usare `math/rand` per Numeri Pseudo-casuali
-
 Prima, importare il pacchetto `math/rand` e il pacchetto `time` per inizializzare il generatore. Inizializzare assicura che si ottenga una sequenza diversa di numeri ad ogni esecuzione.
 
 ```go
@@ -44,7 +38,6 @@ func main() {
 Output di esempio: `Un numero casuale: 42`
 
 ### Usare `crypto/rand` per Numeri Pseudo-casuali Crittograficamente Sicuri
-
 Per applicazioni più sensibili alla sicurezza, il pacchetto `crypto/rand` è adatto in quanto genera numeri casuali difficili da prevedere, rendendoli adatti per operazioni crittografiche.
 
 ```go
@@ -65,7 +58,6 @@ func main() {
 Output di esempio: `Un numero casuale sicuro: 81`
 
 ## Approfondimento
-
 La differenza fondamentale tra i pacchetti `math/rand` e `crypto/rand` in Go deriva dalla loro fonte di entropia e dai loro casi d'uso previsti. `math/rand` genera numeri pseudo-casuali basati su un seme iniziale; quindi, la sequenza è deterministica e può essere prevista se il seme è noto. Ciò è adatto per scenari dove il massimo rendimento e non l'assoluta imprevedibilità è la preoccupazione principale, come le simulazioni o i giochi.
 
 D'altra parte, `crypto/rand` deriva la casualità dal sistema operativo sottostante, rendendolo adatto per usi crittografici dove l'imprevedibilità è cruciale. Tuttavia, ciò comporta un costo in termini di prestazioni e complessità nel gestire i numeri che genera (come il trattamento del tipo `*big.Int` per gli interi).

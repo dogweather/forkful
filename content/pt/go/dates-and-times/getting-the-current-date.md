@@ -13,12 +13,7 @@ title: Obtendo a data atual
 weight: 29
 ---
 
-## O Que & Por Quê?
-
-Obter a data atual em Go é uma tarefa fundamental para programadores, semelhante ao "Olá, Mundo!" em sua onipresença. É essencial para tarefas que vão desde registrar e marcar eventos com data e hora até calcular durações e agendar eventos futuros.
-
 ## Como fazer:
-
 Em Go, o pacote `time` é seu portal para trabalhar com datas e horas. A função `time.Now()` fornece a data e hora atual, enquanto outras funções e métodos permitem formatar ou manipular esses dados. Veja como obter a data atual e suas diversas representações:
 
 ```go
@@ -57,7 +52,6 @@ Dia da semana: Terça-feira
 Note como `Format` usa uma data específica (2006-01-02) como a string de layout. Esta é a data de referência escolhida pelo Go, servindo como um padrão mnemônico para formatar datas.
 
 ## Aprofundamento
-
 A decisão de usar o pacote `time` para manipulação de data e hora em Go reflete a dedicação da linguagem a bibliotecas padrão robustas e intuitivas. Ao contrário de algumas linguagens que podem ter múltiplas bibliotecas concorrentes ou metodologias para manipulação de datas, Go prioriza ter um único padrão bem documentado.
 
 A escolha peculiar da data de referência (`Seg Jan 2 15:04:05 MST 2006`) na formatação de tempo do Go, embora inicialmente confusa, é na verdade um golpe de mestre em usabilidade. Isso permite que os programadores representem formatos de data e hora usando uma abordagem baseada em exemplos, ao invés de memorizar tokens ou símbolos que outras linguagens possam usar.

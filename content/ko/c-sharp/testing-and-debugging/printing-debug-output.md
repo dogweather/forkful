@@ -16,9 +16,6 @@ title: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC744 \uCC0D\uC5B4\uBCF4\uAE30"
 weight: 33
 ---
 
-## What & Why? (무엇과 왜?)
-프로그래밍할 때 버그를 찾거나 로직을 이해하기 위해 디버그 출력을 사용합니다. 이 정보는 개발자가 코드가 어떻게 실행되는지 볼 수 있게 해주며, 문제 해결을 더 쉽게 만들어 줍니다.
-
 ## How to: (방법)
 ```csharp
 using System;

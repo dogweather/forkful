@@ -12,12 +12,7 @@ title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---
 
-## Wat & Waarom?
-
-Het berekenen van een toekomstige of verleden datum betekent uitzoeken wat de kalender zal zeggen na of voor een bepaalde hoeveelheid tijd. Programmeurs doen dit voor alles wat met tijd te maken heeft, zoals het instellen van herinneringen, vervaldatums of het plannen van evenementen.
-
 ## Hoe te:
-
 Rust heeft de `chrono` crate voor al je datum- en tijdsbehoeften. Hier is hoe je een datum kunt optellen of aftrekken:
 
 ```rust
@@ -46,7 +41,6 @@ UTC 30 dagen geleden: 2023-03-02T12:00:00Z
 ```
 
 ## Uitdieping
-
 Traditioneel is het manipuleren van datum en tijd een lastige taak geweest. Verschillende systemen en programmeertalen gaan er op verschillende manieren mee om. De standaardbibliotheek van Rust biedt basisfunctionaliteit, maar de `chrono` crate is de gangbare oplossing.
 
 Alternatieven? Zeker, je zou handmatig data kunnen berekenen door alles om te zetten naar timestamps, met de getallen te manipuleren en vervolgens terug te converteren. Of, je zou tijdsspecifieke bibliotheken in andere talen kunnen gebruiken - Python heeft `datetime`, JavaScript heeft `Date`, enzovoort.
@@ -54,7 +48,6 @@ Alternatieven? Zeker, je zou handmatig data kunnen berekenen door alles om te ze
 De `chrono` crate in Rust geeft je tijdzonebewuste typen zoals `DateTime`, en duur zoals hierboven gezien. Het handelt alle lastige zaken af zoals schrikkeljaren en zomertijd zodat jij dat niet hoeft te doen. Het doet ook datum parsing en formatting, waardoor het een uitgebreide oplossing is.
 
 ## Zie Ook
-
 - De `chrono` crate: https://crates.io/crates/chrono
 - Rust's tijddocumentatie: https://doc.rust-lang.org/std/time/index.html
 - Rust Datum en Tijd hoofdstuk in het boek "The Rust Programming Language": https://doc.rust-lang.org/book/ch10-02-traits.html (zoek naar DateTime-gerelateerde secties)

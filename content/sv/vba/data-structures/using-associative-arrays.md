@@ -14,12 +14,7 @@ title: "Anv\xE4nda associativa arrayer"
 weight: 15
 ---
 
-## Vad & Varför?
-
-Associativa arrayer, ofta kända som ordböcker i Visual Basic for Applications (VBA), gör det möjligt för programmerare att skapa samlingar av nyckel-värde-par. Denna funktion är avgörande för effektiv datalagring och hämtning, vilket erbjuder ett mer flexibelt och intuitivt sätt att hantera data än traditionella arrayindex.
-
 ## Hur man gör:
-
 I VBA tillhandahåller `Dictionary`-objektet en funktionalitet som liknar associativa arrayer. Du måste först lägga till en referens till Microsoft Scripting Runtime för att använda den:
 
 1. Gå i VBA-editorn till Verktyg > Referenser...
@@ -55,7 +50,6 @@ Next Key
 ```
 
 ## Fördjupning
-
 `Dictionary`-objektet kopplar i bakgrunden till komponenter av Windows Scripting Host. Som sådant är det ett late-bound COM-objekt, vilket var ett vanligt sätt att utöka VBA:s funktionalitet tidigare. Dess användning i VBA kan avsevärt förbättra språkets förmåga att manipulera komplexa datamängder utan att påtvinga en stel struktur, som setts i traditionella arrayer eller Excel-intervaller.
 
 En begränsning att ha i åtanke är att åtkomst till `Dictionary` kräver att man ställer in en referens till Microsoft Scripting Runtime, vilket kan komplicera distributionen av dina VBA-projekt. Alternativ som samlingar existerar inom VBA men saknar några nyckelfunktioner i `Dictionary`, såsom möjligheten att enkelt kontrollera existensen av en nyckel utan att utlösa ett fel.

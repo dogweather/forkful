@@ -13,16 +13,10 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## Quoi & Pourquoi ?
-
-Extraire des sous-chaînes implique de récupérer des portions spécifiques d'une chaîne en fonction de leurs positions. Les programmeurs réalisent fréquemment cette opération pour traiter ou manipuler efficacement des données textuelles, comme l'analyse de l'entrée, la validation de formats ou la préparation de la sortie.
-
 ## Comment faire :
-
 En Go, le type `string` est une tranche en lecture seule d'octets. Pour extraire des sous-chaînes, on utilise principalement la syntaxe `slice`, en conjonction avec la fonction intégrée `len()` pour la vérification de la longueur et le paquet `strings` pour des opérations plus complexes. Voici comment vous pouvez y parvenir :
 
 ### Découpage de base
-
 ```go
 package main
 
@@ -40,7 +34,6 @@ func main() {
 ```
 
 ### Utilisation du paquet `strings`
-
 Pour une extraction de sous-chaînes plus avancée, telles que l'extraction de chaînes après ou avant une sous-chaîne spécifique, vous pouvez utiliser le paquet `strings`.
 
 ```go
@@ -63,7 +56,6 @@ func main() {
 Il est essentiel de noter que les chaînes Go sont encodées en UTF-8 et qu'une tranche d'octets directe peut ne pas toujours aboutir à des chaînes valides si elles incluent des caractères multi-octets. Pour la prise en charge de l'Unicode, envisagez d'utiliser `range` ou le paquet `utf8`.
 
 ### Gestion des caractères Unicode
-
 ```go
 package main
 
@@ -83,7 +75,6 @@ func main() {
 ```
 
 ## Exploration approfondie
-
 Extraire des sous-chaînes en Go est simple, grâce à sa syntaxe de tranche et sa bibliothèque standard complète. Historiquement, les langages de programmation antérieurs fournissaient des fonctions ou méthodes plus directes pour manipuler de tel texte. Cependant, l'approche de Go met l'accent sur la sécurité et l'efficacité, en particulier avec ses chaînes immuables et la gestion explicite des caractères Unicode à travers les runes.
 
 Bien que le découpage direct bénéficie d'une efficacité en termes de performances, il hérite des complexités de la gestion directe des caractères UTF-8. L'introduction du type `rune` permet aux programmes Go de gérer en toute sécurité le texte Unicode, en faisant une alternative puissante pour les applications internationales.

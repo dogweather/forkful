@@ -12,9 +12,6 @@ title: Escrevendo testes
 weight: 36
 ---
 
-## O Quê & Por Quê?
-Escrever testes em C envolve criar programas ou funções auxiliares menores que verificam automaticamente a funcionalidade do seu código. Os programadores fazem isso para garantir que seu software funcione conforme esperado, para capturar bugs precocemente e facilitar futuras modificações no código sem efeitos colaterais indesejados.
-
 ## Como fazer:
 Embora o C não tenha uma framework de testes integrada como algumas outras linguagens, ainda é possível escrever testes eficazes usando assert.h para asserções simples ou integrar frameworks de terceiros como CUnit ou Unity para testes mais estruturados. Aqui está um exemplo básico usando assert.h para testar uma função que adiciona dois inteiros:
 

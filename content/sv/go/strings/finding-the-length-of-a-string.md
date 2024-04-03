@@ -13,9 +13,6 @@ title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---
 
-## Vad & Varför?
-Att hitta längden på en sträng i Go handlar om att bestämma antalet tecken den innehåller. Programmerare utför rutinmässigt denna operation för att effektivt manipulera strängar, oavsett om det är för validering, extraktion av delsträngar eller helt enkelt för att genomdriva begränsningar i användarinmatningar.
-
 ## Hur man gör:
 I Go behandlas strängar som omutbara sekvenser av bytes. Du kan hitta längden på en sträng med hjälp av den inbyggda `len()`-funktionen som returnerar antalet bytes, inte nödvändigtvis antalet tecken. Så här använder du den:
 

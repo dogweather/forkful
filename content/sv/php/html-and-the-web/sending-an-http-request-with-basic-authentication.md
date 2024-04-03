@@ -12,9 +12,6 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-begäran med grundläggande autentisering innebär att du förser en server med användarnamn och lösenord för att bevisa din identitet. Programmerare gör detta för att säkra åtkomst till resurser på servern, så att bara behöriga användare får tillträde.
-
 ## Hur man gör:
 Skicka en HTTP-begäran med `curl` i PHP. Här använder vi `CURLOPT_USERPWD` för att lägga till autentiseringsuppgifterna.
 

@@ -15,12 +15,7 @@ title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---
 
-## Cái gì và Tại sao?
-
-Việc lấy ngày hiện tại trong Go là một nhiệm vụ cơ bản dành cho lập trình viên, tương tự như "Hello, World!" về mức độ phổ biến. Nó cần thiết cho các nhiệm vụ từ việc ghi nhật ký và đánh dấu thời gian cho các sự kiện, đến việc tính toán thời lượng và lập lịch cho các sự kiện tương lai.
-
 ## Làm thế nào:
-
 Trong Go, gói `time` là cánh cửa của bạn để làm việc với ngày và giờ. Hàm `time.Now()` cung cấp cho bạn ngày và giờ hiện tại, trong khi các hàm và phương thức khác cho phép bạn định dạng hoặc thao tác với dữ liệu này. Dưới đây là cách lấy ngày hiện tại và các biểu diễn khác nhau của nó:
 
 ```go
@@ -59,7 +54,6 @@ Ngày trong tuần: Tuesday
 Chú ý cách `Format` sử dụng một ngày cụ thể (2006-01-02) làm chuỗi định dạng. Đây là ngày tham chiếu được Go chọn, phục vụ như một mẫu gợi nhớ cho việc định dạng ngày tháng.
 
 ## Sâu hơn
-
 Quyết định sử dụng gói `time` để thao tác ngày và giờ trong Go phản ánh sự cam kết của ngôn ngữ này đối với các thư viện chuẩn mạnh mẽ và trực quan. Không giống như một số ngôn ngữ có thể có nhiều thư viện cạnh tranh hoặc phương pháp luận cho việc thao tác ngày tháng, Go ưu tiên có một tiêu chuẩn đơn lẻ, được tài liệu hóa tốt.
 
 Sự lựa chọn kỳ lạ của ngày tham chiếu (`Mon Jan 2 15:04:05 MST 2006`) trong định dạng thời gian của Go, mặc dù ban đầu có thể gây nhầm lẫn, thực sự là một động thái tuyệt vời về tính hữu dụng. Nó cho phép lập trình viên biểu diễn các định dạng ngày và giờ thông qua cách tiếp cận dựa trên ví dụ, thay vì phải nhớ các ký tự hoặc biểu tượng mà các ngôn ngữ khác có thể sử dụng.

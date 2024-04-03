@@ -11,9 +11,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## What & Why? - Mikä & Miksi?
-Stringin pituuden löytäminen tarkoittaa merkkijonossa olevien merkkien lukumäärän selvittämistä. Ohjelmoijat käyttävät tätä esimerkiksi tietojen validoimiseen ja tekstin prosessointiin.
-
 ## How to: - Näin teet:
 ```Ruby
 # Luodaan merkkijono

@@ -14,9 +14,6 @@ title: Capitalizando una cadena de texto
 weight: 2
 ---
 
-## ¿Qué y por qué?
-Capitalizar una cadena implica modificar la cadena para que su primer carácter esté en mayúsculas, mientras que el resto de la cadena permanece sin cambios. Los programadores a menudo realizan la capitalización de cadenas para asegurar la consistencia de los datos, especialmente para nombres y lugares, o para cumplir con reglas gramaticales en interfaces de usuario.
-
 ## Cómo hacerlo:
 Clojure, al ser un lenguaje JVM, te permite utilizar directamente los métodos de String de Java. Aquí tienes un ejemplo básico de cómo capitalizar una cadena en Clojure:
 

@@ -14,12 +14,7 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## Mitä & Miksi?
-
-Tekstin etsiminen ja korvaaminen ohjelmoinnissa helpottaa merkkijonojen muokkausta ja hallintaa, mikä on perustehtävä datan käsittelyssä ja ohjelmistokehityksessä. Ohjelmoijat suorittavat näitä toimenpiteitä päivittääkseen, siistiäkseen tai muuntaakseen tekstuaalisia tietoja tehokkaasti.
-
 ## Kuinka:
-
 Go-kielessä `strings`-paketti tarjoaa erilaisia funktioita tekstien etsimiseen ja korvaamiseen merkkijonoissa. Tutkitaan muutamia yleisiä menetelmiä.
 
 **Tekstin etsiminen käyttäen `strings.Contains`-funktiota:**
@@ -78,7 +73,6 @@ func main() {
 ```
 
 ## Syväsukellus
-
 Go-kielessä tekstin käsittely, mukaan lukien etsimis- ja korvaustoiminnot, on suunniteltu yksinkertaiseksi ja tehokkaaksi hyödyntämällä Gon kattavaa vakio kirjastoa. `strings`-paketti tarjoaa perustoiminnallisuudet, jotka soveltuvat useimpiin yleisiin käyttötarkoituksiin, kun taas `regexp`-paketti vastaa monimutkaisten mallien tarpeisiin, joissa tarvitaan säännöllisiä lausekkeita.
 
 Historiallisesti Gon lähestymistapa merkkijonojen käsittelyyn ja tekstimanipulaatioon on korostanut yksinkertaisuutta ja suorituskykyä. Päätös sisällyttää voimakkaita paketteja, kuten `strings` ja `regexp`, osaksi vakio kirjastoa, oli ajettu halusta tehdä Gosta käytännöllinen valinta web-kehityksen ja tekstinkäsittelysovellusten tarpeisiin, joissa tällaiset operaatiot ovat yleisiä.

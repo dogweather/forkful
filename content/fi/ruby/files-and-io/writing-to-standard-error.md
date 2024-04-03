@@ -14,9 +14,6 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mikä ja miksi?
-Kirjoittaminen standardivirheeseen (stderr) Rubylla tarkoittaa virheilmoitusten tai diagnostiikkatietojen ohjaamista erilliseen ulostulovirtaan, erillään standardiulostulosta (stdout). Ohjelmoijat tekevät näin erottaakseen tavallisen ohjelman ulostulon virheistä ja virheenjäljitystiedoista, mikä helpottaa ongelmien diagnosointia ja lokien jäsentämistä.
-
 ## Miten:
 Rubyn vakio kirjasto tarjoaa suoraviivaisen tavan kirjoittaa stderr:iin käyttäen `$stderr` tai `STDERR`. Tätä perustoimintoa varten ei tarvita kolmannen osapuolen kirjastoja.
 

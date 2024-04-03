@@ -10,9 +10,6 @@ title: Generierung von Zufallszahlen
 weight: 12
 ---
 
-## Was & Warum?
-Die Erzeugung von Zufallszahlen in PowerShell besteht darin, unvorhersehbare numerische Werte innerhalb eines festgelegten Bereichs zu erstellen. Programmierer nutzen diese Fähigkeit aus einer Vielzahl von Gründen, einschließlich Testen, Simulation und Sicherheitszwecken, wo Unvorhersehbarkeit oder das Nachahmen von realer Zufälligkeit entscheidend ist.
-
 ## Wie geht das:
 PowerShell bietet einen unkomplizierten Ansatz, um Zufallszahlen mit dem Cmdlet `Get-Random` zu generieren. Dieses Cmdlet kann Zufallszahlen in einem Standardbereich oder einem bestimmten Bereich produzieren.
 

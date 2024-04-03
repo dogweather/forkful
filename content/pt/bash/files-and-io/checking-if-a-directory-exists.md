@@ -14,12 +14,7 @@ title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---
 
-## O que & Por quê?
-
-Na programação Bash, verificar se um diretório existe é um mecanismo de controle essencial usado para verificar a presença de um diretório antes de realizar operações de arquivo. Essa verificação é crucial para evitar erros, como tentar acessar ou modificar diretórios que não existem, garantindo a execução de scripts mais suave e previsível.
-
 ## Como fazer:
-
 No seu núcleo, Bash permite verificar a existência de um diretório usando declarações condicionais e o operador `-d`. Abaixo está um exemplo simples que demonstra como realizar essa verificação.
 
 ```bash

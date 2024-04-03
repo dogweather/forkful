@@ -11,9 +11,6 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## What & Why? (Mitä ja Miksi?)
-Web-sivun lataaminen tarkoittaa webbisivun sisällön hakemista internetistä. Ohjelmoijat tekevät tämän datan keräämiseksi, prosessointia varten ja automaatioita luodakseen.
-
 ## How to: (Miten tehdään:)
 Elixirin HTTP-kirjastot, kuten HTTPoison, helpottavat web-sivujen lataamista. Tässä yksinkertainen esimerkki:
 

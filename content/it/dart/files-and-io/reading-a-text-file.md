@@ -12,12 +12,7 @@ title: Lettura di un file di testo
 weight: 22
 ---
 
-## Cosa e Perché?
-
-Leggere un file di testo in Dart comporta l'accesso e il recupero di dati da file memorizzati sul file system. I programmatori effettuano questa operazione per gestire dati di input, impostazioni di configurazione o leggere set di dati, rendendola un'operazione fondamentale per molte applicazioni, che vanno da semplici script ad app complesse.
-
 ## Come fare:
-
 La libreria core di Dart, `dart:io`, fornisce le funzionalità necessarie per leggere file di testo sincronamente o asincronamente. Ecco come procedere in entrambi i casi.
 
 **Sincronamente:**

@@ -12,9 +12,6 @@ title: Quotes verwijderen uit een string
 weight: 9
 ---
 
-## Wat & Waarom?
-Het verwijderen van aanhalingstekens uit een string betekent het weghalen van enkele (' '), dubbele (" "), of beide soorten aanhalingstekens uit de tekstgegevens. Programmeurs doen dit om invoer te saneren, gegevens voor opslag voor te bereiden of het parsen van taken te vereenvoudigen waar aanhalingstekens onnodig en mogelijk problematisch zijn.
-
 ## Hoe te:
 Laten we die vervelende aanhalingstekens uit onze tekst trekken. We gebruiken de `replace()` methode voor de snelle oplossingen en regex voor de lastige noten om te kraken.
 

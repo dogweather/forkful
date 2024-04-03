@@ -17,12 +17,7 @@ title: "S\u1EED d\u1EE5ng giao di\u1EC7n d\xF2ng l\u1EC7nh t\u01B0\u01A1ng t\xE1
 weight: 34
 ---
 
-## Gì và Tại sao?
-
-Một shell tương tác (REPL - Vòng lặp Đọc-Đánh giá-In) cho Dart cho phép lập trình viên đánh máy và thực thi mã Dart từng dòng một mà không cần phải biên dịch toàn bộ kịch bản. Công cụ này vô giá đối với việc học cú pháp của Dart, thử nghiệm các đoạn mã, hoặc gỡ lỗi bằng cách cung cấp phản hồi ngay lập tức và tạo điều kiện cho việc kiểm tra lặp.
-
 ## Làm thế nào:
-
 Dart không đi kèm với REPL được tích hợp sẵn. Tuy nhiên, bạn có thể đạt được chức năng tương tự REPL bằng cách sử dụng DartPad (trực tuyến) hoặc bằng cách sử dụng các công cụ bên thứ ba như `dart_repl`.
 
 **Sử dụng DartPad:**

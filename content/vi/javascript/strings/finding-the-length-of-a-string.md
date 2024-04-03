@@ -14,9 +14,6 @@ title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---
 
-## Gì và Tại sao?
-Tìm chiều dài của một chuỗi có nghĩa là đếm số ký tự của nó. Lập trình viên thực hiện việc này để xác thực đầu vào, lặp qua các chuỗi và thao tác dữ liệu văn bản một cách hiệu quả.
-
 ## Cách thực hiện:
 JavaScript giữ cho nó đơn giản với thuộc tính `.length`.
 

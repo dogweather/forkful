@@ -13,9 +13,6 @@ title: Obtendo a data atual
 weight: 29
 ---
 
-## O Que & Por Que?
-Obter a data atual em JavaScript é uma tarefa fundamental, envolvendo a recuperação e, possivelmente, a manipulação da data e hora de hoje. Programadores realizam isso para exibir datas em websites, em aplicações, acompanhar interações do usuário, ou lidar com dados sensíveis ao tempo.
-
 ## Como fazer:
 No JavaScript puro, o objeto `Date` é usado para trabalhar com datas e horas. Aqui está como você pode obter a data e hora atuais:
 

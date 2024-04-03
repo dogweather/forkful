@@ -14,12 +14,7 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva og hvorfor?
-
-Avrunding av tall, et grunnleggende konsept innen dataprogrammering, innebærer å justere et tall til nærmeste heltall eller til et spesifisert antall desimaler. Programmerere utfører ofte avrunding for å forenkle tall for menneskelig lesbarhet eller for å møte spesifikke beregningsbehov, noe som sikrer presisjon og reduserer beregningsbelastningen.
-
 ## Hvordan:
-
 Google Apps Script, som er et JavaScript-basert språk, tilbyr standardmetoder for å avrunde tall. Her er en oppdeling av tre ofte brukte teknikker:
 
 ### Math.round()
@@ -61,7 +56,6 @@ Logger.log(preciseRound); // Utganger: 2.57
 ```
 
 ## Dypdykk
-
 Å avrunde tall i Google Apps Script avviker ikke mye fra hvordan det gjøres i andre JavaScript-miljøer. Men det er avgjørende å forstå forskjellene i avrundingsmetoder og potensialet for problemer med flyttallsaritmetikk. For eksempel, på grunn av måten datamaskiner representerer flyttall på, kan ikke alle desimalfraksjoner representeres med perfekt nøyaktighet, noe som fører til noen ganger uventede avrundingsresultater.
 
 Historisk sett håndterer JavaScript (og ved forlengelse, Google Apps Script) dette ved å følge IEEE 754-standarden, som brukes av mange andre programmeringsspråk for flyttallsaritmetikk. Denne standarden definerer hvordan tall blir avrundet, og sikrer konsistens på tvers av forskjellige plattformer og språk.

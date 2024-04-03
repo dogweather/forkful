@@ -13,9 +13,6 @@ title: Escrevendo um arquivo de texto
 weight: 24
 ---
 
-## O Quê & Porquê?
-Escrever um arquivo de texto no PowerShell envolve criar e manipular arquivos baseados em texto, o que é uma operação fundamental para registro, armazenamento de dados e scripts de configuração. Os programadores aproveitam isso para automatizar tarefas do sistema, análise de dados e integração com outras aplicações ou scripts.
-
 ## Como fazer:
 O PowerShell fornece cmdlets diretos para manusear arquivos. O cmdlet `Out-File` e os operadores de redirecionamento são usados principalmente para esse propósito. Aqui estão exemplos ilustrando como escrever texto em arquivos em diferentes cenários:
 

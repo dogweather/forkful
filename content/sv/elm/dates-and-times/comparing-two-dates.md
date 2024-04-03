@@ -12,9 +12,6 @@ title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---
 
-## Vad & Varför?
-Att jämföra två datum innebär att granska deras ordning och tidsintervall – är det ena före det andra, samtidigt, eller hur lång tid är det emellan? Programmerare behöver detta för att hantera tidsbaserade data, som utgångsdatum, händelser i kalendrar eller tidsgränser i projektplanering.
-
 ## Hur gör man:
 ```Elm
 import Time

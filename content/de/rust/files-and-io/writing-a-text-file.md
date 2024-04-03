@@ -12,9 +12,6 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-Das Schreiben einer Textdatei in Rust beinhaltet das Erstellen, Beschreiben und potenziell Anhängen von Daten an eine Datei im Dateisystem. Programmierer führen diese Operation durch, um Daten dauerhaft zu speichern, wie zum Beispiel Anwendungslogs, Konfiguration oder vom Benutzer generierte Inhalte, um die Datenhaltbarkeit über die Ausführung des Programms hinaus zu gewährleisten.
-
 ## Wie geht das:
 Die Standardbibliothek von Rust bietet robuste Werkzeuge für die Dateimanipulation, die hauptsächlich in den Modulen `std::fs` und `std::io` gekapselt sind. Hier ist ein grundlegendes Beispiel, um eine Textdatei zu erstellen und in sie zu schreiben:
 

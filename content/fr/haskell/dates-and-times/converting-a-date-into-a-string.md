@@ -9,9 +9,6 @@ title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## Quoi & Pourquoi ?
-Convertir une date en chaîne nous permet de la formater pour l'affichage. Les programmeurs le font pour rendre les dates compréhensibles par les humains ou préparer pour la sérialisation.
-
 ## Comment faire :
 ```Haskell
 import Data.Time

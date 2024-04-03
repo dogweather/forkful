@@ -12,9 +12,6 @@ title: Scrivere test
 weight: 36
 ---
 
-## Cos'è e Perché?
-Scrivere test in C comporta la creazione di programmi o funzioni ausiliari più piccoli che verificano automaticamente la funzionalità del codice. I programmatori lo fanno per assicurarsi che il loro software funzioni come previsto, per individuare precocemente i bug e per facilitare le future modifiche del codice senza effetti collaterali indesiderati.
-
 ## Come fare:
 Anche se C non ha un framework di test integrato come alcuni altri linguaggi, è comunque possibile scrivere test efficaci utilizzando assert.h per asserzioni semplici o integrare framework di terze parti come CUnit o Unity per test più strutturati. Ecco un esempio base che usa assert.h per testare una funzione che somma due interi:
 

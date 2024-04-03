@@ -10,9 +10,6 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## What & Why? (Cosa e Perché?)
-Stampare l'output di debug aiuta a seguire ciò che Arduino sta facendo e a capire problemi nel codice. Lo facciamo per testare e correggere più velocemente il nostro lavoro.
-
 ## How to: (Come fare:)
 ```Arduino
 void setup() {

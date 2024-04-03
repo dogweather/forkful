@@ -24,9 +24,6 @@ title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u0940 \u0932\u09
 weight: 7
 ---
 
-## What & Why? (क्या और क्यों?)
-String की length जानना मतलब होता है character की संख्या को मापना। यह इसलिए जरूरी है क्योंकि programmers को अक्सर data या input को validate और process करने के लिए इसका सही आकार जानना अनिवार्य होता है।
-
 ## How to: (कैसे करें:)
 ```C#
 using System;

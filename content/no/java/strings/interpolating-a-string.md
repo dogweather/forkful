@@ -9,9 +9,6 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Interpolering i strenger lar oss sette inn variabler direkte i en tekst. Programmerere gjør dette for å enkelt kunne bygge dynamiske meldinger.
-
 ## How to: (Hvordan:)
 I Java 15 ble det introdusert en forhåndsvisningsfunksjon kalt text blocks, som gjør string interpolasjon enklere. Her er et eksempel:
 

@@ -11,9 +11,6 @@ title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---
 
-## Vad & Varför?
-Starta ett nytt projekt innebär att skapa en ren arbetsyta för att utveckla dina idéer. Programmerare gör detta för att organisera, förenkla och effektivisera sitt arbete.
-
 ## Hur gör man:
 Här är ett grundläggande exempel för att starta ett nytt projekt i Fish Shell:
 

@@ -10,10 +10,6 @@ title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---
 
-## What & Why?
-(Mesurer la longueur d'une chaîne : Quoi et Pourquoi?)
-Calculer la longueur d'une chaîne de caractères, c'est compter le nombre de ses éléments. C'est utile pour valider des données ou manipuler du texte.
-
 ## How to:
 (Comment faire :)
 Obtenir la longueur d'une chaîne de caractères en Bash :

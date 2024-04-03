@@ -14,12 +14,7 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## Quoi et Pourquoi ?
-
-La lecture des arguments de la ligne de commande dans Visual Basic pour Applications (VBA) implique l'accès aux paramètres passés à votre programme lors de son exécution. Cette technique est souvent utilisée pour influencer le comportement ou la sortie d'un programme sans nécessiter d'interaction de l'utilisateur, rendant ainsi les tâches d'automatisation et de script significativement plus simples et polyvalentes.
-
 ## Comment faire :
-
 Contrairement à des environnements de programmation plus simples, VBA n'a pas de fonction intégrée pour lire directement les arguments de la ligne de commande dans un sens conventionnel parce qu'il est principalement conçu pour être intégré dans les applications Microsoft Office. Cependant, avec un peu de créativité, nous pouvons utiliser le Windows Script Host (WSH) ou appeler des APIs externes pour atteindre une fonctionnalité similaire. Voici une solution pratique en utilisant WSH :
 
 1. **Créer un VBScript pour passer les arguments à VBA :**
@@ -54,7 +49,6 @@ cscript yourScript.vbs "Bonjour" "Monde"
    Cela devrait aboutir à l'exécution de votre macro VBA avec les arguments "Bonjour" et "Monde", les affichant dans une boîte de message.
 
 ## Approfondissement :
-
 Dans son contexte historique, VBA a été conçu pour étendre les capacités des applications Microsoft Office, et non comme un environnement de programmation autonome. Par conséquent, l'interaction directe avec la ligne de commande est en dehors de son champ d'application principal, ce qui explique le manque de support intégré pour la lecture des arguments de la ligne de commande.
 
 La méthode décrite ci-dessus, bien qu'efficace, est plus une solution de contournement qu'une solution native, exploitant un script externe pour combler le fossé. Cette approche peut introduire de la complexité et des préoccupations de sécurité potentielles car elle nécessite l'activation des macros et potentiellement l'abaissement des paramètres de sécurité pour exécuter.

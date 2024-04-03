@@ -11,9 +11,6 @@ title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---
 
-## Hva & Hvorfor?
-Å finne lengden på en tekststreng betyr å telle antallet tegn den inneholder. Vi gjør dette for å validere inndata, håndtere tekstbaserte protokoller, eller for å formatere utdata riktig.
-
 ## Slik gjør du:
 ```Bash
 streng="Hallo, Norge!"

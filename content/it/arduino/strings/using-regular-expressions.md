@@ -11,12 +11,7 @@ title: Utilizzo delle espressioni regolari
 weight: 11
 ---
 
-## Cosa e Perché?
-
-Le espressioni regolari consentono di analizzare le stringhe di testo per cercare modelli. I programmatori le utilizzano per validare l’input, estrarre dati, e semplificare la ricerca e la sostituzione di testo.
-
 ## Come fare:
-
 ```Arduino
 #include <regex.h>
 
@@ -54,11 +49,9 @@ Corrispondenza trovata!
 ```
 
 ## Approfondimento
-
 Le espressioni regolari esistono fin dagli anni '50. In Arduino, la libreria `<regex.h>` è spesso meno potente rispetto a linguaggi come Python o JavaScript. Come alternativa, le funzioni `String` native possono essere usate per operazioni più semplici su stringhe. Per i microcontroller, l'implementazione di espressioni regolari deve essere leggera a causa delle limitate risorse hardware.
 
 ## Altre Risorse
-
 - [Arduino Reference: String](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
 - [RegexOne: Imparare le Espressioni Regolari](https://regexone.com)
 - [Stack Overflow: RegEx Matching in Arduino](https://stackoverflow.com/questions/tagged/regex+arduino)

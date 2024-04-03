@@ -10,12 +10,7 @@ title: Downloading a web page
 weight: 42
 ---
 
-## What & Why?
-
-Downloading a web page means grabbing its data over the internet; it's like saving a copy to read or process locally. Programmers do it to scrape content, interact with web services, or mirror sites.
-
 ## How to:
-
 Let's roll with a straightforward example using Haskell's `http-conduit` library. First, install it using `cabal install http-conduit`. Then:
 
 ```Haskell
@@ -37,7 +32,6 @@ main = do
 Running this, you'll see the HTML of `http://example.com` on your screen.
 
 ## Deep Dive
-
 HTTP requests in Haskell haven't always been this neat. Older libraries like `HTTP` required more boilerplate code. With `http-conduit`, the complexity is abstracted away.
 
 Other methods exist, like the `wget` command in a shell script or Python's `requests` library. But these aren't always as efficient or expressive in Haskell's functional setting.
@@ -45,6 +39,5 @@ Other methods exist, like the `wget` command in a shell script or Python's `requ
 Under the hood, `http-conduit` uses a Manager to handle connection pooling and Keep-Alive for HTTP1.1, making it more efficient for multiple requests.
 
 ## See Also
-
 - For more advanced usage of `http-conduit`: [http-conduit on Hackage](https://hackage.haskell.org/package/http-conduit)
 - To understand ByteString: [ByteString on Hackage](https://hackage.haskell.org/package/bytestring)

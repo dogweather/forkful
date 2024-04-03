@@ -14,9 +14,6 @@ title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uA
 weight: 26
 ---
 
-## What & Why? (무엇과 왜?)
-날짜 계산은 미래나 과거의 특정 날짜를 정하는 것입니다. 예약 시스템, 기한 설정, 시간 관리 등 프로그래밍에서 자주 사용합니다.
-
 ## How to: (방법)
 ```Clojure
 ;; clojure.java.time 라이브러리를 사용합니다.

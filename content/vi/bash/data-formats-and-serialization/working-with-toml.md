@@ -14,9 +14,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---
 
-## Cái gì & Tại sao?
-TOML, viết tắt của Tom's Obvious, Minimal Language, là một định dạng chuỗi hóa dữ liệu. Lập trình viên ưa thích nó vì sự đơn giản và dễ đọc; nó thực sự phù hợp cho các file cấu hình, có bản chất tương tự như YAML nhưng ít rườm rà hơn JSON đối với con người.
-
 ## Cách thực hiện:
 Đầu tiên, cài đặt `toml-cli` để thao tác với TOML trong Bash. Tiện lợi cho việc đọc hoặc chỉnh sửa các file TOML một cách nhanh chóng.
 

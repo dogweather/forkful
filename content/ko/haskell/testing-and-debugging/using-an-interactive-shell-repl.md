@@ -15,9 +15,6 @@ title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
 weight: 34
 ---
 
-## 무엇 & 왜?
-Haskell에서의 인터랙티브 셸, 또는 REPL(Read-Eval-Print Loop)은 실시간으로 코드 조각을 실행할 수 있게 해줍니다. 이는 빠른 피드백, 함수 테스팅 및 언어 학습을 위한 놀이터와 같습니다.
-
 ## 사용 방법:
 GHCi (Glasgow Haskell Compiler의 인터랙티브 환경)를 시작하기 위해서는 단순히 터미널에서 `ghci`라고 입력하면 됩니다. 사용 방법은 다음과 같습니다:
 

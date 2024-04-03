@@ -13,12 +13,7 @@ title: Een string omzetten naar kleine letters
 weight: 4
 ---
 
-## Wat en Waarom?
-
-Een string naar kleine letters omzetten betekent het transformeren van alle letters in de tekst naar hun kleine lettertegenhangers. Programmeurs doen dit voor consistentie in vergelijking, zoeken en het verwerken van tekstgegevens.
-
 ## Hoe:
-
 Haskell gebruikt de `Data.Char` module om karakters te manipuleren. De functie `toLower` verandert specifiek een enkel karakter naar een kleine letter. Je zult deze functie over een string heen mappen om deze volledig naar kleine letters om te zetten. Bekijk de code:
 
 ```haskell
@@ -40,7 +35,6 @@ hello, haskell!
 ```
 
 ## Dieper Duiken
-
 Historisch gezien komt het concept van lettercases uit het tijdperk van handmatige letterzetting, toen hoofdletters en kleine letters in aparte bakken werden bewaard. In programmering zorgt de omzetting van hoofdletters naar kleine letters voor uniformiteit, vooral bij hoofdletterongevoelige bewerkingen.
 
 Hier is de DL over Haskell bijzonderheden. De `Data.Char` module, met daarin `toLower`, verscheen in de Haskell 98 standaard. Sindsdien is het de goto voor karaktermanipulaties. Andere talen hebben hun eigen methoden, zoals `.toLowerCase()` in JavaScript of `.lower()` in Python, maar in Haskell doen `map` en `toLower` het werk netjes.
@@ -50,7 +44,6 @@ Onder de motorkap houdt `toLower` rekening met Unicode, wat betekent dat het een
 Alternatieven? Zeker, je zou je eigen functie kunnen uitrollen die `toLower` nabootst, maar waarom het wiel opnieuw uitvinden? Blijf bij `Data.Char` voor leesbaarheid en betrouwbaarheid. Plus, bibliotheken zoals `text` en `bytestring` bieden meer prestatiegerichte benaderingen als je met grote datasets werkt of streeft naar prestatie.
 
 ## Zie Ook
-
 - `Data.Char` documentatie: https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-Char.html
 - Haskell 98 Rapport over `Data.Char`: https://www.haskell.org/onlinereport/standard-prelude.html
 - Text bibliotheek voor Haskell: https://hackage.haskell.org/package/text

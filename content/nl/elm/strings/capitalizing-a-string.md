@@ -12,9 +12,6 @@ title: Een string met hoofdletters maken
 weight: 2
 ---
 
-## Wat & Waarom?
-Het kapitaliseren van een string betekent het converteren van het eerste karakter naar een hoofdletter en de rest in kleine letters houden. Programmeurs doen dit voor eigennamen, titels of om een consistente stijl af te dwingen voor koppen en tekstinhoud.
-
 ## Hoe:
 In Elm krijg je niet standaard een kapitaliseerfunctie, maar je kunt er gemakkelijk een maken:
 

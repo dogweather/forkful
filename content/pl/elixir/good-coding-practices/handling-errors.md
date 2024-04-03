@@ -11,12 +11,7 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co i dlaczego?
-
-Obsługa błędów oznacza pisanie kodu, który może poradzić sobie z sytuacjami, kiedy coś pójdzie nie tak. Programiści robią to, aby zapobiec awariom i aby upewnić się, że ich programy mogą łagodnie się odbudować, gdy zadziała prawo Murphy'ego.
-
 ## Jak to zrobić:
-
 W Elixirze często używamy dopasowania wzorców i instrukcji `case` do obsługi różnych wyników, w tym błędów.
 
 ```elixir
@@ -47,7 +42,6 @@ Błąd: Nie można dzielić przez zero.
 Gdy uruchomisz ten kod Elixira, otrzymasz albo udane dzielenie, albo komunikat o błędzie, w zależności od wejścia. Tutaj nie ma awarii!
 
 ## Pogłębiona analiza
-
 Dawniej obsługa błędów często polegała na sprawdzaniu wartości zwracanych. Jednak z funkcyjnymi korzeniami Elixira mamy dopasowanie wzorców i otagowane krotki, takie jak `{:ok, wartość}` lub `{:error, powód}`, które są bardziej eleganckie.
 
 Istnieją inne sposoby obsługi błędów w Elixerze:
@@ -58,7 +52,6 @@ Istnieją inne sposoby obsługi błędów w Elixerze:
 Pod względem implementacji, Elixir buduje na solidności Erlanga. Traktuje błędy jako kolejny typ wiadomości do obsługi z całym dopasowaniem wzorców i dobrocią funkcyjną.
 
 ## Zobacz także
-
 Aby dowiedzieć się więcej o obsłudze błędów w Elixerze, sprawdź:
 
 - Oficjalny przewodnik po Elixirze na temat [obsługi błędów](https://elixir-lang.org/getting-started/try-catch-and-rescue.html).

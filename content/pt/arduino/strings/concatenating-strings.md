@@ -11,9 +11,6 @@ title: Concatenando strings
 weight: 3
 ---
 
-## O Que & Por Quê?
-Concatenar strings é juntar duas ou mais sequências de caracteres para formar uma nova. Programadores fazem isso para montar mensagens, dados ou comandos de forma dinâmica.
-
 ## Como Fazer:
 ```Arduino
 String primeiroNome = "João";

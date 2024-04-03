@@ -13,12 +13,7 @@ title: Usando arrays asociativos
 weight: 15
 ---
 
-## ¿Qué y Por Qué?
-
-Los arreglos asociativos en Dart, comúnmente conocidos como Mapas, son estructuras de datos que almacenan datos en pares clave-valor. Permiten a los programadores acceder a elementos no a través de índices, sino de claves, haciendo que la recuperación de datos sea intuitiva y eficiente, especialmente cuando se trabaja con datos estructurados donde cada elemento tiene un identificador único.
-
 ## Cómo hacerlo:
-
 Dart ofrece una sintaxis sencilla para crear y manipular Mapas. A continuación, se muestran ejemplos que demuestran operaciones básicas como la creación, adición de elementos y obtención de valores.
 
 ```dart

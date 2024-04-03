@@ -10,12 +10,7 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-
-Regular expressions (regex) are sequences of characters that form a search pattern, primarily used for string searching and manipulation. Programmers leverage regex in PowerShell for tasks like data validation, parsing, and transformation due to its efficiency and flexibility in handling complex patterns.
-
 ## How to:
-
 In PowerShell, you can use the `-match`, `-replace`, and `-split` operators, among others, to perform actions with regular expressions. Let's explore a few examples:
 
 ### Using `-match` to check if a string matches a pattern

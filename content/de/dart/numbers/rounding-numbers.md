@@ -12,35 +12,26 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-
-Das Runden von Zahlen ist der Vorgang, eine Zahl auf die nächstgelegene ganze Zahl oder auf eine bestimmte Anzahl von Dezimalstellen anzupassen. Programmierer runden Zahlen oft, um Berechnungen zu vereinfachen, die Lesbarkeit zu verbessern oder Daten für die Anzeige vorzubereiten, was Konsistenz und Klarheit in den numerischen Ausgaben sicherstellt.
-
 ## Wie geht das:
-
 Dart stellt native Methoden in seinem Kern `num` Typ für Rundungsoperationen zur Verfügung. Hier werden wir Methoden wie `round()`, `floor()`, `ceil()` und das Runden auf eine spezifische Anzahl von Dezimalstellen erkunden.
 
 ### Auf die nächste ganze Zahl runden:
-
 ```dart
 var number = 3.56;
 print(number.round()); // Gibt aus: 4
 ```
 
 ### Abrunden:
-
 ```dart
 print(number.floor()); // Gibt aus: 3
 ```
 
 ### Aufrunden:
-
 ```dart
 print(number.ceil()); // Gibt aus: 4
 ```
 
 ### Auf eine spezifische Anzahl von Dezimalstellen runden:
-
 Um auf eine spezifische Anzahl von Dezimalstellen zu runden, können wir die Methode `toStringAsFixed()` verwenden, die einen String zurückgibt, oder eine Kombination aus `pow` von `dart:math` für ein numerisches Ergebnis nutzen.
 
 ```dart

@@ -13,12 +13,7 @@ title: "H\xE5ndtering av feil"
 weight: 16
 ---
 
-## Hva & Hvorfor?
-
-Feilhåndtering i Google Apps Script handler om å forutse, fange opp, og svare på unntak eller feil som oppstår under kjøring av skriptet. Programmerere implementerer det for å beskytte skriptene mot uventede feil, slik at de sikrer jevnere, brukervennlige applikasjoner som kan håndtere eller logge feil grasiøst uten bråkrasj.
-
 ## Hvordan:
-
 Google Apps Script, som er basert på JavaScript, lar oss bruke den tradisjonelle `try-catch`-setningen for feilhåndtering, sammen med `finally` hvis opprydding er nødvendig uavhengig av suksess eller feil.
 
 ```javascript
@@ -56,7 +51,6 @@ Funksjon fullført.
 Google Apps Script støtter også å kaste egendefinerte feil med `Error`-objektet og å fange spesifikke feiltyper etter behov. Imidlertid gjør mangel på avansert feilkategorisering det nødvendig å stole på feilmeldinger for spesifisitet.
 
 ## Dypdykk
-
 Historisk sett har feilhåndtering i skriptspråk som JavaScript (og dermed Google Apps Script) vært mindre sofistikert enn i noen kompilerte språk, som tilbyr egenskaper som detaljerte unntakshierarkier og omfattende feilsøkingsverktøy. Google Apps Scripts modell er relativt grei, ved å utnytte JavaScripts `try-catch-finally`-paradigme. Denne enkelheten er i tråd med språkets design for å raskt utvikle og distribuere applikasjoner i liten til middels skala innenfor Googles økosystem, men det kan noen ganger begrense utviklere som håndterer komplekse feilscenarier.
 
 I mer komplekse applikasjoner supplementerer programmerere ofte Google Apps Scripts innebygde feilhåndtering med egendefinerte logger og feilrapporteringsmekanismer. Dette kan inkludere å skrive feil til et Google-regneark for revisjon eller å bruke tredjeparts logger-tjenester gjennom Google Apps Scripts URL Fetch Services for å sende feildetaljer ut av skriptmiljøet.

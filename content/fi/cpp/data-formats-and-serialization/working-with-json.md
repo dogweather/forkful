@@ -14,18 +14,12 @@ title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---
 
-## Mikä & Miksi?
-
-JSON (JavaScript Object Notation) on kevyt muoto datan tallentamiseen ja siirtämiseen, mikä tekee siitä erinomaisen välineen datan vaihtoon palvelimien ja web-sovellusten välillä. Ohjelmoijat käyttävät JSONia sen helpon luettavuuden ihmisten toimesta ja suoraviivaisen jäsentämisen koneiden toimesta, erityisesti työskennellessään sovellusten parissa, jotka vaativat datan vaihtoa internetin yli tai konfiguraatioasetuksia.
-
 ## Miten:
-
 C++:ssa ei ole natiivia tukea JSONille, mutta kolmannen osapuolen kirjastot, kuten nlohmann/json, tekevät siitä suoraviivaista. Näin voit käyttää sitä perustehtäviin:
 
 Ensiksi, varmista, että sinulla on kirjasto asennettuna. Jos käytät paketinhallintajärjestelmää, kuten vcpkg tai Conan, voit helposti lisätä `nlohmann/json` projektisi.
 
 ### JSONin jäsentäminen merkkijonosta
-
 ```cpp
 #include <iostream>
 #include <nlohmann/json.hpp>
@@ -55,7 +49,6 @@ Kaupunki: New York
 ```
 
 ### JSONin generointi
-
 JSON datan luominen on yhtä suoraviivaista; sinun tarvitsee vain antaa arvoja `nlohmann/json` objektille.
 
 ```cpp

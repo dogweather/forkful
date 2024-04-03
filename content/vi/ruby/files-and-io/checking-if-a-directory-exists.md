@@ -15,11 +15,7 @@ title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---
 
-## Điều gì & Tại sao?
-Kiểm tra nếu một thư mục tồn tại có nghĩa là xác nhận xem một thư mục có mặt trong hệ thống tệp tin hay không. Lập trình viên thực hiện điều này để tránh lỗi trước khi thực hiện các thao tác tệp tin như đọc từ hoặc viết vào một thư mục.
-
 ## Cách thực hiện:
-
 Trong Ruby, bạn có thể sử dụng phương thức `Dir.exist?` để kiểm tra nếu một thư mục tồn tại. Dưới đây là cách nó trông như thế nào:
 
 ```ruby
@@ -43,7 +39,6 @@ Không có thư mục nào như vậy.
 ```
 
 ## Sâu hơn
-
 Lịch sử, Ruby đã cung cấp nhiều cách để tương tác với hệ thống tệp tin. `Dir.exist?` giờ đây là phương thức được ưa chuộng do sự rõ ràng và đơn giản của nó, nhưng mã nguồn cũ có thể sử dụng `File.directory?`. Cả hai phương thức này có nghĩa gần như là như nhau và có thể hoán đổi cho nhau.
 
 ```ruby
@@ -62,7 +57,6 @@ Về mặt cài đặt bên dưới, khi bạn gọi `Dir.exist?`, Ruby yêu c�
 Khi nói đến các phương án thay thế, ngoài việc kiểm tra đường dẫn thủ công, bạn cũng có thể bắt các ngoại lệ phát sinh từ việc cố gắng truy cập vào một thư mục không tồn tại. Tuy nhiên, điều này không được khuyến khích vì nó tốn kém hơn về nguồn lực hệ thống và ít rõ ràng hơn đối với người đọc mã nguồn.
 
 ## Tham khảo thêm
-
 Để tìm hiểu sâu hơn về việc xử lý tệp tin và thư mục trong Ruby, hãy tham khảo các nguồn tài liệu sau:
 
 - Ruby Docs về lớp `Dir`: [https://ruby-doc.org/core/Dir.html](https://ruby-doc.org/core/Dir.html)

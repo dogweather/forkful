@@ -11,9 +11,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---
 
-## O Que & Porquê?
-Enviar uma requisição HTTP é o processo de solicitar ou enviar dados a um servidor web. Programadores fazem isso para interagir com APIs, recuperar dados para aplicativos ou enviar informações de formulários.
-
 ## Como Fazer:
 Vamos usar o `fetch`, que é uma forma moderna e fácil de enviar requisições HTTP em JavaScript:
 

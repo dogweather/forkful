@@ -11,9 +11,6 @@ title: Lecture d'un fichier texte
 weight: 22
 ---
 
-## Quoi & Pourquoi ?
-Lire un fichier texte en programmation, c'est récolter le contenu d'un fichier pour l'utiliser ou le modifier. En tant que programmeurs, on fait ça pour traiter des données, configurer nos apps ou juste pour interagir avec l'utilisateur.
-
 ## Comment faire :
 ```elixir
 # Lire tout le contenu d'un fichier

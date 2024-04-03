@@ -13,9 +13,6 @@ title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---
 
-## Vad & Varför?
-Reguljära uttryck (regex) är mönster som används för att matcha teckenkombinationer i strängar. Programmerare använder dem för att söka, redigera eller manipulera text baserat på definierade mönster, vilket gör dem oumbärliga för uppgifter som datavalidering, tolkning eller transformation.
-
 ## Hur:
 Att använda regex i Python innebär att använda `re`-modulen, som tillhandahåller en uppsättning funktioner för att bearbeta text med hjälp av reguljära uttryck.
 

@@ -16,9 +16,6 @@ title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uA
 weight: 26
 ---
 
-## 무엇 & 왜?
-날짜 계산이란, 특정 날짜에서 과거나 미래로 일정 기간을 더하거나 뺀 날짜를 찾는 것입니다. 프로그래머들은 예정된 이벤트, 유효기간, 스케줄 관리 등을 다루기 위해 이를 사용합니다.
-
 ## 사용 방법:
 ```Rust
 use chrono::{DateTime, Duration, Utc};

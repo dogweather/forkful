@@ -13,12 +13,7 @@ title: Arrondissement des nombres
 weight: 13
 ---
 
-## Quoi & Pourquoi ?
-
-Arrondir les nombres en programmation consiste à approximer un nombre à son entier le plus proche ou à un certain nombre de décimales. Les programmeurs arrondissent les chiffres pour simplifier les figures, améliorer la lisibilité ou répondre à des critères numériques spécifiques dans les calculs, surtout dans les calculs financiers où la précision est importante.
-
 ## Comment :
-
 Dans Visual Basic pour Applications (VBA), l'arrondi peut être réalisé en utilisant plusieurs fonctions, chacune étant adaptée à des scénarios spécifiques. Voici les fonctions les plus couramment utilisées avec des exemples :
 
 1. **Fonction Round** :
@@ -54,7 +49,6 @@ Dans Visual Basic pour Applications (VBA), l'arrondi peut être réalisé en uti
    ```
 
 ## Approfondissement
-
 La fonction `Round` dans VBA est intrinsèquement différente des méthodes d'arrondi dans d'autres langages en raison de son utilisation de l'**arrondi du banquier**. L'arrondi du banquier arrondit au nombre pair le plus proche lorsque exactement à mi-chemin entre deux nombres, réduisant le biais dans les calculs sur un grand ensemble de données et fournissant un résultat statistiquement plus significatif. Cependant, cela peut conduire à un comportement inattendu pour ceux qui ne sont pas familiers avec cela, surtout lorsque une précision intégrale est attendue dans chaque cas.
 
 En contraste, de nombreux langages de programmation et systèmes utilisent "l'arrondi arithmétique" ou "l'arrondi à la moitié supérieure", où un nombre exactement à mi-chemin entre deux valeurs arrondies possibles est toujours arrondi vers le haut. Lors de la traduction ou du portage de code d'autres langues vers VBA, les programmeurs doivent garder ces différences à l'esprit pour éviter les bugs subtils ou les inexactitudes dans les applications financières et statistiques.

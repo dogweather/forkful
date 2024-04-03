@@ -12,9 +12,6 @@ title: Een datum converteren naar een string
 weight: 28
 ---
 
-## Wat & Waarom?
-Datum naar string conversie transformeert een Datum-object naar een leesbaar tekstformaat, omdat mensen "1 april 2023" verkiezen boven cryptische tijdscodes. Programmeurs doen dit voor duidelijkheid in gebruikersinterfaces en om datums te formatteren voor opslag of netwerkoverdracht.
-
 ## Hoe te:
 JavaScript heeft ingebouwde methoden om datums naar strings te converteren. Hier is hoe je ze gebruikt:
 

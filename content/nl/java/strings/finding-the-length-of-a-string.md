@@ -11,9 +11,6 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-De lengte van een string vinden betekent uitzoeken hoeveel tekens deze bevat. Programmeurs doen dit vaak om invoer te valideren, door karakters te lussen, of tekst uit te lijnen.
-
 ## Hoe:
 Java-strings hebben een `length()` methode. Roep het aan, en je krijgt het aantal tekens. Eenvoudig.
 

@@ -11,9 +11,6 @@ title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---
 
-## Vad & Varför?
-Att jämföra två datum innebär att avgöra om ett datum kommer före, är samma, eller efter ett annat. Programmerare gör detta för att hantera händelser, tidslinjer, deadlines och tidsbaserade funktioner i applikationer.
-
 ## Hur man gör:
 ```Rust
 use chrono::{DateTime, Utc, Duration};

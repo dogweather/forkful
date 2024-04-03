@@ -11,9 +11,6 @@ title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---
 
-## Hva & Hvorfor?
-Å starte et nytt prosjekt betyr å opprette grunnlaget for kodearbeidet ditt. Programmerere gjør dette for å organisere kode, dele arbeidet i håndterbare deler og lettere kunne vedlikeholde det i fremtiden.
-
 ## Slik gjør du:
 Koden nedenfor viser hvordan du kan sette opp et nytt prosjekt ved hjelp av PowerShell:
 

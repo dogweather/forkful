@@ -17,12 +17,7 @@ title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---
 
-## Gì và Tại sao?
-
-Chuyển đổi một chuỗi về dạng chữ thường là một thao tác cơ bản bao gồm việc biến đổi tất cả các kí tự trong một chuỗi đã cho thành các tương đương chữ thường của chúng. Các lập trình viên thường thực hiện thao tác này để đạt được so sánh không phân biệt chữ hoa chữ thường hoặc để chuẩn hóa đầu vào văn bản cho xử lý tiếp theo, làm cho ứng dụng thêm thân thiện với người dùng và dữ liệu trở nên nhất quán hơn.
-
 ## Làm thế nào:
-
 Trong Dart, bạn có thể chuyển đổi một chuỗi sang dạng chữ thường bằng cách sử dụng phương thức `toLowerCase()` được cung cấp bởi lớp `String`. Phương thức này trả về một chuỗi mới với tất cả các kí tự in hoa được chuyển đổi thành chữ thường. Hãy xem cách thức này hoạt động như thế nào qua một ví dụ đơn giản:
 
 ```dart

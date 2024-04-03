@@ -11,9 +11,6 @@ title: Removing quotes from a string
 weight: 9
 ---
 
-## What & Why?
-Removing quotes from a string means stripping out any instances of single (`'`) or double (`"`) quote characters that wrap the text. Programmers often do this to sanitize input, prepare strings for comparison, or process text data that might accidentally include quotes as part of the string content.
-
 ## How to:
 To remove quotes from a string in Arduino, you can loop over the characters and rebuild the string without the quote characters. For example:
 

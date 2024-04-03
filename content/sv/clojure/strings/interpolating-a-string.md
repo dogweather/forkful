@@ -11,9 +11,6 @@ title: "Interpolera en str\xE4ng"
 weight: 8
 ---
 
-## Vad & Varför?
-Interpolering av sträng är processen där man sätter in uttryck eller variabler in i strängar. Programmerare gör det för att dynamiskt bygga strängar – oftast för att visa information till användaren eller för att skapa dynamisk kod.
-
 ## Så här gör du:
 ```Clojure
 ;; Använda format
@@ -30,6 +27,7 @@ Interpolering av sträng är processen där man sätter in uttryck eller variabl
 
 ;; Output: Jag är 30 år gammal.
 ```
+
 ## Fördjupning
 Interpolering av strängar är inte en inbyggd funktion i Clojure på samma sätt som i vissa andra språk. Historiskt, i Lisp-dialekter var man tvungen att använda funktioner som `format` eller konkatenering med `str` för att uppnå samma resultat. Clojure håller sig till denna tradition. Trots att det inte finns inbyggd interpolering, kan bibliotek som `clojure.string` eller tillägg som `strfmt` ge ett liknande beteende med mer smidighet. Implementationsdetaljer centreras kring JVM, eftersom Clojure är en dialekt av Lisp som är utformad för att köras på Java Virtual Machine.
 

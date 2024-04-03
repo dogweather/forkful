@@ -10,9 +10,6 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co i dlaczego?
-Obsługa błędów w programowaniu polega na oczekiwaniu nieoczekiwanego. To sztuka planowania na wypadek gdyby coś poszło nie tak, abyś mógł utrzymać swoją aplikację w stabilnej pracy.
-
 ## Jak to zrobić:
 Lua używa dwóch głównych funkcji do obsługi błędów: `pcall` oraz `xpcall`. Oto jak ich używać:
 

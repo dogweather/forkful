@@ -10,9 +10,6 @@ title: Arbeiten mit XML
 weight: 40
 ---
 
-## Was & Warum?
-Die Arbeit mit XML umfasst das Parsen und Manipulieren von XML-Dokumenten mithilfe von Code. Programmierer machen dies, um Daten in einem strukturierten, portablen Format zu lesen, zu schreiben und zu modifizieren, das weit verbreitet für Datenaustausch und Speicherung verwendet wird.
-
 ## Wie geht das:
 Lua enthält kein natives XML-Parsing, aber es gibt Bibliotheken wie LuaXML und xml2lua, die diese Aufgabe erledigen. Hier ein kurzer Blick darauf, wie man XML mit xml2lua parst:
 

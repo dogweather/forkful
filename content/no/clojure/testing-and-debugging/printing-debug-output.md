@@ -11,9 +11,6 @@ title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---
 
-## What & Why?
-Utskrift for feilsøking viser programdata under kjøring, slik at programmerere raskt kan spore problemer. Vi bruker det fordi det er enkelt, og det gir umiddelbar innsikt i hva koden faktisk gjør.
-
 ## How to:
 ```Clojure
 ;; Skriv ut en enkel melding til konsollen

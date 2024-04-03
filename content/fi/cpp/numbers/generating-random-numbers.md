@@ -10,12 +10,7 @@ title: Satunnaislukujen generointi
 weight: 12
 ---
 
-## Mitä & Miksi?
-
-Satunnaislukujen tuottaminen ohjelmoinnissa tarkoittaa numerosekvenssien luomista, joissa ei ole ennustettavaa järjestystä tai kaavaa. Ohjelmoijat käyttävät usein näitä numeroita erilaisiin tarkoituksiin, kuten arvaamattomien tapahtumien simulointiin, testauksessa ja virheenkorjauksessa sekä pelialgoritmeissä oikeudenmukaisuuden tai arvaamattomuuden varmistamiseksi.
-
 ## Kuinka:
-
 Satunnaislukujen generoimiseksi C++:ssa tyypillisesti käytetään `<random>` otsikkotiedostoa, joka esiteltiin C++11:ssä, tarjoten laajan valikoiman välineitä satunnaislukujen generoimiseen eri jakautumista.
 
 ```C++
@@ -46,7 +41,6 @@ Esimerkkitulostus saattaa näyttää tältä, mutta pidä mielessä, että jokai
 ```
 
 ## Syväsukellus:
-
 Historiallisesti satunnaislukujen generointi C++:ssa nojasi vahvasti `rand()`-funktioon ja siemenarvon asettamiseen `srand()`-funktiolla, jotka löytyvät `<cstdlib>` otsikkotiedostosta. Tämä lähestymistapa sai kuitenkin usein kritiikkiä sen puutteellisen yhtenäisyyden ja ennustettavuuden vuoksi generoitujen numeroiden jakautumassa.
 
 `<random>` otsikkotiedoston esittely C++11:ssä merkitsi merkittävää parannusta, tarjoten kehittyneen järjestelmän satunnaisten lukujen tuottamiseen. Tarjotut välineet sisältävät valikoiman moottoreita (kuten `std::mt19937` Mersenne Twisterille) ja jakautumia (kuten `std::uniform_int_distribution` yhtenäiselle kokonaislukujen jakautumalle), joita voidaan yhdistellä ohjelmoijan erityistarpeiden mukaan, johtaen ennustettavampaan käytökseen, parempaan suorituskykyyn ja suurempaan joustavuuteen.

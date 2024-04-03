@@ -11,12 +11,7 @@ title: Satunnaislukujen generointi
 weight: 12
 ---
 
-## Mikä ja miksi?
-
-Satunnaislukujen generointi on ohjelmoinnissa perustehtävä, jota käytetään kaikessa datan otannasta pelikehitykseen. Fish Shellissä järjestelmätyökalujen ja sisäänrakennettujen funktioiden hyödyntäminen tähän tarkoitukseen mahdollistaa ohjelmoijien sisällyttää satunnaisuutta ja vaihtelevuutta skripteihin ja sovelluksiin tehokkaasti.
-
 ## Kuinka:
-
 Satunnaisluvun generointi Fishissa voi olla suoraviivaista, yhdistämällä järjestelmätyökaluja ja shellin kykyjä. Alla on joitakin esimerkkejä, jotka osoittavat, miten generoida satunnaislukuja määrätyissä rajoissa.
 
 **Generoi satunnaisluku välillä 0 ja 100:**
@@ -68,7 +63,6 @@ B
 Huomaa, että tuloste vaihtelee joka kerta, kun suoritat nämä komentorivit satunnaisuuden luonteen vuoksi.
 
 ## Syväsukellus
-
 Fish Shellin `random` -funktio tarjoaa helppokäyttöisen rajapinnan pseudo-satunnaislukujen generointiin. Sisäisesti se kietoutuu järjestelmätason satunnaislukujen generointityökalujen ympärille, tarjoten kannettavan tavan tuoda satunnaisuutta skripteihisi. On kuitenkin tärkeää muistaa, että `random`in tarjoama satunnaisuus on riittävä useimmille skriptaus tehtäville, mutta se ei välttämättä täytä korkean tason turvallisuusvaatimuksia sovelluksille, jotka tarvitsevat korkeampaa arvaamattomuuden astetta.
 
 Korkean panoksen turvallisuusyhteyksissä harkitse käyttäväsi omistettuja työkaluja tai ohjelmointikirjastoja, jotka on suunniteltu kryptografisiin tarkoituksiin ja jotka tarjoavat vahvempia satunnaisuustakuita. Siitä huolimatta yleisessä skriptauksessa ja sovelluksissa, joissa korkeimmat turvallisuusstandardit satunnaisuudelle eivät ole vaatimus, Fish Shellin `random` -funktio tarjoaa kätevän ja tehokkaan ratkaisun.

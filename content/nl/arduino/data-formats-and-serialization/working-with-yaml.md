@@ -11,9 +11,6 @@ title: Werken met YAML
 weight: 41
 ---
 
-## Wat & Waarom?
-YAML is geen opmaaktaal. Het is een door mensen gemakkelijk te begrijpen gegevensserialisatiestandaard voor alle programmeertalen. Programmeurs gebruiken het voor configuratiebestanden, gegevensuitwisseling tussen talen, en het is makkelijker te begrijpen vergeleken met XML of JSON.
-
 ## Hoe te:
 Arduino kan standaard niet met YAML overweg. Om het te gebruiken, gebruik je een externe bibliotheek. Bijvoorbeeld:
 

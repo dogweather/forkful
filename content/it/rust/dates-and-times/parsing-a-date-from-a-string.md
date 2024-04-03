@@ -14,11 +14,8 @@ title: Analisi di una data da una stringa
 weight: 30
 ---
 
-## Cosa & Perché?
-
-L'analisi di una data da una stringa è un compito comune quando si gestiscono input dell'utente o si leggono dati da file, e coinvolge la conversione dei dati in stringa in un formato di data riconosciuto dal linguaggio di programmazione. In Rust, ciò è essenziale per operazioni sulle date, come confronti, operazioni aritmetiche o formattazione, e migliora la validazione e l'integrità dei dati nelle applicazioni.
-
 ## Come fare:
+
 
 ### Utilizzando la Libreria Standard di Rust (`chrono` Crate)
 La libreria standard di Rust non include direttamente l'analisi delle date, ma la crate `chrono`, ampiamente utilizzata, è una soluzione robusta per la manipolazione di date e orari. Prima di tutto, aggiungi `chrono` al tuo `Cargo.toml`:

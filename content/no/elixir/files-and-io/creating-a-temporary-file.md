@@ -11,9 +11,6 @@ title: Opprette en midlertidig fil
 weight: 21
 ---
 
-## What & Why?
-Midlertidige filer brukes for å midlertidig lagre data som trengs under en prosess. Programmerere lager slike filer for å unngå å belaste hukommelsen og for å ha en sikker lagring i tilfelle en oppgave feiler.
-
 ## How to:
 ```elixir
 # Bruk File modulen til å opprette en midlertidig fil

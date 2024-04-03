@@ -11,12 +11,7 @@ title: Generazione di numeri casuali
 weight: 12
 ---
 
-## Cosa & Perché?
-
-Generare numeri casuali in Rust comporta l'utilizzo di librerie per produrre valori numerici imprevedibili, cosa indispensabile per compiti che vanno dalla crittografia e le simulazioni ai giochi e agli algoritmi randomizzati.
-
 ## Come fare:
-
 Rust si affida a crate esterni per la generazione di numeri casuali, essendo `rand` il più comunemente utilizzato. Per iniziare a generare numeri casuali, dovrai prima aggiungere `rand` al tuo file `Cargo.toml`:
 
 ```toml
@@ -52,7 +47,6 @@ Numero in virgola mobile casuale: 0.9401077112175732
 Si noti che rieseguire il programma produrrà valori diversi.
 
 ## Approfondimento
-
 La generazione di numeri casuali in Rust, facilitata attraverso `rand` e le sue dipendenze come `getrandom`, rappresenta un'ampia astrazione sulle strutture del sistema operativo e sui generatori algoritmici. Storicamente, la casualità nel calcolo è evoluta da algoritmi semplici e prevedibili a metodi complessi e criptograficamente sicuri. L'approccio di Rust incapsula questa evoluzione attraverso il suo trait `Rng` personalizzabile, che può essere supportato da vari generatori in base alla qualità di casualità e alle prestazioni richieste.
 
 Per la maggior parte delle applicazioni, fare affidamento su `rand` e sul RNG del sistema offre un buon equilibrio tra semplicità ed entropia. Tuttavia, per le applicazioni crittografiche, crate come `rand` si affidano a `getrandom` per l'inizializzazione, che a sua volta si basa su meccanismi specifici del SO (ad es., `/dev/urandom` sui sistemi simili a Unix), garantendo casualità criptograficamente sicura.

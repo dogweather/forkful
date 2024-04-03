@@ -11,9 +11,6 @@ title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---
 
-## What & Why?
-Convertir une chaîne en minuscules, c'est transformer tous les caractères majuscules en minuscules. Les programmeurs le font pour unifier les données, simplifier les comparaisons de chaînes et assurer la cohérence dans le traitement du texte.
-
 ## How to:
 En Lua, la fonction `string.lower()` transforme une chaîne en minuscules. Voici comment l'utiliser :
 

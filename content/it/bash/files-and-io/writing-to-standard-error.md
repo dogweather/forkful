@@ -13,9 +13,6 @@ title: Scrivere sull'errore standard
 weight: 25
 ---
 
-## Cosa e perché?
-Scrivere su standard error (stderr) in Bash consiste nel dirigere messaggi di errore o qualsiasi output diagnostico importante separatamente dall'output standard (stdout). I programmatori fanno ciò per assicurarsi che i messaggi di errore possano essere facilmente identificati, registrati o anche ignorati, aiutando nei processi di debug e logging.
-
 ## Come fare:
 In Bash, si usa `>&2` per reindirizzare l'output su stderr. Ecco un esempio basilare:
 

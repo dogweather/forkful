@@ -11,9 +11,6 @@ title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---
 
-## O Que & Por Que?
-Arredondar números significa ajustá-los ao número inteiro mais próximo ou a uma fração com uma certa precisão. Programadores arredondam números para simplificar valores para a legibilidade humana, para atender aos requisitos de especificação, ou para reduzir a sobrecarga computacional em operações de ponto flutuante.
-
 ## Como fazer:
 Rust torna o arredondamento algo fácil. Confira estes métodos para os tipos `f32` ou `f64`:
 

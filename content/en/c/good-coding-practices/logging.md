@@ -10,12 +10,7 @@ title: Logging
 weight: 17
 ---
 
-## What & Why?
-
-Logging in C involves recording the flow and notable events of a program during its runtime, providing a tangible review of its behavior and performance. Programmers utilize logging for debugging purposes, monitoring software health, and ensuring system security.
-
 ## How to:
-
 In C, logging can be achieved with basic file operations or using more sophisticated libraries. For simplicity, we'll start with the standard I/O library. The following snippets showcase basic logging implementations.
 
 To log simple messages:
@@ -91,7 +86,6 @@ Output in `detailed.log`:
 ```
 
 ## Deep Dive
-
 Logging in C, as demonstrated, relies on simple file operations, which is effective but not as powerful or flexible as logging facilities in other languages, such as Python's `logging` module or Java's `Log4j`. For more advanced logging capabilities in C, developers often turn to libraries like `syslog` on Unix-like systems, which provides system-wide log management, or third-party libraries such as `log4c`.
 
 Historically, logging has been an integral part of programming, tracing back to early programming practices where tracking and understanding program flow and errors were primarily done through physical printouts. As systems evolved, logging became more sophisticated, now supporting various levels of severity, log rotation, and asynchronous logging.

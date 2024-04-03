@@ -11,9 +11,6 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## Mitä ja Miksi?
-Tekstin etsiminen ja korvaaminen tarkoittaa sopivan merkkijonon löytämistä tekstistä ja sen muuttamista toiseksi. Ohjelmoijat käyttävät tätä toimintoa automatisoidakseen ja yksinkertaistaakseen suuria datamääriä tai konfiguraatioiden muokkausta.
-
 ## Kuinka:
 ```Arduino
 String originalText = "Hello, this is an example.";

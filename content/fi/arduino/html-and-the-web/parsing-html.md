@@ -12,12 +12,7 @@ title: "HTML:n j\xE4sennys"
 weight: 43
 ---
 
-## Mikä & Miksi?
-
-HTML:n jäsentäminen Arduino-projekteissa koskee tietojen poimimista verkkosivuilta. Ohjelmoijat tekevät tämän mahdollistaakseen Arduinolaitteidensa vuorovaikutuksen internetin kanssa, keräten tietoja verkkosivustoilta tarkoituksiin, jotka vaihtelevat kotiautomaatiosta ympäristön seurantaan.
-
 ## Kuinka:
-
 HTML:n jäsentäminen Arduinolla vaatii yleensä pienikokoisia kirjastoja rajoitettujen laiteresurssien vuoksi. Suosittu valinta verkkosivujen kaapimiseen ja jäsentämiseen on käyttää `ESP8266HTTPClient`- ja `ESP8266WiFi`-kirjastoja ESP8266:lle, tai niiden ESP32-vastineita, ottaen huomioon niiden natiivin tuen Wi-Fi-ominaisuuksille ja HTTP-protokollille. Tässä on perusesimerkki HTML:n noutamisesta ja jäsentämisestä, olettaen että käytät ESP8266:ta tai ESP32:ta:
 
 Ensiksi, sisällytä tarvittavat kirjastot:

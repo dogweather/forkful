@@ -18,16 +18,10 @@ title: "T\xECm ki\u1EBFm v\xE0 thay th\u1EBF v\u0103n b\u1EA3n"
 weight: 10
 ---
 
-## Cái gì & Tại sao?
-
-Tìm kiếm và thay thế văn bản trong Google Apps Script là việc xác định chương trình các chuỗi cụ thể trong một tài liệu, bảng tính, hoặc bất kỳ loại nội dung Google Apps nào khác, và thay thế chúng bằng các giá trị văn bản khác. Lập trình viên sử dụng tính năng này để tự động hóa việc chỉnh sửa khối lượng lớn nội dung, sửa lỗi phổ biến, chuẩn hóa thuật ngữ trên các tài liệu, hoặc chèn dữ liệu động vào các mẫu.
-
 ## Làm thế nào:
-
 Google Apps Script cung cấp một cách đơn giản để tìm và thay thế văn bản, đặc biệt là trong Google Docs và Sheets. Dưới đây là các ví dụ cho cả hai.
 
 ### Google Docs:
-
 Để tìm và thay thế văn bản trong một Tài liệu Google, bạn chủ yếu tương tác với lớp `DocumentApp`.
 
 ```javascript
@@ -48,7 +42,6 @@ searchReplaceInDoc();
 Đoạn mã này tìm kiếm tất cả các trường hợp của `'searchText'` trong Tài liệu Google đang hoạt động và thay thế chúng bởi `'replacementText'`.
 
 ### Google Sheets:
-
 Tương tự, trong Google Sheets, bạn có thể sử dụng `SpreadsheetApp` để thực hiện các thao tác tìm và thay thế:
 
 ```javascript
@@ -67,7 +60,6 @@ searchReplaceInSheet();
 Trong ví dụ này, `createTextFinder('searchText')` tìm kiếm 'searchText' trong trang tính đang hoạt động, và `replaceAllWith('replacementText')` thay thế tất cả các trường hợp bởi 'replacementText'.
 
 ## Sâu hơn
-
 Tính năng tìm và thay thế trong Google Apps Script chịu ảnh hưởng nặng nề từ bản chất dựa trên web của nó, cho phép các script thao tác văn bản một cách liền mạch trên các Google Apps khác nhau. Trên thực tế, khả năng này xuất phát từ bối cảnh rộng lớn hơn về xử lý và thao tác văn bản trong lập trình, nơi mà biểu thức chính quy và các hàm chuỗi trong ngôn ngữ như Perl và Python đặt ra một tiêu chuẩn cao về sự linh hoạt và mạnh mẽ.
 
 Mặc dù tính năng tìm và thay thế của Google Apps Script mạnh mẽ đối với các thay thế đơn giản, nhưng nó thiếu khả năng sử dụng biểu thức chính quy đầy đủ như một số ngôn ngữ khác. Ví dụ, trong khi bạn có thể sử dụng biểu thức chính quy cơ bản trong `createTextFinder` trong Google Sheets, các tùy chọn cho việc so khớp và thao tác mô hình phức tạp hạn chế so với Perl hoặc Python.

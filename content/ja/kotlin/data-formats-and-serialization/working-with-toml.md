@@ -20,9 +20,6 @@ title: "TOML\u3092\u6271\u3046\u65B9\u6CD5"
 weight: 39
 ---
 
-## 何となぜ？
-TOMLはTom's Obvious, Minimal Languageの略です。人間が読み書きしやすく、同時に機械が解析しやすいため、設定ファイルに使用されます。開発者は、設定を扱う際にXMLの煩雑さやJSONの細かな技巧を避けるためにTOMLを選びます。
-
 ## 方法：
 KotlinでTOMLを扱うには、`ktoml`のようなライブラリを使用することができます。まず、`build.gradle.kts`に依存関係を追加しましょう：
 

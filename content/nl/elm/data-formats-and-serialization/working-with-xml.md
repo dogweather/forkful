@@ -13,9 +13,6 @@ title: Werken met XML
 weight: 40
 ---
 
-## Wat & Waarom?
-Werken met XML betekent het parseren, transformeren en genereren van XML-documenten in Elm. Dit wordt gedaan om te interageren met veel webdiensten en verouderde systemen die XML gebruiken als hun gegevensformaat.
-
 ## Hoe:
 In Elm ga je om met XML met behulp van het `elm/xml` pakket. Hier is een snelle blik op het parseren van een XML-snippet:
 

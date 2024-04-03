@@ -14,9 +14,6 @@ title: Sjekker om en mappe eksisterer
 weight: 20
 ---
 
-## Hva og hvorfor?
-Å sjekke om en mappe eksisterer handler om å fastslå tilstedeværelsen av en mappe på en angitt sti før man utfører operasjoner som å lese fra eller skrive til filer inni den. Programmerere gjør dette for å unngå feil relatert til filoperasjoner, og sørger for en jevnere og mer pålitelig utføring av oppgaver knyttet til filhåndtering i applikasjonene deres.
-
 ## Hvordan:
 I moderne C++ (C++17 og videre) kan du bruke filsystembiblioteket til å sjekke om en mappe eksisterer. Det gir en enkel og standardisert måte å utføre filsystemoperasjoner på, inkludert å sjekke for eksistensen av en mappe.
 

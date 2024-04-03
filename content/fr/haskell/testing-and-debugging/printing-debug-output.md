@@ -11,9 +11,6 @@ title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---
 
-## Quoi et Pourquoi ?
-Imprimer des sorties de débogage, c'est afficher des données pendant l'exécution pour comprendre ce qui se passe. Les développeurs le font pour traquer les bugs plus efficacement et valider le comportement du code.
-
 ## Comment faire :
 Voici quelques exemples simples en Haskell :
 
@@ -53,6 +50,7 @@ Sortie prévue :
 This will be printed first
 Hello, after trace!
 ```
+
 ## Voir également
 Pour plus d'informations, consultez :
 

@@ -11,9 +11,6 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## What & Why?
-Å lese en tekstfil betyr at vi programmerere henter tekstdata fra en fil på disken. Vi gjør det for å manipulere data, hente innstillinger, eller prosessere informasjon som er lagret i en organisert form.
-
 ## How to:
 La oss lage et eksempel på hvordan man leser en fil i Java, ved hjelp av `Files.readAllLines`.
 

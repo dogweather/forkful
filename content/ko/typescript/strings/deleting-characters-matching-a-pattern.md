@@ -17,9 +17,6 @@ title: "\uD328\uD134\uC5D0 \uC77C\uCE58\uD558\uB294 \uBB38\uC790 \uC0AD\uC81C"
 weight: 5
 ---
 
-## What & Why? (무엇과 왜?)
-문자열에서 패턴에 일치하는 문자를 삭제하는 것은 정해진 규칙에 따라 불필요한 문자를 제거하는 프로세스입니다. 데이터를 정제하거나 입력을 검증할 때 이 방법이 흔히 사용됩니다.
-
 ## How to: (방법)
 ```TypeScript
 function deleteMatchingChars(str: string, pattern: RegExp): string {

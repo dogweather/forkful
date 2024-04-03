@@ -15,12 +15,7 @@ title: "L\xE4sa argument fr\xE5n kommandoraden"
 weight: 23
 ---
 
-## Vad & Varför?
-
-Att läsa kommandoradens argument i Dart möjliggör för programmerare att direkt mata in data i konsolen när ett Dart-program körs, vilket förbättrar dess interaktivitet och flexibilitet för olika användningsområden, inklusive automatiseringsskript, CLI-verktyg eller batchbehandling. Denna funktion är avgörande för att skapa anpassningsbara och användarvänliga kommandoradsapplikationer.
-
 ## Hur man gör:
-
 Dart tillhandahåller ett enkelt sätt att komma åt kommandoradens argument via `List<String> args` i huvudmetoden. Nedan följer ett enkelt exempel som visar hur man läser och använder kommandoradens argument.
 
 ```dart
@@ -48,7 +43,6 @@ Kommandoradens Argument:
 ```
 
 ### Använda ett populärt tredjepartsbibliotek: `args`
-
 Även om Darts inbyggda funktioner för hantering av kommandoradens argument är robusta för många applikationer, erbjuder `args`-paketet ett raffinerat sätt att definiera och tolka kommandoradens argument för mer komplexa behov.
 
 Först, lägg till `args`-paketet i din `pubspec.yaml`:

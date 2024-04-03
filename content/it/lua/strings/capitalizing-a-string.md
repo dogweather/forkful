@@ -13,9 +13,6 @@ title: Capitalizzare una stringa
 weight: 2
 ---
 
-## Cos'è & Perché?
-Capitalizzare una stringa significa modificare il primo carattere di ogni parola in una frase per renderlo maiuscolo, garantendo che i restanti caratteri siano minuscoli. Questa tecnica è comunemente usata per formattare il testo rendendolo più professionale o leggibile, come ad esempio preparare titoli o input degli utenti per la visualizzazione.
-
 ## Come fare:
 Lua non dispone di una funzione incorporata per capitalizzare le stringhe, ma è possibile realizzare facilmente questo compito utilizzando funzioni basilari di manipolazione delle stringhe. Ecco una semplice funzione per capitalizzare la prima lettera di una singola parola:
 

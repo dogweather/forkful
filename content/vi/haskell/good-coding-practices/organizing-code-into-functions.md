@@ -16,9 +16,6 @@ title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---
 
-## Cái gì & Tại sao?
-Tổ chức mã thành các hàm trong Haskell có nghĩa là bạn sẽ phân chia mã của mình thành các khối được đặt tên, có thể tái sử dụng. Tại sao lại như vậy? Điều này giữ cho mã của bạn không bị lặp lại (Don't Repeat Yourself - DRY), khiến nó dễ đọc và dễ gỡ lỗi hơn.
-
 ## Làm thế nào:
 Dưới đây là cách bạn có thể viết và sử dụng các hàm trong Haskell:
 

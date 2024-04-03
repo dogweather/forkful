@@ -11,9 +11,6 @@ title: Praca z TOML
 weight: 39
 ---
 
-## Co i Dlaczego?
-Praca z TOML polega na parsowaniu i generowaniu danych TOML (Tom's Obvious, Minimal Language) przy użyciu języka Haskell. Programiści robią to, aby łatwo zarządzać plikami konfiguracyjnymi lub wymianą danych z gwarancjami silnego typowania i minimalnym zamieszaniem w składni.
-
 ## Jak to zrobić:
 Najpierw upewnij się, że masz bibliotekę do parsowania TOML. Dla Haskella, `htoml` jest popularnym wyborem. Musisz dodać ją do zależności swojego projektu.
 

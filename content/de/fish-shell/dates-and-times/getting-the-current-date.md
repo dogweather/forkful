@@ -13,9 +13,6 @@ title: Den aktuellen Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-Das Abrufen des aktuellen Datums in der Programmierung ist eine grundlegende Aufgabe, die es Ihnen ermöglicht, das Datum und die Zeitdaten des Systems abzurufen und zu manipulieren. Bei Skripten und Automatisierungsaufgaben ist es unerlässlich für die Generierung von Zeitstempeln, das Planen von Aufgaben und das Erstellen von Protokollen.
-
 ## Wie geht das:
 Fish Shell verwendet externe Befehle wie `date`, um das aktuelle Datum zu erhalten, und bietet Flexibilität, das Ausgabeformat nach Bedarf zu formatieren. So verwenden Sie es:
 

@@ -9,9 +9,6 @@ title: Concatenating strings
 weight: 3
 ---
 
-## What & Why?
-Concatenating strings is gluing separate strings together to make a new one. Programmers do it to combine text dynamically, like putting together greetings, messages, or just to structure data in a readable format.
-
 ## How to:
 ```Swift
 let firstName = "Taylor"

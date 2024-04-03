@@ -15,9 +15,6 @@ title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---
 
-## Co i dlaczego?
-Pisanie do standardowego błędu (stderr) w JavaScript polega na kierowaniu komunikatów o błędach lub jakichkolwiek ważnych informacji do specyficznego, oddzielnego strumienia, co jest szczególnie przydatne w środowiskach podobnych do Unix w celach logowania i debugowania. Programiści robią to, aby odróżnić normalne wyjście programu od komunikatów o błędach, co pozwala na czystsze zarządzanie wyjściem i łatwiejsze monitorowanie błędów.
-
 ## Jak:
 W Node.js, pisanie do stderr można zrealizować za pomocą metody `console.error()` lub poprzez bezpośrednie pisanie do `process.stderr`. Oto przykłady demonstrujące oba podejścia:
 

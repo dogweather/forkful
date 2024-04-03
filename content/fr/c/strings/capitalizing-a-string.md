@@ -13,12 +13,7 @@ title: "Mettre une cha\xEEne en majuscules"
 weight: 2
 ---
 
-## Quoi et Pourquoi ?
-
-Capitaliser une chaîne en C consiste à convertir le premier caractère de chaque mot dans une chaîne donnée en majuscule s'il s'agit d'une lettre minuscule. Les programmeurs effectuent souvent cette opération pour standardiser l'entrée de l'utilisateur pour les recherches, les opérations de tri, ou les besoins d'affichage, assurant ainsi la cohérence et la lisibilité à travers les données textuelles.
-
 ## Comment faire :
-
 Capitaliser une chaîne en C nécessite une compréhension de base de la manipulation de caractères et du parcours de chaîne. Étant donné que C n'a pas de fonction intégrée pour cela, vous vérifierez typiquement chaque caractère, en ajustant sa casse si nécessaire. Voici une implémentation simple :
 
 ```c
@@ -55,7 +50,6 @@ Chaîne mise en majuscule : Hello World. Programming In C!
 Ce programme parcourt la chaîne `exampleString`, vérifiant chaque caractère pour savoir s'il doit être mis en majuscule. La fonction `islower` vérifie si un caractère est une lettre minuscule, tandis que `toupper` le convertit en majuscule. L'indicateur `capNext` détermine si la lettre suivante rencontrée doit être convertie, étant défini après chaque espace (' ') trouvé, et initialement pour mettre en majuscule le premier caractère de la chaîne.
 
 ## Approfondissement
-
 La technique démontrée est simple mais manque d'efficacité pour des chaînes très longues ou lorsqu'elle est exécutée à plusieurs reprises dans des applications critiques en termes de performance. Dans des contextes historiques et d'implémentation, la manipulation de chaînes en C, y compris la capitalisation, implique souvent une manipulation directe du tampon, reflétant l'approche de bas niveau de C et donnant au programmeur un contrôle total sur les compromis entre mémoire et performance.
 
 Il existe des méthodes alternatives, plus sophistiquées, pour capitaliser les chaînes, en particulier lors de la prise en compte des locales et des caractères unicode, où les règles de capitalisation peuvent différer significativement du simple scénario ASCII. Des bibliothèques telles que ICU (International Components for Unicode) fournissent des solutions robustes pour ces cas mais introduisent des dépendances et des surcharges qui peuvent ne pas être nécessaires pour toutes les applications.

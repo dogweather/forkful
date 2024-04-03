@@ -12,9 +12,6 @@ title: Code organiseren in functies
 weight: 18
 ---
 
-## Wat & Waarom?
-Code organiseren in functies gaat over het opsplitsen van je code in herbruikbare delen met specifieke doeleinden. We doen dit om de code schoner, makkelijker leesbaar, te debuggen en bij te werken te maken.
-
 ## Hoe te:
 Stel je voor dat je een script schrijft om het kwadraat en de kubus van een getal te berekenen. Zonder functies is het een warboel van herhaling:
 

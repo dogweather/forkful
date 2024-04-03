@@ -14,12 +14,7 @@ title: Merkkijonon alkukirjaimen suurentaminen
 weight: 2
 ---
 
-## Mikä ja miksi?
-
-Merkkijonon alkukirjaimen suurentaminen tarkoittaa syötteen muuttamista siten, että ensimmäinen merkki on iso kirjain ja loput pieniä kirjaimia, ja tätä käytetään yleisesti nimien tai otsikoiden muotoilussa. Ohjelmoijat tekevät näin varmistaakseen datan johdonmukaisuuden ja parantaakseen luettavuutta käyttöliittymissä tai asiakirjoissa.
-
 ## Kuinka:
-
 Google Apps Script, joka perustuu JavaScriptiin, sallii useita menetelmiä merkkijonon alkukirjaimen suurentamiseen, vaikkakaan siinä ei ole sisäänrakennettua toimintoa. Tässä on pari ytimekästä esimerkkiä:
 
 **Menetelmä 1: Käyttäen charAt()- ja slice()-metodeja**
@@ -52,7 +47,6 @@ console.log(result);  // Tulostus: Hello, world
 Molemmissä menetelmissä varmistetaan, että merkkijonon ensimmäinen merkki on suuri kirjain ja loput pieniä kirjaimia, ja ne soveltuvat monenlaisiin sovelluksiin, mukaan lukien mutta ei rajoittuen Google Sheets -muokkaukseen tai asiakirjojen muokkaukseen Apps Scriptin kautta.
 
 ## Syväsukellus
-
 Merkkijonojen alkukirjaimen suurentaminen Google Apps Scriptissä on suoraviivaista, hyödyntäen JavaScriptin tehokkaita merkkijonon käsittelyominaisuuksia. Historiallisesti kielet, kuten Python, tarjoavat sisäänrakennettuja metodeja, kuten `.capitalize()`, tämän saavuttamiseksi, asettaen hieman ylimääräisen askeleen JavaScript- ja Apps Script -ohjelmoijille. Kuitenkin sisäänrakennetun toiminnon puuttuminen JavaScriptissä/Google Apps Scriptissä rohkaisee joustavuuteen ja syvempään ymmärrykseen merkkijonon käsittelytekniikoista.
 
 Monimutkaisissa skenaarioissa, kuten merkkijonon jokaisen sanan alkukirjaimen suurentamisessa (Title Case), ohjelmoijat saattavat yhdistää regex-metodeja `split()`- ja `map()`-funktioihin käsitelläkseen jokaista sanaa erikseen. Vaikka Google Apps Script ei tarjoa suoraa menetelmää merkkijonon alkukirjaimen suurentamiseen, olemassa olevien JavaScriptin merkkijonon käsittelymenetelmien käyttö tarjoaa runsaasti joustavuutta, mahdollistaen kehittäjien käsitellä merkkijonoja tehokkaasti heidän erityistarpeidensa mukaisesti.

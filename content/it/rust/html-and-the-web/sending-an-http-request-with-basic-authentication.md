@@ -11,9 +11,6 @@ title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---
 
-## What & Why?
-Mandare una richiesta HTTP con autenticazione di base significa inserire username e password per accedere a risorse protette. I programmatori lo fanno per interagire con API che richiedono sicurezza.
-
 ## How to:
 Installiamo `reqwest`, una crate Rust per effettuare chiamate HTTP.
 

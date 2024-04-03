@@ -11,9 +11,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## Hva & Hvorfor?
-Kalkulering av fremtidige eller tidligere datoer handler om å legge til eller trekke fra tidsenheter på en startdato. Programmere bruker dette for å håndtere frister, planlegge eventer og beregne tidsforskjeller.
-
 ## Hvordan Gjøre Det:
 ```clojure
 (require '[clj-time.core :as t])

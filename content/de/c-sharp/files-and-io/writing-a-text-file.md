@@ -13,9 +13,6 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-Das Schreiben einer Textdatei in C# beinhaltet das programmgesteuerte Erstellen oder Modifizieren von Textdateien im Dateisystem - eine grundlegende Aufgabe für viele Anwendungen, wie Logging, Datenexport oder Konfigurationsmanagement. Programmierer führen diese Operation durch, um Daten zwischen Sitzungen zu persistieren, Informationen über Systeme hinweg zu teilen oder menschenlesbare Ausgaben zu speichern.
-
 ## Wie:
 C# vereinfacht Dateioperationen mit seinem `System.IO` Namensraum, der unkomplizierte Methoden zum Schreiben von Textdateien bereitstellt. Hier ist, wie man eine grundlegende Textdatei schreibt und Text an eine vorhandene Datei anhängt.
 

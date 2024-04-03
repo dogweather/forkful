@@ -9,9 +9,6 @@ title: Trovare la lunghezza di una stringa
 weight: 7
 ---
 
-## Cos'è e Perché?
-Trova la lunghezza di una stringa per sapere quanti caratteri contiene. Utile per validazione input, manipolazione testi, e generazione dinamica di contenuti.
-
 ## Come Fare:
 Ecco un esempio che mostra come ottenere la lunghezza di una stringa in C#:
 

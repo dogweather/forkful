@@ -13,9 +13,6 @@ title: "HTML:n j\xE4sennys"
 weight: 43
 ---
 
-## Mikä & Miksi?
-HTML:n jäsentäminen tarkoittaa HTML-koodinpätkän purkamista, jotta ymmärtäisimme sen rakenteen ja sisällön. Ohjelmoijat tekevät tätä dataa poimiakseen, sisältöä muokatakseen tai tietoa eri formaattien ja järjestelmien välillä siirtääkseen.
-
 ## Kuinka:
 Jäsentääksesi HTML:ää Rubylla, asenna 'Nokogiri'-gem komennolla `gem install nokogiri`. Nokogiri on kuin Sveitsin armeijan linkkuveitsi HTML:n ja XML:n käsittelyyn Rubyssa. Tässä nopea esimerkki:
 

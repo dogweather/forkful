@@ -10,9 +10,6 @@ title: Interpolazione di una stringa
 weight: 8
 ---
 
-## What & Why?
-L'interpolazione di stringhe permette di inserire variabili o espressioni direttamente all'interno di una stringa di testo. I programmatori la usano per creare messaggi dinamici, leggeri e a prova di errore, senza la necessità di concatenare esplicitamente.
-
 ## How to:
 Kotlin rende l'interpolazione di stringhe piacevole e semplice. Usa il simbolo del dollaro (`$`) seguito dal nome di una variabile, o graffe (`{}`) per espressioni, e sei a cavallo. Ecco come:
 

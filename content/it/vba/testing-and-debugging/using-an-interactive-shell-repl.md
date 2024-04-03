@@ -12,12 +12,7 @@ title: Utilizzare un shell interattivo (REPL)
 weight: 34
 ---
 
-## Cosa & Perché?
-
-Un shell interattivo, o Ciclo Leggi-Valuta-Stampa (REPL), permette agli utenti di inserire comandi, eseguirli e vedere i risultati in tempo reale. I programmatori sfruttano i REPL per il prototipaggio rapido, il test di frammenti di codice o il debug in un ambiente più interattivo e iterativo, migliorando la produttività e la comprensione del codice.
-
 ## Come fare:
-
 Visual Basic for Applications (VBA) di per sé non supporta nativamente un shell interattivo o un'esperienza REPL come si vede in linguaggi come Python o JavaScript. Tuttavia, puoi simulare questa esperienza fino a un certo punto utilizzando la Finestra Immediata nell'IDE VBA (Ambiente di Sviluppo Integrato).
 
 **Accesso alla Finestra Immediata:**
@@ -57,7 +52,6 @@ Call SayHello
 **Nota:** La Finestra Immediata ha delle limitazioni. È ottima per test rapidi e chiamate dirette di funzioni, ma non supporta la definizione di funzioni o subroutine direttamente al suo interno. Compiti di debug e programmazione complessi potrebbero richiedere lo sviluppo di un modulo completo.
 
 ## Approfondimento
-
 La Finestra Immediata in VBA funge da controparte più vicina ai shell interattivi trovati in altri ecosistemi di programmazione, nonostante le sue limitazioni. Storicamente, VBA è stato incentrato sull'estensione delle capacità delle applicazioni Microsoft Office attraverso script e macro piuttosto che sullo sviluppo di software autonomo, il che potrebbe spiegare l'assenza di un REPL a pieno titolo.
 
 Per compiti che richiedono test interattivi estensivi o lo sviluppo di logica complessa, altri ambienti di programmazione dotati di supporto REPL nativo, come Python con il suo IDLE o JavaScript con Node.js, potrebbero offrire alternative migliori. Questi ambienti forniscono non solo shell interattivi, ma anche strutture di programmazione, debug e test più robuste.

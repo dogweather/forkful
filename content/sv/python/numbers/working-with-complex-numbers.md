@@ -11,9 +11,6 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad och varför?
-Komplexa tal är en mängd tal i formen `a + bi`, där `a` och `b` är reella tal, och `i` är den imaginära enheten (`i^2 = -1`). I programmering använder vi dem för att lösa problem inom olika områden, som elektroteknik, signalbehandling och kvantdatorberäkning.
-
 ## Hur man gör:
 Python har inbyggt stöd för komplexa tal. Så här kan du leka med dem:
 

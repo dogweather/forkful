@@ -10,9 +10,6 @@ title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
 
-## What & Why? (Mitä & Miksi?)
-Kun koodaat, joskus haluat kurkata ohjelman toimintaan – se on debug-tulostus. Se auttaa sinua näkemään, missä pisteessä ohjelma mättää tai miten data liikkuu.
-
 ## How to: (Kuinka tehdä:)
 ```C++
 #include <iostream>

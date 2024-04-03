@@ -11,9 +11,6 @@ title: Samenvoegen van strings
 weight: 3
 ---
 
-## Wat & Waarom?
-Het aan elkaar plakken van strings betekent dat je ze achter elkaar koppelt. We doen dit om berichten, URL's of elke tekst met stukjes & beetjes uit verschillende bronnen te creëren.
-
 ## Hoe te:
 In JavaScript heb je een paar manieren om strings aan elkaar te plakken. Ouderwets: `+`. Modern: sjabloonliteralen. Hier is hoe ze eruitzien.
 

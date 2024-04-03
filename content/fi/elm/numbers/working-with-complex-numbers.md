@@ -11,9 +11,6 @@ title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---
 
-## Mitä ja miksi?
-Kompleksiluvut ovat reaalilukujen ja imaginaarilukujen yhdistelmiä, kuten `a + bi`, missä `i` on -1:n neliöjuuri. Ne ovat avainasemassa aloilla kuten insinööritiede ja fysiikka ratkaisemaan ongelmia, joita tavallisilla luvuilla ei voi käsitellä.
-
 ## Kuinka:
 Elm ei sisällä valmista tukea kompleksiluvuille, joten sinun täytyy luoda oma tyyppisi ja funktiosi. Tässä on nopea asennus:
 

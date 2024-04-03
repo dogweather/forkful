@@ -13,12 +13,7 @@ title: Commandoregelargumenten lezen
 weight: 23
 ---
 
-## Wat & Waarom?
-
-In C-programmering maakt het lezen van commandoregelargumenten het mogelijk dat programma's invoer rechtstreeks vanuit de terminal accepteren, wat de flexibiliteit en bruikbaarheid verhoogt. Programmeurs benutten dit voor het configureren van scriptgedrag zonder code te wijzigen, waardoor applicaties aanpasbaar en efficiënt worden.
-
 ## Hoe:
-
 In C kan de `main`-functie zo worden ontworpen dat ze commandoregelargumenten accepteert met behulp van de parameters `int argc` en `char *argv[]`. Hier vertegenwoordigt `argc` het aantal doorgegeven argumenten, en `argv` is een array van karakterwijzers die alle argumenten opsomt. Hier is een snel voorbeeld om te illustreren:
 
 ```c
@@ -46,7 +41,6 @@ Argument 2: voorbeeld
 Dit laat zien hoe commandoregelargumenten in een C-programma geparseerd en gebruikt kunnen worden.
 
 ## Diepgaand
-
 De conventie om argumenten aan programma's door te geven gaat terug tot de vroegste dagen van Unix. In deze traditionele aanpak bieden `argc` en `argv` een eenvoudige maar krachtige interface voor commandoregelinteractie, belichamend de filosofie van Unix van kleine, modulaire hulpprogramma's die samenwerken. Hoewel moderne talen vaak meer gesofisticeerde bibliotheken of frameworks introduceren voor het parsen van commandoregelargumenten, biedt de directheid van C's methode ongeëvenaarde transparantie en controle.
 
 In recente ontwikkelingen zijn bibliotheken zoals `getopt` in POSIX-systemen geëvolueerd om complexere parsingbehoeften te ondersteunen, zoals het afhandelen van lange optienamen of standaardwaarden voor ontbrekende argumenten. Toch blijft het basismechanisme van `argc` en `argv` essentieel voor het begrijpen van hoe programma's in C interageren met hun runtime-omgeving.

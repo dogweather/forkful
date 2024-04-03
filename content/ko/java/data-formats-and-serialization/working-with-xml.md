@@ -15,9 +15,6 @@ title: "XML \uB2E4\uB8E8\uAE30"
 weight: 40
 ---
 
-## 무엇 & 왜?
-Java를 사용하여 XML 작업은 파싱, 쿼리, 및 XML 문서의 조작을 포함합니다. 프로그래머는 데이터 교환, 설정 관리, 그리고 많은 레거시 시스템 및 API가 XML을 사용하여 통신하기 때문에 이 작업을 합니다.
-
 ## 방법:
 Java는 DOM(Document Object Model), SAX(Simple API for XML), StAX(Streaming API for XML)와 같은 API를 제공하여 XML과 작업할 수 있습니다. 다음은 XML 파일을 파싱하는 DOM 예시입니다:
 

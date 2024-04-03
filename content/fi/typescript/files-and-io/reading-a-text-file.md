@@ -11,9 +11,6 @@ title: Tekstitiedoston lukeminen
 weight: 22
 ---
 
-## What & Why?
-Tekstitiedoston lukeminen tarkoittaa tekstin kutsumista tiedostosta ohjelman käytettäväksi. Ohjelmoijat tekevät tämän, jotta he voivat käsitellä tai analysoida tiedon sisältöä automaattisesti.
-
 ## How to:
 Asennetaan ensin node:n tyypitykset:
 
@@ -45,6 +42,7 @@ Esimerkkitiedostosta `example.txt` tulostuu:
 ```
 Hei, tässä on esimerkkitekstiä.
 ```
+
 ## Deep Dive
 Tekstitiedoston luku on perusosa ohjelmointia; se on tehty 1950-luvulta lähtien. Vaihtoehtoja `fs.readFile`-funktiolle on olemassa, kuten synkroninen `fs.readFileSync` tai moderneja lähestymistapoja kuten `fs.promises.readFile`, joka tukee `async/await` -syntaksia:
 

@@ -13,16 +13,10 @@ title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---
 
-## Was & Warum?
-
-Reguläre Ausdrücke (regex) sind Muster, die verwendet werden, um Zeichenkombinationen in Zeichenketten zu finden. Programmierer nutzen sie zum Suchen, Bearbeiten oder Manipulieren von Text und Daten, was sie unverzichtbar für Mustererkennung und Datenverarbeitungsaufgaben macht.
-
 ## Wie:
-
 Die Verwendung regulärer Ausdrücke in Google Apps Script ist dank der JavaScript-basierten Syntax unkompliziert. Hier ist, wie Sie regex in Ihren Skripten für gängige Aufgaben wie Suchen und Datenvalidierung einbauen können.
 
 ### Zeichenketten durchsuchen
-
 Angenommen, Sie möchten herausfinden, ob eine Zeichenkette ein bestimmtes Muster enthält, wie z.B. eine E-Mail-Adresse. Hier ist ein einfaches Beispiel:
 
 ```javascript
@@ -41,7 +35,6 @@ findEmailInText("Kontaktieren Sie uns unter info@example.com.");
 ```
 
 ### Datenvalidierung
-
 Reguläre Ausdrücke glänzen bei der Datenvalidierung. Unten ist eine Funktion, die eine Eingabezeichenkette validiert, um zu überprüfen, ob sie einer einfachen Passwortrichtlinie entspricht (mindestens ein Großbuchstabe, ein Kleinbuchstabe und mindestens 8 Zeichen).
 
 ```javascript
@@ -56,7 +49,6 @@ Logger.log(validatePassword("schwach"));    // Gibt aus: false
 ```
 
 ## Vertiefung
-
 Reguläre Ausdrücke in Google Apps Script werden von JavaScript geerbt, das erstmals im Juni 1997 in der ECMAScript-Sprachspezifikation standardisiert wurde. Obwohl mächtig, können sie manchmal zu verwirrendem und schwer zu wartendem Code führen, insbesondere wenn sie übermäßig oder für komplexe Mustererkennungsaufgaben verwendet werden, die möglicherweise effizienter durch andere Parsing-Methoden gelöst werden könnten.
 
 Beispielsweise ist die Verwendung von Regex für das Parsing von HTML oder XML im Notfall möglich, wird jedoch generell aufgrund der verschachtelten und komplizierten Strukturen dieser Dokumente abgeraten. Stattdessen sind Werkzeuge, die speziell für das Parsing solcher Strukturen entwickelt wurden, wie DOM-Parser für HTML, zuverlässiger und lesbarer.

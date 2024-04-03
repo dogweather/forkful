@@ -11,9 +11,6 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-Att använda ett interaktivt skal, eller en Läs-Utvärdera-Skriv Ut-Loop (REPL), låter dig koda interaktivt. Programmerare använder det för att snabbt testa Swift-snuttar, felsöka eller lära sig språket.
-
 ## Hur man gör:
 Anropa REPL genom att öppna en terminal och köra `swift`. Skriv kod direkt och tryck på Enter för att köra den. Här är en smakprov:
 

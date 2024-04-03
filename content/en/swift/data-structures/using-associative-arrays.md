@@ -10,12 +10,7 @@ title: Using associative arrays
 weight: 15
 ---
 
-## What & Why?
-
-Associative arrays, known as dictionaries in Swift, let you store and manage data as key-value pairs. Programmers use them to organize data efficiently, making it easier to access and manipulate values based on their unique keys.
-
 ## How to:
-
 Swift makes working with associative arrays straightforward. Here's how you can declare, add, remove, and access items in a Swift dictionary:
 
 ```Swift
@@ -47,7 +42,6 @@ for (fruit, color) in fruitColors {
 Dictionaries are incredibly versatile, allowing you to manipulate and access data dynamically. Their unordered nature does not impact the speed of data retrieval, which is a significant benefit when dealing with large data sets.
 
 ## Deep Dive
-
 Swift's implementation of dictionaries as an associative array stems from their powerful capability to map unique keys to values. Historically, programming languages have implemented this concept under various names like hash tables or maps, alluding to their functionality of creating a "map" between keys and values.
 
 In Swift, dictionaries are optimized for performance, leveraging hashable keys for efficient data retrieval. This means that the `Key` type in a `[Key: Value]` dictionary must conform to the `Hashable` protocol, which is the case for most Swift standard types like `Int`, `String`, and `Double`.

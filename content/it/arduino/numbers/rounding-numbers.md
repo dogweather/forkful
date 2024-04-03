@@ -10,9 +10,6 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Cosa e perché?
-Arrotondare i numeri significa tagliare un decimale al suo valore intero più vicino o a un numero impostato di cifre decimali. I programmatori arrotondano i numeri per renderli più facili da leggere e gestire, specialmente quando la precisione oltre un certo punto non è necessaria o potrebbe portare a errori.
-
 ## Come fare:
 In Arduino, puoi arrotondare i numeri utilizzando funzioni incorporate. I protagonisti sono `round`, `ceil` e `floor`. Ecco una rapida dimostrazione:
 

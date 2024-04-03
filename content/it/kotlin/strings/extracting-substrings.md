@@ -10,9 +10,6 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## Che cosa e perché?
-Estrarre sottosequenze significa prendere pezzi di una stringa. Gli sviluppatori lo fanno per analizzare i dati, pulire input o solo per estrarre le parti rilevanti di testo.
-
 ## Come fare:
 ```Kotlin
 fun main() {

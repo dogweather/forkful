@@ -13,12 +13,7 @@ title: Logboekregistratie
 weight: 17
 ---
 
-## Wat & Waarom?
-
-Loggen is in feite te vergelijken met het bijhouden van een dagboek voor je code; het is het registreren van gebeurtenissen, fouten en andere significante gegevenspunten die plaatsvinden wanneer je applicatie draait. Programmeurs doen dit om bij te houden wat er onder de motorkap gebeurt, problemen te debuggen en een audit trail te onderhouden voor latere analyse of nalevingsdoeleinden.
-
 ## Hoe te:
-
 PHP bevat een ingebouwde foutenlogfunctie die eenvoudig te gebruiken is. Plaats gewoon `error_log()` in je code om een bericht naar je serverlogs te sturen. Je kunt het ook aanpassen om naar een specifiek bestand te schrijven.
 
 ```php
@@ -51,7 +46,6 @@ $logger->error('Dit is een foutlog!');
 Dit zal je logs uitvoeren naar het serverlogboek of je gespecificeerde bestand in platte tekstformaat.
 
 ## Diepere Duik:
-
 Historisch gezien vertrouwden PHP-ontwikkelaars op de `error_log()` functie of de Apache/Nginx logs om problemen op te vangen, maar dat kan chaotisch zijn met de noodzaak om platte tekstbestanden te parsen en geen gemakkelijke manier om ze te filteren of sorteren. Toen kwamen logboekbibliotheken zoals Monolog, die het tijdperk van gestructureerd loggen in PHP inluidden. Deze oplossingen geven je meer controle door meerdere logkanalen, ernstniveaus en geformatteerde uitvoer (zoals JSON, wat een droom is voor programmatisch parsen) te bieden.
 
 Alternatieven voor Monolog zijn onder andere Log4php, KLogger en Apache's Log4php. Wat betreft de implementatie, vereist robuust loggen niet alleen willekeurig gegevens dumpen, maar ook rekening houden met zaken zoals logrotatie, archiveringsstrategieën en integratie met monitoringtools om echt nuttig te zijn.
@@ -59,7 +53,6 @@ Alternatieven voor Monolog zijn onder andere Log4php, KLogger en Apache's Log4ph
 Je moet de [PSR-3 Logger Interface](https://www.php-fig.org/psr/psr-3/) in gedachten houden, die een gemeenschappelijke interface voor logboekbibliotheken schetst, waardoor interoperabiliteit en een consistente manier om toegang te krijgen tot logmechanismen gewaarborgd zijn.
 
 ## Zie ook:
-
 - [Monolog GitHub Repository](https://github.com/Seldaek/monolog)
 - [PSR-3 Logger Interface Specificatie](https://www.php-fig.org/psr/psr-3/)
 - [PHP Foutenlog Documentatie](https://www.php.net/manual/en/function.error-log.php)

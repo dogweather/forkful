@@ -12,12 +12,7 @@ title: Encontrando o comprimento de uma string
 weight: 7
 ---
 
-## O Que & Por Quê?
-
-Encontrar o comprimento de uma string em Visual Basic para Aplicações (VBA) envolve determinar o número de caracteres que ela contém. Programadores frequentemente realizam essa tarefa para validar entradas, manipular dados de texto de forma eficiente ou controlar loops que processam dados em string, garantindo um código robusto e livre de erros.
-
 ## Como fazer:
-
 No VBA, a função `Len` é a sua principal escolha para encontrar o comprimento de uma string. Ela retorna um inteiro representando o número de caracteres em uma string especificada. Aqui está um exemplo simples para ilustrar essa função:
 
 ```vb
@@ -56,7 +51,6 @@ End Sub
 Este código classificará cada string em `stringCollection` como "String Longa" ou "String Curta", dependendo se seu comprimento é maior que 5 caracteres.
 
 ## Aprofundamento
-
 A função `Len` no VBA tem suas raízes na programação BASIC inicial, proporcionando um meio simples, mas eficaz, de lidar com tarefas de manipulação de string. Ao longo dos anos, à medida que as linguagens de programação evoluíram, muitas desenvolveram ferramentas mais sofisticadas para trabalhar com strings, como expressões regulares e bibliotecas de manipulação de strings abrangentes.
 
 No entanto, no contexto do VBA, `Len` permanece uma solução fundamental e altamente eficiente para determinar o comprimento das strings—parte disso devido ao foco do VBA na facilidade de uso e acessibilidade em detrimento da complexidade das operações. Enquanto linguagens como Python ou JavaScript oferecem métodos como `.length` ou `len()` integrados diretamente aos objetos string, a função `Len` do VBA destaca-se por sua aplicação direta, particularmente benéfica para aqueles que estão começando no mundo da programação vindos de áreas como análise de dados ou automação de escritório.

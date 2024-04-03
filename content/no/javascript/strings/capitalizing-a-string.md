@@ -13,9 +13,6 @@ title: Sette stor bokstav i en streng
 weight: 2
 ---
 
-## Hva & Hvorfor?
-Å kapitalisere en streng betyr å konvertere den første bokstaven i strengen til stor bokstav mens de gjenværende bokstavene forblir som de er. Denne operasjonen utføres ofte i JavaScript for formatering av brukerinndata, visning av navn eller titler, og for å sikre konsistens i brukergrensesnittets tekster.
-
 ## Hvordan:
 I JavaScript finnes det ikke en innebygd metode for direkte å kapitalisere strenger, men det er enkelt å implementere ved bruk av grunnleggende strengmanipuleringsmetoder.
 

@@ -17,12 +17,7 @@ title: "T\xE1i c\u1EA5u tr\xFAc m\xE3 ngu\u1ED3n"
 weight: 19
 ---
 
-## Cái gì & Tại sao?
-
-Tái cấu trúc trong lập trình bao gồm việc chỉnh sửa cấu trúc của mã nguồn mà không thay đổi hành vi của nó, nhằm cải thiện các khía cạnh như tính dễ đọc, dễ bảo trì, hoặc hiệu suất. Các lập trình viên tái cấu trúc để làm cho mã lệnh hiệu quả hơn, dễ hiểu hơn, dễ chỉnh sửa hơn trong tương lai, và giảm khả năng xuất hiện các lỗi.
-
 ## Làm thế nào:
-
 Xem xét một ví dụ cơ bản trong Visual Basic for Applications (VBA) nơi chúng ta có một hàm con in ra chi tiết của một nhân viên. Ban đầu, mã nguồn bị cluttered, khó duy trì hoặc mở rộng.
 
 ```vb
@@ -83,7 +78,6 @@ End Sub
 Những bước này biến đổi mã nguồn rối rắm thành mã nguồn modular, có cấu trúc, cải thiện đáng kể tính dễ đọc và dễ bảo trì.
 
 ## Sâu hơn
-
 Khái niệm về tái cấu trúc cũ kỹ như chính lập trình, nhưng cuốn sách của Martin Fowler "Refactoring: Improving the Design of Existing Code" đã đưa nó vào dòng chính, nhấn mạnh tầm quan trọng của nó trong quy trình phát triển phần mềm. Trong Visual Basic for Applications, việc tái cấu trúc có thể hơi khó khăn hơn do thiếu công cụ tích hợp sẵn tìm thấy trong các môi trường phát triển tích hợp (IDEs) hiện đại hỗ trợ tái cấu trúc tự động.
 
 Tuy nhiên, điều này không làm giảm tầm quan trọng của nó. Ngay cả trong VBA, việc áp dụng các kỹ thuật tái cấu trúc cơ bản bằng tay cũng có thể làm tăng đáng kể cơ sở mã, làm cho nó sạch hơn và hiệu quả hơn. Mặc dù VBA có thể không có những tiện nghi hiện đại tương tự, nhưng các nguyên tắc của thiết kế mã tốt vẫn có tính toàn cầu. Các nhà phát triển đến từ các ngôn ngữ khác có thể thấy quá trình thủ công này mệt mõi nhưng chắc chắn sẽ đánh giá cao lợi ích của việc đầu tư thời gian vào việc cải thiện chất lượng mã ngay từ đầu.

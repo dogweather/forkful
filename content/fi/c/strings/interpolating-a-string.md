@@ -14,12 +14,7 @@ title: Merkkijonon interpolaatio
 weight: 8
 ---
 
-## Mikä ja miksi?
-
-Merkkijonon välimuuttaminen (string interpolation) ohjelmoinnissa tarkoittaa merkkijonojen rakentamista sisällyttämällä lausekkeita kirjaimellisiin merkkijonoihin. Ohjelmoijat tekevät tämän luodakseen informatiivisia viestejä, dynaamisia kyselyjä tai rakentaakseen mitä tahansa muuttuvalla sisällöllä varustettua merkkijonoa tehokkaasti ja puhtaasti, usein käyttäjän tulosteita tai lokitusta varten.
-
 ## Kuinka:
-
 Toisin kuin jotkin korkean tason kielet, C ei suoraan tue merkkijonon välimuuttamista sen syntaksissa. Sen sijaan merkkijonon rakentaminen muuttuvalla sisällöllä saavutetaan tyypillisesti käyttämällä `printf`-funktiota tai sen variantteja tulostukseen, ja `sprintf`-funktiota merkkijonon luomiseen. Tässä on katsaus siihen, miten dynaamisesti rakennetaan merkkijonoja C:ssä:
 
 ```c
@@ -48,7 +43,6 @@ Nimi: Jane Doe, Ikä: 28
 Nämä katkelmat havainnollistavat perinteistä tapaa sisällyttää muuttuvia tietoja merkkijonoihin C:ssä, tarjoten joustavuutta yksityiskohtaisten merkkijonojen rakentamisessa.
 
 ## Syväluotaus
-
 Ennen modernimpien ohjelmointikielten, joissa oli sisäänrakennettuja merkkijonon välimuuttamisominaisuuksia, ilmestymistä, C-kehittäjien piti luottaa funktioihin kuten `sprintf()`, `snprintf()` ja niiden variantteihin kompostoidakseen merkkijonoja muuttuvalla sisällöllä. Tämä lähestymistapa on tehokas, mutta se sisältää potentiaalisia riskejä, kuten puskurin ylivuodon, jos sitä ei hallita huolellisesti, erityisesti `sprintf()`-funktion kanssa.
 
 Vaihtoehtoisesti, kielet kuten Python ja JavaScript toivat intuitiivisempia merkkijonon välimuuttamisominaisuuksia, kuten f-merkkijonot (muotoillut merkkijonoliteraalit) ja mallipohjaliteraalit, vastaavasti. Nämä ominaisuudet mahdollistavat lausekkeiden suoran sisällyttämisen merkkijonoliteraaleihin, tehden koodista luettavampaa ja tiiviimpää.

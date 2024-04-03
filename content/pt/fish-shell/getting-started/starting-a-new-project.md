@@ -11,9 +11,6 @@ title: Iniciando um novo projeto
 weight: 1
 ---
 
-## O Que & Porquê?
-Começar um novo projeto é como abrir um livro em branco, onde você pode escrever seus códigos do jeito que bem entender. Programadores fazem isso para transformar ideias em realidade, solucionar problemas ou apenas por diversão.
-
 ## Como Fazer:
 Vamos criar uma estrutura de diretórios para um novo projeto em Fish Shell. Rápido, fácil e direto ao ponto.
 

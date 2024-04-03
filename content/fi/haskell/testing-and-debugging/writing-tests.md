@@ -12,16 +12,10 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mikä ja miksi?
-
-Testien kirjoittaminen Haskellilla koskee funktioidesi toivottujen tulosten varmistamista automatisoitujen tarkistusten kautta. Ohjelmoijat tekevät sen löytääkseen virheet aikaisin, helpottaakseen refaktorointia ja dokumentoidakseen käyttäytymistä, mikä tekee koodikannasta ylläpidettävämmän ja skaalautuvamman.
-
 ## Kuinka:
-
 Haskell tukee erilaisia testauskehyksiä, mutta kaksi suosittua ovat `Hspec` ja `QuickCheck`. Hspec antaa sinun määritellä ihmislukuisia erittelyjä koodillesi, kun taas QuickCheck antaa sinun automaattisesti generoida testejä kuvailemalla ominaisuuksia, joita koodisi tulisi tyydyttää.
 
 ### Käyttäen Hspeciä
-
 Ensimmäisenä, lisää `hspec` rakennustyökalusi konfiguraatioon (esim. `stack.yaml` tai `cabal` tiedosto). Sen jälkeen, tuo `Test.Hspec` ja kirjoita testit eritelmiksi:
 
 ```haskell
@@ -50,7 +44,6 @@ Valmis 0.0001 sekunnissa
 ```
 
 ### Käyttäen QuickCheckiä
-
 QuickCheckin kanssa ilmaiset ominaisuudet, jotka funktiosi tulisi tyydyttää. Lisää `QuickCheck` projektiisi konfiguraatioon, sitten tuo se:
 
 ```haskell

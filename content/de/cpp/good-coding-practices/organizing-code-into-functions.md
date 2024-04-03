@@ -10,9 +10,6 @@ title: Code in Funktionen organisieren
 weight: 18
 ---
 
-## Was & Warum?
-Code in Funktionen zu unterteilen, bedeutet, den Code in kleinere, wiederverwendbare Stücke zu zerlegen. Wir tun dies, um Wiederholungen zu vermeiden, unseren Code lesbar zu machen und das Debugging und Testen zu vereinfachen. Gut organisierte Funktionen können wie eine Kiste mit ordentlich beschrifteten Werkzeugen sein, bereit zum Gebrauch und zum Teilen.
-
 ## Wie geht das:
 Nehmen wir eine alltägliche Aufgabe: die Berechnung der Fläche eines Kreises. Anstatt jedes Mal die gleiche Formel zu schreiben, kapseln wir sie in eine Funktion ein.
 

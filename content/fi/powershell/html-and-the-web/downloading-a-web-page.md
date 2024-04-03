@@ -9,9 +9,6 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## What & Why?
-Lataaminen on verkkosivun datan siirtämistä paikalliselle koneelle. Ohjelmoijat tekevät sen tiedon käsittelyä tai automatisointia varten.
-
 ## How to:
 Aloita. Avaa PowerShell. Käytä Invoke-WebRequest -komentoa:
 

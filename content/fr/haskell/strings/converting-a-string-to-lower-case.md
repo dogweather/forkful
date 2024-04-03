@@ -11,9 +11,6 @@ title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---
 
-## What & Why?
-Convertir une chaîne de caractères en minuscules, c'est transformer tous les caractères alphabétiques en leurs équivalents en minuscule. Les programmeurs font ça pour normaliser les données, par exemple pour comparer des chaînes de manière insensible à la casse.
-
 ## How to:
 Haskell rend ce processus assez simple avec la fonction `toLower` du module `Data.Char`. Voici comment ça marche :
 

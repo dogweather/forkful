@@ -11,12 +11,7 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-
-Writing a text file in C involves creating or opening a file in write mode and then using C's file I/O functions to save text data to it. Programmers do this to persist data, like log events, configuration settings, or user-generated content, allowing applications to maintain state, preferences, or user progress across sessions.
-
 ## How to:
-
 To write text to a file in C, you primarily need to be familiar with the `fopen()`, `fprintf()`, `fputs()`, and `fclose()` functions. Below is a simple example that demonstrates creating and writing to a file:
 
 ```c
@@ -52,7 +47,6 @@ File written successfully
 After running this program, you'll find a file named `example.txt` in the same directory, containing the text you wrote via `fprintf()` and `fputs()`.
 
 ## Deep Dive
-
 The concept of files and file systems has been fundamental to computer systems, with their management being a critical aspect of operating systems. In C, handling files is performed using a set of standard I/O library functions, grounded in the philosophy of treating files as streams of bytes. This abstraction enables a straightforward and efficient method of reading from and writing to files, although it may seem low-level compared to more modern approaches available in high-level languages like Python or Ruby.
 
 Historically, these file I/O operations in C have set the foundation for file manipulation in many programming languages, offering a close-to-the-metal interface with the operating system's file management systems. This not only provides granular control over file attributes and I/O operations but also poses pitfalls for unwary programmers, such as the need to manually manage resources (i.e., always closing files) and buffering issues.

@@ -13,9 +13,6 @@ title: Obteniendo la fecha actual
 weight: 29
 ---
 
-## Qué y Por Qué?
-Obtener la fecha actual en programación es una tarea fundamental que te permite recuperar y manipular los datos de fecha y hora del sistema. En tareas de script y automatización, es esencial para generar marcas de tiempo, programar tareas y crear registros.
-
 ## Cómo hacerlo:
 Fish Shell utiliza comandos externos como `date` para obtener la fecha actual, ofreciendo flexibilidad para formatear la salida según sea necesario. Así es cómo usarlo:
 

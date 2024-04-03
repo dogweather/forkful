@@ -18,9 +18,6 @@ title: "\u4F7F\u7528TOML"
 weight: 39
 ---
 
-## 什么 & 为什么?
-TOML（Tom's Obvious, Minimal Language，汤姆的明了、最小化语言）是一种数据序列化格式，由于其清晰的语义而易于阅读。程序员使用TOML进行配置文件，其中人类的可读性和机器的易解析性是关键。
-
 ## 如何操作:
 首先，您需要一个TOML解析器。Swift没有内置的解析器，所以让我们使用`TOMLDecoder`。通过Swift包管理器安装它，然后可以轻松地序列化和反序列化TOML。
 

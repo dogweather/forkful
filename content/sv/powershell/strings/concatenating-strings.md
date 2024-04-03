@@ -11,9 +11,6 @@ title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---
 
-## Vad & Varför?
-Sammanslagning av strängar innebär att klämma ihop två eller fler textbitar till en. Programmerare gör detta för att bygga meningar, skapa dynamiska meddelanden, eller hantera data där olika bitar kommer från olika källor.
-
 ## Hur gör man:
 Concatenering är enkelt i PowerShell. Använd plus-tecknet (+) eller den inbyggda -join operatorn.
 

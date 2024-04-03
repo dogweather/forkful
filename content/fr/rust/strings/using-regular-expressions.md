@@ -14,12 +14,7 @@ title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---
 
-## Quoi & Pourquoi ?
-
-Les expressions régulières, ou regex, permettent aux développeurs de rechercher, faire correspondre et manipuler des chaînes de caractères avec des techniques avancées de reconnaissance de motifs. En Rust, l'utilisation de regex aide à analyser et gérer les données textuelles de manière efficace, rendant des tâches comme la validation de données, la recherche, et les transformations de texte plus fluides et maintenables.
-
 ## Comment faire :
-
 La bibliothèque `regex` de Rust est un outil de choix pour travailler avec les expressions régulières. Pour l'utiliser, vous devrez d'abord l'ajouter à votre `Cargo.toml` :
 
 ```toml
@@ -30,7 +25,6 @@ regex = "1"
 Ensuite, vous pouvez commencer à implémenter des fonctionnalités regex dans votre code Rust. Voici comment effectuer certaines opérations communes :
 
 ### Correspondance à un motif dans une chaîne
-
 ```rust
 use regex::Regex;
 
@@ -44,7 +38,6 @@ fn main() {
 ```
 
 ### Trouver et accéder aux correspondances
-
 ```rust
 use regex::Regex;
 
@@ -63,7 +56,6 @@ fn main() {
 ```
 
 ### Remplacer du texte
-
 ```rust
 use regex::Regex;
 
@@ -78,7 +70,6 @@ fn main() {
 ```
 
 ### Diviser du texte en utilisant une regex
-
 ```rust
 use regex::Regex;
 

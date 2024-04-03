@@ -11,9 +11,6 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## What & Why? (Co i dlaczego?)
-Łączymy napisy (stringi), żeby uformować nowy, większy tekst. Robimy to, by wyświetlić komunikaty, zbudować zapytania do bazy danych, albo po prostu skleić różne kawałki informacji w całość.
-
 ## How to: (Jak to zrobić:)
 ```TypeScript
 let greeting: string = "Cześć";

@@ -11,9 +11,6 @@ title: Registro de Actividades
 weight: 17
 ---
 
-## ¿Qué y Por Qué?
-La creación de registros (logging) en programación es como mantener un diario para tu aplicación. Es el registro sistemático de eventos, mensajes y puntos de datos que te ofrecen una visión de lo que tu aplicación está haciendo y cómo se está comportando. Los programadores registran porque es crucial para depurar, monitorear la salud de la aplicación y obtener pistas sobre problemas potenciales antes de que se conviertan en problemas reales.
-
 ## Cómo hacerlo:
 Ruby viene con un módulo integrado para la creación de registros, `Logger`, que es super fácil de usar. Aquí tienes un ejemplo rápido para comenzar:
 

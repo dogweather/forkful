@@ -12,9 +12,6 @@ title: Logboekregistratie
 weight: 17
 ---
 
-## Wat & Waarom?
-Loggen is het proces van het vastleggen van applicatiegedragingen, fouten en andere belangrijke informatie in een blijvend medium, zoals een bestand of database. Programmeurs doen dit om de gezondheid en prestaties van hun apps bij te houden, om problemen te debuggen, en om een oogje in het zeil te houden op wat er onder de motorkap gebeurt in productieomgevingen.
-
 ## Hoe:
 In Swift kun je logs naar de console schrijven met printopdrachten of de flexibelere `os.log` API, die aansluit op het Unified Logging System op Apple-platforms.
 

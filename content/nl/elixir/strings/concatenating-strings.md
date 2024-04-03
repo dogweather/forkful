@@ -12,9 +12,6 @@ title: Samenvoegen van strings
 weight: 3
 ---
 
-## Wat & Waarom?
-Het samenvoegen van strings gaat over het aan elkaar koppelen van twee of meer strings om één enkel stuk tekst te vormen. Je zou tekst moeten samenvoegen voor het genereren van gebruikersberichten, het creëren van bestandspaden of voor data serialisatieprocessen. Het is een fundamentele operatie in elke programmeertaal, inclusief Elixir, waarmee ontwikkelaars gemakkelijk dynamische strings kunnen construeren.
-
 ## Hoe te:
 In Elixir kun je strings op een paar eenvoudige manieren samenvoegen. Laten we de meest voorkomende methoden verkennen:
 

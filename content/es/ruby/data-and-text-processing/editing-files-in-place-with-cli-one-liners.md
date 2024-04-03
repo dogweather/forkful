@@ -13,12 +13,7 @@ title: "Editando archivos directamente con l\xEDneas de comandos"
 weight: 32
 ---
 
-## Qué y Por Qué?
-
-Editar archivos en su lugar con líneas de comando individuales (CLI, por sus siglas en inglés Interface de Línea de Comando) en Ruby te permite modificar archivos directamente desde tu terminal, sin la necesidad de abrirlos en un editor, realizar cambios y guardarlos de nuevo. Esta técnica es increíblemente útil para modificaciones rápidas, actualizaciones por lotes o automatizar tareas repetitivas, ahorrando tanto tiempo como esfuerzo.
-
 ## Cómo hacerlo:
-
 Ruby ofrece una manera directa de editar archivos en su lugar directamente desde la línea de comando. Usando el interruptor `-i` de Ruby, puedes decirle a Ruby que opere directamente sobre el(los) archivo(s) proporcionado(s). Juguemos con algunos ejemplos para ver cómo funciona esto en la vida real. Imagina que tienes un archivo `greetings.txt` con el siguiente contenido:
 
 ```
@@ -50,7 +45,6 @@ ruby -i.bak -pe "gsub(/Hola/, 'Adiós')" greetings.txt
 Ahora, junto con tu `greetings.txt` editado, encontrarás un `greetings.txt.bak` en el mismo directorio, manteniendo el contenido original.
 
 ## Profundización
-
 La magia de la edición de archivos en su lugar en Ruby proviene de su combinación de capacidades de procesamiento de texto al estilo Perl y la elegancia sintáctica propia de Ruby. Históricamente, Perl fue el lenguaje predilecto para scripting de una línea rápida, especialmente para la manipulación de texto. Ruby adoptó este paradigma, permitiendo capacidades de scripting en la línea de comando potentes.
 
 Existen alternativas para la edición en su lugar en otros lenguajes, como el propio Perl y sed, un editor de flujos en sistemas Unix. Cada uno tiene sus fortalezas: Perl es conocido por su destreza en el procesamiento de texto mientras que sed es incomparable en su simplicidad para tareas de edición de flujos. Sin embargo, Ruby ofrece un equilibrio, proporcionando manipulación de texto robusta con una sintaxis más legible y amigable para el usuario, especialmente para aquellos ya familiarizados con Ruby.

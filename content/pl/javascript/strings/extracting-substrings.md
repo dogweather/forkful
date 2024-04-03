@@ -11,9 +11,6 @@ title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---
 
-## What & Why?
-Wyciąganie podłańcuchów, czyli ekstrakcja konkretnych części z tekstu, to chleb powszedni w programowaniu. Robimy to, by manipulować danymi, walidować formularze, czy choćby wyświetlać skrócone informacje użytkownikom.
-
 ## How to:
 JavaScript posiada kilka metod do wydobywania podłańcuchów: `slice()`, `substring()`, i `substr()` (ale uwaga, `substr()` jest przestarzała!). Oto jak działają:
 

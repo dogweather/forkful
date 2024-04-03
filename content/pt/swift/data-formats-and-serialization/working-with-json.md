@@ -12,9 +12,6 @@ title: Trabalhando com JSON
 weight: 38
 ---
 
-## O Que é & Porquê?
-Trabalhar com JSON (JavaScript Object Notation) significa manipular dados no formato leve de intercâmbio que é fácil de ler para humanos e simples para máquinas processarem. Programadores usam JSON para transmitir dados entre um servidor e um cliente na web, além de salvar configurações e preferências dentro das aplicações.
-
 ## Como Fazer:
 Em Swift, você usa `JSONDecoder` para converter JSON em modelos Swift e `JSONEncoder` para fazer o contrário. Suponhamos que você tem um JSON representando um usuário:
 

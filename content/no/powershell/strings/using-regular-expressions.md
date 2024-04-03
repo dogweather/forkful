@@ -13,12 +13,7 @@ title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---
 
-## Hva & Hvorfor?
-
-Regulære uttrykk (regex) er sekvenser av tegn som former et søkemønster, primært brukt for strengsøking og manipulasjon. Programmerere utnytter regex i PowerShell for oppgaver som datavalidering, parsing og transformasjon på grunn av dets effektivitet og fleksibilitet i håndtering av komplekse mønstre.
-
 ## Hvordan:
-
 I PowerShell kan du bruke operatørene `-match`, `-replace` og `-split`, blant andre, for å utføre handlinger med regulære uttrykk. La oss utforske noen eksempler:
 
 ### Bruke `-match` for å sjekke om en streng matcher et mønster

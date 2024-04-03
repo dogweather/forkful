@@ -11,9 +11,6 @@ title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---
 
-## Wat & Waarom?
-Ooit moeten zoeken naar een datum in het verleden of toekomst? Programmatisch berekenen we vaak datums voor deadlines, herinneringen of evenementen. Weten hoe neemt het giswerk weg en laat je app tijdgevoelige taken accuraat afhandelen.
-
 ## Hoe te:
 Swift maakt datumrekenen eenvoudig met `Calendar` en `DateComponents`. Hier is de essentie:
 

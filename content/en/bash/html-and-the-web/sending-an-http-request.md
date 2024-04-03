@@ -11,12 +11,7 @@ title: Sending an HTTP request
 weight: 44
 ---
 
-## What & Why?
-
-Sending an HTTP request is a way to communicate with web servers to retrieve data or submit forms. Programmers do it to interact with web services, APIs or to automate tasks involving web content.
-
 ## How to:
-
 Bash can use tools like `curl` or `wget` for HTTP requests. Here’s a quick example with `curl`.
 
 ```Bash
@@ -42,7 +37,6 @@ Sample `curl` response:
 ```
 
 ## Deep Dive
-
 HTTP requests have been around since the early '90s and are the foundation of web communication. `curl` and `wget` are Unix command-line tools introduced in 1996 and 1996, respectively, for network requests.
 
 `wget` is typically used for downloading files, while `curl` can handle a wide variety of protocols and offers more features, making it a go-to for sending HTTP requests from the command line.
@@ -52,7 +46,6 @@ Implementing an HTTP request using these tools involves crafting the proper requ
 Alternative ways of sending HTTP requests in scripting include using scripting languages like Python with libraries such as `requests`, or using tools like `httpie` for a more human-friendly interface.
 
 ## See Also
-
 - curl official site: https://curl.se/
 - wget manual: https://www.gnu.org/software/wget/manual/wget.html
 - HTTPie: https://httpie.io/

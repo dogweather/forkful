@@ -15,9 +15,6 @@ title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---
 
-## Gì & Tại sao?
-Kết hợp chuỗi, hay còn gọi là nối chuỗi, giống như việc tạo một đoàn tàu từ các từ. Chúng ta thực hiện điều này để liên kết các giá trị văn bản lại với nhau, tạo ra các cụm từ, câu, hoặc bất cứ thứ gì mà các chuỗi riêng biệt cần kết bạn và trở thành một.
-
 ## Cách thực hiện:
 Hãy đi thẳng vào vấn đề:
 

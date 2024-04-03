@@ -10,9 +10,6 @@ title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-HTTP-Requests mit Basisauthentifizierung ermöglichen gesicherte Zugriffe auf Webressourcen, indem Benutzername und Passwort übermittelt werden. Programmierer nutzen dies, um APIs oder Webdienste zu konsumieren, die eine solche Authentifizierungsform erfordern.
-
 ## How to:
 Elixir verwendet das `HTTPoison` Paket, ein beliebter HTTP-Client, um Requests mit Basisauthentifizierung durchzuführen. Installiere `HTTPoison` über `mix.exs` und folge dem Beispiel:
 

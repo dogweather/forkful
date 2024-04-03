@@ -11,9 +11,6 @@ title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---
 
-## What & Why?
-Envoyer une requête HTTP, c'est demander des données à un serveur web. Les programmeurs en ont besoin pour les applications qui bouffent de l'info en ligne - pensez apps météo, news, ou réseaux sociaux.
-
 ## How to:
 En Kotlin, utilisez la bibliothèque `ktor` pour simplifier les requêtes HTTP :
 

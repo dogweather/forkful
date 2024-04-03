@@ -12,9 +12,6 @@ title: "Koodin uudelleenj\xE4rjestely"
 weight: 19
 ---
 
-## Mikä & Miksi?
-Uudelleenjärjestely tarkoittaa olemassa olevan tietokonekoodin rakenteen muuttamista—muuttamalla faktorisointia—muuttamatta sen ulkoista käyttäytymistä. Ohjelmoijat tekevät sen parantaakseen ohjelmiston ei-toiminnallisia attribuutteja, kuten parantamalla luettavuutta, vähentämällä monimutkaisuutta ja tekemällä koodista helpommin ylläpidettävää tulevaisuuden hankkeita varten.
-
 ## Kuinka:
 Otetaan esimerkiksi yksinkertainen Java-luokka, joka kaipaa uudelleenjärjestelyä huonon organisaationsa ja epäselvyytensä vuoksi.
 

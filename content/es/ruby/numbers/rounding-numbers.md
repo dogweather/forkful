@@ -11,11 +11,7 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## Qué y Por Qué?
-Redondear números significa ajustarlos al número entero más cercano o a un grado de precisión especificado. Los programadores redondean los números para simplificar, para coincidir con las expectativas humanas, o para adaptar los datos a formatos específicos—piense en cálculos financieros, visualizaciones gráficas o en reducir el tamaño de almacenamiento.
-
 ## Cómo hacerlo:
-
 ```Ruby
 # Redondeo básico
 puts 3.14159.round      # => 3

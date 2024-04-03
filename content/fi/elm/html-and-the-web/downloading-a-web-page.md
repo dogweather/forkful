@@ -10,9 +10,6 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## What & Why?
-Webbisivun lataaminen tarkoittaa sivun sisällön hakemista netistä. Ohjelmoijat lataavat sivuja tiedon keräämiseen, automatisointiin, tai interaktiivisten web-sovellusten rakentamiseen.
-
 ## How to:
 Lataa sivu Elm:ssä HTTP-paketin kanssa. Vastaanota ja käsittele tieto.
 

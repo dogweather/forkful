@@ -10,9 +10,6 @@ title: "\xC5 jobbe med XML"
 weight: 40
 ---
 
-## Hva & Hvorfor?
-XML er et merkespråk brukt for lagring og transport av data. Programmerere arbeider med XML for å muliggjøre interoperabilitet mellom applikasjoner og systemer - tenk datautveksling og konfigurasjonsinnstillinger.
-
 ## Hvordan:
 Lese XML med SimpleXML:
 

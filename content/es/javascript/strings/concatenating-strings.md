@@ -10,12 +10,7 @@ title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---
 
-## ¿Qué es y por qué?
-
-Concatenar cadenas significa unir dos o más textos en uno. Los programadores lo hacen para manipular y combinar información textual de manera dinámica y eficiente.
-
 ## Cómo hacerlo:
-
 ```javascript
 // Concatenación con el operador +
 let saludo = "Hola, " + "mundo!";
@@ -32,7 +27,6 @@ console.log(saludoPersonalizado); // "Hola, María!"
 ```
 
 ## Detalles Profundos:
-
 Históricamente, la concatenación de cadenas era una tarea básica, pero con varias maneras de hacerla. Originalmente, el único método era utilizar el operador `+`, que sigue siendo muy utilizado por su simplicidad.
 
 Con el tiempo, se introdujo el método `concat()`, que puede ser más legible y expresivo. Aunque `concat()` parece más específico, no mejora sustancialmente el rendimiento y es menos común que el operador `+`.
@@ -44,6 +38,5 @@ En cuanto a rendimiento, las operaciones de concatenación simples son bastante 
 La elección del método de concatenación dependerá del contexto y la preferencia personal; sin embargo, los template literals son a menudo la opción más limpia y moderna para la inclusión de variables y expresiones dentro de las cadenas.
 
 ## Ver También:
-
 - Documentación de MDN sobre template strings: [MDN Template Literals](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Template_literals)
 - Información sobre concat(): [MDN String.prototype.concat()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/concat)

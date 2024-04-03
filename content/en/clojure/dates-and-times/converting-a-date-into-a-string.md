@@ -11,9 +11,6 @@ title: Converting a date into a string
 weight: 28
 ---
 
-## What & Why?
-Converting a date to a string means transforming a date object into human-readable text. Programmers do it to display dates in understandable formats or to serialize them for storage and transmission.
-
 ## How to:
 In Clojure, we use the Java interop capabilities to format dates. Here's a quick guide:
 

@@ -16,9 +16,6 @@ title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---
 
-## Lý do & Tại sao?
-Chuyển ký tự đầu tiên của chuỗi thành chữ hoa và phần còn lại thành chữ thường được gọi là việc viết hoa chuỗi. Chúng ta thực hiện điều này để chuẩn hóa dữ liệu và cải thiện khả năng đọc, như chuyển 'alice' thành 'Alice' cho tên.
-
 ## Cách thực hiện:
 Trong Clojure, không có hàm được xây dựng sẵn để trực tiếp viết hoa chuỗi. Bạn tự tạo với thư viện `clojure.string`. Dưới đây là cách nhanh:
 

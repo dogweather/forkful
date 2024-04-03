@@ -12,9 +12,6 @@ title: Refaktorisering
 weight: 19
 ---
 
-## Vad och Varför?
-Refaktorisering är processen att omstrukturera befintlig datakod utan att ändra dess externa beteende, med målet att förbättra mjukvarans icke-funktionella attribut. Programmerare refaktoriserar kod för att göra den renare, effektivare och lättare att förstå, vilket underlättar enklare underhåll och framtida förbättringar.
-
 ## Hur man gör:
 PowerShell har inte ett dedikerat refaktoreringsverktyg inbyggt, men du kan fortfarande städa upp din kod för läsbarhet och prestanda. Betrakta en funktion som gör för mycket och hur vi kan refaktorera den för klarhet:
 

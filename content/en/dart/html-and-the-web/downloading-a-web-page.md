@@ -10,12 +10,7 @@ title: Downloading a web page
 weight: 42
 ---
 
-## What & Why?
-
-Downloading a web page involves fetching the content of a web page via its URL for processing or storage. Programmers do this to extract information, monitor changes, or archive content, making it a staple in web scraping, data mining, and automated testing tasks.
-
 ## How to:
-
 Dart provides the `http` package, a popular third-party library for making HTTP requests. Here’s a basic example of how to use it to download a webpage:
 
 First, add the `http` package to your `pubspec.yaml`:

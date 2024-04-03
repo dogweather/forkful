@@ -12,9 +12,6 @@ title: "Loggf\xF8ring"
 weight: 17
 ---
 
-## Hva & Hvorfor?
-Logging er i bunn og grunn prosessen med å registrere hendelser og datautskrifter fra et stykke programvare mens det kjører, tenk på det som programvarens dagbok. Programmører bruker logging for å holde oversikt over hva som skjer under hetten - det er uvurderlig for feilsøking, overvåking av systematferd i sanntid og analyse av tidligere aktivitet for ytelsesoptimaliseringer eller revisjoner.
-
 ## Hvordan gjøre det:
 Elms arkitektur støtter ikke sideeffekter som logging rett ut fra esken – du håndterer dem gjennom kommandoer, som er en del av programmets arkitektur. For opplæringsformål, la oss sjekke hvordan du kan simulere logging ved å sende meldinger til JavaScript gjennom porter.
 

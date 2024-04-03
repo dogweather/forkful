@@ -10,9 +10,6 @@ title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---
 
-## What & Why? (Co i dlaczego?)
-Debugowanie to sztuka wykrywania błędów. Szybko pokazujemy zmienne i komunikaty, by zrozumieć, co się dzieje w skrypcie. Dlaczego? Bo informatyk bez debugowania to jak lekarz bez stetoskopu – leci na ślepo.
-
 ## How to (Jak to zrobić)
 ```Bash
 #!/bin/bash

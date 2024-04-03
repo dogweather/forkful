@@ -9,10 +9,6 @@ title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---
 
-## What & Why?
-("Cosa & Perché?")
-Rimuovere caratteri che corrispondono a un modello è come filtrare il testo. I programmatori lo fanno per pulire i dati, estrarre informazioni utili o preparare il testo per elaborazioni ulteriori.
-
 ## How to:
 ("Come fare:")
 ```C++

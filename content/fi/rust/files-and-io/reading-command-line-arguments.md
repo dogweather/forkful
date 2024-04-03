@@ -11,9 +11,6 @@ title: Komennoriviparametrien lukeminen
 weight: 23
 ---
 
-## What & Why? (Mitä & Miksi?)
-Komennon riviltä argumenttien lukeminen mahdollistaa käyttäjän syöttämän tiedon hakemisen ohjelmallesi. Käytämme sitä, koska haluamme ohjelman toimivan joustavasti eri tilanteissa ja käyttäjän tarpeiden mukaan.
-
 ## How to: (Kuinka tehdä:)
 ```Rust
 use std::env;

@@ -10,12 +10,7 @@ title: Iniciando un nuevo proyecto
 weight: 1
 ---
 
-## ¿Qué & Por Qué?
-
-Iniciar un nuevo proyecto es como poner la primera piedra de tu construcción digital; es el punto de partida para cualquier aplicación que planees desarrollar. Los programadores inician proyectos para transformar ideas en código ejecutable creando la estructura base que define la dirección del desarrollo.
-
 ## Cómo hacerlo:
-
 Para empezar un proyecto de Kotlin usando IntelliJ IDEA, sigue estos pasos simples:
 
 1. Abre IntelliJ IDEA y selecciona "New Project".
@@ -39,7 +34,6 @@ Si ejecutas este código, obtendrás la siguiente salida:
 ```
 
 ## Inmersión profunda:
-
 Kotlin fue creado por JetBrains en 2011 y se ha convertido en uno de los lenguajes favoritos para desarrollar en Android, entre otros entornos. Antes de Kotlin, Java era el rey para desarrollos en Android, pero Kotlin llegó con sintaxis más concisa, seguridad contra nulos y interoperabilidad total con Java.
 
 Alternativas a IntelliJ IDEA incluyen Eclipse y Android Studio; cada uno con soporte para Kotlin pero con distintos enfoques: Eclipse está más orientado a Java y Android Studio está optimizado para desarrollo Android.
@@ -47,7 +41,6 @@ Alternativas a IntelliJ IDEA incluyen Eclipse y Android Studio; cada uno con sop
 Detalles importantes al iniciar un proyecto son la configuración del SDK, la elección de dependencias apropiadas y la estructura del proyecto. Acertar desde el inicio facilita el mantenimiento y la expansión del código.
 
 ## Ver También:
-
 - Documentación oficial de Kotlin: [kotlinlang.org](https://kotlinlang.org/docs/reference/)
 - Android Studio, optimizado para Kotlin en Android: [developer.android.com/studio](https://developer.android.com/studio)
 - Tutorial interactivo de Kotlin: [play.kotlinlang.org](https://play.kotlinlang.org)

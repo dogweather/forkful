@@ -11,9 +11,6 @@ title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---
 
-## Co i dlaczego?
-Logowanie to proces rejestrowania zdarzeń aplikacji i danych wyjściowych podczas jej działania. Programiści logują, aby diagnozować błędy, monitorować wydajność oprogramowania, śledzić działania użytkowników oraz utrzymywać zgodność z normami bezpieczeństwa i biznesowymi.
-
 ## Jak to zrobić:
 W C#, można użyć wbudowanej przestrzeni nazw `System.Diagnostics` lub bibliotek stron trzecich takich jak NLog czy log4net. Oto krótki przykład z wykorzystaniem interfejsu `ILogger`, dostępnego w .NET Core:
 

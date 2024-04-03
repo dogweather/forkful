@@ -12,9 +12,6 @@ title: Een string omzetten naar kleine letters
 weight: 4
 ---
 
-## Wat & Waarom?
-Het converteren van een string naar kleine letters betekent dat elk teken in de string een kleine letter wordt. Programmeurs doen dit voor consistentie bij het vergelijken, sorteren of opslaan van tekst.
-
 ## Hoe:
 Kotlin's `toLowerCase()` functie zet alle tekens in een string snel om naar kleine letters. Hier is hoe je het gebruikt:
 

@@ -13,12 +13,7 @@ title: Merkkijonon suuraakkostaminen
 weight: 2
 ---
 
-## Mitä & Miksi?
-
-Merkkijonon muuttaminen alkukirjaimin isoksi C-kielessä tarkoittaa annetun merkkijonon jokaisen sanan ensimmäisen merkin muuntamista isoksi kirjaimeksi, jos se on pienaakkonen. Ohjelmoijat suorittavat usein tämän toimenpiteen, jotta käyttäjän syöte standardoituu hauissa, lajitteluoperaatioissa tai näyttötarkoituksessa, varmistaen johdonmukaisuuden ja luettavuuden tekstidataa läpi.
-
 ## Miten:
-
 Merkkijonon muuttaminen alkukirjaimin isoksi C-kielessä vaatii perusymmärrystä merkin käsittelystä ja merkkijonon läpikäynnistä. Koska C:ssä ei ole valmista toimintoa tähän, tyypillisesti tarkistat jokaisen merkin, säätäen sen kirjainkokoa tarpeen mukaan. Alla on yksinkertainen toteutus:
 
 ```c
@@ -55,7 +50,6 @@ Capitalized string: Hello World. Programming In C!
 Tämä ohjelma käy läpi merkkijonon `exampleString`, tarkistaen jokaisen merkin, pitäisikö se muuttaa isoksi. `islower` funktio tarkistaa, onko merkki pienaakkonen, kun taas `toupper` muuttaa sen isoksi kirjaimeksi. Lippu `capNext` määrittelee, pitäisikö kohdatun seuraavan kirjaimen muuttaa, asetetaan jokaisen välilyönnin (' ') jälkeen, ja aluksi muuttaakseen merkkijonon ensimmäisen merkin isoksi.
 
 ## Syväsukellus
-
 Esitelty tekniikka on suoraviivainen, mutta se ei ole tehokas erittäin suurille merkkijonoille tai suoritettaessa toistuvasti suorituskykykritiikillisissä sovelluksissa. Historiallisissa ja toteutuskonteksteissa, C-kielen merkkijonon käsittely, mukaan lukien isoksi muuttaminen, käsittää usein suoran puskurin manipuloinnin, heijastaen C:n matalan tason lähestymistapaa ja antaen ohjelmoijalle täyden hallinnan muistista ja suorituskykykompromisseista.
 
 On olemassa vaihtoehtoisia, kehittyneempiä menetelmiä merkkijonojen isoksi muuttamiseen, erityisesti ottaen huomioon lokaalit ja unicode-merkit, joissa isoksi muuttamisen säännöt voivat poiketa merkittävästi yksinkertaisesta ASCII-tilanteesta. Kirjastot kuten ICU (International Components for Unicode) tarjoavat robusteja ratkaisuja näihin tapauksiin, mutta tuovat mukanaan riippuvuuksia ja ylikuormitusta, joka ei välttämättä ole tarpeellista kaikissa sovelluksissa.

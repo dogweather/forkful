@@ -10,12 +10,7 @@ title: Reading command line arguments
 weight: 23
 ---
 
-## What & Why?
-
-Reading command line arguments in Visual Basic for Applications (VBA) involves accessing parameters passed to your program upon execution. This technique is often used to influence the behavior or output of a program without the need for user interaction, making automation and scripting tasks significantly more straightforward and versatile.
-
 ## How to:
-
 Unlike more straightforward programming environments, VBA doesn't have a built-in feature to directly read command line arguments in a conventional sense because it's primarily designed for embedding within Microsoft Office applications. However, with a bit of creativity, we can use Windows Script Host (WSH) or call external APIs to achieve similar functionality. Here's a practical workaround using WSH:
 
 1. **Create a VBScript to Pass Arguments to VBA:**
@@ -50,7 +45,6 @@ cscript yourScript.vbs "Hello" "World"
    This should result in your VBA macro being executed with the arguments "Hello" and "World", displaying them in a message box.
 
 ## Deep Dive:
-
 In the historical context, VBA was devised to extend the capabilities of Microsoft Office applications, not as a standalone programming environment. As such, direct interaction with the command line is outside its primary scope, which explains the lack of built-in support for reading command line arguments.
 
 The method outlined above, while effective, is more of a workaround than a native solution, leveraging external scripting to bridge the gap. This approach can introduce complexity and potential security concerns as it requires enabling macros and potentially lowering security settings to execute.

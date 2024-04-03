@@ -11,9 +11,6 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## What & Why?
-Créer un fichier temporaire, c'est juste écrire des données qui n'ont pas besoin de rester longtemps. Les programmeurs le font pour stocker des trucs de manière éphémère – genre pour des téléchargements ou du traitement de données.
-
 ## How to:
 Swift rend la création de fichiers temporaires assez easy. Voilà comment ça se passe :
 

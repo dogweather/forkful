@@ -11,9 +11,6 @@ title: Arrondir les nombres
 weight: 13
 ---
 
-## Quoi & Pourquoi ?
-Arrondir les nombres consiste à supprimer les décimales pour simplifier vos données ou les adapter à des formats spécifiques. Les programmeurs le font pour un affichage convivial, un stockage efficace, ou lorsque la précision décimale n'est pas un problème.
-
 ## Comment faire :
 Dans Fish, l'arrondi des nombres repose sur la commande `math`. Utilisez `math -s0` pour arrondir au plus proche entier.
 

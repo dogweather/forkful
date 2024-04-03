@@ -10,9 +10,6 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-Rounding numbers is about chopping off decimal places to simplify your data or fit specific formats. Programmers do it for user-friendly display, efficient storage, or when decimal precision is a non-issue.
-
 ## How to:
 In Fish, rounding numbers hinges on the `math` command. Use `math -s0` to round to the nearest integer.
 

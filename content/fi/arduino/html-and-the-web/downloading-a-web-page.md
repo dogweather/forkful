@@ -10,9 +10,6 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## What & Why?
-Mikä ja miksi? Ladataan web-sivu, eli haetaan tiedot internetissä olevasta osoitteesta. Koodarit tekevät tämän, kun tarvitsevat päivittää laitteen dataa tai käyttää etärajapintoja.
-
 ## How to:
 Miten se tehdään:
 

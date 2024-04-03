@@ -10,9 +10,6 @@ title: Gestione degli errori
 weight: 16
 ---
 
-## Cosa & Perché?
-La gestione degli errori riguarda il controllo dell'inaspettato nei programmi, proprio come un buttafuori che si occupa dei guastafeste. Ai programmatori piace che tutto fili liscio; la gestione degli errori aiuta a tenere i problemi sotto controllo, assicurandosi che il loro codice non inciampi e cada di fronte all'imprevisto.
-
 ## Come fare:
 Clojure, come i suoi antenati Lisp, si affida alle eccezioni per la gestione degli errori. Ecco come mostrare di cosa sei capace quando le cose vanno male.
 

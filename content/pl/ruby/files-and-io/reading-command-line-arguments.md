@@ -11,12 +11,7 @@ title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---
 
-## Co i Dlaczego?
-
-W Ruby, czytanie argumentów linii poleceń pozwala twojemu skryptowi przyjmować dane wejściowe z konsoli. Programiści używają tej techniki, by uczynić skrypty bardziej elastycznymi i konfigurowalnymi przez użytkowników bez zmiany samego kodu.
-
 ## Jak to zrobić:
-
 Poniżej znajdziesz prosty przykład, jak używać argumentów z linii poleceń:
 
 ```Ruby
@@ -40,7 +35,6 @@ Cześć, Jan Kowalski!
 ```
 
 ## Deep Dive
-
 Argumenty linii poleceń są tak stare, jak same systemy operacyjne z interfejsem tekstowym. Już pierwsze programy pozwalały na przesyłanie danych podczas uruchamiania programu.
 
 W Ruby, argumenty te są dostępne za pomocą globalnej stałej `ARGV`, która jest tablicą stringów. Argumenty są po prostu ciągiem znaków, więc pamiętaj, żeby przekształcić je w odpowiedni typ danych, jeśli potrzebujesz (np. `to_i` dla liczb całkowitych).
@@ -48,7 +42,6 @@ W Ruby, argumenty te są dostępne za pomocą globalnej stałej `ARGV`, która j
 Alternatywy dla `ARGV` obejmują użycie gemów, takich jak `OptionParser` lub `Thor`, które dostarczają bardziej zaawansowane opcje dla parsowania argumentów, takie jak flagi czy opcje z wartościami.
 
 ## See Also
-
 Sprawdź te zasoby, aby dowiedzieć się więcej o pracy z argumentami w Ruby:
 
 - Dokumentacja Ruby na temat Argumentów Linii Poleceń: https://www.ruby-lang.org/pl/documentation/quickstart/3/

@@ -12,9 +12,6 @@ title: Schrijven naar standaardfout
 weight: 25
 ---
 
-## Wat & Waarom?
-Schrijven naar standaardfout, `stderr`, geeft foutberichten apart van de standaarduitvoer, `stdout`. Programmeurs gebruiken `stderr` om fouten te rapporteren zonder in de weg te zitten van reguliere commando-uitvoeren, wat het gemakkelijker maakt om fouten te behandelen en te loggen.
-
 ## Hoe te:
 ```
 # Het echo-commando omleiden naar standaardfout

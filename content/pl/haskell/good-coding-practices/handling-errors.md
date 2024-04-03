@@ -12,9 +12,6 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co i dlaczego?
-Obsługa błędów w programowaniu polega na zarządzaniu niespodziewanymi sytuacjami—rzeczami, które mogą pójść nie tak. Programiści robią to, aby zapewnić, że ich programy mogą radzić sobie z tymi sytuacjami w elegancki sposób, bez awarii lub generowania błędnych wyników.
-
 ## Jak to zrobić:
 Haskell radzi sobie z błędami solidnie dzięki typom takim jak `Maybe` i `Either`. Oto krótkie spojrzenie:
 

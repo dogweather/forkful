@@ -12,12 +12,7 @@ title: Working with JSON
 weight: 38
 ---
 
-## What & Why?
-
-Working with JSON involves parsing JSON-formatted strings into data structures that Elixir can manipulate, and serializing Elixir data structures back into JSON strings. This is essential for web development, APIs, and configuration files, as JSON is a lightweight, text-based, language-independent data exchange format widely used for its simplicity and human-readability.
-
 ## How to:
-
 In Elixir, you can use the `Jason` library, a popular choice for JSON parsing and generation. First, add `Jason` to your project's dependencies in `mix.exs`:
 
 ```elixir

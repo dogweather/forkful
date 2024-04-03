@@ -10,12 +10,7 @@ title: Working with TOML
 weight: 39
 ---
 
-## What & Why?
-
-TOML, which stands for Tom's Obvious, Minimal Language, is a data serialization format predominantly used for configuration files. Programmers leverage TOML for its readability and easy mapping to data structures, enabling straightforward configuration of applications across various programming environments, including Visual Basic for Applications (VBA).
-
 ## How to:
-
 Working with TOML in VBA involves parsing the TOML file to read configurations or settings into your VBA project. VBA does not have built-in support for TOML, so you'll typically use a parser or convert TOML data into a format VBA can easily work with, like JSON or XML. Here’s how to manually parse a simple TOML config file:
 
 1. **Sample TOML File** (`config.toml`):
@@ -72,5 +67,4 @@ Database Server: 192.168.1.1
 ```
 
 ## Deep Dive
-
 The practical acceptance of TOML in the developer community showcases a trend towards simpler, more human-readable configuration files, standing in contrast to the formerly prevalent XML. TOML's design philosophy emphasizes clear semantics and aims for straightforward parsing with minimal overhead. In VBA, handling TOML directly involves manual parsing or leveraging external tools to convert TOML into a more VBA-friendly format due to the lack of native support. While this manual parsing method showcases a fundamental approach, utilizing external libraries or intermediate formats like JSON may offer more robust and error-resistant parsing strategies. Given VBA’s extensive integration with Microsoft Office, converting TOML to JSON and using VBA's native JSON parsing capabilities (where applicable) or third-party JSON parsers could provide a more streamlined workflow. Furthermore, with the continuous evolution of data serialization formats, programmers should also consider YAML, which, like TOML, emphasizes human readability but offers different trade-offs in terms of complexity and flexibility.

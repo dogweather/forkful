@@ -11,9 +11,6 @@ title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## What & Why?
-Convertir une date en chaîne de caractères permet de présenter des informations temporelles de manière lisible par l'humain. Les développeurs le font pour faciliter l'affichage des dates selon des formats variés, adaptés au contexte utilisateur.
-
 ## How to:
 ```Swift
 import Foundation

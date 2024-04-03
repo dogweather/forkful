@@ -11,9 +11,6 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Å laste ned en nettside betyr å hente dens data for å kunne vises eller behandles lokalt. Programmerere gjør dette for å analysere innhold, sjekke tilgjengelighet, eller integrere data i egne applikasjoner.
-
 ## How to: (Hvordan?)
 ```TypeScript
 import axios from 'axios'; // Legg til Axios-biblioteket

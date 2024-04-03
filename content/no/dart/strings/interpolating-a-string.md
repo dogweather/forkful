@@ -13,12 +13,7 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## Hva og hvorfor?
-
-Strenginterpolasjon er prosessen med å injisere variabelverdier direkte inn i strenger, ofte for å skape meningsfulle meldinger uten tungvinte sammenslåinger. Programmerere gjør dette for renere, mer lesbare koder, og for å forhindre feil som er tilbøyelige til å skje i komplekse strengsammenslåinger.
-
 ## Hvordan:
-
 I Dart er strenginterpolasjon grei, ved å bruke `$`-symbolet for å interpolere uttrykk direkte innenfor strengliteraler:
 
 ```dart

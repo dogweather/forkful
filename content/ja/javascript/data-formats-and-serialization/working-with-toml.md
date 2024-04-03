@@ -20,9 +20,6 @@ title: "TOML\u3092\u6271\u3046\u65B9\u6CD5"
 weight: 39
 ---
 
-## 何となぜ？
-TOMLとは、Tomのオビビアス・ミニマル・ランゲージの略で、設定ファイルの構造を定義します。プログラマーがTOMLを使うのは、読み書きが簡単でハッシュテーブルにうまくマップできるため、設定用に適しています。
-
 ## 使い方:
 JavaScriptでTOMLを扱うには、`@iarna/toml`のようなパーサーが必要です。まず、それをインストールします：`npm install @iarna/toml`。次に、TOML文字列をJavaScriptオブジェクトにパースするか、JavaScriptオブジェクトをTOML形式に文字列化します。
 

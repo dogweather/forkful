@@ -13,12 +13,7 @@ title: "Omgj\xF8ring av en dato til en streng"
 weight: 28
 ---
 
-## Hva & Hvorfor?
-
-Å konvertere en dato til en streng i C innebærer å oversette en datostuktur eller tidsstempel til et menneskelesbart format. Programmerere utfører ofte denne oppgaven for å vise datoer i loggfiler, brukergrensesnitt, eller når de lagrer datoer i et tekstbasert format som JSON eller CSV.
-
 ## Hvordan:
-
 Funksjonen `strftime` fra biblioteket `<time.h>` brukes vanligvis til dette formålet. Den lar deg formatere dato og tid på en rekke måter ved å spesifisere format-spesifikatorer. Her er et raskt eksempel:
 
 ```c
@@ -47,7 +42,6 @@ Nåværende dato og tid: Wed Jun 30 21:49:08 2021
 Du kan tilpasse formatet ved å endre format-spesifikatorene som sendes til `strftime`. For eksempel, for å få datoen i formatet `YYYY-MM-DD`, ville du bruke `"%Y-%m-%d"`.
 
 ## Dypdykk
-
 Funksjonen `strftime` og biblioteket `<time.h>` er en del av C Standard Library, som går tilbake til den opprinnelige ANSI C-standarden (C89/C90). Selv om denne tilnærmingsmåten er grei og støttet på mange plattformer, kan den virke lavnivå og tungvint sammenlignet med moderne programmeringsspråk som tilbyr mer intuitive dato- og tidsbiblioteker.
 
 Det bør merkes at selv om tidsfunksjonene i C-standardbiblioteket er bredt støttet og relativt enkle å bruke, mangler de noen av de mer komplekse tidssone-manipulasjons- og internasjonaliseringsfunksjonene som finnes i biblioteker av nyere språk eller tredjeparts C-biblioteker som International Components for Unicode (ICU).

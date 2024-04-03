@@ -12,9 +12,6 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Cosa & Perché?
-Ottenere la data corrente in C# implica il recupero dei dettagli della data e dell'ora correnti dal sistema. I programmatori spesso hanno bisogno di accedere a queste informazioni per eseguire operazioni di registrazione, timestamping o pianificazione delle attività all'interno delle applicazioni, assicurando che le azioni siano temporizzate con precisione e i dati siano contrassegnati con timestamp precisi.
-
 ## Come fare:
 C# fornisce un modo semplice per ottenere la data corrente usando la classe `DateTime` che fa parte del namespace System del .NET Framework. L'esempio sottostante dimostra come ottenere la data corrente, e, opzionalmente, l'ora.
 

@@ -13,12 +13,7 @@ title: Hantera filer med CLI-engreppskommandon
 weight: 31
 ---
 
-## Vad & Varför?
-
-I programmeringsvärlden, särskilt när man hanterar Linux- eller Unix-miljöer, är manipulation av filer direkt från kommandoradsgränssnittet (CLI) inte bara en fråga om bekvämlighet – det är ett kraftfullt verktyg. Tack vare Fish Shell, med dess moderna syntax och verktyg, kan du omvandla, flytta eller analysera dina filer med smidighet och precision. Det handlar om att göra mer med mindre, förenkla processer och omfamna kommandoradens makt för effektiv filhantering.
-
 ## Hur:
-
 Att manipulera filer i Fish Shell är både intuitivt och kraftfullt. Här är några exempel som visar dess förmåga:
 
 1. **Att skapa en fil** är så enkelt som det kan bli. Använd `touch`-kommandot:
@@ -80,7 +75,6 @@ end
 ```
 
 ## Djupdykning
-
 Att manipulera filer från CLI med enradskommandon i Fish Shell är både en färdighet och en konst. Historiskt har Unix- och Linux-system alltid tillhandahållit en kraftfull uppsättning verktyg för filmanipulation, med filosofin att behandla allt som en fil. Detta har banat väg för moderna skal som Fish, som inte bara omfamnar utan även utökar dessa filosofier med förbättrad syntax och tillagda verktyg.
 
 Även om Fish erbjuder en utmärkt användarupplevelse och skriptningsmöjligheter är det värt att nämna att vissa problem med POSIX-kompatibilitet kan uppstå, särskilt när skript portas från mer traditionella skal som Bash eller SH. Detta beror på att Fish inte strävar efter att vara POSIX-kompatibelt av design, utan väljer istället en mer användarvänlig inställning både till skriptning och kommandoradsanvändning. Som sådan bör programmerare vara medvetna om att även om Fish utmärker sig på många områden, kan skript som kräver strikt POSIX-kompatibilitet behöva justeringar eller alternativ som `bash` eller `zsh` för kompatibilitet.

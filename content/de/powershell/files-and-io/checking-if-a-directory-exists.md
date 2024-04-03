@@ -16,9 +16,6 @@ title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---
 
-## Was & Warum?
-In PowerShell ist die Überprüfung, ob ein Verzeichnis existiert, eine häufige Aufgabe, die Skripte dabei unterstützt, Entscheidungen basierend auf der Dateisystemstruktur zu treffen – wie zum Beispiel Fehler zu vermeiden, indem bestätigt wird, dass ein Zielverzeichnis vorhanden ist, bevor versucht wird, daraus zu lesen oder darin zu schreiben. Es ist wesentlich, um sicherzustellen, dass Ihr Skript zuverlässig in unterschiedlichen Umgebungen funktioniert.
-
 ## Wie:
 PowerShell bietet eine einfache Möglichkeit, die Existenz eines Verzeichnisses mit dem Cmdlet `Test-Path` zu überprüfen. Dieses Cmdlet gibt einen booleschen Wert zurück, der angibt, ob der angegebene Pfad existiert. So können Sie es verwenden:
 

@@ -11,12 +11,7 @@ title: "Refactorizaci\xF3n"
 weight: 19
 ---
 
-## Qué & Por qué?
-
-Refactorización es el proceso de reestructurar código de computadora existente sin cambiar su comportamiento externo, con el objetivo de mejorar atributos no funcionales. Los programadores refactorizan para hacer su código más limpio, más eficiente y más fácil de mantener, mejorando efectivamente la legibilidad y reduciendo la complejidad de su software.
-
 ## Cómo hacerlo:
-
 La refactorización en Clojure, gracias a su sintaxis limpia y paradigma funcional, puede ser increíblemente sencilla. Abordemos un escenario común: iterar sobre colecciones. Podrías comenzar con un bucle `for`, así:
 
 ```clojure
@@ -39,7 +34,6 @@ Llamar a `(old-way)` nos dará 55, la suma del 1 al 10. Pero, ey, podemos refact
 Esta función `(new-way)` refactorizada utiliza macros de hilado para pasar el rango directamente a `reduce`, eliminando el exceso.
 
 ## Inmersión Profunda
-
 El arte de la refactorización tiene sus raíces en los primeros días del desarrollo de software pero realmente ganó tracción con el libro seminal de Martin Fowler "Refactoring: Improving the Design of Existing Code" publicado en 1999. En Clojure, la refactorización a menudo se apoya en los principios de la programación funcional, favoreciendo funciones puras y estructuras de datos inmutables.
 
 Las alternativas a la refactorización manual en Clojure podrían incluir el uso de herramientas como Cursive, un popular plugin de IntelliJ IDEA, que ofrece refactorizaciones automáticas específicas para Clojure. También está clj-refactor, un paquete de Emacs para Clojure, proporcionando un conjunto de funciones de refactorización.
@@ -47,7 +41,6 @@ Las alternativas a la refactorización manual en Clojure podrían incluir el uso
 Un desafío peculiar de la refactorización en Clojure es lidiar con el estado y efectos secundarios en un paradigma principalmente inmutable y libre de efectos secundarios. El uso cuidadoso de átomos, refs, agentes y transitorios son fundamentales para mantener tanto el rendimiento como la corrección durante las refactorizaciones.
 
 ## Ver También
-
 - "Refactoring: Improving the Design of Existing Code" de Martin Fowler para los conceptos fundamentales.
 - [Clojure Docs](https://clojuredocs.org/) para ejemplos específicos de código Clojure idiomático.
 - [clj-refactor](https://github.com/clojure-emacs/clj-refactor.el) para la automatización de la refactorización en Emacs.

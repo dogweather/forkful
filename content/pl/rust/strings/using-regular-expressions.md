@@ -14,12 +14,7 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-
-Wyrażenia regularne, czyli regex, pozwalają programistom wyszukiwać, dopasowywać i manipulować ciągami znaków, wykorzystując zaawansowane techniki dopasowywania wzorców. W języku Rust, wykorzystanie regex pomaga w efektywnej analizie i obsłudze danych tekstowych, co czyni zadania takie jak walidacja danych, wyszukiwanie i transformacje tekstu bardziej uporządkowanymi i łatwiejszymi w utrzymaniu.
-
 ## Jak to zrobić:
-
 Biblioteka `regex` w Rust jest podstawowym narzędziem do pracy z wyrażeniami regularnymi. Aby jej użyć, najpierw należy dodać ją do pliku `Cargo.toml`:
 
 ```toml
@@ -30,7 +25,6 @@ regex = "1"
 Następnie, możesz zacząć implementować funkcje regex w swoim kodzie Rust. Oto jak wykonać kilka typowych operacji:
 
 ### Dopasowywanie wzorca w ciągu znaków
-
 ```rust
 use regex::Regex;
 
@@ -44,7 +38,6 @@ fn main() {
 ```
 
 ### Znajdowanie i dostęp do dopasowań
-
 ```rust
 use regex::Regex;
 
@@ -63,7 +56,6 @@ fn main() {
 ```
 
 ### Zamiana tekstu
-
 ```rust
 use regex::Regex;
 
@@ -78,7 +70,6 @@ fn main() {
 ```
 
 ### Dzielenie tekstu przy użyciu regex
-
 ```rust
 use regex::Regex;
 

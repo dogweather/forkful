@@ -11,9 +11,6 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## What & Why?
-Lire les arguments de la ligne de commande, c'est récupérer les données fournies lors du lancement d'un script Bash. Les programmeurs utilisent cette technique pour rendre leurs scripts flexibles et interactifs.
-
 ## How to:
 Voici un exemple simple. Le script `hello.sh` salue l'utilisateur en utilisant l'argument fourni.
 

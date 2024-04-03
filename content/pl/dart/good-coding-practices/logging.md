@@ -13,12 +13,7 @@ title: Rejestrowanie
 weight: 17
 ---
 
-## Co i dlaczego?
-
-Logowanie w Dart odnosi się do procesu rejestrowania różnych poziomów informacji podczas wykonywania programu. Programiści robią to, aby monitorować zachowanie oprogramowania, diagnozować problemy oraz analizować wydajność, co ułatwia utrzymanie i ulepszanie aplikacji w czasie.
-
 ## Jak to zrobić:
-
 Dart zawiera prosty mechanizm logowania poprzez bibliotekę `dart:developer`. Dla bardziej zaawansowanych potrzeb w zakresie logowania, programiści często zwracają się ku bibliotekom stron trzecich, takim jak `logger` i `log4dart`.
 
 ### Korzystanie z `dart:developer`

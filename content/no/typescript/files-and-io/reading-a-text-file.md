@@ -8,11 +8,6 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## What & Why?
-"## Hva & Hvorfor?"
-
-Å lese en tekstfil betyr å hente data fra en fil lagret på disken. Programmerere gjør dette for å bruke, vise eller bearbeide informasjon som apper og tjenester trenger.
-
 ## How to:
 "## Slik gjør du:"
 

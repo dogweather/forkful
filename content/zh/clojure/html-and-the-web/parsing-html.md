@@ -18,16 +18,10 @@ title: "\u89E3\u6790HTML"
 weight: 43
 ---
 
-## 什么以及为什么？
-
-在Clojure中解析HTML涉及到从HTML文档中以编程方式提取信息。程序员这么做是为了动态访问、操作或监控网页内容，自动化任务或将数据输入到应用程序中。
-
 ## 如何操作：
-
 Clojure没有内置的HTML解析功能，但你可以利用Java库或Clojure的封装器，例如`enlive`或`hickory`。以下是如何使用这两者的方法：
 
 ### 使用Enlive：
-
 Enlive是HTML解析和网页抓取的热门选择。首先，在项目依赖中加入它：
 
 ```clojure
@@ -52,7 +46,6 @@ Enlive是HTML解析和网页抓取的热门选择。首先，在项目依赖中�
 ```
 
 ### 使用Hickory：
-
 Hickory提供了一种将HTML解析成更易于在Clojure中处理的格式的方法。将Hickory加入到你的项目依赖中：
 
 ```clojure

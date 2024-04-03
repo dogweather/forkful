@@ -13,12 +13,7 @@ title: Een datum uit een string parsen
 weight: 30
 ---
 
-## Wat & Waarom?
-
-Een datum uit een string parsen betekent het extraheren van de datumgegevens zoals dag, maand en jaar, en deze converteren naar een formaat dat een computer kan begrijpen. Programmeurs doen dit omdat de datum- en tijdgegevens vaak in een gestructureerde vorm nodig zijn om bewerkingen uit te voeren zoals vergelijkingen, berekeningen, of opslaan in een database.
-
 ## Hoe:
-
 Laten we een string omzetten in een datum:
 
 ```Arduino
@@ -62,13 +57,11 @@ Datum ingesteld op: 24/12/2023
 ```
 
 ## Diepere Duik
-
 Datums parsen is een veelvoorkomende taak sinds de vroege dagen van het programmeren. Historisch gezien was het hanteren van datums platformspecifiek en foutgevoelig. De Arduino, met zijn vele bibliotheken zoals RTClib, vereenvoudigt dit proces aanzienlijk.
 
 Alternatieven voor RTClib voor het parsen van datums omvatten het gebruik van ingebouwde functies of het schrijven van aangepaste code om datumstrings te valideren en te converteren. Implementatiedetails zoals controleren op schrikkeljaren of omgaan met verschillende datumformaten kunnen het parsen complex maken. Zorgen dat invoerstrings in verwachte formaten zijn en het controleren van geparsede waarden op fouten zijn cruciaal om storingen te voorkomen.
 
 ## Zie ook
-
 - RTClib op GitHub: https://github.com/adafruit/RTClib
 - Arduino Time Library: https://www.arduino.cc/reference/en/libraries/time/
 - Arduino DateTime Class referentie: https://github.com/adafruit/RTClib/blob/master/DateTime.h

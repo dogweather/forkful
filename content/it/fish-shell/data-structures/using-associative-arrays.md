@@ -13,12 +13,7 @@ title: Utilizzo di array associativi
 weight: 15
 ---
 
-## Cos'è e Perché?
-
-Gli array associativi, o mappe hash, permettono di memorizzare dati come coppie chiave-valore, rendendo più semplice organizzare e recuperare informazioni mediante la chiave. Sono utili quando si necessita di un modo più strutturato di gestire i dati rispetto alle semplici liste, specialmente nelle configurazioni e quando si ha a che fare con un insieme di attributi.
-
 ## Come fare:
-
 Fish non supporta nativamente gli array associativi come Bash 4+, ma è possibile ottenere una funzionalità simile utilizzando una combinazione di liste e manipolazione di stringhe. Ecco come emularli:
 
 Prima, configurando separatamente gli elementi "array associativo":
@@ -60,5 +55,4 @@ end
 ```
 
 ## Approfondimento
-
 Array associativi veri e propri, come in altri linguaggi di scripting, non fanno ancora parte dell'approccio di Fish. Il trucco mostrato sfrutta le capacità di manipolazione delle stringhe e delle liste di Fish per creare una struttura pseudo-array associativa. Anche se funziona, non è pulito o privo di errori come lo sarebbe il supporto incorporato per gli array associativi. Altri shell come Bash e Zsh forniscono funzionalità incorporate di array associativi, che risultano in codice più diretto e leggibile. Tuttavia, la filosofia di design di Fish mira alla semplicità e alla facilità d'uso, possibilmente a scapito di tali funzionalità. La soluzione soddisfa la maggior parte delle esigenze, ma tenete d'occhio l'evoluzione di Fish Shell: i suoi sviluppatori migliorano attivamente e aggiungono funzionalità basate sui feedback della comunità.

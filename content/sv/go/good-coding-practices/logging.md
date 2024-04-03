@@ -13,12 +13,7 @@ title: Loggning
 weight: 17
 ---
 
-## Vad & Varför?
-
-Loggning inom programutveckling är processen att registrera information om ett programs utförande, avsedd att spåra dess beteende och diagnostisera problem. Programmerare implementerar loggning för att övervaka programvarans prestanda, felsöka fel, samt säkerställa systemets säkerhet och efterlevnad, vilket gör det till ett ovärderligt verktyg för underhåll och analys av applikationer.
-
 ## Hur man gör:
-
 I Go kan loggning implementeras med hjälp av standardbibliotekets paket `log`. Detta paket tillhandahåller enkla loggningsfunktioner, såsom att skriva till standardutmatningen eller till filer. Låt oss börja med ett grundläggande exempel på loggning till standardutmatningen:
 
 ```go
@@ -84,7 +79,6 @@ CUSTOM LOG: 2009/11/10 23:00:00 main.go:11: Detta är ett anpassat loggmeddeland
 Detta exempel prefixar varje loggmeddelande med "CUSTOM LOG: " och inkluderar datum, tid och källfilsplats.
 
 ## Djupdykning
-
 Standardbibliotekets `log`-paket i Go är enkelt och tillräckligt för många applikationer, men det saknar några av de mer sofistikerade funktionerna som finns i tredjeparts loggningsbibliotek, såsom strukturerad loggning, loggrotation och loggning baserad på nivåer. Paket som `zap` och `logrus` erbjuder dessa avancerade funktioner och är väl ansedda inom Go-gemenskapen för deras prestanda och flexibilitet.
 
 Strukturerad loggning, till exempel, gör det möjligt att logga data i ett strukturerat format (som JSON), vilket är särskilt användbart för moderna molnbaserade applikationer där loggar kan analyseras av olika verktyg eller tjänster. `zap`, i synnerhet, är känt för sin höga prestanda och låga allokeringsoverhead, vilket gör det lämpligt för applikationer där hastighet och effektivitet är avgörande.

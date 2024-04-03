@@ -11,9 +11,6 @@ title: "H\xE4mta en webbsida"
 weight: 42
 ---
 
-## Vad & Varför?
-Att ladda ner en webbsida innebär att extrahera innehållet från en URL och få det i textformat. Programmerare gör detta för att hämta data, övervaka förändringar eller integrera webbinfo i appar.
-
 ## Hur man gör:
 I Kotlin kan du använda `URL.readText()` för enkel nedladdning. Här är ett exempel:
 

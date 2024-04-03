@@ -12,16 +12,10 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-
-Rond getallen af is het aanpassen van de waarde van een getal naar het dichtstbijzijnde gehele getal of naar een specifiek aantal decimalen. Programmeurs doen dit om redenen zoals het verbeteren van de leesbaarheid, het vereenvoudigen van berekeningen of om te voldoen aan domeinspecifieke precisie-eisen.
-
 ## Hoe:
-
 In Go is er geen ingebouwde functie die direct getallen afrondt naar een specifiek aantal decimalen in het wiskundepakket. Je kunt echter afronden bereiken door een combinatie van functies voor gehele getallen of door een aangepaste functie voor decimalen te implementeren.
 
 ### Afronden naar het dichtstbijzijnde gehele getal:
-
 Om af te ronden naar het dichtstbijzijnde gehele getal, kun je de `math.Floor()` functie gebruiken met toegevoegd 0,5 voor positieve getallen, en `math.Ceil()` min 0,5 voor negatieve getallen, afhankelijk van de richting waarin je wilt afronden.
 
 ```go
@@ -39,7 +33,6 @@ func main() {
 ```
 
 ### Afronden naar een specifiek aantal decimalen:
-
 Voor het afronden naar een specifiek aantal decimalen kan een aangepaste functie worden gebruikt waarbij je het getal vermenigvuldigt met 10^n (waarbij n het aantal decimalen is), het dan naar het dichtstbijzijnde gehele getal afrondt zoals eerder, en vervolgens deelt door 10^n.
 
 ```go
@@ -62,7 +55,6 @@ func main() {
 ```
 
 ## Diepgaand
-
 Getallen afronden is een fundamentele bewerking in computerprogrammering, gekoppeld aan de historische uitdaging van het vertegenwoordigen van reële getallen in een binair systeem. De behoefte aan afronding ontstaat door het feit dat veel reële getallen niet precies in binaire vorm kunnen worden weergegeven, wat leidt tot benaderingsfouten.
 
 In Go is de benadering tot afronden enigszins handmatig in vergelijking met talen die ingebouwde afrondfuncties bieden voor specifieke decimalen. Desalniettemin biedt het standaard `math` pakket van de Go-bibliotheek de basisbouwstenen (zoals `math.Floor` en `math.Ceil`) om elk gewenst afrondingsmechanisme te construeren.

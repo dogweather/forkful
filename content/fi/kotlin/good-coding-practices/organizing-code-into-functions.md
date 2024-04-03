@@ -11,9 +11,6 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mikä & Miksi?
-Koodin organisointi funktioihin tarkoittaa ohjelmasi pilkkomista uudelleenkäytettäviin osiin, joista jokainen käsittelee tiettyä tehtävää. Tämä tehdään koodin luettavuuden, virheenkorjauksen ja päivittämisen helpottamiseksi. Ajattele koodiasi kuin ruokakomerotasi: haluat kaiken leivontatarvikkeista säilykkeisiin ryhmiteltynä, jotta löytäisit tarvitsemasi vaivattomasti.
-
 ## Kuinka:
 Tässä on yksinkertainen esimerkki. Pitkän skriptin kirjoittamisen sijaan käyttäjien tervehtimisessä jaamme tehtävän funktioihin.
 

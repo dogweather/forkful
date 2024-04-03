@@ -11,9 +11,6 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mitä & Miksi?
-Koodin järjestäminen funktioihin tarkoittaa sen hajottamista uudelleenkäytettäviin osiin, joista jokainen hoitaa tietyn tehtävän. Ohjelmoijat tekevät niin, jotta koodista tulee helpompi lukea, virheenkorjata ja uudelleenkäyttää. Se on kuin Lego-palikoiden laittamista lokeroihin - se säästää sinut penkomasta sekavaa kasaasi joka kerta, kun haluat rakentaa jotain.
-
 ## Kuinka:
 Kuvittele haluavasi saada LEDin vilkkumaan. Ilman funktioita `loop`-toimintosi on sekava sotku. Funktioiden kanssa se on siisti. Tältä se näyttää:
 

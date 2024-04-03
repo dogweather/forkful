@@ -12,9 +12,6 @@ title: Schrijven naar standaardfout
 weight: 25
 ---
 
-## Wat & Waarom?
-Standaardfout, vaak aangeduid als stderr, is een vooraf gedefinieerde bestandsstroom voor het loggen van foutmeldingen. Programmeurs gebruiken het om reguliere programma-uitvoer te scheiden van foutmeldingen, wat het debuggen gemakkelijker maakt.
-
 ## Hoe te:
 Om naar stderr in Python te schrijven:
 

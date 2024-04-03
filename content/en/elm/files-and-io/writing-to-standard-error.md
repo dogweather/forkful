@@ -11,12 +11,7 @@ title: Writing to standard error
 weight: 25
 ---
 
-## What & Why?
-
-Writing to standard error (stderr) is about redirecting error messages and diagnostics separate from the main program output, which goes to standard output (stdout). Programmers do it to make error handling and logging more manageable, especially in environments where output distinction is crucial for debugging and monitoring.
-
 ## How to:
-
 Elm is primarily targeted at web development, where the concept of writing directly to stderr doesn't apply in the same way as it does in traditional command-line environments. However, for Elm programs running in Node.js or similar environments, interop with JavaScript using ports is the key approach to achieve similar functionality. Here is how you might set it up:
 
 Elm Code (`Main.elm`):

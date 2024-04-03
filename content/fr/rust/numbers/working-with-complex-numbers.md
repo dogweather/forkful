@@ -12,9 +12,6 @@ title: Manipulation des nombres complexes
 weight: 14
 ---
 
-## Quoi & Pourquoi ?
-Les nombres complexes comportent une partie réelle et une partie imaginaire et sont cruciaux dans divers domaines tels que l'ingénierie, la physique et les graphiques informatiques. Les programmeurs les utilisent pour résoudre des équations que les nombres réels ordinaires ne peuvent pas gérer.
-
 ## Comment faire :
 Rust n'a pas de support intégré pour les nombres complexes, mais des crates comme `num-complex` vous couvrent. Voici comment l'utiliser :
 

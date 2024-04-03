@@ -12,11 +12,8 @@ title: Werken met CSV
 weight: 37
 ---
 
-## Wat & Waarom?
-
-Werken met CSV (Comma-Separated Values) omvat het omgaan met tekstgegevens die door komma's zijn gesplitst in rijen en kolommen. Programmeurs werken met CSV voor gegevensuitwisseling tussen programma's en systemen vanwege de eenvoud en brede ondersteuning.
-
 ## Hoe te:
+
 
 ### Een CSV-bestand importeren
 ```PowerShell
@@ -62,10 +59,8 @@ Emily Clark Austin
 ```
 
 ## Uitgediept
-
 Historisch gezien hebben CSV-bestanden hun wortels in de vroege computertijd als een eenvoudige manier om tabelgegevens te organiseren zonder dat complexe bestandsformaten nodig zijn. Alternatieven, zoals XML en JSON, bieden rijkere gegevensstructuren, maar CSV blinkt uit voor tabelgegevens vanwege de leesbaarheid, lage overhead en het gemak van bewerking met eenvoudige teksteditors. In PowerShell omvatten de cmdlets `Import-Csv` en `Export-Csv` de implementatiedetails, waarbij de bestands-I/O en gegevensomzetting naar en van .NET-objecten worden afgehandeld.
 
 ## Zie Ook
-
 - [PowerShell-documentatie over Import-Csv](https://docs.microsoft.com/nl-nl/powershell/module/microsoft.powershell.utility/import-csv)
 - [PowerShell-documentatie over Export-Csv](https://docs.microsoft.com/nl-nl/powershell/module/microsoft.powershell.utility/export-csv)

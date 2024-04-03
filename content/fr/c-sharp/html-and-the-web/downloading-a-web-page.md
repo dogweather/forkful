@@ -11,9 +11,6 @@ title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---
 
-## What & Why?
-*Télécharger une page web*, c'est récupérer son contenu via internet. Les programmeurs le font pour analyser des données, automatiser des tâches ou tester des sites.
-
 ## How to:
 Pour télécharger le contenu d'une page web, on utilise la classe `HttpClient`. Voici un exemple simple :
 

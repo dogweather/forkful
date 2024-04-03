@@ -14,9 +14,6 @@ title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---
 
-## Co i dlaczego?
-Użycie wielkiej litery w ciągu znaków w PowerShellu polega na przekształceniu pierwszego znaku danego ciągu na wielką literę, pozostawiając resztę ciągu niezmienioną. Programiści często wykonują to zadanie w celach formatowania, takich jak przygotowanie tekstu do wyświetlenia w interfejsach użytkownika lub przestrzeganie reguł gramatycznych w generowanych dokumentach.
-
 ## Jak to zrobić:
 PowerShell, będąc wszechstronnym narzędziem, pozwala na użycie wielkiej litery w ciągu znaków za pomocą prostych metod, bez konieczności korzystania z bibliotek firm trzecich. Oto jak możesz to zrobić:
 

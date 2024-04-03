@@ -10,9 +10,6 @@ title: Conversione di una stringa in minuscolo
 weight: 4
 ---
 
-## What & Why?
-Convertire una stringa in minuscolo significa modificare tutti i caratteri alfabeticci all'interno di essa da maiuscoli a minuscoli. I programmatori lo fanno per normalizzare il testo per confronti, ordinamenti o per rispettare le convenzioni UI/UX.
-
 ## How to:
 Elm rende facile convertire le stringhe in minuscolo con la funzione `String.toLower`. Ecco come usarla:
 

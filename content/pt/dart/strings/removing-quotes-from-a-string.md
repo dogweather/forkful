@@ -14,9 +14,6 @@ title: Removendo aspas de uma string
 weight: 9
 ---
 
-## O Que & Por Que?
-Remover aspas de uma string em Dart envolve retirar as aspas duplas (") ou simples (') do início e do fim de uma string, útil para limpeza de dados ou preparação de strings para processamento adicional. Programadores fazem isso para normalizar entradas de dados, garantir uniformidade no armazenamento de dados, ou quando interagem com APIs que podem retornar dados em formatos com aspas.
-
 ## Como fazer:
 O Dart oferece maneiras diretas de remover aspas de uma string usando métodos embutidos de string sem a necessidade de bibliotecas de terceiros.
 

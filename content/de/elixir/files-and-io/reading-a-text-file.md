@@ -11,9 +11,6 @@ title: Textdatei einlesen
 weight: 22
 ---
 
-## Was & Warum?
-Das Einlesen von Textdateien ermöglicht es, Inhalt von der Festplatte in eine Anwendung zu laden. Programmierer benötigen diese Funktionalität, um Datei-basierte Daten zu verarbeiten, zu analysieren oder um Konfigurationen zu laden.
-
 ## Vorgehensweise:
 Um eine Textdatei in Elixir zu lesen, nutzen Sie die `File`-Modul. Hier ist ein einfaches Beispiel:
 

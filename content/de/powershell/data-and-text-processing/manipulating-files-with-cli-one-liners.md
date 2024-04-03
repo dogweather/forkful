@@ -12,11 +12,8 @@ title: Dateimanipulation mit CLI-One-Linern
 weight: 31
 ---
 
-## Was & Warum?
-
-Die Manipulation von Dateien mit CLI-One-Linern in PowerShell dreht sich darum, schnell Dateidaten direkt über die Befehlszeile zu ändern, zu bewegen oder zu erhalten. Programmierer machen das aus Effizienz; es ist schneller als das Navigieren durch GUIs oder das Schreiben von umfangreichen Skripten für einfache Aufgaben.
-
 ## Wie man:
+
 
 ### Eine Datei lesen
 Um schnell den Inhalt einer Datei anzuzeigen, verwenden Sie den Befehl `Get-Content`:
@@ -61,7 +58,6 @@ Get-ChildItem -Path .\*.log | Copy-Item -Destination C:\Logs
 ```
 
 ## Tiefer eintauchen
-
 Historisch wurde PowerShell als leistungsfähigere Alternative zur traditionellen Befehlsaufforderung in Windows eingeführt und bietet beispiellosen Zugang zu Systeminterna und Datenspeichern. Es kombiniert die Geschwindigkeit der Befehlszeile mit der Flexibilität des Skriptings und macht es zu einem unschätzbaren Werkzeug für Windows-basierte Systemadministratoren und Entwickler gleichermaßen.
 
 Alternativen zu PowerShell für die Dateimanipulation beinhalten Unix-basierte Tools wie `sed`, `awk`, `grep` und `bash`-Skripting für Linux- und MacOS-Benutzer. Während diese Werkzeuge extrem leistungsfähig sind und ihre eigenen Vorteile haben, bietet PowerShell eine tiefe Integration in Windows-Umgebungen.

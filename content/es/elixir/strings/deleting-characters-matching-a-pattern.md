@@ -10,9 +10,6 @@ title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---
 
-## ¿Qué & Por Qué?
-Eliminar caracteres que coinciden con un patrón permite limpiar o procesar datos antes de usarlos. Los programadores lo hacen para validar entrada, eliminar información innecesaria o preparar datos para almacenamiento o análisis.
-
 ## Cómo hacerlo:
 ```elixir
 # Ejemplo simplificado usando String.replace/3

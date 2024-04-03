@@ -11,9 +11,6 @@ title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---
 
-## Quoi & Pourquoi ?
-La coquille interactive, ou Boucle de Lecture-Évaluation-Affichage (REPL), vous permet de taper des commandes PowerShell et d'obtenir un retour immédiat. Les programmeurs l’utilisent pour tester rapidement des extraits de code, pour déboguer, ou pour apprendre de nouvelles commandes sans avoir à écrire un script complet.
-
 ## Comment faire :
 Lancez PowerShell et vous êtes dans la REPL. Essayez le Cmdlet `Get-Date` :
 

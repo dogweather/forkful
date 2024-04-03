@@ -16,9 +16,6 @@ title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1
 weight: 26
 ---
 
-## Cái gì & Tại sao?
-Tính toán một ngày trong tương lai hoặc quá khứ có nghĩa là xác định ngày nào đó sẽ là sau hoặc trước một khoảng thời gian nhất định. Nó hữu ích cho việc tạo nhắc nhở, thiết lập ngày hết hạn, lên lịch sự kiện, hoặc đơn giản là ghi chép xem đã qua bao nhiêu thời gian.
-
 ## Làm sao:
 C++20 đã giới thiệu các nâng cấp thư viện `<chrono>`, vì vậy xử lý thời gian ít phức tạp hơn. Dưới đây là một ví dụ nhanh về việc thêm ngày vào ngày hiện tại:
 

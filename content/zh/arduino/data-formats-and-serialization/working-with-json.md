@@ -24,12 +24,7 @@ title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 weight: 38
 ---
 
-## 什么 & 为什么?
-
-JSON，即JavaScript对象表示法，是一种轻量级的数据交换格式，非常适用于Arduino项目中的数据存储或配置文件。程序员之所以使用它，是因为它在各种编程环境（包括Arduino）中的简单性和可读性，使得与Web APIs或其他系统进行无缝数据交换成为可能。
-
 ## 如何操作:
-
 在Arduino中操作JSON，`ArduinoJson`库是一个因其易用性和效率而流行的选择。它允许解析JSON字符串，修改它们，并将对象序列化回JSON字符串。以下是如何使用它：
 
 1. **安装ArduinoJson库**：使用Arduino IDE中的库管理器并安装"ArduinoJson"。

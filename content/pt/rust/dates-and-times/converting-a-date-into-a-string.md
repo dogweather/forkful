@@ -11,12 +11,7 @@ title: Convertendo uma data em uma string
 weight: 28
 ---
 
-## What & Why?
-
-Converter uma data em uma string em Rust é transformar um valor de data/hora em um formato de texto legível. Fazemos isso principalmente para mostrar datas ao usuário ou para armazenar e transferir dados em um formato padronizado.
-
 ## How to:
-
 Vamos usar a biblioteca `chrono` porque a Rust Standard Library não trata diretamente de conversão de datas.
 
 Adicione no seu `Cargo.toml`:
@@ -49,7 +44,6 @@ Data e hora local: 2023-04-10 13:30:45
 ```
 
 ## Deep Dive
-
 Antes do `chrono`, tivemos que confiar em bibliotecas de C ou soluções menos convencionais. A biblioteca `time` também é uma alternativa, mas `chrono` é mais popular na comunidade Rust por sua riqueza de recursos e facilidade de uso.
 
 Quando formatamos uma data, usamos especificadores de formato (linha `%Y-%m-%d %H:%M:%S`) para definir como a data será exibida. Outras linguagens de programação têm abordagens semelhantes.
@@ -57,7 +51,6 @@ Quando formatamos uma data, usamos especificadores de formato (linha `%Y-%m-%d %
 Internamente, `chrono` lida com datas como timestamps (o número de segundos desde uma data específica: 1º de janeiro de 1970), o que facilita operações como comparação e aritmética de datas.
 
 ## See Also
-
 - Chrono Documentation: https://docs.rs/chrono/0.4.19/chrono/
 - Rust Date and Time Formatting: https://docs.rs/chrono/0.4.19/chrono/format/strftime/index.html
 - Time Crate: https://docs.rs/time/0.3.2/time/

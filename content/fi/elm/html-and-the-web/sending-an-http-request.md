@@ -10,9 +10,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## What & Why? (Mikä & Miksi?)
-HTTP-pyynnön lähettäminen on tiedon pyytämistä palvelimelta. Ohjelmoijat tekevät sen, koska heidän sovelluksensa tarvitsevat tietoa päivittyäkseen tai käsitelläkseen käyttäjän pyyntöjä.
-
 ## How to: (Kuinka tehdä:)
 ```Elm
 import Http

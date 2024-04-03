@@ -14,12 +14,7 @@ title: Generowanie liczb losowych
 weight: 12
 ---
 
-## Co i dlaczego?
-
-Generowanie losowych liczb w języku C polega na tworzeniu wartości, które są nieprzewidywalne i podążają za określonym rozkładem, takim jak jednostajny lub normalny. Ta zdolność jest kluczowa dla zastosowań od symulacji i gier po operacje kryptograficzne, gdzie nieprzewidywalność lub symulacja rzeczywistościowej losowości jest niezbędna.
-
 ## Jak to zrobić:
-
 W języku C losowe liczby można generować za pomocą funkcji `rand()`, która jest częścią standardowej biblioteki C `<stdlib.h>`. Domyślnie `rand()` produkuje liczby pseudolosowe w zakresie od 0 do `RAND_MAX` (stała zdefiniowana w `<stdlib.h>`). Aby mieć więcej kontroli nad zakresem, programiści mogą manipulować wynikiem funkcji `rand()`.
 
 Oto prosty przykład generowania losowej liczby między 0 a 99:
@@ -52,7 +47,6 @@ Aby generować losowe liczby w innym zakresie, możesz odpowiednio dostosować o
 Ważne jest, aby zauważyć, że zasiewanie generatora pseudolosowego (`srand()`) bieżącym czasem (`time(NULL)`) zapewnia różne sekwencje liczb losowych przy różnych wykonaniach programu. Bez zasiewania (`srand()`), `rand()` wyprodukowałaby tę samą sekwencję liczb za każdym razem, gdy program jest uruchamiany.
 
 ## Zagłębienie się
-
 Funkcja `rand()` oraz jej odpowiednik do zasiewania `srand()` są częścią standardowej biblioteki C od dziesięcioleci. Oparte są na algorytmach, które generują sekwencje liczb, które tylko wydają się być losowe – stąd termin "pseudolosowe". Podstawowy algorytm w `rand()` to zazwyczaj generator liniowy kongruentny (LCG).
 
 Chociaż `rand()` i `srand()` są wystarczające dla wielu aplikacji, mają znane ograniczenia, szczególnie dotyczące jakości losowości i potencjalnej przewidywalności. W przypadku aplikacji wymagających wysokiej jakości losowości, takich jak operacje kryptograficzne, należy rozważyć alternatywy takie jak `/dev/random` lub `/dev/urandom` (w systemach podobnych do Unix), lub API dostarczane przez biblioteki kryptograficzne.

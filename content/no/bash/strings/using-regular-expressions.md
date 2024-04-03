@@ -13,11 +13,8 @@ title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---
 
-## Hva & Hvorfor?
-
-Regulære uttrykk (regex) i Bash lar deg søke, manipulere, og håndtere strenger og filer basert på spesifikke mønstre. Programmerere bruker regex for oppgaver som inputvalidering, parsing av loggfiler, og dataekstraksjon fordi det tilbyr en fleksibel og kraftig måte å spesifisere mønstre for komplekse tekstbehandlingsbehov.
-
 ## Hvordan:
+
 
 ### Grunnleggende Mønstersammenligning
 For å finne ut om en streng matcher et mønster, kan du bruke `grep`, et kommandolinjeverktøy for å søke i datasett med ren tekst etter linjer som matcher et regulært uttrykk:

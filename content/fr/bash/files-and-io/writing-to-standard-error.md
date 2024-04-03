@@ -14,9 +14,6 @@ title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---
 
-## Quoi & Pourquoi ?
-L'écriture sur l'erreur standard (stderr) en Bash consiste à diriger les messages d'erreur ou toute sortie de diagnostic importante séparée de la sortie standard (stdout). Les programmeurs font cela pour s'assurer que les messages d'erreur peuvent être facilement identifiés, enregistrés, ou même ignorés, aidant ainsi dans les processus de débogage et de journalisation.
-
 ## Comment faire :
 En Bash, vous utilisez `>&2` pour rediriger la sortie vers stderr. Voici un exemple de base :
 

@@ -15,10 +15,9 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mikä & Miksi?
-Koodin järjestäminen funktioihin Dart-kielessä tarkoittaa uudelleenkäytettävien koodilohkojen määrittämistä, jotka suorittavat tiettyjä tehtäviä, tyypillisesti saaden syötteitä, käsitellen tietoja ja mahdollisesti palauttaen tulosteita. Ohjelmoijat tekevät näin parantaakseen koodin luettavuutta, vähentääkseen toistoa ja helpottaakseen ylläpitoa, mikä johtaa lopulta modulaarisempiin ja hallittavampiin koodikantoihin.
-
 ## Kuinka:
+
+
 ### Perusfunktio
 Dartissa funktion määrittelee käyttämällä `void` avainsanaa, jos se ei palauta arvoa, tai määrittelemällä sen muutoin palautettavan arvon tyypin. Tässä on yksinkertainen funktio, joka tulostaa tervehdysviestin:
 

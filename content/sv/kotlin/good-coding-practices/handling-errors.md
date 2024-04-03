@@ -11,9 +11,6 @@ title: Hantering av fel
 weight: 16
 ---
 
-## Vad & Varför?
-Att hantera fel är hur din kod tar itu med problem som uppstår under exekvering—som att hantera en oväntad boll utan att tappa den. Programmerare gör detta för att förhindra krascher och ge användare en smidig upplevelse.
-
 ## Hur man gör:
 Kotlin stödjer `try`, `catch`, `finally` och `throw` för att hantera fel. Så här använder du dem:
 

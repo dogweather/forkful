@@ -11,12 +11,7 @@ title: Manipulating files with CLI one-liners
 weight: 31
 ---
 
-## What & Why?
-
-Manipulating files with CLI (Command Line Interface) one-liners involves using Bash scripts or commands to perform actions on files, like creating, reading, updating, or deleting them, all from the terminal. Programmers do it for efficiency, automation, and because it's exceptionally powerful for handling file operations on Linux servers or systems, where graphical interfaces might not be available.
-
 ## How to:
-
 Here are a few potent one-liners and what they can accomplish:
 
 1. **Creating a file and writing text into it:**
@@ -62,7 +57,6 @@ This loop goes through each `.txt` file in the current directory and renames it 
 These CLI one-liners leverage the power of Bash for quick and effective file manipulation, a skill any programmer will find indispensable.
 
 ## Deep Dive
-
 The Bash shell, a mainstay on most UNIX-like systems, evolved from the Bourne Shell (sh), introduced in Version 7 Unix in 1979. Bash expands on its predecessor's capabilities with improved scripting features which have made it popular among system administrators and programmers alike.
 
 While Bash is incredibly powerful for file manipulation, it does come with its drawbacks, Being text-based, complex operations (like those involving binary data) can be cumbersome or inefficient compared to using a programming language designed with these capabilities in mind, such as Python.

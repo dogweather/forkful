@@ -11,9 +11,6 @@ title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---
 
-## What & Why?
-Czytanie argumentów z linii poleceń to sposób na przekazywanie danych do programu podczas jego uruchamiania. Programiści robią to, by zwiększyć elastyczność i interaktywność aplikacji bez wprowadzania zmiennych bezpośrednio w kodzie.
-
 ## How to:
 Elm nie obsługuje bezpośrednio czytania argumentów linii poleceń, ponieważ jest językiem skoncentrowanym na aplikacjach webowych. Ale można to osiągnąć za pośrednictwem JavaScript i portów (ports).
 

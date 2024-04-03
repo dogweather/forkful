@@ -14,11 +14,7 @@ title: Capitalizzare una stringa
 weight: 2
 ---
 
-## Cosa e Perché?
-Capitalizzare una stringa comporta modificare il primo carattere di una data stringa in maiuscolo se è in minuscolo, lasciando spesso inalterata la restante parte della stringa. Questa operazione è tipicamente utilizzata per assicurare che i nomi propri o gli inizi di frase aderiscano alle regole grammaticali nella elaborazione del testo, rendendo i risultati professionali e leggibili.
-
 ## Come fare:
-
 TypeScript, essendo un superset di JavaScript, permette vari metodi per capitalizzare le stringhe, che vanno dagli approcci puramente JavaScript all'utilizzo di librerie di terze parti per casi d'uso più complessi o specifici.
 
 **Approccio JavaScript Puro:**

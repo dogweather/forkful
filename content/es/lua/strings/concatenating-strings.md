@@ -11,9 +11,6 @@ title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---
 
-## Qué es y por qué?
-La concatenación de cadenas es simplemente pegar una cadena de texto al final de otra. Los programadores lo hacen para construir mensajes, combinar datos y generar salida dinámica.
-
 ## Cómo hacerlo:
 En Lua, concatenas cadenas con el operador `..`. Es fácil y directo.
 

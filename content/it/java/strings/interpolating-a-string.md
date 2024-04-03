@@ -10,9 +10,6 @@ title: Interpolazione di una stringa
 weight: 8
 ---
 
-## Che Cos'è e Perché?
-L'interpolazione di stringhe è un modo per inserire valori di variabili direttamente all'interno di una stringa di testo. I programmatori la usano per rendere il codice più pulito e per evitare operazioni di concatenazione manuale, che possono essere fonte di errori e difficilmente leggibili.
-
 ## Come Farlo:
 ```java
 public class InterpolationDemo {

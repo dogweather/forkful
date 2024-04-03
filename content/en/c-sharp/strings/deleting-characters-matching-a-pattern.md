@@ -10,9 +10,6 @@ title: Deleting characters matching a pattern
 weight: 5
 ---
 
-## What & Why?
-Deletion of characters matching a pattern is about finding and removing specific sequences of characters from strings based on rules (like regex). Programmers do it to clean data, validate inputs, or manipulate text for various purposes.
-
 ## How to:
 Want to ditch some characters? Here's how in C#:
 

@@ -15,9 +15,6 @@ title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---
 
-## Cái gì & Tại sao?
-Bắt đầu một dự án mới có nghĩa là bạn đang thiết lập nền tảng cho ý tưởng xuất sắc của mình. Các lập trình viên khởi động dự án để biến các khái niệm thành mã lệnh thực tế, thực hiện một cái gì đó hữu ích.
-
 ## Làm thế nào:
 ```Lua
 -- Hãy bắt đầu với một dự án Lua mới

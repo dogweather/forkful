@@ -11,9 +11,6 @@ title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---
 
-## Hva & Hvorfor?
-Slette tegn som matcher et mønster betyr å fjerne spesifikke karakterer fra en streng som oppfyller gitte kriterier. Programmerere gjør dette for å rense input, manipulere tekst, eller forberede data for videre behandling.
-
 ## Hvordan:
 ```C++
 #include <iostream>

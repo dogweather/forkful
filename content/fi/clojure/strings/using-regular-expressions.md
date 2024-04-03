@@ -14,9 +14,6 @@ title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---
 
-## Mikä & Miksi?
-Säännölliset lausekkeet, tehokas työkalu kuvioiden tunnistamiseen ja datan käsittelyyn, ovat olennaisia tekstinkäsittelytehtävissä kuten syötteen validoinnissa, tekstissä etsimisessä ja tekstin korvaamisessa. Ohjelmoijat käyttävät niitä laajasti monimutkaisten merkkijonojen jäsentämisen ja datan validoinnin tehtävissä tehokkaasti ja ytimekkäästi.
-
 ## Kuinka:
 Clojure, pysyen uskollisena juurilleen Lisp-perheessä, tarjoaa rikkaan joukon funktioita, jotka integroituvat saumattomasti Javan säännöllisten lausekkeiden ominaisuuksiin. Tässä on, miten voit hyödyntää niitä:
 

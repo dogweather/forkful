@@ -13,12 +13,7 @@ title: Eine HTTP-Anforderung senden
 weight: 44
 ---
 
-## Was & Warum?
-
-Das Senden einer HTTP-Anfrage beinhaltet, dass von Ihrer Go-Anwendung ein Aufruf zu einem Webserver, einer API oder einem anderen HTTP-basierten Dienst initiiert wird. Programmierer tun dies, um mit Webressourcen zu interagieren, Daten abzurufen, Formulare zu übermitteln oder mit anderen Diensten im Internet zu kommunizieren.
-
 ## Wie geht das:
-
 In Go beinhaltet das Senden einer HTTP-Anfrage und das Verarbeiten der Antwort die Verwendung des `net/http`-Pakets. Hier ist ein schrittweises Beispiel, das zeigt, wie man eine einfache GET-Anfrage sendet und die Antwort liest:
 
 ```go
@@ -100,7 +95,6 @@ func main() {
 ```
 
 ## Vertiefung
-
 Das Paket `net/http` in Go bietet eine leistungsstarke und flexible Möglichkeit, mit HTTP-Servern zu interagieren. Sein Design spiegelt die Betonung von Go auf Einfachheit, Effizienz und Robustheit wider. Ursprünglich erforderten Funktionalitäten wie die Handhabung von JSON- oder XML-Lasten, dass der Anfragekörper manuell erstellt und angemessene Header gesetzt wurden. Mit der Entwicklung von Go hat die Community höherstufige Pakete entwickelt, die diese Aufgaben weiter vereinfachen, wie `gorilla/mux` für das Routing und `gjson` für die JSON-Manipulation.
 
 Ein bemerkenswerter Aspekt von Gos HTTP-Client ist seine Verwendung von Schnittstellen und Strukturen, wie `http.Client` und `http.Request`, die eine umfangreiche Anpassung und Testung ermöglichen. So können Sie beispielsweise den `http.Client` modifizieren, um Anfragen mit einem Timeout zu versehen oder Verbindungen für die Leistung am Leben zu erhalten.

@@ -11,9 +11,6 @@ title: Removing quotes from a string
 weight: 9
 ---
 
-## What & Why?
-Removing quotes from a string in PowerShell strips out single (`'`) or double (`"`) quotation marks wrapped around your text. Programmers often need to clean up strings for processing, comparison, or output purposes, especially when dealing with user input or file parsing.
-
 ## How to:
 You can use the `-replace` operator to strip quotes from a string. Here's how:
 

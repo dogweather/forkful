@@ -11,9 +11,6 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co & Dlaczego?
-Zaokrąglanie liczb oznacza dostosowanie ich do najbliższej określonej wartości miejsca – pomyśl o sprowadzeniu ich do prostszej formy. Programiści zaokrąglają liczby, aby kontrolować precyzję, zwiększać wydajność lub kiedy pokazują wyniki przyjazne dla użytkownika – jak ceny, które nie potrzebują trzech miejsc po przecinku.
-
 ## Jak to zrobić:
 Oto bilet w obie strony na zaokrąglanie liczb w C#:
 

@@ -15,9 +15,6 @@ title: "T\xECm ki\u1EBFm \u0111\u1ED9 d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i"
 weight: 7
 ---
 
-## Gì và Tại sao?
-Việc tìm chiều dài của một chuỗi trong Go là việc xác định số lượng ký tự mà nó chứa. Các lập trình viên thường xuyên thực hiện thao tác này để có thể xử lý chuỗi một cách hiệu quả, cho dù đó là để kiểm tra tính hợp lệ, trích xuất chuỗi con, hay chỉ đơn giản là để áp đặt các ràng buộc trong đầu vào của người dùng.
-
 ## Cách thức:
 Trong Go, chuỗi được xem như các chuỗi byte không thể thay đổi. Bạn có thể tìm chiều dài của một chuỗi bằng cách sử dụng hàm được tích hợp sẵn `len()` mà trả về số lượng byte, không nhất thiết là số lượng ký tự. Dưới đây là cách sử dụng nó:
 

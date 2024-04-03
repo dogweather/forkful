@@ -14,12 +14,7 @@ title: Trabalhando com TOML
 weight: 39
 ---
 
-## O que & Por quê?
-
-**TOML**, ou *Tom's Obvious, Minimal Language* (Linguagem Mínima e Óbvia do Tom), é um formato de arquivo de configuração que é fácil de ler devido à sua semântica clara. Programadores o utilizam para configurar aplicações de software porque é direto para analisar e gera mínima confusão ou erros.
-
 ## Como fazer:
-
 **Dart** não inclui suporte embutido para TOML, mas você pode trabalhar com arquivos TOML usando pacotes de terceiros como `toml`. Primeiro, adicione `toml` ao seu `pubspec.yaml`:
 
 ```yaml
@@ -28,7 +23,6 @@ dependencies:
 ```
 
 ### Lendo TOML
-
 Para ler um arquivo TOML, vamos supor que você tenha um arquivo de configuração simples `config.toml`:
 
 ```toml
@@ -61,7 +55,6 @@ Isso imprime:
 ```
 
 ### Escrevendo em TOML
-
 Para criar conteúdo em TOML, use o `TomlBuilder` fornecido pelo pacote `toml`:
 
 ```dart

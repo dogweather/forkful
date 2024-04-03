@@ -13,9 +13,6 @@ title: Een nieuw project starten
 weight: 1
 ---
 
-## Wat & Waarom?
-Een nieuw project starten gaat over het leggen van de fundamenten voor je codeerkunstwerk. Als programmeurs doen we dit om een frisse idee te starten of oplossingen op een georganiseerde, schaalbare manier te implementeren.
-
 ## Hoe:
 PowerShell maakt het starten van een nieuw project eenvoudig. Je wilt misschien een map voor je project maken en een git-repository instellen. Hier is hoe:
 

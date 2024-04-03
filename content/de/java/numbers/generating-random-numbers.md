@@ -10,12 +10,7 @@ title: Generierung von Zufallszahlen
 weight: 12
 ---
 
-## Was & Warum?
-
-Das Generieren von Zufallszahlen bezieht sich auf die Erzeugung von unvorhersehbaren Sequenzen oder Einzelwerten innerhalb eines definierten Bereichs. Programmierer verwenden diese Technik aus verschiedenen Gründen, einschließlich Simulationen, Spielen, Sicherheitsanwendungen und Stichprobenmethoden, um Algorithmen unter verschiedenen Bedingungen zu testen.
-
 ## Wie:
-
 In Java kann das Generieren von Zufallszahlen mithilfe der `Random`-Klasse aus dem `java.util`-Paket oder den Klassen `ThreadLocalRandom` und `SecureRandom` für spezifische Anwendungsfälle erreicht werden. Die folgenden Beispiele veranschaulichen, wie man diese Klassen verwendet.
 
 ### Verwendung der `Random`-Klasse
@@ -78,7 +73,6 @@ public class SecureRandomExample {
 ```
 
 ## Tieferer Einblick
-
 Die Erzeugung von Zufallszahlen hat sich seit den Anfängen der Informatik erheblich weiterentwickelt. Javas `Random`-Klasse verwendet eine lineare kongruenzielle Formel zur Generierung von pseudozufälligen Zahlen, die deterministisch und nicht für Hochsicherheitsanwendungen geeignet sind. Dies führte zur Einführung von `SecureRandom`, das fortgeschrittenere Algorithmen (z. B. SHA1PRNG) verwendet, um kryptografisch starke Zufallszahlen zu produzieren.
 
 Dennoch haben `Random` und `SecureRandom` ihre Mängel, wie Leistungsverschlechterungen in mehrfädigen Umgebungen. Die Klasse `ThreadLocalRandom` wurde in Java 7 eingeführt, um dieses Problem zu adressieren, indem sie thread-lokale Zufallszahlengeneratoren bereitstellt und somit die Leistung in nebenläufigen Anwendungen deutlich verbessert.

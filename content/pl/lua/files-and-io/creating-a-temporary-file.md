@@ -11,9 +11,6 @@ title: Tworzenie pliku tymczasowego
 weight: 21
 ---
 
-## What & Why? (Co i Dlaczego?)
-Tworzenie tymczasowego pliku pozwala na przechowanie danych, które są potrzebne tylko przez krótki czas. Programiści wykorzystują je dla zadań takich jak przechowanie danych sesji, wykonywanie testów jednostkowych, czy przechowywanie tymczasowych danych wyjściowych.
-
 ## How to: (Jak to zrobić:)
 Lua nie ma wbudowanej obsługi dla tymczasowych plików, ale możemy to sobie oskryptować.
 

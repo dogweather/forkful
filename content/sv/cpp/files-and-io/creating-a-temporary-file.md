@@ -11,9 +11,6 @@ title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---
 
-## Vad & Varför?
-Att skapa en temporär fil innebär att vi tillfälligt lagrar data på disk. Programmerare gör detta för att hantera stora datamängder, hålla på användardata under en session, eller skapa en säker plats för att testa kod utan att störa andra filer.
-
 ## Hur gör man:
 I C++17 och framåt, använd `std::filesystem` för att skapa och hantera temporära filer. Här är ett exempel på hur man skapar en temporär fil och skriver till den.
 

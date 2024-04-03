@@ -10,9 +10,6 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## What & Why? (Mitä & Miksi?)
-Ohjelmoinnissa tekstinhaku ja -korvaus tarkoittaa merkkijonon etsimistä ja sen korvaamista toisella. Sitä käytetään tiedon muokkaukseen ja automatisointiin, esimerkiksi korjattaessa bugeja tai päivitettäessä tietoja.
-
 ## How to (Kuinka tehdä):
 ```C#
 using System;

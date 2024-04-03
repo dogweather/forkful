@@ -13,12 +13,7 @@ title: Czytanie pliku tekstowego
 weight: 22
 ---
 
-## Co i dlaczego?
-
-Czytanie pliku tekstowego w Go polega na dostępie i pobieraniu treści z pliku zapisanego na dysku w celu przetworzenia lub analizy. Programiści często wykonują tę operację, aby manipulować danymi, konfigurować aplikacje lub czytać wejście do wykonania programu, co czyni ją podstawową umiejętnością w rozwoju oprogramowania.
-
 ## Jak to zrobić:
-
 Czytanie pliku tekstowego w Go można zrealizować na kilka sposobów, ale jedną z najprostszych metod jest użycie pakietu `ioutil`. Oto podstawowy przykład:
 
 ```go
@@ -79,7 +74,6 @@ func main() {
 To podejście jest nie tylko bardziej współczesne, ale także obsługuje większe pliki, ponieważ czyta plik linia po linii, zamiast wczytywać całą treść do pamięci naraz.
 
 ## Dogłębna analiza:
-
 Obsługa operacji na plikach w Go, w tym czytanie z plików, odzwierciedla filozofię języka dotyczącą prostoty i wydajności. Początkowo pakiet `ioutil` oferował proste operacje na plikach. Jednakże, z rozwojem standardowej biblioteki Go i zmianą w kierunku bardziej jawnej obsługi błędów i zarządzania zasobami, pakiety `os` i `io` stały się preferowanymi alternatywami do pracy z plikami.
 
 Te zmiany podkreślają zaangażowanie Go w wydajność i bezpieczeństwo, szczególnie w unikaniu problemów z pamięcią, które mogą wystąpić przy wczytywaniu dużych plików w całości. Metoda `bufio.Scanner` wprowadzona do czytania plików linia po linii podkreśla adaptacyjność języka i skupienie na współczesnych wyzwaniach obliczeniowych, takich jak przetwarzanie dużych zbiorów danych lub strumieniowanie danych.

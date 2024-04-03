@@ -11,9 +11,6 @@ title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---
 
-## Vad & Varför?
-Att hitta stränglängden innebär att ta reda på hur många tecken som finns i en textsnutt. Programmerare gör detta för att hantera text effektivt, till exempel att begränsa input eller loopa genom varje tecken.
-
 ## Hur gör man:
 För Arduino finns funktionen `strlen()` för C-stilens strängar (char arrays) och metoden `length()` för String-objekt. Här är exempel på båda:
 

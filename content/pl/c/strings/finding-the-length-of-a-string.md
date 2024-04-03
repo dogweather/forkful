@@ -13,9 +13,6 @@ title: "Znajdowanie d\u0142ugo\u015Bci \u0142a\u0144cucha"
 weight: 7
 ---
 
-## Co i dlaczego?
-Znalezienie długości stringa w C polega na określeniu liczby znaków przed terminator nulowym `\0`. Programiści robią to, aby poprawnie manipulować ciągami znaków, nie napotykając na błędy takie jak przepełnienia bufora, które mogą prowadzić do luk w zabezpieczeniach lub awarii programu.
-
 ## Jak to zrobić:
 W C, standardowo używaną funkcją do znajdowania długości stringa jest `strlen()`. Oto krótki przykład:
 

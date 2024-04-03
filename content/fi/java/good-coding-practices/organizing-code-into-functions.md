@@ -11,9 +11,6 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mikä & Miksi?
-Koodin järjestäminen funktioihin tarkoittaa ohjelman jakamista hallittaviin palasiin, joista kukin suorittaa oman, erillisen tehtävänsä. Ohjelmoijat tekevät tämän tehdäkseen koodista luettavaa, uudelleenkäytettävää ja ylläpidettävää.
-
 ## Kuinka:
 Tässä on klassinen esimerkki - funktio luvun kertoman laskemiselle.
 

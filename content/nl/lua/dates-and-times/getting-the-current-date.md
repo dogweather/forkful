@@ -12,12 +12,7 @@ title: Het huidige datum ophalen
 weight: 29
 ---
 
-## Wat & Waarom?
-
-Het verkrijgen van de huidige datum in de programmering stelt ons in staat om bij te houden wanneer dingen gebeuren. We hebben tijdstempels nodig voor logboeken, records, of gewoon om een "Gelukkig Nieuwjaar" bericht op het juiste moment te gooien.
-
 ## Hoe te:
-
 In Lua, het grijpen van de huidige datum en tijd is een fluitje van een cent met de `os.date` functie. Bekijk het:
 
 ```lua
@@ -39,7 +34,6 @@ Dag: 14
 ```
 
 ## Diepere Duik
-
 Lua's `os.date` bestaat al sinds de vroegste dagen, een basisvoorziening wanneer je de datum/tijd nodig hebt. Het is gebaseerd op de C `time.h` bibliotheekfuncties, dus het heruitvindt het wiel niet – Lua houdt het vertrouwd.
 
 Alternatieven? Natuurlijk, je kunt ook `os.time` gebruiken om de seconden sinds het UNIX-tijdperk te krijgen en ermee spelen, of externe bibliotheken gebruiken voor bredere functionaliteit indien nodig. Maar `os.date` en `os.time` dekken de meeste bases prima.
@@ -49,7 +43,6 @@ Implementatie wijs, `os.date("*t")` geeft je een tabel met jaar, maand, dag, en 
 Pro-tip: Werken met tijdzones? `os.date` kan dat ook aan – gebruik de `!"` prefix in je formatteerstring, en Lua zal de Gecoördineerde Universele Tijd (UTC) gebruiken in plaats van de lokale tijd.
 
 ## Zie Ook
-
 - Lua's `os` bibliotheek documentatie: http://www.lua.org/manual/5.4/manual.html#6.9
 - Online Lua demo-omgeving om codefragmenten te testen: https://www.lua.org/cgi-bin/demo
 - Formaatspecificaties voor `os.date`: https://www.lua.org/manual/5.4/manual.html#pdf-os.date

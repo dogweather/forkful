@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Cái gì & Tại sao?
-Số phức có một phần thực và một phần ảo, thường được viết dưới dạng `a + bi`. Chúng rất quan trọng trong toán học nâng cao, vật lý, kỹ thuật, và một số thuật toán máy tính. Lập trình viên làm việc với chúng để xử lý các phép tính liên quan đến căn bậc hai của số âm và các hàm dao động.
-
 ## Làm thế nào:
 PHP cung cấp hỗ trợ sẵn có cho số phức sử dụng tiện ích mở rộng `ext-intl` với lớp `NumberFormatter`. Dưới đây là một ví dụ:
 

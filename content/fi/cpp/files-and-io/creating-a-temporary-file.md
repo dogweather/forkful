@@ -11,9 +11,6 @@ title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---
 
-## What & Why? (Mitä ja Miksi?)
-Väliaikainen tiedosto on tilapäinen, usein automaattisesti poistettava tiedosto, jota käytetään datan väliaikaiseen tallentamiseen. Ohjelmoijat luovat niitä, jotta voidaan käsitellä väliaikaisia datamassoja turvallisesti, minimoimalla riski datan vuotoon tai vahingossa tapahtuvaan tallentamiseen pysyviin tiedostoihin.
-
 ## How to: (Kuinka tehdään:)
 C++17 toi mukanaan `<filesystem>` kirjaston, mikä helpottaa väliaikaisten tiedostojen käsittelyä.
 

@@ -14,9 +14,6 @@ title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---
 
-## Hva & Hvorfor?
-Regulære uttrykk, et kraftfullt verktøy for mønstersammenligning og databehandling, er essensielle i tekstbehandlingsoppgaver slik som å validere inndata, søke og erstatte tekst. Programmerere bruker dem omfattende for å håndtere komplekse string-parsing og datavalideringsoppgaver effektivt og kortfattet.
-
 ## Hvordan:
 Clojure, som holder seg tro mot sine røtter i Lisp-familien, tilbyr et rikt sett med funksjoner som fungerer sømløst med Java sine regulære uttrykkskapasiteter. Her er hvordan du kan utnytte dem:
 

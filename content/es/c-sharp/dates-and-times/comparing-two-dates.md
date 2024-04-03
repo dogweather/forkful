@@ -10,12 +10,7 @@ title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---
 
-## ¿Qué y Por Qué?
-
-Comparar dos fechas significa verificar si una es anterior, posterior o igual a la otra. Los programadores lo hacen para gestionar eventos, validar períodos de tiempo y programar acciones futuras.
-
 ## Cómo hacerlo:
-
 ```C#
 using System;
 
@@ -50,7 +45,6 @@ La fecha1 es anterior a la fecha2.
 ```
 
 ## Deep Dive:
-
 Históricamente, comparar fechas ha sido una necesidad básica en programación, crucial para tareas como ordenar registros o validar vencimientos. En C#, la clase `DateTime` simplifica esta tarea. Utilizando su método estático `Compare()`, se puede obtener un entero que indica la relación temporal entre dos fechas. 
 
 Alternativas como `fecha1 < fecha2` o `fecha1 > fecha2` son posibles gracias a los operadores sobrecargados en `DateTime`. Para casos más complejos, podemos usar la clase `TimeSpan` que resulta de la diferencia entre fechas (`fecha2 - fecha1`) para obtener componentes de tiempo específicos.
@@ -58,7 +52,6 @@ Alternativas como `fecha1 < fecha2` o `fecha1 > fecha2` son posibles gracias a l
 Detalles de implementación importantes incluyen considerar la zona horaria de las fechas y ser consciente de las limitaciones de precisión y rango de `DateTime`. ¿Necesitas más precisión o rango? `DateTimeOffset` y `BigInteger` a veces son mejores opciones.
 
 ## Ver También:
-
 - Documentación oficial de `DateTime` en Microsoft Docs: [https://docs.microsoft.com/en-us/dotnet/api/system.datetime](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)
 - Manejo de zonas horarias con `TimeZoneInfo`: [https://docs.microsoft.com/en-us/dotnet/api/system.timezoneinfo](https://docs.microsoft.com/en-us/dotnet/api/system.timezoneinfo)
 - Uso y limitaciones de `TimeSpan`: [https://docs.microsoft.com/en-us/dotnet/api/system.timespan](https://docs.microsoft.com/en-us/dotnet/api/system.timespan)

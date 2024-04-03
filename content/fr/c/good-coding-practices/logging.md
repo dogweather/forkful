@@ -14,12 +14,7 @@ title: Journalisation
 weight: 17
 ---
 
-## Quoi & Pourquoi ?
-
-La journalisation en C consiste à enregistrer le flux et les événements notables d'un programme pendant son exécution, fournissant un examen tangible de son comportement et de sa performance. Les programmeurs utilisent la journalisation à des fins de débogage, pour surveiller la santé du logiciel, et assurer la sécurité du système.
-
 ## Comment faire :
-
 En C, la journalisation peut être réalisée avec des opérations de fichiers basiques ou en utilisant des bibliothèques plus sophistiquées. Pour simplifier, nous commencerons avec la bibliothèque d’E/S standard. Les extraits suivants montrent des implémentations de journalisation basiques.
 
 Pour enregistrer des messages simples :
@@ -95,7 +90,6 @@ Sortie dans `detailed.log` :
 ```
 
 ## Approfondissement
-
 La journalisation en C, comme démontré, repose sur des opérations de fichiers simples, ce qui est efficace mais pas aussi puissant ou flexible que les installations de journalisation dans d'autres langages, comme le module `logging` de Python ou `Log4j` de Java. Pour des capacités de journalisation plus avancées en C, les développeurs se tournent souvent vers des bibliothèques comme `syslog` sur les systèmes de type Unix, qui fournit une gestion de journalisation à l'échelle du système, ou vers des bibliothèques tierces comme `log4c`.
 
 Historiquement, la journalisation a été une partie intégrante de la programmation, remontant aux pratiques de programmation précoces où le suivi et la compréhension du flux et des erreurs du programme étaient principalement réalisés par des impressions physiques. Au fur et à mesure que les systèmes évoluaient, la journalisation est devenue plus sophistiquée, supportant maintenant différents niveaux de gravité, la rotation des logs, et la journalisation asynchrone.

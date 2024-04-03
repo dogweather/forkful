@@ -14,16 +14,10 @@ title: Praca z formatem CSV
 weight: 37
 ---
 
-## Co i Dlaczego?
-
-Praca z plikami CSV (Comma Separated Values - wartości oddzielone przecinkami) polega na odczytywaniu z nich danych lub zapisywaniu do nich danych w formacie plików tekstowych, gdzie pola danych są oddzielone przecinkami. Programiści często wykonują to zadanie, aby ułatwić wymianę danych między różnymi aplikacjami oprogramowania, biorąc pod uwagę prostotę i szerokie przyjęcie formatu CSV w różnych środowiskach programistycznych.
-
 ## Jak to zrobić:
-
 Visual Basic for Applications (VBA) ułatwia pracę z plikami CSV za pomocą wbudowanych funkcji i metod, które bezproblemowo pozwalają na odczytywanie z tych plików i zapisywanie do nich. Poniżej znajdują się przykłady ilustrujące podstawowe operacje z plikami CSV.
 
 ### Odczytywanie pliku CSV:
-
 ```basic
 Sub ReadCSV()
     Dim filePath As String
@@ -46,7 +40,6 @@ End Sub
 ```
 
 ### Zapisywanie do pliku CSV:
-
 ```basic
 Sub WriteCSV()
     Dim filePath As String
@@ -68,7 +61,6 @@ ID,Name,Age
 ```
 
 ## Szczegółowa analiza
-
 Historycznie, pliki CSV były prostą metodą przechowywania danych tabelarycznych w formacie tekstowym. Prostota ich struktury, gdzie każda linia odpowiada jednemu rekordowi danych, a każde pole w rekordzie jest oddzielone przecinkiem, jest zarówno siłą, jak i ograniczeniem CSV. Format ten nie obsługuje natywnie typów danych, co oznacza, że wszystkie dane są przechowywane jako ciągi znaków, a ciężar konwersji danych na odpowiedni typ spoczywa na programiście.
 
 W Visual Basic for Applications, praca z plikami CSV odbywa się głównie za pomocą podstawowych operacji na plikach, jak pokazano w wcześniejszych przykładach. Nie ma bezpośredniego wsparcia dla parsowania CSV jak w bardziej nowoczesnych językach (np. moduł csv w Pythonie), co zapewnia większą kontrolę i wygodę przy obsłudze danych CSV.

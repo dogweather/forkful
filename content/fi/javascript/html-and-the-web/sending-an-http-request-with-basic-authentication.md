@@ -12,9 +12,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---
 
-## What & Why?
-Perustiedot: HTTP-pyyntö basic-autentikaatiolla tarkoittaa käyttäjänimen ja salasanan sisällyttämistä HTTP-pyyntöön tunnistautumista varten. Ohjelmoijat käyttävät tätä tapaa turvatakseen resurssien pääsy vain valtuutetuille käyttäjille.
-
 ## How to:
 Javaskriptissä basic-autentikaatio HTTP-pyynnössä onnistuu `fetch`-funktiolla tai kirjastojen (esim. Axios) avulla. Tässä esimerkki `fetch`-käytöstä:
 

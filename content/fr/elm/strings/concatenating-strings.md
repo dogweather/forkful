@@ -11,9 +11,6 @@ title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---
 
-## What & Why?
-La concaténation de chaînes, c'est simplement coller des textes bout à bout. On le fait pour modeler des messages, combiner des valeurs ou créer des formats spécifiques.
-
 ## How to:
 En Elm, on utilise l'opérateur `(++)` pour concaténer des chaînes de caractères. Voilà comment ça marche :
 

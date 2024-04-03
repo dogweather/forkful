@@ -13,9 +13,6 @@ title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---
 
-## Hva & Hvorfor?
-Å konkatenerere strenger i programmering innebærer å kombinere to eller flere strenger til én. Programmerere gjør dette for å enkelt manipulere tekstdata, konstruere meldinger eller dynamisk sette sammen deler av et brukergrensesnitt.
-
 ## Hvordan:
 Dart tilbyr flere rettfram måter å konkatenerere strenger på. Nedenfor er de mest vanlige metodene:
 

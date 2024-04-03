@@ -16,9 +16,6 @@ title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uA
 weight: 26
 ---
 
-## What & Why? (무엇과 왜?)
-미래 또는 과거의 날짜 계산이 무엇인지 아세요? 간단히 말해, 특정 날짜에서 몇 일을 더하거나 빼서 새로운 날짜를 구하는 거예요. 이건 예약시스템, 마감일 추적, 기념일 알림 같은 기능에서 유용하죠.
-
 ## How to: (어떻게:)
 ```Python
 from datetime import datetime, timedelta

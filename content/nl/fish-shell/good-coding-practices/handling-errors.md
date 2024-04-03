@@ -12,9 +12,6 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-Foutafhandeling stelt je script in staat om elegant om te gaan met het onverwachte. We doen dit om falen te beheren zonder onze gebruiker grijs haar te bezorgen.
-
 ## Hoe te:
 Om fouten in Fish op te vangen, vertrouw op de `status` opdracht en conditionals. Stel dat `ping` faalt; hier is hoe je dat detecteert:
 

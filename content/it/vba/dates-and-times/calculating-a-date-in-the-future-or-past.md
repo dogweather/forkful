@@ -14,9 +14,6 @@ title: Calcolare una data nel futuro o nel passato
 weight: 26
 ---
 
-## Cosa e Perché?
-Calcolare una data nel futuro o nel passato comporta determinare una data che si trova a un numero specificato di giorni, mesi o anni di distanza da una data data. I programmatori spesso hanno bisogno di questa funzionalità per automatizzare promemoria, abbonamenti, date di scadenza e la pianificazione di compiti in varie applicazioni.
-
 ## Come fare:
 In Visual Basic for Applications (VBA), la funzione primaria utilizzata per calcolare date future o passate è `DateAdd()`. Questa funzione aggiunge un intervallo di tempo specificato a una data, restituendo una nuova data.
 

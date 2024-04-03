@@ -11,12 +11,7 @@ title: Refaktoryzacja
 weight: 19
 ---
 
-## Co i dlaczego?
-
-Refaktoryzacja to proces zmiany wewnętrznej struktury programu komputerowego bez zmiany jego zewnętrznego zachowania. Programiści robią to, aby oczyścić swój kod, co sprawia, że staje się on łatwiejszy do zrozumienia, utrzymania i rozszerzenia.
-
 ## Jak to zrobić:
-
 Wyobraź sobie, że masz funkcję, która robi nieco za dużo, jak ta niezgrabna metoda, która inicjalizuje obiekt i jednocześnie wykonuje rejestrowanie:
 
 ```C++
@@ -71,7 +66,6 @@ w.logInitialization();
 Ta zmiana nie zmieniła tego, co program robi, ale sprawia, że klasa `Widget` jest bardziej modułowa, a jej użycie bardziej jasne.
 
 ## Dogłębna analiza
-
 Pojęcie refaktoryzacji, jakie znamy dzisiaj, ma swoje korzenie w społecznościach programistycznych Smalltalk lat 80-tych i zostało mocno spopularyzowane przez książkę Martina Fowlera "Refaktoryzacja. Ulepszanie struktury istniejącego kodu" z 1999 roku. Dzisiaj refaktoryzacja jest podstawowym elementem nowoczesnego rozwoju oprogramowania, włączonym do różnych metodologii rozwoju, takich jak Agile i TDD (Test-Driven Development).
 
 Gdy mówimy o alternatywach dla refaktoryzacji, wchodzimy na teren przepisywania lub przeprojektowywania. Refaktoryzacja jest strategią i wykonana etapami, podczas gdy przepisanie może odrzucić istniejący kod na rzecz nowego rozwiązania. Przeprojektowanie natomiast może wiązać się z bardziej znaczącymi zmianami, w tym ze zmianą funkcjonalności, co nie jest celem czystej refaktoryzacji.
@@ -81,7 +75,6 @@ Szczegóły implementacji dotyczące refaktoryzacji mogą być dość szczegół
 Ponadto refaktoryzacja wymaga solidnego zestawu testów, aby zapewnić, że funkcjonalność pozostaje niezmieniona. Bez testów, w zasadzie działasz w ciemno, ryzykując regresję.
 
 ## Zobacz także
-
 Aby lepiej zrozumieć refaktoryzację i zobaczyć więcej przykładów, warto sprawdzić:
 
 - Klasyczny tekst Martina Fowlera "Refaktoryzacja. Ulepszanie struktury istniejącego kodu" dla podstawowych pomysłów i strategii.

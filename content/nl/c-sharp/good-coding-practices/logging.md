@@ -12,9 +12,6 @@ title: Logboekregistratie
 weight: 17
 ---
 
-## Wat & Waarom?
-Loggen is het proces van het vastleggen van applicatiegebeurtenissen en data-output tijdens uitvoeringstijd. Programmeurs loggen om bugs te diagnosticeren, softwareprestaties te monitoren, gebruikersacties te volgen en naleving van beveiligings- en bedrijfsnormen te handhaven.
-
 ## Hoe te:
 In C# kun je de ingebouwde `System.Diagnostics`-naamruimte of externe bibliotheken zoals NLog of log4net gebruiken. Hier is een snel voorbeeld met behulp van de `ILogger` interface beschikbaar in .NET Core:
 

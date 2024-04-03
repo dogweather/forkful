@@ -11,9 +11,6 @@ title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---
 
-## What & Why?
-Ein String in Kleinbuchstaben umzuwandeln bedeutet, alle Zeichen des Strings in ihre Kleinbuchstaben-Äquivalente zu transformieren. Programmierer nutzen dies, um die Groß- und Kleinschreibung zu vereinheitlichen, oft beim Vergleichen von Text oder bei der Standardisierung von Nutzereingaben.
-
 ## How to:
 In Elm kannst du den `String.toLower`-Funktion nutzen, um einen String in Kleinbuchstaben umzuwandeln. So geht's:
 

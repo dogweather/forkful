@@ -11,9 +11,6 @@ title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---
 
-## What & Why?
-Jämföra två datum handlar om att se vilket som kommer först eller hur lång tid som har passerat mellan dem. Programmerare gör detta för att hantera deadlines, tidslinjer och boka system.
-
 ## How to:
 Kotlin gör det enkelt att jämföra datum med `LocalDate` klassen. Så här gör du:
 

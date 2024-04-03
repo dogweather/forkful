@@ -11,9 +11,6 @@ title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---
 
-## Hva & Hvorfor?
-Å starte et nytt prosjekt i TypeScript er som å rulle ut et blankt lerret; det gir deg en ren start for å kode noe nytt. Programmerere gjør dette for å løse problemer, teste ideer eller bygge nyttige verktøy.
-
 ## How to:
 For å sette i gang et nytt TypeScript-prosjekt, trenger du Node.js og NPM (Node Package Manager) installert. Deretter bruker du følgende kommandoer:
 

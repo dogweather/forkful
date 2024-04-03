@@ -14,10 +14,8 @@ title: "F\xE5 dagens dato"
 weight: 29
 ---
 
-## Hva & Hvorfor?
-Å få den nåværende datoen i programmering er avgjørende av en rekke grunner, inkludert logging, tidsstempel på hendelser og planlegging av oppgaver. I Clojure, en Lisp-dialekt på JVM, utnytter denne oppgaven Java-interoperabilitetsmuligheter, som tillater enkel tilgang til det rike Java Date-Time API-et.
-
 ## Hvordan:
+
 
 ### Ved bruk av Java Interop
 Clojures sømløse interoperabilitet med Java lar deg tappe direkte inn i Java Date-Time API-et. Slik kan du få den nåværende datoen:

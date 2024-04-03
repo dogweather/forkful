@@ -11,9 +11,6 @@ title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---
 
-## What & Why?
-Å starte et nytt prosjekt er som å lage en blåkopi fra scratch – det legger grunnlaget for hva som skal bygges. Programmerere gjør dette for å bringe nye ideer til live, løse problemer, eller skape noe personlig eller for kunder.
-
 ## How to:
 Her er grunnlag for å starte et Lua-prosjekt. Først, opprett en fil med navn `main.lua` – dette er ditt utgangspunkt.
 

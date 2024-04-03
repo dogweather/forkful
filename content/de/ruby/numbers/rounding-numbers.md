@@ -11,11 +11,7 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-Das Runden von Zahlen bedeutet, sie auf die nächste ganze Zahl oder auf einen bestimmten Genauigkeitsgrad anzupassen. Programmierer runden Zahlen, um zu vereinfachen, menschlichen Erwartungen zu entsprechen oder Daten an spezifische Formate anzupassen – denken Sie an finanzielle Berechnungen, grafische Darstellungen oder die Reduzierung der Speichergröße.
-
 ## Wie:
-
 ```Ruby
 # Grundlegendes Runden
 puts 3.14159.round      # => 3

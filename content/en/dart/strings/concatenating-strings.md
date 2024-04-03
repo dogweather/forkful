@@ -10,9 +10,6 @@ title: Concatenating strings
 weight: 3
 ---
 
-## What & Why?
-Concatenating strings in programming involves combining two or more strings into one. Programmers do this to manipulate text data easily, construct messages, or assemble parts of a user interface dynamically.
-
 ## How to:
 Dart provides several straightforward ways to concatenate strings. Below are the most common methods:
 

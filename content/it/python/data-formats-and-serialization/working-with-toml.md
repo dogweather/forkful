@@ -11,9 +11,6 @@ title: Lavorare con TOML
 weight: 39
 ---
 
-## Cosa & Perché?
-TOML, acronimo di Tom's Obvious, Minimal Language, è un formato di serializzazione dei dati simile a JSON o YAML, ma mira alla semplicità e leggibilità. I programmatori utilizzano TOML per i file di configurazione perché è facile da scrivere e comprendere, e si mappa ordinatamente sulle strutture dati nei linguaggi di programmazione come Python.
-
 ## Come fare:
 Prima di iniziare, installare il pacchetto `toml` con `pip install toml`. Vediamo come analizzare un file TOML:
 

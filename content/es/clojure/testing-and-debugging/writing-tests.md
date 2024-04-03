@@ -13,9 +13,6 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## Qué y Por Qué?
-Escribir pruebas en Clojure, al igual que en otros lenguajes de programación, implica crear código dedicado para verificar que tu código principal funciona como se espera. Ayuda a asegurar la corrección, facilita la refactorización y mejora la estabilidad del código.
-
 ## Cómo hacerlo:
 Clojure, aprovechando la JVM, soporta varios marcos de pruebas. Sin embargo, una biblioteca integrada comúnmente utilizada es `clojure.test`. Aquí hay un ejemplo simple:
 

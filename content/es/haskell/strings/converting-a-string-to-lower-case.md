@@ -11,9 +11,6 @@ title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---
 
-## Qué y Por Qué?
-Convertir una cadena de texto a minúsculas es tomar cada letra en mayúscula y cambiarla por su equivalente en minúscula. Los programadores hacen esto para estandarizar los datos, facilitar comparaciones de cadenas sin importar el formato o para cumplir con ciertas especificaciones.
-
 ## Cómo hacerlo:
 Haskell simplifica el proceso de cambiar a minúsculas con la función `toLower` del módulo `Data.Char`. Abajo, un ejemplo de cómo usarla:
 

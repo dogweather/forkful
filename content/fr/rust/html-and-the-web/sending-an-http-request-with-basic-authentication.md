@@ -11,9 +11,6 @@ title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---
 
-## Quoi et Pourquoi ?
-Envoyer une requête HTTP avec une authentification de base, c'est communiquer avec un serveur Web en fournissant des identifiants (username/password) encodés en Base64. Les programmeurs l'utilisent pour accéder à des ressources sécurisées via des API ou des services Web.
-
 ## Comment faire :
 ```Rust
 extern crate reqwest;

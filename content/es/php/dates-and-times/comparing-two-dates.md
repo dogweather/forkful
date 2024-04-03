@@ -11,9 +11,6 @@ title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---
 
-## ¿Qué y Por Qué?
-Comparar dos fechas significa determinar si son iguales, cuál es anterior o posterior. Los programadores lo hacen para validar plazos, ordenar eventos y controlar periodos de tiempo.
-
 ## Cómo:
 Aquí tienes ejemplos de cómo comparar fechas con PHP:
 

@@ -10,9 +10,6 @@ title: Calculando uma data no futuro ou passado
 weight: 26
 ---
 
-## O Que & Porquê?
-Calcular uma data no futuro ou passado é exatamente isso: determinar uma data além ou antes de hoje. Programadores fazem isso para manipular prazos, agendar eventos, ou simplesmente para logar quando algo aconteceu ou vai acontecer.
-
 ## Como Fazer:
 ```elixir
 # Adicionando dias a uma data

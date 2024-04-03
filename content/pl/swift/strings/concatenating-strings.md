@@ -10,9 +10,6 @@ title: "\u0141\u0105czenie \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 3
 ---
 
-## Co i Dlaczego?
-Łączenie napisów to po prostu sklejanie ich w jeden. Programiści robią to, żeby tworzyć sensowne komunikaty lub dynamicznie budować tekst.
-
 ## Jak to zrobić?
 ```Swift
 let greeting = "Cześć, "

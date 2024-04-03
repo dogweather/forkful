@@ -11,9 +11,6 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## Vad & Varför?
-Utskrift av felsökningsmeddelanden är en teknik för att visa variabler, stackspårningar och annan data under körning. Programmerare använder detta förfarande för att snabbt lokalisera och åtgärda buggar.
-
 ## Hur man gör:
 ```php
 <?php

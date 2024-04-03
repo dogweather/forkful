@@ -20,12 +20,7 @@ title: "\u89E3\u6790HTML"
 weight: 43
 ---
 
-## 什么 & 为什么？
-
-解析HTML是指从HTML内容中提取数据或信息的过程，这是处理网页数据时常见的任务。程序员进行这项工作是为了自动化从网站提取信息，用于网页抓取、数据挖掘或自动化测试等任务。
-
 ## 如何操作：
-
 Fish shell主要不是为直接解析HTML而设计的。然而，它擅长将Unix工具如`curl`、`grep`、`sed`、`awk`，或使用专门工具如`pup`或在Python脚本中的`beautifulsoup`结合起来。下面的例子展示了如何在Fish shell中利用这些工具来解析HTML。
 
 ### 使用`curl`和`grep`：
@@ -43,7 +38,6 @@ curl -s https://example.com | grep -oP '(?<=href=")[^"]*'
 ```
 
 ### 使用`pup`（一个用于解析HTML的命令行工具）：
-
 首先，确保安装了`pup`。然后你可以使用它按标签、id、类等提取元素。
 
 ```fish
@@ -53,7 +47,6 @@ curl -s https://example.com | pup 'a attr{href}'
 输出，类似于`grep`例子，会列出`<a>`标签的href属性。
 
 ### 使用Python脚本和`beautifulsoup`：
-
 虽然Fish本身不能直接解析HTML，但它可以无缝集成Python脚本。下面是一个使用Python和`BeautifulSoup`解析并提取HTML标题的简洁示例。确保你的Python环境中安装了`beautifulsoup4`和`requests`。
 
 **parse_html.fish**

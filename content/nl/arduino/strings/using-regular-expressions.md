@@ -12,12 +12,7 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-
-Reguliere expressies (regex) laten je zoeken naar patronen in tekst—denk aan jokertekens op steroïden. Programmeurs gebruiken ze om invoer te valideren, te zoeken in strings, en efficiënt gegevens uit te pakken.
-
 ## Hoe:
-
 Arduino heeft geen ingebouwde regex-ondersteuning, maar je kunt eenvoudige patrooncontroles nabootsen. Voor geavanceerdere zaken kun je overwegen om een regex-bibliotheek zoals `Regexp` te gebruiken.
 
 ```Arduino
@@ -53,11 +48,9 @@ Match gevonden: World
 ```
 
 ## Diepgaande Duik
-
 Regex is afkomstig uit de theoretische informatica en bestaat al sinds de jaren 50. Perl en andere talen hebben een sterke regex-implementatie, maar op Arduino zijn de middelen beperkt, dus geen native ondersteuning. Bibliotheken zoals `Regexp` zijn je vriend—ze nemen een deel van de last op zich, maar onthoud dat ze belastend kunnen zijn voor kleinere microcontrollers.
 
 ## Zie Ook
-
 Check deze voor meer details:
 
 - Arduino `Regexp` bibliotheek: [https://www.arduino.cc/reference/en/libraries/regexp/](https://www.arduino.cc/reference/en/libraries/regexp/)

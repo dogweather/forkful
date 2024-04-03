@@ -10,9 +10,6 @@ title: Lendo argumentos da linha de comando
 weight: 23
 ---
 
-## O Que é & Porquê?
-Ler argumentos da linha de comando significa capturar os dados fornecidos quando um programa é iniciado no terminal. Programadores fazem isso para permitir personalização e flexibilidade na execução dos programas.
-
 ## Como Fazer:
 Aqui está um exemplo simples de como ler argumentos da linha de comando em C#:
 

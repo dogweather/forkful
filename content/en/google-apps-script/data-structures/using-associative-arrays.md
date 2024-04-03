@@ -10,12 +10,7 @@ title: Using associative arrays
 weight: 15
 ---
 
-## What & Why?
-
-Associative arrays, known as objects in Google Apps Script (a variant of JavaScript), allow programmers to create collections of key-value pairs. This functionality is pivotal for storing and manipulating data efficiently, especially when working with dynamically named properties or when a traditional array's linear storage and access model is insufficient.
-
 ## How to:
-
 In Google Apps Script, you create and manipulate associative arrays (objects) using braces `{}`, defining key-value pairs within. Keys are unique identifiers, and values can be anything from strings and numbers to more complex objects or functions. Here's a basic example:
 
 ```javascript
@@ -55,7 +50,6 @@ country: USA
 Note how you can use both dot notation and bracket notation for accessing and setting properties. Bracket notation is particularly useful when working with keys that are dynamically determined or include characters not permissible in identifiers.
 
 ## Deep Dive
-
 Associative arrays in form of objects have been a cornerstone of JavaScript, and by extension Google Apps Script, reflecting its prototype-based inheritance mechanism. Unlike languages with traditional associative arrays or dictionaries (e.g., Python's dict), Google Apps Script objects provide a flexible and powerful means to structure data, benefiting from JavaScript's dynamic nature.
 
 It's important to note, however, that the ECMAScript 2015 specification introduced `Map` and `Set` objects, offering a more straightforward associative collection handling with certain benefits over objects, such as maintaining insertion order and better performance for large datasets. While Google Apps Script supports these as well, the choice between using objects or the newer `Map`/`Set` structures depends on specific needs and performance considerations. For most associative array tasks, traditional object-based implementations provide a familiar and versatile approach, but examining newer alternatives is advisable as your script's complexity grows.

@@ -10,9 +10,6 @@ title: Searching and replacing text
 weight: 10
 ---
 
-## What & Why?
-Searching and replacing text in strings lets you update data without manual edits. Programmers need this to handle user input corrections, data formatting, or batch updates efficiently.
-
 ## How to:
 C# makes text manipulation pretty straightforward. Below, check out the `string.Replace` method to swap out words.
 

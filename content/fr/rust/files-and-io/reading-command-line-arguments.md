@@ -10,9 +10,6 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## What & Why?
-Lire des arguments de ligne de commande, c'est récupérer les données que l'utilisateur fournit lorsqu'il lance votre programme. Les programmeurs utilisent ces arguments pour rendre leurs applications flexibles et interactives.
-
 ## How to:
 En Rust, on utilise le crate `std::env` pour accéder aux arguments de ligne de commande. Voici un exemple :
 

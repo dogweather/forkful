@@ -12,9 +12,6 @@ title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---
 
-## What & Why?
-Envoyer une requête HTTP avec une authentification de base, c'est communiquer de manière sécurisée avec un serveur web en fournissant nom d'utilisateur et mot de passe. Les programmeurs le font pour accéder à des ressources protégées ou interagir avec des API qui requièrent une identification.
-
 ## How to:
 Pour envoyer une requête HTTP avec authentification de base en PowerShell, suivez ces étapes :
 

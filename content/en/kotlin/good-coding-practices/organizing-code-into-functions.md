@@ -10,9 +10,6 @@ title: Organizing code into functions
 weight: 18
 ---
 
-## What & Why?
-Organizing code into functions means chopping your program into reusable pieces, each handling a specific task. We do this to make code easier to read, debug, and update. Think of your code like a pantry: you want everything from baking supplies to canned goods grouped, so you find what you need without a fuss.
-
 ## How to:
 Here’s a simple example. Instead of writing a long script to greet users, we split the task into functions.
 

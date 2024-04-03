@@ -13,12 +13,7 @@ title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---
 
-## Co & Dlaczego?
-
-Parsowanie HTML w Haskellu pozwala na ekstrakcję danych, manipulowanie zawartością HTML lub programistyczne interakcje ze stronami internetowymi. Operacja ta jest niezbędna do zadań takich jak scraping stron internetowych, automatyczne testowanie aplikacji webowych oraz wydobywanie danych ze stron - wykorzystując silny system typów i paradygmaty programowania funkcyjnego Haskella, aby zapewnić solidny i zwięzły kod.
-
 ## Jak to zrobić:
-
 Do parsowania HTML w Haskellu użyjemy biblioteki `tagsoup` ze względu na jej prostotę i elastyczność. Najpierw upewnij się, że zainstalowałeś bibliotekę, dodając `tagsoup` do pliku cabal Twojego projektu lub uruchamiając `cabal install tagsoup`.
 
 ```haskell

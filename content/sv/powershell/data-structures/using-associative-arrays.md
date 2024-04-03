@@ -14,12 +14,7 @@ title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---
 
-## Vad & Varför?
-
-Associativa arrayer, även kända som hashtabeller eller ordböcker i PowerShell, låter dig lagra data i nyckel-värdepar, vilket gör dataåtertagning enkel och effektiv. Programmerare använder dem för att lagra relaterade data tillsammans på ett sätt som är lätt att komma åt med en nyckel.
-
 ## Hur man gör:
-
 Att skapa och använda associativa arrayer i PowerShell är ganska enkelt. Så här gör du magin:
 
 **Att skapa en associativ array:**
@@ -77,7 +72,6 @@ plats : New York
 ```
 
 ## Att fördjupa sig
-
 Konceptet med associativa arrayer är vanligt över många programmeringsspråk, vanligtvis kallat en ordbok, kartläggning eller hashtabell beroende på språket. I PowerShell implementeras associativa arrayer som hashtabeller, vilket är ganska effektivt för att söka upp nycklar, lagra data och underhålla en samling av unika nycklar.
 
 Historiskt sett ger associativa arrayer ett sätt att hantera samlingar av objekt där varje artikel kan hämtas snabbt utan att iterera genom hela samlingen, med hjälp av dess nyckel. Effektiviteten av dataåtervinning och modifiering i associativa arrayer gör dem till ett föredraget val för olika uppgifter. De har dock begränsningar, som att bibehålla ordning, för vilka ordnade ordböcker eller anpassade objekt kan vara ett bättre alternativ.

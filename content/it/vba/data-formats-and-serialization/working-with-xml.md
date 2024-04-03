@@ -13,12 +13,7 @@ title: Lavorare con XML
 weight: 40
 ---
 
-## Cosa e perché?
-
-Lavorare con XML in Visual Basic for Applications (VBA) comporta l'analisi, la creazione e la modifica di documenti XML nel contesto delle applicazioni Microsoft Office. I programmatori si rivolgono a questa capacità per integrare le applicazioni Office con i servizi web o altre fonti di dati che emettono XML, facilitando lo scambio di dati e le funzionalità di reporting.
-
 ## Come fare:
-
 Per iniziare a interagire con XML, si utilizza solitamente l'oggetto `MSXML2.DOMDocument`. Questa interfaccia ti consente di caricare, analizzare e navigare i documenti XML. Di seguito è riportato un semplice esempio che dimostra come caricare un file XML, navigare nella sua struttura e leggere attributi e contenuti di testo.
 
 ```basic
@@ -42,7 +37,6 @@ End If
 Nel codice di esempio sopra, creiamo un'istanza di `MSXML2.DOMDocument60`, caricando un file XML e poi controlliamo gli errori. Se non vengono trovati errori, navighiamo verso un nodo specifico usando XPath e visualizziamo il suo contenuto di testo.
 
 ## Approfondimento:
-
 L'integrazione delle capacità XML in VBA risale ai primi anni 2000, quando è cresciuta la necessità per le applicazioni Office di interagire con i dati e i servizi web. La libreria `MSXML`, o Microsoft XML Core Services, si è evoluta nel corso degli anni, con `MSXML2.DOMDocument60` che è una delle versioni più recenti consigliate per l'uso a causa del suo miglioramento in termini di prestazioni e caratteristiche di sicurezza.
 
 Sebbene potente, le capacità di gestione XML di VBA sono considerate meno efficienti e più ingombranti rispetto agli ambienti di programmazione moderni come XML.etree di Python o LINQ to XML di C#. La verbosità intrinseca di VBA e la necessità di aggiungere e gestire manualmente i riferimenti possono ostacolare uno sviluppo rapido. Inoltre, con l'avvento di JSON come formato di interscambio dati più leggero, molti programmatori e applicazioni si stanno allontanando dall'XML a meno che non sia necessaria l'interoperabilità con sistemi legacy o servizi aziendali specifici.

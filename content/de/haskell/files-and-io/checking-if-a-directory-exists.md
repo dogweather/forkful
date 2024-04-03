@@ -12,9 +12,6 @@ title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---
 
-## Was & Warum?
-Das Überprüfen, ob ein Verzeichnis existiert, ist eine grundlegende Operation bei vielen Programmieraufgaben. Es ermöglicht bedingte Aktionen basierend auf der An- oder Abwesenheit von Verzeichnisstrukturen. Dies ist entscheidend für die Dateimanipulation, automatisierte Skripte und während der Erstinstallation von Software, um sicherzustellen, dass die notwendigen Verzeichnisse vorhanden sind oder um die Duplizierung von Verzeichnissen zu vermeiden.
-
 ## Wie:
 Haskell bietet durch seine Basisbibliothek einfache Möglichkeiten, die Existenz eines Verzeichnisses zu überprüfen, hauptsächlich mit dem Modul `System.Directory`. Schauen wir uns ein einfaches Beispiel an:
 

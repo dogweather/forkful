@@ -10,9 +10,6 @@ title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---
 
-## Was & Warum?
-In Lua bedeutet das Umwandeln eines Strings in Kleinbuchstaben, jeden Buchstaben des Strings in seine entsprechende kleine Form zu konvertieren. Diese Umwandlung wird häufig für Vergleiche, Suchen oder die Datenbereinigung verwendet, da Groß- und Kleinschreibung ein und dasselbe Wort unterschiedlich erscheinen lassen kann.
-
 ## How to:
 In Lua ist die Umwandlung eines Strings in Kleinbuchstaben einfach und geradlinig mit der Funktion `string.lower()`. Hier ein Beispiel:
 

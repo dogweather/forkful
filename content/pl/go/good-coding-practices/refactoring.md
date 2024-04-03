@@ -14,12 +14,7 @@ title: Refaktoryzacja
 weight: 19
 ---
 
-## Co i dlaczego?
-
-Refaktoryzacja w programowaniu polega na restrukturyzacji istniejącego kodu komputerowego — zmianie faktoringu — bez zmiany jego zewnętrznego zachowania. Programiści podejmują ten proces, aby poprawić czytelność kodu, zmniejszyć złożoność i poprawić utrzymywalność, co ostatecznie sprawia, że oprogramowanie jest łatwiejsze do zrozumienia i modyfikacji.
-
 ## Jak to zrobić:
-
 W Go refaktoryzacja może obejmować od prostych poprawek kodu po bardziej złożone zmiany. Zaczynając od podstawowego przykładu: uproszczenie początkowej funkcji Go dla lepszej czytelności i wydajności.
 
 **Przed refaktoryzacją:**
@@ -122,7 +117,6 @@ func main() {
 Refaktoryzacja do użycia interfejsu (`Logger`) zamiast konkretnego typu (`ConsoleLogger`) poprawia elastyczność funkcji i oddziela przetwarzanie danych od specyficznej implementacji logowania.
 
 ## Głębsze spojrzenie
-
 Refaktoryzacja w Go musi balansować między prostotą (jedną z podstawowych filozofii Go) a elastycznością potrzebną w dużych projektach oprogramowania. Biorąc pod uwagę minimalistyczne podejście Go do funkcji — bez uogólnień (do niedawna) i z silnym naciskiem na czytelność — język ten naturalnie kieruje programistów ku prostszym, bardziej utrzymywalnym strukturom kodu. Jednakże to nie oznacza, że kod Go nie korzysta z refaktoryzacji; oznacza to, że refaktoryzacja musi zawsze priorytetowo traktować jasność i prostotę.
 
 Historycznie, brak pewnych funkcji w Go (np. uogólnień przed Go 1.18) prowadził do kreatywnych, ale czasami zawiłych rozwiązań dla ponownego wykorzystania kodu i elastyczności, czyniąc refaktoryzację dla abstrakcji powszechną praktyką. Z wprowadzeniem uogólnień w Go 1.18, programiści Go przeprowadzają teraz refaktoryzację dziedzicznych kodów, aby wykorzystać tę funkcję dla lepszego bezpieczeństwa typów i ponownego wykorzystania kodu, co demonstruje ewoluujący charakter praktyk refaktoryzacyjnych w Go.

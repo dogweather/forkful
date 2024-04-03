@@ -14,12 +14,7 @@ title: "Tulostetaan virheenj\xE4ljitystietoja"
 weight: 33
 ---
 
-## Mikä & Miksi?
-
-Debug-tulosteen tulostaminen tarkoittaa väliaikaisten, informatiivisten lokiviestien tuottamista, jotka voivat auttaa ohjelmoijia ymmärtämään ohjelman kulkua ja tilaa sen suorituksen aikana. Ohjelmoijat tekevät tätä tunnistaakseen ja diagnosoidakseen ohjelmistobugeja tai odottamattomia käyttäytymisiä ohjelman logiikassa.
-
 ## Kuinka:
-
 C:ssä yleisin tapa tulostaa debug-tuloste on käyttämällä `printf`-funktiota standardin I/O-kirjastosta. `printf`-funktio mahdollistaa muotoillun tulosteen standardilähtölaitteelle, tyypillisesti näytölle. Tässä on yksinkertainen esimerkki:
 
 ```c
@@ -65,7 +60,6 @@ DEBUG: esimerkki.c:6: Testiarvo on 10
 Huomaa, että tässä esimerkissä käytämme `fprintf`:ää tulostamaan standardivirhevirtaan (`stderr`), mikä on usein sopivampi debug-viesteille.
 
 ## Syväluotaus
-
 Historiallisesti C:n debuggaustekniikat ovat olleet manuaalisia ja alkeellisia johtuen kielenclose-to-the-metal-filosofiasta ja iästä. Kun taas modernit kielet saattavat sisältää monimutkaisia, sisäänrakennettuja debuggauskirjastoja tai luottaa vahvasti Integroituun Kehitysympäristöön (IDE) -ominaisuuksiin, C-ohjelmoijat turvautuvat usein manuaalisesti lisäämään tulostuslauseita, kuten yllä on esitetty, jäljittääkseen ohjelmansa suorituksen.
 
 Yksi asia, josta debug-tulosteiden kanssa tulee varoa, on niiden potentiaali sotkea tulostetta ja johtaa suorituskykyongelmiin, erityisesti jos ne jätetään tahattomasti tuotantokoodiin. Näistä syistä ehdollinen käännös (esim., `#ifdef DEBUG ... #endif`) saattaa olla parempi lähestymistapa, mahdollistaen debug-lauseiden sisällyttämisen tai poissulkemisen käännösaikaisilla lipuilla.

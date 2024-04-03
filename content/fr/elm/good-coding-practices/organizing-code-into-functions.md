@@ -9,9 +9,6 @@ title: Organisation du code en fonctions
 weight: 18
 ---
 
-## Quoi et Pourquoi ?
-Entasser tout votre code dans un grand tas ? Mauvaise idée. Le découper en fonctions ? Bonne idée. Cela permet de garder votre code Elm propre, réutilisable et plus facile à tester. En organisant votre code en fonctions, vous regroupez le code qui effectue des tâches spécifiques ensemble, ce qui rend votre application plus maintenable et compréhensible.
-
 ## Comment faire :
 Voici un extrait de code Elm avec une fonction simple pour saluer un utilisateur :
 

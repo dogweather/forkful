@@ -14,9 +14,6 @@ title: Interpolation eines Strings
 weight: 8
 ---
 
-## Was & Warum?
-String-Interpolation ist die Methode, Ausdrücke in String-Literale einzubetten. Programmierer verwenden sie, um dynamisch Werte in Strings einzufügen, was den Code lesbarer und sauberer macht als die traditionelle String-Konkatenation.
-
 ## Wie geht das:
 In Python 3.6 und höher können Sie Strings mit f-Strings interpolieren. So geht's:
 

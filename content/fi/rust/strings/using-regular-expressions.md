@@ -14,12 +14,7 @@ title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---
 
-## Mitä & Miksi?
-
-Säännölliset lausekkeet eli regex mahdollistavat kehittäjille merkkijonojen haun, vastaavuuden tarkistuksen ja manipuloinnin edistyneillä kuviohakutekniikoilla. Ruostessa (Rust), regexin hyödyntäminen auttaa tehokkaasti jäsentämään ja käsittelemään tekstidataa, mikä tekee tehtävistä, kuten datan validoinnin, haun ja tekstimuunnosten suorittamisen virtaviivaisemmin ja ylläpidettävämmin.
-
 ## Kuinka:
-
 Rustin `regex` kirjasto on se mihin turvaudutaan työskenneltäessä säännöllisten lausekkeiden kanssa. Käyttääksesi sitä, sinun tulee ensin lisätä se `Cargo.toml`-tiedostoosi:
 
 ```toml
@@ -30,7 +25,6 @@ regex = "1"
 Sen jälkeen voit aloittaa regex-toiminnallisuuksien toteuttamisen Ruostekoodissasi. Tässä on kuinka suorittaa joitakin yleisiä toimintoja:
 
 ### Mallin Vastaavuuden Tarkistaminen Merkkijonossa
-
 ```rust
 use regex::Regex;
 
@@ -44,7 +38,6 @@ fn main() {
 ```
 
 ### Osumien Etsiminen ja Saavuttaminen
-
 ```rust
 use regex::Regex;
 
@@ -63,7 +56,6 @@ fn main() {
 ```
 
 ### Tekstin Korvaaminen
-
 ```rust
 use regex::Regex;
 
@@ -78,7 +70,6 @@ fn main() {
 ```
 
 ### Tekstin Jakaminen Regexin Avulla
-
 ```rust
 use regex::Regex;
 

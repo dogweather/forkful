@@ -10,12 +10,7 @@ title: Printing debug output
 weight: 33
 ---
 
-## What & Why?
-
-Printing debug output is about spitting out data from your program to see what's going on under the hood. Programmers do it to track variables, understand flow, and squash pesky bugs.
-
 ## How to:
-
 A straightforward way to print debug information in Haskell is with the `print` function, which takes a value that's an instance of the `Show` typeclass and outputs it to the console.
 
 ```Haskell
@@ -61,7 +56,6 @@ main = putStrLn $ trace "This will print first" "This will print second"
 The `trace` function prints the string when the value is evaluated, but it's a side effect in the pure part of the code. It's handy but use with caution!
 
 ## Deep Dive
-
 In ye olden days, debugging might've been the ol' "print statement" trick. Haskell offers this with a functional twist and tools for cleaner debug practices. Enter `print` and the `Debug.Trace` module, as explored earlier. 
 
 Alternates to `print` include `putStrLn` for strings and `putStr`, if you're not into that automatic newline. `Debug.Trace` also has variants like `traceShow` that work directly with `Show` instances, saving you a `show` call.
@@ -71,7 +65,6 @@ As for implementation details, `print` is essentially `putStrLn . show`. It prin
 Don't forget logging libraries for serious applications, which offer more control and less "debug by print."
 
 ## See Also
-
 - The `Debug.Trace` documentation: [https://hackage.haskell.org/package/base/docs/Debug-Trace.html](https://hackage.haskell.org/package/base/docs/Debug-Trace.html)
 - Haskell Wiki on Debugging: [https://wiki.haskell.org/Debugging](https://wiki.haskell.org/Debugging)
 - A nice discussion on why not to use `Debug.Trace` and what to do instead: [https://stackoverflow.com/questions/7741400/why-is-using-debug-trace-considered-bad-practice](https://stackoverflow.com/questions/7741400/why-is-using-debug-trace-considered-bad-practice)

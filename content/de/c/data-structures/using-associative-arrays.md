@@ -13,12 +13,7 @@ title: Verwendung von assoziativen Arrays
 weight: 15
 ---
 
-## Was & Warum?
-
-Assoziative Arrays, in anderen Sprachen auch als Maps oder Wörterbücher bekannt, sind Schlüssel-Wert-Paare, die für effiziente Datenabfrage und -manipulation genutzt werden. Anders als traditionelle Arrays, die Integer-Indizes verwenden, nutzen assoziative Arrays Schlüssel, was den Datenzugriff für Programmierer intuitiver und flexibler macht.
-
 ## Wie:
-
 C bietet keine eingebaute Unterstützung für assoziative Arrays wie einige höherstufige Sprachen, aber man kann sie mit Hilfe von Strukturen und Hashing simulieren. Unten ist ein vereinfachtes Beispiel, das eine Kombination aus einer Struktur und einer einfachen Hashfunktion verwendet, um ein assoziatives Array für das Speichern und Zugreifen von Ganzzahlen über String-Schlüssel zu implementieren.
 
 Definieren Sie zunächst eine Struktur, um ein einzelnes Schlüssel-Wert-Paar darzustellen, und eine weitere, um das assoziative Array selbst darzustellen:
@@ -95,7 +90,6 @@ int main() {
 Dieses Beispiel demonstriert grundlegende Operationen: Initialisierung eines assoziativen Arrays, Einfügen von Schlüssel-Wert-Paaren und das Finden von Werten über Schlüssel. Beachten Sie, dass dieser Code keine Kollisionserkennung beinhaltet und zu Bildungszwecken gedacht ist.
 
 ## Tiefergehend
-
 Das Konzept der assoziativen Arrays geht C vor, aber die Low-Level-Natur der Sprache bietet keine direkte Unterstützung dafür als eingebaute Typen. Dies fördert ein tieferes Verständnis von Datenstrukturen und Algorithmen, einschließlich Hashing-Mechanismen für effiziente Schlüssel-Wert-Zuordnungen. Viele C-Bibliotheken und Frameworks bieten ausgefeiltere Ansätze für die Implementierung assoziativer Arrays, wie GLib’s `GHashTable`, das eine robuste Implementierung mit Kollisionserkennung, dynamischer Größenänderung und Unterstützung für beliebige Schlüssel- und Werttypen bietet.
 
 Obwohl die manuelle Konstruktion von assoziativen Arrays in C im Vergleich zu Sprachen mit eingebauter Unterstützung als umständlich angesehen werden kann, bietet sie unschätzbare Einblicke in die Funktionsweise von Datenstrukturen und schärft die Fähigkeiten eines Programmierers im Problemlösen und Optimieren. Für Produktionscode oder komplexere Anwendungen ist jedoch die Nutzung vorhandener Bibliotheken wie GLib oft ein praktischerer und zeiteffizienterer Ansatz.

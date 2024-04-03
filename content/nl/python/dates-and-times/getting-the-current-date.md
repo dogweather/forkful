@@ -12,9 +12,6 @@ title: Het huidige datum ophalen
 weight: 29
 ---
 
-## Wat & Waarom?
-Het verkrijgen van de huidige datum in Python betekent het ophalen van de live datum van het systeem waarop het draait. Programmeurs doen dit voor het loggen, tijdstempels, of wanneer de datum van vandaag nodig is voor een gebruikersinterface of een rapport.
-
 ## Hoe:
 Gebruik de `datetime` module. Het is eenvoudig:
 

@@ -11,9 +11,6 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-## Cosa e perché?
-I numeri complessi ampliano il nostro sistema numerico includendo i numeri immaginari, permettendoci di risolvere equazioni che non hanno soluzioni reali. I programmatori lavorano con essi in campi come l'ingegneria, la fisica e l'elaborazione dei segnali, dove questi numeri sono essenziali per la modellazione e la risoluzione dei problemi.
-
 ## Come fare:
 C# dispone di una struttura integrata `System.Numerics.Complex` per elaborare i numeri complessi. Ecco una rapida guida:
 

@@ -10,9 +10,6 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-Comparing two dates means figuring out which one is earlier, later, or if they're the same. Programmers do it to track time-based events, like scheduling tasks or logging data over time.
-
 ## How to:
 In Arduino, you can compare dates using the `TimeLib.h` library. Install it first. Then, check out this snippet:
 

@@ -12,9 +12,6 @@ title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---
 
-## Was & Warum?
-Das Berechnen eines zukünftigen oder vergangenen Datums in PowerShell bedeutet einfach, bestimmte Zeitspannen zu einem existierenden Datum hinzuzufügen oder davon zu subtrahieren. Programmierer verwenden diese Funktion für Aufgaben wie Fälligkeitsberechnungen, Zeitmessungen und Planungen.
-
 ## So geht's:
 ```PowerShell
 # Datum in der Zukunft berechnen

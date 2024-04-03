@@ -15,9 +15,6 @@ title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---
 
-## Cái gì & Tại sao?
-So sánh các ngày là việc xác định xem trong hai ngày nào là sớm hơn, muộn hơn, hoặc nếu chúng giống nhau. Lập trình viên thực hiện việc này để tổ chức sự kiện, hết hạn khuyến mãi, lên lịch, nhắc nhở—cơ bản là, bất cứ thứ gì có thành phần thời gian.
-
 ## Cách thực hiện:
 C++ làm cho cuộc sống dễ dàng với tiêu đề `<chrono>`.
 

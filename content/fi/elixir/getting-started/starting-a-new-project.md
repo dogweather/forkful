@@ -11,9 +11,6 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## What & Why? (Mitä & Miksi?)
-Uuden projektin aloittaminen Elixirissä tarkoittaa uuden sovelluksen tai kirjaston kehityksen käynnistämistä. Koodarit tekevät tämän tyhjältä pöydältä, järjestäen koodinsa modulaarisesti ja tehokkaasti uusien ominaisuuksien tai palveluiden kehittämiseksi.
-
 ## How to: (Kuinka tehdään:)
 Elixirissä projekti käynnistetään käyttämällä Mix-työkalua. Mix on Elixiriin sisäänrakennettu työkalu, joka hallinnoi riippuvuuksia ja tehtäviä. Tässä on miten tehdään:
 

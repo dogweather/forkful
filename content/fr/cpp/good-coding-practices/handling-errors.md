@@ -11,9 +11,6 @@ title: Gestion des erreurs
 weight: 16
 ---
 
-## Quoi & Pourquoi ?
-Gérer les erreurs implique de planifier pour les cas où les choses tournent mal. C'est essentiel car cela aide à éviter les plantages et rend votre logiciel robuste et convivial.
-
 ## Comment faire :
 Voici un bloc try-catch de base pour gérer une exception :
 

@@ -12,12 +12,7 @@ title: HTML parsen
 weight: 43
 ---
 
-## Was & Warum?
-
-Das Parsen von HTML in Arduino-Projekten bedeutet, Informationen von Webseiten zu extrahieren. Programmierer tun dies, um ihre Arduino-Geräte zur Interaktion mit dem Internet zu befähigen, indem sie Daten von Websites sammeln für Zwecke, die von Hausautomatisierung bis hin zur Umweltüberwachung reichen.
-
 ## Wie geht das:
-
 Das Parsen von HTML auf Arduino verlangt in der Regel nach Bibliotheken mit geringem Speicherbedarf aufgrund der begrenzten Ressourcen des Geräts. Eine beliebte Wahl für Web-Scraping und -Parsing ist die Verwendung der `ESP8266HTTPClient`- und `ESP8266WiFi`-Bibliotheken für den ESP8266 oder deren ESP32-Pendants, aufgrund ihrer nativen Unterstützung für Wi-Fi-Fähigkeiten und HTTP-Protokolle. Hier ist ein einfaches Beispiel, um HTML zu holen und zu parsen, unter der Annahme, dass Sie mit einem ESP8266 oder ESP32 arbeiten:
 
 Zuerst, die notwendigen Bibliotheken einbinden:

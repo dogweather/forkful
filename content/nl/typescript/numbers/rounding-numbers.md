@@ -11,9 +11,6 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-Rondgetallen is het bijsnijden van een getal naar een specifieke precisie. Programmeurs doen dit om de numerieke uitvoer te beheersen voor leesbaarheid, weergavedoeleinden of wanneer specifieke precisie vereist is na operaties die resultaten met zwevende komma opleveren.
-
 ## Hoe:
 Afronden in TypeScript kan worden gedaan met behulp van verschillende methoden. Hier is een snelle doorloop:
 

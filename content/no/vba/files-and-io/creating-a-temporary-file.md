@@ -13,12 +13,7 @@ title: Opprette en midlertidig fil
 weight: 21
 ---
 
-## Hva & Hvorfor?
-
-Å opprette en midlertidig fil i Visual Basic for Applications (VBA) innebærer å programmert generere en fil for korttidsbruk, typisk for databehandling eller som en buffer i automatiseringsoppgaver. Programmerere gjør dette for å håndtere data som ikke trenger å bli lagret på lang sikt, noe som reduserer rot og sikrer effektivitet i minnebruken.
-
 ## Hvordan:
-
 I VBA kan en midlertidig fil opprettes ved å bruke `FileSystemObject` som er tilgjengelig i Microsoft Scripting Runtime-biblioteket. Dette objektet gir metoder for å opprette, lese, skrive og slette filer og mapper. Her er en trinn-for-trinn-guide for å opprette en midlertidig fil:
 
 1. **Aktiver Microsoft Scripting Runtime**: Først, sørg for at Microsoft Scripting Runtime-referansen er aktivert i VBA-miljøet ditt. Gå til Verktøy > Referanser i VBA-editoren, og merk av for "Microsoft Scripting Runtime".
@@ -58,7 +53,6 @@ Midlertidig fil opprettet på: C:\Users\[DittBrukernavn]\AppData\Local\Temp\myTe
 ```
 
 ## Dypdykk
-
 Metoden som vises bruker `FileSystemObject` (FSO) som en del av Microsoft Scripting Runtime. FSO er et kraftig verktøy for manipulasjon av filsystemer, introdusert med Visual Basic Scripting Edition. Til tross for sin alder, forblir den i vid bruk i VBA for sin enkelthet og brede funksjonalitet.
 
 Oppretting av midlertidige filer spiller en kritisk rolle i mange programmerings- og skriptoppgaver, og tilbyr en sandkasse for testing eller et arbeidsområde for prosesser som ikke krever permanent lagring. Utviklere bør imidlertid håndtere disse filene med omhu, sikre at de fjernes eller tømmes når de ikke lenger er nødvendige, for å forhindre utilsiktet datatap eller unødvendig forbruk av diskplass.

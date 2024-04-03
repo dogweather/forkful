@@ -11,9 +11,6 @@ title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---
 
-## Vad & Varför?
-Att konvertera en sträng till gemener betyder att ändra alla stora bokstäver till små. Programmerare gör detta för att standardisera data och underlätta jämförelser, särskilt när skiftlägeskänslighet kan leda till problem.
-
 ## Hur gör man:
 ```PowerShell
 # Konvertera en sträng till gemener

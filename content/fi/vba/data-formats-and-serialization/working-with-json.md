@@ -14,12 +14,7 @@ title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---
 
-## Mikä & Miksi?
-
-JSON (JavaScript Object Notation) on kevyt tiedonvaihtoformaatti, joka on ihmisten luettavissa ja kirjoitettavissa helposti ja koneiden jäsentämiseen ja tuottamiseen yksinkertainen. Ohjelmoijat käyttävät JSONia datan välittämiseen palvelimen ja web-sovelluksen välillä tai tiedon tallentamiseen rakenteellisella, saavutettavalla tavalla erilaisissa ohjelmointiympäristöissä, mukaan lukien Visual Basic for Applications (VBA).
-
 ## Kuinka:
-
 VBA ei natiivisti tue JSONin jäsentämistä tai tuottamista, joten käytämme skriptikieltä, kuten JScriptiä (ScriptControl-objektin kautta) JSON-merkkijonojen jäsentämiseen ja JSON-objektien rakentamiseen. Näin voit jäsentää JSON-merkkijonon VBA:ssa:
 
 ```basic
@@ -59,7 +54,6 @@ End Sub
 ```
 
 ## Syväsukellus
-
 Esitetyt lähestymistavat hyödyntävät ScriptControlia JSONin käsittelyyn, käytännössä ulkoistaen työn JavaScript-moottorille. Tämä on luova kiertotapa, mutta ei välttämättä tehokkain tai modernein tapa työskennellä JSONin kanssa VBA-kontekstissa. Monimutkaisemmissa sovelluksissa tämä menetelmä saattaa muodostua hankalaksi ja tuoda mukanaan suorituskyvyn heikkenemistä tai turvallisuushuolia, koska ScriptControl suorittaa ympäristössä, jolla on täysi pääsy isäntätietokoneeseen.
 
 Muut ohjelmointiympäristöt, kuten Python tai JavaScript, tarjoavat sisäänrakennetun tuen JSONille, tehdessään niistä sopivampia sovelluksille, jotka vaativat laajaa JSON-muokkausta. Nämä kielet tarjoavat kattavia kirjastoja, jotka helpottavat paitsi jäsentämistä ja tuottamista, myös JSON-datankyselyä ja -muotoilua.

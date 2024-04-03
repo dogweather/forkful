@@ -12,9 +12,6 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mikä & Miksi?
-Testien kirjoittaminen TypeScriptillä sisältää automatisoitujen skriptien luomisen koodisi toimivuuden ja oikeellisuuden varmentamiseksi. Ohjelmoijat tekevät sen varmistaakseen luotettavuuden, löytääkseen virheet nopeasti ja helpottaakseen ylläpidettävän koodin kasvua, sillä TypeScriptin staattinen tyypitys lisää ennakoitavuutta JavaScript-testaukseen.
-
 ## Kuinka:
 TypeScript toimii harmonisesti useimpien JavaScriptin testauskehysten kanssa. Demonstrointitarkoituksessa käytämme Jestia, suosittua testauskehystä, sen nolla-konfiguraation asetuksen vuoksi TypeScript-projekteille.
 

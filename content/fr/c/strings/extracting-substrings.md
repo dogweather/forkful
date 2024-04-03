@@ -14,16 +14,10 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## Quoi et pourquoi ?
-
-Extraire des sous-chaînes en C consiste à créer une chaîne plus petite (sous-chaîne) à partir d'une chaîne plus grande en fonction de critères spécifiés, tels que la position et la longueur. Les programmeurs effectuent souvent cette tâche pour l'analyse de texte, le traitement de données ou la validation d'entrées, ce qui en fait une compétence cruciale dans la manipulation et l'analyse efficaces des données textuelles.
-
 ## Comment faire :
-
 Contrairement à certains langages de haut niveau qui fournissent des méthodes intégrées pour l'extraction de sous-chaînes, C nécessite une approche plus manuelle utilisant ses fonctions de manipulation de chaînes. Voici comment extraire efficacement une sous-chaîne en C :
 
 ### Exemple 1 : Utilisation de `strncpy`
-
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -43,7 +37,6 @@ int main() {
 ```
 
 ### Exemple 2 : Création d'une fonction
-
 Pour une utilisation répétée, une fonction dédiée à l'extraction de sous-chaînes peut être plus efficace :
 
 ```c
@@ -68,7 +61,6 @@ int main() {
 ```
 
 ## Approfondissement
-
 L'extraction de sous-chaînes en C est principalement gérée par la manipulation de pointeurs et une gestion prudente de la mémoire, reflétant l'approche de bas niveau du langage pour manipuler les données. Cette méthode remonte aux premiers jours de la programmation en C, lorsque gérer les ressources de manière efficace était primordial en raison de la puissance de calcul limitée. Bien que l'absence d'une fonction de sous-chaîne intégrée puisse sembler être un oubli, cela illustre la philosophie du C de donner aux programmeurs un contrôle complet sur la gestion de la mémoire, conduisant souvent à un code optimisé mais plus complexe.
 
 Dans le domaine de la programmation moderne, des langages comme Python et JavaScript offrent des méthodes intégrées pour l'extraction de sous-chaînes, telles que `slice()` ou le découpage de chaîne à l'aide d'indices. Ces langages de haut niveau gèrent la gestion de la mémoire en arrière-plan, échangeant une certaine mesure de contrôle contre la facilité d'utilisation et la lisibilité.

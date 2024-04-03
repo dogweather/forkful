@@ -10,9 +10,6 @@ title: Debug-Ausgaben drucken
 weight: 33
 ---
 
-## Was & Warum?
-Debug-Ausgaben zu drucken, heißt, Informationen zur Laufzeit auszugeben, um Fehler zu finden oder Programmabläufe zu verstehen. Es ist wie das Schummeln bei einer Puzzlesuche: Man bekommt Hinweise, wo die Teile hingehören.
-
 ## So geht's:
 ``` C++
 #include <iostream>

@@ -13,12 +13,7 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mikä & Miksi?
-
-Virheiden kirjoittaminen standardivirheeseen (stderr) Elixirissä on menetelmä virheilmoitusten ja diagnostiikkatietojen ohjaamiseksi erilleen pääulostulosta (stdout). Ohjelmoijat käyttävät stderr:iä virheiden selvittämiseen ja käsittelyyn sekoittamatta ohjelman pääulostuloa, mikä tekee ongelmien tunnistamisesta ja korjaamisesta helpompaa.
-
 ## Miten:
-
 Elixirissä voit käyttää `IO`-moduulin funktioita, kuten `IO.puts/2` ja `IO.warn/2`, kirjoittaaksesi viestejä standardivirheeseen:
 
 ```elixir

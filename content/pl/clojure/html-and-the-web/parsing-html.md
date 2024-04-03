@@ -13,16 +13,10 @@ title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---
 
-## Co i dlaczego?
-
-Parsowanie HTML w Clojure wiąże się z programowym ekstrahowaniem informacji z dokumentów HTML. Programiści robią to, aby uzyskać dostęp, manipulować lub monitorować zawartość sieci dynamicznie, automatyzując zadania lub dostarczając dane do aplikacji.
-
 ## Jak to zrobić:
-
 Clojure nie posiada wbudowanych możliwości parsowania HTML, ale możesz użyć bibliotek Java lub wrapperów Clojure, takich jak `enlive` lub `hickory`. Oto jak używać obu:
 
 ### Używając Enlive:
-
 Enlive to popularny wybór do parsowania HTML i skrobania stron internetowych. Najpierw dołącz go do zależności swojego projektu:
 
 ```clojure
@@ -47,7 +41,6 @@ Wynik może wyglądać tak:
 ```
 
 ### Używając Hickory:
-
 Hickory zapewnia sposób na parsowanie HTML do formatu, który jest łatwiejszy do pracy w Clojure. Dodaj Hickory do zależności swojego projektu:
 
 ```clojure

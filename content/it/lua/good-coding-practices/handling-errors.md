@@ -10,9 +10,6 @@ title: Gestione degli errori
 weight: 16
 ---
 
-## Cosa & Perché?
-La gestione degli errori nella programmazione riguarda l'anticipare l'inaspettato. È l'arte di pianificare per quando le cose non vanno come previsto così da poter mantenere il tuo programma funzionante in modo fluido.
-
 ## Come fare:
 Lua utilizza due funzioni principali per la gestione degli errori: `pcall` e `xpcall`. Ecco come si usano:
 

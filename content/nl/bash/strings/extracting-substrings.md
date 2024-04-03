@@ -13,12 +13,7 @@ title: Substrings extraheren
 weight: 6
 ---
 
-## Wat & Waarom?
-
-Substringen extraheren betekent specifieke delen uit strings halen — denk aan het knippen van een stukje draad uit een trui. Programmeurs doen dit om data die ingebed is in tekst te isoleren, analyseren of manipuleren.
-
 ## Hoe:
-
 Hier is de basis van substring-extractie in Bash:
 
 ```Bash
@@ -37,7 +32,6 @@ echo $substring  # Geeft 'vos' uit
 ```
 
 ## Diepgaand
-
 Bash gaat al een tijdje om met strings. Substringen extraheren is een oude truc, maar nog steeds super handig. Voordat er fancy tools waren, hadden we alleen parameteruitbreiding – de `${}` syntax – en die heeft de tand des tijds doorstaan.
 
 Alternatieven? Zeker. `awk`, `cut`, en `grep` kunnen allemaal strings op hun eigen manier in stukken snijden. Maar voor een snelle klus zonder extra processen, is de ingebouwde methode van Bash efficiënt.
@@ -45,7 +39,6 @@ Alternatieven? Zeker. `awk`, `cut`, en `grep` kunnen allemaal strings op hun eig
 Wat implementatie betreft, pakt Bash substringen zonder problemen. Het maakt niet uit wat er in je string staat: tekst, nummers, eenhoorn emoji's – wat dan ook. Geef het gewoon het begin en het einde, en het zal blindelings dat stukje eruit knippen.
 
 ## Zie Ook
-
 Duik dieper en bekijk deze links:
 
 - Handleiding van Bash over parameteruitbreiding: `man bash` en zoek naar *Parameter Expansion*

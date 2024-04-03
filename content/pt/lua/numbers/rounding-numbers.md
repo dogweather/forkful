@@ -11,9 +11,6 @@ title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---
 
-## O Que & Por Quê?
-Arredondar números significa ajustá-los ao inteiro mais próximo ou a um determinado número de casas decimais. É um procedimento comum na programação para reduzir a complexidade, melhorar o desempenho e para momentos em que a precisão além de um certo ponto não adiciona valor.
-
 ## Como fazer:
 ```lua
 -- O arredondamento básico em Lua não vem integrado, mas você pode definir uma função:

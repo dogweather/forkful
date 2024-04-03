@@ -10,9 +10,6 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-## Was & Warum?
-Temporäre Dateien sind kurzlebige Dateispeicher, die während der Laufzeit eines Programms erstellt werden. Programmierer nutzen sie, um Daten zwischenzuspeichern, ohne langfristigen Speicherplatz zu belegen, oder um sensitive Daten zu handhaben, die nicht dauerhaft gespeichert werden sollen.
-
 ## How to:
 ```java
 import java.io.File;

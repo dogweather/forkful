@@ -11,9 +11,6 @@ title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---
 
-## O Que é & Porquê?
-Criar um arquivo temporário é o ato de gerar um arquivo que serve como 'rascunho' durante uma sessão de programa. Programadores utilizam isso para guardar dados que não precisam ser permanentes, evitando sobrecarregar o sistema de armazenamento principal com arquivos de curta duração.
-
 ## Como Fazer:
 PowerShell facilita a criação de arquivos temporários. Veja como se faz:
 

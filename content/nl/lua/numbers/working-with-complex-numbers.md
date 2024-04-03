@@ -12,9 +12,6 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-Complexe getallen breiden het idee van de eendimensionale getallenlijn uit tot het tweedimensionale vlak door een loodrechte imaginaire as op te nemen. Programmeurs werken ermee in velden zoals signaalverwerking, stromingsdynamica en elektrotechniek, waar ze essentieel zijn voor het vertegenwoordigen van oscillaties en andere verschijnselen.
-
 ## Hoe te:
 In Lua kun je complexe getallen met tabellen voorstellen. De basisbewerkingen omvatten het optellen, aftrekken, vermenigvuldigen en delen van deze tabellen. Hier is hoe:
 

@@ -11,9 +11,6 @@ title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---
 
-## Hva & Hvorfor?
-Komplekse tall, som består av en reell og en imaginær del (som 3+4i), er en grunnpilar i ingeniørfag og fysikk. Programmerere jobber med dem i simuleringer, signalbehandling, og løsning av ligninger som ikke fungerer bra med bare reelle tall.
-
 ## Hvordan:
 Ruby gjør det enkelt å håndtere komplekse tall. Du kan opprette og manipulere dem ved å bruke Complex-klassen:
 

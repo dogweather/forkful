@@ -14,9 +14,6 @@ title: Den aktuellen Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-Das aktuelle Datum in Arduino-Projekten zu bekommen, beinhaltet das Abrufen von Echtzeitinformationen, die für das Logging, Zeitstempeln oder das Planen von Aufgaben entscheidend sein können. Programmierer benötigen diese Fähigkeit oft, um die Funktionalität zu verbessern, die Datenrelevanz zu sichern und zeitkritische Operationen in ihren IoT- und Embedded-Projekten zu erleichtern.
-
 ## Wie geht das:
 Arduino selbst hat keine eingebaute Methode, um direkt das aktuelle Datum zu fetchen, da ihm eine Echtzeituhr (RTC) fehlt. Dies kann jedoch mit externen RTC-Modulen wie dem DS3231 und Bibliotheken wie `RTClib`, entwickelt von Adafruit, erreicht werden, was die Schnittstelle mit diesen Modulen unkompliziert macht.
 

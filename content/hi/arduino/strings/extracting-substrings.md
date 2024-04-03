@@ -20,9 +20,6 @@ title: "\u0938\u092C\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917\u094D\u0938
 weight: 6
 ---
 
-## What & Why? (क्या और क्यों?)
-Substring का मतलब है किसी string का एक छोटा हिस्सा निकालना। Programmers इसे use करते हैं डेटा को analyze करने, manipulate करने या किसी specific text को extract करने के लिए।
-
 ## How to: (कैसे करें:)
 ```Arduino
 String sentence = "Hello, Arduino World!";

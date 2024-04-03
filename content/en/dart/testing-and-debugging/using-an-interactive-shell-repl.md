@@ -11,12 +11,7 @@ title: Using an interactive shell (REPL)
 weight: 34
 ---
 
-## What & Why?
-
-An interactive shell (REPL - Read-Evaluate-Print Loop) for Dart allows programmers to dynamically type and execute Dart code line by line without needing to compile entire scripts. This tool is invaluable for learning Dart's syntax, experimenting with code snippets, or debugging by offering instant feedback and facilitating iterative testing.
-
 ## How to:
-
 Dart does not come with an inbuilt REPL. However, you can achieve REPL-like functionality using the DartPad (online) or by utilizing third-party tools like `dart_repl`.
 
 **Using DartPad:**

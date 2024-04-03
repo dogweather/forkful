@@ -11,9 +11,6 @@ title: Usando una shell interactiva (REPL)
 weight: 34
 ---
 
-## Qué & Por qué?
-REPL, o Bucle Leer-Evaluar-Imprimir, es un entorno de programación para probar dinámicamente código Clojure pieza por pieza. Los programadores lo utilizan para obtener retroalimentación inmediata, desarrollo iterativo y experimentación rápida sin la sobrecarga de compilar o configurar un entorno de proyecto completo.
-
 ## Cómo:
 Comienza lanzando REPL:
 

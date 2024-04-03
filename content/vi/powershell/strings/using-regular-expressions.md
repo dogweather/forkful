@@ -15,9 +15,6 @@ title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---
 
-## Cái gì & Tại sao?
-Biểu thức chính quy (regex) là những mẫu mạnh mẽ dùng để tìm kiếm các chuỗi văn bản. Lập trình viên sử dụng regex để tìm kiếm, xác thực hoặc thay thế nội dung một cách hiệu quả.
-
 ## Làm thế nào:
 ```PowerShell
 # Khớp mẫu bắt đầu bằng 'S' theo sau là bất kỳ ký tự nào, kết thúc bằng 'e'

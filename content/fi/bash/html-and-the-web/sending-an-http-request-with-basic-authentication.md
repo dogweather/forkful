@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---
 
-## What & Why? (Mikä & Miksi?)
-Lähetät HTTP-pyynnön perusautentikoinnilla liittääksesi käyttäjätunnuksen ja salasanan verkkoresurssin pyyntöön. Koodarit tekevät tämän päästäkseen käsiksi suojattuun sisältöön.
-
 ## How to: (Kuinka tehdä:)
 ```Bash
 # Pyydä resurssia curl-komennolla ja Basic-autentikoinnilla

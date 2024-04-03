@@ -10,9 +10,6 @@ title: Converting a string to lower case
 weight: 4
 ---
 
-## What & Why?
-Converting a string to lower case means transforming all uppercase letters to their lowercase equivalents. Programmers do this for consistency in user inputs, data processing, and to simplify text comparisons.
-
 ## How to:
 Here's how you smash case differences in C++, capital letters bowing down to the little ones:
 

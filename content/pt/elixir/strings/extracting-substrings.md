@@ -10,9 +10,6 @@ title: Extraindo substrings
 weight: 6
 ---
 
-## O Que & Por Quê?
-Extrair substrings significa pegar pedaços específicos de uma string. Programadores fazem isso para manipular, analisar dados ou simplesmente para destacar informações importantes dentro de um texto maior.
-
 ## Como Fazer:
 ```elixir
 string_original = "Olá, mundo Elixir!"

@@ -11,9 +11,6 @@ title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---
 
-## Quoi & Pourquoi?
-Trouver la longueur d'une chaîne de caractères, c'est découvrir combien de caractères elle contient. Les programmeurs le font pour valider des saisies utilisateur, tronquer du texte ou tout simplement pour manipuler des données textuelles avec précision.
-
 ## Comment faire :
 Voilà un exemple simple en TypeScript. On utilise la propriété `length` d'une chaîne.
 

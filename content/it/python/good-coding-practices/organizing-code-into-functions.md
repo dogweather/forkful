@@ -11,9 +11,6 @@ title: Organizzare il codice in funzioni
 weight: 18
 ---
 
-## Cosa e Perché?
-Organizzare il codice in funzioni consiste nel suddividere il codice in blocchi riutilizzabili con scopi specifici. Lo facciamo per rendere il codice più pulito, più facile da leggere, da debuggare e da aggiornare.
-
 ## Come fare:
 Diciamo che stai scrivendo uno script per calcolare il quadrato e il cubo di un numero. Senza funzioni, è un pasticcio di ripetizioni:
 

@@ -13,9 +13,6 @@ title: Escrevendo testes
 weight: 36
 ---
 
-## O Que & Por Que?
-Escrever testes em Python envolve a criação de scripts automatizados para validar a correção do seu código. Programadores fazem isso para garantir que suas funções ou classes funcionem conforme esperado sob várias condições, o que ajuda a capturar erros precocemente e facilita a manutenção e refatoração mais fáceis.
-
 ## Como fazer:
 Python vem com um módulo embutido para escrever testes chamado `unittest`. É assim que você pode usá-lo para testar uma função simples:
 

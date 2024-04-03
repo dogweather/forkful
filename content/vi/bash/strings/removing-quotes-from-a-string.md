@@ -15,9 +15,6 @@ title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---
 
-## Là gì & Tại sao?
-Loại bỏ dấu ngoặc khỏi một chuỗi bao gồm việc gỡ bỏ các dấu ngoặc kép bao quanh chuỗi đó. Các lập trình viên thường muốn làm điều này để làm sạch dữ liệu đầu vào, chuẩn bị dữ liệu cho mục đích so sánh, hoặc tuân thủ một định dạng dữ liệu cụ thể khi giao tiếp với các chương trình hoặc hệ thống khác.
-
 ## Cách thực hiện:
 Bash có một số cách để loại bỏ dấu ngoặc khỏi chuỗi. Dưới đây là một số ví dụ nhanh:
 

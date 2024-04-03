@@ -11,9 +11,6 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-Writing a text file in PowerShell involves creating and manipulating text-based files which is a fundamental operation for logging, data storage, and configuration scripting. Programmers leverage this for automating system tasks, data analysis, and integrating with other applications or scripts.
-
 ## How to:
 PowerShell provides straightforward cmdlets for handling files. The `Out-File` cmdlet and the redirection operators are primarily used for this purpose. Here are examples illustrating how to write text to files in different scenarios:
 

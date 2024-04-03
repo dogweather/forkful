@@ -10,9 +10,6 @@ title: "Descargando una p\xE1gina web"
 weight: 42
 ---
 
-## ¿Qué & Por Qué?
-Descargar una página web es traer el contenido de una URL a tu aplicación. Lo hacemos para procesar, mostrar o analizar datos en nuestras apps.
-
 ## Cómo hacerlo:
 Primero, asegúrate de que tienes permisos para acceder a la red en tu `Info.plist`. Ahora, con Swift y URLSession es fácil:
 

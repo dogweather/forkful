@@ -13,14 +13,10 @@ title: Utilizzo delle espressioni regolari
 weight: 11
 ---
 
-## Cosa & Perché?
-
-Le espressioni regolari (regex) in JavaScript sono pattern utilizzati per abbinare combinazioni di caratteri nelle stringhe. I programmatori le usano per cercare, estrarre e manipolare testo, permettendo operazioni di elaborazione delle stringhe potenti con codice conciso.
-
 ## Come fare:
 
-### Abbinamento Base
 
+### Abbinamento Base
 Per iniziare, puoi creare un semplice pattern regex e usarlo per trovare corrispondenze in una stringa. Qui, troveremo la parola "code":
 
 ```javascript
@@ -31,7 +27,6 @@ console.log(result); // true
 ```
 
 ### Utilizzando `String.prototype.match()`
-
 Per recuperare un array di corrispondenze:
 
 ```javascript
@@ -41,7 +36,6 @@ console.log(matches.index); // 10
 ```
 
 ### Ricerca Globale
-
 Per trovare tutte le corrispondenze, usare il flag `g`:
 
 ```javascript
@@ -50,7 +44,6 @@ console.log(globalMatches); // ["o", "o", "o"]
 ```
 
 ### Abbinamento Insensibile al Maiuscolo/Minuscolo
-
 Il flag `i` ignora il maiuscolo/minuscolo:
 
 ```javascript
@@ -59,7 +52,6 @@ console.log(caseInsensitiveMatch[0]); // "JavaScript"
 ```
 
 ### Sostituire Testo
-
 Usa `String.prototype.replace()` per sostituire parti della stringa:
 
 ```javascript
@@ -68,7 +60,6 @@ console.log(newStr); // "JavaScript is awesome"
 ```
 
 ### Utilizzando Gruppi
-
 I gruppi possono catturare parti del pattern:
 
 ```javascript
@@ -78,7 +69,6 @@ console.log(replaceWithGroups); // "fun is JavaScript"
 ```
 
 ### Librerie di Terze Parti
-
 Sebbene le capacità regex integrate in JavaScript siano potenti, alcune attività potrebbero essere semplificate con librerie come `XRegExp`. Offre una sintassi aggiuntiva e flag, rendendo i pattern complessi più leggibili:
 
 ```javascript

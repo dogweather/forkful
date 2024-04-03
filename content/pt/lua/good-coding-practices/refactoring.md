@@ -11,9 +11,6 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O Quê & Por Que?
-Refatoração é a arte de ajustar o código existente para melhorar sua estrutura, legibilidade e eficiência sem alterar seu comportamento externo. Programadores fazem isso para tornar seu código mais fácil de manter, reduzir complexidade e, muitas vezes, como um passo preliminar antes de adicionar novas funcionalidades ou corrigir bugs.
-
 ## Como fazer:
 Vamos pegar uma função Lua simples e refatorá-la. Começamos com uma função que calcula a soma dos números em uma lista, mas é escrita sem muita preocupação com eficiência ou clareza:
 

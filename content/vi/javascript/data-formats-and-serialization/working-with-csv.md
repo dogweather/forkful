@@ -16,11 +16,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---
 
-## Cái gì và Tại sao?
-Làm việc với CSV (Comma-Separated Values - Giá trị tách bằng dấu phẩy) trong JavaScript thường có nghĩa là phân tích và tạo dữ liệu văn bản cho bảng tính hoặc truyền dữ liệu. Lập trình viên làm điều này bởi vì CSV rất phổ biến, nhẹ và dễ đọc hoặc tạo.
-
 ## Cách thực hiện:
-
 **Phân tích CSV thành JSON:**
 ```javascript
 const csv = `name,age,city
@@ -65,11 +61,9 @@ console.log(jsonToCsv(jsonData));
 ```
 
 ## Sâu hơn
-
 CSV đã xuất hiện từ những ngày đầu của việc tính toán - dễ dàng cho cả máy móc để xử lý và con người để hiểu. Nhưng nó không hoàn hảo. Nếu dữ liệu của bạn phức tạp hoặc lồng ghép, JSON hoặc XML có thể phù hợp hơn. Về thực hiện, việc xử lý CSV trong JavaScript cần có các giải pháp do thiếu thư viện chuẩn cho việc này; tuy nhiên, ngày nay có nhiều thư viện như PapaParse hoặc csv-parser đã làm đơn giản hóa nhiệm vụ này. Ngoài ra, các trường hợp cạnh như ký tự dòng mới trong các trường và mã hóa ký tự có thể làm phức tạp việc xử lý CSV và cần chú ý lập trình cẩn thận.
 
 ## Xem thêm
-
 - MDN Web Docs về Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (Lấy dữ liệu CSV từ web)
 - PapaParse: https://www.papaparse.com/ (Bộ phân tích CSV mạnh mẽ cho trình duyệt)
 - RFC 4180: https://tools.ietf.org/html/rfc4180 (Tiêu chuẩn cho các tệp CSV)

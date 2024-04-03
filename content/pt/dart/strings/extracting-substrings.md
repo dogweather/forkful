@@ -13,9 +13,6 @@ title: Extraindo substrings
 weight: 6
 ---
 
-## O Que & Por Que?
-Extrair substrings trata-se de recuperar porções específicas de uma string baseadas em suas posições ou padrões. Programadores fazem isso para tarefas como a análise de entradas de usuários, manipulação de dados, ou extração de informações relevantes de fontes de texto maiores.
-
 ## Como Fazer:
 No Dart, você pode usar diversos métodos para extrair substrings, como `substring()`, `split()` e expressões regulares. Cada método serve a diferentes propósitos e oferece flexibilidade no manuseio de strings.
 

@@ -12,12 +12,7 @@ title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---
 
-## ¿Qué y Por Qué?
-
-Analizar una fecha a partir de un string en Haskell implica convertir representaciones textuales de fechas en un formato estructurado que el programa pueda manipular. Este proceso es fundamental para aplicaciones que tratan con datos calendáricos, habilitando funciones como el cálculo de duraciones, programación y validación de datos.
-
 ## Cómo hacerlo:
-
 De entrada, Haskell ofrece herramientas básicas para analizar fechas, pero aprovechar bibliotecas como `time` para funcionalidades básicas y `date-parse` o `time-parse` para un análisis más flexible puede simplificar significativamente la tarea.
 
 Primero, asegúrate de tener disponible la biblioteca `time`; a menudo se incluye con GHC, pero si necesitas especificarla como una dependencia, agrega `time` al archivo cabal de tu proyecto o usa `cabal install time` para instalarla manualmente.

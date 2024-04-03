@@ -12,11 +12,7 @@ title: Een datum uit een string parsen
 weight: 30
 ---
 
-## Wat & Waarom?
-Het parsen van een datum uit een string betekent het converteren van tekst die een datum en tijd vertegenwoordigt naar een programmeerbaar formaat. Programmeurs doen dit om datums te manipuleren, te vergelijken of ze efficiënt in een database op te slaan.
-
 ## Hoe te:
-
 PHP maakt het parsen van datums uit strings vrij eenvoudig met de `DateTime` klasse. Hier is een snel voorbeeld:
 
 ```php
@@ -43,7 +39,6 @@ echo $dateTime->format('Y-m-d H:i'); // Geeft uit: 2023-04-12 14:00
 Speel met formaten en tijdzones om te zien hoe krachtig dit kan zijn.
 
 ## Diepgaand
-
 Historisch gezien moesten PHP-ontwikkelaars handmatig datumstrings parsen of `strtotime()` gebruiken, wat effectief is maar minder krachtig dan `DateTime`. Geïntroduceerd in PHP 5.2.0, biedt `DateTime` object-georiënteerde datum-/tijdmanipulatie.
 
 Waarom de verandering? Omdat `DateTime`:
@@ -62,7 +57,6 @@ Let op de valkuilen bij het parsen:
 - Schrikkelseconden en zomertijden kunnen berekeningen beïnvloeden.
 
 ## Zie Ook
-
 - [PHP Handleiding over DateTime](https://www.php.net/manual/en/class.datetime.php)
 - [PHP Datum- en Tijdfuncties](https://www.php.net/manual/en/ref.datetime.php)
 - [Carbon: Een eenvoudige PHP API-extensie voor DateTime](https://carbon.nesbot.com/)

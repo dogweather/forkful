@@ -18,9 +18,6 @@ title: "JSON\u3092\u6D3B\u7528\u3059\u308B"
 weight: 38
 ---
 
-## 何となぜ？
-KotlinでのJSON（JavaScript Object Notation）の扱い方は、JSONデータのパース（解析）と生成を含みます。プログラマーは、JSONの軽量な形式と人間が読みやすい形式のため、異なるアプリケーション層間でデータを簡単に交換したり、Webサービスと通信したりするためにこれを行います。
-
 ## 方法：
 KotlinはJSONのための組み込みサポートを含まないが、Googleの`Gson`やJetBrainsの`Kotlinx.serialization`のようなサードパーティライブラリの強力な機能を利用します。以下は、JSONを扱うためにこれらをどのように使用するかです。
 

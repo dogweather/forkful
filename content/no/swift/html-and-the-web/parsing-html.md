@@ -10,9 +10,6 @@ title: Analyse av HTML
 weight: 43
 ---
 
-## What & Why?
-Hva er HTML-parsing, og hvorfor driver vi med det? Parsing av HTML betyr å trekke ut data fra en webside sin kode. Programmerere gjør det for å kunne jobbe med, analysere, eller endre innhold dynamisk.
-
 ## How to:
 For å parse HTML i Swift, kan du bruke biblioteket SwiftSoup. Før du starter, må du installere SwiftSoup via SPM eller CocoaPods. Her er et grunnleggende eksempel:
 

@@ -15,12 +15,7 @@ title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---
 
-## Cái gì & Tại sao?
-
-Viết một tệp văn bản trong Java có nghĩa là lưu trữ dữ liệu văn bản vào một tệp trên đĩa. Các nhà phát triển thực hiện việc này cho các tác vụ như ghi nhật ký, cấu hình, hoặc xuất dữ liệu dễ đọc cho con người.
-
 ## Làm thế nào:
-
 Với gói `java.nio.file` của Java, viết vào một tệp văn bản rất đơn giản. Hãy xem `Files.write()` để lưu nhanh:
 
 ```java
@@ -49,11 +44,9 @@ Viết vào tệp thành công.
 ```
 
 ## Tìm hiểu sâu hơn
-
 Trong quá khứ, I/O của Java chủ yếu liên quan đến `FileWriter` và `BufferedWriter`. Bây giờ, gói NIO (`java.nio.file`) là lựa chọn hàng đầu. `Files.write()` rất tiện lợi — xử lý việc tạo, mở và viết trong một lần. Phương án thay thế? `FileOutputStream` cho kiểm soát cấp độ byte. Phía sau, `Files.write()` sử dụng một `BufferedWriter` và `Charset` để mã hóa văn bản thành byte.
 
 ## Xem thêm
-
 Đào sâu hơn vào I/O tệp với những liên kết sau:
 
 - Tài liệu chính thức của `java.nio.file.Files`: https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html

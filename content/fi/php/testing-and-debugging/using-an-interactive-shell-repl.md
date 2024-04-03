@@ -10,9 +10,6 @@ title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mikä & Miksi?
-Interaktiivinen kuori, tai REPL (Read-Eval-Print Loop), mahdollistaa PHP-koodin kirjoittamisen ja suorittamisen lennosta. Se on ihanteellinen kokeiluihin, debuggaukseen tai oppimiseen, sillä voit testata koodinpätkiä ilman täyden skriptin luomisen taakkaa.
-
 ## Kuinka:
 Käynnistä PHP:n REPL suorittamalla `php -a` terminaalissasi. Tässä maistiainen siitä, miten se toimii:
 

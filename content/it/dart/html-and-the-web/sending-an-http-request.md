@@ -13,12 +13,7 @@ title: Inviare una richiesta HTTP
 weight: 44
 ---
 
-## Cosa & Perché?
-
-Inviare una richiesta HTTP in Dart è il processo di iniziazione delle comunicazioni con un server web o API da un'applicazione Dart. I programmatori lo fanno per ottenere dati dal web, inviare moduli e interagire con servizi RESTful, rendendolo un'operazione fondamentale per lo sviluppo di applicazioni web, lato server e mobili in Dart.
-
 ## Come fare:
-
 Dart include il pacchetto `http`, un modo potente e conveniente per lavorare con le risorse HTTP. Prima cosa, includilo nel tuo file pubspec.yaml:
 
 ```yaml

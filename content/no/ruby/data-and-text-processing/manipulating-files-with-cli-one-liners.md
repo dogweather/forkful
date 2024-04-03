@@ -11,12 +11,7 @@ title: Manipulering av filer med CLI-enkeltkommandoer
 weight: 31
 ---
 
-## Hva & Hvorfor?
-
-Å manipulere filer med CLI en-linjers i Ruby handler om å utføre vanlige filoperasjoner direkte fra terminalen ved å bruke Ruby-skript. Det er en kraftfull metode for å automatisere og raskt utføre filrelaterte oppgaver, noe som sparer programmerere verdifull tid og reduserer potensialet for manuelle feil.
-
 ## Hvordan:
-
 Ruby, med sin uttrykksfulle syntaks, tillater konsise og lesbare en-linjers som kan håndtere en rekke filoperasjoner. Her er noen eksempler du kan finne nyttige:
 
 **Lese en fil**
@@ -54,7 +49,6 @@ Når du trenger å rydde opp og fjerne filer, er dette din go-to en-linjers.
 Selv om disse eksemplene viser hvor enkelt Ruby kan manipulere filer fra CLI, er det viktig å håndtere filoperasjoner med forsiktighet for å unngå utilsiktet datatap. Lag alltid sikkerhetskopi av viktige data før du kjører destruktive operasjoner som sletting eller overskriving.
 
 ## Dykke dypere
-
 Filmanipulering med Ruby en-linjers er ikke unikt for Ruby; språk som Perl og Awk har blitt brukt til lignende oppgaver i tiår. Ruby kombinerer imidlertid Perl sin uttrykkskraft med lesbarhet, noe som gjør skriptlaging mer intuitivt. Det sagt, kan en av Ruby sine svakheter i CLI filmanipulering være dens ytelse, spesielt når man håndterer store filer eller komplekse operasjoner - skriptspråk er generelt tregere enn kompilerte språk eller dedikerte Unix-verktøy som `sed` eller `awk` for tekstbehandlingsoppgaver.
 
 Til tross for dette, er Ruby-skript utrolig allsidige og kan enkelt integreres i større Ruby-applikasjoner eller Rails-prosjekter. Deres lesbarhet og de enorme funksjonalitetene som tilbys gjennom standardbiblioteket og gems, gjør Ruby til et solid valg for utviklere som ser etter en balanse mellom ytelse og produktivitet.

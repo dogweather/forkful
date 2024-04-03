@@ -13,12 +13,7 @@ title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---
 
-## Was & Warum?
-
-Das Überprüfen, ob ein Verzeichnis existiert, ist eine grundlegende Operation, wenn man Skripte schreibt, die mit dem Dateisystem interagieren. Dabei wird sichergestellt, dass Ihr Programm auf gültigen Pfaden operiert und Fehler vermieden werden, die mit nicht existierenden Verzeichnissen zusammenhängen. Diese Aufgabe ist entscheidend für das Erstellen neuer Dateien in Verzeichnissen, das Lesen aus ihnen oder das sicher Ausführen von verzeichnisspezifischen Operationen.
-
 ## Wie geht das:
-
 In Lua gibt es keine eingebaute Funktion, um direkt zu überprüfen, ob ein Verzeichnis existiert. Daher greift man oft auf die Lua File System (lfs) Bibliothek zurück, eine beliebte Drittanbieterbibliothek für Dateioperationen.
 
 Stellen Sie zunächst sicher, dass Sie Lua File System installiert haben. Falls nicht, können Sie es im Allgemeinen mit LuaRocks installieren:

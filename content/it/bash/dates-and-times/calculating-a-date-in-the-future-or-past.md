@@ -10,9 +10,6 @@ title: Calcolo di una data futura o passata
 weight: 26
 ---
 
-## What & Why?
-Calcolare le date nel futuro o nel passato significa determinare un giorno specifico prima o dopo una data nota. I programmatori lo fanno per gestire scadenze, pianificazioni o per tracciare eventi nel tempo.
-
 ## How to:
 Calcoliamo le date usando il comando `date` in Bash. Ecco degli esempi:
 

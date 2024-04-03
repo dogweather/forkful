@@ -10,12 +10,7 @@ title: Working with YAML
 weight: 41
 ---
 
-## What & Why?
-
-YAML, which stands for "YAML Ain't Markup Language", is a human-readable data serialization language commonly used for configuration files. Programmers often use it because of its simplicity and readability across a plethora of programming environments, including in the scripting realm of Visual Basic for Applications (VBA) to enhance interoperability, and data storage and exchange.
-
 ## How to:
-
 Working with YAML in VBA requires understanding how to parse and convert YAML into a format that VBA can easily manipulate, usually dictionaries or collections. Unfortunately, VBA does not natively support YAML parsing or serialization. However, you can use a combination of JSON conversion tools and dictionary objects to work with YAML data, considering YAML's close relation to JSON.
 
 First, convert your YAML data to JSON using an online converter or a YAML-to-JSON conversion tool within your development environment. Once converted, you can use the following example to parse JSON in VBA, noting that this approach indirectly allows you to work with YAML:
@@ -46,7 +41,6 @@ End Function
 In this example, the `JsonParser` function is a stand-in for where you'd parse the JSON. Various libraries are available to help with JSON parsing, as direct YAML parsing libraries for VBA are scarce.
 
 ## Deep Dive
-
 The absence of direct YAML handling in VBA can be attributed to its age and the environment it was built for, which was not initially designed with modern data serialization formats in mind. YAML itself emerged as a popular configuration and serialization format in the early 2000s, dovetailing with the advent of applications requiring more human-friendly configuration files.
 
 Programmers typically leverage external tools or libraries to bridge the gap between VBA and YAML. This often involves converting YAML to JSON, as shown, due to the JSON support available through various libraries and the similarity between JSON and YAML in terms of structure and purpose.

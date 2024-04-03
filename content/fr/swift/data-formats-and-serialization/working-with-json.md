@@ -13,12 +13,7 @@ title: Travailler avec JSON
 weight: 38
 ---
 
-## Quoi et pourquoi ?
-
-Travailler avec JSON en Swift signifie manipuler un format de données léger pour l'échange de données. Les programmeurs utilisent JSON pour transmettre des données entre un serveur et une application web car il est lisible et facile à analyser, tant pour les humains que pour les machines.
-
 ## Comment faire :
-
 Swift simplifie l'analyse JSON avec le protocole `Codable`. Voici comment décoder du JSON en un objet Swift :
 
 ```Swift
@@ -56,11 +51,9 @@ Nom: John Doe, Age: 30
 ```
 
 ## Plongée profonde
-
 JSON (JavaScript Object Notation) a été largement adopté depuis le début des années 2000, après avoir été spécifié par Douglas Crockford. Il a remplacé XML pour de nombreux cas d'utilisation en raison de sa syntaxe plus simple et de ses meilleures performances. Bien que `Codable` de Swift soit la méthode privilégiée pour JSON, des alternatives comme `JSONSerialization` existent pour les cas où l'on traite des types non conformes à Codable. Sous le capot, `Codable` abstrait l'analyse de bas niveau et rend la sérialisation/désérialisation sans couture.
 
 ## Voir aussi
-
 - Explorez plus sur JSON et Swift sur le blog officiel de Swift : [Swift.org](https://swift.org/blog/)
 - Consultez la documentation de `Codable` : [Swift Codable](https://developer.apple.com/documentation/swift/codable)
 - Pour des structures JSON complexes, envisagez des bibliothèques tierces telles que SwiftyJSON disponibles sur [GitHub](https://github.com/SwiftyJSON/SwiftyJSON).

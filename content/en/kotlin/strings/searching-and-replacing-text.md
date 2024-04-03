@@ -10,9 +10,6 @@ title: Searching and replacing text
 weight: 10
 ---
 
-## What & Why?
-Searching and replacing text is like playing hide and seek with strings, then swapping the hider with someone else. It's a common programming task, vital for tasks like bulk editing, data sanitization, and automating the boring stuff.
-
 ## How to:
 Kotlin simplifies text manipulation through its standard library. Below, see how you use `replace` to swap out words.
 

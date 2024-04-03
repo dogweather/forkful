@@ -11,12 +11,7 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## Hva & Hvorfor?
-
-Å sende en HTTP-forespørsel betyr å be internettserveren om data eller handling. Programmerere gjør dette for å hente informasjon, sende data, eller starte prosesser over nettet.
-
 ## Hvordan:
-
 ```Haskell
 import Network.HTTP.Simple
 
@@ -35,13 +30,11 @@ Response body: "{\n  \"args\": {}, \n  \"headers\": {...}, \n  \"origin\": \"x.x
 ```
 
 ## Dypdykk:
-
 I de gode gamle dager, kommuniserte programmer oftest lokalt. Internettets vekst har endret dette. Å sende en HTTP-forespørsel har blitt standarden for internettbasert kommunikasjon. Det er flere HTTP-biblioteker i Haskell, som `http-simple`, `wreq`, og `http-conduit`. Disse abstraherer bort de lavnivå detaljene i å lage HTTP-forespørsler.
 
 `http-simple` gir en enkel API for å sende HTTP-forespørsler og håndtere respons. Det bruker `http-client` under panseret, og håndterer mye av komplikasjonene for deg, som å arbeide med nettverksforbindelser og parsing av responsdata. Du kan også bruke `http-conduit` for en mer strømmet, minneeffektiv behandling av store responser.
 
 ## Se Også:
-
 - [http-simple documentation](https://hackage.haskell.org/package/http-conduit)
 - [http-conduit package](https://hackage.haskell.org/package/http-conduit)
 - [wreq package](https://hackage.haskell.org/package/wreq)

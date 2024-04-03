@@ -12,9 +12,6 @@ title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---
 
-## Quoi & Pourquoi ?
-Enlever les guillemets d'une chaîne signifie retirer les caractères de guillemets simples (`'`) ou doubles (`"`) qui définissent les littéraux de chaîne dans le code. Les programmeurs font cela pour plusieurs raisons, telles que le formatage de sortie, la désinfection de l'entrée utilisateur, ou la préparation des chaînes pour l'analyse ou le stockage où les guillemets sont inutiles ou pourraient provoquer des erreurs.
-
 ## Comment faire :
 Voici votre guide direct pour libérer ces maudits marqueurs de citation de vos chaînes dans TypeScript.
 

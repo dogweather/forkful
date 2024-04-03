@@ -10,9 +10,6 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## What & Why?
-Last ned en nettside betyr å hente HTML-innholdet fra en nettadresse. Programmerere gjør dette for å analysere innholdet, teste tilgjengelighet, eller automatisere datahenting.
-
 ## How to:
 For å laste ned en nettside i Bash, kan du bruke `curl` eller `wget`. Her er en rask måte å gjøre det på:
 

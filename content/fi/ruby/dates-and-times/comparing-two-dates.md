@@ -11,9 +11,6 @@ title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---
 
-## What & Why? - Mitä ja Miksi?
-Vertailemme kahta päivämäärää selvittääksemme niiden järjestyksen tai aikaeron. Tämä on käytännöllistä sovelluksissa, jotka seuraavat määräaikoja, hallinnoivat tapahtumakalentereita tai laskevat aikaa.
-
 ## How to: - Miten:
 ```Ruby
 require 'date'

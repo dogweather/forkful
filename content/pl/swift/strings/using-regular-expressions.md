@@ -14,9 +14,6 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-Wyrażenia regularne, czyli regex, to sekwencje znaków, które tworzą wzorzec wyszukiwania, często używane do zadań dopasowywania lub manipulacji ciągami znaków. Programiści wykorzystują je do wszystkiego, począwszy od walidacji danych, analizy, po transformacje, czyniąc je niezbędnym narzędziem w przetwarzaniu i manipulacji tekstem w różnych językach programowania, w tym w Swift.
-
 ## Jak to zrobić:
 Natywne wsparcie Swifta dla regex wykorzystuje klasę `NSRegularExpression`, razem z metodami zakresu i zastąpienia klasy String. Poniżej znajduje się przykład użycia regex, aby znaleźć i wyróżnić adresy e-mail w bloku tekstu:
 

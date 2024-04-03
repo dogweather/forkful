@@ -14,12 +14,7 @@ title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---
 
-## ¿Qué y Por Qué?
-
-Escribir en el error estándar (stderr) se trata de redirigir los mensajes de error y diagnósticos por separado del resultado principal del programa, que va a la salida estándar (stdout). Los programadores lo hacen para hacer el manejo de errores y el registro más manejables, especialmente en entornos donde la distinción de salida es crucial para la depuración y monitoreo.
-
 ## Cómo:
-
 Elm está dirigido principalmente al desarrollo web, donde el concepto de escribir directamente en stderr no se aplica de la misma manera que en los entornos de línea de comandos tradicionales. Sin embargo, para los programas de Elm que se ejecutan en Node.js o entornos similares, la interoperabilidad con JavaScript usando puertos es el enfoque clave para lograr una funcionalidad similar. Así es como podrías configurarlo:
 
 Código Elm (`Main.elm`):

@@ -10,9 +10,6 @@ title: Suchen und Ersetzen von Text
 weight: 10
 ---
 
-## Was & Warum?
-Suchen und Ersetzen ist die Aktion, Textmuster in einem String zu finden und sie durch neue Inhalte zu ersetzen. Programmierer nutzen diese Funktion, um Daten zu korrigieren, zu aktualisieren oder spezifische Muster in einer großen Menge von Text effizient zu bearbeiten.
-
 ## How to:
 ```kotlin
 fun main() {

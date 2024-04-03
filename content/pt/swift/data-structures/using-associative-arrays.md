@@ -12,12 +12,7 @@ title: Usando arrays associativos
 weight: 15
 ---
 
-## O Que & Por Quê?
-
-Arrays associativos, conhecidos como dicionários em Swift, permitem armazenar e gerenciar dados em pares chave-valor. Programadores os usam para organizar dados de forma eficiente, facilitando o acesso e a manipulação dos valores com base em suas chaves únicas.
-
 ## Como fazer:
-
 Swift torna o trabalho com arrays associativos direto. Veja como você pode declarar, adicionar, remover e acessar itens em um dicionário Swift:
 
 ```Swift
@@ -49,7 +44,6 @@ for (fruit, color) in fruitColors {
 Dicionários são incrivelmente versáteis, permitindo a manipulação e acesso dinâmico aos dados. Sua natureza não ordenada não impacta a velocidade de recuperação de dados, o que é um benefício significativo ao lidar com grandes conjuntos de dados.
 
 ## Aprofundando
-
 A implementação de dicionários como um array associativo no Swift decorre de sua poderosa capacidade de mapear chaves únicas a valores. Historicamente, as linguagens de programação implementaram esse conceito sob vários nomes como tabelas de hash ou mapas, aludindo à sua funcionalidade de criar um "mapa" entre chaves e valores.
 
 No Swift, os dicionários são otimizados para desempenho, aproveitando chaves que podem ser hasheadas para a recuperação eficiente de dados. Isso significa que o tipo `Key` em um dicionário `[Key: Value]` deve estar em conformidade com o protocolo `Hashable`, o que é o caso para a maioria dos tipos padrão do Swift, como `Int`, `String` e `Double`.

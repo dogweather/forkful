@@ -11,9 +11,6 @@ title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---
 
-## Qué y Por Qué?
-Calcular una fecha en el futuro o pasado significa simplemente sumar o restar días, meses o años a una fecha dada. Los programadores lo hacen para manejar reservas, recordatorios, suscripciones, y cualquier otra funcionalidad que implica el seguimiento del tiempo.
-
 ## Cómo Hacerlo:
 Para calcular una fecha en el futuro o pasado, PHP ofrece una clase potente: `DateTime`. Vamos a ver cómo se utiliza:
 
@@ -52,7 +49,6 @@ Cuando se trabaja con `DateTime`, hay que tener en cuenta las zonas horarias. PH
 Otro detalle importante es la inmutabilidad. Desde PHP 5.5, existe `DateTimeImmutable`, que funciona igual que `DateTime`, pero no modifica el objeto original al realizar operaciones, lo que ayuda a prevenir errores en aplicaciones grandes.
 
 ## Ver También:
-
 - [Documentación oficial de la clase DateTime](https://www.php.net/manual/es/class.datetime.php)
 - [Documentación de DateInterval](https://www.php.net/manual/es/class.dateinterval.php)
 - [Documentación de DatePeriod](https://www.php.net/manual/es/class.dateperiod.php)

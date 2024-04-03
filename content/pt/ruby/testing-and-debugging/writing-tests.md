@@ -13,9 +13,6 @@ title: Escrevendo testes
 weight: 36
 ---
 
-## O Que & Por Quê?
-Testar em Ruby é verificar se o seu código se comporta como esperado sob várias condições. Os programadores escrevem testes para garantir correção, prevenir regressões e facilitar o refatoramento, com o objetivo de ter aplicações robustas e mantíveis.
-
 ## Como fazer:
 Ruby vem com uma biblioteca embutida chamada `Test::Unit` para escrever testes unitários, encapsulando práticas de teste dentro de estruturas simples. No entanto, a comunidade Ruby frequentemente prefere bibliotecas de terceiros como RSpec e Minitest devido à sua expressividade e flexibilidade aprimoradas.
 

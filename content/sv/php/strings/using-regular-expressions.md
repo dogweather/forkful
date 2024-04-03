@@ -14,16 +14,10 @@ title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---
 
-## Vad & Varför?
-
-Reguljära uttryck (regex) i PHP är mönster som används för att matcha teckenkombinationer i strängar, vilket möjliggör avancerade sök-och-ersätt-operationer och datavalidering. Programmerare utnyttjar regex för dess kraft och flexibilitet vid tolkning av text, validering av formulär eller skrapning av webbdata, vilket gör det till ett ovärderligt verktyg i en utvecklares arsenal.
-
 ## Hur man gör:
-
 PHP stöder reguljära uttryck genom PCRE-biblioteket (Perl Compatible Regular Expressions), som erbjuder en rik uppsättning funktioner. Så här använder du dem:
 
 ### Matcha ett mönster:
-
 För att kontrollera om ett mönster finns inom en sträng, använd `preg_match()`. Denna funktion returnerar 1 om mönstret hittades i strängen och 0 om inte.
 
 ```php
@@ -36,7 +30,6 @@ if (preg_match("/\bweb\b/i", "PHP är ett skriptspråk för webben")) {
 ```
 
 ### Hitta alla matchningar:
-
 `preg_match_all()` används när du behöver hitta alla förekomster av ett mönster inom en sträng.
 
 ```php
@@ -48,7 +41,6 @@ print_r($matches[0]);
 ```
 
 ### Ersätta text:
-
 För att ersätta text som matchar ett reguljärt uttryck används `preg_replace()`. Det är otroligt kraftfullt för formatering och rensning av data.
 
 ```php
@@ -60,7 +52,6 @@ echo preg_replace($pattern, $replacement, $originalText);
 ```
 
 ### Dela upp strängar:
-
 Du kan dela en sträng i en array med `preg_split()`, genom att specificera ett mönster för avgränsaren.
 
 ```php

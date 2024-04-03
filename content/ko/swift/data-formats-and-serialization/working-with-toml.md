@@ -15,9 +15,6 @@ title: "\uD504\uB85C\uADF8\uB798\uBA38\uB97C \uC704\uD55C TOML \uB2E4\uB8E8\uAE3
 weight: 39
 ---
 
-## 무엇 & 왜?
-TOML (Tom's Obvious, Minimal Language)은 명확한 의미론으로 인해 읽기 쉬운 데이터 직렬화 포맷입니다. 프로그래머들은 사람이 읽기 쉽고 기계가 쉽게 파싱할 수 있는 구성 파일에 TOML을 사용합니다.
-
 ## 방법:
 시작하려면 TOML 파서가 필요합니다. Swift에는 내장된 파서가 없으므로 `TOMLDecoder`를 사용합시다. Swift 패키지 관리자를 통해 설치한 다음 TOML을 쉽게 직렬화하고 역직렬화합니다.
 

@@ -14,9 +14,6 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-Fehlerbehandlung in Dart geht darum, Ausnahmen, die während der Ausführung des Programms auftreten, vorherzusehen und zu verwalten, um die Zuverlässigkeit und Benutzerfreundlichkeit zu erhöhen. Programmierer implementieren Fehlerbehandlung, um Abstürze zu verhindern und den Benutzern aussagekräftiges Feedback zu geben, um eine reibungslosere, sicherere Anwendungserfahrung zu gewährleisten.
-
 ## Wie man:
 Dart unterstützt zwei Arten von Fehlern: *Kompilierzeit*-Fehler und *Laufzeit*-Fehler. Kompilierzeitfehler werden vom Dart-Analyzer erkannt, bevor der Code ausgeführt wird, während Laufzeitfehler oder Ausnahmen während der Ausführung auftreten. So gehst du mit Ausnahmen in Dart um:
 

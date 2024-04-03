@@ -11,9 +11,6 @@ title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---
 
-## Was & Warum?
-Datum-Berechnungen erlauben die Ermittlung vergangener oder zukünftiger Tage. Programmierer nutzen diese, um Zeitintervalle zu verwalten, Ereignisse zu planen oder Zeitspannen zu messen.
-
 ## So geht's:
 ```arduino
 #include <Wire.h>

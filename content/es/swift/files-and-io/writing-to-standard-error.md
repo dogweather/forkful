@@ -14,12 +14,7 @@ title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---
 
-## Qué y Por Qué?
-
-Escribir en el error estándar (stderr) se trata de dirigir los mensajes de error o de diagnóstico de tu programa a un flujo separado, distinto del salida estándar (stdout). Esto es crucial para depurar y registrar errores sin saturar la salida estándar, facilitando tanto la comprensión de los desarrolladores como de los usuarios sobre el estado y los problemas del programa.
-
 ## Cómo hacerlo:
-
 En Swift, escribir en el error estándar se puede hacer usando la clase `FileHandle` para un acceso directo al stderr. Aquí hay un ejemplo simple:
 
 ```swift

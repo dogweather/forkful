@@ -14,12 +14,7 @@ title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---
 
-## Wat & Waarom?
-
-Karakters verwijderen die overeenkomen met een patroon gaat over het vinden en verwijderen van specifieke reeksen karakters in een string op basis van regels (het patroon). Programmeurs doen dit om data op te schonen, inhoud te parsen of tekst te manipuleren om aan bepaalde voorwaarden te voldoen.
-
 ## Hoe:
-
 Zo kun je in Kotlin karakters verwijderen die overeenkomen met een patroon, met behulp van een eenvoudig regex-patroon.
 
 ```Kotlin
@@ -41,7 +36,6 @@ Hallo,  Wereld! Dit is een regex  voorbeeld.
 ```
 
 ## Diepere duik
-
 Terug in de dagen voordat talen zoals Kotlin bestonden, kon patroon matching een arbeidsintensieve taak zijn, waarbij lussen, conditionals en karakter-voor-karakter inspectie betrokken waren. Met Kotlin en reguliere uitdrukkingen (regex) wordt de taak veel simpeler.
 
 Regex gaat helemaal over patroonherkenning in tekst. Het maakt deel uit van de informatica sinds de jaren 50 en werd een essentieel onderdeel met de komst van Perl in de jaren 80. Kotlin's implementatie van regex is geërfd van Java's `java.util.regex` pakket, wat zorgt voor een volwassen en robuuste patroon matching capaciteit.
@@ -53,7 +47,6 @@ Wat betreft de implementatiedetails, Kotlin's `replace` methode in de `Regex` kl
 Men moet voorzichtig zijn bij het omgaan met regex, vooral met complexe patronen, omdat dit kan leiden tot prestatieproblemen – vaak aangeduid als "catastrofale terugloop". Maar voor de meeste praktische toepassingen is het een krachtig hulpmiddel in de toolkit van de programmeur.
 
 ## Zie ook
-
 - [Kotlin Regex klasse documentatie](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
 - [Regular-Expressions.info](https://www.regular-expressions.info/), een uitgebreide bron voor regex-patronen en -gebruik.
 - [RegexOne](https://regexone.com/), voor interactieve lessen en oefeningen over reguliere uitdrukkingen.

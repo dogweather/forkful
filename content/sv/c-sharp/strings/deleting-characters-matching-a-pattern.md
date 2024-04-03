@@ -11,9 +11,6 @@ title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---
 
-## Vad & Varför?
-Att radera tecken som matchar ett mönster innebär att man systematiskt tar bort specifika tecken eller sekvenser från en sträng. Programmerare gör detta för att rensa data, validera inmatning eller förbereda text för databehandling.
-
 ## Så här gör du:
 ```C#
 using System;

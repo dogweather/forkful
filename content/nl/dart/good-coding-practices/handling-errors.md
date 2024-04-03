@@ -13,9 +13,6 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-Fouten afhandelen in Dart gaat over het anticiperen op en beheren van uitzonderingen die ontstaan tijdens de uitvoering van het programma om de betrouwbaarheid en bruikbaarheid te verbeteren. Programmeurs implementeren foutafhandeling om crashes te voorkomen en zinvolle feedback aan gebruikers te bieden, wat zorgt voor een soepelere, veiligere applicatie-ervaring.
-
 ## Hoe doe je dat:
 Dart ondersteunt twee soorten fouten: *compileertijd* fouten en *looptijd* fouten. Compileertijd fouten worden gedetecteerd door de Dart-analyzer voordat de code wordt uitgevoerd, terwijl looptijd fouten, of uitzonderingen, optreden tijdens de uitvoering. Hier is hoe je uitzonderingen in Dart afhandelt:
 

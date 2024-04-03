@@ -13,12 +13,7 @@ title: "Envoyer une requ\xEAte HTTP"
 weight: 44
 ---
 
-## Quoi & Pourquoi ?
-
-Envoyer une requête HTTP consiste à créer et envoyer une requête à un serveur web pour récupérer ou soumettre des données. Les programmeurs font cela en C pour interagir avec les API web, télécharger des pages web ou communiquer directement avec d'autres services en réseau depuis leurs applications.
-
 ## Comment :
-
 Pour envoyer une requête HTTP en C, vous vous appuierez généralement sur des bibliothèques comme libcurl, car le C n'intègre pas de support natif pour les protocoles web. Voici un exemple simple utilisant libcurl pour effectuer une requête GET :
 
 D'abord, assurez-vous d'avoir libcurl installé sur votre système. Ensuite, incluez les en-têtes nécessaires et liez-les contre la bibliothèque libcurl dans votre fichier source :
@@ -55,11 +50,9 @@ int main(void) {
 Compilez ceci avec une commande semblable à `gcc -o http_request http_request.c -lcurl`, l'exécution devrait réaliser une simple requête GET vers "http://example.com".
 
 ### Exemple de sortie
-
 Comme l'exemple ne traite pas la réponse du serveur, son exécution ne produira pas de sortie visible au-delà des éventuels messages d'erreur. Intégrer la fonction de rappel pour le traitement des données reçues est essentiel pour une interaction significative.
 
 ## Approfondissement
-
 Le concept d'envoi de requêtes HTTP depuis un programme C repose sur les puissantes capacités de mise en réseau du langage, associées à des bibliothèques externes puisque le C lui-même est un langage de bas niveau sans support intégré pour les protocoles internet de haut niveau. Historiquement, les programmeurs utilisaient manuellement la programmation de sockets en C, un processus complexe et fastidieux, pour interagir avec les serveurs web avant l'avènement de bibliothèques dédiées comme libcurl.
 
 Libcurl, construit sur le C, simplifie le processus, en masquant les détails ardus de la programmation de sockets et les spécificités du protocole HTTP. Il prend en charge une multitude de protocoles au-delà du HTTP/HTTPS, y compris FTP, SMTP, et plus, le rendant un outil polyvalent pour la programmation réseau en C.

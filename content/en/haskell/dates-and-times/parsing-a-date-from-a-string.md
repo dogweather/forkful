@@ -10,12 +10,7 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-
-Parsing a date from a string in Haskell involves converting textual representations of dates into a structured format that the program can manipulate. This process is fundamental for applications dealing with calendrical data, enabling functions like calculating durations, scheduling, and data validation.
-
 ## How to:
-
 Out of the box, Haskell offers basic tools for parsing dates, but leveraging libraries like `time` for core functionality and `date-parse` or `time-parse` for more flexible parsing can significantly simplify the task.
 
 First, ensure you have the `time` library available; it's often included with GHC, but if you need to specify it as a dependency, add `time` to your project's cabal file or use `cabal install time` to manually install it.

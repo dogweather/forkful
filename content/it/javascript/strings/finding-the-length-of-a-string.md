@@ -11,9 +11,6 @@ title: Trovare la lunghezza di una stringa
 weight: 7
 ---
 
-## What & Why?
-Misurare la lunghezza di una stringa significa contare i caratteri che la compongono. I programmatori lo fanno per validare input, manipolare testi, o semplicemente per sapere "quanto è lungo".
-
 ## How to:
 Usiamo la proprietà `length` di una stringa. Ecco come:
 

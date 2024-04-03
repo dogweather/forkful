@@ -14,12 +14,7 @@ title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---
 
-## Gì & Tại sao?
-
-Viết test kiểm tra xem code có thực hiện đúng công việc mà nó cần làm hay không. Testing giúp bắt lỗi, hỗ trợ bảo trì code, và đảm bảo các thay đổi không làm hỏng mọi thứ.
-
 ## Cách thực hiện:
-
 Haskell sử dụng HUnit cho các unit test cơ bản, và QuickCheck cho các property-based test. Dưới đây là một ví dụ nhanh về HUnit:
 
 ```haskell
@@ -58,11 +53,9 @@ Kết quả mẫu có thể đọc là:
 ```
 
 ## Tìm hiểu sâu hơn
-
 Testing bắt đầu từ sớm khi lập trình ra đời, nhưng trở nên nghiêm túc với sự phát triển của TDD vào những năm 2000. Các hàm thuần túy của Haskell làm cho nó trở nên tuyệt vời cho việc testing. Các lựa chọn thay thế cho HUnit/QuickCheck bao gồm doctest và Hedgehog. HUnit giống như JUnit trong Java. QuickCheck tự động tạo các trường hợp test, kiểm tra các tính chất mà bạn định nghĩa.
 
 ## Xem thêm
-
 - Tài liệu HUnit: [http://hackage.haskell.org/package/HUnit](http://hackage.haskell.org/package/HUnit)
 - QuickCheck trên Hackage: [http://hackage.haskell.org/package/QuickCheck](http://hackage.haskell.org/package/QuickCheck)
 - Giới thiệu về Testing trong Haskell: [https://hspec.github.io/](https://hspec.github.io/)

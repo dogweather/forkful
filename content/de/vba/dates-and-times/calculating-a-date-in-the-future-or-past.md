@@ -13,9 +13,6 @@ title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---
 
-## Was & Warum?
-Das Berechnen eines Datums in der Zukunft oder Vergangenheit umfasst die Bestimmung eines Datums, das eine festgelegte Anzahl von Tagen, Monaten oder Jahren von einem gegebenen Datum entfernt ist. Programmierer benötigen diese Funktionalität häufig, um Erinnerungen, Abonnements, Ablaufdaten und Planungsaufgaben in verschiedenen Anwendungen zu automatisieren.
-
 ## Wie:
 In Visual Basic for Applications (VBA) ist die primäre Funktion, die verwendet wird, um zukünftige oder vergangene Termine zu berechnen, `DateAdd()`. Diese Funktion fügt einem Datum ein bestimmtes Zeitintervall hinzu und gibt ein neues Datum zurück.
 

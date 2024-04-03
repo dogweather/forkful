@@ -13,9 +13,6 @@ title: "Einen String gro\xDFschreiben"
 weight: 2
 ---
 
-## Was und Warum?
-Das Großschreiben eines Strings bedeutet, den ersten Buchstaben jedes Wortes im String in Großbuchstaben umzuwandeln, während die restlichen Buchstaben klein bleiben. Diese häufige Manipulation von Zeichenketten ist nützlich, um Text in Anwendungen zu formatieren, beispielsweise um Benutzernamen oder Titel gemäß Konvention oder grammatischer Richtigkeit darzustellen.
-
 ## Wie:
 Die Standardbibliothek von Java bietet keine direkte Methode, um ganze Strings auf einmal großzuschreiben, aber Sie können dies mit einer Kombination von integrierten Methoden erreichen. Für anspruchsvollere Bedürfnisse bieten Drittanbieterbibliotheken wie Apache Commons Lang einfache Lösungen.
 
@@ -49,7 +46,6 @@ public class CapitalizeString {
 Dieser Codeausschnitt wandelt den gesamten String in Kleinbuchstaben um und iteriert dann durch jeden Charakter, um den ersten Buchstaben jedes Wortes großzuschreiben. Er betrachtet Leerzeichen, Punkte und Apostrophe als Worttrenner.
 
 ### Nutzung von Apache Commons Lang
-
 Die Bibliothek Apache Commons Lang bietet mit der Methode `WordUtils.capitalizeFully()` eine elegantere Lösung, die verschiedene Sonderfälle und Trennzeichen für Sie behandelt:
 
 ```java

@@ -12,9 +12,6 @@ title: Een string met hoofdletters maken
 weight: 2
 ---
 
-## Wat & Waarom?
-Een string kapitaliseren betekent het veranderen van de eerste letter van een woord naar een hoofdletter. Programmeurs doen dit om taalconventies te volgen, leesbaarheid te verbeteren of tekst zoals titels te formatteren.
-
 ## Hoe doe je het:
 JavaScript heeft geen ingebouwde methode om te kapitaliseren, maar hier is een eenvoudige functie die het voor elkaar krijgt:
 

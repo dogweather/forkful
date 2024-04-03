@@ -9,9 +9,6 @@ title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---
 
-## Qué y Por Qué?
-Concatenar cadenas significa unir dos o más textos en uno solo. Esto es clave cuando necesitamos mostrar mensajes personalizados al usuario o combinar información que viene de diferentes fuentes.
-
 ## Cómo Hacerlo:
 Veamos diferentes maneras de concatenar cadenas en C#:
 

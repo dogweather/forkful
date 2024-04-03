@@ -16,9 +16,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---
 
-## Cái gì & Tại sao?
-TOML, viết tắt của Tom's Obvious, Minimal Language, là một định dạng tuần tự hóa dữ liệu tương tự như JSON hoặc YAML, nhưng mục tiêu là sự đơn giản và dễ đọc. Lập trình viên sử dụng TOML cho các tệp cấu hình vì nó dễ viết và hiểu, và nó ánh xạ gọn gàng vào các cấu trúc dữ liệu trong các ngôn ngữ lập trình như Python.
-
 ## Làm thế nào:
 Trước khi đi sâu, hãy cài đặt gói `toml` với `pip install toml`. Hãy phân tích một tệp TOML:
 

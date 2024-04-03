@@ -14,9 +14,6 @@ title: "C\xE1lculo de una fecha en el futuro o en el pasado"
 weight: 26
 ---
 
-## Qué & Por qué?
-Calcular una fecha en el futuro o pasado implica determinar una fecha específica al agregar o restar un cierto número de días, meses o años a una fecha dada. Los programadores hacen esto para tareas como programar eventos, generar recordatorios o manejar fechas de vencimiento, lo que lo convierte en una funcionalidad esencial en varias aplicaciones, desde sistemas de calendario hasta software financiero.
-
 ## Cómo:
 Aunque la biblioteca estándar de C no proporciona funciones directas para la aritmética de fechas, puedes manipular fechas utilizando la biblioteca `time.h`, específicamente trabajando con el tipo de datos `time_t` y `struct tm`. Aquí hay un ejemplo simplificado de cómo agregar días a la fecha actual:
 

@@ -11,9 +11,6 @@ title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---
 
-## What & Why? (Co i Dlaczego?)
-Wyodrębnianie podciągów to proces wycinania mniejszych ciągów znaków z większego. Programiści robią to, by manipulować danymi tekstowymi – weryfikować, analizować, czy formatować je według potrzeb.
-
 ## How to: (Jak to zrobić:)
 ```kotlin
 fun main() {

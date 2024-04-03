@@ -11,9 +11,6 @@ title: Recherche et remplacement de texte
 weight: 10
 ---
 
-## What & Why? "Quoi & Pourquoi ?"
-Chercher et remplacer du texte, c'est trouver des bouts de chaînes et les transformer. Les programmeurs le font pour corriger des données, formater ou traduire des contenus.
-
 ## How to: "Comment faire :"
 ```java
 import java.util.regex.Matcher;

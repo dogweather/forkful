@@ -14,9 +14,6 @@ title: Sette stor bokstav i en streng
 weight: 2
 ---
 
-## Hva & hvorfor?
-Det å kapitalisere en streng innebærer å transformere den første bokstaven i en gitt streng til stor bokstav mens resten av bokstavene forblir små. Programmerere gjør dette for å formatere utdata, overholde grammatisk korrekthet i tekster eller forbedre lesbarheten til genererte data.
-
 ## Hvordan:
 I Haskell kan du kapitalisere en streng ved å bruke standardbiblioteket uten å trenge noen tredjepartsbiblioteker.
 

@@ -13,9 +13,6 @@ title: Arbeider med YAML
 weight: 41
 ---
 
-## Hva & Hvorfor?
-YAML, forkortet for "YAML Ain't Markup Language", er en menneskelesbar standard for data-serialisering som programmerere bruker for konfigurasjonsfiler, data dumping, og datatransmisjon mellom språk. Det er populært på grunn av sin lesbarhet og enkelhet i bruk, noe som gjør det til et vanlig valg for konfigurering av applikasjoner og tjenester.
-
 ## Hvordan:
 I Java kan du jobbe med YAML-filer ved å bruke tredjeparts biblioteker siden Java Standard Edition ikke inkluderer innebygd støtte for YAML. Et populært bibliotek er SnakeYAML, som tillater parsing og generering av YAML-data enkelt.
 

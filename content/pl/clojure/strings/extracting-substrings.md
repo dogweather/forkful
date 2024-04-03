@@ -11,9 +11,6 @@ title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---
 
-## What & Why?
-Wyciąganie podłańcuchów to jak wybieranie najlepszych kawałków ciasta - bierzesz tylko to, co potrzebujesz. Programiści to robią, aby operować na konkretnych fragmentach tekstów: weryfikować dane, wydobywać informacje lub po prostu dostosowywać wyświetlane wiadomości.
-
 ## How to:
 Clojure używa funkcji `subs` do wyciągania podłańcuchów. Przyjrzyjmy się przykładom:
 

@@ -13,35 +13,26 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i dlaczego?
-
-Zaokrąglanie liczb to proces dopasowywania liczby do jej najbliższej liczby całkowitej lub do określonej liczby miejsc dziesiętnych. Programiści często zaokrąglają liczby, aby uprościć obliczenia, poprawić czytelność lub przygotować dane do wyświetlenia, zapewniając spójność i klarowność w wynikach numerycznych.
-
 ## Jak to zrobić:
-
 Dart oferuje natywne metody w swoim podstawowym typie `num` dla operacji zaokrąglania. Tutaj przyjrzymy się metodom takim jak `round()`, `floor()`, `ceil()` oraz jak zaokrąglić do określonej liczby miejsc dziesiętnych.
 
 ### Zaokrąglanie do najbliższej liczby całkowitej:
-
 ```dart
 var number = 3.56;
 print(number.round()); // Wyświetla: 4
 ```
 
 ### Zaokrąglanie w dół:
-
 ```dart
 print(number.floor()); // Wyświetla: 3
 ```
 
 ### Zaokrąglanie w górę:
-
 ```dart
 print(number.ceil()); // Wyświetla: 4
 ```
 
 ### Zaokrąglanie do określonej liczby miejsc dziesiętnych:
-
 Aby zaokrąglić do określonej liczby miejsc dziesiętnych, możemy użyć metody `toStringAsFixed()`, która zwraca string, lub użyć kombinacji `pow` z `dart:math` dla wyniku numerycznego.
 
 ```dart

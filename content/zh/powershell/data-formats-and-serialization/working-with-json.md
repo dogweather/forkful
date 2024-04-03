@@ -24,14 +24,10 @@ title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 weight: 38
 ---
 
-## 什么与为什么？
-
-PowerShell与JSON（JavaScript对象表示法）的整合，关于解析（读取）和生成（写入）JSON数据，这是网络上数据交换的常见格式。程序员使用JSON来与Web API互动、操作配置文件，或促进不同语言和平台之间的数据交互，因为它具有轻量级和语言无关的特点。
-
 ## 如何操作：
 
-### 解析JSON
 
+### 解析JSON
 要在PowerShell中读取或解析JSON，你可以使用`ConvertFrom-Json` cmdlet。给定一个JSON字符串，此cmdlet会将其转换为一个PowerShell对象。
 
 ```powershell
@@ -49,7 +45,6 @@ John Doe
 此示例演示了如何解析一个简单的JSON字符串，以访问结果对象的属性。
 
 ### 生成JSON
-
 要从PowerShell对象生成JSON，你可以使用`ConvertTo-Json` cmdlet。这对于准备要发送给Web服务或保存到配置文件中的数据很方便。
 
 ```powershell

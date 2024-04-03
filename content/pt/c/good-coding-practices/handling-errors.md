@@ -13,12 +13,7 @@ title: Gerenciando erros
 weight: 16
 ---
 
-## O Quê & Porquê?
-
-O tratamento de erros em C envolve a detecção e resposta a condições anômalas que surgem durante a execução do programa. Os programadores fazem isso para evitar bugs, falhas e comportamentos imprevisíveis, garantindo que o software funcione de maneira confiável e eficiente em vários cenários.
-
 ## Como fazer:
-
 C não possui suporte embutido para exceções como algumas outras linguagens. Em vez disso, ele depende de algumas estratégias convencionais de tratamento de erros, como retornar valores especiais de funções e configurar variáveis globais como `errno`.
 
 **Retornando Valores Especiais**
@@ -79,7 +74,6 @@ Erro ao abrir arquivo: No such file or directory
 ```
 
 ## Aprofundamento
-
 Historicamente, o design minimalista da linguagem de programação C excluiu um mecanismo de tratamento de exceções embutido, refletindo suas origens de programação de sistemas de baixo nível, onde o desempenho máximo e o controle próximo ao hardware são críticos. Em vez disso, o C adota uma abordagem de tratamento de erros mais manual que se encaixa em sua filosofia de dar aos programadores o máximo controle possível, mesmo à custa da conveniência.
 
 Embora esta abordagem esteja bem alinhada com os objetivos de design do C, também pode levar a um código de verificação de erro verboso e ao potencial para verificações de erro perdidas, questões que linguagens modernas abordam com mecanismos estruturados de tratamento de exceções. Por exemplo, exceções em linguagens como Java ou C# permitem o processamento centralizado de erros, tornando o código mais limpo e a gestão de erros mais direta. No entanto, exceções introduzem seu próprio custo e complexidade, que podem não ser ideais para programação em nível de sistema onde o C brilha.

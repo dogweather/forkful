@@ -15,12 +15,7 @@ title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---
 
-## Gì và Tại sao?
-
-Phân tích cú pháp một ngày từ một chuỗi có nghĩa là chuyển đổi văn bản thể hiện một ngày thành một đối tượng ngày. Lập trình viên làm điều này bởi vì nó quan trọng để xử lý ngày trong các ứng dụng, như sắp xếp các sự kiện hoặc lọc nhật ký.
-
 ## Làm thế nào:
-
 Trong JavaScript, bạn có thể phân tích cú pháp một ngày từ một chuỗi sử dụng `Date` constructor hoặc các thư viện như `Date-fns` và `Moment.js`. Dưới đây là cách làm bằng cách dùng nguyên bản:
 
 ```Javascript
@@ -45,7 +40,6 @@ console.log(dateFnsDate); // Xuất ra: Sat Apr 01 2023 00:00:00 GMT+0000 (UTC)
 ```
 
 ## Đi Sâu
-
 JavaScript có khả năng xử lý ngày được tích hợp sẵn, nhưng nó không phải lúc nào cũng tốt. Các phiên bản đầu có vấn đề về nhất quán, múi giờ, và định dạng. Mọi người thường cảm thấy bực bội và xây dựng các giải pháp riêng của mình hoặc sử dụng thư viện bên thứ ba như `Moment.js` thì có nhiều tính năng và lựa chọn phân tích cú pháp tốt hơn.
 
 Theo thời gian, JavaScript được cải thiện, và các thư viện mới như `Date-fns` và `Luxon` xuất hiện, tập trung vào các tiện ích nhỏ hơn, nhanh hơn và có thể mô đun hóa. Một lựa chọn khác là `Intl.DateTimeFormat` constructor, một phần của Internationalization API, cho phép định dạng ngày và giờ nhạy cảm với ngôn ngữ.
@@ -55,7 +49,6 @@ Theo thời gian, JavaScript được cải thiện, và các thư viện mới 
 Nhớ luôn cảnh giác với múi giờ khi phân tích cú pháp ngày; chúng có thể tạo nên hoặc phá vỡ sự chính xác của logic ngày của bạn.
 
 ## Xem Thêm
-
 - Tài liệu MDN Web về `Date`: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
 - Moment.js: https://momentjs.com/docs/#/parsing/string/
 - Tài liệu Date-fns: https://date-fns.org/v2.28.0/docs/parse

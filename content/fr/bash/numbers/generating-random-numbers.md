@@ -13,9 +13,6 @@ title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---
 
-## Quoi et Pourquoi ?
-Générer des nombres aléatoires en Bash offre un moyen d’introduire de l’imprévisibilité dans les scripts, ce qui est essentiel pour des tâches telles que générer des mots de passe sécurisés, simuler des données ou pour la programmation de jeux. Les programmeurs tirent parti de cette capacité pour ajouter de la variabilité à leurs scripts ou pour tester leurs programmes sous une variété de conditions générées aléatoirement.
-
 ## Comment faire :
 Dans Bash, la variable `$RANDOM` est la solution privilégiée pour générer des nombres aléatoires. Chaque fois que vous la référencez, Bash fournit un entier pseudo-aléatoire entre 0 et 32767. Explorons quelques exemples pratiques :
 

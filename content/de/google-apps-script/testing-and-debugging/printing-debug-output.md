@@ -13,12 +13,7 @@ title: Debug-Ausgabe drucken
 weight: 33
 ---
 
-## Was & Warum?
-
-Das Drucken von Debug-Ausgaben beinhaltet das strategische Platzieren von Protokollaussagen in Ihrem Code, um Variablenwerte, Ausführungsfluss oder Fehlermeldungen während der Laufzeit anzuzeigen. Programmierer nutzen dies ausführlich, um das Verhalten ihrer Skripte nachzuvollziehen und zu diagnostizieren, um Korrektheit und Effizienz in ihren Google Apps Script-Anwendungen sicherzustellen.
-
 ## Wie:
-
 Google Apps Script bietet die `Logger`-Klasse für grundlegendes Debugging und für fortgeschrittenere Bedürfnisse die `console`-Klasse, die in der V8-Laufzeit eingeführt wurde.
 
 **Logger verwenden:**
@@ -55,7 +50,6 @@ Aktueller Status: aktiv, Anzahl: 150
 ```
 
 ## Tiefergehende Betrachtung
-
 Ursprünglich war `Logger.log` das primäre Werkzeug für das Debugging in Google Apps Script und bot eine einfache, unkomplizierte Möglichkeit, Ausgaben zur Überprüfung auszudrucken. Jedoch, als Skripte komplexer wurden und stärker mit Google Cloud Platform-Diensten integriert wurden, wurde der Bedarf an einer robusteren Protokollierungslösung offensichtlich.
 
 Hier kommt die V8-Laufzeit ins Spiel und bringt `console.log` mit. Dies bringt Google Apps Script nicht nur in Einklang mit der standardmäßigen JavaScript-Syntax, macht die Sprache zugänglicher für Entwickler, die mit JavaScript vertraut sind, sondern nutzt auch die leistungsfähige Infrastruktur von Googles Cloud-Logging-Fähigkeiten. Die Einführung von `console.log` und seine Integration mit der Google Cloud Platform markiert eine signifikante Evolution in den Debugging-Fähigkeiten innerhalb von Google Apps Script und bietet Entwicklern einen dynamischeren und skalierbareren Ansatz zur Überwachung und Fehlerbehebung ihrer Skripte.

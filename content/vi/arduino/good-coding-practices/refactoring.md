@@ -16,11 +16,7 @@ title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---
 
-## Cái gì và Tại sao?
-Tái cấu trúc là quá trình làm việc lại code của bạn nhằm cải thiện cấu trúc và tính dễ đọc mà không thay đổi hành vi hoặc chức năng bên ngoài. Lập trình viên tái cấu trúc để làm cho code của họ sạch sẽ hơn, dễ hiểu hơn và dễ bảo trì hơn, điều này trong dài hạn làm cho việc gỡ lỗi và thêm tính năng mới ít đau đầu hơn.
-
 ## Làm thế nào:
-
 Giả sử bạn có một hàm trên Arduino của mình đang làm quá nhiều việc, như thế này:
 
 ```Arduino

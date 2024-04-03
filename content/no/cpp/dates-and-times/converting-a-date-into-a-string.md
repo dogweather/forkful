@@ -12,9 +12,6 @@ title: Konvertere en dato til en streng
 weight: 28
 ---
 
-## Hva & Hvorfor?
-Konvertering av en dato til en streng innebærer å endre datotypen fra ‘date’ (dato) til ‘string’ (tekststreng) for visning eller lagring. Dette gjøres for å kunne presentere datoer på et leservennlig format eller for å lagre i tekstbaserte systemer.
-
 ## Hvordan:
 ```C++
 #include <iostream>

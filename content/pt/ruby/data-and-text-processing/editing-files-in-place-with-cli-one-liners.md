@@ -11,12 +11,7 @@ title: Editando arquivos in loco com linhas de comando
 weight: 32
 ---
 
-## O Que & Por Quê?
-
-Editar arquivos in-place com one-liners de CLI (Interface de Linha de Comando) em Ruby permite modificar arquivos diretamente do seu terminal, sem a necessidade de abri-los em um editor, fazer alterações e salvá-los de volta. Esta técnica é incrivelmente útil para modificações rápidas, atualizações em lote ou automação de tarefas repetitivas, economizando tempo e esforço.
-
 ## Como fazer:
-
 Ruby oferece uma maneira direta de editar arquivos in-place diretamente da linha de comando. Usando o interruptor `-i` do Ruby, você pode dizer ao Ruby para operar diretamente nos arquivos fornecidos. Vamos brincar com alguns exemplos para ver como isso funciona na vida real. Imagine que você tem um arquivo `greetings.txt` com o seguinte conteúdo:
 
 ```
@@ -48,7 +43,6 @@ ruby -i.bak -pe "gsub(/Hello/, 'Bye')" greetings.txt
 Agora, junto com o seu `greetings.txt` editado, você encontrará um `greetings.txt.bak` no mesmo diretório, contendo o conteúdo original.
 
 ## Aprofundamento
-
 A mágica da edição de arquivos in-place em Ruby vem de sua combinação de capacidades de processamento de texto ao estilo Perl e a elegância sintática própria do Ruby. Historicamente, Perl era a linguagem de escolha para scripts de one-liner rápidos, especialmente para manipulação de texto. Ruby adotou este paradigma, permitindo capacidades poderosas de script de linha de comando.
 
 Alternativas para edição in-place existem em outras linguagens, como o próprio Perl e sed, um editor de fluxo em sistemas Unix. Cada uma tem suas forças — Perl é conhecido por sua proeza no processamento de texto enquanto sed é incomparável em sua simplicidade para tarefas de edição de fluxo. No entanto, Ruby oferece um equilíbrio, proporcionando manipulação robusta de texto com uma sintaxe mais legível e amigável ao usuário, especialmente para aqueles já familiarizados com Ruby.

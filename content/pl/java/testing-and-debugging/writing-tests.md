@@ -13,14 +13,10 @@ title: "Pisanie test\xF3w"
 weight: 36
 ---
 
-## Co i dlaczego?
-Pisanie testów w Java ma na celu weryfikację, czy Twój kod zachowuje się zgodnie z oczekiwaniami w różnych warunkach. Programiści piszą testy, aby zapobiegać błędom, zapewnić poprawność funkcjonalności po zmianach i promować dobre zasady projektowania oprogramowania.
-
 ## Jak to robić:
 Programiści Java głównie używają dwóch frameworków testowych: JUnit i TestNG. Tutaj skupimy się na JUnit, który jest popularniejszym wyborem do pisania testów ze względu na swoją prostotę i szerokie przyjęcie.
 
 ### Podstawy JUnit
-
 Aby użyć JUnit w projekcie Maven, dodaj następującą zależność do pliku `pom.xml`:
 
 ```xml
@@ -51,7 +47,6 @@ public class CalculatorTest {
 Wykonanie tego testu zakończy się sukcesem, co oznacza, że metoda `add` działa zgodnie z oczekiwaniami, lub porażką, wyświetlając komunikat o błędzie.
 
 ### Mokowanie z użyciem Mockito
-
 W rzeczywistych scenariuszach, obiekty często zależą od innych obiektów. Mockito to popularny framework do mokowania, który pomaga w tworzeniu mokowanych obiektów do celów testowych.
 
 Dodaj Mockito do swojego projektu Maven:

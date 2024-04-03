@@ -13,9 +13,6 @@ title: Organizing code into functions
 weight: 18
 ---
 
-## What & Why?
-Organizing code into functions is about bundling up bits of script to do specific tasks. We do it because it makes code easier to read, test, and reuse — no one wants to wade through a swamp of code spaghetti.
-
 ## How to:
 In Fish, you write a function with `function` keyword, give it a name, and end with `end`. Here’s a simple one:
 
@@ -58,11 +55,9 @@ Some shells, like Bash, use `function` or just straight braces. Fish sticks to `
 You won't need a `return` value because Fish isn't big on that; your function's output is its return. And if you want persistent functions available for future sessions, remember `funcsave`.
 
 ## See Also
-
 - The fish tutorial on functions: [https://fishshell.com/docs/current/tutorial.html#tut_functions](https://fishshell.com/docs/current/tutorial.html#functions)
 
 ### Function commands
-
 - [function](https://fishshell.com/docs/current/cmds/function.html) — Create a function
 - [functions](https://fishshell.com/docs/current/cmds/functions.html) — Print or erase functions
 - [funcsave](https://fishshell.com/docs/current/cmds/funcsave.html) — Save the definition of a function to the user’s autoload directory

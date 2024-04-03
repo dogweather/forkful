@@ -14,9 +14,6 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mikä ja Miksi?
-Nykyisen päivämäärän saaminen JavaScriptillä on perustehtävä, johon kuuluu tämän päivän päivämäärän ja ajan noutaminen ja mahdollisesti manipulointi. Ohjelmoijat suorittavat tämän näyttääkseen päivämääriä verkkosivuilla, sovelluksissa, seuratakseen käyttäjän vuorovaikutuksia tai käsitelläkseen aikaan sidottua dataa.
-
 ## Kuinka:
 Vanilla JavaScriptissä `Date`-objektia käytetään päivämäärien ja aikojen käsittelyyn. Tässä on miten voit saada nykyisen päivämäärän ja ajan:
 

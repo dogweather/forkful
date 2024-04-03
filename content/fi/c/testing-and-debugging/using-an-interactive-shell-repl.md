@@ -14,12 +14,7 @@ title: "Interaktiivisen kuoren (REPL) k\xE4ytt\xE4minen"
 weight: 34
 ---
 
-## Mikä & Miksi?
-
-Interaktiivinen komentotulkki, joka on tunnettu myös nimityksellä Lue-Arvo-Tulosta-Silmukka (REPL), mahdollistaa ohjelmoijille ilmaisujen tai koodin kirjoittamisen ja välittömien tulosten näkemisen, mikä parantaa oppimista ja virheenkorjausta. Vaikka C ei perinteisesti tue REPL-ympäristöjä natiivisti, nykyaikainen työkalusto kuroo tämän kuilun umpeen tarjoten dynaamista tutkimusta C-ohjelmiin.
-
 ## Kuinka:
-
 C-REPL:n kanssa työskentely ei ehkä ole yhtä suoraviivaista kuin esimerkiksi Pythonin tai JavaScriptin kanssa. Tools like `Cling`, C/C++-tulkkia, joka perustuu Clangin ja LLVM-teknologiaan, tekevät tämän kuitenkin mahdolliseksi. Tässä on kuinka pääset alkuun:
 
 1. **Asenna Cling**: Käyttöjärjestelmästäsi riippuen saatat löytää Clingin pakettienhallintajärjestelmästäsi tai sinun tarvitsee kenties rakentaa se lähdekoodista. Esimerkiksi Ubuntussa, se voi olla yhtä helppoa kuin `sudo apt-get install cling`.
@@ -56,7 +51,6 @@ Neliöjuuri luvusta 4.000000 on 2.000000
 ```
 
 ## Syväsukellus:
-
 REPL-ympäristöjen synty juontaa juurensa Lispistä 1960-luvulla, jonka oli suunniteltu tukemaan interaktiivista koodiarviointia. C:n staattisen ja koottavan luonteen vuoksi oli kuitenkin haasteita toteuttaa vastaavaa välittömyyttä koodin suoritusten säätöön. Clingin ja muiden C/C++-tulkinnanjärjestelmien kehitys merkitsee merkittäviä edistysaskelia dynaamisen arvioinnin integroimisessa staattisiin kielityyppeihin.
 
 On huomattava, että tulkinnanjärjestelmän, kuten Clingin, käyttö ei välttämättä täysin toista koottujen C-koodien käytöstä johtuvaa käyttäytymistä optimoinnin ja suorituksen erojen vuoksi. Vaikka REPL-ympäristöt ovatkin erittäin arvokkaita oppimistarkoituksiin, nopeaan prototyyppien luomiseen ja virheenkorjaukseen, C:lle tarkoitetut REPL-ympäristöt voivat joskus olla hitaampia ja käytännöllisempiä tuotantotason koodikehitykseen verrattuna perinteiseen käännä-suorita-virheenkorjaus-syklikkeihin.

@@ -15,12 +15,7 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---
 
-## Mikä & Miksi?
-
-Päivämäärän jäsentäminen merkkijonosta Arduinolla tarkoittaa päivämäärän osien (vuosi, kuukausi, päivä) poimimista ja muuntamista tekstiesityksestä muotoon, jota voidaan käyttää ajanpidossa, vertailuissa tai manipuloinnissa luonnoksissa. Ohjelmoijat suorittavat usein tämän tehtävän käyttöliittymässä komponenttien, kuten reaaliaikakellojen, lokeroiden tai web-APIen ja käyttöliittymien syötteiden, kanssa, joissa päivämäärät saattavat olla esitettyinä luettavassa muodossa.
-
 ## Kuinka tehdä:
-
 Suora lähestymistapa ilman kolmannen osapuolen kirjastoa:
 
 ```cpp

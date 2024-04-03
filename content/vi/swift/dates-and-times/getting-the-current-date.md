@@ -15,9 +15,6 @@ title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---
 
-## Cái gì & Tại sao?
-Trong Swift, việc lấy ngày hiện tại đòi hỏi truy cập vào cài đặt thời gian và ngày của hệ thống. Lập trình viên thực hiện điều này để ghi thời gian của sự kiện, lập lịch nhiệm vụ hoặc đơn giản chỉ là hiển thị ngày và giờ trong ứng dụng của họ.
-
 ## Cách thực hiện:
 Việc lấy ngày và giờ hiện tại trong Swift khá đơn giản:
 

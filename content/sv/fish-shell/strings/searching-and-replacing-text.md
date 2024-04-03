@@ -11,12 +11,7 @@ title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---
 
-## Vad & Varför?
-
-Att söka och ersätta text är grundprocessen att hitta specifika strängar i data och byta ut dem mot andra strängar. Programmerare gör det för att effektivisera kodändringar, korrigera fel, eller uppdatera information i filer och program.
-
 ## Hur man gör:
-
 I Fish Shell är det smidigt att söka och ersätta text med hjälp av inbyggda funktioner som `string`. Här är ett par exempel:
 
 ```fish
@@ -39,13 +34,11 @@ echo 'äpple + äpple = fler äpplen' | string replace -a 'äpple' 'apelsin'
 ```
 
 ## Djupdykning
-
 Att söka och ersätta text i Fish Shell använder funktioner som `string replace`, vilket är en del av `string`-kommandon introducerade i version 2.3.0. Före det användes externa verktyg som `sed`. Alternativ till `string` kan inkludera dessa externa verktyg eller andra shell-program, men `string` är snabbare och enklare i Fish.
 
 `string replace` är byggd för att vara intuitiv och kraftfull. Den stöder reguljära uttryck, hanterar binära data säkert och har utförliga flaggor som `-i` (case-insensitive) och `-r` (regex).
 
 ## Se även
-
 - Fish Shell dokumentation om `string`: https://fishshell.com/docs/current/cmds/string.html
 - Regex tutorial: https://www.regular-expressions.info/
 - GNU `sed` manual: https://www.gnu.org/software/sed/manual/sed.html

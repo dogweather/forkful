@@ -10,9 +10,6 @@ title: Lettura di un file di testo
 weight: 22
 ---
 
-## What & Why? (Cosa & Perché?)
-Leggere un file di testo in PHP significa accedere al contenuto salvato in un file sul server. I programmatori lo fanno per elaborare dati, configurare applicazioni o leggere contenuti da mostrare agli utenti.
-
 ## How to: (Come fare:)
 ```PHP
 <?php

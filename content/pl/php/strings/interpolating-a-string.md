@@ -11,9 +11,6 @@ title: "Interpolacja \u0142a\u0144cuch\xF3w znak\xF3w"
 weight: 8
 ---
 
-## Co i dlaczego?
-Interpolacja stringów to wstawianie zmiennych do napisów w kodzie, aby dynamicznie budować tekst. Programiści używają jej, by kod był bardziej elastyczny i czytelny — zmienne mogą zmieniać treść napisu bez konieczności jego ciągłego przepisywania.
-
 ## Jak to zrobić:
 Interpolować stringi możemy za pomocą podwójnych cudzysłowów lub heredoc. Oto przykłady:
 

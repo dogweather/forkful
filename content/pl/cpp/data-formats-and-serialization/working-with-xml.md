@@ -11,9 +11,6 @@ title: Praca z XML
 weight: 40
 ---
 
-## Co i dlaczego?
-Praca z XML oznacza parsowanie, tworzenie i manipulowanie danymi XML (eXtensible Markup Language). Programiści zarządzają XML, aby obsługiwać wymianę danych strukturalnych, konfigurację i więcej, ze względu na jego neutralność platformową.
-
 ## Jak to zrobić:
 Oto prosty sposób na parsowanie XML za pomocą biblioteki TinyXML-2:
 

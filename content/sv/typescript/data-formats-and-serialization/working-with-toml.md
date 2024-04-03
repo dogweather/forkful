@@ -11,9 +11,6 @@ title: Att arbeta med TOML
 weight: 39
 ---
 
-## Vad & Varför?
-TOML, en förkortning för Toms Obvious, Minimal Language, är ett format för serialisering av data som liknar JSON eller YAML. Programmerare använder det på grund av dess läsbarhet för människor och dess raka avbildning till datatyper, vilket gör det till ett självklart val för konfigurationsfiler och datautbyte.
-
 ## Hur man gör:
 Först behöver du en TOML-parser. `@iarna/toml` är ett populärt val. Installera det med npm: `npm install @iarna/toml --save`. Så här läser du en TOML-fil och tolkar den till ett JavaScript-objekt:
 

@@ -11,9 +11,6 @@ title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---
 
-## Vad & Varför?
-Sökning och ersättning av text innebär att man automatiskt hittar specifika strängar och byter ut dem mot andra. Programmerare använder detta för att snabbt ändra kod, korrigera fel eller uppdatera information.
-
 ## Så här gör du:
 Följande Arduino-kod använder `String.replace()` för att söka och ersätta text.
 

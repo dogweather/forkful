@@ -14,9 +14,6 @@ title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---
 
-## Là gì & Tại sao?
-Nội suy chuỗi là việc chèn các biến vào trong chuỗi. Chúng ta làm điều đó để xây dựng thông điệp một cách linh hoạt, cá nhân hóa đầu ra, hoặc tạo lập truy vấn động.
-
 ## Làm thế nào:
 C++ không có tính năng nội suy chuỗi được tích hợp sẵn như một số ngôn ngữ khác. Bạn thường sử dụng `std::ostringstream`, `std::format` (từ C++20), hoặc định dạng kiểu printf.
 

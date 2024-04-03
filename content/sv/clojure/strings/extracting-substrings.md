@@ -11,9 +11,6 @@ title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---
 
-## Vad & Varför?
-Att extrahera delsträngar handlar om att plocka specifika bitar av text ut från en större sträng. Programmerare gör detta för att manipulera, analysera eller transformera data i mer användbara format.
-
 ## Hur man gör:
 Clojure erbjuder flera sätt att hantera delsträngar. Se exempel nedan:
 
@@ -36,7 +33,7 @@ Clojure erbjuder flera sätt att hantera delsträngar. Se exempel nedan:
 ## Fördjupning
 Att extrahera delsträngar har funnits så länge som programmeringsspråk har jobbat med text. Det har blivit lite av en grundsten i textbearbetning. I Clojure, där strängar är immutable, garanterar funktioner som `subs` att originalsträngen förblir oförändrad. Alternativ inkluderar att använda regex med `re-find` eller `re-matches` för mer komplex substängsmanipulation.
 
-I termer av implementation använder Clojure Javas underliggande stränghantering för att genomföra operationer, vilket betyder att det är både snabbt och tillförlitligt. 
+I termer av implementation använder Clojure Javas underliggande stränghantering för att genomföra operationer, vilket betyder att det är både snabbt och tillförlitligt.
 
 ## Se även
 - "Clojure for the Brave and True" om strängbearbetning: [https://www.braveclojure.com/clojure-for-the-brave-and-true/](https://www.braveclojure.com/clojure-for-the-brave-and-true/)

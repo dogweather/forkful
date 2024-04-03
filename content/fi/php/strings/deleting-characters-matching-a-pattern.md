@@ -11,9 +11,6 @@ title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---
 
-## What & Why? - Mikä ja Miksi?
-Merkkien poistaminen kuvion mukaan tarkoittaa sellaisten merkkijonojen osien hävittämistä, jotka vastaavat tiettyä kaavaa. Ohjelmoijat tekevät tätä syistä, kuten datan puhdistaminen, tietoturva, tai syötteen käsittelyn yksinkertaistaminen.
-
 ## How to: - Kuinka:
 PHP:ssä `preg_replace`-funktio on yleisin tapa poistaa merkkejä, jotka vastaavat tiettyä mallia. Katsotaanpa miten:
 

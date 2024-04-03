@@ -12,9 +12,6 @@ title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---
 
-## Hva & Hvorfor?
-I JavaScript kan vi slette tegn som matcher et mønster gjennom regulære uttrykk for å rense strenger, trekke ut data eller for en rekke andre oppgaver som krever tekstmanipulasjon.
-
 ## Hvordan gjøre:
 ```javascript
 // Eksempel: Fjerne alle tall fra en tekststreng

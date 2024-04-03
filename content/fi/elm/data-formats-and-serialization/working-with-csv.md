@@ -13,16 +13,10 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä ja miksi?
-
-CSV:n (pilkuilla erotetut arvot) käsittelyyn kuuluu tiedostojen jäsentäminen ja tuottaminen, jotka tallentavat taulukollisia tietoja yksinkertaisessa, tekstimuotoisessa muodossa. Ohjelmoijat harjoittavat tätä yleisesti helpottaakseen datan vaihtoa eri sovellusten välillä tai käsitelläkseen suuria tietomääriä tehokkaasti tyypin turvallisella tavalla Elm:ssä.
-
 ## Kuinka:
-
 Elm ei sisällä sisäänrakennettua tukea CSV:n jäsentämiselle tai tuottamiselle; sen sijaan usein käytetään kolmannen osapuolen paketteja, kuten `panosoft/elm-csv`. Alla olevat esimerkit korostavat tämän kirjaston peruskäyttöä CSV:n jäsentämiseen ja tuottamiseen.
 
 ### CSV:n jäsentäminen
-
 Ensiksi, sinun täytyy lisätä CSV-paketti Elm-projektiisi:
 
 ```bash
@@ -46,7 +40,6 @@ parseResult =
 ```
 
 ### CSV:n tuottaminen
-
 Jotta voit tuottaa CSV-merkkijonon Elm-datasta, käytä `Csv.encode`-funktiota:
 
 ```elm

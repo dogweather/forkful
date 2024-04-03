@@ -15,9 +15,6 @@ title: "\u4E0B\u8F7D\u7F51\u9875"
 weight: 42
 ---
 
-## What & Why? 什么以及为什么？
-下载网页，就是从网上把网页内容拿到本地。程序员这么做是为了分析数据，监控网站状态，或是自动化测试。
-
 ## How to: 如何操作
 ```C++
 #include <iostream>
@@ -57,6 +54,7 @@ int main() {
   return 0;
 }
 ```
+
 ### 输出样例：
 ```
 <!doctype html>

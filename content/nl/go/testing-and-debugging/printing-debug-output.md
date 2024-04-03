@@ -13,12 +13,7 @@ title: Afdrukken van debug-uitvoer
 weight: 33
 ---
 
-## Wat & Waarom?
-
-In computerprogrammering betekent "Debug-output afdrukken" het produceren van gedetailleerde informatieve berichten die ontwikkelaars helpen de uitvoeringsstroom van hun programma te begrijpen of problemen op te sporen. Programmeurs doen dit om problemen efficiënter te diagnosticeren en op te lossen, waardoor het een essentiële vaardigheid is in elke programmeertoolkit, inclusief Go.
-
 ## Hoe te:
-
 In Go kun je de standaard `fmt`-package gebruiken om debug-output naar de console te printen. Het `fmt`-package biedt een verscheidenheid aan functies, zoals `Println`, `Printf` en `Print`, die tegemoetkomen aan verschillende formatteringsbehoeften.
 
 ```go
@@ -80,7 +75,6 @@ Het bericht in `debug.log` zou er zo uitzien:
 ```
 
 ## Diepgaande Duik
-
 Het afdrukken van debug-output is een langdurige praktijk in computerprogrammering, waarbij de implementatie varieert tussen verschillende talen. In Go bieden de standaardbibliotheekpackages `fmt` en `log` eenvoudige en veelzijdige opties. Hoewel het `fmt`-package voldoende is voor basis debugbehoeften, biedt het `log`-package verbeterde functionaliteit zoals logniveaus en configureerbare uitvoerbestemmingen.
 
 Bovendien, naarmate applicaties complexer worden, kunnen logframeworks zoals `zap` en `logrus` meer geavanceerde functies bieden zoals gestructureerd loggen en betere prestaties. Deze externe packages geven ontwikkelaars de flexibiliteit om hun logstrategie aan te passen aan hun specifieke behoeften.

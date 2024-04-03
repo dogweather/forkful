@@ -11,9 +11,6 @@ title: Inviare una richiesta http
 weight: 44
 ---
 
-## Che Cosa e Perché?
-Inviare una richiesta HTTP significa dialogare con un altro sistema via web; è come chiedere a un sito di inviarti dei dati o di accettare i tuoi. I programmatori lo fanno per interagire con API web, raccogliere informazioni, o inviare dati a un server.
-
 ## Come Fare:
 ```Ruby
 require 'net/http'

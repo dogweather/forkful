@@ -10,9 +10,6 @@ title: Textdatei einlesen
 weight: 22
 ---
 
-## Was & Warum?
-Das Einlesen einer Textdatei bedeutet, ihren Inhalt programmatisch zugänglich zu machen. Programmierer tun dies, um Daten zu verarbeiten, Skripte zu konfigurieren oder einfach Informationen auszulesen.
-
 ## Anleitung:
 In PowerShell nutzt man oft `Get-Content`, um eine Datei zu lesen. Hier ist ein einfaches Beispiel:
 

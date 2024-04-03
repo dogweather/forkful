@@ -12,9 +12,6 @@ title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mitä & Miksi?
-Read-Eval-Print Loop (REPL) on yksinkertainen, interaktiivinen ohjelmointiympäristö, joka ottaa vastaan yksittäisiä käyttäjän syötteitä, arvioi ne ja palauttaa tuloksen käyttäjälle. Elm-ohjelmoijat käyttävät REPL:ää nopeisiin kokeiluihin, vianetsintään tai kielen oppimiseen.
-
 ## Kuinka:
 Elm ei sisällä integroitua REPL:iä. Voit kuitenkin käyttää `elm repl` komentoa komentorivillä käynnistääksesi Elmin istunnon Elm:n asentamisen jälkeen.
 

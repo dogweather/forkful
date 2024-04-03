@@ -11,9 +11,6 @@ title: Calculando uma data no futuro ou passado
 weight: 26
 ---
 
-## O Que & Porquê?
-Calcular uma data futura ou passada é o processo de adicionar ou subtrair dias, meses ou anos a uma data específica. Programadores fazem isso para agendar eventos, monitorar durações ou criar lembretes.
-
 ## Como Fazer:
 ```arduino
 #include <Wire.h>

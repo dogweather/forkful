@@ -15,12 +15,7 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Gì và Tại sao?
-
-Xử lý lỗi trong Go bao gồm việc nhận biết và phản hồi trạng thái lỗi trong chương trình của bạn. Lập trình viên thực hiện xử lý lỗi để đảm bảo ứng dụng của họ có thể phục hồi một cách suôn sẻ từ các tình huống không mong muốn, dẫn tới phần mềm ổn định và đáng tin cậy hơn.
-
 ## Làm thế nào:
-
 Trong Go, việc xử lý lỗi được quản lý một cách rõ ràng sử dụng kiểu `error`. Các hàm có thể thất bại sẽ trả về một lỗi như giá trị trả về cuối cùng của họ. Kiểm tra xem giá trị lỗi này có phải là `nil` hay không sẽ cho bạn biết liệu có lỗi xảy ra hay không.
 
 ```go
@@ -65,7 +60,6 @@ Kết quả: 100
 Trong ví dụ này, hàm `Compute` hoặc là trả về một giá trị đã tính toán hoặc một lỗi. Người gọi xử lý lỗi bằng cách kiểm tra xem `err` có phải là `nil` không.
 
 ## Sâu hơn
-
 Cách tiếp cận xử lý lỗi của Go cố ý đơn giản và an toàn về kiểu dữ liệu, đòi hỏi phải kiểm tra lỗi một cách rõ ràng. Khái niệm này trái ngược với xử lý lỗi dựa trên ngoại lệ thấy trong các ngôn ngữ như Java và Python, nơi lỗi được truyền lên ngăn xếp gọi trừ khi được bắt bởi trình xử lý ngoại lệ. Nhóm Go cho rằng việc xử lý lỗi một cách rõ ràng dẫn đến mã nguồn rõ ràng và đáng tin cậy hơn, vì nó buộc lập trình viên phải giải quyết lỗi ngay tại nơi chúng xảy ra.
 
 Tuy nhiên, một số chỉ trích cho rằng mô hình này có thể dẫn đến mã nguồn dài dòng, đặc biệt trong các hàm phức tạp với nhiều hoạt động dễ gặp lỗi. Đáp lại, các phiên bản Go mới hơn đã giới thiệu các tính năng xử lý lỗi tinh vi hơn, như gói lỗi, giúp dễ dàng cung cấp ngữ cảnh cho một lỗi mà không mất thông tin lỗi gốc. Cộng đồng cũng đã thấy các đề xuất cho các cơ chế xử lý lỗi mới, như kiểm tra/xử lý, mặc dù những đề xuất này vẫn đang được thảo luận tính đến lần cập nhật cuối cùng của tôi.

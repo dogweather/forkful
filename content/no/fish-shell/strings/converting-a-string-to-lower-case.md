@@ -11,9 +11,6 @@ title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---
 
-## Hva & Hvorfor?
-Å konvertere en streng til små bokstaver betyr å endre alle tegn i strengen til deres småbokstav-ekvivalenter. Programmerere gjør dette for å standardisere tekstinput for enkel sammenligning og datahåndtering.
-
 ## Hvordan:
 ```Fish Shell
 # Konverter en enkel streng til små bokstaver.

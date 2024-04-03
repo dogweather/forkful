@@ -10,9 +10,6 @@ title: Lecture d'un fichier texte
 weight: 22
 ---
 
-## What & Why?
-En Rust, lire un fichier texte, c'est collecter son contenu pour l'utiliser dans votre programme. On le fait souvent pour traiter des données en batch, charger des configurations, où simplement lire des instructions.
-
 ## How to:
 Pour lire un fichier texte, on utilise principalement `std::fs` et `std::io`. Voilà un exemple simple :
 

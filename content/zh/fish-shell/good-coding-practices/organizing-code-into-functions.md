@@ -21,9 +21,6 @@ title: "\u5C06\u4EE3\u7801\u7EC4\u7EC7\u6210\u51FD\u6570"
 weight: 18
 ---
 
-## 什么 & 为什么?
-将代码组织成函数是指将脚本的一部分打包起来执行特定任务。我们这么做是因为它使代码更易于阅读、测试和重用 —— 没有人想要在一堆代码意大利面中挣扎。
-
 ## 如何操作:
 在Fish中，你可以使用`function`关键字编写一个函数，给它一个名称，并以`end`结束。这里有一个简单的例子：
 
@@ -66,11 +63,9 @@ Fish Shell的函数就像迷你脚本——你几乎可以在里面放任何东�
 你不需要一个`return`值，因为Fish在这方面不太重视；你的函数的输出就是它的返回。如果你想要将函数持久化，以供未来的会话使用，记住`funcsave`。
 
 ## 另请参阅
-
 - Fish教程中的函数部分: [https://fishshell.com/docs/current/tutorial.html#tut_functions](https://fishshell.com/docs/current/tutorial.html#functions)
 
 ### 函数命令
-
 - [function](https://fishshell.com/docs/current/cmds/function.html) — 创建一个函数
 - [functions](https://fishshell.com/docs/current/cmds/functions.html) — 打印或删除函数
 - [funcsave](https://fishshell.com/docs/current/cmds/funcsave.html) — 将函数的定义保存到用户的自动加载目录中

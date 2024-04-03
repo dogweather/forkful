@@ -11,12 +11,7 @@ title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---
 
-## Quoi & Pourquoi?
-
-Supprimer des caractères qui correspondent à un motif, c'est filtrer les séquences indésirables de votre texte. Les programmeurs le font pour nettoyer les données, valider des entrées ou manipuler des chaînes pour l'analyse.
-
 ## Comment faire :
-
 ```Ruby
 # Supprimer tous les chiffres d'une chaîne
 texte = "Voici le numéro 12345."
@@ -38,7 +33,6 @@ puts slogan_sans_signes
 ```
 
 ## Plongée Profonde
-
 Historiquement, `gsub` et `delete` sont des méthodes qui viennent des origines du langage Ruby. Elles sont conçues pour manipuler des chaînes de caractères de manière intuitive. L’alternative, `gsub!` et `delete!`, modifient la chaîne en place, ce qui peut être utile pour économiser la mémoire. 
 
 Utiliser des expressions régulières avec `gsub` permet une grande flexibilité pour spécifier des motifs complexes. Mais attention, les expressions régulières peuvent ralentir votre code si elles sont mal utilisées. 
@@ -46,7 +40,6 @@ Utiliser des expressions régulières avec `gsub` permet une grande flexibilité
 Pour implémenter ces fonctions efficacement, Ruby utilise un moteur d'expressions régulières robuste. Il est conçu pour traiter rapidement du texte, tout en offrant un large éventail de motifs et opérateurs de correspondance.
 
 ## Voir Aussi
-
 - La documentation de Ruby sur les expressions régulières : [Regexp](https://ruby-doc.org/core-3.1.2/Regexp.html)
 - Documentation sur `String#gsub`: [String#gsub](https://ruby-doc.org/core-3.1.2/String.html#method-i-gsub)
 - Documentation sur `String#delete`: [String#delete](https://ruby-doc.org/core-3.1.2/String.html#method-i-delete)

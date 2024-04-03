@@ -12,9 +12,6 @@ title: Een string omzetten naar kleine letters
 weight: 4
 ---
 
-## Wat & Waarom?
-Een string converteren naar kleine letters betekent het transformeren van alle tekens binnenin naar hun kleine letter varianten. Programmeurs doen dit voor consistentie, vooral voor hoofdletterongevoelige vergelijkingen, zoals bij het normaliseren van gebruikersinvoer of het zoeken in tekstinhoude.
-
 ## Hoe te:
 In JavaScript converteren we een string naar kleine letters met de methode `.toLowerCase()`. Het is zo simpel als:
 

@@ -11,12 +11,7 @@ title: Recherche et remplacement de texte
 weight: 10
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-
-Rechercher et remplacer du texte, c'est modifier une chaîne par une autre dans un fichier ou une série de fichiers. Les programmeurs le font pour corriger des erreurs, mettre à jour du code ou des données, et automatiser l'édition.
-
 ## How to: (Comment faire :)
-
 Exemple simple avec `sed` :
 ```Bash
 echo "Bonjour le monde" | sed 's/monde/monde programmable/'
@@ -46,11 +41,9 @@ grep -R 'recherche' /chemin/du/dossier
 ```
 
 ## Deep Dive (Plongée en profondeur)
-
 Rechercher et remplacer du texte est crucial en programmation depuis l'apparition des éditeurs de texte. `sed`, abréviation de "stream editor", est un outil classique de la ligne de commande UNIX, disponible depuis les années 70. Alternativement, des outils comme `awk`, `perl`, et des éditeurs de texte tels que `vim` ou `emacs` offrent également ces fonctionnalités, souvent avec des capacités plus avancées grâce aux expressions régulières. Concernant l'implémentation, `sed` lit le texte en entrée ligne par ligne, applique les transformations spécifiées, et affiche le résultat sur la sortie standard.
 
 ## See Also (Voir également)
-
 - GNU sed manual : https://www.gnu.org/software/sed/manual/sed.html
 - Introduction aux expressions régulières : https://www.regular-expressions.info/tutorial.html
 - Tutoriel `grep` : https://www.tutorialspoint.com/unix_commands/grep.htm

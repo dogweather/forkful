@@ -13,12 +13,7 @@ title: Manejo de errores
 weight: 16
 ---
 
-## ¿Qué y por qué?
-
-El manejo de errores en Visual Basic para Aplicaciones (VBA) se refiere al proceso de anticipar, detectar y resolver errores de programación, de aplicación o de comunicación. Implementar un manejo de errores robusto es crucial para mantener la integridad de las aplicaciones y mejorar la experiencia del usuario gestionando de manera elegante los problemas inesperados sin causar cierres abruptos o pérdida de datos.
-
 ## Cómo hacerlo:
-
 En VBA, el manejo de errores se implementa típicamente usando la instrucción `On Error` que indica a VBA cómo proceder cuando ocurre un error. Las estrategias de manejo de errores más comunes involucran el `On Error GoTo` etiqueta, `On Error Resume Next` y `On Error GoTo 0`.
 
 **Ejemplo 1: Usando `On Error GoTo`**
@@ -63,7 +58,6 @@ End Sub
 En este caso, el programa no se rompe por un error; verifica si ocurrió un error, lo maneja si fue así, y luego limpia el error.
 
 ## Estudio Detallado
-
 Históricamente, el manejo de errores en los lenguajes de programación ha evolucionado desde simples instrucciones goto hasta mecanismos más sofisticados como las excepciones en lenguajes como Java y C#. El manejo de errores de VBA, aunque no tan poderoso o flexible como el manejo moderno de excepciones, cumple su propósito dentro del contexto de la aplicación del lenguaje en la automatización de tareas en entornos de Microsoft Office.
 
 La principal limitación del manejo de errores de VBA radica en su enfoque algo engorroso y manual, requiriendo una colocación cuidadosa del código de manejo de errores y una comprensión clara del flujo de ejecución. Los lenguajes de programación modernos típicamente ofrecen soluciones más elegantes, como los bloques try-catch, que manejan automáticamente el flujo al código de manejo de errores sin necesidad de verificaciones manuales o saltos en la ejecución del código.

@@ -12,12 +12,7 @@ title: Hantering av fel
 weight: 16
 ---
 
-## Vad & Varför?
-
-Att hantera fel i Python (eller i något programmeringsspråk) handlar om att förvänta sig det oväntade – det är konsten att hantera situationer på ett snyggt sätt när något går fel i koden. Vi gör det för att förhindra krascher, vägleda användare och göra våra program robusta och tillförlitliga.
-
 ## Hur man gör:
-
 ``` Python
 # Grundläggande try-except-block
 try:
@@ -56,7 +51,6 @@ Det där är inte ett nummer!
 ```
 
 ## Fördjupning
-
 Sedan gryningen av programmering har felhantering varit avgörande. Tidiga metoder var grundläggande, som att kontrollera villkor före varje riskabelt operation. Pythons `try-except` syntax härstammar från en tradition av undantagshantering i äldre språk som C++ och Java, vilket förenklar processen.
 
 När du `try` ett block av kod, håller Python utkik efter eventuella undantag. Om ett fel uppkommer, fångar `except`-blocket det. Du kan vara specifik om vilka undantag du fångar eller fånga 'em alla med ett bart `except`. Men, att vara specifik först är en bättre strategi - det är mer precist, inte ett fångstnät för allt.
@@ -66,7 +60,6 @@ När du `try` ett block av kod, håller Python utkik efter eventuella undantag. 
 Alternativ? Det finns säkert. Vissa språk använder återgångskoder istället för undantag. Du kan också stöta på `with`-satsen för hantering av resurser eller `assertions` som kontrollerar villkor under utveckling. Men när vi talar om solida strategier för felhantering, står try-catch-modellen ut för sin läsbarhet och struktur.
 
 ## Se även
-
 Här är några bra ytterligare resurser för att fördjupa dig ännu mer:
 
 - Pythons officiella dokumentation om fel och undantag: [Python Docs – Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html)

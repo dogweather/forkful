@@ -11,12 +11,7 @@ title: Sending an HTTP request
 weight: 44
 ---
 
-## What & Why?
-
-Sending HTTP requests is a way to communicate with web servers, fetching or sending data as needed. Programmers use HTTP requests to interact with APIs or web services, enabling applications to access resources, services, and data on the internet.
-
 ## How to:
-
 Fish doesn't have built-in commands for sending HTTP requests, but you can use `curl` right from the shell:
 
 ```Fish
@@ -44,7 +39,6 @@ And here's what you might see after a GET request:
 ```
 
 ## Deep Dive
-
 Historically, UNIX and Linux shells are handy for networking tasks. In the early days, tools like `telnet` were common for such purposes. Today, utility programs like `curl` and `wget` are the go-to. `curl` is a versatile tool that supports multiple protocols, and it's often used because of its simplicity and flexibility.
 
 Python or Node.js can be used when you need more complex request handling. But for quick tasks or simple scripts, `curl` in Fish is efficient and effective.
@@ -52,7 +46,6 @@ Python or Node.js can be used when you need more complex request handling. But f
 Implementing an HTTP request through Fish usually means relying on third-party tools. Fish itself is designed to be a smart and user-friendly command-line shell, not a do-all tool. When you combine it with the power of utilities like `curl`, you get the best of both worlds: Fish's usability and `curl`'s capability.
 
 ## See Also
-
 - Learn more about `curl`: https://curl.se/docs/manual.html
 - Fish Shell documentation: https://fishshell.com/docs/current/index.html
 - HTTP basics overview: https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview

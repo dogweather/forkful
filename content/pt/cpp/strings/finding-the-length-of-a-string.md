@@ -11,9 +11,6 @@ title: Descobrindo o comprimento de uma string
 weight: 7
 ---
 
-## What & Why?
-Não há enrolação: calcular o tamanho de uma string significa descobrir quantos caracteres ela tem. Fazemos isso para manipular texto com precisão, seja para slice, comparar ou validar dados.
-
 ## How to:
 C++ oferece métodos simples para essa tarefa. Vamos usar `length()` e `size()` — sim, os dois funcionam igual no mundo das strings. Confira:
 

@@ -10,9 +10,6 @@ title: Comparando duas datas
 weight: 27
 ---
 
-## What & Why?
-Comparar datas é verificar se são iguais, qual é anterior ou posterior. Programadores fazem isso para agendamentos, validações e cronogramas de eventos.
-
 ## How to:
 ```Javascript
 // Criar duas datas

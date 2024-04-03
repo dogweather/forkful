@@ -11,9 +11,6 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## Vad & Varför?
-Att läsa en textfil innebär att programmet hämtar data från en fil som är lagrad på disken. Programmerare gör detta för att hantera konfigurationer, läsa användardata eller importera externa data till sitt program.
-
 ## Hur gör man:
 Elm har ingen inbyggd filsystemsfunktionalitet på klient-sidan av en webbapplikation p.g.a. webbsäkerhetsrestriktioner. Istället, använder du en `File`-modul som möjliggör att användaren kan välja filer som sedan kan läsas. Här är ett grundläggande exempel:
 

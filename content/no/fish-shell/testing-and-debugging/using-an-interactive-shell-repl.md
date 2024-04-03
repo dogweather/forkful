@@ -10,9 +10,6 @@ title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---
 
-## Hva & Hvorfor?
-REPL, eller Les-Evaluer-Skriv-Løkke, er et interaktivt programmeringsmiljø som tar enkelt brukerinput, utfører dem, og returnerer resultatet. Programmerere bruker det for umiddelbar tilbakemelding, feilsøking, og rask eksperimentering med programmeringskonsepter uten overheaden av å kompilere og kjøre et fullstendig program.
-
 ## Hvordan:
 I Fish er den interaktive skallet standardmodus når du starter det. Slik ser det ut i aksjon:
 

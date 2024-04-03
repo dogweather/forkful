@@ -13,9 +13,6 @@ title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---
 
-## Quoi & Pourquoi ?
-La concaténation de chaînes de caractères en programmation consiste à combiner deux chaînes ou plus en une seule. Les programmeurs font cela pour manipuler facilement les données textuelles, construire des messages ou assembler dynamiquement des parties d'une interface utilisateur.
-
 ## Comment faire :
 Dart offre plusieurs moyens simples pour concaténer des chaînes. Voici les méthodes les plus courantes :
 

@@ -17,10 +17,6 @@ title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---
 
-## What & Why?
-什么&为什么？
-发送HTTP请求就是让你的程序向网路上的服务器请求数据或触发动作。程序员这样做可以与网络服务进行交互，获取资源或提交信息。
-
 ## How to:
 如何操作：
 使用Python的`requests`库，发送一个简单的HTTP GET请求：

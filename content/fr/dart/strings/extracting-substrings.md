@@ -14,9 +14,6 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## Quoi & Pourquoi ?
-Extraire des sous-chaînes consiste à récupérer des portions spécifiques d'une chaîne de caractères basées sur leurs positions ou leurs motifs. Les programmeurs font cela pour des tâches telles que l'analyse de l'entrée utilisateur, la manipulation de données, ou l'extraction d'informations pertinentes à partir de sources de texte plus importantes.
-
 ## Comment faire :
 En Dart, vous pouvez utiliser diverses méthodes pour extraire des sous-chaînes, telles que `substring()`, `split()`, et les expressions régulières. Chaque méthode sert à des fins différentes et offre de la flexibilité dans la gestion des chaînes de caractères.
 

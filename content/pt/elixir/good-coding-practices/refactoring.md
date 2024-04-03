@@ -12,9 +12,6 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O Que & Por Quê?
-Refatoração é o processo de reestruturação do código existente sem alterar seu comportamento externo, visando melhorar atributos não funcionais como legibilidade e manutenibilidade. Programadores fazem isso para tornar o código mais limpo, fácil de entender e mais eficiente, facilitando futuras atualizações e reduzindo o risco de bugs.
-
 ## Como fazer:
 Vamos arrumar um padrão comum em Elixir. Vamos refatorar uma função `calculate_stats` que faz mais do que deveria, dividindo-a em partes menores e reutilizáveis.
 

@@ -11,9 +11,6 @@ title: Umgang mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-Komplexe Zahlen bestehen aus einem Realteil und einem Imaginärteil und sind in verschiedenen Bereichen wie Ingenieurwesen, Physik und Computergrafik unerlässlich. Programmierer verwenden sie, um Gleichungen zu lösen, die mit gewöhnlichen reellen Zahlen nicht lösbar sind.
-
 ## Wie geht das:
 Rust bietet keine integrierte Unterstützung für komplexe Zahlen, aber Crates wie `num-complex` stehen Ihnen zur Seite. So verwenden Sie es:
 

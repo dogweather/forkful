@@ -14,9 +14,6 @@ title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---
 
-## Co i dlaczego?
-Przetwarzanie HTML polega na wydobywaniu danych i informacji z dokumentów HTML, co jest kluczowe dla takich zadań jak scraping internetowy, analiza danych oraz automatyzacja. Programiści wykonują to w celu zbierania, analizowania lub manipulowania zawartością sieciową programowo, umożliwiając automatyzację tego, co w przeciwnym razie byłoby ręcznym wydobyciem danych ze stron internetowych.
-
 ## Jak to zrobić:
 Lua nie posiada wbudowanej biblioteki do przetwarzania HTML, ale można wykorzystać biblioteki stron trzecich takie jak `LuaHTML` lub korzystać z powiązań z `libxml2` przez `LuaXML`. Popularnym podejściem jest użycie biblioteki `lua-gumbo` do przetwarzania HTML, która zapewnia proste w użyciu, zgodne z HTML5 możliwości przetwarzania.
 

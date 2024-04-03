@@ -12,9 +12,6 @@ title: Een tekstbestand lezen
 weight: 22
 ---
 
-## Wat & Waarom?
-Een tekstbestand lezen in Python betekent het ophalen van gegevens uit een bestand dat toegankelijk is op je schijf of over een netwerk. Programmeurs lezen bestanden om de opgeslagen gegevens (zoals configuraties, gebruikersinvoer, logs, enz.) binnen hun applicaties te gebruiken.
-
 ## Hoe:
 ```python
 # Het hele bestand in één keer lezen

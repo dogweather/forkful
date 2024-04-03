@@ -11,9 +11,6 @@ title: Jobbe med TOML
 weight: 39
 ---
 
-## Hva og hvorfor?
-TOML (Toms Åpenbare, Minimale Språk) er et data serialiseringsformat som er lett å lese på grunn av sin klare semantikk. Programmerere bruker TOML for konfigurasjonsfiler fordi det gir en balanse mellom menneskelig lesbarhet og maskinens tolkbarhet.
-
 ## Hvordan:
 For å arbeide med TOML i C++, trenger du et bibliotek som `toml++`. Her er en rask start:
 

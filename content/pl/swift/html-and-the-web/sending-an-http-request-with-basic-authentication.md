@@ -12,9 +12,6 @@ title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---
 
-## What & Why? (Co i dlaczego?)
-Wysłanie żądania HTTP z podstawowym uwierzytelnieniem to proces dodania nagłówka uwierzytelniającego do żądania HTTP. Programiści to robią, by uzyskać dostęp do zasobów wymagających potwierdzenia tożsamości.
-
 ## How to: (Jak to zrobić:)
 ```Swift
 import Foundation

@@ -15,12 +15,7 @@ title: "Ghi L\u1EA1i"
 weight: 17
 ---
 
-## Gì & Tại Sao?
-
-Ghi nhật ký trong Dart ám chỉ quá trình ghi lại các mức độ thông tin khác nhau trong quá trình thực thi của một chương trình. Lập trình viên thực hiện điều này để theo dõi hành vi phần mềm, gỡ lỗi và phân tích hiệu suất, giúp việc bảo trì và cải thiện ứng dụng theo thời gian trở nên dễ dàng hơn.
-
 ## Làm thế nào:
-
 Dart bao gồm một cơ chế ghi nhật ký đơn giản thông qua thư viện `dart:developer`. Đối với nhu cầu ghi nhật ký phức tạp hơn, lập trình viên thường chuyển sang sử dụng các thư viện của bên thứ ba như `logger` và `log4dart`.
 
 ### Sử dụng `dart:developer`

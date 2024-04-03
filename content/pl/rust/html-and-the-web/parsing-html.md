@@ -14,12 +14,7 @@ title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---
 
-## Co i dlaczego?
-
-Parsowanie HTML w Rust polega na wydobywaniu danych z dokumentów HTML, co jest kluczowe dla web scrapingu, ekstrakcji danych lub budowania web crawlerów. Programiści robią to, aby automatyzować zbieranie informacji z sieci, analizować zawartość webową lub migrować zawartość z jednej platformy na inną.
-
 ## Jak to zrobić:
-
 Aby parsować HTML w Rust, często używa się pakietu `scraper`, który dostarcza wysokopoziomowy interfejs do przeglądania i manipulowania dokumentami HTML.
 
 Najpierw dodaj `scraper` do swojego `Cargo.toml`:

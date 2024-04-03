@@ -10,9 +10,6 @@ title: Scaricare una pagina web
 weight: 42
 ---
 
-## What & Why?
-Scaricare una pagina web significa prelevare tutti i dati che la compongono dalla rete per salvarla localmente. I programmatori fanno ciò per analizzare contenuti, testare la presenza online o automatizzare interazioni con siti web.
-
 ## How to:
 Per scaricare una pagina web con Bash, si può usare `curl` o `wget`. Ecco alcuni esempi:
 

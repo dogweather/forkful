@@ -13,9 +13,6 @@ title: Den aktuellen Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-Das Abrufen des aktuellen Datums in TypeScript, einer auf JavaScript aufbauenden Sprache, ermöglicht den Zugriff auf und die Manipulation von aktuellen Datums- und Zeitinformationen. Programmierer benötigen diese Funktionalität oft, um Zeitstempel zu erstellen, Planungen vorzunehmen und andere zeitkritische Funktionen in ihren Anwendungen zu implementieren.
-
 ## Wie geht das:
 In TypeScript können Sie das `Date`-Objekt verwenden, um das aktuelle Datum und die aktuelle Zeit zu erhalten. So können Sie das machen:
 

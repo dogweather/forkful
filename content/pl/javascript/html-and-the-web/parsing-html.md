@@ -13,9 +13,6 @@ title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---
 
-## Co i Dlaczego?
-Parsowanie HTML oznacza ekstrakcję danych z dokumentów HTML. Programiści robią to, aby oddziaływać na zawartość sieciową lub ją modyfikować, automatyzować wydobywanie danych lub w celu web scrapingu.
-
 ## Jak to zrobić:
 Parsujmy HTML za pomocą API `DOMParser` w JavaScript.
 

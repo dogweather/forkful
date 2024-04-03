@@ -15,9 +15,6 @@ title: Kontrollera om en katalog existerar
 weight: 20
 ---
 
-## Vad & Varför?
-Att kontrollera om en katalog finns i Fish Shell gör att skript kan ta beslut baserade på närvaron eller frånvaron av katalogstrukturer, vilket möjliggör uppgifter som villkorliga filoperationer, loggning eller miljökonfigurering. Denna teknik är avgörande för att skriva robusta skript som interagerar med filsystemet på ett förutsägbart sätt.
-
 ## Hur gör man:
 Fish Shell använder kommandot `test` för att kontrollera filtyper och egenskaper, inklusive om ett mål är en katalog. Här är ett grundläggande mönster för att kontrollera om en katalog finns:
 

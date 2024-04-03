@@ -14,9 +14,6 @@ title: Trabajando con CSV
 weight: 37
 ---
 
-## ¿Qué y Por Qué?
-Trabajar con CSV (Valores Separados por Comas) en JavaScript implica analizar o generar archivos CSV para ingerir datos tabulares de fuentes externas o exportar datos para su uso en otros programas. Los programadores hacen esto porque permite un intercambio de datos fácil y ligero entre aplicaciones, bases de datos y sistemas donde formatos más complejos como JSON podrían ser excesivos.
-
 ## Cómo:
 JavaScript no tiene funcionalidad incorporada para analizar o convertir a cadena los datos CSV como lo hace con JSON. Sin embargo, puedes gestionar fácilmente los datos CSV usando JavaScript puro para tareas más simples o aprovechando potentes bibliotecas como `PapaParse` para escenarios más complejos.
 

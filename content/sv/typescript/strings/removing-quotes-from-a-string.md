@@ -12,9 +12,6 @@ title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---
 
-## Vad & Varför?
-Att ta bort citattecken från en sträng innebär att man tar bort de omgivande enkla (`'`) eller dubbla (`"`) citattecknen som definierar stränglitteraler i kod. Programmerare gör detta av flera anledningar, såsom att formatera utdata, sanera användarinmatning, eller förbereda strängar för tolkning eller lagring där citaten är onödiga eller kan orsaka fel.
-
 ## Hur man gör:
 Här är din rak-på-sak-guide för att klippa loss de irriterande citattecknen från dina strängar i TypeScript.
 

@@ -13,12 +13,7 @@ title: Bearbeiten von Dateien im Place mit CLI-Einzeilern
 weight: 32
 ---
 
-## Was & Warum?
-
-Dateien direkt im Terminal mit CLI (Command Line Interface)-Einzeilern in Ruby zu bearbeiten, ermöglich es Ihnen, Dateien direkt vom Terminal aus zu modifizieren, ohne sie in einem Editor öffnen, Änderungen vornehmen und sie dann wieder speichern zu müssen. Diese Technik ist unglaublich nützlich für schnelle Modifikationen, Batch-Updates oder das Automatisieren von wiederholenden Aufgaben und spart sowohl Zeit als auch Aufwand.
-
 ## Wie:
-
 Ruby bietet eine unkomplizierte Möglichkeit, Dateien direkt von der Kommandozeile aus zu bearbeiten. Mit Rubys `-i` Schalter können Sie Ruby mitteilen, direkt auf die bereitgestellten Datei(en) zu operieren. Lassen Sie uns mit einigen Beispielen spielen, um zu sehen, wie das im echten Leben funktioniert. Stellen Sie sich vor, Sie haben eine Datei `greetings.txt` mit dem folgenden Inhalt:
 
 ```
@@ -50,7 +45,6 @@ ruby -i.bak -pe "gsub(/Hello/, 'Bye')" greetings.txt
 Jetzt finden Sie neben Ihrer bearbeiteten `greetings.txt` eine `greetings.txt.bak` im selben Verzeichnis vor, die den ursprünglichen Inhalt enthält.
 
 ## Tiefergehend
-
 Die Magie der In-Place-Dateibearbeitung in Ruby ergibt sich aus der Kombination von Perl-ähnlichen Textverarbeitungsmöglichkeiten und der eigenen syntaktischen Eleganz von Ruby. Historisch gesehen war Perl die bevorzugte Sprache für schnelle Einzeiler-Skripte, insbesondere für Textmanipulationen. Ruby hat dieses Paradigma übernommen und ermöglicht leistungsfähige Kommandozeilenskripting-Fähigkeiten.
 
 Alternativen für die In-Place-Bearbeitung gibt es auch in anderen Sprachen, wie Perl selbst und sed, einem Stream-Editor in Unix-Systemen. Jede hat ihre Stärken – Perl ist bekannt für seine Textverarbeitungsmacht, während sed in seiner Einfachheit für Stream-Editing-Aufgaben unübertroffen ist. Jedoch bietet Ruby eine Balance, indem es robuste Textmanipulation mit einer lesbareren und benutzerfreundlicheren Syntax bietet, besonders für diejenigen, die bereits mit Ruby vertraut sind.

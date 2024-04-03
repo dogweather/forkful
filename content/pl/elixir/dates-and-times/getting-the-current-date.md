@@ -16,9 +16,6 @@ title: Pobieranie aktualnej daty
 weight: 29
 ---
 
-## Co i dlaczego?
-Pobieranie bieżącej daty w Elixirze wiąże się z dostępem do informacji o dacie i czasie systemu, co jest częstym zadaniem przy logowaniu, znakowaniu danych lub w dowolnej funkcji, która wymaga wiedzy o bieżącej dacie. Operacja ta jest niezbędna do tworzenia aplikacji świadomych czasu oraz do zadań takich jak generowanie raportów lub znaczników czasu w aplikacji internetowej.
-
 ## Jak to zrobić:
 Standardowa biblioteka Elixira, poprzez moduł `DateTime`, umożliwia pobieranie bieżącej daty i czasu. Ponieważ Elixir działa na maszynie wirtualnej Erlanga (BEAM), wykorzystuje ona leżące u podstaw funkcjonalności Erlanga do operacji czasowych.
 

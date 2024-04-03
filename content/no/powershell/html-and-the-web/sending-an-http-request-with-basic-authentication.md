@@ -11,9 +11,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---
 
-## Hva & Hvorfor?
-En HTTP-forespørsel med grunnleggende autentisering innebærer å sende brukernavn og passord over nett for å verifisere en brukers identitet. Programmerere gjør det for å sikre tilgang til API-er eller webressurser som krever identifikasjon.
-
 ## Hvordan:
 For å gjøre en HTTP-forespørsel med grunnleggende autentisering i PowerShell, bruker du `Invoke-RestMethod` eller `Invoke-WebRequest`. Her er et enkelt eksempel:
 

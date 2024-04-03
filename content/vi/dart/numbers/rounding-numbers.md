@@ -17,35 +17,26 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Làm thế nào & Tại sao?
-
-Làm tròn số là quá trình điều chỉnh một số để gần nhất với số nguyên hoặc đến một số lượng chữ số thập phân được chỉ định. Lập trình viên thường làm tròn số để đơn giản hóa các tính toán, cải thiện khả năng đọc hoặc chuẩn bị dữ liệu cho việc hiển thị, đảm bảo tính nhất quán và rõ ràng trong kết quả số học.
-
 ## Cách thực hiện:
-
 Dart cung cấp các phương thức bản địa trong kiểu `num` của nó cho các thao tác làm tròn. Tại đây, chúng ta sẽ khám phá các phương thức như `round()`, `floor()`, `ceil()`, và cách làm tròn đến một số lượng chữ số thập phân nhất định.
 
 ### Làm tròn đến số nguyên gần nhất:
-
 ```dart
 var number = 3.56;
 print(number.round()); // Đầu ra: 4
 ```
 
 ### Làm tròn xuống:
-
 ```dart
 print(number.floor()); // Đầu ra: 3
 ```
 
 ### Làm tròn lên:
-
 ```dart
 print(number.ceil()); // Đầu ra: 4
 ```
 
 ### Làm tròn đến một số lượng chữ số thập phân nhất định:
-
 Để làm tròn đến một số lượng chữ số thập phân nhất định, chúng ta có thể sử dụng phương thức `toStringAsFixed()`, phương thức này trả về một chuỗi, hoặc sử dụng sự kết hợp của `pow` từ `dart:math` để có kết quả số.
 
 ```dart

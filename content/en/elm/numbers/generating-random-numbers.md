@@ -14,9 +14,6 @@ title: Generating random numbers
 weight: 12
 ---
 
-## What & Why?
-Generating random numbers in Elm involves using the `Random` module to produce pseudo-random numbers, which come in handy for a variety of tasks such as games, simulations, and even as part of algorithms that require stochastic processes. This capability allows developers to add unpredictability and variety to their applications, enhancing user experience and functionality.
-
 ## How to:
 Elm's pure functional nature means that you can't generate random numbers directly as you might in imperative languages. Instead, you use the `Random` module in conjunction with commands. Here's a basic example that generates a random integer between 1 and 100.
 

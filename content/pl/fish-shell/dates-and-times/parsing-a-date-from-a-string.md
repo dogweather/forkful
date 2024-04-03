@@ -14,9 +14,6 @@ title: "Analiza sk\u0142adniowa daty z \u0142a\u0144cucha znak\xF3w"
 weight: 30
 ---
 
-## Co i dlaczego?
-Parsowanie daty ze stringa polega na ekstrahowaniu informacji o dacie zakodowanej w ciągach znaków i konwersji jej na strukturyzowany format, który środowiska programistyczne mogą rozpoznawać i manipulować. Programiści robią to, aby umożliwić operacje takie jak porównywanie dat, arytmetykę, formatowanie i lokalizację, które są niezbędne do efektywnego obsługiwania planowania, znaczników czasu i danych historycznych w oprogramowaniu.
-
 ## Jak to zrobić:
 W Fish Shell nie masz wbudowanych poleceń specjalnie zaprojektowanych do parsowania dat z ciągów znaków. Zamiast tego, polegasz na zewnętrznych narzędziach takich jak `date` (dostępne w Linux i macOS) lub wykorzystujesz popularne narzędzia stron trzecich takie jak `GNU date` do bardziej skomplikowanego parsowania. Oto jak się za to zabrać:
 

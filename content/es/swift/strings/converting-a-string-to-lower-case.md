@@ -10,9 +10,6 @@ title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---
 
-## ¿Qué y Por Qué?
-Convertir una cadena de texto (string) a minúsculas significa transformar todos los caracteres alfabéticos en su versión en minúscula. Los programadores hacen esto para homogeneizar datos, simplificar comparaciones de texto y mejorar la consistencia en operaciones de búsqueda y entrada de datos.
-
 ## Cómo hacerlo:
 Swift hace que pasar a minúsculas sea pan comido con el método `lowercased()`. Aquí tienes un ejemplo:
 

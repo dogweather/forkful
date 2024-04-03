@@ -11,9 +11,6 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-Handling errors in Swift means anticipating and responding to problems that pop up when your code runs. We do it to control the chaos—keeping apps from crashing and giving the user a smooth experience.
-
 ## How to:
 Swift uses error handling with `do`, `try`, and `catch` blocks. Let’s take a look:
 

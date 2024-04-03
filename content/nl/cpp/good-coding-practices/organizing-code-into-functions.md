@@ -12,9 +12,6 @@ title: Code organiseren in functies
 weight: 18
 ---
 
-## Wat & Waarom?
-Code opsplitsen in functies betekent het verdelen van je code in kleinere, herbruikbare stukken. We doen dit om herhaling te voorkomen, onze code leesbaar te maken en het debuggen en testen te vereenvoudigen. Goed georganiseerde functies kunnen zijn als het hebben van een doos met netjes gelabelde gereedschappen, klaar voor gebruik en om te delen.
-
 ## Hoe te:
 Laten we een veelvoorkomende taak nemen: het berekenen van de oppervlakte van een cirkel. In plaats van elke keer dezelfde formule te schrijven, encapsuleren we deze in een functie.
 

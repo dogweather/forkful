@@ -14,12 +14,7 @@ title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---
 
-## Was & Warum?
-
-Das Überprüfen, ob ein Verzeichnis in C existiert, beinhaltet die Abfrage des Dateisystems, um zu verifizieren, ob ein spezifischer Pfad zu einem Verzeichnis führt. Programmierer führen diese Operation oft durch, um sicherzustellen, dass Dateioperationen (wie Lesen von oder Schreiben in Dateien) auf gültige Pfade gerichtet sind, um Fehler zu verhindern und die Softwarezuverlässigkeit zu erhöhen.
-
 ## Wie:
-
 In C kann die Existenz eines Verzeichnisses mit der `stat` Funktion überprüft werden, welche Informationen über die Datei oder das Verzeichnis an einem bestimmten Pfad abruft. Das `S_ISDIR` Makro von `sys/stat.h` wird dann verwendet, um zu bewerten, ob die abgerufenen Informationen einem Verzeichnis entsprechen.
 
 So können Sie `stat` und `S_ISDIR` verwenden, um zu überprüfen, ob ein Verzeichnis existiert:
@@ -59,7 +54,6 @@ Das Verzeichnis existiert nicht.
 ```
 
 ## Vertiefung:
-
 Die `stat` Struktur und Funktion sind seit Jahrzehnten Teil der C-Programmiersprache und stammen aus Unix. Sie bieten eine standardisierte Methode, um Informationen des Dateisystems abzurufen, welche, obwohl sie relativ niedriges Niveau sind, aufgrund ihrer Einfachheit und des direkten Zugriffs auf die Metadaten des Dateisystems weit verbreitet verwendet werden.
 
 Historisch gesehen war das Überprüfen der Existenz und Eigenschaften von Dateien und Verzeichnissen mit `stat` und dessen Derivaten (wie `fstat` und `lstat`) ein üblicher Ansatz. Allerdings interagieren diese Funktionen direkt mit dem Betriebssystem-Kernel, was Overhead und potenzielle Fehler verursachen kann, wenn sie nicht korrekt gehandhabt werden.

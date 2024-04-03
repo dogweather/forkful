@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---
 
-## What & Why? - Mitä ja Miksi?
-Lähettäessämme HTTP-pyynnön perusautentikaation kera, liitämme käyttäjän tunnistetiedot pyyntöömme. Ohjelmoijat tekevät tämän turvatakseen pääsyn suojattuihin resursseihin, kuten APIihin tai verkkopalveluihin.
-
 ## How to - Kuinka tehdä:
 ```C#
 using System;

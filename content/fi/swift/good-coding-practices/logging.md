@@ -12,9 +12,6 @@ title: Lokitus
 weight: 17
 ---
 
-## Mikä & Miksi?
-Lokitus on sovellusten toimintaa, virheitä ja muita tärkeitä tietoja tallentavan prosessin kirjaamista pysyvään muotoon, kuten tiedostoon tai tietokantaan. Ohjelmoijat tekevät tätä tarkkaillakseen sovelluksiensa terveyttä ja suorituskykyä, selvittääkseen ongelmia ja pitääkseen silmällä, mitä tuotantoympäristön konepellin alla tapahtuu.
-
 ## Kuinka:
 Swiftissä voit kirjoittaa lokeja konsoliin print-lauseilla tai joustavammalla `os.log`-rajapinnalla, joka kytkeytyy Applen alustoilla käytettävään yhdistettyyn lokitusjärjestelmään (Unified Logging System).
 

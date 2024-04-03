@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Cái gì & Tại sao?
-XML (eXtensible Markup Language) chuyên về việc cấu trúc hóa dữ liệu theo một định dạng dễ đọc. Các lập trình viên sử dụng XML cho cấu hình, trao đổi dữ liệu giữa các ứng dụng, và trong các yêu cầu kỹ thuật—hãy nghĩ đến SOAP hoặc web APIs.
-
 ## Làm thế nào:
 ```C#
 using System;

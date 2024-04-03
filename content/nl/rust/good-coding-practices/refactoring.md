@@ -12,12 +12,7 @@ title: Refactoring
 weight: 19
 ---
 
-## Wat & Waarom?
-
-Refactoren is het proces van het herstructureren van bestaande computercode - het veranderen van de factoring - zonder de externe gedrag ervan te wijzigen. Programmeurs doen dit om niet-functionele attributen van de software te verbeteren, zoals leesbaarheid, verminderde complexiteit, verbeterde onderhoudbaarheid en het creëren van een meer expressieve interne architectuur of objectmodel om de uitbreidbaarheid te verbeteren.
-
 ## Hoe:
-
 Laten we een eenvoudig stukje Rust-code refactoren om het meer idiomatisch en onderhoudbaar te maken. We beginnen met een functie die de som berekent van een vector van integers:
 
 ```rust
@@ -56,7 +51,6 @@ fn main() {
 Geen verandering in output - het is nog steeds `15` - maar de gerefactoreerde versie is schoner en gebruikt de sterke punten van Rust zoals lenen en iterator methoden.
 
 ## Diepgaand onderzoek
-
 Refactoren heeft zijn wortels in de Smalltalk-gemeenschap en werd populair gemaakt in de Java-wereld door Martin Fowlers boek "Refactoring: Improving the Design of Existing Code". De principes zijn universeel en gelden ook voor Rust, waar veiligheid en gelijktijdigheid van het grootste belang zijn. Rust moedigt het schrijven van robuuste code aan door problemen tijdens de compilatietijd te vangen, dus tijdens het refactoren fungeert de Rust-compiler als een veiligheidsnet.
 
 Alternatieven voor handmatig refactoren omvatten het gebruik van geautomatiseerde hulpmiddelen, zoals 'rustfmt' voor code-opmaak en 'clippy' voor linting, die meer idiomatische manieren van coderen kunnen suggereren. Echter, diepgaand refactoren vereist vaak een doordacht begrip van het ontwerp van de code, wat deze tools niet volledig kunnen automatiseren.
@@ -64,7 +58,6 @@ Alternatieven voor handmatig refactoren omvatten het gebruik van geautomatiseerd
 In Rust kan refactoren draaien rond het verbeteren van het gebruik van typen, effectief gebruikmaken van levensduur, het verminderen van onnodige toewijzingen, of het toepassen van gelijktijdigheidspatronen zoals het gebruik van `Arc<Mutex<T>>` wanneer nodig. Het is ook gebruikelijk om over te gaan van `unwrap()` naar expressievere foutafhandeling met `Result<T, E>`.
 
 ## Zie ook
-
 Om verder te duiken in refactoren in Rust:
 
 - Het Rust Boek: https://doc.rust-lang.org/book/

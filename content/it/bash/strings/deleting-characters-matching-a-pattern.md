@@ -10,9 +10,6 @@ title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---
 
-## What & Why?
-Cancellare caratteri seguendo un pattern significa rimuovere selettivamente parti di una stringa che corrispondono a un criterio specifico. I programmatori lo fanno per pulire i dati, per estrarre informazioni rilevanti o per preparare stringhe per ulteriori elaborazioni.
-
 ## How to:
 Ecco degli esempi su come cancellare caratteri in un pattern utilizzando Bash:
 

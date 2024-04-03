@@ -12,9 +12,6 @@ title: Registro de Logs
 weight: 17
 ---
 
-## O Quê e Por Quê?
-O log, em resumo, é como manter um diário para sua aplicação — ele registra eventos, erros e outras ações significativas que ocorrem enquanto o software está em execução. Os programadores o fazem não apenas para compreender o que está acontecendo por trás dos bastidores em tempo real, mas também para ter um registro histórico que é crucial para depuração, auditoria e otimização de desempenho.
-
 ## Como Fazer:
 Por padrão, o JavaScript oferece uma maneira simples de registrar mensagens no console:
 

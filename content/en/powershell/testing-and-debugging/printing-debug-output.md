@@ -10,12 +10,7 @@ title: Printing debug output
 weight: 33
 ---
 
-## What & Why?
-
-Printing debug output is like having a conversation with your code. It's about inserting print statements to show what's going on under the hood of your program. Programmers do it to check on variables, the flow of execution, and to understand why stuff might be going awry.
-
 ## How to:
-
 Let's keep it simple and actually do something. We'll show the value of a variable, how a loop is progressing, and capture the pesky error that might pop up.
 
 ```PowerShell
@@ -49,7 +44,6 @@ Oops: Cannot find path 'C:\NonExistent\File.txt' because it does not exist.
 ```
 
 ## Deep Dive
-
 Back in the ancient days of computing, debugging often meant literal physical bugs messing with the hardware. We've come a long way since then, now using the term "bug" for code problems, and "debugging" for fixing them.
 
 The `Write-Host` cmdlet is the PowerShell buddy for printing to the screen, which is fine for basic scripts. But there are cooler ways to do it: `Write-Verbose`, `Write-Debug`, `Write-Output`, and `Write-Information` are like different flavors of output for various use cases. They give you controlled verbosity, which is awesome when you need to silence your script or log stuff without spamming the console.
@@ -57,5 +51,4 @@ The `Write-Host` cmdlet is the PowerShell buddy for printing to the screen, whic
 When it comes to implementation, PowerShell's error handling is particularly swanky. You can catch different types of exceptions with `try`, `catch`, `finally` blocks and decide how to react. It's like a choose-your-own-adventure for error management.
 
 ## See Also
-
 - [About Try, Catch, Finally](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-exceptions?view=powershell-7.1)

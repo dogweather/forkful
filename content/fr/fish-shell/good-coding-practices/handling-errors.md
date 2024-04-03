@@ -11,9 +11,6 @@ title: Gestion des erreurs
 weight: 16
 ---
 
-## Quoi & Pourquoi ?
-La gestion des erreurs permet à votre script de faire face de manière élégante à l'inattendu. Nous le faisons pour gérer les échecs sans donner des cheveux gris à nos utilisateurs.
-
 ## Comment faire :
 Pour capturer les erreurs dans Fish, appuyez-vous sur la commande `status` et les conditionnels. Disons que la commande `ping` échoue ; voici comment détecter cela :
 

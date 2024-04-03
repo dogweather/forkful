@@ -11,10 +11,7 @@ title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-L'interpolation de chaînes permet d'insérer des valeurs de variables dans du texte. Les développeurs l'utilisent pour rendre le code plus lisible et dynamique.
-
-## How to (Comment faire :) 
+## How to (Comment faire :)
 Interpoler une chaîne en JavaScript est simple avec les littéraux de gabarits (template literals). Voici comment:
 
 ```Javascript

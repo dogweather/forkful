@@ -10,9 +10,6 @@ title: Trovare la lunghezza di una stringa
 weight: 7
 ---
 
-## What & Why?
-Sapere la lunghezza di una stringa significa contarne i caratteri. Lo facciamo per verificare input dell'utente, per manipolare testo o semplicemente per controlli di validazione.
-
 ## How to:
 Per trovare la lunghezza di una stringa in Bash, usiamo `${#string}`. Guarda:
 

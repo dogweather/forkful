@@ -10,9 +10,6 @@ title: Working with complex numbers
 weight: 14
 ---
 
-## What & Why?
-Complex numbers are a set of numbers of the form `a + bi`, where `a` and `b` are real numbers, and `i` is the imaginary unit (`i^2 = -1`). In programming, we use them to solve problems in various domains, like electrical engineering, signal processing, and quantum computing.
-
 ## How to:
 Python has built-in support for complex numbers. Here's how you can play with them:
 

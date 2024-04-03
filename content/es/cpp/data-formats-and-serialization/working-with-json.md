@@ -13,18 +13,12 @@ title: Trabajando con JSON
 weight: 38
 ---
 
-## ¿Qué y por qué?
-
-JSON (JavaScript Object Notation) es un formato ligero para almacenar y transportar datos, lo que lo convierte en un excelente medio para el intercambio de datos entre servidores y aplicaciones web. Los programadores usan JSON debido a su fácil legibilidad por humanos y sencilla interpretabilidad por máquinas, especialmente cuando se trabaja en aplicaciones que requieren intercambio de datos a través de internet o configuraciones.
-
 ## Cómo hacerlo:
-
 En C++, no hay soporte nativo para JSON, pero bibliotecas de terceros como nlohmann/json hacen que sea directo. Aquí te mostramos cómo usarlo para tareas básicas:
 
 Primero, asegúrate de tener instalada la biblioteca. Si usas un gestor de paquetes como vcpkg o Conan, puedes agregar fácilmente `nlohmann/json` a tu proyecto.
 
 ### Analizando JSON de un string
-
 ```cpp
 #include <iostream>
 #include <nlohmann/json.hpp>
@@ -54,7 +48,6 @@ Ciudad: New York
 ```
 
 ### Generando JSON
-
 Crear datos JSON es igual de sencillo; simplemente asignas valores a un objeto `nlohmann::json`.
 
 ```cpp

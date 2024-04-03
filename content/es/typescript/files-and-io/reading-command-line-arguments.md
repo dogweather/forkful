@@ -9,12 +9,7 @@ title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---
 
-## Qué y Por Qué?
-
-Leer argumentos de la línea de comandos permite a tus programas en Node.js recibir datos externos al iniciarse, dándote flexibilidad para distintos escenarios. Los programadores utilizan esto para personalizar la ejecución de scripts sin cambiar el código.
-
 ## Cómo:
-
 ```typescript
 // Dependencias
 import process from 'process';
@@ -40,7 +35,6 @@ Argumentos recibidos:
 ```
 
 ## Análisis Profundo:
-
 Los argumentos de la línea de comandos son una tradición de la vieja escuela, cuando los terminales eran la principal interfaz de usuario. En Node.js, `process.argv` es el estándar para acceder a ellos. Otros lenguajes tienen mecanismos similares, como `sys.argv` en Python o `$ARGV` en Perl.
 
 Alternativas modernas para manejar argumentos en Node.js incluyen bibliotecas como yargs o commander, que ofrecen más funcionalidades como parsing inteligente, flags y comandos nombrados.
@@ -48,7 +42,6 @@ Alternativas modernas para manejar argumentos en Node.js incluyen bibliotecas co
 La implementación típica con `process.argv` es directa: es un array donde los dos primeros elementos son la ruta a Node.js y al script, por eso usamos `.slice(2)` para obtener únicamente los argumentos relevantes.
 
 ## Ver También:
-
 - Documentación de Node.js sobre `process.argv`: https://nodejs.org/docs/latest/api/process.html#process_process_argv
 - Biblioteca yargs para manejar argumentos: https://www.npmjs.com/package/yargs
 - Biblioteca commander para crear interfaces de línea de comandos: https://www.npmjs.com/package/commander

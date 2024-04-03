@@ -11,9 +11,6 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## What & Why?
-Extraire des sous-chaînes, c'est prendre des petits bouts de texte d'une chaîne plus grande. On fait ça pour manipuler, chercher ou analyser uniquement les parties qui nous intéressent.
-
 ## How to:
 En Lua, pour extraire des sous-chaînes, on utilise `string.sub`. Voici comment ça marche :
 

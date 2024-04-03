@@ -17,12 +17,7 @@ title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---
 
-## Cái gì & Tại sao?
-
-Việc chuyển đổi ngày tháng thành chuỗi là một nhiệm vụ cơ bản giúp các lập trình viên có thể thao tác và hiển thị thông tin ngày tháng dưới dạng có thể đọc được bởi con người. Điều này rất quan trọng để tạo giao diện người dùng, tạo báo cáo, hoặc ghi thông tin trong các ứng dụng được phát triển với Google Apps Script.
-
 ## Làm thế nào:
-
 Google Apps Script, dựa vào JavaScript, cho phép sử dụng nhiều phương pháp khác nhau để thực hiện việc chuyển đổi ngày tháng thành chuỗi. Dưới đây là một số ví dụ minh họa các cách tiếp cận khác nhau:
 
 ### Sử dụng Phương thức `toString()`:
@@ -56,7 +51,6 @@ Logger.log(formattedDate); // Đầu ra: "2023-04-05"
 Phương pháp này rất mạnh mẽ để tạo ra các ngày tháng theo định dạng phù hợp với đặc thù địa phương hoặc yêu cầu cụ thể của ứng dụng.
 
 ## Tìm hiểu sâu
-
 Nhu cầu chuyển đổi ngày tháng thành chuỗi không chỉ riêng có ở Google Apps Script; nó phổ biến trên tất cả các ngôn ngữ lập trình. Tuy nhiên, cách tiếp cận của Google Apps Script, kế thừa từ JavaScript, cung cấp một bộ tùy chọn linh hoạt dành cho lập trình dựa trên web. `Utilities.formatDate()` nổi bật bằng cách nhận biết những phức tạp khi làm việc với các múi giờ - một thách thức thường bị bỏ qua.
 
 Trong lịch sử, việc xử lý ngày tháng và thời gian đã là nguồn gốc của nhiều lỗi và sự phức tạp trong phát triển phần mềm, chủ yếu do sự khác biệt về các múi giờ và định dạng. Việc giới thiệu `Utilities.formatDate()` trong Google Apps Script là một dấu hiệu cho sự tiêu chuẩn hóa việc xử lý ngày giờ, đặc biệt trong bối cảnh các sản phẩm của Google được sử dụng toàn cầu.

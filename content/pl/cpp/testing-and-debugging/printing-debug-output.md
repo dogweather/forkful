@@ -10,9 +10,6 @@ title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---
 
-## Co i dlaczego?
-Drukowanie informacji debug jest jak dziennik programisty. Pomaga śledzić co się dzieje w kodzie — kiedy, gdzie i dlaczego. Programiści używają tej techniki, żeby szybko wykrywać błędy i monitorować zachowanie aplikacji.
-
 ## Jak to zrobić:
 ```C++
 #include <iostream>

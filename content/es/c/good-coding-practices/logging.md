@@ -14,12 +14,7 @@ title: Registro
 weight: 17
 ---
 
-## ¿Qué y Por Qué?
-
-El registro de actividades en C implica grabar el flujo y los eventos notables de un programa durante su tiempo de ejecución, proporcionando una revisión tangible de su comportamiento y rendimiento. Los programadores utilizan el registro para fines de depuración, monitoreo de la salud del software y aseguramiento de la seguridad del sistema.
-
 ## Cómo hacerlo:
-
 En C, el registro se puede lograr con operaciones básicas de archivos o usando bibliotecas más sofisticadas. Por simplicidad, empezaremos con la biblioteca estándar de E/S. Los siguientes fragmentos muestran implementaciones básicas de registro.
 
 Para registrar mensajes simples:
@@ -95,7 +90,6 @@ Salida en `detailed.log`:
 ```
 
 ## Análisis Profundo
-
 El registro en C, como se demostró, se basa en operaciones simples de archivos, lo cual es efectivo pero no tan poderoso ni flexible como las instalaciones de registro en otros idiomas, como el módulo `logging` de Python o `Log4j` de Java. Para capacidades de registro más avanzadas en C, los desarrolladores a menudo recurren a bibliotecas como `syslog` en sistemas similares a Unix, que proporciona gestión de registro a nivel de sistema, o bibliotecas de terceros como `log4c`.
 
 Históricamente, el registro ha sido una parte integral de la programación, remontándose a prácticas de programación tempranas donde el seguimiento y la comprensión del flujo del programa y los errores se realizaban principalmente a través de impresiones físicas. A medida que los sistemas evolucionaron, el registro se volvió más sofisticado, ahora admitiendo varios niveles de gravedad, rotación de registros y registro asincrónico.

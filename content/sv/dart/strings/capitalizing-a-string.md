@@ -14,14 +14,10 @@ title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---
 
-## Vad & Varför?
-
-Att göra första bokstaven i ett ord eller en hel mening till versal innebär att man ändrar den första bokstaven till stor bokstav, medan resten av tecknen behålls som de är. Programmerare använder ofta denna teknik för att formatera användarinmatningar eller visa text för att säkerställa konsekvens eller följa grammatiska regler i användargränssnitt.
-
 ## Hur man gör:
 
-### Använda Dart:s inbyggda metoder
 
+### Använda Dart:s inbyggda metoder
 Dart erbjuder enkla, raka metoder för strängmanipulation. För att göra ett ord eller en mening med stor begynnelsebokstav skulle du typiskt ta det första tecknet, omvandla det till versal och sedan sammanfoga det med resten av strängen. Så här kan du implementera det:
 
 ```dart
@@ -37,7 +33,6 @@ void main() {
 ```
 
 ### Göra första bokstaven stor i varje ord
-
 För att göra första bokstaven i varje ord i en sträng stor, skulle du kunna dela strängen i ord, göra varje ett stort, och sedan sätta ihop dem igen:
 
 ```dart
@@ -52,7 +47,6 @@ void main() {
 ```
 
 ### Använda tredjepartbibliotek
-
 Även om Darts standardbibliotek täcker grundläggande behov, kan vissa uppgifter vara mer bekvämt utförda med hjälp av tredjeparts paket. Ett populärt val för utökade strängmanipuleringsmöjligheter, inklusive att göra början av ord stort, är paketet [`recase`](https://pub.dev/packages/recase). Efter att ha lagt till det i ditt projekts `pubspec.yaml`, kan du enkelt göra strängar stora bland andra funktionaliteter:
 
 ```dart

@@ -10,9 +10,6 @@ title: Att organisera kod i funktioner
 weight: 18
 ---
 
-## Vad & Varför?
-Dumpa all din kod i en stor hög? Dålig idé. Bryt upp den i funktioner? Bra idé. Det håller din Elm-kod ren, återanvändbar och lättare att testa. Genom att organisera din kod i funktioner grupperar du kod som utför specifika uppgifter tillsammans, vilket gör din applikation mer underhållbar och förståelig.
-
 ## Hur man gör:
 Här är en bit Elm-kod med en enkel funktion för att hälsa på en användare:
 

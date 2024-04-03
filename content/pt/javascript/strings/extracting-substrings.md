@@ -11,9 +11,6 @@ title: Extraindo substrings
 weight: 6
 ---
 
-## O Que e Por Quê?
-Extrair substrings é pegar partes específicas de uma string, tipo cortar só um pedaço do texto. Programadores fazem isso para manipular e usar informações de formas bem específicas, como validar dados ou formatar saídas.
-
 ## Como Fazer:
 ```javascript
 let texto = "Olá, programadores!";

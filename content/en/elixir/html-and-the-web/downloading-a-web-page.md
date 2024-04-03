@@ -10,9 +10,6 @@ title: Downloading a web page
 weight: 42
 ---
 
-## What & Why?
-Downloading a web page means fetching its contents over the internet—essentially, what your browser does. Programmers do this to automate data extraction, testing, or to interact with web services without a GUI.
-
 ## How to:
 Elixir, with its powerful HTTP client libraries, makes this task a breeze. Here’s how with `HTTPoison`:
 

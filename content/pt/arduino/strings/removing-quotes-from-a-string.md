@@ -10,9 +10,6 @@ title: Removendo aspas de uma string
 weight: 9
 ---
 
-## O Que & Por Quê?
-Remover aspas de uma string significa eliminar todas as instâncias de caracteres de aspas simples (`'`) ou duplas (`"`) que envolvem o texto. Programadores frequentemente fazem isso para higienizar a entrada, preparar strings para comparação ou processar dados de texto que podem acidentalmente incluir aspas como parte do conteúdo da string.
-
 ## Como Fazer:
 Para remover aspas de uma string no Arduino, você pode iterar sobre os caracteres e reconstruir a string sem os caracteres de aspas. Por exemplo:
 

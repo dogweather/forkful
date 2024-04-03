@@ -14,12 +14,7 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i dlaczego?
-
-Sprawdzanie, czy katalog istnieje w języku Dart, polega na weryfikacji obecności katalogu pod określoną ścieżką w systemie plików przed wykonaniem operacji takich jak odczyt lub zapis plików. Programiści robią to, aby uniknąć błędów, które występują podczas próby dostępu lub modyfikacji katalogów, które nie istnieją.
-
 ## Jak to zrobić:
-
 Dart używa biblioteki `dart:io` do pracy z plikami i katalogami. Oto prosty sposób, aby sprawdzić, czy katalog istnieje:
 
 ```dart

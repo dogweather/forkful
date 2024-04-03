@@ -12,9 +12,6 @@ title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---
 
-## Was & Warum?
-Ein Read-Eval-Print-Loop (REPL) ist eine Programmierumgebung, die einzelne Benutzereingaben annimmt, ausführt und das Ergebnis an den Benutzer zurückgibt. Programmierer verwenden ein REPL, um schnell mit Code-Snippets zu experimentieren, Fehler zu suchen und neue Sprachfunktionen ohne den Overhead der Erstellung einer vollständigen Anwendung zu lernen.
-
 ## Wie:
 TypeScript kommt nicht mit einem eigenen REPL. Lassen Sie uns `ts-node` verwenden, eine TypeScript-Ausführungsumgebung für Node.js, die ein REPL enthält.
 

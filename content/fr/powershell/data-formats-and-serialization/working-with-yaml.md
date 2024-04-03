@@ -13,9 +13,6 @@ title: Travailler avec YAML
 weight: 41
 ---
 
-## Quoi et Pourquoi ?
-YAML, ou "YAML Ain't Markup Language" (YAML n'est pas un langage de balisage), est un langage de sérialisation de données lisible par l'humain. Les programmeurs l'utilisent souvent pour les fichiers de configuration et la transmission de données entre langages. Sa simplicité et sa lisibilité le rendent particulièrement populaire pour des tâches impliquant la configuration d'environnements, d'applications ou de services où les configurations sont cruciales et doivent être facilement comprises et modifiées.
-
 ## Comment faire :
 PowerShell, par défaut, ne vient pas avec un cmdlet intégré pour l'analyse de YAML, mais il fonctionne de manière transparente avec YAML lorsque vous tirez parti du module `powershell-yaml` ou convertissez du YAML en un objet PowerShell en utilisant `ConvertFrom-Json` en combinaison avec un outil comme `yq`.
 

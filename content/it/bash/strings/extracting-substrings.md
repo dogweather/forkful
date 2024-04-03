@@ -9,9 +9,6 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## Cosa & Perché?
-Estrarre sottostringhe vuol dire prendere parti specifiche da una stringa. I programmatori lo fanno per manipolare e analizzare i dati, o per personalizzare l'output.
-
 ## Come fare:
 Ecco alcuni esempi:
 

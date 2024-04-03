@@ -12,9 +12,6 @@ title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Envoyer une requête HTTP permet à votre application de communiquer avec le monde extérieur : récupérer des données, interagir avec des API, etc. Les programmeurs utilisent ça pour accéder à des ressources web et pour intégrer des fonctionnalités externe.
-
 ## How to: (Comment faire : )
 Pour envoyer une requête HTTP en Elixir, on utilise souvent la bibliothèque HTTPoison. Assurez-vous de l'avoir ajoutée à votre `mix.exs`.
 

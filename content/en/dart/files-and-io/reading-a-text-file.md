@@ -10,12 +10,7 @@ title: Reading a text file
 weight: 22
 ---
 
-## What & Why?
-
-Reading a text file in Dart involves accessing and retrieving data from files stored on the file system. Programmers do this to handle input data, configuration settings, or read datasets, making it a fundamental operation for many applications ranging from simple scripts to complex apps.
-
 ## How to:
-
 Dart’s core library, `dart:io`, provides the necessary functionalities to read text files synchronously or asynchronously. Here's how to approach both.
 
 **Synchronously:**

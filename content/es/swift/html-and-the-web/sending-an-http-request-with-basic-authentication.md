@@ -12,9 +12,6 @@ title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---
 
-## ¿Qué y Por Qué?
-Enviando una solicitud HTTP con autenticación básica es simplemente una manera de asegurar que la comunicación entre un cliente y un servidor sea privada. Los programadores lo hacen para proteger la información sensible y verificar la identidad del usuario al conectarse a un servidor.
-
 ## Cómo Hacerlo:
 El siguiente ejemplo en Swift muestra cómo enviar una solicitud con autenticación básica utilizando URLSession:
 

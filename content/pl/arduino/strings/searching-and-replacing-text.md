@@ -10,9 +10,6 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## What & Why? (Co i Dlaczego?)
-Szukanie i zamiana tekstu to zamiana jednego ciągu znaków na inny. Programiści wykorzystują tę technikę, by automatycznie korygować błędy, aktualizować dane lub modyfikować kod.
-
 ## How to: (Jak to zrobić?)
 W środowisku Arduino szukanie i zamiana tekstu nie jest funkcją dostępną "od ręki", ale możesz to osiągnąć, używając prostych funkcji. Przykład poniżej pokazuje jak znaleźć i zmienić słowo w Stringu.
 

@@ -11,12 +11,7 @@ title: Generowanie liczb losowych
 weight: 12
 ---
 
-## Co i dlaczego?
-
-Generowanie losowych liczb polega na tworzeniu nieprzewidywalnych sekwencji lub pojedynczych wartości w określonym zakresie. Programiści używają tej techniki z różnych powodów, w tym do symulacji, gier, aplikacji bezpieczeństwa oraz metod próbkowania do testowania algorytmów w różnych warunkach.
-
 ## Jak to zrobić:
-
 W Javie, generowanie losowych liczb można osiągnąć za pomocą klasy `Random` z pakietu `java.util`, lub klas `ThreadLocalRandom` i `SecureRandom` dla specyficznych przypadków użycia. Poniższe przykłady ilustrują, jak używać tych klas.
 
 ### Korzystanie z klasy `Random`
@@ -79,7 +74,6 @@ public class SecureRandomExample {
 ```
 
 ## Pogłębiona analiza
-
 Generowanie losowych liczb znacząco ewoluowało od wczesnych dni komputeryzacji. Klasa `Random` w Javie używa liniowej formuły kongruencyjnej do generowania pseudo-losowych liczb, które są deterministyczne i nie nadają się do aplikacji o wysokim poziomie bezpieczeństwa. To doprowadziło do wprowadzenia `SecureRandom`, które używa bardziej zaawansowanych algorytmów (np. SHA1PRNG) do produkcji kryptograficznie silnych losowych liczb.
 
 Jednakże, `Random` i `SecureRandom` mają swoje wady, takie jak degradacja wydajności w środowiskach wielowątkowych. Klasa `ThreadLocalRandom` została wprowadzona w Javie 7, aby rozwiązać ten problem, oferując generator losowych liczb specyficzny dla wątku, znacząco poprawiający wydajność w aplikacjach współbieżnych.

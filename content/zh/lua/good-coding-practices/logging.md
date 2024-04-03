@@ -19,12 +19,7 @@ title: "\u65E5\u5FD7\u8BB0\u5F55"
 weight: 17
 ---
 
-## 什么是日志记录以及为什么要使用日志记录？
-
-日志记录是在软件应用程序的生命周期中记录事件、错误和其他重要数据点的做法。编程人员利用日志来帮助调试、监控系统健康、分析用户行为，以及为了安全合规目的保持审计跟踪。
-
 ## 如何进行：
-
 Lua没有内置的日志记录框架，但实现一个简单的日志记录功能是直接了当的。以下是这样一个函数的基本示例：
 
 ```lua
@@ -49,7 +44,6 @@ logMessage("ERROR", "文件打开失败。")
 对于更复杂的日志记录需求，可以包含第三方库如LuaLogging来提供额外的功能，例如日志等级、多重处理程序和格式规范。
 
 ## 深入探索
-
 历史上，日志记录一直是软件诊断的重要方面，自编程早期以来就成为了一项既定的实践。日志记录的重要性不可低估，因为它作为系统故障时的“黑匣子”，提供了问题根源的洞察。
 
 虽然上面的示例只满足了最基本的需求，但有许多带有更丰富功能集的替代方案。其中一些包括：
@@ -63,7 +57,6 @@ logMessage("ERROR", "文件打开失败。")
 对于分布式系统中的日志记录，常见的做法是使用集中的日志管理解决方案，如ELK（Elasticsearch，Logstash和Kibana）或Splunk，它们可以聚合多个来源的日志，提供强大的搜索能力，并将数据可视化以便于调试和分析。
 
 ## 另请参阅
-
 - LuaLogging库在GitHub上：https://github.com/lunarmodules/lualogging
 - Elasticsearch、Logstash和Kibana的介绍：https://www.elastic.co/what-is/elk-stack
 - Lua用户Wiki上的日志记录：http://lua-users.org/wiki/LoggingCategory

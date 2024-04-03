@@ -10,10 +10,8 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-Calculating a date in the future or past means figuring out what date it will be after or before a certain time period. Programmers do it to automate reminders, schedule tasks, or handle expiration dates.
-
 ## How to:
+
 
 ### Add days to the current date:
 ```PowerShell

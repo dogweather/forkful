@@ -10,9 +10,6 @@ title: Einen HTTP-Request senden
 weight: 44
 ---
 
-## Was & Warum?
-HTTP-Anfragen senden bedeutet, mit einem Webserver zu kommunizieren – so holt man Daten oder schickt sie. Programmierer nutzen das, um ihre Arduino-Projekte mit dem Internet zu verbinden, damit sie Informationen austauschen können.
-
 ## Wie geht das:
 Mit dem ESP8266/ESP32 und der entsprechenden Bibliothek sieht das so aus:
 

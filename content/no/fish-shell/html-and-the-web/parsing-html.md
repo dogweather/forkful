@@ -13,12 +13,7 @@ title: Analysering av HTML
 weight: 43
 ---
 
-## Hva og hvorfor?
-
-Parsing av HTML handler om å trekke ut data eller informasjon fra HTML-innhold, en vanlig oppgave når man håndterer webdata. Programmerere gjør dette for å automatisere utvinningen av informasjon fra nettsteder, for oppgaver som web scraping, datautvinning, eller automatisert testing.
-
 ## Hvordan:
-
 Fish shell er, fremfor alt, ikke designet for direkte parsing av HTML. Det utmerker seg imidlertid ved å lime sammen Unix-verktøy som `curl`, `grep`, `sed`, `awk`, eller ved å bruke spesialiserte verktøy som `pup` eller `beautifulsoup` i et Python-script. Nedenfor er eksempler som viser hvordan du kan utnytte disse verktøyene innenfor Fish shell for å parse HTML.
 
 ### Bruke `curl` og `grep`:
@@ -36,7 +31,6 @@ Utdata:
 ```
 
 ### Bruke `pup` (et kommandolinjeverktøy for parsing av HTML):
-
 Først, sørg for at `pup` er installert. Deretter kan du bruke det til å trekke ut elementer ved deres tagger, id-er, klasser, osv.
 
 ```fish
@@ -46,7 +40,6 @@ curl -s https://example.com | pup 'a attr{href}'
 Utdata, likt `grep`-eksemplet, ville listet href-attributter til `<a>`-taggene.
 
 ### Med et Python-script og `beautifulsoup`:
-
 Selv om Fish i seg selv ikke kan parse HTML på en naturlig måte, integreres det sømløst med Python-script. Nedenfor er et kort eksempel som bruker Python med `BeautifulSoup` for å parse og trekke ut titler fra HTML. Pass på at du har `beautifulsoup4` og `requests` installert i ditt Python-miljø.
 
 **parse_html.fish**

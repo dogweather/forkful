@@ -24,12 +24,7 @@ title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 weight: 38
 ---
 
-## 是什么 & 为什么？
-
-在 Rust 中处理 JSON（JavaScript 对象表示法）涉及到将 JSON 数据解析为 Rust 数据结构，以及将 Rust 数据结构序列化回 JSON。程序员这样做是为了与网络 API、配置文件或任何使用 JSON 的数据交换格式进行交互，因为其轻量且易于人类阅读的格式。
-
 ## 如何操作：
-
 在 Rust 中处理 JSON，广泛使用 `serde` 创建以及 `serde_json` 来进行序列化和反序列化。首先，确保在你的 `Cargo.toml` 中包含它们：
 
 ```toml
@@ -39,7 +34,6 @@ serde_json = "1.0"
 ```
 
 ### 示例 1：将 JSON 反序列化为 Rust 结构体
-
 定义一个 Rust 结构体，并使用 `Deserialize` 和 `Serialize` 的派生宏：
 
 ```rust
@@ -78,7 +72,6 @@ fn main() {
 ```
 
 ### 示例 2：将 Rust 结构体序列化为 JSON
-
 使用相同的 `User` 结构体：
 
 ```rust

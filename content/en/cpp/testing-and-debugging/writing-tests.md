@@ -11,14 +11,10 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-
-Writing tests in C++ involves creating small, self-contained programs that automatically verify the behavior of sections of your codebase. Programmers do this to ensure that their code works as expected, to prevent regressions (i.e., new changes breaking existing functionality), and to facilitate maintainable codebases over time.
-
 ## How to:
 
-### Using Google Test Framework
 
+### Using Google Test Framework
 One of the most popular third-party libraries for writing tests in C++ is Google Test. First, you'll need to install Google Test and link it with your project. Once set up, you can start writing test cases.
 
 ```cpp
@@ -53,7 +49,6 @@ Save the code in a file, and compile it with the g++ compiler, linking the Googl
 ```
 
 ### Using Catch2
-
 Another popular testing framework for C++ is Catch2. It has a simpler syntax and doesn't usually require linking against a library (header-only). Here's an example of how to write a simple test with Catch2:
 
 ```cpp

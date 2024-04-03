@@ -11,12 +11,7 @@ title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---
 
-## Qué y Por Qué?
-
-Convertir un string a minúsculas significa cambiar todas las letras de mayúsculas a minúsculas. Los programadores hacen esto para normalizar texto, facilitando comparaciones y búsquedas sin diferencias por mayúsculas o minúsculas.
-
 ## Cómo hacerlo:
-
 En Fish Shell, puedes usar `string to-lower` para convertir strings a minúsculas. Aquí tienes un ejemplo sencillo:
 
 ```Fish Shell
@@ -32,7 +27,6 @@ hola, mundo!
 Y es así de simple. Usa el comando en tus scripts o en la línea de comandos para obtener resultados rápidos.
 
 ## Análisis Más Profundo
-
 Históricamente, los shells en sistemas Unix-like han proporcionado distintas herramientas para manipular texto, como `awk`, `sed`, y `tr`. Fish Shell, en su enfoque moderno, trae su propio conjunto de utilidades de cadena sencillas y potentes.
 
 Alternativamente, podrías usar el comando `tr`:
@@ -46,6 +40,5 @@ Sin embargo, `string to-lower` es más legible y específico de Fish, lo que hac
 En cuanto a la implementación, Fish utiliza funciones de la biblioteca C para la conversión de caracteres, asegurando compatibilidad y velocidad.
 
 ## Ver También
-
 - Documentación oficial de Fish Shell sobre cadenas de texto (en inglés): https://fishshell.com/docs/current/cmds/string.html
 - Tutorial de manipulación de texto en Fish Shell (en inglés): https://fishshell.com/docs/current/tutorial.html#tut_strings

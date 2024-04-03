@@ -10,9 +10,6 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Cosa & Perché?
-Arrotondare i numeri significa regolare un valore all'intero più vicino o al punto decimale specificato. I programmatori arrotondano i numeri per semplificare i dati, migliorare la leggibilità o soddisfare determinati requisiti matematici durante i calcoli.
-
 ## Come fare:
 Hai a disposizione alcuni cmdlet e metodi utili in PowerShell per l'arrotondamento:
 

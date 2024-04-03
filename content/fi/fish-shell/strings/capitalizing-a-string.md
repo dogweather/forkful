@@ -14,12 +14,7 @@ title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---
 
-## Mikä & Miksi?
-
-Merkkijonon alkukirjaimen suurentaminen tarkoittaa sen muokkaamista siten, että ensimmäinen kirjain on isolla ja loput merkkijonosta ovat pienellä. Tämä on yleinen tehtävä tekstinkäsittelyssä, käyttäjäsyötteen normalisoinnissa ja datan muotoilussa varmistamaan yhdenmukaisuus tai tiettyjen muotoilukriteerien täyttäminen.
-
 ## Miten:
-
 Fish Shellissä merkkijonoja voidaan käsitellä suoraan sisäänrakennetuilla funktioilla ilman ulkopuolisten työkalujen tai kirjastojen tarvetta. Merkkijonon alkukirjaimen suurentamiseksi voit yhdistää `string`-komennon alikomentoihin.
 
 ```fish

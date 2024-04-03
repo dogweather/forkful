@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---
 
-## What & Why? - Mitä ja miksi?
-HTTP-pyyntö perusautentikoinnilla sisältää käyttäjänimen ja salasanan, joka lähetetään palvelimelle koodattuna. Ohjelmoijat käyttävät tätä autentikoimaan käyttäjiä turvallisesti ennen tietojen välittämistä.
-
 ## How to - Kuinka tehdä:
 ```Kotlin
 import java.net.HttpURLConnection

@@ -11,9 +11,6 @@ title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---
 
-## What & Why? (Mikä ja Miksi?)
-Luodaan väliaikainen tiedosto: se on tilapäinen säilytyspaikka datalle. Käytämme sitä, kun haluamme käsitellä tietoa, jota ei tarvitse säilyttää pysyvästi, tai kun teemme operaatioita, jotka saattavat kaatua, kuten tiedostojen latauksia.
-
 ## How to: (Miten Tehdään:)
 Elmissä ei ole suoraa tapaa luoda väliaikaisia tiedostoja, koska se keskittyy puhtaasti frontend-kehitykseen ja pyörii selainympäristössä, missä pääsy tiedostojärjestelmään on erittäin rajoitettua. Voit kuitenkin manipuloida väliaikaista dataa käyttäen `Web Storage API:a`, johon pääset käsiksi Elm-kielellä.
 

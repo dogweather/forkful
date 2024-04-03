@@ -11,18 +11,12 @@ title: Satunnaislukujen generointi
 weight: 12
 ---
 
-## Mikä ja Miksi?
-
-Satunnaislukujen generointi Haskellissa tarkoittaa ennustamattomien lukujen luomista ihmisten mittapuiden mukaan. Tämä on kriittistä skenaarioissa, jotka vaihtelevat kryptografisista sovelluksista simulaatioihin, joissa sattuman elementtiä tarvitaan mallintamaan todellisen maailman ilmiöitä tarkasti.
-
 ## Kuinka:
-
 Satunnaislukujen generoimiseen Haskellissa käytetään tyypillisesti `random`-pakettia, joka on osa Haskell-alustaa. Tässä vaiheittainen opas:
 
 Varmista ensin, että sinulla on `random`-paketti asennettuna. Jos ei, voit hankkia sen Cabalin tai Stackin kautta.
 
 ### Satunnaisluvun generointi
-
 Yksinkertaisen satunnaisluvun generoimiseen voit käyttää `randomRIO`-funktiota, joka tuottaa satunnaisen arvon määritellyllä välillä.
 
 ```Haskell
@@ -35,7 +29,6 @@ main = do
 ```
 
 ### Satunnaislukujen listan generointi
-
 Satunnaislukujen listan generointi on hieman monimutkaisempaa, mutta edelleen suoraviivaista:
 
 ```Haskell
@@ -57,7 +50,6 @@ main = do
 Tämä koodinpätkä luo funktion `satunnaisLista`, joka generoi listan satunnaisia kokonaislukuja. Korvaa `(1, 100)` haluamallasi välillä.
 
 ## Syväsukellus
-
 Haskellin `random`-paketti tarjoaa pseudo-satunnaislukugeneraattorin (PRNG), mikä tarkoittaa, että generoidut luvut eivät ole todella satunnaisia, mutta voivat vaikuttaa satunnaisilta monissa sovelluksissa. Haskellin satunnaislukujen generoinnin ydin löytyy `RandomGen`-tyyppiluokasta, joka abstrahoi erilaisia tapoja generoida satunnaislukuja, ja `Random`-tyyppiluokasta, joka sisältää tyyppejä, joita voidaan generoida satunnaisesti.
 
 Historiallisesti Haskellin lähestymistapa satunnaislukujen generointiin on korostanut puhtautta ja toistettavuutta. Tämän vuoksi satunnaisuutta sisältävät operaatiot käsitellään eksplisiittisesti `IO`-monadissa tai vaativat manuaalisesti generaattorin tilojen välittämisen ja päivittämisen — ylläpitääkseen referentiaalista läpinäkyvyyttä.

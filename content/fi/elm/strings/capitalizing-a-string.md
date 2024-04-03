@@ -14,12 +14,7 @@ title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---
 
-## Mikä & Miksi?
-
-Merkkijonon alkukirjaimen muuttaminen isoksi muuttaa annetun merkkijonon ensimmäisen merkin isoksi kirjaimeksi samalla, kun loput merkit jätetään pieniksi kirjaimiksi. Tätä tehdään usein standardoidun muotoilun tai luettavuuden vuoksi. Ohjelmoijat suorittavat tätä tehtävää usein varmistaakseen, että data esitetään johdonmukaisesti, erityisesti käyttöliittymissä tai käsiteltäessä ja näytettäessä käyttäjän syötettä.
-
 ## Kuinka:
-
 Elmissä ei ole sisäänrakennettua funktiota merkkijonojen alkukirjaimen suurentamiseen. Voit kuitenkin saavuttaa tämän helposti käyttämällä sisäänrakennettuja `String` moduulin funktioita kuten `toUpper`, `toLower`, `left`, ja `dropLeft`.
 
 ```elm

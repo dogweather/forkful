@@ -11,9 +11,6 @@ title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---
 
-## Vad och varför?
-Ibland behöver du bara en del av en sträng, antingen för att analysera data eller för att manipulera text. Att extrahera substrängar låter dig snoppa av precis det du behöver.
-
 ## Hur man gör:
 ```Fish Shell
 set full_string "Fisk skal är trevligt"

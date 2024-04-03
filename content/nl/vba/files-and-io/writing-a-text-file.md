@@ -13,12 +13,7 @@ title: Een tekstbestand schrijven
 weight: 24
 ---
 
-## Wat & Waarom?
-
-Een tekstbestand schrijven in Visual Basic for Applications (VBA) houdt in dat je tekstgegevens aanmaakt, wijzigt of toevoegt aan bestanden, een fundamentele taak voor het opslaan van uitvoer, loggen of interactie met andere applicaties. Programmeurs gebruiken deze functionaliteit om rapportage, data-export of generatie van configuratiebestanden binnen het Microsoft Office-ecosysteem te automatiseren.
-
 ## Hoe te:
-
 VBA biedt verschillende methoden om naar een bestand te schrijven, maar een van de meest eenvoudige manieren is door gebruik te maken van het `FileSystemObject`. Hier is een stap-voor-stap handleiding om een eenvoudig tekstbestand te creëren en er data naar te schrijven:
 
 1. **Verwijs naar Microsoft Scripting Runtime**: Zorg er eerst voor dat je VBA-editor toegang heeft tot het `FileSystemObject`. Ga naar Extra > Referenties in de VBA-editor en vink "Microsoft Scripting Runtime" aan.
@@ -53,7 +48,6 @@ Hallo, VBA!
 ```
 
 ## Diepgaande duik:
-
 Het `FileSystemObject` (FSO), onderdeel van de Microsoft Scripting Runtime-bibliotheek, biedt een rijke set aan eigenschappen en methoden voor bestandsbewerkingen, die verder reiken dan wat traditionele VBA-bestandsafhandeling biedt (bijv. `Open`, `Print` #, `Write` #). Naast het afhandelen van bestanden, kan FSO ook mappen en schijven manipuleren, waardoor het een krachtig instrument is voor bestandssysteembewerkingen binnen VBA.
 
 Het is echter vermeldenswaardig dat hoewel FSO een modernere benadering van bestandsbewerkingen in VBA biedt, het mogelijk overhead introduceert voor eenvoudige taken in vergelijking met VBA's eigen bestandsafhandelingsinstructies. Bovendien, aangezien FSO deel uitmaakt van een externe bibliotheek, kunnen draagbaarheid en compatibiliteit met andere systemen (bijv. eerdere versies van Office, Mac Office) zorgen opleveren.

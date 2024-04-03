@@ -9,9 +9,6 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## What & Why?
-Strenginterpolasjon betyr å stikke variabler eller uttrykk inn i en streng. Det gjør koden mer lesbar og lar oss lett bygge dynamiske meldinger.
-
 ## How to:
 I C++20 har vi `std::format`, som lar oss formatere og interpolere strenger på en lignende måte som i Python. 
 

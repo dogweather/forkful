@@ -11,9 +11,6 @@ title: Webseite herunterladen
 weight: 42
 ---
 
-## Was & Warum?
-Webseiten herunterladen bedeutet, den Inhalt einer Webseite über das Internet auf deinen Computer zu übertragen. Programmierer tun dies, um Daten zu extrahieren, automatisch zu verarbeiten oder Software-Tests durchzuführen.
-
 ## Vorgehensweise:
 Um eine Webseite in Lua herunterzuladen, verwendest du die `socket.http`-Bibliothek. Im Beispiel unten siehst du, wie man den Inhalt einer Webseite anfragt und erhält:
 

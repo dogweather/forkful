@@ -12,9 +12,6 @@ title: Substrings extraheren
 weight: 6
 ---
 
-## Wat & Waarom?
-Substrings extraheren betekent het uithalen van specifieke delen uit een string. We doen dit om tekstgegevens te manipuleren of analyseren, zoals het grijpen van gebruikersnamen uit e-mailadressen of het snijden van datums om de maand te krijgen.
-
 ## Hoe:
 In Kotlin, gebruik de functies `substring`, `take` en `drop`.
 

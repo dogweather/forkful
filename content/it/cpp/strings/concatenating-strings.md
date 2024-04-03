@@ -9,9 +9,6 @@ title: Concatenazione di stringhe
 weight: 3
 ---
 
-## What & Why? (Cosa e Perché?)
-Concatenare le stringhe significa unirle in una sola. Lo facciamo per creare frasi o valori che necessitano di parti dinamiche e statiche insieme.
-
 ## How to (Come fare)
 In C++ si possono concatenare stringhe con l'operatore `+` o con il metodo `append`. Ecco come:
 

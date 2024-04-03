@@ -10,9 +10,6 @@ title: Lectura de un archivo de texto
 weight: 22
 ---
 
-## ¿Qué & Por Qué?
-Leer un archivo de texto implica acceder y extraer datos de un documento almacenado, generalmente en una memoria SD o similar. Los programadores leen archivos para obtener configuraciones, datos del usuario o cualquier información necesaria para sus proyectos.
-
 ## Cómo hacerlo:
 ```Arduino
 #include <SPI.h>

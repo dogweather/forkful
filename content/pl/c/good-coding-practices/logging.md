@@ -14,12 +14,7 @@ title: Logowanie
 weight: 17
 ---
 
-## Co i dlaczego?
-
-Logowanie w C polega na rejestrowaniu przepływu i znaczących zdarzeń programu podczas jego wykonania, zapewniając namacalny przegląd jego zachowania i wydajności. Programiści wykorzystują logowanie do celów debugowania, monitorowania zdrowia oprogramowania i zapewniania bezpieczeństwa systemu.
-
 ## Jak to zrobić:
-
 W C logowanie można osiągnąć za pomocą podstawowych operacji na plikach lub korzystając z bardziej zaawansowanych bibliotek. Dla uproszczenia zaczniemy od standardowej biblioteki wejścia/wyjścia. Poniższe fragmenty kodu prezentują podstawowe implementacje logowania.
 
 Aby zalogować proste wiadomości:
@@ -95,7 +90,6 @@ Wynik w `detailed.log`:
 ```
 
 ## Dokładniejsze spojrzenie
-
 Jak pokazano, logowanie w C opiera się na prostych operacjach na plikach, co jest skuteczne, ale nie tak potężne ani elastyczne jak mechanizmy logowania w innych językach, takich jak moduł `logging` w Pythonie czy `Log4j` w Javie. Dla bardziej zaawansowanych możliwości logowania w C, deweloperzy często zwracają się ku bibliotekom takim jak `syslog` w systemach podobnych do Unix, które zapewniają zarządzanie logami na poziomie systemu, lub do bibliotek firm trzecich, takich jak `log4c`.
 
 Historycznie rzecz biorąc, logowanie było integralną częścią programowania, sięgającą początków praktyk programistycznych, gdzie śledzenie i rozumienie przepływu programów i błędów było przede wszystkim wykonywane poprzez fizyczne wydruki. Wraz z ewolucją systemów logowanie stało się bardziej zaawansowane, wspierając obecnie różne poziomy powagi, rotację logów oraz asynchroniczne logowanie.

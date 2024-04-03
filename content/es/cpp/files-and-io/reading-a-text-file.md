@@ -10,9 +10,6 @@ title: Lectura de un archivo de texto
 weight: 22
 ---
 
-## Qué & Por Qué?
-Leer un archivo de texto en C++ significa extracción de datos desde un archivo en tu disco hacia tu programa. Programadores lo hacen para manejar información persistente o compartir datos entre procesos o incluso entre diferentes ejecuciones de programas.
-
 ## Cómo hacerlo:
 Aquí tienes un ejemplo sencillo de cómo leer un archivo de texto línea por línea utilizando `fstream`:
 

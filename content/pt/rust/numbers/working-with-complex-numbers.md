@@ -12,9 +12,6 @@ title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---
 
-## O Que & Por Quê?
-Números complexos possuem uma parte real e uma parte imaginária e são cruciais em diversas áreas, como engenharia, física e gráficos de computador. Programadores os usam para resolver equações que números reais comuns não conseguem.
-
 ## Como fazer:
 Rust não tem suporte embutido para números complexos, mas crates como `num-complex` estão aqui para ajudar. Veja como usar:
 

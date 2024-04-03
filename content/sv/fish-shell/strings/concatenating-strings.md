@@ -11,9 +11,6 @@ title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---
 
-## Vad & Varför?
-Konkatenering av strängar handlar om att smidigt sätta ihop flera textstycken till en enda sträng. Programmerare gör detta för att skapa dynamiska meddelanden, sökvägar, queries och mer, utan att behöva oroa sig för hårdkodade textvärden.
-
 ## Så här gör du:
 ```Fish Shell
 # Enkelt exempel på konkatenering
@@ -33,7 +30,6 @@ echo $full_path # Skriver ut "/min/mapp/dokument.txt"
 Konkatenering i Fish shell är rakt på sak – du placerar helt enkelt variablerna eller strängarna intill varandra. Historiskt sett har många shellskriptspråk, som Bash och Zsh, använt liknande syntax för konkatenering. Alternativen inkluderar att använda `echo` eller `printf` för att direkt sammanfoga värden. Intern arbetar Fish med strängar som variabler och tillåter direkt sammansättning utan behov av extra operatorer som man kan se i andra programmeringsspråk.
 
 ## Se även
-
 - Fish Shell's officiella dokumentation om strängmanipulation: [https://fishshell.com/docs/current/index.html#expand](https://fishshell.com/docs/current/index.html#expand)
 - Unix StackExchange, diskussioner kring strängbehandling i Fish: [https://unix.stackexchange.com/questions/tagged/fish](https://unix.stackexchange.com/questions/tagged/fish)
 - Fish shell-tutorial om att hantera och använda variabler: [https://fishshell.com/docs/current/tutorial.html#tut_variables](https://fishshell.com/docs/current/tutorial.html#tut_variables)

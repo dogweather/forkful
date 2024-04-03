@@ -14,9 +14,6 @@ title: Att Arbeta med YAML
 weight: 41
 ---
 
-## Vad & Varför?
-Elm stöder inte YAML inbyggt, ett data serialiseringsformat som ofta används för konfigurationsfiler eller datadelning, på grund av dess starka betoning på typsäkerhet och förutsägbara resultat. Programmerare stöter dock ofta på YAML när de hanterar API:er eller konfigurationer inom webbutveckling, vilket kräver tillförlitliga metoder för att tolka YAML-data till Elms strikt typade ekosystem för sömlös integration och manipulation.
-
 ## Hur man gör:
 För att hantera YAML i Elm behöver du vanligtvis konvertera YAML till JSON utanför Elm och sedan använda Elms inbyggda JSON-avkodningsfunktionalitet för att arbeta med datan. Även om denna metod kräver ett extra konverteringssteg, utnyttjar den Elms starka typsystem för att säkerställa dataintegritet. Populära verktyg för konvertering av YAML till JSON inkluderar onlinekonverterare eller backend-tjänster. När du har JSON kan du använda Elms `Json.Decode`-modul för att arbeta med datan.
 

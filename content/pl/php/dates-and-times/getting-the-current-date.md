@@ -13,10 +13,9 @@ title: Pobieranie aktualnej daty
 weight: 29
 ---
 
-## Co i dlaczego?
-Pobieranie bieżącej daty w PHP to podstawowe zadanie, które umożliwia pobieranie i manipulowanie datą i czasem systemowym. Jest to kluczowe dla funkcji takich jak logowanie, znakowanie czasowe postów, planowanie wydarzeń czy wykonywanie operacji czasowo wrażliwych w twoich aplikacjach.
-
 ## Jak to zrobić:
+
+
 ### Natywny PHP
 Wbudowana funkcja `date()` w PHP jest najbardziej bezpośrednim sposobem na pobranie bieżącej daty. Można formatować datę na różne sposoby, określając parametr formatu.
 

@@ -14,12 +14,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mikä & Miksi?
-
-Assosiatiiviset taulukot ovat kuin salaiset kättelytiedot Luassa—sen sijaan, että vain numerot järjestyisivät uskollisesti indeksin mukaan, avaimiksi voi valita mitä tahansa, mikä tekee datan hakemisesta tuulennopeaa. Miksi ohjelmoijat käyttävät niitä? Koska joskus tarvitset kutsua dataa sen nimellä, ei jononumerolla.
-
 ## Miten:
-
 Luassa assosiatiivisen taulukon (tai Luassa puhuttuna taulun) luominen on suoraviivaista. Hylkäät tavanomaiset numeeriset indeksit ja valitset omat avaimet. Katso tämä:
 
 ```Lua
@@ -58,7 +53,6 @@ favLang: Lua
 Siistiä, eikö? Käyt interactiivisesti datan kanssa avaimilla, jotka ovat merkityksellisiä sinulle, mikä tekee koodista luettavampaa ja ylläpidettävämpää.
 
 ## Syväsukellus
-
 Kun Lua tuli näyttämölle, se esitteli taulut kaiken kattavana datastruktuurina, mullistaen sen, miten kehittäjät hallinnoivat dataa. Toisin kuin joissakin kielissä, joissa assosiatiiviset taulukot ja taulukot ovat erillisiä entiteettejä, Luassa taulut toimivat sekä tauluina että assosiatiivisina taulukoina, yksinkertaistaen datastruktuurimaisemaa.
 
 Mikä tekee Luasta tauluista erityisen tehokkaita, on niiden joustavuus. Kuitenkin, tämä joustavuus tulee potentiaalisen suorituskykyvaikutuksen kustannuksella, erityisesti suurilla datamäärillä, joissa erikoistuneempi datastruktuuri voisi olla tehokkaampi valinta.

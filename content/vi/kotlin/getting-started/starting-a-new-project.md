@@ -16,12 +16,7 @@ title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---
 
-## Cái gì và Tại sao?
-
-Bắt đầu một dự án mới có nghĩa là thiết lập cấu trúc ban đầu và các tệp tin quan trọng mà bạn sẽ cần cho ứng dụng của mình. Lập trình viên bắt đầu dự án mới để khởi động phát triển với một bảng là sạch, được tùy chỉnh theo mục tiêu của họ và công nghệ họ dự định sử dụng.
-
 ## Làm thế nào:
-
 Hãy bắt đầu với một dự án Kotlin sử dụng IntelliJ IDEA – một môi trường phát triển tích hợp phổ biến cho Kotlin.
 
 1. Mở IntelliJ IDEA.
@@ -57,7 +52,6 @@ Sẵn sàng, chuẩn bị, chạy Kotlin!
 ```
 
 ## Đi sâu vào
-
 Kotlin là một ngôn ngữ hiện đại chạy trên JVM (Java Virtual Machine), được thiết kế để ngắn gọn và an toàn. Nó được tạo ra bởi JetBrains và đã trở nên phổ biến, đặc biệt là phát triển ứng dụng Android, kể từ khi Google thông báo hỗ trợ chính thức vào năm 2017.
 
 Trước khi nhảy vào một dự án Kotlin mới, hiểu vì sao bạn chọn Kotlin:
@@ -73,7 +67,6 @@ Các phương án thay thế để bắt đầu một dự án Kotlin mới vớ
 Khi bạn bắt đầu một dự án mới trong IntelliJ IDEA, nó tự động thiết lập cấu hình Gradle cần thiết. Gradle là một hệ thống tự động hóa xây dựng quản lý các phụ thuộc, xây dựng và kiểm tra cho dự án của bạn. Cài đặt này cho phép bạn nhập các thư viện, xác định các phụ thuộc mô-đun và tạo điều kiện cho việc xây dựng dễ dàng.
 
 ## Xem Thêm
-
 Muốn tìm hiểu ngoài những kiến thức cơ bản? Dưới đây là những nơi bạn nên đến tiếp theo:
 
 - Tài liệu chính thức của Kotlin: [Tài liệu Kotlin](https://kotlinlang.org/docs/home.html)

@@ -11,12 +11,7 @@ title: Refaktorering
 weight: 19
 ---
 
-## Hva & Hvorfor?
-
-Refaktorisering er prosessen med å endre den interne strukturen til et dataprogram uten å endre dets eksterne oppførsel. Programmerere gjør dette for å rydde opp i koden sin, noe som gjør den lettere å forstå, vedlikeholde og utvide.
-
 ## Hvordan:
-
 Forestille deg at du har en funksjon som gjør litt for mye, som denne klumpete metoden som initialiserer et objekt og også utfører logging:
 
 ```C++
@@ -71,7 +66,6 @@ w.loggInitialisering();
 Denne endringen har ikke endret hva programmet gjør, men gjør `Widget`-klassen mer modulær og bruken mer klar.
 
 ## Dypdykk
-
 Konseptet om refaktorisering slik vi kjenner det i dag har sine røtter i Smalltalk-programmeringsfellesskapene på 1980-tallet og ble sterkt popularisert av Martin Fowlers bok "Refactoring: Improving the Design of Existing Code" fra 1999. I dag er refaktorisering en kjernekomponent i moderne programvareutvikling, integrert i ulike utviklingsmetodologier som Agile og TDD (Test-Drevet Utvikling).
 
 Når vi snakker om alternativer til refaktorisering, beveger vi oss inn på området for omskriving eller redesign. Refaktorisering er strategisk og trinnvis, mens en omskrivning kan skrote eksisterende kode til fordel for en ny løsning. Redesign, på den andre siden, kan innebære mer betydningsfulle endringer inkludert endring av funksjonalitet, som er et ikke-mål for ren refaktorisering.
@@ -81,7 +75,6 @@ Gjennomføringsdetaljer om refaktorisering kan bli ganske detaljert. Det er mang
 Dessuten krever refaktorisering en solid samling av tester for å sikre at funksjonaliteten forblir uendret. Uten tester flyr du i praksis blindt og risikerer regress.
 
 ## Se Også
-
 For en dypere forståelse av refaktorisering og for å se flere eksempler, vil du kanskje sjekke ut:
 
 - Martin Fowlers klassiske tekst "Refactoring: Improving the Design of Existing Code" for grunnleggende ideer og strategier.

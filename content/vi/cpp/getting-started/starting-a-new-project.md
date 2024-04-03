@@ -16,9 +16,6 @@ title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---
 
-## Cái gì & Tại sao?
-Bắt đầu một dự án mới có nghĩa là thiết lập nền móng cho cơ sở mã của bạn. Lập trình viên làm điều này để khởi đầu quá trình phát triển, hướng dẫn cấu trúc dự án, và đặt nền tảng cho mã trong tương lai.
-
 ## Làm thế nào:
 Khi bắt đầu, chọn hệ thống xây dựng hoặc IDE của bạn. Để đơn giản, chúng tôi sẽ sử dụng trình soạn thảo văn bản cơ bản và g++. Tạo hai tệp: `main.cpp` và một `Makefile`.
 

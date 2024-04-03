@@ -12,16 +12,10 @@ title: Willekeurige getallen genereren
 weight: 12
 ---
 
-## Wat & Waarom?
-
-Het genereren van willekeurige getallen in TypeScript gaat over het creëren van onvoorspelbare numerieke waarden binnen een gespecificeerd bereik. Programmeurs maken gebruik van deze willekeurige cijfers voor verschillende doeleinden, zoals het genereren van unieke identificeerders, het simuleren van gegevens voor testen, of het toevoegen van onvoorspelbaarheid aan spellen en simulaties.
-
 ## Hoe te:
-
 In TypeScript kunt u willekeurige getallen genereren met behulp van het globale `Math`-object. Hieronder staan enkele praktische voorbeelden die demonstreren hoe willekeurige getallen voor verschillende behoeften geproduceerd kunnen worden.
 
 ### Een Basis Willekeurig Getal Genereren
-
 Om een basis willekeurig decimaal getal tussen 0 (inclusief) en 1 (exclusief) te genereren, gebruikt u `Math.random()`. Dit vereist geen aanvullende manipulatie:
 
 ```TypeScript
@@ -32,7 +26,6 @@ console.log(randomNumber);
 Dit kan een waarde uitvoeren zoals `0.8995452185604771`.
 
 ### Een Willekeurig Geheel Getal Genereren Tussen Twee Waarden
-
 Wanneer u een geheel getal nodig heeft tussen twee specifieke waarden, gebruikt u zowel `Math.random()` als wat rekenwerk:
 
 ```TypeScript
@@ -49,7 +42,6 @@ console.log(randomInt);
 Dit kan een geheel getal waarde uitvoeren tussen 1 en 10, zoals `7`.
 
 ### Een Unieke Identificatiecode Genereren
-
 Willekeurige getallen kunnen worden gecombineerd met andere methoden om unieke identificatiecodes te creëren, bijvoorbeeld een eenvoudig UUID-generatorfragment:
 
 ```TypeScript
@@ -67,7 +59,6 @@ console.log(uuid);
 Dit genereert een string die lijkt op een UUID, zoals `110e8400-e29b-41d4-a716-446655440000`.
 
 ## Diepgaande Duik
-
 De primaire methode voor het genereren van willekeurige getallen in JavaScript en dus in TypeScript, `Math.random()`, is afhankelijk van een pseudo-willekeurige getallengenerator (PRNG). Het is belangrijk om te noteren dat hoewel de resultaten willekeurig kunnen lijken, ze worden gegenereerd door een deterministisch algoritme gebaseerd op een initiële zaadwaarde. Daarom zijn de door `Math.random()` geproduceerde getallen niet echt willekeurig en mogen ze niet worden gebruikt voor cryptografische doeleinden.
 
 Voor cryptografisch veilige willekeurige getallen biedt de Web Crypto API `crypto.getRandomValues()`, die toegankelijk is in omgevingen die de Web Crypto-standaard ondersteunen, inclusief moderne browsers en Node.js (via de `crypto`-module). Hier is een snel voorbeeld dat het gebruik in TypeScript illustreert voor het genereren van een veilig willekeurig getal binnen een bereik:

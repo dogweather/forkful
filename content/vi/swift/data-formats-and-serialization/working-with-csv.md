@@ -16,12 +16,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---
 
-## Cái gì & Tại sao?
-
-Tệp CSV (Comma-Separated Values - Giá trị được phân tách bằng dấu phẩy) là các tệp văn bản đơn giản để lưu trữ dữ liệu dạng bảng. Lập trình viên sử dụng chúng bởi vì chúng dễ đọc và viết, và được hỗ trợ rộng rãi trên các hệ thống và ngôn ngữ.
-
 ## Làm thế nào:
-
 Hãy đọc và phân tích nội dung một tệp CSV trong Swift.
 
 Đầu tiên, giả sử chúng ta có một tệp `data.csv` với nội dung sau:
@@ -67,11 +62,9 @@ print(data)
 ```
 
 ## Sâu hơn
-
 CSV đã tồn tại từ những ngày đầu của máy tính - được sử dụng để chuyển dữ liệu giữa các chương trình, cơ sở dữ liệu và hệ thống. Các lựa chọn khác như JSON và XML tồn tại, nhưng CSV vẫn phổ biến vì sự đơn giản của nó. Về hiệu quả, phương thức `String` của Swift xử lý tốt CSV đối với các tập dữ liệu nhỏ, nhưng dữ liệu quy mô lớn có thể cần một thư viện chuyên biệt như SwiftCSV hoặc CodableCSV để có hiệu suất và sự tiện lợi.
 
 ## Xem thêm
-
 - Tài liệu Swift của Apple cho việc thao tác với String: [https://developer.apple.com/documentation/swift/string](https://developer.apple.com/documentation/swift/string)
 - SwiftCSV, một thư viện CSV dành riêng cho Swift: [https://github.com/swiftcsv/SwiftCSV](https://github.com/swiftcsv/SwiftCSV)
 - CodableCSV, một bộ mã hóa/giải mã CSV cho Swift: [https://github.com/dehesa/CodableCSV](https://github.com/dehesa/CodableCSV)

@@ -14,11 +14,8 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-
-Wyrażenia regularne (regex) w Bashu pozwalają na przeszukiwanie, manipulowanie i obsługę ciągów znaków oraz plików na podstawie określonych wzorców. Programiści używają regexów do zadań takich jak walidacja danych wejściowych, parsowanie plików dzienników i ekstrakcja danych, ponieważ oferują elastyczny i potężny sposób na określenie wzorców dla złożonych potrzeb przetwarzania tekstu.
-
 ## Jak to zrobić:
+
 
 ### Podstawowe dopasowywanie wzorców
 Aby sprawdzić, czy ciąg pasuje do wzorca, możesz użyć `grep`, narzędzia wiersza poleceń do wyszukiwania zestawów danych w formie zwykłego tekstu dla linii, które pasują do wyrażenia regularnego:

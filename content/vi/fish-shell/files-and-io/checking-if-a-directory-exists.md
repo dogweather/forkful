@@ -16,9 +16,6 @@ title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---
 
-## Là gì & Tại sao?
-Kiểm tra xem một thư mục có tồn tại không giúp đảm bảo một chương trình hoạt động trên các đường dẫn hợp lệ, ngăn chặn lỗi. Điều này rất quan trọng cho những nhiệm vụ cần đến các thư mục cụ thể, như đọc tệp tin hoặc log dữ liệu.
-
 ## Cách thực hiện:
 Kiểm tra xem một thư mục có tồn tại với lệnh `test` đơn giản:
 ```Fish Shell
@@ -48,7 +45,6 @@ Thông tin chi tiết về việc triển khai:
 Lệnh `test` có sẵn của Fish hiệu quả và đáng tin cậy. Nó tránh được những hạn chế thường gặp với việc gọi lệnh bên ngoài và cung cấp cú pháp dễ hiểu.
 
 ## Xem thêm
-
 - Tài liệu Fish Shell về `test`: https://fishshell.com/docs/current/cmds/test.html
 - Thông số kỹ thuật POSIX cho `test`: https://pubs.opengroup.org/onlinepubs/9699919799/utilities/test.html
 - Thảo luận về việc kiểm tra sự tồn tại của tệp: https://unix.stackexchange.com/questions/590694/checking-if-a-directory-exists-in-unix-shell-scripting

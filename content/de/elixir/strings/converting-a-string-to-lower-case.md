@@ -11,9 +11,6 @@ title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---
 
-## Was & Warum?
-Das Umwandeln eines Strings in Kleinbuchstaben bedeutet, jeden Großbuchstaben in seinem Äquivalent in Kleinbuchstaben zu ändern. Es wird oft verwendet, um die Benutzereingabe zu normalisieren oder eine case-insensitive Suche zu ermöglichen.
-
 ## How to:
 Elixir macht die Konvertierung mit der `String.downcase/1` Funktion kinderleicht. Hier ist ein Beispiel:
 

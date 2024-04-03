@@ -12,12 +12,7 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Cosa & Perché?
-
-Nella programmazione, l'arrotondamento dei numeri riguarda l'approssimazione di un numero al suo intero più vicino o a un certo numero di cifre decimali. I programmatori arrotondano i numeri per semplificare le cifre, migliorare la leggibilità o soddisfare criteri numerici specifici nei calcoli, soprattutto nei calcoli finanziari dove la precisione è fondamentale.
-
 ## Come fare:
-
 In Visual Basic for Applications (VBA), l'arrotondamento può essere ottenuto utilizzando diverse funzioni, ognuna adatta a scenari specifici. Ecco le funzioni più comunemente usate con degli esempi:
 
 1. **Funzione Round**:
@@ -53,7 +48,6 @@ In Visual Basic for Applications (VBA), l'arrotondamento può essere ottenuto ut
    ```
 
 ## Approfondimento
-
 La funzione `Round` in VBA è intrinsecamente diversa dai metodi di arrotondamento in altri linguaggi a causa del suo uso dell'**Arrotondamento Bancario**. L'Arrotondamento Bancario arrotonda al numero pari più vicino quando si trova esattamente a metà tra due numeri, riducendo il bias nei calcoli su un grande set di dati e fornendo un risultato statisticamente più significativo. Tuttavia, ciò può portare a comportamenti inaspettati per chi non ne è a conoscenza, specialmente quando si prevede precisione integrale in ogni caso.
 
 Al contrario, molti linguaggi di programmazione e sistemi usano l'"arrotondamento aritmetico" o "arrotondamento verso l'alto", dove un numero esattamente a metà tra due possibili valori arrotondati viene sempre arrotondato verso l'alto. Quando si traduce o si porta codice da altri linguaggi a VBA, i programmatori devono tenere presenti queste differenze per evitare sottili bug o inesattezze nelle applicazioni finanziarie e statistiche.

@@ -12,9 +12,6 @@ title: Werken met CSV
 weight: 37
 ---
 
-## Wat & Waarom?
-Werken met CSV (Comma-Separated Values) in Arduino stelt je in staat om gegevens als tekst op te slaan en te beheren. Het is goedkoop, eenvoudig en universeel, waardoor het ideaal is voor gegevensregistratie, configuratiebestanden of communicatie met spreadsheets en databases.
-
 ## Hoe:
 Hier leest u hoe u sensordata kunt opslaan in een CSV-bestand op een SD-kaart:
 

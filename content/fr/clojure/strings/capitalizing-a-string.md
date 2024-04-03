@@ -14,9 +14,6 @@ title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---
 
-## Quoi & Pourquoi ?
-La capitalisation d'une chaîne implique de modifier la chaîne afin que son premier caractère soit en majuscule, tandis que le reste de la chaîne demeure inchangé. Les programmeurs réalisent souvent la capitalisation des chaînes pour assurer la cohérence des données, spécialement pour les noms et les lieux, ou pour se conformer aux règles grammaticales dans les interfaces utilisateurs.
-
 ## Comment faire :
 Clojure, étant un langage JVM, vous permet d'utiliser directement les méthodes Java String. Voici un exemple de base de comment capitaliser une chaîne en Clojure :
 

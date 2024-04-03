@@ -14,14 +14,10 @@ title: Capitalizando una cadena de texto
 weight: 2
 ---
 
-## ¿Qué y por qué?
-Capitalizar un string implica convertir el carácter inicial de cada palabra en el string a mayúscula si está en minúscula, manteniendo sin cambio los caracteres restantes. Los programadores a menudo realizan esta tarea para el formateo de salidas, entradas de usuario o procesamiento de datos para asegurar consistencia en cómo se presenta o procesa el texto, especialmente en interfaces de usuario o tareas de normalización de datos.
-
 ## Cómo hacerlo:
 En C++, puedes capitalizar un string utilizando la biblioteca estándar sin necesidad de bibliotecas de terceros. Sin embargo, para comportamientos de capitalización más complejos o específicos, bibliotecas como Boost pueden ser bastante útiles. A continuación, se muestran ejemplos que ilustran ambos enfoques.
 
 ### Usando la Biblioteca Estándar de C++:
-
 ```cpp
 #include <iostream>
 #include <cctype> // para std::tolower y std::toupper
@@ -52,7 +48,6 @@ int main() {
 ```
 
 ### Usando la Biblioteca Boost:
-
 Para manipulaciones de strings más avanzadas, incluyendo la capitalización consciente de la configuración regional, podrías querer usar la biblioteca Boost String Algo.
 
 Primero, asegúrate de tener la biblioteca Boost instalada y configurada en tu proyecto. Luego puedes incluir las cabeceras necesarias y usar sus características como se muestra a continuación.

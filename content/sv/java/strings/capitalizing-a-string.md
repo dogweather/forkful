@@ -14,9 +14,6 @@ title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---
 
-## Vad & Varför?
-Att göra första bokstaven i varje ord i en sträng till versal innebär att man modifierar första bokstaven till att vara stor bokstav medan resten gör man till gemener. Denna vanliga manipulering av strängar är användbar för att formatera text i applikationer, till exempel för att förbereda användarnamn eller titlar för visning enligt konvention eller grammatisk korrekthet.
-
 ## Hur:
 Javas standardbibliotek erbjuder inte en direkt metod för att göra hela strängar versaler på en gång, men detta kan åstadkommas med en kombination av inbyggda metoder. För mer sofistikerade behov erbjuder tredjepartbibliotek som Apache Commons Lang enkla lösningar.
 
@@ -50,7 +47,6 @@ public class CapitalizeString {
 Denna kodsnutt konverterar hela strängen till gemener och itererar sedan genom varje tecken, och gör första bokstaven i varje ord till en versal. Det betraktar blanksteg, punkter och apostrofer som ordavgränsare.
 
 ### Använda Apache Commons Lang
-
 Apache Commons Lang-biblioteket erbjuder en mer elegant lösning med metoden `WordUtils.capitalizeFully()`, som hanterar olika specialfall och avgränsare åt dig:
 
 ```java

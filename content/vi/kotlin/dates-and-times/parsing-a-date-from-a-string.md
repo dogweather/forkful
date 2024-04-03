@@ -16,9 +16,6 @@ title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---
 
-## Gì & Tại sao?
-Phân tích cú pháp ngày tháng có nghĩa là chuyển đổi ngày tháng từ định dạng văn bản sang một đối tượng ngày mà chương trình có thể hiểu và thao tác được. Điều này rất quan trọng để đọc dữ liệu từ nhiều nguồn như nhập liệu của người dùng hay từ các tệp, cho phép chương trình xử lý và quản lý ngày tháng một cách nhất quán.
-
 ## Cách làm:
 Với Kotlin, bạn có thể phân tích cú pháp ngày tháng sử dụng lớp `LocalDateTime` từ gói `java.time`. Hãy phân tích một chuỗi thành ngày.
 

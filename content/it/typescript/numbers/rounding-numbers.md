@@ -10,9 +10,6 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Che cosa & Perché?
-Arrotondare i numeri significa tagliare un numero a una precisione specifica. I programmatori lo fanno per controllare l'output numerico per leggibilità, scopi di visualizzazione, o quando è richiesta una precisione specifica dopo operazioni che producono risultati in virgola mobile.
-
 ## Come fare:
 In TypeScript, l'arrotondamento può essere eseguito utilizzando diversi metodi. Ecco una rapida panoramica:
 

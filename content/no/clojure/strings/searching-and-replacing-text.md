@@ -11,9 +11,6 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## Hva & Hvorfor?
-Å søke og erstatte tekst går ut på å finne spesifikke strenger i data og bytte dem ut med noe annet. Programmerere bruker dette for å masseendre kode, rette feil, eller manipulere data.
-
 ## Hvordan:
 ```Clojure
 ; Finn og erstatt enkeltstående streng

@@ -16,9 +16,6 @@ title: Den aktuellen Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-Das Abrufen des aktuellen Datums in Elixir umfasst den Zugriff auf die Datums- und Zeitinformationen des Systems, eine allgemeine Aufgabe für das Logging, Datumsstempel oder jede Funktionalität, die Kenntnisse über das aktuelle Datum erfordert. Diese Operation ist wesentlich für die Erstellung zeitbewusster Anwendungen und für Aufgaben wie das Generieren von Berichten oder Zeitstempeln in einer Webanwendung.
-
 ## Wie:
 Die Standardbibliothek von Elixir ermöglicht über das `DateTime`-Modul das Abrufen des aktuellen Datums und der aktuellen Uhrzeit. Da Elixir auf der Erlang VM (BEAM) läuft, nutzt es die zugrundeliegenden Erlang-Funktionalitäten für Zeitoperationen.
 

@@ -12,12 +12,7 @@ title: Printing debug output
 weight: 33
 ---
 
-## What & Why?
-
-In computer programming, "Printing debug output" involves producing detailed informational messages that help developers understand the execution flow of their program or pinpoint issues. Programmers do this to diagnose and solve problems more efficiently, making it an essential skill in any programming toolkit, including Go.
-
 ## How to:
-
 In Go, you can use the standard `fmt` package to print debug output to the console. The `fmt` package offers a variety of functions, like `Println`, `Printf`, and `Print`, catering to different formatting needs.
 
 ```go
@@ -79,7 +74,6 @@ The message in `debug.log` would look something like this:
 ```
 
 ## Deep Dive
-
 Printing debug output has been a longstanding practice in computer programming, with its implementation varying across different languages. In Go, the standard library's `fmt` and `log` packages provide straightforward and versatile options. While the `fmt` package is sufficient for basic debugging needs, the `log` package offers enhanced functionality like logging levels and configurable output destinations.
 
 Moreover, as applications become more complex, logging frameworks such as `zap` and `logrus` can offer more advanced features like structured logging and better performance. These third-party packages give developers the flexibility to tailor their logging strategy to their specific needs.

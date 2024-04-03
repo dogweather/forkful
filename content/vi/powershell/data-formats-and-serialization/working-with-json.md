@@ -15,10 +15,9 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---
 
-## Cái gì & Tại sao?
-JSON (JavaScript Object Notation) là một định dạng dữ liệu nhẹ, dễ đọc và viết cho con người, dễ phân tích và tạo ra cho máy móc. Lập trình viên làm việc với JSON để trao đổi dữ liệu giữa các máy khách và máy chủ web hoặc để lưu trữ dữ liệu bởi vì nó đơn giản và đã trở thành một chuẩn web.
-
 ## Cách thực hiện:
+
+
 ### Đọc JSON
 ```PowerShell
 # Giả sử 'data.json' chứa {"name": "John", "age": 30}

@@ -17,14 +17,10 @@ title: "Ch\u1EC9nh s\u1EEDa file t\u1EA1i ch\u1ED7 v\u1EDBi c\xE2u l\u1EC7nh CLI
 weight: 32
 ---
 
-## Làm gì & Tại sao?
-
-Sửa đổi tệp tại chỗ với các dòng lệnh CLI bằng PowerShell là về việc thực hiện chỉnh sửa trực tiếp các tệp từ dòng lệnh, không cần mở chúng trong một trình biên tập. Phương pháp này giúp tiết kiệm thời gian và đặc biệt tiện lợi cho việc xử lý hàng loạt hoặc tự động hóa các nhiệm vụ chỉnh sửa lặp đi lặp lại trên nhiều tệp.
-
 ## Cách thực hiện:
 
-### Thay thế Văn bản trong Một Tệp Đơn
 
+### Thay thế Văn bản trong Một Tệp Đơn
 Hãy bắt đầu với một nhiệm vụ đơn giản: bạn muốn thay thế tất cả các trường hợp của "oldtext" bằng "newtext" trong một tệp có tên là example.txt. Dưới đây là cách bạn thực hiện:
 
 ```PowerShell
@@ -34,7 +30,6 @@ Hãy bắt đầu với một nhiệm vụ đơn giản: bạn muốn thay thế
 Dòng lệnh này đọc nội dung, thực hiện việc thay thế, và viết nội dung trở lại tệp gốc.
 
 ### Chỉnh sửa Nhiều Tệp
-
 Nếu bạn cần áp dụng cùng một thay đổi cho nhiều tệp thì sao? Dưới đây là một phương pháp sử dụng vòng lặp:
 
 ```PowerShell
@@ -46,7 +41,6 @@ Get-ChildItem *.txt | ForEach-Object {
 Đoạn mã này tìm tất cả các tệp `.txt` trong thư mục hiện tại, thay thế "oldtext" bằng "newtext" trong từng tệp.
 
 ### Thêm Nội dung vào Đầu hoặc Cuối các Tệp
-
 Việc thêm hoặc đặt nội dung vào đầu hoặc cuối cũng có thể được tự động hóa:
 
 ```PowerShell
@@ -60,7 +54,6 @@ Việc thêm hoặc đặt nội dung vào đầu hoặc cuối cũng có thể 
 Ở đây, chúng ta chỉ cần nối nội dung mới trước hoặc sau nội dung hiện tại và lưu lại.
 
 ## Sâu hơn nữa
-
 Trong lịch sử, chỉnh sửa tại chỗ thường gắn liền với các công cụ Unix như `sed` và `awk`. PowerShell, là một công cụ mới hơn, không bao gồm tính năng chỉnh sửa tại chỗ ngay từ đầu. Điều này một phần là do triết lý thiết kế của nó, nhấn mạnh vào tầm quan trọng của các đối tượng hơn là luồng văn bản, không giống như các công cụ Unix coi hầu hết các đầu vào như văn bản.
 
 Các phương án thay thế cho PowerShell cho nhiệm vụ này bao gồm việc sử dụng các công cụ Unix truyền thống có sẵn trên Windows thông qua Cygwin hoặc Hệ thống Phụ trợ Windows cho Linux (WSL). Những công cụ này thường cung cấp cú pháp ngắn gọn hơn cho việc chỉnh sửa tại chỗ do thiết kế tập trung vào văn bản của chúng.

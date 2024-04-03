@@ -10,9 +10,6 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-Error handling in PHP is about managing and responding to conditions that disrupt the normal flow of a program, like missing files or bad data input. Programmers handle errors to prevent crashes and to give users a smoother experience.
-
 ## How to:
 In PHP, you can manage errors using `try-catch` blocks, and you can customize the process with custom error handlers and exceptions.
 

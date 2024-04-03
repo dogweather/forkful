@@ -12,9 +12,6 @@ title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---
 
-## Quoi et Pourquoi ?
-Supprimer les guillemets d'une chaîne signifie se débarrasser de ces ennuyeux caractères de guillemets doubles ou simples qui encapsulent votre texte. Les programmeurs font cela pour nettoyer les données, assurer l'uniformité, ou préparer les chaînes pour le traitement où les guillemets sont indésirables ou peuvent causer des erreurs.
-
 ## Comment faire :
 Dans Clojure, les chaînes sont immuables, donc quand nous parlons de "supprimer les guillemets", nous parlons réellement de créer une nouvelle chaîne sans guillemets. Voici l'essentiel en utilisant `clojure.string/replace` :
 

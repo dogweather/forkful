@@ -11,9 +11,6 @@ title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---
 
-## Was & Warum?
-In C++ ist die Länge eines Strings die Anzahl der Zeichen, aus denen er besteht. Programmierer müssen diese oft kennen, um Schleifen korrekt zu steuern, Eingaben zu validieren oder Speicher effizient zu verwalten.
-
 ## So geht’s:
 ```C++
 #include <iostream>

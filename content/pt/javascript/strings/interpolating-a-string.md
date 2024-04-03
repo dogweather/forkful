@@ -11,9 +11,6 @@ title: Interpolando uma string
 weight: 8
 ---
 
-## O Quê & Porquê?
-Interpolar strings é o processo de misturar variáveis, expressões e texto dentro de uma string. Programadores fazem isso para tornar o código mais legível, para evitar a bagunça de concatenar strings e variáveis, e para dinamizar a criação de texto.
-
 ## Como Fazer:
 ```javascript
 let nome = 'João';

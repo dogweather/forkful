@@ -11,9 +11,6 @@ title: Att arbeta med XML
 weight: 40
 ---
 
-## Vad & Varför?
-Att arbeta med XML innebär att tolka, generera och manipulera XML (eXtensible Markup Language)-dokument med kod. Programmerare gör det för att interagera med många webbtjänster, konfigurationsfiler och datautbytesformat där XML är det gemensamma språket.
-
 ## Hur man gör:
 Låt oss använda REXML, som ingår i Ruby, för att tolka ett XML-utdrag:
 ```Ruby

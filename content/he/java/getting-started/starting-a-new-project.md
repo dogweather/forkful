@@ -20,12 +20,7 @@ title: "\u05D4\u05EA\u05D7\u05DC\u05EA \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05
 weight: 1
 ---
 
-## מה ולמה?
-
-כשמתחילים פרויקט חדש ב- Java, זה כמו לקחת דף לבן ולהתחיל לצייר. תוכניתנים עושים את זה כדי ליצור משהו חדש, לפתור בעיה, או ללמוד כישורים חדשים.
-
 ## איך לעשות:
-
 כדי להתחיל פרויקט חדש ב-Java, תצטרך תכנה שתומכת בכך, כמו IntelliJ IDEA או Eclipse. הנה דוגמא פשוטה של קוד לפרויקט חדש:
 
 ```java
@@ -43,7 +38,6 @@ public class HelloWorld {
 ```
 
 ## עיון נוסף:
-
 לפני Maven ו-Gradle, היינו נאלצים לנהל תלותיות ידנית, עם המון כאב ראש. כיום, כלים אלו מקלים עלינו להקים מבנה פרויקט. לדוג', ב- Maven:
 
 ```xml
@@ -58,7 +52,6 @@ public class HelloWorld {
 כשמשתמשים ב-IDE, הוא לרוב יכניס אותך ישירות לעולם של מבנה פרויקטים מסודר עם כל ההגדרות שנחוצות.
 
 ## ראה גם:
-
 - [התיעוד הרשמי של Maven](https://maven.apache.org/guides/index.html)
 - [איך לבנות פרויקט עם Gradle](https://gradle.org/guides/#getting-started)
 - [תיעוד IntelliJ IDEA ליצירת פרויקטים חדשים](https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html)

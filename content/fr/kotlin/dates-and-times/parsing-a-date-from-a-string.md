@@ -13,9 +13,6 @@ title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---
 
-## Quoi & Pourquoi ?
-L'analyse d'une date à partir d'une chaîne de caractères implique de convertir du texte en un objet Date. Cette opération est fondamentale pour les applications qui interagissent avec des dates saisies par les utilisateurs ou provenant de jeux de données externes, permettant ainsi une manipulation et un formatage facile selon les besoins.
-
 ## Comment faire :
 Kotlin prend en charge l'analyse de dates via le package `java.time`, introduit dans Java 8. Voici une approche simple utilisant `LocalDateTime` et un motif spécifique :
 

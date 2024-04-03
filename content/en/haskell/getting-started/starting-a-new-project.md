@@ -11,9 +11,6 @@ title: Starting a new project
 weight: 1
 ---
 
-## What & Why?
-Every project starts with a single step. For programmers, that means setting up the initial structure and writing kick-off code. We do this to transform ideas into a concrete foundation, ready for expansion and innovation.
-
 ## How to:
 ```Haskell
 -- 1. Initializing a new Haskell project using Stack

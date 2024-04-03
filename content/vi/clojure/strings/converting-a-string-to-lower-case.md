@@ -16,9 +16,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---
 
-## Gì và Tại sao?
-Chuyển một chuỗi văn bản thành chữ thường có nghĩa là biến đổi tất cả các ký tự trong văn bản thành các biến thể chữ thường của chúng, như chuyển "Hello, World!" thành "hello, world!". Lập trình viên làm điều này để đảm bảo tính nhất quán, đặc biệt trong các nhiệm vụ như so sánh đầu vào của người dùng, nơi mà việc phân biệt chữ hoa và chữ thường không nên quan trọng.
-
 ## Cách thực hiện:
 Trong Clojure, để chuyển một chuỗi văn bản thành chữ thường, bạn sẽ sử dụng hàm `clojure.string/lower-case`. Hãy xem nó đơn giản như thế nào:
 

@@ -12,12 +12,7 @@ title: Generierung von Zufallszahlen
 weight: 12
 ---
 
-## Was & Warum?
-
-Die Generierung von Zufallszahlen in der Programmierung geht darum, unvorhersehbare numerische Werte zu erzeugen, die für eine Vielzahl von Zwecken wie Simulationen, Spiele oder Sicherheitsanwendungen verwendet werden können. Programmierer nutzen diese Funktion, um ein Element der Unsicherheit einzuführen oder die Variabilität des wirklichen Lebens in ihren Projekten nachzuahmen.
-
 ## Wie geht das:
-
 Lua bietet eingebaute Unterstützung für die Generierung von Zufallszahlen über die Funktion `math.random`. Diese Funktion kann auf mehrere Arten verwendet werden, abhängig von der gewünschten Ausgabe:
 
 1. **Generierung einer zufälligen Gleitkommazahl zwischen 0 und 1:**
@@ -42,7 +37,6 @@ Eine beispielhafte Ausgabe könnte `7` sein. Auch hier wird die Ausgabe bei jede
 Es ist entscheidend, den Seed mit `math.randomseed` zu setzen, denn ohne ihn könnte `math.random` bei jedem Programmlauf dieselbe Zahlenfolge erzeugen. In der Regel stellt das Seeden mit der aktuellen Zeit, `os.time()`, unterschiedliche Sequenzen pro Ausführung sicher.
 
 ## Tiefergehend
-
 Der zugrunde liegende Mechanismus der Generierung von Zufallszahlen in Lua (und den meisten Programmiersprachen) ist nicht wirklich zufällig, sondern pseudozufällig, erzeugt durch einen Algorithmus. Diese Pseudorandom Number Generators (PRNGs) sind deterministisch und benötigen einen Seed-Wert, um die Sequenz der Zahlenproduktion zu beginnen. Die Wahl des Seedings ist entscheidend für die Qualität der Zufälligkeit, deshalb ist das Seeden mit der aktuellen Zeit eine gängige Praxis.
 
 Historisch gesehen, haben sich Luas Fähigkeiten zur Zufallszahlengenerierung weiterentwickelt. Frühere Versionen verließen sich auf die `rand()` Funktion der C-Standardbibliothek, die in Qualität und Leistung über Implementierungen hinweg variierte. Die aktuelle Version von Lua verbessert dies möglicherweise durch die Verwendung robusterer Mechanismen abhängig von der zugrunde liegenden Plattform und bietet eine größere Konsistenz und Nützlichkeit bei der Generierung von Zufallszahlen.

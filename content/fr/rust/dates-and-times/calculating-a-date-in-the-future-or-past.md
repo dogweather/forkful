@@ -11,9 +11,6 @@ title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---
 
-## Quoi et Pourquoi ?
-Calculer une date dans le futur ou le passé consiste à ajouter ou soustraire une durée à une date existante. Les programmeurs le font pour gérer des échéances, des rappels, des intervalles de temps, ou juste pour savoir quel jour ça sera dans X jours.
-
 ## Comment faire :
 ```Rust
 use chrono::{Duration, Utc};

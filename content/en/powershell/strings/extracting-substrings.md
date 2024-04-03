@@ -10,9 +10,6 @@ title: Extracting substrings
 weight: 6
 ---
 
-## What & Why?
-Extracting substrings means plucking out smaller parts from a string based on certain criteria. Programmers extract substrings to manipulate and analyze text data, like chopping inputs into more useful bits or getting at the juicy data tucked inside a sentence.
-
 ## How to:
 Here's how to slice and dice strings in PowerShell:
 

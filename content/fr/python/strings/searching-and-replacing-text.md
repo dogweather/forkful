@@ -11,12 +11,7 @@ title: Recherche et remplacement de texte
 weight: 10
 ---
 
-## Quoi & Pourquoi ?
-
-La recherche et le remplacement de texte permettent de localiser des séquences spécifiques dans une chaîne et de les remplacer par d'autres. Les programmeurs utilisent cette technique pour modifier des données, automatiser l'édition de code et traiter des textes volumineux.
-
 ## Comment faire :
-
 Voici un petit script Python qui recherche et remplace du texte :
 
 ```python
@@ -49,11 +44,9 @@ Les numéros: NUM, NUM, NUM
 ```
 
 ## Plongée Profonde
-
 Historiquement, la recherche et le remplacement de texte existent depuis l'avènement des éditeurs de texte. Outils simples mais puissants, ils sont devenus plus sophistiqués avec les expressions régulières, introduites dans les années 1950. En Python, on peut faire une recherche/remplacement simple avec la méthode `.replace()`, ou utiliser le module `re` pour de la manipulation avancée avec regex. Alternativement, des bibliothèques comme `str.replace()` ou `re.sub()` peuvent être utilisées en fonction du contexte et des besoins spécifiques.
 
 ## Voir Aussi
-
 - Documentation Python sur les expressions régulières : https://docs.python.org/3/library/re.html
 - Tutoriel sur la manipulation de chaînes de caractères en Python : https://realpython.com/python-strings/
 - Guide sur les expressions régulières : https://www.regular-expressions.info/

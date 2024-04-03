@@ -11,9 +11,6 @@ title: "Enviando una solicitud http con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---
 
-## Qué y Por Qué
-Enviar una solicitud HTTP con autenticación básica permite a tu aplicación comunicarse con servicios web que requieren usuario y contraseña. Los programadores lo hacen para proteger recursos y asegurar que solo usuarios autorizados accedan a ciertos datos.
-
 ## Cómo Hacerlo
 Primero, asegúrate de tener `using System.Net;` y `using System.Text;` en tu archivo. Aquí hay un ejemplo de cómo enviar una solicitud con autenticación básica:
 
@@ -49,7 +46,6 @@ class Program
 Si todo va bien, verás la respuesta del servidor en la consola. Si hay un error, imprimirá un mensaje de excepción.
 
 ## Profundizando
-
 La autenticación básica HTTP es un sistema antiguo (inventado a principios de los años 90) para controlar el acceso a sitios web y servicios. Mientras es simple y ampliamente soportado, no es la más segura porque las credenciales se envían en texto claro, solo codificadas en Base64, que es fácil de decodificar.
 
 Alternativas modernas:
@@ -62,7 +58,6 @@ Aspectos de Implementación:
 - Considera el manejo de excepciones y validaciones de respuesta.
 
 ## Ver También
-
 - [Autenticación HTTP básica en MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Authentication)
 - [Documentación de HttpClient en Microsoft](https://docs.microsoft.com/es-es/dotnet/api/system.net.http.httpclient?view=netframework-4.8)
 - [Seguridad en la autenticación web en OWASP](https://owasp.org/www-project-cheat-sheets/cheatsheets/Authentication_Cheat_Sheet.html)

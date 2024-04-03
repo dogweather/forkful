@@ -13,9 +13,6 @@ title: Utdrag av delstrenger
 weight: 6
 ---
 
-## Hva & Hvorfor?
-Å trekke ut delstrenger handler om å hente spesifikke deler av en streng basert på deres posisjoner eller mønstre. Programmerere gjør dette for oppgaver som å parse brukerinndata, manipulere data, eller trekke ut relevant informasjon fra større tekstkilder.
-
 ## Hvordan:
 I Dart kan du bruke ulike metoder for å trekke ut delstrenger, som `substring()`, `split()`, og regulære uttrykk. Hver metode tjener forskjellige formål og tilbyr fleksibilitet i håndtering av strenger.
 

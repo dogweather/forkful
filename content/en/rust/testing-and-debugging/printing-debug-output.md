@@ -11,11 +11,7 @@ title: Printing debug output
 weight: 33
 ---
 
-## What & Why?
-Printing debug output lets you peek at your program's state without a full-blown debugger. It's quick, dirty, and perfect for tracing pesky bugs when you don't need the firepower of a dedicated debugging tool.
-
 ## How to:
-
 To print something simple, use `println!`. If you need to print a value for debugging, `dbg!` comes in handy.
 
 ```Rust
@@ -56,7 +52,6 @@ Hello, Rustaceans!
 ```
 
 ## Deep Dive
-
 Printing debug output has been a straightforward part of programming since the early days. Its simplicity often makes it a go-to choice for quickly diagnosing problems.
 
 In Rust, `println!` is great for displaying user-friendly messages. The magic comes with `dbg!`, introduced in Rust 1.32, which prints both the value and its location in the code. It outputs to standard error (stderr), so it won't mix with standard output (stdout) and can be separately redirected if needed. 
@@ -66,7 +61,6 @@ For complex types, you can derive the `Debug` trait to automatically create a fo
 As for alternatives, proper loggers exist such as `log` and `env_logger`, and if you need more granular control, consider a debugger such as `gdb` or `lldb`, which work with Rust through integrations like `rust-gdb` or `rust-lldb`.
 
 ## See Also
-
 For more on Rust's debug printing and formatting options:
 
 - The Rust Book on `println!` and Formatting: https://doc.rust-lang.org/std/fmt/index.html

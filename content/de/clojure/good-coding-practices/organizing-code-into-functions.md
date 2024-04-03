@@ -11,12 +11,7 @@ title: Code in Funktionen organisieren
 weight: 18
 ---
 
-## Was & Warum?
-
-Code in Funktionen zu organisieren bedeutet, Blöcke von Code zu verpacken, die spezifische Aufgaben erfüllen. Dadurch wird dein Code sauber, leichter zu warten und ein Kinderspiel für andere Entwickler zu lesen.
-
 ## Wie man es macht:
-
 Funktionen in Clojure werden mit `defn` definiert, gefolgt von einem Namen, Parametern und einem Körper. Hier ein schnelles Beispiel.
 
 ```Clojure
@@ -39,7 +34,6 @@ Nehmen wir nun an, wir möchten die Fläche eines Rechtecks berechnen. Statt all
 ```
 
 ## Tiefere Einblicke
-
 Früher hämmerten Programmierer einfach all ihre Logik in einen einzigen Block. Es war unschön. Dann kam die strukturierte Programmierung und Funktionen wurden zum Ding. In Clojure ist jede Funktion erstklassig – du kannst sie herumschleudern wie jeden anderen Wert.
 
 Alternativen? Manche Leute könnten mit Multimethoden oder höherwertigen Funktionen herumspielen, aber das sind nur Gewürze im Funktionseintopf.
@@ -47,7 +41,6 @@ Alternativen? Manche Leute könnten mit Multimethoden oder höherwertigen Funkti
 Alles in den Details einer Funktion: sie sind in Clojure unveränderlich, was Nebeneffekte weniger wahrscheinlich macht. Sie stützen sich stark auf Rekursion anstelle von typischen Schleifen, was gut mit den funktionalen Paradigmen der Sprache harmoniert.
 
 ## Siehe auch
-
 - Der eigene Leitfaden von Clojure: https://clojure.org/guides/learn/functions
 - Grundlagen der Funktionalen Programmierung: https://www.braveclojure.com/core-functions-in-depth/
 - Rich Hickeys Vorträge: https://changelog.com/posts/rich-hickeys-greatest-hits - für Einblicke in die Philosophie von Clojure.

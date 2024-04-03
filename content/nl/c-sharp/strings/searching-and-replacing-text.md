@@ -12,9 +12,6 @@ title: Tekst zoeken en vervangen
 weight: 10
 ---
 
-## Wat & Waarom?
-Tekst in strings zoeken en vervangen stelt je in staat gegevens te updaten zonder handmatige wijzigingen. Programmeurs hebben dit nodig om gebruikersinvoer correcties, gegevensformatting of batchupdates efficiënt af te handelen.
-
 ## Hoe:
 C# maakt tekstmanipulatie vrij eenvoudig. Hieronder, bekijk de `string.Replace` methode om woorden te verwisselen.
 

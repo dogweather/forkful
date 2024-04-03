@@ -13,12 +13,7 @@ title: "Usando express\xF5es regulares"
 weight: 11
 ---
 
-## O Que & Por Que?
-
-Expressões regulares (regex) no Fish Shell permitem buscar, combinar e manipular strings com base em padrões específicos. Programadores utilizam regex para tarefas como validação de entrada, análise e processamento de texto, pois oferece uma maneira compacta e poderosa de especificar padrões de texto complexos.
-
 ## Como fazer:
-
 Embora o próprio Fish Shell não tenha um comando interno para regex, ele usa efetivamente comandos externos como `grep`, `sed` e `awk` que suportam regex, permitindo incorporar operações de regex nos seus scripts.
 
 ### Combinação de Padrões Básicos com `grep`

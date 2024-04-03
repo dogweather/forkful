@@ -11,9 +11,6 @@ title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---
 
-## Quoi & Pourquoi ?
-Une requête HTTP avec authentification de base envoie des informations d'identification codées en base64. Les programmeurs l'utilisent pour accéder à des ressources web sécurisées simplement.
-
 ## Comment faire :
 ```kotlin
 import java.net.HttpURLConnection
@@ -51,7 +48,6 @@ sendGetRequestWithBasicAuth(url, username, password)
 Historiquement, l'authentification de base HTTP est une des méthodes les plus simples d'authentification. Elle n'est pas la plus sécurisée car les identifiants sont facilement décodables si interceptés. C'est pourquoi HTTPS est souvent utilisé en conjonction. Des alternatives comme OAuth sont préférées pour une sécurité accrue. En Kotlin, l'envoi de requête HTTP avec authentification de base peut s'effectuer manuellement comme vu précédemment, ou en utilisant des bibliothèques telles que OkHttp ou Ktor, qui simplifient le processus et gèrent mieux les erreurs.
 
 ## Voir Aussi :
-
 - Documentation sur l'authentification HTTP dans la RFC 7617: https://tools.ietf.org/html/rfc7617
 - Guide sur OkHttp: https://square.github.io/okhttp/
 - Documentation de Ktor pour les clients HTTP: https://ktor.io/docs/http-client.html

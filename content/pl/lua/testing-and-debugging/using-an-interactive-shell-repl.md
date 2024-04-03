@@ -11,9 +11,6 @@ title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---
 
-## Co i dlaczego?
-REPL oznacza Read-Eval-Print Loop (Pętla Czytaj-Wykonaj-Wydrukuj), interaktywne środowisko, gdzie można szybko testować kod. Programiści używają go do eksperymentowania, debugowania i poznawania osobliwości języka.
-
 ## Jak to zrobić:
 Aby wejść do REPL Lua, wystarczy wpisać `lua` w terminalu. Oto przykładowa sesja:
 

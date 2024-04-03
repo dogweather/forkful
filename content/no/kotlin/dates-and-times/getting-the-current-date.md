@@ -14,10 +14,8 @@ title: "F\xE5 dagens dato"
 weight: 29
 ---
 
-## Hva og hvorfor?
-I programmering er det å få tak i dagens dato en grunnleggende oppgave som gjør det mulig for utviklere å få tilgang til, vise eller manipulere dagens dato innenfor applikasjonene deres. Denne evnen er avgjørende for alt fra logging og tidsstempling av hendelser til beregninger basert på datoer.
-
 ## Hvordan:
+
 
 ### Bruke Standard Kotlin
 Kotlin har ikke sitt eget dato- og klokkeslett-API, men stoler på Java Standard Library for denne funksjonaliteten. Slik kan du få tak i dagens dato:

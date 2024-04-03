@@ -14,12 +14,7 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mitä & Miksi?
-
-Visual Basic for Applications (VBA) -ohjelmoinnissa nykyisen päivämäärän noutaminen on yleinen tehtävä, joka mahdollistaa ohjelmoijien dynaamisen työskentelyn päivämäärien kanssa makroissaan tai sovelluksissaan. Tämä toiminnallisuus on ratkaisevan tärkeää toimintoja kuten lokitus, tapahtumien aikaleimojen lisääminen tai päivämääräpohjaisten laskelmien tekeminen varten.
-
 ## Miten:
-
 Nykyisen päivämäärän noutaminen VBA:ssa on suoraviivaista käyttämällä `Date`-funktiota, kun taas `Now`-funktio tarjoaa sekä nykyisen päivämäärän että ajan. Tässä on, miten voit työskennellä molempien kanssa:
 
 ```vb
@@ -46,7 +41,6 @@ Nykyinen päivämäärä ja aika: 12.4.2023 15:45:22
 Pidä mielessä, että päivämäärämuoto voi vaihdella käyttäjän tietokoneen järjestelmäasetusten mukaan.
 
 ## Syväsukellus
-
 `Date`- ja `Now`-funktiot kapseloivat päivämäärän ja ajan käsittelyn kompleksisuuden Visual Basic for Applications -ohjelmoinnissa, tarjoten sovellustason abstraktion, joka tekee päivämäärien kanssa työskentelystä yksinkertaista ja intuitiivista. Historiallisesti päivämäärän ja ajan käsittely ohjelmoinnissa on ollut haastavaa, mukaan lukien eri aikavyöhykkeiden, kesäaikaan siirtymisen ja erilaisten päivämäärämuotojen käsittely.
 
 VBA:ssa nämä funktiot tukeutuvat käyttöjärjestelmän alla olevaan päivämäärään ja aikaan, mikä tarkoittaa, että ne ovat käyttäjän lokaation ja järjestelmäasetusten vaikutuksen alaisena. Se on kaksiteräinen miekka, joka varmistaa yhdenmukaisuuden käyttäjän ympäristön kanssa, mutta myös edellyttää huolellista käsittelyä lokalisaation ja aikavyöhykkeen säätöissä globaaleissa sovelluksissa.

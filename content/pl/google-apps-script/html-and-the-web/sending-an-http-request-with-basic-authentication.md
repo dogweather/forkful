@@ -14,12 +14,7 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnianiem"
 weight: 45
 ---
 
-## Co i dlaczego?
-
-Wysyłanie żądania HTTP z uwierzytelnianiem podstawowym polega na zakodowaniu nazwy użytkownika i hasła w nagłówku żądania, aby uzyskać dostęp do chronionych zasobów. Programiści używają tej metody do uwierzytelniania po stronie serwera, aby integrować się z API wymagającymi uwierzytelnienia podstawowego do operacji takich jak pozyskiwanie danych czy publikowanie treści.
-
 ## Jak to zrobić:
-
 W Google Apps Script, aby wysłać żądanie HTTP z uwierzytelnieniem podstawowym, wykorzystuje się usługę `UrlFetchApp` w połączeniu z nagłówkiem autoryzacji zakodowanym w base64. Oto krok po kroku:
 
 1. **Kodowanie poświadczeń**: Najpierw zakoduj swoją nazwę użytkownika i hasło w base64. Google Apps Script nie posiada natywnej funkcji kodowania base64 dla ciągów, dlatego użyjesz Utilities.base64Encode do tego celu.
@@ -59,7 +54,6 @@ Przykładowe wyjście po udanym żądaniu będzie się różnić w zależności 
 Upewnij się, że obsłużysz możliwe błędy HTTP, sprawdzając kod odpowiedzi lub używając opcji `muteHttpExceptions` dla bardziej kontrolowanego zarządzania błędami.
 
 ## Pogłębiona analiza
-
 Wysyłanie żądania HTTP z uwierzytelnieniem podstawowym jest standardową metodą w wielu językach programowania do uzyskiwania dostępu do zasobów sieciowych wymagających uwierzytelnienia. W kontekście Google Apps Script, `UrlFetchApp` oferuje prosty sposób na wykonywanie tych żądań HTTP, w tym tych wymagających uwierzytelnienia. Dołączenie podstawowych poświadczeń w nagłówkach żądania jest prostym, ale skutecznym sposobem, jednakże wiąże się z zastrzeżeniami dotyczącymi bezpieczeństwa, głównie dlatego, że poświadczenia są wysyłane w postaci zwykłego tekstu, tylko zakodowane w base64, co można łatwo zdekodować, jeśli zostaną przechwycone.
 
 Dla lepszego bezpieczeństwa, rekomendowane są alternatywy takie jak OAuth 2.0, zwłaszcza przy pracy z danymi wrażliwymi lub operacjach. Google Apps Script posiada wbudowane wsparcie dla OAuth 2.0 z biblioteką `OAuth2`, ułatwiając proces uwierzytelniania przeciwko usługom obsługującym ten protokół.

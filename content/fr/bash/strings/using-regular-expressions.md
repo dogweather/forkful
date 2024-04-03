@@ -14,11 +14,8 @@ title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---
 
-## Quoi & Pourquoi ?
-
-Les expressions régulières (regex) dans Bash vous permettent de rechercher, manipuler et gérer des chaînes de caractères et des fichiers en fonction de modèles spécifiques. Les programmeurs utilisent les regex pour des tâches telles que la validation d'entrée, l'analyse de fichiers journaux et l'extraction de données car elles offrent un moyen flexible et puissant de spécifier des modèles pour des besoins complexes de traitement de texte.
-
 ## Comment faire :
+
 
 ### Correspondance de modèles de base
 Pour trouver si une chaîne correspond à un motif, vous pouvez utiliser `grep`, un utilitaire en ligne de commande pour rechercher dans des ensembles de données en texte brut des lignes correspondant à une expression régulière :

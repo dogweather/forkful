@@ -13,9 +13,6 @@ title: Werken met YAML
 weight: 41
 ---
 
-## Wat & Waarom?
-YAML is een door mensen goed leesbare gegevensserialisatiestandaard die wordt gebruikt in programmering voor configuratiebestanden, gegevensopslag en meer. Programmeurs gebruiken het vanwege de leesbaarheid en eenvoud in complexe applicaties en systemen.
-
 ## Hoe te:
 Om met YAML in C# te werken, heb je de YamlDotNet-bibliotheek nodig. Je kunt deze installeren via NuGet: `Install-Package YamlDotNet`.
 

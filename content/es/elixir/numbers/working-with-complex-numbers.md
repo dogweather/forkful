@@ -11,9 +11,6 @@ title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---
 
-## Qué y Por Qué?
-Los números complejos tienen una parte real y una parte imaginaria (como `3 + 4i`). Se utilizan en ingeniería, física y ciertos problemas de computación. Los programadores trabajan con ellos para simulaciones, procesamiento de señales y resolución eficiente de ciertos tipos de problemas matemáticos.
-
 ## Cómo hacerlo:
 Elixir no tiene números complejos incorporados, así que creamos los nuestros o usamos una librería, como `ComplexNum`. Aquí hay un ejemplo rápido con una librería:
 

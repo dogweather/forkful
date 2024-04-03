@@ -11,9 +11,6 @@ title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---
 
-## Mikä & Miksi?
-TOML on konfiguraatiotiedostomuoto, joka on helppo ihmisille lukea ja kirjoittaa, sekä helposti koneiden jäsentämää ja luotavaa. Ohjelmoijat käyttävät TOMLia selkeiden, hierarkkisten konfiguraatiotiedostojen kanssa projekteissa, joissa luettavuus on avainasemassa.
-
 ## Kuinka:
 TOMLin lukemiseen ja manipulointiin Fish-skriptikielessä voit käyttää työkalua kuten `yj`, joka voi muuntaa TOMLin JSON-muotoon. Näin se tehdään:
 

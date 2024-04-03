@@ -12,10 +12,8 @@ title: Einen Datum aus einem String analysieren
 weight: 30
 ---
 
-## Was & Warum?
-Das Parsen eines Datums aus einem String beinhaltet die Umwandlung der Textdarstellung eines Datums und einer Zeit in ein `Date`-Objekt oder ein moderneres `LocalDateTime`-Objekt. Programmierer tun dies, um Daten zu manipulieren, zu formatieren, zu vergleichen oder in einem standardisierten Format zu speichern, was für Anwendungen, die Datumsberechnungen, Validierungen oder eine konsistente Internationalisierung erfordern, entscheidend ist.
-
 ## Wie geht das:
+
 
 ### Verwendung des `java.time` Pakets (Empfohlen in Java 8 und später):
 ```java

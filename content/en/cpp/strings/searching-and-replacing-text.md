@@ -10,9 +10,6 @@ title: Searching and replacing text
 weight: 10
 ---
 
-## What & Why?
-Searching and replacing text is finding specific strings within a larger string and swapping them out for something else. Programmers use it for tasks like updating variable names, modifying data, or automating edits across multiple files.
-
 ## How to:
 C++ offers several ways to search and replace text. Below is an example using `std::string::find` and `std::string::replace`.
 

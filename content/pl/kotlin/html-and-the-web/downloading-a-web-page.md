@@ -10,9 +10,6 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## What & Why?
-Pobieranie strony internetowej to proces ściągania danych z serwera. Programiści robią to, by pracować z treścią offline, analizować dane czy integrować funkcjonalności.
-
 ## How to:
 Kotlin pozwala na proste pobieranie treści sieciowej. Oto podstawowy przykład:
 

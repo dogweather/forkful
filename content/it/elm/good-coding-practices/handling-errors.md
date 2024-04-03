@@ -11,9 +11,6 @@ title: Gestione degli errori
 weight: 16
 ---
 
-## Cosa e Perché?
-Gestire gli errori significa scrivere codice che può anticipare e affrontare le problematiche che emergono. I programmatori lo fanno per evitare crash del sistema, proteggere l'integrità dei dati e fornire agli utenti soluzioni alternative eleganti.
-
 ## Come fare:
 La filosofia di base di Elm è Nessuna Eccezione a Runtime. Di conseguenza, Elm sfrutta il suo sistema di tipi con tipi come `Maybe` e `Result` per gestire gli errori.
 

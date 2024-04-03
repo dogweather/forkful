@@ -14,12 +14,7 @@ title: Fjerne sitatmerker fra en streng
 weight: 9
 ---
 
-## Hva & Hvorfor?
-
-Å fjerne anførselstegn fra en streng i VBA involverer å strippe ut forekomster av enkle (`'`) eller doble (`"`) anførselstegn som kan innkapsle eller være innebygd i strengen. Denne operasjonen er essensiell for datasanering, for å sikre at strengene er korrekt formatert for databasespørringer, JSON-tolkning, eller rett og slett for estetiske eller konsistensgrunner innenfor en applikasjons grensesnitt.
-
 ## Hvordan:
-
 I VBA er det flere tilnærminger for å fjerne anførselstegn fra en streng. Her er et enkelt eksempel ved bruk av `Replace`-funksjonen, som søker etter en spesifikk delstreng (i dette tilfellet, et anførselstegn) i en streng og erstatter den med en annen delstreng (en tom streng ved fjerning).
 
 ```basic
@@ -42,7 +37,6 @@ Merk at for doble anførselstegn bruker vi `Chr(34)` fordi et dobbelt anførsels
 For mer nyanserte scenarioer hvor anførselstegn kan være en del av nødvendig format (f.eks. inne i et sitert ord), kan mer sofistikert logikk, kanskje ved bruk av Regex eller parsing tegn for tegn, være nødvendig.
 
 ## Dykk dypere
-
 VBA, som er en grunnpilar i å automatisere oppgaver innen Microsoft Office-pakken, tilbyr et rikt sett av funksjoner for strengmanipulering, med `Replace` som en av de mest brukte. Denne funksjonen, derimot, er bare begynnelsen på hva som kan oppnås med VBA når det gjelder strengmanipulering.
 
 Historisk sett har VBA fra sine forgjengere lagt vekt på enkelhet for kontorautomasjonsoppgaver, derav den enkle implementeringen av funksjoner som `Replace`. Imidlertid, for moderne programmeringsoppgaver, spesielt de som involverer kompleks strengmanipulasjoner eller sanering, kan VBA vise sine begrensninger.

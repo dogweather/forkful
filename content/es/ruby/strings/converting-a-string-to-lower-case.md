@@ -10,9 +10,6 @@ title: "Conversi\xF3n de una cadena de texto a min\xFAsculas"
 weight: 4
 ---
 
-## What & Why?
-Convertir un texto (string) a minúsculas es cambiar todas las letras del texto a su versión en minúscula. Esto se hace para uniformizar el texto, facilitar las comparaciones sin preocuparse por mayúsculas o minúsculas y para procesar o almacenar datos de manera más consistente.
-
 ## How to:
 Ruby es amigable. Para convertir un string a minúsculas, usas `.downcase`. Así de sencillo:
 

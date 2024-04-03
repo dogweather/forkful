@@ -14,12 +14,7 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co i dlaczego?
-
-Usuwanie cudzysłowów z ciągu znaków w języku C polega na wyodrębnieniu zawartości tekstowej bez otaczających pojedynczych (' ') lub podwójnych (" ") cudzysłowów. Proces ten jest niezbędny do sanitacji danych wejściowych, parsowania zawartości plików lub przygotowywania ciągów do dalszej obróbki, gdzie cudzysłowy nie są wymagane lub mogą prowadzić do błędów w obsłudze danych.
-
 ## Jak to zrobić:
-
 Aby usunąć cudzysłowy z ciągu znaków w C, przeszukujemy ciąg, kopiując znaki, które nie są cudzysłowami, do nowego ciągu. Proces ten można dostosować do usunięcia tylko początkowych i końcowych cudzysłowów lub wszystkich cudzysłowów obecnych w ciągu. Poniżej znajduje się przykład ilustrujący oba podejścia:
 
 ```c
@@ -70,7 +65,6 @@ Usunięto cudzysłowy z obrzeży: Programming in C
 Te przykłady pokazują, jak radzić sobie z usuwaniem wszystkich obecnych cudzysłowów z ciągu oraz z celowanym usuwaniem tylko początkowych i końcowych cudzysłowów.
 
 ## Szczegółowe omówienie
-
 Koncepcja usuwania cudzysłowów z ciągów znaków nie ma znaczącej historii w C, poza jej związkami z wczesnymi potrzebami przetwarzania tekstu. Proste podejście prezentowane tutaj jest wszechstronne, ale brakuje mu efektywności dla bardzo dużych ciągów znaków lub wymagań wysokiej wydajności, gdzie preferowane mogą być modyfikacje dokonane w miejscu lub bardziej zaawansowane algorytmy.
 
 Alternatywy, takie jak użycie `strpbrk` do znajdowania cudzysłowów i przesuwanie części ciągu bez cudzysłowów, mogą być bardziej efektywne, ale wymagają głębszego zrozumienia wskaźników i zarządzania pamięcią w C. Ponadto, pojawienie się bibliotek wyrażeń regularnych zapewniło potężny zestaw narzędzi do manipulacji ciągami, w tym usuwanie cudzysłowów. Jednak te biblioteki, mimo że potężne, dodają złożoności i obciążenia, które mogą nie być konieczne dla prostszych zadań. W konsekwencji, bezpośrednie podejście, jak pokazano, pozostaje cenną umiejętnością dla programistów C, łącząc prostotę z efektywnością dla wielu wspólnych przypadków użycia.

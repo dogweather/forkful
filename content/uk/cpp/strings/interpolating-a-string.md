@@ -11,11 +11,6 @@ title: "\u0406\u043D\u0442\u0435\u0440\u043F\u043E\u043B\u044F\u0446\u0456\u044F
 weight: 8
 ---
 
-## What & Why?
-Що та навіщо?
-
-Interpolating a string means inserting values into a predefined text format. Programmers do it to build dynamic strings without the cumbersome concatenation.
-
 ## How to:
 Як це зробити:
 

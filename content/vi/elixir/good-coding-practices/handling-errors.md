@@ -15,12 +15,7 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Là gì & Tại sao?
-
-Xử lý lỗi nghĩa là viết mã có thể đối phó với tình huống không như mong đợi. Lập trình viên làm điều này để ngăn chặn sự cố và đảm bảo rằng chương trình của họ có thể phục hồi một cách nhẹ nhàng khi Luật Murphy xuất hiện.
-
 ## Làm thế nào:
-
 Trong Elixir, chúng ta thường sử dụng kỹ thuật so khớp mẫu và lệnh `case` để xử lý các kết quả khác nhau, bao gồm cả lỗi.
 
 ```elixir
@@ -51,7 +46,6 @@ Lỗi: Không thể chia cho số không.
 Khi bạn chạy mã Elixir này, bạn sẽ nhận được kết quả là một phép chia thành công hoặc một thông báo lỗi, tùy thuộc vào đầu vào của bạn. Không có sự cố nào ở đây!
 
 ## Khám phá sâu hơn
-
 Trước đây, xử lý lỗi thường liên quan đến việc kiểm tra giá trị trả về. Tuy nhiên, với căn nguyên chức năng của Elixir, chúng ta có so khớp mẫu và các bộ ghép nhãn như `{:ok, value}` hoặc `{:error, reason}`, chúng mang đến sự tao nhã hơn.
 
 Có những cách khác để xử lý lỗi trong Elixir:
@@ -62,7 +56,6 @@ Có những cách khác để xử lý lỗi trong Elixir:
 Về mặt triển khai, Elixir dựa trên sự ổn định của Erlang. Nó xem lỗi như là chỉ một loại thông điệp khác để được xử lý với tất cả sự tốt lành của so khớp mẫu và chức năng.
 
 ## Xem thêm
-
 Để tìm hiểu thêm về xử lý lỗi trong Elixir, hãy tham khảo:
 
 - Hướng dẫn chính thức của Elixir về [xử lý lỗi](https://elixir-lang.org/getting-started/try-catch-and-rescue.html).

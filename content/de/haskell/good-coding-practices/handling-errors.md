@@ -10,9 +10,6 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-Fehlerbehandlung in der Programmierung handelt davon, mit Unerwartetem umzugehen—Dinge, die schiefgehen können. Programmierer machen dies, um sicherzustellen, dass ihre Programme diese Situationen anmutig bewältigen können, ohne abzustürzen oder falsche Ergebnisse zu liefern.
-
 ## Wie:
 Haskell behandelt Fehler robust durch Typen wie `Maybe` und `Either`. Hier ein kurzer Überblick:
 

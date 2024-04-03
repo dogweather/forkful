@@ -11,9 +11,6 @@ title: Einen neuen Projekt starten
 weight: 1
 ---
 
-## Was & Warum?
-Das Starten eines neuen Projekts bedeutet, Grundsteine für etwas Großartiges zu legen. Entwickler tun dies, um ihre Ideen in die Realität umzusetzen oder um neue Techniken zu lernen.
-
 ## How to:
 ```Clojure
 ;; Installiere Leiningen, das Build-Tool für Clojure:

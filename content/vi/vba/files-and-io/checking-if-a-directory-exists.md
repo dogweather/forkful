@@ -17,12 +17,7 @@ title: "Ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\u1EE5c t\u1ED3n t\u1EA1i"
 weight: 20
 ---
 
-## Cái gì và Tại sao?
-
-Kiểm tra xem một thư mục có tồn tại trong Visual Basic cho Ứng dụng (VBA) là để xác minh sự hiện diện của một thư mục trong hệ thống tập tin trước khi thực hiện các thao tác như lưu tệp hoặc tạo thư mục mới. Các lập trình viên thực hiện điều này để tránh lỗi thời gian chạy và đảm bảo mã của họ tương tác với hệ thống tập tin một cách hiệu quả và chính xác.
-
 ## Làm thế nào:
-
 Trong VBA, để kiểm tra xem một thư mục có tồn tại không, bạn thường sử dụng hàm `Dir` kết hợp với thuộc tính `vbDirectory`. Phương pháp này cho phép bạn kiểm tra sự tồn tại của một thư mục bằng cách chỉ rõ đường dẫn của nó. Đây là cách bạn có thể làm:
 
 ```basic
@@ -49,7 +44,6 @@ Thư mục tồn tại.
 ```
 
 ## Sâu hơn nữa
-
 Việc kiểm tra xem một thư mục có tồn tại không là một nhiệm vụ cơ bản trong nhiều ngôn ngữ lập trình, không chỉ trong VBA. Phương pháp sử dụng `Dir` được mô tả ở trên là đơn giản và hiệu quả cho hầu hết các mục đích trong VBA. Tuy nhiên, cần lưu ý rằng cách tiếp cận này có thể có hạn chế, chẳng hạn như trong trường hợp của đường dẫn mạng và xử lý quyền, có thể đôi khi mang lại kết quả sai lệch.
 
 Theo lịch sử, các phương pháp truy cập hệ thống tập tin đã phát triển qua các ngôn ngữ lập trình khác nhau, với những ngôn ngữ gần đây hơn cung cấp các cách tiếp cận hướng đối tượng. Ví dụ, trong các ngôn ngữ .NET như VB.NET, người ta có thể sử dụng `System.IO.Directory.Exists(path)` cho một cách thức kiểm tra tồn tại thư mục dễ dàng và có thể nói là mạnh mẽ hơn, tận dụng việc xử lý ngoại lệ và thông tin trả về phong phú hơn.

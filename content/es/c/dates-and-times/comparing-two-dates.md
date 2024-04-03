@@ -13,12 +13,7 @@ title: Comparando dos fechas
 weight: 27
 ---
 
-## ¿Qué y Por Qué?
-
-Comparar dos fechas en C implica determinar la relación cronológica entre ellas: si una fecha precede a la otra o si son iguales. Esta capacidad es crucial en aplicaciones que tratan con programaciones, plazos o el mantenimiento de registros, ya que permite la organización y manipulación de datos sensibles al tiempo.
-
 ## Cómo hacerlo:
-
 C no tiene un tipo integrado para fechas, lo que requiere el uso de la biblioteca `time.h` para trabajar con estructuras de fecha y tiempo. La estructura `tm` y la función `difftime()` se utilizan comúnmente para comparar fechas. A continuación, se muestra un ejemplo de cómo comparar dos fechas:
 
 ```c
@@ -68,7 +63,6 @@ La primera fecha es anterior a la segunda fecha.
 Este programa inicializa dos estructuras `tm` con fechas específicas, las convierte al formato `time_t` utilizando `mktime()` y finalmente las compara usando `difftime()`, que devuelve la diferencia en segundos (como un `double`) entre los dos tiempos.
 
 ## Análisis Profundo
-
 En los primeros días de C, las operaciones de fecha y hora requerían cálculos manuales, teniendo en cuenta a menudo los años bisiestos, la cantidad variable de días en los meses e incluso los segundos intercalares. La introducción de `time.h` en el estándar ANSI C trajo la estandarización al manejo del tiempo en C, simplificando las operaciones de fecha y hora.
 
 Usar `time.h` para la comparación de fechas es sencillo pero tiene limitaciones. La estructura `tm` no tiene en cuenta las zonas horarias o el horario de verano, y `difftime()` solo proporciona la diferencia en segundos, careciendo de una granularidad más fina para ciertas aplicaciones.

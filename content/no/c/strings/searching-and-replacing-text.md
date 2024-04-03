@@ -12,12 +12,7 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## Hva & Hvorfor?
-
-Å søke og erstatte tekst i C innebærer å identifisere spesifikke delstrenger innenfor en større streng og erstatte dem med forskjellige delstrenger. Programmerere utfører disse operasjonene for å manipulere tekstdata - for oppgaver som spenner fra datasanitæring og formatering til dynamisk generering av innhold.
-
 ## Hvordan:
-
 C kommer ikke med innebygde funksjoner for direkte å utføre søk og erstatte på strenger. Imidlertid kan du oppnå dette ved å kombinere ulike streng-håndteringsfunksjoner som er tilgjengelige i `<string.h>` biblioteket sammen med noe tilpasset logikk. Nedenfor er et grunnleggende eksempel på hvordan søke etter en delstreng innenfor en streng og erstatte den. For enkelhets skyld antar dette eksemplet tilstrekkelig bufferstørrelse og håndterer ikke minneallokeringsspørsmål som du bør vurdere i produksjonskode.
 
 ```c
@@ -75,7 +70,6 @@ Modifisert streng: Hei, dette er en eksempel. Denne eksemplet er enkel.
 Denne koden demonstrerer en enkel tilnærming for å søke etter alle forekomster av en delstreng (`sub`) i en kildestreng og erstatte dem med en annen delstreng (`newSub`), ved bruk av `strstr`-funksjonen for å finne startpunktet for hvert treff. Det er et veldig grunnleggende eksempel som ikke håndterer komplekse scenarioer som for eksempel overlappende delstrenger.
 
 ## Dypdykk
-
 Tilnærmingen som er brukt i "Hvordan"-delen er grunnleggende, og illustrerer hvordan man kan oppnå tekst søk og erstatning i C uten noen tredjepartsbiblioteker. Historisk sett, på grunn av Cs vekt på lavnivåminnehåndtering og ytelse, inkluderer ikke standardbiblioteket høy-nivå strengmanipuleringsfunksjoner som de som finnes i språk som Python eller JavaScript. Programmerere må manuelt håndtere minne og kombinere ulike strengoperasjoner for å oppnå ønskede resultater, noe som øker kompleksiteten, men gir mer kontroll og effektivitet.
 
 Det er viktig å merke seg at denne manuelle tilnærmingen kan være feilbarlig, spesielt når man håndterer minneallokeringer og bufferstørrelser. Feil håndtering kan føre til bufferoverløp og minneforringelse, noe som gjør koden sårbar for sikkerhetsrisikoer.

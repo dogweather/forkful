@@ -13,9 +13,6 @@ title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---
 
-## Vad & Varför?
-Att tolka ett datum från en sträng innebär att konvertera text till ett Datum-objekt. Denna operation är grundläggande för applikationer som interagerar med datum som användare matar in eller som hämtas från externa datasamlingar, vilket möjliggör enkel manipulering och formatering enligt behov.
-
 ## Hur man gör:
 Kotlin stödjer datumtolkning genom `java.time`-paketet, som introducerades i Java 8. Här är en enkel metod med hjälp av `LocalDateTime` och ett specifikt mönster:
 

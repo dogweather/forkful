@@ -10,9 +10,6 @@ title: "XML:n k\xE4sittely"
 weight: 40
 ---
 
-## Mikä & Miksi?
-XML:n käsittelyyn kuuluu jäsennys, tietojen poiminta ja manipulointi Laajennettavassa Merkintäkielessä (Extensible Markup Language). Ohjelmoijat kamppailevat XML:n kanssa, koska se on laajalti käytetty tietojenvaihtoformaatti konfiguraatioille, API:lle ja muulle.
-
 ## Miten:
 Näin jäsennetään XML:ää Bashissa. Työkalut? xmllint ja xmlstarlet. Elementtien läpikäynti loopilla? Ehdottomasti. Esimerkki ja esimerkkituloste:
 

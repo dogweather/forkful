@@ -10,9 +10,6 @@ title: Avvio di un nuovo progetto
 weight: 1
 ---
 
-## What & Why? - Cosa & Perché?
-Iniziare un nuovo progetto significa creare un ambiente di lavoro da zero, dove il codice prende vita. Si fa per trasformare le idee in software funzionante, spesso per risolvere problemi specifici o esplorare nuove tecnologie.
-
 ## How to - Come fare:
 ```TypeScript
 // Step 1: Installa TypeScript globalmente

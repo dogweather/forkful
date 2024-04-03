@@ -14,9 +14,6 @@ title: "Organizando el c\xF3digo en funciones"
 weight: 18
 ---
 
-## Qué y Por Qué?
-Organizar el código en funciones trata de agrupar trozos de script para realizar tareas específicas. Lo hacemos porque hace que el código sea más fácil de leer, probar y reutilizar — nadie quiere sortear un pantano de espagueti de código.
-
 ## Cómo hacerlo:
 En Fish, escribes una función con la palabra clave `function`, le das un nombre y terminas con `end`. Aquí hay una simple:
 
@@ -59,11 +56,9 @@ Algunos shells, como Bash, usan `function` o simplemente llaves directas. Fish s
 No necesitarás un valor de `return` porque Fish no se concentra en eso; la salida de tu función es su retorno. Y si quieres funciones persistentes disponibles para futuras sesiones, recuerda `funcsave`.
 
 ## Ver También
-
 - El tutorial de fish sobre funciones: [https://fishshell.com/docs/current/tutorial.html#tut_functions](https://fishshell.com/docs/current/tutorial.html#functions)
 
 ### Comandos de función
-
 - [function](https://fishshell.com/docs/current/cmds/function.html) — Crear una función
 - [functions](https://fishshell.com/docs/current/cmds/functions.html) — Imprimir o borrar funciones
 - [funcsave](https://fishshell.com/docs/current/cmds/funcsave.html) — Guarda la definición de una función en el directorio de carga automática del usuario

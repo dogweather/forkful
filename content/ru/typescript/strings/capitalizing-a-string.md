@@ -29,12 +29,7 @@ title: "\u041F\u0440\u0435\u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u043D
 weight: 2
 ---
 
-## Что и Зачем?
-
-Преобразование строки в заглавные буквы означает превращение первой буквы каждого слова в верхний регистр, а остальные буквы - в нижний. Программисты делают это для обеспечения единообразия форматирования в пользовательских интерфейсах и для того, чтобы собственные имена и заголовки отображались корректно.
-
 ## Как это сделать:
-
 Вот небольшой пример на TypeScript, который поможет вам преобразовывать строки:
 
 ```typescript
@@ -53,7 +48,6 @@ console.log(capitalizedTitle); // Вывод: "Hello World From Typescript"
 Просто, правда? Теперь превратите эти строчные строки во что-то изысканное!
 
 ## Подробнее
-
 Преобразование в заглавные буквы существует с времён древних письменностей, улучшая читабельность. В программировании, помимо эстетической и грамматической корректности, преобразование строк в заглавные буквы может быть критичным для операций сравнения, где "Apple" и "apple" могут рассматриваться по-разному.
 
 Альтернативы функции `capitalizeString` могут включать в себя библиотеки, такие как Lodash, предлагающие метод `_.startCase`, или использование CSS для визуального преобразования (`text-transform: capitalize;`). Однако, CSS не изменяет фактическое значение строки, только её отображение.
@@ -61,7 +55,6 @@ console.log(capitalizedTitle); // Вывод: "Hello World From Typescript"
 В JavaScript изначально не было встроенного метода для преобразования строк в заглавные буквы, что оставляло это на усмотрение разработчиков. Функция, представленная выше, использует регулярное выражение для определения границ слова `\w\S*`, преобразует первую букву с помощью `toUpperCase()`, а остальные – с использованием `toLowerCase()`.
 
 ## Смотрите также
-
 - Документация по строкам MDN: [https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String)
 - Функция `_.startCase` от Lodash: [https://lodash.com/docs/#startCase](https://lodash.com/docs/#startCase)
 - String.prototype.toLocaleUpperCase (для учёта региональных особенностей при преобразовании): [https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase](https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase)

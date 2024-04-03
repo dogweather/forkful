@@ -16,9 +16,6 @@ title: Ghi log
 weight: 17
 ---
 
-## Cái gì & Tại sao?
-Ghi chép (Logging) quả thực tương đương với nhật ký tàu thủy; nó là cách để ghi lại các sự kiện xảy ra khi một ứng dụng đang chạy. Các lập trình viên làm điều này để theo dõi các sự kiện này cho việc gỡ lỗi, kiểm toán, hoặc để hiểu rõ hơn về hành vi của hệ thống khi ở trong môi trường sản xuất.
-
 ## Làm thế nào:
 Clojure dựa vào các tiện ích ghi chép của Java, nhưng bạn có thể vận dụng chúng theo cách Clojure tiếp cận hợp lý hơn. Hãy cùng xem bạn có thể sử dụng `clojure.tools.logging` như thế nào, nó cung cấp một trừu tượng đơn giản trên nhiều khung ghi chép khác nhau:
 

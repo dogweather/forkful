@@ -11,9 +11,6 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## What & Why? (Quoi et Pourquoi?)
-Créer un fichier temporaire en Java, c'est générer un fichier pour des données éphémères. Les programmeurs le font souvent pour tester des morceaux de code ou gérer des données sensibles qui ne doivent pas rester sur le disque dur indéfiniment.
-
 ## How to: (Comment faire : )
 Java offre `Files.createTempFile` pour fabriquer un fichier temp. Il se supprime tout seul à la fin de l'exécution du programme. Voici comment:
 

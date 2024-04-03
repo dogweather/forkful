@@ -15,12 +15,7 @@ title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---
 
-## Cái gì & Tại sao?
-
-Mảng liên kết là như những mảng tăng cường, cho phép bạn sử dụng chuỗi làm chỉ mục thay vì chỉ có số nguyên. Lập trình viên sử dụng chúng cho cấu trúc dữ liệu phức tạp hơn, làm cho việc xử lý dữ liệu không gọn gàng vừa với một danh sách tuần tự trở nên dễ dàng hơn.
-
 ## Làm thế nào:
-
 Đầu tiên, khai báo một mảng liên kết trong Bash:
 
 ```Bash
@@ -68,7 +63,6 @@ unset my_array["topic"]
 ```
 
 ## Sâu hơn
-
 Mảng liên kết được giới thiệu trong phiên bản Bash 4.0, làm cho chúng là một bổ sung tương đối mới đối với ngôn ngữ. Trước khi chúng được giới thiệu, việc xử lý mảng không chỉ mục số nguyên là khó khăn, thường yêu cầu những giải pháp tạm thời hoặc các công cụ bên ngoài như `awk` hoặc `sed`.
 
 Về bản chất, Bash thực thi mảng liên kết sử dụng bảng băm. Cài đặt này cho phép tìm kiếm khóa một cách hiệu quả, vẫn khá ổn định bất kể kích thước mảng, một tính năng quan trọng cho hiệu suất trong thực thi kịch bản.

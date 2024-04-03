@@ -16,9 +16,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---
 
-## Gì và Tại Sao?
-Làm việc với CSV (Comma-Separated Values - Giá Trị Tách Biệt Bằng Dấu Phẩy) trên Arduino giúp bạn lưu trữ và quản lý dữ liệu dưới dạng văn bản. Nó rẻ, dễ dàng và phổ quát, làm cho nó trở thành lý tưởng cho việc ghi dữ liệu, tệp cấu hình, hoặc giao tiếp với bảng tính và cơ sở dữ liệu.
-
 ## Làm Thế Nào:
 Dưới đây là cách lưu dữ liệu cảm biến vào một tệp CSV trên thẻ SD:
 

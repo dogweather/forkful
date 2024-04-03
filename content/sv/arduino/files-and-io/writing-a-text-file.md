@@ -14,9 +14,6 @@ title: Att skriva en textfil
 weight: 24
 ---
 
-## Vad & Varför?
-Att skriva en textfil i Arduino innebär att spara data till en fil på ett SD-kort eller liknande lagringsmodul, ofta för datainsamlingsändamål. Programmerare gör detta för att registrera sensoravläsningar, spara konfigurationer eller logga applikationsevenemang över tid, vilket gör det avgörande för projekt som kräver dataanalys eller spårning.
-
 ## Hur man gör:
 För att skriva till en textfil på ett SD-kort med Arduino, måste du först inkludera `SD.h`-biblioteket, som tillhandahåller de nödvändiga funktionerna för att interagera med SD-kort. Se till att ditt Arduino-kort är kopplat till en SD-kortmodul.
 

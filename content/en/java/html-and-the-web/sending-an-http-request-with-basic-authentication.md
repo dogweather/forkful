@@ -11,9 +11,6 @@ title: Sending an HTTP request with basic authentication
 weight: 45
 ---
 
-## What & Why?
-Sending an HTTP request with basic authentication involves adding a header with a username and password to access a protected resource. Programmers use it for simple authorization in web services when more advanced methods aren't necessary.
-
 ## How to:
 Java makes it pretty straightforward to send HTTP requests with basic authentication using the `HttpURLConnection` class. Here's a quick example:
 

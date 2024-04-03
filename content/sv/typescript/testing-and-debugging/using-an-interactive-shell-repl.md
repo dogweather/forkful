@@ -12,9 +12,6 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-En Read-Eval-Print-Loop (REPL) är en programmeringsmiljö som tar emot enskilda användarinmatningar, exekverar dem och returnerar resultatet till användaren. Programmerare använder en REPL för att snabbt experimentera med kodsnuttar, felsöka och lära sig nya språkfunktioner utan det extra arbete som krävs för att skapa en fullständig applikation.
-
 ## Hur gör man:
 TypeScript kommer inte med sin egen REPL. Låt oss använda `ts-node`, en TypeScript-exekveringsmiljö för Node.js som inkluderar en REPL.
 

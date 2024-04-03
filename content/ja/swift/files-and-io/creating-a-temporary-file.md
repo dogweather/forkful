@@ -19,12 +19,7 @@ title: "\u4E00\u6642\u30D5\u30A1\u30A4\u30EB\u306E\u4F5C\u6210"
 weight: 21
 ---
 
-## What & Why? (なにとなぜ？)
-
-一時ファイルは、データを短期間保持するためのファイルです。プログラマーは、一時的なデータの書き込みやテスト、プログラム間のデータの受け渡しに使います。
-
 ## How to: (方法：)
-
 Swiftでは、`FileManager`を使って一時ファイルを簡単に作成できます。
 
 ```Swift
@@ -59,11 +54,9 @@ Temporary file created: /tmp/example_DBA1BC2C-1B77-4F2B-A6F5-426EAF5DDF53.tmp
 ```
 
 ## Deep Dive (詳細解説)
-
 一時ファイルの概念はUNIX系のシステムで遠い昔からあります。`/tmp`ディレクトリは短期間のファイル保管場所として使用されます。Swiftにおける一時ファイルの実装方法は、Foundationフレームワークに由来しています。`FileManager`以外にも、`mkstemp`のような低レベルのC言語APIを使うこともできますが、Swiftでは`FileManager`の方が扱いやすいでしょう。重要なのは、一時ファイルを使い終わったら削除すること、システムの一時ディレクトリを汚さないようにすることです。
 
 ## See Also (関連情報)
-
 - Swiftの`FileManager`クラスの公式ドキュメント：
   [FileManager | Apple Developer Documentation](https://developer.apple.com/documentation/foundation/filemanager)
   

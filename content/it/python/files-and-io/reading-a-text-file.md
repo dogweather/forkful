@@ -10,9 +10,6 @@ title: Lettura di un file di testo
 weight: 22
 ---
 
-## What & Why? (Cosa e Perché?)
-Leggere un file di testo in Python significa accedere al suo contenuto per usarlo nel programma. I programmatori lo fanno per ottener dati, configurazioni o per processare informazioni salvate in file.
-
 ## How to (Come Fare)
 Ecco come leggere un file di testo in Python:
 

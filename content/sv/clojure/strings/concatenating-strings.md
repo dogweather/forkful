@@ -11,9 +11,6 @@ title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---
 
-## Vad & Varför?
-I programmering innebär 'konkatenering av strängar' att smälta samman två eller fler textstycken. Vi gör det för att skapa meningsfulla meddelanden, bygga upp dynamiska SQL-frågor eller skicka strukturerad data.
-
 ## Så här gör du:
 I Clojure kan du konkatenera strängar med `str` funktionen. Här är ett enkelt exempel:
 

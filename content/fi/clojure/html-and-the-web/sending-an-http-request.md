@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## What & Why?
-HTTP-pyynnön lähettäminen on tapa saada tai lähettää tietoa verkossa toimivien palvelimien välillä. Ohjelmoijat käyttävät sitä dataa vaihtaakseen, API:hin kytkeytyäkseen tai verkkopalveluja kuluttaakseen.
-
 ## How to:
 Clojuren HTTP-kirjastot, kuten `clj-http`, tekevät pyyntöjen lähettämisen vaivattomaksi. Esimerkiksi GET-pyynnön tekeminen:
 

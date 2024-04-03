@@ -14,12 +14,7 @@ title: Debug-Ausgabe drucken
 weight: 33
 ---
 
-## Was & Warum?
-
-Das Ausgeben von Debug-Informationen in Dart bezieht sich darauf, Informationen während der Laufzeit in der Konsole anzuzeigen, was Entwicklern ermöglicht, den Ablauf der Ausführung zu verfolgen, den Zustand von Variablen zu untersuchen oder die Quelle von Fehlern zu identifizieren. Programmierer nutzen dies häufig zur Fehlersuche und um zu überprüfen, ob ihr Code sich wie erwartet verhält, was einen reibungsloseren und effizienteren Entwicklungsprozess fördert.
-
 ## Wie:
-
 In Dart können Sie Debug-Ausgaben mit der `print()`-Funktion ausgeben. Hier erfahren Sie, wie Sie einfache Nachrichten und Variablenwerte ausgeben:
 
 ```dart

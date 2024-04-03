@@ -11,9 +11,6 @@ title: Tekstitiedoston lukeminen
 weight: 22
 ---
 
-## What & Why?
-Tekstitiedoston lukeminen tarkoittaa tiedoston sisältämän tekstimateriaalin tuomista ohjelman käyttöön. Ohjelmoijat tekevät tämän, koska tiedostojen kautta voidaan käsitellä ja hyödyntää ulkoista dataa.
-
 ## How to:
 Elmissä tiedoston lukeminen tapahtuu yleensä JavaScriptin interaktiivisen toiminnan, kuten `FileReader` API:n kautta, käyttäen portaaleja (Elm ports). Tässä esimerkki:
 

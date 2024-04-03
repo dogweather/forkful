@@ -15,12 +15,7 @@ title: "\u0110\u1ECDc c\xE1c \u0111\u1ED1i s\u1ED1 d\xF2ng l\u1EC7nh"
 weight: 23
 ---
 
-## Gì & Tại sao?
-
-Đọc các đối số dòng lệnh cho phép các kịch bản thực thi khác nhau dựa trên nhập liệu của người dùng. Đó là cách mà các kịch bản có thể linh hoạt và không chỉ là thủ thuật đơn điệu.
-
 ## Làm thế nào:
-
 ```Bash
 #!/bin/bash
 
@@ -54,7 +49,6 @@ done
 ```
 
 ## Đào sâu
-
 Bash đã hỗ trợ các đối số dòng lệnh từ rất lâu; chúng là các tham số vị trí, `$0` đến `$9`, với `$@` và `$*` hiển thị tất cả. `$0` là chính kịch bản đó, `$1` đến `$9` là đối số thứ nhất đến thứ chín; cần sử dụng ngoặc như `${10}` cho đối số thứ mười trở đi.
 
 Sử dụng `$@` thường tốt hơn là `$*` vì nó xử lý chính xác các đối số chứa khoảng trắng. `$@` cung cấp mỗi đối số như một "từ" riêng biệt; `$*` kết hợp tất cả chúng thành một "từ" duy nhất.
@@ -64,7 +58,6 @@ Bạn có thể chuyển qua các đối số bằng cách sử dụng lệnh `s
 Có phương án thay thế? Chắc chắn rồi. `getopts` và `getopt` cung cấp nhiều kiểm soát hơn cho các tùy chọn (như -h cho trợ giúp) và phân tích cờ; hãy kiểm tra chúng nếu `$1`, `$2`,... không đáp ứng được nhu cầu của bạn.
 
 ## Xem Thêm
-
 - Tài liệu Bash về các Tham số Đặc biệt: https://www.gnu.org/software/bash/manual/html_node/Special-Parameters.html
 - Hướng dẫn Lập trình Bash Nâng cao: https://www.tldp.org/LDP/abs/html/
 - Hướng dẫn `getopts`: https://wiki.bash-hackers.org/howto/getopts_tutorial

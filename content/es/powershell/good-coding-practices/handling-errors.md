@@ -10,9 +10,6 @@ title: Manejo de errores
 weight: 16
 ---
 
-## ¿Qué y por qué?
-Manejar errores en PowerShell significa prever los contratiempos y gestionarlos de manera fluida. Los programadores hacen esto para evitar fallos y proporcionar a los usuarios retroalimentación útil.
-
 ## Cómo hacerlo:
 ```PowerShell
 # Try-Catch básico para manejar excepciones
@@ -33,6 +30,7 @@ try {
 
 # Usando la variable $Error para inspeccionar el último error
 ```
+
 ## Análisis Profundo
 PowerShell ha evolucionado mucho desde su inicio como Monad. El manejo de errores se volvió más robusto con el tiempo, ofreciendo características similares a otros lenguajes de programación. La sintaxis `try-catch-finally` es una de esas influencias cruzadas de lenguajes como C#. Antes de ella, los programadores se basaban mucho en verificar condiciones y usar la variable automática `$Error`.
 

@@ -10,12 +10,7 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-
-Rounding numbers, a fundamental concept in computer programming, involves adjusting a number to its closest integer or to a specified number of decimal places. Programmers often perform rounding to simplify numbers for human-readability or to meet specific calculation needs, ensuring precision and reducing computational load.
-
 ## How to:
-
 Google Apps Script, being a JavaScript-based language, offers standard methods to round numbers. Here’s a breakdown of three commonly used techniques:
 
 ### Math.round()
@@ -57,7 +52,6 @@ Logger.log(preciseRound); // Outputs: 2.57
 ```
 
 ## Deep Dive
-
 Rounding numbers in Google Apps Script doesn't deviate much from how it's done in other JavaScript environments. However, understanding the differences in rounding methods and the potential for floating-point arithmetic issues is crucial. For instance, due to the way computers represent floats, not all decimal fractions can be represented with perfect accuracy, leading to sometimes unexpected rounding outcomes.
 
 Historically, JavaScript (and by extension, Google Apps Script) handles this by conforming to the IEEE 754 standard, used by many other programming languages for floating-point arithmetic. This standard defines how numbers are rounded, ensuring consistency across various platforms and languages.

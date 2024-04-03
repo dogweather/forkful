@@ -11,9 +11,6 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mikä & Miksi?
-Koodin järjestäminen funktioiksi tarkoittaa koodisi pilkkomista uudelleenkäytettäviksi, modulaarisiksi lohkoiksi. Tämä tehdään DRY (Don't Repeat Yourself) periaatteen mukaisesti, mikä tekee koodista siistimpää, helpommalukuisempaa ja virheenkorjauksen tuulahduksen.
-
 ## Miten:
 Kuvitellaan, että teet peruslaskinta. Sen sijaan, että kirjoittaisit lisäyslogiikan joka kerta kun tarvitset sitä, luo `add` funktio:
 

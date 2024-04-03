@@ -13,10 +13,9 @@ title: Scrivere un file di testo
 weight: 24
 ---
 
-## Cosa e perché?
-Scrivere su un file di testo in Python è un'operazione fondamentale che implica la creazione o l'apertura di un file e poi l'appendere o sovrascrivere testo. Questa funzionalità è cruciale per la registrazione dei dati, la gestione della configurazione e l'archiviazione dell'output generato dai programmi, rendendola uno strumento basilare ma essenziale nell'arsenale di un programmatore.
-
 ## Come fare:
+
+
 ### Utilizzando la Funzione Integrata `open()`
 La funzione integrata `open()` di Python è il modo più comune per scrivere su file. La funzione permette di specificare la modalità in cui il file viene aperto - 'w' per scrivere (sovrascrivendo), 'a' per appendere, e 'w+' per scrivere+leggere.
 
@@ -38,6 +37,7 @@ with open('example.txt', 'r') as file:
 Ciao, Mondo!
 Aggiungendo altro testo.
 ```
+
 ### Utilizzando `pathlib.Path`
 Per un approccio più orientato agli oggetti, la classe `Path` del modulo `pathlib` offre un metodo per scrivere sui file. Questo è un metodo popolare per le codebase Python più recenti.
 

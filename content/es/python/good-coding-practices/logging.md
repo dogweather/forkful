@@ -13,9 +13,6 @@ title: Registro de Actividades
 weight: 17
 ---
 
-## ¿Qué y por qué?
-La generación de registros (logging) es el proceso de grabar eventos de una aplicación mientras un programa se ejecuta, proporcionando un rastro que puede ser analizado después de la ejecución y monitoreado en tiempo real. Los programadores lo hacen porque ayuda a depurar problemas, monitorear el rendimiento y rastrear las acciones de los usuarios por motivos de seguridad y análisis.
-
 ## Cómo hacerlo:
 Python viene con un módulo incorporado para la generación de registros. Aquí tienes una configuración básica:
 ```Python

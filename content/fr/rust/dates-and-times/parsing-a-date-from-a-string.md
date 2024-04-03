@@ -15,11 +15,8 @@ title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---
 
-## Quoi & Pourquoi ?
-
-L'analyse d'une date à partir d'une chaîne de caractères est une tâche courante lorsqu'il s'agit de gérer les entrées utilisateur ou de lire des données depuis des fichiers, ce qui implique de convertir les données en chaîne dans un format de date reconnu par le langage de programmation. En Rust, cela est essentiel pour les opérations sur les dates, comme les comparaisons, l'arithmétique ou le formatage, et cela renforce la validation et l'intégrité des données dans les applications.
-
 ## Comment faire :
+
 
 ### Utiliser la bibliothèque standard de Rust (`crate chrono`)
 La bibliothèque standard de Rust n'inclut pas directement l'analyse de date, mais la `crate chrono`, largement utilisée, est une solution robuste pour la manipulation de dates et d'heures. Tout d'abord, ajoutez `chrono` à votre `Cargo.toml` :

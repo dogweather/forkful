@@ -15,11 +15,8 @@ title: Praca z plikami CSV
 weight: 37
 ---
 
-## Co i dlaczego?
-
-W świecie programowania praca z plikami CSV (Comma-Separated Values) obejmuje odczyt z plików tekstowych oraz zapis danych do nich, zorganizowanych w wiersze, gdzie każdy wiersz reprezentuje rekord, a poszczególne pola rekordu są oddzielone przecinkami. Programiści manipulują plikami CSV dla łatwości importu/eksportu danych między różnymi systemami, ze względu na ich powszechne wsparcie i prostotę przechowywania danych tablicowych.
-
 ## Jak:
+
 
 ### Odczytywanie plików CSV
 Aby odczytać plik CSV w języku C, używamy standardowych funkcji wejścia/wyjścia plików wraz z funkcjami manipulacji ciągami znaków do parsowania każdej linii. Poniżej znajduje się podstawowy przykład odczytu pliku CSV i wyświetlania pól każdego wiersza na konsoli.
@@ -95,7 +92,6 @@ Jane Doe,27,Naukowiec danych
 ```
 
 ## Szczegółowa analiza
-
 Format CSV, mimo że wydaje się prosty, kryje w sobie niuanse, takie jak obsługa przecinków w polach oraz otaczanie pól cudzysłowami. Pokazane przykładowe przykłady nie uwzględniają takich złożoności, ani nie obsługują błędów w sposób niezawodny.
 
 Historycznie rzecz biorąc, obsługa plików CSV w C była w dużej mierze ręczna ze względu na niskopoziomową naturę języka oraz brak wbudowanych wysokopoziomowych abstrakcji dla takich zadań. Ta ręczna obsługa obejmuje otwieranie plików, czytanie linii, dzielenie ciągów znaków i konwertowanie typów danych w razie potrzeby.

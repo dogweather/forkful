@@ -14,12 +14,7 @@ title: Interpolation eines Strings
 weight: 8
 ---
 
-## Was & Warum?
-
-String-Interpolation ist der Prozess, Variablenwerte direkt in Strings einzufügen, oft um aussagekräftige Nachrichten ohne umständliche Verkettungen zu erstellen. Programmierer tun dies für saubereren, lesbareren Code und um Fehler zu vermeiden, die bei komplexen String-Verkettungen auftreten können.
-
 ## Wie geht das:
-
 In Dart ist die String-Interpolation unkompliziert, wobei das `$`-Symbol genutzt wird, um Ausdrücke direkt in String-Literalen zu interpolieren:
 
 ```dart

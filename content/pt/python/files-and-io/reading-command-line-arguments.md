@@ -10,9 +10,6 @@ title: Lendo argumentos da linha de comando
 weight: 23
 ---
 
-## O Que & Porquê?
-Ler argumentos de linha de comando significa pegar dados que o usuário passa diretamente ao seu script Python quando o executa. Fazemos isso para tornar nossos programas mais dinâmicos e interativos, permitindo diferentes comportamentos com base no que o usuário especifica.
-
 ## Como Fazer:
 Para ler argumentos de linha de comando em Python, usamos o módulo `sys`. Veja como é fácil:
 

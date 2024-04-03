@@ -14,12 +14,7 @@ title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---
 
-## Vad & Varför?
-
-Regular expressions (reguljära uttryck) i Java låter dig definiera specifika mönster för att söka, manipulera eller validera strängar i din kod. Programmerare använder dem för uppgifter som att analysera loggfiler, validera användarinmatning eller söka efter specifika mönster inom text, vilket möjliggör sofistikerad strängbearbetning med minimal ansträngning.
-
 ## Hur man gör:
-
 Javas inbyggda stöd för reguljära uttryck är främst genom klasserna `Pattern` och `Matcher` i paketet `java.util.regex`. Här är ett enkelt exempel för att hitta och skriva ut alla förekomster av ett ord i en sträng, utan att skilja på stora och små bokstäver:
 
 ```java

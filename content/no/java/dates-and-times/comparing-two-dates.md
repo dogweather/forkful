@@ -11,9 +11,6 @@ title: Sammenlikning av to datoer
 weight: 27
 ---
 
-## Hva & Hvorfor?
-Sammenligne to datoer betyr å finne ut om de er identiske, eller hvilken som kommer før eller etter den andre. Dette er kritisk i oppgaver som sortering av hendelser, utløp av frister, og tidstyringslogikk i applikasjoner.
-
 ## Hvordan:
 ```java
 import java.time.LocalDate;

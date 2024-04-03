@@ -14,16 +14,10 @@ title: Praca z plikami CSV
 weight: 37
 ---
 
-## Co i dlaczego?
-
-Praca z CSV (Comma-Separated Values - wartościami rozdzielonymi przecinkami) polega na odczycie z i zapisie danych do plików CSV, popularnego formatu reprezentacji danych tabelarycznych w postaci zwykłego tekstu. Programiści robią to, aby łatwo wymieniać dane między różnymi programami, systemami lub bazami danych, dzięki jego prostocie i szerokiemu wsparciu na różnych platformach i w językach programowania.
-
 ## Jak to zrobić:
-
 PHP oferuje wbudowane funkcje do obsługi plików CSV, co sprawia, że odczyt z nich i zapis do nich jest prosty bez potrzeby używania bibliotek stron trzecich. Oto przykłady, które pomogą Ci zacząć:
 
 ### Odczytywanie pliku CSV
-
 Możesz otworzyć plik CSV i odczytać jego zawartość za pomocą `fopen()` w połączeniu z `fgetcsv()`:
 
 ```php
@@ -46,7 +40,6 @@ if ($handle !== FALSE) {
 Ten skrypt wypisuje liczbę pól każdej linii, a następnie zawartość każdego pola.
 
 ### Zapisywanie do pliku CSV
-
 Aby zapisać do pliku CSV, użyj `fopen()` w trybie zapisu (`w`) i `fputcsv()`:
 
 ```php
@@ -70,11 +63,9 @@ fclose($handle);
 Ten skrypt tworzy plik o nazwie `users.csv` i zapisuje do niego nagłówek i dwie linie danych.
 
 ### Użycie biblioteki: League\Csv
-
 Dla bardziej zaawansowanej obsługi CSV, biblioteka `League\Csv` oferuje solidny zestaw funkcji. Po jej instalacji poprzez Composer (`composer require league/csv`), możesz jej użyć do bardziej elastycznego czytania i zapisywania danych CSV.
 
 #### Odczytywanie za pomocą League\Csv
-
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -94,7 +85,6 @@ foreach ($results as $row) {
 Ten skrypt czyta `data.csv`, traktując pierwszy wiersz jako nagłówki kolumn i wypisuje każdy wiersz jako asocjacyjną tablicę.
 
 #### Zapisywanie za pomocą League\Csv
-
 ```php
 <?php
 require 'vendor/autoload.php';

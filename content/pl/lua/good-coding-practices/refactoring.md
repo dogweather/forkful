@@ -12,9 +12,6 @@ title: Refaktoryzacja
 weight: 19
 ---
 
-## Co i dlaczego?
-Refaktoryzacja to sztuka modyfikowania istniejącego kodu aby poprawić jego strukturę, czytelność oraz wydajność, nie zmieniając przy tym jego zewnętrznego zachowania. Programiści poddają kod refaktoryzacji, by uczynić go bardziej łatwym w utrzymaniu, zredukować złożoność, a często również jako wstępny krok przed dodaniem nowych funkcji lub naprawieniem błędów.
-
 ## Jak to zrobić:
 Weźmy prostą funkcję Lua i dokonajmy jej refaktoryzacji. Zaczynamy od funkcji, która oblicza sumę liczb w liście, ale została napisana bez większego zastanowienia nad wydajnością czy jasnością:
 

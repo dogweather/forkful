@@ -15,9 +15,6 @@ title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---
 
-## Điều gì và Tại sao?
-Viết một tệp văn bản trong C++ có nghĩa là tạo hoặc chỉnh sửa một tệp để lưu trữ dữ liệu văn bản. Lập trình viên thực hiện để lưu trữ dữ liệu như cấu hình, nhật ký, hoặc nội dung do người dùng tạo.
-
 ## Cách thực hiện:
 Dưới đây là một chương trình C++ đơn giản tạo một tệp văn bản và viết "Hello, World!" vào đó.
 

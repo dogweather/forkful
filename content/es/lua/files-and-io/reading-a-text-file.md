@@ -11,9 +11,6 @@ title: Lectura de un archivo de texto
 weight: 22
 ---
 
-## Qué y por qué?
-Leer un archivo de texto es básicamente acceder a la información almacenada en un archivo .txt desde tu programa. Los programadores hacen esto para manejar datos, configuraciones, o para leer información externa sin necesidad de tenerla codificada directamente en el programa.
-
 ## Cómo hacerlo:
 ```Lua
 -- Abrir un archivo de texto en modo de lectura

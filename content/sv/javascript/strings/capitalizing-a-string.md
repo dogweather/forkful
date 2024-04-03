@@ -14,9 +14,6 @@ title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---
 
-## Vad & Varför?
-Att göra första bokstaven i en sträng stor innebär att konvertera det första tecknet i strängen till versal, samtidigt som resten av tecknen behålls som de är. Denna åtgärd utförs ofta i JavaScript för att formatera användarinmatningar, visa namn eller titlar, och säkerställa konsekvens i texter i användargränssnittet.
-
 ## Hur gör man:
 I JavaScript finns ingen inbyggd metod för att direkt göra första bokstaven i en sträng stor, men det är rakt fram att implementera med grundläggande strängmanipuleringsmetoder.
 

@@ -14,12 +14,7 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## Vad & Varför?
-
-Att skriva ut felutskrifter innebär att strategiskt placera logguttryck i din kod för att visa variabelvärden, utförandeflöde eller felmeddelanden under körning. Programmerare använder det omfattande för att spåra och diagnostisera beteendet hos deras skript, vilket säkerställer korrekthet och effektivitet i deras Google Apps Script-applikationer.
-
 ## Hur man gör:
-
 Google Apps Script tillhandahåller klassen `Logger` för grundläggande felsökning, och för mer avancerade behov, klassen `console` introducerad i V8-runtime.
 
 **Använda Logger:**
@@ -56,7 +51,6 @@ Nuvarande status: aktiv, Antal: 150
 ```
 
 ## Fördjupning
-
 I början var `Logger.log` det primära redskapet för felsökning i Google Apps Script, som erbjöd ett enkelt, rakt på sak sätt att skriva ut utskrifter för inspektion. Dock, när skript blev mer komplexa och integrerade med Google Cloud Platform-tjänster, blev behovet av en mer robust loggningslösning uppenbart.
 
 Enter V8-runtime, som för in `console.log` i bilden. Detta inte bara linjerar Google Apps Script med standard JavaScript-syntax, vilket gör språket mer tillgängligt för utvecklare bekanta med JavaScript, men också utnyttjar den kraftfulla infrastrukturen hos Google Clouds loggningsmöjligheter. Introduktionen av `console.log` och dess integration med Google Cloud Platform markerar en betydande evolution i felsökningsförmågor inom Google Apps Script, vilket ger utvecklare en mer dynamisk och skalbar metod för att övervaka och felsöka sina skript.

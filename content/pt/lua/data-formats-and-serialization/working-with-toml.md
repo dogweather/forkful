@@ -10,9 +10,6 @@ title: Trabalhando com TOML
 weight: 39
 ---
 
-## O Que & Por Quê?
-Trabalhar com TOML envolve analisar e gerar dados TOML (Tom's Obvious, Minimal Language) com Lua. Programadores utilizam TOML para arquivos de configuração devido à sua legibilidade e sintaxe simples que se traduz facilmente em uma estrutura de dados.
-
 ## Como fazer:
 Primeiro, certifique-se de que o seu ambiente Lua possui um analisador de TOML. Usaremos `lua-toml` para este exemplo.
 

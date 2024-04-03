@@ -11,9 +11,6 @@ title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---
 
-## ¿Qué y Por Qué?
-Generar números aleatorios en proyectos de Arduino involucra producir valores que son impredecibles por diseño, crucial para aplicaciones como juegos, simulaciones y sistemas de seguridad. Los programadores utilizan esta técnica para introducir variabilidad o tomar decisiones que no deberían ser deterministas.
-
 ## Cómo hacerlo:
 Arduino proporciona funciones sencillas para generar números aleatorios: `randomSeed()` y `random()`. Para comenzar, inicializa el generador de números aleatorios para asegurar diferentes secuencias de números cada vez que tu programa se ejecute. Un enfoque a menudo utilizado es sembrar con una lectura analógica de un pin no conectado.
 

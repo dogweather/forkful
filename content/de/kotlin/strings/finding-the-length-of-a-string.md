@@ -11,9 +11,6 @@ title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---
 
-## Was & Warum?
-Die Länge eines Strings zu finden, heißt, zu bestimmen, wie viele Zeichen er enthält. Wir brauchen das, um Textdaten zu validieren, zu schneiden oder einfach um zu wissen, wie viel Inhalt vorhanden ist.
-
 ## How to:
 Hier ein schnelles Beispiel, wie man die Länge eines Strings in Kotlin findet:
 

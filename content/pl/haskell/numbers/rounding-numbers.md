@@ -11,12 +11,7 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i dlaczego?
-
-Zaokrąglanie liczb oznacza dostosowanie ich do najbliższej liczby całkowitej lub określonego miejsca po przecinku. Programiści zaokrąglają liczby, aby kontrolować precyzję, dostosowywać wyniki dla prezentacji użytkownika lub redukować koszty obliczeń dla operacji zmiennoprzecinkowych.
-
 ## Jak to zrobić:
-
 Haskell używa funkcji `round`, `ceiling`, `floor` oraz `truncate` z `Prelude` do operacji zaokrąglania.
 
 ```haskell
@@ -37,7 +32,6 @@ main = do
 ```
 
 ## Dogłębna analiza
-
 Historycznie zaokrąglanie ma znaczenie w analizie numerycznej i informatyce, ponieważ jest kluczowe do minimalizowania akumulacji błędów w obliczeniach, szczególnie przed standaryzacją reprezentacji zmiennoprzecinkowej przez IEEE 754.
 
 Do czego zaokrąglać? `round` zabiera cię do najbliższej liczby całkowitej—w górę lub w dół. `ceiling` i `floor` zawsze zaokrąglają w górę lub w dół do najbliższej liczby całkowitej, odpowiednio, natomiast `truncate` po prostu odrzuca cyfry po przecinku.
@@ -47,7 +41,6 @@ Alternatywy dla tych funkcji mogą obejmować niestandardową logikę, jak nasza
 Uważaj na nieoczekiwane wyniki spowodowane tym, jak Haskell obsługuje przypadki pośrednie w `round` (zaokrągla do najbliższej parzystej liczby).
 
 ## Zobacz również
-
 - Dokumentacja Haskell Prelude dla funkcji zaokrąglania: https://hackage.haskell.org/package/base-4.16.1.0/docs/Prelude.html
 - Wiki Haskell na temat arytmetyki zmiennoprzecinkowej: https://wiki.haskell.org/Floating_point_arithmetic
 - Standard IEEE 754-2008 dla więcej informacji o tym, jak obsługuje się liczby zmiennoprzecinkowe w wielu językach: https://ieeexplore.ieee.org/document/4610935

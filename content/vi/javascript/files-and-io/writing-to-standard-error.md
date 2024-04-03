@@ -14,11 +14,7 @@ title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---
 
-## Gì và Tại sao?
-Viết vào lỗi chuẩn (stderr) là việc xuất văn bản ra luồng lỗi. Nó tách biệt đầu ra bình thường (stdout) khỏi các lỗi, cho phép gỡ lỗi và phân tích log dễ dàng hơn.
-
 ## Cách thực hiện:
-
 ```javascript
 // Viết một thông báo lỗi đơn giản vào stderr
 console.error('Lỗi: Đã xảy ra sự cố');

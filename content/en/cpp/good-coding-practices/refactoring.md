@@ -11,12 +11,7 @@ title: Refactoring
 weight: 19
 ---
 
-## What & Why?
-
-Refactoring is the process of changing a computer program's internal structure without altering its external behavior. Programmers do it to clean up their code, making it easier to understand, maintain, and extend.
-
 ## How to:
-
 Imagine you've got a function that's doing a bit too much, like this clunky method that initializes an object and also performs logging:
 
 ```C++
@@ -71,7 +66,6 @@ w.logInitialization();
 This change hasn't altered what the program does but makes the `Widget` class more modular and its usage more clear.
 
 ## Deep Dive
-
 The concept of refactoring as we know it today has its roots in the Smalltalk programming communities of the 1980s and was heavily popularized by Martin Fowler's book "Refactoring: Improving the Design of Existing Code" from 1999. Today, refactoring is a core part of modern software development, integrated into various development methodologies such as Agile and TDD (Test-Driven Development).
 
 When we talk about alternatives to refactoring, we veer into the territory of rewriting or redesigning. Refactoring is strategic and incremental, whereas a rewrite may scrap existing code in favor of a new solution. Redesign, meanwhile, may entail more significant changes including altering functionality, which is a non-goal for pure refactoring.
@@ -81,7 +75,6 @@ Implementation details on refactoring can get quite granular. There are many 'co
 Moreover, refactoring requires a solid suite of tests to ensure that functionality remains unchanged. Without tests, you're essentially flying blind and risking regressions.
 
 ## See Also
-
 For a deeper understanding of refactoring and to see more examples, you might want to check out:
 
 - Martin Fowler's classic text "Refactoring: Improving the Design of Existing Code" for foundational ideas and strategies.

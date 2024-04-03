@@ -13,12 +13,7 @@ title: Inviare una richiesta HTTP con autenticazione di base
 weight: 45
 ---
 
-## Cosa & Perché?
-
-Inviare una richiesta HTTP con autenticazione di base in Visual Basic for Applications (VBA) si riferisce all'accesso a risorse web protette da credenziali di username e password. I programmatori fanno ciò per interagire con API sicure o servizi web all'interno delle loro applicazioni alimentate da VBA, come automazione di compiti in Excel o Access con dati da endpoint protetti.
-
 ## Come fare:
-
 In VBA, puoi usare la libreria `Microsoft XML, v6.0` (MSXML2) per inviare richieste HTTP con autenticazione di base. Questo comporta l'impostazione dell'intestazione `"Authorization"` della richiesta per includere le credenziali in un formato codificato in base64. Ecco una guida passo passo:
 
 1. **Referenziare MSXML2**: Prima di tutto, assicurati che il tuo progetto VBA faccia riferimento alla libreria `Microsoft XML, v6.0`. Nell'editor VBA, vai su Strumenti > Riferimenti e spunta `Microsoft XML, v6.0`.
@@ -62,7 +57,6 @@ In VBA, puoi usare la libreria `Microsoft XML, v6.0` (MSXML2) per inviare richie
 Questo invierà una richiesta GET a `http://example.com/api/resource` con le specificate credenziali di autenticazione di base e stampa la risposta.
 
 ## Approfondimento
-
 L'approccio usato qui, sebbene efficace per casi d'uso semplici, si basa sullo schema di Autenticazione di Base, che invia le credenziali in un formato facilmente decodificabile (la codifica base64 non è criptazione). A causa della sua vulnerabilità, specialmente in contesti non HTTPS, l'Autenticazione di Base non è raccomandata per trasmettere dati sensibili su internet senza ulteriori strati di sicurezza come SSL/TLS.
 
 Storicamente, l'Autenticazione di Base è stato uno dei primi metodi sviluppati per controllare l'accesso alle risorse web. Oggi, standard di autenticazione più sicuri e flessibili, come OAuth 2.0, sono generalmente preferiti per nuove applicazioni. Data le limitazioni di VBA e le dipendenze esterne richieste per metodi di autenticazione più avanzati, gli sviluppatori spesso impiegano VBA in ambienti interni o meno critici dal punto di vista della sicurezza, o lo utilizzano come un trampolino di lancio per prototipare rapidamente idee.

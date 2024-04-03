@@ -11,9 +11,6 @@ title: Refactoring
 weight: 19
 ---
 
-## Was & Warum?
-Das Refactoring ist der Prozess des Feinjustierens Ihres Codes, ohne dessen externes Verhalten zu ändern. Es geht darum, Ihren Code aufzuräumen und zu organisieren, um ihn leichter lesbar, wartbar und erweiterbar zu machen. Es kann auch dabei helfen, Bugs zu beseitigen und die Leistung zu verbessern.
-
 ## Wie geht das:
 Nehmen wir an, Sie haben einen Haufen Haskell-Code, der sich mehr wiederholt als Ihr Lieblingslied. Hier ist ein schneller Überblick, wie Sie das durch die Verwendung von Funktionen refaktorisieren könnten.
 

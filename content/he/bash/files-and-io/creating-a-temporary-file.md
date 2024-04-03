@@ -24,9 +24,6 @@ title: "\u05D9\u05E6\u05D9\u05E8\u05EA \u05E7\u05D5\u05D1\u05E5 \u05D6\u05DE\u05
 weight: 21
 ---
 
-## מה ולמה?
-יצירת קובץ זמני ב-Bash היא דרך לשמור נתונים או להפעיל פקודות כשאתה לא רוצה לזרוק את המידע ישר על הדיסק. פרוגרמיסטים עושים את זה כדי להבטיח כי המידע לא יישמר לטווח ארוך ולא יתערבב עם קבצים אחרים.
-
 ## איך לעשות:
 קודים עם דוגמאות ופלטים בבלוקים של קוד.
 
@@ -53,7 +50,6 @@ rm $tempfile
 פקודת `mktemp` מאפשרת לך ליצור גם ספריות זמניות על ידי שימוש באפשרות `mktemp -d`, מה ששימושי כשאתה צריך לעבוד עם מספר קבצים זמניים יחד. ביטחון אוהב את `mktemp` מכיוון שהוא מונע קונפליקטים מרובים תהליכים ופוטנציאל להתקפות.
 
 ## ראה גם:
-
 - [`mktemp` man page](https://man7.org/linux/man-pages/man1/mktemp.1.html) – מדריך מפורט ל-pktemp, כולל אופציות.
 - Advanced Bash-Scripting Guide: [Chapter 19. Temporary Files](https://tldp.org/LDP/abs/html/tempfiles.html) – למידע נוסף על קבצים זמניים ואיך להשתמש בהם בסקריפטים.
 - Safe File and Variable Names: [Common Pitfalls](https://dwheeler.com/essays/filenames-in-shell.html) – הסבר על שמות קבצים בקונטקסט של סקריפטים ואיך להימנע מצרות.

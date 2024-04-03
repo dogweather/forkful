@@ -9,9 +9,6 @@ title: Extraindo substrings
 weight: 6
 ---
 
-## What & Why?
-Extrair substrings é o processo de pegar pedaços de uma string maior. Fazemos isso para manipular ou analisar partes específicas de texto.
-
 ## How to:
 ```Rust
 fn main() {

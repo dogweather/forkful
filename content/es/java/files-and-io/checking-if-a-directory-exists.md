@@ -14,9 +14,6 @@ title: Comprobando si un directorio existe
 weight: 20
 ---
 
-## Qué y Por Qué
-Comprobar si un directorio existe en Java es una tarea fundamental que implica verificar la presencia de un directorio en el sistema de archivos antes de leerlo, escribir en él o realizar cualquier operación que requiera su existencia. Esto es crucial para evitar errores o excepciones en programas que interactúan con el sistema de archivos, asegurando una ejecución más suave y una mejor experiencia de usuario.
-
 ## Cómo hacerlo:
 En Java, hay varias formas de comprobar si un directorio existe, principalmente utilizando las clases `java.nio.file.Files` y `java.io.File`.
 

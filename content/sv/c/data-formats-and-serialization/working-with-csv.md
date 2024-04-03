@@ -14,11 +14,8 @@ title: Arbeta med CSV
 weight: 37
 ---
 
-## Vad & Varför?
-
-Inom programmering involverar arbete med CSV-filer (Comma-Separated Values, komma-separerade värden) att läsa från och skriva data till textfiler organiserade i rader, där varje rad representerar en post och varje posts fält är separerade med kommatecken. Programmerare manipulerar CSV-filer för enkel dataimport/export mellan olika system, på grund av deras utbredda stöd och enkelhet för lagring av tabulär data.
-
 ## Hur man:
+
 
 ### Läsa CSV-filer
 För att läsa en CSV-fil i C använder vi standardfiler I/O-funktioner tillsammans med strängmanipulationsfunktioner för att tolka varje rad. Nedan är ett grundläggande exempel på att läsa en CSV-fil och skriva ut varje rads fält till konsolen.
@@ -94,7 +91,6 @@ Jane Doe,27,Data Scientist
 ```
 
 ## Djupdykning
-
 CSV-formatet, även om det verkar enkelt, kommer med sina nyanser, såsom hantering av kommatecken inom fält och inkapsling av fält med citattecken. De grundläggande exemplen som visas tar inte hänsyn till sådana komplexiteter, ej heller hanterar de potentiella fel robust.
 
 Historiskt sett har hanteringen av CSV-filer i C till stor del varit manuell på grund av språkets lågnivånatur och brist på inbyggda högnivåabstraktioner för sådana uppgifter. Denna manuella hantering inkluderar öppnande av filer, läsning av rader, delning av strängar och konvertering av datatyper vid behov.

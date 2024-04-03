@@ -14,9 +14,6 @@ title: Analisi del HTML
 weight: 43
 ---
 
-## Cosa & Perché?
-L'analisi dell'HTML (Parsing HTML) consiste nell'estrazione di dati e informazioni dai documenti HTML, che è cruciale per il web scraping, l'analisi dei dati e i compiti di automazione. I programmatori eseguono questa operazione per raccogliere, analizzare o manipolare il contenuto web programmaticamente, abilitando l'automazione di ciò che altrimenti sarebbe l'estrazione manuale dei dati dai siti web.
-
 ## Come fare:
 Lua non ha una libreria incorporata per l'analisi dell'HTML, ma è possibile utilizzare librerie di terze parti come `LuaHTML` o sfruttare i binding per `libxml2` tramite `LuaXML`. Un approccio popolare è utilizzare la libreria `lua-gumbo` per l'analisi dell'HTML, che fornisce una capacità di parsing conforme ad HTML5 e diretta.
 

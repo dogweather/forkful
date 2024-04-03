@@ -13,12 +13,7 @@ title: Het huidige datum ophalen
 weight: 29
 ---
 
-## Wat & Waarom?
-
-In Swift houdt het verkrijgen van de huidige datum in dat je toegang krijgt tot de huidige tijd- en datuminstellingen van het systeem. Programmeurs doen dit om gebeurtenissen van een tijdstempel te voorzien, taken te plannen, of gewoon de datum en tijd in hun apps weer te geven.
-
 ## Hoe:
-
 Het verkrijgen van de huidige datum en tijd in Swift is eenvoudig:
 
 ```Swift
@@ -47,7 +42,6 @@ Voorbeelduitvoer:
 ```
 
 ## Diepgaande Beschouwing
-
 De `Date` struct in Swift maakt deel uit van het Foundation framework, dat afkomstig is van Objective-C's `NSDate`. In de loop van de tijd heeft Swift een moderne benadering geleverd met `Date` die expressiever en veiliger is.
 
 Er zijn alternatieven voor `Date()` om de huidige tijd te verkrijgen. Bijvoorbeeld, `NSDate()`, dat ongeveer hetzelfde is maar minder Swift-vriendelijk, en APIs op een lager niveau, zoals `gettimeofday()`, voor het verkrijgen van preciezere systeemtijd. Maar, `Date()` is de eerste keus voor de meeste Swift-ontwikkelaars omdat het gebruiksgemak combineert met voldoende precisie voor typische gebruiksscenario's.

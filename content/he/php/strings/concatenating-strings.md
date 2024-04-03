@@ -10,9 +10,6 @@ title: "\u05E9\u05E8\u05E9\u05D5\u05E8 \u05DE\u05D7\u05E8\u05D5\u05D6\u05D5\u05E
 weight: 3
 ---
 
-## What & Why? (מה ולמה?)
-Concatenating strings means gluing separate pieces of text together. Programmers do it to build dynamic content, like full names from first and last or custom messages.
-
 ## How to: (איך לעשות זאת:)
 In PHP, you concatenate strings with the dot (`.`) operator. Here's how:
 

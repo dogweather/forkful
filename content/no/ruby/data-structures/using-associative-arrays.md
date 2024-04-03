@@ -13,12 +13,7 @@ title: Bruke associative tabeller
 weight: 15
 ---
 
-## Hva og hvorfor?
-
-Assosiative tabeller, mer kjent som hashes i Ruby, gjør det mulig å pare unike nøkler med verdier. De er uunnværlige når du trenger å holde styr på elementer gjennom en spesifikk referanse, som å lagre egenskapene til et objekt eller raskt få tilgang til data ved hjelp av en unik identifikator.
-
 ## Hvordan:
-
 Å opprette og bruke hashes i Ruby er enkelt. Du kan initialisere en tom hash, fylle den med nøkkel-verdipar, få tilgang til verdier ved hjelp av nøklene deres, og mer. Slik gjør du det:
 
 ```Ruby
@@ -55,7 +50,6 @@ puts symbol_hash[:name] # Utdata: Jane Doe
 ```
 
 ## Dypdykk:
-
 Konseptet med assosiative tabeller er ikke unikt for Ruby; mange språk implementerer dem under ulike navn, som ordbøker i Python eller objekter i JavaScript (når de brukes som nøkkel-verdipar). I Ruby's tidlige stadier var hashes noe tregere og ikke så fleksible. Imidlertid, over tid, har Rubys implementering av hashes blitt svært optimalisert, spesielt for symbolnøkler, noe som gjør dem ekstremt effektive for hyppig tilgang og oppdateringer.
 
 Rubys hashes utmerker seg med sin syntaktiske enkelhet og fleksibilitet - du kan bruke nesten hvilken som helst objekttype som nøkkel, selv om symboler og strenger er mest vanlige. Internt er Ruby-hashes implementert ved hjelp av en hashalgoritme som balanserer hastighet og minneeffektivitet, selv når antallet elementer skalerer opp.

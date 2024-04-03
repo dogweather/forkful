@@ -11,9 +11,6 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i dlaczego?
-Liczby zespolone rozszerzają liczby rzeczywiste przez dodanie jednostki urojonej, reprezentowanej jako 'i', gdzie i^2 = -1. Programiści używają ich do symulacji, przetwarzania sygnałów i rozwiązywania problemów matematycznych wymagających pracy w dwóch wymiarach.
-
 ## Jak to zrobić:
 C++ posiada wbudowaną bibliotekę `<complex>`, która ułatwia pracę z liczbami zespolonymi. Oto szybki przegląd:
 

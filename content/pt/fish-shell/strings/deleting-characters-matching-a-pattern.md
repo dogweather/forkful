@@ -11,9 +11,6 @@ title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---
 
-## O que é & Por quê?
-Deletar caracteres que correspondem a um padrão é basicamente filtrar strings para remover peças desnecessárias ou específicas. Programadores fazem isso para limpar dados, formatar saídas ou manipular texto de maneiras complexas.
-
 ## Como fazer:
 ```Fish Shell
 # Exemplo: Removendo todos os números de uma string

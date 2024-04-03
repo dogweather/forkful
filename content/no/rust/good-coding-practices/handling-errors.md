@@ -10,12 +10,7 @@ title: "Feilh\xE5ndtering"
 weight: 16
 ---
 
-## Hva & Hvorfor?
-
-Feilhåndtering handler om å takle ting når de skjærer seg. Programmerere gjør dette for å håndtere det uventede, slik at deres Rust-programmer er robuste og ikke bare krasjer ved en hikke.
-
 ## Hvordan:
-
 Rust håndterer feil på to hovedmåter: gjenvinnbare og ugjenkallelige feil. La oss se på begge.
 
 For gjenvinnbare feil bruker vi `Result<T, E>`:
@@ -54,7 +49,6 @@ fn main() {
 Kjør det, og du vil se en panikkmelding. Programmet ditt stopper dødt i sporene.
 
 ## Dypdykk
-
 Historisk sett har feilhåndtering i programmering vært et rot. Rust får det riktig med en klar forskjell mellom gjenvinnbare og ugjenkallelige feil.
 
 `Result`-enumen er for gjenvinnbare feil. Det er eksplisitt – du håndterer `Ok`- eller `Err`-varianten. Du har metoder som `unwrap()` og `expect()` også, men de er kjappe og skitne snarveier som kan føre til `panic!`.
@@ -66,7 +60,6 @@ Feilhåndtering ved å returnere `Result` foretrekkes når du forventer å hånd
 Alternativer? Sikkert, du kunne bruke andre feilhåndteringsbiblioteker for flere funksjonaliteter eller ergonomisk bruk. Som `anyhow` for enkel feilhåndtering, eller `thiserror` for feil i bibliotekskode.
 
 ## Se Også
-
 Interessert i å dykke dypere? Her er hvor du kan gå:
 
 - [Rust Book on Error Handling](https://doc.rust-lang.org/book/ch09-00-error-handling.html) - Et flott sted for å forstå Rusts filosofi for feilhåndtering.

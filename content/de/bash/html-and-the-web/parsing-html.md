@@ -12,12 +12,7 @@ title: HTML parsen
 weight: 43
 ---
 
-## Was & Warum?
-
-HTML zu parsen bedeutet, die Struktur und den Inhalt einer HTML-Datei zu durchforsten, um Informationen zu extrahieren. Programmierer tun dies, um auf Daten zuzugreifen, Inhalte zu manipulieren oder Websites zu scrapen.
-
 ## Wie:
-
 Bash ist nicht die erste Wahl zum Parsen von HTML, aber es kann mit Werkzeugen wie `grep`, `awk`, `sed` oder externen Dienstprogrammen wie `lynx` durchgeführt werden. Für Robustheit verwenden wir `xmllint` aus dem `libxml2` Paket.
 
 ```bash
@@ -53,7 +48,6 @@ Der Absatzinhalt ist: Bash kann mich lesen.
 ```
 
 ## Vertiefung
-
 Früher verwendeten Programmierer regex-basierte Tools wie `grep` zum Scannen von HTML, aber das war umständlich. HTML ist nicht regulär – es ist kontextuell. Traditionelle Werkzeuge verpassen dies und können fehleranfällig sein.
 
 Alternativen? Genug. Python mit Beautiful Soup, PHP mit DOMDocument, JavaScript mit DOM-Parsern – Sprachen mit Bibliotheken, die darauf ausgelegt sind, die Struktur von HTML zu verstehen.
@@ -61,7 +55,6 @@ Alternativen? Genug. Python mit Beautiful Soup, PHP mit DOMDocument, JavaScript 
 Die Verwendung von `xmllint` in Bash-Skripten ist fest für einfache Aufgaben. Es versteht XML und somit auch XHTML. Reguläres HTML kann jedoch unvorhersehbar sein. Es folgt nicht immer den strengen Regeln von XML. `xmllint` zwingt HTML in ein XML-Modell, was gut für wohlgeformtes HTML funktioniert, aber bei unordentlichem Material ins Straucheln geraten kann.
 
 ## Siehe auch
-
 - [W3Schools - HTML DOM Parser](https://www.w3schools.com/xml/dom_intro.asp): Demystifiziert HTML DOM.
 - [MDN Web Docs - Parsen und Serialisieren von XML](https://developer.mozilla.org/en-US/docs/Web/Guide/Parsing_and_serializing_XML): Für XML-Parsing-Prinzipien, die für XHTML gelten.
 - [Beautiful Soup Dokumentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/): Eine Python-Bibliothek für das Parsen von HTML.

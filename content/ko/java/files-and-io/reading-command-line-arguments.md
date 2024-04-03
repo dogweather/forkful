@@ -18,9 +18,6 @@ title: "\uBA85\uB839\uC904 \uC778\uC218 \uC77D\uAE30"
 weight: 23
 ---
 
-## What & Why? (무엇과 왜?)
-Java에서 명령행 인자를 읽는 것은 사용자가 프로그램을 시작할 때 전달하는 매개변수를 처리하는 방법입니다. 프로그래머들은 설정, 사용자 입력, 또는 프로그램 동작을 조정하기 위해 이를 사용합니다.
-
 ## How to: (어떻게 하나요?)
 ```java
 public class CommandLineReader {

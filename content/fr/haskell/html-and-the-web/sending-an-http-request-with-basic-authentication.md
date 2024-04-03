@@ -12,12 +12,7 @@ title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---
 
-## Quoi & Pourquoi ?
-
-L’envoi d’une requête HTTP avec authentification basique consiste à transmettre à un serveur des identifiants (nom d’utilisateur et mot de passe) encodés en base64 dans les en-têtes HTTP afin de s'identifier. Les programmeurs utilisent cela pour accéder à des ressources protégées sur un serveur qui nécessite une vérification de l'identité.
-
 ## Comment faire :
-
 ```Haskell
 import Network.HTTP.Simple
 import Network.HTTP.Types.Header (hAuthorization)
@@ -47,13 +42,11 @@ putStrLn $ "Body: " ++ Char8.unpack (getResponseBody response)
 ```
 
 ## Exploration approfondie
-
 Le concept d’authentification basique pour les requêtes HTTP n’est pas récent. Il est défini dans le RFC 7617, et bien qu'il soit simple à implémenter, il n'est pas le plus sécurisé car les identifiants encodés en base64 peuvent être facilement décodés. Citons comme alternatives plus sécurisées l'authentification Digest ou les tokens d’authentification comme OAuth.
 
 En Haskell, utiliser `Network.HTTP.Simple` pour les requêtes HTTP est un choix populaire car il offre une API simple. L'ajout de l'en-tête d'autorisation est direct avec le package `http-types`, et l'encodage des identifiants utilise `Data.ByteString.Base64`, ce qui garantit que les données sont correctement formées pour l'envoi.
 
 ## Voir aussi
-
 - Documentation de `Network.HTTP.Simple` : https://hackage.haskell.org/package/http-conduit/docs/Network-HTTP-Simple.html
 - RFC 7617, The 'Basic' HTTP Authentication Scheme: https://tools.ietf.org/html/rfc7617
 - Informations sur OAuth : https://oauth.net/

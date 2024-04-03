@@ -11,9 +11,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## Mitä & Miksi?
-Merkkijonon pituuden selvittämisessä saadaan tietoon kuinka monta merkkiä merkkijonossa on. Tämä on hyödyllistä esimerkiksi datan validoinnissa, tekstin käsittelyssä ja käyttöliittymän suunnittelussa.
-
 ## Miten toimitaan:
 ```PowerShell
 # Luo merkkijono-muuttuja

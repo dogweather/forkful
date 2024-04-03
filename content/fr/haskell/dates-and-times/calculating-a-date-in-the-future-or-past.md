@@ -11,9 +11,6 @@ title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---
 
-## Quoi & Pourquoi ?
-Calculer une date dans le futur ou le passé permet de déterminer un jour spécifique à partir d'une date donnée. Les programmeurs le font souvent pour des tâches de planification, d'archivage, ou quand les applications dépendent de la logique temporelle.
-
 ## Comment faire :
 ```haskell
 import Data.Time
@@ -43,5 +40,4 @@ Historiquement, la manipulation des dates en programmation a été complexe à c
 Pour calculer une date dans le futur ou le passé, on utilise généralement `addDays`, qui prend un nombre de jours et une date. Cela retourne une nouvelle date. C'est simple et évite beaucoup d'erreurs communes comme oublier les années bissextiles ou les détails des mois variés. Haskell traite tout cela sous le capot.
 
 ## Voir Aussi :
-
 - Documentation de `Data.Time` sur Hackage: [http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html](http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)

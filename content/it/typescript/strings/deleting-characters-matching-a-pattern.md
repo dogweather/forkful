@@ -11,9 +11,6 @@ title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---
 
-## What & Why?
-Cancellare i caratteri che corrispondono a un pattern significa usare espressioni regolari o funzioni per rimuovere specifiche sequenze di caratteri da una stringa. I programmatori lo fanno per pulire i dati, validare l'input, o per manipolare il testo secondo necessità.
-
 ## How to:
 ```TypeScript
 const stripPattern = (input: string, pattern: RegExp): string => input.replace(pattern, '');

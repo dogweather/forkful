@@ -13,12 +13,7 @@ title: Gebruik van associatieve arrays
 weight: 15
 ---
 
-## Wat & Waarom?
-
-Associatieve arrays, bekend in andere talen als mappen of woordenboeken, zijn sleutel-waarde paren die worden gebruikt voor efficiënte gegevensopzoeking en manipulatie. In tegenstelling tot traditionele arrays die integerindices gebruiken, gebruiken associatieve arrays sleutels, wat de gegevenstoegang intuïtiever en flexibeler maakt voor programmeurs.
-
 ## Hoe te:
-
 C biedt geen ingebouwde ondersteuning voor associatieve arrays zoals sommige hogere programmeertalen, maar je kunt ze simuleren met behulp van structuren en hashing. Hieronder staat een vereenvoudigd voorbeeld met behulp van een combinatie van een struct en een eenvoudige hashfunctie om een associatieve array te implementeren voor het opslaan en toegang krijgen tot gehele getallen via tekenreeksleutels.
 
 Definieer eerst een structuur om een enkel sleutel-waarde paar te vertegenwoordigen en een andere om de associatieve array zelf te vertegenwoordigen:
@@ -95,7 +90,6 @@ int main() {
 Dit voorbeeld illustreert basisbewerkingen: het initialiseren van een associatieve array, het invoegen van sleutel-waarde paren en het vinden van waarden via sleutels. Merk op dat deze code geen afhandeling van botsingen heeft en bedoeld is voor educatieve doeleinden.
 
 ## Diepgaande verkenning
-
 Het concept van associatieve arrays bestaat al langer dan C, maar de laag-niveau aard van de taal ondersteunt ze niet direct als ingebouwde typen. Dit moedigt een dieper begrip aan van gegevensstructuren en algoritmes, inclusief hashing-mechanismen voor efficiënte sleutel-waarde toewijzing. Veel C-bibliotheken en frameworks bieden geavanceerdere benaderingen om associatieve arrays te implementeren, zoals GLib's `GHashTable`, dat een robuuste implementatie biedt met afhandeling van botsingen, dynamisch aanpassen van de grootte en ondersteuning voor willekeurige sleutel- en waardetypes.
 
 Hoewel het handmatig bouwen van associatieve arrays in C vergeleken kan worden met talen met ingebouwde ondersteuning als omslachtig, biedt het waardevolle inzichten in de werking van gegevensstructuren, waardoor de vaardigheden van een programmeur in probleemoplossing en optimalisatie worden gescherpt. Echter, voor productiecode of complexere toepassingen is het vaak een praktischere en tijdsefficiëntere aanpak om bestaande bibliotheken zoals GLib te gebruiken.

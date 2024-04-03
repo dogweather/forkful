@@ -11,9 +11,6 @@ title: Debug-Ausgaben drucken
 weight: 33
 ---
 
-## What & Why?
-Debug-Ausgaben zu drucken ist, als würde man unter die Motorhaube des Codes schauen. Entwickler tun dies, um zu verstehen, was während der Ausführung ihres Skripts oder Programms wirklich passiert.
-
 ## How to:
 In Fish lässt sich mit `echo` und `printf` leicht Debug-Output erzeugen. Schnell und schmutzig, hier ein paar Beispiele:
 

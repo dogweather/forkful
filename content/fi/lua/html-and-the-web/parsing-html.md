@@ -14,9 +14,6 @@ title: "HTML:n j\xE4sennys"
 weight: 43
 ---
 
-## Mikä ja miksi?
-HTML:n jäsennys sisältää tietojen ja datan poimimisen HTML-dokumenteista, mikä on ratkaisevan tärkeää verkkosivujen kaapauksessa, datan analysoinnissa ja automaatiotehtävissä. Ohjelmoijat suorittavat tätä kerätäkseen, analysoidakseen tai manipuloidakseen verkkosisältöä ohjelmallisesti, mahdollistaen automaation, joka muutoin vaatisi manuaalista datan poimintaa verkkosivustoilta.
-
 ## Kuinka:
 Lua ei sisällä sisäänrakennettua kirjastoa HTML:n jäsennykseen, mutta voit hyödyntää kolmannen osapuolen kirjastoja kuten `LuaHTML` tai käyttää `libxml2`-sidoksia `LuaXML`-kirjaston kautta. Suosittu lähestymistapa on käyttää `lua-gumbo`-kirjastoa HTML:n jäsennykseen, joka tarjoaa suoraviivaisen, HTML5-standardin mukaisen jäsennyskyvyn.
 

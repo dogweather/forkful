@@ -13,16 +13,10 @@ title: Praca z plikami CSV
 weight: 37
 ---
 
-## Co i dlaczego?
-
-Praca z CSV (wartości rozdzielone przecinkami) obejmuje odczytywanie z i zapisywanie danych do plików CSV, co jest powszechnym formatem przechowywania tabelarycznych danych w formie tekstowej. Programiści manipulują plikami CSV, aby łatwo wymieniać dane między różnymi aplikacjami, bazami danych lub ułatwić zadania przetwarzania i analizy danych.
-
 ## Jak to zrobić:
-
 Kotlin, będąc statycznie typowanym językiem programowania działającym na JVM, nie zawiera wbudowanej biblioteki do obsługi plików CSV. Możesz jednak użyć klas `BufferedReader` i `FileWriter` z Javy do podstawowych operacji lub skorzystać z popularnych bibliotek stron trzecich, takich jak `kotlinx.serialization` i `opencsv`, dla bardziej zaawansowanej funkcjonalności.
 
 ### Odczyt pliku CSV za pomocą BufferedReader:
-
 ```kotlin
 import java.io.BufferedReader
 import java.io.FileReader
@@ -48,7 +42,6 @@ _Przykładowe wyjście:_
 ```
 
 ### Zapis do pliku CSV za pomocą FileWriter:
-
 ```kotlin
 import java.io.FileWriter
 
@@ -70,7 +63,6 @@ fun main() {
 To utworzy lub zastąpi `output.csv` podanymi danymi.
 
 ### Używanie kotlinx.serialization do serializacji CSV:
-
 Najpierw dodaj zależność do swojego `build.gradle.kts`:
 
 ```kotlin
@@ -109,7 +101,6 @@ Jane Smith,25,London
 ```
 
 ### Używanie OpenCSV do zaawansowanych operacji:
-
 Dodaj OpenCSV do zależności swojego projektu:
 
 ```kotlin

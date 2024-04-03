@@ -11,9 +11,6 @@ title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---
 
-## What & Why? (O Quê e Por Quê?)
-Imprimir saídas de depuração é soltar info útil no console que ajuda a entender o que seu código está aprontando. Programadores fazem isso pra desenrolar bugs ou entender o fluxo do programa.
-
 ## How to: (Como Fazer:)
 ```TypeScript
 // Imprimir uma string simples

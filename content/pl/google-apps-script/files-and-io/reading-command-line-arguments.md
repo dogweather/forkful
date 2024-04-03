@@ -14,12 +14,7 @@ title: "Czytanie argument\xF3w z linii polece\u0144"
 weight: 23
 ---
 
-## Co i dlaczego?
-
-Czytanie argumentów linii poleceń w Google Apps Script to nieco mylne określenie, ponieważ, w przeciwieństwie do tradycyjnych interfejsów linii poleceń w językach programowania takich jak Python czy Node.js, Google Apps Script nie obsługuje z założenia wykonywania poleceń z linii poleceń ani analizy argumentów. Zamiast tego, programiści często symulują ten proces za pomocą niestandardowych funkcji i parametrów URL podczas uruchamiania aplikacji internetowych lub zautomatyzowanych zadań, umożliwiając dynamiczną interakcję z funkcjami skryptów na podstawie danych wejściowych użytkownika lub zdefiniowanych parametrów.
-
 ## Jak to zrobić:
-
 Aby naśladować proces czytania argumentów linii poleceń w Google Apps Script, szczególnie dla aplikacji internetowych, można wykorzystać parametry ciągu zapytania. Gdy użytkownik uzyskuje dostęp do adresu URL aplikacji internetowej, można dołączyć argumenty, takie jak `?name=John&age=30`, i analizować te dane w swoim kodzie Apps Script. Oto jak możesz to ustawić:
 
 ```javascript
@@ -45,7 +40,6 @@ Imię: John, Wiek: 30
 To podejście jest przydatne do tworzenia spersonalizowanych interakcji w aplikacjach internetowych lub programowego kontrolowania wykonywania skryptów.
 
 ## Wgłębienie się
-
 Argumenty linii poleceń, rozumiane w kontekście tradycyjnych języków programowania, umożliwiają skryptom i aplikacjom przetwarzanie parametrów czasu wykonania, co umożliwia elastyczne i dynamiczne wykonanie kodu na podstawie danych wejściowych od użytkownika lub zautomatyzowanych procesów. Google Apps Script, będący chmurowym językiem skryptowym do tworzenia lekkich aplikacji w ekosystemie Google Workspace, nie działa natywnie za pomocą interfejsu linii poleceń. Zamiast tego, jego wykonanie jest głównie sterowane zdarzeniami lub uruchamiane ręcznie przez interfejs użytkownika Apps Script i Google Workspace, lub za pośrednictwem aplikacji internetowych, które mogą analizować parametry URL jako pseudo argumenty linii poleceń.
 
 Biorąc pod uwagę tę architektoniczną różnicę, programiści przyzwyczajeni do języków z intensywnym wykorzystaniem CLI mogą potrzebować dostosować swoje podejście podczas automatyzacji zadań lub rozwijania aplikacji w Google Apps Script. Zamiast tradycyjnego parsowania argumentów linii poleceń, wykorzystanie funkcjonalności aplikacji internetowej Google Apps Script, a nawet niestandardowych funkcji Google Sheets do interaktywnego przetwarzania danych, może służyć podobnym celom. Chociaż na pierwszy rzut oka może to wydawać się ograniczeniem, zachęca to do tworzenia bardziej przyjaznych dla użytkownika interfejsów i dostępnych aplikacji internetowych, co jest zgodne z celem Google Apps Script, polegającym na bezproblemowej integracji i rozszerzaniu aplikacji Google Workspace.

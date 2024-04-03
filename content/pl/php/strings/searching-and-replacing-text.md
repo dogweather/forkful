@@ -10,9 +10,6 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## What & Why? (Co i Dlaczego?)
-Szukanie i zamiana tekstu to chleb powszedni w programowaniu: lokalizujemy fragmenty ciągów znaków i podmieniamy je na inne. Czemu? By automatycznie korygować błędy, aktualizować dane czy dostosowywać treści.
-
 ## How to: (Jak to zrobić?)
 W PHP szukanie i zamiana tekstu często przechodzi przez `str_replace` albo regex z `preg_replace`. Prosty przykład:
 

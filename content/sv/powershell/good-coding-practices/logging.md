@@ -12,9 +12,6 @@ title: Loggning
 weight: 17
 ---
 
-## Vad & Varför?
-Loggning är i grund och botten att lämna ett spår genom din kod - det är hur du håller koll på vad som händer när ditt skript körs i det vilda. Programmerare loggar för att felsöka, för att spåra appbeteende, för att övervaka prestanda och för att hålla ett öga på eventuella skumraskaffärer.
-
 ## Hur man gör:
 Här är knepen för att strö in grundläggande loggning i dina skript:
 

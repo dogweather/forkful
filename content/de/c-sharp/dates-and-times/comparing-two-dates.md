@@ -11,9 +11,6 @@ title: Vergleich von zwei Daten
 weight: 27
 ---
 
-## Was & Warum?
-Das Vergleichen von zwei Daten überprüft, ob sie gleich sind, oder ermittelt, welches früher oder später liegt. Entwickler benötigen dies für Altersüberprüfungen, Terminplanungslogik oder Gültigkeitsprüfungen von Zertifikaten.
-
 ## Wie geht das?
 Verwenden der `DateTime`-Klasse in C#:
 

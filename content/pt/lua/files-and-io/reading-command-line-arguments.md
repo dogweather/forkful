@@ -10,9 +10,6 @@ title: Lendo argumentos da linha de comando
 weight: 23
 ---
 
-## O Quê & Porquê?
-Ler argumentos de linha de comando em Lua significa pegar dados inseridos diretamente quando você executa seu script. Programadores fazem isso para tornar seus programas flexíveis, permitindo que usuários especifiquem comportamentos ou parâmetros de execução diretos do terminal.
-
 ## Como Fazer:
 ```Lua
 -- salve o script como saudacao.lua

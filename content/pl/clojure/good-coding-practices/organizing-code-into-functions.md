@@ -11,12 +11,7 @@ title: Organizacja kodu w funkcje
 weight: 18
 ---
 
-## Co i dlaczego?
-
-Grupowanie kodu w funkcje polega na pakowaniu bloków kodu, które realizują konkretne zadania. Dzięki temu kod staje się przejrzysty, łatwiejszy w utrzymaniu i prosty do odczytania dla innych programistów.
-
 ## Jak to zrobić:
-
 Funkcje w Clojure definiujemy za pomocą `defn`, po którym następuje nazwa, parametry i ciało funkcji. Oto szybki przykład.
 
 ```Clojure
@@ -39,7 +34,6 @@ Załóżmy teraz, że chcemy obliczyć pole prostokąta. Zamiast pakować wszyst
 ```
 
 ## Wgłębiając się
-
 Dawno temu programiści wrzucali całą swoją logikę do jednego bloku. To było brzydkie. Potem przyszło programowanie strukturalne i funkcje stały się ważne. W Clojure każda funkcja jest klasą pierwszą – możesz nimi rzucać jak każdą inną wartością.
 
 Alternatywy? Niektórzy mogą bawić się multi-metodami lub funkcjami wyższego rzędu, ale to tylko dodatki w zupie funkcji.
@@ -47,7 +41,6 @@ Alternatywy? Niektórzy mogą bawić się multi-metodami lub funkcjami wyższego
 Wszystko w szczegółach funkcji: w Clojure są one niezmienne, co zmniejsza prawdopodobieństwo zamieszania przez efekty uboczne. Opierają się głównie na rekurencji zamiast typowych pętli, co dobrze współgra z funkcyjnymi paradygmatami języka.
 
 ## Zobacz również
-
 - Przewodnik Clojure: https://clojure.org/guides/learn/functions
 - Podstawy programowania funkcyjnego: https://www.braveclojure.com/core-functions-in-depth/
 - Wykłady Richa Hickeya: https://changelog.com/posts/rich-hickeys-greatest-hits - dla wglądu w filozofię Clojure.

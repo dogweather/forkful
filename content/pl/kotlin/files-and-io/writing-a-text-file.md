@@ -13,9 +13,6 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i dlaczego?
-Pisanie pliku tekstowego w Kotlinie polega na utworzeniu pliku i wprowadzeniu do niego treści tekstowej, co jest powszechnym zadaniem do przechowywania danych, logowania lub ustawień konfiguracyjnych. Programiści robią to, aby zapisać i manipulować danymi poza przestrzenią pamięci nietrwałej, zapewniając trwałość przez sesje.
-
 ## Jak to zrobić:
 Kotlin oferuje prostą metodę zapisywania do plików, wykorzystując standardową bibliotekę bez potrzeby dodatkowych bibliotek stron trzecich. Oto prosty przykład:
 

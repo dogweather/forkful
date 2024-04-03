@@ -10,12 +10,7 @@ title: Extracting substrings
 weight: 6
 ---
 
-## What & Why?
-
-Extracting substrings means snatching little pieces out of a larger string. Programmers do this to isolate, process, or analyze specific data within text, like pulling out usernames from email addresses or dates from logs.
-
 ## How to:
-
 C++ makes it easy to grab a substring. `std::string` is our trusty sidekick here, with the `substr()` function doing most of the heavy lifting. Let's cut to the chase with some code:
 
 ```C++
@@ -39,7 +34,6 @@ int main() {
 ```
 
 ## Deep Dive
-
 Substrings aren't new. Old-school C programmers used `strncpy` and manual bookkeeping. String handling's a common breed of bugs, so C++ aimed to simplify it. `std::string` and its `substr` method date back to C++98 and have been relieving stress since.
 
 Alternatives? Sure. You could go manual with `std::string::iterator` or dust off C functions—if you like living dangerously. A more modern take might involve string_views for non-modifying peeking.
@@ -47,7 +41,6 @@ Alternatives? Sure. You could go manual with `std::string::iterator` or dust off
 Implementation? Under the hood, `substr` often allocates new storage and copies data, which isn't free. It's light compared to wrestling with raw pointers and char arrays of ye olde times, but it's not instant.
 
 ## See Also
-
 For more on `std::string` and its buddies:
 - cppreference.com on `std::string`: https://en.cppreference.com/w/cpp/string/basic_string
 - More on `std::string_view`: https://en.cppreference.com/w/cpp/string/basic_string_view

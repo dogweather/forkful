@@ -14,12 +14,7 @@ title: Lokitiedostot
 weight: 17
 ---
 
-## Mikä & Miksi?
-
-Lokitus ohjelmistokehityksessä on prosessi, jossa kirjataan tietoa ohjelman suorituksesta, jonka tarkoituksena on seurata sen käyttäytymistä ja diagnosoida ongelmia. Ohjelmoijat toteuttavat lokituksen seuratakseen ohjelmiston suorituskykyä, debugata virheitä ja varmistaa järjestelmän turvallisuuden ja noudattamisen, mikä tekee siitä korvaamattoman työkalun sovelluksen ylläpidossa ja analysoinnissa.
-
 ## Miten:
-
 Gossa lokitusta voidaan toteuttaa käyttäen standardikirjaston pakettia `log`. Tämä paketti tarjoaa yksinkertaisia lokitusominaisuuksia, kuten kirjoittamisen standarditulosteeseen tai tiedostoihin. Aloitetaan perusesimerkillä lokituksesta standarditulosteeseen:
 
 ```go
@@ -85,7 +80,6 @@ OMA LOKI: 2009/11/10 23:00:00 main.go:11: Tämä on mukautettu lokiviesti.
 Tässä esimerkissä jokainen lokiviesti alkaa etuliitteellä "OMA LOKI: " ja sisältää päivämäärän, ajan ja lähdekooditiedoston sijainnin.
 
 ## Syväsukellus
-
 Go-standardikirjaston `log`-paketti on suoraviivainen ja riittävä moniin sovelluksiin, mutta siitä puuttuu joitakin kehittyneempiä ominaisuuksia, joita löytyy kolmannen osapuolen lokituskirjastoista, kuten rakennoitu lokitus, lokien kierto ja tasopohjainen lokitus. Paketit, kuten `zap` ja `logrus`, tarjoavat nämä edistyneet ominaisuudet ja ovat Go-yhteisössä arvostettuja niiden suorituskyvyn ja joustavuuden vuoksi.
 
 Esimerkiksi rakennoitu lokitus mahdollistaa tietojen lokittamisen rakenteisessa muodossa (kuten JSON), mikä on erityisen hyödyllistä nykyaikaisissa pilvipohjaisissa sovelluksissa, joissa lokia saatetaan analysoida erilaisilla työkaluilla tai palveluilla. `zap` on erityisesti tunnettu sen korkeasta suorituskyvystä ja pienestä allokointitarpeesta, mikä tekee siitä sopivan sovelluksiin, joissa nopeus ja tehokkuus ovat kriittisiä.

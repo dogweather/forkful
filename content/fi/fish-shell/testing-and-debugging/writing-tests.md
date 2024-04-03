@@ -13,16 +13,10 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mikä ja miksi?
-
-Testien kirjoittaminen Fish Shellissä tarkoittaa skriptien luomista, jotka automaattisesti suorittavat koodisi varmistaakseen sen toimivan odotetulla tavalla. Tämä käytäntö on tärkeä, koska se varmistaa, että komentoskriptisi toimivat tarkoitetulla tavalla, havaitsee virheet aikaisin ja helpottaa ylläpitoa.
-
 ## Kuinka:
-
 Fish ei sisällä sisäänrakennettua testauskehystä kuten jotkut muut ohjelmointiympäristöt. Voit kuitenkin kirjoittaa yksinkertaisia testiskriptejä, jotka käyttävät väittämiä funktioidesi käyttäytymisen tarkistamiseen. Lisäksi voit hyödyntää kolmannen osapuolen työkaluja, kuten `fishtape`, kattavampaan testauspakettiin.
 
 ### Esimerkki 1: Perustestiskripti
-
 Aloitetaan perustoiminnolla Fishissä, joka laskee kahden luvun summan:
 
 ```fish
@@ -54,7 +48,6 @@ test_add passed
 ```
 
 ### Esimerkki 2: Fishtape:n käyttö
-
 Kattavampaan testiratkaisuun voit käyttää `fishtape`:a, joka on TAP-tuottava testiajuri Fishille.
 
 Asenna ensin `fishtape`, jos et ole vielä tehnyt sitä:

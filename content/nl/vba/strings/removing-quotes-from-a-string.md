@@ -14,12 +14,7 @@ title: Quotes uit een string verwijderen
 weight: 9
 ---
 
-## Wat & Waarom?
-
-Het verwijderen van aanhalingstekens uit een string in VBA houdt in dat enkele (`'`) of dubbele (`"`) aanhalingstekens, die een string kunnen omsluiten of er binnen ingebed zijn, worden weggehaald. Deze bewerking is essentieel voor het schoonmaken van gegevens, om te zorgen dat strings correct geformatteerd zijn voor database query's, JSON parsing, of simpelweg voor esthetische of consistentieredenen binnen de interface van een applicatie.
-
 ## Hoe:
-
 In VBA zijn er meerdere benaderingen om aanhalingstekens uit een string te verwijderen. Hier is een eenvoudig voorbeeld dat de `Replace` functie gebruikt, die zoekt naar een specifieke subreeks (in dit geval, een aanhalingsteken) binnen een reeks en deze vervangt door een andere subreeks (een lege string als het verwijderen betreft).
 
 ```basic
@@ -42,7 +37,6 @@ Let op dat voor dubbele aanhalingstekens we `Chr(34)` gebruiken omdat een dubbel
 Voor meer genuanceerde scenario's waarin aanhalingstekens deel kunnen uitmaken van de nodige opmaak (bijv. binnen een aangehaald woord), kan meer verfijnde logica, misschien met behulp van Regex of door karakter voor karakter te parseren, vereist zijn.
 
 ## Diepere Duik
-
 VBA, als een hoeksteen voor het automatiseren van taken binnen de Microsoft Office suite, biedt een rijke set van functies voor string manipulatie, met `Replace` als een van de meest gebruikt. Deze functie, echter, raakt slechts het oppervlak van wat er bereikt kan worden met VBA in termen van string manipulatie.
 
 Historisch gezien heeft VBA van zijn voorgangers een nadruk op eenvoud voor office automatiseringstaken overgenomen, vandaar de rechttoe rechtaan implementatie van functies zoals `Replace`. Echter, voor moderne programmeeropgaven, vooral die welke complexe string manipulaties of saneringen betreffen, kan VBA zijn beperkingen tonen.

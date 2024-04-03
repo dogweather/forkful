@@ -11,9 +11,6 @@ title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---
 
-## Quoi & Pourquoi ?
-Calculer une date dans le futur ou le passé revient à trouver une date en ajoutant ou soustrayant des jours à partir d'aujourd'hui. Les programmeurs le font pour des rappels, des délais, et la planification d’événements.
-
 ## Comment faire :
 Voici un exemple simple pour ajouter des jours à la date actuelle avec une carte Arduino et afficher le résultat sur le moniteur série.
 

@@ -11,9 +11,6 @@ title: Conversione di una stringa in minuscolo
 weight: 4
 ---
 
-## Cosa & Perché?
-Convertire una stringa in minuscolo è il processo di trasformazione di tutti i caratteri di una stringa in lettere minuscole. Si fa per uniformità, per facilitare confronti case-insensitive (senza distinguere maiuscole/minuscole) o per l’elaborazione di testi (per esempio, nelle operazioni di ricerca).
-
 ## Come Fare:
 ```clojure
 ;; Usiamo la funzione `clojure.string/lower-case` per convertire una stringa in minuscolo

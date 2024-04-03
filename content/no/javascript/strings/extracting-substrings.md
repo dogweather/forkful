@@ -11,9 +11,6 @@ title: Uthenting av delstrenger
 weight: 6
 ---
 
-## What & Why?
-I JavaScript er uttrekk av delstrenger som et mini-felttog for å hente spesifikke tekstbiter fra større strenger. Vi gjør dette for å manipulere, analysere eller bare vise frem biter av data som er relevante for oppgaven vår.
-
 ## How to:
 ```javascript
 let fullString = "Hei verden, jeg lærer JavaScript!";

@@ -11,11 +11,7 @@ title: Arrondir les nombres
 weight: 13
 ---
 
-## Quoi et Pourquoi ?
-Arrondir les nombres signifie les ajuster au nombre entier le plus proche ou à un degré de précision spécifié. Les programmeurs arrondissent les nombres pour simplifier, pour répondre aux attentes humaines, ou pour adapter les données à des formats spécifiques — pensez aux calculs financiers, aux affichages graphiques, ou à la réduction de la taille de stockage.
-
 ## Comment faire :
-
 ```Ruby
 # Arrondi basique
 puts 3.14159.round      # => 3

@@ -17,9 +17,6 @@ title: "XML \uB2E4\uB8E8\uAE30"
 weight: 40
 ---
 
-## 무엇 & 왜?
-XML을 다룬다는 것은 프로그래밍을 사용해 XML 데이터를 파싱, 조작, 및 작성하는 것을 의미합니다. 프로그래머들은 서로 다른 시스템 간의 데이터 교환, 구성 파일, 혹은 XML에 의존하는 SOAP과 같은 표준을 다룰 때 XML을 처리합니다.
-
 ## 방법:
 ```TypeScript
 import { parseString } from 'xml2js';

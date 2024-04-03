@@ -12,9 +12,6 @@ title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-Das Senden einer HTTP-Anfrage mit Basis-Authentifizierung bedeutet, dass der Client seine Anmeldeinformationen (Benutzername und Passwort) kodiert im HTTP-Header mitschickt. Programmierer nutzen dies oft, um auf geschützte Ressourcen zuzugreifen, die eine Authentifizierung erfordern.
-
 ## Vorgehensweise:
 ```C++
 #include <iostream>

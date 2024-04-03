@@ -14,9 +14,6 @@ title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---
 
-## Quoi et pourquoi ?
-Mettre en majuscule une chaîne de caractères consiste à modifier le premier caractère de chaque mot d'une phrase pour le mettre en majuscule, tout en s'assurant que les autres restent en minuscule. Cette technique est couramment utilisée pour formater le texte afin d'obtenir un rendu plus professionnel ou lisible, comme pour préparer des titres ou des saisies d'utilisateur pour l'affichage.
-
 ## Comment faire :
 Lua n'a pas de fonction intégrée pour mettre les chaînes en majuscule, mais vous pouvez facilement accomplir cette tâche en utilisant des fonctions de manipulation de chaînes de base. Voici une fonction simple pour mettre la première lettre d'un seul mot en majuscule :
 

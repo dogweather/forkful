@@ -14,9 +14,6 @@ title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
 weight: 6
 ---
 
-## What & Why?
-무엇이며 왜 사용하는가? 문자열에서 특정 부분을 추출하는 것을 'substring 추출'이라고 합니다. 이런 작업은 데이터 파싱, 사용자 입력 처리, 혹은 텍스트 기반의 조건 확인 시 필요합니다.
-
 ## How to:
 ```Fish Shell
 # 문자열 정의

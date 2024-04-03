@@ -11,9 +11,6 @@ title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---
 
-## Mikä & Miksi?
-TOML, lyhenne sanoista Tom’s Obvious, Minimal Language, määrittelee, miten konfiguraatiotiedostot rakennetaan. Ohjelmoijat käyttävät TOML:ää, koska se on helppolukuinen, helppo kirjoittaa ja kuvastaa hyvin hajautustaulua, mikä tekee siitä suosikin konfiguraatioissa.
-
 ## Kuinka:
 Käyttääksesi TOML:ää JavaScriptissä, tarvitset parserin kuten `@iarna/toml`. Ensin, asenna se: `npm install @iarna/toml`. Sen jälkeen, muunna TOML-merkkijono JavaScript-objektiksi tai JavaScript-objekti TOML-muotoon.
 

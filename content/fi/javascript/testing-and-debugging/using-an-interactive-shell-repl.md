@@ -11,9 +11,6 @@ title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mikä & Miksi?
-Interaktiiviset kuoret eli REPL:t (Read-Eval-Print Loopit, Luke-Evaloi-Tulosta-Silmukka) mahdollistavat koodin ajamisen lennosta, toimintojen, algoritmien testaamisen tai ideoiden kokeilun. Ne ovat koodauksen muistilehtiöitä, nopeita ja likaisia, ilman täydellisen kehitysympäristön pystyttämistä.
-
 ## Kuinka:
 Node.js toimitetaan REPL:n kanssa, joka on käytettävissä terminaalin kautta. Avaa se, ja olet valmis aloittamaan. Tässä maistiainen:
 

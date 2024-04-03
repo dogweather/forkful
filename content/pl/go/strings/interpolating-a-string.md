@@ -14,12 +14,7 @@ title: "Interpolacja ci\u0105gu znak\xF3w"
 weight: 8
 ---
 
-## Co i dlaczego?
-
-Interpolacja łańcuchów to metoda konstruowania łańcuchów, które włączają zmienne, umożliwiając dynamiczne tworzenie łańcuchów. Programiści robią to, aby dostosować komunikaty, konstruować adresy URL, tworzyć zapytania SQL i więcej, co pozwala na bardziej czytelny i łatwiejszy do utrzymania kod.
-
 ## Jak to zrobić:
-
 W Go, interpolacja łańcuchów jest powszechnie osiągana za pomocą pakietu `fmt`, w szczególności funkcji `Sprintf`, która pozwala wstrzyknąć zmienne do łańcucha poprzez określenie słów formatujących. Słowa te są symbolami zastępczymi w ciągu formatu i są zastępowane przez wartości danych zmiennych. Oto jak tego użyć:
 
 ```go
@@ -42,7 +37,6 @@ func main() {
 Zauważ, że `%s` jest używane dla łańcuchów, a `%d` dla liczb całkowitych. Dokumentacja pakietu `fmt` zawiera kompleksową listę słów formatujących dla różnych typów danych.
 
 ## Wgłębienie się
-
 Koncepcja interpolacji łańcuchów istnieje w wielu językach programowania, choć z różnymi składniami i możliwościami. W Go, chociaż funkcja `Sprintf` z pakietu `fmt` jest najczęściej używanym podejściem, może nie zawsze być najbardziej wydajna, szczególnie w przypadku prostych konkatenacji lub gdy pracuje się w kodzie o wysokiej wrażliwości na wydajność.
 
 Pakiet `fmt` używa refleksji do dynamicznej interpretacji typów zmiennych w czasie wykonania, co, chociaż elastyczne, wiąże się ze zwiększonym narzutem. W scenariuszach, gdzie wydajność jest krytyczna, bezpośrednia konkatenacja łańcuchów lub typ `strings.Builder` mogą oferować lepsze alternatywy. Bezpośrednia konkatenacja jest prosta, ale może stać się nieporęczna z wieloma zmiennymi. `strings.Builder`, z drugiej strony, zapewnia bardziej wydajny i czytelny sposób na budowanie złożonych łańcuchów w pętli lub przy obchodzeniu się z wieloma zmiennymi:

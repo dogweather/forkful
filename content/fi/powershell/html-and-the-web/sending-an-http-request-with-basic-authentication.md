@@ -12,12 +12,7 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---
 
-## What & Why? (Mitä ja Miksi?)
-
-HTTP-pyyntö perusautentikoinnilla tarkoittaa verkkopalvelimeen lähetettävää pyyntöä, jossa käyttäjänimi ja salasana sisältyvät selkokielellä ja koodataan base64-muotoon. Ohjelmoijat tekevät tämän päästäkseen käsiksi suojattuihin resursseihin tai API:hin.
-
 ## How to: (Kuinka tehdään:)
-
 ```PowerShell
 # Määritä käyttäjätunnus ja salasana
 $kayttajatunnus = 'kayttaja123'
@@ -40,7 +35,6 @@ $response
 Vastaussisältö näkyy terminaalissa.
 
 ## Deep Dive (Syväsukellus)
-
 Perusautentikointi on yksi vanhimmista HTTP-autentikointitavoista, helppo ymmärtää ja toteuttaa. Se on kuitenkin turvaton, koska base64-koodaus ei ole salausta, ja kun se lähetetään ilman SSL/TLS-salattua yhteyttä, käyttäjätiedot ovat alttiita urkinnalle.
 
 Vaihtoehtoina ovat muut autentikointitavat, kuten OAuth tai token-pohjaiset järjestelmät, jotka tarjoavat paremman turvallisuuden. Ohjelmoijan on arvioitava perusautentikoinnin sopivuus käyttöön tapauskohtaisesti.
@@ -48,7 +42,6 @@ Vaihtoehtoina ovat muut autentikointitavat, kuten OAuth tai token-pohjaiset jär
 PowerShell-komennon `Invoke-RestMethod` avulla on suhteellisen yksinkertaista lähettää HTTP-pyyntöjä erilaisilla autentikointitavoilla. Kehittäjät voivat räätälöidä pyyntöjään tarpeen mukaan lisäämällä parametreja, kuten kehys (`Headers`), parametrit (`Body`) tai pyyntömetodin (`Method`).
 
 ## See Also (Katso Myös)
-
 - [PowerShellin ohjeet Invoke-RestMethod:lle](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod)
 - [Perusautentikoinnin ymmärtäminen](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme)
 - [Base64-koodauksen selitys](https://en.wikipedia.org/wiki/Base64)

@@ -10,9 +10,6 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## Hva & Hvorfor?
-Søk og erstatt lar deg finne tekststrenger og bytte dem ut med noe annet. Programmere gjør dette for å effektivisere kodingen, fikse feil, eller endre kode raskt.
-
 ## Hvordan:
 ```Fish Shell
 # Erstatt 'katt' med 'hund' i 'dyr.txt'

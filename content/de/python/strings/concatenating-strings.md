@@ -10,12 +10,7 @@ title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---
 
-## Was & Warum?
-
-String-Konkatenation verbindet zwei oder mehr Zeichenketten zu einer neuen. Es ist eine Standard-Technik, um dynamische Textausgaben zu erzeugen oder um Teile einer Nachricht zusammenzusetzen.
-
 ## So geht's:
-
 In Python gibt es verschiedene Wege, Zeichenketten zu verketten. Hier ein paar Beispiele:
 
 ```python
@@ -37,7 +32,6 @@ print(greeting)  # Ausgabe: Hallo, Anja!
 ```
 
 ## Deep Dive:
-
 String-Konkatenation ist so alt wie das Programmieren selbst. Es gab immer das Bedürfnis, Textdaten dynamisch zu gestalten, sei es in alten Sprachen wie COBOL oder modernen Sprachen wie Python.
 
 Früher wurden Strings oft mittels spezieller Funktionen oder durch Array-Manipulationen konkateniert. Durch Performance-Optimierungen und die Einführung bequemerer Sprachelemente wandelte sich diese Praxis.
@@ -53,7 +47,6 @@ Einige Aspekte rund um String-Konkatenation in Python:
 Alternativen zur Konkatenation sind das Formatieren von Strings mittels der `format` Methode oder Templating-Libraries wie Jinja2, wenn es um komplexere Aufgabenstellungen geht.
 
 ## Siehe Auch:
-
 - More about f-Strings: [PEP 498 – Literal String Interpolation](https://www.python.org/dev/peps/pep-0498/)
 - String methods in Python: [Python String Methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
 - Python performance tips: [Effiziente Stringverkettung in Python](https://docs.python.org/3/faq/programming.html#how-do-i-get-a-single-string-from-a-list-of-strings)

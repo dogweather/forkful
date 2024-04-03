@@ -17,12 +17,7 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1
 weight: 45
 ---
 
-## Gì & Tại Sao?
-
-Việc gửi một yêu cầu HTTP với xác thực cơ bản bao gồm việc truyền tên người dùng và mật khẩu qua mạng để truy cập vào các tài nguyên được bảo vệ. Lập trình viên sử dụng phương pháp này cho sự đơn giản khi tương tác với các API hoặc dịch vụ đòi hỏi thông tin đăng nhập.
-
 ## Cách thực hiện:
-
 Trong Fish Shell, sử dụng `curl` để thực hiện một yêu cầu HTTP với xác thực cơ bản. Thay thế `username`, `password`, và `the_url`:
 
 ```Fish Shell
@@ -47,7 +42,6 @@ Content-Type: application/json
 ```
 
 ## Sâu hơn
-
 Xác thực cơ bản là một phần của giao thức HTTP, tồn tại từ đầu những năm 90. Mặc dù dễ dàng triển khai, nó kém an toàn hơn do thông tin đăng nhập chỉ được mã hóa base64, không phải được mã hóa. HTTPS giúp ích, nhưng không phải là giải pháp hoàn hảo.
 
 Các phương án thay thế bao gồm OAuth, sử dụng token thay vì thông tin đăng nhập, thêm các lớp bảo mật. Để tăng cường bảo mật, hãy xem xét sử dụng khóa API hoặc JWT (JSON Web Tokens).
@@ -55,7 +49,6 @@ Các phương án thay thế bao gồm OAuth, sử dụng token thay vì thông 
 Với Fish Shell, chúng tôi đang giao tiếp với `curl`, một công cụ mạnh mẽ hỗ trợ nhiều giao thức và phương thức xác thực khác nhau. Cờ `-u` rất tiện lợi, nhưng tránh mã hóa thông tin đăng nhập; thay vào đó, sử dụng biến môi trường hoặc tệp cấu hình với quyền truy cập thích hợp.
 
 ## Xem Thêm:
-
 - Tài liệu cURL: https://curl.se/docs/httpscripting.html
 - RFC Xác Thực HTTP Cơ Bản: https://tools.ietf.org/html/rfc7617
 - Tài liệu Fish Shell: https://fishshell.com/docs/current/index.html

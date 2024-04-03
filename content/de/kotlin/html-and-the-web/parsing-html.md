@@ -12,9 +12,6 @@ title: HTML parsen
 weight: 43
 ---
 
-## Was & Warum?
-HTML zu parsen bedeutet, das Markup einer Webseite so zu zergliedern, dass es von einem Programm verstanden und manipuliert werden kann. Programmierer parsen HTML, um Daten zu extrahieren, Web-Interaktionen zu automatisieren oder Inhalte zwischen Systemen zu migrieren.
-
 ## Wie geht das:
 Kotlin macht das Parsen von HTML mit Bibliotheken wie Jsoup unkompliziert. So geht's:
 

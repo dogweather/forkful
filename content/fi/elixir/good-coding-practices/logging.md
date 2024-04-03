@@ -12,9 +12,6 @@ title: Lokitus
 weight: 17
 ---
 
-## Mikä ja miksi?
-Lokitus ohjelmistokehityksessä on tekniikka, jossa kirjataan muistiin tapahtumia, jotka ilmenevät ohjelman suorituksen aikana, yleensä tiedostoon tai ulkoiseen järjestelmään. Ohjelmoijat tekevät näin saadakseen oivalluksia ohjelmiston toiminnasta, vianmääritykseen ja ylläpitämään toimintahistorian kirjaa, joka on tärkeä virheenkorjauksen ja sovellusten terveydentilan seurannan kannalta.
-
 ## Miten:
 Elixirissä perustavanlaatuinen tapa lokitietojen kirjaamiseen on sisäänrakennetun `Logger`-moduulin kautta. Tässä on ohjeet sen käyttöön:
 

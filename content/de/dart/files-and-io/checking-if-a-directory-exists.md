@@ -15,12 +15,7 @@ title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---
 
-## Was & Warum?
-
-Das Überprüfen, ob ein Verzeichnis in Dart existiert, dreht sich darum, die Anwesenheit eines Verzeichnisses auf einem angegebenen Pfad im Dateisystem zu verifizieren, bevor Operationen wie das Lesen oder Schreiben von Dateien durchgeführt werden. Programmierer tun dies, um Fehler zu vermeiden, die auftreten, wenn versucht wird, auf Verzeichnisse zuzugreifen oder sie zu modifizieren, die nicht existieren.
-
 ## Wie:
-
 Dart verwendet die `dart:io` Bibliothek, um mit Dateien und Verzeichnissen zu arbeiten. Hier ist eine einfache Methode, um zu überprüfen, ob ein Verzeichnis existiert:
 
 ```dart

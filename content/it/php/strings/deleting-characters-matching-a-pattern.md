@@ -10,10 +10,6 @@ title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---
 
-## What & Why?
-"Che cosa e perché?"
-Eliminare caratteri che corrispondono a un modello specifico è come fare il pruning su un albero; togli i rami non necessari. I programmatori lo fanno per pulire i dati, come rimuovere spazi o caratteri indesiderati, simplificando il processo e migliorando le performance.
-
 ## How to:
 "Codice:"
 Usa le funzioni preg_replace e str_replace per eliminare i caratteri. Ecco degli esempi:

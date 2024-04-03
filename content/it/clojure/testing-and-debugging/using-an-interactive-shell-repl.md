@@ -11,9 +11,6 @@ title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---
 
-## Cos'è e Perché?
-REPL, ovvero Read-Eval-Print Loop (Ciclo Leggi-Valuta-Stampa), è un ambiente di programmazione per testare dinamicamente codice Clojure pezzo per pezzo. I programmatori lo utilizzano per avere feedback immediati, sviluppo iterativo e sperimentazione rapida senza l'onere di compilare o configurare un ambiente di progetto completo.
-
 ## Come fare:
 Inizia lanciando REPL:
 

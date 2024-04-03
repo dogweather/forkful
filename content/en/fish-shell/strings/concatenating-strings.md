@@ -9,9 +9,6 @@ title: Concatenating strings
 weight: 3
 ---
 
-## What & Why?
-Concatenating strings means sticking them together end-to-end. Programmers do it to combine text, like building a full sentence from words or creating file paths.
-
 ## How to:
 In Fish, slap strings together with spaces between or use `string join`.
 

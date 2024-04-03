@@ -15,9 +15,6 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mikä ja miksi?
-Tarkastus siitä, onko kansio olemassa Javassa, on perustehtävä, joka sisältää tiedostojärjestelmän kansion olemassaolon varmistamisen ennen siitä lukemista, sinne kirjoittamista tai mitä tahansa toimintoja, jotka edellyttävät sen olemassaoloa. Tämä on ratkaisevaa virheiden tai poikkeusten välttämiseksi ohjelmissa, jotka toimivat tiedostojärjestelmän kanssa, varmistaen sujuvamman suorituksen ja paremman käyttäjäkokemuksen.
-
 ## Kuinka:
 Javassa on useita tapoja tarkistaa, onko kansio olemassa, ensisijaisesti käyttämällä `java.nio.file.Files`- ja `java.io.File`-luokkia.
 

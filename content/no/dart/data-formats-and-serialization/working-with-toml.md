@@ -13,12 +13,7 @@ title: "\xC5 Arbeide med TOML"
 weight: 39
 ---
 
-## Hva & Hvorfor?
-
-TOML, eller Toms Opplagte, Minimale Språk, er et konfigurasjonsfilformat som er lett å lese på grunn av sin klare semantikk. Programmerere bruker det til å konfigurere programvareapplikasjoner fordi det er enkelt å parse og genererer minimal forvirring eller feil.
-
 ## Hvordan:
-
 Dart inkluderer ikke innebygd støtte for TOML, men du kan jobbe med TOML-filer ved å bruke tredjepartspakker som `toml`. Først, legg til `toml` i din `pubspec.yaml`:
 
 ```yaml
@@ -27,7 +22,6 @@ dependencies:
 ```
 
 ### Lese TOML
-
 For å lese en TOML-fil, la oss anta at du har en enkel konfigurasjonsfil `config.toml`:
 
 ```toml
@@ -60,7 +54,6 @@ Dette skriver ut:
 ```
 
 ### Skrive TOML
-
 For å opprette TOML-innhold, bruk `TomlBuilder` som tilbys av `toml`-pakken:
 
 ```dart

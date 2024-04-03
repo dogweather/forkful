@@ -12,16 +12,10 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mikä & Miksi?
-
-Testien kirjoittaminen Arduino-ympäristössä tarkoittaa automatisoitujen testien luomista, jotka varmistavat koodisi toimivuuden Arduino-laitteissa. Ohjelmoijat tekevät näin varmistaakseen, että heidän koodinsa toimii odotetusti, vähentää virheitä ja parantaa projektien laatua, mikä on erityisen tärkeää sulautetuissa järjestelmissä, joissa vianetsintä voi olla haastavampaa.
-
 ## Kuinka:
-
 Arduino ei sisällä valmiina testausalustaa kuten jotkut muut ohjelmointiympäristöt. Voit kuitenkin käyttää kolmannen osapuolen kirjastoja, kuten `AUnit`-kirjastoa, Arduino-koodin yksikkötestaukseen. AUnit on saanut inspiraationsa Arduinon sisäänrakennetusta kirjastosta, `ArduinoUnit`, ja Googlen testausalustasta, `Google Test`.
 
 ### Esimerkki AUnitin kanssa:
-
 Asenna ensin AUnit Kirjastohallinnan kautta Arduino IDE:ssä: mene kohtaan Sketch > Include Library > Manage Libraries... > etsi AUnit ja asenna se.
 
 Sen jälkeen voit kirjoittaa testejä näin:

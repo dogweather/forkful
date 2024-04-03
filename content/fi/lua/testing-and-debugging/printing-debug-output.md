@@ -9,11 +9,6 @@ title: "Virheenj\xE4ljitystulosteiden tulostaminen"
 weight: 33
 ---
 
-## What & Why?
-Mikä se on ja miksi ihmeessä?
-
-Koodin debuggaus eli vianetsintä on prosessi, jossa etsitään ja korjataan ohjelmakoodin virheitä. Tulostamalla diagnostiikkaa konsoliin, ohjelmoijat näkevät nopeasti, mitä koodissa tapahtuu ja missä vika saattaa piileskellä.
-
 ## How to:
 Koodinäytteet ja esimerkkitulosteet
 

@@ -11,9 +11,6 @@ title: "Trabajando con n\xFAmeros complejos"
 weight: 14
 ---
 
-## ¿Qué y Por Qué?
-Los números complejos extienden los números reales al añadir una unidad imaginaria, representada como 'i', donde i² = -1. Los programadores los utilizan para simulaciones, procesamiento de señales y resolver problemas matemáticos que exigen trabajar en dos dimensiones.
-
 ## Cómo hacerlo:
 C++ tiene una biblioteca integrada `<complex>` que facilita trabajar con números complejos. Aquí hay un vistazo rápido:
 

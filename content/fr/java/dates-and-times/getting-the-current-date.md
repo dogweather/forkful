@@ -15,9 +15,6 @@ title: Obtenir la date actuelle
 weight: 29
 ---
 
-## Quoi & Pourquoi ?
-Obtenir la date actuelle en Java est une opération fondamentale qui permet aux programmeurs de manipuler des objets de date pour des opérations telles que la journalisation, les calculs de dates et les conditions basées sur le temps. C'est essentiel dans les applications où le suivi, la planification et l'analyse des données temporelles sont cruciaux.
-
 ## Comment faire :
 Java offre plusieurs moyens d'obtenir la date actuelle, en utilisant à la fois l'ancienne classe `java.util.Date` et le nouveau package `java.time` (introduit dans Java 8) qui est plus polyvalent et intuitif.
 
@@ -32,6 +29,7 @@ public class ExempleDateActuelle {
     }
 }
 ```
+
 ### Utilisation de `java.time.LocalDateTime`
 ```java
 import java.time.LocalDateTime;
@@ -43,6 +41,7 @@ public class ExempleDateActuelle {
     }
 }
 ```
+
 ### Utilisation de `java.util.Date` (Ancien)
 ```java
 import java.util.Date;
@@ -54,6 +53,7 @@ public class ExempleDateActuelle {
     }
 }
 ```
+
 ### Utilisation d'une bibliothèque tierce : Joda-Time
 Avant Java 8, Joda-Time était la norme de facto pour la date et l'heure en Java. Si vous travaillez sur des systèmes hérités ou si vous avez une préférence pour Joda-Time, voici comment vous pouvez l'utiliser pour obtenir la date actuelle :
 ```java

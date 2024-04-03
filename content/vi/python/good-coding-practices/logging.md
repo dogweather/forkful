@@ -16,9 +16,6 @@ title: Ghi log
 weight: 17
 ---
 
-## Cái gì & Tại sao?
-Logging là quá trình ghi lại các sự kiện của ứng dụng trong khi một chương trình đang chạy, cung cấp một dấu vết để phân tích sau sự cố và giám sát thời gian thực. Lập trình viên thực hiện việc này bởi vì nó giúp gỡ lỗi, giám sát hiệu suất và theo dõi hành động của người dùng cho mục đích an ninh và phân tích.
-
 ## Làm thế nào:
 Python đi kèm với một mô-đun tích hợp sẵn cho việc logging. Dưới đây là cách thiết lập cơ bản:
 ```Python

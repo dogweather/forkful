@@ -10,9 +10,6 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-Zahlen zu runden bedeutet, sie an einen einfacheren oder bedeutenderen Wert anzunähern. Programmierer runden Zahlen ab, um Ergebnisse zu vereinfachen, Dezimalstellen für die Anzeige zu begrenzen oder für bestimmte mathematische Zwecke.
-
 ## Wie geht das:
 Hier ist das Wichtigste zum Runden von Zahlen in Python:
 

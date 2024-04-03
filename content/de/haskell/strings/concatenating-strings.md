@@ -11,9 +11,6 @@ title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---
 
-## Was & Warum?
-String-Konkatenation verklebt einfach zwei Textstücke zu einem längeren. Programmierer*innen nutzen das, um Nutzerdaten zu verarbeiten, Nachrichten zu generieren oder einfach alles dort, wo zusammengesetzte Texte gebraucht werden.
-
 ## So geht’s:
 In Haskell nutzen wir den Operator `(++)`, um Strings zu verketten.
 ```Haskell

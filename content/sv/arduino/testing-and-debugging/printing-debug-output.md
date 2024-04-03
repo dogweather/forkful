@@ -11,9 +11,6 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## Vad & Varför?
-Debugutskrift hjälper utvecklare att förstå vad deras kod gör genom att visa meddelanden i realtid. Programmerare gör detta för att enkelt hitta och åtgärda fel under utvecklingen.
-
 ## Hur gör man:
 ```Arduino
 void setup() {

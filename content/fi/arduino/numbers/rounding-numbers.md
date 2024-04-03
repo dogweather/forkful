@@ -11,9 +11,6 @@ title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä & Miksi?
-Numeroiden pyöristäminen on desimaalin leikkaamista lähimpään kokonaislukuun tai asetettuun määrään desimaalipaikkoja. Ohjelmoijat pyöristävät numeroita, jotta niitä olisi helpompi lukea ja käsitellä, erityisesti kun tarkkuus tietyn pisteen jälkeen on tarpeetonta tai voi johtaa virheisiin.
-
 ## Kuinka:
 Arduinossa voit pyöristää numeroita käyttäen sisäänrakennettuja funktioita. Keskeisiä toimijoita ovat `round`, `ceil` ja `floor`. Tässä nopea esittely:
 

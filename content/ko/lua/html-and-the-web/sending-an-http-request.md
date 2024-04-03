@@ -17,9 +17,6 @@ title: "HTTP \uC694\uCCAD \uBCF4\uB0B4\uAE30"
 weight: 44
 ---
 
-## What & Why? (무엇이며 왜 사용하는가?)
-HTTP 요청을 보낸다는 건 웹 서버와 데이터를 주고받기 위해서입니다. 프로그래머가 이를 사용하는 이유는 웹 API 통신, 웹 페이지 내용 가져오기, 웹 기반 데이터 분석 등 다양한 작업을 자동화하기 위해서죠.
-
 ## How to: (어떻게 하나요?)
 Lua에서 HTTP 요청을 하려면, `socket.http` 라이브러리나 `luasocket` 모듈을 사용할 수 있습니다. 먼저 `luasocket`를 설치해야 합니다:
 

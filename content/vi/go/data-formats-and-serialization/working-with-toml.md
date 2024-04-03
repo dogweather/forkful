@@ -16,12 +16,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---
 
-## Cái gì và Tại sao?
-
-TOML (Tom's Obvious, Minimal Language - Ngôn ngữ Tối giản, Hiển nhiên của Tom) là một định dạng tệp cấu hình dễ đọc nhờ cú pháp đơn giản của nó. Lập trình viên sử dụng TOML để cấu hình các thiết lập và phụ thuộc của ứng dụng bởi vì sự rõ ràng và việc ánh xạ trực tiếp đến cấu trúc dữ liệu, khiến nó trở thành lựa chọn phổ biến trong nhiều dự án Go để thiết lập và quản lý cấu hình.
-
 ## Làm thế nào:
-
 Để bắt đầu làm việc với TOML trong Go, bạn cần phải bao gồm một thư viện có thể phân tích tệp TOML vì thư viện tiêu chuẩn của Go không hỗ trợ TOML một cách tự nhiên. Gói `BurntSushi/toml` là một lựa chọn phổ biến cho việc này. Đầu tiên, hãy chắc chắn cài đặt nó:
 
 ```bash
@@ -81,7 +76,6 @@ Máy chủ cơ sở dữ liệu: 192.168.1.1
 ```
 
 ## Đi sâu vào
-
 TOML được tạo ra bởi Tom Preston-Werner, một trong những đồng sáng lập của GitHub, nhằm mục đích cung cấp một định dạng tệp cấu hình đơn giản, có thể dễ dàng ánh xạ sang bảng băm và có thể hiểu ngay lập tức mà không cần kiến thức trước về định dạng. Điều này trái ngược với JSON hoặc YAML, mặc dù cũng rộng rãi được sử dụng, nhưng có thể kém thân thiện với con người hơn trong các tệp cấu hình vì vấn đề ngoặc, dấu nháy và thụt lề.
 
 Gói `BurntSushi/toml` trong Go là một thư viện mạnh mẽ không chỉ cho phép giải mã mà còn cho phép mã hóa tệp TOML, khiến nó trở thành một lựa chọn đa dạng cho các ứng dụng cần đọc và viết các tệp cấu hình theo định dạng này. Tuy nhiên, nên lưu ý rằng với sự tiến bộ của công nghệ và sự giới thiệu của các phiên bản Go mới, các lựa chọn khác như `pelletier/go-toml` đã xuất hiện, cung cấp hiệu suất cải thiện và các tính năng bổ sung như thao tác cây và hỗ trợ truy vấn.

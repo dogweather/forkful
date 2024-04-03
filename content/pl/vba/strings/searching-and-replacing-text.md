@@ -14,16 +14,10 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## Co i Dlaczego?
-
-Wyszukiwanie i zamiana tekstu w Visual Basic dla Aplikacji (VBA) jest niezbędne do programistycznego edytowania dokumentów, arkuszy kalkulacyjnych i baz danych. Ta możliwość pozwala programistom na automatyzację zbiorczych edycji, korygowania błędów lub aktualizowania informacji w obszernych zestawach danych bez interwencji ręcznej.
-
 ## Jak to zrobić:
-
 W VBA, wyszukiwanie i zamiana tekstu może być osiągnięte za pomocą funkcji `Replace` lub poprzez specyficzne modele obiektów w aplikacjach takich jak Excel czy Word. Poniżej przedstawiono przykłady obu podejść.
 
 ### Korzystając z funkcji `Replace`:
-
 Funkcja `Replace` jest prosta w przypadku prostych zamian tekstu. Ma ona formę `Replace(expression, find, replaceWith[, start[, count[, compare]]])`.
 
 Przykład:
@@ -42,7 +36,6 @@ Hello, Everyone! Programowanie w VBA jest zabawne.
 ```
 
 ### Wyszukiwanie i zamiana w Excelu:
-
 W Excelu możesz użyć metody `Range.Replace`, która oferuje większą kontrolę, taką jak uwzględnianie wielkości liter i zamiany całych słów.
 
 Przykład:
@@ -58,7 +51,6 @@ End Sub
 ```
 
 ### Wyszukiwanie i zamiana w Wordzie:
-
 Podobnie, Word ma potężną funkcję `Find` i `Replace` dostępną przez VBA.
 
 Przykład:
@@ -76,7 +68,6 @@ End Sub
 ```
 
 ## Dogłębna analiza:
-
 Wyszukiwanie i zamiana tekstu w VBA nawiązuje do wczesnych możliwości automatyzacji w aplikacjach Microsoft Office, znacząco zwiększając produktywność poprzez skryptowanie powtarzających się zadań. Z czasem te funkcje ewoluowały, stając się bardziej potężne i elastyczne, odpowiadając na szeroki zakres przypadków użycia.
 
 Chociaż funkcja `Replace` w VBA jest wygodna do prostych operacji tekstowych, modele obiektów Excela i Worda oferują większą kontrolę i powinny być używane do zadań specyficznych dla aplikacji. Obsługują one zaawansowane funkcje, takie jak dopasowywanie wzorców, zachowanie formatowania i niuansowane kryteria wyszukiwania (np. uwzględnianie wielkości liter, całych słów).

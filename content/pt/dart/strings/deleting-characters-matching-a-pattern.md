@@ -14,12 +14,7 @@ title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---
 
-## O Que & Por Que?
-
-Eliminar caracteres que correspondam a um padrão específico em strings é crucial para a validação de dados, saneamento ou quando se prepara o texto para um processamento adicional. Programadores realizam esta tarefa para garantir a integridade dos dados, melhorar a legibilidade e impor um formato consistente em entradas de texto.
-
 ## Como fazer:
-
 Dart facilita a remoção de caracteres que correspondam a um padrão pré-definido usando expressões regulares e o método `replaceAll`. Não são necessárias bibliotecas de terceiros para o uso básico, tornando esta abordagem muito acessível.
 
 Aqui está um exemplo simples que demonstra como remover dígitos de uma string:

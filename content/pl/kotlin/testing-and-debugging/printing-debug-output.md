@@ -10,9 +10,6 @@ title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---
 
-## What & Why? (Co i Dlaczego?)
-Drukowanie danych debugowania to jak rozmowa z programem: "Co robisz?". Programiści używają tego do śledzenia wartości i zachowania aplikacji podczas pisania kodu - znacznie ułatwia to znalezienie i naprawienie błędów.
-
 ## How to: (Jak to zrobić:)
 W Kotlinie wypisywanie debugowania jest banalne. Używasz `println()` do wyrzucania wartości na konsolę.
 

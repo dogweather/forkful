@@ -11,9 +11,6 @@ title: Avrundning av tal
 weight: 13
 ---
 
-## Vad & Varför?
-Avrundning av tal innebär att trimma ett decimaltal till dess närmaste hela värde eller till ett bestämt antal decimaler. Programmerare avrundar tal för att göra dem lättare att läsa och hantera, särskilt när noggrannhet utöver en viss punkt är onödig eller kan leda till fel.
-
 ## Hur gör man:
 I Arduino kan du avrunda tal med inbyggda funktioner. Viktiga aktörer är `round`, `ceil` och `floor`. Här är en snabb demo:
 

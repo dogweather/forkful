@@ -13,11 +13,8 @@ title: Usando expresiones regulares
 weight: 11
 ---
 
-## ¿Qué y Por Qué?
-
-Las expresiones regulares (regex) son una herramienta poderosa para el procesamiento de texto, permitiendo a los programadores buscar, coincidir y manipular cadenas con técnicas avanzadas de coincidencia de patrones. En Kotlin, aprovechar las regex ayuda a realizar tareas de procesamiento de texto complejas de manera eficiente, como validación, análisis o transformación, lo que las hace indispensables para tareas que van desde la manipulación simple de cadenas hasta el análisis de texto complejo.
-
 ## Cómo:
+
 
 ### Coincidencia Básica
 Para verificar si una cadena coincide con un patrón específico en Kotlin, puedes usar el método `matches` de la clase `Regex`.

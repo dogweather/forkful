@@ -11,9 +11,6 @@ title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Skrive ut feilsøkingsdata hjelper utviklere å se hva som foregår under panseret av programmene sine. Vi gjør det for å fakke bugs og forstå flyten, uten å granske tusenvis av kodelinjer.
-
 ## How to: (Hvordan:)
 ```C#
 using System;

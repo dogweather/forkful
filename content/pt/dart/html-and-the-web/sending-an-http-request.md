@@ -13,12 +13,7 @@ title: "Enviando uma solicita\xE7\xE3o HTTP"
 weight: 44
 ---
 
-## O quê & Por quê?
-
-Enviar uma solicitação HTTP em Dart é o processo de iniciar comunicações com um servidor web ou API a partir de uma aplicação Dart. Programadores fazem isso para buscar dados da web, submeter formulários e interagir com serviços RESTful, tornando-o uma operação fundamental para o desenvolvimento de aplicações web, do lado do servidor e móveis em Dart.
-
 ## Como fazer:
-
 Dart inclui o pacote `http`, uma maneira poderosa e conveniente de trabalhar com recursos HTTP. Primeiro, inclua-o em seu arquivo pubspec.yaml:
 
 ```yaml

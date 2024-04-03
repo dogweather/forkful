@@ -10,9 +10,6 @@ title: Aktuelles Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-Das Abrufen des aktuellen Datums ist ein Prozess, bei dem wir die momentane Datumswerte (Tag, Monat, Jahr) vom Computer erhalten. Programmierer nutzen diese Funktion für Features wie Kalender, Zeitstempel oder Gültigkeitsprüfungen.
-
 ## Anleitung:
 In Elm, holen Sie das aktuelle Datum mit der `Time`-Modul. Verbinden Sie dies mit einer Subscription, um das Datum im Model zu aktualisieren.
 

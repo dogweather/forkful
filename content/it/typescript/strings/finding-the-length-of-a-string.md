@@ -10,9 +10,6 @@ title: Trovare la lunghezza di una stringa
 weight: 7
 ---
 
-## What & Why? (Cosa e Perché?)
-Calcolare la lunghezza di una stringa significa contare quanti caratteri contiene. I programmatori lo fanno per validazioni, limitazioni di input e manipolazioni di testo.
-
 ## How to: (Come fare:)
 ```TypeScript
 let saluto: string = "Ciao mondo!";

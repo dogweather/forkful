@@ -13,12 +13,7 @@ title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---
 
-## Co i dlaczego?
-
-Tablice asocjacyjne, czyli to, co Rustaceanie nazywają "mapami hash", to kolekcje przechowujące dane w parach klucz-wartość. Programiści używają ich do szybkiego wyszukiwania danych, co pozwala na efektywną manipulację danych na podstawie unikalnych kluczy.
-
 ## Jak to zrobić:
-
 W Rust, typ `HashMap` z modułu `std::collections` zapewnia funkcjonalność tablic asocjacyjnych. Oto jak możesz z nich korzystać:
 
 ```Rust
@@ -49,5 +44,4 @@ fn main() {
 ```
 
 ## Wgłębienie
-
 `HashMap` w Rust używa funkcji hashującej do mapowania kluczy na wartości, co umożliwia szybkie odzyskiwanie danych. Jednak ta skuteczność wiąże się z kosztem: mapy hash nie zachowują kolejności swoich elementów. Jest to w przeciwieństwie do innych implementacji tablic asocjacyjnych, jak te w Pythonie (`dict`) czy Ruby, które w ostatnich wersjach utrzymują kolejność wstawiania jako funkcję. W przypadkach, gdy kolejność par klucz-wartość jest znacząca, developerzy Rust mogą rozważyć użycie `BTreeMap` z modułu `std::collections`, który zachowuje kolejność, ale może oferować wolniejsze wstawianie i pobieranie w porównaniu do `HashMap`. Ostatecznie wybór pomiędzy `HashMap` a `BTreeMap` zależy od konkretnych wymagań dotyczących kolejności i wydajności.

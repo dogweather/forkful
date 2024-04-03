@@ -14,12 +14,7 @@ title: "R\xE9diger un fichier texte"
 weight: 24
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire dans un fichier texte avec Elixir est une compétence essentielle pour les développeurs, permettant la persistance des données, le journalisation ou l'exportation de contenu lisible par l'homme. Les programmeurs accomplissent cela pour sauvegarder l'état de l'application, les informations de débogage, les configurations ou toute échange de données entre systèmes qui préfèrent un format ubiquitaire comme le texte.
-
 ## Comment faire :
-
 Elixir rend la manipulation de fichiers simple avec des modules intégrés. La principale manière d'écrire dans un fichier est d'utiliser les fonctions `File.write/2` ou `File.write!/2`, où la première retourne un tuple `:ok` ou `:error` et la seconde génère une erreur en cas d'échec.
 
 Voici un exemple simple :

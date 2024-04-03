@@ -11,9 +11,6 @@ title: Debug-Ausgaben drucken
 weight: 33
 ---
 
-## What & Why? (Was & Warum?)
-Das Ausgeben von Debug-Informationen hilft, Probleme zu erkennen, indem Abläufe im Code erklärt werden. Programmierer nutzen dies, um Funktionen und ihre Auswirkungen zu verstehen und Fehler schneller zu beheben.
-
 ## How to (Wie geht das?)
 In Bash, benutze `echo` oder `printf` für Debug-Output. Hier ein paar Beispiele:
 

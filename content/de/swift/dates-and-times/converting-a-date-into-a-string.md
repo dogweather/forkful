@@ -10,9 +10,6 @@ title: Datum in einen String umwandeln
 weight: 28
 ---
 
-## Was & Warum?
-Das Umwandeln eines Datums in einen String erleichtert die Anzeige und Verarbeitung von Datumsangaben in einem für Menschen lesbaren Format. Wir brauchen diese Umwandlung für Benutzeroberflächen, Datenbanken und Logs.
-
 ## How to:
 Swift bietet `DateFormatter` für das Konvertieren von `Date`-Objekten in Strings. Hier ist ein einfaches Beispiel:
 

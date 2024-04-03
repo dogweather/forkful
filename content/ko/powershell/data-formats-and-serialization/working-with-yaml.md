@@ -19,9 +19,6 @@ title: "YAML\uB85C \uC791\uC5C5\uD558\uAE30"
 weight: 41
 ---
 
-## 무엇 & 왜?
-YAML, 또는 YAML Ain't Markup Language는 사람이 읽을 수 있는 데이터 직렬화 언어입니다. 프로그래머들은 주로 설정 파일과 언어간의 데이터 전송을 위해 사용합니다. 그것의 단순성과 가독성은 환경, 애플리케이션, 또는 설정이 중요하고 쉽게 이해되고 편집될 수 있어야 하는 작업에 특히 인기가 있습니다.
-
 ## 방법:
 기본적으로 PowerShell은 YAML을 구문 분석하기 위한 내장된 cmdlet을 제공하지 않지만, `powershell-yaml` 모듈을 활용하거나 `yq`와 같은 도구와 함께 `ConvertFrom-Json`을 사용하여 YAML을 PowerShell 객체로 변환할 때 YAML과 원활하게 작동합니다.
 

@@ -12,11 +12,7 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-Reguliere expressies (regex) zijn patronen die gebruikt worden om tekencombinaties in strings te vinden. Programmeurs gebruiken ze voor het zoeken, bewerken of manipuleren van tekst, wat taken zoals formuliervalidatie of gegevensverwerking vereenvoudigt.
-
 ## Hoe te gebruiken:
-
 Elm heeft geen ingebouwde regex-mogelijkheden, maar je kunt het pakket `elm/regex` gebruiken. Hier is hoe je regex voor veelvoorkomende taken gebruikt:
 
 ```Elm
@@ -50,7 +46,6 @@ extractDigits "elm123rocks" -- ["123"]
 Onthoud, je moet Maybe behandelen voor mogelijke patroon-zoekfalen wanneer je `Regex.fromString` gebruikt.
 
 ## Diepere Duik
-
 Regex gaat terug tot de jaren 1950, met wortels in de automaat theorie en formele taaltheorie. Door de tijd heen werd regex een krachtig hulpmiddel in tekstverwerking, geïntegreerd in vele programmeertalen en command-line hulpprogramma's.
 
 Alternatieven voor regex in Elm omvatten stringfuncties zoals `String.contains`, `String.startsWith`, `String.split`, enz. Hoewel eenvoudiger, zijn ze minder krachtig voor complexe patroonherkenning.
@@ -58,7 +53,6 @@ Alternatieven voor regex in Elm omvatten stringfuncties zoals `String.contains`,
 Implementatiegewijs, is regex in Elm gebouwd op JavaScript's regex-motor, met dank aan Elm's runtime. Dit betekent dat het gedrag van regex in Elm de mogelijkheden en beperkingen van JavaScript kan weerspiegelen.
 
 ## Zie Ook
-
 - Elm Regex Pakket: [package.elm-lang.org/packages/elm/regex/latest](https://package.elm-lang.org/packages/elm/regex/latest)
 - Reguliere Expressies in JavaScript: [developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
 - Regex Testers en Debuggers: [regex101.com](https://regex101.com)

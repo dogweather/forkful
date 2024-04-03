@@ -11,9 +11,6 @@ title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---
 
-## Co i dlaczego?
-Interaktywna konsola, czyli REPL (Read-Eval-Print Loop - Cykl Czytaj-Wykonaj-Wydrukuj), pozwala testować kod w czasie rzeczywistym. Programiści używają jej do eksperymentowania, debugowania i poznawania subtelności Ruby'ego bez tworzenia pełnoprawnych skryptów.
-
 ## Jak to zrobić:
 REPL Ruby'ego nazywa się IRB (Interaktywne Ruby). Wskocz i wypróbuj Ruby prosto z terminala:
 

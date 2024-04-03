@@ -11,9 +11,6 @@ title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---
 
-## What & Why?
-Convertir une chaîne en minuscules, c'est transformer tous les caractères alphabétiques en leur équivalent en minuscule. Les programmeurs le font pour standardiser les entrées des utilisateurs, faciliter les comparaisons de chaînes et l'indexation de données sans se soucier de la casse.
-
 ## How to:
 En TypeScript, c'est simple comme bonjour :
 

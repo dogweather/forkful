@@ -11,9 +11,6 @@ title: "\xC5 jobbe med XML"
 weight: 40
 ---
 
-## Hva & Hvorfor?
-Å jobbe med XML betyr å parse, generere og manipulere XML (eXtensible Markup Language)-dokumenter ved hjelp av kode. Programmerere gjør dette for å interagere med mange netttjenester, konfigurasjonsfiler og datautvekslingsformater der XML er lingua franca.
-
 ## Hvordan:
 La oss bruke REXML, som er inkludert med Ruby, for å parse et XML-snutt:
 ```Ruby

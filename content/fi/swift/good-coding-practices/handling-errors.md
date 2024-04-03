@@ -10,9 +10,6 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä ja Miksi?
-Virheenkäsittely Swiftissä tarkoittaa ongelmien ennakointia ja ratkaisemista, jotka ilmaantuvat koodisi ajon aikana. Teemme niin kaaoksen hallitsemiseksi—pitäen sovellukset kaatumattomina ja tarjoten käyttäjälle sujuvan kokemuksen.
-
 ## Kuinka toimia:
 Swift käyttää virheenkäsittelyyn `do`, `try` ja `catch` -lohkoja. Katsotaanpa esimerkkiä:
 

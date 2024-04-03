@@ -11,9 +11,6 @@ title: Koodin refaktorointi
 weight: 19
 ---
 
-## Mikä & Miksi?
-Refaktorointi on prosessi, jossa olemassa olevaa koodia uudelleenjärjestetään muuttamatta sen ulkoista käyttäytymistä. Tavoitteena on parantaa ei-toiminnallisia ominaisuuksia, kuten luettavuutta ja ylläpidettävyyttä. Ohjelmoijat tekevät tätä, jotta koodi olisi selkeämpää, helpommin ymmärrettävää ja tehokkaampaa, helpottamaan tulevia päivityksiä ja vähentämään virheiden riskiä.
-
 ## Kuinka:
 Siistitään yleinen Elixir-malli. Refaktoroimme `calculate_stats` funktion, joka tekee enemmän kuin sen pitäisi, jakamalla sen pienempiin, uudelleenkäytettäviin osiin.
 

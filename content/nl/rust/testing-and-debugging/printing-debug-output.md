@@ -12,11 +12,7 @@ title: Debug-output afdrukken
 weight: 33
 ---
 
-## Wat & Waarom?
-Het afdrukken van debugoutput stelt je in staat om een kijkje te nemen in de staat van je programma zonder een volwaardige debugger. Het is snel, ongepolijst en perfect voor het traceren van lastige bugs wanneer je niet de vuurkracht van een specifieke debugtool nodig hebt.
-
 ## Hoe:
-
 Om iets eenvoudigs te printen, gebruik `println!`. Als je een waarde voor debugging moet printen, komt `dbg!` goed van pas.
 
 ```Rust
@@ -57,7 +53,6 @@ Hallo, Rustaceans!
 ```
 
 ## Dieper ingaan
-
 Het printen van debugoutput is al sinds de vroege dagen van programmeren een eenvoudige onderdeel. De eenvoud maakt het vaak de go-to keuze voor het snel diagnosticeren van problemen.
 
 In Rust is `println!` geweldig voor het weergeven van gebruiksvriendelijke berichten. De magie komt met `dbg!`, geïntroduceerd in Rust 1.32, dat zowel de waarde als zijn locatie in de code print. Het output naar standaardfout (stderr), dus het zal niet mengen met de standaardoutput (stdout) en kan indien nodig apart worden omgeleid.
@@ -67,7 +62,6 @@ Voor complexe typen kun je de `Debug` trait afleiden om automatisch een formaat 
 Wat betreft alternatieven, er bestaan degelijke loggers zoals `log` en `env_logger`, en als je meer gedetailleerde controle nodig hebt, overweeg dan een debugger zoals `gdb` of `lldb`, die werken met Rust via integraties zoals `rust-gdb` of `rust-lldb`.
 
 ## Zie ook
-
 Voor meer over Rust's debugprinten en formatteeropties:
 
 - Het Rust Boek over `println!` en Formatteren: https://doc.rust-lang.org/std/fmt/index.html

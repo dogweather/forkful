@@ -9,9 +9,6 @@ title: Descobrindo o comprimento de uma string
 weight: 7
 ---
 
-## O Que & Porquê?
-Medir o tamanho de uma string é descobrir quantos caracteres ela tem. Programadores fazem isso para validar entradas, manipular textos ou simplesmente porque o comprimento de uma string é crucial para a lógica do código.
-
 ## Como Fazer:
 ```kotlin
 fun main() {

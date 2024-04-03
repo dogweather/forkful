@@ -28,12 +28,7 @@ title: "\u0935\u0947\u092C \u092A\u0947\u091C \u0921\u093E\u0909\u0928\u0932\u09
 weight: 42
 ---
 
-## What & Why? (क्या और क्यों?)
-
-वेब पेज डाउनलोड करना मतलब उस पेज की सामग्री को इंटरनेट से आपके कंप्यूटर पर ले आना है। प्रोग्रामर्स इसे डेटा निकालने, टेस्टिंग और ऑफलाइन ब्राउजिंग के लिए करते हैं।
-
 ## How to: (कैसे करें:)
-
 Node.js और एक लोकप्रिय लाइब्रेरी Axios का उपयोग करके TypeScript में वेब पेज डाउनलोड करना सरल है। पहले `axios` और `@types/axios` को इंस्टॉल करें:
 
 ```sh
@@ -60,13 +55,11 @@ downloadWebPage('https://www.example.com');
 आउटपुट (`response.data`) वह HTML होगा जो उस वेब पेज पर मौजूद है।
 
 ## Deep Dive (गहराई से जानकारी):
-
 जब से वेब का आविष्कार हुआ, पेज डाउनलोड करने की जरुरत पड़ी। पहले `wget` और `curl` जैसे टूल काम में लाए जाते थे, अब प्रोग्रामिंग भाषाओं में लाइब्रेरीज़ उपलब्ध हैं। Axios विश्वसनीयता और मल्टीपल फीचर्स की वजह से पसंद की जाती है। Node.js के `http` मॉड्यूल जैसे नेटिव विकल्प भी हैं, पर Axios अधिक सुविधाजनक है।
 
 Axios HTTP client serverside और clientside JavaScript में काम आती है, Promises पर आधारित है और error handling शानदार है। यह JSON data के साथ अच्छे से काम करती है और configuration आसान है।
 
 ## See Also (और देखें):
-
 - Axios GitHub repository: [https://github.com/axios/axios](https://github.com/axios/axios)
 - Node.js `http` module documentation: [https://nodejs.org/api/http.html](https://nodejs.org/api/http.html)
 - MDN Web Docs - Fetch API: [https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)

@@ -15,9 +15,6 @@ title: Praca z plikami CSV
 weight: 37
 ---
 
-## Co i dlaczego?
-Pliki CSV (Comma-Separated Values, wartości rozdzielane przecinkami) są powszechnym formatem wymiany danych, który przedstawia dane tabelaryczne w postaci zwykłego tekstu, używając przecinków do oddzielania poszczególnych wartości. Programiści pracują z plikami CSV, aby importować, eksportować i manipulować danymi z łatwością między różnymi aplikacjami i usługami, ponieważ jest to prosty format obsługiwany powszechnie, kompatybilny z aplikacjami arkuszy kalkulacyjnych, bazami danych i językami programowania.
-
 ## Jak to zrobić:
 Praca z plikami CSV w C# może być realizowana za pomocą przestrzeni nazw `System.IO` dla podstawowych operacji, a w przypadku bardziej skomplikowanych manipulacji lub obsługi większych plików ładnie, można rozważyć użycie bibliotek firm trzecich, takich jak `CsvHelper`. Poniżej znajdują się przykłady, jak czytać z plików CSV i jak do nich zapisywać, korzystając z obu podejść.
 

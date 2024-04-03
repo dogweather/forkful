@@ -11,12 +11,7 @@ title: Tratamento de erros
 weight: 16
 ---
 
-## O Que & Por Quê?
-
-Tratar erros significa escrever código que pode lidar com situações inesperadas. Os programadores fazem isso para evitar falhas e para garantir que seus programas se recuperem de forma elegante quando a Lei de Murphy entra em cena.
-
 ## Como fazer:
-
 No Elixir, frequentemente usamos correspondência de padrões e a declaração `case` para lidar com diferentes resultados, incluindo erros.
 
 ```elixir
@@ -47,7 +42,6 @@ Erro: Não é possível dividir por zero.
 Quando você executa esse código Elixir, você terá um resultado de divisão bem-sucedido ou uma mensagem de erro, dependendo da sua entrada. Nada de falhas aqui!
 
 ## Aprofundamento
-
 Há tempos atrás, o tratamento de erros era frequentemente sobre a verificação de valores de retorno. No entanto, com as raízes funcionais do Elixir, temos a correspondência de padrões e tuplas nomeadas, como `{:ok, value}` ou `{:error, reason}`, que são mais elegantes.
 
 Há outras maneiras de tratar erros no Elixir:
@@ -58,7 +52,6 @@ Há outras maneiras de tratar erros no Elixir:
 Em termos de implementação, o Elixir se baseia na robustez do Erlang. Ele trata os erros como apenas outro tipo de mensagem a ser tratada com toda a correspondência de padrões e a bondade funcional.
 
 ## Veja Também
-
 Para leitura adicional sobre tratamento de erros no Elixir, confira:
 
 - O guia oficial do Elixir sobre [tratamento de erros](https://elixir-lang.org/getting-started/try-catch-and-rescue.html).

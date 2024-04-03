@@ -13,12 +13,7 @@ title: Leyendo un archivo de texto
 weight: 22
 ---
 
-## Qué y Por Qué?
-
-Leer un archivo de texto en C involucra abrir un archivo en tu sistema para extraer información y manipularla o mostrarla según sea necesario. Los programadores a menudo hacen esto para procesar archivos de configuración, leer entradas para procesamiento o analizar datos almacenados en formatos de archivo, lo que permite una mayor flexibilidad y funcionalidad en las aplicaciones.
-
 ## Cómo:
-
 Para empezar a leer un archivo de texto en C, trabajas principalmente con las funciones `fopen()`, `fgets()`, y `fclose()` de la biblioteca estándar de E/S. Aquí tienes un ejemplo sencillo que lee un archivo llamado `example.txt` e imprime su contenido en la salida estándar:
 
 ```c
@@ -61,7 +56,6 @@ Bienvenido a la programación en C.
 ```
 
 ## Profundización
-
 Leer archivos en C tiene una rica historia, que se remonta a los primeros días de Unix cuando la simplicidad y elegancia de los flujos de texto eran fundamentales. Esto llevó a la adopción de archivos de texto para una miríada de propósitos, incluyendo configuración, registro y comunicación entre procesos. La simplicidad de la biblioteca de E/S de archivos del lenguaje C, ejemplificada por funciones como `fopen()`, `fgets()`, y `fclose()`, subraya su filosofía de diseño de proporcionar herramientas básicas que los programadores pueden usar para construir sistemas complejos.
 
 Históricamente, aunque estas funciones han servido bien a innumerables aplicaciones, las prácticas de programación modernas han resaltado algunas limitaciones, especialmente en cuanto al manejo de errores, codificación de archivos (por ejemplo, soporte Unicode) y acceso concurrente en aplicaciones multi-hilo. Enfoques alternativos en otros lenguajes, o incluso dentro de C usando bibliotecas como `libuv` o `Boost.Asio` para C++, ofrecen soluciones más robustas abordando directamente estas preocupaciones con capacidades de gestión de E/S más sofisticadas, incluidas operaciones de E/S asíncronas que pueden mejorar en gran medida el rendimiento de aplicaciones que tratan con operaciones extensas de lectura de archivos o tareas limitadas por E/S.

@@ -14,12 +14,7 @@ title: Tolka HTML
 weight: 43
 ---
 
-## Vad & Varför?
-
-Att parsa HTML i Go innebär att analysera innehållet i HTML-filer för att extrahera data, manipulera strukturen eller konvertera HTML till andra format. Programmerare gör detta för webbskrapning, templating och datamining, och utnyttjar Gos starka samtidighetsfunktioner för effektiv bearbetning av stora volymer webbsidor.
-
 ## Hur man gör:
-
 För att parsa HTML i Go använder du vanligtvis paketet `goquery` eller standardbibliotekets paket `net/html`. Här är ett grundläggande exempel som använder `net/html` för att extrahera alla länkar från en webbsida:
 
 ```go
@@ -76,7 +71,6 @@ http://www.iana.org/domains/reserved
 Denna kod begär en HTML-sida, tolkar den och genomgår rekursivt DOM för att hitta och skriva ut `href`-attributen för alla `<a>`-taggar.
 
 ## Djupdykning
-
 Paketet `net/html` tillhandahåller grunderna för att parsa HTML i Go, genom att direkt implementera tokeniserings- och trädbyggnadsalgoritmerna som specificeras av HTML5-standarden. Detta lågnivåtillvägagångssätt är kraftfullt men kan vara ordrikt för komplexa uppgifter.
 
 I motsats härtil erbjuder det tredjepartspaketet `goquery`, inspirerat av jQuery, ett högre nivå gränssnitt som förenklar DOM-manipulering och genomgång. Det tillåter utvecklare att skriva koncis och uttrycksfull kod för uppgifter som elementval, attributextraktion och innehållsmanipulering.

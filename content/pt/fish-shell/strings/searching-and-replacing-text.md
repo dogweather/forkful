@@ -11,9 +11,6 @@ title: Pesquisando e substituindo texto
 weight: 10
 ---
 
-## O Que É & Porquê?
-Pesquisar e substituir texto é a arte de encontrar pedaços específicos de texto e trocá-los por outros. Programadores fazem isso para corrigir erros, atualizar dados ou melhorar o código de forma rápida.
-
 ## Como Fazer:
 Substituir todas as instâncias de "bacalhau" por "sardinha" num arquivo `menu.txt`:
 

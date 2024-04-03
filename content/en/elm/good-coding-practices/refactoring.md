@@ -11,9 +11,6 @@ title: Refactoring
 weight: 19
 ---
 
-## What & Why?
-Refactoring is essentially spring cleaning your code base—it's about restructuring existing code without changing its external behavior. Programmers do it to make the code more readable, reduce complexity, improve maintainability, and make it easier to extend.
-
 ## How to:
 Consider you have an Elm function that's doing too much, like mixing up UI logic with state updates. It's a perfect candidate for refactoring. Originally:
 

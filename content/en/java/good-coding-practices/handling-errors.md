@@ -10,12 +10,7 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-
-Handling errors means writing code that anticipates and deals with things going wrong. Programmers do it to make software robust, preventing crashes and weird behavior.
-
 ## How to:
-
 Java uses exceptions to handle errors. You surround risky code with a `try` block and catch exceptions with `catch`. Here’s a simple example:
 
 ```java
@@ -41,7 +36,6 @@ Oops, can't divide by zero!
 ```
 
 ## Deep Dive
-
 Error handling in Java has evolved. Early days didn't have exceptions; programmers checked error codes. Then Java introduced try-catch blocks, allowing more elegant error handling.
 
 Alternatives to traditional `try-catch` include `try-with-resources` for auto-closing resources and cleaner code, introduced in Java 7.
@@ -49,7 +43,6 @@ Alternatives to traditional `try-catch` include `try-with-resources` for auto-cl
 Implementation details matter. For example, catching `Exception` or `Throwable` is usually bad practice. It's too broad, masking bugs you might not be aware of. Stick to specific exceptions.
 
 ## See Also
-
 - The official Oracle Java tutorials on exceptions: [https://docs.oracle.com/javase/tutorial/essential/exceptions/](https://docs.oracle.com/javase/tutorial/essential/exceptions/)
 - Java's `try-with-resources` statement documentation: [https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html](https://docs.oracle.com/javase/tutorial/essential/exceptions/tryResourceClose.html)
 - Effective Java by Joshua Bloch, for best practices on exceptions.

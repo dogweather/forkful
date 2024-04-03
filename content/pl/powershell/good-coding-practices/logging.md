@@ -12,9 +12,6 @@ title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---
 
-## Co i dlaczego?
-Logowanie polega po prostu na pozostawianiu śladu w kodzie – to sposób na śledzenie tego, co się dzieje, gdy skrypt jest uruchamiany "na żywo". Programiści logują, aby debugować, śledzić zachowanie aplikacji, monitorować wydajność i mieć oko na wszelkie nieprawidłowości.
-
 ## Jak to zrobić:
 Oto krótki przewodnik, jak dodać podstawowe logowanie do swoich skryptów:
 

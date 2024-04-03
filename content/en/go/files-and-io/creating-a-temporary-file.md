@@ -11,12 +11,7 @@ title: Creating a temporary file
 weight: 21
 ---
 
-## What & Why?
-
-Creating a temporary file in Go allows for the generation of a non-persistent file designed for short-term use, mainly for tasks such as storing interim data or assisting in batch processing jobs. Programmers utilize this feature to safely handle data without affecting the permanent file system or needing manual cleanup.
-
 ## How to:
-
 In Go, the `ioutil` package originally provided utilities for temporary file creation. However, Go 1.16 promoted the use of the `os` and `io/ioutil` package's functions into more organized spots. Now, the `os` and `io` packages are preferred for handling temporary files.
 
 Here's a step-by-step guide to creating, writing to, and deleting a temporary file:
@@ -79,7 +74,6 @@ Sample Output:
 ```
 
 ## Deep Dive
-
 The mechanism behind Go's handling of temporary files has evolved. Initially, creating temporary files was predominantly managed by the now-deprecated `ioutil.TempFile` function, reflecting broader trends in software development towards more secure and efficient file handling practices. The move to integrate these functionalities into the `os` and `io` packages with Go 1.16 signifies a broader push towards streamlining the language's standard library and encouraging the use of more unified and cohesive APIs.
 
 While using temporary files is a common and often essential practice in programming, it's important to note that relying too heavily on them for storing large amounts of data or for long-term tasks can lead to performance issues. Moreover, when the creation of temporary files is not tightly controlled or when they're not adequately cleaned up, it can lead to resource leaks which could negatively impact the file system. In scenarios that demand persistent storage or require handling substantial data streams, alternatives such as databases or in-memory data stores often offer better performance and reliability compared to temporary files.

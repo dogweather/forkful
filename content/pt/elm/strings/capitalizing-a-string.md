@@ -14,12 +14,7 @@ title: Capitalizando uma string
 weight: 2
 ---
 
-## O Que & Por Quê?
-
-Capitalizar uma string envolve transformar o caractere inicial de uma dada string para maiúsculo enquanto mantém o resto em minúsculo, frequentemente para fins de formatação padronizada ou legibilidade. Programadores frequentemente realizam essa tarefa para garantir que os dados sejam apresentados de forma consistente, especialmente em interfaces de usuário ou ao processar e exibir entradas de usuários.
-
 ## Como fazer:
-
 No Elm, não há uma função integrada específica para capitalizar strings. No entanto, você pode alcançar isso facilmente usando as funções do módulo `String` integrado como `toUpper`, `toLower`, `left` e `dropLeft`.
 
 ```elm

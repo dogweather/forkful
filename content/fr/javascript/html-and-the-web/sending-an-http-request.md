@@ -11,9 +11,6 @@ title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---
 
-## What & Why?
-Envoyer une requête HTTP, c'est demander quelque chose à un autre serveur web. On le fait pour récupérer des données, soumettre des formulaires ou intéragir avec des services web.
-
 ## How to:
 En JavaScript moderne, on utilise `fetch` pour les requêtes HTTP. C'est simple et promis-centric.
 

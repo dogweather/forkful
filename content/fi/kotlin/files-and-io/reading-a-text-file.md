@@ -9,9 +9,6 @@ title: Tekstitiedoston lukeminen
 weight: 22
 ---
 
-## What & Why?
-Tekstitiedoston lukeminen tarkoittaa tiedon hakua tekstipohjaisesta tiedostosta. Ohjelmoijat tekevät tätä esimerkiksi datan analysoinnin, konfiguraatioiden hallinnan tai käyttäjien syötteiden käsittelyn vuoksi.
-
 ## How to:
 Lue tiedosto `readText()`-funktioilla:
 

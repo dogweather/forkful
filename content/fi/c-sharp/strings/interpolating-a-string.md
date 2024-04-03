@@ -14,9 +14,6 @@ title: Merkkijonon interpolointi
 weight: 8
 ---
 
-## Mikä ja miksi?
-Merkkijonon interpolaatio C#:ssa mahdollistaa uuden merkkijonon luomisen sisällyttämällä lausekkeita merkkijonoliteraalin sisään, mikä tekee merkkijonojen muotoilusta ja yhdistämisestä helpompaa. Ohjelmoijat käyttävät tätä ominaisuutta parantaakseen koodin luettavuutta ja ylläpidettävyyttä, erityisesti käsiteltäessä dynaamista merkkijonosisältöä.
-
 ## Kuinka:
 C#:ssa merkkijonon interpolaatio merkitään dollarimerkillä (`$`) seurattuna merkkijonoliteraalista. Muuttujan nimet tai lausekkeet sijoitetaan aaltosulkeisiin (`{}`).
 

@@ -11,9 +11,6 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## What & Why?
-W skrócie, porównywanie dwóch dat to sprawdzenie, która z nich jest wcześniejsza, późniejsza, czy też czy są identyczne. Programiści robią to często, aby zarządzać deadline'ami, sortować dane chronologicznie, czy też weryfikować ważność certyfikatów.
-
 ## How to:
 ```Lua
 local os_time = os.time

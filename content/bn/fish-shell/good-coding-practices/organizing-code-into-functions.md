@@ -36,9 +36,6 @@ title: "\u0995\u09CB\u09A1\u0995\u09C7 \u09AB\u09BE\u0982\u09B6\u09A8\u0997\u09C
 weight: 18
 ---
 
-## কি এবং কেন?
-কোডকে ফাংশনের মধ্যে সাজানোর বিষয়টি হ'ল নির্দিষ্ট কাজ সম্পাদনের জন্য স্ক্রিপ্টের খণ্ডগুলি একত্রিত করা। আমরা এটি করি কারণ এটি কোডকে পড়তে, পরীক্ষা করতে, এবং পুনঃব্যবহার করতে সহজ করে দেয় — কেউই কোড স্প্যাঘেটির দলদলের মধ্য দিয়ে চলতে চায় না।
-
 ## কিভাবে:
 ফিশে, আপনি `function` কীওয়ার্ডের সাথে একটি ফাংশন লিখুন, এতে একটি নাম দিন, এবং `end` দিয়ে শেষ করুন। এখানে একটি সাধারণ উদাহরণ দেওয়া হল:
 
@@ -81,11 +78,9 @@ Hey there, your_username!
 আপনার `return` মানের প্রয়োজন হবে না কারণ ফিশ এতে বড় নয়; আপনার ফাংশনের আউটপুটই এর রিটার্ন। এবং আপনি যদি ভবিষ্যত সেশনের জন্য স্থায়ী ফাংশনগুলি চান, `funcsave` মনে রাখুন।
 
 ## আরও দেখুন:
-
 - ফাংশনে ফিশ টিউটোরিয়াল: [https://fishshell.com/docs/current/tutorial.html#tut_functions](https://fishshell.com/docs/current/tutorial.html#functions)
 
 ### ফাংশন কমান্ডস
-
 - [function](https://fishshell.com/docs/current/cmds/function.html) — একটি ফাংশন তৈরি করুন
 - [functions](https://fishshell.com/docs/current/cmds/functions.html) — ফাংশনগুলি প্রিন্ট করুন অথবা মুছে ফেলুন
 - [funcsave](https://fishshell.com/docs/current/cmds/funcsave.html) — একটি ফাংশনের সংজ্ঞা ব্যবহারকারীর অটোলোড ডিরেক্টরিতে সংরক্ষণ করুন

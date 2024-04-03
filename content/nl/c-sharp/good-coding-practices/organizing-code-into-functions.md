@@ -13,9 +13,6 @@ title: Code organiseren in functies
 weight: 18
 ---
 
-## Wat & Waarom?
-Code in functies opdelen is als LEGO-stenen sorteren in bakken—het maakt het vinden en gebruiken ervan gemakkelijker. We doen dit om herhaling te voorkomen, begrip te vereenvoudigen en onderhoud minder hoofdpijn te veroorzaken.
-
 ## Hoe te:
 Stel je voor dat je code hebt die meerdere keren een begroeting afdrukt. Zonder functies is het een rommeltje. Met functies is het netjes.
 

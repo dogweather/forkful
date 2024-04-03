@@ -12,14 +12,10 @@ title: Scrivere un file di testo
 weight: 24
 ---
 
-## Cosa e Perché?
-
-Scrivere un file di testo in Java significa utilizzare le capacità del linguaggio per creare e scrivere contenuti nei file nel filesystem. I programmatori fanno ciò per vari motivi, come il logging, l'esportazione di dati o il salvataggio dello stato dell'applicazione per un recupero successivo.
-
 ## Come fare:
 
-### Utilizzando `java.nio.file` (Libreria Standard)
 
+### Utilizzando `java.nio.file` (Libreria Standard)
 Il pacchetto New I/O (NIO) di Java (`java.nio.file`) offre un approccio più versatile per la gestione dei file. Ecco un modo semplicistico per scrivere su un file utilizzando `Files.write()`:
 
 ```java
@@ -48,7 +44,6 @@ File scritto con successo!
 ```
 
 ### Utilizzando `java.io` (Libreria Standard)
-
 Per un approccio più tradizionale, `java.io.FileWriter` è una buona scelta per scrivere file di testo semplicemente:
 
 ```java
@@ -75,7 +70,6 @@ File scritto con successo!
 ```
 
 ### Utilizzando Apache Commons IO
-
 La libreria Apache Commons IO semplifica molte operazioni, inclusa la scrittura di file. Ecco come scrivere su un file utilizzando `FileUtils.writeStringToFile()`:
 
 Prima, aggiungi la dipendenza al tuo progetto. Se usi Maven, includi:

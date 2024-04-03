@@ -15,12 +15,7 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---
 
-## Cái gì & Tại sao?
-
-Gửi một yêu cầu HTTP là cách để giao tiếp với các máy chủ web nhằm truy xuất dữ liệu hoặc gửi biểu mẫu. Lập trình viên thực hiện việc này để tương tác với các dịch vụ web, API hoặc tự động hóa các nhiệm vụ liên quan đến nội dung web.
-
 ## Cách thực hiện:
-
 Bash có thể sử dụng các công cụ như `curl` hoặc `wget` cho các yêu cầu HTTP. Dưới đây là một ví dụ nhanh với `curl`.
 
 ```Bash
@@ -46,7 +41,6 @@ Mẫu phản hồi `curl`:
 ```
 
 ## Nghiên cứu sâu
-
 Yêu cầu HTTP đã tồn tại từ đầu những năm '90 và là nền tảng của giao tiếp web. `curl` và `wget` là các công cụ dòng lệnh Unix được giới thiệu vào năm 1996 và 1996, tương ứng, cho các yêu cầu mạng.
 
 `wget` thường được sử dụng để tải xuống tệp, trong khi `curl` có thể xử lý một loạt các giao thức và cung cấp nhiều tính năng hơn, làm cho nó trở thành lựa chọn hàng đầu để gửi yêu cầu HTTP từ dòng lệnh.
@@ -56,7 +50,6 @@ Thực hiện một yêu cầu HTTP bằng cách sử dụng những công cụ 
 Các cách thay thế để gửi yêu cầu HTTP trong lập trình kịch bản bao gồm sử dụng các ngôn ngữ kịch bản như Python với các thư viện như `requests`, hoặc sử dụng các công cụ như `httpie` cho giao diện thân thiện với người dùng hơn.
 
 ## Xem thêm
-
 - Trang chính thức của curl: https://curl.se/
 - Hướng dẫn sử dụng wget: https://www.gnu.org/software/wget/manual/wget.html
 - HTTPie: https://httpie.io/

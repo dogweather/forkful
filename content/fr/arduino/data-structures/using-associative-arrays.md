@@ -13,9 +13,6 @@ title: Utilisation des tableaux associatifs
 weight: 15
 ---
 
-## Quoi & Pourquoi ?
-Dans le domaine de l'Arduino, les tableaux associatifs vous permettent d'associer des clefs à des valeurs, un peu comme si vous associez des chaussettes avec leurs paires. Ils sont privilégiés lorsque vous devez stocker et récupérer des données en utilisant des noms descriptifs, rendant votre code plus propre et bien plus compréhensible.
-
 ## Comment faire :
 Strictement parlant, l'Arduino ne possède pas de support intégré pour les tableaux associatifs comme vous pourriez en trouver dans des langages de plus haut niveau. Mais, n'ayez crainte. Nous pouvons être ingénieux en utilisant des structures et des tableaux pour imiter cette fonctionnalité. Voici un exemple simple pour créer un "tableau associatif" basique pour stocker et accéder aux températures de différentes villes.
 

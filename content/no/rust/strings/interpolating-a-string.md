@@ -9,9 +9,6 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Stringinterpolasjon lar oss flette inn verdier i en streng. Det gjør koden mer lesbar og dynamisk, og sparer oss for maset med konstant plussing av strenger sammen.
-
 ## How to: (Slik gjør du det:)
 ```Rust
 fn main() {

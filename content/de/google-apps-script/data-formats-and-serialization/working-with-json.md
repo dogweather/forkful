@@ -14,12 +14,7 @@ title: Arbeiten mit JSON
 weight: 38
 ---
 
-## Was & Warum?
-
-JSON oder JavaScript Object Notation ist ein leichtgewichtiges Format für die Speicherung und den Transport von Daten, ideal für die Kommunikation von Server zu Client und für Konfigurationsdateien. Programmierer nutzen es in Google Apps Script für den nahtlosen Datenaustausch zwischen Google-Diensten (wie Sheets, Docs, Drive) und externen Quellen aufgrund seiner menschenlesbaren Struktur und einfachen Integration in JavaScript-basierte Umgebungen.
-
 ## Wie:
-
 In Google Apps Script ist die Manipulation von JSON ein unkomplizierter Prozess, größtenteils dank der nativen Unterstützung, die JavaScript für das Parsen und Stringifizieren von JSON bietet. Hier sind einige gängige Operationen:
 
 **1. Parsen von JSON**: Nehmen wir an, wir erhalten eine JSON-Zeichenkette von einem Webdienst; es ist wesentlich, dass wir sie in ein JavaScript-Objekt parsen, um Daten manipulieren zu können.
@@ -54,7 +49,6 @@ Logger.log(jsonString); // Ausgabe: '[{"name":"Projekt 1","version":"1.0"},{"nam
 ```
 
 ## Tiefergehend
-
 Die Allgegenwart von JSON in modernen Webanwendungen kann nicht genug betont werden, verwurzelt in seiner Einfachheit und wie nahtlos es sich in JavaScript, der Sprache des Webs, integriert. Sein Design, inspiriert von JavaScript-Objektliteralen, allerdings strenger, erleichtert seine rasche Annahme. Im frühen 21. Jahrhundert gewann JSON als Alternative zu XML für AJAX-getriebene Webanwendungen an Popularität, da es ein leichtgewichtigeres und weniger umständliches Dateninterchange-Format bot. Angesichts der tiefen Integration von Google Apps Script mit verschiedenen Google-APIs und externen Diensten dient JSON als zentrales Format für die Strukturierung, den Transport und die Manipulation von Daten über diese Plattformen hinweg.
 
 Während JSON für Webanwendungen die Oberhand gewinnt, existieren alternative Datenformate wie YAML für Konfigurationsdateien oder Protobuf für effizientere binäre Serialisierung in Hochleistungsumgebungen. Jedoch festigt die Balance aus Lesbarkeit, Benutzerfreundlichkeit und breiter Unterstützung über Programmiersprachen und Werkzeuge hinweg JSONs Position als die Standardwahl für viele Entwickler, die sich in Google Apps Script und darüber hinaus wagen.

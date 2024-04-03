@@ -10,12 +10,7 @@ title: Working with CSV
 weight: 37
 ---
 
-## What & Why?
-
-Working with CSV (Comma-Separated Values) files involves parsing and generating text data organized into rows and columns, using commas to separate individual values. Programmers often engage in this process to facilitate data exchange between different applications, databases, or for data processing and analysis tasks, due to CSV's widespread support and simplicity.
-
 ## How to:
-
 In Lua, working with CSV files can be approached using basic file IO operations provided by the language, without the need for external libraries for simple tasks. For more complex operations, such as handling special cases (e.g., commas within values), it might be beneficial to use third-party libraries like `lua-csv`.
 
 ### Reading a CSV file

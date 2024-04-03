@@ -10,9 +10,6 @@ title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---
 
-## What & Why?
-La longueur d'une chaîne, c'est compter les éléments qui la composent. Les programmeurs le font pour valider des données, optimiser des performances ou simplement manipuler du texte.
-
 ## How to:
 En Haskell, pour trouver la longueur d'une chaîne, on utilise la fonction `length`. Simple et directe, voici comment ça fonctionne :
 

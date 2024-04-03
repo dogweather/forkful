@@ -11,12 +11,7 @@ title: Capitalizing a string
 weight: 2
 ---
 
-## What & Why?
-
-Capitalizing a string in Visual Basic for Applications (VBA) involves converting the first character of each word in a string to uppercase while ensuring the rest are in lowercase. Programmers do this for data normalization, enhancing readability, and ensuring consistency across textual data inputs or displays.
-
 ## How to:
-
 VBA doesn't have a built-in function specifically for capitalizing each word in a string, like some other programming languages do. However, you can achieve this by combining a few methods and functions like `UCase`, `LCase`, and `Mid`.
 
 Here's a straightforward example on how to capitalize a string:
@@ -43,7 +38,6 @@ End Sub
 The `CapitalizeString` function splits the input string into words, capitalizes the first letter of each word, and finally joins them back together to form the properly capitalized string.
 
 ## Deep Dive
-
 Visual Basic for Applications, emerging in the early '90s as a macro language for Microsoft Office applications, was designed to offer an accessible programming model. Its string manipulation capabilities, while extensive, lack some higher-level abstractions found in newer languages. Many modern programming environments provide a dedicated method for string capitalization, often termed as title casing or similar. Python, for instance, includes the `.title()` method for strings.
 
 When comparing, the absence of a single, built-in function in VBA to capitalize string words might seem like a drawback. However, this offers programmers a deeper understanding and control over how they manipulate text and accommodate nuances not strictly adhered to by a generic method. For instance, handling acronyms or special cases where certain smaller words in titles shouldn't be capitalized can be better customized in VBA through explicit functions.

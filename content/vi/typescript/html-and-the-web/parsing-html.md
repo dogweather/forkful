@@ -15,12 +15,7 @@ title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---
 
-## Cái Gì và Tại Sao?
-
-Phân tích cú pháp HTML có nghĩa là lọc qua mã HTML để tìm kiếm, trích xuất hoặc thao tác thông tin. Lập trình viên làm điều này để tương tác với nội dung web—có thể là cào dữ liệu, hoặc tự động hóa trình duyệt.
-
 ## Làm thế nào:
-
 Để bắt đầu, cài đặt một thư viện như `node-html-parser`. Dưới đây là lệnh terminal:
 
 ```bash
@@ -49,7 +44,6 @@ console.log(bananas);  // "Chuối"
 ```
 
 ## Sâu hơn
-
 Việc phân tích cú pháp HTML không phải là mới—nó đã xuất hiện từ những ngày đầu của web. Ban đầu, các nhà phát triển có thể đã sử dụng biểu thức chính quy, nhưng điều đó trở nên rối rắm nhanh chóng. Bước vào bộ phân tích cú pháp DOM: ổn định, nhưng gắn liền với trình duyệt.
 
 Các thư viện như `node-html-parser` giúp loại bỏ đi sự phiền toái. Chúng cho phép bạn truy vấn HTML giống như bạn sẽ làm với jQuery, nhưng phía máy chủ với Node.js. Nó nhanh chóng, dễ dung nạp với HTML "bẩn", và thân thiện với DOM.
@@ -59,7 +53,6 @@ Cũng có `jsdom`, mô phỏng một môi trường trình duyệt hoàn chỉnh
 Đừng quên Cheerio, hoặc. Nó kết hợp tốc độ với cú pháp giống jQuery và kích thước nhỏ gọn, đặt mình một cách hạnh phúc giữa hai cái trên.
 
 ## Xem Thêm
-
 Nếu bạn khao khát biết thêm, hãy nhúng vào những cái này:
 - [Quy định Phân tích cú pháp và Chuyển dạng DOM của W3C](https://www.w3.org/TR/DOM-Parsing/)
 - [node-html-parser trên GitHub](https://github.com/taoqf/node-html-parser)

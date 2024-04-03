@@ -9,9 +9,6 @@ title: Interpolating a string
 weight: 8
 ---
 
-## What & Why?
-String interpolation lets you insert variables or computations into a string. It's handy for building strings dynamically without the mess of concatenation.
-
 ## How to:
 ```elixir
 name = "Josie"

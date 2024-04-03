@@ -11,9 +11,6 @@ title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---
 
-## Vad & Varför?
-Att läsa kommandoradsargument är att fånga de värden som används när du kör ett script. Det låter dig anpassa scriptets beteende utan att ändra koden.
-
 ## Så här gör du:
 ```Bash
 #!/bin/bash

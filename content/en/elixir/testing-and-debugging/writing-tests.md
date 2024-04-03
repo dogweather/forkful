@@ -10,9 +10,6 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-Writing tests in Elixir involves creating automated scripts to validate the behavior of your code. Programmers do this to assure quality, prevent regressions, and facilitate code refactoring, making the development process more reliable and efficient.
-
 ## How to:
 Elixir uses ExUnit as its built-in test framework, which is extremely powerful and easy to use. Here's a basic example:
 

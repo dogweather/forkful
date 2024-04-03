@@ -11,9 +11,6 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## What & Why? (Co i Dlaczego?)
-Zaczynanie nowego projektu to jak otwieranie nowej, pustej książki, w którą możemy wpisać dowolny kod. Programiści rozpoczynają nowe projekty, by tworzyć aplikacje od zera, eksplorować pomysły lub uczyć się nowych technologii.
-
 ## How to: (Jak to zrobić:)
 Zainstaluj Elm i utwórz nowy projekt krok po kroku.
 

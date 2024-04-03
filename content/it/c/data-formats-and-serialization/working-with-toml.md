@@ -14,12 +14,7 @@ title: Lavorare con TOML
 weight: 39
 ---
 
-## Cosa e Perché?
-
-TOML (Tom's Obvious, Minimal Language, ovvero Linguaggio Minimale e Ovvio di Tom) è un formato di file di configurazione che è facile da leggere grazie alla sua chiara semantica. I programmatori lo utilizzano per i file di configurazione nelle applicazioni perché la sua semplicità e leggibilità umana lo rendono un'ottima scelta rispetto a formati come XML o JSON in certi contesti.
-
 ## Come fare:
-
 Per lavorare con TOML in C, hai prima bisogno di una libreria in grado di analizzare i file TOML, dato che la libreria standard C non include questa funzionalità. Una scelta popolare è `tomlc99`, un parser TOML leggero per C99. Ecco una rapida guida per leggere un semplice file di configurazione TOML:
 
 Prima, assicurati di avere installato e correttamente collegato `tomlc99` nel tuo progetto.
@@ -83,7 +78,6 @@ Porta 2: 8002
 ```
 
 ## Approfondimento
-
 TOML è stato creato da Tom Preston-Werner, co-fondatore di GitHub, come risposta alle limitazioni che percepiva in altri formati di file di configurazione. Il suo obiettivo è quello di essere diretto e non ambiguo, sia per gli umani che per i computer, da leggere e scrivere senza aver bisogno di regole di analisi complesse. Nel ecosistema C, TOML non è un cittadino di prima classe come potrebbe esserlo in linguaggi di livello più alto come Rust con il suo `serde_toml` o Python con `toml`, che dispongono di librerie con supporto nativo. Piuttosto, gli sviluppatori C devono affidarsi a librerie esterne come `tomlc99`, ma questo è tipico data l'enfasi di C sul minimalismo e le prestazioni.
 
 Sebbene TOML sia lodato per la sua chiarezza, quando si sceglie un formato di file di configurazione, è vitale considerare le necessità del progetto. In scenari che richiedono strutture più complesse o interattività con web API, JSON o anche YAML potrebbero offrire una migliore adattabilità nonostante la loro maggiore complessità. TOML brilla nelle configurazioni dove leggibilità e semplicità sono di massima importanza, non necessariamente dove sono necessarie le strutture dati più avanzate.

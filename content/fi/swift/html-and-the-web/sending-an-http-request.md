@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## What & Why?
-HTTP-pyyntöjen lähettäminen on tapa kommunikoida verkkopalveluiden kanssa. Ohjelmoijat käyttävät niitä haalimaan dataa tai lähettämään sitä palvelimelle.
-
 ## How to:
 Swiftissä HTTP-pyyntöjen lähettämiseen käytetään `URLSession`-luokkaa. TässäNopea esimerkki GET-pyynnön lähettämisestä:
 

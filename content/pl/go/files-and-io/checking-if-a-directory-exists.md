@@ -14,12 +14,7 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i dlaczego?
-
-Sprawdzenie, czy katalog istnieje w Go, jest kluczowe dla aplikacji interaktywnie współpracujących z systemem plików, aby uniknąć błędów przy próbie dostępu lub modyfikacji katalogów. Operacja ta jest niezbędna do zadań takich jak zapewnienie warunków wstępnych dla operacji na plikach, zarządzanie konfiguracją i wdrażanie oprogramowania, które polega na określonych strukturach katalogów.
-
 ## Jak to zrobić:
-
 W Go pakiet `os` oferuje funkcjonalności do interakcji z systemem operacyjnym, w tym sprawdzanie, czy katalog istnieje. Oto jak można to zrobić:
 
 ```go
@@ -63,7 +58,6 @@ Katalog /tmp/exampleDir nie istnieje.
 W zależności od tego, czy `/tmp/exampleDir` istnieje.
 
 ## Dogłębna analiza
-
 Funkcja `os.Stat` zwraca interfejs `FileInfo` oraz błąd. Jeśli błąd jest typu `os.ErrNotExist`, oznacza to, że katalog nie istnieje. Jeśli nie ma błędu, dalej sprawdzamy, czy ścieżka rzeczywiście odnosi się do katalogu, za pomocą metody `IsDir()` z interfejsu `FileInfo`.
 
 Ta metoda wyróżnia się swoją prostotą i skutecznością, ale ważne jest, aby zauważyć, że sprawdzanie istnienia katalogu przed wykonaniem operacji takich jak tworzenie czy zapisywanie może prowadzić do warunków wyścigu w środowisku współbieżnym. W wielu scenariuszach, szczególnie w aplikacjach współbieżnych, bezpieczniej może być próbować wykonać operację (np. tworzenie pliku) i radzić sobie z błędami po fakcie, zamiast sprawdzać to na wstępie.

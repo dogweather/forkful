@@ -11,9 +11,6 @@ title: "Ta bort citattecken fr\xE5n en str\xE4ng"
 weight: 9
 ---
 
-## Vad och varför?
-Att ta bort citattecken från en sträng innebär att bli av med de där irriterande dubbla eller enkla citattecken som omsluter din text. Programmerare gör detta för att rensa data, säkerställa enhetlighet eller förbereda strängar för bearbetning där citattecken är oönskade eller kan orsaka fel.
-
 ## Hur man gör:
 I Clojure är strängar oföränderliga, så när vi pratar om att "ta bort citattecken" pratar vi egentligen om att skapa en ny sträng utan citattecken. Här är det enkla sättet med `clojure.string/replace`:
 

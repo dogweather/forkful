@@ -15,12 +15,7 @@ title: "Impression de sortie de d\xE9bogage"
 weight: 33
 ---
 
-## Quoi & Pourquoi ?
-
-En programmation informatique, "Imprimer les sorties de débogage" consiste à produire des messages d'information détaillés qui aident les développeurs à comprendre le flux d'exécution de leur programme ou à identifier les problèmes. Les programmeurs font cela pour diagnostiquer et résoudre les problèmes plus efficacement, ce qui en fait une compétence essentielle dans toute boîte à outils de programmation, y compris Go.
-
 ## Comment faire :
-
 En Go, vous pouvez utiliser le paquet standard `fmt` pour imprimer les sorties de débogage dans la console. Le paquet `fmt` offre une variété de fonctions, comme `Println`, `Printf`, et `Print`, répondant à différents besoins de formatage.
 
 ```go
@@ -82,7 +77,6 @@ Le message dans `debug.log` ressemblerait à quelque chose comme ceci :
 ```
 
 ## Approfondissement
-
 Imprimer les sorties de débogage est une pratique de longue date en programmation informatique, dont l'implémentation varie selon les différents langages. En Go, les paquets `fmt` et `log` de la bibliothèque standard fournissent des options simples et polyvalentes. Si le paquet `fmt` est suffisant pour les besoins de débogage de base, le paquet `log` offre une fonctionnalité améliorée comme les niveaux de journalisation et les destinations de sortie configurables.
 
 De plus, à mesure que les applications deviennent plus complexes, des cadres de journalisation tels que `zap` et `logrus` peuvent offrir des fonctionnalités plus avancées comme la journalisation structurée et de meilleures performances. Ces paquets tiers donnent aux développeurs la flexibilité d'adapter leur stratégie de journalisation à leurs besoins spécifiques.

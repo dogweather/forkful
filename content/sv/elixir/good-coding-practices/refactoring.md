@@ -12,9 +12,6 @@ title: Refaktorisering
 weight: 19
 ---
 
-## Vad och varför?
-Refaktorisering är processen att omstrukturera befintlig kod utan att ändra dess externa beteende, med målet att förbättra icke-funktionella attribut såsom läsbarhet och underhållsbarhet. Programmerare gör detta för att göra koden renare, lättare att förstå och mer effektiv, vilket underlättar framtida uppdateringar och minskar risken för buggar.
-
 ## Hur man gör:
 Låt oss städa upp ett vanligt Elixir-mönster. Vi kommer att refaktorisera en funktion `calculate_stats` som gör mer än den borde genom att bryta ner den i mindre, återanvändbara delar.
 

@@ -10,10 +10,9 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-Getting the current date in PHP is a fundamental task that allows you to retrieve and manipulate the system's date and time. This is crucial for functions such as logging, time-stamping posts, scheduling events, or performing time-sensitive operations in your applications.
-
 ## How to:
+
+
 ### Native PHP
 PHP's built-in `date()` function is the most direct way to get the current date. You can format the date in various ways by specifying the format parameter.
 

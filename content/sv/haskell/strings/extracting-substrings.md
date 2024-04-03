@@ -11,9 +11,6 @@ title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---
 
-## What & Why?
-Att extrahera delsträngar innebär att man plockar ut specifika delar av en textsträng. Programmerare gör detta för att manipulera och analysera data, eller för att enkelt kunna skapa specifika textbaserade format.
-
 ## How to:
 I Haskell använder du ofta standardbibliotekets funktioner för att hantera strängar. Här är några exempel på hur man extraherar delsträngar:
 

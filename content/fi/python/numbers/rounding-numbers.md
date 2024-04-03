@@ -11,9 +11,6 @@ title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä ja miksi?
-Numeroiden pyöristäminen tarkoittaa niiden säätämistä lähemmäksi yksinkertaisempaa tai merkityksellisempää arvoa. Ohjelmoijat pyöristävät numeroita tulosten yksinkertaistamiseksi, desimaalipaikkojen rajaamiseksi näytöllä tai tietyistä matemaattisista syistä.
-
 ## Kuinka:
 Tässä tietopaketti numeroiden pyöristämisestä Pythonissa:
 

@@ -11,9 +11,6 @@ title: Generazione di numeri casuali
 weight: 12
 ---
 
-## Cosa e perché?
-Generare numeri casuali in Bash offre un modo per introdurre imprevedibilità negli script, fondamentale per compiti come generare password sicure, simulare dati, o per la programmazione di giochi. I programmatori sfruttano questa capacità per aggiungere variabilità ai loro script o per testare i loro programmi in una varietà di condizioni generate casualmente.
-
 ## Come fare:
 In Bash, la variabile `$RANDOM` è la soluzione prediletta per generare numeri casuali. Ogni volta che la si richiama, Bash fornisce un intero pseudocasuale compreso tra 0 e 32767. Esploriamo alcuni esempi pratici:
 

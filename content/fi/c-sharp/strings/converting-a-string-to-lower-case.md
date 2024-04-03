@@ -10,9 +10,6 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## What & Why? / Mikä ja miksi?
-Muutetaan merkkijono pieniksi kirjaimiksi. Teemme sen siksi, että voimme vertailla tekstejä tasapuolisesti riippumatta alkuperäisestä kirjainkoosta tai toteuttaa ei-luokkauttavaa käyttäjäsyötteen käsittelyä.
-
 ## How to / Miten tehdään:
 C# kielessä käytät `ToLower()`-metodia, joka on osa `String`-luokkaa. Tässä yksinkertainen esimerkki ja sen tulostus.
 

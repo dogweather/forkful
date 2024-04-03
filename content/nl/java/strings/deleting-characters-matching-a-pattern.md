@@ -12,9 +12,6 @@ title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---
 
-## Wat & Waarom?
-Het verwijderen van tekens die overeenkomen met een patroon gaat over het vinden van specifieke reeksen tekens in een string en deze wegdoen. Programmeurs doen dit om gegevens op te schonen, onnodige informatie te verwijderen of strings te formatteren zodat ze overeenkomen met een vereist patroon.
-
 ## Hoe:
 In Java gebruiken we vaak de methode `String.replaceAll()` met een regex-patroon om tekens te verwijderen. Hier is een snel voorbeeld:
 

@@ -12,12 +12,7 @@ title: Het huidige datum ophalen
 weight: 29
 ---
 
-## Wat & Waarom?
-
-De huidige datum ophalen in PowerShell is simpelweg het systeemidee van de datum van vandaag verkrijgen. Programmeurs gebruiken dit om logboeken te timestampen, tijdsperioden te berekenen, of tijdgebonden operaties te activeren.
-
 ## Hoe:
-
 Hier is de directe code om de datum van vandaag te pakken:
 
 ```PowerShell
@@ -54,7 +49,6 @@ Output:
 ```
 
 ## Diepere Duik
-
 Vroeger was het krijgen van de datum in scripttalen geen eenvoudige zaak. Maar PowerShell, door te leren van de complexiteiten en noodzakelijkheden van de computergeschiedenis, maakte het een eenregelige taak.
 
 Naast `Get-Date`, omvatten alternatieven het duiken in de .NET System.DateTime klasse voor meer complexe behoeften, of het gebruik van WMI (Windows Management Instrumentation) om systeeminformatie op te halen. Toch is `Get-Date` de eerste keuze voor eenvoud en effectiviteit.
@@ -64,7 +58,6 @@ Onder de motorkap maakt `Get-Date` gebruik van de klok en regionale instellingen
 Het is ook volledig aanpasbaar. Je kunt het uitvoerformaat naar wens vormgeven met behulp van standaard of aangepaste formatstrings - een handige functie voor logboeken die bepaalde conventies moeten volgen of voor visuele harmonie in je uitvoer.
 
 ## Zie Ook
-
 Hier zijn een paar bronnen om te bekijken:
 
 - [Get-Date documentatie](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)

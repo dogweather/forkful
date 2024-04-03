@@ -12,12 +12,7 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mitä & Miksi?
-
-Tekstitiedoston kirjoittaminen Bashissa mahdollistaa datan tallennuksen, lokitiedostojen kirjoittamisen, asetusten määrittelyn ja paljon muuta automatisoidusti. Se on perustaito kuoriskriptauksessa, jonka avulla ohjelmoijat voivat tallentaa komentojen tulosteita, skriptien suorituksia tai käyttäjän syötettä raportointia, käsittelyä tai tulevia suorituksia varten.
-
 ## Kuinka:
-
 Bash tarjoaa suoraviivaisia menetelmiä tiedostoon kirjoittamiseen. Yleisimpiä ovat uudelleenohjausoperaattorit (`>`, `>>`) ja `tee`-komento. Tässä on nopea katsaus molempiin tekniikoihin.
 
 Uudelleenohjauksen avulla voit kirjoittaa tulosteen suoraan tiedostoon. `>`-operaattori kirjoittaa sisällön tiedostoon korvaten sen, jos se jo olemassa, kun taas `>>` lisää olemassa olevaan tiedostoon poistamatta sen sisältöä.

@@ -11,9 +11,6 @@ title: Lokitus
 weight: 17
 ---
 
-## Mikä & Miksi?
-Lokitus on periaatteessa tapahtumien tallentamisen prosessi, jotka tapahtuvat ohjelmiston sisällä. Ohjelmoijat lokittavat näitä tapahtumia kerätäkseen suoritusaikaista tietoa, vianetsintää, järjestelmän käyttäytymisen seurantaa varten, ja luodakseen tarkastuspolun turvallisuuden ja vaatimustenmukaisuuden tarkoituksessa.
-
 ## Kuinka:
 Tässä on yksinkertainen tapa aloittaa lokitus Javassa käyttäen sisäänrakennettua `java.util.logging`-pakettia.
 

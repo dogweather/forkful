@@ -13,9 +13,6 @@ title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---
 
-## Quoi et Pourquoi ?
-Vérifier si un répertoire existe en Kotlin implique de confirmer la présence d'un répertoire à un chemin spécifié. Les programmeurs réalisent cette tâche pour éviter les erreurs, comme essayer de lire ou d'écrire dans un répertoire qui n'existe pas, assurant ainsi une gestion des fichiers et des données plus fluide au sein des applications.
-
 ## Comment faire :
 Kotlin, fonctionnant sur la JVM, utilise l'API File de Java pour les opérations sur les fichiers, rendant les vérifications de l'existence des répertoires directes. Voici un exemple simple :
 

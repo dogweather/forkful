@@ -11,9 +11,6 @@ title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---
 
-## Hva & Hvorfor?
-Å finne lengden på en streng i Rust betyr å telle antall tegn den inneholder. Programmerere trenger denne informasjonen for å validere inndata, manipulere tekst, eller bare for å sjekke størrelsen på en streng.
-
 ## Hvordan gjøre det:
 ```rust
 fn main() {

@@ -14,12 +14,7 @@ title: "Ty\xF6skentely YAML:n parissa"
 weight: 41
 ---
 
-## Mikä & Miksi?
-
-YAML, joka tarkoittaa "YAML Ain't Markup Language" (YAML ei ole merkkauskieli), on ihmisen luettavissa oleva datan serialisointikieli, jota käytetään yleisesti konfiguraatiotiedostoissa. Ohjelmoijat käyttävät sitä usein sen yksinkertaisuuden ja luettavuuden vuoksi monenlaisissa ohjelmointiympäristöissä, mukaan lukien Visual Basic for Applications (VBA) skriptiympäristössä, jotta lisätään yhteentoimivuutta sekä datan tallennusta ja vaihtoa.
-
 ## Miten:
-
 YAML:n käyttö VBA:ssa vaatii ymmärrystä siitä, miten YAML jäsennetään ja muunnetaan muotoon, jonka VBA voi helposti käsitellä, yleensä sanakirjoihin tai kokoelmiin. Valitettavasti VBA ei natiivisti tue YAML:n jäsentämistä tai serialisointia. Voit kuitenkin käyttää JSON-muunnostyökalujen ja sanakirjaobjektien yhdistelmää työskennelläksesi YAML-datalla, ottaen huomioon YAML:n läheisen suhteen JSON:iin.
 
 Muunna ensin YAML-datas; JSON:ksi käyttämällä online-muunninta tai YAML-to-JSON-muunnostyökalua kehitysympäristössäsi. Muunnettuna voit käyttää seuraavaa esimerkkiä JSON:n jäsentämiseen VBA:ssa, huomaten, että tämä lähestymistapa sallii sinun epäsuorast; työskennellä YAML:n kanssa:
@@ -50,7 +45,6 @@ End Function
 Tässä esimerkissä `JsonParser`-funktio on sijainen, missä jäsentäisit JSON:ia. Eri kirjastoja on saatavilla auttamaan JSON-jäsentämisessä, koska suoria YAML-jäsentämiskirjastoja VBA:lle on niukasti.
 
 ## Syvä sukellus
-
 Suoraan YAML:n käsittelyn puuttuminen VBA:ssa voidaan jäljittää sen ikään ja ympäristöön, jolle se oli alun perin suunniteltu, mikä ei alun perin otettu huomioon moderneja datan serialisointiformaatteja. YAML itse nousi suosituksi konfiguraatio- ja serialisointiformaatiksi 2000-luvun alussa, samaan aikaan kun sovellusten tarve ihmisläheisemmille konfiguraatiotiedostoille kasvoi.
 
 Ohjelmoijat yleensä hyödyntävät ulkoisia työkaluja tai kirjastoja ylittääkseen kuilun VBA:n ja YAML:n välillä. Usein tämä tarkoittaa YAML:n muuntamista JSON:iksi, kuten näytetty, JSON-tukeen saatavilla olevien eri kirjastojen ja JSON:n ja YAML:n rakenteen ja tarkoituksen samankaltaisuuden vuoksi.

@@ -15,11 +15,8 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## Co i dlaczego?
-
-Rozpoczynając nowy projekt w Pythonie chodzi o to, aby od samego początku ustawić zorganizowaną i łatwą w utrzymaniu strukturę. Programiści robią to, aby zapewnić, że ich kod jest łatwy do odczytania, debugowania i współpracy, szczególnie w miarę rozwoju projektu i zespołu pracującego nad nim w czasie.
-
 ## Jak to zrobić:
+
 
 ### Utwórz środowisko wirtualne
 Środowisko wirtualne to samodzielny katalog, który zawiera wszystkie niezbędne pliki wykonywalne do użytkowania pakietów, których projekt Pythona może potrzebować. Zaleca się tworzenie oddzielnego środowiska wirtualnego dla każdego projektu, aby uniknąć konfliktów między zależnościami projektu. Użyj modułu `venv`, który jest częścią standardowej biblioteki Pythona.

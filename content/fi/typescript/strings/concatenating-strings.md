@@ -11,9 +11,6 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## Mikä & Miksi?
-Yksinkertaisesti sanottuna, merkkijonojen yhdistäminen tarkoittaa niiden liittämistä peräkkäin uudeksi merkkijonoksi. Koodarit tekevät tätä, koska se auttaa luomaan dynaamisia tekstejä, esimerkiksi käyttäjän tervehtimiseen nimellä tai tiedon yhdistämiseen yhdeksi lausekkeeksi.
-
 ## Kuinka:
 ```TypeScript
 // Yksinkertainen yhdistäminen käyttäen + -operaattoria

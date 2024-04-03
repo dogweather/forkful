@@ -10,9 +10,6 @@ title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---
 
-## Was & Warum?
-Das Löschen von Zeichen, die einem Muster entsprechen, bedeutet, bestimmte Teile aus einem String zu entfernen, die einem vorgegebenen Muster folgen. Programmierer machen das, um Eingaben zu säubern, Daten zu formatieren oder unnötige Informationen zu entfernen.
-
 ## Anleitung:
 Hier ein Beispiel, wie man Zeichen in PHP löscht:
 

@@ -9,9 +9,6 @@ title: Concatenating strings
 weight: 3
 ---
 
-## What & Why?
-String concatenation is stitching together two or more strings end-to-end. Programmers do it to build sentences, create messages, or combine input data for processing or display.
-
 ## How to:
 In C++, we’ve got a few ways to concatenate strings. Here's a taste using `std::string` and the plus (`+`) operator:
 

@@ -15,9 +15,6 @@ title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---
 
-## Quoi et pourquoi ?
-Écrire sur l'erreur standard (stderr) en C# implique de diriger les messages d'erreur et les diagnostics séparément de la sortie régulière (stdout) pour aider les utilisateurs et les développeurs à distinguer entre la sortie normale du programme et les notifications d'erreur. Les programmeurs font cela pour rendre le débogage et la journalisation plus efficaces, permettant aux applications de fonctionner et de se maintenir plus aisément.
-
 ## Comment faire :
 En C#, écrire sur l'erreur standard peut être réalisé en utilisant le flux `Console.Error`. Ce flux est utilisé spécifiquement pour les messages d'erreur et les diagnostics. Voici un exemple basique :
 

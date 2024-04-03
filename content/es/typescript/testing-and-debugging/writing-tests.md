@@ -13,9 +13,6 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## Qué y Por Qué?
-Escribir pruebas en TypeScript implica crear scripts automatizados para verificar la funcionalidad y la corrección de tu código. Los programadores lo hacen para garantizar la fiabilidad, capturar rápidamente errores y facilitar el crecimiento mantenible del código, ya que la tipificación estática de TypeScript añade un nivel de previsibilidad a las pruebas de JavaScript.
-
 ## Cómo hacerlo:
 TypeScript funciona armoniosamente con la mayoría de los marcos de pruebas de JavaScript. Para fines de demostración, utilizaremos Jest, un marco de pruebas popular, debido a su configuración cero para proyectos TypeScript.
 

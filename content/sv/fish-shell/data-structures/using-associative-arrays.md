@@ -12,12 +12,7 @@ title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---
 
-## Vad & Varför?
-
-Associativa arrayer, eller hashmappar, låter dig lagra data som nyckel-värdepar, vilket gör det enklare att organisera och hämta information med nyckeln. De är användbara när du behöver ett mer strukturerat sätt att hantera data än bara listor, speciellt i konfigurationer och när du hanterar en rad attribut.
-
 ## Hur gör man:
-
 Fish stöder inte native associativa arrayer som Bash 4+, men du kan uppnå liknande funktionalitet med en kombination av listor och strängmanipulation. Så här kan du efterlikna dem:
 
 Först, ställ in "associativa array"-element separat:
@@ -59,5 +54,4 @@ end
 ```
 
 ## Fördjupning
-
 Riktiga associativa arrayer som i andra skriptspråk är ännu inte en del av Fishs ansats. Lösningen som visas utnyttjar Fishs strängmanipulation och listkapaciteter för att skapa en pseudo-associativ arraystruktur. Även om det fungerar, är det inte lika rent eller felfritt som inbyggt stöd för associativa arrayer skulle vara. Andra skal som Bash och Zsh erbjuder inbyggd funktionalitet för associativa arrayer, vilket resulterar i mer rakt på sak, läsbart kod. Dock syftar Fishs designfilosofi till enkelhet och användarvänlighet, möjligtvis på bekostnad av sådana funktioner. Genvägen tillfredsställer de flesta behov, men håll ett öga på Fish Shells utveckling—dess utvecklare förbättrar och lägger till funktioner baserat på gemenskapsfeedback.

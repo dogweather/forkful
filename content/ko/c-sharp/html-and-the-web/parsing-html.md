@@ -22,16 +22,10 @@ title: "HTML \uD30C\uC2F1"
 weight: 43
 ---
 
-## 무엇인가 & 왜 사용하는가?
-
-프로그래밍에서 HTML 파싱은 HTML 문서의 구조를 분석하고, 그 내용을 프로그래밍적으로 추출, 조작, 상호작용할 수 있게 하는 것을 말합니다. 프로그래머들은 웹 스크래핑, 데이터 추출 또는 다양한 애플리케이션을 위해 웹 페이지나 HTML 문서를 동적으로 수정하는 등의 작업을 자동화하기 위해 이를 수행합니다. 이는 웹 개발, 데이터 분석 및 자동화된 테스트 시나리오에서 필수적인 기술입니다.
-
 ## 어떻게 사용하는가:
-
 .NET은 웹 페이지를 가져오는 `HttpClient`와 같은 HTML 작업을 위한 기본 지원을 제공하지만, 통합된 포괄적인 HTML 파서는 제공하지 않습니다. 따라서 대부분의 C# 개발자들은 HtmlAgilityPack이나 AngleSharp과 같은 인기 있는 제3자 라이브러리로 전환하여 견고한 HTML 파싱 기능을 활용합니다. 두 라이브러리 모두 HTML DOM의 쉬운 쿼리, 조작 및 순회를 가능하게 합니다.
 
 ### HtmlAgilityPack 사용하기
-
 1. **HtmlAgilityPack 설치하기**: 먼저, NuGet을 통해 프로젝트에 HtmlAgilityPack 패키지를 추가합니다.
    ```
    Install-Package HtmlAgilityPack
@@ -73,7 +67,6 @@ weight: 43
    ```
 
 ### AngleSharp 사용하기
-
 1. **AngleSharp 설치하기**: NuGet을 통해 프로젝트에 AngleSharp 라이브러리를 추가합니다.
    ```
    Install-Package AngleSharp

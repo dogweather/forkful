@@ -15,9 +15,6 @@ title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---
 
-## Co i Dlaczego?
-Pisanie do standardowego błędu (stderr) w C# polega na kierowaniu komunikatów o błędach i diagnostyki oddzielnie od regularnego wyjścia (stdout), aby użytkownicy i programiści mogli odróżnić normalne wyniki działania programu od powiadomień o błędach. Programiści robią to, aby debugowanie i logowanie było bardziej efektywne, co pozwala na płynniejszą operację i utrzymanie aplikacji.
-
 ## Jak to zrobić:
 W C#, pisanie do standardowego błędu można osiągnąć za pomocą strumienia `Console.Error`. Strumień ten służy specjalnie do komunikatów o błędach i diagnoz. Oto podstawowy przykład:
 

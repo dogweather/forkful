@@ -14,16 +14,10 @@ title: Travailler avec des nombres complexes
 weight: 14
 ---
 
-## Quoi & Pourquoi ?
-
-Les nombres complexes, constitués d'une partie réelle et d'une partie imaginaire (généralement notés sous la forme a + bi), étendent le concept des nombres sans dimension à un espace bidimensionnel. Les programmeurs travaillent avec des nombres complexes dans des domaines tels que le génie électrique, l'informatique quantique et la dynamique des fluides pour modéliser des phénomènes qui ne peuvent pas être représentés le long d'une seule dimension de nombres réels.
-
 ## Comment faire :
-
 Dart lui-même n'inclut pas de bibliothèque intégrée pour les nombres complexes, nécessitant soit la mise en œuvre d'une classe de nombre complexe personnalisée, soit l'utilisation d'une bibliothèque tierce. Un choix populaire pour les tâches de calcul scientifique, qui inclut le support pour les nombres complexes, est `package:scidart`.
 
 ### Implémenter une classe de nombre complexe basique
-
 Pour des opérations simples, vous pouvez facilement définir votre propre classe de nombre complexe :
 
 ```dart
@@ -53,7 +47,6 @@ void main() {
 ```
 
 ### Utiliser SciDart pour des opérations avancées
-
 Pour des opérations plus complexes ou lorsque les performances sont critiques, le `package:scidart` offre un support complet pour les nombres complexes parmi d'autres fonctionnalités de calcul scientifique. Tout d'abord, ajoutez SciDart à votre fichier pubspec.yaml :
 
 ```yaml

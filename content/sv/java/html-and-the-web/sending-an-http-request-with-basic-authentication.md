@@ -12,12 +12,7 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---
 
-## Vad & Varför?
-
-Att skicka en HTTP-förfrågan med grundläggande autentisering innebär att man inkluderar användarnamn och lösenord kodat i bas64-format i requestens `Authorization` header. Programmerare gör detta för att säkerställa att endast auktoriserade användare får tillgång till skyddade resurser på en server.
-
 ## Hur man gör:
-
 ```java
 import java.io.IOException;
 import java.net.HttpURLConnection;
@@ -46,13 +41,11 @@ public class BasicAuthRequest {
 Sample output saknas här eftersom det handlar mer om serverns respons än själva Java-koden.
 
 ## Djupdykning
-
 Skicka HTTP-förfrågan med grundläggande autentisering är så elementärt som det låter - det har använts sedan HTTP/1.0. Även om det är enkelt, bör man vara medveten om att det inte är det säkraste sättet att skicka känslig information eftersom bas64-kodning lätt kan dekodas. Modernt alternativ inkluderar OAuth och tokens.
 
 En viktig aspekt av implementationen i Java är `HttpURLConnection`-klassen, som möjliggör skapandet och hanteringen av förbindelser till resurser på nätverket. Från Java 11 och framåt kan man även använda `HttpClient`-klassen för att göra HTTP-förfrågningar på ett mer flexibelt sätt, inklusive asynkron hantering.
 
 ## Se också
-
 - [Java 11 HttpClient Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
 - [Base64 Encoding and Decoding](https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html)
 - [RFC 7617 'The 'Basic' HTTP Authentication Scheme'](https://tools.ietf.org/html/rfc7617)

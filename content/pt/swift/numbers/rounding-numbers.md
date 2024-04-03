@@ -10,12 +10,7 @@ title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---
 
-## O que & Por quê?
-
-Arredondar números significa aproximar um valor numérico a uma precisão específica, tipicamente para remover decimais indesejados. Programadores arredondam para gerenciar a memória, melhorar a legibilidade e atender a requisitos específicos do domínio, como restrições de moeda.
-
 ## Como fazer:
-
 Swift oferece várias maneiras de arredondar números. Aqui está um exemplo:
 
 ```Swift
@@ -39,7 +34,6 @@ print("Padrão: \(standardRounded), Decimal: \(decimalRounded), Para baixo: \(ro
 Saída: `Padrão: 3.0, Decimal: 3.142, Para baixo: 3.0, Para cima: 4.0`
 
 ## Aprofundamento
-
 Historicamente, o arredondamento é um conceito matemático que antecede os computadores, essencial no comércio e na ciência. O framework `Foundation` do Swift oferece funcionalidades abrangentes de arredondamento:
 
 - `round(_: )` é o bom e velho arredondamento de meio para cima.
@@ -49,5 +43,4 @@ Historicamente, o arredondamento é um conceito matemático que antecede os comp
 Esteja ciente do tipo `Decimal` para cálculos financeiros precisos, o qual evita erros de ponto flutuante. Explore também `NSDecimalNumber` para compatibilidade com Objective-C.
 
 ## Veja também
-
 - Padrão IEEE para Aritmética de Ponto Flutuante (IEEE 754): [IEEE 754](https://ieeexplore.ieee.org/document/4610935)

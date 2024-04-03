@@ -15,9 +15,6 @@ title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---
 
-## Là gì và Tại sao?
-Việc lấy ngày hiện tại trong Elm có nghĩa là truy xuất ngày lịch hiện tại từ hệ thống. Chúng ta làm điều này để đánh dấu thời gian cho các sự kiện, lên lịch cho các công việc, hoặc theo dõi khoảng thời gian.
-
 ## Cách thực hiện:
 Elm xử lý ngày tháng với module `Time`. Bạn sẽ nhận được thời gian hiện tại dưới dạng dấu thời gian POSIX, sau đó chuyển đổi sang ngày.
 

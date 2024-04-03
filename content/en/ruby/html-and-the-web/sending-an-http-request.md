@@ -9,11 +9,7 @@ title: Sending an HTTP request
 weight: 44
 ---
 
-## What & Why?
-Sending an HTTP request means requesting data from a resource on the web. Programmers do it to interact with APIs, scrape web content, or talk to servers.
-
 ## How to:
-
 Ruby makes it pretty easy to send HTTP requests. Here's the quickest way with the Net::HTTP standard library.
 
 ```Ruby
@@ -41,7 +37,6 @@ puts res.body
 This sends a POST request with data and shows the response.
 
 ## Deep Dive:
-
 In the past, sending HTTP requests was clunkier, and you may have needed to use a gem like `HTTParty`. But Ruby's built-in `Net::HTTP` library has come a long way. It now supports most things you'll need.
 
 But, `Net::HTTP` can be verbose. If your project needs more HTTP features or syntactic sugar, `HTTParty` or `Faraday` are great alternatives. These gems provide a more expressive API and can handle more complex scenarios like middleware or different adapters.
@@ -60,7 +55,6 @@ puts response.body
 This does the same thing as `Net::HTTP.get` but with less configuration.
 
 ## See Also:
-
 For more detailed info, Ruby's docs are super helpful:
 - Net::HTTP: https://ruby-doc.org/stdlib/libdoc/net/http/rdoc/Net/HTTP.html
 - HTTParty: https://github.com/jnunemaker/httparty

@@ -17,10 +17,9 @@ title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---
 
-## Cái gì & Tại sao?
-Xóa các ký tự khớp với một mẫu trong Bash cho phép bạn thao tác với chuỗi để phù hợp với nhu cầu của mình - như loại bỏ các ký tự không mong muốn hoặc làm sạch đầu vào. Đó là cơ bản để dọn dẹp dữ liệu và chuẩn bị nó cho việc xử lý.
-
 ## Cách thực hiện:
+
+
 ### Xóa khoảng trắng đầu/cuối:
 ```Bash
 text="   Xin chào, Thế giới!   "

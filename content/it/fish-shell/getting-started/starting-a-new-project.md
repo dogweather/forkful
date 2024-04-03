@@ -10,9 +10,6 @@ title: Avvio di un nuovo progetto
 weight: 1
 ---
 
-## What & Why? (Cosa & Perché?)
-Iniziare un nuovo progetto è come piazzare la prima pietra di un edificio: definisce le fondamenta. I programmatori lo fanno per organizzare idee, impostare la struttura e prepararsi per lo sviluppo.
-
 ## How to: (Come fare:)
 In Fish Shell, iniziare un nuovo progetto può significare impostare una nuova directory con alcuni file base. Ecco un esempio semplice:
 

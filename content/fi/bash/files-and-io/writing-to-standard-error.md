@@ -13,9 +13,6 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mikä ja miksi?
-Kirjoittaminen vakiovirheeseen (stderr) Bashissa tarkoittaa virheviestien tai muiden tärkeiden diagnostisten tulosteiden ohjaamista erilleen vakiotulosteesta (stdout). Ohjelmoijat tekevät näin varmistaakseen, että virheviestit voidaan helposti tunnistaa, lokittaa tai jopa ohittaa, mikä auttaa vianetsintä- ja lokitusprosesseissa.
-
 ## Kuinka:
 Bashissa käytät `>&2` uudelleenohjataksesi tulosteen stderr:iin. Tässä on perusesimerkki:
 

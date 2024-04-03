@@ -9,9 +9,6 @@ title: Lectura de un archivo de texto
 weight: 22
 ---
 
-## Qué y Por Qué?
-Leer un archivo de texto significa acceder a su contenido usando un programa. Los programadores lo hacen para procesar o analizar los datos, configuraciones o simplemente para mostrar la información al usuario.
-
 ## Cómo hacerlo:
 Para leer un archivo de texto en Bash, puedes usar `cat`, `less`, o un bucle mientras lees línea por línea. Aquí tienes algunos ejemplos:
 

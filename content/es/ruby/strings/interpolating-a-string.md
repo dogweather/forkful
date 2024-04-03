@@ -11,12 +11,7 @@ title: "Interpolaci\xF3n de cadenas de texto"
 weight: 8
 ---
 
-## Qué y Por Qué?
-
-La interpolación de cadenas en Ruby permite incrustar el valor de cualquier expresión dentro de una cadena de texto. Los programadores lo hacen para construir cadenas dinámicamente, facilitando la inserción de variables y expresiones dentro de ellas sin romper el flujo.
-
 ## Cómo hacerlo:
-
 Aquí tienes algunos ejemplos de cómo interpolamos cadenas en Ruby. Recuerda, todo lo que está dentro de `#{}` se evalúa y se convierte a una cadena.
 
 ```Ruby
@@ -35,7 +30,6 @@ puts informe  # => El precio del café es $5.99.
 ```
 
 ## Conocimiento Detallado:
-
 Interpolar una cadena es una función que Ruby maneja elegantemente. Surgió como una mejor alternativa a la concatenación, que era más verbosa y propensa a errores.
 
 Alternativas:
@@ -46,6 +40,5 @@ Alternativas:
 Detalles de implementación: Ruby convierte lo que esté dentro de `#{}` a una cadena llamando al método `.to_s` sobre la expresión resultante. Si la cadena original está entre comillas simples, la interpolación no funcionará; debe estar entre comillas dobles o usar sintaxis de literales de cadena como `%Q{}`.
 
 ## Ver También:
-
 - La documentación oficial de Ruby sobre [literales de cadena](https://docs.ruby-lang.org/en/2.6.0/syntax/literals_rdoc.html#label-Strings)
 - Ejemplo de libro: ["The Well-Grounded Rubyist" de David A. Black](https://www.manning.com/books/the-well-grounded-rubyist), que aborda el tratamiento de cadenas en Ruby y prácticas recomendadas.

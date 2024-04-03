@@ -11,9 +11,6 @@ title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---
 
-## Hva & Hvorfor?
-Konvertering av en streng til små bokstaver betyr å endre alle store bokstaver i teksten til små bokstaver. Programmerere gjør dette for enklere sammenligning av tekst, eller for å forenkle brukerinput.
-
 ## Slik gjør du:
 Arduino-koden nedenfor viser hvordan du konverterer en streng til små bokstaver:
 

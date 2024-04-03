@@ -12,14 +12,10 @@ title: Tests Schreiben
 weight: 36
 ---
 
-## Was & Warum?
-Das Schreiben von Tests in Java besteht darin, zu überprüfen, ob Ihr Code sich unter verschiedenen Bedingungen wie erwartet verhält. Programmierer schreiben Tests, um Fehler zu vermeiden, die Funktionalität nach Änderungen korrekt zu halten und gute Software-Designprinzipien zu fördern.
-
 ## Wie:
 Java-Entwickler verwenden hauptsächlich zwei Test-Frameworks: JUnit und TestNG. Hier konzentrieren wir uns auf JUnit, die beliebtere Wahl für das Schreiben von Tests aufgrund seiner Einfachheit und weit verbreiteten Akzeptanz.
 
 ### JUnit-Grundlagen
-
 Um JUnit in Ihrem Maven-Projekt zu verwenden, fügen Sie die folgende Abhängigkeit zu Ihrer `pom.xml` hinzu:
 
 ```xml
@@ -50,7 +46,6 @@ public class CalculatorTest {
 Die Ausführung dieses Tests wird entweder bestehen, was darauf hinweist, dass die `add` Methode wie erwartet funktioniert, oder fehlschlagen, was eine Fehlermeldung anzeigt.
 
 ### Mocking mit Mockito
-
 In realen Szenarien hängen Objekte oft von anderen Objekten ab. Mockito ist ein beliebtes Mocking-Framework, das beim Erstellen von Mock-Objekten zum Zweck des Testens hilft.
 
 Fügen Sie Mockito Ihrem Maven-Projekt hinzu:

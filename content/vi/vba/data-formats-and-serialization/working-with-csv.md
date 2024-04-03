@@ -17,16 +17,10 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---
 
-## Cái gì và Tại sao?
-
-Làm việc với tệp CSV (Comma Separated Values - Giá trị Phân cách bằng Dấu phẩy) bao gồm việc đọc từ hoặc ghi vào tệp văn bản thuần túy nơi các trường dữ liệu được phân cách bởi dấu phẩy. Các lập trình viên thường thực hiện nhiệm vụ này để tạo điều kiện trao đổi dữ liệu giữa các ứng dụng phần mềm khác nhau, nhờ vào sự đơn giản và sự áp dụng rộng rãi của định dạng CSV trong các môi trường lập trình khác nhau.
-
 ## Làm thế nào:
-
 Visual Basic for Applications (VBA) đơn giản hóa việc làm việc với tệp CSV thông qua các hàm và phương thức tích hợp cho phép đọc từ và ghi vào các tệp này một cách liền mạch. Dưới đây là các ví dụ minh họa các thao tác cơ bản với tệp CSV.
 
 ### Đọc một Tệp CSV:
-
 ```basic
 Sub ReadCSV()
     Dim filePath As String
@@ -49,7 +43,6 @@ End Sub
 ```
 
 ### Ghi vào một Tệp CSV:
-
 ```basic
 Sub WriteCSV()
     Dim filePath As String
@@ -71,7 +64,6 @@ ID,Tên,Tuổi
 ```
 
 ## Sâu hơn nữa
-
 Trong lịch sử, tệp CSV đã là một phương pháp đơn giản để lưu trữ dữ liệu dạng bảng trong định dạng văn bản. Sự đơn giản của cấu trúc của nó, nơi mỗi dòng tương ứng với một bản ghi dữ liệu và mỗi trường trong một bản ghi được phân cách bởi một dấu phẩy, là điểm mạnh và cũng là giới hạn của CSV. Định dạng này không hỗ trợ natively các kiểu dữ liệu, điều này có nghĩa tất cả dữ liệu được lưu trữ dưới dạng chuỗi, và gánh nặng chuyển đổi dữ liệu sang loại đúng nằm trên vai của lập trình viên.
 
 Trong Visual Basic for Applications, việc xử lý tệp CSV chủ yếu được thực hiện thông qua các thao tác tệp cơ bản, như được minh họa trong các ví dụ trước đó. Không có sự hỗ trợ phân tích cú pháp CSV trực tiếp như trong các ngôn ngữ hiện đại hơn (ví dụ, mô-đun csv của Python), điều này cung cấp nhiều kiểm soát và tiện lợi hơn khi xử lý dữ liệu CSV.

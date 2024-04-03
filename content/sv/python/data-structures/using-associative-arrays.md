@@ -14,12 +14,7 @@ title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---
 
-## Vad & varför?
-
-Associativa arrayer, kända i Python som dictionaries, kopplar nycklar till värden, vilket gör det enkelt att hämta, modifiera eller spåra data med ett unikt identifierare. Programmerare använder dem för deras effektivitet vid åtkomst av element och deras flexibilitet i att representera komplexa datastrukturer.
-
 ## Hur man gör:
-
 Att skapa en dictionary i Python är rakt på sak. Du omsluter nyckel-värdepar i måsvingar `{}`, med nycklar och värden separerade av ett kolon:
 
 ```Python
@@ -77,7 +72,6 @@ email: john@example.com
 ```
 
 ## Fördjupning
-
 Associativa arrayer i Python, eller dictionaries, introducerades för att tillhandahålla en datastruktur för effektiv dataåtkomst och manipulation. I motsats till sekvenser, som är indexerade med en rad nummer, indexeras dictionaries med nycklar, vilka kan vara av vilken oföränderlig typ som helst. Detta designval gör dictionaries idealiska för snabba uppslagstabeller där nycklar kopplar till unika värden.
 
 Historiskt sett har Python-dictionaries implementerats med hjälp av en hashtabell, vilket säkerställer att den genomsnittliga tidskomplexiteten för uppslag, tillägg och borttagning är O(1). Från och med Python 3.6 och senare, bibehåller dictionaries även införingsordningen för poster, vilket kombinerar fördelarna med hashtabeller med förutsägbarheten hos införingsordningen som ses i ordnade datastrukturer.

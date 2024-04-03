@@ -11,9 +11,6 @@ title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---
 
-## What & Why?
-I Clojure och andra programmeringsspråk betyder att ta bort tecken som matchar ett mönster att du rensar din textsträng från oönskade sekvenser. Detta görs ofta för datarensning, för att hantera användarinmatning, eller för att förbereda text för vidare bearbetning.
-
 ## How to:
 Clojure ger oss `clojure.string/replace` för att hantera teckentvätt. Kolla här:
 

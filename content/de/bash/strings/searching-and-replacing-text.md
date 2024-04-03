@@ -10,9 +10,6 @@ title: Suchen und Ersetzen von Text
 weight: 10
 ---
 
-## What & Why?
-Text suchen und ersetzen ermöglicht es uns, Inhalte in Dateien schnell zu finden und zu modifizieren. Programmierer nutzen dies häufig, um Bugs zu beheben, Code zu aktualisieren oder Daten zu formatieren.
-
 ## How to:
 Mit dem Befehl `sed` kannst du einfach Text in Dateien suchen und ersetzen:
 

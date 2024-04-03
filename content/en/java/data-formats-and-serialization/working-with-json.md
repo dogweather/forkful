@@ -10,9 +10,6 @@ title: Working with JSON
 weight: 38
 ---
 
-## What & Why?
-Working with JSON (JavaScript Object Notation) means handling this lightweight data-interchange format inside your Java applications. Programmers go for JSON to serialize and transmit structured data over a network and easily configure and store data because it's human-readable and language-independent.
-
 ## How to:
 Let's roll up our sleeves and get to coding with JSON in Java.
 

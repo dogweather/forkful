@@ -10,12 +10,7 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## ¿Qué y Por Qué?
-
-Buscar y reemplazar texto es sencillo: es encontrar una cadena de texto y cambiarla por otra. Los programadores lo hacen para actualizar datos, corregir errores o modificar código rápidamente.
-
 ## Cómo Hacerlo:
-
 Elixir es conciso y poderoso. Aquí va un ejemplo sencillo:
 
 ```elixir
@@ -46,7 +41,6 @@ Phoenix mola mucho. Phoenix es increíble.
 ```
 
 ## Inmersión Profunda:
-
 Originalmente, esta funcionalidad viene de los editores de texto y procesadores de palabra. Programas como `sed` en Unix son legendarios por su potencia aquí.
 
 En Elixir, se puede hacer de forma más segura y legible gracias a patrones como la Programación Funcional y el uso de Regex. Pero cuidado, el abuso de Regex puede complicar el código. Y si no quieres usar la librería estándar, existen paquetes como `regex` que ofrecen más flexibilidad.
@@ -54,6 +48,5 @@ En Elixir, se puede hacer de forma más segura y legible gracias a patrones como
 Detalles de implementación: `String.replace/4` es nuestra navaja suiza aquí, con parámetros para opciones avanzadas como reemplazos globales o limitados. Usa el módulo `Regex` bajo el capó para los patrones complejos.
 
 ## Ver También:
-
 - [Elixir School](https://elixirschool.com/es/lessons/basics/strings/#reemplazo) para una introducción práctica y sencilla.
 - [Elixir String Docs](https://hexdocs.pm/elixir/String.html) para referencia detallada de funciones.

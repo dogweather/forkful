@@ -13,9 +13,6 @@ title: Fouten afhandelen
 weight: 16
 ---
 
-## Wat & Waarom?
-Foutafhandeling in Swift betekent dat je anticipeert op en reageert op problemen die opduiken wanneer je code wordt uitgevoerd. We doen dit om de chaos te beheersen—om te voorkomen dat apps crashen en om de gebruiker een soepele ervaring te bieden.
-
 ## Hoe te:
 Swift gebruikt foutafhandeling met `do`, `try` en `catch` blokken. Laten we eens kijken:
 

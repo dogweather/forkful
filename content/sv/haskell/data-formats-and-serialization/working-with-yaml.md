@@ -14,12 +14,7 @@ title: Att Arbeta med YAML
 weight: 41
 ---
 
-## Vad & Varför?
-
-YAML, en förkortning för "YAML Ain't Markup Language", är en människovänlig standard för dataseriering som kan användas för alla programmeringsspråk. Programmerare använder ofta YAML i konfigurationsfiler och datadelning mellan språk på grund av dess läsbarhet och enkla struktur.
-
 ## Hur man gör:
-
 Haskell har inte inbyggt stöd för bearbetning av YAML, men du kan använda tredjepartsbibliotek såsom `yaml` och `aeson` för att tolka och generera YAML-data. Så här kommer du igång:
 
 ### Läsa YAML

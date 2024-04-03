@@ -10,11 +10,6 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## What & Why?
-(Co i dlaczego?)
-
-Wysyłanie zapytania HTTP to komunikacja między twoim komputerem a serwerem; mówiąc prościej, to tak, jakbyś wysłał list z prośbą do internetowego skrzynka pocztowego. Programiści robią to, by pobierać dane, wysyłać formularze lub interakcje z API sieciowymi - to jak podstawowe narzędzie w cyfrowej skrzynce z narzędziami.
-
 ## How to:
 (Jak to zrobić:)
 

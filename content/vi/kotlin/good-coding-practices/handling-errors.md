@@ -16,9 +16,6 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Cái gì & Tại sao?
-Xử lý lỗi là cách mã của bạn đối diện với những vấn đề phát sinh trong quá trình thực thi - giống như việc xử lý một tình huống bất ngờ mà không làm rơi nó. Lập trình viên làm việc này để ngăn chặn sự cố và mang lại trải nghiệm mượt mà cho người dùng.
-
 ## Làm thế nào:
 Kotlin cung cấp `try`, `catch`, `finally`, và `throw` để quản lý lỗi. Dưới đây là cách bạn sử dụng chúng:
 

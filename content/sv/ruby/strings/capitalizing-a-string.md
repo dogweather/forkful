@@ -15,9 +15,6 @@ title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---
 
-## Vad & Varför?
-Att versalisera en sträng betyder vanligtvis att omvandla det första tecknet i en sträng till versal (stort bokstav) och resten till gemener (små bokstäver). Men ibland kan det innebära att endast försäkra sig om att det första tecknet är en versal medan resten av strängen förblir oförändrad. Ärligt talat, i min åsikt, är det en ganska vag term.
-
 ## Hur:
 Ruby tillhandahåller [rakvägade metoder för strängmanipulering](https://docs.ruby-lang.org/en/3.3/String.html), inklusive kapitalisering:
 

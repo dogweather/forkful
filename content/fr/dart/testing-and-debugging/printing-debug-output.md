@@ -15,12 +15,7 @@ title: "Imprimer la sortie de d\xE9bogage"
 weight: 33
 ---
 
-## Quoi et Pourquoi ?
-
-Imprimer le débogage dans Dart consiste à afficher des informations dans la console pendant l'exécution, permettant aux développeurs de suivre le flux d'exécution, d'investiguer l'état des variables ou d'identifier la source des erreurs. Les programmeurs l'utilisent couramment pour le dépannage et vérifier que leur code se comporte comme prévu, facilitant ainsi un processus de développement plus fluide et plus efficace.
-
 ## Comment faire :
-
 Dans Dart, vous pouvez imprimer la sortie de débogage en utilisant la fonction `print()`. Voici comment afficher des messages simples et des valeurs de variables :
 
 ```dart

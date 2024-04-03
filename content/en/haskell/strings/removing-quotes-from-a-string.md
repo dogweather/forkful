@@ -11,9 +11,6 @@ title: Removing quotes from a string
 weight: 9
 ---
 
-## What & Why?
-Removing quotes from a string means stripping out any quotation marks—single (' ') or double (" ")—that are part of the string data. Programmers do it to sanitize inputs, prepare text for processing, or get rid of unnecessary characters that might interfere with data handling and operations.
-
 ## How to:
 In Haskell, we can whip up a function that removes all quotes from a given string. It's like telling the quotes to scram, and making sure they take the hint.
 

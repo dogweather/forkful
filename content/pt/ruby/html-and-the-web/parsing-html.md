@@ -13,9 +13,6 @@ title: Analisando HTML
 weight: 43
 ---
 
-## O Que & Por Que?
-Analisar HTML significa desmembrar um pedaço de código HTML para compreender sua estrutura e conteúdo. Os programadores fazem isso para extrair dados, manipular conteúdo ou migrar informações entre formatos e sistemas.
-
 ## Como fazer:
 Para analisar HTML em Ruby, instale a 'gema' Nokogiri com `gem install nokogiri`. Nokogiri é como um canivete suíço para trabalhar com HTML e XML em Ruby. Aqui está um exemplo rápido:
 

@@ -11,12 +11,7 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-
-Writing tests in Kotlin involves crafting code snippets that automatically validate the functional correctness of your software modules, ensuring they work as expected. Programmers do it to catch bugs early, facilitate code refactoring, and provide documentation on how software components are intended to work.
-
 ## How to:
-
 Kotlin supports test-driven development with various frameworks, the most popular being JUnit, Kotest, and MockK for mocking. Here's a simple example using JUnit:
 
 ```kotlin

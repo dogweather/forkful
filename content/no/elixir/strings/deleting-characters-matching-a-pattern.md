@@ -11,9 +11,6 @@ title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---
 
-## Hva & Hvorfor?
-Å slette tegn som matcher et mønster innebærer å finne og fjerne spesifikke sekvenser av tegn fra en streng. Programmerere gjør dette for å rense data, forenkle tekst eller sikre konsistente dataformater.
-
 ## Hvordan:
 ```elixir
 # Med Regex.replace/3 kan vi enkelt slette tegn som matcher et mønster

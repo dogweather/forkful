@@ -10,10 +10,6 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## What & Why?
-Mikä & Miksi?  
-Yhdistelemme merkkijonoja - eli "concatenate" - kun haluamme liittää erilliset tekstipätkät yhteen. Ohjelmoijat tekevät tämän usein muodostaakseen käyttäjälle näytettäviä viestejä tai käsitelläkseen dynaamisia data-arvoja.
-
 ## How to:
 Kuinka tehdä:
 ```Fish Shell

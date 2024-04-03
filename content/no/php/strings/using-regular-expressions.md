@@ -13,16 +13,10 @@ title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---
 
-## Hva & Hvorfor?
-
-Regulære uttrykk (regex) i PHP er mønstre brukt til å matche tegnkombinasjoner i strenger, noe som muliggjør avanserte søk-og-erstatt-operasjoner og datavalidering. Programmerere utnytter regex for dets kraft og fleksibilitet i å analysere tekst, validere skjemaer, eller skrape webdata, noe som gjør det til et uunnværlig verktøy i en utviklers arsenal.
-
 ## Hvordan:
-
 PHP støtter regulære uttrykk gjennom PCRE-biblioteket (Perl Compatible Regular Expressions), som tilbyr et rikt sett med funksjoner. Her er hvordan du bruker dem:
 
 ### Matche et mønster:
-
 For å sjekke om et mønster finnes innenfor en streng, bruk `preg_match()`. Denne funksjonen returnerer 1 hvis mønsteret ble funnet i strengen, og 0 hvis ikke.
 
 ```php
@@ -35,7 +29,6 @@ if (preg_match("/\bweb\b/i", "PHP er et web scriptingspråk")) {
 ```
 
 ### Finne alle treff:
-
 `preg_match_all()` brukes når du trenger å finne alle forekomster av et mønster innenfor en streng.
 
 ```php
@@ -47,7 +40,6 @@ print_r($matches[0]);
 ```
 
 ### Erstatte tekst:
-
 For å erstatte tekst som matcher et regulært uttrykk, brukes `preg_replace()`. Det er utrolig kraftfullt for formatering og opprydding av data.
 
 ```php
@@ -59,7 +51,6 @@ echo preg_replace($pattern, $replacement, $originalText);
 ```
 
 ### Dele strenger:
-
 Du kan dele en streng inn i et array ved å bruke `preg_split()`, og spesifisere et mønster for skilletegnet.
 
 ```php

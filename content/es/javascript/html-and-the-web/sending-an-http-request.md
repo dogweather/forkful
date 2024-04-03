@@ -10,9 +10,6 @@ title: Enviando una solicitud http
 weight: 44
 ---
 
-## ¿Qué y Por Qué?
-Enviar una solicitud HTTP es cómo tu programa habla con el mundo: pide datos a un servidor o les dice qué hacer. Los programadores lo hacen para interactuar con APIs, servicios web y actualizar información en tiempo real.
-
 ## Cómo hacerlo:
 Para solicitudes HTTP en JavaScript, `fetch` es tu amigo. Puedes obtener datos así:
 

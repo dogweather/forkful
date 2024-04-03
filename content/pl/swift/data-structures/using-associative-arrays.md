@@ -13,12 +13,7 @@ title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---
 
-## Co i dlaczego?
-
-Tablice asocjacyjne, znane w Swift jako słowniki, pozwalają przechowywać i zarządzać danymi w postaci par klucz-wartość. Programiści używają ich do efektywnego organizowania danych, co ułatwia dostęp i manipulację wartościami na podstawie ich unikatowych kluczy.
-
 ## Jak to zrobić:
-
 Swift ułatwia pracę z tablicami asocjacyjnymi. Oto, jak możesz deklarować, dodawać, usuwać i uzyskiwać dostęp do elementów w słowniku Swift:
 
 ```Swift
@@ -50,7 +45,6 @@ for (fruit, color) in fruitColors {
 Słowniki są niezwykle wszechstronne, pozwalają na dynamiczną manipulację i dostęp do danych. Ich nieuporządkowana natura nie wpływa na szybkość uzyskiwania danych, co jest znaczącą korzyścią podczas pracy z dużymi zbiorami danych.
 
 ## Dogłębna analiza
-
 Implementacja słowników w Swift jako tablice asocjacyjne wynika z ich potężnej zdolności do mapowania unikatowych kluczy na wartości. Historycznie języki programowania implementowały ten koncept pod różnymi nazwami, takimi jak tablice mieszające czy mapy, nawiązując do ich funkcjonalności tworzenia "mapy" między kluczami a wartościami.
 
 W Swift słowniki są optymalizowane pod kątem wydajności, wykorzystując haszowalne klucze do efektywnego pobierania danych. Oznacza to, że typ `Key` w słowniku `[Key: Value]` musi być zgodny z protokołem `Hashable`, co ma miejsce w przypadku większości standardowych typów Swift, takich jak `Int`, `String` i `Double`.

@@ -14,9 +14,6 @@ title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---
 
-## ¿Qué y Por Qué?
-Escribir en el error estándar (stderr) se trata de dirigir mensajes de error y salidas de diagnóstico a un canal separado, distinto de la salida estándar (stdout). Los programadores hacen esto para diferenciar los resultados regulares del programa de la información de error, simplificando los procesos de depuración y registro.
-
 ## Cómo hacerlo:
 En Lua, se puede lograr escribir en stderr utilizando la función `io.stderr:write()`. Así es como puedes escribir un simple mensaje de error en el error estándar:
 

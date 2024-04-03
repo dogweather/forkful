@@ -10,16 +10,10 @@ title: Generering av tilfeldige tall
 weight: 12
 ---
 
-## Hva & Hvorfor?
-
-Generering av tilfeldige tall i TypeScript handler om å skape uforutsigbare numeriske verdier innenfor et spesifisert område. Programmerere utnytter disse tilfeldige sifrene til en rekke formål, som å generere unike identifikatorer, simulere data for testing, eller legge til uforutsigbarhet i spill og simuleringer.
-
 ## Hvordan:
-
 I TypeScript kan du generere tilfeldige tall ved å bruke det globale `Math`-objektet. Nedenfor er noen praktiske eksempler som demonstrerer hvordan du produserer tilfeldige tall for ulike behov.
 
 ### Generering av et grunnleggende tilfeldig tall
-
 For å generere et grunnleggende tilfeldig desimaltall mellom 0 (inklusiv) og 1 (eksklusiv), bruker du `Math.random()`. Dette krever ingen ytterligere manipulasjon:
 
 ```TypeScript
@@ -30,7 +24,6 @@ console.log(randomNumber);
 Dette kan gi en verdi som `0.8995452185604771`.
 
 ### Generering av et tilfeldig heltall mellom to verdier
-
 Når du trenger et heltall mellom to spesifikke verdier, inkluderer du både `Math.random()` og noe aritmetikk:
 
 ```TypeScript
@@ -47,7 +40,6 @@ console.log(randomInt);
 Dette kan gi et heltall mellom 1 og 10, som `7`.
 
 ### Generering av en unik identifikator
-
 Tilfeldige tall kan kombineres med andre metoder for å skape unike identifikatorer, for eksempel en enkel UUID-generatorbolk:
 
 ```TypeScript
@@ -65,7 +57,6 @@ console.log(uuid);
 Dette genererer en streng som likner en UUID, som `110e8400-e29b-41d4-a716-446655440000`.
 
 ## Dypdykk
-
 Den primære metoden for å generere tilfeldige tall i JavaScript og dermed i TypeScript, `Math.random()`, er avhengig av en pseudo-tilfeldig tallgenerator (PRNG). Det er viktig å merke seg at selv om resultatene kan virke tilfeldige, genereres de av en deterministisk algoritme basert på en opprinnelig startverdi. Derfor er tall produsert av `Math.random()` ikke virkelig tilfeldige og bør ikke brukes til kryptografiske formål.
 
 For kryptografisk sikre tilfeldige tall tilbyr Web Crypto API `crypto.getRandomValues()`, som er tilgjengelig i miljøer som støtter Web Crypto-standarden, inkludert moderne nettlesere og Node.js (via `crypto`-modulen). Her er et raskt eksempel som illustrerer bruken av det i TypeScript for å generere et sikkert tilfeldig tall innenfor et område:

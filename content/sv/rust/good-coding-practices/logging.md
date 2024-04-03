@@ -11,12 +11,7 @@ title: Loggning
 weight: 17
 ---
 
-## Vad & Varför?
-
-Loggning är som att föra en journal för din applikation; det är praxis att registrera händelser, fel och annan relevant data under körning. Utvecklare använder loggar för att diagnostisera problem, övervaka systembeteende och samla insikter som driver förbättringar – det är grunden för operationell intelligens.
-
 ## Hur man gör:
-
 Låt oss ställa in ett grundläggande loggningscenario i Rust med hjälp av `log`-craten, som tillhandahåller en loggningsfasad, och `env_logger`, en loggningsimplementering för `log`-craten. Lägg först till dem i din Cargo.toml:
 
 ```toml
@@ -48,7 +43,6 @@ WARN: Det här är ett varningsmeddelande.
 Lek med `RUST_LOG`-miljövariabeln genom att ställa in den till `error`, `warn`, `info`, `debug` eller `trace` för att kontrollera loggarnas detaljnivå.
 
 ## Fördjupning
-
 Konceptet med loggning är inte något nytt; det har funnits sedan datorteknikens tidiga dagar. Innan loggning var vanligt i mjukvara, förlitade sig utvecklare på primitiva metoder som utskriftsuttryck eller felsökningsverktyg för att spåra programexekvering. När programmen blev mer komplexa, ökade också behovet av strukturerade metoder för loggning.
 
 I Rust abstraherar `log`-craten bort detaljerna i loggningsimplementering, vilket låter utvecklare koppla in olika loggningsbakdelar. Även om `env_logger` är ett vanligt val, finns det alternativ som `fern`, `slog` eller `tracing`, var och en med sitt eget utbud av funktioner och konfigurationsalternativ.
@@ -66,7 +60,6 @@ Några överväganden när man implementerar loggning inkluderar:
 5. **Konfiguration**: Många loggningsramverk stödjer konfiguration genom miljövariabler, konfigurationsfiler och/eller kod. Denna flexibilitet är nyckeln till finjustering av utskrift i olika miljöer (utveckling, staging, produktion).
 
 ## Se även
-
 - `log`-cratens dokumentation: https://docs.rs/log/
 - `env_logger`-cratens dokumentation: https://docs.rs/env_logger/
 - Rust by Example-loggningssida: https://doc.rust-lang.org/rust-by-example/std_misc/log.html

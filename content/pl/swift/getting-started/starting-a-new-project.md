@@ -10,11 +10,6 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## What & Why?
-Co to jest i dlaczego?
-
-Rozpoczynanie nowego projektu to stworzenie podstaw dla Twojego kodu Świft. Programiści robią to, aby zacząć czystą kartą, z wyraźnym celem i organizacją, która pozwala aplikacji rosnąć w zdrowy sposób.
-
 ## How to:
 Jak to zrobić:
 

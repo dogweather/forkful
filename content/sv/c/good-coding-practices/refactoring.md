@@ -15,12 +15,7 @@ title: Refaktorisering
 weight: 19
 ---
 
-## Vad & Varför?
-
-Refaktorering inom programmering innebär att man omstrukturerar befintlig kod utan att ändra dess externa beteende, med målet att förbättra icke-funktionella attribut som läsbarhet, minska komplexitet och öka underhållbarheten. Programmerare refaktorerar för att hålla kodbasen ren, minimera teknisk skuld och göra framtida ändringar enklare och säkrare att genomföra.
-
 ## Hur man gör:
-
 Refaktorering kan innefatta en rad taktiker från att byta namn på variabler för klarhet till att ändra kodens struktur för bättre modularisering. Här är ett enkelt exempel som demonstrerar hur man refaktorerar en bit C-kod för bättre klarhet och effektivitet.
 
 Före refaktorering:
@@ -63,7 +58,6 @@ int main() {
 Utmatningen är oförändrad, men funktionaliteten för att byta värden har flyttats till en separat funktion (`swap`), vilket förbättrar läsbarheten och återanvändbarheten.
 
 ## Djupdykning
-
 Praxisen att refaktorera kod har funnits så länge som mjukvaruutveckling själv, och utvecklas parallellt med programmeringsparadigm och språk. I C, ett språk som är både kraftfullt och fyllt med möjligheter för ineffektivitet och fel på grund av sin lågnivå karaktär, är refaktorering särskilt avgörande. Det kan göra skillnaden mellan en kodbas som är underhållbar och en som är ett virrvarr av ineffektivitet.
 
 En övervägning som är specifik för C är balansen mellan mikrooptimeringar och läsbarhet/underhållbarhet. Även om det är frestande att handjustera C-kod för varenda uns av prestanda, kan sådana optimeringar göra koden mer skör och svårare att läsa. Därför är det vanligtvis bättre att prioritera ren, läsbar kod och lita på kompilatorns optimerare för att hantera prestandaförbättringar där det är möjligt.

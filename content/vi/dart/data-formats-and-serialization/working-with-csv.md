@@ -17,16 +17,10 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---
 
-## Cái gì & Tại sao?
-
-Làm việc với các tệp CSV (Comma Separated Values - Giá trị Tách bởi Dấu phẩy) bao gồm việc phân tích và tạo các tệp văn bản mà mỗi dòng chứa các giá trị được tách bởi dấu phẩy. Các lập trình viên thực hiện điều này để kích hoạt trao đổi dữ liệu giữa các ứng dụng khác nhau hoặc để tạo điều kiện lưu trữ dữ liệu một cách nhẹ nhàng, dễ đọc.
-
 ## Làm thế nào:
-
 Để xử lý tệp CSV trong Dart, bạn thường xử lý văn bản thủ công hoặc sử dụng các thư viện bên thứ ba để đơn giản hóa công việc. Ở đây, chúng ta sẽ xem xét cả hai cách tiếp cận.
 
 ### Phân tích CSV Thủ công
-
 Nếu nhu cầu của bạn đơn giản, bạn có thể chọn phân tích cú pháp một chuỗi CSV một cách thủ công. Điều này có thể được thực hiện bằng cách sử dụng các hàm thao tác chuỗi cốt lõi của Dart:
 
 ```dart
@@ -59,7 +53,6 @@ void main() {
 ```
 
 ### Sử dụng Thư viện Bên thứ Ba: `csv`
-
 Đối với các tình huống phức tạp hơn hoặc để đơn giản hóa mã của bạn, bạn có thể sử dụng một thư viện bên thứ ba phổ biến như `csv`. Đầu tiên, hãy thêm nó vào dự án của bạn bằng cách bao gồm `csv: ^5.0.0` (hoặc phiên bản mới nhất) trong tệp `pubspec.yaml` của bạn dưới `dependencies`. Sau đó sử dụng nó như sau:
 
 ```dart

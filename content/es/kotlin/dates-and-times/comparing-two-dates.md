@@ -10,12 +10,7 @@ title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---
 
-## ¿Qué & Por Qué?
-
-Comparar dos fechas es verificar si son iguales, cuál es anterior o posterior. Los programadores lo hacen para gestionar eventos, determinar plazos o programar recordatorios.
-
 ## Cómo:
-
 ```kotlin
 import java.time.LocalDate
 
@@ -35,7 +30,6 @@ fun main() {
 ```
 
 ## Exploración Profunda:
-
 Históricamente, trabajar con fechas en Java y Kotlin era complicado. Antes de Java 8, la clase `Date` y `Calendar` eran las únicas opciones, llenas de problemas y limitaciones. Con Java 8 apareció la API `java.time`, la cual Kotlin hereda, simplificando la manipulación de fechas.
 
 Hay alternativas, como Joda-Time, pero desde Java 8 su uso ha disminuido. Al comparar fechas, es crucial considerar las zonas horarias; `LocalDate` ignora la zona horaria, mientras que `ZonedDateTime` la maneja.
@@ -43,6 +37,5 @@ Hay alternativas, como Joda-Time, pero desde Java 8 su uso ha disminuido. Al com
 Detalles de implementación: `LocalDate` no incluye información de tiempo o zona horaria, lo que la hace ideal para comparar fechas sin complicaciones de tiempo. Al comparar, siempre asegúrate de que estás utilizando el tipo de fecha/hora correcto para tu contexto.
 
 ## Ver También:
-
 - Guía sobre la API `java.time`: [Date and Time Classes](https://docs.oracle.com/javase/tutorial/datetime/iso/)
 - Diferencias entre `LocalDate` y `ZonedDateTime`: [LocalDate vs ZonedDateTime](https://www.baeldung.com/java-8-date-time-intro)

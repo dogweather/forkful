@@ -19,9 +19,6 @@ title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uB
 weight: 45
 ---
 
-## What & Why? (무엇과 왜?)
-HTTP 기본 인증으로 요청을 보내는 것은, 클라이언트가 서버에 사용자 이름과 비밀번호를 전송하여 자신을 인증하는 방식입니다. 이는 보안이 필요한 데이터에 접근할 때 사용됩니다.
-
 ## How to: (어떻게:)
 ```C++
 #include <iostream>

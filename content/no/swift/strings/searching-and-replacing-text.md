@@ -11,9 +11,6 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## Hva & Hvorfor?
-Søke og erstatte tekst lar deg finne og skifte ut ord eller fraser i en streng. Det sparer tid og minimerer feil når du jobber med store datamengder eller oppdaterer kode.
-
 ## Hvordan:
 ```Swift
 let originalText = "Det var en gang en programmerer som kodet Swift."

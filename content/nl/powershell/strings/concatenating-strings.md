@@ -13,9 +13,6 @@ title: Samenvoegen van strings
 weight: 3
 ---
 
-## Wat & Waarom?
-Het combineren van strings, of concatenatie, is zoals het maken van een trein van woorden. We doen het om teksten samen te voegen, zinnen te vormen, of eender welke situatie waarin afzonderlijke strings maatjes moeten worden en één geheel vormen.
-
 ## Hoe:
 Laten we er meteen induiken:
 

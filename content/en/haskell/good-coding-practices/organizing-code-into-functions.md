@@ -10,9 +10,6 @@ title: Organizing code into functions
 weight: 18
 ---
 
-## What & Why?
-Organizing code into functions in Haskell means breaking down your code into reusable, named blocks. Why? It keeps your code DRY (Don't Repeat Yourself), makes it readable, and easier to debug.
-
 ## How to:
 Here's how you can write and use functions in Haskell:
 

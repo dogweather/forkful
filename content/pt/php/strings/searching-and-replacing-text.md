@@ -11,9 +11,6 @@ title: Pesquisando e substituindo texto
 weight: 10
 ---
 
-## O Que & Porquê?
-Procurar e substituir texto em PHP é como mudar uma palavra específica em um livro inteiro. Programadores fazem isso para atualizar dados, corrigir erros ou alterar a informação rapidamente sem ter que procurar manualmente por cada ocorrência.
-
 ## Como Fazer:
 ```PHP
 <?php

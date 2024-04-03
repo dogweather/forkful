@@ -12,9 +12,6 @@ title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---
 
-## Co i dlaczego?
-Logowanie to proces rejestrowania zachowań aplikacji, błędów i innych ważnych informacji na trwałym nośniku, takim jak plik lub baza danych. Programiści robią to, aby śledzić stan i wydajność swoich aplikacji, debugować problemy i mieć oko na to, co się dzieje w środowiskach produkcyjnych pod "maską".
-
 ## Jak to zrobić:
 W Swift możesz zapisywać logi na konsoli za pomocą instrukcji print lub bardziej elastycznego interfejsu API `os.log`, który łączy się z Zintegrowanym Systemem Logowania na platformach Apple.
 

@@ -13,9 +13,6 @@ title: Encontrando la longitud de una cadena
 weight: 7
 ---
 
-## ¿Qué & Por qué?
-Encontrar la longitud de una cadena en C implica determinar el número de caracteres antes del terminador nulo `\0`. Los programadores hacen esto para manipular cadenas correctamente sin encontrarse con errores como desbordamientos de búfer, que pueden llevar a vulnerabilidades de seguridad o caídas del programa.
-
 ## Cómo hacerlo:
 En C, la función estándar de la biblioteca `strlen()` se usa comúnmente para encontrar la longitud de una cadena. Aquí hay un ejemplo rápido:
 

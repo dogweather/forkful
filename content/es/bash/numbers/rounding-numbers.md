@@ -10,12 +10,7 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## Qué y Por Qué?
-
-Redondear números significa cortar los decimales a un valor más simple que es suficientemente bueno para un contexto dado. Los programadores redondean números para simplificar resultados, ahorrar espacio, o porque el valor exacto no es vital, como cuando estás estimando el uso de CPU o el espacio en disco, y los decimales no van a cambiar tu día.
-
 ## Cómo hacerlo:
-
 Aquí tienes la esencia sobre el redondeo en Bash:
 
 ```Bash
@@ -42,7 +37,6 @@ Salidas de muestra—directamente de la boca del terminal:
 ```
 
 ## Análisis Detallado
-
 En los viejos tiempos, no había `bc` ni `printf` en los scripts de Bash para hacer magia matemática. Los de la vieja escuela tenían que depender de herramientas externas o trucos ingeniosos. Ahora, `bc` te permite hacer matemáticas de precisión. Ten en cuenta, `bc` no redondea por defecto—realiza un floor. La parte de la escala establece la acción del punto decimal.
 
 ¿Alternativas? Podrías usar `awk` para redondear sin cambiar a `bc` o lidiar con `perl` para necesidades matemáticas más pesadas. Para los masoquistas, ve con Bash puro, digamos, manipulación de cadenas iterativas, pero ¿por qué?
@@ -50,7 +44,6 @@ En los viejos tiempos, no había `bc` ni `printf` en los scripts de Bash para ha
 En cuanto a detalles, `bc` no solo redondea, hace montones de cosas matemáticas—escalalo, sinelo, raíz cuadrado, lo que sea. Con `printf`, se trata más de formatear texto, pero oye, redondea números, así que no nos quejamos.
 
 ## Ver También
-
 Para aquellos con hambre de más:
 
 - Manual de GNU `bc`: https://www.gnu.org/software/bc/manual/html_mono/bc.html

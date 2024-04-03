@@ -11,9 +11,6 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-## What & Why?
-Co to jest obliczanie daty w przyszłości lub przeszłości? To po prostu wyliczanie nowej daty, dodając lub odejmując czas od danej daty początkowej. Programiści robią to często – zarządzają terminami, planują zdarzenia, tworzą logi.
-
 ## How to:
 C# ma mocne wsparcie dla operacji na datach. Spójrz na poniższe przykłady.
 

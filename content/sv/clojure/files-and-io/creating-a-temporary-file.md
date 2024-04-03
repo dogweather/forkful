@@ -11,9 +11,6 @@ title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---
 
-## Vad & Varför?
-Att skapa en temporär fil betyder att du tillfälligt lagrar data på disken. Programmerare gör detta för att hantera data som inte behöver vara permanent eller när de testar kod som interagerar med filsystemet.
-
 ## Hur gör man:
 ```Clojure
 (require '[clojure.java.io :as io])

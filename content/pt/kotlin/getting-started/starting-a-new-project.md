@@ -11,9 +11,6 @@ title: Iniciando um novo projeto
 weight: 1
 ---
 
-## What & Why? (O Que & Por Que?)
-Iniciar um projeto novo é como montar o quebra-cabeça do zero – você tem um monte de peças (ideias) e precisa juntá-las. Programadores fazem isso para transformar conceitos em software funcional, resolver problemas ou explorar tecnologias novas.
-
 ## How to: (Como Fazer:)
 Vamos começar um projeto Kotlin usando a ferramenta de linha de comando do IntelliJ (o `IdeaProjects`):
 

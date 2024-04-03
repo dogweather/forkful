@@ -11,9 +11,6 @@ title: Tworzenie pliku tymczasowego
 weight: 21
 ---
 
-## What & Why?
-Tworzenie pliku tymczasowego to proces generowania pliku, który jest przeznaczony do krótkotrwałego użycia. Programiści robią to, by przeprowadzać testy, zarządzać danymi tymczasowymi lub uniknąć zakłóceń w pracy ciągłej aplikacji.
-
 ## How to:
 ```java
 import java.io.File;

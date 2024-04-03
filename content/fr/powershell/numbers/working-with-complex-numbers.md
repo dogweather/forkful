@@ -12,9 +12,6 @@ title: Manipulation des nombres complexes
 weight: 14
 ---
 
-## Quoi et Pourquoi ?
-Les nombres complexes, ceux ayant une partie réelle et une partie imaginaire (comme 3 + 4i), sont essentiels dans des domaines tels que l'ingénierie, la physique et la science des données. Les programmeurs les utilisent pour des simulations, le traitement de signal et la résolution de types spécifiques de problèmes mathématiques.
-
 ## Comment faire :
 PowerShell n'a pas de support intégré pour les nombres complexes, donc vous devez soit développer votre propre solution, soit utiliser `System.Numerics.Complex` de .NET.
 

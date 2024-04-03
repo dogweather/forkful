@@ -11,9 +11,6 @@ title: "Ermittlung der Zeichenkettenl\xE4nge"
 weight: 7
 ---
 
-## What & Why? (Was & Warum?)
-String-Längen messen, bedeutet, zu zählen, wie viele Zeichen in einer Zeichenkette stecken. Programmierer brauchen das, um Daten zu validieren, Slices zu handhaben oder die Ausgabe zu formatieren.
-
 ## How to (Wie geht das)
 ```lua
 -- Einfaches Beispiel

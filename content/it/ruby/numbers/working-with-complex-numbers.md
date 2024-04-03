@@ -10,9 +10,6 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-## Cosa & Perché?
-I numeri complessi, costituiti da una parte reale e una immaginaria (come 3+4i), sono fondamentali in ingegneria e fisica. I programmatori li utilizzano in simulazioni, elaborazione di segnali e nella risoluzione di equazioni che non funzionano bene solo con i numeri reali.
-
 ## Come fare:
 Ruby rende molto semplice la gestione dei numeri complessi. Puoi crearli e manipolarli utilizzando la classe Complex:
 

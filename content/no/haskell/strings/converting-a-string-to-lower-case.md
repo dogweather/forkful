@@ -11,9 +11,6 @@ title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---
 
-## Hva & Hvorfor?
-Å konvertere en tekststreng til små bokstaver betyr å gjøre alle bokstavene i strengen til miniatyrversjoner (små bokstaver). Programmerere gjør dette for å standardisere tekstdata, for eksempel når de sammenligner brukerinput eller sorterer data.
-
 ## Hvordan:
 ```Haskell
 import Data.Char (toLower)

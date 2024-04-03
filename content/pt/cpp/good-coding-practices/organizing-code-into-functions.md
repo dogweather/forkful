@@ -11,9 +11,6 @@ title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---
 
-## O Quê e Por Quê?
-Dividir o código em funções significa esculpir seu código em blocos menores e reutilizáveis. Fazemos isso para evitar repetição, tornar nosso código legível e simplificar a depuração e o teste. Funções bem organizadas podem ser como ter uma caixa de ferramentas ordenadas e devidamente etiquetadas, prontas para usar e compartilhar.
-
 ## Como fazer:
 Vamos pegar uma tarefa comum: calcular a área de um círculo. Em vez de escrever a mesma fórmula todas as vezes, encapsulamos ela em uma função.
 

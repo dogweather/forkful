@@ -11,9 +11,6 @@ title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---
 
-## Mitä ja miksi?
-Lainausmerkkien poistaminen merkkijonosta PowerShellissä poistaa yksittäiset (`'`) tai kaksinkertaiset (`"`) lainausmerkit tekstin ympäriltä. Ohjelmoijat tarvitsevat usein puhdistaa merkkijonoja käsittelyä, vertailua tai tulostusta varten, erityisesti käsiteltäessä käyttäjän syötettä tai tiedoston jäsentämistä.
-
 ## Kuinka:
 Voit käyttää `-replace`-operaattoria poistaaksesi lainausmerkit merkkijonosta. Näin se tapahtuu:
 

@@ -11,9 +11,6 @@ title: Vergleich von zwei Daten
 weight: 27
 ---
 
-## What & Why? (Was & Warum?)
-Das Vergleichen von zwei Daten bedeutet, zu überprüfen, welches Datum früher ist, später oder ob sie identisch sind. Programmierer machen das, um Termine zu sortieren, Ereignisse zu planen oder Zeitspannen zu berechnen.
-
 ## How to: (Wie geht das?)
 Hier ist ein einfaches Beispiel, wie du zwei Daten in Python vergleichst:
 

@@ -16,12 +16,7 @@ title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---
 
-## Cái gì & Tại sao?
-
-So sánh hai ngày bao gồm việc xác định mối quan hệ về thời gian của chúng—chúng có giống nhau không, cái nào sớm hơn, hay có thể là muộn hơn? Lập trình viên làm việc này để lên lịch cho các sự kiện, sắp xếp các dòng thời gian và kiểm tra khoảng thời gian.
-
 ## Làm thế nào:
-
 Hãy so sánh một số ngày:
 
 ```TypeScript
@@ -49,7 +44,6 @@ false
 ```
 
 ## Ôn lại
-
 Trước đây, ngày tháng là một đống hỗn độn về định dạng và các tính toán lộn xộn. Với JavaScript (và TypeScript mở rộng), đối tượng `Date` đã đơn giản hóa mọi thứ, tiêu chuẩn hóa cách chúng ta xử lý thời gian.
 
 Có phương án khác không? Chắc chắn. Các thư viện như `moment.js` hay `date-fns` tăng cường khả năng xử lý ngày tháng với chức năng bổ sung. Nhưng đối với các so sánh cơ bản? Sự đơn giản của Native Date thường làm tốt công việc.
@@ -57,7 +51,6 @@ Có phương án khác không? Chắc chắn. Các thư viện như `moment.js` 
 Bên trong, `Date.getTime()` lấy số milliseconds từ kỷ nguyên (ngày 1 tháng 1 năm 1970). So sánh các giá trị này loại bỏ đi những rắc rối về múi giờ và giây nhuận, đưa mọi thứ về con số.
 
 ## Xem thêm
-
 - [Mozilla Developer Network Date Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) để biết chi tiết về đối tượng Date.
 - [You Don't Need Moment.js](https://github.com/you-dont-need/You-Dont-Need-Momentjs) cho những lúc bạn có thể, hoặc có thể không, cần một thư viện.
 - [Tài liệu Chính thức của TypeScript](https://www.typescriptlang.org/docs/) để biết thêm về sức mạnh và những hạn chế của TypeScript.

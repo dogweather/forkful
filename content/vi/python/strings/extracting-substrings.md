@@ -15,9 +15,6 @@ title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---
 
-## Gì & Tại sao?
-Trích xuất chuỗi con có nghĩa là lấy ra các phần cụ thể của một chuỗi, giống như cắt một mảnh từ một sợi ruy băng. Lập trình viên làm điều này để tách dữ liệu, phân tích thông tin, hoặc đơn giản chỉ là thao tác với văn bản.
-
 ## Cách thực hiện:
 ```Python
 # Sử dụng ký hiệu cắt

@@ -12,12 +12,7 @@ title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---
 
-## Qué y Por Qué?
-
-Escribir en el error estándar (`stderr`) en C++ implica sacar mensajes de error o diagnósticos que están separados de la salida principal del programa. Los programadores hacen esto para dirigir los errores a un flujo diferente, permitiendo una depuración y manejo de errores más sencillo al distinguir entre la salida normal y los mensajes de error.
-
 ## Cómo hacerlo:
-
 En C++, escribir en el error estándar se puede lograr utilizando el flujo `cerr`, que es parte de la biblioteca estándar. Aquí hay un ejemplo básico:
 
 ```cpp

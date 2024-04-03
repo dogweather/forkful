@@ -11,9 +11,6 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## What & Why? (Co i dlaczego?)
-Wysyłanie żądania HTTP to po prostu pytanie, które komputer zadaje serwerowi w sieci. Programiści robią to, by pobrać dane, wysłać informacje lub komunikować się z usługami webowymi.
-
 ## How to: (Jak to zrobić:)
 Aby wysłać żądanie HTTP w Rust, możesz użyć popularnej biblioteki `reqwest`. Oto prosty przykład:
 

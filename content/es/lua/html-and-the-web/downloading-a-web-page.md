@@ -11,9 +11,6 @@ title: "Descargando una p\xE1gina web"
 weight: 42
 ---
 
-## ¿Qué y por qué?
-Descargar una página web es obtener su contenido completo a través de Internet. Los programadores lo hacen para analizar datos, verificar disponibilidad o interactuar con servicios en línea.
-
 ## Cómo hacerlo:
 Usaremos la biblioteca `socket.http` para descargar el contenido de una página web. Primero, instala la biblioteca si aún no lo has hecho:
 

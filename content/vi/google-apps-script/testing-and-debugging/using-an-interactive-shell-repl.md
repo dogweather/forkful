@@ -20,12 +20,7 @@ title: "S\u1EED d\u1EE5ng giao di\u1EC7n d\xF2ng l\u1EC7nh t\u01B0\u01A1ng t\xE1
 weight: 34
 ---
 
-## Là gì & Tại sao?
-
-Giao diện lập trình tương tác, hay vòng lặp Đọc-Đánh giá-In (REPL), là một môi trường lập trình tương tác đơn giản, lấy đầu vào đơn lẻ từ người dùng (biểu thức), đánh giá chúng và trả kết quả lại cho người dùng. Lập trình viên sử dụng REPL cho việc tạo mẫu nhanh, gỡ lỗi và học cú pháp cũng như cách hoạt động của ngôn ngữ lập trình một cách tương tác.
-
 ## Làm thế nào:
-
 Google Apps Script, một ngôn ngữ lập trình dựa trên đám mây để tự động hóa các nhiệm vụ qua các sản phẩm của Google, không có công cụ REPL tích hợp giống như các ngôn ngữ khác như Python hay Node.js của JavaScript. Tuy nhiên, bạn có thể mô phỏng trải nghiệm tương tự sử dụng các tính năng ghi nhật ký và gỡ lỗi của Trình soạn thảo Apps Script hoặc bằng cách thiết lập một môi trường bên ngoài. Ở đây, chúng tôi tập trung vào việc tạo một REPL tạm thời trong Trình soạn thảo Apps Script.
 
 1. **Tạo một hàm REPL tạm thời**:
@@ -67,7 +62,6 @@ Sau khi chạy `myREPL()`, kiểm tra Nhật ký (Xem > Nhật ký) để xem đ
 Đối với việc gỡ lỗi phức tạp hơn, xen kẽ `Logger.log(biến);` trong mã của bạn để in trạng thái của biến, giúp bạn hiểu dòng chảy và trạng thái trung gian của các script của mình.
 
 ## Sâu hơn nữa
-
 Khái niệm về REPL gắn liền sâu rễ trong lịch sử của việc tính toán, bắt nguồn từ thời hệ thống chia sẻ thời gian của những năm 1960, cho phép các phiên tương tác. Ngôn ngữ như Lisp đã phát triển mạnh mẽ trong môi trường này, vì REPL rất quan trọng cho quá trình phát triển lặp lại của chúng. Trái lại, Google Apps Script, xuất hiện sau nhiều, chủ yếu được thiết kế cho web, tập trung vào tự động hóa nhiệm vụ trong bộ sản phẩm của Google hơn là lập trình dựa trên bảng điều khiển lặp lại.
 
 Google Apps Script truyền thống không hỗ trợ phiên mã hóa tương tác, thời gian thực ngay lập tức do bản chất dựa trên đám mây và tập trung vào triển khai ứng dụng web của nó. Mô hình thực thi của nó xoay quanh các hàm được kích hoạt bởi sự kiện web, kích hoạt theo thời gian, hoặc kích hoạt thủ công trong môi trường, thay vì các vòng lặp phản hồi tức thì mà REPL cung cấp.

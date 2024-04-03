@@ -13,9 +13,6 @@ title: Een nieuw project starten
 weight: 1
 ---
 
-## Wat & Waarom?
-Een nieuw PHP-project starten betekent een basis opzetten om je webapp of script op te bouwen. We doen dit om fris te starten, onze ideeën in code te structureren, en nieuwe problemen op te lossen.
-
 ## Hoe te:
 Begin je project door een structuur te kiezen. Composer is hier je vriend. Voer dit uit:
 

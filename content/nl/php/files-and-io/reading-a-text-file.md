@@ -13,10 +13,9 @@ title: Een tekstbestand lezen
 weight: 22
 ---
 
-## Wat & Waarom?
-Een tekstbestand lezen in PHP betekent inhoud uit een bestand halen en in je script brengen. Programmeurs doen dit om gegevensopslag, configuratie te beheren, of om grote datasets te verwerken zonder hun code te belasten.
-
 ## Hoe te:
+
+
 ### Gebruikmakend van `file_get_contents`:
 ```PHP
 $content = file_get_contents("example.txt");

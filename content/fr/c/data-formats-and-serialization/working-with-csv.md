@@ -16,11 +16,8 @@ title: Travailler avec CSV
 weight: 37
 ---
 
-## Quoi & Pourquoi ?
-
-Dans le domaine de la programmation, travailler avec des fichiers CSV (Valeurs Séparées par des Virgules) implique de lire et d'écrire des données dans des fichiers texte organisés par lignes, où chaque ligne représente un enregistrement et les champs de chaque enregistrement sont séparés par des virgules. Les programmeurs manipulent des fichiers CSV pour faciliter l'import/export de données à travers divers systèmes, en raison de leur prise en charge répandue et de leur simplicité pour le stockage de données tabulaires.
-
 ## Comment faire :
+
 
 ### Lire des fichiers CSV
 Pour lire un fichier CSV en C, nous utilisons des fonctions d'I/O de fichiers standards ainsi que des fonctions de manipulation de chaînes de caractères pour analyser chaque ligne. Voici un exemple basique de lecture d'un fichier CSV et d'affichage des champs de chaque ligne dans la console.
@@ -96,7 +93,6 @@ Jane Doe,27,Data Scientist
 ```
 
 ## Approfondissement
-
 Le format CSV, bien qu'apparemment simple, comporte ses nuances, comme la gestion des virgules dans les champs et l'encapsulation des champs avec des guillemets. Les exemples rudimentaires présentés ne tiennent pas compte de ces complexités, ni ne gèrent les erreurs potentielles de manière robuste.
 
 Historiquement, la gestion des CSV en C a été largement manuelle en raison de la nature bas-niveau du langage et de l'absence d'abstractions de haut niveau intégrées pour de telles tâches. Cette gestion manuelle inclut l'ouverture de fichiers, la lecture de lignes, le fractionnement de chaînes et la conversion des types de données au besoin.

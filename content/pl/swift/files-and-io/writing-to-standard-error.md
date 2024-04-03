@@ -14,12 +14,7 @@ title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---
 
-## Co i dlaczego?
-
-Pisanie do standardowego błędu (stderr) polega na kierowaniu komunikatów o błędach lub wyjścia diagnostycznego programu do osobnego strumienia, odrębnego od standardowego wyjścia (stdout). Jest to kluczowe dla debugowania i logowania błędów bez zaśmiecania standardowego wyjścia, co ułatwia zarówno programistom, jak i użytkownikom zrozumienie stanu i problemów programu.
-
 ## Jak to zrobić:
-
 W Swift pisanie do standardowego błędu można wykonać za pomocą klasy `FileHandle` do bezpośredniego dostępu do stderr. Oto prosty przykład:
 
 ```swift

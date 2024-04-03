@@ -11,9 +11,6 @@ title: Refaktoryzacja
 weight: 19
 ---
 
-## Co i dlaczego?
-Refaktoryzacja to proces restrukturyzacji istniejącego kodu komputerowego bez zmiany jego zewnętrznego zachowania. Programiści wykonują ją, aby kod był czystszy, łatwiejszy do utrzymania i aby zredukować jego złożoność, co ułatwia zrozumienie kodu osobie, która zaczyna się z nim zapoznawać.
-
 ## Jak to zrobić:
 Rozważmy funkcję TypeScript, która miała lepsze dni - jest nieco bałaganu i potrzebuje trochę troskliwej opieki:
 

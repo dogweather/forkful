@@ -11,9 +11,6 @@ title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---
 
-## O Que & Por Que?
-Arredondar números significa ajustá-los para que fiquem mais próximos de um valor mais simples ou significativo. Programadores arredondam números para simplificar resultados, limitar casas decimais para exibição ou para determinados fins matemáticos.
-
 ## Como Fazer:
 Aqui está o essencial sobre arredondamento de números em Python:
 

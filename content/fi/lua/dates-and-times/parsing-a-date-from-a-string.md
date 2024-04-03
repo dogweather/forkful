@@ -14,9 +14,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---
 
-## Mikä & Miksi?
-Päivämäärän jäsentäminen merkkijonosta merkitsee tekstiesitysten muuntamista päivämääristä ja ajoista sellaiseen formaattiin, jota on helppo käsitellä, tallentaa tai verrata Lua-ohjelmassa. Ohjelmoijat suorittavat tämän tehtävän helpottaakseen toimintoja, kuten aikataulutusta, lokitusta tai mitä tahansa aikaa koskevia laskelmia, ja siltana ihmisen luettavien päivämääräformaatien ja tietokoneen tehokkaasti käsittelemien rakenteellisten datatyyppien välillä.
-
 ## Kuinka:
 Lua ei tarjoa sisäänrakennettua tukea päivämäärän ja ajan käsittelyyn sen rajatun toiminnallisuuden yli, jota `os.date` ja `os.time` funktiot tarjoavat. Kuitenkin näitä voidaan hyödyntää perusjäsennykseen, ja monimutkaisempiin vaatimuksiin voidaan käyttää `luadate`-kirjastoa, joka on ulkoinen kirjasto.
 

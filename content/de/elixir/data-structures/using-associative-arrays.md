@@ -13,12 +13,7 @@ title: Verwendung von assoziativen Arrays
 weight: 15
 ---
 
-## Was & Warum?
-
-In Elixir sind assoziative Arrays, genannt Maps, Sammlungen von Schlüssel-Wert-Paaren, bei denen ein einzigartiger Schlüssel auf einen Wert zeigt. Sie sind super praktisch, um Daten unterwegs zu speichern und abzurufen, machen Ihren Code sauberer und Ihr Leben einfacher.
-
 ## Wie geht das:
-
 Eine Map zu erstellen, ist unkompliziert. Sie verwenden die Syntax `%{}`, so wie hier:
 
 ```elixir
@@ -50,7 +45,6 @@ IO.inspect(trimmed_map)
 Ausgabe: `%{"location" => "NY", "name" => "Alex"}`
 
 ## Tiefere Einblicke
-
 Maps in Elixir sind eine Weiterentwicklung der älteren Schlüssel-Wert-Speichertypen, wie Hashes in Ruby oder Dictionaries in Python. Sie ermöglichen effizientere Suchvorgänge und Einfügungen und sind daher die erste Wahl für moderne Elixir-Programmierung. Es ist erwähnenswert, dass vor Maps, Elixir die Module HashDict und Dict verwendete, die nun veraltet sind.
 
 Allerdings, für Szenarien, die geordnete Daten benötigen, könnten Sie sich Keyword-Listen in Elixir anschauen. Diese sind Listen von Tupeln, effizient für kleinere Sammlungen, aber nicht so leistungsfreundlich für große Datensätze wie Maps.

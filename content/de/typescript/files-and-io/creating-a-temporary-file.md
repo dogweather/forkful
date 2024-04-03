@@ -11,9 +11,6 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-## Was & Warum?
-Temporäre Dateien sind kurzlebige Datenspeicher, die während der Laufzeit eines Programms erstellt werden. Programmierer nutzen sie für Daten, die nur temporär benötigt werden, wie Zwischenspeicherung bei Batch-Prozessen oder um Daten vor dem endgültigen Schreiben zu sichern.
-
 ## So geht's:
 Um in TypeScript eine temporäre Datei zu erstellen, könntest du das `fs`-Modul und `tmp`-Paket verwenden. Hier ist ein einfaches Beispiel, das eine temporäre Datei erstellt, etwas hineinschreibt und den Pfad ausgibt:
 

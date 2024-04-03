@@ -11,9 +11,6 @@ title: Lancement d'un nouveau projet
 weight: 1
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Démarrer un nouveau projet, c'est créer un espace de travail vide pour vos idées de code. Les programmeurs font ça pour organiser et isoler le boulot sur une feature ou une app spécifique.
-
 ## How to: (Comment faire :)
 ```PowerShell
 # Création d'un nouveau dossier pour le projet

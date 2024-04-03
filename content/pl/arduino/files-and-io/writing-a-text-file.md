@@ -13,9 +13,6 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i dlaczego?
-Zapisywanie pliku tekstowego w Arduino polega na zapisywaniu danych na karcie SD lub podobnym module pamięci, często w celach rejestracji danych. Programiści robią to, aby rejestrować odczyty z sensorów, zapisywać konfiguracje lub logować zdarzenia aplikacji w czasie, co jest kluczowe dla projektów wymagających analizy danych lub śledzenia.
-
 ## Jak to zrobić:
 Aby zapisać plik tekstowy na karcie SD za pomocą Arduino, należy najpierw dołączyć bibliotekę `SD.h`, która zapewnia niezbędne funkcje do interakcji z kartami SD. Upewnij się, że Twoja płyta Arduino jest podłączona do modułu karty SD.
 

@@ -20,10 +20,8 @@ title: "\uD604\uC7AC \uB0A0\uC9DC \uAC00\uC838\uC624\uAE30"
 weight: 29
 ---
 
-## 무엇 & 왜?
-프로그래밍에서 현재 날짜를 얻는 것은 로깅, 이벤트 타임스탬핑, 작업 스케줄링 등 다양한 이유로 중요합니다. JVM상의 Lisp 방언인 Clojure에서, 이 작업은 Java 상호 운용성 기능을 활용하여 풍부한 Java Date-Time API에 대한 간편한 접근을 가능하게 합니다.
-
 ## 어떻게 하나요:
+
 
 ### Java 상호 운용성 사용하기
 Clojure의 Java와의 끊김없는 상호 운용성을 통해 Java Date-Time API를 직접 사용할 수 있습니다. 현재 날짜를 얻는 방법은 다음과 같습니다:

@@ -9,9 +9,6 @@ title: Scaricare una pagina web
 weight: 42
 ---
 
-## What & Why? 
-Quando scarichi una pagina web, copi i suoi contenuti dalla rete al tuo computer. I programmatori lo fanno per estrarre dati, testare siti, o per alimentare applicazioni con contenuti aggiornati.
-
 ## How to:
 Python rende il download di pagine web un gioco da ragazzi. Un modo semplice è usare `requests`. Ecco come:
 

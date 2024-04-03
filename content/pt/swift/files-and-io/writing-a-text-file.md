@@ -13,14 +13,10 @@ title: Escrevendo um arquivo de texto
 weight: 24
 ---
 
-## O que e Por quê?
-
-Escrever um arquivo de texto em Swift permite armazenar persistentemente dados em string no sistema de arquivos, o que é essencial para tarefas como salvar configurações, dados de usuários ou logs. Programadores frequentemente fazem isso para manter dados entre lançamentos de aplicativos, compartilhar dados entre diferentes partes de uma aplicação ou exportar dados para serem usados por outros programas.
-
 ## Como fazer:
 
-### Usando a Biblioteca Padrão do Swift
 
+### Usando a Biblioteca Padrão do Swift
 A biblioteca padrão do Swift inclui todas as ferramentas necessárias para escrever arquivos de texto. Aqui está uma abordagem básica:
 
 ```swift
@@ -41,7 +37,6 @@ do {
 Este trecho de código escreve uma string em um arquivo chamado `exemplo.txt` no diretório de documentos. Ele lida com possíveis erros usando a manipulação de erros do-try-catch do Swift.
 
 ### Usando FileManager para Mais Controle
-
 Para mais controle sobre os atributos do arquivo ou para verificar se o arquivo já existe, `FileManager` pode ser usado:
 
 ```swift
@@ -67,7 +62,6 @@ if let documentDirectory = directories.first {
 ```
 
 ### Usando Bibliotecas de Terceiros
-
 Uma biblioteca de terceiros popular para operações de sistema de arquivos em Swift é `Files` por John Sundell:
 
 Primeiro, adicione Files ao seu projeto, geralmente via Swift Package Manager.

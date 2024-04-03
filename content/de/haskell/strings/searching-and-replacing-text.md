@@ -11,9 +11,6 @@ title: Suchen und Ersetzen von Text
 weight: 10
 ---
 
-## Was & Warum?
-Text suchen und ersetzen ermöglicht es, bestimmte Zeichenketten in einem Text zu finden und durch andere zu ersetzen. Programmierer tun das oft, um Fehler zu korrigieren, Daten zu aktualisieren oder Code refactoring zu betreiben.
-
 ## How to:
 ```Haskell
 import Data.Text as T

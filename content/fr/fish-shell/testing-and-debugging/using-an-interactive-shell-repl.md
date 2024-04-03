@@ -12,9 +12,6 @@ title: Utilisation d'une console interactive (REPL)
 weight: 34
 ---
 
-## Quoi & Pourquoi ?
-REPL, ou Boucle Lire-Évaluer-Imprimer, est un environnement de programmation interactif qui prend des entrées utilisateur individuelles, les exécute et retourne le résultat. Les programmeurs l'utilisent pour obtenir des retours instantanés, pour le débogage, et pour l'expérimentation rapide avec des concepts de codage sans la charge de compiler et exécuter un programme complet.
-
 ## Comment faire :
 Dans Fish, le shell interactif est le mode par défaut lorsque vous le démarrez. Voici à quoi cela ressemble en action :
 

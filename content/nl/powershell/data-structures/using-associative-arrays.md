@@ -14,12 +14,7 @@ title: Gebruik van associatieve arrays
 weight: 15
 ---
 
-## Wat & Waarom?
-
-Associatieve arrays, ook bekend als hash-tabellen of woordenboeken in PowerShell, stellen je in staat om gegevens op te slaan in sleutel-waardeparen, wat de gegevensopvraging eenvoudig en efficiënt maakt. Programmeurs gebruiken ze om gerelateerde gegevens samen op te slaan op een manier die gemakkelijk toegankelijk is op sleutel.
-
 ## Hoe:
-
 Het creëren en gebruiken van associatieve arrays in PowerShell is vrij eenvoudig. Zo doe je de magie:
 
 **Een associatieve array creëren:**
@@ -77,7 +72,6 @@ location : New York
 ```
 
 ## Verdieping
-
 Het concept van associatieve arrays is gemeenschappelijk in veel programmeertalen, meestal een woordenboek, kaart, of hash-tabel genoemd, afhankelijk van de taal. In PowerShell worden associatieve arrays geïmplementeerd als hash-tabellen, die zeer efficiënt zijn voor het opzoeken van sleutels, het opslaan van gegevens en het onderhouden van een collectie van unieke sleutels.
 
 Historisch gezien bieden associatieve arrays een middel om collecties van objecten te beheren waar elk item snel kan worden opgehaald zonder door de hele collectie heen te itereren, met behulp van zijn sleutel. De efficiëntie van gegevensopvraging en -wijziging in associatieve arrays maakt ze een voorkeurskeuze voor verschillende taken. Ze hebben echter beperkingen, zoals het behouden van volgorde, waarvoor geordende woordenboeken of aangepaste objecten een beter alternatief zouden kunnen zijn.

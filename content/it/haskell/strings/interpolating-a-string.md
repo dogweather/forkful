@@ -11,9 +11,6 @@ title: Interpolazione di una stringa
 weight: 8
 ---
 
-## What & Why?
-Interpolare una stringa significa inserire dinamicamente espressioni o variabili direttamente all'interno di una stringa di testo. I programmatori lo fanno per costruire stringhe in modo flessibile e leggere, adattandole in base ai dati in esecuzione.
-
 ## How to:
 Haskell non ha l'interpolazione di stringa incorporata come altri linguaggi, ma possiamo ottenere un risultato simile usando la libreria `text` e il quasiquoter `str`.
 

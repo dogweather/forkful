@@ -11,9 +11,6 @@ title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---
 
-## Hva & Hvorfor?
-En REPL (Read-Eval-Print-Loop) er et enkelt, interaktivt programmeringsmiljø. Programmører bruker det for å eksperimentere med et språk i sanntid, for å utføre rask oppgaver, eller for å forstå nye konsepter uten overheaden ved å lage fullskala applikasjoner.
-
 ## Hvordan:
 C++ kommer ikke med innebygd REPL, men verktøy som Cling tilbyr denne muligheten. Her er hvordan du bruker Cling for å beregne summen av to tall:
 

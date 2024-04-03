@@ -10,12 +10,7 @@ title: "Loggf\xF8ring"
 weight: 17
 ---
 
-## Hva & Hvorfor?
-
-Logging er praksisen med å registrere hendelser, feil og andre betydningsfulle datapunkter som oppstår i livssyklusen til en programvareapplikasjon. Programmører utnytter logger for å hjelpe i feilsøkingsprosessen, overvåke systemhelsen, analysere brukeratferd og opprettholde en revisjonsspor for sikkerhet og overholdelse av regelverk.
-
 ## Hvordan gjør man det:
-
 Lua har ikke et innebygd rammeverk for logging, men det å implementere en enkel loggefunksjon er rett frem. Nedenfor er et grunnleggende eksempel på en slik funksjon:
 
 ```lua
@@ -40,7 +35,6 @@ Når ovenstående kode kjøres, vil du se utdata som dette:
 For mer avanserte loggbehov kan tredjepartsbiblioteker som LuaLogging inkluderes for å tilby ytterligere funksjonalitet som loggnivåer, flere håndteringer og formatspesifikasjoner.
 
 ## Dypdykk
-
 Historisk sett har logging vært en essensiell del av programvarediagnostikk og har blitt en etablert praksis siden programmeringens tidlige dager. Betydningen av logging kan ikke overdrives, da det tjener som 'svart boks' i tilfelle systemsvikt og gir innsikt i rotårsakene til problemer.
 
 Selv om eksemplet over bare tilfredsstiller de mest grunnleggende behovene, finnes det mange alternativer med rikere funksjonssett. Noen av disse inkluderer:
@@ -54,7 +48,6 @@ Når man dykker ned i implementeringen av et loggsystem, kan beslutningspunkter 
 For logging i distribuerte systemer er det vanlig å bruke sentraliserte loggadministrasjonsløsninger som ELK (Elasticsearch, Logstash og Kibana) eller Splunk, som kan aggregere logger fra flere kilder, tilby robuste søkefunksjoner og visualisere data for lettere feilsøking og analyse.
 
 ## Se også
-
 - LuaLogging-biblioteket på GitHub: https://github.com/lunarmodules/lualogging
 - Introduksjon til ELK-stack: https://www.elastic.co/what-is/elk-stack
 - Lua-brukerwiki om Logging: http://lua-users.org/wiki/LoggingCategory

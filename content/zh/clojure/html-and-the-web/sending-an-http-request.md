@@ -15,9 +15,6 @@ title: "\u53D1\u51FA HTTP \u8BF7\u6C42"
 weight: 44
 ---
 
-## What & Why?
-发送HTTP请求就是让你的程序能对网站进行问答。程序员这么做主要是获取数据或与远端服务交互。
-
 ## How to:
 Clojure 提供了好几种发起HTTP 请求的方法。这里, 我们会用 `clj-http` 库。
 

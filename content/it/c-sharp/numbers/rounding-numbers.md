@@ -10,9 +10,6 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Cosa & Perché?
-Arrotondare i numeri significa adeguarli al valore posizionale specificato più vicino—pensateli come semplificati. I programmatori arrotondano per controllare la precisione, migliorare le prestazioni o quando mostrano risultati amichevoli all'utente—come i prezzi che non necessitano di tre cifre decimali.
-
 ## Come fare:
 Ecco il biglietto di andata e ritorno per arrotondare i numeri in C#:
 

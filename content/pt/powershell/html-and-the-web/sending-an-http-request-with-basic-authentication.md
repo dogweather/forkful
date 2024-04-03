@@ -12,9 +12,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---
 
-## O que é & Por que?
-Enviar uma solicitação HTTP com autenticação básica é essencialmente fornecer nome de usuário e senha para acessar recursos protegidos em um servidor. Programadores fazem isso para interagir com APIs ou serviços web que requerem autenticação para uso.
-
 ## Como Fazer:
 ```PowerShell
 # Defina as credenciais de usuário e senha

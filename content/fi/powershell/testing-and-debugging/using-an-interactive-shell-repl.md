@@ -10,9 +10,6 @@ title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mikä & Miksi?
-Interaktiivinen kuori eli Read-Eval-Print Loop (REPL) mahdollistaa PowerShell-komentojen kirjoittamisen ja välittömän palautteen saamisen. Ohjelmoijat käyttävät sitä koodinpätkien nopeaan testaamiseen, vianetsintään tai uusien komentojen oppimiseen kirjoittamatta täydellistä skriptiä.
-
 ## Kuinka:
 Käynnistä PowerShell ja olet REPL:ssä. Kokeile `Get-Date` Cmdlet:
 

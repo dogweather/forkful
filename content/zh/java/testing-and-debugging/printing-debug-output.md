@@ -15,9 +15,6 @@ title: "\u6253\u5370\u8C03\u8BD5\u8F93\u51FA"
 weight: 33
 ---
 
-## What & Why? (是什么？为什么？)
-打印调试输出就是在程序中输出信息来追踪运行情况。程序员这样做是为了在开发时快速发现和修复问题。
-
 ## How to: (如何操作：)
 ```java
 public class DebugExample {

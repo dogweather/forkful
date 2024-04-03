@@ -13,16 +13,10 @@ title: Substrings extraheren
 weight: 6
 ---
 
-## Wat & Waarom?
-
-Het extraheren van substrings in C omvat het creëren van een kleinere string (substring) uit een grotere string op basis van gespecificeerde criteria, zoals positie en lengte. Programmeurs voeren vaak deze taak uit voor tekstparsen, gegevensverwerking of invoervalidatie, waardoor het een cruciale vaardigheid is in het manipuleren en effectief analyseren van tekstgegevens.
-
 ## Hoe:
-
 In tegenstelling tot sommige hogere programmeertalen die ingebouwde methoden bieden voor substringextractie, vereist C een meer handmatige aanpak met behulp van zijn stringmanipulatiefuncties. Hier is hoe je effectief een substring in C kunt extraheren:
 
 ### Voorbeeld 1: Gebruik van `strncpy`
-
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -42,7 +36,6 @@ int main() {
 ```
 
 ### Voorbeeld 2: Een Functie Creëren
-
 Voor herhaald gebruik kan een speciale functie om substrings te extraheren efficiënter zijn:
 
 ```c
@@ -67,7 +60,6 @@ int main() {
 ```
 
 ## Diepgaande Dompeling
-
 Het extraheren van substrings in C wordt voornamelijk afgehandeld door pointer manipulatie en zorgvuldig geheugenbeheer, wat de lagere-niveau benadering van de taal weerspiegelt in het omgaan met gegevens. Deze methode gaat terug naar de vroege dagen van C-programmering, toen het efficiënt beheren van middelen van cruciaal belang was vanwege de beperkte rekenkracht. Hoewel de afwezigheid van een ingebouwde substringfunctie kan lijken als een nalatigheid, illustreert het de filosofie van C om programmeurs volledige controle over het geheugenbeheer te geven, wat vaak leidt tot geoptimaliseerde maar complexere code.
 
 In het rijk van modern programmeren bieden talen zoals Python en JavaScript ingebouwde methoden voor substringextractie, zoals `slice()` of string slicing met indices. Deze hogere programmeertalen beheren geheugenbeheer achter de schermen en ruilen een zekere mate van controle in voor gebruiksgemak en leesbaarheid.

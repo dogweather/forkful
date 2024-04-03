@@ -11,9 +11,6 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## What & Why?
-La ricerca e la sostituzione di testo permettono di trovare stringhe specifiche e modificarle velocemente. I programmatori lo fanno per correggere errori, aggiornare codici o dati, e automatizzare l'editing di file numerosi.
-
 ## How to:
 Ecco alcuni comandi Bash basilari per cercare e sostituire testo.
 

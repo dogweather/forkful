@@ -13,9 +13,6 @@ title: "\uBB38\uC790\uC5F4 \uC5F0\uACB0\uD558\uAE30"
 weight: 3
 ---
 
-## What & Why? (무엇과 왜?)
-문자열 연결(concatenation)은 문자열을 이어 붙이는 것입니다. 데이터를 합치거나 출력을 형식화할 때 사용합니다.
-
 ## How to: (방법)
 ```C++
 #include <iostream>

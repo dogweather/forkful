@@ -10,9 +10,6 @@ title: "Merkkijonon pituuden selvitt\xE4minen"
 weight: 7
 ---
 
-## What & Why? / Mitä ja Miksi?
-Mittaa merkkijonon pituus, selvittää sen merkkien määrän. Miksi? Kontrolloidaksesi syötettä, tehdäksesi tietojenkäsittelystä tehokkaampaa tai varmistaakseen, että tietyt ehdot täyttyvät – syystä riippuen se on usein kriittinen operaatio ohjelmoijalle.
-
 ## How to: / Kuinka:
 PHP:ssä merkkijonon pituuden saat selvitettyä `strlen`-funktiolla. Tässä lyhyt esimerkki:
 

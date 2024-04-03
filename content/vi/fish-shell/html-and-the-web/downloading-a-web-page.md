@@ -15,9 +15,6 @@ title: "T\u1EA3i trang web"
 weight: 42
 ---
 
-## Gì và Tại sao?
-Tải một trang web về máy đồng nghĩa với việc bạn kéo nội dung của trang đó từ web về máy cục bộ của mình. Lập trình viên thực hiện điều này cho các mục đích tự động hóa, thu thập dữ liệu, truy cập ngoại tuyến hoặc kiểm thử.
-
 ## Cách thực hiện:
 Dưới đây là cách nhanh và đơn giản để tải một trang web sử dụng Fish Shell với lệnh `curl`:
 
@@ -59,7 +56,6 @@ Chính Fish Shell không tải web pages; nó chỉ là giao diện. Nhưng khi 
 Một số người có thể đề cập đến việc sử dụng các công cụ hiện đại hơn như `httpie` hoặc tự động hóa dựa trên trình duyệt với các công cụ như Selenium cho các nhiệm vụ phức tạp hơn như xử lý các trang nặng về Javascript. Tuy nhiên, cho việc tải xuống nhanh chóng và đơn giản, `curl` vẫn chiếm ưu thế.
 
 ## Xem Thêm
-
 - Trang web dự án curl để biết thêm chi tiết: [https://curl.se/](https://curl.se/)
 - Để khám phá sâu hơn về các thao tác HTTP với `curl`, xem trang hướng dẫn: `man curl`
 - httpie là một lựa chọn thay thế cho HTTP client thân thiện với người dùng: [https://httpie.org/](https://httpie.org/)

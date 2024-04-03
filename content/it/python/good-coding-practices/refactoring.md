@@ -11,9 +11,6 @@ title: Rifattorizzazione
 weight: 19
 ---
 
-## Cosa & Perché?
-Il refactoring è il processo di ristrutturazione del codice informatico esistente — cambiandone il fattorizzamento — senza alterarne il comportamento esterno. I programmatori lo fanno per pulire il codice, migliorarne la leggibilità e renderlo più facile da mantenere ed estendere, il tutto senza aggiungere nuove funzionalità.
-
 ## Come fare:
 Supponiamo di avere un blocco di codice che calcola e stampa l'area e il perimetro di un rettangolo dato il suo lato e larghezza. Fa il suo lavoro, ma è ripetitivo e un po' disordinato.
 

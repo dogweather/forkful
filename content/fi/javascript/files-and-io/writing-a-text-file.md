@@ -13,9 +13,6 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä ja miksi?
-Tekstitiedoston kirjoittaminen JavaScriptillä liittyy usein datan luomiseen ja tallentamiseen yksinkertaisessa, luettavassa muodossa lokitusta, käyttäjäsyötteen viemistä tai konfiguraatiotarkoituksia varten. Tämä toiminnallisuus on kriittistä sovelluksille, jotka tarvitsevat säilyttää tietoa sovellusprosessin elinkaaren yli, tarjoten tavan varastoida ja myöhemmin noutaa tai jakaa tietoa.
-
 ## Kuinka:
 Node.js-ympäristössä voit käyttää sisäänrakennettua `fs` (File System) moduulia tekstitiedostojen kirjoittamiseen. Tämä esimerkki demonstroi tekstin kirjoittamista tiedostoon asynkronisesti:
 

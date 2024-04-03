@@ -14,12 +14,7 @@ title: Sette stor bokstav i en streng
 weight: 2
 ---
 
-## Hva & Hvorfor?
-
-Å gjøre om en streng til store bokstaver i C innebærer å konvertere første tegn i hvert ord i en gitt streng til stor bokstav hvis det er en liten bokstav. Programmerere utfører ofte denne operasjonen for å standardisere brukerinput for søk, sorteringsoperasjoner, eller visningsformål, noe som sikrer konsistens og lesbarhet på tvers av tekstdata.
-
 ## Hvordan gjøre det:
-
 Å gjøre om en streng til store bokstaver i C krever en grunnleggende forståelse av tegnmanipulasjon og gjennomgang av strenger. Siden C ikke har en innebygd funksjon for dette, vil du vanligvis sjekke hvert tegn og justere stor-/små bokstaver ved behov. Nedenfor er en enkel implementering:
 
 ```c
@@ -56,7 +51,6 @@ Streng med store bokstaver: Hello World. Programming In C!
 Dette programmet traverserer strengen `exampleString`, sjekker hvert tegn om det skal være stor bokstav. `islower`-funksjonen sjekker om et tegn er en liten bokstav, mens `toupper` konverterer det til stor bokstav. Flagget `capNext` bestemmer om neste bokstav som møtes skal konverteres, blir satt etter hvert mellomrom (' ') som finnes, og i utgangspunktet for å gjøre om strengens første tegn til stor bokstav.
 
 ## Dypdykk
-
 Teknikken demonstrert er grei, men mangler effektivitet for veldig store strenger eller når den utføres gjentatte ganger i ytelseskritiske applikasjoner. I historisk og implementasjonssammenheng innebærer strengmanipulasjon i C, inkludert kapitalisering, ofte direkte buffermanipulasjon, som reflekterer Cs lave nivå tilnærming og gir programmereren full kontroll over minne og ytelsesavveininger.
 
 Det finnes alternative, mer sofistikerte metoder for å gjøre om strenger til store bokstaver, spesielt når man vurderer lokaler og unicode-tegn, hvor kapitaliseringsreglene kan avvike betydelig fra det enkle ASCII-scenariet. Biblioteker som ICU (International Components for Unicode) gir robuste løsninger for disse tilfellene, men introduserer avhengigheter og overhead som kanskje ikke er nødvendig for alle applikasjoner.

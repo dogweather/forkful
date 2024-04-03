@@ -10,9 +10,6 @@ title: Utilizzo delle espressioni regolari
 weight: 11
 ---
 
-## What & Why? (Cosa & Perché?)
-Le espressioni regolari (regex) sono modelli per cercare e manipolare testo. Sono usate dai programmatori per validare, estrarre o sostituire parti di stringhe con precisione e velocità.
-
 ## How to (Come fare):
 Ecco alcuni esempi in Clojure:
 
@@ -32,13 +29,11 @@ Ecco alcuni esempi in Clojure:
 ```
 
 ## Deep Dive (Analisi approfondita)
-
 1. Storia: Le espressioni regolari sono nate negli anni '50.
 2. Alternative: Altre opzioni includono il parsing manuale o l'utilizzo di librerie per l'analisi sintattica (parsing).
 3. Dettagli di implementazione: Regex in Clojure è basato su Java, quindi segue il set di funzionalità Java Pattern class.
 
 ## See Also (Vedi anche)
-
 - Clojure Documentation: https://clojure.org/guides/learn/functions#_regex
 - Java Pattern class: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
 - Online Regex Tester (for experimentation): https://regexr.com/

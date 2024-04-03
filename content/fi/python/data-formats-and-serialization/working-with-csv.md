@@ -14,13 +14,11 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mitä & Miksi?
-Työskentely CSV:n (pilkuin erotetut arvot) parissa sisältää lukemista ja kirjoittamista CSV-tiedostoihin, yleinen muoto tabulaarisen datan tallentamiseen. Ohjelmoijat tekevät näin voidakseen helposti vaihtaa ja tallentaa dataa yksinkertaisessa, tekstipohjaisessa muodossa, jota laajasti tuetaan eri alustoilla ja kielillä.
-
 ## Kuinka:
 Python tarjoaa sisäänrakennetun `csv` moduulin CSV-tiedostojen käsittelyyn, tehden lukemisesta ja kirjoittamisesta niihin suoraviivaista. Vankempaan ja monimutkaisempaan datan käsittelyyn suosittu kolmannen osapuolen kirjasto on `pandas`.
 
 ### Käyttäen `csv` moduulia
+
 
 #### CSV-tiedoston lukeminen
 ```python

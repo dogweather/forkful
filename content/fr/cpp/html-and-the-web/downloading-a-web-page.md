@@ -10,9 +10,6 @@ title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---
 
-## What & Why?
-Télécharger une page web, c'est récupérer son contenu via internet. Les programmeurs le font pour automatiser la collecte d'informations, tester la disponibilité d'un site ou analyser des données web.
-
 ## How to:
 En C++, on peut utiliser la bibliothèque `libcurl` pour télécharger une page web. Installez `libcurl` si ce n'est pas déjà fait. Voici un exemple simple :
 
@@ -62,7 +59,6 @@ Résultat (échantillon) :
 Le protocole HTTP sert à télécharger les pages web depuis 1991. `libcurl` est robuste, supporte FTP/FTPS, HTTP/HTTPS, et d'autres protocoles, ce qui en fait l'outil idéal. Comme alternative, vous pouvez utiliser `Poco::Net` ou d'autres bibliothèques HTTP pour C++. Le détail d'implémentation avec `libcurl` comprend la gestion des callbacks pour le transfert de données et la configuration des options avec `curl_easy_setopt`.
 
 ## See Also
-
 - Documentation `libcurl`: https://curl.se/libcurl/
 - `Poco::Net` Library: https://pocoproject.org/docs/Poco.Net.HTTPClientSession.html
 - Le protocole HTTP: https://developer.mozilla.org/fr/docs/Web/HTTP

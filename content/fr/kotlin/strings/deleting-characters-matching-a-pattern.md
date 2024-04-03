@@ -11,9 +11,6 @@ title: "Suppression de caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---
 
-## What & Why?
-Supprimer des caractères correspondant à un motif, c'est filtrer une chaîne de texte en enlevant des éléments précis. Les développeurs font ça pour nettoyer des données, valider des entrées ou simplifier le traitement de texte.
-
 ## How to:
 En Kotlin, vous pouvez utiliser la méthode `replace()` avec une expression régulière pour supprimer les caractères indésirables. Voici comment :
 

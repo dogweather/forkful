@@ -12,9 +12,6 @@ title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---
 
-## O Que é & Por Que?
-Debugar escrevendo saídas é como dar uma espiada no cérebro do seu Arduino – você usa mensagens para descobrir o que está acontecendo dentro do código. Programadores fazem isso para corrigir erros e entender melhor o comportamento do programa.
-
 ## Como Fazer:
 Para mostrar como isso funciona, vamos usar a função `Serial.println()`. Não esqueça de iniciar a comunicação serial no `setup()` com `Serial.begin()`.
 

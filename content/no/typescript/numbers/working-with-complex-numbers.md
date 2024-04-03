@@ -12,9 +12,6 @@ title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---
 
-## Hva & Hvorfor?
-Komplekse tall, som består av en reell del og en imaginær del (vanligvis skrevet som a + bi), åpner for beregninger som er upraktiske eller umulige med bare reelle tall. Programmerere bruker dem innen felter som signalbehandling, kvantedatabehandling og anvendt matematikk, der todimensjonale tallrepresentasjoner er essensielle.
-
 ## Hvordan:
 Å håndtere komplekse tall i TypeScript krever en dedikert klasse. La oss lage en og jobbe gjennom addisjon og multiplikasjon.
 

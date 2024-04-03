@@ -10,9 +10,6 @@ title: "\xC5 starte et nytt prosjekt"
 weight: 1
 ---
 
-## Hva & Hvorfor?
-Et nytt prosjekt er en fersk kodebase skapt fra grunnen. Programmerere starter nye prosjekter for å bygge unike applikasjoner, eksperimentere med ideer, eller lære nye teknologier.
-
 ## Slik gjør du:
 Her er et eksempel på hvordan du starter et nytt C++ prosjekt:
 

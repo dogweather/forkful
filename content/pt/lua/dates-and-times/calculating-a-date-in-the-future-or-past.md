@@ -11,9 +11,6 @@ title: Calculando uma data no futuro ou passado
 weight: 26
 ---
 
-## O que é & Porquê?
-Calcular uma data no futuro ou no passado é basicamente ajustar o calendário para ver quando será ou foi um certo dia, mês e ano. Programadores fazem isso para agendar eventos, verificar prazos ou criar lembretes automáticos.
-
 ## Como Fazer:
 Em Lua, você pode usar a biblioteca `os` para manipular datas e tempos. Aqui está um exemplo de como adicionar dias a uma data atual para calcular uma data futura, e também como subtrair para encontrar uma data passada:
 

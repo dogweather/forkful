@@ -13,12 +13,7 @@ title: Inviare una richiesta HTTP con autenticazione di base
 weight: 45
 ---
 
-## Cosa & Perché?
-
-Inviare una richiesta HTTP con autenticazione di base comporta la codifica di un nome utente e di una password in un'intestazione di richiesta per accedere a risorse protette. I programmatori utilizzano questo metodo per l'autenticazione lato server, per integrarsi con API che richiedono l'autenticazione di base per operazioni come il recupero di dati o la pubblicazione di contenuti.
-
 ## Come fare:
-
 In Google Apps Script, per inviare una richiesta HTTP con autenticazione di base, si utilizza il servizio `UrlFetchApp` combinato con un'intestazione di autorizzazione codificata in base64. Ecco una guida passo-passo:
 
 1. **Codifica delle Credenziali**: Prima di tutto, codifica il tuo nome utente e la tua password in base64. Google Apps Script non ha una funzione nativa di codifica base64 per le stringhe, quindi userai Utilities.base64Encode per questo scopo.
@@ -58,7 +53,6 @@ L'output esemplificativo al seguito della richiesta di successo varierà in base
 Assicurati di gestire possibili errori HTTP controllando il codice di risposta o utilizzando l'opzione `muteHttpExceptions` per una gestione degli errori più controllata.
 
 ## Approfondimento
-
 Inviare una richiesta HTTP con autenticazione di base è stato un metodo standard in molti linguaggi di programmazione per accedere a risorse web che richiedono autenticazione. Nel contesto di Google Apps Script, `UrlFetchApp` offre un modo diretto per eseguire queste richieste HTTP, comprese quelle che richiedono autenticazione. L'inclusione delle credenziali di base nelle intestazioni delle richieste è un metodo semplice ma efficace, ma presenta avvertenze di sicurezza, principalmente perché le credenziali vengono inviate in chiaro, solo codificate in base64, che possono essere facilmente decodificate se intercettate.
 
 Per una maggiore sicurezza, sono consigliate alternative come OAuth 2.0, specialmente quando si tratta di dati o operazioni sensibili. Google Apps Script ha il supporto integrato per OAuth 2.0 con la libreria `OAuth2`, semplificando il processo di autenticazione nei confronti di servizi che supportano questo protocollo.

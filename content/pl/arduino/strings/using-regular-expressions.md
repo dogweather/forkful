@@ -14,9 +14,6 @@ title: "Korzystanie z wyra\u017Ce\u0144 regularnych"
 weight: 11
 ---
 
-## Co i dlaczego?
-Wyrażenia regularne (regex) to sekwencje znaków definiujące wzorce wyszukiwania, głównie używane do dopasowywania i manipulacji ciągami znaków. Programiści wykorzystują regex w projektach Arduino do parsowania danych wejściowych z portu szeregowego, walidacji danych wprowadzanych przez użytkownika, czy ekstrakcji danych z ciągów tekstowych, zwiększając efektywność i elastyczność przetwarzania danych.
-
 ## Jak to zrobić:
 Arduino nie posiada wbudowanego wsparcia dla regex bezpośrednio w swojej standardowej bibliotece. Jednakże, możesz osiągnąć funkcjonalność podobną do regex dla prostych wzorców, używając podstawowych funkcji operujących na ciągach znaków, lub, dla bardziej złożonych potrzeb, zintegrować bibliotekę stron trzecich taką jak `regex`.
 

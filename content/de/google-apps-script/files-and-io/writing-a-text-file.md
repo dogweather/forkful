@@ -14,12 +14,7 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-
-Das Schreiben einer Textdatei in Google Apps Script ermöglicht es Entwicklern, Daten dauerhaft zu speichern, sodass sie für zukünftige Verwendungen oder Analysen zugänglich sind. Diese Operation ist eine gängige Praxis für das Protokollieren, Speichern von Konfigurationen oder den Export von Informationen in einem einfachen, lesbaren Format.
-
 ## Wie:
-
 Das Erstellen und Schreiben einer Textdatei in Google Apps Script kann durch den Google DriveApp-Dienst erreicht werden. Unten finden Sie eine schrittweise Anleitung mit Codebeispielen, um Ihnen den Einstieg zu erleichtern:
 
 **Schritt 1: Eine neue Textdatei erstellen**
@@ -49,7 +44,6 @@ Dieser Code holt eine bestehende Datei mit ihrer einzigartigen ID und fügt "Neu
 Durch das Ausführen der obigen Codeausschnitte wird keine explizite Ausgabe angezeigt, aber wenn Sie zum Google Drive navigieren, in dem die Datei gespeichert ist, sehen Sie "Beispiel.txt" für den ersten Codeausschnitt. Für den zweiten Ausschnitt sollten Sie, wenn Sie die angegebene Datei per ID öffnen, den ursprünglichen Inhalt gefolgt von der neuen Zeile "Neuer Inhalt hinzugefügt." sehen.
 
 ## Vertiefung
-
 Das Schreiben einer Textdatei in Google Apps Script nutzt den DriveApp-Dienst und nutzt im Wesentlichen die Fähigkeiten von Google Drive für die Dateispeicherung und -verwaltung. Dieser Ansatz geht zurück auf den Beginn von Google Apps Script, das darauf ausgelegt war, Aufgaben über Googles Suite von Produktivitätstools, einschließlich Drive, einfach zu automatisieren.
 
 Während die direkte Manipulation von Dateien über Google Apps Script unkompliziert und eng mit Google Workspace integriert ist, könnten Entwickler aus anderen Bereichen (z.B. Python, Node.js) es anders empfinden als die Arbeit mit einem lokalen Dateisystem oder anderen Cloud-Speicherdiensten wie AWS S3. Diese Plattformen bieten oft ein komplexeres Set an Dateimanipulationsfähigkeiten, erfordern jedoch zusätzliche Einrichtung für Authentifizierung und Berechtigungen.

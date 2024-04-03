@@ -11,9 +11,6 @@ title: "H\xE4mta en webbsida"
 weight: 42
 ---
 
-## Vad & Varför?
-Att ladda ner en webbsida innebär att hämta sidans innehåll över nätet. Programmerare gör detta för att analysera innehållet, granska data eller integrera funktionalitet från externa webbplatser i sina applikationer.
-
 ## Så här gör du:
 För att ladda ner en webbsida i C++ kan vi använda biblioteket cURL. Först måste du se till att cURL är installerat och länkat till ditt projekt.
 

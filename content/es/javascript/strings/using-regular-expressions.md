@@ -12,14 +12,10 @@ title: Usando expresiones regulares
 weight: 11
 ---
 
-## ¿Qué y por qué?
-
-Las expresiones regulares (regex) en JavaScript son patrones utilizados para buscar combinaciones de caracteres en cadenas. Los programadores las usan para buscar, extraer y manipular texto, permitiendo operaciones de procesamiento de cadenas potentes con código conciso.
-
 ## Cómo hacerlo:
 
-### Coincidencia Básica
 
+### Coincidencia Básica
 Para empezar, puedes crear un patrón de regex simple y usarlo para encontrar coincidencias en una cadena. Aquí, encontraremos la palabra "código":
 
 ```javascript
@@ -30,7 +26,6 @@ console.log(result); // true
 ```
 
 ### Usando `String.prototype.match()`
-
 Para recuperar un arreglo de coincidencias:
 
 ```javascript
@@ -40,7 +35,6 @@ console.log(matches.index); // 10
 ```
 
 ### Búsqueda Global
-
 Para encontrar todas las coincidencias, usa la bandera `g`:
 
 ```javascript
@@ -49,7 +43,6 @@ console.log(globalMatches); // ["o", "o", "o"]
 ```
 
 ### Coincidencia sin Importar Mayúsculas o Minúsculas
-
 La bandera `i` ignora mayúsculas y minúsculas:
 
 ```javascript
@@ -58,7 +51,6 @@ console.log(caseInsensitiveMatch[0]); // "JavaScript"
 ```
 
 ### Reemplazando Texto
-
 Usa `String.prototype.replace()` para reemplazar partes de la cadena:
 
 ```javascript
@@ -67,7 +59,6 @@ console.log(newStr); // "JavaScript es asombroso"
 ```
 
 ### Usando Grupos
-
 Los grupos pueden capturar partes del patrón:
 
 ```javascript
@@ -77,7 +68,6 @@ console.log(replaceWithGroups); // "divertido es JavaScript"
 ```
 
 ### Librerías de Terceros
-
 Aunque las capacidades de regex integradas en JavaScript son poderosas, algunas tareas podrían simplificarse con librerías como `XRegExp`. Ofrece sintaxis y banderas adicionales, haciendo patrones complejos más legibles:
 
 ```javascript

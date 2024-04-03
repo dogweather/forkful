@@ -12,9 +12,6 @@ title: Refactoring
 weight: 19
 ---
 
-## Wat & Waarom?
-Refactoring is het proces van het herstructureren van bestaande computercode zonder het externe gedrag ervan te veranderen. Het is een essentiële praktijk om complexiteit te verminderen, onderhoudbaarheid te verbeteren en je codebasis gezond en makkelijker te begrijpen te maken voor zowel huidige als toekomstige ontwikkelaars.
-
 ## Hoe te:
 Laten we een eenvoudig Bash-script overwegen dat wat refactoring nodig heeft. Het is onhandig, met herhaalde code en het is moeilijk te volgen:
 

@@ -10,9 +10,6 @@ title: Comparer deux dates
 weight: 27
 ---
 
-## What & Why (Quoi et Pourquoi) ?
-Comparer deux dates, c'est vérifier laquelle vient avant ou après l'autre, ou si elles sont identiques. Les programmeurs font cela pour trier des évènements, valider des périodes ou gérer des réservations.
-
 ## How to (Comment faire) :
 ```C++
 #include <iostream>

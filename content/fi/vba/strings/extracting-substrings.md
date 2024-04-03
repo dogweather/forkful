@@ -14,12 +14,7 @@ title: Alimerkkijonojen erottaminen
 weight: 6
 ---
 
-## Mitä & Miksi?
-
-Merkkijonojen alijonojen erottaminen Visual Basic for Applicationsissa (VBA) sisältää tiettyjen osien eristämisen merkkijonosta annettujen kriteerien perusteella. Ohjelmoijat tekevät tämän tehtäviä varten kuten datan jäsentämiseen, validointiin ja muotoiluun, joissa on keskeistä manipuloida ja erottaa tietoa tekstuaalisesta datasta.
-
 ## Kuinka:
-
 VBAssa käytetään pääasiassa `Mid`, `Left` ja `Right` funktioita alijonojen erottamiseen. Alla tutkitaan näitä funktioita esimerkkien avulla:
 
 1. **Mid**: Eroittaa alijonon merkkijonosta alkaen määrätystä kohdasta.
@@ -52,7 +47,6 @@ VBAssa käytetään pääasiassa `Mid`, `Left` ja `Right` funktioita alijonojen 
 Nämä perustavanlaatuiset funktiot muodostavat perustan VBA:n alijonojen erottamiselle, tarjoten vankat ja suoraviivaiset lähestymistavat merkkijonon manipulointiin.
 
 ## Syväsukellus:
-
 Historiallisesti merkkijonojen manipulointikyky ohjelmoinnissa on ollut olennainen, BASICin (VBA:n edeltäjän) ollessa yksi ensimmäisistä, joka demokratisoi tämän kyvyn henkilökohtaisten tietokoneiden alkuaikoina. VBA:n `Mid`, `Left` ja `Right` funktiot perivät tämän perinnön, tarjoten yksinkertaistetun rajapinnan nykyaikaisille ohjelmoijille.
 
 Vaikka nämä funktiot ovat tehokkaita moniin tehtäviin, uudemmissa kielissä esiintyvien säännöllisten lausekkeiden (Regular Expressions) esiinmarssi on tarjonnut voimakkaamman ja joustavamman tavan työskennellä tekstin kanssa. Siitä huolimatta perinteisten VBA-alijonofunktioiden välitön yksinkertaisuus ja saatavuus tekevät niistä täydellisesti sopivia nopeisiin tehtäviin ja niille, jotka ovat uusia ohjelmoinnissa.

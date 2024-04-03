@@ -17,9 +17,6 @@ title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1
 weight: 26
 ---
 
-## Cái gì & Tại sao?
-Việc tính toán một ngày trong tương lai hoặc quá khứ bao gồm việc xác định một ngày cụ thể bằng cách cộng hoặc trừ một số lượng nhất định các ngày, tháng, hoặc năm từ một ngày đã cho. Các lập trình viên thực hiện điều này cho các nhiệm vụ như lên lịch cho sự kiện, tạo nhắc nhở, hoặc xử lý các ngày hết hạn, làm cho đó trở thành một chức năng thiết yếu trong các ứng dụng khác nhau, từ hệ thống lịch đến phần mềm tài chính.
-
 ## Làm thế nào:
 Mặc dù thư viện chuẩn C không cung cấp các hàm trực tiếp cho tính toán ngày, bạn có thể thao tác với ngày tháng sử dụng thư viện `time.h`, cụ thể là làm việc với kiểu dữ liệu `time_t` và `struct tm`. Dưới đây là một ví dụ đơn giản về cách thêm ngày vào ngày hiện tại:
 

@@ -13,9 +13,6 @@ title: "\uBD80\uBD84 \uBB38\uC790\uC5F4 \uCD94\uCD9C"
 weight: 6
 ---
 
-## What & Why? (무엇과 왜?)
-문자열에서 특정 부분을 추출하는 것입니다. 데이터 가공이나 특정 정보를 얻기 위해서 프로그래머들이 사용합니다.
-
 ## How to: (어떻게 하나요?)
 ```TypeScript
 let fullString: string = "Hello, TypeScript users!";

@@ -12,9 +12,6 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i Dlaczego?
-Liczby złożone to zbiór liczb postaci `a + bi`, gdzie `a` i `b` są liczbami rzeczywistymi, a `i` jest jednostką urojoną (`i^2 = -1`). W programowaniu używamy ich do rozwiązywania problemów w różnych dziedzinach, takich jak inżynieria elektryczna, przetwarzanie sygnałów i informatyka kwantowa.
-
 ## Jak:
 Python ma wbudowane wsparcie dla liczb złożonych. Oto jak możesz się nimi bawić:
 

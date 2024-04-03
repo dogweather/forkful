@@ -11,9 +11,6 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i dlaczego?
-Liczby zespolone mają część rzeczywistą i część urojoną, zwykle zapisywane jako `a + bi`. Są one niezbędne w niektórych projektach Arduino, które wymagają zaawansowanych obliczeń matematycznych, takich jak przetwarzanie sygnałów, inżynieria elektryczna czy jakakolwiek inna dziedzina, gdzie zjawiska najlepiej jest modelować na płaszczyźnie.
-
 ## Jak to zrobić:
 ```Arduino
 #include <Complex.h>

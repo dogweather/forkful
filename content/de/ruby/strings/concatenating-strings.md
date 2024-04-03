@@ -10,9 +10,6 @@ title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---
 
-## Was & Warum?
-String-Konkatenation ist das Zusammenführen von zwei oder mehreren Strings zu einem einzigen. Programmierer nutzen das, um Textdynamisch zu generieren oder Inhalte zusammenzufassen.
-
 ## How to:
 ```Ruby
 # Einfache Verknüpfung mit '+'

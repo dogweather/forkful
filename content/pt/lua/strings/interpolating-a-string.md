@@ -11,9 +11,6 @@ title: Interpolando uma string
 weight: 8
 ---
 
-## O Que é & Por Que?
-Interpolar uma string é o ato de integrar variáveis e expressões dentro de uma string. Programadores fazem isso porque é uma maneira dinâmica e flexível de criar mensagens personalizadas e facilita a leitura e a manutenção do código.
-
 ## Como Fazer:
 ```Lua
 -- Exemplo básico de interpolação de string usando a função string.format

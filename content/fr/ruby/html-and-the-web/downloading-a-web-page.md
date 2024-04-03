@@ -11,9 +11,6 @@ title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---
 
-## What & Why?
-Télécharger une page web, c’est récupérer son contenu via le réseau. Les programmeurs font ça pour analyser des données, tester leur disponibilité, ou automatiser des interactions.
-
 ## How to:
 En Ruby, on peut utiliser `net/http` pour télécharger une page web. Simple et direct. Voici un exemple:
 

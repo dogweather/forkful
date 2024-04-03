@@ -14,12 +14,7 @@ title: "Skicka en HTTP-beg\xE4ran med grundl\xE4ggande autentisering"
 weight: 45
 ---
 
-## Vad och varför?
-
-Att skicka en HTTP-begäran med grundläggande autentisering i Visual Basic for Applications (VBA) handlar om att komma åt webbresurser som skyddas av användarnamn och lösenordsuppgifter. Programmerare gör detta för att interagera med säkra API:er eller webbtjänster inom sina VBA-drivna applikationer, såsom att automatisera uppgifter i Excel eller Access med data från säkerhetsinriktade slutpunkter.
-
 ## Hur man gör:
-
 I VBA kan du använda biblioteket `Microsoft XML, v6.0` (MSXML2) för att skicka HTTP-begäranden med grundläggande autentisering. Detta innebär att du ställer in begäranstokens `"Authorization"`-header för att inkludera referenserna i ett base64-kodat format. Här är en steg-för-steg-guide:
 
 1. **Referera till MSXML2**: Först, se till att ditt VBA-projekt refererar till biblioteket `Microsoft XML, v6.0`. I VBA-editorn, gå till Verktyg > Referenser och kryssa i `Microsoft XML, v6.0`.
@@ -63,7 +58,6 @@ I VBA kan du använda biblioteket `Microsoft XML, v6.0` (MSXML2) för att skicka
 Detta kommer att skicka en GET-begäran till `http://example.com/api/resource` med de angivna grundläggande autentiseringsreferenserna och skriva ut svaret.
 
 ## Fördjupning
-
 Metoden som används här, även om den är effektiv för enkla användningsfall, bygger på schemat för grundläggande autentisering, som skickar referenser i ett lätt avkodningsbart format (base64-kodning är inte kryptering). På grund av sin sårbarhet, särskilt i icke-HTTPS-sammanhang, rekommenderas inte grundläggande autentisering för att överföra känslig information över internet utan ytterligare säkerhetslager som SSL/TLS.
 
 Historiskt sett var grundläggande autentisering en av de första metoderna som utvecklades för att kontrollera åtkomst till webbresurser. Idag är säkrare och mer flexibla autentiseringsstandarder, såsom OAuth 2.0, generellt att föredra för nya applikationer. Med tanke på VBA:s begränsningar och externa beroenden som krävs för mer avancerade autentiseringsmetoder använder utvecklare ofta VBA i interna eller mindre säkerhetskritiska miljöer eller använder det som ett steg för att snabbt prototypa idéer.

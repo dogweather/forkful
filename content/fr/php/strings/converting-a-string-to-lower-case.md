@@ -11,9 +11,6 @@ title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---
 
-## What & Why?
-Convertir une chaîne de caractères en minuscules, c'est transformer tous les caractères alphabétiques en leur équivalent minuscule. Les développeurs font ça pour uniformiser les données (comme pour des comparaisons de texte insensible à la casse) et pour simplifier le traitement du texte.
-
 ## How to:
 Pour convertir une chaîne en minuscules en PHP, utilisez la fonction `strtolower`. Voici comment ça marche :
 

@@ -11,9 +11,6 @@ title: "\u05E9\u05E8\u05E9\u05D5\u05E8 \u05DE\u05D7\u05E8\u05D5\u05D6\u05D5\u05E
 weight: 3
 ---
 
-## What & Why? (מה ולמה?)
-Concatenating strings means sticking them together end-to-end to make a new string. It's like making a train by connecting cars. Programmers do this to build texts, like creating messages or combining data into one string.
-
 ## How to: (איך לעשות:)
 Ruby makes it easy. You can use `+`, `<<`, or `concat`. Here's how:
 

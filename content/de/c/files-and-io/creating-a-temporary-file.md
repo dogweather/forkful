@@ -14,9 +14,6 @@ title: "Erstellung einer tempor\xE4ren Datei"
 weight: 21
 ---
 
-## Was & Warum?
-Das Erstellen einer temporären Datei in C bedeutet, eine Datei zu generieren, die für eine kurze Dauer gedacht ist, üblicherweise als Zwischenspeicher für Datenverarbeitung oder -speicherung. Programmierer tun dies, um temporäre Daten zu verwalten, ohne den permanenten Speicher des Programms zu beeinflussen oder um sicherzustellen, dass sensible Daten nach der Verwendung gelöscht werden.
-
 ## Wie:
 Das Erstellen einer temporären Datei in der Programmiersprache C kann Funktionen wie `tmpfile()` und `mkstemp()` nutzen.
 

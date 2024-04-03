@@ -10,9 +10,6 @@ title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---
 
-## Quoi et Pourquoi ? 
-Trouver la longueur d'une chaîne signifie compter le nombre de caractères qui la composent. Les programmeurs le font pour valider des saisies, optimiser des performances ou simplement manipuler des données textuelles.
-
 ## Comment faire :
 ```swift
 let salutation = "Bonjour"

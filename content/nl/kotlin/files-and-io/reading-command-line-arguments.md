@@ -12,11 +12,7 @@ title: Commandoregelargumenten lezen
 weight: 23
 ---
 
-## Wat & Waarom?
-Commandoregelargumenten lezen betekent data ophalen die aan je programma wordt doorgegeven wanneer het start. Programmeurs hebben dit nodig om gebruikers in staat te stellen het gedrag van een programma aan te passen zonder de code te wijzigen.
-
 ## Hoe te:
-
 ```kotlin
 fun main(args: Array<String>) {
     if (args.isNotEmpty()) {

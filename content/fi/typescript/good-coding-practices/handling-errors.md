@@ -11,9 +11,6 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä & Miksi?
-Virheiden käsittely on odottamattoman odottamista; kyse on siitä, miten selvitään, kun koodissamme tapahtuu odottamattomia virheitä. Sen avulla pyrimme välttämään kaatumisia ja takaamaan käyttäjille sujuvan kokemuksen, vaikka yllättäviä tilanteita ilmenisikin.
-
 ## Kuinka:
 TypeScriptissä virheiden käsittelyyn kuuluu usein `try`, `catch`- ja `finally`-lohkot.
 

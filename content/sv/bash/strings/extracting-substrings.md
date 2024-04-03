@@ -11,9 +11,6 @@ title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---
 
-## Vad & Varför?
-Extrahering av substrängar innebär att plocka ut specifika delar ur en längre textsträng. Programmerare gör detta för att manipulera och bearbeta data, som att hämta filnamn, användarinput eller konfigurationsvärden.
-
 ## Hur gör man:
 ```Bash
 # Givet en sträng

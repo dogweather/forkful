@@ -15,12 +15,7 @@ title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire sur l'erreur standard (stderr) en PHP consiste à diriger les messages d'erreur ou les diagnostics séparément de la sortie standard (stdout), permettant aux développeurs de mieux gérer leurs flux de sortie pour le débogage et la journalisation. Les programmeurs utilisent cette technique pour s'assurer que les messages d'erreur n'interfèrent pas avec la sortie du programme, rendant ainsi plus facile la surveillance et le dépannage des applications.
-
 ## Comment faire :
-
 En PHP, écrire sur stderr peut être réalisé en utilisant la fonction `fwrite()` en conjonction avec la constante prédéfinie `STDERR`, qui représente le flux de sortie d'erreur.
 
 ```php

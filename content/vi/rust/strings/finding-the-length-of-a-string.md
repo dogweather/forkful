@@ -16,9 +16,6 @@ title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---
 
-## Cái gì & Tại sao?
-Việc tìm độ dài của một chuỗi nghĩa là đếm số lượng ký tự mà nó chứa. Lập trình viên thực hiện điều này để xác thực, định dạng, hoặc xử lý dữ liệu văn bản một cách hiệu quả.
-
 ## Làm thế nào:
 Rust cung cấp `len()` cho độ dài trực tiếp:
 

@@ -13,9 +13,6 @@ title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---
 
-## Mikä & Miksi?
-HTML:n jäsennys tarkoittaa tietojen purkamista HTML-dokumenteista. Ohjelmoijat tekevät sitä voidakseen vuorovaikuttaa tai manipuloida web-sisältöä, automatisoida tietojen poimimista tai varten web-kaapimista.
-
 ## Kuinka:
 Jäsennetään HTML `DOMParser`-API:n avulla JavaScriptissä.
 

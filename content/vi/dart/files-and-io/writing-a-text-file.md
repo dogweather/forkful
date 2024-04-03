@@ -17,9 +17,6 @@ title: "Vi\u1EBFt t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---
 
-## Gì & Tại sao?
-Việc viết một tệp văn bản trong Dart bao gồm việc tạo hoặc sửa đổi các tệp trên đĩa để lưu trữ dữ liệu dưới dạng có thể đọc được. Lập trình viên thực hiện điều này để lưu trữ dữ liệu ứng dụng, cấu hình, nhật ký hoặc bất kỳ thông tin nào cần được bảo tồn giữa các lần chạy ứng dụng hoặc chia sẻ dữ liệu với các ứng dụng hoặc người dùng khác.
-
 ## Làm thế nào:
 Thư viện cốt lõi của Dart cung cấp gói `dart:io` cho việc xử lý tệp, cho phép bạn viết tệp văn bản mà không cần các thư viện bên thứ ba. Dưới đây là một ví dụ đơn giản về cách viết tệp văn bản:
 

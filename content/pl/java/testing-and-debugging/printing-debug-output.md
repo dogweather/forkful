@@ -11,9 +11,6 @@ title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---
 
-## What & Why? (Co i Dlaczego?)
-Drukowanie informacji debugowych to sposób na wypisywanie danych pomagających zrozumieć działanie kodu. Robimy to, aby szybko znaleźć i naprawić błędy.
-
 ## How to: (Jak to zrobić:)
 Użyj `System.out.println()` dla prostego debugowania czy `System.err.println()` dla błędów. Oto przykład:
 

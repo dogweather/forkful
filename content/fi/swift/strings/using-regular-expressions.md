@@ -13,9 +13,6 @@ title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---
 
-## Mikä & Miksi?
-Säännölliset lausekkeet, tai regex, ovat merkkijonoja, jotka muodostavat haun kaavan ja joita käytetään usein merkkijonojen etsimiseen tai manipulointiin. Ohjelmoijat käyttävät niitä kaikkeen tiedon validoinnista ja jäsentämisestä muunnoksiin, tehden niistä korvaamattoman työkalun tekstinkäsittely- ja manipulointitehtävissä eri ohjelmointikielillä, mukaan lukien Swift.
-
 ## Miten:
 Swiftin natiivi tuki regexille hyödyntää `NSRegularExpression` luokkaa, jonka lisäksi käytetään String-luokan range- ja replacement-metodeja. Alla on esimerkki, kuinka regexiä käytetään löytämään ja korostamaan sähköpostiosoitteet tekstilohkosta:
 

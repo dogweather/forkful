@@ -11,9 +11,6 @@ title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---
 
-## What & Why? (Mikä ja Miksi?)
-Tilapäistiedostot ovat tilapäisiä tiedostoja, jotka ohjelmat luovat väliaikaisen datan tallentamiseen. Ne ovat tärkeitä, sillä ne auttavat välttämään datan menetyksen ja pitävät tilapäisen sisällön erillään pysyvästä tallennustilasta.
-
 ## How to: (Kuinka tehdään:)
 ```Lua
 local os_tmpname = os.tmpname

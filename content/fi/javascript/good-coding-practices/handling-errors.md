@@ -10,12 +10,7 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä ja Miksi?
-
-Virheenkäsittely on tapasi hallita tilanteita, kun koodissasi tapahtuu odottamattomia virheitä. Se on keskeistä, koska se auttaa ohjelmiasi kaatumaan arvokkaasti ja ohjeistaa käyttäjiä selkeästi, sen sijaan että ne vain kaatuisivat ja lakkaisivat toimimasta.
-
 ## Kuinka tehdä:
-
 Tässä on klassinen `try-catch` lohko:
 
 ```javascript
@@ -55,7 +50,6 @@ haeTietoja();
 ```
 
 ## Syväsukellus
-
 Virheenkäsittely JavaScriptissä on kehittynyt. Aikanaan (ES3, noin 1999) meillä oli käytössämme vain `try-catch` lohko. Ei kovin joustava, mutta teki tehtävänsä.
 
 ES6 (2015) toi mukanaan Promiset ja antoi meille `.then()` ja `.catch()` metodit, joiden avulla pystyimme käsittelemään asynkronisia virheitä sulavammin.
@@ -71,7 +65,6 @@ Toteutuksen yksityiskohdista puhuttaessa, kun virhe heitetään, JavaScript-moot
 Vaihtoehtoja? Voisit jättää virheenkäsittelyn huomiotta (huono idea), käyttää takaisinkutsuja, joilla on ensimmäisenä parametrina virhe (terveisiä, Node.js tyyli), tai käyttää kehityskirjastoja ja -runkoja, jotka tarjoavat omia ratkaisujaan.
 
 ## Katso myös
-
 Lisätietoja virheenkäsittelystä:
 
 - MDN try-catch: [MDN try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)

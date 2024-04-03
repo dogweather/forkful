@@ -11,9 +11,6 @@ title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---
 
-## Hva & Hvorfor?
-Å konvertere en streng til små bokstaver betyr å endre alle store bokstaver i teksten til sine tilsvarende små bokstav-versjoner. Programmerere gjør dette for å standardisere tekst, som i søkealgoritmer, brukernavn eller ved sammenligning av strenger uten å være følsom for bokstavstørrelse.
-
 ## Hvordan:
 Elm gjør dette enkelt med `String.toLower` funksjonen. Her er et eksempel på bruk:
 

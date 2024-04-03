@@ -11,9 +11,6 @@ title: Comparer deux dates
 weight: 27
 ---
 
-## What & Why? (Quoi et pourquoi ?)
-Comparer deux dates, c'est mesurer la différence entre elles ; on le fait pour suivre des événements, des délais ou pour de la synchronisation. C'est basique, mais super utile.
-
 ## How to: (Comment faire : )
 Imagine t'as deux dates : début et fin. Tu veux savoir combien de temps s'est écoulé entre elles. On va utiliser les `DateTime` de la bibliothèque `RTClib`. Faut d'abord l'installer via le Gestionnaire de bibliothèques de l'EDI Arduino.
 

@@ -12,12 +12,7 @@ title: Manipulation de fichiers avec des commandes en une ligne en CLI
 weight: 31
 ---
 
-## Quoi & Pourquoi ?
-
-Manipuler des fichiers avec des lignes de commande CLI (Interface de Ligne de Commande) implique l'utilisation de scripts Bash ou de commandes pour effectuer des actions sur les fichiers, comme les créer, les lire, les mettre à jour ou les supprimer, le tout depuis le terminal. Les programmeurs le font pour gagner en efficacité, pour automatiser, et parce que c'est particulièrement puissant pour gérer les opérations sur fichiers sur les serveurs ou systèmes Linux, où des interfaces graphiques peuvent ne pas être disponibles.
-
 ## Comment faire :
-
 Voici quelques lignes de commande puissantes et ce qu'elles peuvent accomplir :
 
 1. **Créer un fichier et y écrire du texte :**
@@ -63,7 +58,6 @@ Cette boucle passe à travers chaque fichier `.txt` dans le répertoire courant 
 Ces lignes de commande CLI exploitent la puissance de Bash pour une manipulation rapide et efficace des fichiers, une compétence indispensable pour tout programmeur.
 
 ## Plongée profonde
-
 Le shell Bash, un pilier sur la plupart des systèmes de type UNIX, a évolué à partir du Bourne Shell (sh), introduit dans la Version 7 d'Unix en 1979. Bash élargit les capacités de son prédécesseur avec des fonctionnalités de script améliorées qui l'ont rendu populaire parmi les administrateurs système et les programmeurs.
 
 Bien que Bash soit incroyablement puissant pour la manipulation de fichiers, il présente certains inconvénients. Étant basé sur le texte, les opérations complexes (comme celles impliquant des données binaires) peuvent être encombrantes ou inefficaces comparées à l'utilisation d'un langage de programmation conçu avec ces capacités à l'esprit, tel que Python.

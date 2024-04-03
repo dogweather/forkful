@@ -13,12 +13,7 @@ title: "Tiedostojen k\xE4sittely komentorivin yksirivisill\xE4 komennoilla"
 weight: 31
 ---
 
-## Mikä ja miksi?
-
-Tiedostojen käsittely komentoriviltä (CLI, Command Line Interface) yksirivisillä komennoilla tarkoittaa Bash-skriptien tai -komentojen käyttöä tiedostojen, kuten luomisen, lukemisen, päivittämisen tai poistamisen suorittamiseen pelkästään terminaalista. Ohjelmoijat tekevät näin tehokkuuden, automaation ja sen vuoksi, että se on erityisen tehokas tapa käsitellä tiedosto-operaatioita Linux-palvelimilla tai -järjestelmissä, joissa graafisia käyttöliittymiä ei ehkä ole saatavilla.
-
 ## Kuinka:
-
 Tässä on muutamia tehokkaita yksirivisiä komentoja ja mitä ne voivat saavuttaa:
 
 1. **Tiedoston luominen ja tekstin kirjoittaminen siihen:**
@@ -64,7 +59,6 @@ Tämä silmukka käy läpi jokaisen `.txt`-tiedoston nykyisessä hakemistossa ja
 Nämä CLI-yksiriviset käyttävät Bashin tehoa nopeaan ja tehokkaaseen tiedostojen käsittelyyn, taito, jota jokainen ohjelmoija pitää korvaamattomana.
 
 ## Syväsukellus
-
 Bash-komentotulkki, joka on pääasiallinen useimmissa UNIX-tyyppisissä järjestelmissä, kehittyi Bourne Shellistä (sh), joka esiteltiin Version 7 Unixissa vuonna 1979. Bash laajentaa edeltäjänsä kykyjä parannetuilla skriptausominaisuuksilla, jotka ovat tehneet siitä suositun järjestelmänvalvojien ja ohjelmoijien keskuudessa.
 
 Vaikka Bash on erittäin tehokas tiedostojen käsittelyssä, siinä on myös haittapuolia. Tekstipohjaisena monimutkaiset operaatiot (kuten ne, jotka sisältävät binääridataa) voivat olla hankalia tai tehottomia verrattuna ohjelmointikieleen, joka on suunniteltu näitä kyvykkyyksiä silmällä pitäen, kuten Python.

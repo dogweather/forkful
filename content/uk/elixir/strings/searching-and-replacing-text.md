@@ -11,9 +11,6 @@ title: "\u041F\u043E\u0448\u0443\u043A \u0442\u0430 \u0437\u0430\u043C\u0456\u04
 weight: 10
 ---
 
-## Що і чому?
-Searching and replacing text means finding specific sequences of characters in a string and swapping them with something else. Programmers do this for tasks like correcting errors, changing variable names, or updating data across multiple files.
-
 ## Як це зробити:
 ```elixir
 original_text = "The quick brown fox jumps over the lazy dog"

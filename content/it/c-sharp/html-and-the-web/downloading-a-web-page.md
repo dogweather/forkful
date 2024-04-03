@@ -11,9 +11,6 @@ title: Scaricare una pagina web
 weight: 42
 ---
 
-## What & Why? (Cosa e Perché?)
-Scaricare una pagina web significa prelevare il suo contenuto via HTTP o HTTPS. I programmatori lo fanno per analizzare dati, verificare disponibilità o integrare informazioni in app.
-
 ## How to: (Come Fare:)
 In C# si può usare HttpClient. Ecco come:
 

@@ -10,9 +10,6 @@ title: Att arbeta med XML
 weight: 40
 ---
 
-## Vad & Varför?
-Att arbeta med XML innebär att tolka, skapa och manipulera XML (eXtensible Markup Language)-data. Programmerare hanterar XML för att hantera utbyte av strukturerad data, konfiguration och mer, på grund av dess plattformsoberoende natur.
-
 ## Hur man gör:
 Här är ett enkelt sätt att tolka XML med hjälp av TinyXML-2-biblioteket:
 

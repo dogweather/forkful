@@ -11,9 +11,6 @@ title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---
 
-## Co i Dlaczego?
-Konwersja daty do postaci łańcucha znaków umożliwia jej zapis i wyświetlanie w ludzko zrozumiałym formacie. Programiści wykonują tę operację, by łatwiej manipulować datami w interfejsach użytkownika, logach czy przy zapisie danych.
-
 ## Jak to zrobić:
 ```Clojure
 (require '[java-time :as jt])

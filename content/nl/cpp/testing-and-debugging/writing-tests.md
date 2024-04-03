@@ -13,9 +13,6 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-Het schrijven van tests controleert of je code doet wat het moet doen, en vangt bugs vroeg op. Programmeurs testen om tijd, hoofdpijn te besparen en om betrouwbaarheid te garanderen.
-
 ## Hoe:
 Laten we een eenvoudige C++ functie en een test met het Catch2 framework gebruiken.
 

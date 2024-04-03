@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---
 
-## Gì và Tại sao?
-Làm việc với CSV (Giá trị Tách bằng Dấu phẩy) có nghĩa là đọc và ghi dữ liệu dưới dạng bảng. Lập trình viên sử dụng CSV do tính đơn giản và sự hỗ trợ rộng rãi trên các hệ thống cho việc trao đổi dữ liệu.
-
 ## Làm thế nào:
 Để xử lý CSV trong Haskell, bạn có thể sử dụng thư viện `cassava`. Cài đặt nó bằng cách thêm `cassava` vào tệp `.cabal` của bạn hoặc sử dụng Stack. Dưới đây là cách giải mã và mã hóa dữ liệu CSV:
 

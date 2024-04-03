@@ -13,16 +13,10 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva & Hvorfor?
-
-Avrunding av tall handler om å justere verdien av et tall til det nærmeste hele tallet eller til et spesifikt antall desimaler. Programmerere gjør dette av grunner som å forbedre lesbarheten, forenkle beregninger eller møte domenespesifikke presisjonskrav.
-
 ## Hvordan:
-
 I Go finnes det ikke en innebygd funksjon som direkte avrunder tall til et spesifikt antall desimaler i matematikkbiblioteket. Du kan imidlertid oppnå avrunding gjennom en kombinasjon av funksjoner for hele tall eller implementere en egendefinert funksjon for desimalplasser.
 
 ### Avrunding til det nærmeste hele tallet:
-
 For å avrunde til det nærmeste hele tallet kan du bruke `math.Floor()`-funksjonen med et tillegg på 0,5 for positive tall og `math.Ceil()` minus 0,5 for negative tall, avhengig av hvilken retning du ønsker å avrunde til.
 
 ```go
@@ -40,7 +34,6 @@ func main() {
 ```
 
 ### Avrunding til et spesifikt antall desimaler:
-
 For avrunding til et spesifikt antall desimaler kan en egendefinert funksjon brukes der du multipliserer tallet med 10^n (hvor n er antallet desimaler), avrunder det til det nærmeste hele tallet som før, og deretter deler på 10^n.
 
 ```go
@@ -63,7 +56,6 @@ func main() {
 ```
 
 ## Dypdykk
-
 Avrunding av tall er en grunnleggende operasjon i dataprogrammering, knyttet til den historiske utfordringen med å representere reelle tall i et binærsystem. Behovet for avrunding oppstår fra det faktum at mange reelle tall ikke kan representeres nøyaktig i binær, noe som fører til tilnærmingsfeil.
 
 I Go er tilnærmingen til avrunding noe manuell sammenlignet med språk som tilbyr innebygde avrundingsfunksjoner til spesifikke desimaler. Likevel gir Go-standarbibliotekets `math`-pakke de grunnleggende byggesteinene (som `math.Floor` og `math.Ceil`) for å konstruere hvilken som helst avrundingsmekanisme som kreves av applikasjonen.

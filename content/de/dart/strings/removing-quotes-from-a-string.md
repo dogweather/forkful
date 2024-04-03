@@ -15,9 +15,6 @@ title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---
 
-## Was & Warum?
-Das Entfernen von Anführungszeichen aus einem String in Dart bedeutet, die doppelten (") oder einfachen (') Anführungszeichen am Anfang und Ende eines Strings zu entfernen, was für die Datenbereinigung oder die Vorbereitung von Strings für die weitere Verarbeitung nützlich ist. Programmierer tun dies, um Dateneingaben zu normalisieren, Uniformität in der Datenspeicherung zu gewährleisten oder wenn sie mit APIs interagieren, die Daten in zitierten Formaten zurückgeben können.
-
 ## Wie:
 Dart bietet unkomplizierte Möglichkeiten, Anführungszeichen aus einem String zu entfernen, indem eingebaute String-Methoden verwendet werden, ohne dass Drittanbieter-Bibliotheken erforderlich sind.
 

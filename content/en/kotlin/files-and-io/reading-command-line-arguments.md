@@ -10,11 +10,7 @@ title: Reading command line arguments
 weight: 23
 ---
 
-## What & Why?
-Reading command line arguments means grabbing data passed to your program when it starts. Programmers need this to let users customize a program's behavior without changing the code.
-
 ## How to:
-
 ```kotlin
 fun main(args: Array<String>) {
     if (args.isNotEmpty()) {

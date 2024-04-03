@@ -14,9 +14,6 @@ title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---
 
-## Co i dlaczego?
-Wielką literą nazywamy zmodyfikowanie pierwszej litery każdego słowa w ciągu na wielką literę, zapewniając jednocześnie, że reszta liter pozostaje mała. To powszechne zadanie manipulacji ciągiem jest przydatne do formatowania tekstu w aplikacjach, takich jak przygotowywanie nazw użytkowników czy tytułów do wyświetlenia zgodnie z konwencją lub poprawnością gramatyczną.
-
 ## Jak to zrobić:
 Standardowa biblioteka Java nie oferuje bezpośredniej metody na kapitalizację całych ciągów za jednym razem, ale można to osiągnąć, łącząc wbudowane metody. Dla bardziej zaawansowanych potrzeb, biblioteki stron trzecich takie jak Apache Commons Lang oferują proste rozwiązania.
 
@@ -50,7 +47,6 @@ public class CapitalizeString {
 Ten fragment kodu konwertuje cały ciąg na małe litery, a następnie iteruje przez każdy znak, kapitalizując pierwszą literę każdego słowa. Uznaje spacje, kropki i apostrofy za separator słów.
 
 ### Używając Apache Commons Lang
-
 Biblioteka Apache Commons Lang oferuje bardziej eleganckie rozwiązanie za pomocą metody `WordUtils.capitalizeFully()`, która obsługuje dla ciebie różne przypadki brzegowe i separatory:
 
 ```java

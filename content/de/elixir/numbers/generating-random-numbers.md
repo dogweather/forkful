@@ -12,12 +12,7 @@ title: Generierung von Zufallszahlen
 weight: 12
 ---
 
-## Was & Warum?
-
-Zufallszahlen in Elixir zu erzeugen, ist eine grundlegende Programmieraufgabe, die für Anwendungen unerlässlich ist, die unvorhersehbare Ergebnisse benötigen, wie beispielsweise die Erstellung sicherer Tokens, das Stichprobenziehen von Daten oder in Spielalgorithmen. Programmierer nutzen dies, um ein Maß an Zufälligkeit und Variabilität in ihren Anwendungen einzuführen, was sie dynamischer und weniger deterministisch macht.
-
 ## Wie:
-
 Um Zufallszahlen in Elixir zu generieren, verwenden Sie in erster Linie das `:rand` Modul, das mehrere Funktionen für diesen Zweck bereitstellt. Hier ist eine schnelle Anleitung, um zu beginnen:
 
 Zuerst stellen Sie sicher, dass Sie den Zufallszahlengenerator initialisieren, indem Sie ihn mit einem einzigartigen Startpunkt säen:
@@ -52,7 +47,6 @@ IO.puts(random_float_range)
 Denken Sie daran, dass diese Zahlen pseudozufällig sind; sie werden durch den Seed und den Algorithmus bestimmt, reichen aber für die meisten Anwendungen aus.
 
 ## Tiefergehend
-
 Die Fähigkeit von Elixir, Zufallszahlen zu generieren, stützt sich auf das `:rand` Modul von Erlang, was sein Erbe und die enge Beziehung zu Erlang widerspiegelt. Das `:rand` Modul ersetzte das ältere `:random` Modul, und bietet verbesserte Algorithmen für die Generierung von Zufallszahlen. Es liefert eine Vielfalt von Algorithmen; der Standard ist `exsplus`, unterstützt aber auch andere wie `exs64`, `exsl` und mehr, wobei jeder seine Kompromisse hinsichtlich Geschwindigkeit und Qualität der Zufälligkeit hat.
 
 Ein interessanter Aspekt der Zufallszahlengenerierung in Elixir (und somit auch in Erlang) ist sein Umgang mit Seeds. Das System unterhält separate Seed-Zustände für jeden Prozess, was sicherstellt, dass gleichzeitige Prozesse nicht mit den Zufallszahlenfolgen der anderen interferieren. Dies ist besonders nützlich in nebenläufigen Anwendungen, um Vorhersagbarkeit und Zuverlässigkeit in verteilten Systemen zu gewährleisten.

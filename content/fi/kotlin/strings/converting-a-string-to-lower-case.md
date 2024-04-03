@@ -10,10 +10,6 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## What & Why?
-"Mitä & Miksi?"
-Stringin muuttaminen pieniksi kirjaimiksi tarkoittaa alkuperäisen merkkijonon muuntamista versioksi, jossa kaikki isot kirjaimet ovat pieniä. Ohjelmoijat käyttävät tätä yhdenmukaistaessaan tekstiä, esimerkiksi vertailuja tai tietojen syötön validointia varten.
-
 ## How to:
 "Kuinka:"
 ```kotlin

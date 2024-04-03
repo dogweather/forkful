@@ -9,9 +9,6 @@ title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---
 
-## Was & Warum?
-Das Umwandeln eines Strings in Kleinbuchstaben macht alle Buchstaben klein. Das ist wichtig für einheitliche Datenverarbeitung, beispielsweise beim Vergleichen von Eingaben.
-
 ## So geht's:
 ```C#
 string original = "Hallo Welt!";

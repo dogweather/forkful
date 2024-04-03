@@ -13,10 +13,8 @@ title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---
 
-## Co i dlaczego?
-Kapitalizacja ciągu znaków oznacza przekształcenie pierwszego znaku ciągu na wielką literę, a resztę na małe litery. Operacja ta jest powszechnie stosowana w przetwarzaniu danych w celu normalizacji danych wejściowych lub poprawy czytelności tytułów, nazwisk itp.
-
 ## Jak to zrobić:
+
 
 ### Korzystając z wbudowanej metody Pythona:
 Python posiada wbudowaną metodę `.capitalize()` dla ciągów znaków, która pozwala łatwo wykonać to zadanie.

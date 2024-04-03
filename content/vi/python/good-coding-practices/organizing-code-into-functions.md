@@ -16,9 +16,6 @@ title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---
 
-## Cái gì & Tại sao?
-Tổ chức mã thành các hàm là về việc chia nhỏ mã của bạn thành các khối có thể tái sử dụng với các mục đích cụ thể. Chúng ta làm điều đó để làm cho mã sạch sẽ hơn, dễ đọc, dễ gỡ lỗi và cập nhật hơn.
-
 ## Làm thế nào:
 Giả sử bạn đang viết một script để tính bình phương và lập phương của một số. Không có hàm, nó sẽ là một mớ hỗn độn lặp lại:
 

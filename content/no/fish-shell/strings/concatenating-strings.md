@@ -10,10 +10,6 @@ title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---
 
-## What & Why?
-På norsk: Hva og hvorfor?
-Konkatenering av strenger er å slå sammen to eller flere tekster til én. Vi gjør dette for å bygge dynamiske beskjeder, filbaner eller når vi manipulerer tekstdata. Det er essensielt i scripting.
-
 ## How to:
 På norsk: Hvordan gjøre det:
 ```Fish Shell

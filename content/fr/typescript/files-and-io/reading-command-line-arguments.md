@@ -10,9 +10,6 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## What & Why?
-Lire des arguments de ligne de commande, c'est récupérer des données directement de celui qui lance votre script. Les programmeurs font ça pour personnaliser l'exécution du programme, récupérer des configurations ou des informations essentielles sans interface utilisateur.
-
 ## How to:
 TypeScript utilise le processus Node.js pour lire les arguments de ligne de commande. Voici un petit tuto.
 

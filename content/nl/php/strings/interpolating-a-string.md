@@ -12,12 +12,7 @@ title: Een string interpoleren
 weight: 8
 ---
 
-## Wat & Waarom?
-
-Stringinterpolatie stelt u in staat om variabelen direct in een string te injecteren. Programmeurs gebruiken het om variabelen in tekst te verweven, waardoor de code schoner en leesbaarder wordt.
-
 ## Hoe:
-
 In PHP kunt u strings interpoleren met behulp van dubbele aanhalingstekens of heredoc-syntax:
 
 ```php
@@ -44,7 +39,6 @@ echo 'Hallo, $name!'; // Uitvoer: Hallo, $name!
 ```
 
 ## Diepgaande Verkenning
-
 Voordat PHP interpolatie introduceerde, was concatenatie met de puntoperator (.) de manier om te gaan. Bijvoorbeeld:
 
 ```php
@@ -60,7 +54,6 @@ Er bestaan alternatieven voor interpolatie, zoals het gebruik van `sprintf()` vo
 Implementatiegewijs zoekt PHP naar variabelen binnen strings wanneer deze tussen dubbele aanhalingstekens of in heredoc-syntax staan en vervangt ze door de waarde van de variabele. De parser negeert het dollarteken ($) in enkelvoudige aanhalingstekens en behandelt het als een gewoon teken.
 
 ## Zie Ook
-
 - [PHP: Strings](http://php.net/manual/en/language.types.string.php) - Officiële PHP-documentatie over strings.
 - [PHP: Heredoc syntax](https://www.php.net/manual/en/language.types.string.php#language.types.string.syntax.heredoc) - Gedetailleerde sectie van de PHP-handleiding over Heredoc.
 - [PHP: String Operators](https://www.php.net/manual/en/language.operators.string.php) - Meer over stringconcatenatie en de puntoperator.

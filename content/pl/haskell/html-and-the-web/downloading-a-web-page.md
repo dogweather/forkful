@@ -10,11 +10,6 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## What & Why? 
-Czyli po polsku: "Co i dlaczego?"
-
-Pobieranie strony internetowej to proces, w którym uzyskujemy jej dane (najczęściej w formacie HTML) bezpośrednio na nasz komputer. Programiści robią to, aby pracować z treścią strony - analizując, testując, czy integrując systemy.
-
 ## How to:
 Czyli po polsku: "Jak to zrobić:"
 

@@ -11,12 +11,7 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva & Hvorfor?
-
-Å avrunde tall er å justere et desimaltall til nærmeste hele verdi eller til et spesifisert antall desimaler. Programmerere avrunder for å redusere kompleksitet, forbedre lesbarhet, eller møte presisjonskrav.
-
 ## Hvordan:
-
 Elms `Basics`-modul tilbyr praktiske funksjoner for avrunding: `round`, `floor` og `ceiling`. Slik bruker du dem.
 
 ```elm
@@ -46,7 +41,6 @@ toLocaleString 2 3.14159 --> "3.14"
 ```
 
 ## Dypdykk
-
 Elm er et sterkt typet funksjonelt språk som legger sideeffekter til arkitekturens "kanter". Dette betyr at funksjoner som avrunding må være rene og forutsigbare. Historisk sett er avrunding en vanlig operasjon i mange programmeringsspråk som håndterer upresisjonen av flyttallsaritmetikk.
 
 Elms tilnærming til avrunding er rett frem - funksjonene er rene og følger matematiske definisjoner for round, floor og ceiling. Elm forutser vanlige behov ved å tilby innebygde funksjoner, ettersom presisjonsstyring ofte er et krav, spesielt innen finans og grafikk.
@@ -56,7 +50,6 @@ Alternativer til Elms innebygde funksjoner kan inkludere egendefinerte implement
 Per gjeldende versjon bruker Elm JavaScripts underliggende flyttallsmatematikk for disse operasjonene, dermed forblir konsistent med IEEE 754-standarden, noe som er verdt å huske på når man vurderer presisjon og potensielle flyttallsfeil.
 
 ## Se Også
-
 - Elms offisielle `Basics`-modul dokumentasjon: https://package.elm-lang.org/packages/elm/core/latest/Basics
 - En detaljert titt på hvordan flyttall fungerer i databehandling: https://floating-point-gui.de/
 - Elm `Float`-modul for flere flyttallsoperasjoner: https://package.elm-lang.org/packages/elm/core/latest/Float

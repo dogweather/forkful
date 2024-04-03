@@ -13,9 +13,6 @@ title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---
 
-## Co i dlaczego?
-Interaktywna powłoka Rust, czyli REPL (Read-Eval-Print Loop - Pętla Czytaj-Wykonaj-Wydrukuj), pozwala na uruchamianie kodu Rust na bieżąco, widząc natychmiastowe rezultaty, idealnie nadaje się do eksperymentowania lub nauki. Programiści używają jej do testowania fragmentów kodu, debugowania, lub po prostu zabawy z funkcjami języka bez konieczności kompilacji pełnego projektu.
-
 ## Jak to zrobić:
 Na ten moment Rust nie ma oficjalnej REPL dołączonej do siebie. Można używać narzędzi stron trzecich takich jak `evcxr_repl`. Zainstaluj je za pomocą Cargo:
 

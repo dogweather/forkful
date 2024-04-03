@@ -11,9 +11,6 @@ title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---
 
-## Vad & Varför?
-Att hitta längden på en sträng innebär att räkna antalet tecken i den. Programmerare gör det för att validera indata, begränsa text eller för bearbetning av textdata.
-
 ## Hur gör man:
 Här är hur du gör det i Fish Shell. Enkel och rak på sak.
 

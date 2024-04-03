@@ -11,9 +11,6 @@ title: Umgang mit komplexen Zahlen
 weight: 14
 ---
 
-## Was & Warum?
-Komplexe Zahlen erweitern die Idee der eindimensionalen Zahlengerade in die zweidimensionale Ebene, indem eine senkrechte imaginäre Achse miteinbezogen wird. Programmierer arbeiten in Feldern wie der Signalverarbeitung, der Fluidmechanik und der Elektrotechnik mit ihnen, wo sie für die Darstellung von Schwingungen und anderen Phänomenen unerlässlich sind.
-
 ## Wie geht das:
 In Lua können Sie komplexe Zahlen mit Tabellen darstellen. Die grundlegenden Operationen umfassen das Hinzufügen, Subtrahieren, Multiplizieren und Dividieren dieser Tabellen. Hier ist wie:
 

@@ -14,9 +14,6 @@ title: Sjekker om en mappe eksisterer
 weight: 20
 ---
 
-## Hva & Hvorfor?
-Å sjekke om en mappe eksisterer i Python handler om å verifisere tilstedeværelsen av en mappe i filsystemet før man utfører operasjoner som å lese eller skrive filer. Programmerere gjør dette for å unngå feil som `FileNotFoundError`, for å sikre at applikasjonen oppfører seg pålitelig og ikke krasjer når den prøver å interagere med mapper.
-
 ## Hvordan:
 Python gir innebygde måter å sjekke for en katalogs eksistens ved hjelp av `os` og `pathlib` modulene. Her er eksempler for begge:
 

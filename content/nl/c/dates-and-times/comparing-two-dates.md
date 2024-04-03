@@ -13,12 +13,7 @@ title: Twee datums vergelijken
 weight: 27
 ---
 
-## Wat & Waarom?
-
-Datums vergelijken in C houdt in dat wordt bepaald hoe de chronologische relatie tussen twee datums is - of de ene datum voor de andere komt of dat ze hetzelfde zijn. Deze mogelijkheid is cruciaal in applicaties die te maken hebben met planning, deadlines of het bijhouden van gegevens, omdat het de organisatie en manipulatie van tijdgevoelige gegevens mogelijk maakt.
-
 ## Hoe te:
-
 C heeft geen ingebouwd type voor datums, wat het noodzakelijk maakt om de `time.h` bibliotheek te gebruiken om met datum- en tijdsstructuren te werken. De `tm` structuur en de `difftime()` functie worden vaak gebruikt om datums te vergelijken. Hieronder staat een voorbeeld dat laat zien hoe je twee datums kunt vergelijken:
 
 ```c
@@ -68,7 +63,6 @@ Eerste datum komt voor de tweede datum.
 Dit programma initialiseert twee `tm` structuren met specifieke datums, zet ze om naar `time_t` formaat met behulp van `mktime()` en vergelijkt ze tenslotte met `difftime()`, dat het verschil in seconden (als een `double`) tussen de twee tijden retourneert.
 
 ## Diepgaande duik
-
 In de vroege dagen van C vereisten datum- en tijdsoperaties handmatige berekeningen, waarbij vaak rekening werd gehouden met schrikkeljaren, het wisselende aantal dagen in maanden, en zelfs schrikkelseconden. De introductie van `time.h` in de ANSI C-standaard bracht standaardisatie in de tijdbehandeling in C, waardoor datum- en tijdoperaties werden vereenvoudigd.
 
 Het gebruik van `time.h` voor datumvergelijking is eenvoudig maar heeft beperkingen. De `tm` structuur houdt geen rekening met tijdzones of zomertijd, en `difftime()` geeft alleen het verschil in seconden aan, en mist fijnere granulariteit voor bepaalde applicaties.

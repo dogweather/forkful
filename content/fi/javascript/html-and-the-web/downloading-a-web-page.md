@@ -10,9 +10,6 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## What & Why? (Mitä & Miksi?)
-Lataamme verkkosivun, kun haluamme hakea sen sisältöä koodillamme. Tämä mahdollistaa tiedon käsittelyn, tallentamisen tai hyödyntämisen automaattisissa prosesseissa.
-
 ## How to: (Kuinka tehdä:)
 ```javascript
 // Node.js -esimerkki käyttäen 'axios' -kirjastoa.

@@ -10,9 +10,6 @@ title: Tekstitiedoston lukeminen
 weight: 22
 ---
 
-## What & Why? (Mitä ja Miksi?)
-Lukemalla tekstitiedostoa Arduino kerää ja käsittelee tietoa. Tämä on olennaista sensoridatasta aina konfiguraatioasetuksiin; se mahdollistaa dynaamisen toiminnan muuttuvien tietojen mukaan.
-
 ## How to: (Kuinka tehdä:)
 ```arduino
 #include <SD.h>

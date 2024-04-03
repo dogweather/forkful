@@ -11,12 +11,7 @@ title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---
 
-## Qué y Por Qué?
-
-Eliminar caracteres que coinciden con un patrón es básicamente filtrar tu texto, quitando piezas específicas que no quieres. Los programadores hacen esto para limpiar datos, validar entradas o preparar strings para procesamiento adicional.
-
 ## Cómo hacerlo:
-
 Considera que tienes un string con números y letras y quieres eliminar todos los dígitos. En C#, podrías usar `Regex.Replace`.
 
 ```C#
@@ -42,7 +37,6 @@ CsBlnc
 ```
 
 ## Deep Dive:
-
 Históricamente, la manipulación de strings ha sido fundamental en la programación, y eliminar caracteres que no queremos no es la excepción. Antes de que `System.Text.RegularExpressions` existiera, los programadores tenían que iterar a través de cada carácter y construir un nuevo string con los caracteres que querían conservar.
 
 Alternativas a `Regex.Replace` incluyen usar `String.Replace` o `StringBuilder` para remover caracteres específicos o secuencias, pero estos métodos no soportan patrones de búsqueda complejos como lo hace `Regex`.
@@ -57,7 +51,6 @@ string output = compiledRegex.Replace(input, "");
 Compilar tu `Regex` tiene un costo inicial más alto, pero mejora el rendimiento si vas a utilizar el mismo patrón repetidamente.
 
 ## Vea También:
-
 Para profundizar en `Regex` y sus capacidades, aquí hay algunos enlaces:
 
 - MSDN Documentation on `Regex`: [docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions)

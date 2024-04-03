@@ -9,11 +9,7 @@ title: Extracting substrings
 weight: 6
 ---
 
-## What & Why?
-Extracting substrings means pulling specific parts out of a string. Programmers do it to isolate, manipulate, or analyze pieces of text data.
-
 ## How to:
-
 Elm makes it easy. For a start, let's use `String.slice`:
 
 ```Elm
@@ -48,7 +44,6 @@ rightString = right 5 fullText
 ```
 
 ## Deep Dive
-
 Historically, substring extraction is as old as programming itself. In Elm, as in other functional languages, string manipulation functions are immutable - they return new strings rather than altering the original.
 
 Alternatives like `String.dropLeft` and `String.dropRight` exist. They trim characters from either end of the string:
@@ -72,7 +67,6 @@ droppedRightString = dropRight 6 fullText
 Implementation-wise, these functions are built into the Elm standard library and handle Unicode, though there are considerations to be made with Unicode's surrogate pairs and combining characters.
 
 ## See Also
-
 - Elm `String` module documentation: https://package.elm-lang.org/packages/elm/core/latest/String
 - Elm guide on strings: https://guide.elm-lang.org/strings/
 - MDN Web Docs on Unicode: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt

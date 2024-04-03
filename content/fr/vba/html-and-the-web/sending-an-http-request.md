@@ -14,12 +14,7 @@ title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---
 
-## Quoi & Pourquoi ?
-
-Envoyer une requête HTTP en Visual Basic pour Applications (VBA) implique un accès programmatique aux ressources Web ou aux services Web en effectuant des demandes via HTTP. Les programmeurs font cela pour récupérer des données, interagir avec des API en ligne, ou soumettre des formulaires de manière programmatique depuis leurs applications compatibles VBA telles qu'Excel, Access, ou des solutions VBA personnalisées.
-
 ## Comment faire :
-
 La clé pour envoyer une requête HTTP en VBA est d'utiliser la bibliothèque `Microsoft XML, v6.0` (ou des versions antérieures, selon votre système). Premièrement, assurez-vous que cette référence est activée dans votre projet en allant dans Outils > Références dans l'éditeur VBA et en cochant `Microsoft XML, v6.0`.
 
 Voici comment envoyer une simple requête HTTP GET :
@@ -65,7 +60,6 @@ Un exemple de sortie pour une requête réussie pourrait être une chaîne JSON 
 ```
 
 ## Plongée profonde
-
 La méthode présentée utilise l'objet `MSXML2.XMLHTTP`, partie des services principaux Microsoft XML (MSXML). Elle a été introduite pour offrir aux développeurs VBA une façon d'exécuter des opérations basées sur XML et, avec le temps, est devenue un outil courant pour les requêtes HTTP, même lorsqu'on ne travaille pas directement avec des données XML. Malgré son âge, elle reste une option fiable pour des interactions web simples en VBA.
 
 Toutefois, VBA et ses mécanismes de requête HTTP manquent de la robustesse et de la flexibilité trouvées dans les environnements de programmation modernes. Par exemple, la gestion des requêtes asynchrones ou le travail au sein d'applications nécessitant des fonctionnalités HTTP avancées (comme les websockets ou les événements envoyés par le serveur) sont hors de portée pour VBA. Lors de travaux sur des projets d'intégration web plus complexes, les développeurs ont souvent recours à des bibliothèques ou outils externes, ou même à l'automatisation du comportement des navigateurs via des techniques de web scraping, bien que ces solutions soient des palliatifs plutôt que de véritables solutions.

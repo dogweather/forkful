@@ -10,16 +10,10 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-
-Regular expressions in programming allow for pattern matching and manipulation of strings based on specific patterns. Programmers use them for tasks like validation, searching, and text manipulation due to their versatility and efficiency in handling complex string operations.
-
 ## How to:
-
 Lua does not support regular expressions natively in the same way as languages like Perl or Python. Instead, it offers pattern matching capabilities that cover many common use cases of regular expressions. However, for full-fledged regular expression support, one can use a third-party library such as `lrexlib`.
 
 ### Basic Pattern Matching in Lua:
-
 Lua provides a powerful pattern matching system that you can use for simple substitutions and searches:
 
 ```lua
@@ -37,7 +31,6 @@ print(s)
 ```
 
 ### Capturing Substrings:
-
 You can capture parts of the string that match patterns:
 
 ```lua
@@ -48,7 +41,6 @@ print("Day:", d, "Month:", m, "Year:", y)
 ```
 
 ### Using `lrexlib` for Regular Expressions:
-
 To use actual regular expressions, you can install and use `lrexlib`. Assuming you have it installed (`luarocks install lrexlib-pcre`), you can do more complex pattern matching:
 
 ```lua

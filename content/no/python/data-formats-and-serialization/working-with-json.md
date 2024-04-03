@@ -13,16 +13,10 @@ title: Arbeider med JSON
 weight: 38
 ---
 
-## Hva & Hvorfor?
-
-Å jobbe med JSON (JavaScript Object Notation) innebærer parsing av JSON-formatterte strenger til Python-objekter og omvendt. Dette er avgjørende for web- og API-utvikling da JSON er lingua franca for utveksling av data mellom servere og klienter.
-
 ## Hvordan:
-
 Pythons innebygde `json`-bibliotek forenkler prosessen med koding (konvertering av Python-objekter til JSON) og dekoding (konvertering av JSON til Python-objekter). Slik kan du bruke det:
 
 ### Koding av Python-objekter til JSON:
-
 ```python
 import json
 
@@ -61,7 +55,6 @@ print(json_streng)
 ```
 
 ### Dekoding av JSON til Python-objekter:
-
 ```python
 json_streng = '''
 {
@@ -100,11 +93,9 @@ print(data)
 ```
 
 ### Arbeid med tredjepartsbiblioteker:
-
 For kompleks JSON-håndtering, som skjemavalidering eller parsing av JSON-filer direkte fra URL-er, kan biblioteker som `requests` for HTTP-forespørsler og `jsonschema` for validering være nyttige.
 
 #### Eksempel med `requests` for å parse JSON fra en URL:
-
 ```python
 import requests
 
@@ -117,7 +108,6 @@ print(data)
 Dette kodeutdraget henter JSON-data fra en angitt URL og konverterer den direkte til et Python-objekt.
 
 #### Bruk av `jsonschema` for å validere JSON:
-
 Først, installer biblioteket via pip:
 
 ```bash

@@ -11,9 +11,6 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## Vad & Varför?
-Läsning av en textfil innebär att man tar information lagrad som text och gör den tillgänglig i din applikation. Programmerare gör detta för att hantera data, konfigurationer, och för att interagera med system utanför deras program.
-
 ## Hur gör man:
 ```javascript
 // Använder Node.js 'fs' modulen för läsning av filer

@@ -11,9 +11,6 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## What & Why? (Vad & Varför?)
-Att läsa en textfil i Python innebär att öppna och extrahera innehållet från en fil på din dator till ditt program. Programmerare gör detta för att behandla data, konfigurera program eller helt enkelt för att lagra information som ska användas senare.
-
 ## How to: (Hur man gör:)
 ```Python
 # Öppna och läs hela filens innehåll
@@ -32,6 +29,7 @@ with open('exempel.txt', 'r', encoding='utf-8') as fil:
     for _ in range(n):
         print(fil.readline().strip())
 ```
+
 ### Sample Output:
 ```
 Detta är första raden i textfilen.

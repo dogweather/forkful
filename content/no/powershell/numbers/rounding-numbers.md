@@ -11,9 +11,6 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva & Hvorfor?
-Avrunding av tall handler om å justere en verdi til nærmeste heltall eller angitt desimalplass. Programmerere runder av tall for å forenkle data, forbedre lesbarheten, eller møte visse matematiske krav under beregninger.
-
 ## Hvordan:
 Du har noen hendige cmdlets og metoder i PowerShell for avrunding:
 

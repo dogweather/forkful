@@ -14,9 +14,6 @@ title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---
 
-## Cái gì & Tại sao?
-Biểu thức chính quy (regex) tìm kiếm và thao tác với chuỗi dựa trên các mẫu. Lập trình viên sử dụng chúng cho các nhiệm vụ như xác thực biểu mẫu, phân tích cú pháp, và xử lý văn bản vì chúng mạnh mẽ và ngắn gọn.
-
 ## Cách thực hiện:
 Trong Haskell, bạn có thể sử dụng regex với gói `regex-tdfa`. Ở đây, chúng tôi bắt số từ một chuỗi.
 

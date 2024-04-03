@@ -11,9 +11,6 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva & Hvorfor?
-Avrunding av tall handler om å justere et tall til nærmeste hele, eller til en bestemt desimalpresisjon. Vi avrunder tall for å forenkle dem for menneskelig lesbarhet, redusere beregningsbelastning, eller for å møte spesifikke numeriske krav.
-
 ## Hvordan:
 I Clojure bruker vi primært `Math/round`, `Math/floor` og `Math/ceil`:
 

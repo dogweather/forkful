@@ -13,12 +13,7 @@ title: Loggning
 weight: 17
 ---
 
-## Vad & Varför?
-
-Loggning i programmering innebär att man registrerar händelser, fel eller anmärkningsvärda företeelser under körning. Programmerare gör detta för att felsöka problem, övervaka prestanda och hålla en journal över operativ data, vilket är avgörande för att underhålla och förstå mjukvarans beteende i produktion.
-
 ## Hur man gör:
-
 I Google Apps Script kan loggning utföras med olika metoder, såsom `Logger`-klassen och `console.log()`. Logger-klassen är det traditionella sättet, lämpligt för enkel felsökning och utvecklingsändamål. Sedan senaste uppdateringarna erbjuder `console.log()` mer flexibilitet och integration med Stackdriver Logging, vilket ger en mer robust lösning för övervakning av dina Apps-skript i Google Cloud Platform.
 
 **Använda Logger:**
@@ -65,7 +60,6 @@ Loggar ett objekt: {name: "Jane", role: "Utvecklare"}
 Genom att övergå till `console.log()` för komplexa applikationer kan utvecklare effektivt analysera och sortera loggar med de kraftfulla filter och verktyg som tillhandahålls av GCP, vilket inte är lika okomplicerat med den traditionella Logger-klassen.
 
 ## Djupdykning:
-
 Loggning i Google Apps Script har utvecklats avsevärt. Inledningsvis var `Logger`-klassen den primära metoden för utvecklare att felsöka sina skript. Den är enkel och tillräcklig för grundläggande skript, men saknar de funktioner som behövs för moderna molnapplikationer, såsom att söka i loggar eller analysera loggtrender över tid.
 
 Introduktionen av `console.log()` överbryggade detta gap genom att integrera loggning i Google Apps Script med Google Clouds Stackdriver Logging (nu kallad Operations Suite), vilket tillhandahåller en centraliserad plattform för loggning, övervakning och felsökning av applikationer. Detta tillät inte bara loggning i stor skala, utan öppnade också upp avancerade funktioner för logghantering som loggbaserade metriker, analys av loggar i realtid och integration med andra tjänster i Google Cloud.

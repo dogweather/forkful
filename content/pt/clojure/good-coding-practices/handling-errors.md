@@ -11,9 +11,6 @@ title: Tratamento de erros
 weight: 16
 ---
 
-## O Que & Por Quê?
-O tratamento de erros é sobre gerenciar o inesperado em programas—como um segurança lidando com desordeiros. Programadores gostam de fluidez; o tratamento de erros ajuda a manter os problemas sob controle, garantindo que seu código não tropece e caia quando enfrentar o inesperado.
-
 ## Como fazer:
 Clojure, assim como seus ancestrais Lisp, depende de exceções para lidar com erros. Aqui está como você mostra o que pode fazer quando as coisas dão errado.
 

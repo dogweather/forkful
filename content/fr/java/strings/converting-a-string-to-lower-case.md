@@ -11,9 +11,6 @@ title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---
 
-## What & Why?
-Changer une chaîne en minuscules, c'est transformer tous ses caractères en leur équivalent en lettre minuscule. Les programmeurs font ça pour uniformiser les entrées des utilisateurs, faciliter les comparaisons de texte et éviter les problèmes de casse sensibles.
-
 ## How to:
 En Java, pour changer en minuscules, on utilise `toLowerCase()`. Voici un exemple simple :
 

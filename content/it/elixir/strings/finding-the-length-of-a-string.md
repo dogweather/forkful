@@ -11,9 +11,6 @@ title: Trovare la lunghezza di una stringa
 weight: 7
 ---
 
-## What & Why?
-Calcolare la lunghezza di una stringa significa contare il numero di caratteri che la compongono. È una operazione fondamentale per la manipolazione di testi, come validare input, limitare lunghezza, o per semplice analisi dati.
-
 ## How to:
 Elixir rende semplice trovare la lunghezza di una stringa mediante la funzione `String.length/1`:
 

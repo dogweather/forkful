@@ -11,9 +11,6 @@ title: Sammenlikning av to datoer
 weight: 27
 ---
 
-## What & Why?
-Å sammenligne to datoer dreier seg om å finne ut om de er like, eller hvis ikke, hvilken som kommer før eller etter den andre. Programmerere gjør dette for å organisere data, validere input, eller håndtere hendelser som er avhengig av tid.
-
 ## How to:
 ```C++
 #include <iostream>

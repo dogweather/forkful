@@ -14,12 +14,7 @@ title: Sette stor bokstav i en streng
 weight: 2
 ---
 
-## Hva & Hvorfor?
-
-Å kapitalisere en streng involverer å konvertere den første bokstaven i strengen til stor bokstav, mens man sørger for at resten av bokstavene er i små bokstaver. Denne handlingen er vanligvis nødvendig for formatering av brukerinndata eller visning av tekst i brukergrensesnitt, hvor konsistens og lesbarhet er viktig.
-
 ## Hvordan:
-
 Elixir tilbyr en enkel måte å kapitalisere strenger på ved hjelp av sine innebygde funksjoner uten behov for tredjepartsbibliotek. Her er et enkelt eksempel:
 
 ```elixir

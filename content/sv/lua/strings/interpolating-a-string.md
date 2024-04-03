@@ -11,9 +11,6 @@ title: "Interpolera en str\xE4ng"
 weight: 8
 ---
 
-## Vad & Varför?
-Stringinterpolering innebär att du injicerar variabler direkt i en textsträng. Programmerare använder det för att enkelt bygga dynamiska meddelanden eller behandla data utan att klumpigt konkatenera strängar och variabler.
-
 ## Hur gör man:
 ```Lua
 local användarnamn = "Erik"

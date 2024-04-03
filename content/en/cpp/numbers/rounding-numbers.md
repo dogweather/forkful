@@ -10,9 +10,6 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-Rounding numbers means tweaking a value to its nearest integer or specified precision. Devs do it to simplify, conform to real-world constraints, or improve performance by ditching excess precision.
-
 ## How to:
 C++ offers several ways to round numbers, like `floor()`, `ceil()`, and `round()`:
 

@@ -11,9 +11,6 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## What & Why? (Mitä & Miksi?)
-Hakeminen ja korvaaminen tekstissä tarkoittaa jotakin merkkijonoa toisella korvaamista. Ohjelmoijat tekevät tätä koodin virheitä korjatessaan tai päivittäessään ohjelmiston toimintaa.
-
 ## How to: (Kuinka tehdä:)
 ```Python
 # Simppeli hakeminen ja korvaaminen Pythonissa käyttäen str.replace() -metodia.

@@ -11,9 +11,6 @@ title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---
 
-## Co i Dlaczego?
-Czytanie argumentów z linii poleceń pozwala skryptom Bash przyjmować dane wejściowe podczas uruchamiania. Używamy tego, bo to elastyczny sposób na dostosowywanie zachowania skryptów na podstawie użytkownika lub kontekstu uruchomienia.
-
 ## Jak to zrobić:
 ```Bash
 #!/bin/bash

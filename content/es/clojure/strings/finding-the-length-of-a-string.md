@@ -10,9 +10,6 @@ title: Calculando la longitud de una cadena
 weight: 7
 ---
 
-## ¿Qué & Por Qué?
-Contar caracteres de un texto es útil para validar entradas y manejar datos precisamente. Los programadores lo hacen todo el tiempo para delimitar, formatear y procesar texto eficientemente.
-
 ## Cómo hacerlo:
 Para obtener la longitud de una cadena en Clojure, usamos la función `count`. Aquí tienes unos ejemplos:
 

@@ -12,12 +12,7 @@ title: Samenvoegen van strings
 weight: 3
 ---
 
-## Wat & Waarom?
-
-Concatenatie is het proces van het aan elkaar plakken van strings. We doen dit omdat we vaak woorden of symbolen moeten combineren om zinnen, berichten te creëren, of dynamische waarden om te zetten in leesbare tekst.
-
 ## Hoe te:
-
 Het concatenatie van strings in C# kan op verschillende manieren:
 
 Gebruikmakend van de `+` operator:
@@ -52,7 +47,6 @@ Console.WriteLine(geconcateneerd); // Uitvoer: Hallo, Wereld!
 ```
 
 ## Diepgaand
-
 Stringconcatenatie is niet nieuw; het bestaat al sinds de vroege dagen van programmering. Echter, de manier waarop we het in C# doen, is geëvolueerd. Oorspronkelijk werd de `+` veel gebruikt, maar het is niet altijd efficiënt, vooral binnen loops, omdat strings in .NET onveranderlijk zijn. Elke `+` operatie creëert een nieuwe string, wat kan leiden tot prestatieproblemen.
 
 `String.Concat()` is een directe methode-aanroep die ook niet loop-vriendelijk is, maar prima voor een bekend, klein aantal strings.
@@ -64,6 +58,5 @@ Stringinterpolatie, geïntroduceerd in C# 6.0, zorgt voor meer leesbare en onder
 Elke methode heeft zijn plaats: snelle concatenaties (`+`), het combineren van een paar strings (`String.Concat()`), zwaar stringwerk (`StringBuilder`), en schone, geformatteerde strings (stringinterpolatie).
 
 ## Zie Ook
-
 - Microsoft Docs over Stringconcatenatie: [String Concatenation](https://docs.microsoft.com/nl-nl/dotnet/csharp/how-to/concatenate-multiple-strings)
 - Microsoft Docs over `StringBuilder`: [StringBuilder Class](https://docs.microsoft.com/nl-nl/dotnet/api/system.text.stringbuilder)

@@ -10,16 +10,10 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-
-Rounding numbers is about adjusting the value of a number to its nearest whole number or to a specific number of decimal places. Programmers do this for reasons such as improving readability, simplifying calculations, or meeting domain-specific precision requirements.
-
 ## How to:
-
 In Go, there isn't a built-in function that directly rounds numbers to a specific number of decimal places in the math package. However, you can achieve rounding through a combination of functions for whole numbers or implement a custom function for decimal places.
 
 ### Rounding to the nearest whole number:
-
 To round to the nearest whole number, you can use the `math.Floor()` function with an added 0.5 for positive numbers, and `math.Ceil()` minus 0.5 for negative numbers, depending on the direction you want to round off to.
 
 ```go
@@ -37,7 +31,6 @@ func main() {
 ```
 
 ### Rounding to a specific number of decimal places:
-
 For rounding to a specific number of decimal places, a custom function can be used where you multiply the number by 10^n (where n is the number of decimal places), round it to the nearest whole number as before, and then divide by 10^n.
 
 ```go
@@ -60,7 +53,6 @@ func main() {
 ```
 
 ## Deep Dive
-
 Rounding numbers is a fundamental operation in computer programming, linked to the historical challenge of representing real numbers in a binary system. The need for rounding arises from the fact that many real numbers can't be precisely represented in binary, leading to approximation errors.
 
 In Go, the approach to rounding is somewhat manual compared to languages that offer built-in rounding functions to specific decimal places. Nevertheless, the Go standard library's `math` package provides the basic building blocks (like `math.Floor` and `math.Ceil`) to construct any rounding mechanism required by the application. 

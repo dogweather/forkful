@@ -13,9 +13,6 @@ title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---
 
-## Wat & Waarom?
-De Read-Eval-Print Loop (REPL) is een eenvoudige, interactieve programmeeromgeving die individuele gebruikersinvoer neemt, deze evalueert en het resultaat aan de gebruiker teruggeeft. Elm-programmeurs gebruiken REPL voor snelle experimenten, debugging of het leren van de taal.
-
 ## Hoe te:
 Elm wordt niet geleverd met een geïntegreerde REPL. Echter, je kunt `elm repl` vanaf je opdrachtregel gebruiken om een Elm-sessie te starten nadat je Elm hebt geïnstalleerd.
 

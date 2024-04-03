@@ -10,9 +10,6 @@ title: Writing to standard error
 weight: 25
 ---
 
-## What & Why?
-Writing to standard error (stderr) is about directing error messages and diagnostics to the stderr stream, separate from standard output (stdout). Programmers do this to differentiate regular program output from error messages, allowing for more effective debugging and logging.
-
 ## How to:
 In Clojure, you can write to stderr using the `*err*` stream. Here’s a basic example:
 

@@ -10,9 +10,6 @@ title: Starting a new project
 weight: 1
 ---
 
-## What & Why?
-Starting a new project means initializing a fresh directory with everything you need to get coding. Programmers do this to kick-off development in a clean, organized way.
-
 ## How to:
 ```fish
 # Create a new directory and enter it

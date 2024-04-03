@@ -11,9 +11,6 @@ title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---
 
-## What & Why? (Vad & Varför?)
-Att söka och ersätta text är processen där specifika teckensträngar identifieras och byts ut. Programmerare använder det för att uppdatera kod, manipulera data och automatisera textändringar.
-
 ## How to: (Så Här Gör Du:)
 I Lua är `string.gsub` din kompis för att byta ut text. Exempel:
 

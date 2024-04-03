@@ -12,9 +12,6 @@ title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mikä & Miksi?
-REPL (Read-Eval-Print Loop), suomeksi lue-arvioi-tulosta -silmukka, on interaktiivinen kuori, joka käsittelee yksittäisiä käyttäjän syötteitä, suorittaa koodia ja palauttaa tuloksen. Ohjelmoijat käyttävät sitä nopeisiin kokeiluihin, virheenkorjaukseen tai oppimiseen, koska se mahdollistaa välittömän palautteen ja iteroinnin.
-
 ## Miten:
 REPL:n käynnistäminen Javassa on yksinkertaista `jshell`-työkalun avulla, joka esiteltiin Java 9:ssä. Näin saat kätesi siihen ja aloitat perusistunnon:
 

@@ -11,12 +11,7 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## Quoi & Pourquoi ?
-
-Créer un fichier temporaire c'est comme griffonner sur un bout de papier pour ne pas oublier quelque chose – c'est provisoire. Les programmeurs en ont besoin pour stocker des données de manière éphémère, tester des bouts de code, ou manipuler des fichiers sans affecter les originaux.
-
 ## Comment faire :
-
 ```typescript
 import * as fs from 'fs';
 import * as os from 'os';
@@ -48,7 +43,6 @@ Fichier temporaire créé à : /tmp/myTempFile-1612473302386
 ```
 
 ## Exploration détaillée :
-
 Historiquement, les fichiers temporaires ont leur origine dans les systèmes d’exploitation Unix pour gérer l'espace disque efficacement. En TypeScript, on utilise généralement le module `fs` de Node.js pour interagir avec le système de fichiers.
 
 Des alternatives existent, comme les bibliothèques `temp` ou `tmp-promise` qui offrent des fonctionnalités avancées. Par exemple, `temp` peut générer automatiquement des noms uniques, tandis que `tmp-promise` utilise des Promises pour une approche plus moderne.
@@ -56,7 +50,6 @@ Des alternatives existent, comme les bibliothèques `temp` ou `tmp-promise` qui 
 L'implémentation requiert de bien gérer les droits d'accès (flags) lors de la création du fichier pour éviter des problèmes de sécurité ou de concurrence. Il est également crucial de planifier la suppression du fichier temporaire après son utilisation pour ne pas laisser de "déchets numériques".
 
 ## Voir aussi :
-
 - Documentation Node.js `fs` module: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
 - Bibliothèque `temp` pour gérer des fichiers et dossiers temporaires: [https://www.npmjs.com/package/temp](https://www.npmjs.com/package/temp)
 - Bibliothèque `tmp-promise`: [https://www.npmjs.com/package/tmp-promise](https://www.npmjs.com/package/tmp-promise)

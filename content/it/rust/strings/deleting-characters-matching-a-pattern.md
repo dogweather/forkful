@@ -10,9 +10,6 @@ title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---
 
-## Cosa e Perché?
-Eliminare caratteri corrispondenti a uno schema serve a purificare le stringhe da elementi non desiderati. Programmatori lo fanno per validare input, rimuovere dati sensibili, o semplicemente pulire i dati.
-
 ## Come fare:
 ```rust
 fn rimuovi_caratteri<S: AsRef<str>>(testo: S, pattern: S) -> String {

@@ -13,16 +13,10 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## ¿Qué y por qué?
-
-Escribir pruebas en Rust implica crear comprobaciones automatizadas para asegurar que tu código funciona como se espera. Los programadores hacen esto para detectar errores temprano, facilitar la refactorización y mantener la calidad del código a lo largo del tiempo.
-
 ## Cómo hacerlo:
-
 El marco de prueba integrado de Rust soporta pruebas de unidad, integración y documentación sin necesidad de bibliotecas externas. Las pruebas se anotan con `#[test]`, y cualquier función anotada de tal manera se compila como una prueba.
 
 ### Escribiendo una Prueba de Unidad:
-
 Coloca las pruebas de unidad en el módulo que están probando usando un submódulo `tests` marcado con `#[cfg(test)]` para asegurar que solo se compilen al probar.
 
 ```rust
@@ -60,7 +54,6 @@ test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out
 ```
 
 ### Escribiendo Pruebas de Integración:
-
 Las pruebas de integración van en un directorio de pruebas en el nivel superior de tu proyecto, junto a `src`. Cada archivo `.rs` en `tests` se compila como su propia caja separada.
 
 ```rust
@@ -74,7 +67,6 @@ fn it_adds_two() {
 ```
 
 ### Pruebas con Bibliotecas de Terceros Populares:
-
 Para capacidades de prueba más extensas, la biblioteca `proptest` puede generar una amplia gama de entradas para probar funciones.
 
 Añade `proptest` como una dependencia de desarrollo en `Cargo.toml`:

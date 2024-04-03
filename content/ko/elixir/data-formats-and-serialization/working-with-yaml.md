@@ -21,12 +21,7 @@ title: "YAML\uB85C \uC791\uC5C5\uD558\uAE30"
 weight: 41
 ---
 
-## 무엇이며 왜 사용하는가?
-
-YAML은 "YAML Ain't Markup Language"의 약자로, 구성 파일과 서로 다른 데이터 구조를 가진 언어 간의 데이터 교환에 자주 사용되는 인간이 읽을 수 있는 데이터 직렬화 표준입니다. 프로그래머들은 그것의 단순성과 복잡한 계층적 데이터를 쉽게 표현할 수 있는 능력 때문에 이를 사용합니다.
-
 ## 어떻게 사용하는가:
-
 Elixir는 내장된 YAML 지원을 포함하고 있지 않습니다. 그러나, `yamerl`이나 `yaml_elixir`와 같은 제3자 라이브러리를 사용하여 YAML을 작업할 수 있습니다. 여기에서는 사용의 용이성과 포괄적인 기능 때문에 `yaml_elixir`에 초점을 맞출 것입니다.
 
 먼저, mix.exs 의존성에 `yaml_elixir`을 추가하세요:
@@ -42,7 +37,6 @@ end
 그 다음, `mix deps.get`을 실행하여 새로운 의존성을 가져오세요.
 
 ### YAML 읽기
-
 다음과 같은 간단한 YAML 파일 `config.yaml`이 있습니다:
 
 ```yaml
@@ -75,7 +69,6 @@ Config.read()
 ```
 
 ### YAML 쓰기
-
 맵을 다시 YAML 파일로 쓰려면:
 
 ```elixir

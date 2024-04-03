@@ -11,9 +11,6 @@ title: Hantering av fel
 weight: 16
 ---
 
-## Vad & Varför?
-Att hantera fel innebär att skriva kod som kan förutse och hantera när saker går fel. Programmerare gör det för att förhindra krascher, skydda dataintegritet och ge användarna smidiga återfallslösningar.
-
 ## Hur man gör:
 Elms kärnfilosofi är Inga Körtidsundantag. Så, Elm utnyttjar sitt typsystem med typer som `Maybe` och `Result` för att hantera fel.
 

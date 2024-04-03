@@ -11,9 +11,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## Hva & Hvorfor?
-Å regne ut en dato i fremtiden eller fortiden handler om å finne en spesifikk dato før eller etter et kjent tidspunkt. Programeiere gjør dette for å håndtere hendelser, frister, og gi funksjonalitet til påminnelser og kalendere.
-
 ## Hvordan Gjøre Det:
 Rust bruker `chrono` biblioteket for dato-aritmetikk. La oss se på et eksempel:
 

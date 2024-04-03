@@ -10,12 +10,7 @@ title: Deleting characters matching a pattern
 weight: 5
 ---
 
-## What & Why?
-
-Deleting characters that match a specific pattern is about sifting through text and removing bits you don't need. Programmers do this to cleanse data, simplify strings, or prep data for something more important down the line, like parsing or analysis.
-
 ## How to:
-
 ```haskell
 import Data.List (isInfixOf)
 import Data.Char (isSpace)
@@ -41,7 +36,6 @@ main = do
 ```
 
 ## Deep Dive
-
 Haskell's rich set of libraries, such as 'Data.List', provides various tools for manipulating lists, which strings are essentially a special case of. Historically, Haskell's pattern matching is a concept borrowed from older functional languages like ML.
 
 There're different ways of pattern matching in Haskell. Our simple `removePattern` utilizes `isInfixOf` to check for the pattern. There're also regex libraries for complex patterns, but they add dependencies and sometimes overcomplicate things.
@@ -51,7 +45,6 @@ Speaking of dependencies, for trimming whitespaces, you could import a third-par
 Lastly, performance-wise, always be cautious with recursive functions in Haskell; they can be inefficient if not properly optimized by the compiler. Thunks could pile up, causing space leaks. For better performance, you might explore Haskell's `Text` module for manipulation of large or numerous strings.
 
 ## See Also
-
 - Real World Haskell: http://book.realworldhaskell.org/
 - Haskell `Data.List` documentation: https://hackage.haskell.org/package/base-4.16.1.0/docs/Data-List.html
 - Haskell Wiki on Performance: https://wiki.haskell.org/Performance

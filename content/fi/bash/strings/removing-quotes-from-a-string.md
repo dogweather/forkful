@@ -11,9 +11,6 @@ title: Merkkijonosta lainausmerkkien poistaminen
 weight: 9
 ---
 
-## Mikä & Miksi?
-Merkkijonosta lainausmerkkien poistaminen tarkoittaa niiden lainausmerkkien karsimista, jotka sulkevat merkkijonon. Ohjelmoijat haluavat usein tehdä tämän puhdistaakseen syötetietoja, valmistellakseen dataa vertailua varten tai noudattaakseen tiettyä dataformaattia kommunikoidessaan muiden ohjelmien tai järjestelmien kanssa.
-
 ## Kuinka:
 Bash tarjoaa useita tapoja poistaa lainausmerkit merkkijonoista. Tässä muutamia nopeita esimerkkejä:
 

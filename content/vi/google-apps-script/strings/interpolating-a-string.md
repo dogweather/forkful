@@ -15,12 +15,7 @@ title: "N\u1ED9i suy chu\u1ED7i k\xFD t\u1EF1"
 weight: 8
 ---
 
-## Gì & Tại sao?
-
-Việc nội suy chuỗi trong Google Apps Script cho phép nhúng động các biểu thức vào trong chuỗi, giúp tạo ra code dễ đọc và bảo trì hơn. Lập trình viên sử dụng kỹ thuật này để một cách liền mạch kết hợp các biến và biểu thức vào trong chuỗi mà không cần đến cú pháp nối chuỗi phức tạp.
-
 ## Làm thế nào:
-
 Trong Google Apps Script, nội suy chuỗi được thực hiện thông qua literals mẫu. Đây là các literals chuỗi cho phép nhúng biểu thức, được biểu diễn bởi dấu backtick (\`) thay vì dấu ngoặc kép thông thường. Dưới đây là cách bạn có thể sử dụng chúng:
 
 ```javascript
@@ -57,7 +52,6 @@ multiLineStringExample();
 Những ví dụ này minh họa việc sử dụng cơ bản, nhúng biểu thức và tạo ra các chuỗi nhiều dòng với các giá trị được nội suy.
 
 ## Đi sâu hơn
-
 Literals mẫu, bao gồm nội suy chuỗi, đã được giới thiệu trong ECMAScript 2015 (ES6) và sau đó được Google Apps Script áp dụng. Trước đó, lập trình viên phải hoàn toàn dựa vào việc nối chuỗi, có thể trở nên khó khăn cho các chuỗi phức tạp hoặc khi tích hợp nhiều giá trị biến.
 
 ```javascript

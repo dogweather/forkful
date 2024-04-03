@@ -18,9 +18,6 @@ title: "XML \uB2E4\uB8E8\uAE30"
 weight: 40
 ---
 
-## 무엇 & 왜?
-"XML 작업"은 프로그래밍을 사용하여 XML(eXtensible Markup Language) 파일을 읽고, 생성하며 수정하는 과정을 의미합니다. 프로그래머들이 이 작업을 하는 이유는 XML이 플랫폼 독립적인 특성과 자체 기술 형식 때문에 데이터 교환에 널리 사용되기 때문입니다.
-
 ## 방법:
 Python의 `xml.etree.ElementTree` 모듈은 XML 작업을 위한 도구를 제공합니다.
 

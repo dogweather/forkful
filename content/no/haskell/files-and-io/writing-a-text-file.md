@@ -13,12 +13,7 @@ title: Skrive en tekstfil
 weight: 24
 ---
 
-## Hva & Hvorfor?
-
-Å skrive til en tekstfil i Haskell handler om programmatisk å opprette eller oppdatere filer med tekstinnhold. Programmerere gjør dette for å lagre data som loggmeldinger, applikasjonsutdata, eller for å lagre brukergenerert innhold, noe som gjør det til en grunnleggende oppgave for applikasjoner som krever datalagring eller logging.
-
 ## Hvordan:
-
 Haskells standard Prelude tilbyr grunnleggende støtte for skriving til filer ved bruk av `writeFile` og `appendFile` funksjonene fra `System.IO` modulen. Her er et grunnleggende eksempel på å opprette en ny fil (eller overskrive en eksisterende) og deretter legge til tekst i en fil.
 
 ```haskell

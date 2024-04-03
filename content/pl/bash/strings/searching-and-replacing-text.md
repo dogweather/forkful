@@ -11,9 +11,6 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## Co i Dlaczego?
-Wyszukiwanie i zamiana tekstu to operacje na ciągach znaków, umożliwiające szybkie modyfikowanie treści. W programowaniu stosuje się je dla efektywności pracy, np. do poprawiania błędów czy zmiany formatowania kodu.
-
 ## Jak to zrobić:
 ```Bash
 # Wyszukaj i zamień tekst w pliku za pomocą sed
@@ -30,7 +27,7 @@ Output:
 Jeden pies, dwa psy, trzy psy.
 ```
 
-## A na głębszą wodę: 
+## A na głębszą wodę:
 Polecenie `sed` (stream editor) to klasyk w UNIX-owych systemach, używany od lat '70. Alternatywami dla `sed` mogą być `awk`, `perl`, czy nowoczesne skrypty w Pythonie, których wybór zależy od złożoności zadania i preferencji programisty. Ważne jest, że `sed` działa na strumieniach, przez co jest szybki i sprawnie przetwarza nawet duże pliki. 
 
 Flaga `-i` w `sed` oznacza zapisanie zmian bezpośrednio w pliku. `g` na końcu wzorca zamiany mówi o globalnej zamianie – bez niej `sed` zmieni tylko pierwsze wystąpienie w linii.

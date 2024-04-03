@@ -9,9 +9,6 @@ title: Concatenazione di stringhe
 weight: 3
 ---
 
-## What & Why? (Cosa e Perché?)
-Concatenare le stringhe significa unire due o più testi in uno. Lo facciamo per costruire messaggi, visualizzare dati o generare codice in modo dinamico.
-
 ## How to: (Come fare:)
 In Haskell, puoi unire le stringhe usando l'operatore `(++)` oppure la funzione `concat`:
 

@@ -9,9 +9,6 @@ title: Textdatei einlesen
 weight: 22
 ---
 
-## Was & Warum?
-Lesen einer Textdatei bedeutet, Daten aus einer Datei im Textformat zu holen. Programmiere machen das, um Konfigurationen zu laden, Nutzerdaten zu verarbeiten oder Inhalte in ihre Apps zu integrieren.
-
 ## So geht's:
 ```swift
 import Foundation

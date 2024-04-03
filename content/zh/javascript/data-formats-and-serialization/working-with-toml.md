@@ -18,10 +18,6 @@ title: "\u4F7F\u7528TOML"
 weight: 39
 ---
 
-## 何为TOML以及为何使用？
-
-TOML，即Tom's Obvious, Minimal Language（汤姆的显而易见的最小语言），定义了如何结构化配置文件。程序员之所以使用TOML，是因为其易于阅读、编写，并且可以很好地映射到哈希表，因此成为配置的首选。
-
 ## 如何操作：
 要在JavaScript中使用TOML，你需要一个解析器，比如`@iarna/toml`。首先，安装它：`npm install @iarna/toml`。然后，解析一个TOML字符串为JavaScript对象，或将JavaScript对象序列化为TOML格式。
 

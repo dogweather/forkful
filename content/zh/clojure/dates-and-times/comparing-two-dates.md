@@ -15,9 +15,6 @@ title: "\u6BD4\u8F83\u4E24\u4E2A\u65E5\u671F"
 weight: 27
 ---
 
-## What & Why? (是什么？为什么？)
-比较两个日期就是确定它们之间的先后或差异。程序员这样做是为了排序、校验或计算时间跨度。
-
 ## How to: (如何操作：)
 ```Clojure
 (require '[clj-time.core :as time])

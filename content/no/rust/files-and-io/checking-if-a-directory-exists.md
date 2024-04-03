@@ -14,9 +14,6 @@ title: Sjekker om en mappe eksisterer
 weight: 20
 ---
 
-## Hva og hvorfor?
-I programvareutvikling er det ofte nødvendig å sjekke om en mappe eksisterer for å unngå feil når man forsøker å få tilgang til, lese, eller skrive filer. Rust, som er et systemprogrammeringsspråk, gir robuste metoder for å utføre denne oppgaven, og sikrer at programmet ditt kan håndtere filer og mapper på en trygg og effektiv måte.
-
 ## Hvordan:
 Rusts standardbibliotek (`std`) inkluderer funksjonalitet for å sjekke eksistensen av en mappe gjennom `std::path::Path` og `std::fs`-modulene. Her er et enkelt eksempel som bruker Rusts standardtilnærming:
 

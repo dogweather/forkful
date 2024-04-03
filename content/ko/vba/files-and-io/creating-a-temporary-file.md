@@ -22,12 +22,7 @@ title: "\uC784\uC2DC \uD30C\uC77C \uC0DD\uC131\uD558\uAE30"
 weight: 21
 ---
 
-## 무엇 & 왜?
-
-Visual Basic for Applications(VBA)에서 임시 파일을 생성하는 것은 데이터 처리 또는 자동화 작업에서 버퍼로 사용하기 위해 단기적으로 파일을 프로그래밍 방식으로 생성하는 과정을 의미합니다. 프로그래머는 장기 저장이 필요하지 않은 데이터를 관리하기 위해 이 작업을 수행하여 데이터 정리와 메모리 사용의 효율성을 보장합니다.
-
 ## 방법:
-
 VBA에서는 Microsoft Scripting Runtime 라이브러리에서 사용할 수 있는 `FileSystemObject`를 사용하여 임시 파일을 생성할 수 있습니다. 이 객체는 파일과 폴더를 생성, 읽기, 쓰기, 삭제하는 메서드를 제공합니다. 임시 파일 생성에 대한 단계별 가이드는 다음과 같습니다:
 
 1. **Microsoft Scripting Runtime 활성화**: 먼저, VBA 환경에서 "Microsoft Scripting Runtime" 참조가 활성화되어 있는지 확인하세요. VBA 편집기에서 도구 > 참조를 가서 "Microsoft Scripting Runtime"을 체크하세요.
@@ -67,7 +62,6 @@ Temporary file created at: C:\Users\[YourUsername]\AppData\Local\Temp\myTempFile
 ```
 
 ## 깊이 있는 분석
-
 여기에서 보여준 메서드는 Microsoft Scripting Runtime의 일부인 `FileSystemObject`(FSO)를 사용합니다. FSO는 파일 시스템 조작을 위한 강력한 도구로, Visual Basic Scripting Edition과 함께 도입되었습니다. 그 오래된 기술에도 불구하고, 그것의 단순성과 기능의 폭넓음으로 VBA에서 널리 사용되고 있습니다.
 
 임시 파일 생성은 많은 프로그래밍 및 스크립팅 작업에서 중요한 역할을 하며, 테스트를 위한 샌드박스 또는 영구 저장소가 필요 없는 프로세스를 위한 작업 공간을 제공합니다. 그러나 개발자는 해당 파일이 더 이상 필요하지 않을 때 제거하거나 지워야 함으로써 실수로 데이터가 유출되거나 불필요한 디스크 공간을 사용하는 것을 방지해야 합니다.

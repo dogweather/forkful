@@ -13,12 +13,7 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä & Miksi?
-
-YAML:n käsittely Go:ssa käsittää YAML (YAML Ain't Markup Language) -tiedostojen jäsentämisen Go:n tietorakenteisiin ja päinvastoin. Ohjelmoijat tekevät tämän hyödyntääkseen YAML:n yksinkertaisuutta ja luettavuutta konfiguraatiotiedostoissa, sovellusasetuksissa tai tietojen vaihdossa eri kielillä kirjoitettujen palveluiden ja komponenttien välillä.
-
 ## Miten:
-
 Gon kanssa YAML:n käsittelyyn tarvitset ensin kirjaston, joka tukee YAML:n jäsentämistä ja serialisointia, koska Gon vakio kirjasto ei sisällä suoraa tukea YAML:lle. Suosituin kirjasto tähän tarkoitukseen on "gopkg.in/yaml.v3". Näin pääset alkuun:
 
 1. **YAML-paketin asentaminen:**
@@ -111,7 +106,6 @@ database:
 ```
 
 ## Syväsukellus:
-
 YAML:n käyttö ohjelmistokehityksessä on kasvanut sen ihmisläheisen muodon ansiosta, mikä tekee siitä ihanteellisen valinnan konfiguraatiotiedostoille, dokumentaatiolle tai tietojen vaihtomuodoille. JSON:n kaltaiseen vastineeseen verrattuna YAML tarjoaa kommentteja, skalaarityyppejä ja suhdetoimintoja, tarjoten rikkaamman tietojen serialisointikehyksen. Kuitenkin joustavuus ja ominaisuudet tulevat monimutkaisuuden kustannuksella jäsentämisessä, johtaen potentiaalisiin turvallisuusriskiin, jos niitä ei käsitellä varoen (esim. mielivaltaisen koodin suoritus).
 
 Go:lle tarkoitettu "gopkg.in/yaml.v3" -kirjasto on vankka ratkaisu YAML-prosessointiin, löytäen tasapainon helppokäyttöisyyden ja kattavan ominaisuustuen välillä. Nykytilassa, vaikka vaihtoehtoja, kuten "go-yaml/yaml" (kirjasto takana "gopkg.in/yaml.v3"), on saatavilla, valittu versio riippuu yleensä tiettyjen projektivaatimusten tai henkilökohtaisten mieltymysten perusteella. Käsiteltäessä valtavia tietoeriä tai suorituskykykriittisiä sovelluksia, ohjelmoijat saattavat harkita yksinkertaisempia muotoja, kuten JSON, niiden pienemmän jäsentämisajan ja muistivaatimuksen vuoksi. Siitä huolimatta, konfiguraatiotiedostoille tai asetuksille, joissa ihmisläheisyys ja helppokäyttöisyys ovat ensiarvoisen tärkeitä, YAML pysyy vahvana kilpailijana Gon ekosysteemissä.

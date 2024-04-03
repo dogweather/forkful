@@ -12,9 +12,6 @@ title: Een string interpoleren
 weight: 8
 ---
 
-## Wat & Waarom?
-Stringinterpolatie gaat over het invoegen van variabelen in strings. We doen dit om ter plekke berichten samen te stellen, output te personaliseren of dynamische queries op te bouwen.
-
 ## Hoe:
 C++ heeft geen ingebouwde stringinterpolatie zoals sommige andere talen. Je gebruikt vaak `std::ostringstream`, `std::format` (vanaf C++20), of printf-stijl formattering.
 

@@ -12,9 +12,6 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä & Miksi?
-Virheiden käsittely on tapa, jolla koodisi käsittelee ongelmia, jotka ilmenevät suorituksen aikana - kuin ottaisi vastaan äkillisen syötön pudottamatta sitä. Ohjelmoijat tekevät sen estääkseen sovelluksen kaatumisen ja tarjotakseen käyttäjille sujuvan kokemuksen.
-
 ## Kuinka:
 Kotlin tarjoaa `try`, `catch`, `finally` ja `throw` virheiden hallintaan. Tässä on kuinka käytät niitä:
 

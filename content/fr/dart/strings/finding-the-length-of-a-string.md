@@ -15,9 +15,6 @@ title: "Trouver la longueur d'une cha\xEEne"
 weight: 7
 ---
 
-## Quoi et Pourquoi ?
-Trouver la longueur d'une chaîne de caractères (String) en Dart consiste à déterminer le nombre d'unités de code (essentiellement, le nombre de caractères si on le pense de manière simpliste) dans une String donnée. Les programmeurs font cela pour manipuler les chaînes de caractères de manière plus précise, comme pour valider des entrées, tronquer du texte d'affichage ou traiter des formats de données où la longueur importe (par exemple, des protocoles avec des messages à longueur préfixée).
-
 ## Comment faire :
 Dart rend simple l'obtention de la longueur d'une chaîne grâce à la propriété `length`. Voici un exemple de base :
 

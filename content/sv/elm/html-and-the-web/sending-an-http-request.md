@@ -11,9 +11,6 @@ title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## Vad & Varför?
-HTTP-begäran skickas för att kommunicera med en webbserver, oftast för att hämta eller skicka data. Programmerare använder detta för att låta sina webbapplikationer interagera med andra tjänster eller för att hämta information som ska visas för användaren.
-
 ## Hur man gör:
 ```Elm
 import Http

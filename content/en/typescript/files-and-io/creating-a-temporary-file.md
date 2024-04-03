@@ -11,9 +11,6 @@ title: Creating a temporary file
 weight: 21
 ---
 
-## What & Why?
-Creating a temporary file means making a file that's only needed for a short while, usually during a program's execution. Programmers do it for tasks like storing data that's too big for memory, sharing info between processes, or saving state during complex operations.
-
 ## How to:
 Creating a temporary file in TypeScript isn't baked in, but you can use the `fs` module in Node.js to do the job. Here's a simple way to create and use a temporary file.
 

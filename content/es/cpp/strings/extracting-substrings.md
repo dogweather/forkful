@@ -9,9 +9,6 @@ title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---
 
-## ¿Qué es y por qué?
-Extraer subcadenas es tomar pedazos específicos de una cadena de texto. Los programadores lo hacen para analizar datos, validar entradas o simplemente para manipular y trabajar con texto más eficientemente.
-
 ## Cómo hacerlo:
 ```cpp
 #include <iostream>

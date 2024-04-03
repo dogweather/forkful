@@ -11,9 +11,6 @@ title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## Co i dlaczego?
-Konwersja łańcucha znaków do małych liter to proces zmiany wszystkich wielkich liter na małe. Robimy to dla uproszczenia porównywania tekstu, wyszukiwania, lub by spełnić standardy formatowania danych.
-
 ## Jak to zrobić:
 ```python
 # Przykład konwersji tekstu do małych liter

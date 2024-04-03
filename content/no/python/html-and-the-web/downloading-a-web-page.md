@@ -11,9 +11,6 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## Hva & Hvorfor?
-Nedlasting av en nettside betyr å hente HTML-koden slik at du kan se eller bearbeide den lokalt. Programmerere gjør dette for å analysere innhold, sjekke tilgjengelighet eller hente data.
-
 ## Hvordan gjøre det:
 For å laste ned en nettside i Python, bruk `requests`-biblioteket:
 

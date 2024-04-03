@@ -14,14 +14,10 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä ja miksi?
-
-Tekstitiedoston kirjoittaminen Javalla liittyy kielen kyvykkyyksien hyödyntämiseen sisällön luomiseen ja kirjoittamiseen tiedostojärjestelmän tiedostoihin. Ohjelmoijat tekevät tätä monista syistä, kuten lokitiedostojen kirjaamiseen, datan viemiseen tai sovelluksen tilan tallentamiseen myöhempää noutoa varten.
-
 ## Kuinka:
 
-### Käyttäen `java.nio.file` (Vakiokirjasto)
 
+### Käyttäen `java.nio.file` (Vakiokirjasto)
 Javan uusi I/O (NIO)-paketti (`java.nio.file`) tarjoaa monipuolisemman lähestymistavan tiedostojen käsittelyyn. Tässä on yksinkertainen tapa kirjoittaa tiedostoon käyttäen `Files.write()`:
 
 ```java
@@ -50,7 +46,6 @@ Tiedosto kirjoitettu onnistuneesti!
 ```
 
 ### Käyttäen `java.io` (Vakiokirjasto)
-
 Perinteisempää lähestymistapaa varten `java.io.FileWriter` on hyvä valinta tekstiedostojen yksinkertaiseen kirjoittamiseen:
 
 ```java
@@ -77,7 +72,6 @@ Tiedosto kirjoitettu onnistuneesti!
 ```
 
 ### Käyttäen Apache Commons IO
-
 Apache Commons IO -kirjasto yksinkertaistaa monia operaatioita, mukaan lukien tiedostoon kirjoittamisen. Näin kirjoitat tiedostoon käyttäen `FileUtils.writeStringToFile()`:
 
 Lisää ensin riippuvuus projektiisi. Jos käytät Mavenia, sisällytä:

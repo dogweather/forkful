@@ -14,12 +14,7 @@ title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## Co i dlaczego?
-
-Konwersja ciągu znaków na małe litery to podstawowa operacja polegająca na przekształceniu wszystkich znaków w danym ciągu na ich odpowiedniki w małych literach. Programiści zazwyczaj wykonują tę operację, aby osiągnąć porównania niezależne od wielkości liter lub aby ujednolicić wprowadzane dane tekstowe dla dalszego przetwarzania, co sprawia, że aplikacje są bardziej przyjazne dla użytkownika, a dane bardziej spójne.
-
 ## Jak to zrobić:
-
 W Dart można przekonwertować ciąg znaków na małe litery za pomocą metody `toLowerCase()`, którą dostarcza klasa `String`. Metoda ta zwraca nowy ciąg znaków ze wszystkimi wielkimi literami przekonwertowanymi na małe. Zobaczmy, jak to działa na prostym przykładzie:
 
 ```dart

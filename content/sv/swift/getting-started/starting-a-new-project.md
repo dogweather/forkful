@@ -11,9 +11,6 @@ title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---
 
-## Vad & Varför?
-Att starta ett nytt projekt i Swift innebär att lägga grunden för en ny app eller funktion. Programmerare gör det för att omsätta idéer till verklig kod och skapa något användbart eller nöjsamt.
-
 ## Såhär gör du:
 För att kickstarta ett Swift-projekt krävs Xcode, Apples utvecklingsmiljö. Här är grunderna:
 

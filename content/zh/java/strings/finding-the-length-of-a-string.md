@@ -15,9 +15,6 @@ title: "\u83B7\u53D6\u5B57\u7B26\u4E32\u7684\u957F\u5EA6"
 weight: 7
 ---
 
-## What & Why? (是什么以及为什么？)
-在Java中计算字符串的长度，就是知道字符串包含多少个字符。程序员需要这个信息来进行循环、验证数据，或者处理格式。
-
 ## How to: (怎么做？)
 ```Java
 public class StringLengthExample {

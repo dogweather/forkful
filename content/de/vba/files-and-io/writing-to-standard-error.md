@@ -13,12 +13,7 @@ title: Ausgabe auf Standardfehler
 weight: 25
 ---
 
-## Was & Warum?
-
-Das Schreiben auf Standardfehler in Visual Basic for Applications (VBA) bedeutet, Fehlermeldungen oder Diagnostiken getrennt von der Standardausgabe zu leiten, üblicherweise zur Konsole oder einer Protokolldatei. Programmierer tun dies, um die reguläre Programmausgabe von Fehlermeldungen zu trennen, was das Debuggen von Programmen erleichtert oder Benutzer auf Probleme hinweist, ohne die Hauptausgabe zu überladen.
-
 ## Wie geht das:
-
 In VBA gibt es, da keine direkte integrierte Funktion vorhanden ist, um speziell auf Standardfehler zu schreiben, wie in einigen anderen Programmiersprachen, eine gängige Lösung, die `Debug.Print` für die Entwicklungsausgabe von Fehlern verwendet oder eine benutzerdefinierte Protokollierungsfunktion erstellt, die dieses Verhalten für Produktionsanwendungen nachahmt. Unten ist ein Beispiel, wie Sie eine solche Funktion implementieren und verwenden könnten:
 
 ```vb
@@ -48,7 +43,6 @@ ERROR: Ein Fehler ist bei der Bearbeitung Ihrer Anfrage aufgetreten.
 ```
 
 ## Tiefergehende Betrachtung
-
 Visual Basic for Applications enthält nicht inhärent einen dedizierten Mechanismus zum Schreiben auf Standardfehler aufgrund seiner tiefen Integration mit Hostanwendungen wie Excel, Word oder Access, die traditionell auf grafische Benutzeroberflächen statt Konsolenausgaben setzen. Dies stellt eine bemerkenswerte Abweichung von konsolenbasierten Anwendungen dar, die typischerweise in Sprachen wie C oder Python entwickelt werden, bei denen Standardausgabe und Standardfehler grundlegende Konzepte sind.
 
 Historisch gesehen lag der Fokus von VBA immer mehr auf der Interaktion mit den Dokumentmodellen seiner Hostanwendungen und weniger auf traditionellen Anwendungsprotokollierungsmechanismen. Daher greifen Entwickler oft auf die Implementierung benutzerdefinierter Protokollierungslösungen zurück, wie im Beispiel gesehen, oder nutzen Windows-API-Aufrufe für fortgeschrittenere Fehlerbehandlungs- und Protokollierungsbedürfnisse.

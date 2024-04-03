@@ -11,9 +11,6 @@ title: Datum in einen String umwandeln
 weight: 28
 ---
 
-## Was & Warum?
-Ein Datum als String zu konvertieren bedeutet, es in eine lesbare Textform umzuwandeln – praktisch, wenn Daten für Menschen aufbereitet oder in einem bestimmten Format gespeichert werden müssen.
-
 ## So geht's:
 PHP bietet die `date()` Funktion, um Datumsobjekte in Strings umzuwandeln. Das erste Argument ist das Format, das zweite das zu konvertierende Datum als Unix-Timestamp.
 

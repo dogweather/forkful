@@ -12,9 +12,6 @@ title: HTML parsen
 weight: 43
 ---
 
-## Was & Warum?
-HTML zu parsen bedeutet, HTML-Inhalte so aufzubrechen, dass ein Programm sie verstehen und manipulieren kann. Programmierer tun dies, um Daten zu extrahieren, Inhalte zu manipulieren oder Web-Scraping in ihre Anwendungen zu integrieren.
-
 ## Wie geht das:
 C++ verfügt nicht über integrierte Fähigkeiten zum Parsen von HTML. Sie werden oft eine Bibliothek wie Gumbo-parser von Google oder Ähnliches verwenden. Hier ist ein kurzes Beispiel mit Gumbo-parser:
 

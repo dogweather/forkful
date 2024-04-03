@@ -11,9 +11,6 @@ title: Lancement d'un nouveau projet
 weight: 1
 ---
 
-## What & Why? / Quoi et Pourquoi ?
-Démarrer un nouveau projet C#, c’est créer une base pour transformer vos idées en code opérationnel. Les programmeurs se lancent dans de nouveaux projets pour résoudre des problèmes, exploiter des nouvelles idées ou apprendre de nouvelles techniques.
-
 ## How to / Comment faire :
 Créons un projet console simple. Vous avez besoin de .NET SDK installé.
 

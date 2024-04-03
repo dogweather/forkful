@@ -10,12 +10,7 @@ title: Converting a string to lower case
 weight: 4
 ---
 
-## What & Why?
-
-Converting a string to lower case is changing all the letters within a string to their lower case form. Programmers do this for consistency in data storage, comparisons, and searches.
-
 ## How to:
-
 Elixir makes it a breeze. Use the `String.downcase/1` function:
 
 ```elixir
@@ -34,7 +29,6 @@ lorem ipsum
 ```
 
 ## Deep Dive
-
 Elixir's string handling is Unicode aware, which matters a lot for proper lower-casing across different alphabets and scripts. Historically, string manipulation in programming languages didn't always account for this complexity. 
 
 Before Elixir's current approach, some older languages offered simplistic methods that might work fine for English but would trip on languages like Turkish, where, for instance, an uppercase 'i' does not become 'I' but rather 'İ'.
@@ -55,7 +49,6 @@ gölcük
 In the example above, notice how the 'I' character is preserved appropriately according to Turkish casing rules.
 
 ## See Also
-
 - Elixir's official `String` module documentation: https://hexdocs.pm/elixir/String.html
 - Unicode case mapping: https://www.unicode.org/reports/tr21/tr21-5.html
 - A quick guide to Unicode in Elixir: https://elixir-lang.org/blog/2017/01/05/elixir-and-unicode-part-1/

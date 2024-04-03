@@ -12,12 +12,7 @@ title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---
 
-## Co i dlaczego?
-
-Rejestrowanie (logging) to praktyka zapisywania zdarzeń, błędów i innych istotnych punktów danych, które występują w cyklu życia aplikacji oprogramowania. Programiści wykorzystują logi do pomocy w debugowaniu, monitorowaniu stanu systemu, analizowaniu zachowania użytkowników oraz utrzymaniu śladu audytu dla celów bezpieczeństwa i zgodności.
-
 ## Jak to zrobić:
-
 Lua nie posiada wbudowanego frameworka do rejestrowania, ale implementacja prostych funkcji logujących jest prosta. Poniżej znajduje się podstawowy przykład takiej funkcji:
 
 ```lua
@@ -42,7 +37,6 @@ Kiedy powyższy kod zostanie uruchomiony, zobaczysz wynik podobny do tego:
 Do obsługi bardziej zaawansowanych wymagań rejestrowania można użyć bibliotek firm trzecich, takich jak LuaLogging, które zapewniają dodatkową funkcjonalność, taką jak poziomy logów, wielokrotne handlery i specyfikacje formatowania.
 
 ## Dogłębna analiza
-
 Historycznie, rejestrowanie zawsze było nieodzownym aspektem diagnozowania oprogramowania, stając się ustaloną praktyką od początków programowania. Znaczenie rejestrowania jest nie do przecenienia, ponieważ pełni ono rolę "czarnej skrzynki" w przypadku awarii systemu, dostarczając wglądów w główne przyczyny problemów.
 
 Chociaż przykład powyżej spełnia tylko najbardziej podstawowe potrzeby, istnieje wiele alternatyw oferujących bogatszy zestaw funkcji. Niektóre z nich to:
@@ -56,7 +50,6 @@ Głębsze zanurzenie się w implementację systemu rejestrowania może obejmowa�
 Dla rejestrowania w rozproszonych systemach powszechne jest korzystanie z scentralizowanych rozwiązań do zarządzania logami, takich jak ELK (Elasticsearch, Logstash i Kibana) czy Splunk, które mogą agregować logi z wielu źródeł, zapewniać zaawansowane możliwości wyszukiwania i wizualizować dane dla ułatwienia debugowania i analizy.
 
 ## Zobacz też
-
 - Biblioteka LuaLogging na GitHubie: https://github.com/lunarmodules/lualogging
 - Wprowadzenie do ELK Stack: https://www.elastic.co/what-is/elk-stack
 - Wiki użytkowników Lua na temat logowania: http://lua-users.org/wiki/LoggingCategory

@@ -12,9 +12,6 @@ title: Quotes verwijderen uit een string
 weight: 9
 ---
 
-## Wat & Waarom?
-Het verwijderen van aanhalingstekens uit een string betekent dat je afkomt van die vervelende dubbele of enkele aanhalingstekens die je tekst omhullen. Programmeurs doen dit om data te zuiveren, uniformiteit te waarborgen, of strings voor te bereiden op verwerking waarbij aanhalingstekens ongewenst zijn of fouten kunnen veroorzaken.
-
 ## Hoe:
 In Clojure zijn strings onveranderlijk, dus als we het hebben over "het verwijderen van aanhalingstekens", hebben we het eigenlijk over het creëren van een nieuwe string zonder aanhalingstekens. Hier is de essentie met behulp van `clojure.string/replace`:
 

@@ -13,12 +13,7 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mitä & Miksi?
-
-Testien kirjoittaminen Kotlinissa tarkoittaa koodinpätkien rakentamista, jotka automaattisesti varmistavat ohjelmistomoduuliesi toiminnallisen oikeellisuuden, varmistaen niiden toimivan odotetusti. Ohjelmoijat tekevät sen löytääkseen virheitä aikaisin, helpottaakseen koodin uudelleenjärjestelyä ja tarjotakseen dokumentaation siitä, miten ohjelmiston komponenttien on tarkoitus toimia.
-
 ## Kuinka:
-
 Kotlin tukee testivetoinen kehitystä eri frameworkien avulla, suosituimpina JUnit, Kotest ja MockK mockaamiseen. Tässä on yksinkertainen esimerkki käyttäen JUnitia:
 
 ```kotlin

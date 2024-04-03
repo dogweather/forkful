@@ -11,9 +11,6 @@ title: Sammenlikning av to datoer
 weight: 27
 ---
 
-## What & Why? (Hva og Hvorfor?)
-Å sammenligne to datoer innebærer å se på om de er like, hvilken som kommer før eller tiden mellom dem. Programmerere gjør dette for å håndtere frister, tidslinjer og for å synkronisere hendelser.
-
 ## How to: (Hvordan:)
 ```arduino
 #include <Wire.h>

@@ -11,11 +11,7 @@ title: Een datum uit een string parsen
 weight: 30
 ---
 
-## Wat & Waarom?
-Een datum uit een tekenreeks parsen betekent tekst omzetten in een Date-object. Programmeurs doen dit om data te manipuleren en te gebruiken in een formaat dat computers begrijpen.
-
 ## Hoe:
-
 ```TypeScript
 // Basis parsing met de Date constructor
 const myDate = new Date('2020-01-01');
@@ -34,7 +30,6 @@ Wed Jan 01 2020 00:00:00 GMT+0000 (Gecoördineerde Universele Tijd)
 ```
 
 ## Diepgaande Duik
-
 Datums parsen uit tekenreeksen is altijd een beetje een pijnpunt geweest in JavaScript, de basistaal van TypeScript. Onnauwkeurige of inconsistente parsing over verschillende browsers heen bracht programmeurs ertoe om meer betrouwbare oplossingen te zoeken.
 
 Historisch gezien was Moment.js de voorkeursbibliotheek voor het parsen en manipuleren van datums, maar het wordt nu beschouwd als een verouderd project. Alternatieven zoals date-fns en Day.js bieden vergelijkbare functionaliteit met kleinere voetafdrukken.
@@ -50,7 +45,6 @@ Speciale aandacht is vereist bij het implementeren van een parser:
 Bibliotheken abstraheren deze complexiteiten, waardoor je tekenreeksen kunt omzetten in datumobjecten door middel van eenvoudige functieaanroepen.
 
 ## Zie Ook
-
 - MDN Date documentatie: [MDN Date](https://developer.mozilla.org/nl/docs/Web/JavaScript/Reference/Global_Objects/Date)
 - date-fns documentatie: [date-fns](https://date-fns.org/)
 - Day.js website: [Day.js](https://day.js.org/)

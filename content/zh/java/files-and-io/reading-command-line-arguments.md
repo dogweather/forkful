@@ -17,9 +17,6 @@ title: "\u8BFB\u53D6\u547D\u4EE4\u884C\u53C2\u6570"
 weight: 23
 ---
 
-## What & Why? (是什么？为什么？)
-在Java程序中读取命令行参数就是获取用户在启动程序时传入的信息。我们这么做是为了让程序更灵活，能根据不同输入执行不同任务。
-
 ## How to: (如何操作：)
 ```java
 public class CommandLineExample {

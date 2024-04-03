@@ -13,12 +13,7 @@ title: "Convertir une cha\xEEne en minuscules"
 weight: 4
 ---
 
-## Quoi & Pourquoi ?
-
-Convertir une chaîne en minuscules implique de transformer tous les caractères majuscules d'une chaîne en leurs équivalents minuscules. Ce processus est essentiel pour diverses tâches de programmation, incluant la normalisation des données, les comparaisons insensibles à la casse et l'amélioration de la cohérence des entrées utilisateur.
-
 ## Comment faire :
-
 Dans Visual Basic pour Applications (VBA), convertir une chaîne en minuscules est simple en utilisant la fonction `LCase`. Cette fonction prend une chaîne comme entrée et retourne une nouvelle chaîne avec tous les caractères majuscules convertis en minuscules. Voici un exemple de base pour illustrer cela :
 
 ```basic
@@ -42,7 +37,6 @@ End If
 Ce deuxième exemple montre comment gérer l'entrée utilisateur de manière insensible à la casse en convertissant l'entrée en minuscules avant la comparaison.
 
 ## Approfondissement
-
 La fonction `LCase` sous-tend la manipulation des chaînes dans VBA et a été une fonctionnalité centrale depuis la création du langage. Elle simplifie les tâches de conversion de casse, qui sont courantes dans les scénarios d'analyse de données et de traitement des entrées utilisateur. Tandis que `LCase` répond efficacement au besoin de conversion des caractères en minuscules pour diverses applications, il est également important de reconnaître ses limites et alternatives.
 
 Par exemple, tandis que `LCase` fonctionne sans problème pour les alphabets anglais, la gestion des langues avec des règles de casse plus complexes pourrait nécessiter des considérations supplémentaires ou l'utilisation de la fonction `StrConv` avec des paramètres de locale appropriés pour la conversion de casse.

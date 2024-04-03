@@ -11,9 +11,6 @@ title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---
 
-## What & Why?
-W PHP konwersja daty do postaci łańcucha znaków pozwala na łatwe wyświetlanie i zapisywanie w różnych formatach. Robimy to często, by dostosować datę do preferencji użytkowników lub wymogów systemu.
-
 ## How to:
 Użyj funkcji `date()` do formatowania i konwersji obiektu `DateTime` na łańcuch znaków.
 

@@ -13,12 +13,7 @@ title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---
 
-## O Que & Por Que?
-
-Verificar se um diretório existe em C envolve consultar o sistema de arquivos para verificar se um caminho específico leva a um diretório. Os programadores frequentemente realizam esta operação para garantir que operações de arquivo (como ler ou escrever em arquivos) sejam direcionadas para caminhos válidos, prevenindo erros e melhorando a confiabilidade do software.
-
 ## Como fazer:
-
 Em C, a existência de um diretório pode ser verificada usando a função `stat`, que recupera informações sobre o arquivo ou diretório em um caminho especificado. A macro `S_ISDIR` de `sys/stat.h` é então usada para avaliar se as informações recuperadas correspondem a um diretório.
 
 Aqui está como você pode usar `stat` e `S_ISDIR` para verificar se um diretório existe:
@@ -58,7 +53,6 @@ O diretório não existe.
 ```
 
 ## Aprofundamento:
-
 A estrutura e função `stat` fazem parte da linguagem de programação C há décadas, derivando do Unix. Elas fornecem uma maneira padronizada de recuperar informações do sistema de arquivos, que, apesar de serem relativamente de baixo nível, são amplamente usadas devido à sua simplicidade e acesso direto aos metadados do sistema de arquivos.
 
 Historicamente, verificar a existência e propriedades de arquivos e diretórios com `stat` e seus derivados (como `fstat` e `lstat`) tem sido uma abordagem comum. No entanto, essas funções interagem diretamente com o kernel do SO, o que pode introduzir sobrecarga e erros potenciais se não forem corretamente manipuladas.

@@ -14,9 +14,6 @@ title: Escrevendo testes
 weight: 36
 ---
 
-## O Que & Por Quê?
-Escrever testes em Clojure, assim como em outras linguagens de programação, envolve a criação de código dedicado para verificar se sua base de código principal funciona conforme o esperado. Isso ajuda a garantir a corretude, facilitar o refatoramento e melhorar a estabilidade do código.
-
 ## Como fazer:
 Clojure, aproveitando o JVM, suporta vários frameworks de teste. No entanto, uma biblioteca integrada comumente usada é a `clojure.test`. Aqui está um exemplo simples:
 

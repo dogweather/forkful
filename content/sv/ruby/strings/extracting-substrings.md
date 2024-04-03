@@ -11,9 +11,6 @@ title: "Extrahera delstr\xE4ngar"
 weight: 6
 ---
 
-## Vad & Varför?
-I Ruby är att extrahera substrängar en stil med att plocka specifika delar från en sträng. Programmerare gör det för att bearbeta text, validera indata eller för att helt enkelt dela upp informationen.
-
 ## Hur man gör:
 ```Ruby
 text = "Hej, jag heter Ruby!"

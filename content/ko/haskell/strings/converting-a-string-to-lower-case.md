@@ -16,9 +16,6 @@ title: "\uBB38\uC790\uC5F4\uC744 \uC18C\uBB38\uC790\uB85C \uBCC0\uD658\uD558\uAE
 weight: 4
 ---
 
-## What & Why? (무엇 그리고 왜?)
-문자열을 소문자로 변환하는 것은 문자들을 모두 소문자로 바꾸는 과정입니다. 이를 통해, 대소문자를 구분하지 않는 검색, 사용자 입력 정규화, 데이터 일관성 등을 달성할 수 있습니다.
-
 ## How to: (방법)
 ```Haskell
 import Data.Char (toLower)

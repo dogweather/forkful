@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Là gì & Tại sao?
-Số phức mở rộng số thực bằng cách thêm một đơn vị ảo, biểu diễn như là 'i', nơi mà i^2 = -1. Lập trình viên sử dụng chúng cho các bài toán mô phỏng, xử lý tín hiệu, và giải các bài toán toán học đòi hỏi làm việc trong không gian hai chiều.
-
 ## Cách thực hiện:
 C++ có một thư viện tích hợp `<complex>` giúp dễ dàng làm việc với số phức. Dưới đây là cái nhìn nhanh:
 

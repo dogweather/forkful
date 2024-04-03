@@ -10,9 +10,6 @@ title: Extracting substrings
 weight: 6
 ---
 
-## What & Why?
-Extracting substrings means pulling out specific parts of a string, like snipping a piece from a ribbon. Programmers do it to isolate data, parse information, or simply manipulate text.
-
 ## How to:
 ```Python
 # Using slice notation

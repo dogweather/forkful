@@ -10,12 +10,7 @@ title: Sending an HTTP request with basic authentication
 weight: 45
 ---
 
-## What & Why?
-
-Sending an HTTP request with basic authentication involves attaching login credentials (username and password) to the request headers to access protected resources. Programmers use it for simple authentication on HTTP APIs where the overhead of more complex systems isn't needed.
-
 ## How to:
-
 Elm makes HTTP requests using the `Http` package. To add basic auth, you encode the credentials and include them in the request headers.
 
 ```Elm
@@ -56,7 +51,6 @@ sendRequestWithBasicAuth =
 When the above function is called, Elm will perform a GET request to the specified URL with the Authorization header set to the encoded username and password.
 
 ## Deep Dive
-
 Elm's approach to HTTP requests is a reflection of the language's overall philosophy: safe, easy to maintain, and understandable. The `Http` package encapsulates requests in a way that deals with the Elm architecture.
 
 Basic authentication is as old as the web itself, part of the original HTTP specification (RFC 7617). It's straightforward but not very secure since the credentials are only base64-encoded, not encrypted. Therefore, it's critical to use HTTPS to encode the transmission.
@@ -64,7 +58,6 @@ Basic authentication is as old as the web itself, part of the original HTTP spec
 Alternatives to basic auth include OAuth, tokens like JWT, or API keys, each coming with increased complexity and improved security. Elm supports these methods too but often requires additional packages or custom encoders and decoders.
 
 ## See Also
-
 - Elm's Official `Http` package documentation: [package.elm-lang.org/packages/elm/http/latest](https://package.elm-lang.org/packages/elm/http/latest)
 - Elm's `Base64` package source: [package.elm-lang.org/packages/truqu/elm-base64/latest](https://package.elm-lang.org/packages/truqu/elm-base64/latest)
 - RFC 7617, The 'Basic' HTTP Authentication Scheme: [tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)

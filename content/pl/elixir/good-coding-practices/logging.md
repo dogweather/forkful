@@ -12,9 +12,6 @@ title: "Rejestrowanie zdarze\u0144"
 weight: 17
 ---
 
-## Co i dlaczego?
-Logowanie w rozwoju oprogramowania to technika rejestrowania wydarzeń, które zachodzą podczas działania programu, zazwyczaj do pliku lub zewnętrznego systemu. Programiści stosują ją, aby zdobyć wgląd w zachowanie oprogramowania, rozwiązać problemy i utrzymać zapis historii operacyjnej, co jest kluczowe dla debugowania i monitorowania zdrowia aplikacji.
-
 ## Jak to zrobić:
 W Elixirze, podstawowym sposobem logowania informacji jest wbudowany moduł `Logger`. Oto jak można go użyć:
 

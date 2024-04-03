@@ -11,9 +11,6 @@ title: "T\xE9l\xE9chargement d'une page web"
 weight: 42
 ---
 
-## Quoi & Pourquoi ?
-Télécharger une page Web, c'est récupérer le contenu accessible en ligne pour l'utiliser ou le stocker localement. Les programmeurs font ça pour automatiser des tâches, analyser des données ou tester des sites.
-
 ## Comment faire :
 Avec Fish Shell, `curl` est votre meilleur ami pour télécharger une page web. Exécutez ces commandes, c'est rapide et efficace.
 

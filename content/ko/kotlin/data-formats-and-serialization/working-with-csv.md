@@ -22,16 +22,10 @@ title: "CSV\uC640 \uD568\uAED8 \uC791\uC5C5\uD558\uAE30"
 weight: 37
 ---
 
-## 무엇 & 왜?
-
-CSV(콤마로 구분된 값) 작업은 일반 텍스트로 저장된 테이블 데이터를 위한 공통 형식인 CSV 파일에서 데이터를 읽고 쓰는 작업을 포함합니다. 프로그래머들은 다양한 애플리케이션, 데이터베이스 간 데이터를 쉽게 교환하거나 데이터 처리 및 분석 작업을 용이하게 하기 위해 CSV 파일을 조작합니다.
-
 ## 방법:
-
 정적으로 타입이 지정된 프로그래밍 언어인 코틀린은 JVM에서 실행되지만, CSV 파일을 처리하기 위한 내장 라이브러리를 포함하고 있지 않습니다. 하지만, Java의 `BufferedReader`와 `FileWriter` 클래스를 기본 작업에 사용하거나, `kotlinx.serialization` 및 `opencsv`와 같은 인기 있는 제3자 라이브러리를 이용하여 보다 고급 기능을 활용할 수 있습니다.
 
 ### BufferedReader를 사용하여 CSV 파일 읽기:
-
 ```kotlin
 import java.io.BufferedReader
 import java.io.FileReader
@@ -57,7 +51,6 @@ _샘플 출력:_
 ```
 
 ### FileWriter를 사용하여 CSV 파일에 쓰기:
-
 ```kotlin
 import java.io.FileWriter
 
@@ -79,7 +72,6 @@ fun main() {
 이렇게 하면 제공된 데이터로 `output.csv`를 생성하거나 덮어쓰게 됩니다.
 
 ### kotlinx.serialization을 사용한 CSV 시리얼라이제이션:
-
 먼저, `build.gradle.kts`에 의존성을 추가하세요:
 
 ```kotlin
@@ -118,7 +110,6 @@ Jane Smith,25,London
 ```
 
 ### 고급 작업을 위한 OpenCSV 사용:
-
 프로젝트의 의존성에 OpenCSV를 추가하세요:
 
 ```kotlin

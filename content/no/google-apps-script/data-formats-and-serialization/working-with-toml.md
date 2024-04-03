@@ -12,12 +12,7 @@ title: Arbeider med TOML
 weight: 39
 ---
 
-## Hva & Hvorfor?
-
-TOML, som står for Toms Opplagte, Minimale Språk, er et konfigurasjonsfilformat som er lett å lese på grunn av sin klare semantikk. Programmerere bruker det ofte for konfigurasjonsfiler i applikasjoner fordi det er ukomplisert og menneskelesbart, noe som gjør håndteringen av applikasjonsinnstillinger og konfigurasjoner sømløs på tvers av forskjellige miljøer.
-
 ## Hvordan:
-
 Siden Google Apps Script i bunn og grunn er JavaScript med tilgang til Googles app-samling, krever arbeid med TOML direkte innen Google Apps Script litt oppfinnsomhet. Google Apps Script støtter ikke naturlig TOML-analyse, men du kan dra nytte av JavaScript-biblioteker eller skrive en enkel tolker for grunnleggende behov.
 
 La oss analysere en enkel TOML konfigurasjonsstreng som et eksempel:
@@ -72,7 +67,6 @@ Eksempelutdata fra `console.log` ville ligne et JSON-objekt, noe som gjør det e
 ```
 
 ## Dypdykk
-
 TOML ble skapt av Tom Preston-Werner, en av grunnleggerne av GitHub, for å være mer menneskevennlig enn JSON for konfigurasjonsfiler samtidig som det er mulig å tolkes utvetydig. Det sikter på å være så enkelt som mulig, et mål som passer fint sammen med ethoset til mange utviklingsprosjekter som streber etter enkelhet og lesbarhet i sine kodebaser.
 
 I konteksten av Google Apps Script, kan bruk av TOML introdusere noe overhead, gitt mangel på direkte støtte og nødvendigheten for å analysere det manuelt eller gjennom tredjepartsbiblioteker. For mindre prosjekter eller de som ikke er dypt integrert i Googles økosystem, kan alternativer som JSON eller til og med enkle nøkkel-verdi par strukturer i scriptegenskaper være tilstrekkelige og mer rett frem å implementere.  Men, for applikasjoner som prioriterer menneskevennlige konfigurasjonsfiler og allerede er forpliktet til TOML, legger integrering av TOML-tolkning gjennom tilpassede script til et nyttig lag av fleksibilitet og vedlikeholdbarhet uten å avvike fra de foretrukne konfigurasjonsparadigmene.

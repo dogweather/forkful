@@ -11,12 +11,7 @@ title: "Refactorizaci\xF3n"
 weight: 19
 ---
 
-## ¿Qué y Por Qué?
-
-La refactorización es el proceso de reestructurar el código de computadora existente sin cambiar su comportamiento externo. Los programadores refactorizan para mejorar atributos no funcionales del software, como la legibilidad, reducción de complejidad, mejora en la mantenibilidad o el aumento del rendimiento.
-
 ## Cómo hacerlo:
-
 Vamos a seguir el ejemplo de la refactorización de un método de Ruby que calcula la suma de cuadrados.
 
 **Antes de la Refactorización:**
@@ -45,7 +40,6 @@ puts sum_of_squares([1, 2, 3])  # Salida: 14
 La versión refactorizada usa Enumerables de Ruby para expresar la misma lógica de manera más sucinta y clara. El método `map` transforma cada elemento y `sum` agrega sus valores, eliminando la necesidad de gestionar bucles manualmente y la asignación de variables.
 
 ## Análisis Profundo
-
 La refactorización tiene un rico contexto histórico, que se remonta a las prácticas tempranas en el desarrollo de software. Las primeras menciones se pueden rastrear hasta la década de 1990, con contribuciones significativas hechas por Martin Fowler en su libro "Refactoring: Improving the Design of Existing Code", donde proporciona un catálogo de patrones para la refactorización. Desde entonces, la refactorización se ha convertido en un pilar de las prácticas de desarrollo ágil.
 
 Cuando hablamos de alternativas a la refactorización, necesitamos considerar un enfoque diferente como 'Reescribir', donde reemplazas el sistema antiguo en partes o en su totalidad, o adaptar prácticas como 'Revisiones de Código' y 'Programación en Pareja' para mejorar la calidad del código gradualmente. Sin embargo, estas no son reemplazos para la refactorización; complementan el proceso.
@@ -53,7 +47,6 @@ Cuando hablamos de alternativas a la refactorización, necesitamos considerar un
 En términos de implementación, Ruby proporciona una sintaxis excelente y expresiva que a menudo resulta en código más corto y legible después de la refactorización. Los principios clave incluyen DRY (No Te Repitas), usar nombres significativos, mantener los métodos cortos y enfocados en una sola tarea, y usar efectivamente el módulo Enumerable de Ruby, como se ve en el ejemplo anterior. Herramientas automatizadas como RuboCop también pueden ayudar a los programadores a identificar partes en el código que podrían beneficiarse de la refactorización.
 
 ## Ver También
-
 Para profundizar más en la refactorización en Ruby, consulta estos recursos:
 
 - El libro seminal de Martin Fowler: [Refactoring: Improving the Design of Existing Code](https://martinfowler.com/books/refactoring.html)

@@ -11,9 +11,6 @@ title: Lese kommandolinjeargumenter
 weight: 23
 ---
 
-## What & Why?
-Kommandolinjeargumenter lar deg kjøre PHP-skript med spesifikke parametere for ulike oppgaver. Å bruke disse er nødvendig for å lage fleksible skript som kan håndtere ulike inngangsdata dynamisk.
-
 ## How to:
 PHP skript mottar kommandolinjeargumenter i `$argv` array og `$argc` variable. Her er et enkelt eksempel:
 

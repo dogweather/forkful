@@ -13,14 +13,10 @@ title: Capitalizando una cadena de texto
 weight: 2
 ---
 
-## ¿Qué y por qué?
-
-Capitalizar una cadena implica modificar la primera letra de una palabra o toda una oración a mayúsculas, mientras se mantienen el resto de los caracteres tal como están. Los programadores a menudo usan esta técnica para formatear entradas de usuarios o mostrar texto para asegurar consistencia o adherirse a reglas gramaticales en interfaces de usuario.
-
 ## Cómo:
 
-### Usando los Métodos Incorporados de Dart
 
+### Usando los Métodos Incorporados de Dart
 Dart ofrece métodos simples y directos para la manipulación de cadenas. Para capitalizar una palabra o una oración, típicamente se toma el primer carácter, se convierte a mayúsculas, y luego se concatena con el resto de la cadena. Así es como podrías implementarlo:
 
 ```dart
@@ -36,7 +32,6 @@ void main() {
 ```
 
 ### Capitalizando Cada Palabra
-
 Para capitalizar la primera letra de cada palabra en una cadena, podrías dividir la cadena en palabras, capitalizar cada una, y luego unirlas de nuevo:
 
 ```dart
@@ -51,7 +46,6 @@ void main() {
 ```
 
 ### Usando Bibliotecas de Terceros
-
 Aunque la biblioteca estándar de Dart cubre las necesidades básicas, ciertas tareas podrían realizarse más convenientemente utilizando paquetes de terceros. Una elección popular para capacidades extendidas de manipulación de cadenas, incluyendo la capitalización, es el paquete [`recase`](https://pub.dev/packages/recase). Después de añadirlo al `pubspec.yaml` de tu proyecto, puedes capitalizar cadenas fácilmente entre otras funcionalidades:
 
 ```dart

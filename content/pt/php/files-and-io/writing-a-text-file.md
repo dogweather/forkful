@@ -12,9 +12,6 @@ title: Escrevendo um arquivo de texto
 weight: 24
 ---
 
-## O Que & Por Que?
-Escrever um arquivo de texto em PHP envolve criar ou abrir um arquivo e inserir conteúdo nele. Programadores fazem isso para persistir dados, como conteúdo gerado pelo usuário ou registros, além do ciclo de vida do programa.
-
 ## Como fazer:
 O PHP suporta nativamente a escrita de arquivos por meio de funções como `file_put_contents`, `fopen` juntamente com `fwrite` e `fclose`. Veja como usá-las:
 

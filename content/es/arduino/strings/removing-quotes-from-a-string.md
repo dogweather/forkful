@@ -11,9 +11,6 @@ title: Eliminando comillas de una cadena
 weight: 9
 ---
 
-## ¿Qué y Por Qué?
-Eliminar comillas de una cadena significa quitar cualquier instancia de caracteres de comillas simples (`'`) o dobles (`"`) que envuelven el texto. Los programadores a menudo hacen esto para sanear la entrada, preparar cadenas para comparación o procesar datos de texto que podrían incluir accidentalmente comillas como parte del contenido de la cadena.
-
 ## Cómo hacerlo:
 Para eliminar las comillas de una cadena en Arduino, puedes recorrer los caracteres y reconstruir la cadena sin los caracteres de comilla. Por ejemplo:
 

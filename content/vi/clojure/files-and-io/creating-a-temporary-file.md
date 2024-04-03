@@ -15,9 +15,6 @@ title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Cái gì & Tại sao?
-Tạo một tệp tạm thời là quá trình tạo một tệp ngắn hạn cho việc lưu trữ dữ liệu trung gian. Lập trình viên sử dụng chúng cho các mục đích như lưu trữ tạm thời, xử lý dữ liệu, hoặc khi không muốn làm đầy bộ nhớ lưu trữ vĩnh viễn.
-
 ## Làm thế nào:
 Clojure làm cho việc này trở nên đơn giản. Thư viện `clojure.java.io` đã hỗ trợ bạn.
 

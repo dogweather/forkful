@@ -13,9 +13,6 @@ title: Tolka HTML
 weight: 43
 ---
 
-## Vad & Varför?
-Att tolka HTML innebär att dissekera en webbsidas märkspråk till något som ett program kan förstå och manipulera. Programmerare tolkar HTML för att extrahera data, automatisera webbinteraktioner eller migrera innehåll mellan system.
-
 ## Hur man gör:
 Kotlin gör det enkelt att tolka HTML med bibliotek som Jsoup. Så här gör du:
 

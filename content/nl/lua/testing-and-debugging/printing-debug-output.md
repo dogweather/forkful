@@ -13,9 +13,6 @@ title: Debug-output afdrukken
 weight: 33
 ---
 
-## Wat & Waarom?
-Debugoutput afdrukken is informatie op je scherm gooien om te zien wat er aan de hand is met je code. Programmeurs doen dit om gremlins in de machine op te sporen - bugs.
-
 ## Hoe te:
 Hier is de essentie van spul afdrukken in Lua:
 

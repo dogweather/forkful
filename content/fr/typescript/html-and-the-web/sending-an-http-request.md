@@ -11,9 +11,6 @@ title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---
 
-## Quoi & Pourquoi ?
-Envoyer une requête HTTP, c'est demander à un serveur web de vous fournir des données, ou d'y soumettre des infos. Les devs font ça pour intéragir avec des services web - récupérer des données, envoyer des formulaires, autant de fonctionnalités essentielles pour les applis modernes.
-
 ## Comment faire :
 ```TypeScript
 import axios from 'axios';

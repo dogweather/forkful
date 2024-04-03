@@ -12,9 +12,6 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co i dlaczego?
-Usuwanie cudzysłowów ze stringa oznacza pozbycie się tych podwójnych lub pojedynczych znaków cudzysłowu, które otaczają wartości tekstowe. Programiści często robią to, aby oczyścić dane wprowadzane przez użytkownika, zapewnić spójność w przetwarzaniu danych lub przygotować dane dla systemów, które mogą zostać zdezorientowane przez te dodatkowe znaki.
-
 ## Jak to zrobić:
 Ruby ma kilka sprytnych sztuczek do wyłuskania tych denerwujących znaków cudzysłowia. Możesz użyć metod `gsub` lub `delete`, aby wykonać zadanie. Oto trochę kodu do przeżucia:
 

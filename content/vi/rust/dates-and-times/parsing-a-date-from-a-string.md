@@ -15,9 +15,6 @@ title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---
 
-## Cái gì và Tại sao?
-Phân tích cú pháp ngày tháng từ một chuỗi nghĩa là chuyển đổi văn bản thành định dạng ngày mà mã của bạn có thể hiểu. Chúng ta thực hiện việc này vì ngày tháng thường được truyền đến dưới dạng chuỗi từ đầu vào của người dùng hoặc nguồn dữ liệu bên ngoài và chúng ta cần chúng ở dạng cấu trúc để tính toán và lưu trữ.
-
 ## Làm thế nào:
 Để phân tích cú pháp ngày tháng trong Rust, chúng ta sử dụng crate `chrono`, một thư viện đi đến cho ngày và giờ.
 

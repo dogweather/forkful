@@ -10,9 +10,6 @@ title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---
 
-## Quoi & Pourquoi ?
-Concaténer des chaines, c'est les coller bout à bout. On le fait pour assembler des morceaux de texte, comme les noms et adjectifs ou des données avec du texte.
-
 ## Comment faire :
 ```lua
 -- Concaténation simple avec l'opérateur '..'

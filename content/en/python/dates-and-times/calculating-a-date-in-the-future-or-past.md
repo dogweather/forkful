@@ -10,9 +10,6 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-Calculating a future or past date means finding a date before or after a specified time interval. Programmers do it for reminders, expiration dates, scheduling, or time-based calculations.
-
 ## How to:
 Python's `datetime` module makes working with dates and times a breeze. Check this out:
 

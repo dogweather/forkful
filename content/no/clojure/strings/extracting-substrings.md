@@ -9,9 +9,6 @@ title: Uthenting av delstrenger
 weight: 6
 ---
 
-## What & Why?
-Substrenger lar oss hente spesifiserte deler av en streng. Nyttig for å analysere tekst, hente ut data, eller formatere utdata.
-
 ## How to:
 Ekstrahering av substringer i Clojure er rett fram. Bruk `subs` funksjonen. Her er et eksempel:
 

@@ -15,9 +15,6 @@ title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---
 
-## Gì & Tại sao?
-Phân tích cú pháp ngày từ một chuỗi nghĩa là chuyển đổi văn bản thành một đối tượng ngày tháng. Chúng ta làm điều này vì việc thao tác, tính toán sự khác biệt, hoặc định dạng ngày tháng sẽ dễ dàng hơn khi chúng không còn bị giữ dưới dạng văn bản thuần.
-
 ## Làm thế nào:
 Mô-đun `datetime` của Python là sự lựa chọn hàng đầu của bạn để phân tích cú pháp ngày. Dưới đây là hướng dẫn nhanh:
 

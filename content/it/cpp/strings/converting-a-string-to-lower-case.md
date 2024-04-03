@@ -10,9 +10,6 @@ title: Conversione di una stringa in minuscolo
 weight: 4
 ---
 
-## What & Why?
-Convertire una stringa in minuscolo significa trasformare tutti i caratteri alfabetici maiuscoli in minuscoli. Questo è utile per uniformare i dati, facilitare confronti e ricerche nel testo, indipendentemente dalla capitalizzazione.
-
 ## How to:
 Esempio: usando la funzione `std::transform` e `::tolower`.
 

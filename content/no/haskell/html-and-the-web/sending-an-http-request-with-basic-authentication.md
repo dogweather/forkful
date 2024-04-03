@@ -10,9 +10,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel med grunnleggende autentisering innebærer å inkludere brukernavn og passord for å få tilgang til beskyttede ressurser. Programmører gjør dette for å kommunisere sikkert med webtjenester som krever identifikasjon.
-
 ## Slik Gjør Du:
 For å gjøre en HTTP-forespørsel med grunnleggende autentisering i Haskell, kan du bruke `http-client` og `http-client-tls` bibliotekene. Her er et eksempel:
 

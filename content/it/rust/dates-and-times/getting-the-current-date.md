@@ -13,11 +13,8 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Cosa & Perché?
-
-Il recupero della data corrente in Rust è un compito comune per attività come la registrazione, operazioni basate sul tempo o semplicemente per visualizzare la data. A differenza di alcuni linguaggi che includono la funzionalità di data e ora nella loro libreria standard, Rust incoraggia l'uso di una libreria di terze parti robusta, chrono, per una manipolazione completa di data e ora, data la sua superiorità funzionale e facilità di uso.
-
 ## Come fare:
+
 
 ### Utilizzando la Libreria Standard di Rust
 La libreria standard di Rust fornisce un modo limitato ma rapido per ottenere il tempo corrente, anche se non direttamente la data corrente in un formato calendario. Ecco come si fa:

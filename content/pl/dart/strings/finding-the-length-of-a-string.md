@@ -15,9 +15,6 @@ title: "Znajdowanie d\u0142ugo\u015Bci \u0142a\u0144cucha znak\xF3w"
 weight: 7
 ---
 
-## Co i dlaczego?
-Znalezienie długości ciągu znaków (String) w Dart polega na określeniu liczby jednostek kodu (w zasadzie liczby znaków, jeśli myśleć o tym uproszczonymi kategoriami) w danym ciągu znaków. Programiści robią to, aby precyzyjniej manipulować ciągami znaków, na przykład sprawdzając prawidłowość danych wejściowych, skracając tekst wyświetlany, lub przetwarzając formaty danych, w których długość ma znaczenie (np. protokoły z wiadomościami o określonej długości).
-
 ## Jak to zrobić:
 Dart umożliwia łatwe uzyskanie długości ciągu znaków, używając właściwości `length`. Oto podstawowy przykład:
 

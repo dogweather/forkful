@@ -11,12 +11,7 @@ title: Searching and replacing text
 weight: 10
 ---
 
-## What & Why?
-
-Searching and replacing text in programming facilitates the modification and management of strings, which is a fundamental task in data manipulation and software development. Programmers perform these operations to update, clean, or transform textual data efficiently.
-
 ## How to:
-
 In Go, the `strings` package offers various functions to search and replace text within strings. Let's explore a couple of common methods.
 
 **Using `strings.Contains` to Search for Text:**
@@ -75,7 +70,6 @@ func main() {
 ```
 
 ## Deep Dive
-
 In Go, text manipulation, including search and replace operations, is designed to be straightforward and efficient, leveraging Go's comprehensive standard library. The `strings` package provides basic functionalities, suitable for most common use cases, while the `regexp` package caters to more complex patterns requiring regular expressions.
 
 Historically, Go's approach to handling strings and text manipulation has emphasized simplicity and performance. The decision to include powerful packages like `strings` and `regexp` as part of the standard library was driven by the desire to make Go a practical choice for web development and text processing applications, where such operations are frequent.

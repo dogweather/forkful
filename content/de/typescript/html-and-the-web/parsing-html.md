@@ -12,12 +12,7 @@ title: HTML parsen
 weight: 43
 ---
 
-## Was & Warum?
-
-HTML zu parsen bedeutet, HTML-Code zu durchforsten, um Informationen zu finden, zu extrahieren oder zu manipulieren. Programmierer machen das, um mit Webinhalten zu interagieren – vielleicht Daten zu scrapen oder Browser zu automatisieren.
-
 ## Wie geht das:
-
 Um zu beginnen, installieren Sie eine Bibliothek wie `node-html-parser`. Hier ist der Terminalbefehl:
 
 ```bash
@@ -46,7 +41,6 @@ console.log(bananen);  // "Banane"
 ```
 
 ## Tiefergehend
-
 HTML zu parsen ist nicht neu – es gibt dies seit den frühen Tagen des Webs. Anfangs haben Entwickler vielleicht reguläre Ausdrücke verwendet, aber das wurde schnell unübersichtlich. Dann kam der DOM Parser: stabil, aber an den Browser gebunden.
 
 Bibliotheken wie `node-html-parser` nehmen Ihnen die Schmerzen ab. Sie ermöglichen es Ihnen, HTML abzufragen, wie Sie es mit jQuery tun würden, aber serverseitig mit Node.js. Es ist schnell, tolerant gegenüber schmutzigem HTML und DOM-freundlich.
@@ -56,7 +50,6 @@ Es gibt auch `jsdom`, das eine gesamte Browserumgebung simuliert. Es ist schwere
 Vergessen wir auch Cheerio nicht. Es vereint Geschwindigkeit mit einer jQuery-ähnlichen Syntax und kleinerem Fußabdruck und sitzt glücklich zwischen den beiden.
 
 ## Siehe auch
-
 Wenn Sie nach mehr dürsten, tauchen Sie hier ein:
 - [DOM-Parsing und Serialisierung W3C-Spezifikation](https://www.w3.org/TR/DOM-Parsing/)
 - [node-html-parser auf GitHub](https://github.com/taoqf/node-html-parser)

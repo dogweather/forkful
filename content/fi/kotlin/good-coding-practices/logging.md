@@ -10,12 +10,7 @@ title: Lokitus
 weight: 17
 ---
 
-## Mikä & Miksi?
-
-Lokitus on pohjimmiltaan tapa kirjata tapahtumia ja tietoja ohjelmistosovelluksesta ulkoiseen lähteeseen, kuten tiedostoon tai konsolille. Ohjelmoijat kirjaavat asioita koodin jäljittämiseen, ongelmien ratkaisemiseen ja sovelluksen toiminnan tarkkailuun luonnossa, mikä tarjoaa kriittisiä näkemyksiä, joita ei voi yhtä tehokkaasti saada muulla tavalla.
-
 ## Kuinka:
-
 Kotlinissa lokitusta voidaan tehdä sisäänrakennetulla `println()`-funktiolla yksinkertaisissa tapauksissa tai monimutkaisemmilla kirjastoilla kuten SLF4J Logbackin kanssa tai Log4j edistyneisiin tarpeisiin.
 
 Alla on yksinkertainen esimerkki käyttäen `println()`-funktiota:
@@ -67,7 +62,6 @@ java.lang.Exception: Simuloitu virhe
 ```
 
 ## Syväsukellus
-
 Perinteisesti ohjelmistojen lokitus on kehittynyt ohjelmien ja järjestelmien monimutkaistuessa. Yksinkertaiset tulostuslauseet riittivät varhaisiin päiviin, jolloin ohjelmia usein ajoivat ja debuggasivat kehittäjät itse. Mutta kun järjestelmät olivat verkotettuja ja ajoivat eri ympäristöissä eri käyttäjillä, tuli kestävästä ja pysyvästä lokitusjärjestelmästä ratkaisevan tärkeää.
 
 Ennen kuin Kotlin tuli suosituksi, Java-kehittäjät ottivat laajalti käyttöön kirjastoja, kuten Log4j ja myöhemmin SLF4J. Nämä ovat innoittaneet vastaavia käytäntöjä Kotlinissa, hyödyntäen Kotlinin yhteentoimivuutta Java-kirjastojen kanssa. SLF4J toimii abstraktiotasona, jonka avulla todellista lokitusimplementaatiota voidaan vaihtaa – yleensä Logback tai Log4j2 ovat suosittuja valintoja.
@@ -87,7 +81,6 @@ Muita edistyneiden lokituskehikoiden yleisiä ominaisuuksia ovat:
 Nämä työkalut ja ominaisuudet ovat ratkaisevan tärkeitä luotettavan ja havainnoitavan järjestelmän ylläpidossa erityisesti monimutkaisissa, jakautuneissa tai korkeasti skaalautuvissa ympäristöissä.
 
 ## Katso Myös
-
 Lisätietoja ja oivalluksia Kotlin-lokituksesta löydät:
 
 - SLF4J (Simple Logging Facade for Java) [http://www.slf4j.org/](http://www.slf4j.org/)

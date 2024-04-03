@@ -11,9 +11,6 @@ title: Calcolo di una data futura o passata
 weight: 26
 ---
 
-## Che cos'è e perché?
-Calcolare una data nel futuro o nel passato significa semplicemente trovare una data specifica a partire da un punto noto. I programmatori lo fanno per gestire scadenze, eventi, o per monitorare intervalli temporali.
-
 ## Come fare:
 Ecco esempi per calcolare date, utilizzando PowerShell.
 

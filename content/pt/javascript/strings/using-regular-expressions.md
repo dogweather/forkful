@@ -13,14 +13,10 @@ title: "Usando express\xF5es regulares"
 weight: 11
 ---
 
-## O Que & Por Que?
-
-Expressões regulares (regex) em JavaScript são padrões usados para combinar sequências de caracteres em strings. Programadores as usam para buscar, extrair e manipular texto, permitindo operações de processamento de string poderosas com um código conciso.
-
 ## Como fazer:
 
-### Correspondência Básica
 
+### Correspondência Básica
 Para começar, você pode criar um padrão de regex simples e usá-lo para encontrar correspondências em uma string. Aqui, vamos encontrar a palavra "codigo":
 
 ```javascript
@@ -31,7 +27,6 @@ console.log(result); // true
 ```
 
 ### Usando `String.prototype.match()`
-
 Para recuperar um array de correspondências:
 
 ```javascript
@@ -41,7 +36,6 @@ console.log(matches.index); // 10
 ```
 
 ### Busca Global
-
 Para encontrar todas as correspondências, use a flag `g`:
 
 ```javascript
@@ -50,7 +44,6 @@ console.log(globalMatches); // ["o", "o", "o"]
 ```
 
 ### Correspondência Insensível a Maiúsculas
-
 A flag `i` ignora o case:
 
 ```javascript
@@ -59,7 +52,6 @@ console.log(caseInsensitiveMatch[0]); // "JavaScript"
 ```
 
 ### Substituindo Texto
-
 Use `String.prototype.replace()` para substituir partes da string:
 
 ```javascript
@@ -68,7 +60,6 @@ console.log(newStr); // "JavaScript é incrível"
 ```
 
 ### Usando Grupos
-
 Grupos podem capturar partes do padrão:
 
 ```javascript
@@ -78,7 +69,6 @@ console.log(replaceWithGroups); // "divertido é JavaScript"
 ```
 
 ### Bibliotecas de Terceiros
-
 Embora as capacidades de regex integradas do JavaScript sejam poderosas, algumas tarefas podem ser simplificadas com bibliotecas como `XRegExp`. Ela oferece sintaxe e flags adicionais, tornando padrões complexos mais legíveis:
 
 ```javascript

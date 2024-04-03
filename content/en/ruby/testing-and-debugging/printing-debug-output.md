@@ -11,9 +11,6 @@ title: Printing debug output
 weight: 33
 ---
 
-## What & Why?
-Printing debug output in Ruby is like leaving breadcrumb trails in your code to track variable values and program flow. Programmers do it to catch bugs by checking what their code’s up to at various points.
-
 ## How to:
 In Ruby, `puts` and `p` are your go-to methods for quick output to the console. 
 

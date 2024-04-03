@@ -24,9 +24,6 @@ title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 weight: 41
 ---
 
-## 什么与为什么？
-通过Fish Shell操作YAML涉及到解析和操纵YAML（YAML Ain't Markup Language，YAML不是标记语言）文件，一种用于配置文件的数据序列化格式。程序员这样做是为了在shell环境的背景下有效地自动化和配置应用程序或服务，便于执行配置管理和资源配置等任务。
-
 ## 如何操作：
 Fish Shell没有内置支持解析YAML，但你可以利用第三方工具，如`yq`（一个轻量级且便携的命令行YAML处理器）来处理YAML数据。
 

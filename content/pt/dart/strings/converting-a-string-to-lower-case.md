@@ -14,12 +14,7 @@ title: "Convertendo uma string para letras min\xFAsculas"
 weight: 4
 ---
 
-## O Que & Porquê?
-
-Converter uma string para letras minúsculas é uma operação fundamental que envolve transformar todos os caracteres de uma string dada em seus equivalentes em minúscula. Os programadores geralmente realizam essa operação para alcançar comparações que não distinguem maiúsculas de minúsculas ou para padronizar a entrada de texto para processamento adicional, tornando os aplicativos mais amigáveis ao usuário e os dados mais consistentes.
-
 ## Como fazer:
-
 No Dart, você pode converter uma string para minúscula usando o método `toLowerCase()` fornecido pela classe `String`. Este método retorna uma nova string com todos os caracteres em maiúscula convertidos para minúscula. Vamos ver como isso funciona com um exemplo simples:
 
 ```dart

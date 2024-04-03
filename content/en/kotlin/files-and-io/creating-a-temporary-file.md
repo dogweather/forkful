@@ -10,9 +10,6 @@ title: Creating a temporary file
 weight: 21
 ---
 
-## What & Why?
-Creating a temporary file is crafting a file that's meant to live short-term on your filesystem, often for stuff like intermediary data. Programmers do it mainly because it can help manage space, reduce conflicts, and boost security during runtime.
-
 ## How to:
 Here's a quick way to make a temp file in Kotlin:
 

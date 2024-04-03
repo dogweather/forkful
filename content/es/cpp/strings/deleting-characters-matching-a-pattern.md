@@ -12,9 +12,6 @@ title: "Eliminando caracteres que coinciden con un patr\xF3n"
 weight: 5
 ---
 
-## Qué y por qué?
-Eliminar caracteres que coinciden con un patrón es sencillamente quitar ciertos caracteres de una cadena de texto basándose en reglas específicas o patrones. Los programadores hacen esto para limpiar datos, validar entradas, o preparar texto para procesos posteriores como análisis o almacenamiento.
-
 ## How to:
 ```C++
 #include <iostream>

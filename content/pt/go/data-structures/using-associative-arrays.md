@@ -12,12 +12,7 @@ title: Utilizando arrays associativos
 weight: 15
 ---
 
-## O Que & Porquê?
-
-Arrays associativos, conhecidos como maps em Go, permitem que você armazene pares chave-valor onde cada chave única mapeia para um valor. Programadores usam maps para recuperação de dados de forma eficiente, modificação, e para manter uma coleção de elementos que podem ser acessados rapidamente usando chaves únicas.
-
 ## Como fazer:
-
 Criar e inicializar um map em Go pode ser feito de várias maneiras. Aqui está um exemplo básico para começar:
 
 ```go
@@ -72,7 +67,6 @@ for cor, hex := range colors {
 Lembre-se, maps em Go são desordenados. A ordem de iteração não é garantida.
 
 ## Aprofundamento
-
 Em Go, maps são implementados como tabelas hash. Cada entrada no map consiste de dois itens: uma chave e um valor. A chave é hasheada para armazenar a entrada, o que permite operações de tempo constante para um pequeno conjunto de dados e complexidade de tempo médio de O(1) com hashing adequado, que pode degradar para O(n) no pior caso com muitas colisões de hash.
 
 Uma nota significativa para novos programadores de Go é que os tipos de map são tipos de referência. Isso significa que quando você passa um map para uma função, quaisquer mudanças feitas no map dentro dessa função são visíveis para o chamador. Isso é diferente de, digamos, passar uma struct para uma função, onde a struct é copiada a menos que seja passada por um ponteiro.

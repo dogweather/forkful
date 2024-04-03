@@ -16,9 +16,6 @@ title: "Tilap\xE4isen tiedoston luominen"
 weight: 21
 ---
 
-## Mikä ja miksi?
-Väliaikaisen tiedoston luominen Dartissa tarkoittaa sellaisen tiedoston tuottamista, joka on tarkoitettu lyhytaikaiseen käyttöön, pääasiassa skenaarioihin kuten tietojen välimuistitus, väliaikainen tallennustila tiedostonkäsittelyä varten tai tietojen säilyttäminen, jotka ovat liian arkaluontoisia pitkäaikaiseen säilytykseen. Ohjelmoijat tekevät sen hallitakseen tietoja, jotka eivät tarvitse pysyvää tallennustilaa, parantaen siten suorituskykyä ja ylläpitäen tietohygieniaa.
-
 ## Miten:
 Dartin `dart:io`-kirjasto helpottaa väliaikaisten tiedostojen luomista `Directory`-luokan kautta. Tässä on suoraviivainen tapa luoda väliaikainen tiedosto ja kirjoittaa siihen jotakin sisältöä:
 
@@ -42,7 +39,6 @@ Future<void> main() async {
 ```
 
 ### Kolmannen osapuolen kirjaston käyttö: `path_provider`
-
 Sovelluksissa (erityisesti Flutterilla kehitetyissä mobiilisovelluksissa) saatat haluta luoda väliaikaisia tiedostoja yhtenäisellä ja hallitulla tavalla. `path_provider`-paketti voi auttaa sinua löytämään oikean väliaikaisen hakemiston eri alustoilla (iOS, Android jne.).
 
 Lisää ensin `path_provider` riippuvuuksiisi `pubspec.yaml`-tiedostossasi:

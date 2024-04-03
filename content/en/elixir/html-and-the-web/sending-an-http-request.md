@@ -10,9 +10,6 @@ title: Sending an HTTP request
 weight: 44
 ---
 
-## What & Why?
-Sending an HTTP request is how your program asks for data from the web, sorta like how you'd ask a librarian for a book. Programmers do this to fetch, send, or manipulate remote data, from getting the weather to posting tweets.
-
 ## How to:
 Use Elixir's `HTTPoison` library. It's neat, simple, and gets the job done.
 

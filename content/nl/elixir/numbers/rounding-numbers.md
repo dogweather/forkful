@@ -12,9 +12,6 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-Getallen afronden betekent dat je ze aanpast naar een nabijgelegen waarde voor eenvoud of om te voldoen aan een bepaalde precisie. Het is nuttig voor het verbeteren van de leesbaarheid, het verminderen van opslagruimte, of om te voldoen aan domeinspecifieke behoeften, zoals geldberekeningen waarbij je wilt afronden op de dichtstbijzijnde cent.
-
 ## Hoe:
 In Elixir, kun je `Float.round/2` gebruiken om een kommagetal af te ronden. Je kunt het aantal decimale cijfers specificeren dat je wilt behouden. Zo werkt het:
 

@@ -11,12 +11,7 @@ title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---
 
-## Qué y Por Qué?
-
-La concatenación de cadenas es unir dos o más strings para formar uno nuevo. Los programadores la usan para construir mensajes, combinar datos y generar salidas dinámicas.
-
 ## Cómo Hacerlo:
-
 Concatenar con el operador `+`:
 
 ```Kotlin
@@ -44,7 +39,6 @@ println(resultado) // Salida: Kotlin es Genial.
 ```
 
 ## Profundizando
-
 Históricamente, la concatenación de strings ha sido una operación fundamental en la programación por su simplicidad y utilidad. 
 
 Alternativas a la concatenación directa incluyen el uso de la clase `StringBuilder` para rendimiento en construcciones de strings complejas o la función `joinToString` para unir elementos de listas.
@@ -52,7 +46,6 @@ Alternativas a la concatenación directa incluyen el uso de la clase `StringBuil
 Detalles de implementación: en Kotlin, el operador `+` para strings está sobrecargado y finalmente hace uso de `StringBuilder` para una eficiencia óptima en la JVM.
 
 ## Ver También
-
 - Documentación oficial de Kotlin sobre strings: [Strings - Kotlin Programming Language](https://kotlinlang.org/docs/strings.html)
 - Kotlin API - StringBuilder: [StringBuilder - Kotlin Programming Language](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/)
 - Kotlin API - joinToString: [joinToString - Kotlin Programming Language](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/join-to-string.html)

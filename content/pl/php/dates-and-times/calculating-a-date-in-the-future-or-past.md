@@ -11,12 +11,7 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-## Co i Dlaczego?
-
-Obliczanie daty w przyszłości lub przeszłości to sposób na ustalenie, jaki dzień będzie za X dni, lub jaki był Y dni temu. Programiści robią to, by zarządzać terminami w aplikacjach, np. przypomnienia o wydarzeniach czy ważność subskrypcji.
-
 ## Jak to zrobić:
-
 ```PHP
 <?php
 $today = new DateTime(); // Dzisiejsza data
@@ -34,7 +29,6 @@ echo $pastDate->format('Y-m-d') . PHP_EOL; // Przykładowy output: 2023-03-29
 Możesz zmienić 'P10D' na odpowiednią wartość, żeby uzyskać dokładną datę, której potrzebujesz.
 
 ## Głębsze spojrzenie:
-
 PHP ma wbudowane klasy jak `DateTime` i `DateInterval`, które ułatwiają zarządzanie datami. Klasa `DateTime` zastąpiła starsze funkcje jak `strtotime` i `mktime`, oferując obiektowy sposób na manipulację datami. Alternatywą może być stosowanie bibliotek zewnętrznych jak Carbon dla PHP, która rozszerza możliwości `DateTime`.
 
 Obliczanie daty w przeszłości lub przyszłości wymaga uwzględnienia zmian strefy czasowej oraz przestępności lat. PHP radzi sobie z tym za nas, ale dobrze jest o tym pamiętać, szczególnie przy międzynarodowych aplikacjach.
@@ -42,7 +36,6 @@ Obliczanie daty w przeszłości lub przyszłości wymaga uwzględnienia zmian st
 Klonowanie obiektu `DateTime` przed modyfikacją jest istotne, aby nie zmieniać oryginalnej instancji. Jest to szczególnie ważne, gdy chcemy zachować punkt odniesienia i różne daty do porównania.
 
 ## Zobacz również:
-
 - Oficjalna dokumentacja PHP dla klasy `DateTime`: https://www.php.net/manual/en/class.datetime.php
 - Dokumentacja dla `DateInterval`: https://www.php.net/manual/en/class.dateinterval.php
 - Biblioteka Carbon dla PHP: https://carbon.nesbot.com/docs/

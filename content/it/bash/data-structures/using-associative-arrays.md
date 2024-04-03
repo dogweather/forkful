@@ -13,12 +13,7 @@ title: Utilizzo di array associativi
 weight: 15
 ---
 
-## Cosa & Perché?
-
-Gli array associativi sono come degli array super-potenziati che ti permettono di usare stringhe come indici invece di semplici interi. I programmatori li utilizzano per strutture dati più complesse, rendendo più semplice gestire dati che non si adattano ordinatamente in un elenco sequenziale.
-
 ## Come fare:
-
 Prima di tutto, dichiara un array associativo in Bash:
 
 ```Bash
@@ -66,7 +61,6 @@ unset my_array["topic"]
 ```
 
 ## Approfondimento
-
 Gli array associativi sono stati introdotti nella versione 4.0 di Bash, rendendoli un'aggiunta relativamente recente al linguaggio. Prima della loro introduzione, gestire array con indici non interi era laborioso, spesso richiedendo soluzioni alternative o strumenti esterni come `awk` o `sed`.
 
 Sotto il cofano, Bash implementa gli array associativi usando tabelle hash. Questa implementazione permette una ricerca chiave efficiente, che rimane piuttosto costante a prescindere dalla dimensione dell'array, una caratteristica critica per la performance nell'esecuzione di script.

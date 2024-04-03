@@ -13,9 +13,6 @@ title: "\u0427\u0438\u0442\u0430\u043D\u043D\u044F \u0430\u0440\u0433\u0443\u043
 weight: 23
 ---
 
-## What & Why? (Що і Чому?)
-JavaScript scripts often need input—the kind you pass along when you run them. Reading command line arguments lets a program act on that input, tailoring behavior without changing the code.
-
 ## How to: (Як це зробити:)
 Here's how you snag those command line arguments in Node.js.
 

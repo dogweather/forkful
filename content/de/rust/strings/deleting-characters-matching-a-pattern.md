@@ -11,8 +11,6 @@ title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---
 
-# Rust-Programmierung: Löschung von Zeichen nach Muster
-
 ## Was & Warum?
 Zeichen, die einem Muster entsprechen, zu löschen, bedeutet, aus einem Text gezielt bestimmte Elemente zu entfernen. Programmierer nutzen diese Operation, um unnötige oder unerwünschte Daten zu säubern oder Formatierungen zu standardisieren.
 

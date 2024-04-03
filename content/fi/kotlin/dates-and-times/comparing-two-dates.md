@@ -11,9 +11,6 @@ title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---
 
-## What & Why?
-Vertaillaan kahta päivämäärää - siis tutkitaan kumpi on aikaisempi tai onko ne samat. Tarvitaan esimerkiksi ajanjaksojen validointiin tai aikajärjestyksen määrittelemiseen.
-
 ## How to:
 ```Kotlin
 import java.time.LocalDate

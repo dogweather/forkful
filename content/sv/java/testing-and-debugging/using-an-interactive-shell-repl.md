@@ -10,9 +10,6 @@ title: "Anv\xE4nda en interaktiv skal (REPL)"
 weight: 34
 ---
 
-## Vad & Varför?
-En REPL (Read-Eval-Print Loop) är ett interaktivt skal som processar enskilda användarinmatningar, exekverar kod och returnerar resultatet. Programmerare använder det för snabba experiment, felsökning eller lärande eftersom det tillåter omedelbar återkoppling och iteration.
-
 ## Hur man gör:
 Att starta en REPL i Java är enkelt med verktyget `jshell` som introducerades i Java 9. Så här får du tag på det och startar en grundläggande session:
 

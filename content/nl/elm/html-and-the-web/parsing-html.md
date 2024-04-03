@@ -12,9 +12,6 @@ title: HTML Parsen
 weight: 43
 ---
 
-## Wat & Waarom?
-HTML parsen betekent het converteren van HTML-tekst naar een datastructuur waarmee je programma kan werken. Programmeurs doen dit om de inhoud van webpagina's programmatisch te manipuleren, extraheren en ermee te interacteren.
-
 ## Hoe:
 Elm parseert niet uit zichzelf rauwe HTML; in plaats daarvan richt het zich op het renderen van views met zijn eigen `Html` module. Om HTML te parsen, gebruik je doorgaans een server-side service of een externe JavaScript-bibliotheek, waarna je de gegevens naar Elm doorgeeft. Hier is een basis Elm-opzet voor het omgaan met geparseerde HTML-gegevens:
 

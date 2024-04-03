@@ -17,12 +17,7 @@ title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---
 
-## Cái gì và Tại sao?
-
-Đọc một tệp văn bản trong Go bao gồm việc truy cập và lấy nội dung từ một tệp được lưu trữ trên đĩa để xử lý hoặc phân tích. Các lập trình viên thường xuyên thực hiện thao tác này để thao tác dữ liệu, cấu hình ứng dụng, hoặc đọc dữ liệu đầu vào cho việc thực thi chương trình, làm cho đó trở thành một kỹ năng cơ bản trong phát triển phần mềm.
-
 ## Làm thế nào:
-
 Đọc một tệp văn bản trong Go có thể được thực hiện theo một số cách, nhưng một trong những phương pháp đơn giản nhất là sử dụng gói `ioutil`. Dưới đây là một ví dụ cơ bản:
 
 ```go
@@ -83,7 +78,6 @@ func main() {
 Phương pháp này không chỉ hiện đại hơn mà còn hỗ trợ các tệp lớn hơn, vì nó đọc tệp từng dòng một thay vì nạp toàn bộ nội dung vào bộ nhớ cùng một lần.
 
 ## Đào sâu:
-
 Cách Go xử lý các thao tác với tệp, bao gồm cả đọc từ các tệp, phản ánh triết lý của ngôn ngữ về sự đơn giản và hiệu quả. Ban đầu, gói `ioutil` cung cấp các thao tác với tệp một cách trực tiếp. Tuy nhiên, với sự cải thiện trong thư viện chuẩn của Go và sự chuyển đổi hướng tới xử lý lỗi một cách rõ ràng hơn và quản lý tài nguyên, các gói `os` và `io` đã trở thành lựa chọn ưu tiên để làm việc với tệp.
 
 Những thay đổi này nhấn mạnh cam kết của Go với hiệu suất và an toàn, đặc biệt là trong việc tránh các vấn đề về bộ nhớ có thể phát sinh từ việc nạp các tệp lớn hoàn toàn. Phương thức `bufio.Scanner` được giới thiệu để đọc các tệp từng dòng một làm nổi bật khả năng thích nghi và tập trung vào các thách thức tính toán hiện đại của ngôn ngữ, chẳng hạn như xử lý các bộ dữ liệu lớn hoặc dữ liệu đang phát.

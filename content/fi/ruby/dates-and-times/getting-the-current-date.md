@@ -14,9 +14,6 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mikä & Miksi?
-Nykyisen päivämäärän hakeminen on olennainen tehtävä lähes missä tahansa ohjelmointiprojektissa, oli kyse sitten toimintojen lokituksesta sovelluksessa tai päiväleimoilla varustettujen raporttien tuottamisesta. Rubyssa tämä on helposti saavutettavissa käyttämällä standardikirjastoa, mikä yksinkertaistaa päivämääriä sisältäviä operaatioita.
-
 ## Kuinka:
 Rubyn standardikirjasto sisältää `Date`- ja `Time`-luokat päivämäärien ja ajan käsittelyyn. Näin saat nykyisen päivämäärän:
 

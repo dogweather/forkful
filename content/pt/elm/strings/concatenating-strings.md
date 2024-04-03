@@ -10,9 +10,6 @@ title: Concatenando strings
 weight: 3
 ---
 
-## O Que É & Por Que?
-Concatenar strings é juntar dois ou mais textos em um só. Programadores fazem isso para montar sentenças, mensagens, ou combinar dados de forma dinâmica.
-
 ## Como Fazer:
 ```Elm
 import Html exposing (text)

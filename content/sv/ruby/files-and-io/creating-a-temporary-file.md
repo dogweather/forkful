@@ -11,9 +11,6 @@ title: "Skapa en tempor\xE4r fil"
 weight: 21
 ---
 
-## Vad & Varför?
-Att skapa en temporär fil innebär att man skapar en fil som bara behövs temporärt, ofta under en programkörnings tid. Programerare använder detta för att hantera data som inte behöver sparas på lång sikt eller för att undvika att kladda ner filsystemet med oändliga testfiler.
-
 ## Hur man gör:
 För att skapa en temporär fil i Ruby använder vi standardbiblioteket `Tempfile`. Här är ett enkelt exempel:
 

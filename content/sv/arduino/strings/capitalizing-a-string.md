@@ -13,9 +13,6 @@ title: "G\xF6r om en str\xE4ng till versaler"
 weight: 2
 ---
 
-## Vad & Varför?
-Att skriva med stor bokstav innebär att konvertera det första tecknet i varje ord i en sträng till versal samtidigt som resten behålls som gemener. Denna operation är vanlig vid formatering av data och normalisering av användarinmatning för att bibehålla konsekvens och förbättra läsbarheten.
-
 ## Hur:
 Arduino, som främst är känt för interaktion med hårdvara, inkluderar även grundläggande möjligheter för strängmanipulation genom sitt `String`-objekt. Dock saknas en direkt `capitalize`-funktion som finns i högre programmeringsspråk. Därför implementerar vi kapitalisering genom att iterera över en sträng och tillämpa bokstavsfallstransformationer.
 

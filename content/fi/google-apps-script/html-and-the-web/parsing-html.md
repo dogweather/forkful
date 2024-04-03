@@ -14,9 +14,6 @@ title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---
 
-## Mikä & Miksi?
-HTML:n jäsentäminen Google Apps Scriptissä tarkoittaa tietojen poimimista HTML-sisällöstä, mikä on erityisen hyödyllistä, kun toimitaan verkkosivujen tai web-pohjaisten tietolähteiden kanssa. Ohjelmoijat tekevät tätä automatisoidakseen datan keräämistä, manipuloidakseen web-sisältöä tai integroidakseen web-toiminnallisuuksia Googlen sovellusten, kuten Sheets ja Docs, kanssa.
-
 ## Miten:
 Google Apps Scriptillä ei ole sisäänrakennettua metodia HTML:n jäsentämiseen. Voit kuitenkin hyödyntää `UrlFetchApp`-palvelua HTML-sisällön noutamiseen ja sen jälkeen käyttää JavaScript-metodeita tai regexiä (säännöllisiä lausekkeita) jäsentämiseen. Alla on yksinkertainen esimerkki siitä, miten noutaa ja jäsentää verkkosivun title-tagi.
 

@@ -11,10 +11,9 @@ title: Organizing code into functions
 weight: 18
 ---
 
-## What & Why?
-Organizing code into functions in Dart is about defining reusable blocks of code that perform specific tasks, typically receiving inputs, processing data, and possibly returning outputs. Programmers do this to enhance code readability, reduce duplication, and facilitate maintenance, ultimately leading to more modular and manageable codebases.
-
 ## How to:
+
+
 ### Basic Function
 In Dart, you define a function using the `void` keyword if it doesn't return a value, or specify the type of value it returns otherwise. Here's a simple function that prints a greeting message:
 

@@ -13,12 +13,7 @@ title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---
 
-## Wat & Waarom?
-
-Het verwijderen van tekens die overeenkomen met een specifiek patroon uit strings in C gaat over het verwijderen van alle instanties van bepaalde tekens die voldoen aan vooraf gedefinieerde criteria. Programmeurs voeren deze taak uit om invoer te zuiveren, gegevens voor te bereiden voor verwerking of simpelweg strings op te schonen voor uitvoer of verdere manipulatie, waarbij wordt verzekerd dat de verwerkte gegevens precies zijn zoals nodig voor een gegeven context of algoritme.
-
 ## Hoe:
-
 C komt niet met een ingebouwde functie voor het direct verwijderen van tekens uit een string op basis van een patroon, in tegenstelling tot sommige hogere programmeertalen. Je kunt deze taak echter gemakkelijk uitvoeren door handmatig door de string te itereren en een nieuwe te bouwen die de ongewenste tekens uitsluit. Laten we bijvoorbeeld aannemen dat je alle cijfers uit een string wilt verwijderen. Je kunt dit als volgt doen:
 
 ```c
@@ -52,7 +47,6 @@ Resultaat: C Programmeren : De Basis!
 Dit voorbeeld maakt gebruik van `isdigit` uit `ctype.h` om cijfers te identificeren, niet-cijfertekens naar het begin van de string te schuiven en de string te beëindigen nadat alle tekens zijn geëvalueerd.
 
 ## Diepere Duik
-
 De gepresenteerde oplossing maakt gebruik van een aanpak met twee pointers binnen dezelfde array om ongewenste tekens effectief te filteren, een techniek die kenmerkend is voor C's hands-on geheugenbeheerfilosofie. Deze methode is efficiënt omdat deze ter plaatse werkt, waardoor de noodzaak voor extra geheugentoewijzing wordt vermeden en dus de overhead wordt geminimaliseerd.
 
 Historisch gezien heeft de afwezigheid van hoogwaardige stringmanipulatiefuncties in C programmeurs gedwongen om een diepgaand begrip van stringbehandeling op het geheugenniveau te ontwikkelen, wat leidt tot innovatieve benaderingen zoals hierboven. Hoewel dit het voordeel heeft van meer controle en efficiëntie, brengt het een hoger risico op fouten met zich mee, zoals bufferoverlopen en off-by-one fouten.

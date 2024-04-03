@@ -10,9 +10,6 @@ title: Concatenando strings
 weight: 3
 ---
 
-## O Que & Porquê?
-Concatenar strings significa juntar texto de duas ou mais strings, formando uma única sequência. Programadores fazem isso para construir mensagens, combinar dados de texto, ou preparar informações para serem exibidas para usuários.
-
 ## Como Fazer:
 ```Python
 # Concatenação simples com +

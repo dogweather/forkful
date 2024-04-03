@@ -11,9 +11,6 @@ title: Lese kommandolinjeargumenter
 weight: 23
 ---
 
-## Hva & Hvorfor?
-Kommandolinjeargumenter lar deg sende informasjon til programmet ditt ved oppstart, slik at oppførselen kan tilpasses på fly. Programmerere gjør dette for å lage fleksible applikasjoner som kan håndteres dynamisk uten endring av koden.
-
 ## Hvordan:
 Her er et eksempel på hvordan å lese kommandolinjeargumenter i Kotlin:
 

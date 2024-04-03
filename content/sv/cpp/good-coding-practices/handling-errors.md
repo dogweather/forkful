@@ -11,9 +11,6 @@ title: Hantering av fel
 weight: 16
 ---
 
-## Vad & Varför?
-Att hantera fel innebär att man planerar för när saker och ting går fel. Det är avgörande eftersom det hjälper till att undvika krascher och gör din mjukvara robust och användarvänlig.
-
 ## Hur man gör:
 Här är en grundläggande try-catch block för att hantera ett undantag:
 

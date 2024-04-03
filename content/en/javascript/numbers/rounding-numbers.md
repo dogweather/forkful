@@ -9,9 +9,6 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-Rounding is chopping off the noise after a certain point in a number. Programmers round to control precision, manage memory, or make output user-friendly—like turning 2.998 into a clean 3.
-
 ## How to:
 Here's how you round numbers in JavaScript using `Math.round()`, `Math.ceil()`, and `Math.floor()`: 
 

@@ -11,12 +11,7 @@ title: Generowanie liczb losowych
 weight: 12
 ---
 
-## Co i dlaczego?
-
-Generowanie losowych liczb jest podstawowym zadaniem w programowaniu, używanym do wszystkiego - od próbkowania danych po rozwój gier. W Fish Shell użycie narzędzi systemowych i funkcji wbudowanych do tego celu pozwala programistom efektywnie włączać losowość i zmienność do skryptów i aplikacji.
-
 ## Jak to zrobić:
-
 Generowanie losowej liczby w Fish może być proste, przy użyciu kombinacji narzędzi systemowych i możliwości powłoki. Poniżej znajdują się przykłady demonstrujące, jak generować losowe liczby w określonych zakresach.
 
 **Generowanie losowej liczby między 0 a 100:**
@@ -68,7 +63,6 @@ B
 Zwróć uwagę, że wynik będzie się różnić za każdym razem, gdy uruchomisz te komendy z powodu natury losowości.
 
 ## Głębsze spojrzenie
-
 Funkcja `random` w Fish Shell zapewnia łatwy w użyciu interfejs do generowania liczb pseudolosowych. Wewnętrznie opakowuje ona narzędzia systemowe do generowania liczb losowych, oferując przenośny sposób na wprowadzenie losowości do skryptów. Jednakże, ważne jest, aby pamiętać, że losowość zapewniana przez `random` jest wystarczająca dla większości zadań skryptowych, ale może nie spełniać wymagań bezpieczeństwa kryptograficznego dla aplikacji wymagających wyższego stopnia nieprzewidywalności.
 
 Dla kontekstów bezpieczeństwa o wysokich stawkach, rozważ użycie dedykowanych narzędzi lub bibliotek programistycznych zaprojektowanych dla celów kryptograficznych, które zapewniają mocniejsze gwarancje losowości. Niemniej jednak, dla ogólnego skryptowania i aplikacji, gdzie najwyższe standardy bezpieczeństwa dla losowości nie są wymagane, funkcja `random` w Fish Shell oferuje wygodne i efektywne rozwiązanie.

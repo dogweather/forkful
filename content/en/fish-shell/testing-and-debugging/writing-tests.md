@@ -10,16 +10,10 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-
-Writing tests in Fish Shell involves creating scripts that automatically run your code to validate its behavior against expected outcomes. This practice is crucial as it ensures your shell scripts work as intended, catching errors early and making maintenance easier.
-
 ## How to:
-
 Fish doesn't have a built-in testing framework like some other programming environments. However, you can write simple test scripts that use assertions to check the behavior of your functions. Additionally, you can leverage third-party tools like `fishtape` for a more comprehensive testing suite.
 
 ### Example 1: Basic Test Script
-
 Let's start with a basic function in Fish that calculates the sum of two numbers:
 
 ```fish
@@ -51,7 +45,6 @@ test_add passed
 ```
 
 ### Example 2: Using Fishtape
-
 For a more robust testing solution, you can use `fishtape`, a TAP-producing test runner for Fish.
 
 First, install `fishtape` if you haven't already:

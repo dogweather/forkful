@@ -11,9 +11,6 @@ title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---
 
-## O Que & Por Que?
-Arredondar números significa ajustá-los a um valor próximo para simplicidade ou para corresponder a uma certa precisão. Isso é útil para melhorar a legibilidade, reduzir espaço de armazenamento ou atender a necessidades específicas de domínio, como cálculos monetários onde se deseja arredondar para o centavo mais próximo.
-
 ## Como Fazer:
 No Elixir, você pode usar `Float.round/2` para arredondar um número de ponto flutuante. Você pode especificar o número de dígitos decimais que deseja manter. Veja como funciona:
 

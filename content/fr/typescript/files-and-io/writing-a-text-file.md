@@ -14,9 +14,6 @@ title: "R\xE9diger un fichier texte"
 weight: 24
 ---
 
-## Ce qu'il faut savoir et pourquoi ?
-Écrire un fichier texte en TypeScript est une compétence essentielle pour la persistance des données, la configuration ou la génération de journaux. Les programmeurs effectuent souvent cette tâche pour stocker et manipuler des données en dehors de la mémoire de l'application pour des raisons telles que l'analyse de données, le reporting ou simplement la sauvegarde des paramètres utilisateur entre les sessions.
-
 ## Comment faire :
 TypeScript en lui-même ne gère pas directement les opérations sur les fichiers car il se compile en JavaScript, qui traditionnellement s'exécute dans le navigateur avec un accès limité au système de fichiers. Cependant, lorsqu'il est utilisé dans un environnement Node.js, le module `fs` (Système de Fichiers) fournit la fonctionnalité d'écriture de fichiers.
 

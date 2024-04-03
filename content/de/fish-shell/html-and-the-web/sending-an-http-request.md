@@ -11,9 +11,6 @@ title: Einen HTTP-Request senden
 weight: 44
 ---
 
-## Was & Warum?
-HTTP-Anfragen sind das Herzstück des Webs – sie ermöglichen die Kommunikation zwischen dem Client (dein Rechner) und dem Server. Programmierer nutzen sie, um Daten zu holen, zu senden, und Webdienste zu nutzen.
-
 ## Anleitung:
 Mit `curl`, einem mächtigen Werkzeug am Terminal, sendest du HTTP-Anfragen schnell und unkompliziert.
 

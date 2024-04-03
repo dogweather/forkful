@@ -10,9 +10,6 @@ title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---
 
-## Cosa & Perché?
-Un REPL, o Ciclo Leggi-Valuta-Stampa, è un ambiente di programmazione che accetta input singoli dall'utente, li esegue e restituisce il risultato all'utente. I programmatori lo usano per test rapidi, apprendimento, debugging o per fare calcoli al volo.
-
 ## Come fare:
 Immergiti direttamente nel REPL di Python digitando `python` nella tua riga di comando. Una volta lì, prova operazioni semplici o codice su più righe:
 

@@ -11,9 +11,6 @@ title: Vergleich von zwei Daten
 weight: 27
 ---
 
-## Was & Warum?
-Das Vergleichen zweier Daten ermöglicht es uns, ihre chronologische Reihenfolge festzustellen – herauszufinden, welches früher oder später ist. Programmierer nutzen das für Zeitpläne, Gültigkeitsprüfungen und um zeitgesteuerte Events zu handhaben.
-
 ## Vorgehensweise:
 ```elixir
 # Elixir Version: 1.14.0

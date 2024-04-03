@@ -13,9 +13,6 @@ title: Pobieranie aktualnej daty
 weight: 29
 ---
 
-## Co i dlaczego?
-Uzyskanie bieżącej daty w Elm oznacza pobranie bieżącej daty kalendarzowej z systemu. Robimy to, aby oznaczać czas wydarzeń, planować zadania lub śledzić okresy czasu.
-
 ## Jak to zrobić:
 Elm obsługuje daty za pomocą modułu `Time`. Otrzymasz bieżący czas jako znacznik czasu POSIX, a następnie przekonwertujesz go na datę.
 

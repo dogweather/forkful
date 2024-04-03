@@ -11,12 +11,7 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## ¿Qué y por qué?
-
-Redondear números es ajustar un decimal a su valor entero más cercano o a un número especificado de dígitos fraccionarios. Los programadores redondean para reducir la complejidad, mejorar la legibilidad o cumplir con los requisitos de precisión.
-
 ## Cómo hacerlo:
-
 El módulo `Basics` de Elm proporciona funciones útiles para redondear: `round`, `floor` y `ceiling`. Así es como se utilizan.
 
 ```elm
@@ -46,7 +41,6 @@ toLocaleString 2 3.14159 --> "3.14"
 ```
 
 ## Profundizando
-
 Elm es un lenguaje funcional de tipado fuerte que relega los efectos secundarios a los "bordes" de la arquitectura. Esto significa que funciones como el redondeo deben ser puras y predecibles. Históricamente, el redondeo es una operación común en muchos lenguajes de programación que tratan con la imprecisión de la aritmética de punto flotante.
 
 El enfoque de Elm para el redondeo es directo: las funciones son puras y se adhieren a las definiciones matemáticas para redondear, floor y ceiling. Elm anticipa las necesidades comunes proporcionando funciones integradas, ya que la gestión de la precisión es un requisito frecuente, especialmente en finanzas y gráficos.
@@ -56,7 +50,6 @@ Las alternativas a las funciones integradas de Elm podrían incluir implementaci
 Hasta la versión actual, Elm utiliza la matemática de punto flotante subyacente de JavaScript para estas operaciones, manteniéndose así consistente con el estándar IEEE 754, lo cual es algo a tener en cuenta al considerar la precisión y los posibles errores de punto flotante.
 
 ## Ver también
-
 - Documentación oficial del módulo `Basics` de Elm: https://package.elm-lang.org/packages/elm/core/latest/Basics
 - Una mirada detallada a cómo funcionan los números de punto flotante en la informática: https://floating-point-gui.de/
 - Módulo `Float` de Elm para más operaciones de punto flotante: https://package.elm-lang.org/packages/elm/core/latest/Float

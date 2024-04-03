@@ -12,12 +12,7 @@ title: Uso de matrices asociativas
 weight: 15
 ---
 
-## ¿Qué y Por Qué?
-
-Los arreglos asociativos, o objetos en TypeScript, te permiten usar cadenas (o claves) para acceder a pares de valores. Los programadores los utilizan para patrones de acceso a datos más dinámicos en comparación con los arreglos tradicionales, proporcionando una manera flexible de estructurar y acceder a datos sin estar atados a índices numéricos.
-
 ## Cómo hacerlo:
-
 Crear y usar arreglos asociativos en TypeScript es sencillo. Aquí tienes una guía básica:
 
 ```TypeScript
@@ -69,7 +64,6 @@ Salida:
 ```
 
 ## Un Vistazo Profundo
-
 En TypeScript, lo que nos referimos como arreglos asociativos son esencialmente objetos. Históricamente, en lenguajes como PHP, los arreglos asociativos son un tipo fundamental, pero JavaScript (y por extensión, TypeScript) usa objetos para este propósito. Este enfoque es tanto una fortaleza como una limitación. Los objetos proporcionan una estructura altamente dinámica para asociar cadenas a valores, pero no están destinados a ser usados como 'arreglos' en el sentido tradicional. Por ejemplo, no puedes usar métodos de arreglo como `push` o `pop` directamente en estos objetos.
 
 Para casos en los que necesitas colecciones ordenadas de pares clave-valor con operaciones estilo arreglo, TypeScript (y JavaScript moderno) ofrece el objeto `Map`:

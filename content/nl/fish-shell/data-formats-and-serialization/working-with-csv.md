@@ -13,12 +13,7 @@ title: Werken met CSV
 weight: 37
 ---
 
-## Wat & Waarom?
-
-Werken met CSV (Comma-Separated Values, komma-gescheiden waarden) omvat het parseren en manipuleren van gegevens die gestructureerd zijn als rijen en kolommen in tekstformaat. Programmeurs gebruiken CSV-bestanden omdat ze eenvoudig, breed ondersteund zijn, en gemakkelijk te importeren of exporteren zijn vanuit databases en spreadsheets.
-
 ## Hoe te:
-
 1. Een CSV-bestand regel voor regel lezen:
 ```Fish Shell
 for line in (cat file.csv)
@@ -49,13 +44,11 @@ Bob,25,Los Angeles
 ```
 
 ## Diepgaande Verkenning
-
 De omgang met CSV bestaat al sinds de vroege dagen van persoonlijke computers en is geëvolueerd als een eenvoudig formaat voor gegevensuitwisseling. Hoewel basis, kan het gebrek aan een standaard bij CSV leiden tot parseerissues, zoals verschillende scheidingsmethoden en tekstcoderingen. Terwijl Fish Shell geen ingebouwde CSV parseertools heeft, worden `awk`, `sed`, en `cut` vaak naast het gebruik ervan ingezet voor meer complexe taken.
 
 De benadering van Fish tot CSV is meer handmatig en script-gebaseerd, gebruikmakend van zijn mogelijkheden voor stringmanipulatie om CSV-velden te beheren. Voor zware gegevensverwerking, overweeg alternatieven zoals Python's `pandas` bibliotheek, of command-line hulpprogramma's zoals `csvkit`.
 
 ## Zie Ook
-
 - Aan de slag met `awk`: [AWK - Een tutorial en introductie](https://www.grymoire.com/Unix/Awk.html)
 - Introductie tot `sed`: [Sed - Een introductie en tutorial](https://www.grymoire.com/Unix/Sed.html)
 - Officiële Fish Shell Documentatie: [Fish Shell Documentatie](https://fishshell.com/docs/current/index.html)

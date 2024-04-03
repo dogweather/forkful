@@ -15,12 +15,7 @@ title: "Ghi v\xE0o l\u1ED7i chu\u1EA9n"
 weight: 25
 ---
 
-## Gì và Tại sao?
-
-Viết vào lỗi chuẩn (stderr) là đưa ra văn bản vào dòng lỗi, riêng biệt với đầu ra chuẩn (stdout). Lập trình viên làm điều này để ghi nhận lỗi và thông điệp chẩn đoán mà không làm lộn xộn đầu ra thường thức có thể được chuyển hướng hoặc đưa vào các chương trình khác.
-
 ## Làm thế nào:
-
 Rust làm cho việc viết vào stderr trở nên đơn giản. Sử dụng macro `eprintln!` cho văn bản, giống như `println!` nhưng dành cho lỗi.
 
 ```Rust
@@ -50,7 +45,6 @@ $ cargo run > output.txt
 Ở đây `output.txt` chỉ chứa "Đây là một thông điệp bình thường."
 
 ## Sâu hơn
-
 Theo lịch sử, việc tách biệt stdout và stderr cho phép các hệ thống Unix xử lý dữ liệu thường thức và lỗi một cách khác nhau. Đây là một phương pháp tốt và giúp ích cho việc tự động hóa và ghi nhật ký.
 
 Các lựa chọn thay thế cho việc viết vào stderr ở mức thấp hơn, như sử dụng `std::io::stderr`. Nó cung cấp nhiều quyền kiểm soát hơn và làm việc tốt với dữ liệu không phải văn bản.
@@ -71,7 +65,6 @@ fn main() -> io::Result<()> {
 Bên dưới lớp vỏ, `eprintln!` là một macro đóng gói `writeln!` vào stderr, giữ cho mọi thứ được DRY (Don’t Repeat Yourself - Đừng Lặp Lại Chính Mình).
 
 ## Xem Thêm
-
 Để biết thêm về xử lý lỗi và ghi nhật ký:
 
 - Rust By Example về stdio: https://doc.rust-lang.org/rust-by-example/std_misc/stdio.html

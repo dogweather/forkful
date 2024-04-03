@@ -17,9 +17,6 @@ title: "\uD14D\uC2A4\uD2B8 \uAC80\uC0C9 \uBC0F \uAD50\uCCB4"
 weight: 10
 ---
 
-## What & Why? (무엇과 왜?)
-텍스트 검색 및 교체는 문자열 내에서 특정 단어나 구문을 찾아 다른 것으로 바꾸는 작업입니다. 프로그래머들은 데이터 정제, 자동 수정, 코드 리팩토링 등의 이유로 이 기능을 사용합니다.
-
 ## How to: (방법)
 ```Elm
 module Main exposing (..)

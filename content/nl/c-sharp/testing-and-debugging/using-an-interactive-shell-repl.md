@@ -12,9 +12,6 @@ title: Het gebruik van een interactieve shell (REPL)
 weight: 34
 ---
 
-## Wat & Waarom?
-Een REPL, of Read-Eval-Print Loop, stelt je in staat om C# code te typen en deze interactief uit te voeren. Programmeurs gebruiken het voor snelle experimenten, debuggen, of om C# te leren, zonder de overhead van het opzetten van volledige projecten.
-
 ## Hoe te:
 Start een REPL in je C# omgeving met behulp van het C# Interactieve venster of voer `dotnet-script` uit in je terminal. Hier is een voorproefje van het gebruik ervan:
 

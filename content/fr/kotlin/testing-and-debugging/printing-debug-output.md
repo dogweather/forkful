@@ -11,9 +11,6 @@ title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-L'affichage des informations de débogage, c'est écrire des données dans la console pour comprendre ce qui se passe dans le code. Les développeurs le font pour traquer les bogues plus facilement.
-
 ## How to: (Comment faire : )
 ```kotlin
 fun main() {

@@ -12,12 +12,7 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä & Miksi?
-
-Tekstitiedoston kirjoittaminen Elm-kielellä sisältää tekstuaalisen datan luomisen ja tallentamisen tiedostoon Elm-sovelluksesta. Ohjelmoijat tarvitsevat usein tuottaa raportteja, lokeja tai viedä dataa rakenteisessa tekstiformaatissa (esim. JSON, CSV) käytettäväksi muissa sovelluksissa tai kirjanpitotarkoituksiin. Elm:n arkkitehtuurin keskittyessä puhtauteen ja turvallisuuteen, suoraa tiedostoon kirjoittamista—kuten monia muita sivuvaikutuksia—käsitellään komentojen avulla ympäröivään JavaScript-ympäristöön.
-
 ## Kuinka:
-
 Koska Elm toimii selaimessa ja on suunniteltu olemaan puhdas ohjelmointikieli ilman sivuvaikutuksia, sillä ei ole suoraa pääsyä tiedostojärjestelmään. Näin ollen tiedostoon kirjoittaminen tyypillisesti sisältää datan lähettämisen ulos JavaScriptiin porttien kautta. Tässä on ohjeet, miten voit sen tehdä:
 
 1. **Määrittele porttimoduuli tekstin lähettämiseksi JavaScriptiin:**

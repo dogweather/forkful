@@ -14,12 +14,7 @@ title: "Generera slumpm\xE4ssiga nummer"
 weight: 12
 ---
 
-## Vad och varför?
-
-Att generera slumpmässiga nummer i Visual Basic for Applications (VBA) möjliggör för program att simulera processer med inslag av slump eller variabilitet, såsom tärningskast eller dataurval. Programmerare använder dessa tekniker för att utveckla modeller, spel eller simulationer där förutsägbara utfall skulle vara orealistiska eller mindre användbara.
-
 ## Hur man gör:
-
 I VBA används funktionen `Rnd` för att generera slumpmässiga nummer. Som standard genererar `Rnd` ett flyttal med enkel precision som är större än eller lika med 0 och mindre än 1. Här är några steg och exempel för att effektivt utnyttja slumpmässiga nummer:
 
 1. **Enkelt Slumpmässigt Nummer:**
@@ -61,7 +56,6 @@ I VBA används funktionen `Rnd` för att generera slumpmässiga nummer. Som stan
 Efter att ha kört `RandomNumberInRange` kanske du ser en meddelanderuta som visar ett nummer som `45`.
 
 ## Fördjupning:
-
 Funktionen `Rnd` i VBA, även om den är lätt att använda, genererar faktiskt pseudoslumpmässiga nummer baserade på en deterministisk algoritm. Detta innebär att sekvenserna av nummer den producerar inte är helt slumpmässiga, men kan ofta räcka för vanliga uppgifter som behöver stokastiska processer.
 
 Historiskt sett går förmågan att generera slumpmässiga nummer i VBA tillbaka till tidiga versioner av Basic, och har med tiden anpassats för att inkludera funktioner som `Randomize` för att förbättra slumpmässigheten genom att så algoritmen med en startpunkt. Dock, för tillämpningar som kräver höga nivåer av slumpmässighet såsom säkra kryptografiska operationer, kanske VBA:s `Rnd` inte är det bästa verktyget. Alternativ i robustare programmeringsmiljöer eller språk utformade med kryptografi i åtanke, som Pythons `secrets`-modul eller Javas `SecureRandom`, bör övervägas.

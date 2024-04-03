@@ -11,11 +11,7 @@ title: Refaktoryzacja
 weight: 19
 ---
 
-## Co i dlaczego?
-Refaktoryzacja to proces restrukturyzacji istniejącego kodu komputerowego bez zmiany jego zewnętrznego zachowania. Programiści robią to, aby poprawić nie-funkcjonalne atrybuty oprogramowania, czyniąc kod czystszym i bardziej efektywnym, co z kolei upraszcza utrzymanie i ułatwia dodawanie przyszłych funkcji.
-
 ## Jak to zrobić:
-
 Spójrzmy na prosty przykład, gdzie refaktoryzacja może uczynić twój kod bardziej zwięzłym i czytelnym. Oto jak refaktoryzujemy funkcję, która oblicza sumę tablicy liczb.
 
 Przed:
@@ -43,7 +39,6 @@ console.log(calculateSum([1, 2, 3, 4])); // Wynik: 10
 Widzisz, jak metoda `reduce` zmniejsza rozmiar funkcji, zachowując przy tym jej funkcjonalność? To właśnie refaktoryzacja.
 
 ## Głębsze zanurzenie
-
 Refaktoryzacja nie pojawiła się jako formalna praktyka aż do publikacji książki Martina Fowlera "Refactoring: Improving the Design of Existing Code" w 1999 roku. Ta książka, wraz z rozwojem zwinnych metod wytwarzania oprogramowania, pomogła wprowadzić refaktoryzację do głównego nurtu.
 
 Opisywanie refaktoryzacji jako aspektu wytwarzania oprogramowania jest jak tłumaczenie, dlaczego warto sprzątać warsztat: robisz to, aby następnym razem, gdy będziesz musiał coś naprawić (w tym przypadku kod), spędzić mniej czasu na radzeniu sobie z bałaganem, a więcej na faktycznym problemie.
@@ -57,7 +52,6 @@ Chodzi o to, aby kod był czysty, wyrazisty i łatwy w utrzymaniu. W ramach proc
 Refaktoryzacja musi być przeprowadzana ostrożnie; istotne jest, aby mieć solidny zestaw testów, aby upewnić się, że zmiany nie zmieniły nieoczekiwanie zachowania oprogramowania—kolejny powód, dla którego Test-Driven Development (TDD) dobrze współgra z refaktoryzacją, gdyż domyślnie zapewnia tę siatkę bezpieczeństwa.
 
 ## Zobacz również
-
 - Książka Martina Fowlera o refaktoryzacji: [Refaktoryzacja - Ulepszanie projektu istniejącego kodu](https://martinfowler.com/books/refactoring.html)
 - Frameworki do testowania JavaScriptu (aby upewnić się, że refaktoryzacja nie zepsuje funkcjonalności):
   - Jest: [Jest - Przyjemne testowanie JavaScriptu](https://jestjs.io/)

@@ -9,9 +9,6 @@ title: Merkkijonojen osien poimiminen
 weight: 6
 ---
 
-## What & Why? / Mikä & Miksi?
-Substringit ovat osia isommista tekstijonoista. Käytämme substringien irrottamista, kun haluamme prosessoida tai analysoida pienempiä tietoja, kuten käyttäjänimen sähköpostiosoitteesta.
-
 ## How to: / Kuinka tehdä:
 ```Lua
 local teksti = "tervetuloa_programmointiin!"

@@ -14,12 +14,7 @@ title: Eine HTTP-Anfrage mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-
-Das Senden einer HTTP-Anfrage mit Basisauthentifizierung beinhaltet das Anhängen eines Benutzernamens und Passworts an eine Anfrage, um die Identität des Benutzers zu überprüfen. Programmierer nutzen dies, um auf Ressourcen zuzugreifen, die eine Authentifizierung erfordern, und stellen so eine sichere Kommunikation zwischen dem Client und dem Server sicher.
-
 ## Wie:
-
 In Dart können Sie das `http`-Paket verwenden, um HTTP-Anfragen mit Basisauthentifizierung zu senden. Fügen Sie zunächst das `http`-Paket zu Ihrer `pubspec.yaml`-Datei hinzu:
 
 ```yaml

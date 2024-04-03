@@ -10,9 +10,6 @@ title: Organisering av kode i funksjoner
 weight: 18
 ---
 
-## Hva & Hvorfor?
-Å organisere kode i funksjoner deler scriptet ditt inn i gjenbrukbare deler. Det handler om å gjøre koden din ren, håndterbar og mindre feilutsatt. Modulær kode er fantastisk fordi det sparer deg for tid, bevarer din psykiske helse, og forenkler feilsøking og enhetstesting.
-
 ## Hvordan:
 Tenk deg at du skriver et kjapt script for å hilse på brukere:
 

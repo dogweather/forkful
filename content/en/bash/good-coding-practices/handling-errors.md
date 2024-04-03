@@ -10,12 +10,7 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-
-Handling errors in Bash scripting is about anticipating where things might go sideways and dealing with it gracefully. Why? Well, it keeps your script robust and saves users from head-scratching when things don't work as expected.
-
 ## How to:
-
 ```Bash
 #!/bin/bash
 
@@ -48,7 +43,6 @@ cat: temp_file.txt: No such file or directory
 ```
 
 ## Deep Dive
-
 Error handling in Bash scripting dates back to the origins of the Unix shell, where robust and reliable scripts were (and are) vital for system administration and automation. Traditionally, errors in Bash are handled by checking the exit status of a command, which by convention returns 0 for success and a nonzero value for failure.
 
 Bash introduced the `trap` command as a built-in, allowing users to specify commands to run on various signals or script exits. This is useful for cleanup tasks or a last resort error handling mechanism.
@@ -60,7 +54,6 @@ Alternatives to Bash built-in error handling include explicitly checking for the
 Though rigorous error handling can sometimes feel overkill for small scripts, it's a practice that can save a lot of time debugging and prevent unexpected behavior for both you and the users.
 
 ## See Also
-
 - Bash Manual on Shell Parameters: https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameters
 - Advanced Bash-Scripting Guide's section on Error Handling: https://www.tldp.org/LDP/abs/html/exit-status.html
 - An in-depth guide to `trap`: https://mywiki.wooledge.org/SignalTrap

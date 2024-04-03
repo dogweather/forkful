@@ -11,10 +11,7 @@ title: "Conversion d'une cha\xEEne de caract\xE8res en minuscules"
 weight: 4
 ---
 
-## What & Why? (Quoi & Pourquoi ?)
-Convertir une chaîne en minuscules, c'est transformer tous les caractères de texte d'une chaîne en leur équivalent en minuscules. Les programmeurs le font pour normaliser les données, par exemple lors de la comparaison de chaînes ou de la recherche insensible à la casse.
-
-## How to: (Comment faire :) 
+## How to: (Comment faire :)
 ```Fish Shell
 # Convertir une chaîne en minuscules
 echo "FISH SHELL est Cool!" | tr '[:upper:]' '[:lower:]'

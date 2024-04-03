@@ -10,9 +10,6 @@ title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---
 
-## O Que & Por Quê?
-Baixar uma página da web é simplesmente trazer conteúdo da internet para o seu computador. Programadores fazem isso para coletar dados, automatizar testes, ou integrar serviços.
-
 ## Como Fazer:
 Vamos usar a biblioteca `clj-http` para baixar uma página:
 

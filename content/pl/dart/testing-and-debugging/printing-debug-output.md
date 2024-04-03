@@ -15,12 +15,7 @@ title: "Drukowanie komunikat\xF3w debugowania"
 weight: 33
 ---
 
-## Co i dlaczego?
-
-Wypisywanie danych diagnostycznych w Dart polega na wyświetlaniu informacji w konsoli podczas działania programu, co pozwala programistom śledzić przepływ wykonania, badać stan zmiennych lub identyfikować źródło błędów. Programiści powszechnie używają tego do rozwiązywania problemów i weryfikowania, czy ich kod zachowuje się zgodnie z oczekiwaniami, co ułatwia sprawniejszy i bardziej efektywny proces rozwijania oprogramowania.
-
 ## Jak to zrobić:
-
 W Dart można wypisywać dane diagnostyczne za pomocą funkcji `print()`. Oto jak wypisać proste wiadomości i wartości zmiennych:
 
 ```dart

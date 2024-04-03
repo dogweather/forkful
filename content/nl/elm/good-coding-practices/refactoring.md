@@ -13,9 +13,6 @@ title: Refactoring
 weight: 19
 ---
 
-## Wat & Waarom?
-Refactoring is in wezen het grote schoonmaak houden van je codebasis - het gaat over het herstructureren van bestaande code zonder het externe gedrag ervan te veranderen. Programmeurs doen dit om de code leesbaarder te maken, complexiteit te verminderen, onderhoudbaarheid te verbeteren en het gemakkelijker te maken om uit te breiden.
-
 ## Hoe:
 Stel je hebt een Elm-functie die te veel doet, zoals het mixen van UI-logica met statusupdates. Het is een perfecte kandidaat voor refactoring. Oorspronkelijk:
 

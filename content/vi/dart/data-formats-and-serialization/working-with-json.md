@@ -17,12 +17,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---
 
-## Gì & Tại sao?
-
-Làm việc với JSON (JavaScript Object Notation) bao gồm việc phân tích cú pháp dữ liệu JSON từ chuỗi thành các đối tượng Dart và ngược lại, một nhiệm vụ phổ biến trong phát triển web và ứng dụng để trao đổi dữ liệu. Các lập trình viên làm điều này để xử lý dữ liệu một cách hiệu quả từ các API, cấu hình, hoặc giao tiếp giữa các thành phần trong ứng dụng của họ.
-
 ## Làm thế nào:
-
 Dart cung cấp hỗ trợ sẵn có cho JSON với thư viện `dart:convert`, làm cho việc mã hóa và giải mã JSON trở nên dễ dàng. Dưới đây là các ví dụ minh họa các thao tác cơ bản:
 
 **Phân tích cú pháp Chuỗi JSON thành Đối tượng Dart:**

@@ -12,12 +12,7 @@ title: "Loggf\xF8ring"
 weight: 17
 ---
 
-## Hva & Hvorfor?
-
-Logging er i bunn og grunn som å føre en dagbok for koden din; det er handlingen med å registrere hendelser, feil og andre betydningsfulle datapunkter som skjer når applikasjonen din kjører. Programmerere gjør dette for å holde oversikt over hva som skjer under panseret, feilsøke problemer og opprettholde en revisjonsspor for senere analyse eller overholdelse av forskrifter.
-
 ## Hvordan gjøre det:
-
 PHP kommer med en innebygd funksjon for feillogging som er enkel å bruke. Bare putt `error_log()` inn i koden din for å sende en melding til serverloggene dine. Du kan også tilpasse det for å skrive til en bestemt fil.
 
 ```php
@@ -50,7 +45,6 @@ $logger->error('Dette er en feil logg!');
 Dette vil skrive ut loggene dine til enten serverloggen eller din spesifiserte fil i ren tekstformat.
 
 ## Dypdykk:
-
 Historisk sett har PHP-utviklere stolt på `error_log()`-funksjonen eller Apache/Nginx-loggene for å fange opp problemer, men det kan være kaotisk med behovet for å analysere rene tekstfiler og ingen enkel måte å filtrere eller sortere dem på. Entrer loggingbiblioteker som Monolog, som innledet æraen av strukturert logging i PHP. Disse løsningene gir deg bedre kontroll ved å tilby flere loggingkanaler, alvorsnivåer og formatert utdata (som JSON, som er en drøm for programmatisk parsing).
 
 Alternativer til Monolog inkluderer Log4php, KLogger og Apaches Log4php. Når det gjelder gjennomføring, krever robust logging ikke bare å dumpe data hvor som helst, men å vurdere ting som loggrotasjon, arkiveringsstrategier og integrasjon med overvåkningsverktøy for å virkelig være nyttig.
@@ -58,7 +52,6 @@ Alternativer til Monolog inkluderer Log4php, KLogger og Apaches Log4php. Når de
 Du bør ha [PSR-3 Logger Interface](https://www.php-fig.org/psr/psr-3/) i bakhodet, som skisserer et felles grensesnitt for loggingbiblioteker, som sikrer interoperabilitet og en konsistent måte å få tilgang til loggingmekanismer på.
 
 ## Se også:
-
 - [Monolog GitHub Repository](https://github.com/Seldaek/monolog)
 - [PSR-3 Logger Interface Specification](https://www.php-fig.org/psr/psr-3/)
 - [PHP Error Log Documentation](https://www.php.net/manual/en/function.error-log.php)

@@ -11,9 +11,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel med grunnleggende autentisering"
 weight: 45
 ---
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel med grunnleggende autentisering betyr at vi tilføyer brukernavn og passord for å få tilgang til en ressurs. Vi gjør dette for sikkerhetskontroll, slik at bare autoriserte brukere får tilgang.
-
 ## Hvordan å:
 ```Python
 import requests

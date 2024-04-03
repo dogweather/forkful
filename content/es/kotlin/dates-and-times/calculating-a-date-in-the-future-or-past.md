@@ -10,9 +10,6 @@ title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---
 
-## Qué y Por Qué?
-Calcular una fecha futura o pasada significa simplemente sumar o restar días, meses o años a una fecha dada. Los programadores lo hacen para manejar reservaciones, suscripciones, recordatorios y todo lo que involucre fechas y plazos en aplicaciones.
-
 ## Cómo Hacerlo:
 Kotlin maneja fechas de una manera bastante directa. Aquí tienes algunos ejemplos con `LocalDate`:
 

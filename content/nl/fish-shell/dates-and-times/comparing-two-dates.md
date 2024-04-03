@@ -12,12 +12,7 @@ title: Twee datums vergelijken
 weight: 27
 ---
 
-## Wat & Waarom?
-
-Het vergelijken van twee data houdt in dat je controleert of een datum eerder, hetzelfde, of later is dan een andere. Programmeurs doen dit om evenementen te organiseren, invoer te valideren en tijdgevoelige gegevens te beheren.
-
 ## Hoe:
-
 Met Fish Shell kunnen we twee data vergelijken met behulp van het `date` commando. Hieronder staan voorbeelden.
 
 ```fish
@@ -42,7 +37,6 @@ Specifieke datum is eerder dan de huidige datum.
 ```
 
 ## Diepgaand
-
 Het vergelijken van data in programmering is historisch gezien een beetje een gedoe geweest vanwege verschillende datumformaten en tijdzones. Fish Shell vereenvoudigt deze taak met zijn ingebouwde `date` functie, die datums omzet naar seconden sinds het Unix-tijdperk (1 januari 1970). Dit geeft ons een universeel punt in de tijd om tegen te vergelijken.
 
 Alternatieven voor Fish Shell voor het vergelijken van datums omvatten scripttalen zoals Python of het gebruik van `date` manipulatietools die beschikbaar zijn in op Unix gebaseerde systemen, zoals `dateutil` in GNU core utilities (coreutils). Wat implementatie betreft, wanneer we `date +%s` gebruiken, roept Fish intern het systeem `date` commando aan, wat de reden is dat het zo effectief cross-platform is.
@@ -50,7 +44,6 @@ Alternatieven voor Fish Shell voor het vergelijken van datums omvatten scripttal
 Het vergelijken van datums is ook essentieel voor cronjobs, back-upscripts en tijdgebaseerde toegangscontrole. Comfortabel zijn met datumvergelijkingen betekent soepelere automatisering en minder tijdelijke bugs.
 
 ## Zie Ook
-
 - [Fish Shell Documentatie](https://fishshell.com/docs/current/index.html)
 - [GNU Coreutils: Date](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
 - [Het Unix Epochtijd](https://nl.wikipedia.org/wiki/Unix-tijd)

@@ -14,16 +14,10 @@ title: "Einen String gro\xDFschreiben"
 weight: 2
 ---
 
-## Was & Warum?
-
-Das Großschreiben eines Strings in der Programmierung beinhaltet das Umwandeln des ersten Zeichens des Strings in Großbuchstaben, sofern dies noch nicht der Fall ist. Dies ist nützlich, um Benutzereingaben zu formatieren oder Text in einer Benutzeroberfläche auf eine standardisierte oder benutzerfreundliche Weise anzuzeigen. Programmierer führen diesen Vorgang durch, um die Datenkonsistenz zu gewährleisten oder um spezifische Formatierungsanforderungen innerhalb ihrer Softwareanwendungen zu erfüllen.
-
 ## Wie:
-
 In Kotlin können Strings mit den Standardbibliotheksfunktionen ohne die Notwendigkeit von Drittanbieterbibliotheken großgeschrieben werden. Koltins Herangehensweise an die Behandlung von Strings macht diese Operationen unkompliziert und prägnant.
 
 ### Den gesamten String großschreiben:
-
 ```kotlin
 val message = "hallo, welt!"
 val capitalizedMessage = message.uppercase()
@@ -32,7 +26,6 @@ println(capitalizedMessage) // Ausgabe: HALLO, WELT!
 ```
 
 ### Nur das erste Zeichen großschreiben:
-
 Ab Kotlin 1.5 ist die Funktion `capitalize()` veraltet und wird durch eine Kombination aus `replaceFirstChar` und einem Lambda ersetzt, das überprüft, ob es sich um einen Kleinbuchstaben handelt, um ihn in Großbuchstaben umzuwandeln.
 
 ```kotlin

@@ -9,11 +9,6 @@ title: Merkkien poistaminen hakemalla osumia kaavaan
 weight: 5
 ---
 
-## What & Why? 
-Mikä & Miksi?
-
-Kun puhutaan merkkien poistamisesta kuvion mukaan Rubyssä, tarkoitamme prosessia, jossa etsitään ja poistetaan merkkejä merkkijonosta tietyllä säännönmukaisuudella. Ohjelmoijat tekevät tämän, jotta voidaan puhdistaa dataa tai muokata tekstiä tiettyjen vaatimusten mukaiseksi.
-
 ## How to:
 Miten:
 

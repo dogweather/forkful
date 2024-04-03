@@ -15,12 +15,7 @@ title: Usando un shell interactivo (REPL)
 weight: 34
 ---
 
-## ¿Qué y por qué?
-
-Una shell interactiva, o Bucle de Leer-Evaluar-Imprimir (REPL, por sus siglas en inglés), es un entorno de programación simple e interactivo que toma entradas únicas del usuario (expresiones), las evalúa y devuelve el resultado al usuario. Los programadores usan REPL para prototipado rápido, depuración y aprender interactivamente la sintaxis y comportamiento de un lenguaje de programación.
-
 ## Cómo hacerlo:
-
 Google Apps Script, un lenguaje de scripting basado en la nube para automatizar tareas a través de los productos de Google, no tiene una herramienta REPL integrada similar a las de lenguajes como Python o Node.js de JavaScript. Sin embargo, puedes simular una experiencia similar utilizando las características de registro y depuración del Editor de Apps Script o configurando un entorno externo. Aquí, nos enfocamos en crear un REPL improvisado dentro del editor de Apps Script.
 
 1. **Creando una función REPL improvisada**:
@@ -62,7 +57,6 @@ Después de ejecutar `myREPL()`, verifica los Registros (Ver > Registros) para v
 Para una depuración más compleja, intercala `Logger.log(variable);` dentro de tu código para imprimir los estados de las variables, ayudándote a entender el flujo y los estados intermedios de tus scripts.
 
 ## Análisis profundo
-
 El concepto de un REPL está profundamente arraigado en la historia de la computación, derivado de los sistemas de tiempo compartido de la década de 1960 que permitían sesiones interactivas. Lenguajes como Lisp prosperaron en este entorno, ya que el REPL era crítico para su proceso de desarrollo iterativo. En contraste, Google Apps Script, que surgió mucho más tarde, está diseñado principalmente para la web, centrándose en automatizar tareas dentro del conjunto de Google más que en la programación iterativa basada en consola.
 
 Google Apps Script no admite tradicionalmente sesiones de codificación interactivas en tiempo real de manera predeterminada debido a su naturaleza basada en la nube y su enfoque en la implementación de aplicaciones web. Su modelo de ejecución se centra en funciones desencadenadas por eventos web, disparadores basados en tiempo o invocación manual dentro del entorno, en lugar de bucles de retroalimentación instantánea proporcionados por un REPL.

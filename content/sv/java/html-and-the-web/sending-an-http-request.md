@@ -11,9 +11,6 @@ title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-begäran innebär att du som programmerare frågar en server om information eller ber den utföra en åtgärd. Det är kritiskt för webbutveckling, API-interaktion och automatisering av webbuppgifter.
-
 ## Hur gör man:
 Java's `HttpClient` gör det enkelt att skicka HTTP-begäran. Här är ett snabbt exempel för att skicka en GET-begäran och skriva ut svaret:
 

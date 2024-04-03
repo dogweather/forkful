@@ -11,9 +11,6 @@ title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---
 
-## Qué y Por Qué?
-Leer argumentos de la línea de comando permite que tus programas de Arduino reactiven a la entrada del usuario cuando arrancan. Los programadores usan esto para personalizar comportamientos sin tener que cambiar el código.
-
 ## Cómo:
 Arduino no maneja argumentos de línea de comandos como lo haría un programa común de terminal ya que se comunica principalmente a través de su puerto serial después de haber sido programado. Pero puedes simular esta funcionalidad a través de la comunicación serial. Aquí hay un ejemplo:
 

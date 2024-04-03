@@ -11,12 +11,7 @@ title: "H\xE4mta en webbsida"
 weight: 42
 ---
 
-## Vad & Varför?
-
-Att ladda ner en webbsida innebär att hämta data från internet till din lokal dator. Programmörer gör detta för att bearbeta information, skrapa data, eller testa webbsidor.
-
 ## Hur man gör:
-
 ```rust
 use reqwest; // Lägg till `reqwest` i dina dependencies i Cargo.toml
 
@@ -38,7 +33,6 @@ async fn main() -> Result<(), reqwest::Error> {
 _Utfall: Webbsidans HTML-innehåll visas i terminalen._
 
 ## Fördjupning:
-
 Historiskt har webbskrapning och nedladdning av webbsidor varit en utmaning då det krävde hantering av lågnivå nätverksanslutningar och HTTP-protokollet. Nu för tiden finns bibliotek som `reqwest` som förenklar denna process genom att abstrahera komplexa nätverksoperationer.
 
 Det finns andra bibliotek som `curl` och `hyper`, vilka kan lämpa sig bättre för vissa scenarion, men `reqwest` är känt för att vara användarvänligt för de flesta tillämpningar.
@@ -46,7 +40,6 @@ Det finns andra bibliotek som `curl` och `hyper`, vilka kan lämpa sig bättre f
 I detalj handlar att ladda ner en webbsida om att skicka en HTTP GET-begäran till servern som hostar sidan, ta emot svaret, som ofta är HTML-kod, och sedan använda den datan som behövs. Asynkron kod i Rust med bibliotek som `tokio` är nyckeln för att hantera flera begäranden effektivt.
 
 ## Se även:
-
 - Reqwest-dokumentation: https://docs.rs/reqwest/
 - Tokio-dokumentation: https://tokio.rs/
 - Rust async book: https://rust-lang.github.io/async-book/

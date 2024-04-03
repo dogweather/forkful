@@ -10,12 +10,7 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-
-Regular expressions (regex) in programming are used to search, match, and manipulate strings based on specific patterns. Programmers use them for tasks ranging from simple validation checks to complex text processing, making them indispensable for handling text in a flexible and efficient way.
-
 ## How to:
-
 In Go, the `regexp` package provides regex functionality. Here’s a step-by-step guide on how to use it:
 
 1. **Compiling a Regular Expression**
@@ -79,7 +74,6 @@ fmt.Println("Replaced:", result) // Output: Replaced: Java Java Java
 ```
 
 ## Deep Dive
-
 Introduced in Go's standard library, the `regexp` package implements regular expression search and pattern matching inspired by Perl's syntax. Underneath the hood, Go's regex engine compiles the patterns into a form of bytecodes, which are then executed by a matching engine written in Go itself. This implementation trades off some of the speed found in direct hardware execution for safety and ease of use, avoiding the pitfalls of buffer overruns common in C-based libraries.
 
 Despite its power, regex in Go is not always the optimal solution for pattern matching, especially when dealing with highly structured data such as JSON or XML. In these cases, specialized parsers or libraries designed for these data formats offer better performance and reliability. Yet, for tasks involving complicated text processing without a predefined structure, regex remains an essential tool in a programmer's toolkit, offering a balance of power and flexibility that few alternatives can match.

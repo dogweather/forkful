@@ -12,12 +12,7 @@ title: Gebruik van associatieve arrays
 weight: 15
 ---
 
-## Wat & Waarom?
-
-Associatieve arrays, bekend als maps in Go, stellen je in staat om sleutel-waardeparen op te slaan waarbij elke unieke sleutel naar een waarde wijst. Programmeurs gebruiken maps voor efficiënte gegevensopvraging, aanpassing en om een verzameling van elementen te onderhouden die snel toegankelijk zijn met unieke sleutels.
-
 ## Hoe te:
-
 Het creëren en initialiseren van een map in Go kan op verschillende manieren worden gedaan. Hier is een eenvoudig voorbeeld om je op weg te helpen:
 
 ```go
@@ -72,7 +67,6 @@ for color, hex := range colors {
 Onthoud, maps in Go zijn ongeordend. De volgorde van iteratie is niet gegarandeerd.
 
 ## Diepgaand
-
 In Go zijn maps geïmplementeerd als hashtabellen. Elk item in de map bestaat uit twee onderdelen: een sleutel en een waarde. De sleutel wordt gehasht om het item op te slaan, wat constante tijdoperaties mogelijk maakt voor een kleine set aan data en gemiddelde tijdscomplexiteit van O(1) met goede hashing, wat kan verslechteren tot O(n) in het slechtste geval met veel hashbotsingen.
 
 Een belangrijke opmerking voor nieuwe Go-programmeurs is dat map-typen referentietypen zijn. Dit betekent dat wanneer je een map aan een functie doorgeeft, eventuele wijzigingen die binnen die functie aan de map worden gemaakt, zichtbaar zijn voor de aanroeper. Dit is anders dan bijvoorbeeld het doorgeven van een struct aan een functie, waarbij de struct gekopieerd wordt, tenzij deze door een pointer wordt doorgegeven.

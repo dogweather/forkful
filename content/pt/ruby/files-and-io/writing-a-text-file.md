@@ -14,9 +14,6 @@ title: Escrevendo um arquivo de texto
 weight: 24
 ---
 
-## O Que & Por Quê?
-Escrever em um arquivo de texto em Ruby é uma operação fundamental que permite armazenar saídas e dados de forma persistente, possibilitando o acesso ou a modificação desses dados posteriormente. Programadores costumam realizar essa tarefa por motivos como registrar logs, salvar configurações ou exportar dados em um formato legível por humanos.
-
 ## Como fazer:
 Ruby torna as operações com arquivos simples. Para escrever em um arquivo, você pode usar a classe `File` incorporada ao Ruby. O exemplo a seguir demonstra como abrir um arquivo para escrita (modo `"w"`) e para adição (modo `"a"`), em seguida, escrever uma string nele e garantir que o arquivo seja fechado posteriormente:
 

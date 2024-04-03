@@ -21,12 +21,7 @@ title: "\u65E5\u4ED8\u3092\u6587\u5B57\u5217\u306B\u5909\u63DB\u3059\u308B"
 weight: 28
 ---
 
-## What & Why? (何となぜ？)
-
-日付を文字列に変換するというのは、日付のデータをテキスト形式で表現することです。この変換が行われる理由は、データの可読性を向上させ、ログ、メッセージ、UIに表示する際に必要だからです。
-
 ## How to (やり方):
-
 Clojureでは、`clj-time`ライブラリを用いたり、Javaの`SimpleDateFormat`クラスを利用したりして日付を文字列に変換します。
 
 ```clojure
@@ -50,11 +45,9 @@ Clojureでは、`clj-time`ライブラリを用いたり、Javaの`SimpleDateFor
 ```
 
 ## Deep Dive (深掘り):
-
 日付の文字列変換は、プログラミングの歴史で長い間存在しています。`clj-time`はJoda-Timeライブラリに基づいており、Clojureの日付と時刻の操作を簡単にしてくれます。しかしJava 8以降、`java.time`パッケージ（JSR-310）が導入され、より便利なAPIが提供されています。`clj-time`は過去のプロジェクトでよく見かけるものですが、新しいプロジェクトでは`java.time`パッケージを使うことが推奨されています。変換に際しては、ロケール、タイムゾーン、形式を正しく指定することが重要です。
 
 ## See Also (参照):
-
 - clj-time GitHub - https://github.com/clj-time/clj-time
 - SimpleDateFormat documentation - https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html
 - Clojureでのjava.timeの使い方 - https://clojure.org/guides/deps_and_cli#_using_java_time

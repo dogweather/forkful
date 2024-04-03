@@ -10,10 +10,6 @@ title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---
 
-## What & Why?
-Mitä & Miksi?
-Luodaan väliaikainen tiedosto vastaanottamaan dataa, joka ei tarvitse pysyväistä tallennusta. Käytetään testauksessa, väliaikaisessa datan säilytyksessä ja tilanteissa, missä data muuttuu nopeasti.
-
 ## How to:
 Miten:
 Haskell antaa käteviä kirjastoja väliaikaisten tiedostojen käsittelyyn, kuten `temporary`. Tässä esimerkki sen käytöstä:

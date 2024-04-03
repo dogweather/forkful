@@ -10,9 +10,6 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## Co i Dlaczego?
-HTTP request, czyli żądanie HTTP, to prośba o dane z sieci. Programiści wykorzystują je do zdobycia danych ze stron internetowych lub serwerów, co jest kluczowe w projektach IoT czy interakcjach sieciowych.
-
 ## Jak to zrobić:
 Do wysyłania żądań HTTP na Arduino użyjemy biblioteki `WiFi.h` dla połączeń Wi-Fi i `HTTPClient.h` dla żądań HTTP. Oto prosty przykład:
 

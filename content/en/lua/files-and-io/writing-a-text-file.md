@@ -10,12 +10,7 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-
-Writing to a text file in Lua involves creating or opening a file in write mode, then using file operations to insert text. This is a fundamental operation for tasks like logging, data storage, or configuration management, enabling programs to persistently save data across sessions.
-
 ## How to:
-
 In Lua, working with files for writing is straightforward. You'll typically use the `io.open()` function to open (or create) a file, specifying the mode of operation -- in this case, `"w"` for writing. If the file doesn't exist, it's created; if it does, its contents are overwritten. It's crucial to close the file after writing to ensure data is properly saved and resources are released.
 
 Here's a simple example that writes a string to a file named "example.txt":

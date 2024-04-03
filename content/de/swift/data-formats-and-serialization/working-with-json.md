@@ -9,9 +9,6 @@ title: Arbeiten mit JSON
 weight: 38
 ---
 
-## Was & Warum?
-JSON (JavaScript Object Notation) ist ein Datenformat zum Austausch von Datenobjekten. Programmierer nutzen es, weil es leichtgewichtig, textbasiert, lesbar und einfach zu verarbeiten ist.
-
 ## How to:
 Swift macht das Arbeiten mit JSON mit der `Codable`-Schnittstelle einfach. Hier ist ein Grundbeispiel: 
 

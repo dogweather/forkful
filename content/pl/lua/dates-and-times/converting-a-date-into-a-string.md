@@ -11,9 +11,6 @@ title: "Konwersja daty na \u0142a\u0144cuch znak\xF3w"
 weight: 28
 ---
 
-## What & Why? (Co i dlaczego?)
-Konwersja daty na ciąg znaków to proces zmiany formatu reprezentacji czasu na łatwy do odczytania tekst. Programiści robią to, aby wyświetlać daty w sposób zrozumiały dla użytkowników lub do zapisu w logach i bazach danych.
-
 ## How to: (Jak to zrobić:)
 ```Lua
 -- Załaduj moduł do obsługi czasu

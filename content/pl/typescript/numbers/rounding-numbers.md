@@ -10,9 +10,6 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i dlaczego?
-Zaokrąglanie liczb to redukowanie liczby do określonej precyzji. Programiści robią to, aby kontrolować numeryczne wyjście dla czytelności, celów wyświetlania, lub kiedy wymagana jest określona precyzja po operacjach, które dają wyniki zmiennoprzecinkowe.
-
 ## Jak to zrobić:
 Zaokrąglanie w TypeScript można wykonać przy użyciu kilku metod. Oto szybki przegląd:
 

@@ -38,12 +38,7 @@ title: "\u092C\u0947\u0938\u093F\u0915 \u092A\u094D\u0930\u092E\u093E\u0923\u094
 weight: 45
 ---
 
-## क्या और क्यों (What & Why)?
-
-HTTP अनुरोध के साथ बेसिक प्रमाणीकरण का उपयोग करना यह सुनिश्चित करता है कि एपीआई या वेब सर्विस से संवेदनशील डेटा को सुरक्षित तरीके से एक्सेस किया जा सके। प्रोग्रामर्स इसे तब करते हैं जब उन्हें एक सुरक्षित API से जानकारी प्राप्त करनी होती है और उन्हें उपयोगकर्ता की पहचान और पासवर्ड के साथ प्रमाणित होना पड़ता है।
-
 ## कैसे करें (How to):
-
 ```python
 import requests
 from requests.auth import HTTPBasicAuth
@@ -65,11 +60,9 @@ b'{"data": "Here is your secure data!"}'
 ```
 
 ## गहराई से जानकारी (Deep Dive):
-
 बेसिक प्रमाणीकरण HTTP प्रोटोकॉल का एक पार्ट है। यह बहुत पुराना तरीका है और सादगी इसकी मुख्य विशेषता है। यह बेस-64 एन्कोडिंग का उपयोग करता है – लेकिन यह एन्क्रिप्टेड नहीं होता है, इसलिए इसे SSL/TLS के साथ उपयोग करना चाहिए। इसके अलावा, OAuth जैसे और भी जटिल और सुरक्षित विकल्प मौजूद हैं, लेकिन बेसिक प्रमाणीकरण का सरलता और व्यापक समर्थन इसे आज भी प्रासंगिक बनाता है।
 
 ## और भी (See Also):
-
 - Python `requests` library documentation: https://docs.python-requests.org/en/latest/
 - HTTP Basic Auth (MDN web docs): https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
 - Basic Auth with HTTPS (tutorial): https://realpython.com/python-requests/#authentication

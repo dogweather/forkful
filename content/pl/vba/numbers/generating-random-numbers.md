@@ -14,12 +14,7 @@ title: Generowanie liczb losowych
 weight: 12
 ---
 
-## Co i dlaczego?
-
-Generowanie losowych liczb w Visual Basic for Applications (VBA) umożliwia programom symulowanie procesów z elementami szansy lub zmienności, takimi jak rzuty kostką czy próbkowanie danych. Programiści wykorzystują te techniki do tworzenia modeli, gier lub symulacji, gdzie przewidywalne wyniki byłyby nierealistyczne lub mniej użyteczne.
-
 ## Jak to zrobić:
-
 W VBA funkcję `Rnd` używa się do generowania losowych liczb. Domyślnie `Rnd` generuje pojedynczą liczbę zmiennoprzecinkową o precyzji pojedynczej większą lub równą 0 i mniejszą niż 1. Oto kilka kroków i przykładów, jak efektywnie korzystać z losowych numerów:
 
 1. **Prosta losowa liczba:**
@@ -61,7 +56,6 @@ W VBA funkcję `Rnd` używa się do generowania losowych liczb. Domyślnie `Rnd`
 Po uruchomieniu `RandomNumberInRange`, możesz zobaczyć okno komunikatu wyświetlające liczbę taką jak `45`.
 
 ## Szczegółowe omówienie:
-
 Funkcja `Rnd` w VBA, choć łatwa w użyciu, faktycznie generuje pseudolosowe liczby oparte na deterministycznym algorytmie. Oznacza to, że sekwencje liczb, które produkuje, nie są naprawdę losowe, ale często wystarczają dla wspólnych zadań wymagających procesów stochastycznych.
 
 Historycznie, możliwość generowania liczb losowych w VBA sięga wczesnych wersji Basic, dostosowując się z czasem do cech takich jak `Randomize` w celu poprawy losowości poprzez ziarnowanie algorytmu punktem startowym. Jednakże, dla aplikacji wymagających wysokich poziomów losowości, takich jak bezpieczne operacje kryptograficzne, funkcja `Rnd` w VBA może nie być najlepszym narzędziem. Alternatywy w bardziej rozbudowanych środowiskach programistycznych lub językach zaprojektowanych z myślą o kryptografii, takie jak moduł `secrets` w Pythonie czy `SecureRandom` w Javie, powinny być rozważane.

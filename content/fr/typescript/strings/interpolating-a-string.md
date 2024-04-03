@@ -11,9 +11,6 @@ title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---
 
-## Quoi et Pourquoi ?
-L'interpolation de chaînes permet d'insérer des variables ou des expressions au sein d'une chaîne de caractères. Les programmeurs l'utilisent pour dynamiser du texte et simplifier la concaténation.
-
 ## Comment faire :
 ```typescript
 let utilisateur = 'Marie';

@@ -13,12 +13,7 @@ title: Gestione degli errori
 weight: 16
 ---
 
-## Cosa & Perché?
-
-La gestione degli errori in Google Apps Script riguarda la previsione, l'intercettazione e la risposta alle eccezioni o errori che si verificano durante l'esecuzione dello script. I programmatori la implementano per proteggere gli script da fallimenti imprevisti, garantendo applicazioni più fluide e user-friendly che possono gestire o registrare gli errori con grazia senza arresti bruschi.
-
 ## Come fare:
-
 Google Apps Script, essendo basato su JavaScript, ci permette di usare la tradizionale istruzione `try-catch` per la gestione degli errori, insieme a `finally` se è necessaria una pulizia indipendentemente dal successo o dall'errore.
 
 ```javascript
@@ -56,7 +51,6 @@ Funzione completata.
 Google Apps Script supporta anche il lancio di errori personalizzati utilizzando l'oggetto `Error` e l'intercettazione di tipi di errore specifici se necessario. Tuttavia, l'assenza di una categorizzazione avanzata degli errori rende essenziale affidarsi ai messaggi di errore per la specificità.
 
 ## Approfondimento
-
 Storicamente, la gestione degli errori nei linguaggi di scripting come JavaScript (e per estensione, Google Apps Script) è stata meno sofisticata rispetto ad alcuni linguaggi compilati, che offrono caratteristiche come gerarchie di eccezioni dettagliate e strumenti di debugging completi. Il modello di Google Apps Script è relativamente semplice, sfruttando il paradigma `try-catch-finally` di JavaScript. Questa semplicità è in linea con il design del linguaggio per sviluppare e distribuire rapidamente applicazioni di piccola e media scala all'interno dell'ecosistema di Google, ma a volte può limitare gli sviluppatori che si occupano di scenari di errore complessi.
 
 In applicazioni più complesse, i programmatori spesso integrano la gestione degli errori nativa di Google Apps Script con meccanismi personalizzati di registrazione e segnalazione degli errori. Questo può includere la scrittura degli errori in un Google Sheet per l'audit o l'uso di servizi di registrazione di terze parti attraverso i Servizi di Recupero URL di Google Apps Script per inviare i dettagli degli errori fuori dall'ambiente dello script.

@@ -12,9 +12,6 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co & Dlaczego?
-Liczby zespolone, przedstawiane jako kombinacja jednostek rzeczywistych i urojonych (np. 3 + 4i), są fundamentalne w różnych problemach obliczeniowych, zwłaszcza w inżynierii, fizyce i matematyce stosowanej. Nauka manipulowania tymi liczbami w Google Apps Script pozwala programistom rozszerzyć ich możliwości na obliczenia naukowe, przetwarzanie sygnałów i dalej.
-
 ## Jak:
 Google Apps Script nie ma wbudowanego wsparcia dla liczb zespolonych, co wymusza implementację własnej funkcjonalności. Poniżej znajduje się podstawowa struktura do obsługi liczb zespolonych, w tym dodawanie, odejmowanie i mnożenie.
 

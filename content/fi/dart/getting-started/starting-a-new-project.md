@@ -13,12 +13,7 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## Mikä ja miksi?
-
-Uuden projektin aloittaminen Dartissa käsittää ympäristön pystyttämisen, joka edesauttaa tehokasta kehitystä, testausta ja julkaisua. Ohjelmoijat käynnistävät uusia Dart-projekteja hyödyntääkseen Dartin optimaalista suorituskykyä ja vahvaa ekosysteemiä, erityisesti web- ja mobiilisovellusten kehityksessä Flutterin kaltaisten kehysten kanssa.
-
 ## Kuinka:
-
 1. **Asenna Dart**:
    Varmista, että Dart on asennettu järjestelmääsi. Jos ei, voit ladata sen osoitteesta [https://dart.dev/get-dart](https://dart.dev/get-dart). Vahvista asennus komennolla:
 

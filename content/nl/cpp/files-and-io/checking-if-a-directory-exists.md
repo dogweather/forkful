@@ -12,12 +12,7 @@ title: Controleren of een directory bestaat
 weight: 20
 ---
 
-## Wat & Waarom?
-
-Controleren of een directory bestaat gaat over bevestigen of een gespecificeerde map aanwezig is op het bestandssysteem. Programmeurs doen dit om fouten te voorkomen bij het openen, lezen of schrijven naar bestanden - een beetje zoals zorgen dat de laden er echt zijn voordat je je kleren weglegt.
-
 ## Hoe te:
-
 Vanaf C++17 hebben we `std::filesystem` om ons leven makkelijker te maken voor bestandssysteemoperaties. Hier is een codefragment om te controleren of een directory bestaat:
 
 ```C++
@@ -49,7 +44,6 @@ Directory bestaat niet.
 ```
 
 ## Diepgaand
-
 Voor C++17 moesten we vertrouwen op platformspecifieke API-aanroepen of externe bibliotheken. In de Windows API hadden we `GetFileAttributes` kunnen gebruiken en controleren of de retourwaarde `INVALID_FILE_ATTRIBUTES` was. Op POSIX-systemen konden we de `stat()` functie gebruiken voor een soortgelijke functionaliteit.
 
 C++17 veranderde het spel met `std::filesystem`. Het biedt ondersteuning voor meerdere platformen en een hoogwaardige interface om te interageren met het bestandssysteem. De `exists()` functie is de directe manier om te controleren op de aanwezigheid van een directory, maar je kunt ook `is_directory()` gebruiken als je niet alleen de aanwezigheid wilt bevestigen, maar ook dat het pad naar een directory wijst en niet naar een bestand.
@@ -57,7 +51,6 @@ C++17 veranderde het spel met `std::filesystem`. Het biedt ondersteuning voor me
 Voor alternatieve methoden, overweeg de `std::filesystem::status_known()` en `std::filesystem::file_status` functies om gevallen te behandelen waarbij bestandsrechten of andere kwesties je mogelijkheid kunnen beïnvloeden om te bepalen of een directory bestaat.
 
 ## Zie Ook
-
 Verken meer over bestandssysteemoperaties in C++:
 
 - [std::filesystem documentatie](https://en.cppreference.com/w/cpp/filesystem)

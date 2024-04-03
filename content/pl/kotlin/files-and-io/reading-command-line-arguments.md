@@ -11,9 +11,6 @@ title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---
 
-## What & Why?
-Czytanie argumentów linii poleceń to po prostu odbieranie danych, które użytkownik wpisuje razem z nazwą uruchamianego programu. Programiści korzystają z tego, żeby umożliwić użytkownikom wpływanie na działanie programu bez zmian w kodzie.
-
 ## How to:
 ```
 // Kotlin

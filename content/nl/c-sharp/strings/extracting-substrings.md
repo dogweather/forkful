@@ -13,9 +13,6 @@ title: Substrings extraheren
 weight: 6
 ---
 
-## Wat & Waarom?
-Substrings extraheren is het actie van een specifiek deel van een tekenreeks grijpen — een beetje zoals het uitscheppen van je favoriete stuk van een taart. Programmeurs doen dit om kleinere stukjes van een grotere tekenreeks te manipuleren, analyseren of valideren zonder te worstelen met het geheel.
-
 ## Hoe:
 C# maakt het trekken van substrings uit een tekenreeks eenvoudig. Hier is een snelle blik op hoe het gedaan wordt met de `Substring` methode en tekenreeks snijden met bereikoperators.
 

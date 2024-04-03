@@ -12,9 +12,6 @@ title: Samenvoegen van strings
 weight: 3
 ---
 
-## Wat & Waarom?
-Het samenvoegen van strings is het aan elkaar plakken van afzonderlijke strings om een nieuwe te maken. Programmeurs doen dit om tekst dynamisch te combineren, zoals het samenstellen van begroetingen, berichten, of gewoon om gegevens op een leesbare manier te structureren.
-
 ## Hoe te:
 ```Swift
 let firstName = "Taylor"

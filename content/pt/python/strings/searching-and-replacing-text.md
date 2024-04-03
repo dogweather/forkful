@@ -11,9 +11,6 @@ title: Pesquisando e substituindo texto
 weight: 10
 ---
 
-## O Que & Porquê?
-Buscar e substituir texto é o processo de localizar sequências de caracteres dentro de strings e trocá-las por outras. Programadores realizam essa tarefa para corrigir erros, atualizar informações ou automatizar a edição de código e dados.
-
 ## Como fazer:
 Aqui estão alguns exemplos de como buscar e substituir texto em Python. Comentários no código ajudam a explicar o passo a passo.
 

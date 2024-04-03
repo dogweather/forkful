@@ -10,9 +10,6 @@ title: Converting a date into a string
 weight: 28
 ---
 
-## What & Why?
-Converting a date to a string means changing a date object into a plain-text format. Programmers do it for easy readability, storage, or to format dates for different locales and standards.
-
 ## How to:
 In PHP, the `date()` function formats a timestamp to a more readable string. The `DateTime` object serves a similar purpose with its `format()` method. Here's how they look in practice:
 

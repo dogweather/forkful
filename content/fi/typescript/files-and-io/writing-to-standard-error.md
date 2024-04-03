@@ -14,9 +14,6 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mikä & Miksi?
-TypeScriptissä standardivirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien tai lokien suoraan lähettämistä ympäristön virhetulostevirtaan (esim. node.js:n konsoli tai web-selain). Tämä on olennaista ongelmien diagnosoinnissa häiritsemättä standarditulostetta (stdout), jota käytetään tyypillisesti ohjelman datan esittämiseen, varmistaen, että virheenkäsittely ja lokitus hoidetaan tehokkaasti ja yhtenäisesti.
-
 ## Kuinka:
 TypeScript, ollessaan JavaScriptin yläjoukko, nojautuu alla olevaan JS-ajoaikaympäristöön (kuten Node.js) kirjoittaessaan stderr:iin. Tässä on miten voit tehdä sen suoraan:
 

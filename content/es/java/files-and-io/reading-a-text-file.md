@@ -11,9 +11,6 @@ title: Lectura de un archivo de texto
 weight: 22
 ---
 
-## ¿Qué & Por Qué?
-Leer un archivo de texto en Java significa extraer la información contenida en él. Los programadores lo hacen para trabajar con datos, configuraciones o para procesar información externa.
-
 ## Cómo hacerlo:
 Empezamos con un ejemplo básico usando `java.nio.file.Files` para leer todas las líneas de un archivo:
 

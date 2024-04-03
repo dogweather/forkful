@@ -11,12 +11,7 @@ title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---
 
-## Qué y Por Qué?
-
-Calcular una fecha futura o pasada es simplemente determinar qué día será o fue después o antes de un tiempo específico. Los programadores lo hacen para tareas como programar eventos, recordatorios o verificar períodos de validez de tokens o sesiones.
-
 ## Cómo hacerlo:
-
 Elixir facilita el trabajo con fechas usando la librería estándar y algunas adicionales como Timex. Aquí hay un ejemplo sencillo:
 
 ```elixir
@@ -39,7 +34,6 @@ Fecha dentro de 30 días: 2023-05-01T12:00:00Z
 ```
 
 ## Deep Dive
-
 En el pasado, los desarrolladores de Elixir usaban principalmente bibliotecas de terceros como Timex o Arrow para la manipulación de fechas debido a las limitaciones de la librería estándar. Sin embargo, desde la versión 1.3, Elixir ha mejorado la manipulación de fechas y horas con los módulos `DateTime`, `Date` y `Time`, haciendo que en muchos casos ya no sea necesario recurrir a dependencias externas.
 
 Alternativas a `DateTime.add` incluyen funciones como `Date.add` que trabajan solo con fechas, sin información de la hora. También puedes restar días usando funciones negativas y hallar la diferencia entre dos fechas con `Date.diff`.
@@ -47,7 +41,6 @@ Alternativas a `DateTime.add` incluyen funciones como `Date.add` que trabajan so
 La implementación interna para el cálculo de fechas aprovecha las capacidades de Erlang, el lenguaje del sistema sobre el que se construye Elixir, garantizando precisión y fiabilidad en operaciones con fechas y horas.
 
 ## Ver También
-
 Para profundizar más en el manejo de fechas en Elixir:
 
 - [Documentación oficial de Elixir para DateTime](https://hexdocs.pm/elixir/DateTime.html)

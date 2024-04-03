@@ -11,12 +11,7 @@ title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---
 
-## O Quê e Porquê?
-
-Gerar números aleatórios consiste em produzir sequências ou valores únicos imprevisíveis dentro de um intervalo definido. Os programadores utilizam esta técnica por diversos motivos, incluindo simulações, jogos, aplicações de segurança e métodos de amostragem para testar algoritmos sob diferentes condições.
-
 ## Como fazer:
-
 Em Java, gerar números aleatórios pode ser alcançado utilizando a classe `Random` do pacote `java.util`, ou as classes `ThreadLocalRandom` e `SecureRandom` para casos de uso específicos. Os exemplos a seguir ilustram como utilizar essas classes.
 
 ### Utilizando a classe `Random`
@@ -79,7 +74,6 @@ public class SecureRandomExample {
 ```
 
 ## Aprofundamento
-
 A geração de números aleatórios evoluiu significativamente desde os primórdios da computação. A classe `Random` de Java utiliza uma fórmula congruencial linear para gerar números pseudoaleatórios, que são determinísticos e não adequados para aplicações de alta segurança. Isso levou à introdução de `SecureRandom`, que utiliza algoritmos mais sofisticados (por exemplo, SHA1PRNG) para produzir números aleatórios criptograficamente fortes.
 
 Contudo, `Random` e `SecureRandom` têm suas limitações, como a degradação de desempenho em ambientes multithread. A classe `ThreadLocalRandom` foi introduzida no Java 7 para resolver esta questão, fornecendo geradores de números aleatórios locais a threads, melhorando significativamente o desempenho em aplicações concorrentes.

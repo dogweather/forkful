@@ -14,12 +14,7 @@ title: "Enviando una solicitud HTTP con autenticaci\xF3n b\xE1sica"
 weight: 45
 ---
 
-## ¿Qué y por qué?
-
-Enviar una solicitud HTTP con autenticación básica implica adjuntar un nombre de usuario y contraseña a una solicitud para verificar la identidad del usuario. Los programadores lo utilizan para acceder a recursos que requieren autenticación, asegurando una comunicación segura entre el cliente y el servidor.
-
 ## Cómo hacerlo:
-
 En Dart, puedes usar el paquete `http` para enviar solicitudes HTTP con autenticación básica. Primero, agrega el paquete `http` a tu archivo `pubspec.yaml`:
 
 ```yaml

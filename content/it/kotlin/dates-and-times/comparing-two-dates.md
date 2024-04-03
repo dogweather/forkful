@@ -10,9 +10,6 @@ title: Confronto tra due date
 weight: 27
 ---
 
-## What & Why?
-Confrontare due date significa semplicemente verificare se sono uguali, o stabilire quale viene prima o dopo. I programmatori lo fanno per gestire eventi, scadenze, e logiche relative al tempo.
-
 ## How to:
 Kotlin rende il confronto tra date diretto grazie a `java.time.LocalDate`. Ecco come si fa:
 

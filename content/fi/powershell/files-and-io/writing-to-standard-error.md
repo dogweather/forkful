@@ -14,12 +14,7 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mikä & Miksi?
-
-Standardivirheeseen (stderr) kirjoittaminen PowerShellissa tarkoittaa virhesanomien tai diagnostiikkatietojen lähettämistä suoraan stderr-virtaan, joka on erillinen standarditulostevirrasta (stdout). Tämä erottelu mahdollistaa tarkemman hallinnan skriptin tulosteen suhteen, mahdollistaen kehittäjille normaalien ja virhesanomien ohjaamisen eri kohteisiin, mikä on olennaista virheenkäsittelyssä ja lokitiedostojen kirjaamisessa.
-
 ## Kuinka:
-
 PowerShell yksinkertaistaa stderriin kirjoittamisen prosessia käyttäen `Write-Error` cmdlet-komentoa tai ohjaamalla tulosteen `$host.ui.WriteErrorLine()` metodiin. Kuitenkin suoraa stderr-ohjausta varten saatat mieluummin käyttää .NET-menetelmiä tai PowerShellin itsensä tarjoamaa tiedostosuuntaimen uudelleenohjausta.
 
 **Esimerkki 1:** `Write-Error` käyttö virhesanoman kirjoittamiseen stderriin.

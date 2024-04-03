@@ -14,10 +14,8 @@ title: Obtendo a data atual
 weight: 29
 ---
 
-## O Que & Por Quê?
-Na programação, obter a data atual é uma tarefa fundamental que permite aos desenvolvedores acessar, exibir ou manipular a data atual dentro de suas aplicações. Essa capacidade é crucial para tudo, desde registrar e marcar eventos com data e hora até cálculos baseados em datas.
-
 ## Como fazer:
+
 
 ### Usando Kotlin Padrão
 O Kotlin não possui sua própria API de data e hora, mas depende da Biblioteca Padrão Java para essa funcionalidade. Veja como você pode obter a data atual:

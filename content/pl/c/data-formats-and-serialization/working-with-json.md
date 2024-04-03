@@ -13,12 +13,7 @@ title: Praca z JSON
 weight: 38
 ---
 
-## Co i dlaczego?
-
-Praca z JSON (JavaScript Object Notation) w języku C obejmuje parsowanie, generowanie i manipulowanie strukturami danych JSON. Programiści robią to, aby umożliwić komunikację z serwisami internetowymi, przechowywaniem danych lub plikami konfiguracyjnymi w lekkim i czytelnym dla człowieka formacie.
-
 ## Jak to zrobić:
-
 Aby pracować z JSON w C, zazwyczaj używa się biblioteki takiej jak `jansson` lub `json-c` ze względu na brak wbudowanego wsparcia w C dla JSON. Tutaj skupimy się na `jansson` ze względu na łatwość użycia i aktywne utrzymanie. Najpierw zainstaluj bibliotekę (np. używając menedżera pakietów jak `apt` na Ubuntu: `sudo apt-get install libjansson-dev`).
 
 Zacznijmy od parsowania łańcucha JSON i dostępu do jego zawartości:
@@ -82,7 +77,6 @@ Przykładowe wyjście:
 Te przykłady demonstrują podstawy ładowania łańcucha JSON, rozpakowywania jego wartości, tworzenia nowego obiektu JSON i następnie wyprowadzania go jako łańcucha.
 
 ## Pogłębiona analiza
-
 Potrzeba pracy z JSON w C wynika z przyjęcia JSON przez internet jako głównego formatu wymiany danych. Prostota i efektywność JSON szybko sprawiły, że wyprzedził on XML, pomimo początkowego braku bezpośredniego wsparcia w C dla manipulacji JSON. Wczesne rozwiązania obejmowały ręczną manipulację łańcuchami - narażone na błędy i nieefektywne. Biblioteki takie jak `jansson` i `json-c` pojawiły się, aby wypełnić tę lukę, oferując rozbudowane API do parsowania, konstruowania i serializacji JSON.
 
 Chociaż `jansson` oferuje prostotę i łatwość użycia, `json-c` może przyciągnąć tych, którzy szukają szerszego zestawu funkcji. Niemniej jednak, alternatywy, takie jak biblioteki parsujące w C++ oferują bardziej zaawansowane abstrakcje, dzięki bardziej złożonym strukturom danych tego języka i wsparciu biblioteki standardowej. Jednakże, gdy pracuje się w środowiskach, gdzie C jest preferowanym lub wymaganym językiem - takich jak systemy wbudowane lub podczas łączenia się z istniejącymi bibliotekami C - używanie `jansson` lub `json-c` staje się niezbędne.

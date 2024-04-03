@@ -14,9 +14,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---
 
-## Cái gì & Tại sao?
-TOML, viết tắt của Tom's Obvious, Minimal Language, là một ngôn ngữ tuần tự hóa dữ liệu. Lập trình viên Elm sử dụng nó để quản lý dữ liệu cấu hình bởi vì nó dễ đọc cho con người và ánh xạ gọn gàng với các cặp khóa-giá trị cần thiết trong ứng dụng.
-
 ## Làm thế nào:
 Elm không có bộ phân tích cú pháp TOML tích hợp sẵn, nhưng bạn có thể tương tác với JavaScript hoặc sử dụng một gói của cộng đồng. Dưới đây là cách bạn có thể phân tích cú pháp TOML bằng một gói `elm-toml` giả định:
 

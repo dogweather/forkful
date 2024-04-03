@@ -13,9 +13,6 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-Reguliere expressies (regex) in Dart bieden een krachtige manier om te zoeken en te manipuleren met strings, waardoor programmeurs complexe tekstverwerkingsopdrachten efficiënt kunnen uitvoeren. Door regex te begrijpen, kunnen ontwikkelaars tekstvalidaties uitvoeren, zoekpatronen vinden en teksttransformaties snel uitvoeren, wat essentieel is voor het verwerken van formulieren, gegevensparsen en algemene tekenreeksmanipulaties in moderne applicaties.
-
 ## Hoe:
 Dart gebruikt de `RegExp` klasse voor reguliere expressies. Hier is een basisvoorbeeld om een eenvoudig patroon binnen een string te matchen:
 

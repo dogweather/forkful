@@ -14,9 +14,6 @@ title: Pobieranie aktualnej daty
 weight: 29
 ---
 
-## Co i dlaczego?
-Pobieranie bieżącej daty to kluczowe zadanie w niemal każdym projekcie programistycznym, od rejestrowania aktywności w aplikacji po generowanie raportów ze znacznikami czasowymi. W Ruby można to łatwo osiągnąć, korzystając z biblioteki standardowej, co upraszcza operacje związane z datami.
-
 ## Jak to zrobić:
 Standardowa biblioteka Ruby zawiera klasy `Date` i `Time` do obsługi dat i czasu. Oto jak uzyskać bieżącą datę:
 

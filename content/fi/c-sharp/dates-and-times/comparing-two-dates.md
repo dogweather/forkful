@@ -11,9 +11,6 @@ title: "Kahden p\xE4iv\xE4m\xE4\xE4r\xE4n vertailu"
 weight: 27
 ---
 
-## What & Why? (Mitä & Miksi?)
-Vertaillaan kahta päivämäärää tietääksemme, kumpi on ensin tai paljonko aikaa on kulunut niiden välillä. Ohjelmoijat tekevät tämän hallitakseen aikatauluja, ajoituksia ja määräaikoja.
-
 ## How to: (Kuinka tehdään:)
 ```C#
 using System;

@@ -11,9 +11,6 @@ title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mikä & Miksi?
-REPL tarkoittaa Read-Eval-Print Loopia, interaktiivista ympäristöä, jossa voit nopeasti testata koodia. Ohjelmoijat käyttävät sitä kokeiluun, vianmääritykseen ja kielen erikoisuuksien opetteluun.
-
 ## Miten:
 Hypätäksesi Luas REPL:iin, kirjoita vain `lua` terminaaliisi. Tässä on esimerkki istunnosta:
 

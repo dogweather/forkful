@@ -15,9 +15,6 @@ title: Analyse Syntaxique du HTML
 weight: 43
 ---
 
-## Quoi & Pourquoi ?
-L'analyse du HTML implique l'étude du code HTML d'une page web pour extraire des informations ou des éléments spécifiques, une tâche commune pour le web scraping, le data mining, ou l'automatisation des interactions avec les sites web. Les programmeurs le font pour interagir programmatiquement avec les sites web ou extraire des données, automatiser des tâches ou tester des applications web.
-
 ## Comment faire :
 Python offre des bibliothèques puissantes comme BeautifulSoup et requests pour le web scraping et l'analyse HTML. Pour commencer, vous devez installer ces bibliothèques si ce n'est pas déjà fait :
 

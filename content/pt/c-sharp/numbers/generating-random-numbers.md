@@ -11,12 +11,7 @@ title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---
 
-## O Que & Por Que?
-
-Gerar números aleatórios em C# envolve a criação de valores numéricos imprevisíveis dentro de um intervalo especificado. Programadores usam esses métodos para implementar recursos como criptografia, simulações e jogos, onde a imprevisibilidade ou a simulação de aleatoriedade do mundo real é necessária.
-
 ## Como fazer:
-
 A maneira mais comum de gerar números aleatórios em C# é usando a classe `System.Random`. Aqui está um exemplo simples demonstrando seu uso:
 
 ```C#
@@ -68,7 +63,6 @@ public class ExemploDeNumeroAleatorioSeguro
 ```
 
 ## Aprofundando
-
 A geração de números aleatórios em C# evoluiu ao longo dos anos. Inicialmente, a classe `System.Random` era a opção principal para gerar números pseudo-aleatórios. É pseudo-aleatório porque, dado um valor de semente específico, produzirá a mesma sequência de números, o que pode ser útil para depuração ou repetição de testes.
 
 Embora suficiente para necessidades básicas, `System.Random` não é seguro para threads e pode produzir resultados previsíveis, o que não é adequado para aplicações dependentes de segurança. Esta limitação levou à introdução do `RNGCryptoServiceProvider` para aleatoriedade criptográfica, que é mais seguro, mas também mais intensivo em recursos.

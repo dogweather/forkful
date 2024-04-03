@@ -11,9 +11,6 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## Qué y Por Qué?
-Redondear números trata de ajustar un número al entero más cercano, o a una cierta precisión decimal. Redondeamos los números para simplificarlos para la legibilidad humana, reducir la carga computacional o cumplir con requisitos numéricos específicos.
-
 ## Cómo hacerlo:
 En Clojure, utilizamos principalmente `Math/round`, `Math/floor` y `Math/ceil`:
 

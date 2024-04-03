@@ -12,12 +12,7 @@ title: Manipulering av filer med CLI-enkeltkommandoer
 weight: 31
 ---
 
-## Hva og hvorfor?
-
-Manipulering av filer med CLI (kommandolinjegrensesnitt) en-linjers kommandoer involverer bruk av Bash-skript eller kommandoer for å utføre handlinger på filer, som å opprette, lese, oppdatere eller slette dem, alt fra terminalen. Programmerere gjør dette for effektivitet, automatisering og fordi det er eksepsjonelt kraftfullt for å håndtere filoperasjoner på Linux-servere eller -systemer, hvor grafiske grensesnitt kanskje ikke er tilgjengelige.
-
 ## Hvordan:
-
 Her er noen kraftfulle en-linjers kommandoer og hva de kan oppnå:
 
 1. **Opprette en fil og skrive tekst inn i den:**
@@ -63,7 +58,6 @@ Denne løkken går gjennom hver `.txt`-fil i gjeldende katalog og omdøper den t
 Disse CLI en-linjers kommandoene utnytter kraften i Bash for rask og effektiv filmanipulering, en ferdighet enhver programmerer vil finne uunnværlig.
 
 ## Dypdykk
-
 Bash-skallet, en støttepilar på de fleste UNIX-lignende systemer, utviklet seg fra Bourne Shell (sh), introdusert i Versjon 7 Unix i 1979. Bash utvider forgjengerens kapasiteter med forbedrede skriptfunksjoner, noe som har gjort det populært blant systemadministratorer og programmerere.
 
 Selv om Bash er utrolig kraftig for filmanipulering, har det sine ulemper. Å være tekstbasert kan komplekse operasjoner (som de som involverer binærdata) være tungvinte eller ineffektive sammenlignet med å bruke et programmeringsspråk designet med disse evnene i tankene, som Python.

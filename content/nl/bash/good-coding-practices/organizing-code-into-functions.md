@@ -12,9 +12,6 @@ title: Code organiseren in functies
 weight: 18
 ---
 
-## Wat & Waarom?
-Code opsplitsen in functies betekent scripts onderverdelen in kleinere, herbruikbare blokken die specifieke taken uitvoeren. Het maakt de code netter, begrijpelijker en gemakkelijker om te debuggen.
-
 ## Hoe te:
 Maak een eenvoudige functie in Bash:
 

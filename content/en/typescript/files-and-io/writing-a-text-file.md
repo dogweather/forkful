@@ -10,9 +10,6 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-Writing a text file in TypeScript is a critical skill for data persistence, configurations, or log generation. Programmers often perform this task to store and manipulate data outside the application memory for reasons like data analysis, reporting, or simply saving user settings across sessions.
-
 ## How to:
 TypeScript itself doesn't directly handle file operations as it compiles to JavaScript, which traditionally runs in the browser with limited access to the file system. However, when used in a Node.js environment, the `fs` module (File System) provides functionality to write files.
 

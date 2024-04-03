@@ -11,9 +11,6 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## What & Why? (Co i dlaczego?)
-Porównywanie dat to sprawdzanie, która z nich jest wcześniejsza, późniejsza lub czy są identyczne. Programiści robią to, by zarządzać harmonogramami, ważnością danych, czy kontrolować kolejność zdarzeń.
-
 ## How to: (Jak to zrobić:)
 ```PowerShell
 # Przykład 1: Porównanie dwóch dat

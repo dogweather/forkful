@@ -12,12 +12,7 @@ title: "Sammanslagning av str\xE4ngar"
 weight: 3
 ---
 
-## Vad & Varför?
-
-Sammanfogning av strängar, eller "concatenation" som det ofta kallas, innebär att du kopplar ihop två eller flera textstycken till en enda sträng. Programmerare gör detta för att skapa meningar, meddelanden eller för bearbetning av text.
-
 ## Hur man gör:
-
 För att sammanfoga strängar i Python används plus-tecknet (+) eller `join()`-metoden. Kika på exemplen nedan:
 
 ```python
@@ -32,7 +27,6 @@ print("Städerna: " + stad_str)  # Output: Städerna: Stockholm, Göteborg, Malm
 ```
 
 ## Djupdykning:
-
 Att sammanfoga strängar är grundläggande i många programmeringsspråk och var även en del av tidiga versionsutgåvor av Python. Alternativ till `+` och `join()` inkluderar formatteringsmetoder såsom %-formattering, `str.format()`, och f-stängar (från Python 3.6+).
 
 - %-formattering: `halsning = "Hej, %s" % "världen!"`
@@ -44,7 +38,6 @@ Varje metod har sina användningsområden. Till exempel är `join()` ideal för 
 När det gäller prestanda, är f-strängar och `join()` vanligtvis snabbare än att använda `+`, särskilt för stora och många strängar. Detta beror på att `+` skapar nya strängobjekt för varje sammanfogning vilket kan vara resurskrävande.
 
 ## Se även:
-
 - Python officiell dokumentation om strängmetoder: https://docs.python.org/3/library/stdtypes.html#string-methods
 - Python officiell dokumentation om formatsträngar: https://docs.python.org/3/library/string.html#formatstrings
 - En djupdykning i Python-strängar och deras behandling: https://realpython.com/python-strings/

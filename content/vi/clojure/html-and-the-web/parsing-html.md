@@ -15,12 +15,7 @@ title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---
 
-## Gì & Tại Sao?
-
-Đọc HTML là hành động biến một chuỗi HTML thành một cấu trúc dữ liệu mà chương trình của bạn có thể hiểu và thao tác. Lập trình viên làm việc này để tương tác với, trích xuất và sửa đổi nội dung từ mạng.
-
 ## Làm thế nào:
-
 Để đọc HTML trong Clojure, chúng tôi sử dụng thư viện `clj-tagsoup`, một bộ bọc cho thư viện Tagsoup Java rất tiện lợi để đọc HTML thực tế.
 
 Đầu tiên, thêm phụ thuộc clj-tagsoup vào dự án của bạn:
@@ -59,7 +54,6 @@ Kết quả mẫu:
 ```
 
 ## Sâu hơn nữa
-
 Đọc HTML trong Clojure, giống như với các ngôn ngữ khác, thường liên quan đến việc duyệt qua một cấu trúc giống như cây. Ngày xưa, điều này có thể gây rối. Các thư viện như Tagsoup làm cho cuộc sống dễ dàng hơn bằng cách xử lý HTML thực tế kỳ quặc.
 
 Bản chất hàm của Clojure cho phép chúng ta thao tác dữ liệu HTML một cách mượt mà. Các thư viện như `clj-tagsoup` tận dụng các công cụ đã được kiểm định của Java trong khi thêm vào sự tinh tế của Clojure.
@@ -69,7 +63,6 @@ Các thư viện thay thế bao gồm `Enlive` và `Hickory`. Enlive chuyên v�
 Việc triển khai tập trung vào sự dễ dàng và phong cách khai báo. Bên dưới lớp vỏ, `clj-tagsoup` sử dụng các bộ định vị và điều hướng viên để duyệt qua HTML, cung cấp một trừu tượng cao hơn so với thao tác DOM trực tiếp.
 
 ## Xem thêm
-
 - clj-tagsoup trên GitHub: https://github.com/nathell/clj-tagsoup
 - Tagsoup, thư viện Java nằm dưới: https://github.com/McCLIM/cl-tagsoup
 - Enlive, một thư viện phân tích HTML Clojure khác: https://github.com/cgrand/enlive

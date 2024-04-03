@@ -10,9 +10,6 @@ title: Scaricare una pagina web
 weight: 42
 ---
 
-## Cosa & Perché?
-Scaricare una pagina web significa far sì che il tuo Arduino la richieda e la riceva dalla rete. I programmatori lo fanno per acquisire dati da internet, come il meteo, o per controllare una pagina remotamente.
-
 ## Come fare:
 ```Arduino
 #include <WiFi.h>

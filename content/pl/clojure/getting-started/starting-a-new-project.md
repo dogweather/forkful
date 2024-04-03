@@ -11,9 +11,6 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## What & Why? | Co i dlaczego?
-Rozpoczynanie nowego projektu to stworzenie podstawy pod przyszłą aplikację. Programiści tworzą nowe projekty, aby rozwiązywać problemy, eksplorować nowe pomysły lub uczyć się nowych technik.
-
 ## How to: | Jak to zrobić:
 Tworzenie nowego projektu w Clojure może być szybkie i proste przy użyciu Leiningen lub Boot. Tutaj skupimy się na Leiningen, najpopularniejszym narzędziu.
 

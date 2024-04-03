@@ -12,12 +12,7 @@ title: Usando expresiones regulares
 weight: 11
 ---
 
-## ¿Qué y por qué?
-
-Las expresiones regulares (regex) en Java te permiten definir patrones específicos para buscar, manipular o validar cadenas en tu código. Los programadores las usan para tareas como el análisis de archivos de registro, la validación de entradas de usuario o la búsqueda de patrones específicos dentro del texto, permitiendo un procesamiento sofisticado de cadenas con un esfuerzo mínimo.
-
 ## Cómo hacerlo:
-
 El soporte integrado de Java para regex se proporciona principalmente a través de las clases `Pattern` y `Matcher` en el paquete `java.util.regex`. Aquí hay un ejemplo simple para encontrar e imprimir todas las ocurrencias de una palabra en una cadena, sin distinguir entre mayúsculas y minúsculas:
 
 ```java

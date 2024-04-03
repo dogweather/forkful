@@ -14,9 +14,6 @@ title: "Zamiana ma\u0142ych liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---
 
-## Co i Dlaczego?
-Capitalizacja stringa oznacza zwykle przekształcenie pierwszego znaku stringa na wielką literę, a reszty na małe litery. Ale czasami może to oznaczać po prostu upewnienie się, że pierwsza litera jest wielka, pozostawiając resztę stringa bez zmian. Szczerze mówiąc, moim zdaniem, to dość niejasny termin.
-
 ## Jak to zrobić:
 Ruby dostarcza [prostych metod do manipulacji stringami](https://docs.ruby-lang.org/en/3.3/String.html), w tym capitalizacji:
 

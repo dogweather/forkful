@@ -12,9 +12,6 @@ title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---
 
-## Quoi & Pourquoi ?
-Envoyer une requête HTTP avec authentification basique, c'est transmettre vos identifiants (normalement un nom d'utilisateur et mot de passe) codés en base64 dans l'en-tête de la requête pour accéder à des ressources protégées. Les programmeurs l'utilisent pour interagir avec des API web qui exigent une forme simple d'authentification.
-
 ## Comment faire :
 Pour envoyer une requête HTTP avec authentification basique en C++, on peut utiliser la bibliothèque cURL. Voici un exemple minimaliste :
 

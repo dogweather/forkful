@@ -14,9 +14,6 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-## Co i dlaczego?
-Obliczanie daty w przyszłości lub przeszłości polega na określeniu daty, która jest określoną liczbę dni, miesięcy lub lat dalej od danej daty. Programiści często potrzebują tej funkcjonalności do automatyzowania przypomnień, subskrypcji, dat wygaśnięcia i planowania zadań w różnych aplikacjach.
-
 ## Jak to zrobić:
 W Visual Basic for Applications (VBA) podstawową funkcją używaną do obliczania dat w przyszłości lub przeszłości jest `DateAdd()`. Funkcja ta dodaje określony interwał czasu do daty, zwracając nową datę.
 

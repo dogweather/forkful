@@ -10,12 +10,7 @@ title: Using associative arrays
 weight: 15
 ---
 
-## What & Why?
-
-Associative arrays, known in Python as dictionaries, map keys to values, making it easy to retrieve, modify, or track data by a unique identifier. Programmers use them for their efficiency in accessing elements and their flexibility in representing complex data structures.
-
 ## How to:
-
 Creating a dictionary in Python is straightforward. You enclose key-value pairs in curly braces `{}`, with keys and values separated by a colon:
 
 ```Python
@@ -73,7 +68,6 @@ email: john@example.com
 ```
 
 ## Deep Dive
-
 Associative arrays in Python, or dictionaries, were introduced to provide a data structure for efficient data access and manipulation. Unlike sequences, which are indexed by a range of numbers, dictionaries are indexed by keys, which can be any immutable type. This design choice makes dictionaries ideally suited for fast lookup tables where keys map to unique values.
 
 Historically, Python dictionaries have been implemented using a hash table, ensuring that the average time complexity for lookup, insert, and delete operations is O(1). In Python 3.6 and later, dictionaries also maintain the insertion order of items, combining the benefits of hash tables with the predictability of insertion order seen in ordered data structures.

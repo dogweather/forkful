@@ -14,12 +14,7 @@ title: Bestanden ter plekke bewerken met CLI one-liners
 weight: 32
 ---
 
-## Wat & Waarom?
-
-Bestanden ter plaatse bewerken met CLI (Command Line Interface) one-liners in Ruby stelt je in staat om bestanden rechtstreeks vanuit je terminal te wijzigen, zonder ze in een editor te hoeven openen, wijzigingen aan te brengen en ze terug op te slaan. Deze techniek is ongelooflijk nuttig voor snelle aanpassingen, batch-updates of het automatiseren van repetitieve taken, waardoor zowel tijd als moeite wordt bespaard.
-
 ## Hoe:
-
 Ruby biedt een eenvoudige manier om bestanden ter plaatse rechtstreeks vanaf de commandoregel te bewerken. Met Ruby's `-i`-schakelaar kun je Ruby opdracht geven rechtstreeks op de opgegeven bestand(en) te werken. Laten we met een paar voorbeelden spelen om te zien hoe dit in het echte leven werkt. Stel je hebt een bestand `greetings.txt` met de volgende inhoud:
 
 ```
@@ -51,7 +46,6 @@ ruby -i.bak -pe "gsub(/Hallo/, 'Dag')" greetings.txt
 Nu vind je, samen met je bewerkte `greetings.txt`, een `greetings.txt.bak` in dezelfde map, met de originele inhoud.
 
 ## Diep Duiken
-
 De magie van het ter plaatse bewerken van bestanden in Ruby komt voort uit zijn combinatie van Perl-achtige tekstverwerkingsmogelijkheden en de eigen syntactische elegantie van Ruby. Historisch gezien was Perl de voorkeurstaal voor snelle one-liner scripting, vooral voor tekstmanipulatie. Ruby heeft dit paradigma overgenomen, wat zorgt voor krachtige commandoregel scriptingmogelijkheden.
 
 Er bestaan alternatieven voor het ter plaatse bewerken in andere talen, zoals Perl zelf en sed, een stream editor in Unix-systemen. Elk heeft zijn sterke punten - Perl staat bekend om zijn tekstverwerkingskracht terwijl sed ongeëvenaard is in zijn eenvoud voor streambewerkingstaken. Ruby biedt echter een evenwicht, door robuuste tekstmanipulatie te bieden met een leesbaardere en gebruiksvriendelijkere syntaxis, vooral voor degenen die al bekend zijn met Ruby.

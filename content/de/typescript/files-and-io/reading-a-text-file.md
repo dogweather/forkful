@@ -10,9 +10,6 @@ title: Textdatei einlesen
 weight: 22
 ---
 
-## Was & Warum?
-Das Lesen einer Textdatei bedeutet, ihren Inhalt programmatisch zu erfassen und zu verarbeiten. Programmierer tun dies, um Daten zu importieren, Einstellungen zu laden oder Protokolle zu analysieren.
-
 ## How to:
 ```TypeScript
 // Einfaches Lesen einer Textdatei mit Node.js FS-Modul

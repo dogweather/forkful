@@ -10,9 +10,6 @@ title: Iniciando un nuevo proyecto
 weight: 1
 ---
 
-## ¿Qué y Por Qué?
-Iniciar un nuevo proyecto en Elixir es como abrir un lienzo en blanco para pintar tu obra maestra con código. Los programadores lo hacen para resolver problemas, experimentar con ideas nuevas o simplemente para mejorar sus habilidades en la creación de software estructurado y mantenible.
-
 ## Cómo Iniciar:
 Primero, asegúrate que tienes Elixir y Mix, su herramienta de construcción, instalados. Para empezar un proyecto, abre tu terminal y ejecuta:
 

@@ -15,9 +15,6 @@ title: "T\u1EA3i trang web"
 weight: 42
 ---
 
-## Cái gì & Tại sao?
-Tải một trang web có nghĩa là lấy nội dung của nó qua internet—cơ bản là những gì trình duyệt của bạn làm. Các lập trình viên thực hiện việc này để tự động hóa việc trích xuất dữ liệu, kiểm thử, hoặc để tương tác với các dịch vụ web mà không cần giao diện người dùng đồ họa (GUI).
-
 ## Làm thế nào:
 Elixir, với các thư viện máy khách HTTP mạnh mẽ của mình, làm cho nhiệm vụ này trở nên dễ dàng. Dưới đây là cách thực hiện với `HTTPoison`:
 

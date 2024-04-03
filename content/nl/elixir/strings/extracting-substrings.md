@@ -12,9 +12,6 @@ title: Substrings extraheren
 weight: 6
 ---
 
-## Wat & Waarom?
-Het extraheren van substrings betekent het uithalen van specifieke delen uit een tekenreeks. Programmeurs doen dit om tekstgegevens te manipuleren en analyseren, of simpelweg om alleen relevante informatie aan gebruikers te tonen.
-
 ## Hoe:
 In Elixir kun je substrings extraheren met behulp van de `String` module. Hier is hoe:
 

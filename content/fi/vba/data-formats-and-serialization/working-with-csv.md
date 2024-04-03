@@ -14,16 +14,10 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä & Miksi?
-
-CSV-tiedostojen (pilkulla erotetut arvot) käsittely käsittää lukemista tai kirjoittamista yksinkertaisiin tekstitiedostoihin, joissa tietokentät ovat erotettu pilkuilla. Ohjelmoijat suorittavat usein tämän tehtävän helpottaakseen tietojenvaihtoa eri ohjelmistosovellusten välillä, ottaen huomioon CSV-formaatin yksinkertaisuuden ja laajan hyväksynnän eri ohjelmointiympäristöissä.
-
 ## Kuinka:
-
 Visual Basic for Applications (VBA) yksinkertaistaa CSV-tiedostojen käsittelyä sisäänrakennettujen funktioiden ja metodien kautta, jotka mahdollistavat sujuvan luvun ja kirjoittamisen näihin tiedostoihin. Alla on esimerkkejä, jotka havainnollistavat perustoimintoja CSV-tiedostojen kanssa.
 
 ### CSV-tiedoston lukeminen:
-
 ```basic
 Sub ReadCSV()
     Dim filePath As String
@@ -46,7 +40,6 @@ End Sub
 ```
 
 ### Kirjoittaminen CSV-tiedostoon:
-
 ```basic
 Sub WriteCSV()
     Dim filePath As String
@@ -68,7 +61,6 @@ ID,Name,Age
 ```
 
 ## Syväsukellus
-
 Historiallisesti CSV-tiedostot ovat olleet suoraviivainen menetelmä tallentaa taulukkomuotoista dataa tekstiformaatissa. Sen rakenteen yksinkertaisuus, jossa jokainen rivi vastaa yhtä datatietuetta ja jokainen kenttä tietueessa on erotettu pilkulla, on sekä CSV:n vahvuus että sen rajoitus. Formaatti ei natiivisti tue datatyyppejä, mikä tarkoittaa, että kaikki data tallennetaan merkkijonoina, ja datan oikeanlaiseen tyyppiin muuntamisen taakka lankeaa ohjelmoijalle.
 
 Visual Basic for Applicationsissa CSV-tiedostojen käsittely tapahtuu pääasiassa perustiedosto-operaatioiden kautta, kuten aiemmissa esimerkeissä on näytetty. Ei ole suoraa CSV-jäsennystukea kuten moderneimmissa kielissä (esim. Pythonin csv-moduuli), joka tarjoaa enemmän hallintaa ja mukavuutta CSV-datan käsittelyssä.

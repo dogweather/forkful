@@ -10,12 +10,7 @@ title: Generazione di numeri casuali
 weight: 12
 ---
 
-## Cosa & Perché?
-
-La generazione di numeri casuali nella programmazione comporta la creazione di sequenze di numeri che non presentano un ordine o un modello prevedibile. I programmatori spesso utilizzano questi numeri per vari scopi, come simulare eventi imprevedibili, nel testing e nel debugging, e negli algoritmi di gioco per garantire equità o imprevedibilità.
-
 ## Come fare:
-
 Per generare numeri casuali in C++, di solito si utilizza l'intestazione `<random>`, che è stata introdotta in C++11, offrendo un'ampia gamma di servizi per generare numeri casuali da varie distribuzioni.
 
 ```C++
@@ -46,7 +41,6 @@ L'output di esempio potrebbe apparire così, ma tieni presente che ogni esecuzio
 ```
 
 ## Approfondimento:
-
 Storicamente, la generazione di numeri casuali in C++ si affidava pesantemente alla funzione `rand()` e alla funzione di seeding `srand()`, trovate nell'intestazione `<cstdlib>`. Tuttavia, questo approccio ha spesso ricevuto critiche per la sua mancanza di uniformità e prevedibilità nella distribuzione dei numeri generati.
 
 L'introduzione dell'intestazione `<random>` in C++11 ha segnato un notevole miglioramento, offrendo un sistema sofisticato per produrre numeri casuali. Le strutture fornite includono una varietà di motori (come `std::mt19937` per Mersenne Twister) e distribuzioni (come `std::uniform_int_distribution` per la distribuzione uniforme di interi) che possono essere combinati per soddisfare le specifiche esigenze del programmatore, portando a un comportamento più prevedibile, migliori prestazioni e una maggiore flessibilità.

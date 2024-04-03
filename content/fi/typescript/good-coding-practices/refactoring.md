@@ -11,9 +11,6 @@ title: Koodin refaktorointi
 weight: 19
 ---
 
-## Mikä ja Miksi?
-Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia uudelleenjärjestetään muuttamatta sen ulkoista toimintaa. Ohjelmoijat tekevät sitä tehdäkseen koodista selkeämpää, ylläpidettävämpää ja vähentääkseen monimutkaisuutta, mikä tekee siitä helpommin ymmärrettävän henkilölle, joka sukeltaa siihen uutena.
-
 ## Miten:
 Oletetaan, että sinulla on TypeScript-funktio, joka on nähnyt parempia päiviä - se on hieman sekasotku ja kaipaisi hieman hellää huolenpitoa:
 

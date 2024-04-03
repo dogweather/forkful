@@ -9,9 +9,6 @@ title: Inviare una richiesta http
 weight: 44
 ---
 
-## What & Why?
-Inviamo una richiesta HTTP per comunicare con server web. Usato per ottenere informazioni da servizi internet o inviarne.
-
 ## How to:
 Connettiti alla rete, configura l'HTTPS, invia la richiesta:
 

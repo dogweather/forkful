@@ -10,9 +10,6 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-Getting the current date in programming is a fundamental task that allows you to retrieve and manipulate the system's date and time data. In scripting and automation tasks, it's essential for generating timestamps, scheduling tasks, and creating logs.
-
 ## How to:
 Fish Shell utilizes external commands like `date` for getting the current date, offering flexibility to format the output as needed. Here's how to use it:
 

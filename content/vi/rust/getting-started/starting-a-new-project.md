@@ -17,12 +17,7 @@ title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---
 
-## Cái gì & Tại sao?
-
-Bắt đầu một dự án mới bằng Rust có nghĩa là thiết lập một cấu trúc cơ bản để mã của bạn có một nơi để "sống". Các lập trình viên khởi đầu các dự án mới để giải quyết vấn đề, học hỏi, hoặc phát triển phần mềm từ con số không.
-
 ## Cách thức:
-
 Để bắt đầu một dự án Rust mới, bạn cần Cargo—quản lý gói Rust. Cài đặt Rust và Cargo thông qua trình cài đặt chính thức, rustup.
 
 ```sh
@@ -66,7 +61,6 @@ Hello, world!
 ```
 
 ## Sâu hơn nữa
-
 Rust đã có quản lý gói và hệ thống biên dịch của riêng mình là Cargo, ngay từ những ngày đầu. Được tạo ra vào khoảng năm 2013, đó là cách của Rust để quản lý dự án, phụ thuộc, và quá trình biên dịch.
 
 Tại sao Cargo lại tuyệt vời cho việc bắt đầu các dự án mới?
@@ -80,7 +74,6 @@ Các ngôn ngữ khác sử dụng các công cụ khác nhau—Node.js có npm,
 Các lựa chọn khác để bắt đầu dự án bằng Rust? Có lẽ, bạn có thể tự tổ chức mọi thứ hoặc sử dụng các môi trường phát triển tích hợp (IDEs), nhưng tại sao phải tái phát minh bánh xe khi Cargo đã giúp bạn làm phần nặng nhọc?
 
 ## Xem thêm
-
 - Sách Lập Trình Rust: https://doc.rust-lang.org/book/
 - Hướng dẫn cài đặt Rust và Cargo: https://www.rust-lang.org/tools/install
 - Tài liệu Cargo: https://doc.rust-lang.org/cargo/

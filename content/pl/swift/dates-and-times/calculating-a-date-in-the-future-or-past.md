@@ -12,9 +12,6 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-## Co i Dlaczego?
-Obliczanie daty w przyszłości lub przeszłości to proces ustalenia daty, dodając lub odejmując pewien czas od bieżącej daty. Programiści wykonują to zadanie, aby obsłużyć przedział czasowy dla wydarzeń, przypomnień, ważności subskrypcji, i wielu innych funkcji związanych z czasem.
-
 ## Jak to zrobić:
 ```Swift
 import Foundation

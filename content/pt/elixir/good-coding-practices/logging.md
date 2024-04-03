@@ -12,9 +12,6 @@ title: Registro de Logs
 weight: 17
 ---
 
-## O Que & Porquê?
-Registros (logging) no desenvolvimento de software é a técnica de registrar eventos que ocorrem enquanto um programa está em execução, tipicamente em um arquivo ou sistema externo. Os programadores fazem isso para obter insights sobre o comportamento do software, solucionar problemas e manter um registro do histórico operacional, que é crucial para depuração e monitoramento da saúde das aplicações.
-
 ## Como fazer:
 Em Elixir, a maneira primária de registrar informações é através do módulo `Logger` integrado. Veja como você pode usá-lo:
 

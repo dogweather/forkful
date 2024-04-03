@@ -11,9 +11,6 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## What & Why? (Co i Dlaczego?)
-Zaczynamy nowy projekt, gdy mamy świeży pomysł lub potrzebę rozwiązania. Programiści robią to, aby przekształcić koncepcje w działające aplikacje, ucząc się po drodze nowych rzeczy i udoskonalając swoje umiejętności.
-
 ## How to: (Jak to zrobić:)
 ```C#
 // Tworzenie nowego projektu konsoli w C# z użyciem .NET CLI

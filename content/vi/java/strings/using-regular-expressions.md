@@ -15,9 +15,6 @@ title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---
 
-## Cái gì & Tại sao?
-Biểu thức chính quy (regex) là các mẫu được sử dụng để khớp các kết hợp ký tự trong văn bản. Lập trình viên sử dụng chúng để tìm kiếm, chỉnh sửa hoặc thao tác chuỗi một cách hiệu quả - tiết kiệm thời gian và dòng lệnh.
-
 ## Làm thế nào:
 Để sử dụng regex trong Java, bạn cần các lớp `Pattern` và `Matcher` từ `java.util.regex`. Dưới đây là một ví dụ về việc tìm kiếm địa chỉ email trong một chuỗi.
 

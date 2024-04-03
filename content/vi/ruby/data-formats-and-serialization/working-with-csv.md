@@ -15,11 +15,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---
 
-## Cái gì & Tại sao?
-Tệp CSV (Comma-Separated Values - Giá trị phân cách bằng dấu phẩy) biểu diễn dữ liệu bảng dưới dạng văn bản thuần túy. Các lập trình viên sử dụng CSV để nhập và xuất bộ dữ liệu bởi vì chúng được hỗ trợ rộng rãi, dễ đọc và dễ dàng phân tích cú pháp.
-
 ## Làm thế nào:
-
 **Đọc một tệp CSV:**
 
 ```Ruby
@@ -49,11 +45,9 @@ Bob, 46, Springfield
 ```
 
 ## Tìm hiểu sâu
-
 CSV đã tồn tại từ những ngày đầu của ngành tin học, mang lại một cách đơn giản để di chuyển dữ liệu bảng giữa các chương trình và hệ thống. Các phương án thay thế bao gồm JSON và XML, nhưng CSV vẫn phổ biến vì tính đơn giản và chi phí thấp. Thư viện CSV chuẩn của Ruby, được bao bọc tiện lợi quanh các trình phân tích cú pháp cơ bản, cung cấp sự tích hợp mượt mà bao gồm hỗ trợ cho các mã hóa khác nhau, chuyển đổi tùy chỉnh và các tùy chọn phân tích cú pháp linh hoạt.
 
 ## Xem thêm
-
 - Tài liệu thư viện CSV của Ruby: https://ruby-doc.org/stdlib-3.0.0/libdoc/csv/rdoc/CSV.html
 - CSV trên Wikipedia: https://en.wikipedia.org/wiki/Comma-separated_values
 - "FasterCSV" gem (cũ nhưng có ý nghĩa về mặt lịch sử): https://rubygems.org/gems/fastercsv

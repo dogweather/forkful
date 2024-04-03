@@ -12,9 +12,6 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-Complexe getallen hebben een reëel deel en een imaginair deel, meestal geschreven als `a + bi`. Ze zijn essentieel voor sommige wiskunde-intensieve Arduino-projecten die te maken hebben met signaalbewerking, elektrotechniek, of elk ander domein waar verschijnselen het beste gemodelleerd worden in een vlak.
-
 ## Hoe te:
 ```Arduino
 #include <Complex.h>

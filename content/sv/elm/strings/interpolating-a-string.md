@@ -11,9 +11,6 @@ title: "Interpolera en str\xE4ng"
 weight: 8
 ---
 
-## Vad & Varför?
-Interpolera en sträng innebär att infoga variabler eller uttryck i en stående textsträng. Programmerare gör detta för att enkelt skapa dynamiska meddelanden eller bearbeta data i en läsbar format.
-
 ## Så här gör du:
 Elm har ingen inbyggd stränginterpolering som man kanske är van vid från andra språk. Istället använder man funktioner som `String.concat` eller `++` operatören för att slå ihop strängar.
 

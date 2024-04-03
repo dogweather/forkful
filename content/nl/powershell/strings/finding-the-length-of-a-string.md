@@ -13,9 +13,6 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-In PowerShell betekent het vinden van de lengte van een tekenreeks het tellen van het aantal karakters dat het bevat. Programmeurs doen dit om invoer te valideren, tekstgegevens te manipuleren en te zorgen dat gegevens aan bepaalde criteria of formaten voldoen.
-
 ## Hoe te:
 PowerShell maakt het verkrijgen van de tekenreekslengte eenvoudig. Gooi gewoon een tekenreeks naar de `.Length` eigenschap, zoals dit:
 

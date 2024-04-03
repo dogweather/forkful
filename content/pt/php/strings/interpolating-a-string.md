@@ -11,9 +11,6 @@ title: Interpolando uma string
 weight: 8
 ---
 
-## O Que é & Porquê?
-Interpolação de strings permite inserir valores de variáveis diretamente numa string sem concatenação explícita. Programadores usam isso para simplificar a construção de strings e tornar o código mais legível e eficiente.
-
 ## Como Fazer:
 ```PHP
 <?php

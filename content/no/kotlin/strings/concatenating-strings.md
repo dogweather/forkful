@@ -11,9 +11,6 @@ title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---
 
-## Hva & Hvorfor?
-I programmering, å slå sammen strenger (concatenating strings) er rett og slett å sette dem sammen i én. Vi gjør det for å bygge setninger, lage meldinger eller sette sammen data på en meningsfylt måte.
-
 ## Hvordan:
 I Kotlin er det flere måter å slå sammen strenger på. Her er et par eksempler:
 

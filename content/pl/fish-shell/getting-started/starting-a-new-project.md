@@ -11,9 +11,6 @@ title: Rozpoczynanie nowego projektu
 weight: 1
 ---
 
-## What & Why? (Co i dlaczego?)
-Zaczynanie nowego projektu oznacza stworzenie bazowej struktury katalogów i plików potrzebnych do pracy. Programiści robią to, by szybko i efektywnie rozpocząć nowe zadanie, zachowując organizację i czystość kodu.
-
 ## How to: (Jak to zrobić:)
 ```Fish Shell
 # Utworzenie nowego katalogu dla projektu

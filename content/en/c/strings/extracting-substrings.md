@@ -10,16 +10,10 @@ title: Extracting substrings
 weight: 6
 ---
 
-## What & Why?
-
-Extracting substrings in C involves creating a smaller string (substring) from a larger string based on specified criteria, such as position and length. Programmers often perform this task for text parsing, data processing, or input validation, making it a crucial skill in manipulating and analyzing text data efficiently.
-
 ## How to:
-
 Unlike some higher-level languages that provide built-in methods for substring extraction, C requires a more manual approach using its string manipulation functions. Here's how to extract a substring in C effectively:
 
 ### Example 1: Using `strncpy`
-
 ```c
 #include <stdio.h>
 #include <string.h>
@@ -39,7 +33,6 @@ int main() {
 ```
 
 ### Example 2: Creating a Function
-
 For repeated use, a dedicated function to extract substrings can be more efficient:
 
 ```c
@@ -64,7 +57,6 @@ int main() {
 ```
 
 ## Deep Dive
-
 Extracting substrings in C is primarily handled through pointer manipulation and careful memory management, reflecting the language's lower-level approach to handling data. This method dates back to the early days of C programming when managing resources efficiently was paramount due to the limited computing power. While the absence of a built-in substring function might seem like an oversight, it exemplifies C's philosophy of giving programmers complete control over memory management, often leading to optimized but more complex code.
 
 In the realm of modern programming, languages like Python and JavaScript offer built-in methods for substring extraction, such as `slice()` or string slicing using indices. These higher-level languages handle memory management behind the scenes, trading off some degree of control for ease of use and readability.

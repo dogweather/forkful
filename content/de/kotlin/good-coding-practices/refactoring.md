@@ -12,9 +12,6 @@ title: Refactoring
 weight: 19
 ---
 
-## Was & Warum?
-Refactoring ist der Prozess, bestehenden Code zu überarbeiten, um seine Struktur, Lesbarkeit und Leistung zu verbessern, ohne sein externes Verhalten zu verändern. Programmierer führen ein Refactoring durch, um Code wartbarer zu machen, das Hinzufügen neuer Funktionen zu vereinfachen und Fehler leichter zu finden und zu beheben.
-
 ## Wie geht das:
 Hier ist ein Kotlin-Schnipsel, der einen häufigen Code-Geruch und seine überarbeitete Version zeigt. Wir beginnen mit einem Code-Stück, das zu viel macht:
 

@@ -16,9 +16,6 @@ title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---
 
-## Cái Gì & Tại Sao?
-Bắt đầu một dự án mới với Elixir có nghĩa là thiết lập một cấu trúc dự án Mix mới từ đầu. Các lập trình viên làm điều này để khởi động mọi thứ với mã nguồn được tổ chức bài bản và công cụ tự động, giúp xây dựng và kiểm thử ứng dụng Elixir một cách hiệu quả.
-
 ## Cách thực hiện:
 Để tạo một dự án mới, sử dụng lệnh `mix new`:
 

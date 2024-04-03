@@ -11,9 +11,6 @@ title: Comparando duas datas
 weight: 27
 ---
 
-## O Quê & Por Quê?
-Comparar duas datas é verificar se elas são iguais, qual vem antes ou depois. Programadores fazem isso para controlar eventos, prazos, e para lógica de negócios como validações de períodos de oferta ou monitoramento de datas de vencimento.
-
 ## Como fazer:
 ```Clojure
 ;; Adicionando a dependência clj-time

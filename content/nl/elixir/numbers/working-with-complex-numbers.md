@@ -12,9 +12,6 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-Complexe getallen hebben een reëel deel en een imaginair deel (zoals `3 + 4i`). Ze worden gebruikt in de techniek, fysica, en bepaalde computerproblemen. Programmeurs werken ermee voor simulaties, signaalverwerking, en het efficiënt oplossen van bepaalde soorten wiskundige problemen.
-
 ## Hoe te:
 Elixir heeft geen ingebouwde complexe getallen, dus we maken onze eigen of gebruiken een bibliotheek, zoals `ComplexNum`. Hier is een snel voorbeeld met een bib:
 

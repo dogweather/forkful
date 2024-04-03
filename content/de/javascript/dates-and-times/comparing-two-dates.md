@@ -10,9 +10,6 @@ title: Vergleich von zwei Daten
 weight: 27
 ---
 
-## What & Why?
-Datenvergleiche checken, ob ein Datum vor, gleich oder nach einem anderen liegt. Das ist wichtig für Reservierungen, Fristen, Logs oder Gültigkeitsprüfungen.
-
 ## How to:
 ```javascript
 const date1 = new Date('2023-03-30');

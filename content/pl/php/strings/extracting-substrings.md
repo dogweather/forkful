@@ -11,9 +11,6 @@ title: "Wycinanie pod\u0142a\u0144cuch\xF3w"
 weight: 6
 ---
 
-## What & Why? (Co i dlaczego?)
-Wyciąganie podciągów to pobieranie określonych fragmentów z całego ciągu znaków. Programiści robią to, aby manipulować danymi, weryfikować formaty lub po prostu wyświetlać użytkownikowi tylko istotne informacje.
-
 ## How to: (Jak to zrobić:)
 ```PHP
 <?php

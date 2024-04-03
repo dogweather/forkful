@@ -14,9 +14,6 @@ title: "C\xE1lculo de una fecha futura o pasada"
 weight: 26
 ---
 
-## ¿Qué y Por Qué?
-Calcular una fecha en el futuro o en el pasado implica determinar una fecha que esté a un número especificado de días, meses o años de distancia desde una fecha dada. Los programadores a menudo necesitan esta funcionalidad para automatizar recordatorios, suscripciones, fechas de caducidad y tareas de programación en diversas aplicaciones.
-
 ## Cómo hacerlo:
 En Visual Basic para Aplicaciones (VBA), la función principal utilizada para calcular fechas futuras o pasadas es `DateAdd()`. Esta función agrega un intervalo de tiempo especificado a una fecha, devolviendo una nueva fecha.
 

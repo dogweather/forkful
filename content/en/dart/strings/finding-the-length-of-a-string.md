@@ -11,9 +11,6 @@ title: Finding the length of a string
 weight: 7
 ---
 
-## What & Why?
-Finding the length of a String in Dart is about determining the number of code units (essentially, the number of characters if thinking about it simplistically) in a given String. Programmers do this to manipulate strings more precisely, such as validating input, truncating display text, or processing data formats where the length matters (e.g., protocols with length-prefixed messages).
-
 ## How to:
 Dart makes it straightforward to get the length of a string using the `length` property. Here’s a basic example:
 

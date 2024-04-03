@@ -29,12 +29,7 @@ title: "\u0928\u0908 \u092A\u0930\u093F\u092F\u094B\u091C\u0928\u093E \u0936\u09
 weight: 1
 ---
 
-## क्या और क्यों?
-
-नया प्रोजेक्ट आरंभ करना मतलब है खाली जगह से कुछ अनोखा बनाने का कार्य शुरू करना। प्रोग्रामर नये प्रोजेक्ट्स पर काम करते हैं ताकि वे नए समाधान खोज सकें और अपनी सृजनात्मकता को व्यक्त कर सकें।
-
 ## कैसे करें:
-
 ```TypeScript
 // TypeScript के साथ नया प्रोजेक्ट शुरू करना
 
@@ -60,11 +55,9 @@ Hello, World
 ```
 
 ## गहराई से जानिए:
-
 TypeScript वास्तव में JavaScript का एक सुधार है, जिसे माइक्रोसॉफ्ट ने 2012 में लांच किया था। इसमें static typing और class-based objects जैसे features होते हैं जिससे large-scale applications को संभालना आसान हो जाता है। नए प्रोजेक्ट्स में TypeScript का चयन करने के कई alternatives होते हैं, जैसे कि pure JavaScript, Flow, या Dart लेकिन TypeScript अपने robust tools और community support के कारण आजकल काफी लोकप्रिय है। स्टैटिक टाइपिंग की मदद से, बग्स की पहचान पहले ही हो जाती है और code को maintain करना आसान हो जाता है।
 
 ## और भी देखें:
-
 - TypeScript हैंडबुक: https://www.typescriptlang.org/docs/handbook/intro.html
 - TypeScript GitHub repository: https://github.com/Microsoft/TypeScript
 - npm (Node Package Manager) गाइड: https://docs.npmjs.com/

@@ -11,9 +11,6 @@ title: Debug-Ausgaben drucken
 weight: 33
 ---
 
-## Was & Warum?
-Debug-Ausgaben zu drucken, bedeutet, Informationen zum Codeablauf in der Entwicklungskonsole anzuzeigen, um zu verstehen, was das Programm macht. Es hilft Entwicklern, Fehler zu finden und die inne liegende Magie des Codes zu entwirren.
-
 ## How to:
 In Elm kannst du `Debug.log` nutzen, um Werte in die Konsole zu schreiben. Sei dir bewusst, dass diese Funktion in Produktion entfernt sein sollte.
 

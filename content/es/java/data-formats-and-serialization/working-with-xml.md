@@ -11,9 +11,6 @@ title: Trabajando con XML
 weight: 40
 ---
 
-## Qué y Por Qué?
-Trabajar con XML implica analizar, consultar y manipular documentos XML con Java. Los programadores lo hacen para el intercambio de datos, la gestión de configuración y porque muchos sistemas heredados y APIs se comunican usando XML.
-
 ## Cómo hacerlo:
 Java proporciona APIs como DOM (Modelo de Objeto de Documento), SAX (API Simple para XML) y StAX (API de Transmisión para XML) para trabajar con XML. Aquí hay un ejemplo de DOM para analizar un archivo XML:
 

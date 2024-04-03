@@ -12,9 +12,6 @@ title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---
 
-## Quoi & Pourquoi ?
-L'envoi d'une requête HTTP avec authentification de base c'est transmettre des identifiants via une requête pour accéder à des ressources protégées. Les programmeurs utilisent cette méthode pour interagir de manière sécurisée avec des API ou des services web qui exigent une vérification d'identité.
-
 ## Comment faire :
 ```Bash
 # Utiliser cURL pour envoyer une requête avec authentification de base

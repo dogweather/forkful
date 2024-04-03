@@ -16,12 +16,7 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---
 
-## Gì & Tại sao?
-
-Gửi một yêu cầu HTTP đề cập đến việc khởi tạo một cuộc gọi từ ứng dụng Go của bạn tới một web server, API, hoặc bất kỳ dịch vụ dựa trên HTTP nào khác. Lập trình viên thực hiện điều này để tương tác với tài nguyên web, lấy dữ liệu, gửi biểu mẫu, hoặc giao tiếp với các dịch vụ khác trên internet.
-
 ## Làm thế nào:
-
 Trong Go, việc gửi một yêu cầu HTTP và xử lý phản hồi liên quan đến việc sử dụng gói `net/http`. Dưới đây là một ví dụ từng bước cho thấy cách gửi một yêu cầu GET đơn giản và đọc phản hồi:
 
 ```go
@@ -103,7 +98,6 @@ func main() {
 ```
 
 ## Sâu hơn
-
 Gói `net/http` trong Go cung cấp một cách mạnh mẽ và linh hoạt để tương tác với các máy chủ HTTP. Thiết kế của nó phản ánh nhấn mạnh của Go vào sự đơn giản, hiệu quả, và độ bền. Ban đầu, các chức năng như xử lý tải trọng JSON hoặc XML yêu cầu việc tự mình tạo ra body của yêu cầu và thiết lập các headers phù hợp. Khi Go phát triển, cộng đồng đã phát triển các gói ở cấp độ cao hơn giúp đơn giản hóa những công việc này, chẳng hạn như `gorilla/mux` cho việc định tuyến và `gjson` cho việc thao tác JSON.
 
 Một điểm đáng chú ý của khách hàng HTTP Go là việc sử dụng giao diện và cấu trúc, như `http.Client` và `http.Request`, cho phép tùy chỉnh và kiểm thử rộng rãi. Ví dụ, bạn có thể chỉnh sửa `http.Client` để hết thời gian yêu cầu hoặc giữ kết nối sống cho hiệu suất.

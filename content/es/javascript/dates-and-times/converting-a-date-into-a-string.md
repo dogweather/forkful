@@ -10,9 +10,6 @@ title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---
 
-## ¿Qué y Por Qué?
-Convertir una fecha a cadena de texto permite mostrar fechas en un formato legible para humanos. Esto es útil para registros, interfaces de usuario y almacenamiento en formatos que no soportan tipos de datos de fecha.
-
 ## Cómo hacerlo:
 ```Javascript
 let hoy = new Date(); // Crea un objeto de fecha para la fecha y hora actuales.

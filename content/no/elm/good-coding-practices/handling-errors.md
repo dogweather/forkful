@@ -11,9 +11,6 @@ title: "Feilh\xE5ndtering"
 weight: 16
 ---
 
-## Hva & Hvorfor?
-Å håndtere feil betyr å skrive kode som kan forutse og håndtere når ting går galt. Utviklere gjør dette for å forhindre krasj, beskytte dataintegritet og tilby brukere smidige tilbakefallsløsninger.
-
 ## Hvordan:
 Elms kjernefilosofi er Ingen Kjøretidsunntak. Så Elm utnytter sitt typesystem med typer som `Maybe` og `Result` for å håndtere feil.
 

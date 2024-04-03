@@ -13,12 +13,7 @@ title: Lavorare con YAML
 weight: 41
 ---
 
-## Cosa & Perché?
-
-YAML, che sta per "YAML Ain't Markup Language" (YAML non è un linguaggio di markup), è un linguaggio di serializzazione dati leggibile dall'uomo comunemente usato per i file di configurazione. I programmatori lo usano spesso a causa della sua semplicità e leggibilità in una miriade di ambienti di programmazione, inclusa la sfera di scripting di Visual Basic for Applications (VBA) per migliorare l'interoperabilità, nonché la memorizzazione e lo scambio di dati.
-
 ## Come fare:
-
 Lavorare con YAML in VBA richiede di capire come analizzare e convertire YAML in un formato che VBA possa manipolare facilmente, solitamente dizionari o collezioni. Purtroppo, VBA non supporta nativamente l'analisi o la serializzazione di YAML. Tuttavia, è possibile utilizzare una combinazione di strumenti di conversione JSON e oggetti dizionario per lavorare con i dati YAML, considerando la stretta relazione tra YAML e JSON.
 
 Prima, converti i tuoi dati YAML in JSON utilizzando un convertitore online o uno strumento di conversione YAML-to-JSON all'interno del tuo ambiente di sviluppo. Una volta convertito, puoi utilizzare il seguente esempio per analizzare JSON in VBA, notando che questo approccio ti consente indirettamente di lavorare con YAML:
@@ -49,7 +44,6 @@ End Function
 In questo esempio, la funzione `JsonParser` è un segnaposto per dove analizzeresti il JSON. Diverse librerie sono disponibili per aiutare con l'analisi del JSON, dato che le librerie di analisi diretta di YAML per VBA sono scarse.
 
 ## Approfondimento
-
 L'assenza di una gestione diretta di YAML in VBA può essere attribuita alla sua età e all'ambiente per cui è stato costruito, che inizialmente non era progettato tenendo in mente i moderni formati di serializzazione dei dati. YAML stesso è emerso come un popolare formato di configurazione e serializzazione nei primi anni 2000, in concomitanza con l'avvento di applicazioni che richiedevano file di configurazione più friendly.
 
 I programmatori tipicamente sfruttano strumenti o librerie esterni per colmare il divario tra VBA e YAML. Questo spesso comporta la conversione di YAML in JSON, come mostrato, a causa del supporto JSON disponibile tramite varie librerie e la somiglianza tra JSON e YAML in termini di struttura e scopo.

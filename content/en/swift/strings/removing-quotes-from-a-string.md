@@ -11,12 +11,7 @@ title: Removing quotes from a string
 weight: 9
 ---
 
-## What & Why?
-
-Removing quotes from a string means stripping out any quotation marks that encase the content. We do this to sanitize inputs, prepare data for storage, or get rid of unnecessary text formatting that might interfere with data processing.
-
 ## How to:
-
 Swift lets you tackle the quote removal job pretty handily. Here’s a quick example using `replacingOccurrences(of:with:)`, which does exactly what it sounds like—swaps out bits of text with something else, or nothing at all.
 
 ```swift
@@ -33,7 +28,6 @@ print(singleQuoteRemoved) // Heres another example.
 The output will be quotes-free strings all set for whatever you’ve got planned next.
 
 ## Deep Dive
-
 We've been "cleaning up" strings like these since the dawn of programming. In early days, it was more about conserving precious memory and avoiding syntax errors in processing inputs. Fast forward to today, and it's about good data hygiene—especially when dealing with JSON or preparing strings for database work. A stray quote can throw a wrench into SQL queries faster than you can say "syntax error."
 
 Alternatives? Well, if you find `replacingOccurrences(of:with:)` a bit too vanilla, you might delve into regular expressions for more complex patterns or when you want to remove quotes only in certain positions. Swift's `NSRegularExpression` class is your friend here. But remember, regex can be a double-edged sword—powerful but sometimes overkill.
@@ -41,7 +35,6 @@ Alternatives? Well, if you find `replacingOccurrences(of:with:)` a bit too vanil
 Implementation-wise, `replacingOccurrences(of:with:)` is a method provided by `String` in Swift, which internally calls more complex string manipulation functions that handle Unicode and other intricacies of modern text processing. It's one of those "simple on the surface, complex under the hood" deals that Swift handles so you don't have to.
 
 ## See Also
-
 For more on string manipulations in Swift:
 
 - The Swift Programming Language (Strings and Characters): [Swift.org Documentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

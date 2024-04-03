@@ -14,12 +14,7 @@ title: "Convertir une cha\xEEne en minuscules"
 weight: 4
 ---
 
-## Quoi & Pourquoi ?
-
-Convertir une chaîne de caractères en minuscules est une opération fondamentale qui consiste à transformer tous les caractères d'une chaîne donnée en leurs équivalents en minuscules. Les programmeurs effectuent généralement cette opération pour réaliser des comparaisons insensibles à la casse ou pour standardiser les entrées de texte pour un traitement ultérieur, rendant les applications plus conviviales et les données plus cohérentes.
-
 ## Comment faire :
-
 En Dart, vous pouvez convertir une chaîne en minuscules en utilisant la méthode `toLowerCase()` fournie par la classe `String`. Cette méthode retourne une nouvelle chaîne avec tous les caractères en majuscules convertis en minuscules. Voyons comment cela fonctionne avec un exemple simple :
 
 ```dart

@@ -10,11 +10,7 @@ title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---
 
-## Hva & Hvorfor?
-Komplekse tall utvider vårt tallsystem til å inkludere kvadratroten av negative tall, hvor den 'imaginære' enheten i er lik kvadratroten av -1. Programmerere bruker dem innen felt som ingeniørvitenskap, fysikk og signalbehandling, fordi de er flinke til å modellere bølger, svingninger og alt som roterer.
-
 ## Hvordan:
-
 La oss definere en grunnleggende klasse for komplekse tall i Kotlin:
 
 ```kotlin
@@ -40,13 +36,11 @@ fun main() {
 ```
 
 ## Dypdykk
-
 Komplekse tall ble først nevnt på 1500-tallet, for å løse kube-ligninger som manglet reelle løsninger. Ingeniørfag og fysikk har enormt stor fordel av komplekse tall for å analysere vekselstrømskretser og bølgeformer. Du kunne alternativt bruke et bibliotek som Kotlin sitt `koma` eller `ejml` for tungt arbeid.
 
 Operasjoner på komplekse tall speiler reelle tall, men med oppmerksomhet til den imaginære enheten. Multiplikasjon, for eksempel, følger distribusjonsegenskapen, og husker at `i^2 = -1`. Denne imaginære enheten gjør det mulig for oss å representere flerdimensjonale tall, avgjørende i ulike vitenskapelige beregninger.
 
 ## Se også
-
 Kotlin Matematikkbiblioteker:
 
 - [koma](https://koma.kyonifer.com/): Et vitenskapelig databehandlingsbibliotek for Kotlin.

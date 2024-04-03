@@ -10,12 +10,7 @@ title: Obteniendo la fecha actual
 weight: 29
 ---
 
-## Qué & Por Qué?
-
-Obtener la fecha actual significa acceder al valor de la fecha y hora del momento presente. Los programadores lo hacen para funciones como registros, marcas de tiempo, o funciones dependientes del tiempo real.
-
 ## Cómo hacerlo:
-
 ```Elm
 module Main exposing (main)
 
@@ -66,11 +61,9 @@ Sample output:
 ```
 
 ## Profundización
-
 Históricamente, obtener la fecha en programación ha estado vinculado al sistema operativo del host. En Elm, se usa el módulo `Time` para interactuar con fechas y horas. Alternativas incluyen utilizar bibliotecas de terceros para funcionalidades más complejas. Elm trata la hora como Posix, que representa milisegundos desde la época Unix (1 de enero de 1970). Se prefiere usar `Cmd Msg` para mantener las actualizaciones dentro del arquitectura de Elm.
 
 ## Ver También
-
 - [Documentación oficial de Elm - Time](https://package.elm-lang.org/packages/elm/time/latest/)
 - [Elm Guide - Effects](https://guide.elm-lang.org/effects/)
 - [Paquete `justinmimbs/time-extra` para funciones adicionales de tiempo](https://package.elm-lang.org/packages/justinmimbs/time-extra/latest/)

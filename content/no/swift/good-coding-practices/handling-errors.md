@@ -11,9 +11,6 @@ title: "Feilh\xE5ndtering"
 weight: 16
 ---
 
-## Hva og hvorfor?
-Å håndtere feil i Swift betyr å forutse og svare på problemer som dukker opp når koden din kjører. Vi gjør det for å kontrollere kaoset—holde apper fra å krasje og gi brukeren en jevn opplevelse.
-
 ## Hvordan:
 Swift bruker feilhåndtering med `do`, `try` og `catch` blokker. La oss ta en titt:
 

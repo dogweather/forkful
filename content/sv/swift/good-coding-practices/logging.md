@@ -10,9 +10,6 @@ title: Loggning
 weight: 17
 ---
 
-## Vad & Varför?
-Loggning är processen att registrera applikationsbeteenden, fel och annan viktig information till ett beständigt medium, som en fil eller databas. Programmerare gör detta för att spåra sina applikationers hälsa och prestanda, för att felsöka problem och för att hålla ett öga på vad som händer under huven i produktionsmiljöer.
-
 ## Hur man gör:
 I Swift kan du skriva loggar till konsolen med utskriftsuttryck eller den mer flexibla `os.log` API-et, vilket kopplar in i det Enhetsamma Loggsystemet på Apples plattformar.
 

@@ -14,12 +14,7 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä & Miksi?
-
-YAML, joka tulee sanoista "YAML Ain't Markup Language", on ihmisen luettavissa oleva datan serialisointistandardi, jota käytetään yleisesti konfiguraatiotiedostoissa ja tietojen vaihdossa eri kielten vakiintuneiden tietorakenteiden välillä. Ohjelmoijat työskentelevät usein YAML:n kanssa sen yksinkertaisuuden ja luettavuuden vuoksi, erityisesti projekteissa, jotka vaativat laajaa konfiguraatiota tai kun siirretään rakenteellista tietoa eri järjestelmien välillä.
-
 ## Kuinka:
-
 Vaikka Google Apps Script (GAS) ei natiivisti tue YAML:n jäsennystä eikä serialisointia, voit manipuloida YAML-dataa käyttämällä JavaScript-kirjastoja tai kirjoittamalla omia jäsennysfunktioita. Esimerkkinä, katsotaan miten jäsentää YAML-merkkijonoa käyttäen omia funktioita, koska ulkoisia kirjastoja ei voi suoraan tuoda GAS:iin.
 
 Oletetaan, että sinulla on yksinkertainen YAML-konfiguraatio:
@@ -77,7 +72,6 @@ Kun `testYamlParsing()` suoritetaan, se tuottaa:
 Tämä oma jäsennystapa on melko perus ja voi vaatia säätöä monimutkaisten YAML-tiedostojen käsittelyyn.
 
 ## Syväkatsaus
-
 YAML, joka alun perin julkaistiin vuonna 2001, pyrki olemaan ihmislukijaystävällisempi kuin sen edeltäjät kuten XML tai JSON. Vaikka sen yksinkertaisuutta ja helppokäyttöisyyttä arvostetaankin laajalti, YAML:n käsittely Google Apps Scriptissä esittää haasteita johtuen suorasta tuesta puuttumisesta. Tämän seurauksena ohjelmoijat usein turvautuvat JavaScriptin monipuolisuuteen jäsennelläkseen ja tuottaakseen YAML-dataa. Kuitenkin, monimutkaisissa käyttötapauksissa, erityisesti niissä, jotka liittyvät syvään sisäkkäisyyteen ja edistyneisiin tietorakenteisiin, tämä menetelmä voi olla työläs ja altis virheille.
 
 JSON, päinvastoin, on natiivisti tuettu Google Apps Scriptissä ja useimmissa muissa ohjelmointiympäristöissä, tarjoten suoraviivaisemman lähestymistavan datan sarjallistamiseen ja deserialisointiin ilman lisäjäsennystarvetta. JSON:n syntaksi on vähemmän verbosinen kuin YAML:n, mikä tekee siitä sopivamman datavaihtoon web-sovelluksissa. Siitä huolimatta, YAML pysyy suosittuna konfiguraatiotiedostoissa ja tilanteissa, joissa ihmisen luettavuus on ensiarvoisen tärkeää.

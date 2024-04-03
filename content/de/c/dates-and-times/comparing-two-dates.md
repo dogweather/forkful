@@ -13,12 +13,7 @@ title: Zwei Daten vergleichen
 weight: 27
 ---
 
-## Was & Warum?
-
-Das Vergleichen zweier Daten in C beinhaltet die Bestimmung der chronologischen Beziehung zwischen ihnen – ob ein Datum dem anderen vorausgeht oder ob sie gleich sind. Diese Fähigkeit ist entscheidend in Anwendungen, die sich mit Planung, Fristen oder der Protokollierung beschäftigen, da sie die Organisation und Manipulation von zeitkritischen Daten ermöglicht.
-
 ## Wie geht das:
-
 C hat keinen integrierten Typ für Daten, was die Verwendung der `time.h`-Bibliothek zur Arbeit mit Datum- und Zeitstrukturen notwendig macht. Die `tm`-Struktur und die Funktion `difftime()` werden üblicherweise verwendet, um Daten zu vergleichen. Unten ist ein Beispiel, das zeigt, wie man zwei Daten vergleicht:
 
 ```c
@@ -68,7 +63,6 @@ Das erste Datum liegt vor dem zweiten Datum.
 Dieses Programm initialisiert zwei `tm`-Strukturen mit spezifischen Daten, wandelt diese mit `mktime()` in das `time_t`-Format um und vergleicht sie schließlich mit `difftime()`, das die Differenz in Sekunden (als `double`) zwischen den beiden Zeiten zurückgibt.
 
 ## Vertiefung
-
 In den Anfangstagen von C erforderten Datums- und Zeitoperationen manuelle Berechnungen, oft unter Berücksichtigung von Schaltjahren, der unterschiedlichen Anzahl von Tagen in den Monaten und sogar Schaltsekunden. Die Einführung von `time.h` im ANSI-C-Standard brachte eine Standardisierung der Zeitbehandlung in C, was die Datums- und Zeitoperationen vereinfachte.
 
 Die Verwendung von `time.h` für den Datenvergleich ist unkompliziert, hat aber Einschränkungen. Die `tm`-Struktur berücksichtigt keine Zeitzonen oder Sommerzeit, und `difftime()` liefert nur die Differenz in Sekunden und fehlt an Feingranularität für bestimmte Anwendungen.

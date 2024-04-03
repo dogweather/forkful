@@ -11,9 +11,6 @@ title: "Extraction de sous-cha\xEEnes"
 weight: 6
 ---
 
-## Quoi et Pourquoi ?
-Extraire des sous-chaînes, c'est comme prendre un biscuit dans la boîte : vous choisissez une partie spécifique d'une chaîne de caractères. Les programmeurs font ça pour manipuler des données, valider des entrées, ou simplement afficher ce qu'ils veulent.
-
 ## Comment faire :
 ```Haskell
 import Data.Text (Text)

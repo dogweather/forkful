@@ -14,9 +14,6 @@ title: Twee datums vergelijken
 weight: 27
 ---
 
-## Wat & Waarom?
-Het vergelijken van twee datums in Google Apps Script, een afgeleide van JavaScript, speciaal ontworpen voor de suite van Google-applicaties, is een essentiële taak voor ontwikkelaars die zich bezighouden met planning, tijdlijnen of enige datumgerelateerde gegevens. Begrijpen hoe je datums nauwkeurig kunt vergelijken stelt programmeurs in staat om functies zoals deadlines, evenementenplanning of inhoudsplanning effectief te implementeren.
-
 ## Hoe:
 In Google Apps Script worden datums vergeleken met behulp van JavaScript Date objecten, waardoor het gebruik van standaardmethoden mogelijk is om te evalueren welke van de twee datums vroeger is, later of als ze hetzelfde zijn. Hier is een basisaanpak:
 

@@ -14,12 +14,7 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä & Miksi?
-
-CSV-tiedostojen (pilkuilla erotetut arvot) käsittelyyn kuuluu tekstidatan jäsentäminen ja tuottaminen riveihin ja sarakkeisiin järjestettynä, käyttäen pilkkuja erillisten arvojen erottamiseen. Ohjelmoijat usein harjoittavat tätä prosessia helpottaakseen datan vaihtoa eri sovellusten, tietokantojen välillä tai datan käsittely- ja analysointitehtäviin, johtuen CSV:n laajasta tuesta ja yksinkertaisuudesta.
-
 ## Miten:
-
 Luassa CSV-tiedostojen käsittelyä voidaan lähestyä käyttämällä kielen tarjoamia perustiedoston IO-operaatioita, ilman tarvetta ulkoisille kirjastoille yksinkertaisissa tehtävissä. Monimutkaisemmissa operaatioissa, kuten erityistapausten (esim. pilkut arvojen sisällä) käsittelyssä, voi olla hyödyllistä käyttää kolmannen osapuolen kirjastoja, kuten `lua-csv`.
 
 ### CSV-tiedoston lukeminen

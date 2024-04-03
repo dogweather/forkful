@@ -14,9 +14,6 @@ title: "Zamiana liter na wielkie w \u0142a\u0144cuchu znak\xF3w"
 weight: 2
 ---
 
-## Co i dlaczego?
-Kapitalizacja ciągu znaków polega na zmodyfikowaniu ciągu tak, aby jego pierwszy znak był wielką literą, podczas gdy reszta ciągu pozostaje niezmieniona. Programiści często wykonują kapitalizację ciągów, aby zapewnić spójność danych, szczególnie dla nazw i miejsc, lub aby przestrzegać reguł gramatycznych w interfejsach użytkownika.
-
 ## Jak to zrobić:
 Clojure, jako język JVM, umożliwia bezpośrednie wykorzystanie metod ciągów znaków z Javy. Oto podstawowy przykład, jak skapitalizować ciąg znaków w Clojure:
 

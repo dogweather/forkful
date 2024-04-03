@@ -13,12 +13,7 @@ title: Eine Zeichenkette in Kleinbuchstaben umwandeln
 weight: 4
 ---
 
-## Was & Warum?
-
-Das Umwandeln eines Strings in Kleinbuchstaben ist eine grundlegende Operation, die das Transformieren aller Zeichen eines gegebenen Strings in ihre Kleinbuchstaben-Äquivalente beinhaltet. Programmierer führen diese Operation typischerweise durch, um Groß-/Kleinschreibung-unabhängige Vergleiche zu erreichen oder Texteingaben für die weitere Verarbeitung zu standardisieren. Damit werden Anwendungen benutzerfreundlicher und Daten konsistenter.
-
 ## Wie:
-
 In Dart können Sie einen String mit der Methode `toLowerCase()` der `String`-Klasse in Kleinbuchstaben umwandeln. Diese Methode gibt einen neuen String zurück, bei dem alle Großbuchstaben in Kleinbuchstaben umgewandelt wurden. Sehen wir uns an, wie dies mit einem einfachen Beispiel funktioniert:
 
 ```dart

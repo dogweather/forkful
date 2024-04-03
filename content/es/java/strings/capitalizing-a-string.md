@@ -12,9 +12,6 @@ title: Capitalizando una cadena de texto
 weight: 2
 ---
 
-## ¿Qué y por qué?
-Capitalizar una cadena implica modificar la primera letra de cada palabra en la cadena a mayúsculas, asegurando que el resto permanezcan en minúsculas. Esta tarea común de manipulación de cadenas es útil para formatear texto en aplicaciones, como preparar nombres de usuarios o títulos para ser mostrados de acuerdo a la convención o corrección gramatical.
-
 ## Cómo hacerlo:
 La biblioteca estándar de Java no proporciona un método directo para capitalizar cadenas enteras de una vez, pero puedes lograr esto con una combinación de métodos integrados. Para necesidades más sofisticadas, bibliotecas de terceros como Apache Commons Lang ofrecen soluciones directas.
 
@@ -48,7 +45,6 @@ public class CapitalizeString {
 Este fragmento de código convierte toda la cadena a minúsculas, luego itera a través de cada carácter, capitalizando la primera letra de cada palabra. Considera los espacios, puntos y apóstrofos como separadores de palabras.
 
 ### Usando Apache Commons Lang
-
 La biblioteca Apache Commons Lang ofrece una solución más elegante con el método `WordUtils.capitalizeFully()`, que maneja varios casos límite y delimitadores por ti:
 
 ```java

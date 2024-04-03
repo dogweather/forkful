@@ -11,9 +11,6 @@ title: Manipulation des nombres complexes
 weight: 14
 ---
 
-## Quoi & Pourquoi ?
-Les nombres complexes étendent l'idée de lignes numériques unidimensionnelles à un plan complexe bidimensionnel. Les programmeurs les utilisent dans des domaines tels que l'ingénierie, la physique et les graphiques pour des calculs nécessitant deux composants, comme les signaux ou les rotations.
-
 ## Comment faire :
 Dans Fish, nous gérons les nombres complexes en utilisant `math` avec des parties réelles et imaginaires. Voici comment commencer :
 

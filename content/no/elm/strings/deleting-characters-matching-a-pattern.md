@@ -11,9 +11,6 @@ title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---
 
-## What & Why?
-I Elm handler det om å slette tegn som matcher et mønster for å rense data eller formatere strenger for spesifikke brukstilfeller. Det hjelper å holde dataene konsistente og letter lesbarheten.
-
 ## How to:
 Elm har ikke innebygd regex, så vi bruker `String` funksjoner for å fjerne spesifikke tegn.
 

@@ -13,35 +13,26 @@ title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---
 
-## O Que & Porquê?
-
-Arredondar números é o processo de ajustar um número para o seu inteiro mais próximo ou para um número especificado de casas decimais. Programadores frequentemente arredondam os números para simplificar cálculos, melhorar a legibilidade ou preparar dados para exibição, garantindo consistência e clareza nos resultados numéricos.
-
 ## Como fazer:
-
 Dart fornece métodos nativos em seu tipo fundamental `num` para operações de arredondamento. Aqui, exploraremos métodos como `round()`, `floor()`, `ceil()`, e como arredondar para um número específico de casas decimais.
 
 ### Arredondando para o inteiro mais próximo:
-
 ```dart
 var number = 3.56;
 print(number.round()); // Saída: 4
 ```
 
 ### Arredondando para baixo:
-
 ```dart
 print(number.floor()); // Saída: 3
 ```
 
 ### Arredondando para cima:
-
 ```dart
 print(number.ceil()); // Saída: 4
 ```
 
 ### Arredondando para um número específico de casas decimais:
-
 Para arredondar para um número específico de casas decimais, podemos usar o método `toStringAsFixed()`, que retorna uma string, ou usar uma combinação de `pow` de `dart:math` para um resultado numérico.
 
 ```dart

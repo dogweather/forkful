@@ -18,9 +18,6 @@ title: "HTML \uD30C\uC2F1"
 weight: 43
 ---
 
-## 무엇 & 왜?
-HTML 파싱은 HTML 코드 조각을 분해하여 그 구조와 내용을 파악하는 것을 의미합니다. 프로그래머는 데이터를 추출하거나, 내용을 조작하거나, 형식과 시스템 간에 정보를 이전하기 위해 이 작업을 수행합니다.
-
 ## 방법:
 Ruby에서 HTML을 파싱하려면 `gem install nokogiri`로 'Nokogiri' 젬을 설치하십시오. Nokogiri는 Ruby에서 HTML 및 XML을 다루는 스위스 군용 나이프와 같습니다. 다음은 간단한 예입니다:
 

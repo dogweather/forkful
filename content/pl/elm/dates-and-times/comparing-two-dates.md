@@ -11,9 +11,6 @@ title: "Por\xF3wnywanie dw\xF3ch dat"
 weight: 27
 ---
 
-## What & Why? (Co i Dlaczego?)
-Porównywanie dwóch dat to sprawdzanie, która jest wcześniejsza, równa lub późniejsza. Programiści robią to, by obsłużyć terminy, harmonogramy oraz przebieg czasu w aplikacjach.
-
 ## How to: (Jak to zrobić:)
 ```Elm
 import Time exposing (Posix)

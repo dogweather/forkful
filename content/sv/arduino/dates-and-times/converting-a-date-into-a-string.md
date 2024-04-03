@@ -11,9 +11,6 @@ title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---
 
-## Vad & Varför?
-Att konvertera ett datum till en sträng innebär att omvandla tidsdata till läsbart textformat. Programmerare gör detta för att visa datum på skärmar eller för att logga händelser i system.
-
 ## Hur gör man:
 ```Arduino
 #include <Wire.h>

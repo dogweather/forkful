@@ -10,9 +10,6 @@ title: "\u0412\u0438\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F \u0434\u043
 weight: 7
 ---
 
-## What & Why? (Що та Чому?)
-Finding the length of a string means determining how many characters it contains. Programmers often need this to validate input, loop through characters, or for string manipulation.
-
 ## How to: (Як робити:)
 ```C#
 string example = "Привіт, світ!";

@@ -12,9 +12,6 @@ title: "Tulevan tai menneen p\xE4iv\xE4m\xE4\xE4r\xE4n laskeminen"
 weight: 26
 ---
 
-## Mikä ja Miksi?
-Tulevaisuuden tai menneisyyden päivämäärän laskeminen tarkoittaa päivien lisäämistä tai vähentämistä nykyisestä päivästä. Ohjelmoijat hyödyntävät tätä toimintoa aikataulujen hallinnassa, määräaikojen laskemisessa ja logien aikaleimojen käsittelyssä.
-
 ## Miten:
 ```Bash
 # Tulevaisuuden päivämäärän laskeminen (3 päivää nykyhetkestä)

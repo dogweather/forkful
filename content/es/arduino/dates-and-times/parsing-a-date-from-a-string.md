@@ -15,12 +15,7 @@ title: Analizando una fecha a partir de una cadena de texto
 weight: 30
 ---
 
-## Qué y Por Qué?
-
-Analizar una fecha de una cadena en Arduino implica extraer y convertir los componentes de la fecha (año, mes, día) de una representación textual a un formato que se pueda utilizar para el mantenimiento del tiempo, comparaciones o manipulaciones dentro de los bocetos. Los programadores realizan frecuentemente esta tarea para interactuar con componentes como relojes en tiempo real, registradores, o para procesar la entrada de APIs web y interfaces de usuario donde las fechas podrían presentarse en un formato legible.
-
 ## Cómo hacerlo:
-
 Enfoque directo sin una biblioteca de terceros:
 
 ```cpp

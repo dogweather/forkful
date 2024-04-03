@@ -10,9 +10,6 @@ title: "Organizando o c\xF3digo em fun\xE7\xF5es"
 weight: 18
 ---
 
-## O Quê & Por Quê?
-Jogar todo o seu código em uma grande pilha? Má ideia. Dividi-lo em funções? Boa ideia. Isso mantém o seu código em Elm limpo, reutilizável e mais fácil de testar. Ao organizar seu código em funções, você agrupa o código que executa tarefas específicas juntas, o que torna sua aplicação mais fácil de manter e entender.
-
 ## Como fazer:
 Aqui está um trecho de código Elm com uma função simples para cumprimentar um usuário:
 

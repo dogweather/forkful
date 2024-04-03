@@ -10,9 +10,6 @@ title: Arbeiten mit TOML
 weight: 39
 ---
 
-## Was & Warum?
-TOML steht für Toms Offensichtliche, Minimalistische Sprache. Es ist ein Daten-Serialisierungsformat, das für Konfigurationsdateien verwendet wird. Programmierer nutzen es, weil es leicht zu lesen, zu schreiben ist und sich gut auf eine Hash-Tabelle abbilden lässt.
-
 ## Wie geht das:
 Du benötigst eine TOML-Parsing-Bibliothek. Ich empfehle `toml4j`. Füge sie so deinem Projekt hinzu:
 

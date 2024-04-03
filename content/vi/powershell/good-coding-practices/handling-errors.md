@@ -15,9 +15,6 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Cái gì & Tại sao?
-Xử lý lỗi trong PowerShell có nghĩa là dự đoán những sự cố và quản lý chúng một cách mượt mà. Lập trình viên làm điều này để ngăn chặn sự cố và cung cấp phản hồi hữu ích cho người dùng.
-
 ## Làm thế nào:
 ```PowerShell
 # Cơ bản về Try-Catch để xử lý ngoại lệ
@@ -38,6 +35,7 @@ try {
 
 # Sử dụng biến $Error để kiểm tra lỗi cuối cùng
 ```
+
 ## Sâu hơn nữa
 PowerShell đã đi một chặng đường dài kể từ khi nó ra đời dưới tên Monad. Việc xử lý lỗi trở nên mạnh mẽ hơn theo thời gian, mang lại những tính năng tương tự như trong các ngôn ngữ lập trình khác. Cú pháp `try-catch-finally` là một ví dụ về việc chia sẻ từ các ngôn ngữ như C#. Trước đó, những người viết kịch bản phải dựa nhiều vào việc kiểm tra điều kiện và sử dụng biến tự động `$Error`.
 

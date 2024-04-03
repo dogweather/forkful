@@ -13,12 +13,7 @@ title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---
 
-## Mikä ja miksi?
-
-JSONin käsittelyyn kuuluu JSON-muotoiltujen merkkijonojen jäsentäminen tietorakenteiksi, joita Elixir voi käsitellä, ja Elixir-tietorakenteiden serialisointi takaisin JSON-merkkijonoiksi. Tämä on olennaista verkkokehityksessä, API:ssa ja konfiguraatiotiedostoissa, sillä JSON on kevyt, tekstipohjainen, kieliriippumaton tiedonvaihtoformaat, jota käytetään laajalti sen yksinkertaisuuden ja ihmisen luettavuuden vuoksi.
-
 ## Kuinka:
-
 Elixirissä voit käyttää `Jason`-kirjastoa, joka on suosittu valinta JSONin jäsentämiseen ja tuottamiseen. Lisää ensin `Jason` projektisi riippuvuuksiin `mix.exs`-tiedostossa:
 
 ```elixir

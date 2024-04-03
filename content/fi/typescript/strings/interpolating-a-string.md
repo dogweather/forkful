@@ -11,9 +11,6 @@ title: Merkkijonon interpolointi
 weight: 8
 ---
 
-## What & Why? (Mitä & Miksi?)
-String-interpolointi on tapa sisällyttää muuttujien arvoja suoraan merkkijonoihin. Ohjelmoijat käyttävät tätä ominaisuutta, koska se tekee koodista selvempää ja tiiviimpää.
-
 ## How to: (Kuinka tehdä:)
 ```typescript
 // Alustetaan muuttuja

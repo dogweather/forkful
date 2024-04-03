@@ -10,12 +10,7 @@ title: Sending an HTTP request
 weight: 44
 ---
 
-## What & Why?
-
-Sending an HTTP request in Dart is the process of initiating communications with a web server or API from a Dart application. Programmers do it to fetch data from the web, submit forms, and interact with RESTful services, making it a fundamental operation for web, server-side, and mobile application development in Dart.
-
 ## How to:
-
 Dart includes the `http` package, a powerful and convenient way to work with HTTP resources. First, include it in your pubspec.yaml file:
 
 ```yaml

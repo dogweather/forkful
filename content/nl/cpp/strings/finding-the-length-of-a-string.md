@@ -11,12 +11,7 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-
-De lengte van een string vinden betekent bepalen hoeveel karakters deze bevat. Programmeurs doen dit om invoer te valideren, loops op te zetten, of gegevens voor te bereiden voor bepaalde API-functies die de grootte van de string vereisen.
-
 ## Hoe te:
-
 C++ biedt een eenvoudige manier om de lengte van een string te vinden met de `length()` methode van de `std::string` klasse. Maar als je van de oude stempel bent, kun je nog steeds met C-stijl strings en `strlen()` gaan. Hier zijn beide in actie:
 
 ```C++
@@ -44,7 +39,6 @@ Lengte van string (C-stijl): 13
 ```
 
 ## Diepere Duik:
-
 Oorspronkelijk erfde C++ de C-stijl karakterreeksen en de bijbehorende `strlen()` functie van C. `strlen()` berekent de lengte door door de array te lopen totdat het het null-karakter, `'\0'`, tegenkomt. Dit is een eenvoudige maar effectieve strategie, maar het kan niet op tegen de efficiëntie van `std::string.length()`, dat typisch de lengte bijhoudt voor snelle ophaling.
 
 Alternatieven? Zeker:
@@ -55,7 +49,6 @@ Alternatieven? Zeker:
 Let op, `std::string::length()` retourneert een `size_t` type, een ondertekend geheel getal, dat je kan verrassen met onverwachte gedragingen als je het mengt met ondertekende types in uitdrukkingen.
 
 ## Zie Ook:
-
 - C++ referentie voor `std::string::length()`: https://en.cppreference.com/w/cpp/string/basic_string/length
 - C++ referentie voor `strlen()`: https://en.cppreference.com/w/cpp/string/byte/strlen
 - Meer over `std::string` versus C-stijl strings: https://www.learncpp.com/cpp-tutorial/4-4a-c-style-strings/

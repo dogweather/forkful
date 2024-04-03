@@ -10,9 +10,6 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad & Varför?
-Komplexa tal består av en reell del och en imaginär del. Programmerare använder dem inom områden såsom signalbehandling, kvantmekanik och närhelst uträkningen kräver det, eftersom vanliga reella tal helt enkelt inte är tillräckliga.
-
 ## Hur:
 Bash stödjer inte komplexa tal av sig självt. Du kommer ofta att använda ett externt verktyg som `bc` med dess `-l` alternativ. Så här knäcker du komplexa tal i bash:
 

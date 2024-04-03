@@ -11,9 +11,6 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## Co i Dlaczego?
-Wysyłanie żądania HTTP polega na poproszeniu serwera o dane lub zasoby. Programiści robią to, aby komunikować się z aplikacjami internetowymi, pobierać dane, wysyłać formularze, i więcej.
-
 ## Jak to zrobić:
 C++ nie ma wbudowanej obsługi HTTP, ale możesz użyć biblioteki, jak `CPR` dla prostoty:
 ```cpp

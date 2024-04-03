@@ -11,9 +11,6 @@ title: "Interpolera en str\xE4ng"
 weight: 8
 ---
 
-## Vad & Varför?
-Interpolering av strängar innebär att man blandar variabler och strängar för att skapa en ny, sammansatt sträng. Programmerare interpolerar strängar för att dynamiskt bygga text, vilket gör koden mer flexibel och läsbar.
-
 ## Så Här Gör Du:
 Java 15 (och senare) införde `String.format()` för stränginterpolering:
 

@@ -11,9 +11,6 @@ title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---
 
-## What & Why?
-Czytanie argumentów linii poleceń to sposob odbierania danych z zewnątrz przez twoją aplikację Node.js. Robimy to, żeby elastycznie manipulować zachowaniem programu bez potrzeby zmiany kodu.
-
 ## How to:
 Użyj `process.argv`, żeby dostać się do argumentów. Pierwsze dwa argumenty to ścieżka do środowiska Node i pliku, który wykonujesz, więc prawdziwe argumenty startują z indexu 2.
 

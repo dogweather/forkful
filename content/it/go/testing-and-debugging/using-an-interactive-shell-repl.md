@@ -13,12 +13,7 @@ title: Utilizzo di un guscio interattivo (REPL)
 weight: 34
 ---
 
-## Cosa e Perché?
-
-Un shell interattivo, o Ciclo Leggi-Valuta-Stampa (REPL), ti permette di sperimentare con il codice Go in tempo reale, eseguendo comandi e ottenendo feedback immediati. Questo approccio è ampiamente utilizzato per l'apprendimento, il debug e la prototipazione, poiché aggira il ciclo tradizionale di modifica-compilazione-esecuzione, rendendo il processo di sviluppo più veloce e intuitivo.
-
 ## Come fare:
-
 Anche se Go non include un REPL incorporato, la comunità ha creato strumenti come `gore` per colmare questa lacuna. Prima di tutto, installa `gore` eseguendo:
 
 ```
@@ -61,7 +56,6 @@ Area del cerchio con raggio 4: 50.26548245743669
 ```
 
 ## Approfondimento:
-
 Il concetto di REPL è antico, risalente alle macchine Lisp degli anni '60, fornendo un'esperienza di programmazione interattiva. A differenza di linguaggi come Python o JavaScript, Go è stato progettato senza un REPL, concentrandosi invece su binari compilati per performance e semplicità. Ciò riflette la filosofia di Go sulla semplicità e la sua progettazione per software scalabile e mantenibile.
 
 Tuttavia, strumenti come `gore` o `goplay` mostrano la versatilità della comunità Go nel colmare questa lacuna. Questi strumenti analizzano dinamicamente il codice Go e utilizzano il pacchetto `go/eval` o meccanismi simili per eseguirlo in tempo reale, sebbene con alcune limitazioni rispetto a un ambiente REPL nativo. Queste limitazioni derivano dal sistema di tipi di Go e dal modello di compilazione, che possono rendere la valutazione al volo impegnativa.

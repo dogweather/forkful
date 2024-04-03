@@ -10,9 +10,6 @@ title: "Conversion d'une date en cha\xEEne de caract\xE8res"
 weight: 28
 ---
 
-## Quoi & Pourquoi?
-Convertir une date en une chaîne de caractères permet de formater des dates de façon lisible. Les programmeurs utilisent cette conversion pour l'affichage, le stockage et la communication entre systèmes.
-
 ## Comment faire :
 ```clojure
 ;; Import clj-time pour le travail avec les dates

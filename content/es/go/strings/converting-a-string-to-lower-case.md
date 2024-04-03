@@ -14,12 +14,7 @@ title: "Convirtiendo una cadena de texto a min\xFAsculas"
 weight: 4
 ---
 
-## Qué y por qué?
-
-Convertir una cadena a minúsculas es una operación fundamental que permite uniformidad y consistencia en el procesamiento de texto, esencial para tareas como comparaciones insensibles a mayúsculas o normalización de texto. Los programadores a menudo realizan esta operación para preparar datos para su posterior procesamiento o para asegurar la compatibilidad a través de diferentes sistemas y locales.
-
 ## Cómo hacerlo:
-
 En Go, convertir una cadena a minúsculas se puede lograr fácilmente utilizando el paquete `strings`, específicamente la función `ToLower()`. Esta función toma una cadena como entrada y devuelve una nueva cadena con todos los caracteres en mayúsculas convertidos a minúsculas. Aquí hay un ejemplo rápido:
 ```go
 package main
@@ -44,7 +39,6 @@ Minúsculas: hello, world!
 Este ejemplo demuestra el enfoque directo para convertir cualquier cadena dada a minúsculas en Go. Es simple, con el trabajo pesado realizado por el método `ToLower()`, abstrayendo las complejidades de las variadas codificaciones de caracteres y las reglas de casos específicos de cada localidad.
 
 ## Estudio Profundo
-
 La implementación de `strings.ToLower()` en la biblioteca estándar de Go es eficiente y consciente de Unicode, lo que significa que maneja correctamente los caracteres más allá del conjunto básico ASCII, incluyendo letras de alfabetos no latinos. Esto es particularmente importante en un contexto global donde el software puede procesar texto de diversos idiomas y conjuntos de caracteres.
 
 Históricamente, el manejo de la conversión de mayúsculas y minúsculas en lenguajes de programación ha evolucionado significativamente. Los primeros lenguajes a menudo carecían de soporte nativo para tales operaciones, o sus implementaciones se limitaban al conjunto de caracteres ASCII, lo que llevaba a un comportamiento incorrecto con otros alfabetos. Go fue diseñado con soporte Unicode desde el principio, reflejando un enfoque moderno para la manipulación de cadenas.

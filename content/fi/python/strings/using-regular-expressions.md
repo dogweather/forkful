@@ -13,9 +13,6 @@ title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---
 
-## Mikä ja miksi?
-Säännölliset lausekkeet (regex) ovat malleja, joita käytetään merkkiyhdistelmien etsimiseen merkkijonoista. Ohjelmoijat käyttävät niitä tekstin etsimiseen, muokkaamiseen tai manipulointiin määriteltyjen mallien perusteella, mikä tekee niistä välttämättömiä tehtävissä kuten datan validointi, jäsentäminen tai muuntaminen.
-
 ## Kuinka:
 Pythonissa regexin käyttöön liittyy `re`-moduuli, joka tarjoaa joukon funktioita tekstin käsittelyyn säännöllisten lausekkeiden avulla.
 

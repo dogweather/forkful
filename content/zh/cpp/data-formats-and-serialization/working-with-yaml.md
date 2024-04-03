@@ -22,12 +22,7 @@ title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 weight: 41
 ---
 
-## 什么 & 为什么？
-
-YAML，全称为YAML Ain't Markup Language（YAML不是标记语言），是一种人类可读的数据序列化格式。程序员使用它进行配置文件编写、数据转储和存储层次化数据，因为与XML或JSON相比，它的可读性更高，语法更易于理解。
-
 ## 如何操作：
-
 在C++中操作YAML，一个流行的选择是使用`yaml-cpp`库。首先，确保你已经安装并正确链接了`yaml-cpp`到你的C++项目中。
 
 **读取YAML文件：**

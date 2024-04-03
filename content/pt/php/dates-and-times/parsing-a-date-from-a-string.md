@@ -13,12 +13,7 @@ title: Analisando uma data a partir de uma string
 weight: 30
 ---
 
-## O que & Por quê?
-
-Analisar uma data a partir de uma string em PHP envolve converter um texto que representa uma data e/ou hora em um objeto `DateTime` do PHP ou outros formatos de data/hora. Isso é crucial para fins de validação, manipulação, armazenamento e apresentação de dados, especialmente ao trabalhar com entradas de usuários ou dados de fontes externas.
-
 ## Como fazer:
-
 A classe integrada `DateTime` do PHP fornece um conjunto poderoso de funções para analisar e trabalhar com datas. Você pode criar uma instância de `DateTime` a partir de uma string de data usando o construtor, e então formatá-la conforme necessário. Veja como:
 
 ```php

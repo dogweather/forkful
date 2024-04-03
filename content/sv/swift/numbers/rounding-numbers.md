@@ -10,12 +10,7 @@ title: Avrundning av tal
 weight: 13
 ---
 
-## Vad & Varför?
-
-Att avrunda tal innebär att approximera ett numeriskt värde till en specifik precision, vanligtvis för att ta bort oönskade decimaler. Programmerare avrundar för att hantera minne, förbättra läsbarheten och möta domänspecifika krav som valutabegränsningar.
-
 ## Hur man gör:
-
 Swift erbjuder flera sätt att avrunda tal. Här är ett smakprov:
 
 ```Swift
@@ -39,7 +34,6 @@ print("Standard: \(standardRounded), Decimal: \(decimalRounded), Ned: \(roundedD
 Utdata: `Standard: 3.0, Decimal: 3.142, Ned: 3.0, Upp: 4.0`
 
 ## Djupdykning
-
 Historiskt sett är avrundning ett matematiskt koncept som föregår datorer, avgörande i handel och vetenskap. Swifts `Foundation` ramverk erbjuder omfattande avrundningsfunktionalitet:
 
 - `round(_: )` är bra gammal halv-upp avrundning.
@@ -49,5 +43,4 @@ Historiskt sett är avrundning ett matematiskt koncept som föregår datorer, av
 Var medveten om `Decimal` typen för precisa ekonomiska beräkningar, som undviker fel med flyttal. Utforska också `NSDecimalNumber` för kompatibilitet med Objective-C.
 
 ## Se även
-
 - IEEE-standarden för flyttalsaritmetik (IEEE 754): [IEEE 754](https://ieeexplore.ieee.org/document/4610935)

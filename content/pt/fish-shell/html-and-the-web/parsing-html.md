@@ -13,12 +13,7 @@ title: Analisando HTML
 weight: 43
 ---
 
-## O Que & Por Quê?
-
-Analisar HTML é sobre extrair dados ou informações de conteúdo HTML, uma tarefa comum ao lidar com dados da web. Programadores fazem isso para automatizar a extração de informações de sites, para tarefas como raspagem de web, mineração de dados ou testes automatizados.
-
 ## Como Fazer:
-
 O shell Fish, predominantemente, não é projetado para analisar HTML diretamente. No entanto, ele se destaca em juntar ferramentas Unix como `curl`, `grep`, `sed`, `awk`, ou usando ferramentas especializadas como `pup` ou `beautifulsoup` em um script Python. Abaixo estão exemplos que mostram como aproveitar essas ferramentas dentro do Fish shell para analisar HTML.
 
 ### Usando `curl` e `grep`:
@@ -36,7 +31,6 @@ Saída:
 ```
 
 ### Usando `pup` (uma ferramenta de linha de comando para analisar HTML):
-
 Primeiro, garanta que o `pup` esteja instalado. Então você pode usá-lo para extrair elementos por suas tags, ids, classes, etc.
 
 ```fish
@@ -46,7 +40,6 @@ curl -s https://exemplo.com | pup 'a attr{href}'
 A saída, similar ao exemplo do `grep`, listaria atributos href de tags `<a>`.
 
 ### Com um script Python e `beautifulsoup`:
-
 Embora o Fish em si não possa analisar HTML nativamente, ele se integra perfeitamente com scripts Python. Abaixo está um exemplo conciso que usa Python com `BeautifulSoup` para analisar e extrair títulos do HTML. Garanta que você tenha `beautifulsoup4` e `requests` instalados no seu ambiente Python.
 
 **parse_html.fish**

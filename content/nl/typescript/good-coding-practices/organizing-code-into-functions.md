@@ -12,9 +12,6 @@ title: Code organiseren in functies
 weight: 18
 ---
 
-## Wat & Waarom?
-Code organiseren in functies betekent dat je je code opdeelt in herbruikbare, modulaire blokken. We doen dit om dingen DRY (Don't Repeat Yourself) te houden, waardoor code schoner, eenvoudiger te lezen en gemakkelijk te debuggen is.
-
 ## Hoe te:
 Stel je voor dat je een basisrekenmachine maakt. In plaats van de logica voor optellen overal waar je het nodig hebt te schrijven, maak je een `add` functie:
 

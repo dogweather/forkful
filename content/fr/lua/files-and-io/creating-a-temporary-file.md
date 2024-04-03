@@ -10,11 +10,6 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## What & Why?
-(Quoi et Pourquoi ?)
-
-Créer un fichier temporaire, c’est comme prendre des notes sur un bout de papier qu’on jette après usage. Les programmeurs en ont besoin lorsqu'ils désirent stocker des données transitoires sans polluer le système de fichiers.
-
 ## How to:
 (Comment faire :)
 

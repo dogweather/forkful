@@ -17,9 +17,6 @@ title: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32"
 weight: 6
 ---
 
-## What & Why? (是什么？为什么？)
-提取子字符串就是从一个更长的字符串中抽取一部分。程序员这样做来分析文本，提取需要的信息，比如用户输入，文件内容，或网络请求数据。
-
 ## How to: (如何执行：)
 ```Elm
 import String exposing (slice)

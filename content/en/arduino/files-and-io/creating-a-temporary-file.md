@@ -11,12 +11,7 @@ title: Creating a temporary file
 weight: 21
 ---
 
-## What & Why?
-
-Creating a temporary file means making a file that's only needed for a short time or for the current session. Programmers do it to store intermediate data without cluttering up long-term storage or for data that only needs to exist while the program is running.
-
 ## How to:
-
 Arduino typically interacts with microcontrollers that don't have a traditional filesystem—so "files" aren't managed the same way they are on a PC. Instead, we use EEPROM (a small amount of memory that persists across resets) or an SD card with a shield. Here's a basic example of writing and reading temporary data to EEPROM:
 
 ```Arduino
@@ -109,7 +104,6 @@ Temporary data string
 ```
 
 ## Deep Dive
-
 Historically, temporary files in programming cater to needs like caching, logs, or inter-process communications. On systems like PCs, with full operating systems, temp files are widespread. In Arduino, it's different. Microcontrollers have limited non-volatile storage (EEPROM), or we add external storage like SD cards.
 
 Alternatives to EEPROM for short-term data include using RAM (quickly lost between power cycles and reboots) or external memory like Flash or a hard-wired IC.
@@ -119,7 +113,6 @@ Implementation-wise, when writing to EEPROM on an Arduino, remember that it has 
 Using an SD card for temporary storage is akin to regular file handling on a PC. It offers more space, but requires proper management like ensuring decent quality cards, handling file opening/closing correctly, and understanding that it's relatively slow compared to EEPROM or RAM.
 
 ## See Also
-
 - [EEPROM Library Reference](https://www.arduino.cc/en/Reference/EEPROM)
 - [SD Library Reference](https://www.arduino.cc/en/Reference/SD)
 - [Arduino File I/O](https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadWrite)

@@ -10,9 +10,6 @@ title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---
 
-## Hva & Hvorfor?
-Komplekse tall utvider de reelle tallene med en ekstra del, den imaginære enheten 'i'. Programmerere bruker dem i ulike domener, inkludert signalbehandling, elektromagnetisk teori, og fraktaler, der beregninger som involverer kvadratroten av et negativt tall er rutine.
-
 ## Hvordan:
 Clojure gir innebygd støtte for komplekse tall gjennom `clojure.lang.Numbers` hjelpeklassen. Bruk `complex` for å opprette komplekse tall og utføre aritmetikk.
 

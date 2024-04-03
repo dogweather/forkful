@@ -13,9 +13,6 @@ title: Vergleich von zwei Daten
 weight: 27
 ---
 
-## Was & Warum?
-Das Vergleichen von zwei Daten in Dart beinhaltet die Auswertung des zeitlichen Unterschieds oder der Reihenfolge zwischen ihnen, eine wesentliche Funktionalität in Anwendungen, die Ereignisse, Fristen oder zeitkritische Daten verwalten. Programmierer benötigen dies häufig, um die Logiksteuerung, Validierung oder Sortierung von Daten basierend auf Zeitbedingungen zu kontrollieren.
-
 ## Wie geht das:
 In Dart können Sie Daten mit der `DateTime`-Klasse vergleichen, die Methoden wie `isBefore`, `isAfter` und `isAtSameMomentAs` für den direkten Vergleich bietet. Zusätzlich kann der Unterschied zwischen Daten mit der Methode `difference()` ermittelt werden, die ein `Duration`-Objekt bereitstellt, das die Zeitspanne zwischen den beiden Zeitpunkten detailliert beschreibt.
 

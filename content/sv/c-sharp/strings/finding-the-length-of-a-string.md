@@ -11,9 +11,6 @@ title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---
 
-## What & Why?
-Att hitta längden av en sträng innebär att räkna antalet tecken den innehåller. Programmerare behöver detta för att manipulera text, validera inmatning eller bara för att avgöra hur mycket information en sträng bär på.
-
 ## How to:
 C# använder `Length`-egenskapen för att få en strängs längd. Koden är rak: `minSträng.Length`. Enkel som en plätt, så här ser det ut i praktiken:
 

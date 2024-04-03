@@ -13,9 +13,6 @@ title: Analizando HTML
 weight: 43
 ---
 
-## ¿Qué y Por Qué?
-Analizar HTML significa descomponer el marcado de una página web en algo que un programa puede entender y manipular. Los programadores analizan HTML para extraer datos, automatizar interacciones web o migrar contenido entre sistemas.
-
 ## Cómo hacerlo:
 Kotlin facilita el análisis de HTML con bibliotecas como Jsoup. Aquí te mostramos cómo hacerlo:
 

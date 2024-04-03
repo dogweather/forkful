@@ -11,9 +11,6 @@ title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---
 
-## O Que & Porquê?
-Criar um arquivo temporário permite armazenar dados que só são necessários durante a execução de um programa. Programadores fazem isso para economizar memória, gerenciar cache, testar código ou lidar com dados que não precisam ser salvos permanentemente.
-
 ## Como Fazer:
 ```java
 import java.io.File;

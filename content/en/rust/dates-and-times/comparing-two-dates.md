@@ -10,9 +10,6 @@ title: Comparing two dates
 weight: 27
 ---
 
-## What & Why?
-Comparing two dates means checking if they're equal, or if one comes before or after the other. Programmers use this to sort events, validate input, handle expiration, and track durations.
-
 ## How to:
 Rust uses `chrono` to handle dates easily. First, `cargo.toml` needs `chrono = "0.4"`. Then you can compare dates like this:
 

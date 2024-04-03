@@ -11,9 +11,6 @@ title: Werken met TOML
 weight: 39
 ---
 
-## Wat & Waarom?
-TOML, afkorting voor Tom's Obvious, Minimal Language, is een taal voor data-serialisatie. Elm-programmeurs gebruiken het om configuratiegegevens te beheren omdat het leesbaar is voor mensen en netjes in kaart brengt naar sleutel-waardeparen die nodig zijn in applicaties.
-
 ## Hoe:
 Elm heeft geen ingebouwde TOML-parser, maar je kunt interopereren met JavaScript of een community-pakket gebruiken. Hier is hoe je TOML zou kunnen parsen met een hypothetisch `elm-toml` pakket:
 

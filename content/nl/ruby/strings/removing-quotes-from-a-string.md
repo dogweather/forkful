@@ -12,9 +12,6 @@ title: Quotes verwijderen uit een string
 weight: 9
 ---
 
-## Wat & Waarom?
-Het verwijderen van aanhalingstekens uit een string betekent het wegpellen van die dubbele of enkele aanhalingstekens die rondom tekstwaarden wikkelen. Programmeurs doen dit vaak om gebruikersinvoer op te schonen, om consistentie in gegevensverwerking te waarborgen, of om gegevens voor te bereiden voor systemen die in de war kunnen raken door die extra karakters.
-
 ## Hoe:
 Ruby heeft enkele slimme trucjes om die lastige aanhalingstekens weg te knippen. Je kunt de methoden `gsub` of `delete` gebruiken om de klus te klaren. Hier is wat code om op te kauwen:
 

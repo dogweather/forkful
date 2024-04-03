@@ -13,12 +13,7 @@ title: HTML Parsen
 weight: 43
 ---
 
-## Wat & Waarom?
-
-HTML parseren betekent het doorzoeken van HTML-code om informatie te vinden, te extraheren of te manipuleren. Programmeurs doen dit om te interageren met webinhoud—misschien voor het schrapen van gegevens of het automatiseren van browsers.
-
 ## Hoe te beginnen:
-
 Om te beginnen, installeer je een bibliotheek zoals `node-html-parser`. Hier is de terminalopdracht:
 
 ```bash
@@ -47,7 +42,6 @@ console.log(bananas);  // "Banaan"
 ```
 
 ## Diepgaand
-
 HTML parseren is niet nieuw—het bestaat al sinds de vroege dagen van het web. Aanvankelijk zouden ontwikkelaars reguliere expressies kunnen hebben gebruikt, maar dat werd snel rommelig. Enter de DOM Parser: stabiel, maar gebonden aan de browser.
 
 Bibliotheken zoals `node-html-parser` nemen de pijn weg. Ze laten je HTML bevragen zoals je dat met jQuery zou doen, maar dan server-side met Node.js. Het is snel, tolerant voor vieze HTML, en DOM-vriendelijk.
@@ -57,7 +51,6 @@ Er is ook `jsdom`, dat een volledige browseromgeving simuleert. Het is zwaarder 
 Laten we Cheerio ook niet vergeten. Het combineert snelheid met een jQuery-achtige syntaxis en een kleinere voetafdruk, en zit mooi tussen de twee in.
 
 ## Zie Ook
-
 Als je dorstig bent naar meer, duik dan in deze:
 - [DOM Parsing and Serialization W3C Specification](https://www.w3.org/TR/DOM-Parsing/)
 - [node-html-parser op GitHub](https://github.com/taoqf/node-html-parser)

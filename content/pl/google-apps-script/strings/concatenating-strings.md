@@ -13,16 +13,10 @@ title: "Konkatenacja ci\u0105g\xF3w znak\xF3w"
 weight: 3
 ---
 
-## Co i dlaczego?
-
-Konkatenacja łańcuchów polega na łączeniu dwóch lub więcej łańcuchów w jeden łańcuch. Programiści robią to, aby dynamicznie konstruować wiadomości, adresy URL lub jakąkolwiek formę tekstu, która wymaga mieszanki treści statycznej i zmiennej.
-
 ## Jak to zrobić:
-
 W Google Apps Script, który opiera się na JavaScript, istnieje kilka sposobów na konkatenację łańcuchów. Oto niektóre z popularnych metod:
 
 ### Używając operatora plusa (`+`):
-
 ```javascript
 var firstName = "John";
 var lastName = "Doe";
@@ -31,7 +25,6 @@ Logger.log(fullName); // Wyjście: John Doe
 ```
 
 ### Używając metody `concat()`:
-
 ```javascript
 var string1 = "Hello";
 var string2 = "World";
@@ -40,7 +33,6 @@ Logger.log(combinedString); // Wyjście: Hello World
 ```
 
 ### Używając literałów szablonowych (backticks):
-
 To nowoczesny i elastyczny sposób na konkatenację łańcuchów, pozwalający łatwo osadzać wyrażenia wewnątrz łańcuchów.
 
 ```javascript
@@ -52,7 +44,6 @@ Logger.log(message); // Wyjście: Uczenie się Google Apps Script jest zabawne!
 Każda z tych metod ma swoje przypadki użycia, a wybór między nimi zwykle zależy od wymagań dotyczących czytelności i złożoności łączonych łańcuchów.
 
 ## Dogłębna analiza
-
 Konkatenacja łańcuchów jest podstawowym aspektem nie tylko w Google Apps Script, ale w wielu językach programowania. Historycznie, konkatenację łańcuchów często wykonywano za pomocą operatora plusa lub specjalizowanych funkcji/metod, takich jak `concat()`. Jednakże, z wprowadzeniem literałów szablonowych w ECMAScript 2015 (ES6), które Google Apps Script obsługuje, programiści zyskali bardziej potężny i intuicyjny sposób na radzenie sobie z łańcuchami.
 
 Literały szablonowe nie tylko upraszczają składnię osadzania wyrażeń w łańcuchach, ale również obsługują łańcuchy wieloliniowe bez potrzeby jawnego wprowadzania znaków nowej linii. To redukuje potencjalne błędy i poprawia czytelność kodu, zwłaszcza przy pracy z złożonymi łańcuchami lub podczas podstawiania wielu zmiennych do szablonu tekstu.

@@ -11,12 +11,7 @@ title: "C\xE1lculo de una fecha en el futuro o el pasado"
 weight: 26
 ---
 
-## ¿Qué y por qué?
-
-Calcular una fecha en el futuro o pasado es sencillamente determinar una fecha sumando o restando días a una fecha dada. Los programadores realizan esto para, por ejemplo, establecer recordatorios, calcular vencimientos o planificar eventos futuros.
-
 ## Cómo hacerlo:
-
 ```Arduino
 #include <TimeLib.h>
 
@@ -54,11 +49,9 @@ void loop() {
 ```
 
 ## Profundización
-
 En el contexto histórico, calcular fechas es una necesidad humana antigua relacionada con la agricultura, la navegación y la astronomía. En programación, librerías como `TimeLib.h` en Arduino simplifican esta tarea manejando complicaciones como años bisiestos y la conversión entre unidades de tiempo. Alternativas incluyen usar RTC (Real Time Clock) hardware para un manejo más preciso y resiliente del tiempo. La implementación en el código se base en `time_t`, un tipo de dato que representa tiempos en segundos desde la época Unix (1 enero 1970), permitiendo cálculos con operaciones aritméticas simples.
 
 ## Ver también
-
 - Time library for Arduino: https://www.pjrc.com/teensy/td_libs_Time.html
 - Información sobre `time_t`: https://www.cplusplus.com/reference/ctime/time_t/
 - Documentación del Arduino: https://www.arduino.cc/reference/en/

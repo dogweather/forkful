@@ -14,12 +14,7 @@ title: Uso de matrices asociativas
 weight: 15
 ---
 
-## ¿Qué y Por Qué?
-
-Los arreglos asociativos, o como los llama Elm, Diccionarios, mapean claves a valores de una manera que hace que la búsqueda, inserción y eliminación de valores sean super rápidas. Son tu opción ideal cuando necesitas llevar un registro de cosas sin un orden estricto, como preferencias de usuario o listas de inventario.
-
 ## Cómo hacerlo:
-
 En Elm, trabajas con Diccionarios en el módulo `Dict`, así que vamos a sumergirnos en un ejemplo rápido:
 
 ```Elm
@@ -52,7 +47,6 @@ Salida de muestra al mostrar `dictToList`:
 Esto demuestra las operaciones básicas: crear, actualizar, acceder e iterar sobre un Diccionario.
 
 ## Análisis Profundo
-
 Los Diccionarios en Elm internamente usan una estructura conocida como un árbol AVL - un tipo de árbol de búsqueda binaria autoequilibrado. Esta elección encuentra un equilibrio entre asegurar que operaciones como insertar, obtener y eliminar tengan un buen rendimiento (complejidad de tiempo logarítmica) y mantener la simplicidad en el manejo de los datos.
 
 A pesar de las fortalezas del `Dict` de Elm, no es una solución que sirva para todo. Para colecciones que están ordenadas o necesitan ser iteradas secuencialmente, Lista o Array podrían ser más apropiados. Además, al trabajar con un conjunto fijo de claves conocidas, usar tipos personalizados (la versión de enums de Elm) podría ofrecer más seguridad en el tipo y una intención más clara en tu código.

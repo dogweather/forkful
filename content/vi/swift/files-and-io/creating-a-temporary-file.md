@@ -16,9 +16,6 @@ title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Cái gì & Tại sao?
-Tạo một tệp tạm thời là để tạo ra một tệp chỉ tồn tại trong thời gian ngắn để lưu trữ dữ liệu mà không cần giữ lâu dài. Lập trình viên thực hiện việc này để xử lý dữ liệu chỉ liên quan trong suốt thời gian thực thi của chương trình hoặc để tránh làm đầy bộ nhớ của người dùng bằng những tệp không cần thiết.
-
 ## Làm thế nào:
 Swift làm cho việc tạo tệp tạm thời trở nên khá dễ dàng, sử dụng lớp `FileManager`. Dưới đây là cách bạn tạo một tệp tạm thời và viết một số văn bản vào trong đó:
 

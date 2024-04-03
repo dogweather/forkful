@@ -11,9 +11,6 @@ title: Sammenlikning av to datoer
 weight: 27
 ---
 
-## Hva & Hvorfor?
-Sammenligning av to datoer handler om å finne ut om de er like, eller hvilken som kommer før eller etter den andre. Utviklere gjør dette for å håndtere frister, events eller datafiltrering i apper.
-
 ## Hvordan:
 ```kotlin
 import java.time.LocalDate

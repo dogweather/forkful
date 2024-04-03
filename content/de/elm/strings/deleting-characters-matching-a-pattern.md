@@ -10,9 +10,6 @@ title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---
 
-## Was & Warum?
-Das Löschen von Zeichen, die einem Muster entsprechen, ist das Entfernen bestimmter Teile eines Strings, die ein definiertes Muster erfüllen. Programmierer nutzen dies, um Daten zu bereinigen oder zu formatieren, unnötiges Rauschen zu entfernen oder Eingaben zu validieren.
-
 ## Vorgehensweise:
 In Elm gibt es keine eingebaute RegEx-Bibliothek wie in anderen Sprachen. Zum Musterabgleich und Löschen von Zeichen können wir mit `String`-Funktionen arbeiten oder externe Pakete nutzen.
 

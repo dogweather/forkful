@@ -13,9 +13,6 @@ title: Att Arbeta med YAML
 weight: 41
 ---
 
-## Vad & Varför?
-YAML, som står för "YAML Ain't Markup Language," är en läsbar standard för dataserialisering som programmerare använder för konfigurationsfiler, datadumpning och datatransmission mellan språk. Det är populärt på grund av sin läsbarhet och enkelhet, vilket gör det till ett vanligt val för konfigurering av applikationer och tjänster.
-
 ## Hur man gör:
 I Java kan du arbeta med YAML-filer med hjälp av tredjepartsbibliotek eftersom Java Standard Edition inte inkluderar inbyggt stöd för YAML. Ett populärt bibliotek är SnakeYAML, som tillåter parsing och generering av YAML-data på ett enkelt sätt.
 

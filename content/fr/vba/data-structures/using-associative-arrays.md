@@ -14,12 +14,7 @@ title: Utilisation des tableaux associatifs
 weight: 15
 ---
 
-## Quoi et Pourquoi ?
-
-Les tableaux associatifs, souvent connus sous le nom de dictionnaires dans Visual Basic pour Applications (VBA), permettent aux programmeurs de créer des collections de paires clé-valeur. Cette fonctionnalité est cruciale pour un stockage et une récupération de données efficaces, offrant une manière plus flexible et intuitive de gérer les données par rapport aux indices de tableaux traditionnels.
-
 ## Comment faire :
-
 Dans VBA, l'objet `Dictionary` offre une fonctionnalité similaire aux tableaux associatifs. Vous devez d'abord ajouter une référence au Microsoft Scripting Runtime pour l'utiliser :
 
 1. Dans l'éditeur VBA, allez dans Outils > Références...
@@ -55,7 +50,6 @@ Next Key
 ```
 
 ## Exploration approfondie
-
 L'objet `Dictionary` interagit en coulisse avec des composants du Windows Scripting Host. Ainsi, c'est un objet COM à liaison tardive, qui était une manière courante d'étendre la fonctionnalité de VBA dans le passé. Son utilisation dans VBA peut considérablement améliorer la capacité du langage à manipuler des ensembles de données complexes sans imposer une structure rigide, comme c'est le cas avec les tableaux traditionnels ou les plages Excel.
 
 Une limitation à garder à l'esprit est que l'accès au `Dictionary` nécessite de définir une référence au Microsoft Scripting Runtime, ce qui peut compliquer la distribution de vos projets VBA. Des alternatives comme les Collections existent dans VBA mais manquent de certaines des caractéristiques clés du `Dictionary`, comme la capacité de vérifier facilement l'existence d'une clé sans déclencher d'erreur.

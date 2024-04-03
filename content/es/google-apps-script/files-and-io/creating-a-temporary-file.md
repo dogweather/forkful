@@ -13,12 +13,7 @@ title: Creando un archivo temporal
 weight: 21
 ---
 
-## ¿Qué y por qué?
-
-Crear un archivo temporal en Google Apps Script implica generar un archivo destinado para uso a corto plazo, típicamente para procesamiento de datos intermediario, depuración o propósitos de caché. Los programadores hacen esto para manejar datos temporalmente sin saturar el espacio de almacenamiento permanente o cuando la permanencia de los datos es innecesaria más allá del alcance del proceso actual.
-
 ## Cómo:
-
 En Google Apps Script, crear un archivo temporal se puede lograr utilizando el servicio DriveApp, el cual proporciona un método sencillo para crear, leer y eliminar archivos en Google Drive. Aquí te mostramos cómo puedes crear un archivo de texto temporal, escribir algunos datos en él y luego eliminarlo después de usarlo:
 
 ```javascript
@@ -53,7 +48,6 @@ Archivo temporal eliminado
 Este script de ejemplo muestra la creación de un archivo temporal, realizar una operación para leer su contenido y finalmente, eliminar el archivo para limpiar.
 
 ## En Profundidad
-
 El concepto de crear archivos temporales en el desarrollo de software es tan antiguo como el concepto de gestión de archivos en sí. En los sistemas de archivos tradicionales, los archivos temporales a menudo se crean en directorios temp designados y son cruciales para varios procesos intermedios, como ordenar grandes conjuntos de datos, mantener datos de sesión para aplicaciones web o almacenar fragmentos de datos durante procesos de conversión de archivos.
 
 En Google Apps Script, el proceso de crear archivos temporales aprovecha la infraestructura de Google Drive, que ofrece una mezcla interesante de gestión de archivos basada en la nube con conceptos de programación tradicionales. Sin embargo, este método de crear archivos temporales en Google Drive no está exento de sus limitaciones y costos, considerando los límites de cuota que Google Drive impone. Además, la latencia en acceder a Google Drive a través de la red en comparación con un sistema de archivos local puede ser un factor crítico para aplicaciones de alto rendimiento.

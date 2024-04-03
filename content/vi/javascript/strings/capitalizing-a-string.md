@@ -15,9 +15,6 @@ title: "Vi\u1EBFt hoa m\u1ED9t chu\u1ED7i"
 weight: 2
 ---
 
-## Điều gì & Tại sao?
-Việc viết hoa một chuỗi nghĩa là thay đổi ký tự đầu tiên của một từ thành chữ cái in hoa. Các lập trình viên thực hiện điều này để tuân theo quy ước ngôn ngữ, cải thiện tính dễ đọc hoặc định dạng văn bản như tiêu đề.
-
 ## Làm thế nào:
 JavaScript không có phương thức tích hợp sẵn để viết hoa, nhưng dưới đây là một hàm đơn giản thực hiện điều đó:
 

@@ -11,9 +11,6 @@ title: "L\xE4sa en textfil"
 weight: 22
 ---
 
-## Vad & Varför?
-Läsa en textfil innebär att tillgå och använda innehållet i en fil i textformat. Programmerare gör detta för att hantera konfigurationer, skript, eller användardata – det är grundläggande för många automatiseringsprocesser och program.
-
 ## Hur gör man:
 För att läsa en textfil i Fish kan du använda cat, less, eller något liknande kommando. Här är ett enkelt exempel med cat:
 

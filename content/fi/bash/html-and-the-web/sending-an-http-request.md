@@ -10,9 +10,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## What & Why? (Mikä & Miksi?)
-HTTP-pyyntö on verkkoresurssin (yleensä web-sivun tai API:n) hakemiskutsu. Ohjelmoijat lähettävät näitä pyyntöjä tietojen noutamiseksi, lähettämiseksi, päivittämiseksi tai poistamiseksi.
-
 ## How to: (Kuinka tehdä:)
 Bashissa voit käyttää `curl` tai `wget` komentoa HTTP-pyyntöjen tekemiseen. Yksinkertaisin esimerkki on GET-pyyntö.
 

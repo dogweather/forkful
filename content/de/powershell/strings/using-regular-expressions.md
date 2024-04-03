@@ -14,12 +14,7 @@ title: "Regul\xE4re Ausdr\xFCcke verwenden"
 weight: 11
 ---
 
-## Was & Warum?
-
-Reguläre Ausdrücke (regex) sind Zeichenfolgen, die ein Suchmuster bilden, das hauptsächlich für die Stringsuche und -manipulation verwendet wird. Programmierer nutzen regex in PowerShell für Aufgaben wie Datenvalidierung, Parsing und Transformation aufgrund seiner Effizienz und Flexibilität beim Umgang mit komplexen Mustern.
-
 ## Wie geht das:
-
 In PowerShell können Sie die Operatoren `-match`, `-replace` und `-split` unter anderen verwenden, um Aktionen mit regulären Ausdrücken durchzuführen. Lassen Sie uns einige Beispiele erkunden:
 
 ### Verwendung von `-match` um zu prüfen, ob ein String einem Muster entspricht

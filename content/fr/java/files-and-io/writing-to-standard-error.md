@@ -12,10 +12,8 @@ title: "\xC9crire sur l'erreur standard"
 weight: 25
 ---
 
-## Quoi & Pourquoi ?
-Écrire sur la sortie d'erreur standard (stderr) consiste à afficher des messages d'erreur et des diagnostics sur la console ou le terminal. Les programmeurs le font pour séparer les informations d'erreur de la sortie standard (stdout), facilitant ainsi le débogage et l'analyse des logs.
-
 ## Comment faire :
+
 
 ### Sortie stderr basique en Java
 Java fournit une manière simple d'écrire sur stderr en utilisant `System.err.print()` ou `System.err.println()`. Voici comment vous le faites :
@@ -44,7 +42,6 @@ Cela imprimera directement le message d'erreur sur le flux d'erreur standard.
 Pour des applications nécessitant une gestion d'erreurs et des logs plus sophistiqués, l'utilisation d'une bibliothèque de journalisation comme SLF4J avec Logback ou Log4J2 est courante. Cela permet une plus grande flexibilité dans la gestion de la sortie d'erreurs, incluant la redirection de fichiers, le filtrage et la mise en forme.
 
 #### Exemple avec Logback
-
 D'abord, ajoutez la dépendance pour Logback à votre fichier `pom.xml` (Maven) ou `build.gradle` (Gradle). Pour Maven :
 
 ```xml

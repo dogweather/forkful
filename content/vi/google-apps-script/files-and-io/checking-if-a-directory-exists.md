@@ -16,12 +16,7 @@ title: "Ki\u1EC3m tra n\u1EBFu m\u1ED9t th\u01B0 m\u1EE5c t\u1ED3n t\u1EA1i"
 weight: 20
 ---
 
-## Cái gì & Tại sao?
-
-Việc kiểm tra xem một thư mục có tồn tại trong Google Apps Script đề cập đến việc xác minh sự hiện diện của một thư mục bên trong Google Drive. Các lập trình viên thường thực hiện kiểm tra này để tránh lỗi hoặc tạo thư mục trùng lặp khi quản lý tập tin và thư mục một cách lập trình.
-
 ## Cách thức:
-
 Google Apps Script không cung cấp trực tiếp phương thức "exists" cho các thư mục. Thay vào đó, chúng ta sử dụng khả năng tìm kiếm của Google Drive để kiểm tra xem có thư mục có tên cụ thể tồn tại hay không. Dưới đây là một ví dụ từng bước:
 
 ```javascript
@@ -57,7 +52,6 @@ Thư mục không tồn tại.
 Script này tận dụng phương thức `getFoldersByName` để lấy tất cả các thư mục trong Drive của người dùng mà khớp với tên đã chỉ định. Do tên không độc nhất trong Drive, phương thức này trả về `FolderIterator`. Sự hiện diện của một mục tiếp theo (`hasNext()`) trong người lặp này chứng tỏ thư mục tồn tại.
 
 ## Diving sâu hơn
-
 Trong lịch sử, quản lý tập tin trong môi trường web và đám mây đã phát triển đáng kể. Google Apps Script, cung cấp một API rộng lớn cho Google Drive, cho phép thực hiện các thao tác quản lý tập tin và thư mục tinh vi, bao gồm cả cơ chế tìm kiếm và kiểm tra đã được trình bày. Tuy nhiên, một điểm đáng chú ý là sự thiếu vắng của một kiểm tra tồn tại trực tiếp, có thể do Google Drive cho phép nhiều thư mục cùng tên, điều này trái ngược với nhiều hệ thống tập tin yêu cầu tên duy nhất trong cùng một thư mục.
 
 Trong bối cảnh này, việc sử dụng phương thức `getFoldersByName` là một giải pháp tạm thời hiệu quả nhưng có thể giới thiệu sự không hiệu quả trong tình huống có số lượng lớn thư mục có tên trùng lặp. Một cách tiếp cận thay thế có thể bao gồm việc duy trì một chỉ mục hoặc quy ước đặt tên cụ thể cho ứng dụng để đảm bảo kiểm tra nhanh chóng, đặc biệt khi hiệu suất trở thành mối quan tâm quan trọng.

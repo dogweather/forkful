@@ -12,9 +12,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---
 
-## O Que & Por Quê?
-Enviar uma requisição HTTP com autenticação básica significa incluir credenciais de usuário e senha codificadas em base64 no cabeçalho da requisição. Programadores fazem isso para acessar recursos protegidos em um servidor.
-
 ## Como Fazer:
 ```kotlin
 import java.net.HttpURLConnection

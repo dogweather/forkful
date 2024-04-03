@@ -15,9 +15,6 @@ title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
 weight: 22
 ---
 
-## What & Why? (무엇과 왜?)
-파일에서 텍스트 읽기는 저장된 데이터를 읽어서 프로그램에서 사용하는 것입니다. 프로그래머가 데이터 처리, 설정 로드, 로그 분석 등을 위해 필요합니다.
-
 ## How to: (어떻게 하나요?)
 ```java
 import java.nio.file.*;

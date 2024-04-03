@@ -10,9 +10,6 @@ title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---
 
-## Quoi & Pourquoi ?
-Retirer les guillemets d'une chaîne dans PowerShell élimine les marques de citation simple (`'`) ou double (`"`) entourant votre texte. Les programmeurs ont souvent besoin de nettoyer les chaînes pour le traitement, la comparaison ou les besoins de sortie, surtout lorsqu'ils traitent des entrées utilisateur ou l'analyse de fichiers.
-
 ## Comment faire :
 Vous pouvez utiliser l'opérateur `-replace` pour retirer les guillemets d'une chaîne. Voici comment :
 

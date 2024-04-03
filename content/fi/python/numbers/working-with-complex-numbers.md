@@ -11,9 +11,6 @@ title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---
 
-## Mikä ja miksi?
-Kompleksiluvut ovat lukujoukko muotoa `a + bi`, missä `a` ja `b` ovat reaalilukuja, ja `i` on imaginaariyksikkö (`i^2 = -1`). Ohjelmoinnissa niitä käytetään ratkaisemaan ongelmia eri aloilla, kuten sähkötekniikassa, signaalinkäsittelyssä ja kvanttilaskennassa.
-
 ## Kuinka:
 Python tukee sisäänrakennetusti kompleksilukuja. Tässä on tapa, jolla voit kokeilla niitä:
 

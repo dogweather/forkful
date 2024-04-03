@@ -11,9 +11,6 @@ title: Werken met JSON
 weight: 38
 ---
 
-## Wat & Waarom?
-JSON, of JavaScript Object Notation, is een lichtgewicht gegevensuitwisselingsformaat. Programmeurs gebruiken JSON om gegevens op te slaan en uit te wisselen omdat het makkelijk te lezen en te schrijven is voor mensen, en eenvoudig te ontleden voor machines.
-
 ## Hoe doe je dat:
 In Ruby kun je met JSON werken met behulp van de ingebouwde 'json'-bibliotheek. Om het te gebruiken, moet je gewoon 'json' bovenaan je code vereisen.
 

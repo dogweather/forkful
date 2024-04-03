@@ -15,12 +15,7 @@ title: Rechercher et remplacer du texte
 weight: 10
 ---
 
-## Quoi et pourquoi ?
-
-La recherche et le remplacement de texte en programmation facilitent la modification et la gestion des chaînes de caractères, qui constituent une tâche fondamentale dans la manipulation des données et le développement logiciel. Les programmeurs effectuent ces opérations pour mettre à jour, nettoyer ou transformer des données textuelles de manière efficace.
-
 ## Comment faire :
-
 En Go, le paquet `strings` propose différentes fonctions pour rechercher et remplacer du texte dans des chaînes de caractères. Explorons quelques méthodes courantes.
 
 **Utiliser `strings.Contains` pour rechercher du texte :**
@@ -79,7 +74,6 @@ func main() {
 ```
 
 ## Plongée profonde
-
 En Go, la manipulation de texte, y compris les opérations de recherche et de remplacement, est conçue pour être simple et efficace, en tirant parti de la bibliothèque standard complète de Go. Le paquet `strings` fournit des fonctionnalités de base, adaptées à la plupart des cas d'utilisation courants, tandis que le paquet `regexp` s'adresse à des motifs plus complexes nécessitant des expressions régulières.
 
 Historiquement, l'approche de Go pour la gestion des chaînes de caractères et la manipulation de texte a souligné la simplicité et la performance. La décision d'inclure des paquets puissants comme `strings` et `regexp` dans la bibliothèque standard a été motivée par le désir de rendre Go un choix pratique pour le développement web et les applications de traitement de texte, où de telles opérations sont fréquentes.

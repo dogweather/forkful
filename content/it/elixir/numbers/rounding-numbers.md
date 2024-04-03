@@ -10,9 +10,6 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Cosa e Perché?
-Arrotondare i numeri significa aggiustarli a un valore vicino per semplicità o per corrispondere a una certa precisione. È utile per migliorare la leggibilità, ridurre lo spazio di archiviazione o soddisfare esigenze specifiche del dominio, come i calcoli monetari in cui si desidera arrotondare al centesimo più vicino.
-
 ## Come fare:
 In Elixir, puoi usare `Float.round/2` per arrotondare un numero in virgola mobile. Puoi specificare il numero di cifre decimali che vuoi mantenere. Ecco come funziona:
 

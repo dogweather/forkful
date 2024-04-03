@@ -11,9 +11,6 @@ title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---
 
-## O Que & Por Quê?
-Deletar caracteres que combinam com um padrão significa filtrar e remover partes indesejadas de uma string baseando-se em critérios específicos. Programadores fazem isso para limpar dados, validar entradas ou simplificar strings para processamento posterior.
-
 ## Como Fazer:
 ```C#
 using System;

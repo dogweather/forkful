@@ -12,9 +12,6 @@ title: "Envoi d'une requ\xEAte HTTP avec authentification de base"
 weight: 45
 ---
 
-## What & Why?
-Envoyer une requête HTTP avec une authentification de base, c'est envoyer un nom d'utilisateur et un mot de passe codés en base-64 dans l'en-tête de la requête. Les programmeurs font cela pour accéder à des API ou des services web qui exigent une identification simple et rapide.
-
 ## How to:
 ```C#
 using System;

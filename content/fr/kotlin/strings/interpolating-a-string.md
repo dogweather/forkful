@@ -10,9 +10,6 @@ title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---
 
-## What & Why?
-L'interpolation de chaînes, c'est injecter des variables dans du texte. On le fait pour faciliter la formation de messages dynamiques et la lecture du code.
-
 ## How to:
 Kotlin rend l'interpolation de chaînes simple comme bonjour. Tu as juste à placer un dollar `$` suivi par le nom de la variable.
 
@@ -27,6 +24,7 @@ fun main() {
     // Affiche: Tu as 30 ans, donc tu es né en 1993.
 }
 ```
+
 ## Deep Dive
 L'interpolation de chaînes n'est pas nouvelle. Elle date des premiers langages de script comme Perl ou Bash. En Kotlin, elle est propre et intégrée directement dans le langage, évitant la concaténation fastidieuse avec `+`. Kotlin compile ces interpolations en code bytecode efficace, tout comme s'il s'agissait d'une concaténation simple. Mais attention, abuser des interpolations complexes peut réduire la lisibilité. Le bon usage est la clé.
 

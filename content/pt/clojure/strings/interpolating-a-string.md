@@ -11,9 +11,6 @@ title: Interpolando uma string
 weight: 8
 ---
 
-## O que é e Por quê?
-Interpolação de strings permite injetar variáveis diretamente em um pedaço de texto. Programadores fazem isso para construir strings de forma dinâmica e legível, economizando tempo e tornando o código mais limpo.
-
 ## Como fazer:
 ```Clojure
 ;; Usando str para concatenar strings e variáveis

@@ -11,9 +11,6 @@ title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---
 
-## What & Why?
-Att konvertera en sträng till gemener innebär att omvandla alla bokstäver i strängen till små bokstäver. Programmerare gör detta för att standardisera textdata, vilket underlättar jämförelser och sökningar.
-
 ## How to:
 I C# konverterar du en sträng till gemener med `ToLower()` metoden. Här är ett kort exempel:
 

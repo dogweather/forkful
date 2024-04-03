@@ -12,9 +12,6 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## Co i Dlaczego?
-Usuwanie znaków pasujących do wzorca to proces filtrowania tekstu według zdefiniowanych reguł, na przykład za pomocą wyrażeń regularnych. Robimy to, by usunąć niepożądane lub niepotrzebne informacje, zwiększając tym samym czytelność i poprawność danych.
-
 ## Jak to zrobić:
 ```Python
 import re

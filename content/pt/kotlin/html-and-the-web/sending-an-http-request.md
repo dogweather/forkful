@@ -11,9 +11,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---
 
-## O Que & Porquê?
-Enviar uma requisição HTTP é a prática de pedir dados ou serviços de um servidor web usando o protocolo HTTP. Programadores fazem isso para interagir com APIs web, solicitar conteúdo web ou comunicar com outros serviços na internet.
-
 ## Como Fazer:
 Para enviar uma requisição HTTP em Kotlin, você pode usar a biblioteca ktor-client. Aqui tem um exemplo básico para pegar conteúdo de uma URL:
 

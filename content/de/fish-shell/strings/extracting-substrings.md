@@ -11,9 +11,6 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## What & Why?
-Das Extrahieren von Teilstrings ist das Herauslösen bestimmter Zeichen oder Zeichenfolgen aus einem längeren String. Programmierer machen das häufig, um Daten zu parsen, zu validieren oder einfach spezifische Informationen zu isolieren.
-
 ## How to:
 In Fish Shell kannst du Teilstrings extrahieren, indem du `string` Befehle und Indexierung verwendest. Hier ein paar Beispiele:
 

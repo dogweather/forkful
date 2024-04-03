@@ -13,12 +13,7 @@ title: "Redigera filer p\xE5 plats med kommandoradsenradare"
 weight: 32
 ---
 
-## Vad och Varför?
-
-Att redigera filer på plats med CLI (Command Line Interface) enradskommandon i Ruby möjliggör att du modifierar filer direkt från din terminal, utan att behöva öppna dem i en redigerare, göra ändringar och sedan spara dem igen. Denna teknik är otroligt användbar för snabba modifieringar, batchuppdateringar eller automatisering av repetitiva uppgifter, vilket sparar både tid och ansträngning.
-
 ## Hur man gör:
-
 Ruby erbjuder ett enkelt sätt att redigera filer på plats direkt från kommandoraden. Genom att använda Ruby's `-i`-växel kan du be Ruby att verka direkt på de angivna filerna. Låt oss leka med några exempel för att se hur detta fungerar i verkliga livet. Tänk dig att du har en fil `greetings.txt` med följande innehåll:
 
 ```
@@ -50,7 +45,6 @@ ruby -i.bak -pe "gsub(/Hello/, 'Bye')" greetings.txt
 Nu, tillsammans med din redigerade `greetings.txt`, kommer du att hitta en `greetings.txt.bak` i samma mapp, som håller det ursprungliga innehållet.
 
 ## Djupdykning
-
 Magin med att redigera filer på plats i Ruby kommer från dess kombination av Perl-lik textbearbetningskapacitet och Rubys egen syntaktiska elegans. Historiskt sett var Perl det givna språket för snabba enradsscript, särskilt för textmanipulation. Ruby anammade detta paradigm, vilket tillåter kraftfulla kommandoradsscriptingmöjligheter.
 
 Alternativ för att redigera på plats finns i andra språk, såsom Perl självt och sed, en strömredigerare i Unix-system. Var och en har sina styrkor – Perl är känt för sin textbearbetningskraft medan sed är oöverträffat i sin enkelhet för strömredigeringsuppgifter. Dock erbjuder Ruby en balans, som tillhandahåller robust textmanipulation med en mer läsbar och användarvänlig syntax, särskilt för de som redan är bekanta med Ruby.

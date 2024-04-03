@@ -13,9 +13,6 @@ title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---
 
-## Hva & Hvorfor?
-Regulære uttrykk i C++ er sekvenser av tegn som definerer et søkemønster, brukt for strengsøking eller manipulasjon. Programmerere bruker dem til oppgaver som å validere inndata, søke etter forekomster i strenger eller bryte opp strenger i token, noe som gjør dem til et uunnværlig verktøy for effektiv og effektiv tekstbehandling.
-
 ## Hvordan:
 C++11 introduserte støtte for regulære uttrykk i standardbiblioteket, `<regex>`, som tilbyr et robust rammeverk for strengsøking og manipulasjon. Her er et grunnleggende eksempel på bruk av regulære uttrykk for å søke etter et mønster i en streng:
 

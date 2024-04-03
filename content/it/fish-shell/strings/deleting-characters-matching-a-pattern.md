@@ -11,9 +11,6 @@ title: Eliminazione di caratteri che corrispondono a un pattern
 weight: 5
 ---
 
-## Che Cos'è & Perché?
-Rimuovere caratteri che corrispondono a un modello significa filtrare il testo per eliminare specifici caratteri o sequenze di caratteri. Lo facciamo per pulire dati, modificare testo o per preparazione prima dell'elaborazione.
-
 ## Come Fare:
 Ecco alcuni esempi pratici per rimuovere caratteri usando Fish:
 

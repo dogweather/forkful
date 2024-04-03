@@ -12,9 +12,6 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co i dlaczego?
-Usuwanie cudzysłowów z ciągu znaków oznacza usunięcie wszystkich wystąpień pojedynczych (`'`) lub podwójnych (`"`) znaków cudzysłowu otaczających tekst. Programiści często robią to, aby oczyścić dane wejściowe, przygotować ciągi znaków do porównania, lub przetworzyć dane tekstowe, które mogą przypadkowo zawierać cudzysłowy jako część zawartości ciągu.
-
 ## Jak to zrobić:
 Aby usunąć cudzysłowy z ciągu znaków w Arduino, można przeiterować przez znaki i odbudować ciąg bez znaków cudzysłowu. Na przykład:
 

@@ -12,9 +12,6 @@ title: Analisando uma data a partir de uma string
 weight: 30
 ---
 
-## O Que & Por Quê?
-Analisar uma data a partir de uma string consiste em converter um texto que representa uma data em um objeto `Date` ou `DateTime` que o Ruby compreende. Programadores fazem isso para realizar operações como comparações, cálculos ou formatações em datas, tarefas comuns em aplicações que lidam com agendamentos, análises ou processamento de dados.
-
 ## Como Fazer:
 No Ruby, a biblioteca padrão oferece maneiras diretas de analisar datas a partir de strings usando as classes `Date` e `DateTime`. Veja como fazer isso usando métodos integrados do Ruby:
 
@@ -45,7 +42,6 @@ puts parsed_date_custom
 ```
 
 ### Usando bibliotecas de terceiros:
-
 Embora as capacidades integradas do Ruby sejam poderosas, às vezes você pode preferir bibliotecas de terceiros para recursos adicionais ou sintaxe mais simples. Uma escolha popular é a gem `Chronic` para análise de linguagem natural:
 
 1. Primeiro, adicione Chronic ao seu Gemfile e execute `bundle install`:

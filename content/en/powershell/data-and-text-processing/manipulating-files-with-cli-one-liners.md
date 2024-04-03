@@ -10,11 +10,8 @@ title: Manipulating files with CLI one-liners
 weight: 31
 ---
 
-## What & Why?
-
-Manipulating files with CLI one-liners in PowerShell is about swiftly altering, moving, or obtaining file data directly from the command line. Programmers do it for efficiency; it's faster than navigating GUIs or writing lengthy scripts for simple tasks.
-
 ## How to:
+
 
 ### Reading a File
 To quickly display the content of a file, use the `Get-Content` command:
@@ -59,7 +56,6 @@ Get-ChildItem -Path .\*.log | Copy-Item -Destination C:\Logs
 ```
 
 ## Deep Dive
-
 Historically, PowerShell was introduced as a more powerful alternative to the traditional command prompt in Windows, offering unprecedented access to system internals and data stores. It combines command-line speed with the flexibility of scripting, making it an invaluable tool for Windows-based system administrators and developers alike.
 
 Alternatives to PowerShell for file manipulation include Unix-based tools like `sed`, `awk`, `grep`, and `bash` scripting for Linux and MacOS users. While these tools are extremely powerful and have their own merits, PowerShell offers deep integration with Windows environments.

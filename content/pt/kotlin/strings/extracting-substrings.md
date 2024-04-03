@@ -9,9 +9,6 @@ title: Extraindo substrings
 weight: 6
 ---
 
-## O Quê & Por Quê?
-Extrair substrings é pegar partes específicas de uma string. Programadores fazem isso quando precisam manipular ou analisar partes específicas de textos, como lidar com entradas de dados ou extrair informações relevantes.
-
 ## Como Fazer:
 ```Kotlin
 fun main() {

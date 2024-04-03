@@ -11,9 +11,6 @@ title: Conversione di una data in una stringa
 weight: 28
 ---
 
-## What & Why?
-Convertire una data in una stringa significa trasformare il formato della data in testo leggibile. Programmatori lo fanno per personalizzare l'output, per salvare in log, database o per comunicazioni fra sistemi.
-
 ## How to:
 ```Bash
 # Ottieni la data corrente come stringa

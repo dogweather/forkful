@@ -14,9 +14,6 @@ title: Usando expresiones regulares
 weight: 11
 ---
 
-## ¿Qué y Por Qué?
-Las expresiones regulares en C++ son secuencias de caracteres que definen un patrón de búsqueda, utilizadas para el emparejamiento o manipulación de cadenas. Los programadores las usan para tareas tales como validar entradas, buscar ocurrencias dentro de cadenas o dividir cadenas en tokens, convirtiéndolas en una herramienta indispensable para el procesamiento de texto eficiente y efectivo.
-
 ## Cómo hacerlo:
 C++11 introdujo soporte para expresiones regulares en la biblioteca estándar, `<regex>`, ofreciendo un marco robusto para la búsqueda y manipulación de cadenas. Aquí hay un ejemplo básico de cómo usar expresiones regulares para buscar un patrón dentro de una cadena:
 

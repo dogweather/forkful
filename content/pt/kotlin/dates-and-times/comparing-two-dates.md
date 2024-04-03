@@ -11,12 +11,7 @@ title: Comparando duas datas
 weight: 27
 ---
 
-## O Que & Porquê?
-
-Comparar duas datas significa verificar a sua igualdade, antecedência ou posterioridade em relação uma à outra. Programadores fazem isso para controle de eventos, validação de prazos, ou qualquer lógica que dependa do fluxo do tempo.
-
 ## Como Fazer:
-
 ```kotlin
 import java.time.LocalDate
 
@@ -31,13 +26,11 @@ fun main() {
 ```
 
 ## Mergulho Profundo
-
 Historicamente, comparar datas no Java e Kotlin era complicado e propenso a erros com as antigas `Date` e `Calendar`. Com o Java 8, surgiu a `java.time` API, trazendo mais clareza e funcionalidade. No Kotlin, permanecemos com essa API devido à sua robustez e facilidade. Comparar datas pode ser tão simples quanto usar `isBefore()`, `isAfter()` e `isEqual()`, mas cada uma delas serve a um propósito. É importante entender que o cálculo de diferenças precisa considerar fusos horários e ajustes em anos bissextos, algo que `java.time` maneja bem.
 
 Alternativas incluem bibliotecas de terceiros como Joda-Time, mas sua necessidade diminuiu desde que 'java.time' se tornou padrão. Implementações personalizadas deveriam ser evitadas a não ser que haja um motivo muito específico, já que manipular datas e horas manualmente é complexo e sujeito a falhas.
 
 ## Veja Também
-
 - Documentação oficial da API `java.time`: [Java SE Date Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
 - Kotlin docs sobre operações de data e hora: [Kotlin documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-date/)
 - Artigo sobre comparação de datas e horários em Java: [Baeldung](https://www.baeldung.com/java-8-date-time-intro)

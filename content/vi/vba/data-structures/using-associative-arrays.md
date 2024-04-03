@@ -17,12 +17,7 @@ title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---
 
-## Cái gì & Tại sao?
-
-Các mảng kết hợp, thường được biết đến như bộ từ điển trong Visual Basic cho Ứng dụng (VBA), cho phép các lập trình viên tạo ra các bộ sưu tập của các cặp khóa-giá trị. Tính năng này rất quan trọng cho việc lưu trữ và truy xuất dữ liệu hiệu quả, cung cấp một cách quản lý dữ liệu linh hoạt và trực quan hơn so với các chỉ số mảng truyền thống.
-
 ## Làm thế nào:
-
 Trong VBA, đối tượng `Dictionary` cung cấp chức năng tương tự như các mảng kết hợp. Bạn cần phải thêm một tham chiếu đến Microsoft Scripting Runtime để sử dụng nó:
 
 1. Trong trình chỉnh sửa VBA, đi tới Tools > References...
@@ -58,7 +53,6 @@ Next Key
 ```
 
 ## Sâu hơn nữa
-
 Đối tượng `Dictionary` tương tác với các thành phần của Windows Scripting Host phía dưới. Do đó, nó là một đối tượng COM kết nối muộn, đây là một cách phổ biến để mở rộng chức năng của VBA trong quá khứ. Việc sử dụng nó trong VBA có thể cải thiện đáng kể khả năng của ngôn ngữ này trong việc thao tác với các bộ dữ liệu phức tạp mà không cần áp đặt một cấu trúc cứng nhắc, như đã thấy trong các mảng truyền thống hay các dải Excel.
 
 Một hạn chế cần lưu ý là truy cập vào `Dictionary` yêu cầu việc thiết lập một tham chiếu đến Microsoft Scripting Runtime, điều này có thể làm phức tạp việc phân phối các dự án VBA của bạn. Các lựa chọn khác như Collections tồn tại trong VBA nhưng thiếu một số tính năng quan trọng của `Dictionary`, như khả năng kiểm tra dễ dàng sự tồn tại của một khóa mà không gây ra lỗi.

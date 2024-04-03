@@ -12,9 +12,6 @@ title: Datum in einen String umwandeln
 weight: 28
 ---
 
-## What & Why? (Was & Warum?)
-Die Umwandlung eines Datums in einen String bedeutet einfach, ein Datum von einem Format, das von einem Computer verstanden wird, in Text umzuwandeln, den Menschen leicht lesen können. Programmierer machen das, um Datumsangaben benutzerfreundlich in der UI darzustellen oder um sie in einer Datenbank oder einem Dateinamen zu speichern.
-
 ## How to: (Wie geht das:)
 ```Python
 from datetime import datetime

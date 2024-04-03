@@ -10,9 +10,6 @@ title: Att organisera kod i funktioner
 weight: 18
 ---
 
-## Vad & Varför?
-Att organisera kod i funktioner handlar om att dela upp ditt skriptande i mindre bitar—tänk funktionella LEGO-block. Vi gör det för tydlighet, återanvändbarhet och förstånd. Det gör vår kod snygg, läslig och underhållbar.
-
 ## Hur man gör:
 ```Lua
 -- Definiera en enkel funktion för att hälsa

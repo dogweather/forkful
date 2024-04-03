@@ -10,9 +10,6 @@ title: Extracting substrings
 weight: 6
 ---
 
-## What & Why?
-Extracting substrings means snatching a specific part of a string—like getting the good bits out of a sandwich. Programmers do this to isolate data, validate input, or simply because we need just that piece and not the whole text blob.
-
 ## How to:
 Clojure makes it easy to work with strings. For extracting substrings, `subs` is your go-to function:
 

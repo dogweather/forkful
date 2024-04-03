@@ -10,9 +10,6 @@ title: Organisering av kode i funksjoner
 weight: 18
 ---
 
-## Hva & Hvorfor?
-Å dele opp kode i funksjoner betyr å bryte ned skript i mindre, gjenbrukbare blokker som gjør spesifikke oppgaver. Det gjør koden mer oversiktlig, forståelig og enklere å feilsøke.
-
 ## Hvordan:
 Lag en enkel funksjon i Bash:
 

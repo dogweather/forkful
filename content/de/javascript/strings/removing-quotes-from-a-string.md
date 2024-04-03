@@ -11,9 +11,6 @@ title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---
 
-## Was & Warum?
-Anführungszeichen aus einem String zu entfernen bedeutet, sich dieser lästigen Anführungszeichen zu entledigen, die Ihren Code durcheinanderbringen können, besonders wenn Sie Daten parsen oder JSON-Objekte konstruieren. Programmierer tun dies, um Eingaben zu bereinigen, Syntaxfehler zu vermeiden und Strings dazu zu bringen, sich gut mit anderen Teilen ihres Codes zu vertragen.
-
 ## Wie:
 Stellen Sie sich vor, Sie haben einen String, der in Anführungszeichen eingeschlossen ist, wie `\"Hello, World!\"` und Sie möchten den reinen, unzitierten Text. Hier ist ein schnelles JavaScript-Snippet, um Ihren String aus den Fesseln der Zitate zu befreien:
 

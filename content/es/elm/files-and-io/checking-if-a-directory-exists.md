@@ -13,9 +13,6 @@ title: Comprobando si un directorio existe
 weight: 20
 ---
 
-## Qué y Por Qué?
-Comprobar si un directorio existe significa confirmar si una ruta de carpeta específica está presente en el sistema de archivos. Los programadores lo hacen para evitar errores al acceder, leer o escribir archivos.
-
 ## Cómo hacerlo:
 Elm es un lenguaje de programación web de front-end, por lo que no tiene acceso directo al sistema de archivos. Sin embargo, típicamente enviarías un comando a un servicio backend en JavaScript. Así es como podrías estructurar dicha interacción con Elm:
 

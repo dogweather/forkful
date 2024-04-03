@@ -14,11 +14,7 @@ title: "Tr\xEDch xu\u1EA5t chu\u1ED7i con"
 weight: 6
 ---
 
-## Cái gì & Tại sao?
-Việc trích xuất các chuỗi con nghĩa là lấy các phần cụ thể ra khỏi một chuỗi. Các lập trình viên thực hiện điều này để cô lập, thao tác, hoặc phân tích các phần dữ liệu văn bản.
-
 ## Cách thực hiện:
-
 Elm làm cho điều này trở nên dễ dàng. Đầu tiên, chúng ta sử dụng `String.slice`:
 
 ```Elm
@@ -53,7 +49,6 @@ rightString = right 5 fullText
 ```
 
 ## Sâu hơn nữa
-
 Về mặt lịch sử, việc trích xuất chuỗi con cũ kỹ như chính bản thân lập trình. Trong Elm, như trong các ngôn ngữ chức năng khác, các hàm thao tác chuỗi là bất biến - chúng trả về chuỗi mới thay vì thay đổi chuỗi gốc.
 
 Có các lựa chọn khác như `String.dropLeft` và `String.dropRight` tồn tại. Chúng cắt bỏ các ký tự ở một phía của chuỗi:
@@ -77,7 +72,6 @@ droppedRightString = dropRight 6 fullText
 Về mặt triển khai, các hàm này được tích hợp sẵn trong thư viện chuẩn của Elm và xử lý Unicode, mặc dù có những xem xét cần thiết với các cặp surrogate và ký tự kết hợp của Unicode.
 
 ## Xem thêm
-
 - Tài liệu mô-đun `String` của Elm: https://package.elm-lang.org/packages/elm/core/latest/String
 - Hướng dẫn Elm về chuỗi: https://guide.elm-lang.org/strings/
 - MDN Web Docs về Unicode: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt

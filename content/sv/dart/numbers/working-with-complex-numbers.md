@@ -13,16 +13,10 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad & Varför?
-
-Komplexa tal, som består av en reell och en imaginär del (vanligtvis betecknad som a + bi), utvidgar begreppet odimensionella tal till ett tvådimensionellt rum. Programmerare arbetar med komplexa tal inom områden som elektroteknik, kvantdatorer och fluiddynamik för att modellera fenomen som inte kan representeras längs en enda dimension av reella tal ensamma.
-
 ## Hur:
-
 Dart inkluderar inte i sig ett inbyggt bibliotek för komplexa tal, vilket kräver antingen implementeringen av en egen klass för komplexa tal eller användningen av ett tredjepartbibliotek. Ett populärt val för vetenskapliga beräkningsuppgifter, som inkluderar stöd för komplexa tal, är `package:scidart`.
 
 ### Implementera en grundläggande klass för komplexa tal
-
 För enkla operationer kan du enkelt definiera din egen klass för komplexa tal:
 
 ```dart
@@ -52,7 +46,6 @@ void main() {
 ```
 
 ### Använda SciDart för avancerade operationer
-
 För mer komplexa operationer eller när prestanda är kritisk, erbjuder `package:scidart` omfattande stöd för komplexa tal bland andra funktioner för vetenskaplig beräkning. Först, lägg till SciDart i din pubspec.yaml:
 
 ```yaml

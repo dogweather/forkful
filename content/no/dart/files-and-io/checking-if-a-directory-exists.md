@@ -14,12 +14,7 @@ title: Sjekker om en katalog eksisterer
 weight: 20
 ---
 
-## Hva & Hvorfor?
-
-Å sjekke om en mappe eksisterer i Dart handler om å verifisere tilstedeværelsen av en mappe på en angitt bane i filsystemet før man utfører operasjoner som å lese eller skrive filer. Programmerere gjør dette for å unngå feil som oppstår når man prøver å få tilgang til eller modifisere mapper som ikke eksisterer.
-
 ## Hvordan:
-
 Dart bruker `dart:io`-biblioteket for å arbeide med filer og mapper. Her er en enkel måte å sjekke om en mappe eksisterer:
 
 ```dart

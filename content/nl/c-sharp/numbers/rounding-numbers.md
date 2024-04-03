@@ -12,9 +12,6 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-Afronden van getallen betekent het aanpassen ervan naar de dichtstbijzijnde gespecificeerde plaatswaarde - denk aan het terugbrengen tot een eenvoudigere vorm. Programmeurs ronden af om precisie te beheersen, prestaties te verbeteren of wanneer ze gebruikersvriendelijke resultaten tonen - zoals prijzen die geen drie decimalen nodig hebben.
-
 ## Hoe te:
 Hier is je retourticket voor het afronden van getallen in C#:
 

@@ -16,9 +16,6 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Cái gì & Tại sao?
-Làm tròn số nghĩa là điều chỉnh chúng về giá trị địa điểm gần nhất—nghĩ về việc đơn giản hóa chúng. Các lập trình viên làm tròn số để kiểm soát độ chính xác, tăng hiệu suất, hoặc khi muốn hiển thị kết quả thân thiện với người dùng—như những giá cả không cần ba số thập phân.
-
 ## Cách thực hiện:
 Dưới đây là vé khứ hồi cho việc làm tròn số trong C#:
 

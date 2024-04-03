@@ -17,9 +17,6 @@ title: "\u5339\u914D\u6A21\u5F0F\u5220\u9664\u5B57\u7B26"
 weight: 5
 ---
 
-## What & Why? (是什么？为什么？)
-JavaScript里删除匹配模式的字符是用正则表达式识别并移除字符串中的特定字符或字符序列。程序员这么做是为了数据清洗、格式统一或简化字符串处理。
-
 ## How to: (如何执行)
 ```javascript
 let text = "JavaScript开发9^9快乐。";

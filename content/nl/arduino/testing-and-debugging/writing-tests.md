@@ -13,9 +13,6 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-Testen schrijven betekent het creëren van een set voorwaarden om te controleren of je code zich gedraagt zoals verwacht. Programmeurs doen dit om fouten vroeg te ontdekken, softwarekwaliteit te garanderen, en hoofdpijn te voorkomen bij het toevoegen van nieuwe functies.
-
 ## Hoe te:
 ```Arduino
 #include <Arduino.h>

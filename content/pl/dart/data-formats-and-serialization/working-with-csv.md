@@ -14,16 +14,10 @@ title: Praca z CSV
 weight: 37
 ---
 
-## Co i dlaczego?
-
-Praca z plikami CSV (Comma Separated Values - wartości oddzielone przecinkami) polega na przetwarzaniu i generowaniu plików tekstowych, gdzie każda linia zawiera wartości oddzielone przecinkami. Programiści robią to, aby umożliwić wymianę danych między różnymi aplikacjami lub ułatwić przechowywanie danych w lekkim, czytelnym dla człowieka formacie.
-
 ## Jak to zrobić:
-
 Aby obsługiwać pliki CSV w Dart, zazwyczaj przetwarzasz tekst ręcznie lub używasz bibliotek stron trzecich, aby uprościć zadanie. Tutaj przyjrzymy się obu podejściom.
 
 ### Ręczne parsowanie CSV
-
 Jeśli twoje potrzeby są proste, możesz zdecydować się na ręczne parsowanie łańcucha CSV. Można to osiągnąć za pomocą podstawowych funkcji manipulacji łańcuchami w Dart:
 
 ```dart
@@ -56,7 +50,6 @@ void main() {
 ```
 
 ### Używanie biblioteki stron trzecich: `csv`
-
 W bardziej złożonych scenariuszach lub aby uprościć kod, możesz użyć popularnej biblioteki stron trzecich, takiej jak `csv`. Najpierw dodaj ją do swojego projektu, wpisując `csv: ^5.0.0` (lub najnowszą wersję) w pliku `pubspec.yaml` w sekcji `dependencies`. Następnie użyj jej w następujący sposób:
 
 ```dart

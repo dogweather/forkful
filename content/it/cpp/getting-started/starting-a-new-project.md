@@ -9,9 +9,6 @@ title: Avvio di un nuovo progetto
 weight: 1
 ---
 
-## Cosa & Perché?
-Iniziamo un nuovo progetto per trasformare le idee in codice funzionante. I programmatori lo fanno per risolvere problemi, esplorare nuove tecnologie o semplicemente per imparare.
-
 ## Come fare:
 Creare un nuovo progetto in C++ con CMake, uno strumento di build standard. Immaginiamo di voler creare un'app "Hello, World!".
 

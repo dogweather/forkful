@@ -15,9 +15,6 @@ title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---
 
-## Gì & Tại sao?
-REPL viết tắt của Read-Eval-Print Loop, một môi trường tương tác nơi bạn có thể nhanh chóng kiểm tra mã. Các lập trình viên sử dụng nó để thử nghiệm, gỡ lỗi và học những điểm đặc biệt của ngôn ngữ.
-
 ## Cách thực hiện:
 Để vào REPL của Lua, chỉ cần nhập `lua` trong terminal của bạn. Dưới đây là một phiên làm việc ví dụ:
 

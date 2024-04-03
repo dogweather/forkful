@@ -12,12 +12,7 @@ title: Arbeider med YAML
 weight: 41
 ---
 
-## Hva & Hvorfor?
-
-YAML, forkortelse for YAML Ain't Markup Language, er et menneskelesbart data serialiseringsformat. Programmerere bruker det ofte for konfigurasjonsfiler og datautveksling mellom språk på grunn av dets enkelhet og lesbarhet sammenlignet med JSON eller XML.
-
 ## Hvordan:
-
 I JavaScript innebærer arbeid med YAML vanligvis bruk av et tredjeparts bibliotek siden språket ikke inkluderer en innebygd parser for YAML. Et av de mest populære bibliotekene til dette formålet er `js-yaml`. Du kan bruke `js-yaml` til å parse YAML til JavaScript-objekter og motsatt.
 
 Først må du installere `js-yaml`:

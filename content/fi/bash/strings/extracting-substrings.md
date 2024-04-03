@@ -11,9 +11,6 @@ title: Merkkijonojen osien poimiminen
 weight: 6
 ---
 
-## What & Why - Mitä ja Miksi?
-Substringien erottelu tarkoittaa isomman merkkijonon osan leikkaamista ja käyttämistä. Ohjelmoijat tekevät tätä, kun tarvitsevat töihin vain osan datasta.
-
 ## How to - Kuinka tehdään
 ```Bash
 #!/bin/bash

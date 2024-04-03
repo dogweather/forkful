@@ -11,9 +11,6 @@ title: Conversione di una data in una stringa
 weight: 28
 ---
 
-## What & Why?
-Convertire una data in una stringa permette di manipolare e visualizzare il dato in un formato leggibile e personalizzabile. I programmatori fanno ciò per interfacciarsi meglio con gli utenti, salvare le date in un database, o per fare operazioni di confronto e calcolo.
-
 ## How to:
 Per convertire una data in una stringa in Fish Shell, si utilizza il comando `date`. Ecco un esempio:
 

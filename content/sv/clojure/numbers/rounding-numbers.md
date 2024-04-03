@@ -11,9 +11,6 @@ title: Avrundning av tal
 weight: 13
 ---
 
-## Vad och Varför?
-Avrundning av tal handlar om att justera ett tal till närmaste hela tal eller till en viss decimalprecision. Vi avrundar tal för att förenkla dem för mänsklig läsbarhet, minska beräkningsbelastningen eller uppfylla specifika numeriska krav.
-
 ## Hur man gör:
 I Clojure använder vi främst `Math/round`, `Math/floor` och `Math/ceil`:
 

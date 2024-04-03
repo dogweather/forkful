@@ -11,9 +11,6 @@ title: Trabajando con TOML
 weight: 39
 ---
 
-## Qué y Por Qué?
-TOML significa Tom's Obvious, Minimal Language (Lenguaje Mínimo y Obvio de Tom). Se utiliza para archivos de configuración porque es fácil de leer y escribir para los humanos, mientras sigue siendo fácil de analizar para las máquinas. Los desarrolladores optan por TOML para evitar el desorden de XML y la complejidad de JSON cuando manipulan configuraciones.
-
 ## Cómo hacerlo:
 Para manejar TOML en Kotlin, podrías usar una biblioteca como `ktoml`. Primero, vamos a agregar la dependencia en tu `build.gradle.kts`:
 

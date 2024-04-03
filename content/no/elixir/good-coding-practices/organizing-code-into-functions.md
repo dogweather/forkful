@@ -11,9 +11,6 @@ title: Organisering av kode i funksjoner
 weight: 18
 ---
 
-## Hva & Hvorfor?
-Å organisere kode i funksjoner innebærer å gruppere relaterte operasjoner i gjenbrukbare blokker. Vi gjør dette for å forbedre lesbarhet og vedlikeholdbarhet, redusere duplisering, og forenkle testing.
-
 ## Hvordan:
 La oss lage en enkel Elixir-funksjon for å gjøre ord store:
 

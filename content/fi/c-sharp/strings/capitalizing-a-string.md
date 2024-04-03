@@ -13,9 +13,6 @@ title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---
 
-## Mikä & Miksi?
-Merkkijonon alkukirjaimen muuttaminen isoksi C#:ssa tarkoittaa merkkijonon ensimmäisen merkin muuttamista isoksi kirjaimeksi, jos se ei jo ole. Tämä muutos voi olla ratkaisevan tärkeä tulosteiden muotoilussa, koodausstandardien noudattamisessa tai käyttöliittymätekstien luettavuuden parantamisessa.
-
 ## Kuinka:
 C# tarjoaa suoraviivaisen tavan muuttaa merkkijonojen alkukirjaimet isoiksi sisäänrakennettuja metodeja käyttäen. Yksinkertaisin tapa saavuttaa tämä on muokata merkkijonoa suoraan näiden metodien avulla. Monimutkaisempia tai tiettyjä pääomitusvaatimuksia varten (esim. jokaisen sanan alkukirjain isoksi) saattaa olla tarpeen käyttää lisäkirjastoja tai manuaalisia metodeja. Alla on esimerkkejä, jotka osoittavat, kuinka merkkijonoja voidaan muuttaa eri tavoin C#:ssa isoksi.
 

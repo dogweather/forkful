@@ -11,9 +11,6 @@ title: Arbeiten mit TOML
 weight: 39
 ---
 
-## Was & Warum?
-TOML, die Abkürzung für Toms Offensichtliche, Minimale Sprache, ist eine Daten-Serialisierungssprache. Elm-Programmierer verwenden sie zur Verwaltung von Konfigurationsdaten, da sie menschenlesbar ist und sich sauber auf die für Anwendungen benötigten Schlüssel-Wert-Paare abbilden lässt.
-
 ## Wie:
 Elm hat keinen eingebauten TOML-Parser, aber Sie können eine Interoperabilität mit JavaScript nutzen oder ein Community-Paket verwenden. So könnte das Parsen von TOML mit einem hypothetischen `elm-toml`-Paket funktionieren:
 

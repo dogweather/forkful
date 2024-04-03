@@ -12,9 +12,6 @@ title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---
 
-## Quoi & Pourquoi ?
-Retirer les guillemets d'une chaîne signifie éliminer toutes les marques de citation—simples (' ') ou doubles (" ")—qui font partie des données de la chaîne. Les programmeurs le font pour assainir les entrées, préparer le texte pour le traitement, ou se débarrasser des caractères inutiles qui pourraient interférer avec la gestion et les opérations des données.
-
 ## Comment faire :
 En Haskell, nous pouvons concocter une fonction qui supprime tous les guillemets d'une chaîne donnée. C'est comme dire aux guillemets de déguerpir, et de s'assurer qu'ils saisissent l'allusion.
 

@@ -10,9 +10,6 @@ title: Parsing HTML
 weight: 43
 ---
 
-## What & Why?
-Parsing HTML means tearing apart a chuck of HTML code to grasp its structure and content. Programmers do it to extract data, manipulate content, or migrate info between formats and systems.
-
 ## How to:
 To parse HTML in Ruby, install the 'Nokogiri' gem with `gem install nokogiri`. Nokogiri is like a Swiss Army knife for working with HTML and XML in Ruby. Here's a quick example:
 

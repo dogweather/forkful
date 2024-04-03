@@ -10,12 +10,7 @@ title: Generierung von Zufallszahlen
 weight: 12
 ---
 
-## Was & Warum?
-
-Das Generieren von Zufallszahlen in der Programmierung beinhaltet das Erstellen von Zahlenfolgen, die keine vorhersehbare Ordnung oder Muster aufweisen. Programmierer nutzen diese Zahlen häufig für verschiedene Zwecke, wie beispielsweise die Simulation von unvorhersehbaren Ereignissen, beim Testen und Debuggen und in Spielalgorithmen, um Fairness oder Unvorhersehbarkeit zu gewährleisten.
-
 ## Wie geht das:
-
 Um Zufallszahlen in C++ zu generieren, verwendet man typischerweise den `<random>`-Header, der in C++11 eingeführt wurde und eine breite Palette von Möglichkeiten bietet, Zufallszahlen aus verschiedenen Verteilungen zu generieren.
 
 ```C++
@@ -46,7 +41,6 @@ Die Ausgabe könnte so aussehen, aber beachten Sie, dass jede Ausführung wahrsc
 ```
 
 ## Tieferer Einblick:
-
 Historisch gesehen, beruhte die Generierung von Zufallszahlen in C++ stark auf der `rand()`-Funktion und der `srand()`-Funktion für die Seedung, die im `<cstdlib>`-Header zu finden sind. Allerdings wurde dieser Ansatz oft für seine mangelnde Gleichmäßigkeit und Vorhersagbarkeit in der Verteilung der generierten Zahlen kritisiert.
 
 Die Einführung des `<random>`-Headers in C++11 markierte eine deutliche Verbesserung und bot ein ausgefeiltes System zur Erzeugung von Zufallszahlen. Die bereitgestellten Mittel umfassen eine Vielzahl von Motoren (wie `std::mt19937` für Mersenne Twister) und Verteilungen (wie `std::uniform_int_distribution` für die gleichmäßige Verteilung von Ganzzahlen), die kombiniert werden können, um den spezifischen Bedürfnissen des Programmierers zu entsprechen und führen zu vorhersehbarerem Verhalten, besserer Leistung und größerer Flexibilität.

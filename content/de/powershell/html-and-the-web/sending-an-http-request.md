@@ -10,9 +10,6 @@ title: Einen HTTP-Request senden
 weight: 44
 ---
 
-## Was & Warum?
-HTTP-Anfragen sind essentiell, um mit Webdiensten zu kommunizieren, indem Daten gesendet und empfangen werden. Programmierer nutzen sie, um Informationen von APIs abzurufen, Daten zu übermitteln oder Webinhalte für Apps und Skripte verfügbar zu machen.
-
 ## How to:
 Hier ein einfaches Beispiel, wie man eine GET-Anfrage in PowerShell sendet und die Antwort erhält:
 

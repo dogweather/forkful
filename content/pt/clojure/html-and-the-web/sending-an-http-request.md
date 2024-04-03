@@ -11,9 +11,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---
 
-## O Quê e Por Quê?
-Enviar uma solicitação HTTP é como fazer uma pergunta a um site e esperar uma resposta. Programadores fazem isso para interagir com APIs, coletar dados ou comunicar com outros serviços web.
-
 ## Como Fazer:
 Primeiro, adicione a biblioteca [clj-http](https://github.com/dakrone/clj-http) ao seu projeto edn:
 

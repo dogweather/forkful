@@ -14,16 +14,10 @@ title: "Einen String gro\xDFschreiben"
 weight: 2
 ---
 
-## Was & Warum?
-
-Das Kapitalisieren eines Strings in Swift verändert den gegebenen String so, dass sein erstes Zeichen großgeschrieben wird und die verbleibenden Zeichen klein. Programmierer machen dies aus Gründen wie der Formatierung von Namen oder Sätzen gemäß grammatischer Regeln oder Benutzeroberflächenstandards.
-
 ## Wie:
-
 Swifts `String`-Strukturen kommen mit ein paar integrierten Methoden, um die Groß- und Kleinschreibung von Strings zu manipulieren. Hier sind einige Ansätze, um Strings in Swift zu kapitalisieren, einschließlich der Verwendung von Standardmethoden und Drittanbieter-Bibliotheken, falls nötig.
 
 ### Verwendung eingebauter Methoden
-
 Um den ersten Buchstaben eines Strings groß und den Rest klein zu schreiben:
 
 ```swift
@@ -41,7 +35,6 @@ print(capitalizedSentence) // Ausgabe: "Hallo, Welt"
 ```
 
 ### Verwendung einer Drittanbieter-Bibliothek
-
 Obwohl die Standardbibliothek von Swift recht umfassend ist, könnten einige spezifische Großschreibungsformate komplexere Operationen erfordern oder können unter Verwendung von Drittanbieter-Bibliotheken vereinfacht werden. Eine der beliebten für die String-Manipulation ist SwiftRichString. (Hinweis: Stellen Sie immer sicher, dass Sie Drittanbieter-Bibliotheken über Swift Package Manager, CocoaPods oder Carthage hinzufügen und in Ihrer Datei importieren.)
 
 Zuerst müssten Sie `SwiftRichString` zu Ihrem Projekt hinzufügen. Einmal installiert, können Sie es verwenden, um verschiedene String-Operationen durchzuführen, einschließlich spezifischer Großschreibungsbedürfnisse. Jedoch decken ab jetzt Swifts eingebaute Methoden die meisten Großschreibungsfälle ausreichend ab, ohne externe Bibliotheken nur für das Kapitalisieren von Strings zu benötigen.

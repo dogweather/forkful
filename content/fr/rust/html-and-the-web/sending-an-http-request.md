@@ -11,12 +11,7 @@ title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-
-Envoyer une requête HTTP, c'est demander des données à un serveur web. Les programmeurs font ça pour intéragir avec des APIs, récupérer des fichiers, ou soumettre des informations.
-
 ## How to: (Comment faire :)
-
 On va utiliser `reqwest`, une bibliothèque Rust populaire. Ajoutez d'abord `reqwest` à votre `Cargo.toml`:
 
 ```toml
@@ -60,11 +55,9 @@ Body:
 ```
 
 ## Deep Dive (Plongée en profondeur)
-
 L'envoi de requêtes HTTP est un concept vieux comme le web lui-même. Avant `reqwest`, Rust utilisait `hyper`, toujours utilisé en sous-main par `reqwest` pour le traitement HTTP bas-niveau. Des alternatives à `reqwest` incluent `hyper` pour plus de contrôle et `surf` pour un environnement async runtime-agnostique. L'implémentation consiste à établir une connexion TCP avec le serveur, envoyer une requête formatée selon la spécification HTTP et interpréter la réponse.
 
 ## See Also (Voir aussi)
-
 - Documentation Reqwest : https://docs.rs/reqwest/
 - Asynchronous Programming in Rust : https://rust-lang.github.io/async-book/
 - Hyper, un client HTTP bas niveau : https://hyper.rs/

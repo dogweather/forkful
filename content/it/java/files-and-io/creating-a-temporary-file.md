@@ -10,9 +10,6 @@ title: Creazione di un file temporaneo
 weight: 21
 ---
 
-## What & Why?
-Creare un file temporaneo serve a manipolare dati che non devono sopravvivere oltre la durata del programma. I programmatori li usano per test, memorizzazione di dati intermedi, o evitare di sovraccaricare la memoria per dati di grandi dimensioni.
-
 ## How to:
 Java fornisce metodi utili per creare file temporanei. Ecco come si fa:
 

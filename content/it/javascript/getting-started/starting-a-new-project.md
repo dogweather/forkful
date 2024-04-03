@@ -11,9 +11,6 @@ title: Avvio di un nuovo progetto
 weight: 1
 ---
 
-## What & Why?
-Partire con un nuovo progetto JavaScript significa gettare le basi per un’applicazione. I programmatori lo fanno per trasformare idee in realtà digitale, cominciando da un ambiente pulito.
-
 ## How to:
 Creiamo un progetto base usando Node.js che funge da ambiente di runtime per JavaScript.
 

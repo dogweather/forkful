@@ -16,9 +16,6 @@ title: "T\xE1i c\u1EA5u tr\xFAc m\xE3"
 weight: 19
 ---
 
-## Gì và Tại sao?
-Tái cấu trúc là nghệ thuật chỉnh sửa mã code hiện có để cải thiện cấu trúc, tính dễ đọc và hiệu quả mà không thay đổi hành vi bên ngoài của nó. Lập trình viên thực hiện việc này để làm cho mã của họ dễ bảo trì hơn, giảm độ phức tạp, và thường là bước chuẩn bị trước khi thêm tính năng mới hoặc sửa lỗi.
-
 ## Làm thế nào:
 Hãy lấy một hàm Lua đơn giản và tái cấu trúc nó. Chúng ta bắt đầu với một hàm tính tổng của các số trong một danh sách nhưng được viết mà không chú trọng nhiều đến hiệu quả hoặc rõ ràng:
 

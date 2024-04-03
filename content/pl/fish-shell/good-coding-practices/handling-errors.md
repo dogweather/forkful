@@ -11,9 +11,6 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co i dlaczego?
-Obsługa błędów pozwala skryptowi radzić sobie z niespodziewanymi sytuacjami w elegancki sposób. Robimy to, aby zarządzać błędami bez siwienia włosów naszych użytkowników.
-
 ## Jak to zrobić:
 Aby przechwytywać błędy w Fish, użyj komendy `status` i warunków. Powiedzmy, że `ping` nie powiedzie się; oto jak to wykryć:
 

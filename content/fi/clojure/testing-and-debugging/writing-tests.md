@@ -14,9 +14,6 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mikä ja miksi?
-Testien kirjoittaminen Clojurella, kuten muillakin ohjelmointikielillä, sisältää omistautuneen koodin luomisen pääkoodikannan toimivuuden varmistamiseksi. Se auttaa tarkkuuden varmistamisessa, refaktoroinnin helpottamisessa ja koodin vakauden parantamisessa.
-
 ## Kuinka:
 Clojure, hyödyntäen JVM:ää, tukee erilaisia testauskehyksiä. Kuitenkin yleisesti käytetty sisäänrakennettu kirjasto on `clojure.test`. Tässä on yksinkertainen esimerkki:
 

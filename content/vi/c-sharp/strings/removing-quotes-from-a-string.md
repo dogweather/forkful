@@ -16,9 +16,6 @@ title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---
 
-## Cái gì & Tại sao?
-Xóa bỏ các dấu ngoặc kép (`"`) hoặc dấu ngoặc đơn (`'`) khỏi một chuỗi trong C# nghĩa là bạn đang loại bỏ những ký tự dấu ngoặc bao quanh văn bản của bạn. Các lập trình viên làm điều này để làm sạch dữ liệu, chuẩn bị cho việc nhập vào cơ sở dữ liệu, hoặc làm cho chuỗi an toàn hơn cho việc xử lý tiếp theo để mọi thứ không trở nên hỗn loạn khi một dấu ngoặc lạc lõng xuất hiện.
-
 ## Làm thế nào:
 ```csharp
 string withQuotes = "\"Xin chào, Thế giới!\"";

@@ -10,9 +10,6 @@ title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---
 
-## Hva & Hvorfor?
-Komplekse tall utvider ideen om en-dimensjonale tallinjer til et todimensjonalt komplekst plan. Programmerere bruker dem innen felt som ingeniørvitenskap, fysikk og grafikk for beregninger som krever to komponenter, som signaler eller rotasjoner.
-
 ## Hvordan gjøre det:
 I Fish håndterer vi komplekse tall ved å bruke `math` med reelle og imaginære deler. Her er en oppstart:
 

@@ -12,9 +12,6 @@ title: Afronden van getallen
 weight: 13
 ---
 
-## Wat & Waarom?
-Afronden van getallen gaat over het afsnijden van decimalen om je gegevens te vereenvoudigen of aan specifieke formaten te voldoen. Programmeurs doen dit voor gebruikersvriendelijke weergave, efficiënte opslag, of wanneer decimale precisie geen issue is.
-
 ## Hoe:
 In Fish hangt het afronden van getallen af van het `math` commando. Gebruik `math -s0` om af te ronden naar het dichtstbijzijnde gehele getal.
 

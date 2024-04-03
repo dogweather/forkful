@@ -12,16 +12,10 @@ title: Utilizzo di espressioni regolari
 weight: 11
 ---
 
-## Cosa & Perché?
-
-Le espressioni regolari (regex) sono pattern utilizzati per abbinare combinazioni di caratteri in stringhe. I programmatori le utilizzano per cercare, modificare o manipolare testo e dati, rendendole indispensabili per compiti di corrispondenza di modelli e analisi dei dati.
-
 ## Come fare:
-
 Utilizzare espressioni regolari in Google Apps Script è semplice grazie alla sintassi basata su JavaScript. Ecco come puoi incorporare regex nei tuoi script per compiti comuni come la ricerca e la convalida dei dati.
 
 ### Ricerca nelle Stringhe
-
 Supponi di voler trovare se una stringa contiene un pattern specifico, come un indirizzo email. Ecco un semplice esempio:
 
 ```javascript
@@ -40,7 +34,6 @@ findEmailInText("Contattaci su info@example.com.");
 ```
 
 ### Convalida dei Dati
-
 Le espressioni regolari eccellono nella convalida dei dati. Di seguito una funzione che convalida una stringa di input per verificare se aderisce a una semplice politica per le password (almeno una lettera maiuscola, una lettera minuscola e un minimo di 8 caratteri).
 
 ```javascript
@@ -55,7 +48,6 @@ Logger.log(validatePassword("debole"));     // Stampa: false
 ```
 
 ## Approfondimento
-
 Le espressioni regolari in Google Apps Script sono ereditate da JavaScript, standardizzato per la prima volta nella specifica del linguaggio ECMAScript nel giugno del 1997. Sebbene potenti, a volte possono portare a codice confuso e difficile da mantenere, specialmente quando usate eccessivamente o per compiti di corrispondenza di modelli complessi che potrebbero essere risolti in modo più efficiente attraverso altri metodi di analisi.
 
 Ad esempio, mentre puoi utilizzare le regex per l'analisi di HTML o XML in situazioni estreme, farlo è generalmente sconsigliato a causa delle strutture nidificate e complesse di questi documenti. Invece, strumenti specificamente progettati per l'analisi di tali strutture, come i parser DOM per HTML, sono più affidabili e leggibili.

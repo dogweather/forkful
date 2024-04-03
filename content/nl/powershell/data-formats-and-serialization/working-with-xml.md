@@ -12,9 +12,6 @@ title: Werken met XML
 weight: 40
 ---
 
-## Wat & Waarom?
-Werken met XML omvat het manipuleren en toegang krijgen tot gegevens gestructureerd in de eXtensible Markup Language. Programmeurs werken met XML om interoperabiliteit met andere systemen mogelijk te maken of om configuratiebestanden, datafeeds en andere gestructureerde documenten die gebruikelijk zijn in webservices te lezen en te schrijven.
-
 ## Hoe:
 ```PowerShell
 # Een XML-bestand laden in een variabele

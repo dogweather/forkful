@@ -11,9 +11,6 @@ title: "Konvertere en streng til sm\xE5 bokstaver"
 weight: 4
 ---
 
-## What & Why?
-Å konvertere en streng til små bokstaver betyr å endre alle tegn i strengen til deres nedre kasse ekvivalent. Programmerere gjør dette for å standardisere tekstdata, for eksempel for å sammenligne strenger uten å bry seg om bokstavstørrelse.
-
 ## How to:
 Bruk `toLowerCase()` metoden for å konvertere en streng til små bokstaver:
 

@@ -15,12 +15,7 @@ title: "X\u1EED l\xFD l\u1ED7i"
 weight: 16
 ---
 
-## Gì và Tại sao?
-
-Xử lý lỗi trong kịch bản Bash là việc lường trước những tình huống có thể đi sai và xử lý chúng một cách nhẹ nhàng. Tại sao ư? Chà, nó giữ cho kịch bản của bạn vững chãi và ngăn người dùng phải bối rối khi mọi thứ không hoạt động như dự kiến.
-
 ## Làm thế nào:
-
 ```Bash
 #!/bin/bash
 
@@ -53,7 +48,6 @@ cat: temp_file.txt: Không có tệp hoặc thư mục nào như vậy
 ```
 
 ## Sâu hơn
-
 Xử lý lỗi trong kịch bản Bash có từ nguồn gốc của vỏ Unix, nơi mà những kịch bản vững chãi và đáng tin cậy là (và vẫn là) thiết yếu cho quản trị hệ thống và tự động hóa. Theo truyền thống, lỗi trong Bash được xử lý bằng cách kiểm tra trạng thái thoát của một lệnh, quy ước trả về 0 cho thành công và một giá trị khác 0 cho thất bại.
 
 Bash giới thiệu lệnh `trap` như một tính năng tích hợp, cho phép người dùng chỉ định các lệnh để chạy trên các tín hiệu hoặc thoát kịch bản. Điều này hữu ích cho các tác vụ dọn dẹp hoặc cơ chế xử lý lỗi cuối cùng.
@@ -65,7 +59,6 @@ Các phương thức thay thế cho việc xử lý lỗi tích hợp của Bash
 Mặc dù việc xử lý lỗi một cách nghiêm ngặt đôi khi cảm thấy quá mức cho các kịch bản nhỏ, đó là một thực hành có thể tiết kiệm rất nhiều thời gian gỡ lỗi và ngăn chặn hành vi không mong đợi cho cả bạn và người dùng.
 
 ## Xem thêm
-
 - Bash Manual về Các Tham Số Shell: https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameters
 - Phần về Xử lý Lỗi trong Hướng dẫn Lập Kịch bản Bash Nâng cao: https://www.tldp.org/LDP/abs/html/exit-status.html
 - Hướng dẫn sâu về `trap`: https://mywiki.wooledge.org/SignalTrap

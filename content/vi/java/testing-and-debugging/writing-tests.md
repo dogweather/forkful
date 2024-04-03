@@ -15,12 +15,7 @@ title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---
 
-## Cái gì & Tại sao?
-
-Viết kiểm thử là tạo ra mã lệnh kiểm tra xem mã lệnh khác có hoạt động chính xác hay không. Lập trình viên làm điều này để bắt lỗi sớm, đảm bảo phần mềm hoạt động như mong đợi, và duy trì chất lượng mã theo thời gian.
-
 ## Làm như thế nào:
-
 Hãy viết một bài kiểm thử đơn giản sử dụng JUnit, một framework kiểm thử phổ biến trong Java. Chúng ta sẽ kiểm thử một phương thức cộng hai số nguyên.
 
 ```java
@@ -50,11 +45,9 @@ org.opentest4j.AssertionFailedError: 2 + 3 phải bằng 5 ==> dự kiến: <5> 
 ```
 
 ## Tìm hiểu sâu hơn
-
 Việc kiểm thử không phải lúc nào cũng là ưu tiên của lập trình viên - nó trở nên phổ biến với sự phát triển Agile và các phương pháp như Test-Driven Development (TDD). Các lựa chọn thay thế cho JUnit bao gồm TestNG và Spock, mỗi cái có những ưu điểm riêng của nó. Việc thực thi các bài kiểm thử tốt là một nghệ thuật; nó thường liên quan đến việc giả lập các phụ thuộc, tuân thủ các mẫu kiểm thử và tích hợp liên tục các bài kiểm thử vào quy trình xây dựng.
 
 ## Xem thêm
-
 - JUnit 5 Hướng dẫn người dùng: [https://junit.org/junit5/docs/current/user-guide/](https://junit.org/junit5/docs/current/user-guide/)
 - Bài viết về Test-Driven Development: [https://www.agilealliance.org/glossary/tdd/](https://www.agilealliance.org/glossary/tdd/)
 - Các framework giả lập: Mockito [https://site.mockito.org/](https://site.mockito.org/)

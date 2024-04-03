@@ -11,9 +11,6 @@ title: Searching and replacing text
 weight: 10
 ---
 
-## What & Why?
-Searching and replacing text is finding specific strings and swapping them with something else. Programmers do it to update code, correct errors, or to reformat data — it's a huge timesaver.
-
 ## How to:
 Let's change all instances of 'cat' to 'dog' in a string.
 

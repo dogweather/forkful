@@ -10,12 +10,7 @@ title: Converting a string to lower case
 weight: 4
 ---
 
-## What & Why?
-
-String lowercasing is transforming all alphabet characters in a string to their lower case form. Programmers lower case strings for consistency, comparison without case sensitivity, and to meet system or application requirements.
-
 ## How to:
-
 Here's the simple way to convert a string to lower case in Bash:
 
 ```Bash
@@ -47,7 +42,6 @@ make me lower case
 ```
 
 ## Deep Dive
-
 Before Bash 4.0, commonly used methods to convert strings to lower case involved external utilities like `tr`, `awk`, or `sed`. Each of these provide different ways to manipulate strings beyond simply changing case, but may need to spawn a new process, affecting performance.
 
 The introduction of `${parameter,,pattern}` syntax in Bash 4.0 provided a native feature to transform strings which is faster and doesn't rely on external utilities. There are alternatives within Bash itself:
@@ -59,7 +53,6 @@ The introduction of `${parameter,,pattern}` syntax in Bash 4.0 provided a native
 In terms of implementation, `${parameter,,pattern}` don't just alter ASCII characters; they're UTF-8 aware and can handle non-English characters, making them versatile for international applications.
 
 ## See Also
-
 - Bash Parameter Expansion: https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
 - `tr` Command: https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html
 - AWK Programming: https://www.gnu.org/software/gawk/manual/gawk.html

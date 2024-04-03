@@ -11,9 +11,6 @@ title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---
 
-## ¿Qué y Por Qué?
-Calcular fechas futuras o pasadas implica añadir o quitar días, meses o años a una fecha dada. Los programadores lo hacen para automatizar recordatorios, tareas de mantenimiento, y vigilar plazos o caducidades. 
-
 ## Cómo hacerlo:
 ```PowerShell
 # Añadir 10 días a la fecha actual

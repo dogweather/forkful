@@ -13,11 +13,7 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mikä ja miksi?
-Hakemiston olemassaolon tarkistaminen tiedostojärjestelmässä on oleellista, kun hallinnoit tiedostorakenteita Swift-sovelluksistasi käsin. Tämä tehtävä mahdollistaa kehittäjille hakemistojen läsnäolon varmistamisen ennen niistä lukemista tai niihin kirjoittamista, välttäen näin mahdolliset suoritusaikaiset virheet.
-
 ## Kuinka tehdään:
-
 Swiftin Foundation-runko tarjoaa `FileManager`-luokan, jossa on menetelmiä tiedostojärjestelmän hallintaan. Voit käyttää `FileManager`-luokkaa tarkistaaksesi, onko hakemisto olemassa. Tässä on pätkä siitä, miten tämä tehdään:
 
 ```swift
@@ -50,7 +46,6 @@ if fileManager.fileExists(atPath: path, isDirectory: &isDirectory), isDirectory.
 ```
 
 ### Kolmannen osapuolen kirjaston käyttö
-
 Tällä hetkellä hakemiston olemassaolon tarkistaminen Swiftissä ei yleensä vaadi kolmannen osapuolen kirjastoja `FileManager`-luokan vankkuuden vuoksi. Kuitenkin monimutkaisempaan tiedostonhallintaan ja tarkistukseen, kirjastot, kuten John Sundellin **Files**, tarjoavat enemmän Swift-ystävällisen API:n.
 
 Tässä on esimerkki sen käytöstä:

@@ -14,12 +14,7 @@ title: Willekeurige getallen genereren
 weight: 12
 ---
 
-## Wat & Waarom?
-
-Het genereren van willekeurige getallen in programmeren gaat over het produceren van onvoorspelbare numerieke waarden die gebruikt kunnen worden voor een verscheidenheid aan doeleinden zoals simulaties, spellen of beveiligingstoepassingen. Programmeurs maken gebruik van deze functie om een element van onzekerheid te introduceren of de variabiliteit van het echte leven na te bootsen in hun projecten.
-
 ## Hoe:
-
 Lua biedt ingebouwde ondersteuning voor het genereren van willekeurige getallen via de `math.random` functie. Deze functie kan op meerdere manieren gebruikt worden, afhankelijk van de gewenste uitvoer:
 
 1. **Een willekeurig drijvendekommagetal genereren tussen 0 en 1:**
@@ -44,7 +39,6 @@ Een voorbeelduitvoer kan zijn `7`. Weer zal de uitvoer variëren bij elke uitvoe
 Het is cruciaal om de seed in te stellen met `math.randomseed`, omdat zonder dit, `math.random` dezelfde reeks getallen zou kunnen genereren elke keer dat een programma wordt uitgevoerd. Doorgaans zorgt seeden met de huidige tijd, `os.time()`, voor verschillende reeksen per uitvoering.
 
 ## Diepere Duik
-
 Het mechanisme dat ten grondslag ligt aan de generatie van willekeurige getallen in Lua (en de meeste programmeertalen) is niet echt willekeurig maar pseudowillekeurig, gegenereerd door een algoritme. Deze pseudowillekeurige getallengeneratoren (PRNG's) zijn deterministisch en vereisen een seedwaarde om de reeks van getallengeneratie te beginnen. De keuze van seeden is cruciaal voor de kwaliteit van de willekeurigheid, wat de reden is waarom het gebruik van de huidige tijd een gangbare praktijk is.
 
 Historisch gezien zijn de capaciteiten voor het genereren van willekeurige getallen in Lua geëvolueerd. Eerdere versies waren afhankelijk van de C-standaardbibliotheek `rand()` functie, die varieerde in kwaliteit en prestatie over implementaties. De huidige versie van Lua verbetert dit mogelijk door robuustere mechanismen te gebruiken, afhankelijk van het onderliggende platform, wat een grotere consistentie en nut biedt bij het genereren van willekeurige getallen.

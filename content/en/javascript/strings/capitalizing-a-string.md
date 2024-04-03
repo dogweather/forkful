@@ -10,9 +10,6 @@ title: Capitalizing a string
 weight: 2
 ---
 
-## What & Why?
-Capitalizing a string means converting the first character of the string to uppercase while keeping the remaining characters as is. This operation is commonly performed in JavaScript for formatting user inputs, displaying names or titles, and ensuring consistency in user interface texts.
-
 ## How to:
 In JavaScript, there isn’t a built-in method to directly capitalize strings, but it's straightforward to implement using basic string manipulation methods.
 

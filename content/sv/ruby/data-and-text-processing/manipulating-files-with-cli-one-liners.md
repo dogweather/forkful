@@ -11,12 +11,7 @@ title: Hantera filer med CLI-engreppskommandon
 weight: 31
 ---
 
-## Vad & Varför?
-
-Att manipulera filer med CLI-enradare i Ruby handlar om att utföra vanliga filoperationer direkt från din terminal med användning av Ruby-script. Det är en kraftfull metod för att automatisera och snabbt köra uppgifter relaterade till filer, vilket sparar programmerare värdefull tid och minskar risken för manuella fel.
-
 ## Hur gör man:
-
 Ruby, med sin uttrycksfulla syntax, tillåter koncisa och lättlästa enradare som kan hantera en mängd olika filoperationer. Här är några exempel som du kan tycka är användbara:
 
 **Läs en fil**
@@ -54,7 +49,6 @@ När du behöver rensa upp och ta bort filer är detta din tillgång till enrada
 Medan dessa exempel visar hur enkelt Ruby kan manipulera filer från CLI, är det viktigt att hantera filoperationer med omsorg för att undvika oavsiktlig dataförlust. Säkerhetskopiera alltid viktig data innan du kör förstörande operationer som radering eller överskrivning.
 
 ## Djupdykning
-
 Filmanipulation med Ruby-enradare är inte unikt för Ruby; språk som Perl och Awk har använts för liknande uppgifter i årtionden. Ruby kombinerar dock Perlens uttrycksfulla kraft med läsbarhet, vilket gör skapandet av script mer intuitivt. Dock kan en av Rubys svagheter i CLI-filmanipulation vara dess prestanda, speciellt när det handlar om stora filer eller komplexa operationer – script-språk är generellt långsammare än kompilerade språk eller dedikerade Unix-verktyg som `sed` eller `awk` för textbehandlingsuppgifter.
 
 Trots det är Ruby-script otroligt mångsidiga och kan enkelt integreras i större Ruby-applikationer eller Rails-projekt. Deras läsbarhet och de omfattande funktionerna som erbjuds genom standardbiblioteket och gems gör Ruby till ett stabilt val för utvecklare som söker en balans mellan prestanda och produktivitet.

@@ -28,14 +28,10 @@ title: "\u30C6\u30AD\u30B9\u30C8\u30D5\u30A1\u30A4\u30EB\u306E\u4F5C\u6210"
 weight: 24
 ---
 
-## 何となぜ？
-
-Javaでテキストファイルを書くというのは、ファイルシステム上のファイルに内容を作成し、書き込むために言語の機能を使用することを意味します。プログラマーは、ログの記録、データのエクスポート、または後で取得するためのアプリケーション状態の保存など、さまざまな理由でこれを行います。
-
 ## 方法:
 
-### `java.nio.file`を使用する（標準ライブラリ）
 
+### `java.nio.file`を使用する（標準ライブラリ）
 JavaのNew I/O（NIO）パッケージ（`java.nio.file`）は、ファイルを扱うためのより多様なアプローチを提供します。これは`Files.write()`を使用してファイルに書き込む簡単な方法です：
 
 ```java
@@ -64,7 +60,6 @@ public class TextFileWriterNIO {
 ```
 
 ### `java.io`を使用する（標準ライブラリ）
-
 より伝統的なアプローチには、`java.io.FileWriter`がテキストファイルを単純に書き込むための良い選択です：
 
 ```java
@@ -91,7 +86,6 @@ public class TextFileWriterIO {
 ```
 
 ### Apache Commons IOを使用する
-
 Apache Commons IOライブラリは、ファイルの書き込みを含む多くの操作を簡素化します。次のように`FileUtils.writeStringToFile()`を使用してファイルに書き込みます：
 
 まず、プロジェクトに依存関係を追加します。Mavenを使用している場合は、以下を含めます：

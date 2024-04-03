@@ -11,12 +11,7 @@ title: Recherche et remplacement de texte
 weight: 10
 ---
 
-## Quoi & Pourquoi ?
-
-La recherche et le remplacement de texte permettent de localiser des chaînes spécifiques dans du texte et de les échanger avec d'autres. Les programmeurs utilisent souvent cette technique pour modifier du code, corriger des erreurs ou mettre à jour des infos de manière rapide et efficace.
-
 ## Comment faire :
-
 Dans Haskell, on utilise généralement les regex ou les fonctions de manipulation de chaînes pour chercher et remplacer du texte. Voici comment faire :
 
 ```haskell
@@ -41,7 +36,6 @@ Sortie :
 ```
 
 ## Plongée Profonde
-
 Historiquement, la manipulation de texte est une partie essentielle de la programmation, remontant aux premiers éditeurs de texte et langages comme sed et awk. En Haskell, les opérations de base sur les chaînes sont simples, mais on peut implémenter des fonctionnalités complexes avec des librairies comme `regex` ou `text`.
 
 Les alternatives à `Data.Text` incluent l'utilisation de `Data.ByteString` pour le texte en bytes ou `Data.String` pour les fonctions intégrées sur les chaînes.
@@ -49,7 +43,6 @@ Les alternatives à `Data.Text` incluent l'utilisation de `Data.ByteString` pour
 Quand on implémente une fonction de recherche et remplacement, il faut penser à l'efficacité. Pour des gros volumes de données, streamer le texte au lieu de le charger entièrement en mémoire peut être crucial. La bibliothèque `text` est optimisée pour la manipulation de texte en Unicode, ce qui est important pour le traitement international.
 
 ## Voir Aussi
-
 Pour aller plus loin, voici des liens utiles :
 
 - [Text Haskell library](https://hackage.haskell.org/package/text) : pour comprendre en détail la gestion des chaînes de caractères dans Haskell.

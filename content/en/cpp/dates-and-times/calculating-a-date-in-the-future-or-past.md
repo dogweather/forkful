@@ -10,9 +10,6 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-Calculating a date in the future or past means figuring out what date it'll be after or before a certain time span. It's useful for creating reminders, setting expiry dates, scheduling events, or simply logging how much time has passed.
-
 ## How to:
 C++20 introduced the `<chrono>` library upgrades, so dealing with time is less of a hassle. Here's a quick example of adding days to the current date:
 

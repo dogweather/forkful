@@ -14,12 +14,7 @@ title: "Zamiana liter na wielkie w ci\u0105gu znak\xF3w"
 weight: 2
 ---
 
-## Co i dlaczego?
-
-Zamiana ciągu na wielkie litery w języku C obejmuje przekształcenie pierwszej litery każdego słowa w danym ciągu na wielką literę, jeśli jest to mała litera. Programiści często wykonują tę operację, aby ustandaryzować dane wejściowe użytkownika pod kątem wyszukiwań, operacji sortowania lub celów wyświetlania, zapewniając spójność i czytelność między danymi tekstowymi.
-
 ## Jak to zrobić:
-
 Zamiana ciągu na wielkie litery w C wymaga podstawowej znajomości manipulacji znakami i przeglądania ciągu. Ponieważ C nie ma wbudowanej funkcji do tego, zwykle sprawdzasz każdy znak, dostosowując jego przypadek w razie konieczności. Poniżej znajduje się prosta implementacja:
 
 ```c
@@ -56,7 +51,6 @@ Capitalized string: Hello World. Programming In C!
 Ten program przegląda ciąg `exampleString`, sprawdzając każdy znak, czy powinien zostać zamieniony na wielką literę. Funkcja `islower` sprawdza, czy znak jest małą literą, podczas gdy `toupper` konwertuje go na wielką literę. Flaga `capNext` decyduje, czy następny napotkany litera powinna zostać przekształcona, jest ustawiana po znalezieniu każdej spacji (' ') i początkowo, aby zamienić pierwszą literę ciągu na wielką literę.
 
 ## Dogłębna analiza
-
 Pokazana technika jest prosta, ale niewydajna dla bardzo dużych ciągów lub gdy jest wykonywana wielokrotnie w aplikacjach krytycznych pod względem wydajności. W kontekście historycznym i implementacyjnym, manipulacja ciągami w C, w tym kapitalizacja, często obejmuje bezpośrednią manipulację buforem, odzwierciedlając niskopoziomowe podejście C i dając programiście pełną kontrolę nad pamięcią i kompromisami dotyczącymi wydajności.
 
 Istnieją alternatywne, bardziej zaawansowane metody kapitalizacji ciągów, zwłaszcza biorąc pod uwagę lokalizacje i znaki unicode, gdzie zasady kapitalizacji mogą znacząco różnić się od prostego scenariusza ASCII. Biblioteki takie jak ICU (International Components for Unicode) oferują solidne rozwiązania dla tych przypadków, ale wprowadzają zależności i dodatkowe obciążenie, które mogą nie być konieczne we wszystkich aplikacjach.

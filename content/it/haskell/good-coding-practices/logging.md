@@ -11,9 +11,6 @@ title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---
 
-## Cosa & Perché?
-Il logging nella programmazione è sostanzialmente come lasciare una traccia di briciole sotto forma di eventi o messaggi registrati, che possono essere utilizzati per monitorare cosa sta facendo la tua applicazione in ogni momento. I programmatori lo fanno per individuare e risolvere problemi, monitorare le prestazioni del sistema, e verificare il comportamento per ragioni di sicurezza e conformità.
-
 ## Come fare:
 In Haskell, il logging può essere implementato utilizzando librerie come `monad-logger` o `hslogger`. Ecco un esempio rapido usando `monad-logger`:
 

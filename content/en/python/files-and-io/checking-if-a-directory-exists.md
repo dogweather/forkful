@@ -11,9 +11,6 @@ title: Checking if a directory exists
 weight: 20
 ---
 
-## What & Why?
-Checking if a directory exists in Python is about verifying the presence of a folder in the filesystem before performing operations like reading or writing files. Programmers do this to avoid errors such as `FileNotFoundError`, ensuring the application behaves reliably and doesn't crash when attempting to interact with directories.
-
 ## How to:
 Python provides native ways to check for a directory's existence using the `os` and `pathlib` modules. Here are examples for both:
 

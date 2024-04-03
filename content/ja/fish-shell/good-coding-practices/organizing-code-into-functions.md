@@ -29,9 +29,6 @@ title: "\u30B3\u30FC\u30C9\u3092\u95A2\u6570\u306B\u6574\u7406\u3059\u308B"
 weight: 18
 ---
 
-## 何となぜ？
-コードを関数にまとめることは、特定のタスクを実行するためのスクリプトのビットを束ねることについてです。これを行う理由は、コードを読みやすく、テストしやすく、再利用しやすくするためです。誰もがコードスパゲッティの沼を歩きたいと思っているわけではありません。
-
 ## 方法：
 Fishで関数を書くには、`function`キーワードを使い、名前を付け、`end`で終了します。こちらが簡単なものです：
 
@@ -74,11 +71,9 @@ Fish Shellの関数はミニスクリプトのようなものです。あらゆ�
 `return`値は必要ありません。Fishはそれを重視していないからです。関数の出力がその返り値です。そして、将来のセッションで利用可能な永続的な関数を望むならば、`funcsave`を覚えておいてください。
 
 ## 参照
-
 - 関数に関するfishチュートリアル: [https://fishshell.com/docs/current/tutorial.html#tut_functions](https://fishshell.com/docs/current/tutorial.html#functions)
 
 ### 関数コマンド
-
 - [function](https://fishshell.com/docs/current/cmds/function.html) — 関数を作成
 - [functions](https://fishshell.com/docs/current/cmds/functions.html) — 関数を表示または消去
 - [funcsave](https://fishshell.com/docs/current/cmds/funcsave.html) — 関数の定義をユーザーの自動読み込みディレクトリに保存

@@ -13,12 +13,7 @@ title: "Gera\xE7\xE3o de n\xFAmeros aleat\xF3rios"
 weight: 12
 ---
 
-## O Que e Por Quê?
-
-Gerar números aleatórios envolve criar números que não podem ser previstos de maneira razoável melhor do que por acaso, o que é essencial para o desenvolvimento de simulações, jogos e algoritmos de segurança. Os programadores fazem isso para introduzir imprevisibilidade ou simular fenômenos do mundo real em suas aplicações.
-
 ## Como fazer:
-
 Python oferece o módulo `random` que ajuda na geração de números aleatórios para vários usos. Veja como começar:
 
 1. **Importando o módulo**
@@ -66,7 +61,6 @@ Python oferece o módulo `random` que ajuda na geração de números aleatórios
     Saída de amostra: `[2, 5, 0, 4, 9, 8, 1, 7, 6, 3]`
 
 ## Aprofundamento
-
 O módulo `random` no Python utiliza um gerador de números pseudoaleatórios (PRNG), especificamente o algoritmo Mersenne Twister, que é bom para aplicações de uso geral, mas não é adequado para fins criptográficos devido à sua previsibilidade se muitas saídas forem observadas. O módulo `secrets`, introduzido no Python 3.6, oferece uma alternativa melhor para a geração de números aleatórios criptograficamente fortes, especialmente útil em aplicações sensíveis à segurança. Por exemplo, gerar um token aleatório seguro para um link de redefinição de senha:
 
 ```Python

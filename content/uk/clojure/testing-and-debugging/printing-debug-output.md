@@ -12,9 +12,6 @@ title: "\u0412\u0438\u0432\u0435\u0434\u0435\u043D\u043D\u044F \u043D\u0430\u043
 weight: 33
 ---
 
-## What & Why? (Що і Чому?)
-Printing debug output is about showing intermediate results or variables while your program is running. We do it to hunt bugs or just understand what's going on inside the code.
-
 ## How to (Як це зробити):
 ```Clojure
 (defn debug-example []

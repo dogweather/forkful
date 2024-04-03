@@ -10,9 +10,6 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-Writing tests in TypeScript involves creating automated scripts to verify the functionality and correctness of your code. Programmers do it to ensure reliability, quickly catch bugs, and facilitate maintainable code growth, as TypeScript's static typing adds a level of predictability to JavaScript testing.
-
 ## How to:
 TypeScript works harmoniously with most JavaScript testing frameworks. For demonstration purposes, we'll use Jest, a popular testing framework, due to its zero-configuration setup for TypeScript projects.
 

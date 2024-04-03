@@ -10,9 +10,6 @@ title: Organizzazione del codice in funzioni
 weight: 18
 ---
 
-## Cosa & Perché?
-Organizzare il codice in funzioni significa suddividere lo scripting in pezzi gestibili—pensate a blocchi LEGO funzionali. Lo facciamo per chiarezza, riusabilità e salute mentale. Rende il nostro codice ordinato, leggibile e manutenibile.
-
 ## Come fare:
 ```Lua
 -- Definire una semplice funzione per salutare

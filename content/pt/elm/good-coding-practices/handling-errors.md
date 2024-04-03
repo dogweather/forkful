@@ -11,9 +11,6 @@ title: Tratamento de erros
 weight: 16
 ---
 
-## O Que & Por Que?
-Tratar erros significa escrever código que pode antecipar e lidar com situações problemáticas. Os programadores fazem isso para prevenir falhas, proteger a integridade dos dados e fornecer aos usuários alternativas elegantes quando algo dá errado.
-
 ## Como fazer:
 A filosofia central do Elm é Não Ter Exceções em Tempo de Execução. Dessa forma, o Elm tira proveito do seu sistema de tipos com tipos como `Maybe` e `Result` para gerenciar erros.
 

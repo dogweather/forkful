@@ -10,9 +10,6 @@ title: Lavorare con TOML
 weight: 39
 ---
 
-## Cosa e Perché?
-Lavorare con TOML significa analizzare e generare dati TOML (Tom's Obvious, Minimal Language) utilizzando Elixir. I programmatori lo utilizzano per gestire i file di configurazione perché TOML è leggibile, facile da analizzare e si mappa bene a una struttura dati hash.
-
 ## Come fare:
 Prima, aggiungi un parser TOML alle tue dipendenze mix. Questo esempio utilizza `toml-elixir`:
 

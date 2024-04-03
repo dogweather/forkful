@@ -10,9 +10,6 @@ title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---
 
-## Was & Warum?
-Anführungszeichen aus einem String zu entfernen bedeutet, diese lästigen doppelten oder einzelnen Zeichen, die unseren Text umgeben (' oder "), wegzunehmen. Programmierer tun dies oft, um Eingaben zu bereinigen, Text in einer Datenbank zu speichern oder Strings für die weitere Verarbeitung ohne das Durcheinander von Anführungszeichen vorzubereiten.
-
 ## Wie geht das:
 Hier ist eine unkomplizierte Methode, um in C++ diese Anführungszeichen loszuwerden:
 

@@ -12,9 +12,6 @@ title: Code in Funktionen organisieren
 weight: 18
 ---
 
-## Was & Warum?
-Code in Funktionen zu organisieren bedeutet, das Ungetüm eines Programms in handliche Stücke zu zerlegen, von denen jedes eine bestimmte Aufgabe erfüllt. Programmierer tun dies, um den Code lesbar, wiederverwendbar und wartbar zu machen.
-
 ## Wie geht das:
 Hier ist ein klassisches Beispiel - eine Funktion zur Berechnung der Fakultät einer Zahl.
 

@@ -13,9 +13,6 @@ title: Encontrando la longitud de una cadena
 weight: 7
 ---
 
-## ¿Qué y por qué?
-Encontrar la longitud de una cadena en Go consiste en determinar el número de caracteres que contiene. Los programadores realizan rutinariamente esta operación para manipular cadenas de manera efectiva, ya sea para validación, extracción de subcadenas o simplemente para imponer restricciones en las entradas de los usuarios.
-
 ## Cómo hacerlo:
 En Go, las cadenas se tratan como secuencias de bytes inmutables. Puedes encontrar la longitud de una cadena usando la función incorporada `len()`, que devuelve el número de bytes, no necesariamente el número de caracteres. Así es cómo utilizarla:
 

@@ -14,9 +14,6 @@ title: "Pisanie do standardowego b\u0142\u0119du"
 weight: 25
 ---
 
-## Co i Dlaczego?
-Pisanie do standardowego błędu (stderr) polega na kierowaniu komunikatów o błędach oraz wyjść diagnostycznych do osobnego kanału, różnego od standardowego wyjścia (stdout). Programiści robią to, aby odróżnić regularne wyniki programów od informacji o błędach, usprawniając debugowanie i procesy logowania.
-
 ## Jak to zrobić:
 W Lua, pisanie do stderr można osiągnąć za pomocą funkcji `io.stderr:write()`. Oto jak można napisać prosty komunikat o błędzie do standardowego błędu:
 

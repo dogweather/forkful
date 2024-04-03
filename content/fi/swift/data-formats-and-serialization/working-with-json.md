@@ -13,12 +13,7 @@ title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---
 
-## Mikä & Miksi?
-
-JSON:n käyttäminen Swiftissä tarkoittaa kevyen datanvaihtoformaatin käsittelyä. Ohjelmoijat käyttävät JSONia datan siirtämiseen palvelimen ja web-sovelluksen välillä, koska se on luettavissa ja helppo jäsentää sekä ihmisille että koneille.
-
 ## Kuinka:
-
 Swift tekee JSONin jäsentämisestä suoraviivaista `Codable`-protokollan avulla. Tässä on, kuinka dekoodaat JSONin Swift-objektiksi:
 
 ```Swift
@@ -56,11 +51,9 @@ Nimi: John Doe, Ikä: 30
 ```
 
 ## Syväsukellus
-
 JSON (JavaScript Object Notation) on ollut laajalti käytössä 2000-luvun alusta lähtien, kun Douglas Crockford määritteli sen. Se korvasi XML:n monissa käyttötapauksissa sen yksinkertaisemman syntaksin ja paremman suorituskyvyn vuoksi. Vaikka Swiftin `Codable` on mennä JSONille, vaihtoehtoja, kuten `JSONSerialization`, on olemassa, kun käsitellään ei-Codable-yhteensopivia tyyppejä. Kulissien takana `Codable` abstrahoi alemman tason jäsentämisen ja tekee serialisoinnin/deserialisoinnin saumattomaksi.
 
 ## Katso Myös
-
 - Tutustu lisää JSONiin ja Swiftiin virallisessa Swift-blogissa: [Swift.org](https://swift.org/blog/)
 - Tutustu `Codable`-dokumentaatioon: [Swift Codable](https://developer.apple.com/documentation/swift/codable)
 - Monimutkaisia JSON-rakenteita varten harkitse kolmannen osapuolen kirjastoja, kuten SwiftyJSON, saatavilla [GitHubissa](https://github.com/SwiftyJSON/SwiftyJSON).

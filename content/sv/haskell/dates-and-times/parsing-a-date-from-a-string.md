@@ -14,12 +14,7 @@ title: "Analysera ett datum fr\xE5n en str\xE4ng"
 weight: 30
 ---
 
-## Vad & Varför?
-
-Att tolka ett datum från en sträng i Haskell innebär att omvandla textuella representationer av datum till ett strukturerat format som programmet kan manipulera. Denna process är grundläggande för applikationer som hanterar kalenderdata, vilket möjliggör funktioner som att beräkna tidsintervaller, schemaläggning och datavalidering.
-
 ## Hur gör man:
-
 Direkt ur lådan erbjuder Haskell grundläggande verktyg för att tolka datum, men genom att använda bibliotek som `time` för grundläggande funktionalitet och `date-parse` eller `time-parse` för mer flexibel tolkning kan uppgiften förenklas avsevärt.
 
 Först, se till att du har tillgång till `time`-biblioteket; det är ofta inkluderat med GHC, men om du behöver ange det som ett beroende, lägg till `time` i ditt projekts cabal-fil eller använd `cabal install time` för att manuellt installera det.

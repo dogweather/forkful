@@ -10,9 +10,6 @@ title: Protokollierung
 weight: 17
 ---
 
-## Was & Warum?
-"Logging" bezeichnet das Aufzeichnen von Ereignissen, Transaktionen oder Aktivitäten, die im Laufe der Zeit in einem System stattfinden. Programmierer nutzen es, um Fehler zu suchen, die Systemgesundheit zu überwachen, Statistiken zu sammeln oder sogar die Nutzung zu prüfen, wodurch es eine unerlässliche Praxis zur Wartung und zum Verständnis des Verhaltens ihres Codes unter verschiedenen Bedingungen wird.
-
 ## Wie geht das:
 Arduino verfügt nicht über eine eingebaute Logging-Bibliothek wie einige andere Umgebungen, aber man kann ein einfaches Logging auf der seriellen Konsole mit minimalem Aufwand implementieren. Hier ein schnelles Beispiel, um Ihnen den Einstieg zu erleichtern:
 

@@ -16,9 +16,6 @@ title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---
 
-## Cái gì & Tại sao?
-Viết một tệp văn bản có nghĩa là lưu trữ dữ liệu như chuỗi vào một tệp trên đĩa của bạn. Lập trình viên thực hiện điều này để ghi lại nhật ký, lưu cấu hình, hoặc đơn giản là để duy trì dữ liệu.
-
 ## Làm thế nào:
 Bạn có thể viết một tệp văn bản trong C# bằng cách sử dụng `File.WriteAllText`, `File.AppendAllText`, hoặc một `StreamWriter`.
 

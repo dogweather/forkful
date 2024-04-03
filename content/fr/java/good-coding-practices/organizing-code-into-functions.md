@@ -11,9 +11,6 @@ title: Organisation du code en fonctions
 weight: 18
 ---
 
-## Quoi et pourquoi ?
-Organiser le code en fonctions signifie décomposer le monstre qu'est un programme en morceaux gérables, chacun effectuant une tâche distincte. Les programmeurs font cela pour rendre le code lisible, réutilisable et maintenable.
-
 ## Comment faire :
 Voici un exemple classique — une fonction pour calculer le factoriel d'un nombre.
 

@@ -18,9 +18,6 @@ title: "\uC778\uD130\uB799\uD2F0\uBE0C \uC178 (REPL) \uC0AC\uC6A9\uD558\uAE30"
 weight: 34
 ---
 
-## 무엇 & 왜?
-인터랙티브 셸, 또는 Read-Eval-Print Loop (REPL)은 PowerShell 명령어를 입력하고 즉각적인 피드백을 받을 수 있게 해줍니다. 프로그래머들은 이를 통해 코드 조각을 빠르게 테스트하거나, 디버깅하거나, 전체 스크립트를 작성하지 않고 새 명령어를 학습할 수 있습니다.
-
 ## 방법:
 PowerShell을 실행하면 REPL에 진입하게 됩니다. `Get-Date` Cmdlet을 시도해보세요:
 

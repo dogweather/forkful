@@ -13,12 +13,7 @@ title: Manejando errores
 weight: 16
 ---
 
-## Qué y Por Qué?
-
-Manejar errores en C involucra detectar y responder a condiciones anómalas que surgen durante la ejecución del programa. Los programadores hacen esto para prevenir errores, caídas y comportamientos impredecibles, asegurando que el software funcione de manera fiable y eficiente bajo varios escenarios.
-
 ## Cómo hacerlo:
-
 C no tiene soporte integrado para excepciones como algunos otros lenguajes. En cambio, depende de algunas estrategias convencionales para el manejo de errores, tales como retornar valores especiales de las funciones y configurar variables globales como `errno`.
 
 **Retornando Valores Especiales**
@@ -79,7 +74,6 @@ Error abriendo el archivo: No existe el archivo o el directorio
 ```
 
 ## Análisis Profundo
-
 Históricamente, el diseño minimalista del lenguaje de programación C ha excluido un mecanismo integrado de manejo de excepciones, reflejando sus orígenes de programación de sistemas de bajo nivel donde el máximo rendimiento y el control cercano al hardware son críticos. En cambio, C adopta un enfoque de manejo de errores más manual que se ajusta a su filosofía de dar a los programadores tanto control como sea posible, incluso a costa de la conveniencia.
 
 Aunque este enfoque se alinea bien con los objetivos de diseño de C, también puede llevar a código de verificación de errores verboso y al potencial de verificaciones de error perdidas, los cuales los lenguajes modernos abordan con mecanismos estructurados de manejo de excepciones. Por ejemplo, las excepciones en lenguajes como Java o C# permiten un procesamiento de errores centralizado, haciendo el código más limpio y la gestión de errores más directa. Sin embargo, las excepciones introducen su sobrecarga y complejidad, que podrían no ser ideales para la programación a nivel de sistema donde C brilla.

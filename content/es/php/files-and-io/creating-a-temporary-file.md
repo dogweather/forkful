@@ -11,9 +11,6 @@ title: Creando un archivo temporal
 weight: 21
 ---
 
-## Qué & Por Qué?
-Crear un archivo temporal es simplemente generar un fichero que solo necesitas durante la ejecución de tu script PHP. Los programadores lo hacen para no dejar rastro en el sistema de archivos permanente o para manejar datos que solo son relevantes de forma transitoria.
-
 ## Cómo hacerlo:
 Generar un archivo temporal en PHP es pan comido con la función `tmpfile()`:
 

@@ -11,9 +11,6 @@ title: Protokollierung
 weight: 17
 ---
 
-## Was & Warum?
-Das Protokollieren im Kontext der Programmierung ist der Prozess, Ereignisse, Zustände und Informationen in einer Datei oder einem anderen Ausgabemedium aufzuzeichnen. Programmierer führen Protokolle, um den Überblick darüber zu behalten, was in ihren Anwendungen passiert, um Probleme zu debuggen und um die Leistung für zukünftige Analysen und Optimierungen zu überwachen.
-
 ## Wie man das macht:
 Angenommen, Sie arbeiten an einem Linux-Computer und möchten Ihre Protokolle mit gutem alten C++ in eine Datei schreiben. Sie sollten die Bibliotheken `<iostream>` und `<fstream>` einbinden, um Dateioperationen durchzuführen. Hier ist ein kurzes Beispiel:
 

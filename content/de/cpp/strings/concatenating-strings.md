@@ -9,9 +9,6 @@ title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---
 
-## Was & Warum?
-String-Konkatenation ist das Verknüpfen zweier oder mehrerer Zeichenketten. Programmierer nutzen diese Technik, um dynamische Texte zu erzeugen, Daten zu formatieren oder Benutzereingaben zu verarbeiten.
-
 ## How to:
 ```C++
 #include <iostream>

@@ -10,12 +10,7 @@ title: "An\xE1lise de HTML"
 weight: 43
 ---
 
-## O Que é & Porquê?
-
-O parsing de HTML é o processo de converter strings de HTML em uma estrutura que possa ser manipulada e acessada pelo seu programa Elm. Programadores fazem isso para interagir com o conteúdo de páginas web, como ler informações ou até modificar elementos do DOM dinamicamente.
-
 ## Como Fazer:
-
 Em Elm, usamos `elm/html` para criar HTML e `elm/parser` para interpretar strings de HTML. Vamos a um exemplo:
 
 ```Elm
@@ -88,7 +83,6 @@ sampleHtml =
 Quando executamos `parseHtml sampleHtml`, obtemos como resultado a representação Elm do HTML que podemos manipular mais facilmente.
 
 ## Aprofundamento
-
 Historicamente, o parsing de HTML foi e continua sendo um desafio devido à complexidade e variações do HTML. Ferramentas como `elm/html` e `elm/parser` simplificaram esses processos, permitindo uma manipulação mais direta e confiável do HTML dentro do Elm. Embora Elm seja fortemente tipado e funcional, processos como o parsing de HTML se beneficiam de uma abordagem declarativa, o que se alinha bem com os princípios da linguagem.
 
 Alternativas para parsing de HTML em Elm incluem utilizar diretamente APIs de JavaScript por meio de ports, o que pode ser adequado para casos onde a biblioteca de parsing de Elm não é suficiente.
@@ -96,6 +90,5 @@ Alternativas para parsing de HTML em Elm incluem utilizar diretamente APIs de Ja
 Detalhes de implementação são importantes: como Elm é uma linguagem funcional, cada resultado deve ser tratado - sucesso ou erro. Essa abordagem previne muitos bugs que são comuns em outras linguagens onde o tratamento de erros é opcional ou negligenciado.
 
 ## Veja Também
-
 - [Elm Parser](http://package.elm-lang.org/packages/elm/parser/latest)
 - [Elm Lang - Trabalhando com HTML](https://guide.elm-lang.org/interop/)

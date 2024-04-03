@@ -12,12 +12,7 @@ title: Werken met JSON
 weight: 38
 ---
 
-## Wat & Waarom?
-
-JSON (JavaScript Object Notation) wordt gebruikt om gegevens op te slaan en te transporteren. Programmeurs gebruiken JSON omdat het lichtgewicht is, gemakkelijk voor mensen om te lezen en te schrijven, en gemakkelijk voor machines om te parsen en te genereren.
-
 ## Hoe:
-
 Laten we wat JSON parsen.
 
 ```lua
@@ -57,11 +52,9 @@ end
 ```
 
 ## Diepgaand
-
 JSON werd de de facto standaard voor API's, en groeide uit boven XML omdat het minder verhalend is. Er zijn alternatieven zoals YAML, dat nog leesbaarder is maar niet zo breed gebruikt wordt in API's. In Lua is er geen native JSON-ondersteuning, dus je hebt een bibliotheek zoals 'dkjson' of 'cjson' nodig. Implementatiedetails in Lua omvatten het omgaan met typeverschillen, zoals arrays en objecten, en het converteren tussen Lua's `nil` en JSON's `null`.
 
 ## Zie Ook
-
 - [dkjson-bibliotheek op GitHub](https://github.com/LuaDist/dkjson)
 - [Officiële JSON-website](https://www.json.org/json-en.html)
 - [Programmeren in Lua (eerste editie)](https://www.lua.org/pil/contents.html) voor het leren van de basis van Lua.

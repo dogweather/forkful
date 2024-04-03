@@ -12,13 +12,11 @@ title: Trabajando con CSV
 weight: 37
 ---
 
-## ¿Qué y Por Qué?
-Trabajar con CSV (Valores Separados por Comas) implica leer y escribir datos en archivos CSV, un formato común para almacenar datos tabulares. Los programadores lo hacen para intercambiar y almacenar datos fácilmente en un formato de texto simple que cuenta con amplio soporte a través de diferentes plataformas y lenguajes.
-
 ## Cómo:
 Python proporciona el módulo integrado `csv` para manejar archivos CSV, lo que facilita leerlos y escribir en ellos. Para una manipulación de datos más robusta y compleja, la biblioteca de terceros `pandas` es muy popular.
 
 ### Usando el módulo `csv`
+
 
 #### Leyendo un archivo CSV
 ```python

@@ -18,12 +18,7 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Cái gì & Tại sao?
-
-Làm tròn số, một khái niệm cơ bản trong lập trình máy tính, bao gồm việc điều chỉnh một số để gần với số nguyên hoặc đến một số lượng chỗ thập phân cụ thể. Lập trình viên thường thực hiện làm tròn số để đơn giản hóa các số cho độ dễ đọc của con người hoặc để đáp ứng nhu cầu tính toán cụ thể, đảm bảo độ chính xác và giảm tải tính toán.
-
 ## Cách thức:
-
 Google Apps Script, với tư cách là ngôn ngữ dựa trên JavaScript, cung cấp các phương thức tiêu chuẩn để làm tròn số. Dưới đây là cách phân tích ba kỹ thuật thường được sử dụng:
 
 ### Math.round()
@@ -65,7 +60,6 @@ Logger.log(preciseRound); // In ra: 2.57
 ```
 
 ## Sâu hơn
-
 Việc làm tròn số trong Google Apps Script không khác nhiều so với cách thực hiện trong các môi trường JavaScript khác. Tuy nhiên, việc hiểu biết về sự khác biệt trong các phương thức làm tròn và tiềm năng của vấn đề số học dấu phẩy động là rất quan trọng. Ví dụ, do cách máy tính biểu diễn số dấu phẩy động, không phải tất cả các phân số thập phân có thể được biểu diễn một cách chính xác tuyệt đối, dẫn đến kết quả làm tròn đôi khi không như mong đợi.
 
 Lịch sử, JavaScript (và theo đó, Google Apps Script) xử lý điều này bằng cách tuân theo tiêu chuẩn IEEE 754, được nhiều ngôn ngữ lập trình khác sử dụng cho số học dấu phẩy động. Tiêu chuẩn này định rõ cách số được làm tròn, đảm bảo sự nhất quán trên các nền tảng và ngôn ngữ khác nhau.

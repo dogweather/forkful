@@ -11,9 +11,6 @@ title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---
 
-## Vad & Varför?
-Att omvandla ett datum till en sträng innebär att du representerar datumet i ett textformat. Programmerare gör detta för att enklare kunna visa, spara eller överföra datumdata som lättläst text.
-
 ## Hur man gör:
 För att konvertera datum till strängar i Clojure, använd `clj-time` biblioteket som bygger på Joda-Time. Detta exempel visar hur:
 

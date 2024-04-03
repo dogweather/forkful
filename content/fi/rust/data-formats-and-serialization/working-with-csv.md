@@ -12,9 +12,6 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mitä & Miksi?
-CSV-tiedostojen (pilkuin erotetut arvot) käsittely tarkoittaa tabulaarisen datan tallentavien yksinkertaistettujen tekstitiedostojen lukemista ja kirjoittamista. Ohjelmoijat tekevät tämän mahdollistaakseen datan jakamisen eri ohjelmien, järjestelmien välillä tai käsitelläkseen suuria datajoukkoja tehokkaassa, ihmisen luettavassa muodossa.
-
 ## Kuinka tehdä:
 Rust, keskittyen turvallisuuteen ja suorituskykyyn, tarjoaa erinomaisia kirjastoja (crates) CSV-tiedostojen käsittelyyn, joista `csv` on suosituin. Tarvitset myös `serde`-kirjaston datan serialisointiin ja deserialisointiin.
 
@@ -27,7 +24,6 @@ serde = { version = "1.0", features = ["derive"] }
 ```
 
 ### CSV:n lukeminen
-
 CSV-tiedoston lukemiseksi määrittele rakenne, joka edustaa dataasi ja johda `Deserialize` `serde`-kirjastosta:
 
 ```rust
@@ -70,7 +66,6 @@ Record { city: "New York", state: "NY", population: 8336817 }
 ```
 
 ### Kirjoittaminen CSV:ään
-
 CSV-tiedostoon kirjoittamiseksi määrittele rakenne ja johda `Serialize`:
 
 ```rust

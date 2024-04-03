@@ -14,9 +14,6 @@ title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---
 
-## Mitä & Miksi?
-Merkkijonon suurkirjoittaminen tarkoittaa jokaisen sanan ensimmäisen merkin muuntamista suuraakkoseksi samalla varmistaen, että loput merkit säilyvät pienaakkosina. Tämä operaatio on yleinen tiedon muotoilussa ja käyttäjän syötteen normalisoinnissa ylläpitämään johdonmukaisuutta ja parantamaan luettavuutta.
-
 ## Miten:
 Arduino, joka on pääasiassa tunnettu vuorovaikutuksesta laitteiston kanssa, sisältää myös perustason merkkijonon käsittelykykyjä `String`-objektinsa kautta. Kuitenkaan siinä ei ole suoraa `capitalize`-funktiota, joka nähdään korkeamman tason kielissä. Näin ollen toteutamme suurkirjoittamisen iteroimalla merkkijonon yli ja soveltamalla kirjainkoon muutoksia.
 

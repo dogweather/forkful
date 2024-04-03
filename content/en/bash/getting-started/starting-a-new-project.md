@@ -11,11 +11,7 @@ title: Starting a new project
 weight: 1
 ---
 
-## What & Why?
-Starting a new project often means creating a directory structure and initial files—kinda like laying the foundation of a house. Programmers do it to organize thoughts, files, and tasks, turning chaos into a neat to-do list.
-
 ## How to:
-
 Let's create a simple script to bootstrap a new project.
 
 ```Bash
@@ -69,7 +65,6 @@ Project 'myproject' created.
 ```
 
 ## Deep Dive
-
 Before we had scripts, we'd manually create directories and files every time—tedious and error-prone. Automation with a script minimizes mistakes and speeds things up.
 
 Alternatives include tools like Yeoman, which scaffolds projects in various languages, but that's like using a power drill when you need a thumbtack.
@@ -77,7 +72,6 @@ Alternatives include tools like Yeoman, which scaffolds projects in various lang
 The script above is simple on purpose. It makes a project directory, subdirectories for organization (like `src` for source code), and essential files (like `README.md`). Plus, it sets up a Git repo so you can save versions of your work. You can tweak and add to it for each project's needs.
 
 ## See Also
-
 - Git documentation: https://git-scm.com/doc
 - Yeoman: http://yeoman.io/
 - Bash scripting tutorials: https://www.shellscript.sh/

@@ -11,9 +11,6 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i dlaczego?
-Liczby zespolone mają część rzeczywistą i część urojoną, zazwyczaj zapisywane jako `a + bi`. Są kluczowe w zaawansowanej matematyce, fizyce, inżynierii oraz niektórych algorytmach komputerowych. Programiści pracują z nimi, aby radzić sobie z obliczeniami obejmującymi pierwiastki kwadratowe z liczb ujemnych oraz funkcje oscylacyjne.
-
 ## Jak?
 PHP oferuje wbudowane wsparcie dla liczb zespolonych za pomocą rozszerzenia `ext-intl` z klasą `NumberFormatter`. Oto przykład:
 

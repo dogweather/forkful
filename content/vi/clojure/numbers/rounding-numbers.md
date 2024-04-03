@@ -17,9 +17,6 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Làm gì & Tại sao?
-Làm tròn số là việc điều chỉnh một số để gần với số nguyên hơn, hoặc đến một độ chính xác thập phân nhất định. Chúng ta làm tròn số để đơn giản hóa chúng cho việc đọc của con người, giảm tải tính toán, hoặc đáp ứng các yêu cầu số lượng cụ thể.
-
 ## Làm thế nào:
 Trong Clojure, chúng ta chủ yếu sử dụng `Math/round`, `Math/floor`, và `Math/ceil`:
 

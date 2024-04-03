@@ -13,12 +13,7 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## Vad och varför?
-
-Att skicka en HTTP-förfrågan i Google Apps Script handlar om att programmatiskt göra ett anrop till en extern webbserver eller API. Programmerare gör detta för att hämta eller skicka data till webbtjänster, integrera en omfattande värld av webbresurser och funktioner direkt i sina Google Apps Script-projekt.
-
 ## Hur:
-
 I Google Apps Script är det primära sättet att skicka en HTTP-förfrågan genom att använda tjänsten `UrlFetchApp`. Denna tjänst tillhandahåller metoder för att göra HTTP GET- och POST-begäranden. Här är ett enkelt exempel på att göra en GET-förfrågan för att hämta JSON-data:
 
 ```javascript
@@ -57,7 +52,6 @@ function postExample() {
 Dessa kodsnuttar visar grundläggande implementeringar av GET- och POST-förfrågningar. Resultatet kommer att bero på API-svaret och kan ses i Google Apps Scripts Logger.
 
 ## Fördjupning
-
 Google Apps Scripts tjänst `UrlFetchApp` har utvecklats avsevärt sedan dess början, och erbjuder mer nyanserad kontroll över HTTP-förfrågningar med funktioner som att ställa in headers, payload och hantera multipart/form-data för filuppladdningar. Även om det ger ett enkelt sätt att integrera externa webbtjänster, kan utvecklare som kommer från mer robusta backend-språk finna dess funktionalitet något begränsad jämfört med bibliotek som Pythons `requests` eller JavaScripts `fetch` API i Node.js.
 
 En anmärkningsvärd begränsning är exekveringstidsgränsen för Google Apps Script, vilket påverkar långvariga förfrågningar. Dessutom, även om `UrlFetchApp` täcker ett brett spektrum av användningsfall, kan mer komplexa scenarier som involverar OAuth-autentisering eller hantering av mycket stora datamängder kräva kreativa lösningar eller användning av ytterligare Google Cloud-resurser.

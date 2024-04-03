@@ -10,9 +10,6 @@ title: Att arbeta med XML
 weight: 40
 ---
 
-## Vad & Varför?
-Att arbeta med XML innebär att hantera data i ett utbrett, strukturerat format som används i konfigurationer, meddelanden och mer. Programmerare manipulerar XML för att läsa, skriva, uppdatera och fråga data – avgörande för interoperabilitet i massor av appar och tjänster.
-
 ## Hur man gör:
 Fish har ingen inbyggd XML-tolkning, så du kommer att luta dig mot externa verktyg som `xmllint` eller `xmlstarlet`. Här är en kodsnutt för att läsa värden:
 

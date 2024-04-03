@@ -10,9 +10,6 @@ title: Recherche et remplacement de texte
 weight: 10
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Chercher et remplacer du texte, c'est update un morceau de texte par un autre. Les devs font ça pour corriger des erreurs, mettre à jour des données ou automatiser des modifications.
-
 ## How to (Comment faire ?)
 Elixir utilise les Regex (expressions régulières) pour la recherche, avec `String.replace/3` pour le remplacement.
 

@@ -11,9 +11,6 @@ title: Opprette en midlertidig fil
 weight: 21
 ---
 
-## What & Why?
-Midlertidige filer er filer som styres av systemet, og som slettes automatisk når de ikke lenger er nødvendige. Programmerere bruker dem for å håndtere store datamengder, for midlertidige backups, eller for å redusere minnebruk under lange operasjoner.
-
 ## How to:
 I Ruby kan du bruke `Tempfile` biblioteket for å lage og håndtere midlertidige filer:
 

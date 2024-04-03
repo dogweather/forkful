@@ -11,9 +11,6 @@ title: Komennoriviparametrien lukeminen
 weight: 23
 ---
 
-## What & Why? (Mitä ja miksi?)
-Komennon rivin argumentit ovat parametreja, jotka annetaan ohjelmalle sen käynnistyessä. Ne mahdollistavat joustavan ohjelman käytön, koska käyttäjä voi määrittää toimintoja ohjelman ulkopuolelta.
-
 ## How to: (Kuinka tehdä:)
 ```C++
 #include <iostream>

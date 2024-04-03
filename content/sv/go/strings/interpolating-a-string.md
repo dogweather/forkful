@@ -14,12 +14,7 @@ title: "Interpolera en str\xE4ng"
 weight: 8
 ---
 
-## Vad och varför?
-
-Stränginterpolering är en metod för att konstruera strängar som inkorporerar variabler, vilket möjliggör dynamisk skapande av strängar. Programmerare gör detta för att anpassa meddelanden, konstruera URL:er, skapa SQL-frågor och mer, vilket möjliggör mer läsbar och underhållbar kod.
-
 ## Hur man gör:
-
 I Go uppnås stränginterpolering vanligtvis med hjälp av `fmt`-paketet, särskilt med funktionen `Sprintf`, som låter dig injicera variabler i en sträng genom att specificera formatteringsverb. Verben är platshållare i formatsträngen och ersätts av de givna variablernas värden. Så här använder du det:
 
 ```go
@@ -42,7 +37,6 @@ func main() {
 Observera att `%s` används för strängar och `%d` för heltal. `fmt`-paketdokumentationen ger en omfattande lista med formatteringsverb för olika datatyper.
 
 ## Djupdykning
-
 Konceptet med stränginterpolering finns i många programmeringsspråk, även om det skiljer sig åt i syntax och kapaciteter. I Go, även om `fmt`-pakets funktion `Sprintf` är det mest använda tillvägagångssättet, kanske det inte alltid är det mest effektiva, speciellt för enkla sammanfogningar eller när man arbetar inom högpresterande kod. 
 
 `fmt`-paketet använder reflektion för att dynamiskt tolka variablernas typer vid körning, vilket, även om det är flexibelt, medför overhead. I scenarier där prestanda är avgörande, kan direkt strängsammanfogning eller typen `strings.Builder` erbjuda bättre alternativ. Direkt sammanfogning är rakt på sak men kan bli otymplig med flera variabler. `strings.Builder`, å andra sidan, ger ett mer prestandaeffektivt och läsbart sätt att bygga komplexa strängar i en loop eller när man hanterar många variabler:

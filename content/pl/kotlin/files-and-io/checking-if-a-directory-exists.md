@@ -13,9 +13,6 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i dlaczego?
-Sprawdzanie, czy katalog istnieje w Kotlinie, polega na weryfikacji obecności katalogu pod określoną ścieżką. Programiści wykonują to zadanie, aby zapobiec błędom, takim jak próba odczytu z katalogu, który nie istnieje, lub zapisu do niego, zapewniając płynniejszą obsługę plików i zarządzanie danymi w aplikacjach.
-
 ## Jak to zrobić:
 Kotlin, działający na JVM, wykorzystuje Java File API do operacji na plikach, co czyni sprawdzanie istnienia katalogów prostym. Oto podstawowy przykład:
 

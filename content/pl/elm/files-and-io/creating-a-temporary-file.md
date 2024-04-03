@@ -11,9 +11,6 @@ title: Tworzenie pliku tymczasowego
 weight: 21
 ---
 
-## Co i dlaczego?
-Tworzenie tymczasowego pliku to proces generowania pliku, który istnieje tylko na czas działania aplikacji. Programiści używają tej techniki, aby przechowywać dane tymczasowe bez ryzyka zakłócenia stałej struktury danych lub kiedy chcą zapewnić bezpieczeństwo informacje poprzez ich samozniszczenie po użyciu.
-
 ## Jak to zrobić:
 W Elm, bezpośrednie tworzenie plików tymczasowych nie jest możliwe, ponieważ język ten działa w przeglądarce i nie ma dostępu do systemu plików. Jednak możemy symulować ten proces. Przykład poniżej pokazuje, jak tego dokonać przez generowanie unikatowego URL-a za pomocą funkcji:
 

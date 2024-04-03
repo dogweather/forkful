@@ -10,9 +10,6 @@ title: "XML:n k\xE4sittely"
 weight: 40
 ---
 
-## Mikä & Miksi?
-XML, lyhenne sanoista eXtensible Markup Language, on kuin JSONin sanavalmis serkku. Joudut painimaan XML:n kanssa, kun työskentelet perintöjärjestelmien, yritysohjelmistojen tai APIen parissa, jotka ohittivat JSON-buumin. Se on olennainen tiedonvaihdossa, jossa XML pitää pintansa.
-
 ## Kuinka:
 Rustissa voit käsitellä XML:ää paketeilla, kuten `xml-rs`. Asenna lisäämällä `xml-rs = "0.8"` tiedostoosi `Cargo.toml`. Tässä on esimerkki yksinkertaisen XML:n jäsentämisestä:
 

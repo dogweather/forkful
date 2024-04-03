@@ -14,12 +14,7 @@ title: "Descargando una p\xE1gina web"
 weight: 42
 ---
 
-## Qué y Por Qué?
-
-Descargar una página web en Google Apps Script implica obtener el contenido de una página web a través de HTML para diversos fines, como el web scraping, la extracción de datos o el monitoreo de cambios. Los programadores optan por esta operación para automatizar las tareas de recopilación o integración de datos, minimizando el esfuerzo manual y asegurando el procesamiento de datos en tiempo real.
-
 ## Cómo hacerlo:
-
 En Google Apps Script, el servicio `UrlFetchApp` es fundamental para descargar contenido web. A continuación, se presenta una guía paso a paso y un ejemplo simple que demuestra cómo obtener y registrar el contenido HTML de una página web:
 
 1. **Operación Básica de Búsqueda:**
@@ -57,7 +52,6 @@ function downloadSecureWebPage() {
 Tenga en cuenta las cuotas de Google Apps Script; un uso intensivo puede requerir el manejo de errores para límites de frecuencia.
 
 ## Análisis Profundo
-
 Históricamente, la descarga y manipulación de contenido web comenzó con solicitudes HTTP simples, evolucionando significativamente con la llegada de lenguajes de scripting. Google Apps Script permite la ejecución directa de tales tareas dentro del ecosistema de G Suite, aprovechando la robusta infraestructura de Google. El servicio `UrlFetchApp` es un elemento central de esta funcionalidad, encapsulando solicitudes HTTP/S complejas en una interfaz más simple a nivel de aplicación.
 
 A pesar de su conveniencia, Google Apps Script podría no siempre ser la mejor herramienta para web scraping intensivo o cuando se requiere un procesamiento posterior complejo de los datos obtenidos debido a límites de tiempo de ejecución y cuotas impuestas por Google. En tales casos, marcos de web scraping dedicados o lenguajes diseñados para operaciones de E/S asíncronas, como Node.js con bibliotecas como Puppeteer o Cheerio, podrían ofrecer más flexibilidad y potencia.

@@ -14,12 +14,7 @@ title: Befehlszeilenargumente lesen
 weight: 23
 ---
 
-## Was & Warum?
-
-Das Lesen von Befehlszeilenargumenten in Dart ermöglicht es Programmierern, Daten direkt in die Konsole einzugeben, wenn ein Dart-Programm ausgeführt wird, was dessen Interaktivität und Flexibilität für verschiedene Anwendungsfälle erhöht, einschließlich Automatisierungsskripte, CLI-Tools oder Stapelverarbeitung. Diese Funktion ist entscheidend für die Erstellung anpassbarer und benutzerfreundlicher Befehlszeilenanwendungen.
-
 ## Wie geht das:
-
 Dart bietet einen unkomplizierten Zugang zu Befehlszeilenargumenten über die `List<String> args` in der Hauptmethode. Unten ist ein einfaches Beispiel, das zeigt, wie man Befehlszeilenargumente liest und nutzt.
 
 ```dart
@@ -47,7 +42,6 @@ Befehlszeilenargumente:
 ```
 
 ### Nutzung einer beliebten Drittanbieterbibliothek: `args`
-
 Obwohl die integrierten Fähigkeiten von Dart zum Umgang mit Befehlszeilenargumenten für viele Anwendungen robust sind, bietet das `args`-Paket eine verfeinerte Möglichkeit, Befehlszeilenargumente für komplexere Bedürfnisse zu definieren und zu parsen.
 
 Fügen Sie zuerst das `args`-Paket zu Ihrer `pubspec.yaml` hinzu:

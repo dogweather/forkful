@@ -12,9 +12,6 @@ title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---
 
-## Vad & Varför?
-Omvandling av datum till sträng innebär att förändra ett datumobjekt så det representeras som text, vilket gör det lättare att läsa och använda i gränssnitt eller rapporter. Programmerare gör detta för att möjliggöra delning, visning eller lagring av datum i en standardiserad och förståelig format.
-
 ## Hur gör man:
 Elixir använder `DateTime` modulen för hantering av datum. Följande är exempel på hur du kan konvertera ett datum till en sträng:
 

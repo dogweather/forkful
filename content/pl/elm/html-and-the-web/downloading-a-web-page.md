@@ -11,9 +11,6 @@ title: Pobieranie strony internetowej
 weight: 42
 ---
 
-## What & Why? (Co i Dlaczego?)
-Pobranie strony internetowej to proces ściągania treści ze zdalnego serwera. Programiści robią to, aby przetwarzać dane, pobierać aktualizacje lub wypełniać aplikacje treścią.
-
 ## How to: (Jak to zrobić:)
 W Elm downloadowanie strony może być wykonane za pomocą modułu `Http`. Oto przykład prostego żądania GET:
 

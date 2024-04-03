@@ -10,9 +10,6 @@ title: Lecture d'un fichier texte
 weight: 22
 ---
 
-## Quoi & Pourquoi ?
-La lecture de fichiers texte consiste à accéder au contenu stocké dans des fichiers sur le disque pour pouvoir le manipuler ou l'analyser. Les programmeurs le font pour diverses raisons, comme lire des configurations, des données ou encore des scripts.
-
 ## Comment faire :
 ```Swift
 import Foundation

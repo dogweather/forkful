@@ -14,12 +14,7 @@ title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---
 
-## Quoi & Pourquoi ?
-
-Vérifier si un répertoire existe en Python consiste à confirmer la présence d'un dossier dans le système de fichiers avant d'effectuer des opérations telles que la lecture ou l'écriture de fichiers. Les programmeurs font cela pour éviter des erreurs telles que `FileNotFoundError`, assurant que l'application se comporte de manière fiable et ne plante pas lors de la tentative d'interaction avec les répertoires.
-
 ## Comment faire :
-
 Python fournit des moyens natifs de vérifier l'existence d'un répertoire en utilisant les modules `os` et `pathlib`. Voici des exemples pour les deux :
 
 ### Utiliser le module `os`

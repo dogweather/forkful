@@ -30,12 +30,7 @@ title: "\u0E01\u0E32\u0E23\u0E41\u0E1B\u0E25\u0E07\u0E27\u0E31\u0E19\u0E17\u0E35
 weight: 28
 ---
 
-## อะไร & ทำไม?
-
-การแปลงวันที่เป็นสตริงใน C# คือการเปลี่ยนรูปแบบจากวัตถุ DateTime เป็นการแสดงผลแบบข้อความ โปรแกรมเมอร์ทำสิ่งนี้เพื่อแสดงวันที่ในรูปแบบที่เข้าใจง่ายสำหรับผู้ใช้หรือเพื่อ serialize ข้อมูลสำหรับการเก็บข้อมูลและการส่งข้อมูล
-
 ## วิธีการ:
-
 ใน C#, คุณมีวัตถุ `DateTime` และหลายวิธีในการเปลี่ยนมันเป็นสตริง นี่คือตัวอย่างบางส่วน:
 
 ```csharp
@@ -50,7 +45,6 @@ Console.WriteLine(withCulture); // ผลลัพธ์: "4/1/2023"
 ```
 
 ## ลงลึก
-
 ก่อนหน้านี้, การจัดการเรื่องวันที่และสตริงนั้นยากกว่า ปัจจุบัน, `DateTime` ใน C# มี `.ToString()` ที่มี overloads สำหรับวัฒนธรรมและรูปแบบ `IFormatProvider` interface, เช่น `CultureInfo`, ควบคุมการจัดรูปแบบตามวัฒนธรรม
 
 มีทางเลือกอื่นหรือไม่? แน่นอน! `String.Format` และ interpolation (`$"{now:yyyy-MM-dd}"`) เป็นตัวเลือกสำหรับการแทรกวันที่เข้ากับสตริงที่มีบริบท `DateTimeOffset` เป็นที่นิยมสำหรับความจำเพาะของเขตเวลา
@@ -58,7 +52,6 @@ Console.WriteLine(withCulture); // ผลลัพธ์: "4/1/2023"
 จากมุมมองของการทำงาน, จำไว้ว่า `DateTime` เป็นโครงสร้าง, ดังนั้นจึงเป็นประเภทของค่า การแปลงมันไม่เปลี่ยนแปลงตัวตนต้นฉบับ: ความเป็น immutable สำคัญที่สุด เลือกรูปแบบสตริงอย่างชาญฉลาดตามผู้ชมของคุณ (ผู้ใช้) และระบบที่คุณกำลังส่งข้อมูลไปยัง (ฐานข้อมูล, APIs)
 
 ## ดูเพิ่มเติม
-
 - [DateTime.ToString Method](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring)
 - [Custom date and time format strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
 - [CultureInfo Class](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo)

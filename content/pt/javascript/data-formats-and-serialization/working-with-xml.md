@@ -11,11 +11,7 @@ title: Trabalhando com XML
 weight: 40
 ---
 
-## O Que & Por Quê?
-Trabalhar com XML significa analisar, manipular e produzir conteúdo XML usando código. Programadores fazem isso porque o XML é amplamente utilizado para arquivos de configuração, troca de dados e serviços web devido à sua natureza legível por humanos e interpretável por máquinas.
-
 ## Como fazer:
-
 Aqui está como analisar XML:
 
 ```javascript
@@ -46,7 +42,6 @@ console.log(xmlString);
 ```
 
 ## Aprofundando
-
 XML é a sigla para eXtensible Markup Language, um formato de dados que existe desde o final dos anos 90. Ele define um conjunto de regras para codificar documentos que tanto humanos quanto máquinas podem ler. Historicamente, o XML ganhou tração pela sua flexibilidade e hierarquia estruturada, tornando-se uma escolha para serviços web, como SOAP, e numerosos arquivos de configuração.
 
 Alternativas ao XML incluem JSON (JavaScript Object Notation), que se tornou popular pelo seu fácil uso com JavaScript e menor peso. YAML é outra alternativa, valorizada por ser amigável aos humanos e uma escolha comum para configuração.
@@ -54,7 +49,6 @@ Alternativas ao XML incluem JSON (JavaScript Object Notation), que se tornou pop
 XML é implementado em JavaScript usando as interfaces DOMParser e XMLSerializer. O DOM XML (Modelo de Objeto de Documento) permite navegar e editar documentos XML assim como você faria com HTML. Apesar da ascensão do JSON, entender XML é chave, já que numerosos sistemas legados e indústrias específicas ainda dependem dele para troca de dados.
 
 ## Veja Também
-
 - MDN Web Docs (Análise de XML): https://developer.mozilla.org/en-US/docs/Web/API/DOMParser
 - W3Schools (Tutorial DOM XML): https://www.w3schools.com/xml/dom_intro.asp
 - "O que é XML?": https://www.w3.org/XML/

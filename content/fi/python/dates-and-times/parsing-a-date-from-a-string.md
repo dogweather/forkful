@@ -14,9 +14,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---
 
-## Mikä ja miksi?
-Päivämäärän jäsentäminen merkkijonosta tarkoittaa tekstuaalisen päivä- ja aikatiedon muuntamista datetime-objektiksi tai vastaavaksi rakenteelliseksi muodoksi. Tämä suoritetaan yleensä mahdollistamaan päivämäärälaskennat, vertailut ja muotoilutoiminnot tavalla, joka on kieli- ja alueagnostista. Ohjelmoijat tekevät näin tehokkaasti käsitelläkseen ja manipuloidakseen aikatietoja, jotka on poimittu lokeista, käyttäjän syötteistä tai ulkoisista lähteistä.
-
 ## Kuinka:
 Pythonin vakio-/standardikirjasto tarjoaa `datetime`-moduulin, joka sisältää `strptime`-metodin tähän tarkoitukseen. Metodi vaatii kaksi argumenttia: päivämäärämerkkijonon ja muoto-ohjeen, joka määrittää syötemerkkijonon kaavan.
 

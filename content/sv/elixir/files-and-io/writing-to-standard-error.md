@@ -13,12 +13,7 @@ title: Skriva till standardfel
 weight: 25
 ---
 
-## Vad & Varför?
-
-Att skriva till standardfel (stderr) i Elixir är en metod för att dirigera felmeddelanden och diagnostik separat från huvudutdata (stdout). Programmerare använder stderr för att felsöka och hantera fel utan att göra programmets huvudutdata oöverskådlig, vilket gör det enklare att identifiera och åtgärda problem.
-
 ## Hur:
-
 I Elixir kan du använda funktioner i `IO`-modulen såsom `IO.puts/2` och `IO.warn/2` för att skriva meddelanden till standardfel:
 
 ```elixir

@@ -10,9 +10,6 @@ title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---
 
-## What & Why?
-Ein String in Kleinbuchstaben umzuwandeln bedeutet, alle Buchstaben eines Textes in ihre entsprechende kleinbuchstabige Form zu konvertieren. Programmierer nutzen das, um Texteingaben zu vereinheitlichen oder Groß- und Kleinschreibung zu ignorieren, etwa bei Suchfunktionen.
-
 ## How to:
 In TypeScript den `toLowerCase()` Methodenaufruf an einem String anzuwenden, konvertiert den gesamten Text in Kleinbuchstaben. So geht's:
 

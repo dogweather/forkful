@@ -18,9 +18,6 @@ title: "\u0938\u094D\u091F\u094D\u0930\u093F\u0902\u0917 \u0915\u094B \u091C\u09
 weight: 3
 ---
 
-## What & Why? (क्या और क्यों?)
-String concatenation का मतलब होता है दो या दो से ज्यादा strings को एक साथ जोड़ना. Programmers इसे इसलिए करते हैं क्योंकि कई बार output में information को एक सीक्वेंस में दिखाना होता है, या फिर बड़ी strings के पार्ट्स को मैनेज करना होता है.
-
 ## How to: (कैसे करें:)
 C++ में strings को concatenate करना बहुत सीधा है. चलिए कुछ examples देखते हैं:
 

@@ -11,14 +11,10 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1
 weight: 45
 ---
 
-## Gửi một yêu cầu HTTP với xác thực cơ bản bằng Lua
-
 ### Gì và Tại sao?
-
 Gửi một yêu cầu HTTP với xác thực cơ bản là khi bạn thực hiện một cuộc gọi đến một máy chủ web, bao gồm cả tên đăng nhập và mật khẩu để truy cập. Các lập trình viên thực hiện điều này để tương tác với các dịch vụ web yêu cầu xác minh người dùng trước khi cung cấp dữ liệu hoặc dịch vụ.
 
 ### Cách thực hiện:
-
 Lua không hỗ trợ HTTP mặc định, vì vậy bạn cần một thư viện bên ngoài như `socket.http` từ LuaSocket hoặc `http.request` từ thư viện `http` nếu bạn sử dụng Lua 5.3 trở lên. Đối với xác thực cơ bản, mã hóa thông tin xác thực và thêm chúng vào tiêu đề yêu cầu.
 
 ```Lua
@@ -51,7 +47,6 @@ end
 ```
 
 ### Tìm hiểu kỹ hơn
-
 Xác thực Cơ bản HTTP là một phương pháp cho một đại lý người dùng HTTP cung cấp tên người dùng và mật khẩu khi thực hiện một yêu cầu. Được phát minh từ những ngày đầu của lịch sử web, nó được hỗ trợ rộng rãi nhưng không rất an toàn; thông tin xác thực chỉ được mã hóa dạng base64, không được mã hóa.
 
 Các phương án thay thế bao gồm Xác thực Hóa học, OAuth, và các khóa API – tất cả đều cung cấp bảo mật mạnh mẽ hơn. Xác thực cơ bản thường được sử dụng để viết kịch bản kiểm tra nhanh, công cụ nội bộ, hoặc trong trường hợp việc vận chuyển được bảo vệ qua HTTPS.
@@ -61,7 +56,6 @@ Các phương án thay thế bao gồm Xác thực Hóa học, OAuth, và các k
 Bản chất linh hoạt của Lua nghĩa là bạn có sự lựa chọn về các thư viện để xử lý HTTP và mã hóa base64. LuaSocket đã là lựa chọn hàng đầu cho các hoạt động mạng trong một thời gian dài, mặc dù các phiên bản mới hơn của Lua giới thiệu các lựa chọn thay thế như thư viện `http` hoặc liên kết `CURL` cho các tác vụ phức tạp hơn.
 
 ### Xem thêm
-
 - Tài liệu LuaSocket: http://w3.impa.br/~diego/software/luasocket/http.html
 - LuaSec cho hỗ trợ HTTPS: https://github.com/brunoos/luasec/wiki
 - Giới thiệu về Xác thực HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication

@@ -11,9 +11,6 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mikä & Miksi?
-Koodin jäsenteleminen funktioiksi on kuin LEGO-palikoiden lajitteleminen bokseihin—se tekee niiden löytämisestä ja käytöstä helpompaa. Tämä tehdään toiston välttämiseksi, ymmärtämisen yksinkertaistamiseksi ja ylläpidon päänsäryn vähentämiseksi.
-
 ## Kuinka:
 Kuvittele, että sinulla on koodia, joka tulostaa tervehdyksen useita kertoja. Ilman funktioita se on sotkuinen. Funktioilla se on siisti.
 

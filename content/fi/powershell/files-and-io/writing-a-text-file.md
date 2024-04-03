@@ -14,9 +14,6 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä ja miksi?
-Tekstitiedoston kirjoittaminen PowerShellissä käsittää tekstipohjaisten tiedostojen luomisen ja käsittelyn, mikä on perustoiminto lokitiedostojen, datan tallennuksen ja konfigurointiskriptien kannalta. Ohjelmoijat hyödyntävät tätä järjestelmätehtävien automatisoimiseen, datan analysointiin ja integroimiseen muiden sovellusten tai skriptien kanssa.
-
 ## Kuinka:
 PowerShell tarjoaa suoraviivaisia cmdlet-komentoja tiedostojen käsittelyyn. `Out-File` cmdlet ja uudelleenohjausoperaattorit ovat ensisijaisesti käytössä tähän tarkoitukseen. Tässä on esimerkkejä, jotka havainnollistavat tekstin kirjoittamista tiedostoihin eri skenaarioissa:
 

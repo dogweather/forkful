@@ -13,9 +13,6 @@ title: Analisando uma data a partir de uma string
 weight: 30
 ---
 
-## O Que & Por Quê?
-Analisar uma data a partir de uma string envolve converter representações textuais de datas e horários em um formato que pode ser facilmente manipulado, armazenado ou comparado dentro de um programa Lua. Programadores realizam essa tarefa para facilitar operações como agendamento, registro em log ou quaisquer cálculos temporais e para fechar a lacuna entre formatos de data legíveis por humanos e tipos de dados estruturados que um computador pode processar de maneira eficiente.
-
 ## Como Fazer:
 Lua não possui suporte integrado para manipulação de datas e horários além da funcionalidade limitada fornecida pelas funções `os.date` e `os.time`. No entanto, estas podem ser aproveitadas para análises básicas, e para requisitos mais complexos, a biblioteca `luadate`, uma biblioteca externa, pode ser utilizada.
 

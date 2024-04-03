@@ -11,9 +11,6 @@ title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---
 
-## Vad & Varför?
-Att starta ett nytt projekt i C# innebär skapandet av en grundläggande struktur för din kod där allt det roliga kan hända. Programmerare gör detta för att organisera idéer, testa nya koncept och bygga upp lösningar från grunden.
-
 ## Hur man gör:
 För att kickstarta ett nytt C#-projekt, använd dotnet CLI (Command Line Interface). Här är grunderna:
 

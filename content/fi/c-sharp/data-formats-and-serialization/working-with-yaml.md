@@ -12,9 +12,6 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä ja miksi?
-YAML, joka tarkoittaa YAML Ain't Markup Language, on ihmisen luettavissa oleva datan sarjallistamisformaatti. Ohjelmoijat käyttävät sitä usein konfiguraatiotiedostoihin, prosessien väliseen viestintään ja datan tallennukseen sen yksinkertaisuuden ja luettavuuden vuoksi verrattuna muihin datamuotoihin kuten XML tai JSON.
-
 ## Kuinka:
 C# ei sisällä sisäänrakennettua tukea YAML:lle, mutta voit helposti työskennellä YAML:n kanssa käyttämällä kolmannen osapuolen kirjastoja, kuten *YamlDotNet*. Ensin sinun täytyy asentaa YamlDotNet-paketti:
 

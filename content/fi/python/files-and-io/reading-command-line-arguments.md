@@ -10,9 +10,6 @@ title: Komennoriviparametrien lukeminen
 weight: 23
 ---
 
-## What & Why?
-Mitä ja miksi? Komentoriviparametrien lukeminen mahdollistaa käyttäjän antamien arvojen vastaanottamisen suoraan ohjelmaasi. Tätä tehdään, koska se mahdollistaa ohjelman toiminnan mukauttamisen lennossa ilman koodin muuttamista.
-
 ## How to:
 Kuinka se tehdään:
 

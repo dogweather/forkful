@@ -22,9 +22,6 @@ title: "\u7F16\u5199\u6D4B\u8BD5"
 weight: 36
 ---
 
-## 什么 & 为什么？
-使用 TypeScript 编写测试涉及创建自动化脚本来验证代码的功能性和正确性。程序员这样做是为了确保可靠性，快速捕捉到 bug，并促进代码的可维护性增长，因为 TypeScript 的静态类型添加了一层可预测性到 JavaScript 测试中。
-
 ## 如何操作：
 TypeScript 与大多数 JavaScript 测试框架和谐工作。为了演示目的，我们将使用 Jest，一个流行的测试框架，因为它为 TypeScript 项目提供了零配置设置。
 

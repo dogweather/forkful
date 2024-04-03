@@ -11,9 +11,6 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i dlaczego?
-Zaokrąglanie liczb polega na ucinaniu miejsc dziesiętnych, aby upraszczać dane lub dostosować je do konkretnych formatów. Programiści robią to dla przyjaznego użytkownikowi wyświetlania, efektywnego przechowywania, lub gdy precyzja dziesiętna nie jest problemem.
-
 ## Jak to zrobić:
 W Fish, zaokrąglanie liczb opiera się na komendzie `math`. Użyj `math -s0`, aby zaokrąglić do najbliższej liczby całkowitej.
 

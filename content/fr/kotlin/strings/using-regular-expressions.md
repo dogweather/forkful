@@ -15,11 +15,8 @@ title: "Utilisation des expressions r\xE9guli\xE8res"
 weight: 11
 ---
 
-## Quoi & Pourquoi ?
-
-Les expressions régulières (regex) sont un outil puissant pour le traitement de texte, permettant aux programmeurs de rechercher, correspondre et manipuler des chaînes avec des techniques de correspondance de motifs avancées. En Kotlin, l'exploitation des regex aide à effectuer efficacement des tâches de traitement de texte complexes comme la validation, l'analyse syntaxique ou la transformation, ce qui les rend indispensables pour des tâches allant de la simple manipulation de chaînes à l'analyse de texte complexe.
-
 ## Comment faire :
+
 
 ### Correspondance de base
 Pour vérifier si une chaîne correspond à un motif spécifique en Kotlin, vous pouvez utiliser la méthode `matches` de la classe `Regex`.

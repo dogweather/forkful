@@ -11,9 +11,6 @@ title: Refaktorering
 weight: 19
 ---
 
-## Hva & Hvorfor?
-Refaktorisering er prosessen med å restrukturere eksisterende dataprogramkode uten å endre dens eksterne oppførsel. Programmerere gjør dette for å rydde opp i kodebasen, forbedre lesbarheten, vedlikeholdbarheten og bane vei for fremtidige funksjoner med minimal teknisk gjeld.
-
 ## Hvordan:
 La oss starte med et grunnleggende Swift-eksempel hvor vi har noe repetitiv kode:
 

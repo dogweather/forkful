@@ -13,9 +13,6 @@ title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---
 
-## Wat & Waarom?
-In programmeren betekent het verwijderen van karakters die overeenkomen met een patroon, het vinden van reeksen karakters die passen bij een specifieke regel - een patroon - en deze uit een string halen. Programmeurs doen dit voor zaken zoals het saniteren van invoer, het verwerken van tekst, of gewoon het opruimen van gegevens voordat deze opgeslagen of weergegeven worden.
-
 ## Hoe te:
 ```Python
 import re

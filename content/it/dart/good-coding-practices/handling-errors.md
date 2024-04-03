@@ -13,9 +13,6 @@ title: Gestione degli errori
 weight: 16
 ---
 
-## Cosa & Perché?
-La gestione degli errori in Dart riguarda l'anticipazione e la gestione delle eccezioni che si verificano durante l'esecuzione del programma per migliorarne l'affidabilità e l'usabilità. I programmatori implementano la gestione degli errori per prevenire crash e fornire un feedback significativo agli utenti, garantendo un'esperienza applicativa più fluida e sicura.
-
 ## Come fare:
 Dart supporta due tipi di errori: errori *al momento della compilazione* ed errori *al momento dell'esecuzione*. Gli errori al momento della compilazione sono rilevati dall'analizzatore di Dart prima dell'esecuzione del codice, mentre gli errori al momento dell'esecuzione, o eccezioni, si verificano durante l'esecuzione. Ecco come gestire le eccezioni in Dart:
 

@@ -11,9 +11,6 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-## Co i dlaczego?
-Obliczanie daty w przyszłości lub przeszłości to ustalanie dokładnej daty przed lub po określonym czasie. Programiści robią to, by obsługiwać zadania związane z terminami, harmonogramami, czy wygaśnięciem ważności danych.
-
 ## Jak to zrobić:
 ```Bash
 # Obliczanie daty 10 dni w przyszłości

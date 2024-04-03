@@ -20,11 +20,8 @@ title: "JSON\uACFC \uD568\uAED8 \uC77C\uD558\uAE30"
 weight: 38
 ---
 
-## 무엇인가 & 왜인가?
-
-JSON(JavaScript Object Notation)은 가벼운 데이터-교환 형식으로, 사람이 읽고 쓰기 쉽고 기계가 파싱하고 생성하기 쉽습니다. 프로그래머들은 웹 애플리케이션에서 데이터를 저장하고 전송하기 위해 이를 사용하며, 이는 현대 API 및 웹 서비스 통신의 중추입니다.
-
 ## 사용 방법:
+
 
 ### JSON 파싱하기
 JSON 문자열을 JavaScript 객체로 변환하려면 `JSON.parse()`를 사용하세요.

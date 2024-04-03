@@ -8,12 +8,7 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---
 
-# Mikä & Miksi?
-
-HTTP-pyynnön lähettäminen perusautentikoinnilla tarkoittaa palvelimelle lähtevän pyynnön otsakkeeseen sisällytettävää käyttäjätunnusten todentamista. Ohjelmoijat käyttävät sitä suojatun sisällön käsittelyyn ilman monimutkaisempia autentikointimenetelmiä.
-
 # Kuinka:
-
 ```Haskell
 import Network.HTTP.Simple
 import Data.ByteString.Base64 (encode)
@@ -43,13 +38,11 @@ main = makeRequest
 Esimerkkikoodi luo HTTP-pyynnön ja liittää siihen Basic-autentikoinnin käyttäen annettuja käyttäjätunnuksia ja salasanoja. Käyttäjätunnuksia ja salasanoja ei koskaan pidä säilyttää kovakoodattuna tuotannossa.
 
 # Syväsukellus
-
 Ennen HTTPS:n ja monimutkaisempien autentikointiprotokollien yleistymistä perusautentikointi oli yleinen tapa suojata verkkosisältö. Se on yhä käytössä, mutta turvallisuusriskien vuoksi sen käyttö on suositeltavaa rajoittaa suojatun yhteyden yli.
 
 Vaihtoehtoja perusautentikoinnille ovat OAuth, JWT (JSON Web Token), ja muut täydellisempiä turvatoimia tarjoavat menetelmät. Nämä menetelmät mahdollistavat monimutkaisten sovellusten turvallisen käyttäjänhallinnan.
 
 # Katso Myös
-
 - HTTP:n perusautentikointi: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme
 - Network.HTTP.Simple dokumentaatio: https://www.stackage.org/haddock/lts-18.18/http-conduit-2.3.8/Network-HTTP-Simple.html
 - Turvallisuus ja autentikointi Haskellissa: https://wiki.haskell.org/Web/Literature#Authentication

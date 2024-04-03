@@ -15,12 +15,7 @@ title: Tekstitiedoston lukeminen
 weight: 22
 ---
 
-## Mikä & Miksi?
-
-Tekstitiedoston lukeminen Google Apps Scriptillä (GAS) sisältää pääsyn hankkimisen ja tekstidatasta tiedon poimimisen tiedostoista, jotka on tallennettu Google Driveen tai muuhun saatavilla olevaan pilvipohjaiseen säilytystilaan. Ohjelmoijat tarvitsevat usein lukea näitä tiedostoja tuodakseen, muokatakseen tai analysoidakseen tekstidataa suoraan GAS-projekteissaan, mahdollistaen automaation ja integraation Googlen tuotteiden sarjaan.
-
 ## Kuinka:
-
 Aloittaaksesi tekstitiedoston lukemisen Google Apps Scriptillä, sinun yleensä tarvitsee käyttää Google Drive API:a. Tässä on perusesimerkki, joka näyttää, kuinka lukea tiedosto Google Drivesta:
 
 ```javascript
@@ -46,7 +41,6 @@ Hei, maailma! Tämä on testitekstitiedosto.
 Tässä esimerkissä `fileId` on tiedoston, jonka haluat lukea, yksilöllinen tunniste. `DriveApp`-palvelu hakee tiedoston, ja `getDataAsString()` lukee sen sisällön merkkijonona. Voit sitten käsitellä tai käyttää tätä tekstiä tarpeen mukaan.
 
 ## Syväsukellus
-
 Historiallisesti teksti-tiedostojen lukeminen web-pohjaisissa sovelluksissa, kuten Google Apps Scriptillä rakennetuissa, on esittänyt haasteita selaimen turvallisuusrajoitusten ja JavaScriptin asynkronisen luonteen vuoksi. Google Apps Script yksinkertaistaa tätä abstrahoiduilla palveluillaan kuten `DriveApp`, tarjoten korkean tason API:n vuorovaikutukseen Google Drive -tiedostojen kanssa.
 
 Kuitenkin, tärkeää on ottaa huomioon suorituskyky ja Google Apps Scriptin asettamat suoritusaikarajoitukset, erityisesti lukiessasi suuria tiedostoja tai suorittaessasi monimutkaisia toimenpiteitä datan kanssa. Joissakin tapauksissa saattaa olla tehokkaampaa käyttää suoraan Google Cloud -palveluita tehokkaammalta backendiltä tai esikäsitellä tiedostoja hallittavampiin osiin.

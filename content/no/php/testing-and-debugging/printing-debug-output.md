@@ -11,9 +11,6 @@ title: "Skrive ut feils\xF8kingsdata"
 weight: 33
 ---
 
-## What & Why?
-Utskrift for feilsøking er som å droppe brødsmuler for å finne veien hjem; det hjelper utviklere å spore appens flyt og finne bugs. Vi gjør det fordi det gir innsikt som leder til raske reparasjoner.
-
 ## How to:
 La oss raskt skrive ut variabelverdier med enkle PHP-funksjoner:
 

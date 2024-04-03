@@ -13,12 +13,7 @@ title: Schrijven naar standaardfout
 weight: 25
 ---
 
-## Wat & Waarom?
-
-Schrijven naar standaardfout (stderr) in Dart gaat over het verzenden van foutmeldingen en diagnostische gegevens naar een aparte stroom, los van de standaarduitvoer (stdout). Programmeurs doen dit om onderscheid te maken tussen normale programma-uitvoer en fouten of waarschuwingsberichten, waardoor het gemakkelijker wordt om te debuggen en loggen.
-
 ## Hoe:
-
 In Dart is schrijven naar stderr eenvoudig met behulp van het `stderr`-object dat beschikbaar is in `dart:io`. Hier is een basisvoorbeeld:
 
 ```dart

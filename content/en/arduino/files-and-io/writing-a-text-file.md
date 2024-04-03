@@ -11,9 +11,6 @@ title: Writing a text file
 weight: 24
 ---
 
-## What & Why?
-Writing a text file in Arduino involves saving data to a file on an SD card or similar storage module, often for data logging purposes. Programmers do this to record sensor readings, save configurations, or log application events over time, making it crucial for projects requiring data analysis or tracking.
-
 ## How to:
 To write to a text file on an SD card using Arduino, you first need to include the `SD.h` library, which provides the necessary functions to interact with SD cards. Make sure your Arduino board is connected to an SD card module.
 

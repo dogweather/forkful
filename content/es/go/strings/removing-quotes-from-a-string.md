@@ -12,12 +12,7 @@ title: Eliminando comillas de una cadena
 weight: 9
 ---
 
-## ¿Qué y por qué?
-
-Eliminar las comillas de una cadena en Go se trata de eliminar las comillas iniciales y finales (`"` o `'`) de una cadena dada. A menudo, los programadores necesitan realizar esta tarea para sanear la entrada del usuario, analizar datos de texto de manera más efectiva o preparar cadenas para un procesamiento posterior que requiera contenido sin comillas.
-
 ## Cómo hacerlo:
-
 Go ofrece varios enfoques para eliminar las comillas de una cadena, pero uno de los métodos más sencillos es usar las funciones `Trim` y `TrimFunc` proporcionadas por el paquete `strings`. Así es como se hace:
 
 ```go
@@ -54,7 +49,6 @@ Usando strings.TrimFunc: Esta es una cadena 'con comillas'
 Ambos métodos eliminan de manera efectiva las comillas iniciales y finales de la cadena.
 
 ## Análisis Profundo
-
 Las funciones `Trim` y `TrimFunc` del paquete `strings` son parte de la extensa biblioteca estándar de Go, diseñada para ofrecer capacidades de manipulación de cadenas potentes, pero sencillas, sin la necesidad de paquetes de terceros. Históricamente, la necesidad de manejar y manipular cadenas de manera eficiente surge del enfoque principal de Go en servidores de red y analizadores de datos, donde el procesamiento de cadenas es una tarea común.
 
 Un aspecto notable de estas funciones es su implementación basada en runas (la representación de Go de un punto de código Unicode). Este diseño les permite manejar sin problemas cadenas que contienen caracteres de varios bytes, haciendo que el enfoque de Go para la manipulación de cadenas sea robusto y amigable con Unicode.

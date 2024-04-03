@@ -10,9 +10,6 @@ title: Concatenando strings
 weight: 3
 ---
 
-## What & Why?
-Concatenar strings é juntar duas ou mais sequências de caracteres. Programadores fazem isso para montar mensagens, unir dados e gerar saídas dinâmicas.
-
 ## How to:
 Em Java, você pode concatenar strings de várias formas. Aqui estão dois jeitos populares:
 

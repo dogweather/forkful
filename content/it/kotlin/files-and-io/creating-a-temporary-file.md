@@ -10,9 +10,6 @@ title: Creazione di un file temporaneo
 weight: 21
 ---
 
-## What & Why?
-Creare un file temporaneo significa generare un file che è destinato a esistere per breve tempo, spesso solo per la durata dell'esecuzione di un programma. Programmatori fanno ciò per gestire dati temporanei, come intermedi per elaborazioni più complesse, senza intasare il disco con file permanenti.
-
 ## How to:
 Ecco come crei un file temporaneo in Kotlin:
 

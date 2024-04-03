@@ -12,12 +12,7 @@ title: Convertire una data in una stringa
 weight: 28
 ---
 
-## Cosa e Perché?
-
-Convertire una data in una stringa in C comporta la traduzione di una struttura di data o timestamp in un formato leggibile dall'uomo. I programmatori spesso svolgono questo compito per visualizzare le date nei log, nelle interfacce utente, o quando si memorizzano date in un formato basato su testo come JSON o CSV.
-
 ## Come fare:
-
 La funzione `strftime` della libreria `<time.h>` è comunemente usata per questo scopo. Ti permette di formattare la data e l'ora in vari modi specificando dei formati. Ecco un esempio veloce:
 
 ```c
@@ -46,7 +41,6 @@ Data e Ora correnti: Mer Giu 30 21:49:08 2021
 Puoi personalizzare il formato cambiando i formati specificati passati a `strftime`. Per esempio, per ottenere la data nel formato `AAAA-MM-GG`, dovresti usare `"%Y-%m-%d"`.
 
 ## Approfondimento
-
 La funzione `strftime` e la libreria `<time.h>` fanno parte della Standard Library di C, che risale allo standard ANSI C originale (C89/C90). Anche se diretto e supportato su molte piattaforme, questo approccio può sembrare di basso livello e ingombrante se confrontato con i linguaggi di programmazione moderni che offrono librerie di date e orari più intuitive.
 
 Si dovrebbe notare, mentre le funzioni di tempo della libreria standard di C sono ampiamente supportate e relativamente semplici da usare, mancano di alcune delle caratteristiche più complesse di manipolazione dei fusi orari e di internazionalizzazione trovate in librerie di linguaggi più nuovi o in librerie C di terze parti come i Componenti Internazionali per Unicode (ICU).

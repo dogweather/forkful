@@ -16,9 +16,6 @@ title: "S\u1EAFp x\u1EBFp m\xE3 l\u1EADp tr\xECnh v\xE0o trong h\xE0m"
 weight: 18
 ---
 
-## Lý do & Tại sao?
-Việc tổ chức mã lệnh thành các hàm là việc gói những đoạn mã nhỏ lại để thực hiện những nhiệm vụ cụ thể. Chúng ta làm điều này bởi vì nó làm cho mã lệnh dễ đọc, kiểm tra và sử dụng lại hơn - không ai muốn lội qua một đầm lầy của "mã spaghetti".
-
 ## Cách thực hiện:
 Trong Fish, bạn viết một hàm với từ khóa `function`, đặt tên cho nó và kết thúc bằng `end`. Dưới đây là một ví dụ đơn giản:
 
@@ -61,11 +58,9 @@ Một số shell, như Bash, sử dụng `function` hoặc chỉ là các dấu 
 Bạn sẽ không cần giá trị `return` vì Fish không tập trung vào đó; đầu ra của hàm là kết quả trả về của nó. Và nếu bạn muốn có các hàm cố định sẵn sàng cho các phiên trong tương lai, nhớ đến `funcsave`.
 
 ## Xem Thêm
-
 - Hướng dẫn về hàm trong fish: [https://fishshell.com/docs/current/tutorial.html#tut_function](https://fishshell.com/docs/current/tutorial.html#functions)
 
 ### Các lệnh hàm
-
 - [function](https://fishshell.com/docs/current/cmds/function.html) — Tạo một hàm
 - [functions](https://fishshell.com/docs/current/cmds/functions.html) — In hoặc xóa các hàm
 - [funcsave](https://fishshell.com/docs/current/cmds/funcsave.html) — Lưu định nghĩa của một hàm vào thư mục tự động tải của người dùng

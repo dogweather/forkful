@@ -12,9 +12,6 @@ title: Een nieuw project starten
 weight: 1
 ---
 
-## Wat & Waarom?
-Een nieuw project starten betekent het opzetten van de basis voor je codebase. Programmeurs doen dit om het ontwikkelingsproces op gang te brengen, de structuur van het project te leiden en de basis te leggen voor toekomstige code.
-
 ## Hoe:
 Bij het beginnen, kies je bouwsysteem of IDE. Voor eenvoud gebruiken we een eenvoudige teksteditor en g++. Maak twee bestanden: `main.cpp` en een `Makefile`.
 

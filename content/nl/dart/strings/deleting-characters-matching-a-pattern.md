@@ -13,12 +13,7 @@ title: Karakters verwijderen die overeenkomen met een patroon
 weight: 5
 ---
 
-## Wat & Waarom?
-
-Het verwijderen van tekenreeksen die overeenkomen met een specifiek patroon in strings is cruciaal voor gegevensvalidatie, sanering, of bij het voorbereiden van tekst voor verdere verwerking. Programmeurs voeren deze taak uit om de integriteit van de gegevens te waarborgen, de leesbaarheid te verbeteren en een consistent formaat voor tekstinput af te dwingen.
-
 ## Hoe te:
-
 Dart vereenvoudigt het proces om tekens die overeenkomen met een vooraf gedefinieerd patroon te verwijderen met behulp van reguliere expressies en de `replaceAll` methode. Voor basisgebruik zijn geen externe bibliotheken vereist, wat deze benadering zeer toegankelijk maakt.
 
 Hier is een eenvoudig voorbeeld dat demonstreert hoe je cijfers uit een string verwijdert:

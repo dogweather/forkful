@@ -13,9 +13,6 @@ title: Een string met hoofdletters maken
 weight: 2
 ---
 
-## Wat & Waarom?
-Het kapitaliseren van een string betekent het transformeren van het eerste karakter naar een hoofdletter en de rest naar kleine letters. Programmeurs doen dit vaak om gebruikersinvoer te standaardiseren of om ervoor te zorgen dat eigennamen correct worden geformatteerd.
-
 ## Hoe te:
 Gebruik de ingebouwde `capitalize()` methode of `title()` methode van Python voor deze klus.
 

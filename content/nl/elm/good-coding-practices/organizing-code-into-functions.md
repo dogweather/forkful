@@ -12,9 +12,6 @@ title: Code organiseren in functies
 weight: 18
 ---
 
-## Wat & Waarom?
-Al je code in één grote hoop gooien? Slecht idee. Het onderverdelen in functies? Goed idee. Het houdt je Elm-code netjes, herbruikbaar en eenvoudiger om te testen. Door je code in functies te organiseren, groepeer je code die specifieke taken uitvoert bij elkaar, wat je applicatie onderhoudbaarder en begrijpelijker maakt.
-
 ## Hoe:
 Hier is een stuk Elm-code met een eenvoudige functie om een gebruiker te begroeten:
 

@@ -10,9 +10,6 @@ title: Descobrindo o comprimento de uma string
 weight: 7
 ---
 
-## O Quê & Porquê?
-Encontrar o comprimento de uma string é simplesmente descobrir quantos caracteres ela possui. Programadores fazem isso para validar dados, manipular texto, e onde a precisão do tamanho é crucial, como em protocolos de comunicação ou armazenamento de dados.
-
 ## Como fazer:
 ```PHP
 <?php

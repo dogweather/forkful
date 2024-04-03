@@ -15,9 +15,6 @@ title: Ghi log
 weight: 17
 ---
 
-## Cái gì và Tại sao?
-Ghi log cơ bản là ghi lại những gì ứng dụng của bạn đang làm – có thể coi đó như nhật ký, nhưng dành cho mã. Lập trình viên làm điều này để theo dõi những chi tiết nhỏ nhặt, như thay đổi trạng thái, sự kiện hệ thống và lỗi khó chịu, đảm bảo không có sự cố nào lọt qua một cách không được chú ý.
-
 ## Làm thế nào:
 Trong Fish, việc ghi log có thể đơn giản như là chuyển hướng dòng xuất chuẩn và lỗi đến một tệp. Hãy tạo một bản ghi cho thời gian bắt đầu và kết thúc của script của chúng ta.
 

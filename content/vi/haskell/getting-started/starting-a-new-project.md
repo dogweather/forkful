@@ -16,9 +16,6 @@ title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---
 
-## Gì và Tại sao?
-Mỗi dự án bắt đầu với một bước đi đầu tiên. Đối với các lập trình viên, điều đó có nghĩa là thiết lập cấu trúc ban đầu và viết mã khởi đầu. Chúng ta làm điều này để biến ý tưởng thành một nền tảng cụ thể, sẵn sàng cho sự mở rộng và đổi mới.
-
 ## Cách thực hiện:
 ```Haskell
 -- 1. Khởi tạo một dự án Haskell mới sử dụng Stack

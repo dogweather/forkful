@@ -13,12 +13,7 @@ title: Pobieranie aktualnej daty
 weight: 29
 ---
 
-## Co i dlaczego?
-
-Pobieranie bieżącej daty w PowerShell polega na uzyskiwaniu aktualnej daty i godziny systemu. Ta operacja jest fundamentalna dla zadań takich jak logowanie, mierzenie czasu operacji, czy podejmowanie decyzji opartych na datach. Programiści używają tej możliwości do śledzenia zdarzeń, planowania zadań oraz obsługi logiki specyficznej dla dat w skryptach i aplikacjach.
-
 ## Jak to zrobić:
-
 PowerShell oferuje proste komendy (cmdlets) do pobierania daty i godziny. Cmdlet `Get-Date` to główne narzędzie do tego celu. Może on zwrócić pełną datę i godzinę, którą możesz formatować lub manipulować według swoich potrzeb.
 
 ```powershell
@@ -57,7 +52,6 @@ Get-Date -Format "HH:mm:ss"
 ```
 
 ### Korzystanie z klasy .NET
-
 PowerShell pozwala na bezpośredni dostęp do klas .NET, oferując alternatywny sposób pracy z datami i godzinami.
 
 ```powershell

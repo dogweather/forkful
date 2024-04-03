@@ -11,9 +11,6 @@ title: "An\xE1lise de HTML"
 weight: 43
 ---
 
-## O Que & Porquê?
-Analisar (parsear) HTML é o processo de converter código HTML em uma estrutura de dados compreensível para a sua aplicação. Programadores fazem isso para manipular, extrair informações ou interagir com o conteúdo de sites.
-
 ## Como Fazer:
 Você pode usar a biblioteca `jsoup` para parsear HTML em Kotlin. É simples e direto ao ponto. Aqui está um exemplo:
 
@@ -44,7 +41,6 @@ O parsing de HTML não é coisa nova, e tem evoluído junto com a web. No passad
 Outras alternáculos incluem `HtmlUnit` e `Jaunt`, mas `jsoup` é conhecida por sua facilidade de uso e grande comunidade. Em termos de implementação, `jsoup` usa um analisador (parser) de HTML interno que entende as nuances de um HTML “real” encontrado na web, não apenas HTML bem-formado, tornando-o resistente e flexível para lidar com os diversos problemas que um HTML irregular pode apresentar.
 
 ## Veja Também:
-
 - Documentação jsoup: [jsoup: Java HTML Parser](https://jsoup.org/)
 - Repositório GitHub para jsoup: [GitHub - jsoup/jsoup: Java HTML Parser](https://github.com/jhy/jsoup)
 - Guia sobre parsing de HTML em Kotlin usando jsoup: [Using jsoup in Kotlin](https://medium.com/@hadiyarajesh/using-jsoup-in-kotlin-99555bde6c94)

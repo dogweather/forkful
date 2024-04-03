@@ -12,9 +12,6 @@ title: Tests Schreiben
 weight: 36
 ---
 
-## Was & Warum?
-Das Schreiben von Tests in Elixir beinhaltet das Erstellen von automatisierten Skripten, um das Verhalten Ihres Codes zu validieren. Programmierer tun dies, um Qualität zu gewährleisten, Regressionen zu verhindern und das Refactoring von Code zu erleichtern. Dies macht den Entwicklungsprozess zuverlässiger und effizienter.
-
 ## Wie geht das:
 Elixir verwendet ExUnit als sein eingebautes Testframework, welches extrem leistungsfähig und einfach zu verwenden ist. Hier ist ein einfaches Beispiel:
 

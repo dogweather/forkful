@@ -10,11 +10,7 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## What & Why? (Mitä & Miksi?)
-HTTP-pyyntö on web-palvelimen kanssa kommunikoinnin tavallinen tapa. Koodarit lähettävät HTTP-pyyntöjä vaihtaakseen dataa palvelinten ja front-end sovellusten välillä.
-
 ## How to: (Kuinka:)
-
 Käytetään esimerkkinä Fetch API:
 
 ```Javascript
@@ -48,13 +44,11 @@ Tuloste POST-pyynnölle:
 ```
 
 ## Deep Dive (Sukellus syvyyksiin):
-
 Alkuun HTTP-pyynnöt tehtiin XMLHttpRequest-objektin avulla, joka oli joskus monimutkainen. Fetch API on moderni, lupauksiin (promises) perustuva vaihtoehto, joka tarjoaa selkeämmän ja joustavamman tavan tehdä verkkopyyntöjä. Vaikka Fetch on nykyään standardi, vanhoja projekteja tai selaimia varten on joskus tarve käyttää polyfillejä tai XMLHttpRequestia.
 
 HTTP-pyynnöt voivat käyttää useita metodeja, kuten GET, POST, PUT ja DELETE, riippuen toiminnasta, jota yritetään suorittaa. Käyttöoikeuksista (CORS) huolehtiminen on myös olennaista, kun lähetetään pyyntöjä eri alkuperien välillä.
 
 ## See Also (Lisäksi):
-
 - MDN Web Docs Fetch API: [https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 - XMLHttpRequest (vanhempi tapa): [https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
 - HTTP-pyyntömetodit: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)

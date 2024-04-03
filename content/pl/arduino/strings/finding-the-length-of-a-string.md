@@ -11,9 +11,6 @@ title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---
 
-## Co i Dlaczego?
-Znalezienie długości ciągu znaków to sprawdzenie, ile znaków zawiera. Programiści robią to, by zarządzać danymi tekstowymi, walidować wejścia lub oszacować miejsce potrzebne do przechowywania informacji.
-
 ## Jak to zrobić:
 ```Arduino
 void setup() {

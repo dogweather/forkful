@@ -11,11 +11,6 @@ title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u043
 weight: 27
 ---
 
-## What & Why?
-"Що і Чому?"
-
-Comparing two dates helps us figure out their order and how far apart they are. Programmers do it to manage events, reminders, or anything related to time-dependent features.
-
 ## How to:
 "Як це зробити:"
 

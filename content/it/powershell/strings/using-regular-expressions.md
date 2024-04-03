@@ -13,12 +13,7 @@ title: Utilizzo delle espressioni regolari
 weight: 11
 ---
 
-## Cosa e perché?
-
-Le espressioni regolari (regex) sono sequenze di caratteri che formano un modello di ricerca, utilizzato principalmente per la ricerca e la manipolazione di stringhe. I programmatori sfruttano le regex in PowerShell per compiti come la convalida dei dati, l'analisi e la trasformazione grazie alla sua efficienza e flessibilità nella gestione di modelli complessi.
-
 ## Come fare:
-
 In PowerShell, puoi usare gli operatori `-match`, `-replace` e `-split`, tra gli altri, per eseguire azioni con le espressioni regolari. Esploriamo alcuni esempi:
 
 ### Usare `-match` per controllare se una stringa corrisponde a un modello

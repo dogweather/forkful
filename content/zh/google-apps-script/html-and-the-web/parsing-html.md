@@ -22,9 +22,6 @@ title: "\u89E3\u6790HTML"
 weight: 43
 ---
 
-## 什么 & 为什么？
-在Google Apps脚本中解析HTML涉及从HTML内容中提取数据，这在与网页或基于web的数据来源交互时尤其有用。程序员这样做是为了自动化数据收集、操作网页内容或将网页功能与Google Apps（如Sheets和Docs）整合。
-
 ## 如何：
 Google Apps脚本没有内置的HTML解析方法。但是，您可以利用`UrlFetchApp`服务来检索HTML内容，然后使用JavaScript方法或正则表达式（regex）进行解析。下面是一个基本示例，说明如何从网页中提取和解析title标签。
 

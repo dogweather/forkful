@@ -11,9 +11,6 @@ title: Tworzenie pliku tymczasowego
 weight: 21
 ---
 
-## What & Why?
-Tworzenie pliku tymczasowego to proces generowania tymczasowego miejsca do przechowywania danych. Programiści robią to, aby przechować informacje, które są potrzebne tymczasowo, jak np. podczas przetwarzania danych lub w testowaniu kodu.
-
 ## How to:
 ```PowerShell
 # Tworzenie pliku tymczasowego

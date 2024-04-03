@@ -11,9 +11,6 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i dlaczego?
-Liczby zespolone mają część rzeczywistą i część urojoną (jak 3 + 4i). Programiści używają ich w Swift do zadań takich jak przetwarzanie sygnałów, rozwiązywanie pewnych problemów matematycznych oraz symulacje fizyczne.
-
 ## Jak to zrobić:
 Swift nie ma wbudowanego wsparcia dla liczb zespolonych, ale możemy stworzyć własne:
 

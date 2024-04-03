@@ -12,9 +12,6 @@ title: Een string omzetten naar kleine letters
 weight: 4
 ---
 
-## Wat & Waarom?
-Het omzetten van een string naar kleine letters verandert alle hoofdletters in de tekst in hun kleine tegenhangers. Programmeurs doen dit voor consistentie, vooral bij het vergelijken van strings of het standaardiseren van invoergegevens.
-
 ## Hoe:
 Het `String` object van Arduino heeft een handige methode `toLowerCase()`. Roep deze op je string aan, en voila, het staat in kleine letters.
 

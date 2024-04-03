@@ -13,12 +13,7 @@ title: Een tijdelijk bestand aanmaken
 weight: 21
 ---
 
-## Wat & Waarom?
-
-Het maken van een tijdelijk bestand betekent het creëren van een bestand dat slechts voor korte tijd of voor de huidige sessie nodig is. Programmeurs doen dit om tussenliggende data op te slaan zonder de langetermijnopslag te belasten, of voor data die alleen nodig is terwijl het programma draait.
-
 ## Hoe:
-
 Arduino werkt typisch met microcontrollers die niet over een traditioneel bestandssysteem beschikken - dus "bestanden" worden niet op dezelfde manier beheerd als op een pc. In plaats daarvan gebruiken we EEPROM (een kleine hoeveelheid geheugen die bewaard blijft na resets) of een SD-kaart met een shield. Hier is een basisvoorbeeld van het schrijven en lezen van tijdelijke gegevens naar EEPROM:
 
 ```Arduino
@@ -111,7 +106,6 @@ Tijdelijke data tekst
 ```
 
 ## Diepgaande Duik
-
 Historisch gezien dienen tijdelijke bestanden in de programmering voor zaken zoals caching, logs of interprocess-communicatie. Op systemen zoals pc's, met volledige besturingssystemen, zijn tempbestanden wijdverspreid. Bij Arduino is het anders. Microcontrollers hebben beperkte niet-vluchtige opslag (EEPROM), of we voegen externe opslag toe zoals SD-kaarten.
 
 Alternatieven voor EEPROM voor kortetermijngegevens omvatten het gebruik van RAM (snel verloren tussen stroomcycli en reboots) of externe geheugen zoals Flash of een hard-wired IC.
@@ -121,7 +115,6 @@ Wat de implementatie betreft, als je naar EEPROM schrijft op een Arduino, onthou
 Een SD-kaart gebruiken voor tijdelijke opslag is vergelijkbaar met reguliere bestandsafhandeling op een pc. Het biedt meer ruimte, maar vereist een goed beheer zoals het waarborgen van kaarten van fatsoenlijke kwaliteit, het correct afhandelen van het openen/sluiten van bestanden, en het begrijpen dat het relatief langzaam is in vergelijking met EEPROM of RAM.
 
 ## Zie Ook
-
 - [EEPROM Bibliotheek Referentie](https://www.arduino.cc/en/Reference/EEPROM)
 - [SD Bibliotheek Referentie](https://www.arduino.cc/en/Reference/SD)
 - [Arduino Bestands-I/O](https://www.arduino.cc/en/Tutorial/LibraryExamples/ReadWrite)

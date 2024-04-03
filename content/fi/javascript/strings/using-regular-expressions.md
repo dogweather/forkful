@@ -13,14 +13,10 @@ title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---
 
-## Mikä & Miksi?
-
-Säännölliset lausekkeet (regex) JavaScriptissä ovat malleja, joita käytetään merkkijonoissa merkkiyhdistelmien etsimiseen. Ohjelmoijat käyttävät niitä tekstihakujen tekemiseen, tekstin poimintaan ja manipulointiin, mahdollistaen tehokkaat merkkijonon käsittelyoperaatiot tiiviillä koodilla.
-
 ## Kuinka:
 
-### Perusvastaavuus
 
+### Perusvastaavuus
 Aloittaaksesi voit luoda yksinkertaisen regex-mallin ja käyttää sitä löytääksesi vastaavuuksia merkkijonosta. Tässä etsimme sanaa "code":
 
 ```javascript
@@ -31,7 +27,6 @@ console.log(result); // true
 ```
 
 ### Käyttäen `String.prototype.match()`
-
 Saadaksesi taulukon vastaavuuksista:
 
 ```javascript
@@ -41,7 +36,6 @@ console.log(matches.index); // 10
 ```
 
 ### Globaali haku
-
 Löytääksesi kaikki vastaavuudet, käytä `g`-lippua:
 
 ```javascript
@@ -50,7 +44,6 @@ console.log(globalMatches); // ["o", "o", "o"]
 ```
 
 ### Suur- ja pienaakkosista piittaamaton haku
-
 `i`-lippu ohittaa kirjainkoon:
 
 ```javascript
@@ -59,7 +52,6 @@ console.log(caseInsensitiveMatch[0]); // "JavaScript"
 ```
 
 ### Tekstin korvaaminen
-
 Käytä `String.prototype.replace()` korvataksesi osia merkkijonosta:
 
 ```javascript
@@ -68,7 +60,6 @@ console.log(newStr); // "JavaScript is awesome"
 ```
 
 ### Ryhmien käyttö
-
 Ryhmillä voidaan tallentaa osia mallista:
 
 ```javascript
@@ -78,7 +69,6 @@ console.log(replaceWithGroups); // "fun is JavaScript"
 ```
 
 ### Ulkopuoliset kirjastot
-
 Vaikka JavaScriptin sisäänrakennetut regex-ominaisuudet ovat tehokkaita, jotkut tehtävät saattavat yksinkertaistua kirjastoilla, kuten `XRegExp`. Se tarjoaa lisäsyntaksia ja lippuja, tekee monimutkaisista malleista luettavampia:
 
 ```javascript

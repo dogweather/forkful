@@ -11,9 +11,6 @@ title: Organizacja kodu w funkcje
 weight: 18
 ---
 
-## Co i dlaczego?
-Organizowanie kodu w funkcje jest jak sortowanie klocków LEGO do pojemników – ułatwia to ich znalezienie i użycie. Robimy to, aby unikać powtórzeń, upraszczać rozumienie i uczynić konserwację mniej bolesną.
-
 ## Jak to zrobić:
 Wyobraź sobie, że masz kod, który kilka razy wypisuje powitanie. Bez funkcji jest to bałagan. Z funkcjami jest to uporządkowane.
 

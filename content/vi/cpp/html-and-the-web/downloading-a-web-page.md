@@ -16,9 +16,6 @@ title: "T\u1EA3i trang web"
 weight: 42
 ---
 
-## Cái gì & Tại sao?
-Tải xuống một trang web đơn giản chỉ có nghĩa là lấy nội dung của nó, thường là ở định dạng HTML, để xem hoặc xử lý cục bộ. Lập trình viên tải xuống các trang web để gỡ lỗi dữ liệu, theo dõi các thay đổi hoặc tích hợp với các dịch vụ web.
-
 ## Cách thức:
 Trong phiên bản C++ hiện tại, bạn có thể sử dụng thư viện `CURL` để tải xuống nội dung web. Dưới đây là một ví dụ cơ bản:
 

@@ -10,9 +10,6 @@ title: Comparer deux dates
 weight: 27
 ---
 
-## What & Why?
-Comparer deux dates, c'est évaluer leur ordre chronologique. Les programmeurs font ça pour trier des éléments, vérifier des échéances, ou calculer des durées.
-
 ## How to:
 En Rust, on utilise le crate `chrono` pour manipuler les dates. Voici comment comparer deux dates :
 

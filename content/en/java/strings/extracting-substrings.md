@@ -11,12 +11,7 @@ title: Extracting substrings
 weight: 6
 ---
 
-## What & Why?
-
-Extracting substrings means pulling out a specific part of a string—a sequence of characters inside a bigger string. Programmers slice and dice strings to validate inputs, parse data, or simply to display only the relevant bits to users.
-
 ## How to:
-
 Extracting a substring in Java is straightforward using the `substring` method. Here's how you do it:
 
 ```java
@@ -38,13 +33,11 @@ public class SubstringExample {
 **Remember**: In Java, string indexing starts at 0.
 
 ## Deep Dive
-
 The `substring` method has been around since the early days of Java, providing a simple way to get parts of a string. In older versions of Java, `substring` would share the original character array, which could lead to memory leaks if the original string was large and the substring was kept for a long time. Since Java 7 update 6, `substring` creates a new string, so the old one can be garbage-collected if not used elsewhere.
 
 Also, before reaching out to `substring`, consider if you can use `split`, `replace`, or regex utilities for more complex scenarios. Internally, `substring` in Java uses methods from the `String` class that copy arrays—efficient, but not something you have direct control over.
 
 ## See Also
-
 - For a full picture of what you can do with strings in Java, take a look at the `String` class documentation: [String (Java SE 15 & JDK 15)](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html)
 - Diving into more complex string manipulation? The `Pattern` and `Matcher` classes are your friends: [Pattern (Java SE 15 & JDK 15)](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/regex/Pattern.html)
 - A tutorial on using regular expressions in Java: [Regular Expressions](https://docs.oracle.com/javase/tutorial/essential/regex/)

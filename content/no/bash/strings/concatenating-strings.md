@@ -11,12 +11,7 @@ title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---
 
-## Hva & Hvorfor?
-
-Sammenkjede av strenger betyr å lime sammen to eller flere tekstbitene ende til ende. Programmerere gjør dette for å bygge opp komplekse strenger fra mindre biter, formatere utdata, eller konstruere kommandoer dynamisk.
-
 ## Slik gjør du det:
-
 ```Bash
 # Enkel sammenkobling
 hilsen="Hei"
@@ -36,7 +31,6 @@ echo $path         # Ut: /home/bruker1/dokumenter
 ```
 
 ## Dypdykk:
-
 Tilbake på 70-tallet da Unix ble til, var bash' forgjenger, sh (Bourne shell), også utstyrt med evnen til å sammenkjede strenger. Siden da er string-sammenkjedning blitt grunnleggende i skripting.
 
 Alternativt kan programmerere bruke `printf` for mer kontroll over formateringen, eller kanskje `awk` og `sed` for mer komplekse tekstbehandlingsoppgaver.
@@ -44,7 +38,6 @@ Alternativt kan programmerere bruke `printf` for mer kontroll over formateringen
 Når det gjelder implementeringsdetaljer, bash behandler variabler og tekst literalt når de blir ekspandert. Det betyr at variabler blir byttet ut med deres verdier, og siden det ikke finnes et eget operatør for sammenkjedning, blir tekster automatisk sammenkjedet når de står ved siden av hverandre.
 
 ## Se også:
-
 - Bash manualen: [Bash Reference Manual](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
 - Advance Bash-Scripting Guide: [ABS Guide](https://tldp.org/LDP/abs/html/)
 - En diskusjon om tekstmanipulasjon i bash: [Stack Overflow: String manipulation](https://stackoverflow.com/questions/tagged/string+bash)

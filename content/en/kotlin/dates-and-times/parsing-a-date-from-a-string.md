@@ -9,9 +9,6 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-Parsing a date from a string involves converting text into a Date object. This operation is fundamental for applications that interact with dates entered by users or sourced from external datasets, allowing for easy manipulation and formatting according to needs.
-
 ## How to:
 Kotlin supports date parsing through the `java.time` package, introduced in Java 8. Here's a simple approach using `LocalDateTime` and a specific pattern:
 

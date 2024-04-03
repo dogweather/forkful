@@ -11,9 +11,6 @@ title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-HTTP-Anfragen mit Basis-Authentifizierung sind essentiell, wenn Dienste oder APIs einen Nutzernachweis erfordern. Entwickler verwenden sie, um Zugriff auf geschützte Ressourcen zu erhalten, oftmals für Automatisierung oder Datenintegration.
-
 ## Wie geht das:
 Hier ist ein einfaches Beispiel, wie man eine HTTP-Anfrage mit Basic Authentication in PowerShell macht:
 

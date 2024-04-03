@@ -12,9 +12,6 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co i dlaczego?
-Usuwanie cudzysłowów z ciągu znaków oznacza wyeliminowanie wszelkich znaków cudzysłowu — pojedynczych (' '), podwójnych (" ") lub obu — z danych tekstowych. Programiści robią to, aby oczyścić dane wejściowe, przygotować dane do przechowywania lub uproszczać zadania analizowania, gdzie cudzysłowy są niepotrzebne i potencjalnie problematyczne.
-
 ## Jak to zrobić:
 Wyrwijmy te irytujące cudzysłowy z naszego tekstu. Do szybkich napraw użyjemy metody `replace()`, a do twardych orzechów do zgryzienia - regex.
 

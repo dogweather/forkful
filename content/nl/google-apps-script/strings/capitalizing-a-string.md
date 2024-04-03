@@ -13,12 +13,7 @@ title: Een string met hoofdletters maken
 weight: 2
 ---
 
-## Wat & Waarom?
-
-Het kapitaliseren van een string houdt in dat de invoer wordt aangepast zodat het eerste teken een hoofdletter is en de rest kleine letters blijven, wat vaak wordt gebruikt voor het formatteren van namen of titels. Programmeurs doen dit om gegevensconsistentie te waarborgen en leesbaarheid binnen gebruikersinterfaces of documenten te verbeteren.
-
 ## Hoe te:
-
 Google Apps Script, gebaseerd op JavaScript, biedt verschillende methoden om een string te kapitaliseren, zij het zonder een ingebouwde functie. Hier zijn een paar bondige voorbeelden:
 
 **Methode 1: Gebruik makend van charAt() en slice()**
@@ -51,7 +46,6 @@ console.log(result);  // Uitvoer: Hallo, wereld
 Beide methoden zorgen ervoor dat het eerste teken van de reeks een hoofdletter is en de rest kleine letters zijn, geschikt voor een verscheidenheid aan toepassingen, waaronder maar niet beperkt tot het manipuleren van Google Sheets of documentbewerking via Apps Script.
 
 ## Diepgaande Duik
-
 Het kapitaliseren van strings in Google Apps Script is eenvoudig, met gebruikmaking van de krachtige stringmanipulatiemogelijkheden van JavaScript. Historisch gezien bieden talen zoals Python ingebouwde methoden zoals `.capitalize()` om dit te bereiken, wat een kleine extra stap betekent voor JavaScript- en Apps Script-programmeurs. Het ontbreken van een ingebouwde functie in JavaScript/Google Apps Script bevordert echter flexibiliteit en een dieper begrip van stringmanipulatietechnieken.
 
 Voor complexe scenario's, zoals het kapitaliseren van elk woord in een string (Titelvorm), kunnen programmeurs regex-methoden combineren met `split()` en `map()` functies om elk woord afzonderlijk te verwerken. Hoewel Google Apps Script geen directe methode biedt voor het kapitaliseren van strings, biedt het gebruik van bestaande JavaScript-stringmanipulatiemethoden voldoende flexibiliteit, waardoor ontwikkelaars strings efficiënt kunnen behandelen volgens hun specifieke behoeften.

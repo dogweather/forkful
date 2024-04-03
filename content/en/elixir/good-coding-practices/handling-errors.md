@@ -9,12 +9,7 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-
-Handling errors means writing code that can deal with things going sideways. Programmers do it to prevent crashes and to make sure their programs can recover gracefully when Murphy’s Law strikes.
-
 ## How to:
-
 In Elixir, we often use pattern matching and the `case` statement to handle different outcomes, including errors.
 
 ```elixir
@@ -45,7 +40,6 @@ Error: Cannot divide by zero.
 When you run this Elixir code, you'll either get a successful division or an error message, depending on your input. No crashes here!
 
 ## Deep Dive
-
 Way back, error handling was often about checking return values. With Elixir’s functional roots though, we've got pattern matching and tagged tuples, like `{:ok, value}` or `{:error, reason}`, which are more elegant.
 
 There are other ways to handle errors in Elixir:
@@ -56,7 +50,6 @@ There are other ways to handle errors in Elixir:
 Implementation-wise, Elixir builds on Erlang's robustness. It treats errors as just another type of message to be handled with all the pattern matching and functional goodness.
 
 ## See Also
-
 For further reading on error handling in Elixir, check out:
 
 - Elixir's official guide on [error handling](https://elixir-lang.org/getting-started/try-catch-and-rescue.html).

@@ -16,12 +16,7 @@ title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---
 
-## Cái gì & Tại sao?
-
-Việc tạo ra các số ngẫu nhiên trong C# bao gồm việc tạo ra các giá trị số không thể đoán trước trong một phạm vi đã xác định. Lập trình viên sử dụng các phương pháp này để thực hiện các tính năng như mã hóa, mô phỏng, và trò chơi, nơi mà sự không thể đoán trước hoặc việc mô phỏng sự ngẫu nhiên trong thế giới thực là cần thiết.
-
 ## Làm thế nào:
-
 Cách phổ biến nhất để tạo số ngẫu nhiên trong C# là sử dụng lớp `System.Random`. Dưới đây là một ví dụ đơn giản minh họa cách sử dụng:
 
 ```C#
@@ -73,7 +68,6 @@ public class SecureRandomExample
 ```
 
 ## Đi sâu vào vấn đề
-
 Quá trình tạo số ngẫu nhiên trong C# đã phát triển theo năm tháng. Ban đầu, lớp `System.Random` là lựa chọn hàng đầu để tạo ra các số giả ngẫu nhiên. Nó là giả ngẫu nhiên bởi vì, với một giá trị hạt giống cụ thể, nó sẽ tạo ra cùng một chuỗi số, điều này có thể hữu ích cho việc gỡ lỗi hoặc lặp lại các bài kiểm tra.
 
 Mặc dù đủ tốt cho các nhu cầu cơ bản, `System.Random` không an toàn với nhiều luồng và có thể tạo ra kết quả dễ đoán, điều này không phù hợp cho các ứng dụng phụ thuộc vào bảo mật. Hạn chế này đã dẫn đến sự ra đời của `RNGCryptoServiceProvider` cho sự ngẫu nhiên mật mã hóa, cái mà an toàn hơn nhưng cũng tiêu tốn nhiều tài nguyên hơn.

@@ -17,12 +17,7 @@ title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---
 
-## Là gì & Tại sao?
-
-Việc tạo số ngẫu nhiên trong lập trình là về việc tạo ra các giá trị không thể được dự đoán một cách logic trước thời điểm. Lập trình viên thực hiện việc này với nhiều lý do khác nhau, bao gồm tạo ra các định danh duy nhất, mô phỏng các kịch bản trong phát triển trò chơi, hoặc chọn mẫu ngẫu nhiên từ dữ liệu để phân tích.
-
 ## Làm thế nào:
-
 Trong Clojure, việc tạo số ngẫu nhiên khá đơn giản, và có một số hàm được tích hợp sẵn có thể được sử dụng ngay lập tức.
 
 Để tạo một số thực ngẫu nhiên giữa 0 (bao gồm) và 1 (không bao gồm), bạn có thể sử dụng hàm `rand`:
@@ -56,7 +51,6 @@ Hàm `rand-range` này sẽ trả về một số thực ngẫu nhiên giữa c�
 Đối với các tình huống cần các phân phối phức tạp hơn hoặc các chuỗi số ngẫu nhiên mà khả năng lặp lại là cần thiết (sử dụng hạt giống), bạn có thể cần tìm hiểu thêm về các thư viện bổ sung nằm ngoài những gì được tích hợp sẵn.
 
 ## Sâu hơn
-
 Cơ chế cơ bản để tạo số ngẫu nhiên trong hầu hết các ngôn ngữ lập trình, bao gồm Clojure, thường dựa vào bộ sinh số giả ngẫu nhiên (PRNG). Một PRNG sử dụng một thuật toán để tạo ra một chuỗi số mô phỏng các tính chất của số ngẫu nhiên. Đáng chú ý là do các số này được tạo ra bằng thuật toán, chúng không thực sự ngẫu nhiên nhưng có thể đủ cho hầu hết các mục đích thực tế.
 
 Trong những ngày đầu của máy tính, việc tạo ra số ngẫu nhiên chất lượng cao là một thách thức lớn, dẫn đến việc phát triển các thuật toán khác nhau để cải thiện độ ngẫu nhiên và phân phối. Đối với Clojure, các hàm được tích hợp sẵn, như `rand` và `rand-int`, tiện lợi cho việc sử dụng hàng ngày và đáp ứng một phạm vi rộng lớn của các trường hợp sử dụng thường gặp.

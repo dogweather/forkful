@@ -15,12 +15,7 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---
 
-## Cái gì & Tại sao?
-
-Gửi một yêu cầu HTTP bao gồm việc tạo và điều phát yêu cầu đến một máy chủ web để lấy hoặc gửi dữ liệu. Các lập trình viên thực hiện điều này bằng ngôn ngữ C để tương tác với các API web, tải trang web, hoặc giao tiếp với các dịch vụ mạng khác trực tiếp từ các ứng dụng của họ.
-
 ## Làm thế nào:
-
 Để gửi một yêu cầu HTTP trong C, bạn sẽ chủ yếu dựa vào các thư viện như libcurl, vì C không có hỗ trợ sẵn cho các giao thức web. Dưới đây là một ví dụ đơn giản sử dụng libcurl để thực hiện một yêu cầu GET:
 
 Đầu tiên, hãy chắc chắn bạn đã cài đặt libcurl trên hệ thống của mình. Sau đó, bao gồm các tiêu đề cần thiết và liên kết với thư viện libcurl trong file mã nguồn của bạn:
@@ -57,11 +52,9 @@ int main(void) {
 Biên dịch với lệnh tương tự `gcc -o http_request http_request.c -lcurl`, chạy nó sẽ thực hiện một yêu cầu GET đơn giản đến "http://example.com".
 
 ### Đầu ra mẫu
-
 Vì ví dụ không xử lý phản hồi từ máy chủ, việc chạy nó sẽ không tạo ra đầu ra hiển thị nào ngoài các thông báo lỗi tiềm năng. Việc tích hợp hàm gọi lại để xử lý dữ liệu nhận được là cần thiết cho sự tương tác ý nghĩa.
 
 ## Đào sâu
-
 Ý tưởng gửi yêu cầu HTTP từ một chương trình C dựa trên khả năng mạng mạnh mẽ của ngôn ngữ, kết hợp với các thư viện bên ngoài vì chính C là một ngôn ngữ cấp thấp không hỗ trợ sẵn các giao thức internet cấp cao. Lịch sử, các lập trình viên sẽ tự mình sử dụng lập trình socket trong C, một quy trình phức tạp và mệt mỏi, để tương tác với các máy chủ web trước khi có sự ra đời của các thư viện chuyên dụng như libcurl.
 
 Libcurl, được xây dựng dựa trên C, đơn giản hóa quy trình, che khuất những chi tiết sâu cay của lập trình socket và đặc điểm giao thức HTTP. Nó hỗ trợ nhiều giao thức ngoài HTTP/HTTPS, bao gồm FTP, SMTP, và hơn nữa, làm cho nó trở thành một công cụ đa năng cho lập trình mạng trong C.

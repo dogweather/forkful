@@ -10,12 +10,7 @@ title: Concatenating strings
 weight: 3
 ---
 
-## What & Why?
-
-Concatenating strings involves joining two or more strings end-to-end to form a new string. Programmers do this to dynamically generate text, such as constructing messages, paths, or complex queries, making programs more interactive and responsive.
-
 ## How to:
-
 In Go, there are several ways to concatenate strings. Here’s a look at some common methods with examples:
 
 ### Using the `+` Operator:
@@ -59,7 +54,6 @@ fmt.Println(path) // path/to/file
 ```
 
 ## Deep Dive
-
 String concatenation, while a seemingly straightforward operation, touches on deeper aspects of how Go handles strings. In Go, strings are immutable; meaning, every concatenation operation creates a new string. This can lead to performance issues when concatenating large numbers of strings or when doing so in tight loops, due to the frequent allocation and copying of memory.
 
 Historically, languages have tackled the string immutability and concatenation efficiency in various ways, and Go's approach with `strings.Builder` and `strings.Join` provides programmers with tools that balance ease of use with performance. The `strings.Builder` type, introduced in Go 1.10, is particularly noteworthy as it provides an efficient way to build strings without incurring the overhead of multiple string allocations. It does this by allocating a buffer that grows as needed, into which strings are appended.

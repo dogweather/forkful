@@ -10,12 +10,7 @@ title: Printing debug output
 weight: 33
 ---
 
-## What & Why?
-
-Printing debug output involves strategically placing log statements in your code to display variable values, execution flow, or message errors during runtime. Programmers utilize it extensively for tracing and diagnosing the behavior of their scripts, ensuring correctness and efficiency in their Google Apps Script applications.
-
 ## How to:
-
 Google Apps Script provides the `Logger` class for basic debugging, and for more advanced needs, the `console` class introduced in the V8 runtime.
 
 **Using Logger:**
@@ -52,7 +47,6 @@ Current status: active, Count: 150
 ```
 
 ## Deep Dive
-
 Initially, `Logger.log` was the primary tool for debugging in Google Apps Script, offering a simple, straightforward way to print output for inspection. However, as scripts become more complex and integrated with Google Cloud Platform services, the need for a more robust logging solution became evident.
 
 Enter the V8 runtime, bringing `console.log` into the fold. This not only aligns Google Apps Script with standard JavaScript syntax, making the language more accessible to developers familiar with JavaScript but also leverages the powerful infrastructure of Google Cloud's logging capabilities. The introduction of `console.log` and its integration with Google Cloud Platform marks a significant evolution in debugging capabilities within Google Apps Script, providing developers with a more dynamic and scalable approach to monitoring and troubleshooting their scripts.

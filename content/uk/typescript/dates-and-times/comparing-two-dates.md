@@ -12,9 +12,6 @@ title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u043
 weight: 27
 ---
 
-## Що і Чому?
-Porіvnyannya dvokh dat - tse sposib vstanovlennya chasovoyi rіznitsі mіzh nimi. Programіsti robyatʹ tse, shchob vіdkrіplyuvaty podiyi v chasі, zapuskaty terminovі zadachi, abo perevіryaty chinnіstʹ danih.
-
 ## Як зробити:
 ```TypeScript
 // Створюємо дві дати

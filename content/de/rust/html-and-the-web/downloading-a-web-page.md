@@ -11,9 +11,6 @@ title: Webseite herunterladen
 weight: 42
 ---
 
-## Was & Warum?
-Das Herunterladen einer Webseite bedeutet, die Inhalte einer URL zu fetchen, um sie lokal zu verarbeiten oder anzusehen. Programmierer machen das, um Daten zu sammeln, APIs zu konsumieren oder Web-Scraping durchzuführen.
-
 ## So geht's:
 Um mit Rust eine Webseite herunterzuladen, nutzt man üblicherweise die `reqwest`-Bibliothek. Hier ein einfaches Beispiel:
 

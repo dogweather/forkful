@@ -10,9 +10,6 @@ title: "Excluindo caracteres que correspondem a um padr\xE3o"
 weight: 5
 ---
 
-## What & Why?
-Deletar caracteres que correspondem a um padrão significa usar algoritmos para encontrar e remover certos caracteres de uma string. Fazemos isso para limpar dados, preparar texto para processamento ou remover informações desnecessárias ou sensíveis.
-
 ## How to:
 Para excluir caracteres usando um padrão no TypeScript, você geralmente vai usar expressões regulares com o método `.replace()`. Aqui estão alguns exemplos:
 

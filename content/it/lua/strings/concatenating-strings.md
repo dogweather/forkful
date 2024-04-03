@@ -10,9 +10,6 @@ title: Concatenazione di stringhe
 weight: 3
 ---
 
-## What & Why?
-In Lua, concatenare le stringhe significa unirle per formare un testo continuo. Questo è utile per comporre messaggi, costruire query, o semplicemente per organizzare dati in formato leggibile.
-
 ## How to:
 ```Lua
 -- Concatenazione semplice con l'operatore ..

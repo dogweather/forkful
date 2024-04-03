@@ -10,9 +10,6 @@ title: Calcular una fecha en el futuro o pasado
 weight: 26
 ---
 
-## ¿Qué & Por Qué?
-Calcular una fecha en el futuro o pasado es simplemente sumar o restar días a una fecha dada. Los programadores hacen esto para manejar eventos, suscripciones, recordatorios y todo lo relacionado con fechas y plazos.
-
 ## Cómo hacerlo:
 ```Python
 from datetime import datetime, timedelta
@@ -42,7 +39,6 @@ Alternativas a `datetime` incluyen paquetes de terceros como `dateutil`, que pro
 En cuanto a implementación, `timedelta` es una clase clave que representa una duración, la diferencia entre dos fechas u horas, y se puede sumar o restar a objetos `datetime` para calcular fechas en el futuro o pasado.
 
 ## Ver También
-
 - [Documentación oficial de `datetime`](https://docs.python.org/3/library/datetime.html)
 - [PyPI `dateutil`](https://pypi.org/project/python-dateutil/)
 - [Tutorial de `pandas` para series temporales](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html)

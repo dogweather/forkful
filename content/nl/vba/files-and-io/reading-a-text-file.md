@@ -13,12 +13,7 @@ title: Een tekstbestand lezen
 weight: 22
 ---
 
-## Wat & Waarom?
-
-Een tekstbestand lezen in Visual Basic for Applications (VBA) betekent programmatisch toegang krijgen tot en het extraheren van de inhoud van een tekstbestand vanuit een Office-applicatie. Programmeurs voeren deze taak vaak uit om gegevens die zijn opgeslagen in platte bestanden te importeren of te verwerken, wat automatisering en gegevensmanipulatie direct binnen het Office-ecosysteem vergemakkelijkt.
-
 ## Hoe te:
-
 De eenvoudigste manier om een tekstbestand in VBA te lezen, is door gebruik te maken van de `Open`-instructie in combinatie met de `Input` of `Line Input`-functies. Hier is hoe je het kunt doen:
 
 1. **Open het bestand om te lezen** - Eerst moet je het bestand openen. Zorg ervoor dat het bestandspad toegankelijk is voor de applicatie.
@@ -66,7 +61,6 @@ Veel leesplezier!
 De uitvoer in het Directe Venster zou de hele tekst of regel voor regel zijn, afhankelijk van de methode die u kiest.
 
 ## Diepgaand
-
 Tekstbestanden lezen in VBA is al tientallen jaren een hoeksteen van kantoormatiseringstaken. De geïllustreerde methoden, hoewel efficiënt binnen het VBA-ecosysteem, kunnen archaïsch lijken vergeleken met moderne programmeerpraktijken die vaak hogere abstracties of bibliotheken gebruiken voor bestandsbewerkingen. Zo maakt Python gebruik van de `open()`-functie binnen een `with`-statement, wat zorgt voor een schonere syntax en automatische bestandsafhandelingsmogelijkheden.
 
 Dat gezegd hebbende, wanneer je werkt binnen de beperkingen van de Microsoft Office-omgeving, biedt VBA een directe en native methode om bestanden te manipuleren, wat cruciaal kan zijn voor applicaties die interoperabiliteit met Office-producten vereisen. De eenvoud van het openen van een tekstbestand, het lezen en verwerken van de inhoud regel voor regel of in zijn geheel, zonder de noodzaak voor externe bibliotheken of complexe configuraties, maakt VBA een waardevolle tool in de gereedschapskist van de Office-ontwikkelaar.

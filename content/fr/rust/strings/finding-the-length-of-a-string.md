@@ -11,9 +11,6 @@ title: "Trouver la longueur d'une cha\xEEne de caract\xE8res"
 weight: 7
 ---
 
-## What & Why?
-Trouver la longueur d'une chaîne de caractères, c'est compter combien d'éléments (bytes, en général) elle contient. Les programmeurs font cela pour valider des données, manipuler du texte, ou optimiser la performance.
-
 ## How to:
 Rust utilise la méthode `.len()` pour obtenir la taille d'une chaîne de caractères en bytes. Voici comment ça marche :
 

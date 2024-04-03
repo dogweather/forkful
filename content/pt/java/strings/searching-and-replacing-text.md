@@ -11,9 +11,6 @@ title: Pesquisando e substituindo texto
 weight: 10
 ---
 
-## What & Why?
-Procurar e substituir texto é uma prática de encontrar sequências específicas de caracteres numa string e trocá-las por outras. Programadores fazem isso para corrigir erros, atualizar informações ou automatizar edições em massa.
-
 ## How to:
 Em Java, você pode usar o método `replace()` ou `replaceAll()` da classe `String`. Aqui vai um exemplo rápido:
 

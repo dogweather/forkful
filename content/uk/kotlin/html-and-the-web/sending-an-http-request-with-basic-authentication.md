@@ -26,12 +26,7 @@ title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437
 weight: 45
 ---
 
-## Що і Чому?
-
-Відправка HTTP-запиту з базовою аутентифікацією – це метод захисту доступу до ресурсів вебсервісу через логін і пароль. Програмісти використовують це для забезпечення безпеки та обмеженого доступу до API або веб-ресурсів.
-
 ## Як це зробити:
-
 ```Kotlin
 import java.net.URL
 import java.util.Base64
@@ -72,11 +67,9 @@ Response Message: OK
 ```
 
 ## Поглиблено:
-
 Базова аутентифікація з'явилася ще на світанку вебу і досі користується популярністю через свою простоту. Хоча зараз існує більш безпечні методи, наприклад OAuth 2.0, базова аутентифікація залишається значущою для швидких або внутрішніх рішень. Значення `"Authorization"` header кодується у Base64 і включає `username` та `password`, розділені двокрапкою. Варто пам'ятати, що Base64 не є шифруванням і його легко декодувати; тому використання HTTPS є важливим для забезпечення безпеки. У Kotlin для HTTP-запитів з автентифікацією можна користуватися різними бібліотеками, але базовий приклад використовує інтегровані Java класи.
 
 ## Дивіться також:
-
 - [Base64 Encoding in Java](https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html)
 - [Understanding Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
 - [Java™ Secure Socket Extension (JSSE) Reference Guide](https://docs.oracle.com/javase/8/docs/technotes/guides/security/jsse/JSSERefGuide.html)

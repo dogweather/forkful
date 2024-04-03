@@ -14,12 +14,7 @@ title: Laste ned en nettside
 weight: 42
 ---
 
-## Hva & Hvorfor?
-
-Å laste ned en nettside i C innebærer å programmert få tilgang til innholdet på en nettside over internett og lagre det lokalt for behandling eller offline bruk. Programmerere engasjerer seg ofte i dette for å konsumere webtjenester, skrape nettinnhold eller samhandle direkte med online ressurser fra sine applikasjoner.
-
 ## Hvordan:
-
 For å laste ned en nettside i C, er en populær tilnærming å bruke libcurl-biblioteket, et effektivt og bærbart klient-side URL-overføringsbibliotek. Sørg for at du har installert og linket libcurl i prosjektet ditt. Her er et eksempel som demonstrerer hvordan man bruker libcurl for å laste ned innholdet på en nettside:
 
 ```c
@@ -61,7 +56,6 @@ int main(void) {
 Eksempelutdata (ingen synlig utdata i konsollen): Denne koden laster ned innholdet på den angitte URL-en og lagrer det i en fil med navnet `downloaded_page.html`. Sjekk programmets katalog for denne filen for å se det nedlastede innholdet.
 
 ## Dypdykk:
-
 Historisk sett var nedlasting av webinnhold i C mer omstendelig, og krevde manuell socket-programmering og håndtering av HTTP-protokollen. Libcurl abstraherer disse kompleksitetene, og tilbyr et robust og høynivå API for dataoverføring over nettet.
 
 Selv om libcurl forenkler HTTP-forespørsler i C, kan moderne programmeringsspråk som Python med sitt `requests`-bibliotek eller JavaScript (Node.js) med ulike HTTP-klientbiblioteker tilby mer intuitiv syntaks og innebygd støtte for JSON og andre dataformater som ofte brukes i webkommunikasjon. Imidlertid gir C og libcurl en høytytende og stabil løsning for systemer der effektivitet, finjustert kontroll eller integrasjon i eksisterende C-kodebaser er kritisk. Det er også verdt å merke seg at C, kombinert med libcurl, kan brukes til mer enn bare å laste ned nettsider - det er i stand til FTP, SMTP og mye mer, noe som gjør det til et allsidig verktøy i en programmerers verktøykasse.

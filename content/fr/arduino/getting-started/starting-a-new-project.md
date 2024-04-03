@@ -10,12 +10,7 @@ title: Lancement d'un nouveau projet
 weight: 1
 ---
 
-## Quoi & Pourquoi ?
-
-Un nouveau projet Arduino, c'est comme un tableau blanc pour un peintre. On démarre des projets pour donner vie à nos idées, résoudre des problèmes ou juste pour s'amuser avec la technologie.
-
 ## Comment faire :
-
 Supposons que vous construisez une station météo.
 
 ```Arduino
@@ -59,11 +54,9 @@ Humidité: 58.20%  Température: 22.30°C
 ```
 
 ## Exploration :
-
 L'Arduino est né au début des années 2000 en Italie pour aider les étudiants en design sans expérience en électronique ou en programmation. Alternative à des solutions plus coûteuses comme BASIC Stamp, il est accessible, open source et polyvalent, adapté aussi bien aux débutants qu'aux experts. Pour démarrer un projet, il faut avoir une intention claire, choisir le bon matériel et comprendre les bibliothèques nécessaires à votre projet. Dans notre exemple, la bibliothèque 'DHT.h' est essentielle pour communiquer avec le capteur de température et d'humidité. La structure comprend un `setup()` pour initialiser les paramètres, et un `loop()` qui tourne continuellement.
 
 ## Voir également :
-
 - [Documentation Arduino](https://www.arduino.cc/reference/fr/)
 - [Projets de démarrage Arduino](https://create.arduino.cc/projecthub)
 - [Tutoriels Adafruit pour capteurs DHT](https://learn.adafruit.com/dht)

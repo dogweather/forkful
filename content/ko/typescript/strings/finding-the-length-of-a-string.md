@@ -13,9 +13,6 @@ title: "\uBB38\uC790\uC5F4\uC758 \uAE38\uC774 \uCC3E\uAE30"
 weight: 7
 ---
 
-## What & Why? (무엇과 왜?)
-문자열 길이 측정은 문자의 개수를 센다. 저장된 데이터 관리, 입력 유효성 검사, UI 디자인 조정에 필요하다.
-
 ## How to: (어떻게 하나요?)
 ```TypeScript
 let greeting: string = "안녕하세요!";

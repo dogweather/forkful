@@ -16,9 +16,6 @@ title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---
 
-## Gì và Tại sao?
-Loại bỏ dấu ngoặc khỏi một chuỗi có nghĩa là bỏ đi những bao bọc thừa để lấy được văn bản sạch bên trong. Lập trình viên làm điều này để làm sạch dữ liệu đầu vào, tránh lỗi, và chuẩn bị dữ liệu cho việc xử lý nơi mà dấu ngoặc là trở ngại, không phải tính năng.
-
 ## Làm thế nào:
 Elixir không có hàm 'loại bỏ dấu ngoặc' sẵn có, nhưng rất dễ để tự tạo một cái với việc sử dụng kỹ thuật khớp mẫu hoặc các hàm `String`. Xem các đoạn mã sau:
 

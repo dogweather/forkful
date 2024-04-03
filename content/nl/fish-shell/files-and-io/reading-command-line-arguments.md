@@ -14,11 +14,7 @@ title: Commandoregelargumenten lezen
 weight: 23
 ---
 
-## Wat & Waarom?
-Command line argumenten lezen is het oppakken van de extra bits die je typt na de naam van je script, zoals geheime handdrukken om het gedrag van een script aan te passen. Programmeurs doen dit om scripts flexibel en interactief te maken zonder gedoe.
-
 ## Hoe:
-
 Stel `greet.fish` is je script. Je wilt dat het een naam neemt en een begroeting uitspuwt.
 
 ```fish
@@ -85,7 +81,6 @@ VENUS
 ```
 
 ## Diepere duik
-
 Fish Shell heeft al lange tijd command line argumenten goed onder de knie, net als andere shells. Wat Fish onderscheidt, is zijn eenvoud door ontwerp. Er zijn geen `$1, $2... $n` om te onthouden; het is een array `$argv`, bekend terrein als je in andere programmeertalen duikt.
 
 Er zijn alternatieven, zoals bash, zsh, enz., maar de scripttaal van Fish streeft ernaar leesbaarder en eenvoudiger te zijn. In plaats van traditionele `shift` commando's of te maken hebben met `$@` voor alle argumenten, heeft Fish dat vriendelijke `$argv` en mooie scriptconstructies zoals `for` lussen en `if` condities die minder over cryptische symbolen gaan en meer over duidelijke woorden.
@@ -93,7 +88,6 @@ Er zijn alternatieven, zoals bash, zsh, enz., maar de scripttaal van Fish streef
 Bij de implementatie is het van vitaal belang om te overwegen hoe je script gebruikt zal worden. Zijn er standaardwaarden nodig? Zullen gebruikers weten wat ze moeten invoeren? Zorg ervoor dat je gevallen aanpakt waar gebruikers vergeten argumenten door te geven of ze in de verkeerde volgorde passeren.
 
 ## Zie ook
-
 - De officiële Fish documentatie over command line argumenten: [fishshell.com/docs/current/#syntax-command-line](https://fishshell.com/docs/current/#syntax-command-line)
 - Voor geavanceerd scripten en het creëren van je eigen functies in Fish: [fishshell.com/docs/current/#defining-functions](https://fishshell.com/docs/current/#defining-functions)
 - Een introductie tot Fish voor gebruikers met een achtergrond in andere shells: [fishshell.com/docs/current/tutorial.html](https://fishshell.com/docs/current/tutorial.html)

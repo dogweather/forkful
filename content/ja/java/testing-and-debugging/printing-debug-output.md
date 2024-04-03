@@ -23,12 +23,7 @@ title: "\u30C7\u30D0\u30C3\u30B0\u51FA\u529B\u3092\u8868\u793A\u3059\u308B"
 weight: 33
 ---
 
-## What & Why? (何となぜ？)
-
-デバッグ出力とは、コードの動作を理解しやすくするために、変数の値やプログラムの状態を表示することです。プログラマーは問題を見つけやすくするため、またはコードの動作が意図した通りかを確認するためによく使います。
-
 ## How to: (方法)
-
 Javaでデバッグ出力をする基本的な方法を紹介します。
 
 ```java
@@ -59,7 +54,6 @@ i = 9, sum = 45
 ```
 
 ## Deep Dive (深掘り)
-
 デバッグ出力の歴史は古く、昔のプログラミングでは印刷機やポンチカードに直接出力することから始まりました。今では、`System.out.println()` のようなコマンドでコンソールに出力するのが一般的です。
 
 代替として、より強力なロギングフレームワーク（log4j、SLF4Jなど）があります。これらは出力のレベル（INFO、DEBUG、ERRORなど）を設定したり、コンソール以外の場所（ファイル、ネットワーク）に出力したりできます。
@@ -67,7 +61,6 @@ i = 9, sum = 45
 デバッグ出力の実装には、条件付きで出力を切り替える（本番環境でのパフォーマンスへの影響を避けるため）などの考慮が必要です。Javaではコンパイル時に指定する `assert` ステートメントも使え、条件がfalseの時にメッセージを出力します。
 
 ## See Also (関連情報)
-
 - [Oracle Java Tutorials - The `print` and `println` Methods](https://docs.oracle.com/javase/tutorial/essential/io/formatting.html)
 - [Apache log4j 2](https://logging.apache.org/log4j/2.x/)
 - [Simple Logging Facade for Java (SLF4J)](http://www.slf4j.org/)

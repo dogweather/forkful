@@ -10,9 +10,6 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-Calculating a date in the future or past is about finding the date before or after a certain period of time. Programmers do it for tasks like setting reminders, running scheduled jobs, or handling expiry dates.
-
 ## How to:
 In Bash, you can use the `date` command along with the `-d` flag to manipulate dates. Here's how:
 

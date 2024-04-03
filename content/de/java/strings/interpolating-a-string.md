@@ -10,9 +10,6 @@ title: Zeichenketten interpolieren
 weight: 8
 ---
 
-## What & Why?
-String-Interpolation ermöglicht es, Variablenwerte nahtlos in Strings einzubetten. Wir nutzen es, um dynamischen Text leichter lesbar und wartbar zu gestalten.
-
 ## How to:
 Java bietet keine eingebaute String-Interpolation wie einige andere Sprachen. Aber seit Java 5 verwenden wir `printf` oder `String.format`. Ab Java 8 können wir auch die `MessageFormat`-Klasse nutzen.
 

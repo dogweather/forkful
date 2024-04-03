@@ -10,9 +10,6 @@ title: Eliminando comillas de una cadena
 weight: 9
 ---
 
-## ¿Qué y Por Qué?
-Eliminar comillas de una cadena significa quitar cualquier tipo de comillas—simples (' '), dobles (" ") o ambas—de los datos de texto. Los programadores lo hacen para sanear los inputs, preparar datos para el almacenamiento o simplificar tareas de análisis sintáctico donde las comillas son innecesarias y potencialmente problemáticas.
-
 ## Cómo hacerlo:
 Vamos a arrancar esas molestas comillas de nuestro texto. Usaremos el método `replace()` para las soluciones rápidas y regex para los casos más complicados.
 

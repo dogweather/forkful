@@ -11,12 +11,7 @@ title: "Feilh\xE5ndtering"
 weight: 16
 ---
 
-## Hva & Hvorfor?
-
-Feilhåndtering er måten du håndterer ting på når koden din ikke fungerer som den skal. Det er nøkkelen fordi det hjelper programmene dine å feile med verdighet og gir brukere klare instruksjoner, i stedet for å bare krasje og brenne.
-
 ## Hvordan gjøre:
-
 Her er den klassiske `try-catch`-blokken:
 
 ```javascript
@@ -56,7 +51,6 @@ fetchData();
 ```
 
 ## Dypdykk
-
 Feilhåndtering i JavaScript har utviklet seg. Tilbake i tiden (ES3, rundt 1999), hadde vi bare `try-catch`-blokken. Ikke super fleksibel, men den gjorde jobben.
 
 ES6 (2015) introduserte Promises og ga oss `.then()` og `.catch()`, som tillater oss å håndtere asynkrone feil mer nådig.
@@ -72,7 +66,6 @@ Når det gjelder implementasjonsdetaljer, når en feil blir kastet, skaper JavaS
 Alternativer? Du kunne ignorere feilhåndtering (dårlig idé), bruke tilbakekall med feilførste parametere (hallo, Node.js-stil), eller bli mer sofistikert med biblioteker og rammeverk som tilbyr deres versjoner.
 
 ## Se også
-
 For mer om feilhåndtering:
 
 - MDN om try-catch: [MDN try...catch](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/try...catch)

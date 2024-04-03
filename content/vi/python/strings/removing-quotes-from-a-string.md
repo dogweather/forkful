@@ -16,9 +16,6 @@ title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---
 
-## Gì và Tại sao?
-Việc loại bỏ dấu ngoặc khỏi một chuỗi thường có nghĩa là bỏ đi những dấu ngoặc kép (") hoặc dấu ngoặc đơn (') không cần thiết. Lập trình viên thực hiện điều này để làm sạch dữ liệu đầu vào hoặc khi không cần dấu ngoặc cho công đoạn xử lý tiếp theo - như khi lưu văn bản vào cơ sở dữ liệu hoặc chuẩn bị nó cho việc hiển thị.
-
 ## Làm thế nào:
 Python cung cấp vài cách để loại bỏ những dấu ngoặc không mong muốn khỏi chuỗi. Hãy xem qua một số ví dụ:
 

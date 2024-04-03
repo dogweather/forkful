@@ -12,9 +12,6 @@ title: Nutzung einer interaktiven Shell (REPL)
 weight: 34
 ---
 
-## Was & Warum?
-Interaktive Shells oder REPLs (Read-Eval-Print Schleifen) ermöglichen es Ihnen, Code spontan auszuführen, Funktionen, Algorithmen zu testen oder mit Ideen herumzuspielen. Sie sind die Notizblöcke des Codierens, schnell und unkompliziert, ohne eine vollständige Entwicklungs­umgebung einrichten zu müssen.
-
 ## Wie:
 Node.js wird mit einer über das Terminal zugänglichen REPL geliefert. Öffnen Sie es, und Sie können sofort loslegen. Hier ein Vorgeschmack:
 

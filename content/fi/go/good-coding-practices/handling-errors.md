@@ -13,12 +13,7 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä & Miksi?
-
-Virheiden käsittely Go:ssa tarkoittaa virhetilanteiden tunnistamista ja niihin vastaamista ohjelmassasi. Ohjelmoijat käyttävät virheenkäsittelyä varmistaakseen, että heidän sovelluksensa voivat palautua arvaamattomista tilanteista siististi, mikä johtaa kestävämpään ja luotettavampaan ohjelmistoon.
-
 ## Kuinka:
-
 Go:ssa virheenkäsittely hallitaan nimenomaan `error` -tyypin avulla. Funktiot, jotka voivat epäonnistua, palauttavat virheen viimeisenä paluuarvonaan. Tarkistamalla, onko tämä virhearvo `nil`, voit selvittää, onko virhe tapahtunut.
 
 ```go
@@ -63,7 +58,6 @@ Tulos: 100
 Tässä esimerkissä `Compute`-funktio palauttaa joko lasketun arvon tai virheen. Kutsuja käsittelee virheen tarkistamalla, onko `err` ei `nil`.
 
 ## Syväsukellus
-
 Go:n lähestymistapa virheenkäsittelyyn on tietoisesti suoraviivainen ja tyypiltään turvallinen, vaatien virheiden eksplisiittisen tarkistamisen. Tämä käsite eroaa poikkeusperusteisesta virheenkäsittelystä, jota nähdään kielissä kuten Java ja Python, joissa virheet leviävät kutsupinon ylöspäin, ellei niitä napata poikkeuskäsittelijän toimesta. Go-tiimi argumentoi, että virheiden eksplisiittinen käsittely tuottaa selkeämpää ja luotettavampaa koodia, koska se pakottaa ohjelmoijat kohtaamaan virheet välittömästi siellä, missä ne tapahtuvat.
 
 Kuitenkin jotkut kritiikit mainitsevat, että tämä malli voi johtaa sanalliseen koodiin, erityisesti monimutkaisissa funktioissa, joissa on monia virhealttiita toimintoja. Vastauksena uudemmat Go-versiot ovat tuoneet käyttöön kehittyneempiä virheenkäsittelyominaisuuksia, kuten virheiden käärimisen, mikä tekee virheen kontekstin tarjoamisesta helpompaa menettämättä alkuperäisen virhetiedon. Yhteisö on myös nähnyt ehdotuksia uusista virheenkäsittelymekanismeista, kuten tarkistus/käsittely, vaikkakin nämä ovat vielä keskustelun alla viimeisimmän päivitykseni mukaan.

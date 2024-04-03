@@ -14,12 +14,7 @@ title: "Zamiana liter w ci\u0105gu na wielkie"
 weight: 2
 ---
 
-## Co i dlaczego?
-
-Capitalizacja ciągu polega na modyfikacji wejścia tak, aby pierwsza litera była wielką literą, a reszta małymi literami, co jest powszechnie stosowane do formatowania nazw lub tytułów. Programiści robią to, aby zapewnić spójność danych i poprawić czytelność w interfejsach użytkownika lub dokumentach.
-
 ## Jak to zrobić:
-
 Google Apps Script, oparty na JavaScript, umożliwia kilka metod na kapitalizację ciągu, chociaż nie posiada wbudowanej funkcji. Oto kilka zwięzłych przykładów:
 
 **Metoda 1: Użycie charAt() i slice()**
@@ -52,7 +47,6 @@ console.log(result);  // Wynik: Witaj, świecie
 Obie metody zapewniają, że pierwsza litera ciągu jest wielka, a reszta małe, co jest odpowiednie dla różnych zastosowań, w tym między innymi manipulacji w Google Sheets lub edycji dokumentów za pomocą Apps Script.
 
 ## Głębsze zagłębienie
-
 Kapitalizacja ciągów w Google Apps Script jest prosta dzięki potężnym możliwościom manipulacji ciągami w JavaScript. Historycznie, języki takie jak Python oferują wbudowane metody takie jak `.capitalize()`, aby to osiągnąć, co stanowi niewielki dodatkowy krok dla programistów JavaScript i Apps Script. Jednak brak wbudowanej funkcji w JavaScript/Google Apps Script zachęca do elastyczności i głębszego zrozumienia technik manipulacji ciągami.
 
 W skomplikowanych scenariuszach, takich jak kapitalizacja każdego słowa w ciągu (Title Case), programiści mogą łączyć metody regex z funkcjami `split()` i `map()`, aby przetworzyć każde słowo indywidualnie. Choć Google Apps Script nie oferuje bezpośredniej metody na kapitalizację ciągów, użycie istniejących metod manipulacji ciągami w JavaScript zapewnia dużą elastyczność, umożliwiając programistom skuteczne obsługiwanie ciągów zgodnie z ich konkretnymi potrzebami.

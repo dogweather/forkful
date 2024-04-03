@@ -11,9 +11,6 @@ title: "Cr\xE9ation d'un fichier temporaire"
 weight: 21
 ---
 
-## What & Why?
-Créer un fichier temporaire, c'est comme écrire une note qu'on jette après usage. Les programmeurs le font pour stocker des données de manière transitoire sans polluer le système de fichiers permanent.
-
 ## How to:
 Haskell rend la gestion des fichiers temporaires élégante avec la bibliothèque `temporary`. Voici comment faire :
 

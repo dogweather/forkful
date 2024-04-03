@@ -11,9 +11,6 @@ title: "Interpolera en str\xE4ng"
 weight: 8
 ---
 
-## Vad & Varför?
-Interpolering av strängar handlar om att stoppa in variabler eller uttryck direkt i en textsträng. Det sparas tid och ökar läsbarheten i din kod genom att slippa klumpig konkaterning.
-
 ## Hur man gör:
 ```PowerShell
 $name = 'Viking'
@@ -31,6 +28,7 @@ Output:
 Hej, jag heter Viking och jag är 782 år gammal.
 Dubbelt så gammal skulle vara 1564 år.
 ```
+
 ## Djupdykning
 I PowerShell är interpolering av strängar en del av språket sedan den första versionen. Alternativ till interpolering är att använda plus-tecken (+) för att lägga ihop strängar eller -f operatorn för att forma strängar, men dessa metoder kan bli röriga. Interpolering görs genom att packa in variabler eller uttryck i `$()` inuti en sträng omsluten av dubbla citattecken, som tolkar innehållet och konverterar det till en sträng.
 

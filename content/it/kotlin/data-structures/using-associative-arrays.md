@@ -12,12 +12,7 @@ title: Utilizzo di array associativi
 weight: 15
 ---
 
-## Cosa & Perché?
-
-Gli array associativi, o mappe, in Kotlin sono collezioni che memorizzano coppie chiave-valore. I programmatori li utilizzano per organizzare e recuperare dati in maniera efficiente basandosi su chiavi uniche, rendendo più semplice la gestione delle informazioni.
-
 ## Come fare:
-
 Creare e usare una mappa in Kotlin è semplice. Ecco una guida rapida su come farlo:
 
 ```Kotlin
@@ -48,7 +43,6 @@ fun main() {
 ```
 
 ## Approfondimento
-
 Le mappe di Kotlin derivano direttamente dalla loro interoperabilità con Java, dove le mappe sono una parte essenziale delle collezioni. Tuttavia, Kotlin ne migliora l’usabilità fornendo interfacce sia mutabili (`MutableMap`) che in sola lettura (`Map`), a differenza dell'interfaccia `Map` unificata di Java. Questa distinzione rende chiaro se una collezione è destinata alla modifica o meno.
 
 Un dettaglio significativo riguardo l'implementazione della mappa in Kotlin è la distinzione esplicita tra mappe mutabili e immutabili, che sottolinea l'attenzione del linguaggio sull'immutabilità e sulla sicurezza dei thread.

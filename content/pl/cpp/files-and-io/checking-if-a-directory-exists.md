@@ -14,9 +14,6 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i dlaczego?
-Sprawdzanie, czy katalog istnieje, polega na określeniu obecności katalogu pod określoną ścieżką przed wykonaniem operacji takich jak czytanie z plików lub zapisywanie do nich. Programiści robią to, aby uniknąć błędów związanych z operacjami na plikach, zapewniając płynniejsze i bardziej niezawodne wykonanie zadań związanych z obsługą plików w ich aplikacjach.
-
 ## Jak to zrobić:
 W nowoczesnym C++ (C++17 i nowsze) można użyć biblioteki filesystem do sprawdzenia, czy katalog istnieje. Zapewnia ona prosty i ustandaryzowany sposób na wykonanie operacji na systemie plików, w tym sprawdzenie istnienia katalogu.
 

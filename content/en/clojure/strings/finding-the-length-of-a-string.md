@@ -10,9 +10,6 @@ title: Finding the length of a string
 weight: 7
 ---
 
-## What & Why?
-Finding the length of a string in Clojure returns the number of characters in that string. Programmers often need this info to validate input, loop through characters, or for string manipulation tasks.
-
 ## How to:
 To get a string's length in Clojure, use the `count` function:
 

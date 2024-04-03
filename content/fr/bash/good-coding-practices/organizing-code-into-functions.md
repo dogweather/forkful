@@ -11,9 +11,6 @@ title: Organisation du code en fonctions
 weight: 18
 ---
 
-## Quoi & Pourquoi ?
-Diviser le code en fonctions signifie décomposer les scripts en blocs plus petits, réutilisables, qui réalisent des tâches spécifiques. Cela rend le code plus propre, plus compréhensible et plus facile à déboguer.
-
 ## Comment faire :
 Créez une fonction simple en Bash :
 

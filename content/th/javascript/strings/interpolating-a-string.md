@@ -32,12 +32,7 @@ title: "\u0E01\u0E32\u0E23\u0E41\u0E17\u0E23\u0E01\u0E04\u0E48\u0E32\u0E25\u0E07
 weight: 8
 ---
 
-## อะไรและทำไม?
-
-การฝังตัวแปรลงในสตริง เป็นวิธีการฝังตัวแปรไว้ภายในสตริงโดยตรง โปรแกรมเมอร์ใช้วิธีนี้ในการรวมตัวแปรและสตริงเข้าด้วยกันอย่างมีประสิทธิภาพ เพื่อให้โค้ดง่ายต่อการอ่านและบำรุงรักษา
-
 ## วิธีการ:
-
 ใน JavaScript, การฝังตัวแปรลงในสตริงมักจะทำโดยใช้ template literals นี่คือวิธีที่คุณสามารถทำได้:
 
 ```javascript
@@ -55,7 +50,6 @@ console.log(`Ten times five is ${a * b}.`); // แสดงผล: Ten times fiv
 ```
 
 ## การศึกษาเจาะลึก
-
 ในประวัติศาสตร์, การฝังตัวแปรลงในสตริงใน JavaScript ไม่ได้เป็นเรื่องตรงไปตรงมาเสมอไป ก่อน ES6 (ECMAScript 2015), การเชื่อมต่อโดยทั่วไปจะทำโดยใช้ตัวดำเนินการ `+`:
 
 ```javascript
@@ -70,7 +64,6 @@ var message = 'Hello, ' + name + '! How are you today?';
 ประสิทธิภาพของ template literals โดยทั่วไปจะเท่ากับวิธีการเหล่านี้ที่เก่ากว่า อย่างไรก็ตาม, ความสามารถในการอ่านและความสามารถในการรวมนิพจน์ (เช่น `${a * b}`) ในสตริงทำให้ template literals เป็นทางเลือกที่ดีสำหรับนักพัฒนา
 
 ## ดูเพิ่มเติม
-
 - MDN เกี่ยวกับ Template Literals: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 - การเชื่อมต่อสตริงใน JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/String_Operators
 - ประวัติศาสตร์ของโมดูล JavaScript "ECMAScript": https://www.ecma-international.org/publications-and-standards/standards/ecma-262/

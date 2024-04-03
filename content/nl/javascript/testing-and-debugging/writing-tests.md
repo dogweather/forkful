@@ -12,9 +12,6 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-Tests schrijven in programmering controleert of code zich gedraagt zoals verwacht—als een quiz voor je functies. Programmeurs schrijven tests om bugs vroeg te vangen, waardoor hoofdpijn en kosten worden bespaard.
-
 ## Hoe:
 Stel je een eenvoudige functie voor om twee getallen op te tellen in JavaScript:
 

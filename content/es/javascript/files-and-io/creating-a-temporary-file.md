@@ -10,11 +10,7 @@ title: Creando un archivo temporal
 weight: 21
 ---
 
-## What & Why?
-Crear un archivo temporal es como anotar algo rápido en una servilleta: es útil para guardar datos que solo necesitas durante un rato. Los programadores los usan para gestionar datos temporales como almacenamiento intermedio, manejo de caché o para operaciones que no necesitan almacenamiento permanente.
-
 ## How to:
-
 En Node.js, puedes usar el módulo 'fs' para manejar archivos, incluidos los temporales.
 
 ```javascript
@@ -52,7 +48,6 @@ Archivo temporal eliminado.
 ```
 
 ## Deep Dive:
-
 Históricamente, los archivos temporales se han utilizado para evitar limitaciones de memoria. Cuando trabajas con un conjunto de datos grande, usar un archivo temporal puede ser una gran ventaja. 
 
 Alternativas:
@@ -65,7 +60,6 @@ Detalles de implementación:
 - Limpia y elimina los archivos temporales después de su uso para evitar el desorden y el uso innecesario del espacio en disco.
 
 ## See Also:
-
 - Node.js 'fs' module documentation: [Official 'fs' docs](https://nodejs.org/api/fs.html)
 - For temporary file creation with the `tmp` module: [npm tmp module](https://www.npmjs.com/package/tmp)
 - Understanding the operating system's temp directory: [OS Temporary directory](https://nodejs.org/api/os.html#ostmpdir)

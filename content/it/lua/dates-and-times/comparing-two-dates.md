@@ -11,9 +11,6 @@ title: Confronto tra due date
 weight: 27
 ---
 
-## What & Why? (Cosa e Perché?)
-Confrontare due date significa stabilire qual è la più recente o se sono uguali. I programmatori fanno ciò per validare scadenze, calcolare differenze temporali o ordinare eventi.
-
 ## How to: (Come fare:)
 ```Lua
 -- Presupponiamo di avere due date come stringhe, in formato ISO 8601

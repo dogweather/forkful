@@ -12,9 +12,6 @@ title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## What & Why? (Vad & Varför?)
-Att skicka en HTTP-begäran innebär att din applikation eller skript gör en förfrågan till en webbserver för att hämta eller skicka information. Programmerare gör detta för att interagera med webbtjänster, API:er eller för att hämta data från internet.
-
 ## How to: (Hur man gör:)
 För att skicka en HTTP-förfrågan i Ruby, kan man använda `net/http` biblioteket som är inbyggt. Här är ett enkelt exempel på en GET-förfrågan:
 

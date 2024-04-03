@@ -13,12 +13,7 @@ title: "Modification de fichiers sur place avec des lignes de commande en une se
 weight: 32
 ---
 
-## Quoi & Pourquoi ?
-
-Modifier des fichiers sur place avec des lignes de commande (CLI - Command Line Interface) en Ruby vous permet de modifier des fichiers directement depuis votre terminal, sans avoir besoin de les ouvrir dans un éditeur, d'apporter des modifications et de les sauvegarder. Cette technique est incroyablement utile pour des modifications rapides, des mises à jour en lot, ou automatiser des tâches répétitives, économisant ainsi du temps et de l'effort.
-
 ## Comment faire :
-
 Ruby offre une manière simple de modifier des fichiers sur place directement depuis la ligne de commande. En utilisant l'option `-i` de Ruby, vous pouvez indiquer à Ruby de travailler directement sur le(s) fichier(s) fourni(s). Jouons avec quelques exemples pour voir comment cela fonctionne dans la pratique. Imaginez que vous ayez un fichier `greetings.txt` avec le contenu suivant :
 
 ```
@@ -50,7 +45,6 @@ ruby -i.bak -pe "gsub(/Bonjour/, 'Adieu')" greetings.txt
 Maintenant, en plus de votre `greetings.txt` édité, vous trouverez un `greetings.txt.bak` dans le même répertoire, contenant le contenu original.
 
 ## Plongée Profonde
-
 La magie de l'édition de fichiers sur place en Ruby provient de sa combinaison des capacités de traitement de texte à la Perl et de l'élégance syntaxique propre à Ruby. Historiquement, Perl était le langage de prédilection pour les scripts rapides en une ligne, surtout pour la manipulation de texte. Ruby a adopté ce paradigme, permettant des capacités puissantes de script en ligne de commande.
 
 Il existe des alternatives pour l'édition sur place dans d'autres langages, comme Perl lui-même et sed, un éditeur de flux dans les systèmes Unix. Chacun a ses points forts — Perl est connu pour sa capacité de traitement de texte tandis que sed est inégalé dans sa simplicité pour les tâches d'édition de flux. Cependant, Ruby offre un équilibre, fournissant une manipulation de texte robuste avec une syntaxe plus lisible et conviviale, surtout pour ceux déjà familiers avec Ruby.

@@ -14,12 +14,7 @@ title: Uso de matrices asociativas
 weight: 15
 ---
 
-## ¿Qué y por qué?
-
-Los arreglos asociativos, conocidos en Python como diccionarios, mapean claves a valores, facilitando la recuperación, modificación o seguimiento de datos por un identificador único. Los programadores los utilizan por su eficiencia en acceder a elementos y su flexibilidad para representar estructuras de datos complejas.
-
 ## Cómo hacerlo:
-
 Crear un diccionario en Python es sencillo. Encierras los pares clave-valor entre llaves `{}`, con las claves y los valores separados por dos puntos:
 
 ```Python
@@ -77,7 +72,6 @@ email: john@example.com
 ```
 
 ## Análisis Profundo
-
 Los arreglos asociativos en Python, o diccionarios, se introdujeron para proporcionar una estructura de datos para el acceso y manipulación eficiente de datos. A diferencia de las secuencias, que están indexadas por un rango de números, los diccionarios están indexados por claves, que pueden ser de cualquier tipo inmutable. Esta elección de diseño hace que los diccionarios sean idealmente adecuados para tablas de búsqueda rápida donde las claves se mapean a valores únicos.
 
 Históricamente, los diccionarios de Python se han implementado utilizando una tabla hash, asegurando que el tiempo promedio de complejidad para las operaciones de búsqueda, inserción y eliminación sea O(1). En Python 3.6 y posteriores, los diccionarios también mantienen el orden de inserción de los elementos, combinando los beneficios de las tablas hash con la previsibilidad del orden de inserción visto en las estructuras de datos ordenadas.

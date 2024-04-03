@@ -10,9 +10,6 @@ title: Code in Funktionen organisieren
 weight: 18
 ---
 
-## Was & Warum?
-Code in Funktionen zu organisieren bedeutet, Ihr Programm in wiederverwendbare, modulare Blöcke zu gliedern, die durch einen Namen identifiziert werden. Wir machen das, um unseren Code sauberer, lesbarer und einfacher zu debuggen zu machen. Es geht darum, uns nicht zu wiederholen und Updates zu vereinfachen.
-
 ## Wie geht das:
 Angenommen, Sie haben Code, der mehrmals die Fläche eines Kreises berechnet. Statt die Formel zu wiederholen, packen Sie sie in eine Funktion.
 

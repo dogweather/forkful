@@ -14,12 +14,7 @@ title: Utilizzo di un guscio interattivo (REPL)
 weight: 34
 ---
 
-## Cosa & Perché?
-
-Un interprete interattivo (REPL - Read-Evaluate-Print Loop) per Dart consente ai programmatori di digitare e eseguire dinamicamente il codice Dart riga per riga senza la necessità di compilare interi script. Questo strumento è inestimabile per imparare la sintassi di Dart, sperimentare con snippet di codice o fare debug offrendo feedback immediati e facilitando test iterativi.
-
 ## Come fare:
-
 Dart non viene fornito con un REPL integrato. Tuttavia, è possibile ottenere funzionalità simili a un REPL utilizzando DartPad (online) o utilizzando strumenti di terze parti come `dart_repl`.
 
 **Utilizzando DartPad:**

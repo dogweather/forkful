@@ -13,12 +13,7 @@ title: Capitalizando uma string
 weight: 2
 ---
 
-## O que & Por quê?
-
-Capitalizar uma string significa modificá-la para que a primeira letra fique em maiúscula e o restante da string em minúscula. Essa é uma tarefa comum no processamento de texto, normalização de entrada do usuário e formatação de dados para garantir consistência ou atender a critérios específicos de formatação.
-
 ## Como fazer:
-
 No Fish Shell, strings podem ser manipuladas diretamente com funções internas, sem a necessidade de ferramentas externas ou bibliotecas. Para capitalizar uma string, você pode combinar o comando `string` com subcomandos.
 
 ```fish

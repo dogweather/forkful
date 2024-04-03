@@ -12,12 +12,7 @@ title: Een HTTP-verzoek verzenden
 weight: 44
 ---
 
-## Wat & Waarom?
-
-Een HTTP-verzoek verzenden betekent een verzoek doen aan een externe server voor gegevens of actie. Programmeurs doen dit om te interageren met webservices, bronnen op te halen of te communiceren met API's.
-
 ## Hoe te:
-
 Lua heeft geen ingebouwde ondersteuning voor HTTP, dus gebruiken we bibliotheken. Een gangbare keuze is `lua-requests`. Hier is een snel voorbeeld:
 
 ```lua
@@ -45,7 +40,6 @@ Een voorbeelduitvoer kan er als volgt uitzien:
 ```
 
 ## Diepere Duik
-
 Lua's eenvoud over HTTP wordt niet standaard ondersteund, wat is waar bibliotheken inspringen. `lua-requests` spiegelt de functionaliteit van de Python Requests-bibliotheek, waardoor het een fluitje van een cent is voor degenen die bekend zijn met Python.
 
 Andere alternatieven zijn `LuaSocket` voor lager-niveau HTTP-werk en `luasocket.http` voor meer controle. Lua heeft ook bindings voor `libcurl` (via `Lua-cURL`) voor complexe HTTP-operaties.
@@ -55,6 +49,5 @@ Historisch gezien weerspiegelt het ontbreken van ingebouwde HTTP-ondersteuning L
 Wat betreft implementatie, wanneer je een HTTP-verzoek verzendt, gaat dit via het netwerk naar de gespecificeerde server. De server verwerkt het en antwoordt. Lua-bibliotheken abstraheren de socketprogrammering die nodig is, ze beheren alle details van netwerkcommunicatie zodat je je kunt focussen op het daadwerkelijke verzoek en antwoord.
 
 ## Zie Ook
-
 - [lua-requests GitHub-repository](https://github.com/JakobGreen/lua-requests)
 - [LuaSocket Referentiehandleiding](http://w3.impa.br/~diego/software/luasocket/http.html)

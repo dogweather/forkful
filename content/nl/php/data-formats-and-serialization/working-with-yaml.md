@@ -11,12 +11,7 @@ title: Werken met YAML
 weight: 41
 ---
 
-## Wat & Waarom?
-
-YAML is een door mensen leesbaar gegevensserialisatieformaat. Programmeurs gebruiken het voor configuratiebestanden, gegevensuitwisseling en opslag vanwege de leesbaarheid en eenvoud.
-
 ## Hoe te:
-
 Om met YAML in PHP te werken, heb je de `yaml`-extensie nodig. Hier is een snelle opstart:
 
 **Installeer YAML-extensie** (indien niet geïnstalleerd):
@@ -75,11 +70,9 @@ instellingen:
 ```
 
 ## Diepere Duik:
-
 YAML, wat staat voor "YAML Ain't Markup Language", richt zich op gegevens en gegevensstructuren, en het blinkt uit waar talen als XML misschien te complex zouden zijn. Het werd voor het eerst uitgebracht in 2001. Alternatieven omvatten JSON en XML; YAML wordt vaak verkozen vanwege de leesbaarheid voor mensen. De `yaml`-extensie van PHP haakt in op de `libyaml` bibliotheek, wat zorgt voor snelle parsing en emitting.
 
 ## Zie Ook:
-
 - PHP Officiële YAML Extensie Documentatie: https://www.php.net/manual/en/book.yaml.php
 - YAML Officiële Site: https://yaml.org
 - Vergelijking van gegevensserialisatieformaten: https://nl.wikipedia.org/wiki/Vergelijking_van_gegevensserialisatieformaten

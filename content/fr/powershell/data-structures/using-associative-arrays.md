@@ -15,12 +15,7 @@ title: Utilisation des tableaux associatifs
 weight: 15
 ---
 
-## Quoi et Pourquoi ?
-
-Les tableaux associatifs, également connus sous le nom de tables de hachage ou de dictionnaires dans PowerShell, vous permettent de stocker des données en paires clé-valeur, rendant la récupération des données simple et efficace. Les programmeurs les utilisent pour stocker des données liées ensemble de manière facilement accessible par clé.
-
 ## Comment faire :
-
 Créer et utiliser des tableaux associatifs dans PowerShell est assez simple. Voici comment procéder :
 
 **Créer un tableau associatif :**
@@ -78,7 +73,6 @@ location : New York
 ```
 
 ## Plongée en Profondeur
-
 Le concept des tableaux associatifs est courant dans de nombreux langages de programmation, généralement appelé un dictionnaire, une carte ou une table de hachage selon le langage. Dans PowerShell, les tableaux associatifs sont implémentés comme des tables de hachage, qui sont assez efficaces pour la recherche de clés, le stockage de données et le maintien d'une collection de clés uniques.
 
 Historiquement, les tableaux associatifs fournissent un moyen de gérer des collections d'objets où chaque élément peut être rapidement récupéré sans parcourir toute la collection, en utilisant sa clé. L'efficacité de la récupération et de la modification des données dans les tableaux associatifs en fait un choix privilégié pour diverses tâches. Cependant, ils ont des limitations, telles que le maintien de l'ordre, pour lesquels les dictionnaires ordonnés ou les objets personnalisés pourraient être une meilleure alternative.

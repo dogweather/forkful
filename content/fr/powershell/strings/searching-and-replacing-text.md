@@ -11,9 +11,6 @@ title: Recherche et remplacement de texte
 weight: 10
 ---
 
-## What & Why? (Quoi & Pourquoi ?)
-La recherche et le remplacement de texte permettent de modifier des chaînes en trouvant des motifs spécifiques et en les substituant par d'autres. C'est essentiel pour corriger des erreurs, mettre à jour des informations ou formater des données en masse.
-
 ## How to: (Comment faire : )
 ```PowerShell
 # Recherche et remplacement simple

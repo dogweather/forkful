@@ -12,12 +12,7 @@ title: Strings verketten
 weight: 3
 ---
 
-## Was & Warum?
-
-Das Verketten von Strings in C bezieht sich auf das Zusammenführen von zwei oder mehr Strings hintereinander, um einen neuen String zu bilden. Programmierer führen diese Operation durch, um Strings zur Laufzeit dynamisch zu erstellen, was essentiell ist für das Erstellen von bedeutungsvollen Nachrichten, Dateipfaden oder jeglichen Daten, die aus verschiedenen Stringquellen zusammengesetzt sind.
-
 ## Wie:
-
 In C sind Strings Arrays von Zeichen, die mit einem Nullzeichen (`\0`) enden. Im Gegensatz zu höheren Programmiersprachen bietet C keine integrierte Stringverkettungsfunktion. Stattdessen verwendet man die Funktionen `strcat()` oder `strncat()` aus der Bibliothek `<string.h>`.
 
 Hier ist ein einfaches Beispiel mit `strcat()`:
@@ -60,7 +55,6 @@ int main() {
 Dies begrenzt die Verkettung auf die ersten `num` Zeichen des Quellstrings und hilft, Buffer-Überläufe zu verhindern.
 
 ## Vertiefung
-
 Die Funktionen `strcat()` und `strncat()` sind seit dem Beginn der C-Standardbibliothek ein Teil davon, was die tiefgreifende, niedrigstufige Natur der Sprache widerspiegelt, die eine manuelle Verwaltung von Strings und Speicher erfordert. Im Gegensatz zu vielen modernen Programmiersprachen, die Strings als Objekte erster Klasse mit eingebauten Verkettungsoperatoren behandeln (wie `+` oder `.concat()`), erfordert C's Ansatz ein tieferes Verständnis von Zeigern, Speicherzuweisung und potenziellen Fallstricken wie Buffer-Überläufen.
 
 Obwohl `strcat()` und `strncat()` weit verbreitet sind, werden sie oft für ihr Potenzial kritisiert, Sicherheitsanfälligkeiten zu schaffen, wenn sie nicht sorgfältig verwendet werden. Buffer-Überläufe, bei denen Daten den zugewiesenen Speicher überschreiten, können zu Abstürzen führen oder für die Ausführung von beliebigem Code ausgenutzt werden. Daher wenden sich Programmierer zunehmend sichereren Alternativen zu, wie `snprintf()`, welche ein vorhersehbares Verhalten bieten, indem sie die Anzahl der Zeichen, die in den Zielstring geschrieben werden, basierend auf dessen Größe begrenzen:

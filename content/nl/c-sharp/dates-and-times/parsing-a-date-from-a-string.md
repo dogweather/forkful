@@ -12,9 +12,6 @@ title: Een datum uit een string parsen
 weight: 30
 ---
 
-## Wat & Waarom?
-Een datum uit een string parsen betekent het converteren van tekst die een datum vertegenwoordigt naar een `DateTime` object. Dit is cruciaal voor het opslaan en interpreteren van datums uit verschillende formaten als daadwerkelijke datums in je code.
-
 ## Hoe te:
 ```C#
 using System;

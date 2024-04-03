@@ -14,11 +14,7 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP"
 weight: 44
 ---
 
-## Gì và Tại sao?
-Gửi một yêu cầu HTTP để lấy dữ liệu từ máy chủ web. Lập trình viên làm điều này để tương tác với các dịch vụ web, thu thập thông tin, hoặc giao tiếp giữa các hệ thống.
-
 ## Cách thực hiện:
-
 ```c++
 #include <iostream>
 #include <cpr/cpr.h> // Đảm bảo đã cài đặt thư viện CPR trước
@@ -52,7 +48,6 @@ CPR, viết tắt của C++ Requests, là một bộ wrapper dễ sử dụng đ
 Khi đi sâu vào bên trong, việc gửi một yêu cầu HTTP bao gồm việc thiết lập một kết nối TCP, định dạng một yêu cầu tuân thủ với giao thức HTTP, sau đó phân tích phản hồi. Làm điều này đúng ngay từ đầu không phải là một việc đơn giản do xử lý lỗi, phức tạp của phiên bản HTTP, và các xem xét về an ninh.
 
 ## Tham khảo thêm
-
 - Kho lưu trữ GitHub của CPR: https://github.com/libcpr/cpr
 - tài liệu `libcurl` cho việc sử dụng nâng cao hơn: https://curl.se/libcurl/
 - Tài liệu chính thức của Boost.Beast: https://www.boost.org/doc/libs/release/libs/beast/

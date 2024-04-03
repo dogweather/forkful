@@ -12,14 +12,10 @@ title: "Redigera filer p\xE5 plats med kommandoradsenradare"
 weight: 32
 ---
 
-## Vad & Varför?
-
-Att redigera filer direkt med CLI enradskommandon i PowerShell handlar om att göra direkta ändringar i filer från kommandoraden, utan att behöva öppna dem i en textredigerare. Detta tillvägagångssätt sparar tid och kan vara särskilt praktiskt för batchbehandling eller automatisering av repetitiva redigeringsuppgifter över flera filer.
-
 ## Hur gör man:
 
-### Ersätta text i en enskild fil
 
+### Ersätta text i en enskild fil
 Låt oss börja med en enkel uppgift: du vill ersätta alla förekomster av "oldtext" med "newtext" i en fil som heter example.txt. Så här skulle du göra det:
 
 ```PowerShell
@@ -29,7 +25,6 @@ Låt oss börja med en enkel uppgift: du vill ersätta alla förekomster av "old
 Den här enradskommandot läser innehållet, utför ersättningen och skriver tillbaka innehållet till originalfilen.
 
 ### Redigera flera filer
-
 Vad om du behöver tillämpa samma ändring på flera filer? Här är en metod som använder en loop:
 
 ```PowerShell
@@ -41,7 +36,6 @@ Get-ChildItem *.txt | ForEach-Object {
 Det här kodstycket hittar alla `.txt`-filer i den aktuella katalogen och ersätter "oldtext" med "newtext" i var och en.
 
 ### Lägga till innehåll i början eller slutet av filer
-
 Att lägga till eller förbereda innehåll kan också strömlinjeformas:
 
 ```PowerShell
@@ -55,7 +49,6 @@ Att lägga till eller förbereda innehåll kan också strömlinjeformas:
 Här konkatenerar vi helt enkelt det nya innehållet före eller efter det befintliga innehållet och sparar det tillbaka.
 
 ## Fördjupning
-
 Historiskt sett är direktredigering oftare förknippad med Unix-verktyg som `sed` och `awk`. PowerShell, som är en senare aktör, inkluderar inte en dedikerad funktion för direktredigering direkt ur lådan. Detta beror delvis på dess designfilosofi som betonar vikten av objekt över textströmmar, till skillnad från Unix-verktyg som behandlar de flesta inmatningar som text.
 
 Alternativ till PowerShell för denna uppgift inkluderar att använda traditionella Unix-verktyg tillgängliga på Windows genom Cygwin eller Windows Subsystem för Linux (WSL). Dessa verktyg erbjuder ofta en mer koncis syntax för direktredigering på grund av deras textcentrerade design.

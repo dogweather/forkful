@@ -12,12 +12,7 @@ title: Interpolazione di una stringa
 weight: 8
 ---
 
-## Cosa e perché?
-
-L'interpolazione di stringhe, nella programmazione, comporta la costruzione di stringhe inserendo espressioni all'interno di stringhe letterali. I programmatori fanno ciò per creare messaggi informativi, interrogazioni dinamiche o per costruire qualsiasi stringa con contenuto variabile in modo efficiente e pulito, spesso per scopi di output utente o di logging.
-
 ## Come fare:
-
 C, a differenza di alcuni linguaggi di alto livello, non supporta direttamente l'interpolazione di stringhe nella sua sintassi. Invece, la costruzione di stringhe con contenuto variabile si ottiene tipicamente utilizzando la funzione `printf` o le sue varianti per l'output, e `sprintf` per la creazione di stringhe. Ecco uno sguardo a come costruire dinamicamente stringhe in C:
 
 ```c
@@ -46,7 +41,6 @@ Nome: Jane Doe, Età: 28
 Questi frammenti dimostrano il modo tradizionale di incorporare dati variabili nelle stringhe in C, fornendo flessibilità nella costruzione di stringhe dettagliate.
 
 ## Approfondimento
-
 Prima dell'avvento di linguaggi di programmazione più moderni con funzionalità di interpolazione di stringhe integrate, gli sviluppatori C dovevano fare affidamento su funzioni come `sprintf()`, `snprintf()` e le loro varianti per comporre stringhe con contenuto variabile. Questo approccio, seppur efficace, introduce potenziali rischi come il buffer overflow se non gestito con attenzione, specialmente con `sprintf()`.
 
 Considerando alternative, linguaggi come Python e JavaScript hanno introdotto funzionalità di interpolazione di stringhe più intuitive, come le f-strings (stringhe letterali formattate) e i template literals, rispettivamente. Queste funzionalità consentono agli sviluppatori di incorporare direttamente le espressioni all'interno delle stringhe letterali, rendendo il codice più leggibile e conciso.

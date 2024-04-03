@@ -13,12 +13,7 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Cosa & Perché?
-
-Ottenere la data corrente in PowerShell riguarda il recupero della data e dell'ora attuali del sistema. Quest'operazione è fondamentale per compiti come la registrazione, la temporizzazione delle operazioni o la presa di decisioni basate sulle date. I programmatori usano questa capacità per tracciare eventi, pianificare compiti e gestire la logica specifica delle date negli script e nelle applicazioni.
-
 ## Come fare:
-
 PowerShell fornisce cmdlet semplici per ottenere data e ora. Il cmdlet `Get-Date` è lo strumento primario per questo scopo. Può restituire la data e l'ora complete, che puoi formattare o manipolare secondo le tue esigenze.
 
 ```powershell
@@ -57,7 +52,6 @@ Get-Date -Format "HH:mm:ss"
 ```
 
 ### Utilizzando la Classe .NET
-
 PowerShell consente l'accesso diretto alle classi .NET, offrendo un modo alternativo di lavorare con date e orari.
 
 ```powershell

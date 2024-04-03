@@ -9,9 +9,6 @@ title: "\xC5 jobbe med komplekse tall"
 weight: 14
 ---
 
-## Hva & Hvorfor?
-Komplekse tall har en reel del og en imaginær del (som 3 + 4i). Programmerere bruker dem i Swift for oppgaver som signalbehandling, løsning av visse matematiske problemer, og simulering av fysikk.
-
 ## Hvordan gjøre det:
 Swift har ikke innebygd støtte for komplekse tall, men vi kan lage vårt eget:
 

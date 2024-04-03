@@ -13,12 +13,7 @@ title: Merkkien poistaminen vastaavan mallin mukaan
 weight: 5
 ---
 
-## Mitä & Miksi?
-
-Merkkijonoista tiettyä mallia vastaavien merkkien poistaminen C-kielessä tarkoittaa kaikkien tiettyihin ennalta määriteltyihin kriteereihin sopivien merkkien poistamista. Ohjelmoijat suorittavat tätä tehtävää syötteiden puhdistamiseksi, datan valmistamiseksi käsittelyä varten tai yksinkertaisesti merkkijonojen siistimiseksi tulostusta tai edelleen käsittelyä varten, varmistaen, että käsiteltävä data on täsmälleen tarvittavaa tiettyä kontekstia tai algoritmia varten.
-
 ## Miten:
-
 C ei sisällä valmista funktiota merkkien suoraan poistamiseksi merkkijonosta mallin perusteella, toisin kuin jotkut korkeamman tason kielet. Voit kuitenkin helposti saavuttaa tämän tehtävän iteroimalla manuaalisesti merkkijonon yli ja rakentamalla uuden merkkijonon, joka ei sisällä ei-toivottuja merkkejä. Oletetaan esimerkiksi, että haluat poistaa kaikki numerot merkkijonosta. Voit tehdä sen seuraavasti:
 
 ```c
@@ -52,7 +47,6 @@ Tulos: C-ohjelmointi : Perusteet!
 Tässä esimerkissä hyödynnetään `isdigit`-funktiota `ctype.h`-kirjastosta numeroiden tunnistamiseksi, siirtäen numerottomat merkit merkkijonon alkuun ja päättäen merkkijonon, kun kaikki merkit on arvioitu.
 
 ## Syväluotaus
-
 Esitelty ratkaisu käyttää kahden osoittimen lähestymistapaa samassa taulukossa ei-toivottujen merkkien tehokkaaseen suodattamiseen, mikä on ominaista C:n käytännönläheiselle muistinhallintafilosofialle. Tämä menetelmä on tehokas, koska se toimii paikan päällä, välttäen tarpeen lisämuistin varaukselle ja siten minimoimalla ylimääräisen kuorman.
 
 Historiallisesti korkeamman tason merkkijonokäsittelyfunktioiden puuttuminen C:ssä on pakottanut ohjelmoijat kehittämään syvällistä ymmärrystä merkkijonokäsittelystä muistitasolla, johtaen innovatiivisiin lähestymistapoihin kuten yllä mainittuun. Vaikka tällä on etuna suurempi kontrolli ja tehokkuus, siihen liittyy suurempi virheiden riski, kuten puskurin ylivuodot ja yksi vähemmän virheet.

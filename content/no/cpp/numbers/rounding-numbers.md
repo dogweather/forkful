@@ -11,9 +11,6 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva & Hvorfor?
-Å avrunde tall betyr å justere en verdi til nærmeste heltall eller spesifisert presisjon. Utviklere gjør dette for å forenkle, tilpasse seg virkelighetens begrensninger, eller forbedre ytelse ved å forkaste overflødig presisjon.
-
 ## Hvordan:
 C++ tilbyr flere måter å avrunde tall på, som `floor()`, `ceil()`, og `round()`:
 

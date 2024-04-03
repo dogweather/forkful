@@ -14,14 +14,10 @@ title: Arbeide med CSV
 weight: 37
 ---
 
-## Hva & Hvorfor?
-
-Å jobbe med CSV-filer (Comma-Separated Values) i Google Apps Script innebærer å lese, endre og skrive rene tekstfiler der hver linje representerer en datapost med verdier separert av kommaer. Programmerere gjør dette for å enkelt utveksle data mellom ulike applikasjoner, databaser eller programmeringsspråk på grunn av CSVs brede adopsjon som et enkelt, tekstbasert datautvekslingsformat.
-
 ## Hvordan:
 
-### Lese CSV Data
 
+### Lese CSV Data
 For å lese CSV-data fra en fil lagret i Google Drive, må du først hente filens innhold som en streng, deretter analysere det. Google Apps Script gjør det enkelt å hente filinnhold med DriveApp-tjenesten.
 
 ```javascript
@@ -39,7 +35,6 @@ function readCSV() {
 ```
 
 ### Skrive CSV Data
-
 Å opprette og skrive til en CSV innebærer å konstruere en streng med komma-separerte verdier og linjeskift, deretter lagre eller eksportere den. Dette eksemplet demonstrerer hvordan man oppretter en ny CSV-fil i Google Drive.
 
 ```javascript
@@ -54,7 +49,6 @@ function writeCSV() {
 ```
 
 ### Eksempel på resultat
-
 Når man logger radceller fra lesing av en CSV:
 
 ```plaintext
@@ -71,7 +65,6 @@ Jane Smith,34,Designer
 ```
 
 ## Dypdykk
-
 Historisk sett har CSV-filer blitt foretrukket for deres enkelhet og menneskelesbarhet, noe som gjør dem tilgjengelige for ikke-programmerere og nyttige for raske datainspeksjonsoppgaver. Imidlertid opererer Google Apps Script innenfor riket av Googles økosystem, hvor Google Sheets fungerer som et kraftig, brukervennlig alternativ for manipulering av CSV. Sheets tilbyr ikke bare et GUI for redigering av data, men støtter også komplekse formler, stilsetting og mange flere funksjoner som rå CSV mangler.
 
 Til tross for fordelene som tilbys av Google Sheets, forblir direkte manipulering av CSV i Google Apps Script viktig for automatiserte oppgaver, spesielt når man har å gjøre med eksterne systemer som genererer eller krever data i CSV-format. For eksempel integrering med arvesystemer, eksport av data for bruk i andre applikasjoner, eller forbehandling før dataene mates inn i Google Sheets.

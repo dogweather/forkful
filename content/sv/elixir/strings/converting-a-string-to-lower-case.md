@@ -11,9 +11,6 @@ title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---
 
-## Vad & Varför?
-Omformning av en sträng till gemener innebär att omvandla alla stora bokstäver i en textsträng till små bokstäver. Programmerare gör detta för att standardisera dataingångar, förenkla jämförelser och optimera sökningar.
-
 ## Hur man gör:
 I Elixir använder du `String.downcase/1` för att konvertera en sträng till små bokstäver. Här är hur det görs:
 

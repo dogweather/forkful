@@ -13,12 +13,7 @@ title: Analysering av HTML
 weight: 43
 ---
 
-## Hva & Hvorfor?
-
-Å parse HTML betyr å sile gjennom HTML-kode for å finne, hente ut, eller manipulere informasjon. Programmerere gjør dette for å samhandle med webinnhold – kanskje skrape data eller automatisere nettlesere.
-
 ## Hvordan:
-
 For å komme i gang, installer et bibliotek som `node-html-parser`. Her er terminalkommandoen:
 
 ```bash
@@ -47,7 +42,6 @@ console.log(bananas);  // "Banan"
 ```
 
 ## Dypdykk
-
 Å parse HTML er ikke nytt – det har vært rundt siden webens tidlige dager. I begynnelsen kan utviklere ha brukt regulære uttrykk, men det ble fort rotete. Så kom DOM Parser: stabil, men begrenset til nettlesere.
 
 Biblioteker som `node-html-parser` abstraherer bort smerten. De lar deg forespørre HTML som du ville med jQuery, men server-side med Node.js. Det er raskt, tolerant til skitten HTML, og DOM-vennlig.
@@ -57,7 +51,6 @@ Det er også `jsdom`, som simulerer et helt nettlesermiljø. Det er tyngre, men 
 Vi må heller ikke glemme Cheerio. Det blander hastighet med en jQuery-lignende syntaks og mindre fotavtrykk, og sitter lykkelig mellom de to.
 
 ## Se Også
-
 Hvis du er tørst etter mer, dykk inn i disse:
 - [DOM Parsing og Serialisering W3C Spesifikasjon](https://www.w3.org/TR/DOM-Parsing/)
 - [node-html-parser på GitHub](https://github.com/taoqf/node-html-parser)

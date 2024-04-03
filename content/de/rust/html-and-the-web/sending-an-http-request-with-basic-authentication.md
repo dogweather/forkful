@@ -12,9 +12,6 @@ title: HTTP-Anfragen mit Basisauthentifizierung senden
 weight: 45
 ---
 
-## Was & Warum?
-HTTP-Anfragen mit Basic Authentication ermöglichen den Zugang zu gesicherten Ressourcen, indem sie Benutzername und Passwort in Base64-kodierter Form mit der Anfrage mitsenden. Programmierer nutzen dies, um Webdienste sicher zu konsumieren oder geschützte Daten zu übertragen.
-
 ## So geht's:
 Mit Rust gestaltet sich der Versand von HTTP-Requests mit Basic Authentication mithilfe der `reqwest`-Bibliothek unkompliziert. Hier ein Beispiel:
 

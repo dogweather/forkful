@@ -15,12 +15,7 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan med grundl\xE4ggande autentisering"
 weight: 45
 ---
 
-## Vad och varför?
-
-Att skicka en HTTP-förfrågan med grundläggande autentisering i Go innebär att lägga till en auktoriseringsheader till din förfrågan som inkluderar ett användarnamn och lösenord i form av en Base64-kodad sträng. Programmerare använder denna metod för att få tillgång till resurser som kräver användarverifiering, för att säkerställa att deras applikationer kan interagera säkert med tjänster över webben.
-
 ## Hur man gör:
-
 För att göra en HTTP-förfrågan med grundläggande autentisering i Go, behöver du utforma dina förfrågningsheaders för att inkludera `Authorization`-fältet, fyllt med dina inloggningsuppgifter i rätt format. Nedan följer ett exempel som visar hur man utför en GET-förfrågan till en API-endpunkt som kräver grundläggande autentisering:
 
 ```go
@@ -63,7 +58,6 @@ Svarstatus: 200 OK
 ```
 
 ## Fördjupning
-
 Grundläggande autentisering i HTTP-förfrågningar är en bredvid stödd metod för att verkställa åtkomstkontroller till webbresurser. Det skickar enkelt ett användarnamn och lösenord med varje förfrågan, vilket gör det lätt att implementera men inte den säkraste metoden som finns. En stor nackdel är att, om den inte används tillsammans med SSL/TLS, skickas inloggningsuppgifterna i klartext (eftersom Base64 lätt kan avkodas). Detta kan potentiellt exponera känslig information för man-in-the-middle-attacker.
 
 I Go innebär att skicka dessa förfrågningar att direkt manipulera `Authorization`-headern. Även om Gos standardbibliotek (`net/http`) ger kraftfulla primitiver för att hantera HTTP(s)-kommunikation, är det relativt lågnivå och kräver att utvecklare manuellt hanterar olika aspekter av HTTP-förfrågan/svarshantering. Detta ger programmerare mycket flexibilitet men innebär också att man måste vara extra uppmärksam på säkerhetsimplikationer, kodning och korrekt headerhantering.

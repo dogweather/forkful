@@ -16,9 +16,6 @@ title: "Nykyisen p\xE4iv\xE4m\xE4\xE4r\xE4n hankkiminen"
 weight: 29
 ---
 
-## Mikä ja miksi?
-Nykyisen päivämäärän saaminen Elixirissa käsittää järjestelmän päivämäärän ja ajan tiedon saavuttamisen, yleinen tehtävä lokitukseen, datan leimaamiseen tai mihin tahansa toimintoon, joka edellyttää nykyisen päivämäärän tuntemista. Tämä operaatio on olennainen aikaan tietoisten sovellusten luomiselle ja tehtäville, kuten raporttien generoinnille tai aikaleimojen lisäämiselle verkkosovellukseen.
-
 ## Kuinka:
 Elixirin standardikirjaston, `DateTime` moduulin kautta, voi hakea nykyisen päivämäärän ja ajan. Koska Elixir toimii Erlang VM (BEAM) päällä, se hyödyntää taustalla olevia Erlangin ajan käsittelyn toiminnallisuuksia.
 

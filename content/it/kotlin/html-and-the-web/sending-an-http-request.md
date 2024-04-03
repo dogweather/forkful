@@ -10,9 +10,6 @@ title: Inviare una richiesta http
 weight: 44
 ---
 
-## What & Why?
-Mandare una richiesta HTTP significa comunicare con un server web: invii una richiesta, lui ti risponde. Lo facciamo per prelevare dati, inviare form, interagire con API o accedere a servizi web.
-
 ## How to:
 In Kotlin, inviare una richiesta HTTP è semplice. Ecco un esempio con `HttpURLConnection`:
 

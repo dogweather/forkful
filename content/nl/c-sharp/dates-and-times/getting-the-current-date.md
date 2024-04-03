@@ -13,12 +13,7 @@ title: Het huidige datum ophalen
 weight: 29
 ---
 
-## Wat & Waarom?
-
-De huidige datum in C# krijgen betekent het hier-en-nu van de klok van je systeem plukken. Het is handig voor tijdstempels, logs, of elke functie die een datumcontrole nodig heeft.
-
 ## Hoe te:
-
 De huidige datum krijgen? Roep gewoon `DateTime.Now` aan. Dit stukje code laat zien hoe:
 
 ```C#
@@ -43,7 +38,6 @@ Als je het uitvoert, verwacht dan zoiets als dit:
 Netjes, hè?
 
 ## Diepere Duik
-
 Voor `DateTime` jongleerden programmeurs datum-tijd in hun hoofd. Nu, maakt .NET het gestroomlijnd. `DateTime.Now` pakt zowel datum als tijd, maar voor alleen de datum is er `DateTime.Today`.
 
 Hier is een kicker – het houdt rekening met tijdzones. `DateTime.UtcNow` geeft je Coordinated Universal Time (UTC), waarbij je het drama van de lokale tijd vermijdt.
@@ -55,7 +49,6 @@ Naast `DateTime` hebben we `DateTimeOffset`. Het paart de datum-tijd aan een off
 Wat implementatie betreft, `DateTime` in C# is nauwkeurig tot 100-nanoseconde tikken sinds middernacht, 1 januari 0001 n.Chr. Maar plan je nanoseconden er niet omheen – de nauwkeurigheid en precisie van de systeemklok variëren sterk.
 
 ## Zie Ook
-
 - [DateTime Struct](https://docs.microsoft.com/nl-nl/dotnet/api/system.datetime?view=net-7.0)
 - [DateTime.UtcNow Eigenschap](https://docs.microsoft.com/nl-nl/dotnet/api/system.datetime.utcnow?view=net-7.0)
 - [DateTimeOffset Struct](https://docs.microsoft.com/nl-nl/dotnet/api/system.datetimeoffset?view=net-7.0)

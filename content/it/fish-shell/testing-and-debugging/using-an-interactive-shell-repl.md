@@ -10,9 +10,6 @@ title: Utilizzo di un interprete interattivo (REPL)
 weight: 34
 ---
 
-## Cosa e Perché?
-REPL, o Ciclo Leggi-Valuta-Stampa, è un ambiente di programmazione interattivo che prende singoli input dell'utente, li esegue e restituisce il risultato. I programmatori lo usano per avere un feedback immediato, per il debugging e per l'esplorazione veloce dei concetti di codifica senza il peso di compilare ed eseguire un programma completo.
-
 ## Come fare:
 In Fish, la shell interattiva è la modalità predefinita all'avvio. Ecco come appare in azione:
 

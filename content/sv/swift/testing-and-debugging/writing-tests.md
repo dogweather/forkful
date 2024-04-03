@@ -13,9 +13,6 @@ title: Skriva tester
 weight: 36
 ---
 
-## Vad & Varför?
-Att skriva tester i Swift innebär att skapa och köra kod som verifierar riktigheten hos andra kodenheter i din applikation. Programmerare gör detta för att säkerställa tillförlitlighet, upptäcka buggar tidigt i utvecklingscykeln och underlätta framtida kodrefaktorering utan oavsiktliga konsekvenser.
-
 ## Hur:
 Swift stöder testning genom sitt XCTest-ramverk, som är integrerat i Xcode. Du kan skriva enhetstester för att verifiera individuella delar av din kod, till exempel en funktion som beräknar summan av två tal.
 

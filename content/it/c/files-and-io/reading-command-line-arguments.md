@@ -13,12 +13,7 @@ title: Lettura degli argomenti da linea di comando
 weight: 23
 ---
 
-## Cosa & Perché?
-
-Nella programmazione C, leggere gli argomenti della riga di comando permette ai programmi di accettare input direttamente dal terminale, migliorando flessibilità e usabilità. I programmatori sfruttano questa caratteristica per configurare il comportamento degli script senza modificare il codice, rendendo le applicazioni adattabili ed efficienti.
-
 ## Come fare:
-
 In C, la funzione `main` può essere progettata per accettare argomenti della riga di comando usando i parametri `int argc` e `char *argv[]`. Qui, `argc` rappresenta il numero di argomenti passati, e `argv` è un array di puntatori a caratteri che elenca tutti gli argomenti. Ecco un rapido esempio per illustrare:
 
 ```c
@@ -46,7 +41,6 @@ Argomento 2: esempio
 Questo dimostra come gli argomenti della riga di comando possono essere analizzati e utilizzati in un programma C.
 
 ## Approfondimento
-
 La convenzione di passare argomenti ai programmi risale ai primi giorni di Unix. In questo approccio tradizionale, `argc` e `argv` forniscono un'interfaccia semplice ma potente per l'interazione da riga di comando, incarnando la filosofia Unix di piccole utilità modulari che lavorano insieme. Mentre i linguaggi moderni spesso introducono librerie o framework più sofisticati per l'analisi degli argomenti da riga di comando, la direttezza del metodo di C offre una trasparenza e un controllo senza pari.
 
 In sviluppi recenti, librerie come `getopt` nei sistemi POSIX si sono evolute per supportare esigenze di parsing più complesse, come la gestione di nomi di opzioni lunghi o valori predefiniti per argomenti mancanti. Tuttavia, il meccanismo di base di `argc` e `argv` rimane essenziale per comprendere come i programmi interagiscono con il loro ambiente di esecuzione in C.

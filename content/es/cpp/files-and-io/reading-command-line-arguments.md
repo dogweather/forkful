@@ -11,12 +11,7 @@ title: "Lectura de argumentos de l\xEDnea de comandos"
 weight: 23
 ---
 
-## ¿Qué y Por Qué?
-
-Leer argumentos de la línea de comandos permite que tu programa en C++ sea flexible y reciba datos externos al iniciarse. Los programamos así para interactuar con el usuario o automatizar tareas con diferentes parámetros sin cambiar el código.
-
 ## Cómo:
-
 Aquí tienes cómo capturar argumentos de la línea de comandos en C++:
 
 ```C++
@@ -42,7 +37,6 @@ Has introducido 3 argumentos:
 ```
 
 ## Análisis Profundo:
-
 La convención de pasar argumentos data de los primeros días de las interfaces de línea de comandos. En UNIX y sistemas similares, `argc` representa la cantidad de argumentos y `argv` es un array de cadenas (char*) que contiene los propios argumentos. 
 
 Alternativas a la manipulación manual de `argv` incluyen librerías como `getopt`, para opciones más complejas, o bibliotecas de análisis de argumentos de modernas como `Boost.Program_options` y `TCLAP`. Detrás de escena, el sistema operativo pasa los argumentos a `main` cuando se lanza el programa.
@@ -50,7 +44,6 @@ Alternativas a la manipulación manual de `argv` incluyen librerías como `getop
 Implementaciones variadas pueden cambiar ligeramente entre plataformas y compiladores. Por ejemplo, en Windows, también puedes usar `GetCommandLine()` de la API de Windows para acceder a la línea de comandos completa como una sola cadena.
 
 ## Ver También:
-
 - Tutorial de C++ sobre la librería Boost.Program_options: http://www.boost.org/doc/libs/release/doc/html/program_options.html
 - Documentación de TCLAP - Templatized C++ Command Line Parser Library: http://tclap.sourceforge.net/
 - Artículo de Wikipedia sobre la interfaz de línea de comandos: https://es.wikipedia.org/wiki/Interfaz_de_l%C3%ADnea_de_comandos

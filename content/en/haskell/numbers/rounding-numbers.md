@@ -10,12 +10,7 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-
-Rounding numbers means adjusting them to the nearest integer or specified decimal place. Programmers round numbers to control precision, tailor outputs for user presentation, or reduce computation costs for floating-point operations.
-
 ## How to:
-
 Haskell uses the `round`, `ceiling`, `floor`, and `truncate` functions from the `Prelude` for rounding operations.
 
 ```haskell
@@ -36,7 +31,6 @@ main = do
 ```
 
 ## Deep Dive
-
 Historically, rounding is significant in numerical analysis and computer science because it's crucial to minimizing error accumulation in computations, particularly before floating-point representations were standardized with IEEE 754.
 
 What to round to? `round` takes you to the nearest integer—up or down. `ceiling` and `floor` always round up or down to the closest integer, respectively, while `truncate` simply drops the decimal points.
@@ -46,7 +40,6 @@ Alternatives to these functions might involve custom logic, like our `roundTo`, 
 Watch out for unexpected results due to how Haskell handles half-way cases in `round` (it rounds to the nearest even number).
 
 ## See Also
-
 - Haskell Prelude documentation for rounding functions: https://hackage.haskell.org/package/base-4.16.1.0/docs/Prelude.html
 - The Haskell Wiki on floating-point arithmetic: https://wiki.haskell.org/Floating_point_arithmetic
 - IEEE 754-2008 standard for more on how floating-point is handled in many languages: https://ieeexplore.ieee.org/document/4610935

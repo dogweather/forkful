@@ -9,9 +9,6 @@ title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---
 
-## ¿Qué y Por Qué?
-Extraer subcadenas significa elegir una parte específica de un texto. Los programadores lo hacen para analizar datos, validar entradas o simplemente trabajar con fragmentos relevantes de una cadena más grande.
-
 ## Cómo Hacerlo:
 ```Rust
 fn main() {

@@ -11,9 +11,6 @@ title: "H\xE4mta en webbsida"
 weight: 42
 ---
 
-## What & Why?
-Att ladda ner en webbsida är att hämta allt dess innehåll för att använda eller bearbeta lokalt. Programmerare gör det för att samla data, testa online-tjänsters tillgänglighet, eller skapa säkerhetskopior av webbsidor.
-
 ## How to:
 För att ladda ner en webbsida med PHP, använd `file_get_contents()` eller cURL-biblioteket. Här är grundläggande exempel:
 

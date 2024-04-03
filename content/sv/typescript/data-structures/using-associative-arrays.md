@@ -13,12 +13,7 @@ title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---
 
-## Vad & varför?
-
-Associativa arrayer, eller objekt i TypeScript, låter dig använda strängar (eller nycklar) för att komma åt värdepar. Programmerare använder dem för mer dynamiska dataåtkomstmönster jämfört med traditionella arrayer, vilket ger ett flexibelt sätt att strukturera och komma åt data utan att vara bundna till numeriska index.
-
 ## Hur man gör:
-
 Att skapa och använda associativa arrayer i TypeScript är enkelt. Här är en grundläggande genomgång:
 
 ```TypeScript
@@ -70,7 +65,6 @@ Utdata:
 ```
 
 ## Fördjupning
-
 I TypeScript är det vi refererar till som associativa arrayer i grund och botten objekt. Historiskt sett, i språk som PHP, är associativa arrayer en grundläggande typ, men JavaScript (och därmed TypeScript) använder objekt för detta ändamål. Detta tillvägagångssätt är både en styrka och en begränsning. Objekt ger en mycket dynamisk struktur för att koppla strängar till värden, men de är inte avsedda att användas som 'arrayer' i traditionell mening. Till exempel kan du inte direkt använda arraymetoder som `push` eller `pop` på dessa objekt.
 
 För fall där du behöver ordnade samlingar av nyckel-värdepar med array-liknande operationer, erbjuder TypeScript (och modern JavaScript) `Map`-objektet:

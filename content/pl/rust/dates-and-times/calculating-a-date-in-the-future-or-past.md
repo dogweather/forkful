@@ -11,9 +11,6 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-## What & Why? - "Co i dlaczego?"
-Obliczanie dat w przyszłości czy przeszłości to ustalenie dnia przed lub po określonym czasie. Programiści robią to, aby zarządzać harmonogramami, okresami ważności czy interwałami czasowymi.
-
 ## How to: - "Jak to zrobić:"
 W Rust korzystamy z crate'a `chrono` do łatwego obliczania dat. 
 

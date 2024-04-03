@@ -13,12 +13,7 @@ title: "TOML:n kanssa ty\xF6skentely"
 weight: 39
 ---
 
-## Mikä & Miksi?
-
-TOML, joka tarkoittaa Tom's Obvious, Minimal Language (Tomin ilmeinen, minimalistinen kieli), on datan sarjoitustapa, jota käytetään pääasiassa konfiguraatiotiedostoissa. Ohjelmoijat hyödyntävät TOMLia sen luettavuuden ja helpon datastruktuureihin kartoittamisen ansiosta, mikä mahdollistaa suoraviivaisen sovellusten konfiguroinnin erilaisissa ohjelmointiympäristöissä, mukaan lukien Visual Basic for Applications (VBA).
-
 ## Kuinka:
-
 TOMLin kanssa työskentely VBA:ssa sisältää TOML-tiedoston jäsentämisen, jotta konfiguraatiot tai asetukset voidaan lukea VBA-projektiisi. VBA:lla ei ole sisäänrakennettua tukea TOMLille, joten yleensä käytetään jotakin jäsentäjää tai muunnetaan TOML-tiedot muotoon, jonka kanssa VBA pystyy helposti työskentelemään, kuten JSON tai XML. Tässä on, kuinka voit manuaalisesti jäsentää yksinkertaisen TOML-konfiguraatiotiedoston:
 
 1. **Esimerkki TOML-tiedostosta** (`config.toml`):
@@ -75,5 +70,4 @@ Tietokannan palvelin: 192.168.1.1
 ```
 
 ## Syventävä tarkastelu
-
 TOMLin käytännön hyväksyntä kehittäjäyhteisössä osoittaa suuntausta yksinkertaisempiin, inhimillisemmin luettaviin konfiguraatiotiedostoihin, verrattuna aikaisemmin vallalla olleeseen XML:iin. TOMLin suunnitteluajattelu korostaa selkeitä semantiikkoja ja pyrkii suoraviivaiseen jäsentämiseen minimaalisella ylimääräisellä kuormituksella. VBA:ssa TOMLin suora käsittely edellyttää manuaalista jäsentämistä tai ulkoisten työkalujen hyödyntämistä TOMLin muuntamiseksi VBA:lle ystävällisempään muotoon, koska natiivituki puuttuu. Vaikka tämä manuaalinen jäsentämismenetelmä esittelee peruslähtökohdan, ulkoisten kirjastojen tai välimuotoisten formaattien, kuten JSON, käyttö saattaa tarjota vankempia ja virheenkestävämpiä jäsentämisstrategioita. Ottaen huomioon VBA:n laajan integraation Microsoft Officen kanssa, TOMLin muuntaminen JSONiksi ja VBA:n natiivien JSON-jäsentelykykyjen (tarvittaessa) tai kolmannen osapuolen JSON-jäsentimien käyttö voi tarjota virtaviivaisemman työnkulun. Lisäksi, jatkuvasti kehittyvien datan serialisointimuotojen myötä, ohjelmoijien tulisi myös harkita YAML:ää, joka kuten TOML, korostaa ihmisen luettavuutta, mutta tarjoaa erilaisia kompromisseja monimutkaisuuden ja joustavuuden suhteen.

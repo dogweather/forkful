@@ -11,9 +11,6 @@ title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---
 
-## What & Why?
-Interpoler une chaîne de caractères, c'est y insérer des variables directement. On le fait pour simplifier la concaténation et rendre le code plus lisible.
-
 ## How to:
 ```PHP
 $planete = "Terre";

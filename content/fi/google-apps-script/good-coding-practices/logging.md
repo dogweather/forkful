@@ -13,12 +13,7 @@ title: Lokiointi
 weight: 17
 ---
 
-## Mikä ja miksi?
-
-Ohjelmistokehityksessä lokitus tarkoittaa tapahtumien, virheiden tai merkittävien esiintymien tallentamista suoritusaikana. Ohjelmoijat tekevät näin virheiden jäljittämiseksi, suorituskyvyn seuraamiseksi ja operatiivisen datan kirjaamiseksi, mikä on keskeistä ohjelmiston ylläpidossa ja sen käyttäytymisen ymmärtämisessä tuotannossa.
-
 ## Miten:
-
 Google Apps Scriptissä lokitusta voi suorittaa käyttämällä erilaisia menetelmiä, kuten `Logger`-luokkaa ja `console.log()`-toimintoa. Logger-luokka on perinteinen tapa, joka sopii yksinkertaiseen virheenkorjaukseen ja kehitystarkoituksiin. Viimeaikaisten päivitysten myötä `console.log()` tarjoaa enemmän joustavuutta ja integraatiota Stackdriver Lokitukseen, tarjoten vankemman ratkaisun Apps Scriptiesi valvontaan Google Cloud Platformilla.
 
 **Loggerin käyttö:**
@@ -65,7 +60,6 @@ Oliota lokitetaan: {name: "Jane", role: "Developer"}
 Siirtymällä `console.log()`-toiminnon käyttöön monimutkaisemmissa sovelluksissa kehittäjät voivat tehokkaasti jäsentää ja analysoida lokeja käyttämällä GCP:n tarjoamia tehokkaita suodattimia ja työkaluja, mikä ei ole yhtä suoraviivaista perinteisen Logger-luokan kanssa.
 
 ## Syväsukellus:
-
 Lokitus Google Apps Scriptissä on kehittynyt merkittävästi. Alun perin `Logger`-luokka oli ensisijainen menetelmä kehittäjille skriptiensä vianmääritykseen. Se on yksinkertainen ja riittävä perusskripteille, mutta se ei tarjoa modernien pilvisovellusten vaatimia ominaisuuksia, kuten lokien etsimistä tai lokitrendien analysointia ajan myötä.
 
 `console.log()`-toiminnon esittely paikkasi tämän kuilun integroimalla Google Apps Script -lokituksen Google Cloudin Stackdriver Lokituksen (nykyään kutsutaan Operations Suite) kanssa, tarjoten keskitetyn alustan sovellusten lokitukseen, valvontaan ja vianmääritykseen. Tämä ei ainoastaan mahdollistanut lokitusta suuressa mittakaavassa, vaan myös avasi edistyneitä lokienhallinnan ominaisuuksia, kuten lokiin perustuvat metriikat, reaaliaikainen lokianalyysi ja integraation muihin Google Cloud -palveluihin.

@@ -11,9 +11,6 @@ title: Tworzenie pliku tymczasowego
 weight: 21
 ---
 
-## Co i dlaczego?
-Tworzymy pliki tymczasowe, gdy musimy przechować dane tymczasowo, zanim ukończymy z nimi coś konkretnego. Programiści robią to, by zarządzać danymi tymczasowymi w sposób bezpieczny, izolując je od reszty systemu, co jest kluczowe przy operacjach, które są wrażliwe na zakłócenia, takie jak transakcje czy przetwarzanie danych w tle.
-
 ## Jak to zrobić:
 W PHP robienie plików tymczasowych jest proste. Użyj `tmpfile()` do stworzenia i otwarcia pliku, a on sam się usunie po zamknięciu, albo `tempnam()` do stworzenia pliku tymczasowego z unikalną nazwą.
 

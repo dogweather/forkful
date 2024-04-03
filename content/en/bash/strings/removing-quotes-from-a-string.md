@@ -10,9 +10,6 @@ title: Removing quotes from a string
 weight: 9
 ---
 
-## What & Why?
-Removing quotes from a string involves stripping away the quotation marks that enclose the string. Programmers often want to do this to sanitize input data, prepare data for comparison purposes, or adhere to a specific data format when interfacing with other programs or systems.
-
 ## How to:
 Bash has several ways to remove quotes from strings. Here are some quick examples:
 

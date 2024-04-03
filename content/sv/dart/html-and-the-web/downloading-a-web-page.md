@@ -13,12 +13,7 @@ title: Ladda ner en webbsida
 weight: 42
 ---
 
-## Vad & Varför?
-
-Att ladda ner en webbsida innebär att hämta innehållet på en webbsida via dess URL för bearbetning eller lagring. Programmerare gör detta för att extrahera information, övervaka förändringar eller arkivera innehåll, vilket gör det till en grundsten i webbskrapning, datautvinning och automatiserade testuppgifter.
-
 ## Hur man gör:
-
 Dart tillhandahåller paketet `http`, ett populärt tredjepartsbibliotek för att göra HTTP-begäran. Här är ett grundläggande exempel på hur man använder det för att ladda ner en webbsida:
 
 Först, lägg till `http`-paketet till din `pubspec.yaml`:

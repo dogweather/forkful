@@ -14,12 +14,7 @@ title: Arbeiten mit JSON
 weight: 38
 ---
 
-## Was & Warum?
-
-Die Arbeit mit JSON in der Fish Shell umfasst das Parsen und Generieren von JSON-Daten, eine gängige Aufgabe für die Konfiguration von Anwendungen, API-Interaktionen und die Optimierung von Befehlszeilen-Workflows. Angesichts der Allgegenwart von JSON in der Web- und Anwendungsentwicklung kann die Beherrschung seiner Manipulation direkt in der Shell die Automatisierung und Effizienz der Datenverarbeitung für Programmierer erheblich verbessern.
-
 ## Wie geht das:
-
 Die Fish Shell selbst verfügt nicht über integrierte Hilfsprogramme zum Parsen und Generieren von JSON. Sie integriert sich jedoch nahtlos in Drittanbieter-Tools wie `jq` für die JSON-Verarbeitung. `jq` ist ein leistungsstarker und vielseitiger Befehlszeilen-JSON-Prozessor, der es Ihnen ermöglicht, strukturierte Daten einfach und ausdrucksstark zu schneiden, zu filtern, zu mappen und zu transformieren.
 
 ### JSON mit jq parsen

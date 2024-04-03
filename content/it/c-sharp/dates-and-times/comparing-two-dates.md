@@ -10,9 +10,6 @@ title: Confronto tra due date
 weight: 27
 ---
 
-## What & Why? (Cosa e Perché?)
-Comparare due date significa verificarne la cronologia relativa, stabilendo quale precede o segue l'altra. I programmatori lo fanno per gestire eventi, scadenze, e ordinare dati nel tempo.
-
 ## How to: (Come fare:)
 ```C#
 using System;

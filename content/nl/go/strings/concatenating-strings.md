@@ -13,12 +13,7 @@ title: Strings samenvoegen
 weight: 3
 ---
 
-## Wat & Waarom?
-
-Het samenvoegen van strings betreft het aaneenrijgen van twee of meer strings om een nieuwe string te vormen. Programmeurs doen dit om dynamisch tekst te genereren, zoals het samenstellen van berichten, paden of complexe queries, waardoor programma's interactiever en responsiever worden.
-
 ## Hoe:
-
 In Go zijn er verschillende manieren om strings samen te voegen. Hier volgt een blik op enkele gangbare methoden met voorbeelden:
 
 ### Gebruikmakend van de `+` Operator:
@@ -62,7 +57,6 @@ fmt.Println(pad) // pad/naar/bestand
 ```
 
 ## Diepere Duik
-
 Hoewel het samenvoegen van strings een ogenschijnlijk eenvoudige operatie lijkt, raakt het aan diepere aspecten van hoe Go met strings omgaat. In Go zijn strings onveranderlijk; dit betekent dat elke samenveegoperatie een nieuwe string creëert. Dit kan leiden tot prestatieproblemen bij het samenvoegen van een groot aantal strings of bij het doen in strakke lussen, vanwege de frequente toewijzing en het kopiëren van geheugen.
 
 Historisch gezien hebben talen de onveranderlijkheid van strings en de efficiëntie van het samenvoegen op verschillende manieren aangepakt, en Go's benadering met `strings.Builder` en `strings.Join` biedt programmeurs gereedschappen die gebruiksgemak balanceren met prestaties. Het type `strings.Builder`, geïntroduceerd in Go 1.10, is met name opmerkelijk omdat het een efficiënte manier biedt om strings te bouwen zonder de overhead van meerdere stringtoewijzingen. Dit doet het door een buffer toe te wijzen die groeit naar behoefte, waarin strings worden toegevoegd.

@@ -15,12 +15,7 @@ title: "Mettre une cha\xEEne en majuscules"
 weight: 2
 ---
 
-## Quoi et pourquoi ?
-
-Mettre en majuscule une chaîne consiste à modifier l'entrée de manière que le premier caractère soit en majuscule tandis que les suivants restent en minuscule, communément utilisé pour formater des noms ou des titres. Les programmeurs font cela pour assurer la cohérence des données et améliorer la lisibilité au sein des interfaces utilisateur ou des documents.
-
 ## Comment faire :
-
 Google Apps Script, étant basé sur JavaScript, permet plusieurs méthodes pour mettre en majuscule une chaîne, bien qu'il n'existe pas de fonction intégrée. Voici quelques exemples succincts :
 
 **Méthode 1 : Utiliser charAt() et slice()**
@@ -53,7 +48,6 @@ console.log(result);  // Sortie : Bonjour, le monde
 Les deux méthodes garantissent que le premier caractère de la chaîne est en majuscule, et les suivants sont en minuscule, adaptées à une variété d'applications, y compris, mais sans s'y limiter, la manipulation de Google Sheets ou l'édition de documents via Apps Script.
 
 ## Approfondissement
-
 Mettre des chaînes en majuscule dans Google Apps Script est simple, en exploitant les puissantes capacités de manipulation de chaînes de JavaScript. Historiquement, des langues comme Python offrent des méthodes intégrées telles que `.capitalize()` pour réaliser cela, ajoutant une étape supplémentaire mineure pour les programmeurs JavaScript et Apps Script. Cependant, l'absence de fonction intégrée dans JavaScript/Google Apps Script encourage la flexibilité et une compréhension approfondie des techniques de manipulation de chaînes.
 
 Pour des scénarios complexes, comme la mise en majuscule de chaque mot d'une chaîne (Cas Titre), les programmeurs pourraient combiner les méthodes regex avec les fonctions `split()` et `map()` pour traiter chaque mot individuellement. Bien que Google Apps Script ne propose pas de méthode directe pour la mise en majuscule de chaînes, l'utilisation des méthodes de manipulation de chaînes de JavaScript existantes offre une grande flexibilité, permettant aux développeurs de gérer efficacement les chaînes selon leurs besoins spécifiques.

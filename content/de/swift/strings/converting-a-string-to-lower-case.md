@@ -11,9 +11,6 @@ title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---
 
-## Was & Warum?
-Das Umwandeln einer Zeichenkette in Kleinbuchstaben bedeutet, jeden Großbuchstaben in seinen entsprechenden Kleinbuchstaben zu überführen. Das sorgt für Einheitlichkeit, zum Beispiel bei der Benutzereingabe-Verarbeitung oder beim Vergleichen von Text.
-
 ## So geht's:
 Swift macht die Konvertierung von Zeichenketten in Kleinbuchstaben einfach mit der `lowercased()` Methode.
 

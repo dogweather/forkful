@@ -14,12 +14,7 @@ title: Debug-tulosteen tulostaminen
 weight: 33
 ---
 
-## Mikä & Miksi?
-
-Debug-tulosteen tulostaminen sisältää logilauseiden strategisen sijoittamisen koodiisi näyttämään muuttujien arvot, suoritusvirran tai virheviestit suoritusaikana. Ohjelmoijat käyttävät sitä laajasti seuratakseen ja diagnosoidakseen skriptiensä käyttäytymistä varmistaakseen niiden oikeellisuuden ja tehokkuuden Google Apps Script -sovelluksissaan.
-
 ## Kuinka:
-
 Google Apps Script tarjoaa `Logger`-luokan perusdebuggaukseen ja kehittyneempiin tarpeisiin V8-ajoympäristössä esitellyn `console`-luokan.
 
 **Loggerin käyttö:**
@@ -56,7 +51,6 @@ Nykyinen tila: aktiivinen, Luku: 150
 ```
 
 ## Syväsukellus
-
 Alun perin `Logger.log` oli ensisijainen työkalu debuggaukseen Google Apps Scriptissä tarjoten yksinkertaisen, suoraviivaisen tavan tulostaa tarkasteltavaa ulostuloa. Kuitenkin, kun skriptit muuttuivat monimutkaisemmiksi ja integroituneemmaksi Google Cloud Platform -palveluihin, selkeä tarve robustimmalle lokitusratkaisulle tuli ilmeiseksi.
 
 Tässä tulee V8-ajoympäristö, tuoden `console.log` mukanaan. Tämä ei ainoastaan sovita Google Apps Scriptiä standardi JavaScript-syntaksiin, tehdäkseen kielen helpommin lähestyttäväksi kehittäjille, jotka ovat tuttuja JavaScriptin kanssa, vaan myös hyödyntää Google Cloudin lokituskyvykkyyksien voimakasta infrastruktuuria. `console.log`in esittely ja sen integrointi Google Cloud Platformiin merkitsee merkittävää kehitystä Google Apps Scriptin debuggauksessa, tarjoten kehittäjille dynaamisemman ja skaalautuvamman lähestymistavan skriptiensä seurantaan ja vianmääritykseen.

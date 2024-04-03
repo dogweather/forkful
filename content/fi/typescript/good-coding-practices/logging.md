@@ -12,12 +12,7 @@ title: Lokitus
 weight: 17
 ---
 
-## Mikä & Miksi?
-
-Lokitus on prosessi, jossa kirjataan tapahtumia, virheitä ja muita merkittäviä tietoja ohjelman suorituksen aikana ulkoiseen välineeseen, usein tiedostoon tai tietokantaan. Ohjelmoijat käyttävät lokeja ohjelmiston toiminnan seurantaan, ongelmien selvittämiseen ja järjestelmän toimintojen seuraamiseen turvallisuuden ja suorituskyvyn analysointia varten.
-
 ## Kuinka:
-
 TypeScriptissä voit toteuttaa peruslokauksen helposti käyttäen konsolin metodeja tai integroida kehittyneemmän lokauksen kirjastojen, kuten `winston` tai `pino`, avulla. Tässä on perusesimerkki `console.log`-toiminnon käytöstä ja kehittyneempi esimerkki `winston`-kirjaston avulla.
 
 ```TypeScript
@@ -58,7 +53,6 @@ logger.error('Tietokantaan yhdistäminen epäonnistui.');
 ```
 
 ## Syväsukellus:
-
 Lokituksen käsite tietotekniikan kontekstissa juontaa juurensa ohjelmoinnin varhaisiin päiviin, jossa termi itse on peräisin "lokikirjasta", merenkulun kirjanpidon järjestelmästä. Historiallisesti ohjelmatapahtumat kirjattiin usein fyysisiin tulosteisiin tai terminaalin tulosteisiin, erityisesti pääteyhteysaikakaudella.
 
 Päivämme tietotekniikassa on käytettävissä runsaasti työkaluja ja kirjastoja, jotka palvelevat erilaisia lokitustarpeita, yksinkertaisista tekstiedostoista monimutkaisiin lokituksen hallintajärjestelmiin. Vaihtoehtoja `winston`-kirjastolle ovat muun muassa `pino`, joka on tunnettu suorituskyvystään, ja `Bunyan`, joka perustuu JSON-muotoon. Työskennellessä Node.js:n kanssa lokituskirjastot tarjoavat usein virtamekanismeja ohjaamaan lokia eri kohteisiin, tukea lokitiedostojen kierrätykselle ja mukautettavia muotoilijoita.
@@ -66,7 +60,6 @@ Päivämme tietotekniikassa on käytettävissä runsaasti työkaluja ja kirjasto
 Toteutuksen kannalta lokiviestit sisältävät yleensä aikaleiman, vakavuustason (kuten info, warning, error) sekä itse viestin. Hyvä lokikäytäntö suosittelee lokitasojen asianmukaista kategorisointia, arkaluontoisen tiedon välttämistä lokeissa sekä suorituskyvyn harkintaa korkea-liikenteisissä sovelluksissa.
 
 ## Katso myös:
-
 - [Winston - Loki melkein kaikkeen](https://www.npmjs.com/package/winston)
 - [Pino - Erittäin pieni ylikuorma Node.js lokittaja](https://www.npmjs.com/package/pino)
 - [Node.js lokitus parhaat käytännöt](https://thisdavej.com/using-winston-a-versatile-logging-library-for-node-js/)

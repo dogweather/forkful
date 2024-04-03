@@ -12,9 +12,6 @@ title: Een webpagina downloaden
 weight: 42
 ---
 
-## Wat & Waarom?
-Het downloaden van een webpagina betekent het ophalen van de gegevens van het internet en deze lokaal opslaan. Programmeurs doen dit voor webscraping, offline analyse of back-updoeleinden.
-
 ## Hoe:
 Het gereedschap bij uitstek voor deze klus? `curl`. Het is een krachtige opdrachtregel-tool die gegevens van het web haalt. Hier is het eenvoudigste gebruiksscenario:
 

@@ -11,12 +11,7 @@ title: "Koodin j\xE4rjest\xE4minen funktioihin"
 weight: 18
 ---
 
-## Mikä & Miksi?
-
-Koodin järjestäminen funktioiksi on lohkojen paketoimista tehtäviä suorittaviksi osiksi. Tämän tekeminen pitää koodisi puhtaana, helpommin ylläpidettävänä ja muiden kehittäjien lukemisen tuulena.
-
 ## Miten:
-
 Clojure-funktiot määritellään käyttäen `defn`, sen jälkeen tulee nimi, parametrit ja runko. Tässä on nopea esimerkki.
 
 ```Clojure
@@ -39,7 +34,6 @@ Kuvitellaan nyt, että haluamme laskea suorakulmion pinta-alan. Sen sijaan, ett�
 ```
 
 ## Syväluotaus
-
 Aikojen alussa koodaajat vain mukauttivat kaiken logiikkansa yhteen lohkoon. Se oli ruma näky. Sitten rakennoitu ohjelmointi tuli kuvioihin, ja funktioista tuli juttu. Clojuressa jokainen funktio on ensiluokkainen – voit heittää niitä ympäriinsä kuten mitä tahansa muuta arvoa.
 
 Vaihtoehtoja? Jotkut saattaisivat kikkailla multimetodeilla tai korkeamman asteen funktioilla, mutta nuo ovat vain mausteita funktiopadassa.
@@ -47,7 +41,6 @@ Vaihtoehtoja? Jotkut saattaisivat kikkailla multimetodeilla tai korkeamman astee
 Kaikki funktioiden yksityiskohdissa: ne ovat muuttumattomia Clojuressa, mikä tekee sivuvaikutusten sekasorrosta epätodennäköisempää. Ne nojautuvat voimakkaasti rekursioon tyypillisten silmukoiden sijaan, mikä istuu hyvin yksiin kielen toiminnallisten paradigmojen kanssa.
 
 ## Katso Myös
-
 - Clojuren oma opas: https://clojure.org/guides/learn/functions
 - Funktionaalisen Ohjelmoinnin Alkeet: https://www.braveclojure.com/core-functions-in-depth/
 - Rich Hickeyn Puheenvuorot: https://changelog.com/posts/rich-hickeys-greatest-hits - näkemyksiä Clojuren filosofiasta.

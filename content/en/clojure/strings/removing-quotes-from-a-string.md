@@ -11,9 +11,6 @@ title: Removing quotes from a string
 weight: 9
 ---
 
-## What & Why?
-Removing quotes from a string means getting rid of those pesky double or single quote characters that wrap your text. Programmers do this to cleanse data, ensure uniformity, or prepare strings for processing where quotes are undesired or may cause errors.
-
 ## How to:
 In Clojure, strings are immutable, so when we talk about "removing quotes," we're really talking about creating a new string sans quotes. Here's the skinny using `clojure.string/replace`:
 

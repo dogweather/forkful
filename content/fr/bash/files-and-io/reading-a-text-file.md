@@ -11,9 +11,6 @@ title: Lecture d'un fichier texte
 weight: 22
 ---
 
-## What & Why?
-Lire un fichier texte, c'est parcourir et manipuler le contenu stocké. Les programmeurs le font pour traiter des données, configurer des logiciels, et souvent pour scripter des tâches automatisées.
-
 ## How to:
 Voici différentes manières de lire un fichier en Bash:
 

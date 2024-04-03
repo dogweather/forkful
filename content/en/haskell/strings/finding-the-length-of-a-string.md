@@ -10,12 +10,7 @@ title: Finding the length of a string
 weight: 7
 ---
 
-## What & Why?
-
-Finding the length of a string in Haskell is about determining how many characters it contains. Programmers often need this to control loop iterators, validate input, size allocations, or for debugging purposes.
-
 ## How to:
-
 ```Haskell
 -- Using the `length` function
 main = do
@@ -29,7 +24,6 @@ Sample Output:
 ```
 
 ## Deep Dive
-
 Haskell is a purely functional language where strings are represented as lists of characters. The `length` function, part of the Prelude (the default library imported into every Haskell program), operates under this representation.
 
 Historically, strings as lists were a natural choice for Haskell due to their simplicity and the fact Lisp made a similar design choice (and influenced many functional languages). The `length` function just counts the elements in this list.
@@ -53,7 +47,6 @@ myLength (_:xs) = 1 + myLength xs  -- Recursively add 1 for the rest of the list
 For `Text` and `ByteString` data types, they have their own internal implementation details that make them more efficient than a simple linked list of characters.
 
 ## See Also
-
 - [Haskell `length` official documentation](https://hackage.haskell.org/package/base-4.16.1.0/docs/Prelude.html#v:length)
 - [`text` package on Hackage](https://hackage.haskell.org/package/text)
 - [`bytestring` package on Hackage](https://hackage.haskell.org/package/bytestring)

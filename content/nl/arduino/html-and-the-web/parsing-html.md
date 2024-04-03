@@ -13,9 +13,6 @@ title: HTML Parsen
 weight: 43
 ---
 
-## Wat & Waarom?
-HTML parsen betekent door HTML-code heen zeven om nuttige stukjes te extraheren - zoals het schrapen van een telefoonnummer van een contactpagina. Waarom doen we het? Om gegevensverzameling te automatiseren of om met webpagina's te interageren vanuit je Arduino-project.
-
 ## Hoe te:
 Arduino is van nature niet web-vaardig, maar met externe modules (zoals ESP8266) kun je verbinden en webinhoud ophalen. Hier halen we HTML op en zoeken we naar een specifieke tag:
 

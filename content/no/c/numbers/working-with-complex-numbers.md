@@ -12,12 +12,7 @@ title: "\xC5 Arbeide med Komplekse Tall"
 weight: 14
 ---
 
-## Hva & Hvorfor?
-
-Komplekse tall består av en reell del og en imaginær del, representert som `a + bi` hvor `i` er kvadratroten av `-1`. Programmerere arbeider med komplekse tall i ulike felt som elektroteknikk, kvanteberegning og fluiddynamikk, og utnytter deres unike egenskaper for simuleringer, signalbehandling og løsning av spesifikke typer matematiske ligninger.
-
 ## Hvordan:
-
 I C støttes komplekse tall av Standardbiblioteket, spesifikt `<complex.h>`. For å bruke dem, erklær variabler med typen `double complex` (eller `float complex` for enkel presisjon). Her er hvordan man utfører grunnleggende operasjoner:
 
 ```c
@@ -54,5 +49,4 @@ int main() {
 Merk at `I` er en konstant som representerer den imaginære enheten i `<complex.h>`. Funksjoner som `creal()` og `cimag()` trekker ut henholdsvis reelle og imaginære deler, mens `conj()` beregner det komplekse konjugatet. For størrelsen og fasen (argumentet) til komplekse tall, brukes `cabs()` og `carg()`.
 
 ## Dypdykk
-
 Støtten for komplekse tall i C er relativt nylig, med standardisering i C99. Før dette var aritmetikk med komplekse tall i C tungvint, ofte kreves det egendefinerte datastrukturer og funksjoner. Inkluderingen av `<complex.h>` og de komplekse datatypene ga et betydelig løft til språkets evner for vitenskapelige og ingeniørrelaterte applikasjoner. Det er imidlertid verdt å merke seg at noen språk, som Python, tilbyr mer intuitiv støtte for komplekse tall gjennom innebygde datatyper og et rikere sett med biblioteksfunksjoner. Til tross for dette gjør ytelsen og kontrollen som C tilbyr, det til et foretrukket valg for oppgaver med høy ytelse, selv om det betyr å håndtere en noe mer omstendelig syntaks for kompleks aritmetikk.

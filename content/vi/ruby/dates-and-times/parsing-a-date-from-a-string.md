@@ -15,12 +15,7 @@ title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xED t\u1EF1"
 weight: 30
 ---
 
-## Cái gì và Tại sao?
-
-Phân tích cú pháp ngày tức là dịch một chuỗi sang cái mà máy tính có thể hiểu—như một đối tượng ngày thực sự. Các lập trình viên làm việc này vì chúng tôi thường thu được ngày dưới dạng chuỗi từ các nguồn như form, file, hoặc web, và chúng tôi cần xử lý chúng theo cách có cấu trúc, đáng tin cậy.
-
 ## Làm thế nào:
-
 Ruby đã hỗ trợ bạn với thư viện `Date` của mình, giúp biến đổi chuỗi thành ngày cực kỳ dễ dàng. Chỉ đừng quên `require 'date'` trước khi bạn bắt đầu.
 
 ```ruby
@@ -43,7 +38,6 @@ end
 ```
 
 ## Tìm hiểu sâu hơn
-
 Trong quá khứ, Ruby ít khoan dung hơn đối với các định dạng ngày. Các lập trình viên phải thủ công vật lộn với chuỗi để trích xuất ngày. Bây giờ, `Date.parse` tự động phát hiện hầu hết các định dạng ngày phổ biến, và nếu nó bị nhầm lẫn, `Date.strptime` cho phép bạn chỉ định chính xác định dạng để tránh hiểu nhầm.
 
 Ngoài ra, nếu bạn đang xử lý dữ liệu ngày-giờ phức tạp hơn, `DateTime` có thể là lựa chọn của bạn, đặc biệt là để phân tích cả thời gian. Hơn nữa, đối với những người sử dụng ngoài thư viện chuẩn của Ruby, có gem `Chronic` do những người thông minh ở GitHub tạo ra, hiểu một loạt các biểu thức ngày bằng ngôn ngữ tự nhiên.
@@ -51,6 +45,5 @@ Ngoài ra, nếu bạn đang xử lý dữ liệu ngày-giờ phức tạp hơn,
 Phía dưới tất cả sự đơn giản này, việc phân tích cú pháp của Ruby thực sự được hỗ trợ bởi các mẫu định dạng ngày phù hợp với các phần khác nhau của chuỗi ngày với các yếu tố ngày tương ứng (năm, tháng, ngày, v.v.). Vì vậy, khi chuỗi của bạn không khớp với mẫu mong đợi, bạn sẽ cần phải thông báo cho Ruby với `strptime` và các hướng dẫn định dạng đúng.
 
 ## Xem thêm
-
 - Đối với những người hâm mộ múi giờ, tài liệu `ActiveSupport::TimeWithZone` trong Rails có thể thú vị: [https://api.rubyonrails.org/classes/ActiveSupport/TimeWithZone.html](https://api.rubyonrails.org/classes/ActiveSupport/TimeWithZone.html)
 - Gem Chronic cho phân tích cú pháp ngày bằng ngôn ngữ tự nhiên: [https://github.com/mojombo/chronic](https://github.com/mojombo/chronic)

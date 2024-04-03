@@ -12,9 +12,6 @@ title: Convirtiendo una fecha en una cadena de texto
 weight: 28
 ---
 
-## Qué y Por Qué?
-Convertir una fecha en una cadena permite presentar la información de forma legible para humanos y facilita su almacenamiento o uso en formatos como JSON. Los programadores hacen esto para mostrar fechas en aplicaciones, para intercambiar datos, y para lograr un formato consistente.
-
 ## Cómo Hacerlo:
 Encontrarás aquí ejemplos sobre cómo convertir una fecha a cadena en Lua:
 

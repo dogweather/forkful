@@ -11,12 +11,7 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-
-Error handling in your programs catches the things unforeseen that'll try to trip you up. You do it to keep your Arduino from having a meltdown when the unexpected occurs.
-
 ## How to:
-
 Let's say your Arduino's reading a sensor that may occasionally produce out-of-range values. Here's how you might handle that:
 
 ```Arduino
@@ -38,7 +33,6 @@ Error: Sensor value out of range.
 ```
 
 ## Deep Dive
-
 Error handling hasn't always been so straightforward. In the early days, developers often ignored errors, leading to the dreaded "undefined behavior." As programming evolved, so did the tools — you now have exceptions in many languages, but they’re still an old-school 'check-it-first' in the Arduino world due to hardware constraints and C++ roots.
 
 In Arduino programming, you often see `if-else` statements for error handling. But there are alternatives: using the `assert` function to stop execution if a condition fails or designing fail-safes within your hardware setup itself.
@@ -46,7 +40,6 @@ In Arduino programming, you often see `if-else` statements for error handling. B
 When implementing error handling, consider the impact of stopping the program versus allowing it to continue with a default or safe state. There's a trade-off, and the right choice depends on the potential harm of interruptions versus incorrect operation.
 
 ## See Also
-
 Brush up on error detection and handling with these:
 
 - Arduino Language Reference: https://www.arduino.cc/reference/en/

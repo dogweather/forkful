@@ -23,12 +23,7 @@ title: "\u30A6\u30A7\u30D6\u30DA\u30FC\u30B8\u306E\u30C0\u30A6\u30F3\u30ED\u30FC
 weight: 42
 ---
 
-## What & Why? (なにとなぜ?)
-
-ウェブページをダウンロードするってどういうこと？要するに、ウェブページの内容をインターネットから自分のコンピュータに持ってくることだ。プログラマがこれを行う理由？データ収集、コンテンツ解析、またはバックアップのため。
-
 ## How to: (方法)
-
 ```Python
 import requests
 
@@ -64,7 +59,6 @@ print(content)  # ターミナルに出力する、または必要ならファ�
 ```
 
 ## Deep Dive (詳細情報)
-
 ウェブページのダウンロードは古くから行われている。様々な方法があるけど、代表的なのは`requests`ライブラリを使う方法だ。`urllib`のような古いライブラリと比べ、`requests`はシンプルで扱いやすい。
 
 イレギュラーなケースには、`session`オブジェクトを使って状態を保持したり、エラーハンドリングのために`try-except`ブロックを使うなど工夫が必要。
@@ -72,7 +66,6 @@ print(content)  # ターミナルに出力する、または必要ならファ�
 ウェブスクレイピングの法的側面にも注意。ダウンロードは公開データに限るべきで、サーバに負担をかけないように配慮しなくてはならない。
 
 ## See Also (関連情報)
-
 - `requests` documentation: https://requests.readthedocs.io/en/latest/
 - Beautiful Soup for parsing HTML: https://www.crummy.com/software/BeautifulSoup/
 - Legal aspects of web scraping: https://www.eff.org/issues/coders/computer-programmers-and-reverse-engineering

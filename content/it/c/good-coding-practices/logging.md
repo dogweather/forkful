@@ -14,12 +14,7 @@ title: Registro degli Eventi
 weight: 17
 ---
 
-## Cosa & Perché?
-
-Il logging in C comporta la registrazione del flusso e degli eventi notevoli di un programma durante il suo runtime, fornendo una revisione tangibile del suo comportamento e delle sue prestazioni. I programmatori utilizzano il logging per scopi di debug, monitoraggio della salute del software e garanzia della sicurezza del sistema.
-
 ## Come fare:
-
 In C, il logging può essere ottenuto con operazioni su file di base o utilizzando librerie più sofisticate. Per semplicità, inizieremo con la libreria standard di I/O. I seguenti frammenti mostrano implementazioni di base del logging.
 
 Per registrare messaggi semplici:
@@ -95,7 +90,6 @@ Output in `detailed.log`:
 ```
 
 ## Approfondimento
-
 Come dimostrato, il logging in C si basa su semplici operazioni su file, che è efficace ma non potente o flessibile quanto le facilities di logging in altri linguaggi, come il modulo `logging` di Python o `Log4j` di Java. Per capacità di logging più avanzate in C, gli sviluppatori spesso si rivolgono a librerie come `syslog` su sistemi simili a Unix, che fornisce la gestione dei log a livello di sistema, o librerie di terze parti come `log4c`.
 
 Storicamente, il logging è stato una parte integrante della programmazione, risalente alle prime pratiche di programmazione dove il tracciamento e la comprensione del flusso del programma e degli errori erano principalmente fatti attraverso stampe fisiche. Con l'evoluzione dei sistemi, il logging è diventato più sofisticato, supportando ora vari livelli di gravità, rotazione dei log e logging asincrono.

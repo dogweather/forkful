@@ -14,12 +14,7 @@ title: "Impression de sortie de d\xE9bogage"
 weight: 33
 ---
 
-## Quoi & Pourquoi ?
-
-L'impression de sorties de débogage consiste à générer des messages de journal temporaires et informatifs qui peuvent aider les programmeurs à comprendre le flux et l'état d'un programme pendant son exécution. Les programmeurs font cela pour identifier et diagnostiquer les bugs logiciels ou les comportements inattendus dans la logique d'un programme.
-
 ## Comment faire :
-
 En C, la manière la plus courante d'imprimer une sortie de débogage est d'utiliser la fonction `printf` de la bibliothèque standard d’E/S. La fonction `printf` permet une sortie formatée vers le périphérique de sortie standard, typiquement l'écran. Voici un exemple simple :
 
 ```c
@@ -65,7 +60,6 @@ DEBUG : exemple.c:6 : La valeur de test est 10
 Notez que dans cet exemple, nous utilisons `fprintf` pour sortir vers le flux d'erreur standard (`stderr`), ce qui est souvent plus approprié pour les messages de débogage.
 
 ## Plongeon profond
-
 Historiquement, les techniques de débogage en C ont été manuelles et rudimentaires, en raison de la philosophie proche du matériel et de l'âge du langage. Tandis que les langages modernes pourraient inclure des bibliothèques de débogage sophistiquées ou s'appuyer fortement sur les fonctionnalités de l'Environnement de Développement Intégré (EDI), les programmeurs C ont souvent recours à l'insertion manuelle de déclarations d'impression comme celles montrées ci-dessus pour tracer l'exécution de leur programme.
 
 Une chose contre laquelle il faut mettre en garde avec les impressions de débogage est leur potentiel à encombrer la sortie et à conduire à des problèmes de performance, surtout si elles sont laissées involontairement dans le code de production. Pour ces raisons, l'utilisation de la compilation conditionnelle (par exemple, `#ifdef DEBUG ... #endif`) pourrait être une meilleure approche, permettant d'inclure ou d'exclure les déclarations de débogage en fonction des indicateurs de compilation.

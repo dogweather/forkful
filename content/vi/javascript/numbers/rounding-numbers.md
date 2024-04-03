@@ -14,9 +14,6 @@ title: "L\xE0m tr\xF2n s\u1ED1"
 weight: 13
 ---
 
-## Định Nghĩa & Lý Do?
-Làm tròn là việc cắt bỏ phần thừa sau một điểm nhất định trong số. Lập trình viên làm tròn để kiểm soát độ chính xác, quản lý bộ nhớ, hoặc tạo ra đầu ra thân thiện với người dùng—như biến 2.998 thành một con số sạch đẹp là 3.
-
 ## Cách thực hiện:
 Dưới đây là cách bạn làm tròn số trong JavaScript sử dụng `Math.round()`, `Math.ceil()`, và `Math.floor()`: 
 

@@ -12,9 +12,6 @@ title: HTML parsen
 weight: 43
 ---
 
-## Was & Warum?
-HTML zu parsen bedeutet, Daten aus HTML-Dokumenten zu extrahieren. Programmierer tun dies, um mit Webinhalten zu interagieren oder diese zu manipulieren, die Datenextraktion zu automatisieren oder für Web-Scraping-Zwecke.
-
 ## Wie:
 Lassen Sie uns HTML mit der `DOMParser`-API in JavaScript parsen.
 

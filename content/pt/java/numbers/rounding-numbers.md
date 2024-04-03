@@ -11,9 +11,6 @@ title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---
 
-## O Que & Por Quê?
-Arredondar números significa ajustá-los a um determinado grau de precisão. Programadores fazem isso para simplificar números para legibilidade, cumprir certas especificações, ou garantir que os cálculos se encaixem dentro de certos limites, como evitar erros de precisão na aritmética de ponto flutuante.
-
 ## Como fazer:
 Java oferece várias maneiras de arredondar números. Aqui está uma demonstração rápida com `Math.round()`, `BigDecimal` e `DecimalFormat`.
 

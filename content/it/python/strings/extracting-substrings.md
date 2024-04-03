@@ -10,9 +10,6 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## What & Why? (Cosa e Perché?)
-Estraendo sottostringhe si prelevano parti specifiche di una stringa. Programmatori fanno ciò per analizzare testi, pulire dati, o semplicemente isolare informazioni rilevanti.
-
 ## How to (Come Fare):
 Ecco alcuni modi per estrarre sottostringhe in Python:
 

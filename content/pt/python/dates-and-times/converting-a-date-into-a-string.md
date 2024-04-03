@@ -11,12 +11,7 @@ title: Convertendo uma data em uma string
 weight: 28
 ---
 
-## O Que é & Porquê?
-
-Converter uma data para uma string significa transformar um objeto que representa datas e horários em texto legível por humanos. Programadores fazem isso para exibir datas de forma amigável em interfaces ou para formatar antes de armazenar em textos ou bancos de dados.
-
 ## Como Fazer:
-
 ```Python
 from datetime import datetime
 
@@ -32,13 +27,11 @@ print(data_em_texto)
 ```
 
 ## Mergulho Profundo
-
 Historicamente, a manipulação de datas em programação sempre foi um desafio devido a variações como fusos horários e formatos locais. Em Python, `datetime` é o módulo pronta-entrega para trabalhar com datas e horas. O método `strftime` permite formatar essas informações de maneiras praticamente infinitas, seguindo directrizes que estabelecem como ano, mês, dia e hora são exibidos.
 
 Alternativamente, bibliotecas externas, como `arrow` e `pendulum`, oferecem funcionalidades ampliadas e podem ser mais intuitivas. Implementar a conversão de datas é simples graças aos métodos bem documentados de `datetime`, mas preste atenção para escapar das armadilhas comuns, como o esquecimento do tratamento dos fusos horários.
 
 ## Veja Também
-
 - Documentação oficial do módulo `datetime`: https://docs.python.org/3/library/datetime.html
 - Arrow: https://arrow.readthedocs.io
 - Pendulum: https://pendulum.eustace.io

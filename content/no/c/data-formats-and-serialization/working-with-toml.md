@@ -13,12 +13,7 @@ title: "\xC5 jobbe med TOML"
 weight: 39
 ---
 
-## Hva & Hvorfor?
-
-TOML (Toms Opplagte, Minimale Språk) er et konfigurasjonsfilformat som er lett å lese på grunn av sine klare semantikk. Programmerere bruker det for konfigurasjonsfiler i applikasjoner fordi dets enkelhet og menneskelesbarhet gjør det til et utmerket valg over formater som XML eller JSON i visse kontekster.
-
 ## Hvordan:
-
 For å arbeide med TOML i C, trenger du først et bibliotek som er i stand til å parse TOML-filer, ettersom C standardbiblioteket ikke inkluderer denne funksjonaliteten. Et populært valg er `tomlc99`, en lettvekts TOML-parser for C99. Her er en rask veiledning for å lese en enkel TOML-konfigurasjonsfil:
 
 Først, sørg for at du har installert `tomlc99` og riktig lenket det i prosjektet ditt.
@@ -82,7 +77,6 @@ Port 2: 8002
 ```
 
 ## Dypdykk
-
 TOML ble skapt av Tom Preston-Werner, medgrunnlegger av GitHub, som en respons på de begrensningene han oppfattet i andre konfigurasjonsfilformater. Målet er å være rett frem og entydig, både for mennesker og datamaskiner, å lese og skrive uten å trenge komplekse parseringsregler. I C-økosystemet, er ikke TOML en førsteklasses borger som det kanskje ville vært i høyere nivå språk som for eksempel Rust med sin `serde_toml` eller Python med `toml`, som har biblioteker med innebygd støtte. Snarere må C-utviklere stole på eksterne biblioteker som `tomlc99`, men dette er typisk gitt Cs vekt på minimalisme og ytelse.
 
 Selv om TOML er rost for sin klarhet, når man velger et konfigurasjonsfilformat, er det viktig å vurdere prosjektets behov. I scenarioer som krever mer komplekse strukturer eller interaktivitet med web-APIer, kan JSON eller til og med YAML tilby en bedre passform på tross av deres økte kompleksitet. TOML skinner i konfigurasjoner hvor lesbarhet og enkelhet er av største viktighet, ikke nødvendigvis der de mest avanserte datastrukturene trengs.

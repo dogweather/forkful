@@ -10,9 +10,6 @@ title: Calculando uma data no futuro ou passado
 weight: 26
 ---
 
-## O que é & por quê?
-Calcular uma data no futuro ou no passado é determinar um dia específico antes ou depois de uma data conhecida. Programadores fazem isso para agendar eventos, calcular prazos ou verificar períodos decorridos.
-
 ## Como fazer:
 ```Elm
 import Time exposing (Posix)

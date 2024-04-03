@@ -14,9 +14,6 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i dlaczego?
-W rozwoju oprogramowania często potrzebne jest sprawdzenie, czy katalog istnieje, aby unikać błędów podczas prób dostępu, odczytu lub zapisu plików. Rust, będący językiem programowania systemowego, zapewnia solidne metody wykonania tego zadania, gwarantując, że Twój program może bezpiecznie i efektywnie obsługiwać pliki i katalogi.
-
 ## Jak to zrobić:
 Standardowa biblioteka Rusta (`std`) zawiera funkcjonalność umożliwiającą sprawdzenie istnienia katalogu za pomocą modułów `std::path::Path` i `std::fs`. Oto prosty przykład użycia standardowego podejścia w Rust:
 

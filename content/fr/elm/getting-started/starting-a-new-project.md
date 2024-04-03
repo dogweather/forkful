@@ -11,9 +11,6 @@ title: Lancement d'un nouveau projet
 weight: 1
 ---
 
-## What & Why? (Quoi & Pourquoi ?)
-Lancer un nouveau projet en Elm, c'est créer un point de départ propre pour coder une appli web fonctionnelle et réactive. On fait ça pour structurer notre code dès le début et éviter la pagaille plus tard.
-
 ## How to: (Comment faire :)
 Pour commencer, installez Elm et créez votre projet :
 

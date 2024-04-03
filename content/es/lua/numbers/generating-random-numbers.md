@@ -12,12 +12,7 @@ title: "Generaci\xF3n de n\xFAmeros aleatorios"
 weight: 12
 ---
 
-## ¿Qué y Por Qué?
-
-Generar números aleatorios en programación se trata de producir valores numéricos impredecibles que se pueden usar para una variedad de propósitos, como simulaciones, juegos o aplicaciones de seguridad. Los programadores usan esta característica para introducir un elemento de incertidumbre o imitar la variabilidad de la vida real en sus proyectos.
-
 ## Cómo hacerlo:
-
 Lua proporciona soporte integrado para generar números aleatorios a través de la función `math.random`. Esta función se puede utilizar de múltiples maneras, dependiendo del resultado deseado:
 
 1. **Generar un número flotante aleatorio entre 0 y 1:**
@@ -42,7 +37,6 @@ La salida de muestra podría ser `7`. De nuevo, la salida variará con cada ejec
 Es crucial establecer la semilla con `math.randomseed` porque sin ella, `math.random` podría generar la misma secuencia de números cada vez que se ejecuta un programa. Típicamente, sembrar con la hora actual, `os.time()`, asegura diferentes secuencias por ejecución.
 
 ## Análisis Profundo
-
 El mecanismo subyacente a la generación de números aleatorios en Lua (y en la mayoría de los lenguajes de programación) no es verdaderamente aleatorio, sino pseudoaleatorio, generado por un algoritmo. Estos generadores de números pseudoaleatorios (PRNGs) son deterministas y requieren un valor de semilla para comenzar la secuencia de generación de números. La elección de la semilla es crucial para la calidad de la aleatoriedad, razón por la cual el uso de la hora actual es una práctica común.
 
 Históricamente, las capacidades de generación de números aleatorios de Lua han evolucionado. Las versiones anteriores dependían de la función `rand()` de la biblioteca estándar de C, que variaba en calidad y rendimiento a través de las implementaciones. La versión actual de Lua mejora esto al posiblemente usar mecanismos más robustos dependiendo de la plataforma subyacente, ofreciendo una mayor consistencia y utilidad en la generación de números aleatorios.

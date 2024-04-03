@@ -10,9 +10,6 @@ title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---
 
-## Qué es y por qué?
-Comparar dos fechas es verificar si son iguales, cuál es anterior o cuál es posterior. Programadores lo hacen para manejar eventos, validar periodos, organizar cronogramas y más.
-
 ## Cómo hacerlo:
 Comparar fechas en Haskell es sencillo con la librería `time`. Primero, importa `Data.Time`:
 

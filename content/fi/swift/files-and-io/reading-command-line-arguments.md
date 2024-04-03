@@ -11,9 +11,6 @@ title: Komennoriviparametrien lukeminen
 weight: 23
 ---
 
-## What & Why? (Mitä & Miksi?)
-Komennon rivin argumentit ovat ohjelmalle syötettyjä tietoja, joita käsitellään sen käynnistyessä. Ohjelmoijat käyttävät niitä mukauttaakseen ohjelman käyttäytymistä ilman koodin muuttamista.
-
 ## How to: (Miten:)
 Swiftissä komentorivin argumentit luetaan `CommandLine`-luokan avulla. Tässä yksinkertainen esimerkki:
 

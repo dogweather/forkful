@@ -11,9 +11,6 @@ title: Merkkijonon interpolointi
 weight: 8
 ---
 
-## What & Why? (Mitä & Miksi?)
-Stringien interpolointi tarkoittaa muuttujien ja lausekkeiden upottamista suoraan merkkijonoihin. Ohjelmoijat käyttävät sitä koodin selkeyttämiseen ja dynaamisten tekstisisältöjen luomiseen.
-
 ## How to: (Kuinka tehdä:)
 Arduino ei suoraan tue stringien interpolointia, mutta voit saavuttaa saman vaikutuksen `sprintf`-funktiolla tai liittämällä merkkijonoja yhteen.
 

@@ -11,9 +11,6 @@ title: Teilstrings extrahieren
 weight: 6
 ---
 
-## Was & Warum?
-Extrahieren von Teilstrings bedeutet, bestimmte Teile aus einem längeren String herauszutrennen. Programmierer nutzen das, um Daten zu manipulieren, zu analysieren oder einfach spezifische Informationen aus einer größeren Menge von Text zu gewinnen.
-
 ## So geht's:
 ```Lua
 -- Einen String definieren

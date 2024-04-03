@@ -11,9 +11,6 @@ title: "Att p\xE5b\xF6rja ett nytt projekt"
 weight: 1
 ---
 
-## What & Why? (Vad & Varför?)
-Att starta ett nytt projekt är att skapa en tom duk för att koda något från grunden. Programmerare gör detta för att omsätta idéer i verklighet, lösa problem eller lära sig nya tekniker.
-
 ## How to: (Hur man gör:)
 Att starta ett nytt projekt kan vara så enkelt som att skapa en ny mapp och fil, eller det kan involvera verktyg som hjälper dig att organisera och strukturera din kod. Här är några kodsnuttar som visar grunderna:
 

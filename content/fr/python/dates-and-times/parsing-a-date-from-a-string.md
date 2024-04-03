@@ -14,9 +14,6 @@ title: "Analyser une date depuis une cha\xEEne de caract\xE8res"
 weight: 30
 ---
 
-## Quoi & Pourquoi ?
-Analyser une date à partir d'une chaîne de caractères consiste à convertir des informations textuelles sur la date et l'heure en un objet datetime ou un format structuré équivalent. Cette opération est couramment effectuée pour permettre des opérations arithmétiques sur les dates, des comparaisons et des mises en forme d'une manière qui soit indépendante de la langue et de la région. Les programmeurs le font pour manipuler efficacement et gérer les données temporelles extraites de journaux, d'entrées utilisateur ou de sources externes.
-
 ## Comment faire :
 La bibliothèque standard de Python fournit le module `datetime`, qui inclut la méthode `strptime` à cet effet. La méthode nécessite deux arguments : la chaîne de caractères de la date et une directive de format qui spécifie le motif de la chaîne d'entrée.
 

@@ -13,9 +13,6 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## ¿Qué y por qué?
-Escribir pruebas en Swift implica crear y ejecutar código que verifica la corrección de otras unidades de código en tu aplicación. Los programadores lo hacen para asegurar la fiabilidad, detectar errores temprano en el ciclo de desarrollo y facilitar la futura refactorización del código sin consecuencias no intencionadas.
-
 ## Cómo hacerlo:
 Swift soporta las pruebas a través de su marco XCTest, el cual está integrado en Xcode. Puedes escribir pruebas unitarias para verificar partes individuales de tu código, por ejemplo, una función que calcula la suma de dos números.
 

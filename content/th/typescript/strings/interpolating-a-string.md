@@ -30,12 +30,7 @@ title: "\u0E01\u0E32\u0E23\u0E41\u0E17\u0E23\u0E01\u0E04\u0E48\u0E32\u0E25\u0E07
 weight: 8
 ---
 
-## อะไรและทำไม?
-
-การแทรกตัวแปรและนิพจน์เข้าไปในสตริง (String interpolation) ช่วยให้คุณฝังตัวแปรและนิพจน์ลงในสตริงได้ ทำให้โค้ดของคุณอ่านง่ายและยืดหยุ่น - ไม่ต้องใช้เครื่องหมายบวก, ไม่ยุ่งยาก, ไม่วุ่นวาย
-
 ## วิธีการ:
-
 เพื่อแทรกสตริงใน TypeScript, คุณใช้เครื่องหมาย backticks `` ` `` และ syntax `${expression}`:
 
 ```TypeScript
@@ -49,7 +44,6 @@ console.log(greeting);  // ผลลัพธ์: Hi, I'm Charlie and I'm 27 yea
 ```
 
 ## ดำดิ่งลงไป:
-
 การแทรกสตริงไม่ได้มีอยู่เฉพาะใน TypeScript; แต่ยังมีใน JavaScript ตั้งแต่ ES6 และหลายภาษาอื่นๆ ก่อนหน้านี้, เราใช้วิธีเชื่อมต่อสตริงด้วยเครื่องหมาย `+`, ซึ่งดูเหมือนนี้:
 
 ```TypeScript
@@ -63,7 +57,6 @@ let greeting = 'Hi, I\'m ' + user + ' and I\'m ' + age + ' years old.';
 ทางเลือกในการแทรกนอกจากนี้อาจเป็นการใช้ฟังก์ชันเทมเพลตหรือไลบรารี่, แต่สำหรับกรณีส่วนใหญ่, การแทรกด้วย backticks เป็นเครื่องมือที่สะดวกที่สุดสำหรับงานนี้
 
 ## ดูเพิ่มเติมที่:
-
 - [เครือข่ายนักพัฒนาของ Mozilla เกี่ยวกับ Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 - [เอกสารการใช้งาน TypeScript](https://www.typescriptlang.org/docs/)
 - [คุณสมบัติและไวยากรณ์ของ ES6](http://es6-features.org/#StringInterpolation)

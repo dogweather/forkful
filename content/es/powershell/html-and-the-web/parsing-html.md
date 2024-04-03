@@ -11,9 +11,6 @@ title: "An\xE1lisis de HTML"
 weight: 43
 ---
 
-## Qué y Por Qué?
-El parseo de HTML implica descomponer el código HTML en componentes para manipularlo o extraer información específica. Los programadores lo hacen para interactuar con sitios web, extraer datos, automatizar tareas de navegación o realizar pruebas.
-
 ## Cómo hacerlo:
 En PowerShell, puedes utilizar la librería `HtmlAgilityPack` para parsear HTML de manera sencilla. A continuación se muestra cómo instalar la librería y un ejemplo de uso.
 

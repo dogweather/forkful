@@ -11,9 +11,6 @@ title: Odczytywanie pliku tekstowego
 weight: 22
 ---
 
-## What & Why? (Co i Dlaczego?)
-Czytanie pliku tekstowego to pobieranie jego zawartości do pamięci dla dalszej obróbki. Programiści robią to codziennie, by np. wczytywać konfiguracje, analizować dane lub przetwarzać logi.
-
 ## How to: (Jak to zrobić:)
 ```PowerShell
 # Wczytanie całego pliku

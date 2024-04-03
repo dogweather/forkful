@@ -15,9 +15,6 @@ title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---
 
-## Cái gì và Tại sao?
-Đọc một tệp văn bản có nghĩa là kéo nội dung của nó vào một hình thức mà chương trình của bạn có thể làm việc với. Các lập trình viên thực hiện việc này để xử lý dữ liệu, cấu hình, ghi nhật ký – bất cứ khi nào một tệp có thể đọc được bởi con người được liên quan.
-
 ## Làm thế nào:
 Hãy bắt đầu với những điều cơ bản! Dưới đây là cách bạn đọc từ một tệp văn bản trong PowerShell:
 

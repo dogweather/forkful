@@ -11,12 +11,7 @@ title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---
 
-## Vad & Varför?
-
-Att beräkna datum i framtiden eller förflutna innebär att du räknar ut ett exakt datum före eller efter en specifik punkt i tiden. Programmerare gör detta för att hantera bokningar, påminnelser, tidsbaserade händelser eller för att spåra hur lång tid något har tagit.
-
 ## Hur man gör:
-
 Java inbyggda klasser som `LocalDate` och `Period` gör det enkelt. Kolla in koden:
 
 ```java
@@ -45,7 +40,6 @@ Datum för fem dagar sedan: 2023-04-11
 ```
 
 ## Fördjupning:
-
 Förr använde Java `Date` och `Calendar` för tiddatumhantering. De var mutable och inte tidssäkra. Sedan Java 8 använder vi `LocalDate`, `LocalTime`, och `LocalDateTime` i `java.time`-paketet – de är omutbara och trådsäkra.
 
 Ett alternativ är att använda `java.util.Calendar` för äldre Java-versioner, men det är knöligare och mer felbenäget. Joda-Time var en populär tredjepartsbibliotek före Java 8, men nu är `java.time` att föredra.
@@ -53,7 +47,6 @@ Ett alternativ är att använda `java.util.Calendar` för äldre Java-versioner,
 Detaljer i implementationen att notera är tidszonshantering (`ZonedDateTime`), och formatanpassning med `DateTimeFormatter` om du behöver visa datumen på olika sätt.
 
 ## Se även:
-
 - Java-dokumentation för `LocalDate`: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
 - Oracle's tutorial om datum och tid: https://docs.oracle.com/javase/tutorial/datetime/
 - ISO 8601 Datum och tidsstandarder: https://www.iso.org/iso-8601-date-and-time-format.html

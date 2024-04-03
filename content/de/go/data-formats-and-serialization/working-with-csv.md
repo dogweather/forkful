@@ -13,16 +13,10 @@ title: Arbeiten mit CSV
 weight: 37
 ---
 
-## Was & Warum?
-
-Das Format der durch Kommas getrennten Werte (CSV) ist aufgrund seiner Einfachheit und der einfachen Integration in die meisten Programmiersprachen, einschließlich Go, allgegenwärtig für den Datenaustausch. Programmierer arbeiten oft mit CSV-Dateien für die Datenmigration, die Generierung von Berichten oder die Datenanalyse, was das Verständnis der CSV-Manipulation zu einem kritischen Bestandteil in einem Softwareentwicklungs-Toolkit macht.
-
 ## Wie geht das:
-
 Mit CSV-Dateien in Go zu arbeiten, ist dank der Standardbibliothek `encoding/csv` unkompliziert. Im Folgenden finden Sie eine Einführung in das Lesen und Schreiben von CSV-Dateien.
 
 ### Ein CSV-Datei lesen
-
 Um aus einer CSV-Datei zu lesen, öffnen Sie zuerst die Datei mit `os.Open` und erstellen dann einen neuen CSV-Leser mit `csv.NewReader`.
 
 ```go
@@ -55,7 +49,6 @@ func main() {
 Dieser Codeausschnitt liest alle Datensätze aus `data.csv` und druckt sie aus. Jeder Datensatz ist ein Slice von Feldern.
 
 ### In eine CSV-Datei schreiben
-
 Zum Schreiben verwenden Sie `csv.NewWriter` und `writer.WriteAll` oder `writer.Write` für das Schreiben von mehreren oder einzelnen CSV-Datensätzen.
 
 ```go
@@ -91,7 +84,6 @@ func main() {
 Dies erstellt eine Datei namens `output.csv` mit den bereitgestellten Datensätzen. Denken Sie immer daran, den Schreiber zu flushen, um sicherzustellen, dass alle gepufferten Daten in die Datei geschrieben werden.
 
 ## Tiefergehend
-
 Das Go-`encoding/csv`-Paket bietet robuste Unterstützung für das Lesen und Schreiben von CSV-Dateien, ist jedoch mit Einfachheit im Sinn konzipiert, was bedeutet, dass es komplexere Szenarien wie die automatische Erkennung von Trennzeichen, den Umgang mit Anführungszeichen oder eingebettete Zeilenumbrüche in Feldern ohne manuelle Handhabung nicht bewältigt.
 
 Historisch gesehen war die CSV-Handhabung in Programmiersprachen oft umständlich aufgrund dieser Komplexitäten, aber Go's Standardbibliothek abstrahiert viele dieser Probleme, was Entwicklern erlaubt, mit CSV-Daten mit relativer Leichtigkeit zu arbeiten. Für komplexere CSV-Manipulationen könnten jedoch Drittanbieterbibliotheken wie `gocsv` oder manuelles Parsen notwendig sein.

@@ -11,9 +11,6 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## What & Why? - Mikä ja Miksi?
-Uuden projektin aloittaminen Elm:ssä tarkoittaa perustan luontia, josta projektisi kasvaa. Koodaajat aloittavat uusia projekteja vaaliakseen uusia ideoita ja ratkaisuja ongelmiin.
-
 ## How to: - Kuinka tehdään:
 ```Elm
 -- Uuden Elm-projektin pystyttäminen:

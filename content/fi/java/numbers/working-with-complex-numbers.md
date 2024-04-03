@@ -11,12 +11,7 @@ title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---
 
-## Mikä & Miksi?
-
-Kompleksiluvut laajentavat reaalilukusuoraa lisäämällä imaginaariyksikön, `i`, missä `i^2 = -1`. Ne ovat keskeisiä aloilla kuten insinööritiede, fysiikka ja edistynyt matematiikka, missä ne mallintavat ilmiöitä, joita reaaliluvut eivät voi käsitellä, kuten sähkövirtoja ja signaalinkäsittelyä.
-
 ## Kuinka:
-
 Javalla ei ole sisäänrakennettua tukea kompleksiluvuille, mutta voimme luoda oman luokkamme tai käyttää kirjastoa. Tässä on nopea esimerkki siitä, miten luoda yksinkertainen `ComplexNumber` luokka ja käyttää sitä:
 
 ```java
@@ -56,7 +51,6 @@ Summa: 3.0 + 7.0i
 ```
 
 ## Syväluotaus
-
 Ennen korkeamman tason kieliä, kuten Javaa, ohjelmoijat työskentelivät suoraan matematiikkakirjastojen kanssa kielissä, kuten Fortran tai C, hallitakseen kompleksisia operaatioita. Konsepti juontaa juurensa 1500-luvulle, ja sen kreditoivat matemaatikot kuten Gerolamo Cardano ja Rafael Bombelli.
 
 Javassa, `java.lang.Math` on menotapa oleellisiin, mutta se jättää kompleksiluvut huomiotta, todennäköisesti koska jokainen ohjelmoija ei käytä niitä. Vaihtoehdot? Käytä kirjastoja. Apache Commons Math tarjoaa `Complex` luokan, joka on pakattu metodeilla manipulointia varten. Tässä on kuitenkin syy, miksi oman luokan tekeminen on siistiä: Kevyt, räätälöity tarkasti tarpeisiisi, eikä kirjaston ylikuormitusta.
@@ -64,7 +58,6 @@ Javassa, `java.lang.Math` on menotapa oleellisiin, mutta se jättää kompleksil
 Yksi tärkeä yksityiskohta: varo liukulukutarkkuutta. Tietokoneet eivät pysty esittämään joitakin numeroita tarkasti, mikä johtaa pyöristysvirheisiin. Suorittaessa toistuvia kompleksisia operaatioita, nämä virheet voivat kumuloitua!
 
 ## Katso Myös
-
 Syvempiin sukelluksiin ja monimutkaisempiin operaatioihin, tutki:
 
 - [Apache Commons Math](https://commons.apache.org/proper/commons-math/)

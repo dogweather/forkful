@@ -16,12 +16,7 @@ title: "So s\xE1nh hai ng\xE0y"
 weight: 27
 ---
 
-## Cái gì & Tại sao?
-
-So sánh hai ngày nghĩa là kiểm tra chúng có mối quan hệ như thế nào—một ngày có sớm hơn, muộn hơn, hay chính xác cùng một thời điểm với ngày kia không. Lập trình viên làm việc này để xử lý lịch trình, xác minh tuổi, kích hoạt sự kiện, và nhiều hơn nữa—cơ bản là bất kỳ khi nào chúng ta cần đo lường sự khác biệt thời gian hoặc sắp xếp các sự kiện theo trình tự.
-
 ## Cách thực hiện:
-
 Hãy cùng nhau tìm hiểu về C# cho việc so sánh ngày. Giả sử chúng ta có hai đối tượng `DateTime`, `date1` và `date2`. Chúng tôi so sánh bằng cách dùng `DateTime.Compare(date1, date2)`, `date1.CompareTo(date2)`, hoặc so sánh trực tiếp các thuộc tính:
 
 ```C#
@@ -60,7 +55,6 @@ else
 Kết quả sẽ cho thấy `date1` sớm hơn `date2` trong tất cả các phép so sánh—bạn đang làm rõ điều hiển nhiên, nhưng đó là mục đích của các bản ghi.
 
 ## Sâu hơn nữa
-
 So sánh DateTime đã là một phần của C# kể từ khi nó ra đời, quan trọng cho việc xử lý khái niệm về thời gian luôn quan trọng. Nội bộ, giá trị `DateTime` đại diện cho số lần nhấp từ nửa đêm, ngày 1 tháng 1, năm 0001, trong Common Language Runtime.
 
 Muốn thử cái khác? Bạn có thể sử dụng `TimeSpan` để tìm sự khác biệt, hoặc thử nghiệm với NodaTime, một thư viện của Jon Skeet cho việc xử lý ngày và giờ phức tạp hơn.
@@ -68,7 +62,6 @@ Muốn thử cái khác? Bạn có thể sử dụng `TimeSpan` để tìm sự 
 Đây là một sự thật thú vị về kỹ thuật: các loại `DateTime` trong .NET có thể là `Unspecified`, `Utc`, hoặc `Local`. So sánh thời gian UTC với thời gian địa phương? Điều đó mang lại rắc rối. Luôn đảm bảo loại trùng khớp để tránh logic sai lệch!
 
 ## Xem thêm
-
 Hãy đào sâu hoặc làm rõ các vấn đề với những tài liệu sau:
 
 - Tài liệu DateTime của Microsoft: https://docs.microsoft.com/en-us/dotnet/api/system.datetime

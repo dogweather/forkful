@@ -12,9 +12,6 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---
 
-## Vad & Varför?
-HTTP-förfrågningar med grundläggande autentisering innebär att man skickar användarnamn och lösenord i klartext, kodat i Base64, för att bevisa sin identitet. Programmerare använder det för att få åtkomst till skyddade resurser på ett enkelt och direkt sätt.
-
 ## Hur man gör:
 Här är ett exempel med hjälp av Invoke-RestMethod:
 

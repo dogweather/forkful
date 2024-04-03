@@ -10,9 +10,6 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## What & Why?
-Nedlasting av en nettside betyr å hente kildekoden for siden til din datamaskin. Programmerere gjør dette for å analysere innholdet, automatisere datainnsamling eller sjekke tilgjengeligheten til en nettside.
-
 ## How to:
 I PowerShell kan du laste ned en nettside med `Invoke-WebRequest`. Sjekk ut dette eksemplet:
 

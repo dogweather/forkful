@@ -11,9 +11,6 @@ title: "Interaktiivisen komentotulkin (REPL) k\xE4ytt\xF6"
 weight: 34
 ---
 
-## Mikä & Miksi?
-REPL tarkoittaa Lue-Arvo-Tulosta-Toista -silmukkaa, yksinkertaista, interaktiivista ohjelmointiympäristöä. Koodaajat käyttävät sitä kirjoittaakseen ja testatakseen koodia nopeasti, kokeillakseen syntaksia ja oppiakseen ohjelmointikonsepteja ilman kokonaisten sovellusten luomisen ja suorittamisen vaivaa.
-
 ## Kuinka:
 Bashissa terminaalisi on käytännössä REPL. Kirjoitat komennon; se lukee sen, arvioi sen, tulostaa tuloksen ja palaa takaisin odottamaan seuraavaa komentoasi. Tässä on esimerkki Bashin käyttämisestä REPL:nä:
 

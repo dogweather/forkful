@@ -10,11 +10,7 @@ title: Calculando la longitud de una cadena
 weight: 7
 ---
 
-## Qué y Por Qué?
-Encontrar la longitud de una cadena significa saber cuántos caracteres contiene. Los programadores lo hacen para validar entradas, manipular texto o simplemente para obtener información sobre los datos con los que trabajan.
-
 ## Cómo hacerlo:
-
 ```Lua
 local texto = "Hola Mundo"
 local longitud = #texto
@@ -51,7 +47,6 @@ Además, Lua soporta también cadenas que contienen ceros que no actúan como te
 Si tienes una tabla que representa una cadena (por ejemplo, cada carácter es un elemento en la tabla), usarás `table.getn()` o `#` para obtener la "longitud" de esa tabla.
 
 ## Ver También
-
 - Documentación oficial de Lua - Strings: https://www.lua.org/manual/5.4/manual.html#6.4
 - Tutorial de Lua - Strings: https://www.tutorialspoint.com/lua/lua_strings.htm
 - Foro de preguntas y respuestas de Lua, para aclarar dudas sobre cadenas: https://stackoverflow.com/questions/tagged/lua+string

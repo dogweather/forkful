@@ -16,9 +16,6 @@ title: Sattumanvaraisten numeroiden generointi
 weight: 12
 ---
 
-## Mitä & Miksi?
-Satunnaislukujen generointi Elm-kielessä vaatii `Random`-moduulin käyttöä pseudo-satunnaislukujen tuottamiseen, jotka ovat hyödyllisiä monenlaisissa tehtävissä kuten peleissä, simulaatioissa ja jopa algoritmeissä, jotka vaativat stokastisia prosesseja. Tämä ominaisuus mahdollistaa kehittäjille lisätä arvaamattomuutta ja monimuotoisuutta sovelluksiinsa, parantaen käyttäjäkokemusta ja toiminnallisuutta.
-
 ## Kuinka:
 Elmin puhtaasti funktionaalinen luonne tarkoittaa, että et voi generoida satunnaislukuja suoraan kuten imperatiivisissa kielissä. Sen sijaan käytät `Random`-moduulia yhdessä komentojen kanssa. Tässä on perusesimerkki, joka generoi satunnaisen kokonaisluvun väliltä 1 ja 100.
 

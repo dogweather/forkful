@@ -11,9 +11,6 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## Co i Dlaczego?
-Usuwanie znaków pasujących do wzorca to filtracja stringów, żeby pasowały do naszych danych lub były praktyczne. Robimy to, by oczyścić tekst z niepotrzebnych treści, jak znaki specjalne czy białe znaki.
-
 ## Jak to zrobić:
 ```java
 import java.util.regex.Pattern;

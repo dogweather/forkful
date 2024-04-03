@@ -14,16 +14,10 @@ title: "Ty\xF6skentely JSON:n kanssa"
 weight: 38
 ---
 
-## Mikä ja miksi?
-
-Työskentely JSON-muotoisten merkkijonojen (JavaScript Object Notation) kanssa sisältää JSON-muotoisten merkkijonojen jäsentämisen Python-objekteiksi ja päinvastoin. Tämä on ratkaisevan tärkeää web- ja API-kehityksessä, koska JSON toimii yleiskielenä palvelinten ja asiakkaiden välisen datan vaihdossa.
-
 ## Kuinka:
-
 Pythonin sisäänrakennettu `json`-kirjasto yksinkertaistaa enkoodausprosessia (Python-objektien muuntaminen JSON-muotoon) ja dekoodausta (JSONin muuntaminen Python-objekteiksi). Näin voit käyttää sitä:
 
 ### Python-objektien enkoodaus JSON-muotoon:
-
 ```python
 import json
 
@@ -62,7 +56,6 @@ print(json_string)
 ```
 
 ### JSONin dekoodaus Python-objekteiksi:
-
 ```python
 json_string = '''
 {
@@ -101,11 +94,9 @@ print(data)
 ```
 
 ### Kolmansien osapuolien kirjastojen käyttö:
-
 Monimutkaisemmissa JSON-käsittelyissä, kuten skeemavalidaatiossa tai JSON-tiedostojen jäsentämisessä suoraan URL-osoitteista, voi olla hyödyllistä käyttää kirjastoja kuten `requests` HTTP-pyyntöihin ja `jsonschema` validaatioon.
 
 #### Esimerkki `requests`-kirjaston kanssa JSONin jäsentämiseen URL:sta:
-
 ```python
 import requests
 
@@ -118,7 +109,6 @@ print(data)
 Tämä koodinpätkä noutaa JSON-dataa annetusta URL-osoitteesta ja muuntaa sen suoraan Python-objektiksi.
 
 #### `jsonschema`-kirjaston käyttö JSONin validaatioon:
-
 Asenna ensin kirjasto pip:n kautta:
 
 ```bash

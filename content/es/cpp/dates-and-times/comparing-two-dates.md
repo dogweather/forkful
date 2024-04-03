@@ -11,9 +11,6 @@ title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---
 
-## Qué y Por Qué?
-Comparar dos fechas significa verificar si son iguales, cuál es anterior o posterior. Los programadores lo hacen para rastrear eventos, validar períodos de tiempo, o controlar vigencias.
-
 ## Cómo:
 ```C++
 #include <iostream>

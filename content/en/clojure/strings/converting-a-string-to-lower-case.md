@@ -10,9 +10,6 @@ title: Converting a string to lower case
 weight: 4
 ---
 
-## What & Why?
-Converting a string to lower case means transforming all the characters in the text to their lower-case variants, such as turning "Hello, World!" into "hello, world!". Programmers do this for consistency, especially in tasks like comparing user input where case shouldn't matter.
-
 ## How to:
 In Clojure, to convert a string to lower case, you'll use the `clojure.string/lower-case` function. Look how simple it is:
 

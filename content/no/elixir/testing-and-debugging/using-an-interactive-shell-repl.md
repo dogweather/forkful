@@ -10,9 +10,6 @@ title: Bruke et interaktivt skall (REPL)
 weight: 34
 ---
 
-## Hva & Hvorfor?
-En interaktiv skall, eller REPL (Read-Eval-Print Loop), lar deg prøve ut kodebiter i sanntid. Elixir-programmerere bruker REPL, kalt IEx (Interaktiv Elixir), for eksperimentering, feilsøking og læring av språket.
-
 ## Hvordan:
 For å starte IEx, åpne terminalen din og skriv `iex`. Her er en smakebit:
 

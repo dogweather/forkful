@@ -12,12 +12,7 @@ title: Twee datums vergelijken
 weight: 27
 ---
 
-## Wat & Waarom?
-
-Het vergelijken van twee datums betekent controleren of ze gelijk zijn, of uitzoeken welke eerder of later komt. Programmeurs doen dit om gebeurtenissen bij te houden, reserveringen te beheren, tijdlijnen te sorteren en bij elke taak waar de volgorde van tijd belangrijk is.
-
 ## Hoe te:
-
 Ruby vereenvoudigt ons leven met de Date klasse. Laten we het in actie zien.
 
 ```ruby
@@ -35,7 +30,6 @@ puts datum1 >= Date.today # Uitvoer: afhankelijk van de datum van vandaag
 ```
 
 ## Diepere duik
-
 Datumvergelijking is niet nieuw. Het is fundamenteel, net als het vergelijken van gehele getallen, maar lastiger omdat datums onderdelen hebben—dagen, maanden, jaren. In Ruby draagt de Date klasse (uit de standaardbibliotheek) het gewicht, en houdt rekening met maanden, schrikkeljaren, enz.
 
 Je hebt de basisvergelijkingen gezien: `==`, `!=`, `<`, `>`, `<=`, `>=`. Maar Ruby heeft meer achter de hand.
@@ -56,7 +50,6 @@ Alternatieven voor de Date klasse zijn:
 Vergelijkingen worden snel complex. Wat als je plant en datumbereiken moet vergelijken, of terugkerende evenementen moet afhandelen? Hogere abstracties gebouwd op Ruby's Date en Time zijn vaak nodig. ActiveRecord's `between?` methode of gems zoals 'IceCube' voor terugkerende evenementen kunnen veel tijd en hoofdpijn besparen.
 
 ## Zie ook
-
 - ActiveSupport's uitbreidingen: [Active Support Core Extensions](https://edgeguides.rubyonrails.org/active_support_core_extensions.html)
 - 'IceCube' gem voor terugkerende evenementen: [IceCube](https://github.com/seejohnrun/ice_cube)
 - Uitgebreide gids voor tijdzones in Ruby: [Gidsen voor tijdzones](https://thoughtbot.com/blog/its-about-time-zones)

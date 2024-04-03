@@ -11,12 +11,7 @@ title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---
 
-## O Que é & Por Que?
-
-Imprimir saídas de debug é basicamente escrever informações sobre o que está acontecendo dentro do código enquanto ele é executado. Programadores fazem isso para entender e resolver problemas – sim, somos detetives digitais.
-
 ## Como Fazer:
-
 Para imprimir algo na tela, use `echo` ou `printf`. O `echo` é simples e direto, enquanto `printf` é mais flexível para formatar a saída.
 
 ```Bash
@@ -53,7 +48,6 @@ Outra linha.
 ```
 
 ## Aprofundando:
-
 O `echo` já existe desde os primórdios dos shells Unix. O `printf`, por sua vez, vem da linguagem C e oferece mais controle sobre o formato. Há também os comandos `stderr` e `stdout` que direcionam para saídas de erro e saída padrão, respectivamente, que podem ser úteis para separar logs de erro dos normais.
 
 Alternativas incluem o uso de ferramentas como o `tee` para escrever em múltiplos destinos e o uso de frameworks de logging que oferecem mais complexidade e controle para aplicações grandes.
@@ -61,7 +55,6 @@ Alternativas incluem o uso de ferramentas como o `tee` para escrever em múltipl
 Quando falar de implementação, certifique-se de limpar ou comentar os `echo` ou `printf` que usou para debug antes de passar o código para produção. Isso mantém o código limpo e evita vazamento de informação sensível.
 
 ## Veja Também:
-
 - A [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/) fornece uma visão mais detalhada sobre o scripting em Bash.
 - A documentação oficial do [GNU Bash](https://www.gnu.org/software/bash/manual/) é útil para entender todas as funcionalidades disponíveis.
 - Para boas práticas de desenvolvimento, o [Google's Shell Style Guide](https://google.github.io/styleguide/shellguide.html) é um ótimo ponto de partida.

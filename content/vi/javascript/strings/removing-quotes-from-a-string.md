@@ -17,9 +17,6 @@ title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---
 
-## Cái gì & Tại sao?
-Loại bỏ dấu ngoặc kép khỏi một chuỗi có nghĩa là bỏ đi những dấu ngoặc kép phiền phức có thể làm rối tung code của bạn, đặc biệt khi bạn đang phân tích dữ liệu hoặc xây dựng các đối tượng JSON. Các lập trình viên thực hiện điều này để làm sạch đầu vào, tránh lỗi cú pháp, và khiến cho chuỗi hợp tác tốt với các phần khác của code.
-
 ## Cách thức:
 Hãy tưởng tượng bạn có một chuỗi được bao bởi dấu ngoặc kép, như `"\"Hello, World!\""` và bạn muốn văn bản nguyên bản, không dấu ngoặc. Dưới đây là một đoạn mã JavaScript nhanh để giải phóng chuỗi của bạn khỏi những "xiềng xích" dấu ngoặc đó:
 

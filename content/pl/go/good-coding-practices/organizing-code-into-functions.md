@@ -13,12 +13,7 @@ title: Organizowanie kodu w funkcje
 weight: 18
 ---
 
-## Co i dlaczego?
-
-Organizowanie kodu w funkcje w Go polega na dzieleniu kodu na ponownie używalne, modularne bloki, które wykonują określone zadania. Podejście to poprawia czytelność kodu, ułatwia jego utrzymanie i wspomaga współpracę zespołową, umożliwiając programistom pracę nad różnymi funkcjami równocześnie.
-
 ## Jak to zrobić:
-
 W Go definiujesz funkcję za pomocą słowa kluczowego `func`, po którym następuje nazwa funkcji, parametry (jeśli są) oraz typ zwracany. Zilustrujmy to na prostym przykładzie:
 
 ```go
@@ -73,7 +68,6 @@ func main() {
 ```
 
 ## Pogłębiona analiza
-
 Koncepcja organizowania kodu w funkcje nie jest specyficzna tylko dla Go - to fundamentalna zasada programowania. Jednakże, Go wprowadza pewne konwencje i możliwości, które odróżniają zarządzanie funkcjami w tym języku. Na przykład, możliwość zwracania wielu wartości z funkcji jest stosunkowo unikalna i może prowadzić do czystszych, bardziej zrozumiałych kodów, szczególnie przy operacjach, które tradycyjnie wymagałyby użycia wskaźników lub obsługi wyjątków.
 
 Ponadto, wsparcie Go dla funkcji pierwszoklasowych - funkcji, które mogą być przekazywane jako argumenty do innych funkcji, zwracane jako wartości z funkcji i przypisywane do zmiennych - zwiększa wsparcie języka dla wzorców programowania funkcyjnego. Ta funkcja jest szczególnie przydatna przy tworzeniu funkcji wyższego rzędu, które manipulują lub łączą inne funkcje.

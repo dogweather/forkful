@@ -10,12 +10,7 @@ title: Finding the length of a string
 weight: 7
 ---
 
-## What & Why?
-
-Finding the length of a string in Visual Basic for Applications (VBA) involves determining the number of characters it contains. Programmers frequently perform this task to validate input, manipulate text data efficiently, or control loops that process string data, ensuring robust and error-free code.
-
 ## How to:
-
 In VBA, the `Len` function is your go-to for finding the length of a string. It returns an integer representing the number of characters in a specified string. Here’s a straightforward example to illustrate this function:
 
 ```vb
@@ -54,7 +49,6 @@ End Sub
 This code will classify each string in `stringCollection` as "Long String" or "Short String", depending on whether its length is greater than 5 characters.
 
 ## Deep Dive
-
 The `Len` function in VBA has its roots in early BASIC programming, providing a simple, yet effective means for handling string manipulation tasks. Over the years, as programming languages evolved, many developed more sophisticated tools for working with strings, such as regular expressions and comprehensive string manipulation libraries.
 
 However, within the context of VBA, `Len` remains a fundamental and highly efficient solution for determining string length—partly because of VBA's focus on ease of use and accessibility over the complexity of operation. While languages like Python or JavaScript offer methods like `.length` or `len()` built directly into string objects, VBA's `Len` function stands out for its straightforward application, particularly beneficial for those just venturing into the world of programming from fields like data analysis or office automation.

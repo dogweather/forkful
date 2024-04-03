@@ -10,9 +10,6 @@ title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---
 
-## Qué y Por Qué?
-Comparar dos fechas es verificar si una es anterior, posterior o igual a la otra. Programadores lo hacen para eventos, registros temporales o para medir periodos de tiempo.
-
 ## Cómo hacerlo:
 ```Arduino
 #include <TimeLib.h>

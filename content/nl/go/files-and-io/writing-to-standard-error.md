@@ -12,12 +12,7 @@ title: Schrijven naar standaardfout
 weight: 25
 ---
 
-## Wat & Waarom?
-
-Schrijven naar standaardfout (stderr) in Go houdt in dat foutmeldingen of diagnostische berichten niet bestemd voor de hoofduitvoerstroom worden omgeleid. Programmeurs gebruiken dit om reguliere uitvoer te scheiden van foutinformatie, waardoor debugging en log parsing eenvoudiger wordt.
-
 ## Hoe:
-
 In Go biedt het `os`-pakket de waarde `Stderr`, die het standaardfoutbestand vertegenwoordigt. Je kunt dit gebruiken met de functies `fmt.Fprint`, `fmt.Fprintf`, of `fmt.Fprintln` om naar stderr te schrijven. Hier is een eenvoudig voorbeeld:
 
 ```go
@@ -53,7 +48,6 @@ Proces voltooid met 4 fouten.
 Onthoud dat deze berichten niet zullen verschijnen in de reguliere uitvoer (stdout), maar in de foutenstroom, die in de meeste besturingssystemen apart kan worden omgeleid.
 
 ## Diepere duik
-
 Het concept van standaardfout is diep geworteld in de Unix-filosofie, die duidelijk onderscheid maakt tussen normale uitvoer en foutmeldingen voor efficiëntere gegevensverwerking en -hantering. In Go wordt deze conventie omarmd door het `os`-pakket, dat directe toegang biedt tot de bestandsbeschrijvers stdin, stdout en stderr.
 
 Hoewel rechtstreeks schrijven naar `os.Stderr` geschikt is voor veel toepassingen, biedt Go ook meer geavanceerde logboekregistratiepakketten zoals `log`, die extra functies bieden zoals timestamping en flexibelere uitvoerconfiguraties (bijv. schrijven naar bestanden). Het gebruik van het `log`-pakket, vooral voor grotere toepassingen of waar uitgebreidere logboekregistratiefuncties nodig zijn, kan een beter alternatief zijn. Het is ook de moeite waard om op te merken dat de benadering van Go voor foutafhandeling, die het teruggeven van fouten uit functies aanmoedigt, de praktijk van het schrijven van foutmeldingen naar stderr aanvult, waardoor meer gedetailleerde controle over foutbeheer en rapportage mogelijk is.

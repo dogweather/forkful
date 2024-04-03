@@ -14,9 +14,6 @@ title: Obtendo a data atual
 weight: 29
 ---
 
-## O Que & Por Quê?
-Obter a data atual é uma tarefa essencial em quase qualquer empreitada de programação, desde registrar atividades em uma aplicação até gerar relatórios com carimbos de data. Em Ruby, isso pode ser facilmente alcançado usando a biblioteca padrão, simplificando operações que envolvem datas.
-
 ## Como fazer:
 A biblioteca padrão do Ruby inclui as classes `Date` e `Time` para manipular datas e horas. Aqui está como obter a data atual:
 

@@ -10,9 +10,6 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-Regular expressions (regex) in Dart offer a powerful way to search and manipulate strings, enabling programmers to perform complex text processing tasks efficiently. By understanding regex, developers can execute text validations, search patterns, and text transformations quickly, which is essential for processing forms, data parsing, and general string manipulations in modern applications.
-
 ## How to:
 Dart uses the `RegExp` class for regular expressions. Here's a basic example to match a simple pattern within a string:
 

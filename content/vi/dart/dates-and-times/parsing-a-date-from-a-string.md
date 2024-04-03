@@ -16,9 +16,6 @@ title: "Ph\xE2n t\xEDch ng\xE0y t\u1EEB chu\u1ED7i k\xFD t\u1EF1"
 weight: 30
 ---
 
-## Cái gì & Tại sao?
-Việc phân tích (parsing) một ngày từ một chuỗi trong Dart liên quan đến việc chuyển đổi biểu diễn văn bản của ngày và giờ thành một đối tượng `DateTime`. Thao tác này rất cần thiết cho các ứng dụng liên quan đến lịch trình, phân tích dữ liệu, hoặc bất kỳ tính năng nào đòi hỏi sự thao tác với ngày, đảm bảo rằng dữ liệu liên quan đến ngày được hiểu và xử lý đúng cách bởi chương trình.
-
 ## Làm thế nào:
 Thư viện cốt lõi của Dart đơn giản hóa việc phân tích ngày qua lớp `DateTime`. Đối với các trường hợp đơn giản khi bạn biết định dạng của chuỗi ngày, bạn có thể sử dụng phương thức `DateTime.parse()`. Tuy nhiên, đối với các tình huống phức tạp hơn hoặc khi xử lý nhiều định dạng, gói `intl`, cụ thể là lớp `DateFormat`, trở nên vô giá.
 

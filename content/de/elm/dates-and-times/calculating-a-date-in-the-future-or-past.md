@@ -10,9 +10,6 @@ title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---
 
-## Was & Warum?
-Das Berechnen von zukünftigen oder vergangenen Daten bedeutet, einem bestimmten Datum Tage, Monate oder Jahre hinzuzufügen oder abzuziehen. Programmierer nutzen diese Funktion, um Fristen zu verwalten, Erinnerungen zu planen oder Zeitabstände zu analysieren.
-
 ## How to:
 Elm bietet keine eingebaute Bibliothek für Datum-Manipulationen, wie JavaScripts `Date`, aber Pakete wie `justinmimbs/date` erweitern diese Funktionalität. Hier ein Beispiel, wie man mit diesem Paket ein Datum berechnen kann:
 

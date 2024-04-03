@@ -10,8 +10,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Làm việc với XML trên Arduino
-
 ### Lý do & Mục đích
 Làm việc với XML trên Arduino bao gồm việc phân tích và xử lý dữ liệu XML, thường đến từ các API web hoặc các file cấu hình. Lập trình viên thực hiện điều này để tích hợp với các dịch vụ sử dụng XML cho việc trao đổi dữ liệu hoặc để lưu trữ dữ liệu theo một định dạng có cấu trúc, dễ đọc.
 

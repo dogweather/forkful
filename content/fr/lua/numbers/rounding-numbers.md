@@ -11,9 +11,6 @@ title: Arrondir les nombres
 weight: 13
 ---
 
-## Quoi et pourquoi ?
-Arrondir les nombres signifie les ajuster à l'entier le plus proche ou à un nombre de décimales spécifié. C'est un élément fondamental en programmation pour réduire la complexité, améliorer la performance et pour les moments où la précision au-delà d'un certain point n'ajoute pas de valeur.
-
 ## Comment faire :
 ```lua
 -- L'arrondi de base en Lua n'est pas intégré de base, mais vous pouvez définir une fonction :

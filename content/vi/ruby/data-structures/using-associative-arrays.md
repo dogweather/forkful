@@ -16,12 +16,7 @@ title: "S\u1EED d\u1EE5ng m\u1EA3ng li\xEAn k\u1EBFt"
 weight: 15
 ---
 
-## Gì và Tại sao?
-
-Mảng kết hợp, hay còn được biết đến nhiều hơn với tên gọi là bảng băm trong Ruby, cho phép ghép cặp khóa duy nhất với giá trị. Chúng là thứ không thể thiếu khi bạn cần theo dõi các phần tử thông qua một tham chiếu cụ thể, như lưu trữ các thuộc tính của một đối tượng hoặc truy cập nhanh dữ liệu qua một định danh duy nhất.
-
 ## Làm thế nào:
-
 Tạo và sử dụng bảng băm trong Ruby rất đơn giản. Bạn có thể khởi tạo một bảng băm trống, điền nó với các cặp khóa-giá trị, truy cập giá trị qua các khóa của chúng, và nhiều hơn nữa. Dưới đây là cách bạn thực hiện:
 
 ```Ruby
@@ -58,7 +53,6 @@ puts symbol_hash[:name] # Đầu ra: Jane Doe
 ```
 
 ## Sâu hơn nữa:
-
 Khái niệm về mảng kết hợp không phải là duy nhất của Ruby; nhiều ngôn ngữ thực hiện chúng dưới các tên gọi khác nhau, như từ điển trong Python hay đối tượng trong JavaScript (khi được sử dụng như cặp khóa-giá trị). Trong giai đoạn đầu của Ruby, bảng băm hơi chậm và không linh hoạt lắm. Tuy nhiên, theo thời gian, cách thực hiện bảng băm của Ruby đã trở nên rất tối ưu, đặc biệt là cho khóa biểu tượng, làm cho chúng trở nên cực kỳ hiệu quả cho việc truy cập và cập nhật thường xuyên.
 
 Bảng băm của Ruby nổi bật với sự dễ sử dụng về cú pháp và tính linh hoạt - bạn có thể sử dụng gần như bất kỳ loại đối tượng nào làm khóa, mặc dù biểu tượng và chuỗi là phổ biến nhất. Internally, bảng băm của Ruby được thực hiện bằng cách sử dụng thuật toán băm cân bằng giữa tốc độ và hiệu quả bộ nhớ, ngay cả khi số lượng phần tử tăng lên.

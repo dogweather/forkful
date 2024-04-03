@@ -11,9 +11,6 @@ title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---
 
-## Vad & Varför?
-Att söka och ersätta text är processen att hitta specifika strängar i data och automatiskt byta ut dem mot annan text. Programmerare använder det för att snabbt ändra kod, korrigera data eller manipulera textbaserat innehåll.
-
 ## Hur gör man:
 ```kotlin
 fun main() {

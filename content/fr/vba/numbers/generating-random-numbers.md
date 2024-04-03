@@ -15,12 +15,7 @@ title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---
 
-## Quoi & Pourquoi ?
-
-La génération de nombres aléatoires en Visual Basic pour Applications (VBA) permet aux programmes de simuler des processus comportant des éléments de chance ou de variabilité, tels que les lancers de dés ou l'échantillonnage de données. Les programmeurs utilisent ces techniques pour développer des modèles, des jeux ou des simulations où des résultats prévisibles seraient irréalistes ou moins utiles.
-
 ## Comment faire :
-
 En VBA, la fonction `Rnd` est utilisée pour générer des nombres aléatoires. Par défaut, `Rnd` génère un nombre à virgule flottante de simple précision supérieur ou égal à 0 et inférieur à 1. Voici quelques étapes et exemples pour utiliser efficacement les nombres aléatoires :
 
 1. **Nombre aléatoire simple :**
@@ -62,7 +57,6 @@ En VBA, la fonction `Rnd` est utilisée pour générer des nombres aléatoires. 
 Après avoir exécuté `RandomNumberInRange`, vous pourriez voir une boîte de dialogue affichant un nombre comme `45`.
 
 ## Approfondissement :
-
 La fonction `Rnd` en VBA, bien qu'elle soit facile à utiliser, génère en réalité des nombres pseudo-aléatoires basés sur un algorithme déterministe. Cela signifie que les séquences de nombres qu'elle produit ne sont pas véritablement aléatoires, mais peuvent souvent suffire pour des tâches courantes nécessitant des processus stochastiques.
 
 Historiquement, la capacité de génération de nombres aléatoires en VBA remonte aux premières versions de Basic, s'adaptant au fil du temps pour inclure des fonctionnalités comme `Randomize` afin d'améliorer le hasard en amorçant l'algorithme avec un point de départ. Cependant, pour des applications nécessitant un haut niveau d'aléatoire telles que les opérations cryptographiques sécurisées, le `Rnd` de VBA pourrait ne pas être le meilleur outil. Des alternatives dans des environnements de programmation plus robustes ou des langues conçues avec la cryptographie à l'esprit, comme le module `secrets` de Python ou `SecureRandom` de Java, devraient être envisagées.

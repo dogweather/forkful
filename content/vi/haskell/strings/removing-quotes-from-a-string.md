@@ -16,9 +16,6 @@ title: "Lo\u1EA1i b\u1ECF d\u1EA5u ngo\u1EB7c k\xE9p kh\u1ECFi chu\u1ED7i"
 weight: 9
 ---
 
-## Lý do & Tại sao?
-Xóa dấu ngoặc khỏi một chuỗi có nghĩa là loại bỏ bất kỳ dấu ngoặc đơn (' ') hoặc dấu ngoặc kép (" ") nào là một phần của dữ liệu chuỗi. Lập trình viên thực hiện việc này để làm sạch đầu vào, chuẩn bị văn bản để xử lý, hoặc loại bỏ những ký tự không cần thiết có thể can thiệp vào việc xử lý và thao tác dữ liệu.
-
 ## Cách thực hiện:
 Trong Haskell, chúng ta có thể tạo ra một hàm xóa tất cả dấu ngoặc khỏi một chuỗi đã cho. Đó giống như việc bảo các dấu ngoặc đi chỗ khác, và đảm bảo rằng chúng nhận ra điều đó.
 

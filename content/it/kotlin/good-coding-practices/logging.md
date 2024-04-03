@@ -11,12 +11,7 @@ title: "Registrazione delle Attivit\xE0 (Logging)"
 weight: 17
 ---
 
-## Cosa & Perché?
-
-La registrazione (logging), in sostanza, è la pratica di annotare eventi e dati da un'applicazione software su un output esterno, come un file o la console. I programmatori effettuano registrazioni per tracciare il percorso del codice, per risolvere problemi e per tenere d'occhio il comportamento di un'app nell'ambiente reale, fornendo intuizioni critiche che non si possono ottenere altrettanto efficacemente in nessun altro modo.
-
 ## Come fare:
-
 In Kotlin, la registrazione può essere effettuata utilizzando la funzione integrata `println()` per casi semplici, o con librerie più sofisticate come SLF4J con Logback o Log4j per esigenze avanzate.
 
 Di seguito è riportato un esempio basilare che utilizza `println()`:
@@ -68,7 +63,6 @@ java.lang.Exception: Errore simulato
 ```
 
 ## Approfondimento
-
 Storicamente, la registrazione nel software si è sviluppata insieme alla crescente complessità delle applicazioni e dei sistemi. Semplici istruzioni di stampa erano sufficienti nei primi giorni, quando i programmi venivano spesso eseguiti e corretti dagli stessi sviluppatori. Ma man mano che i sistemi si sono interconnessi ed eseguiti in ambienti diversi da utenti differenti, un sistema di registrazione robusto e persistente è diventato cruciale.
 
 Prima che Kotlin diventasse popolare, gli sviluppatori Java adottarono ampiamente librerie come Log4j e, successivamente, SLF4J. Queste hanno ispirato pratiche simili in Kotlin, sfruttando l'interoperabilità di Kotlin con le librerie Java. SLF4J agisce come uno strato di astrazione, consentendo di sostituire l’implementazione effettiva di logging—di solito Logback o Log4j2 sono le scelte preferite.
@@ -88,7 +82,6 @@ Altre caratteristiche comuni dei framework di registrazione avanzati includono:
 Questi strumenti e funzionalità sono critici per mantenere un sistema affidabile e osservabile, specialmente in ambienti complessi, distribuiti o ad alta scalabilità.
 
 ## Vedi Anche
-
 Per ulteriori studi e approfondimenti sul logging in Kotlin, controlla:
 
 - SLF4J (Simple Logging Facade for Java) [http://www.slf4j.org/](http://www.slf4j.org/)

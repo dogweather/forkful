@@ -13,9 +13,6 @@ title: Analyse Syntaxique du HTML
 weight: 43
 ---
 
-## Quoi & Pourquoi ?
-Analyser du HTML signifie décomposer un bloc de code HTML pour en saisir la structure et le contenu. Les programmeurs le font pour extraire des données, manipuler le contenu, ou migrer des informations entre formats et systèmes.
-
 ## Comment faire :
 Pour analyser du HTML en Ruby, installez le gem 'Nokogiri' avec `gem install nokogiri`. Nokogiri est comme un couteau suisse pour travailler avec HTML et XML en Ruby. Voici un rapide exemple :
 

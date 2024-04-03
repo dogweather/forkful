@@ -12,9 +12,6 @@ title: "Omvandla ett datum till en str\xE4ng"
 weight: 28
 ---
 
-## Vad & Varför?
-Att konvertera ett datum till en sträng innebär att omvandla datum data från ett format som datorer förstår till text som är läsbart för människor. Programmerare gör detta för att datumen ska kunna visas upp på gränssnitt, loggas lättförståeligt eller användas i textbehandling.
-
 ## Så här gör du:
 Konvertering av datum till sträng i JavaScript kan göras smidigt med metoder som `toString()`, `toLocaleString()`, eller med `Date` objektets internationella formateringsmöjligheter. Kolla på exemplen nedan.
 

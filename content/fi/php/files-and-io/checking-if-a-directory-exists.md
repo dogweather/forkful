@@ -14,12 +14,7 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mikä ja miksi?
-
-Hakemiston olemassaolon tarkistaminen on perustehtävä PHP-ohjelmoinnissa, koska se mahdollistaa hakemiston läsnäolon varmistamisen ennen toimintoja, kuten tiedostojen lukemista tai niihin kirjoittamista. Tämä toiminto auttaa estämään virheitä, jotka voivat syntyä yrittäessä käyttää olemattomia hakemistoja, ja on olennainen osa dynaamista tiedostonhallintaa sovelluksissasi.
-
 ## Kuinka:
-
 PHP:ssä hakemiston olemassaolon voi tarkistaa natiivisti käyttämällä `is_dir()`-funktiota. Tämä funktio ottaa argumentiksi tiedostopolkun ja palauttaa `true`, jos hakemisto on olemassa ja on hakemisto, tai `false` muussa tapauksessa.
 
 ```php

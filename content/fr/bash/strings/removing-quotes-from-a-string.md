@@ -11,9 +11,6 @@ title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---
 
-## Quoi & Pourquoi ?
-Supprimer les guillemets d'une chaîne consiste à retirer les marques de citation qui encadrent la chaîne. Les programmeurs souhaitent souvent le faire pour assainir les données d'entrée, préparer les données pour des comparaisons, ou se conformer à un format de données spécifique lors de l'interaction avec d'autres programmes ou systèmes.
-
 ## Comment faire :
 Bash offre plusieurs façons de retirer les guillemets des chaînes. Voici quelques exemples rapides :
 

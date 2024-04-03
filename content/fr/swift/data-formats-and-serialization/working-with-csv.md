@@ -15,12 +15,7 @@ title: Travailler avec CSV
 weight: 37
 ---
 
-## Quoi & Pourquoi ?
-
-Travailler avec des fichiers CSV (Valeurs Séparées par des Virgules) implique l'analyse et la génération de données structurées à partir de fichiers texte où chaque ligne représente un enregistrement et chaque enregistrement se compose de champs séparés par des virgules. Les programmeurs s'engagent souvent dans cette activité pour importer, exporter et manipuler facilement des données tabulaires en utilisant un format largement pris en charge sur différentes plateformes et langages de programmation, en raison de sa simplicité et de son format lisible par l'homme.
-
 ## Comment faire :
-
 En Swift, il n'y a pas de prise en charge native pour l'analyse directe des fichiers CSV, mais vous pouvez gérer les données CSV en utilisant les méthodes `String` pour diviser le contenu, ou en tirant parti de bibliothèques tierces telles que SwiftCSV pour une approche plus rationalisée. Voici les deux méthodes :
 
 ### Analyse Manuelle sans Bibliothèques Externes

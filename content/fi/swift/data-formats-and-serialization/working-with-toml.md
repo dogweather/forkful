@@ -11,9 +11,6 @@ title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---
 
-## Mikä & Miksi?
-TOML (Tom's Obvious, Minimal Language) on data-serialisointiformaatti, joka on helppo lukea sen selkeän semantiikan ansiosta. Ohjelmoijat käyttävät TOML:ää konfiguraatiotiedostoihin, joissa ihmisten luettavuus ja koneiden helppo jäsentäminen ovat avainasemassa.
-
 ## Kuinka:
 Aloittaaksesi tarvitset TOML-jäsentäjän. Swiftillä ei ole sisäänrakennettua, joten käytetään `TOMLDecoder`ia. Asenna se Swift Package Managerin kautta ja sen jälkeen serialisoi ja deserialisoi TOML helposti.
 

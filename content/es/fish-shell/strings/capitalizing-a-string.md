@@ -13,12 +13,7 @@ title: Capitalizando una cadena de texto
 weight: 2
 ---
 
-## ¿Qué y por qué?
-
-Capitalizar una cadena significa modificarla de modo que la primera letra esté en mayúscula y el resto de la cadena en minúscula. Esta es una tarea común en el procesamiento de textos, la normalización de entradas de usuario y el formateo de datos para asegurar consistencia o cumplir con criterios de formateo específicos.
-
 ## Cómo hacerlo:
-
 En Fish Shell, las cadenas pueden ser manipuladas directamente con funciones integradas, sin la necesidad de herramientas o bibliotecas externas. Para capitalizar una cadena, puedes combinar el comando `string` con subcomandos.
 
 ```fish

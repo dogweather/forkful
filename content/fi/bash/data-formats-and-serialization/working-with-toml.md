@@ -9,9 +9,6 @@ title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---
 
-## Mikä & Miksi?
-TOML, lyhenne sanoista Tom's Obvious, Minimal Language, on datan serialisointiformaatti. Ohjelmoijat diggaavat sitä sen yksinkertaisuuden ja luettavuuden vuoksi; se on mahtava config-tiedostoille, samanlaisia fiiliksiä kuin YAML mutta vähemmän kömpelö kuin JSON ihmisen näkökulmasta.
-
 ## Miten:
 Aloita asentamalla `toml-cli`, jotta voit leikkiä TOML:lla Bashissa. Kätevä lukiessa tai muokatessa TOML-tiedostoja lennosta.
 

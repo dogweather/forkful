@@ -12,12 +12,7 @@ title: Ein neues Projekt starten
 weight: 1
 ---
 
-## Was & Warum?
-
-Ein neues Projekt in C zu starten, umfasst das Einrichten einer grundlegenden Code-Struktur und Umgebung, um Entwicklungsarbeiten effizient zu verwalten. Programmierer tun dies, um den Build-Prozess zu optimieren, Konsistenz zu gewährleisten und eine einfachere Wartung und Skalierbarkeit der Software über die Zeit hinweg zu erleichtern.
-
 ## Wie:
-
 Im Kern jedes C-Projekts steht der Quellcode. Ein typischer Ausgangspunkt umfasst das Erstellen einer Hauptdatei, oft `main.c` genannt, die den Einstiegspunkt eines Programms beherbergt. Zusätzlich ist ein `Makefile` essenziell für die Verwaltung der Kompilierung, um Projektbuilds zu optimieren.
 
 Hier ein minimales Beispiel:
@@ -53,5 +48,4 @@ Hallo, Welt!
 ```
 
 ## Tiefergehend
-
 Ein Projekt in C zu initiieren, bedeutet nicht nur Code zu schreiben; es geht darum, eine solide Grundlage für das Projektmanagement zu schaffen. Diese Praxis hat sich seit den Anfängen der Programmierung entwickelt, inspiriert von der Notwendigkeit, den Prozess der Kompilierung großer, komplexer Systeme aus der UNIX-Welt zu organisieren und zu optimieren. Das GNU Make-System, das in den 80er Jahren eingeführt wurde, revolutionierte dies durch Automatisierung des Build-Prozesses und wurde zu einem kritischen Werkzeug in modernen C-Projekten. Allerdings führte der Aufstieg von integrierten Entwicklungsumgebungen (IDEs) und anderen höheren Programmiersprachen zu unterschiedlichen Praktiken der Projektinitialisierung, die von Beginn an automatisierte Build-Systeme, Abhängigkeitsmanagement und Versionskontrollintegration umfassen könnten. Trotz dieser Fortschritte bleiben die Einfachheit und Kontrolle, die ein Makefile und ein gut organisiertes Quellcode-Verzeichnis bieten, besonders für systemnahe Programmierung, wo Effizienz und Ressourcenmanagement von größter Bedeutung sind, unbezahlbar. Dennoch werden für größere Projekte Werkzeuge wie CMake oder Meson aufgrund ihrer Fähigkeit, komplexe Builds und plattformübergreifende Kompatibilität zu handhaben, vorgezogen und deuten auf einen Trend zu ausgefeilteren Projektinitiierungswerkzeugen im C-Ökosystem hin.

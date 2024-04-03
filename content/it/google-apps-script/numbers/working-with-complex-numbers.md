@@ -12,9 +12,6 @@ title: Lavorare con i numeri complessi
 weight: 14
 ---
 
-## Cosa e perché?
-I numeri complessi, rappresentati come una combinazione di unità reali e immaginarie (ad es., 3 + 4i), sono fondamentali in vari problemi computazionali, specialmente in ingegneria, fisica e matematica applicata. Imparare a manipolare questi numeri in Google Apps Script permette ai programmatori di estendere le loro capacità nel calcolo scientifico, nell'elaborazione dei segnali e oltre.
-
 ## Come fare:
 Google Apps Script non ha un supporto integrato per i numeri complessi, rendendo necessaria l'implementazione di funzionalità personalizzate. Di seguito è riportata una struttura di base per gestire i numeri complessi, inclusi l'addizione, la sottrazione e la moltiplicazione.
 

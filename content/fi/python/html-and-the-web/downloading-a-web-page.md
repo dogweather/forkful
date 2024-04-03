@@ -11,11 +11,7 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## What & Why? (Mitä ja Miksi?)
-Ladataan web-sivu Pythonilla tarkoittaa sen sisällön noutamista internetistä. Koodarit tekevät tätä datan analysointiin, sisällön keräämiseen tai varmuuskopiointiin.
-
 ## How to: (Kuinka tehdä:)
-
 ```Python
 import requests
 
@@ -49,7 +45,6 @@ Esimerkkituloste:
 ```
 
 ## Deep Dive (Syväsukellus):
-
 Historiallisessa kontekstissa web-sivujen lataaminen on ollut yleistä web-skrapingin alkuaikoina. Alkujaan tehtiin pelkkiä HTTP-pyyntöjä ilman kirjastoja. Nykyisin `requests`-kirjasto on Pythonin suosituin HTTP-client-kirjasto sen selkeän syntaksin ja toiminnallisuuden vuoksi. 
 
 Vaihtoehtoisia tapoja ladata sivuja Pythonissa ovat `urllib`-standardikirjaston moduulit tai kolmannen osapuolen kirjastot kuten `httpx`. 
@@ -57,7 +52,6 @@ Vaihtoehtoisia tapoja ladata sivuja Pythonissa ovat `urllib`-standardikirjaston 
 `requests` käyttää sisäisesti `urllib3`, ja sen peruskäyttö on helppoa: tee pyyntö, tarkista vastaus, ja käsittele data. Monimutkaisemmissa tapauksissa voi tarvita evästeiden käsittelyä, session ylläpitoa, tai erilaisia autentikaatio- ja yhteysasetuksia.
 
 ## See Also (Katso Myös):
-
 - Requests dokumentaatio: https://requests.readthedocs.io/
 - Pythonin `urllib`: https://docs.python.org/3/library/urllib.html
 - HTTPX dokumentaatio: https://www.python-httpx.org/

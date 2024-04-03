@@ -12,9 +12,6 @@ title: Utilizzo delle espressioni regolari
 weight: 11
 ---
 
-## Cosa & Perché?
-Le espressioni regolari (regex) nella programmazione sono schemi utilizzati per corrispondere combinazioni di caratteri nelle stringhe. In Elm, come in altri linguaggi, i programmatori utilizzano le regex per compiti come la validazione dell'input, la ricerca e la sostituzione del testo all'interno delle stringhe, grazie alla loro flessibilità ed efficienza.
-
 ## Come fare:
 Elm non possiede funzioni regex integrate nella sua libreria di base, richiedendo l'uso di librerie di terze parti per queste operazioni. Una delle scelte popolari per lavorare con le regex è `elm/regex`. Puoi aggiungerlo al tuo progetto usando `elm install elm/regex`.
 

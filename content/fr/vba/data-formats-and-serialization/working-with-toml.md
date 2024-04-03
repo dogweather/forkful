@@ -13,12 +13,7 @@ title: Travailler avec TOML
 weight: 39
 ---
 
-## Quoi & Pourquoi ?
-
-TOML, qui signifie "Tom's Obvious, Minimal Language" (le langage minimal et évident de Tom), est un format de sérialisation de données principalement utilisé pour les fichiers de configuration. Les programmeurs exploitent TOML pour sa lisibilité et son mappage facile aux structures de données, permettant une configuration simple des applications à travers divers environnements de programmation, y compris Visual Basic pour Applications (VBA).
-
 ## Comment faire :
-
 Travailler avec TOML dans VBA implique d'analyser le fichier TOML pour lire les configurations ou les paramètres dans votre projet VBA. VBA n'offre pas de support intégré pour TOML, donc vous utiliserez typiquement un analyseur ou convertirez les données TOML en un format avec lequel VBA peut facilement travailler, comme JSON ou XML. Voici comment analyser manuellement un fichier de configuration TOML simple :
 
 1. **Fichier TOML d'Exemple** (`config.toml`):
@@ -75,5 +70,4 @@ Serveur Base de Données : 192.168.1.1
 ```
 
 ## Exploration Plus Approfondie
-
 L'acceptation pratique de TOML dans la communauté des développeurs montre une tendance vers des fichiers de configuration plus simples et plus lisibles par l'humain, contrastant avec le XML autrefois prévalent. La philosophie de conception de TOML met l'accent sur des sémantiques claires et vise une analyse facile avec un minimum de surcharge. Dans VBA, le traitement direct de TOML implique une analyse manuelle ou l'utilisation d'outils externes pour convertir TOML en un format plus adapté à VBA en raison de l'absence de support natif. Bien que cette méthode d'analyse manuelle présente une approche fondamentale, l'utilisation de bibliothèques externes ou de formats intermédiaires comme JSON peut offrir des stratégies d'analyse plus robustes et moins sujettes à erreur. Étant donné l'intégration étendue de VBA avec Microsoft Office, convertir TOML en JSON et utiliser les capacités d'analyse JSON natives de VBA (lorsqu'applicables) ou des analyseurs JSON tiers pourrait fournir un flux de travail plus rationalisé. De plus, avec l'évolution continue des formats de sérialisation des données, les programmeurs devraient également considérer YAML, qui, comme TOML, met l'accent sur la lisibilité par l'humain mais offre différents compromis en termes de complexité et de flexibilité.

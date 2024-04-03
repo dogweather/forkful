@@ -10,9 +10,6 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## What & Why? (Cosa e Perché?)
-Stampare l'output di debug aiuta a vedere cosa sta succedendo nel codice. Lo facciamo per trovare gli errori più velocemente e capire meglio il flusso del programma.
-
 ## How to: (Come fare:)
 ```PHP
 <?php

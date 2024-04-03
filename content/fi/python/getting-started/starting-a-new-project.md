@@ -14,11 +14,8 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## Mikä & Miksi?
-
-Uuden projektin aloittaminen Pythonilla tarkoittaa rakenteellisen, ylläpidettävän kehyksen pystyttämistä alusta alkaen. Ohjelmoijat tekevät näin varmistaakseen, että heidän koodinsa on helppolukuista, debugattavaa ja yhteistyöhön sopivaa, erityisesti kun projekti ja sen parissa työskentelevä tiimi kasvavat ajan myötä.
-
 ## Kuinka:
+
 
 ### Luo virtuaaliympäristö
 Virtuaaliympäristö on itsenäinen hakemisto, joka sisältää kaikki tarvittavat suoritettavat tiedostot paketteja varten, joita Python-projekti saattaa tarvita. On suositeltavaa luoda virtuaaliympäristö jokaiselle projektille välttääkseen riippuvuuksien väliset konfliktit. Käytä `venv`-moduulia, joka on osa Pythonin standardikirjastoa.

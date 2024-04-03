@@ -11,18 +11,12 @@ title: Generazione di numeri casuali
 weight: 12
 ---
 
-## Cosa e Perché?
-
-Generare numeri casuali in Haskell comporta la creazione di numeri che sono imprevedibili secondo gli standard umani. Questo è critico in scenari che vanno dalle applicazioni crittografiche alle simulazioni, in cui l'elemento di casualità è necessario per modellare accuratamente i fenomeni del mondo reale.
-
 ## Come fare:
-
 Per generare numeri casuali in Haskell, si utilizza tipicamente il pacchetto `random`, che fa parte della Haskell Platform. Ecco una guida passo dopo passo:
 
 Prima di tutto, assicurati di avere il pacchetto `random` installato. Se non lo hai, puoi ottenerlo tramite Cabal o Stack.
 
 ### Generare un Numero Casuale
-
 Per generare un semplice numero casuale, puoi usare la funzione `randomRIO`, che produce un valore casuale all'interno di un intervallo specificato.
 
 ```Haskell
@@ -35,7 +29,6 @@ main = do
 ```
 
 ### Generare una Lista di Numeri Casuali
-
 Generare una lista di numeri casuali è leggermente più complesso ma comunque semplice:
 
 ```Haskell
@@ -57,7 +50,6 @@ main = do
 Questo frammento di codice crea una funzione `randomList` che genera una lista di interi casuali. Sostituisci `(1, 100)` con l'intervallo desiderato.
 
 ## Approfondimento
-
 Il pacchetto `random` di Haskell fornisce un generatore di numeri pseudo-casuali (PRNG), il che significa che i numeri generati non sono veramente casuali ma possono sembrarlo per molte applicazioni. Il nucleo della capacità di generazione casuale di Haskell risiede nella classe di tipo `RandomGen`, che astrae diversi metodi di generazione di numeri casuali, e nella classe di tipo `Random`, che include tipi che possono essere generati casualmente.
 
 Storicamente, l'approccio di Haskell alla generazione di numeri casuali ha enfatizzato la purezza e la riproducibilità. Ecco perché le operazioni che coinvolgono la casualità sono gestite esplicitamente nel monade `IO` o richiedono il passaggio e l'aggiornamento manuale degli stati del generatore — per mantenere la trasparenza referenziale.

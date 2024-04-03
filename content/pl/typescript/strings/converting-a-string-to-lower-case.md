@@ -11,9 +11,6 @@ title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## What & Why? (Co i dlaczego?)
-Zmiana ciągu znaków na małe litery to przekształcenie wszystkich liter w ciągu na ich odpowiedniki w dolnym rejestrze. Robimy to, by ujednolicić dane przed ich przetworzeniem, co ułatwia porównywanie i wyszukiwanie.
-
 ## How to (Jak to zrobić):
 Użyj metody `.toLowerCase()` na ciągu znaków w TypeScript, jak w przykładzie poniżej.
 

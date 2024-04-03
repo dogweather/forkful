@@ -14,9 +14,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## Hva & Hvorfor?
-Å beregne en dato i fremtiden eller fortiden er en vanlig oppgave for programmerere, som handler om planlegging, påminnelser, eller enhver funksjon som avhenger av datoberegninger. Det å forstå hvordan man manipulerer datoer er avgjørende for baksystemer, brukergrensesnitt og dataanalyse, spesielt for de som går over til Dart og ser etter å implementere tidslogikk effektivt.
-
 ## Hvordan:
 Dart gir solid støtte for datomanipulering gjennom sin `DateTime`-klasse. Her er hvordan du kan beregne fremtidige eller tidligere datoer ved å bruke nativ Dart, uten å trenge tredjepartsbiblioteker.
 

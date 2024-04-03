@@ -10,9 +10,6 @@ title: Inviare una richiesta http
 weight: 44
 ---
 
-## What & Why?
-Mandare una richiesta HTTP significa ordinare al tuo programma di chiacchierare con un server web. Questo lo fanno i programmatori per scambiare dati - pensa a scaricare una pagina web o a inviare un form.
-
 ## How to:
 In Haskell, usiamo librerie come `http-conduit` per mandare richieste HTTP. Ecco un esempio veloce:
 

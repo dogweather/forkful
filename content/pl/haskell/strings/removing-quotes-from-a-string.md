@@ -12,9 +12,6 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co & Dlaczego?
-Usuwanie cudzysłowów z ciągu znaków oznacza pozbycie się wszelkich znaków cudzysłowu—pojedynczych (' ') lub podwójnych (" ")—które są częścią danych ciągu. Programiści robią to, aby oczyścić dane wejściowe, przygotować tekst do przetworzenia lub pozbyć się niepotrzebnych znaków, które mogą zakłócać obsługę danych i operacje.
-
 ## Jak to zrobić:
 W Haskellu możemy stworzyć funkcję, która usunie wszystkie cudzysłowy z danego ciągu znaków. To jakby powiedzieć cudzysłowom, żeby spadły, i upewnić się, że zrozumieli aluzję.
 

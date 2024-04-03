@@ -15,10 +15,9 @@ title: "\u63D0\u53D6\u5B50\u5B57\u7B26\u4E32"
 weight: 6
 ---
 
-## What & Why? (什么和为什么?)
-提取子字符串是指从一个字符串中获取部分字符序列的过程。程序员这么做是为了分析、处理特定数据或简化文字操作。
-
 ## How to (如何操作)
+
+
 ### Example 1: 使用 `substr`
 ```C++
 #include <iostream>
@@ -31,6 +30,7 @@ int main() {
     return 0;
 }
 ```
+
 ### Example 2: 使用 `string::iterator`
 ```C++
 #include <iostream>

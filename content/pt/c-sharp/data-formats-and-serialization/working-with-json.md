@@ -14,14 +14,10 @@ title: Trabalhando com JSON
 weight: 38
 ---
 
-## O Que & Por Que?
-
-Trabalhar com JSON (JavaScript Object Notation) envolve analisar, gerar e consultar dados JSON, tornando-se uma habilidade crítica para a programação moderna. Esse formato de troca de dados é extremamente usado em serviços web e APIs devido à sua fácil legibilidade e independência de linguagem, o que o torna essencial para programadores C# que trabalham com aplicações em rede ou interagindo com dados baseados na web.
-
 ## Como Fazer:
 
-### Analisando Cadeia de Caracteres JSON para um Objeto
 
+### Analisando Cadeia de Caracteres JSON para um Objeto
 C# fornece o namespace `System.Text.Json` para processamento eficiente de JSON. Para analisar uma cadeia de caracteres JSON para um objeto C#, defina uma classe que corresponda à estrutura JSON e use o método `JsonSerializer.Deserialize`.
 
 ```csharp
@@ -48,7 +44,6 @@ public class Program
 ```
 
 ### Gerando JSON a partir de um Objeto
-
 Para converter um objeto C# de volta para uma cadeia de caracteres JSON, use o método `JsonSerializer.Serialize`.
 
 ```csharp
@@ -73,7 +68,6 @@ public class Program
 ```
 
 ### Usando Newtonsoft.Json
-
 `Newtonsoft.Json` (ou Json.NET) é uma biblioteca de terceiros popular que oferece mais flexibilidade e opções para serialização e desserialização JSON.
 
 Para usar Json.NET, você deve primeiro instalar o pacote `Newtonsoft.Json` via NuGet. Então, você pode desserializar uma cadeia de caracteres JSON assim:

@@ -10,9 +10,6 @@ title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---
 
-## O que & Por quê?
-Arredondar números significa ajustar um valor para o inteiro mais próximo ou uma precisão especificada. Desenvolvedores fazem isso para simplificar, conformar com restrições do mundo real, ou melhorar o desempenho ao descartar precisão excessiva.
-
 ## Como:
 C++ oferece várias maneiras de arredondar números, como `floor()`, `ceil()`, e `round()`:
 

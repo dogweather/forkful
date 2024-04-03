@@ -14,12 +14,7 @@ title: Einen String in Kleinbuchstaben umwandeln
 weight: 4
 ---
 
-## Was & Warum?
-
-Die Umwandlung einer Zeichenkette in Kleinbuchstaben in Google Apps Script, einer cloudbasierten Skriptsprache zur Automatisierung von Aufgaben in Google-Produkten, ist eine grundlegende Aufgabe, die darauf abzielt, Textdaten zu standardisieren. Programmierer führen diese Aktion häufig durch, um Konsistenz bei Benutzereingaben, Datenverarbeitung oder beim Vergleichen von Strings zu gewährleisten, da sie Probleme mit der Groß-/Kleinschreibung eliminiert.
-
 ## Wie:
-
 Die Umwandlung einer Zeichenkette in Kleinbuchstaben in Google Apps Script ist dank der integrierten JavaScript-Methoden, die in der Skriptumgebung verfügbar sind, unkompliziert. Die Methode `toLowerCase()` ist das, was Sie meist verwenden werden. So können Sie es implementieren:
 
 ```javascript
@@ -49,7 +44,6 @@ function convertArrayItemsToLower() {
 Dieses Beispiel betont die Vielseitigkeit von `toLowerCase()` beim Umgang mit Mehrfach-String-Daten und gewährleistet Einheitlichkeit in Ihrem Datensatz.
 
 ## Tiefere Einblicke
-
 Die Methode `toLowerCase()`, die von JavaScript geerbt und innerhalb von Google Apps Script verwendet wird, ist seit den ersten Versionen von JavaScript ein integraler Bestandteil der Zeichenkettenmanipulation. Ihr Hauptzweck ist es, bei der Groß-/Kleinschreibung unempfindlichen Umgang mit textuellen Daten zu unterstützen, ein Bedürfnis, das mit dem Aufkommen von dynamischen, benutzerinteraktiven Webanwendungen entstand. Trotz ihrer Einfachheit spielt der Mechanismus eine entscheidende Rolle bei der Datenvalidierung, Sortierung und Suchalgorithmen, indem er die durch die Groß-/Kleinschreibung eingeführte Komplexität reduziert.
 
 In Bezug auf die Leistung ist der Umwandlungsprozess in modernen JavaScript-Engines hoch optimiert; jedoch sollte seine Anwendung innerhalb groß angelegter Datenoperationen noch bedacht sein, um unnötigen Verarbeitungsaufwand zu vermeiden.

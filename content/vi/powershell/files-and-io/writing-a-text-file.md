@@ -16,9 +16,6 @@ title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---
 
-## Cái gì & Tại sao?
-Viết một tệp văn bản là lưu trữ dữ liệu dưới dạng văn bản thuần túy trên đĩa. Lập trình viên thực hiện việc này cho mục đích ghi nhật ký, cấu hình, hoặc lưu trữ dữ liệu người dùng. Đó là nền tảng nhưng cực kỳ quan trọng cho hầu hết các ứng dụng.
-
 ## Làm thế nào:
 Dưới đây là cách để viết vào một tệp văn bản trong PowerShell; nó cực kỳ dễ dàng!
 

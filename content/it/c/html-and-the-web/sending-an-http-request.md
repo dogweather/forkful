@@ -12,12 +12,7 @@ title: Inviare una richiesta HTTP
 weight: 44
 ---
 
-## Cosa e perché?
-
-Inviare una richiesta HTTP implica creare e inviare una richiesta a un server web per recuperare o inviare dati. I programmatori lo fanno in C per interagire con le API web, scaricare pagine web o comunicare direttamente con altri servizi in rete dalle loro applicazioni.
-
 ## Come fare:
-
 Per inviare una richiesta HTTP in C, generalmente ci si affida a librerie come libcurl, poiché C non ha un supporto incorporato per i protocolli web. Ecco un semplice esempio che utilizza libcurl per eseguire una richiesta GET:
 
 Prima di tutto, assicurati di avere libcurl installato sul tuo sistema. Poi, includi gli header necessari e collega la tua libreria libcurl nel file sorgente:
@@ -54,11 +49,9 @@ int main(void) {
 Compila questo con qualcosa del tipo `gcc -o http_request http_request.c -lcurl`, l'esecuzione dovrebbe effettuare una semplice richiesta GET a "http://example.com".
 
 ### Output di esempio
-
 Poiché l'esempio non elabora la risposta del server, l'esecuzione non produrrà un output visibile al di là di eventuali messaggi di errore. Integrare la funzione di callback per elaborare i dati ricevuti è essenziale per un'interazione significativa.
 
 ## Approfondimento
-
 Il concetto di invio di richieste HTTP da un programma C si basa sulle potenti capacità di rete del linguaggio, unite a librerie esterne, poiché C stesso è un linguaggio di basso livello senza supporto incorporato per i protocolli internet di alto livello. Storicamente, i programmatori utilizzavano manualmente la programmazione socket in C, un processo complesso e tedioso, per interagire con i server web prima dell'avvento di librerie dedicate come libcurl.
 
 Libcurl, costruito sopra C, semplifica il processo, astratto i dettagli complessi della programmazione socket e le specifiche del protocollo HTTP. Supporta molti protocolli oltre a HTTP/HTTPS, inclusi FTP, SMTP e altri, rendendolo uno strumento versatile per la programmazione di rete in C.

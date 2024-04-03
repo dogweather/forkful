@@ -13,12 +13,7 @@ title: "Arredondamento de n\xFAmeros"
 weight: 13
 ---
 
-## O Quê e Por Quê?
-
-Arredondar números em programação é sobre aproximar um número ao seu número inteiro mais próximo ou a um certo número de casas decimais. Programadores arredondam números para simplificar figuras, melhorar a legibilidade, ou atender a critérios numéricos específicos em cálculos, especialmente em computações financeiras onde a precisão importa.
-
 ## Como Fazer:
-
 No Visual Basic for Applications (VBA), o arredondamento pode ser alcançado usando várias funções, cada uma adequada para cenários específicos. Aqui estão as funções mais comumente usadas com exemplos:
 
 1. **Função Round**:
@@ -54,7 +49,6 @@ No Visual Basic for Applications (VBA), o arredondamento pode ser alcançado usa
    ```
 
 ## Aprofundamento
-
 A função `Round` no VBA é inerentemente diferente dos métodos de arredondamento em outros idiomas devido ao seu uso do **Arredondamento do Banqueiro**. O Arredondamento do Banqueiro arredonda para o número par mais próximo quando exatamente a meio caminho entre dois números, reduzindo o viés em cálculos ao longo de um grande conjunto de dados e proporcionando um resultado mais estatisticamente significativo. No entanto, isso pode levar a um comportamento inesperado para aqueles não familiarizados com ele, especialmente quando uma precisão integral é esperada em todos os casos.
 
 Em contraste, muitos idiomas de programação e sistemas usam o "arredondamento aritmético" ou "arredondamento para cima", onde um número exatamente a meio caminho entre dois valores possíveis arredondados é sempre arredondado para cima. Ao traduzir ou portar código de outros idiomas para o VBA, os programadores devem ter essas diferenças em mente para evitar erros sutis ou imprecisões em aplicações financeiras e estatísticas.

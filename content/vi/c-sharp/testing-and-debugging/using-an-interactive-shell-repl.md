@@ -15,9 +15,6 @@ title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---
 
-## Cái gì và Tại sao?
-REPL, hay Vòng Lặp Đọc-Đánh giá-In, cho phép bạn nhập mã C# và chạy nó một cách tương tác. Các lập trình viên sử dụng nó để thử nghiệm nhanh, gỡ lỗi, hoặc học C#, mà không cần phải thiết lập các dự án đầy đủ.
-
 ## Cách thức:
 Khởi động REPL trong môi trường C# của bạn sử dụng cửa sổ C# Interactive hoặc chạy `dotnet-script` trong terminal của bạn. Đây là một ví dụ về việc sử dụng nó:
 

@@ -13,9 +13,6 @@ title: Einen Datum aus einem String analysieren
 weight: 30
 ---
 
-## Was & Warum?
-Das Parsen eines Datums aus einem String bedeutet, geschriebene Daten in Textform zu erkennen und in einen Datentyp umzuwandeln, den PowerShell verstehen und mit dem es arbeiten kann. Programmierer tun dies, um Daten zu manipulieren, zu formatieren, zu vergleichen oder zu berechnen, was bei Skripten, die sich mit Logdateien, Benutzereingaben oder der Datenverarbeitung befassen, häufig vorkommt.
-
 ## Wie geht das:
 PowerShell macht das Parsen von Daten aus Strings unkompliziert mit seinem `Get-Date`-Cmdlet und der Typbeschleunigung `[datetime]`, die gut für standardisierte Datumsformate funktionieren. Für komplexere oder nicht standardisierte Datumsstrings kann die Methode `[datetime]::ParseExact` verwendet werden, um das genaue Format festzulegen.
 

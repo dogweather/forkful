@@ -14,12 +14,7 @@ title: "V\xE9rifier si un r\xE9pertoire existe"
 weight: 20
 ---
 
-## Quoi & Pourquoi ?
-
-Vérifier si un répertoire existe en C implique d'interroger le système de fichiers pour vérifier si un chemin spécifique mène à un répertoire. Les programmeurs effectuent souvent cette opération pour s'assurer que les opérations sur les fichiers (telles que la lecture ou l'écriture de fichiers) sont dirigées vers des chemins valides, prévenant les erreurs et améliorant la fiabilité du logiciel.
-
 ## Comment faire :
-
 En C, l'existence d'un répertoire peut être vérifiée en utilisant la fonction `stat`, qui récupère des informations sur le fichier ou le répertoire à un chemin spécifié. La macro `S_ISDIR` de `sys/stat.h` est ensuite utilisée pour évaluer si les informations récupérées correspondent à un répertoire.
 
 Voici comment vous pouvez utiliser `stat` et `S_ISDIR` pour vérifier si un répertoire existe :
@@ -59,7 +54,6 @@ Le répertoire n'existe pas.
 ```
 
 ## Approfondissement :
-
 La structure et la fonction `stat` font partie du langage de programmation C depuis des décennies, dérivant d'Unix. Elles fournissent un moyen standardisé de récupérer des informations sur le système de fichiers, qui, bien qu'étant relativement bas niveau, est largement utilisé en raison de sa simplicité et de son accès direct aux métadonnées du système de fichiers.
 
 Historiquement, vérifier l'existence et les propriétés des fichiers et des répertoires avec `stat` et ses dérivés (comme `fstat` et `lstat`) a été une approche commune. Cependant, ces fonctions interagissent directement avec le noyau de l'OS, ce qui peut introduire une surcharge et des erreurs potentielles si elles ne sont pas correctement gérées.

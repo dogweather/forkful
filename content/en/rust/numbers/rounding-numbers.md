@@ -11,9 +11,6 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-Rounding numbers means adjusting them to the nearest whole number or a fraction with a certain precision. Programmers round numbers to simplify values for human readability, to meet specification requirements, or to reduce computational overhead in floating-point operations.
-
 ## How to:
 Rust makes rounding a breeze. Check these methods out for `f32` or `f64` types:
 

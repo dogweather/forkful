@@ -14,12 +14,7 @@ title: "Einen String gro\xDFschreiben"
 weight: 2
 ---
 
-## Was & Warum?
-
-Das Großschreiben eines Strings in C beinhaltet das Umwandeln des ersten Buchstabens jedes Wortes in einem gegebenen String in Großbuchstaben, falls es sich um einen Kleinbuchstaben handelt. Programmierer führen diese Operation oft durch, um Benutzereingaben für Suchvorgänge, Sortieroperationen oder Anzeigezwecke zu standardisieren und damit Konsistenz und Lesbarkeit über Textdaten hinweg sicherzustellen.
-
 ## Wie geht das:
-
 Das Großschreiben eines Strings in C erfordert grundlegende Kenntnisse der Zeichenmanipulation und der String-Durchquerung. Da C keine eingebaute Funktion hierfür hat, überprüfen Sie typischerweise jedes Zeichen und passen dessen Groß-/Kleinschreibung nach Bedarf an. Unten ist eine einfache Implementierung:
 
 ```c
@@ -56,7 +51,6 @@ Capitalized string: Hello World. Programming In C!
 Dieses Programm durchquert den String `exampleString` und prüft jedes Zeichen, ob es großgeschrieben werden sollte. Die Funktion `islower` überprüft, ob ein Zeichen ein Kleinbuchstabe ist, während `toupper` es in einen Großbuchstaben umwandelt. Das Flag `capNext` bestimmt, ob der nächste angetroffene Buchstabe umgewandelt werden soll, wird nach jedem gefundenen Leerzeichen (' ') gesetzt und anfänglich, um den ersten Buchstaben des Strings großzuschreiben.
 
 ## Tiefere Betrachtung
-
 Die gezeigte Technik ist unkompliziert, aber ineffizient für sehr große Strings oder wenn sie wiederholt in leistungskritischen Anwendungen ausgeführt wird. Im historischen und Implementierungskontext beinhaltet die Zeichenmanipulation in C, einschließlich der Großschreibung, oft die direkte Puffermanipulation, was C's niedrigstufigen Ansatz widerspiegelt und dem Programmierer vollständige Kontrolle über Speicher- und Leistungskompromisse gibt.
 
 Es gibt alternative, ausgefeiltere Methoden zum Großschreiben von Strings, insbesondere unter Berücksichtigung von Gebietsschemata und Unicode-Zeichen, wo Großschreibungsregeln deutlich von dem einfachen ASCII-Szenario abweichen können. Bibliotheken wie ICU (International Components for Unicode) bieten robuste Lösungen für diese Fälle, führen aber Abhängigkeiten und Overhead ein, die für alle Anwendungen nicht notwendig sein könnten.

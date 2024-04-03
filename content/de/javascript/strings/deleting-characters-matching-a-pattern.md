@@ -10,9 +10,6 @@ title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---
 
-## What & Why? (Was & Warum?)
-Das Löschen von Zeichen, die einem Muster entsprechen, ist ein Filterprozess: Unnötiges oder störendes Zeugs fliegt raus. Programmierer nutzen das, um Daten zu bereinigen, zu validieren oder zu verarbeiten. Einfache Beispiele sind das Entfernen ungültiger Zeichen in einer Eingabe oder das Bereinigen von Textdateien.
-
 ## How to: (Wie geht das?)
 In JavaScript benutzt man häufig Regular Expressions (Regex), um Muster in Texten zu identifizieren und zu löschen. Hier ein schnelles Beispiel:
 

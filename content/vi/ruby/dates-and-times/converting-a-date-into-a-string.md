@@ -17,9 +17,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---
 
-## Cái gì & Tại sao?
-Chuyển đổi một ngày thành một chuỗi chuyển đổi đối tượng ngày thành văn bản mà chúng ta có thể đọc và sử dụng. Các lập trình viên làm điều này để hiển thị ngày theo định dạng thân thiện với con người hoặc chuẩn bị dữ liệu cho việc lưu trữ và giao tiếp, như trong các tệp JSON hoặc CSV.
-
 ## Làm thế nào:
 Ruby giúp việc vận dụng với ngày và chuỗi trở nên cực kỳ dễ dàng. Dưới đây là cách bạn làm:
 

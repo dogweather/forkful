@@ -10,9 +10,6 @@ title: Concatenazione di stringhe
 weight: 3
 ---
 
-## Cos'è e Perché?
-Concatenare le stringhe significa unirle insieme, fine a fine, per formarne una nuova. I programmatori lo fanno per manipolare il testo, costruire output dinamici, e gestire dati che cambiano.
-
 ## Come Fare:
 Per concatenare stringhe in Ruby, puoi usare l'operatore `+`, il metodo `concat` o l'interpolazione delle stringhe. Ecco come:
 

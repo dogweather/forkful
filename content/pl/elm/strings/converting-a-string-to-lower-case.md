@@ -11,9 +11,6 @@ title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## What & Why? (Co i dlaczego?)
-Konwersja tekstu do małych liter polega na zmianie wszystkich wielkich liter w ciągu znaków na ich małe odpowiedniki. Programiści używają tej operacji, by ujednolicić dane, szczególnie w przypadku porównań, wyszukiwania i walidacji.
-
 ## How to: (Jak to zrobić:)
 Elm używa funkcji `String.toLower` do konwersji tekstów. Oto przykład z wykorzystaniem:
 

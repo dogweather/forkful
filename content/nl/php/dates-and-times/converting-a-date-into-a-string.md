@@ -12,9 +12,6 @@ title: Een datum converteren naar een string
 weight: 28
 ---
 
-## Wat & Waarom?
-Het omzetten van een datum naar een tekenreeks betekent het veranderen van een datumobject in een platte-tekstformaat. Programmeurs doen dit voor eenvoudige leesbaarheid, opslag of om data te formatteren voor verschillende locaties en normen.
-
 ## Hoe te:
 In PHP zet de `date()` functie een tijdstempel om in een beter leesbare tekenreeks. Het `DateTime` object dient een soortgelijk doel met zijn `format()` methode. Zo zien ze er in de praktijk uit:
 

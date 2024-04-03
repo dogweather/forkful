@@ -11,9 +11,6 @@ title: Beregning av en dato i fremtiden eller fortiden
 weight: 26
 ---
 
-## What & Why?
-Å regne ut en dato i fremtiden eller fortiden handler om å finne en dato før eller etter et gitt tidspunkt. Programmerere gjør dette for å håndtere funksjoner som utløpstider, påminnelser, og planlegging.
-
 ## How to:
 Håndtere datoer i C# er rett frem. Bruk `DateTime` og `TimeSpan` klassene. Se eksemplene:
 

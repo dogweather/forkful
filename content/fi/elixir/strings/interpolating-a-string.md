@@ -10,9 +10,6 @@ title: Merkkijonon interpolointi
 weight: 8
 ---
 
-## What & Why?
-Mikä on merkkijonointerpolointi, ja miksi sitä käytetään? Elixirissä merkkijonointerpolointi tarkoittaa muuttujan arvon "liittämistä" merkkijonoon. Sitä käytetään dynaamisen tekstin luontiin, mikä tekee koodista selkeämpää ja ylläpidettävämpää.
-
 ## How to:
 Interpolointi Elixirissä hoituu `#{}` syntaksilla. Tässä pari esimerkkiä:
 

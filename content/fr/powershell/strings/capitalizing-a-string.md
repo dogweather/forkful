@@ -14,9 +14,6 @@ title: "Mettre en majuscule une cha\xEEne"
 weight: 2
 ---
 
-## Quoi & Pourquoi ?
-Mettre en majuscule une chaîne dans PowerShell consiste à transformer le premier caractère d'une chaîne donnée en majuscule tout en laissant le reste de la chaîne inchangé. Les programmeurs effectuent souvent cette tâche à des fins de formatage, comme la préparation du texte pour l'affichage dans les interfaces utilisateur ou le suivi des règles grammaticales dans les documents générés.
-
 ## Comment faire :
 PowerShell, étant un outil polyvalent, vous permet de mettre en majuscule une chaîne en utilisant des méthodes simples sans avoir besoin de bibliothèques tierces. Voici comment vous pouvez le faire :
 

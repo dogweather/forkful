@@ -12,9 +12,6 @@ title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---
 
-## Mikä ja miksi?
-Kompleksiluvut, jotka koostuvat reaaliosasta ja imaginääriosasta (yleensä kirjoitettu muodossa a + bi), mahdollistavat laskutoimitukset, jotka ovat käytännössä tai periaatteessa mahdottomia pelkillä reaaliluvuilla. Ohjelmoijat käyttävät niitä aloilla kuten signaalinkäsittely, kvanttilaskenta ja sovellettu matematiikka, joissa kaksiulotteinen numeron esitystapa on olennainen.
-
 ## Kuinka:
 Kompleksilukujen käsittely TypeScriptissä vaatii omistetun luokan. Luodaan sellainen ja käydään läpi yhteen- ja kertolasku.
 

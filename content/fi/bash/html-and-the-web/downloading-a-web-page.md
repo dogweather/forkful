@@ -9,9 +9,6 @@ title: Verkkosivun lataaminen
 weight: 42
 ---
 
-## What & Why? / Mitä ja miksi?
-Ladataan verkkosivun sisältö palvelimelta omalle koneelle. Ohjelmoijat tekevät tämän, kun tarvitaan tietoa automaattisesti tai testataan sovelluksia.
-
 ## How to: / Kuinka:
 ```Bash
 # Lataa sivun sisältö wget-komennolla

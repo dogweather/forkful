@@ -14,12 +14,7 @@ title: Nedlasting av en nettside
 weight: 42
 ---
 
-## Hva & Hvorfor?
-
-Å laste ned en nettside i Google Apps Script innebærer å hente innholdet på en nettside via HTML for ulike formål, som nettskraping, datautvinning eller overvåkning av endringer. Programmerere velger denne operasjonen for å automatisere innsamling av data eller integrasjonsoppgaver, noe som minimerer manuell innsats og sikrer behandling av data i sanntid.
-
 ## Hvordan:
-
 I Google Apps Script er tjenesten `UrlFetchApp` avgjørende for nedlasting av webinnhold. Nedenfor er en trinn-for-trinn-guide og et enkelt eksempel som demonstrerer hvordan man henter og logger HTML-innholdet til en nettside:
 
 1. **Grunnleggende Henteoperasjon:**
@@ -57,7 +52,6 @@ function downloadSecureWebPage() {
 Vær oppmerksom på Google Apps Script's kvoter; intens bruk kan kreve feilhåndtering for rategrenser.
 
 ## Dypdykk
-
 Historisk sett begynte nedlasting og manipulering av webinnhold med enkle HTTP-forespørsler, som har utviklet seg betydelig med introduksjonen av skriptspråk. Google Apps Script tillater enkel utførelse av slike oppgaver innenfor G Suite-økosystemet, ved å dra nytte av Googles robuste infrastruktur. Tjenesten `UrlFetchApp` er et sentralt element i denne funksjonaliteten og kapsler inn komplekse HTTP/S-forespørsler i et enklere applikasjonsnivågrensesnitt.
 
 Tross sin bekvemmelighet, kan Google Apps Script ikke alltid være det beste verktøyet for tung nettskraping eller når kompleks etterbehandling av hentede data kreves på grunn av utførelsestidsgrenser og kvoter satt av Google. I slike tilfeller, kan dedikerte rammeverk for nettskraping eller språk designet for asynkrone I/O-operasjoner, slik som Node.js med biblioteker som Puppeteer eller Cheerio, tilby mer fleksibilitet og kraft.

@@ -14,9 +14,6 @@ title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---
 
-## Mikä & Miksi?
-Säännölliset lausekkeet (regex) Dart-kielessä tarjoavat tehokkaan tavan etsiä ja manipuloida merkkijonoja, mahdollistaen ohjelmoijien suorittaa monimutkaisia tekstinkäsittelytehtäviä tehokkaasti. Regexin ymmärtämisen avulla kehittäjät voivat suorittaa tekstivalidointeja, etsiä kaavoja ja muuntaa tekstiä nopeasti, mikä on olennaista lomakkeiden käsittelyssä, datan jäsentämisessä ja yleisissä merkkijonojen manipulaatioissa moderneissa sovelluksissa.
-
 ## Miten:
 Dart käyttää `RegExp`-luokkaa säännöllisiin lausekkeisiin. Tässä on perusesimerkki yksinkertaisen kaavan vastaamisesta merkkijonossa:
 

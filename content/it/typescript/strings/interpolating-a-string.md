@@ -10,9 +10,6 @@ title: Interpolazione di una stringa
 weight: 8
 ---
 
-## What & Why?
-L'interpolazione di stringhe permette di inserire valori dinamici in una stringa. Programmatori la usano per creare testo flessibile e leggibile.
-
 ## How to:
 Con TypeScript, interpolare è facile come usare il backtick (\`) e le espressioni `${}`. Ecco un esempio:
 
@@ -41,7 +38,6 @@ Le alternative? Oltre alla concatenazione, esistono librerie come Lodash che for
 Dietro le quinte, TypeScript trasforma i template literals in concatenazioni di stringhe equivalenti in JavaScript ES5. Questo significa che anche se scrivi codice in TypeScript usando template literals, funzionerà su browser e ambienti che supportano solo versioni precedenti di JavaScript.
 
 ## See Also
-
 - MDN Web Docs sui Template Literals: [MDN Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
 - TypeScript Handbook: [TypeScript Template Strings](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)
 - Documentazione Lodash su `_.template`: [Lodash _.template](https://lodash.com/docs/4.17.15#template)

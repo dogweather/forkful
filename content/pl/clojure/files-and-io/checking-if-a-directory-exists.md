@@ -12,9 +12,6 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i dlaczego?
-Sprawdzanie czy katalog istnieje w Clojure polega na weryfikacji obecności katalogu systemu plików z poziomu aplikacji Clojure. Zadanie to jest kluczowe dla operacji na plikach, aby uniknąć błędów podczas odczytu z lub zapisu do katalogów, które mogą nie istnieć, zapewniając niezawodne i wolne od błędów wykonanie kodu.
-
 ## Jak to zrobić:
 Clojure, jako język działający na JVM, może wykorzystać klasę `java.io.File` z Javy do tego celu. Nie potrzebujesz żadnej biblioteki stron trzecich dla tak podstawowej operacji. Oto jak możesz to zrobić:
 

@@ -18,12 +18,7 @@ title: "Chuy\u1EC3n \u0111\u1ED5i chu\u1ED7i th\xE0nh ch\u1EEF th\u01B0\u1EDDng"
 weight: 4
 ---
 
-## Gì & Tại Sao?
-
-Việc chuyển đổi một chuỗi thành chữ thường là một thao tác cơ bản giúp đảm bảo sự thống nhất và nhất quán trong xử lý văn bản, rất cần thiết cho các tác vụ như so sánh không phân biệt chữ hoa chữ thường hay chuẩn hóa văn bản. Lập trình viên thường thực hiện thao tác này để chuẩn bị dữ liệu cho quá trình xử lý tiếp theo hoặc để đảm bảo tính tương thích trên các hệ thống và địa phương khác nhau.
-
 ## Làm thế nào:
-
 Trong Go, việc chuyển đổi một chuỗi thành chữ thường có thể dễ dàng thực hiện thông qua gói `strings`, cụ thể là hàm `ToLower()`. Hàm này nhận vào một chuỗi và trả về một chuỗi mới với tất cả các ký tự in hoa được chuyển thành chữ thường. Dưới đây là một ví dụ nhanh:
 ```go
 package main
@@ -48,7 +43,6 @@ Lowercase: hello, world!
 Ví dụ này minh họa cách tiếp cận đơn giản để chuyển đổi bất kỳ chuỗi nào thành chữ thường trong Go. Rất đơn giản, với công việc chính được thực hiện bởi phương thức `ToLower()`, che giấu đi sự phức tạp của các mã hóa ký tự và quy tắc về chữ hoa chữ thường đặc thù cho từng địa phương.
 
 ## Tìm hiểu sâu
-
 Việc triển khai hàm `strings.ToLower()` trong thư viện chuẩn của Go là hiệu quả và ý thức về Unicode, có nghĩa là nó xử lý chính xác các ký tự nằm ngoài bộ ASCII cơ bản, bao gồm cả các chữ từ bảng chữ cái không phải Latin. Điều này đặc biệt quan trọng trong bối cảnh toàn cầu khi phần mềm có thể xử lý văn bản từ nhiều ngôn ngữ và bộ ký tự đa dạng.
 
 Trong lịch sử, việc xử lý chuyển đổi chữ hoa chữ thường trong các ngôn ngữ lập trình đã phát triển đáng kể. Các ngôn ngữ sớm thường thiếu hỗ trợ bản địa cho các thao tác như vậy, hoặc các triển khai của chúng chỉ giới hạn trong bộ ký tự ASCII, dẫn đến hành vi không chính xác với các bảng chữ cái khác. Go được thiết kế với sự hỗ trợ Unicode ngay từ đầu, phản ánh một cách tiếp cận hiện đại với việc thao tác chuỗi.

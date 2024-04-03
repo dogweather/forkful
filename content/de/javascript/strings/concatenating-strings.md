@@ -11,12 +11,7 @@ title: "Zeichenketten verkn\xFCpfen"
 weight: 3
 ---
 
-## Was & Warum?
-
-String-Konkatenation ist das Zusammenfügen von zwei oder mehreren Textstücken (Strings) zu einem. Wir nutzen sie, um dynamischen Text zu erstellen oder Informationen anzuzeigen, die sich während des Programmablaufs ändern können.
-
 ## So geht's:
-
 ```javascript
 // Mit dem Plus-Operator (+)
 let gruss = "Hallo, " + "Welt!";
@@ -29,7 +24,6 @@ console.log(begruessung); // "Hallo, Welt!"
 ```
 
 ## Deep Dive
-
 Historisch wurde die String-Konkatenation hauptsächlich mit dem Plus-Operator durchgeführt. Seit ECMAScript 6 (ES6) gibt es die eleganteren Template Literals (Template Strings), die das Einbetten von Variablen und Ausdrücken in Strings erheblich vereinfachen.
 
 Alternativen zur Konkatenation:
@@ -43,7 +37,6 @@ Implementierungsdetails:
 - Speichermanagement: Modernes JS optimiert die Speichernutzung bei der String-Konkatenation automatisch.
 
 ## Siehe auch
-
 - [MDN Web Docs: Template Literals](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Template_literals)
 - [MDN Web Docs: String.prototype.concat()](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
 - [You Don't Know JS: Es6 & Beyond](https://github.com/getify/You-Dont-Know-JS/) - Buch über moderne JavaScript-Features, einschließlich Template Literals.

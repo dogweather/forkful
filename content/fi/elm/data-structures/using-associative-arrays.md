@@ -14,12 +14,7 @@ title: "Assosiatiivisten taulukoiden k\xE4ytt\xF6"
 weight: 15
 ---
 
-## Mikä & Miksi?
-
-Assosiatiiviset taulukot, tai kuten Elm kutsuu niitä, Sanakirjat, kartoittavat avaimet arvoihin tavalla, joka tekee arvojen hakemisesta, lisäämisestä ja poistosta erittäin nopeaa. Ne ovat sinun valintasi, kun tarvitset pitää kirjaa asioista ilman tiukkaa järjestystä, kuten käyttäjäasetukset tai varastolistat.
-
 ## Kuinka:
-
 Elmissä työskentelet Sanakirjojen kanssa `Dict` moduulissa, joten sukellamme nopeasti esimerkkiin:
 
 ```Elm
@@ -52,7 +47,6 @@ Esimerkkitulostus, kun näytetään `dictToList`:
 Tämä osoittaa perusoperaatiot: luomisen, päivittämisen, käyttämisen ja iteroimisen Sanakirjan yli.
 
 ## Syväsukellus
-
 Elmin Sanakirjat sisäisesti käyttävät rakennetta, joka tunnetaan nimellä AVL-puu - tyyppi itseään tasapainottava binäärihakupuu. Tämä valinta löytää tasapainon varmistamalla, että operaatiot kuten insert, get ja remove ovat hyvän suorituskyvyn omaavia (logaritminen aikavaativuus) ja ylläpitävät yksinkertaisuutta datan käsittelyssä.
 
 Elmin `Dict` vahvuuksista huolimatta, se ei ole kaikille kokoelmatyypeille sopiva ratkaisu. Järjestetyille kokoelmille tai sellaisille, jotka täytyy iteroida peräkkäin, Lista tai Taulukko saattaisi olla sopivampi. Lisäksi, kun työskennellään kiinteän joukon tunnettujen avainten kanssa, käyttäjän määrittelemät tyypit (Elmin versio enumeraatioista) voivat tarjota enemmän tyyppiturvallisuutta ja selvempiä aikomuksia koodissasi.

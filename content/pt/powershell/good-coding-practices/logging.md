@@ -12,9 +12,6 @@ title: Registro de Logs
 weight: 17
 ---
 
-## O Quê e Por Quê?
-Registrar é basicamente deixar um rastro de migalhas através do seu código - é como você acompanha o que está acontecendo quando o seu script está rodando solto. Programadores registram para depurar, para rastrear o comportamento do aplicativo, para monitorar o desempenho e para ficar de olho em qualquer travessura.
-
 ## Como fazer:
 Aqui vai a essência de como adicionar um registro básico aos seus scripts:
 

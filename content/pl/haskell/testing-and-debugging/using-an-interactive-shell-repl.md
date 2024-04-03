@@ -11,9 +11,6 @@ title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---
 
-## Co i dlaczego?
-Interaktywna powłoka, czyli REPL (Read-Eval-Print Loop), w Haskellu pozwala na uruchamianie fragmentów kodu na żywo. Jest to plac zabaw dla szybkiego uzyskiwania informacji zwrotnych, testowania funkcji i nauki języka.
-
 ## Jak to zrobić:
 Aby uruchomić GHCi (interaktywne środowisko Glasgow Haskell Compiler), wystarczy wpisać `ghci` w terminalu. Oto jak z niego korzystać:
 

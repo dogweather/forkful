@@ -13,9 +13,6 @@ title: Analyse Syntaxique de HTML
 weight: 43
 ---
 
-## Quoi & Pourquoi ?
-L'analyse HTML en programmation consiste à extraire des données de documents HTML. Les programmeurs font cela pour interagir avec ou gratter le contenu web pour l'extraction d'informations, des tests ou des fins d'automatisation, même lorsque des API officielles ne sont pas disponibles.
-
 ## Comment faire :
 Dart ne fournit pas de support intégré pour l'analyse HTML dans ses bibliothèques de base. Cependant, vous pouvez utiliser un package tiers comme `html` pour analyser et manipuler des documents HTML.
 

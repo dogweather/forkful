@@ -11,9 +11,6 @@ title: Suchen und Ersetzen von Text
 weight: 10
 ---
 
-## Was & Warum?
-Textsuche und -ersetzung ermöglicht es uns, spezifische Zeichenketten in einem Text zu finden und sie durch andere zu ersetzen. Das ist nützlich, um Daten zu aktualisieren, Fehler zu korrigieren oder das Format von Informationen zu ändern.
-
 ## How to:
 Um Text in Swift zu suchen und zu ersetzen, verwenden wir die `replacingOccurrences(of:with:)` Methode des `String` Typs. Hier ein Beispiel:
 

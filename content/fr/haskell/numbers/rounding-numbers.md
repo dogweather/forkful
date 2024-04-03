@@ -11,12 +11,7 @@ title: Arrondir les nombres
 weight: 13
 ---
 
-## Quoi et Pourquoi ?
-
-Arrondir des nombres signifie les ajuster au plus proche entier ou à la décimale spécifiée. Les programmeurs arrondissent les nombres pour contrôler la précision, adapter les sorties pour la présentation à l'utilisateur ou réduire les coûts de calcul pour les opérations en virgule flottante.
-
 ## Comment faire :
-
 Haskell utilise les fonctions `round`, `ceiling`, `floor` et `truncate` du `Prelude` pour les opérations d'arrondi.
 
 ```haskell
@@ -37,7 +32,6 @@ main = do
 ```
 
 ## Approfondissement
-
 Historiquement, l'arrondi est significatif dans l'analyse numérique et l'informatique car il est crucial pour minimiser l'accumulation d'erreurs dans les calculs, particulièrement avant que les représentations à virgule flottante ne soient standardisées avec l'IEEE 754.
 
 À quoi arrondir ? `round` vous amène au plus proche entier – vers le haut ou le bas. `ceiling` et `floor` arrondissent toujours au plus proche entier, respectivement vers le haut ou vers le bas, tandis que `truncate` se contente de supprimer les points décimaux.
@@ -47,7 +41,6 @@ Des alternatives à ces fonctions pourraient impliquer une logique personnalisé
 Faites attention aux résultats inattendus dus à la manière dont Haskell gère les cas à mi-chemin dans `round` (il arrondit au nombre pair le plus proche).
 
 ## Voir Aussi
-
 - Documentation de Prelude Haskell pour les fonctions d'arrondi : https://hackage.haskell.org/package/base-4.16.1.0/docs/Prelude.html
 - Le Wiki Haskell sur l'arithmétique à virgule flottante : https://wiki.haskell.org/Floating_point_arithmetic
 - La norme IEEE 754-2008 pour en savoir plus sur le traitement des nombres à virgule flottante dans de nombreux langages : https://ieeexplore.ieee.org/document/4610935

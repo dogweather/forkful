@@ -10,9 +10,6 @@ title: Refactoring
 weight: 19
 ---
 
-## What & Why?
-Refactoring is the art of tweaking existing code to improve its structure, readability, and efficiency without altering its external behavior. Programmers do it to make their code more maintainable, reduce complexity, and often as a preliminary step before adding new features or fixing bugs.
-
 ## How to:
 Let’s take a simple Lua function and refactor it. We begin with a function that calculates the sum of numbers in a list but is written without much thought for efficiency or clarity:
 

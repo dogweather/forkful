@@ -11,9 +11,6 @@ title: "Fjerne anf\xF8rselstegn fra en streng"
 weight: 9
 ---
 
-## Hva og hvorfor?
-Å fjerne anførselstegn fra en streng betyr å kvitte seg med de irriterende doble eller enkle anførselstegnene som omslutter teksten din. Programmerere gjør dette for å rense data, sikre uniformitet, eller forberede strenger for behandling der anførselstegn er uønskede eller kan forårsake feil.
-
 ## Hvordan:
 I Clojure er strenger uforanderlige, så når vi snakker om "å fjerne anførselstegn," snakker vi egentlig om å skape en ny streng uten anførselstegn. Her er det slanke med `clojure.string/replace`:
 

@@ -11,9 +11,6 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## What & Why?
-Søk og erstatt er prosessen med å finne tekststrenger og bytte dem ut med noe annet. Programmerere bruker dette for å oppdatere kode, korrigere feil, eller endre data på en effektiv måte.
-
 ## How to:
 Bruk `sed` for å søke og erstatte i en tekstfil. Her er et enkelt eksempel:
 

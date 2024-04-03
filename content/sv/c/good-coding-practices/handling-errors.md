@@ -13,12 +13,7 @@ title: Hantera fel
 weight: 16
 ---
 
-## Vad & Varför?
-
-Att hantera fel i C innebär att upptäcka och bemöta onormala förhållanden som uppstår under programkörning. Programmerare gör detta för att förhindra buggar, krascher och oförutsägbart beteende, vilket säkerställer att programvaran fungerar pålitligt och effektivt under olika scenarier.
-
 ## Hur man gör:
-
 C har inte inbyggt stöd för undantag som vissa andra språk har. Istället förlitar det sig på några konventionella strategier för felhantering, såsom att returnera speciella värden från funktioner och att ställa in globala variabler som `errno`.
 
 **Returnera Speciella Värden**
@@ -79,7 +74,6 @@ Fel vid filöppning: Filen eller katalogen finns inte
 ```
 
 ## Djupdykning
-
 Historiskt sett har C-programmeringsspråkets minimalistiska design uteslutit en inbyggd mekanism för undantagshantering, vilket återspeglar dess ursprung i lågnivå, systemprogrammering där maximal prestanda och kontroll nära maskinvaran är kritiska. Istället antar C en mer manuell approach till felhantering som passar dess filosofi att ge programmerare så mycket kontroll som möjligt, även på bekostnad av bekvämlighet.
 
 Även om denna metod ligger väl i linje med C:s designmål, kan den också leda till utförlig kod för felkontroll och potentialen för missade felkontroller, vilket moderna språk adresserar med strukturerade undantagshanteringsmekanismer. Till exempel tillåter undantag i språk som Java eller C# centraliserad felbehandling, vilket gör koden renare och felhanteringen mer rakt på sak. Dock introducerar undantag egna överhuvuden och komplexitet, vilket kanske inte är idealiskt för systemnivåprogrammering där C utmärker sig.

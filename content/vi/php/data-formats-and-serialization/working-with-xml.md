@@ -16,9 +16,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi XML"
 weight: 40
 ---
 
-## Cái gì & Tại sao?
-XML là một ngôn ngữ đánh dấu được sử dụng để lưu trữ và vận chuyển dữ liệu. Lập trình viên làm việc với XML để cho phép tính tương thích giữa các ứng dụng và hệ thống - nghĩ về trao đổi dữ liệu và cài đặt cấu hình.
-
 ## Cách thức:
 Đọc XML với SimpleXML:
 

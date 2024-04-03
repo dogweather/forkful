@@ -14,9 +14,6 @@ title: "Berechnung eines zuk\xFCnftigen oder vergangenen Datums"
 weight: 26
 ---
 
-## Was & Warum?
-Die Berechnung eines zukünftigen oder vergangenen Datums umfasst das Bestimmen eines spezifischen Datums, indem eine bestimmte Anzahl von Tagen, Monaten oder Jahren zu einem gegebenen Datum hinzugefügt oder davon abgezogen wird. Programmierer tun dies für Aufgaben wie das Planen von Ereignissen, das Generieren von Erinnerungen oder das Handhaben von Ablaufdaten, was es zu einer wesentlichen Funktionalität in verschiedenen Anwendungen macht, von Kalendersystemen bis hin zu Finanzsoftware.
-
 ## Wie:
 Obwohl die C-Standardbibliothek keine direkten Funktionen für die Datum-Arithmetik bereitstellt, können Sie Daten mithilfe der `time.h`-Bibliothek manipulieren, insbesondere mit dem Datentyp `time_t` und `struct tm`. Hier ist ein vereinfachtes Beispiel dafür, wie man Tage zum aktuellen Datum hinzufügt:
 

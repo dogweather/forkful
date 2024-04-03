@@ -13,9 +13,6 @@ title: Een tijdelijk bestand aanmaken
 weight: 21
 ---
 
-## Wat & Waarom?
-Een tijdelijk bestand creëren betekent het maken van een bestand dat je weggooit na kort gebruik. Programmeurs doen dit voor tijdelijke opslag of wanneer ze willen voorkomen dat een harde schijf verstopt raakt met gegevens die een zeer korte houdbaarheid hebben.
-
 ## Hoe te:
 In Elixir kun je een tijdelijk bestand maken en gebruiken met de functie `System.tmp_dir/1` en de module `File`. Hier is een snel voorbeeld:
 

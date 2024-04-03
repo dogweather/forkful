@@ -13,9 +13,6 @@ title: Capitalizando uma string
 weight: 2
 ---
 
-## O que & Por quê?
-Capitalizar uma string em C# envolve converter o primeiro caractere de uma string para maiúscula, caso ele já não seja. Essa alteração pode ser crucial para formatar saídas, impor padrões de codificação ou tornar textos de interface de usuário mais legíveis.
-
 ## Como fazer:
 C# oferece uma abordagem direta para capitalizar strings usando métodos integrados. A maneira mais simples de alcançar isso é modificando a string diretamente com esses métodos. Para regras de capitalização mais complexas ou específicas (por exemplo, capitalizar cada palavra), bibliotecas adicionais ou métodos manuais podem ser necessários. Abaixo estão exemplos demonstrando como capitalizar uma string de várias maneiras em C#.
 

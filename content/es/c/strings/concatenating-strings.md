@@ -13,12 +13,7 @@ title: Concatenando cadenas de texto
 weight: 3
 ---
 
-## Qué y Por Qué?
-
-La concatenación de cadenas en C involucra unir dos o más cadenas de extremo a extremo para formar una nueva cadena. Los programadores realizan esta operación para construir dinámicamente cadenas en tiempo de ejecución, esencial para crear mensajes significativos, rutas de archivos o cualquier dato ensamblado de varias fuentes de cadenas.
-
 ## Cómo hacerlo:
-
 En C, las cadenas son arreglos de caracteres que terminan con un carácter nulo (`\0`). A diferencia de en los lenguajes de alto nivel, C no proporciona una función incorporada para la concatenación de cadenas. En su lugar, se utilizan las funciones `strcat()` o `strncat()` de la biblioteca `<string.h>`.
 
 Aquí hay un ejemplo simple utilizando `strcat()`:
@@ -61,7 +56,6 @@ int main() {
 Esto limita la concatenación a los primeros `num` caracteres de la cadena fuente, ayudando a prevenir desbordamientos de búfer.
 
 ## Análisis Profundo
-
 Las funciones `strcat()` y `strncat()` han sido parte de la biblioteca estándar de C desde su inicio, reflejando la naturaleza de bajo nivel del lenguaje que requiere la gestión manual de cadenas y memoria. A diferencia de muchos lenguajes de programación modernos que tratan las cadenas como objetos de primera clase con operadores de concatenación incorporados (como `+` o `.concat()`), el enfoque de C requiere una comprensión más profunda de punteros, asignación de memoria y posibles trampas como desbordamientos de búfer.
 
 Aunque `strcat()` y `strncat()` son ampliamente utilizados, a menudo son criticados por su potencial para crear vulnerabilidades de seguridad si no se usan con cuidado. Los desbordamientos de búfer, donde los datos exceden la memoria asignada, pueden llevar a fallos o ser explotados para la ejecución de código arbitrario. Como resultado, los programadores están recurriendo cada vez más a alternativas más seguras, como `snprintf()`, que proporciona un comportamiento más predecible limitando el número de caracteres escritos en la cadena de destino basado en su tamaño:

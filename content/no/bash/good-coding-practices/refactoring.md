@@ -10,9 +10,6 @@ title: Refaktorering
 weight: 19
 ---
 
-## Hva & Hvorfor?
-Omstrukturering er prosessen med å restrukturere eksisterende datamaskinkode uten å endre dens eksterne oppførsel. Det er en vital praksis for å redusere kompleksitet, forbedre vedlikeholdbarhet, og holde kodebasen sunn og lettere å forstå for både nåværende og fremtidige utviklere.
-
 ## Hvordan gjøre det:
 La oss vurdere et enkelt Bash-skript som trenger litt omstrukturering. Det er klumpete, med gjentatt kode og vanskelig å følge:
 

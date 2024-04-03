@@ -10,9 +10,6 @@ title: Inviare una richiesta http
 weight: 44
 ---
 
-## What & Why? (Cosa e Perché?)
-Inviare una richiesta HTTP significa chiedere o inviare dati a un server web. I programmatori lo fanno per interagire con API, scaricare contenuti o inviare informazioni.
-
 ## How to: (Come Fare:)
 Usiamo `requests`, una libreria elegante e semplice. Installala con `pip install requests`. Ecco un esempio:
 

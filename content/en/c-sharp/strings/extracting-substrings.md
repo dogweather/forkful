@@ -11,9 +11,6 @@ title: Extracting substrings
 weight: 6
 ---
 
-## What & Why?
-Extracting substrings is the action of snagging a specific part of a string — kinda like scooping out your favorite chunk of a cake. Programmers do this to manipulate, analyze, or validate smaller bits of a larger string without wrestling with the whole thing.
-
 ## How to:
 C# makes pulling substrings out of a string easy. Here's a quick look at how it's done using the `Substring` method and string slicing with range operators.
 

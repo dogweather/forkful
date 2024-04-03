@@ -11,12 +11,7 @@ title: Generowanie liczb losowych
 weight: 12
 ---
 
-## Co i Dlaczego?
-
-Generowanie losowych liczb w C# polega na tworzeniu nieprzewidywalnych wartości numerycznych w określonym zakresie. Programiści używają tych metod do implementacji funkcji takich jak kryptografia, symulacje i gry, gdzie wymagana jest nieprzewidywalność lub symulacja rzeczywistej losowości.
-
 ## Jak to zrobić:
-
 Najczęstszym sposobem generowania losowych liczb w C# jest użycie klasy `System.Random`. Oto prosty przykład demonstrujący jej użycie:
 
 ```C#
@@ -68,7 +63,6 @@ public class SecureRandomExample
 ```
 
 ## Dogłębna analiza
-
 Generowanie losowych liczb w C# ewoluowało na przestrzeni lat. Początkowo klasa `System.Random` była używana do generowania pseudo-losowych liczb. Jest to pseudo-losowe, ponieważ, biorąc pod uwagę konkretną wartość nasiona, wyprodukuje ten sam ciąg liczb, co może być użyteczne do debugowania lub powtarzalności testów.
 
 Mimo że jest wystarczająca dla podstawowych potrzeb, `System.Random` nie jest bezpieczna w użyciu równoległym i może produkować przewidywalne wyniki, co nie jest odpowiednie dla aplikacji zależnych od bezpieczeństwa. Ta ograniczenie doprowadziło do wprowadzenia `RNGCryptoServiceProvider` dla kryptograficznej losowości, która jest bardziej bezpieczna, ale również bardziej zasobożerna.

@@ -15,9 +15,6 @@ title: "\u5B57\u7B26\u4E32\u63D2\u503C"
 weight: 8
 ---
 
-## What & Why? 什么是字符串插值？为什么程序员要使用它？
-字符串插值是把变量或表达式的值嵌入到字符串中的技术。程序员这么做，是为了创建动态和易于读写的信息。
-
 ## How to: 怎样进行字符串插值？
 ```java
 public class StringInterpolationExample {

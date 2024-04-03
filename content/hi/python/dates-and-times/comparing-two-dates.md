@@ -25,12 +25,7 @@ title: "\u0926\u094B \u0924\u093E\u0930\u0940\u0916\u094B\u0902 \u0915\u0940 \u0
 weight: 27
 ---
 
-## क्या और क्यों? (What & Why?)
-
-Date comparison का मतलब है दो तारीखों की तुलना करना - ये जानने के लिए कि कौन सी तारीख पहले है या बाद में, या क्या वे एक ही हैं। Programmers ये करते हैं ताकि events के sequence, duration और timeouts को संभाल सकें।
-
 ## कैसे करें? (How to:)
-
 ```Python
 from datetime import datetime
 
@@ -52,11 +47,9 @@ date1 बड़ी है date2 से: False
 ```
 
 ## गहराई से जानकारी (Deep Dive)
-
 Python में दो तारीखों की तुलना `datetime` मॉड्यूल से की जा सकती है। 1990 में Python की शुरुआत से, `datetime` मानक पुस्तकालय में एक मुख्य कोग है। विकल्पों में `time` मॉड्यूल भी है, पर वह सीमित है। तारीखों की तुलना करते समय, `datetime` ऑब्जेक्ट्स को सीधे तुलना ऑपरेटरों के साथ compare किया जा सकता है, जैसे `<`, `>`, `==`। बेहतर functionality और third-party extensions के लिए, `dateutil` पैकेज भी उपलब्ध है।
 
 ## और भी (See Also)
-
 - datetime मॉड्यूल की आधिकारिक डाॅक्स: https://docs.python.org/3/library/datetime.html
 - dateutil पैकेज: https://dateutil.readthedocs.io/en/stable/
 - Python की टाइम फंक्शंस पर गहराई से समझ: https://realpython.com/python-time-module/

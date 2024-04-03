@@ -13,12 +13,7 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mikä ja miksi?
-
-Hakemiston olemassaolon tarkistaminen Google Apps Scriptillä tarkoittaa kansion olemassaolon varmistamista Google Drivessä. Ohjelmoijat suorittavat usein tämän tarkistuksen välttääkseen virheitä tai tarpeetonta kansioiden luontia hallinnoitaessa tiedostoja ja hakemistoja ohjelmallisesti.
-
 ## Kuinka:
-
 Google Apps Script ei tarjoa suoraa "exists"-metodia kansioille. Sen sijaan käytämme Google Driven hakutoimintoja tarkistaaksemme, onko tietyllä nimellä olevaa kansiota olemassa. Tässä on askel askeleelta esimerkki:
 
 ```javascript
@@ -54,7 +49,6 @@ Hakemistoa ei ole olemassa.
 Tämä skripti hyödyntää `getFoldersByName`-metodia, joka hakee kaikki käyttäjän Drivessä olevat kansiot, jotka vastaavat määriteltyä nimeä. Koska nimet eivät ole ainutlaatuisia Drivessä, tämä metodi palauttaa `FolderIterator`-iteraattorin. Seuraavan kohteen (`hasNext()`) olemassaolo tässä iteraattorissa osoittaa, että hakemisto on olemassa.
 
 ## Syväsukellus
-
 Historiallisesti tiedostojen hallinta web- ja pilviympäristöissä on kehittynyt merkittävästi. Google Apps Script tarjoaa laajan API:n Google Drivelle, mahdollistaen monimutkaiset tiedosto- ja kansioiden hallintaoperaatiot, mukaan lukien tässä näytetyt etsintä- ja tarkistusmekanismit. Huomionarvoista on kuitenkin suoran olemassaolontarkistuksen puuttuminen, mikä johtunee siitä, että Google Drive sallii useiden samannimisten kansioiden olemassaolon, mikä eroaa monista tiedostojärjestelmistä, jotka vaativat yksilölliset nimet samassa hakemistossa.
 
 Tässä kontekstissa `getFoldersByName`-metodin käyttäminen on tehokas väistöliike, mutta se saattaa tuoda mukanaan tehottomuutta tilanteessa, jossa on valtava määrä duplikaattinimisiä kansioita. Vaihtoehtoinen lähestymistapa saattaisi sisältää sovelluskohtaisen indeksoinnin tai nimeämiskäytännön ylläpidon varmistaakseen nopeammat tarkistukset, erityisesti kun suorituskyvystä tulee kriittinen huolenaihe.

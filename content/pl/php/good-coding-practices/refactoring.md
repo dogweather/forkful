@@ -11,9 +11,6 @@ title: Refaktoryzacja
 weight: 19
 ---
 
-## Co i dlaczego?
-Refaktoryzacja to proces restrukturyzacji istniejącego kodu komputerowego, bez zmiany jego zewnętrznego zachowania. Programiści przeprowadzają refaktoryzację, aby poprawić nie-funkcjonalne atrybuty oprogramowania, czyniąc kod czytelniejszym, bardziej wydajnym i łatwiejszym w utrzymaniu.
-
 ## Jak to zrobić:
 Weźmy klasyczny fragment kodu PHP i zastosujmy trochę magii refaktoryzacji.
 

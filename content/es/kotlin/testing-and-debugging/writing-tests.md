@@ -14,12 +14,7 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## ¿Qué y por qué?
-
-Escribir pruebas en Kotlin implica elaborar fragmentos de código que validan automáticamente la corrección funcional de tus módulos de software, asegurando que funcionen como se espera. Los programadores lo hacen para detectar errores tempranamente, facilitar la refactorización del código y proporcionar documentación sobre cómo se supone que funcionen los componentes del software.
-
 ## Cómo hacerlo:
-
 Kotlin soporta el desarrollo guiado por pruebas con varios marcos de trabajo, siendo los más populares JUnit, Kotest y MockK para el mockeo. Aquí hay un ejemplo simple utilizando JUnit:
 
 ```kotlin

@@ -12,12 +12,7 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mikä & Miksi?
-
-Standardivirheeseen (stderr) kirjoittaminen on virheviestien ja diagnostiikan ohjaamista erilliseen virtaan, joka eroaa standarditulosteesta (stdout). Tämä mahdollistaa paremman virheenkäsittelyn ja lokien jäsennyksen. Ohjelmoijat tekevät näin helpottaakseen vianetsintää ja varmistaakseen, että virheviestit voidaan helposti tunnistaa ja tarvittaessa ohjata uudelleen, pitäen lopputulosteet tai käyttäjäviestit selkeinä.
-
 ## Kuinka:
-
 Kotlinissa stderr:iin kirjoittaminen voidaan saavuttaa käyttämällä `System.err.println()`. Tämä metodi on samankaltainen kuin `System.out.println()`, mutta ohjaa tulosteen standardivirhevirtaan eikä standarditulostevirtaan.
 
 ```kotlin

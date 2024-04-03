@@ -10,9 +10,6 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-Retrieving the current date in C++ is a fundamental task for programs that need to process or display dates based on the system's clock. It's essential for logging, time-stamping, scheduling tasks, and any functionality that relies on dates and time.
-
 ## How to:
 C++ provides several ways to get the current date, including the C++ standard library and third-party libraries like Boost. The following examples demonstrate how to accomplish this task.
 

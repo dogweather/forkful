@@ -11,12 +11,7 @@ title: "Exibindo sa\xEDdas de depura\xE7\xE3o"
 weight: 33
 ---
 
-## O Que é e Por Que?
-
-Depurar é como procurar uma agulha no palheiro: você precisa ver o que seu código está realmente fazendo. Programadores imprimem mensagens de depuração para entender o funcionamento interno ou encontrar o ponto onde as coisas vão mal.
-
 ## Como Fazer:
-
 Imprimir no PowerShell é simples. Use `Write-Host` para enviar texto para a tela, ou `Write-Debug` para mensagens de debug que podem ser ativadas ou desativadas. Aqui estão alguns exemplos:
 
 ```PowerShell
@@ -34,9 +29,7 @@ Write-Debug "Agora você me vê."
 Ao rodar com `$DebugPreference` desabilitado, você só verá "Estou aqui!". Quando habilitado, verá ambas mensagens.
 
 ## Aprofundamento:
-
 Historicamente, imprimir saídas para depuração é uma das técnicas mais antigas e diretas. Alternativas no PowerShell incluem `Write-Verbose` e `Write-Information` para mais granularidade no controle de saída. Implementar saída de depuração é mais sobre o que você quer ver do que como você faz isso. Pensar cuidadosamente sobre *o que* imprimir é tão importante quanto saber *como* imprimir.
 
 ## Veja Também:
-
 - Mais sobre preferências do PowerShell: [about_Preference_Variables](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_preference_variables)

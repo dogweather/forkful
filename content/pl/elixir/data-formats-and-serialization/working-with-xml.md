@@ -11,9 +11,6 @@ title: Praca z XML
 weight: 40
 ---
 
-## Co i dlaczego?
-Praca z XML w Elixirze oznacza analizowanie, tworzenie i manipulowanie danymi XML. Programiści często zajmują się XML, ponieważ jest on powszechnie stosowany w usługach internetowych, plikach konfiguracyjnych i systemach starszego typu.
-
 ## Jak to zrobić:
 Elixir standardowo nie zawiera analizy XML w swojej bibliotece standardowej. Popularnym wyborem jest SweetXML. Oto jak z niego korzystać:
 

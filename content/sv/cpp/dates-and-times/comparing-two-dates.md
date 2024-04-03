@@ -11,9 +11,6 @@ title: "J\xE4mf\xF6ra tv\xE5 datum"
 weight: 27
 ---
 
-## What & Why?
-Att jämföra två datum innebär att fastställa om de är lika, vilket är tidigare, eller vilket är senare. Programmerare gör detta för att hantera tidsbaserade händelser, giltighetsperioder, schemaläggning eller uppgifter som är beroende av tid och datum.
-
 ## How to:
 Använd `std::chrono` biblioteket för att hantera datum och jämför dem med enkelhet:
 

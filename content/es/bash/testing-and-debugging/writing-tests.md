@@ -12,9 +12,6 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## Qué y Por Qué?
-Escribir pruebas en Bash implica crear scripts de casos de prueba para validar la funcionalidad de tus scripts de Bash. Los programadores realizan pruebas para asegurarse de que sus scripts funcionen como se espera bajo varias condiciones, detectando errores y bugs antes del despliegue.
-
 ## Cómo hacerlo:
 Bash no tiene un marco de pruebas integrado, pero puedes escribir funciones de prueba simples. Para pruebas más sofisticadas, herramientas de terceros como `bats-core` son populares.
 

@@ -10,18 +10,12 @@ title: Generating random numbers
 weight: 12
 ---
 
-## What & Why?
-
-Generating random numbers in Haskell entails creating numbers that are unpredictable by human standards. This is critical in scenarios ranging from cryptographic applications to simulations where the element of chance is required to model real-world phenomena accurately.
-
 ## How to:
-
 To generate random numbers in Haskell, one typically uses the `random` package, which is part of the Haskell Platform. Here’s a step-by-step guide:
 
 First, ensure you have the `random` package installed. If not, you can get it via Cabal or Stack.
 
 ### Generating a Random Number
-
 To generate a simple random number, you can use the `randomRIO` function, which produces a random value within a specified range.
 
 ```Haskell
@@ -34,7 +28,6 @@ main = do
 ```
 
 ### Generating a List of Random Numbers
-
 Generating a list of random numbers is slightly more involved but still straightforward:
 
 ```Haskell
@@ -56,7 +49,6 @@ main = do
 This code snippet creates a function `randomList` that generates a list of random integers. Replace `(1, 100)` with your desired range.
 
 ## Deep Dive
-
 The Haskell `random` package provides a pseudo-random number generator (PRNG), which means the numbers generated are not truly random but can appear to be random for many applications. The core of Haskell's random generation capability lies in the `RandomGen` type class, which abstracts different methods of generating random numbers, and the `Random` type class, which includes types that can be generated randomly.
 
 Historically, Haskell's approach to random number generation has emphasized purity and reproducibility. This is why operations involving randomness are explicitly handled in the `IO` monad or require manually passing and updating generator states — to maintain referential transparency.

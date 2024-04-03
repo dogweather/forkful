@@ -13,12 +13,7 @@ title: Verwendung von assoziativen Arrays
 weight: 15
 ---
 
-## Was & Warum?
-
-Assoziative Arrays oder, wie Rustaceaner sie nennen, "Hash Maps", sind Sammlungen, die Daten in Schlüssel-Wert-Paaren speichern. Programmierer nutzen sie für schnelle Datensuche, was eine effiziente Datenmanipulation basierend auf einzigartigen Schlüsseln ermöglicht.
-
 ## Wie geht das:
-
 In Rust bietet der Typ `HashMap` aus dem Modul `std::collections` die Funktionalität von assoziativen Arrays. Hier ist, wie Sie damit arbeiten können:
 
 ```Rust
@@ -49,5 +44,4 @@ fn main() {
 ```
 
 ## Tiefer eintauchen
-
 Die `HashMap` in Rust verwendet eine Hashing-Funktion, um Schlüssel auf Werte abzubilden, was eine schnelle Datenabrufung ermöglicht. Diese Effizienz hat jedoch ihren Preis: Hash-Maps halten die Reihenfolge ihrer Elemente nicht aufrecht. Dies steht im Gegensatz zu anderen Implementierungen assoziativer Arrays, wie denen in Python (`dict`) oder Ruby, die in neueren Versionen die Einfügereihenfolge als Merkmal beibehalten. Für Anwendungsfälle, bei denen die Reihenfolge der Schlüssel-Wert-Paare signifikant ist, könnten Rust-Entwickler in Erwägung ziehen, die `BTreeMap` aus dem Modul `std::collections` zu verwenden, welche die Reihenfolge beibehält, aber möglicherweise langsamere Einfügung und Abrufung im Vergleich zu `HashMap` bietet. Letztendlich hängt die Wahl zwischen `HashMap` und `BTreeMap` von den spezifischen Anforderungen an die Ordnung und Leistung ab.

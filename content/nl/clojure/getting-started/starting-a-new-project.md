@@ -12,12 +12,7 @@ title: Een nieuw project starten
 weight: 1
 ---
 
-## Wat & Waarom?
-
-Een nieuw project starten betekent het opzetten van een frisse programmeeromgeving voor je code. Programmeurs doen dit om de ontwikkeling te beginnen met een schone lei en gedachten te organiseren in tastbare code.
-
 ## Hoe te:
-
 Om een Clojure-project op te starten, gebruiken we Leiningen, een populair bouwhulpmiddel voor Clojure:
 
 ```Clojure
@@ -59,7 +54,6 @@ lein repl
 ```
 
 ## Diepgaand
-
 Clojure-projecten beginnen vaak met Leiningen of Boot voor het beheren van afhankelijkheden, bouwen en automatiseren van taken. Leiningen bestaat sinds 2010 en is de standaardkeuze geworden voor de meeste Clojuristen.
 
 Er bestaan alternatieve hulpmiddelen, zoals `deps.edn` en Clojure CLI-tools, die door Clojure/core zijn geïntroduceerd om een eenvoudigere beheer van afhankelijkheden en projectconfiguratie te bieden.
@@ -75,7 +69,6 @@ Projecten houden zich doorgaans aan een standaard directorystructuur:
 Een goede praktijk is om dingen minimaal te houden bij de start. Voeg afhankelijkheden toe naarmate je verdergaat, waardoor je project licht en beheersbaar blijft.
 
 ## Zie Ook
-
 - [Leiningen's Startgids](https://leiningen.org/#getting-started)
 - [Clojure Documentatie](https://clojuredocs.org/)
 - [Clojure Stijlgids](https://guide.clojure.style/)

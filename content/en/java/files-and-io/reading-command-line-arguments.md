@@ -11,12 +11,7 @@ title: Reading command line arguments
 weight: 23
 ---
 
-## What & Why?
-
-Reading command line arguments in Java is snagging input provided by users when they launch your program from a console. Programmers do it to make their apps responsive to user needs, flexibly handling tasks without hardcoded values.
-
 ## How to:
-
 Java scoops up command line arguments you dish out with the `main` method. Look at this bite-sized sample:
 
 ```java
@@ -41,7 +36,6 @@ Arguments
 ```
 
 ## Deep Dive
-
 Originating from C, command line arguments have been a staple since the dark ages of programming—think punch cards and timesharing. Java inherited this utility for good reason. It's elementary, versatile, and fits a range of situations.
 
 Highly alternative? Sure, there's plenty. Libraries like JCommander or Apache Commons CLI beef up your parsing prowess. They handle more complex scenarios with finesse.
@@ -49,7 +43,6 @@ Highly alternative? Sure, there's plenty. Libraries like JCommander or Apache Co
 Under the hood, Java's `main` method snags a `String` array—`args`. In the virtual machine run, when you hit `java ClassName`, what follows are your inputs, neatly stored in `args`.
 
 ## See Also:
-
 - For a refresher on the basics: [Oracle's official Java tutorials](https://docs.oracle.com/javase/tutorial/)
 - Dive into JCommander for complex parsing: [JCommander GitHub](https://github.com/cbeust/jcommander)
 - Explore Apache Commons CLI: [Apache Commons CLI](https://commons.apache.org/proper/commons-cli/)

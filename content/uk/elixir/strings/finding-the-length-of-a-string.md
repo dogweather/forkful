@@ -11,11 +11,6 @@ title: "\u0412\u0438\u0437\u043D\u0430\u0447\u0435\u043D\u043D\u044F \u0434\u043
 weight: 7
 ---
 
-## What & Why?
-(Що і чому?)
-
-Finding the length of a string means counting the number of characters it contains. Programmers do this to validate input, control loops, or work with data structures.
-
 ## How to:
 (Як зробити:)
 

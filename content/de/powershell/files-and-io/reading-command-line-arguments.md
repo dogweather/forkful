@@ -11,9 +11,6 @@ title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---
 
-## What & Why?
-Kommandozeilenargumente zu lesen heißt, Eingaben von Benutzern zu verarbeiten, die ein Skript ausgeführt haben. Programmierer nutzen das, um Skripts flexibel und interaktiv zu gestalten.
-
 ## How to:
 Mit PowerShell Argumente zu lesen, ist super einfach. Benutze die automatische Variable `$args`. Hier ein Beispiel:
 

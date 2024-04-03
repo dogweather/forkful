@@ -14,12 +14,7 @@ title: "Tulostetaan virheenj\xE4ljitystietoja"
 weight: 33
 ---
 
-## Mikä & Miksi?
-
-Ohjelmoinnissa "virhetulostuksen tulostaminen" käsittää yksityiskohtaisten informatiivisten viestien tuottamisen, jotka auttavat kehittäjiä ymmärtämään ohjeman suoritusvirran tai paikallistamaan ongelmia. Ohjelmoijat tekevät tämän diagnosoidakseen ja ratkaistakseen ongelmia tehokkaammin, mikä tekee siitä olennaisen taidon minkä tahansa ohjelmointityökalupakin osana, mukaan lukien Go.
-
 ## Kuinka toimia:
-
 Go:ssa voit käyttää standardia `fmt`-pakettia virhetulostuksen tulostamiseen konsoliin. `fmt`-paketti tarjoaa useita funktioita, kuten `Println`, `Printf` ja `Print`, jotka vastaavat erilaisiin muotoilutarpeisiin.
 
 ```go
@@ -81,7 +76,6 @@ Viesti `debug.log`-tiedostossa näyttäisi tältä:
 ```
 
 ## Syvä sukellus
-
 Virhetulostuksen tulostaminen on ollut pitkään käytössä tietokoneohjelmoinnissa, ja sen toteutus vaihtelee eri kielissä. Go:ssa standardikirjaston `fmt` ja `log` -paketit tarjoavat suoraviivaisia ja monipuolisia vaihtoehtoja. Vaikka `fmt`-paketti on riittävä perusvirheenkorjauksen tarpeisiin, `log`-paketti tarjoaa lisätoiminnallisuuksia kuten lokitustasot ja määriteltävät tulostekohteet.
 
 Lisäksi, kun sovellukset muuttuvat monimutkaisemmiksi, lokituskehykset kuten `zap` ja `logrus` voivat tarjota kehittyneempiä ominaisuuksia kuten rakenteellinen lokitus ja parempi suorituskyky. Nämä kolmannen osapuolen paketit antavat kehittäjille joustavuutta räätälöidä lokitusstrategiansa heidän erityistarpeidensa mukaisesti.

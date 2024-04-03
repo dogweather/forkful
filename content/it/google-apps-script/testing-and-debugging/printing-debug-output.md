@@ -14,12 +14,7 @@ title: Stampa dell'output di debug
 weight: 33
 ---
 
-## Cosa e perché?
-
-Stampare l'output di debug comporta il posizionamento strategico di istruzioni di log nel codice per visualizzare i valori delle variabili, il flusso di esecuzione o gli errori dei messaggi durante l'esecuzione. I programmatori lo utilizzano ampiamente per tracciare e diagnosticare il comportamento dei loro script, garantendo correttezza ed efficienza nelle loro applicazioni Google Apps Script.
-
 ## Come fare:
-
 Google Apps Script fornisce la classe `Logger` per il debug di base e, per esigenze più avanzate, la classe `console` introdotta nell'ambiente di esecuzione V8.
 
 **Utilizzando Logger:**
@@ -56,7 +51,6 @@ Stato attuale: attivo, Conte: 150
 ```
 
 ## Approfondimento
-
 Inizialmente, `Logger.log` era lo strumento primario per il debug in Google Apps Script, offrendo un modo semplice e diretto per stampare l'output per l'ispezione. Tuttavia, man mano che gli script diventavano più complessi e integrati con i servizi di Google Cloud Platform, è diventata evidente la necessità di una soluzione di logging più robusta.
 
 Entra in gioco l'ambiente di esecuzione V8, introducendo `console.log`. Ciò non solo allinea Google Apps Script con la sintassi JavaScript standard, rendendo il linguaggio più accessibile agli sviluppatori familiarizzati con JavaScript, ma sfrutta anche l'infrastruttura potente delle capacità di logging di Google Cloud. L'introduzione di `console.log` e la sua integrazione con Google Cloud Platform segnano una significativa evoluzione nelle capacità di debug dentro Google Apps Script, fornendo agli sviluppatori un approccio più dinamico e scalabile per monitorare e risolvere i problemi dei loro script.

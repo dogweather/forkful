@@ -13,12 +13,7 @@ title: HTML Parsen
 weight: 43
 ---
 
-## Wat & Waarom?
-
-HTML-parseren is het proces van het omzetten van een HTML-string naar een datastructuur die je programma kan begrijpen en manipuleren. Programmeurs doen dit om te interageren met, inhoud van het web te extraheren, en te wijzigen.
-
 ## Hoe:
-
 Om HTML in Clojure te parsen, gebruiken we de `clj-tagsoup` bibliotheek, een wrapper voor de Tagsoup Java-bibliotheek die handig is voor het parsen van real-world HTML.
 
 Voeg eerst de clj-tagsoup-afhankelijkheid toe aan je project:
@@ -57,7 +52,6 @@ Om specifieke elementen te extraheren, zoals paragrafen:
 ```
 
 ## Diepe Duik
-
 HTML parsen in Clojure, net als in andere talen, houdt typisch het navigeren door een boomachtige structuur in. Vroeger kon dit rommelig worden. Bibliotheken zoals Tagsoup hebben het leven makkelijker gemaakt door eigenaardige real-world HTML aan te kunnen.
 
 De functionele aard van Clojure laat ons soepel HTML-gegevens manipuleren. Bibliotheken zoals `clj-tagsoup` benutten de beproefde hulpmiddelen van Java met een toevoeging van Clojure's elegantie.
@@ -67,7 +61,6 @@ Alternatieve bibliotheken zijn onder andere `Enlive` en `Hickory`. Enlive is ges
 De implementatie richt zich op gemak en een declaratieve stijl. Onder de motorkap gebruikt `clj-tagsoup` locators en navigators om door HTML te reizen, waardoor een hogere abstractie wordt geboden dan directe DOM-manipulatie.
 
 ## Zie Ook
-
 - clj-tagsoup op GitHub: https://github.com/nathell/clj-tagsoup
 - Tagsoup, de onderliggende Java-bibliotheek: https://github.com/McCLIM/cl-tagsoup
 - Enlive, een andere Clojure HTML-parserbibliotheek: https://github.com/cgrand/enlive

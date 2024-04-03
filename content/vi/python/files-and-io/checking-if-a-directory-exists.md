@@ -17,12 +17,7 @@ title: "Ki\u1EC3m tra xem th\u01B0 m\u1EE5c c\xF3 t\u1ED3n t\u1EA1i kh\xF4ng"
 weight: 20
 ---
 
-## Cái gì & Tại sao?
-
-Kiểm tra xem một thư mục có tồn tại trong Python hay không là để xác định sự hiện diện của một thư mục trên hệ thống tệp trước khi thực hiện các hành động trên nó. Các lập trình viên làm điều này để tránh những lỗi như cố gắng truy cập hoặc viết vào một thư mục không tồn tại.
-
 ## Làm thế nào:
-
 Python làm cho việc kiểm tra một thư mục trở nên trực tiếp với các module `os` và `pathlib`:
 
 Sử dụng `os.path`:
@@ -58,7 +53,6 @@ Thư mục không tồn tại.
 ```
 
 ## Đi sâu:
-
 Trong lịch sử, Python đã sử dụng module `os` cho các hoạt động hệ thống tệp. Tuy nhiên, `os.path.isdir()` đã là tiêu chuẩn de facto để kiểm tra các thư mục. Vấn đề là `os.path` làm việc với chuỗi cho các đường dẫn, có thể là thô kệch.
 
 Nhập vào module `pathlib` hiện đại hơn, được giới thiệu trong Python 3.4. Nó sử dụng các đường dẫn hướng đối tượng, khiến mã trở nên dễ đọc và ngắn gọn hơn. Bây giờ bạn có `Path.is_dir()`, một phương thức không chỉ làm cho mã của bạn gọn gàng hơn, mà còn có điều gì đó dễ chịu khi gọi phương thức liên tiếp tới một đối tượng Path.
@@ -66,7 +60,6 @@ Nhập vào module `pathlib` hiện đại hơn, được giới thiệu trong P
 Nếu những phương pháp này trả về `False` cho một thư mục không tồn tại, có thể có hai nguyên nhân: hoặc là thư mục thực sự không ở đó, hoặc chương trình của bạn không có quyền để thấy nó.
 
 ## Xem thêm:
-
 1. Tài liệu module `os`: https://docs.python.org/3/library/os.html
 2. Tài liệu module `pathlib`: https://docs.python.org/3/library/pathlib.html
 3. Quyền truy cập hệ thống tệp trong Python: https://docs.python.org/3/library/os.html#os.access

@@ -12,9 +12,6 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-Reguliere expressies, of regex, zijn patronen die reeksen van strings beschrijven. Programmeurs gebruiken ze om tekst te zoeken, overeen te komen en te manipuleren - super handig voor het vinden van naalden in data hooibergen.
-
 ## Hoe te gebruiken:
 De Fish Shell heeft ingebouwde regex-ondersteuning in commando's zoals `string`. Laten we eens duiken in enkele voorbeelden:
 

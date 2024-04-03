@@ -14,9 +14,6 @@ title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---
 
-## Cái gì & Tại sao?
-Biểu thức chính quy (regex) là công cụ để tìm kiếm mẫu trong văn bản. Lập trình viên sử dụng chúng để tìm kiếm, kiểm tra, hoặc thao tác dữ liệu một cách hiệu quả.
-
 ## Làm thế nào:
 Kotlin làm cho regex trở nên dễ dàng. Hãy xem một số ví dụ mã cụ thể:
 

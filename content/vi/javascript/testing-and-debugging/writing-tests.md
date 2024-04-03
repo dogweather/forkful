@@ -15,9 +15,6 @@ title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---
 
-## Gì và Tại Sao?
-Việc viết tests trong lập trình kiểm tra xem mã có hoạt động như mong đợi hay không - giống như một bài kiểm tra cho các hàm của bạn. Lập trình viên viết tests để bắt lỗi sớm, tiết kiệm nhức đầu và tiền bạc.
-
 ## Cách thực hiện:
 Hãy tưởng tượng một hàm đơn giản để cộng hai số trong JavaScript:
 

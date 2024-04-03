@@ -10,9 +10,6 @@ title: Calculando uma data no futuro ou passado
 weight: 26
 ---
 
-## O Que & Porquê?
-Calcular uma data no futuro ou passado significa determinar um dia específico antes ou depois de uma data conhecida. Programadores fazem isso para gerenciar eventos, agendamentos, lembretes ou qualquer funcionalidade que dependa do tempo.
-
 ## Como Fazer:
 ```Rust
 use chrono::{Duration, Local};

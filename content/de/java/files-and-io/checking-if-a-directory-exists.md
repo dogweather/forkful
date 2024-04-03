@@ -15,9 +15,6 @@ title: "\xDCberpr\xFCfung, ob ein Verzeichnis existiert"
 weight: 20
 ---
 
-## Was & Warum?
-Das Überprüfen, ob ein Verzeichnis in Java existiert, ist eine grundlegende Aufgabe, die das Verifizieren der Präsenz eines Dateisystemverzeichnisses vor dem Lesen, Schreiben oder Ausführen jeglicher Operationen, die seine Existenz erfordern, beinhaltet. Dies ist entscheidend, um Fehler oder Ausnahmen in Programmen zu vermeiden, die mit dem Dateisystem interagieren, und gewährleistet eine reibungslosere Ausführung und eine bessere Benutzererfahrung.
-
 ## Wie:
 In Java gibt es mehrere Möglichkeiten, zu überprüfen, ob ein Verzeichnis existiert, hauptsächlich unter Verwendung der Klassen `java.nio.file.Files` und `java.io.File`.
 

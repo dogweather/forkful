@@ -13,9 +13,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n j\xE4sennys merkkijonosta"
 weight: 30
 ---
 
-## Mikä & Miksi?
-Päivämäärän jäsentäminen merkkijonosta tarkoittaa tekstistä Date-objektiksi muuntamista. Tämä toiminto on olennainen sovelluksille, jotka käsittelevät käyttäjien syöttämiä päivämääriä tai ulkoisista tietoaineistoista peräisin olevia päivämääriä, mahdollistaen niiden helpomman käsittelyn ja muotoilun tarpeen mukaan.
-
 ## Kuinka:
 Kotlin tukee päivämäärän jäsentämistä `java.time`-paketin avulla, joka otettiin käyttöön Java 8:ssa. Tässä on yksinkertainen lähestymistapa käyttäen `LocalDateTime`-luokkaa ja tiettyä kaavaa:
 

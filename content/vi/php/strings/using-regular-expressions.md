@@ -15,9 +15,6 @@ title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---
 
-## Cái gì & Tại sao?
-Biểu thức chính quy (regex) là các mẫu tìm kiếm được sử dụng để khớp các kết hợp ký tự trong chuỗi. Lập trình viên sử dụng chúng cho các nhiệm vụ như xác minh, tìm kiếm và phân tích cú pháp văn bản, bởi vì chúng mạnh mẽ và tiết kiệm thời gian.
-
 ## Làm thế nào:
 Để sử dụng regex trong PHP, bạn thường sử dụng `preg_match` để tìm kiếm một kết quả khớp, hoặc `preg_replace` cho tìm kiếm và thay thế. Dưới đây là một cái nhìn nhanh:
 

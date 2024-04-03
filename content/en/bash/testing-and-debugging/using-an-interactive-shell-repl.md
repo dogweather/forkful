@@ -10,9 +10,6 @@ title: Using an interactive shell (REPL)
 weight: 34
 ---
 
-## What & Why?
-REPL stands for Read-Eval-Print Loop, a simple, interactive computer programming environment. Coders use it to quickly write and test code, experiment with syntax, and learn programming concepts without the overhead of creating and running entire applications.
-
 ## How to:
 In Bash, your terminal is essentially a REPL. You type a command; it reads it, evaluates it, prints the outcome, and loops back awaiting your next command. Here's an example of using Bash as a REPL:
 

@@ -13,9 +13,6 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i dlaczego?
-Pisanie pliku tekstowego w TypeScript jest kluczową umiejętnością dla trwałości danych, konfiguracji lub generowania logów. Programiści często wykonują to zadanie, aby przechowywać i manipulować danymi poza pamięcią aplikacji z powodów takich jak analiza danych, raportowanie lub po prostu zapisywanie ustawień użytkownika między sesjami.
-
 ## Jak to zrobić:
 Sam TypeScript nie obsługuje bezpośrednio operacji na plikach, ponieważ kompiluje się do JavaScript, który tradycyjnie jest uruchamiany w przeglądarce z ograniczonym dostępem do systemu plików. Jednakże, gdy używany jest w środowisku Node.js, moduł `fs` (File System) zapewnia funkcjonalność zapisywania plików.
 

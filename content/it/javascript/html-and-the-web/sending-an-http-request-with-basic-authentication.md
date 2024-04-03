@@ -11,9 +11,6 @@ title: Inviare una richiesta http con autenticazione di base
 weight: 45
 ---
 
-## Cosa e Perché?
-Inviare una richiesta HTTP con autenticazione base significa passare username e password per accedere a risorse protette. I programmatori lo fanno per interagire con API che richiedono sicurezza senza complicazioni.
-
 ## Come Fare:
 Ecco un esempio su come inviare una richiesta HTTP con autenticazione base in JavaScript usando `fetch`.
 

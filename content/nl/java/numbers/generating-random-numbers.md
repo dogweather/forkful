@@ -12,12 +12,7 @@ title: Willekeurige getallen genereren
 weight: 12
 ---
 
-## Wat & Waarom?
-
-Random (willekeurige) getallen genereren gaat over het produceren van onvoorspelbare sequenties of enkelvoudige waarden binnen een gedefinieerd bereik. Programmeurs gebruiken deze techniek om verschillende redenen, waaronder simulaties, spellen, beveiligingstoepassingen en bemonsteringsmethoden om algoritmen onder verschillende voorwaarden te testen.
-
 ## Hoe:
-
 In Java kan het genereren van willekeurige getallen worden bereikt met de `Random` klasse uit het `java.util` pakket, of de `ThreadLocalRandom` en `SecureRandom` klassen voor specifieke gebruikssituaties. De volgende voorbeelden illustreren hoe deze klassen te gebruiken.
 
 ### Gebruik van de `Random` klasse
@@ -80,7 +75,6 @@ public class SecureRandomVoorbeeld {
 ```
 
 ## Verdieping
-
 De generatie van willekeurige getallen is aanzienlijk geëvolueerd sinds de beginjaren van de informatica. Java's `Random` klasse gebruikt een lineaire congruente formule om pseudo-willekeurige getallen te genereren, die deterministisch zijn en niet geschikt voor toepassingen met hoge veiligheidseisen. Dit leidde tot de introductie van `SecureRandom`, welke meer geavanceerde algoritmes gebruikt (bijv. SHA1PRNG) om cryptografisch sterke willekeurige getallen te produceren.
 
 Echter, `Random` en `SecureRandom` hebben hun tekortkomingen, zoals prestatievermindering in multithreaded omgevingen. De `ThreadLocalRandom` klasse is geïntroduceerd in Java 7 om dit probleem aan te pakken door thread-lokale willekeurige getallengeneratoren te voorzien, wat prestaties in gelijktijdige applicaties aanzienlijk verbetert.

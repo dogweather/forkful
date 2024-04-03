@@ -11,9 +11,6 @@ title: Recherche et remplacement de texte
 weight: 10
 ---
 
-## What & Why?
-Rechercher et remplacer du texte, c'est comme jouer à cache-cache avec des mots pour les transformer ou les corriger. Les programmeurs le font pour mettre à jour des données, corriger des erreurs, ou modifier le code plus efficacement.
-
 ## How to:
 En TypeScript, on utilise souvent `.replace()` pour manipuler les chaînes de caractères. Voyons un exemple :
 

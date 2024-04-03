@@ -11,9 +11,6 @@ title: Tolka HTML
 weight: 43
 ---
 
-## What & Why? (Vad & Varför?)
-Parsing HTML handlar om att tolka och omvandla HTML-kod till något som programmets logik kan hantera. Vi gör det för att kunna manipulera, analysera och utvinna användbar data från webbsidor.
-
 ## How to: (Hur man gör:)
 I Elm använder vi paketet `html-parser` för att parsa HTML. Dina Elm-modeller blir en representation av det parsade innehållet.
 

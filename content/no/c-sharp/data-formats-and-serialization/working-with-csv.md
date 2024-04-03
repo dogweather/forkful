@@ -13,9 +13,6 @@ title: Arbeide med CSV
 weight: 37
 ---
 
-## Hva & Hvorfor?
-CSV-filer (Comma-Separated Values, verdier skilt med komma) er et vanlig datautvekslingsformat som representerer tabelldata i ren tekst ved å bruke kommaer for å skille individuelle verdier. Programmerere arbeider med CSV-filer for å importere, eksportere, og manipulere data enkelt på tvers av ulike applikasjoner og tjenester, siden det er et enkelt, bredt støttet format som er kompatibelt med regnearkprogrammer, databaser og programmeringsspråk.
-
 ## Hvordan:
 Arbeid med CSV-filer i C# kan gjøres gjennom `System.IO` navneområdet for grunnleggende operasjoner, og for mer komplekse manipulasjoner eller for å håndtere større filer sømløst, kan man vurdere tredjepartsbiblioteker som `CsvHelper`. Nedenfor er eksempler på hvordan man leser fra og skriver til CSV-filer ved hjelp av begge tilnærminger.
 

@@ -12,12 +12,7 @@ title: Skriva till standardfel
 weight: 25
 ---
 
-## Vad & Varför?
-
-Att skriva till standardfel (stderr) i Fish Shell handlar om att rikta felmeddelanden eller diagnostik separat från standardutdata (stdout). Programmerare gör detta för att säkerställa att felinformation kan identifieras, hanteras eller omdirigeras lätt, vilket underlättar smidigare felsökning och loggningsprocesser.
-
 ## Hur man gör:
-
 I Fish Shell kan du skriva till stderr genom att omdirigera din utdata med `>&2`. Här är ett grundläggande exempel:
 
 ```fish

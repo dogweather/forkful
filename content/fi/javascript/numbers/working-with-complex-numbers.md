@@ -10,9 +10,6 @@ title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---
 
-## Mitä ja miksi?
-Kompleksiluvut ovat lukuja, joilla on todellinen ja imaginaarinen osa (kuten 3 + 4i). Ne tulevat esiin monissa ohjelmointiongelmissa, erityisesti signaalinkäsittelyssä, kvanttilaskennassa ja polynomiyhtälöiden ratkaisemisessa. Ohjelmoijat käsittelevät niitä näiden tehtävien tehokkaaseen suorittamiseen.
-
 ## Kuinka:
 JavaScript ei sisällä valmiina tukea kompleksiluvuille, mutta voit kääriä hihasi ja käsitellä niitä itse objektien ja matematiikan avulla. Tässä on nopea esimerkki.
 

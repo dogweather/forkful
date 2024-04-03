@@ -17,9 +17,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi CSV"
 weight: 37
 ---
 
-## Làm việc và Lý do?
-Làm việc với các tệp CSV (Comma-Separated Values - Giá trị Phân cách bởi Dấu phẩy) có nghĩa là đọc từ và ghi dữ liệu vào các tệp văn bản đơn giản, nơi mỗi hàng là một bản ghi dữ liệu. Các lập trình viên thích CSV vì chúng nhẹ, dễ đọc và có thể hoạt động được với hầu hết các công cụ xử lý dữ liệu.
-
 ## Cách thực hiện:
 ```python
 # Nhập mô-đun CSV

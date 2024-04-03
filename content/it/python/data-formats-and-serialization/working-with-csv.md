@@ -13,13 +13,11 @@ title: Lavorare con i CSV
 weight: 37
 ---
 
-## Cosa & Perché?
-Lavorare con i CSV (Valori Separati da Virgola) comporta la lettura da e la scrittura su file CSV, un formato comune per memorizzare dati tabellari. I programmatori lo fanno per scambiare e memorizzare facilmente dati in un formato basato su testo semplice, ampiamente supportato su diverse piattaforme e linguaggi.
-
 ## Come fare:
 Python fornisce il modulo integrato `csv` per gestire i file CSV, rendendo semplice leggere da e scrivere su di essi. Per una manipolazione dei dati più robusta e complessa, la libreria di terze parti `pandas` è molto popolare.
 
 ### Utilizzando il modulo `csv`
+
 
 #### Leggere un file CSV
 ```python

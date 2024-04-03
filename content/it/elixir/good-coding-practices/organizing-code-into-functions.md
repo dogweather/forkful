@@ -10,9 +10,6 @@ title: Organizzazione del codice in funzioni
 weight: 18
 ---
 
-## Cosa e perché?
-Organizzare il codice in funzioni significa raggruppare operazioni correlate in blocchi riutilizzabili. Lo facciamo per migliorare la leggibilità e la manutenibilità, ridurre la duplicazione e semplificare i test.
-
 ## Come fare:
 Creiamo una semplice funzione Elixir per mettere le parole in maiuscolo:
 

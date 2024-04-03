@@ -10,9 +10,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen perusautentikoinnilla"
 weight: 45
 ---
 
-## What & Why?
-Mikä ja miksi? HTTP-pyyntö perusautentikaatiolla tarkoittaa palvelimelle lähetettävää pyyntöä, jossa käyttäjänimi ja salasana ovat mukana. Ohjelmoijat käyttävät tätä metodia päästäkseen käsiksi suojattuihin resursseihin ja API-palveluihin.
-
 ## How to:
 Miten toteutetaan:
 

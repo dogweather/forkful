@@ -11,9 +11,6 @@ title: Iniciando um novo projeto
 weight: 1
 ---
 
-## What & Why?
-Começar um novo projeto é o processo de criar a base para seu código em Clojure - é como preparar o terreno antes de construir uma casa. Programadores iniciam projetos para organizar suas ideias, bibliotecas e configurações em um esqueleto funcional, pronto para ser desenvolvido e expandido.
-
 ## How to:
 Para iniciar um novo projeto em Clojure, usamos a ferramenta `Leiningen`. Certifique-se de que está instalada e então, execute:
 

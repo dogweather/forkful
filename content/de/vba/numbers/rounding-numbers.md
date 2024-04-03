@@ -14,12 +14,7 @@ title: Runden von Zahlen
 weight: 13
 ---
 
-## Was & Warum?
-
-Das Runden von Zahlen in der Programmierung geht darum, eine Zahl auf ihre nächstgelegene ganze Zahl oder auf eine bestimmte Anzahl von Dezimalstellen zu approximieren. Programmierer runden Zahlen, um Zahlen zu vereinfachen, die Lesbarkeit zu verbessern oder spezifischen numerischen Kriterien in Berechnungen zu entsprechen, besonders bei finanziellen Berechnungen, wo Präzision von Bedeutung ist.
-
 ## Wie:
-
 In Visual Basic for Applications (VBA) kann das Runden durch mehrere Funktionen erreicht werden, von denen jede für spezifische Szenarien geeignet ist. Hier sind die am häufigsten verwendeten Funktionen mit Beispielen:
 
 1. **Round-Funktion**:
@@ -55,7 +50,6 @@ In Visual Basic for Applications (VBA) kann das Runden durch mehrere Funktionen 
    ```
 
 ## Vertiefung
-
 Die `Round`-Funktion in VBA unterscheidet sich grundsätzlich von Rundungsmethoden in anderen Sprachen durch die Verwendung des **Banker’s Rounding**. Banker’s Rounding rundet auf die nächstgelegene gerade Zahl, wenn genau in der Mitte zwischen zwei Zahlen, was eine Verringerung der Verzerrung in Berechnungen über einen großen Datensatz ermöglicht und ein statistisch signifikanteres Ergebnis liefert. Dies kann jedoch zu unerwartetem Verhalten führen, insbesondere wenn in jedem Fall eine genaue Ganzzahligkeit erwartet wird, für diejenigen, die damit nicht vertraut sind.
 
 Im Gegensatz dazu verwenden viele Programmiersprachen und Systeme das "arithmetische Runden" oder "Half-up-Rounding", bei dem eine Zahl genau zwischen zwei möglichen gerundeten Werten immer aufgerundet wird. Beim Übersetzen oder Portieren von Code aus anderen Sprachen nach VBA müssen Programmierer diese Unterschiede im Auge behalten, um subtile Fehler oder Ungenauigkeiten in finanziellen und statistischen Anwendungen zu vermeiden.

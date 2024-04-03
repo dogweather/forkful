@@ -12,12 +12,7 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-
-Het vinden van een stringlengte betekent het tellen van de tekens. We doen dit om invoer te valideren, door tekens te lopen, bronnen toe te wijzen, of uit simpele nieuwsgierigheid – de grootte kennen doet ertoe.
-
 ## Hoe te:
-
 In C# geeft de eigenschap `string.Length` je het aantal tekens in een string. Zo gebruik je het:
 
 ```C#
@@ -36,7 +31,6 @@ class Program
 Makkelijk, toch? Maar onthoud, het telt *tekens*, niet bytes. Met emoji's of speciale tekens, kunnen dingen ingewikkeld worden. Meer daarover later.
 
 ## Diepgaand
-
 Historisch gezien was het vinden van de lengte van een string verbonden aan geheugenbeheer en manipulatie in programmering. Aangezien C# een hogere programmeertaal is, abstraheert het dat laag-niveau werk weg. Toch is het goed om te weten wat er onder de motorkap zit.
 
 Alternatieven? Zeker! Je zou `example.ToCharArray().Length` in het wild kunnen tegenkomen, maar dat is slechts extra werk voor hetzelfde resultaat.
@@ -64,7 +58,6 @@ class Program
 Begrijp je het verschil? Het is niet alleen academisch; het zou de tekstverwerking op betekenisvolle manieren kunnen beïnvloeden.
 
 ## Zie Ook
-
 Verken meer met deze bronnen:
 
 - [Microsoft's officiële documentatie over strings](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)

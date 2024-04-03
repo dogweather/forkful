@@ -14,12 +14,7 @@ title: Korzystanie z tablic asocjacyjnych
 weight: 15
 ---
 
-## Co i dlaczego?
-
-Tablice asocjacyjne, znane jako obiekty w Google Apps Script (odmiana JavaScript), umożliwiają programistom tworzenie kolekcji par klucz-wartość. Funkcjonalność ta jest kluczowa do przechowywania i manipulowania danymi w sposób efektywny, szczególnie przy pracy z dynamicznie nazwanymi właściwościami lub gdy linearny model przechowywania i dostępu tradycyjnej tablicy jest niewystarczający.
-
 ## Jak to zrobić:
-
 W Google Apps Script tworzy się i manipuluje tablicami asocjacyjnymi (obiektami) za pomocą nawiasów klamrowych `{}`, definiując w nich pary klucz-wartość. Klucze są unikalnymi identyfikatorami, a wartości mogą być czymś od ciągów znaków i liczb po bardziej złożone obiekty lub funkcje. Oto podstawowy przykład:
 
 ```javascript
@@ -59,7 +54,6 @@ country: USA
 Zwróć uwagę, jak można używać zarówno notacji kropkowej, jak i nawiasowej do dostępu i ustawiania właściwości. Notacja nawiasowa jest szczególnie przydatna przy pracy z kluczami, które są dynamicznie określane lub zawierają znaki niedozwolone w identyfikatorach.
 
 ## W głąb
-
 Tablice asocjacyjne w formie obiektów stanowiły kamień węgielny JavaScriptu, a przez to Google Apps Script, odzwierciedlając jego mechanizm dziedziczenia oparty na prototypach. W przeciwieństwie do języków z tradycyjnymi tablicami asocjacyjnymi lub słownikami (np. dict w Pythonie), obiekty Google Apps Script zapewniają elastyczne i potężne środki strukturyzacji danych, korzystając z dynamicznej natury JavaScriptu.
 
 Warto jednak zauważyć, że specyfikacja ECMAScript 2015 wprowadziła obiekty `Map` i `Set`, oferując bardziej bezpośrednie obsługiwanie kolekcji asocjacyjnych z pewnymi korzyściami w porównaniu z obiektami, takimi jak utrzymanie kolejności wstawiania i lepsza wydajność dla dużych zbiorów danych. Chociaż Google Apps Script również wspiera te struktury, wybór między używaniem obiektów a nowszymi strukturami `Map`/`Set` zależy od konkretnych potrzeb i rozważań dotyczących wydajności. Dla większości zadań związanych z tablicami asocjacyjnymi, tradycyjne implementacje oparte na obiektach zapewniają znajome i wszechstronne podejście, ale warto rozważyć nowsze alternatywy w miarę wzrostu złożoności skryptu.

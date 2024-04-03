@@ -10,9 +10,6 @@ title: Interpolering av en streng
 weight: 8
 ---
 
-## What & Why?
-Strenginterpolering lar oss sette variabler eller beregnede verdier inn i tekst. Vi bruker det for å bygge dynamiske strenger enkelt.
-
 ## How to:
 Elixir bruker `#{}` for å interpolere uttrykk i strenger:
 

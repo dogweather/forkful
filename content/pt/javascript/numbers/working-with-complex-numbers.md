@@ -11,9 +11,6 @@ title: "Trabalhando com n\xFAmeros complexos"
 weight: 14
 ---
 
-## O Quê & Por Quê?
-Números complexos são números com uma parte real e uma parte imaginária (como 3 + 4i). Eles aparecem em vários problemas de programação, especialmente no processamento de sinais, computação quântica e na resolução de equações polinomiais. Programadores os manipulam para efetivamente resolver esses tipos de tarefas.
-
 ## Como:
 JavaScript não possui suporte nativo para números complexos, mas você pode arregaçar as mangas e lidar com isso usando objetos e matemática. Aqui vai uma dica rápida.
 

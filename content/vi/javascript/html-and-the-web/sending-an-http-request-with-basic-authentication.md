@@ -16,12 +16,7 @@ title: "G\u1EEDi y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1 b\u1EA3n
 weight: 45
 ---
 
-## Gì & Tại Sao?
-
-Việc gửi một yêu cầu HTTP với chứng thực cơ bản bao gồm việc bao gồm tên người dùng và mật khẩu được mã hóa dưới dạng base64 trong header của yêu cầu. Lập trình viên làm điều này để truy cập vào những tài nguyên cần một hình thức xác thực đơn giản nhằm đảm bảo một mức độ bảo mật nào đó.
-
 ## Làm Thế Nào:
-
 Dưới đây là một ví dụ nhanh sử dụng Fetch API của JavaScript:
 
 ```javascript
@@ -51,7 +46,6 @@ Kết quả mẫu (in ra console):
 ```
 
 ## Tìm Hiểu Sâu
-
 Trước khi đi sâu, hãy lấy một chút ngữ cảnh. Chứng thực cơ bản là một trong những hình thức bảo mật dịch vụ web đơn giản nhất, gửi thông tin đăng nhập trong headers với mỗi yêu cầu.
 
 Bối Cảnh Lịch Sử:
@@ -69,7 +63,6 @@ Chi Tiết Triển Khai:
 - Phát triển hiện đại ưa chuộng token và cookie phiên để xác thực, vì chúng an toàn và linh hoạt hơn.
 
 ## Xem Thêm
-
 - [Mạng Lưới Nhà Phát Triển Mozilla - Ủy Quyền](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)
 - [RFC 7617 - HTTP Basic Auth](https://tools.ietf.org/html/rfc7617)
 - [Giới Thiệu về OAuth 2.0](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2)

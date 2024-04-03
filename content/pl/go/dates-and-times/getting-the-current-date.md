@@ -13,12 +13,7 @@ title: "Pobieranie bie\u017C\u0105cej daty"
 weight: 29
 ---
 
-## Co i dlaczego?
-
-Pobieranie bieżącej daty w języku Go to podstawowe zadanie dla programistów, porównywalne z powszechnością „Hello, World!”. Jest niezbędne do zadań takich jak logowanie i znakowanie czasem wydarzeń, obliczanie czasu trwania i planowanie przyszłych wydarzeń.
-
 ## Jak to zrobić:
-
 W Go pakiet `time` jest Twoją bramą do pracy z datami i czasem. Funkcja `time.Now()` daje ci aktualną datę i czas, podczas gdy inne funkcje i metody pozwalają formatować lub manipulować tymi danymi. Oto jak uzyskać bieżącą datę i jej różne reprezentacje:
 
 ```go
@@ -57,7 +52,6 @@ Dzień tygodnia: Tuesday
 Zwróć uwagę, jak `Format` używa konkretnej daty (2006-01-02) jako ciągu formatującego. Jest to wybrana przez Go data odniesienia, służąca jako wzorzec mnemotechniczny do formatowania dat.
 
 ## Dokładniejsze spojrzenie
-
 Decyzja o użyciu pakietu `time` do manipulacji datą i czasem w Go odzwierciedla zaangażowanie języka w solidne i intuicyjne biblioteki standardowe. W przeciwieństwie do niektórych języków, które mogą mieć wiele konkurujących bibliotek lub metodologii do manipulacji datami, Go stawia na posiadanie jednej, dobrze udokumentowanej normy.
 
 Niecodzienny wybór daty odniesienia (`Mon Jan 2 15:04:05 MST 2006`) w formatowaniu czasu w Go, choć początkowo może być mylący, jest tak naprawdę mistrzowskim posunięciem pod względem użyteczności. Pozwala to programistom przedstawiać formaty daty i czasu, korzystając z podejścia opartego na przykładach, w przeciwieństwie do zapamiętywania tokenów lub symboli, których mogą używać inne języki.

@@ -17,12 +17,7 @@ title: "In ra th\xF4ng tin g\u1EE1 l\u1ED7i"
 weight: 33
 ---
 
-## Gì và Tại sao?
-
-Việc in thông tin gỡ lỗi trong JavaScript liên quan đến việc hiển thị các biến, lỗi, hoặc bất kỳ thông tin nào khác giúp hiểu rõ những gì mã của bạn đang làm chỉ qua một cái nhìn. Lập trình viên làm điều này để bắt lỗi, hiểu luồng thực thi, và đảm bảo mã đang làm những gì nó cần làm.
-
 ## Làm thế nào:
-
 JavaScript làm cho việc in thông tin gỡ lỗi trở nên cực kỳ dễ dàng sử dụng `console.log()`. Dưới đây là cách:
 
 ```javascript
@@ -50,7 +45,6 @@ Kết quả: 7
 ```
 
 ## Sâu hơn nữa
-
 Phương thức `console.log()` đến từ Console API, đã là người bạn gỡ lỗi trong các môi trường trình duyệt và Node.js từ rất lâu. Nhưng không chỉ có `log`; bạn còn có `console.warn()`, `console.error()`, và `console.info()`, tất cả đều xuất ra thông điệp với các cấp độ nghiêm trọng khác nhau.
 
 Từ lâu, các nhà phát triển sử dụng `alert()` để gỡ lỗi, nhưng điều đó nhanh chóng trở nên nhàm chán - nó chặn tương tác của người dùng bằng cách bật lên một hộp thoại.
@@ -62,7 +56,6 @@ Dành cho những ai yêu thích một đầu ra sạch sẽ, `console.table()` 
 Cách các phương thức `console` được triển khai có thể thay đổi giữa các môi trường JavaScript, nhưng bản chất vẫn giữ nguyên: chúng giúp các nhà phát triển hiểu rõ những gì đang xảy ra bên dưới một cách nhanh chóng và mà không mất nhiều công sức.
 
 ## Xem thêm
-
 - MDN Web Docs về Console API: https://developer.mozilla.org/en-US/docs/Web/API/Console
 - Tài liệu `console` của Node.js: https://nodejs.org/api/console.html
 - Hướng dẫn về các lệnh bảng điều khiển: https://getfirebug.com/wiki/index.php/Console_API

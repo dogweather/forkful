@@ -13,16 +13,10 @@ title: "S\xE4\xE4nn\xF6llisten lausekkeiden k\xE4ytt\xF6"
 weight: 11
 ---
 
-## Mikä & Miksi?
-
-Ohjelmoinnissa säännölliset lausekkeet mahdollistavat merkkijonojen hakemisen ja manipuloinnin tiettyjen mallien perusteella. Ohjelmoijat käyttävät niitä tehtäviin, kuten validointiin, hakuun ja tekstimanipulaatioon, niiden monipuolisuuden ja tehokkuuden ansiosta monimutkaisten merkkijono-operaatioiden käsittelyssä.
-
 ## Miten:
-
 Lua ei tue säännöllisiä lausekkeita natiivisti samalla tavalla kuin kielet kuten Perl tai Python. Sen sijaan se tarjoaa mallihakutoiminnallisuutta, joka kattaa monia säännöllisten lausekkeiden yleisiä käyttötarkoituksia. Kuitenkin täyden säännöllisten lausekkeiden tuen saamiseksi voidaan käyttää kolmannen osapuolen kirjastoa, kuten `lrexlib`.
 
 ### Perusmallihaku Luassa:
-
 Lua tarjoaa voimakkaan mallihakujärjestelmän, jota voit käyttää yksinkertaisiin korvaamisiin ja hakuun:
 
 ```lua
@@ -40,7 +34,6 @@ print(s)
 ```
 
 ### Merkkijono-osien ottaminen talteen:
-
 Voit ottaa talteen merkkijonojen osia, jotka vastaavat malleja:
 
 ```lua
@@ -51,7 +44,6 @@ print("Päivä:", d, "Kuukausi:", m, "Vuosi:", y)
 ```
 
 ### `lrexlibin` käyttäminen säännöllisiin lausekkeisiin:
-
 Käyttääksesi varsinaisia säännöllisiä lausekkeita, voit asentaa ja käyttää `lrexlibiä`. Olettaen, että sinulla on se asennettuna (`luarocks install lrexlib-pcre`), voit suorittaa monimutkaisempia mallihakuja:
 
 ```lua

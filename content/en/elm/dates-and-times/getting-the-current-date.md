@@ -10,9 +10,6 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-Getting the current date in Elm means fetching the current calendar date from the system. We do this to timestamp events, schedule tasks, or track durations.
-
 ## How to:
 Elm handles dates with the `Time` module. You'll get the current time as a POSIX timestamp, then convert to a date.
 

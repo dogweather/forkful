@@ -14,9 +14,6 @@ title: Tests Schreiben
 weight: 36
 ---
 
-## Was & Warum?
-Das Schreiben von Tests in TypeScript umfasst das Erstellen automatisierter Skripte, um die Funktionalität und Richtigkeit Ihres Codes zu überprüfen. Programmierer machen das, um Zuverlässigkeit zu gewährleisten, schnell Fehler zu finden und ein wartbares Code-Wachstum zu erleichtern, da die statische Typisierung von TypeScript eine Ebene der Vorhersehbarkeit beim JavaScript-Testing hinzufügt.
-
 ## Wie geht das:
 TypeScript funktioniert harmonisch mit den meisten JavaScript-Testframeworks. Zum Demonstrationszweck verwenden wir Jest, ein beliebtes Testframework, aufgrund seiner Konfigurationsfreien Einrichtung für TypeScript-Projekte.
 

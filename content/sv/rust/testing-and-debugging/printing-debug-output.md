@@ -11,9 +11,6 @@ title: "Skriva ut fels\xF6kningsdata"
 weight: 33
 ---
 
-## Vad & Varför?
-Utskrift för felsökning hjälper programmerare att förstå vad deras kod gör under körning. Det gör att vi kan spåra värden och programflöde för att hitta och fixa buggar.
-
 ## Hur man gör:
 För att skriva ut debugginfo i Rust, använd `println!` med debug-flaggan `{:?}`:
 

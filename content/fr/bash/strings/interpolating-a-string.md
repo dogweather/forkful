@@ -11,9 +11,6 @@ title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---
 
-## What & Why? (Quoi et Pourquoi ?)
-Interpoler une chaîne, c'est insérer des valeurs de variables ou d'expressions directement dans le texte. C'est ultra-pratique pour intégrer des données dynamiques sans s'embrouiller entre concaténations et citations.
-
 ## How to (Comment faire) :
 ```Bash
 #!/bin/bash

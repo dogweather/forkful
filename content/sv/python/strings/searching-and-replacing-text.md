@@ -11,11 +11,7 @@ title: "S\xF6kning och ers\xE4ttning av text"
 weight: 10
 ---
 
-## Vad & Varför?
-Sök och ersätt handlar om att hitta specifika textsträngar och byta ut dem mot andra. Programmerare gör detta för att effektivisera uppdateringar, korrigera fel, eller manipulera data.
-
 ## Hur gör man?:
-
 ```Python
 text = "Hej värld! Programmering är kul. Hej värld!"
 

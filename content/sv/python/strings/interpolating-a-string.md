@@ -14,9 +14,6 @@ title: "Interpolering av en str\xE4ng"
 weight: 8
 ---
 
-## Vad & Varför?
-Stränginterpolering är metoden att bädda in uttryck inom strängliteraler. Programmerare använder det för att dynamiskt infoga värden i strängar, vilket gör koden mer läslig och renare än traditionell strängkonkatenering.
-
 ## Hur:
 I Python 3.6 och senare kan du interpolera strängar genom att använda f-strängar. Så här gör du:
 

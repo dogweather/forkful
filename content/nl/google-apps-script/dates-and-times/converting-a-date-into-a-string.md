@@ -14,12 +14,7 @@ title: Een datum omzetten naar een string
 weight: 28
 ---
 
-## Wat & Waarom?
-
-Het converteren van data naar tekstreeksen is een fundamentele taak die programmeurs in staat stelt om datumgegevens te manipuleren en weer te geven in een voor mensen leesbaar formaat. Dit is cruciaal voor het creëren van gebruikersinterfaces, het genereren van rapporten of het loggen van informatie in applicaties ontwikkeld met Google Apps Script.
-
 ## Hoe:
-
 Google Apps Script, gebaseerd op JavaScript, biedt meerdere methoden om de conversie van data naar tekstreeksen te realiseren. Hieronder zijn enkele voorbeelden die verschillende benaderingen illustreren:
 
 ### Gebruik van de `toString()` Methode:
@@ -53,7 +48,6 @@ Logger.log(formattedDate); // Uitvoer: "2023-04-05"
 Deze methode is bijzonder krachtig voor het genereren van data in formaten die specifiek zijn voor een locatie of aangepast aan specifieke applicatievereisten.
 
 ## Diepgaand
-
 De noodzaak om data naar tekstreeksen te converteren is niet uniek voor Google Apps Script; het komt voor in alle programmeertalen. Echter, de benadering van Google Apps Script, geërfd van JavaScript, biedt een flexibele set opties gericht op webgebaseerd scripten. `Utilities.formatDate()` valt op door de complexiteit van het werken met tijdzones te erkennen - een uitdaging die vaak over het hoofd wordt gezien.
 
 Historisch gezien is het omgaan met data en tijden een bron van bugs en complexiteit geweest in softwareontwikkeling, voornamelijk vanwege verschillen in tijdzones en formaten. De introductie van `Utilities.formatDate()` in Google Apps Script is een stap naar het standaardiseren van datum-tijdmanipulaties, vooral in de context van Google's reeks producten die wereldwijd worden gebruikt.

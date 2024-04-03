@@ -12,12 +12,7 @@ title: Tekst zoeken en vervangen
 weight: 10
 ---
 
-## Wat & Waarom?
-
-Tekst zoeken en vervangen in C omvat het identificeren van specifieke substrings binnen een grotere string en deze vervangen door andere substrings. Programmeurs voeren deze bewerkingen uit om tekstgegevens te manipuleren - voor taken variërend van gegevenssanering en formattering tot dynamisch genereren van inhoud.
-
 ## Hoe te:
-
 C komt niet met ingebouwde functies voor het direct uitvoeren van zoeken en vervangen op strings. Je kunt dit echter bereiken door verschillende stringbehandelingsfuncties die beschikbaar zijn in de `<string.h>` bibliotheek te combineren met wat aangepaste logica. Hieronder staat een basisvoorbeeld van hoe je een substring binnen een string kunt zoeken en vervangen. Voor de eenvoud gaat dit voorbeeld uit van voldoende buffergrootte en houdt het geen rekening met geheugentoewijzingsproblemen, wat je in productiecode wel moet overwegen.
 
 ```c
@@ -75,7 +70,6 @@ Gewijzigde string: Hallo, dit is een voorbeeld. Deze voorbeeld is eenvoudig.
 Deze code demonstreert een eenvoudige benadering om alle instanties van een substring (`sub`) in een bronstring te zoeken en te vervangen door een andere substring (`newSub`), met behulp van de `strstr`-functie om het startpunt van elke match te vinden. Het is een zeer basaal voorbeeld dat niet omgaat met complexe scenario's zoals overlappende substrings.
 
 ## Diepere Verkenning
-
 De benadering die in de "Hoe te" sectie wordt gebruikt, is fundamenteel en illustreert hoe tekst zoeken en vervangen in C te bereiken zonder gebruik te maken van externe bibliotheken. Historisch gezien, vanwege C's nadruk op low-level geheugenbeheer en prestaties, omvat zijn standaardbibliotheek geen high-level stringmanipulatiefuncties zoals die in talen zoals Python of JavaScript worden gevonden. Programmeurs moeten handmatig het geheugen beheren en verschillende stringoperaties combineren om gewenste uitkomsten te bereiken, wat de complexiteit verhoogt maar meer controle en efficiëntie biedt.
 
 Het is cruciaal op te merken dat deze handmatige aanpak foutgevoelig kan zijn, vooral bij het beheren van geheugentoewijzingen en buffergroottes. Onjuiste behandeling kan leiden tot bufferoverlopen en geheugencorruptie, waardoor de code kwetsbaar wordt voor beveiligingsrisico's.

@@ -15,9 +15,6 @@ title: "L\u1EA5y ng\xE0y hi\u1EC7n t\u1EA1i"
 weight: 29
 ---
 
-## Cái gì & Tại sao?
-Lấy ngày hiện tại trong Python có nghĩa là truy cập ngày đang diễn ra từ hệ thống mà nó đang chạy. Các lập trình viên làm điều này để ghi nhật ký, dấu thời gian, hoặc bất kỳ khi nào cần ngày hôm nay cho giao diện người dùng hoặc báo cáo.
-
 ## Làm thế nào:
 Sử dụng mô-đun `datetime`. Đó là một cách đơn giản:
 

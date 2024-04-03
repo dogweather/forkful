@@ -14,9 +14,6 @@ title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---
 
-## Gì và Tại sao?
-Đọc một tệp văn bản là việc lấy thông tin từ một tài liệu .txt vào chương trình của bạn. Lập trình viên làm điều này để truy cập và thao tác dữ liệu: cài đặt cấu hình, nhật ký, xuất khẩu, và như thế. Một cách đơn giản và dễ hiểu.
-
 ## Làm thế nào:
 Dưới đây là cách bạn đọc một tệp văn bản trong JavaScript hiện tại:
 

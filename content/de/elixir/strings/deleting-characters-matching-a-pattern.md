@@ -10,9 +10,6 @@ title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---
 
-## Was & Warum?
-Das Löschen von Zeichen, die einem Muster entsprechen, heißt einfach, bestimmte Teile aus einem String zu entfernen, die einem vorgegebenen Muster folgen. Programmierer machen das, um Daten zu bereinigen, Eingaben zu validieren oder unerwünschte Inhalte zu filtern.
-
 ## So geht's:
 Elixir bietet eingebaute Funktionen, um mit Mustern und Zeichenketten zu arbeiten. Hier einige Beispiele:
 

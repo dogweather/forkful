@@ -10,12 +10,7 @@ title: Capitalizing a string
 weight: 2
 ---
 
-## What & Why?
-
-Capitalizing a string in C involves converting the first character of each word in a given string to uppercase if it is a lowercase letter. Programmers often perform this operation to standardize user input for searches, sort operations, or display purposes, ensuring consistency and readability across text data.
-
 ## How to:
-
 Capitalizing a string in C requires a basic understanding of character manipulation and string traversal. Since C does not have a built-in function for this, you will typically check each character, adjusting its case as necessary. Below is a simple implementation:
 
 ```c
@@ -52,7 +47,6 @@ Capitalized string: Hello World. Programming In C!
 This program traverses the string `exampleString`, checking each character if it should be capitalized. The `islower` function checks if a character is a lowercase letter, while `toupper` converts it to uppercase. The flag `capNext` determines whether the next letter encountered should be converted, being set after each space (' ') is found, and initially to capitalize the string's first character.
 
 ## Deep Dive
-
 The technique demonstrated is straightforward but lacks efficiency for very large strings or when executed repeatedly in performance-critical applications. In historical and implementation contexts, string manipulation in C, including capitalization, often involves direct buffer manipulation, reflecting C's low-level approach and giving the programmer full control over memory and performance trade-offs.
 
 There are alternative, more sophisticated methods for capitalizing strings, especially when considering locales and unicode characters, where capitalization rules can differ significantly from the simple ASCII scenario. Libraries such as ICU (International Components for Unicode) provide robust solutions for these cases but introduce dependencies and overhead that might not be necessary for all applications.

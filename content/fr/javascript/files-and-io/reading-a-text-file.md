@@ -11,9 +11,6 @@ title: Lecture d'un fichier texte
 weight: 22
 ---
 
-## Quoi & Pourquoi ?
-Lire un fichier texte en JavaScript, c'est récupérer le contenu d'un fichier pour le manipuler ou l'analyser. On le fait pour traiter des données, configurer une app, ou charger des scripts dynamiquement. 
-
 ## Comment faire :
 Pour lire un fichier côté serveur (Node.js), utilisez le module `fs`:
 

@@ -13,16 +13,10 @@ title: "Concat\xE9nation de cha\xEEnes"
 weight: 3
 ---
 
-## Quoi & Pourquoi ?
-
-Concaténer des chaînes implique de combiner deux ou plusieurs chaînes en une seule. Les programmeurs font cela pour construire dynamiquement des messages, des URL ou toute forme de texte nécessitant un mélange de contenu statique et variable.
-
 ## Comment faire :
-
 Dans Google Apps Script, qui est basé sur JavaScript, il existe plusieurs façons de concaténer des chaînes. Voici quelques méthodes courantes :
 
 ### Utiliser l'opérateur plus (`+`) :
-
 ```javascript
 var firstName = "John";
 var lastName = "Doe";
@@ -31,7 +25,6 @@ Logger.log(fullName); // Sortie : John Doe
 ```
 
 ### Utiliser la méthode `concat()` :
-
 ```javascript
 var string1 = "Hello";
 var string2 = "World";
@@ -40,7 +33,6 @@ Logger.log(combinedString); // Sortie : Hello World
 ```
 
 ### Utiliser les littéraux de gabarit (backticks) :
-
 Ceci est une manière moderne et flexible de concaténer des chaînes, vous permettant d'intégrer facilement des expressions dans les chaînes.
 
 ```javascript
@@ -52,7 +44,6 @@ Logger.log(message); // Sortie : Apprendre Google Apps Script est amusant !
 Chacune de ces méthodes a ses cas d'utilisation, et le choix entre elles dépend typiquement des exigences de lisibilité et de la complexité des chaînes à concaténer.
 
 ## Plongée en profondeur
-
 La concaténation de chaînes est un aspect fondamental, pas juste de Google Apps Script, mais de nombreuses langues de programmation. Historiquement, la concaténation de chaînes était souvent réalisée en utilisant l'opérateur plus ou des fonctions/méthodes spécialisées comme `concat()`. Cependant, avec l'introduction des littéraux de gabarit dans ECMAScript 2015 (ES6), que Google Apps Script prend en charge, les développeurs ont gagné une manière plus puissante et intuitive de traiter les chaînes.
 
 Les littéraux de gabarit non seulement simplifient la syntaxe pour intégrer des expressions dans les chaînes, mais soutiennent également les chaînes sur plusieurs lignes sans nécessiter de caractères de nouvelle ligne explicites. Cela réduit le potentiel d'erreurs et améliore la lisibilité du code, surtout lorsqu'il s'agit de chaînes complexes ou lors de la substitution de multiples variables dans un modèle de texte.

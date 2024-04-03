@@ -16,11 +16,7 @@ title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---
 
-## Cái gì và Tại sao?
-Tổ chức mã lệnh thành các hàm chia những nhiệm vụ ra thành các phần có thể tái sử dụng, làm cho mã lệnh trở nên gọn gàng và dễ bảo trì hơn. Chúng ta làm điều này để giảm lặp lại, làm cho việc kiểm thử dễ dàng hơn, và cải thiện tính dễ đọc.
-
 ## Làm như thế nào:
-
 ```javascript
 // Định nghĩa một hàm để tính diện tích hình chữ nhật
 function calculateArea(width, height) {

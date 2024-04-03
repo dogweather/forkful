@@ -12,9 +12,6 @@ title: Generering av tilfeldige tall
 weight: 12
 ---
 
-## Hva & Hvorfor?
-Å generere tilfeldige tall i Arduino-prosjekter innebærer å produsere verdier som er uforutsigbare av design, noe som er avgjørende for applikasjoner som spill, simuleringer og sikkerhetssystemer. Programmerere bruker denne teknikken for å introdusere variabilitet eller ta beslutninger som ikke bør være deterministiske.
-
 ## Hvordan:
 Arduino tilbyr enkle funksjoner for å generere tilfeldige tall: `randomSeed()` og `random()`. For å starte, så den tilfeldige nummergeneratoren for å sikre forskjellige sekvenser av tall hver gang programmet ditt kjører. En ofte brukt tilnærming er å så med en analog avlesning fra en ukoblet pin.
 

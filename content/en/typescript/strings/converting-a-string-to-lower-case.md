@@ -10,9 +10,6 @@ title: Converting a string to lower case
 weight: 4
 ---
 
-## What & Why?
-Converting a string to lowercase means making every character in the string a small letter. Programmers do it for consistency, especially for case-insensitive comparisons, such as when checking user input against a list of commands or stored data.
-
 ## How to:
 In TypeScript, making a string lowercase is a piece of cake. Just call `.toLowerCase()` on your string. Here's how:
 

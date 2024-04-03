@@ -15,9 +15,6 @@ title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---
 
-## Gì & Tại Sao?
-Tìm chiều dài của một chuỗi nghĩa là đếm số ký tự của nó. Lập trình viên thực hiện việc này để xác nhận đầu vào, thao tác văn bản, hoặc đơn giản chỉ để đánh giá kích thước dữ liệu.
-
 ## Làm thế nào:
 Trong Elm, bạn sử dụng `String.length` để biết một chuỗi chứa bao nhiêu ký tự. Hãy chứng kiến:
 

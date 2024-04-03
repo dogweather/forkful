@@ -11,9 +11,6 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## What & Why? – Mikä ja miksi?
-Aloitamme uuden projektin luomisen, koska meillä on visio tai ongelma, johon etsimme ratkaisua. Haskellissa projekti tarkoittaa yleensä uuden paketin tai kirjaston kalustamista, missä koodataan järjestelmällisesti ja puhtaasti.
-
 ## How to: – Kuinka tehdään:
 Aloita Stack-työkalulla. Se luo projektipohjan sinulle automaattisesti.
 

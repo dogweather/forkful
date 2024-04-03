@@ -17,11 +17,8 @@ title: "B\u1EAFt \u0111\u1EA7u m\u1ED9t d\u1EF1 \xE1n m\u1EDBi"
 weight: 1
 ---
 
-## Cái gì & Tại sao?
-
-Khởi đầu một dự án mới bằng Python là việc thiết lập một khuôn khổ có cấu trúc, dễ bảo trì ngay từ đầu. Lập trình viên làm điều này để đảm bảo rằng mã của họ dễ đọc, dễ gỡ lỗi và dễ hợp tác, đặc biệt là khi dự án và đội ngũ làm việc trên dự án đó phát triển theo thời gian.
-
 ## Làm thế nào:
+
 
 ### Tạo một Môi trường Ảo
 Môi trường ảo là một thư mục tự chứa tất cả các tệp thực thi cần thiết để sử dụng các gói mà một dự án Python cần. Nên tạo môi trường ảo cho từng dự án để tránh xung đột giữa các phụ thuộc của dự án. Sử dụng mô-đun `venv`, là một phần của thư viện chuẩn Python.

@@ -15,9 +15,6 @@ title: Kontrollera om en katalog existerar
 weight: 20
 ---
 
-## Vad och varför?
-I PowerShell är kontrollen om en katalog finns en vanlig uppgift som hjälper skript att fatta beslut baserat på filsystemets struktur—till exempel för att undvika fel genom att bekräfta att en målkatalog finns på plats innan man försöker läsa från eller skriva till den. Det är avgörande för att säkerställa att ditt skript beter sig pålitligt i olika miljöer.
-
 ## Hur man gör:
 PowerShell erbjuder ett enkelt sätt att kontrollera närvaron av en katalog med hjälp av cmdleten `Test-Path`. Denna cmdlet returnerar ett booleskt värde som indikerar om den angivna sökvägen finns. Så här kan du använda den:
 

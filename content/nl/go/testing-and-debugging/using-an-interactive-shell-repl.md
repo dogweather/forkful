@@ -14,12 +14,7 @@ title: Gebruik van een interactieve shell (REPL)
 weight: 34
 ---
 
-## Wat & Waarom?
-
-Een interactieve shell, of Lees-Evalueer-Print-Lus (REPL), stelt je in staat om in real-time met Go-code te experimenteren, commando's uit te voeren en onmiddellijke feedback te krijgen. Deze benadering wordt veel gebruikt voor leren, debuggen en prototypen, omdat het de traditionele cyclus van bewerken-compileren-uitvoeren omzeilt, waardoor het ontwikkelingsproces sneller en intuïtiever wordt.
-
 ## Hoe te:
-
 Hoewel Go geen ingebouwde REPL bevat, heeft de gemeenschap tools zoals `gore` gecreëerd om dit gat te vullen. Installeer eerst `gore` door te draaien:
 
 ```
@@ -62,7 +57,6 @@ Oppervlakte van cirkel met straal 4: 50.26548245743669
 ```
 
 ## Diepere Duik:
-
 Het concept van een REPL is oeroud, terug te voeren tot de Lisp machines van de jaren 1960, en biedt een interactieve programmeerervaring. In tegenstelling tot talen zoals Python of JavaScript, is Go ontworpen zonder een REPL, met de focus in plaats daarvan op gecompileerde binaries voor prestatie en eenvoud. Dit weerspiegelt de filosofie van Go van eenvoud en zijn ontwerp voor schaalbare en onderhoudbare software.
 
 Echter, tools zoals `gore` of `goplay` tonen de vindingrijkheid van de Go-gemeenschap in het overbruggen van deze kloof. Deze tools parseren dynamisch Go-code en gebruiken het `go/eval` pakket of vergelijkbare mechanismen om het in real-time uit te voeren, zij het met enkele beperkingen vergeleken met een native REPL-omgeving. Deze beperkingen komen voort uit het type systeem en compilatiemodel van Go, wat on-the-fly evaluatie uitdagend kan maken.

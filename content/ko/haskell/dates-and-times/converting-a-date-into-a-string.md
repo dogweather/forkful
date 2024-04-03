@@ -16,9 +16,6 @@ title: "\uB0A0\uC9DC\uB97C \uBB38\uC790\uC5F4\uB85C \uBCC0\uD658\uD558\uAE30"
 weight: 28
 ---
 
-## What & Why? (무엇과 왜?)
-날짜를 문자열로 변환하는 것은, 날짜를 읽기 편한 텍스트 형태로 바꾸는 과정입니다. 프로그래머들은 로깅, 사용자 인터페이스, 데이터 저장 등을 위해 이 작업을 수행합니다.
-
 ## How to: (실행 방법:)
 ```haskell
 import Data.Time

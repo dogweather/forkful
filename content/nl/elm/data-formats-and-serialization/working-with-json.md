@@ -12,12 +12,7 @@ title: Werken met JSON
 weight: 38
 ---
 
-## Wat & Waarom?
-
-JSON (JavaScript Object Notation) is een tekstopmaak voor gegevensuitwisseling, vergelijkbaar met XML, maar lichter en beter leesbaar. Elm-programmeurs gebruiken JSON om gegevens te verzenden en te ontvangen van/naar servers, en zo dynamische, data-gedreven webapps te creëren.
-
 ## Hoe te:
-
 Elm handelt JSON af met behulp van de `Json.Decode` en `Json.Encode` modules. Hier is een eenvoudig voorbeeld:
 
 ```Elm
@@ -49,13 +44,11 @@ Welkom, Elm
 ```
 
 ## Diepere Duik
-
 Sinds de vroege jaren 2000 is JSON de facto de standaard geworden voor web-API's en heeft het XML verdrongen vanwege de eenvoud. Hoewel Elm beknopt en type-veilig is, kan het omgaan met JSON omslachtig zijn door de noodzaak van expliciete decoders.
 
 Alternatieven zoals Haskell gebruiken typeklassen voor het coderen/decoderen van JSON, wat meer out-of-the-box functionaliteit biedt. Echter, Elm's aanpak helpt typeveiligheid te handhaven en runtime-fouten te voorkomen. Decoders geven expliciet aan hoe JSON naar Elm-typen moet worden geconverteerd, en encoders doen het omgekeerde proces.
 
 ## Zie Ook
-
 Voor verdere lectuur en bronnen:
 
 - De officiële JSON-gids van Elm: [Werken met JSON in Elm](https://guide.elm-lang.org/effects/json.html)

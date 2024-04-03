@@ -11,9 +11,6 @@ title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---
 
-## Vad & Varför?
-Att läsa kommandoradsargument innebär att fånga text som skickas till ett PHP-script från terminalen. Programmerare gör detta för att tillåta interaktion och dynamiskt beteende i skripten.
-
 ## How to:
 Ett enkelt PHP-script för att läsa kommandoradsargument kan se ut så här:
 

@@ -14,9 +14,6 @@ title: Einen Datum aus einem String analysieren
 weight: 30
 ---
 
-## Was & Warum?
-Das Parsen eines Datums aus einem String beinhaltet das Extrahieren von Datumsinformationen, die innerhalb von Strings kodiert sind, und die Umwandlung in ein strukturiertes Format, das von Programmierumgebungen erkannt und manipuliert werden kann. Programmierer tun dies, um Operationen wie Datumsvergleich, Arithmetik, Formatierung und Lokalisierung zu ermöglichen, die für die effiziente Handhabung von Zeitplänen, Zeitstempeln und historischen Daten in Software unerlässlich sind.
-
 ## Wie:
 In Fish Shell gibt es keine eingebauten Befehle, die speziell für das Parsen von Daten aus Strings entwickelt wurden. Stattdessen verlässt man sich auf externe Dienstprogramme wie `date` (verfügbar unter Linux und macOS) oder nutzt beliebte Drittanbieter-Tools wie `GNU date` für komplexeres Parsen. So geht man vor:
 

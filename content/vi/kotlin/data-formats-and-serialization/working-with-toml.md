@@ -13,9 +13,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---
 
-## Là gì và Tại sao?
-TOML là viết tắt của Tom's Obvious, Minimal Language. Ngôn ngữ này được sử dụng cho các tập tin cấu hình vì nó dễ đọc và viết đối với con người, đồng thời vẫn dễ dàng để phân tích đối với máy móc. Các nhà phát triển thường sử dụng TOML để tránh sự lộn xộn của XML và sự tế nhị của JSON khi thiết lập cấu hình.
-
 ## Làm thế nào:
 Để xử lý TOML trong Kotlin, bạn có thể sử dụng một thư viện như `ktoml`. Đầu tiên, hãy thêm phụ thuộc vào `build.gradle.kts` của bạn:
 

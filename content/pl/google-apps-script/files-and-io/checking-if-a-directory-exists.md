@@ -13,12 +13,7 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i dlaczego?
-
-Sprawdzanie, czy katalog istnieje w Google Apps Script, polega na weryfikacji obecności folderu w Google Drive. Programiści często wykonują to sprawdzenie, aby uniknąć błędów lub redundancji tworzenia folderów podczas programowego zarządzania plikami i katalogami.
-
 ## Jak to zrobić:
-
 Google Apps Script nie oferuje bezpośredniej metody "exists" dla folderów. Zamiast tego, używamy możliwości wyszukiwania Google Drive, aby sprawdzić, czy folder o określonej nazwie istnieje. Oto przykład krok po kroku:
 
 ```javascript
@@ -54,7 +49,6 @@ Katalog nie istnieje.
 Ten skrypt wykorzystuje metodę `getFoldersByName`, która pobiera wszystkie foldery w Drive użytkownika, które pasują do określonej nazwy. Ponieważ nazwy nie są unikalne w Drive, ta metoda zwraca `FolderIterator`. Obecność następnego elementu (`hasNext()`) w tym iteratorze wskazuje, że katalog istnieje.
 
 ## Szczegółowa analiza
-
 Historycznie, zarządzanie plikami w środowiskach webowych i chmurowych ewoluowało znacząco. Google Apps Script, oferując obszerny API dla Google Drive, umożliwia skomplikowane operacje zarządzania plikami i folderami, w tym mechanizmy wyszukiwania i sprawdzania, które zostały zademonstrowane. Jednakże, godne uwagi jest brak bezpośredniego sprawdzenia istnienia, co prawdopodobnie wynika z dopuszczenia przez Google Drive wielokrotności folderów o tej samej nazwie, co kontrastuje z wieloma systemami plików egzekwującymi unikalność nazw w obrębie tego samego katalogu.
 
 W tym kontekście, używanie metody `getFoldersByName` jest skutecznym obejściem, ale może potencjalnie wprowadzić nieefektywności w scenariuszu, gdzie istnieje duża liczba folderów z zduplikowanymi nazwami. Alternatywnym podejściem może być utrzymanie aplikacyjnej indeksacji specyficznej lub konwencji nazewnictwa, aby zapewnić szybsze sprawdzanie, szczególnie gdy wydajność staje się krytycznym problemem.

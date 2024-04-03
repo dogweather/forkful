@@ -16,9 +16,6 @@ title: "Chuy\u1EC3n \u0111\u1ED5i m\u1ED9t ng\xE0y th\xE0nh chu\u1ED7i"
 weight: 28
 ---
 
-## Cái gì & Tại sao?
-Chuyển đổi một ngày thành một chuỗi nghĩa là thay đổi định dạng của ngày từ dạng thô hoặc dấu thời gian sang một chuỗi ký tự dễ đọc cho người. Lập trình viên làm việc này để hiển thị ngày tháng một cách thân thiện với người dùng hoặc để chuẩn bị ngày tháng cho việc lưu trữ và so sánh trong cơ sở dữ liệu và nhật ký.
-
 ## Làm thế nào:
 Fish shell giữ mọi thứ được đơn giản hóa. Chúng ta hãy định dạng ngày hiện tại:
 

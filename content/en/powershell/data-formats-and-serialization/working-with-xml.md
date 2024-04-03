@@ -10,9 +10,6 @@ title: Working with XML
 weight: 40
 ---
 
-## What & Why?
-Working with XML involves manipulating and accessing data structured in the eXtensible Markup Language. Programmers work with XML to enable interoperability with other systems or to read and write configuration files, data feeds, and other structured documents common in web services.
-
 ## How to:
 ```PowerShell
 # Loading an XML file into a variable

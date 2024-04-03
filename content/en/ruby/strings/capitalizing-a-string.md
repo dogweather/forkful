@@ -12,9 +12,6 @@ title: Capitalizing a string
 weight: 2
 ---
 
-## What & Why?
-Capitalizing a string usually means converting the first character of a string to uppercase and the rest to lowercase. But sometimes it can mean just making sure that the first character is uppercase while leaving the rest of the string unchanged. Honestly, in my opinion, it's a somewhat vague term.
-
 ## How to:
 Ruby provides [straightforward methods for string manipulation](https://docs.ruby-lang.org/en/3.3/String.html), including capitalization:
 

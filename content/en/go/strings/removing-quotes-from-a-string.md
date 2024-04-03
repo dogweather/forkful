@@ -11,12 +11,7 @@ title: Removing quotes from a string
 weight: 9
 ---
 
-## What & Why?
-
-Removing quotes from a string in Go is about eliminating the leading and trailing quotation marks (`"` or `'`) from a given string. Programmers often need to perform this task to sanitize user input, parse text data more effectively, or prepare strings for further processing that requires quote-free content.
-
 ## How to:
-
 Go offers several approaches to remove quotes from a string, but one of the most straightforward methods is to use the `Trim` and `TrimFunc` functions provided by the `strings` package. Here's how to do it:
 
 ```go
@@ -53,7 +48,6 @@ Using strings.TrimFunc: This is a 'quoted' string
 Both methods effectively remove the leading and trailing quotes from the string.
 
 ## Deep Dive
-
 The functions `Trim` and `TrimFunc` from the `strings` package are part of Go's extensive standard library, designed to offer powerful, yet straightforward string manipulation capabilities without the need for third-party packages. Historically, the necessity to handle and manipulate strings efficiently stems from Go's primary focus on network servers and data parsers, where string processing is a common task.
 
 One notable aspect of these functions is their implementation based on runes (Go's representation of a Unicode code point). This design allows them to seamlessly handle strings containing multi-byte characters, making Go's approach to string manipulation both robust and Unicode-friendly.

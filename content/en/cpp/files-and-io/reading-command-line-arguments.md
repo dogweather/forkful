@@ -10,9 +10,6 @@ title: Reading command line arguments
 weight: 23
 ---
 
-## What & Why?
-Command line arguments let users influence a program's behavior without changing the code. Programs use them to get input params, filepath, or operation mode, saving time and giving flexibility.
-
 ## How to:
 In C++, command-line arguments are received in `main()` as an array of character pointers. Here's how you grab them:
 

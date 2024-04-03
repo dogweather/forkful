@@ -12,9 +12,6 @@ title: Een HTTP-verzoek verzenden
 weight: 44
 ---
 
-## Wat & Waarom?
-Een HTTP-verzoek versturen is de handeling van het vragen om data of actie aan een webserver. Programmeurs doen dit om te interacteren met API's, webinhoud te grijpen, of communicatie tussen diensten.
-
 ## Hoe:
 Laten we naar het leuke gedeelte gaan. Je hebt de `http-client` en `http-client-tls` pakketten nodig. Stel je stack in en voeg ze toe aan je `package.yaml` of `.cabal` bestand. Voer vervolgens `stack build` of de geschikte commando's uit om ze op te halen.
 

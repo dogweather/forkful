@@ -10,9 +10,6 @@ title: Zahlen runden
 weight: 13
 ---
 
-## Was & Warum?
-Das Runden von Zahlen ist das Trimmen einer Dezimalzahl auf den nächstgelegenen ganzen Wert oder auf eine festgelegte Anzahl von Dezimalstellen. Programmierer runden Zahlen, um sie leichter lesbar und handhabbar zu machen, besonders wenn Präzision über einen bestimmten Punkt hinaus unnötig ist oder zu Fehlern führen könnte.
-
 ## Wie geht das:
 In Arduino können Sie Zahlen mit eingebauten Funktionen runden. Die Hauptakteure sind `round`, `ceil` und `floor`. Hier ist eine schnelle Demo:
 

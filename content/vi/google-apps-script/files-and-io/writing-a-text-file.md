@@ -17,12 +17,7 @@ title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---
 
-## Cái gì & Tại sao?
-
-Việc viết một tệp văn bản trong Google Apps Script giúp các nhà phát triển có thể lưu trữ dữ liệu một cách bền vững, khiến nó có thể truy cập để sử dụng hoặc phân tích trong tương lai. Thao tác này là một phương pháp phổ biến để ghi lại log, lưu cấu hình, hoặc xuất thông tin trong một định dạng đơn giản, dễ đọc.
-
 ## Làm thế nào:
-
 Việc tạo và viết vào một tệp văn bản trong Google Apps Script có thể được thực hiện thông qua dịch vụ Google DriveApp. Dưới đây là hướng dẫn từng bước với ví dụ mã để bắt đầu:
 
 **Bước 1: Tạo một Tệp Văn bản Mới**
@@ -52,7 +47,6 @@ Mã này truy xuất một tệp đã có sử dụng ID duy nhất của nó, s
 Không có đầu ra cụ thể nào được hiển thị bằng cách chạy các đoạn mã trên, nhưng nếu bạn điều hướng đến Google Drive nơi tệp được lưu trữ, bạn sẽ thấy "Example.txt" cho đoạn mã đầu tiên. Đối với đoạn mã thứ hai, nếu bạn mở tệp được chỉ định bằng ID, bạn sẽ thấy nội dung ban đầu theo sau là dòng mới "Nội dung mới được thêm vào."
 
 ## Tìm Hiểu Sâu
-
 Việc viết một tệp văn bản trong Google Apps Script tận dụng dịch vụ DriveApp, cơ bản khai thác khả năng của Google Drive cho việc lưu trữ và quản lý tệp. Phương pháp này trở lại từ thời điểm ra đời của Google Apps Script, được thiết kế để tự động hóa các tác vụ dễ dàng qua bộ công cụ năng suất của Google, bao gồm cả Drive.
 
 Mặc dù trực tiếp thao tác các tệp qua Google Apps Script khá dễ dàng và tích hợp chặt chẽ với Google Workspace, các nhà phát triển đến từ các lĩnh vực khác (ví dụ, Python, Node.js) có thể thấy nó khác biệt so với làm việc với hệ thống tệp cục bộ hoặc các dịch vụ lưu trữ đám mây khác như AWS S3. Những nền tảng này thường cung cấp một bộ khả năng thao tác tệp phức tạp hơn nhưng yêu cầu thiết lập bổ sung cho xác thực và quyền.

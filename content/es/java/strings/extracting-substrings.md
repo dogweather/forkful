@@ -11,9 +11,6 @@ title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---
 
-## What & Why? (¿Qué y Por Qué?)
-Extraer subcadenas significa seleccionar partes específicas de una cadena de texto. Programadores lo hacen para analizar, manipular o transformar datos de manera más eficiente.
-
 ## How to:
 Para extraer subcadenas en Java usamos el método `substring()`. Ejemplos:
 

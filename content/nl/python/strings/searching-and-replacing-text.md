@@ -13,9 +13,6 @@ title: Tekst zoeken en vervangen
 weight: 10
 ---
 
-## Wat & Waarom?
-Zoeken en vervangen van tekst gaat over het vinden van tekenreeksen in een tekstblok en deze veranderen in iets anders. Programmeurs doen dit voor het bewerken van code, het verwerken van gegevens of het automatiseren van refactor-taken.
-
 ## Hoe:
 ```Python
 # Gebruik van str.replace() voor eenvoudige vervanging

@@ -12,9 +12,6 @@ title: "\u092A\u0948\u091F\u0930\u094D\u0928 \u0938\u0947 \u092E\u0947\u0932 \u0
 weight: 5
 ---
 
-## What & Why? (क्या और क्यों?)
-Pattern matching se hum kisi string mein se khas characters ya shabdon ko dhundhkar unhe hata sakte hain. Programmers iska use karte hain data ko saf karne ya unwanted information ko nikalne ke liye, jaise ki log files se sensitive data hataana ya user input ko validate karna.
-
 ## How to (कैसे करें):
 ```kotlin
 fun main() {

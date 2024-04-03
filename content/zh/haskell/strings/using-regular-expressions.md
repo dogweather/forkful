@@ -22,9 +22,6 @@ title: "\u4F7F\u7528\u6B63\u5219\u8868\u8FBE\u5F0F"
 weight: 11
 ---
 
-## 什么 & 为什么？
-在编程中，正则表达式是定义搜索模式的字符序列，通常用于字符串搜索和操作。Haskell程序员利用正则表达式完成从简单的字符串匹配到复杂的文本处理的任务，利用它们在处理文本数据方面的效率和多功能性。
-
 ## 如何操作：
 在Haskell中，正则表达式功能不是标准库的一部分，这就需要使用第三方包，如`regex-base`，以及兼容的后端，比如`regex-posix`（支持POSIX正则表达式）、`regex-pcre`（支持与Perl兼容的正则表达式）等。以下是如何使用这些包来处理正则表达式。
 
@@ -39,7 +36,6 @@ cabal install regex-pcre
 ```
 
 ### 使用`regex-posix`：
-
 ```haskell
 import Text.Regex.Posix ((=~))
 
@@ -60,7 +56,6 @@ main = do
 ```
 
 ### 使用`regex-pcre`：
-
 ```haskell
 import Text.Regex.PCRE ((=~))
 

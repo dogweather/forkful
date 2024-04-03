@@ -11,9 +11,6 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## ¿Qué y Por Qué?
-Buscar y reemplazar texto es una técnica para identificar cadenas de caracteres y sustituirlas por otras. Los programadores la usan para modificar código, datos o simplemente para corregir errores de manera eficiente.
-
 ## Cómo Hacerlo:
 Vamos a realizar una búsqueda y reemplazo con un ejemplo en Lua. Imagina que queremos cambiar todas las apariciones de "hola" por "adiós".
 

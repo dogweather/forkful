@@ -16,12 +16,7 @@ title: "T\xEDnh to\xE1n ng\xE0y trong t\u01B0\u01A1ng lai ho\u1EB7c qu\xE1 kh\u1
 weight: 26
 ---
 
-## Cái gì & Tại sao?
-
-Việc tính toán một ngày trong tương lai hoặc quá khứ có nghĩa là tìm ra lịch sẽ hiển thị như thế nào sau hoặc trước một khoảng thời gian cụ thể. Các lập trình viên thực hiện việc này cho mọi thứ liên quan đến thời gian, như cài đặt nhắc nhở, ngày hết hạn, hoặc lập kế hoạch cho các sự kiện.
-
 ## Cách thực hiện:
-
 Rust sử dụng crate `chrono` cho mọi nhu cầu về ngày giờ của bạn. Dưới đây là cách để thêm hoặc trừ một ngày:
 
 ```rust
@@ -50,7 +45,6 @@ UTC 30 ngày trước: 2023-03-02T12:00:00Z
 ```
 
 ## Tìm hiểu Sâu
-
 Truyền thống, việc thao tác với ngày và giờ đã là một vấn đề khó khăn. Các hệ thống và ngôn ngữ lập trình khác nhau xử lý nó theo các cách khác nhau. Thư viện chuẩn của Rust cung cấp chức năng cơ bản, nhưng crate `chrono` là sự lựa chọn hàng đầu.
 
 Có phương án khác không? Chắc chắn rồi, bạn có thể tự tính toán các ngày bằng cách chuyển đổi tất cả thành dấu thời gian, thao tác với các con số, và chuyển ngược lại. Hoặc, bạn cũng có thể sử dụng các thư viện chuyên về thời gian trong các ngôn ngữ khác—Python có `datetime`, JavaScript có `Date`, v.v.
@@ -58,7 +52,6 @@ Có phương án khác không? Chắc chắn rồi, bạn có thể tự tính t
 Crate `chrono` trong Rust cung cấp cho bạn các loại có ý thức về múi giờ như `DateTime`, và các khoảng thời gian như đã thấy ở trên. Nó xử lý tất cả các phần phức tạp như năm nhuận và giờ mùa hè để bạn không phải làm. Nó cũng thực hiện việc phân tích và định dạng ngày, làm cho nó trở thành một giải pháp toàn diện.
 
 ## Xem thêm
-
 - Crate `chrono`: https://crates.io/crates/chrono
 - Tài liệu về thời gian của Rust: https://doc.rust-lang.org/std/time/index.html
 - Chương Ngày và Giờ trong Cuốn sách "Ngôn Ngữ Lập Trình Rust": https://doc.rust-lang.org/book/ch10-02-traits.html (tìm các phần liên quan đến DateTime)

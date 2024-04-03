@@ -11,9 +11,6 @@ title: Hantering av fel
 weight: 16
 ---
 
-## Vad & Varför?
-Att hantera fel i PowerShell innebär att förutse missöden och hantera dem smidigt. Programmerare gör detta för att förhindra krascher och förse användare med användbar återkoppling.
-
 ## Hur man gör:
 ```PowerShell
 # Grundläggande Try-Catch för att hantera undantag
@@ -34,6 +31,7 @@ try {
 
 # Använda $Error-variabeln för att inspektera det senaste felet
 ```
+
 ## Djupdykning
 PowerShell har kommit långt sedan dess början som Monad. Felhanteringen har blivit robustare över tiden, och erbjuder funktioner liknande andra programmeringsspråk. Syntaxen `try-catch-finally` är ett sådant exempel på korsbefruktning från språk som C#. Innan dess förlitade sig skriptare starkt på att kontrollera villkor och använda den automatiska variabeln `$Error`.
 

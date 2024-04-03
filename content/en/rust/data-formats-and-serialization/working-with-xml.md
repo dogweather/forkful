@@ -9,9 +9,6 @@ title: Working with XML
 weight: 40
 ---
 
-## What & Why?
-XML, short for eXtensible Markup Language, is like JSON's verbose cousin. You'll wrestle with XML when dealing with legacy systems, enterprise software, or APIs that skipped the JSON bandwagon. It's essential for data exchange where XML stands its ground.
-
 ## How to:
 In Rust, you can handle XML with crates like `xml-rs`. Install by adding `xml-rs = "0.8"` to your `Cargo.toml`. Here's how to parse a simple XML:
 

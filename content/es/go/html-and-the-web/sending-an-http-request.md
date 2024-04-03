@@ -12,12 +12,7 @@ title: Enviando una solicitud HTTP
 weight: 44
 ---
 
-## ¿Qué y por qué?
-
-Enviar una solicitud HTTP involucra iniciar una llamada desde tu aplicación Go a un servidor web, API o cualquier otro servicio basado en HTTP. Los programadores hacen esto para interactuar con recursos web, obtener datos, enviar formularios o comunicarse con otros servicios a través de Internet.
-
 ## Cómo hacerlo:
-
 En Go, enviar una solicitud HTTP y manejar la respuesta implica usar el paquete `net/http`. Aquí tienes un ejemplo paso a paso sobre cómo enviar una simple solicitud GET y leer la respuesta:
 
 ```go
@@ -99,7 +94,6 @@ func main() {
 ```
 
 ## Análisis Profundo
-
 El paquete `net/http` en Go ofrece una forma poderosa y flexible de interactuar con servidores HTTP. Su diseño refleja el énfasis de Go en la simplicidad, eficiencia y robustez. Originalmente, funcionalidades como manejar cargas útiles JSON o XML requerían la creación manual del cuerpo de la solicitud y la configuración de encabezados apropiados. A medida que Go evolucionó, la comunidad ha desarrollado paquetes de nivel superior que simplifican aún más estas tareas, como `gorilla/mux` para enrutamiento y `gjson` para manipulación de JSON.
 
 Un aspecto notable del cliente HTTP de Go es su uso de interfaces y estructuras, como `http.Client` y `http.Request`, que permiten una amplia personalización y prueba. Por ejemplo, puedes modificar el `http.Client` para que las solicitudes tengan un tiempo de espera o mantener las conexiones activas para mejorar el rendimiento.

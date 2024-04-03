@@ -12,9 +12,6 @@ title: HTML Parsen
 weight: 43
 ---
 
-## Wat & Waarom?
-HTML parseren betekent gegevens extraheren uit HTML-documenten. Programmeurs doen dit om te interageren met of webinhoud te manipuleren, gegevensextractie te automatiseren, of voor doeleinden van webscraping.
-
 ## Hoe:
 Laten we HTML parseren met de `DOMParser` API in JavaScript.
 

@@ -17,9 +17,6 @@ title: "T\u1EA1o m\u1ED9t t\u1EADp tin t\u1EA1m th\u1EDDi"
 weight: 21
 ---
 
-## Gì và Tại sao?
-Tạo một tệp tạm thời có nghĩa là tạo một tệp để sử dụng trong thời gian ngắn, thường là để quản lý dữ liệu trong khi một chương trình đang thực thi. Lập trình viên làm điều này để tránh làm đầy ổ cứng bằng dữ liệu nhất thời và để làm việc với các tệp một cách an toàn mà không gặp phải xung đột hay rò rỉ dữ liệu.
-
 ## Làm sao:
 Haskell cung cấp gói `temporary`, bao gồm các hàm tiện ích cho các thao tác tệp tạm thời. Dưới đây là một ví dụ nhanh:
 

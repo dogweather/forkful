@@ -11,9 +11,6 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-Fehlerbehandlung in der Programmierung bedeutet, mit dem Unerwarteten zu rechnen. Es ist die Kunst, für den Fall zu planen, dass Dinge schiefgehen, damit man sein Programm reibungslos weiterlaufen lassen kann.
-
 ## Wie geht das:
 Lua verwendet zwei Hauptfunktionen für die Fehlerbehandlung: `pcall` und `xpcall`. So setzt man sie ein:
 

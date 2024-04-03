@@ -13,9 +13,6 @@ title: Refaktoryzacja
 weight: 19
 ---
 
-## Co i dlaczego?
-Refaktoryzacja to proces restrukturyzacji istniejącego kodu bez zmiany jego zewnętrznego zachowania, mający na celu poprawę atrybutów niefunkcjonalnych, takich jak czytelność i możliwość utrzymania. Programiści robią to, aby kod był czystszy, łatwiejszy do zrozumienia i bardziej efektywny, ułatwiając przyszłe aktualizacje i zmniejszając ryzyko błędów.
-
 ## Jak to zrobić:
 Uporządkujmy wspólny wzorzec Elixira. Zrefaktoryzujemy funkcję `calculate_stats`, która robi więcej niż powinna, dzieląc ją na mniejsze, wielokrotnego użytku kawałki.
 

@@ -13,12 +13,7 @@ title: "H\xE5ndtering av feil"
 weight: 16
 ---
 
-## Hva & Hvorfor?
-
-Å håndtere feil i C innebærer å oppdage og respondere på unormale tilstander som oppstår under kjøring av programmet. Programmerere gjør dette for å forhindre feil, krasj og uforutsigbar oppførsel, og sikrer at programvaren fungerer pålitelig og effektivt under ulike scenarier.
-
 ## Hvordan:
-
 C har ikke innebygd støtte for unntak slik som noen andre språk. I stedet støtter det seg på noen konvensjonelle feilhåndteringsstrategier, som å returnere spesielle verdier fra funksjoner og sette globale variabler som `errno`.
 
 **Returnere spesielle verdier**
@@ -79,7 +74,6 @@ Feil ved åpning av fil: No such file or directory
 ```
 
 ## Dypdykk
-
 Historisk sett har C programmeringsspråkets minimalistiske design utelatt en innebygd mekanisme for unntakshåndtering, reflekterende av dets opprinnelse innen lavnivå, systemprogrammering hvor maksimal ytelse og kontroll nært opp til maskinvaren er kritisk. I stedet adopterer C en mer manuell tilnærming til feilhåndtering som passer med sin filosofi om å gi programmerere så mye kontroll som mulig, selv på bekostning av bekvemmelighet.
 
 Selv om denne tilnærmingen stemmer godt overens med Cs designmål, kan det også føre til utførlig feilsjekkingskode og potensialet for savnede feilsjekker, som moderne språk adresserer med strukturerte unntakshåndteringsmekanismer. For eksempel tillater unntak i språk som Java eller C# for sentralisert feilprosessering, som gjør koden renere og feilhåndtering mer rett frem. Imidlertid introduserer unntak sine egne overhead og kompleksitet, som kanskje ikke er ideelt for systemnivå programering hvor C skinner.

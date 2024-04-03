@@ -14,9 +14,6 @@ title: "T\xECm chi\u1EC1u d\xE0i c\u1EE7a m\u1ED9t chu\u1ED7i k\xFD t\u1EF1"
 weight: 7
 ---
 
-## Cái gì & Tại sao?
-Việc tìm độ dài của một chuỗi nghĩa là xác định xem nó chứa bao nhiêu ký tự. Lập trình viên thực hiện điều này để xác minh đầu vào, lặp qua các ký tự, căn chỉnh văn bản, hoặc quản lý dữ liệu một cách động.
-
 ## Làm thế nào:
 ```Arduino
 void setup() {

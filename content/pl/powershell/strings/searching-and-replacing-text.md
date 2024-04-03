@@ -11,9 +11,6 @@ title: Wyszukiwanie i zamiana tekstu
 weight: 10
 ---
 
-## Co i Dlaczego?
-Szukanie i zamiana tekstu to podstawy edycji - znajdujesz ciągi znaków i zamieniasz je na coś innego. Programiści robią to, aby szybko aktualizować kod, poprawiać błędy lub dostosowywać dane.
-
 ## Jak to zrobić:
 Załóżmy, że chcesz zmienić "hello" na "hi" w tekście. W PowerShell to proste:
 

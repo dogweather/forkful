@@ -14,11 +14,8 @@ title: Att starta ett nytt projekt
 weight: 1
 ---
 
-## Vad & Varför?
-
-Att starta ett nytt projekt i Python handlar om att från början sätta upp en strukturerad, underhållbar ram. Programmerare gör detta för att säkerställa att deras kod är lätt att läsa, felsöka och samarbeta kring, särskilt eftersom projektet och teamet som arbetar med det växer över tid.
-
 ## Hur man gör:
+
 
 ### Skapa en virtuell miljö
 En virtuell miljö är en självständig katalog som innehåller alla nödvändiga exekverbara filer för att använda de paket som ett Python-projekt skulle behöva. Det är rådligt att skapa en virtuell miljö för varje projekt för att undvika konflikter mellan projektberoenden. Använd `venv`-modulen, som är en del av Pythons standardbibliotek.

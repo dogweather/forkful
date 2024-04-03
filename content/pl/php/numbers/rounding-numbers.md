@@ -11,9 +11,6 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i dlaczego?
-Zaokrąglanie liczb oznacza ucinanie miejsc dziesiętnych do określonej precyzji, często do liczb całkowitych. Programiści zaokrąglają, aby upraszczać obliczenia, poprawiać wydajność lub czynić wyniki bardziej przyjaznymi dla użytkownika.
-
 ## Jak to zrobić:
 PHP oferuje kilka sposobów na zaokrąglanie liczb: `round()`, `ceil()` oraz `floor()`. Oto jak działają:
 

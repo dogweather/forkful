@@ -11,9 +11,6 @@ title: Calculando uma data no futuro ou passado
 weight: 26
 ---
 
-## O Que & Por Quê?
-Calcular uma data no futuro ou no passado é o processo de adicionar ou subtrair dias, meses ou anos a uma data existente. Programadores fazem isso para gerenciar eventos futuros, validar prazos, agendar tarefas ou criar lembretes.
-
 ## Como Fazer:
 ```Ruby
 require 'date'

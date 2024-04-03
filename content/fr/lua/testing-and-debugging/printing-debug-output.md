@@ -11,9 +11,6 @@ title: "Affichage des sorties de d\xE9bogage"
 weight: 33
 ---
 
-## What & Why? / Quoi & Pourquoi ?
-On imprime des données de débogage pour voir ce qui se passe dans le code pendant son exécution. Cela aide à repérer les erreurs et à comprendre le flux du programme.
-
 ## How to / Comment faire :
 Pour afficher quelque chose dans Lua, on utilise la fonction `print()`. Voici un exemple simple :
 

@@ -11,12 +11,7 @@ title: Refactoring
 weight: 19
 ---
 
-## Was & Warum?
-
-Refactoring ist der Prozess, die interne Struktur eines Computerprogramms zu verändern, ohne sein externes Verhalten zu ändern. Programmierer nehmen dies vor, um ihren Code aufzuräumen, wodurch dieser leichter zu verstehen, zu warten und zu erweitern ist.
-
 ## Wie:
-
 Stellen Sie sich vor, Sie haben eine Funktion, die ein wenig zu viel tut, wie diese unhandliche Methode, die ein Objekt initialisiert und gleichzeitig Logging durchführt:
 
 ```C++
@@ -71,7 +66,6 @@ w.logInitialization();
 Diese Änderung hat nicht verändert, was das Programm macht, aber sie macht die `Widget`-Klasse modularer und ihre Benutzung klarer.
 
 ## Tiefergehend
-
 Das Konzept des Refactorings, wie wir es heute kennen, hat seine Wurzeln in den Smalltalk-Programmiergemeinschaften der 1980er Jahre und wurde stark durch Martin Fowlers Buch "Refactoring: Improving the Design of Existing Code" aus dem Jahr 1999 popularisiert. Heute ist Refactoring ein fester Bestandteil moderner Softwareentwicklung, integriert in verschiedene Entwicklungsansätze wie Agile und TDD (Test-Driven Development).
 
 Wenn wir über Alternativen zum Refactoring sprechen, bewegen wir uns in das Gebiet des Neuschreibens oder Neugestaltens. Refactoring ist strategisch und inkrementell, während ein Neuschreiben bestehenden Code zugunsten einer neuen Lösung verwerfen kann. Ein Neudesign kann derweil bedeutendere Änderungen beinhalten, einschließlich der Änderung der Funktionalität, was nicht das Ziel des reinen Refactorings ist.
@@ -81,7 +75,6 @@ Die Implementierungsdetails zum Refactoring können ziemlich detailliert sein. E
 Darüber hinaus erfordert Refactoring eine solide Testreihe, um sicherzustellen, dass die Funktionalität unverändert bleibt. Ohne Tests fliegt man gewissermaßen blind und riskiert Regressionen.
 
 ## Siehe auch
-
 Für ein tieferes Verständnis des Refactorings und um weitere Beispiele zu sehen, möchten Sie vielleicht Folgendes überprüfen:
 
 - Martin Fowlers klassischen Text "Refactoring: Improving the Design of Existing Code" für grundlegende Ideen und Strategien.

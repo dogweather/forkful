@@ -15,9 +15,6 @@ title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---
 
-## Qué y Por Qué
-Escribir en el error estándar (stderr) en JavaScript se trata de dirigir mensajes de error o cualquier información crítica a un flujo específico y separado, lo cual es especialmente útil en entornos similares a Unix para propósitos de registro y depuración. Los programadores hacen esto para diferenciar la salida normal del programa de los mensajes de error, permitiendo una gestión de salida más limpia y un monitoreo de errores más sencillo.
-
 ## Cómo:
 En Node.js, escribir en stderr se puede lograr utilizando el método `console.error()` o escribiendo directamente en `process.stderr`. Aquí hay ejemplos que demuestran ambos enfoques:
 

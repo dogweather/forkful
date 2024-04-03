@@ -10,9 +10,6 @@ title: "\xC5 jobbe med XML"
 weight: 40
 ---
 
-## Hva & Hvorfor?
-"Arbeid med XML" refererer til prosessen med å lese, opprette og modifisere XML (eXtensible Markup Language) filer ved hjelp av programmering. Programmerere gjør dette fordi XML er mye brukt til datautveksling på grunn av sin plattformuavhengige natur og selvbeskrivende format.
-
 ## Hvordan:
 Pythons `xml.etree.ElementTree`-modul tilbyr verktøy for å arbeide med XML.
 

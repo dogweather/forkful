@@ -14,9 +14,6 @@ title: "Escribiendo en el error est\xE1ndar"
 weight: 25
 ---
 
-## Qué y Por Qué?
-Escribir en el error estándar (stderr) en Rust consiste en dirigir mensajes de error y diagnósticos a la consola por separado de la salida estándar (stdout). Los programadores hacen esto para diferenciar la salida normal del programa de los mensajes de error, facilitando así el manejo adecuado de errores o su redirección a registros o archivos durante la ejecución.
-
 ## Cómo hacerlo:
 Rust proporciona una manera sencilla de escribir en stderr utilizando la macro `eprintln!`, similar a cómo `println!` se usa para stdout. Aquí hay un ejemplo básico:
 

@@ -16,9 +16,6 @@ title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---
 
-## Gì & Tại sao?
-Xóa các ký tự khớp với một mẫu là quá trình tìm và loại bỏ các chuỗi ký tự cụ thể từ các chuỗi dựa trên các quy tắc (như regex). Lập trình viên thực hiện điều này để dọn dẹp dữ liệu, xác nhận đầu vào, hoặc thao tác văn bản cho các mục đích khác nhau.
-
 ## Làm thế nào:
 Muốn loại bỏ một số ký tự? Dưới đây là cách thực hiện trong C#:
 

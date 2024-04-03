@@ -13,12 +13,7 @@ title: HTML parsen
 weight: 43
 ---
 
-## Was & Warum?
-
-Das Parsen von HTML in Go umfasst die Analyse des Inhalts von HTML-Dateien, um Daten zu extrahieren, die Struktur zu manipulieren oder HTML in andere Formate zu konvertieren. Programmierer tun dies für Web Scraping, Templating und Data Mining, wobei sie die starken Concurrency-Features von Go für die effiziente Verarbeitung großer Mengen von Webseiten nutzen.
-
 ## Wie:
-
 Um HTML in Go zu parsen, verwendet man üblicherweise das `goquery`-Paket oder das Standardbibliothekspaket `net/html`. Hier ist ein einfaches Beispiel, das `net/html` verwendet, um alle Links von einer Webseite zu extrahieren:
 
 ```go
@@ -75,7 +70,6 @@ http://www.iana.org/domains/reserved
 Dieser Code fordert eine HTML-Seite an, parst sie und durchläuft rekursiv den DOM, um `href`-Attribute aller `<a>`-Tags zu finden und auszudrucken.
 
 ## Vertiefung
-
 Das `net/html`-Paket bietet die Grundlagen für das Parsen von HTML in Go und implementiert direkt die Tokenisierungs- und Baumkonstruktionsalgorithmen, die durch den HTML5-Standard spezifiziert sind. Dieser low-level Ansatz ist leistungsfähig, kann aber für komplexe Aufgaben umfangreich sein.
 
 Im Gegensatz dazu bietet das Drittanbieterpaket `goquery`, inspiriert von jQuery, eine höherstufige Schnittstelle, die DOM-Manipulation und -Durchquerung vereinfacht. Es ermöglicht Entwicklern, prägnanten und ausdrucksstarken Code für Aufgaben wie Elementauswahl, Attributextraktion und Inhaltsmanipulation zu schreiben.

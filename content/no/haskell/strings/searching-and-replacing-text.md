@@ -10,9 +10,6 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## Hva & Hvorfor?
-Tekstsøking og -erstatning lar oss finne og bytte ut spesifikt innhold i strenger. Programmerere bruker dette for å manipulere data, rette feil eller oppdatere informasjon i filer og applikasjoner.
-
 ## Hvordan:
 I Haskell kan tekst søkes og erstattes ved hjelp av funksjoner fra standardbiblioteket, for eksempel `Data.Text` som håndterer strengdata effektivt. 
 ```Haskell

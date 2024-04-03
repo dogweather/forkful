@@ -13,14 +13,10 @@ title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---
 
-## Vad & Varför?
-
-Reguljära uttryck (regex) i JavaScript är mönster som används för att matcha teckenkombinationer i strängar. Programmerare använder dem för att söka, extrahera och manipulera text, vilket möjliggör kraftfulla strängbearbetningsoperationer med koncis kod.
-
 ## Hur man gör:
 
-### Grundläggande matchning
 
+### Grundläggande matchning
 För att börja kan du skapa ett enkelt regex-mönster och använda det för att hitta matchningar i en sträng. Här ska vi hitta ordet "code":
 
 ```javascript
@@ -31,7 +27,6 @@ console.log(result); // true
 ```
 
 ### Använda `String.prototype.match()`
-
 För att hämta en array med matchningar:
 
 ```javascript
@@ -41,7 +36,6 @@ console.log(matches.index); // 10
 ```
 
 ### Globalt Sök
-
 För att hitta alla matchningar, använd flaggan `g`:
 
 ```javascript
@@ -50,7 +44,6 @@ console.log(globalMatches); // ["o", "o", "o"]
 ```
 
 ### Skiftlägesokänslig matchning
-
 Flaggan `i` ignorerar skiftläge:
 
 ```javascript
@@ -59,7 +52,6 @@ console.log(caseInsensitiveMatch[0]); // "JavaScript"
 ```
 
 ### Ersätta Text
-
 Använd `String.prototype.replace()` för att ersätta delar av strängen:
 
 ```javascript
@@ -68,7 +60,6 @@ console.log(newStr); // "JavaScript är fantastiskt"
 ```
 
 ### Använda Grupper
-
 Grupper kan fånga delar av mönstret:
 
 ```javascript
@@ -78,7 +69,6 @@ console.log(replaceWithGroups); // "kul är JavaScript"
 ```
 
 ### Tredjepartbibliotek
-
 Även om JavaScripts inbyggda regex-funktioner är kraftfulla, kan vissa uppgifter förenklas med bibliotek som `XRegExp`. Det erbjuder ytterligare syntax och flaggor, vilket gör komplexa mönster mer läsbara:
 
 ```javascript

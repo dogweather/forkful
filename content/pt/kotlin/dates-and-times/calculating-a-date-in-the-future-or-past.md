@@ -11,9 +11,6 @@ title: Calculando uma data no futuro ou passado
 weight: 26
 ---
 
-## O Que & Porquê?
-Calcular datas no futuro ou no passado é basicamente adicionar ou subtrair dias, meses ou anos a uma data específica. Programadores fazem isso para gerenciar prazos, calcular idades ou definir cronogramas em aplicativos.
-
 ## Como fazer:
 ```kotlin
 import java.time.LocalDate

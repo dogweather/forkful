@@ -11,9 +11,6 @@ title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---
 
-## Hva & Hvorfor?
-Å finne lengden på en streng betyr å telle antall karakterer den inneholder. Programmerere gjør dette for å validere inndata, begrense lengde, eller for å navigere gjennom teksten.
-
 ## Hvordan:
 Elm håndterer strenger gjennom `String`-modulen, og `String.length` gir oss lengden direkte.
 

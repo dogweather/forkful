@@ -11,9 +11,6 @@ title: "Finn lengden p\xE5 en streng"
 weight: 7
 ---
 
-## Hva & Hvorfor?
-Å finne lengden på en streng innebærer å telle antall tegn den inneholder. Programmerere gjør dette for å validere inndata, iterere gjennom tegn, eller rett og slett for å håndtere tekst på en fornuftig måte.
-
 ## Hvordan gjøre det:
 ```C#
 using System;

@@ -11,12 +11,7 @@ title: Printing debug output
 weight: 33
 ---
 
-## What & Why?
-
-Printing debug output in Dart is about displaying information to the console during runtime, allowing developers to track the flow of execution, investigate the state of variables, or identify the source of errors. Programmers commonly use it for troubleshooting and verifying that their code behaves as expected, facilitating a smoother and more efficient development process.
-
 ## How to:
-
 In Dart, you can print debug output using the `print()` function. Here's how to output simple messages and variable values:
 
 ```dart

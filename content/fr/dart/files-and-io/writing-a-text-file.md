@@ -13,9 +13,6 @@ title: "\xC9crire un fichier texte"
 weight: 24
 ---
 
-## Quoi & Pourquoi ?
-Écrire un fichier texte en Dart implique de créer ou de modifier des fichiers sur le disque pour stocker des données dans un format lisible. Les programmeurs le font pour sauvegarder des données d'application, des configurations, des journaux, ou toute information devant persister entre les exécutions de l'application ou partager des données avec d'autres applications ou utilisateurs.
-
 ## Comment faire :
 La bibliothèque de base de Dart fournit le package `dart:io` pour la gestion des fichiers, vous permettant d'écrire des fichiers texte sans nécessiter de bibliothèques tierces. Voici un exemple simple d'écriture d'un fichier texte :
 

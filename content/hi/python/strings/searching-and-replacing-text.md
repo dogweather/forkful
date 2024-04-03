@@ -28,12 +28,7 @@ title: "\u092A\u093E\u0920 \u0916\u094B\u091C\u0928\u093E \u0914\u0930 \u092C\u0
 weight: 10
 ---
 
-## What & Why? (क्या और क्यों?)
-
-Text search और replace का मतलब है, एक स्ट्रिंग में खास अक्षर या वाक्यांशों को ढूंढकर उन्हें दूसरे अक्षर या वाक्यांशों से बदल देना। Programmers इसे डाटा को संपादित करने, बग ठीक करने, और कोड को refine करने के लिए करते हैं।
-
 ## How to: (कैसे करें:)
-
 Python में text search और replace करना सरल है। देखिए कैसे:
 
 ```python
@@ -54,7 +49,6 @@ Hello, Earth! Earth is beautiful.
 ```
 
 ## Deep Dive (गहराई में जानकारी):
-
 Text search और replace एक प्राचीन जरूरत है, जिसे पहले manually किया जाता था। Computer के आने के बाद, यह काम आसान हो गया। Python का `replace()` method इसे और भी सपाट बनाता है। लेकिन, कभी-कभी complex patterns ढूंढने के लिए हमें regular expressions (regex) की जरूरत पड़ सकती है। Python के `re` module में `sub()` function regex के साथ replace करने का ऑप्शन देता है।
 
 ```python
@@ -77,7 +71,6 @@ Hello, Earth! Earth is beautiful. World is vast.
 Alternatives में text editors (जैसे Vim, Emacs), IDEs (जैसे PyCharm, VSCode), और command-line tools (जैसे sed) शामिल हैं।
 
 ## See Also (और भी देखें):
-
 इस topic पर और जानने के लिए ये links उपयोगी होंगे:
 
 - Python `re` module documentation: https://docs.python.org/3/library/re.html

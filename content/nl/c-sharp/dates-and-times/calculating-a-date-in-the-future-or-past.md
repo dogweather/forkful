@@ -12,12 +12,7 @@ title: Een datum in de toekomst of het verleden berekenen
 weight: 26
 ---
 
-## Wat & Waarom?
-
-Het berekenen van een toekomstige of verleden datum houdt in dat je uitzoekt wat de datum was, of zal zijn, na of voor een bepaald tijdsinterval. Programmeurs hebben dit vaak nodig om gebeurtenissen te plannen, vervaldatums te hanteren, of tijdgevoelige gegevens te registreren.
-
 ## Hoe:
-
 Toekomstige datums berekenen:
 
 ```C#
@@ -67,7 +62,6 @@ Tien dagen geleden was het: <datum tien dagen voor de huidige datum>
 ```
 
 ## Diepgaande duik
-
 In C#, zijn `DateTime` en `TimeSpan` de basis voor datum- en tijdoperaties. `DateTime` vertegenwoordigt een moment in tijd, doorgaans uitgedrukt als een datum en tijdstip van de dag. `TimeSpan` vertegenwoordigt een tijdsinterval.
 
 Historisch gezien waren datum- en tijdberekeningen gevoelig voor fouten door de handmatige afhandeling van dagen, maanden en schrikkeljaren. `DateTime` abstraheert deze complexiteiten, waardoor het framework de lastige kwesties afhandelt.
@@ -77,7 +71,6 @@ Alternatieven voor `DateTime` en `TimeSpan` in .NET omvatten `DateTimeOffset`, d
 Wat betreft implementatie, wanneer je een `TimeSpan` aan een `DateTime` toevoegt, manipuleert het onder de kap de ticks, de fundamentele tijdseenheid in .NET (`1 tick = 100 nanoseconden`). Voor verleden datums doet een negatieve `TimeSpan` het werk.
 
 ## Zie Ook
-
 - .NET API-documentatie voor [`DateTime`](https://docs.microsoft.com/nl-nl/dotnet/api/system.datetime)
 - Introductie tot [`TimeSpan`](https://docs.microsoft.com/nl-nl/dotnet/api/system.timespan)
 - Microsoft's beste praktijken voor [`DateTime` en `DateTimeOffset`](https://docs.microsoft.com/nl-nl/dotnet/standard/datetime/choosing-between-datetime)

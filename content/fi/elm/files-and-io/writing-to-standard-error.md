@@ -14,12 +14,7 @@ title: Kirjoittaminen standardivirheeseen
 weight: 25
 ---
 
-## Mitä & Miksi?
-
-Standardivirheeseen (stderr) kirjoittaminen tarkoittaa virheviestien ja diagnostiikkatietojen ohjaamista erilleen pääohjelman tulosteesta, joka menee vakiotulostukseen (stdout). Ohjelmoijat tekevät näin virheenkäsittelyn ja lokitiedon hallinnan helpottamiseksi, erityisesti ympäristöissä, joissa tulosteen erottaminen on kriittistä vianmäärityksen ja seurannan kannalta.
-
 ## Kuinka:
-
 Elm on ensisijaisesti suunnattu web-kehitykseen, jossa suoraan stderriin kirjoittamisen käsite ei päde samalla tavalla kuin perinteisissä komentorivi-ympäristöissä. Kuitenkin, Elm-ohjelmille, jotka toimivat Node.js:ssä tai vastaavissa ympäristöissä, interop JavaScriptin kanssa käyttäen portteja on keskeinen lähestymistapa saavuttaa samanlainen toiminnallisuus. Tässä on, miten saat sen pystytettyä:
 
 Elm-koodi (`Main.elm`):

@@ -10,12 +10,7 @@ title: Uthenting av delstrenger
 weight: 6
 ---
 
-## Hva & Hvorfor?
-
-Å hente ut delstrenger betyr å plukke ut spesifikke deler av en tekststreng. Programmerere gjør dette for å manipulere, analysere eller transformere data på en mer finjustert måte.
-
 ## Slik gjør du:
-
 I Haskell, brukes ofte `take`, `drop`, og `substring` funksjoner fra `Data.Text` biblioteket for å håndtere strenger.
 
 ```Haskell
@@ -35,7 +30,6 @@ main = do
 ```
 
 ## Dypdykk
-
 Før `Data.Text`, Haskell brukte `String` (som egentlig er en liste av `Char`s) for tekstbehandling. Men, å jobbe med `String` var tregt og ineffektivt for store tekster. Derfor ble `Data.Text` introdusert for å gi en mer effektiv strengbehandling.
 
 Det finnes også biblioteket `text` som tilbyr funksjonen `takeEnd` og `dropEnd`, for å hente ut eller fjerne tegn fra slutten av tekststrenger.
@@ -43,7 +37,6 @@ Det finnes også biblioteket `text` som tilbyr funksjonen `takeEnd` og `dropEnd`
 Implementasjonsmessig, `Data.Text` bruker utf-16 koding intern, som er en balanse mellom effektivitet (sammenlignet med utf-32) og kompakthet (sammenlignet med utf-8 for visse språk).
 
 ## Se Også
-
 - `Data.Text` dokumentasjon: https://hackage.haskell.org/package/text-1.2.3.1/docs/Data-Text.html
 - Et Haskell-kurs for de som vil lære mer: http://learnyouahaskell.com/chapters
 - Haskell offisielle side: https://www.haskell.org/

@@ -10,9 +10,6 @@ title: Interpolazione di una stringa
 weight: 8
 ---
 
-## What & Why?
-Interpolare una stringa significa inserire variabili o espressioni all'interno di una stringa di testo. I programmatori lo fanno per creare messaggi dinamici o per costruire stringhe con valori che cambiano a runtime.
-
 ## How to:
 Elm non ha interpolazione di stringa incorporata, ma possiamo concatenare stringhe con l'operatore `++`.
 

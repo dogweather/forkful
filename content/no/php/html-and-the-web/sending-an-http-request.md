@@ -11,9 +11,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## Hva & Hvorfor?
-Å sende en HTTP-forespørsel betyr å spørre informasjon fra, eller sende data til en server over nettet. Programmere gjør dette for å integrere med webtjenester, hente data for apper, eller kommunisere mellom systemer.
-
 ## Hvordan:
 ```PHP
 <?php

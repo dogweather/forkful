@@ -13,14 +13,10 @@ title: Lavorare con i CSV
 weight: 37
 ---
 
-## Cosa e Perché?
-
-Lavorare con i file CSV (Comma-Separated Values, o Valori Separati da Virgola) è un'operazione comune per gestire e manipolare dati in una forma strutturata e tabulare. Gli sviluppatori spesso eseguono questa operazione per importare, esportare o manipolare dati in modo efficiente per varie applicazioni, come l'analisi dei dati, la creazione di report o persino per alimentare applicazioni web.
-
 ## Come fare:
 
-### Leggere un File CSV
 
+### Leggere un File CSV
 Per leggere da un file CSV, utilizzare il cmdlet `Import-Csv`. Questo cmdlet legge il file e lo converte in oggetti personalizzati di PowerShell per ogni riga.
 
 ```powershell
@@ -40,7 +36,6 @@ Doe     29     Los Angeles
 ```
 
 ### Scrivere su un File CSV
-
 Al contrario, per scrivere dati in un file CSV, si utilizza il cmdlet `Export-Csv`. Questo cmdlet prende oggetti in input e li converte in un formato CSV.
 
 ```powershell
@@ -57,7 +52,6 @@ $users | Export-Csv -Path "C:\Data\new_users.csv" -NoTypeInformation
 Dopo l'esecuzione, viene creato un file chiamato `new_users.csv` con i dati forniti.
 
 ### Filtrare e Manipolare il Contenuto dei CSV
-
 Per filtrare o manipolare i dati da un file CSV, utilizzare le capacità di manipolazione degli oggetti di PowerShell. Ad esempio, per selezionare solo gli utenti sopra una certa età e di una specifica città:
 
 ```powershell
@@ -79,5 +73,4 @@ Doe     29     Los Angeles
 ```
 
 ### Utilizzo di Librerie di Terze Parti
-
 Sebbene i cmdlet nativi di PowerShell siano generalmente sufficienti per le operazioni comuni, le operazioni più complesse potrebbero trarre vantaggio dall'utilizzo di librerie o strumenti di terze parti. Tuttavia, per la manipolazione standard dei CSV, come la lettura, la scrittura, il filtraggio o l'ordinamento, i cmdlet integrati di PowerShell come `Import-Csv` e `Export-Csv` offrono di solito una funzionalità robusta senza la necessità di librerie aggiuntive.

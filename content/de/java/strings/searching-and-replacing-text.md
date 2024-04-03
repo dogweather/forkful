@@ -11,9 +11,6 @@ title: Suchen und Ersetzen von Text
 weight: 10
 ---
 
-## What & Why?
-Text suchen und ersetzen ist grundlegendes Werkzeug in der Programmierung; es ermöglicht uns, bestimmte Zeichen oder Zeichenfolgen zu finden und sie durch andere zu ersetzen. Programmierer benutzen es häufig, um Daten zu bereinigen, Code zu refaktorisieren oder einfach Fehler zu korrigieren.
-
 ## How to:
 Java macht Textersetzungen ziemlich einfach mit der `String` Klasse.
 

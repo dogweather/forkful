@@ -12,9 +12,6 @@ title: Tests Schrijven
 weight: 36
 ---
 
-## Wat & Waarom?
-Testen schrijven betekent code scripten om te checken of andere code goed werkt. Programmeurs doen dit om vroegtijdig fouten op te sporen, tijd te besparen en te zorgen dat de software consistent doet wat het moet doen.
-
 ## Hoe:
 Kotlin gebruikt JUnit voor het testen. Hier is hoe je een eenvoudige test schrijft en uitvoert:
 

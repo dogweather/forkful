@@ -12,9 +12,6 @@ title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä & Miksi?
-Numeroiden pyöristäminen tarkoittaa niiden säätämistä lähimpään määriteltyyn paikkakerta-arvoon - ajattele niiden kiinnittämistä yksinkertaisempaan muotoon. Ohjelmoijat pyöristävät hallitakseen tarkkuutta, parantaakseen suorituskykyä tai näyttääkseen käyttäjäystävällisiä tuloksia - kuten hintoja, jotka eivät tarvitse kolmea desimaalipaikkaa.
-
 ## Kuinka:
 Tässä on meno-paluulippu numeroiden pyöristämiseen C#-kielellä:
 

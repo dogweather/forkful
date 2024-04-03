@@ -10,9 +10,6 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Søk og erstatt lar deg finne tekststrenger og skifte dem ut med nye. Programmerere bruker dette for å oppdatere kode, rette feil eller masse-endre data.
-
 ## How to: (Slik gjør du det:)
 For en enkel C++-oppgave kan du bruke `std::string` og `std::string::replace`. Her er et eksempel:
 

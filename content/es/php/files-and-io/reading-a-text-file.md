@@ -10,9 +10,6 @@ title: Lectura de un archivo de texto
 weight: 22
 ---
 
-## What & Why?
-Leer un archivo de texto en PHP implica obtener su contenido para manipulación o análisis. Los programadores hacen esto para importar datos, configuraciones o simplemente mostrar texto en la web.
-
 ## How to:
 ```PHP
 <?php

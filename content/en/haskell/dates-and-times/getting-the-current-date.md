@@ -10,9 +10,6 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-Retrieving the current date in Haskell involves obtaining the system's current time and transforming it into a readable date format. Programmers do this to perform operations based on the date, such as logging, scheduling tasks, or timestamping events in applications.
-
 ## How to:
 Haskell's standard library, `base`, provides the `Data.Time` module which offers functionality to work with dates and times. Here's how to use it to get the current date:
 

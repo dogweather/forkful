@@ -9,9 +9,6 @@ title: Manejo de errores
 weight: 16
 ---
 
-## ¿Qué y por qué?
-Manejar errores significa planificar para cuando las cosas salen mal. Es vital porque ayuda a evitar fallos y hace que tu software sea robusto y amigable para el usuario.
-
 ## Cómo hacerlo:
 Aquí tienes un bloque básico try-catch para manejar una excepción:
 

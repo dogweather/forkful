@@ -13,16 +13,10 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä & Miksi?
-
-CSV:n (pilkulla erotetut arvot) käsittelyyn kuuluu tietojen lukeminen ja kirjoittaminen CSV-tiedostoihin, jotka ovat yleinen muoto taulukoiden tietojen tallentamiseen pelkkänä tekstinä. Ohjelmoijat manipuloivat CSV-tiedostoja helpottaakseen tietojen vaihtoa eri sovellusten, tietokantojen välillä tai helpottaakseen tietojenkäsittely- ja analysointitehtäviä.
-
 ## Miten:
-
 Kotlin, ollessaan staattisesti tyypitetty ohjelmointikieli, joka toimii JVM:llä, ei sisällä sisäänrakennettua kirjastoa CSV-tiedostojen käsittelyyn. Voit kuitenkin käyttää Javan `BufferedReader`- ja `FileWriter`-luokkia perusoperaatioihin tai hyödyntää suosittuja kolmannen osapuolen kirjastoja, kuten `kotlinx.serialization` ja `opencsv`, monimutkaisempaan toiminnallisuuteen.
 
 ### CSV-tiedoston lukeminen BufferedReaderin avulla:
-
 ```kotlin
 import java.io.BufferedReader
 import java.io.FileReader
@@ -48,7 +42,6 @@ _Esimerkkituloste:_
 ```
 
 ### Kirjoittaminen CSV-tiedostoon FileWriterin avulla:
-
 ```kotlin
 import java.io.FileWriter
 
@@ -70,7 +63,6 @@ fun main() {
 Tämä luo tai korvaa `output.csv` tiedoston annetuilla tiedoilla.
 
 ### Käyttäen kotlinx.serializationia CSV-serialisointiin:
-
 Lisää ensin riippuvuus `build.gradle.kts`-tiedostoosi:
 
 ```kotlin
@@ -109,7 +101,6 @@ Jane Smith,25,Lontoo
 ```
 
 ### Käyttäen OpenCSV:tä monimutkaisempiin operaatioihin:
-
 Lisää OpenCSV riippuvuudeksi projektisi:
 
 ```kotlin

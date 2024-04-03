@@ -12,9 +12,6 @@ title: "Usuwanie cudzys\u0142ow\xF3w z ci\u0105gu znak\xF3w"
 weight: 9
 ---
 
-## Co i dlaczego?
-Usuwanie cudzysłowów z ciągu znaków oznacza pozbycie się tych irytujących podwójnych lub pojedynczych znaków, które otaczają nasz tekst (' lub "). Programiści często robią to, aby oczyścić dane wejściowe, przechować tekst w bazie danych lub przygotować ciągi znaków do dalszej obróbki bez bałaganu związanego z cudzysłowami.
-
 ## Jak to zrobić:
 Oto prosty sposób, aby pozbyć się cudzysłowów w C++:
 

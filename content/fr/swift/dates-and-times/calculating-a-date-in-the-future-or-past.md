@@ -11,9 +11,6 @@ title: "Calcul d'une date future ou pass\xE9e"
 weight: 26
 ---
 
-## What & Why?
-Calculer une date dans le futur ou le passé, c'est juste ajouter ou soustraire du temps à une date donnée. Les programmeurs font ça pour gérer des rappels, des échéances ou des intervalles temporels spécifiques.
-
 ## How to:
 Swift offre `DateComponents` et `Calendar` pour manipuler les dates. Voici un exemple simple:
 

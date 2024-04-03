@@ -14,11 +14,8 @@ title: Iniciando um novo projeto
 weight: 1
 ---
 
-## O Que & Por Quê?
-
-Iniciar um novo projeto em Python é sobre configurar uma estrutura organizada e sustentável desde o início. Os programadores fazem isso para garantir que seu código seja fácil de ler, depurar e colaborar, especialmente à medida que o projeto e a equipe que trabalha nele crescem com o tempo.
-
 ## Como fazer:
+
 
 ### Criar um Ambiente Virtual
 Um ambiente virtual é um diretório autocontido que contém todos os executáveis necessários para usar os pacotes que um projeto Python precisaria. É aconselhável criar um ambiente virtual para cada projeto para evitar conflitos entre dependências do projeto. Use o módulo `venv`, que faz parte da biblioteca padrão do Python.

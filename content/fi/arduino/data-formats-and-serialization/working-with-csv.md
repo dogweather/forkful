@@ -14,9 +14,6 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä & Miksi?
-CSV-tiedostojen (pilkulla erotetut arvot) käsittely Arduinossa käsittää lukemisen ja kirjoittamisen CSV-tiedostoihin, joita yleisesti säilytetään SD-kortilla. Tämä mahdollistaa datan loggauksen, konfiguraatioasetukset ja paljon muuta. Ohjelmoijat käsittelevät usein CSV-tiedostoja sensoridatan keräämiseen, konfiguraatioparametrien tallennukseen tai muiden järjestelmien kanssa kommunikoimiseen niiden yksinkertaisuuden ja laajan yhteensopivuuden vuoksi eri alustoilla.
-
 ## Kuinka:
 Arduinossa ei ole sisäänrakennettua kirjastoa erityisesti CSV-tiedostojen käsittelyyn, mutta voit käyttää `SD` ja `SPI` kirjastoja tiedostojen käyttämiseen SD-kortilla, ja sitten jäsentää tai luoda CSV-dataa käyttäen perus merkkijonokäsittelyn tekniikoita. Kun käsitellään monimutkaisempia CSV-tiedostojen manipulointeja, kolmannen osapuolen kirjastoa `ArduinoCSV` voidaan hyödyntää helpottamaan jäsentämistä ja kirjoittamista.
 

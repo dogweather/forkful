@@ -15,12 +15,7 @@ title: "Supprimer des caract\xE8res correspondant \xE0 un motif"
 weight: 5
 ---
 
-## Quoi & Pourquoi ?
-
-Supprimer les caractères correspondant à un modèle spécifique consiste à enlever certains caractères ou séquences de caractères des chaînes de caractères, selon des règles définies par un modèle (généralement via des expressions régulières). Les programmeurs ont fréquemment besoin d'effectuer cette tâche pour le nettoyage des données, la préparation pour l'analyse, le formatage de la sortie, ou simplement la manipulation des chaînes de caractères pour répondre aux exigences de l'application.
-
 ## Comment faire :
-
 En Go, supprimer les caractères correspondant à un modèle peut être accompli efficacement en utilisant le package `regexp`. Ici, nous montrerons comment supprimer tous les chiffres, puis tous les caractères non alphanumériques d'une chaîne de caractères comme exemples.
 
 1. **Supprimer tous les chiffres :**
@@ -78,7 +73,6 @@ func main() {
 ```
 
 ## Approfondissement
-
 Le package `regexp` en Go offre une interface puissante pour la correspondance de motifs et la manipulation avec des expressions régulières. Son implémentation est dérivée de RE2, une bibliothèque d'expressions régulières conçue pour garantir une exécution en temps linéaire, évitant la possibilité de problèmes de "retour en arrière catastrophique" présents dans certains autres moteurs d'expressions régulières. Cela rend les regex de Go relativement sûrs et efficaces pour un large éventail d'applications.
 
 Bien que le package `regexp` soit une solution complète pour traiter des motifs, il convient de noter que pour des manipulations de chaînes plus simples ou hautement spécifiques, d'autres fonctions de chaîne comme `strings.Replace()`, `strings.Trim()`, ou le découpage peuvent offrir des alternatives plus performantes. Les expressions régulières sont un outil puissant, mais leur coût computationnel relatif signifie que pour des opérations qui peuvent être spécifiées sans elles, explorer des alternatives de la bibliothèque standard peut parfois conduire à un code plus simple et plus efficace.

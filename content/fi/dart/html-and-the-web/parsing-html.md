@@ -13,9 +13,6 @@ title: "HTML:n j\xE4sent\xE4minen"
 weight: 43
 ---
 
-## Mikä & Miksi?
-HTML:n jäsentäminen ohjelmoinnissa tarkoittaa tietojen kaivamista HTML-dokumenteista. Ohjelmoijat tekevät tämän vuorovaikuttaakseen tai kaivaakseen verkkosisältöä tiedonkeruuta, testausta tai automatisointia varten, jopa silloin kun virallisia API:ja ei ole saatavilla.
-
 ## Kuinka:
 Dart ei tarjoa sisäänrakennettua tukea HTML:n jäsentämiseen sen peruskirjastoissa. Voit kuitenkin käyttää kolmannen osapuolen pakettia, kuten `html`, HTML-dokumenttien jäsentämiseen ja manipulointiin.
 

@@ -10,9 +10,6 @@ title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---
 
-## ¿Qué & Por Qué?
-Extraer subcadenas significa seleccionar pedazos específicos de un texto. Lo hacemos para analizar o manipular datos, como conseguir partes de mensajes o comandos en proyectos Arduino.
-
 ## Cómo:
 ```Arduino
 String texto = "Hola mundo Arduino";

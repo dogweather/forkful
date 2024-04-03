@@ -11,10 +11,9 @@ title: "Envoi d'une requ\xEAte HTTP"
 weight: 44
 ---
 
-## What & Why?
-Envoyer une requête HTTP, c'est comme expédier une lettre sur Internet pour récupérer des données ou interagir avec des services. Les devs le font pour communiquer avec des serveurs web, alimenter leurs apps avec des infos fraîches, ou encore pour pousser des données à traiter.
-
 ## How to:
+
+
 ### Envoyer une requête GET simple
 ```Swift
 import Foundation

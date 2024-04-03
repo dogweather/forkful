@@ -10,9 +10,6 @@ title: Sending an HTTP request
 weight: 44
 ---
 
-## What & Why?
-Sending an HTTP request is a way for programs to communicate over the web, asking for data or submitting some. Programmers do it to interact with APIs, services or to pull in web content.
-
 ## How to:
 C# makes sending HTTP requests straightforward with `HttpClient`. Here's the skeleton of a GET request:
 

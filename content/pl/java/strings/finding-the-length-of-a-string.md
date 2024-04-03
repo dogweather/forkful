@@ -10,11 +10,6 @@ title: "Znalezienie d\u0142ugo\u015Bci ci\u0105gu znak\xF3w"
 weight: 7
 ---
 
-## What & Why?
-**Co i Dlaczego?**
-
-Znalezienie długości ciągu znaków to po prostu sprawdzenie, ile znaków zawiera. Programiści robią to, by walidować dane wejściowe, ograniczać tekst, lub po prostu operować na fragmentach ciągów.
-
 ## How to:
 **Jak to zrobić:**
 

@@ -14,9 +14,6 @@ title: "Ph\xE2n T\xEDch C\xFA Ph\xE1p HTML"
 weight: 43
 ---
 
-## Lý do & Tại sao?
-Phân tích cú pháp HTML có nghĩa là trích xuất thông tin từ các tài liệu HTML. Các lập trình viên thực hiện điều này để tương tác với nội dung web một cách lập trình, thu thập dữ liệu, hoặc tự động hóa các tương tác web.
-
 ## Cách thực hiện:
 Hãy bắt đầu với một thư viện phổ biến của .NET dành cho phân tích cú pháp HTML: HtmlAgilityPack.
 

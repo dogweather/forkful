@@ -10,9 +10,6 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## What & Why?
-Muutetaan merkkijonot pieniksi kirjaimiksi. Tämä on hyödyllistä kun haluamme vertailla tekstejä riippumatta kirjainkoosta tai yhdenmukaistaa tietoja.
-
 ## How to:
 ```Ruby
 # Ennen alkuun pääsyä - varmista, että olet asentanut uusimman version Rubysta.

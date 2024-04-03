@@ -14,9 +14,6 @@ title: Oppretting av en midlertidig fil
 weight: 21
 ---
 
-## Hva & Hvorfor?
-Å opprette en midlertidig fil i Dart innebærer å generere en fil som er ment for korttidsbruk, hovedsakelig for scenarioer som caching av data, midlertidig lagring for filbehandling eller oppbevaring av informasjon som er for sensitiv til å beholde lenge. Programmerere gjør dette for å håndtere data som ikke trenger permanent lagring, dermed forbedrer de ytelsen og opprettholder datahygiene.
-
 ## Hvordan:
 Dart's `dart:io` biblioteket legger til rette for opprettelsen av midlertidige filer gjennom `Directory` klassen. Her er en enkel måte å opprette en midlertidig fil og skrive noe innhold i den:
 
@@ -40,7 +37,6 @@ Future<void> main() async {
 ```
 
 ### Bruk av tredjepartsbibliotek: `path_provider`
-
 For applikasjoner (spesielt mobilapper med Flutter), kan du ønske å opprette midlertidige filer på en mer enhetlig og håndterbar måte. `path_provider` pakken kan hjelpe deg med å finne den riktige midlertidige mappen på tvers av forskjellige platformer (iOS, Android, osv.).
 
 Først, legg til `path_provider` i din `pubspec.yaml` under dependencies:

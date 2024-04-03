@@ -14,9 +14,6 @@ title: "\uBBF8\uB798\uB098 \uACFC\uAC70\uC758 \uB0A0\uC9DC \uACC4\uC0B0\uD558\uA
 weight: 26
 ---
 
-## What & Why? (무엇과 왜?)
-날짜 계산은 미래나 과거의 특정 날짜를 결정하는 것입니다. 프로그래머들은 이벤트 스케줄링, 기한 설정, 시간 기반 알람 등을 위해 이를 사용합니다.
-
 ## How to: (어떻게 하나요?)
 PHP는 날짜 계산을 하기 위해 `DateTime` 클래스와 `DateInterval` 클래스를 제공합니다. 여기 간단한 예제들이 있습니다:
 
@@ -37,6 +34,7 @@ $pastDate->sub(new DateInterval('P3W')); // W는 주(week)를 의미
 echo $pastDate->format('Y-m-d H:i:s'); // 예: 2023-03-25 14:20:00
 ?>
 ```
+
 ## Deep Dive (심층 탐구)
 `DateTime`과 `DateInterval`은 PHP 5.2.0부터 도입되었습니다. 이전에는 `strtotime()`과 `mktime()` 같은 함수들이 주로 사용되었습니다.
 

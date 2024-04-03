@@ -17,9 +17,6 @@ title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
 weight: 45
 ---
 
-## 什么 & 为什么？
-发送带有基本认证的HTTP请求，即用用户名和密码通过网络发送数据请求。程序员这么做是为了安全交换数据，访问受保护的资源。
-
 ## 如何做：
 ```Arduino
 #include <ESP8266WiFi.h>

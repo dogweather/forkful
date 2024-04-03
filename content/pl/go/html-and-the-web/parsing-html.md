@@ -14,12 +14,7 @@ title: "Analiza sk\u0142adniowa HTML"
 weight: 43
 ---
 
-## Co i dlaczego?
-
-Parsowanie HTML w Go polega na analizowaniu zawartości plików HTML w celu ekstrakcji danych, manipulacji strukturą lub konwersji HTML na inne formaty. Programiści robią to ze względów takich jak scraping stron internetowych, tworzenie szablonów i wydobywanie danych, wykorzystując silne możliwości współbieżności Go do efektywnej obróbki dużej ilości stron internetowych.
-
 ## Jak to zrobić:
-
 Aby przeprowadzić parsowanie HTML w Go, zazwyczaj używa się pakietu `goquery` lub standardowej biblioteki `net/html`. Oto podstawowy przykład użycia `net/html` do wyodrębnienia wszystkich linków z witryny internetowej:
 
 ```go
@@ -76,7 +71,6 @@ http://www.iana.org/domains/reserved
 Ten kod zażąda strony HTML, przeanalizuje ją i rekurencyjnie przejdzie przez DOM, by znaleźć i wyświetlić atrybuty `href` wszystkich tagów `<a>`.
 
 ## Głębsze spojrzenie
-
 Pakiet `net/html` dostarcza podstaw do parsowania HTML w Go, bezpośrednio implementując algorytmy tokenizacji i konstrukcji drzewa określone przez standard HTML5. To niskopoziomowe podejście jest potężne, ale może być rozwlekłe dla złożonych zadań.
 
 W przeciwieństwie do tego, pakiet innej firmy `goquery`, inspirowany przez jQuery, oferuje interfejs wyższego poziomu, który upraszcza manipulację i przechodzenie przez DOM. Pozwala programistom pisać zwięzły i ekspresyjny kod do zadań takich jak wybór elementów, ekstrakcja atrybutów i manipulacja treścią.

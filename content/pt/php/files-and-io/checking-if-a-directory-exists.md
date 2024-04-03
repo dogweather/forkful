@@ -14,12 +14,7 @@ title: "Verificando se um diret\xF3rio existe"
 weight: 20
 ---
 
-## O que & Por quê?
-
-Verificar se um diretório existe é uma tarefa fundamental na programação PHP, pois permite que você verifique a presença de um diretório antes de realizar operações como ler ou escrever arquivos dentro dele. Esta operação ajuda a prevenir erros que poderiam surgir ao tentar acessar diretórios inexistentes e é essencial para o gerenciamento dinâmico de arquivos dentro de suas aplicações.
-
 ## Como fazer:
-
 A maneira nativa de verificar se um diretório existe em PHP é usando a função `is_dir()`. Esta função recebe um caminho de arquivo como argumento e retorna `true` se o diretório existir e for um diretório, ou `false`, caso contrário.
 
 ```php

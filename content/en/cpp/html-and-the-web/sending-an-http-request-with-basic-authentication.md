@@ -11,12 +11,7 @@ title: Sending an HTTP request with basic authentication
 weight: 45
 ---
 
-## What & Why?
-
-Sending an HTTP request with basic authentication involves attaching a username and password to a request for access control. Programmers do it for simple auth schemes to protect resources on the server.
-
 ## How to:
-
 Here's a basic example using the `CURL` library in C++. Before diving in, make sure you've got `libcurl` installed.
 
 ```C++
@@ -61,7 +56,6 @@ int main() {
 You'll see a response from the server printed to the console, assuming no errors occurred.
 
 ## Deep Dive
-
 Basic authentication is old-school, dating back to the early days of HTTP. Now, industry preference leans towards more secure methods like OAuth and tokens. Despite this, basic auth remains in use, often for internal or simple systems where heavy security layers are bulky overkill.
 
 Under the hood, your username and password are base64-encoded and tucked into the HTTP header. It's simple yet insecure if not over HTTPS because base64 is easily reversible—making HTTPS a must.
@@ -69,7 +63,6 @@ Under the hood, your username and password are base64-encoded and tucked into th
 If `libcurl` isn't to your taste, consider alternatives like the `cpp-httplib` library, or you can run with `Boost.Beast` for a more hands-on approach.
 
 ## See Also
-
 - [libcurl](https://curl.se/libcurl/)
 - [cpp-httplib GitHub repository](https://github.com/yhirose/cpp-httplib)
 - [Boost.Beast documentation](https://www.boost.org/doc/libs/master/libs/beast/doc/html/index.html)

@@ -11,9 +11,6 @@ title: "Redondeo de n\xFAmeros"
 weight: 13
 ---
 
-## ¿Qué y Por Qué?
-Redondear números significa ajustarlos al entero más cercano o al lugar decimal especificado. Es un pilar en la programación para reducir la complejidad, mejorar el rendimiento y para momentos en que la precisión más allá de un cierto punto no agrega valor.
-
 ## Cómo hacerlo:
 ```lua
 -- El redondeo básico en Lua no viene incorporado, pero puedes definir una función:

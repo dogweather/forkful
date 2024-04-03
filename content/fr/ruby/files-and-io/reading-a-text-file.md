@@ -10,11 +10,7 @@ title: Lecture d'un fichier texte
 weight: 22
 ---
 
-## What & Why?
-Lire un fichier texte, c'est extraire son contenu pour l'utiliser dans nos programmes. On le fait pour traiter des données, pour configurer nos applications, ou pour lire des informations stockées.
-
 ## How to:
-
 Lire un fichier en Ruby est simple. Voici un exemple basique :
 
 ```Ruby
@@ -52,7 +48,6 @@ end
 ```
 
 ## Deep Dive
-
 Historiquement, la lecture de fichiers en Ruby a beaucoup évolué. Avant, on utilisait des méthodes moins intuitives, mais depuis Ruby 1.0, les choses se sont simplifiées.
 
 Il y a des alternatives à `File.read` et `File.foreach`. Par exemple :
@@ -63,7 +58,6 @@ Il y a des alternatives à `File.read` et `File.foreach`. Par exemple :
 Côté implémentation, Ruby gère les fichiers à travers la classe `File` qui hérite de `IO`. Cette conception permet de traiter les fichiers comme des flux d'entrée/sortie, donnant plus de flexibilité. L'encodage est aussi géré avec soin – important dans un contexte multilingue.
 
 ## See Also
-
 Pour en apprendre plus :
 
 - Document officiel Ruby sur la classe File : [Ruby-Doc.org File Class](https://www.ruby-doc.org/core/File.html)

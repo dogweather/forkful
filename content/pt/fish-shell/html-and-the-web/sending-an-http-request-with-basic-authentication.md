@@ -12,12 +12,10 @@ title: "Enviando uma requisi\xE7\xE3o HTTP com autentica\xE7\xE3o b\xE1sica"
 weight: 45
 ---
 
-## What & Why?
-Enviar uma requisição HTTP com autenticação básica significa incluir credenciais de username e password no cabeçalho da requisição. Programadores fazem isso para acessar recursos protegidos em servidores web.
-
 ## How to:
-### Enviando uma requisição com autenticação básica usando `curl`:
 
+
+### Enviando uma requisição com autenticação básica usando `curl`:
 ```Fish Shell
 set user "seu_usuario"
 set pass "sua_senha"
@@ -33,7 +31,6 @@ curl -u "$user:$pass" [URL_do_Recurso]
 ```
 
 ### Exemplo de saída esperada:
-
 ```plaintext
 {
   "data": "Informações protegidas"
@@ -48,7 +45,7 @@ Detalhes sobre a implementação:
 1. Codificar as credenciais em base64 não as criptografa, apenas as codifica para transmissão.
 2. O cabeçalho de autorização `Authorization: Basic [credenciais]` é o que o servidor utiliza para validar a autenticação.
 3. A ferramenta `curl` é poderosa e versátil para fazer requisições HTTP direto do terminal.
-   
+
 ## See Also
 - Documentação oficial do `curl`: https://curl.se/docs/manpage.html
 - Autenticação HTTP na MDN Web Docs: https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication

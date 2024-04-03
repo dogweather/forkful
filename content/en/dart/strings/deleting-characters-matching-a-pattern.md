@@ -10,12 +10,7 @@ title: Deleting characters matching a pattern
 weight: 5
 ---
 
-## What & Why?
-
-Deleting characters matching a specific pattern in strings is crucial for data validation, sanitization, or when preparing text for further processing. Programmers perform this task to ensure data integrity, improve readability, and enforce a consistent format across text inputs.
-
 ## How to:
-
 Dart makes it straightforward to remove characters that match a predefined pattern using regular expressions and the `replaceAll` method. No third-party libraries are required for basic usage, making this approach very accessible.
 
 Here's a simple example that demonstrates how to remove digits from a string:

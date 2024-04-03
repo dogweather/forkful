@@ -15,12 +15,7 @@ title: Travailler avec YAML
 weight: 41
 ---
 
-## Quoi & Pourquoi ?
-
-YAML, qui signifie "YAML Ain't Markup Language" (YAML n'est pas un langage de balisage), est une norme de sérialisation de données lisible par l'homme, couramment utilisée pour les fichiers de configuration et l'échange de données entre langues avec des structures de données variées. Les programmeurs travaillent souvent avec YAML pour sa simplicité et sa lisibilité, en particulier dans les projets nécessitant une configuration extensive ou lors du transfert de données structurées entre différents systèmes.
-
 ## Comment faire :
-
 Bien que Google Apps Script (GAS) ne prenne pas en charge nativement l'analyse ou la sérialisation YAML, vous pouvez manipuler des données YAML en utilisant des bibliothèques JavaScript ou en écrivant des fonctions d'analyse personnalisées. Pour démonstration, considérons comment analyser une chaîne YAML en utilisant une fonction personnalisée, puisque les bibliothèques externes ne peuvent pas être directement importées dans GAS.
 
 Supposons que vous ayez une configuration YAML simple :
@@ -78,7 +73,6 @@ Lorsque `testYamlParsing()` est exécuté, il affiche :
 Cette approche d'analyse personnalisée est assez basique et peut nécessiter des ajustements pour prendre en charge des fichiers YAML complexes.
 
 ## Approfondissement
-
 YAML, initialement publié en 2001, visait à être plus lisible par l'homme que ses prédécesseurs comme XML ou JSON. Bien que sa simplicité et sa facilité d'utilisation soient largement appréciées, gérer YAML dans Google Apps Script présente des défis en raison de l'absence de soutien direct. Par conséquent, les programmeurs s'appuient souvent sur la polyvalence de JavaScript pour analyser et générer des données YAML. Cependant, pour des cas d'utilisation complexes, en particulier ceux impliquant une imbrication profonde et des structures de données avancées, cette méthode peut devenir encombrante et sujette aux erreurs.
 
 En contraste, JSON est nativement pris en charge dans Google Apps Script et la plupart des autres environnements de programmation, offrant une approche plus simple pour la sérialisation et la désérialisation des données sans surcharge d'analyse supplémentaire. La syntaxe de JSON est moins verbeuse que celle de YAML, la rendant plus adaptée à l'échange de données dans les applications web. Néanmoins, YAML reste populaire pour les fichiers de configuration et les situations où la lisibilité humaine est primordiale.

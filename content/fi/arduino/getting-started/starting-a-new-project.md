@@ -10,12 +10,7 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## Mikä ja Miksi?
-
-Aloittaa uusi projekti tarkoittaa nollasta alkamista, idean jalostamista toimivaksi koodiksi. Koodaajat tekevät sen oppiakseen, kokeillakseen uusia juttuja tai luodakseen jotain hyödyllistä.
-
 ## Kuinka:
-
 ```Arduino
 void setup() {
   // Käynnistetään sarjaliikenne kommunikaatiota varten
@@ -39,11 +34,9 @@ Hei maailma!
 ```
 
 ## Syväsukellus:
-
 Arduino-projektin aloittaminen on olennainen taito, joka on periytynyt jo 2000-luvun alusta, jolloin Arduino lanseerattiin opetusvälineeksi opiskelijoille. Vaihtoehtoisia alustoja ovat Raspberry Pi tai ESP32, jotka sopivat paremmin IoT-projekteihin tai kehittyneempiin sovelluksiin. Kun aloitat uuden projektin, kiinnitä huomiota virrankulutukseen, muistin kokoon ja yhteensopivuuteen muiden laitteiden kanssa. Tämä on perusta, jolle rakennetaan monimutkaisempia projekteja.
 
 ## Katso Myös:
-
 - Arduino kotisivu ja tutoriaalit: [www.arduino.cc](https://www.arduino.cc)
 - "Getting Started with Arduino" by Massimo Banzi, co-founder of Arduino.
 - Loistava paikka komponenttien oppimiseen: [Adafruit Learning System](https://learn.adafruit.com/)

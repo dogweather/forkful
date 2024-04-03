@@ -16,16 +16,10 @@ title: "Sinh s\u1ED1 ng\u1EABu nhi\xEAn"
 weight: 12
 ---
 
-## Gì & Tại sao?
-
-Việc tạo ra các số ngẫu nhiên trong lập trình là việc tạo ra một chuỗi số mà không thể dự đoán một cách hợp lý tốt hơn là qua cơ hội. Các lập trình viên thực hiện điều này vì nhiều lý do, bao gồm mô phỏng, trò chơi và các ứng dụng bảo mật, nơi sự không thể dự đoán là chìa khóa cho chức năng hoặc bí mật.
-
 ## Làm thế nào:
-
 Trong Go, các số ngẫu nhiên được tạo ra bằng cách sử dụng gói `math/rand` cho các số giả ngẫu nhiên hoặc `crypto/rand` cho các số giả ngẫu nhiên an toàn mật mã. Hãy khám phá cả hai.
 
 ### Sử dụng `math/rand` cho Các Số Giả Ngẫu Nhiên
-
 Đầu tiên, nhập gói `math/rand` và gói `time` để gieo hạt cho máy sinh số. Việc gieo hạt đảm bảo rằng bạn nhận được một chuỗi số khác nhau mỗi lần chạy.
 
 ```go
@@ -46,7 +40,6 @@ func main() {
 Ví dụ về đầu ra: `Một số ngẫu nhiên: 42`
 
 ### Sử dụng `crypto/rand` cho Các Số Giả Ngẫu Nhiên An Toàn Mật Mã
-
 Đối với các ứng dụng nhạy cảm với an ninh hơn, gói `crypto/rand` phù hợp vì nó sinh ra các số ngẫu nhiên khó dự đoán, làm cho chúng phù hợp cho các hoạt động mật mã.
 
 ```go
@@ -67,7 +60,6 @@ func main() {
 Ví dụ về đầu ra: `Một số ngẫu nhiên an toàn: 81`
 
 ## Đi Sâu
-
 Sự khác biệt cơ bản giữa gói `math/rand` và `crypto/rand` trong Go xuất phát từ nguồn entropy của chúng và các trường hợp sử dụng dự định của chúng. `math/rand` sinh ra các số giả ngẫu nhiên dựa trên hạt giống ban đầu; do đó, chuỗi là xác định và có thể dự đoán nếu hạt giống được biết. Điều này phù hợp cho các tình huống nơi hiệu suất cao và không phải sự không thể dự đoán tuyệt đối là mối quan tâm chính, như mô phỏng hoặc trò chơi.
 
 Ngược lại, `crypto/rand` lấy sự ngẫu nhiên từ hệ điều hành cơ bản, làm cho nó phù hợp cho các sử dụng mật mã nơi sự không thể dự đoán là quan trọng. Tuy nhiên, điều này đi kèm với chi phí về hiệu suất và độ phức tạp trong việc xử lý các số nó sinh ra (như xử lý kiểu `*big.Int` cho các số nguyên).

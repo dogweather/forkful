@@ -11,11 +11,7 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-Reguliere expressies (regex) zoeken, matchen en manipuleren strings. Ze worden gebruikt vanwege hun flexibiliteit en efficiëntie bij tekstverwerkingstaken.
-
 ## Hoe te gebruiken:
-
 ```clojure
 (require '[clojure.string :as str])
 

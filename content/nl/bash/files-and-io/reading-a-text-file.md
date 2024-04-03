@@ -12,9 +12,6 @@ title: Een tekstbestand lezen
 weight: 22
 ---
 
-## Wat & Waarom?
-Een tekstbestand lezen betekent het verkrijgen van de inhoud van een bestand in je script. Programmeurs doen dit om met gegevens, configuratie te werken of systemen te automatiseren op basis van die tekstbestandinhoud.
-
 ## Hoe:
 Hier is de eenvoudigste manier om een bestand regel-voor-regel te lezen:
 

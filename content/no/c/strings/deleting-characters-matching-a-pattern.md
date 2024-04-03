@@ -14,12 +14,7 @@ title: "Slette tegn som matcher et m\xF8nster"
 weight: 5
 ---
 
-## Hva & Hvorfor?
-
-Å slette tegn som samsvarer med et bestemt mønster fra strenger i C handler om å fjerne alle forekomster av visse tegn som passer forhåndsdefinerte kriterier. Programmerere utfører denne oppgaven for å sanere inndata, forberede data for behandling, eller ganske enkelt rydde opp i strenger for utdata eller videre manipulering, og sørger for at dataene som behandles er nøyaktig som nødvendig for en gitt kontekst eller algoritme.
-
 ## Hvordan:
-
 C kommer ikke med en innebygd funksjon for direkte å slette tegn fra en streng basert på et mønster, ulikt noen høyere nivå språk. Imidlertid kan du enkelt oppnå denne oppgaven ved manuelt å iterere over strengen og bygge en ny som ekskluderer de uønskede tegnene. For eksempel, la oss anta at du vil fjerne alle sifre fra en streng. Du kan gjøre dette som følger:
 
 ```c
@@ -53,7 +48,6 @@ Resultat: C Programmering : Grunnleggende!
 Dette eksempelet utnytter `isdigit` fra `ctype.h` for å identifisere sifre, ved å flytte tegn som ikke er sifre til begynnelsen av strengen og avslutte strengen når alle tegn er evaluert.
 
 ## Dypdykk
-
 Løsningen presentert bruker en tilnærming med to pekere innenfor samme array for effektivt å filtrere ut uønskede tegn, en teknikk som er emblematiske for C's praktiske håndtering av minnefilosofi. Denne metoden er effektiv fordi den opererer på stedet, og unngår behovet for ekstra minneallokering og dermed minimerer overflødig.
 
 Historisk sett har fraværet av høynivå strengmanipuleringsfunksjoner i C tvunget programmerere til å utvikle en dyp forståelse av strengbehandling på minnenivå, noe som har ført til nyskapende tilnærminger som den ovenfor. Selv om dette har fordelen av større kontroll og effektivitet, kommer det med en høyere risiko for feil, som bufferoverflyt og feil ved én-offs.

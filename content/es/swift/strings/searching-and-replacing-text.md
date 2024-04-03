@@ -10,9 +10,6 @@ title: Buscando y reemplazando texto
 weight: 10
 ---
 
-## Qué y Por Qué?
-Buscar y reemplazar texto significa localizar ciertas palabras o frases en una cadena de texto y sustituirlas por otras. Programadores lo usan para actualizar datos, corregir errores o modificar contenido de manera rápida y eficiente.
-
 ## Cómo hacerlo:
 ```Swift
 var greeting = "Hola, mundo!"

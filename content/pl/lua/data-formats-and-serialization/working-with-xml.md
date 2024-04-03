@@ -11,9 +11,6 @@ title: Praca z XML
 weight: 40
 ---
 
-## Co i dlaczego?
-Praca z XML polega na analizie i manipulowaniu dokumentami XML za pomocą kodu. Programiści robią to, aby czytać, pisać i modyfikować dane w strukturalnym, przenośnym formacie, który jest szeroko stosowany do wymiany i przechowywania danych.
-
 ## Jak to zrobić:
 Lua nie zawiera natywnej analizy XML, ale istnieją biblioteki takie jak LuaXML i xml2lua, które wykonują tę pracę. Oto szybki przegląd analizowania XML za pomocą xml2lua:
 

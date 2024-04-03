@@ -9,10 +9,6 @@ title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---
 
-## ¿Qué y Por Qué?
-
-Concatenar cadenas significa unirlas para formar una sola. Los programadores concatenan para combinar textos, como nombres y apellidos, o para construir mensajes dinámicos.
-
 ## Cómo:
 ```PHP
 <?php
@@ -34,7 +30,6 @@ echo $mensaje; // Muestra: Hola, ¿cómo estás?
 ```
 
 ## Análisis Profundo
-
 La concatenación en PHP ha estado desde el principio y su uso es fundamental en la manipulación de cadenas. Históricamente, el operador de concatenación es el punto (.), y no ha cambiado en nuevas versiones de PHP. 
 
 Alternativas al operador de punto incluyen:
@@ -45,7 +40,6 @@ Alternativas al operador de punto incluyen:
 El operador de concatenación es eficaz, pero hay que prestar atención a la legibilidad y al rendimiento cuando se concatenan grandes cantidades de cadenas o en bucles.
 
 ## Ver Además
-
 - [Documentación oficial de PHP sobre strings](https://www.php.net/manual/es/language.types.string.php)
 - [sprintf en la documentación de PHP](https://www.php.net/manual/es/function.sprintf.php)
 - [Guía de rendimiento de PHP: Trabajando con cadenas](https://www.php.net/manual/es/language.types.string.php#language.types.string.details)

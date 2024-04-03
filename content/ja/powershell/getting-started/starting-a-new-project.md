@@ -23,12 +23,7 @@ title: "\u65B0\u3057\u3044\u30D7\u30ED\u30B8\u30A7\u30AF\u30C8\u3092\u59CB\u3081
 weight: 1
 ---
 
-## What & Why? (なにとなぜ？)
-
-新しいプロジェクトを始めるとは、新しいアイデアやソリューションを形にするための最初の一歩です。プログラマーは新しい機能を開発し、問題を解決し、技術的なスキルを拡張するために、新しいプロジェクトを始めます。
-
 ## How to: (やり方)
-
 PowerShellで新しいプロジェクトを始めることは簡単です。以下に基本的な手順を示します。
 
 1. 新しいディレクトリを作成します：
@@ -56,7 +51,6 @@ Mode                 LastWriteTime         Length Name
 ```
 
 ## Deep Dive (詳細)
-
 PowerShellを使用してプロジェクトを始める方法は、.NETフレームワークの強力なサポートを受けていて、かつては.batファイルや.vbsスクリプトに頼っていたのと大きく異なります。バージョンアップが続けられ、現在のバージョンでは、クロスプラットフォームサポートや他のツールとのシームレスな統合が可能となっています。
 
 他の選択肢には、Gitリポジトリのクローン、Visual StudioまたはVSCodeでのプロジェクトテンプレートの使用などがありますが、PowerShellでのシンプルなスタートアップは、特に小規模な作業や管理タスクの自動化に適しています。
@@ -66,7 +60,6 @@ PowerShellを使用してプロジェクトを始める方法は、.NETフレー
 また、PowerShellスクリプトまたはモジュールは、機能ごとにファイルを分割し、適切なディレクトリ構造を定義することで、メンテナンス性と可読性を向上させることが重要です。
 
 ## See Also (関連情報)
-
 - PowerShell Documentation: [https://docs.microsoft.com/en-us/powershell/](https://docs.microsoft.com/en-us/powershell/)
 - PowerShell GitHub Repository: [https://github.com/PowerShell/PowerShell](https://github.com/PowerShell/PowerShell)
 - PowerShell Gallery for sharing and acquiring modules and scripts: [https://www.powershellgallery.com/](https://www.powershellgallery.com/)

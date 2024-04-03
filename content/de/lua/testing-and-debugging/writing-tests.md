@@ -14,16 +14,10 @@ title: Tests Schreiben
 weight: 36
 ---
 
-## Was & Warum?
-
-Das Schreiben von Tests in der Programmierung bedeutet, kleine, separate Codeteile zu erstellen, um automatisch zu überprüfen, ob verschiedene Teile Ihrer Anwendung wie erwartet funktionieren. Für Lua-Programmierer sichert das Testen Zuverlässigkeit und hilft dabei, die Codequalität zu erhalten, beschleunigt den Debugging-Prozess und macht Änderungen am Code sicherer.
-
 ## Wie:
-
 Lua, als leichtgewichtige, aber leistungsstarke Skriptsprache, beinhaltet kein eingebautes Test-Framework. Dritt-Paketbibliotheken wie Busted und LuaUnit machen das Testen jedoch relativ unkompliziert. Hier sehen wir uns Beispiele mit beiden an.
 
 ### Busted verwenden
-
 Busted ist ein beliebtes Lua-Test-Framework, das eine flexible Art bietet, Tests zu schreiben. Installieren Sie zuerst Busted über LuaRocks (den Paketmanager von Lua) mit `luarocks install busted`. Nach der Installation können Sie Ihre Tests schreiben. Hier ist ein einfacher Test für eine Funktion `add`, die zwei Zahlen addiert:
 
 ```lua
@@ -54,7 +48,6 @@ Um die Tests auszuführen, führen Sie `busted` in Ihrem Terminal aus. Eine Beis
 ```
 
 ### LuaUnit verwenden
-
 LuaUnit ist ein weiteres Test-Framework, das den xUnit-Konventionen folgt und einfach einzurichten ist. Installieren Sie LuaUnit über LuaRocks mit `luarocks install luaunit`. So könnten Sie einen ähnlichen Test wie oben mit LuaUnit schreiben:
 
 ```lua

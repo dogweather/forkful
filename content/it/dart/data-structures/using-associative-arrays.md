@@ -12,12 +12,7 @@ title: Utilizzo di array associativi
 weight: 15
 ---
 
-## Cosa & Perché?
-
-Gli array associativi in Dart, comunemente noti come Mappe, sono strutture di dati che memorizzano i dati in coppie chiave-valore. Consentono ai programmatori di accedere agli elementi non attraverso indici, ma chiavi, rendendo il recupero dei dati intuitivo ed efficiente, soprattutto quando si lavora con dati strutturati in cui ogni elemento ha un identificatore unico.
-
 ## Come fare:
-
 Dart offre una sintassi semplice per creare e manipolare le Mappe. Di seguito sono riportati esempi che dimostrano operazioni di base come la creazione, l'aggiunta di elementi e il recupero di valori.
 
 ```dart

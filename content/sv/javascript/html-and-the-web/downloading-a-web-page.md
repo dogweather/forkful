@@ -11,9 +11,6 @@ title: "H\xE4mta en webbsida"
 weight: 42
 ---
 
-## Vad & Varför?
-Att ladda ner en webbsida betyder att man hämtar dess HTML, CSS och eventuellt JavaScript och annat innehåll. Programmerare gör detta för att analysera sidinnehåll, testa prestanda eller skrapa data.
-
 ## Hur man gör:
 ```Javascript
 const https = require('https');

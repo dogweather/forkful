@@ -11,9 +11,6 @@ title: Recherche et remplacement de texte
 weight: 10
 ---
 
-## What & Why? (Quoi & Pourquoi?)
-Chercher et remplacer du texte, c'est modifier des bouts de chaînes de caractères automagiquement. Les devs le font pour corriger des erreurs, mettre à jour des données, ou transformer du texte rapidement sans se casser la tête.
-
 ## How to: (Comment faire:)
 ```Ruby
 # Exemple simple pour remplacer une sous-chaîne

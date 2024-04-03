@@ -13,12 +13,7 @@ title: Trabajando con CSV
 weight: 37
 ---
 
-## Qué y Por Qué?
-
-Trabajar con archivos CSV (Valores Separados por Comas) implica analizar y generar datos estructurados a partir de archivos de texto donde cada línea representa un registro y cada registro consiste en campos separados por comas. Los programadores a menudo participan en esta actividad para importar, exportar y manipular datos tabulares fácilmente utilizando un formato que es ampliamente compatible en diferentes plataformas y lenguajes de programación, debido a su simplicidad y formato legible por humanos.
-
 ## Cómo hacerlo:
-
 En Swift, no hay soporte nativo para analizar archivos CSV directamente, pero puedes manejar datos CSV utilizando los métodos de `String` para dividir los contenidos, o aprovechando bibliotecas de terceros como SwiftCSV para un enfoque más simplificado. Aquí están ambos métodos:
 
 ### Análisis Manual sin Bibliotecas Externas

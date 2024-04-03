@@ -12,11 +12,8 @@ title: Bestanden manipuleren met CLI one-liners
 weight: 31
 ---
 
-## Wat & Waarom?
-
-Bestanden manipuleren met CLI one-liners in PowerShell gaat over het snel wijzigen, verplaatsen of verkrijgen van bestandsgegevens direct vanaf de opdrachtregel. Programmeurs doen dit voor efficiëntie; het is sneller dan navigeren door GUI's of het schrijven van lange scripts voor eenvoudige taken.
-
 ## Hoe te:
+
 
 ### Een bestand lezen
 Om snel de inhoud van een bestand weer te geven, gebruik je de `Get-Content` opdracht:
@@ -61,7 +58,6 @@ Get-ChildItem -Path .\*.log | Copy-Item -Destination C:\Logs
 ```
 
 ## Diepe Duik
-
 Historisch werd PowerShell geïntroduceerd als een krachtiger alternatief voor de traditionele opdrachtprompt in Windows, en biedt ongekende toegang tot systeeminterna en gegevensopslagplaatsen. Het combineert de snelheid van de opdrachtregel met de flexibiliteit van scripting, waardoor het een onschatbare tool is voor Windows-gebaseerde systeembeheerders en ontwikkelaars.
 
 Alternatieven voor PowerShell voor bestandsmanipulatie omvatten Unix-gebaseerde tools zoals `sed`, `awk`, `grep` en `bash` scripting voor Linux en MacOS gebruikers. Hoewel deze tools extreem krachtig zijn en hun eigen verdiensten hebben, biedt PowerShell diepe integratie met Windows-omgevingen.

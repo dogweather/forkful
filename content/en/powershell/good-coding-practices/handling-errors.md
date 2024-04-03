@@ -10,9 +10,6 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-Handling errors in PowerShell means predicting the mishaps and managing them smoothly. Programmers do this to prevent crashes and provide users with helpful feedback.
-
 ## How to:
 ```PowerShell
 # Basic Try-Catch to handle exceptions
@@ -33,6 +30,7 @@ try {
 
 # Using the $Error variable to inspect the last error
 ```
+
 ## Deep Dive
 PowerShell has come a long way since its inception as Monad. Error handling became more robust over time, offering features similar to other programming languages. The `try-catch-finally` syntax is one such cross-pollination from languages like C#. Before it, scripters relied heavily on checking conditions and using the `$Error` automatic variable.
 

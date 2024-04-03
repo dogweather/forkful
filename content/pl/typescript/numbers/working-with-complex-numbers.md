@@ -13,9 +13,6 @@ title: Praca z liczbami zespolonymi
 weight: 14
 ---
 
-## Co i dlaczego?
-Liczby zespolone, składające się z części rzeczywistej oraz części urojonej (zwykle zapisywane jako a + bi), umożliwiają obliczenia, które byłyby niepraktyczne lub niemożliwe tylko przy użyciu liczb rzeczywistych. Programiści wykorzystują je w dziedzinach takich jak przetwarzanie sygnałów, informatyka kwantowa i matematyka stosowana, gdzie niezbędne są dwuwymiarowe reprezentacje liczb.
-
 ## Jak to zrobić:
 Obsługa liczb zespolonych w TypeScript wymaga dedykowanej klasy. Stwórzmy jedną i przećwiczymy dodawanie oraz mnożenie.
 

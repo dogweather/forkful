@@ -12,12 +12,7 @@ title: "Generando n\xFAmeros aleatorios"
 weight: 12
 ---
 
-## Qué y Por Qué?
-
-Generar números aleatorios en C implica crear valores que son impredecibles y siguen una distribución específica, como uniforme o normal. Esta capacidad es crucial para aplicaciones que van desde simulaciones y juegos hasta operaciones criptográficas, donde la imprevisibilidad o la simulación de aleatoriedad del mundo real es esencial.
-
 ## Cómo hacerlo:
-
 En C, los números aleatorios se pueden generar usando la función `rand()`, que es parte de la biblioteca estándar de C `<stdlib.h>`. Por defecto, `rand()` produce números pseudoaleatorios en el rango de 0 a `RAND_MAX` (una constante definida en `<stdlib.h>`). Para tener más control sobre el rango, los programadores pueden manipular la salida de `rand()`.
 
 Aquí hay un ejemplo simple de generación de un número aleatorio entre 0 y 99:
@@ -50,7 +45,6 @@ Para generar números aleatorios dentro de un rango diferente, puedes ajustar el
 Es importante notar que sembrar el generador de números pseudoaleatorios (`srand()`) con la hora actual (`time(NULL)`) asegura diferentes secuencias de números aleatorios en las ejecuciones del programa. Sin sembrar (`srand()`), `rand()` produciría la misma secuencia de números cada vez que se ejecuta el programa.
 
 ## Profundización
-
 La función `rand()` y su contraparte de sembrado `srand()` han sido parte de la biblioteca estándar de C durante décadas. Se basan en algoritmos que generan secuencias de números que solo aparentan ser aleatorios, de ahí el término "pseudoaleatorios". El algoritmo subyacente en `rand()` es típicamente un generador congruencial lineal (LCG).
 
 Aunque `rand()` y `srand()` son suficientes para muchas aplicaciones, tienen limitaciones conocidas, especialmente en lo que respecta a la calidad de la aleatoriedad y la potencial previsibilidad. Para aplicaciones que requieren aleatoriedad de alta calidad, como operaciones criptográficas, se deberían considerar alternativas como `/dev/random` o `/dev/urandom` (en sistemas similares a Unix), o API provistas por bibliotecas criptográficas.

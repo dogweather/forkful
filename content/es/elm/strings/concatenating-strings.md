@@ -9,9 +9,6 @@ title: "Concatenaci\xF3n de cadenas de texto"
 weight: 3
 ---
 
-## ¿Qué y Por Qué?
-Concatenar strings es unir dos o más cadenas de texto en una sola. Los programadores lo hacen para combinar datos o crear mensajes dinámicos. 
-
 ## Cómo:
 ```Elm
 import Html exposing (text)

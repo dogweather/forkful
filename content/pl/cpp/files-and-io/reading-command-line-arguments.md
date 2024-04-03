@@ -11,9 +11,6 @@ title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---
 
-## What & Why? (Co i dlaczego?)
-Odczytywanie argumentów linii komend to sposób na przekazywanie danych zewnętrznych do programu przy jego starcie. Programiści wykorzystują to, aby dostosować działanie aplikacji bez interakcji z GUI lub plikami konfiguracyjnymi.
-
 ## How to: (Jak to zrobić:)
 ```C++
 #include <iostream>

@@ -12,9 +12,6 @@ title: "Wysy\u0142anie zapytania http z podstawow\u0105 autoryzacj\u0105"
 weight: 45
 ---
 
-## Co i Dlaczego?
-Wysyłanie zapytania HTTP z podstawowym uwierzytelnianiem to proces przekazywania loginu i hasła by uzyskać dostęp do zabezpieczonych zasobów. Programiści robią to, aby bezpiecznie komunikować się z serwerami i API, które wymagają autoryzacji.
-
 ## Jak to zrobić:
 ```Haskell
 import Network.HTTP.Simple

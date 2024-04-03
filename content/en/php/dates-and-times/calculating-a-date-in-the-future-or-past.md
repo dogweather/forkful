@@ -11,9 +11,6 @@ title: Calculating a date in the future or past
 weight: 26
 ---
 
-## What & Why?
-Calculating a future or past date means finding a date before or after a specified time. Programmers do this for reminders, subscriptions, scheduling, and tons of other time-based features in apps.
-
 ## How to:
 PHP makes date math simple with `DateTime` and `DateInterval`. Check this out:
 

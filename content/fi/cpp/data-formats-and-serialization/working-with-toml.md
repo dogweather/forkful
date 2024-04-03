@@ -11,9 +11,6 @@ title: "Ty\xF6skentely TOML:n kanssa"
 weight: 39
 ---
 
-## Mikä & Miksi?
-TOML (Tom's Obvious, Minimal Language) on datan serialisointiformaatti, joka on helppo lukea sen selkeän semantiikan ansiosta. Ohjelmoijat käyttävät TOMLia konfiguraatiotiedostoissa, koska se tarjoaa tasapainon ihmisen luettavuuden ja koneen jäsentämisen välillä.
-
 ## Kuinka:
 Työskennellessäsi TOMLin kanssa C++:ssa, tarvitset kirjaston kuten `toml++`. Tässä nopea aloitus:
 

@@ -20,12 +20,7 @@ title: "\u4F7F\u7528\u5173\u8054\u6570\u7EC4"
 weight: 15
 ---
 
-## 什么和为什么？
-
-关联数组在 Visual Basic for Applications (VBA) 中通常被称为字典，允许程序员创建键值对集合。这一特性对于高效的数据存储和检索至关重要，提供了一种比传统数组索引更灵活直观的数据管理方式。
-
 ## 如何操作：
-
 在 VBA 中，`Dictionary` 对象提供了类似于关联数组的功能。你必须首先添加对 Microsoft Scripting Runtime 的引用才能使用它：
 
 1. 在 VBA 编辑器中，转至 工具 > 引用...
@@ -61,7 +56,6 @@ Next Key
 ```
 
 ## 深入了解
-
 `Dictionary` 对象在底层接口上与 Windows 脚本宿主的组件对接。因此，它是一个后期绑定的 COM 对象，这曾是过去扩展 VBA 功能的常见方式。其在 VBA 中的使用可以显著增强语言处理复杂数据集的能力，而不强制执行传统数组或 Excel 范围中看到的刚性结构。
 
 需要注意的一个限制是访问 `Dictionary` 需要设置对 Microsoft Scripting Runtime 的引用，这可能会使分发你的 VBA 项目复杂化。VBA 内部存在替代品如 Collections，但缺少一些 `Dictionary` 的关键特性，例如在不触发错误的情况下轻松检查键是否存在的能力。

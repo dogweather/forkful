@@ -11,8 +11,6 @@ title: "G\u1EEDi m\u1ED9t y\xEAu c\u1EA7u HTTP v\u1EDBi x\xE1c th\u1EF1c c\u01A1
 weight: 45
 ---
 
-## Gửi một yêu cầu HTTP với xác thực cơ bản bằng Haskell
-
 ## Làm gì & Tại sao?
 Gửi một yêu cầu HTTP với xác thực cơ bản có nghĩa là chương trình của bạn gõ cửa dịch vụ web, truyền tài khoản người dùng và mật khẩu để vào. Các lập trình viên thực hiện điều này để truy cập vào các API không mở cho công chúng hoặc để thực hiện các hành động thay mặt cho người dùng.
 

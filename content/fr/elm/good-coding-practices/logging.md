@@ -12,9 +12,6 @@ title: Journalisation
 weight: 17
 ---
 
-## Quoi et pourquoi ?
-Le logging est essentiellement le processus d'enregistrement des événements et des sorties de données d'un logiciel lors de son exécution, pensez-y comme au journal intime du logiciel. Les programmeurs utilisent les logs pour suivre ce qui se passe sous le capot - cela est inestimable pour le débogage des problèmes, le suivi du comportement du système en temps réel, et l'analyse de l'activité passée pour des optimisations de performance ou des audits.
-
 ## Comment faire :
 L'architecture d'Elm ne prend pas en charge les effets secondaires comme le logging par défaut - vous les gérez à travers des commandes, qui font partie de l'architecture de votre application. À des fins pédagogiques, voyons comment vous pourriez simuler un logging en envoyant des messages à JavaScript via des ports.
 

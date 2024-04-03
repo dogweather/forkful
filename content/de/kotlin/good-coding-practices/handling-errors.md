@@ -12,9 +12,6 @@ title: Fehlerbehandlung
 weight: 16
 ---
 
-## Was & Warum?
-Fehlerbehandlung ist die Art und Weise, wie Ihr Code Probleme bewältigt, die während der Ausführung auftreten - wie das Fangen eines unerwarteten Balls, ohne ihn fallen zu lassen. Programmierer tun dies, um Abstürze zu verhindern und Benutzern eine reibungslose Erfahrung zu bieten.
-
 ## Wie geht das:
 Kotlin stellt `try`, `catch`, `finally` und `throw` zur Verfügung, um Fehler zu verwalten. So verwenden Sie sie:
 

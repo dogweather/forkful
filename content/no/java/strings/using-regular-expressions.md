@@ -13,12 +13,7 @@ title: "Bruke regul\xE6re uttrykk"
 weight: 11
 ---
 
-## Hva & hvorfor?
-
-Regulære uttrykk (regex) i Java lar deg definere spesifikke mønstre for å søke, manipulere eller validere strenger i koden din. Programmerere bruker dem for oppgaver som å parse loggfiler, validere brukerinndata, eller søke etter spesifikke mønstre innen tekst, noe som muliggjør sofistikert strengbehandling med minimal innsats.
-
 ## Hvordan:
-
 Java sin innebygde støtte for regex er hovedsakelig gjennom `Pattern` og `Matcher` klassene i `java.util.regex` pakken. Her er et enkelt eksempel for å finne og skrive ut alle forekomster av et ord i en streng, uten å ta hensyn til store og små bokstaver:
 
 ```java

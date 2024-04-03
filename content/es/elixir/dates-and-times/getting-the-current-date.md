@@ -15,9 +15,6 @@ title: Obteniendo la fecha actual
 weight: 29
 ---
 
-## Qué y Por Qué?
-Obtener la fecha actual en Elixir implica acceder a la información de fecha y hora del sistema, una tarea común para registrar, marcar datos o cualquier funcionalidad que requiera conocimiento de la fecha actual. Esta operación es esencial para crear aplicaciones conscientes del tiempo y para tareas como generar informes o timestamps en una aplicación web.
-
 ## Cómo hacerlo:
 La biblioteca estándar de Elixir, a través del módulo `DateTime`, permite obtener la fecha y hora actuales. Dado que Elixir se ejecuta en la VM de Erlang (BEAM), aprovecha las funcionalidades subyacentes de Erlang para las operaciones de tiempo.
 

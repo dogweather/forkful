@@ -9,9 +9,6 @@ title: Lese kommandolinjeargumenter
 weight: 23
 ---
 
-## What & Why?
-Kommandolinjeargumenter lar deg ta input direkte ved programstart. Vi bruker dem for å tilpasse programkjøring uten å endre koden.
-
 ## How to:
 ```Rust
 use std::env;

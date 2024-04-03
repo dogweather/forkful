@@ -11,9 +11,6 @@ title: Lendo argumentos da linha de comando
 weight: 23
 ---
 
-## O Que & Por Que?
-Ler argumentos da linha de comando é simplesmente capturar entradas fornecidas durante a execução de um programa. Programadores fazem isso para permitir que os usuários passem informações customizadas diretamente para os scripts, tornando-os mais flexíveis e interativos.
-
 ## Como Fazer:
 Para pegar os argumentos, você acessa o array `ARGV` que o Ruby fornece. Veja como isso funciona:
 

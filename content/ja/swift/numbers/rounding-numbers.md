@@ -24,12 +24,7 @@ title: "\u6570\u5024\u306E\u4E38\u3081\u51E6\u7406"
 weight: 13
 ---
 
-## 何となぜ？
-
-数値を丸めるとは、特定の精度に数値を近似することを指し、通常は望ましくない小数点以下を削除するために行います。プログラマーは、メモリ管理、可読性の向上、および通貨制約のようなドメイン固有の要件を満たすために丸めを行います。
-
 ## 方法：
-
 Swiftでは、数値を丸めるいくつかの方法が提供されています。こちらが一例です：
 
 ```Swift
@@ -53,7 +48,6 @@ print("Standard: \(standardRounded), Decimal: \(decimalRounded), Down: \(rounded
 出力：`Standard: 3.0, Decimal: 3.142, Down: 3.0, Up: 4.0`
 
 ## 詳細解説
-
 歴史的には、丸めはコンピュータより前からある数学の概念で、商業や科学に欠かせないものです。Swiftの`Foundation`フレームワークは、包括的な丸め機能を提供します：
 
 - `round(_: )`は良く知られた半分上げの丸めです。
@@ -63,5 +57,4 @@ print("Standard: \(standardRounded), Decimal: \(decimalRounded), Down: \(rounded
 精密な財務計算のための`Decimal`型に注意し、浮動小数点のエラーを避けましょう。また、Objective-Cとの互換性のために`NSDecimalNumber`も探求してください。
 
 ## 参照
-
 - 浮動小数点算術のためのIEEE標準 (IEEE 754): [IEEE 754](https://ieeexplore.ieee.org/document/4610935)

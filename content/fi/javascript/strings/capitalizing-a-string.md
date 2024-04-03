@@ -13,9 +13,6 @@ title: Merkkijonon muuttaminen isoiksi kirjaimiksi
 weight: 2
 ---
 
-## Mikä ja miksi?
-Merkkijonon ensimmäisen kirjaimen muuttaminen isoksi kirjaimeksi pitäen loput merkit ennallaan tarkoittaa merkkijonon alkukirjaimen suurentamista. Tätä toimintoa käytetään yleisesti JavaScriptissä käyttäjän syötteiden muotoiluun, nimien tai otsikoiden näyttämiseen ja käyttöliittymätekstien johdonmukaisuuden varmistamiseen.
-
 ## Kuinka:
 JavaScriptissä ei ole valmista metodia merkkijonojen alkukirjainten suurentamiseen suoraan, mutta sen toteuttaminen perus merkkijonojen käsittelymetodien avulla on suoraviivaista.
 

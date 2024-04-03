@@ -12,12 +12,7 @@ title: Een HTTP-verzoek verzenden
 weight: 44
 ---
 
-## Wat & Waarom?
-
-Een HTTP-verzoek versturen is het proces waarbij een programma om gegevens van een server vraagt. Programmeurs doen dit om te interageren met webservices, API's of om simpelweg de inhoud van een webpagina op te halen.
-
 ## Hoe:
-
 PHP heeft een nette manier om HTTP-verzoeken te behandelen met de `cURL` bibliotheek. Maar de nieuwere methode is het gebruik van `file_get_contents` voor eenvoudigere GET-verzoeken, of de `stream_context_create` voor POST-verzoeken. Hier is een snelle blik op beide.
 
 ### GET-verzoek met file_get_contents():
@@ -63,7 +58,6 @@ var_dump($result);
 ```
 
 ## Diepgaande duik
-
 Vroeger was `fsockopen()` de gangbare methode voor PHP HTTP-verzoeken. Het was omslachtig, maar het werkte. Toen kwam `cURL`, nog steeds krachtig en veel gebruikt, vooral voor complexe bewerkingen. Maar soms heb je geen kettingzaag nodig om een touwtje door te snijden. Daar blinken `file_get_contents()` en `stream_context_create()` in uit.
 
 Een belangrijk punt over `file_get_contents()` is de eenvoud. Perfect voor simpele GET-verzoeken. Maar wat als je gegevens moet POSTen? Voer `stream_context_create()` in. Dit juweeltje laat je je HTTP-verzoeken fijn afstellen met headers, methoden en meer.
@@ -73,7 +67,6 @@ Onder de motorkap gebruiken `file_get_contents()` en `stream_context_create()` P
 Een nadeel? Foutafhandeling kan lastiger zijn. Als iets misgaat, zijn deze functies minder vergevingsgezind dan `cURL`. Als je gedetailleerde responsinformatie nodig hebt of te maken hebt met complexe HTTP-taken, overweeg dan bij `cURL` te blijven.
 
 ## Zie Ook
-
 - cURL's officiële PHP documentatie: [https://www.php.net/manual/en/book.curl.php](https://www.php.net/manual/en/book.curl.php)
 - PHP streamcontexten: [https://www.php.net/manual/en/context.php](https://www.php.net/manual/en/context.php)
 - HTTP-contextopties: [https://www.php.net/manual/en/context.http.php](https://www.php.net/manual/en/context.http.php)

@@ -11,9 +11,6 @@ title: "Baixando uma p\xE1gina da web"
 weight: 42
 ---
 
-## O Que & Porquê?
-Baixar uma página da web significa capturar o conteúdo de uma página da internet e salvá-lo localmente. Programadores fazem isso para análise, monitoramento, ou para extrair dados.
-
 ## Como Fazer:
 Vamos usar o LuaSocket, uma biblioteca Lua para redes. Para instalar, use `luarocks install luasocket`.
 

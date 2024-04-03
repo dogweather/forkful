@@ -12,9 +12,6 @@ title: Registro de Logs
 weight: 17
 ---
 
-## O Quê & Por Quê?
-O registro de logs é o processo de gravar comportamentos, erros e outras informações importantes de uma aplicação em um meio persistente, como um arquivo ou banco de dados. Os programadores fazem isso para acompanhar a saúde e o desempenho de seus aplicativos, para depurar problemas e para manter um olho no que está acontecendo por baixo do capô em ambientes de produção.
-
 ## Como fazer:
 Em Swift, você pode escrever logs no console com instruções de impressão ou com a API `os.log`, mais flexível, que se integra ao Unified Logging System nas plataformas da Apple.
 

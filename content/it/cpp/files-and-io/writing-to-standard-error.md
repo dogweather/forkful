@@ -12,12 +12,7 @@ title: Scrivere sull'errore standard
 weight: 25
 ---
 
-## Cosa e Perché?
-
-Scrivere su standard error (`stderr`) in C++ implica l'output di messaggi di errore o diagnostici che sono separati dall'output principale del programma. I programmatori fanno ciò per indirizzare gli errori a un flusso diverso, permettendo così un debugging e una gestione degli errori più semplici distinguendo l'output normale dai messaggi di errore.
-
 ## Come fare:
-
 In C++, scrivere su standard error può essere realizzato utilizzando il flusso `cerr`, che fa parte della libreria standard. Ecco un esempio base:
 
 ```cpp

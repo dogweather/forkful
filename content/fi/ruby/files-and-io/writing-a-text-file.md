@@ -14,9 +14,6 @@ title: Tekstitiedoston kirjoittaminen
 weight: 24
 ---
 
-## Mikä ja Miksi?
-Tekstitiedostoon kirjoittaminen Rubylla on perustoiminto, jonka avulla voit tallentaa tulosteita ja tietoja pysyvästi, mahdollistaen datan myöhempää pääsyä tai muokkausta varten. Ohjelmoijat suorittavat tätä tehtävää usein syistä kuten lokitiedostojen kirjoittaminen, asetusten tallentaminen tai datan vieminen ihmisen luettavassa muodossa.
-
 ## Miten:
 Ruby tekee tiedosto-operaatioista suoraviivaisia. Tiedostoon kirjoittamiseen voit käyttää Rubyn sisäänrakennettua `File`-luokkaa. Seuraava esimerkki näyttää, miten tiedosto avataan kirjoitusta (`"w"`-tila) ja lisäystä (`"a"`-tila) varten, sitten kirjoitetaan merkkijono siihen, ja varmistetaan, että tiedosto suljetaan jälkeenpäin:
 

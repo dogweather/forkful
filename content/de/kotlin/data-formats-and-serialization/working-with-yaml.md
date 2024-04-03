@@ -10,9 +10,6 @@ title: Arbeiten mit YAML
 weight: 41
 ---
 
-## Was & Warum?
-YAML ist ein Format für Daten, das auf Menschen ausgerichtet ist. Programmierer nutzen es, weil es einfach zu lesen und zu schreiben ist und sich gut für Konfigurationsdateien oder Datenmodellierung eignet.
-
 ## How to:
 In Kotlin kannst du YAML mit der SnakeYAML-Bibliothek verarbeiten. Hier ein Beispiel, um eine YAML-Datei zu lesen:
 

@@ -12,9 +12,6 @@ title: Scrivere test
 weight: 36
 ---
 
-## Cos'è & Perché?
-Nel contesto di Ruby, il testing si riferisce alla verifica che il codice si comporti come previsto in varie condizioni. I programmatori scrivono test per assicurare la correttezza, prevenire regressioni e facilitare il refactoring, con l'obiettivo di realizzare applicazioni robuste e mantenibili.
-
 ## Come fare:
 Ruby include una libreria integrata chiamata `Test::Unit` per scrivere test unitari, incapsulando le pratiche di testing in strutture semplici. Tuttavia, la comunità Ruby tende spesso a preferire librerie di terze parti come RSpec e Minitest per la loro maggiore espressività e flessibilità.
 

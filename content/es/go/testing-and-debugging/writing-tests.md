@@ -13,12 +13,7 @@ title: Escribir pruebas
 weight: 36
 ---
 
-## ¿Qué y por qué?
-
-Escribir pruebas en Go implica crear pequeñas piezas de código manejables que validan la funcionalidad y el comportamiento de tu aplicación. Los programadores escriben pruebas para asegurarse de que su código funciona como se espera bajo diversas condiciones, para facilitar la refactorización y para ayudar a prevenir regresiones.
-
 ## Cómo hacerlo:
-
 En Go, las pruebas se escriben típicamente en el mismo paquete que el código que prueban. Los archivos que contienen las pruebas tienen el sufijo `_test.go`. Las pruebas son funciones que toman un puntero al objeto testing.T (del paquete `testing`) como argumento, y señalan un fallo llamando a métodos como `t.Fail()`, `t.Errorf()`, etc.
 
 Ejemplo de una prueba simple para una función `Add` definida en `math.go`:
@@ -80,7 +75,6 @@ func TestAddTableDriven(t *testing.T) {
 ```
 
 ## Análisis Detallado
-
 El marco de pruebas de Go, introducido en Go 1 junto con el lenguaje mismo, fue diseñado para integrarse a la perfección con la cadena de herramientas de Go, reflejando el énfasis de Go en la simplicidad y eficiencia en el desarrollo de software. A diferencia de algunos marcos de pruebas en otros idiomas que dependen de bibliotecas externas o configuraciones complejas, el paquete `testing` integrado de Go ofrece una forma sencilla de escribir y ejecutar pruebas.
 
 Un aspecto interesante del enfoque de Go para las pruebas es el principio de convención sobre configuración que adopta, como el patrón de nombramiento de archivos (`_test.go`) y el uso de funcionalidades de la biblioteca estándar sobre dependencias externas. Este enfoque minimalista alienta a los desarrolladores a escribir pruebas, ya que la barrera de entrada es baja.

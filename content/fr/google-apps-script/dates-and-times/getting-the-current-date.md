@@ -15,12 +15,7 @@ title: Obtenir la date actuelle
 weight: 29
 ---
 
-## Quoi et Pourquoi ?
-
-Obtenir la date actuelle avec Google Apps Script consiste à récupérer la date et l'heure en direct, une tâche courante pour l'automatisation des tâches, la journalisation et l'horodatage dans les applications liées à l'écosystème de Google. Les programmeurs utilisent cela pour la génération de contenu dynamique, le suivi des échéances et la planification dans Google Docs, Sheets et d'autres services Google.
-
 ## Comment :
-
 Google Apps Script, qui est basé sur JavaScript, offre des méthodes simples pour obtenir la date actuelle. Vous pouvez utiliser le constructeur `new Date()` pour créer un nouvel objet date représentant la date et l'heure actuelles. Voici comment vous pouvez manipuler et afficher cela dans divers formats.
 
 ```javascript
@@ -47,7 +42,6 @@ function showCurrentDate() {
 Ces extraits démontrent comment capturer et formater la date et l'heure actuelles, montrant la polyvalence pour divers besoins de programmation au sein de Google Apps Script.
 
 ## Plongée Profonde
-
 Avant que JavaScript ne se stabilise sur l'objet `Date`, les programmeurs devaient manuellement garder une trace du temps et de la date à travers des moyens moins standards et plus encombrants. Cela incluait l'utilisation d'entiers timestamp et de fonctions de date faites maison, qui variaient d'un environnement de programmation à l'autre, conduisant à des incohérences et des problèmes de compatibilité.
 
 L'introduction de l'objet `new Date()` dans JavaScript, et par extension dans Google Apps Script, a standardisé les opérations de date et d'heure, les rendant plus intuitives et réduisant la quantité de code nécessaire pour les opérations liées à la date. Il convient de noter que, bien que l'implémentation de Google Apps Script soit pratique et suffisante pour de nombreuses applications au sein de la gamme de produits de Google, elle peut ne pas répondre à tous les scénarios, surtout ceux nécessitant une gestion complexe des fuseaux horaires ou une journalisation précise des timestamps dans des environnements rapides.

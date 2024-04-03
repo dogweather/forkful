@@ -12,9 +12,6 @@ title: Analyse Syntaxique du HTML
 weight: 43
 ---
 
-## Quoi & Pourquoi ?
-Parser du HTML en Elm consiste à extraire des informations de documents HTML. Les programmeurs le font pour interagir avec le contenu web ou les API qui retournent du HTML, permettant la création d'applications web plus interactives et dynamiques.
-
 ## Comment faire :
 Elm n'a pas de bibliothèque intégrée pour parser le HTML directement comme les bibliothèques en JavaScript ou en Python en raison de son accent sur la sécurité des types et l'évitement des erreurs d'exécution. Cependant, vous pouvez utiliser des requêtes `Http` pour récupérer du contenu et ensuite utiliser des expressions régulières ou un traitement côté serveur pour extraire les informations nécessaires. Pour un parsing HTML plus complexe, une approche courante implique l'utilisation d'un service backend dédié pour parser le HTML et retourner les données dans un format avec lequel Elm peut travailler directement, comme JSON.
 

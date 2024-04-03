@@ -12,12 +12,7 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i Dlaczego?
-
-Tworzenie pliku tekstowego w Bashu pozwala na automatyzację przechowywania danych, logowania, ustawień konfiguracyjnych i wielu innych. Jest to podstawowa umiejętność w skryptowaniu powłoki, umożliwiająca programistom zapisywanie wyników poleceń, wykonania skryptów lub danych wejściowych użytkownika do raportowania, przetwarzania lub przyszłego wykonania.
-
 ## Jak to zrobić:
-
 Bash oferuje proste metody zapisu do pliku. Najpopularniejsze to użycie operatorów przekierowania (`>`, `>>`) oraz komendy `tee`. Oto krótkie spojrzenie na obie techniki.
 
 Używając przekierowania, możesz zapisać dane wyjściowe bezpośrednio do pliku. Operator `>` zapisuje zawartość do pliku, zastępując go, jeśli już istnieje, podczas gdy `>>` dodaje do istniejącego pliku bez usuwania jego zawartości.

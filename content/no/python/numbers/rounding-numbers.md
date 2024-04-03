@@ -11,9 +11,6 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva & Hvorfor?
-Å runde av tall betyr å justere dem til å være nærmere en enklere eller mer signifikant verdi. Programmerere runder av tall for å forenkle resultater, begrense antall desimaler for visning, eller for visse matematiske formål.
-
 ## Hvordan:
 Her er det grunnleggende om avrunding av tall i Python:
 

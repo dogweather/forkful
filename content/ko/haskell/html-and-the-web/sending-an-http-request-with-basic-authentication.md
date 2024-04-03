@@ -19,9 +19,6 @@ title: "\uAE30\uBCF8 \uC778\uC99D\uC744 \uC0AC\uC6A9\uD55C HTTP \uC694\uCCAD \uB
 weight: 45
 ---
 
-## What & Why? (무엇과 왜?)
-HTTP 요청을 Basic 인증과 함께 보내는 것은 사용자 이름과 비밀번호를 사용하여 서버에 안전하게 인증하는 과정입니다. 개발자들은 일반적으로 보안이 필요한 데이터에 접근할 때 이 방법을 사용합니다.
-
 ## How to: (방법)
 Haskell에서 HTTP 요청을 보내고 Basic 인증을 처리하는 간단한 예시입니다:
 

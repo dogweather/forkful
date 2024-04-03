@@ -24,14 +24,10 @@ title: "\u6B63\u898F\u8868\u73FE\u306E\u4F7F\u7528"
 weight: 11
 ---
 
-## 何となぜ?
-
-JavaScriptでの正規表現（regex）は、文字列内の文字の組み合わせに一致するために使用されるパターンです。プログラマーは、テキストの検索、抽出、および操作に使用し、簡潔なコードで強力な文字列処理操作を可能にします。
-
 ## 使い方:
 
-### 基本的な一致
 
+### 基本的な一致
 始めるにあたり、単純なregexパターンを作成し、文字列内で一致を見つけることができます。ここでは、"code"という単語を見つけます：
 
 ```javascript
@@ -42,7 +38,6 @@ console.log(result); // true
 ```
 
 ### `String.prototype.match()`の使用
-
 一致する配列を取得するには：
 
 ```javascript
@@ -52,7 +47,6 @@ console.log(matches.index); // 10
 ```
 
 ### グローバル検索
-
 すべての一致を見つけるには、`g`フラグを使用します：
 
 ```javascript
@@ -61,7 +55,6 @@ console.log(globalMatches); // ["o", "o", "o"]
 ```
 
 ### 大文字小文字を区別しないマッチング
-
 `i`フラグは大文字小文字を無視します：
 
 ```javascript
@@ -70,7 +63,6 @@ console.log(caseInsensitiveMatch[0]); // "JavaScript"
 ```
 
 ### テキストの置換
-
 `String.prototype.replace()`を使用して、文字列の一部を置き換えます：
 
 ```javascript
@@ -79,7 +71,6 @@ console.log(newStr); // "JavaScript is awesome"
 ```
 
 ### グループの使用
-
 グループはパターンの一部をキャプチャできます：
 
 ```javascript
@@ -89,7 +80,6 @@ console.log(replaceWithGroups); // "fun is JavaScript"
 ```
 
 ### サードパーティのライブラリ
-
 JavaScriptの組み込みのregex機能は強力ですが、`XRegExp`のようなライブラリを使用すると、いくつかのタスクが簡素化されるかもしれません。これは、追加の構文やフラグを提供し、複雑なパターンをより読みやすくします：
 
 ```javascript

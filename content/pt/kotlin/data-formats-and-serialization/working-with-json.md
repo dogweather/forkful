@@ -13,9 +13,6 @@ title: Trabalhando com JSON
 weight: 38
 ---
 
-## O Que & Por Quê?
-Trabalhar com JSON (JavaScript Object Notation) em Kotlin envolve a análise e geração de dados JSON. Programadores fazem isso para trocar dados facilmente entre diferentes camadas de uma aplicação ou se comunicar com serviços web, devido ao formato leve e legível por humanos do JSON.
-
 ## Como fazer:
 Kotlin não inclui suporte embutido para JSON, mas aproveita os recursos poderosos de bibliotecas de terceiros como `Gson`, do Google, e `Kotlinx.serialization`, da JetBrains. Aqui está como você pode usar ambos para trabalhar com JSON.
 

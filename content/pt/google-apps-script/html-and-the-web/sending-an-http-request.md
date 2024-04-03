@@ -13,12 +13,7 @@ title: "Enviando uma solicita\xE7\xE3o HTTP"
 weight: 44
 ---
 
-## O Que & Por Quê?
-
-Enviar uma requisição HTTP no Google Apps Script é sobre fazer uma chamada programática para um servidor web externo ou API. Programadores fazem isso para recuperar ou enviar dados para serviços web, integrando um vasto domínio de recursos e funcionalidades da web diretamente em seus projetos do Google Apps Script.
-
 ## Como:
-
 No Google Apps Script, a maneira primária de enviar uma requisição HTTP é utilizando o serviço `UrlFetchApp`. Esse serviço fornece métodos para fazer requisições HTTP GET e POST. Aqui está um exemplo simples de fazer uma requisição GET para recuperar dados JSON:
 
 ```javascript
@@ -57,7 +52,6 @@ function postExample() {
 Esses trechos mostram implementações básicas de requisições GET e POST. A saída dependerá da resposta da API e pode ser vista no Logger do Google Apps Script.
 
 ## Aprofundamento
-
 O serviço `UrlFetchApp` do Google Apps Script evoluiu significativamente desde sua criação, oferecendo um controle mais matizado sobre as requisições HTTP com funcionalidades como definição de cabeçalhos, payload e manipulação de multipart/form-data para upload de arquivos. Embora forneça um meio direto para integrar serviços web externos, desenvolvedores vindos de linguagens de backend mais robustas podem achar sua funcionalidade um tanto limitada comparada a bibliotecas como a `requests` do Python ou a API `fetch` do JavaScript no Node.js.
 
 Uma limitação notável é o limite de tempo de execução para o Google Apps Script, que afeta requisições de longa duração. Além disso, embora o `UrlFetchApp` cubra uma ampla gama de casos de uso, cenários mais complexos envolvendo autenticação OAuth ou manipulação de cargas muito grandes podem requerer soluções criativas ou o aproveitamento de recursos adicionais do Google Cloud.

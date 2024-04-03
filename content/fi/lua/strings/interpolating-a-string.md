@@ -10,9 +10,6 @@ title: Merkkijonon interpolointi
 weight: 8
 ---
 
-## What & Why? - Mikä ja miksi?
-Merkkijonojen interpolaatio tarkoittaa muuttujien tai lausekkeiden arvojen "upottamista" merkkijonoihin. Koodaajat käyttävät sitä dynaamisten merkkijonojen luomiseen nopeasti ja helposti.
-
 ## How to: - Kuinka:
 ```Lua
 -- Perus esimerkki

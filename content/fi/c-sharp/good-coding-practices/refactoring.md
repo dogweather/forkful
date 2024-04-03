@@ -11,12 +11,7 @@ title: Koodin refaktorointi
 weight: 19
 ---
 
-## Mikä & Miksi?
-
-Refaktorointi on prosessi, jossa olemassa olevaa tietokonekoodia uudelleenjärjestetään muuttamatta sen ulkoista käyttäytymistä. Ohjelmoijat tekevät sitä puhdistaakseen koodia, parantaakseen luettavuutta, vähentääkseen monimutkaisuutta ja parantaakseen ylläpidettävyyttä.
-
 ## Miten:
-
 Refaktoroidaan yksinkertainen C#-metodi, joka laskee ja tulostaa numeroiden summan taulukosta:
 
 Ennen refaktorointia:
@@ -66,7 +61,6 @@ calculator.DisplaySum();
 Refaktoroinnilla olemme erottaneet huolenaiheet, tehneet `Calculator`-luokasta joustavamman sallimalla sen ottaa käyttöön minkä tahansa numerotaulukon, ja hyödyntäneet LINQ:ta tehdäksemme summan laskennasta tiiviimmän.
 
 ## Syväsukellus
-
 Refaktoroinnin juuret ovat smalltalk-ohjelmointiyhteisössä, ja sen teki suosituksi 1990-luvulla Martin Fowlerin kirja "Refactoring: Improving the Design of Existing Code". Vuosien varrella siitä on tullut olennainen osa ketteriä menetelmiä ja hyviä koodauskäytäntöjä.
 
 Refaktoroinnissa on erilaisia lähestymistapoja, kuten Red-Green-Refactor testivetävässä kehityksessä (TDD). Se varmistaa, että refaktorointi ei tuo mukanaan bugeja aloittamalla epäonnistuneella testillä, saamalla sen onnistumaan ja sitten siivoamalla koodin.
@@ -74,7 +68,6 @@ Refaktoroinnissa on erilaisia lähestymistapoja, kuten Red-Green-Refactor testiv
 Refaktorointia toteutettaessa on elintärkeää olla kattava testisarja varmistamassa, ettei toiminnallisuus rikkoonnu prosessin aikana. Automaattiset refaktorointityökalut, kuten C#:lle tarkoitettu ReSharper, voivat myös auttaa tässä prosessissa tarjoten turvallisia tapoja muuttaa koodirakenteita. Työkalujen tulisi kuitenkin olla täydentäviä syvälle juurtuneelle koodikannan ja koodausperiaatteiden ymmärrykselle.
 
 ## Katso myös
-
 - Martin Fowlerin perusteos refaktoroinnista: [Refactoring: Improving the Design of Existing Code](https://martinfowler.com/books/refactoring.html)
 - Microsoftin opas refaktoroinnista Visual Studio:ssa: [Refactoring (C#)](https://docs.microsoft.com/en-us/visualstudio/ide/refactoring-in-visual-studio?view=vs-2022)
 - Yksityiskohtainen katsaus refaktorointimalleihin esimerkein: [SourceMaking Refactoring](https://sourcemaking.com/refactoring)

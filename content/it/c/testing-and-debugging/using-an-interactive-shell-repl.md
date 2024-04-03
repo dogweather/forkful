@@ -14,12 +14,7 @@ title: Utilizzo di un guscio interattivo (REPL)
 weight: 34
 ---
 
-## Cos'è e Perché?
-
-Un shell interattivo, conosciuto anche come Ciclo Leggi-Valuta-Stampa (REPL, dall'inglese Read-Eval-Print Loop), permette ai programmatori di digitare espressioni o codice e vedere immediatamente i risultati, migliorando i processi di apprendimento e di debug. Nonostante il linguaggio C non supporti tradizionalmente ambienti REPL nativamente, gli strumenti moderni colmano questa lacuna, offrendo l'esplorazione dinamica dei programmi C.
-
 ## Come fare:
-
 Per interagire con un REPL C, potresti non trovare un percorso così diretto come nei linguaggi come Python o JavaScript. Tuttavia, strumenti come `Cling`, un interprete C/C++ basato su Clang e la tecnologia LLVM, lo rendono possibile. Ecco come iniziare:
 
 1. **Installa Cling**: A seconda del tuo sistema operativo, potresti trovare Cling nel tuo gestore di pacchetti o potrebbe essere necessario compilarlo da sorgente. Per esempio, su Ubuntu, potrebbe essere semplice come `sudo apt-get install cling`.
@@ -56,7 +51,6 @@ La radice quadrata di 4.000000 è 2.000000
 ```
 
 ## Approfondimento:
-
 La nascita degli ambienti REPL risale a Lisp negli anni '60, progettati per supportare la valutazione interattiva del codice. Tuttavia, la natura statica e compilata del C ha posto sfide nel realizzare una simile immediatezza negli aggiustamenti dell'esecuzione del codice. Lo sviluppo di Cling e altri interpreti C/C++ segna significativi progressi verso l'integrazione della valutazione dinamica nei linguaggi a tipizzazione statica.
 
 È importante notare che l'uso di un interprete come Cling potrebbe non riflettere perfettamente il comportamento del codice C compilato a causa delle differenze in ottimizzazione ed esecuzione. Inoltre, sebbene sia molto prezioso per scopi educativi, prototipazione rapida e debug, i REPL per C possono talvolta essere più lenti e meno pratici per lo sviluppo di codice a livello di produzione rispetto ai cicli tradizionali di compilazione-esecuzione-debug.

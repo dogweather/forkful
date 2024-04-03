@@ -15,9 +15,6 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi TOML"
 weight: 39
 ---
 
-## Gì & Tại sao?
-TOML là viết tắt của Tom's Obvious, Minimal Language, một định dạng tập tin cấu hình dễ đọc nhờ vào ngữ nghĩa rõ ràng của nó. Lập trình viên sử dụng nó cho các tập tin cấu hình, đơn giản hóa việc trao đổi dữ liệu giữa các hệ thống, và bởi vì nó cân bằng giữa khả năng đọc của con người và khả năng phân tích cú pháp của máy.
-
 ## Cách thực hiện:
 Đầu tiên, cài đặt một bộ phân tích cú pháp TOML như `Tomlyn`. Sử dụng trình quản lý gói của bạn:
 

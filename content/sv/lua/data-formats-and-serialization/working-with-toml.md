@@ -10,9 +10,6 @@ title: Att arbeta med TOML
 weight: 39
 ---
 
-## Vad & Varför?
-Att arbeta med TOML innebär att tolka och generera TOML-data (Tom's Obvious, Minimal Language) med Lua. Programmerare använder TOML för konfigurationsfiler på grund av dess läsbarhet och enkla syntax som enkelt översätts till en datastruktur.
-
 ## Hur man gör:
 Först, se till att din Lua-miljö har en TOML-tolkare. Vi använder `lua-toml` för det här exemplet.
 

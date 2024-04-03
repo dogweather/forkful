@@ -13,12 +13,7 @@ title: "\xC5 bruke et interaktivt skall (REPL)"
 weight: 34
 ---
 
-## Hva & Hvorfor?
-
-Et interaktivt skall, eller Read-Eval-Print Loop (REPL), lar brukere skrive inn kommandoer, utføre dem og se resultatene i sanntid. Programmerere benytter REPL for rask prototyping, testing av kodeutdrag, eller feilsøking i et mer interaktivt og iterativt miljø, forbedrer produktiviteten og forståelsen av koden.
-
 ## Hvordan:
-
 Visual Basic for Applications (VBA) støtter ikke naturlig et interaktivt skall eller REPL-opplevelse som sett i språk som Python eller JavaScript. Du kan imidlertid i en viss grad simulere denne opplevelsen ved å bruke umiddelbart vindu i VBA IDE (Integrated Development Environment).
 
 **Tilgang til umiddelbart vindu:**
@@ -58,7 +53,6 @@ Call SayHello
 **Merk:** Umiddelbart vindu har begrensninger. Det er utmerket for raske tester og direkte funksjonskall, men det støtter ikke å definere funksjoner eller subrutiner direkte inni det. Kompleks feilsøking og programmeringsoppgaver kan kreve full modulutvikling.
 
 ## Dypdykk
-
 Umiddelbart vindu i VBA tjener som det nærmeste motstykket til interaktive skall funnet i andre programmeringsøkosystemer, til tross for dets begrensninger. Historisk sett har VBA fokusert på å utvide kapasitetene til Microsoft Office-applikasjoner gjennom skript og makroer heller enn selvstendig programvareutvikling, noe som kan forklare fraværet av et fullverdig REPL.
 
 For oppgaver som krever omfattende interaktiv testing eller kompleks logikkutvikling, kan andre programmeringsmiljøer utstyrt med støtte for native REPL, som Python med sin IDLE, eller JavaScript med Node.js, tilby bedre alternativer. Disse miljøene gir ikke bare interaktive skall, men også mer robust programmering, feilsøking og testing fasiliteter.

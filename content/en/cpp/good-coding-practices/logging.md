@@ -10,9 +10,6 @@ title: Logging
 weight: 17
 ---
 
-## What & Why?
-Logging in the context of programming is the process of recording events, states, and information to a file or another output medium. Programmers log to keep track of what's happening in their applications, to debug issues, and to monitor performance for future analysis and optimization.
-
 ## How to:
 Let's say you're working on a Linux box and you want to chuck your logs into a file with good 'ol C++. You'll want to include the `<iostream>` and `<fstream>` libraries to do file operations. Here’s a quick example:
 

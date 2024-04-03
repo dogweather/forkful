@@ -14,10 +14,9 @@ title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---
 
-## Vad & Varför?
-Reguljära uttryck (regex) i Ruby är mönster som används för att matcha teckenkombinationer i strängar, vilket möjliggör för utvecklare att söka efter, matcha och manipulera text effektivt. Programmerare använder regex för uppgifter som validering, tolkning och manipulering av strängar, vilket gör det till ett ovärderligt verktyg för textbearbetning.
-
 ## Hur man gör:
+
+
 ### Grundläggande Matchning
 För att matcha en sträng mot ett enkelt mönster kan du använda metoden `match`. Nedan kontrollerar vi om ordet "Ruby" finns i en given sträng.
 

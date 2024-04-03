@@ -13,9 +13,6 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## Mitä & Miksi?
-Merkkijonojen yhdistäminen ohjelmoinnissa tarkoittaa kahden tai useamman merkkijonon liittämistä yhteen. Ohjelmoijat tekevät näin käsitelläkseen tekstidataa helposti, rakentaakseen viestejä tai kootakseen dynaamisesti käyttöliittymän osia.
-
 ## Miten:
 Dart tarjoaa useita suoraviivaisia tapoja merkkijonojen yhdistämiseen. Alla on yleisimmät menetelmät:
 

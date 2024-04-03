@@ -11,9 +11,6 @@ title: "Refatora\xE7\xE3o"
 weight: 19
 ---
 
-## O Que e Por Que?
-Refatoração é o processo de reestruturar o código de computador existente sem alterar seu comportamento externo. Os programadores fazem isso para tornar o código mais limpo, mais fácil de manter e reduzir a complexidade, o que facilita a compreensão para alguém que mergulha de fresco.
-
 ## Como fazer:
 Considere uma função TypeScript que já viu dias melhores - está um pouco bagunçada, e poderia usar um pouco de carinho e atenção:
 

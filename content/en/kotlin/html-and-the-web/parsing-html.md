@@ -10,9 +10,6 @@ title: Parsing HTML
 weight: 43
 ---
 
-## What & Why?
-Parsing HTML means dissecting a webpage's markup into something a program can understand and manipulate. Programmers parse HTML to extract data, automate web interactions, or migrate content between systems.
-
 ## How to:
 Kotlin makes parsing HTML straightforward with libraries like Jsoup. Here's how you do it:
 

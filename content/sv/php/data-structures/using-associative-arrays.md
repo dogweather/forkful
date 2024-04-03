@@ -14,12 +14,7 @@ title: "Att anv\xE4nda associativa arrayer"
 weight: 15
 ---
 
-## Vad & Varför?
-
-Associativa arrayer i PHP är som superladdade listor där varje element kan nås genom att använda ett läsbart nyckelvärde istället för bara siffror. Programmerare använder dem för att lagra och manipulera data mer intuitivt, vilket möjliggör kod som är lättare att läsa och mer underhållsvänlig.
-
 ## Hur man gör:
-
 I PHP är det enkelt att skapa och använda associativa arrayer. Här är en snabb genomgång:
 
 ```PHP
@@ -65,7 +60,6 @@ foreach ($person as $nyckel => $värde) {
 Notera hur nycklar kan vara vilken sträng som helst, vilket låter dig komma åt elementen genom dessa nycklar istället för numeriska index, vilket kan vara mindre betydelsefulla och svårare att komma ihåg.
 
 ## Fördjupning
-
 Associativa arrayer i PHP är internt implementerade med hjälp av hashtabeller som ger mycket snabb tillgång till elementen genom nyckel, vilket gör dem högeffektiva för många uppgifter. Denna effektivitet, i kombination med deras användarvänlighet, gör associativa arrayer till en hörnsten i PHP-programmering.
 
 Historiskt sett har PHP:s arrayer (både indexerade och associativa) varit otroligt flexibla, vilket låtit dem fungera som listor, stackar, köer och mer. Dock kan denna flexibilitet ibland leda till mindre effektiv kod om den inte används omsorgsfullt.

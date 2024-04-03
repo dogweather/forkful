@@ -16,12 +16,7 @@ title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---
 
-## Cái gì & Tại sao?
-
-Xóa ký tự phù hợp với một mẫu là việc tìm kiếm các chuỗi ký tự cụ thể và loại bỏ chúng. Lập trình viên làm điều này để làm sạch dữ liệu, định dạng nội dung, hoặc thao tác chuỗi theo cách phù hợp với nhu cầu cụ thể của họ.
-
 ## Cách làm:
-
 Trong Elixir, sử dụng hàm `String.replace/4` để xóa ký tự phù hợp với một mẫu. Hãy xem những ví dụ sau:
 
 ```elixir
@@ -40,11 +35,9 @@ IO.puts(no_whitespace_string) # Kết quả: "Elixir2023Rocks!"
 ```
 
 ## Tìm hiểu sâu hơn
-
 Việc sử dụng tương thích mẫu để xóa ký tự trong chuỗi không phải là độc quyền của Elixir; nó là một tính năng phổ biến trong hầu hết các ngôn ngữ lập trình, phát triển từ khả năng thể hiện chính quy (regex) trong các công cụ Unix đầu tiên như `sed` và `grep`. Các phương pháp thay thế cho `String.replace/4` có thể là sử dụng tương thích mẫu và đệ quy để thực hiện điều hướng và chỉnh sửa chuỗi một cách thủ công, nhưng phương pháp này thường dài dòng và phức tạp hơn, làm cho các hàm regex tích hợp trở thành lựa chọn ưu tiên. Bên dưới cùng, `String.replace/4` tận dụng di sản Erlang của Elixir, sử dụng khả năng tương thích mẫu mạnh mẽ và thao tác chuỗi của máy ảo BEAM.
 
 ## Xem thêm:
-
 - Tài liệu mô-đun `String` của Elixir: [https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)
 - Regex trong Elixir: [https://hexdocs.pm/elixir/Regex.html](https://hexdocs.pm/elixir/Regex.html)
 - 'Học Biểu thức Chính quy': [https://www.regular-expressions.info/tutorial.html](https://www.regular-expressions.info/tutorial.html)

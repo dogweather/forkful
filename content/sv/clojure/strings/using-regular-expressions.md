@@ -14,9 +14,6 @@ title: "Att anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---
 
-## Vad & Varför?
-Reguljära uttryck, ett kraftfullt verktyg för mönsterigenkänning och datahantering, är essentiella i textbehandlingsuppgifter såsom att validera inmatning, söka och ersätta text. Programmerare använder dem omfattande för att hantera komplex strängtolkning och datavalidering effektivt och koncist.
-
 ## Hur:
 Clojure, som håller sig trogen till sina rötter i Lisp-familjen, erbjuder ett rikt utbud av funktioner som integrerar sömlöst med Javas möjligheter för reguljära uttryck. Så här kan du utnyttja dem:
 

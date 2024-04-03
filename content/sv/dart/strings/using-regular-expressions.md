@@ -14,9 +14,6 @@ title: "Anv\xE4nda regulj\xE4ra uttryck"
 weight: 11
 ---
 
-## Vad & Varför?
-Reguljära uttryck (regex) i Dart erbjuder ett kraftfullt sätt att söka och manipulera strängar, vilket möjliggör för programmerare att utföra komplex textbearbetning effektivt. Genom att förstå regex kan utvecklare utföra textvalideringar, söka efter mönster och transformera text snabbt, vilket är nödvändigt för bearbetning av formulär, dataanalys och allmänna strängmanipulationer i moderna applikationer.
-
 ## Hur:
 Dart använder klassen `RegExp` för reguljära uttryck. Här är ett grundläggande exempel för att matcha ett enkelt mönster inom en sträng:
 

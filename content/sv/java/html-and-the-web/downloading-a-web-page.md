@@ -11,9 +11,6 @@ title: "H\xE4mta en webbsida"
 weight: 42
 ---
 
-## Vad & Varför?
-Att ladda ner en webbsida innebär att hämta HTML-koden som browsern använder för att visa sidan. Programmerare gör detta för att skrapa data, automatiskt testa webbplatser eller övervaka förändringar.
-
 ## Hur gör man?:
 ```java
 import java.io.*;

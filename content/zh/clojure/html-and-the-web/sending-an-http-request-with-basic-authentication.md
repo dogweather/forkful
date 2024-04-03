@@ -17,9 +17,6 @@ title: "\u4F7F\u7528\u57FA\u672C\u8BA4\u8BC1\u53D1\u9001 HTTP \u8BF7\u6C42"
 weight: 45
 ---
 
-## 什么 & 为什么？
-发送带有基本认证的HTTP请求是在请求中包含用户名和密码以访问受保护的资源。程序员这样做来确保只有授权的用户可以访问敏感数据或执行操作。
-
 ## 如何做：
 ```Clojure
 (require '[clj-http.client :as client])
@@ -48,7 +45,7 @@ weight: 45
 
 基本认证工作流程简单：客户端发送带有'Authorization'请求头的HTTP请求；值为'Basic'后跟空格和'用户名:密码'的Base64编码字符串。如果认证成功，服务器返回请求资源。如果失败，服务器返回401未授权响应。
 
-使用Clojure进行带有基本认证的HTTP请求时可以利用clj-http库，这个库提供了简单而强大的HTTP客户端功能。记住处理好安全问题，特别是在生产环境下使用时。 
+使用Clojure进行带有基本认证的HTTP请求时可以利用clj-http库，这个库提供了简单而强大的HTTP客户端功能。记住处理好安全问题，特别是在生产环境下使用时。
 
 ## 参考
 - Clojure clj-http库: [https://github.com/dakrone/clj-http](https://github.com/dakrone/clj-http)

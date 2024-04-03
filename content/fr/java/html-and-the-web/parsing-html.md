@@ -13,12 +13,7 @@ title: Analyse Syntaxique du HTML
 weight: 43
 ---
 
-## Quoi & Pourquoi ?
-
-L'analyse HTML implique de fouiller dans le balisage pour extraire des données comme du texte, des liens ou d'autres éléments. Nous le faisons pour interagir avec ou récupérer le contenu web, automatiser des tâches de navigation, ou tester des applications web.
-
 ## Comment faire :
-
 Utilisons Jsoup, une bibliothèque pratique pour travailler avec l'HTML du monde réel. Tout d'abord, ajoutez la dépendance :
 
 ```xml
@@ -65,7 +60,6 @@ for (Element lien : liens) {
 ```
 
 ## Plongée Profonde
-
 Il fut un temps, l'HTML était dompté par des motifs de regex, une méthode à la fois sujette à erreurs et cauchemardesque pour les documents complexes. Puis est venu Jsoup à la fin des années 2000, offrant une interface semblable à jQuery pour Java pour analyser, traverser et manipuler l'HTML.
 
 Jsoup n'est pas le seul choix. Il y a HtmlUnit pour les tests complets d'applications web avec support JavaScript, mais c'est plus lourd et plus complexe. Pour les tâches légères, Apache Commons Validator est excellent juste pour extraire les URL.
@@ -75,7 +69,6 @@ Sous le capot, Jsoup utilise un parseur DOM, qui modélise tout le document en m
 Rappelez-vous, lors du scraping, vérifiez toujours le fichier `robots.txt` du site et les conditions d'utilisation pour éviter les ennuis légaux ou le bannissement par IP.
 
 ## Voir Aussi
-
 - Documentation officielle de Jsoup : https://jsoup.org/
 - HtmlUnit : http://htmlunit.sourceforge.net/
 - Apache Commons Validator : https://commons.apache.org/proper/commons-validator/

@@ -11,9 +11,6 @@ title: "Slik f\xE5r du tak i dagens dato"
 weight: 29
 ---
 
-## What & Why? 
-Å hente nåværende dato betyr å tilgjengeliggjøre akkurat hvilken dag det er, helt ned til millisekundet, i Elm-programmet ditt. Dette er nyttig for alt fra å tidsstemple hendelser til å vise oppdaterte tidspunkter for brukerne.
-
 ## How to:
 Elm har ikke innebygd dato-behandling, så du må bruke `elm/time` biblioteket. Her er et eksempel på hvordan du kan få den nåværende datoen:
 

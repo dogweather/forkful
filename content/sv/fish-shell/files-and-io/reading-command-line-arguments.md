@@ -11,9 +11,6 @@ title: "L\xE4sa in kommandoradsargument"
 weight: 23
 ---
 
-## Vad & Varför?
-Att läsa kommandoradsargument handlar om att extrahera användarinput direkt från terminalen. Programmerare gör detta för att göra sina skript interaktiva och flexibla.
-
 ## How to:
 ```Fish Shell
 # Argumenten tillgängliga via $argv

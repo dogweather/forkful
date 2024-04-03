@@ -14,12 +14,7 @@ title: Praca z XML
 weight: 40
 ---
 
-## Co i dlaczego?
-
-Praca z XML w Dart polega na analizowaniu, kwerendowaniu i modyfikowaniu dokumentów XML, co jest kluczowe dla aplikacji wchodzących w interakcje z usługami internetowymi, plikami konfiguracyjnymi lub systemami dziedzicznymi. Programiści robią to, aby umożliwić wymianę danych, konfiguracje lub nawet zdalne wywołania procedur w strukturalnym, hierarchicznym formacie, który jest czytelny dla człowieka i parsowalny przez maszynę.
-
 ## Jak to zrobić:
-
 Dart nie zawiera wbudowanego wsparcia dla obsługi XML w swojej bibliotece standardowej, co wymusza korzystanie z pakietów stron trzecich. Jednym z popularnych pakietów jest `xml`. Aby go użyć, najpierw trzeba dodać go do pliku `pubspec.yaml`:
 
 ```yaml

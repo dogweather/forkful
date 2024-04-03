@@ -14,12 +14,7 @@ title: "T\u1EA3i trang web v\u1EC1"
 weight: 42
 ---
 
-## Cái gì và Tại sao?
-
-Tải về một trang web là việc lấy nội dung HTML của một trang web qua giao thức HTTP/HTTPS. Các lập trình viên thường làm điều này cho việc thu thập dữ liệu web, phân tích dữ liệu hoặc đơn giản là để tương tác với các trang web một cách tự động để tự động hóa các nhiệm vụ.
-
 ## Cách thực hiện:
-
 Trong Go, thư viện chuẩn cung cấp các công cụ mạnh mẽ cho các yêu cầu web, đặc biệt là gói `net/http`. Để tải một trang web, chúng tôi chủ yếu sử dụng phương thức `http.Get`. Dưới đây là một ví dụ cơ bản:
 
 ```go
@@ -66,7 +61,6 @@ Chương trình đơn giản này tạo một yêu cầu HTTP GET đến URL đ�
 Lưu ý: Trong lập trình Go đương đại, `ioutil.ReadAll` được coi là lỗi thời từ Go 1.16 và được thay thế bằng `io.ReadAll`.
 
 ## Tìm hiểu sâu hơn
-
 Ngôn ngữ Go có triết lý thiết kế nhấn mạnh vào sự đơn giản, hiệu quả và xử lý lỗi đáng tin cậy. Khi nói đến lập trình mạng, và cụ thể là tải trang web, thư viện chuẩn của Go, đặc biệt là `net/http`, được thiết kế một cách hiệu quả để xử lý các hoạt động yêu cầu và phản hồi HTTP.
 
 Cách tiếp cận với các yêu cầu mạng trong Go quay về với nguồn gốc của ngôn ngữ, mượn các khái niệm từ các ngôn ngữ tiền nhiệm nhưng cải thiện đáng kể về hiệu quả và sự đơn giản. Đối với việc tải nội dung, mô hình đồng thời của Go sử dụng goroutine khiến nó trở thành một công cụ vô cùng mạnh mẽ cho việc thực hiện các yêu cầu HTTP bất đồng bộ, xử lý hàng nghìn yêu cầu song song một cách dễ dàng.

@@ -11,9 +11,6 @@ title: Merkkijonon interpolointi
 weight: 8
 ---
 
-## What & Why? (Mitä & Miksi?)
-Stringin interpolointi tarkoittaa muuttujien tai lausekkeiden arvojen syöttämistä suoraan merkkijonoon. Koodaajat tekevät tätä, koska se tekee koodista selkeämpää ja dynaamisempaa – ei enää yhteenkasattuja merkkijonoja.
-
 ## How to (Kuinka tehdä):
 ```Ruby
 # Muuttujan interpolointi

@@ -10,9 +10,6 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## Hva & Hvorfor?
-Lesing av tekstfil betyr å hente tekstdata fra en fil på disket. Programmerere gjør dette for å bearbeide data, konfigurere apper eller bare for å vise innholdet.
-
 ## Slik gjør du:
 JavaScript kan lese tekstfiler med fil-APIen i nettlesere eller `fs`-modulen i Node.js. Her er eksempler på begge.
 

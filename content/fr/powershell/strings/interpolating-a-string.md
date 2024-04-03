@@ -11,9 +11,6 @@ title: "Interpolation de cha\xEEnes de caract\xE8res"
 weight: 8
 ---
 
-## What & Why?
-Interpoler une chaîne, c'est insérer des valeurs de variables directement dedans. C'est utilisé pour composer des messages ou des commandes de façon fluide et dynamique, sans recoller des bouts de chaîne à la mano.
-
 ## How to:
 En PowerShell, utilisez `"${ma_variable}"` pour interpoler. Voilà un exemple:
 

@@ -12,9 +12,6 @@ title: "\u041F\u043E\u0440\u0456\u0432\u043D\u044F\u043D\u043D\u044F \u0434\u043
 weight: 27
 ---
 
-## What & Why? (Що і Чому?)
-Comparing two dates means figuring out their order—earlier, later, or the same moment. Programmers compare dates to track events, expire sessions, or sort timelines.
-
 ## How to (Як це зробити):
 ```Kotlin
 import java.time.LocalDate

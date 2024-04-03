@@ -17,9 +17,6 @@ title: "S\u1EED d\u1EE5ng bi\u1EC3u th\u1EE9c ch\xEDnh quy"
 weight: 11
 ---
 
-## Cái gì & Tại sao?
-Biểu thức chính quy (regex) trong Dart cung cấp một cách mạnh mẽ để tìm kiếm và thao tác với chuỗi ký tự, cho phép lập trình viên thực hiện các tác vụ xử lý văn bản phức tạp một cách hiệu quả. Bằng cách hiểu biểu thức chính quy, các nhà phát triển có thể thực hiện kiểm tra văn bản, tìm kiếm mẫu và biến đổi văn bản nhanh chóng, điều này rất cần thiết cho việc xử lý biểu mẫu, phân tích dữ liệu và thao tác chuỗi chung trong ứng dụng hiện đại.
-
 ## Làm sao:
 Dart sử dụng lớp `RegExp` cho biểu thức chính quy. Dưới đây là một ví dụ cơ bản để tìm một mẫu đơn giản trong một chuỗi:
 

@@ -10,9 +10,6 @@ title: "Merkkijonojen yhdist\xE4minen"
 weight: 3
 ---
 
-## What & Why? (Mikä & Miksi?)
-Yhdistämme merkkijonoja luodaaksemme uusia isompia tekstejä. Tämä on tärkeää, kun haluamme näyttää käyttäjille dynaamisia viestejä tai rakennamme laajempia tietorakenteita.
-
 ## How to (Kuinka):
 C#:ssa merkkijonojen yhdistäminen onnistuu muutamalla eri tavalla. Katsotaan pari esimerkkiä.
 

@@ -14,9 +14,6 @@ title: Skriva till standardfel
 weight: 25
 ---
 
-## Vad & Varför?
-Att skriva till standardfel (stderr) i JavaScript handlar om att dirigera felmeddelanden eller kritisk information till en specifik, separat ström, vilket är särskilt användbart i Unix-lika miljöer för loggning och felsökning. Programmerare gör detta för att skilja normal programutdata från felmeddelanden, vilket möjliggör enklare hantering av utdata och enklare övervakning av fel.
-
 ## Hur:
 I Node.js kan skrivning till stderr utföras med metoden `console.error()` eller genom att skriva direkt till `process.stderr`. Här är exempel som demonstrerar båda tillvägagångssätten:
 

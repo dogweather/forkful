@@ -11,12 +11,7 @@ title: "Obs\u0142uga b\u0142\u0119d\xF3w"
 weight: 16
 ---
 
-## Co i dlaczego?
-
-Obsługa błędów w C# polega na zarządzaniu tym, czego się nie spodziewamy — jak potknięcie się o sznurówki. Programy mogą potykać się o złe dane lub wadliwe połączenia. Obsługujemy błędy, aby nasze oprogramowanie nie upadło na twarz, pozwalając mu elegancko się pozbierać.
-
 ## Jak to zrobić:
-
 Zacznijmy od bloku try-catch. To jak umieszczenie siatki bezpieczeństwa pod linoskoczkiem. Jeśli się poślizgnie, nie spada — zostaje złapany.
 
 ```C#
@@ -53,7 +48,6 @@ try {
 ```
 
 ## Głębsze zanurzenie
-
 Obsługa błędów jest w C# od momentu jego powstania. Z biegiem czasu ewoluowała. Kiedyś programiści polegali na kodach powrotu czy globalnych flagach, żeby sygnalizować problemy — niewygodne i podatne na błędy.
 
 C# używa wyjątków, bardziej nowoczesnego podejścia. Wyjątek jest wyrzucany, gdy zdarzy się coś niespodziewanego, zupełnie jak rzucenie flagi na boisku w futbolu amerykańskim. Strukturalna obsługa wyjątków za pomocą bloków try, catch i finally sprawia, że zarządzanie tymi momentami jest jaśniejsze i czystsze niż stare metody sprawdzania błędów.
@@ -63,6 +57,5 @@ Alternatywy? Pewnie. Jest `UnhandledExceptionEventHandler` dla wyjątków, któr
 Detale implementacji — podobne do drobnego druku — mają znaczenie. Wyjątki mogą być kosztowne, obniżając wydajność, jeśli są rzucone bez opamiętania. Dlatego używamy ich w wyjątkowych przypadkach, a nie do codziennej kontroli logiki.
 
 ## Zobacz również
-
 - [Oficjalna dokumentacja na temat Wyjątków w C#](https://docs.microsoft.com/pl-pl/dotnet/csharp/fundamentals/exceptions/exception-handling)
 - [Najlepsze praktyki w obsłudze wyjątków C#](https://docs.microsoft.com/pl-pl/dotnet/standard/exceptions/best-practices-for-exceptions)

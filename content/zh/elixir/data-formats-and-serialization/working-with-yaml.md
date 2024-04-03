@@ -24,12 +24,7 @@ title: "\u4F7F\u7528YAML\u5DE5\u4F5C"
 weight: 41
 ---
 
-## 什么 & 为什么？
-
-YAML，全称是YAML Ain't Markup Language（YAML不是标记语言），是一种人类可读的数据序列化标准，通常用于配置文件和在具有不同数据结构的语言之间的数据交换。程序员之所以使用它，是因为它的简单性以及它能够轻松表示复杂的层次数据。
-
 ## 如何操作：
-
 Elixir默认不包含内建的YAML支持。然而，你可以使用第三方库，如`yamerl`或`yaml_elixir`来处理YAML。这里，我们将重点关注`yaml_elixir`，因为它的易用性和全面的特性。
 
 首先，将`yaml_elixir`添加到你的mix.exs依赖中：
@@ -45,7 +40,6 @@ end
 然后，运行`mix deps.get`来获取新的依赖。
 
 ### 读取 YAML
-
 给定一个简单的YAML文件，`config.yaml`，内容如下：
 
 ```yaml
@@ -78,7 +72,6 @@ Config.read()
 ```
 
 ### 写入 YAML
-
 要将一个map写回YAML文件：
 
 ```elixir

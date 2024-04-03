@@ -10,9 +10,6 @@ title: "Virheiden k\xE4sittely"
 weight: 16
 ---
 
-## Mikä ja miksi?
-Virheiden käsittely ohjelmoinnissa on odottamattoman odottamista. Se on suunnittelutaidetta siltä varalta, että asiat menevät pieleen, jotta voit pitää ohjelmasi sujuvasti toiminnassa.
-
 ## Miten:
 Lua käyttää kahta pääfunktiota virheiden käsittelyyn: `pcall` ja `xpcall`. Näin käytät niitä:
 

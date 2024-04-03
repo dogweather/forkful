@@ -17,12 +17,7 @@ title: "S\u1EED d\u1EE5ng giao di\u1EC7n d\xF2ng l\u1EC7nh t\u01B0\u01A1ng t\xE1
 weight: 34
 ---
 
-## Cái gì và Tại sao?
-
-Một shell tương tác, hay Vòng lặp Đọc-Đánh giá-In (REPL), cho phép bạn thử nghiệm với mã Go trong thời gian thực, thực thi các lệnh và nhận phản hồi ngay lập tức. Phương pháp này được sử dụng rộng rãi để học hỏi, gỡ lỗi và tạo mẫu, vì nó bỏ qua chu kỳ chỉnh sửa-biên dịch-chạy truyền thống, làm cho quy trình phát triển nhanh chóng và trực quan hơn.
-
 ## Làm thế nào:
-
 Mặc dù Go không bao gồm REPL được tích hợp sẵn, cộng đồng đã tạo ra các công cụ như `gore` để lấp đầy khoảng trống này. Đầu tiên, cài đặt `gore` bằng cách chạy:
 
 ```
@@ -65,7 +60,6 @@ Diện tích của hình tròn có bán kính 4: 50.26548245743669
 ```
 
 ## Sâu hơn nữa:
-
 Khái niệm về REPL là cổ xưa, trở lại với các máy Lisp của những năm 1960, cung cấp một trải nghiệm lập trình tương tác. Không giống như các ngôn ngữ như Python hay JavaScript, Go được thiết kế không có REPL, tập trung thay vào đó vào các file nhị phân biên dịch vì hiệu suất và sự đơn giản. Điều này phản ánh triết lý về sự đơn giản và thiết kế của Go cho phần mềm có khả năng mở rộng và bảo trì.
 
 Tuy nhiên, các công cụ như `gore` hay `goplay` cho thấy sự sáng tạo của cộng đồng Go trong việc lấp đầy khoảng trống này. Những công cụ này phân tích cú pháp mã Go một cách động và sử dụng gói `go/eval` hay các cơ chế tương tự để thực thi nó trong thời gian thực, mặc dù với một số giới hạn so với môi trường REPL bản địa. Những hạn chế này xuất phát từ hệ thống kiểu và mô hình biên dịch của Go, có thể khiến việc đánh giá tức thì trở nên thách thức.

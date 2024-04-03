@@ -17,12 +17,7 @@ title: "Vi\u1EBFt b\xE0i ki\u1EC3m tra"
 weight: 36
 ---
 
-## Gì & Tại sao?
-
-Việc viết các bài kiểm tra trong Dart bao gồm việc tạo ra các trường hợp kiểm tra để tự động xác minh rằng các phần khác nhau của chương trình hoạt động như mong đợi. Lập trình viên làm điều này để đảm bảo rằng mã của họ đáng tin cậy và không có khuyết điểm, giúp việc cập nhật và tái cấu trúc dễ dàng hơn đồng thời ngăn chặn sự quay lui.
-
 ## Làm thế nào:
-
 Trong Dart, gói `test` thường được sử dụng để viết kiểm tra. Đầu tiên, thêm gói `test` vào `pubspec.yaml` của bạn:
 
 ```yaml
@@ -65,7 +60,6 @@ Kết quả mẫu có thể giống như:
 ```
 
 ### Sử dụng một thư viện bên thứ ba: Mockito để mô phỏng (mocking)
-
 Đối với việc kiểm tra mã có các phụ thuộc phức tạp, bạn có thể sử dụng Mockito để tạo các đối tượng mô phỏng. Đầu tiên, thêm Mockito vào `pubspec.yaml` của bạn:
 
 ```yaml

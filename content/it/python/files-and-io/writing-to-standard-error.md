@@ -13,10 +13,9 @@ title: Scrivere sull'errore standard
 weight: 25
 ---
 
-## Cosa e Perché?
-Scrivere su standard error in Python significa indirizzare i messaggi di errore o diagnostici del proprio programma allo stream di errore (`stderr`), separandoli dall'output standard (`stdout`). I programmatori fanno ciò per differenziare gli output normali del programma dai messaggi di errore, facilitando il debug e l'analisi dei log.
-
 ## Come fare:
+
+
 ### Utilizzando `sys.stderr`
 Il modulo integrato `sys` di Python consente di scrivere esplicitamente su `stderr`. Questo approccio è diretto per messaggi di errore semplici o diagnostici.
 

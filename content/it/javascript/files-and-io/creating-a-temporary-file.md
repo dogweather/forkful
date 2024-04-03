@@ -10,9 +10,6 @@ title: Creazione di un file temporaneo
 weight: 21
 ---
 
-## What & Why?
-Creare un file temporaneo significa realizzare un documento destinato a una breve esistenza. I programmatori ne fanno uso per diversi motivi: per manipolare dati senza alterare il contenuto originale, per gestire informazioni sensibili, o per lavorare con file grandi che non si vogliono tenere in memoria.
-
 ## How to:
 JavaScript non gestisce direttamente la creazione di file temporanei, ma possiamo usare il pacchetto `tmp` di Node.js:
 

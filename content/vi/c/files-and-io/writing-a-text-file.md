@@ -17,12 +17,7 @@ title: "Vi\u1EBFt m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 24
 ---
 
-## Gì & Tại sao?
-
-Việc viết một tệp văn bản trong C bao gồm việc tạo hoặc mở một tệp ở chế độ viết và sau đó sử dụng các hàm I/O tệp của C để lưu dữ liệu văn bản vào đó. Lập trình viên làm điều này để lưu trữ dữ liệu, như sự kiện nhật ký, cài đặt cấu hình, hoặc nội dung do người dùng tạo, cho phép ứng dụng duy trì trạng thái, sở thích, hoặc tiến trình của người dùng qua các phiên làm việc.
-
 ## Cách thực hiện:
-
 Để viết văn bản vào một tệp trong C, bạn chủ yếu cần làm quen với các hàm `fopen()`, `fprintf()`, `fputs()`, và `fclose()`. Dưới đây là một ví dụ đơn giản minh họa việc tạo và viết vào một tệp:
 
 ```c
@@ -58,7 +53,6 @@ Tệp đã được viết thành công
 Sau khi chạy chương trình này, bạn sẽ tìm thấy một tệp có tên `example.txt` trong cùng thư mục, chứa văn bản bạn đã viết qua `fprintf()` và `fputs()`.
 
 ## Sâu hơn
-
 Khái niệm về tệp và hệ thống tệp đã là cơ bản cho các hệ thống máy tính, với việc quản lý chúng là một khía cạnh quan trọng của hệ điều hành. Trong C, việc xử lý tệp được thực hiện thông qua một bộ các hàm thư viện I/O tiêu chuẩn, dựa trên triết lý xử lý tệp như các dòng byte. Sự trừu tượng này cho phép một phương pháp đơn giản và hiệu quả để đọc từ và viết vào tệp, mặc dù nó có thể có vẻ cấp thấp so với các cách tiếp cận hiện đại hơn có sẵn trong các ngôn ngữ cấp cao như Python hay Ruby.
 
 Lịch sử, các hoạt động I/O tệp trong C đã đặt nền móng cho việc thao tác tệp trong nhiều ngôn ngữ lập trình, cung cấp một giao diện gần với hệ điều hành hệ thống quản lý tệp. Điều này không chỉ cung cấp kiểm soát cụ thể về các thuộc tính tệp và hoạt động I/O mà còn đặt ra các rủi ro cho những lập trình viên không cảnh giác, như cần quản lý tài nguyên thủ công (ví dụ, luôn phải đóng các tệp) và các vấn đề về đệm.

@@ -17,9 +17,6 @@ title: "\u641C\u7D22\u548C\u66FF\u6362\u6587\u672C"
 weight: 10
 ---
 
-## What & Why? 什么是搜索替换，以及为什么要这样做？
-搜索并替换文本就是找到字符串中特定的词汇并用其他文字替代。程序员这样做为了编辑代码、处理数据或自动化文本任务。
-
 ## How to: 如何进行
 ```Lua
 local text = "Hello World! Today is a great day."

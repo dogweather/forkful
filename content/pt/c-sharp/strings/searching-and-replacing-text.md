@@ -11,9 +11,6 @@ title: Pesquisando e substituindo texto
 weight: 10
 ---
 
-## O Que é & Por Que?
-Procurar e substituir texto é uma forma de encontrar uma sequência específica de caracteres em uma string e trocá-la por outra. Programadores costumam fazer isso para corrigir erros, atualizar informações ou modificar dados de forma rápida e eficiente.
-
 ## Como Fazer:
 ```C#
 using System;

@@ -11,9 +11,6 @@ title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---
 
-## Was & Warum?
-Das Löschen von Zeichen, die einem Muster entsprechen, bedeutet, gezielt Buchstaben, Zahlen oder Symbole aus Strings zu entfernen, die bestimmten Kriterien genügen. Programmierer verwenden diesen Prozess, um Daten zu bereinigen, Eingaben zu validieren oder Formate zu standardisieren.
-
 ## How to:
 Lassen wir die Worte und kommen direkt zum Code.
 

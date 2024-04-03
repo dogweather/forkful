@@ -11,9 +11,6 @@ title: "Refactorizaci\xF3n"
 weight: 19
 ---
 
-## ¿Qué & Por qué?
-La refactorización es el proceso de ajustar tu código sin cambiar su comportamiento externo. Se trata de limpiar y organizar tu acto para hacer el código más fácil de leer, mantener y extender. También puede ayudar a aplastar errores y mejorar el rendimiento.
-
 ## Cómo hacerlo:
 Digamos que tienes un trozo de código Haskell que se repite más que tu canción favorita. Aquí tienes una rápida mirada a cómo podrías refactorizar eso usando funciones.
 

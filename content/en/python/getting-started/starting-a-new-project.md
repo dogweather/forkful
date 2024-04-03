@@ -12,11 +12,8 @@ title: Starting a new project
 weight: 1
 ---
 
-## What & Why?
-
-Starting a new project in Python is about setting up a structured, maintainable framework from the outset. Programmers do this to ensure that their code is easy to read, debug, and collaborate on, especially as the project and the team working on it grow over time.
-
 ## How to:
+
 
 ### Create a Virtual Environment
 A virtual environment is a self-contained directory that contains all the necessary executables to use the packages that a Python project would need. It is advisable to create a virtual environment for each project to avoid conflicts between project dependencies. Use the `venv` module, which is part of the standard Python library.

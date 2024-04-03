@@ -13,12 +13,7 @@ title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---
 
-## Hva & Hvorfor?
-
-Å konkatere strenger involverer å sammenføye to eller flere strenger ende-til-ende for å danne en ny streng. Programmerere gjør dette for å dynamisk generere tekst, slik som å bygge opp meldinger, stier eller komplekse spørringer, noe som gjør programmer mer interaktive og responsive.
-
 ## Hvordan:
-
 I Go finnes det flere måter å konkatere strenger på. Her er et blikk på noen vanlige metoder med eksempler:
 
 ### Bruke `+` operatoren:
@@ -62,7 +57,6 @@ fmt.Println(path) // path/to/file
 ```
 
 ## Dypdykk
-
 Strengkonkatenering, selv om det ved første øyekast ser ut som en ganske enkel operasjon, berører dypere aspekter av hvordan Go behandler strenger. I Go er strenger uforanderlige; det betyr at hver konkateneringsoperasjon skaper en ny streng. Dette kan føre til ytelsesproblemer når det konkateneres store antall strenger eller når dette gjøres i tette løkker, på grunn av den hyppige allokeringen og kopieringen av minne.
 
 Historisk sett har språk taklet uforanderligheten og effektiviteten ved strengkonkatenering på forskjellige måter, og Gos tilnærming med `strings.Builder` og `strings.Join` gir programmerere verktøy som balanserer brukervennlighet med ytelse. `strings.Builder`-typen, introdusert i Go 1.10, er spesielt bemerkelsesverdig da den gir en effektiv måte å bygge strenger på uten å pådra seg overhead ved flere strengallokeringer. Den gjør dette ved å allokere en buffer som vokser ved behov, der strenger blir lagt til.

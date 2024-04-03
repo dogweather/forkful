@@ -10,9 +10,6 @@ title: Converting a date into a string
 weight: 28
 ---
 
-## What & Why?
-Converting a date to a string means taking a date object and turning it into readable text. Programmers do this to display dates to users or to format them for storage or transmission.
-
 ## How to:
 In Haskell, you use the `formatTime` function from the `Data.Time.Format` module for this job. Let's dive right into some code:
 

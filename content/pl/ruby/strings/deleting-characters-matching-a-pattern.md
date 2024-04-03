@@ -11,9 +11,6 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## What & Why? (Co i Dlaczego?)
-Usuwanie znaków pasujących do wzorca to filtrowanie stringów przez wykrywanie i wyeliminowanie niechcianych sekwencji. Programiści robią to, by oczyścić dane, ujednolicić formaty lub usunąć niebezpieczne lub niepotrzebne elementy.
-
 ## How to: (Jak to zrobić?)
 ```Ruby
 # Usuwanie wszystkich cyfr z tekstu

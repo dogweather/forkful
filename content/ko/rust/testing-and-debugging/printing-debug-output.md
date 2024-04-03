@@ -16,9 +16,6 @@ title: "\uB514\uBC84\uADF8 \uCD9C\uB825\uC744 \uCC0D\uC5B4\uBCF4\uAE30"
 weight: 33
 ---
 
-## What & Why? (무엇과 왜?)
-디버그 출력은 코드가 실제로 어떻게 실행되고 있는지 보여주는 프린트문이다. 프로그래머들은 버그를 찾거나 프로그램의 동작을 이해하기 위해 이를 사용한다.
-
 ## How to: (방법:)
 ```Rust
 fn main() {

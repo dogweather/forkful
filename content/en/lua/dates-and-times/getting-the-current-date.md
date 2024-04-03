@@ -10,12 +10,7 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-
-Retrieving the current date in programming is a crucial task for a multitude of applications, including logging, timestamping events, or scheduling tasks. In Lua, this functionality allows programmers to handle date and time operations seamlessly within their applications, ensuring their software can interact with real-time data effectively.
-
 ## How to:
-
 Lua provides the `os.date` function to get the current date and time. The function can be used without arguments to get a formatted string or with format specifiers to customize the output. Here's how to use it:
 
 ```lua

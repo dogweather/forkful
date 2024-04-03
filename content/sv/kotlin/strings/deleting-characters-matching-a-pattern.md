@@ -11,9 +11,6 @@ title: "Ta bort tecken som matchar ett m\xF6nster"
 weight: 5
 ---
 
-## Vad & Varför?
-Att radera tecken som matchar ett mönster innebär att du filtrerar ut specifika tecken eller teckenföljder från en textsträng. Programmerare gör detta för att sanera data, ta bort oönskat innehåll eller förbereda strängar för vidare bearbetning.
-
 ## Hur man gör:
 I Kotlin kan vi använda reguljära uttryck för att matcha mönster och `replace()`-funktionen för att radera dessa.
 

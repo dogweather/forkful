@@ -10,9 +10,6 @@ title: Debug-Ausgaben drucken
 weight: 33
 ---
 
-## Was & Warum?
-Debugausgaben zu drucken hilft beim Verstehen, was der Code macht und warum er es tut. Programmierer nutzen es, um Fehler zu finden und den Ablauf ihrer Programme nachzuvollziehen.
-
 ## So geht's:
 Ein einfaches Beispiel zum Drucken von Debug-Informationen in Java:
 

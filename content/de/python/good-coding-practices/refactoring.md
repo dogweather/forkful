@@ -12,9 +12,6 @@ title: Refactoring
 weight: 19
 ---
 
-## Was & Warum?
-Refactoring ist der Prozess des Umstrukturierens von bestehendem Computercode – die Änderung der Faktorisierung – ohne dessen externes Verhalten zu verändern. Programmierer tun dies, um den Code aufzuräumen, die Lesbarkeit zu verbessern und ihn einfacher zu warten und zu erweitern, alles ohne neue Funktionen hinzuzufügen.
-
 ## Wie:
 Nehmen wir an, Sie haben einen Codeabschnitt, der die Fläche und den Umfang eines Rechtecks auf Basis seiner Länge und Breite berechnet und ausdruckt. Er erfüllt seinen Zweck, ist aber repetitiv und etwas unübersichtlich.
 

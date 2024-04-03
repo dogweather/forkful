@@ -16,9 +16,6 @@ title: "S\u1EED d\u1EE5ng v\u1ECF t\u01B0\u01A1ng t\xE1c (REPL)"
 weight: 34
 ---
 
-## Cái gì & Tại sao?
-REPL (Read-Eval-Print Loop - Vòng lặp Đọc-Đánh giá-In) là một shell tương tác xử lý đơn lẻ nhập từ người dùng, thực thi mã lệnh và trả về kết quả. Lập trình viên sử dụng nó cho các thử nghiệm nhanh chóng, gỡ lỗi, hoặc học hỏi, vì nó cho phép phản hồi và lặp lại ngay lập tức.
-
 ## Làm thế nào:
 Bắt đầu một REPL trong Java rất đơn giản với công cụ `jshell` được giới thiệu trong Java 9. Dưới đây là cách để bắt đầu một phiên cơ bản:
 

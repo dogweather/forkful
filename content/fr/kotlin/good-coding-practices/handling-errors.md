@@ -12,9 +12,6 @@ title: Gestion des erreurs
 weight: 16
 ---
 
-## Quoi & Pourquoi ?
-La gestion des erreurs est la manière dont votre code traite les problèmes qui surviennent pendant l'exécution — comme gérer un imprévu sans le laisser tomber. Les programmeurs le font pour éviter les plantages et offrir une expérience fluide aux utilisateurs.
-
 ## Comment faire :
 Kotlin fournit `try`, `catch`, `finally` et `throw` pour gérer les erreurs. Voici comment les utiliser :
 

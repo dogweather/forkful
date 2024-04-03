@@ -15,9 +15,6 @@ title: "\u0110\u1ECDc m\u1ED9t t\u1EC7p v\u0103n b\u1EA3n"
 weight: 22
 ---
 
-## Cái gì & Tại sao?
-Đọc một tệp văn bản là lấy dữ liệu từ một tệp chứa văn bản. Lập trình viên làm điều này để tải cấu hình, đọc dữ liệu hoặc nạp các tài nguyên quá cồng kềnh hoặc không phù hợp để mã hóa cứng.
-
 ## Cách thực hiện:
 Hãy đi thẳng vào vấn đề. Dưới đây là cách bạn đọc từ một tệp trong C# sử dụng `System.IO`.
 

@@ -11,9 +11,6 @@ title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---
 
-## Mikä & Miksi?
-Kompleksiluvut, jotka koostuvat reaali- ja imaginaariosasta (kuten 3+4i), ovat vakiovaruste insinööreillä ja fyysikoilla. Ohjelmoijat työskentelevät niiden kanssa simulaatioissa, signaalinkäsittelyssä ja yhtälöiden ratkaisemisessa, jotka eivät toimi pelkästään reaalilukujen kanssa.
-
 ## Miten:
 Ruby tekee kompleksilukujen käsittelystä tuulen. Voit luoda ja manipuloida niitä Complex-luokan avulla:
 

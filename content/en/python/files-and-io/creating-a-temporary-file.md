@@ -10,9 +10,6 @@ title: Creating a temporary file
 weight: 21
 ---
 
-## What & Why?
-Creating a temporary file means making a file that you don't need to stick around once you're done with it. Programmers do this for data that's only needed during the execution of a program, like intermediate results or to avoid hogging memory.
-
 ## How to:
 Python's `tempfile` module is built for this. Check out how it works:
 

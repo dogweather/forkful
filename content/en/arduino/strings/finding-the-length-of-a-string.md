@@ -10,9 +10,6 @@ title: Finding the length of a string
 weight: 7
 ---
 
-## What & Why?
-Finding the length of a string means figuring out how many characters it contains. Programmers do it to validate input, loop through characters, align text, or manage data dynamically.
-
 ## How to:
 ```Arduino
 void setup() {

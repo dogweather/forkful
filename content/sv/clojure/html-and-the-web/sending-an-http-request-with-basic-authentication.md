@@ -11,9 +11,6 @@ title: "Skicka en HTTP-f\xF6rfr\xE5gan med Basic-autentisering"
 weight: 45
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-förfrågan med grundläggande autentisering innebär att man inkluderar användarnamn och lösenord för tillgångskontroll. Programmerare gör detta för att säkerställa att endast behöriga användare kan utföra vissa åtgärder på en server.
-
 ## Hur man gör:
 ```Clojure
 (require '[clj-http.client :as client])

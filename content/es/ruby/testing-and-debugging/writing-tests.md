@@ -12,9 +12,6 @@ title: Escribiendo pruebas
 weight: 36
 ---
 
-## ¿Qué y por qué?
-Probar en Ruby es verificar que tu código se comporte como se espera bajo varias condiciones. Los programistas escriben pruebas para asegurar la corrección, prevenir regresiones y facilitar la refactorización, apuntando a aplicaciones robustas y mantenibles.
-
 ## Cómo hacerlo:
 Ruby viene con una biblioteca integrada llamada `Test::Unit` para escribir pruebas unitarias, encapsulando prácticas de prueba dentro de estructuras sencillas. Sin embargo, la comunidad de Ruby a menudo se inclina hacia bibliotecas de terceros como RSpec y Minitest debido a su expresividad mejorada y flexibilidad.
 

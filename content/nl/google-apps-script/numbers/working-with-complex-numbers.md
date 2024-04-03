@@ -12,9 +12,6 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-Complexe getallen, gerepresenteerd als een combinatie van reële en imaginaire eenheden (bijv. 3 + 4i), zijn fundamenteel in verschillende computationele problemen, vooral in engineering, natuurkunde en toegepaste wiskunde. Leren hoe je deze getallen kunt manipuleren in Google Apps Script stelt programmeurs in staat hun mogelijkheden uit te breiden naar wetenschappelijk rekenen, signaalverwerking en meer.
-
 ## Hoe te:
 Google Apps Script heeft geen ingebouwde ondersteuning voor complexe getallen, wat de implementatie van aangepaste functionaliteit noodzakelijk maakt. Hieronder staat een basisstructuur voor het omgaan met complexe getallen, inclusief optellen, aftrekken en vermenigvuldigen.
 

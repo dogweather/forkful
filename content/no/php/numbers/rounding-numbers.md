@@ -11,9 +11,6 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva & Hvorfor?
-Avrunding av tall betyr å kutte av desimalene til en bestemt nøyaktighet, ofte til hele tall. Programmerere runder av for å forenkle beregninger, forbedre ytelse, eller gjøre utdata brukervennlige.
-
 ## Hvordan:
 PHP tilbyr noen måter å avrunde tall på: `round()`, `ceil()`, og `floor()`. Slik fungerer de:
 

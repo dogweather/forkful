@@ -10,9 +10,6 @@ title: Organizing code into functions
 weight: 18
 ---
 
-## What & Why?
-Organizing code into functions means chunking related operations into reusable blocks. We do it to improve readability and maintainability, reduce duplication, and simplify testing.
-
 ## How to:
 Let's whip up a simple Elixir function to capitalize words:
 

@@ -10,9 +10,6 @@ title: "V\xE4liaikaistiedoston luominen"
 weight: 21
 ---
 
-## What & Why?
-Luodaan väliaikainen tiedosto eli temp-file - mut miksi? Se on tiedosto, jota käytetään väliaikaisesti dataa tallentaessa, ja sitä tarvitaan, koska se minimoi riskin sotkeutua pysyviin tiedostoihin ja auttaa käsittelyssä, kun ensisijainen muisti on niukassa.
-
 ## How to:
 Rustissa väliaikaisten tiedostojen luonti onnistuu `tempfile`-kirjaston avulla. Asennus Cargo.toml-tiedoston kautta:
 

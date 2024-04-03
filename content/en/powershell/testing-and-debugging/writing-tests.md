@@ -10,12 +10,7 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-
-Writing tests in PowerShell involves creating scripts that automatically validate the functionality of your PowerShell code, ensuring it behaves as expected. Programmers do this to catch bugs early, simplify code maintenance, and ensure that code modifications don't inadvertently break existing functionality.
-
 ## How to:
-
 PowerShell does not have a built-in testing framework, but Pester, a popular third-party module, is widely used for writing and running tests. Here's how to get started with Pester for testing your PowerShell functions.
 
 First, install Pester if you haven't already:

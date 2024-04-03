@@ -12,9 +12,6 @@ title: Journalisation
 weight: 17
 ---
 
-## Quoi & Pourquoi ?
-Le logging est en quelque sorte l'équivalent logiciel du journal de bord d'un navire ; c'est un moyen d'enregistrer les événements qui se produisent pendant l'exécution d'une application. Les programmeurs le font pour garder une trace de ces événements pour le débogage, les pistes d'audit ou pour obtenir des informations sur le comportement d'un système en production.
-
 ## Comment faire :
 Clojure s'appuie sur les installations de logging de Java, mais vous pouvez les exploiter de manière plus idiomatique avec Clojure. Voyons comment vous pourriez utiliser `clojure.tools.logging`, qui offre une abstraction simple sur plusieurs frameworks de logging :
 

@@ -14,9 +14,6 @@ title: "Obliczanie daty w przysz\u0142o\u015Bci lub przesz\u0142o\u015Bci"
 weight: 26
 ---
 
-## Co i dlaczego?
-Obliczanie daty w przyszłości lub przeszłości to powszechne zadanie dla programistów zajmujących się planowaniem, przypomnieniami lub jakąkolwiek funkcją zależną od obliczeń daty. Zrozumienie, jak manipulować datami, jest kluczowe dla systemów backendowych, interfejsów użytkownika i analizy danych, szczególnie dla tych, którzy przechodzą na Dart i chcą efektywnie wdrażać logikę czasową.
-
 ## Jak to zrobić:
 Dart zapewnia solidne wsparcie dla manipulacji datami za pomocą klasy `DateTime`. Oto jak możesz obliczyć przyszłe lub przeszłe daty przy użyciu natywnego Darta, bez potrzeby korzystania z bibliotek innych firm.
 

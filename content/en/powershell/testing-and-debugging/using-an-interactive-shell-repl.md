@@ -10,9 +10,6 @@ title: Using an interactive shell (REPL)
 weight: 34
 ---
 
-## What & Why?
-The interactive shell, or Read-Eval-Print Loop (REPL), lets you type PowerShell commands and get immediate feedback. Programmers use it to test code snippets quickly, debug, or learn new commands without writing a full script.
-
 ## How to:
 Launch PowerShell and you're in the REPL. Try the `Get-Date` Cmdlet:
 

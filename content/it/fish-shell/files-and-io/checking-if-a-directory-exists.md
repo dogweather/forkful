@@ -13,9 +13,6 @@ title: Verifica se una directory esiste
 weight: 20
 ---
 
-## Cosa e Perché?
-Verificare se una directory esiste in Fish Shell permette agli script di prendere decisioni basate sulla presenza o assenza di strutture di directory, consentendo compiti come operazioni su file condizionali, registrazione o configurazione dell'ambiente. Questa tecnica è fondamentale per scrivere script robusti che interagiscono con il filesystem in modo prevedibile.
-
 ## Come fare:
 Fish Shell utilizza il comando `test` per verificare tipi di file e caratteristiche, inclusa la verifica se un target è una directory. Ecco uno schema di base per controllare se una directory esiste:
 

@@ -11,10 +11,9 @@ title: Writing tests
 weight: 36
 ---
 
-## What & Why?
-Writing tests in programming involves creating and running scripts that verify the code behaves as expected under various conditions. Programmers do it to ensure quality, prevent regressions, and facilitate safe refactoring, which is crucial for maintaining a healthy, scalable, and bug-free codebase.
-
 ## How to:
+
+
 ### Native PHP – PHPUnit
 A widely-used tool for testing in PHP is PHPUnit. Install it via Composer:
 ```bash

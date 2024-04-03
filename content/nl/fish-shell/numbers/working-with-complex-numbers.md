@@ -12,9 +12,6 @@ title: Werken met complexe getallen
 weight: 14
 ---
 
-## Wat & Waarom?
-Complexe getallen breiden het idee van eendimensionale getallenlijnen uit naar een tweedimensionaal complex vlak. Programmeurs gebruiken ze in velden zoals engineering, natuurkunde en grafische vormgeving voor berekeningen die twee componenten vereisen, zoals signalen of rotaties.
-
 ## Hoe te:
 In Fish behandelen we complexe getallen met behulp van `math` met reële en imaginaire delen. Hier is een startpunt:
 

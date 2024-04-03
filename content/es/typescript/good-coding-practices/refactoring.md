@@ -11,9 +11,6 @@ title: "Refactorizaci\xF3n"
 weight: 19
 ---
 
-## ¿Qué y por qué?
-Refactorización es el proceso de reestructurar código informático existente sin cambiar su comportamiento externo. Los programadores lo hacen para hacer el código más limpio, mantenible y para reducir la complejidad, lo cual facilita su comprensión para alguien que se sumerge de nuevo.
-
 ## Cómo hacerlo:
 Considera una función de TypeScript que ha visto días mejores - está algo desordenada y podría usar un poco de amor y cuidado:
 

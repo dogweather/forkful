@@ -11,9 +11,6 @@ title: "\u041D\u0430\u0434\u0441\u0438\u043B\u0430\u043D\u043D\u044F HTTP-\u0437
 weight: 44
 ---
 
-## What & Why? (Що і Чому?)
-Sending an HTTP request means asking a server for data or sending data to it. Programmers do it to interact with web services, fetch content, or push data.
-
 ## How to: (Як це зробити:)
 ```Python
 import requests

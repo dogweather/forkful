@@ -14,12 +14,7 @@ title: "Interpolering av en str\xE4ng"
 weight: 8
 ---
 
-## Vad & Varför?
-
-Stränginterpolering i Google Apps Script möjliggör dynamisk inbäddning av uttryck inom strängar, vilket underlättar skapandet av mer läsbar och underhållbar kod. Programmerare använder denna teknik för att sömlöst infoga variabler och uttryck i strängar utan den omständliga konkateneringssyntaxen.
-
 ## Hur man gör:
-
 I Google Apps Script uppnås stränginterpolering genom malliteraler. Dessa är strängliteraler som tillåter inbäddade uttryck, betecknade av backticks (\`) istället för de vanliga citattecknen. Så här kan du använda dem:
 
 ```javascript
@@ -56,7 +51,6 @@ multiLineStringExample();
 Dessa exempel illustrerar grundläggande användning, inbäddning av uttryck och skapande av flerlinjesträngar med interpolerade värden.
 
 ## Djupdykning
-
 Malliteraler, inklusive stränginterpolering, introducerades i ECMAScript 2015 (ES6) och antogs därefter i Google Apps Script. Innan detta var programmerare tvungna att förlita sig rent på strängkonkatenering, vilket kunde bli otympligt för komplexa strängar eller när man integrerade många variabelvärden.
 
 ```javascript

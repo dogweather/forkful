@@ -11,9 +11,6 @@ title: "Konwersja ci\u0105gu znak\xF3w na ma\u0142e litery"
 weight: 4
 ---
 
-## Co i dlaczego?
-Konwersja łańcucha znaków (string) do małych liter to proces zmiany wszystkich liter w tekście na ich małe odpowiedniki. Robimy to, aby ujednolicić dane, szczególnie przy porównywaniu tekstów, gdzie wielkość liter nie ma znaczenia.
-
 ## Jak to zrobić:
 ```Javascript
 let greeting = "Witaj Świecie!";

@@ -11,9 +11,6 @@ title: "Zaokr\u0105glanie liczb"
 weight: 13
 ---
 
-## Co i dlaczego?
-Zaokrąglanie liczb polega na dostosowaniu wartości do najbliższej liczby całkowitej lub określonego miejsca dziesiętnego. Programiści zaokrąglają liczby, aby upraszczać dane, poprawiać czytelność lub spełniać pewne wymagania matematyczne podczas obliczeń.
-
 ## Jak to zrobić:
 W PowerShellu masz kilka przydatnych poleceń cmdlet i metod do zaokrąglania:
 

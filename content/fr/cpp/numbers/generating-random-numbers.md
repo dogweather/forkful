@@ -12,12 +12,7 @@ title: "G\xE9n\xE9ration de nombres al\xE9atoires"
 weight: 12
 ---
 
-## Quoi & Pourquoi ?
-
-La génération de nombres aléatoires en programmation consiste à créer des séquences de nombres qui ne présentent aucun ordre ou motif prévisible. Les programmeurs utilisent souvent ces nombres à diverses fins telles que la simulation d'événements imprévisibles, dans les tests et le débogage, et dans les algorithmes de jeux pour garantir l'équité ou l'imprévisibilité.
-
 ## Comment faire :
-
 Pour générer des nombres aléatoires en C++, vous utiliseriez typiquement l'en-tête `<random>`, qui a été introduit dans C++11, offrant une large gamme de facilités pour générer des nombres aléatoires à partir de diverses distributions.
 
 ```C++
@@ -48,7 +43,6 @@ Le résultat pourrait ressembler à cela, mais gardez à l'esprit que chaque ex�
 ```
 
 ## Plongée profonde :
-
 Historiquement, la génération de nombres aléatoires en C++ reposait fortement sur la fonction `rand()` et la fonction de semence `srand()`, trouvées dans l'en-tête `<cstdlib>`. Cependant, cette approche a souvent été critiquée pour son manque d'uniformité et de prévisibilité dans la distribution des nombres générés.
 
 L'introduction de l'en-tête `<random>` dans C++11 a marqué une amélioration significative, offrant un système sophistiqué pour produire des nombres aléatoires. Les installations fournies comprennent une variété de moteurs (comme `std::mt19937` pour Mersenne Twister) et de distributions (comme `std::uniform_int_distribution` pour la distribution uniforme des entiers) qui peuvent être combinés pour répondre aux besoins spécifiques du programmeur, conduisant à un comportement plus prévisible, de meilleures performances et une plus grande flexibilité.

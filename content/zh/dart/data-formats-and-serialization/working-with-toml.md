@@ -22,12 +22,7 @@ title: "\u4F7F\u7528TOML\u5DE5\u4F5C"
 weight: 39
 ---
 
-## 什么 & 为什么?
-
-TOML，或称为Tom's Obvious, Minimal Language（汤姆的明显、简约语言），是一种配置文件格式，由于其清晰的语义而易于阅读。程序员之所以使用它来配置软件应用，是因为它简单易于解析，并且能够最小化混淆或错误。
-
 ## 如何操作:
-
 Dart并不内置支持TOML，但你可以使用第三方包如`toml`来处理TOML文件。首先，将`toml`添加到你的`pubspec.yaml`中：
 
 ```yaml
@@ -36,7 +31,6 @@ dependencies:
 ```
 
 ### 读取TOML
-
 假设你有一个简单的配置文件`config.toml`来读取TOML文件：
 
 ```toml
@@ -69,7 +63,6 @@ void main() async {
 ```
 
 ### 编写TOML
-
 要创建TOML内容，使用`toml`包提供的`TomlBuilder`：
 
 ```dart

@@ -13,9 +13,6 @@ title: Att skriva en textfil
 weight: 24
 ---
 
-## Vad & Varför?
-Att skriva en textfil i Kotlin innebär att skapa en fil och mata in textinnehåll i den, en vanlig uppgift för att lagra data, logga eller konfigurationsinställningar. Programmerare gör detta för att spara och manipulera data utanför det flyktiga minnesutrymmet, vilket säkerställer beständighet över sessioner.
-
 ## Hur man gör:
 Kotlin tillhandahåller ett enkelt tillvägagångssätt för att skriva till filer, genom att dra nytta av standardbiblioteket utan att behöva ytterligare tredjepartsbibliotek. Här är ett enkelt exempel:
 

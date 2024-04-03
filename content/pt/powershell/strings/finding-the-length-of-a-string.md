@@ -11,9 +11,6 @@ title: Descobrindo o comprimento de uma string
 weight: 7
 ---
 
-## O Que & Por Quê?
-Encontrar o comprimento de uma string é descobrir quantos caracteres ela contém. Programadores fazem isso para validar entradas, manipular textos ou simplesmente para ter controle sobre os dados que estão manejando.
-
 ## Como Fazer:
 O PowerShell facilita a vida na hora de saber o tamanho de uma string. Veja só:
 

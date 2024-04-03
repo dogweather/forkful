@@ -14,12 +14,7 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP z podstawowym uwierzytelnieniem"
 weight: 45
 ---
 
-## Co i dlaczego?
-
-Wysyłanie żądania HTTP z podstawową autentykacją polega na dołączeniu nazwy użytkownika i hasła do żądania, w celu weryfikacji tożsamości użytkownika. Programiści używają tego do dostępu do zasobów wymagających uwierzytelnienia, zapewniając bezpieczną komunikację między klientem a serwerem.
-
 ## Jak to zrobić:
-
 W Dart można użyć pakietu `http` do wysyłania żądań HTTP z podstawową autentykacją. Najpierw dodaj pakiet `http` do pliku `pubspec.yaml`:
 
 ```yaml

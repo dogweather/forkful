@@ -15,12 +15,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi JSON"
 weight: 38
 ---
 
-## Cái gì & Tại sao?
-
-Làm việc với JSON có nghĩa là phân tích cú pháp và tạo ra dữ liệu JSON (Notation đối tượng JavaScript) trong các ứng dụng của bạn. Lập trình viên làm điều này bởi vì JSON là một định dạng trao đổi dữ liệu dựa trên văn bản, nhẹ, dễ đọc và viết cho con người, và dễ dàng cho máy móc để phân tích cú pháp và tạo ra.
-
 ## Làm thế nào:
-
 Trong C#, bạn có khả năng sẽ sử dụng không gian tên `System.Text.Json` để xử lý JSON. Giả sử bạn có một class đơn giản:
 
 ```C#
@@ -58,11 +53,9 @@ GamerTag: PlayerOne, HighScore: 9001
 ```
 
 ## Nghiên cứu sâu
-
 JSON đã trở thành định dạng dữ liệu được ưa chuộng từ đầu những năm 2000, thay thế XML do sự đơn giản của nó. Mặc dù `System.Text.Json` hiện là thư viện được ưa chuộng trong C# cho .NET Core và .NET 5+, thư viện `Newtonsoft.Json` đã là tiêu chuẩn de facto trong nhiều năm. `System.Text.Json` tập trung vào hiệu suất cao và cấp phát bộ nhớ thấp, nhưng `Newtonsoft.Json` vẫn có bộ tính năng rộng lớn hơn mà một số ứng dụng có thể yêu cầu.
 
 ## Xem thêm
-
 - Microsoft Docs về `System.Text.Json`: https://docs.microsoft.com/dotnet/standard/serialization/system-text-json-overview
 - Newtonsoft.Json (Json.NET): https://www.newtonsoft.com/json
 - Đặc tả JSON: https://www.json.org/json-en.html

@@ -15,12 +15,7 @@ title: Quotes uit een string verwijderen
 weight: 9
 ---
 
-## Wat & Waarom?
-
-Het verwijderen van aanhalingstekens uit een tekenreeks in Google Apps Script gaat over het elimineren van onnodige aanhalingstekens die mogelijk rond uw tekenreeksgegevens staan, meestal voortkomend uit geanalyseerde JSON-objecten, gebruikersinvoer of gegevensextractie. Programmeurs pakken dit aan om gegevens te reinigen of te standaardiseren voordat ze verder worden verwerkt of opgeslagen, om nauwkeurigheid en consistentie in operaties zoals vergelijkingen, evaluaties en database-invoeren te waarborgen.
-
 ## Hoe:
-
 Google Apps Script wijkt niet ver af van de standaard JavaScript-praktijken als het gaat om het omgaan met tekenreeksen en hun manipulatie. Om aanhalingstekens uit een tekenreeks te verwijderen, kan men de `replace()` methode gebruiken, die het vervangen van delen van de tekenreeks met behulp van reguliere expressies mogelijk maakt. Hier is een snel voorbeeld:
 
 ```javascript
@@ -47,7 +42,6 @@ function removeSingleQuotes() {
 Deze methoden werken goed voor eenvoudige, alledaagse taken van het verwijderen van aanhalingstekens, maar kunnen verfijning vereisen voor meer complexe tekenreeksen of verschillende soorten omsluitende tekens.
 
 ## Diepgaand
-
 De techniek van het verwijderen van aanhalingstekens uit tekenreeksen met behulp van reguliere expressies bestaat al sinds de vroege dagen van het programmeren, en past zich aan naarmate talen zich ontwikkelen. In Google Apps Script biedt het benutten van de robuuste tekenreeksmanipulatiecapaciteiten van JavaScript, inclusief reguliere expressies, een krachtige toolkit voor ontwikkelaars. Het is echter essentieel om de beperkingen en potentiële valkuilen te noteren: voornamelijk, dat deze aanpak aanneemt dat aanhalingstekens alleen aan het begin en einde van de tekenreeks staan. Ingebedde aanhalingstekens of aanhalingstekens die bedoeld zijn als onderdeel van de gegevens van de tekenreeks, kunnen onbedoeld worden verwijderd als ze niet correct worden afgehandeld.
 
 Voor complexere scenario's, zoals geneste aanhalingstekens of selectief verwijderen van aanhalingstekens alleen wanneer ze de tekenreeks omsluiten, kan een meer genuanceerde aanpak of parser gewenst zijn. Bibliotheken of ingebouwde functies in andere talen, zoals de `strip()` methode van Python, bieden deze functionaliteiten kant-en-klaar, waarbij de afweging wordt getoond tussen de eenvoud van Google Apps Script en de rijke, gespecialiseerde functionaliteiten van andere programmeeromgevingen.

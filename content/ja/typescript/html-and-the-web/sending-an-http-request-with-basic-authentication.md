@@ -22,12 +22,7 @@ title: "\u57FA\u672C\u8A8D\u8A3C\u3092\u4F7F\u7528\u3057\u305FHTTP\u30EA\u30AF\u
 weight: 45
 ---
 
-## What & Why? (何となぜ？)
-
-HTTPリクエストにベーシック認証をつけるとは、ユーザー名とパスワードを使ってサーバーに安全にアクセスすること。これをプログラマが行う理由は、保護されたリソースへの安全なアクセスを提供するため。
-
 ## How to: (方法)
-
 ```TypeScript
 import axios from 'axios';
 
@@ -82,7 +77,6 @@ fetchWithBasicAuth('https://api.example.com/secure-data', 'my_username', 'my_pas
 ```
 
 ## Deep Dive (詳細情報)
-
 ベーシック認証はHTTPプロトコルで最も単純な認証の形式。RFC 7617に定義され、初期のウェブから存在。安全でないことが知られ、今はTLS(HTTPS)と併用される。ベーシック認識以外に、OAuthやBearer認証などのより安全な方法もある。
 
 内部で、ユーザー名とパスワードはコロン（:）で連結され、Base64でエンコードされて`Authorization`ヘッダーにセットされる。しかし、Base64は暗号化ではなくエンコード手法なので、セキュリティのためHTTPSが必須。
@@ -90,7 +84,6 @@ fetchWithBasicAuth('https://api.example.com/secure-data', 'my_username', 'my_pas
 TypeScriptでは`axios`のようなライブラリやNode.jsの`http`/`https`モジュールを使って実装可能。上記の例では、最初に`axios`を使ったシンプルな例を紹介。次にノードの組み込みモジュールを使用した処理方法を説明。
 
 ## See Also (関連情報)
-
 - Axios GitHub repository: [https://github.com/axios/axios](https://github.com/axios/axios)
 - HTTP Basic Access Authentication on MDN: [https://developer.mozilla.org/docs/Web/HTTP/Authentication](https://developer.mozilla.org/docs/Web/HTTP/Authentication)
 - RFC 7617, The 'Basic' HTTP Authentication Scheme: [https://tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)

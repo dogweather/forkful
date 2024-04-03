@@ -12,12 +12,7 @@ title: Een string omzetten naar kleine letters
 weight: 4
 ---
 
-## Wat & Waarom?
-
-Het omzetten van strings naar kleine letters is het transformeren van alle alfabetische tekens in een string naar hun kleine lettervorm. Programmeurs zetten strings om naar kleine letters voor consistentie, vergelijking zonder hoofdlettergevoeligheid, en om te voldoen aan systeem- of applicatievereisten.
-
 ## Hoe:
-
 Hier is de eenvoudige manier om een string naar kleine letters om te zetten in Bash:
 
 ```Bash
@@ -49,7 +44,6 @@ make me lower case
 ```
 
 ## Diepgaande Duik
-
 Voor Bash 4.0 werden vaak gebruikte methoden om strings naar kleine letters om te zetten, uitgevoerd met externe hulpprogramma's zoals `tr`, `awk` of `sed`. Elk van deze biedt verschillende manieren om strings te manipuleren, meer dan alleen het wijzigen van de case, maar kan het nodig zijn om een nieuw proces te starten, wat de prestaties beïnvloedt.
 
 De introductie van de `${parameter,,pattern}` syntaxis in Bash 4.0 bood een native functie om strings te transformeren, die sneller is en niet afhankelijk is van externe hulpprogramma's. Er zijn alternatieven binnen Bash zelf:
@@ -61,7 +55,6 @@ De introductie van de `${parameter,,pattern}` syntaxis in Bash 4.0 bood een nati
 Wat betreft de implementatie, `${parameter,,pattern}` verandert niet alleen ASCII-tekens; ze zijn zich bewust van UTF-8 en kunnen niet-Engelse tekens aan, waardoor ze veelzijdig zijn voor internationale toepassingen.
 
 ## Zie Ook
-
 - Bash Parameteruitbreiding: https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
 - `tr` Commando: https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html
 - AWK Programmering: https://www.gnu.org/software/gawk/manual/gawk.html

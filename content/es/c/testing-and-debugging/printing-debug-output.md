@@ -13,12 +13,7 @@ title: "Imprimiendo salida de depuraci\xF3n"
 weight: 33
 ---
 
-## ¿Qué y por qué?
-
-Imprimir mensajes de depuración se trata de generar mensajes registrados temporales e informativos que pueden ayudar a los programadores a entender el flujo y el estado de un programa durante su ejecución. Los programadores hacen esto para identificar y diagnosticar errores de software o comportamientos inesperados en la lógica del programa.
-
 ## Cómo hacerlo:
-
 En C, la forma más común de imprimir mensajes de depuración es utilizando la función `printf` de la biblioteca de E/S estándar. La función `printf` permite una salida formateada al dispositivo de salida estándar, típicamente la pantalla. Aquí hay un ejemplo simple:
 
 ```c
@@ -64,7 +59,6 @@ DEPURACIÓN: ejemplo.c:6: El valor de prueba es 10
 Nota que en este ejemplo, estamos usando `fprintf` para la salida al flujo de error estándar (`stderr`), que a menudo es más apropiado para mensajes de depuración.
 
 ## Profundización
-
 Históricamente, las técnicas de depuración en C han sido manuales y rudimentarias, debido a la filosofía de estar cerca del metal y la edad del lenguaje. Mientras que los lenguajes modernos pueden incluir bibliotecas de depuración sofisticadas o depender en gran medida de las características del Entorno de Desarrollo Integrado (IDE), los programadores de C a menudo recurren a insertar manualmente declaraciones de impresión como las mostradas arriba para rastrear la ejecución de sus programas.
 
 Una cosa contra la que hay que advertir con las impresiones de depuración es su potencial para llenar de desorden la salida y llevar a problemas de rendimiento, especialmente si se dejan sin intención en el código de producción. Por estas razones, usar compilación condicional (p. ej., `#ifdef DEBUG ... #endif`) podría ser un enfoque mejor, permitiendo que las declaraciones de depuración se incluyan o excluyan basándose en banderas de tiempo de compilación.

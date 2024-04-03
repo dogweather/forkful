@@ -10,9 +10,6 @@ title: Calculando la longitud de una cadena
 weight: 7
 ---
 
-## What & Why? (¿Qué y Por Qué?)
-Encontrar la longitud de una cadena significa saber cuántos caracteres contiene. Los programadores lo hacen para manipular texto con precisión, como validar entradas o controlar la salida en pantallas.
-
 ## How to: (Cómo hacerlo:)
 ```Arduino
 String texto = "¡Hola, Arduino!";

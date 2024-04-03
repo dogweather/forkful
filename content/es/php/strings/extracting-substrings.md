@@ -10,12 +10,7 @@ title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---
 
-## ¿Qué es y Por Qué?
-
-Extraer subcadenas significa sacar trozos específicos de una cadena de texto. Programadores lo hacen para analizar datos, validar entradas, o simplemente trabajar con partes relevantes de una cadena.
-
 ## ¿Cómo se hace?
-
 Veamos cómo cortar esa cadena a punta de código:
 
 ```php
@@ -36,7 +31,6 @@ echo $subcadena; // Salida: es chévere, ¿no?
 ```
 
 ## Inmersión Profunda
-
 Hace años, con PHP más primitivo, cortar cadenas era un rollo. Hoy, gracias a funciones como `substr()`, la vida es más fácil. Podrías usar `mb_substr()` si te metes con UTF-8, porque otras funciones se lían con caractéres multibyte. Si quieres algo más específico, `preg_match()` y expresiones regulares son tus amigotes, pero eso ya es meterse en honduras.
 
 Alternativas como `strpos()` y `strstr()` están disponibles para tareas más sencillas, como encontrar la posición de una subcadena o extraer todo después de un caracter específico. Recuerda, `substr()` no falla si usas índices negativos, pero otras funciones pueden hacer pucheros.
@@ -44,7 +38,6 @@ Alternativas como `strpos()` y `strstr()` están disponibles para tareas más se
 La implementación de estas funciones se basa en la idea de tratar cadenas como arrays de caracteres, permitiéndote acceder a cada elemento con facilidad. Este acceso directo es lo que hace tan versátil a PHP al manejar texto.
 
 ## Vea También
-
 - La documentación oficial de PHP sobre `substr()`: https://www.php.net/manual/es/function.substr.php
 - Un paseo por las funciones de manejo de cadenas de PHP: https://www.php.net/manual/es/ref.strings.php
 - Una guía para entender las expresiones regulares en PHP: https://www.php.net/manual/es/book.pcre.php

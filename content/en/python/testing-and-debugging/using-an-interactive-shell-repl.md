@@ -10,9 +10,6 @@ title: Using an interactive shell (REPL)
 weight: 34
 ---
 
-## What & Why?
-A REPL, or Read-Eval-Print Loop, is a programming environment that takes single user inputs, executes them, and returns the result to the user. Programmers use it for quick tests, learning, debugging, or doing calculations on-the-fly. 
-
 ## How to:
 Jump right into Python's REPL by typing `python` in your command line. Once there, test out simple operations or multi-line code:
 

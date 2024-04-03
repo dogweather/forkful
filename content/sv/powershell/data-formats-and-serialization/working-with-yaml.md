@@ -13,9 +13,6 @@ title: Att Arbeta med YAML
 weight: 41
 ---
 
-## Vad & Varför?
-YAML, eller YAML Ain't Markup Language, är ett människoläsbart dataserieringsspråk. Programmerare använder det ofta för konfigurationsfiler och dataöverföring mellan språk. Dess enkelhet och läsbarhet gör det särskilt populärt för uppgifter som involverar att sätta upp miljöer, applikationer eller tjänster där konfigurationer är avgörande och bör vara lättförståeliga och redigerbara.
-
 ## Hur:
 PowerShell kommer som standard inte med en inbyggd cmdlet för att tolka YAML, men det fungerar sömlöst med YAML när du använder `powershell-yaml`-modulen eller konverterar YAML till ett PowerShell-objekt med `ConvertFrom-Json` i kombination med ett verktyg som `yq`.
 

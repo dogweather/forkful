@@ -12,12 +12,7 @@ title: Gebruik van associatieve arrays
 weight: 15
 ---
 
-## Wat & Waarom?
-
-Associatieve arrays, of woordenboeken in C#, laten je paren van sleutels en waarden opslaan en beheren. Ze zijn je beste keuze wanneer je snel waarden moet ophalen op basis van een unieke identificator, waardoor gegevensbeheer in complexe applicaties een fluitje van een cent wordt.
-
 ## Hoe te:
-
 In C# werk je met associatieve arrays door gebruik te maken van de `Dictionary<TKey, TValue>` klasse. Hier is een snel voorbeeld om je op weg te helpen:
 
 ```C#
@@ -63,7 +58,6 @@ Appels: 7
 Dit voorbeeld toont het creëren van een woordenboek, toevoegen, toegang krijgen, bijwerken, en elementen verwijderen, en eroverheen itereren.
 
 ## Diepere Duik
-
 Het concept van associatieve arrays gaat terug op hun gebruik in scripttalen zoals Perl en PHP, waar ze flexibiliteit bieden in het beheer van gegevenscollecties. In C# is `Dictionary<TKey, TValue>` de facto implementatie, geïntroduceerd in .NET Framework 2.0. Het slaat gegevens op in een hashtable, wat zorgt voor efficiënte zoekopdrachten, toevoegingen, en verwijderingen.
 
 Het is echter de moeite waard om op te merken dat, hoewel woordenboeken ongelooflijk veelzijdig zijn, ze niet altijd je beste optie kunnen zijn. Voor het onderhouden van geordende collecties, kun je kijken naar `SortedDictionary<TKey, TValue>` of `SortedList<TKey, TValue>`, die gesorteerde volgorde bieden ten koste van langzamere invoeg- en verwijderingsoperaties. Voor scenario's die draadveiligheid vereisen, voegt `ConcurrentDictionary<TKey, TValue>` overhead toe maar verzekert veilige toegang vanuit meerdere threads zonder handmatige vergrendeling.

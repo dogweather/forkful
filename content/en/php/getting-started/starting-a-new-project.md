@@ -11,9 +11,6 @@ title: Starting a new project
 weight: 1
 ---
 
-## What & Why?
-Kicking off a new PHP project means setting up a foundation to build your web app or script. We do it to start fresh, structure our ideas into code, and solve new problems.
-
 ## How to:
 Kickstart your project by choosing a structure. Composer's your friend here. Run this:
 

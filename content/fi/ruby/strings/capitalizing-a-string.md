@@ -14,9 +14,6 @@ title: Merkkijonon alkukirjaimet isoiksi
 weight: 2
 ---
 
-## Mikä & Miksi?
-Merkkijonon alkukirjaimen muuttaminen isoksi tarkoittaa yleensä ensimmäisen merkin muuttamista isoksi kirjaimeksi ja loput pieniksi kirjaimiksi. Joskus se voi kuitenkin tarkoittaa pelkästään sen varmistamista, että ensimmäinen merkki on iso kirjain, jättäen loput merkkijonosta muuttumattomiksi. Rehellisesti sanottuna minun mielestäni se on hieman epämääräinen termi.
-
 ## Miten:
 Ruby tarjoaa [suoraviivaisia menetelmiä merkkijonojen käsittelyyn](https://docs.ruby-lang.org/en/3.3/String.html), mukaan lukien alkukirjaimen suurentaminen:
 

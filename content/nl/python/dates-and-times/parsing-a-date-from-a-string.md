@@ -12,9 +12,6 @@ title: Een datum uit een string parsen
 weight: 30
 ---
 
-## Wat & Waarom?
-Een datum parsen vanuit een string betekent het omzetten van tekst naar een datumobject. Dit doen we omdat het gemakkelijker is om met data te werken, verschillen te berekenen of ze te formatteren wanneer ze niet vastzitten als simpele tekst.
-
 ## Hoe:
 De `datetime` module van Python is je beste vriend voor het parsen van data. Hier is een snelle gids:
 

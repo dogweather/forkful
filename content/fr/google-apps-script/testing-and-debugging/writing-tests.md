@@ -14,12 +14,7 @@ title: "R\xE9daction de tests"
 weight: 36
 ---
 
-## Quoi & Pourquoi ?
-
-Écrire des tests dans Google Apps Script (GAS) consiste à créer des scripts automatisés pour vérifier le comportement de vos codes, en s'assurant qu'ils fonctionnent comme prévu sous différentes conditions. Les programmeurs le font pour détecter les bugs tôt, améliorer la qualité du code et faciliter les mises à jour et la maintenance.
-
 ## Comment faire :
-
 Bien que Google Apps Script n'ait pas de cadre de test intégré comme certains autres environnements de programmation, vous pouvez toujours écrire et exécuter des tests en utilisant des fonctions GAS simples ou en intégrant des bibliothèques de tests externes telles que `QUnit`. Voici un exemple de base utilisant une simple fonction GAS pour tester une autre fonction de votre script :
 
 ```javascript
@@ -57,7 +52,6 @@ QUnit.test("Tester la fonction add", function (assert) {
 Pour voir les résultats, ouvrez le fichier HTML dans l'éditeur de script GAS ou déployez-le en tant qu'application web.
 
 ## Plongée en profondeur
-
 Historiquement, les tests dans Google Apps Script ont été quelque peu négligés, probablement en raison des origines de la plateforme et des cas d'utilisation principaux qui se concentrent sur des tâches d'automatisation rapides et à petite échelle plutôt que sur de grandes applications. En tant que tel, GAS n'offre pas les mêmes cadres et outils de test robustes que l'on trouve dans des environnements de programmation plus traditionnels. Cependant, la communauté s'est adaptée en incorporant des bibliothèques open-source et en utilisant de manière créative les outils existants de Google.
 
 Utiliser des bibliothèques comme QUnit représente un grand pas en avant mais vient avec son propre ensemble de défis, tels que la mise en place d'un environnement de test adapté et l'apprentissage d'une syntaxe supplémentaire. Cependant, pour ceux qui sont investis dans la construction d'applications plus complexes et fiables avec GAS, l'effort en vaut la peine.

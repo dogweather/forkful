@@ -8,11 +8,6 @@ title: Sammenlikning av to datoer
 weight: 27
 ---
 
-## What & Why?
-"## Hva & Hvorfor?"
-
-Å sammenligne to datoer betyr å sjekke om de er like, eller finne ut hvilken som kommer først. Programmere trenger å gjøre dette for å håndtere tidsfrister, tidslinjer, og dato-styrt logikk i applikasjoner.
-
 ## How to:
 "## Slik gjør du:"
 

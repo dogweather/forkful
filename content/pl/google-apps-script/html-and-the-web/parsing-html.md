@@ -13,9 +13,6 @@ title: "Analiza Sk\u0142adniowa HTML"
 weight: 43
 ---
 
-## Co i dlaczego?
-Parsowanie HTML w Google Apps Script polega na ekstrakcji danych z treści HTML, co jest szczególnie przydatne podczas interakcji ze stronami internetowymi lub źródłami danych opartymi na sieci. Programiści robią to, aby automatyzować zbieranie danych, manipulować zawartością sieciową lub integrować funkcjonalności sieciowe z aplikacjami Google, takimi jak Arkusze i Dokumenty.
-
 ## Jak to zrobić:
 Google Apps Script nie posiada wbudowanej metody do parsowania HTML. Można jednak wykorzystać usługę `UrlFetchApp` do pobierania zawartości HTML, a następnie użyć metod JavaScript lub regex (wyrażeń regularnych) do parsowania. Poniżej znajduje się podstawowy przykład, jak pobrać i zanalizować tag tytułu ze strony internetowej.
 

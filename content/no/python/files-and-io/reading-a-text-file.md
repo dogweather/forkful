@@ -11,9 +11,6 @@ title: Lese en tekstfil
 weight: 22
 ---
 
-## Hva & Hvorfor?
-Å lese en tekstfil i Python betyr å hente tekstdata fra en fil på disken din. Programmerere gjør dette for å manipulere data, hente innstillinger, eller behandle lagret informasjon.
-
 ## Slik gjør du:
 For å lese en enkel tekstfil, bruk `open()` funksjonen sammen med `read()` metoden.
 

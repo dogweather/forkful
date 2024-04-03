@@ -13,12 +13,7 @@ title: Att arbeta med komplexa tal
 weight: 14
 ---
 
-## Vad & Varför?
-
-Att arbeta med komplexa tal innebär att utföra matematiska operationer med tal som har både en reell del och en imaginär del. Programmerare använder ofta komplexa tal inom områden såsom ingenjörsvetenskap, fysik, och överallt där man behöver lösa ekvationer som inte är möjliga med enbart reella tal.
-
 ## Hur:
-
 I Visual Basic for Applications (VBA) kan hanteringen av komplexa tal vara något mindre rakt på sak jämfört med språk med inbyggt stöd för dem. Dock kan du hantera komplexa operationer genom att skapa funktioner eller använda befintliga biblioteksfunktioner. Låt oss utforska ett grundläggande exempel på addition, subtraktion, multiplikation och division av komplexa tal:
 
 ```vb
@@ -48,7 +43,6 @@ End Sub
 Medan detta demonstrerar addition, kan liknande tillvägagångssätt anpassas för subtraktion, multiplikation och division. För komplexa operationer bortom grundläggande aritmetik kan det vara värt att utforska externa bibliotek eller integrera andra lösningar som mer grundligt stödjer operationer med komplexa tal.
 
 ## Djupdykning:
-
 VBA inkluderar inte inbyggt stöd för komplexa tal, ett område där det hamnar efter språk som Python, som har en klass för komplexa tal (`complex`), eller C++ med sitt Standard Template Library (`std::complex`). Historiskt sett är behovet av att direkt manipulera komplexa tal i VBA relativt sällsynt, eftersom det ofta används för automatisering, hantera Office-applikationer och uppgifter som traditionellt sett inte kräver komplexa matematiska beräkningar. När VBA utformades och utvecklades var dess användningsområden främst inriktade på affärsapplikationer snarare än vetenskaplig beräkning, vilket kan förklara denna utelämnande.
 
 För uppgifter som kräver omfattande manipulering av komplexa tal kan programmerare finna det fördelaktigt att använda ett mer matematiskt orienterat språk. Dock, för de som är engagerade i eller begränsade av användningen av VBA, är skriva anpassade funktioner (som illustrerat) eller integrera med programvara som har dessa kapaciteter (såsom MATLAB eller till viss del Excel själv) genomförbara vägar framåt. Trots dess begränsningar, kan kreativa lösningar och externa integrationer utöka VBAs användbarhet till domäner den ursprungligen inte var designad för, inklusive att arbeta med komplexa tal.

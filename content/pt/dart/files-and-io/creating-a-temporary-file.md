@@ -14,9 +14,6 @@ title: "Criando um arquivo tempor\xE1rio"
 weight: 21
 ---
 
-## O Que & Por Quê?
-Criar um arquivo temporário em Dart envolve gerar um arquivo destinado ao uso de curto prazo, principalmente para cenários como cache de dados, armazenamento temporário para processamento de arquivos ou retenção de informações que são sensíveis demais para serem mantidas por muito tempo. Os programadores fazem isso para gerenciar dados que não precisam de armazenamento permanente, aumentando assim o desempenho e mantendo a higiene dos dados.
-
 ## Como:
 A biblioteca `dart:io` do Dart facilita a criação de arquivos temporários por meio da classe `Directory`. Aqui está uma maneira direta de criar um arquivo temporário e escrever algum conteúdo nele:
 
@@ -40,7 +37,6 @@ Future<void> main() async {
 ```
 
 ### Usando uma Biblioteca de Terceiros: `path_provider`
-
 Para aplicações (especialmente aplicativos mobile com Flutter), você pode querer criar arquivos temporários de uma maneira mais unificada e gerenciável. O pacote `path_provider` pode ajudá-lo a encontrar o diretório temporário correto em diferentes plataformas (iOS, Android, etc.).
 
 Primeiro, adicione `path_provider` ao seu `pubspec.yaml` em dependências:

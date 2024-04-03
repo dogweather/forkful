@@ -10,12 +10,7 @@ title: Using regular expressions
 weight: 11
 ---
 
-## What & Why?
-
-Regular expressions (regex) in Java allow you to define specific patterns to search, manipulate, or validate strings in your code. Programmers use them for tasks like parsing log files, validating user input, or searching for specific patterns within text, enabling sophisticated string processing with minimal effort.
-
 ## How to:
-
 Java's built-in support for regex is primarily through the `Pattern` and `Matcher` classes in the `java.util.regex` package. Here’s a simple example to find and print all occurrences of a word in a string, case insensitive:
 
 ```java

@@ -14,14 +14,10 @@ title: Eine Textdatei schreiben
 weight: 24
 ---
 
-## Was & Warum?
-
-Das Schreiben einer Textdatei in Clojure umfasst das Erstellen oder Modifizieren von Dateien, um Daten außerhalb Ihrer Anwendung zu speichern, was Persistenz, Konfiguration, Protokollierung oder interprozessuale Kommunikation ermöglicht. Entwickler führen diese Aufgabe durch, um Zustände der Anwendung, Konfigurationen zu externalisieren oder Informationen zwischen verschiedenen Teilen eines Programms oder unterschiedlichen Programmen zu teilen.
-
 ## Wie geht das:
 
-### Text mithilfe der integrierten Funktionen von Clojure in eine Datei schreiben
 
+### Text mithilfe der integrierten Funktionen von Clojure in eine Datei schreiben
 Die `spit`-Funktion ist der einfachste Weg, um Text in eine Datei in Clojure zu schreiben. Sie nimmt zwei Argumente entgegen: den Dateipfad und den zu schreibenden String. Wenn die Datei nicht existiert, wird `spit` sie erstellen. Tut sie das, wird `spit` sie überschreiben.
 
 ```clojure
@@ -42,7 +38,6 @@ Lass uns diese neue Zeile hinzufügen.
 ```
 
 ### Verwendung von Drittanbieterbibliotheken
-
 Obwohl die integrierten Funktionen von Clojure oft ausreichen, hat die Community robuste Bibliotheken für komplexere oder spezifischere Aufgaben entwickelt. Für die Datei-E/A ist eine beliebte Bibliothek `clojure.java.io`, die einen eher Java-ähnlichen Ansatz für die Dateibehandlung bietet.
 
 Um `clojure.java.io` für das Schreiben in eine Datei zu verwenden, müssen Sie es zunächst importieren:

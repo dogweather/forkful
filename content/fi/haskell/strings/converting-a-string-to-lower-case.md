@@ -11,9 +11,6 @@ title: Merkkijonon muuntaminen pieniksi kirjaimiksi
 weight: 4
 ---
 
-## What & Why?
-Merkkijonon muuntaminen pieniksi kirjaimiksi tarkoittaa sen kirjainsarjan konvertoimista vastaaviin pieniin kirjaimiin. Tämä on hyödyllistä, kun halutaan vertailla sanoja riippumatta alkuperäisestä kirjoitusasuista tai tehdä tekstihaku herkäksi kirjainkoosta.
-
 ## How to:
 Haskellissa saat merkkijonon muutettua pieniksi kirjaimiksi käyttämällä `Data.Char` moduulin `toLower` funktiota yhdessä listankäsittelyn kanssa. Tässä on miten se tehdään:
 

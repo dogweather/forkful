@@ -13,12 +13,7 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mitä ja Miksi?
-
-YAML, lyhennys sanoista "YAML Ain't Markup Language", on ihmisen luettavissa oleva datan serialisointistandardi, jota käytetään usein asetustiedostoissa sekä datan vaihdossa eri kielten välillä. Ohjelmoijat suosivat YAMLia sen yksinkertaisuuden ja luettavuuden vuoksi, mikä tekee siitä ensisijaisen valinnan asetuksille, monipuolisille sovelluskonfiguraatioille tai sisällölle, jota ei-ohjelmoijien tulisi voida muokata.
-
 ## Miten:
-
 Lualla ei ole sisäänrakennettua tukea YAMLille, mutta voit työskennellä YAML-tiedostojen kanssa käyttämällä kolmannen osapuolen kirjastoja, kuten `lyaml`. Tämä kirjasto mahdollistaa YAML-datan koodaamisen ja dekoodaamisen Lualla. Ensimmäiseksi sinun täytyy asentaa `lyaml` LuaRocksin, Luann paketinhallintajärjestelmän, kautta:
 
 ```bash
@@ -26,7 +21,6 @@ luarocks install lyaml
 ```
 
 ### YAML:n dekoodaus:
-
 Oletetaan, että sinulla on seuraava YAML-sisältö tiedostossa nimeltä `config.yaml`:
 
 ```yaml
@@ -61,7 +55,6 @@ password: pass
 ```
 
 ### YAML:n koodaus:
-
 Lua-taulukoiden koodaamiseksi YAML-muotoon käytät `lyaml`-kirjaston tarjoamaa `dump`-funktiota. Oletetaan, että haluat luoda YAML-esityksen seuraavasta Lua-taulukosta:
 
 ```lua

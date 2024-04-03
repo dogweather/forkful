@@ -10,9 +10,6 @@ title: "Numerojen py\xF6rist\xE4minen"
 weight: 13
 ---
 
-## Mikä & Miksi?
-Numeroiden pyöristäminen tarkoittaa numeron karsimista tiettyyn tarkkuuteen. Ohjelmoijat tekevät näin hallitakseen numeerista tulostetta luettavuuden, näyttötarkoitusten vuoksi tai kun tietty tarkkuus vaaditaan operaatioissa, jotka tuottavat liukulukutuloksia.
-
 ## Kuinka:
 TypeScriptissä pyöristäminen voidaan tehdä käyttäen useita menetelmiä. Tässä pikakatsaus:
 

@@ -12,12 +12,7 @@ title: Bruke associative tabeller
 weight: 15
 ---
 
-## Hva & Hvorfor?
-
-Assosiative tabeller i PHP er som superladde lister der hvert element kan nås ved hjelp av en menneskeleselig nøkkel i stedet for bare tall. Programmerere bruker dem til å lagre og manipulere data mer intuitivt, noe som gjør koden lettere å lese og mer vedlikeholdbar.
-
 ## Hvordan:
-
 I PHP er oppretting og bruk av assosiative tabeller enkelt. Her er en rask oversikt:
 
 ```PHP
@@ -63,7 +58,6 @@ foreach ($person as $key => $value) {
 Merk hvordan nøkler kan være hvilken som helst streng, noe som tillater deg å få tilgang til elementer ved hjelp av disse nøklene i stedet for numeriske indekser, som kan være mindre meningsfulle og vanskeligere å huske.
 
 ## Dypdykk
-
 Assosiative tabeller i PHP implementeres internt ved hjelp av hashtabeller som gir veldig rask tilgang til elementer etter nøkkel, noe som gjør dem svært effektive for mange oppgaver. Denne effektiviteten, kombinert med deres brukervennlighet, gjør assosiative tabeller til en hjørnestein i PHP-programmering.
 
 Historisk sett har PHPs tabeller (både indekserte og assosiative) vært utrolig fleksible, noe som har gjort det mulig for dem å fungere som lister, stabler, køer og mer. Imidlertid kan denne fleksibiliteten noen ganger føre til mindre effektiv kode hvis den ikke brukes nøye.

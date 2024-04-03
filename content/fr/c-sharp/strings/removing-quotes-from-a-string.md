@@ -12,9 +12,6 @@ title: "Retirer les guillemets d'une cha\xEEne"
 weight: 9
 ---
 
-## Quoi et pourquoi ?
-Supprimer les guillemets d'une chaîne en C# signifie que vous retirez ces caractères de guillemets doubles (`"`) ou simples (`'`) qui entourent votre texte. Les programmeurs font cela pour nettoyer les données, les préparer pour l'entrée dans une base de données, ou rendre les chaînes sûres pour un traitement ultérieur afin que les choses ne tournent pas mal lorsqu'un guillemet errant apparaît.
-
 ## Comment faire :
 ```csharp
 string withQuotes = "\"Bonjour, le monde !\"";

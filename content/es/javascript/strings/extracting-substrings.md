@@ -10,12 +10,7 @@ title: "Extracci\xF3n de subcadenas"
 weight: 6
 ---
 
-## Qué y Por qué?
-
-Extraer subcadenas es tomar trozos específicos de una cadena de texto. Los programadores lo hacen para analizar y manipular datos, como mostrar solo un nombre de usuario de una dirección de correo electrónico o obtener valores de una URL.
-
 ## Cómo hacerlo:
-
 Javascript nos da algunas funciones para conseguirlo. Aquí van ejemplos con `slice()`, `substring()` y `substr()` (aunque `substr()` está en desuso, es útil conocerlo).
 
 ```Javascript
@@ -34,11 +29,9 @@ console.log(texto.substr(4, 3)); // "Mun"
 Nota que `slice()` puede tomar índices negativos, pero `substring()` no puede.
 
 ## Profundización
-
 Antes de ES6, `substr()` era bastante común, aunque no parte del estándar ECMAScript. Fue reemplazado por `slice()` que ofrece más flexibilidad. Al manejar datos, especialmente donde el rendimiento es clave, saber qué función usar es esencial. Por ejemplo, `slice()` funciona bien con strings y arrays, mientras que `substring()` es exclusivo para strings. La implementación interna de estos métodos varía entre navegadores, pero todos buscan optimizar el rendimiento al manipular cadenas de texto.
 
 ## Ver También
-
 Para más detalles sobre cómo trabajar con strings en Javascript, visita:
 
 - MDN Web Docs sobre `slice()`: [MDN slice()](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/slice)

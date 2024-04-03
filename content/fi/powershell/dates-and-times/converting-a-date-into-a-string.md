@@ -10,9 +10,6 @@ title: "P\xE4iv\xE4m\xE4\xE4r\xE4n muuntaminen merkkijonoksi"
 weight: 28
 ---
 
-## What & Why? (Mitä & Miksi?)
-Muunnetaan päivämäärä merkkijonoksi. Se puree tiedot ihmisen luettavaan muotoon tai valmistelee ne tallennusta varten. Tiedon esittäminen tietyssä muodossa on tärkeää raporteissa, lokitiedostoissa ja käyttöliittymissä.
-
 ## How to: (Kuinka Tehdä:)
 PowerShellissa päivämäärää merkkijonoksi muuttaminen käyttää `Get-Date` cmdletiä ja sen `-Format` parametria.
 

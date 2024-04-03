@@ -10,9 +10,6 @@ title: "\xC5 jobbe med XML"
 weight: 40
 ---
 
-## Hva og hvorfor?
-XML, forkortet for eXtensible Markup Language, er som en ordrik fetter av JSON. Du vil støte på XML når du håndterer eldre systemer, bedriftsprogramvare, eller APIer som hoppet over JSON-toget. Det er essensielt for datautveksling der XML holder sin posisjon.
-
 ## Hvordan:
 I Rust kan du håndtere XML med crates som `xml-rs`. Installer ved å legge til `xml-rs = "0.8"` i `Cargo.toml`. Her er hvordan du parser en enkel XML:
 

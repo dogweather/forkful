@@ -11,9 +11,6 @@ title: Parsing a date from a string
 weight: 30
 ---
 
-## What & Why?
-Parsing a date from a string in Elixir involves converting text representations of dates and times into Elixir's native date structures, allowing for more flexible manipulation, comparison, and formatting of date and time values. Programmers perform this task to handle user input, process data from external sources, or interact with APIs that communicate dates and times as strings.
-
 ## How to:
 Elixir's standard library, combined with the power of the Erlang `:calendar` module, provides basic support for parsing dates. For more complex needs, the `Timex` library is a popular choice, offering extensive features for working with dates, times, and timezones.
 

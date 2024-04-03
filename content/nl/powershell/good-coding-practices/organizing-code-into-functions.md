@@ -12,9 +12,6 @@ title: Code organiseren in functies
 weight: 18
 ---
 
-## Wat & Waarom?
-Code organiseren in functies gaat over het verpakken van codeblokken die specifieke taken uitvoeren en deze een naam geven. Dit wordt gedaan om code herbruikbaar, leesbaar en onderhoudbaar te maken. In plaats van dezelfde code opnieuw te schrijven, roep je een functie aan. Problemen oplossen of upgraden? Pas de functie aan zonder door stapels scripts te hoeven spitten.
-
 ## Hoe te:
 Laten we een functie schrijven om de som van twee getallen te berekenen. Eenvoudig, maar het illustreert het punt.
 

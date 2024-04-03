@@ -12,12 +12,7 @@ title: Substrings extraheren
 weight: 6
 ---
 
-## Wat & Waarom?
-
-Het extraheren van substrings betekent het uithalen van een specifiek deel van een string – een reeks tekens binnen een grotere string. Programmeurs snijden en hakken strings om invoer te valideren, gegevens te parsen, of simpelweg om alleen de relevante delen aan gebruikers te tonen.
-
 ## Hoe te:
-
 Het extraheren van een substring in Java is eenvoudig met behulp van de methode `substring`. Hier is hoe je dat doet:
 
 ```java
@@ -39,13 +34,11 @@ public class SubstringExample {
 **Onthoud**: In Java begint de indexering van strings bij 0.
 
 ## Diepere Duik
-
 De methode `substring` bestaat al sinds de vroege dagen van Java en biedt een eenvoudige manier om delen van een string te krijgen. In oudere versies van Java zou `substring` de oorspronkelijke karakterarray delen, wat kon leiden tot geheugenlekken als de oorspronkelijke string groot was en de substring lange tijd werd bewaard. Sinds Java 7 update 6 creëert `substring` een nieuwe string, zodat de oude kan worden opgehaald voor garbage collection als deze niet elders wordt gebruikt.
 
 Ook, voordat je naar `substring` grijpt, overweeg of je `split`, `replace`, of regex-hulpprogramma's kunt gebruiken voor meer complexe scenario's. Intern gebruikt `substring` in Java methoden van de `String`-klasse die arrays kopiëren - efficiënt, maar niet iets waar je directe controle over hebt.
 
 ## Zie Ook
-
 - Voor een volledig beeld van wat je met strings in Java kunt doen, neem een kijkje naar de documentatie van de `String` klasse: [String (Java SE 15 & JDK 15)](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html)
 - Duik in meer complexe stringmanipulatie? De klassen `Pattern` en `Matcher` zijn je vrienden: [Pattern (Java SE 15 & JDK 15)](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/util/regex/Pattern.html)
 - Een handleiding over het gebruik van reguliere expressies in Java: [Reguliere Expressies](https://docs.oracle.com/javase/tutorial/essential/regex/)

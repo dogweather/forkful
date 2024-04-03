@@ -10,9 +10,6 @@ title: "Sammensl\xE5ing av strenger"
 weight: 3
 ---
 
-## Hva & Hvorfor?
-I programmering er det å sette sammen strenger, kalt konkatenering, rett og slett å smelte sammen tekster. Vi gjør det for å bygge opp dynamiske meldinger, lage filstier, eller behandle brukerinput.
-
 ## Hvordan:
 ```Clojure
 ;; Ved bruk av str funksjonen

@@ -11,9 +11,6 @@ title: Organizacja kodu w funkcje
 weight: 18
 ---
 
-## Co i dlaczego?
-Podział kodu na funkcje oznacza, że rozdzielamy nasz kod na mniejsze, wielokrotnego użytku części. Robimy to, aby unikać powtórzeń, uczynić nasz kod czytelnym oraz uprościć debugowanie i testowanie. Dobrze zorganizowane funkcje mogą być jak posiadanie pudełka starannie oznakowanych narzędzi, gotowych do użytku i podzielenia się nimi.
-
 ## Jak to zrobić:
 Weźmy za przykład wspólne zadanie: obliczanie pola koła. Zamiast pisać ten sam wzór za każdym razem, umieszczamy go w funkcji.
 

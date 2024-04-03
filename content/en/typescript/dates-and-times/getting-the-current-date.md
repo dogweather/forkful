@@ -10,9 +10,6 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-Getting the current date in TypeScript, a language built on JavaScript, allows you to access and manipulate the current date and time information. Programmers often need this functionality for creating timestamps, scheduling, and other time-sensitive features in their applications.
-
 ## How to:
 In TypeScript, you can use the `Date` object to get the current date and time. Here’s how you can do it:
 

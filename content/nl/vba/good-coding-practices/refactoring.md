@@ -13,12 +13,7 @@ title: Refactoring
 weight: 19
 ---
 
-## Wat & Waarom?
-
-Refactoring in programmeren houdt in dat je de structuur van code wijzigt zonder het gedrag ervan te veranderen, om aspecten zoals leesbaarheid, onderhoudbaarheid of prestaties te verbeteren. Programmeurs refactoren om code efficiënter te maken, gemakkelijker te begrijpen, in de toekomst gemakkelijker te wijzigen en de kans op bugs te verkleinen.
-
 ## Hoe:
-
 Beschouw een basisvoorbeeld in Visual Basic for Applications (VBA) waar we een subroutine hebben die de details van een werknemer afdrukt. Aanvankelijk is de code rommelig, moeilijk te onderhouden of uit te breiden.
 
 ```vb
@@ -79,7 +74,6 @@ End Sub
 Deze stappen transformeren rommelige code in modulaire, gestructureerde code, wat de leesbaarheid en onderhoudbaarheid aanzienlijk verbetert.
 
 ## Diepgaande duik
-
 Het concept van refactoring is zo oud als programmeren zelf, maar het was Martin Fowler's boek "Refactoring: Improving the Design of Existing Code" dat het in de mainstream bracht, waarbij het belang ervan in het softwareontwikkelingsproces werd benadrukt. In Visual Basic for Applications kan refactoring enigszins uitdagender zijn vanwege het ontbreken aan ingebouwde tools die in modernere geïntegreerde ontwikkelomgevingen (IDE's) worden gevonden en die geautomatiseerde refactoring ondersteunen.
 
 Dit vermindert echter niet het belang ervan. Zelfs in VBA kan het handmatig toepassen van basisrefactoringtechnieken de codebasis aanzienlijk verbeteren, waardoor deze schoner en efficiënter wordt. Hoewel VBA misschien niet dezelfde moderne gemakken heeft, blijven de principes van goed codeontwerp universeel. Ontwikkelaars die uit andere talen komen, kunnen het handmatige proces misschien omslachtig vinden, maar zullen ongetwijfeld de voordelen waarderen van het investeren van tijd in het verbeteren van de codekwaliteit vanaf het begin.

@@ -12,12 +12,7 @@ title: Bruke assosiative tabeller
 weight: 15
 ---
 
-## Hva & Hvorfor?
-
-Assosiative tabeller, kjent som objekter i Google Apps Script (en variant av JavaScript), lar programmerere lage samlinger av nøkkel-verdi-par. Denne funksjonaliteten er avgjørende for å lagre og manipulere data effektivt, spesielt når man jobber med dynamisk navngitte egenskaper eller når en tradisjonell tabels lineære lagrings- og tilgangsmodell er utilstrekkelig.
-
 ## Slik gjør du:
-
 I Google Apps Script oppretter og manipulerer du assosiative tabeller (objekter) ved hjelp av krøllparenteser `{}`, og definerer nøkkel-verdi-par innenfor. Nøkler er unike identifikatorer, og verdier kan være alt fra strenger og tall til mer komplekse objekter eller funksjoner. Her er et grunnleggende eksempel:
 
 ```javascript
@@ -57,7 +52,6 @@ land: Norge
 Legg merke til hvordan du kan bruke både punktnotasjon og hakkeparentesnotasjon for å få tilgang til og sette egenskaper. Hakkeparentesnotasjon er spesielt nyttig når man jobber med nøkler som er dynamisk bestemt eller inkluderer tegn som ikke er tillatt i identifikatorer.
 
 ## Dypdykk
-
 Assosiativ tabeller i form av objekter har vært en hjørnestein i JavaScript, og ved utvidelse Google Apps Script, som reflekterer dets prototypebaserte arvemekanisme. I motsetning til språk med tradisjonelle assosiative tabeller eller ordbøker (f.eks., Pythons dict), tilbyr Google Apps Script-objekter et fleksibelt og kraftig middel for å strukturere data, med fordel av JavaScripts dynamiske natur.
 
 Det er imidlertid viktig å merke seg at ECMAScript 2015-spesifikasjonen introduserte `Map` og `Set` objekter, som tilbyr en mer grei håndtering av assosiativ samling med visse fordeler over objekter, som å vedlikeholde innsettingsrekkefølge og bedre ytelse for store datasett. Selv om Google Apps Script også støtter disse, avhenger valget mellom å bruke objekter eller de nyere `Map`/`Set`-strukturene av spesifikke behov og ytelseshensyn. For de fleste oppgaver med assosiative tabeller, gir tradisjonell objektbasert implementering en kjent og allsidig tilnærming, men det er tilrådelig å undersøke nyere alternativer ettersom kompleksiteten i skriptet ditt øker.

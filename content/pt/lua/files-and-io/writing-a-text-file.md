@@ -13,12 +13,7 @@ title: Escrevendo um arquivo de texto
 weight: 24
 ---
 
-## O Que & Por Quê?
-
-Escrever em um arquivo de texto em Lua envolve criar ou abrir um arquivo no modo de escrita, e então usar operações de arquivo para inserir texto. Esta é uma operação fundamental para tarefas como registro de atividades (logging), armazenamento de dados ou gerenciamento de configurações, permitindo que programas salvem dados persistentemente entre sessões.
-
 ## Como Fazer:
-
 Trabalhar com arquivos para escrita em Lua é direto. Você normalmente usará a função `io.open()` para abrir (ou criar) um arquivo, especificando o modo de operação -- neste caso, `"w"` para escrita. Se o arquivo não existir, ele será criado; se já existir, seu conteúdo será sobrescrito. É crucial fechar o arquivo após a escrita para garantir que os dados sejam salvos corretamente e os recursos sejam liberados.
 
 Aqui está um exemplo simples que escreve uma string em um arquivo chamado "example.txt":

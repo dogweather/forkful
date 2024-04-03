@@ -10,11 +10,6 @@ title: "Odczytywanie argument\xF3w linii polece\u0144"
 weight: 23
 ---
 
-## What & Why?
-"Co i Dlaczego?"
-
-Czytanie argumentów linii poleceń to sposób na wprowadzanie danych do programu, gdy jest on uruchamiany. Programiści używają tego, by elastycznie manipulować zachowaniem programu bez zmiany kodu.
-
 ## How to:
 "Jak to zrobić:"
 

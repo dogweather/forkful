@@ -14,9 +14,6 @@ title: "Ty\xF6skentely CSV:n kanssa"
 weight: 37
 ---
 
-## Mikä ja miksi?
-CSV:n (pilkuilla erotetut arvot) käsittely JavaScriptillä tarkoittaa CSV-tiedostojen jäsentämistä tai luomista, jotta voidaan joko ottaa vastaan taulukkomuotoista dataa ulkoisista lähteistä tai viedä dataa käytettäväksi muissa ohjelmissa. Ohjelmoijat tekevät näin, koska se mahdollistaa helpon ja kevyen datan vaihdon sovellusten, tietokantojen ja järjestelmien välillä, joissa monimutkaisemmat formaatit kuten JSON voivat olla liioittelua.
-
 ## Miten:
 JavaScriptissä ei ole sisäänrakennettua CSV:n jäsentämisen tai merkkijonoksi muuttamisen toiminnallisuutta kuten JSON:ssa. Voit kuitenkin käsitellä CSV-dataa helposti joko käyttämällä raakaa JavaScriptiä yksinkertaisempiin tehtäviin tai hyödyntämällä tehokkaita kirjastoja, kuten `PapaParse`, monimutkaisemmissa skenaarioissa.
 

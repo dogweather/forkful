@@ -12,9 +12,6 @@ title: Generowanie liczb losowych
 weight: 12
 ---
 
-## Co i dlaczego?
-Generowanie losowych liczb w Bashu zapewnia sposób na wprowadzenie nieprzewidywalności do skryptów, co jest niezbędne do zadań takich jak generowanie bezpiecznych haseł, symulowanie danych czy programowanie gier. Programiści wykorzystują tę możliwość, aby dodać zmienność do swoich skryptów lub testować swoje programy w różnorodnych, losowo generowanych warunkach.
-
 ## Jak to zrobić:
 W Bashu zmienna `$RANDOM` jest głównym narzędziem do generowania losowych liczb. Za każdym razem, gdy się do niej odwołasz, Bash dostarcza pseudolosową liczbę całkowitą między 0 a 32767. Oto kilka praktycznych przykładów:
 

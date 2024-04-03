@@ -12,14 +12,10 @@ title: Generazione di numeri casuali
 weight: 12
 ---
 
-## Cosa e Perché?
-
-Generare numeri casuali in JavaScript è una tecnica usata per creare imprevedibilità nelle applicazioni, dai giochi che richiedono un comportamento casuale dei nemici fino agli algoritmi di sicurezza che necessitano di casualità crittografica. Questa capacità è cruciale per sviluppare esperienze utente dinamiche e applicazioni sicure.
-
 ## Come Fare:
 
-### Generazione di Base di Numeri Casuali
 
+### Generazione di Base di Numeri Casuali
 Il modo più diretto per generare un numero casuale in JavaScript è usare `Math.random()`. Questa funzione restituisce un numero a virgola mobile, pseudo-casuale nell'intervallo 0 (incluso) fino a 1 (escluso).
 
 ```javascript
@@ -28,7 +24,6 @@ console.log(randomNumber);
 ```
 
 ### Generare un Numero Casuale Dentro un Intervallo
-
 Spesso, si desidera ottenere un numero intero casuale all'interno di un intervallo specifico. Questo può essere raggiunto scalando e arrotondando l'output di `Math.random()`.
 
 ```javascript
@@ -42,7 +37,6 @@ console.log(getRandomInt(1, 100));
 ```
 
 ### Numeri Casuali Crittograficamente Sicuri
-
 Per applicazioni che richiedono un grado più elevato di casualità (ad es., operazioni crittografiche), si può utilizzare il metodo `crypto.getRandomValues()`. Questo fornisce casualità crittografica, a differenza dei numeri pseudo-casuali generati da `Math.random()`.
 
 ```javascript
@@ -54,7 +48,6 @@ Per applicazioni che richiedono un grado più elevato di casualità (ad es., ope
 ```
 
 ## Approfondimento
-
 Storicamente, la generazione di numeri casuali in JavaScript si affidava esclusivamente alla funzione `Math.random()`. Sebbene conveniente per la maggior parte dei casi d'uso casuali, il suo algoritmo, tipicamente una variante di un generatore di numeri pseudo-casuali (PRNG) come Mersenne Twister, non fornisce sicurezza crittografica.
 
 L'introduzione del Web Cryptography API ha portato il metodo `crypto.getRandomValues()`, offrendo un modo per generare numeri molto meno prevedibili e adatti per applicazioni sensibili alla sicurezza. Questo metodo attinge alle fonti di casualità del sistema operativo sottostante, come `/dev/random` su Unix/Linux, che sono più robuste e adatte per operazioni crittografiche.

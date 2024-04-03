@@ -18,9 +18,6 @@ title: "\u89E3\u6790HTML"
 weight: 43
 ---
 
-## 什么 & 为什么？
-解析HTML意味着拆分一大块HTML代码以掌握其结构和内容。程序员这样做是为了提取数据、操纵内容或在格式和系统之间迁移信息。
-
 ## 如何操作：
 要在Ruby中解析HTML，请用`gem install nokogiri`安装'Nokogiri'宝石。Nokogiri就像是用于在Ruby中处理HTML和XML的瑞士军刀。这里有一个快速示例：
 

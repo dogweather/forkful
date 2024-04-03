@@ -13,12 +13,7 @@ title: Een string interpoleren
 weight: 8
 ---
 
-## Wat & Waarom?
-
-Stringinterpolatie is een manier om variabelen rechtstreeks in een string in te sluiten. Programmeurs gebruiken het om variabelen en strings efficiënt te verbinden, waardoor code makkelijker te lezen en te onderhouden is.
-
 ## Hoe:
-
 In JavaScript wordt stringinterpolatie vaak gedaan met behulp van template literals. Zo kun je het doen:
 
 ```javascript
@@ -36,7 +31,6 @@ console.log(`Tien keer vijf is ${a * b}.`); // Geeft uit: Tien keer vijf is 50.
 ```
 
 ## Diepere Duik
-
 Historisch gezien was stringinterpolatie niet zo eenvoudig in JavaScript. Voor ES6 (ECMAScript 2015) werd concatenatie vaak gedaan met behulp van de `+` operator:
 
 ```javascript
@@ -51,7 +45,6 @@ Alternatieven voor stringinterpolatie omvatten stringconcatenatie met de `+` ope
 De prestaties van template literals zijn over het algemeen vergelijkbaar met deze oudere methoden. Echter, de leesbaarheid en het vermogen om uitdrukkingen (zoals `${a * b}`) binnen strings op te nemen, maken template literals een sterke keuze voor ontwikkelaars.
 
 ## Zie Ook
-
 - MDN over Template Literals: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 - Stringconcatenatie in JavaScript: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/String_Operators
 - Een geschiedenis van het JavaScript-module "ECMAScript": https://www.ecma-international.org/publications-and-standards/standards/ecma-262/

@@ -24,9 +24,6 @@ title: "\u4F7F\u7528JSON\u8FDB\u884C\u7F16\u7A0B"
 weight: 38
 ---
 
-## 什么与为什么？
-在Clojure中处理JSON（JavaScript对象表示法）包括将JSON字符串解析成Clojure数据结构（映射，向量）及其相反操作。这项任务对于需要用结构化、基于文本的格式通信数据的网络服务、API以及应用来说是基本的，因为JSON在不同的编程环境中被普遍认可并支持。
-
 ## 如何操作：
 Clojure没有内置的处理JSON的函数，因此你通常会使用第三方库。`cheshire`和`jsonista`是由于它们的易用性和性能而受欢迎的选择。
 

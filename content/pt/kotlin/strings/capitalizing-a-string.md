@@ -15,16 +15,10 @@ title: Capitalizando uma string
 weight: 2
 ---
 
-## O Que & Porquê?
-
-Capitalizar uma string na programação envolve converter o primeiro caractere da string em maiúsculo, caso ele não seja, o que é útil para formatar entradas de usuário ou exibir texto em uma interface de usuário de maneira mais padronizada ou amigável. Os programadores realizam essa operação para garantir a consistência dos dados ou para atender a requisitos específicos de formatação dentro de suas aplicações de software.
-
 ## Como fazer:
-
 Em Kotlin, as strings podem ser capitalizadas usando as funções da biblioteca padrão, sem a necessidade de bibliotecas de terceiros. A abordagem de Kotlin para manipulação de strings torna essas operações diretas e concisas.
 
 ### Capitalizando toda a string:
-
 ```kotlin
 val message = "hello, world!"
 val capitalizedMessage = message.uppercase()
@@ -33,7 +27,6 @@ println(capitalizedMessage) // Saída: HELLO, WORLD!
 ```
 
 ### Capitalizando apenas o primeiro caractere:
-
 A partir do Kotlin 1.5, a função `capitalize()` foi depreciada e substituída por uma combinação de `replaceFirstChar` e uma lambda que verifica se é uma letra minúscula para transformá-la em maiúscula.
 
 ```kotlin

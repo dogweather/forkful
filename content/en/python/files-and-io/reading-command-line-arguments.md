@@ -10,12 +10,7 @@ title: Reading command line arguments
 weight: 23
 ---
 
-## What & Why?
-
-Reading command line arguments lets your Python script play nice with user inputs from the terminal. Why? Well, because flexibility is key; users can tweak behavior without editing your precious code.
-
 ## How to:
-
 Using Python's `sys` module, you can snag those command line arguments easily. Here’s how to access them in your script:
 
 ```python
@@ -41,7 +36,6 @@ You entered: ['these', 'are', 'your', 'arguments']
 ```
 
 ## Deep Dive
-
 Way back when, folks interacted with computers through command lines. That's why most languages, Python included, have a way to read command line arguments. It's how scripts were controlled before GUIs came along.
 
 Python's `sys.argv` is handy, but for the fancier command-parsing dance, there's `argparse`. `argparse` is a module for when you need more than the basics – like when your arguments need names, types, or default values.
@@ -49,7 +43,6 @@ Python's `sys.argv` is handy, but for the fancier command-parsing dance, there's
 Now, `sys.argv` is just a list. Everything you pass is a string, no matter what. There's no magic; if you want numbers, convert them yourself with something like `int()` or `float()`.
 
 ## See Also
-
 For more on `sys.argv` and `argparse`, check out the Python docs:
 
 - `sys.argv`: https://docs.python.org/3/library/sys.html#sys.argv

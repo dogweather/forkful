@@ -15,9 +15,6 @@ title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---
 
-## Gì và Tại sao?
-Nối chuỗi chỉ là cách nói cầu kỳ của việc 'ghép chúng lại với nhau từ đầu đến cuối'. Các lập trình viên làm điều này để kết hợp từ và câu, xây dựng thông điệp, hoặc để chèn động các giá trị vào văn bản.
-
 ## Làm thế nào:
 Trong Ruby, bạn có thể nối chuỗi bằng toán tử `+` hoặc phương thức `<<`, phương thức này sửa đổi chuỗi ngay tại chỗ. Dưới đây là cách để kết nối các dấu chấm—hay chính xác hơn, là các từ:
 

@@ -12,9 +12,6 @@ title: Analysering av en dato fra en streng
 weight: 30
 ---
 
-## Hva & Hvorfor?
-Å analysere en dato fra en streng innebærer å konvertere tekstinformasjon om dato og tid til et datetime-objekt eller et tilsvarende strukturert format. Dette gjøres vanligvis for å muliggjøre datoomregninger, sammenligninger og formateringsoperasjoner på en måte som er uavhengig av språk og region. Programmerere gjør dette for effektivt å håndtere og manipulere tidsmessige data hentet fra logger, brukerinndata eller eksterne kilder.
-
 ## Hvordan:
 Pythons standardbibliotek tilbyr `datetime`-modulen, som inkluderer `strptime`-metoden for dette formålet. Metoden krever to argumenter: datostrengen og et formatdirektiv som spesifiserer mønsteret til inngangsstrengen.
 

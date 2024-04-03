@@ -12,12 +12,7 @@ title: Using associative arrays
 weight: 15
 ---
 
-## What & Why?
-
-Associative arrays are like secret handshakes for data in Lua—instead of just numbers lining up dutifully by index, your keys can be whatever you want, making data retrieval a breeze. Why do programmers use 'em? Because sometimes, you need to call a piece of data by its name, not a lineup number.
-
 ## How to:
-
 In Lua, creating an associative array (or a table, in Lua-speak) is straightforward. You ditch the usual numerical indices for keys of your own choosing. Check this out:
 
 ```Lua
@@ -56,7 +51,6 @@ favLang: Lua
 The cool part? You interact with the data using keys meaningful to you, making code more readable and maintanable.
 
 ## Deep Dive
-
 When Lua entered the scene, it introduced tables as a catch-all data structure, revolutionizing how developers manage data. Unlike in some languages where associative arrays and arrays are distinct entities, Lua’s tables serve as both, simplifying the data structure landscape.
 
 What makes Lua tables particularly powerful is their flexibility. However, this flexibility comes at the cost of potential performance implications, especially with large datasets where a more specialized data structure might be preferable for efficiency.

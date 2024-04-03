@@ -10,9 +10,6 @@ title: Jobbe med TOML
 weight: 39
 ---
 
-## Hva & Hvorfor?
-TOML er et akronym for Toms Opplagte, Minimale Språk, et konfigurasjonsfilformat som er lett å lese på grunn av sin klare semantikk. Programmerere bruker det for konfigfiler, forenkler datautveksling mellom systemer, og fordi det oppnår en balanse mellom menneskelig lesbarhet og maskinell parserbarhet.
-
 ## Hvordan:
 Først, installer en TOML-parser som `Tomlyn`. Bruk pakkebehandleren din:
 

@@ -11,12 +11,7 @@ title: Generera slumptal
 weight: 12
 ---
 
-## Vad & Varför?
-
-Att generera slumpmässiga tal i programmering handlar om att skapa värden som inte logiskt kan förutsägas i förväg. Programmerare gör detta av olika anledningar, inklusive att generera unika identifierare, simulera scenarion i spelutveckling eller välja slumpmässiga prov från data för analys.
-
 ## Hur man gör:
-
 I Clojure är generering av slumpmässiga tal enkel, och det finns ett par inbyggda funktioner som kan användas direkt.
 
 För att generera ett slumpmässigt flyttal mellan 0 (inklusive) och 1 (exklusive) kan du använda funktionen `rand`:
@@ -50,7 +45,6 @@ Denna funktion `rand-range` kommer att returnera ett slumpmässigt flyttal mella
 För scenarion som kräver mer komplexa distributioner eller sekvenser av slumpmässiga tal där upprepbarhet är nödvändig (användning av frön), kanske du behöver titta på ytterligare bibliotek som sträcker sig bortom det som är inbyggt.
 
 ## Fördjupning
-
 Den underliggande mekanismen för att generera slumpmässiga tal i de flesta programmeringsspråk, inklusive Clojure, är beroende av en pseudoslumpmässig talgenerator (PRNG). En PRNG använder en algoritm för att producera en sekvens av tal som approximerar egenskaperna hos slumpmässiga tal. Det är värt att notera att eftersom dessa genereras algoritmiskt, är de inte verkligt slumpmässiga men kan vara tillräckliga för de flesta praktiska ändamål.
 
 I datorernas barndom var det en betydande utmaning att generera högkvalitativa slumpmässiga tal, vilket ledde till utvecklingen av olika algoritmer för att förbättra slumpmässighet och distribution. För Clojure är de inbyggda funktionerna, såsom `rand` och `rand-int`, praktiska för dagligt bruk och täcker ett brett spektrum av vanliga användningsfall.

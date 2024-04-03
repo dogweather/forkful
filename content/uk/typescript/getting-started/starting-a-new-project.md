@@ -10,9 +10,6 @@ title: "\u041F\u043E\u0447\u0438\u043D\u0430\u0454\u043C\u043E \u043D\u043E\u043
 weight: 1
 ---
 
-## What & Why? (Що та Чому?)
-Starting a new coding project is like planting a seed. You do it to grow an app, tool, or service. You start fresh, excited about potential.
-
 ## How to: (Як це зробити:)
 ```TypeScript
 // Step 1: Start a new project

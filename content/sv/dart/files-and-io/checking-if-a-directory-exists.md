@@ -14,12 +14,7 @@ title: Kontrollera om en katalog existerar
 weight: 20
 ---
 
-## Vad & Varför?
-
-Att kontrollera om en katalog finns i Dart handlar om att verifiera närvaron av en katalog på en angiven sökväg i filsystemet innan man utför operationer som att läsa eller skriva filer. Programmerare gör detta för att undvika fel som uppstår när man försöker komma åt eller modifiera kataloger som inte finns.
-
 ## Hur man gör:
-
 Dart använder biblioteket `dart:io` för att arbeta med filer och kataloger. Här är ett enkelt sätt att kontrollera om en katalog finns:
 
 ```dart

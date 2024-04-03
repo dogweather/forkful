@@ -11,12 +11,7 @@ title: "Wysy\u0142anie \u017C\u0105dania HTTP"
 weight: 44
 ---
 
-## Co i dlaczego?
-
-Wysłanie żądania HTTP (Hypertext Transfer Protocol) to sposób, w jaki nasz program może komunikować się z serwerami w Internecie. Robimy to, żeby pobrać dane, wysłać informacje, autoryzować użytkowników i wiele więcej – to podstawa interakcji w sieci.
-
 ## Jak to zrobić:
-
 Użyjemy `requests`, łatwej w użyciu biblioteki pozwalającej na wysyłanie żądań HTTP. Instalacja to linijka w terminalu:
 
 ```Python
@@ -43,13 +38,11 @@ b'{"current_user_url":"https://api.github.com/user","current_user_authorizations
 Kod `200` mówi nam, że żądanie się powiodło.
 
 ## Deep Dive
-
 Protokół HTTP istnieje od 1991 roku. Z czasem ewoluował – mamy już HTTP/2 i eksperymentujemy z HTTP/3. Alternatywą dla biblioteki `requests` może być `http.client` wbudowany w Pythona, choć nie jest tak wygodny w użyciu.
 
 Biblioteka `requests` obsługuje sesje, co pozwala na przechowywanie ciasteczek czy utrzymywanie stałego nagłówka przez wiele żądań. Wsparcie dla HTTPS jest wbudowane, a co za tym idzie, szyfrowanie danych również. Kiedy wysyłasz żądanie, `requests` automatycznie koduje parametry, a odpowiedzi mogą być łatwo przekształcone w struktury danych JSON.
 
 ## Zobacz również
-
 - [Dokumentacja `requests`](https://requests.readthedocs.io/en/master/)
 - [Przewodnik po żądaniach HTTP w Pythonie](https://realpython.com/python-requests/)
 - [HTTP/3 Explained](https://http3-explained.haxx.se/en/)

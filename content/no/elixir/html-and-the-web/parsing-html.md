@@ -11,12 +11,7 @@ title: Analysering av HTML
 weight: 43
 ---
 
-## Hva & Hvorfor?
-
-Parsing av HTML i Elixir handler om å trekke ut informasjon fra HTML-dokumenter. Programmerere gjør dette for å programmelt interagere med nettsider, skrape data, eller automatisere webinteraksjoner, noe som muliggjør at applikasjoner kan forstå og utnytte webinnhold dynamisk.
-
 ## Hvordan:
-
 Elixir, med sin robuste samtidighetsmodell og funksjonelle programmeringsparadigme, inkluderer ikke innebygde HTML-parsingmuligheter. Du kan imidlertid bruke populære tredjepartsbiblioteker som `Floki` for dette formålet. Floki gjør HTML-parsing intuitiv og effektiv ved å utnytte Elixirs mønstermatching og piping-funksjoner.
 
 Først, legg til Floki i dine mix.exs-avhengigheter:

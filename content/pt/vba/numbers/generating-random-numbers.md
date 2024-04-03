@@ -14,12 +14,7 @@ title: "Gerando n\xFAmeros aleat\xF3rios"
 weight: 12
 ---
 
-## O Que & Por Quê?
-
-Gerar números aleatórios no Visual Basic for Applications (VBA) permite que programas simulem processos com elementos de chance ou variabilidade, como a rolagem de dados ou a amostragem de dados. Os programadores usam essas técnicas para desenvolver modelos, jogos ou simulações onde resultados previsíveis seriam irrealistas ou menos úteis.
-
 ## Como Fazer:
-
 No VBA, a função `Rnd` é usada para gerar números aleatórios. Por padrão, `Rnd` gera um número de ponto flutuante de precisão simples maior ou igual a 0 e menor que 1. Aqui estão alguns passos e exemplos para utilizar números aleatórios eficazmente:
 
 1. **Número Aleatório Simples:**
@@ -61,7 +56,6 @@ No VBA, a função `Rnd` é usada para gerar números aleatórios. Por padrão, 
 Após executar `RandomNumberInRange`, você pode ver uma caixa de mensagem exibindo um número como `45`.
 
 ## Aprofundando:
-
 A função `Rnd` no VBA, embora fácil de usar, na verdade gera números pseudoaleatórios baseados em um algoritmo determinístico. Isso significa que as sequências de números que produz não são verdadeiramente aleatórias, mas muitas vezes podem ser suficientes para tarefas comuns que necessitam de processos estocásticos.
 
 Historicamente, a capacidade de geração de números aleatórios no VBA remonta às primeiras versões do Basic, adaptando-se ao longo do tempo para incluir recursos como `Randomize` para melhorar a aleatoriedade, semeando o algoritmo com um ponto de partida. No entanto, para aplicações que exigem altos níveis de aleatoriedade, como operações criptográficas seguras, o `Rnd` do VBA pode não ser a melhor ferramenta. Alternativas em ambientes de programação mais robustos ou linguagens projetadas com a criptografia em mente, como o módulo `secrets` do Python ou o `SecureRandom` do Java, devem ser consideradas.

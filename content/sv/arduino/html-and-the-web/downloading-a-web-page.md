@@ -11,9 +11,6 @@ title: "H\xE4mta en webbsida"
 weight: 42
 ---
 
-## Vad & Varför?
-Ladda ner en webbsida innebär att hämta HTML-data från en server till din Arduino. Programmerare gör det för att interagera med webben, samla data eller styra enheter fjärran.
-
 ## Gör så här:
 ```Arduino
 #include <ESP8266WiFi.h>

@@ -12,9 +12,6 @@ title: Escrevendo um arquivo de texto
 weight: 24
 ---
 
-## O que & Por quê?
-Escrever um arquivo de texto em Dart envolve criar ou modificar arquivos no disco para armazenar dados de forma legível. Programadores fazem isso para salvar dados de aplicativos, configurações, logs ou qualquer informação que deva persistir entre execuções do aplicativo ou compartilhar dados com outros aplicativos ou usuários.
-
 ## Como fazer:
 A biblioteca principal do Dart fornece o pacote `dart:io` para manipulação de arquivos, permitindo que você escreva arquivos de texto sem a necessidade de bibliotecas de terceiros. Aqui está um exemplo simples de como escrever um arquivo de texto:
 

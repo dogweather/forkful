@@ -11,9 +11,6 @@ title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutenheten"
 weight: 26
 ---
 
-## Vad & Varför?
-Att räkna ut ett datum i framtiden eller förflutet innebär att man lägger till eller subtraherar tid från ett specifikt datum. Programmerare gör detta för att hantera bokningar, påminnelser, uppgiftsplanering och för att spåra tidsberoende händelser.
-
 ## Hur gör man:
 För att räkna ut datumen i Haskell, använd `Data.Time` biblioteket:
 

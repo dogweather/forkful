@@ -15,9 +15,6 @@ title: "S\u1EAFp x\u1EBFp m\xE3 th\xE0nh c\xE1c h\xE0m"
 weight: 18
 ---
 
-## Cái gì & Tại sao?
-Tổ chức code thành các hàm là việc phân chia mã lệnh của bạn thành các khối tái sử dụng với mục đích xác định. Chúng ta làm điều này để giữ mọi thứ gọn gàng, tránh lặp lại và làm cho việc gỡ lỗi trở nên dễ dàng.
-
 ## Cách thực hiện:
 Hãy tưởng tượng chúng ta có đoạn mã lặp lại cho việc chào hỏi người dùng. Thay vào đó, chúng tôi sẽ gói nó trong một hàm như `greet_user`:
 

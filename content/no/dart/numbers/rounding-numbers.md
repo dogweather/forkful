@@ -13,35 +13,26 @@ title: Avrunding av tall
 weight: 13
 ---
 
-## Hva & Hvorfor?
-
-Avrunding av tall er prosessen med å justere et tall til nærmeste hele tall eller til et spesifisert antall desimalplasser. Programmerere runder ofte av tall for å forenkle beregninger, forbedre lesbarheten, eller forberede data for visning, noe som sikrer konsistens og klarhet i numeriske utdata.
-
 ## Hvordan:
-
 Dart tilbyr native metoder i sin kjerne `num`-type for avrundingsoperasjoner. Her vil vi utforske metoder som `round()`, `floor()`, `ceil()`, og hvordan runde av til et spesifikt antall desimalplasser.
 
 ### Avrunding til nærmeste hele tall:
-
 ```dart
 var number = 3.56;
 print(number.round()); // Gir ut: 4
 ```
 
 ### Avrunding ned:
-
 ```dart
 print(number.floor()); // Gir ut: 3
 ```
 
 ### Avrunding opp:
-
 ```dart
 print(number.ceil()); // Gir ut: 4
 ```
 
 ### Avrunding til et spesifikt antall desimalplasser:
-
 For å avrunde til et spesifikt antall desimalplasser, kan vi bruke metoden `toStringAsFixed()`, som returnerer en streng, eller bruke en kombinasjon av `pow` fra `dart:math` for et numerisk resultat.
 
 ```dart

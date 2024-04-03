@@ -13,12 +13,7 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Cosa & Perché?
-
-Arrotondare i numeri è il processo di aggiustamento delle cifre di un numero per ridurne la precisione secondo determinate regole, sia verso il numero intero più vicino sia un numero specificato di decimali. I programmatori fanno ciò per motivi che vanno dalla limitazione della quantità di memoria necessaria, alla semplificazione dell'output per il consumo da parte degli utenti, o per garantire operazioni matematiche accurate che sono sensibili a variazioni molto piccole.
-
 ## Come fare:
-
 L'arrotondamento dei numeri in C può essere realizzato utilizzando varie funzioni, ma l'approccio più comune coinvolge le funzioni `floor()`, `ceil()`, e `round()`. Queste funzioni fanno parte della libreria matematica standard, quindi sarà necessario includere `math.h` nel proprio programma.
 
 ```c
@@ -57,7 +52,6 @@ Arrotondamento a due decimali: 9.53
 ```
 
 ## Approfondimento
-
 L'arrotondamento dei numeri ha radici storiche profonde nella matematica e nel calcolo, essenziali sia per gli aspetti teorici sia applicati. In C, mentre `floor()`, `ceil()`, e `round()` offrono funzionalità di base, l'essenza dell'arrotondamento dei numeri in virgola mobile in interi o decimali specifici è più sfumata a causa della rappresentazione binaria dei numeri in virgola mobile. Questa rappresentazione può portare a risultati inaspettati a causa di come vengono gestiti i numeri che non possono essere rappresentati precisamente in binario (come 0.1).
 
 Queste funzioni fanno parte della libreria standard C, definite in `<math.h>`. Quando si arrotondano i numeri, specialmente per calcoli finanziari o ingegneristici precisi, si deve considerare le implicazioni dell'uso di numeri in virgola mobile binari. Alternative alle funzioni incorporate in C per un arrotondamento molto accurato o specifico per i decimali potrebbero includere l'implementazione di funzioni di arrotondamento personalizzate o l'uso di librerie progettate per l'aritmetica di precisione arbitraria, come GMP o MPFR, anche se queste introducono complessità e dipendenze aggiuntive.

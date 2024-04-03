@@ -13,12 +13,7 @@ title: Hantera fel
 weight: 16
 ---
 
-## Vad och varför?
-
-Att hantera fel i Go innebär att känna igen och svara på felvillkor i ditt program. Programmerare ägnar sig åt felhantering för att säkerställa att deras applikationer kan återhämta sig på ett smidigt sätt från oväntade situationer, vilket leder till mer robust och pålitlig programvara.
-
 ## Hur:
-
 I Go hanteras fel explicit med hjälp av `error`-typen. Funktioner som kan misslyckas returnerar ett fel som sitt sista returvärde. Att kontrollera om detta felvärde är `nil` kommer att berätta för dig om ett fel inträffade.
 
 ```go
@@ -63,7 +58,6 @@ Resultat: 100
 I det här exemplet returnerar `Compute`-funktionen antingen ett beräknat värde eller ett fel. Anroparen hanterar felet genom att kontrollera om `err` inte är `nil`.
 
 ## Fördjupning
-
 Gos tillvägagångssätt för felhantering är med avsikt enkelt och typsäkert, vilket kräver explicita kontroller av fel. Detta koncept kontrasterar med undantagsbaserad felhantering som ses i språk som Java och Python, där fel propageras upp genom anropsstacken om de inte fångas av en undantagshanterare. Go-teamet argumenterar för att den explicita hanteringen av fel resulterar i klarare och mer tillförlitlig kod, eftersom det tvingar programmerare att omedelbart ta itu med fel där de inträffar.
 
 Dock nämner somliga kritiker att detta mönster kan leda till utförlig kod, särskilt i komplexa funktioner med många felbenägna operationer. Som svar har nyare versioner av Go infört mer sofistikerade funktioner för felhantering, såsom felomslagning, vilket gör det lättare att ge sammanhang till ett fel utan att förlora den ursprungliga felinformationen. Gemenskapen har också sett förslag på nya mekanismer för felhantering, såsom kontroll/hantera, även om dessa fortfarande diskuteras vid min senaste uppdatering.

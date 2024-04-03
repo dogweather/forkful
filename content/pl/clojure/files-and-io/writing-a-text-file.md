@@ -15,14 +15,10 @@ title: Pisanie pliku tekstowego
 weight: 24
 ---
 
-## Co i dlaczego?
-
-Pisanie pliku tekstowego w Clojure polega na tworzeniu lub modyfikowaniu plików w celu zapisania danych poza aplikacją, umożliwiając trwałość, konfigurację, logowanie lub komunikację międzyprocesową. Programiści wykonują to zadanie, aby zewnętrznie przechowywać stan aplikacji, konfiguracje lub dzielić informacje między różnymi częściami programu lub różnymi programami.
-
 ## Jak to zrobić:
 
-### Pisanie tekstu do pliku przy użyciu wbudowanych funkcji Clojure
 
+### Pisanie tekstu do pliku przy użyciu wbudowanych funkcji Clojure
 Funkcja `spit` jest najprostszym sposobem na zapis tekst do pliku w Clojure. Przyjmuje dwa argumenty: ścieżkę pliku i łańcuch do zapisania. Jeśli plik nie istnieje, `spit` go utworzy. Jeśli istnieje, `spit` go nadpisze.
 
 ```clojure
@@ -43,7 +39,6 @@ Dodajmy tę nową linię.
 ```
 
 ### Korzystanie z bibliotek stron trzecich
-
 Chociaż wbudowane możliwości Clojure często są wystarczające, społeczność opracowała solidne biblioteki do bardziej skomplikowanych lub specyficznych zadań. Dla operacji na plikach popularną biblioteką jest `clojure.java.io`, która zapewnia bardziej java'owe podejście do obsługi plików.
 
 Aby użyć `clojure.java.io` do zapisywania do pliku, najpierw musisz ją zaimportować:

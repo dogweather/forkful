@@ -16,12 +16,7 @@ title: "N\u1ED1i chu\u1ED7i k\xFD t\u1EF1"
 weight: 3
 ---
 
-## Gì và Tại sao?
-
-Nối chuỗi giống như làm một chiếc sandwich, nhưng thay vì bánh mì và nhân, bạn đang xếp chồng các từ lại với nhau để tạo thành một câu hoặc một cụm từ. Các lập trình viên nối chuỗi để tạo ra các văn bản động, như hiển thị tên người dùng cùng với lời chào, hoặc tạo đường dẫn tệp tin một cách linh hoạt.
-
 ## Cách thực hiện:
-
 Dưới đây là cách để làm cho các chuỗi nối lại với nhau trong Kotlin - không cần dùng keo:
 
 ```kotlin
@@ -46,7 +41,6 @@ fun main() {
 ```
 
 ## Sâu hơn nữa
-
 Nối chuỗi đã tồn tại ngay từ khi chúng ta có chuỗi để ghép nối. Các ngôn ngữ lập trình đã không ngừng phát triển cách họ xử lý nhiệm vụ này. Ngày xưa, bạn có thể thấy những bức tường văn bản được ghép lại với nhau bằng một toán tử `+` đơn giản. Tiến nhanh đến Kotlin hiện đại, và bạn có mẫu chuỗi với các ký hiệu `$` kéo các biến trực tiếp vào trong chuỗi, như phép màu.
 
 Có nhiều lựa chọn phong phú. Nếu hiệu suất là chìa khóa và bạn đang xử lý rất nhiều chuỗi, StringBuilder có thể là người bạn tốt nhất, tránh việc tạo ra nhiều đối tượng chuỗi. Sau đó là hàm `joinToString` lấy một danh sách và nghiền nát chúng lại với nhau được tách bởi một dấu phân cách theo lựa chọn của bạn.
@@ -54,7 +48,6 @@ Có nhiều lựa chọn phong phú. Nếu hiệu suất là chìa khóa và b�
 Mỗi phương pháp có những tính năng độc đáo—`plus` dễ dàng nhưng có thể chậm khi sử dụng quá mức; mẫu chuỗi thú vị cho khả năng đọc; `concat()` nhớ lại phương pháp của Java và có vẻ một chút trang trọng; `StringBuilder` và `joinToString` hiệu quả hơn đối với các hoạt động dài.
 
 ## Xem thêm
-
 Khám phá sâu hơn vào thế giới của chuỗi Kotlin:
 
 - [Tài liệu Kotlin: Kiểu Cơ bản](https://kotlinlang.org/docs/basic-types.html#string-literals)

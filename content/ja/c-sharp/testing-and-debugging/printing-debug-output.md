@@ -21,12 +21,7 @@ title: "\u30C7\u30D0\u30C3\u30B0\u51FA\u529B\u3092\u8868\u793A\u3059\u308B"
 weight: 33
 ---
 
-## What & Why? / 何となぜ？
-
-デバッグ出力とは、コードの動作を監視し理解するためにメッセージを表示することです。プログラマーは、問題の原因を特定し、コードが意図した通りに動作しているかを確かめるためにこれを行います。
-
 ## How to: / 方法
-
 ```C#
 using System;
 
@@ -64,7 +59,6 @@ Debug: End of Main
 ```
 
 ## Deep Dive / より深く
-
 デバッグ出力は昔からある機能です。言語によっては `print` や `println` などで出力しますが、C#では `Console.WriteLine` を使ってコンソールに書き出します。代わりにログファイルを使用することもあります。
 
 C#では、`System.Diagnostics.Debug` クラスを使うことでデバッグ中にのみ出力されるメッセージを管理できます。例えば `Debug.WriteLine()` はリリースビルドで削除されます。
@@ -74,6 +68,5 @@ C#では、`System.Diagnostics.Debug` クラスを使うことでデバッグ中
 実際の開発では、多くのアプリケーションでより進んだログライブラリ（例: `log4net` や `NLog`）も使われます。これらは出力をカスタマイズしたり、異なる出力先（ファイル、データベース等）を選択できます。
 
 ## See Also / 関連情報
-
 - [Microsoft Documentation: Debug Class](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug)
 - [Microsoft Documentation: Trace Class](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.trace)

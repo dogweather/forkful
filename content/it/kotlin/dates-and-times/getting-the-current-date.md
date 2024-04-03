@@ -13,10 +13,8 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Cosa & Perché?
-Nella programmazione, ottenere la data corrente è un compito fondamentale che permette agli sviluppatori di accedere, visualizzare o manipolare la data corrente all'interno delle loro applicazioni. Questa capacità è cruciale per tutto, dal registrare e marcare con timestamp gli eventi, fino alle calcolazioni basate sulle date.
-
 ## Come fare:
+
 
 ### Utilizzando Kotlin Standard
 Kotlin non ha una propria API per data e ora, ma si affida alla Java Standard Library per questa funzionalità. Ecco come puoi ottenere la data corrente:

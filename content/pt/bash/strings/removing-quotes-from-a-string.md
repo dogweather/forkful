@@ -10,9 +10,6 @@ title: Removendo aspas de uma string
 weight: 9
 ---
 
-## O Que & Por Quê?
-Remover aspas de uma string envolve retirar as marcas de aspas que envolvem a string. Programadores frequentemente querem fazer isso para sanear dados de entrada, preparar dados para fins de comparação, ou aderir a um formato de dados específico ao interagir com outros programas ou sistemas.
-
 ## Como fazer:
 Bash tem várias maneiras de remover aspas de strings. Aqui estão alguns exemplos rápidos:
 

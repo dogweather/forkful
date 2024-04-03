@@ -14,10 +14,8 @@ title: "Usando express\xF5es regulares"
 weight: 11
 ---
 
-## O Que & Por Que?
-Expressões regulares (regex) em C# são uma ferramenta poderosa para correspondência de padrões dentro de strings, permitindo que programadores procurem, substituam, dividam ou extraiam dados de forma eficiente. Os programadores utilizam regex para tarefas que variam desde validações simples, como a verificação do formato de e-mail, até tarefas complexas de processamento de texto devido à sua flexibilidade e desempenho.
-
 ## Como fazer:
+
 
 ### Correspondência de Padrões Simples
 Para verificar se uma string contém um padrão específico, você pode usar o método `Regex.IsMatch` do namespace `System.Text.RegularExpressions`.

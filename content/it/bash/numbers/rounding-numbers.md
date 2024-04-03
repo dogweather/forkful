@@ -11,12 +11,7 @@ title: Arrotondamento dei numeri
 weight: 13
 ---
 
-## Cosa e perché?
-
-Arrotondare i numeri significa tagliare le cifre decimali fino a un valore più semplice che sia sufficientemente buono per un determinato contesto. I programmatori arrotondano i numeri per semplificare i risultati, risparmiare spazio o perché il valore esatto non è fondamentale, come quando si sta valutando a occhio l'uso della CPU o lo spazio su disco e le cifre decimali non faranno la differenza nella tua giornata.
-
 ## Come fare:
-
 Ecco l'abc sull'arrotondamento in Bash:
 
 ```Bash
@@ -43,7 +38,6 @@ Esempi di output—direttamente dalla bocca del terminale:
 ```
 
 ## Approfondimento
-
 Ai vecchi tempi, non c'erano `bc` o `printf` negli script Bash per fare magie matematiche. Gli old-school dovevano affidarsi a strumenti esterni o a soluzioni ingegnose di compromesso. Ora, `bc` ti consente di fare matematica di precisione. Tieni presente, `bc` non arrotonda per impostazione predefinita—fa il floor. La parte della scala imposta l'azione del punto decimale.
 
 Alternative? Potresti usare `awk` per l'arrotondamento senza passare a `bc` o cimentarti con `perl` per esigenze matematiche più pesanti. Per i masochisti, va puro Bash con, diciamo, la manipolazione iterativa delle stringhe – ma perché?
@@ -51,7 +45,6 @@ Alternative? Potresti usare `awk` per l'arrotondamento senza passare a `bc` o ci
 Per quanto riguarda i dettagli, `bc` non si limita ad arrotondare, fa un mucchio di roba matematica—scala, seno, radice quadrata, qualsiasi cosa. Con `printf`, si tratta più di formattare il testo, ma ei, arrotonda i numeri, quindi non ci lamentiamo.
 
 ## Vedi Anche
-
 Per coloro che vogliono saperne di più:
 
 - Manuale GNU `bc`: https://www.gnu.org/software/bc/manual/html_mono/bc.html

@@ -11,9 +11,6 @@ title: "Hitta l\xE4ngden p\xE5 en str\xE4ng"
 weight: 7
 ---
 
-## Vad & Varför?
-I Rust ger `len()` längden på en sträng, det vill säga hur många bytes den är. Vi behöver veta storleken för att hantera textdata effektivt - som att validera inmatning eller sköta textutskärningar.
-
 ## Så här gör du:
 ```rust
 fn main() {

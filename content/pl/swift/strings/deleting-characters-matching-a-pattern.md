@@ -11,9 +11,6 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## What & Why? (Co i dlaczego?)
-Usuwanie znaków pasujących do wzorca to filtracja stringów w celu ich uproszczenia lub wyczyszczenia z niepotrzebnych danych. Programiści robią to, by łatwiej obrabiać tekst, np. przy walidacji danych lub przygotowania tekstów do wyświetlenia.
-
 ## How to: (Jak to zrobić:)
 ```Swift
 import Foundation

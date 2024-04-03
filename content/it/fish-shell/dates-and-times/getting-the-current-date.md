@@ -12,9 +12,6 @@ title: Ottenere la data corrente
 weight: 29
 ---
 
-## Cosa e perché?
-Ottenere la data corrente nella programmazione è un'operazione fondamentale che consente di recuperare e manipolare i dati di data e ora del sistema. Nelle attività di scripting e automazione, è essenziale per generare timestamp, pianificare attività e creare log.
-
 ## Come fare:
 Fish Shell utilizza comandi esterni come `date` per ottenere la data corrente, offrendo flessibilità nella formattazione dell'output secondo necessità. Ecco come utilizzarlo:
 

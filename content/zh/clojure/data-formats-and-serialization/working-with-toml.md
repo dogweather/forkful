@@ -22,9 +22,6 @@ title: "\u4F7F\u7528TOML"
 weight: 39
 ---
 
-## 什么与为什么？
-使用TOML意味着你正在处理数据采用了"Tom的明显的、最小化语言"（Tom's Obvious, Minimal Language）格式，这种格式因其易于阅读而被广泛用于配置文件。程序员使用它来进行直接明了的配置管理，它搭载了人性友好的语法，可以即插即用。
-
 ## 如何操作：
 要在Clojure中使用TOML，你需要一个像`clj-toml`这样的库。首先，将它添加到你的`deps.edn`中：
 

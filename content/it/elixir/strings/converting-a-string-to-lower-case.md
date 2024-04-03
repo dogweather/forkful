@@ -11,9 +11,6 @@ title: Conversione di una stringa in minuscolo
 weight: 4
 ---
 
-## What & Why?
-Convertire una stringa in minuscolo significa trasformare tutti i caratteri alfabeticamentici in lettere minuscole, utile per garantire la consistenza dei dati e per confronti o ricerche insensibili a maiuscole e minuscole.
-
 ## How to:
 In Elixir, downcase una stringa è un gioco da ragazzi con `String.downcase/1`.
 

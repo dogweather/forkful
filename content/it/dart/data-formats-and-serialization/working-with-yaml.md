@@ -12,12 +12,7 @@ title: Lavorare con YAML
 weight: 41
 ---
 
-## Cosa & Perché?
-
-YAML, acronimo di YAML Ain't Markup Language, è un formato di serializzazione dei dati leggibile dall'uomo. I programmatori lo utilizzano per file di configurazione, scambio di dati e in applicazioni dove i dati necessitano di essere memorizzati o trasmessi in un formato facile da comprendere.
-
 ## Come fare:
-
 In Dart, lavorare con YAML comporta tipicamente l'uso di una libreria di terze parti poiché il linguaggio non include capacità di parsing YAML integrate. Una scelta popolare è il pacchetto `yaml`. Per iniziare, è necessario aggiungere questo pacchetto al proprio `pubspec.yaml`:
 
 ```yaml
@@ -28,7 +23,6 @@ dependencies:
 Ricordarsi di eseguire `pub get` per recuperare il pacchetto.
 
 ### Leggere YAML
-
 Per leggere un file YAML, innanzitutto, importare il pacchetto `yaml` e poi utilizzare la funzione `loadYaml`:
 
 ```dart
@@ -52,7 +46,6 @@ age: 30
 ```
 
 ### Scrivere YAML
-
 Sebbene il pacchetto `yaml` sia ottimo per il parsing, non supporta la scrittura di YAML. Per questo, potrebbe essere necessario convertire manualmente i propri dati in YAML o utilizzare un altro pacchetto se disponibile. Oppure, più direttamente, gestire le trasformazioni dei dati e produrli come stringhe che corrispondono alla sintassi YAML:
 
 ```dart

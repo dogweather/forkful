@@ -11,9 +11,6 @@ title: "S\xF8king og erstatting av tekst"
 weight: 10
 ---
 
-## Hva & Hvorfor?
-Søking og erstattning av tekst lar oss finne bestemte ord eller uttrykk og bytte dem ut med noe annet. Programmerere gjør dette for å oppdatere kode, reparere feil, eller endre data effektivt.
-
 ## Hvordan:
 For å søke og erstatte tekst i Elixir, bruker vi `String.replace/4` funksjonen. Her er et enkelt eksempel:
 

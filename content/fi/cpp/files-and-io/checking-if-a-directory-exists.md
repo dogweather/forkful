@@ -14,9 +14,6 @@ title: Tarkistetaan, onko hakemisto olemassa
 weight: 20
 ---
 
-## Mikä & Miksi?
-Hakemiston olemassaolon tarkistaminen tarkoittaa määrittämistä, onko tietyssä polussa hakemistoa ennen toimintojen, kuten tiedostojen lukemisen tai niihin kirjoittamisen, suorittamista. Ohjelmoijat tekevät sen välttääkseen tiedosto-operaatioihin liittyviä virheitä, varmistaen sujuvamman ja luotettavamman tiedostonkäsittelyn tehtävien suorituksen sovelluksissaan.
-
 ## Miten:
 Modernissa C++:ssa (C++17 ja siitä eteenpäin) voit käyttää tiedostojärjestelmäkirjastoa hakemiston olemassaolon tarkistamiseen. Se tarjoaa suoraviivaisen ja standardoidun tavan suorittaa tiedostojärjestelmäoperaatioita, mukaan lukien hakemiston olemassaolon tarkistaminen.
 

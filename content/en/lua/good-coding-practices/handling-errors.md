@@ -9,9 +9,6 @@ title: Handling errors
 weight: 16
 ---
 
-## What & Why?
-Handling errors in coding is about expecting the unexpected. It's the art of planning for when things go sideways so you can keep your program running smoothly.
-
 ## How to:
 Lua uses two main functions for error handling: `pcall` and `xpcall`. Here’s how you use them:
 

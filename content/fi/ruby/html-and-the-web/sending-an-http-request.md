@@ -10,9 +10,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## What & Why?
-HTTP-pyyntö on tapa puhua verkon yli palvelimille. Ohjelmoijat lähettävät niitä datan noutamiseen, lähettämiseen ja web-sovellusten kanssa kommunikoimiseen.
-
 ## How to:
 Rubyssä HTTP-pyyntöjen lähettäminen on suoraviivaista. Tässä esimerkki käyttäen `net/http`-kirjastoa:
 

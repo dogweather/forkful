@@ -13,12 +13,7 @@ title: Den aktuellen Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-
-Das Abrufen des aktuellen Datums in der Programmierung ist eine entscheidende Aufgabe für eine Vielzahl von Anwendungen, einschließlich Logging, Zeitstempelung von Ereignissen oder Planen von Aufgaben. In Lua ermöglicht diese Funktionalität es Programmierern, Datums- und Zeitoperationen nahtlos in ihre Anwendungen zu integrieren, um sicherzustellen, dass ihre Software effektiv mit Echtzeitdaten interagieren kann.
-
 ## Wie:
-
 Lua stellt die Funktion `os.date` bereit, um das aktuelle Datum und die Uhrzeit zu erhalten. Die Funktion kann ohne Argumente verwendet werden, um eine formatierte Zeichenkette zu erhalten, oder mit Formatierungsspezifikatoren, um die Ausgabe anzupassen. So verwenden Sie es:
 
 ```lua

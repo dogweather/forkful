@@ -16,9 +16,6 @@ title: "\uD14D\uC2A4\uD2B8 \uD30C\uC77C \uC77D\uAE30"
 weight: 22
 ---
 
-## What & Why? (무엇과 왜?)
-텍스트 파일을 읽는다는 것은 파일에 저장된 내용을 읽어 프로그램에 가져오는 것입니다. 프로그래머는 데이터를 처리하고, 설정을 불러오며, 입력을 받기 위해 이 작업을 수행합니다.
-
 ## How to: (방법:)
 ```haskell
 import System.IO

@@ -13,9 +13,6 @@ title: Obteniendo la fecha actual
 weight: 29
 ---
 
-## ¿Qué y por qué?
-Obtener la fecha actual es una tarea esencial en casi cualquier esfuerzo de programación, desde registrar actividades en una aplicación hasta generar informes con sellos de fecha. En Ruby, esto se puede lograr fácilmente utilizando la biblioteca estándar, simplificando operaciones que involucran fechas.
-
 ## Cómo hacerlo:
 La biblioteca estándar de Ruby incluye las clases `Date` y `Time` para manejar fechas y horas. Así es como se obtiene la fecha actual:
 

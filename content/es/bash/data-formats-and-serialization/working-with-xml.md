@@ -10,9 +10,6 @@ title: Trabajando con XML
 weight: 40
 ---
 
-## Qué y Por Qué?
-Trabajar con XML implica analizar, extraer y manipular datos en el formato de Lenguaje de Marcado Extensible. Los programadores luchan con XML ya que es un formato de intercambio de datos muy extendido para configuraciones, APIs y más.
-
 ## Cómo hacerlo:
 Aquí te mostramos cómo analizar XML en Bash. ¿Herramientas? xmllint y xmlstarlet. ¿Iterar a través de los elementos XML? Definitivamente. Ejemplo con salida de muestra:
 

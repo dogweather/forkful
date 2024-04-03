@@ -12,12 +12,7 @@ title: Bruke associative tabeller
 weight: 15
 ---
 
-## Hva & Hvorfor?
-
-Assosiative tabeller er som superladde tabeller som lar deg bruke strenger som indekser i stedet for bare heltall. Programmerere bruker dem til mer komplekse datastrukturer, noe som gjør det enklere å håndtere data som ikke passer pent inn i en sekvensiell liste.
-
 ## Hvordan:
-
 Først, erklær en assosiativ tabell i Bash:
 
 ```Bash
@@ -65,7 +60,6 @@ unset my_array["topic"]
 ```
 
 ## Dypdykk
-
 Assosiative tabeller ble introdusert i Bash versjon 4.0, noe som gjør dem til en relativt ny tillegg til språket. Før deres introduksjon var håndtering av arrayer med ikke-heltall-indekser tungvint, ofte krever omveier eller eksterne verktøy som `awk` eller `sed`.
 
 Under panseret implementerer Bash assosiative tabeller ved hjelp av hashtabeller. Denne implementeringen gjør det mulig for effektiv nøkkeloppslag, som forblir ganske konstant uavhengig av array-størrelsen, en kritisk funksjon for ytelse i skriptutførelse.

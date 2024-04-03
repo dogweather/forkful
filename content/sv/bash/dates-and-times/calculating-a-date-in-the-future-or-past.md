@@ -11,9 +11,6 @@ title: "Ber\xE4kna ett datum i framtiden eller f\xF6rflutet"
 weight: 26
 ---
 
-## Vad & Varför?
-Att räkna ut ett framtida eller förflutet datum betyder att man lägger till eller drar ifrån dagar till ett givet datum. Programmerare gör det för att hantera tidsintervall, som att beräkna utgångsdatum eller schemalägga händelser.
-
 ## Hur gör man:
 ```Bash
 # Räkna ut datumet för 10 dagar sedan

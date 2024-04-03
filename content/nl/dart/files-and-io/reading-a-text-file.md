@@ -12,12 +12,7 @@ title: Een tekstbestand lezen
 weight: 22
 ---
 
-## Wat & Waarom?
-
-Het lezen van een tekstbestand in Dart omvat het toegang krijgen tot en het ophalen van gegevens uit bestanden die zijn opgeslagen op het bestandssysteem. Programmeurs doen dit om invoergegevens, configuratie-instellingen of datasets te verwerken, wat het een fundamentele bewerking maakt voor veel applicaties, variërend van eenvoudige scripts tot complexe apps.
-
 ## Hoe te:
-
 Dart's kernbibliotheek, `dart:io`, biedt de nodige functionaliteiten om tekstbestanden synchroon of asynchroon te lezen. Hier is hoe je beide benadert.
 
 **Synchroon:**

@@ -11,9 +11,6 @@ title: Arrondir les nombres
 weight: 13
 ---
 
-## Quoi & Pourquoi ?
-L'arrondi consiste à couper le bruit après un certain point dans un nombre. Les programmeurs arrondissent pour contrôler la précision, gérer la mémoire, ou rendre la sortie plus conviviale — comme transformer 2.998 en un net 3.
-
 ## Comment faire :
 Voici comment vous arrondissez les nombres en JavaScript en utilisant `Math.round()`, `Math.ceil()`, et `Math.floor()` :
 

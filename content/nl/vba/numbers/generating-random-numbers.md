@@ -13,12 +13,7 @@ title: Willekeurige getallen genereren
 weight: 12
 ---
 
-## Wat & Waarom?
-
-Het genereren van willekeurige getallen in Visual Basic for Applications (VBA) stelt programma's in staat processen met elementen van kans of variabiliteit te simuleren, zoals dobbelsteenworpen of het steekproefsgewijs verzamelen van gegevens. Programmeurs gebruiken deze technieken om modellen, spellen of simulaties te ontwikkelen waarbij voorspelbare uitkomsten onrealistisch of minder nuttig zouden zijn.
-
 ## Hoe te:
-
 In VBA wordt de `Rnd`-functie gebruikt om willekeurige getallen te genereren. Standaard genereert `Rnd` een enkelvoudig-nauwkeurig zwevendekommagetal dat groter dan of gelijk aan 0 en kleiner dan 1 is. Hier zijn een paar stappen en voorbeelden om effectief willekeurige getallen te gebruiken:
 
 1. **Eenvoudig Willekeurig Getal:**
@@ -60,7 +55,6 @@ In VBA wordt de `Rnd`-functie gebruikt om willekeurige getallen te genereren. St
 Na het draaien van `RandomNumberInRange`, zie je misschien een berichtvenster dat een getal zoals `45` weergeeft.
 
 ## Diepgaande Duik:
-
 De `Rnd`-functie in VBA, hoewel gemakkelijk te gebruiken, genereert eigenlijk pseudo-willekeurige getallen gebaseerd op een deterministisch algoritme. Dit betekent dat de sequenties van getallen die het produceert niet echt willekeurig zijn, maar vaak volstaan voor veelvoorkomende taken die stochastische processen nodig hebben.
 
 Historisch gezien gaat het vermogen om willekeurige getallen te genereren in VBA terug naar vroege versies van Basic, zich over tijd aanpassend om functies zoals `Randomize` te omvatten om de willekeurigheid te verbeteren door het algoritme te voorzien van een startpunt. Echter, voor toepassingen die een hoog niveau van willekeurigheid vereisen zoals veilige cryptografische operaties, is VBA’s `Rnd` misschien niet het beste hulpmiddel. Alternatieven in robuustere programmeeromgevingen of talen die zijn ontworpen met cryptografie in gedachten, zoals Python's `secrets` module of Java's `SecureRandom`, moeten worden overwogen.

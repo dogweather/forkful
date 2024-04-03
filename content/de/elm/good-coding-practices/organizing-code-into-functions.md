@@ -9,9 +9,6 @@ title: Code in Funktionen organisieren
 weight: 18
 ---
 
-## Was & Warum?
-Den gesamten Code auf einen Haufen werfen? Schlechte Idee. Ihn in Funktionen aufteilen? Gute Idee. Es hält deinen Elm Code sauber, wiederverwendbar und einfacher zu testen. Indem du deinen Code in Funktionen organisierst, gruppierst du Code, der spezifische Aufgaben ausführt, was deine Anwendung wartbarer und verständlicher macht.
-
 ## Wie geht das:
 Hier ist ein Stück Elm Code mit einer einfachen Funktion, um einen Benutzer zu begrüßen:
 

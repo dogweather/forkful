@@ -13,12 +13,7 @@ title: Generering av tilfeldige tall
 weight: 12
 ---
 
-## Hva & Hvorfor?
-
-Det å generere tilfeldige tall i PHP handler om å produsere uforutsigbare verdier innenfor et spesifisert område, noe som er essensielt for oppgaver som å skape unike bruker-IDer, generere passord, eller for bruk i simuleringer og spill. Programmerere stoler på tilfeldighet for å tilføre uforutsigbarhet og variasjon i applikasjonene sine, noe som gjør prosesser som testing eller brukeropplevelser mer robuste og engasjerende.
-
 ## Hvordan:
-
 PHP tilbyr flere funksjoner for å generere tilfeldige tall, men de mest brukte er `rand()`, `mt_rand()`, og for kryptografiske formål, `random_int()`.
 
 For å generere et enkelt tilfeldig tall mellom 0 og getrandmax() (den største mulige verdien returnert av `rand()`), kan du bruke:
@@ -50,7 +45,6 @@ echo random_int(1, 100);
 Igjen er resultatet et tilfeldig tall mellom 1 og 100, som `84`, men med en sterkere garanti for tilfeldighet.
 
 ## Dypdykk
-
 `rand()`-funksjonen har vært til stede i PHP siden de tidlige versjonene, og fungerte som den opprinnelige metoden for å generere tilfeldige tall. Imidlertid er ikke dette det beste valget for applikasjoner som krever en høy grad av tilfeldighet på grunn av dens relativt forutsigbare algoritme.
 
 `mt_rand()`, introdusert i PHP 4, er basert på Mersenne Twister-algoritmen - langt overlegen i form av hastighet og den tilfeldigheten den kan generere sammenlignet med `rand()`. Den ble raskt det foretrukne alternativet for de fleste ikke-kryptografiske behov.

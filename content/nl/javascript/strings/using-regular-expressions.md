@@ -12,9 +12,6 @@ title: Reguliere expressies gebruiken
 weight: 11
 ---
 
-## Wat & Waarom?
-Reguliere expressies, gewoonlijk bekend als regex, zijn patronen die gebruikt worden om combinaties van karakters in strings te matchen. Programmeurs gebruiken ze om te zoeken, bewerken en manipuleren van tekst met precisie en efficiëntie.
-
 ## Hoe te:
 Hier is hoe je regex in JavaScript kunt gebruiken:
 

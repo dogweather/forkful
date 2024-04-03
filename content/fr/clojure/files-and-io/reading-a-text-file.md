@@ -9,9 +9,6 @@ title: Lecture d'un fichier texte
 weight: 22
 ---
 
-## What & Why?
-Lire un fichier texte, c'est extraire son contenu pour l'utiliser. Les programmeurs le font pour traiter des données, configurer des programmes ou simplement importer des informations.
-
 ## How to:
 Lire un fichier en Clojure est simple. Utilisez `slurp` pour un petit fichier :
 

@@ -11,9 +11,6 @@ title: Lectura de un archivo de texto
 weight: 22
 ---
 
-## ¿Qué y Por Qué?
-Leer un archivo de texto en programación significa acceder al contenido almacenado en un archivo en tu disco y trabajar con él en tu código. Es una tarea común porque los programas a menudo necesitan cargar configuraciones, datos o plantillas guardadas como texto.
-
 ## Cómo hacerlo:
 C# ha simplificado este proceso con el tiempo. Aquí hay ejemplos de cómo puedes leer un archivo de texto:
 
@@ -39,6 +36,7 @@ class Program
     }
 }
 ```
+
 ### Salida de muestra:
 ```
 Hola, este es el contenido de tu archivo de texto.

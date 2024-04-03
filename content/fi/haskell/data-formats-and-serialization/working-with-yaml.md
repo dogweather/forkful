@@ -13,12 +13,7 @@ title: "Ty\xF6skentely YAML:n kanssa"
 weight: 41
 ---
 
-## Mikä & Miksi?
-
-YAML, joka on lyhenne sanoista "YAML Ain't Markup Language", on ihmisläheinen datan serialisointistandardi, jota voidaan käyttää kaikissa ohjelmointikielissä. Ohjelmoijat käyttävät usein YAMLia konfiguraatiotiedostoissa ja tietojen vaihdossa kielten välillä sen luettavuuden ja suoraviivaisen rakenteen ansiosta.
-
 ## Kuinka:
-
 Haskell ei sisällä sisäänrakennettua tukea YAML-käsittelylle, mutta voit käyttää kolmannen osapuolen kirjastoja, kuten `yaml` ja `aeson`, YAML-datan jäsentämiseen ja tuottamiseen. Tässä on, miten voit aloittaa:
 
 ### YAMLin lukeminen

@@ -10,9 +10,6 @@ title: Ricerca e sostituzione del testo
 weight: 10
 ---
 
-## What & Why?
-La ricerca e la sostituzione di testo permettono di trovare specifiche sequenze di caratteri in una stringa e di rimpiazzarle con altre. I programmatori le utilizzano per modificare dati, configurazioni, codici, e per automatizzare correzioni su vasta scala.
-
 ## How to:
 Kotlin rende la ricerca e la sostituzione di testo semplice grazie alle sue funzioni incorporate. Ecco un esempio:
 

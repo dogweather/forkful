@@ -15,12 +15,7 @@ title: Sprawdzanie, czy katalog istnieje
 weight: 20
 ---
 
-## Co i dlaczego?
-
-Sprawdzanie, czy katalog istnieje, to podstawowa operacja podczas pisania skryptów wchodzących w interakcję z systemem plików, zapewniająca, że program działa na prawidłowych ścieżkach i zapobiegająca błędom związanym z nieistniejącymi katalogami. Zadanie to jest kluczowe przy tworzeniu nowych plików w katalogach, czytaniu z nich lub bezpiecznym wykonywaniu operacji związanych z katalogami.
-
 ## Jak to zrobić:
-
 W Lua nie masz wbudowanej funkcji, która bezpośrednio sprawdza, czy katalog istnieje, więc często opierasz się na bibliotece Lua File System (lfs), popularnej bibliotece stron trzecich do operacji na plikach.
 
 Najpierw upewnij się, że masz zainstalowany Lua File System. Jeśli nie, możesz go zazwyczaj zainstalować za pomocą LuaRocks:

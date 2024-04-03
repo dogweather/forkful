@@ -10,9 +10,6 @@ title: Manipulation des nombres complexes
 weight: 14
 ---
 
-## Quoi et pourquoi ?
-Les nombres complexes ont une partie réelle et une partie imaginaire (comme `3 + 4i`). Ils sont utilisés en ingénierie, en physique et pour certains problèmes informatiques. Les programmeurs les utilisent pour les simulations, le traitement des signaux et la résolution efficace de certains types de problèmes mathématiques.
-
 ## Comment faire :
 Elixir n'a pas de nombres complexes intégrés, donc nous devons créer les nôtres ou utiliser une bibliothèque, comme `ComplexNum`. Voici un rapide exemple avec une bibliothèque :
 

@@ -14,12 +14,7 @@ title: "Usuwanie znak\xF3w pasuj\u0105cych do wzorca"
 weight: 5
 ---
 
-## Co i dlaczego?
-
-Usuwanie znaków pasujących do określonego wzorca ze stringów w języku C polega na usunięciu wszystkich instancji pewnych znaków, które spełniają predefiniowane kryteria. Programiści wykonują to zadanie, aby oczyścić dane wejściowe, przygotować dane do przetwarzania, lub po prostu wyczyścić stringi przed dalszą manipulacją lub wyjściem, zapewniając, że dane obsługiwane są dokładnie takie, jakie są potrzebne w danym kontekście lub algorytmie.
-
 ## Jak to zrobić:
-
 C nie posiada wbudowanej funkcji do bezpośredniego usuwania znaków z ciągu na podstawie wzorca, w przeciwieństwie do niektórych języków wyższego poziomu. Jednak łatwo możesz osiągnąć ten cel, ręcznie iterując przez ciąg i budując nowy, który wyklucza niechciane znaki. Na przykład, załóżmy, że chcesz usunąć wszystkie cyfry z ciągu. Możesz to zrobić następująco:
 
 ```c
@@ -53,7 +48,6 @@ Wynik: Programowanie w C : Podstawy!
 Ten przykład korzysta z funkcji `isdigit` z biblioteki `ctype.h`, aby identyfikować cyfry, przesuwając znaki, które nie są cyframi, na początek ciągu i kończąc ciąg, gdy wszystkie znaki zostaną ocenione.
 
 ## Pogłębienie
-
 Prezentowane rozwiązanie korzysta z podejścia z dwoma wskaźnikami w tej samej tablicy, aby skutecznie filtrować niechciane znaki, technika będąca znakiem rozpoznawczym filozofii zarządzania pamięcią w C. Ta metoda jest wydajna, ponieważ działa w miejscu, unikając potrzeby dodatkowej alokacji pamięci i minimalizując tym samym obciążenie.
 
 Historycznie rzecz biorąc, brak zaawansowanych funkcji manipulacji ciągami w C zmuszał programistów do rozwijania głębokiego zrozumienia obsługi ciągów na poziomie pamięci, prowadząc do innowacyjnych podejść, takich jak powyższe. Chociaż ma to zaletę większej kontroli i wydajności, wiąże się z większym ryzykiem błędów, takich jak przepełnienie bufora i błędy o jeden za mało.

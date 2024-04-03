@@ -10,9 +10,6 @@ title: Avvio di un nuovo progetto
 weight: 1
 ---
 
-## Cos'è & Perché?
-Iniziamo un nuovo progetto per creare qualcosa da zero e per risolvere problemi specifici. I programmatori lo fanno per innovare, lavorare su idee fresche, e per mettere in pratica ciò che hanno imparato.
-
 ## Come fare:
 Aprire PowerShell e usare questi comandi per iniziare un nuovo progetto:
 

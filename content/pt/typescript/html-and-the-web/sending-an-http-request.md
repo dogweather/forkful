@@ -11,9 +11,6 @@ title: "Enviando uma requisi\xE7\xE3o HTTP"
 weight: 44
 ---
 
-## What & Why?
-Enviar uma requisição HTTP é fundamentalmente o ato de solicitar dados de um servidor remoto. Programadores fazem isso para interagir com APIs, recuperar recursos da web ou comunicar-se entre diferentes serviços.
-
 ## How to:
 Para enviar uma requisição HTTP em TypeScript, você pode usar a API `fetch` nativa ou bibliotecas como Axios. Vamos ver um exemplo simples com `fetch` e outro com Axios:
 

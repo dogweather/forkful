@@ -11,16 +11,10 @@ title: Searching and replacing text
 weight: 10
 ---
 
-## What & Why?
-
-Searching and replacing text in Google Apps Script involves programmatically identifying specific strings in a document, spreadsheet, or any other type of Google Apps content, and substituting them with other text values. Programmers utilize this functionality to automate the editing of large volumes of content, correct common errors, standardize terminology across documents, or insert dynamic data into templates.
-
 ## How to:
-
 Google Apps Script offers a straightforward way to search and replace text, especially within Google Docs and Sheets. Below are examples for both.
 
 ### Google Docs:
-
 To search and replace text in a Google Document, you'll primarily interact with the `DocumentApp` class.
 
 ```javascript
@@ -41,7 +35,6 @@ searchReplaceInDoc();
 This code snippet searches for all occurrences of `'searchText'` in the active Google Document and replaces them with `'replacementText'`.
 
 ### Google Sheets:
-
 Similarly, in Google Sheets, you can use `SpreadsheetApp` to perform search and replace operations:
 
 ```javascript
@@ -60,7 +53,6 @@ searchReplaceInSheet();
 In this example, `createTextFinder('searchText')` searches the active sheet for 'searchText', and `replaceAllWith('replacementText')` replaces all occurrences with 'replacementText'.
 
 ## Deep Dive
-
 The search and replace functionality in Google Apps Script is heavily influenced by its web-based nature, allowing scripts to manipulate text across various Google Apps seamlessly. Historically, this capability stems from the broader context of text processing and manipulation in programming, where regular expressions and string functions in languages such as Perl and Python set a high standard for flexibility and power.
 
 While Google Apps Script's search and replace functionality is powerful for straightforward substitutions, it lacks the full regular expression capabilities found in some other languages. For example, while you can use basic regular expressions in `createTextFinder` in Google Sheets, the options for complex pattern matching and manipulation are limited compared to Perl or Python.

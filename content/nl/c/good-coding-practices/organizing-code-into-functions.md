@@ -12,12 +12,7 @@ title: Code organiseren in functies
 weight: 18
 ---
 
-## Wat & Waarom?
-
-Code in C organiseren in functies omvat het opsplitsen van complexe taken in kleinere, herbruikbare blokken code. Deze praktijk verbetert de leesbaarheid, vergemakkelijkt het debuggen, en bevordert hergebruik van code, waardoor applicaties modulairder en onderhoudbaarder worden.
-
 ## Hoe:
-
 In C wordt een functie gedeclareerd met een retourtype, een naam, en parameters (indien van toepassing), gevolgd door een blok code. Laten we beginnen met een eenvoudig voorbeeld: een functie die twee gehele getallen optelt.
 
 ```c
@@ -73,7 +68,6 @@ De oppervlakte van de rechthoek is: 50
 ```
 
 ## Diepgaand
-
 Het concept van functies in C, geërfd van eerdere programmeerpraktijken, is fundamenteel voor gestructureerd programmeren. Functies stellen ontwikkelaars in staat om details te abstraheren, complexiteit te beheren, en hun code logisch te organiseren. Sinds de introductie is de functie een kernconstructie in C, waardoor tal van andere talen beïnvloed zijn.
 
 Echter, naarmate de programmeerparadigma's zijn geëvolueerd, hebben alternatieve benaderingen zoals objectgeoriënteerd programmeren (OOP) in talen zoals C++ en Java, het concept van functies uitgebreid met methoden die geassocieerd zijn met objecten. Hoewel C standaard geen OOP ondersteunt, is het mogelijk om objectgeoriënteerde ontwerpen na te bootsen door functies en gegevens zorgvuldig te structureren.

@@ -12,12 +12,7 @@ title: "Anf\xFChrungszeichen aus einem String entfernen"
 weight: 9
 ---
 
-## Was & Warum?
-
-Das Entfernen von Anführungszeichen aus einem String bedeutet, diese lästigen einfachen (' ') oder doppelten (" ") Anführungszeichen von Ihren Textdaten zu entfernen. Programmierer tun dies oft, um Eingaben zu bereinigen oder Daten zur weiteren Verarbeitung ohne das Durcheinander von Anführungszeichen vorzubereiten.
-
 ## Wie geht das:
-
 Fish hat eine eingebaute Magie für diese Art von Aufgaben. Verwende die `string` Funktion, ohne ins Schwitzen zu kommen. Sieh dir diese Zaubertricks an:
 
 ```fish
@@ -33,7 +28,6 @@ echo $unquoted # Ausgabe: Hallo, Universum!
 ```
 
 ## Tief eintauchen
-
 Zurück in der Steinzeit der Kommandozeile würdest du dich mit `sed` oder `awk` herumschlagen, um Anführungszeichen zu entfernen; ein echtes Durcheinander aus Backslashes und kryptischen Flags. Fish's `string` Funktion stammt aus einer neueren Ära und macht den Code sauberer und intuitiver.
 
 Alternativen in anderen Shells könnten immer noch auf diese alten Werkzeuge angewiesen sein oder könnten ihre eigenen eingebauten Methoden wie Bashs Parametererweiterung oder zsh's Modifikatoren verwenden.
@@ -41,7 +35,6 @@ Alternativen in anderen Shells könnten immer noch auf diese alten Werkzeuge ang
 Die `string` Funktion geht über das Trimmen von Anführungszeichen hinaus. Es ist ein Schweizer Taschenmesser für String-Operationen in Fish. Mit `string` kannst du Strings in deinem Terminal schneiden, teilen, zusammenfügen oder sogar mit Regex-Mustern abgleichen.
 
 ## Siehe auch
-
 Tauche tiefer in `string` ein mit Hilfe der offiziellen Dokumentation:
 - [Fish Shell String Dokumentation](https://fishshell.com/docs/current/commands.html#string)
 

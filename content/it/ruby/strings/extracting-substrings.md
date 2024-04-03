@@ -10,9 +10,6 @@ title: Estrazione di sottostringhe
 weight: 6
 ---
 
-## What & Why? (Cosa & Perché?)
-Estrarre sottostringhe significa selezionare parti specifiche di una stringa. Programmatori lo fanno per manipolare testo: validare input, estrarre dati, riformattare output.
-
 ## How to: (Come fare:)
 In Ruby, possiamo usare diversi metodi per estrarre sottostringhe. Ecco alcuni esempi:
 

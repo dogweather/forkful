@@ -16,12 +16,7 @@ title: "Czytanie argument\xF3w z linii polece\u0144"
 weight: 23
 ---
 
-## Co i dlaczego?
-
-Odczytywanie argumentów linii poleceń w Dart umożliwia programistom bezpośrednie wprowadzanie danych do konsoli podczas wykonywania programu Dart, zwiększając jego interaktywność i elastyczność dla różnych przypadków użycia, w tym skryptów automatyzujących, narzędzi CLI lub przetwarzania wsadowego. Funkcja ta jest kluczowa dla tworzenia elastycznych i przyjaznych dla użytkownika aplikacji konsolowych.
-
 ## Jak to zrobić:
-
 Dart oferuje prostą metodę dostępu do argumentów linii poleceń za pośrednictwem `List<String> args` w głównej metodzie. Poniżej znajduje się prosty przykład demonstrujący, jak odczytywać i wykorzystywać argumenty linii poleceń.
 
 ```dart
@@ -49,7 +44,6 @@ Argumenty linii poleceń:
 ```
 
 ### Używanie popularnej biblioteki stron trzecich: `args`
-
 Chociaż wbudowane możliwości Darta do obsługi argumentów linii poleceń są solidne dla wielu aplikacji, pakiet `args` zapewnia udoskonalony sposób definiowania i analizowania argumentów linii poleceń dla bardziej złożonych potrzeb.
 
 Najpierw dodaj pakiet `args` do swojego `pubspec.yaml`:

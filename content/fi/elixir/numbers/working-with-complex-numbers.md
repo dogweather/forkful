@@ -10,9 +10,6 @@ title: "Kompleksilukujen k\xE4sittely"
 weight: 14
 ---
 
-## Mikä ja Miksi?
-Kompleksiluvuilla on reaaliosa ja imaginääriosa (kuten `3 + 4i`). Niitä käytetään tekniikassa, fysiikassa sekä tietyissä tietojenkäsittelyn ongelmissa. Ohjelmoijat työskentelevät niiden kanssa simulaatioissa, signaalinkäsittelyssä ja tietyntyyppisten matemaattisten ongelmien tehokkaassa ratkaisemisessa.
-
 ## Kuinka:
 Elixir ei sisällä valmiina kompleksilukuja, joten luomme omamme tai käytämme kirjastoa, kuten `ComplexNum`. Tässä on nopea esimerkki kirjaston kanssa:
 

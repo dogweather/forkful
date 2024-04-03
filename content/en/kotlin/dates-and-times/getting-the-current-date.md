@@ -10,10 +10,8 @@ title: Getting the current date
 weight: 29
 ---
 
-## What & Why?
-In programming, getting the current date is a fundamental task that enables developers to access, display, or manipulate the current date within their applications. This capability is crucial for anything from logging and time-stamping events to calculations based on dates.
-
 ## How to:
+
 
 ### Using Standard Kotlin
 Kotlin does not have its own date and time API, but relies on the Java Standard Library for this functionality. Here's how you can get the current date:

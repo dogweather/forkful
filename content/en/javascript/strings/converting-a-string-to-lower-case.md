@@ -10,9 +10,6 @@ title: Converting a string to lower case
 weight: 4
 ---
 
-## What & Why?
-Converting a string to lowercase means transforming all the characters within it to their lower case counterparts. Programmers do it for consistency, especially for case-insensitive comparisons, like when normalizing user input or searching text content.
-
 ## How to:
 In JavaScript, we convert a string to lowercase with the `.toLowerCase()` method. It's as simple as:
 

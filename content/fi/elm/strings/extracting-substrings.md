@@ -10,9 +10,6 @@ title: Merkkijonojen osien poimiminen
 weight: 6
 ---
 
-## What & Why? - Mikä & Miksi?
-Substringien poiminta on prosessi, jossa valitaan osajono isommasta jonosta. Ohjelmoijat käyttävät tätä esimerkiksi datan siistimiseen ja tietojen erotteluun.
-
 ## How to: - Kuinka tehdä:
 ```Elm
 import String

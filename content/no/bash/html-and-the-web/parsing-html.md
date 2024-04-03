@@ -13,12 +13,7 @@ title: Analysering av HTML
 weight: 43
 ---
 
-## Hva & Hvorfor?
-
-Å parse HTML betyr å sile gjennom strukturen og innholdet i en HTML-fil for å trekke ut informasjon. Programmerere gjør det for å få tilgang til data, manipulere innhold, eller skrape nettsteder.
-
 ## Hvordan:
-
 Bash er ikke gå-til for parsing av HTML, men det kan gjøres med verktøy som `grep`, `awk`, `sed`, eller eksterne verktøy som `lynx`. For robusthet vil vi bruke `xmllint` fra `libxml2`-pakken.
 
 ```bash
@@ -54,7 +49,6 @@ Avsnittet er: Bash kan lese meg.
 ```
 
 ## Dypdykk
-
 Tilbake i tid brukte programmerere regex-baserte verktøy som `grep` for å skanne HTML, men det var klønete. HTML er ikke regulær – den er kontekstuell. Tradisjonelle verktøy går glipp av dette og kan være utsatt for feil.
 
 Alternativer? Masse. Python med Beautiful Soup, PHP med DOMDocument, JavaScript med DOM-parser – språk med biblioteker designet for å forstå HTMLs struktur.
@@ -62,7 +56,6 @@ Alternativer? Masse. Python med Beautiful Soup, PHP med DOMDocument, JavaScript 
 Å bruke `xmllint` i bash-skript er solid for enkle oppgaver. Det forstår XML, og ved utvidelse, XHTML. Vanlig HTML kan være uforutsigbar, skjønt. Det følger ikke alltid XMLs strenge regler. `xmllint` tvinger HTML inn i en XML-modell som fungerer godt for velformet HTML, men kan snuble på rotete greier.
 
 ## Se Også
-
 - [W3Schools - HTML DOM Parser](https://www.w3schools.com/xml/dom_intro.asp): Demystifiserer HTML DOM.
 - [MDN Web Docs - Parsing og serialisering av XML](https://developer.mozilla.org/en-US/docs/Web/Guide/Parsing_and_serializing_XML): For XML-parsingsprinsipper som gjelder for XHTML.
 - [Beautiful Soup-dokumentasjon](https://www.crummy.com/software/BeautifulSoup/bs4/doc/): Et Python-bibliotek for parsing av HTML.

@@ -12,9 +12,6 @@ title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---
 
-## Co i dlaczego?
-Read-Eval-Print-Loop (REPL) to środowisko programistyczne, które przyjmuje pojedyncze wejścia od użytkownika, wykonuje je i zwraca wynik użytkownikowi. Programiści używają REPL do szybkiego eksperymentowania ze skrawkami kodu, debugowania i uczenia się nowych funkcji języka bez konieczności tworzenia pełnej aplikacji.
-
 ## Jak to zrobić:
 TypeScript nie ma własnego REPL. Użyjmy `ts-node`, środowiska wykonawczego TypeScript dla Node.js, które zawiera REPL.
 

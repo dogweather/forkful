@@ -15,12 +15,7 @@ title: "L\xE0m vi\u1EC7c v\u1EDBi s\u1ED1 ph\u1EE9c"
 weight: 14
 ---
 
-## Gì và Tại sao?
-
-Làm việc với số phức bao gồm thực hiện các phép toán toán học trên những số có cả phần thực và phần ảo. Các lập trình viên thường xuyên gặp phải số phức trong các lĩnh vực như kỹ thuật, vật lý, và mọi nơi yêu cầu giải quyết các phương trình không thể thực hiện chỉ với số thực.
-
 ## Làm thế nào:
-
 Trong Visual Basic for Applications (VBA), việc xử lý số phức có thể kém trực tiếp so với các ngôn ngữ hỗ trợ bản địa cho chúng. Tuy nhiên, bạn có thể quản lý các thao tác phức tạp bằng cách tạo các hàm hoặc sử dụng các hàm thư viện sẵn có. Hãy khám phá một ví dụ cơ bản về phép cộng, trừ, nhân và chia số phức:
 
 ```vb
@@ -50,7 +45,6 @@ End Sub
 Khi mô tả phép cộng, các cách tiếp cận tương tự có thể được điều chỉnh cho phép trừ, nhân và chia. Đối với các thao tác phức tạp hơn ngoài tính toán cơ bản, có thể đáng giá để khám phá các thư viện bên ngoài hoặc tích hợp các giải pháp hỗ trợ thao tác số phức một cách tự nhiên hơn.
 
 ## Sâu hơn:
-
 VBA không bao gồm hỗ trợ tích hợp sẵn cho số phức, một khía cạnh mà nó tụt hậu so với các ngôn ngữ như Python, có một lớp số phức (`complex`) hoặc C++ với Thư viện Tiêu chuẩn của nó (`std::complex`). Về mặt lịch sử, nhu cầu để thao tác trực tiếp số phức trong VBA là tương đối hiếm, vì nó thường được sử dụng cho tự động hóa, thao tác với các ứng dụng Office, và các tác vụ truyền thống không yêu cầu tính toán toán học phức tạp. Khi VBA được hình thành và phát triển, các trường hợp sử dụng của nó chủ yếu tập trung vào ứng dụng kinh doanh chứ không phải tính toán khoa học, có thể giải thích sự thiếu sót này.
 
 Đối với các tác vụ cần thực hiện thao tác số phức một cách rộng rãi, lập trình viên có thể thấy việc sử dụng ngôn ngữ hướng tới toán học nhiều hơn là có lợi. Tuy nhiên, đối với những người cam kết hoặc bị giới hạn bởi việc sử dụng VBA, viết hàm tùy chỉnh (như được minh họa) hoặc tích hợp với phần mềm có khả năng này (như MATLAB hoặc chính Excel đến một mức độ nào đó) là các con đường tiến lên khả thi. Dù có hạn chế, các giải pháp sáng tạo và tích hợp bên ngoài có thể mở rộng khả năng sử dụng của VBA vào các lĩnh vực mà nó không được thiết kế ban đầu, bao gồm cả làm việc với số phức.

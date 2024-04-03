@@ -11,9 +11,6 @@ title: "HTTP-pyynn\xF6n l\xE4hett\xE4minen"
 weight: 44
 ---
 
-## What & Why?
-HTTP-pyyntö on tapa siirtää tietoa verkossa palvelimien ja asiakkaiden välillä. Ohjelmoijat käyttävät tätä toimintoa hakeakseen dataa, lähettääkseen dataa tai kommunikoidakseen etäpäätepisteiden kanssa.
-
 ## How to:
 Elixirissä HTTP-pyyntöjen tekeminen käy usein `HTTPoison`-kirjaston kautta. Tässä helppo esimerkki GET-pyynnöstä:
 
@@ -57,7 +54,7 @@ Elixirin suosio nousi erityisesti rinnakkaistamisen ja vikasietoisuuden vuoksi, 
 
 Vaihtoehtoisia kirjastoja `HTTPoison`ille ovat esimerkiksi `Tesla`, joka on modulaarinen HTTP-asiakaskirjasto middleware-tuella, sekä `Finch`, joka on keskittynyt suorituskykyyn Elixirin OTP-prinsiippejä noudattaen.
 
-Lähetettäessä HTTP-pyyntöä tärkeää on ymmärtää eri pyyntötyypit (GET, POST, PUT, DELETE jne.), statuskoodit ja oikean HTTP-headerin määrittäminen. 
+Lähetettäessä HTTP-pyyntöä tärkeää on ymmärtää eri pyyntötyypit (GET, POST, PUT, DELETE jne.), statuskoodit ja oikean HTTP-headerin määrittäminen.
 
 ## See Also
 - [HTTPoison GitHub](https://github.com/edgurgel/httpoison)

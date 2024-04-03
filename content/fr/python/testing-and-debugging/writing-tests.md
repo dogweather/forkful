@@ -12,9 +12,6 @@ title: "R\xE9daction de tests"
 weight: 36
 ---
 
-## Quoi et Pourquoi ?
-Écrire des tests en Python implique la création de scripts automatisés pour valider la correction de votre code. Les programmeurs font cela pour s'assurer que leurs fonctions ou leurs classes fonctionnent comme prévu sous diverses conditions, ce qui aide à détecter les erreurs tôt et facilite la maintenance et le refactoring.
-
 ## Comment faire :
 Python est livré avec un module intégré pour écrire des tests appelé `unittest`. Voici comment vous pouvez l'utiliser pour tester une fonction simple :
 

@@ -11,12 +11,7 @@ title: Generating random numbers
 weight: 12
 ---
 
-## What & Why?
-
-Generating random numbers in Elixir is a fundamental programming task, vital for applications needing unpredictable results such as in generating secure tokens, sampling data, or in gaming algorithms. Programmers use it to introduce a level of randomness and variability in their applications, making them more dynamic and less deterministic.
-
 ## How to:
-
 To generate random numbers in Elixir, you primarily use the `:rand` module which provides several functions for this purpose. Here is a quick guide to get you started:
 
 First, ensure you seed the random number generator to initialize it with a unique starting point:
@@ -51,7 +46,6 @@ IO.puts(random_float_range)
 Remember, these numbers are pseudo-random; they're determined by the seed and algorithm but suffice for most applications.
 
 ## Deep Dive
-
 Elixir's random number generation capabilities rely on Erlang's `:rand` module, reflecting its heritage and close relationship with Erlang. The `:rand` module replaced the older `:random` module, offering improved algorithms for random number generation. It provides a variety of algorithms, the default being `exsplus`, but also supports others like `exs64`, `exsl`, and more, each with its trade-offs in terms of speed and randomness quality.
 
 An interesting aspect of Elixir's (and thus Erlang's) random number generation is its handling of seeds. The system maintains separate seed states for each process, ensuring that concurrent processes don't interfere with each other's random number sequences. This is particularly useful in concurrent applications, ensuring predictability and reliability in distributed systems.

@@ -11,9 +11,6 @@ title: Lecture des arguments de ligne de commande
 weight: 23
 ---
 
-## What & Why?
-Lire les arguments de la ligne de commande, c'est récupérer les données que l'utilisateur passe à votre programme lors de son exécution. On le fait pour personnaliser le comportement du programme sans changer le code.
-
 ## How to:
 Haskell rend la lecture des arguments de la ligne de commande assez simple avec le module `System.Environment`.
 

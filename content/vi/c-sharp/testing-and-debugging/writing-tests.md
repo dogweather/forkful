@@ -15,9 +15,6 @@ title: "Vi\u1EBFt c\xE1c b\xE0i ki\u1EC3m tra"
 weight: 36
 ---
 
-## Cái gì & Tại sao?
-Viết test trong lập trình nghĩa là tạo ra các mini-chương trình để kiểm tra xem mã của bạn có hoạt động như mong đợi hay không. Lập trình viên làm điều này để bắt lỗi, đảm bảo chất lượng, và tiết kiệm thời gian sửa chữa vấn đề sau này.
-
 ## Làm thế nào:
 Hãy thảo luận một số mã C# sử dụng NUnit, một framework test phổ biến:
 

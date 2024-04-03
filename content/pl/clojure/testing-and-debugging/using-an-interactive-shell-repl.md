@@ -11,9 +11,6 @@ title: Korzystanie z interaktywnego shella (REPL)
 weight: 34
 ---
 
-## Co i dlaczego?
-REPL, czyli Pętla Czytaj-Ewaluuj-Drukuj, to środowisko programistyczne do dynamicznego testowania kodu Clojure kawałek po kawałku. Programiści używają go, by otrzymywać natychmiastową informację zwrotną, iteracyjnie rozwijać projekt oraz szybko eksperymentować bez konieczności kompilacji czy konfiguracji pełnego środowiska projektowego.
-
 ## Jak używać:
 Zacznij od uruchomienia REPL:
 

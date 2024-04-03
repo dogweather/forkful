@@ -11,9 +11,6 @@ title: "Concat\xE9nation de cha\xEEnes de caract\xE8res"
 weight: 3
 ---
 
-## What & Why? (Quoi & Pourquoi ?)
-Concaténer des chaînes de caractères, c'est comme assembler des LEGO : on les joint bout à bout pour former un tout. Les programmeurs font ça pour créer des phrases, des messages personnalisés, ou n'importe quelle donnée textuelle dynamique.
-
 ## How to (Comment faire)
 Fusionner des chaînes en PHP est un jeu d'enfant. Utilisez le point `.` pour les coller ensemble. Voilà un exemple :
 

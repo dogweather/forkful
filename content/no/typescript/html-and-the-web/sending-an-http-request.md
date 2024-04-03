@@ -11,9 +11,6 @@ title: "\xC5 sende en HTTP-foresp\xF8rsel"
 weight: 44
 ---
 
-## What & Why? (Hva & Hvorfor?)
-Å sende en HTTP-forespørsel er måten nettlesere og servere snakker med hverandre på; du spør etter data, den returnerer data. Programmerere gjør dette for å hente eller sende informasjon fra servere, altså kommunisere med back-end og tredjepartstjenester.
-
 ## How to (Slik Gjør Du)
 For å sende en HTTP-forespørsel i TypeScript, kan du bruke den innebygde `fetch`-funksjonen eller et bibliotek som Axios. Her er et eksempel med `fetch`:
 

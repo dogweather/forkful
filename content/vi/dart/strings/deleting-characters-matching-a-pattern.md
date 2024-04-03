@@ -17,12 +17,7 @@ title: "X\xF3a c\xE1c k\xFD t\u1EF1 ph\xF9 h\u1EE3p v\u1EDBi m\u1ED9t m\u1EABu"
 weight: 5
 ---
 
-## Cái gì & Tại sao?
-
-Việc xóa các ký tự khớp với một mẫu cụ thể trong chuỗi là rất quan trọng cho việc kiểm tra dữ liệu, làm sạch dữ liệu, hoặc khi chuẩn bị văn bản cho việc xử lý tiếp theo. Lập trình viên thực hiện tác vụ này để đảm bảo tính toàn vẹn của dữ liệu, cải thiện khả năng đọc và thực thi một định dạng nhất quán trong các đầu vào văn bản.
-
 ## Làm thế nào:
-
 Dart giúp việc xóa ký tự khớp với một mẫu được xác định trước sử dụng biểu thức chính quy và phương thức `replaceAll` trở nên đơn giản. Không cần các thư viện bên thứ ba cho việc sử dụng cơ bản, làm cho phương pháp này rất dễ tiếp cận.
 
 Dưới đây là một ví dụ đơn giản minh họa cách xóa số từ một chuỗi:

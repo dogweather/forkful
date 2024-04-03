@@ -11,9 +11,6 @@ title: Umformung eines Strings in Kleinbuchstaben
 weight: 4
 ---
 
-## Was & Warum?
-Strings in Kleinbuchstaben zu konvertieren bedeutet, alle Buchstaben eines Texts in untere Zeichen umzuwandeln. Programmierer nutzen diese Technik, um Texte einheitlich zu vergleichen und Formatunterschiede zu ignorieren.
-
 ## So geht's:
 Ein Beispiel in PowerShell, um einen String kleinzuschreiben:
 

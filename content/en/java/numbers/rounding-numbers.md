@@ -9,9 +9,6 @@ title: Rounding numbers
 weight: 13
 ---
 
-## What & Why?
-Rounding numbers means adjusting them to a specified degree of precision. Programmers do it to simplify numbers for readability, to meet certain specifications, or to ensure calculations fit within certain bounds, like avoiding precision errors in floating-point arithmetic.
-
 ## How to:
 Java offers multiple ways to round numbers. Here’s a quick demo with `Math.round()`, `BigDecimal`, and `DecimalFormat`.
 

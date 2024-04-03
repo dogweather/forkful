@@ -15,16 +15,10 @@ title: Tekstin etsiminen ja korvaaminen
 weight: 10
 ---
 
-## Mikä & Miksi?
-
-Tekstin etsiminen ja korvaaminen Google Apps Scriptilla käsittää tiettyjen merkkijonojen ohjelmallisen tunnistamisen dokumentissa, laskentataulukossa tai missä tahansa muussa Google Apps -sisältötyypissä ja niiden korvaamisen toisilla tekstiarvoilla. Ohjelmoijat hyödyntävät tätä toiminnallisuutta suurten sisältömäärien automaattisessa muokkauksessa, yleisten virheiden korjaamisessa, terminologian standardoinnissa eri dokumenteissa tai dynaamisten tietojen lisäämisessä malleihin.
-
 ## Kuinka:
-
 Google Apps Script tarjoaa suoraviivaisen tavan etsiä ja korvata tekstiä, erityisesti Google Docs ja Sheets -sovelluksissa. Alla on esimerkkejä molemmista.
 
 ### Google Docs:
-
 Tekstin etsimisessä ja korvaamisessa Google-dokumentissa toimit ensisijaisesti `DocumentApp`-luokan kanssa.
 
 ```javascript
@@ -45,7 +39,6 @@ searchReplaceInDoc();
 Tämä koodinpätkä etsii kaikki aktiivisessa Google-dokumentissa olevat `'searchText'`-esiintymät ja korvaa ne `'replacementText'`-tekstillä.
 
 ### Google Sheets:
-
 Samoin Google Sheets -sovelluksessa voit käyttää `SpreadsheetApp`ia suorittamaan etsintä- ja korvaustoimintoja:
 
 ```javascript
@@ -64,7 +57,6 @@ searchReplaceInSheet();
 Tässä esimerkissä `createTextFinder('searchText')` etsii aktiivisesta taulukosta 'searchText', ja `replaceAllWith('replacementText')` korvaa kaikki esiintymät 'replacementText'-tekstillä.
 
 ## Syväsukellus
-
 Etsi- ja korvaustoiminnallisuus Google Apps Scriptissa on voimakkaasti sidoksissa sen web-pohjaiseen luonteeseen, mikä mahdollistaa skriptien saumattoman tekstin manipuloinnin eri Google Apps -sovelluksissa. Historiallisesti tämä kyky juontaa juurensa laajemmasta tekstinkäsittelyn ja -manipuloinnin kontekstista ohjelmoinnissa, missä säännölliset lausekkeet ja merkkijonofunktiot kielissä, kuten Perl ja Python, ovat asettaneet korkean standardin joustavuudelle ja tehokkuudelle.
 
 Vaikka Google Apps Scriptin etsi- ja korvaustoiminnallisuus on tehokas yksinkertaisiin korvauksiin, se ei tarjoa yhtä kattavia säännöllisten lausekkeiden toimintoja kuin jotkin muut kielet. Esimerkiksi vaikka `createTextFinder` Google Sheets -sovelluksessa mahdollistaa perussäännöllisten lausekkeiden käytön, monimutkaisten kuvioiden vastaavuuden ja käsittelyn vaihtoehdot ovat rajoitetut verrattuna Perliin tai Pythoniin.

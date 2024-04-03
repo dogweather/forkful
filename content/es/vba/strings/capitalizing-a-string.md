@@ -14,12 +14,7 @@ title: Capitalizando una cadena de caracteres
 weight: 2
 ---
 
-## Qué y Por Qué?
-
-Capitalizar una cadena en Visual Basic para Aplicaciones (VBA) implica convertir el primer carácter de cada palabra en una cadena a mayúsculas, asegurando que el resto estén en minúsculas. Los programadores hacen esto para normalizar datos, mejorar la legibilidad y asegurar la consistencia en las entradas o visualizaciones de datos textuales.
-
 ## Cómo hacerlo:
-
 VBA no tiene una función incorporada específicamente para capitalizar cada palabra en una cadena, como lo hacen algunos otros lenguajes de programación. Sin embargo, puedes lograr esto combinando algunos métodos y funciones como `UCase`, `LCase` y `Mid`.
 
 Aquí hay un ejemplo sencillo de cómo capitalizar una cadena:
@@ -46,7 +41,6 @@ End Sub
 La función `CapitalizeString` divide la cadena de entrada en palabras, capitaliza la primera letra de cada palabra y finalmente las une de nuevo para formar la cadena correctamente capitalizada.
 
 ## Análisis Profundo
-
 Visual Basic para Aplicaciones, que surgió a principios de los años 90 como un lenguaje de macros para aplicaciones de Microsoft Office, fue diseñado para ofrecer un modelo de programación accesible. Sus capacidades de manipulación de cadenas, aunque extensas, carecen de algunas abstracciones de nivel superior encontradas en lenguajes más nuevos. Muchos entornos de programación modernos proporcionan un método dedicado para la capitalización de cadenas, a menudo denominado como formateo de título o similar. Python, por ejemplo, incluye el método `.title()` para cadenas.
 
 Al comparar, la ausencia de una función incorporada única en VBA para capitalizar palabras de una cadena podría parecer una desventaja. Sin embargo, esto ofrece a los programadores una comprensión y control más profundos sobre cómo manipulan el texto y se adaptan a matices no adheridos estrictamente por un método genérico. Por ejemplo, el manejo de acrónimos o casos especiales donde ciertas palabras más pequeñas en títulos no deben ser capitalizadas se pueden personalizar mejor en VBA a través de funciones explícitas.

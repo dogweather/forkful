@@ -10,12 +10,7 @@ title: "Comparaci\xF3n de dos fechas"
 weight: 27
 ---
 
-## Qué & Por Qué?
-
-Comparar dos fechas significa verificar cómo se relacionan cronológicamente. Los programadores lo hacen para manejar eventos, periodos de tiempo y funciones programadas en sus aplicaciones.
-
 ## Cómo:
-
 Aquí tienes ejemplos de cómo comparar fechas en Clojure con la librería `clj-time`, que es un envoltorio para Joda Time en Clojure.
 
 ```clojure
@@ -41,7 +36,6 @@ Aquí tienes ejemplos de cómo comparar fechas en Clojure con la librería `clj-
 Las funciones `before?`, `after?` y `equal?` nos permiten verificar la relación entre `date1` y `date2`.
 
 ## Deep Dive
-
 Antes de `clj-time`, los programadores en Clojure manejaban fechas con las clases nativas de Java, que podían ser un tanto verbosas y complicadas. `clj-time` se hizo popular por su simplicidad y facilidad de uso, proporcionando una interfaz más clara para trabajar con fechas y tiempos.
 
 La librería te permite manejar fechas de una forma más funcional y expresiva. ¿Alternativas? `java.time`, introducido en Java 8, también es accesible desde Clojure y es una opción moderna sin dependencias externas.
@@ -49,7 +43,6 @@ La librería te permite manejar fechas de una forma más funcional y expresiva. 
 En cuanto a la implementación, comparar fechas involucra mirar su representación interna, típicamente el número de milisegundos desde una fecha época (usualmente el 1 de enero de 1970), lo cual permite una comparación directa y eficiente.
 
 ## Ver También
-
 - clj-time GitHub Repo: [https://github.com/clj-time/clj-time](https://github.com/clj-time/clj-time)
 - Joda-Time: [https://www.joda.org/joda-time/](https://www.joda.org/joda-time/)
 - La Guía de Java Time (accesible desde Clojure): [https://docs.oracle.com/javase/tutorial/datetime/](https://docs.oracle.com/javase/tutorial/datetime/)

@@ -11,9 +11,6 @@ title: Lesen von Kommandozeilenargumenten
 weight: 23
 ---
 
-## Was & Warum?
-Die Lektüre von Kommandozeilenargumenten ermöglicht es, dass ein C#-Programm beim Start Zusatzinformationen erhält. So passen Programmierer das Verhalten der Anwendung dynamisch an, ohne den Code zu ändern.
-
 ## Los geht's:
 ```C#
 using System;

@@ -13,10 +13,9 @@ title: Skrive en tekstfil
 weight: 24
 ---
 
-## Hva & Hvorfor?
-Å skrive til en tekstfil i Python er en grunnleggende oppgave som innebærer å opprette eller åpne en fil og deretter legge til eller overskrive tekst. Denne funksjonaliteten er avgjørende for datalogging, konfigurasjonsstyring og lagring av utdata generert av programmer, noe som gjør det til et grunnleggende, men essensielt verktøy i en programmerers verktøykasse.
-
 ## Hvordan:
+
+
 ### Bruk av innebygd `open()`-funksjon
 Pythons innebygde `open()`-funksjon er den vanligste måten å skrive til filer på. Funksjonen tillater spesifisering av modusen som filen åpnes i - 'w' for skriving (overskriving), 'a' for tilføyelse, og 'w+' for skrive+lese.
 
@@ -38,6 +37,7 @@ with open('example.txt', 'r') as file:
 Hello, World!
 Appenderer mer tekst.
 ```
+
 ### Bruk av `pathlib.Path`
 For en mer objektorientert tilnærming tilbyr `Path`-klassen fra `pathlib`-modulen en metode for å skrive til filer. Dette er en populær metode for nyere Python-kodebaser.
 

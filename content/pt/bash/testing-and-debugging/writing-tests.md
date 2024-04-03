@@ -13,9 +13,6 @@ title: Escrevendo testes
 weight: 36
 ---
 
-## O Que & Por Que?
-Escrever testes em Bash envolve criar scripts de casos de teste para validar a funcionalidade dos seus scripts Bash. Os programadores realizam testes para garantir que seus scripts funcionem conforme esperado sob várias condições, capturando erros e bugs antes do lançamento.
-
 ## Como fazer:
 O Bash não possui uma estrutura de testes embutida, mas você pode escrever funções de teste simples. Para testes mais sofisticados, ferramentas de terceiros como `bats-core` são populares.
 

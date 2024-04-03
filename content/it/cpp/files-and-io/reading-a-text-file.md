@@ -10,9 +10,6 @@ title: Lettura di un file di testo
 weight: 22
 ---
 
-## What & Why? (Cosa & Perché?)
-Leggere un file di testo in C++ significa estrarre dati da un documento salvato sul tuo disco. I programmatori fanno questo per processare le informazioni, configurare software, o alimentare dati nelle loro applicazioni.
-
 ## How to: (Come fare:)
 ```C++
 #include <iostream>

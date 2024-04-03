@@ -13,9 +13,6 @@ title: Testien kirjoittaminen
 weight: 36
 ---
 
-## Mitä ja miksi?
-Testien kirjoittaminen Pythonilla tarkoittaa automatisoitujen skriptien luomista koodisi oikeellisuuden varmistamiseksi. Ohjelmoijat tekevät tämän varmistaakseen, että heidän funktionsa tai luokkansa toimivat odotetusti erilaisissa olosuhteissa, mikä auttaa löytämään virheitä aikaisin ja helpottaa ylläpitoa ja uudelleenmuotoilua.
-
 ## Kuinka:
 Python sisältää sisäänrakennetun moduulin testeille nimeltä `unittest`. Näin voit käyttää sitä yksinkertaisen funktion testaamiseen:
 

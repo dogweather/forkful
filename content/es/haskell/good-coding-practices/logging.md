@@ -12,9 +12,6 @@ title: "Registro de Actividades en Programaci\xF3n"
 weight: 17
 ---
 
-## Qué y Por Qué?
-El registro (logging) en programación es esencialmente dejar un rastro de migajas de pan en forma de eventos o mensajes registrados, los cuales se pueden usar para rastrear lo que tu aplicación está haciendo en cualquier momento dado. Los programadores lo hacen para depurar problemas, monitorear el rendimiento del sistema y auditar el comportamiento por razones de seguridad y cumplimiento.
-
 ## Cómo hacerlo:
 En Haskell, el registro se puede implementar utilizando bibliotecas como `monad-logger` o `hslogger`. Aquí hay un ejemplo rápido utilizando `monad-logger`:
 

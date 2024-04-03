@@ -11,9 +11,6 @@ title: "Skicka en http-f\xF6rfr\xE5gan"
 weight: 44
 ---
 
-## Vad & Varför?
-Att skicka en HTTP-begäran innebär att be en webbserver om data eller en annan resurs. Programmerare gör detta för att integrera olika webbtjänster, hämta information eller interagera med API:er.
-
 ## Hur man gör:
 I Elixir använder vi ofta `HTTPoison` för HTTP-begäran. Så här ser en grundläggande GET-begäran ut:
 

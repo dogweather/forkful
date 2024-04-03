@@ -13,12 +13,7 @@ title: HTML Parsen
 weight: 43
 ---
 
-## Wat & Waarom?
-
-HTML parsen betekent het filteren door de soep van code van een website om nuttige brokjes te vinden — tekst, links, afbeeldingen, etc. Programmeurs doen dit om gegevens te extraheren, webinteracties te automatiseren of inhoud in hun apps te importeren.
-
 ## Hoe:
-
 Swift heeft geen ingebouwde HTML-parsing; we hebben een hulpje nodig. Laten we SwiftSoup gebruiken, een Swift-library die doet denken aan Python's BeautifulSoup. Voeg eerst SwiftSoup toe aan je project met behulp van Swift Package Manager.
 
 Zo doe je dat:
@@ -43,7 +38,6 @@ do {
 ```
 
 ## Diepteanalyse
-
 HTML of HyperText Markup Language is sinds Tim Berners-Lee het (en het web) in 1991 introduceerde de ruggengraat van het web. Naarmate het web evolueerde, deed HTML dat ook, wat de parsing complexiteit verhoogde.
 
 Hier is waarom SwiftSoup uitblinkt:
@@ -59,7 +53,6 @@ Alternatieven? Zeker!
 Onthoud echter dat een parser zoals SwiftSoup de pagina niet gewoon leest zoals deze is; het is zich niet bewust van inhoud die dynamisch wordt geladen door JavaScript. Voor dat, ga naar oplossingen met WebKit of browser headless modi.
 
 ## Zie Ook
-
 - SwiftSoup op GitHub: [https://github.com/scinfu/SwiftSoup](https://github.com/scinfu/SwiftSoup)
 - Swift Package Manager: [https://swift.org/package-manager/](https://swift.org/package-manager/)
 - WebKit-documentatie: [https://developer.apple.com/documentation/webkit](https://developer.apple.com/documentation/webkit)

@@ -11,9 +11,6 @@ title: "Konvertera en str\xE4ng till gemener"
 weight: 4
 ---
 
-## Vad & Varför?
-Att konvertera en sträng till små bokstäver innebär att omvandla alla tecken i strängen till deras motsvarighet i gemener. Programmerare gör detta för att förenkla jämförelser och sökningar, eftersom det tar bort skillnader mellan versaler och gemener.
-
 ## Hur man gör:
 För att konvertera en sträng till små bokstäver i Lua, använd den inbyggda funktionen `string.lower()`. Här är ett exempel:
 

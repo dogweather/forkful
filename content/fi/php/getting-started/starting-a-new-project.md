@@ -11,9 +11,6 @@ title: Uuden projektin aloittaminen
 weight: 1
 ---
 
-## What & Why? (Mitä & Miksi?)
-Uuden projektin aloittaminen PHP:ssä on kuin tyhjältä pöydältä aloittamista; uutta luovaa prosessia. Koodarit tekevät sen paketoidakseen ideoita ja ratkaistakseen ongelmia.
-
 ## How to: (Kuinka tehdä:)
 Aloitetaan yksinkertaisella `"Hello, world!"` -esimerkillä. Tallenna tämä tiedostoksi nimeltä `index.php`.
 

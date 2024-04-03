@@ -27,9 +27,6 @@ title: "\u0E01\u0E32\u0E23\u0E43\u0E0A\u0E49 Shell \u0E41\u0E1A\u0E1A\u0E42\u0E1
 weight: 34
 ---
 
-## อะไรและทำไม?
-Shell แบบโต้ตอบ, หรือ REPL (Read-Eval-Print Loop), ช่วยให้คุณลองรันโค้ดเล็ก ๆ น้อย ๆ ได้อย่างทันทีทันใด Elixir programmers ใช้ REPL ที่เรียกว่า IEx (Interactive Elixir), เพื่อการทดลอง, การแก้ไขข้อผิดพลาด, และการเรียนรู้ภาษา
-
 ## วิธีการ:
 เพื่อเปิดใช้งาน IEx, เปิด terminal ของคุณและพิมพ์ `iex` นี่คือตัวอย่างเล็กน้อย:
 

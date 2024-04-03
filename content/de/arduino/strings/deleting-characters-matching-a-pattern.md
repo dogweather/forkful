@@ -10,9 +10,6 @@ title: "L\xF6schen von Zeichen, die einem Muster entsprechen"
 weight: 5
 ---
 
-## Was & Warum?
-Charaktere nach einem Muster löschen bedeutet, bestimmte Zeichen aus einer Zeichenkette zu entfernen, die einem vorgegebenen Schema entsprechen. Programmierer machen das, um Daten zu säubern oder zu formatieren, oft bei der Eingabevalidierung oder beim Parsing von Daten.
-
 ## So geht's:
 ```Arduino
 String text = "A1r2d3u4i5n6o789";

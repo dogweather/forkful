@@ -14,9 +14,6 @@ title: Commandoregelargumenten lezen
 weight: 23
 ---
 
-## Wat & Waarom?
-Het lezen van command-line argumenten in Ruby stelt scripts in staat om direct bij het uitvoeren input te krijgen, zoals het configureren van opties of het doorgeven van gegevens. Programmeurs gebruiken ze om scripts dynamisch en aanpasbaar te maken zonder waarden te hardcoderen.
-
 ## Hoe te:
 Om command-line argumenten te bemachtigen, biedt Ruby een eenvoudige array: `ARGV`. Het bevat alle argumenten die zijn doorgegeven, in de volgorde waarin ze zijn gegeven.
 

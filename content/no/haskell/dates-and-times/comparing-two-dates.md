@@ -11,12 +11,7 @@ title: Sammenlikning av to datoer
 weight: 27
 ---
 
-## Hva & Hvorfor?
-
-Å sammenligne to datoer betyr å finne ut hvilken som kommer før eller etter, eller om de er like. Programmerere gjør dette for å håndtere frister, tidsstyring, alderssjekk, og andre tidsrelaterte funksjoner.
-
 ## Slik gjør du:
-
 Haskell bruker `Data.Time` biblioteket for datooperasjoner. Her er et eksempel på hvordan sammenligne to datoer:
 
 ```haskell
@@ -35,7 +30,6 @@ compareDates = do
 Kjør denne funksjonen og se hva som skjer!
 
 ## Dypdykk
-
 Historisk sett har datoer og tid vært kompliserte på grunn av forskjellige kalendere. I Haskell gir `Data.Time` en standard måte å håndtere datoer på, basert på den gregorianske kalenderen. Mens `Data.Time` er vanlig, kan du også bruke tredjepartsbiblioteker som `time` og `chronos` for mer funksjonalitet eller ytelser.
 
 Sammenligning av datoer går ned på sammenligning av interne tallverdier. `Data.Time` representerer datoer som antall dager fra en fastsatte "epoke" og tidspunkter som antall sekunder. Dette gjør det mulig å sammenligne datoer med standard sammenligningsoperatorer (`<`, `>`, `==` osv.).
@@ -48,6 +42,5 @@ print diff  -- Skriver ut forskjellen i dager.
 ```
 
 ## Se Også
-
 - [Haskell `Data.Time` Modul Dokumentasjon](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
 - [Zvon's Guide to Standard Haskell Libraries](http://zvon.org/other/haskell/Outputglobal/index.html)

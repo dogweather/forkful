@@ -11,9 +11,6 @@ title: "C\xE1lculo de una fecha en el futuro o el pasado"
 weight: 26
 ---
 
-## Qué y Por Qué?
-Calcular una fecha en el futuro o pasado es básicamente sumar o restar días a una fecha dada. Lo hacemos para programar eventos, calcular vencimientos o medir periodos de tiempo.
-
 ## How to:
 Para trabajar con fechas en Clojure, usaremos la librería `clj-time`, una envoltura para Joda-Time. La instalamos agregando `[clj-time "0.15.2"]` a nuestro archivo `project.clj`. Aquí hay ejemplos simples:
 

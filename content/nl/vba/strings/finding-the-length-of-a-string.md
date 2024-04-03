@@ -12,12 +12,7 @@ title: De lengte van een string vinden
 weight: 7
 ---
 
-## Wat & Waarom?
-
-Het vinden van de lengte van een string in Visual Basic for Applications (VBA) houdt in dat je bepaalt hoeveel karakters deze bevat. Programmeurs voeren deze taak vaak uit om invoer te valideren, tekstgegevens efficiënt te manipuleren of lussen die stringgegevens verwerken te controleren, waardoor ze robuuste en foutvrije code garanderen.
-
 ## Hoe doe je dat:
-
 In VBA is de `Len` functie jouw hulpmiddel voor het vinden van de lengte van een string. Het retourneert een geheel getal dat het aantal karakters in een opgegeven string vertegenwoordigt. Hier is een eenvoudig voorbeeld om deze functie te illustreren:
 
 ```vb
@@ -56,7 +51,6 @@ End Sub
 Deze code zal elke string in `stringCollection` classificeren als "Lange String" of "Korte String", afhankelijk van of de lengte ervan meer dan 5 karakters bedraagt.
 
 ## Diepgaande blik
-
 De `Len` functie in VBA vindt zijn oorsprong in vroege BASIC programmering en biedt een eenvoudige, maar effectieve manier voor het hanteren van stringmanipulatietaken. Door de jaren heen hebben veel programmeertalen meer geavanceerde hulpmiddelen ontwikkeld voor het werken met strings, zoals reguliere expressies en uitgebreide stringmanipulatiebibliotheken.
 
 Echter, binnen de context van VBA blijft `Len` een fundamentele en zeer efficiënte oplossing voor het bepalen van de stringlengte—deels vanwege de focus van VBA op gebruiksgemak en toegankelijkheid boven complexe bewerkingen. Terwijl talen als Python of JavaScript methoden zoals `.length` of `len()` direct in stringobjecten aanbieden, valt de `Len` functie van VBA op door haar eenvoudige toepassing, wat vooral voordelig is voor diegenen die net beginnen met programmeren vanuit velden als data-analyse of kantoorautomatisering.

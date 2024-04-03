@@ -12,9 +12,6 @@ title: Den aktuellen Datum abrufen
 weight: 29
 ---
 
-## Was & Warum?
-Das Abrufen des aktuellen Datums in Haskell umfasst das Erlangen der aktuellen Systemzeit und deren Umwandlung in ein lesbares Datumsformat. Programmierer tun dies, um Operationen basierend auf dem Datum durchzuführen, wie zum Beispiel das Protokollieren, das Planen von Aufgaben oder das Zeitstempeln von Ereignissen in Anwendungen.
-
 ## Wie geht das:
 Die Standardbibliothek von Haskell, `base`, bietet das Modul `Data.Time`, das Funktionalitäten zur Arbeit mit Daten und Zeiten bietet. So verwenden Sie es, um das aktuelle Datum zu erhalten:
 
